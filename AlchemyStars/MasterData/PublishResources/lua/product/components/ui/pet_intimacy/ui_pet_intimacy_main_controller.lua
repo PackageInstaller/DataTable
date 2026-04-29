@@ -1,92 +1,103 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet_intimacy/ui_pet_intimacy_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetIntimacyMainController", UIController)
 UIPetIntimacyMainController = UIPetIntimacyMainController
-local PetIntimacyWindowType = {FilesPanel = 1, VoicePanel = 2, GiftPanel = 3, ImageRecallPanel = 4}
-_enum("PetIntimacyWindowType", PetIntimacyWindowType)
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV, PetIntimacyWindowType
-  self.Element2ImageName = {[ElementType.ElementType_Blue] = "str_shop_pet_shui", [ElementType.ElementType_Red] = "str_shop_pet_huo", [ElementType.ElementType_Green] = "str_shop_pet_sen", [ElementType.ElementType_Yellow] = "str_shop_pet_lei", [ElementType.ElementType_AnyNone] = "str_tale_pet_att_none"}
-  self.ElementNameTable = {[ElementType.ElementType_Blue] = "str_pet_element_name_blue", [ElementType.ElementType_Red] = "str_pet_element_name_red", [ElementType.ElementType_Green] = "str_pet_element_name_green", [ElementType.ElementType_Yellow] = "str_pet_element_name_yellow", [ElementType.ElementType_AnyNone] = "str_pet_detail_element_6"}
-  self.ElementDesStr = "str_pet_first_and_second_element_des"
-  self.ElementSpriteName = {[ElementType.ElementType_Blue] = "bing_color", [ElementType.ElementType_Red] = "huo_color", [ElementType.ElementType_Green] = "sen_color", [ElementType.ElementType_Yellow] = "lei_color", [ElementType.ElementType_AnyNone] = "wu_color"}
-  self._animName = {
-[PetIntimacyWindowType.FilesPanel] = {IN = "uieff_SpiritIntimacy_File_In", OUT = "uieff_SpiritIntimacy_File_Out"}
-, 
-[PetIntimacyWindowType.VoicePanel] = {IN = "uieff_SpiritIntimacy_VoicePanel_In", OUT = "uieff_SpiritIntimacy_VoicePanel_Out"}
-, 
-[PetIntimacyWindowType.GiftPanel] = {IN = "uieff_SpiritIntimacy_Gift_In", OUT = "uieff_SpiritIntimacy_Gift_Out"}
-, 
-[PetIntimacyWindowType.ImageRecallPanel] = {IN = "uieff_SpiritIntimacy_Recall_In", OUT = "uieff_SpiritIntimacy_Recall_Out"}
+local PetIntimacyWindowType = {
+  FilesPanel = 1,
+  VoicePanel = 2,
+  GiftPanel = 3,
+  ImageRecallPanel = 4
 }
+_enum("PetIntimacyWindowType", PetIntimacyWindowType)
+
+function UIPetIntimacyMainController:Constructor()
+  self.Element2ImageName = {
+    [ElementType.ElementType_Blue] = "str_shop_pet_shui",
+    [ElementType.ElementType_Red] = "str_shop_pet_huo",
+    [ElementType.ElementType_Green] = "str_shop_pet_sen",
+    [ElementType.ElementType_Yellow] = "str_shop_pet_lei",
+    [ElementType.ElementType_AnyNone] = "str_tale_pet_att_none"
+  }
+  self.ElementNameTable = {
+    [ElementType.ElementType_Blue] = "str_pet_element_name_blue",
+    [ElementType.ElementType_Red] = "str_pet_element_name_red",
+    [ElementType.ElementType_Green] = "str_pet_element_name_green",
+    [ElementType.ElementType_Yellow] = "str_pet_element_name_yellow",
+    [ElementType.ElementType_AnyNone] = "str_pet_detail_element_6"
+  }
+  self.ElementDesStr = "str_pet_first_and_second_element_des"
+  self.ElementSpriteName = {
+    [ElementType.ElementType_Blue] = "bing_color",
+    [ElementType.ElementType_Red] = "huo_color",
+    [ElementType.ElementType_Green] = "sen_color",
+    [ElementType.ElementType_Yellow] = "lei_color",
+    [ElementType.ElementType_AnyNone] = "wu_color"
+  }
+  self._animName = {
+    [PetIntimacyWindowType.FilesPanel] = {
+      IN = "uieff_SpiritIntimacy_File_In",
+      OUT = "uieff_SpiritIntimacy_File_Out"
+    },
+    [PetIntimacyWindowType.VoicePanel] = {
+      IN = "uieff_SpiritIntimacy_VoicePanel_In",
+      OUT = "uieff_SpiritIntimacy_VoicePanel_Out"
+    },
+    [PetIntimacyWindowType.GiftPanel] = {
+      IN = "uieff_SpiritIntimacy_Gift_In",
+      OUT = "uieff_SpiritIntimacy_Gift_Out"
+    },
+    [PetIntimacyWindowType.ImageRecallPanel] = {
+      IN = "uieff_SpiritIntimacy_Recall_In",
+      OUT = "uieff_SpiritIntimacy_Recall_Out"
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController.RequestAllPetInfos = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._listShowItemCount = (table.count)(self._petInfos)
+function UIPetIntimacyMainController:RequestAllPetInfos()
+  self._listShowItemCount = table.count(self._petInfos)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController.FindOpenPetIndex = function(self, petid)
-  -- function num : 0_2
+function UIPetIntimacyMainController:FindOpenPetIndex(petid)
   if self._petInfos then
     for index = 1, #self._petInfos do
-      if ((self._petInfos)[index]):GetTemplateID() == petid then
+      if self._petInfos[index]:GetTemplateID() == petid then
         return index
       end
     end
   end
-  do
-    return 1
-  end
+  return 1
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV, PetIntimacyWindowType
-  (AudioHelperController.RequestUISound)(CriAudioIDConst.SoundSwitch)
+function UIPetIntimacyMainController:OnShow(uiParams)
+  AudioHelperController.RequestUISound(CriAudioIDConst.SoundSwitch)
   local petid = uiParams[1]
   self._petModule = self:GetModule(PetModule)
-  self._petInfos = ((self._petModule).uiModule):GetSortedPets()
+  self._petInfos = self._petModule.uiModule:GetSortedPets()
   self:RequestAllPetInfos()
   self._currIndex = self:FindOpenPetIndex(petid)
-  self._petData = (self._petInfos)[self._currIndex]
+  self._petData = self._petInfos[self._currIndex]
   self._oldPetID = petid
   local backBtns = self:GetUIComponent("UISelectObjectPath", "BackBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_3_0 , upvalues : self, PetIntimacyWindowType, _ENV
+  self._backBtns:SetData(function()
     if self._preWindowType == nil or self._currentWindowType ~= PetIntimacyWindowType.GiftPanel then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PlayInOutAnimation, true)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.PlayInOutAnimation, true)
       self:CloseDialog()
     else
       self:_ClosePlayVoicePanel()
       self:_RefreshPetIntimacyInfo()
       local petChanged = false
-      if self._oldPetID and self._oldPetID == (self._petData):GetTemplateID() then
+      if self._oldPetID and self._oldPetID == self._petData:GetTemplateID() then
+      else
         petChanged = true
-        self:_OpenWindow(self._preWindowType, nil, petChanged)
       end
+      self:_OpenWindow(self._preWindowType, nil, petChanged)
     end
-  end
-, nil)
+  end, nil)
   self._petModeLoader = self:GetUIComponent("RawImageLoader", "PetModel")
   self._nameCHLabel = self:GetUIComponent("UILocalizationText", "NameCH")
   self._nameENLabel = self:GetUIComponent("UILocalizationText", "NameEN")
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base)
+  self.uiItem:SetForm(UIItemForm.Base)
   self._starPool = self:GetUIComponent("UISelectObjectPath", "StarPool")
   self._attr = self:GetUIComponent("UILocalizationText", "Attr")
   self._buttonFilesOn = self:GetGameObject("ButtonFilesOn")
@@ -111,8 +122,7 @@ UIPetIntimacyMainController.OnShow = function(self, uiParams)
   self._intAnim = self:GetUIComponent("Animation", "InAnim")
   self._giftPanelAnim = self:GetUIComponent("Animation", "GiftPanelAnim")
   self._effLevelUp = self:GetGameObject("effLevelUp")
-  ;
-  (self._effLevelUp):SetActive(false)
+  self._effLevelUp:SetActive(false)
   self._giftCanvasGroup = self:GetUIComponent("CanvasGroup", "GiftPanel")
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   local s = self:GetUIComponent("UISelectObjectPath", "ItemTips")
@@ -127,568 +137,364 @@ UIPetIntimacyMainController.OnShow = function(self, uiParams)
   self:InitPetScrollView()
   self:AttachEvent(GameEventType.ItemCountChanged, self.OnItemCountChanged)
   self._rawImageLoaderHelper = RawImageLoaderHelper:New()
-  ;
-  (self._rawImageLoaderHelper):Init(1)
+  self._rawImageLoaderHelper:Init(1)
   self._windows = {}
-  -- DECOMPILER ERROR at PC255: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._windows)[PetIntimacyWindowType.FilesPanel] = UIPetIntimacyFiles:New(self, self._petData)
-  -- DECOMPILER ERROR at PC263: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._windows)[PetIntimacyWindowType.VoicePanel] = UIPetIntimacyVoice:New(self, self._petData)
-  -- DECOMPILER ERROR at PC271: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._windows)[PetIntimacyWindowType.GiftPanel] = UIPetIntimacyGift:New(self, self._petData)
-  -- DECOMPILER ERROR at PC279: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._windows)[PetIntimacyWindowType.ImageRecallPanel] = UIPetIntimacyImageRecall:New(self, self._petData)
+  self._windows[PetIntimacyWindowType.FilesPanel] = UIPetIntimacyFiles:New(self, self._petData)
+  self._windows[PetIntimacyWindowType.VoicePanel] = UIPetIntimacyVoice:New(self, self._petData)
+  self._windows[PetIntimacyWindowType.GiftPanel] = UIPetIntimacyGift:New(self, self._petData)
+  self._windows[PetIntimacyWindowType.ImageRecallPanel] = UIPetIntimacyImageRecall:New(self, self._petData)
   self._currentWindowType = nil
   self._preWindowType = nil
   self:_RefreshPetInfo()
   self:_ClosePlayVoicePanel()
   self:_OpenWindow(uiParams[2], true)
   local imageLoader = self:GetUIComponent("RawImageLoader", "BgLoader")
-  ;
-  (UICommonHelper:GetInstance()):ChangePetTagBackground((self._petData):GetTemplateID(), imageLoader, true)
+  UICommonHelper:GetInstance():ChangePetTagBackground(self._petData:GetTemplateID(), imageLoader, true)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController.InitPetScrollView = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIPetIntimacyMainController:InitPetScrollView()
   self._itemTable = {}
   self._scrollViewHelper = H3DScrollViewHelper:New(self, "PetScrollView", "UIPetIntimacyDetailItem", function(index, uiwidget)
-    -- function num : 0_4_0 , upvalues : self
     return self:_OnShowItem(index, uiwidget)
-  end
-, function(index, uiwidget)
-    -- function num : 0_4_1 , upvalues : self
+  end, function(index, uiwidget)
     return self:_OnHideItem(index, uiwidget)
-  end
-)
-  ;
-  (self._scrollViewHelper):SetGroupChangedCallback(function(index, item)
-    -- function num : 0_4_2 , upvalues : self, _ENV
-    if self._listShowItemCount < index + 1 then
-      return 
+  end)
+  self._scrollViewHelper:SetGroupChangedCallback(function(index, item)
+    if index + 1 > self._listShowItemCount then
+      return
     end
     self:_ShowCurrIndexInfo(index + 1)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPetListIndexChanged, (self._petData):GetTemplateID())
-  end
-)
-  ;
-  (self._scrollViewHelper):SetValueChangedCallback(function(group, value, contentSize, itemSize)
-    -- function num : 0_4_3 , upvalues : self
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPetListIndexChanged, self._petData:GetTemplateID())
+  end)
+  self._scrollViewHelper:SetValueChangedCallback(function(group, value, contentSize, itemSize)
     self:_OnValueChangedCallBack(group + 1, value, contentSize, itemSize)
-  end
-)
-  self._scrollRectWidth = ((self:GetUIComponent("RectTransform", "PetScrollView")).sizeDelta).x
+  end)
+  self._scrollRectWidth = self:GetUIComponent("RectTransform", "PetScrollView").sizeDelta.x
   local safeArea = self:GetUIComponent("RectTransform", "SafeArea")
-  ;
-  (self._scrollViewHelper):Init(self._listShowItemCount, self._currIndex, (safeArea.rect).size)
-  ;
-  (self._scrollViewHelper):SetNextPageOffset(0.12)
+  self._scrollViewHelper:Init(self._listShowItemCount, self._currIndex, safeArea.rect.size)
+  self._scrollViewHelper:SetNextPageOffset(0.12)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController._OnShowItem = function(self, index, uiwidget)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self._itemTable)[index] == nil then
-    (self._itemTable)[index] = uiwidget
+function UIPetIntimacyMainController:_OnShowItem(index, uiwidget)
+  if self._itemTable[index] == nil then
+    self._itemTable[index] = uiwidget
   end
-  local petData = (self._petInfos)[index]
+  local petData = self._petInfos[index]
   uiwidget:SetData(index, petData, self._currIndex)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController._OnHideItem = function(self, index, uiwidget)
-  -- function num : 0_6
-  if (self._itemTable)[index] == nil then
-    return 
+function UIPetIntimacyMainController:_OnHideItem(index, uiwidget)
+  if self._itemTable[index] == nil then
+    return
   end
   uiwidget:OnHideCallBack()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController._ShowCurrIndexInfo = function(self, index)
-  -- function num : 0_7 , upvalues : _ENV, PetIntimacyWindowType
+function UIPetIntimacyMainController:_ShowCurrIndexInfo(index)
   local isCurrent = false
   if self._currIndex == index then
     isCurrent = true
   end
   self._currIndex = index
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BreakCheckIsCurrent, self._currIndex)
-  self._petData = (self._petInfos)[index]
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.BreakCheckIsCurrent, self._currIndex)
+  self._petData = self._petInfos[index]
   if not isCurrent then
     self:_RefreshPetInfo()
-    ;
-    ((self._windows)[PetIntimacyWindowType.GiftPanel]):PetDataChanged(self._petData)
+    self._windows[PetIntimacyWindowType.GiftPanel]:PetDataChanged(self._petData)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController._OnValueChangedCallBack = function(self, group, value, contentSize, itemSize)
-  -- function num : 0_8 , upvalues : _ENV
+function UIPetIntimacyMainController:_OnValueChangedCallBack(group, value, contentSize, itemSize)
   local di = contentSize - itemSize
   if di <= 0 then
-    return 
+    return
   end
   local rate = itemSize / (contentSize - itemSize)
   if rate <= 0 then
-    return 
+    return
   end
   local centerRate = group * rate - 0.5 * rate
   local distance = value - centerRate
-  local a = (math.abs)(distance) / (rate * 0.5) + 0.05
-  a = 1 - a
+  local a = math.abs(distance) / (rate * 0.5) + 0.05
+  a = 1.0 - a
   if a < 0 then
     a = 0
-  else
-    if a > 1 then
-      a = 1
-    end
+  elseif 1 < a then
+    a = 1
   end
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._OnlyAlpha1).alpha = a
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._OnlyAlpha2).alpha = a
-  local leftRightDis = (math.abs)(((self._left).position).x - ((self._right).position).x)
-  local centerPosition = (self._center).position
+  self._OnlyAlpha1.alpha = a
+  self._OnlyAlpha2.alpha = a
+  local leftRightDis = math.abs(self._left.position.x - self._right.position.x)
+  local centerPosition = self._center.position
   for i = self._currIndex - 1, self._currIndex + 1 do
-    if (self._itemTable)[i] then
-      ((self._itemTable)[i]):ChangeCanvasGroupAlpha(leftRightDis, centerPosition.x)
+    if self._itemTable[i] then
+      self._itemTable[i]:ChangeCanvasGroupAlpha(leftRightDis, centerPosition.x)
     end
   end
-  do
-    if ((self._content).localPosition).x > 0 or ((self._content).localPosition).x < -((self._content).sizeDelta).x + self._scrollRectWidth then
-      return 
-    end
+  if 0 < self._content.localPosition.x or self._content.localPosition.x < -self._content.sizeDelta.x + self._scrollRectWidth then
+    return
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_9 , upvalues : _ENV
-  for k,v in pairs(self._windows) do
+function UIPetIntimacyMainController:OnUpdate(deltaTimeMS)
+  for k, v in pairs(self._windows) do
     v:Update()
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController.OnHide = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  for k,v in pairs(self._windows) do
+function UIPetIntimacyMainController:OnHide()
+  for k, v in pairs(self._windows) do
     v:Destroy()
   end
   self:DetachEvent(GameEventType.ItemCountChanged, self.OnItemCountChanged)
-  ;
-  (AudioHelperController.ReleaseUISoundById)(CriAudioIDConst.SoundSwitch)
+  AudioHelperController.ReleaseUISoundById(CriAudioIDConst.SoundSwitch)
   if self._playVoiceTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._playVoiceTask)
+    GameGlobal.TaskManager():KillTask(self._playVoiceTask)
     self._playVoiceTask = nil
   end
   if self._rawImageLoaderHelper then
-    (self._rawImageLoaderHelper):Dispose()
+    self._rawImageLoaderHelper:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController._RefreshPetInfo = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIPetIntimacyMainController:_RefreshPetInfo()
   if not self._petData then
-    return 
+    return
   end
-  ;
-  (self._nameCHLabel):SetText((StringTable.Get)((self._petData):GetPetName()))
-  ;
-  (self._nameENLabel):SetText((StringTable.Get)((self._petData):GetPetEnglishName()))
-  local itemIcon = (self._petData):GetPetItemIcon(PetSkinEffectPath.ITEM_ICON_PET_INTIMACY)
-  ;
-  (self.uiItem):SetData({icon = itemIcon, itemId = (self._petData):GetTemplateID()})
-  local grade = (self._petData):GetPetAwakening()
-  local star = (self._petData):GetPetStar()
-  ;
-  (self._starPool):SpawnObjects("UIPetIntimacyStar", star)
-  local petIntimacyStars = (self._starPool):GetAllSpawnList()
+  self._nameCHLabel:SetText(StringTable.Get(self._petData:GetPetName()))
+  self._nameENLabel:SetText(StringTable.Get(self._petData:GetPetEnglishName()))
+  local itemIcon = self._petData:GetPetItemIcon(PetSkinEffectPath.ITEM_ICON_PET_INTIMACY)
+  self.uiItem:SetData({
+    icon = itemIcon,
+    itemId = self._petData:GetTemplateID()
+  })
+  local grade = self._petData:GetPetAwakening()
+  local star = self._petData:GetPetStar()
+  self._starPool:SpawnObjects("UIPetIntimacyStar", star)
+  local petIntimacyStars = self._starPool:GetAllSpawnList()
   for i = 1, #petIntimacyStars do
     local isOn = false
     if i <= grade then
       isOn = true
     end
-    ;
-    (petIntimacyStars[i]):Refresh(isOn)
+    petIntimacyStars[i]:Refresh(isOn)
   end
-  local firstElement = (self._petData):GetPetFirstElement()
-  local secondElement = (self._petData):GetPetSecondElement()
+  local firstElement = self._petData:GetPetFirstElement()
+  local secondElement = self._petData:GetPetSecondElement()
   local elementDes = ""
   if secondElement ~= nil and secondElement ~= 0 then
-    elementDes = (StringTable.Get)((self.ElementNameTable)[firstElement]) .. "  " .. (StringTable.Get)((self.ElementNameTable)[secondElement])
+    elementDes = StringTable.Get(self.ElementNameTable[firstElement]) .. "  " .. StringTable.Get(self.ElementNameTable[secondElement])
   else
-    elementDes = (StringTable.Get)((self.Element2ImageName)[firstElement])
+    elementDes = StringTable.Get(self.Element2ImageName[firstElement])
   end
-  ;
-  (self._attr):SetText(elementDes)
-  -- DECOMPILER ERROR at PC108: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._firstElementImg).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((self.ElementSpriteName)[firstElement]))
+  self._attr:SetText(elementDes)
+  self._firstElementImg.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(self.ElementSpriteName[firstElement]))
   if secondElement ~= nil and secondElement ~= 0 then
-    (self._secondElementGo):SetActive(true)
-    -- DECOMPILER ERROR at PC128: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._secondElementImg).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((self.ElementSpriteName)[secondElement]))
+    self._secondElementGo:SetActive(true)
+    self._secondElementImg.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(self.ElementSpriteName[secondElement]))
   else
-    ;
-    (self._secondElementGo):SetActive(false)
+    self._secondElementGo:SetActive(false)
   end
   self:_RefreshPetIntimacyInfo()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController._RefreshPetIntimacyInfo = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local level = (self._petData):GetPetAffinityLevel()
-  local maxLevel = (self._petData):GetPetAffinityMaxLevel()
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._intimacyLevelLabel).text = level
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  if maxLevel <= level then
-    (self._intimacyProgressImg).fillAmount = 1
+function UIPetIntimacyMainController:_RefreshPetIntimacyInfo()
+  local level = self._petData:GetPetAffinityLevel()
+  local maxLevel = self._petData:GetPetAffinityMaxLevel()
+  self._intimacyLevelLabel.text = level
+  if level >= maxLevel then
+    self._intimacyProgressImg.fillAmount = 1
   else
-    local exp = (self._petData):GetPetAffinityExp()
-    local maxExp = (self._petData):GetPetAffinityMaxExp(level)
-    local curExp = exp - ((Cfg.cfg_pet_affinity_exp)[level]).NeedAffintyExp
+    local exp = self._petData:GetPetAffinityExp()
+    local maxExp = self._petData:GetPetAffinityMaxExp(level)
+    local curExp = exp - Cfg.cfg_pet_affinity_exp[level].NeedAffintyExp
     local percent = curExp / maxExp
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._intimacyProgressImg).fillAmount = percent
+    self._intimacyProgressImg.fillAmount = percent
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController._RefreshPanelState = function(self, isFirstOpen)
-  -- function num : 0_13 , upvalues : _ENV
+function UIPetIntimacyMainController:_RefreshPanelState(isFirstOpen)
   self:_HideAllPanel()
   self:_SetPanelVisible()
   if isFirstOpen then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._PlayPanelAnim, self, isFirstOpen)
+  GameGlobal.TaskManager():StartTask(self._PlayPanelAnim, self, isFirstOpen)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController._PlayPanelAnim = function(self, TT, isFirstOpen)
-  -- function num : 0_14 , upvalues : PetIntimacyWindowType, _ENV
+function UIPetIntimacyMainController:_PlayPanelAnim(TT, isFirstOpen)
   self:Lock("PlayPanelAnim")
   if self._preWindowType == PetIntimacyWindowType.GiftPanel then
-    (self:GetGameObject("GiftPanel")):SetActive(true)
+    self:GetGameObject("GiftPanel"):SetActive(true)
   end
-  local outAnimName = ((self._animName)[self._preWindowType]).OUT
-  local inAnimName = ((self._animName)[self._currentWindowType]).IN
+  local outAnimName = self._animName[self._preWindowType].OUT
+  local inAnimName = self._animName[self._currentWindowType].IN
   if self._currentWindowType == PetIntimacyWindowType.GiftPanel then
-    (self._giftPanelAnim):Play(inAnimName)
+    self._giftPanelAnim:Play(inAnimName)
   end
-  ;
-  (self._outAnim):Play(outAnimName)
-  ;
-  (self._intAnim):Play(inAnimName)
+  self._outAnim:Play(outAnimName)
+  self._intAnim:Play(inAnimName)
   YIELD(TT, 500)
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R5 in 'UnsetPending'
-
   if self._preWindowType == PetIntimacyWindowType.GiftPanel then
-    (self._giftCanvasGroup).alpha = 1
+    self._giftCanvasGroup.alpha = 1
     self:_HideAllPanel()
     self:_SetPanelVisible()
   end
   self:UnLock("PlayPanelAnim")
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController._HideAllPanel = function(self)
-  -- function num : 0_15
-  (self:GetGameObject("FilesPanel")):SetActive(false)
-  ;
-  (self:GetGameObject("VoicePanel")):SetActive(false)
-  ;
-  (self:GetGameObject("GiftPanel")):SetActive(false)
-  ;
-  (self:GetGameObject("ImageRecallPanel")):SetActive(false)
+function UIPetIntimacyMainController:_HideAllPanel()
+  self:GetGameObject("FilesPanel"):SetActive(false)
+  self:GetGameObject("VoicePanel"):SetActive(false)
+  self:GetGameObject("GiftPanel"):SetActive(false)
+  self:GetGameObject("ImageRecallPanel"):SetActive(false)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController._SetPanelVisible = function(self)
-  -- function num : 0_16 , upvalues : PetIntimacyWindowType
+function UIPetIntimacyMainController:_SetPanelVisible()
   if self._currentWindowType == PetIntimacyWindowType.FilesPanel then
-    (self:GetGameObject("FilesPanel")):SetActive(true)
-    ;
-    (self._leftPanelGo):SetActive(true)
-    ;
-    (self._petInfoPanel):SetActive(true)
-  else
-    if self._currentWindowType == PetIntimacyWindowType.VoicePanel then
-      (self:GetGameObject("VoicePanel")):SetActive(true)
-      ;
-      (self._leftPanelGo):SetActive(true)
-      ;
-      (self._petInfoPanel):SetActive(true)
-    else
-      if self._currentWindowType == PetIntimacyWindowType.GiftPanel then
-        (self:GetGameObject("GiftPanel")):SetActive(true)
-        ;
-        (self._leftPanelGo):SetActive(false)
-      else
-        if self._currentWindowType == PetIntimacyWindowType.ImageRecallPanel then
-          (self:GetGameObject("ImageRecallPanel")):SetActive(true)
-          ;
-          (self._leftPanelGo):SetActive(true)
-          ;
-          (self._petInfoPanel):SetActive(true)
-        end
-      end
-    end
+    self:GetGameObject("FilesPanel"):SetActive(true)
+    self._leftPanelGo:SetActive(true)
+    self._petInfoPanel:SetActive(true)
+  elseif self._currentWindowType == PetIntimacyWindowType.VoicePanel then
+    self:GetGameObject("VoicePanel"):SetActive(true)
+    self._leftPanelGo:SetActive(true)
+    self._petInfoPanel:SetActive(true)
+  elseif self._currentWindowType == PetIntimacyWindowType.GiftPanel then
+    self:GetGameObject("GiftPanel"):SetActive(true)
+    self._leftPanelGo:SetActive(false)
+  elseif self._currentWindowType == PetIntimacyWindowType.ImageRecallPanel then
+    self:GetGameObject("ImageRecallPanel"):SetActive(true)
+    self._leftPanelGo:SetActive(true)
+    self._petInfoPanel:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController._RefreshButtonStatus = function(self)
-  -- function num : 0_17 , upvalues : PetIntimacyWindowType
-  (self._buttonFilesOn):SetActive(false)
-  ;
-  (self._buttonVoiceOn):SetActive(false)
-  ;
-  (self._buttonRecallOn):SetActive(false)
-  ;
-  (self._buttonFilesOff):SetActive(true)
-  ;
-  (self._buttonVoiceOff):SetActive(true)
-  ;
-  (self._buttonAudoOff):SetActive(true)
+function UIPetIntimacyMainController:_RefreshButtonStatus()
+  self._buttonFilesOn:SetActive(false)
+  self._buttonVoiceOn:SetActive(false)
+  self._buttonRecallOn:SetActive(false)
+  self._buttonFilesOff:SetActive(true)
+  self._buttonVoiceOff:SetActive(true)
+  self._buttonAudoOff:SetActive(true)
   if self._currentWindowType == PetIntimacyWindowType.FilesPanel then
-    (self._buttonFilesOn):SetActive(true)
-    ;
-    (self._buttonFilesOff):SetActive(false)
-  else
-    if self._currentWindowType == PetIntimacyWindowType.VoicePanel then
-      (self._buttonVoiceOn):SetActive(true)
-      ;
-      (self._buttonVoiceOff):SetActive(false)
-    else
-      if self._currentWindowType == PetIntimacyWindowType.ImageRecallPanel then
-        (self._buttonRecallOn):SetActive(true)
-        ;
-        (self._buttonAudoOff):SetActive(false)
-      end
-    end
+    self._buttonFilesOn:SetActive(true)
+    self._buttonFilesOff:SetActive(false)
+  elseif self._currentWindowType == PetIntimacyWindowType.VoicePanel then
+    self._buttonVoiceOn:SetActive(true)
+    self._buttonVoiceOff:SetActive(false)
+  elseif self._currentWindowType == PetIntimacyWindowType.ImageRecallPanel then
+    self._buttonRecallOn:SetActive(true)
+    self._buttonAudoOff:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController._OpenWindow = function(self, windowType, isFirstOpen, isPetChanged)
-  -- function num : 0_18 , upvalues : PetIntimacyWindowType
+function UIPetIntimacyMainController:_OpenWindow(windowType, isFirstOpen, isPetChanged)
   if self._currentWindowType == windowType then
-    return 
+    return
   end
   if self._currentWindowType then
-    ((self._windows)[self._currentWindowType]):CloseWindow()
+    self._windows[self._currentWindowType]:CloseWindow()
   end
   self._preWindowType = self._currentWindowType
   self._currentWindowType = windowType
   self:_RefreshButtonStatus()
   self:_RefreshPanelState(isFirstOpen)
   if isPetChanged then
-    ((self._windows)[PetIntimacyWindowType.FilesPanel]):PetDataChanged(self._petData)
-    ;
-    ((self._windows)[PetIntimacyWindowType.VoicePanel]):PetDataChanged(self._petData)
-    ;
-    ((self._windows)[PetIntimacyWindowType.ImageRecallPanel]):PetDataChanged(self._petData)
-    self._oldPetID = (self._petData):GetTemplateID()
+    self._windows[PetIntimacyWindowType.FilesPanel]:PetDataChanged(self._petData)
+    self._windows[PetIntimacyWindowType.VoicePanel]:PetDataChanged(self._petData)
+    self._windows[PetIntimacyWindowType.ImageRecallPanel]:PetDataChanged(self._petData)
+    self._oldPetID = self._petData:GetTemplateID()
   end
-  ;
-  ((self._windows)[windowType]):Refresh()
+  self._windows[windowType]:Refresh()
   local scrollEnable = self._currentWindowType == PetIntimacyWindowType.GiftPanel
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._petScrollRect).enabled = scrollEnable
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._petScrollRect.enabled = scrollEnable
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController.OnItemCountChanged = function(self)
-  -- function num : 0_19 , upvalues : PetIntimacyWindowType
+function UIPetIntimacyMainController:OnItemCountChanged()
   if self._currentWindowType ~= PetIntimacyWindowType.GiftPanel then
-    return 
+    return
   end
-  local window = (self._windows)[PetIntimacyWindowType.GiftPanel]
+  local window = self._windows[PetIntimacyWindowType.GiftPanel]
   window:Refresh()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController._ShowPlayVoicePanel = function(self, voiceContent, isNormal)
-  -- function num : 0_20 , upvalues : _ENV
+function UIPetIntimacyMainController:_ShowPlayVoicePanel(voiceContent, isNormal)
   if isNormal then
-    (self._normalVoiceIconGo):SetActive(true)
-    ;
-    (self._inteimacyVoiceIconGo):SetActive(false)
+    self._normalVoiceIconGo:SetActive(true)
+    self._inteimacyVoiceIconGo:SetActive(false)
   else
-    ;
-    (self._normalVoiceIconGo):SetActive(false)
-    ;
-    (self._inteimacyVoiceIconGo):SetActive(true)
+    self._normalVoiceIconGo:SetActive(false)
+    self._inteimacyVoiceIconGo:SetActive(true)
   end
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._voiceContent).text = voiceContent
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._voiceContent).transform).localPosition = Vector3.zero
-  ;
-  (self._playVoicePanel):SetActive(true)
-  ;
-  (self._petInfoPanel):SetActive(false)
+  self._voiceContent.text = voiceContent
+  self._voiceContent.transform.localPosition = Vector3.zero
+  self._playVoicePanel:SetActive(true)
+  self._petInfoPanel:SetActive(false)
   local inAnimName = "uieff_SpiritIntimacy_PlayVoice_In"
-  ;
-  (self._intAnim):Play(inAnimName)
+  self._intAnim:Play(inAnimName)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController._ClosePlayVoicePanel = function(self, isPlayAnim)
-  -- function num : 0_21 , upvalues : _ENV, PetIntimacyWindowType
+function UIPetIntimacyMainController:_ClosePlayVoicePanel(isPlayAnim)
   if isPlayAnim then
-    self._playVoiceTask = ((GameGlobal.TaskManager)()):StartTask(self._PlayVoicePanelCloseAnim, self)
+    self._playVoiceTask = GameGlobal.TaskManager():StartTask(self._PlayVoicePanelCloseAnim, self)
   else
-    ;
-    (self._playVoicePanel):SetActive(false)
+    self._playVoicePanel:SetActive(false)
   end
   if self._currentWindowType ~= PetIntimacyWindowType.GiftPanel then
-    (self._petInfoPanel):SetActive(true)
+    self._petInfoPanel:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController._PlayVoicePanelCloseAnim = function(self, TT)
-  -- function num : 0_22 , upvalues : _ENV
+function UIPetIntimacyMainController:_PlayVoicePanelCloseAnim(TT)
   local inAnimName = "uieff_SpiritIntimacy_PlayVoice_Out"
-  ;
-  (self._intAnim):Play(inAnimName)
+  self._intAnim:Play(inAnimName)
   YIELD(TT, 200)
-  ;
-  (self._playVoicePanel):SetActive(false)
+  self._playVoicePanel:SetActive(false)
   self._playVoiceTask = nil
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController.PlayVoice = function(self, voiceContent, isNormal)
-  -- function num : 0_23
+function UIPetIntimacyMainController:PlayVoice(voiceContent, isNormal)
   self:_ShowPlayVoicePanel(voiceContent, isNormal)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController.StopPlayVoice = function(self, isPlayAnim)
-  -- function num : 0_24
+function UIPetIntimacyMainController:StopPlayVoice(isPlayAnim)
   self:_ClosePlayVoicePanel(isPlayAnim)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController.ShowItemTips = function(self, itemId, pos)
-  -- function num : 0_25
-  (self._tips):SetData(itemId, pos)
+function UIPetIntimacyMainController:ShowItemTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController.CloseItemTips = function(self)
-  -- function num : 0_26
-  (self._tips):closeOnClick()
+function UIPetIntimacyMainController:CloseItemTips()
+  self._tips:closeOnClick()
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController.ButtonMaskOnClick = function(self, go)
-  -- function num : 0_27
+function UIPetIntimacyMainController:ButtonMaskOnClick(go)
   self:_ClosePlayVoicePanel(true)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController.ButtonFilesOnClick = function(self, go)
-  -- function num : 0_28 , upvalues : _ENV, PetIntimacyWindowType
-  (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.SoundSwitch)
+function UIPetIntimacyMainController:ButtonFilesOnClick(go)
+  AudioHelperController.PlayRequestedUISound(CriAudioIDConst.SoundSwitch)
   self:_OpenWindow(PetIntimacyWindowType.FilesPanel)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController.ButtonVoiceOnClick = function(self, go)
-  -- function num : 0_29 , upvalues : _ENV, PetIntimacyWindowType
-  (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.SoundSwitch)
+function UIPetIntimacyMainController:ButtonVoiceOnClick(go)
+  AudioHelperController.PlayRequestedUISound(CriAudioIDConst.SoundSwitch)
   self:_OpenWindow(PetIntimacyWindowType.VoicePanel)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController.ButtonGiftOnClick = function(self, go)
-  -- function num : 0_30 , upvalues : _ENV, PetIntimacyWindowType
+function UIPetIntimacyMainController:ButtonGiftOnClick(go)
   if GameSingle then
-    return 
+    return
   end
   self:_OpenWindow(PetIntimacyWindowType.GiftPanel)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController.ButtonRecallOnClick = function(self, go)
-  -- function num : 0_31 , upvalues : _ENV, PetIntimacyWindowType
-  (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.SoundSwitch)
+function UIPetIntimacyMainController:ButtonRecallOnClick(go)
+  AudioHelperController.PlayRequestedUISound(CriAudioIDConst.SoundSwitch)
   self:_OpenWindow(PetIntimacyWindowType.ImageRecallPanel)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPetIntimacyMainController.imgStumblesOnClick = function(self, go)
-  -- function num : 0_32
+function UIPetIntimacyMainController:imgStumblesOnClick(go)
   self:ShowDialog("UIPetIntimacyStumbles", self._petData)
 end
-
-

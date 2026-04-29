@@ -1,25 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/campsites/ui_season_maze_campsites_smithy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_season_maze_campsites_base")
 _class("UiSmithyItemData", Object)
 UiSmithyItemData = UiSmithyItemData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UiSmithyItemData.Constructor = function(self, slotIndex, slotData)
-  -- function num : 0_0
+function UiSmithyItemData:Constructor(slotIndex, slotData)
   self._slotIndex = slotIndex
   self._slotData = slotData
 end
 
 _class("UISeasonMaze_Campsites_Smithy", UISeasonMaze_Campsites_Base)
 UISeasonMaze_Campsites_Smithy = UISeasonMaze_Campsites_Smithy
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMaze_Campsites_Smithy.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMaze_Campsites_Smithy:InitWidget()
   self.topBtn = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._pool = self:GetUIComponent("UISelectObjectPath", "Content")
   self._ResetTex = self:GetUIComponent("UILocalizationText", "ResetTex")
@@ -32,81 +23,57 @@ UISeasonMaze_Campsites_Smithy.InitWidget = function(self)
   self._talkGo = self:GetGameObject("talkGo")
   self._talkTex = self:GetUIComponent("UILocalizationText", "talkTex")
   self._talkAnim = self:GetUIComponent("Animation", "talkGo")
-  self._talks = {[1] = "str_season_maze_shop_room_npc_talk_1", [2] = "str_season_maze_shop_room_npc_talk_2", [3] = "str_season_maze_shop_room_npc_talk_3"}
+  self._talks = {
+    [1] = "str_season_maze_shop_room_npc_talk_1",
+    [2] = "str_season_maze_shop_room_npc_talk_2",
+    [3] = "str_season_maze_shop_room_npc_talk_3"
+  }
   self._talkIdx = 0
   self:AttachEvent(GameEventType.OnSeasonMazeShowRewardsFinish, self.OnSeasonMazeShowRewardsFinish)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.SetTopBtn = function(self)
-  -- function num : 0_2
-  ((self.topBtn):SpawnObject("UISMazeCommonTopButton")):SetData(function()
-    -- function num : 0_2_0 , upvalues : self
+function UISeasonMaze_Campsites_Smithy:SetTopBtn()
+  self.topBtn:SpawnObject("UISMazeCommonTopButton"):SetData(function()
     self:CloseDialog()
-  end
-, nil, nil, true)
+  end, nil, nil, true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.PetBtnOnClick = function(self)
-  -- function num : 0_3
+function UISeasonMaze_Campsites_Smithy:PetBtnOnClick()
   self:PlayTalk()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.PlayTalk = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMaze_Campsites_Smithy:PlayTalk()
   local randomList = {}
-  for index,value in ipairs(self._talks) do
+  for index, value in ipairs(self._talks) do
     if index ~= self._talkIdx then
-      (table.insert)(randomList, value)
+      table.insert(randomList, value)
     end
   end
-  self._talkIdx = (math.random)(1, #randomList)
+  self._talkIdx = math.random(1, #randomList)
   local tex = randomList[self._talkIdx]
-  ;
-  (self._talkTex):SetText((StringTable.Get)(tex))
+  self._talkTex:SetText(StringTable.Get(tex))
   self:PlayTalkShowAnim()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
-  self._timer = ((GameGlobal.Timer)()):AddEvent(5000, function()
-    -- function num : 0_4_0 , upvalues : self
+  self._timer = GameGlobal.Timer():AddEvent(5000, function()
     self:PlayTalkHideAnim()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.PlayTalkShowAnim = function(self)
-  -- function num : 0_5
-  (self._talkAnim):Stop()
-  ;
-  (self._talkAnim):Play("uieffanim_UISeasonMaze_Campsites_Smithy_talkGo_in")
+function UISeasonMaze_Campsites_Smithy:PlayTalkShowAnim()
+  self._talkAnim:Stop()
+  self._talkAnim:Play("uieffanim_UISeasonMaze_Campsites_Smithy_talkGo_in")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.PlayTalkHideAnim = function(self)
-  -- function num : 0_6
-  (self._talkAnim):Stop()
-  ;
-  (self._talkAnim):Play("uieffanim_UISeasonMaze_Campsites_Smithy_talkGo_out")
+function UISeasonMaze_Campsites_Smithy:PlayTalkHideAnim()
+  self._talkAnim:Stop()
+  self._talkAnim:Play("uieffanim_UISeasonMaze_Campsites_Smithy_talkGo_out")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.OnShowUI = function(self, uiParams)
-  -- function num : 0_7 , upvalues : _ENV
-  self._mulitOpen = (UnityEngine.Input).multiTouchEnabled
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (UnityEngine.Input).multiTouchEnabled = false
+function UISeasonMaze_Campsites_Smithy:OnShowUI(uiParams)
+  self._mulitOpen = UnityEngine.Input.multiTouchEnabled
+  UnityEngine.Input.multiTouchEnabled = false
   self._showInAnimPlayed = false
   self:InitWidget()
   self:SetTopBtn()
@@ -115,62 +82,48 @@ UISeasonMaze_Campsites_Smithy.OnShowUI = function(self, uiParams)
   self:PlayTalk()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.SetUISeasonMazeTopIcon = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonMaze_Campsites_Smithy:SetUISeasonMazeTopIcon()
   if self.UISeasonMazeTopIcon then
     if not self.UISeasonMazeTopIconWidget then
-      self.UISeasonMazeTopIconWidget = (self.UISeasonMazeTopIcon):SpawnObject("UISeasonMazeTopIcon")
+      self.UISeasonMazeTopIconWidget = self.UISeasonMazeTopIcon:SpawnObject("UISeasonMazeTopIcon")
     end
-    local typeList = {SeasonMazeTopIconType.Money}
-    ;
-    (self.UISeasonMazeTopIconWidget):SetData(typeList)
+    local typeList = {
+      SeasonMazeTopIconType.Money
+    }
+    self.UISeasonMazeTopIconWidget:SetData(typeList)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.SetItemList = function(self)
-  -- function num : 0_9
-  (self._pool):SpawnObjects("UISeasonMaze_Campsites_SmithyWidget", #self._itemList)
-  local pools = (self._pool):GetAllSpawnList()
+function UISeasonMaze_Campsites_Smithy:SetItemList()
+  self._pool:SpawnObjects("UISeasonMaze_Campsites_SmithyWidget", #self._itemList)
+  local pools = self._pool:GetAllSpawnList()
   self._cellWidgets = pools
   for i = 1, #self._itemList do
     local widget = pools[i]
-    local item = (self._itemList)[i]
+    local item = self._itemList[i]
     widget:SetData(i, item, function(idx)
-    -- function num : 0_9_0 , upvalues : self
-    self:OnItemClick(idx)
-  end
-, self._com)
+      self:OnItemClick(idx)
+    end, self._com)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.TryPlayFirstShowInAnim = function(self)
-  -- function num : 0_10
+function UISeasonMaze_Campsites_Smithy:TryPlayFirstShowInAnim()
   if self._showInAnimPlayed then
-    return 
+    return
   end
   self._showInAnimPlayed = true
   self:PlayCellsShowInAnim()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.PlayCellsShowInAnim = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonMaze_Campsites_Smithy:PlayCellsShowInAnim()
   self._cellCountPerRow = 4
   local lockName = "UISeasonMaze_Campsites_Smithy:PlayCellsShowInAnim"
   self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : self, _ENV
     local eachDelay = 50
     local lockTime = 500
     local maxDelayMs = 0
     if self._cellWidgets then
-      for index,widget in ipairs(self._cellWidgets) do
+      for index, widget in ipairs(self._cellWidgets) do
         local col = index % self._cellCountPerRow
         if col == 0 then
           col = self._cellCountPerRow
@@ -180,119 +133,77 @@ UISeasonMaze_Campsites_Smithy.PlayCellsShowInAnim = function(self)
         maxDelayMs = delayMs
       end
     end
-    do
-      lockTime = lockTime + maxDelayMs
-    end
-  end
-)
+    lockTime = lockTime + maxDelayMs
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.PlayCellsOutAnim = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UISeasonMaze_Campsites_Smithy:PlayCellsOutAnim()
   if self._cellWidgets then
-    for index,widget in ipairs(self._cellWidgets) do
+    for index, widget in ipairs(self._cellWidgets) do
       widget:PlayShowOutAnim()
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.OnItemClick = function(self, idx)
-  -- function num : 0_13
+function UISeasonMaze_Campsites_Smithy:OnItemClick(idx)
   self._chooseIdx = idx
   self:RefreshSelectItem()
   self:ShowBuy()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.RefreshSelectItem = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UISeasonMaze_Campsites_Smithy:RefreshSelectItem()
   if self._cellWidgets then
-    for index,widget in ipairs(self._cellWidgets) do
+    for index, widget in ipairs(self._cellWidgets) do
       widget:ShowSelected(index == self._chooseIdx)
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.ShowBuy = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local uiData = (self._itemList)[self._chooseIdx]
+function UISeasonMaze_Campsites_Smithy:ShowBuy()
+  local uiData = self._itemList[self._chooseIdx]
   if uiData then
-    local seasomMazeEffectType = ((uiData._slotData).item).type
+    local seasomMazeEffectType = uiData._slotData.item.type
     if seasomMazeEffectType == SeasonMazeEffectType.SMET_Once then
       self:ShowDialog("UISeasonMaze_Campsites_SmithyBuyItem", uiData, self._com, function()
-    -- function num : 0_15_0 , upvalues : self
-    self:ReqSmithBuy()
-  end
-)
+        self:ReqSmithBuy()
+      end)
+    elseif uiData._slotData.item.id == SeasonMazeAttrType.SMAT_WorldBossTicket then
+      self:ShowDialog("UISeasonMaze_Campsites_SmithyBuyItem", uiData, self._com, function()
+        self:ReqSmithBuy()
+      end, true)
     else
-      if ((uiData._slotData).item).id == SeasonMazeAttrType.SMAT_WorldBossTicket then
-        self:ShowDialog("UISeasonMaze_Campsites_SmithyBuyItem", uiData, self._com, function()
-    -- function num : 0_15_1 , upvalues : self
-    self:ReqSmithBuy()
-  end
-, true)
-      else
-        self:ShowDialog("UISeasonMaze_Campsites_SmithyBuyRelic", uiData, self._com, function()
-    -- function num : 0_15_2 , upvalues : self
-    self:ReqSmithBuy()
-  end
-)
-      end
+      self:ShowDialog("UISeasonMaze_Campsites_SmithyBuyRelic", uiData, self._com, function()
+        self:ReqSmithBuy()
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.CreateData = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UISeasonMaze_Campsites_Smithy:CreateData()
   self._itemList = {}
-  local comInfo = (self._com):GetComponentInfo()
+  local comInfo = self._com:GetComponentInfo()
   local slotInfo = comInfo.slot_info
-  if slotInfo and (table.count)(slotInfo.items) > 0 then
+  if slotInfo and table.count(slotInfo.items) > 0 then
     local slotItems = slotInfo.items
-    for key,value in pairs(slotItems) do
-      if (value.item).id == 0 and value.price == 0 then
-        do
-          local uiSmithyItemData = UiSmithyItemData:New(key, value)
-          ;
-          (table.insert)(self._itemList, uiSmithyItemData)
-          -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+    for key, value in pairs(slotItems) do
+      if value.item.id == 0 and value.price == 0 then
+      else
+        local uiSmithyItemData = UiSmithyItemData:New(key, value)
+        table.insert(self._itemList, uiSmithyItemData)
       end
     end
-    ;
-    (table.sort)(self._itemList, function(a, b)
-    -- function num : 0_16_0
-    do return a._slotIndex < b._slotIndex end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    table.sort(self._itemList, function(a, b)
+      return a._slotIndex < b._slotIndex
+    end)
     self._resetCount = slotInfo.reset_cnt
     self:RefreshInfos()
     self:TryPlayFirstShowInAnim()
   else
-    do
-      self:ReqSlotInfos()
-    end
+    self:ReqSlotInfos()
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.RefreshInfos = function(self)
-  -- function num : 0_17
+function UISeasonMaze_Campsites_Smithy:RefreshInfos()
   self._chooseIdx = 0
   self:SetItemList()
   self:RefreshSelectItem()
@@ -300,39 +211,26 @@ UISeasonMaze_Campsites_Smithy.RefreshInfos = function(self)
   self:RefreshMoney()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.ReqSlotInfos = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UISeasonMaze_Campsites_Smithy:ReqSlotInfos()
   self:Lock("UISeasonMaze_Campsites_Smithy:ReqSlotInfos")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.TaskReqSlotInfos, self)
+  GameGlobal.TaskManager():StartTask(self.TaskReqSlotInfos, self)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.TaskReqSlotInfos = function(self, TT)
-  -- function num : 0_19 , upvalues : _ENV
+function UISeasonMaze_Campsites_Smithy:TaskReqSlotInfos(TT)
   local res = AsyncRequestRes:New()
-  local response = (self._com):HandleSeasonMazeGetSlot(TT, res)
+  local response = self._com:HandleSeasonMazeGetSlot(TT, res)
   self:UnLock("UISeasonMaze_Campsites_Smithy:ReqSlotInfos")
   if res:GetSucc() then
     self._itemList = {}
-    local comInfo = (self._com):GetComponentInfo()
+    local comInfo = self._com:GetComponentInfo()
     local slotInfo = comInfo.slot_info
     if slotInfo then
       local slotItems = slotInfo.items
-      for key,value in pairs(slotItems) do
-        if (value.item).id == 0 and value.price == 0 then
-          do
-            local uiSmithyItemData = UiSmithyItemData:New(key, value)
-            ;
-            (table.insert)(self._itemList, uiSmithyItemData)
-            -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+      for key, value in pairs(slotItems) do
+        if value.item.id == 0 and value.price == 0 then
+        else
+          local uiSmithyItemData = UiSmithyItemData:New(key, value)
+          table.insert(self._itemList, uiSmithyItemData)
         end
       end
       self._resetCount = slotInfo.reset_cnt
@@ -340,203 +238,137 @@ UISeasonMaze_Campsites_Smithy.TaskReqSlotInfos = function(self, TT)
       self:TryPlayFirstShowInAnim()
     end
   else
-    do
-      local result = res:GetResult()
-      ;
-      (Log.error)("###[UISeasonMaze_Campsites_Smithy] HandleSeasonMazeGetSlot fail! result:", result)
-      if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-        return 
-      end
+    local result = res:GetResult()
+    Log.error("###[UISeasonMaze_Campsites_Smithy] HandleSeasonMazeGetSlot fail! result:", result)
+    if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.ReqSmithBuy = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local curGold = (self._com):GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
-  local uiData = (self._itemList)[self._chooseIdx]
+function UISeasonMaze_Campsites_Smithy:ReqSmithBuy()
+  local curGold = self._com:GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
+  local uiData = self._itemList[self._chooseIdx]
   if uiData then
-    local cost = (uiData._slotData).price
+    local cost = uiData._slotData.price
     if curGold < cost then
-      local tips = (StringTable.Get)("str_season_maze_gold_not_enough")
-      ;
-      (ToastManager.ShowToast)(tips)
-      return 
+      local tips = StringTable.Get("str_season_maze_gold_not_enough")
+      ToastManager.ShowToast(tips)
+      return
     end
   end
-  do
-    self:Lock("UISeasonMaze_Campsites_Smithy:ReqSmithBuy")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.TaskReqSmithBuy, self)
-  end
+  self:Lock("UISeasonMaze_Campsites_Smithy:ReqSmithBuy")
+  GameGlobal.TaskManager():StartTask(self.TaskReqSmithBuy, self)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.TaskReqSmithBuy = function(self, TT)
-  -- function num : 0_21 , upvalues : _ENV
+function UISeasonMaze_Campsites_Smithy:TaskReqSmithBuy(TT)
   local res = AsyncRequestRes:New()
-  local uiData = (self._itemList)[self._chooseIdx]
+  local uiData = self._itemList[self._chooseIdx]
   if uiData then
     local slotIndex = uiData._slotIndex
-    do
-      local response = (self._com):HandleSeasonMazeOperaSlot(TT, res, slotIndex, false)
-      self:UnLock("UISeasonMaze_Campsites_Smithy:ReqSmithBuy")
-      if res:GetSucc() then
-        self:OnBuyEnd()
-        local showRewards = {}
-        for _,value in ipairs(response.reward) do
-          local reward = value
-          if reward.type == SeasonMazeEffectType.SMET_Relic then
-            (table.insert)(showRewards, reward)
-          end
+    local response = self._com:HandleSeasonMazeOperaSlot(TT, res, slotIndex, false)
+    self:UnLock("UISeasonMaze_Campsites_Smithy:ReqSmithBuy")
+    if res:GetSucc() then
+      self:OnBuyEnd()
+      local showRewards = {}
+      for _, value in ipairs(response.reward) do
+        local reward = value
+        if reward.type == SeasonMazeEffectType.SMET_Relic then
+          table.insert(showRewards, reward)
         end
-        if #showRewards > 0 then
-          self._waitGetRewardsFinishCb = function()
-    -- function num : 0_21_0 , upvalues : _ENV, response
-    (SMazeAdaptor.OnRelicObtained)(response.reward, SMazeRelicReason.BuyRelic)
-  end
-
-          ;
-          (SeasonMazeTool:GetInstance()):ShowUIGetRewards(showRewards)
-        else
-          ;
-          (SMazeAdaptor.OnRelicObtained)(response.reward, SMazeRelicReason.BuyRelic)
+      end
+      if 0 < #showRewards then
+        function self._waitGetRewardsFinishCb()
+          SMazeAdaptor.OnRelicObtained(response.reward, SMazeRelicReason.BuyRelic)
         end
+        
+        SeasonMazeTool:GetInstance():ShowUIGetRewards(showRewards)
       else
-        do
-          local result = res:GetResult()
-          ;
-          (Log.error)("###[UISeasonMaze_Campsites_Recruit] HandleSeasonMazeOperaSlot fail! result:", result)
-          if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-            return 
-          end
+        SMazeAdaptor.OnRelicObtained(response.reward, SMazeRelicReason.BuyRelic)
+      end
+    else
+      do
+        local result = res:GetResult()
+        Log.error("###[UISeasonMaze_Campsites_Recruit] HandleSeasonMazeOperaSlot fail! result:", result)
+        if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+          return
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.OnBuyEnd = function(self)
-  -- function num : 0_22
+function UISeasonMaze_Campsites_Smithy:OnBuyEnd()
   self:CreateData()
   self._chooseIdx = 0
   self:RefreshSelectItem()
   self:ShowResetPrice()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.RefreshMoney = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUISeasonMazeAttChanged, SeasonMazeAttrType.SMAT_Gold)
+function UISeasonMaze_Campsites_Smithy:RefreshMoney()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUISeasonMazeAttChanged, SeasonMazeAttrType.SMAT_Gold)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.OnHide = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  (UnityEngine.Input).multiTouchEnabled = self._mulitOpen
+function UISeasonMaze_Campsites_Smithy:OnHide()
+  UnityEngine.Input.multiTouchEnabled = self._mulitOpen
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.GetResetCost = function(self)
-  -- function num : 0_25
-  return self:CalcResetCost(self._resetCount, (self._cfg_global).SlotParam)
+function UISeasonMaze_Campsites_Smithy:GetResetCost()
+  return self:CalcResetCost(self._resetCount, self._cfg_global.SlotParam)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.ShowResetPrice = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UISeasonMaze_Campsites_Smithy:ShowResetPrice()
   local cost = self:GetResetCost()
-  local curGold = (self._com):GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
+  local curGold = self._com:GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
   local costStr = tostring(cost)
-  if curGold < cost then
+  if cost > curGold then
     costStr = "<color=#c97d7d>" .. costStr .. "</color>"
   end
-  ;
-  (self._ResetCostText):SetText(costStr)
+  self._ResetCostText:SetText(costStr)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.PlayResetBtnAnim = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  (self._ResetBtnAnim):Stop()
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._ResetBtnRect).localScale = Vector3(1, 1, 1)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._ResetMaskImage).color = Color(0.54901960784314, 0.54901960784314, 0.54901960784314, 0)
-  ;
-  (self._ResetBtnAnim):Play("uieffanim_UISeasonMaze_Campsites_Bank_SaveBtn1_click")
+function UISeasonMaze_Campsites_Smithy:PlayResetBtnAnim()
+  self._ResetBtnAnim:Stop()
+  self._ResetBtnRect.localScale = Vector3(1, 1, 1)
+  self._ResetMaskImage.color = Color(0.5490196078431373, 0.5490196078431373, 0.5490196078431373, 0)
+  self._ResetBtnAnim:Play("uieffanim_UISeasonMaze_Campsites_Bank_SaveBtn1_click")
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.ResetBtnMaskOnClick = function(self, go)
-  -- function num : 0_28
+function UISeasonMaze_Campsites_Smithy:ResetBtnMaskOnClick(go)
   self:PlayResetBtnAnim()
   self:ReqResetSlots()
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.ReqResetSlots = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  local curGold = (self._com):GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
+function UISeasonMaze_Campsites_Smithy:ReqResetSlots()
+  local curGold = self._com:GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
   local cost = self:GetResetCost()
-  do
-    if curGold < cost then
-      local tips = (StringTable.Get)("str_season_maze_gold_not_enough")
-      ;
-      (ToastManager.ShowToast)(tips)
-      return 
-    end
-    self:Lock("UISeasonMaze_Campsites_Smithy:ReqResetSlots")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.TaskReqResetSlots, self)
+  if curGold < cost then
+    local tips = StringTable.Get("str_season_maze_gold_not_enough")
+    ToastManager.ShowToast(tips)
+    return
   end
+  self:Lock("UISeasonMaze_Campsites_Smithy:ReqResetSlots")
+  GameGlobal.TaskManager():StartTask(self.TaskReqResetSlots, self)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.TaskReqResetSlots = function(self, TT)
-  -- function num : 0_30 , upvalues : _ENV
+function UISeasonMaze_Campsites_Smithy:TaskReqResetSlots(TT)
   local res = AsyncRequestRes:New()
   local tmpIndex = 1
-  local response = (self._com):HandleSeasonMazeOperaSlot(TT, res, tmpIndex, true)
+  local response = self._com:HandleSeasonMazeOperaSlot(TT, res, tmpIndex, true)
   if res:GetSucc() then
     self._itemList = {}
-    local comInfo = (self._com):GetComponentInfo()
+    local comInfo = self._com:GetComponentInfo()
     local slotInfo = comInfo.slot_info
     if slotInfo then
       local slotItems = slotInfo.items
-      for key,value in pairs(slotItems) do
-        if (value.item).id == 0 and value.price == 0 then
-          do
-            local uiSmithyItemData = UiSmithyItemData:New(key, value)
-            ;
-            (table.insert)(self._itemList, uiSmithyItemData)
-            -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+      for key, value in pairs(slotItems) do
+        if value.item.id == 0 and value.price == 0 then
+        else
+          local uiSmithyItemData = UiSmithyItemData:New(key, value)
+          table.insert(self._itemList, uiSmithyItemData)
         end
       end
       self._resetCount = slotInfo.reset_cnt
@@ -551,33 +383,22 @@ UISeasonMaze_Campsites_Smithy.TaskReqResetSlots = function(self, TT)
       self:UnLock("UISeasonMaze_Campsites_Smithy:ReqResetSlots")
     end
   else
-    do
-      self:UnLock("UISeasonMaze_Campsites_Smithy:ReqResetSlots")
-      local result = res:GetResult()
-      ;
-      (Log.error)("###[UISeasonMaze_Campsites_Recruit] HandleSeasonMazeOperaSlot fail! result:", result)
-      if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-        return 
-      end
+    self:UnLock("UISeasonMaze_Campsites_Smithy:ReqResetSlots")
+    local result = res:GetResult()
+    Log.error("###[UISeasonMaze_Campsites_Recruit] HandleSeasonMazeOperaSlot fail! result:", result)
+    if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.BagBtnOnClick = function(self, go)
-  -- function num : 0_31
+function UISeasonMaze_Campsites_Smithy:BagBtnOnClick(go)
   self:ShowDialog("UISeasonMazeBackPackController", 2)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Smithy.OnSeasonMazeShowRewardsFinish = function(self, flag)
-  -- function num : 0_32
+function UISeasonMaze_Campsites_Smithy:OnSeasonMazeShowRewardsFinish(flag)
   if self._waitGetRewardsFinishCb then
-    (self._waitGetRewardsFinishCb)()
+    self._waitGetRewardsFinishCb()
     self._waitGetRewardsFinishCb = nil
   end
 end
-
-

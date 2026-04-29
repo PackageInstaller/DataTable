@@ -1,47 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n11/review/ui_activity_n11_review_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN11MainController_Review", UIController)
 UIActivityN11MainController_Review = UIActivityN11MainController_Review
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN11MainController_Review.Constructor = function(self, ui_root_transform)
-  -- function num : 0_0
-  self.strsLeftTime = {"str_n11_left_time_d_h", "str_n11_left_time_h_m", "str_n11_left_time_m"}
-  self.strsTakeAwardLeftTime = {"str_n11_take_award_left_time_d_h", "str_n11_take_award_left_time_h_m", "str_n11_take_award_left_time_m"}
-  self.strsWillOpen = {"str_n11_will_open_after_d_h", "str_n11_will_open_after_h_m", "str_n11_will_open_after_m"}
+function UIActivityN11MainController_Review:Constructor(ui_root_transform)
+  self.strsLeftTime = {
+    "str_n11_left_time_d_h",
+    "str_n11_left_time_h_m",
+    "str_n11_left_time_m"
+  }
+  self.strsTakeAwardLeftTime = {
+    "str_n11_take_award_left_time_d_h",
+    "str_n11_take_award_left_time_h_m",
+    "str_n11_take_award_left_time_m"
+  }
+  self.strsWillOpen = {
+    "str_n11_will_open_after_d_h",
+    "str_n11_will_open_after_h_m",
+    "str_n11_will_open_after_m"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN11MainController_Review.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN11MainController_Review:LoadDataOnEnter(TT, res, uiParams)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_REVIEW_N11)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_REVIEW_N11)
   self.mCampaign = self:GetModule(CampaignModule)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
   if not self._campaign then
-    return 
+    return
   end
   self.isShow = true
   self._loginModule = self:GetModule(LoginModule)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN11MainController_Review.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN11MainController_Review:OnShow(uiParams)
   self.atlas = self:GetAsset("UIN11.spriteatlas", LoadType.SpriteAtlas)
   self.dictSprite = {
-[4] = {n = "n11_zjm_stage", d = "n11_zjm_stage_close"}
-}
+    [4] = {
+      n = "n11_zjm_stage",
+      d = "n11_zjm_stage_close"
+    }
+  }
   self.imgRT = uiParams[1]
   self.playFrom0 = uiParams[2]
   self.rt = self:GetUIComponent("RawImage", "rt")
@@ -49,212 +50,132 @@ UIActivityN11MainController_Review.OnShow = function(self, uiParams)
   local btns = self:GetUIComponent("UISelectObjectPath", "btns")
   self._redStageNormal = self:GetGameObject("redStageNormal")
   self._backBtns = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_0 , upvalues : self, _ENV
+  self._backBtns:SetData(function()
     self:SwitchState(UIStateType.UIActivityReview)
-  end
-, nil, nil, false, function()
-    -- function num : 0_2_1 , upvalues : self
+  end, nil, nil, false, function()
     self.isShow = false
     self:ShowHideUI()
-  end
-)
-  self.anim = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
+  end)
+  self.anim = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
   self.imgStageNormal = self:GetUIComponent("Image", "btnStageNormal")
-  -- DECOMPILER ERROR at PC60: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.imgStageNormal).alphaHitTestMinimumThreshold = 0.1
+  self.imgStageNormal.alphaHitTestMinimumThreshold = 0.1
   if self.playFrom0 then
-    do
-      local state = (self.anim):get_Item("uieff_N11_Main_In")
-      state.normalizedTime = 0.184
-      ;
-      (self.anim):Play()
-      self:Flush()
-    end
+  else
+    local state = self.anim:get_Item("uieff_N11_Main_In")
+    state.normalizedTime = 0.184
   end
+  self.anim:Play()
+  self:Flush()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN11MainController_Review.OnHide = function(self)
-  -- function num : 0_3
+function UIActivityN11MainController_Review:OnHide()
   if self.imgRT then
-    (self.imgRT):Release()
+    self.imgRT:Release()
     self.imgRT = nil
   end
   self.btnStageNormal = nil
   self.btnStageHard = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN11MainController_Review.CancelTimerEventNormal = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN11MainController_Review:CancelTimerEventNormal()
   if self.teNormal then
-    ((GameGlobal.Timer)()):CancelEvent(self.teNormal)
+    GameGlobal.Timer():CancelEvent(self.teNormal)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN11MainController_Review.Flush = function(self)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.rt).texture = self.imgRT
+function UIActivityN11MainController_Review:Flush()
+  self.rt.texture = self.imgRT
   self:FlushNormalStage()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN11MainController_Review.GetSpriteN = function(self, idx)
-  -- function num : 0_6
-  local n = (self.atlas):GetSprite(((self.dictSprite)[idx]).n)
+function UIActivityN11MainController_Review:GetSpriteN(idx)
+  local n = self.atlas:GetSprite(self.dictSprite[idx].n)
   return n
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN11MainController_Review.GetSpriteD = function(self, idx)
-  -- function num : 0_7
-  local d = (self.atlas):GetSprite(((self.dictSprite)[idx]).d)
+function UIActivityN11MainController_Review:GetSpriteD(idx)
+  local d = self.atlas:GetSprite(self.dictSprite[idx].d)
   return d
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN11MainController_Review.FlushRedPointStageNormal = function(self)
-  -- function num : 0_8
+function UIActivityN11MainController_Review:FlushRedPointStageNormal()
   local red = false
-  ;
-  (self._redStageNormal):SetActive(red)
+  self._redStageNormal:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN11MainController_Review.RegisterTimeEvent = function(self, seconds, componentId)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityN11MainController_Review:RegisterTimeEvent(seconds, componentId)
   if componentId == ECampaignReviewN11ComponentID.ECAMPAIGN_REVIEW_ReviewN11_LINE_MISSION then
     self:CancelTimerEventNormal()
   else
-    ;
-    (Log.warn)("### RegisterTimeEvent componentId=", componentId)
-    return 
+    Log.warn("### RegisterTimeEvent componentId=", componentId)
+    return
   end
   if seconds < 60 then
     seconds = 60
   end
   local ms = seconds * 1000
-  self._te = ((GameGlobal.Timer)()):AddEvent(ms, function()
-    -- function num : 0_9_0 , upvalues : self, componentId, _ENV
+  self._te = GameGlobal.Timer():AddEvent(ms, function()
     self:StartTask(function(TT)
-      -- function num : 0_9_0_0 , upvalues : self, componentId, _ENV
       if self._campaign and componentId == ECampaignReviewN11ComponentID.ECAMPAIGN_REVIEW_ReviewN11_LINE_MISSION then
         self:FlushNormalStage()
       end
-    end
-, self)
-  end
-)
+    end, self)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN11MainController_Review.FlushNormalStage = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.btnStageNormal).interactable = false
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.imgStageNormal).sprite = self:GetSpriteD(4)
-  local cNormalInfo = (self._campaign):GetComponentInfo(ECampaignReviewN11ComponentID.ECAMPAIGN_REVIEW_ReviewN11_LINE_MISSION)
+function UIActivityN11MainController_Review:FlushNormalStage()
+  self.btnStageNormal.interactable = false
+  self.imgStageNormal.sprite = self:GetSpriteD(4)
+  local cNormalInfo = self._campaign:GetComponentInfo(ECampaignReviewN11ComponentID.ECAMPAIGN_REVIEW_ReviewN11_LINE_MISSION)
   if not cNormalInfo then
-    (Log.fatal)("### cNormalInfo nil.")
-    return 
+    Log.fatal("### cNormalInfo nil.")
+    return
   end
   local state = UISummerOneEnterBtnState.Normal
   if state == UISummerOneEnterBtnState.NotOpen then
-    local leftSeconds = (UICommonHelper.CalcLeftSeconds)(cNormalInfo.m_unlock_time)
+    local leftSeconds = UICommonHelper.CalcLeftSeconds(cNormalInfo.m_unlock_time)
     self:RegisterTimeEvent(leftSeconds, ECampaignReviewN11ComponentID.ECAMPAIGN_REVIEW_ReviewN11_LINE_MISSION)
+  elseif state == UISummerOneEnterBtnState.Closed then
+    self:CancelTimerEventNormal()
+  elseif state == UISummerOneEnterBtnState.Normal then
+    self.btnStageNormal.interactable = true
+    self.imgStageNormal.sprite = self:GetSpriteN(4)
+    self:FlushRedPointStageNormal()
   else
-    do
-      if state == UISummerOneEnterBtnState.Closed then
-        self:CancelTimerEventNormal()
-      else
-        -- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-        if state == UISummerOneEnterBtnState.Normal then
-          (self.btnStageNormal).interactable = true
-          -- DECOMPILER ERROR at PC52: Confused about usage of register: R3 in 'UnsetPending'
-
-          ;
-          (self.imgStageNormal).sprite = self:GetSpriteN(4)
-          self:FlushRedPointStageNormal()
-        else
-          ;
-          (Log.fatal)("### state=", state)
-        end
-      end
-    end
+    Log.fatal("### state=", state)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN11MainController_Review.BgOnClick = function(self, go)
-  -- function num : 0_11
+function UIActivityN11MainController_Review:BgOnClick(go)
   if not self.isShow then
     self.isShow = true
     self:ShowHideUI()
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN11MainController_Review.BtnIntroOnClick = function(self, go)
-  -- function num : 0_12
+function UIActivityN11MainController_Review:BtnIntroOnClick(go)
   self:ShowDialog("UIN11Intro")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN11MainController_Review.BtnStageNormalOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityN11MainController_Review:BtnStageNormalOnClick(go)
   self:SwitchState(UIStateType.UIActivityN11LineMissionController_Review)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN11MainController_Review._ShowBtnErrorMsg = function(self, btnState)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityN11MainController_Review:_ShowBtnErrorMsg(btnState)
   local errType = 0
   if btnState == UISummerOneEnterBtnState.NotOpen then
     errType = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN
-  else
-    if btnState == UISummerOneEnterBtnState.Closed then
-      errType = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
-    end
+  elseif btnState == UISummerOneEnterBtnState.Closed then
+    errType = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
   end
-  ;
-  (self.mCampaign):ShowErrorToast(errType, true)
+  self.mCampaign:ShowErrorToast(errType, true)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN11MainController_Review.ShowHideUI = function(self)
-  -- function num : 0_15
+function UIActivityN11MainController_Review:ShowHideUI()
   local goSafeArea = self:GetGameObject("SafeArea")
   if self.isShow then
-    (self.anim):Play("uieff_n11_main_show")
+    self.anim:Play("uieff_n11_main_show")
   else
-    ;
-    (self.anim):Play("uieff_n11_main_hide")
+    self.anim:Play("uieff_n11_main_hide")
   end
 end
-
-

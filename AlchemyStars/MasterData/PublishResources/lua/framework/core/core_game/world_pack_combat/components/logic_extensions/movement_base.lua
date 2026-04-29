@@ -1,28 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_combat/components/logic_extensions/movement_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("IMovement", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-IMovement.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function IMovement:Constructor()
   self.NextPosition = Vector3(0, 0, 0)
   self.NextDirection = Vector3(0, 0, 0)
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-IMovement.IsFinish = function(self)
-  -- function num : 0_1
+function IMovement:IsFinish()
   return false
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-IMovement.Update = function(self, curPos, curDir, delta_time)
-  -- function num : 0_2
+function IMovement:Update(curPos, curDir, delta_time)
 end
-
-

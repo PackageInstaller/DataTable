@@ -1,74 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/intro/ui_activity_n22_intro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN22Intro", UIController)
 UIActivityN22Intro = UIActivityN22Intro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN22Intro.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN22Intro:OnShow(uiParams)
   self._param = uiParams[1] or "nil"
-  self._cfg = (Cfg.cfg_activityintro)[self._param]
+  self._cfg = Cfg.cfg_activityintro[self._param]
   if self._cfg == nil then
-    (Log.fatal)("###[UIActivityN22Intro] self._cfg is nil. param --> ", self._param)
+    Log.fatal("###[UIActivityN22Intro] self._cfg is nil. param --> ", self._param)
   end
   self.anim = self:GetUIComponent("Animation", "anim")
   self.Content = self:GetUIComponent("UILocalizationText", "Content")
   self._TitleText = self:GetUIComponent("UILocalizationText", "txtTitle")
   self:Flush()
   self:_PlayAnim("uieff_UIN22Intro_in", 500, function()
-    -- function num : 0_0_0
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN22Intro.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityN22Intro:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN22Intro.Flush = function(self)
-  -- function num : 0_2
+function UIActivityN22Intro:Flush()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN22Intro.BtnCloseOnClick = function(self, go)
-  -- function num : 0_3
+function UIActivityN22Intro:BtnCloseOnClick(go)
   self:_PlayAnim("uieff_UIN22Intro_out", 100, function()
-    -- function num : 0_3_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN22Intro.BgOnClick = function(self, go)
-  -- function num : 0_4
+function UIActivityN22Intro:BgOnClick(go)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN22Intro._PlayAnim = function(self, animName, time, callback)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN22Intro:_PlayAnim(animName, time, callback)
   self:Lock("UIActivityN22IntroAni")
-  ;
-  (self.anim):Play(animName)
+  self.anim:Play(animName)
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, time, self, callback
     YIELD(TT, time)
     self:UnLock("UIActivityN22IntroAni")
     if callback then
       callback()
     end
-  end
-, self)
+  end, self)
 end
-
-

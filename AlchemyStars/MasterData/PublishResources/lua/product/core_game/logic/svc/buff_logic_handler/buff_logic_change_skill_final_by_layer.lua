@@ -1,37 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_skill_final_by_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillFinalByLayer", BuffLogicBase)
 BuffLogicChangeSkillFinalByLayer = BuffLogicChangeSkillFinalByLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillFinalByLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._buffInstance)._effectList = logicParam.effectList
+function BuffLogicChangeSkillFinalByLayer:Constructor(buffInstance, logicParam)
+  self._buffInstance._effectList = logicParam.effectList
   self._oneLayerValue = logicParam.oneLayerValue or 0
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._calcLayerMax = logicParam.calcLayerMax or 0
-    self._useTeamLayer = logicParam.useTeamLayer or 0
-    self._baseValue = logicParam.baseValue
-  end
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._calcLayerMax = logicParam.calcLayerMax or 0
+  self._useTeamLayer = logicParam.useTeamLayer or 0
+  self._baseValue = logicParam.baseValue
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillFinalByLayer.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local svc = (self._world):GetService("BuffLogic")
+function BuffLogicChangeSkillFinalByLayer:DoLogic()
+  local svc = self._world:GetService("BuffLogic")
   local layerEntity = self._entity
   if self._useTeamLayer == 1 then
-    layerEntity = ((self._world):Player()):GetCurrentTeamEntity()
+    layerEntity = self._world:Player():GetCurrentTeamEntity()
   end
   local layer = svc:GetBuffLayer(layerEntity, self._layerType)
-  if self._calcLayerMax > 0 and self._calcLayerMax < layer then
+  if self._calcLayerMax > 0 and layer > self._calcLayerMax then
     layer = self._calcLayerMax
   end
   local changeValue = 0
@@ -39,26 +25,19 @@ BuffLogicChangeSkillFinalByLayer.DoLogic = function(self)
   if self._baseValue then
     changeValue = changeValue + self._baseValue - 1
   end
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, changeValue)
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, changeValue)
   end
 end
 
 _class("BuffLogicRemoveSkillFinalByLayer", BuffLogicBase)
 BuffLogicRemoveSkillFinalByLayer = BuffLogicRemoveSkillFinalByLayer
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveSkillFinalByLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveSkillFinalByLayer:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveSkillFinalByLayer.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
+function BuffLogicRemoveSkillFinalByLayer:DoLogic()
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
   end
 end
-
-

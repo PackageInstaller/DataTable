@@ -1,31 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_play_bgm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultPlayBGM", BuffResultBase)
 BuffResultPlayBGM = BuffResultPlayBGM
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultPlayBGM.Constructor = function(self, bgmID, useLevelBGM)
-  -- function num : 0_0
+function BuffResultPlayBGM:Constructor(bgmID, useLevelBGM)
   self._bgmID = bgmID
   self._useLevelBGM = useLevelBGM
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultPlayBGM.GetBGMID = function(self)
-  -- function num : 0_1
+function BuffResultPlayBGM:GetBGMID()
   return self._bgmID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultPlayBGM.GetuseLevelBGM = function(self)
-  -- function num : 0_2
+function BuffResultPlayBGM:GetuseLevelBGM()
   return self._useLevelBGM
 end
-
-

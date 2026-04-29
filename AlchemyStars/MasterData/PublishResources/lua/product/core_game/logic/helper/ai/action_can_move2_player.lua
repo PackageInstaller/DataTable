@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_can_move2_player.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCanMove2Player", AINewNode)
 ActionCanMove2Player = ActionCanMove2Player
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCanMove2Player.Constructor = function(self)
-  -- function num : 0_0
+function ActionCanMove2Player:Constructor()
   self._lastRunRound = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionCanMove2Player.OnUpdate = function(self, dt)
-  -- function num : 0_1 , upvalues : _ENV
-  local battleCmpt = (self._world):BattleStat()
+function ActionCanMove2Player:OnUpdate(dt)
+  local battleCmpt = self._world:BattleStat()
   local curRound = battleCmpt:GetLevelTotalRoundCount()
   if curRound == self._lastRunRound then
     return AINewNodeStatus.Failure
@@ -25,14 +15,11 @@ ActionCanMove2Player.OnUpdate = function(self, dt)
   local enableAnyPiece = self:GetLogicData(-1) or 0
   self._lastRunRound = curRound
   local entity = self.m_entityOwn
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
   local movePath, pieceType = utilCalcSvc:GetMonsterMove2PlayerNearestPath(entity, enableAnyPiece == 1)
   if pieceType then
     return AINewNodeStatus.Success
   else
     return AINewNodeStatus.Failure
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
-
-

@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/eliminate_worldboss_side_enter/ui_activity_data_loader_none.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_activity_data_loader_base")
 _class("UIActivityDataLoader_None", UIActivityDataLoaderBase)
 UIActivityDataLoader_None = UIActivityDataLoader_None
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityDataLoader_None.LoadData = function(self, TT)
-  -- function num : 0_0
+function UIActivityDataLoader_None:LoadData(TT)
   return {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDataLoader_None.CheckOpen = function(self)
-  -- function num : 0_1
+function UIActivityDataLoader_None:CheckOpen()
 end
-
-

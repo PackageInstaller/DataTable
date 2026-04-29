@@ -1,89 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMain", UIController)
 UIHomelandMain = UIHomelandMain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMain.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandMain:LoadDataOnEnter(TT, res, uiParams)
   self.mCampaign = self:GetModule(CampaignModule)
-  self._latestCampObj = (self.mCampaign):GetLatestCampaignObj(TT)
+  self._latestCampObj = self.mCampaign:GetLatestCampaignObj(TT)
   local homelandModule = self:GetModule(HomelandModule)
   homelandModule:HomelandStoryTaskAutoTraceReq(TT)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  self._uiHomelandModule = (self._homelandModule):GetUIModule()
-  self._homelandClient = (self._uiHomelandModule):GetClient()
-  self._isVisit = (self._homelandClient):IsVisit()
+function UIHomelandMain:OnShow(uiParams)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
+  self._uiHomelandModule = self._homelandModule:GetUIModule()
+  self._homelandClient = self._uiHomelandModule:GetClient()
+  self._isVisit = self._homelandClient:IsVisit()
   self._mobileMoveControlGO = self:GetGameObject("MobileMoveControl")
   self._mobileMoveConWidgetPool = self:GetUIComponent("UISelectObjectPath", "MobileMoveControl")
   self._controllerPanel = self:GetGameObject("ControllerPanel")
-  ;
-  (self:GetUIComponent("UISelectObjectPath", "Minmap")):SpawnObject("UIHomelandMinimap")
+  self:GetUIComponent("UISelectObjectPath", "Minmap"):SpawnObject("UIHomelandMinimap")
   self._minimapGo = self:GetGameObject("Minmap")
   self._uiRoot = self:GetGameObject("FullscreenAnchor")
   self._safeArea = self:GetGameObject("SafeArea")
   self._hideMask = self:GetGameObject("HideMask")
-  ;
-  (self:GetUIComponent("UISelectObjectPath", "eventTips")):SpawnObject("UIHomelandMainEventTips")
+  self:GetUIComponent("UISelectObjectPath", "eventTips"):SpawnObject("UIHomelandMainEventTips")
   self.btnsObj = self:GetGameObject("btns")
-  local mainBtns = (self:GetUIComponent("UISelectObjectPath", "btns")):SpawnObject("UIHomelandMainBtns")
+  local mainBtns = self:GetUIComponent("UISelectObjectPath", "btns"):SpawnObject("UIHomelandMainBtns")
   mainBtns:SetCampaignEnter(self._latestCampObj)
   if not self._isVisit then
-    (self:GetUIComponent("UISelectObjectPath", "fishing")):SpawnObject("UIHomelandFishing")
-    ;
-    (self:GetUIComponent("UISelectObjectPath", "felling")):SpawnObject("UIHomelandFelling")
-    ;
-    (self:GetUIComponent("UISelectObjectPath", "mining")):SpawnObject("UIHomelandMining")
+    self:GetUIComponent("UISelectObjectPath", "fishing"):SpawnObject("UIHomelandFishing")
+    self:GetUIComponent("UISelectObjectPath", "felling"):SpawnObject("UIHomelandFelling")
+    self:GetUIComponent("UISelectObjectPath", "mining"):SpawnObject("UIHomelandMining")
     self.homeLandTaskInfo = self:GetUIComponent("UISelectObjectPath", "homeLandTaskInfo")
   end
-  self._uiInteractPointController = (self:GetUIComponent("UISelectObjectPath", "Interact")):SpawnObject("UIInteractPointController")
+  self._uiInteractPointController = self:GetUIComponent("UISelectObjectPath", "Interact"):SpawnObject("UIInteractPointController")
   self._uiInteractGo = self:GetGameObject("Interact")
   self:Init()
   self:AddListener()
   if not self._isVisit then
-    local eventMgr = (self._homelandClient):HomeEventManager()
+    local eventMgr = self._homelandClient:HomeEventManager()
     local finishStory = eventMgr:GetFinishStoryID()
     if finishStory then
-      (CutsceneManager.ExcuteCutsceneOut)()
+      CutsceneManager.ExcuteCutsceneOut()
       self:Lock("UIHomelandMainGetStoryAwards")
-      ;
-      ((GameGlobal.TaskManager)()):StartTask(self.GetStoryAwards, self, finishStory)
+      GameGlobal.TaskManager():StartTask(self.GetStoryAwards, self, finishStory)
       eventMgr:InvokeFinishStoryEvent()
     end
   end
-  do
-    if (EngineGameHelper.IsDevelopmentBuild)() or (HelperProxy:GetInstance()):GetConfig("EnableTestFunc", "false") == "true" then
-      self._testFunc = (UIWidgetHelper.SpawnObject)(self, "TestFunc", "UIHomelandTestFunc")
-    end
-    ;
-    (self._homelandClient):AfterHomelandUIShow()
-    self:_CheckGuide()
-    self:ShowTaskInfo()
+  if EngineGameHelper.IsDevelopmentBuild() or HelperProxy:GetInstance():GetConfig("EnableTestFunc", "false") == "true" then
+    self._testFunc = UIWidgetHelper.SpawnObject(self, "TestFunc", "UIHomelandTestFunc")
   end
+  self._homelandClient:AfterHomelandUIShow()
+  self:_CheckGuide()
+  self:ShowTaskInfo()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.OnHide = function(self)
-  -- function num : 0_2
+function UIHomelandMain:OnHide()
   if self.homeLandTaskInfoObj then
-    (self.homeLandTaskInfoObj):Hide()
+    self.homeLandTaskInfoObj:Hide()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.AddListener = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandMain:AddListener()
   self:AttachEvent(GameEventType.OnHomeInteractClose, self.OnHomeInteractClose)
   self:AttachEvent(GameEventType.OnHomeInteractFollow, self.OnHomeInteractFollow)
   self:AttachEvent(GameEventType.ShowTreasureBoardUI, self.ShowTreasureBoardUI)
@@ -103,300 +79,197 @@ UIHomelandMain.AddListener = function(self)
   self:AttachEvent(GameEventType.FishMatchEnd, self.FishMatchEnd)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.GetStoryAwards = function(self, TT, finishStory)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg_event = (Cfg.cfg_homeland_event)[finishStory]
+function UIHomelandMain:GetStoryAwards(TT, finishStory)
+  local cfg_event = Cfg.cfg_homeland_event[finishStory]
   if cfg_event == nil then
-    (Log.error)("###[UIHomelandMain] _cfg_event is nil ! id --> ", finishStory)
+    Log.error("###[UIHomelandMain] _cfg_event is nil ! id --> ", finishStory)
     self:UnLock("UIHomelandMainGetStoryAwards")
-    return 
+    return
   end
   if cfg_event.EventType == 2 then
-    (self._homelandModule):HandleClientFinishEventReq(TT, finishStory)
+    self._homelandModule:HandleClientFinishEventReq(TT, finishStory)
     self:UnLock("UIHomelandMainGetStoryAwards")
-    return 
+    return
   end
   if cfg_event.PetID == 0 then
     self:UnLock("UIHomelandMainGetStoryAwards")
-    return 
+    return
   end
-  local res = (self._homelandModule):HandleClientFinishEventReq(TT, finishStory)
+  local res = self._homelandModule:HandleClientFinishEventReq(TT, finishStory)
   YIELD(TT, 500)
   self:UnLock("UIHomelandMainGetStoryAwards")
   if res:GetSucc() then
-    (Log.debug)("###[UIHomelandMain] HandleClientFinishEventReq succ !")
+    Log.debug("###[UIHomelandMain] HandleClientFinishEventReq succ !")
     local awards = cfg_event.Rewards
     if awards then
-      (Log.debug)("###[UIHomelandMain] 获得奖励 ！")
+      Log.debug("###[UIHomelandMain] 获得奖励 ！")
       local roleAssetList = {}
       for i = 1, #awards do
         local roleAsset = RoleAsset:New()
-        roleAsset.assetid = (awards[i])[1]
-        roleAsset.count = (awards[i])[2]
-        ;
-        (table.insert)(roleAssetList, roleAsset)
+        roleAsset.assetid = awards[i][1]
+        roleAsset.count = awards[i][2]
+        table.insert(roleAssetList, roleAsset)
       end
-      if #roleAssetList > 0 then
+      if 0 < #roleAssetList then
         self:ShowDialog("UIHomeShowAwards", roleAssetList, function()
-    -- function num : 0_4_0 , upvalues : cfg_event, self, _ENV
-    if not cfg_event.EndEventTipIcon then
-      local face = not cfg_event or not cfg_event.EndEventTipTex or "Norm"
-    end
-    local petid = cfg_event.PetID
-    local pet = ((self._homelandClient):PetManager()):GetPet(petid)
-    if pet then
-      local pstid = pet:PstID()
-      local icon = (HelperProxy:GetInstance()):HomeGetBody(pstid, face)
-      local tex = ""
-      tex = (StringTable.Get)(cfg_event.EndEventTipTex)
-      local param = {}
-      param[1] = icon
-      param[2] = tex
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIHomeEventTips, UIHomeEventTipsType.PetBody, param)
-    end
-  end
-)
+          if cfg_event and cfg_event.EndEventTipTex then
+            local face = cfg_event.EndEventTipIcon or "Norm"
+            local petid = cfg_event.PetID
+            local pet = self._homelandClient:PetManager():GetPet(petid)
+            if pet then
+              local pstid = pet:PstID()
+              local icon = HelperProxy:GetInstance():HomeGetBody(pstid, face)
+              local tex = ""
+              tex = StringTable.Get(cfg_event.EndEventTipTex)
+              local param = {}
+              param[1] = icon
+              param[2] = tex
+              GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIHomeEventTips, UIHomeEventTipsType.PetBody, param)
+            end
+          end
+        end)
       end
     end
   else
-    do
-      ;
-      (Log.error)("###[UIHomelandMain] HandleClientFinishEventReq fail !")
-    end
+    Log.error("###[UIHomelandMain] HandleClientFinishEventReq fail !")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.SetMinimapStatus = function(self, status)
-  -- function num : 0_5
-  (self._minimapGo):SetActive(status)
+function UIHomelandMain:SetMinimapStatus(status)
+  self._minimapGo:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.EnterFindTreasure = function(self)
-  -- function num : 0_6
-  (self._uiRoot):SetActive(false)
-  ;
-  (self._controllerPanel):SetActive(true)
+function UIHomelandMain:EnterFindTreasure()
+  self._uiRoot:SetActive(false)
+  self._controllerPanel:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.ExitFindTreasure = function(self)
-  -- function num : 0_7
-  (self._uiRoot):SetActive(true)
-  ;
-  (self._controllerPanel):SetActive(true)
+function UIHomelandMain:ExitFindTreasure()
+  self._uiRoot:SetActive(true)
+  self._controllerPanel:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.OnFindTreasureFailure = function(self)
-  -- function num : 0_8
-  (self._controllerPanel):SetActive(false)
+function UIHomelandMain:OnFindTreasureFailure()
+  self._controllerPanel:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.OnFindTreasureSuccess = function(self)
-  -- function num : 0_9
-  (self._controllerPanel):SetActive(false)
+function UIHomelandMain:OnFindTreasureSuccess()
+  self._controllerPanel:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.SetControllerPanelStatus = function(self, status)
-  -- function num : 0_10
-  (self._controllerPanel):SetActive(status)
+function UIHomelandMain:SetControllerPanelStatus(status)
+  self._controllerPanel:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.OnHomeMainShowUIRoot = function(self, show, keepCamRotation)
-  -- function num : 0_11
-  (self._uiRoot):SetActive(show)
-  ;
-  (self._minimapGo):SetActive(show)
+function UIHomelandMain:OnHomeMainShowUIRoot(show, keepCamRotation)
+  self._uiRoot:SetActive(show)
+  self._minimapGo:SetActive(show)
   if show then
-    (self._controllerPanel):SetActive(show)
-    ;
-    (self._homelandMoveController):HideExceptCameraRotation(not show)
+    self._controllerPanel:SetActive(show)
+    self._homelandMoveController:HideExceptCameraRotation(not show)
+  elseif keepCamRotation then
+    self._homelandMoveController:HideExceptCameraRotation(not show)
   else
-    if keepCamRotation then
-      (self._homelandMoveController):HideExceptCameraRotation(not show)
-    else
-      ;
-      (self._controllerPanel):SetActive(show)
-    end
+    self._controllerPanel:SetActive(show)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.OnHomeInteractFollow = function(self, follow, pet)
-  -- function num : 0_12
-  ((self._homelandClient):PetManager()):OnHomeInteractFollow(follow, pet)
+function UIHomelandMain:OnHomeInteractFollow(follow, pet)
+  self._homelandClient:PetManager():OnHomeInteractFollow(follow, pet)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.OnHomeInteractClose = function(self, active)
-  -- function num : 0_13
-  (((self._homelandClient):InputManager()):GetControllerChar()):SetActive(true)
+function UIHomelandMain:OnHomeInteractClose(active)
+  self._homelandClient:InputManager():GetControllerChar():SetActive(true)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.Init = function(self)
-  -- function num : 0_14
-  (self._mobileMoveControlGO):SetActive(true)
-  self._homelandMoveController = (self._mobileMoveConWidgetPool):SpawnObject("UIWidgetHomelandMoveController")
+function UIHomelandMain:Init()
+  self._mobileMoveControlGO:SetActive(true)
+  self._homelandMoveController = self._mobileMoveConWidgetPool:SpawnObject("UIWidgetHomelandMoveController")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.ShowTreasureBoardUI = function(self, tipsid)
-  -- function num : 0_15
+function UIHomelandMain:ShowTreasureBoardUI(tipsid)
   self:ShowDialog("UITreasureBoard", tipsid)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.ShowInteractUI = function(self)
-  -- function num : 0_16
-  (self._uiInteractPointController):SetStatus(true)
+function UIHomelandMain:ShowInteractUI()
+  self._uiInteractPointController:SetStatus(true)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.HideInteractUI = function(self)
-  -- function num : 0_17
-  (self._uiInteractPointController):SetStatus(false, true)
+function UIHomelandMain:HideInteractUI()
+  self._uiInteractPointController:SetStatus(false, true)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.SetShowHide = function(self, show)
-  -- function num : 0_18
-  (self._safeArea):SetActive(show)
-  ;
-  (self._hideMask):SetActive(not show)
+function UIHomelandMain:SetShowHide(show)
+  self._safeArea:SetActive(show)
+  self._hideMask:SetActive(not show)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.HideMaskOnClick = function(self)
-  -- function num : 0_19
+function UIHomelandMain:HideMaskOnClick()
   self:SetShowHide(true)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.ShowHideAllUI = function(self, show)
-  -- function num : 0_20
-  (self._safeArea):SetActive(show)
+function UIHomelandMain:ShowHideAllUI(show)
+  self._safeArea:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain._CheckGuide = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIHomelandMain)
+function UIHomelandMain:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIHomelandMain)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.OnQuestUpdate = function(self, quests)
-  -- function num : 0_22 , upvalues : _ENV
+function UIHomelandMain:OnQuestUpdate(quests)
   if quests then
-    if #quests > 1 then
-      (table.sort)(quests, function(a, b)
-    -- function num : 0_22_0
-    do return (b:QuestInfo()).status < (a:QuestInfo()).status end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    if 1 < #quests then
+      table.sort(quests, function(a, b)
+        return a:QuestInfo().status > b:QuestInfo().status
+      end)
     end
-    for _,quest in pairs(quests) do
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideTaskState, (quest:QuestInfo()).quest_id, (quest:QuestInfo()).status)
+    for _, quest in pairs(quests) do
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideTaskState, quest:QuestInfo().quest_id, quest:QuestInfo().status)
     end
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.ShowTaskInfo = function(self)
-  -- function num : 0_23
+function UIHomelandMain:ShowTaskInfo()
   if not self.homeLandTaskInfo then
-    return 
+    return
   end
-  self.homeLandTaskInfoObj = (self.homeLandTaskInfo):SpawnObject("UIHomeLandTaskInfo")
-  do
-    if self.homeLandTaskInfoObj then
-      local taskGroup = (self.homeLandTaskInfoObj):_GetRunningTaskGroup()
-      ;
-      (self.homeLandTaskInfoObj):SetShow(taskGroup ~= nil)
-    end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self.homeLandTaskInfoObj = self.homeLandTaskInfo:SpawnObject("UIHomeLandTaskInfo")
+  if self.homeLandTaskInfoObj then
+    local taskGroup = self.homeLandTaskInfoObj:_GetRunningTaskGroup()
+    self.homeLandTaskInfoObj:SetShow(taskGroup ~= nil)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.OnUIHomePetInteract = function(self, bShow)
-  -- function num : 0_24
+function UIHomelandMain:OnUIHomePetInteract(bShow)
   if self.homeLandTaskInfoObj and self._homelandClient then
-    (self.homeLandTaskInfoObj):SetShow(not bShow)
+    self.homeLandTaskInfoObj:SetShow(not bShow)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.GetInteractBtn = function(self, param)
-  -- function num : 0_25
-  return (self._uiInteractPointController):GetInteractBtn(param)
+function UIHomelandMain:GetInteractBtn(param)
+  return self._uiInteractPointController:GetInteractBtn(param)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.FishMatchHideUI = function(self)
-  -- function num : 0_26
-  (self.btnsObj):SetActive(false)
-  ;
-  (self._minimapGo):SetActive(false)
+function UIHomelandMain:FishMatchHideUI()
+  self.btnsObj:SetActive(false)
+  self._minimapGo:SetActive(false)
   self:HideInteractUI()
-  ;
-  (self._uiInteractGo):SetActive(false)
+  self._uiInteractGo:SetActive(false)
   self:OnUIHomePetInteract(true)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.FishMatchEnd = function(self, res)
-  -- function num : 0_27 , upvalues : _ENV
+function UIHomelandMain:FishMatchEnd(res)
   if res == FishMatchEndType.MATCHEND_CLOSE then
-    (self.btnsObj):SetActive(true)
-    ;
-    (self._minimapGo):SetActive(true)
+    self.btnsObj:SetActive(true)
+    self._minimapGo:SetActive(true)
     self:ShowInteractUI()
-    ;
-    (self._uiInteractGo):SetActive(true)
+    self._uiInteractGo:SetActive(true)
     self:OnUIHomePetInteract(false)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMain.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_28
+function UIHomelandMain:OnUpdate(deltaTimeMS)
   if self._uiInteractPointController then
-    (self._uiInteractPointController):OnUpdate(deltaTimeMS)
+    self._uiInteractPointController:OnUpdate(deltaTimeMS)
   end
 end
-
-

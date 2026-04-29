@@ -1,63 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/containers/flag_value.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FlagValue", Object)
 FlagValue = FlagValue
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FlagValue.Constructor = function(self, n)
-  -- function num : 0_0
+function FlagValue:Constructor(n)
   self._flags = n or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FlagValue.SetFlag = function(self, flag)
-  -- function num : 0_1 , upvalues : _ENV
-  if flag < 0 or flag > 63 then
+function FlagValue:SetFlag(flag)
+  if flag < 0 or 63 < flag then
     error("flag value set flag 0-63 overflow")
-    return 
+    return
   end
   self._flags = self._flags | 1 << flag
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FlagValue.ResetFlag = function(self, flag)
-  -- function num : 0_2 , upvalues : _ENV
-  if flag < 0 or flag > 63 then
+function FlagValue:ResetFlag(flag)
+  if flag < 0 or 63 < flag then
     error("flag value set flag 0-63 overflow")
-    return 
+    return
   end
   self._flags = self._flags & ~(1 << flag)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FlagValue.CheckFlag = function(self, flag)
-  -- function num : 0_3 , upvalues : _ENV
-  if flag < 0 or flag > 63 then
-    (Log.error)("flag value set flag 0-63 overflow")
+function FlagValue:CheckFlag(flag)
+  if flag < 0 or 63 < flag then
+    Log.error("flag value set flag 0-63 overflow")
     return false
   end
-  do return self._flags & 1 << flag > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return 0 < self._flags & 1 << flag
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FlagValue.Clear = function(self)
-  -- function num : 0_4
+function FlagValue:Clear()
   self._flags = 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FlagValue.Get = function(self)
-  -- function num : 0_5
+function FlagValue:Get()
   return self._flags
 end
-
-

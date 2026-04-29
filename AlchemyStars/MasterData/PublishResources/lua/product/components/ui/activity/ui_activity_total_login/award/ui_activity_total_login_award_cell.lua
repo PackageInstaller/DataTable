@@ -1,81 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/ui_activity_total_login/award/ui_activity_total_login_award_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityTotalLoginAwardCell", UICustomWidget)
 UIActivityTotalLoginAwardCell = UIActivityTotalLoginAwardCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityTotalLoginAwardCell.Constructor = function(self)
-  -- function num : 0_0
-  self._animInfo = {name = "uieff_Activity_Eve_LoginAward_Cell_Get", len = 333}
+function UIActivityTotalLoginAwardCell:Constructor()
+  self._animInfo = {
+    name = "uieff_Activity_Eve_LoginAward_Cell_Get",
+    len = 333
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTotalLoginAwardCell.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityTotalLoginAwardCell:OnShow(uiParams)
   self:AttachEvent(GameEventType.OnActivityTotalAwardGot, self.OnActivityTotalAwardGot)
   self:AttachEvent(GameEventType.OnActivityTotalAwardCellSelect, self.OnActivityTotalAwardCellSelect)
   self:InitWidget()
-  self._timeEvent = ((GameGlobal.RealTimer)()):AddEvent(1, function()
-    -- function num : 0_1_0 , upvalues : self
+  self._timeEvent = GameGlobal.RealTimer():AddEvent(1, function()
     if self._rootAnim then
-      (self._rootAnim):Play("uieff_Activity_Eve_LoginAward_Cell_In")
+      self._rootAnim:Play("uieff_Activity_Eve_LoginAward_Cell_In")
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTotalLoginAwardCell.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityTotalLoginAwardCell:OnHide()
   self:DetachEvent(GameEventType.OnActivityTotalAwardGot, self.OnActivityTotalAwardGot)
   self:DetachEvent(GameEventType.OnActivityTotalAwardCellSelect, self.OnActivityTotalAwardCellSelect)
   if self._timeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._timeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._timeEvent)
     self._timeEvent = nil
   end
   if self._resF then
-    (self._resF):Dispose()
+    self._resF:Dispose()
     self._resF = nil
   end
   if self._resB then
-    (self._resB):Dispose()
+    self._resB:Dispose()
     self._resB = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTotalLoginAwardCell.OnActivityTotalAwardGot = function(self, days)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._data)._dayNum == days then
-    (self._data)._state = ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED
-    self:SetState((self._data)._state)
+function UIActivityTotalLoginAwardCell:OnActivityTotalAwardGot(days)
+  if self._data._dayNum == days then
+    self._data._state = ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED
+    self:SetState(self._data._state)
     self:_PlayGetAnim()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTotalLoginAwardCell.OnActivityTotalAwardCellSelect = function(self, days)
-  -- function num : 0_4
-  if (self._data)._dayNum == days then
+function UIActivityTotalLoginAwardCell:OnActivityTotalAwardCellSelect(days)
+  if self._data._dayNum == days then
     self:SetSelected(true)
   else
     self:SetSelected(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTotalLoginAwardCell.InitWidget = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityTotalLoginAwardCell:InitWidget()
   self._rootAnim = self:GetUIComponent("Animation", "Root")
   self._dayNumText = self:GetUIComponent("UILocalizationText", "DayNumText")
   self._specialDayNumText = self:GetUIComponent("UILocalizationText", "SpecialDayNumText")
@@ -97,137 +74,95 @@ UIActivityTotalLoginAwardCell.InitWidget = function(self)
   self._stateCanGet = self:GetGameObject("StateCanGet")
   self._stateLocked = self:GetGameObject("StateLocked")
   self._cellState = 1
-  self._stateAreaGroup = {[ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED] = self._stateGot, [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV] = self._stateCanGet, [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK] = self._stateLocked}
+  self._stateAreaGroup = {
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED] = self._stateGot,
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV] = self._stateCanGet,
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK] = self._stateLocked
+  }
   self._item1 = self:GetUIComponent("UISelectObjectPath", "Item1")
   self._item2 = self:GetUIComponent("UISelectObjectPath", "item2")
-  self._items = {self._item1, self._item2}
+  self._items = {
+    self._item1,
+    self._item2
+  }
   self._itemGo1 = self:GetGameObject("Item1")
   self._itemGo2 = self:GetGameObject("item2")
-  self._itemGos = {self._itemGo1, self._itemGo2}
+  self._itemGos = {
+    self._itemGo1,
+    self._itemGo2
+  }
   self._itemWidgetTb = {}
   self._stateGotText = self:GetUIComponent("UILocalizationText", "StateGotText")
-  local gotStr = (StringTable.Get)("str_temp_sign_in_got")
-  ;
-  (self._stateGotText):SetText(gotStr)
+  local gotStr = StringTable.Get("str_temp_sign_in_got")
+  self._stateGotText:SetText(gotStr)
   self._stateCanGetText = self:GetUIComponent("UILocalizationText", "StateCanGetText")
-  local canGetStr = (StringTable.Get)("str_temp_sign_in_get")
-  ;
-  (self._stateCanGetText):SetText(canGetStr)
+  local canGetStr = StringTable.Get("str_temp_sign_in_get")
+  self._stateCanGetText:SetText(canGetStr)
   self._eff_front = self:GetGameObject("eff_front")
   self._eff_back = self:GetGameObject("eff_back")
   self._dayNum = 1
   self:SetSelected(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTotalLoginAwardCell.SetData = function(self)
-  -- function num : 0_6
+function UIActivityTotalLoginAwardCell:SetData()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTotalLoginAwardCell._PlayGetAnim = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityTotalLoginAwardCell:_PlayGetAnim()
   if self._rootAnim then
     self:Lock("UIActivityTotalLoginAwardCell:_PlayGetAnim")
     if self._rootAnim then
-      (self._rootAnim):Play((self._animInfo).name)
+      self._rootAnim:Play(self._animInfo.name)
     end
     self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : _ENV, self
-    YIELD(TT, (self._animInfo).len)
-    self:UnLock("UIActivityTotalLoginAwardCell:_PlayGetAnim")
-  end
-, self)
+      YIELD(TT, self._animInfo.len)
+      self:UnLock("UIActivityTotalLoginAwardCell:_PlayGetAnim")
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTotalLoginAwardCell._SetAlpha = function(self, alpha)
-  -- function num : 0_8 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._setAlphaArea).alpha = alpha
-  do return  end
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bgNormalImg).color = Color(((self._bgNormalImg).color).r, ((self._bgNormalImg).color).g, ((self._bgNormalImg).color).b, alpha)
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bgSpecialImg).color = Color(((self._bgSpecialImg).color).r, ((self._bgSpecialImg).color).g, ((self._bgSpecialImg).color).b, alpha)
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._dayText).color = Color(((self._dayText).color).r, ((self._dayText).color).g, ((self._dayText).color).b, alpha)
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._dayNumText).color = Color(((self._dayNumText).color).r, ((self._dayNumText).color).g, ((self._dayNumText).color).b, alpha)
-  -- DECOMPILER ERROR at PC72: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._specialDayText).color = Color(((self._specialDayText).color).r, ((self._specialDayText).color).g, ((self._specialDayText).color).b, alpha)
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._specialDayNumText).color = Color(((self._specialDayNumText).color).r, ((self._specialDayNumText).color).g, ((self._specialDayNumText).color).b, alpha)
-  for index,value in ipairs(self._itemWidgetTb) do
+function UIActivityTotalLoginAwardCell:_SetAlpha(alpha)
+  self._setAlphaArea.alpha = alpha
+  do return end
+  self._bgNormalImg.color = Color(self._bgNormalImg.color.r, self._bgNormalImg.color.g, self._bgNormalImg.color.b, alpha)
+  self._bgSpecialImg.color = Color(self._bgSpecialImg.color.r, self._bgSpecialImg.color.g, self._bgSpecialImg.color.b, alpha)
+  self._dayText.color = Color(self._dayText.color.r, self._dayText.color.g, self._dayText.color.b, alpha)
+  self._dayNumText.color = Color(self._dayNumText.color.r, self._dayNumText.color.g, self._dayNumText.color.b, alpha)
+  self._specialDayText.color = Color(self._specialDayText.color.r, self._specialDayText.color.g, self._specialDayText.color.b, alpha)
+  self._specialDayNumText.color = Color(self._specialDayNumText.color.r, self._specialDayNumText.color.g, self._specialDayNumText.color.b, alpha)
+  for index, value in ipairs(self._itemWidgetTb) do
     value:_SetAlpha(alpha)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTotalLoginAwardCell.SetSelected = function(self, isSelected)
-  -- function num : 0_9
-  (self._selectStateAreaGo):SetActive(isSelected)
+function UIActivityTotalLoginAwardCell:SetSelected(isSelected)
+  self._selectStateAreaGo:SetActive(isSelected)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTotalLoginAwardCell._CellOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  if (self._data):CanReceive() and self._getRewardCallback then
-    (self._getRewardCallback)((self._data)._dayNum)
+function UIActivityTotalLoginAwardCell:_CellOnClick()
+  if self._data:CanReceive() and self._getRewardCallback then
+    self._getRewardCallback(self._data._dayNum)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnActivityTotalAwardCellSelect, (self._data)._dayNum)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnActivityTotalAwardCellSelect, self._data._dayNum)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTotalLoginAwardCell.BgAreaOnClick = function(self, go)
-  -- function num : 0_11
+function UIActivityTotalLoginAwardCell:BgAreaOnClick(go)
   self:_CellOnClick()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTotalLoginAwardCell.BgNormalOnClick = function(self, go)
-  -- function num : 0_12
+function UIActivityTotalLoginAwardCell:BgNormalOnClick(go)
   self:_CellOnClick()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTotalLoginAwardCell.BgSpecialOnClick = function(self, go)
-  -- function num : 0_13
+function UIActivityTotalLoginAwardCell:BgSpecialOnClick(go)
   self:_CellOnClick()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTotalLoginAwardCell.SetState = function(self, state)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityTotalLoginAwardCell:SetState(state)
   self._cellState = state
   if self._cellState == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_Expired or self._cellState == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_UNKNOW then
     self._cellState = ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK
   end
-  for index,value in ipairs(self._stateAreaGroup) do
+  for index, value in ipairs(self._stateAreaGroup) do
     value:SetActive(index == self._cellState)
   end
   if self._cellState == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED then
@@ -236,139 +171,83 @@ UIActivityTotalLoginAwardCell.SetState = function(self, state)
     self:_SetAlpha(1)
   end
   self:_CheckEff()
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTotalLoginAwardCell._SetBg = function(self, isSpecial)
-  -- function num : 0_15
-  (self._bgNormalGo):SetActive(isSpecial == false)
-  ;
-  (self._bgSpecialGo):SetActive(isSpecial == true)
-  ;
-  (self._dayAreaGo):SetActive(isSpecial == false)
-  ;
-  (self._specialDayAreaGo):SetActive(isSpecial == true)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UIActivityTotalLoginAwardCell:_SetBg(isSpecial)
+  self._bgNormalGo:SetActive(isSpecial == false)
+  self._bgSpecialGo:SetActive(isSpecial == true)
+  self._dayAreaGo:SetActive(isSpecial == false)
+  self._specialDayAreaGo:SetActive(isSpecial == true)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTotalLoginAwardCell._FillUI = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  self:_SetBg((self._data)._isSpecial)
-  self:SetState((self._data)._state)
-  ;
-  (self._dayNumText):SetText((self._data)._dayNum)
-  ;
-  (self._specialDayNumText):SetText((self._data)._dayNum)
-  for index,value in ipairs(self._items) do
-    if ((self._data)._items)[index] then
+function UIActivityTotalLoginAwardCell:_FillUI()
+  self:_SetBg(self._data._isSpecial)
+  self:SetState(self._data._state)
+  self._dayNumText:SetText(self._data._dayNum)
+  self._specialDayNumText:SetText(self._data._dayNum)
+  for index, value in ipairs(self._items) do
+    if self._data._items[index] then
       value:SpawnObject("UIActivityTotalLoginAwardItem")
       local widgets = value:GetAllSpawnList()
-      for indexWidget,valueWidget in ipairs(widgets) do
-        valueWidget:SetData(((self._data)._items)[index], self._itemInfoCallback)
-        ;
-        (table.insert)(self._itemWidgetTb, valueWidget)
+      for indexWidget, valueWidget in ipairs(widgets) do
+        valueWidget:SetData(self._data._items[index], self._itemInfoCallback)
+        table.insert(self._itemWidgetTb, valueWidget)
       end
-      ;
-      ((self._itemGos)[index]):SetActive(true)
+      self._itemGos[index]:SetActive(true)
     else
-      do
-        do
-          ;
-          ((self._itemGos)[index]):SetActive(false)
-          -- DECOMPILER ERROR at PC60: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC60: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC60: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      self._itemGos[index]:SetActive(false)
     end
   end
   if self._cfg_data then
-    if (self._cfg_data).NormalTextColor and #(self._cfg_data).NormalTextColor == 3 then
-      local r = ((self._cfg_data).NormalTextColor)[1]
-      local g = ((self._cfg_data).NormalTextColor)[2]
-      local b = ((self._cfg_data).NormalTextColor)[3]
-      -- DECOMPILER ERROR at PC92: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._dayNumText).color = Color(r / 255, g / 255, b / 255, ((self._dayNumText).color).a)
-      -- DECOMPILER ERROR at PC102: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._dayText).color = Color(r / 255, g / 255, b / 255, ((self._dayText).color).a)
+    if self._cfg_data.NormalTextColor and #self._cfg_data.NormalTextColor == 3 then
+      local r = self._cfg_data.NormalTextColor[1]
+      local g = self._cfg_data.NormalTextColor[2]
+      local b = self._cfg_data.NormalTextColor[3]
+      self._dayNumText.color = Color(r / 255, g / 255, b / 255, self._dayNumText.color.a)
+      self._dayText.color = Color(r / 255, g / 255, b / 255, self._dayText.color.a)
     end
-    do
-      if (self._cfg_data).SpecialTextColor and #(self._cfg_data).SpecialTextColor == 3 then
-        local r = ((self._cfg_data).SpecialTextColor)[1]
-        local g = ((self._cfg_data).SpecialTextColor)[2]
-        local b = ((self._cfg_data).SpecialTextColor)[3]
-        -- DECOMPILER ERROR at PC130: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._specialDayNumText).color = Color(r / 255, g / 255, b / 255, ((self._specialDayNumText).color).a)
-        -- DECOMPILER ERROR at PC140: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._specialDayText).color = Color(r / 255, g / 255, b / 255, ((self._specialDayText).color).a)
-      end
-      do
-        ;
-        (self._bgNormalImgLoader):LoadImage((self._cfg_data).NormalBg)
-        ;
-        (self._bgSpecialImgLoader):LoadImage((self._cfg_data).SpecialBg)
-        if not self._resF then
-          self._resF = (ResourceManager:GetInstance()):SyncLoadAsset((self._cfg_data).AwardParticecleF, LoadType.GameObject)
-        end
-        if self._resF then
-          local goF = (self._resF).Obj
-          ;
-          (goF.transform):SetParent((self._eff_front).transform)
-          local rect = goF:GetComponent("RectTransform")
-          rect.anchoredPosition = Vector2(0, 0)
-          rect.localScale = Vector3(1, 1, 1)
-          goF:SetActive(true)
-        else
-          do
-            ;
-            (Log.error)("###[UIActivityTotalLoginAwardCell] self._resF is nil !")
-            if not self._resB then
-              self._resB = (ResourceManager:GetInstance()):SyncLoadAsset((self._cfg_data).AwardParticecleB, LoadType.GameObject)
-              ;
-              (Log.debug)("###[UIActivityTotalLoginAwardController] ourceManager:GetInstance():SyncLoadAsset")
-            end
-            if self._resB then
-              local goB = (self._resB).Obj
-              ;
-              (goB.transform):SetParent((self._eff_back).transform)
-              local rect = goB:GetComponent("RectTransform")
-              rect.anchoredPosition = Vector2(0, 0)
-              rect.localScale = Vector3(1, 1, 1)
-              goB:SetActive(true)
-            else
-              do
-                ;
-                (Log.error)("###[UIActivityTotalLoginAwardCell] self._resB is nil !")
-                ;
-                (Log.error)("###[UIActivityTotalLoginAwardCell] self._cfg_data is nil !")
-              end
-            end
-          end
-        end
-      end
+    if self._cfg_data.SpecialTextColor and #self._cfg_data.SpecialTextColor == 3 then
+      local r = self._cfg_data.SpecialTextColor[1]
+      local g = self._cfg_data.SpecialTextColor[2]
+      local b = self._cfg_data.SpecialTextColor[3]
+      self._specialDayNumText.color = Color(r / 255, g / 255, b / 255, self._specialDayNumText.color.a)
+      self._specialDayText.color = Color(r / 255, g / 255, b / 255, self._specialDayText.color.a)
     end
+    self._bgNormalImgLoader:LoadImage(self._cfg_data.NormalBg)
+    self._bgSpecialImgLoader:LoadImage(self._cfg_data.SpecialBg)
+    if not self._resF then
+      self._resF = ResourceManager:GetInstance():SyncLoadAsset(self._cfg_data.AwardParticecleF, LoadType.GameObject)
+    end
+    if self._resF then
+      local goF = self._resF.Obj
+      goF.transform:SetParent(self._eff_front.transform)
+      local rect = goF:GetComponent("RectTransform")
+      rect.anchoredPosition = Vector2(0, 0)
+      rect.localScale = Vector3(1, 1, 1)
+      goF:SetActive(true)
+    else
+      Log.error("###[UIActivityTotalLoginAwardCell] self._resF is nil !")
+    end
+    if not self._resB then
+      self._resB = ResourceManager:GetInstance():SyncLoadAsset(self._cfg_data.AwardParticecleB, LoadType.GameObject)
+      Log.debug("###[UIActivityTotalLoginAwardController] ourceManager:GetInstance():SyncLoadAsset")
+    end
+    if self._resB then
+      local goB = self._resB.Obj
+      goB.transform:SetParent(self._eff_back.transform)
+      local rect = goB:GetComponent("RectTransform")
+      rect.anchoredPosition = Vector2(0, 0)
+      rect.localScale = Vector3(1, 1, 1)
+      goB:SetActive(true)
+    else
+      Log.error("###[UIActivityTotalLoginAwardCell] self._resB is nil !")
+    end
+  else
+    Log.error("###[UIActivityTotalLoginAwardCell] self._cfg_data is nil !")
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTotalLoginAwardCell.InitData = function(self, data, cfg_data, itemInfoCallback, getRewardCallback)
-  -- function num : 0_17
+function UIActivityTotalLoginAwardCell:InitData(data, cfg_data, itemInfoCallback, getRewardCallback)
   self._data = data
   self._cfg_data = cfg_data
   self._itemInfoCallback = itemInfoCallback
@@ -376,18 +255,11 @@ UIActivityTotalLoginAwardCell.InitData = function(self, data, cfg_data, itemInfo
   self:_FillUI()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTotalLoginAwardCell._CheckEff = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIActivityTotalLoginAwardCell:_CheckEff()
   local canShowEff = true
   if self._cellState == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED then
     canShowEff = false
   end
-  ;
-  (self._eff_front):SetActive(not (self._data)._isSpecial or canShowEff)
-  ;
-  (self._eff_back):SetActive(not (self._data)._isSpecial or canShowEff)
+  self._eff_front:SetActive(self._data._isSpecial and canShowEff)
+  self._eff_back:SetActive(self._data._isSpecial and canShowEff)
 end
-
-

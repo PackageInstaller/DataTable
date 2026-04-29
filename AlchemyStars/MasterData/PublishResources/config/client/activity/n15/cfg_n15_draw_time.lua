@@ -1,15 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/n15/cfg_n15_draw_time.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, DrawTime = 2, Ms = 3}
-local config = {
-{1, 
-{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-, 
-{333, 222, 111, 111, 111, 111, 111, 111, 111, 111}
+local key = {
+  ID = 1,
+  DrawTime = 2,
+  Ms = 3
 }
+local config = {
+  {
+    1,
+    {
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    },
+    {
+      333,
+      222,
+      111,
+      111,
+      111,
+      111,
+      111,
+      111,
+      111,
+      111
+    }
+  }
 }
 return config, "ID", key
-

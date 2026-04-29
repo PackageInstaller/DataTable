@@ -1,176 +1,423 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_simulation_operation.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, ArchitectureId = 3, Level = 4, LimitNum = 5, Rate = 6, Name = 7, MapName = 8, Pic = 9, Icon = 10, UpgradeCost = 11, PreCondition = 12, DefaultNum = 13, StoryList = 14, Rewards = 15, MapPos = 16, BubbleNodePos = 17, BubbleReverse = 18, NamePos = 19}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  ArchitectureId = 3,
+  Level = 4,
+  LimitNum = 5,
+  Rate = 6,
+  Name = 7,
+  MapName = 8,
+  Pic = 9,
+  Icon = 10,
+  UpgradeCost = 11,
+  PreCondition = 12,
+  DefaultNum = 13,
+  StoryList = 14,
+  Rewards = 15,
+  MapPos = 16,
+  BubbleNodePos = 17,
+  BubbleReverse = 18,
+  NamePos = 19
+}
 local common = {
-{
-{3000327, 100}
-, 
-{3100014, 10}
-, 
-{3000003, 50}
-}
-, 
-{
-{5011001, 1}
-}
-, "str_n33_date_building_mapname_1", "str_n33_date_building_mapname_2", "str_n33_date_building_mapname_3", "str_n33_date_building_mapname_4", 
-{-580.7, 271.8}
-, 
-{174.1, 97.3}
-, 
-{-18.7, -253}
-, 
-{-463.5, -100}
-, 
-{-317.4, -32.6}
-, 
-{99.7, -245.3}
-, 
-{28, 159}
-, 
-{183.9, 210}
-, 
-{-36, -231.2}
-, 
-{608, 148.6}
-, 
-{163, 28.6}
-, 
-{118.8, -278.5}
+  {
+    {3000327, 100},
+    {3100014, 10},
+    {3000003, 50}
+  },
+  {
+    {5011001, 1}
+  },
+  "str_n33_date_building_mapname_1",
+  "str_n33_date_building_mapname_2",
+  "str_n33_date_building_mapname_3",
+  "str_n33_date_building_mapname_4",
+  {-580.7, 271.8},
+  {174.1, 97.3},
+  {-18.7, -253},
+  {-463.5, -100},
+  {-317.4, -32.6},
+  {99.7, -245.3},
+  {28, 159},
+  {183.9, 210},
+  {-36, -231.2},
+  {608, 148.6},
+  {163, 28.6},
+  {118.8, -278.5}
 }
 local config = {
-{1, 111011306, 5011001, 1, 130000, 2, "str_n33_date_building_name_1", common[3], "N33_jyms_sj_5011001_1_1", "N33_jyms_image_5011001_1_1", 580000, 
-{
-{5011003, 2}
-, 
-{5011004, 2}
-}
-, 100000, nil, common[1], common[7], common[8], false, common[9]}
-, 
-{2, 111011306, 5011001, 2, 200000, 3, "str_n33_date_building_name_2", common[3], "N33_jyms_sj_5011001_2_1", "N33_jyms_image_5011001_2_1", 660000, 
-{
-{5011003, 3}
-, 
-{5011004, 3}
-}
-, nil, 
-{7, 4}
-, common[1], common[7], common[8], false, common[9]}
-, 
-{3, 111011306, 5011001, 3, 250000, 4, "str_n33_date_building_name_3", common[3], "N33_jyms_sj_5011001_3_1", "N33_jyms_image_5011001_3_1", 1200000, 
-{
-{5011003, 4}
-, 
-{5011004, 4}
-}
-, nil, 
-{8, 28}
-, common[1], common[7], common[8], false, common[9]}
-, 
-{4, 111011306, 5011001, 4, 450000, 7, "str_n33_date_building_name_4", common[3], "N33_jyms_sj_5011001_4_1", "N33_jyms_image_5011001_4_1", nil, nil, nil, 
-{11}
-, common[1], common[7], common[8], false, common[9]}
-, 
-{5, 111011306, 5011002, 1, 200000, 3, "str_n33_date_building_name_5", common[4], "N33_jyms_sj_5011002_1_1", "N33_jyms_image_5011002_1_1", 620000, 
-{
-{5011001, 2}
-, 
-{5011003, 2}
-, 
-{5011004, 2}
-}
-, 160000, nil, common[1], common[10], common[11], true, common[12]}
-, 
-{6, 111011306, 5011002, 2, 250000, 4, "str_n33_date_building_name_6", common[4], "N33_jyms_sj_5011002_2_1", "N33_jyms_image_5011002_2_1", 800000, 
-{
-{5011001, 3}
-, 
-{5011003, 3}
-, 
-{5011004, 3}
-}
-, nil, 
-{16, 22}
-, common[1], common[10], common[11], true, common[12]}
-, 
-{7, 111011306, 5011002, 3, 330000, 5, "str_n33_date_building_name_7", common[4], "N33_jyms_sj_5011002_3_1", "N33_jyms_image_5011002_3_1", 1400000, 
-{
-{5011001, 4}
-, 
-{5011003, 4}
-, 
-{5011004, 4}
-}
-, nil, 
-{19, 2}
-, common[1], common[10], common[11], true, common[12]}
-, 
-{8, 111011306, 5011002, 4, 520000, 8, "str_n33_date_building_name_8", common[4], "N33_jyms_sj_5011002_4_1", "N33_jyms_image_5011002_4_1", nil, nil, nil, 
-{14}
-, common[1], common[10], common[11], true, common[12]}
-, 
-{9, 111011306, 5011003, 1, 130000, 2, "str_n33_date_building_name_9", common[5], "N33_jyms_sj_5011003_1_1", "N33_jyms_image_5011003_1_1", 460000, common[2], 100000, nil, common[1], common[13], common[14], false, common[15]}
-, 
-{10, 111011306, 5011003, 2, 200000, 3, "str_n33_date_building_name_10", common[5], "N33_jyms_sj_5011003_2_1", "N33_jyms_image_5011003_2_1", 580000, 
-{
-{5011001, 2}
-, 
-{5011002, 2}
-, 
-{5011004, 2}
-}
-, nil, 
-{1, 13}
-, common[1], common[13], common[14], false, common[15]}
-, 
-{11, 111011306, 5011003, 3, 250000, 4, "str_n33_date_building_name_11", common[5], "N33_jyms_sj_5011003_3_1", "N33_jyms_image_5011003_3_1", 960000, 
-{
-{5011001, 3}
-, 
-{5011002, 3}
-, 
-{5011004, 3}
-}
-, nil, 
-{5}
-, common[1], common[13], common[14], false, common[15]}
-, 
-{12, 111011306, 5011003, 4, 450000, 7, "str_n33_date_building_name_12", common[5], "N33_jyms_sj_5011003_4_1", "N33_jyms_image_5011003_4_1", nil, nil, nil, 
-{20, 29}
-, common[1], common[13], common[14], false, common[15]}
-, 
-{13, 111011306, 5011004, 1, 130000, 2, "str_n33_date_building_name_13", common[6], "N33_jyms_sj_5011004_1_1", "N33_jyms_image_5011004_1_1", 460000, common[2], 100000, nil, common[1], common[16], common[17], false, common[18]}
-, 
-{14, 111011306, 5011004, 2, 200000, 3, "str_n33_date_building_name_14", common[6], "N33_jyms_sj_5011004_2_1", "N33_jyms_image_5011004_2_1", 580000, 
-{
-{5011001, 2}
-, 
-{5011002, 2}
-, 
-{5011003, 2}
-}
-, nil, 
-{10, 25}
-, common[1], common[16], common[17], false, common[18]}
-, 
-{15, 111011306, 5011004, 3, 250000, 4, "str_n33_date_building_name_15", common[6], "N33_jyms_sj_5011004_3_1", "N33_jyms_image_5011004_3_1", 960000, 
-{
-{5011001, 3}
-, 
-{5011002, 3}
-, 
-{5011003, 3}
-}
-, nil, 
-{23}
-, common[1], common[16], common[17], false, common[18]}
-, 
-{16, 111011306, 5011004, 4, 450000, 7, "str_n33_date_building_name_16", common[6], "N33_jyms_sj_5011004_4_1", "N33_jyms_image_5011004_4_1", nil, nil, nil, 
-{26, 17}
-, common[1], common[16], common[17], false, common[18]}
+  {
+    1,
+    111011306,
+    5011001,
+    1,
+    130000,
+    2,
+    "str_n33_date_building_name_1",
+    common[3],
+    "N33_jyms_sj_5011001_1_1",
+    "N33_jyms_image_5011001_1_1",
+    580000,
+    {
+      {5011003, 2},
+      {5011004, 2}
+    },
+    100000,
+    nil,
+    common[1],
+    common[7],
+    common[8],
+    false,
+    common[9]
+  },
+  {
+    2,
+    111011306,
+    5011001,
+    2,
+    200000,
+    3,
+    "str_n33_date_building_name_2",
+    common[3],
+    "N33_jyms_sj_5011001_2_1",
+    "N33_jyms_image_5011001_2_1",
+    660000,
+    {
+      {5011003, 3},
+      {5011004, 3}
+    },
+    nil,
+    {7, 4},
+    common[1],
+    common[7],
+    common[8],
+    false,
+    common[9]
+  },
+  {
+    3,
+    111011306,
+    5011001,
+    3,
+    250000,
+    4,
+    "str_n33_date_building_name_3",
+    common[3],
+    "N33_jyms_sj_5011001_3_1",
+    "N33_jyms_image_5011001_3_1",
+    1200000,
+    {
+      {5011003, 4},
+      {5011004, 4}
+    },
+    nil,
+    {8, 28},
+    common[1],
+    common[7],
+    common[8],
+    false,
+    common[9]
+  },
+  {
+    4,
+    111011306,
+    5011001,
+    4,
+    450000,
+    7,
+    "str_n33_date_building_name_4",
+    common[3],
+    "N33_jyms_sj_5011001_4_1",
+    "N33_jyms_image_5011001_4_1",
+    nil,
+    nil,
+    nil,
+    {11},
+    common[1],
+    common[7],
+    common[8],
+    false,
+    common[9]
+  },
+  {
+    5,
+    111011306,
+    5011002,
+    1,
+    200000,
+    3,
+    "str_n33_date_building_name_5",
+    common[4],
+    "N33_jyms_sj_5011002_1_1",
+    "N33_jyms_image_5011002_1_1",
+    620000,
+    {
+      {5011001, 2},
+      {5011003, 2},
+      {5011004, 2}
+    },
+    160000,
+    nil,
+    common[1],
+    common[10],
+    common[11],
+    true,
+    common[12]
+  },
+  {
+    6,
+    111011306,
+    5011002,
+    2,
+    250000,
+    4,
+    "str_n33_date_building_name_6",
+    common[4],
+    "N33_jyms_sj_5011002_2_1",
+    "N33_jyms_image_5011002_2_1",
+    800000,
+    {
+      {5011001, 3},
+      {5011003, 3},
+      {5011004, 3}
+    },
+    nil,
+    {16, 22},
+    common[1],
+    common[10],
+    common[11],
+    true,
+    common[12]
+  },
+  {
+    7,
+    111011306,
+    5011002,
+    3,
+    330000,
+    5,
+    "str_n33_date_building_name_7",
+    common[4],
+    "N33_jyms_sj_5011002_3_1",
+    "N33_jyms_image_5011002_3_1",
+    1400000,
+    {
+      {5011001, 4},
+      {5011003, 4},
+      {5011004, 4}
+    },
+    nil,
+    {19, 2},
+    common[1],
+    common[10],
+    common[11],
+    true,
+    common[12]
+  },
+  {
+    8,
+    111011306,
+    5011002,
+    4,
+    520000,
+    8,
+    "str_n33_date_building_name_8",
+    common[4],
+    "N33_jyms_sj_5011002_4_1",
+    "N33_jyms_image_5011002_4_1",
+    nil,
+    nil,
+    nil,
+    {14},
+    common[1],
+    common[10],
+    common[11],
+    true,
+    common[12]
+  },
+  {
+    9,
+    111011306,
+    5011003,
+    1,
+    130000,
+    2,
+    "str_n33_date_building_name_9",
+    common[5],
+    "N33_jyms_sj_5011003_1_1",
+    "N33_jyms_image_5011003_1_1",
+    460000,
+    common[2],
+    100000,
+    nil,
+    common[1],
+    common[13],
+    common[14],
+    false,
+    common[15]
+  },
+  {
+    10,
+    111011306,
+    5011003,
+    2,
+    200000,
+    3,
+    "str_n33_date_building_name_10",
+    common[5],
+    "N33_jyms_sj_5011003_2_1",
+    "N33_jyms_image_5011003_2_1",
+    580000,
+    {
+      {5011001, 2},
+      {5011002, 2},
+      {5011004, 2}
+    },
+    nil,
+    {1, 13},
+    common[1],
+    common[13],
+    common[14],
+    false,
+    common[15]
+  },
+  {
+    11,
+    111011306,
+    5011003,
+    3,
+    250000,
+    4,
+    "str_n33_date_building_name_11",
+    common[5],
+    "N33_jyms_sj_5011003_3_1",
+    "N33_jyms_image_5011003_3_1",
+    960000,
+    {
+      {5011001, 3},
+      {5011002, 3},
+      {5011004, 3}
+    },
+    nil,
+    {5},
+    common[1],
+    common[13],
+    common[14],
+    false,
+    common[15]
+  },
+  {
+    12,
+    111011306,
+    5011003,
+    4,
+    450000,
+    7,
+    "str_n33_date_building_name_12",
+    common[5],
+    "N33_jyms_sj_5011003_4_1",
+    "N33_jyms_image_5011003_4_1",
+    nil,
+    nil,
+    nil,
+    {20, 29},
+    common[1],
+    common[13],
+    common[14],
+    false,
+    common[15]
+  },
+  {
+    13,
+    111011306,
+    5011004,
+    1,
+    130000,
+    2,
+    "str_n33_date_building_name_13",
+    common[6],
+    "N33_jyms_sj_5011004_1_1",
+    "N33_jyms_image_5011004_1_1",
+    460000,
+    common[2],
+    100000,
+    nil,
+    common[1],
+    common[16],
+    common[17],
+    false,
+    common[18]
+  },
+  {
+    14,
+    111011306,
+    5011004,
+    2,
+    200000,
+    3,
+    "str_n33_date_building_name_14",
+    common[6],
+    "N33_jyms_sj_5011004_2_1",
+    "N33_jyms_image_5011004_2_1",
+    580000,
+    {
+      {5011001, 2},
+      {5011002, 2},
+      {5011003, 2}
+    },
+    nil,
+    {10, 25},
+    common[1],
+    common[16],
+    common[17],
+    false,
+    common[18]
+  },
+  {
+    15,
+    111011306,
+    5011004,
+    3,
+    250000,
+    4,
+    "str_n33_date_building_name_15",
+    common[6],
+    "N33_jyms_sj_5011004_3_1",
+    "N33_jyms_image_5011004_3_1",
+    960000,
+    {
+      {5011001, 3},
+      {5011002, 3},
+      {5011003, 3}
+    },
+    nil,
+    {23},
+    common[1],
+    common[16],
+    common[17],
+    false,
+    common[18]
+  },
+  {
+    16,
+    111011306,
+    5011004,
+    4,
+    450000,
+    7,
+    "str_n33_date_building_name_16",
+    common[6],
+    "N33_jyms_sj_5011004_4_1",
+    "N33_jyms_image_5011004_4_1",
+    nil,
+    nil,
+    nil,
+    {26, 17},
+    common[1],
+    common[16],
+    common[17],
+    false,
+    common[18]
+  }
 }
 return config, "ID", key
-

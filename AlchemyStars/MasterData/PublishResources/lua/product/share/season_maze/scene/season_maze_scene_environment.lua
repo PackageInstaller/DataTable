@@ -1,55 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/scene/season_maze_scene_environment.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("season_maze_environment_config")
 _class("SeasonMazeSceneEnvironment", Object)
 SeasonMazeSceneEnvironment = SeasonMazeSceneEnvironment
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeSceneEnvironment.Constructor = function(self, sceenRoot)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMazeSceneEnvironment:Constructor(sceenRoot)
   self._sceenRoot = sceenRoot
-  self._uiSeasonMazeModule = (GameGlobal.GetUIModule)(SeasonMazeModule)
-  self._seasonID = (self._uiSeasonMazeModule):GetSeasonID()
+  self._uiSeasonMazeModule = GameGlobal.GetUIModule(SeasonMazeModule)
+  self._seasonID = self._uiSeasonMazeModule:GetSeasonID()
   self._entities = {}
   local config = SeasonMazeEnvironmentConfig[self._seasonID]
   if config then
-    for key,cfg in pairs(config) do
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R8 in 'UnsetPending'
-
-      (self._entities)[key] = _createInstance(cfg.value, self._sceenRoot, cfg.param)
+    for key, cfg in pairs(config) do
+      self._entities[key] = _createInstance(cfg.value, self._sceenRoot, cfg.param)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneEnvironment.Update = function(self, deltaTime)
-  -- function num : 0_1 , upvalues : _ENV
-  for _,entity in pairs(self._entities) do
+function SeasonMazeSceneEnvironment:Update(deltaTime)
+  for _, entity in pairs(self._entities) do
     entity:Update(deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneEnvironment.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,entity in pairs(self._entities) do
+function SeasonMazeSceneEnvironment:Dispose()
+  for _, entity in pairs(self._entities) do
     entity:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneEnvironment.UnLockZone = function(self, zoneMask, zoneID2Animation)
-  -- function num : 0_3 , upvalues : _ENV
-  local unlockZoneIDs = (SeasonMazeTool:GetInstance()):GetZonesByZoneMask(zoneMask)
-  if self._seasonID == UISeasonID.S1 and (table.icontains)(unlockZoneIDs, SeasonZone.Two) then
-    ((self._entities)[1]):UnLock(true)
+function SeasonMazeSceneEnvironment:UnLockZone(zoneMask, zoneID2Animation)
+  local unlockZoneIDs = SeasonMazeTool:GetInstance():GetZonesByZoneMask(zoneMask)
+  if self._seasonID == UISeasonID.S1 and table.icontains(unlockZoneIDs, SeasonZone.Two) then
+    self._entities[1]:UnLock(true)
   end
 end
-
-

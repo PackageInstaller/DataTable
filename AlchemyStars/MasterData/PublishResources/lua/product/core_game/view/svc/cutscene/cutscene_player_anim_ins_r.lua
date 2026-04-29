@@ -1,26 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/cutscene/cutscene_player_anim_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("cutscene_base_ins_r")
 _class("CutscenePlayerAnimationInstruction", CutsceneBaseInstruction)
 CutscenePlayerAnimationInstruction = CutscenePlayerAnimationInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CutscenePlayerAnimationInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function CutscenePlayerAnimationInstruction:Constructor(paramList)
   self._animName = paramList.anim
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutscenePlayerAnimationInstruction.DoInstruction = function(self, TT, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local playerEntity = ((phaseContext:GetCutsceneWorld()):Player()):GetLocalTeamEntity()
-  playerEntity:SetAnimatorControllerTriggers({self._animName})
-  ;
-  (Log.fatal)("剧情指令，播放动作")
+function CutscenePlayerAnimationInstruction:DoInstruction(TT, phaseContext)
+  local playerEntity = phaseContext:GetCutsceneWorld():Player():GetLocalTeamEntity()
+  playerEntity:SetAnimatorControllerTriggers({
+    self._animName
+  })
+  Log.fatal("剧情指令，播放动作")
 end
-
-

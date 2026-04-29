@@ -1,56 +1,248 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_season_maze_slot.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, Index = 3, Type = 4, Relic = 5, PriceMin = 6, PriceMax = 7, LockSlotLv = 8, LockHard = 9, RoomTypes = 10, ItemOdds = 11, EffectID = 12, LvLockDis = 13, CanDisOdds = 14, DisPrice = 15}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  Index = 3,
+  Type = 4,
+  Relic = 5,
+  PriceMin = 6,
+  PriceMax = 7,
+  LockSlotLv = 8,
+  LockHard = 9,
+  RoomTypes = 10,
+  ItemOdds = 11,
+  EffectID = 12,
+  LvLockDis = 13,
+  CanDisOdds = 14,
+  DisPrice = 15
+}
 local common = {
-{8, 13}
-, 
-{28, 37, 38}
-, 
-{400, 400, 600}
-, 
-{80, 60, 60}
-, 
-{14}
+  {8, 13},
+  {
+    28,
+    37,
+    38
+  },
+  {
+    400,
+    400,
+    600
+  },
+  {
+    80,
+    60,
+    60
+  },
+  {14}
 }
 local config = {
-{1, 900308001, 1, 1, 1, 89, 111, 0, 0, common[1], nil, nil, common[2], common[3], common[4]}
-, 
-{2, 900308001, 2, 1, 1, 89, 111, 0, 0, common[1], nil, nil, common[2], common[3], common[4]}
-, 
-{3, 900308001, 3, 1, 1, 89, 111, 0, 0, common[1], nil, nil, common[2], common[3], common[4]}
-, 
-{4, 900308001, 4, 1, 1, 89, 111, 0, 0, common[1], nil, nil, common[2], common[3], common[4]}
-, 
-{5, 900308001, 5, 1, 1, 89, 111, 10, 0, common[1], nil, nil, common[2], common[3], common[4]}
-, 
-{6, 900308001, 6, 1, 1, 89, 111, 27, 0, common[1], nil, nil, common[2], common[3], common[4]}
-, 
-{7, 900308001, 7, 2, 0, 89, 111, 0, 0, common[1], 
-{
-{1, 100}
-, 
-{2, 100}
-, 
-{3, 100}
-}
-, nil, common[2], common[3], common[4]}
-, 
-{8, 900308001, 8, 3, 0, 50, 50, 39, 4, common[1], nil, 10}
-, 
-{9, 900308001, 1, 4, 0, 0, 0, 0, 0, common[5]}
-, 
-{10, 900308001, 2, 4, 0, 100, 100, 0, 0, common[5]}
-, 
-{11, 900308001, 3, 4, 0, 100, 100, 0, 0, common[5]}
-, 
-{12, 900308001, 4, 4, 0, 100, 100, 0, 0, common[5]}
-, 
-{13, 900308001, 5, 4, 0, 100, 100, 0, 0, common[5]}
-, 
-{14, 900308001, 6, 4, 0, 100, 100, 0, 0, common[5]}
+  {
+    1,
+    900308001,
+    1,
+    1,
+    1,
+    89,
+    111,
+    0,
+    0,
+    common[1],
+    nil,
+    nil,
+    common[2],
+    common[3],
+    common[4]
+  },
+  {
+    2,
+    900308001,
+    2,
+    1,
+    1,
+    89,
+    111,
+    0,
+    0,
+    common[1],
+    nil,
+    nil,
+    common[2],
+    common[3],
+    common[4]
+  },
+  {
+    3,
+    900308001,
+    3,
+    1,
+    1,
+    89,
+    111,
+    0,
+    0,
+    common[1],
+    nil,
+    nil,
+    common[2],
+    common[3],
+    common[4]
+  },
+  {
+    4,
+    900308001,
+    4,
+    1,
+    1,
+    89,
+    111,
+    0,
+    0,
+    common[1],
+    nil,
+    nil,
+    common[2],
+    common[3],
+    common[4]
+  },
+  {
+    5,
+    900308001,
+    5,
+    1,
+    1,
+    89,
+    111,
+    10,
+    0,
+    common[1],
+    nil,
+    nil,
+    common[2],
+    common[3],
+    common[4]
+  },
+  {
+    6,
+    900308001,
+    6,
+    1,
+    1,
+    89,
+    111,
+    27,
+    0,
+    common[1],
+    nil,
+    nil,
+    common[2],
+    common[3],
+    common[4]
+  },
+  {
+    7,
+    900308001,
+    7,
+    2,
+    0,
+    89,
+    111,
+    0,
+    0,
+    common[1],
+    {
+      {1, 100},
+      {2, 100},
+      {3, 100}
+    },
+    nil,
+    common[2],
+    common[3],
+    common[4]
+  },
+  {
+    8,
+    900308001,
+    8,
+    3,
+    0,
+    50,
+    50,
+    39,
+    4,
+    common[1],
+    nil,
+    10
+  },
+  {
+    9,
+    900308001,
+    1,
+    4,
+    0,
+    0,
+    0,
+    0,
+    0,
+    common[5]
+  },
+  {
+    10,
+    900308001,
+    2,
+    4,
+    0,
+    100,
+    100,
+    0,
+    0,
+    common[5]
+  },
+  {
+    11,
+    900308001,
+    3,
+    4,
+    0,
+    100,
+    100,
+    0,
+    0,
+    common[5]
+  },
+  {
+    12,
+    900308001,
+    4,
+    4,
+    0,
+    100,
+    100,
+    0,
+    0,
+    common[5]
+  },
+  {
+    13,
+    900308001,
+    5,
+    4,
+    0,
+    100,
+    100,
+    0,
+    0,
+    common[5]
+  },
+  {
+    14,
+    900308001,
+    6,
+    4,
+    0,
+    100,
+    100,
+    0,
+    0,
+    common[5]
+  }
 }
 return config, "ID", key
-

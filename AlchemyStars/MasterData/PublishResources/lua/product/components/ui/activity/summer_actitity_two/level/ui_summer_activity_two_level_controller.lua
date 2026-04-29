@@ -1,45 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/level/ui_summer_activity_two_level_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummerActivityTwoLevelController", UIController)
 UISummerActivityTwoLevelController = UISummerActivityTwoLevelController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummerActivityTwoLevelController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UISummerActivityTwoLevelController:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SUMMER_II, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_STORY, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_CUMULATIVE_LOGIN, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_2, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_3, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_4, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_5, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_6)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SUMMER_II, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_STORY, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_CUMULATIVE_LOGIN, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_2, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_3, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_4, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_5, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_6)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
   if not self._campaign then
-    return 
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  self._missionComponentInfo = (self._localProcess):GetComponentInfo(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
-  self._missionComponent = (self._localProcess):GetComponent(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
-  self._personProgress1CompInfo = (self._localProcess):GetComponentInfo(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1)
+  self._missionComponentInfo = self._localProcess:GetComponentInfo(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
+  self._missionComponent = self._localProcess:GetComponent(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
+  self._personProgress1CompInfo = self._localProcess:GetComponentInfo(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1)
   self._totalLevelDatas = campaignModule:GetSummerTwoLevelData(TT)
   self._isSwitchStatus = true
   if uiParams and uiParams[1] then
-    self._isSwitchStatus = (uiParams[1])[1]
+    self._isSwitchStatus = uiParams[1][1]
   end
   self:RefreshData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelController.RefreshData = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISummerActivityTwoLevelController:RefreshData()
   self._totalScore = 0
-  local levelDatas = (self._totalLevelDatas):GetLevelDatas()
+  local levelDatas = self._totalLevelDatas:GetLevelDatas()
   for i = 1, #levelDatas do
     local levelGroupData = levelDatas[i]
     for j = 1, #levelGroupData do
@@ -49,248 +38,174 @@ UISummerActivityTwoLevelController.RefreshData = function(self)
       end
     end
   end
-  local bossLevelData = (self._totalLevelDatas):GetBossLevelData()
+  local bossLevelData = self._totalLevelDatas:GetBossLevelData()
   if bossLevelData and bossLevelData:GetStatus() == UISummerActivityTwoLevelStatus.Complete then
     self._totalScore = self._totalScore + bossLevelData:GetMaxScore()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UISummerActivityTwoLevelController:OnShow(uiParams)
   self._inRt = nil
   if uiParams and uiParams[1] then
-    self._inRt = (uiParams[1])[2]
+    self._inRt = uiParams[1][2]
   end
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_2_0 , upvalues : self, _ENV
+  self._backBtn:SetData(function()
     self:Shot()
     if self._rt then
       local outRenderer = self:GetUIComponent("MeshRenderer", "Out")
       local outMaterial = outRenderer.material
       outMaterial:SetTexture("_MainTex", self._rt)
     end
-    do
-      if self._isSwitchStatus then
-        self:SwitchState(UIStateType.UISummer2)
-      else
-        self:CloseDialog()
-      end
+    if self._isSwitchStatus then
+      self:SwitchState(UIStateType.UISummer2)
+    else
+      self:CloseDialog()
     end
-  end
-, function()
-    -- function num : 0_2_1 , upvalues : self
+  end, function()
     self:ShowDialog("UIHelpController", "UISummerActivityTwoLevelController")
-  end
-, function()
-    -- function num : 0_2_2 , upvalues : self, _ENV
+  end, function()
     self:Shot()
     if self._rt then
       local outRenderer = self:GetUIComponent("MeshRenderer", "Out")
       local outMaterial = outRenderer.material
       outMaterial:SetTexture("_MainTex", self._rt)
     end
-    do
-      self:SwitchState(UIStateType.UIMain)
-    end
-  end
-)
+    self:SwitchState(UIStateType.UIMain)
+  end)
   self._shot = self:GetUIComponent("H3DUIBlurHelper", "screenShot")
   self._totalScoreLabel = self:GetUIComponent("UILocalizationText", "TotalScore")
   self._iconImg = self:GetUIComponent("RawImageLoader", "Icon")
   self._scoreRed = self:GetGameObject("ScoreRed")
   self._petRed = self:GetGameObject("PetRed")
   local normalLevel = self:GetUIComponent("UISelectObjectPath", "NormalLevel")
-  local levelDatas = (self._totalLevelDatas):GetLevelDatas()
+  local levelDatas = self._totalLevelDatas:GetLevelDatas()
   normalLevel:SpawnObjects("UISummerActivityTwoLevelGroup", #levelDatas)
   self._levelGroups = normalLevel:GetAllSpawnList()
   for i = 1, #levelDatas do
-    ((self._levelGroups)[i]):Refresh(levelDatas[i], i)
+    self._levelGroups[i]:Refresh(levelDatas[i], i)
   end
-  local bossLevelData = (self._totalLevelDatas):GetBossLevelData()
+  local bossLevelData = self._totalLevelDatas:GetBossLevelData()
   if bossLevelData then
     local boosLevel = self:GetUIComponent("UISelectObjectPath", "BossLevel")
     local bossItem = boosLevel:SpawnObject("UISummerActivityTwoLevelBossItem", 1)
     bossItem:Refresh(bossLevelData)
   end
-  do
-    self:AttachEvent(GameEventType.SummerTwoRewardRefresh, self.RefreshRewardRedStatus)
-    self:RefreshUI()
-    self:PlayAnim()
-  end
+  self:AttachEvent(GameEventType.SummerTwoRewardRefresh, self.RefreshRewardRedStatus)
+  self:RefreshUI()
+  self:PlayAnim()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelController.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISummerActivityTwoLevelController:OnHide()
   self:DetachEvent(GameEventType.SummerTwoRewardRefresh, self.RefreshRewardRedStatus)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSummerActivityTwoLevelUIClose)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSummerActivityTwoLevelUIClose)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelController.Dispose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISummerActivityTwoLevelController:Dispose()
   if self._shot then
-    (self._shot):CleanRenderTexture()
+    self._shot:CleanRenderTexture()
     self._shot = nil
   end
-  ;
-  (UISummerActivityTwoLevelController.super):Dispose()
+  UISummerActivityTwoLevelController.super:Dispose()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelController.PlayAnim = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISummerActivityTwoLevelController:PlayAnim()
   if self._inRt then
     local inRenderer = self:GetUIComponent("MeshRenderer", "In")
     local inMaterial = inRenderer.material
     inMaterial:SetTexture("_MainTex", self._inRt)
   else
-    do
-      local go = self:GetGameObject("In")
-      -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (go.transform).localScale = Vector3.zero
-    end
+    local go = self:GetGameObject("In")
+    go.transform.localScale = Vector3.zero
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelController.Shot = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._shot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
+function UISummerActivityTwoLevelController:Shot()
+  self._shot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
   local shotRect = self:GetUIComponent("RectTransform", "screenShot")
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._shot).width = (shotRect.rect).width
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._shot).height = (shotRect.rect).height
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._shot).blurTimes = 0
-  ;
-  (self._shot):CleanRenderTexture()
-  self._rt = (self._shot):RefreshBlurTexture()
+  self._shot.width = shotRect.rect.width
+  self._shot.height = shotRect.rect.height
+  self._shot.blurTimes = 0
+  self._shot:CleanRenderTexture()
+  self._rt = self._shot:RefreshBlurTexture()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelController.RefreshRewardRedStatus = function(self)
-  -- function num : 0_7
+function UISummerActivityTwoLevelController:RefreshRewardRedStatus()
   local status1 = self:HasCanGetReward(self._personProgress1CompInfo)
   if status1 then
-    (self._scoreRed):SetActive(true)
+    self._scoreRed:SetActive(true)
   else
-    ;
-    (self._scoreRed):SetActive(false)
+    self._scoreRed:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelController.RefreshPetRedStatus = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local _cfg_data = (Cfg.cfg_campaign_pet_try)({CampaignId = ECampaignType.CAMPAIGN_TYPE_SUMMER_II})
+function UISummerActivityTwoLevelController:RefreshPetRedStatus()
+  local _cfg_data = Cfg.cfg_campaign_pet_try({
+    CampaignId = ECampaignType.CAMPAIGN_TYPE_SUMMER_II
+  })
   if not _cfg_data then
-    (Log.error)("###[UISummerActivityTwoLevelController] cfg_campaign_pet_try is nil ! self._CampaignId --> ", ECampaignType.CAMPAIGN_TYPE_SUMMER_II)
-    return 
+    Log.error("###[UISummerActivityTwoLevelController] cfg_campaign_pet_try is nil ! self._CampaignId --> ", ECampaignType.CAMPAIGN_TYPE_SUMMER_II)
+    return
   end
   local pass = true
   for i = 1, #_cfg_data do
-    local missionid = (_cfg_data[i]).CampaignMissionId
+    local missionid = _cfg_data[i].CampaignMissionId
     pass = self:SummerTwoPetTryMissionPass(missionid)
-  end
-  do
-    if pass then
-      (self._petRed):SetActive(not pass)
+    if not pass then
+      break
     end
   end
+  self._petRed:SetActive(not pass)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelController.RefreshUI = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._totalScoreLabel).text = self._totalScore
-  ;
-  (self._iconImg):LoadImage(UISummerActivityTwoConst.EntryIcon)
+function UISummerActivityTwoLevelController:RefreshUI()
+  self._totalScoreLabel.text = self._totalScore
+  self._iconImg:LoadImage(UISummerActivityTwoConst.EntryIcon)
   self:RefreshRewardRedStatus()
   self:RefreshPetRedStatus()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelController.ScorePanelOnClick = function(self)
-  -- function num : 0_10
+function UISummerActivityTwoLevelController:ScorePanelOnClick()
   self:ShowDialog("UISummerActivityTwoScoreController")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelController.PetBtnOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UISummerActivityTwoLevelController:PetBtnOnClick()
   self:ShowDialog("UIActivityPetTryController", ECampaignType.CAMPAIGN_TYPE_SUMMER_II, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION, function(missionid)
-    -- function num : 0_11_0 , upvalues : self
     return self:SummerTwoPetTryMissionPass(missionid)
-  end
-, function(missionid)
-    -- function num : 0_11_1 , upvalues : self
+  end, function(missionid)
     self:SummerTwoPetTryGoBattle(missionid)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelController.SummerTwoPetTryGoBattle = function(self, missionid)
-  -- function num : 0_12 , upvalues : _ENV
-  local missiontModule = (GameGlobal.GetModule)(MissionModule)
+function UISummerActivityTwoLevelController:SummerTwoPetTryGoBattle(missionid)
+  local missiontModule = GameGlobal.GetModule(MissionModule)
   local ctx = missiontModule:TeamCtx()
-  local levelData = (self._totalLevelDatas):GetLevelDataById(missionid)
+  local levelData = self._totalLevelDatas:GetLevelDataById(missionid)
   if not levelData then
-    return 
+    return
   end
-  local param = {levelData:GetMissionId(), (self._missionComponent):GetCampaignMissionComponentId(), (self._missionComponent):GetCampaignMissionParamKeyMap()}
+  local param = {
+    levelData:GetMissionId(),
+    self._missionComponent:GetCampaignMissionComponentId(),
+    self._missionComponent:GetCampaignMissionParamKeyMap()
+  }
   ctx:Init(TeamOpenerType.Campaign, param)
   ctx:ShowDialogUITeams(false)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelController.SummerTwoPetTryMissionPass = function(self, missionid)
-  -- function num : 0_13
-  return (self._totalLevelDatas):IsLevelComplete(missionid)
+function UISummerActivityTwoLevelController:SummerTwoPetTryMissionPass(missionid)
+  return self._totalLevelDatas:IsLevelComplete(missionid)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelController.HasCanGetReward = function(self, progressComponentInfo)
-  -- function num : 0_14 , upvalues : _ENV
+function UISummerActivityTwoLevelController:HasCanGetReward(progressComponentInfo)
   local progressRewards = progressComponentInfo.m_progress_rewards
   local currentProgress = progressComponentInfo.m_current_progress
   local receivedProgress = progressComponentInfo.m_received_progress
-  for k,v in pairs(progressRewards) do
+  for k, v in pairs(progressRewards) do
     local progress = k
     local status = false
-    if progress < currentProgress then
+    if currentProgress > progress then
       status = true
       for i = 1, #receivedProgress do
         if progress == receivedProgress[i] then
@@ -299,17 +214,9 @@ UISummerActivityTwoLevelController.HasCanGetReward = function(self, progressComp
         end
       end
     end
-    do
-      do
-        if status then
-          return true
-        end
-        -- DECOMPILER ERROR at PC26: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if status then
+      return true
     end
   end
   return false
 end
-
-

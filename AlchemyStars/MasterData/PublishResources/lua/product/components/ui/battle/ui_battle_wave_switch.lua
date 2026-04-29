@@ -1,25 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_wave_switch.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleWaveSwitch", UIController)
 UIBattleWaveSwitch = UIBattleWaveSwitch
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleWaveSwitch.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBattleWaveSwitch:OnShow(uiParams)
   local waveIndex = uiParams[1]
   self._num = self:GetUIComponent("UILocalizationText", "wavenum")
-  local tex = (StringTable.Get)("str_battle_wave_switch", waveIndex)
-  ;
-  (self._num):SetText(tex)
+  local tex = StringTable.Get("str_battle_wave_switch", waveIndex)
+  self._num:SetText(tex)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleWaveSwitch.OnHide = function(self)
-  -- function num : 0_1
+function UIBattleWaveSwitch:OnHide()
 end
-
-

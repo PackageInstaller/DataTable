@@ -1,28 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/cls/ui_black_fight_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BlackFightData", Object)
 BlackFightData = BlackFightData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BlackFightData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function BlackFightData:Constructor()
   self.activityCampaign = UIActivityCampaign:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.RequestCampaign = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function BlackFightData:RequestCampaign(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  if (self.activityCampaign)._type == -1 or (self.activityCampaign)._id == -1 then
-    (self.activityCampaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N7)
+  if self.activityCampaign._type == -1 or self.activityCampaign._id == -1 then
+    self.activityCampaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N7)
   else
-    ;
-    (self.activityCampaign):ReLoadCampaignInfo_Force(TT, res)
+    self.activityCampaign:ReLoadCampaignInfo_Force(TT, res)
   end
   self:InitBlackFight()
   self:InitReputation()
@@ -30,105 +19,73 @@ BlackFightData.RequestCampaign = function(self, TT)
   return res
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.GetLocalProcess = function(self)
-  -- function num : 0_2
-  return (self.activityCampaign):GetLocalProcess()
+function BlackFightData:GetLocalProcess()
+  return self.activityCampaign:GetLocalProcess()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.GetComponentBlackFight = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  return (self.activityCampaign):GetComponent(ECampaignN7ComponentID.ECAMPAIGN_N7_BLACKFIST)
+function BlackFightData:GetComponentBlackFight()
+  return self.activityCampaign:GetComponent(ECampaignN7ComponentID.ECAMPAIGN_N7_BLACKFIST)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.GetComponentReputation = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  return (self.activityCampaign):GetComponent(ECampaignN7ComponentID.ECAMPAIGN_N7_LINE_PRESTIGE)
+function BlackFightData:GetComponentReputation()
+  return self.activityCampaign:GetComponent(ECampaignN7ComponentID.ECAMPAIGN_N7_LINE_PRESTIGE)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.GetComponentInfoBlackFight = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  return (self.activityCampaign):GetComponentInfo(ECampaignN7ComponentID.ECAMPAIGN_N7_BLACKFIST)
+function BlackFightData:GetComponentInfoBlackFight()
+  return self.activityCampaign:GetComponentInfo(ECampaignN7ComponentID.ECAMPAIGN_N7_BLACKFIST)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.GetComponentInfoReputation = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  return (self.activityCampaign):GetComponentInfo(ECampaignN7ComponentID.ECAMPAIGN_N7_LINE_PRESTIGE)
+function BlackFightData:GetComponentInfoReputation()
+  return self.activityCampaign:GetComponentInfo(ECampaignN7ComponentID.ECAMPAIGN_N7_LINE_PRESTIGE)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.InitBlackFight = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function BlackFightData:InitBlackFight()
   local cInfoBlackFight = self:GetComponentInfoBlackFight()
   if not cInfoBlackFight then
-    return 
+    return
   end
   self.curDay = cInfoBlackFight.cur_day_index
   self.difficultyList = {}
   local todayScore = {}
   local scores = cInfoBlackFight.score_infos
-  if scores and (table.count)(scores) > 0 then
-    for day,map in pairs(scores) do
+  if scores and table.count(scores) > 0 then
+    for day, map in pairs(scores) do
       if day == self.curDay then
-        for diff,score in pairs(map) do
+        for diff, score in pairs(map) do
           todayScore[diff] = score
         end
         break
       end
     end
   end
-  do
-    for _,diff in pairs(BlackFightDifficulty) do
-      local difficulty = BlackFightDifficultyData:New()
-      difficulty.difficulty = diff
-      difficulty.reputaion = todayScore[diff] or 0
-      -- DECOMPILER ERROR at PC50: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self.difficultyList)[diff] = difficulty
-    end
-    self.curDifficulty = BlackFightDifficulty.Light
+  for _, diff in pairs(BlackFightDifficulty) do
+    local difficulty = BlackFightDifficultyData:New()
+    difficulty.difficulty = diff
+    difficulty.reputaion = todayScore[diff] or 0
+    self.difficultyList[diff] = difficulty
   end
+  self.curDifficulty = BlackFightDifficulty.Light
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.InitRounds = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function BlackFightData:InitRounds()
   local day = self.curDay
   if day == nil then
-    return 
+    return
   end
-  if self:GetMaxDay() < day then
+  if day > self:GetMaxDay() then
     day = 1
   end
   self.rounds = {}
-  for k,i in pairs(BlackFightDifficulty) do
+  for k, i in pairs(BlackFightDifficulty) do
     local count, max = self:GetDifficultyTypeLevels(i, day)
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.rounds)[i] = {count, max}
+    self.rounds[i] = {count, max}
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.GetMaxDay = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function BlackFightData:GetMaxDay()
   local max = 0
-  local cfg = (Cfg.cfg_component_blackfist)()
-  for key,value in pairs(cfg) do
+  local cfg = Cfg.cfg_component_blackfist()
+  for key, value in pairs(cfg) do
     if max < value.DayIndex then
       max = value.DayIndex
     end
@@ -136,13 +93,10 @@ BlackFightData.GetMaxDay = function(self)
   return max
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.GetDifficultyTypeLevels = function(self, difficultyType, dayIndex)
-  -- function num : 0_10 , upvalues : _ENV
+function BlackFightData:GetDifficultyTypeLevels(difficultyType, dayIndex)
   local count, max = 0, 0
-  local cfg = (Cfg.cfg_component_blackfist)()
-  for key,value in pairs(cfg) do
+  local cfg = Cfg.cfg_component_blackfist()
+  for key, value in pairs(cfg) do
     if value.Type == difficultyType and value.DayIndex == dayIndex then
       if self:ComparisonContent(value.OrderId, difficultyType) then
         count = count + 1
@@ -156,15 +110,12 @@ BlackFightData.GetDifficultyTypeLevels = function(self, difficultyType, dayIndex
   return count, max
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.ComparisonContent = function(self, orderId, difficultyType)
-  -- function num : 0_11
+function BlackFightData:ComparisonContent(orderId, difficultyType)
   local cInfoBlackFight = self:GetComponentInfoBlackFight()
   if not cInfoBlackFight then
-    return 
+    return
   end
-  local id = (cInfoBlackFight.order_ids)[difficultyType]
+  local id = cInfoBlackFight.order_ids[difficultyType]
   if id == nil then
     id = 0
   end
@@ -177,13 +128,10 @@ BlackFightData.ComparisonContent = function(self, orderId, difficultyType)
   return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.InitReputation = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function BlackFightData:InitReputation()
   local cInfoReputation = self:GetComponentInfoReputation()
   if not cInfoReputation then
-    return 
+    return
   end
   self.itemId = cInfoReputation.m_item_id
   self.curReputation = cInfoReputation.m_current_progress
@@ -191,109 +139,83 @@ BlackFightData.InitReputation = function(self)
   local receiveds = cInfoReputation.m_received_progress
   local progresses = cInfoReputation.m_progress_rewards
   local special = cInfoReputation.m_special_rewards
-  do
-    if progresses and (table.count)(progresses) > 0 then
-      local zero = BlackFightReputationData:New()
-      zero.gotState = BlackFightReputationState.Got
-      ;
-      (table.insert)(self.reputations, zero)
-      for key,reward in pairs(progresses) do
-        local rd = BlackFightReputationData:New()
-        rd.reputation = key
-        rd.awards = reward
-        if special[key] then
-          rd.isSpecial = true
-        end
-        local hasGot = false
-        for i,v in ipairs(receiveds) do
-          if key == v then
-            hasGot = true
-            break
-          end
-        end
-        do
-          do
-            if key <= self.curReputation then
-              if hasGot then
-                rd.gotState = BlackFightReputationState.Got
-              else
-                rd.gotState = BlackFightReputationState.CanGet
-              end
-            else
-              rd.gotState = nil
-            end
-            ;
-            (table.insert)(self.reputations, rd)
-            -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
+  if progresses and table.count(progresses) > 0 then
+    local zero = BlackFightReputationData:New()
+    zero.gotState = BlackFightReputationState.Got
+    table.insert(self.reputations, zero)
+    for key, reward in pairs(progresses) do
+      local rd = BlackFightReputationData:New()
+      rd.reputation = key
+      rd.awards = reward
+      if special[key] then
+        rd.isSpecial = true
+      end
+      local hasGot = false
+      for i, v in ipairs(receiveds) do
+        if key == v then
+          hasGot = true
+          break
         end
       end
-      ;
-      (table.sort)(self.reputations, function(a, b)
-    -- function num : 0_12_0
-    do return a.reputation < b.reputation end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+      if key <= self.curReputation then
+        if hasGot then
+          rd.gotState = BlackFightReputationState.Got
+        else
+          rd.gotState = BlackFightReputationState.CanGet
+        end
+      else
+        rd.gotState = nil
+      end
+      table.insert(self.reputations, rd)
     end
-    self:InitSalutation()
-    self.curOverviewPaper = nil
-    self.papers = {}
-    local cfgPaper = (Cfg.cfg_n7_black_fight_paper)()
-    for k,v in pairs(cfgPaper) do
-      local paper = BlackFightPaperData:New()
-      paper:Init(k)
-      ;
-      (table.insert)(self.papers, paper)
-    end
-    self:InitCurPaper()
+    table.sort(self.reputations, function(a, b)
+      return a.reputation < b.reputation
+    end)
   end
+  self:InitSalutation()
+  self.curOverviewPaper = nil
+  self.papers = {}
+  local cfgPaper = Cfg.cfg_n7_black_fight_paper()
+  for k, v in pairs(cfgPaper) do
+    local paper = BlackFightPaperData:New()
+    paper:Init(k)
+    table.insert(self.papers, paper)
+  end
+  self:InitCurPaper()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.InitSalutation = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function BlackFightData:InitSalutation()
   self.salutations = {}
-  if self.reputations and (table.count)(self.reputations) > 0 then
-    for index,v in ipairs(self.reputations) do
+  if self.reputations and table.count(self.reputations) > 0 then
+    for index, v in ipairs(self.reputations) do
       local key = "str_n7_salutation_" .. v.reputation
-      if (StringTable.Has)(key) then
+      if StringTable.Has(key) then
         local sd = BlackFightSalutationData:New()
         sd.reputation = v.reputation
-        sd.salutation = (StringTable.Get)(key)
-        ;
-        (table.insert)(self.salutations, sd)
+        sd.salutation = StringTable.Get(key)
+        table.insert(self.salutations, sd)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.InitCurPaper = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function BlackFightData:InitCurPaper()
   if self.papers then
-    local len = (table.count)(self.papers)
+    local len = table.count(self.papers)
     for i = len, 1, -1 do
-      local paper = (self.papers)[i]
-      if paper.unlockReputation <= self.curReputation then
+      local paper = self.papers[i]
+      if self.curReputation >= paper.unlockReputation then
         self.curOverviewPaper = BlackFightPaperOverviewData:New()
-        ;
-        (self.curOverviewPaper):Init(paper.idx)
-        return 
+        self.curOverviewPaper:Init(paper.idx)
+        return
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.GetPaperByIdx = function(self, idx)
-  -- function num : 0_15 , upvalues : _ENV
+function BlackFightData:GetPaperByIdx(idx)
   if self.papers then
-    for index,paper in ipairs(self.papers) do
+    for index, paper in ipairs(self.papers) do
       if paper.idx == idx then
         return paper
       end
@@ -301,27 +223,21 @@ BlackFightData.GetPaperByIdx = function(self, idx)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.GetCurSalutation = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function BlackFightData:GetCurSalutation()
   if self.salutations then
-    local len = (table.count)(self.salutations)
+    local len = table.count(self.salutations)
     for i = len, 1, -1 do
-      local salutation = (self.salutations)[i]
-      if salutation.reputation <= self.curReputation then
+      local salutation = self.salutations[i]
+      if self.curReputation >= salutation.reputation then
         return salutation
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.GetSalutionByReputation = function(self, reputation)
-  -- function num : 0_17 , upvalues : _ENV
-  if self.salutations and (table.count)(self.salutations) > 0 then
-    for index,v in ipairs(self.salutations) do
+function BlackFightData:GetSalutionByReputation(reputation)
+  if self.salutations and table.count(self.salutations) > 0 then
+    for index, v in ipairs(self.salutations) do
       if v.reputation == reputation then
         return v
       end
@@ -329,53 +245,37 @@ BlackFightData.GetSalutionByReputation = function(self, reputation)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.GetReputation = function(self)
-  -- function num : 0_18
+function BlackFightData:GetReputation()
   return self.curReputation
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.GetTodayMaxReputation = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function BlackFightData:GetTodayMaxReputation()
   local diff, max = BlackFightDifficulty.Light, 0
-  if self.difficultyList and (table.count)(self.difficultyList) > 0 then
-    for i,difficulty in ipairs(self.difficultyList) do
+  if self.difficultyList and 0 < table.count(self.difficultyList) then
+    for i, difficulty in ipairs(self.difficultyList) do
       if max < difficulty.reputaion then
         diff = difficulty.difficulty
         max = difficulty.reputaion
       end
     end
   end
-  do
-    return diff, max
-  end
+  return diff, max
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.ExistCanGetAwards = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  if self.reputations and (table.count)(self.reputations) > 0 then
-    for index,v in ipairs(self.reputations) do
+function BlackFightData:ExistCanGetAwards()
+  if self.reputations and table.count(self.reputations) > 0 then
+    for index, v in ipairs(self.reputations) do
       if v.gotState == BlackFightReputationState.CanGet then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.SetReputationsGot = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  if self.reputations and (table.count)(self.reputations) > 0 then
-    for index,v in ipairs(self.reputations) do
+function BlackFightData:SetReputationsGot()
+  if self.reputations and table.count(self.reputations) > 0 then
+    for index, v in ipairs(self.reputations) do
       if v.gotState == BlackFightReputationState.CanGet then
         v.gotState = BlackFightReputationState.Got
       end
@@ -383,42 +283,30 @@ BlackFightData.SetReputationsGot = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.GetRoundInfoByDifficulty = function(self, diff)
-  -- function num : 0_22
-  if self.rounds and (self.rounds)[diff] then
-    return ((self.rounds)[diff])[1], ((self.rounds)[diff])[2]
+function BlackFightData:GetRoundInfoByDifficulty(diff)
+  if self.rounds and self.rounds[diff] then
+    return self.rounds[diff][1], self.rounds[diff][2]
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.ExistNotReadPaper = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function BlackFightData:ExistNotReadPaper()
   if self.papers then
-    for index,paper in ipairs(self.papers) do
+    for index, paper in ipairs(self.papers) do
       if not paper:HasRead() then
         return true, paper
       end
     end
   end
-  do
-    return false, nil
-  end
+  return false, nil
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackFightData.ReadPaper = function(self, idx)
-  -- function num : 0_24 , upvalues : _ENV
+function BlackFightData:ReadPaper(idx)
   if self.papers then
-    for index,paper in ipairs(self.papers) do
+    for index, paper in ipairs(self.papers) do
       if paper.idx == idx then
         paper:Read()
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BlackFistUpdatePaperRed)
-        return 
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.BlackFistUpdatePaperRed)
+        return
       end
     end
   end
@@ -426,10 +314,8 @@ end
 
 _class("BlackFightReputationData", Object)
 BlackFightReputationData = BlackFightReputationData
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
 
-BlackFightReputationData.Constructor = function(self)
-  -- function num : 0_25
+function BlackFightReputationData:Constructor()
   self.reputation = 0
   self.awards = {}
   self.isSpecial = false
@@ -440,186 +326,135 @@ local BlackFightReputationState = {CanGet = 1, Got = 2}
 _enum("BlackFightReputationState", BlackFightReputationState)
 _class("BlackFightSalutationData", Object)
 BlackFightSalutationData = BlackFightSalutationData
--- DECOMPILER ERROR at PC105: Confused about usage of register: R1 in 'UnsetPending'
 
-BlackFightSalutationData.Constructor = function(self)
-  -- function num : 0_26
+function BlackFightSalutationData:Constructor()
   self.reputation = 0
   self.salutation = ""
 end
 
 _class("BlackFightDifficultyData", Object)
 BlackFightDifficultyData = BlackFightDifficultyData
--- DECOMPILER ERROR at PC114: Confused about usage of register: R1 in 'UnsetPending'
 
-BlackFightDifficultyData.Constructor = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function BlackFightDifficultyData:Constructor()
   self.difficulty = BlackFightDifficulty.Light
   self.reputaion = 0
 end
 
-local BlackFightDifficulty = {Light = 1, Middle = 2, Heavy = 3}
+local BlackFightDifficulty = {
+  Light = 1,
+  Middle = 2,
+  Heavy = 3
+}
 _enum("BlackFightDifficulty", BlackFightDifficulty)
 _class("BlackFightPaperData", Object)
 BlackFightPaperData = BlackFightPaperData
--- DECOMPILER ERROR at PC131: Confused about usage of register: R2 in 'UnsetPending'
 
-BlackFightPaperData.Constructor = function(self)
-  -- function num : 0_28
+function BlackFightPaperData:Constructor()
   self.idx = 0
   self.unlockReputation = 0
   self.elementsL = {}
   self.elementsR = {}
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R2 in 'UnsetPending'
-
-BlackFightPaperData.Init = function(self, idx)
-  -- function num : 0_29 , upvalues : _ENV
+function BlackFightPaperData:Init(idx)
   self.idx = idx
-  local cfgv = (Cfg.cfg_n7_black_fight_paper)[idx]
+  local cfgv = Cfg.cfg_n7_black_fight_paper[idx]
   if not cfgv then
-    (Log.fatal)("### no data in cfg_n7_black_fight_paper. ID=", idx)
-    return 
+    Log.fatal("### no data in cfg_n7_black_fight_paper. ID=", idx)
+    return
   end
   self.unlockReputation = cfgv.Reputation
-  self.elementsL = self:GetElements(cfgv, "PartsDetails")
+  self.elementsL, self.elementsR = self:GetElements(cfgv, "PartsDetails")
   return cfgv
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R2 in 'UnsetPending'
-
-BlackFightPaperData.GetElements = function(self, cfgv, tField)
-  -- function num : 0_30 , upvalues : _ENV
+function BlackFightPaperData:GetElements(cfgv, tField)
   local elementsL = {}
   local elementsR = {}
   local parts = cfgv[tField]
   if not parts then
-    (Log.warn)("### no [" .. tField .. "] in cfg_n7_black_fight_paper.")
-    return 
+    Log.warn("### no [" .. tField .. "] in cfg_n7_black_fight_paper.")
+    return
   end
   local areas = {"l", "r"}
-  for _,a in ipairs(areas) do
+  for _, a in ipairs(areas) do
     local es = parts[a]
-    for i,element in ipairs(es) do
+    for i, element in ipairs(es) do
       local e = BlackFightPaperElement:New()
       e.type = element.type
-      -- DECOMPILER ERROR at PC40: Confused about usage of register: R20 in 'UnsetPending'
-
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R19 in 'UnsetPending'
-
       if element.t then
-        (e.pos).x = (element.t)[1]
+        e.pos.x, e.pos.y = element.t[1], element.t[2]
       end
       if element.r then
-        e.rot = Quaternion:SetEuler((element.r)[1], (element.r)[2], (element.r)[3])
+        e.rot = Quaternion:SetEuler(element.r[1], element.r[2], element.r[3])
       end
-      -- DECOMPILER ERROR at PC64: Confused about usage of register: R20 in 'UnsetPending'
-
-      -- DECOMPILER ERROR at PC65: Confused about usage of register: R19 in 'UnsetPending'
-
       if element.s then
-        (e.scale).x = (element.s)[1]
+        e.scale.x, e.scale.y = element.s[1], element.s[2]
       end
-      -- DECOMPILER ERROR at PC75: Confused about usage of register: R20 in 'UnsetPending'
-
-      -- DECOMPILER ERROR at PC76: Confused about usage of register: R19 in 'UnsetPending'
-
       if element.wh_text then
-        (e.whText).x = (element.wh_text)[1]
+        e.whText.x, e.whText.y = element.wh_text[1], element.wh_text[2]
       end
-      -- DECOMPILER ERROR at PC86: Confused about usage of register: R20 in 'UnsetPending'
-
-      -- DECOMPILER ERROR at PC87: Confused about usage of register: R19 in 'UnsetPending'
-
       if element.wh_img then
-        (e.whImg).x = (element.wh_img)[1]
+        e.whImg.x, e.whImg.y = element.wh_img[1], element.wh_img[2]
       end
       e.name = element.name or ""
       e.text = element.text or ""
-      if not (string.isnullorempty)(element.font) then
+      if not string.isnullorempty(element.font) then
         e.font = element.font .. ".prefab"
       end
       if a == areas[1] then
-        (table.insert)(elementsL, e)
+        table.insert(elementsL, e)
       else
-        ;
-        (table.insert)(elementsR, e)
+        table.insert(elementsR, e)
       end
     end
   end
   return elementsL, elementsR
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R2 in 'UnsetPending'
-
-BlackFightPaperData.IsUnlock = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  local mCampaign = (GameGlobal.GetModule)(CampaignModule)
+function BlackFightPaperData:IsUnlock()
+  local mCampaign = GameGlobal.GetModule(CampaignModule)
   local data = mCampaign:GetN7BlackFightData()
-  local unlock = self.unlockReputation <= data:GetReputation()
-  do return unlock end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local unlock = data:GetReputation() >= self.unlockReputation
+  return unlock
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R2 in 'UnsetPending'
-
-BlackFightPaperData.HasRead = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function BlackFightPaperData:HasRead()
   if self:IsUnlock() then
-    return ((UnityEngine.PlayerPrefs).HasKey)((BlackFightPaperData.GetPrefsKeyPaperUnlock)(self.idx))
+    return UnityEngine.PlayerPrefs.HasKey(BlackFightPaperData.GetPrefsKeyPaperUnlock(self.idx))
   end
   return true
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R2 in 'UnsetPending'
-
-BlackFightPaperData.Read = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function BlackFightPaperData:Read()
   if self:IsUnlock() then
-    ((UnityEngine.PlayerPrefs).SetInt)((BlackFightPaperData.GetPrefsKeyPaperUnlock)(self.idx), 1)
+    UnityEngine.PlayerPrefs.SetInt(BlackFightPaperData.GetPrefsKeyPaperUnlock(self.idx), 1)
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R2 in 'UnsetPending'
-
-BlackFightPaperData.GetPrefsKeyPaperUnlock = function(idx)
-  -- function num : 0_34 , upvalues : _ENV
-  return (Summer1Data.GetPrefsKey)("BlackFightPaperUnlock") .. idx
+function BlackFightPaperData.GetPrefsKeyPaperUnlock(idx)
+  return Summer1Data.GetPrefsKey("BlackFightPaperUnlock") .. idx
 end
 
 _class("BlackFightPaperOverviewData", Object)
 BlackFightPaperOverviewData = BlackFightPaperOverviewData
--- DECOMPILER ERROR at PC158: Confused about usage of register: R2 in 'UnsetPending'
 
-BlackFightPaperOverviewData.Constructor = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function BlackFightPaperOverviewData:Constructor()
   self.idx = 0
   self.btnPos = Vector2.zero
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R2 in 'UnsetPending'
-
-BlackFightPaperOverviewData.Init = function(self, idx)
-  -- function num : 0_36 , upvalues : _ENV
+function BlackFightPaperOverviewData:Init(idx)
   self.idx = idx
-  local cfgv = (Cfg.cfg_n7_black_fight_paper)[idx]
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.btnPos).x = ((cfgv.PartsOverview).btnPos)[1]
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.btnPos).y = ((cfgv.PartsOverview).btnPos)[2]
+  local cfgv = Cfg.cfg_n7_black_fight_paper[idx]
+  self.btnPos.x = cfgv.PartsOverview.btnPos[1]
+  self.btnPos.y = cfgv.PartsOverview.btnPos[2]
 end
 
 _class("BlackFightPaperElement", Object)
 BlackFightPaperElement = BlackFightPaperElement
--- DECOMPILER ERROR at PC170: Confused about usage of register: R2 in 'UnsetPending'
 
-BlackFightPaperElement.Constructor = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function BlackFightPaperElement:Constructor()
   self.type = BlackFightPaperElementType.Text
   self.pos = Vector2.zero
   self.rot = Quaternion.identity
@@ -631,6 +466,12 @@ BlackFightPaperElement.Constructor = function(self)
   self.font = ""
 end
 
-local BlackFightPaperElementType = {Empty = 0, Text = 1, RawImage = 2, Image = 3, RawImageText = 4, FloatRawImageText = 5}
+local BlackFightPaperElementType = {
+  Empty = 0,
+  Text = 1,
+  RawImage = 2,
+  Image = 3,
+  RawImageText = 4,
+  FloatRawImageText = 5
+}
 _enum("BlackFightPaperElementType", BlackFightPaperElementType)
-

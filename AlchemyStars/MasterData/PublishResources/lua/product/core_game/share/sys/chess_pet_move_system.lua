@@ -1,42 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/chess_pet_move_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("ChessPetMoveSystem", MainStateSystem)
 ChessPetMoveSystem = ChessPetMoveSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ChessPetMoveSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ChessPetMoveSystem:_GetMainStateID()
   return GameStateID.ChessPetMove
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetMoveSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function ChessPetMoveSystem:_OnMainStateEnter(TT)
   self:_DoLogicChessPetMove()
-  local svc = (self._world):GetService("L2R")
+  local svc = self._world:GetService("L2R")
   svc:L2RChessPathData()
   self:_DoRenderChessPetMove(TT)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChessPetMoveFinish, 1)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChessPetMoveFinish, 1)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetMoveSystem._DoLogicChessPetMove = function(self)
-  -- function num : 0_2
-  local chessLogic = (self._world):GetService("ChessLogic")
+function ChessPetMoveSystem:_DoLogicChessPetMove()
+  local chessLogic = self._world:GetService("ChessLogic")
   chessLogic:DoChessPetPathMove()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetMoveSystem._DoRenderChessPetMove = function(self, TT)
-  -- function num : 0_3
+function ChessPetMoveSystem:_DoRenderChessPetMove(TT)
 end
-
-

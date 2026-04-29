@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_board_piece_map_with_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetBoardPieceMapWithTrap", BuffLogicBase)
 BuffLogicSetBoardPieceMapWithTrap = BuffLogicSetBoardPieceMapWithTrap
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetBoardPieceMapWithTrap.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetBoardPieceMapWithTrap:Constructor(buffInstance, logicParam)
   self._trapID = logicParam.trapID
   self._piece = logicParam.piece
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetBoardPieceMapWithTrap.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  local board = ((self._world):GetBoardEntity()):Board()
+function BuffLogicSetBoardPieceMapWithTrap:DoLogic()
+  local e = self._buffInstance:Entity()
+  local board = self._world:GetBoardEntity():Board()
   local mapByPosition = {}
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
   local trapEntities = trapGroup:GetEntities()
-  for _,entity in ipairs(trapEntities) do
+  for _, entity in ipairs(trapEntities) do
     local trapComponent = entity:Trap()
     if trapComponent and not entity:HasDeadMark() and trapComponent:GetTrapID() == self._trapID then
       local pos = entity:GetGridPosition()
-      local posIndex = (Vector2.Pos2Index)(pos)
+      local posIndex = Vector2.Pos2Index(pos)
       mapByPosition[posIndex] = self._piece
     end
   end
@@ -34,5 +24,3 @@ BuffLogicSetBoardPieceMapWithTrap.DoLogic = function(self)
   local buffResult = BuffResultSetBoardPieceMapWithTrap:New(mapByPosition)
   return buffResult
 end
-
-

@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/common/ui_season_maze_room_pop_box.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRoomPopBox", UIController)
 UISeasonMazeRoomPopBox = UISeasonMazeRoomPopBox
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoomPopBox.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonMazeRoomPopBox:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomPopBox.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self._seasonMazeObj = (self._seasonMazeModule):CurSeasonObj()
-  self._component = (self._seasonMazeObj):GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
-  self._componentInfo = (self._component):GetComponentInfo()
+function UISeasonMazeRoomPopBox:OnShow(uiParams)
+  self._seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self._seasonMazeObj = self._seasonMazeModule:CurSeasonObj()
+  self._component = self._seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+  self._componentInfo = self._component:GetComponentInfo()
   self._atlas = self:GetAsset("SeasonMaze.spriteatlas", LoadType.SpriteAtlas)
   self._type = uiParams[1]
   self._callBack = uiParams[2]
@@ -28,10 +18,7 @@ UISeasonMazeRoomPopBox.OnShow = function(self, uiParams)
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomPopBox.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonMazeRoomPopBox:InitWidget()
   self._title = self:GetUIComponent("UILocalizationText", "Title")
   self._emptyGO = self:GetGameObject("Empty")
   self._roundGO = self:GetGameObject("Round")
@@ -41,125 +28,79 @@ UISeasonMazeRoomPopBox.InitWidget = function(self)
   self._resourceLeftValue = self:GetUIComponent("UILocalizationText", "ResourceLeftValue")
   self._resourceRightImg = self:GetUIComponent("Image", "ResourceRightImg")
   self._resourceRightValue = self:GetUIComponent("UILocalizationText", "ResourceRightValue")
-  ;
-  (self._emptyGO):SetActive(false)
-  ;
-  (self._roundGO):SetActive(false)
-  ;
-  (self._resourceGO):SetActive(false)
+  self._emptyGO:SetActive(false)
+  self._roundGO:SetActive(false)
+  self._resourceGO:SetActive(false)
   self._anim = self:GetUIComponent("Animation", "UISeasonMazeRoomPopBox")
   self._resourceTitle = self:GetUIComponent("UILocalizationText", "ResourceTitle")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomPopBox._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local str = nil
+function UISeasonMazeRoomPopBox:_OnValue()
+  local str
   if self._type == SeasonMazeRoomType.SMRT_Empty then
     str = "str_season_maze_room_name_empty"
-    ;
-    (self._emptyGO):SetActive(true)
-  else
-    if self._type == SeasonMazeRoomType.SMRT_Round then
-      str = "str_season_maze_room_name_round"
-      local value = (self._asset).value_min
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._roundImg).sprite = (self._atlas):GetSprite("cn14_sjmj_pd_lzi0" .. value)
-      ;
-      (self._roundDesc):SetText((StringTable.Get)("str_season_maze_room_common_round", value))
-      ;
-      (self._roundGO):SetActive(true)
-    else
-      do
-        if self._type == SeasonMazeRoomType.SMRT_Resource then
-          str = "str_season_maze_resource_room_title"
-          local step = (self._component):GetAttrValue(SeasonMazeAttrType.SMAT_Round_Step_All)
-          ;
-          (self._resourceLeftValue):SetText(step)
-          local spriteName = ""
-          local titleStr = ""
-          if (self._asset).type == SeasonMazeEffectType.SMET_Pro then
-            if (self._asset).id == SeasonMazeAttrType.SMAT_Gold then
-              spriteName = "cn14_sjmj_kdroom_icon01"
-              titleStr = "str_season_maze_room_resource_title1"
-            else
-              if (self._asset).id == SeasonMazeAttrType.SMAT_Exp then
-                spriteName = "cn14_sjmj_kdroom_icon02"
-                titleStr = "str_season_maze_room_resource_title2"
-              end
-            end
-          else
-            if (self._asset).type == SeasonMazeEffectType.SMET_Bead then
-              spriteName = "cn14_sjmj_kdroom_icon03"
-              titleStr = "str_season_maze_room_resource_title3"
-            end
-          end
-          -- DECOMPILER ERROR at PC95: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._resourceRightImg).sprite = (self._atlas):GetSprite(spriteName)
-          ;
-          (self._resourceRightValue):SetText((self._asset).value_min)
-          ;
-          (self._resourceTitle):SetText((StringTable.Get)(titleStr))
-          ;
-          (self._resourceGO):SetActive(true)
-        end
-        do
-          if str then
-            str = (StringTable.Get)(str)
-          else
-            str = ""
-          end
-          ;
-          (self._title):SetText(str)
-          self:Lock("uieffanim_UISeasonMazeRoomPopBox_in")
-          ;
-          (self._anim):Play("uieffanim_UISeasonMazeRoomPopBox_in")
-          self._timer = ((GameGlobal.Timer)()):AddEvent(1600, function()
-    -- function num : 0_3_0 , upvalues : self
-    self:UnLock("uieffanim_UISeasonMazeRoomPopBox_in")
-  end
-)
-        end
+    self._emptyGO:SetActive(true)
+  elseif self._type == SeasonMazeRoomType.SMRT_Round then
+    str = "str_season_maze_room_name_round"
+    local value = self._asset.value_min
+    self._roundImg.sprite = self._atlas:GetSprite("cn14_sjmj_pd_lzi0" .. value)
+    self._roundDesc:SetText(StringTable.Get("str_season_maze_room_common_round", value))
+    self._roundGO:SetActive(true)
+  elseif self._type == SeasonMazeRoomType.SMRT_Resource then
+    str = "str_season_maze_resource_room_title"
+    local step = self._component:GetAttrValue(SeasonMazeAttrType.SMAT_Round_Step_All)
+    self._resourceLeftValue:SetText(step)
+    local spriteName = ""
+    local titleStr = ""
+    if self._asset.type == SeasonMazeEffectType.SMET_Pro then
+      if self._asset.id == SeasonMazeAttrType.SMAT_Gold then
+        spriteName = "cn14_sjmj_kdroom_icon01"
+        titleStr = "str_season_maze_room_resource_title1"
+      elseif self._asset.id == SeasonMazeAttrType.SMAT_Exp then
+        spriteName = "cn14_sjmj_kdroom_icon02"
+        titleStr = "str_season_maze_room_resource_title2"
       end
+    elseif self._asset.type == SeasonMazeEffectType.SMET_Bead then
+      spriteName = "cn14_sjmj_kdroom_icon03"
+      titleStr = "str_season_maze_room_resource_title3"
     end
+    self._resourceRightImg.sprite = self._atlas:GetSprite(spriteName)
+    self._resourceRightValue:SetText(self._asset.value_min)
+    self._resourceTitle:SetText(StringTable.Get(titleStr))
+    self._resourceGO:SetActive(true)
   end
+  if str then
+    str = StringTable.Get(str)
+  else
+    str = ""
+  end
+  self._title:SetText(str)
+  self:Lock("uieffanim_UISeasonMazeRoomPopBox_in")
+  self._anim:Play("uieffanim_UISeasonMazeRoomPopBox_in")
+  self._timer = GameGlobal.Timer():AddEvent(1600, function()
+    self:UnLock("uieffanim_UISeasonMazeRoomPopBox_in")
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomPopBox.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMazeRoomPopBox:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
   self:UnLock("uieffanim_UISeasonMazeRoomPopBox_out")
   self:UnLock("uieffanim_UISeasonMazeRoomPopBox_in")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomPopBox.CloseBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonMazeRoomPopBox:CloseBtnOnClick(go)
   self:Lock("uieffanim_UISeasonMazeRoomPopBox_out")
-  ;
-  (self._anim):Play("uieffanim_UISeasonMazeRoomPopBox_out")
+  self._anim:Play("uieffanim_UISeasonMazeRoomPopBox_out")
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
-  self._timer = ((GameGlobal.Timer)()):AddEvent(333, function()
-    -- function num : 0_5_0 , upvalues : self
+  self._timer = GameGlobal.Timer():AddEvent(333, function()
     self:UnLock("uieffanim_UISeasonMazeRoomPopBox_out")
     self:CloseDialog()
     if self._callBack then
-      (self._callBack)()
+      self._callBack()
     end
-  end
-)
+  end)
 end
-
-

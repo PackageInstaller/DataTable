@@ -1,58 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/smoking_task_progress_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SmokingTestProgressInfo", Object)
 SmokingTestProgressInfo = SmokingTestProgressInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SmokingTestProgressInfo.Constructor = function(self)
-  -- function num : 0_0
+function SmokingTestProgressInfo:Constructor()
   self._totalProgress = 1
   self._currentProgress = 0
   self._progressToken = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokingTestProgressInfo.GetProgress = function(self)
-  -- function num : 0_1
+function SmokingTestProgressInfo:GetProgress()
   return self._currentProgress, self._totalProgress, self._currentProgress / self._totalProgress
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokingTestProgressInfo.TickProgress = function(self, progressToken)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC5: Unhandled construct in 'MakeBoolean' P1
-
-  if progressToken and self._progressToken == progressToken then
-    return 
+function SmokingTestProgressInfo:TickProgress(progressToken)
+  if progressToken then
+    if self._progressToken == progressToken then
+      return
+    end
+    self._progressToken = progressToken
   end
-  self._progressToken = progressToken
   self._currentProgress = self._currentProgress + 1
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokingTestProgressInfo.SetCurrentProgress = function(self, p)
-  -- function num : 0_3
+function SmokingTestProgressInfo:SetCurrentProgress(p)
   self._currentProgress = p
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokingTestProgressInfo.SetTotalProgress = function(self, p)
-  -- function num : 0_4
+function SmokingTestProgressInfo:SetTotalProgress(p)
   self._totalProgress = p
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokingTestProgressInfo.__tostring = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  return (string.format)("%d/%d (%.2f%%)", self._currentProgress, self._totalProgress, self._currentProgress / self._totalProgress * 100)
+function SmokingTestProgressInfo:__tostring()
+  return string.format("%d/%d (%.2f%%)", self._currentProgress, self._totalProgress, self._currentProgress / self._totalProgress * 100)
 end
-
-

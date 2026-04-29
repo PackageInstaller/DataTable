@@ -1,190 +1,128 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/monster_refresh_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MonsterRefreshService", BaseService)
 MonsterRefreshService = MonsterRefreshService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterRefreshService.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function MonsterRefreshService:Constructor(world)
   self._monsterRefreshFunc = {}
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterWaveInternalRefreshType.AfterMonsterDead] = self._IsMonsterDead
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterWaveInternalRefreshType.EveryRoundCount] = self._IsRoundAccept
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterWaveInternalRefreshType.WatchTarget] = self._WatchTargetExceptMonsterTurn
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterWaveInternalRefreshType.AllMonsterDead] = self._AllMonsterDead
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterWaveInternalRefreshType.TargetRound] = self._TargetRound
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterWaveInternalRefreshType.RoundResultWatchTarget] = self._RoundResultTargetRound
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterWaveInternalRefreshType.RoundResultCheckMonsterCount] = self._RoundResultCheckMonsterCount
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterWaveInternalRefreshType.AssignRefreshTypeAndTime] = self._AssignRefreshTypeAndTime
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterWaveInternalRefreshType.CompareMonsterNumber] = self._CompareMonsterNumber
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterWaveInternalRefreshType.OnlySpecifiedMonsterSurvival] = self._OnlySpecifiedMonsterSurvival
+  self._monsterRefreshFunc[MonsterWaveInternalRefreshType.AfterMonsterDead] = self._IsMonsterDead
+  self._monsterRefreshFunc[MonsterWaveInternalRefreshType.EveryRoundCount] = self._IsRoundAccept
+  self._monsterRefreshFunc[MonsterWaveInternalRefreshType.WatchTarget] = self._WatchTargetExceptMonsterTurn
+  self._monsterRefreshFunc[MonsterWaveInternalRefreshType.AllMonsterDead] = self._AllMonsterDead
+  self._monsterRefreshFunc[MonsterWaveInternalRefreshType.TargetRound] = self._TargetRound
+  self._monsterRefreshFunc[MonsterWaveInternalRefreshType.RoundResultWatchTarget] = self._RoundResultTargetRound
+  self._monsterRefreshFunc[MonsterWaveInternalRefreshType.RoundResultCheckMonsterCount] = self._RoundResultCheckMonsterCount
+  self._monsterRefreshFunc[MonsterWaveInternalRefreshType.AssignRefreshTypeAndTime] = self._AssignRefreshTypeAndTime
+  self._monsterRefreshFunc[MonsterWaveInternalRefreshType.CompareMonsterNumber] = self._CompareMonsterNumber
+  self._monsterRefreshFunc[MonsterWaveInternalRefreshType.OnlySpecifiedMonsterSurvival] = self._OnlySpecifiedMonsterSurvival
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshService.IsRefreshMonster = function(self, refreshType, refreshParam, monsterWaveInternalTime, hadRefreshRound)
-  -- function num : 0_1
-  return ((self._monsterRefreshFunc)[refreshType])(self, refreshParam, monsterWaveInternalTime, hadRefreshRound)
+function MonsterRefreshService:IsRefreshMonster(refreshType, refreshParam, monsterWaveInternalTime, hadRefreshRound)
+  return self._monsterRefreshFunc[refreshType](self, refreshParam, monsterWaveInternalTime, hadRefreshRound)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshService._IsMonsterDead = function(self, refreshParam, monsterWaveInternalTime, hadRefreshRound, notCheckTime)
-  -- function num : 0_2 , upvalues : _ENV
+function MonsterRefreshService:_IsMonsterDead(refreshParam, monsterWaveInternalTime, hadRefreshRound, notCheckTime)
   if not notCheckTime and monsterWaveInternalTime == MonsterWaveInternalTime.MonsterTurn then
     return false
   end
-  local roundCount = (self:_GetBattleStatComponent()):GetCurWaveTotalRoundCount()
-  if (table.intable)(hadRefreshRound, roundCount) then
+  local roundCount = self:_GetBattleStatComponent():GetCurWaveTotalRoundCount()
+  if table.intable(hadRefreshRound, roundCount) then
     return false
   end
-  if (self:_GetBattleStatComponent()):IsCurWaveHasDeadRefreshMonster() then
+  if self:_GetBattleStatComponent():IsCurWaveHasDeadRefreshMonster() then
     return false
   end
-  local needMonsterList = (table.cloneconf)(refreshParam)
-  local monsterIDList = (self:_GetBattleStatComponent()):GetCurWaveDeadMonsterIDList()
-  for _,id in ipairs(monsterIDList) do
-    (table.removev)(needMonsterList, id)
+  local needMonsterList = table.cloneconf(refreshParam)
+  local monsterIDList = self:_GetBattleStatComponent():GetCurWaveDeadMonsterIDList()
+  for _, id in ipairs(monsterIDList) do
+    table.removev(needMonsterList, id)
   end
   local ret = #needMonsterList == 0
-  ;
-  (self:_GetBattleStatComponent()):SetCurWaveHasDeadRefreshMonsterState(ret)
-  do return ret end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self:_GetBattleStatComponent():SetCurWaveHasDeadRefreshMonsterState(ret)
+  return ret
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshService._IsRoundAccept = function(self, refreshParam, monsterWaveInternalTime, hadRefreshRound, notCheckTime)
-  -- function num : 0_3 , upvalues : _ENV
+function MonsterRefreshService:_IsRoundAccept(refreshParam, monsterWaveInternalTime, hadRefreshRound, notCheckTime)
   if not notCheckTime and monsterWaveInternalTime ~= MonsterWaveInternalTime.MonsterTurn then
     return false
   end
-  local roundCount = (self:_GetBattleStatComponent()):GetCurWaveTotalRoundCount()
-  if (table.intable)(hadRefreshRound, roundCount) then
+  local roundCount = self:_GetBattleStatComponent():GetCurWaveTotalRoundCount()
+  if table.intable(hadRefreshRound, roundCount) then
     return false
   end
   local condition = tonumber(refreshParam[1])
   if roundCount < condition then
     return false
   end
-  local _, r = (math.modf)(roundCount / condition)
-  do return r == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local _, r = math.modf(roundCount / condition)
+  return r == 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshService._WatchTargetExceptMonsterTurn = function(self, refreshParam, monsterWaveInternalTime, hadRefreshRound, notCheckTime)
-  -- function num : 0_4 , upvalues : _ENV
+function MonsterRefreshService:_WatchTargetExceptMonsterTurn(refreshParam, monsterWaveInternalTime, hadRefreshRound, notCheckTime)
   if not notCheckTime and monsterWaveInternalTime == MonsterWaveInternalTime.MonsterTurn then
     return false
   end
   return self:_WatchTarget(refreshParam, hadRefreshRound)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshService._WatchTarget = function(self, refreshParam, hadRefreshRound)
-  -- function num : 0_5 , upvalues : _ENV
-  local roundCount = (self:_GetBattleStatComponent()):GetCurWaveTotalRoundCount()
-  if (table.intable)(hadRefreshRound, roundCount) then
+function MonsterRefreshService:_WatchTarget(refreshParam, hadRefreshRound)
+  local roundCount = self:_GetBattleStatComponent():GetCurWaveTotalRoundCount()
+  if table.intable(hadRefreshRound, roundCount) then
     return false
   end
   local monsterID = refreshParam[1]
   local monsterTargetCount = tonumber(refreshParam[2])
   local limitCount = tonumber(refreshParam[3])
-  if limitCount and limitCount <= (table.count)(hadRefreshRound) then
+  if limitCount and limitCount <= table.count(hadRefreshRound) then
     return false
   end
   local curMonsterCount = 0
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,aiEntity in ipairs(group:GetEntities()) do
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, aiEntity in ipairs(group:GetEntities()) do
     if not aiEntity:HasDeadMark() then
       local monsterIDCmpt = aiEntity:MonsterID()
       if monsterIDCmpt ~= nil then
         local curID = monsterIDCmpt:GetMonsterID()
         if type(monsterID) ~= "table" and curID == tonumber(monsterID) then
           curMonsterCount = curMonsterCount + 1
-        else
-          if type(monsterID) == "table" and (table.intable)(monsterID, curID) then
-            curMonsterCount = curMonsterCount + 1
-          else
-            if type(monsterID) == "table" and #monsterID == 0 then
-              curMonsterCount = curMonsterCount + 1
-            end
-          end
+        elseif type(monsterID) == "table" and table.intable(monsterID, curID) then
+          curMonsterCount = curMonsterCount + 1
+        elseif type(monsterID) == "table" and #monsterID == 0 then
+          curMonsterCount = curMonsterCount + 1
         end
       end
     end
   end
-  if curMonsterCount < monsterTargetCount then
+  if monsterTargetCount > curMonsterCount then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshService._RoundResultTargetRound = function(self, refreshParam, monsterWaveInternalTime, hadRefreshRound, notCheckTime)
-  -- function num : 0_6 , upvalues : _ENV
-  local invalidTime = {MonsterWaveInternalTime.ActiveSkill, MonsterWaveInternalTime.MonsterTurn}
-  if not notCheckTime and (table.icontains)(invalidTime, monsterWaveInternalTime) then
+function MonsterRefreshService:_RoundResultTargetRound(refreshParam, monsterWaveInternalTime, hadRefreshRound, notCheckTime)
+  local invalidTime = {
+    MonsterWaveInternalTime.ActiveSkill,
+    MonsterWaveInternalTime.MonsterTurn
+  }
+  if not notCheckTime and table.icontains(invalidTime, monsterWaveInternalTime) then
     return false
   end
   return self:_WatchTarget(refreshParam, hadRefreshRound)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshService._AllMonsterDead = function(self, refreshParam, monsterWaveInternalTime, hadRefreshRound, notCheckTime)
-  -- function num : 0_7 , upvalues : _ENV
+function MonsterRefreshService:_AllMonsterDead(refreshParam, monsterWaveInternalTime, hadRefreshRound, notCheckTime)
   if not notCheckTime and monsterWaveInternalTime == MonsterWaveInternalTime.MonsterTurn then
     return false
   end
   local battleStatCmpt = self:_GetBattleStatComponent()
   local roundCount = battleStatCmpt:GetCurWaveTotalRoundCount()
-  if (table.intable)(hadRefreshRound, roundCount) then
+  if table.intable(hadRefreshRound, roundCount) then
     return false
   end
-  if #hadRefreshRound > 0 then
+  if 0 < #hadRefreshRound then
     return false
   end
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   local curMonsterCount = #group:GetEntities()
-  local offBoardMonsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).OffBoardMonster)
+  local offBoardMonsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.OffBoardMonster)
   curMonsterCount = curMonsterCount + #offBoardMonsterGroup:GetEntities()
   if curMonsterCount ~= 0 then
     return false
@@ -199,66 +137,51 @@ MonsterRefreshService._AllMonsterDead = function(self, refreshParam, monsterWave
     battleStatCmpt:AddCurWaveAllmonsterDeadTimes()
     return true
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshService._TargetRound = function(self, refreshParam, monsterWaveInternalTime, hadRefreshRound, notCheckTime)
-  -- function num : 0_8 , upvalues : _ENV
+function MonsterRefreshService:_TargetRound(refreshParam, monsterWaveInternalTime, hadRefreshRound, notCheckTime)
   if not notCheckTime and monsterWaveInternalTime ~= MonsterWaveInternalTime.MonsterTurn then
     return false
   end
-  local roundCount = (self:_GetBattleStatComponent()):GetCurWaveTotalRoundCount()
-  if (table.intable)(hadRefreshRound, roundCount) then
+  local roundCount = self:_GetBattleStatComponent():GetCurWaveTotalRoundCount()
+  if table.intable(hadRefreshRound, roundCount) then
     return false
   end
-  if #hadRefreshRound > 0 then
+  if 0 < #hadRefreshRound then
     return false
   end
   local condition = tonumber(refreshParam[1])
-  do return condition == roundCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return condition == roundCount
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshService._RoundResultCheckMonsterCount = function(self, refreshParam, monsterWaveInternalTime, hadRefreshRound, notCheckTime)
-  -- function num : 0_9 , upvalues : _ENV
+function MonsterRefreshService:_RoundResultCheckMonsterCount(refreshParam, monsterWaveInternalTime, hadRefreshRound, notCheckTime)
   if not notCheckTime and MonsterWaveInternalTime.RoundResult ~= monsterWaveInternalTime then
     return false
   end
   return self:_WatchTarget(refreshParam, hadRefreshRound)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshService._AssignRefreshTypeAndTime = function(self, refreshParam, monsterWaveInternalTime, hadRefreshRound)
-  -- function num : 0_10 , upvalues : _ENV
+function MonsterRefreshService:_AssignRefreshTypeAndTime(refreshParam, monsterWaveInternalTime, hadRefreshRound)
   local assignType = refreshParam.refreshType
   local assignParam = refreshParam.refreshParam
   local assignTimeList = refreshParam.time
-  if not (table.icontains)(assignTimeList, monsterWaveInternalTime) then
+  if not table.icontains(assignTimeList, monsterWaveInternalTime) then
     return false
   end
-  return ((self._monsterRefreshFunc)[assignType])(self, assignParam, monsterWaveInternalTime, hadRefreshRound, true)
+  return self._monsterRefreshFunc[assignType](self, assignParam, monsterWaveInternalTime, hadRefreshRound, true)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshService._CompareMonsterNumber = function(self, refreshParam, monsterWaveInternalTime, hadRefreshRound, notCheckTime)
-  -- function num : 0_11 , upvalues : _ENV
-  local roundCount = (self:_GetBattleStatComponent()):GetCurWaveTotalRoundCount()
-  if (table.intable)(hadRefreshRound, roundCount) then
+function MonsterRefreshService:_CompareMonsterNumber(refreshParam, monsterWaveInternalTime, hadRefreshRound, notCheckTime)
+  local roundCount = self:_GetBattleStatComponent():GetCurWaveTotalRoundCount()
+  if table.intable(hadRefreshRound, roundCount) then
     return false
   end
   local type = tonumber(refreshParam[1])
   local count = tonumber(refreshParam[2])
   local curMonsterCount = 0
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,monster in ipairs(group:GetEntities()) do
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, monster in ipairs(group:GetEntities()) do
     if not monster:HasDeadMark() then
       curMonsterCount = curMonsterCount + 1
     end
@@ -266,32 +189,25 @@ MonsterRefreshService._CompareMonsterNumber = function(self, refreshParam, monst
   return CompareFunByType(type, curMonsterCount, count)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshService._OnlySpecifiedMonsterSurvival = function(self, refreshParam, monsterWaveInternalTime, hadRefreshRound, notCheckTime)
-  -- function num : 0_12 , upvalues : _ENV
-  local roundCount = (self:_GetBattleStatComponent()):GetCurWaveTotalRoundCount()
-  if (table.intable)(hadRefreshRound, roundCount) then
+function MonsterRefreshService:_OnlySpecifiedMonsterSurvival(refreshParam, monsterWaveInternalTime, hadRefreshRound, notCheckTime)
+  local roundCount = self:_GetBattleStatComponent():GetCurWaveTotalRoundCount()
+  if table.intable(hadRefreshRound, roundCount) then
     return false
   end
   local monsterID = refreshParam[1]
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,monster in ipairs(group:GetEntities()) do
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, monster in ipairs(group:GetEntities()) do
     if not monster:HasDeadMark() then
       local monsterIDCmpt = monster:MonsterID()
       if monsterIDCmpt ~= nil then
         local curID = monsterIDCmpt:GetMonsterID()
         if type(monsterID) ~= "table" and curID ~= tonumber(monsterID) then
           return false
-        else
-          if type(monsterID) == "table" and not (table.intable)(monsterID, curID) then
-            return false
-          end
+        elseif type(monsterID) == "table" and not table.intable(monsterID, curID) then
+          return false
         end
       end
     end
   end
   return true
 end
-
-

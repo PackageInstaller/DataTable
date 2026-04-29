@@ -1,370 +1,259 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/campaign_build_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CampaignBuildComponent", ICampaignComponent)
 CampaignBuildComponent = CampaignBuildComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CampaignBuildComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CampaignBuildComponent:Constructor()
   self.m_component_info = BuildComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignBuildComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CampaignBuildComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = BuildComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignBuildComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function CampaignBuildComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignBuildComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CampaignBuildComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_REBUILD
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignBuildComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function CampaignBuildComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignBuildComponent.HandleBuild = function(self, TT, asyncRes, build_item_id, build_type)
-  -- function num : 0_5 , upvalues : _ENV
+function CampaignBuildComponent:HandleBuild(TT, asyncRes, build_item_id, build_type)
   local request = BuildComponentBuildReq:New()
   request.item_id = build_item_id
   request.build_type = build_type
   local response = BuildComponentBuildRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][CampaignBuildComponent] HandleBuild ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][CampaignBuildComponent] HandleBuild ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  ((self.m_component_info).build_item_infos)[(response.build_info).build_item_id] = response.build_info
+  self.m_component_info.build_item_infos[response.build_info.build_item_id] = response.build_info
   return asyncRes, response.rewards
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignBuildComponent.HandleStory = function(self, TT, asyncRes, build_item_id, build_type)
-  -- function num : 0_6 , upvalues : _ENV
+function CampaignBuildComponent:HandleStory(TT, asyncRes, build_item_id, build_type)
   local request = BuildComponentStoryReq:New()
   request.item_id = build_item_id
   request.status = build_type
   local response = BuildComponentStoryRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][CampaignBuildComponent] HandleStory ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][CampaignBuildComponent] HandleStory ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  ((self.m_component_info).build_item_infos)[(response.build_info).build_item_id] = response.build_info
+  self.m_component_info.build_item_infos[response.build_info.build_item_id] = response.build_info
   return asyncRes
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignBuildComponent.HandleCompleteEvent = function(self, TT, asyncRes, event_id)
-  -- function num : 0_7 , upvalues : _ENV
+function CampaignBuildComponent:HandleCompleteEvent(TT, asyncRes, event_id)
   local request = BuildComponentCompleteEventReq:New()
   request.event_id = event_id
   local response = BuildComponentCompleteEventRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][CampaignBuildComponent] HandleCompleteEvent ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][CampaignBuildComponent] HandleCompleteEvent ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).event_info = response.build_event_info
+  self.m_component_info.event_info = response.build_event_info
   return asyncRes, response.rewards
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignBuildComponent.HandlePicnicPutFood = function(self, TT, asyncRes, area_id)
-  -- function num : 0_8 , upvalues : _ENV
+function CampaignBuildComponent:HandlePicnicPutFood(TT, asyncRes, area_id)
   local request = PicnicPutFoodReq:New()
   request.area_id = area_id
   local response = PicnicPutFoodRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][CampaignBuildComponent] HandlePicnicPutFood ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][CampaignBuildComponent] HandlePicnicPutFood ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).m_picnic_info = response.picnicInfo
+  self.m_component_info.m_picnic_info = response.picnicInfo
   return asyncRes, response.reward
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignBuildComponent.HandlePicnicStory = function(self, TT, asyncRes)
-  -- function num : 0_9 , upvalues : _ENV
+function CampaignBuildComponent:HandlePicnicStory(TT, asyncRes)
   local request = PicnicWatchStoryReq:New()
   local response = PicnicWatchStoryRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][CampaignBuildComponent] HandlePicnicStory ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][CampaignBuildComponent] HandlePicnicStory ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self.m_component_info).m_picnic_info).m_have_story = false
+  self.m_component_info.m_picnic_info.m_have_story = false
   return asyncRes
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignBuildComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_10 , upvalues : _ENV
+function CampaignBuildComponent:CampaignComponentPushNotify(notify_data)
   if BuildComponentNotifyType.BuildComponentNotify_EventRefresh == notify_data.m_notify_type then
     local ev = NotifyBuildComponentEventRefresh:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
-      (self.m_component_info).event_info = ev.event_info
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NPlusSixEventRefresh)
+      self.m_component_info.event_info = ev.event_info
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.NPlusSixEventRefresh)
     else
-      ;
-      (Log.error)("[CampaignCom][CampaignBuildComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][CampaignBuildComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
-  else
-    do
-      if BuildComponentNotifyType.BuildComponentNotify_TokenMoneyChanged == notify_data.m_notify_type then
-        local ev = NotifyBuildComponentTokenMoneyChanged:New()
-        local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
-        -- DECOMPILER ERROR at PC49: Confused about usage of register: R4 in 'UnsetPending'
-
-        if ret then
-          (self.m_component_info).item_count = ev.item_count
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NPlusSixEventRefresh)
-        else
-          ;
-          (Log.error)("[CampaignCom][CampaignBuildComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
-        end
-      end
+  elseif BuildComponentNotifyType.BuildComponentNotify_TokenMoneyChanged == notify_data.m_notify_type then
+    local ev = NotifyBuildComponentTokenMoneyChanged:New()
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
+    if ret then
+      self.m_component_info.item_count = ev.item_count
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.NPlusSixEventRefresh)
+    else
+      Log.error("[CampaignCom][CampaignBuildComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignBuildComponent.HaveEventRedPoint = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local eventInfo = (self.m_component_info).event_info
-  if eventInfo.cur_event_list and (table.count)(eventInfo.cur_event_list) > 0 then
+function CampaignBuildComponent:HaveEventRedPoint()
+  local eventInfo = self.m_component_info.event_info
+  if eventInfo.cur_event_list and table.count(eventInfo.cur_event_list) > 0 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignBuildComponent.GetNextBuildCost = function(self, component)
-  -- function num : 0_12 , upvalues : _ENV
+function CampaignBuildComponent:GetNextBuildCost(component)
   local componentID = component.m_campaign_id * 100000 + component.m_component_type * 100 + component.m_component_id
-  local lastItem = (table.maxn)((self.m_component_info).build_item_infos)
+  local lastItem = table.maxn(self.m_component_info.build_item_infos)
   if lastItem == 0 then
-    local item_cfg = (Cfg.cfg_component_build_item)({ComponentID = componentID})
-    local build_cost = (item_cfg[2]).BuildCost
-    return (build_cost[1])[1], 0
+    local item_cfg = Cfg.cfg_component_build_item({ComponentID = componentID})
+    local build_cost = item_cfg[2].BuildCost
+    return build_cost[1][1], 0
   end
-  do
-    local cfgs = (Cfg.cfg_component_build_item)({ComponentID = componentID, BuildItemId = lastItem})
-    if not cfgs then
-      return 0, 0
-    end
-    local mask = 0
-    for _,v in pairs(cfgs) do
-      mask = mask | v.BuildStatus
-      if ((component.build_item_infos)[lastItem]).mask < mask then
-        local next_status_cfg = (Cfg.cfg_component_build_item)({ComponentID = componentID, BuildItemId = lastItem, BuildStatus = v.BuildStatus})
-        local next_status_cost = (next_status_cfg[1]).BuildCost
-        if next_status_cost then
-          return (next_status_cost[1])[1], (next_status_cost[1])[2]
-        else
-          return 0, 0
-        end
+  local cfgs = Cfg.cfg_component_build_item({ComponentID = componentID, BuildItemId = lastItem})
+  if not cfgs then
+    return 0, 0
+  end
+  local mask = 0
+  for _, v in pairs(cfgs) do
+    mask = mask | v.BuildStatus
+    if mask > component.build_item_infos[lastItem].mask then
+      local next_status_cfg = Cfg.cfg_component_build_item({
+        ComponentID = componentID,
+        BuildItemId = lastItem,
+        BuildStatus = v.BuildStatus
+      })
+      local next_status_cost = next_status_cfg[1].BuildCost
+      if next_status_cost then
+        return next_status_cost[1][1], next_status_cost[1][2]
+      else
+        return 0, 0
       end
     end
-    local next_item_cfg = (Cfg.cfg_component_build_item)({ComponentID = componentID, BuildItemId = lastItem + 1})
-    if not next_item_cfg then
-      return -1, -1
-    end
-    local next_item_cost = (next_item_cfg[2]).BuildCost
-    if next_item_cost then
-      return (next_item_cost[1])[1], (next_item_cost[1])[2]
-    else
-      return 0, 0
-    end
+  end
+  local next_item_cfg = Cfg.cfg_component_build_item({
+    ComponentID = componentID,
+    BuildItemId = lastItem + 1
+  })
+  if not next_item_cfg then
+    return -1, -1
+  end
+  local next_item_cost = next_item_cfg[2].BuildCost
+  if next_item_cost then
+    return next_item_cost[1][1], next_item_cost[1][2]
+  else
+    return 0, 0
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignBuildComponent.HaveSakuragariRedPoint = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function CampaignBuildComponent:HaveSakuragariRedPoint()
   local component = self:GetComponentInfo()
   local next_item_id, next_cost = self:GetNextBuildCost(component)
-  do
-    if next_item_id > 0 then
-      local my_item_count = (ClientCampaignDrawShop.GetMoney)(next_item_id)
-      if my_item_count > 0 and next_cost >= 0 and next_cost <= my_item_count then
-        return true
-      end
-    end
-    local picnic_count = 0
-    for key,value in pairs(component.build_item_infos) do
-      if value.mask & BuildType.PICNIC_AREA ~= 0 then
-        picnic_count = picnic_count + 1
-        if (table.count)((component.m_picnic_info).m_next_food) < picnic_count then
-          return true
-        end
-      end
-    end
-    local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-    if not time_mod then
-      return false
-    end
-    local tmNowTime = (math.modf)(time_mod:GetServerTime() / 1000)
-    for key,value in pairs((component.m_picnic_info).m_next_food) do
-      if value <= tmNowTime then
-        return true
-      end
-    end
-    if (component.m_picnic_info).m_have_story then
+  if 0 < next_item_id then
+    local my_item_count = ClientCampaignDrawShop.GetMoney(next_item_id)
+    if 0 < my_item_count and 0 <= next_cost and next_cost <= my_item_count then
       return true
     end
+  end
+  local picnic_count = 0
+  for key, value in pairs(component.build_item_infos) do
+    if value.mask & BuildType.PICNIC_AREA ~= 0 then
+      picnic_count = picnic_count + 1
+      if picnic_count > table.count(component.m_picnic_info.m_next_food) then
+        return true
+      end
+    end
+  end
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  if not time_mod then
     return false
   end
+  local tmNowTime = math.modf(time_mod:GetServerTime() / 1000)
+  for key, value in pairs(component.m_picnic_info.m_next_food) do
+    if value <= tmNowTime then
+      return true
+    end
+  end
+  if component.m_picnic_info.m_have_story then
+    return true
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignBuildComponent.Start_HandleBuild = function(self, build_item_id, build_type, callback)
-  -- function num : 0_14 , upvalues : _ENV
+function CampaignBuildComponent:Start_HandleBuild(build_item_id, build_type, callback)
   local lockName = "CampaignBuildComponent:Start_HandleBuild"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_14_0 , upvalues : _ENV, self, build_item_id, build_type, callback, lockName
-    (AsyncRequestRes:New())
-    local res = nil
-    local rewardList = nil
-    res = self:HandleBuild(TT, res, build_item_id, build_type)
+  GameGlobal.UIStateManager():Lock(lockName)
+  GameGlobal.TaskManager():StartTask(function(TT)
+    local res = AsyncRequestRes:New()
+    local rewardList
+    res, rewardList = self:HandleBuild(TT, res, build_item_id, build_type)
     if callback then
       callback(res, rewardList)
     end
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockName)
-  end
-)
+    GameGlobal.UIStateManager():UnLock(lockName)
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignBuildComponent.Start_HandleStory = function(self, buildingId, curStatus, callback)
-  -- function num : 0_15 , upvalues : _ENV
+function CampaignBuildComponent:Start_HandleStory(buildingId, curStatus, callback)
   local lockName = "CampaignBuildComponent:Start_HandleStory"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : _ENV, self, buildingId, curStatus, callback, lockName
+  GameGlobal.UIStateManager():Lock(lockName)
+  GameGlobal.TaskManager():StartTask(function(TT)
     local res = AsyncRequestRes:New()
     res = self:HandleStory(TT, res, buildingId, curStatus)
     if callback then
       callback(res)
     end
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockName)
-  end
-)
+    GameGlobal.UIStateManager():UnLock(lockName)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignBuildComponent.Start_HandlePicnicPutFood = function(self, area_id, callback)
-  -- function num : 0_16 , upvalues : _ENV
+function CampaignBuildComponent:Start_HandlePicnicPutFood(area_id, callback)
   local lockName = "CampaignBuildComponent:Start_HandlePicnicPutFood"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_16_0 , upvalues : _ENV, self, area_id, callback, lockName
-    (AsyncRequestRes:New())
-    local res = nil
-    local rewardList = nil
-    res = self:HandlePicnicPutFood(TT, res, area_id)
+  GameGlobal.UIStateManager():Lock(lockName)
+  GameGlobal.TaskManager():StartTask(function(TT)
+    local res = AsyncRequestRes:New()
+    local rewardList
+    res, rewardList = self:HandlePicnicPutFood(TT, res, area_id)
     if callback then
       callback(res, rewardList)
     end
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockName)
-  end
-)
+    GameGlobal.UIStateManager():UnLock(lockName)
+  end)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignBuildComponent.Start_HandlePicnicStory = function(self, callback)
-  -- function num : 0_17 , upvalues : _ENV
+function CampaignBuildComponent:Start_HandlePicnicStory(callback)
   local lockName = "CampaignBuildComponent:Start_HandlePicnicStory"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_17_0 , upvalues : _ENV, self, callback, lockName
+  GameGlobal.UIStateManager():Lock(lockName)
+  GameGlobal.TaskManager():StartTask(function(TT)
     local res = AsyncRequestRes:New()
     res = self:HandlePicnicStory(TT, res)
     if callback then
       callback(res)
     end
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockName)
-  end
-)
+    GameGlobal.UIStateManager():UnLock(lockName)
+  end)
 end
-
-

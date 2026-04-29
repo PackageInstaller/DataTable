@@ -1,51 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/prepare/ui_homeland_movie_introduce_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMovieIntroduceController", UIController)
 UIHomelandMovieIntroduceController = UIHomelandMovieIntroduceController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMovieIntroduceController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandMovieIntroduceController:OnShow(uiParams)
   self._movieId = uiParams[1]
   self:InitWidget()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieIntroduceController.InitWidget = function(self)
-  -- function num : 0_1
+function UIHomelandMovieIntroduceController:InitWidget()
   self.txtContent = self:GetUIComponent("UILocalizationText", "txtContent")
   self.posterBg = self:GetUIComponent("RawImageLoader", "posterBg")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieIntroduceController._OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandMovieIntroduceController:_OnValue()
   if not self._movieId then
-    (Log.error)("UIHomelandMovieIntroduceController uiParmas error, movieId is null")
-    return 
+    Log.error("UIHomelandMovieIntroduceController uiParmas error, movieId is null")
+    return
   end
-  local movieCfg = (Cfg.cfg_homeland_movice)[self._movieId]
+  local movieCfg = Cfg.cfg_homeland_movice[self._movieId]
   if not movieCfg then
-    (Log.error)("UIHomelandMovieIntroduceController uiParmas error, can\'t find movie cfg_homeland_movice id = " .. self._movieId)
-    return 
+    Log.error("UIHomelandMovieIntroduceController uiParmas error, can't find movie cfg_homeland_movice id = " .. self._movieId)
+    return
   end
-  ;
-  (self.txtContent):SetText((StringTable.Get)(movieCfg.Intro))
-  ;
-  (self.posterBg):LoadImage(movieCfg.Poster)
+  self.txtContent:SetText(StringTable.Get(movieCfg.Intro))
+  self.posterBg:LoadImage(movieCfg.Poster)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieIntroduceController.BtnBackOnClick = function(self, go)
-  -- function num : 0_3
+function UIHomelandMovieIntroduceController:BtnBackOnClick(go)
   self:CloseDialog()
 end
-
-

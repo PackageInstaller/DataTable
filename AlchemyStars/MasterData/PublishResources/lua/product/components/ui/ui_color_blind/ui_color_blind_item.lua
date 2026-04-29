@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_color_blind/ui_color_blind_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIColorBlindItem", UICustomWidget)
 UIColorBlindItem = UIColorBlindItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIColorBlindItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIColorBlindItem:OnShow()
   self.img = self:GetUIComponent("RawImageLoader", "img")
   self.imgSelect = self:GetUIComponent("Image", "imgSelect")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
@@ -17,77 +10,52 @@ UIColorBlindItem.OnShow = function(self)
   self:AttachEvent(GameEventType.ColorBlindSelect, self.FlushSelect)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIColorBlindItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIColorBlindItem:OnHide()
   self:DetachEvent(GameEventType.ColorBlindSelect, self.FlushSelect)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIColorBlindItem.Flush = function(self, cfg, clickCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIColorBlindItem:Flush(cfg, clickCallback)
   self.cfg = cfg
   self.itemID = cfg.ID
   self.isNew = cfg.isNew
-  ;
-  (self.red):SetActive(self.isNew)
+  self.red:SetActive(self.isNew)
   self.notGet = cfg.notGet
-  ;
-  (self.mask):SetActive(self.notGet)
+  self.mask:SetActive(self.notGet)
   self.clickCallback = clickCallback
-  ;
-  (self.img):LoadImage(cfg.icon)
-  local chessItemCfgs = (Cfg.cfg_item)({ID = cfg.ID})
-  ;
-  (self.txtName):SetText((StringTable.Get)((chessItemCfgs[1]).Name))
+  self.img:LoadImage(cfg.icon)
+  local chessItemCfgs = Cfg.cfg_item({
+    ID = cfg.ID
+  })
+  self.txtName:SetText(StringTable.Get(chessItemCfgs[1].Name))
   self:FlushSelect(nil)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIColorBlindItem.FlushSelect = function(self, id)
-  -- function num : 0_3
-  ((self.imgSelect).gameObject):SetActive(self.itemID == id)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIColorBlindItem:FlushSelect(id)
+  self.imgSelect.gameObject:SetActive(self.itemID == id)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIColorBlindItem.SetUnNew = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIColorBlindItem:SetUnNew()
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV
-    self.itemModule = (GameGlobal.GetModule)(ItemModule)
-    local items = (self.itemModule):GetItemByTempId(self.itemID)
-    for _,vitem in pairs(items) do
+    self.itemModule = GameGlobal.GetModule(ItemModule)
+    local items = self.itemModule:GetItemByTempId(self.itemID)
+    for _, vitem in pairs(items) do
       self.item = vitem
     end
     if self.item then
-      local pstID = (self.item):GetID()
-      ;
-      (self.itemModule):SetItemUnnewOverlay(TT, pstID)
-      ;
-      (self.itemModule):SetItemUnnew(TT, pstID)
-      ;
-      (self.red):SetActive(false)
+      local pstID = self.item:GetID()
+      self.itemModule:SetItemUnnewOverlay(TT, pstID)
+      self.itemModule:SetItemUnnew(TT, pstID)
+      self.red:SetActive(false)
       self.isNew = false
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIColorBlindItem.imgOnClick = function(self, go)
-  -- function num : 0_5
+function UIColorBlindItem:imgOnClick(go)
   if self.clickCallback then
-    (self.clickCallback)()
+    self.clickCallback()
   end
   if self.isNew then
     self:SetUnNew()
   end
 end
-
-

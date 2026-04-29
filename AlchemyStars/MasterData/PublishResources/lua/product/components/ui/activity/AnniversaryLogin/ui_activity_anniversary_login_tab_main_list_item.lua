@@ -1,45 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/AnniversaryLogin/ui_activity_anniversary_login_tab_main_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityAnniversaryLoginTabMainListItem", UICustomWidget)
 UIActivityAnniversaryLoginTabMainListItem = UIActivityAnniversaryLoginTabMainListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityAnniversaryLoginTabMainListItem._SetRemainingTime = function(self, widgetName, descId, endTime, customTimeStr)
-  -- function num : 0_0 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UIActivityAnniversaryLoginTabMainListItem:_SetRemainingTime(widgetName, descId, endTime, customTimeStr)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   if customTimeStr then
     obj:SetCustomTimeStr_Common_1()
   end
   obj:SetExtraRollingText()
   obj:SetAdvanceText(descId)
   obj:SetData(endTime, nil, function(first)
-    -- function num : 0_0_0 , upvalues : self
     if not first then
-      (self._refreshCallback)(1, true)
+      self._refreshCallback(1, true)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabMainListItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityAnniversaryLoginTabMainListItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabMainListItem.OnHide = function(self)
-  -- function num : 0_2
+function UIActivityAnniversaryLoginTabMainListItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabMainListItem.SetData = function(self, component, index, timeReward, refreshCallback, tipsCallback, btnCallback)
-  -- function num : 0_3
+function UIActivityAnniversaryLoginTabMainListItem:SetData(component, index, timeReward, refreshCallback, tipsCallback, btnCallback)
   self._component = component
   self._index = index
   self._timeReward = timeReward
@@ -52,42 +34,33 @@ UIActivityAnniversaryLoginTabMainListItem.SetData = function(self, component, in
   self:_SetDynamicList()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabMainListItem._SetState = function(self, state)
-  -- function num : 0_4 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-[ETimeRewardRewardStatus.E_TIME_REWARD_UNKNOW] = {}
-, 
-[ETimeRewardRewardStatus.E_TIME_REWARD_CAN_RECV] = {"state_Completed"}
-, 
-[ETimeRewardRewardStatus.E_TIME_REWARD_RECVED] = {"state_Taken"}
-, 
-[ETimeRewardRewardStatus.E_TIME_REWARD_LOCK] = {"state_NotStart"}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+function UIActivityAnniversaryLoginTabMainListItem:_SetState(state)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    [ETimeRewardRewardStatus.E_TIME_REWARD_UNKNOW] = {},
+    [ETimeRewardRewardStatus.E_TIME_REWARD_CAN_RECV] = {
+      "state_Completed"
+    },
+    [ETimeRewardRewardStatus.E_TIME_REWARD_RECVED] = {
+      "state_Taken"
+    },
+    [ETimeRewardRewardStatus.E_TIME_REWARD_LOCK] = {
+      "state_NotStart"
+    }
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabMainListItem._SetDynamicList = function(self)
-  -- function num : 0_5
+function UIActivityAnniversaryLoginTabMainListItem:_SetDynamicList()
   self._dynamicList = self:GetUIComponent("UISelectObjectPath", "_dynamicList")
-  self.groups = (self._dynamicList):SpawnObjects("UIActivityAnniversaryLoginItem", #self._infos)
+  self.groups = self._dynamicList:SpawnObjects("UIActivityAnniversaryLoginItem", #self._infos)
   for i = 1, #self.groups do
-    local item = (self.groups)[i]
-    item:SetData((self._infos)[i], (self._timeReward).rec_reward_status, self._tipsCallback)
+    local item = self.groups[i]
+    item:SetData(self._infos[i], self._timeReward.rec_reward_status, self._tipsCallback)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabMainListItem.ClaimBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIActivityAnniversaryLoginTabMainListItem:ClaimBtnOnClick(go)
   if self._btnCallback then
-    (self._btnCallback)(self._component, self._index)
+    self._btnCallback(self._component, self._index)
   end
 end
-
-

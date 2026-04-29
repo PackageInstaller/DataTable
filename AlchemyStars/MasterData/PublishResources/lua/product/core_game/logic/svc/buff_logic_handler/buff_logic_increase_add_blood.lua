@@ -1,100 +1,69 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_increase_add_blood.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-AddBloodRateValueType = {ConfigValue = 1, BleedMonster = 2, BuffLayer = 3}
+AddBloodRateValueType = {
+  ConfigValue = 1,
+  BleedMonster = 2,
+  BuffLayer = 3
+}
 _class("BuffLogicSetIncreaseAddBlood", BuffLogicBase)
 BuffLogicSetIncreaseAddBlood = BuffLogicSetIncreaseAddBlood
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetIncreaseAddBlood.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicSetIncreaseAddBlood:Constructor(buffInstance, logicParam)
   self._mulValue = logicParam.mulValue or 0
-  if not logicParam.valType then
-    self._valType = AddBloodRateValueType.ConfigValue
-    self._specificModifyID = logicParam.specificModifyID
-  end
+  self._valType = logicParam.valType or AddBloodRateValueType.ConfigValue
+  self._specificModifyID = logicParam.specificModifyID
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetIncreaseAddBlood.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicSetIncreaseAddBlood:DoLogic()
+  local e = self._buffInstance:Entity()
   if e:PetPstID() then
-    e = (e:Pet()):GetOwnerTeamEntity()
+    e = e:Pet():GetOwnerTeamEntity()
   end
   local mulValue = 0
   if self._valType == AddBloodRateValueType.ConfigValue then
     mulValue = self._mulValue
-  else
-    if self._valType == AddBloodRateValueType.BleedMonster then
-      local group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-      for i,e in ipairs(group:GetEntities()) do
-        if (e:BuffComponent()):HasBuffEffect(BuffEffectType.Bleed) then
-          mulValue = mulValue + self._mulValue
-        end
-      end
-    else
-      do
-        if self._valType == AddBloodRateValueType.BuffLayer then
-          local svc = (self._world):GetService("BuffLogic")
-          svc:AddBuffLayer(self._entity, (self._buffInstance):GetBuffEffectType(), 1)
-          local layer = svc:GetBuffLayer(self._entity, (self._buffInstance):GetBuffEffectType())
-          mulValue = self._mulValue * layer
-        end
-        do
-          local modifyID = (self._buffInstance):BuffSeq()
-          if self._specificModifyID then
-            modifyID = tonumber(self._specificModifyID)
-          end
-          ;
-          (e:Attributes()):Modify("AddBloodRate", mulValue, modifyID)
-        end
+  elseif self._valType == AddBloodRateValueType.BleedMonster then
+    local group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+    for i, e in ipairs(group:GetEntities()) do
+      if e:BuffComponent():HasBuffEffect(BuffEffectType.Bleed) then
+        mulValue = mulValue + self._mulValue
       end
     end
+  elseif self._valType == AddBloodRateValueType.BuffLayer then
+    local svc = self._world:GetService("BuffLogic")
+    svc:AddBuffLayer(self._entity, self._buffInstance:GetBuffEffectType(), 1)
+    local layer = svc:GetBuffLayer(self._entity, self._buffInstance:GetBuffEffectType())
+    mulValue = self._mulValue * layer
   end
+  local modifyID = self._buffInstance:BuffSeq()
+  if self._specificModifyID then
+    modifyID = tonumber(self._specificModifyID)
+  end
+  e:Attributes():Modify("AddBloodRate", mulValue, modifyID)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetIncreaseAddBlood.DoOverlap = function(self, logicParam)
-  -- function num : 0_2
+function BuffLogicSetIncreaseAddBlood:DoOverlap(logicParam)
   return self:DoLogic()
 end
 
 _class("BuffLogicResetIncreaseAddBlood", BuffLogicBase)
 BuffLogicResetIncreaseAddBlood = BuffLogicResetIncreaseAddBlood
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetIncreaseAddBlood.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicResetIncreaseAddBlood:Constructor(buffInstance, logicParam)
   self._specificModifyID = logicParam.specificModifyID
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetIncreaseAddBlood.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicResetIncreaseAddBlood:DoLogic()
+  local e = self._buffInstance:Entity()
   if e:PetPstID() then
-    e = (e:Pet()):GetOwnerTeamEntity()
+    e = e:Pet():GetOwnerTeamEntity()
   end
-  local modifyID = (self._buffInstance):BuffSeq()
+  local modifyID = self._buffInstance:BuffSeq()
   if self._specificModifyID then
     modifyID = tonumber(self._specificModifyID)
   end
-  ;
-  (e:Attributes()):RemoveModify("AddBloodRate", modifyID)
-  local svc = (self._world):GetService("BuffLogic")
-  svc:ClearBuffLayer(self._entity, (self._buffInstance):GetBuffEffectType())
+  e:Attributes():RemoveModify("AddBloodRate", modifyID)
+  local svc = self._world:GetService("BuffLogic")
+  svc:ClearBuffLayer(self._entity, self._buffInstance:GetBuffEffectType())
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetIncreaseAddBlood.DoOverlap = function(self)
-  -- function num : 0_5
+function BuffLogicResetIncreaseAddBlood:DoOverlap()
 end
-
-

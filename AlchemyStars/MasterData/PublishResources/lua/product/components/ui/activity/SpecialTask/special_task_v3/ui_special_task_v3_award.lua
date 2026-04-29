@@ -1,60 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/SpecialTask/special_task_v3/ui_special_task_v3_award.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISpecialTaskV3Award", UICustomWidget)
 UISpecialTaskV3Award = UISpecialTaskV3Award
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISpecialTaskV3Award.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISpecialTaskV3Award:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskV3Award._GetComponents = function(self)
-  -- function num : 0_1
+function UISpecialTaskV3Award:_GetComponents()
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIAsset")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskV3Award.SetData = function(self, roleAsset, callback, lock)
-  -- function num : 0_2 , upvalues : _ENV
+function UISpecialTaskV3Award:SetData(roleAsset, callback, lock)
   self.roleAsset = roleAsset
   self._callback = callback
   self._lock = lock
-  local itemCount = self:FormatCount((self.roleAsset)[2])
-  local itemId = (self.roleAsset)[1]
-  local cfg = (Cfg.cfg_item)[roleAsset[1]]
+  local itemCount = self:FormatCount(self.roleAsset[2])
+  local itemId = self.roleAsset[1]
+  local cfg = Cfg.cfg_item[roleAsset[1]]
   local icon = cfg.Icon
   local color = cfg.Color
-  ;
-  (self.uiItem):SetData(itemId)
-  ;
-  (self.uiItem):SetItemData({text = itemCount, icon = icon, quality = color})
+  self.uiItem:SetData(itemId)
+  self.uiItem:SetItemData({
+    text = itemCount,
+    icon = icon,
+    quality = color
+  })
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskV3Award.BgOnClick = function(self, go)
-  -- function num : 0_3
+function UISpecialTaskV3Award:BgOnClick(go)
   if not self._lock and self._callback then
-    (self._callback)((self.roleAsset)[1], (go.transform).position)
+    self._callback(self.roleAsset[1], go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskV3Award.FormatCount = function(self, count)
-  -- function num : 0_4 , upvalues : _ENV
+function UISpecialTaskV3Award:FormatCount(count)
   if count < 1000 then
     return count
   end
-  return (math.floor)(count / 1000) .. "k"
+  return math.floor(count / 1000) .. "k"
 end
-
-

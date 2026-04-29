@@ -1,45 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_topbar_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftTopBarItem", UICustomWidget)
 UIAircraftTopBarItem = UIAircraftTopBarItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftTopBarItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftTopBarItem:OnShow(uiParams)
   self.active = true
   self:InitWidget()
   self:SetRecoverActive(false)
-  self.aircraftModule = ((GameGlobal.GameLogic)()):GetModule(AircraftModule)
+  self.aircraftModule = GameGlobal.GameLogic():GetModule(AircraftModule)
   self:OnSetAmbientActive(true)
   self:OnAmbientChanged()
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.AmbientText_).color = Color(0, 0.86274509803922, 1, 1)
+  self.AmbientText_.color = Color(0, 0.8627450980392157, 1.0, 1)
   self:AttachEvent(GameEventType.AircraftOnFireFlyChanged, self.OnFireFlyChanged)
   self:AttachEvent(GameEventType.AircraftOnAmbientChanged, self.OnAmbientChanged)
   self:AttachEvent(GameEventType.AircraftAmbientSetActive, self.OnSetAmbientActive)
   self:AttachEvent(GameEventType.AircraftSettledPetChanged, self.OnAmbientChanged)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTopBarItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIAircraftTopBarItem:OnHide()
   self.active = false
   if self.timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.timerEvent)
+    GameGlobal.Timer():CancelEvent(self.timerEvent)
     self.timerEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTopBarItem.InitWidget = function(self)
-  -- function num : 0_2
+function UIAircraftTopBarItem:InitWidget()
   self.imageSlider = self:GetUIComponent("Image", "ImageSlider")
   self.textRecoverTimer = self:GetUIComponent("UILocalizationText", "TextRecoverTimer")
   self.textRecoverSpeedUp = self:GetUIComponent("RollingText", "TextRecoverSpeedUp")
@@ -50,255 +34,175 @@ UIAircraftTopBarItem.InitWidget = function(self)
   self.pos = self:GetUIComponent("RectTransform", "pos")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTopBarItem.SetData = function(self, _showButtons, _backCallback, _helpCallback, showAmbient, showGold)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.Ambient_):SetActive(showAmbient == true)
+function UIAircraftTopBarItem:SetData(_showButtons, _backCallback, _helpCallback, showAmbient, showGold)
+  self.Ambient_:SetActive(showAmbient == true)
   local sop = self:GetUIComponent("UISelectObjectPath", "Top")
   self.currencyMenu = sop:SpawnObject("UICurrencyMenu")
   if showGold then
-    (self.currencyMenu):SetData({RoleAssetID.RoleAssetFirefly, CurrenyTypeId.StarPoint, RoleAssetID.RoleAssetGold})
-    self.goldItem = (self.currencyMenu):GetItemByTypeId(RoleAssetID.RoleAssetGold)
+    self.currencyMenu:SetData({
+      RoleAssetID.RoleAssetFirefly,
+      CurrenyTypeId.StarPoint,
+      RoleAssetID.RoleAssetGold
+    })
+    self.goldItem = self.currencyMenu:GetItemByTypeId(RoleAssetID.RoleAssetGold)
   else
-    (self.currencyMenu):SetData({RoleAssetID.RoleAssetFirefly, CurrenyTypeId.StarPoint})
+    self.currencyMenu:SetData({
+      RoleAssetID.RoleAssetFirefly,
+      CurrenyTypeId.StarPoint
+    })
   end
-  self.fireFlyItem = (self.currencyMenu):GetItemByTypeId(RoleAssetID.RoleAssetFirefly)
-  ;
-  (self.fireFlyItem):SetAddCallBack(function(id, go)
-    -- function num : 0_3_0 , upvalues : self
-    local pos = (go.transform).position
+  self.fireFlyItem = self.currencyMenu:GetItemByTypeId(RoleAssetID.RoleAssetFirefly)
+  self.fireFlyItem:SetAddCallBack(function(id, go)
+    local pos = go.transform.position
     self:SetRecoverActive(true, pos)
     self:RefreshFirflyPopupInfo()
-  end
-)
-  self.energyItem = (self.currencyMenu):GetItemByTypeId(CurrenyTypeId.StarPoint)
+  end)
+  self.energyItem = self.currencyMenu:GetItemByTypeId(CurrenyTypeId.StarPoint)
   self:RefreshGoldInfo()
   if _showButtons ~= nil and _showButtons == false then
-    return 
+    return
   end
   local topButton = self:GetUIComponent("UISelectObjectPath", "TopButtons")
   self.topButtonWidget = topButton:SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(_backCallback, _helpCallback, function()
-    -- function num : 0_3_1 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftLeaveAircraft)
-    ;
-    ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Aircraft_Exit, "UI")
-  end
-)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  self.topButtonWidget:SetData(_backCallback, _helpCallback, function()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftLeaveAircraft)
+    GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Aircraft_Exit, "UI")
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTopBarItem.OnFireFlyChanged = function(self)
-  -- function num : 0_4
+function UIAircraftTopBarItem:OnFireFlyChanged()
   self:RefreshFirefly()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTopBarItem.OnAmbientChanged = function(self)
-  -- function num : 0_5
-  local ambientValue = (self.aircraftModule):GetValidAmbient()
-  ;
-  (self.AmbientText_):SetText(ambientValue)
+function UIAircraftTopBarItem:OnAmbientChanged()
+  local ambientValue = self.aircraftModule:GetValidAmbient()
+  self.AmbientText_:SetText(ambientValue)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTopBarItem.OnSetAmbientActive = function(self, boolValue)
-  -- function num : 0_6
-  (self.Ambient_):SetActive(boolValue)
+function UIAircraftTopBarItem:OnSetAmbientActive(boolValue)
+  self.Ambient_:SetActive(boolValue)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTopBarItem.RefreshGoldInfo = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIAircraftTopBarItem:RefreshGoldInfo()
   self:RefreshFirefly()
-  local powerAvai = (self.aircraftModule):GetPower()
-  local powerMax = (self.aircraftModule):GetMaxPower()
-  ;
-  (self.energyItem):SetText(powerAvai .. "/" .. powerMax)
-  local gold = (((GameGlobal.GameLogic)()):GetModule(RoleModule)):GetGold()
+  local powerAvai = self.aircraftModule:GetPower()
+  local powerMax = self.aircraftModule:GetMaxPower()
+  self.energyItem:SetText(powerAvai .. "/" .. powerMax)
+  local gold = GameGlobal.GameLogic():GetModule(RoleModule):GetGold()
   if self.goldItem then
-    (self.goldItem):SetText((HelperProxy:GetInstance()):FormatGold(gold))
+    self.goldItem:SetText(HelperProxy:GetInstance():FormatGold(gold))
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTopBarItem.RefreshFirefly = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local hadf = (math.floor)((self.aircraftModule):GetFirefly())
-  local maxf = (math.floor)((self.aircraftModule):GetMaxFirefly())
-  ;
-  (self.fireFlyItem):SetText(hadf .. "/" .. maxf)
+function UIAircraftTopBarItem:RefreshFirefly()
+  local hadf = math.floor(self.aircraftModule:GetFirefly())
+  local maxf = math.floor(self.aircraftModule:GetMaxFirefly())
+  self.fireFlyItem:SetText(hadf .. "/" .. maxf)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTopBarItem.RefreshFirflyPopupInfo = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local hadf = (math.floor)((self.aircraftModule):GetFirefly())
-  local maxf = (math.floor)((self.aircraftModule):GetMaxFirefly())
+function UIAircraftTopBarItem:RefreshFirflyPopupInfo()
+  local hadf = math.floor(self.aircraftModule:GetFirefly())
+  local maxf = math.floor(self.aircraftModule:GetMaxFirefly())
   local fireflyAmount = 0
   if maxf == 0 then
     fireflyAmount = 1
   else
     fireflyAmount = hadf / maxf
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.imageSlider).fillAmount = fireflyAmount
-  local speed = (self.aircraftModule):GetFireflyRecoverSpeed() * 3600
-  local title = (StringTable.Get)("str_aircraft_func_firefly_recover_speed_sum")
-  ;
-  (self.textRecoverSpeedUp):RefreshText(title)
-  ;
-  (self.recoverSpeed):SetText((string.format)("%.2f", speed))
-  local countDownTime = (math.ceil)((self.aircraftModule):GetFireFlyRemainderTime())
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R7 in 'UnsetPending'
-
-  if countDownTime > 0 then
-    (self.textRecoverTimer).text = (HelperProxy:GetInstance()):FormatTime_2(countDownTime)
+  self.imageSlider.fillAmount = fireflyAmount
+  local speed = self.aircraftModule:GetFireflyRecoverSpeed() * 3600
+  local title = StringTable.Get("str_aircraft_func_firefly_recover_speed_sum")
+  self.textRecoverSpeedUp:RefreshText(title)
+  self.recoverSpeed:SetText(string.format("%.2f", speed))
+  local countDownTime = math.ceil(self.aircraftModule:GetFireFlyRemainderTime())
+  if 0 < countDownTime then
+    self.textRecoverTimer.text = HelperProxy:GetInstance():FormatTime_2(countDownTime)
     self:StartCountDown()
   else
-    -- DECOMPILER ERROR at PC60: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.textRecoverTimer).text = "--:--:--"
+    self.textRecoverTimer.text = "--:--:--"
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTopBarItem.StartCountDown = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  self.timerEvent = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_10_0 , upvalues : _ENV, self
-    local hadf = (math.floor)((self.aircraftModule):GetFirefly())
-    local maxf = (math.floor)((self.aircraftModule):GetMaxFirefly())
+function UIAircraftTopBarItem:StartCountDown()
+  self.timerEvent = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+    local hadf = math.floor(self.aircraftModule:GetFirefly())
+    local maxf = math.floor(self.aircraftModule:GetMaxFirefly())
     local fireflyAmount = 0
     if maxf == 0 then
       fireflyAmount = 1
     else
       fireflyAmount = hadf / maxf
     end
-    ;
-    (self.fireFlyItem):SetText(hadf .. "/" .. maxf)
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.imageSlider).fillAmount = fireflyAmount
-    local countDownTime = (math.ceil)((self.aircraftModule):GetFireFlyRemainderTime())
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R4 in 'UnsetPending'
-
+    self.fireFlyItem:SetText(hadf .. "/" .. maxf)
+    self.imageSlider.fillAmount = fireflyAmount
+    local countDownTime = math.ceil(self.aircraftModule:GetFireFlyRemainderTime())
     if countDownTime <= 0 then
-      (self.textRecoverTimer).text = "--:--:--"
+      self.textRecoverTimer.text = "--:--:--"
       self:CountdownEnd()
     else
-      -- DECOMPILER ERROR at PC48: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self.textRecoverTimer).text = (HelperProxy:GetInstance()):FormatTime_2(countDownTime)
+      self.textRecoverTimer.text = HelperProxy:GetInstance():FormatTime_2(countDownTime)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTopBarItem.CountdownEnd = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIAircraftTopBarItem:CountdownEnd()
   self.countDownTime = 0
-  ;
-  ((GameGlobal.Timer)()):CancelEvent(self.timerEvent)
+  GameGlobal.Timer():CancelEvent(self.timerEvent)
   self.timerEvent = nil
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.ReqData, self)
+  GameGlobal.TaskManager():StartTask(self.ReqData, self)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTopBarItem.ReqData = function(self, TT)
-  -- function num : 0_12 , upvalues : _ENV
+function UIAircraftTopBarItem:ReqData(TT)
   self:Lock(self:GetName())
-  local ack = (self.aircraftModule):AircraftUpdate(TT)
+  local ack = self.aircraftModule:AircraftUpdate(TT)
   self:UnLock(self:GetName())
-  if ack:GetSucc() and self.active then
-    self:RefreshAllMsg()
+  if ack:GetSucc() then
+    if self.active then
+      self:RefreshAllMsg()
+    end
+  else
+    ToastManager.ShowToast(self.aircraftModule:GetErrorMsg(ack:GetResult()))
   end
-  ;
-  (ToastManager.ShowToast)((self.aircraftModule):GetErrorMsg(ack:GetResult()))
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTopBarItem.RefreshAllMsg = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIAircraftTopBarItem:RefreshAllMsg()
   self:RefreshGoldInfo()
-  if (self.fireflyGo).activeSelf then
+  if self.fireflyGo.activeSelf then
     if self.timerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self.timerEvent)
+      GameGlobal.Timer():CancelEvent(self.timerEvent)
       self.timerEvent = nil
     end
     self:RefreshFirflyPopupInfo()
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTopBarItem.SetRecoverActive = function(self, active, position)
-  -- function num : 0_14
-  (self.fireflyGo):SetActive(active)
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
+function UIAircraftTopBarItem:SetRecoverActive(active, position)
+  self.fireflyGo:SetActive(active)
   if active and position then
-    (self.pos).position = position
+    self.pos.position = position
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTopBarItem.ButtonFireflyPopupOnClick = function(self, go)
-  -- function num : 0_15
+function UIAircraftTopBarItem:ButtonFireflyPopupOnClick(go)
   self:SetRecoverActive(true)
   self:RefreshFirflyPopupInfo()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTopBarItem.ButtonSpeedUpOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
-  (ToastManager.ShowLockTip)()
+function UIAircraftTopBarItem:ButtonSpeedUpOnClick(go)
+  ToastManager.ShowLockTip()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTopBarItem.FireflyRecoverPopupOnClick = function(self, go)
-  -- function num : 0_17 , upvalues : _ENV
+function UIAircraftTopBarItem:FireflyRecoverPopupOnClick(go)
   if self.timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.timerEvent)
+    GameGlobal.Timer():CancelEvent(self.timerEvent)
     self.timerEvent = nil
   end
   self:SetRecoverActive(false)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTopBarItem.AmbientPanelOnClick = function(self, go)
-  -- function num : 0_18 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIAmbientPanel")
+function UIAircraftTopBarItem:AmbientPanelOnClick(go)
+  GameGlobal.UIStateManager():ShowDialog("UIAmbientPanel")
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTopBarItem.AmbientButton1OnClick = function(self, go)
-  -- function num : 0_19
+function UIAircraftTopBarItem:AmbientButton1OnClick(go)
 end
-
-

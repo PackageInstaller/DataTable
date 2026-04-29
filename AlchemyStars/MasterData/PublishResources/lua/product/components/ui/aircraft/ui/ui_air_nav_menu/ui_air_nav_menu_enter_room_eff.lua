@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_air_nav_menu/ui_air_nav_menu_enter_room_eff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAirNavMenuEnterRoomEff", UICustomWidget)
 UIAirNavMenuEnterRoomEff = UIAirNavMenuEnterRoomEff
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAirNavMenuEnterRoomEff.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIAirNavMenuEnterRoomEff:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuEnterRoomEff.OnHide = function(self)
-  -- function num : 0_1
+function UIAirNavMenuEnterRoomEff:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuEnterRoomEff.SetData = function(self, pos, size, data, callback)
-  -- function num : 0_2
+function UIAirNavMenuEnterRoomEff:SetData(pos, size, data, callback)
   self:GetComponents()
   self._size = size
   self._data = data
@@ -32,54 +19,33 @@ UIAirNavMenuEnterRoomEff.SetData = function(self, pos, size, data, callback)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuEnterRoomEff.OnValue = function(self)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._rect).anchoredPosition = self._pos
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).sizeDelta = self._size
+function UIAirNavMenuEnterRoomEff:OnValue()
+  self._rect.anchoredPosition = self._pos
+  self._rect.sizeDelta = self._size
   if self._build then
-    (self._buildGo):SetActive(true)
-    ;
-    (self._lvGo):SetActive(false)
-    ;
-    (self._enterGo):SetActive(false)
+    self._buildGo:SetActive(true)
+    self._lvGo:SetActive(false)
+    self._enterGo:SetActive(false)
   else
-    ;
-    (self._buildGo):SetActive(false)
-    ;
-    (self._enterGo):SetActive(self._enter)
+    self._buildGo:SetActive(false)
+    self._enterGo:SetActive(self._enter)
     if self._enter then
-      (self._lvGo):SetActive(false)
+      self._lvGo:SetActive(false)
     else
-      ;
-      (self._lvGo):SetActive(self._lv)
+      self._lvGo:SetActive(self._lv)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuEnterRoomEff.GetComponents = function(self)
-  -- function num : 0_4
+function UIAirNavMenuEnterRoomEff:GetComponents()
   self._rect = self:GetUIComponent("RectTransform", "pos")
   self._enterGo = self:GetGameObject("enterGo")
   self._lvGo = self:GetGameObject("lvGo")
   self._buildGo = self:GetGameObject("buildGo")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuEnterRoomEff.btnOnClick = function(self, go)
-  -- function num : 0_5
+function UIAirNavMenuEnterRoomEff:btnOnClick(go)
   if self._callback then
-    (self._callback)(self._data)
+    self._callback(self._data)
   end
 end
-
-

@@ -1,189 +1,93 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_custom_uievent_listener.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICustomUIEventListener", Object)
 UICustomUIEventListener = UICustomUIEventListener
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICustomUIEventListener.Constructor = function(self)
-  -- function num : 0_0
+function UICustomUIEventListener:Constructor()
   self.uiCustomEventListener = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomUIEventListener.Dispose = function(self)
-  -- function num : 0_1
+function UICustomUIEventListener:Dispose()
   self:RemoveAllCustomEventListener()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomUIEventListener.RemoveCustomEventListener = function(self, delegate)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.uiCustomEventListener)[delegate] = nil
+function UICustomUIEventListener:RemoveCustomEventListener(delegate)
+  self.uiCustomEventListener[delegate] = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomUIEventListener.AddUICustomEventListener = function(self, go, type, func)
-  -- function num : 0_3 , upvalues : _ENV
-  if type ~= UIEvent.Guide or type == UIEvent.Click then
+function UICustomUIEventListener:AddUICustomEventListener(go, type, func)
+  if type == UIEvent.Guide then
+  elseif type == UIEvent.Click then
     go.onClick = func
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.uiCustomEventListener)[go.onClick] = func
-  else
-    if type == UIEvent.DoubleClick then
-      go.onDoubleClick = func
-      -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self.uiCustomEventListener)[go.onDoubleClick] = func
-    else
-      if type == UIEvent.Press then
-        go.onDown = func
-        -- DECOMPILER ERROR at PC30: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self.uiCustomEventListener)[go.onDown] = func
-      else
-        if type == UIEvent.Release then
-          go.onUp = func
-          -- DECOMPILER ERROR at PC39: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (self.uiCustomEventListener)[go.onUp] = func
-        else
-          if type == UIEvent.Hovered then
-            go.onEnter = func
-            -- DECOMPILER ERROR at PC48: Confused about usage of register: R4 in 'UnsetPending'
-
-            ;
-            (self.uiCustomEventListener)[go.onEnter] = func
-          else
-            if type == UIEvent.Unhovered then
-              go.onExit = func
-              -- DECOMPILER ERROR at PC57: Confused about usage of register: R4 in 'UnsetPending'
-
-              ;
-              (self.uiCustomEventListener)[go.onExit] = func
-            else
-              if type == UIEvent.Select then
-                go.onSelect = func
-                -- DECOMPILER ERROR at PC66: Confused about usage of register: R4 in 'UnsetPending'
-
-                ;
-                (self.uiCustomEventListener)[go.onSelect] = func
-              else
-              end
-            end
-          end
-        end
-      end
-    end
-  end
-  if type ~= UIEvent.UpdateSelect or type == UIEvent.BeginDrag then
+    self.uiCustomEventListener[go.onClick] = func
+  elseif type == UIEvent.DoubleClick then
+    go.onDoubleClick = func
+    self.uiCustomEventListener[go.onDoubleClick] = func
+  elseif type == UIEvent.Press then
+    go.onDown = func
+    self.uiCustomEventListener[go.onDown] = func
+  elseif type == UIEvent.Release then
+    go.onUp = func
+    self.uiCustomEventListener[go.onUp] = func
+  elseif type == UIEvent.Hovered then
+    go.onEnter = func
+    self.uiCustomEventListener[go.onEnter] = func
+  elseif type == UIEvent.Unhovered then
+    go.onExit = func
+    self.uiCustomEventListener[go.onExit] = func
+  elseif type == UIEvent.Select then
+    go.onSelect = func
+    self.uiCustomEventListener[go.onSelect] = func
+  elseif type == UIEvent.UpdateSelect then
+  elseif type == UIEvent.BeginDrag then
     if go.onBeginDrag then
       go.onBeginDrag = go.onBeginDrag + func
     else
       go.onBeginDrag = func
     end
-    -- DECOMPILER ERROR at PC87: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.uiCustomEventListener)[go.onBeginDrag] = func
-  else
-    if type == UIEvent.Drag then
-      if go.onDrag then
-        go.onDrag = go.onDrag + func
-      else
-        go.onDrag = func
-      end
-      -- DECOMPILER ERROR at PC103: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self.uiCustomEventListener)[go.onDrag] = func
+    self.uiCustomEventListener[go.onBeginDrag] = func
+  elseif type == UIEvent.Drag then
+    if go.onDrag then
+      go.onDrag = go.onDrag + func
     else
-      if type == UIEvent.EndDrag then
-        if go.onEndDrag then
-          go.onEndDrag = go.onEndDrag + func
-        else
-          go.onEndDrag = func
-        end
-        -- DECOMPILER ERROR at PC119: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self.uiCustomEventListener)[go.onEndDrag] = func
-      else
-        if type == UIEvent.Scroll then
-          go.onScroll = func
-          -- DECOMPILER ERROR at PC128: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (self.uiCustomEventListener)[go.onScroll] = func
-        else
-          if type == UIEvent.ApplicationFocus then
-            go.onApplicationFocus = func
-            -- DECOMPILER ERROR at PC137: Confused about usage of register: R4 in 'UnsetPending'
-
-            ;
-            (self.uiCustomEventListener)[go.onApplicationFocus] = func
-          else
-            if type == UIEvent.LongClick then
-              go.onLongClick = func
-              -- DECOMPILER ERROR at PC146: Confused about usage of register: R4 in 'UnsetPending'
-
-              ;
-              (self.uiCustomEventListener)[go.onLongClick] = func
-            else
-              if type == UIEvent.LongPress then
-                go.onLongPress = func
-                -- DECOMPILER ERROR at PC155: Confused about usage of register: R4 in 'UnsetPending'
-
-                ;
-                (self.uiCustomEventListener)[go.onLongPress] = func
-              else
-              end
-            end
-          end
-        end
-      end
+      go.onDrag = func
     end
-  end
-  if (((type == UIEvent.ToggleChanged and type ~= UIEvent.SliderChanged) or type == UIEvent.DropdownChanged) and type ~= UIEvent.ScrollRectChanged) or type == UIEvent.InputFieldChanged then
+    self.uiCustomEventListener[go.onDrag] = func
+  elseif type == UIEvent.EndDrag then
+    if go.onEndDrag then
+      go.onEndDrag = go.onEndDrag + func
+    else
+      go.onEndDrag = func
+    end
+    self.uiCustomEventListener[go.onEndDrag] = func
+  elseif type == UIEvent.Scroll then
+    go.onScroll = func
+    self.uiCustomEventListener[go.onScroll] = func
+  elseif type == UIEvent.ApplicationFocus then
+    go.onApplicationFocus = func
+    self.uiCustomEventListener[go.onApplicationFocus] = func
+  elseif type == UIEvent.LongClick then
+    go.onLongClick = func
+    self.uiCustomEventListener[go.onLongClick] = func
+  elseif type == UIEvent.LongPress then
+    go.onLongPress = func
+    self.uiCustomEventListener[go.onLongPress] = func
+  elseif type == UIEvent.ToggleChanged then
+  elseif type == UIEvent.SliderChanged then
+  elseif type == UIEvent.DropdownChanged then
+  elseif type == UIEvent.ScrollRectChanged then
+  elseif type == UIEvent.InputFieldChanged then
     go.OnIptValueChanged = func
-    -- DECOMPILER ERROR at PC184: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.uiCustomEventListener)[go.OnIptValueChanged] = func
-  else
-  end
-  if (type ~= UIEvent.InputFieldEndEdit or type == UIEvent.InputFieldValidate) then
+    self.uiCustomEventListener[go.OnIptValueChanged] = func
+  elseif type == UIEvent.InputFieldEndEdit then
+  elseif type == UIEvent.InputFieldValidate then
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomUIEventListener.RemoveAllCustomEventListener = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  for k,v in pairs(self.uiCustomEventListener) do
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self.uiCustomEventListener)[k] = nil
+function UICustomUIEventListener:RemoveAllCustomEventListener()
+  for k, v in pairs(self.uiCustomEventListener) do
+    self.uiCustomEventListener[k] = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomUIEventListener.Get = function(go)
-  -- function num : 0_5 , upvalues : _ENV
-  return (UIEventTriggerListener.Get)(go)
+function UICustomUIEventListener.Get(go)
+  return UIEventTriggerListener.Get(go)
 end
-
-

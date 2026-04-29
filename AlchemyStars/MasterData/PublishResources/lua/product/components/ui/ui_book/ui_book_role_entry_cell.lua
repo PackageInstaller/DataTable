@@ -1,74 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_book/ui_book_role_entry_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBookRoleEntryCell", Object)
 UIBookRoleEntryCell = UIBookRoleEntryCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBookRoleEntryCell.Constructor = function(self)
-  -- function num : 0_0
+function UIBookRoleEntryCell:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleEntryCell.InitComponent = function(self, uiView)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBookRoleEntryCell:InitComponent(uiView)
   self.uiView = uiView
-  self.nameTxt = (self.uiView):GetUIComponent("UILocalizationText", "name")
-  self.picImg = (self.uiView):GetUIComponent("Image", "pic")
-  self.picGO = (self.uiView):GetGameObject("pic")
-  self.selectImg = (self.uiView):GetUIComponent("Image", "press")
-  self.btnSelect = (self.uiView):GetGameObject("press")
+  self.nameTxt = self.uiView:GetUIComponent("UILocalizationText", "name")
+  self.picImg = self.uiView:GetUIComponent("Image", "pic")
+  self.picGO = self.uiView:GetGameObject("pic")
+  self.selectImg = self.uiView:GetUIComponent("Image", "press")
+  self.btnSelect = self.uiView:GetGameObject("press")
   self._uiCustomEventListner = UICustomUIEventListener:New()
-  ;
-  (self._uiCustomEventListner):AddUICustomEventListener((UICustomUIEventListener.Get)(self.picGO), UIEvent.Press, function(go)
-    -- function num : 0_1_0 , upvalues : self
-    (self.btnSelect):SetActive(true)
-  end
-)
-  ;
-  (self._uiCustomEventListner):AddUICustomEventListener((UICustomUIEventListener.Get)(self.picGO), UIEvent.Release, function(go)
-    -- function num : 0_1_1 , upvalues : self
-    (self.btnSelect):SetActive(false)
-  end
-)
-  ;
-  (self._uiCustomEventListner):AddUICustomEventListener((UICustomUIEventListener.Get)(self.picGO), UIEvent.Click, function(go)
-    -- function num : 0_1_2 , upvalues : _ENV, self
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIBookRoleRelationController", self.id)
-  end
-)
+  self._uiCustomEventListner:AddUICustomEventListener(UICustomUIEventListener.Get(self.picGO), UIEvent.Press, function(go)
+    self.btnSelect:SetActive(true)
+  end)
+  self._uiCustomEventListner:AddUICustomEventListener(UICustomUIEventListener.Get(self.picGO), UIEvent.Release, function(go)
+    self.btnSelect:SetActive(false)
+  end)
+  self._uiCustomEventListner:AddUICustomEventListener(UICustomUIEventListener.Get(self.picGO), UIEvent.Click, function(go)
+    GameGlobal.UIStateManager():ShowDialog("UIBookRoleRelationController", self.id)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleEntryCell.Refresh = function(self, uiView, atlas, id)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBookRoleEntryCell:Refresh(uiView, atlas, id)
   self:InitComponent(uiView)
   self.id = id
-  local cfg = (Cfg.cfg_pet_tags)[id]
-  ;
-  (self.nameTxt):SetText((StringTable.Get)(cfg.Name))
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.picImg).sprite = atlas:GetSprite(cfg.SpriteIcon)
-  local icon = (string.split)(cfg.SpriteIcon, "_")
-  local num = (string.sub)(icon[3], 5, 6)
+  local cfg = Cfg.cfg_pet_tags[id]
+  self.nameTxt:SetText(StringTable.Get(cfg.Name))
+  self.picImg.sprite = atlas:GetSprite(cfg.SpriteIcon)
+  local icon = string.split(cfg.SpriteIcon, "_")
+  local num = string.sub(icon[3], 5, 6)
   local new = icon[1] .. "_" .. icon[2] .. "_" .. "guang" .. num
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.selectImg).sprite = atlas:GetSprite(new)
+  self.selectImg.sprite = atlas:GetSprite(new)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleEntryCell.OnHide = function(self)
-  -- function num : 0_3
-  (self._uiCustomEventListner):Dispose()
+function UIBookRoleEntryCell:OnHide()
+  self._uiCustomEventListner:Dispose()
 end
-
-

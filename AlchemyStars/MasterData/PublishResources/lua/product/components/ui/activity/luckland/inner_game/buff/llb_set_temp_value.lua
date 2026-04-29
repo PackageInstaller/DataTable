@@ -1,35 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/buff/llb_set_temp_value.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("llb_logic_base")
 _class("LLBuffLogicSetTempValue", LLBuffLogicBase)
 LLBuffLogicSetTempValue = LLBuffLogicSetTempValue
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuffLogicSetTempValue.Constructor = function(self, buffObj, logicParam)
-  -- function num : 0_0
+function LLBuffLogicSetTempValue:Constructor(buffObj, logicParam)
   self._key = logicParam.key
   self._value = logicParam.value
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicSetTempValue.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function LLBuffLogicSetTempValue:DoLogic(notify)
   local notifyEntity = notify:GetNotifyEntity()
-  local targets = (self._buffObj):GetTargets()
-  for _,target in ipairs(targets) do
+  local targets = self._buffObj:GetTargets()
+  for _, target in ipairs(targets) do
     self:DoLogicSingle(target)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicSetTempValue.DoLogicSingle = function(self, target)
-  -- function num : 0_2
+function LLBuffLogicSetTempValue:DoLogicSingle(target)
   target:SetTempValue(self._key, self._value)
 end
-
-

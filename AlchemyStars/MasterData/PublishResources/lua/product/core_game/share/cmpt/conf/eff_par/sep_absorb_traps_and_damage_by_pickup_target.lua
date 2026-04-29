@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_absorb_traps_and_damage_by_pickup_target.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectAbsorbTrapsAndDamageByPickupTargetParam", SkillEffectParamBase)
 SkillEffectAbsorbTrapsAndDamageByPickupTargetParam = SkillEffectAbsorbTrapsAndDamageByPickupTargetParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectAbsorbTrapsAndDamageByPickupTargetParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectAbsorbTrapsAndDamageByPickupTargetParam:Constructor(t)
   self._trapID = t.trapID
   self._basePercent = t.basePercent
   self._addPercent = t.addPercent or 0
@@ -21,74 +14,42 @@ SkillEffectAbsorbTrapsAndDamageByPickupTargetParam.Constructor = function(self, 
   self._damageTargetType = t.damageTargetType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAbsorbTrapsAndDamageByPickupTargetParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectAbsorbTrapsAndDamageByPickupTargetParam:GetEffectType()
   return SkillEffectType.AbsorbTrapsAndDamageByPickupTarget
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAbsorbTrapsAndDamageByPickupTargetParam.GetTrapID = function(self)
-  -- function num : 0_2
+function SkillEffectAbsorbTrapsAndDamageByPickupTargetParam:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAbsorbTrapsAndDamageByPickupTargetParam.GetBasePercent = function(self)
-  -- function num : 0_3
+function SkillEffectAbsorbTrapsAndDamageByPickupTargetParam:GetBasePercent()
   return self._basePercent
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAbsorbTrapsAndDamageByPickupTargetParam.GetAddPercent = function(self)
-  -- function num : 0_4
+function SkillEffectAbsorbTrapsAndDamageByPickupTargetParam:GetAddPercent()
   return self._addPercent
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAbsorbTrapsAndDamageByPickupTargetParam.GetLimitPercent = function(self)
-  -- function num : 0_5
+function SkillEffectAbsorbTrapsAndDamageByPickupTargetParam:GetLimitPercent()
   return self._limitPercent
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAbsorbTrapsAndDamageByPickupTargetParam.GetFormulaID = function(self)
-  -- function num : 0_6
+function SkillEffectAbsorbTrapsAndDamageByPickupTargetParam:GetFormulaID()
   return self._formulaID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAbsorbTrapsAndDamageByPickupTargetParam.GetDamageScopeType = function(self)
-  -- function num : 0_7
+function SkillEffectAbsorbTrapsAndDamageByPickupTargetParam:GetDamageScopeType()
   return self._damageScopeType
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAbsorbTrapsAndDamageByPickupTargetParam.GetDamageScopeParam = function(self)
-  -- function num : 0_8
+function SkillEffectAbsorbTrapsAndDamageByPickupTargetParam:GetDamageScopeParam()
   return self._damageScopeParam
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAbsorbTrapsAndDamageByPickupTargetParam.GetDamageScopeCenterType = function(self)
-  -- function num : 0_9
+function SkillEffectAbsorbTrapsAndDamageByPickupTargetParam:GetDamageScopeCenterType()
   return self._damageScopeCenterType
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAbsorbTrapsAndDamageByPickupTargetParam.GetDamageTargetType = function(self)
-  -- function num : 0_10
+function SkillEffectAbsorbTrapsAndDamageByPickupTargetParam:GetDamageTargetType()
   return self._damageTargetType
 end
-
-

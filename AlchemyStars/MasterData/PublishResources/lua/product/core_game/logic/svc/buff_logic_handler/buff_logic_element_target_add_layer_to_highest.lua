@@ -1,62 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_element_target_add_layer_to_highest.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicElementTargetAddLayerToHighest", BuffLogicBase)
 BuffLogicElementTargetAddLayerToHighest = BuffLogicElementTargetAddLayerToHighest
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicElementTargetAddLayerToHighest.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._element = logicParam.element
-  end
+function BuffLogicElementTargetAddLayerToHighest:Constructor(buffInstance, logicParam)
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._element = logicParam.element
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicElementTargetAddLayerToHighest.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicElementTargetAddLayerToHighest:DoLogic(notify)
   if not notify.GetDefenderEntityIDList then
-    return 
+    return
   end
   local highestLayer = 0
   local elementTargetList = {}
-  local utilSvc = (self._world):GetService("UtilData")
+  local utilSvc = self._world:GetService("UtilData")
   local eids = notify:GetDefenderEntityIDList()
-  for _,eid in ipairs(eids) do
-    local entity = (self._world):GetEntityByID(eid)
+  for _, eid in ipairs(eids) do
+    local entity = self._world:GetEntityByID(eid)
     local element = utilSvc:GetEntityElementType(entity)
     if not entity:HasDeadMark() and element == self._element then
-      (table.insert)(elementTargetList, entity)
+      table.insert(elementTargetList, entity)
     end
     local buffComponent = entity:BuffComponent()
     if buffComponent then
-      local curMarkLayer = (self._buffLogicService):GetBuffLayer(entity, self._layerType)
+      local curMarkLayer = self._buffLogicService:GetBuffLayer(entity, self._layerType)
       if highestLayer < curMarkLayer then
         highestLayer = curMarkLayer
       end
     end
   end
   local buffResultAddLayerList = {}
-  for _,entity in ipairs(elementTargetList) do
-    local curMarkLayer = (self._buffLogicService):GetBuffLayer(entity, self._layerType)
-    if curMarkLayer < highestLayer then
+  for _, entity in ipairs(elementTargetList) do
+    local curMarkLayer = self._buffLogicService:GetBuffLayer(entity, self._layerType)
+    if highestLayer > curMarkLayer then
       local addLayer = highestLayer - curMarkLayer
-      local curMarkLayer, buffinst = (self._buffLogicService):AddBuffLayer(entity, self._layerType, addLayer)
+      local curMarkLayer, buffinst = self._buffLogicService:AddBuffLayer(entity, self._layerType, addLayer)
       if buffinst then
         local buffResultLayer = BuffResultLayer:New(curMarkLayer, buffinst:BuffSeq())
         buffResultLayer:SetEntityID(entity:GetID())
-        ;
-        (table.insert)(buffResultAddLayerList, buffResultLayer)
+        table.insert(buffResultAddLayerList, buffResultLayer)
       end
     end
   end
   local buffResult = BuffResultElementTargetAddLayerToHighest:New(buffResultAddLayerList)
   return buffResult
 end
-
-

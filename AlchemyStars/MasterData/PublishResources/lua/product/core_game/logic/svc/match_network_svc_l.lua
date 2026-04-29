@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/match_network_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MatchNetworkService", INetworkService)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-MatchNetworkService.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function MatchNetworkService:Constructor(world)
   self._world = world
-  self._runningPosition = (self._world):GetRunningPosition()
+  self._runningPosition = self._world:GetRunningPosition()
   if self._runningPosition == WorldRunPostion.AtClient then
-    self._matchModule = (GameGlobal.GetModule)(MatchModule)
+    self._matchModule = GameGlobal.GetModule(MatchModule)
     self._checkCommand = false
   else
     local serverWorld = self._world
@@ -20,53 +13,37 @@ MatchNetworkService.Constructor = function(self, world)
   end
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchNetworkService.ReceiveMessage = function(self, ev)
-  -- function num : 0_1 , upvalues : _ENV
+function MatchNetworkService:ReceiveMessage(ev)
   if self._checkCommand and not is_table_string(ev.cmd) then
-    (Log.error)("command is not echo table! ", ev.cmd)
-    return 
+    Log.error("command is not echo table! ", ev.cmd)
+    return
   end
   local ok, cmd = xpcall(ohce, function()
-    -- function num : 0_1_0 , upvalues : _ENV, ev
-    (Log.error)("command invalid! ", ev.cmd)
-  end
-, ev.cmd)
+    Log.error("command invalid! ", ev.cmd)
+  end, ev.cmd)
   if ok then
     local commands = ArrayList:New()
     commands:PushBack(cmd)
-    ;
-    (self._world):WorldHandleCommands(commands)
+    self._world:WorldHandleCommands(commands)
   end
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchNetworkService.ClientHandleCommands = function(self, commands)
-  -- function num : 0_2
-  (self._world):WorldHandleCommands(commands)
+function MatchNetworkService:ClientHandleCommands(commands)
+  self._world:WorldHandleCommands(commands)
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchNetworkService.SendMessage = function(self, msg)
-  -- function num : 0_3 , upvalues : _ENV
+function MatchNetworkService:SendMessage(msg)
   if self._runningPosition == WorldRunPostion.AtClient then
-    (self._matchModule):Push(msg)
+    self._matchModule:Push(msg)
   else
-    local playerPstID = ((self._world).BW_WorldInfo):GetPlayerPstID()
-    ;
-    (self._coreGameLogic):SendEvent(msg, playerPstID)
+    local playerPstID = self._world.BW_WorldInfo:GetPlayerPstID()
+    self._coreGameLogic:SendEvent(msg, playerPstID)
   end
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchNetworkService.SendCommandsMessage = function(self, commands)
-  -- function num : 0_4 , upvalues : _ENV
+function MatchNetworkService:SendCommandsMessage(commands)
   if commands:Size() == 0 then
-    return 
+    return
   end
   if self._runningPosition == WorldRunPostion.AtClient then
     self:ClientHandleCommands(commands)
@@ -77,5 +54,3 @@ MatchNetworkService.SendCommandsMessage = function(self, commands)
     self:SendMessage(msg)
   end
 end
-
-

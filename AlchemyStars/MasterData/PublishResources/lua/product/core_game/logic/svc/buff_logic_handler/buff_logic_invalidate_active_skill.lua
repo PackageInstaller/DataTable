@@ -1,45 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_invalidate_active_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicInvalidateActiveSkill", BuffLogicBase)
 BuffLogicInvalidateActiveSkill = BuffLogicInvalidateActiveSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicInvalidateActiveSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicInvalidateActiveSkill:Constructor(buffInstance, logicParam)
   self._excludeTriggerTypeTb = logicParam.excludeTriggerTypeTb
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicInvalidateActiveSkill.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("InvalidateActiveSkill", 1)
-  ;
-  (e:BuffComponent()):SetBuffValue("InvalidateActiveSkillExcludeTriggerType", self._excludeTriggerTypeTb)
+function BuffLogicInvalidateActiveSkill:DoLogic(notify)
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("InvalidateActiveSkill", 1)
+  e:BuffComponent():SetBuffValue("InvalidateActiveSkillExcludeTriggerType", self._excludeTriggerTypeTb)
 end
 
 _class("BuffLogicResetInvalidateActiveSkill", BuffLogicBase)
 BuffLogicResetInvalidateActiveSkill = BuffLogicResetInvalidateActiveSkill
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetInvalidateActiveSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetInvalidateActiveSkill:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetInvalidateActiveSkill.DoLogic = function(self, notify)
-  -- function num : 0_3
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("InvalidateActiveSkill", nil)
-  ;
-  (e:BuffComponent()):SetBuffValue("InvalidateActiveSkillExcludeTriggerType", nil)
+function BuffLogicResetInvalidateActiveSkill:DoLogic(notify)
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("InvalidateActiveSkill", nil)
+  e:BuffComponent():SetBuffValue("InvalidateActiveSkillExcludeTriggerType", nil)
 end
-
-

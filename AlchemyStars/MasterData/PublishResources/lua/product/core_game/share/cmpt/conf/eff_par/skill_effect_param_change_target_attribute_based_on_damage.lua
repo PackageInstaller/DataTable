@@ -1,49 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_change_target_attribute_based_on_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamChangeTargetAttributeBasedOnDamage", SkillEffectParamBase)
 SkillEffectParamChangeTargetAttributeBasedOnDamage = SkillEffectParamChangeTargetAttributeBasedOnDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamChangeTargetAttributeBasedOnDamage.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParamChangeTargetAttributeBasedOnDamage:Constructor(t)
   self._checkDamageEffectResultWithStageIndex = t.checkDamageEffectResultWithStageIndex or 1
   self._mulValue = t.mulValue or 0
   self._addValue = t.addValue or 0
-  if not t.attributeType then
-    self._attributeType = CalcChangeTargetAttributeType.MaxHP
-  end
+  self._attributeType = t.attributeType or CalcChangeTargetAttributeType.MaxHP
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamChangeTargetAttributeBasedOnDamage.GetCheckDamageEffectResultWithStageIndex = function(self)
-  -- function num : 0_1
+function SkillEffectParamChangeTargetAttributeBasedOnDamage:GetCheckDamageEffectResultWithStageIndex()
   return self._checkDamageEffectResultWithStageIndex
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamChangeTargetAttributeBasedOnDamage.GetMulValue = function(self)
-  -- function num : 0_2
+function SkillEffectParamChangeTargetAttributeBasedOnDamage:GetMulValue()
   return self._mulValue
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamChangeTargetAttributeBasedOnDamage.GetAddValue = function(self)
-  -- function num : 0_3
+function SkillEffectParamChangeTargetAttributeBasedOnDamage:GetAddValue()
   return self._addValue
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamChangeTargetAttributeBasedOnDamage.GetAttributeType = function(self)
-  -- function num : 0_4
+function SkillEffectParamChangeTargetAttributeBasedOnDamage:GetAttributeType()
   return self._attributeType
 end
-
-

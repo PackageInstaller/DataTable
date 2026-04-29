@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_gift_pack/ui_shop_gift_pack_item_week.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopGiftPackItemWeek", UICustomWidget)
 UIShopGiftPackItemWeek = UIShopGiftPackItemWeek
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopGiftPackItemWeek.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopGiftPackItemWeek:Constructor()
   self.shopModule = self:GetModule(ShopModule)
-  self.clientShop = (self.shopModule):GetClientShop()
-  self._data = (self.clientShop):GetGiftPackShopData()
+  self.clientShop = self.shopModule:GetClientShop()
+  self._data = self.clientShop:GetGiftPackShopData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackItemWeek.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopGiftPackItemWeek:OnShow()
   self._imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._label = self:GetGameObject("label")
@@ -33,258 +23,175 @@ UIShopGiftPackItemWeek.OnShow = function(self)
   self.txtLeft = self:GetUIComponent("UILocalizationText", "txtLeft")
   self.notBuy = self:GetGameObject("notBuy")
   self._goLimit = self:GetGameObject("limit")
-  ;
-  (self._goLimit):SetActive(false)
+  self._goLimit:SetActive(false)
   self._txtLimit = self:GetUIComponent("RollingText", "txtLimit")
   self._redpoint = self:GetGameObject("redpoint")
-  ;
-  (self._redpoint):SetActive(false)
+  self._redpoint:SetActive(false)
   self.imgNew = self:GetGameObject("imgNew")
-  ;
-  (self.imgNew):SetActive(false)
+  self.imgNew:SetActive(false)
   self._atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
   self:AttachEvent(GameEventType.UpdateGiftPackItemPrice, self.FlushPrice)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackItemWeek.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._imgIcon):DestoryLastImage()
+function UIShopGiftPackItemWeek:OnHide()
+  self._imgIcon:DestoryLastImage()
   self:DetachEvent(GameEventType.UpdateGiftPackItemPrice, self.FlushPrice)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackItemWeek.Flush = function(self, id)
-  -- function num : 0_3
-  self._itemData = (self._data):GetGoodBuyId(id)
-  ;
-  (self._txtName):SetText((self._itemData):GetName())
-  local discount, discountStr = (self._itemData):GetDiscount()
+function UIShopGiftPackItemWeek:Flush(id)
+  self._itemData = self._data:GetGoodBuyId(id)
+  self._txtName:SetText(self._itemData:GetName())
+  local discount, discountStr = self._itemData:GetDiscount()
   if discountStr then
-    (self._label):SetActive(true)
-    ;
-    (self._txtLabel):SetText(discountStr)
+    self._label:SetActive(true)
+    self._txtLabel:SetText(discountStr)
   else
-    ;
-    (self._label):SetActive(false)
+    self._label:SetActive(false)
   end
-  ;
-  (self._imgIcon):LoadImage((self._itemData):GetIcon())
+  self._imgIcon:LoadImage(self._itemData:GetIcon())
   self:FlushTxtLeft()
   self:FlushHint()
   self:FlushPrice()
   self:FlushNew()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackItemWeek.FlushTxtLeft = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local LeftDays = function(t, obtained)
-    -- function num : 0_4_0 , upvalues : _ENV
-    local d, h, m, s = (UICommonHelper.S2DHMS)(t)
-    if d >= 1 then
+function UIShopGiftPackItemWeek:FlushTxtLeft()
+  local function LeftDays(t, obtained)
+    local d, h, m, s = UICommonHelper.S2DHMS(t)
+    
+    if 1 <= d then
       if obtained then
-        return (StringTable.Get)("str_pay_left_times", (math.ceil)(d))
+        return StringTable.Get("str_pay_left_times", math.ceil(d))
       else
-        return (StringTable.Get)("str_pay_left_day", (math.floor)(d))
+        return StringTable.Get("str_pay_left_day", math.floor(d))
       end
     else
-      do
-        if obtained then
-          local times = 1
-          if (math.abs)(d) <= 1e-05 then
-            times = 0
-          end
-          return (StringTable.Get)("str_pay_left_times", times)
+      if obtained then
+        local times = 1
+        if math.abs(d) <= 1.0E-5 then
+          times = 0
         end
-        if h >= 1 then
-          return (StringTable.Get)("str_pay_left_hour", (math.floor)(h))
-        else
-          if m >= 1 then
-            return (StringTable.Get)("str_pay_left_minute", (math.floor)(m))
-          else
-            return (StringTable.Get)("str_pay_left_minute", "<1")
-          end
-        end
+        return StringTable.Get("str_pay_left_times", times)
+      end
+      if 1 <= h then
+        return StringTable.Get("str_pay_left_hour", math.floor(h))
+      elseif 1 <= m then
+        return StringTable.Get("str_pay_left_minute", math.floor(m))
+      else
+        return StringTable.Get("str_pay_left_minute", "<1")
       end
     end
   end
-
+  
   local str = ""
-  if (self._itemData):GetBuyCount() > 0 then
-    (self.notBuy):SetActive(false)
-    local stampRefresh = (self._itemData):GetRefreshTime()
+  if self._itemData:GetBuyCount() > 0 then
+    self.notBuy:SetActive(false)
+    local stampRefresh = self._itemData:GetRefreshTime()
     str = LeftDays(stampRefresh, true)
   else
-    do
-      ;
-      (self.notBuy):SetActive(true)
-      local stampEnd = (self._itemData):GetEndTime()
-      do
-        local stampNow = (UICommonHelper.GetNowTimestamp)()
-        str = LeftDays(stampEnd - stampNow, false)
-        ;
-        (self.txtLeft):SetText(str)
-      end
-    end
+    self.notBuy:SetActive(true)
+    local stampEnd = self._itemData:GetEndTime()
+    local stampNow = UICommonHelper.GetNowTimestamp()
+    str = LeftDays(stampEnd - stampNow, false)
   end
+  self.txtLeft:SetText(str)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackItemWeek.FlushHint = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIShopGiftPackItemWeek:FlushHint()
   local str = ""
-  if (self._itemData):HasSoldOut() then
-    str = (StringTable.Get)("str_pay_soldout")
+  if self._itemData:HasSoldOut() then
+    str = StringTable.Get("str_pay_soldout")
   else
-    str = (self._itemData):GetCountStr()
+    str = self._itemData:GetCountStr()
   end
-  if (string.isnullorempty)(str) then
-    (self._goLimit):SetActive(false)
+  if string.isnullorempty(str) then
+    self._goLimit:SetActive(false)
   else
-    ;
-    (self._txtLimit):RefreshText(str)
-    ;
-    (self._goLimit):SetActive(true)
+    self._txtLimit:RefreshText(str)
+    self._goLimit:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackItemWeek.FlushPrice = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIShopGiftPackItemWeek:FlushPrice()
   if not self._itemData then
-    (Log.warn)("### _itemData is nil.")
-    return 
+    Log.warn("### _itemData is nil.")
+    return
   end
-  ;
-  (self.price):SetActive(false)
-  ;
-  (self.priceDiscount):SetActive(false)
-  ;
-  ((self.imgPriceRaw).gameObject):SetActive(false)
-  ;
-  ((self.imgPrice).gameObject):SetActive(false)
-  ;
-  ((self.otherText).gameObject):SetActive(false)
-  if (self._itemData):HasSoldOut() then
-    (self.price):SetActive(true)
-    ;
-    (self.txtPrice):SetText((StringTable.Get)("str_pay_soldout"))
-    return 
+  self.price:SetActive(false)
+  self.priceDiscount:SetActive(false)
+  self.imgPriceRaw.gameObject:SetActive(false)
+  self.imgPrice.gameObject:SetActive(false)
+  self.otherText.gameObject:SetActive(false)
+  if self._itemData:HasSoldOut() then
+    self.price:SetActive(true)
+    self.txtPrice:SetText(StringTable.Get("str_pay_soldout"))
+    return
   end
-  local itemtType = (self._itemData):GetType()
+  local itemtType = self._itemData:GetType()
   if itemtType == GiftPackType.Currency then
-    (self.price):SetActive(true)
-    ;
-    ((self.txtPrice).gameObject):SetActive(true)
-    ;
-    (self.txtPrice):SetText((self._itemData):GetPriceWithCurrencySymbol())
+    self.price:SetActive(true)
+    self.txtPrice.gameObject:SetActive(true)
+    self.txtPrice:SetText(self._itemData:GetPriceWithCurrencySymbol())
+  elseif itemtType == GiftPackType.Free then
+    self.otherText:SetText(StringTable.Get("str_pay_free"))
+    self.otherText.gameObject:SetActive(true)
+    self.price:SetActive(true)
+    self.txtPrice.gameObject:SetActive(false)
   else
-    if itemtType == GiftPackType.Free then
-      (self.otherText):SetText((StringTable.Get)("str_pay_free"))
-      ;
-      ((self.otherText).gameObject):SetActive(true)
-      ;
-      (self.price):SetActive(true)
-      ;
-      ((self.txtPrice).gameObject):SetActive(false)
+    local discount, discountStr = self._itemData:GetDiscount()
+    if discount then
+      self.priceDiscount:SetActive(true)
+      self.imgPriceRaw.gameObject:SetActive(true)
+      self.imgPriceRaw.sprite = self._atlas:GetSprite(self._itemData:GetPriceIcon())
+      self.txtPriceRaw:SetText(self._itemData:GetPriceRaw())
+      self.txtPriceDiscount:SetText(self._itemData:GetPrice())
     else
-      local discount, discountStr = (self._itemData):GetDiscount()
-      if discount then
-        (self.priceDiscount):SetActive(true)
-        ;
-        ((self.imgPriceRaw).gameObject):SetActive(true)
-        -- DECOMPILER ERROR at PC118: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self.imgPriceRaw).sprite = (self._atlas):GetSprite((self._itemData):GetPriceIcon())
-        ;
-        (self.txtPriceRaw):SetText((self._itemData):GetPriceRaw())
-        ;
-        (self.txtPriceDiscount):SetText((self._itemData):GetPrice())
-      else
-        ;
-        (self.price):SetActive(true)
-        ;
-        ((self.imgPrice).gameObject):SetActive(true)
-        -- DECOMPILER ERROR at PC148: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self.imgPrice).sprite = (self._atlas):GetSprite((self._itemData):GetPriceIcon())
-        ;
-        (self.txtPrice):SetText((self._itemData):GetPrice())
-      end
+      self.price:SetActive(true)
+      self.imgPrice.gameObject:SetActive(true)
+      self.imgPrice.sprite = self._atlas:GetSprite(self._itemData:GetPriceIcon())
+      self.txtPrice:SetText(self._itemData:GetPrice())
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackItemWeek.FlushNew = function(self)
-  -- function num : 0_7
-  local isNew = (self._itemData):GetNew()
-  ;
-  (self.imgNew):SetActive(isNew)
+function UIShopGiftPackItemWeek:FlushNew()
+  local isNew = self._itemData:GetNew()
+  self.imgNew:SetActive(isNew)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackItemWeek.bgOnClick = function(self)
-  -- function num : 0_8
+function UIShopGiftPackItemWeek:bgOnClick()
   self:OpenUIShopGiftPackDetail()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackItemWeek.btnPriceOnClick = function(self)
-  -- function num : 0_9
+function UIShopGiftPackItemWeek:btnPriceOnClick()
   self:OpenUIShopGiftPackDetail()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackItemWeek.OpenUIShopGiftPackDetail = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local isBattlePassGift = (self._itemData):IsBattlePassGift()
+function UIShopGiftPackItemWeek:OpenUIShopGiftPackDetail()
+  local isBattlePassGift = self._itemData:IsBattlePassGift()
   if isBattlePassGift then
-    (UIActivityBattlePassHelper.OpenBuyGiftController)(function()
-    -- function num : 0_10_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateGiftPackShop)
-  end
-)
+    UIActivityBattlePassHelper.OpenBuyGiftController(function()
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateGiftPackShop)
+    end)
   else
     self:_RecordClick()
-    if (self._itemData):GetType() == GiftPackType.Currency then
-      ((GameGlobal.GetUIModule)(ShopModule)):ReportPayStep(PayStep.LaunchPurchaseUI, true, 0, tostring((self._itemData):GetId()))
+    if self._itemData:GetType() == GiftPackType.Currency then
+      GameGlobal.GetUIModule(ShopModule):ReportPayStep(PayStep.LaunchPurchaseUI, true, 0, tostring(self._itemData:GetId()))
     end
-    self:ShowDialog("UIShopGiftPackDetail", (self._itemData):GetId(), ShopMainTabType.Gift)
-    if (self._itemData):GetNew() then
-      (self.shopModule):CancelNewMark(MarketType.Shop_GiftMarket, (self._itemData):GetId())
-      ;
-      (self._itemData):SetNew(false)
+    self:ShowDialog("UIShopGiftPackDetail", self._itemData:GetId(), ShopMainTabType.Gift)
+    if self._itemData:GetNew() then
+      self.shopModule:CancelNewMark(MarketType.Shop_GiftMarket, self._itemData:GetId())
+      self._itemData:SetNew(false)
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopNew)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopNew)
     self:FlushNew()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackItemWeek._RecordClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  if (self._itemData):IsMonthCard() then
-    local key = (self.shopModule):GetMonthCardClickKey()
-    ;
-    (LocalDB.SetInt)(key, self._day)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CheckMonthCardRedpoint)
+function UIShopGiftPackItemWeek:_RecordClick()
+  if self._itemData:IsMonthCard() then
+    local key = self.shopModule:GetMonthCardClickKey()
+    LocalDB.SetInt(key, self._day)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.CheckMonthCardRedpoint)
   end
 end
-
-

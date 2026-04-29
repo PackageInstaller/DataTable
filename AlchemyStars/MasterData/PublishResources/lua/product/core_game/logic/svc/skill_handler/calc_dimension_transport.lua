@@ -1,42 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_dimension_transport.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_DimensionTransport", SkillEffectCalc_Base)
 SkillEffectCalc_DimensionTransport = SkillEffectCalc_DimensionTransport
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_DimensionTransport.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_DimensionTransport:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
     if result then
-      (table.insert)(results, result)
+      table.insert(results, result)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DimensionTransport._CalculateSingleTarget = function(self, skillEffectCalcParam, nTargetID)
-  -- function num : 0_1 , upvalues : _ENV
-  local teamEntity = (self._world):GetEntityByID(nTargetID)
+function SkillEffectCalc_DimensionTransport:_CalculateSingleTarget(skillEffectCalcParam, nTargetID)
+  local teamEntity = self._world:GetEntityByID(nTargetID)
   if not teamEntity then
-    return 
+    return
   end
   if not teamEntity:HasTeam() then
-    return 
+    return
   end
   local logicPickUpCmpt = teamEntity:LogicPickUp()
   local posNew = logicPickUpCmpt:GetLogicCurPickUpGridSafePos()
   if not posNew then
-    return 
+    return
   end
   return SkillEffectResult_DimensionTransport:New(nTargetID, skillEffectCalcParam.gridPos, PieceType.Any, posNew, nil, nil)
 end
-
-

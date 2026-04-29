@@ -1,56 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_damage_by_buff_round_layer_and_clear_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewDamageByBuffRoundLayerAndClear", BuffViewBase)
 BuffViewDamageByBuffRoundLayerAndClear = BuffViewDamageByBuffRoundLayerAndClear
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewDamageByBuffRoundLayerAndClear.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewDamageByBuffRoundLayerAndClear:PlayView(TT)
   local result = self._buffResult
   local targetBuffSeq = result:GetTargetBuffSeq()
-  local playBuffSvc = (self._world):GetService("PlayBuff")
-  local buffView = (self._entity):BuffView()
-  for _,value in ipairs(targetBuffSeq) do
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  local buffView = self._entity:BuffView()
+  for _, value in ipairs(targetBuffSeq) do
     local viewInstance = buffView:GetBuffViewInstance(value)
     if viewInstance then
       viewInstance:SetUnload()
       playBuffSvc:PlayRemoveBuff(TT, viewInstance, NTBuffUnload:New())
     end
   end
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
-  local viewParams = ((self._viewInstance):BuffConfigData()):GetViewParams()
-  local playBuffSvc = (self._world):GetService("PlayBuff")
-  local effectService = (self._world):GetService("Effect")
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
+  local viewParams = self._viewInstance:BuffConfigData():GetViewParams()
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  local effectService = self._world:GetService("Effect")
   local taskIDList = {}
-  local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : _ENV, viewParams, playBuffSvc, self, effectService
+  local taskID = GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     YIELD(TT, viewParams.playDelay)
     playBuffSvc:PlayDamageBuff(TT, self)
     local effect = effectService:CreateEffect(viewParams.damageEffectID, self._entity)
     local audioID = viewParams.audioID
     if audioID then
-      (AudioHelperController.PlayInnerGameSfx)(audioID)
+      AudioHelperController.PlayInnerGameSfx(audioID)
     end
     YIELD(TT, viewParams.finishDelay)
-  end
-)
-  ;
-  (table.insert)(taskIDList, taskID)
-  while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDList) do
+  end)
+  table.insert(taskIDList, taskID)
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDList) do
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewDamageByBuffRoundLayerAndClear.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewDamageByBuffRoundLayerAndClear:IsNotifyMatch(notify)
   local result = self._buffResult
   return true
 end
-
-

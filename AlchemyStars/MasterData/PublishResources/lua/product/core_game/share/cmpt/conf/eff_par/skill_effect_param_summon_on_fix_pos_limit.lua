@@ -1,65 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_summon_on_fix_pos_limit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamSummonOnFixPosLimit", SkillEffectParamBase)
 SkillEffectParamSummonOnFixPosLimit = SkillEffectParamSummonOnFixPosLimit
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamSummonOnFixPosLimit.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParamSummonOnFixPosLimit:Constructor(t)
   self._trapID = t.trapID
   self._posList = {}
-  for i,v in ipairs(t.pos) do
-    (table.insert)(self._posList, Vector2(v[1], v[2]))
+  for i, v in ipairs(t.pos) do
+    table.insert(self._posList, Vector2(v[1], v[2]))
   end
   self._summonCount = t.summonCount
   self._limitCount = t.limitCount
   self._ignoreBlock = t.ignoreBlock or false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonOnFixPosLimit.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamSummonOnFixPosLimit:GetEffectType()
   return SkillEffectType.SummonOnFixPosLimit
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonOnFixPosLimit.GetTrapID = function(self)
-  -- function num : 0_2
+function SkillEffectParamSummonOnFixPosLimit:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonOnFixPosLimit.IgnoreBlock = function(self)
-  -- function num : 0_3
+function SkillEffectParamSummonOnFixPosLimit:IgnoreBlock()
   return self._ignoreBlock
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonOnFixPosLimit.GetLimitCount = function(self)
-  -- function num : 0_4
+function SkillEffectParamSummonOnFixPosLimit:GetLimitCount()
   return self._limitCount
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonOnFixPosLimit.GetSummonCount = function(self)
-  -- function num : 0_5
+function SkillEffectParamSummonOnFixPosLimit:GetSummonCount()
   return self._summonCount
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonOnFixPosLimit.GetFixPosList = function(self)
-  -- function num : 0_6
+function SkillEffectParamSummonOnFixPosLimit:GetFixPosList()
   return self._posList
 end
-
-

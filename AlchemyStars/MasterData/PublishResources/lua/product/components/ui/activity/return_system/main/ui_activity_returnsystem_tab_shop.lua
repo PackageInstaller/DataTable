@@ -1,100 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/main/ui_activity_returnsystem_tab_shop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReturnSystemTabShop", UICustomWidget)
 UIActivityReturnSystemTabShop = UIActivityReturnSystemTabShop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReturnSystemTabShop.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityReturnSystemTabShop:OnShow(uiParams)
   self._isOpen = true
   self:AddListener()
-  ;
-  (UIWidgetHelper.SetAnimationPlay)(self, "_anim", "uieff_Return_Gift")
+  UIWidgetHelper.SetAnimationPlay(self, "_anim", "uieff_Return_Gift")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabShop.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityReturnSystemTabShop:OnHide()
   self:DetachListener()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabShop.SetData = function(self, campaign)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityReturnSystemTabShop:SetData(campaign)
   self._campaign = campaign
-  self._componentExchange = (UIActivityReturnSystemHelper.GetComponentByTabName)(self._campaign, "shop", 1)
-  self._componentPower2Item = (UIActivityReturnSystemHelper.GetComponentByTabName)(self._campaign, "shop", 2)
+  self._componentExchange = UIActivityReturnSystemHelper.GetComponentByTabName(self._campaign, "shop", 1)
+  self._componentPower2Item = UIActivityReturnSystemHelper.GetComponentByTabName(self._campaign, "shop", 2)
   self:Refresh()
-  ;
-  (UIActivityReturnSystemHelper.SetShopRedPoint)()
+  UIActivityReturnSystemHelper.SetShopRedPoint()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabShop.SetTopTips = function(self, callback)
-  -- function num : 0_3
+function UIActivityReturnSystemTabShop:SetTopTips(callback)
   self._topTips = callback
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabShop.Refresh = function(self)
-  -- function num : 0_4
+function UIActivityReturnSystemTabShop:Refresh()
   if self._isOpen then
     self:_SetShopBoardGroup()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabShop._SetShopBoardGroup = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local componentInfo = (self._componentExchange):GetComponentInfo()
+function UIActivityReturnSystemTabShop:_SetShopBoardGroup()
+  local componentInfo = self._componentExchange:GetComponentInfo()
   self._widigets = {}
   self._shopList = {}
-  local moneyID = ((componentInfo.m_exchange_item_list)[1]).m_cost_item_id
+  local moneyID = componentInfo.m_exchange_item_list[1].m_cost_item_id
   self._coinId = moneyID
-  local moneyCfg = (Cfg.cfg_item)[moneyID]
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local moneyCfg = Cfg.cfg_item[moneyID]
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local moneyNum = itemModule:GetItemCount(moneyID)
-  local max = (self._componentPower2Item):GetCampaignCount()
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "coinCount", moneyNum)
-  local list = (self._componentExchange):GetItemList()
-  self._widigets = (UIWidgetHelper.SpawnObjects)(self, "Content", "UIActivityReturnSystemItemShop", #list)
-  for i,v in ipairs(self._widigets) do
+  local max = self._componentPower2Item:GetCampaignCount()
+  UIWidgetHelper.SetLocalizationText(self, "coinCount", moneyNum)
+  local list = self._componentExchange:GetItemList()
+  self._widigets = UIWidgetHelper.SpawnObjects(self, "Content", "UIActivityReturnSystemItemShop", #list)
+  for i, v in ipairs(self._widigets) do
     local campaignItem = DCampaignShopItemBase:New()
     campaignItem:Refresh(list[i], self._componentExchange)
     v:Refresh(campaignItem, nil, max)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabShop.CoinOnClick = function(self, go)
-  -- function num : 0_6
+function UIActivityReturnSystemTabShop:CoinOnClick(go)
   if self._topTips then
-    (self._topTips)(self._coinId, go)
+    self._topTips(self._coinId, go)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabShop.AddListener = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityReturnSystemTabShop:AddListener()
   self:AttachEvent(GameEventType.ActivityShopBuySuccess, self.Refresh)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabShop.DetachListener = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityReturnSystemTabShop:DetachListener()
   self:DetachEvent(GameEventType.ActivityShopBuySuccess, self.Refresh)
 end
-
-

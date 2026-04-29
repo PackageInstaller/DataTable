@@ -1,188 +1,127 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/guide_pos_editor.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 if not EDITOR then
-  return 
+  return
 end
-CheckGuidePosEditorReady = function()
-  -- function num : 0_0 , upvalues : _ENV
-  local gameLogic = (GameGlobal.GameLogic)()
-  do
-    if gameLogic and gameLogic.inited then
-      local guideModule = (GameGlobal.GetModule)(GuideModule)
-      return guideModule:GuideInProgress()
-    end
-    return false
+
+function CheckGuidePosEditorReady()
+  local gameLogic = GameGlobal.GameLogic()
+  if gameLogic and gameLogic.inited then
+    local guideModule = GameGlobal.GetModule(GuideModule)
+    return guideModule:GuideInProgress()
   end
+  return false
 end
 
-GuidePosEditorGetGuideInfo = function()
-  -- function num : 0_1 , upvalues : _ENV
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
-  do
-    if guideModule:GuideInProgress() then
-      local guides = guideModule:GetCurGuides()
-      if guides then
-        for _,guide in pairs(guides) do
-          local curStep = guide:GetCurStep()
-          if curStep and curStep.show then
-            local info = {guide = "0", step = "0", ow = "0", oh = "0"}
-            do
-              do
-                if curStep.btn then
-                  local rectTransform = (curStep.btn):GetComponent("RectTransform")
-                  info.ow = tostring((rectTransform.rect).width)
-                  info.oh = tostring((rectTransform.rect).height)
-                end
-                info.guide = tostring((curStep.data).guide)
-                info.step = tostring((curStep.data).step)
-                do return info end
-                -- DECOMPILER ERROR at PC56: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC56: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC56: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
+function GuidePosEditorGetGuideInfo()
+  local guideModule = GameGlobal.GetModule(GuideModule)
+  if guideModule:GuideInProgress() then
+    local guides = guideModule:GetCurGuides()
+    if guides then
+      for _, guide in pairs(guides) do
+        local curStep = guide:GetCurStep()
+        if curStep and curStep.show then
+          local info = {
+            guide = "0",
+            step = "0",
+            ow = "0",
+            oh = "0"
+          }
+          if curStep.btn then
+            local rectTransform = curStep.btn:GetComponent("RectTransform")
+            info.ow = tostring(rectTransform.rect.width)
+            info.oh = tostring(rectTransform.rect.height)
           end
+          info.guide = tostring(curStep.data.guide)
+          info.step = tostring(curStep.data.step)
+          return info
         end
       end
     end
-    return nil
   end
+  return nil
 end
 
-GuidePosEditorRefreshGuideStepUI = function(guideid, guidestep, offset, forceoffset, forcesize, headposition)
-  -- function num : 0_2 , upvalues : _ENV
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+function GuidePosEditorRefreshGuideStepUI(guideid, guidestep, offset, forceoffset, forcesize, headposition)
+  local guideModule = GameGlobal.GetModule(GuideModule)
   if not guideModule:GuideInProgress() then
-    return 
+    return
   end
   local guides = guideModule:GetCurGuides()
   if not guides then
-    return 
+    return
   end
-  for _,guide in pairs(guides) do
+  for _, guide in pairs(guides) do
     local curStep = guide:GetCurStep()
     if curStep and curStep.show then
-      if guideid ~= (curStep.data).guide or guidestep ~= (curStep.data).step then
-        return 
+      if guideid ~= curStep.data.guide or guidestep ~= curStep.data.step then
+        return
       end
-      -- DECOMPILER ERROR at PC45: Confused about usage of register: R14 in 'UnsetPending'
-
-      if (curStep.btnGuideCfg).ForceSize then
+      if curStep.btnGuideCfg.ForceSize then
         if forcesize.x == 0 and forcesize.y == 0 then
-          (curStep.btnGuideCfg).ForceSize = nil
+          curStep.btnGuideCfg.ForceSize = nil
         else
-          -- DECOMPILER ERROR at PC50: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          ((curStep.btnGuideCfg).ForceSize)[1] = forcesize.x
-          -- DECOMPILER ERROR at PC54: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          ((curStep.btnGuideCfg).ForceSize)[2] = forcesize.y
+          curStep.btnGuideCfg.ForceSize[1] = forcesize.x
+          curStep.btnGuideCfg.ForceSize[2] = forcesize.y
         end
-      else
-        -- DECOMPILER ERROR at PC67: Confused about usage of register: R14 in 'UnsetPending'
-
-        if forcesize.x ~= 0 or forcesize.y ~= 0 then
-          (curStep.btnGuideCfg).ForceSize = {forcesize.x, forcesize.y}
-        end
+      elseif forcesize.x ~= 0 or forcesize.y ~= 0 then
+        curStep.btnGuideCfg.ForceSize = {
+          forcesize.x,
+          forcesize.y
+        }
       end
-      -- DECOMPILER ERROR at PC79: Confused about usage of register: R14 in 'UnsetPending'
-
-      if (curStep.btnGuideCfg).offset then
+      if curStep.btnGuideCfg.offset then
         if offset.x == 0 and offset.y == 0 then
-          (curStep.btnGuideCfg).offset = nil
+          curStep.btnGuideCfg.offset = nil
         else
-          -- DECOMPILER ERROR at PC84: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          ((curStep.btnGuideCfg).offset)[1] = offset.x
-          -- DECOMPILER ERROR at PC88: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          ((curStep.btnGuideCfg).offset)[2] = offset.y
+          curStep.btnGuideCfg.offset[1] = offset.x
+          curStep.btnGuideCfg.offset[2] = offset.y
         end
-      else
-        -- DECOMPILER ERROR at PC101: Confused about usage of register: R14 in 'UnsetPending'
-
-        if offset.x ~= 0 or offset.y ~= 0 then
-          (curStep.btnGuideCfg).offset = {offset.x, offset.y}
-        end
+      elseif offset.x ~= 0 or offset.y ~= 0 then
+        curStep.btnGuideCfg.offset = {
+          offset.x,
+          offset.y
+        }
       end
-      -- DECOMPILER ERROR at PC113: Confused about usage of register: R14 in 'UnsetPending'
-
-      if (curStep.btnGuideCfg).ForceOffset then
+      if curStep.btnGuideCfg.ForceOffset then
         if forceoffset.x == 0 and forceoffset.y == 0 then
-          (curStep.btnGuideCfg).ForceOffset = nil
+          curStep.btnGuideCfg.ForceOffset = nil
         else
-          -- DECOMPILER ERROR at PC118: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          ((curStep.btnGuideCfg).ForceOffset)[1] = forceoffset.x
-          -- DECOMPILER ERROR at PC122: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          ((curStep.btnGuideCfg).ForceOffset)[2] = forceoffset.y
+          curStep.btnGuideCfg.ForceOffset[1] = forceoffset.x
+          curStep.btnGuideCfg.ForceOffset[2] = forceoffset.y
         end
-      else
-        -- DECOMPILER ERROR at PC135: Confused about usage of register: R14 in 'UnsetPending'
-
-        if forceoffset.x ~= 0 or forceoffset.y ~= 0 then
-          (curStep.btnGuideCfg).ForceOffset = {forceoffset.x, forceoffset.y}
-        end
+      elseif forceoffset.x ~= 0 or forceoffset.y ~= 0 then
+        curStep.btnGuideCfg.ForceOffset = {
+          forceoffset.x,
+          forceoffset.y
+        }
       end
-      -- DECOMPILER ERROR at PC143: Confused about usage of register: R14 in 'UnsetPending'
-
-      if (curStep.btnGuideCfg).position then
+      if curStep.btnGuideCfg.position then
         if headposition == 0 then
-          (curStep.btnGuideCfg).position = nil
+          curStep.btnGuideCfg.position = nil
         else
-          -- DECOMPILER ERROR at PC146: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (curStep.btnGuideCfg).position = headposition
+          curStep.btnGuideCfg.position = headposition
         end
-      else
-        -- DECOMPILER ERROR at PC151: Confused about usage of register: R14 in 'UnsetPending'
-
-        if headposition ~= 0 then
-          (curStep.btnGuideCfg).position = headposition
-        end
+      elseif headposition ~= 0 then
+        curStep.btnGuideCfg.position = headposition
       end
       curStep:GetUIGuideInfo()
-      if ((GameGlobal.GuideMessageBoxMng)())._uiMsgBox then
-        ((((GameGlobal.GuideMessageBoxMng)())._uiMsgBox).guideScript):SetCharacterSay()
+      if GameGlobal.GuideMessageBoxMng()._uiMsgBox then
+        GameGlobal.GuideMessageBoxMng()._uiMsgBox.guideScript:SetCharacterSay()
       end
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuidePosChanged, curStep)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.GuidePosChanged, curStep)
     end
   end
 end
 
-GuidePosEditorClearGuideInfo = function(guideid)
-  -- function num : 0_3 , upvalues : _ENV
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
-  if guideid > 0 then
-    local cfgs = (Cfg.cfg_guide_trigger)({guide = guideid})
+function GuidePosEditorClearGuideInfo(guideid)
+  local guideModule = GameGlobal.GetModule(GuideModule)
+  if 0 < guideid then
+    local cfgs = Cfg.cfg_guide_trigger({guide = guideid})
     if cfgs then
       local cfg = cfgs[1]
-      -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
       if cfg then
-        (guideModule.guides)[cfg.guide] = Guide:New(guideModule, cfg)
-        -- DECOMPILER ERROR at PC29: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (guideModule.triggerGuides)[cfg.id] = (guideModule.guides)[cfg.guide]
+        guideModule.guides[cfg.guide] = Guide:New(guideModule, cfg)
+        guideModule.triggerGuides[cfg.id] = guideModule.guides[cfg.guide]
       end
     end
   end
 end
-
-

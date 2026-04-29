@@ -1,34 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/entity/entity_assemble_extension.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("logic_entity_config")
 require("render_entity_config")
 _class("EntityAssembler", Object)
 EntityAssembler = EntityAssembler
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-EntityAssembler.AssembleEntityComponents = function(entity, init_data)
-  -- function num : 0_0 , upvalues : _ENV
+function EntityAssembler.AssembleEntityComponents(entity, init_data)
   if type(init_data) ~= "table" then
     local entity_context = EntityCreationContext:New()
     entity_context.entity_config_id = init_data
-    ;
-    (EntityAssembler.AssembleEntityComponentsByContext)(entity, entity_context)
+    EntityAssembler.AssembleEntityComponentsByContext(entity, entity_context)
   else
-    do
-      ;
-      (EntityAssembler.AssembleEntityComponentsByContext)(entity, init_data)
-    end
+    EntityAssembler.AssembleEntityComponentsByContext(entity, init_data)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.AssembleEntityComponentsByContext = function(entity, entity_context)
-  -- function num : 0_1 , upvalues : _ENV
-  local entity_config = nil
+function EntityAssembler.AssembleEntityComponentsByContext(entity, entity_context)
+  local entity_config
   if entity_context.entity_config_id == 0 then
     entity_config = entity_context.entity_config
   else
@@ -38,49 +24,35 @@ EntityAssembler.AssembleEntityComponentsByContext = function(entity, entity_cont
     end
   end
   if not entity_config then
-    (Log.fatal)("AssembleEntityComponentsByContext can\'t find configy id=" .. entity_context.entity_config_id)
-    return 
+    Log.fatal("AssembleEntityComponentsByContext can't find configy id=" .. entity_context.entity_config_id)
+    return
   end
   local world = entity:GetOwnerWorld()
   local runPosition = world:GetRunningPosition()
-  for k,v in pairs(entity_config.EntityConfigComponents) do
+  for k, v in pairs(entity_config.EntityConfigComponents) do
     local funtionName = "Init" .. k .. "Component"
     local cmptName = k .. "Component"
     if not EntityAssembler[funtionName] then
-      (Log.fatal)("AssembleEntityComponentsByContext " .. k .. " missing Init" .. k .. "Component func")
-    else
-      if ComponentFilter:CheckComponent(cmptName, runPosition) then
-        (EntityAssembler[funtionName])(entity, v, entity_context)
-      end
+      Log.fatal("AssembleEntityComponentsByContext " .. k .. " missing Init" .. k .. "Component func")
+    elseif ComponentFilter:CheckComponent(cmptName, runPosition) then
+      EntityAssembler[funtionName](entity, v, entity_context)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitLinkRendererDataComponent = function(entity, config_data, entity_context)
-  -- function num : 0_2
+function EntityAssembler.InitLinkRendererDataComponent(entity, config_data, entity_context)
   entity:AddLinkRendererData()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitBoardComponent = function(entity, config_data, entity_context)
-  -- function num : 0_3
+function EntityAssembler.InitBoardComponent(entity, config_data, entity_context)
   entity:AddBoard(nil)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitSkillRangeOutlineComponent = function(entity, config_data, entity_context)
-  -- function num : 0_4
+function EntityAssembler.InitSkillRangeOutlineComponent(entity, config_data, entity_context)
   entity:AddSkillRangeOutline()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitAssetComponent = function(entity, config_data, entity_context)
-  -- function num : 0_5 , upvalues : _ENV
+function EntityAssembler.InitAssetComponent(entity, config_data, entity_context)
   local asset_type_class = Classes[config_data.AssetType]
   local asset_detail = asset_type_class:New(config_data.ResPath, entity_context.bShow)
   if config_data.ResPath and config_data.ResPath ~= "" then
@@ -90,191 +62,128 @@ EntityAssembler.InitAssetComponent = function(entity, config_data, entity_contex
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitAbilityComponent = function(entity, config_data, entity_context)
-  -- function num : 0_6 , upvalues : _ENV
+function EntityAssembler.InitAbilityComponent(entity, config_data, entity_context)
   for i = 1, #config_data do
-    local ability_class = Classes[(config_data[i]).AbilityType]
+    local ability_class = Classes[config_data[i].AbilityType]
     local ability = ability_class:New()
     entity:AddAbility(ability)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitAttributesComponent = function(entity, config_data, entity_context)
-  -- function num : 0_7 , upvalues : _ENV
+function EntityAssembler.InitAttributesComponent(entity, config_data, entity_context)
   entity:AddAttributes()
   local attributes_cmpt = entity:Attributes()
   for i = 1, #config_data do
     local attribute = config_data[i]
-    local modifier = (Classes[attribute.AttrModifyType]):New(attribute.DefaultValue)
+    local modifier = Classes[attribute.AttrModifyType]:New(attribute.DefaultValue)
     attributes_cmpt:SetAttribute(attribute.AttributeName, modifier)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitRenderAttributesComponent = function(entity, config_data, entity_context)
-  -- function num : 0_8
+function EntityAssembler.InitRenderAttributesComponent(entity, config_data, entity_context)
   entity:AddRenderAttributes()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitCommandReceiverComponent = function(entity, config_data, entity_context)
-  -- function num : 0_9 , upvalues : _ENV
+function EntityAssembler.InitCommandReceiverComponent(entity, config_data, entity_context)
   local dispatcher_class = Classes[config_data.DispatcherType]
   local dispatcher = dispatcher_class:New(entity._world)
   entity:AddCommandReceiver(dispatcher)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitCommandSenderComponent = function(entity, config_data, entity_context)
-  -- function num : 0_10 , upvalues : _ENV
+function EntityAssembler.InitCommandSenderComponent(entity, config_data, entity_context)
   local prehandler_class = Classes[config_data.PreHandlerType]
   local preHandler = prehandler_class:New()
   entity:AddCommandSender(preHandler)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitSpawnComponent = function(entity, config_data, entity_context)
-  -- function num : 0_11 , upvalues : _ENV
+function EntityAssembler.InitSpawnComponent(entity, config_data, entity_context)
   local spawn_class = Classes[config_data.SpawnRuleType]
   local spawn_rule = spawn_class:New()
   entity:AddSpawn(spawn_rule)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitViewComponent = function(entity, config_data, entity_context)
-  -- function num : 0_12
+function EntityAssembler.InitViewComponent(entity, config_data, entity_context)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitLocationComponent = function(entity, config_data, entity_context)
-  -- function num : 0_13 , upvalues : _ENV
+function EntityAssembler.InitLocationComponent(entity, config_data, entity_context)
   local pos = config_data.Pos
   local dir = config_data.Dir
-  if entity_context.entity_runtime_data and (entity_context.entity_runtime_data).birth_pos then
-    pos = (entity_context.entity_runtime_data).birth_pos
+  if entity_context.entity_runtime_data and entity_context.entity_runtime_data.birth_pos then
+    pos = entity_context.entity_runtime_data.birth_pos
   end
-  if entity_context.entity_runtime_data and (entity_context.entity_runtime_data).birth_dir then
-    dir = (entity_context.entity_runtime_data).birth_dir
+  if entity_context.entity_runtime_data and entity_context.entity_runtime_data.birth_dir then
+    dir = entity_context.entity_runtime_data.birth_dir
   end
   entity:SetLocation(Vector3(pos[1], pos[2], pos[3]), Vector3(dir[1], dir[2], dir[3]))
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitMainFSMComponent = function(entity, config_data, entity_context)
-  -- function num : 0_14
+function EntityAssembler.InitMainFSMComponent(entity, config_data, entity_context)
   entity:AddMainFSM(entity, config_data.MainFSMConfigID)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitGridLocationComponent = function(entity, config_data, entity_context)
-  -- function num : 0_15 , upvalues : _ENV
+function EntityAssembler.InitGridLocationComponent(entity, config_data, entity_context)
   local pos = config_data.Pos
   local dir = config_data.Dir
   local offset = config_data.Offset
-  if entity_context.entity_runtime_data and (entity_context.entity_runtime_data).birth_pos then
-    pos = (entity_context.entity_runtime_data).birth_pos
+  if entity_context.entity_runtime_data and entity_context.entity_runtime_data.birth_pos then
+    pos = entity_context.entity_runtime_data.birth_pos
   end
-  if entity_context.entity_runtime_data and (entity_context.entity_runtime_data).birth_dir then
-    dir = (entity_context.entity_runtime_data).birth_dir
+  if entity_context.entity_runtime_data and entity_context.entity_runtime_data.birth_dir then
+    dir = entity_context.entity_runtime_data.birth_dir
   end
   if pos and dir then
     entity:SetGridLocation(Vector2(pos[1], pos[2]), Vector2(dir[1], dir[2]))
-  else
-    if offset then
-      entity:SetGridOffset(Vector2(offset[1], offset[2]))
-    end
+  elseif offset then
+    entity:SetGridOffset(Vector2(offset[1], offset[2]))
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPieceComponent = function(entity, config_data, entity_context)
-  -- function num : 0_16 , upvalues : _ENV
+function EntityAssembler.InitPieceComponent(entity, config_data, entity_context)
   entity:AddPiece(PieceType[config_data.Type])
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPieceFakeComponent = function(entity, config_data, entity_context)
-  -- function num : 0_17 , upvalues : _ENV
+function EntityAssembler.InitPieceFakeComponent(entity, config_data, entity_context)
   entity:AddPieceFake(PieceType[config_data.Type])
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitConnectPiecesComponent = function(entity, config_data, entity_context)
-  -- function num : 0_18 , upvalues : _ENV
+function EntityAssembler.InitConnectPiecesComponent(entity, config_data, entity_context)
   entity:AddConnectPieces({}, PieceType.None)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitBodyAreaComponent = function(entity, config_data, entity_context)
-  -- function num : 0_19 , upvalues : _ENV
+function EntityAssembler.InitBodyAreaComponent(entity, config_data, entity_context)
   if not config_data then
-    return 
+    return
   end
   local vecs = {}
-  for i,v in ipairs(config_data) do
+  for i, v in ipairs(config_data) do
     local vec = Vector2(v[1], v[2])
-    ;
-    (table.insert)(vecs, vec)
+    table.insert(vecs, vec)
   end
   entity:AddBodyArea(vecs)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitChainPathComponent = function(entity, config_data, entity_context)
-  -- function num : 0_20 , upvalues : _ENV
+function EntityAssembler.InitChainPathComponent(entity, config_data, entity_context)
   entity:AddChainPath({}, PieceType.None)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitMoveFSMComponent = function(entity, config_data, entity_context)
-  -- function num : 0_21
+function EntityAssembler.InitMoveFSMComponent(entity, config_data, entity_context)
   local fsm_id = config_data.FSMID
   entity:AddMoveFSM(fsm_id, entity:GetID())
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitAnimatorController = function(entity, config_data, entity_context)
-  -- function num : 0_22
+function EntityAssembler.InitAnimatorController(entity, config_data, entity_context)
   entity:AddAnimatorController()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPetComponent = function(entity, config_data, entity_context)
-  -- function num : 0_23
+function EntityAssembler.InitPetComponent(entity, config_data, entity_context)
   entity:AddPet()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitLinkLineIndexComponent = function(entity, config_data, entity_context)
-  -- function num : 0_24
+function EntityAssembler.InitLinkLineIndexComponent(entity, config_data, entity_context)
   entity:AddLinkLineIndex(0)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitSkillInfoComponent = function(entity, config_data, entity_context)
-  -- function num : 0_25
+function EntityAssembler.InitSkillInfoComponent(entity, config_data, entity_context)
   local normal_skill_config_id = config_data.NormalSkillConfigID
   local chain_skill_config_id = config_data.ChainSkillConfigID
   local super_skill_config_id = config_data.SuperSkillConfigID
@@ -283,830 +192,481 @@ EntityAssembler.InitSkillInfoComponent = function(entity, config_data, entity_co
   entity:AddSkillInfo(normal_skill_config_id, chain_skill_config_id, super_skill_config_id, extra_skill_config_id_list, variant_skill_config_info)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler._NewAILogic = function(entity, aiLogicID, entity_context)
-  -- function num : 0_26 , upvalues : _ENV
-  local aiLogic = nil
-  do
-    if aiLogicID then
-      local aiGenInfo = AIGenInfo:New(entity_context.world, entity, aiLogicID)
-      aiLogic = (CustomLogicFactory.Static_CreateLogic)(aiGenInfo)
-    end
-    return aiLogic
+function EntityAssembler._NewAILogic(entity, aiLogicID, entity_context)
+  local aiLogic
+  if aiLogicID then
+    local aiGenInfo = AIGenInfo:New(entity_context.world, entity, aiLogicID)
+    aiLogic = CustomLogicFactory.Static_CreateLogic(aiGenInfo)
   end
+  return aiLogic
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitNewAIComponent = function(entity, config_data, entity_context)
-  -- function num : 0_27 , upvalues : _ENV
+function EntityAssembler.InitNewAIComponent(entity, config_data, entity_context)
   entity:InitAI(nil, 0, 0, AITargetType.Normal)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitMonsterAttackRangeComponent = function(entity, config_data, entity_context)
-  -- function num : 0_28
+function EntityAssembler.InitMonsterAttackRangeComponent(entity, config_data, entity_context)
   entity:AddMonsterAttackRange(config_data.entityConfigID)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitHPComponent = function(entity, config_data, entity_context)
-  -- function num : 0_29 , upvalues : _ENV
+function EntityAssembler.InitHPComponent(entity, config_data, entity_context)
   local offset = Vector3(0, 0, 0)
-  offset.x = (config_data.HPOffset)[1]
-  offset.y = (config_data.HPOffset)[2]
-  offset.z = (config_data.HPOffset)[3]
+  offset.x = config_data.HPOffset[1]
+  offset.y = config_data.HPOffset[2]
+  offset.z = config_data.HPOffset[3]
   entity:AddHP(config_data.MaxHP, config_data.MaxHP, config_data.MaxHP, offset)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitEntityTypeComponent = function(entity, config_data, entity_context)
-  -- function num : 0_30 , upvalues : _ENV
+function EntityAssembler.InitEntityTypeComponent(entity, config_data, entity_context)
   entity:AddEntityType(EntityType[config_data.Type])
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitBlockFlagComponent = function(entity, config_data, entity_context)
-  -- function num : 0_31
+function EntityAssembler.InitBlockFlagComponent(entity, config_data, entity_context)
   entity:AddBlockFlag(0)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitSkillPetAttackDataComponent = function(entity, config_data, entity_context)
-  -- function num : 0_32
+function EntityAssembler.InitSkillPetAttackDataComponent(entity, config_data, entity_context)
   entity:AddSkillPetAttackData()
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitLinkageInfoComponent = function(entity, config_data, entity_context)
-  -- function num : 0_33
-  local linkTextOffsetList = {config_data.LinkTextOffset, config_data.LinkTextOffsetPopStarPro}
+function EntityAssembler.InitLinkageInfoComponent(entity, config_data, entity_context)
+  local linkTextOffsetList = {
+    config_data.LinkTextOffset,
+    config_data.LinkTextOffsetPopStarPro
+  }
   local attackRateOffset = config_data.AttackRate
   local maxCount = config_data.MaxCount
   entity:AddLinkageInfo(linkTextOffsetList, attackRateOffset, maxCount)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPreviewEnvComponent = function(entity, config_data, entity_context)
-  -- function num : 0_34
+function EntityAssembler.InitPreviewEnvComponent(entity, config_data, entity_context)
   entity:AddPreviewEnv()
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPreviewChainSkillRangeComponent = function(entity, config_data, entity_context)
-  -- function num : 0_35
+function EntityAssembler.InitPreviewChainSkillRangeComponent(entity, config_data, entity_context)
   entity:AddPreviewChainSkillRange()
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitChainPreviewMonsterBehaviorComponent = function(entity, config_data, entity_context)
-  -- function num : 0_36
+function EntityAssembler.InitChainPreviewMonsterBehaviorComponent(entity, config_data, entity_context)
   entity:AddChainPreviewMonsterBehavior()
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitLinkageNumComponent = function(entity, config_data, entity_context)
-  -- function num : 0_37
+function EntityAssembler.InitLinkageNumComponent(entity, config_data, entity_context)
   entity:AddLinkageNum(config_data.LinkageNumOffset)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitLinkLineRenderComponent = function(entity, config_data, entity_context)
-  -- function num : 0_38
+function EntityAssembler.InitLinkLineRenderComponent(entity, config_data, entity_context)
   entity:AddLinkLineRender()
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitGridEffectComponent = function(entity, config_data, entity_context)
-  -- function num : 0_39
+function EntityAssembler.InitGridEffectComponent(entity, config_data, entity_context)
   entity:AddGridEffect(config_data.GridEffectType)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitBoardColliderComponent = function(entity, config_data, entity_context)
-  -- function num : 0_40
+function EntityAssembler.InitBoardColliderComponent(entity, config_data, entity_context)
   entity:AddBoardCollider()
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitElementComponent = function(entity, config_data, entity_context)
-  -- function num : 0_41 , upvalues : _ENV
+function EntityAssembler.InitElementComponent(entity, config_data, entity_context)
   entity:AddElement(ElementType[config_data.PrimaryType], ElementType[config_data.SecondaryType])
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitSkillRoutineComponent = function(entity, config_data, entity_context)
-  -- function num : 0_42
+function EntityAssembler.InitSkillRoutineComponent(entity, config_data, entity_context)
   entity:AddSkillRoutine()
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitSkillRoutineHolderComponent = function(entity, config_data, entity_context)
-  -- function num : 0_43
+function EntityAssembler.InitSkillRoutineHolderComponent(entity, config_data, entity_context)
   entity:AddSkillRoutineHolder()
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitBuffComponent = function(entity, config_data, entity_context)
-  -- function num : 0_44
+function EntityAssembler.InitBuffComponent(entity, config_data, entity_context)
   entity:AddBuffComponent()
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitTeamComponent = function(entity, config_data, entity_context)
-  -- function num : 0_45
+function EntityAssembler.InitTeamComponent(entity, config_data, entity_context)
   entity:AddTeam()
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPetPstIDComponent = function(entity, config_data, entity_context)
-  -- function num : 0_46
+function EntityAssembler.InitPetPstIDComponent(entity, config_data, entity_context)
   entity:AddPetPstID()
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitTrapComponent = function(entity, config_data, entity_context)
-  -- function num : 0_47
+function EntityAssembler.InitTrapComponent(entity, config_data, entity_context)
   entity:AddTrap()
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitSkillTipsComponent = function(entity, config_data, entity_context)
-  -- function num : 0_48
+function EntityAssembler.InitSkillTipsComponent(entity, config_data, entity_context)
   entity:AddSkillTips("SkillNameID", "SkillDescID")
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitHUDComponent = function(entity, config_data, entity_context)
-  -- function num : 0_49
+function EntityAssembler.InitHUDComponent(entity, config_data, entity_context)
   entity:AddHUD()
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitEffectHolderComponent = function(entity, config_data, entity_context)
-  -- function num : 0_50
+function EntityAssembler.InitEffectHolderComponent(entity, config_data, entity_context)
   entity:AddEffectHolder()
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitEffectLineRendererComponent = function(entity, config_data, entity_context)
-  -- function num : 0_51
+function EntityAssembler.InitEffectLineRendererComponent(entity, config_data, entity_context)
   entity:AddEffectLineRenderer()
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPreviewBrightGridComponent = function(entity, config_data, entity_context)
-  -- function num : 0_52
+function EntityAssembler.InitPreviewBrightGridComponent(entity, config_data, entity_context)
   entity:AddPreviewBrightGrid()
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitMonsterIDComponent = function(entity, config_data, entity_context)
-  -- function num : 0_53
+function EntityAssembler.InitMonsterIDComponent(entity, config_data, entity_context)
   entity:AddMonsterID()
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitChessPetComponent = function(entity, config_data, entity_context)
-  -- function num : 0_54
+function EntityAssembler.InitChessPetComponent(entity, config_data, entity_context)
   entity:AddChessPet()
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitActiveSkillComponent = function(entity, config_data, entity_context)
-  -- function num : 0_55
+function EntityAssembler.InitActiveSkillComponent(entity, config_data, entity_context)
   entity:AddActiveSkill()
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitFeatureSkillComponent = function(entity, config_data, entity_context)
-  -- function num : 0_56
+function EntityAssembler.InitFeatureSkillComponent(entity, config_data, entity_context)
   entity:AddFeatureSkill()
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPickUpTargetComponent = function(entity, config_data, entity_context)
-  -- function num : 0_57
+function EntityAssembler.InitPickUpTargetComponent(entity, config_data, entity_context)
   entity:AddPickUpTarget()
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitDamageWarningAreaElementComponent = function(entity, config_data, entity_context)
-  -- function num : 0_58
+function EntityAssembler.InitDamageWarningAreaElementComponent(entity, config_data, entity_context)
   entity:AddDamageWarningAreaElement(0)
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitGuidePathComponent = function(entity, config_data, entity_context)
-  -- function num : 0_59
+function EntityAssembler.InitGuidePathComponent(entity, config_data, entity_context)
   entity:AddGuidePath({})
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitGuidePreviewLinkLineComponent = function(entity, config_data, entity_context)
-  -- function num : 0_60
+function EntityAssembler.InitGuidePreviewLinkLineComponent(entity, config_data, entity_context)
   entity:AddGuidePreviewLinkLine()
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitGuideWeakPathComponent = function(entity, config_data, entity_context)
-  -- function num : 0_61
+function EntityAssembler.InitGuideWeakPathComponent(entity, config_data, entity_context)
   entity:AddGuideWeakPath({})
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitGuideFingerComponent = function(entity, config_data, entity_context)
-  -- function num : 0_62
+function EntityAssembler.InitGuideFingerComponent(entity, config_data, entity_context)
   entity:AddGuideFinger()
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitGuideSpotComponent = function(entity, config_data, entity_context)
-  -- function num : 0_63
+function EntityAssembler.InitGuideSpotComponent(entity, config_data, entity_context)
   entity:AddGuideSpot()
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitGuideLinkLineComponent = function(entity, config_data, entity_context)
-  -- function num : 0_64
+function EntityAssembler.InitGuideLinkLineComponent(entity, config_data, entity_context)
   entity:AddGuideLinkLine()
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitGuideWeakLinkLineComponent = function(entity, config_data, entity_context)
-  -- function num : 0_65
+function EntityAssembler.InitGuideWeakLinkLineComponent(entity, config_data, entity_context)
   entity:AddGuideWeakLinkLine()
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitGuidePieceComponent = function(entity, config_data, entity_context)
-  -- function num : 0_66
+function EntityAssembler.InitGuidePieceComponent(entity, config_data, entity_context)
   entity:AddGuidePiece()
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitBoardOutlineComponent = function(entity, config_data, entity_context)
-  -- function num : 0_67
+function EntityAssembler.InitBoardOutlineComponent(entity, config_data, entity_context)
   entity:AddBoardOutline()
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitGhostComponent = function(entity, config_data, entity_context)
-  -- function num : 0_68
+function EntityAssembler.InitGhostComponent(entity, config_data, entity_context)
   entity:AddGhost()
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitGuideGhostComponent = function(entity, config_data, entity_context)
-  -- function num : 0_69
+function EntityAssembler.InitGuideGhostComponent(entity, config_data, entity_context)
   entity:AddGuideGhost()
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPickUpArrowComponent = function(entity, config_data, entity_context)
-  -- function num : 0_70
+function EntityAssembler.InitPickUpArrowComponent(entity, config_data, entity_context)
   entity:AddPickUpArrow()
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitLegacyAnimationComponent = function(entity, config_data, entity_context)
-  -- function num : 0_71
+function EntityAssembler.InitLegacyAnimationComponent(entity, config_data, entity_context)
   entity:AddLegacyAnimation()
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitSkillContextComponent = function(entity, config_data, entity_context)
-  -- function num : 0_72
+function EntityAssembler.InitSkillContextComponent(entity, config_data, entity_context)
   entity:AddSkillContext()
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitEditorInfoComponent = function(entity, config_data, entityentity_context)
-  -- function num : 0_73
+function EntityAssembler.InitEditorInfoComponent(entity, config_data, entityentity_context)
   entity:AddEditorInfo()
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitDeadMarkComponent = function(entity, config_data, entityentity_context)
-  -- function num : 0_74
+function EntityAssembler.InitDeadMarkComponent(entity, config_data, entityentity_context)
   entity:AddDeadMark()
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitRenderStateComponent = function(entity, config_data, entityentity_context)
-  -- function num : 0_75
+function EntityAssembler.InitRenderStateComponent(entity, config_data, entityentity_context)
   entity:AddRenderState()
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitAIRecorderComponent = function(entity, config_data, entityentity_context)
-  -- function num : 0_76
+function EntityAssembler.InitAIRecorderComponent(entity, config_data, entityentity_context)
   entity:AddAIRecorder()
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitAttackAreaComponent = function(entity, config_data, entity_context)
-  -- function num : 0_77
+function EntityAssembler.InitAttackAreaComponent(entity, config_data, entity_context)
   entity:AddAttackArea(config_data.Type)
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPreviewChainSkillComponent = function(entity, config_data, entity_context)
-  -- function num : 0_78
+function EntityAssembler.InitPreviewChainSkillComponent(entity, config_data, entity_context)
   entity:AddPreviewChainSkill()
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPreviewLinkLineComponent = function(entity, config_data, entity_context)
-  -- function num : 0_79
+function EntityAssembler.InitPreviewLinkLineComponent(entity, config_data, entity_context)
   entity:AddPreviewLinkLine()
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPreviewPuzzleComponent = function(entity, config_data, entity_context)
-  -- function num : 0_80
+function EntityAssembler.InitPreviewPuzzleComponent(entity, config_data, entity_context)
   entity:AddPreviewPuzzle()
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitWaveDataComponent = function(entity, config_data, entity_context)
-  -- function num : 0_81
+function EntityAssembler.InitWaveDataComponent(entity, config_data, entity_context)
   entity:AddWaveData()
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitMatchPetComponent = function(entity, config_data, entity_context)
-  -- function num : 0_82
+function EntityAssembler.InitMatchPetComponent(entity, config_data, entity_context)
   entity:AddMatchPet()
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitMonsterAreaOutlineComponent = function(entity, config_data, entity_context)
-  -- function num : 0_83
+function EntityAssembler.InitMonsterAreaOutlineComponent(entity, config_data, entity_context)
   entity:AddMonsterAreaOutLineComponent()
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitLogicPickUpComponent = function(entity, config_data, entity_context)
-  -- function num : 0_84
+function EntityAssembler.InitLogicPickUpComponent(entity, config_data, entity_context)
   entity:AddLogicPickUp()
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitLogicChainPathComponent = function(entity, config_data, entity_context)
-  -- function num : 0_85
+function EntityAssembler.InitLogicChainPathComponent(entity, config_data, entity_context)
   entity:AddLogicChainPath()
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPreviewChainSelectPetComponent = function(entity, config_data, entity_context)
-  -- function num : 0_86
+function EntityAssembler.InitPreviewChainSelectPetComponent(entity, config_data, entity_context)
   entity:AddPreviewChainSelectPet()
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitLogicRoundTeamComponent = function(entity, config_data, entity_context)
-  -- function num : 0_87
+function EntityAssembler.InitLogicRoundTeamComponent(entity, config_data, entity_context)
   entity:AddLogicRoundTeam()
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPreviewChainPathComponent = function(entity, config_data, entity_context)
-  -- function num : 0_88
+function EntityAssembler.InitPreviewChainPathComponent(entity, config_data, entity_context)
   entity:AddPreviewChainPath()
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitTrapRenderComponent = function(entity, config_data, entity_context)
-  -- function num : 0_89
+function EntityAssembler.InitTrapRenderComponent(entity, config_data, entity_context)
   entity:AddTrapRender()
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPetShadowRenderComponent = function(entity, config_data, entity_context)
-  -- function num : 0_90
+function EntityAssembler.InitPetShadowRenderComponent(entity, config_data, entity_context)
   entity:AddPetShadowRender()
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitRenderBoardComponent = function(entity, config_data, entity_context)
-  -- function num : 0_91
+function EntityAssembler.InitRenderBoardComponent(entity, config_data, entity_context)
   entity:AddRenderBoard()
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitBuffViewComponent = function(entity, config_data, entity_context)
-  -- function num : 0_92
+function EntityAssembler.InitBuffViewComponent(entity, config_data, entity_context)
   entity:AddBuffView()
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitRenderChainPathComponent = function(entity, config_data, entity_context)
-  -- function num : 0_93
+function EntityAssembler.InitRenderChainPathComponent(entity, config_data, entity_context)
   entity:AddRenderChainPath()
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitRenderRoundTeamComponent = function(entity, config_data, entity_context)
-  -- function num : 0_94
+function EntityAssembler.InitRenderRoundTeamComponent(entity, config_data, entity_context)
   entity:AddRenderRoundTeam()
 end
 
--- DECOMPILER ERROR at PC299: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitLogicResultComponent = function(entity, config_data, entity_context)
-  -- function num : 0_95
+function EntityAssembler.InitLogicResultComponent(entity, config_data, entity_context)
   entity:AddLogicResult()
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitTrapIDComponent = function(entity, config_data, entity_context)
-  -- function num : 0_96
+function EntityAssembler.InitTrapIDComponent(entity, config_data, entity_context)
   entity:AddTrapID()
 end
 
--- DECOMPILER ERROR at PC305: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitDropAssetComponent = function(entity, config_data, entity_context)
-  -- function num : 0_97
+function EntityAssembler.InitDropAssetComponent(entity, config_data, entity_context)
   entity:AddDropAsset()
 end
 
--- DECOMPILER ERROR at PC308: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitBulletTimeComponent = function(entity, config_data, entity_context)
-  -- function num : 0_98
+function EntityAssembler.InitBulletTimeComponent(entity, config_data, entity_context)
   entity:AddBulletTime()
 end
 
--- DECOMPILER ERROR at PC311: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitEffectAttachedComponent = function(entity, config_data, entity_context)
-  -- function num : 0_99
+function EntityAssembler.InitEffectAttachedComponent(entity, config_data, entity_context)
   entity:AddEffectAttached()
 end
 
--- DECOMPILER ERROR at PC314: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitAffixDataComponent = function(entity, config_data, entity_context)
-  -- function num : 0_100
+function EntityAssembler.InitAffixDataComponent(entity, config_data, entity_context)
   entity:AddAffixData()
 end
 
--- DECOMPILER ERROR at PC317: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitCurseTowerComponent = function(entity, config_data, entity_context)
-  -- function num : 0_101
+function EntityAssembler.InitCurseTowerComponent(entity, config_data, entity_context)
   entity:AddCurseTower()
 end
 
--- DECOMPILER ERROR at PC320: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitCutsceneMonsterComponent = function(entity, config_data, entity_context)
-  -- function num : 0_102
+function EntityAssembler.InitCutsceneMonsterComponent(entity, config_data, entity_context)
   entity:AddCutsceneMonster()
 end
 
--- DECOMPILER ERROR at PC323: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitCutscenePlayerComponent = function(entity, config_data, entity_context)
-  -- function num : 0_103
+function EntityAssembler.InitCutscenePlayerComponent(entity, config_data, entity_context)
   entity:AddCutscenePlayer()
 end
 
--- DECOMPILER ERROR at PC326: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitBackUpMaterialComponent = function(entity, config_data, entity_context)
-  -- function num : 0_104
+function EntityAssembler.InitBackUpMaterialComponent(entity, config_data, entity_context)
   entity:AddBackUpMaterial()
 end
 
--- DECOMPILER ERROR at PC329: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitAlignmentComponent = function(entity, config_data, entity_context)
-  -- function num : 0_105
+function EntityAssembler.InitAlignmentComponent(entity, config_data, entity_context)
   entity:AddAlignment(config_data.AlignmentType)
 end
 
--- DECOMPILER ERROR at PC332: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitGameTurnComponent = function(entity, config_data, entity_context)
-  -- function num : 0_106
+function EntityAssembler.InitGameTurnComponent(entity, config_data, entity_context)
   entity:AddGameTurn(config_data.gameTurnType)
 end
 
--- DECOMPILER ERROR at PC335: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPickUpChessResultComponent = function(entity, config_data, entity_context)
-  -- function num : 0_107
+function EntityAssembler.InitPickUpChessResultComponent(entity, config_data, entity_context)
   entity:AddPickUpChessResult()
 end
 
--- DECOMPILER ERROR at PC338: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitChessPetRenderComponent = function(entity, config_data, entity_context)
-  -- function num : 0_108
+function EntityAssembler.InitChessPetRenderComponent(entity, config_data, entity_context)
   entity:AddChessPetRender()
 end
 
--- DECOMPILER ERROR at PC341: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitLogicChessPathComponent = function(entity, config_data, entity_context)
-  -- function num : 0_109
+function EntityAssembler.InitLogicChessPathComponent(entity, config_data, entity_context)
   entity:AddLogicChessPath()
 end
 
--- DECOMPILER ERROR at PC344: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitRenderChessPathComponent = function(entity, config_data, entity_context)
-  -- function num : 0_110
+function EntityAssembler.InitRenderChessPathComponent(entity, config_data, entity_context)
   entity:AddRenderChessPath()
 end
 
--- DECOMPILER ERROR at PC347: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPreviewChessPetComponent = function(entity, config_data, entity_context)
-  -- function num : 0_111
+function EntityAssembler.InitPreviewChessPetComponent(entity, config_data, entity_context)
   entity:AddPreviewChessPet()
 end
 
--- DECOMPILER ERROR at PC350: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitLogicFeatureComponent = function(entity, config_data, entity_context)
-  -- function num : 0_112
+function EntityAssembler.InitLogicFeatureComponent(entity, config_data, entity_context)
   entity:AddLogicFeature()
 end
 
--- DECOMPILER ERROR at PC353: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitRenderFeatureComponent = function(entity, config_data, entity_context)
-  -- function num : 0_113
+function EntityAssembler.InitRenderFeatureComponent(entity, config_data, entity_context)
   entity:AddRenderFeature()
 end
 
--- DECOMPILER ERROR at PC356: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitSyncMoveWithTeamComponent = function(entity, config_data, entity_context)
-  -- function num : 0_114
+function EntityAssembler.InitSyncMoveWithTeamComponent(entity, config_data, entity_context)
   entity:AddSyncMoveWithTeam()
 end
 
--- DECOMPILER ERROR at PC359: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitRenderSyncMoveWithTeamComponent = function(entity, config_data, entity_context)
-  -- function num : 0_115
+function EntityAssembler.InitRenderSyncMoveWithTeamComponent(entity, config_data, entity_context)
   entity:AddRenderSyncMoveWithTeam()
 end
 
--- DECOMPILER ERROR at PC362: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitTrapAreaElementComponent = function(entity, config_data, entity_context)
-  -- function num : 0_116
+function EntityAssembler.InitTrapAreaElementComponent(entity, config_data, entity_context)
   entity:AddTrapAreaElement()
 end
 
--- DECOMPILER ERROR at PC365: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitBoardMultiComponent = function(entity, config_data, entity_context)
-  -- function num : 0_117
+function EntityAssembler.InitBoardMultiComponent(entity, config_data, entity_context)
   entity:AddBoardMulti(nil)
 end
 
--- DECOMPILER ERROR at PC368: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitRenderMultiBoardComponent = function(entity, config_data, entity_context)
-  -- function num : 0_118
+function EntityAssembler.InitRenderMultiBoardComponent(entity, config_data, entity_context)
   entity:AddRenderMultiBoard()
 end
 
--- DECOMPILER ERROR at PC371: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitOutsideRegionComponent = function(entity, config_data, entity_context)
-  -- function num : 0_119
+function EntityAssembler.InitOutsideRegionComponent(entity, config_data, entity_context)
   entity:AddOutsideRegion(nil)
 end
 
--- DECOMPILER ERROR at PC374: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPetRenderComponent = function(entity, config_data, entity_context)
-  -- function num : 0_120
+function EntityAssembler.InitPetRenderComponent(entity, config_data, entity_context)
   entity:AddPetRender(nil)
 end
 
--- DECOMPILER ERROR at PC377: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitMonsterRenderComponent = function(entity, config_data, entity_context)
-  -- function num : 0_121
+function EntityAssembler.InitMonsterRenderComponent(entity, config_data, entity_context)
   entity:AddMonsterRender(nil)
 end
 
--- DECOMPILER ERROR at PC380: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitAuraRangeComponent = function(entity, config_data, entity_context)
-  -- function num : 0_122
+function EntityAssembler.InitAuraRangeComponent(entity, config_data, entity_context)
   entity:AddAuraRange()
 end
 
--- DECOMPILER ERROR at PC383: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitShareSkillResultComponent = function(entity, config_data, entity_context)
-  -- function num : 0_123
+function EntityAssembler.InitShareSkillResultComponent(entity, config_data, entity_context)
   entity:AddShareSkillResult()
 end
 
--- DECOMPILER ERROR at PC386: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitLogicPartnerComponent = function(entity, config_data, entity_context)
-  -- function num : 0_124
+function EntityAssembler.InitLogicPartnerComponent(entity, config_data, entity_context)
   entity:AddLogicPartner()
 end
 
--- DECOMPILER ERROR at PC389: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitRenderPartnerComponent = function(entity, config_data, entity_context)
-  -- function num : 0_125
+function EntityAssembler.InitRenderPartnerComponent(entity, config_data, entity_context)
   entity:AddRenderPartner()
 end
 
--- DECOMPILER ERROR at PC392: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitTalentComponent = function(entity, config_data, entity_context)
-  -- function num : 0_126
+function EntityAssembler.InitTalentComponent(entity, config_data, entity_context)
   entity:AddTalent()
 end
 
--- DECOMPILER ERROR at PC395: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitOffBoardMonsterComponent = function(entity, config_data, entity_context)
-  -- function num : 0_127
+function EntityAssembler.InitOffBoardMonsterComponent(entity, config_data, entity_context)
   entity:AddOffBoardMonster(nil)
 end
 
--- DECOMPILER ERROR at PC398: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitMirageComponent = function(entity, config_data, entity_context)
-  -- function num : 0_128
+function EntityAssembler.InitMirageComponent(entity, config_data, entity_context)
   entity:AddMirage()
 end
 
--- DECOMPILER ERROR at PC401: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitMoveScopeRecordComponent = function(entity, config_data, entity_context)
-  -- function num : 0_129
+function EntityAssembler.InitMoveScopeRecordComponent(entity, config_data, entity_context)
   entity:AddMoveScopeRecord()
 end
 
--- DECOMPILER ERROR at PC404: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitEquipRefineComponent = function(entity, config_data, entity_context)
-  -- function num : 0_130
+function EntityAssembler.InitEquipRefineComponent(entity, config_data, entity_context)
   entity:AddEquipRefine()
 end
 
--- DECOMPILER ERROR at PC407: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitRenderPerformanceByAgentComponent = function(entity, config_data, entity_context)
-  -- function num : 0_131
+function EntityAssembler.InitRenderPerformanceByAgentComponent(entity, config_data, entity_context)
   entity:AddRenderPerformanceByAgent()
 end
 
--- DECOMPILER ERROR at PC410: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitBoardSpliceComponent = function(entity, config_data, entity_context)
-  -- function num : 0_132
+function EntityAssembler.InitBoardSpliceComponent(entity, config_data, entity_context)
   entity:AddBoardSplice(nil)
 end
 
--- DECOMPILER ERROR at PC413: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitRenderBoardSpliceComponent = function(entity, config_data, entity_context)
-  -- function num : 0_133
+function EntityAssembler.InitRenderBoardSpliceComponent(entity, config_data, entity_context)
   entity:AddRenderBoardSplice(nil)
 end
 
--- DECOMPILER ERROR at PC416: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPopStarPickUpResultComponent = function(entity, config_data, entity_context)
-  -- function num : 0_134
+function EntityAssembler.InitPopStarPickUpResultComponent(entity, config_data, entity_context)
   entity:AddPopStarPickUpResult()
 end
 
--- DECOMPILER ERROR at PC419: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitPopStarLogicComponent = function(entity, config_data, entity_context)
-  -- function num : 0_135
+function EntityAssembler.InitPopStarLogicComponent(entity, config_data, entity_context)
   entity:AddPopStarLogic()
 end
 
--- DECOMPILER ERROR at PC422: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitBoardPushComponent = function(entity, config_data, entity_context)
-  -- function num : 0_136
+function EntityAssembler.InitBoardPushComponent(entity, config_data, entity_context)
   entity:AddBoardPush(nil)
 end
 
--- DECOMPILER ERROR at PC425: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitRenderBoardPushComponent = function(entity, config_data, entity_context)
-  -- function num : 0_137
+function EntityAssembler.InitRenderBoardPushComponent(entity, config_data, entity_context)
   entity:AddRenderBoardPush(nil)
 end
 
--- DECOMPILER ERROR at PC428: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitUnscaledCountDownRenderComponent = function(entity, config_data, entity_context)
-  -- function num : 0_138
+function EntityAssembler.InitUnscaledCountDownRenderComponent(entity, config_data, entity_context)
   entity:AddUnscaledCountDownRender()
 end
 
--- DECOMPILER ERROR at PC431: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitUnscaledCountDownLogicComponent = function(entity, config_data, entity_context)
-  -- function num : 0_139
+function EntityAssembler.InitUnscaledCountDownLogicComponent(entity, config_data, entity_context)
   entity:AddUnscaledCountDownLogic()
 end
 
--- DECOMPILER ERROR at PC434: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitLogicAutoBeadComponent = function(entity, config_data, entity_context)
-  -- function num : 0_140
+function EntityAssembler.InitLogicAutoBeadComponent(entity, config_data, entity_context)
   entity:AddLogicAutoBead()
 end
 
--- DECOMPILER ERROR at PC437: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAssembler.InitSkillAutoBeadAttackDataComponent = function(entity, config_data, entity_context)
-  -- function num : 0_141
+function EntityAssembler.InitSkillAutoBeadAttackDataComponent(entity, config_data, entity_context)
   entity:AddSkillAutoBeadAttackData()
 end
-
-

@@ -1,52 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/dantang/ui_campaign_center_dantang_share.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICampaignCenterDanTangShare", UIController)
 UICampaignCenterDanTangShare = UICampaignCenterDanTangShare
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICampaignCenterDanTangShare.Constructor = function(self)
-  -- function num : 0_0
+function UICampaignCenterDanTangShare:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTangShare.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UICampaignCenterDanTangShare:OnShow(uiParams)
   local firstShare = uiParams[1]
   if firstShare then
-    self._tipsTex = (StringTable.Get)("str_activity_dantang_share_award_2")
+    self._tipsTex = StringTable.Get("str_activity_dantang_share_award_2")
   else
     self._tipsTex = nil
   end
   self:Share()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTangShare.OnHide = function(self)
-  -- function num : 0_2
+function UICampaignCenterDanTangShare:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTangShare.Share = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UICampaignCenterDanTangShare:Share(go)
   self:Lock("UICampaignCenterDanTangShare")
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, self
     YIELD(TT)
     YIELD(TT)
     self:ShowDialog("UIShare", self:GetName(), ShareAnchorType.BottomRight, function()
-      -- function num : 0_3_0_0 , upvalues : self
       self:CloseDialog()
-    end
-, nil, nil, nil, ShareSceneType.CampaignKV, nil, self._tipsTex)
+    end, nil, nil, nil, ShareSceneType.CampaignKV, nil, self._tipsTex)
     self:UnLock("UICampaignCenterDanTangShare")
-  end
-, self)
+  end, self)
 end
-
-

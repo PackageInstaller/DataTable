@@ -1,102 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_notice/ui_notice_detail_tex.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UINoticeDetailTex", UICustomWidget)
 UINoticeDetailTex = UINoticeDetailTex
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UINoticeDetailTex.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UINoticeDetailTex:OnShow(uiParams)
   self._title = self:GetUIComponent("UIRichText", "title")
   self._msg = self:GetUIComponent("UIRichText", "msg")
   self._content = self:GetUIComponent("RectTransform", "Content")
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeDetailTex.SetData = function(self, noticeInfo)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._content).anchoredPosition = Vector2(((self._content).anchoredPosition).x, 0)
+function UINoticeDetailTex:SetData(noticeInfo)
+  self._content.anchoredPosition = Vector2(self._content.anchoredPosition.x, 0)
   local content = noticeInfo.Text_NoticeContent
-  local str1 = (string.sub)(content, 1, 1)
-  local str2 = (string.sub)(content, -1)
+  local str1 = string.sub(content, 1, 1)
+  local str2 = string.sub(content, -1)
   if str1 == "{" and str2 == "}" then
-    local tab = (cjson.decode)(noticeInfo.Text_NoticeContent)
+    local tab = cjson.decode(noticeInfo.Text_NoticeContent)
     if tab then
-      (self._msg):SetText(tab.content)
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._msg).onHrefClick = function(hrefName)
-    -- function num : 0_1_0 , upvalues : _ENV
-    (SDKProxy:GetInstance()):OpenUrl(hrefName)
-  end
-
-      ;
-      (self._title):SetText(tab.title)
-      -- DECOMPILER ERROR at PC43: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._title).onHrefClick = function(hrefName)
-    -- function num : 0_1_1 , upvalues : _ENV
-    (SDKProxy:GetInstance()):OpenUrl(hrefName)
-  end
-
+      self._msg:SetText(tab.content)
+      
+      function self._msg.onHrefClick(hrefName)
+        SDKProxy:GetInstance():OpenUrl(hrefName)
+      end
+      
+      self._title:SetText(tab.title)
+      
+      function self._title.onHrefClick(hrefName)
+        SDKProxy:GetInstance():OpenUrl(hrefName)
+      end
     else
-      ;
-      (Log.fatal)("###notice json decode fail ! content --> ", noticeInfo.Text_NoticeContent)
+      Log.fatal("###notice json decode fail ! content --> ", noticeInfo.Text_NoticeContent)
     end
   else
-    do
-      ;
-      (self._msg):SetText(content)
-      -- DECOMPILER ERROR at PC57: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._msg).onHrefClick = function(hrefName)
-    -- function num : 0_1_2 , upvalues : _ENV
-    (SDKProxy:GetInstance()):OpenUrl(hrefName)
-  end
-
-      ;
-      (self._title):SetText(noticeInfo.Text_NoticeTitle)
-      -- DECOMPILER ERROR at PC64: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._title).onHrefClick = function(hrefName)
-    -- function num : 0_1_3 , upvalues : _ENV
-    (SDKProxy:GetInstance()):OpenUrl(hrefName)
-  end
-
+    self._msg:SetText(content)
+    
+    function self._msg.onHrefClick(hrefName)
+      SDKProxy:GetInstance():OpenUrl(hrefName)
+    end
+    
+    self._title:SetText(noticeInfo.Text_NoticeTitle)
+    
+    function self._title.onHrefClick(hrefName)
+      SDKProxy:GetInstance():OpenUrl(hrefName)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeDetailTex.AnimFade = function(self)
-  -- function num : 0_2
-  (self._anim):Play("uieff_Notice_DetailTex_Fade")
+function UINoticeDetailTex:AnimFade()
+  self._anim:Play("uieff_Notice_DetailTex_Fade")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeDetailTex.AnimShow = function(self)
-  -- function num : 0_3
-  (self._anim):Play("uieff_Notice_DetailTex_Show")
+function UINoticeDetailTex:AnimShow()
+  self._anim:Play("uieff_Notice_DetailTex_Show")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeDetailTex.OnHide = function(self)
-  -- function num : 0_4
+function UINoticeDetailTex:OnHide()
   self._msg = nil
   self._title = nil
 end
-
-

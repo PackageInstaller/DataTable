@@ -1,81 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_pet_giles.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_PetGiles", PickUpPolicy_Base)
 PickUpPolicy_PetGiles = PickUpPolicy_PetGiles
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_PetGiles.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0
+function PickUpPolicy_PetGiles:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
   local activeSkillID = calcParam.activeSkillID
   local policyParam = calcParam.policyParam
-  local casterPos = (petEntity:GridLocation()).Position
+  local casterPos = petEntity:GridLocation().Position
   local pickPosList, atkPosList, targetIds, extraParam = self:_CalPickPosPolicy_PetGiles(petEntity, activeSkillID, casterPos)
   return pickPosList, atkPosList, targetIds, extraParam
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetGiles._CalPickPosPolicy_PetGiles = function(self, petEntity, activeSkillID, casterPos)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+function PickUpPolicy_PetGiles:_CalPickPosPolicy_PetGiles(petEntity, activeSkillID, casterPos)
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   local minHp = 1
-  local targetEntity = nil
-  for i,e in ipairs(group:GetEntities()) do
+  local targetEntity
+  for i, e in ipairs(group:GetEntities()) do
     if not e:HasDeadMark() then
-      local hp = (e:Attributes()):GetCurrentHP()
-      if not targetEntity or hp < minHp then
+      local hp = e:Attributes():GetCurrentHP()
+      if not targetEntity or minHp > hp then
         minHp = hp
         targetEntity = e
       end
     end
   end
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    targetEntity = (((petEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    targetEntity = petEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
   end
   if not targetEntity then
     return {}, {}, {}
   end
   local retScopeResult = {}
   local retTargetIds = {}
-  local pickPos = nil
-  local targetGridPos = (targetEntity:GridLocation()):GetGridPos()
-  local bodyArea = (targetEntity:BodyArea()):GetArea()
-  local dirs = {Vector2(0, 1), Vector2(1, 0), Vector2(0, -1), Vector2(-1, 0)}
-  for _,value in ipairs(bodyArea) do
+  local pickPos
+  local targetGridPos = targetEntity:GridLocation():GetGridPos()
+  local bodyArea = targetEntity:BodyArea():GetArea()
+  local dirs = {
+    Vector2(0, 1),
+    Vector2(1, 0),
+    Vector2(0, -1),
+    Vector2(-1, 0)
+  }
+  for _, value in ipairs(bodyArea) do
     local workPos = targetGridPos + value
-    for _,dir in ipairs(dirs) do
+    for _, dir in ipairs(dirs) do
       local targetPos = workPos + dir
       if targetPos == casterPos then
         pickPos = targetPos
         break
       end
     end
+    if pickPos then
+      break
+    end
   end
-  do
-    if not pickPos then
-      local utilData = (self._world):GetService("UtilData")
-      local extraBoardPosRange = utilData:GetExtraBoardPosList()
-      if not pickPos then
-        local utilDataSvc = (self._world):GetService("UtilData")
-        for _,dir in ipairs(dirs) do
-          local targetPos = targetGridPos + dir
-          if utilDataSvc:IsValidPiecePos(targetPos) and not self:_IsPosInExtraBoard(targetPos, extraBoardPosRange) then
-            pickPos = targetPos
-            break
-          end
-        end
-      end
-      do
-        retScopeResult = self:_CalcSkillScopeResultAndTargets_PickUpPolicy(petEntity, activeSkillID, pickPos)
-        return {pickPos}, retScopeResult:GetAttackRange(), retTargetIds
+  local utilData = self._world:GetService("UtilData")
+  local extraBoardPosRange = utilData:GetExtraBoardPosList()
+  if not pickPos then
+    local utilDataSvc = self._world:GetService("UtilData")
+    for _, dir in ipairs(dirs) do
+      local targetPos = targetGridPos + dir
+      if utilDataSvc:IsValidPiecePos(targetPos) and not self:_IsPosInExtraBoard(targetPos, extraBoardPosRange) then
+        pickPos = targetPos
+        break
       end
     end
   end
+  retScopeResult, retTargetIds = self:_CalcSkillScopeResultAndTargets_PickUpPolicy(petEntity, activeSkillID, pickPos)
+  return {pickPos}, retScopeResult:GetAttackRange(), retTargetIds
 end
-
-

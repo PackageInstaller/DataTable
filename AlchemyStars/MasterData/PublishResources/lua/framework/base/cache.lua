@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/cache.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Cache", Object)
 Cache = Cache
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Cache.Constructor = function(self, num)
-  -- function num : 0_0
+function Cache:Constructor(num)
   self.queue = {}
   self.objs = {}
   self.objkeys = {}
@@ -17,89 +10,48 @@ Cache.Constructor = function(self, num)
   self.total = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Cache.Push = function(self, key, obj)
-  -- function num : 0_1 , upvalues : _ENV
-  local oldobj = (self.objs)[key]
+function Cache:Push(key, obj)
+  local oldobj = self.objs[key]
   if oldobj then
     assert(nil, "push same key obj : " .. key)
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.objkeys)[oldobj] = nil
-    ;
-    (table.removev)(self.queue, oldobj)
-    return 
+    self.objkeys[oldobj] = nil
+    table.removev(self.queue, oldobj)
+    return
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.objs)[key] = obj
-  ;
-  (table.insert)(self.queue, obj)
+  self.objs[key] = obj
+  table.insert(self.queue, obj)
   local len = #self.queue
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.objkeys)[obj] = key
-  if self.limitn < len then
-    local robj = (table.remove)(self.queue, 1)
-    local rkey = (self.objkeys)[robj]
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.objkeys)[robj] = nil
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.objs)[rkey] = nil
+  self.objkeys[obj] = key
+  if len > self.limitn then
+    local robj = table.remove(self.queue, 1)
+    local rkey = self.objkeys[robj]
+    self.objkeys[robj] = nil
+    self.objs[rkey] = nil
     robj:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Cache.Pop = function(self, key)
-  -- function num : 0_2 , upvalues : _ENV
+function Cache:Pop(key)
   self.total = self.total + 1
-  local obj = (self.objs)[key]
+  local obj = self.objs[key]
   if not obj then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.objs)[key] = nil
-  ;
-  (table.removev)(self.queue, obj)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.objkeys)[obj] = nil
+  self.objs[key] = nil
+  table.removev(self.queue, obj)
+  self.objkeys[obj] = nil
   self.hit = self.hit + 1
   return obj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Cache.GetObjs = function(self)
-  -- function num : 0_3
+function Cache:GetObjs()
   return self.objs
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Cache.Info = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  if self.hit ~= 0 or not 0 then
-    (Log.sys)("hit:", self.hit, "total:", self.total, "percent:", self.hit * 100 / self.total)
-    ;
-    (Log.sys)("hide uis-----------------------------")
-    for uiname,ui in next do
-      (Log.sys)(uiname .. " ", ui)
-    end
+function Cache:Info()
+  Log.sys("hit:", self.hit, "total:", self.total, "percent:", self.hit == 0 and 0 or self.hit * 100 / self.total)
+  Log.sys("hide uis-----------------------------")
+  for uiname, ui in next, self:GetObjs() do
+    Log.sys(uiname .. " ", ui)
   end
 end
-
-

@@ -1,69 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_global_layer_tip.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicGlobalLayerTipShow", BuffLogicBase)
 BuffLogicGlobalLayerTipShow = BuffLogicGlobalLayerTipShow
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicGlobalLayerTipShow.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicGlobalLayerTipShow:Constructor(buffInstance, logicParam)
   self._layerBuffID = logicParam.layerBuffID
   self._layerTipKey = logicParam.layerTipKey
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicGlobalLayerTipShow.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfgBuff = (Cfg.cfg_buff)[self._layerBuffID]
+function BuffLogicGlobalLayerTipShow:DoLogic(notify)
+  local cfgBuff = Cfg.cfg_buff[self._layerBuffID]
   if not cfgBuff then
-    (Log.exception)("GlobalLayerTipShow: 指定的layerBuffID不存在：", tostring(self._layerBuffID))
-    return 
+    Log.exception("GlobalLayerTipShow: 指定的layerBuffID不存在：", tostring(self._layerBuffID))
+    return
   end
   local layerType = cfgBuff.BuffEffectType
   local buffsvc = self:GetBuffLogicService()
   local layer = buffsvc:GetBuffLayer(self:GetEntity(), layerType)
   local maxLayer = cfgBuff.LayerCount
-  ;
-  (self:GetBuffComponent()):SetBuffValue("GLOBAL_LAYER_TIP_BUFF_ID", self._layerBuffID)
-  local result = {count = layer, max = maxLayer, tipKey = self._layerTipKey}
+  self:GetBuffComponent():SetBuffValue("GLOBAL_LAYER_TIP_BUFF_ID", self._layerBuffID)
+  local result = {
+    count = layer,
+    max = maxLayer,
+    tipKey = self._layerTipKey
+  }
   return result
 end
 
 _class("BuffLogicGlobalLayerTipHide", BuffLogicBase)
 BuffLogicGlobalLayerTipHide = BuffLogicGlobalLayerTipHide
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicGlobalLayerTipHide.DoLogic = function(self, notify)
-  -- function num : 0_2
+function BuffLogicGlobalLayerTipHide:DoLogic(notify)
   return true
 end
 
 _class("BuffLogicGlobalLayerTipUpdate", BuffLogicBase)
 BuffLogicGlobalLayerTipUpdate = BuffLogicGlobalLayerTipUpdate
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicGlobalLayerTipUpdate.DoLogic = function(self, notify)
-  -- function num : 0_3 , upvalues : _ENV
+function BuffLogicGlobalLayerTipUpdate:DoLogic(notify)
   local cBuff = self:GetBuffComponent()
   local buffID = cBuff:GetBuffValue("GLOBAL_LAYER_TIP_BUFF_ID")
   if not buffID then
-    return 
+    return
   end
-  local cfgBuff = (Cfg.cfg_buff)[buffID]
+  local cfgBuff = Cfg.cfg_buff[buffID]
   if not cfgBuff then
-    return 
+    return
   end
   local layerType = cfgBuff.BuffEffectType
   local buffsvc = self:GetBuffLogicService()
   local layer = buffsvc:GetBuffLayer(self:GetEntity(), layerType)
   local total = buffsvc:GetBuffTotalLayer(self:GetEntity(), notify:GetLayerName())
   local maxLayer = cfgBuff.LayerCount
-  local result = {count = layer, max = maxLayer, total = total, layerName = notify:GetLayerName()}
+  local result = {
+    count = layer,
+    max = maxLayer,
+    total = total,
+    layerName = notify:GetLayerName()
+  }
   return result
 end
-
-

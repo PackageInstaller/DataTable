@@ -1,83 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_accumulate_soul_add_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAccumulateSoulDefault", BuffLogicBase)
 BuffLogicAccumulateSoulDefault = BuffLogicAccumulateSoulDefault
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAccumulateSoulDefault.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAccumulateSoulDefault:Constructor(buffInstance, logicParam)
   self._baseSoulCount = logicParam.baseSoulCount or 0
   self._soulIncreaseRate = logicParam.soulIncreaseRate or 0.05
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffInstance)._effectList = logicParam.effectList
-  self._buffComp = (buffInstance:Entity()):BuffComponent()
+  self._buffInstance._effectList = logicParam.effectList
+  self._buffComp = buffInstance:Entity():BuffComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAccumulateSoulDefault.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._buffComp):SetBuffValue("SoulCount", self._baseSoulCount)
+function BuffLogicAccumulateSoulDefault:DoLogic()
+  self._buffComp:SetBuffValue("SoulCount", self._baseSoulCount)
   local curIncrease = self._baseSoulCount * self._soulIncreaseRate
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):ChangeSkillIncrease(self._entity, self:GetBuffSeq(), paramType, curIncrease)
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:ChangeSkillIncrease(self._entity, self:GetBuffSeq(), paramType, curIncrease)
   end
 end
 
 require("buff_logic_base")
 _class("BuffLogicAccumulateSoulAddDamage", BuffLogicBase)
 BuffLogicAccumulateSoulAddDamage = BuffLogicAccumulateSoulAddDamage
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAccumulateSoulAddDamage.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicAccumulateSoulAddDamage:Constructor(buffInstance, logicParam)
   self._maxSoulCount = logicParam.maxSoulCount or 5
-  if not logicParam.soulIncreaseRates then
-    self._soulIncreaseRates = {0.05, 0.05}
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._buffInstance)._effectList = logicParam.effectList
-    self._buffComp = (buffInstance:Entity()):BuffComponent()
-  end
+  self._soulIncreaseRates = logicParam.soulIncreaseRates or {0.05, 0.05}
+  self._buffInstance._effectList = logicParam.effectList
+  self._buffComp = buffInstance:Entity():BuffComponent()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAccumulateSoulAddDamage.DoLogic = function(self, notify)
-  -- function num : 0_3 , upvalues : _ENV
+function BuffLogicAccumulateSoulAddDamage:DoLogic(notify)
   if notify:GetNotifyType() ~= NotifyType.CollectSouls then
-    return 
+    return
   end
   local collectNum = notify:GetSoulNum()
-  local petEntity = (self._buffInstance):Entity()
-  local curMarkLayer = (self._buffComp):GetBuffValue("SoulCount") or 0
+  local petEntity = self._buffInstance:Entity()
+  local curMarkLayer = self._buffComp:GetBuffValue("SoulCount") or 0
   if curMarkLayer <= self._maxSoulCount then
     curMarkLayer = curMarkLayer + collectNum
-    if self._maxSoulCount < curMarkLayer then
+    if curMarkLayer > self._maxSoulCount then
       curMarkLayer = self._maxSoulCount
     end
-    ;
-    (self._buffComp):SetBuffValue("SoulCount", curMarkLayer)
-    for _,paramType in ipairs((self._buffInstance)._effectList) do
-      (self._buffLogicService):RemoveSkillIncrease(self._entity, self:GetBuffSeq(), paramType)
+    self._buffComp:SetBuffValue("SoulCount", curMarkLayer)
+    for _, paramType in ipairs(self._buffInstance._effectList) do
+      self._buffLogicService:RemoveSkillIncrease(self._entity, self:GetBuffSeq(), paramType)
     end
-    for i,paramType in ipairs((self._buffInstance)._effectList) do
-      local curIncrease = curMarkLayer * (self._soulIncreaseRates)[i]
-      ;
-      (self._buffLogicService):ChangeSkillIncrease(self._entity, self:GetBuffSeq(), paramType, curIncrease)
+    for i, paramType in ipairs(self._buffInstance._effectList) do
+      local curIncrease = curMarkLayer * self._soulIncreaseRates[i]
+      self._buffLogicService:ChangeSkillIncrease(self._entity, self:GetBuffSeq(), paramType, curIncrease)
     end
   end
-  do
-    local result = BuffResultAccumulateSoulAddDamage:New(curMarkLayer)
-    return result
-  end
+  local result = BuffResultAccumulateSoulAddDamage:New(curMarkLayer)
+  return result
 end
-
-

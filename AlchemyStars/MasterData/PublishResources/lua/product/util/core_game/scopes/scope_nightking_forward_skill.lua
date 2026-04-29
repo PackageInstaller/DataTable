@@ -1,51 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_nightking_forward_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_NightKing_ForwardSkill", SkillScopeCalculator_Base)
 SkillScopeCalculator_NightKing_ForwardSkill = SkillScopeCalculator_NightKing_ForwardSkill
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_NightKing_ForwardSkill.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local world = (self._gridFilter)._world
+function SkillScopeCalculator_NightKing_ForwardSkill:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local world = self._gridFilter._world
   local utilScopeCalcSvc = world:GetService("UtilScopeCalc")
   local leftPos, rightPos = utilScopeCalcSvc:GetNightKingForwardSkillPos(casterEntity, casterPos)
-  local teamEntity = (world:Player()):GetCurrentTeamEntity()
+  local teamEntity = world:Player():GetCurrentTeamEntity()
   local playerPos = teamEntity:GetGridPosition()
-  local dirType = (utilScopeCalcSvc:GetEntityDirType(casterEntity))
-  local jumpDirType = nil
+  local dirType = utilScopeCalcSvc:GetEntityDirType(casterEntity)
+  local jumpDirType
   if dirType == DirectionType.Left then
-    if casterPos.y < playerPos.y then
+    if playerPos.y > casterPos.y then
       jumpDirType = DirectionType.Right
     else
       jumpDirType = DirectionType.Left
     end
-  else
-    if dirType == DirectionType.Right then
-      if playerPos.y < casterPos.y then
-        jumpDirType = DirectionType.Right
-      else
-        jumpDirType = DirectionType.Left
-      end
+  elseif dirType == DirectionType.Right then
+    if playerPos.y < casterPos.y then
+      jumpDirType = DirectionType.Right
     else
-      if dirType == DirectionType.Up then
-        if casterPos.x < playerPos.x then
-          jumpDirType = DirectionType.Right
-        else
-          jumpDirType = DirectionType.Left
-        end
-      else
-        if dirType == DirectionType.Down then
-          if playerPos.x < casterPos.x then
-            jumpDirType = DirectionType.Right
-          else
-            jumpDirType = DirectionType.Left
-          end
-        end
-      end
+      jumpDirType = DirectionType.Left
+    end
+  elseif dirType == DirectionType.Up then
+    if playerPos.x > casterPos.x then
+      jumpDirType = DirectionType.Right
+    else
+      jumpDirType = DirectionType.Left
+    end
+  elseif dirType == DirectionType.Down then
+    if playerPos.x < casterPos.x then
+      jumpDirType = DirectionType.Right
+    else
+      jumpDirType = DirectionType.Left
     end
   end
   local rangList = self:GetPos(jumpDirType, leftPos, rightPos)
@@ -53,22 +40,17 @@ SkillScopeCalculator_NightKing_ForwardSkill.CalcRange = function(self, scopeType
   return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_NightKing_ForwardSkill.GetPos = function(self, dirType, leftPos, rightPos)
-  -- function num : 0_1 , upvalues : _ENV
-  if dirType == DirectionType.Left and (self._gridFilter):IsValidPiecePos(leftPos) then
+function SkillScopeCalculator_NightKing_ForwardSkill:GetPos(dirType, leftPos, rightPos)
+  if dirType == DirectionType.Left and self._gridFilter:IsValidPiecePos(leftPos) then
     return {leftPos}
   end
-  if dirType == DirectionType.Left and not (self._gridFilter):IsValidPiecePos(leftPos) then
+  if dirType == DirectionType.Left and not self._gridFilter:IsValidPiecePos(leftPos) then
     return {rightPos}
   end
-  if dirType == DirectionType.Right and (self._gridFilter):IsValidPiecePos(rightPos) then
+  if dirType == DirectionType.Right and self._gridFilter:IsValidPiecePos(rightPos) then
     return {rightPos}
   end
-  if dirType == DirectionType.Right and not (self._gridFilter):IsValidPiecePos(rightPos) then
+  if dirType == DirectionType.Right and not self._gridFilter:IsValidPiecePos(rightPos) then
     return {leftPos}
   end
 end
-
-

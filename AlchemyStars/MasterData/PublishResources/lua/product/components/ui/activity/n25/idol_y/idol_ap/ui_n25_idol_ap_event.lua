@@ -1,78 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/idol_ap/ui_n25_idol_ap_event.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolApEvent", UICustomWidget)
 UIN25IdolApEvent = UIN25IdolApEvent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolApEvent.Constructor = function(self)
-  -- function num : 0_0
+function UIN25IdolApEvent:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApEvent.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25IdolApEvent:OnShow(uiParams)
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApEvent.SetData = function(self, component)
-  -- function num : 0_2
+function UIN25IdolApEvent:SetData(component)
   self.component = component
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApEvent.OnHide = function(self)
-  -- function num : 0_3
+function UIN25IdolApEvent:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApEvent.GetComponents = function(self)
-  -- function num : 0_4
+function UIN25IdolApEvent:GetComponents()
   self.nextBtnGo = self:GetGameObject("NextBtn")
   self.eventPool = self:GetUIComponent("UISelectObjectPath", "eventPool")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApEvent.OnValue = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self.datas = (self.component):UI_GetWeekApEvent()
-  local info = (self.component):GetComponentInfo()
+function UIN25IdolApEvent:OnValue()
+  self.datas = self.component:UI_GetWeekApEvent()
+  local info = self.component:GetComponentInfo()
   local breakInfo = info.break_info
   self.finishList = breakInfo.agree_events
   self.currentTurn = breakInfo.round_index
   self._pageUnitCount = 3
-  self._pageCount = (math.ceil)(#self.datas / self._pageUnitCount - 0.1)
+  self._pageCount = math.ceil(#self.datas / self._pageUnitCount - 0.1)
   self._curIdx = 1
-  do
-    if #self.datas > 3 then
-      local checkData = (self.datas)[3]
-      if checkData.round < self.currentTurn then
-        self._curIdx = 2
-      else
-        self._curIdx = 1
-      end
+  if #self.datas > 3 then
+    local checkData = self.datas[3]
+    if checkData.round < self.currentTurn then
+      self._curIdx = 2
+    else
+      self._curIdx = 1
     end
-    self:RefreshShowData()
-    self:ApEvent()
-    ;
-    (self.nextBtnGo):SetActive(self._pageCount > 1)
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
   end
+  self:RefreshShowData()
+  self:ApEvent()
+  self.nextBtnGo:SetActive(self._pageCount > 1)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApEvent.NextBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIN25IdolApEvent:NextBtnOnClick(go)
   if self._pageCount > 1 then
     if self._curIdx == 1 then
       self._curIdx = self._pageCount
@@ -84,41 +55,33 @@ UIN25IdolApEvent.NextBtnOnClick = function(self, go)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApEvent.RefreshShowData = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN25IdolApEvent:RefreshShowData()
   self._showDatas = {}
-  for i,v in ipairs(self.datas) do
-    if i <= self._curIdx * self._pageUnitCount and (self._curIdx - 1) * self._pageUnitCount < i then
-      (table.insert)(self._showDatas, v)
+  for i, v in ipairs(self.datas) do
+    if i <= self._curIdx * self._pageUnitCount and i > (self._curIdx - 1) * self._pageUnitCount then
+      table.insert(self._showDatas, v)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApEvent.ApEvent = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (self.eventPool):SpawnObjects("UIN25IdolApEventItem", #self._showDatas)
-  self.eventItems = (self.eventPool):GetAllSpawnList()
+function UIN25IdolApEvent:ApEvent()
+  self.eventPool:SpawnObjects("UIN25IdolApEventItem", #self._showDatas)
+  self.eventItems = self.eventPool:GetAllSpawnList()
   for i = 1, #self._showDatas do
-    local data = (self._showDatas)[i]
-    local item = (self.eventItems)[i]
+    local data = self._showDatas[i]
+    local item = self.eventItems[i]
     local eventid = data.eventid
     local finish = data.finish
     local round = data.round
-    local weekIdx, weekDay = (self.component):UI_Calc_WeekDay(round)
+    local weekIdx, weekDay = self.component:UI_Calc_WeekDay(round)
     local roomid = data.roomid
-    local status = nil
+    local status
     if finish then
       status = UIIdolApEventStatus.Finish
+    elseif round >= self.currentTurn then
+      status = UIIdolApEventStatus.Ready
     else
-      if self.currentTurn <= round then
-        status = UIIdolApEventStatus.Ready
-      else
-        status = UIIdolApEventStatus.Pass
-      end
+      status = UIIdolApEventStatus.Pass
     end
     local light = self:GetLight(eventid)
     item:SetData(eventid, status, weekDay, roomid, light)
@@ -126,42 +89,31 @@ UIN25IdolApEvent.ApEvent = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApEvent.GetLight = function(self, eventid)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfgs_end = (Cfg.cfg_component_idol_ending)({})
+function UIN25IdolApEvent:GetLight(eventid)
+  local cfgs_end = Cfg.cfg_component_idol_ending({})
   if not cfgs_end then
-    (Log.error)("###[UIN25IdolApEvent] cfgs_end is nil !")
+    Log.error("###[UIN25IdolApEvent] cfgs_end is nil !")
   end
-  local cfg = ((Cfg.cfg_component_idol_event)({EventId = eventid}))[1]
+  local cfg = Cfg.cfg_component_idol_event({EventId = eventid})[1]
   if cfg then
     local petid = cfg.PetId
-    for key,value in pairs(cfgs_end) do
+    for key, value in pairs(cfgs_end) do
       local end_petid = value.PetId
       if end_petid and petid == end_petid then
         return true
       end
     end
   else
-    do
-      ;
-      (Log.error)("###[UIN25IdolApEvent] cfg is nil ! id --> ", eventid)
-      return false
-    end
+    Log.error("###[UIN25IdolApEvent] cfg is nil ! id --> ", eventid)
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApEvent.CloseAnim = function(self, TT)
-  -- function num : 0_10 , upvalues : _ENV
-  self.eventItems = (self.eventPool):GetAllSpawnList()
+function UIN25IdolApEvent:CloseAnim(TT)
+  self.eventItems = self.eventPool:GetAllSpawnList()
   for i = 1, #self._showDatas do
-    local item = (self.eventItems)[i]
+    local item = self.eventItems[i]
     item:PlayOut()
   end
   YIELD(TT, 167)
 end
-
-

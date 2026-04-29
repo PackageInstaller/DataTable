@@ -1,8 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/activity/yx/str_activity_evesinsa.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_activity_evesinsa_remainingtime_d = "{1}日", str_activity_evesinsa_remainingtime_h = "{1}時間", str_activity_evesinsa_remainingtime_m = "{1}分", str_activity_evesinsa_remainingtime_z = "1分未満", str_activity_evesinsa_main_title_desc_1 = "作戦残り時間", str_activity_evesinsa_main_title_desc_2 = "交換残り時間", str_activity_evesinsa_main_loginbtn = "R・Wイベント\n参加報酬", str_activity_evesinsa_main_taskbtn = "砂漠懸賞", str_activity_evesinsa_main_levelabtn = "風の吹くままに", str_activity_evesinsa_main_levelbbtn = "帰る場所", str_activity_evesinsa_main_levelabtn_en = "Where the Wind Rises", str_activity_evesinsa_main_levelbbtn_en = "Home Awaits", str_activity_evesinsa_main_actionsecond = "進行中", str_activity_evesinsa_main_lockbtn_remainingtime_title = "後に解放", str_activity_evesinsa_main_lockbtn_level = "ST5をクリアすると解放", str_activity_evesinsa_shop_end_time = "交換終了時刻まであと", str_activity_evesinsa_shop_group_unlock_time = "解放まであと", str_activity_evesinsa_shop_remain = "残り {1}", str_activity_evesinsa_shop_npc_name_1 = "バーバラ", str_activity_evesinsa_shop_npc_word_1 = "バーバラが素敵な砂漠に花を添えてあげる！自由にお買い物してね！|お金だけじゃ買えないよ～？バーバラへの愛もないとね！|困った時はバーバラを呼んでね！応援してあげるから！|おかしいなぁ。バーバラの握手券が売り物に入ってないよ！", str_activity_evesinsa_shop_goods_group_lock = "このグループの商品は解放されていません", str_activity_evesinsa_shop_name = "路上商店", str_activity_evesinsa_shop_sold_out = "交換済", str_activity_evesinsa_task_can_get = "受取可", str_activity_evesinsa_task_received = "獲得済", str_activity_evesinsa_total_login_title_1 = "イベント期間中累計8日のログインで光珀と限定アイコンを入手", str_activity_evesinsa_total_login_can_get = "受取可", str_activity_evesinsa_total_login_got = "受取済", str_activity_evesinsa_total_login_lock = "未解放", str_activity_evesinsa_view_memory = "イブの目覚め", str_activity_evesinsa_level_open = "-挑戦可能-", str_activity_evesinsa_level_clear = "-クリア済み-", str_activity_evesinsa_intro_title = "イブ&サメヤマのイベント紹介", str_activity_evesinsa_point_des1 = "1．【風の吹くままに】の行動ポイントを消費するステージに挑戦する場合、【行動ポイント】を消費します。【行動ポイント】は4時間ごとに1回復します。上限は20です。", str_activity_evesinsa_point_des2 = "2．戦闘に敗北、または戦闘を途中で終了した場合は【行動ポイント】を消費しません。イベント期間が終了すると【行動ポイント】はクリアされます。", str_activity_evesinsa_point_des3 = "3．【風の吹くままに】終了後、未使用の【行動ポイント】は1:100の比率で【レンチナットバッジ】に変換されます。【風の吹くままに】終了から1時間以上経過の後、再びゲームにログインするとメールで獲得できます。", str_activity_evesinsa_next_point = "次の行動ポイント", str_activity_evesinsa_slevel_lock = "【帰る場所】の全ステージをクリアすると解放", str_activity_evesinsa_intro_head_1 = "【行動ポイント】について：", str_activity_evesinsa_intro_head_2 = "【レンチナットバッジ】の獲得方法について：", str_activity_evesinsa_intro_head_3 = "【嵐が止む刻】のアイテム使用について：", str_activity_evesinsa_intro_body_1 = "1．【風の吹くままに】の行動ポイントを消費するステージに挑戦する場合、【行動ポイント】を消費します。【行動ポイント】は4時間ごとに1回復します。上限は20です。\n2．戦闘に敗北、または戦闘を途中で終了した場合は【行動ポイント】を消費しません。イベント期間が終了すると【行動ポイント】はクリアされます。\n3．【風の吹くままに】終了後、未使用の【行動ポイント】は1:100の比率で【レンチナットバッジ】に変換されます。【風の吹くままに】終了から1時間以上経過し、再びゲームにログインするとメールで獲得できます。", str_activity_evesinsa_intro_body_2 = "1．イベント期間中、【風の吹くままに】で行動ポイントを消費するイベントステージをクリアすると、一定数の【レンチナットバッジ】を獲得できます。\n2．イベント期間中、プリズムを消費するメインステージまたは資源ステージをクリアすると、一定数の【レンチナットバッジ】を獲得できます。\n3．イベント終了後、上記ステージでは【レンチナットバッジ】を獲得できなくなります。", str_activity_evesinsa_intro_body_3 = "1．イベント専用の【路上商店】で【レンチナットバッジ】を消費すると商品を購入できます。\n2．【路上商店】終了後、未使用の【レンチナットバッジ】は1：15の比率で白夜コインに変換されます。"}
+local config = {
+  str_activity_evesinsa_remainingtime_d = "{1}日",
+  str_activity_evesinsa_remainingtime_h = "{1}時間",
+  str_activity_evesinsa_remainingtime_m = "{1}分",
+  str_activity_evesinsa_remainingtime_z = "1分未満",
+  str_activity_evesinsa_main_title_desc_1 = "作戦残り時間",
+  str_activity_evesinsa_main_title_desc_2 = "交換残り時間",
+  str_activity_evesinsa_main_loginbtn = "R・Wイベント\n参加報酬",
+  str_activity_evesinsa_main_taskbtn = "砂漠懸賞",
+  str_activity_evesinsa_main_levelabtn = "風の吹くままに",
+  str_activity_evesinsa_main_levelbbtn = "帰る場所",
+  str_activity_evesinsa_main_levelabtn_en = "Where the Wind Rises",
+  str_activity_evesinsa_main_levelbbtn_en = "Home Awaits",
+  str_activity_evesinsa_main_actionsecond = "進行中",
+  str_activity_evesinsa_main_lockbtn_remainingtime_title = "後に解放",
+  str_activity_evesinsa_main_lockbtn_level = "ST5をクリアすると解放",
+  str_activity_evesinsa_shop_end_time = "交換終了時刻まであと",
+  str_activity_evesinsa_shop_group_unlock_time = "解放まであと",
+  str_activity_evesinsa_shop_remain = "残り {1}",
+  str_activity_evesinsa_shop_npc_name_1 = "バーバラ",
+  str_activity_evesinsa_shop_npc_word_1 = "バーバラが素敵な砂漠に花を添えてあげる！自由にお買い物してね！|お金だけじゃ買えないよ～？バーバラへの愛もないとね！|困った時はバーバラを呼んでね！応援してあげるから！|おかしいなぁ。バーバラの握手券が売り物に入ってないよ！",
+  str_activity_evesinsa_shop_goods_group_lock = "このグループの商品は解放されていません",
+  str_activity_evesinsa_shop_name = "路上商店",
+  str_activity_evesinsa_shop_sold_out = "交換済",
+  str_activity_evesinsa_task_can_get = "受取可",
+  str_activity_evesinsa_task_received = "獲得済",
+  str_activity_evesinsa_total_login_title_1 = "イベント期間中累計8日のログインで光珀と限定アイコンを入手",
+  str_activity_evesinsa_total_login_can_get = "受取可",
+  str_activity_evesinsa_total_login_got = "受取済",
+  str_activity_evesinsa_total_login_lock = "未解放",
+  str_activity_evesinsa_view_memory = "イブの目覚め",
+  str_activity_evesinsa_level_open = "-挑戦可能-",
+  str_activity_evesinsa_level_clear = "-クリア済み-",
+  str_activity_evesinsa_intro_title = "イブ&サメヤマのイベント紹介",
+  str_activity_evesinsa_point_des1 = "1．【風の吹くままに】の行動ポイントを消費するステージに挑戦する場合、【行動ポイント】を消費します。【行動ポイント】は4時間ごとに1回復します。上限は20です。",
+  str_activity_evesinsa_point_des2 = "2．戦闘に敗北、または戦闘を途中で終了した場合は【行動ポイント】を消費しません。イベント期間が終了すると【行動ポイント】はクリアされます。",
+  str_activity_evesinsa_point_des3 = "3．【風の吹くままに】終了後、未使用の【行動ポイント】は1:100の比率で【レンチナットバッジ】に変換されます。【風の吹くままに】終了から1時間以上経過の後、再びゲームにログインするとメールで獲得できます。",
+  str_activity_evesinsa_next_point = "次の行動ポイント",
+  str_activity_evesinsa_slevel_lock = "【帰る場所】の全ステージをクリアすると解放",
+  str_activity_evesinsa_intro_head_1 = "【行動ポイント】について：",
+  str_activity_evesinsa_intro_head_2 = "【レンチナットバッジ】の獲得方法について：",
+  str_activity_evesinsa_intro_head_3 = "【嵐が止む刻】のアイテム使用について：",
+  str_activity_evesinsa_intro_body_1 = "1．【風の吹くままに】の行動ポイントを消費するステージに挑戦する場合、【行動ポイント】を消費します。【行動ポイント】は4時間ごとに1回復します。上限は20です。\n2．戦闘に敗北、または戦闘を途中で終了した場合は【行動ポイント】を消費しません。イベント期間が終了すると【行動ポイント】はクリアされます。\n3．【風の吹くままに】終了後、未使用の【行動ポイント】は1:100の比率で【レンチナットバッジ】に変換されます。【風の吹くままに】終了から1時間以上経過し、再びゲームにログインするとメールで獲得できます。",
+  str_activity_evesinsa_intro_body_2 = "1．イベント期間中、【風の吹くままに】で行動ポイントを消費するイベントステージをクリアすると、一定数の【レンチナットバッジ】を獲得できます。\n2．イベント期間中、プリズムを消費するメインステージまたは資源ステージをクリアすると、一定数の【レンチナットバッジ】を獲得できます。\n3．イベント終了後、上記ステージでは【レンチナットバッジ】を獲得できなくなります。",
+  str_activity_evesinsa_intro_body_3 = "1．イベント専用の【路上商店】で【レンチナットバッジ】を消費すると商品を購入できます。\n2．【路上商店】終了後、未使用の【レンチナットバッジ】は1：15の比率で白夜コインに変換されます。"
+}
 return config
-

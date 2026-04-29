@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_driller_move_path_with_extend_range.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_DrillerMovePathWithExtendRange", SkillScopeCalculator_Base)
 SkillScopeCalculator_DrillerMovePathWithExtendRange = SkillScopeCalculator_DrillerMovePathWithExtendRange
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_DrillerMovePathWithExtendRange.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local world = ((self._hub)._gridFilter)._world
+function SkillScopeCalculator_DrillerMovePathWithExtendRange:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local world = self._hub._gridFilter._world
   self._world = world
   self.casterEntity = casterEntity
   self.m_entityOwn = casterEntity
@@ -19,62 +12,54 @@ SkillScopeCalculator_DrillerMovePathWithExtendRange.CalcRange = function(self, s
   local posWalkList = {}
   posWalkList = self:CalMoveResultList(casterEntity, moveStep)
   local totalPosList = {}
-  ;
-  (table.appendArray)(totalPosList, posWalkList)
-  local calc = SkillScopeCalculator:New((self._hub)._gridFilter)
-  if not scopeParam.extendScope then
-    local extendScopeParam = {scopeType = 1, 
-scopeParam = {1, 1, 0}
-}
-  end
+  table.appendArray(totalPosList, posWalkList)
+  local calc = SkillScopeCalculator:New(self._hub._gridFilter)
+  local extendScopeParam = scopeParam.extendScope or {
+    scopeType = 1,
+    scopeParam = {
+      1,
+      1,
+      0
+    }
+  }
   if extendScopeParam then
     local scopeType = extendScopeParam.scopeType
     local scpoeParam = extendScopeParam.scopeParam
-    for index,walkPos in ipairs(posWalkList) do
+    for index, walkPos in ipairs(posWalkList) do
       local transCenterPos = walkPos
       local result = calc:ComputeScopeRange(scopeType, scpoeParam, transCenterPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
       local extendRange = result:GetAttackRange()
-      for extendIndex,extendPos in ipairs(extendRange) do
-        if not (table.icontains)(totalPosList, extendPos) then
-          (table.insert)(totalPosList, extendPos)
+      for extendIndex, extendPos in ipairs(extendRange) do
+        if not table.icontains(totalPosList, extendPos) then
+          table.insert(totalPosList, extendPos)
         end
       end
     end
   end
-  do
-    local result = SkillScopeResult:New(SkillScopeType.DrillerMovePathWithExtendRange, centerPos, posWalkList, totalPosList)
-    return result
-  end
+  local result = SkillScopeResult:New(SkillScopeType.DrillerMovePathWithExtendRange, centerPos, posWalkList, totalPosList)
+  return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_DrillerMovePathWithExtendRange.CalMoveResultList = function(self, casterEntity, moveStep)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeCalculator_DrillerMovePathWithExtendRange:CalMoveResultList(casterEntity, moveStep)
   local casterPos = casterEntity:GetGridPosition()
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
-  local sBoard = (self._world):GetService("BoardLogic")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
+  local sBoard = self._world:GetService("BoardLogic")
   self._tarPos = self:FindNewTargetPos(casterPos)
   self._lastPos = casterPos
   local posWalkList = {}
-  ;
-  (table.insert)(posWalkList, casterPos)
+  table.insert(posWalkList, casterPos)
   for i = 1, moveStep do
     local posWalk = self:_CalcMovePos(casterEntity, moveStep - i + 1, self._lastPos)
-    local aiRecorderCmpt = ((self._world):GetBoardEntity()):AIRecorder()
+    local aiRecorderCmpt = self._world:GetBoardEntity():AIRecorder()
     if posWalk ~= nil then
       self._lastPos = posWalk
-      ;
-      (table.insert)(posWalkList, posWalk)
+      table.insert(posWalkList, posWalk)
     end
   end
   return posWalkList
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_DrillerMovePathWithExtendRange._CalcMovePos = function(self, entityWork, nWalkTotal, curPos)
-  -- function num : 0_2
+function SkillScopeCalculator_DrillerMovePathWithExtendRange:_CalcMovePos(entityWork, nWalkTotal, curPos)
   local posSelf = curPos
   local posTarget = self._tarPos
   if posSelf == posTarget then
@@ -88,76 +73,60 @@ SkillScopeCalculator_DrillerMovePathWithExtendRange._CalcMovePos = function(self
   return posWalk
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_DrillerMovePathWithExtendRange.FindNewTargetPos = function(self, curPos)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillScopeCalculator_DrillerMovePathWithExtendRange:FindNewTargetPos(curPos)
   local tarTrapIDList = self._trapIDList
   local posSelf = curPos
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local blockFlag = boardServiceLogic:GetEntityMoveBlockFlag(self.m_entityOwn)
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local skillCalculater = SkillScopeCalculator:New(utilScopeSvc)
   local scopeCalc = SkillScopeCalculator_DrillerMoveTargetPos:New(skillCalculater)
-  local scopeResult = scopeCalc:CalcRange(SkillScopeType.DrillerMoveTargetPos, {trapIDList = tarTrapIDList}, posSelf, ((self.m_entityOwn):BodyArea()):GetArea(), (self.m_entityOwn):GetGridDirection(), SkillTargetType.Board, posSelf, self.m_entityOwn)
+  local scopeResult = scopeCalc:CalcRange(SkillScopeType.DrillerMoveTargetPos, {trapIDList = tarTrapIDList}, posSelf, self.m_entityOwn:BodyArea():GetArea(), self.m_entityOwn:GetGridDirection(), SkillTargetType.Board, posSelf, self.m_entityOwn)
   local tarPos = posSelf
   local range = scopeResult:GetAttackRange()
-  if range and #range > 0 then
+  if range and 0 < #range then
     tarPos = range[1]
   end
   return tarPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_DrillerMovePathWithExtendRange.ComputeWalkRange = function(self, centerPos, nWalkStep, bFilter)
-  -- function num : 0_4 , upvalues : _ENV
-  if not bFilter then
-    bFilter = false
-  end
-  local cbFilter = nil
+function SkillScopeCalculator_DrillerMovePathWithExtendRange:ComputeWalkRange(centerPos, nWalkStep, bFilter)
+  bFilter = bFilter or false
+  local cbFilter
   if bFilter then
     cbFilter = Callback:New(1, self.IsPosAccessible, self)
   end
-  return (ComputeScopeRange.ComputeRange_WalkMathPos)(centerPos, 1, nWalkStep, cbFilter)
+  return ComputeScopeRange.ComputeRange_WalkMathPos(centerPos, 1, nWalkStep, cbFilter)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_DrillerMovePathWithExtendRange.FindNewWalkPos = function(self, walkRange, posCenter, posDef)
-  -- function num : 0_5
+function SkillScopeCalculator_DrillerMovePathWithExtendRange:FindNewWalkPos(walkRange, posCenter, posDef)
   return self:FindPosByNearCenter(walkRange, posCenter, posDef, 1)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_DrillerMovePathWithExtendRange.FindPosByNearCenter = function(self, listPlanPos, posCenter, posDef, nCheckStep)
-  -- function num : 0_6 , upvalues : _ENV
-  if listPlanPos == nil or (table.count)(listPlanPos) <= 0 then
+function SkillScopeCalculator_DrillerMovePathWithExtendRange:FindPosByNearCenter(listPlanPos, posCenter, posDef, nCheckStep)
+  if nil == listPlanPos or table.count(listPlanPos) <= 0 then
     return posDef
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local listWalk = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByNear)
   listWalk:AllowDuplicate()
   local lastMovePos = self._lastPos
   for i = 1, #listPlanPos do
     local posData = listPlanPos[i]
     local posWalk = posData:GetPos()
-    if posWalk ~= posDef and (nCheckStep == nil or nCheckStep == posData:GetStep()) then
+    if posWalk ~= posDef and (nil == nCheckStep or nCheckStep == posData:GetStep()) then
       local isBlockMoveWithTrapWall = utilDataSvc:IsBlockMoveWithTrapWall(posDef, posWalk, self.casterEntity)
       if posWalk ~= lastMovePos and isBlockMoveWithTrapWall == false then
-        (AINewNode.InsertSortedArray)(listWalk, posCenter, posWalk, i)
+        AINewNode.InsertSortedArray(listWalk, posCenter, posWalk, i)
+      else
       end
     end
   end
   return self:FindPosValid(listWalk, posDef)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_DrillerMovePathWithExtendRange.FindPosValid = function(self, planPosList, defPos)
-  -- function num : 0_7
-  if planPosList == nil or planPosList:Size() <= 0 then
+function SkillScopeCalculator_DrillerMovePathWithExtendRange:FindPosValid(planPosList, defPos)
+  if nil == planPosList or planPosList:Size() <= 0 then
     return defPos
   end
   local posSelf = defPos
@@ -166,35 +135,28 @@ SkillScopeCalculator_DrillerMovePathWithExtendRange.FindPosValid = function(self
   for i = 1, nPosCount do
     local posWork = planPosList:GetAt(i)
     local bAccessible = self:IsPosAccessible(posWork.data)
-    if bAccessible == true then
+    if true == bAccessible then
       posReturn = posWork.data
       break
     end
   end
-  do
-    return posReturn
-  end
+  return posReturn
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_DrillerMovePathWithExtendRange.IsPosAccessible = function(self, pos)
-  -- function num : 0_8 , upvalues : _ENV
-  if (self.casterEntity):HasBodyArea() == false then
+function SkillScopeCalculator_DrillerMovePathWithExtendRange:IsPosAccessible(pos)
+  if false == self.casterEntity:HasBodyArea() then
     return true
   end
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
-  local monsterIDCmpt = (self.casterEntity):MonsterID()
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local monsterIDCmpt = self.casterEntity:MonsterID()
   local nMonsterBlockData = monsterIDCmpt:GetMonsterBlockData()
-  local coverList = (self.casterEntity):GetCoverAreaList(pos)
-  local coverListSelf = (self.casterEntity):GetCoverAreaList((self.casterEntity):GetGridPosition())
+  local coverList = self.casterEntity:GetCoverAreaList(pos)
+  local coverListSelf = self.casterEntity:GetCoverAreaList(self.casterEntity:GetGridPosition())
   for i = 1, #coverList do
     local posWork = coverList[i]
-    if not (table.icontains)(coverListSelf, posWork) and boardServiceLogic:IsPosBlock(posWork, nMonsterBlockData) then
+    if not table.icontains(coverListSelf, posWork) and boardServiceLogic:IsPosBlock(posWork, nMonsterBlockData) then
       return false
     end
   end
   return true
 end
-
-

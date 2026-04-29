@@ -1,55 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_scroll/ui_main_lobby_scroll_idx.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyScrollIdx", UICustomWidget)
 UIMainLobbyScrollIdx = UIMainLobbyScrollIdx
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyScrollIdx.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMainLobbyScrollIdx:OnShow()
   self._atlas = self:GetAsset("UIMainLobbyFinal.spriteatlas", LoadType.SpriteAtlas)
   self._img = self:GetUIComponent("Image", "img")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyScrollIdx.OnHide = function(self)
-  -- function num : 0_1
+function UIMainLobbyScrollIdx:OnHide()
   self._idx = nil
   self._atlas = nil
   self._img = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyScrollIdx.SetData = function(self, idx, currIdx)
-  -- function num : 0_2
+function UIMainLobbyScrollIdx:SetData(idx, currIdx)
   self._idx = idx
   self:Flush(currIdx)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyScrollIdx.Flush = function(self, currIdx)
-  -- function num : 0_3
+function UIMainLobbyScrollIdx:Flush(currIdx)
   if not self._atlas then
-    return 
+    return
   end
   if not self._img then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
   if self._idx == currIdx then
-    (self._img).sprite = (self._atlas):GetSprite("main_zjm_new_di28")
+    self._img.sprite = self._atlas:GetSprite("main_zjm_new_di28")
   else
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._img).sprite = (self._atlas):GetSprite("main_zjm_new_di27")
+    self._img.sprite = self._atlas:GetSprite("main_zjm_new_di27")
   end
 end
-
-

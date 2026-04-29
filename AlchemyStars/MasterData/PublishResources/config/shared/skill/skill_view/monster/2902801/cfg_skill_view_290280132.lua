@@ -1,21 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2902801/cfg_skill_view_290280132.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterVisible=1; PlayTurnToTeleportNewPos; PlayCasterAnimation,animName = skill03; PlayAudio,audioID = 6302,audioType=1; PlayCasterBindEffect,effectID=290280101; PlayCasterMaterialAnim,animName=eff_2902801_skill03_xiaoshi; "}
-}
-, 
-{2, 2, 0, 2, 1, 0, 
-{" Wait,waitTime=200; PlayEffectTeleportNewPos,effectID=290280102,useCasterDir=1; PlayTeleportAsMoving,time=200; PlayCasterMaterialAnim,animName=eff_2902801_skill03_chuxian; Wait,waitTime=1500; PlayCasterVisible=0; "}
-}
-, 
-{3, 3, 0, 1, 2, 0, 
-{" Wait,waitTime=200; DataSelectDamage,damageIndex=1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=290280103,turnToTarget=1; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterVisible=1; PlayTurnToTeleportNewPos; PlayCasterAnimation,animName = skill03; PlayAudio,audioID = 6302,audioType=1; PlayCasterBindEffect,effectID=290280101; PlayCasterMaterialAnim,animName=eff_2902801_skill03_xiaoshi; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    2,
+    1,
+    0,
+    {
+      " Wait,waitTime=200; PlayEffectTeleportNewPos,effectID=290280102,useCasterDir=1; PlayTeleportAsMoving,time=200; PlayCasterMaterialAnim,animName=eff_2902801_skill03_chuxian; Wait,waitTime=1500; PlayCasterVisible=0; "
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    1,
+    2,
+    0,
+    {
+      " Wait,waitTime=200; DataSelectDamage,damageIndex=1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=290280103,turnToTarget=1; "
+    }
+  }
 }
 return config, "ID", key
-

@@ -1,82 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_pet_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetPetArea", UICustomWidget)
 UIWidgetPetArea = UIWidgetPetArea
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetPetArea.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetPetArea:OnShow(uiParams)
   self._playBTAnim = false
   self:InitWidget()
   self:InitImg()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.InitImg = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local matchEnterData = (self:GetModule(MatchModule)):GetMatchEnterData()
+function UIWidgetPetArea:InitImg()
+  local matchEnterData = self:GetModule(MatchModule):GetMatchEnterData()
   self._matchType = matchEnterData:GetMatchType()
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
   if self._matchType == MatchType.MT_MiniMaze then
-    (self.teamSelected1Img).sprite = (self._uiBattlePartnerSprite):GetSprite("N25_mchb_di09")
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.teamSelected2Img).sprite = (self._uiBattlePartnerSprite):GetSprite("N25_mchb_di09")
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.teamNotSelected1Img).sprite = (self._uiBattlePartnerSprite):GetSprite("N25_mchb_di10")
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.teamNotSelected2Img).sprite = (self._uiBattlePartnerSprite):GetSprite("N25_mchb_di10")
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.switchBG).sprite = (self._uiBattlePartnerSprite):GetSprite("N25_mchb_di11")
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.switchIcon).sprite = (self._uiBattlePartnerSprite):GetSprite("N25_mchb_di08")
-  else
-    -- DECOMPILER ERROR at PC65: Confused about usage of register: R2 in 'UnsetPending'
-
-    if self._matchType == MatchType.MT_EightPets or self._matchType == MatchType.MT_SeasonMaze then
-      (self.teamSelected1Img).sprite = (self._uiBattlePartnerSprite):GetSprite("epg_gqxq_di38")
-      -- DECOMPILER ERROR at PC71: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.teamSelected2Img).sprite = (self._uiBattlePartnerSprite):GetSprite("epg_gqxq_di38")
-      -- DECOMPILER ERROR at PC77: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.teamNotSelected1Img).sprite = (self._uiBattlePartnerSprite):GetSprite("epg_gqxq_di37")
-      -- DECOMPILER ERROR at PC83: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.teamNotSelected2Img).sprite = (self._uiBattlePartnerSprite):GetSprite("epg_gqxq_di37")
-      -- DECOMPILER ERROR at PC89: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.switchBG).sprite = (self._uiBattlePartnerSprite):GetSprite("epg_gqxq_di36")
-      -- DECOMPILER ERROR at PC95: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.switchIcon).sprite = (self._uiBattlePartnerSprite):GetSprite("epg_gqxq_di39")
-    end
+    self.teamSelected1Img.sprite = self._uiBattlePartnerSprite:GetSprite("N25_mchb_di09")
+    self.teamSelected2Img.sprite = self._uiBattlePartnerSprite:GetSprite("N25_mchb_di09")
+    self.teamNotSelected1Img.sprite = self._uiBattlePartnerSprite:GetSprite("N25_mchb_di10")
+    self.teamNotSelected2Img.sprite = self._uiBattlePartnerSprite:GetSprite("N25_mchb_di10")
+    self.switchBG.sprite = self._uiBattlePartnerSprite:GetSprite("N25_mchb_di11")
+    self.switchIcon.sprite = self._uiBattlePartnerSprite:GetSprite("N25_mchb_di08")
+  elseif self._matchType == MatchType.MT_EightPets or self._matchType == MatchType.MT_SeasonMaze then
+    self.teamSelected1Img.sprite = self._uiBattlePartnerSprite:GetSprite("epg_gqxq_di38")
+    self.teamSelected2Img.sprite = self._uiBattlePartnerSprite:GetSprite("epg_gqxq_di38")
+    self.teamNotSelected1Img.sprite = self._uiBattlePartnerSprite:GetSprite("epg_gqxq_di37")
+    self.teamNotSelected2Img.sprite = self._uiBattlePartnerSprite:GetSprite("epg_gqxq_di37")
+    self.switchBG.sprite = self._uiBattlePartnerSprite:GetSprite("epg_gqxq_di36")
+    self.switchIcon.sprite = self._uiBattlePartnerSprite:GetSprite("epg_gqxq_di39")
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetPetArea:InitWidget()
   self.petInfoPool = self:GetUIComponent("UISelectObjectPath", "PetInfoPool")
   self.petpool = self:GetUIComponent("UISelectObjectPath", "petpool")
   self.petPoolLayout = self:GetUIComponent("GridLayoutGroup", "petpool")
@@ -109,10 +60,7 @@ UIWidgetPetArea.InitWidget = function(self)
   self._petCountPerColumn = 4
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea._InitSwitchTeamArea = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWidgetPetArea:_InitSwitchTeamArea()
   self._matRes = {}
   self.teamNumSel1TextTmp = self:GetUIComponent("UILocalizedTMP", "TeamNumSel1")
   self.teamTextSel1TextTmp = self:GetUIComponent("UILocalizedTMP", "TeamTextSel1")
@@ -131,239 +79,135 @@ UIWidgetPetArea._InitSwitchTeamArea = function(self)
   self.teamNumSel2TextTmpMat = self:SetFontMat(self.teamNumSel2TextTmp, "battle_switch_team_selected_text_mt.mat")
   self.teamTextSel2TextTmpMat = self:SetFontMat(self.teamTextSel2TextTmp, "battle_switch_team_selected_text_mt.mat")
   if self._matchType == MatchType.MT_MiniMaze then
-    (self.teamNumSel1TextTmpMat):SetColor("_UnderlayColor", (Color.New)(0.91372549019608, 0.12549019607843, 0.12549019607843, 0.5))
-    ;
-    (self.teamTextSel1TextTmpMat):SetColor("_UnderlayColor", (Color.New)(0.91372549019608, 0.12549019607843, 0.12549019607843, 0.5))
-    ;
-    (self.teamNumSel2TextTmpMat):SetColor("_UnderlayColor", (Color.New)(0.91372549019608, 0.12549019607843, 0.12549019607843, 0.5))
-    ;
-    (self.teamTextSel2TextTmpMat):SetColor("_UnderlayColor", (Color.New)(0.91372549019608, 0.12549019607843, 0.12549019607843, 0.5))
-    -- DECOMPILER ERROR at PC139: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.teamTextSel1TextTmp).color = (Color.New)(1, 0.95686274509804, 0.92941176470588, 1)
-    -- DECOMPILER ERROR at PC148: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.teamNumSel1TextTmp).color = (Color.New)(1, 0.95686274509804, 0.92941176470588, 1)
-    -- DECOMPILER ERROR at PC157: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.teamTextSel2TextTmp).color = (Color.New)(1, 0.95686274509804, 0.92941176470588, 1)
-    -- DECOMPILER ERROR at PC166: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.teamNumSel2TextTmp).color = (Color.New)(1, 0.95686274509804, 0.92941176470588, 1)
-    -- DECOMPILER ERROR at PC175: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.teamNumNotSel1TextTmp).color = (Color.New)(0.50980392156863, 0.11764705882353, 0.15686274509804, 1)
-    -- DECOMPILER ERROR at PC184: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.teamTextNotSel1TextTmp).color = (Color.New)(0.50980392156863, 0.11764705882353, 0.15686274509804, 1)
-    -- DECOMPILER ERROR at PC193: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.teamNumNotSel2TextTmp).color = (Color.New)(0.50980392156863, 0.11764705882353, 0.15686274509804, 1)
-    -- DECOMPILER ERROR at PC202: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.teamTextNotSel2TextTmp).color = (Color.New)(0.50980392156863, 0.11764705882353, 0.15686274509804, 1)
-  else
-    if self._matchType == MatchType.MT_EightPets or self._matchType == MatchType.MT_SeasonMaze then
-      (self.teamTextSel1TextTmpMat):SetColor("_UnderlayColor", (Color.New)(0.13333333333333, 0.062745098039216, 0.035294117647059, 0.5))
-      ;
-      (self.teamTextSel2TextTmpMat):SetColor("_UnderlayColor", (Color.New)(0.13333333333333, 0.062745098039216, 0.035294117647059, 0.5))
-      ;
-      (self.teamNumSel1TextTmpMat):SetColor("_UnderlayColor", (Color.New)(0.13333333333333, 0.062745098039216, 0.035294117647059, 0.5))
-      ;
-      (self.teamNumSel2TextTmpMat):SetColor("_UnderlayColor", (Color.New)(0.13333333333333, 0.062745098039216, 0.035294117647059, 0.5))
-      -- DECOMPILER ERROR at PC266: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self.teamTextSel1TextTmp).color = (Color.New)(1, 0.87843137254902, 0.82352941176471, 1)
-      -- DECOMPILER ERROR at PC275: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self.teamNumSel1TextTmp).color = (Color.New)(1, 0.87843137254902, 0.82352941176471, 1)
-      -- DECOMPILER ERROR at PC284: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self.teamTextSel2TextTmp).color = (Color.New)(1, 0.87843137254902, 0.82352941176471, 1)
-      -- DECOMPILER ERROR at PC293: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self.teamNumSel2TextTmp).color = (Color.New)(1, 0.87843137254902, 0.82352941176471, 1)
-      -- DECOMPILER ERROR at PC302: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self.teamNumNotSel2TextTmp).color = (Color.New)(0.14117647058824, 0.11372549019608, 0.11764705882353, 1)
-      -- DECOMPILER ERROR at PC311: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self.teamNumNotSel1TextTmp).color = (Color.New)(0.14117647058824, 0.11372549019608, 0.11764705882353, 1)
-      -- DECOMPILER ERROR at PC320: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self.teamTextNotSel1TextTmp).color = (Color.New)(0.14117647058824, 0.11372549019608, 0.11764705882353, 1)
-      -- DECOMPILER ERROR at PC329: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self.teamTextNotSel2TextTmp).color = (Color.New)(0.14117647058824, 0.11372549019608, 0.11764705882353, 1)
-    end
+    self.teamNumSel1TextTmpMat:SetColor("_UnderlayColor", Color.New(0.9137254901960784, 0.12549019607843137, 0.12549019607843137, 0.5))
+    self.teamTextSel1TextTmpMat:SetColor("_UnderlayColor", Color.New(0.9137254901960784, 0.12549019607843137, 0.12549019607843137, 0.5))
+    self.teamNumSel2TextTmpMat:SetColor("_UnderlayColor", Color.New(0.9137254901960784, 0.12549019607843137, 0.12549019607843137, 0.5))
+    self.teamTextSel2TextTmpMat:SetColor("_UnderlayColor", Color.New(0.9137254901960784, 0.12549019607843137, 0.12549019607843137, 0.5))
+    self.teamTextSel1TextTmp.color = Color.New(1.0, 0.9568627450980393, 0.9294117647058824, 1)
+    self.teamNumSel1TextTmp.color = Color.New(1.0, 0.9568627450980393, 0.9294117647058824, 1)
+    self.teamTextSel2TextTmp.color = Color.New(1.0, 0.9568627450980393, 0.9294117647058824, 1)
+    self.teamNumSel2TextTmp.color = Color.New(1.0, 0.9568627450980393, 0.9294117647058824, 1)
+    self.teamNumNotSel1TextTmp.color = Color.New(0.5098039215686274, 0.11764705882352941, 0.1568627450980392, 1)
+    self.teamTextNotSel1TextTmp.color = Color.New(0.5098039215686274, 0.11764705882352941, 0.1568627450980392, 1)
+    self.teamNumNotSel2TextTmp.color = Color.New(0.5098039215686274, 0.11764705882352941, 0.1568627450980392, 1)
+    self.teamTextNotSel2TextTmp.color = Color.New(0.5098039215686274, 0.11764705882352941, 0.1568627450980392, 1)
+  elseif self._matchType == MatchType.MT_EightPets or self._matchType == MatchType.MT_SeasonMaze then
+    self.teamTextSel1TextTmpMat:SetColor("_UnderlayColor", Color.New(0.13333333333333333, 0.06274509803921569, 0.03529411764705882, 0.5))
+    self.teamTextSel2TextTmpMat:SetColor("_UnderlayColor", Color.New(0.13333333333333333, 0.06274509803921569, 0.03529411764705882, 0.5))
+    self.teamNumSel1TextTmpMat:SetColor("_UnderlayColor", Color.New(0.13333333333333333, 0.06274509803921569, 0.03529411764705882, 0.5))
+    self.teamNumSel2TextTmpMat:SetColor("_UnderlayColor", Color.New(0.13333333333333333, 0.06274509803921569, 0.03529411764705882, 0.5))
+    self.teamTextSel1TextTmp.color = Color.New(1.0, 0.8784313725490196, 0.8235294117647058, 1)
+    self.teamNumSel1TextTmp.color = Color.New(1.0, 0.8784313725490196, 0.8235294117647058, 1)
+    self.teamTextSel2TextTmp.color = Color.New(1.0, 0.8784313725490196, 0.8235294117647058, 1)
+    self.teamNumSel2TextTmp.color = Color.New(1.0, 0.8784313725490196, 0.8235294117647058, 1)
+    self.teamNumNotSel2TextTmp.color = Color.New(0.1411764705882353, 0.11372549019607843, 0.11764705882352941, 1)
+    self.teamNumNotSel1TextTmp.color = Color.New(0.1411764705882353, 0.11372549019607843, 0.11764705882352941, 1)
+    self.teamTextNotSel1TextTmp.color = Color.New(0.1411764705882353, 0.11372549019607843, 0.11764705882352941, 1)
+    self.teamTextNotSel2TextTmp.color = Color.New(0.1411764705882353, 0.11372549019607843, 0.11764705882352941, 1)
   end
   self:_RefreshSwitchTeamAreaState(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea._RefreshSwitchTeamAreaStateCoroutine = function(self, TT, init)
-  -- function num : 0_4 , upvalues : _ENV
+function UIWidgetPetArea:_RefreshSwitchTeamAreaStateCoroutine(TT, init)
   if self._curColumn == 1 then
     if not init then
-      (self.switchIconAnim):Play("uieffanim_UIWidgetPetArea_SwitchIcon")
+      self.switchIconAnim:Play("uieffanim_UIWidgetPetArea_SwitchIcon")
       YIELD(TT, 100)
-      ;
-      (self.teamSelected1Go):SetActive(true)
-      ;
-      (self.teamNotSelected1Go):SetActive(true)
-      ;
-      (self.teamSelected2Go):SetActive(true)
-      ;
-      (self.teamNotSelected2Go):SetActive(true)
+      self.teamSelected1Go:SetActive(true)
+      self.teamNotSelected1Go:SetActive(true)
+      self.teamSelected2Go:SetActive(true)
+      self.teamNotSelected2Go:SetActive(true)
       self._playBTAnim = true
-      ;
-      (self.switchBGAnim):Play("uieffanim_UIWidgetPetArea_team2")
+      self.switchBGAnim:Play("uieffanim_UIWidgetPetArea_team2")
       YIELD(TT)
-      ;
-      ((self.switchTeam1Go).transform):SetAsLastSibling()
+      self.switchTeam1Go.transform:SetAsLastSibling()
       YIELD(TT, 300)
     end
-    ;
-    (self.teamSelected1Go):SetActive(true)
-    ;
-    (self.teamNotSelected1Go):SetActive(false)
-    ;
-    (self.teamSelected2Go):SetActive(false)
-    ;
-    (self.teamNotSelected2Go):SetActive(true)
-    ;
-    ((self.switchTeam1Go).transform):SetAsLastSibling()
+    self.teamSelected1Go:SetActive(true)
+    self.teamNotSelected1Go:SetActive(false)
+    self.teamSelected2Go:SetActive(false)
+    self.teamNotSelected2Go:SetActive(true)
+    self.switchTeam1Go.transform:SetAsLastSibling()
     self._playBTAnim = false
   else
     if not init then
-      (self.switchIconAnim):Play("uieffanim_UIWidgetPetArea_SwitchIcon")
+      self.switchIconAnim:Play("uieffanim_UIWidgetPetArea_SwitchIcon")
       YIELD(TT, 100)
-      ;
-      (self.teamSelected1Go):SetActive(true)
-      ;
-      (self.teamNotSelected1Go):SetActive(true)
-      ;
-      (self.teamSelected2Go):SetActive(true)
-      ;
-      (self.teamNotSelected2Go):SetActive(true)
+      self.teamSelected1Go:SetActive(true)
+      self.teamNotSelected1Go:SetActive(true)
+      self.teamSelected2Go:SetActive(true)
+      self.teamNotSelected2Go:SetActive(true)
       self._playBTAnim = true
-      ;
-      (self.switchBGAnim):Play("uieffanim_UIWidgetPetArea_team1")
+      self.switchBGAnim:Play("uieffanim_UIWidgetPetArea_team1")
       YIELD(TT)
-      ;
-      ((self.switchTeam2Go).transform):SetAsLastSibling()
+      self.switchTeam2Go.transform:SetAsLastSibling()
       YIELD(TT, 300)
     end
-    ;
-    (self.teamSelected1Go):SetActive(false)
-    ;
-    (self.teamNotSelected1Go):SetActive(true)
-    ;
-    (self.teamSelected2Go):SetActive(true)
-    ;
-    (self.teamNotSelected2Go):SetActive(false)
-    ;
-    ((self.switchTeam2Go).transform):SetAsLastSibling()
+    self.teamSelected1Go:SetActive(false)
+    self.teamNotSelected1Go:SetActive(true)
+    self.teamSelected2Go:SetActive(true)
+    self.teamNotSelected2Go:SetActive(false)
+    self.switchTeam2Go.transform:SetAsLastSibling()
     self._playBTAnim = false
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea._RefreshSwitchTeamAreaState = function(self, init)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(self._RefreshSwitchTeamAreaStateCoroutine, self, init)
+function UIWidgetPetArea:_RefreshSwitchTeamAreaState(init)
+  GameGlobal.TaskManager():CoreGameStartTask(self._RefreshSwitchTeamAreaStateCoroutine, self, init)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.SetFontMat = function(self, lable, resname)
-  -- function num : 0_6 , upvalues : _ENV
-  local res = (ResourceManager:GetInstance()):SyncLoadAsset(resname, LoadType.Mat)
-  ;
-  (table.insert)(self._matRes, res)
+function UIWidgetPetArea:SetFontMat(lable, resname)
+  local res = ResourceManager:GetInstance():SyncLoadAsset(resname, LoadType.Mat)
+  table.insert(self._matRes, res)
   if not res then
-    return 
+    return
   end
   local obj = res.Obj
   local mat = lable.fontMaterial
   lable.fontMaterial = obj
-  ;
-  (lable.fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  lable.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
   return lable.fontMaterial
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnHide = function(self)
-  -- function num : 0_7
+function UIWidgetPetArea:OnHide()
   self._matRes = {}
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.SwitchColumnOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIWidgetPetArea:SwitchColumnOnClick()
   local petCount = #self._petList
   if petCount <= self._petCountPerColumn or self._playBTAnim then
-    return 
+    return
   end
   if self:IsAutoFighting() then
     self:ShowAutoFightForbiddenMsg()
-    return 
+    return
   end
-  if (InnerGameHelperRender.IsPuzzleState)() then
-    return 
+  if InnerGameHelperRender.IsPuzzleState() then
+    return
   end
-  if (InnerGameHelperRender.IsPet1702361ActiveSkillPreview)() then
-    return 
+  if InnerGameHelperRender.IsPet1702361ActiveSkillPreview() then
+    return
   end
   self:_SwitchColumn()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea._SwitchColumn = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIWidgetPetArea:_SwitchColumn()
   self._curColumn = self._curColumn + 1
-  if self._maxColumn < self._curColumn then
+  if self._curColumn > self._maxColumn then
     self._curColumn = 1
   end
   self:_RefreshSwitchTeamAreaState()
-  local curPos = (self.petPoolTransform).anchoredPosition
+  local curPos = self.petPoolTransform.anchoredPosition
   local oriY = 10
   local curY = oriY + (self._curColumn - 1) * 720
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.petPoolTransform).anchoredPosition = Vector2(curPos.x, curY)
-  if ((GameGlobal.UIStateManager)()):IsShow("UIBattleChangeTeamLeader") then
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIBattleChangeTeamLeader")
+  self.petPoolTransform.anchoredPosition = Vector2(curPos.x, curY)
+  if GameGlobal.UIStateManager():IsShow("UIBattleChangeTeamLeader") then
+    GameGlobal.UIStateManager():CloseDialog("UIBattleChangeTeamLeader")
     self:ShowChangeTeamLeaderData()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.RegisterEvent = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIWidgetPetArea:RegisterEvent()
   self:AttachEvent(GameEventType.PetPowerChange, self.OnPetPowerChange)
   self:AttachEvent(GameEventType.PetExtraPowerChange, self.OnPetPowerChangeForExtra)
   self:AttachEvent(GameEventType.PetLegendPowerChange, self.OnPetLegendPowerChange)
@@ -388,240 +232,144 @@ UIWidgetPetArea.RegisterEvent = function(self)
   self:AttachEvent(GameEventType.ShowHideUiMultiPowerInfoByIndex, self.ShowHideUiMultiPowerInfoByIndex)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.SetMultiColumnByMatchEnterData = function(self, matchEnterData)
-  -- function num : 0_11 , upvalues : _ENV
+function UIWidgetPetArea:SetMultiColumnByMatchEnterData(matchEnterData)
   if matchEnterData:GetMatchType() == MatchType.MT_MiniMaze or matchEnterData:GetMatchType() == MatchType.MT_EightPets or matchEnterData:GetMatchType() == MatchType.MT_SeasonMaze then
     self._useMultiColumn = true
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.SetMultiColumnByPetCount = function(self, petCount)
-  -- function num : 0_12
-  if self._petCountPerColumn + 1 < petCount then
+function UIWidgetPetArea:SetMultiColumnByPetCount(petCount)
+  if petCount > self._petCountPerColumn + 1 then
     self._useMultiColumn = true
   else
     self._useMultiColumn = false
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.SetData = function(self, uiBattle)
-  -- function num : 0_13 , upvalues : _ENV
+function UIWidgetPetArea:SetData(uiBattle)
   self._uiBattle = uiBattle
-  local matchEnterData = (self:GetModule(MatchModule)):GetMatchEnterData()
+  local matchEnterData = self:GetModule(MatchModule):GetMatchEnterData()
   self._isFromMaze = matchEnterData:GetMatchType() == MatchType.MT_Maze
   self._isMiniMaze = matchEnterData:GetMatchType() == MatchType.MT_MiniMaze
   self._isFromSeasonMaze = matchEnterData:GetMatchType() == MatchType.MT_SeasonMaze
   self:SetMultiColumnByMatchEnterData(matchEnterData)
   local localPlayerInfo = matchEnterData:GetLocalPlayerInfo()
-  local matchPets = (InnerGameHelperRender.GetLocalMatchPets)()
+  local matchPets = InnerGameHelperRender.GetLocalMatchPets()
   self._matchPets = matchPets
   self.petPool = self:GetUIComponent("UISelectObjectPath", "petpool")
   self.petPoolLayout = self:GetUIComponent("GridLayoutGroup", "petpool")
   local petCount = 0
   for i = 1, #localPlayerInfo.pet_list do
-    if ((localPlayerInfo.pet_list)[i]).pet_pstid ~= FormationPetPlaceType.FormationPetPlaceType_None then
+    if localPlayerInfo.pet_list[i].pet_pstid ~= FormationPetPlaceType.FormationPetPlaceType_None then
       petCount = petCount + 1
     end
   end
-  -- DECOMPILER ERROR at PC68: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.petPoolLayout).constraintCount = petCount
-  ;
-  (self.petPool):SpawnObjects("UIWidgetBattlePet", petCount)
-  self.uiWidgetBattlePets = (self.petPool):GetAllSpawnList()
+  self.petPoolLayout.constraintCount = petCount
+  self.petPool:SpawnObjects("UIWidgetBattlePet", petCount)
+  self.uiWidgetBattlePets = self.petPool:GetAllSpawnList()
   self._petDatas = {}
   self._petWidgets = {}
   self.itemsTweenerTab = {}
   local index = 1
   for i = 1, #localPlayerInfo.pet_list do
-    local petID = ((localPlayerInfo.pet_list)[i]).pet_pstid
+    local petID = localPlayerInfo.pet_list[i].pet_pstid
     if petID ~= FormationPetPlaceType.FormationPetPlaceType_None then
       local pet = matchPets[petID]
-      -- DECOMPILER ERROR at PC99: Confused about usage of register: R13 in 'UnsetPending'
-
-      ;
-      (self._petDatas)[petID] = pet
-      -- DECOMPILER ERROR at PC103: Confused about usage of register: R13 in 'UnsetPending'
-
-      ;
-      (self._petWidgets)[petID] = (self.uiWidgetBattlePets)[index]
+      self._petDatas[petID] = pet
+      self._petWidgets[petID] = self.uiWidgetBattlePets[index]
       pet.uiid = index
-      -- DECOMPILER ERROR at PC106: Confused about usage of register: R13 in 'UnsetPending'
-
-      ;
-      (self.itemsTweenerTab)[index] = nil
-      ;
-      ((self.uiWidgetBattlePets)[index]):InitUIWidgetPet(index, petID, pet, function(index, skillId, maxPower, leftPower, canCast, go)
-    -- function num : 0_13_0 , upvalues : self
-    self:OnPetClickCallBack(index, skillId, maxPower, leftPower, canCast, go)
-  end
-, function(go)
-    -- function num : 0_13_1 , upvalues : self
-    self:OnPetSwitchCallBack(go)
-  end
-, function(index, uiDataArray, go, isVariantSkillList, lastClickIndex)
-    -- function num : 0_13_2 , upvalues : self
-    self:OnPetMultiSkillClickCallBack(index, uiDataArray, go, isVariantSkillList, lastClickIndex)
-  end
-, function(go)
-    -- function num : 0_13_3 , upvalues : self
-    self:OnPetMultiSkillSwitchCallBack(go)
-  end
-, self._uiBattle)
+      self.itemsTweenerTab[index] = nil
+      self.uiWidgetBattlePets[index]:InitUIWidgetPet(index, petID, pet, function(index, skillId, maxPower, leftPower, canCast, go)
+        self:OnPetClickCallBack(index, skillId, maxPower, leftPower, canCast, go)
+      end, function(go)
+        self:OnPetSwitchCallBack(go)
+      end, function(index, uiDataArray, go, isVariantSkillList, lastClickIndex)
+        self:OnPetMultiSkillClickCallBack(index, uiDataArray, go, isVariantSkillList, lastClickIndex)
+      end, function(go)
+        self:OnPetMultiSkillSwitchCallBack(go)
+      end, self._uiBattle)
       index = index + 1
     end
   end
   self._lastPreviewPetId = nil
   local gridTransform = self:GetUIComponent("RectTransform", "petpool")
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(gridTransform)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(gridTransform)
   self._petHeadItemPosTab = {}
   for i = 1, #self.uiWidgetBattlePets do
-    local pos = ((((self.uiWidgetBattlePets)[i]):GetGameObject()):GetComponent("RectTransform")).anchoredPosition
-    -- DECOMPILER ERROR at PC148: Confused about usage of register: R13 in 'UnsetPending'
-
-    ;
-    (self._petHeadItemPosTab)[i] = pos
+    local pos = self.uiWidgetBattlePets[i]:GetGameObject():GetComponent("RectTransform").anchoredPosition
+    self._petHeadItemPosTab[i] = pos
   end
-  -- DECOMPILER ERROR at PC151: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.petPoolContentSizeFitter).enabled = false
-  -- DECOMPILER ERROR at PC153: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.petPoolLayout).enabled = false
+  self.petPoolContentSizeFitter.enabled = false
+  self.petPoolLayout.enabled = false
   self:SpawnPetInfoUI()
   self._petList = {}
   self._petList = localPlayerInfo.pet_list
   self:RegisterEvent()
   self:SetColumnMode()
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.SetColumnMode = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIWidgetPetArea:SetColumnMode()
   if self._useMultiColumn then
-    (self.switchBtnGo):SetActive(true)
+    self.switchBtnGo:SetActive(true)
     self:_InitSwitchTeamArea()
-    ;
-    (self.multiColumnMaskGo):SetActive(true)
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.petPoolTransform).parent = self.multiColumnMaskTransform
-    local curPos = (self.petPoolTransform).anchoredPosition
+    self.multiColumnMaskGo:SetActive(true)
+    self.petPoolTransform.parent = self.multiColumnMaskTransform
+    local curPos = self.petPoolTransform.anchoredPosition
     local tarY = 10
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.petPoolTransform).anchoredPosition = Vector2(curPos.x, tarY)
+    self.petPoolTransform.anchoredPosition = Vector2(curPos.x, tarY)
   else
-    do
-      ;
-      (self.switchBtnGo):SetActive(false)
-      ;
-      (self.multiColumnMaskGo):SetActive(false)
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self.petPoolTransform).parent = self.rootTransform
-    end
+    self.switchBtnGo:SetActive(false)
+    self.multiColumnMaskGo:SetActive(false)
+    self.petPoolTransform.parent = self.rootTransform
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.SpawnPetInfoUI = function(self)
-  -- function num : 0_15
+function UIWidgetPetArea:SpawnPetInfoUI()
   self._petInfoPool = self:GetUIComponent("UISelectObjectPath", "PetInfoPool")
-  self._petInfoUI = (self._petInfoPool):SpawnObject("UIWidgetPetInfo")
-  ;
-  ((self._petInfoUI):GetGameObject()):SetActive(false)
+  self._petInfoUI = self._petInfoPool:SpawnObject("UIWidgetPetInfo")
+  self._petInfoUI:GetGameObject():SetActive(false)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.ResetLayout = function(self, TT)
-  -- function num : 0_16 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIWidgetPetArea:ResetLayout(TT)
   if self.petPoolLayout then
-    (self.petPoolLayout).enabled = true
-    -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.petPoolContentSizeFitter).enabled = true
+    self.petPoolLayout.enabled = true
+    self.petPoolContentSizeFitter.enabled = true
     YIELD(TT)
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.petPoolContentSizeFitter).enabled = false
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.petPoolLayout).enabled = false
+    self.petPoolContentSizeFitter.enabled = false
+    self.petPoolLayout.enabled = false
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea._UIChangeTeamLeader = function(self, newPetPstID, oldPetPstID, leftChangeCount, teamOrderBefore, teamOrderAfter)
-  -- function num : 0_17 , upvalues : _ENV
-  local pet = (self._matchPets)[newPetPstID]
-  local petName = (StringTable.Get)(pet:GetPetName())
+function UIWidgetPetArea:_UIChangeTeamLeader(newPetPstID, oldPetPstID, leftChangeCount, teamOrderBefore, teamOrderAfter)
+  local pet = self._matchPets[newPetPstID]
+  local petName = StringTable.Get(pet:GetPetName())
   local strCount = tostring(leftChangeCount)
   if leftChangeCount == -1 then
     strCount = "∞"
   end
-  local text = (StringTable.Get)("str_battle_change_teamleader_success", petName, strCount)
-  ;
-  (ToastManager.ShowToast)(text)
+  local text = StringTable.Get("str_battle_change_teamleader_success", petName, strCount)
+  ToastManager.ShowToast(text)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnPetSwitchCallBack = function(self, go)
-  -- function num : 0_18 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIPetClickToSwitch, go)
+function UIWidgetPetArea:OnPetSwitchCallBack(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIPetClickToSwitch, go)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnPetMultiSkillSwitchCallBack = function(self, go)
-  -- function num : 0_19 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIPetClickToSwitch, go)
+function UIWidgetPetArea:OnPetMultiSkillSwitchCallBack(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIPetClickToSwitch, go)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.IsAutoFighting = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  return ((GameGlobal.GetUIModule)(MatchModule)):IsAutoFighting()
+function UIWidgetPetArea:IsAutoFighting()
+  return GameGlobal.GetUIModule(MatchModule):IsAutoFighting()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.ShowAutoFightForbiddenMsg = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  return ((GameGlobal.GetUIModule)(MatchModule)):ShowAutoFightForbiddenMsg()
+function UIWidgetPetArea:ShowAutoFightForbiddenMsg()
+  return GameGlobal.GetUIModule(MatchModule):ShowAutoFightForbiddenMsg()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.ShowChangeTeamLeaderData = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIWidgetPetArea:ShowChangeTeamLeaderData()
   if #self.uiWidgetBattlePets < 2 then
-    return 
+    return
   end
   self:CompleteChangeTeamLeaderAnim()
   local petDataList = {}
@@ -639,103 +387,83 @@ UIWidgetPetArea.ShowChangeTeamLeaderData = function(self)
   local setUiIndex = 1
   for i = beginIndex, #self.uiWidgetBattlePets do
     if i <= endIndex then
-      local pos = ((((self.uiWidgetBattlePets)[i]):GetGameObject()):GetComponent("RectTransform")).position
-      local uiBattleCam = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIBattle")
+      local pos = self.uiWidgetBattlePets[i]:GetGameObject():GetComponent("RectTransform").position
+      local uiBattleCam = GameGlobal.UIStateManager():GetControllerCamera("UIBattle")
       local screenPos = uiBattleCam:WorldToScreenPoint(pos)
-      local petPstID = ((self.uiWidgetBattlePets)[i]).petPstID
-      local isDead = ((self.uiWidgetBattlePets)[i]).isDead
-      local isHelpPet = ((self.uiWidgetBattlePets)[i])._isHelpPet
-      local isSealedCurse = ((self.uiWidgetBattlePets)[i]).isSealedCurse
-      local isPetNotInTeam = (BattleStatHelper.OnCheckEntityHasBuffFlag)(petPstID, BuffFlags.Pet1702361NotLinkLine)
-      local petData = {screenPos = screenPos, petPstID = petPstID, index = setUiIndex, isDead = isDead, isHelpPet = isHelpPet, isSealedCurse = isSealedCurse, isPetNotInTeam = isPetNotInTeam}
+      local petPstID = self.uiWidgetBattlePets[i].petPstID
+      local isDead = self.uiWidgetBattlePets[i].isDead
+      local isHelpPet = self.uiWidgetBattlePets[i]._isHelpPet
+      local isSealedCurse = self.uiWidgetBattlePets[i].isSealedCurse
+      local isPetNotInTeam = BattleStatHelper.OnCheckEntityHasBuffFlag(petPstID, BuffFlags.Pet1702361NotLinkLine)
+      local petData = {
+        screenPos = screenPos,
+        petPstID = petPstID,
+        index = setUiIndex,
+        isDead = isDead,
+        isHelpPet = isHelpPet,
+        isSealedCurse = isSealedCurse,
+        isPetNotInTeam = isPetNotInTeam
+      }
       petDataList[setUiIndex] = petData
       setUiIndex = setUiIndex + 1
     end
   end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIBattleChangeTeamLeader", petDataList, function(petPstID)
-    -- function num : 0_22_0 , upvalues : self
+  GameGlobal.UIStateManager():ShowDialog("UIBattleChangeTeamLeader", petDataList, function(petPstID)
     self:ChangeTeamLeader(petPstID)
-  end
-, self._useMultiColumn, function()
-    -- function num : 0_22_1 , upvalues : self
+  end, self._useMultiColumn, function()
     self:SwitchColumnOnClick()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.ChangeTeamLeader = function(self, petPstID)
-  -- function num : 0_23 , upvalues : _ENV
-  local oldPetPstID = ((self.uiWidgetBattlePets)[1]).petPstID
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeTeamLeader, petPstID, oldPetPstID)
+function UIWidgetPetArea:ChangeTeamLeader(petPstID)
+  local oldPetPstID = self.uiWidgetBattlePets[1].petPstID
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeTeamLeader, petPstID, oldPetPstID)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.UIBattleChangeHeadPos = function(self, idx_a, idx_b)
-  -- function num : 0_24
-  local go_a = (self.uiWidgetBattlePets)[idx_a]
-  local go_b = (self.uiWidgetBattlePets)[idx_b]
-  local pos_a = (self._petHeadItemPosTab)[idx_a]
-  local pos_b = (self._petHeadItemPosTab)[idx_b]
-  local rtr_a = ((go_a.view):GetGameObject()):GetComponent("RectTransform")
-  local rtr_b = ((go_b.view):GetGameObject()):GetComponent("RectTransform")
-  local gb_a = (go_a.view):GetGameObject()
+function UIWidgetPetArea:UIBattleChangeHeadPos(idx_a, idx_b)
+  local go_a = self.uiWidgetBattlePets[idx_a]
+  local go_b = self.uiWidgetBattlePets[idx_b]
+  local pos_a = self._petHeadItemPosTab[idx_a]
+  local pos_b = self._petHeadItemPosTab[idx_b]
+  local rtr_a = go_a.view:GetGameObject():GetComponent("RectTransform")
+  local rtr_b = go_b.view:GetGameObject():GetComponent("RectTransform")
+  local gb_a = go_a.view:GetGameObject()
   local tr_a = gb_a.transform
-  local gb_b = (go_b.view):GetGameObject()
+  local gb_b = go_b.view:GetGameObject()
   local tr_b = gb_b.transform
   if self._tweener_01 then
-    (self._tweener_01):Kill()
+    self._tweener_01:Kill()
   end
   if self._tweener_02 then
-    (self._tweener_02):Kill()
+    self._tweener_02:Kill()
   end
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R13 in 'UnsetPending'
-
-  ;
-  (self.uiWidgetBattlePets)[idx_a] = go_b
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R13 in 'UnsetPending'
-
-  ;
-  (self.uiWidgetBattlePets)[idx_b] = go_a
+  self.uiWidgetBattlePets[idx_a] = go_b
+  self.uiWidgetBattlePets[idx_b] = go_a
   local index = go_a.petIndex
   go_a.petIndex = go_b.petIndex
   go_b.petIndex = index
-  go_a.sortIndex = go_b.sortIndex
+  go_a.sortIndex, go_b.sortIndex = go_b.sortIndex, go_a.sortIndex
   local sIndex = tr_a:GetSiblingIndex()
   tr_a:SetSiblingIndex(tr_b:GetSiblingIndex())
   tr_b:SetSiblingIndex(sIndex)
   self._tweener_01 = rtr_a:DOAnchorPos(pos_b, 0.5)
   self._tweener_02 = rtr_b:DOAnchorPos(pos_a, 0.5)
-  ;
-  (self._tweener_02):OnComplete(function()
-    -- function num : 0_24_0 , upvalues : self
+  self._tweener_02:OnComplete(function()
     self:_Callback_ChangeTeamOrderViewFinished()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.CompleteChangeTeamLeaderAnim = function(self)
-  -- function num : 0_25
-  if self._tweener_01 and not (self._tweener_01):IsComplete() then
-    (self._tweener_01):Complete()
+function UIWidgetPetArea:CompleteChangeTeamLeaderAnim()
+  if self._tweener_01 and not self._tweener_01:IsComplete() then
+    self._tweener_01:Complete()
   end
-  if self._tweener_02 and not (self._tweener_02):IsComplete() then
-    (self._tweener_02):Complete()
+  if self._tweener_02 and not self._tweener_02:IsComplete() then
+    self._tweener_02:Complete()
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnPetDeadChangeHeadPos = function(self, deadPetList)
-  -- function num : 0_26 , upvalues : _ENV
-  (table.sort)(self.uiWidgetBattlePets, function(a, b)
-    -- function num : 0_26_0
+function UIWidgetPetArea:OnPetDeadChangeHeadPos(deadPetList)
+  table.sort(self.uiWidgetBattlePets, function(a, b)
     local x = a.sortIndex
     if a:Dead() then
       x = x + 10
@@ -744,32 +472,24 @@ UIWidgetPetArea.OnPetDeadChangeHeadPos = function(self, deadPetList)
     if b:Dead() then
       y = y + 10
     end
-    do return x < y end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    return x < y
+  end)
   for i = 1, #self.uiWidgetBattlePets do
-    ((self.uiWidgetBattlePets)[i]):FlushIndex(i)
+    self.uiWidgetBattlePets[i]:FlushIndex(i)
   end
   for i = 1, #self.uiWidgetBattlePets do
-    local tempTr = ((((self.uiWidgetBattlePets)[i]).view):GetGameObject()):GetComponent("RectTransform")
-    if (self.itemsTweenerTab)[i] then
-      ((self.itemsTweenerTab)[i]):Kill()
+    local tempTr = self.uiWidgetBattlePets[i].view:GetGameObject():GetComponent("RectTransform")
+    if self.itemsTweenerTab[i] then
+      self.itemsTweenerTab[i]:Kill()
     end
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.itemsTweenerTab)[i] = tempTr:DOAnchorPos((self._petHeadItemPosTab)[i], 0.5)
+    self.itemsTweenerTab[i] = tempTr:DOAnchorPos(self._petHeadItemPosTab[i], 0.5)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea._AddPetAtkDefHp = function(self, petId, addAtk, addDef, addHp)
-  -- function num : 0_27 , upvalues : _ENV
-  local petData = (self._petDatas)[petId]
+function UIWidgetPetArea:_AddPetAtkDefHp(petId, addAtk, addDef, addHp)
+  local petData = self._petDatas[petId]
   if not petData then
-    return 
+    return
   end
   local atk = petData:GetPetAttack()
   local def = petData:GetPetDefence()
@@ -778,7 +498,7 @@ UIWidgetPetArea._AddPetAtkDefHp = function(self, petId, addAtk, addDef, addHp)
   petData._defense = def + addDef
   petData._attack = atk + addAtk
   if self._petList then
-    for _,v in pairs(self._petList) do
+    for _, v in pairs(self._petList) do
       if v.pet_pstid == petId then
         v.attack = v.attack + addAtk
         v.defense = v.defense + addDef
@@ -786,140 +506,105 @@ UIWidgetPetArea._AddPetAtkDefHp = function(self, petId, addAtk, addDef, addHp)
       end
     end
   end
-  do
-    return self._petList
-  end
+  return self._petList
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.GetUITeamLeaderPstID = function(self)
-  -- function num : 0_28
-  return ((self.uiWidgetBattlePets)[1]):GetPetPstID()
+function UIWidgetPetArea:GetUITeamLeaderPstID()
+  return self.uiWidgetBattlePets[1]:GetPetPstID()
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.GetUITeamLeaderName = function(self)
-  -- function num : 0_29
-  local pstid = ((self.uiWidgetBattlePets)[1]):GetPetPstID()
-  local petData = (self._petDatas)[pstid]
+function UIWidgetPetArea:GetUITeamLeaderName()
+  local pstid = self.uiWidgetBattlePets[1]:GetPetPstID()
+  local petData = self._petDatas[pstid]
   if petData then
     return petData:GetPetName()
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.GetUITeamTailName = function(self)
-  -- function num : 0_30
+function UIWidgetPetArea:GetUITeamTailName()
   local tailIndex = #self.uiWidgetBattlePets
-  local pstid = ((self.uiWidgetBattlePets)[tailIndex]):GetPetPstID()
-  local petData = (self._petDatas)[pstid]
+  local pstid = self.uiWidgetBattlePets[tailIndex]:GetPetPstID()
+  local petData = self._petDatas[pstid]
   if petData then
     return petData:GetPetName()
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.SetTeamStateTeamLeader = function(self, petData)
-  -- function num : 0_31 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UISetTeamStateTeamLeader, petData)
+function UIWidgetPetArea:SetTeamStateTeamLeader(petData)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UISetTeamStateTeamLeader, petData)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea._UIChangeTeamOrder_ChangeTeamLeaderCommand = function(self, newPetPstID, oldPetPstID)
-  -- function num : 0_32 , upvalues : _ENV
-  for _,v in pairs(self._petList) do
+function UIWidgetPetArea:_UIChangeTeamOrder_ChangeTeamLeaderCommand(newPetPstID, oldPetPstID)
+  for _, v in pairs(self._petList) do
     if v.pet_pstid == newPetPstID then
       self:SetTeamStateTeamLeader(v)
       break
     end
   end
-  do
-    local oldPstIDArray = {}
-    for _,widget in ipairs(self.uiWidgetBattlePets) do
-      (table.insert)(oldPstIDArray, widget.petPstID)
+  local oldPstIDArray = {}
+  for _, widget in ipairs(self.uiWidgetBattlePets) do
+    table.insert(oldPstIDArray, widget.petPstID)
+  end
+  local curLeaderPstID = self:GetUITeamLeaderPstID()
+  if curLeaderPstID ~= oldPetPstID then
+    Log.error("UIChangeTeamLeader current leader not match!!")
+    return
+  end
+  local newIndex, oldIndex = 0, 0
+  for k, v in pairs(self.uiWidgetBattlePets) do
+    if v:IsMyPet(newPetPstID) then
+      newIndex = k
     end
-    local curLeaderPstID = self:GetUITeamLeaderPstID()
-    if curLeaderPstID ~= oldPetPstID then
-      (Log.error)("UIChangeTeamLeader current leader not match!!")
-      return 
-    end
-    local newIndex, oldIndex = 0, 0
-    for k,v in pairs(self.uiWidgetBattlePets) do
-      if v:IsMyPet(newPetPstID) then
-        newIndex = k
-      end
-      if v:IsMyPet(oldPetPstID) then
-        oldIndex = k
-      end
-    end
-    do
-      if newIndex == 0 or oldIndex == 0 then
-        return 
-      end
-      ;
-      (Log.debug)("UIChangeTeamLeader oldIndex=", oldIndex, " newIndex=", newIndex)
-      self:UIBattleChangeHeadPos(newIndex, oldIndex)
+    if v:IsMyPet(oldPetPstID) then
+      oldIndex = k
     end
   end
+  if newIndex == 0 or oldIndex == 0 then
+    return
+  end
+  Log.debug("UIChangeTeamLeader oldIndex=", oldIndex, " newIndex=", newIndex)
+  self:UIBattleChangeHeadPos(newIndex, oldIndex)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea._UIChangeTeamOrder_SwapTeamOrder = function(self, casterPetPstID, targetPetPstID)
-  -- function num : 0_33 , upvalues : _ENV
+function UIWidgetPetArea:_UIChangeTeamOrder_SwapTeamOrder(casterPetPstID, targetPetPstID)
   local oldPstIDArray = {}
-  for _,widget in ipairs(self.uiWidgetBattlePets) do
-    (table.insert)(oldPstIDArray, widget.petPstID)
+  for _, widget in ipairs(self.uiWidgetBattlePets) do
+    table.insert(oldPstIDArray, widget.petPstID)
   end
-  local oldLeaderPetPstID, newLeaderPetPstID = nil, nil
+  local oldLeaderPetPstID, newLeaderPetPstID
   local curLeaderPstID = self:GetUITeamLeaderPstID()
   if curLeaderPstID == casterPetPstID then
     oldLeaderPetPstID = casterPetPstID
     newLeaderPetPstID = targetPetPstID
-  else
-    if curLeaderPstID == targetPetPstID then
-      oldLeaderPetPstID = targetPetPstID
-      newLeaderPetPstID = casterPetPstID
-    end
+  elseif curLeaderPstID == targetPetPstID then
+    oldLeaderPetPstID = targetPetPstID
+    newLeaderPetPstID = casterPetPstID
   end
   if oldLeaderPetPstID and newLeaderPetPstID then
-    for _,v in pairs(self._petList) do
+    for _, v in pairs(self._petList) do
       if v.pet_pstid == newLeaderPetPstID then
         self:SetTeamStateTeamLeader(v)
         break
       end
     end
   end
-  do
-    local targetIndex, casterIndex = 0, 0
-    for k,v in pairs(self.uiWidgetBattlePets) do
-      if v:IsMyPet(targetPetPstID) then
-        targetIndex = k
-      end
-      if v:IsMyPet(casterPetPstID) then
-        casterIndex = k
-      end
+  local targetIndex, casterIndex = 0, 0
+  for k, v in pairs(self.uiWidgetBattlePets) do
+    if v:IsMyPet(targetPetPstID) then
+      targetIndex = k
     end
-    do
-      if targetIndex == 0 or casterIndex == 0 then
-        return 
-      end
-      ;
-      (Log.debug)("UISwapTeamOrder casterIndex=", casterIndex, " targetIndex=", targetIndex)
-      self:UIBattleChangeHeadPos(targetIndex, casterIndex)
+    if v:IsMyPet(casterPetPstID) then
+      casterIndex = k
     end
   end
+  if targetIndex == 0 or casterIndex == 0 then
+    return
+  end
+  Log.debug("UISwapTeamOrder casterIndex=", casterIndex, " targetIndex=", targetIndex)
+  self:UIBattleChangeHeadPos(targetIndex, casterIndex)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnCallUIChangeTeamOrderView = function(self, req)
-  -- function num : 0_34 , upvalues : _ENV
+function UIWidgetPetArea:OnCallUIChangeTeamOrderView(req)
   local type = req:GetViewType()
   local oldTeamOrder = req:GetOldTeamOrder()
   local newTeamOrder = req:GetNewTeamOrder()
@@ -927,438 +612,321 @@ UIWidgetPetArea.OnCallUIChangeTeamOrderView = function(self, req)
     local oldPetPstID = oldTeamOrder[1]
     local newPetPstID = newTeamOrder[1]
     self:_UIChangeTeamOrder_ChangeTeamLeaderCommand(newPetPstID, oldPetPstID)
-  else
-    do
-      if type == BattleTeamOrderViewType.Exchange_SwapTeamOrder then
-        local pstIdA, pstIdB = req:CalSwapPstID()
-        if pstIdA and pstIdB then
-          self:_UIChangeTeamOrder_SwapTeamOrder(pstIdA, pstIdB)
-        end
-      else
-        do
-          if type == BattleTeamOrderViewType.FillVacancies_Skill then
-            self:_UIChangeTeamOrder_SkillChangeTeamOrder(oldTeamOrder, newTeamOrder)
-          else
-            if type == BattleTeamOrderViewType.FillVacancies_MazePetDead then
-              self:_UIChangeTeamOrder_MazePetDead(oldTeamOrder, newTeamOrder)
-            else
-              if type == BattleTeamOrderViewType.ShuffleTeamOrder then
-                self:_UIChangeTeamOrder_ShuffleTeamOrder(oldTeamOrder, newTeamOrder)
-              end
-            end
-          end
-        end
-      end
+  elseif type == BattleTeamOrderViewType.Exchange_SwapTeamOrder then
+    local pstIdA, pstIdB = req:CalSwapPstID()
+    if pstIdA and pstIdB then
+      self:_UIChangeTeamOrder_SwapTeamOrder(pstIdA, pstIdB)
     end
+  elseif type == BattleTeamOrderViewType.FillVacancies_Skill then
+    self:_UIChangeTeamOrder_SkillChangeTeamOrder(oldTeamOrder, newTeamOrder)
+  elseif type == BattleTeamOrderViewType.FillVacancies_MazePetDead then
+    self:_UIChangeTeamOrder_MazePetDead(oldTeamOrder, newTeamOrder)
+  elseif type == BattleTeamOrderViewType.ShuffleTeamOrder then
+    self:_UIChangeTeamOrder_ShuffleTeamOrder(oldTeamOrder, newTeamOrder)
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea._Callback_ChangeTeamOrderViewFinished = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  (InnerGameHelperRender.UICurrentTeamOrderRequestFinished)()
+function UIWidgetPetArea:_Callback_ChangeTeamOrderViewFinished()
+  InnerGameHelperRender.UICurrentTeamOrderRequestFinished()
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea._UIChangeTeamOrder_SkillChangeTeamOrder = function(self, oldTeamOrder, newTeamOrder)
-  -- function num : 0_36 , upvalues : _ENV
+function UIWidgetPetArea:_UIChangeTeamOrder_SkillChangeTeamOrder(oldTeamOrder, newTeamOrder)
   local uiTeamOrderReverse = {}
-  for index,widget in ipairs(self.uiWidgetBattlePets) do
+  for index, widget in ipairs(self.uiWidgetBattlePets) do
     uiTeamOrderReverse[widget:GetPetPstID()] = index
   end
   local newTeamOrderReverse = {}
-  for index,pstID in ipairs(newTeamOrder) do
+  for index, pstID in ipairs(newTeamOrder) do
     newTeamOrderReverse[pstID] = index
   end
   if oldTeamOrder[1] ~= newTeamOrder[1] then
-    for _,v in pairs(self._petList) do
+    for _, v in pairs(self._petList) do
       if v.pet_pstid == newTeamOrder[1] then
         self:SetTeamStateTeamLeader(v)
         break
       end
     end
   end
-  do
-    local tweeners = {}
-    for _,pstID in ipairs(newTeamOrder) do
-      local oldIndex = uiTeamOrderReverse[pstID]
-      local newIndex = newTeamOrderReverse[pstID]
-      if oldIndex ~= newIndex then
-        local newPos = (self._petHeadItemPosTab)[newIndex]
-        local csrt = ((((self.uiWidgetBattlePets)[oldIndex]).view):GetGameObject()):GetComponent("RectTransform")
-        local tweener = csrt:DOAnchorPos(newPos, BattleConst.UIChangeTeamOrderTweenerTime)
-        if tweener then
-          (table.insert)(tweeners, tweener)
-        end
+  local tweeners = {}
+  for _, pstID in ipairs(newTeamOrder) do
+    local oldIndex = uiTeamOrderReverse[pstID]
+    local newIndex = newTeamOrderReverse[pstID]
+    if oldIndex ~= newIndex then
+      local newPos = self._petHeadItemPosTab[newIndex]
+      local csrt = self.uiWidgetBattlePets[oldIndex].view:GetGameObject():GetComponent("RectTransform")
+      local tweener = csrt:DOAnchorPos(newPos, BattleConst.UIChangeTeamOrderTweenerTime)
+      if tweener then
+        table.insert(tweeners, tweener)
       end
     end
-    local recordUiWidgets = {}
-    local recordUiWidgetsSibling = {}
-    for _,widget in ipairs(self.uiWidgetBattlePets) do
-      (table.insert)(recordUiWidgets, widget)
-      ;
-      (table.insert)(recordUiWidgetsSibling, (((widget.view):GetGameObject()):GetComponent("RectTransform")):GetSiblingIndex())
-    end
-    for _,pstID in ipairs(newTeamOrder) do
-      local newIndex = newTeamOrderReverse[pstID]
-      local oldIndex = uiTeamOrderReverse[pstID]
-      local oldIndexWidget = recordUiWidgets[oldIndex]
-      -- DECOMPILER ERROR at PC102: Confused about usage of register: R16 in 'UnsetPending'
-
-      ;
-      (self.uiWidgetBattlePets)[newIndex] = oldIndexWidget
-      oldIndexWidget:FlushIndex(newIndex)
-      ;
-      (((((self.uiWidgetBattlePets)[newIndex]).view):GetGameObject()):GetComponent("RectTransform")):SetSiblingIndex(recordUiWidgetsSibling[newIndex])
-    end
-    if #tweeners > 0 then
-      (tweeners[#tweeners]):OnComplete(function()
-    -- function num : 0_36_0 , upvalues : self
-    self:_Callback_ChangeTeamOrderViewFinished()
   end
-)
-    else
+  local recordUiWidgets = {}
+  local recordUiWidgetsSibling = {}
+  for _, widget in ipairs(self.uiWidgetBattlePets) do
+    table.insert(recordUiWidgets, widget)
+    table.insert(recordUiWidgetsSibling, widget.view:GetGameObject():GetComponent("RectTransform"):GetSiblingIndex())
+  end
+  for _, pstID in ipairs(newTeamOrder) do
+    local newIndex = newTeamOrderReverse[pstID]
+    local oldIndex = uiTeamOrderReverse[pstID]
+    local oldIndexWidget = recordUiWidgets[oldIndex]
+    self.uiWidgetBattlePets[newIndex] = oldIndexWidget
+    oldIndexWidget:FlushIndex(newIndex)
+    self.uiWidgetBattlePets[newIndex].view:GetGameObject():GetComponent("RectTransform"):SetSiblingIndex(recordUiWidgetsSibling[newIndex])
+  end
+  if 0 < #tweeners then
+    tweeners[#tweeners]:OnComplete(function()
       self:_Callback_ChangeTeamOrderViewFinished()
-    end
+    end)
+  else
+    self:_Callback_ChangeTeamOrderViewFinished()
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea._UIChangeTeamOrder_MazePetDead = function(self, oldTeamOrder, newTeamOrder)
-  -- function num : 0_37
+function UIWidgetPetArea:_UIChangeTeamOrder_MazePetDead(oldTeamOrder, newTeamOrder)
   self:_UIChangeTeamOrder_SkillChangeTeamOrder(oldTeamOrder, newTeamOrder)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea._UIChangeTeamOrder_ShuffleTeamOrder = function(self, oldTeamOrder, newTeamOrder)
-  -- function num : 0_38 , upvalues : _ENV
+function UIWidgetPetArea:_UIChangeTeamOrder_ShuffleTeamOrder(oldTeamOrder, newTeamOrder)
   local uiTeamOrderReverse = {}
-  for index,widget in ipairs(self.uiWidgetBattlePets) do
+  for index, widget in ipairs(self.uiWidgetBattlePets) do
     uiTeamOrderReverse[widget:GetPetPstID()] = index
   end
   local newTeamOrderReverse = {}
-  for order,pstId in ipairs(newTeamOrder) do
+  for order, pstId in ipairs(newTeamOrder) do
     newTeamOrderReverse[pstId] = order
   end
   local widgetPetsClone = {}
-  for index,widget in ipairs(self.uiWidgetBattlePets) do
+  for index, widget in ipairs(self.uiWidgetBattlePets) do
     widgetPetsClone[index] = widget
   end
   local indexForSiblingIndex = {}
-  for index,widget in ipairs(self.uiWidgetBattlePets) do
-    indexForSiblingIndex[index] = (((widget.view):GetGameObject()):GetComponent("RectTransform")):GetSiblingIndex()
+  for index, widget in ipairs(self.uiWidgetBattlePets) do
+    indexForSiblingIndex[index] = widget.view:GetGameObject():GetComponent("RectTransform"):GetSiblingIndex()
   end
   if oldTeamOrder[1] ~= newTeamOrder[1] then
-    for _,v in pairs(self._petList) do
+    for _, v in pairs(self._petList) do
       if v.pet_pstid == newTeamOrder[1] then
         self:SetTeamStateTeamLeader(v)
         break
       end
     end
   end
-  do
-    for _,pstID in ipairs(newTeamOrder) do
-      local oldIndex = uiTeamOrderReverse[pstID]
-      local newIndex = newTeamOrderReverse[pstID]
-      local widget = widgetPetsClone[oldIndex]
-      -- DECOMPILER ERROR at PC68: Confused about usage of register: R15 in 'UnsetPending'
-
-      ;
-      (self.uiWidgetBattlePets)[newIndex] = widget
-      widget:FlushIndex(newIndex)
-      ;
-      (((widget.view):GetGameObject()):GetComponent("RectTransform")):SetSiblingIndex(indexForSiblingIndex[newIndex])
-    end
-    local t = {}
-    local sequence = (((DG.Tweening).DOTween).Sequence)()
-    for _index,widget in ipairs(self.uiWidgetBattlePets) do
-      (table.insert)(t, (((widget.view):GetGameObject()):GetComponent("RectTransform")):DOAnchorPos((self._petHeadItemPosTab)[1], BattleConst.UIShuffleTeamOrderPhase1Time))
-    end
-    ;
-    (((DG.Tweening).DOVirtual).DelayedCall)(BattleConst.UIShuffleTeamOrderPhase1Time + BattleConst.UIShuffleTeamOrderPhase1Pause, function()
-    -- function num : 0_38_0 , upvalues : self, oldTeamOrder, newTeamOrder
-    self:_UIChangeTeamOrder_ShuffleTeamOrderPhase2(oldTeamOrder, newTeamOrder)
+  for _, pstID in ipairs(newTeamOrder) do
+    local oldIndex = uiTeamOrderReverse[pstID]
+    local newIndex = newTeamOrderReverse[pstID]
+    local widget = widgetPetsClone[oldIndex]
+    self.uiWidgetBattlePets[newIndex] = widget
+    widget:FlushIndex(newIndex)
+    widget.view:GetGameObject():GetComponent("RectTransform"):SetSiblingIndex(indexForSiblingIndex[newIndex])
   end
-)
-  end
-end
-
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea._UIChangeTeamOrder_ShuffleTeamOrderPhase2 = function(self, oldTeamOrder, newTeamOrder)
-  -- function num : 0_39 , upvalues : _ENV
   local t = {}
-  local sequence = (((DG.Tweening).DOTween).Sequence)()
-  for index,widget in ipairs(self.uiWidgetBattlePets) do
-    (table.insert)(t, (((widget.view):GetGameObject()):GetComponent("RectTransform")):DOAnchorPos((self._petHeadItemPosTab)[index], BattleConst.UIShuffleTeamOrderPhase2Time))
+  local sequence = DG.Tweening.DOTween.Sequence()
+  for _index, widget in ipairs(self.uiWidgetBattlePets) do
+    table.insert(t, widget.view:GetGameObject():GetComponent("RectTransform"):DOAnchorPos(self._petHeadItemPosTab[1], BattleConst.UIShuffleTeamOrderPhase1Time))
   end
-  ;
-  (t[#t]):OnComplete(function()
-    -- function num : 0_39_0 , upvalues : self
+  DG.Tweening.DOVirtual.DelayedCall(BattleConst.UIShuffleTeamOrderPhase1Time + BattleConst.UIShuffleTeamOrderPhase1Pause, function()
+    self:_UIChangeTeamOrder_ShuffleTeamOrderPhase2(oldTeamOrder, newTeamOrder)
+  end)
+end
+
+function UIWidgetPetArea:_UIChangeTeamOrder_ShuffleTeamOrderPhase2(oldTeamOrder, newTeamOrder)
+  local t = {}
+  local sequence = DG.Tweening.DOTween.Sequence()
+  for index, widget in ipairs(self.uiWidgetBattlePets) do
+    table.insert(t, widget.view:GetGameObject():GetComponent("RectTransform"):DOAnchorPos(self._petHeadItemPosTab[index], BattleConst.UIShuffleTeamOrderPhase2Time))
+  end
+  t[#t]:OnComplete(function()
     self:_Callback_ChangeTeamOrderViewFinished()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnPetHpChangedInMaze = function(self, mazePetInfo)
-  -- function num : 0_40
+function UIWidgetPetArea:OnPetHpChangedInMaze(mazePetInfo)
   for i = 1, #self.uiWidgetBattlePets do
-    if ((self.uiWidgetBattlePets)[i]):IsMyPet(mazePetInfo.pet_pstid) then
-      ((self.uiWidgetBattlePets)[i]):FlushPetHp(mazePetInfo)
+    if self.uiWidgetBattlePets[i]:IsMyPet(mazePetInfo.pet_pstid) then
+      self.uiWidgetBattlePets[i]:FlushPetHp(mazePetInfo)
     end
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.CancelActiveSkillSwitchTimer = function(self)
-  -- function num : 0_41
+function UIWidgetPetArea:CancelActiveSkillSwitchTimer()
   for i = 1, #self.uiWidgetBattlePets do
-    ((self.uiWidgetBattlePets)[i]):CancelSwitchTimer()
+    self.uiWidgetBattlePets[i]:CancelSwitchTimer()
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnPetPowerChange = function(self, petPstID, power, effect, logicReady)
-  -- function num : 0_42
+function UIWidgetPetArea:OnPetPowerChange(petPstID, power, effect, logicReady)
   for i = 1, #self.uiWidgetBattlePets do
-    if ((self.uiWidgetBattlePets)[i]):IsMyPet(petPstID) then
-      ((self.uiWidgetBattlePets)[i]):OnChangePower(power, effect, logicReady)
+    if self.uiWidgetBattlePets[i]:IsMyPet(petPstID) then
+      self.uiWidgetBattlePets[i]:OnChangePower(power, effect, logicReady)
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnPetPowerChangeForExtra = function(self, petPstID, extraSkillID, power, effect, logicReady)
-  -- function num : 0_43
+function UIWidgetPetArea:OnPetPowerChangeForExtra(petPstID, extraSkillID, power, effect, logicReady)
   for i = 1, #self.uiWidgetBattlePets do
-    if ((self.uiWidgetBattlePets)[i]):IsMyPet(petPstID) then
-      ((self.uiWidgetBattlePets)[i]):OnChangePowerForExtraSkill(extraSkillID, power, effect, logicReady)
+    if self.uiWidgetBattlePets[i]:IsMyPet(petPstID) then
+      self.uiWidgetBattlePets[i]:OnChangePowerForExtraSkill(extraSkillID, power, effect, logicReady)
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnPetLegendPowerChange = function(self, petPstID, power, effect, logicReady, maxValue)
-  -- function num : 0_44
+function UIWidgetPetArea:OnPetLegendPowerChange(petPstID, power, effect, logicReady, maxValue)
   for i = 1, #self.uiWidgetBattlePets do
-    if ((self.uiWidgetBattlePets)[i]):IsMyPet(petPstID) then
-      ((self.uiWidgetBattlePets)[i]):OnChangeLegendPower(power, effect, logicReady, maxValue)
+    if self.uiWidgetBattlePets[i]:IsMyPet(petPstID) then
+      self.uiWidgetBattlePets[i]:OnChangeLegendPower(power, effect, logicReady, maxValue)
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnPetAlchemyPowerChange = function(self, petPstID, power, effect, logicReady, maxValue)
-  -- function num : 0_45
+function UIWidgetPetArea:OnPetAlchemyPowerChange(petPstID, power, effect, logicReady, maxValue)
   for i = 1, #self.uiWidgetBattlePets do
-    if ((self.uiWidgetBattlePets)[i]):IsMyPet(petPstID) then
-      ((self.uiWidgetBattlePets)[i]):OnChangeAlchemyPower(power, effect, logicReady, maxValue)
+    if self.uiWidgetBattlePets[i]:IsMyPet(petPstID) then
+      self.uiWidgetBattlePets[i]:OnChangeAlchemyPower(power, effect, logicReady, maxValue)
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnPetActiveSkillGetReady = function(self, petPstID, playReminder, previousReady)
-  -- function num : 0_46
+function UIWidgetPetArea:OnPetActiveSkillGetReady(petPstID, playReminder, previousReady)
   for i = 1, #self.uiWidgetBattlePets do
-    if ((self.uiWidgetBattlePets)[i]):IsMyPet(petPstID) then
-      ((self.uiWidgetBattlePets)[i]):OnPowerReady(playReminder, previousReady)
+    if self.uiWidgetBattlePets[i]:IsMyPet(petPstID) then
+      self.uiWidgetBattlePets[i]:OnPowerReady(playReminder, previousReady)
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnPetActiveSkillCancelReady = function(self, petPstID, addCdAnimation)
-  -- function num : 0_47
+function UIWidgetPetArea:OnPetActiveSkillCancelReady(petPstID, addCdAnimation)
   for i = 1, #self.uiWidgetBattlePets do
-    if ((self.uiWidgetBattlePets)[i]):IsMyPet(petPstID) then
-      ((self.uiWidgetBattlePets)[i]):OnPowerCancelReady(addCdAnimation)
+    if self.uiWidgetBattlePets[i]:IsMyPet(petPstID) then
+      self.uiWidgetBattlePets[i]:OnPowerCancelReady(addCdAnimation)
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnPetExtraActiveSkillGetReady = function(self, petPstID, skillId, playReminder, previousReady)
-  -- function num : 0_48
+function UIWidgetPetArea:OnPetExtraActiveSkillGetReady(petPstID, skillId, playReminder, previousReady)
   for i = 1, #self.uiWidgetBattlePets do
-    if ((self.uiWidgetBattlePets)[i]):IsMyPet(petPstID) then
-      ((self.uiWidgetBattlePets)[i]):OnPowerReadyForExtraSkill(skillId, playReminder, previousReady)
+    if self.uiWidgetBattlePets[i]:IsMyPet(petPstID) then
+      self.uiWidgetBattlePets[i]:OnPowerReadyForExtraSkill(skillId, playReminder, previousReady)
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnPetExtraActiveSkillCancelReady = function(self, petPstID, skillId, addCdAnimation)
-  -- function num : 0_49
+function UIWidgetPetArea:OnPetExtraActiveSkillCancelReady(petPstID, skillId, addCdAnimation)
   for i = 1, #self.uiWidgetBattlePets do
-    if ((self.uiWidgetBattlePets)[i]):IsMyPet(petPstID) then
-      ((self.uiWidgetBattlePets)[i]):OnPowerCancelReadyForExtraSkill(skillId, addCdAnimation)
+    if self.uiWidgetBattlePets[i]:IsMyPet(petPstID) then
+      self.uiWidgetBattlePets[i]:OnPowerCancelReadyForExtraSkill(skillId, addCdAnimation)
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.ShowHideUiMultiPowerInfoByIndex = function(self, petPstID, uiIndex, bShow)
-  -- function num : 0_50
+function UIWidgetPetArea:ShowHideUiMultiPowerInfoByIndex(petPstID, uiIndex, bShow)
   for i = 1, #self.uiWidgetBattlePets do
-    if ((self.uiWidgetBattlePets)[i]):IsMyPet(petPstID) then
-      ((self.uiWidgetBattlePets)[i]):ShowHideUiMultiPowerInfoByIndex(uiIndex, bShow)
+    if self.uiWidgetBattlePets[i]:IsMyPet(petPstID) then
+      self.uiWidgetBattlePets[i]:ShowHideUiMultiPowerInfoByIndex(uiIndex, bShow)
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnShowPetInfoInish = function(self)
-  -- function num : 0_51
+function UIWidgetPetArea:OnShowPetInfoInish()
   for i = 1, #self.uiWidgetBattlePets do
-    ((self.uiWidgetBattlePets)[i]):OnShowPetInfoInish()
+    self.uiWidgetBattlePets[i]:OnShowPetInfoInish()
   end
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnPetHeadMaskAlpha = function(self, alpha)
-  -- function num : 0_52
+function UIWidgetPetArea:OnPetHeadMaskAlpha(alpha)
   for i = 1, #self.uiWidgetBattlePets do
-    ((self.uiWidgetBattlePets)[i]):OnChangeHeadAlpha(alpha)
+    self.uiWidgetBattlePets[i]:OnChangeHeadAlpha(alpha)
   end
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnExclusivePetHeadMaskAlpha = function(self, alpha, exclusivePetPstID)
-  -- function num : 0_53
+function UIWidgetPetArea:OnExclusivePetHeadMaskAlpha(alpha, exclusivePetPstID)
   for i = 1, #self.uiWidgetBattlePets do
-    if not ((self.uiWidgetBattlePets)[i]):IsMyPet(exclusivePetPstID) then
-      ((self.uiWidgetBattlePets)[i]):OnChangeHeadAlpha(alpha)
+    if not self.uiWidgetBattlePets[i]:IsMyPet(exclusivePetPstID) then
+      self.uiWidgetBattlePets[i]:OnChangeHeadAlpha(alpha)
     else
-      ;
-      ((self.uiWidgetBattlePets)[i]):OnChangeHeadAlpha(0)
+      self.uiWidgetBattlePets[i]:OnChangeHeadAlpha(0)
     end
   end
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnPetPowerAndWatchChange = function(self, petPstID, power, isReady, watch)
-  -- function num : 0_54
+function UIWidgetPetArea:OnPetPowerAndWatchChange(petPstID, power, isReady, watch)
   for i = 1, #self.uiWidgetBattlePets do
-    if ((self.uiWidgetBattlePets)[i]):IsMyPet(petPstID) then
-      ((self.uiWidgetBattlePets)[i]):OnChangePowerAndWatch(power, isReady, watch)
+    if self.uiWidgetBattlePets[i]:IsMyPet(petPstID) then
+      self.uiWidgetBattlePets[i]:OnChangePowerAndWatch(power, isReady, watch)
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnPetPowerOverdrawChange = function(self, petPstID, overdrawTable)
-  -- function num : 0_55
+function UIWidgetPetArea:OnPetPowerOverdrawChange(petPstID, overdrawTable)
   for i = 1, #self.uiWidgetBattlePets do
-    if ((self.uiWidgetBattlePets)[i]):IsMyPet(petPstID) then
-      ((self.uiWidgetBattlePets)[i]):OnPetPowerOverdrawChange(overdrawTable)
+    if self.uiWidgetBattlePets[i]:IsMyPet(petPstID) then
+      self.uiWidgetBattlePets[i]:OnPetPowerOverdrawChange(overdrawTable)
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnPetClickCallBack = function(self, index, skillId, maxPower, leftPower, canCast, go)
-  -- function num : 0_56 , upvalues : _ENV
-  local petWidget = (self.uiWidgetBattlePets)[index]
-  if (GuideHelper.DontShowMainSkillMission)() then
-    return 
+function UIWidgetPetArea:OnPetClickCallBack(index, skillId, maxPower, leftPower, canCast, go)
+  local petWidget = self.uiWidgetBattlePets[index]
+  if GuideHelper.DontShowMainSkillMission() then
+    return
   end
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("FightClick", {"OnPetClickCallBack", petWidget._petTemplateID}, false, true)
+  GameGlobal.UAReportForceGuideEvent("FightClick", {
+    "OnPetClickCallBack",
+    petWidget._petTemplateID
+  }, false, true)
   if self:IsAutoFighting() and go then
     self:ShowAutoFightForbiddenMsg()
   else
     if self._guideWidgetPetIndex > 0 and self._guideWidgetPetIndex == petWidget.petIndex then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PreClickPetHead, skillId)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HideCanMoveArrow)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClickPetHead, petWidget.petPstID, petWidget.isReady)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.PreClickPetHead, skillId)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.HideCanMoveArrow)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.ClickPetHead, petWidget.petPstID, petWidget.isReady)
     end
     self:ShowActiveSkillUI(petWidget, skillId, maxPower, leftPower, canCast)
     self:_CheckGuide()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClickUI2ClosePreviewMonster)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ClickUI2ClosePreviewMonster)
   end
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.OnPetMultiSkillClickCallBack = function(self, index, uiDataArray, go, isVariantSkillList, lastClickIndex)
-  -- function num : 0_57 , upvalues : _ENV
-  local petWidget = (self.uiWidgetBattlePets)[index]
-  if (GuideHelper.DontShowMainSkillMission)() then
-    return 
+function UIWidgetPetArea:OnPetMultiSkillClickCallBack(index, uiDataArray, go, isVariantSkillList, lastClickIndex)
+  local petWidget = self.uiWidgetBattlePets[index]
+  if GuideHelper.DontShowMainSkillMission() then
+    return
   end
   if self:IsAutoFighting() and go then
     self:ShowAutoFightForbiddenMsg()
   else
     self:ShowMultiActiveSkillUI(index, petWidget, uiDataArray, isVariantSkillList, lastClickIndex)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClickUI2ClosePreviewMonster)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ClickUI2ClosePreviewMonster)
   end
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.ShowActiveSkillUI = function(self, petWidget, skillId, maxPower, leftPower, canCast)
-  -- function num : 0_58 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIShowActiveSkillUI, petWidget, skillId, maxPower, leftPower, canCast)
+function UIWidgetPetArea:ShowActiveSkillUI(petWidget, skillId, maxPower, leftPower, canCast)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIShowActiveSkillUI, petWidget, skillId, maxPower, leftPower, canCast)
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.ShowMultiActiveSkillUI = function(self, index, petWidget, uiDataArray, isVariantSkillList, lastClickIndex)
-  -- function num : 0_59 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIShowMultiActiveSkillUI, index, petWidget, uiDataArray, isVariantSkillList, lastClickIndex)
+function UIWidgetPetArea:ShowMultiActiveSkillUI(index, petWidget, uiDataArray, isVariantSkillList, lastClickIndex)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIShowMultiActiveSkillUI, index, petWidget, uiDataArray, isVariantSkillList, lastClickIndex)
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.GetPetWidgetByPstID = function(self, petPstID)
-  -- function num : 0_60
-  return (self._petWidgets)[petPstID]
+function UIWidgetPetArea:GetPetWidgetByPstID(petPstID)
+  return self._petWidgets[petPstID]
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.GetPetBattleBtnHp = function(self, _index)
-  -- function num : 0_61 , upvalues : _ENV
+function UIWidgetPetArea:GetPetBattleBtnHp(_index)
   if self.uiWidgetBattlePets then
-    for index,value in ipairs(self.uiWidgetBattlePets) do
+    for index, value in ipairs(self.uiWidgetBattlePets) do
       if index == _index then
         return value:GetGameObject("hpvalue")
       end
@@ -1366,12 +934,9 @@ UIWidgetPetArea.GetPetBattleBtnHp = function(self, _index)
   end
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.GetPetBattleBtnByPetTempId = function(self, petTempId)
-  -- function num : 0_62 , upvalues : _ENV
+function UIWidgetPetArea:GetPetBattleBtnByPetTempId(petTempId)
   if self.uiWidgetBattlePets then
-    for key,value in pairs(self.uiWidgetBattlePets) do
+    for key, value in pairs(self.uiWidgetBattlePets) do
       if value._petTemplateID == petTempId then
         return value:GetGameObject("TouchArea")
       end
@@ -1379,132 +944,82 @@ UIWidgetPetArea.GetPetBattleBtnByPetTempId = function(self, petTempId)
   end
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.AutoFightCheckSwitchPetColumn = function(self, petID)
-  -- function num : 0_63 , upvalues : _ENV
+function UIWidgetPetArea:AutoFightCheckSwitchPetColumn(petID)
   if self._useMultiColumn then
     local petCount = #self._petList
     if petCount <= self._petCountPerColumn then
-      return 
+      return
     end
     if petID then
       local curIndex = 0
       for i = 1, #self.uiWidgetBattlePets do
-        if ((self.uiWidgetBattlePets)[i]):IsMyPet(petID) then
+        if self.uiWidgetBattlePets[i]:IsMyPet(petID) then
           curIndex = i
           break
         end
       end
-      do
-        local belongColumn = (math.floor)((curIndex - 1) / self._petCountPerColumn) + 1
-        if belongColumn ~= self._curColumn then
-          self:_SwitchColumn()
-        end
+      local belongColumn = math.floor((curIndex - 1) / self._petCountPerColumn) + 1
+      if belongColumn ~= self._curColumn then
+        self:_SwitchColumn()
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea.AddMiddleEnterPet = function(self, petInfo, matchPet)
-  -- function num : 0_64 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self.petPoolContentSizeFitter).enabled = true
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.petPoolLayout).enabled = true
+function UIWidgetPetArea:AddMiddleEnterPet(petInfo, matchPet)
+  self.petPoolContentSizeFitter.enabled = true
+  self.petPoolLayout.enabled = true
   local localPlayerInfo = petInfo
   local petPstID = matchPet:GetPstID()
   local petCount = #self._petList
   petCount = petCount + 1
-  ;
-  (table.insert)(self._petList, petInfo)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.petPoolLayout).constraintCount = petCount
-  ;
-  (self.petPool):SpawnObjects("UIWidgetBattlePet", petCount)
-  local uiWidgetBattlePets = (self.petPool):GetAllSpawnList()
+  table.insert(self._petList, petInfo)
+  self.petPoolLayout.constraintCount = petCount
+  self.petPool:SpawnObjects("UIWidgetBattlePet", petCount)
+  local uiWidgetBattlePets = self.petPool:GetAllSpawnList()
   local addWidget = uiWidgetBattlePets[#uiWidgetBattlePets]
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.uiWidgetBattlePets)[petCount] = addWidget
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._petWidgets)[petPstID] = addWidget
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._petDatas)[petPstID] = matchPet
+  self.uiWidgetBattlePets[petCount] = addWidget
+  self._petWidgets[petPstID] = addWidget
+  self._petDatas[petPstID] = matchPet
   local petIndex = petCount
   matchPet.uiid = petIndex
   addWidget:InitUIWidgetPet(petIndex, petPstID, matchPet, function(index, skillId, maxPower, leftPower, canCast, go)
-    -- function num : 0_64_0 , upvalues : self
     self:OnPetClickCallBack(index, skillId, maxPower, leftPower, canCast, go)
-  end
-, function(go)
-    -- function num : 0_64_1 , upvalues : self
+  end, function(go)
     self:OnPetSwitchCallBack(go)
-  end
-, function(index, uiDataArray, go, isVariantSkillList, lastClickIndex)
-    -- function num : 0_64_2 , upvalues : self
+  end, function(index, uiDataArray, go, isVariantSkillList, lastClickIndex)
     self:OnPetMultiSkillClickCallBack(index, uiDataArray, go, isVariantSkillList, lastClickIndex)
-  end
-, function(go)
-    -- function num : 0_64_3 , upvalues : self
+  end, function(go)
     self:OnPetMultiSkillSwitchCallBack(go)
-  end
-, self._uiBattle)
+  end, self._uiBattle)
   addWidget:_AutoFight(self:IsAutoFighting())
   addWidget:_ActiveBattlePet()
   local gridTransform = self:GetUIComponent("RectTransform", "petpool")
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(gridTransform)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(gridTransform)
   self._petHeadItemPosTab = {}
   for i = 1, #self.uiWidgetBattlePets do
-    local pos = ((((self.uiWidgetBattlePets)[i]):GetGameObject()):GetComponent("RectTransform")).anchoredPosition
-    -- DECOMPILER ERROR at PC77: Confused about usage of register: R15 in 'UnsetPending'
-
-    ;
-    (self._petHeadItemPosTab)[i] = pos
+    local pos = self.uiWidgetBattlePets[i]:GetGameObject():GetComponent("RectTransform").anchoredPosition
+    self._petHeadItemPosTab[i] = pos
   end
-  -- DECOMPILER ERROR at PC80: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self.petPoolContentSizeFitter).enabled = false
-  -- DECOMPILER ERROR at PC82: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self.petPoolLayout).enabled = false
+  self.petPoolContentSizeFitter.enabled = false
+  self.petPoolLayout.enabled = false
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetArea._CheckGuide = function(self)
-  -- function num : 0_65 , upvalues : _ENV
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+function UIWidgetPetArea:_CheckGuide()
+  local guideModule = GameGlobal.GetModule(GuideModule)
   if guideModule:GuideInProgress() then
     local guides = guideModule:GetCurGuides()
     if guides then
-      for _,guide in pairs(guides) do
+      for _, guide in pairs(guides) do
         local curStep = guide:GetCurStep()
         if curStep and curStep.show then
           local cfg = curStep:GetBtnGuideCfg()
           if cfg and cfg.completeRule == GuideCompleteType.OperationComplete then
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.Button)
-            return 
+            GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.Button)
+            return
           end
         end
       end
     end
   end
 end
-
-

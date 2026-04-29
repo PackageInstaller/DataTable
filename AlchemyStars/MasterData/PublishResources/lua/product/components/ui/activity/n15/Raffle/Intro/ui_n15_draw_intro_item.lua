@@ -1,32 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n15/Raffle/Intro/ui_n15_draw_intro_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN15DrawIntroItem", UICustomWidget)
 UIN15DrawIntroItem = UIN15DrawIntroItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN15DrawIntroItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN15DrawIntroItem:OnShow(uiParams)
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15DrawIntroItem._GetComponent = function(self)
-  -- function num : 0_1
+function UIN15DrawIntroItem:_GetComponent()
   self._txtHead = self:GetUIComponent("UILocalizationText", "_txtHead")
   self._txtBody = self:GetUIComponent("UILocalizationText", "_txtBody")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15DrawIntroItem.RefView = function(self, head, body)
-  -- function num : 0_2
-  (self._txtHead):SetText(head)
-  ;
-  (self._txtBody):SetText(body)
+function UIN15DrawIntroItem:RefView(head, body)
+  self._txtHead:SetText(head)
+  self._txtBody:SetText(body)
 end
-
-

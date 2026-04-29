@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/map/ui_n12_map_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12MapController", UIController)
 UIN12MapController = UIN12MapController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12MapController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN12MapController:OnShow(uiParams)
   self._nodeid = uiParams[1]
   self._stageid = uiParams[2]
   self._component = uiParams[3]
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
   self._rate = self:GetN12Rate()
   self._oldRate = self._rate
   if self.GetComponents then
@@ -23,15 +16,11 @@ UIN12MapController.OnShow = function(self, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapController.SetPass = function(self, btn)
-  -- function num : 0_1
+function UIN12MapController:SetPass(btn)
   self._pass = self:CheckFinish()
-  ;
-  (self._passGo):SetActive(self._pass)
+  self._passGo:SetActive(self._pass)
   if btn then
-    local alpha, sprite, inter = nil, nil, nil
+    local alpha, sprite, inter
     if self._pass then
       alpha = 0.3
       sprite = "n12_ewai_btn_com2"
@@ -41,75 +30,47 @@ UIN12MapController.SetPass = function(self, btn)
       sprite = "n12_ewai_btn_com"
       inter = true
     end
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._alpha).alpha = alpha
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._btnImg).raycastTarget = inter
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._btnImg).sprite = (self._atlas):GetSprite(sprite)
+    self._alpha.alpha = alpha
+    self._btnImg.raycastTarget = inter
+    self._btnImg.sprite = self._atlas:GetSprite(sprite)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapController.SetTextMat = function(self)
-  -- function num : 0_2
+function UIN12MapController:SetTextMat()
   local tex = self:GetUIComponent("UILocalizedTMP", "btnTex")
   self:SetFontMat(tex, "uieff_n12_map_leave_tex.mat")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapController.SetFontMat = function(self, lable, resname)
-  -- function num : 0_3 , upvalues : _ENV
-  self._res = (ResourceManager:GetInstance()):SyncLoadAsset(resname, LoadType.Mat)
+function UIN12MapController:SetFontMat(lable, resname)
+  self._res = ResourceManager:GetInstance():SyncLoadAsset(resname, LoadType.Mat)
   if not self._res then
-    return 
+    return
   end
-  local obj = (self._res).Obj
+  local obj = self._res.Obj
   local mat = lable.fontMaterial
   lable.fontMaterial = obj
-  ;
-  (lable.fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  lable.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapController.GetEntrustData = function(self)
-  -- function num : 0_4
-  local clientData = (self._component).m_client_data
-  local data = (clientData.datas)[self._stageid]
+function UIN12MapController:GetEntrustData()
+  local clientData = self._component.m_client_data
+  local data = clientData.datas[self._stageid]
   return data
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapController.SetNodeType = function(self, type)
-  -- function num : 0_5
+function UIN12MapController:SetNodeType(type)
   self._nodeType = type
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapController.Cfg = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg = (Cfg.cfg_campaign_entrust_event)[self._nodeid]
+function UIN12MapController:Cfg()
+  local cfg = Cfg.cfg_campaign_entrust_event[self._nodeid]
   if not cfg then
-    (Log.error)("###[UIN12MapController] cfg is nil ! id --> ", self._nodeid)
+    Log.error("###[UIN12MapController] cfg is nil ! id --> ", self._nodeid)
   end
   return cfg
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapController.GetN12Rate = function(self)
-  -- function num : 0_7
+function UIN12MapController:GetN12Rate()
   local data = self:GetEntrustData()
   if not data then
     return 0
@@ -123,29 +84,22 @@ UIN12MapController.GetN12Rate = function(self)
   return rate
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapController.CheckFinish = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN12MapController:CheckFinish()
   local data = self:GetEntrustData()
   if not data then
     return false
   end
   local nodePassList = data.rewarded_events
   if nodePassList and next(nodePassList) then
-    return (table.icontains)(nodePassList, self._nodeid)
+    return table.icontains(nodePassList, self._nodeid)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapController.RequestFinishEvent = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN12MapController:RequestFinishEvent()
   self:Lock("UIN12MapController:RequestFinishEvent")
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : _ENV, self
     local AsyncRequestRes = AsyncRequestRes:New()
-    local res, msg = (self._component):HandleCompleteEvent(TT, AsyncRequestRes, self._stageid, self._nodeid)
+    local res, msg = self._component:HandleCompleteEvent(TT, AsyncRequestRes, self._stageid, self._nodeid)
     self:UnLock("UIN12MapController:RequestFinishEvent")
     if res:GetSucc() then
       local rewards = msg.rewards
@@ -153,55 +107,34 @@ UIN12MapController.RequestFinishEvent = function(self)
         self:OnFinishEvent(rewards)
       end
       self._rate = self:GetN12Rate()
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN12CloseMapWindow)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN12CloseMapWindow)
     else
-      do
-        local result = res:GetResult()
-        ;
-        (Log.error)("###[UIN12MapController] HandleCompleteEvent fail ! stageid[", self._stageid, "] nodeid[", self._nodeid, "] result[", result, "]")
-        self:CloseDialog()
-      end
+      local result = res:GetResult()
+      Log.error("###[UIN12MapController] HandleCompleteEvent fail ! stageid[", self._stageid, "] nodeid[", self._nodeid, "] result[", result, "]")
+      self:CloseDialog()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapController.ChangeTextWidth = function(self, tex)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN12MapController:ChangeTextWidth(tex)
   local width = tex.preferredWidth
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  if width > 760 then
-    (self._contentSizeFitter).enabled = false
+  if 760 < width then
+    self._contentSizeFitter.enabled = false
     tex.enableAutoSizing = true
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._btnTexRect).sizeDelta = Vector2(760, 60)
+    self._btnTexRect.sizeDelta = Vector2(760, 60)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapController.OnHide = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  if self._oldRate ~= 1 and self._rate == 1 then
-    (UIActivityN12Helper.N12_MapNode_Over)(self._nodeid, self._stageid, self._component)
+function UIN12MapController:OnHide()
+  if 1 ~= self._oldRate and self._rate == 1 then
+    UIActivityN12Helper.N12_MapNode_Over(self._nodeid, self._stageid, self._component)
   end
   if self._res then
-    (self._res):Dispose()
+    self._res:Dispose()
     self._res = nil
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapController.closeBtnOnClick = function(self)
-  -- function num : 0_12
+function UIN12MapController:closeBtnOnClick()
   self:CloseDialog()
 end
-
-

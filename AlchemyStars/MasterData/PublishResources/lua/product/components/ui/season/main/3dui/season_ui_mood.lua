@@ -1,111 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/3dui/season_ui_mood.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonUIMood", Object)
 SeasonUIMood = SeasonUIMood
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonUIMood.Constructor = function(self, gameObject, atlas)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonUIMood:Constructor(gameObject, atlas)
   self._gameObject = gameObject
   self._atlas = atlas
   self._eventPoint = nil
-  self._view = (self._gameObject):GetComponent(typeof(UIView))
+  self._view = self._gameObject:GetComponent(typeof(UIView))
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIMood._GetComponents = function(self)
-  -- function num : 0_1
-  self._rootTransform = (self._view):GetUIComponent("Transform", "Root")
-  self._mood = (self._view):GetUIComponent("Image", "Mood")
+function SeasonUIMood:_GetComponents()
+  self._rootTransform = self._view:GetUIComponent("Transform", "Root")
+  self._mood = self._view:GetUIComponent("Image", "Mood")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIMood.SetData = function(self, eventPoint, express)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonUIMood:SetData(eventPoint, express)
   if eventPoint then
     self._eventPoint = eventPoint
-    local spriteName = nil
-    do
-      if express then
-        local content = express:Content()
-        if content then
-          spriteName = content.sprite
-        end
-      end
-      -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-      if spriteName then
-        (self._mood).enabled = true
-        -- DECOMPILER ERROR at PC20: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._mood).sprite = (self._atlas):GetSprite(spriteName)
-      else
-        -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._mood).enabled = false
-      end
-      do
-        local cfg = (self._eventPoint):GetEventPointCfg()
-        -- DECOMPILER ERROR at PC41: Confused about usage of register: R5 in 'UnsetPending'
-
-        if cfg and cfg.UISignOffset then
-          (self._rootTransform).localPosition = Vector3((cfg.UISignOffset)[1], (cfg.UISignOffset)[2], (cfg.UISignOffset)[3])
-        end
-        self:RefreshPosition()
-        self:Clear()
+    local spriteName
+    if express then
+      local content = express:Content()
+      if content then
+        spriteName = content.sprite
       end
     end
+    if spriteName then
+      self._mood.enabled = true
+      self._mood.sprite = self._atlas:GetSprite(spriteName)
+    else
+      self._mood.enabled = false
+    end
+    local cfg = self._eventPoint:GetEventPointCfg()
+    if cfg and cfg.UISignOffset then
+      self._rootTransform.localPosition = Vector3(cfg.UISignOffset[1], cfg.UISignOffset[2], cfg.UISignOffset[3])
+    end
+    self:RefreshPosition()
+  else
+    self:Clear()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIMood.RefreshPosition = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonUIMood:RefreshPosition()
   if self._eventPoint then
-    local show = (self._eventPoint):IsShow()
-    if (self._eventPoint):EventPointType() == SeasonEventPointType.MainLevel and show then
-      show = (self._eventPoint):IsLastMainLevelGroup()
+    local show = self._eventPoint:IsShow()
+    if self._eventPoint:EventPointType() == SeasonEventPointType.MainLevel and show then
+      show = self._eventPoint:IsLastMainLevelGroup()
     end
-    ;
-    (self._gameObject):SetActive(show)
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self._gameObject).transform).position = (self._eventPoint):Position()
+    self._gameObject:SetActive(show)
+    self._gameObject.transform.position = self._eventPoint:Position()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIMood.EventPoint = function(self)
-  -- function num : 0_4
+function SeasonUIMood:EventPoint()
   return self._eventPoint
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIMood.IsFree = function(self)
-  -- function num : 0_5
-  do return self._eventPoint == nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SeasonUIMood:IsFree()
+  return self._eventPoint == nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIMood.Clear = function(self)
-  -- function num : 0_6
+function SeasonUIMood:Clear()
   self._eventPoint = nil
-  ;
-  (self._gameObject):SetActive(false)
+  self._gameObject:SetActive(false)
 end
-
-

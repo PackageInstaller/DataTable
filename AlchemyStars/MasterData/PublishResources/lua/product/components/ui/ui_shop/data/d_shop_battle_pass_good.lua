@@ -1,111 +1,69 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/data/d_shop_battle_pass_good.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("d_shop_secret_good_base")
 _class("DShopBattlePassGood", DShopSecretGoodBase)
 DShopBattlePassGood = DShopBattlePassGood
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DShopBattlePassGood.Refresh = function(self, goodinfo, goodconfig)
-  -- function num : 0_0 , upvalues : _ENV
-  (DShopSecretGoodBase.Refresh)(self, goodinfo, goodconfig)
+function DShopBattlePassGood:Refresh(goodinfo, goodconfig)
+  DShopSecretGoodBase.Refresh(self, goodinfo, goodconfig)
   if not self.cfg then
-    (Log.error)("服务器传来的商品配置缺失 商品id：" .. tostring(self.goodId) .. " 防御..使用本地配置")
-    self.localCfg = (Cfg.cfg_shop_battlepass_goods)[self.goodId]
+    Log.error("服务器传来的商品配置缺失 商品id：" .. tostring(self.goodId) .. " 防御..使用本地配置")
+    self.localCfg = Cfg.cfg_shop_battlepass_goods[self.goodId]
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopBattlePassGood.GetRemainTotalCount = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  return (self.cfg and (self.cfg)[ConfigKey.ConfigKey_SaleNum]) or (self.localCfg and (self.localCfg).SaleNum) or 1
+function DShopBattlePassGood:GetRemainTotalCount()
+  return self.cfg and self.cfg[ConfigKey.ConfigKey_SaleNum] or self.localCfg and self.localCfg.SaleNum or 1
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopBattlePassGood.ShowRemain = function(self)
-  -- function num : 0_2
+function DShopBattlePassGood:ShowRemain()
   return true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopBattlePassGood.ShowSaleTag = function(self)
-  -- function num : 0_3
+function DShopBattlePassGood:ShowSaleTag()
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopBattlePassGood.GetSaleTag = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local saleTag = (self.cfg and (self.cfg)[ConfigKey.ConfigKey_SaleTag]) or (self.localCfg and (self.localCfg).SaleTag) or 0
+function DShopBattlePassGood:GetSaleTag()
+  local saleTag = self.cfg and self.cfg[ConfigKey.ConfigKey_SaleTag] or self.localCfg and self.localCfg.SaleTag or 0
   if saleTag == 1 then
     return 1
-  else
-    if self.discount > 0 and self.discount < 100 then
-      return self.discount
-    else
-      if saleTag == 0 then
-        return 0
-      end
-    end
+  elseif 0 < self.discount and self.discount < 100 then
+    return self.discount
+  elseif saleTag == 0 then
+    return 0
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopBattlePassGood.GetRefreshTimeStr = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function DShopBattlePassGood:GetRefreshTimeStr()
   if self.localCfg == nil then
-    self.localCfg = (Cfg.cfg_shop_battlepass_goods)[self.goodId]
+    self.localCfg = Cfg.cfg_shop_battlepass_goods[self.goodId]
   end
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local maxEndTime = loginModule:GetTimeStampByTimeStr("2100-12-31 24:00:00", Enum_DateTimeZoneType.E_ZoneType_GMT)
-  if self.localCfg then
-    local refreshTime = loginModule:GetTimeStampByTimeStr((self.localCfg).EndTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  end
+  local refreshTime = self.localCfg and loginModule:GetTimeStampByTimeStr(self.localCfg.EndTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
   if refreshTime == nil then
-    return 
+    return
   end
   if maxEndTime <= refreshTime then
-    return 
+    return
   end
-  local leftSeconds = (UICommonHelper.CalcLeftSeconds)(refreshTime)
+  local leftSeconds = UICommonHelper.CalcLeftSeconds(refreshTime)
   if leftSeconds <= 0 then
-    return 
+    return
   end
   local str = ""
   if leftSeconds <= 0 then
-    str = (StringTable.Get)("str_pay_expired")
+    str = StringTable.Get("str_pay_expired")
+  elseif leftSeconds <= 60 then
+    str = string.format(StringTable.Get("str_pay_left_minute", 1))
+  elseif leftSeconds <= 3600 then
+    local leftMinutes = math.ceil(leftSeconds / 60)
+    str = string.format(StringTable.Get("str_pay_left_minute", leftMinutes))
+  elseif leftSeconds <= 86400 then
+    local leftHours = math.ceil(leftSeconds / 3600)
+    str = string.format(StringTable.Get("str_pay_left_hour", leftHours))
   else
-    if leftSeconds <= 60 then
-      str = (string.format)((StringTable.Get)("str_pay_left_minute", 1))
-    else
-      if leftSeconds <= 3600 then
-        local leftMinutes = (math.ceil)(leftSeconds / 60)
-        str = (string.format)((StringTable.Get)("str_pay_left_minute", leftMinutes))
-      else
-        do
-          if leftSeconds <= 86400 then
-            local leftHours = (math.ceil)(leftSeconds / 3600)
-            str = (string.format)((StringTable.Get)("str_pay_left_hour", leftHours))
-          else
-            do
-              do
-                local leftDays = (math.ceil)(leftSeconds / 86400)
-                str = (string.format)((StringTable.Get)("str_pay_left_day", leftDays))
-                return str
-              end
-            end
-          end
-        end
-      end
-    end
+    local leftDays = math.ceil(leftSeconds / 86400)
+    str = string.format(StringTable.Get("str_pay_left_day", leftDays))
   end
+  return str
 end
-
-

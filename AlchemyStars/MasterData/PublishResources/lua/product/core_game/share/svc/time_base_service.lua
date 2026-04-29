@@ -1,39 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/svc/time_base_service.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TimeBaseService", BaseService)
 TimeBaseService = TimeBaseService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TimeBaseService.Constructor = function(self, world)
-  -- function num : 0_0
+function TimeBaseService:Constructor(world)
   self._FrameRate = 30
   self._DeltaTime = 1 / self._FrameRate
   self._DeltaTimeMS = self._DeltaTime * 1000
   self._CurTimeMS = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeBaseService.GetDeltaTime = function(self)
-  -- function num : 0_1
+function TimeBaseService:GetDeltaTime()
   return self._DeltaTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeBaseService.GetDeltaTimeMs = function(self)
-  -- function num : 0_2
+function TimeBaseService:GetDeltaTimeMs()
   return self._DeltaTimeMS
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeBaseService.GetCurrentTimeMs = function(self)
-  -- function num : 0_3
+function TimeBaseService:GetCurrentTimeMs()
   return self._CurTimeMS
 end
-
-

@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_deactive_curse_tower.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicDeactiveCurseTower", BuffLogicBase)
 BuffLogicDeactiveCurseTower = BuffLogicDeactiveCurseTower
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDeactiveCurseTower.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicDeactiveCurseTower:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDeactiveCurseTower.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicDeactiveCurseTower:DoLogic()
+  local e = self._buffInstance:Entity()
   local curseTowerCmpt = e:CurseTower()
   if not curseTowerCmpt then
-    return 
+    return
   end
   curseTowerCmpt:SetTowerState(CurseTowerState.Deactive)
   return true
 end
-
-

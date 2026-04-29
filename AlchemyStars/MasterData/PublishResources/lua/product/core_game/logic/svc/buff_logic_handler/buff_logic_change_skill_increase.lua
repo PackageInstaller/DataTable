@@ -1,88 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_skill_increase.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillIncrease", BuffLogicBase)
 BuffLogicChangeSkillIncrease = BuffLogicChangeSkillIncrease
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillIncrease.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeSkillIncrease:Constructor(buffInstance, logicParam)
   self._changeValue = logicParam.changeValue or 0
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffInstance)._effectList = logicParam.effectList
+  self._buffInstance._effectList = logicParam.effectList
   self._layer = logicParam.layer or 0
   self._entity = buffInstance._entity
   self._light = logicParam.light
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffInstance).BuffLogicChangeSkillIncrease_RunCount = 0
+  self._buffInstance.BuffLogicChangeSkillIncrease_RunCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillIncrease.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._buffInstance).BuffLogicChangeSkillIncrease_RunCount = (self._buffInstance).BuffLogicChangeSkillIncrease_RunCount + 1
+function BuffLogicChangeSkillIncrease:DoLogic()
+  self._buffInstance.BuffLogicChangeSkillIncrease_RunCount = self._buffInstance.BuffLogicChangeSkillIncrease_RunCount + 1
   if self._layer > 0 then
-    (self._buffInstance):AddLayerCount(self._layer)
+    self._buffInstance:AddLayerCount(self._layer)
   end
-  local newChangeValue = (self._buffInstance).BuffLogicChangeSkillIncrease_RunCount * self._changeValue
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):ChangeSkillIncrease(self._entity, self:GetBuffSeq(), paramType, newChangeValue)
+  local newChangeValue = self._buffInstance.BuffLogicChangeSkillIncrease_RunCount * self._changeValue
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:ChangeSkillIncrease(self._entity, self:GetBuffSeq(), paramType, newChangeValue)
   end
   if not self._light then
-    return 
+    return
   end
   local ret = BuffResultChangeSkillIncrease:New(self._light)
   return ret
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillIncrease.DoOverlap = function(self)
-  -- function num : 0_2
+function BuffLogicChangeSkillIncrease:DoOverlap()
   return self:DoLogic()
 end
 
 _class("BuffLogicRemoveSkillIncrease", BuffLogicBase)
 BuffLogicRemoveSkillIncrease = BuffLogicRemoveSkillIncrease
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveSkillIncrease.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicRemoveSkillIncrease:Constructor(buffInstance, logicParam)
   self._entity = buffInstance._entity
   self._black = logicParam.black ~= nil
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveSkillIncrease.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._buffInstance).BuffLogicChangeSkillIncrease_RunCount = 0
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillIncrease(self._entity, self:GetBuffSeq(), paramType)
+function BuffLogicRemoveSkillIncrease:DoLogic()
+  self._buffInstance.BuffLogicChangeSkillIncrease_RunCount = 0
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillIncrease(self._entity, self:GetBuffSeq(), paramType)
   end
   if not self._black then
-    return 
+    return
   end
   local ret = BuffResultRemoveSkillIncrease:New(self._black)
   return ret
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveSkillIncrease.DoOverlap = function(self)
-  -- function num : 0_5
+function BuffLogicRemoveSkillIncrease:DoOverlap()
 end
-
-

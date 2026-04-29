@@ -1,169 +1,137 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/System/coroutine.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local create = coroutine.create
 local running = coroutine.running
 local resume = coroutine.resume
 local yield = coroutine.yield
-local error = error
+local error = _ENV.error
 local unpack = table.unpack
-local debug = debug
-local FrameTimer = FrameTimer
-local CoTimer = CoTimer
+local debug = _ENV.debug
+local FrameTimer = _ENV.FrameTimer
+local CoTimer = _ENV.CoTimer
 local comap = {}
 local pool = {}
 setmetatable(comap, {__mode = "kv"})
--- DECOMPILER ERROR at PC23: Confused about usage of register: R11 in 'UnsetPending'
 
-coroutine.start = function(f, ...)
-  -- function num : 0_0 , upvalues : create, running, resume, error, debug, comap, unpack, _ENV, pool, FrameTimer
+function coroutine.start(f, ...)
   local co = create(f)
   if running() == nil then
     local flag, msg = resume(co, ...)
-    do
-      if not flag then
-        do
-          error((debug.traceback)(co, msg))
-          -- DECOMPILER ERROR at PC19: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC19: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+    if not flag then
+      error(debug.traceback(co, msg))
     end
   else
-    local args = {...}
-    local timer = nil
-    local action = function()
-    -- function num : 0_0_0 , upvalues : comap, co, timer, resume, unpack, args, _ENV, pool, error, debug
-    comap[co] = nil
-    timer.func = nil
-    local flag, msg = resume(co, unpack(args, 1, (table.maxn)(args)))
-    ;
-    (table.insert)(pool, timer)
-    if not flag then
-      timer:Stop()
-      error((debug.traceback)(co, msg))
+    local args = {
+      ...
+    }
+    local timer
+    
+    local function action()
+      comap[co] = nil
+      timer.func = nil
+      local flag, msg = resume(co, unpack(args, 1, table.maxn(args)))
+      table.insert(pool, timer)
+      if not flag then
+        timer:Stop()
+        error(debug.traceback(co, msg))
+      end
     end
-  end
-
-    if #pool > 0 then
-      timer = (table.remove)(pool)
+    
+    if 0 < #pool then
+      timer = table.remove(pool)
       timer:Reset(action, 0, 1)
     else
-      timer = (FrameTimer.New)(action, 0, 1)
+      timer = FrameTimer.New(action, 0, 1)
     end
     comap[co] = timer
     timer:Start()
   end
-  do
-    return co
-  end
+  return co
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R11 in 'UnsetPending'
-
-coroutine.wait = function(t, co, ...)
-  -- function num : 0_1 , upvalues : running, comap, resume, unpack, _ENV, error, debug, CoTimer, yield
-  local args = {...}
-  if not co then
-    co = running()
-  end
-  local timer = nil
-  local action = function()
-    -- function num : 0_1_0 , upvalues : comap, co, timer, resume, unpack, args, _ENV, error, debug
+function coroutine.wait(t, co, ...)
+  local args = {
+    ...
+  }
+  co = co or running()
+  local timer
+  
+  local function action()
     comap[co] = nil
     timer.func = nil
-    local flag, msg = resume(co, unpack(args, 1, (table.maxn)(args)))
+    local flag, msg = resume(co, unpack(args, 1, table.maxn(args)))
     if not flag then
       timer:Stop()
-      error((debug.traceback)(co, msg))
-      return 
+      error(debug.traceback(co, msg))
+      return
     end
   end
-
-  timer = (CoTimer.New)(action, t, 1)
+  
+  timer = CoTimer.New(action, t, 1)
   comap[co] = timer
   timer:Start()
   return yield()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R11 in 'UnsetPending'
-
-coroutine.step = function(t, co, ...)
-  -- function num : 0_2 , upvalues : running, comap, resume, unpack, _ENV, pool, error, debug, FrameTimer, yield
-  local args = {...}
-  if not co then
-    co = running()
-  end
-  local timer = nil
-  local action = function()
-    -- function num : 0_2_0 , upvalues : comap, co, timer, resume, unpack, args, _ENV, pool, error, debug
+function coroutine.step(t, co, ...)
+  local args = {
+    ...
+  }
+  co = co or running()
+  local timer
+  
+  local function action()
     comap[co] = nil
     timer.func = nil
-    local flag, msg = resume(co, unpack(args, 1, (table.maxn)(args)))
-    ;
-    (table.insert)(pool, timer)
+    local flag, msg = resume(co, unpack(args, 1, table.maxn(args)))
+    table.insert(pool, timer)
     if not flag then
       timer:Stop()
-      error((debug.traceback)(co, msg))
-      return 
+      error(debug.traceback(co, msg))
+      return
     end
   end
-
-  if #pool > 0 then
-    timer = (table.remove)(pool)
+  
+  if 0 < #pool then
+    timer = table.remove(pool)
     timer:Reset(action, t or 1, 1)
   else
-    timer = (FrameTimer.New)(action, t or 1, 1)
+    timer = FrameTimer.New(action, t or 1, 1)
   end
   comap[co] = timer
   timer:Start()
   return yield()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R11 in 'UnsetPending'
-
-coroutine.www = function(www, co)
-  -- function num : 0_3 , upvalues : running, comap, resume, _ENV, pool, error, debug, FrameTimer, yield
-  if not co then
-    co = running()
-  end
-  local timer = nil
-  local action = function()
-    -- function num : 0_3_0 , upvalues : www, comap, co, timer, resume, _ENV, pool, error, debug
+function coroutine.www(www, co)
+  co = co or running()
+  local timer
+  
+  local function action()
     if not www.isDone then
-      return 
+      return
     end
     comap[co] = nil
     timer:Stop()
     timer.func = nil
     local flag, msg = resume(co)
-    ;
-    (table.insert)(pool, timer)
+    table.insert(pool, timer)
     if not flag then
-      error((debug.traceback)(co, msg))
-      return 
+      error(debug.traceback(co, msg))
+      return
     end
   end
-
-  if #pool > 0 then
-    timer = (table.remove)(pool)
+  
+  if 0 < #pool then
+    timer = table.remove(pool)
     timer:Reset(action, 1, -1)
   else
-    timer = (FrameTimer.New)(action, 1, -1)
+    timer = FrameTimer.New(action, 1, -1)
   end
   comap[co] = timer
   timer:Start()
   return yield()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R11 in 'UnsetPending'
-
-coroutine.stop = function(co)
-  -- function num : 0_4 , upvalues : comap
+function coroutine.stop(co)
   local timer = comap[co]
   if timer ~= nil then
     comap[co] = nil
@@ -171,5 +139,3 @@ coroutine.stop = function(co)
     timer.func = nil
   end
 end
-
-

@@ -1,34 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_overload_state.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewSetOverloadState", BuffViewBase)
 BuffViewSetOverloadState = BuffViewSetOverloadState
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewSetOverloadState.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  if (self._entity):HasPetPstID() then
-    local petPstIDCmpt = (self._entity):PetPstID()
+function BuffViewSetOverloadState:PlayView(TT)
+  if self._entity:HasPetPstID() then
+    local petPstIDCmpt = self._entity:PetPstID()
     local petPstID = petPstIDCmpt:GetPstID()
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.SetPetOverloadState, 1, petPstID)
+    self._world:EventDispatcher():Dispatch(GameEventType.SetPetOverloadState, 1, petPstID)
   end
 end
 
 _class("BuffViewResetOverloadState", BuffViewBase)
 BuffViewResetOverloadState = BuffViewResetOverloadState
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewResetOverloadState.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._entity):HasPetPstID() then
-    local petPstIDCmpt = (self._entity):PetPstID()
+function BuffViewResetOverloadState:PlayView(TT)
+  if self._entity:HasPetPstID() then
+    local petPstIDCmpt = self._entity:PetPstID()
     local petPstID = petPstIDCmpt:GetPstID()
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.SetPetOverloadState, 0, petPstID)
+    self._world:EventDispatcher():Dispatch(GameEventType.SetPetOverloadState, 0, petPstID)
   end
 end
-
-

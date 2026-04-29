@@ -1,67 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/common/ui_season_maze_room_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRoomBase", UIController)
 UISeasonMazeRoomBase = UISeasonMazeRoomBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoomBase.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazeRoomBase:OnShow(uiParams)
   self._uiParams = uiParams
-  self._seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self._seasonMazeObj = (self._seasonMazeModule):CurSeasonObj()
-  self._component = (self._seasonMazeObj):GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
-  self._comInfo = (self._component):GetComponentInfo()
-  self._comCfgID = ((self._seasonMazeObj):GetMazeComponent()):GetComponentCfgId()
-  self._nodeID = (self._uiParams)[1]
-  self._roomInfo = ((self._comInfo).rooms)[self._nodeID]
+  self._seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self._seasonMazeObj = self._seasonMazeModule:CurSeasonObj()
+  self._component = self._seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+  self._comInfo = self._component:GetComponentInfo()
+  self._comCfgID = self._seasonMazeObj:GetMazeComponent():GetComponentCfgId()
+  self._nodeID = self._uiParams[1]
+  self._roomInfo = self._comInfo.rooms[self._nodeID]
   self:OnShowUI()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBase.RefreshRoomInfo = function(self)
-  -- function num : 0_1
-  self._roomInfo = ((self._comInfo).rooms)[self._nodeID]
+function UISeasonMazeRoomBase:RefreshRoomInfo()
+  self._roomInfo = self._comInfo.rooms[self._nodeID]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBase.OnShowUI = function(self)
-  -- function num : 0_2
+function UISeasonMazeRoomBase:OnShowUI()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBase.OnHideUI = function(self, ...)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSeasonMazeRoomOperationFinish, ...)
+function UISeasonMazeRoomBase:OnHideUI(...)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSeasonMazeRoomOperationFinish, ...)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBase.ShowLeaveBtn = function(self)
-  -- function num : 0_4
+function UISeasonMazeRoomBase:ShowLeaveBtn()
   local leave = self:GetUIComponent("UISelectObjectPath", "UISMazeRoomLeaveBtn")
   local btn = leave:SpawnObject("UISMazeRoomLeaveBtn")
   btn:SetData(function()
-    -- function num : 0_4_0 , upvalues : self
     self:OnlyHideUI()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBase.OnlyHideUI = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((self._seasonMazeModule):UIModule()):SetTempRoom(self:GetName())
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTempCloseRoom, true)
+function UISeasonMazeRoomBase:OnlyHideUI()
+  self._seasonMazeModule:UIModule():SetTempRoom(self:GetName())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTempCloseRoom, true)
   self:CloseDialog()
 end
-
-

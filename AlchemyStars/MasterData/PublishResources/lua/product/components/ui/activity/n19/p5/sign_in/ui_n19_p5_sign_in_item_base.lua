@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n19/p5/sign_in/ui_n19_p5_sign_in_item_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN19P5SignInBase", UICustomWidget)
 UIN19P5SignInBase = UIN19P5SignInBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN19P5SignInBase.OnShow = function(self)
-  -- function num : 0_0
+function UIN19P5SignInBase:OnShow()
   self:GetComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInBase.GetComponent = function(self)
-  -- function num : 0_1
+function UIN19P5SignInBase:GetComponent()
   self.big = self:GetGameObject("big")
   self.smallUp = self:GetGameObject("smallUp")
   self.smallDown = self:GetGameObject("smallDown")
@@ -28,71 +18,44 @@ UIN19P5SignInBase.GetComponent = function(self)
   self:AwardPos()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInBase.Flush = function(self, idx, awards, status, type, callback)
-  -- function num : 0_2
+function UIN19P5SignInBase:Flush(idx, awards, status, type, callback)
   self.status = status
   self.type = type
   self._day = idx
-  if not awards then
-    self._awards = {}
-    self:Refresh()
-  end
+  self._awards = awards or {}
+  self:Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInBase.Type = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN19P5SignInBase:Type()
   if self.type == UIN19P5SignInPosType.Current then
-    (self.big):SetActive(true)
-    ;
-    (self.smallUp):SetActive(false)
-    ;
-    (self.smallDown):SetActive(false)
-  else
-    if self.type == UIN19P5SignInPosType.Down then
-      (self.big):SetActive(false)
-      ;
-      (self.smallUp):SetActive(false)
-      ;
-      (self.smallDown):SetActive(true)
-    else
-      if self.type == UIN19P5SignInPosType.Up then
-        (self.big):SetActive(false)
-        ;
-        (self.smallUp):SetActive(true)
-        ;
-        (self.smallDown):SetActive(false)
-      end
-    end
+    self.big:SetActive(true)
+    self.smallUp:SetActive(false)
+    self.smallDown:SetActive(false)
+  elseif self.type == UIN19P5SignInPosType.Down then
+    self.big:SetActive(false)
+    self.smallUp:SetActive(false)
+    self.smallDown:SetActive(true)
+  elseif self.type == UIN19P5SignInPosType.Up then
+    self.big:SetActive(false)
+    self.smallUp:SetActive(true)
+    self.smallDown:SetActive(false)
   end
   self:Award()
   self:Day()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInBase.RefreshType = function(self, type)
-  -- function num : 0_4
+function UIN19P5SignInBase:RefreshType(type)
   self.type = type
   self:Type()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInBase.RefreshStatus = function(self, status)
-  -- function num : 0_5
+function UIN19P5SignInBase:RefreshStatus(status)
   self.status = status
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInBase.Award = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local pool, posIdx, widgetName = nil, nil, nil
+function UIN19P5SignInBase:Award()
+  local pool, posIdx, widgetName
   local gray = self.status ~= UIN19P5SignInStatus.Get
   if self.type == UIN19P5SignInPosType.Up then
     pool = self.smallUpPool
@@ -111,74 +74,67 @@ UIN19P5SignInBase.Award = function(self)
   local pools = pool:GetAllSpawnList()
   for i = 1, #pools do
     local item = pools[i]
-    local award = (self._awards)[i]
-    local pos = (((self.awardPos)[posIdx])[1])[i]
-    local countPos = (((self.awardPos)[posIdx])[2])[i]
+    local award = self._awards[i]
+    local pos = self.awardPos[posIdx][1][i]
+    local countPos = self.awardPos[posIdx][2][i]
     item:SetData(i, award, nil, gray, pos, countPos)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInBase.AwardPos = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN19P5SignInBase:AwardPos()
   self.awardPos = {
-[1] = {
-[1] = {[1] = Vector2(0, 0), [2] = Vector2(0, 40)}
-, 
-[2] = {[1] = Vector2(70, -40), [2] = Vector2(79, -60)}
-}
-, 
-[2] = {
-[1] = {[1] = Vector2(0, 0), [2] = Vector2(0, 30)}
-, 
-[2] = {[1] = Vector2(47, -26), [2] = Vector2(56, -41)}
-}
-}
+    [1] = {
+      [1] = {
+        [1] = Vector2(0, 0),
+        [2] = Vector2(0, 40)
+      },
+      [2] = {
+        [1] = Vector2(70, -40),
+        [2] = Vector2(79, -60)
+      }
+    },
+    [2] = {
+      [1] = {
+        [1] = Vector2(0, 0),
+        [2] = Vector2(0, 30)
+      },
+      [2] = {
+        [1] = Vector2(47, -26),
+        [2] = Vector2(56, -41)
+      }
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInBase.Day = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local day = nil
+function UIN19P5SignInBase:Day()
+  local day
   if self.type == UIN19P5SignInPosType.Up then
     day = self.smallUpDay
-  else
-    if self.type == UIN19P5SignInPosType.Current then
-      day = self.bigDay
-    else
-      if self.type == UIN19P5SignInPosType.Down then
-        day = self.smallDownDay
-      end
-    end
+  elseif self.type == UIN19P5SignInPosType.Current then
+    day = self.bigDay
+  elseif self.type == UIN19P5SignInPosType.Down then
+    day = self.smallDownDay
   end
   day:SetText(self._day)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInBase.Select = function(self, idx)
-  -- function num : 0_9
+function UIN19P5SignInBase:Select(idx)
   if self.idx == idx then
     if self.isOpen then
-      (self.small):SetActive(false)
-      ;
-      (self.big):SetActive(true)
-      if self.isOpen then
-        (self.small):SetActive(true)
-        ;
-        (self.big):SetActive(false)
-      end
+    else
+      self.small:SetActive(false)
+      self.big:SetActive(true)
+    end
+  else
+    if self.isOpen then
+      self.small:SetActive(true)
+      self.big:SetActive(false)
+    else
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInBase.Refresh = function(self)
-  -- function num : 0_10
+function UIN19P5SignInBase:Refresh()
   self:Type()
 end
 
@@ -186,13 +142,10 @@ _class("UIN19P5SignInLock", UIN19P5SignInBase)
 UIN19P5SignInLock = UIN19P5SignInLock
 _class("UIN19P5SignInGet", UIN19P5SignInBase)
 UIN19P5SignInGet = UIN19P5SignInGet
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN19P5SignInGet.GetBtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIN19P5SignInGet, self._day)
+function UIN19P5SignInGet:GetBtnOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIN19P5SignInGet, self._day)
 end
 
 _class("UIN19P5SignInFinish", UIN19P5SignInBase)
 UIN19P5SignInFinish = UIN19P5SignInFinish
-

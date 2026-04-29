@@ -1,13 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/trap/1300800/cfg_skill_view_13008001.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 2, 0, 1, 0, 0, 
-{" PlayCasterAnimation,animName = AtkUlt; PlayCasterBindEffect,effectID=1717; PlayAudio,audioID = 3052,audioType=1; Wait,waitTime=3000; DataSelectScopeGridRange,effectType=11; DataSortScopeGridRange,sortType=3; DataSelectScopeGridRangeIndex,index=1; PlayGridRangeEffect,effectID=1718,label=playRangeEffect; Wait,waitTime=2000; PlaySummonTrap,trapID=2003; DataSelectNextScopeGridRange; Jump,condition=CheckCurrentScopeGridRangeIndexValid,goto=playRangeEffect; Wait,waitTime=1500; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    2,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName = AtkUlt; PlayCasterBindEffect,effectID=1717; PlayAudio,audioID = 3052,audioType=1; Wait,waitTime=3000; DataSelectScopeGridRange,effectType=11; DataSortScopeGridRange,sortType=3; DataSelectScopeGridRangeIndex,index=1; PlayGridRangeEffect,effectID=1718,label=playRangeEffect; Wait,waitTime=2000; PlaySummonTrap,trapID=2003; DataSelectNextScopeGridRange; Jump,condition=CheckCurrentScopeGridRangeIndexValid,goto=playRangeEffect; Wait,waitTime=1500; "
+    }
+  }
 }
 return config, "ID", key
-

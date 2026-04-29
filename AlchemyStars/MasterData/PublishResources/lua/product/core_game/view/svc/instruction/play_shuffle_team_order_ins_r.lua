@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_shuffle_team_order_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayShuffleTeamOrderInstruction", BaseInstruction)
 PlayShuffleTeamOrderInstruction = PlayShuffleTeamOrderInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayShuffleTeamOrderInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayShuffleTeamOrderInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local result = routineComponent:GetEffectResultByArray(SkillEffectType.ShufflePetTeamOrder)
   if not result then
-    return 
+    return
   end
   local eTeam = world:GetEntityByID(result:GetTargetEntityID())
   local tOldTeamOrder = result:GetOldTeamOrder()
@@ -25,35 +18,22 @@ PlayShuffleTeamOrderInstruction.DoInstruction = function(self, TT, casterEntity,
   local seqNo = request:GetRequestSequenceNo()
   local renderBattleService = world:GetService("RenderBattle")
   local renderSetTeamLeaderTriggered = false
-  while 1 do
-    if not (world:RenderBattleStat()):IsChangeTeamOrderRequestFinished(seqNo) then
-      local currentRequest = renderBattleService:GetCurrentChangeTeamOrderViewRequest()
-      local currentSeqNo = currentRequest and currentRequest:GetRequestSequenceNo() or nil
-      if not renderSetTeamLeaderTriggered and (not currentSeqNo or currentSeqNo == seqNo) and tOldTeamOrder[1] ~= tNewTeamOrder[1] then
-        renderSetTeamLeaderTriggered = true
-        local battleRenderSvc = world:GetService("RenderBattle")
-        battleRenderSvc:RenderChangeTeamLeader(tNewTeamOrder[1], tOldTeamOrder[1])
-      end
-      do
-        do
-          YIELD(TT)
-          -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  while not world:RenderBattleStat():IsChangeTeamOrderRequestFinished(seqNo) do
+    local currentRequest = renderBattleService:GetCurrentChangeTeamOrderViewRequest()
+    local currentSeqNo = currentRequest and currentRequest:GetRequestSequenceNo() or nil
+    if not renderSetTeamLeaderTriggered and (not currentSeqNo or currentSeqNo == seqNo) and tOldTeamOrder[1] ~= tNewTeamOrder[1] then
+      renderSetTeamLeaderTriggered = true
+      local battleRenderSvc = world:GetService("RenderBattle")
+      battleRenderSvc:RenderChangeTeamLeader(tNewTeamOrder[1], tOldTeamOrder[1])
+    end
+    YIELD(TT)
+    if world:RenderBattleStat():IsChangeTeamOrderViewDisabled() then
+      break
     end
   end
-  if not (world:RenderBattleStat()):IsChangeTeamOrderViewDisabled() then
-    local playBuffSvc = world:GetService("PlayBuff")
-    local ntTeamOrderChange = NTTeamOrderChange:New(eTeam, tOldTeamOrder, tNewTeamOrder)
-    playBuffSvc:PlayBuffView(TT, ntTeamOrderChange)
-    local playDamageService = world:GetService("PlayDamage")
-    playDamageService:OnTeamOrderChangeRefresh()
-  end
+  local playBuffSvc = world:GetService("PlayBuff")
+  local ntTeamOrderChange = NTTeamOrderChange:New(eTeam, tOldTeamOrder, tNewTeamOrder)
+  playBuffSvc:PlayBuffView(TT, ntTeamOrderChange)
+  local playDamageService = world:GetService("PlayDamage")
+  playDamageService:OnTeamOrderChangeRefresh()
 end
-
-

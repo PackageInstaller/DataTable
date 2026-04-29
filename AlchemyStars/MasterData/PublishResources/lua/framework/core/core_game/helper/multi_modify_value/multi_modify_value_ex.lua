@@ -1,13 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/helper/multi_modify_value/multi_modify_value_ex.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MultModifyBool_AND", MultModifyValue)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-MultModifyBool_AND.Constructor = function(self, baseValue)
-  -- function num : 0_0
+function MultModifyBool_AND:Constructor(baseValue)
   self.defaultValueType = "boolean"
   if baseValue == nil then
     self.baseValue = true
@@ -17,14 +10,11 @@ MultModifyBool_AND.Constructor = function(self, baseValue)
   end
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-MultModifyBool_AND.CalcuCurValue = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  for i,v in ipairs(self.valueModifyList) do
+function MultModifyBool_AND:CalcuCurValue()
+  for i, v in ipairs(self.valueModifyList) do
     if not v then
       self.value = false
-      return 
+      return
     end
   end
   self.value = true
@@ -32,13 +22,11 @@ end
 
 _class("MultModifyValue_Last", MultModifyValue)
 MultModifyValue_Last = MultModifyValue_Last
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
 
-MultModifyValue_Last.CalcuCurValue = function(self)
-  -- function num : 0_2
+function MultModifyValue_Last:CalcuCurValue()
   local size = #self.valueModifyList
-  if size > 0 then
-    self.value = ((self.valueModifyList)[size])[2]
+  if 0 < size then
+    self.value = self.valueModifyList[size][2]
   else
     self.value = self.baseValue
   end
@@ -46,98 +34,80 @@ end
 
 _class("MultModifyValue_Add", MultModifyValue)
 MultModifyValue_Add = MultModifyValue_Add
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
 
-MultModifyValue_Add.CalcuCurValue = function(self)
-  -- function num : 0_3
+function MultModifyValue_Add:CalcuCurValue()
   local size = #self.valueModifyList
-  if size > 0 then
+  if 0 < size then
     local val = 0
     for i = 1, size do
-      val = val + ((self.valueModifyList)[i])[2]
+      val = val + self.valueModifyList[i][2]
     end
     self.value = val + self.baseValue
   else
-    do
-      self.value = self.baseValue
-    end
+    self.value = self.baseValue
   end
 end
 
 _class("MultModifyValue_Mul", MultModifyValue)
 MultModifyValue_Mul = MultModifyValue_Mul
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
 
-MultModifyValue_Mul.CalcuCurValue = function(self)
-  -- function num : 0_4
+function MultModifyValue_Mul:CalcuCurValue()
   local size = #self.valueModifyList
-  if size > 0 then
+  if 0 < size then
     local val = 1
     for i = 1, size do
-      val = val * ((self.valueModifyList)[i])[2]
+      val = val * self.valueModifyList[i][2]
     end
     self.value = val * self.baseValue
   else
-    do
-      self.value = self.baseValue
-    end
+    self.value = self.baseValue
   end
 end
 
 _class("MultModifyValue_Max", MultModifyValue)
 MultModifyValue_Max = MultModifyValue_Max
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
 
-MultModifyValue_Max.CalcuCurValue = function(self)
-  -- function num : 0_5
+function MultModifyValue_Max:CalcuCurValue()
   local max = self.baseValue
   local size = #self.valueModifyList
-  if size > 0 then
+  if 0 < size then
     for i = 1, size do
-      local val = ((self.valueModifyList)[i])[2]
+      local val = self.valueModifyList[i][2]
       if max < val then
         max = val
       end
     end
   end
-  do
-    self.value = max
-  end
+  self.value = max
 end
 
 _class("MultModifyValue_Min", MultModifyValue)
 MultModifyValue_Min = MultModifyValue_Min
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
 
-MultModifyValue_Min.CalcuCurValue = function(self)
-  -- function num : 0_6
+function MultModifyValue_Min:CalcuCurValue()
   local min = self.baseValue
   local size = #self.valueModifyList
-  if size > 0 then
+  if 0 < size then
     for i = 1, size do
-      local val = ((self.valueModifyList)[i])[2]
-      if val < min then
+      local val = self.valueModifyList[i][2]
+      if min > val then
         min = val
       end
     end
   end
-  do
-    self.value = min
-  end
+  self.value = min
 end
 
 _class("MultModifyValue_AddMinMax", MultModifyValue)
 MultModifyValue_AddMinMax = MultModifyValue_AddMinMax
--- DECOMPILER ERROR at PC63: Confused about usage of register: R0 in 'UnsetPending'
 
-MultModifyValue_AddMinMax.CalcuCurValue = function(self)
-  -- function num : 0_7
+function MultModifyValue_AddMinMax:CalcuCurValue()
   local min, max = 0, 0
   local size = #self.valueModifyList
-  if size > 0 then
+  if 0 < size then
     for i = 1, size do
-      local val = ((self.valueModifyList)[i])[2]
-      if val < min then
+      local val = self.valueModifyList[i][2]
+      if min > val then
         min = val
       end
       if max < val then
@@ -145,45 +115,35 @@ MultModifyValue_AddMinMax.CalcuCurValue = function(self)
       end
     end
   end
-  do
-    self.value = self.baseValue + min + max
-  end
+  self.value = self.baseValue + min + max
 end
 
 MultModifyOperator = {PLUS = 1, MULTIPLY = 2}
 _class("MultModifyValue_Complex", MultModifyValue)
 MultModifyValue_Complex = MultModifyValue_Complex
--- DECOMPILER ERROR at PC76: Confused about usage of register: R0 in 'UnsetPending'
 
-MultModifyValue_Complex.AddModify = function(self, value, modifyID, operation)
-  -- function num : 0_8 , upvalues : _ENV
-  if not modifyID then
-    modifyID = 1
-  end
+function MultModifyValue_Complex:AddModify(value, modifyID, operation)
+  modifyID = modifyID or 1
   self:RemoveModify(modifyID)
-  ;
-  (table.insert)(self.valueModifyList, {modifyID, value, operation})
+  table.insert(self.valueModifyList, {
+    modifyID,
+    value,
+    operation
+  })
   self:CalcuCurValue()
   return modifyID
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R0 in 'UnsetPending'
-
-MultModifyValue_Complex.CalcuCurValue = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function MultModifyValue_Complex:CalcuCurValue()
   local ret = self.baseValue
   for i = 1, #self.valueModifyList do
-    local val = ((self.valueModifyList)[i])[2]
-    local opt = ((self.valueModifyList)[i])[3]
+    local val = self.valueModifyList[i][2]
+    local opt = self.valueModifyList[i][3]
     if opt == MultModifyOperator.PLUS then
       ret = ret + val
-    else
-      if opt == MultModifyOperator.MULTIPLY then
-        ret = (ret) * val
-      end
+    elseif opt == MultModifyOperator.MULTIPLY then
+      ret = ret * val
     end
   end
   self.value = ret
 end
-
-

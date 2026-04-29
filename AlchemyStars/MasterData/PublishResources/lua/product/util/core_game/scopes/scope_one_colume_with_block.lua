@@ -1,30 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_one_colume_with_block.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_OneColumeWithBlock", SkillScopeCalculator_Base)
 SkillScopeCalculator_OneColumeWithBlock = SkillScopeCalculator_OneColumeWithBlock
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_OneColumeWithBlock.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_OneColumeWithBlock:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local casterPos = centerPos
   local targetArea = {}
   local wholeArea = {}
-  local posA = (Vector2.New)(casterPos.x, 0)
+  local posA = Vector2.New(casterPos.x, 0)
   self:_CalcHitBackOnDir(casterPos, posA, self._gridFilter, wholeArea, targetArea)
   local boardMaxY = BattleConst.DefaultMaxY
-  do
-    if (self._gridFilter)._world then
-      local boardServiceLogic = ((self._gridFilter)._world):GetService("BoardLogic")
-      boardMaxY = boardServiceLogic:GetCurBoardMaxY()
-    end
-    local posB = (Vector2.New)(casterPos.x, boardMaxY)
-    self:_CalcHitBackOnDir(casterPos, posB, self._gridFilter, wholeArea, targetArea)
-    return SkillScopeResult:New(SkillScopeType.OneColumeWithBlock, casterPos, targetArea, wholeArea)
+  if self._gridFilter._world then
+    local boardServiceLogic = self._gridFilter._world:GetService("BoardLogic")
+    boardMaxY = boardServiceLogic:GetCurBoardMaxY()
   end
+  local posB = Vector2.New(casterPos.x, boardMaxY)
+  self:_CalcHitBackOnDir(casterPos, posB, self._gridFilter, wholeArea, targetArea)
+  return SkillScopeResult:New(SkillScopeType.OneColumeWithBlock, casterPos, targetArea, wholeArea)
 end
-
-

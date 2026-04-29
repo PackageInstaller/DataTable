@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s1/ui_season_s1_collection_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonS1CollectionTab", UICustomWidget)
 UISeasonS1CollectionTab = UISeasonS1CollectionTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonS1CollectionTab.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonS1CollectionTab:OnShow(uiParams)
   self:InitWidget()
   self._firstItem = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS1CollectionTab.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonS1CollectionTab:InitWidget()
   self.title = self:GetUIComponent("UILocalizationText", "title")
   self.condition = self:GetUIComponent("UILocalizationText", "condition")
   self.time = self:GetUIComponent("UILocalizationText", "time")
@@ -27,141 +17,100 @@ UISeasonS1CollectionTab.InitWidget = function(self)
   self._unlock = self:GetGameObject("Unlock")
   self._lock = self:GetGameObject("Lock")
   self._finalPlotEnterGo = self:GetGameObject("FinalPlotEnter")
-  self._anim = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
+  self._anim = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS1CollectionTab.SetData = function(self, data)
-  -- function num : 0_2
+function UISeasonS1CollectionTab:SetData(data)
   self._collageData = data
   self._seasonID = data:GetSeasonID()
-  local onClick = function(data)
-    -- function num : 0_2_0 , upvalues : self
+  
+  local function onClick(data)
     self:_OnSelect(data)
   end
-
-  local count = (self._collageData):GetCollectionCount()
-  self._items = (self.content):SpawnObjects("UISeasonS1CollageCollectionItem", count)
+  
+  local count = self._collageData:GetCollectionCount()
+  self._items = self.content:SpawnObjects("UISeasonS1CollageCollectionItem", count)
   for i = 1, count do
-    local data = (self._collageData):GetCollectionByIndex(i)
-    ;
-    ((self._items)[i]):SetData(data, onClick)
+    local data = self._collageData:GetCollectionByIndex(i)
+    self._items[i]:SetData(data, onClick)
     if not self._firstItem then
-      self._firstItem = (self._items)[i]
+      self._firstItem = self._items[i]
     end
   end
   self._curSelectIdx = nil
-  self:_OnSelect((self._collageData):GetCollectionByIndex(1))
+  self:_OnSelect(self._collageData:GetCollectionByIndex(1))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS1CollectionTab.SetShow = function(self, show)
-  -- function num : 0_3
-  (self:GetGameObject()):SetActive(show)
+function UISeasonS1CollectionTab:SetShow(show)
+  self:GetGameObject():SetActive(show)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS1CollectionTab._OnSelect = function(self, data)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonS1CollectionTab:_OnSelect(data)
   if self._curSelectIdx == data:Index() then
-    return 
+    return
   end
   if self._curSelectIdx then
-    ((self._items)[self._curSelectIdx]):SetSelect(false)
+    self._items[self._curSelectIdx]:SetSelect(false)
   end
   self._curSelectIdx = data:Index()
-  local item = (self._items)[data:Index()]
+  local item = self._items[data:Index()]
   item:SetSelect(true)
   local cfgID = data:ID()
-  local cfg = (Cfg.cfg_item_season_collection)[cfgID]
+  local cfg = Cfg.cfg_item_season_collection[cfgID]
   if data:IsNew() then
-    (self._collageData):CollectionCancelNew(data)
+    self._collageData:CollectionCancelNew(data)
     item:SetNew(false)
     self:DispatchEvent(GameEventType.UISeasonS1OnSelectCollageItem)
   end
-  ;
-  (self.icon):LoadImage(cfg.HdImage)
-  ;
-  (self._finalPlotEnterGo):SetActive(false)
+  self.icon:LoadImage(cfg.HdImage)
+  self._finalPlotEnterGo:SetActive(false)
   self._finalStoryID = nil
   if data:IsGot() then
-    (self.icon):SetColor(Color.white)
-    local itemCfg = (Cfg.cfg_item)[cfgID]
-    ;
-    (self.condition):SetText((StringTable.Get)(cfg.RequireDesc))
-    ;
-    (self.title):SetText((StringTable.Get)(itemCfg.Name))
-    ;
-    (self.des):SetText((StringTable.Get)(itemCfg.Intro) .. "\n" .. (StringTable.Get)(itemCfg.RpIntro))
+    self.icon:SetColor(Color.white)
+    local itemCfg = Cfg.cfg_item[cfgID]
+    self.condition:SetText(StringTable.Get(cfg.RequireDesc))
+    self.title:SetText(StringTable.Get(itemCfg.Name))
+    self.des:SetText(StringTable.Get(itemCfg.Intro) .. "\n" .. StringTable.Get(itemCfg.RpIntro))
     local time = data:GetTime()
-    ;
-    (self.time):SetText((StringTable.Get)("str_season_require_time", TimeToDate(time)))
-    ;
-    (self._unlock):SetActive(true)
-    ;
-    (self._lock):SetActive(false)
+    self.time:SetText(StringTable.Get("str_season_require_time", TimeToDate(time)))
+    self._unlock:SetActive(true)
+    self._lock:SetActive(false)
     local composeQuestID = cfg.ComposeQuestID
     if composeQuestID then
-      local finalStoryQuestId = nil
-      local seasonClientCfg = (Cfg.cfg_season_campaign_client)[self._seasonID]
+      local finalStoryQuestId
+      local seasonClientCfg = Cfg.cfg_season_campaign_client[self._seasonID]
       if seasonClientCfg then
         finalStoryQuestId = seasonClientCfg.FinalStoryQuestID
       end
       if finalStoryQuestId and finalStoryQuestId == composeQuestID then
-        (self._finalPlotEnterGo):SetActive(true)
+        self._finalPlotEnterGo:SetActive(true)
         self._finalStoryID = cfg.ComposeStoryID
       end
     end
-    do
-      do
-        ;
-        (self._anim):Stop()
-        ;
-        (self._anim):Play("uieffanim_UISeasonS1CollectionTab_in2")
-        ;
-        (self.icon):SetColor(Color(0, 0, 0, 0.8))
-        ;
-        (self._condition2):SetText((StringTable.Get)(cfg.RequireDesc))
-        ;
-        (self._unlock):SetActive(false)
-        ;
-        (self._lock):SetActive(true)
-        ;
-        (self._anim):Stop()
-        ;
-        (self._anim):Play("uieffanim_UISeasonS1CollectionTab_middle")
-      end
-    end
+    self._anim:Stop()
+    self._anim:Play("uieffanim_UISeasonS1CollectionTab_in2")
+  else
+    self.icon:SetColor(Color(0, 0, 0, 0.8))
+    self._condition2:SetText(StringTable.Get(cfg.RequireDesc))
+    self._unlock:SetActive(false)
+    self._lock:SetActive(true)
+    self._anim:Stop()
+    self._anim:Play("uieffanim_UISeasonS1CollectionTab_middle")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS1CollectionTab.FinalPlotEnterOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonS1CollectionTab:FinalPlotEnterOnClick(go)
   if not self._finalStoryID then
-    return 
+    return
   end
-  local cb = nil
-  ;
-  (UISeasonHelper.PlayStoryInSeasonScence)(self._finalStoryID, cb)
+  local cb
+  UISeasonHelper.PlayStoryInSeasonScence(self._finalStoryID, cb)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS1CollectionTab.GetGuideItem = function(self)
-  -- function num : 0_6
-  return (self._firstItem):GetGameObject("icon")
+function UISeasonS1CollectionTab:GetGuideItem()
+  return self._firstItem:GetGameObject("icon")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS1CollectionTab.PlayExitAnim = function(self)
-  -- function num : 0_7
-  (self._anim):Play("uieffanim_UISeasonS1CollectionTab_out")
+function UISeasonS1CollectionTab:PlayExitAnim()
+  self._anim:Play("uieffanim_UISeasonS1CollectionTab_out")
 end
-
-

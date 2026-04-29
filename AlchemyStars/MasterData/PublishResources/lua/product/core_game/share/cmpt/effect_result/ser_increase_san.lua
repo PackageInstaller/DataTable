@@ -1,88 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_increase_san.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_IncreaseSan", SkillEffectResultBase)
 SkillEffectResult_IncreaseSan = SkillEffectResult_IncreaseSan
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_IncreaseSan.Constructor = function(self, val, debtVal, modifyTimes)
-  -- function num : 0_0
+function SkillEffectResult_IncreaseSan:Constructor(val, debtVal, modifyTimes)
   self._val = val
   self._debtVal = debtVal
   self._modifyTimes = modifyTimes
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IncreaseSan.GetVal = function(self)
-  -- function num : 0_1
+function SkillEffectResult_IncreaseSan:GetVal()
   return self._val
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IncreaseSan.GetEffectType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectResult_IncreaseSan:GetEffectType()
   return SkillEffectType.IncreaseSan
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IncreaseSan.SetOldSanValue = function(self, v)
-  -- function num : 0_3
+function SkillEffectResult_IncreaseSan:SetOldSanValue(v)
   self._oldSanVal = v
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IncreaseSan.SetNewSanValue = function(self, v)
-  -- function num : 0_4
+function SkillEffectResult_IncreaseSan:SetNewSanValue(v)
   self._currentSanVal = v
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IncreaseSan.SetDebtValue = function(self, v)
-  -- function num : 0_5
+function SkillEffectResult_IncreaseSan:SetDebtValue(v)
   self._debtVal = v
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IncreaseSan.SetModifyTimes = function(self, v)
-  -- function num : 0_6
+function SkillEffectResult_IncreaseSan:SetModifyTimes(v)
   self._modifyTimes = v
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IncreaseSan.GetOldSanValue = function(self)
-  -- function num : 0_7
+function SkillEffectResult_IncreaseSan:GetOldSanValue()
   return self._oldSanVal
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IncreaseSan.GetNewSanValue = function(self)
-  -- function num : 0_8
+function SkillEffectResult_IncreaseSan:GetNewSanValue()
   return self._currentSanVal
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IncreaseSan.GetDebtValue = function(self)
-  -- function num : 0_9
+function SkillEffectResult_IncreaseSan:GetDebtValue()
   return self._debtVal
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IncreaseSan.GetModifyTimes = function(self)
-  -- function num : 0_10
+function SkillEffectResult_IncreaseSan:GetModifyTimes()
   return self._modifyTimes
 end
-
-

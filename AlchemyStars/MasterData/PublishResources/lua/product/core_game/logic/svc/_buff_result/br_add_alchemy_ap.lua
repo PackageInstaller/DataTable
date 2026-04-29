@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_add_alchemy_ap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultAddAlchemyAP", BuffResultBase)
 BuffResultAddAlchemyAP = BuffResultAddAlchemyAP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddAlchemyAP.Constructor = function(self)
-  -- function num : 0_0
+function BuffResultAddAlchemyAP:Constructor()
   self._buffArray = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddAlchemyAP.AddAlchemyAP = function(self, finalAP, finalLevel, ap)
-  -- function num : 0_1
+function BuffResultAddAlchemyAP:AddAlchemyAP(finalAP, finalLevel, ap)
   self._ap = ap
   self._finalLevel = finalLevel
   self._finalAP = finalAP
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddAlchemyAP.GetBuffArray = function(self)
-  -- function num : 0_2
+function BuffResultAddAlchemyAP:GetBuffArray()
   return self._buffArray
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddAlchemyAP.AddBuffData = function(self, eid, buffseq)
-  -- function num : 0_3 , upvalues : _ENV
-  (table.insert)(self._buffArray, {eid, buffseq})
+function BuffResultAddAlchemyAP:AddBuffData(eid, buffseq)
+  table.insert(self._buffArray, {eid, buffseq})
 end
-
-

@@ -1,76 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/activity_n_plus_six/rebuilding_event/ui_activity_n_plus_six_event_complete_ctr.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityNPlusSixEventCompleteController", UIController)
 UIActivityNPlusSixEventCompleteController = UIActivityNPlusSixEventCompleteController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityNPlusSixEventCompleteController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIActivityNPlusSixEventCompleteController:LoadDataOnEnter(TT, res, uiParams)
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_HALLOWEEN, ECampaignN6ComponentID.ECAMPAIGN_N6_BUILD)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_HALLOWEEN, ECampaignN6ComponentID.ECAMPAIGN_N6_BUILD)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
   if not self._campaign then
-    return 
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  self._buildComponentInfo = (self._localProcess):GetComponentInfo(ECampaignN6ComponentID.ECAMPAIGN_N6_BUILD)
-  local eventInfo = (self._buildComponentInfo).event_info
+  self._buildComponentInfo = self._localProcess:GetComponentInfo(ECampaignN6ComponentID.ECAMPAIGN_N6_BUILD)
+  local eventInfo = self._buildComponentInfo.event_info
   self._eventCount = #eventInfo.cur_event_list
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventCompleteController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityNPlusSixEventCompleteController:OnShow(uiParams)
   self._eventData = uiParams[1]
   local s = self:GetUIComponent("UISelectObjectPath", "itemTips")
   self._tips = s:SpawnObject("UISelectInfo")
   self._title = self:GetUIComponent("UILocalizationText", "Title")
   self._des = self:GetUIComponent("UILocalizationText", "Des")
-  ;
-  (self._title):SetText((self._eventData):GetTitle())
-  ;
-  (self._des):SetText((StringTable.Get)("str_n_plus_six_event_complete_tips", self._eventCount))
+  self._title:SetText(self._eventData:GetTitle())
+  self._des:SetText(StringTable.Get("str_n_plus_six_event_complete_tips", self._eventCount))
   self._contents = self:GetUIComponent("UISelectObjectPath", "Content")
-  local rewards = (self._eventData):GetRewards()
-  ;
-  (self._contents):SpawnObjects("UIActivityNPlusSixEventRewardItem", #rewards)
-  local items = (self._contents):GetAllSpawnList()
+  local rewards = self._eventData:GetRewards()
+  self._contents:SpawnObjects("UIActivityNPlusSixEventRewardItem", #rewards)
+  local items = self._contents:GetAllSpawnList()
   for i = 1, #items do
-    (items[i]):Refresh(rewards[i], true)
+    items[i]:Refresh(rewards[i], true)
   end
   self:AttachEvent(GameEventType.NPlusSixShowEventCompleteRewardTips, self.ShowTips)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventCompleteController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityNPlusSixEventCompleteController:OnHide()
   self:DetachEvent(GameEventType.NPlusSixShowEventCompleteRewardTips, self.ShowTips)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventCompleteController.ConfirmBtnOnClick = function(self)
-  -- function num : 0_3
+function UIActivityNPlusSixEventCompleteController:ConfirmBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventCompleteController.ShowTips = function(self, itemId, pos)
-  -- function num : 0_4
-  (self._tips):SetData(itemId, pos)
+function UIActivityNPlusSixEventCompleteController:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
-
-

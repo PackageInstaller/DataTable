@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/ai_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AIService", Object)
 AIService = AIService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AIService.Constructor = function(self, world)
-  -- function num : 0_0
+function AIService:Constructor(world)
   self._world = world
   self.m_nRunningAiType = 0
   self.m_nRunningAiOrder = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AIService.EnterService = function(self, monsterList, nLogicType, nOrder)
-  -- function num : 0_1
+function AIService:EnterService(monsterList, nLogicType, nOrder)
   self:PrintAIServiceLog("[AI], =====EnterService： MonsterCount = [", #monsterList, "], LogicType.Order = [", nLogicType, ".", nOrder, "]")
   self:SetRunningSign(nLogicType, nOrder)
   for i = 1, #monsterList do
@@ -25,10 +15,7 @@ AIService.EnterService = function(self, monsterList, nLogicType, nOrder)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AIService.ExistService = function(self, monsterList, nLogicType, nOrder)
-  -- function num : 0_2
+function AIService:ExistService(monsterList, nLogicType, nOrder)
   self:SetRunningSign(0, 0)
   for i = 1, #monsterList do
     self:_OnEvent_AI(monsterList[i], false)
@@ -36,21 +23,15 @@ AIService.ExistService = function(self, monsterList, nLogicType, nOrder)
   self:PrintAIServiceLog("[AI], =====ExistService： MonsterCount = [", #monsterList, "], LogicType.Order = [", nLogicType, ".", nOrder, "]")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AIService.SetRunningSign = function(self, nLogicType, nOrder)
-  -- function num : 0_3
+function AIService:SetRunningSign(nLogicType, nOrder)
   self.m_nRunningAiType = nLogicType
   self.m_nRunningAiOrder = nOrder
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AIService._OnEvent_AI = function(self, entityWork, bEnable, nLogicType, order)
-  -- function num : 0_4
+function AIService:_OnEvent_AI(entityWork, bEnable, nLogicType, order)
   local aiComponent = entityWork:AI()
   if not aiComponent then
-    return 
+    return
   end
   if bEnable then
     aiComponent:OnEvent_EnableAiLogic(entityWork, nLogicType, order)
@@ -60,30 +41,23 @@ AIService._OnEvent_AI = function(self, entityWork, bEnable, nLogicType, order)
   end
 end
 
-local Sort_StatLogicOrders = function(a, b)
-  -- function num : 0_5
-  do return a[1] < b[1] end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+local function Sort_StatLogicOrders(a, b)
+  return a[1] < b[1]
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-AIService.StatLogicOrders = function(self, nLogicType, orderList)
-  -- function num : 0_6 , upvalues : _ENV, Sort_StatLogicOrders
-  if not orderList then
-    local orders = {}
-  end
-  local aiGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).AI)
+function AIService:StatLogicOrders(nLogicType, orderList)
+  local orders = orderList or {}
+  local aiGroup = self._world:GetGroup(self._world.BW_WEMatchers.AI)
   local listAllEntity = aiGroup:GetEntities()
-  local boardService = (self._world):GetService("BoardLogic")
-  local curGameTurn = (self._world):GetGameTurn()
+  local boardService = self._world:GetService("BoardLogic")
+  local curGameTurn = self._world:GetGameTurn()
   local es = {}
-  for i,e in ipairs(listAllEntity) do
+  for i, e in ipairs(listAllEntity) do
     if not e:HasOutsideRegion() then
       if e:HasOffBoardMonster() then
         es[#es + 1] = e
       else
-        local pos = (e:GridLocation()).Position
+        local pos = e:GridLocation().Position
         if boardService:IsInAIArea(pos) then
           es[#es + 1] = e
         end
@@ -93,54 +67,47 @@ AIService.StatLogicOrders = function(self, nLogicType, orderList)
   listAllEntity = es
   for i = 1, #listAllEntity do
     local e = listAllEntity[i]
-    if (e:GameTurn()):GetGameTurn() == curGameTurn then
+    if e:GameTurn():GetGameTurn() == curGameTurn then
       local aiComponent = e:AI()
       local aiLogicList = aiComponent:GetAILogic(nLogicType)
-      for order,aiLogic in pairs(aiLogicList) do
+      for order, aiLogic in pairs(aiLogicList) do
         local hasorder = false
-        for _,v in ipairs(orders) do
+        for _, v in ipairs(orders) do
           if v[1] == order then
-            if not (table.icontains)(v[2], e) then
-              (table.insert)(v[2], e)
+            if not table.icontains(v[2], e) then
+              table.insert(v[2], e)
             end
             hasorder = true
             break
           end
         end
-        do
-          do
-            if not hasorder then
-              orders[#orders + 1] = {order, 
-{e}
-}
-            end
-            -- DECOMPILER ERROR at PC104: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
+        if not hasorder then
+          orders[#orders + 1] = {
+            order,
+            {e}
+          }
         end
       end
     end
   end
-  ;
-  (table.sort)(orders, Sort_StatLogicOrders)
+  table.sort(orders, Sort_StatLogicOrders)
   return orders
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-AIService.RunAiLogicByOrder = function(self, listEntity, nLogicType, nOrder)
-  -- function num : 0_7 , upvalues : _ENV
-  if not nOrder then
-    nOrder = 1000
-  end
+function AIService:RunAiLogicByOrder(listEntity, nLogicType, nOrder)
+  nOrder = nOrder or 1000
   local nCountEntity = #listEntity
   if nCountEntity <= 0 then
-    return 
+    return
   end
-  ;
-  ((self._world):GetSyncLogger()):Trace({key = "RunAiLogicByOrder", entityCount = nCountEntity, logicType = nLogicType, nOrder = nOrder})
-  local aiRecorderCmpt = ((self._world):GetBoardEntity()):AIRecorder()
-  local aiSchedulerService = (self._world):GetService("AIScheduler")
+  self._world:GetSyncLogger():Trace({
+    key = "RunAiLogicByOrder",
+    entityCount = nCountEntity,
+    logicType = nLogicType,
+    nOrder = nOrder
+  })
+  local aiRecorderCmpt = self._world:GetBoardEntity():AIRecorder()
+  local aiSchedulerService = self._world:GetService("AIScheduler")
   aiRecorderCmpt:AddOrderResult(nOrder)
   self:EnterService(listEntity, nLogicType, nOrder)
   local nCountDown = 0
@@ -150,51 +117,43 @@ AIService.RunAiLogicByOrder = function(self, listEntity, nLogicType, nOrder)
   for i = 1, 100 do
     nCountDown = nCountDown + 1
     local ok = aiSchedulerService:DoScheduleAILogic()
+    if ok then
+      break
+    end
   end
-  do
-    if ok or maxCalcCount <= nCountDown then
-      for i = 1, nCountEntity do
-        local aiComponent = (listEntity[i]):AI()
-        if aiComponent and not aiComponent:IsLogicEnd() then
-          aiComponent:OutErrorLog("<AI计算次数超过100>")
-        end
-      end
-      if EDITOR then
-        (Log.exception)("AI计算次数超过100")
+  if maxCalcCount <= nCountDown then
+    for i = 1, nCountEntity do
+      local aiComponent = listEntity[i]:AI()
+      if aiComponent and not aiComponent:IsLogicEnd() then
+        aiComponent:OutErrorLog("<AI计算次数超过100>")
       end
     end
-    self:ExistService(listEntity, nLogicType, nOrder)
+    if EDITOR then
+      Log.exception("AI计算次数超过100")
+    end
   end
+  self:ExistService(listEntity, nLogicType, nOrder)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-AIService._CheckAIOrder = function(self, alreadyExeOrder, orderArray, nowOrder)
-  -- function num : 0_8 , upvalues : _ENV
-  if (table.icontains)(alreadyExeOrder, nowOrder) then
+function AIService:_CheckAIOrder(alreadyExeOrder, orderArray, nowOrder)
+  if table.icontains(alreadyExeOrder, nowOrder) then
     local alreadyStr = ""
     local orderArrayStr = ""
-    for i,m in ipairs(orderArray) do
+    for i, m in ipairs(orderArray) do
       orderArrayStr = orderArrayStr .. tostring(m[1]) .. ","
     end
-    for i,order in ipairs(alreadyExeOrder) do
+    for i, order in ipairs(alreadyExeOrder) do
       alreadyStr = alreadyStr .. tostring(order) .. ","
     end
     self:PrintAIServiceLog("Order:", nowOrder, " is repeatRun ,AlreadyRunOrderList:", alreadyStr, "OrderArray:", orderArrayStr)
     if EDITOR then
-      (Log.exception)("Order:", nowOrder, " 重复执行")
+      Log.exception("Order:", nowOrder, " 重复执行")
     end
   end
-  do
-    ;
-    (table.insert)(alreadyExeOrder, nowOrder)
-  end
+  table.insert(alreadyExeOrder, nowOrder)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-AIService.RunAiLogic_WaitEnd = function(self, nLogicType)
-  -- function num : 0_9
+function AIService:RunAiLogic_WaitEnd(nLogicType)
   local orderArray = self:StatLogicOrders(nLogicType)
   local i = 1
   local alreadyExeOrder = {}
@@ -208,48 +167,32 @@ AIService.RunAiLogic_WaitEnd = function(self, nLogicType)
     orderArray = self:StatLogicOrders(nLogicType, orderArray)
     i = i + 1
   end
-  do
-    self:_UpdateAILogicResult()
-  end
+  self:_UpdateAILogicResult()
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-AIService._UpdateAILogicResult = function(self)
-  -- function num : 0_10
-  local svc = (self._world):GetService("L2R")
+function AIService:_UpdateAILogicResult()
+  local svc = self._world:GetService("L2R")
   svc:L2RAILogicData()
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-AIService.AddPauseFlag = function(self, e, pauseDuration)
-  -- function num : 0_11
+function AIService:AddPauseFlag(e, pauseDuration)
   if e == nil or pauseDuration <= 0 then
-    return 
+    return
   end
   e:AddPauseFlag(pauseDuration)
-  local h3dTimer = (self._world):GetWorldTimer()
+  local h3dTimer = self._world:GetWorldTimer()
   self._removePauseFlagEvent = h3dTimer:AddEvent(pauseDuration, self._RemovePauseFlag, self, e)
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-AIService._RemovePauseFlag = function(self, e)
-  -- function num : 0_12
+function AIService:_RemovePauseFlag(e)
   e:RemovePauseFlag()
-  local h3dTimer = (self._world):GetWorldTimer()
+  local h3dTimer = self._world:GetWorldTimer()
   h3dTimer:CancelEvent(self._removePauseFlagEvent)
   self._removePauseFlagEvent = nil
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-AIService.PrintAIServiceLog = function(self, ...)
-  -- function num : 0_13 , upvalues : _ENV
-  if self._world and (self._world):IsDevelopEnv() then
-    (Log.debug)(...)
+function AIService:PrintAIServiceLog(...)
+  if self._world and self._world:IsDevelopEnv() then
+    Log.debug(...)
   end
 end
-
-

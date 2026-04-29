@@ -1,18 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_set_only_team_leader_color_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewSetOnlyTeamLeaderColorPet", BuffViewBase)
 BuffViewSetOnlyTeamLeaderColorPet = BuffViewSetOnlyTeamLeaderColorPet
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewSetOnlyTeamLeaderColorPet.PlayView = function(self, TT)
-  -- function num : 0_0
+function BuffViewSetOnlyTeamLeaderColorPet:PlayView(TT)
   local result = self._buffResult
   local val = result:GetVal()
-  ;
-  ((self._entity):BuffView()):SetBuffValue("OnlyTeamLeaderColorPet", val)
+  self._entity:BuffView():SetBuffValue("OnlyTeamLeaderColorPet", val)
 end
-
-

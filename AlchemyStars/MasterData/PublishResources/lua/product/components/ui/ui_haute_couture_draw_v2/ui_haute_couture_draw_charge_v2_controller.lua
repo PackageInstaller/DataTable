@@ -1,64 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/ui_haute_couture_draw_charge_v2_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawChargeV2Controller", UIController)
 UIHauteCoutureDrawChargeV2Controller = UIHauteCoutureDrawChargeV2Controller
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawChargeV2Controller.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawChargeV2Controller:Constructor()
   self.bg = nil
   self.main = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeV2Controller.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIHauteCoutureDrawChargeV2Controller:LoadDataOnEnter(TT, res, uiParams)
   self.hcType = uiParams[1]
   self._buyComponet = uiParams[2]
-  ;
-  (self._buyComponet):GetAllGiftLocalPrice()
+  self._buyComponet:GetAllGiftLocalPrice()
   self._ctx = uiParams[3]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeV2Controller.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHauteCoutureDrawChargeV2Controller:OnShow(uiParams)
   local bg = self:GetUIComponent("UISelectObjectPath", "bgRoot")
   local main = self:GetUIComponent("UISelectObjectPath", "uiRoot")
   if self.hcType == HauteCoutureType.HC_GL then
-    (bg.dynamicInfoOfEngine):SetObjectName("UIHauteCoutureDrawChargeBgGL.prefab")
-    ;
-    (main.dynamicInfoOfEngine):SetObjectName("UIHauteCoutureDrawChargeMainGL.prefab")
+    bg.dynamicInfoOfEngine:SetObjectName("UIHauteCoutureDrawChargeBgGL.prefab")
+    main.dynamicInfoOfEngine:SetObjectName("UIHauteCoutureDrawChargeMainGL.prefab")
     self.bg = bg:SpawnObject("UIHauteCoutureDrawChargeBgGL")
     self.main = main:SpawnObject("UIHauteCoutureDrawChargeMainGL")
+  elseif self.hcType == HauteCoutureType.HC_KR then
+    bg.dynamicInfoOfEngine:SetObjectName("UIHauteCoutureDrawChargeBgKR.prefab")
+    main.dynamicInfoOfEngine:SetObjectName("UIHauteCoutureDrawChargeMainKR.prefab")
+    self.bg = bg:SpawnObject("UIHauteCoutureDrawChargeBgKR")
+    self.main = main:SpawnObject("UIHauteCoutureDrawChargeMainKR")
   else
-    if self.hcType == HauteCoutureType.HC_KR then
-      (bg.dynamicInfoOfEngine):SetObjectName("UIHauteCoutureDrawChargeBgKR.prefab")
-      ;
-      (main.dynamicInfoOfEngine):SetObjectName("UIHauteCoutureDrawChargeMainKR.prefab")
-      self.bg = bg:SpawnObject("UIHauteCoutureDrawChargeBgKR")
-      self.main = main:SpawnObject("UIHauteCoutureDrawChargeMainKR")
-    else
-      local bgPrefab, bgClass = (self._ctx):GetChargeUIBgInfo()
-      local prefab, class = (self._ctx):GetChargeUIInfo()
-      ;
-      (bg.dynamicInfoOfEngine):SetObjectName(bgPrefab)
-      ;
-      (main.dynamicInfoOfEngine):SetObjectName(prefab)
-      self.bg = bg:SpawnObject(bgClass._className)
-      self.main = main:SpawnObject(class._className)
-    end
+    local bgPrefab, bgClass = self._ctx:GetChargeUIBgInfo()
+    local prefab, class = self._ctx:GetChargeUIInfo()
+    bg.dynamicInfoOfEngine:SetObjectName(bgPrefab)
+    main.dynamicInfoOfEngine:SetObjectName(prefab)
+    self.bg = bg:SpawnObject(bgClass._className)
+    self.main = main:SpawnObject(class._className)
   end
-  do
-    if not self.bg then
-      return 
-    end
+  if not self.bg then
+    return
   end
 end
-
-

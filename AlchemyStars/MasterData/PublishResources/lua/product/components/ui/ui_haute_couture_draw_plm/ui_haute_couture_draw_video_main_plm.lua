@@ -1,29 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_plm/ui_haute_couture_draw_video_main_plm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawVideoMainPLM", UIHauteCoutureDrawVideoBase)
 UIHauteCoutureDrawVideoMainPLM = UIHauteCoutureDrawVideoMainPLM
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawVideoMainPLM.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawVideoMainPLM:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawVideoMainPLM.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHauteCoutureDrawVideoMainPLM:OnShow(uiParams)
   self:InitWidgets()
   self:_LoadVideo()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawVideoMainPLM.InitWidgets = function(self)
-  -- function num : 0_2
+function UIHauteCoutureDrawVideoMainPLM:InitWidgets()
   self:InitWidgetsBase()
 end
-
-

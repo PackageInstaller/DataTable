@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_set_normal_attack_dir_eff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultSetNormalAttackDirEff", BuffResultBase)
 BuffResultSetNormalAttackDirEff = BuffResultSetNormalAttackDirEff
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultSetNormalAttackDirEff.Constructor = function(self, effectDirList, animName, waitTime, remove, effectID, curRoundHadSave)
-  -- function num : 0_0
+function BuffResultSetNormalAttackDirEff:Constructor(effectDirList, animName, waitTime, remove, effectID, curRoundHadSave)
   self._effectDirList = effectDirList
   self._animName = animName
   self._waitTime = waitTime
@@ -17,46 +10,26 @@ BuffResultSetNormalAttackDirEff.Constructor = function(self, effectDirList, anim
   self._curRoundHadSave = curRoundHadSave
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetNormalAttackDirEff.GetEffectDirList = function(self)
-  -- function num : 0_1
+function BuffResultSetNormalAttackDirEff:GetEffectDirList()
   return self._effectDirList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetNormalAttackDirEff.GetAnimName = function(self)
-  -- function num : 0_2
+function BuffResultSetNormalAttackDirEff:GetAnimName()
   return self._animName
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetNormalAttackDirEff.GetWaitTime = function(self)
-  -- function num : 0_3
+function BuffResultSetNormalAttackDirEff:GetWaitTime()
   return self._waitTime
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetNormalAttackDirEff.GetRemove = function(self)
-  -- function num : 0_4
+function BuffResultSetNormalAttackDirEff:GetRemove()
   return self._remove
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetNormalAttackDirEff.GetEffectID = function(self)
-  -- function num : 0_5
+function BuffResultSetNormalAttackDirEff:GetEffectID()
   return self._effectID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetNormalAttackDirEff.GetCurRoundHadSave = function(self)
-  -- function num : 0_6
+function BuffResultSetNormalAttackDirEff:GetCurRoundHadSave()
   return self._curRoundHadSave
 end
-
-

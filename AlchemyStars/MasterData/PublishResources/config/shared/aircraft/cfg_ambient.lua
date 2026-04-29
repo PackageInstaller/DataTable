@@ -1,11 +1,5 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/aircraft/cfg_ambient.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {Ambient = 1, AddFavorByInteract = 2}
 local config = {
-[0] = {0, 20}
+  [0] = {0, 20}
 }
 return config, "Ambient", key
-

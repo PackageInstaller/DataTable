@@ -1,70 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_season_task_mission.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignSeasonTaskMission", ICampaignComponentLocalProcessBase)
 CCampaignSeasonTaskMission = CCampaignSeasonTaskMission
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignSeasonTaskMission.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignSeasonTaskMission:Constructor()
   self._seasonTaskMissionComponent = nil
   self._seasonTaskMissionComponentInfo = nil
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeasonTaskMission.InitComponent = function(self, campaignObj)
-  -- function num : 0_1
+function CCampaignSeasonTaskMission:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetSeasonTaskMissionComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeasonTaskMission.GetCampaignType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function CCampaignSeasonTaskMission:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_SEASON_TASK_MISSION
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeasonTaskMission.CampaignObjInfo = function(self)
-  -- function num : 0_3
+function CCampaignSeasonTaskMission:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeasonTaskMission._GetSeasonTaskMissionComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._seasonTaskMissionComponent = (self._campaignObj):GetComponent(ECampaignSeasonTaskMissionComponentID.ECAMPAIGN_SEASON_TASK_MISSION)
+function CCampaignSeasonTaskMission:_GetSeasonTaskMissionComponent()
+  self._seasonTaskMissionComponent = self._campaignObj:GetComponent(ECampaignSeasonTaskMissionComponentID.ECAMPAIGN_SEASON_TASK_MISSION)
   if not self._seasonTaskMissionComponent then
-    return 
+    return
   end
-  self._seasonTaskMissionComponentInfo = (self._seasonTaskMissionComponent):ComponentInfo()
+  self._seasonTaskMissionComponentInfo = self._seasonTaskMissionComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeasonTaskMission.GetComponent = function(self, componentID)
-  -- function num : 0_5 , upvalues : _ENV
+function CCampaignSeasonTaskMission:GetComponent(componentID)
   if ECampaignSeasonTaskMissionComponentID.ECAMPAIGN_SEASON_TASK_MISSION == componentID then
     return self._seasonTaskMissionComponent
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeasonTaskMission.GetComponentInfo = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignSeasonTaskMission:GetComponentInfo(componentID)
   if ECampaignSeasonTaskMissionComponentID.ECAMPAIGN_SEASON_TASK_MISSION == componentID then
     return self._seasonTaskMissionComponentInfo
   end
   return nil
 end
-
-

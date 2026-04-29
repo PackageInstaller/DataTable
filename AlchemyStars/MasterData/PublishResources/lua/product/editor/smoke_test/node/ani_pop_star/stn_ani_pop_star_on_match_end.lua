@@ -1,40 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/ani_pop_star/stn_ani_pop_star_on_match_end.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("stn_common_wait_game_event")
 _class("AniPopStar_OnMatchEnd", Common_WaitGameEvent)
 AniPopStar_OnMatchEnd = AniPopStar_OnMatchEnd
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AniPopStar_OnMatchEnd.Constructor = function(self, pManger, nEventType)
-  -- function num : 0_0 , upvalues : _ENV
+function AniPopStar_OnMatchEnd:Constructor(pManger, nEventType)
   self.m_nEventType = GameEventType.BattleResultFinish
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AniPopStar_OnMatchEnd._OnEvent = function(self, bVictory)
-  -- function num : 0_1 , upvalues : _ENV
+function AniPopStar_OnMatchEnd:_OnEvent(bVictory)
   if bVictory then
-    local anipopModule = (GameGlobal.GetModule)(AnipopModule)
+    local anipopModule = GameGlobal.GetModule(AnipopModule)
     local aniPopInfo = anipopModule:GetAniPopInfo()
     local curSeason = aniPopInfo.cur_season
     local roundInfo = aniPopInfo.round_info
-    local matchEnterData = (self:GetModule(MatchModule)):GetMatchEnterData()
+    local matchEnterData = self:GetModule(MatchModule):GetMatchEnterData()
     local anipopCreateInfo = matchEnterData:GetMissionCreateInfo()
-    if anipopCreateInfo.mission_index == (table.count)(roundInfo.level_list) then
+    if anipopCreateInfo.mission_index == table.count(roundInfo.level_list) then
       self.m_nLogicResult = 2
     else
       self.m_nLogicResult = 1
     end
   else
-    do
-      self.m_nLogicResult = 0
-      return ((AniPopStar_OnMatchEnd.super)._OnEvent)(self, bVictory)
-    end
+    self.m_nLogicResult = 0
   end
+  return AniPopStar_OnMatchEnd.super._OnEvent(self, bVictory)
 end
-
-

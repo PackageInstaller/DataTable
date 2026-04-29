@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_transposition.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamTransposition", SkillEffectParamBase)
 SkillEffectParamTransposition = SkillEffectParamTransposition
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamTransposition.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamTransposition:Constructor(t)
   self._monsterClassID = t.monsterClassID
   self._useSuper = t.useSuper or false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTransposition.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamTransposition:GetEffectType()
   return SkillEffectType.Transposition
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTransposition.GetMonsterClassID = function(self)
-  -- function num : 0_2
+function SkillEffectParamTransposition:GetMonsterClassID()
   return self._monsterClassID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTransposition.IsUseSuper = function(self)
-  -- function num : 0_3
+function SkillEffectParamTransposition:IsUseSuper()
   return self._useSuper
 end
-
-

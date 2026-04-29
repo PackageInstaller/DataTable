@@ -1,95 +1,72 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_camp_center/sea_note_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_lobby_center_camp_data")
 _class("SeaNoteEnter", MainLobbyCenterCampData)
 SeaNoteEnter = SeaNoteEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SeaNoteEnter.LoadData = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function SeaNoteEnter:LoadData(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_INLAND_N9_ASHEEP, ECampaignN9CenterComponentID.ECAMPAIGN_N9_ASHEEP)
-  local localProcess = (self._campaign):GetLocalProcess()
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_INLAND_N9_ASHEEP, ECampaignN9CenterComponentID.ECAMPAIGN_N9_ASHEEP)
+  local localProcess = self._campaign:GetLocalProcess()
   self._component = localProcess:GetComponent(ECampaignN9CenterComponentID.ECAMPAIGN_N9_ASHEEP)
   self._componentInfo = localProcess:GetComponentInfo(ECampaignN9CenterComponentID.ECAMPAIGN_N9_ASHEEP)
   self._lineDatas = {}
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeaNoteEnter.CheckNew = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  return (UIActivityHelper.CheckCampaignSampleNewPoint)(self._campaign) and 1 or 0
+function SeaNoteEnter:CheckNew()
+  return UIActivityHelper.CheckCampaignSampleNewPoint(self._campaign) and 1 or 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeaNoteEnter.CheckRed = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SeaNoteEnter:CheckRed()
   self._lineDatas = {}
-  local cfgs = (Cfg.cfg_component_asheep_mission)({ComponentID = (self._component):GetComponentCfgId()})
+  local cfgs = Cfg.cfg_component_asheep_mission({
+    ComponentID = self._component:GetComponentCfgId()
+  })
   if cfgs then
-    for _,cfg in pairs(cfgs) do
-      (table.insert)(self._lineDatas, cfg)
+    for _, cfg in pairs(cfgs) do
+      table.insert(self._lineDatas, cfg)
     end
   end
-  do
-    ;
-    (table.sort)(self._lineDatas, function(a, b)
-    -- function num : 0_2_0
-    do return a.MissionID < b.MissionID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-    local subkey = 3011
-    local curPass = 0
-    for key,value in pairs(((self._componentInfo).m_info).m_pass_mission_info) do
-      if key ~= subkey then
-        curPass = curPass + 1
-      end
+  table.sort(self._lineDatas, function(a, b)
+    return a.MissionID < b.MissionID
+  end)
+  local subkey = 3011
+  local curPass = 0
+  for key, value in pairs(self._componentInfo.m_info.m_pass_mission_info) do
+    if key ~= subkey then
+      curPass = curPass + 1
     end
-    if ((self._componentInfo).m_info).m_pass_mission_info ~= nil then
-      if curPass < 10 then
-        local count = curPass + 1
-        local curMissionCfg = (self._lineDatas)[count]
-        local curTime = (self._svrTimeModule):GetServerTime() * 0.001
-        if curMissionCfg.OpenTime ~= nil then
-          local time = ((GameGlobal.GetModule)(LoginModule)):GetTimeStampByTimeStr(curMissionCfg.OpenTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-          local endTime = time
-          if curTime < endTime then
+  end
+  if self._componentInfo.m_info.m_pass_mission_info ~= nil then
+    if curPass < 10 then
+      local count = curPass + 1
+      local curMissionCfg = self._lineDatas[count]
+      local curTime = self._svrTimeModule:GetServerTime() * 0.001
+      if curMissionCfg.OpenTime ~= nil then
+        local time = GameGlobal.GetModule(LoginModule):GetTimeStampByTimeStr(curMissionCfg.OpenTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+        local endTime = time
+        if curTime < endTime then
+          return 0
+        else
+          local day, hour, min, second = UIActivityHelper.Time2Str(curTime)
+          local timeStr = "SeaNoteEnter_RedCheck" .. day .. curMissionCfg.MissionID
+          if UIActivityHelper.HasLocalDB(timeStr) then
             return 0
-          else
-            local day, hour, min, second = (UIActivityHelper.Time2Str)(curTime)
-            local timeStr = "SeaNoteEnter_RedCheck" .. day .. curMissionCfg.MissionID
-            if (UIActivityHelper.HasLocalDB)(timeStr) then
-              return 0
-            end
-          end
-          do
-            do
-              do return 1 end
-              do return 0 end
-              local count = curPass + 1
-              local curTime = (self._svrTimeModule):GetServerTime() * 0.001
-              local day, hour, min, second = (UIActivityHelper.Time2Str)(curTime)
-              local timeStr = "SeaNoteEnter_RedCheck" .. day .. ((self._lineDatas)[count]).MissionID
-              if not (UIActivityHelper.HasLocalDB)(timeStr) then
-                return 1
-              end
-              return 0
-            end
           end
         end
+        return 1
       end
+    else
+      return 0
     end
   end
+  local count = curPass + 1
+  local curTime = self._svrTimeModule:GetServerTime() * 0.001
+  local day, hour, min, second = UIActivityHelper.Time2Str(curTime)
+  local timeStr = "SeaNoteEnter_RedCheck" .. day .. self._lineDatas[count].MissionID
+  if not UIActivityHelper.HasLocalDB(timeStr) then
+    return 1
+  end
+  return 0
 end
-
-

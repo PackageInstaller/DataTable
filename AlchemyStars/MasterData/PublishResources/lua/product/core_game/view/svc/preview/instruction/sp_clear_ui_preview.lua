@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_clear_ui_preview.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewClearUIPreviewInstruction", SkillPreviewBaseInstruction)
 SkillPreviewClearUIPreviewInstruction = SkillPreviewClearUIPreviewInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewClearUIPreviewInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewClearUIPreviewInstruction:Constructor(params)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewClearUIPreviewInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.IstavanPreviewCancelPetHeadUI, true)
+function SkillPreviewClearUIPreviewInstruction:DoInstruction(TT, casterEntity, previewContext)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.IstavanPreviewCancelPetHeadUI, true)
 end
-
-

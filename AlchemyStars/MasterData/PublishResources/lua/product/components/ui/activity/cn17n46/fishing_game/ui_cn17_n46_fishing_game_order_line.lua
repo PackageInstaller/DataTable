@@ -1,38 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn17n46/fishing_game/ui_cn17_n46_fishing_game_order_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN17N46FishingGameOrderLine", UICustomWidget)
 UICN17N46FishingGameOrderLine = UICN17N46FishingGameOrderLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN17N46FishingGameOrderLine.OnShow = function(self, uiParams)
-  -- function num : 0_0
-  self._lineImg = {[true] = "n14_fish_pb_dingdan", [false] = "n14_fish_pb_bg_dingdan"}
+function UICN17N46FishingGameOrderLine:OnShow(uiParams)
+  self._lineImg = {
+    [true] = "n14_fish_pb_dingdan",
+    [false] = "n14_fish_pb_bg_dingdan"
+  }
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameOrderLine._GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN17N46FishingGameOrderLine:_GetComponents()
   self._line = self:GetUIComponent("Image", "Line")
   self._atlas = self:GetAsset("UIN14FishingGame.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameOrderLine.SetData = function(self, itemIndex, isFinish, isEnd)
-  -- function num : 0_2 , upvalues : _ENV
-  (Log.debug)("itemIndex: ", itemIndex, "    isFInish: ", isFinish, "    isEnd: ", isEnd)
-  ;
-  ((self._line).gameObject):SetActive(isEnd == false)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._line).sprite = (self._atlas):GetSprite((self._lineImg)[isFinish])
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UICN17N46FishingGameOrderLine:SetData(itemIndex, isFinish, isEnd)
+  Log.debug("itemIndex: ", itemIndex, "    isFInish: ", isFinish, "    isEnd: ", isEnd)
+  self._line.gameObject:SetActive(isEnd == false)
+  self._line.sprite = self._atlas:GetSprite(self._lineImg[isFinish])
 end
-
-

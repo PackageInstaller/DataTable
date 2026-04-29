@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_defence_by_owner_hp_percent.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicChangeDefenceByOwnerHPPercent", BuffLogicBase)
 BuffLogicChangeDefenceByOwnerHPPercent = BuffLogicChangeDefenceByOwnerHPPercent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeDefenceByOwnerHPPercent.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeDefenceByOwnerHPPercent:Constructor(buffInstance, logicParam)
   self._paramA = logicParam.paramA or 0
   self._paramB = logicParam.paramB or 0
   self._startHPPercent = logicParam.startHPPercent or 0
   self._endHPPercent = logicParam.endHPPercent or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeDefenceByOwnerHPPercent.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local ownerEntity = (self._buffInstance):Entity()
+function BuffLogicChangeDefenceByOwnerHPPercent:DoLogic()
+  local ownerEntity = self._buffInstance:Entity()
   local useEntity = ownerEntity
-  if (self._world):MatchType() ~= MatchType.MT_Maze and (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze and ownerEntity:HasPetPstID() then
-    useEntity = (ownerEntity:Pet()):GetOwnerTeamEntity()
+  if self._world:MatchType() ~= MatchType.MT_Maze and self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze and ownerEntity:HasPetPstID() then
+    useEntity = ownerEntity:Pet():GetOwnerTeamEntity()
   end
   if not ownerEntity:Attributes() or not useEntity:Attributes() then
-    return 
+    return
   end
   local attrCmpt = useEntity:Attributes()
   local maxHP = attrCmpt:CalcMaxHp()
@@ -35,51 +25,32 @@ BuffLogicChangeDefenceByOwnerHPPercent.DoLogic = function(self)
   local val = 0
   if hpPercent < self._startHPPercent then
     val = self._paramB
-  else
-    if self._startHPPercent <= hpPercent and hpPercent < self._endHPPercent then
-      val = (hpPercent - self._startHPPercent) * self._paramA + self._paramB
-    else
-      if self._endHPPercent <= hpPercent then
-        val = (self._endHPPercent - self._startHPPercent) * self._paramA + self._paramB
-      end
-    end
+  elseif hpPercent >= self._startHPPercent and hpPercent < self._endHPPercent then
+    val = (hpPercent - self._startHPPercent) * self._paramA + self._paramB
+  elseif hpPercent >= self._endHPPercent then
+    val = (self._endHPPercent - self._startHPPercent) * self._paramA + self._paramB
   end
   if val <= -1 then
     val = -1
   end
-  ;
-  (self._buffLogicService):ChangeBaseDefence(ownerEntity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage, val)
+  self._buffLogicService:ChangeBaseDefence(ownerEntity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage, val)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeDefenceByOwnerHPPercent.DoOverlap = function(self, logicParam)
-  -- function num : 0_2
+function BuffLogicChangeDefenceByOwnerHPPercent:DoOverlap(logicParam)
   return self:DoLogic()
 end
 
 _class("BuffLogicChangeDefenceByOwnerHPPercentUndo", BuffLogicBase)
 BuffLogicChangeDefenceByOwnerHPPercentUndo = BuffLogicChangeDefenceByOwnerHPPercentUndo
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeDefenceByOwnerHPPercentUndo.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicChangeDefenceByOwnerHPPercentUndo:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeDefenceByOwnerHPPercentUndo.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local ownerEntity = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):RemoveBaseDefence(ownerEntity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage)
+function BuffLogicChangeDefenceByOwnerHPPercentUndo:DoLogic()
+  local ownerEntity = self._buffInstance:Entity()
+  self._buffLogicService:RemoveBaseDefence(ownerEntity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeDefenceByOwnerHPPercentUndo.DoOverlap = function(self, logicParam)
-  -- function num : 0_5
+function BuffLogicChangeDefenceByOwnerHPPercentUndo:DoOverlap(logicParam)
   return self:DoLogic()
 end
-
-

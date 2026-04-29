@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_top_icon/ui_main_lobby_top_icon.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyTopIcon", UICustomWidget)
 UIMainLobbyTopIcon = UIMainLobbyTopIcon
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyTopIcon.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIMainLobbyTopIcon:OnShow()
+  self._roleModule = GameGlobal.GetModule(RoleModule)
   self._phyTime = self:GetGameObject("phyTime")
   self._diamondText = self:GetUIComponent("UILocalizationText", "DiamondText")
   self._phyPowerText = self:GetUIComponent("UILocalizationText", "PhyPowerText")
@@ -26,239 +19,177 @@ UIMainLobbyTopIcon.OnShow = function(self)
   self._yaojingPanel = self:GetGameObject("YaojingPanel")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.OnItemCountChange = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMainLobbyTopIcon:OnItemCountChange()
   self:ShowPhyPoint()
-  ;
-  (self._diamondText):SetText((self._roleModule):GetGlow())
-  ;
-  (self._yaojingText):SetText((self._roleModule):GetDiamond())
-  local count = (self._roleModule):GetGold()
-  ;
-  (self._goldText):SetText((HelperProxy:GetInstance()):FormatGold(count))
+  self._diamondText:SetText(self._roleModule:GetGlow())
+  self._yaojingText:SetText(self._roleModule:GetDiamond())
+  local count = self._roleModule:GetGold()
+  self._goldText:SetText(HelperProxy:GetInstance():FormatGold(count))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMainLobbyTopIcon:OnHide()
   if self._startPhyTimerEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._startPhyTimerEvent)
+    GameGlobal.RealTimer():CancelEvent(self._startPhyTimerEvent)
     self._startPhyTimerEvent = nil
   end
   if self._startPhyTimerLoopEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._startPhyTimerLoopEvent)
+    GameGlobal.RealTimer():CancelEvent(self._startPhyTimerLoopEvent)
     self._startPhyTimerLoopEvent = nil
   end
   if self._showTimeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._showTimeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._showTimeEvent)
     self._showTimeEvent = nil
   end
   self:ClosePhyTimer()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.SetData = function(self, toptipsInfo)
-  -- function num : 0_3
+function UIMainLobbyTopIcon:SetData(toptipsInfo)
   self._toptipsInfo = toptipsInfo
   self:GetCurrentPhyTimer()
   self:OnItemCountChange()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.SetPanelShow = function(self, goldShow, powerShow, diamondShow)
-  -- function num : 0_4
-  (self._goldPanel):SetActive(goldShow)
-  ;
-  (self._phyPowerPanel):SetActive(powerShow)
-  ;
-  (self._diamondPanel):SetActive(diamondShow)
-  ;
-  (self._yaojingPanel):SetActive(false)
+function UIMainLobbyTopIcon:SetPanelShow(goldShow, powerShow, diamondShow)
+  self._goldPanel:SetActive(goldShow)
+  self._phyPowerPanel:SetActive(powerShow)
+  self._diamondPanel:SetActive(diamondShow)
+  self._yaojingPanel:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.GetCurrentPhyTimer = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIMainLobbyTopIcon:GetCurrentPhyTimer()
   self:Lock("UIMainLobbyTopIcon:GetCurrentPhyTimer")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnGetCurrentPhyTimer, self)
+  GameGlobal.TaskManager():StartTask(self.OnGetCurrentPhyTimer, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.OnGetCurrentPhyTimer = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  local res, startTime, intervalRecoverTime, leftRecoverTime, allRecoverTime = (self._roleModule):GetRecoverData(TT, 0)
+function UIMainLobbyTopIcon:OnGetCurrentPhyTimer(TT)
+  local res, startTime, intervalRecoverTime, leftRecoverTime, allRecoverTime = self._roleModule:GetRecoverData(TT, 0)
   self:UnLock("UIMainLobbyTopIcon:GetCurrentPhyTimer")
   if not res:GetSucc() then
-    (Log.fatal)("###OnGetCurrentPhyTimer false !")
-    return 
+    Log.fatal("###OnGetCurrentPhyTimer false !")
+    return
   end
   local gapTimeNum = intervalRecoverTime * 1000
   local nextTimeNum = leftRecoverTime * 1000
   if self._startPhyTimerEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._startPhyTimerEvent)
+    GameGlobal.RealTimer():CancelEvent(self._startPhyTimerEvent)
     self._startPhyTimerEvent = nil
   end
-  if (self._roleModule):GetHpLevelMax() <= (self._roleModule):GetHealthPoint() then
-    return 
+  if self._roleModule:GetHealthPoint() >= self._roleModule:GetHpLevelMax() then
+    return
   end
-  self._startPhyTimerEvent = ((GameGlobal.RealTimer)()):AddEvent(nextTimeNum, function(gapTimeNum)
-    -- function num : 0_6_0 , upvalues : self
+  self._startPhyTimerEvent = GameGlobal.RealTimer():AddEvent(nextTimeNum, function(gapTimeNum)
     self:StartPhyTimer(gapTimeNum)
-  end
-, gapTimeNum)
+  end, gapTimeNum)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.StartPhyTimer = function(self, gapTime)
-  -- function num : 0_7 , upvalues : _ENV
+function UIMainLobbyTopIcon:StartPhyTimer(gapTime)
   if self._startPhyTimerLoopEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._startPhyTimerLoopEvent)
+    GameGlobal.RealTimer():CancelEvent(self._startPhyTimerLoopEvent)
     self._startPhyTimerLoopEvent = nil
   end
   self:StartPhyTimerLoop()
-  self._startPhyTimerLoopEvent = ((GameGlobal.RealTimer)()):AddEventTimes(gapTime, TimerTriggerCount.Infinite, function()
-    -- function num : 0_7_0 , upvalues : self
+  self._startPhyTimerLoopEvent = GameGlobal.RealTimer():AddEventTimes(gapTime, TimerTriggerCount.Infinite, function()
     self:StartPhyTimerLoop()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.StartPhyTimerLoop = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIMainLobbyTopIcon:StartPhyTimerLoop()
   self:Lock("UIMainLobbyTopIcon:StartPhyTimerLoop")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnStartPhyTimerLoop, self)
+  GameGlobal.TaskManager():StartTask(self.OnStartPhyTimerLoop, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.OnStartPhyTimerLoop = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
-  local res = (self._roleModule):GetRecoverData(TT, 0)
+function UIMainLobbyTopIcon:OnStartPhyTimerLoop(TT)
+  local res = self._roleModule:GetRecoverData(TT, 0)
   self:UnLock("UIMainLobbyTopIcon:StartPhyTimerLoop")
   if res:GetSucc() then
     self:ShowPhyPoint()
   else
-    ;
-    (Log.fatal)("###GetRecoverData false --> result --> ", res:GetResult())
+    Log.fatal("###GetRecoverData false --> result --> ", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.PhyPowerTexBtnOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  do return  end
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_PhyPoint"}, true)
+function UIMainLobbyTopIcon:PhyPowerTexBtnOnClick()
+  do return end
+  GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+    "Click_PhyPoint"
+  }, true)
   if not self._phyPanelIsOpen then
     self:ShowPhyPoint()
     self:OpenPhyTimer()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.ShowPhyPoint = function(self)
-  -- function num : 0_11
-  local currentPhyPower = (self._roleModule):GetHealthPoint()
+function UIMainLobbyTopIcon:ShowPhyPoint()
+  local currentPhyPower = self._roleModule:GetHealthPoint()
   if currentPhyPower == nil then
     currentPhyPower = 0
   end
-  local currentPhysicalPowerUpper = (self._roleModule):GetHpLevelMax()
+  local currentPhysicalPowerUpper = self._roleModule:GetHpLevelMax()
   if currentPhysicalPowerUpper == nil then
     currentPhysicalPowerUpper = 0
   end
   local moreThan = false
-  if currentPhysicalPowerUpper < currentPhyPower then
+  if currentPhyPower > currentPhysicalPowerUpper then
     moreThan = true
   end
-  if currentPhyPower > 999 then
+  if 999 < currentPhyPower then
     currentPhyPower = "999+"
   end
   if moreThan then
     currentPhyPower = "<color=#00ffea>" .. currentPhyPower .. "</color>"
   end
   if self.view then
-    (self._phyPowerText):SetText(currentPhyPower .. "/" .. currentPhysicalPowerUpper)
+    self._phyPowerText:SetText(currentPhyPower .. "/" .. currentPhysicalPowerUpper)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.OpenPhyTimer = function(self)
-  -- function num : 0_12
+function UIMainLobbyTopIcon:OpenPhyTimer()
   self:Lock("GetRecoverData")
   self:StartTask(self.OnOpenPhyTimer, self)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.OnOpenPhyTimer = function(self, TT)
-  -- function num : 0_13 , upvalues : _ENV
-  local res, startTime, intervalRecoverTime, leftRecoverTime, allRecoverTime = (self._roleModule):GetRecoverData(TT, 0)
+function UIMainLobbyTopIcon:OnOpenPhyTimer(TT)
+  local res, startTime, intervalRecoverTime, leftRecoverTime, allRecoverTime = self._roleModule:GetRecoverData(TT, 0)
   self:UnLock("GetRecoverData")
   if not res:GetSucc() then
-    (Log.fatal)("### request fail -- self._roleModule:GetRecoverData !")
-    return 
+    Log.fatal("### request fail -- self._roleModule:GetRecoverData !")
+    return
   end
   self._gapTimeNum = intervalRecoverTime
   self._nextTimeNum = leftRecoverTime
   self._allTimeNum = allRecoverTime
   self._phyPanelIsOpen = true
   if self._phyEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._phyEvent)
+    GameGlobal.RealTimer():CancelEvent(self._phyEvent)
     self._phyEvent = nil
   end
-  self._phyEvent = ((GameGlobal.RealTimer)()):AddEvent(2000, function()
-    -- function num : 0_13_0 , upvalues : self
+  self._phyEvent = GameGlobal.RealTimer():AddEvent(2000, function()
     self:ClosePhyTimer()
-  end
-)
-  ;
-  (self._phyTime):SetActive(true)
-  ;
-  (self._nextTime):SetText(self:Time2Str(self._nextTimeNum))
-  ;
-  (self._allTime):SetText(self:Time2Str(self._allTimeNum))
+  end)
+  self._phyTime:SetActive(true)
+  self._nextTime:SetText(self:Time2Str(self._nextTimeNum))
+  self._allTime:SetText(self:Time2Str(self._allTimeNum))
   if self._showTimeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._showTimeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._showTimeEvent)
     self._showTimeEvent = nil
   end
-  self._showTimeEvent = ((GameGlobal.RealTimer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, self.ShowTime, self)
+  self._showTimeEvent = GameGlobal.RealTimer():AddEventTimes(1000, TimerTriggerCount.Infinite, self.ShowTime, self)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.ClosePhyTimer = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (self._phyTime):SetActive(false)
+function UIMainLobbyTopIcon:ClosePhyTimer()
+  self._phyTime:SetActive(false)
   if self._showTimeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._showTimeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._showTimeEvent)
     self._showTimeEvent = nil
   end
   if self._phyEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._phyEvent)
+    GameGlobal.RealTimer():CancelEvent(self._phyEvent)
     self._phyEvent = nil
   end
   self._phyPanelIsOpen = false
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.ShowTime = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIMainLobbyTopIcon:ShowTime()
   self._nextTimeNum = self._nextTimeNum - 1
   self._allTimeNum = self._allTimeNum - 1
   if self._nextTimeNum < 0 then
@@ -268,43 +199,35 @@ UIMainLobbyTopIcon.ShowTime = function(self)
   if self._allTimeNum < 0 then
     self._allTimeNum = 0
     if self._showTimeEvent then
-      ((GameGlobal.RealTimer)()):CancelEvent(self._showTimeEvent)
+      GameGlobal.RealTimer():CancelEvent(self._showTimeEvent)
       self._showTimeEvent = nil
     end
-    return 
+    return
   end
-  ;
-  (self._nextTime):SetText(self:Time2Str(self._nextTimeNum))
-  ;
-  (self._allTime):SetText(self:Time2Str(self._allTimeNum))
+  self._nextTime:SetText(self:Time2Str(self._nextTimeNum))
+  self._allTime:SetText(self:Time2Str(self._allTimeNum))
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.Time2Str = function(self, time)
-  -- function num : 0_16
+function UIMainLobbyTopIcon:Time2Str(time)
   local str = ""
   local timeTab = self:ChangeSecondToTime(time)
   str = self:ChangeTimeTableToStr(timeTab)
   return str
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.ChangeTimeTableToStr = function(self, timeTable)
-  -- function num : 0_17
-  local hourStr, minStr, secStr = nil, nil, nil
+function UIMainLobbyTopIcon:ChangeTimeTableToStr(timeTable)
+  local hourStr, minStr, secStr
   if timeTable.hour > 9 then
     hourStr = timeTable.hour
   else
     hourStr = "0" .. timeTable.hour
   end
-  if timeTable.min > 9 then
+  if 9 < timeTable.min then
     minStr = timeTable.min
   else
     minStr = "0" .. timeTable.min
   end
-  if timeTable.sec > 9 then
+  if 9 < timeTable.sec then
     secStr = timeTable.sec
   else
     secStr = "0" .. timeTable.sec
@@ -312,82 +235,57 @@ UIMainLobbyTopIcon.ChangeTimeTableToStr = function(self, timeTable)
   return hourStr .. ":" .. minStr .. ":" .. secStr
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.ChangeSecondToTime = function(self, second)
-  -- function num : 0_18 , upvalues : _ENV
-  local timeTable = {hour = 0, min = 0, sec = 0}
+function UIMainLobbyTopIcon:ChangeSecondToTime(second)
+  local timeTable = {
+    hour = 0,
+    min = 0,
+    sec = 0
+  }
   if second == 0 then
     return timeTable
   end
-  local sec = (math.modf)(second % 60)
-  local minAll = (math.modf)((second - sec) / 60)
-  local min = (math.modf)(minAll % 60)
-  local hour = (math.modf)((minAll - min) / 60)
+  local sec = math.modf(second % 60)
+  local minAll = math.modf((second - sec) / 60)
+  local min = math.modf(minAll % 60)
+  local hour = math.modf((minAll - min) / 60)
   timeTable.hour = hour
   timeTable.min = min
   timeTable.sec = sec
   return timeTable
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.GoldOnClick = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIMainLobbyTopIcon:GoldOnClick()
   local gold = self:GetGameObject("Gold")
-  ;
-  (self._toptipsInfo):SetData(RoleAssetID.RoleAssetGold, gold)
+  self._toptipsInfo:SetData(RoleAssetID.RoleAssetGold, gold)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.PhyPowerOnClick = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIMainLobbyTopIcon:PhyPowerOnClick()
   local power = self:GetGameObject("PhyPower")
-  ;
-  (self._toptipsInfo):SetData(RoleAssetID.RoleAssetPhyPoint, power)
+  self._toptipsInfo:SetData(RoleAssetID.RoleAssetPhyPoint, power)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.DiamondOnClick = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local count = (self._roleModule):GetGlow()
+function UIMainLobbyTopIcon:DiamondOnClick()
+  local count = self._roleModule:GetGlow()
   if count < 0 then
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, (StringTable.Get)("str_shop_resourceerror_title"), (StringTable.Get)("str_shop_resourceerror_desc"), function(param)
-    -- function num : 0_21_0
-  end
-)
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, StringTable.Get("str_shop_resourceerror_title"), StringTable.Get("str_shop_resourceerror_desc"), function(param)
+    end)
   else
     local diamond = self:GetGameObject("Diamond")
-    ;
-    (self._toptipsInfo):SetData(RoleAssetID.RoleAssetGlow, diamond)
+    self._toptipsInfo:SetData(RoleAssetID.RoleAssetGlow, diamond)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.DiamondAddOnClick = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_ADD_DIAMOND)
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIShopCurrency1To2", 0)
+function UIMainLobbyTopIcon:DiamondAddOnClick()
+  GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_ADD_DIAMOND)
+  GameGlobal.UIStateManager():ShowDialog("UIShopCurrency1To2", 0)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.PhyPowerAddOnClick = function(self, go)
-  -- function num : 0_23 , upvalues : _ENV
-  ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_ADD_PHY)
+function UIMainLobbyTopIcon:PhyPowerAddOnClick(go)
+  GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_ADD_PHY)
   self:ShowDialog("UIGetPhyPointController")
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTopIcon.GoldAddOnClick = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_COIN)
+function UIMainLobbyTopIcon:GoldAddOnClick()
+  GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_COIN)
   self:ShowDialog("UIItemGetPathController", RoleAssetID.RoleAssetGold)
 end
-
-

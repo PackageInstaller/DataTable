@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_trap_summon_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalcTrapSummonMonster", Object)
 SkillEffectCalcTrapSummonMonster = SkillEffectCalcTrapSummonMonster
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalcTrapSummonMonster.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalcTrapSummonMonster:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
-  self._configService = (self._world):GetService("Config")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
+  self._configService = self._world:GetService("Config")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcTrapSummonMonster.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalcTrapSummonMonster:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local param = skillEffectCalcParam.skillEffectParam
   local casterID = skillEffectCalcParam.casterEntityID
-  local casterEntity = (self._world):GetEntityByID(casterID)
+  local casterEntity = self._world:GetEntityByID(casterID)
   local type = param:GetSummonType()
   local monsterIDList = param:GetMonsterIDList()
   local delay = param:GetDelay()
   local attCpt = casterEntity:Attributes()
-  local curRound = ((self._world):BattleStat()):GetLevelTotalRoundCount()
+  local curRound = self._world:BattleStat():GetLevelTotalRoundCount()
   local trapBeginCastRound = attCpt:GetAttribute("TrapBeginCastRound")
   local trapCmpt = casterEntity:Trap()
   local bornRound = trapCmpt:GetTrapBornRound()
@@ -43,97 +33,85 @@ SkillEffectCalcTrapSummonMonster.DoSkillEffectCalculator = function(self, skillE
   local summonRound = attCpt:GetAttribute("TrapNextSummonMonsterRound")
   if delay ~= 0 then
     if delay + bornRound == curRound + 1 and trapOpenState == 0 then
-      result:SetTrapOpenStateChange(true)
-      attCpt:Modify("OpenState", 1)
-      result:SetTrapOpenState(1)
-      local res = DataAttributeResult:New(casterID, "OpenState", 1)
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, res)
-    else
       do
-        if curRound - bornRound >= delay then
-          if not summonMonsterIndex then
+        result:SetTrapOpenStateChange(true)
+        attCpt:Modify("OpenState", 1)
+        result:SetTrapOpenState(1)
+        local res = DataAttributeResult:New(casterID, "OpenState", 1)
+        self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, res)
+      end
+    else
+      if delay > curRound - bornRound then
+        goto lbl_210
+      end
+      summonMonsterIndex = summonMonsterIndex or 1
+      if not summonDone or summonDone ~= 1 then
+        if not self:IsCasterPosBlock(casterEntity, summonMonsterIndex, monsterIDList, type) then
+          canSummon = false
+        end
+        summonRound = summonRound or curRound
+        if summonRound == curRound + 1 then
+          do
+            result:SetTrapOpenStateChange(true)
+            attCpt:Modify("OpenState", 1)
+            result:SetTrapOpenState(1)
+            local res = DataAttributeResult:New(casterID, "OpenState", 1)
+            self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, res)
+          end
+        elseif not (curRound < summonRound) and canSummon then
+          summonRound = summonRound + interval + 1
+          attCpt:SetSimpleAttribute("TrapNextSummonMonsterRound", summonRound)
+          goto lbl_150
+          goto lbl_210
+          ::lbl_150::
+          if type == TrapSummonMonsterType.SequenceType then
+            if summonMonsterIndex + 1 > #monsterIDList then
+              attCpt:SetSimpleAttribute("TrapSummonDone", 1)
+            end
+          elseif type == TrapSummonMonsterType.CycleType and summonMonsterIndex > #monsterIDList then
             summonMonsterIndex = 1
           end
-          if not summonDone or summonDone ~= 1 then
-            if not self:IsCasterPosBlock(casterEntity, summonMonsterIndex, monsterIDList, type) then
-              canSummon = false
-            end
-            if not summonRound then
-              summonRound = curRound
-            end
-            if summonRound == curRound + 1 then
+          if canSummon then
+            local monsterID = monsterIDList[summonMonsterIndex]
+            result = self:SummonMonster(casterEntity, monsterID)
+            attCpt:SetSimpleAttribute("TrapNextMonsterIndex", summonMonsterIndex + 1)
+            if 0 < interval then
               result:SetTrapOpenStateChange(true)
-              attCpt:Modify("OpenState", 1)
-              result:SetTrapOpenState(1)
-              local res = DataAttributeResult:New(casterID, "OpenState", 1)
-              ;
-              ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, res)
-            else
-              do
-                if curRound >= summonRound and canSummon then
-                  summonRound = summonRound + interval + 1
-                  attCpt:SetSimpleAttribute("TrapNextSummonMonsterRound", summonRound)
-                end
-                -- DECOMPILER ERROR at PC160: Unhandled construct in 'MakeBoolean' P1
-
-                if type == TrapSummonMonsterType.SequenceType and #monsterIDList < summonMonsterIndex + 1 then
-                  attCpt:SetSimpleAttribute("TrapSummonDone", 1)
-                end
-                if type == TrapSummonMonsterType.CycleType and #monsterIDList < summonMonsterIndex then
-                  summonMonsterIndex = 1
-                end
-                if canSummon then
-                  local monsterID = monsterIDList[summonMonsterIndex]
-                  result = self:SummonMonster(casterEntity, monsterID)
-                  attCpt:SetSimpleAttribute("TrapNextMonsterIndex", summonMonsterIndex + 1)
-                  if interval > 0 then
-                    result:SetTrapOpenStateChange(true)
-                    attCpt:Modify("OpenState", 0)
-                    result:SetTrapOpenState(0)
-                    local res = DataAttributeResult:New(casterID, "OpenState", 0)
-                    ;
-                    ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, res)
-                  end
-                end
-                do
-                  return {result}
-                end
-              end
+              attCpt:Modify("OpenState", 0)
+              result:SetTrapOpenState(0)
+              local res = DataAttributeResult:New(casterID, "OpenState", 0)
+              self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, res)
             end
           end
         end
       end
     end
   end
+  ::lbl_210::
+  return {result}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcTrapSummonMonster.IsCasterPosBlock = function(self, casterEntity, summonMonsterIndex, monsterIDList, type)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalcTrapSummonMonster:IsCasterPosBlock(casterEntity, summonMonsterIndex, monsterIDList, type)
   local bodyAreCpt = casterEntity:BodyArea()
   local casterPos = casterEntity:GetGridPosition()
-  local monsterConfigData = (self._configService):GetMonsterConfigData()
-  if #monsterIDList < summonMonsterIndex and type == TrapSummonMonsterType.CycleType then
+  local monsterConfigData = self._configService:GetMonsterConfigData()
+  if summonMonsterIndex > #monsterIDList and type == TrapSummonMonsterType.CycleType then
     summonMonsterIndex = 1
   end
   local monsterID = monsterIDList[summonMonsterIndex]
   if not monsterID then
     return false
   end
-  local monsterRaceType = (monsterConfigData:GetMonsterRaceType(monsterID))
-  local blockFlag = nil
+  local monsterRaceType = monsterConfigData:GetMonsterRaceType(monsterID)
+  local blockFlag
   if monsterRaceType == MonsterRaceType.Fly then
     blockFlag = BlockFlag.MonsterFly
-  else
-    if monsterRaceType == MonsterRaceType.Land then
-      blockFlag = BlockFlag.MonsterLand
-    end
+  elseif monsterRaceType == MonsterRaceType.Land then
+    blockFlag = BlockFlag.MonsterLand
   end
   local bodyArea = bodyAreCpt:GetArea()
-  local boardSvc = (self._world):GetService("BoardLogic")
-  for i,pos in ipairs(bodyArea) do
+  local boardSvc = self._world:GetService("BoardLogic")
+  for i, pos in ipairs(bodyArea) do
     local newPos = pos + casterPos
     if boardSvc:IsPosBlock(newPos, blockFlag) then
       return false
@@ -142,12 +120,9 @@ SkillEffectCalcTrapSummonMonster.IsCasterPosBlock = function(self, casterEntity,
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcTrapSummonMonster.SummonMonster = function(self, casterEntity, monsterID)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectCalcTrapSummonMonster:SummonMonster(casterEntity, monsterID)
   local bodyAreCpt = casterEntity:BodyArea()
-  local monsterCreationSvc = (self._world):GetService("MonsterCreationLogic")
+  local monsterCreationSvc = self._world:GetService("MonsterCreationLogic")
   local monsterTransformParam = MonsterTransformParam:New(monsterID)
   local casterPos = casterEntity:GetGridPosition()
   local casterDir = casterEntity:GetGridDirection()
@@ -160,5 +135,3 @@ SkillEffectCalcTrapSummonMonster.SummonMonster = function(self, casterEntity, mo
   result:SetMonsterTransformParam(monsterTransformParam)
   return result
 end
-
-

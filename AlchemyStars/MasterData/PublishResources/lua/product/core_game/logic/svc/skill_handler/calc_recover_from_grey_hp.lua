@@ -1,22 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_recover_from_grey_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_RecoverFromGreyHP", SkillEffectCalc_Base)
 SkillEffectCalc_RecoverFromGreyHP = SkillEffectCalc_RecoverFromGreyHP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_RecoverFromGreyHP.CalculateOnSingleTarget = function(self, calcParam, targetID)
-  -- function num : 0_0 , upvalues : _ENV
-  local casterEntity = (self._world):GetEntityByID(calcParam:GetCasterEntityID())
+function SkillEffectCalc_RecoverFromGreyHP:CalculateOnSingleTarget(calcParam, targetID)
+  local casterEntity = self._world:GetEntityByID(calcParam:GetCasterEntityID())
   local effectParam = calcParam:GetSkillEffectParam()
-  local buffLogicService = (self._world):GetService("BuffLogic")
+  local buffLogicService = self._world:GetService("BuffLogic")
   local damageInfo = buffLogicService:GetRecoverFromGreyHPDamageInfo(casterEntity, effectParam:GetRecoverRate())
   if not damageInfo then
-    return 
+    return
   end
   return SkillEffectResult_RecoverFromGreyHP:New(calcParam:GetCasterEntityID(), damageInfo)
 end
-
-

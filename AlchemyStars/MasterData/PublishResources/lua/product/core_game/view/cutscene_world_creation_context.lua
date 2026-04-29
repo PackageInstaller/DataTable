@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cutscene_world_creation_context.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_world_creation_context")
 require("cutscene_pack_installer")
 _class("CutsceneWorldCreationContext", BaseWorldCreationContext)
 CutsceneWorldCreationContext = CutsceneWorldCreationContext
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneWorldCreationContext.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CutsceneWorldCreationContext:Constructor()
   self.WCC_StartCreationIndex = 1
   self.WCC_EntityCreationProto = Entity
   local wEComponents = ComponentsLookup:New({})
@@ -28,11 +21,6 @@ CutsceneWorldCreationContext.Constructor = function(self)
   self.totalComponents = wEComponents.TotalComponents
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneWorldCreationContext.Destructor = function(self)
-  -- function num : 0_1
+function CutsceneWorldCreationContext:Destructor()
   self.players = nil
 end
-
-

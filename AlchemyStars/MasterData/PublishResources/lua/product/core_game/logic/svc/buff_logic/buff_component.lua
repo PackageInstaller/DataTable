@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic/buff_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffComponent", Object)
 BuffComponent = BuffComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffComponent.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffComponent:Constructor(world)
   self._world = world
   self._buffArray = {}
   self._buffSourceList = {}
@@ -28,94 +21,54 @@ BuffComponent.Constructor = function(self, world)
   self._shieldViewType = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.Dispose = function(self)
-  -- function num : 0_1
+function BuffComponent:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.HasFlag = function(self, flag)
-  -- function num : 0_2
-  return (self._buffFlags):CheckFlag(flag)
+function BuffComponent:HasFlag(flag)
+  return self._buffFlags:CheckFlag(flag)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.SetFlag = function(self, flag)
-  -- function num : 0_3
-  (self._buffFlags):SetFlag(flag)
+function BuffComponent:SetFlag(flag)
+  self._buffFlags:SetFlag(flag)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.ResetFlag = function(self, flag)
-  -- function num : 0_4
-  (self._buffFlags):ResetFlag(flag)
+function BuffComponent:ResetFlag(flag)
+  self._buffFlags:ResetFlag(flag)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetBuffValues = function(self)
-  -- function num : 0_5
+function BuffComponent:GetBuffValues()
   return self._buffValues
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetBuffValue = function(self, key)
-  -- function num : 0_6
-  return (self._buffValues)[key]
+function BuffComponent:GetBuffValue(key)
+  return self._buffValues[key]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.SetBuffValue = function(self, key, value)
-  -- function num : 0_7
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._buffValues)[key] = value
+function BuffComponent:SetBuffValue(key, value)
+  self._buffValues[key] = value
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.AddBuffValue = function(self, key, value)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._buffValues)[key] then
-    (self._buffValues)[key] = 0
+function BuffComponent:AddBuffValue(key, value)
+  if not self._buffValues[key] then
+    self._buffValues[key] = 0
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffValues)[key] = (self._buffValues)[key] + value
-  return (self._buffValues)[key]
+  self._buffValues[key] = self._buffValues[key] + value
+  return self._buffValues[key]
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.SetActive = function(self, active)
-  -- function num : 0_9 , upvalues : _ENV
-  for i,inst in ipairs(self._buffArray) do
+function BuffComponent:SetActive(active)
+  for i, inst in ipairs(self._buffArray) do
     inst:SetActive(active)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetBuffArray = function(self)
-  -- function num : 0_10
+function BuffComponent:GetBuffArray()
   return self._buffArray
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetBuffArrayByBuffEffect = function(self, et)
-  -- function num : 0_11 , upvalues : _ENV
+function BuffComponent:GetBuffArrayByBuffEffect(et)
   local ret = {}
-  for i,buff in ipairs(self._buffArray) do
+  for i, buff in ipairs(self._buffArray) do
     if buff:GetBuffEffectType() == et and not buff:IsUnload() then
       ret[#ret + 1] = buff
     end
@@ -123,11 +76,8 @@ BuffComponent.GetBuffArrayByBuffEffect = function(self, et)
   return ret
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetSingleBuffByBuffEffect = function(self, et)
-  -- function num : 0_12 , upvalues : _ENV
-  for i,buff in ipairs(self._buffArray) do
+function BuffComponent:GetSingleBuffByBuffEffect(et)
+  for i, buff in ipairs(self._buffArray) do
     if buff:GetBuffEffectType() == et and not buff:IsUnload() then
       return buff
     end
@@ -135,11 +85,8 @@ BuffComponent.GetSingleBuffByBuffEffect = function(self, et)
   return nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.CheckHaveBuffById = function(self, buffId)
-  -- function num : 0_13 , upvalues : _ENV
-  for i,buff in ipairs(self._buffArray) do
+function BuffComponent:CheckHaveBuffById(buffId)
+  for i, buff in ipairs(self._buffArray) do
     if buff:BuffID() == buffId then
       return true
     end
@@ -147,11 +94,8 @@ BuffComponent.CheckHaveBuffById = function(self, buffId)
   return false
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetBuffById = function(self, buffId)
-  -- function num : 0_14 , upvalues : _ENV
-  for i,buff in ipairs(self._buffArray) do
+function BuffComponent:GetBuffById(buffId)
+  for i, buff in ipairs(self._buffArray) do
     local cur_buffid = buff:BuffID()
     if cur_buffid == buffId and not buff:IsUnload() then
       return buff
@@ -160,12 +104,9 @@ BuffComponent.GetBuffById = function(self, buffId)
   return nil
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetBuffArrayByBuffType = function(self, type)
-  -- function num : 0_15 , upvalues : _ENV
+function BuffComponent:GetBuffArrayByBuffType(type)
   local ret = {}
-  for i,buff in ipairs(self._buffArray) do
+  for i, buff in ipairs(self._buffArray) do
     if buff:GetBuffType() == type then
       ret[#ret + 1] = buff
     end
@@ -173,11 +114,8 @@ BuffComponent.GetBuffArrayByBuffType = function(self, type)
   return ret
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.HasBuffEffect = function(self, et)
-  -- function num : 0_16 , upvalues : _ENV
-  for i,buff in ipairs(self._buffArray) do
+function BuffComponent:HasBuffEffect(et)
+  for i, buff in ipairs(self._buffArray) do
     if buff:GetBuffEffectType() == et and not buff:IsUnload() then
       return true
     end
@@ -185,49 +123,36 @@ BuffComponent.HasBuffEffect = function(self, et)
   return false
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.AddBuffSource = function(self, buffSource, buffInstance)
-  -- function num : 0_17 , upvalues : _ENV
+function BuffComponent:AddBuffSource(buffSource, buffInstance)
   if not buffSource then
-    return 
+    return
   end
-  for _buffSource,list in pairs(self._buffSourceList) do
+  for _buffSource, list in pairs(self._buffSourceList) do
     if _buffSource == buffSource then
       self:PrintBuffCmptLog("AddBuff SourceType:", buffSource._sourceType, "SourceID:", buffSource._sourceID, " BuffID:", buffInstance:BuffID(), "BuffSeq:", buffInstance:BuffSeq())
-      ;
-      (table.insert)(list, buffInstance)
-      return 
+      table.insert(list, buffInstance)
+      return
     end
   end
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffSourceList)[buffSource] = {buffInstance}
+  self._buffSourceList[buffSource] = {buffInstance}
   self:PrintBuffCmptLog("AddBuff SourceType:", buffSource._sourceType, "SourceID:", buffSource._sourceID, " BuffID:", buffInstance:BuffID(), "BuffSeq:", buffInstance:BuffSeq())
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.UnLoadBuff = function(self, buffSource)
-  -- function num : 0_18 , upvalues : _ENV
-  for _buffSource,list in pairs(self._buffSourceList) do
+function BuffComponent:UnLoadBuff(buffSource)
+  for _buffSource, list in pairs(self._buffSourceList) do
     if _buffSource == buffSource then
-      for _,buffInstance in pairs(list) do
+      for _, buffInstance in pairs(list) do
         buffInstance:Unload(NTBuffUnload:New())
         self:PrintBuffCmptLog("UnLoad BuffID:", buffInstance:BuffID(), "BuffSeq:", buffInstance:BuffSeq())
       end
-      return 
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetBuffSourceByBuffID = function(self, buffID)
-  -- function num : 0_19 , upvalues : _ENV
-  for _buffSource,list in pairs(self._buffSourceList) do
-    for k,buffInstance in pairs(list) do
+function BuffComponent:GetBuffSourceByBuffID(buffID)
+  for _buffSource, list in pairs(self._buffSourceList) do
+    for k, buffInstance in pairs(list) do
       if buffInstance:BuffID() == buffID then
         return _buffSource
       end
@@ -236,97 +161,70 @@ BuffComponent.GetBuffSourceByBuffID = function(self, buffID)
   return nil
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.AddBuffInstance = function(self, buffInstance)
-  -- function num : 0_20 , upvalues : _ENV
-  (table.insert)(self._buffArray, buffInstance)
-  local res = DataBuffAddResult:New((self._entity):GetID(), buffInstance:BuffSeq(), buffInstance:BuffID(), buffInstance:Context())
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, res)
+function BuffComponent:AddBuffInstance(buffInstance)
+  table.insert(self._buffArray, buffInstance)
+  local res = DataBuffAddResult:New(self._entity:GetID(), buffInstance:BuffSeq(), buffInstance:BuffID(), buffInstance:Context())
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, res)
   buffInstance:Load()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.RemoveBuffInstance = function(self, buffInstance)
-  -- function num : 0_21 , upvalues : _ENV
-  if (table.icontains)(self._buffArray, buffInstance) then
-    (table.removev)(self._buffArray, buffInstance)
+function BuffComponent:RemoveBuffInstance(buffInstance)
+  if table.icontains(self._buffArray, buffInstance) then
+    table.removev(self._buffArray, buffInstance)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetBuffBySeq = function(self, buffSeq)
-  -- function num : 0_22 , upvalues : _ENV
-  for i,buff in ipairs(self._buffArray) do
+function BuffComponent:GetBuffBySeq(buffSeq)
+  for i, buff in ipairs(self._buffArray) do
     if buff:BuffSeq() == buffSeq then
       return buff
     end
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.RemoveBuffBySeq = function(self, buffSeq, notice)
-  -- function num : 0_23
+function BuffComponent:RemoveBuffBySeq(buffSeq, notice)
   for i = #self._buffArray, 1, -1 do
-    local buff = (self._buffArray)[i]
+    local buff = self._buffArray[i]
     if buff:BuffSeq() == buffSeq then
       buff:Unload(notice)
-      return 
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.RemoveBuffByEffectType = function(self, effectType, notice)
-  -- function num : 0_24 , upvalues : _ENV
+function BuffComponent:RemoveBuffByEffectType(effectType, notice)
   local tSeqID = {}
   for i = #self._buffArray, 1, -1 do
-    local buff = (self._buffArray)[i]
+    local buff = self._buffArray[i]
     if buff:GetBuffEffectType() == effectType then
-      (table.insert)(tSeqID, buff:BuffSeq())
+      table.insert(tSeqID, buff:BuffSeq())
       buff:Unload(notice)
     end
   end
   return tSeqID
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.RemoveUnloadedBuffInstance = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function BuffComponent:RemoveUnloadedBuffInstance()
   for i = #self._buffArray, 1, -1 do
-    local buffInstance = (self._buffArray)[i]
+    local buffInstance = self._buffArray[i]
     if buffInstance:IsUnload() then
-      self:PrintBuffCmptLog("RemoveUnloadedBuffInstance entity=", (self._entity):GetID(), " buffID=", buffInstance:BuffID())
-      ;
-      (table.remove)(self._buffArray, i)
+      self:PrintBuffCmptLog("RemoveUnloadedBuffInstance entity=", self._entity:GetID(), " buffID=", buffInstance:BuffID())
+      table.remove(self._buffArray, i)
     end
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.ClearAllBuffInstances = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  for i,buff in ipairs(self._buffArray) do
+function BuffComponent:ClearAllBuffInstances()
+  for i, buff in ipairs(self._buffArray) do
     buff:OnUnload(nil, true)
   end
   self._buffArray = {}
-  ;
-  (self._buffFlags):Clear()
+  self._buffFlags:Clear()
   self._buffValues = {}
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.HasDebuff = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  for i,buff in ipairs(self._buffArray) do
+function BuffComponent:HasDebuff()
+  for i, buff in ipairs(self._buffArray) do
     local buffcfgdata = buff:BuffConfigData()
     if buffcfgdata:IsDebuff() then
       return true
@@ -335,26 +233,17 @@ BuffComponent.HasDebuff = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetCurHitIndex = function(self)
-  -- function num : 0_28
+function BuffComponent:GetCurHitIndex()
   return self._curHitIndex
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.AddHitIndex = function(self)
-  -- function num : 0_29
+function BuffComponent:AddHitIndex()
   self._curHitIndex = self._curHitIndex + 1
   return self._curHitIndex
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.IsHPPercentHasDrop = function(self, hpPercent)
-  -- function num : 0_30 , upvalues : _ENV
-  for _,v in ipairs(self._hasDropHpPercent) do
+function BuffComponent:IsHPPercentHasDrop(hpPercent)
+  for _, v in ipairs(self._hasDropHpPercent) do
     if v == hpPercent then
       return true
     end
@@ -362,38 +251,23 @@ BuffComponent.IsHPPercentHasDrop = function(self, hpPercent)
   return false
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.AddHasDropHpPercent = function(self, hpPercent)
-  -- function num : 0_31 , upvalues : _ENV
-  (table.insert)(self._hasDropHpPercent, hpPercent)
+function BuffComponent:AddHasDropHpPercent(hpPercent)
+  table.insert(self._hasDropHpPercent, hpPercent)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.IsAlwaysLock = function(self)
-  -- function num : 0_32
+function BuffComponent:IsAlwaysLock()
   return self:GetBuffValue("LockHPAlways")
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetLockHPRoundIndex = function(self)
-  -- function num : 0_33
+function BuffComponent:GetLockHPRoundIndex()
   return self._lockHpRoundIndex
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetLockGSMState = function(self)
-  -- function num : 0_34
+function BuffComponent:GetLockGSMState()
   return self._lockGSMState
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.IsHPNeedUnLock = function(self, roundIndex, nowGSMState)
-  -- function num : 0_35 , upvalues : _ENV
+function BuffComponent:IsHPNeedUnLock(roundIndex, nowGSMState)
   if self:GetBuffValue("LockHPAlways") then
     return false
   end
@@ -412,186 +286,112 @@ BuffComponent.IsHPNeedUnLock = function(self, roundIndex, nowGSMState)
   return false
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.IsHPLock = function(self, roundIndex)
-  -- function num : 0_36
+function BuffComponent:IsHPLock(roundIndex)
   if roundIndex and self._lockHpRoundIndex ~= 0 and self._lockHpRoundIndex == roundIndex then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.AddHpLockState = function(self, roundIndex, hpPercent, lockIndex, lockGSMState)
-  -- function num : 0_37 , upvalues : _ENV
+function BuffComponent:AddHpLockState(roundIndex, hpPercent, lockIndex, lockGSMState)
   self._lockHpRoundIndex = roundIndex
-  ;
-  (table.insert)(self._lockHpPercent, hpPercent)
+  table.insert(self._lockHpPercent, hpPercent)
   self._lockIndex = lockIndex
   self._lockGSMState = lockGSMState
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetHPLockIndex = function(self)
-  -- function num : 0_38
+function BuffComponent:GetHPLockIndex()
   return self._lockIndex
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.ResetHPLockState = function(self)
-  -- function num : 0_39
+function BuffComponent:ResetHPLockState()
   self._lockHpRoundIndex = 0
   self._lockIndex = 0
   self._lockGSMState = 0
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.HpIsHasLocked = function(self, hpPercent)
-  -- function num : 0_40 , upvalues : _ENV
+function BuffComponent:HpIsHasLocked(hpPercent)
   if #self._lockHpPercent == 0 then
     return false
   end
-  return (table.icontains)(self._lockHpPercent, hpPercent)
+  return table.icontains(self._lockHpPercent, hpPercent)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.HpHasLocked = function(self)
-  -- function num : 0_41
-  do return #self._lockHpPercent ~= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function BuffComponent:HpHasLocked()
+  return #self._lockHpPercent ~= 0
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.RecordUnlockHPIndex = function(self, index)
-  -- function num : 0_42
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._unlockIndex)[#self._unlockIndex + 1] = index
+function BuffComponent:RecordUnlockHPIndex(index)
+  self._unlockIndex[#self._unlockIndex + 1] = index
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetUnlockHPIndex = function(self)
-  -- function num : 0_43
+function BuffComponent:GetUnlockHPIndex()
   return self._unlockIndex
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.RecordLastUnlockHPRound = function(self, round)
-  -- function num : 0_44
+function BuffComponent:RecordLastUnlockHPRound(round)
   self._lastUnlockHpRound = round
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetLastUnlockHPRound = function(self)
-  -- function num : 0_45
+function BuffComponent:GetLastUnlockHPRound()
   return self._lastUnlockHpRound
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.SaveArchivedData = function(self)
-  -- function num : 0_46
+function BuffComponent:SaveArchivedData()
   local lockHpList = self:GetBuffValue("LockHPList")
-  do
-    if lockHpList then
-      local buffData = {}
-      buffData._lockHpRoundIndex = self._lockHpRoundIndex
-      buffData._lockGSMState = self._lockGSMState
-      buffData._lockIndex = self._lockIndex
-      buffData._lockHpPercent = self._lockHpPercent
-      buffData._unlockIndex = self._unlockIndex
-      return buffData
-    end
-    return nil
+  if lockHpList then
+    local buffData = {}
+    buffData._lockHpRoundIndex = self._lockHpRoundIndex
+    buffData._lockGSMState = self._lockGSMState
+    buffData._lockIndex = self._lockIndex
+    buffData._lockHpPercent = self._lockHpPercent
+    buffData._unlockIndex = self._unlockIndex
+    return buffData
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.LoadArchivedData = function(self, buffData)
-  -- function num : 0_47
+function BuffComponent:LoadArchivedData(buffData)
   if buffData then
     self._lockHpRoundIndex = buffData._lockHpRoundIndex
     self._lockGSMState = buffData._lockGSMState
     self._lockIndex = buffData._lockIndex
     self._lockHpPercent = buffData._lockHpPercent
-    if not buffData._unlockIndex then
-      self._unlockIndex = {}
-    end
+    self._unlockIndex = buffData._unlockIndex or {}
   end
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.IsBuffFreeze = function(self)
-  -- function num : 0_48
-  do return self:GetBuffValue("Freeze") == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function BuffComponent:IsBuffFreeze()
+  return self:GetBuffValue("Freeze") == 1
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.PrintBuffCmptLog = function(self, ...)
-  -- function num : 0_49 , upvalues : _ENV
-  if self._world and (self._world):IsDevelopEnv() then
-    (Log.debug)(...)
+function BuffComponent:PrintBuffCmptLog(...)
+  if self._world and self._world:IsDevelopEnv() then
+    Log.debug(...)
   end
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetLastEffectedLogicInfo = function(self, key)
-  -- function num : 0_50
-  return (self._lastEffectedInfo)[key]
+function BuffComponent:GetLastEffectedLogicInfo(key)
+  return self._lastEffectedInfo[key]
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.SetLastEffectedLogicInfo = function(self, key, info)
-  -- function num : 0_51
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._lastEffectedInfo)[key] = info
+function BuffComponent:SetLastEffectedLogicInfo(key, info)
+  self._lastEffectedInfo[key] = info
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.RemoveLastEffectedLogicInfo = function(self, key)
-  -- function num : 0_52
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._lastEffectedInfo)[key] = nil
+function BuffComponent:RemoveLastEffectedLogicInfo(key)
+  self._lastEffectedInfo[key] = nil
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.IsGreyHPEnabled = function(self)
-  -- function num : 0_53
-  do return self:GetBuffValue("GreyHPEnabled") == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function BuffComponent:IsGreyHPEnabled()
+  return self:GetBuffValue("GreyHPEnabled") == 1
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.SetGreyHPEnable = function(self, enabled)
-  -- function num : 0_54
+function BuffComponent:SetGreyHPEnable(enabled)
   self:SetBuffValue("GreyHPEnabled", enabled and 1 or 0)
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetGreyHPValue = function(self, safety)
-  -- function num : 0_55
+function BuffComponent:GetGreyHPValue(safety)
   local v = self:GetBuffValue("GreyHPValue")
   if safety and not v then
     v = 0
@@ -599,124 +399,73 @@ BuffComponent.GetGreyHPValue = function(self, safety)
   return v
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.SetGreyHPValue = function(self, v)
-  -- function num : 0_56
+function BuffComponent:SetGreyHPValue(v)
   self:SetBuffValue("GreyHPValue", v)
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.ClearGreyHPValue = function(self)
-  -- function num : 0_57
+function BuffComponent:ClearGreyHPValue()
   self:SetBuffValue("GreyHPValue", nil)
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetRecoverByMaxHPCountValue = function(self)
-  -- function num : 0_58
+function BuffComponent:GetRecoverByMaxHPCountValue()
   local v = self:GetBuffValue("RecoverByMaxHPCount")
-  if not v then
-    v = 0
-  end
+  v = v or 0
   return v
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.SetRecoverByMaxHPCountValue = function(self, v)
-  -- function num : 0_59
+function BuffComponent:SetRecoverByMaxHPCountValue(v)
   self:SetBuffValue("RecoverByMaxHPCount", v)
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.ClearRecoverByMaxHPCountValue = function(self)
-  -- function num : 0_60
+function BuffComponent:ClearRecoverByMaxHPCountValue()
   self:SetBuffValue("RecoverByMaxHPCount", nil)
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.SetPoisonByAttackCasterID = function(self, casterID)
-  -- function num : 0_61
+function BuffComponent:SetPoisonByAttackCasterID(casterID)
   if not self._poisonByAttackCasterID then
     self._poisonByAttackCasterID = casterID
   end
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.ClearPoisonByAttackCasterID = function(self)
-  -- function num : 0_62
+function BuffComponent:ClearPoisonByAttackCasterID()
   self._poisonByAttackCasterID = nil
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetPoisonByAttackCasterID = function(self)
-  -- function num : 0_63
+function BuffComponent:GetPoisonByAttackCasterID()
   return self._poisonByAttackCasterID
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.SetRebeccaPoisonCasterID = function(self, casterID)
-  -- function num : 0_64
+function BuffComponent:SetRebeccaPoisonCasterID(casterID)
   if not self._rebeccaPoisonCasterID then
     self._rebeccaPoisonCasterID = casterID
   end
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.ClearRebeccaPoisonCasterID = function(self)
-  -- function num : 0_65
+function BuffComponent:ClearRebeccaPoisonCasterID()
   self._rebeccaPoisonCasterID = nil
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetRebeccaPoisonCasterID = function(self)
-  -- function num : 0_66
+function BuffComponent:GetRebeccaPoisonCasterID()
   return self._rebeccaPoisonCasterID
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.IsCurseHPEnabled = function(self)
-  -- function num : 0_67
-  do return self:GetBuffValue("CurseHPEnabled") == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function BuffComponent:IsCurseHPEnabled()
+  return self:GetBuffValue("CurseHPEnabled") == 1
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetCurseHPSourceEntityID = function(self)
-  -- function num : 0_68
+function BuffComponent:GetCurseHPSourceEntityID()
   return self:GetBuffValue("CurseHPSourceEntityID")
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.SetCurseHPEnable = function(self, enabled)
-  -- function num : 0_69
+function BuffComponent:SetCurseHPEnable(enabled)
   self:SetBuffValue("CurseHPEnabled", enabled and 1 or 0)
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.SetCurseHPSourceEntityID = function(self, entityID)
-  -- function num : 0_70
+function BuffComponent:SetCurseHPSourceEntityID(entityID)
   self:SetBuffValue("CurseHPSourceEntityID", entityID)
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.GetCurseHPValue = function(self, safety)
-  -- function num : 0_71
+function BuffComponent:GetCurseHPValue(safety)
   local v = self:GetBuffValue("CurseHPValue")
   if safety and not v then
     v = 0
@@ -724,61 +473,38 @@ BuffComponent.GetCurseHPValue = function(self, safety)
   return v
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.SetCurseHPValue = function(self, v)
-  -- function num : 0_72
+function BuffComponent:SetCurseHPValue(v)
   self:SetBuffValue("CurseHPValue", v)
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffComponent.ClearCurseHPValue = function(self)
-  -- function num : 0_73
+function BuffComponent:ClearCurseHPValue()
   self:SetBuffValue("CurseHPValue", nil)
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.BuffComponent = function(self)
-  -- function num : 0_74
-  return self:GetComponent((self.WEComponentsEnum).Buff)
+function Entity:BuffComponent()
+  return self:GetComponent(self.WEComponentsEnum.Buff)
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasBuff = function(self)
-  -- function num : 0_75
-  return self:HasComponent((self.WEComponentsEnum).Buff)
+function Entity:HasBuff()
+  return self:HasComponent(self.WEComponentsEnum.Buff)
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddBuffComponent = function(self)
-  -- function num : 0_76 , upvalues : _ENV
+function Entity:AddBuffComponent()
   local world = self:GetOwnerWorld()
-  local index = (self.WEComponentsEnum).Buff
+  local index = self.WEComponentsEnum.Buff
   local component = BuffComponent:New(world)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveBuffComponent = function(self)
-  -- function num : 0_77
+function Entity:RemoveBuffComponent()
   if self:HasBuff() then
-    self:RemoveComponent((self.WEComponentsEnum).Buff)
+    self:RemoveComponent(self.WEComponentsEnum.Buff)
   end
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasBuffFlag = function(self, flag)
-  -- function num : 0_78
+function Entity:HasBuffFlag(flag)
   if not self:HasBuff() then
     return false
   end
-  return (self:BuffComponent()):HasFlag(flag)
+  return self:BuffComponent():HasFlag(flag)
 end
-
-

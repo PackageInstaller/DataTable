@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/forge/ui_forge_economy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIForgeEconomy", UICustomWidget)
 UIForgeEconomy = UIForgeEconomy
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIForgeEconomy.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.data = (self.mHomeland):GetForgeData()
-  self.mRole = (GameGlobal.GetModule)(RoleModule)
+function UIForgeEconomy:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.data = self.mHomeland:GetForgeData()
+  self.mRole = GameGlobal.GetModule(RoleModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeEconomy.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIForgeEconomy:OnShow()
   self.goIcon = self:GetGameObject("imgIcon")
   self.imgIcon = self:GetUIComponent("Image", "imgIcon")
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
@@ -25,44 +15,26 @@ UIForgeEconomy.OnShow = function(self)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeEconomy.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIForgeEconomy:OnHide()
   self:DetachEvent(GameEventType.ItemCountChanged, self.Flush)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeEconomy.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self.costID = (self.data):GetForgeAccItem()
-  local count = (self.mRole):GetAssetCount(self.costID)
-  ;
-  (self.txtCount):SetText(count)
-  local topCfg = (Cfg.cfg_top_tips)[self.costID]
+function UIForgeEconomy:Flush()
+  self.costID, _ = self.data:GetForgeAccItem()
+  local count = self.mRole:GetAssetCount(self.costID)
+  self.txtCount:SetText(count)
+  local topCfg = Cfg.cfg_top_tips[self.costID]
   if not topCfg then
-    (Log.exception)("cfg_top_tips中缺少配置:", self.costID)
+    Log.exception("cfg_top_tips中缺少配置:", self.costID)
   end
   local atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.imgIcon).sprite = atlas:GetSprite(topCfg.Icon)
+  self.imgIcon.sprite = atlas:GetSprite(topCfg.Icon)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeEconomy.imgIconOnClick = function(self, go)
-  -- function num : 0_4
+function UIForgeEconomy:imgIconOnClick(go)
   self:ShowDialog("UIHomeTopTips", self.costID, self.goIcon, "UIForge")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeEconomy.bgOnClick = function(self, go)
-  -- function num : 0_5
+function UIForgeEconomy:bgOnClick(go)
   self:imgIconOnClick()
 end
-
-

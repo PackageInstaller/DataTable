@@ -1,16 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/ui_world_boss_record_choice.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorldBossRecordChoice", UIController)
 UIWorldBossRecordChoice = UIWorldBossRecordChoice
-local ChoiceType = {New = 1, Old = 2, None = 3}
+local ChoiceType = {
+  New = 1,
+  Old = 2,
+  None = 3
+}
 _enum("ChoiceType", ChoiceType)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIWorldBossRecordChoice.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV, ChoiceType
+function UIWorldBossRecordChoice:Constructor()
   self._missionModule = self:GetModule(MissionModule)
   self._worldBossModule = self:GetModule(WorldBossModule)
   self._maxPetsCount = 5
@@ -19,10 +16,7 @@ UIWorldBossRecordChoice.Constructor = function(self)
   self._oldDamage = 0
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossRecordChoice.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIWorldBossRecordChoice:OnShow(uiParams)
   self._newDamage = uiParams[1]
   self._callBack = uiParams[2]
   self:_GetComponents()
@@ -30,10 +24,7 @@ UIWorldBossRecordChoice.OnShow = function(self, uiParams)
   self:_CheckSeasonEnd()
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossRecordChoice._GetComponents = function(self)
-  -- function num : 0_2
+function UIWorldBossRecordChoice:_GetComponents()
   self._mark = self:GetGameObject("Mark")
   self._newObj = self:GetGameObject("New")
   self._oldObj = self:GetGameObject("Old")
@@ -47,109 +38,73 @@ UIWorldBossRecordChoice._GetComponents = function(self)
   self.animaiton = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossRecordChoice._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local teamsContext = (self._missionModule):TeamCtx()
-  local newTeam = (teamsContext:Teams()):Get(teamsContext:GetCurrTeamId())
-  local record = ((self._worldBossModule):GetRecordByTeamIndex((self._worldBossModule):GetCurSelectTeamIndex()))
-  local oldTeamPets = nil
+function UIWorldBossRecordChoice:_OnValue()
+  local teamsContext = self._missionModule:TeamCtx()
+  local newTeam = teamsContext:Teams():Get(teamsContext:GetCurrTeamId())
+  local record = self._worldBossModule:GetRecordByTeamIndex(self._worldBossModule:GetCurSelectTeamIndex())
+  local oldTeamPets
   if record then
     oldTeamPets = record.pet_list
     self._oldDamage = record.formation_damage
   end
   self:_CreateTeamPets(newTeam.pets, oldTeamPets)
-  ;
-  (self._newDamageValueGray):SetText((UIActivityHelper.AddZeroFrontNum)(8, self._newDamage))
-  ;
-  (self._newDamageValue):SetText(self._newDamage)
-  ;
-  (self._oldDamageValueGray):SetText((UIActivityHelper.AddZeroFrontNum)(8, self._oldDamage))
-  ;
-  (self._oldDamageValue):SetText(self._oldDamage)
-  ;
-  (self._mark):SetActive(false)
+  self._newDamageValueGray:SetText(UIActivityHelper.AddZeroFrontNum(8, self._newDamage))
+  self._newDamageValue:SetText(self._newDamage)
+  self._oldDamageValueGray:SetText(UIActivityHelper.AddZeroFrontNum(8, self._oldDamage))
+  self._oldDamageValue:SetText(self._oldDamage)
+  self._mark:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossRecordChoice._CreateTeamPets = function(self, newPets, OldPets)
-  -- function num : 0_4
-  (self._newPets):SpawnObjects("UIWorldBossRecordPet", self._maxPetsCount)
-  self._allNewPets = (self._newPets):GetAllSpawnList()
-  ;
-  (self._oldPets):SpawnObjects("UIWorldBossRecordPet", self._maxPetsCount)
-  self._allOldPets = (self._oldPets):GetAllSpawnList()
+function UIWorldBossRecordChoice:_CreateTeamPets(newPets, OldPets)
+  self._newPets:SpawnObjects("UIWorldBossRecordPet", self._maxPetsCount)
+  self._allNewPets = self._newPets:GetAllSpawnList()
+  self._oldPets:SpawnObjects("UIWorldBossRecordPet", self._maxPetsCount)
+  self._allOldPets = self._oldPets:GetAllSpawnList()
   for i = 1, self._maxPetsCount do
-    ((self._allNewPets)[i]):SetData(newPets[i])
+    self._allNewPets[i]:SetData(newPets[i])
     local pstId = 0
     if OldPets then
       pstId = OldPets[i]
     end
-    ;
-    ((self._allOldPets)[i]):SetData(pstId)
+    self._allOldPets[i]:SetData(pstId)
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossRecordChoice.NewBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : ChoiceType
-  local pos = ((go.transform).parent).anchoredPosition
+function UIWorldBossRecordChoice:NewBtnOnClick(go)
+  local pos = go.transform.parent.anchoredPosition
   pos.x = 2
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._mark).transform).anchoredPosition = pos
+  self._mark.transform.anchoredPosition = pos
   self._choiceType = ChoiceType.New
-  ;
-  (self._mark):SetActive(true)
+  self._mark:SetActive(true)
   self:PlaySelectAni()
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossRecordChoice.OldBtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : ChoiceType
-  local pos = ((go.transform).parent).anchoredPosition
+function UIWorldBossRecordChoice:OldBtnOnClick(go)
+  local pos = go.transform.parent.anchoredPosition
   pos.x = -1
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._mark).transform).anchoredPosition = pos
+  self._mark.transform.anchoredPosition = pos
   self._choiceType = ChoiceType.Old
-  ;
-  (self._mark):SetActive(true)
+  self._mark:SetActive(true)
   self:PlaySelectAni()
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossRecordChoice.PlaySelectAni = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIWorldBossRecordChoice:PlaySelectAni()
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV
     local key = "UIWorldBossRecordChoice_select_ani"
     self:Lock(key)
-    ;
-    (self.animaiton):Play("UIWorldBossRecordChoice_xuanzhong")
+    self.animaiton:Play("UIWorldBossRecordChoice_xuanzhong")
     YIELD(TT, 400)
     self:UnLock(key)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossRecordChoice.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : ChoiceType, _ENV
+function UIWorldBossRecordChoice:ConfirmBtnOnClick(go)
   if self._choiceType == ChoiceType.None then
-    (ToastManager.ShowToast)((StringTable.Get)("str_world_boss_choice_record"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_world_boss_choice_record"))
+    return
   end
   local damage = 0
-  local aniName = nil
+  local aniName
   if self._choiceType == ChoiceType.New then
     damage = self._newDamage
   else
@@ -158,75 +113,48 @@ UIWorldBossRecordChoice.ConfirmBtnOnClick = function(self, go)
   self:_ChoiceRecord(damage)
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossRecordChoice._ChoiceRecord = function(self, damage)
-  -- function num : 0_9 , upvalues : ChoiceType
+function UIWorldBossRecordChoice:_ChoiceRecord(damage)
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, ChoiceType, damage
-    local res = (self._worldBossModule):ReqChoseRecord(TT, self._choiceType == ChoiceType.New, (self._worldBossModule):GetCurSelectTeamIndex(), damage)
+    local res = self._worldBossModule:ReqChoseRecord(TT, self._choiceType == ChoiceType.New, self._worldBossModule:GetCurSelectTeamIndex(), damage)
     if res:GetSucc() then
       self:CloseWithAnimation()
-      if self._choiceType ~= ChoiceType.Old then
-        (self._callBack)(not self._callBack)
-        -- DECOMPILER ERROR: 3 unprocessed JMP targets
+      if self._callBack then
+        self._callBack(self._choiceType == ChoiceType.Old)
       end
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossRecordChoice._CheckSeasonEnd = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  if (self._worldBossModule):CurSeasonEnd() then
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, (StringTable.Get)("str_activity_common_notice_title"), (StringTable.Get)("str_world_boss_season_end"), function()
-    -- function num : 0_10_0 , upvalues : _ENV
-    ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Exit_Core_Game, nil, nil)
-  end
-, nil)
+function UIWorldBossRecordChoice:_CheckSeasonEnd()
+  if self._worldBossModule:CurSeasonEnd() then
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, StringTable.Get("str_activity_common_notice_title"), StringTable.Get("str_world_boss_season_end"), function()
+      GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Exit_Core_Game, nil, nil)
+    end, nil)
   end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossRecordChoice.CloseWithAnimation = function(self)
-  -- function num : 0_11 , upvalues : ChoiceType, _ENV
+function UIWorldBossRecordChoice:CloseWithAnimation()
   self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : self, ChoiceType, _ENV
     local key = "UIWorldBossRecordChoice_Close"
     self:Lock(key)
-    ;
-    (self._blurObj):SetActive(true)
-    local aniName = nil
+    self._blurObj:SetActive(true)
+    local aniName
     if self._choiceType == ChoiceType.New then
       aniName = "UIWorldBossRecordChoice_down"
-      ;
-      (UIHelper.SetAsLastSibling)(self._blurObj)
-      ;
-      (UIHelper.SetAsLastSibling)(self._newObj)
-      ;
-      (UIHelper.SetAsLastSibling)(self._mark)
+      UIHelper.SetAsLastSibling(self._blurObj)
+      UIHelper.SetAsLastSibling(self._newObj)
+      UIHelper.SetAsLastSibling(self._mark)
     else
       aniName = "UIWorldBossRecordChoice_up"
-      ;
-      (UIHelper.SetAsLastSibling)(self._blurObj)
-      ;
-      (UIHelper.SetAsLastSibling)(self._oldObj)
-      ;
-      (UIHelper.SetAsLastSibling)(self._mark)
+      UIHelper.SetAsLastSibling(self._blurObj)
+      UIHelper.SetAsLastSibling(self._oldObj)
+      UIHelper.SetAsLastSibling(self._mark)
     end
-    ;
-    (self.animaiton):Play(aniName)
+    self.animaiton:Play(aniName)
     YIELD(TT, 1868)
-    ;
-    (self.animaiton):Play("UIWorldBossRecordChoice_out")
+    self.animaiton:Play("UIWorldBossRecordChoice_out")
     YIELD(TT, 800)
     self:UnLock(key)
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

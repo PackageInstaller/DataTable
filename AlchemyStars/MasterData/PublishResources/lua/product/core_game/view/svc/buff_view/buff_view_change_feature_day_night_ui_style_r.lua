@@ -1,18 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_change_feature_day_night_ui_style_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangeFeatureDayNightUiStyle", BuffViewBase)
 BuffViewChangeFeatureDayNightUiStyle = BuffViewChangeFeatureDayNightUiStyle
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeFeatureDayNightUiStyle.PlayView = function(self, TT)
-  -- function num : 0_0
+function BuffViewChangeFeatureDayNightUiStyle:PlayView(TT)
   local result = self:GetBuffResult()
   local uiStyle = result:GetUiStyle()
-  local featureSvc = (self._world):GetService("FeatureRender")
+  local featureSvc = self._world:GetService("FeatureRender")
   featureSvc:NotifyDayNightUIStyleChange(uiStyle)
 end
-
-

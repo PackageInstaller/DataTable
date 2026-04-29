@@ -1,61 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_progress_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local UICollectDropType = {Base = 1}
 _enum("UICollectDropType", UICollectDropType)
 _class("UIBattleProgressInfo", UICustomWidget)
 UIBattleProgressInfo = UIBattleProgressInfo
 local commonWaveFormatter = "<color=#FFFFFF>%d</color><color=#E68812>/</color><color=#E68812>%d</color>"
 local lastWaveFormatter = "<color=#E68812>%d</color><color=#E68812>/</color><color=#E68812>%d</color>"
-local dropNumColorValR = 0.90196078431373
-local dropNumColorValG = 0.53333333333333
-local dropNumColorValB = 0.070588235294118
+local dropNumColorValR = 0.9019607843137255
+local dropNumColorValG = 0.5333333333333333
+local dropNumColorValB = 0.07058823529411765
 local dropNumColorStr = "E68812"
--- DECOMPILER ERROR at PC20: Confused about usage of register: R7 in 'UnsetPending'
 
-UIBattleProgressInfo.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBattleProgressInfo:OnShow()
   self._areaText = self:GetUIComponent("UILocalizationText", "AreaNumTxt")
   self._collectInfoPanel = self:GetGameObject("CollectDropInfo")
-  ;
-  (self._collectInfoPanel):SetActive(false)
+  self._collectInfoPanel:SetActive(false)
   self._collectInfoAnim = self:GetUIComponent("Animation", "CollectDropInfo")
-  self._collectInfoState = (self._collectInfoAnim):get_Item("UIEff_CollectDropInfo_Tiaodong")
+  self._collectInfoState = self._collectInfoAnim:get_Item("UIEff_CollectDropInfo_Tiaodong")
   self._collectDropText = self:GetUIComponent("UILocalizationText", "CollectText")
   self._collectDropText1 = self:GetUIComponent("UILocalizationText", "CollectText1")
-  ;
-  (self._collectDropText):SetText((StringTable.Get)("str_battle_drop_collect"))
-  ;
-  (self._collectDropText1):SetText((StringTable.Get)("str_battle_drop_collect"))
+  self._collectDropText:SetText(StringTable.Get("str_battle_drop_collect"))
+  self._collectDropText1:SetText(StringTable.Get("str_battle_drop_collect"))
   self._collectDropNum = self:GetUIComponent("UILocalizationText", "CurCollectNum")
-  ;
-  (self._collectDropNum):SetText("0")
+  self._collectDropNum:SetText("0")
   self._curCollectCount = 0
   self._collectDropTaskNum = self:GetUIComponent("UILocalizationText", "TotalNum")
-  ;
-  (self._collectDropTaskNum):SetText("15")
+  self._collectDropTaskNum:SetText("15")
   self._collectEffHolder = self:GetGameObject("CollectEffHolder")
   self._collectDropIconArea = self:GetGameObject("CollectDropIconArea")
   self._collectDropIcon = self:GetUIComponent("Image", "CollectDropIcon")
   self._collectCautionEffGo = self:GetGameObject("CollectCautionEff")
   self._collectLayout = self:GetUIComponent("HorizontalLayoutGroup", "CollectDropInfo")
   self._exit = self:GetGameObject("Exit")
-  ;
-  (self._exit):SetActive(false)
+  self._exit:SetActive(false)
   self._collectCoinPanel = self:GetGameObject("CollectDropCoin")
   self._collectDropCoinNumText = self:GetUIComponent("UILocalizationText", "CurCollectCoinNum")
-  ;
-  (self._collectDropCoinNumText):SetText("0")
-  ;
-  (self._collectCoinPanel):SetActive(false)
+  self._collectDropCoinNumText:SetText("0")
+  self._collectCoinPanel:SetActive(false)
   self._collectMazeCoinPanel = self:GetGameObject("CollectDropMazeCoin")
   self._collectDropMazeCoinNumText = self:GetUIComponent("UILocalizationText", "CurCollectMazeCoinNum")
-  ;
-  (self._collectDropMazeCoinNumText):SetText("0")
-  ;
-  (self._collectMazeCoinPanel):SetActive(false)
+  self._collectDropMazeCoinNumText:SetText("0")
+  self._collectMazeCoinPanel:SetActive(false)
   self._limitRoundPanel = self:GetGameObject("LimitRound")
   self._limitRoundText = self:GetUIComponent("UILocalizationText", "LimitRoundText")
   self._combinedCompleteCondition = self:GetGameObject("CombinedCompleteCondition")
@@ -65,118 +48,93 @@ UIBattleProgressInfo.OnShow = function(self)
   self._score = self:GetGameObject("Score")
   self._numberImageObjectList = {}
   for i = 1, 6 do
-    -- DECOMPILER ERROR at PC175: Confused about usage of register: R5 in 'UnsetPending'
-
-    (self._numberImageObjectList)[i] = self:GetUIComponent("Image", "Number" .. i)
+    self._numberImageObjectList[i] = self:GetUIComponent("Image", "Number" .. i)
   end
   self._number2Image = {}
   for i = 1, 9 do
-    -- DECOMPILER ERROR at PC187: Confused about usage of register: R5 in 'UnsetPending'
-
-    (self._number2Image)[i] = "n5_home_timenum_" .. i
+    self._number2Image[i] = "n5_home_timenum_" .. i
   end
   self._scoreNumber = 0
-  ;
-  (self._score):SetActive(false)
+  self._score:SetActive(false)
   self._monsterEscapeInfoPanel = self:GetGameObject("EscapeMonsterInfo")
-  ;
-  (self._monsterEscapeInfoPanel):SetActive(false)
+  self._monsterEscapeInfoPanel:SetActive(false)
   self._monsterEscapeNum = self:GetUIComponent("UILocalizationText", "CurEscapeNum")
-  ;
-  (self._monsterEscapeNum):SetText("0")
+  self._monsterEscapeNum:SetText("0")
   self._curMonsterEscapeCount = 0
   self._limitMonsterEscapeCount = 15
   self._limitMonsterEscapeNum = self:GetUIComponent("UILocalizationText", "LimitEscapeNum")
-  ;
-  (self._limitMonsterEscapeNum):SetText("15")
+  self._limitMonsterEscapeNum:SetText("15")
   self._chessEscapeInfoPanel = self:GetGameObject("EscapeChessInfo")
-  ;
-  (self._chessEscapeInfoPanel):SetActive(false)
+  self._chessEscapeInfoPanel:SetActive(false)
   self._chessEscapeText = self:GetUIComponent("UILocalizationText", "EscapeChessText")
   self._chessEscapeNum = self:GetUIComponent("UILocalizationText", "CurEscapeChessNum")
-  ;
-  (self._chessEscapeNum):SetText("0")
+  self._chessEscapeNum:SetText("0")
   self._curChessEscapeCount = 0
   self._limitChessEscapeCount = 15
   self._limitChessEscapeNum = self:GetUIComponent("UILocalizationText", "LimitEscapeChessNum")
-  ;
-  (self._limitChessEscapeNum):SetText("15")
+  self._limitChessEscapeNum:SetText("15")
   self._bossCastSkillTipPanel = self:GetGameObject("BossCastSkillTipInfo")
-  ;
-  (self._bossCastSkillTipPanel):SetActive(false)
+  self._bossCastSkillTipPanel:SetActive(false)
   self._txtCurTrapNum = self:GetUIComponent("UILocalizationText", "txtCurTrapNum")
-  ;
-  (self._txtCurTrapNum):SetText("0")
+  self._txtCurTrapNum:SetText("0")
   self._curTrapNum = 0
   self._txtTotalTrapNum = self:GetUIComponent("UILocalizationText", "txtTotalTrapNum")
-  ;
-  (self._txtTotalTrapNum):SetText("30")
+  self._txtTotalTrapNum:SetText("30")
   self._maxTrapNum = 30
   self._txtBossCaskSkillTip = self:GetUIComponent("UILocalizationText", "txtBossCaskSkillTip")
-  ;
-  (self._txtBossCaskSkillTip):SetText((StringTable.Get)("str_battle_boss_cast_skill_tip"))
+  self._txtBossCaskSkillTip:SetText(StringTable.Get("str_battle_boss_cast_skill_tip"))
   self._globalBuffLayerTipInfo = self:GetGameObject("GlobalBuffLayerTipInfo")
-  ;
-  (self._globalBuffLayerTipInfo):SetActive(false)
+  self._globalBuffLayerTipInfo:SetActive(false)
   self._textGlobalBuffLayerTipCurrent = self:GetUIComponent("UILocalizationText", "currrentLayer")
   self._textGlobalBuffLayerTipMax = self:GetUIComponent("UILocalizationText", "maxLayer")
   self._textGlobalBuffLayerTipDesc = self:GetUIComponent("UILocalizationText", "layerTip")
   self._popStarProScorePanel = self:GetGameObject("PopStarProScore")
   self._popStarProScoreRT = self:GetUIComponent("RectTransform", "PopStarProScore")
   self._txtPopStarProScore = self:GetUIComponent("UILocalizationText", "PopStarProScoreNum")
-  ;
-  (self._txtPopStarProScore):SetText("0")
-  ;
-  (self._popStarProScorePanel):SetActive(false)
+  self._txtPopStarProScore:SetText("0")
+  self._popStarProScorePanel:SetActive(false)
   self._killMoreThanPanel = self:GetGameObject("KillMoreThanPetMonster")
-  ;
-  (self._killMoreThanPanel):SetActive(false)
+  self._killMoreThanPanel:SetActive(false)
   self._killMoreThanText1 = self:GetUIComponent("UILocalizationText", "KillMoreThanText1")
   self._killMoreThanText2 = self:GetUIComponent("UILocalizationText", "KillMoreThanText2")
   self._featureStepPoint = self:GetGameObject("FeatureStepPoint")
   self._featureStepPointRT = self:GetUIComponent("RectTransform", "FeatureStepPoint")
-  do
-    if not self._featureStepPointWidget then
-      local featureStepPointSop = self:GetUIComponent("UISelectObjectPath", "FeatureStepPoint")
-      if featureStepPointSop then
-        self._featureStepPointWidget = featureStepPointSop:SpawnObject("UIWidgetFeatureStepPoint")
-      end
+  if not self._featureStepPointWidget then
+    local featureStepPointSop = self:GetUIComponent("UISelectObjectPath", "FeatureStepPoint")
+    if featureStepPointSop then
+      self._featureStepPointWidget = featureStepPointSop:SpawnObject("UIWidgetFeatureStepPoint")
     end
-    ;
-    (self._featureStepPoint):SetActive(false)
-    self._curWaveCompleteType = nil
-    self._initMonsterDeadCount = 0
-    self._initSpecificMonsterDeadCount = 0
-    self:RefreshWaveInfo()
-    self:AttachEvent(GameEventType.ShowCollectDropInfo, self.ShowCollectDropInfo)
-    self:AttachEvent(GameEventType.RefreshWaveInfo, self.RefreshWaveInfo)
-    self:AttachEvent(GameEventType.ShowDropCoinInfo, self.ShowDropCoinInfo)
-    self:AttachEvent(GameEventType.ShowDropMazeCoinInfo, self.ShowDropMazeCoinInfo)
-    self:AttachEvent(GameEventType.ShowDropCoinInfoActive, self.ShowDropCoinInfoActive)
-    self:AttachEvent(GameEventType.UIMonsterDeadCountUpdate, self._UpdateKillMonsterCount)
-    self:AttachEvent(GameEventType.UIInternalRefreshMonster, self._UpdateLeftInternalMonsterWave)
-    self:AttachEvent(GameEventType.UIInitMonsterDeadCount, self._UIInitMonsterDeadCount)
-    self:AttachEvent(GameEventType.UIInitN5Score, self._UIInitN5Score)
-    self:AttachEvent(GameEventType.UIN5UpdateScore, self._N5UpdateScore)
-    self:AttachEvent(GameEventType.BattleUIRefreshCombinedWaveInfoOnRoundResult, self._OnBattleUIRefreshWaveInfoOnRoundResult)
-    self:AttachEvent(GameEventType.UIUpdateEscapeMonsterCount, self._UpdateEscapeMonsterCount)
-    self:AttachEvent(GameEventType.UIUpdateChessEscape, self._UpdateChessEscape)
-    self:AttachEvent(GameEventType.UIInitBossCastSkillTipInfo, self._InitBossCastSkillTipInfo)
-    self:AttachEvent(GameEventType.UIUpdateBossCastSkillTipInfo, self._UpdateBossCastSkillTipInfo)
-    self:AttachEvent(GameEventType.UIInitGlobalLayerTipInfo, self._InitGlobalLayerTipInfo)
-    self:AttachEvent(GameEventType.UIUpdateGlobalLayerTipInfo, self._UpdateGlobalLayerTipInfo)
-    self:AttachEvent(GameEventType.UIHideGlobalLayerTipInfo, self._HideGlobalLayerTipInfo)
-    self:AttachEvent(GameEventType.PopStarProScoreChange, self._UpdatePopStarProScore)
-    self:AttachEvent(GameEventType.UIInitSpecificMonsterDeadCount, self._UIInitSpecificMonsterDeadCount)
-    self:AttachEvent(GameEventType.UISpecificMonsterDeadCountUpdate, self._UpdateKillSpecificMonsterCount)
-    self:AttachEvent(GameEventType.UIUpdateKillMoreThanPetMonster, self._UpdateKillMoreThanPetMonster)
   end
+  self._featureStepPoint:SetActive(false)
+  self._curWaveCompleteType = nil
+  self._initMonsterDeadCount = 0
+  self._initSpecificMonsterDeadCount = 0
+  self:RefreshWaveInfo()
+  self:AttachEvent(GameEventType.ShowCollectDropInfo, self.ShowCollectDropInfo)
+  self:AttachEvent(GameEventType.RefreshWaveInfo, self.RefreshWaveInfo)
+  self:AttachEvent(GameEventType.ShowDropCoinInfo, self.ShowDropCoinInfo)
+  self:AttachEvent(GameEventType.ShowDropMazeCoinInfo, self.ShowDropMazeCoinInfo)
+  self:AttachEvent(GameEventType.ShowDropCoinInfoActive, self.ShowDropCoinInfoActive)
+  self:AttachEvent(GameEventType.UIMonsterDeadCountUpdate, self._UpdateKillMonsterCount)
+  self:AttachEvent(GameEventType.UIInternalRefreshMonster, self._UpdateLeftInternalMonsterWave)
+  self:AttachEvent(GameEventType.UIInitMonsterDeadCount, self._UIInitMonsterDeadCount)
+  self:AttachEvent(GameEventType.UIInitN5Score, self._UIInitN5Score)
+  self:AttachEvent(GameEventType.UIN5UpdateScore, self._N5UpdateScore)
+  self:AttachEvent(GameEventType.BattleUIRefreshCombinedWaveInfoOnRoundResult, self._OnBattleUIRefreshWaveInfoOnRoundResult)
+  self:AttachEvent(GameEventType.UIUpdateEscapeMonsterCount, self._UpdateEscapeMonsterCount)
+  self:AttachEvent(GameEventType.UIUpdateChessEscape, self._UpdateChessEscape)
+  self:AttachEvent(GameEventType.UIInitBossCastSkillTipInfo, self._InitBossCastSkillTipInfo)
+  self:AttachEvent(GameEventType.UIUpdateBossCastSkillTipInfo, self._UpdateBossCastSkillTipInfo)
+  self:AttachEvent(GameEventType.UIInitGlobalLayerTipInfo, self._InitGlobalLayerTipInfo)
+  self:AttachEvent(GameEventType.UIUpdateGlobalLayerTipInfo, self._UpdateGlobalLayerTipInfo)
+  self:AttachEvent(GameEventType.UIHideGlobalLayerTipInfo, self._HideGlobalLayerTipInfo)
+  self:AttachEvent(GameEventType.PopStarProScoreChange, self._UpdatePopStarProScore)
+  self:AttachEvent(GameEventType.UIInitSpecificMonsterDeadCount, self._UIInitSpecificMonsterDeadCount)
+  self:AttachEvent(GameEventType.UISpecificMonsterDeadCountUpdate, self._UpdateKillSpecificMonsterCount)
+  self:AttachEvent(GameEventType.UIUpdateKillMoreThanPetMonster, self._UpdateKillMoreThanPetMonster)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBattleProgressInfo:OnHide()
   self:DetachEvent(GameEventType.ShowCollectDropInfo, self.ShowCollectDropInfo)
   self:DetachEvent(GameEventType.RefreshWaveInfo, self.RefreshWaveInfo)
   self:DetachEvent(GameEventType.ShowDropCoinInfo, self.ShowDropCoinInfo)
@@ -202,10 +160,7 @@ UIBattleProgressInfo.OnHide = function(self)
   self:DetachEvent(GameEventType.UIUpdateKillMoreThanPetMonster, self._UpdateKillMoreThanPetMonster)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo.OnUpdate = function(self, deltaMS)
-  -- function num : 0_2
+function UIBattleProgressInfo:OnUpdate(deltaMS)
   if self._time and self._time > 0 then
     self._time = self._time - deltaMS
     if self._time <= 0 then
@@ -215,19 +170,13 @@ UIBattleProgressInfo.OnUpdate = function(self, deltaMS)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo.OnHide = function(self)
-  -- function num : 0_3
+function UIBattleProgressInfo:OnHide()
   self:_ClearEffects()
   self._growEffList = nil
   self._flyEffList = nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo.ShowCollectDropInfo = function(self, dropUIWorldPos)
-  -- function num : 0_4 , upvalues : _ENV
+function UIBattleProgressInfo:ShowCollectDropInfo(dropUIWorldPos)
   if not self._flyEffList then
     self._flyEffList = ArrayList:New()
   end
@@ -237,40 +186,25 @@ UIBattleProgressInfo.ShowCollectDropInfo = function(self, dropUIWorldPos)
   self:_ShowCollectTask(dropUIWorldPos)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._ShowCollectDropBaseInfo = function(self, curCollectCount)
-  -- function num : 0_5 , upvalues : _ENV, dropNumColorValR, dropNumColorValG, dropNumColorValB
+function UIBattleProgressInfo:_ShowCollectDropBaseInfo(curCollectCount)
   if curCollectCount and self._curCollectCount and curCollectCount == 0 and self._curCollectCount ~= 0 then
     curCollectCount = self._curCollectCount
   end
-  if not curCollectCount then
-    curCollectCount = self._curCollectCount
-  end
-  local levelConfigData = (ConfigServiceHelper.GetLevelConfigData)()
+  curCollectCount = curCollectCount or self._curCollectCount
+  local levelConfigData = ConfigServiceHelper.GetLevelConfigData()
   local maxCollect = levelConfigData:GetLevelCollectItem()
-  ;
-  (self._collectDropTaskNum):SetText(maxCollect)
-  ;
-  (self._collectDropNum):SetText(tostring(curCollectCount))
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R4 in 'UnsetPending'
-
+  self._collectDropTaskNum:SetText(maxCollect)
+  self._collectDropNum:SetText(tostring(curCollectCount))
   if curCollectCount < maxCollect then
-    (self._collectDropNum).color = Color.white
+    self._collectDropNum.color = Color.white
   else
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._collectDropNum).color = Color(dropNumColorValR, dropNumColorValG, dropNumColorValB, 1)
+    self._collectDropNum.color = Color(dropNumColorValR, dropNumColorValG, dropNumColorValB, 1)
   end
   self._collectDropMax = maxCollect
   return maxCollect
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._ShowCollectTask = function(self, dropUIWorldPos)
-  -- function num : 0_6
+function UIBattleProgressInfo:_ShowCollectTask(dropUIWorldPos)
   self._time = 0
   self:_PlayGrowEff(dropUIWorldPos)
   self:_PlayCollectPathEff(dropUIWorldPos)
@@ -278,261 +212,176 @@ UIBattleProgressInfo._ShowCollectTask = function(self, dropUIWorldPos)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._CreateGrowEffTimerIndex = function(self, index)
-  -- function num : 0_7
+function UIBattleProgressInfo:_CreateGrowEffTimerIndex(index)
   return function()
-    -- function num : 0_7_0 , upvalues : index
     index = index + 1
     return index
   end
-
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._PlayGrowEff = function(self, uiPos)
-  -- function num : 0_8 , upvalues : _ENV
-  local growEff = (self._growEffList):PopBack()
+function UIBattleProgressInfo:_PlayGrowEff(uiPos)
+  local growEff = self._growEffList:PopBack()
   if not growEff then
     local effRes = "UIEff_CollectDropInfo_Glow.prefab"
-    local collectCfg = (Cfg.cfg_level_complete_condition_collect_drop)[self._collectDropType]
+    local collectCfg = Cfg.cfg_level_complete_condition_collect_drop[self._collectDropType]
     if collectCfg then
       if collectCfg.GrowEffect then
         effRes = collectCfg.GrowEffect
       else
-        return 
+        return
       end
     else
-      return 
+      return
     end
     growEff = self:_CreateEffect(effRes, uiPos)
   else
-    do
-      self:_RefreshEffect(growEff, uiPos)
-      growEff:SetActive(true)
-      if not self.f then
-        self.f = self:_CreateGrowEffTimerIndex(0)
-      end
-      if not self.growEffTimerEvents then
-        self.growEffTimerEvents = {}
-      end
-      local index = self:f()
-      local event = ((GameGlobal.Timer)()):AddEvent(1000, UIBattleProgressInfo._OnTimerOver, self, growEff, index)
-      -- DECOMPILER ERROR at PC59: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self.growEffTimerEvents)[index] = event
-    end
+    self:_RefreshEffect(growEff, uiPos)
+    growEff:SetActive(true)
   end
+  if not self.f then
+    self.f = self:_CreateGrowEffTimerIndex(0)
+  end
+  if not self.growEffTimerEvents then
+    self.growEffTimerEvents = {}
+  end
+  local index = self:f()
+  local event = GameGlobal.Timer():AddEvent(1000, UIBattleProgressInfo._OnTimerOver, self, growEff, index)
+  self.growEffTimerEvents[index] = event
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._OnTimerOver = function(self, growEff, index)
-  -- function num : 0_9 , upvalues : _ENV
+function UIBattleProgressInfo:_OnTimerOver(growEff, index)
   if growEff then
     growEff:SetActive(false)
-    ;
-    (self._growEffList):PushBack(growEff)
-    ;
-    ((GameGlobal.Timer)()):CancelEvent((self.growEffTimerEvents)[index])
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.growEffTimerEvents)[index] = nil
+    self._growEffList:PushBack(growEff)
+    GameGlobal.Timer():CancelEvent(self.growEffTimerEvents[index])
+    self.growEffTimerEvents[index] = nil
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo.Circle = function(self, x, y, r, angle)
-  -- function num : 0_10 , upvalues : _ENV
-  local tmpX = x + r * (math.cos)(angle * 3.14 / 180)
-  local tmpY = y + r * (math.sin)(angle * 3.14 / 180)
+function UIBattleProgressInfo:Circle(x, y, r, angle)
+  local tmpX = x + r * math.cos(angle * 3.14 / 180)
+  local tmpY = y + r * math.sin(angle * 3.14 / 180)
   return tmpX, tmpY
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._PlayCollectPathEff = function(self, startPos)
-  -- function num : 0_11 , upvalues : _ENV
+function UIBattleProgressInfo:_PlayCollectPathEff(startPos)
   self._curCollectCount = self._curCollectCount + 1
-  local flyEff = (self._flyEffList):PopBack()
+  local flyEff = self._flyEffList:PopBack()
   if not flyEff then
     local effRes = "UIEff_CollectDropInfo_Trail.prefab"
-    local collectCfg = (Cfg.cfg_level_complete_condition_collect_drop)[self._collectDropType]
+    local collectCfg = Cfg.cfg_level_complete_condition_collect_drop[self._collectDropType]
     if collectCfg then
       if collectCfg.PathEffect then
         effRes = collectCfg.PathEffect
       else
         local maxCollect = self:_ShowCollectDropBaseInfo(self._curCollectCount)
         if maxCollect <= self._curCollectCount then
-          ((GameGlobal.TaskManager)()):CoreGameStartTask(self._OnCollectPanelAnimEnd, self)
+          GameGlobal.TaskManager():CoreGameStartTask(self._OnCollectPanelAnimEnd, self)
         end
-        return 
+        return
       end
     else
-      do
-        do
-          do
-            local maxCollect = self:_ShowCollectDropBaseInfo(self._curCollectCount)
-            if maxCollect <= self._curCollectCount then
-              ((GameGlobal.TaskManager)()):CoreGameStartTask(self._OnCollectPanelAnimEnd, self)
-            end
-            do return  end
-            flyEff = self:_CreateEffect(effRes, startPos)
-            self:_RefreshEffect(flyEff, startPos)
-            flyEff:SetActive(true)
-            local x = ((flyEff.transform).localPosition).x
-            local y = ((flyEff.transform).localPosition).y
-            local targetPos = ((self._collectEffHolder).transform):InverseTransformPoint(((self._collectInfoPanel).transform).position)
-            local index = 1
-            local path = {}
-            local r = 150
-            for i = -90, 90, 10 do
-              local pathX, pathY = self:Circle(x, y + r, r, i)
-              path[index] = Vector3(pathX, pathY, 0)
-              index = index + 1
-            end
-            path[index] = Vector3(targetPos.x, targetPos.y, 0)
-            ;
-            (((flyEff.transform):DOLocalPath(path, 0.5)):SetEase(((DG.Tweening).Ease).InCubic)):OnComplete(function()
-    -- function num : 0_11_0 , upvalues : flyEff, self, _ENV
+      local maxCollect = self:_ShowCollectDropBaseInfo(self._curCollectCount)
+      if maxCollect <= self._curCollectCount then
+        GameGlobal.TaskManager():CoreGameStartTask(self._OnCollectPanelAnimEnd, self)
+      end
+      return
+    end
+    flyEff = self:_CreateEffect(effRes, startPos)
+  else
+    self:_RefreshEffect(flyEff, startPos)
+    flyEff:SetActive(true)
+  end
+  local x = flyEff.transform.localPosition.x
+  local y = flyEff.transform.localPosition.y
+  local targetPos = self._collectEffHolder.transform:InverseTransformPoint(self._collectInfoPanel.transform.position)
+  local index = 1
+  local path = {}
+  local r = 150
+  for i = -90, 90, 10 do
+    local pathX, pathY = self:Circle(x, y + r, r, i)
+    path[index] = Vector3(pathX, pathY, 0)
+    index = index + 1
+  end
+  path[index] = Vector3(targetPos.x, targetPos.y, 0)
+  flyEff.transform:DOLocalPath(path, 0.5):SetEase(DG.Tweening.Ease.InCubic):OnComplete(function()
     flyEff:SetActive(false)
-    ;
-    (self._flyEffList):PushBack(flyEff)
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._collectInfoState).normalizedTime = 0
-    ;
-    (self._collectInfoAnim):Play()
-    local startPos = ((self._collectInfoPanel).transform).position
+    self._flyEffList:PushBack(flyEff)
+    self._collectInfoState.normalizedTime = 0
+    self._collectInfoAnim:Play()
+    local startPos = self._collectInfoPanel.transform.position
     self:_PlayGrowEff(startPos)
     local maxCollect = self:_ShowCollectDropBaseInfo(self._curCollectCount)
     if maxCollect <= self._curCollectCount then
-      ((GameGlobal.TaskManager)()):CoreGameStartTask(self._OnCollectPanelAnimEnd, self)
+      GameGlobal.TaskManager():CoreGameStartTask(self._OnCollectPanelAnimEnd, self)
     end
     self._time = 10000
-  end
-)
-          end
-        end
-      end
-    end
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._OnCollectPanelAnimEnd = function(self, TT)
-  -- function num : 0_12 , upvalues : _ENV
+function UIBattleProgressInfo:_OnCollectPanelAnimEnd(TT)
   YIELD(TT, 800)
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._collectInfoState).normalizedTime = 0
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._collectInfoAnim).enabled = false
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._collectDropNum).color = Color(1, 0.30588235294118, 0, 1)
+  self._collectInfoState.normalizedTime = 0
+  self._collectInfoAnim.enabled = false
+  self._collectDropNum.color = Color(1.0, 0.3058823529411765, 0, 1)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._CreateEffect = function(self, path, startPos)
-  -- function num : 0_13 , upvalues : _ENV
-  local e = (UIHelper.GetGameObject)(path)
-  ;
-  (e.transform):SetParent((self._collectEffHolder).transform)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (e.transform).localScale = Vector3.one
+function UIBattleProgressInfo:_CreateEffect(path, startPos)
+  local e = UIHelper.GetGameObject(path)
+  e.transform:SetParent(self._collectEffHolder.transform)
+  e.transform.localScale = Vector3.one
   self:_RefreshEffect(e, startPos)
   return e
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._RefreshEffect = function(self, e, startPos)
-  -- function num : 0_14
+function UIBattleProgressInfo:_RefreshEffect(e, startPos)
   if not e then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (e.transform).position = startPos
+  e.transform.position = startPos
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._ClearEffects = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIBattleProgressInfo:_ClearEffects()
   if self._growEffList then
-    for i = (self._growEffList):Size(), 1, -1 do
-      local go = (self._growEffList):GetAt(i)
-      ;
-      (UIHelper.DestroyGameObject)(go)
+    for i = self._growEffList:Size(), 1, -1 do
+      local go = self._growEffList:GetAt(i)
+      UIHelper.DestroyGameObject(go)
     end
-    ;
-    (self._growEffList):Clear()
+    self._growEffList:Clear()
   end
   if self._flyEffList then
-    for i = (self._flyEffList):Size(), 1, -1 do
-      local go = (self._flyEffList):GetAt(i)
-      ;
-      (UIHelper.DestroyGameObject)(go)
+    for i = self._flyEffList:Size(), 1, -1 do
+      local go = self._flyEffList:GetAt(i)
+      UIHelper.DestroyGameObject(go)
     end
-    ;
-    (self._flyEffList):Clear()
+    self._flyEffList:Clear()
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._SetWaveText = function(self, curWaveIndex, totalWaveCount)
-  -- function num : 0_16 , upvalues : _ENV, lastWaveFormatter, commonWaveFormatter
-  local text = nil
+function UIBattleProgressInfo:_SetWaveText(curWaveIndex, totalWaveCount)
+  local text
   if totalWaveCount <= curWaveIndex then
-    text = (string.format)(lastWaveFormatter, curWaveIndex, totalWaveCount)
+    text = string.format(lastWaveFormatter, curWaveIndex, totalWaveCount)
   else
-    text = (string.format)(commonWaveFormatter, curWaveIndex, totalWaveCount)
+    text = string.format(commonWaveFormatter, curWaveIndex, totalWaveCount)
   end
-  ;
-  (self._areaText):SetText(text)
+  self._areaText:SetText(text)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo.RefreshWaveInfo = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local curWaveIndex = (BattleStatHelper.GetCurWaveIndex)() or 1
-  local totalWaveCount = (BattleStatHelper.GetTotalWaveCount)() or 1
+function UIBattleProgressInfo:RefreshWaveInfo()
+  local curWaveIndex = BattleStatHelper.GetCurWaveIndex() or 1
+  local totalWaveCount = BattleStatHelper.GetTotalWaveCount() or 1
   self:RefreshWaveText(curWaveIndex, totalWaveCount)
   self:RefreshWaveCompleteCondition(curWaveIndex)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._OnBattleUIRefreshWaveInfoOnRoundResult = function(self)
-  -- function num : 0_18
+function UIBattleProgressInfo:_OnBattleUIRefreshWaveInfoOnRoundResult()
   self:_RefreshCombinedCompleteWaveInfo()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._RefreshCombinedCompleteWaveInfo = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local curWaveIndex = (BattleStatHelper.GetCurWaveIndex)() or 1
-  local levelConfigData = (ConfigServiceHelper.GetLevelConfigData)()
+function UIBattleProgressInfo:_RefreshCombinedCompleteWaveInfo()
+  local curWaveIndex = BattleStatHelper.GetCurWaveIndex() or 1
+  local levelConfigData = ConfigServiceHelper.GetLevelConfigData()
   local cfgWave = levelConfigData:GetWaveConfig(curWaveIndex)
   local waveCompleteType = cfgWave:GetCompleteConditionType()
   if waveCompleteType == CompleteConditionType.CombinedCompleteCondition then
@@ -540,40 +389,25 @@ UIBattleProgressInfo._RefreshCombinedCompleteWaveInfo = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo.RefreshWaveText = function(self, curWaveIndex, totalWaveCount)
-  -- function num : 0_20
+function UIBattleProgressInfo:RefreshWaveText(curWaveIndex, totalWaveCount)
   self:_SetWaveText(curWaveIndex, totalWaveCount)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo.ResetWaveCompleteCondition = function(self)
-  -- function num : 0_21
-  (self._collectInfoPanel):SetActive(false)
-  ;
-  (self._exit):SetActive(false)
-  ;
-  (self._limitRoundPanel):SetActive(false)
-  ;
-  (self._combinedCompleteCondition):SetActive(false)
-  ;
-  (self._collectMazeCoinPanel):SetActive(false)
-  ;
-  (self._popStarProScorePanel):SetActive(false)
-  ;
-  (self._featureStepPoint):SetActive(false)
+function UIBattleProgressInfo:ResetWaveCompleteCondition()
+  self._collectInfoPanel:SetActive(false)
+  self._exit:SetActive(false)
+  self._limitRoundPanel:SetActive(false)
+  self._combinedCompleteCondition:SetActive(false)
+  self._collectMazeCoinPanel:SetActive(false)
+  self._popStarProScorePanel:SetActive(false)
+  self._featureStepPoint:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo.RefreshWaveCompleteCondition = function(self, curWaveIndex)
-  -- function num : 0_22 , upvalues : _ENV
+function UIBattleProgressInfo:RefreshWaveCompleteCondition(curWaveIndex)
   self:ResetWaveCompleteCondition()
-  self._popStarProScoreY = (PopStarConst.PopStarProScorePosYList)[2]
-  local matchEnterData = (self:GetModule(MatchModule)):GetMatchEnterData()
-  local levelConfigData = (ConfigServiceHelper.GetLevelConfigData)()
+  self._popStarProScoreY = PopStarConst.PopStarProScorePosYList[2]
+  local matchEnterData = self:GetModule(MatchModule):GetMatchEnterData()
+  local levelConfigData = ConfigServiceHelper.GetLevelConfigData()
   local cfgWave = levelConfigData:GetWaveConfig(curWaveIndex)
   local waveCompleteType = cfgWave:GetCompleteConditionType()
   local waveCompleteParam = cfgWave:GetCompleteConditionParam()
@@ -581,11 +415,11 @@ UIBattleProgressInfo.RefreshWaveCompleteCondition = function(self, curWaveIndex)
   self._curWaveIndex = curWaveIndex
   if waveCompleteType == CompleteConditionType.CombinedCompleteCondition then
     self._combinedCompleteConditionArgs = cfgWave:GetCombinedCompleteConditionArguments()
-    self._curCombinedConditionTypeA = (self._combinedCompleteConditionArgs).conditionA
-    self._curCombinedConditionTypeB = (self._combinedCompleteConditionArgs).conditionB
+    self._curCombinedConditionTypeA = self._combinedCompleteConditionArgs.conditionA
+    self._curCombinedConditionTypeB = self._combinedCompleteConditionArgs.conditionB
     self:_InitCombinedConditionText(cfgWave)
     self:_UpdateCombinedConditionText(cfgWave)
-    self._popStarProScoreY = (PopStarConst.PopStarProScorePosYList)[3]
+    self._popStarProScoreY = PopStarConst.PopStarProScorePosYList[3]
   else
     self:_InitSimpleCompleteConditionData(waveCompleteType, waveCompleteParam)
   end
@@ -597,851 +431,600 @@ UIBattleProgressInfo.RefreshWaveCompleteCondition = function(self, curWaveIndex)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._ShowPopStarProScore = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local x = ((self._popStarProScoreRT).anchoredPosition).x
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._popStarProScoreRT).anchoredPosition = Vector2(x, self._popStarProScoreY)
-  ;
-  (self._popStarProScorePanel):SetActive(true)
+function UIBattleProgressInfo:_ShowPopStarProScore()
+  local x = self._popStarProScoreRT.anchoredPosition.x
+  self._popStarProScoreRT.anchoredPosition = Vector2(x, self._popStarProScoreY)
+  self._popStarProScorePanel:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._UpdatePopStarProScore = function(self, scoreNum)
-  -- function num : 0_24 , upvalues : _ENV
-  (self._txtPopStarProScore):SetText(tostring(scoreNum))
+function UIBattleProgressInfo:_UpdatePopStarProScore(scoreNum)
+  self._txtPopStarProScore:SetText(tostring(scoreNum))
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._ShowFeatureStepPoint = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  local x = ((self._featureStepPointRT).anchoredPosition).x
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._featureStepPointRT).anchoredPosition = Vector2(x, self._popStarProScoreY)
-  ;
-  (self._featureStepPoint):SetActive(true)
+function UIBattleProgressInfo:_ShowFeatureStepPoint()
+  local x = self._featureStepPointRT.anchoredPosition.x
+  self._featureStepPointRT.anchoredPosition = Vector2(x, self._popStarProScoreY)
+  self._featureStepPoint:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo.ShowDropCoinInfoActive = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  local matchEnterData = (self:GetModule(MatchModule)):GetMatchEnterData()
+function UIBattleProgressInfo:ShowDropCoinInfoActive()
+  local matchEnterData = self:GetModule(MatchModule):GetMatchEnterData()
   if matchEnterData:GetMatchType() == MatchType.MT_ResDungeon then
     local createData = matchEnterData:GetResDungeonInfo()
     local module = self:GetModule(ResDungeonModule)
     if DungeonType.DungeonType_Coin == module:GetTypeById(createData.res_dungeon_id) then
-      (self._collectCoinPanel):SetActive(true)
+      self._collectCoinPanel:SetActive(true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo.ShowDropCoinInfo = function(self, coinCount)
-  -- function num : 0_27 , upvalues : _ENV
-  local oldCoinCount = tostring((self._collectDropCoinNumText).text)
-  oldCoinCount = (math.floor)(oldCoinCount + coinCount)
-  ;
-  (self._collectDropCoinNumText):SetText(tostring(oldCoinCount))
+function UIBattleProgressInfo:ShowDropCoinInfo(coinCount)
+  local oldCoinCount = tostring(self._collectDropCoinNumText.text)
+  oldCoinCount = math.floor(oldCoinCount + coinCount)
+  self._collectDropCoinNumText:SetText(tostring(oldCoinCount))
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo.ShowDropMazeCoinInfo = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UIBattleProgressInfo:ShowDropMazeCoinInfo()
   if not self._collectMazeCoinPanel then
-    return 
+    return
   end
-  ;
-  (self._collectMazeCoinPanel):SetActive(true)
-  local totalDropCoin = (BattleStatHelper.GetTotalDropMazeCoin)()
-  ;
-  (self._collectDropMazeCoinNumText):SetText(tostring(totalDropCoin))
+  self._collectMazeCoinPanel:SetActive(true)
+  local totalDropCoin = BattleStatHelper.GetTotalDropMazeCoin()
+  self._collectDropMazeCoinNumText:SetText(tostring(totalDropCoin))
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._ShowRoundCountLimit = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UIBattleProgressInfo:_ShowRoundCountLimit()
   if not self._limitRoundPanel then
-    return 
+    return
   end
   if not self:_CheckIsCorrectWaveCompleteType(CompleteConditionType.RoundCountLimit) then
-    return 
+    return
   end
   if self._curWaveCompleteType == CompleteConditionType.CombinedCompleteCondition then
     self:_RefreshCombinedCompleteWaveInfo()
-    return 
+    return
   end
-  ;
-  (self._limitRoundPanel):SetActive(true)
+  self._limitRoundPanel:SetActive(true)
   local str = self:_GetConditionTextByType(CompleteConditionType.RoundCountLimit)
-  ;
-  (self._limitRoundText):SetText(str)
+  self._limitRoundText:SetText(str)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._ShowCompareMonsterNumber = function(self, waveCompleteParam)
-  -- function num : 0_30 , upvalues : _ENV
+function UIBattleProgressInfo:_ShowCompareMonsterNumber(waveCompleteParam)
   if not self._limitRoundPanel then
-    return 
+    return
   end
   if not self:_CheckIsCorrectWaveCompleteType(CompleteConditionType.CompareMonsterNumber) then
-    return 
+    return
   end
   if self._curWaveCompleteType == CompleteConditionType.CombinedCompleteCondition then
     self:_RefreshCombinedCompleteWaveInfo()
-    return 
+    return
   end
-  ;
-  (self._limitRoundPanel):SetActive(true)
+  self._limitRoundPanel:SetActive(true)
   local str = self:_GetConditionTextByType(CompleteConditionType.CompareMonsterNumber, waveCompleteParam)
-  ;
-  (self._limitRoundText):SetText(str)
+  self._limitRoundText:SetText(str)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._ShowAllRefreshMonsterDead = function(self, waveCompleteParam)
-  -- function num : 0_31 , upvalues : _ENV
+function UIBattleProgressInfo:_ShowAllRefreshMonsterDead(waveCompleteParam)
   if not self._limitRoundPanel then
-    return 
+    return
   end
   if not self:_CheckIsCorrectWaveCompleteType(CompleteConditionType.AllRefreshMonsterDead) and not self:_CheckIsCorrectWaveCompleteType(CompleteConditionType.AllRefreshMonsterDeadOrRoundCountLimit) then
-    return 
+    return
   end
   if waveCompleteParam[1] and waveCompleteParam[1] == 0 then
-    return 
+    return
   end
   self._trapProtectedData = nil
-  local levelConfigData = (ConfigServiceHelper.GetLevelConfigData)()
+  local levelConfigData = ConfigServiceHelper.GetLevelConfigData()
   local traps = levelConfigData:GetLevelAllWaveTraps()
-  for _,trapTransformParam in ipairs(traps) do
+  for _, trapTransformParam in ipairs(traps) do
     local trapID = trapTransformParam:GetTrapID()
-    local trapData = (Cfg.cfg_trap)[trapID]
+    local trapData = Cfg.cfg_trap[trapID]
     if trapData.TrapType == TrapType.Protected then
       self._trapProtectedData = trapData
       break
     end
   end
-  do
-    if self._trapProtectedData then
-      (self._limitRoundPanel):SetActive(true)
-      local str = self:_GetConditionTextByType(self._curWaveCompleteType)
-      ;
-      (self._limitRoundText):SetText(str)
-    end
+  if self._trapProtectedData then
+    self._limitRoundPanel:SetActive(true)
+    local str = self:_GetConditionTextByType(self._curWaveCompleteType)
+    self._limitRoundText:SetText(str)
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._UpdateKillMonsterCount = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function UIBattleProgressInfo:_UpdateKillMonsterCount()
   if not self:_CheckIsCorrectWaveCompleteType(CompleteConditionType.KillAnyMonsterCount) then
-    return 
+    return
   end
   if self._curWaveCompleteType == CompleteConditionType.CombinedCompleteCondition then
     self:_RefreshCombinedCompleteWaveInfo()
-    return 
+    return
   end
   self._killMonsterCount = self._killMonsterCount + 1
   if self._killMonsterCount then
-    (self._limitRoundPanel):SetActive(true)
+    self._limitRoundPanel:SetActive(true)
     local str = self:_GetConditionTextByType(self._curWaveCompleteType)
-    ;
-    (self._limitRoundText):SetText(str)
+    self._limitRoundText:SetText(str)
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._UpdateKillSpecificMonsterCount = function(self, monsterID)
-  -- function num : 0_33 , upvalues : _ENV
+function UIBattleProgressInfo:_UpdateKillSpecificMonsterCount(monsterID)
   if not self:_CheckIsCorrectWaveCompleteType(CompleteConditionType.KillSpecificMonsterCount) then
-    return 
+    return
   end
   if self._countCheckSpecificMonsterID and monsterID and self._countCheckSpecificMonsterID == monsterID then
     self._killSpecificMonsterCount = self._killSpecificMonsterCount + 1
     if self._curWaveCompleteType == CompleteConditionType.CombinedCompleteCondition then
       self:_RefreshCombinedCompleteWaveInfo()
-      return 
+      return
     end
     if self._killSpecificMonsterCount then
-      (self._limitRoundPanel):SetActive(true)
+      self._limitRoundPanel:SetActive(true)
       local str = self:_GetConditionTextByType(self._curWaveCompleteType)
-      ;
-      (self._limitRoundText):SetText(str)
+      self._limitRoundText:SetText(str)
     end
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._UpdateKillMoreThanPetMonster = function(self, entityID)
-  -- function num : 0_34 , upvalues : _ENV
+function UIBattleProgressInfo:_UpdateKillMoreThanPetMonster(entityID)
   if not self:_CheckIsCorrectWaveCompleteType(CompleteConditionType.KillMoreThanPetMonster) then
-    return 
+    return
   end
   if self._curWaveCompleteType == CompleteConditionType.CombinedCompleteCondition then
     self:_RefreshCombinedCompleteWaveInfo()
-    return 
+    return
   end
-  local levelConfigData = (ConfigServiceHelper.GetLevelConfigData)()
+  local levelConfigData = ConfigServiceHelper.GetLevelConfigData()
   local cfgWave = levelConfigData:GetWaveConfig(1)
   local waveCompleteType = cfgWave:GetCompleteConditionType()
   local waveCompleteParam = cfgWave:GetCompleteConditionParam()
-  local monsterKilledCountAll = (InnerGameHelperRender.GetMonsterKilledCount)()
-  local monsterID = (waveCompleteParam[1])[1]
-  local monsterKilledCountMonster = (InnerGameHelperRender.GetMonsterKilledCountByMonsterID)(monsterID)
+  local monsterKilledCountAll = InnerGameHelperRender.GetMonsterKilledCount()
+  local monsterID = waveCompleteParam[1][1]
+  local monsterKilledCountMonster = InnerGameHelperRender.GetMonsterKilledCountByMonsterID(monsterID)
   local monsterKilledCountPet = monsterKilledCountAll - monsterKilledCountMonster
-  ;
-  (self._killMoreThanText1):SetText((StringTable.Get)("str_battle_ystw_num", self._killMoreThanMonsterName, monsterKilledCountMonster))
-  ;
-  (self._killMoreThanText2):SetText((StringTable.Get)("str_battle_player_num", monsterKilledCountPet))
+  self._killMoreThanText1:SetText(StringTable.Get("str_battle_ystw_num", self._killMoreThanMonsterName, monsterKilledCountMonster))
+  self._killMoreThanText2:SetText(StringTable.Get("str_battle_player_num", monsterKilledCountPet))
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._CheckIsCorrectWaveCompleteType = function(self, type)
-  -- function num : 0_35 , upvalues : _ENV
-  if self._curCombinedConditionTypeA ~= type and self._curCombinedConditionTypeB ~= type then
-    do return self._curWaveCompleteType ~= CompleteConditionType.CombinedCompleteCondition end
-    do return self._curWaveCompleteType == type end
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UIBattleProgressInfo:_CheckIsCorrectWaveCompleteType(type)
+  if self._curWaveCompleteType == CompleteConditionType.CombinedCompleteCondition then
+    return self._curCombinedConditionTypeA == type or self._curCombinedConditionTypeB == type
+  else
+    return self._curWaveCompleteType == type
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._UpdateLeftInternalMonsterWave = function(self)
-  -- function num : 0_36 , upvalues : _ENV
+function UIBattleProgressInfo:_UpdateLeftInternalMonsterWave()
   if not self:_CheckIsCorrectWaveCompleteType(CompleteConditionType.UpHoldAndKillAllInternalRefreshMonster) then
-    return 
+    return
   end
   if self._curWaveCompleteType == CompleteConditionType.CombinedCompleteCondition then
     self:_RefreshCombinedCompleteWaveInfo()
-    return 
+    return
   end
   self._leftInternalMonsterWaveCount = self._leftInternalMonsterWaveCount - 1
   if self._leftInternalMonsterWaveCount then
-    (self._limitRoundPanel):SetActive(true)
+    self._limitRoundPanel:SetActive(true)
     local str = self:_GetConditionTextByType(self._curWaveCompleteType)
-    ;
-    (self._limitRoundText):SetText(str)
+    self._limitRoundText:SetText(str)
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._InitSimpleCompleteConditionData = function(self, type, param, isCombinedCondition)
-  -- function num : 0_37 , upvalues : _ENV, UICollectDropType
+function UIBattleProgressInfo:_InitSimpleCompleteConditionData(type, param, isCombinedCondition)
   if type == CompleteConditionType.CollectItems or type == CompleteConditionType.AllMonsterDeadOrCollectItems then
     self._collectDropMax = param[1]
-    ;
-    (self._collectInfoPanel):SetActive(true)
-    self._collectDropType = (param[1])[3] or UICollectDropType.Base
+    self._collectInfoPanel:SetActive(true)
+    self._collectDropType = param[1][3] or UICollectDropType.Base
     self:_InitCollectDropUI(self._collectDropType)
     self:_ShowCollectDropBaseInfo(0)
-  else
-    if type == CompleteConditionType.ArriveAtPos and not isCombinedCondition then
-      (self._exit):SetActive(true)
-    end
-  end
-  if type == CompleteConditionType.RoundCountLimit then
+  elseif type == CompleteConditionType.ArriveAtPos then
     if not isCombinedCondition then
-      (self._limitRoundPanel):SetActive(true)
+      self._exit:SetActive(true)
+    end
+  elseif type == CompleteConditionType.RoundCountLimit then
+    if not isCombinedCondition then
+      self._limitRoundPanel:SetActive(true)
       local str = self:_GetConditionTextByType(CompleteConditionType.RoundCountLimit)
-      ;
-      (self._limitRoundText):SetText(str)
+      self._limitRoundText:SetText(str)
     end
-    do
-      self:AttachEvent(GameEventType.UpdateRoundCount, self._ShowRoundCountLimit)
-      if type == CompleteConditionType.AllRefreshMonsterDead then
-        self:_ShowAllRefreshMonsterDead(param)
-      else
-        if type == CompleteConditionType.AllRefreshMonsterDeadOrRoundCountLimit then
-          local matchEnterData = (self:GetModule(MatchModule)):GetMatchEnterData()
-          if matchEnterData:GetMatchType() == MatchType.MT_Maze then
-            self:ShowDropMazeCoinInfo()
-          else
-            self:_ShowAllRefreshMonsterDead(param)
-          end
-        else
-          do
-            if type == CompleteConditionType.KillAnyMonsterCount then
-              self._killMonsterCount = 0
-              if not isCombinedCondition then
-                (self._limitRoundPanel):SetActive(true)
-                local str = self:_GetConditionTextByType(self._curWaveCompleteType)
-                ;
-                (self._limitRoundText):SetText(str)
-              end
-            else
-              do
-                if type == CompleteConditionType.UpHoldAndKillAllInternalRefreshMonster then
-                  local levelConfigData = (ConfigServiceHelper.GetLevelConfigData)()
-                  local monsterWaveParam = levelConfigData:GetWaveConfig(self._curWaveIndex)
-                  local count = monsterWaveParam:GetWaveInternalRefreshCount()
-                  self._allInternalMonsterWaveCount = count
-                  self._leftInternalMonsterWaveCount = count
-                  self:_UpdateLeftInternalMonsterWave()
-                else
-                  do
-                    if type == CompleteConditionType.RoundCountLimitAndCheckMonsterEscape then
-                      (self._monsterEscapeInfoPanel):SetActive(true)
-                      self._curMonsterEscapeCount = 0
-                      local levelConfigData = (ConfigServiceHelper.GetLevelConfigData)()
-                      local limitEsacpeCount = levelConfigData:GetLevelMonsterEscapeLimit()
-                      self._limitMonsterEscapeCount = tonumber(limitEsacpeCount)
-                      ;
-                      (self._limitMonsterEscapeNum):SetText(tostring(self._limitMonsterEscapeCount))
-                      self:_UpdateEscapeMonsterCount()
-                    else
-                      do
-                        if type == CompleteConditionType.ChessEscape then
-                          (self._chessEscapeInfoPanel):SetActive(true)
-                          self._curChessEscapeCount = 0
-                          local levelConfigData = (ConfigServiceHelper.GetLevelConfigData)()
-                          local curWaveIndex = (BattleStatHelper.GetCurWaveIndex)() or 1
-                          local cfgWave = levelConfigData:GetWaveConfig(curWaveIndex)
-                          local waveCompleteType = cfgWave:GetCompleteConditionType()
-                          local paramList = levelConfigData:GetLevelCompleteConditionParamList(waveCompleteType)
-                          local curConditionParam = paramList[curWaveIndex]
-                          local limitCount = curConditionParam[1]
-                          local targetChessClassID = curConditionParam[2] or 0
-                          self._limitChessEscapeCount = tonumber(limitCount)
-                          local text = "str_level_complete_condition_" .. tostring(waveCompleteType)
-                          ;
-                          (self._chessEscapeText):SetText((StringTable.Get)(text, self._eventCount))
-                          self:_UpdateChessEscape()
-                        else
-                          do
-                            if type == CompleteConditionType.SelectChessEscape then
-                              (self._chessEscapeInfoPanel):SetActive(true)
-                              self._curChessEscapeCount = 0
-                              local levelConfigData = (ConfigServiceHelper.GetLevelConfigData)()
-                              local curWaveIndex = (BattleStatHelper.GetCurWaveIndex)() or 1
-                              local cfgWave = levelConfigData:GetWaveConfig(curWaveIndex)
-                              local waveCompleteType = cfgWave:GetCompleteConditionType()
-                              local paramList = levelConfigData:GetLevelCompleteConditionParamList(waveCompleteType)
-                              local curConditionParam = paramList[curWaveIndex]
-                              local limitCount = curConditionParam[1]
-                              local targetChessClassID = curConditionParam[2] or 0
-                              self._limitChessEscapeCount = tonumber(limitCount)
-                              local text = "str_level_complete_condition_" .. tostring(waveCompleteType)
-                              ;
-                              (self._chessEscapeText):SetText((StringTable.Get)(text, self._eventCount))
-                              self:_UpdateChessEscape()
-                            else
-                              do
-                                if type == CompleteConditionType.CompareMonsterNumber then
-                                  self:_ShowCompareMonsterNumber(param)
-                                else
-                                  if type == CompleteConditionType.KillSpecificMonsterCount then
-                                    self._initSpecificMonsterDeadCount = (param[1])[2]
-                                    self._killSpecificMonsterCount = 0
-                                    self._countCheckSpecificMonsterID = (param[1])[1]
-                                    if not isCombinedCondition then
-                                      (self._limitRoundPanel):SetActive(true)
-                                      local str = self:_GetConditionTextByType(self._curWaveCompleteType)
-                                      ;
-                                      (self._limitRoundText):SetText(str)
-                                    end
-                                  else
-                                    do
-                                      if type == CompleteConditionType.KillMoreThanPetMonster then
-                                        local monsterID = (param[1])[1]
-                                        local monsterConfigData = (ConfigServiceHelper.GetMonsterConfigData)()
-                                        local monsterName = (StringTable.Get)(monsterConfigData:GetMonsterName(monsterID))
-                                        self._killMoreThanMonsterName = monsterName
-                                        ;
-                                        (self._killMoreThanPanel):SetActive(true)
-                                        self:_UpdateKillMoreThanPetMonster()
-                                      else
-                                        do
-                                          self._popStarProScoreY = (PopStarConst.PopStarProScorePosYList)[1]
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+    self:AttachEvent(GameEventType.UpdateRoundCount, self._ShowRoundCountLimit)
+  elseif type == CompleteConditionType.AllRefreshMonsterDead then
+    self:_ShowAllRefreshMonsterDead(param)
+  elseif type == CompleteConditionType.AllRefreshMonsterDeadOrRoundCountLimit then
+    local matchEnterData = self:GetModule(MatchModule):GetMatchEnterData()
+    if matchEnterData:GetMatchType() == MatchType.MT_Maze then
+      self:ShowDropMazeCoinInfo()
+    else
+      self:_ShowAllRefreshMonsterDead(param)
     end
+  elseif type == CompleteConditionType.KillAnyMonsterCount then
+    self._killMonsterCount = 0
+    if not isCombinedCondition then
+      self._limitRoundPanel:SetActive(true)
+      local str = self:_GetConditionTextByType(self._curWaveCompleteType)
+      self._limitRoundText:SetText(str)
+    end
+  elseif type == CompleteConditionType.UpHoldAndKillAllInternalRefreshMonster then
+    local levelConfigData = ConfigServiceHelper.GetLevelConfigData()
+    local monsterWaveParam = levelConfigData:GetWaveConfig(self._curWaveIndex)
+    local count = monsterWaveParam:GetWaveInternalRefreshCount()
+    self._allInternalMonsterWaveCount = count
+    self._leftInternalMonsterWaveCount = count
+    self:_UpdateLeftInternalMonsterWave()
+  elseif type == CompleteConditionType.RoundCountLimitAndCheckMonsterEscape then
+    self._monsterEscapeInfoPanel:SetActive(true)
+    self._curMonsterEscapeCount = 0
+    local levelConfigData = ConfigServiceHelper.GetLevelConfigData()
+    local limitEsacpeCount = levelConfigData:GetLevelMonsterEscapeLimit()
+    self._limitMonsterEscapeCount = tonumber(limitEsacpeCount)
+    self._limitMonsterEscapeNum:SetText(tostring(self._limitMonsterEscapeCount))
+    self:_UpdateEscapeMonsterCount()
+  elseif type == CompleteConditionType.ChessEscape then
+    self._chessEscapeInfoPanel:SetActive(true)
+    self._curChessEscapeCount = 0
+    local levelConfigData = ConfigServiceHelper.GetLevelConfigData()
+    local curWaveIndex = BattleStatHelper.GetCurWaveIndex() or 1
+    local cfgWave = levelConfigData:GetWaveConfig(curWaveIndex)
+    local waveCompleteType = cfgWave:GetCompleteConditionType()
+    local paramList = levelConfigData:GetLevelCompleteConditionParamList(waveCompleteType)
+    local curConditionParam = paramList[curWaveIndex]
+    local limitCount = curConditionParam[1]
+    local targetChessClassID = curConditionParam[2] or 0
+    self._limitChessEscapeCount = tonumber(limitCount)
+    local text = "str_level_complete_condition_" .. tostring(waveCompleteType)
+    self._chessEscapeText:SetText(StringTable.Get(text, self._eventCount))
+    self:_UpdateChessEscape()
+  elseif type == CompleteConditionType.SelectChessEscape then
+    self._chessEscapeInfoPanel:SetActive(true)
+    self._curChessEscapeCount = 0
+    local levelConfigData = ConfigServiceHelper.GetLevelConfigData()
+    local curWaveIndex = BattleStatHelper.GetCurWaveIndex() or 1
+    local cfgWave = levelConfigData:GetWaveConfig(curWaveIndex)
+    local waveCompleteType = cfgWave:GetCompleteConditionType()
+    local paramList = levelConfigData:GetLevelCompleteConditionParamList(waveCompleteType)
+    local curConditionParam = paramList[curWaveIndex]
+    local limitCount = curConditionParam[1]
+    local targetChessClassID = curConditionParam[2] or 0
+    self._limitChessEscapeCount = tonumber(limitCount)
+    local text = "str_level_complete_condition_" .. tostring(waveCompleteType)
+    self._chessEscapeText:SetText(StringTable.Get(text, self._eventCount))
+    self:_UpdateChessEscape()
+  elseif type == CompleteConditionType.CompareMonsterNumber then
+    self:_ShowCompareMonsterNumber(param)
+  elseif type == CompleteConditionType.KillSpecificMonsterCount then
+    self._initSpecificMonsterDeadCount = param[1][2]
+    self._killSpecificMonsterCount = 0
+    self._countCheckSpecificMonsterID = param[1][1]
+    if not isCombinedCondition then
+      self._limitRoundPanel:SetActive(true)
+      local str = self:_GetConditionTextByType(self._curWaveCompleteType)
+      self._limitRoundText:SetText(str)
+    end
+  elseif type == CompleteConditionType.KillMoreThanPetMonster then
+    local monsterID = param[1][1]
+    local monsterConfigData = ConfigServiceHelper.GetMonsterConfigData()
+    local monsterName = StringTable.Get(monsterConfigData:GetMonsterName(monsterID))
+    self._killMoreThanMonsterName = monsterName
+    self._killMoreThanPanel:SetActive(true)
+    self:_UpdateKillMoreThanPetMonster()
+  else
+    self._popStarProScoreY = PopStarConst.PopStarProScorePosYList[1]
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._UpdateCombinedConditionText = function(self, waveConfig)
-  -- function num : 0_38 , upvalues : _ENV
+function UIBattleProgressInfo:_UpdateCombinedConditionText(waveConfig)
   local completeType = waveConfig:GetCompleteConditionType()
   local completeParam = waveConfig:GetCompleteConditionParam()
   local completeCombinedArguments = waveConfig:GetCombinedCompleteConditionArguments()
   self._combinedCompleteConditionArgs = waveConfig:GetCombinedCompleteConditionArguments()
-  local typeA = (self._combinedCompleteConditionArgs).conditionA
-  local typeB = (self._combinedCompleteConditionArgs).conditionB
-  local paramA = (self._combinedCompleteConditionArgs).conditionParamA
-  local paramB = (self._combinedCompleteConditionArgs).conditionParamB
+  local typeA = self._combinedCompleteConditionArgs.conditionA
+  local typeB = self._combinedCompleteConditionArgs.conditionB
+  local paramA = self._combinedCompleteConditionArgs.conditionParamA
+  local paramB = self._combinedCompleteConditionArgs.conditionParamB
   self:_InitSimpleCompleteConditionData(typeA, paramA, true)
   self:_InitSimpleCompleteConditionData(typeB, paramB, true)
-  local _, textParamA, textParamB = (InnerGameHelperRender.IsDoneCompleteCondition)(completeType, completeParam, completeCombinedArguments)
-  ;
-  (self._combinedCompleteCondition):SetActive(true)
+  local _, textParamA, textParamB = InnerGameHelperRender.IsDoneCompleteCondition(completeType, completeParam, completeCombinedArguments)
+  self._combinedCompleteCondition:SetActive(true)
   local strA = self:_GetCompleteConditionTextByType(typeA, textParamA)
   local strB = self:_GetCompleteConditionTextByType(typeB, textParamB)
-  ;
-  (self._combinedCompleteConditionText1):SetText(strA)
-  ;
-  (self._combinedCompleteConditionText2):SetText(strB)
+  self._combinedCompleteConditionText1:SetText(strA)
+  self._combinedCompleteConditionText2:SetText(strB)
   if self._combinedMode == CombinedCompleteConditionMode.And then
-    (self._combinedCompleteConditionTitle):SetText((StringTable.Get)("str_battle_complete_all_condition"))
+    self._combinedCompleteConditionTitle:SetText(StringTable.Get("str_battle_complete_all_condition"))
   else
-    ;
-    (self._combinedCompleteConditionTitle):SetText((StringTable.Get)("str_battle_complete_any_condition"))
+    self._combinedCompleteConditionTitle:SetText(StringTable.Get("str_battle_complete_any_condition"))
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._UpdateEscapeMonsterCount = function(self, addNum)
-  -- function num : 0_39 , upvalues : _ENV, dropNumColorValR, dropNumColorValG, dropNumColorValB
+function UIBattleProgressInfo:_UpdateEscapeMonsterCount(addNum)
   if not self:_CheckIsCorrectWaveCompleteType(CompleteConditionType.RoundCountLimitAndCheckMonsterEscape) then
-    return 
+    return
   end
   local addCount = addNum or 0
   self._curMonsterEscapeCount = self._curMonsterEscapeCount + addCount
   if self._curMonsterEscapeCount then
-    (self._monsterEscapeNum):SetText(tostring(self._curMonsterEscapeCount))
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
+    self._monsterEscapeNum:SetText(tostring(self._curMonsterEscapeCount))
     if self._curMonsterEscapeCount < self._limitMonsterEscapeCount then
-      (self._limitMonsterEscapeNum).color = Color.white
+      self._limitMonsterEscapeNum.color = Color.white
     else
-      -- DECOMPILER ERROR at PC38: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._limitMonsterEscapeNum).color = Color(dropNumColorValR, dropNumColorValG, dropNumColorValB, 1)
+      self._limitMonsterEscapeNum.color = Color(dropNumColorValR, dropNumColorValG, dropNumColorValB, 1)
     end
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R7 in 'UnsetPending'
-
-UIBattleProgressInfo._UpdateChessEscape = function(self, addNum)
-  -- function num : 0_40 , upvalues : _ENV, dropNumColorValR, dropNumColorValG, dropNumColorValB
+function UIBattleProgressInfo:_UpdateChessEscape(addNum)
   if not self:_CheckIsCorrectWaveCompleteType(CompleteConditionType.ChessEscape) then
-    return 
+    return
   end
   local addCount = addNum or 1
   self._curChessEscapeCount = self._curChessEscapeCount + addCount
   if self._curChessEscapeCount then
-    (self._monsterEscapeNum):SetText(tostring(self._curChessEscapeCount))
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
+    self._monsterEscapeNum:SetText(tostring(self._curChessEscapeCount))
     if self._curChessEscapeCount < self._limitChessEscapeCount then
-      (self._limitChessEscapeNum).color = Color.white
+      self._limitChessEscapeNum.color = Color.white
     else
-      -- DECOMPILER ERROR at PC38: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._limitChessEscapeNum).color = Color(dropNumColorValR, dropNumColorValG, dropNumColorValB, 1)
+      self._limitChessEscapeNum.color = Color(dropNumColorValR, dropNumColorValG, dropNumColorValB, 1)
     end
   end
 end
 
 local finishedProgressFormatter = "(<color=#e68812>%d/%d</color>)"
-local getUnfinishedProgressText = function(text, current, full)
-  -- function num : 0_41 , upvalues : _ENV
+
+local function getUnfinishedProgressText(text, current, full)
   if not current or not full then
     return text
   end
-  return (table.concat)({text, " (", current, "<color=#e68812>/", full, "</color>)"})
+  return table.concat({
+    text,
+    " (",
+    current,
+    "<color=#e68812>/",
+    full,
+    "</color>)"
+  })
 end
 
-local getFinishedProgressText = function(text, current, full)
-  -- function num : 0_42 , upvalues : _ENV
+local function getFinishedProgressText(text, current, full)
   if not current or not full then
     return text
   end
-  return (table.concat)({text, " (<color=#e68812>", current, "/", full, "</color>)"})
+  return table.concat({
+    text,
+    " (<color=#e68812>",
+    current,
+    "/",
+    full,
+    "</color>)"
+  })
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R10 in 'UnsetPending'
-
-UIBattleProgressInfo._GetCompleteConditionTextByType = function(self, type, param)
-  -- function num : 0_43 , upvalues : _ENV, getFinishedProgressText, getUnfinishedProgressText
-  local textStr = (StringTable.Get)(((Cfg.cfg_level_complete_condition)[type]).ConditionStr) or ""
-  local current, full = nil, nil
+function UIBattleProgressInfo:_GetCompleteConditionTextByType(type, param)
+  local textStr = StringTable.Get(Cfg.cfg_level_complete_condition[type].ConditionStr) or ""
+  local current, full
   if param then
     current = param.current
     full = param.full
   end
   if type == CompleteConditionType.RoundCountLimit then
-    return (StringTable.Get)("str_battle_limit_round", current, full)
-  else
-    if type == CompleteConditionType.KillAnyMonsterCount then
-      return (StringTable.Get)("str_battle_kill_any_monster_count", current, full)
-    else
-      if type == CompleteConditionType.KillSpecificMonsterCount then
-        local monsterNameStr = ""
-        local monsterID = self._countCheckSpecificMonsterID
-        if monsterID then
-          local monsterCfg = (Cfg.cfg_monster)[monsterID]
-          if monsterCfg then
-            local monsterClassCfg = (Cfg.cfg_monster_class)[monsterCfg.ClassID]
-            if monsterClassCfg then
-              monsterNameStr = (StringTable.Get)(monsterClassCfg.Name)
-            end
-          end
-        end
-        do
-          do
-            local textStr = (StringTable.Get)("str_level_complete_condition_29", self._initSpecificMonsterDeadCount, monsterNameStr)
-            if param.isCompleted then
-              return getFinishedProgressText(textStr, current, full)
-            else
-              return getUnfinishedProgressText(textStr, current, full)
-            end
-            if param.isCompleted then
-              return getFinishedProgressText(textStr, current, full)
-            else
-              return getUnfinishedProgressText(textStr, current, full)
-            end
-          end
+    return StringTable.Get("str_battle_limit_round", current, full)
+  elseif type == CompleteConditionType.KillAnyMonsterCount then
+    return StringTable.Get("str_battle_kill_any_monster_count", current, full)
+  elseif type == CompleteConditionType.KillSpecificMonsterCount then
+    local monsterNameStr = ""
+    local monsterID = self._countCheckSpecificMonsterID
+    if monsterID then
+      local monsterCfg = Cfg.cfg_monster[monsterID]
+      if monsterCfg then
+        local monsterClassCfg = Cfg.cfg_monster_class[monsterCfg.ClassID]
+        if monsterClassCfg then
+          monsterNameStr = StringTable.Get(monsterClassCfg.Name)
         end
       end
     end
+    local textStr = StringTable.Get("str_level_complete_condition_29", self._initSpecificMonsterDeadCount, monsterNameStr)
+    if param.isCompleted then
+      return getFinishedProgressText(textStr, current, full)
+    else
+      return getUnfinishedProgressText(textStr, current, full)
+    end
+  elseif param.isCompleted then
+    return getFinishedProgressText(textStr, current, full)
+  else
+    return getUnfinishedProgressText(textStr, current, full)
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R10 in 'UnsetPending'
-
-UIBattleProgressInfo._InitCombinedConditionText = function(self, waveConfig)
-  -- function num : 0_44
+function UIBattleProgressInfo:_InitCombinedConditionText(waveConfig)
   self._isCombinedCompleteCondition = true
-  self._combinedMode = ((waveConfig:GetCompleteConditionParam())[1])[1]
+  self._combinedMode = waveConfig:GetCompleteConditionParam()[1][1]
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R10 in 'UnsetPending'
-
-UIBattleProgressInfo._UIInitMonsterDeadCount = function(self, count)
-  -- function num : 0_45
+function UIBattleProgressInfo:_UIInitMonsterDeadCount(count)
   self._initMonsterDeadCount = count
   self._killMonsterCount = 0
   self:_UpdateKillMonsterCount()
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R10 in 'UnsetPending'
-
-UIBattleProgressInfo._UIInitSpecificMonsterDeadCount = function(self, monsterID, count)
-  -- function num : 0_46
+function UIBattleProgressInfo:_UIInitSpecificMonsterDeadCount(monsterID, count)
   self._initSpecificMonsterDeadCount = count
   self._killSpecificMonsterCount = 0
   self._countCheckSpecificMonsterID = monsterID
   self:_UpdateKillSpecificMonsterCount(monsterID)
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R10 in 'UnsetPending'
-
-UIBattleProgressInfo.UpdateScoreText = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function UIBattleProgressInfo:UpdateScoreText()
   local tmpScoreNumber = self._scoreNumber
   local index = 1
   while tmpScoreNumber ~= 0 and index < 6 do
     local num = tmpScoreNumber % 10
     tmpScoreNumber = tmpScoreNumber / 10
-    tmpScoreNumber = (math.modf)(tmpScoreNumber)
+    tmpScoreNumber = math.modf(tmpScoreNumber)
     local imageName = self:N5ScoreGetImageNameByNumber(num)
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    ((self._numberImageObjectList)[index]).sprite = (InnerGameHelperRender:GetInstance()):GetImageFromInnerUI(imageName)
+    self._numberImageObjectList[index].sprite = InnerGameHelperRender:GetInstance():GetImageFromInnerUI(imageName)
     index = index + 1
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R10 in 'UnsetPending'
-
-UIBattleProgressInfo.N5ScoreGetImageNameByNumber = function(self, num)
-  -- function num : 0_48
+function UIBattleProgressInfo:N5ScoreGetImageNameByNumber(num)
   if num == 0 then
     return "n5_home_timenum_0"
   else
-    return (self._number2Image)[num]
+    return self._number2Image[num]
   end
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R10 in 'UnsetPending'
-
-UIBattleProgressInfo._UIInitN5Score = function(self)
-  -- function num : 0_49
-  (self._score):SetActive(true)
+function UIBattleProgressInfo:_UIInitN5Score()
+  self._score:SetActive(true)
   self._scoreNumber = 0
   self:UpdateScoreText()
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R10 in 'UnsetPending'
-
-UIBattleProgressInfo._N5UpdateScore = function(self, addValue)
-  -- function num : 0_50
+function UIBattleProgressInfo:_N5UpdateScore(addValue)
   self._scoreNumber = self._scoreNumber + addValue
   self:UpdateScoreText()
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R10 in 'UnsetPending'
-
-UIBattleProgressInfo._GetConditionTextByType = function(self, completeType, param)
-  -- function num : 0_51 , upvalues : _ENV, dropNumColorStr
-  if self._curCollectCount >= self._collectDropMax or not "000000" then
-    do return (string.format)("%s<color=#%s>%s</color><color=#%s>%s</color>", (StringTable.Get)("str_battle_drop_collect"), completeType ~= CompleteConditionType.CollectItems and completeType ~= CompleteConditionType.AllMonsterDeadOrCollectItems or dropNumColorStr, tostring(self._curCollectCount), dropNumColorStr, tostring(self._collectDropMax)) end
-    if completeType == CompleteConditionType.ArriveAtPos then
-      return (StringTable.Get)("str_battle_go_to_exit_soon")
+function UIBattleProgressInfo:_GetConditionTextByType(completeType, param)
+  if completeType == CompleteConditionType.CollectItems or completeType == CompleteConditionType.AllMonsterDeadOrCollectItems then
+    return string.format("%s<color=#%s>%s</color><color=#%s>%s</color>", StringTable.Get("str_battle_drop_collect"), self._curCollectCount < self._collectDropMax and "000000" or dropNumColorStr, tostring(self._curCollectCount), dropNumColorStr, tostring(self._collectDropMax))
+  elseif completeType == CompleteConditionType.ArriveAtPos then
+    return StringTable.Get("str_battle_go_to_exit_soon")
+  elseif completeType == CompleteConditionType.RoundCountLimit then
+    local levelTotalRoundCount = BattleStatHelper.GetLevelTotalRoundCount()
+    local levelConfigData = ConfigServiceHelper.GetLevelConfigData()
+    local levelRoundCount = levelConfigData:GetLevelRoundCount()
+    return StringTable.Get("str_battle_limit_round", levelTotalRoundCount - 1, levelRoundCount)
+  elseif completeType == CompleteConditionType.AllRefreshMonsterDead then
+    if not self._trapProtectedData then
+      return StringTable.Get("str_level_complete_condition_10")
     else
-      if completeType == CompleteConditionType.RoundCountLimit then
-        local levelTotalRoundCount = (BattleStatHelper.GetLevelTotalRoundCount)()
-        local levelConfigData = (ConfigServiceHelper.GetLevelConfigData)()
-        local levelRoundCount = levelConfigData:GetLevelRoundCount()
-        return (StringTable.Get)("str_battle_limit_round", levelTotalRoundCount - 1, levelRoundCount)
-      else
-        do
-          if completeType == CompleteConditionType.AllRefreshMonsterDead then
-            if not self._trapProtectedData then
-              return (StringTable.Get)("str_level_complete_condition_10")
-            else
-              local trapName = (StringTable.Get)((self._trapProtectedData).NameStr)
-              return (StringTable.Get)("str_battle_limit_round_protect", trapName)
-            end
-          else
-            do
-              if completeType == CompleteConditionType.AllRefreshMonsterDeadOrRoundCountLimit then
-                if not self._trapProtectedData then
-                  return (StringTable.Get)("str_level_complete_condition_11")
-                else
-                  local trapName = (StringTable.Get)((self._trapProtectedData).NameStr)
-                  return (StringTable.Get)("str_battle_limit_round_protect", trapName)
-                end
-              else
-                do
-                  if completeType == CompleteConditionType.KillAnyMonsterCount then
-                    return (StringTable.Get)("str_battle_kill_any_monster_count", self._killMonsterCount, self._initMonsterDeadCount)
-                  else
-                    if completeType == CompleteConditionType.UpHoldAndKillAllInternalRefreshMonster then
-                      return (StringTable.Get)("str_battle_holdup_monster_wave", self._leftInternalMonsterWaveCount)
-                    else
-                      if completeType == CompleteConditionType.CompareMonsterNumber then
-                        if not (param[1])[1] then
-                          local type = ConditionCompareType.Equal
-                        end
-                        local count = (param[1])[2] or 0
-                        local strPre = ""
-                        if type == ConditionCompareType.Equal then
-                          strPre = (StringTable.Get)("str_battle_condition_compare_equal", count)
-                        else
-                          if type == ConditionCompareType.NotEqual then
-                            strPre = (StringTable.Get)("str_battle_condition_compare_not_equal", count)
-                          else
-                            if type == ConditionCompareType.Greater then
-                              strPre = (StringTable.Get)("str_battle_condition_compare_greater", count)
-                            else
-                              if type == ConditionCompareType.NotLess then
-                                strPre = (StringTable.Get)("str_battle_condition_compare_not_Less", count)
-                              else
-                                if type == ConditionCompareType.Less then
-                                  strPre = (StringTable.Get)("str_battle_condition_compare_less", count)
-                                else
-                                  if type == ConditionCompareType.NotGreater then
-                                    strPre = (StringTable.Get)("str_battle_condition_compare_not_greater", count)
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                        return strPre
-                      else
-                        do
-                          if completeType == CompleteConditionType.KillSpecificMonsterCount then
-                            local monsterNameStr = ""
-                            local monsterID = self._countCheckSpecificMonsterID
-                            if monsterID then
-                              local monsterCfg = (Cfg.cfg_monster)[monsterID]
-                              if monsterCfg then
-                                local monsterClassCfg = (Cfg.cfg_monster_class)[monsterCfg.ClassID]
-                                if monsterClassCfg then
-                                  monsterNameStr = (StringTable.Get)(monsterClassCfg.Name)
-                                end
-                              end
-                            end
-                            do
-                              do
-                                do return (StringTable.Get)("str_battle_condition_kill_specific_monster_count", monsterNameStr, self._killSpecificMonsterCount, self._initSpecificMonsterDeadCount) end
-                                return ""
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
+      local trapName = StringTable.Get(self._trapProtectedData.NameStr)
+      return StringTable.Get("str_battle_limit_round_protect", trapName)
+    end
+  elseif completeType == CompleteConditionType.AllRefreshMonsterDeadOrRoundCountLimit then
+    if not self._trapProtectedData then
+      return StringTable.Get("str_level_complete_condition_11")
+    else
+      local trapName = StringTable.Get(self._trapProtectedData.NameStr)
+      return StringTable.Get("str_battle_limit_round_protect", trapName)
+    end
+  elseif completeType == CompleteConditionType.KillAnyMonsterCount then
+    return StringTable.Get("str_battle_kill_any_monster_count", self._killMonsterCount, self._initMonsterDeadCount)
+  elseif completeType == CompleteConditionType.UpHoldAndKillAllInternalRefreshMonster then
+    return StringTable.Get("str_battle_holdup_monster_wave", self._leftInternalMonsterWaveCount)
+  elseif completeType == CompleteConditionType.CompareMonsterNumber then
+    local type = param[1][1] or ConditionCompareType.Equal
+    local count = param[1][2] or 0
+    local strPre = ""
+    if type == ConditionCompareType.Equal then
+      strPre = StringTable.Get("str_battle_condition_compare_equal", count)
+    elseif type == ConditionCompareType.NotEqual then
+      strPre = StringTable.Get("str_battle_condition_compare_not_equal", count)
+    elseif type == ConditionCompareType.Greater then
+      strPre = StringTable.Get("str_battle_condition_compare_greater", count)
+    elseif type == ConditionCompareType.NotLess then
+      strPre = StringTable.Get("str_battle_condition_compare_not_Less", count)
+    elseif type == ConditionCompareType.Less then
+      strPre = StringTable.Get("str_battle_condition_compare_less", count)
+    elseif type == ConditionCompareType.NotGreater then
+      strPre = StringTable.Get("str_battle_condition_compare_not_greater", count)
+    end
+    return strPre
+  elseif completeType == CompleteConditionType.KillSpecificMonsterCount then
+    local monsterNameStr = ""
+    local monsterID = self._countCheckSpecificMonsterID
+    if monsterID then
+      local monsterCfg = Cfg.cfg_monster[monsterID]
+      if monsterCfg then
+        local monsterClassCfg = Cfg.cfg_monster_class[monsterCfg.ClassID]
+        if monsterClassCfg then
+          monsterNameStr = StringTable.Get(monsterClassCfg.Name)
         end
       end
     end
+    return StringTable.Get("str_battle_condition_kill_specific_monster_count", monsterNameStr, self._killSpecificMonsterCount, self._initSpecificMonsterDeadCount)
   end
+  return ""
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R10 in 'UnsetPending'
-
-UIBattleProgressInfo._RefreshBossCastSkillTipInfo = function(self, curNum)
-  -- function num : 0_52 , upvalues : _ENV, dropNumColorValR, dropNumColorValG, dropNumColorValB
-  (self._txtCurTrapNum):SetText(tostring(curNum))
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIBattleProgressInfo:_RefreshBossCastSkillTipInfo(curNum)
+  self._txtCurTrapNum:SetText(tostring(curNum))
   if curNum < self._maxTrapNum then
-    (self._txtCurTrapNum).color = Color.white
+    self._txtCurTrapNum.color = Color.white
   else
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._txtCurTrapNum).color = Color(dropNumColorValR, dropNumColorValG, dropNumColorValB, 1)
+    self._txtCurTrapNum.color = Color(dropNumColorValR, dropNumColorValG, dropNumColorValB, 1)
   end
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R10 in 'UnsetPending'
-
-UIBattleProgressInfo._InitBossCastSkillTipInfo = function(self, totalNum)
-  -- function num : 0_53 , upvalues : _ENV
-  (self._bossCastSkillTipPanel):SetActive(true)
+function UIBattleProgressInfo:_InitBossCastSkillTipInfo(totalNum)
+  self._bossCastSkillTipPanel:SetActive(true)
   self._curTrapNum = 0
   self._maxTrapNum = totalNum
-  ;
-  (self._txtTotalTrapNum):SetText(tostring(self._maxTrapNum))
+  self._txtTotalTrapNum:SetText(tostring(self._maxTrapNum))
   self:_RefreshBossCastSkillTipInfo(self._curTrapNum)
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R10 in 'UnsetPending'
-
-UIBattleProgressInfo._UpdateBossCastSkillTipInfo = function(self, addNum)
-  -- function num : 0_54
+function UIBattleProgressInfo:_UpdateBossCastSkillTipInfo(addNum)
   self._curTrapNum = self._curTrapNum + addNum
   self:_RefreshBossCastSkillTipInfo(self._curTrapNum)
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R10 in 'UnsetPending'
-
-UIBattleProgressInfo._InitGlobalLayerTipInfo = function(self, data)
-  -- function num : 0_55 , upvalues : _ENV
-  (self._textGlobalBuffLayerTipDesc):SetText((StringTable.Get)(data.tipKey))
+function UIBattleProgressInfo:_InitGlobalLayerTipInfo(data)
+  self._textGlobalBuffLayerTipDesc:SetText(StringTable.Get(data.tipKey))
   self:_RefreshGlobalLayerTipInfo(data)
-  ;
-  (self._globalBuffLayerTipInfo):SetActive(true)
+  self._globalBuffLayerTipInfo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R10 in 'UnsetPending'
-
-UIBattleProgressInfo._UpdateGlobalLayerTipInfo = function(self, data)
-  -- function num : 0_56
+function UIBattleProgressInfo:_UpdateGlobalLayerTipInfo(data)
   self:_RefreshGlobalLayerTipInfo(data)
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R10 in 'UnsetPending'
-
-UIBattleProgressInfo._RefreshGlobalLayerTipInfo = function(self, data)
-  -- function num : 0_57 , upvalues : _ENV, dropNumColorValR, dropNumColorValG, dropNumColorValB
-  (self._textGlobalBuffLayerTipCurrent):SetText(tostring(data.count))
-  ;
-  (self._textGlobalBuffLayerTipMax):SetText(tostring(data.max))
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIBattleProgressInfo:_RefreshGlobalLayerTipInfo(data)
+  self._textGlobalBuffLayerTipCurrent:SetText(tostring(data.count))
+  self._textGlobalBuffLayerTipMax:SetText(tostring(data.max))
   if data.count < data.max then
-    (self._textGlobalBuffLayerTipCurrent).color = Color.white
+    self._textGlobalBuffLayerTipCurrent.color = Color.white
   else
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._textGlobalBuffLayerTipCurrent).color = Color(dropNumColorValR, dropNumColorValG, dropNumColorValB, 1)
+    self._textGlobalBuffLayerTipCurrent.color = Color(dropNumColorValR, dropNumColorValG, dropNumColorValB, 1)
   end
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R10 in 'UnsetPending'
-
-UIBattleProgressInfo._HideGlobalLayerTipInfo = function(self)
-  -- function num : 0_58
-  (self._globalBuffLayerTipInfo):SetActive(false)
+function UIBattleProgressInfo:_HideGlobalLayerTipInfo()
+  self._globalBuffLayerTipInfo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R10 in 'UnsetPending'
-
-UIBattleProgressInfo._InitCollectDropUI = function(self)
-  -- function num : 0_59 , upvalues : _ENV
+function UIBattleProgressInfo:_InitCollectDropUI()
   if not self._collectDropUIInited then
     self._collectDropUIInited = true
   else
-    return 
+    return
   end
-  local collectCfg = (Cfg.cfg_level_complete_condition_collect_drop)[self._collectDropType]
+  local collectCfg = Cfg.cfg_level_complete_condition_collect_drop[self._collectDropType]
   if collectCfg then
     local icon = collectCfg.DropIconImg
     local iconAtlasName = collectCfg.DropIconAtlas
     local name = collectCfg.DropName
     local condtionStr = collectCfg.ConditionStr
     if name then
-      (self._collectDropText):SetText((StringTable.Get)(condtionStr, (StringTable.Get)(name)))
-      ;
-      (self._collectDropText1):SetText((StringTable.Get)(condtionStr, (StringTable.Get)(name)))
+      self._collectDropText:SetText(StringTable.Get(condtionStr, StringTable.Get(name)))
+      self._collectDropText1:SetText(StringTable.Get(condtionStr, StringTable.Get(name)))
     else
-      ;
-      (self._collectDropText):SetText((StringTable.Get)(condtionStr))
-      ;
-      (self._collectDropText1):SetText((StringTable.Get)(condtionStr))
+      self._collectDropText:SetText(StringTable.Get(condtionStr))
+      self._collectDropText1:SetText(StringTable.Get(condtionStr))
     end
     if icon then
       self._collectIconAtlas = self:GetAsset(collectCfg.DropIconAtlas, LoadType.SpriteAtlas)
-      ;
-      (self._collectDropIconArea):SetActive(true)
-      -- DECOMPILER ERROR at PC72: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._collectDropIcon).sprite = (self._collectIconAtlas):GetSprite(icon)
-      -- DECOMPILER ERROR at PC78: Confused about usage of register: R6 in 'UnsetPending'
-
+      self._collectDropIconArea:SetActive(true)
+      self._collectDropIcon.sprite = self._collectIconAtlas:GetSprite(icon)
       if self._collectLayout then
-        ((self._collectLayout).padding).left = 5
+        self._collectLayout.padding.left = 5
       end
       if self._collectCautionEffGo then
-        (self._collectCautionEffGo):SetActive(false)
+        self._collectCautionEffGo:SetActive(false)
       end
     else
-      ;
-      (self._collectDropIconArea):SetActive(false)
+      self._collectDropIconArea:SetActive(false)
     end
   end
 end
-
-

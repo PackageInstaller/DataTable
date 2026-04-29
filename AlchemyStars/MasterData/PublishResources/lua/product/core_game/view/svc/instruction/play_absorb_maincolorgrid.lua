@@ -1,45 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_absorb_maincolorgrid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayAbsorbMainColorGridInstruction", BaseInstruction)
 PlayAbsorbMainColorGridInstruction = PlayAbsorbMainColorGridInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayAbsorbMainColorGridInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
-  local strNotifyTrapSkillTrapIDList = (string.split)(paramList.notifyTrapSkillTrapIDList, "|")
+function PlayAbsorbMainColorGridInstruction:Constructor(paramList)
+  local strNotifyTrapSkillTrapIDList = string.split(paramList.notifyTrapSkillTrapIDList, "|")
   self._notifyTrapSkillTrapIDList = {}
-  for _,value in ipairs(strNotifyTrapSkillTrapIDList) do
-    (table.insert)(self._notifyTrapSkillTrapIDList, tonumber(value))
+  for _, value in ipairs(strNotifyTrapSkillTrapIDList) do
+    table.insert(self._notifyTrapSkillTrapIDList, tonumber(value))
   end
   self._notifySecondPieceType = tonumber(paramList.notifySecondPieceType)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAbsorbMainColorGridInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayAbsorbMainColorGridInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   self._world = world
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local results = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.PetAbsorbMaintainColorGrid)
   local result = results[1]
   if not result then
-    (Log.fatal)("NoResult ")
-    return 
+    Log.fatal("NoResult ")
+    return
   end
   local trapIDs = result:GetTrapIDs()
-  local trapServiceRender = (self._world):GetService("TrapRender")
-  local playBuffSvc = (self._world):GetService("PlayBuff")
-  local utilDataSvc = (self._world):GetService("UtilData")
-  for i,id in ipairs(trapIDs) do
+  local trapServiceRender = self._world:GetService("TrapRender")
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  local utilDataSvc = self._world:GetService("UtilData")
+  for i, id in ipairs(trapIDs) do
     local trapEntity = world:GetEntityByID(id)
     playBuffSvc:PlayBuffView(TT, NTBeforePetAbsorbMainColorGrid:New(trapEntity, casterEntity))
-    local trapID = (trapEntity:TrapID()):GetTrapID()
-    if (table.intable)(self._notifyTrapSkillTrapIDList, trapID) then
+    local trapID = trapEntity:TrapID():GetTrapID()
+    if table.intable(self._notifyTrapSkillTrapIDList, trapID) then
       local gridPos = trapEntity:GetRenderGridPosition()
       local pieceType = utilDataSvc:GetPieceType(gridPos)
       local trapRenderCmpt = trapEntity:TrapRender()
@@ -50,19 +40,9 @@ PlayAbsorbMainColorGridInstruction.DoInstruction = function(self, TT, casterEnti
         playBuffSvc:PlayBuffView(TT, fakeNt2)
       end
     end
-    do
-      do
-        local trapSkillResultContainer = result:GetTrapSkillResult(id)
-        ;
-        (trapEntity:SkillRoutine()):SetResultContainer(trapSkillResultContainer)
-        ;
-        (trapEntity:TrapRender()):SetTriggerSkillResultContainer(trapSkillResultContainer)
-        trapServiceRender:PlayTrapTriggerSkill(TT, trapEntity, false, casterEntity)
-        -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    local trapSkillResultContainer = result:GetTrapSkillResult(id)
+    trapEntity:SkillRoutine():SetResultContainer(trapSkillResultContainer)
+    trapEntity:TrapRender():SetTriggerSkillResultContainer(trapSkillResultContainer)
+    trapServiceRender:PlayTrapTriggerSkill(TT, trapEntity, false, casterEntity)
   end
 end
-
-

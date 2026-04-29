@@ -1,86 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/task_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local TaskState = {Running = 1, Suspend = 2, Stop = 3}
+local TaskState = {
+  Running = 1,
+  Suspend = 2,
+  Stop = 3
+}
 _enum("TaskState", TaskState)
 _class("Task", Object)
 Task = Task
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-Task.Constructor = function(self, id, func, token)
-  -- function num : 0_0 , upvalues : _ENV, TaskState
+function Task:Constructor(id, func, token)
   self.id = id
-  self.co = (coroutine.create)(func)
+  self.co = coroutine.create(func)
   self.state = TaskState.Running
   self.token = token
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-Task.Join = function(self, id)
-  -- function num : 0_1 , upvalues : _ENV
-  local task = (TaskManager:GetInstance()):FindTask(id)
+function Task:Join(id)
+  local task = TaskManager:GetInstance():FindTask(id)
   if not task then
-    return 
+    return
   end
   if not task.joinTasks then
     task.joinTasks = {}
   end
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (task.joinTasks)[self.id] = 1
+  task.joinTasks[self.id] = 1
   self.joinedTaskID = id
-  ;
-  (TaskManager:GetInstance()):SuspendTask(self.id)
+  TaskManager:GetInstance():SuspendTask(self.id)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-Task.Update = function(self, ...)
-  -- function num : 0_2 , upvalues : _ENV, TaskState
-  local lastTask = (TaskManager:GetInstance()).curTask
-  ;
-  (TaskManager:GetInstance()).curTask = self
-  local ret, msg = (coroutine.resume)(self.co, ...)
-  ;
-  (TaskManager:GetInstance()).curTask = lastTask
+function Task:Update(...)
+  local lastTask = TaskManager:GetInstance().curTask
+  TaskManager:GetInstance().curTask = self
+  local ret, msg = coroutine.resume(self.co, ...)
+  TaskManager:GetInstance().curTask = lastTask
   if ret then
-    if (coroutine.status)(self.co) == "dead" then
+    if coroutine.status(self.co) == "dead" then
       if self.finishCallback then
-        (self.finishCallback)(self.data, self.id)
+        self.finishCallback(self.data, self.id)
       end
       if self.joinTasks then
-        for id,_ in next do
-          (TaskManager:GetInstance()):ResumeTask(id)
+        for id, _ in next, self.joinTasks, nil do
+          TaskManager:GetInstance():ResumeTask(id)
         end
       end
-      do
-        self.state = TaskState.Stop
-        do return false end
-        do return true end
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TaskError)
-        ;
-        ((GameGlobal.GameRecorder)()):StopRecord()
-        msg = (debug.traceback)(self.co, msg)
-        ;
-        (Log.exception)(msg)
-        return false
-      end
+      self.state = TaskState.Stop
+      return false
     end
+    return true
   end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.TaskError)
+  GameGlobal.GameRecorder():StopRecord()
+  msg = debug.traceback(self.co, msg)
+  Log.exception(msg)
+  return false
 end
 
 _class("TaskManager", Singleton)
 TaskManager = TaskManager
 local unpack = table.unpack
--- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
 
-TaskManager.Constructor = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function TaskManager:Constructor()
   self.tasks = {}
   self.runnings = {}
   self.newRunnings = {}
@@ -94,92 +72,52 @@ TaskManager.Constructor = function(self)
   self.curTask = nil
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-TaskManager.Update = function(self)
-  -- function num : 0_4 , upvalues : _ENV, TaskState
-  do
-    if #self.runnings > 0 then
-      local i = 1
-      while 1 do
-        if i <= #self.runnings then
-          local id = (self.runnings)[i]
-          local task = (self.tasks)[id]
-          if task then
-            local ret = task:Update(task.token)
-            self.curTask = nil
-            -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
-            if not ret then
-              (self.tasks)[id] = nil
-              ;
-              (table.removev)(self.runnings, id)
-              ;
-              (table.removev)(self._coreGameTaskIDs, id)
-              i = i - 1
-            else
-              if task.state == TaskState.Suspend then
-                i = i - 1
-              end
-            end
-          else
-            do
-              do
-                ;
-                (table.removev)(self.runnings, id)
-                i = i - 1
-                i = i + 1
-                -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
-          end
+function TaskManager:Update()
+  if #self.runnings > 0 then
+    local i = 1
+    while i <= #self.runnings do
+      local id = self.runnings[i]
+      local task = self.tasks[id]
+      if task then
+        local ret = task:Update(task.token)
+        self.curTask = nil
+        if not ret then
+          self.tasks[id] = nil
+          table.removev(self.runnings, id)
+          table.removev(self._coreGameTaskIDs, id)
+          i = i - 1
+        elseif task.state == TaskState.Suspend then
+          i = i - 1
         end
+      else
+        table.removev(self.runnings, id)
+        i = i - 1
       end
+      i = i + 1
     end
-    local total = #self.newRunnings
-    if total > 0 then
-      for i = 1, total do
-        (table.insert)(self.runnings, (self.newRunnings)[i])
-      end
-      self.newRunnings = {}
+  end
+  local total = #self.newRunnings
+  if 0 < total then
+    for i = 1, total do
+      table.insert(self.runnings, self.newRunnings[i])
     end
+    self.newRunnings = {}
   end
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R2 in 'UnsetPending'
-
-TaskManager.FindTask = function(self, id)
-  -- function num : 0_5
-  return (self.tasks)[id]
+function TaskManager:FindTask(id)
+  return self.tasks[id]
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-TaskManager.StartTask = function(self, func, ...)
-  -- function num : 0_6
+function TaskManager:StartTask(func, ...)
   return self:StartTaskInternal(func, self.TT, ...)
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-TaskManager.StartStoppableTask = function(self, func, ...)
-  -- function num : 0_7
+function TaskManager:StartStoppableTask(func, ...)
   return self:StartTaskInternal(func, self.ST, ...)
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R2 in 'UnsetPending'
-
-TaskManager.StartTaskInternal = function(self, func, token, ...)
-  -- function num : 0_8 , upvalues : _ENV, unpack
+function TaskManager:StartTaskInternal(func, token, ...)
   local id = self.seq + 1
   if id < 0 then
     id = 1
@@ -189,7 +127,7 @@ TaskManager.StartTaskInternal = function(self, func, token, ...)
   local args = {}
   local index = 1
   local hasParam = true
-  if not ... then
+  if not (...) then
     hasParam = false
   end
   if not hasParam then
@@ -204,117 +142,74 @@ TaskManager.StartTaskInternal = function(self, func, token, ...)
       index = index + 1
     end
   end
-  ;
-  (table.insert)(self.newRunnings, id)
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.tasks)[id] = task
-  local ret = task:Update(unpack(args, 1, (table.maxn)(args)))
+  table.insert(self.newRunnings, id)
+  self.tasks[id] = task
+  local ret = task:Update(unpack(args, 1, table.maxn(args)))
   if not ret then
-    (table.removev)(self.newRunnings, id)
-    -- DECOMPILER ERROR at PC68: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.tasks)[id] = nil
+    table.removev(self.newRunnings, id)
+    self.tasks[id] = nil
     return -1
   end
   if EDITOR then
-    return id
-  end
-end
-
--- DECOMPILER ERROR at PC51: Confused about usage of register: R2 in 'UnsetPending'
-
-TaskManager.CoreGameStartTask = function(self, func, ...)
-  -- function num : 0_9 , upvalues : _ENV
-  local id = self:StartTask(func, ...)
-  if id > 0 then
-    (table.insert)(self._coreGameTaskIDs, id)
   end
   return id
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
+function TaskManager:CoreGameStartTask(func, ...)
+  local id = self:StartTask(func, ...)
+  if 0 < id then
+    table.insert(self._coreGameTaskIDs, id)
+  end
+  return id
+end
 
-TaskManager.IsAnyCoreGameTask = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function TaskManager:IsAnyCoreGameTask()
   return next(self._coreGameTaskIDs)
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R2 in 'UnsetPending'
-
-TaskManager.KillCoreGameTasks = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  for _,taskid in ipairs(self._coreGameTaskIDs) do
-    (table.removev)(self.runnings, taskid)
-    ;
-    (table.removev)(self.newRunnings, taskid)
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.tasks)[taskid] = nil
+function TaskManager:KillCoreGameTasks()
+  for _, taskid in ipairs(self._coreGameTaskIDs) do
+    table.removev(self.runnings, taskid)
+    table.removev(self.newRunnings, taskid)
+    self.tasks[taskid] = nil
   end
   self._coreGameTaskIDs = {}
-  ;
-  (Log.debug)("KillCoreGameTasks Finished!!")
+  Log.debug("KillCoreGameTasks Finished!!")
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R2 in 'UnsetPending'
-
-TaskManager.KillTask = function(self, taskid)
-  -- function num : 0_12 , upvalues : _ENV
-  (table.removev)(self.runnings, taskid)
-  ;
-  (table.removev)(self.newRunnings, taskid)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.tasks)[taskid] = nil
+function TaskManager:KillTask(taskid)
+  table.removev(self.runnings, taskid)
+  table.removev(self.newRunnings, taskid)
+  self.tasks[taskid] = nil
   local found = false
-  for id,yieldEvent in pairs(self.yieldEvents) do
+  for id, yieldEvent in pairs(self.yieldEvents) do
     if id == taskid then
       found = true
-      ;
-      ((GameGlobal.Timer)()):CancelEvent(yieldEvent)
+      GameGlobal.Timer():CancelEvent(yieldEvent)
       break
     end
   end
-  do
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R3 in 'UnsetPending'
-
-    if found then
-      (self.yieldEvents)[taskid] = nil
-    end
+  if found then
+    self.yieldEvents[taskid] = nil
   end
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R2 in 'UnsetPending'
-
-TaskManager.KillAllTasks = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  for _,taskid in ipairs(self.tasks) do
-    (table.removev)(self.runnings, taskid)
-    ;
-    (table.removev)(self.newRunnings, taskid)
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.tasks)[taskid] = nil
+function TaskManager:KillAllTasks()
+  for _, taskid in ipairs(self.tasks) do
+    table.removev(self.runnings, taskid)
+    table.removev(self.newRunnings, taskid)
+    self.tasks[taskid] = nil
   end
-  for id,yieldEvent in pairs(self.yieldEvents) do
+  for id, yieldEvent in pairs(self.yieldEvents) do
     if yieldEvent then
-      ((GameGlobal.Timer)()):CancelEvent(yieldEvent)
+      GameGlobal.Timer():CancelEvent(yieldEvent)
     end
   end
   self.yieldEvents = {}
   self._coreGameTaskIDs = {}
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R2 in 'UnsetPending'
-
-TaskManager.WaitCoreGameTaskFinish = function(self, onfinish, ...)
-  -- function num : 0_14 , upvalues : _ENV, unpack
+function TaskManager:WaitCoreGameTaskFinish(onfinish, ...)
   if #self._coreGameTaskIDs == 0 then
     onfinish(...)
     return -1
@@ -330,221 +225,165 @@ TaskManager.WaitCoreGameTaskFinish = function(self, onfinish, ...)
     end
   end
   return self:StartTask(function(TT)
-    -- function num : 0_14_0 , upvalues : _ENV, self, onfinish, unpack, args
     local wait_tick = 10000
-    local start_tick = (GameGlobal:GetInstance()):GetCurrentTime()
+    local start_tick = GameGlobal:GetInstance():GetCurrentTime()
     while next(self._coreGameTaskIDs) do
-      (Log.debug)("WaitCoreGameTaskFinish tasks: ", (table.concat)(self._coreGameTaskIDs, " "))
+      Log.debug("WaitCoreGameTaskFinish tasks: ", table.concat(self._coreGameTaskIDs, " "))
       YIELD(TT)
+      if wait_tick <= GameGlobal:GetInstance():GetCurrentTime() - start_tick then
+        break
+      end
     end
-    if wait_tick <= (GameGlobal:GetInstance()):GetCurrentTime() - start_tick or #self._coreGameTaskIDs ~= 0 then
+    if #self._coreGameTaskIDs ~= 0 then
       self:KillCoreGameTasks()
     end
     if onfinish then
       onfinish(unpack(args))
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R2 in 'UnsetPending'
-
-TaskManager.SuspendTask = function(self, id)
-  -- function num : 0_15 , upvalues : _ENV, TaskState
-  local task = (self.tasks)[id]
+function TaskManager:SuspendTask(id)
+  local task = self.tasks[id]
   if task then
-    (table.removev)(self.runnings, id)
-    ;
-    (table.removev)(self.newRunnings, id)
+    table.removev(self.runnings, id)
+    table.removev(self.newRunnings, id)
     task.state = TaskState.Suspend
     YIELD()
   end
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R2 in 'UnsetPending'
-
-TaskManager.ResumeTask = function(self, id)
-  -- function num : 0_16 , upvalues : _ENV, TaskState
-  local yieldEvent = (self.yieldEvents)[id]
+function TaskManager:ResumeTask(id)
+  local yieldEvent = self.yieldEvents[id]
   if yieldEvent then
-    ((GameGlobal.Timer)()):CancelEvent(yieldEvent)
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.yieldEvents)[id] = nil
+    GameGlobal.Timer():CancelEvent(yieldEvent)
+    self.yieldEvents[id] = nil
   end
-  local task = (self.tasks)[id]
+  local task = self.tasks[id]
   if not task then
-    (Log.fatal)("TaskManager Resume Error!!! cannot find task with id=", id, ", Please Check if called STOP_ST_UNSAFE,", (debug.traceback)())
+    Log.fatal("TaskManager Resume Error!!! cannot find task with id=", id, ", Please Check if called STOP_ST_UNSAFE,", debug.traceback())
   end
-  if task and not (table.ikey)(self.runnings, id) then
-    if (table.ikey)(self.newRunnings) then
-      return 
+  if task and not table.ikey(self.runnings, id) then
+    if table.ikey(self.newRunnings) then
+      return
     end
-    ;
-    (table.insert)(self.newRunnings, id)
+    table.insert(self.newRunnings, id)
     task.state = TaskState.Running
     local ret = task:Update(task.token)
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R5 in 'UnsetPending'
-
     if not ret then
-      (self.tasks)[id] = nil
-      ;
-      (table.removev)(self._coreGameTaskIDs, id)
-      ;
-      (table.removev)(self.newRunnings, id)
+      self.tasks[id] = nil
+      table.removev(self._coreGameTaskIDs, id)
+      table.removev(self.newRunnings, id)
       return false
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R2 in 'UnsetPending'
-
-TaskManager.ExpirationYield = function(self, token, id, ms)
-  -- function num : 0_17 , upvalues : _ENV
-  if ms > 15 then
+function TaskManager:ExpirationYield(token, id, ms)
+  if 15 < ms then
     ms = ms - 15
   end
-  local event = ((GameGlobal.Timer)()):AddEvent(ms, function()
-    -- function num : 0_17_0 , upvalues : self, id, _ENV
-    -- DECOMPILER ERROR at PC2: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self.yieldEvents)[id] = nil
+  local event = GameGlobal.Timer():AddEvent(ms, function()
+    self.yieldEvents[id] = nil
     ResumeInternal(id)
-  end
-)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R5 in 'UnsetPending'
-
-  if not (self.yieldEvents)[id] then
-    (self.yieldEvents)[id] = event
+  end)
+  if not self.yieldEvents[id] then
+    self.yieldEvents[id] = event
   else
-    ;
-    (Log.fatal)("TaskManager:ExpirationYield Error, Expiration Yield When Suspend")
+    Log.fatal("TaskManager:ExpirationYield Error, Expiration Yield When Suspend")
   end
   SuspendInternal()
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R2 in 'UnsetPending'
-
-TaskManager.StopTaskUnSafe = function(self, ST, id)
-  -- function num : 0_18 , upvalues : _ENV, TaskState
-  local task = (self.tasks)[id]
+function TaskManager:StopTaskUnSafe(ST, id)
+  local task = self.tasks[id]
   if not task then
-    (Log.fatal)("StopTaskUnSafe Error, cannot find task,", id, ",", (debug.traceback)())
+    Log.fatal("StopTaskUnSafe Error, cannot find task,", id, ",", debug.traceback())
     return false
   end
-  do
-    if task.token then
-      local className = (task.token)._className
-      if className ~= "StoppableTaskToken" then
-        (Log.fatal)("StopTaskUnSafe Error, token is not StoppableTaskToken,", className, ",", (debug.traceback)())
-        return false
-      end
+  if task.token then
+    local className = task.token._className
+    if className ~= "StoppableTaskToken" then
+      Log.fatal("StopTaskUnSafe Error, token is not StoppableTaskToken,", className, ",", debug.traceback())
+      return false
     end
-    local yieldEvent = (self.yieldEvents)[id]
-    if yieldEvent then
-      ((GameGlobal.Timer)()):CancelEvent(yieldEvent)
-      -- DECOMPILER ERROR at PC44: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self.yieldEvents)[id] = nil
-    end
-    local joinedTask = (self.tasks)[task.joinedTaskID]
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R6 in 'UnsetPending'
-
-    if joinedTask then
-      (joinedTask.joinTasks)[id] = nil
-    end
-    task.state = TaskState.Stop
-    -- DECOMPILER ERROR at PC55: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.tasks)[id] = nil
-    ;
-    (table.removev)(self.newRunnings, id)
-    return true
   end
+  local yieldEvent = self.yieldEvents[id]
+  if yieldEvent then
+    GameGlobal.Timer():CancelEvent(yieldEvent)
+    self.yieldEvents[id] = nil
+  end
+  local joinedTask = self.tasks[task.joinedTaskID]
+  if joinedTask then
+    joinedTask.joinTasks[id] = nil
+  end
+  task.state = TaskState.Stop
+  self.tasks[id] = nil
+  table.removev(self.newRunnings, id)
+  return true
 end
 
-GetCurTask = function()
-  -- function num : 0_19 , upvalues : _ENV
-  return (TaskManager:GetInstance()).curTask
+function GetCurTask()
+  return TaskManager:GetInstance().curTask
 end
 
-GetCurTaskId = function()
-  -- function num : 0_20 , upvalues : _ENV
-  local task = (TaskManager:GetInstance()).curTask
+function GetCurTaskId()
+  local task = TaskManager:GetInstance().curTask
   return task and task.id or nil
 end
 
-YIELD = function(TT, ms)
-  -- function num : 0_21 , upvalues : _ENV
+function YIELD(TT, ms)
   YieldInternal(TT, ms)
 end
 
-YIELD_FRAME = function(TT, frame)
-  -- function num : 0_22 , upvalues : _ENV
+function YIELD_FRAME(TT, frame)
   for i = 0, frame do
     YieldInternal(TT)
   end
 end
 
-SUSPEND = function(TT)
-  -- function num : 0_23 , upvalues : _ENV
+function SUSPEND(TT)
   SuspendInternal()
 end
 
-RESUME = function(TT, id)
-  -- function num : 0_24 , upvalues : _ENV
+function RESUME(TT, id)
   return ResumeInternal(id)
 end
 
-JOIN = function(TT, child)
-  -- function num : 0_25 , upvalues : _ENV
+function JOIN(TT, child)
   JoinInternal(child)
 end
 
-YieldInternal = function(token, ms)
-  -- function num : 0_26 , upvalues : _ENV
+function YieldInternal(token, ms)
   if not ms then
-    (coroutine.yield)()
+    coroutine.yield()
   else
     local id = GetCurTaskId()
     if id then
-      (TaskManager:GetInstance()):ExpirationYield(token, id, ms)
+      TaskManager:GetInstance():ExpirationYield(token, id, ms)
     else
-      ;
-      (Log.fatal)("YIELD Error, current task id is nil")
+      Log.fatal("YIELD Error, current task id is nil")
     end
   end
 end
 
-SuspendInternal = function()
-  -- function num : 0_27 , upvalues : _ENV
+function SuspendInternal()
   local id = GetCurTaskId()
-  ;
-  (TaskManager:GetInstance()):SuspendTask(id)
+  TaskManager:GetInstance():SuspendTask(id)
 end
 
-ResumeInternal = function(id)
-  -- function num : 0_28 , upvalues : _ENV
-  return (TaskManager:GetInstance()):ResumeTask(id)
+function ResumeInternal(id)
+  return TaskManager:GetInstance():ResumeTask(id)
 end
 
-JoinInternal = function(child)
-  -- function num : 0_29 , upvalues : _ENV
-  local task = (TaskManager:GetInstance()).curTask
+function JoinInternal(child)
+  local task = TaskManager:GetInstance().curTask
   task:Join(child)
 end
 
-JOIN_TASK_ARRAY = function(TT, childArray)
-  -- function num : 0_30 , upvalues : _ENV
-  while not (TaskHelper:GetInstance()):IsAllTaskFinished(childArray) do
+function JOIN_TASK_ARRAY(TT, childArray)
+  while not TaskHelper:GetInstance():IsAllTaskFinished(childArray) do
     YIELD(TT)
   end
 end
-
-

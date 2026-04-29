@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity_review/ui_review_progress_award_detail_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIReviewProgressAwardDetailItem", UICustomWidget)
 UIReviewProgressAwardDetailItem = UIReviewProgressAwardDetailItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIReviewProgressAwardDetailItem.SetData = function(self, id, count, progress, collected, canCollect, onClick, collectCallback)
-  -- function num : 0_0
+function UIReviewProgressAwardDetailItem:SetData(id, count, progress, collected, canCollect, onClick, collectCallback)
   self:_SetAwardIcon(id)
   self:_SetAwardCount(count)
   self:_SetProgress(progress)
@@ -16,12 +9,10 @@ UIReviewProgressAwardDetailItem.SetData = function(self, id, count, progress, co
   local state = 1
   if collected then
     state = 3
+  elseif canCollect then
+    state = 2
   else
-    if canCollect then
-      state = 2
-    else
-      state = 1
-    end
+    state = 1
   end
   self:_SetState(state)
   self._onClick = onClick
@@ -29,68 +20,42 @@ UIReviewProgressAwardDetailItem.SetData = function(self, id, count, progress, co
   self._itemID = id
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewProgressAwardDetailItem._SetAwardIcon = function(self, id)
-  -- function num : 0_1 , upvalues : _ENV
-  local url = ((Cfg.cfg_item)[id]).Icon
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "icon", url)
+function UIReviewProgressAwardDetailItem:_SetAwardIcon(id)
+  local url = Cfg.cfg_item[id].Icon
+  UIWidgetHelper.SetRawImage(self, "icon", url)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewProgressAwardDetailItem._SetAwardCount = function(self, count)
-  -- function num : 0_2 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "count", "x" .. count)
+function UIReviewProgressAwardDetailItem:_SetAwardCount(count)
+  UIWidgetHelper.SetLocalizationText(self, "count", "x" .. count)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewProgressAwardDetailItem._SetProgress = function(self, num)
-  -- function num : 0_3 , upvalues : _ENV
+function UIReviewProgressAwardDetailItem:_SetProgress(num)
   local tb = {"progress"}
-  for _,w in ipairs(tb) do
-    (UIWidgetHelper.SetLocalizationText)(self, w, num .. "%")
+  for _, w in ipairs(tb) do
+    UIWidgetHelper.SetLocalizationText(self, w, num .. "%")
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewProgressAwardDetailItem._SetState = function(self, state)
-  -- function num : 0_4 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"cantCollect"}
-, 
-{"canCollect"}
-, 
-{"collected"}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+function UIReviewProgressAwardDetailItem:_SetState(state)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {
+      "cantCollect"
+    },
+    {"canCollect"},
+    {"collected"}
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewProgressAwardDetailItem.PlayEnterAni = function(self, index)
-  -- function num : 0_5 , upvalues : _ENV
+function UIReviewProgressAwardDetailItem:PlayEnterAni(index)
   local delay = 0 + (index - 1) * 50
-  ;
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", nil, "uieffanim_UIReviewProgressAwardDetailItem_in", delay)
+  UIWidgetHelper.PlayAnimationInSequence(self, "_anim", nil, "uieffanim_UIReviewProgressAwardDetailItem_in", delay)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewProgressAwardDetailItem.IconOnClick = function(self, go)
-  -- function num : 0_6
-  (self._onClick)(self._itemID, go)
+function UIReviewProgressAwardDetailItem:IconOnClick(go)
+  self._onClick(self._itemID, go)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewProgressAwardDetailItem.CollectBtnOnClick = function(self, go)
-  -- function num : 0_7
-  (self._collectCallback)(self._progress)
+function UIReviewProgressAwardDetailItem:CollectBtnOnClick(go)
+  self._collectCallback(self._progress)
 end
-
-

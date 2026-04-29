@@ -1,29 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/lineTalent/ui_cn20_n49_line_talent_tree_slot.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49LineTalentTreeSlot", UICustomWidget)
 UICN20N49LineTalentTreeSlot = UICN20N49LineTalentTreeSlot
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49LineTalentTreeSlot.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN20N49LineTalentTreeSlot:OnShow()
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
   self._red = self:GetGameObject("red")
   self:AttachEvent(GameEventType.OnTalentTreeRedChange, self.OnTalentTreeRedChange)
   self._countdownTimer = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentTreeSlot.SetData = function(self, campaign, com)
-  -- function num : 0_1
+function UICN20N49LineTalentTreeSlot:SetData(campaign, com)
   self._campaign = campaign
   self.talentTreeCom = com
-  self._comCfgId = (self.talentTreeCom):GetComponentCfgId()
-  self.talentTreeComInfo = (self.talentTreeCom):GetComponentInfo()
-  local info = (self.talentTreeComInfo).m_talent_info
+  self._comCfgId = self.talentTreeCom:GetComponentCfgId()
+  self.talentTreeComInfo = self.talentTreeCom:GetComponentInfo()
+  local info = self.talentTreeComInfo.m_talent_info
   self.slotInfo = info.m_skill_solt
   self:SlotCfgList()
   self:ShowPools()
@@ -31,109 +21,69 @@ UICN20N49LineTalentTreeSlot.SetData = function(self, campaign, com)
   self:PlayPoolsAnime()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentTreeSlot.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  for i,countdownTimer in pairs(self._countdownTimer) do
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._countdownTimer)[i] = (UIActivityHelper.CancelTimerEvent)((self._countdownTimer)[i])
+function UICN20N49LineTalentTreeSlot:OnHide()
+  for i, countdownTimer in pairs(self._countdownTimer) do
+    self._countdownTimer[i] = UIActivityHelper.CancelTimerEvent(self._countdownTimer[i])
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentTreeSlot.OnTalentTreeRedChange = function(self)
-  -- function num : 0_3
+function UICN20N49LineTalentTreeSlot:OnTalentTreeRedChange()
   self:ShowRed()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentTreeSlot.ShowRed = function(self)
-  -- function num : 0_4
-  local red = (self.talentTreeCom):HaveRedPoint()
-  ;
-  (self._red):SetActive(red)
+function UICN20N49LineTalentTreeSlot:ShowRed()
+  local red = self.talentTreeCom:HaveRedPoint()
+  self._red:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentTreeSlot.SlotCfgList = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UICN20N49LineTalentTreeSlot:SlotCfgList()
   self.slotCfgList = {}
-  local cfgs = (Cfg.cfg_component_talent_tree_slot)({ComponentID = self._comCfgId})
-  for key,value in pairs(cfgs) do
-    (table.insert)(self.slotCfgList, value)
+  local cfgs = Cfg.cfg_component_talent_tree_slot({
+    ComponentID = self._comCfgId
+  })
+  for key, value in pairs(cfgs) do
+    table.insert(self.slotCfgList, value)
   end
-  ;
-  (table.sort)(self.slotCfgList, function(a, b)
-    -- function num : 0_5_0
-    do return a.SlotID < b.SlotID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self.slotCfgList, function(a, b)
+    return a.SlotID < b.SlotID
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentTreeSlot.ShowPools = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._pool):SpawnObjects("UICN20N49LineTalentTreeSlotCell", (table.count)(self.slotCfgList))
-  local pools = (self._pool):GetAllSpawnList()
+function UICN20N49LineTalentTreeSlot:ShowPools()
+  self._pool:SpawnObjects("UICN20N49LineTalentTreeSlotCell", table.count(self.slotCfgList))
+  local pools = self._pool:GetAllSpawnList()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentTreeSlot.PlayPoolsAnime = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local pools = (self._pool):GetAllSpawnList()
+function UICN20N49LineTalentTreeSlot:PlayPoolsAnime()
+  local pools = self._pool:GetAllSpawnList()
   if #pools == 0 then
-    return 
+    return
   end
   if self._countdownTimer then
-    for i,countdownTimer in pairs(self._countdownTimer) do
-      do
-        -- DECOMPILER ERROR at PC20: Confused about usage of register: R7 in 'UnsetPending'
-
-        (self._countdownTimer)[i] = (UIActivityHelper.CancelTimerEvent)((self._countdownTimer)[i])
-      end
+    for i, countdownTimer in pairs(self._countdownTimer) do
+      self._countdownTimer[i] = UIActivityHelper.CancelTimerEvent(self._countdownTimer[i])
     end
   end
-  do
-    for i = 1, #self.slotCfgList do
-      local item = pools[i]
-      local cfg = (self.slotCfgList)[i]
-      local rootid = (self.slotInfo)[cfg.SlotID]
-      item:SetData(i, cfg, rootid)
-      -- DECOMPILER ERROR at PC48: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._countdownTimer)[i] = ((GameGlobal.Timer)()):AddEvent(50 * (i - 1), function()
-    -- function num : 0_7_0 , upvalues : pools, i
-    local animation = (pools[i]):GetUIComponent("Animation", "_anim")
-    animation:Play("uieff_UICN20N49LineTalentTreeSlotItem_in")
-  end
-)
-    end
+  for i = 1, #self.slotCfgList do
+    local item = pools[i]
+    local cfg = self.slotCfgList[i]
+    local rootid = self.slotInfo[cfg.SlotID]
+    item:SetData(i, cfg, rootid)
+    self._countdownTimer[i] = GameGlobal.Timer():AddEvent(50 * (i - 1), function()
+      local animation = pools[i]:GetUIComponent("Animation", "_anim")
+      animation:Play("uieff_UICN20N49LineTalentTreeSlotItem_in")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentTreeSlot.BtnOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  if not (self.talentTreeCom):ComponentIsClose() and (self.talentTreeCom):ComponentIsOpen() then
+function UICN20N49LineTalentTreeSlot:BtnOnClick(go)
+  if not self.talentTreeCom:ComponentIsClose() and self.talentTreeCom:ComponentIsOpen() then
     self:ShowDialog("UICN20N49TreeController")
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_107"))
-    local campaignMain = (CampaignConst.GetSafeStateInfo)((self._campaign)._id, nil, UIStateType.UICN20N49MainController, nil)
-    local uiMain = (CampaignConst.GetSafeStateInfo)(nil, nil, UIStateType.UIMain, nil)
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_107"))
+    local campaignMain = CampaignConst.GetSafeStateInfo(self._campaign._id, nil, UIStateType.UICN20N49MainController, nil)
+    local uiMain = CampaignConst.GetSafeStateInfo(nil, nil, UIStateType.UIMain, nil)
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
     campaignModule:SwitchState_Safe(true, {campaignMain, uiMain})
   end
 end
-
-

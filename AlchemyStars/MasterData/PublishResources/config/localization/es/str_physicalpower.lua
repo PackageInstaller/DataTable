@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/es/str_physicalpower.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_physicalpower_current_time = "Tiempo actual", str_physicalpower_next_time = "El sig. prisma", str_physicalpower_all_time = "Todos los Prismas", str_physicalpower_error_phy_add_full = "Has llegado al límite de prisma. No se puede reponer más."}
+local config = {
+  str_physicalpower_current_time = "Tiempo actual",
+  str_physicalpower_next_time = "El sig. prisma",
+  str_physicalpower_all_time = "Todos los Prismas",
+  str_physicalpower_error_phy_add_full = "Has llegado al límite de prisma. No se puede reponer más."
+}
 return config
-

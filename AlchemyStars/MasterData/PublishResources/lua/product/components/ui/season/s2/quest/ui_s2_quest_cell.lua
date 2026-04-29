@@ -1,117 +1,89 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s2/quest/ui_s2_quest_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS2QuestCell", UICustomWidget)
 UIS2QuestCell = UIS2QuestCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS2QuestCell.SetData = function(self, type, index, component, quest, questState, claimCallback, tipsCallback)
-  -- function num : 0_0
+function UIS2QuestCell:SetData(type, index, component, quest, questState, claimCallback, tipsCallback)
   self._component = component
   self._quest = quest:QuestInfo()
   self._questState = questState
   self._claimCallback = claimCallback
   self._tipsCallback = tipsCallback
-  self._roleAsset = ((self._quest).rewards)[1]
+  self._roleAsset = self._quest.rewards[1]
   self:_SetPos(type, index)
   self:_SetState(questState)
   self:_SetDesc()
   self:_SetItem()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2QuestCell.PlayAnimationInSequence = function(self, index)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfg = (UISeasonCfgHelper.CfgSeason_QuestItemPos)(index)
+function UIS2QuestCell:PlayAnimationInSequence(index)
+  local cfg = UISeasonCfgHelper.CfgSeason_QuestItemPos(index)
   if cfg then
     local animName, duration = cfg.AnimName, cfg.Duration
     local delay = (index - 1) * 30
-    ;
-    (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", "_anim", animName, delay, duration, nil, true)
+    UIWidgetHelper.PlayAnimationInSequence(self, "_anim", "_anim", animName, delay, duration, nil, true)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2QuestCell._SetState = function(self, state)
-  -- function num : 0_2 , upvalues : _ENV
+function UIS2QuestCell:_SetState(state)
   local tb = {
-[CampaignQuestStatus.CQS_NotStart] = {"_bg"}
-, 
-[CampaignQuestStatus.CQS_Accepted] = {"_bg", "_countBg", "_desc", "_prog_Accepted"}
-, 
-[CampaignQuestStatus.CQS_Completed] = {"_bg", "_countBg", "_desc", "ClaimBtn"}
-, 
-[CampaignQuestStatus.CQS_Taken] = {"_bg_Taken", "_bg_Mask", "_countBg_Taken", "_desc_Taken"}
-, 
-[CampaignQuestStatus.CQS_Over] = {"_bg"}
-}
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, tb)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, state)
+    [CampaignQuestStatus.CQS_NotStart] = {"_bg"},
+    [CampaignQuestStatus.CQS_Accepted] = {
+      "_bg",
+      "_countBg",
+      "_desc",
+      "_prog_Accepted"
+    },
+    [CampaignQuestStatus.CQS_Completed] = {
+      "_bg",
+      "_countBg",
+      "_desc",
+      "ClaimBtn"
+    },
+    [CampaignQuestStatus.CQS_Taken] = {
+      "_bg_Taken",
+      "_bg_Mask",
+      "_countBg_Taken",
+      "_desc_Taken"
+    },
+    [CampaignQuestStatus.CQS_Over] = {"_bg"}
+  }
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, tb)
+  UIWidgetHelper.SetObjGroupShow(objs, state)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2QuestCell._SetPos = function(self, type, index)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (UISeasonCfgHelper.CfgSeason_QuestItemPos)(index)
+function UIS2QuestCell:_SetPos(type, index)
+  local cfg = UISeasonCfgHelper.CfgSeason_QuestItemPos(index)
   if cfg then
     local height = cfg.Height
     local layout = self:GetUIComponent("LayoutElement", "_root")
     layout.minHeight = height
-    if type ~= 1 or not cfg.XRSeason then
-      local rate = cfg.XRMain
-    end
+    local rate = type == 1 and cfg.XRSeason or cfg.XRMain
     local x, y = cfg.X * rate / 100, cfg.Y
-    ;
-    (UIWidgetHelper.SetAnchoredPosition)(self, "_pos", x, y)
+    UIWidgetHelper.SetAnchoredPosition(self, "_pos", x, y)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2QuestCell._SetDesc = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local title = (StringTable.Get)((self._quest).CondDesc)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_desc", title)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_desc_Taken", title)
-  local cur, total, str = (self._component):GetQuestProgressString(self._quest)
-  str = (string.format)("(%s/%s)", (UIActivityHelper.GetColorText)("#FFE083", cur), total)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_prog_Accepted", str)
+function UIS2QuestCell:_SetDesc()
+  local title = StringTable.Get(self._quest.CondDesc)
+  UIWidgetHelper.SetLocalizationText(self, "_desc", title)
+  UIWidgetHelper.SetLocalizationText(self, "_desc_Taken", title)
+  local cur, total, str = self._component:GetQuestProgressString(self._quest)
+  str = string.format("(%s/%s)", UIActivityHelper.GetColorText("#FFE083", cur), total)
+  UIWidgetHelper.SetLocalizationText(self, "_prog_Accepted", str)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2QuestCell._SetItem = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (UIWidgetHelper.SetItemIcon)(self, (self._roleAsset).assetid, "_icon")
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_count", (self._roleAsset).count)
+function UIS2QuestCell:_SetItem()
+  UIWidgetHelper.SetItemIcon(self, self._roleAsset.assetid, "_icon")
+  UIWidgetHelper.SetLocalizationText(self, "_count", self._roleAsset.count)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2QuestCell.IconOnClick = function(self, go)
-  -- function num : 0_6
+function UIS2QuestCell:IconOnClick(go)
   if self._tipsCallback then
-    (self._tipsCallback)((self._roleAsset).assetid, (go.transform).position)
+    self._tipsCallback(self._roleAsset.assetid, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2QuestCell.ClaimBtnOnClick = function(self, go)
-  -- function num : 0_7
+function UIS2QuestCell:ClaimBtnOnClick(go)
   if self._claimCallback then
-    (self._claimCallback)(self, self._quest)
+    self._claimCallback(self, self._quest)
   end
 end
-
-

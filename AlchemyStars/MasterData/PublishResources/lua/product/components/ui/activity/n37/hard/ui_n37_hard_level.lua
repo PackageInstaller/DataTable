@@ -1,29 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n37/hard/ui_n37_hard_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_activity_hard_level")
 _class("UIN37HardLevel", UIActivityHardLevel)
 UIN37HardLevel = UIN37HardLevel
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN37HardLevel.GetTimeDownString = function(self)
-  -- function num : 0_0
+function UIN37HardLevel:GetTimeDownString()
   return "str_cn6&n35_activity_hard_level_remain_time"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37HardLevel.NodePlayAnimationInterval = function(self, TT)
-  -- function num : 0_1
+function UIN37HardLevel:NodePlayAnimationInterval(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37HardLevel.GetLevelNodeName = function(self)
-  -- function num : 0_2
+function UIN37HardLevel:GetLevelNodeName()
   return "UIN37HardLevelNode"
 end
-
-

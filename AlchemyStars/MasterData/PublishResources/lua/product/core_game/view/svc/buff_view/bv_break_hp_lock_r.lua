@@ -1,23 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_break_hp_lock_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewBreakHPLock", BuffViewBase)
 BuffViewBreakHPLock = BuffViewBreakHPLock
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewBreakHPLock.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local param = ((self._viewInstance):BuffConfigData()):GetViewParams()
+function BuffViewBreakHPLock:PlayView(TT)
+  local param = self._viewInstance:BuffConfigData():GetViewParams()
   local skillID = param.SkillID
   local skillHolder = self:Entity()
-  local playSkillSvc = (self._world):GetService("PlaySkill")
-  local configSvc = (self._world):GetService("Config")
+  local playSkillSvc = self._world:GetService("PlaySkill")
+  local configSvc = self._world:GetService("Config")
   local skillConfigData = configSvc:GetSkillConfigData(skillID, skillHolder)
   local skillPhaseArray = skillConfigData:GetSkillPhaseArray()
-  local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(playSkillSvc._SkillRoutineTask, playSkillSvc, skillHolder, skillPhaseArray, skillID)
-  local previewEntity = (self._world):GetPreviewEntity()
+  local taskID = GameGlobal.TaskManager():CoreGameStartTask(playSkillSvc._SkillRoutineTask, playSkillSvc, skillHolder, skillPhaseArray, skillID)
+  local previewEntity = self._world:GetPreviewEntity()
   local renderState = previewEntity:RenderState()
   if not renderState then
     previewEntity:AddRenderState()
@@ -25,5 +18,3 @@ BuffViewBreakHPLock.PlayView = function(self, TT)
   end
   renderState:SetRenderStateAndParam(RenderStateType.WaitPlayTask, taskID)
 end
-
-

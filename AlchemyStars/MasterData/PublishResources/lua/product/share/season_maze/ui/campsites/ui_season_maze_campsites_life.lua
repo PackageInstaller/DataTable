@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/campsites/ui_season_maze_campsites_life.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_season_maze_campsites_base")
 _class("UISeasonMaze_Campsites_Life", UISeasonMaze_Campsites_Base)
 UISeasonMaze_Campsites_Life = UISeasonMaze_Campsites_Life
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMaze_Campsites_Life.OnShowUI = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMaze_Campsites_Life:OnShowUI(uiParams)
   self:InitWidget()
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life.OnHide = function(self)
-  -- function num : 0_1
+function UISeasonMaze_Campsites_Life:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonMaze_Campsites_Life:InitWidget()
   self._txtCost = self:GetUIComponent("UILocalizationText", "txtCost")
   self._txtTimes = self:GetUIComponent("UILocalizationText", "txtTimes")
   local moneyPool = self:GetUIComponent("UISelectObjectPath", "money")
@@ -35,129 +22,92 @@ UISeasonMaze_Campsites_Life.InitWidget = function(self)
   self._canotReviveGo = self:GetGameObject("canotRevive")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life.Refresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local goldCount = (self._com):GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
-  local hasReViveTimes = (self._com):GetAttrValue(SeasonMazeAttrType.SMAT_ResurrectCnt)
+function UISeasonMaze_Campsites_Life:Refresh()
+  local goldCount = self._com:GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
+  local hasReViveTimes = self._com:GetAttrValue(SeasonMazeAttrType.SMAT_ResurrectCnt)
   local currentTimes = hasReViveTimes + 1
-  local cfg = (self._cfg_global).ReviveCount
+  local cfg = self._cfg_global.ReviveCount
   local cost = 0
-  -- DECOMPILER ERROR at PC20: Unhandled construct in 'MakeBoolean' P1
-
-  if cfg and #cfg < currentTimes then
-    cost = cfg[#cfg]
-  else
-    cost = cfg[currentTimes]
+  if cfg then
+    if currentTimes > #cfg then
+      cost = cfg[#cfg]
+    else
+      cost = cfg[currentTimes]
+    end
   end
   self._cost = cost
-  ;
-  (self._txtTimes):SetText((StringTable.Get)("str_season_maze_camp_life_room_count", hasReViveTimes))
+  self._txtTimes:SetText(StringTable.Get("str_season_maze_camp_life_room_count", hasReViveTimes))
   if goldCount < cost then
-    (self._txtCost):SetText("<color=#fe0000>" .. cost .. "</color>")
+    self._txtCost:SetText("<color=#fe0000>" .. cost .. "</color>")
   else
-    ;
-    (self._txtCost):SetText(cost)
+    self._txtCost:SetText(cost)
   end
-  ;
-  (self._moneyTopIcon):SetData(goldCount, function()
-    -- function num : 0_3_0 , upvalues : self
+  self._moneyTopIcon:SetData(goldCount, function()
     local itemId = 9001002
     self:ShowDialog("UITopTipsController", itemId, self._moneyTipsPos)
-  end
-)
+  end)
   self._needRevive = false
-  local petInfos = (((self._com):GetComponentInfo()).m_bag_info).pet_list
-  for key,value in pairs(petInfos) do
-    if value.cur_blood_prcent <= 0 then
+  local petInfos = self._com:GetComponentInfo().m_bag_info.pet_list
+  for key, value in pairs(petInfos) do
+    if 0 >= value.cur_blood_prcent then
       self._needRevive = true
       break
     end
   end
-  do
-    local noRiveve = not self._needRevive
-    ;
-    (self._canotReviveGo):SetActive(noRiveve)
-    ;
-    (self._maskCanotReviveGo):SetActive(noRiveve)
-    if noRiveve then
-      (self._txtTimes):SetText("")
-    end
+  local noRiveve = not self._needRevive
+  self._canotReviveGo:SetActive(noRiveve)
+  self._maskCanotReviveGo:SetActive(noRiveve)
+  if noRiveve then
+    self._txtTimes:SetText("")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life.BtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMaze_Campsites_Life:BtnOnClick(go)
   if not self._needRevive then
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_maze_camp_life_fail_1"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_season_maze_camp_life_fail_1"))
+    return
   end
-  local goldCount = (self._com):GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
+  local goldCount = self._com:GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
   if goldCount < self._cost then
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_maze_camp_life_fail_2"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_season_maze_camp_life_fail_2"))
+    return
   end
   self:ShowDialog("UISeasonMaze_Campsites_Life_Select", self._cost, function(pstid)
-    -- function num : 0_4_0 , upvalues : self
     self:OnChooseLifeSure(pstid)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life.CloseBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._animation):Play("uieffanim_UISeasonMaze_Campsites_Life_out")
+function UISeasonMaze_Campsites_Life:CloseBtnOnClick(go)
+  self._animation:Play("uieffanim_UISeasonMaze_Campsites_Life_out")
   self:Lock("UISeasonMaze_Campsites_Life_out")
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self
     YIELD(TT, 500)
     self:UnLock("UISeasonMaze_Campsites_Life_out")
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life.OnChooseLifeSure = function(self, pstid)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonMaze_Campsites_Life:OnChooseLifeSure(pstid)
   self:Lock("UISeasonMaze_Campsites_Life:OnChooseLifeSure")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnChooseLifeSureReq, self, pstid)
+  GameGlobal.TaskManager():StartTask(self.OnChooseLifeSureReq, self, pstid)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life.OnChooseLifeSureReq = function(self, TT, pstid)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonMaze_Campsites_Life:OnChooseLifeSureReq(TT, pstid)
   local res = AsyncRequestRes:New()
-  ;
-  (self._com):HandleSeasonMazeResurrectPet(TT, res, pstid)
+  self._com:HandleSeasonMazeResurrectPet(TT, res, pstid)
   self:UnLock("UISeasonMaze_Campsites_Life:OnChooseLifeSure")
   if res:GetSucc() then
     self:Refresh()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUISeasonMazeAttChanged, SeasonMazeAttrType.SMAT_Gold)
-    local allPets = (self._uiSeasonMazeModule):GetSeasonMazePets()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUISeasonMazeAttChanged, SeasonMazeAttrType.SMAT_Gold)
+    local allPets = self._uiSeasonMazeModule:GetSeasonMazePets()
     local pet = allPets[pstid]
-    local petName = (StringTable.Get)(pet:GetPetName())
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_maze_camp_life_succ", petName))
+    local petName = StringTable.Get(pet:GetPetName())
+    ToastManager.ShowToast(StringTable.Get("str_season_maze_camp_life_succ", petName))
   else
-    do
-      local result = res:GetResult()
-      ;
-      (Log.error)("###[UISeasonMaze_Campsites_Life] HandleSeasonMazeResurrectPet fail! result:", result)
-      if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-        return 
-      end
+    local result = res:GetResult()
+    Log.error("###[UISeasonMaze_Campsites_Life] HandleSeasonMazeResurrectPet fail! result:", result)
+    if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+      return
     end
   end
 end
-
-

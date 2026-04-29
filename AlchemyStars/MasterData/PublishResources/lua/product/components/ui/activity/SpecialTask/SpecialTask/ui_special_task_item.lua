@@ -1,38 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/SpecialTask/SpecialTask/ui_special_task_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISpecialTaskItem", UICustomWidget)
 UISpecialTaskItem = UISpecialTaskItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISpecialTaskItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISpecialTaskItem:Constructor()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISpecialTaskItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISpecialTaskItem:OnHide()
   if self._cdTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._cdTask)
+    GameGlobal.TaskManager():KillTask(self._cdTask)
     self._cdTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskItem._GetComponents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISpecialTaskItem:_GetComponents()
   self._descRollText = self:GetUIComponent("UILocalizationText", "Desc")
   self._progress = self:GetUIComponent("UILocalizationText", "Progress")
   self._redPoint = self:GetGameObject("RedPoint")
@@ -54,30 +38,23 @@ UISpecialTaskItem._GetComponents = function(self)
   self._GotBtnBG = self:GetUIComponent("Image", "GotBtn")
   self._DailyBG = self:GetUIComponent("Image", "DailyBG")
   self._NotDailyBG = self:GetUIComponent("Image", "NotDailyBG")
-  ;
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskItem.SetDaily = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_quest)({QuestID = (self._questInfo).quest_id})
-  if not (cfg[1]).NeedReset then
-    local daily = not cfg or not next(cfg) or false
+function UISpecialTaskItem:SetDaily()
+  local cfg = Cfg.cfg_component_quest({
+    QuestID = self._questInfo.quest_id
+  })
+  if cfg and next(cfg) then
+    local daily = cfg[1].NeedReset or false
+    self._daily:SetActive(daily)
+    self._notdaily:SetActive(not daily)
   end
-  ;
-  (self._daily):SetActive(daily)
-  ;
-  (self._notdaily):SetActive(not daily)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskItem.SetData = function(self, component, quest, callback, showTips, refreshUI, closeUI, errorCheck, id)
-  -- function num : 0_5 , upvalues : _ENV
+function UISpecialTaskItem:SetData(component, quest, callback, showTips, refreshUI, closeUI, errorCheck, id)
   self._questComponent = component
-  self._questComponentInfo = (self._questComponent):GetComponentInfo()
+  self._questComponentInfo = self._questComponent:GetComponentInfo()
   self._quest = quest
   self._callback = callback
   self._showTips = showTips
@@ -85,206 +62,134 @@ UISpecialTaskItem.SetData = function(self, component, quest, callback, showTips,
   self._closeUI = closeUI
   self._errorCheck = errorCheck
   self._id = id
-  self._questInfo = (self._quest):QuestInfo()
-  self._state = (self._quest):Status()
-  self._campaignQuestState = (self._questComponent):CheckCampaignQuestStatus(self._questInfo)
+  self._questInfo = self._quest:QuestInfo()
+  self._state = self._quest:Status()
+  self._campaignQuestState = self._questComponent:CheckCampaignQuestStatus(self._questInfo)
   self:_SetLock(self._campaignQuestState == CampaignQuestStatus.CQS_NotStart)
-  local descStr = (StringTable.Get)((self._questInfo).QuestDesc)
-  local progressStr = (self._questInfo).cur_progress
+  local descStr = StringTable.Get(self._questInfo.QuestDesc)
+  local progressStr = self._questInfo.cur_progress
   if self._cdTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._cdTask)
+    GameGlobal.TaskManager():KillTask(self._cdTask)
     self._cdTask = nil
   end
   if self._campaignQuestState == CampaignQuestStatus.CQS_NotStart then
-    local curTime = (self._svrTimeModule):GetServerTime() * 0.001
-    do
-      local timeInfo = ((self._questComponentInfo).m_quest_time_param_map)[(self._questInfo).quest_id]
-      local remainTime = timeInfo.m_open_time - curTime
-      local unlockTime = (UISpecialTaskToolFunctions.GetRemainTime)(remainTime)
-      ;
-      (self._lockText):SetText((StringTable.Get)("str_n24_specialtask_unlock", unlockTime))
-      self._cdTask = self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, remainTime, self
-    YIELD(TT, (remainTime + 1) * 1000)
-    if self._refreshUI then
-      (self._refreshUI)()
-    end
-  end
-, self)
-    end
+    local curTime = self._svrTimeModule:GetServerTime() * 0.001
+    local timeInfo = self._questComponentInfo.m_quest_time_param_map[self._questInfo.quest_id]
+    local remainTime = timeInfo.m_open_time - curTime
+    local unlockTime = UISpecialTaskToolFunctions.GetRemainTime(remainTime)
+    self._lockText:SetText(StringTable.Get("str_n24_specialtask_unlock", unlockTime))
+    self._cdTask = self:StartTask(function(TT)
+      YIELD(TT, (remainTime + 1) * 1000)
+      if self._refreshUI then
+        self._refreshUI()
+      end
+    end, self)
   end
   if self._state == QuestStatus.QUEST_Accepted then
-    progressStr = (StringTable.Get)("str_sakura_specialtask_progress", progressStr .. "/" .. (self._questInfo).total_progress)
-    ;
-    (self._doingBtn):SetActive(true)
-    ;
-    (self._getBtn):SetActive(false)
-    ;
-    (self._gotBtn):SetActive(false)
+    progressStr = StringTable.Get("str_sakura_specialtask_progress", progressStr .. "/" .. self._questInfo.total_progress)
+    self._doingBtn:SetActive(true)
+    self._getBtn:SetActive(false)
+    self._gotBtn:SetActive(false)
   elseif self._state == QuestStatus.QUEST_Completed then
-    progressStr = (StringTable.Get)("str_sakura_specialtask_progress", progressStr .. "/" .. (self._questInfo).total_progress)
-    ;
-    (self._doingBtn):SetActive(false)
-    ;
-    (self._getBtn):SetActive(true)
-    ;
-    (self._gotBtn):SetActive(false)
+    progressStr = StringTable.Get("str_sakura_specialtask_progress", progressStr .. "/" .. self._questInfo.total_progress)
+    self._doingBtn:SetActive(false)
+    self._getBtn:SetActive(true)
+    self._gotBtn:SetActive(false)
   elseif self._state == QuestStatus.QUEST_Taken then
-    progressStr = (StringTable.Get)("str_sakura_specialtask_progress", (self._questInfo).cur_progress .. "/" .. (self._questInfo).total_progress)
-    ;
-    (self._doingBtn):SetActive(false)
-    ;
-    (self._getBtn):SetActive(false)
-    ;
-    (self._gotBtn):SetActive(true)
+    progressStr = StringTable.Get("str_sakura_specialtask_progress", self._questInfo.cur_progress .. "/" .. self._questInfo.total_progress)
+    self._doingBtn:SetActive(false)
+    self._getBtn:SetActive(false)
+    self._gotBtn:SetActive(true)
   end
-  ;
-  (self._descRollText):SetText(descStr)
-  ;
-  (self._progress):SetText(progressStr)
-  ;
-  (self._redPoint):SetActive(self._state == QuestStatus.QUEST_Completed)
-  ;
-  (self._gotGo):SetActive(self._state == QuestStatus.QUEST_Taken)
+  self._descRollText:SetText(descStr)
+  self._progress:SetText(progressStr)
+  self._redPoint:SetActive(self._state == QuestStatus.QUEST_Completed)
+  self._gotGo:SetActive(self._state == QuestStatus.QUEST_Taken)
   self:_SetImage()
-  self._questID = (self._questInfo).quest_id
-  local cfg_vice_awards = (Cfg.cfg_activity_vice_quest_rewards_view)[self._questID]
+  self._questID = self._questInfo.quest_id
+  local cfg_vice_awards = Cfg.cfg_activity_vice_quest_rewards_view[self._questID]
   local item = cfg_vice_awards.AwardsView
   local count = #item
   if count <= 0 then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC214: Confused about usage of register: R14 in 'UnsetPending'
-
   if count <= 2 then
-    (self._scrollRect).horizontal = false
+    self._scrollRect.horizontal = false
   else
-    -- DECOMPILER ERROR at PC217: Confused about usage of register: R14 in 'UnsetPending'
-
-    (self._scrollRect).horizontal = true
+    self._scrollRect.horizontal = true
   end
-  ;
-  (self._content):SpawnObjects("UISpecialTaskAwardItem", count)
-  local items = (self._content):GetAllSpawnList()
+  self._content:SpawnObjects("UISpecialTaskAwardItem", count)
+  local items = self._content:GetAllSpawnList()
   for i = 1, count do
-    (items[i]):SetData(item[i], self._showTips, self._campaignQuestState == CampaignQuestStatus.CQS_NotStart, self._id)
+    items[i]:SetData(item[i], self._showTips, self._campaignQuestState == CampaignQuestStatus.CQS_NotStart, self._id)
   end
   self:SetDaily()
-  -- DECOMPILER ERROR: 12 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskItem._SetImage = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg = (Cfg.cfg_special_task)[self._id]
-  ;
-  (self._gotRawImage):LoadImage(cfg.TaskComplete)
-  ;
-  (self._BG):LoadImage(cfg.TaskBg)
+function UISpecialTaskItem:_SetImage()
+  local cfg = Cfg.cfg_special_task[self._id]
+  self._gotRawImage:LoadImage(cfg.TaskComplete)
+  self._BG:LoadImage(cfg.TaskBg)
   local atlasName = cfg.Atlas .. ".spriteatlas"
   self._atlas = self:GetAsset(atlasName, LoadType.SpriteAtlas)
   if not self._atlas then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._DoingBtnBG).sprite = (self._atlas):GetSprite(cfg.DoingBtn)
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._GetBtnBG).sprite = (self._atlas):GetSprite(cfg.GetBtn)
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._GotBtnBG).sprite = (self._atlas):GetSprite(cfg.GotBtn)
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._DailyBG).sprite = (self._atlas):GetSprite(cfg.DailyBG)
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._NotDailyBG).sprite = (self._atlas):GetSprite(cfg.NotDailyBG)
+  self._DoingBtnBG.sprite = self._atlas:GetSprite(cfg.DoingBtn)
+  self._GetBtnBG.sprite = self._atlas:GetSprite(cfg.GetBtn)
+  self._GotBtnBG.sprite = self._atlas:GetSprite(cfg.GotBtn)
+  self._DailyBG.sprite = self._atlas:GetSprite(cfg.DailyBG)
+  self._NotDailyBG.sprite = self._atlas:GetSprite(cfg.NotDailyBG)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskItem._SetLock = function(self, isLock)
-  -- function num : 0_7
-  (self._lockGo):SetActive(isLock)
-  ;
-  (self:GetGameObject("ScrollView")):SetActive(not isLock)
-  ;
-  (self:GetGameObject("Desc")):SetActive(not isLock)
+function UISpecialTaskItem:_SetLock(isLock)
+  self._lockGo:SetActive(isLock)
+  self:GetGameObject("ScrollView"):SetActive(not isLock)
+  self:GetGameObject("Desc"):SetActive(not isLock)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskItem.GetOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
+function UISpecialTaskItem:GetOnClick(go)
   if self._state == QuestStatus.QUEST_Completed then
-    ((GameGlobal.TaskManager)()):StartTask(self.GetAwards, self)
+    GameGlobal.TaskManager():StartTask(self.GetAwards, self)
   end
   self:OnSelect(true)
-  ;
-  (self._callback)(self)
+  self._callback(self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskItem.OnSelect = function(self, select)
-  -- function num : 0_9
+function UISpecialTaskItem:OnSelect(select)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskItem.GetAwards = function(self, TT)
-  -- function num : 0_10 , upvalues : _ENV
+function UISpecialTaskItem:GetAwards(TT)
   self:Lock("UISpecialTaskItemGetAwards")
   local res = AsyncRequestRes:New()
-  local retCode, rewards = (self._questComponent):HandleQuestTake(TT, res, (self._quest):ID())
+  local retCode, rewards = self._questComponent:HandleQuestTake(TT, res, self._quest:ID())
   if retCode == QuestErrorCode.QuestEC_Succ then
     self:ShowRewards(rewards)
-  else
-    if self._errorCheck then
-      (self._errorCheck)(res.m_result)
-    end
+  elseif self._errorCheck then
+    self._errorCheck(res.m_result)
   end
   self:UnLock("UISpecialTaskItemGetAwards")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskItem.ShowRewards = function(self, rewards)
-  -- function num : 0_11 , upvalues : _ENV
+function UISpecialTaskItem:ShowRewards(rewards)
   local petIdList = {}
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  for _,reward in pairs(rewards) do
+  local petModule = GameGlobal.GetModule(PetModule)
+  for _, reward in pairs(rewards) do
     if petModule:IsPetID(reward.assetid) then
-      (table.insert)(petIdList, reward)
+      table.insert(petIdList, reward)
     end
   end
-  if (table.count)(petIdList) > 0 then
+  if table.count(petIdList) > 0 then
     self:ShowDialog("UIPetObtain", petIdList, function()
-    -- function num : 0_11_0 , upvalues : _ENV, self, rewards
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    self:ShowDialog("UIGetItemController", rewards)
-  end
-)
-    return 
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      self:ShowDialog("UIGetItemController", rewards)
+    end)
+    return
   end
   self:ShowDialog("UIGetItemController", rewards)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskItem.PlayAnimationInSequence = function(self, index)
-  -- function num : 0_12 , upvalues : _ENV
+function UISpecialTaskItem:PlayAnimationInSequence(index)
   local delay = 0 + (index - 1) * 50
-  ;
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", "_anim", "uieff_UISpecialTaskItem_in", delay)
+  UIWidgetHelper.PlayAnimationInSequence(self, "_anim", "_anim", "uieff_UISpecialTaskItem_in", delay)
 end
-
-

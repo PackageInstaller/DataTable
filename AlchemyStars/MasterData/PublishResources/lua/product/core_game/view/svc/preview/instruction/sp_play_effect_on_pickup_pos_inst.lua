@@ -1,76 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_effect_on_pickup_pos_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayEffectOnPickupPosInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayEffectOnPickupPosInstruction = SkillPreviewPlayEffectOnPickupPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayEffectOnPickupPosInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayEffectOnPickupPosInstruction:Constructor(params)
   self._effectID = tonumber(params.effectID)
   self._skinUseEffectMap = {}
   if params.skinUseEffectID then
-    local splitedStrArray = (string.split)(params.skinUseEffectID, "|")
+    local splitedStrArray = string.split(params.skinUseEffectID, "|")
     local keyFlag = 1
-    local key, value = nil, nil
-    for i,v in ipairs(splitedStrArray) do
+    local key, value
+    for i, v in ipairs(splitedStrArray) do
       local num = tonumber(v)
       if keyFlag == 1 then
         key = num
       else
         value = num
-        -- DECOMPILER ERROR at PC29: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (self._skinUseEffectMap)[key] = value
+        self._skinUseEffectMap[key] = value
       end
       keyFlag = keyFlag + 1
-      if keyFlag > 2 then
+      if 2 < keyFlag then
         keyFlag = 1
       end
     end
   end
-  do
-    assert((Cfg.cfg_effect)[self._effectID], "预览指令PlayEffectOnPickupPos需要有效的effectID")
-  end
+  assert(Cfg.cfg_effect[self._effectID], "预览指令PlayEffectOnPickupPos需要有效的effectID")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayEffectOnPickupPosInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayEffectOnPickupPosInstruction:GetCacheResource()
   local res = {}
-  local effRes = {((Cfg.cfg_effect)[self._effectID]).ResPath, 1}
-  ;
-  (table.insert)(res, effRes)
-  for i,effectID in pairs(self._skinUseEffectMap) do
-    local skinEffRes = {((Cfg.cfg_effect)[effectID]).ResPath, 1}
-    ;
-    (table.insert)(res, skinEffRes)
+  local effRes = {
+    Cfg.cfg_effect[self._effectID].ResPath,
+    1
+  }
+  table.insert(res, effRes)
+  for i, effectID in pairs(self._skinUseEffectMap) do
+    local skinEffRes = {
+      Cfg.cfg_effect[effectID].ResPath,
+      1
+    }
+    table.insert(res, skinEffRes)
   end
   return res
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayEffectOnPickupPosInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_2
-  local previewActiveSkillService = (previewContext:GetWorld()):GetService("PreviewActiveSkill")
+function SkillPreviewPlayEffectOnPickupPosInstruction:DoInstruction(TT, casterEntity, previewContext)
+  local previewActiveSkillService = previewContext:GetWorld():GetService("PreviewActiveSkill")
   local world = casterEntity:GetOwnerWorld()
   local useEffectID = self._effectID
   local skinId = 1
   if casterEntity:MatchPet() then
-    skinId = ((casterEntity:MatchPet()):GetMatchPet()):GetSkinId()
-    if skinId and (self._skinUseEffectMap)[skinId] then
-      useEffectID = (self._skinUseEffectMap)[skinId]
+    skinId = casterEntity:MatchPet():GetMatchPet():GetSkinId()
+    if skinId and self._skinUseEffectMap[skinId] then
+      useEffectID = self._skinUseEffectMap[skinId]
     end
   end
-  local effectEntity = (world:GetService("Effect")):CreateWorldPositionEffect(useEffectID, previewContext:GetPickUpPos())
+  local effectEntity = world:GetService("Effect"):CreateWorldPositionEffect(useEffectID, previewContext:GetPickUpPos())
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
   previewPickUpComponent:AddPickUpEffectEntityID(effectEntity:GetID())
 end
-
-

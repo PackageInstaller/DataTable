@@ -1,28 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/dantang/ui_campaign_center_dantang_intro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICampaignCenterDanTangIntro", UIController)
 UICampaignCenterDanTangIntro = UICampaignCenterDanTangIntro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICampaignCenterDanTangIntro.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICampaignCenterDanTangIntro:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTangIntro.InitWidget = function(self)
-  -- function num : 0_1
+function UICampaignCenterDanTangIntro:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTangIntro.CloseBtnOnClick = function(self, go)
-  -- function num : 0_2
+function UICampaignCenterDanTangIntro:CloseBtnOnClick(go)
   self:CloseDialog()
 end
-
-

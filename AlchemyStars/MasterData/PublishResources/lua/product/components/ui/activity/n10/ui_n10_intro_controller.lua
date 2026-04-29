@@ -1,56 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n10/ui_n10_intro_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN10IntroController", UIController)
 UIN10IntroController = UIN10IntroController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN10IntroController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN10IntroController:OnShow(uiParams)
   self._param = uiParams[1]
-  self._cfg = (Cfg.cfg_activityintro)[self._param]
+  self._cfg = Cfg.cfg_activityintro[self._param]
   self:_GetComponent()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10IntroController._GetComponent = function(self)
-  -- function num : 0_1
+function UIN10IntroController:_GetComponent()
   self._title = self:GetUIComponent("UILocalizationText", "Title")
   self._content = self:GetUIComponent("UILocalizationText", "Content")
   self._animation = self:GetUIComponent("Animation", "uianim")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10IntroController._OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._title):SetText((StringTable.Get)((self._cfg).Title))
-  ;
-  (self._content):SetText((StringTable.Get)((self._cfg).Intro))
-  if self._cfg and not (string.isnullorempty)((self._cfg).ShowAnim) then
-    (self._animation):Play((self._cfg).ShowAnim)
+function UIN10IntroController:_OnValue()
+  self._title:SetText(StringTable.Get(self._cfg.Title))
+  self._content:SetText(StringTable.Get(self._cfg.Intro))
+  if self._cfg and not string.isnullorempty(self._cfg.ShowAnim) then
+    self._animation:Play(self._cfg.ShowAnim)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10IntroController.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN10IntroController:ConfirmBtnOnClick(go)
   self:Lock("UIN10IntroController:OnHide")
-  if self._cfg and not (string.isnullorempty)((self._cfg).HideAnim) then
-    (self._animation):Play((self._cfg).HideAnim)
+  if self._cfg and not string.isnullorempty(self._cfg.HideAnim) then
+    self._animation:Play(self._cfg.HideAnim)
   end
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, self
     YIELD(TT, 600)
     self:UnLock("UIN10IntroController:OnHide")
     self:CloseDialog()
-  end
-, self)
+  end, self)
 end
-
-

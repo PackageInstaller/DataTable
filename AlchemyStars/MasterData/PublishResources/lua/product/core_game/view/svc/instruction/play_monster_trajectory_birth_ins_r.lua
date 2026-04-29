@@ -1,131 +1,94 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_monster_trajectory_birth_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayMonsterTrajectoryBirthInstruction", BaseInstruction)
 PlayMonsterTrajectoryBirthInstruction = PlayMonsterTrajectoryBirthInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayMonsterTrajectoryBirthInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayMonsterTrajectoryBirthInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   local strPos = paramList.pos
   if strPos then
-    local arrPos = (string.split)(strPos, "|")
+    local arrPos = string.split(strPos, "|")
     self._pos = Vector2(tonumber(arrPos[1]), tonumber(arrPos[2]))
   else
-    do
-      self._pos = BattleConst.BoardCenterPos
-      local strOffset = paramList.offset
-      if strOffset then
-        local arr = (string.split)(strOffset, "|")
-        self._offset = Vector3(tonumber(arr[1]), tonumber(arr[2]), tonumber(arr[3]))
-      else
-        do
-          self._offset = Vector3.zero
-          self._flyTime = tonumber(paramList.flyTime)
-          self._block = tonumber(paramList.block) or 0
-        end
-      end
-    end
+    self._pos = BattleConst.BoardCenterPos
   end
+  local strOffset = paramList.offset
+  if strOffset then
+    local arr = string.split(strOffset, "|")
+    self._offset = Vector3(tonumber(arr[1]), tonumber(arr[2]), tonumber(arr[3]))
+  else
+    self._offset = Vector3.zero
+  end
+  self._flyTime = tonumber(paramList.flyTime)
+  self._block = tonumber(paramList.block) or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMonsterTrajectoryBirthInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayMonsterTrajectoryBirthInstruction:GetCacheResource()
   local t = {}
   if self.effectID and self.effectIDeftID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.effectID]).ResPath, 2})
+    table.insert(t, {
+      Cfg.cfg_effect[self.effectID].ResPath,
+      2
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMonsterTrajectoryBirthInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayMonsterTrajectoryBirthInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if self._block == 1 then
     self:_OnPlayBezier(TT, casterEntity)
   else
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self, casterEntity
-    self:_OnPlayBezier(TT, casterEntity)
-  end
-)
+    GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      self:_OnPlayBezier(TT, casterEntity)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMonsterTrajectoryBirthInstruction._OnPlayBezier = function(self, TT, casterEntity)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayMonsterTrajectoryBirthInstruction:_OnPlayBezier(TT, casterEntity)
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
   local boardServiceRender = world:GetService("BoardRender")
   local casterPos = boardServiceRender:GridPos2RenderPos(self._pos)
   casterPos = Vector3(casterPos.x, casterPos.y, casterPos.z) + self._offset
   local effectEntity = effectService:CreatePositionEffect(self._effectID, casterPos)
-  local go = (effectEntity:View()):GetGameObject()
+  local go = effectEntity:View():GetGameObject()
   local targetPos = casterEntity:GetPosition()
   local path = {}
-  ;
-  (table.insert)(path, (go.transform).position)
-  local pathFirstPos = (Vector3.Lerp)(casterPos, targetPos, 0.25)
+  table.insert(path, go.transform.position)
+  local pathFirstPos = Vector3.Lerp(casterPos, targetPos, 0.25)
   pathFirstPos = Vector3(pathFirstPos.x, -0.5, pathFirstPos.z)
-  ;
-  (table.insert)(path, pathFirstPos)
-  local pathSecondPos = (Vector3.Lerp)(casterPos, targetPos, 0.5)
-  ;
-  (table.insert)(path, pathSecondPos)
-  local pathThirdPos = (Vector3.Lerp)(casterPos, targetPos, 0.75)
+  table.insert(path, pathFirstPos)
+  local pathSecondPos = Vector3.Lerp(casterPos, targetPos, 0.5)
+  table.insert(path, pathSecondPos)
+  local pathThirdPos = Vector3.Lerp(casterPos, targetPos, 0.75)
   pathThirdPos = Vector3(pathThirdPos.x, 3, pathThirdPos.z)
-  ;
-  (table.insert)(path, pathThirdPos)
-  ;
-  (table.insert)(path, targetPos)
+  table.insert(path, pathThirdPos)
+  table.insert(path, targetPos)
   local pathBezier = {}
   for i = 0, 1, 0.1 do
-    (table.insert)(pathBezier, self:_BezierMethod(i, path))
+    table.insert(pathBezier, self:_BezierMethod(i, path))
   end
-  ;
-  (table.insert)(pathBezier, targetPos)
-  local curve = ((DG.Tweening).Ease).InQuad
-  local animationCurveHolder = (go.gameObject):GetComponent(typeof(AnimationCurveHolder))
-  do
-    if animationCurveHolder then
-      local curveList = animationCurveHolder.acurveList
-      if curveList and curveList.Length > 0 then
-        curve = curveList[0]
-      end
+  table.insert(pathBezier, targetPos)
+  local curve = DG.Tweening.Ease.InQuad
+  local animationCurveHolder = go.gameObject:GetComponent(typeof(AnimationCurveHolder))
+  if animationCurveHolder then
+    local curveList = animationCurveHolder.acurveList
+    if curveList and 0 < curveList.Length then
+      curve = curveList[0]
     end
-    ;
-    (((go.transform):DOLocalPath(pathBezier, self._flyTime / 1000, ((DG.Tweening).PathType).CatmullRom, ((DG.Tweening).PathMode).Full3D)):SetEase(curve)):OnComplete(function()
-    -- function num : 0_3_0 , upvalues : world, effectEntity
+  end
+  go.transform:DOLocalPath(pathBezier, self._flyTime / 1000, DG.Tweening.PathType.CatmullRom, DG.Tweening.PathMode.Full3D):SetEase(curve):OnComplete(function()
     world:DestroyEntity(effectEntity)
-  end
-)
-    YIELD(TT, self._flyTime)
-  end
+  end)
+  YIELD(TT, self._flyTime)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMonsterTrajectoryBirthInstruction._BezierMethod = function(self, t, foceList)
-  -- function num : 0_4 , upvalues : _ENV
-  if (table.count)(foceList) < 2 then
+function PlayMonsterTrajectoryBirthInstruction:_BezierMethod(t, foceList)
+  if table.count(foceList) < 2 then
     return foceList[1]
   end
   local temp = {}
-  for i = 1, (table.count)(foceList) - 1 do
-    local proportion = Vector3((1 - t) * (foceList[i]).x + t * (foceList[i + 1]).x, (1 - t) * (foceList[i]).y + t * (foceList[i + 1]).y, (1 - t) * (foceList[i]).z + t * (foceList[i + 1]).z)
-    ;
-    (table.insert)(temp, proportion)
+  for i = 1, table.count(foceList) - 1 do
+    local proportion = Vector3((1 - t) * foceList[i].x + t * foceList[i + 1].x, (1 - t) * foceList[i].y + t * foceList[i + 1].y, (1 - t) * foceList[i].z + t * foceList[i + 1].z)
+    table.insert(temp, proportion)
   end
   return self:_BezierMethod(t, temp)
 end
-
-

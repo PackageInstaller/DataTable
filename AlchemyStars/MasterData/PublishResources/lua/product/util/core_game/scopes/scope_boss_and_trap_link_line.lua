@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_boss_and_trap_link_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_BossAndTrapLinkLine", SkillScopeCalculator_Base)
 SkillScopeCalculator_BossAndTrapLinkLine = SkillScopeCalculator_BossAndTrapLinkLine
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_BossAndTrapLinkLine.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_BossAndTrapLinkLine:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   if #bodyArea ~= 4 then
-    (Log.error)("[BossAndTrapLinkLine] caster body area error, body area size must be 4, cur size=", #bodyArea)
-    return 
+    Log.error("[BossAndTrapLinkLine] caster body area error, body area size must be 4, cur size=", #bodyArea)
+    return
   end
   local trapID = scopeParam.trapID
   local noExtend = scopeParam.noExtend == 1
@@ -22,19 +15,18 @@ SkillScopeCalculator_BossAndTrapLinkLine.CalcRange = function(self, scopeType, s
   end
   local trapCount = 2
   local trapPosList = {}
-  local world = (self._gridFilter)._world
+  local world = self._gridFilter._world
   local utilDataSvc = world:GetService("UtilData")
   local trapEntityList = utilDataSvc:GetTrapByID(trapID)
-  for _,trapEntity in ipairs(trapEntityList) do
+  for _, trapEntity in ipairs(trapEntityList) do
     if not trapEntity:HasDeadMark() then
-      local trapPos = (trapEntity:GetGridPosition()):Clone()
-      ;
-      (table.insert)(trapPosList, trapPos)
+      local trapPos = trapEntity:GetGridPosition():Clone()
+      table.insert(trapPosList, trapPos)
     end
   end
-  if #trapPosList < trapCount then
-    (Log.error)("[BossAndTrapLinkLine] trap count error, trap id = ", trapID, ", trap count = ", #trapPosList)
-    return 
+  if trapCount > #trapPosList then
+    Log.error("[BossAndTrapLinkLine] trap count error, trap id = ", trapID, ", trap count = ", #trapPosList)
+    return
   end
   local trap1Pos = trapPosList[1]
   local trap2Pos = trapPosList[2]
@@ -58,7 +50,7 @@ SkillScopeCalculator_BossAndTrapLinkLine.CalcRange = function(self, scopeType, s
   elseif norDir == Vector2.down then
     tailLeftPos = rightUp
     tailRightPos = leftUp
-    if trap2Pos.x < trap1Pos.x then
+    if trap1Pos.x > trap2Pos.x then
       trapLeftPos = trap1Pos
       trapRightPos = trap2Pos
     else
@@ -78,7 +70,7 @@ SkillScopeCalculator_BossAndTrapLinkLine.CalcRange = function(self, scopeType, s
   elseif norDir == Vector2.right then
     tailLeftPos = leftUp
     tailRightPos = leftDown
-    if trap2Pos.y < trap1Pos.y then
+    if trap1Pos.y > trap2Pos.y then
       trapLeftPos = trap1Pos
       trapRightPos = trap2Pos
     else
@@ -86,8 +78,8 @@ SkillScopeCalculator_BossAndTrapLinkLine.CalcRange = function(self, scopeType, s
       trapRightPos = trap1Pos
     end
   else
-    (Log.error)("[XForwardToOutside] caster dir error, dir=Vector2( ", norDir.x, ", ", norDir.y, " )")
-    return 
+    Log.error("[XForwardToOutside] caster dir error, dir=Vector2( ", norDir.x, ", ", norDir.y, " )")
+    return
   end
   local lineList = {}
   lineList[1] = {startPos = tailLeftPos, endPos = trapLeftPos}
@@ -96,20 +88,15 @@ SkillScopeCalculator_BossAndTrapLinkLine.CalcRange = function(self, scopeType, s
   local totalAttackRange = {}
   local totalWholeRange = {}
   local utilSCSvc = world:GetService("UtilScopeCalc")
-  for _,line in ipairs(lineList) do
+  for _, line in ipairs(lineList) do
     local attackRange = {}
     local wholeRange = {}
     utilSCSvc:P2PAngleFreeLineRange(line.startPos, line.endPos, attackRange, wholeRange, noExtend, widthThreshold, true)
-    ;
-    (table.appendArray)(totalAttackRange, attackRange)
-    ;
-    (table.appendArray)(totalWholeRange, wholeRange)
+    table.appendArray(totalAttackRange, attackRange)
+    table.appendArray(totalWholeRange, wholeRange)
   end
-  totalAttackRange = (table.unique)(totalAttackRange)
-  totalWholeRange = (table.unique)(totalWholeRange)
+  totalAttackRange = table.unique(totalAttackRange)
+  totalWholeRange = table.unique(totalWholeRange)
   local result = SkillScopeResult:New(SkillScopeType.BossAndTrapLinkLine, centerPos, totalWholeRange, totalWholeRange)
-  do return result end
-  -- DECOMPILER ERROR: 14 unprocessed JMP targets
+  return result
 end
-
-

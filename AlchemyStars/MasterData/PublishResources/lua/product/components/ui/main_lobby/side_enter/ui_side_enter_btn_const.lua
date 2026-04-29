@@ -1,37 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/side_enter/ui_side_enter_btn_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISideEnterBtnConst", Object)
 UISideEnterBtnConst = UISideEnterBtnConst
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISideEnterBtnConst.Constructor = function(self)
-  -- function num : 0_0
+function UISideEnterBtnConst:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterBtnConst._GetObj_Safe = function(className)
-  -- function num : 0_1 , upvalues : _ENV
+function UISideEnterBtnConst._GetObj_Safe(className)
   local baseName = "UIActivityDataLoaderBase"
   local desc = "cfg_main_side_enter_btn[CheckType] 中配置的 "
-  if (UILogHelper.Exception_CheckClassFromBase)(desc, className, baseName) then
+  if UILogHelper.Exception_CheckClassFromBase(desc, className, baseName) then
     local obj = _createInstance(className)
     return obj
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterBtnConst.CheckOpen = function(TT, btnCfg)
-  -- function num : 0_2 , upvalues : _ENV
-  if not btnCfg.CheckType then
-    local checkTypes = {}
-  end
-  for _,v in ipairs(checkTypes) do
-    local func = (UISideEnterBtnCheckFunc.GetFunc)(v)
+function UISideEnterBtnConst.CheckOpen(TT, btnCfg)
+  local checkTypes = btnCfg.CheckType or {}
+  for _, v in ipairs(checkTypes) do
+    local func = UISideEnterBtnCheckFunc.GetFunc(v)
     local isOpen = func(TT, btnCfg)
     if not isOpen then
       return false
@@ -40,55 +25,37 @@ UISideEnterBtnConst.CheckOpen = function(TT, btnCfg)
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterBtnConst.ForceOpenUI = function(btnCfg)
-  -- function num : 0_3 , upvalues : _ENV
-  if not btnCfg or not btnCfg.ForceOpenUI then
-    local tb = {}
-  end
-  if (table.count)(tb) < 2 then
-    return 
+function UISideEnterBtnConst.ForceOpenUI(btnCfg)
+  local tb = btnCfg and btnCfg.ForceOpenUI or {}
+  if table.count(tb) < 2 then
+    return
   end
   local useStateUI = tb[1] == "[state]" and true or false
   local uiName = tb[2]
   if uiName == "[campaign_default]" then
-    return (UISideEnterBtnConst.ForceOpenUI_Campaign)(btnCfg, useStateUI)
+    return UISideEnterBtnConst.ForceOpenUI_Campaign(btnCfg, useStateUI)
   end
   local params = {}
   for i = 3, #tb do
-    (table.insert)(params, tb[i])
+    table.insert(params, tb[i])
   end
   if useStateUI then
     return function()
-    -- function num : 0_3_0 , upvalues : _ENV, uiName, params
-    ((GameGlobal.UIStateManager)()):SwitchState(uiName, (table.unpack)(params))
-  end
-
+      GameGlobal.UIStateManager():SwitchState(uiName, table.unpack(params))
+    end
   else
     return function()
-    -- function num : 0_3_1 , upvalues : _ENV, uiName, params
-    ((GameGlobal.UIStateManager)()):ShowDialog(uiName, (table.unpack)(params))
-  end
-
-  end
-end
-
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterBtnConst.ForceOpenUI_Campaign = function(btnCfg, useStateUI)
-  -- function num : 0_4 , upvalues : _ENV
-  local campaignType, campaignId = btnCfg.CampaignType, btnCfg.CampaignId
-  local campaign = (UIActivityHelper.LoadCampaign_Local)(campaignType, campaignId)
-  return function()
-    -- function num : 0_4_0 , upvalues : _ENV, campaign, useStateUI
-    (UIActivityHelper.PlayFirstPlot_Campaign)(campaign, function()
-      -- function num : 0_4_0_0 , upvalues : campaign, useStateUI
-      campaign:OpenMainUI(useStateUI)
+      GameGlobal.UIStateManager():ShowDialog(uiName, table.unpack(params))
     end
-, true)
   end
-
 end
 
-
+function UISideEnterBtnConst.ForceOpenUI_Campaign(btnCfg, useStateUI)
+  local campaignType, campaignId = btnCfg.CampaignType, btnCfg.CampaignId
+  local campaign = UIActivityHelper.LoadCampaign_Local(campaignType, campaignId)
+  return function()
+    UIActivityHelper.PlayFirstPlot_Campaign(campaign, function()
+      campaign:OpenMainUI(useStateUI)
+    end, true)
+  end
+end

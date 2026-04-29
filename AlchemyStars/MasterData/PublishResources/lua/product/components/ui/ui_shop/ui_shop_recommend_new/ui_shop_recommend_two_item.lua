@@ -1,89 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_recommend_new/ui_shop_recommend_two_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopRecommendTwoItem", UICustomWidget)
 UIShopRecommendTwoItem = UIShopRecommendTwoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopRecommendTwoItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.shopModule = (GameGlobal.GetModule)(ShopModule)
+function UIShopRecommendTwoItem:OnShow()
+  self.shopModule = GameGlobal.GetModule(ShopModule)
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendTwoItem.SetData = function(self, idx, data, pos, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopRecommendTwoItem:SetData(idx, data, pos, callback)
   self.data = data
   self.idx = idx
-  self.id = (self.data):GetID(self.idx)
+  self.id = self.data:GetID(self.idx)
   self.callback = callback
-  local icon = (self.data):GetPic(self.idx)
-  ;
-  (self._Icon):LoadImage(icon)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = pos
-  local tabType = (self.data):GetTabType(self.idx)
-  local price = (self.shopModule):GetGoodsPrice(tabType, self.id)
-  ;
-  (self._priceTex):SetText(price)
-  ;
-  (self._price):SetActive(not (string.isnullorempty)(price))
-  local params = (self.data):GetGiftParams(self.idx)
+  local icon = self.data:GetPic(self.idx)
+  self._Icon:LoadImage(icon)
+  self._rect.anchoredPosition = pos
+  local tabType = self.data:GetTabType(self.idx)
+  local price = self.shopModule:GetGoodsPrice(tabType, self.id)
+  self._priceTex:SetText(price)
+  self._price:SetActive(not string.isnullorempty(price))
+  local params = self.data:GetGiftParams(self.idx)
   local len = 0
   if params then
     len = #params
   end
-  ;
-  (self._gift_desc_2_go):SetActive(len > 1)
-  if len > 1 then
+  self._gift_desc_2_go:SetActive(1 < len)
+  if 1 < len then
     local param2 = params[2]
     local desc2 = param2[1]
     local icon2 = param2[2]
-    ;
-    ((self._gift_icon_2).gameObject):SetActive(icon2 ~= nil)
-    -- DECOMPILER ERROR at PC74: Confused about usage of register: R13 in 'UnsetPending'
-
+    self._gift_icon_2.gameObject:SetActive(icon2 ~= nil)
     if icon2 then
-      (self._gift_icon_2).sprite = (self.commonAtlas):GetSprite(icon2)
+      self._gift_icon_2.sprite = self.commonAtlas:GetSprite(icon2)
     end
-    ;
-    (self._gift_desc_2):SetText((StringTable.Get)(desc2))
+    self._gift_desc_2:SetText(StringTable.Get(desc2))
   end
-  ;
-  (self._gift_desc_1_go):SetActive(len > 0)
-  if len > 0 then
+  self._gift_desc_1_go:SetActive(0 < len)
+  if 0 < len then
     local param1 = params[1]
     local desc1 = param1[1]
     local icon1 = param1[2]
-    ;
-    ((self._gift_icon_1).gameObject):SetActive(icon1 ~= nil)
-    -- DECOMPILER ERROR at PC109: Confused about usage of register: R13 in 'UnsetPending'
-
+    self._gift_icon_1.gameObject:SetActive(icon1 ~= nil)
     if icon1 then
-      (self._gift_icon_1).sprite = (self.commonAtlas):GetSprite(icon1)
+      self._gift_icon_1.sprite = self.commonAtlas:GetSprite(icon1)
     end
-    ;
-    (self._gift_desc_1):SetText((StringTable.Get)(desc1))
+    self._gift_desc_1:SetText(StringTable.Get(desc1))
   end
-  local giftName = (self.data):GetName(self.idx)
-  ;
-  (self._gift_name_go):SetActive(giftName ~= nil)
+  local giftName = self.data:GetName(self.idx)
+  self._gift_name_go:SetActive(giftName ~= nil)
   if giftName then
-    (self._giftName):SetText((StringTable.Get)(giftName))
+    self._giftName:SetText(StringTable.Get(giftName))
   end
-  -- DECOMPILER ERROR: 10 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendTwoItem.GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopRecommendTwoItem:GetComponents()
   self._Icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._price = self:GetGameObject("price")
   self._priceTex = self:GetUIComponent("UILocalizationText", "priceTex")
@@ -99,22 +68,14 @@ UIShopRecommendTwoItem.GetComponents = function(self)
   self.commonAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendTwoItem.IconOnClick = function(self, go)
-  -- function num : 0_3
+function UIShopRecommendTwoItem:IconOnClick(go)
   if self.callback then
-    (self.callback)(self.id)
+    self.callback(self.id)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendTwoItem.BtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIShopRecommendTwoItem:BtnOnClick(go)
   if self.callback then
-    (self.callback)(self.id)
+    self.callback(self.id)
   end
 end
-
-

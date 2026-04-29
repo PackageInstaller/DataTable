@@ -1,39 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_add_buff_view_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayAddBuffViewInstruction", BaseInstruction)
 PlayAddBuffViewInstruction = PlayAddBuffViewInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayAddBuffViewInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayAddBuffViewInstruction:Constructor(paramList)
   self._buffID = tonumber(paramList.buffID) or 0
   self._buffEffectType = tonumber(paramList.buffEffectType) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAddBuffViewInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayAddBuffViewInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local playBuffService = world:GetService("PlayBuff")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   local buffResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AddBuff)
   local utilDataSvc = world:GetService("UtilData")
   self._buffID = utilDataSvc:GetReplacedBuffIdForPlayIns(casterEntity, self._buffID)
   self._buffEffectType = utilDataSvc:GetReplacedBuffEffectTypeForPlayIns(casterEntity, self._buffEffectType)
-  for _,v in pairs(buffResultArray) do
+  for _, v in pairs(buffResultArray) do
     local eid = v:GetEntityID()
     local buffArray = v:GetAddBuffResult()
     if targetEntityID == eid and next(buffArray) then
       local e = world:GetEntityByID(eid)
       if e and e:BuffView() then
-        for _,seq in pairs(buffArray) do
-          local buffViewInstance = (e:BuffView()):GetBuffViewInstance(seq)
+        for _, seq in pairs(buffArray) do
+          local buffViewInstance = e:BuffView():GetBuffViewInstance(seq)
           if buffViewInstance then
             local buffID = buffViewInstance:BuffID()
             local buffEffectType = buffViewInstance:GetBuffEffectType()
@@ -46,5 +36,3 @@ PlayAddBuffViewInstruction.DoInstruction = function(self, TT, casterEntity, phas
     end
   end
 end
-
-

@@ -1,17 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/pet_sort_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("pet_sort_data", Object)
 pet_sort_data = pet_sort_data
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-pet_sort_data.Constructor = function(self, sortType, name, sortState)
-  -- function num : 0_0
+function pet_sort_data:Constructor(sortType, name, sortState)
   self.sortType = sortType
   self.Name = name
   self.sortState = sortState
 end
-
-

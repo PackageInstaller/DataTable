@@ -1,48 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/maze/stn_maze_build_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("Maze_BuildTeamByRunData", Common_AsyncBase)
 Maze_BuildTeamByRunData = Maze_BuildTeamByRunData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Maze_BuildTeamByRunData.Constructor = function(self, _, teamIndex)
-  -- function num : 0_0 , upvalues : _ENV
-  if not teamIndex then
-    self._teamIndex = TestConst.MissionTeamIndex
-  end
+function Maze_BuildTeamByRunData:Constructor(_, teamIndex)
+  self._teamIndex = teamIndex or TestConst.MissionTeamIndex
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze_BuildTeamByRunData.TaskFunc = function(self, TT, result)
-  -- function num : 0_1
-  local runData = (self.m_pManager):GetMissionRunData()
+function Maze_BuildTeamByRunData:TaskFunc(TT, result)
+  local runData = self.m_pManager:GetMissionRunData()
   if runData:IsRandomTeam() then
-    (self.m_pManager):AsyncBuildRandomMazeTeamByRunData(TT, self._teamIndex, result)
+    self.m_pManager:AsyncBuildRandomMazeTeamByRunData(TT, self._teamIndex, result)
     if result:IsErrorOccured() then
       self.m_nLogicResult = 3
-      return 
-    else
-      if not result:GetCustomData("PetPstIDs") then
-        self.m_nLogicResult = 2
-        return 
-      end
+      return
+    elseif not result:GetCustomData("PetPstIDs") then
+      self.m_nLogicResult = 2
+      return
     end
   else
-    ;
-    (self._manager):AsyncBuildMazeTeamByRunData(TT, self._teamIndex, result)
+    self._manager:AsyncBuildMazeTeamByRunData(TT, self._teamIndex, result)
     if result:IsErrorOccured() then
       self.m_nLogicResult = 3
-      return 
+      return
     end
   end
   local petPstID = result:GetCustomData("PetPstIDs")
   runData:SetCurrentTeamPstIDList(petPstID)
   self.m_nLogicResult = 1
-  return 
+  return
 end
-
-

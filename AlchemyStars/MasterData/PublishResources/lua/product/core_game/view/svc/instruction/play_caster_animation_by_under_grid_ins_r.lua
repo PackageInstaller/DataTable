@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_animation_by_under_grid_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterAnimationByUnderGridInstruction", BaseInstruction)
 PlayCasterAnimationByUnderGridInstruction = PlayCasterAnimationByUnderGridInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterAnimationByUnderGridInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterAnimationByUnderGridInstruction:Constructor(paramList)
   self._redAnim = paramList.redAnim
   self._yellowAnim = paramList.yellowAnim
   self._blueAnim = paramList.blueAnim
@@ -20,56 +13,43 @@ PlayCasterAnimationByUnderGridInstruction.Constructor = function(self, paramList
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterAnimationByUnderGridInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterAnimationByUnderGridInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local e = casterEntity
-  do
-    if casterEntity:HasSuperEntity() and (casterEntity:EntityType()):IsSkillHolder() then
-      local cSuperEntity = casterEntity:SuperEntityComponent()
-      e = cSuperEntity:GetSuperEntity()
-    end
-    if not e:HasView() then
-      (Log.fatal)("view not found, cant play legacy animation")
-      return 
-    end
-    self._world = e:GetOwnerWorld()
-    local utilDataSvc = (self._world):GetService("UtilData")
-    if utilDataSvc:IsEntityLogicDead(e) and not self._deadPlay then
-      return 
-    end
-    local gridPos = e:GetRenderGridPosition()
-    local utilDataSvc = (self._world):GetService("UtilData")
-    local pieceType = (utilDataSvc:GetPieceType(gridPos))
-    local animName = nil
-    if pieceType == PieceType.Blue then
-      animName = self._blueAnim
-    else
-      if pieceType == PieceType.Red then
-        animName = self._redAnim
-      else
-        if pieceType == PieceType.Green then
-          animName = self._greenAnim
-        else
-          if pieceType == PieceType.Yellow then
-            animName = self._yellowAnim
-          else
-            animName = self._blueAnim
-          end
-        end
-      end
-    end
-    local go = (e:View()):GetGameObject()
-    local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
-    if anim == nil then
-      (Log.fatal)("Cant play legacy animation, animation not found in ", go.name)
-      return 
-    end
-    if not anim:IsPlaying(animName) then
-      anim:Play(animName)
-    end
+  if casterEntity:HasSuperEntity() and casterEntity:EntityType():IsSkillHolder() then
+    local cSuperEntity = casterEntity:SuperEntityComponent()
+    e = cSuperEntity:GetSuperEntity()
+  end
+  if not e:HasView() then
+    Log.fatal("view not found, cant play legacy animation")
+    return
+  end
+  self._world = e:GetOwnerWorld()
+  local utilDataSvc = self._world:GetService("UtilData")
+  if utilDataSvc:IsEntityLogicDead(e) and not self._deadPlay then
+    return
+  end
+  local gridPos = e:GetRenderGridPosition()
+  local utilDataSvc = self._world:GetService("UtilData")
+  local pieceType = utilDataSvc:GetPieceType(gridPos)
+  local animName
+  if pieceType == PieceType.Blue then
+    animName = self._blueAnim
+  elseif pieceType == PieceType.Red then
+    animName = self._redAnim
+  elseif pieceType == PieceType.Green then
+    animName = self._greenAnim
+  elseif pieceType == PieceType.Yellow then
+    animName = self._yellowAnim
+  else
+    animName = self._blueAnim
+  end
+  local go = e:View():GetGameObject()
+  local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
+  if anim == nil then
+    Log.fatal("Cant play legacy animation, animation not found in ", go.name)
+    return
+  end
+  if not anim:IsPlaying(animName) then
+    anim:Play(animName)
   end
 end
-
-

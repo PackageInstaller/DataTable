@@ -1,42 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_spread_dead_monster_buff_layer_to_other_monsters_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewSpreadDeadMonsterBuffLayerToOtherMonsters", BuffViewBase)
 BuffViewSpreadDeadMonsterBuffLayerToOtherMonsters = BuffViewSpreadDeadMonsterBuffLayerToOtherMonsters
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewSpreadDeadMonsterBuffLayerToOtherMonsters.IsNotifyMatch = function(self, notify)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewSpreadDeadMonsterBuffLayerToOtherMonsters:IsNotifyMatch(notify)
   local result = self._buffResult
   local notifyType = notify:GetNotifyType()
-  if result:GetOwnerEntityID() ~= (notify:GetNotifyEntity()):GetID() or result:GetDefenderEntityID() ~= (notify:GetDefenderEntity()):GetID() then
-    do return notifyType ~= NotifyType.MonsterDeadStart and notifyType ~= NotifyType.MonsterDeadEnd end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if notifyType == NotifyType.MonsterDeadStart or notifyType == NotifyType.MonsterDeadEnd then
+    return result:GetOwnerEntityID() == notify:GetNotifyEntity():GetID() and result:GetDefenderEntityID() == notify:GetDefenderEntity():GetID()
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewSpreadDeadMonsterBuffLayerToOtherMonsters.PlayView = function(self, TT, notify, trace)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewSpreadDeadMonsterBuffLayerToOtherMonsters:PlayView(TT, notify, trace)
   local result = self._buffResult
-  for _,info in ipairs(result:GetSpreadResults()) do
+  for _, info in ipairs(result:GetSpreadResults()) do
     local targetID = info.targetID
-    local eTarget = (self._world):GetEntityByID(targetID)
+    local eTarget = self._world:GetEntityByID(targetID)
     local buffView = eTarget:BuffView()
     local buffSeq = info.buffSeq
     local viewInstance = buffView:GetBuffViewInstance(buffSeq)
     if viewInstance then
       viewInstance:SetLayerCount(TT, info.finalLayer, nil, info.casterEntity, "SpreadDeadMonsterBuffLayerToOtherMonsters")
     end
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+    self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
     if eTarget:HasPetPstID() then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetAccumulateNum, (eTarget:PetPstID()):GetPstID(), info.layer)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.SetAccumulateNum, eTarget:PetPstID():GetPstID(), info.layer)
     end
   end
 end
-
-

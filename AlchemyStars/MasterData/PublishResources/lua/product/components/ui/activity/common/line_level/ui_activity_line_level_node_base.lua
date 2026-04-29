@@ -1,152 +1,92 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common/line_level/ui_activity_line_level_node_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityLineLevelNodeBaseWidget", Object)
 UIActivityLineLevelNodeBaseWidget = UIActivityLineLevelNodeBaseWidget
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityLineLevelNodeBaseWidget.Constructor = function(self, uiView)
-  -- function num : 0_0
+function UIActivityLineLevelNodeBaseWidget:Constructor(uiView)
   self._uiView = uiView
-  self._star1 = (self._uiView):GetGameObject("star1")
-  self._star2 = (self._uiView):GetGameObject("star2")
-  self._star3 = (self._uiView):GetGameObject("star3")
-  self._name = (self._uiView):GetUIComponent("UILocalizationText", "name")
+  self._star1 = self._uiView:GetGameObject("star1")
+  self._star2 = self._uiView:GetGameObject("star2")
+  self._star3 = self._uiView:GetGameObject("star3")
+  self._name = self._uiView:GetUIComponent("UILocalizationText", "name")
   self._stars = {}
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
   if self._star1 then
-    (self._stars)[#self._stars + 1] = self._star1
+    self._stars[#self._stars + 1] = self._star1
   end
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
   if self._star2 then
-    (self._stars)[#self._stars + 1] = self._star2
+    self._stars[#self._stars + 1] = self._star2
   end
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R2 in 'UnsetPending'
-
   if self._star3 then
-    (self._stars)[#self._stars + 1] = self._star3
+    self._stars[#self._stars + 1] = self._star3
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineLevelNodeBaseWidget.Refresh = function(self, name, stars)
-  -- function num : 0_1
-  (self._name):SetText(name)
+function UIActivityLineLevelNodeBaseWidget:Refresh(name, stars)
+  self._name:SetText(name)
   for i = 1, 3 do
-    if i > stars then
-      do
-        local pass = not (self._stars)[i]
-        if pass then
-          ((self._stars)[i]):SetActive(true)
-        else
-          ((self._stars)[i]):SetActive(false)
-        end
-        -- DECOMPILER ERROR at PC29: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC29: LeaveBlock: unexpected jumping out IF_STMT
-
+    if self._stars[i] then
+      local pass = i <= stars
+      if pass then
+        self._stars[i]:SetActive(true)
+      else
+        self._stars[i]:SetActive(false)
       end
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
 _class("UIActivityLineLevelNodeBase", UICustomWidget)
 UIActivityLineLevelNodeBase = UIActivityLineLevelNodeBase
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityLineLevelNodeBase.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityLineLevelNodeBase:OnShow(uiParams)
   self._normal = UIActivityLineLevelNodeBaseWidget:New(self:GetUIComponent("UIView", "normal"))
   self._plot = UIActivityLineLevelNodeBaseWidget:New(self:GetUIComponent("UIView", "plot"))
   self._boss = UIActivityLineLevelNodeBaseWidget:New(self:GetUIComponent("UIView", "boss"))
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
   self._normalGo = self:GetGameObject("normal")
   self._plotGo = self:GetGameObject("plot")
   self._bossGo = self:GetGameObject("boss")
   self:OnInit()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineLevelNodeBase.SetData = function(self, lineCfg, passInfo, cb)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityLineLevelNodeBase:SetData(lineCfg, passInfo, cb)
   self._missionID = lineCfg.CampaignMissionId
   self._onClick = cb
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMax = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMin = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).sizeDelta = Vector2.zero
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  self._rectTransform.anchorMax = Vector2(0, 0.5)
+  self._rectTransform.anchorMin = Vector2(0, 0.5)
+  self._rectTransform.sizeDelta = Vector2.zero
+  self._rectTransform.anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   if not missionCfg then
-    (Log.exception)("cfg_campaign_mission中找不到配置:", self._missionID)
+    Log.exception("cfg_campaign_mission中找不到配置:", self._missionID)
   end
   self._isStoryNode = missionCfg.Type == DiscoveryStageType.Plot
   local type = missionCfg.Type
-  ;
-  (self._bossGo):SetActive(false)
-  ;
-  (self._normalGo):SetActive(false)
-  ;
-  (self._plotGo):SetActive(false)
+  self._bossGo:SetActive(false)
+  self._normalGo:SetActive(false)
+  self._plotGo:SetActive(false)
   local stars = 0
-  do
-    if passInfo then
-      local module = self:GetModule(MissionModule)
-      stars = module:ParseStarInfo(passInfo.star)
-    end
-    if type == DiscoveryStageType.FightNormal then
-      (self._normalGo):SetActive(true)
-      ;
-      (self._normal):Refresh((StringTable.Get)(missionCfg.Name), stars)
-    elseif type == DiscoveryStageType.FightBoss then
-      (self._bossGo):SetActive(true)
-      ;
-      (self._boss):Refresh((StringTable.Get)(missionCfg.Name), stars)
-    elseif type == DiscoveryStageType.Plot then
-      (self._plotGo):SetActive(true)
-      ;
-      (self._plot):Refresh((StringTable.Get)(missionCfg.Name), stars)
-    end
-    self:PlayAnimation()
-    -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  if passInfo then
+    local module = self:GetModule(MissionModule)
+    stars = module:ParseStarInfo(passInfo.star)
   end
+  if type == DiscoveryStageType.FightNormal then
+    self._normalGo:SetActive(true)
+    self._normal:Refresh(StringTable.Get(missionCfg.Name), stars)
+  elseif type == DiscoveryStageType.FightBoss then
+    self._bossGo:SetActive(true)
+    self._boss:Refresh(StringTable.Get(missionCfg.Name), stars)
+  elseif type == DiscoveryStageType.Plot then
+    self._plotGo:SetActive(true)
+    self._plot:Refresh(StringTable.Get(missionCfg.Name), stars)
+  end
+  self:PlayAnimation()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineLevelNodeBase.BtnOnClick = function(self, go)
-  -- function num : 0_4
-  (self._onClick)(self._missionID, self._isStoryNode, (self._rectTransform).position)
+function UIActivityLineLevelNodeBase:BtnOnClick(go)
+  self._onClick(self._missionID, self._isStoryNode, self._rectTransform.position)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineLevelNodeBase.OnInit = function(self)
-  -- function num : 0_5
+function UIActivityLineLevelNodeBase:OnInit()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineLevelNodeBase.PlayAnimation = function(self)
-  -- function num : 0_6
+function UIActivityLineLevelNodeBase:PlayAnimation()
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/board_block_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("board_svc_l")
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
 
-BoardServiceLogic.IsPosBlockByArea = function(self, pos, blockFlag, listArea, entityExcept)
-  -- function num : 0_0 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function BoardServiceLogic:IsPosBlockByArea(pos, blockFlag, listArea, entityExcept)
+  local utilDataSvc = self._world:GetService("UtilData")
   local ret = false
   for i = 1, #listArea do
     local posWork = pos + listArea[i]
@@ -21,7 +14,7 @@ BoardServiceLogic.IsPosBlockByArea = function(self, pos, blockFlag, listArea, en
         return true
       end
       local entityTrap = utilDataSvc:GetTrapsAtPos(posWork)
-      if #entityTrap == 0 or (table.icontains)(entityTrap, entityExcept) then
+      if #entityTrap == 0 or table.icontains(entityTrap, entityExcept) then
         return true
       end
     end
@@ -29,14 +22,11 @@ BoardServiceLogic.IsPosBlockByArea = function(self, pos, blockFlag, listArea, en
   return false
 end
 
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.IsPosBlock = function(self, pos, blockFlag)
-  -- function num : 0_1
+function BoardServiceLogic:IsPosBlock(pos, blockFlag)
   if not pos then
     return false
   end
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   if not utilData:IsValidPiecePos(pos) then
     return true
   end
@@ -44,189 +34,142 @@ BoardServiceLogic.IsPosBlock = function(self, pos, blockFlag)
     return false
   end
   local pieceBlock = self:FindBlockByPos(pos)
-  if pieceBlock == nil then
+  if nil == pieceBlock then
     return true
   end
   return pieceBlock:CheckBlock(blockFlag)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.FindBlockByPos = function(self, pos)
-  -- function num : 0_2
-  local boardEntity = (self._world):GetBoardEntity()
+function BoardServiceLogic:FindBlockByPos(pos)
+  local boardEntity = self._world:GetBoardEntity()
   local cmptBoard = boardEntity:Board()
   return cmptBoard:FindBlockByPos(pos)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetBlockFlagByBlockId = function(self, blockId)
-  -- function num : 0_3 , upvalues : _ENV
-  if self._blockDict and (self._blockDict)[blockId] then
-    return (self._blockDict)[blockId]
+function BoardServiceLogic:GetBlockFlagByBlockId(blockId)
+  if self._blockDict then
+    if self._blockDict[blockId] then
+      return self._blockDict[blockId]
+    end
+  else
+    self._blockDict = {}
   end
-  self._blockDict = {}
-  local cfgv = (Cfg.cfg_block)[blockId]
+  local cfgv = Cfg.cfg_block[blockId]
   if cfgv then
     local b = 0
-    for _,value in ipairs(cfgv.BlockFlag) do
+    for _, value in ipairs(cfgv.BlockFlag) do
       b = b | GetBlockFlagByValue(value)
     end
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._blockDict)[blockId] = b
+    self._blockDict[blockId] = b
     return b
   else
-    do
-      ;
-      (Log.fatal)("### no block id in cfg_block. blockId=", blockId)
-      return 0
-    end
+    Log.fatal("### no block id in cfg_block. blockId=", blockId)
   end
+  return 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.IsPosExistNegtiveBlock = function(self, pos)
-  -- function num : 0_4
+function BoardServiceLogic:IsPosExistNegtiveBlock(pos)
   local block = self:FindBlockByPos(pos)
   return block:IsExistNegative()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.RemoveEntityBlockFlag = function(self, e, posOld)
-  -- function num : 0_5 , upvalues : _ENV
+function BoardServiceLogic:RemoveEntityBlockFlag(e, posOld)
   if e:HasPetPstID() then
-    e = (e:Pet()):GetOwnerTeamEntity()
+    e = e:Pet():GetOwnerTeamEntity()
   end
-  local bodyArea = (e:BodyArea()):GetArea()
+  local bodyArea = e:BodyArea():GetArea()
   local blockFlag = self:GetBlockFlag(e)
-  for _,area in ipairs(bodyArea) do
+  for _, area in ipairs(bodyArea) do
     self:RemovePosBlock(e, posOld + area, blockFlag)
   end
   return bodyArea, blockFlag
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.RemovePosBlock = function(self, e, pos, blockFlag)
-  -- function num : 0_6
-  local utilData = (self._world):GetService("UtilData")
+function BoardServiceLogic:RemovePosBlock(e, pos, blockFlag)
+  local utilData = self._world:GetService("UtilData")
   if not utilData:IsValidPiecePos(pos) then
-    return 
+    return
   end
   local pieceBlock = self:FindBlockByPos(pos)
-  if pieceBlock == nil then
-    return 
+  if nil == pieceBlock then
+    return
   end
   if e:HasPetPstID() then
-    e = (e:Pet()):GetOwnerTeamEntity()
+    e = e:Pet():GetOwnerTeamEntity()
   end
   pieceBlock:DelBlock(e:GetID(), blockFlag)
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
+  local boardCmpt = self._world:GetBoardEntity():Board()
   boardCmpt:RemovePieceEntity(pos, e)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.UpdateEntityBlockFlag = function(self, e, posOld, posNew)
-  -- function num : 0_7 , upvalues : _ENV
+function BoardServiceLogic:UpdateEntityBlockFlag(e, posOld, posNew)
   if e:HasPetPstID() then
-    e = (e:Pet()):GetOwnerTeamEntity()
+    e = e:Pet():GetOwnerTeamEntity()
   end
   local bodyArea, blockFlag = self:RemoveEntityBlockFlag(e, posOld)
-  for _,area in ipairs(bodyArea) do
+  for _, area in ipairs(bodyArea) do
     self:SetPosBlock(e, posNew + area, blockFlag)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.SetEntityBlockFlag = function(self, e, pos, blockFlag)
-  -- function num : 0_8 , upvalues : _ENV
+function BoardServiceLogic:SetEntityBlockFlag(e, pos, blockFlag)
   if e:HasPetPstID() then
-    e = (e:Pet()):GetOwnerTeamEntity()
+    e = e:Pet():GetOwnerTeamEntity()
   end
-  local bodyArea = (e:BodyArea()):GetArea()
-  for _,area in ipairs(bodyArea) do
+  local bodyArea = e:BodyArea():GetArea()
+  for _, area in ipairs(bodyArea) do
     self:SetPosBlock(e, pos + area, blockFlag)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.SetPosBlock = function(self, entity, pos, blockFlag)
-  -- function num : 0_9
-  local utilData = (self._world):GetService("UtilData")
+function BoardServiceLogic:SetPosBlock(entity, pos, blockFlag)
+  local utilData = self._world:GetService("UtilData")
   if not utilData:IsValidPiecePos(pos) then
-    return 
+    return
   end
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
+  local boardCmpt = self._world:GetBoardEntity():Board()
   boardCmpt:AddPieceEntity(pos, entity)
   local pieceBlock = self:FindBlockByPos(pos)
   if pieceBlock == nil then
-    return 
+    return
   end
-  if not blockFlag then
-    blockFlag = self:GetBlockFlag(entity)
-  end
+  blockFlag = blockFlag or self:GetBlockFlag(entity)
   pieceBlock:AddBlock(entity:GetID(), blockFlag)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetBlockFlag = function(self, e)
-  -- function num : 0_10 , upvalues : _ENV
+function BoardServiceLogic:GetBlockFlag(e)
   if e:HasGhost() then
-    local ownerId = (e:Ghost()):GetOwnerID()
-    local eOwner = (self._world):GetEntityByID(ownerId)
+    local ownerId = e:Ghost():GetOwnerID()
+    local eOwner = self._world:GetEntityByID(ownerId)
     if eOwner then
       return self:GetBlockFlag(eOwner)
     end
-    if e:GridLocation() then
-      do
-        (Log.fatal)("### Ghost has not owner.", (e:GridLocation()).Position, ownerId)
-        do return 0 end
-        if e:HasGuideGhost() then
-          local ownerId = (e:GuideGhost()):GetOwnerID()
-          local eOwner = (self._world):GetEntityByID(ownerId)
-          if eOwner then
-            return self:GetBlockFlag(eOwner)
-          end
-          if e:GridLocation() then
-            do
-              (Log.fatal)("### Guide Ghost has not owner.", (e:GridLocation()).Position, ownerId)
-              do return 0 end
-              if e:HasBlockFlag() then
-                return (e:BlockFlag()):GetBlockFlag()
-              end
-              ;
-              (Log.fatal)("### RemoveEntityBlockFlag new entity type.", (e:EntityType()).Value)
-              return 0
-            end
-          end
-        end
-      end
-    end
+    Log.fatal("### Ghost has not owner.", e:GridLocation() and e:GridLocation().Position, ownerId)
+    return 0
   end
+  if e:HasGuideGhost() then
+    local ownerId = e:GuideGhost():GetOwnerID()
+    local eOwner = self._world:GetEntityByID(ownerId)
+    if eOwner then
+      return self:GetBlockFlag(eOwner)
+    end
+    Log.fatal("### Guide Ghost has not owner.", e:GridLocation() and e:GridLocation().Position, ownerId)
+    return 0
+  end
+  if e:HasBlockFlag() then
+    return e:BlockFlag():GetBlockFlag()
+  end
+  Log.fatal("### RemoveEntityBlockFlag new entity type.", e:EntityType().Value)
+  return 0
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetPosListByFlag = function(self, blockFlag)
-  -- function num : 0_11
-  local boardEntity = (self._world):GetBoardEntity()
+function BoardServiceLogic:GetPosListByFlag(blockFlag)
+  local boardEntity = self._world:GetBoardEntity()
   local cBoard = boardEntity:Board()
   return cBoard:GetPosListByFlag(blockFlag)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.IsMonsterPosBlock = function(self, monsterEntity, newPos, blockFlag)
-  -- function num : 0_12
+function BoardServiceLogic:IsMonsterPosBlock(monsterEntity, newPos, blockFlag)
   if not monsterEntity or not monsterEntity:GetID() then
     return false
   end
@@ -234,5 +177,3 @@ BoardServiceLogic.IsMonsterPosBlock = function(self, monsterEntity, newPos, bloc
   local areaList = areaCmpt:GetArea()
   return self:IsPosBlockByArea(newPos, blockFlag, areaList)
 end
-
-

@@ -1,35 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/main/shop/ui_activity_n20_shop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN20Shop", UIController)
 UIActivityN20Shop = UIActivityN20Shop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN20Shop.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIActivityN20Shop:LoadDataOnEnter(TT, res, uiParams)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
   self._activityConst = UIActivityN20Const:New()
-  ;
-  (self._activityConst):LoadData(TT, res)
-  local shopComponent, shopComponentInfo = (self._activityConst):GetShopComponent()
+  self._activityConst:LoadData(TT, res)
+  local shopComponent, shopComponentInfo = self._activityConst:GetShopComponent()
   self._shopComponent = shopComponent
   self._shopCmpInfo = shopComponentInfo
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20Shop.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN20Shop:OnShow(uiParams)
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   local backBtn = btns:SpawnObject("UICommonTopButton")
   backBtn:SetData(function()
-    -- function num : 0_1_0 , upvalues : self
     self:Close()
-  end
-, nil, nil, false)
+  end, nil, nil, false)
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._countLabel = self:GetUIComponent("UILocalizationText", "Count")
   self._timeDownLabel = self:GetUIComponent("UILocalizationText", "TimeDown")
@@ -40,137 +27,87 @@ UIActivityN20Shop.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.ActivityShopBuySuccess, self.RefreshUI)
   self:InitUI()
   self:_SetSpine()
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._PlayIn, self)
+  GameGlobal.TaskManager():StartTask(self._PlayIn, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20Shop.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_2
+function UIActivityN20Shop:OnUpdate(deltaTimeMS)
   self:RefreshActivityRemainTime()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20Shop.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN20Shop:OnHide()
   self:DetachEvent(GameEventType.ActivityShopBuySuccess, self.RefreshUI)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20Shop.Close = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.N20RefreshShopBtnStatus)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.CloseCoro, self)
+function UIActivityN20Shop:Close()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.N20RefreshShopBtnStatus)
+  GameGlobal.TaskManager():StartTask(self.CloseCoro, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20Shop._SetSpine = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._spine = (UIWidgetHelper.SetSpineLoad)(self, "spine", "kalianyuhun_n20_spine_idle")
-  ;
-  (UIWidgetHelper.SetSpineAnimation)(self._spine, 0, "Story_norm", true)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._spine).skeleton).color = Color(1, 1, 1, 0)
+function UIActivityN20Shop:_SetSpine()
+  self._spine = UIWidgetHelper.SetSpineLoad(self, "spine", "kalianyuhun_n20_spine_idle")
+  UIWidgetHelper.SetSpineAnimation(self._spine, 0, "Story_norm", true)
+  self._spine.skeleton.color = Color(1, 1, 1, 0)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20Shop.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_6
+function UIActivityN20Shop:OnUpdate(deltaTimeMS)
   if self._playin and self._spine then
     local obj = self:GetUIComponent("SpineLoader", "spine")
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((self._spine).skeleton).color = obj.color
+    self._spine.skeleton.color = obj.color
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20Shop._PlayIn = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityN20Shop:_PlayIn(TT)
   self:Lock("UIActivityN20Shop_PlayIn")
   self._playin = true
-  ;
-  (self._anim):Play("uieffanim_N20Shop_in")
+  self._anim:Play("uieffanim_N20Shop_in")
   YIELD(TT, 500)
   self._playin = false
   self:UnLock("UIActivityN20Shop_PlayIn")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20Shop.CloseCoro = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityN20Shop:CloseCoro(TT)
   self:Lock("UIActivityN20Shop_CloseCoro")
-  ;
-  (self._anim):Play("uieffanim_N20Shop_out")
+  self._anim:Play("uieffanim_N20Shop_out")
   YIELD(TT, 333)
   self:CloseDialog()
   self:UnLock("UIActivityN20Shop_CloseCoro")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20Shop.InitUI = function(self)
-  -- function num : 0_9
+function UIActivityN20Shop:InitUI()
   self:RefreshGoodList(true)
   self:RefreshItemStatus()
   self:RefreshActivityRemainTime()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20Shop.RefreshUI = function(self)
-  -- function num : 0_10
+function UIActivityN20Shop:RefreshUI()
   self:RefreshGoodList(false)
   self:RefreshItemStatus()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20Shop.RefreshItemStatus = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local shopCom, _ = (self._activityConst):GetShopComponent()
+function UIActivityN20Shop:RefreshItemStatus()
+  local shopCom, _ = self._activityConst:GetShopComponent()
   local icon, count = shopCom:GetCostItemIconText()
-  ;
-  (self._iconLoader):LoadImage(icon)
-  ;
-  (self._countLabel):SetText((UIActivityN20MainController.GetItemCountStr)(count, "#545454", "#4bc5f8"))
+  self._iconLoader:LoadImage(icon)
+  self._countLabel:SetText(UIActivityN20MainController.GetItemCountStr(count, "#545454", "#4bc5f8"))
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20Shop.RefreshActivityRemainTime = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local endTime = (self._activityConst):GetShopCloseTime()
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  local seconds = (math.floor)(endTime - nowTime)
+function UIActivityN20Shop:RefreshActivityRemainTime()
+  local endTime = self._activityConst:GetShopCloseTime()
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  local seconds = math.floor(endTime - nowTime)
   if seconds < 0 then
     seconds = 0
   end
-  local timeStr = (self._activityConst):GetTimeString(seconds)
-  local timeTips = (StringTable.Get)("str_n20_shop_close_time_tips", timeStr)
-  ;
-  (self._timeDownLabel):SetText(timeTips)
+  local timeStr = self._activityConst:GetTimeString(seconds)
+  local timeTips = StringTable.Get("str_n20_shop_close_time_tips", timeStr)
+  self._timeDownLabel:SetText(timeTips)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20Shop.RefreshGoodList = function(self, playAnim)
-  -- function num : 0_13 , upvalues : _ENV
-  local shopCom, _ = (self._activityConst):GetShopComponent()
+function UIActivityN20Shop:RefreshGoodList(playAnim)
+  local shopCom, _ = self._activityConst:GetShopComponent()
   local bigList = {}
   local smallList = {}
-  for _,itemInfo in ipairs((self._shopCmpInfo).m_exchange_item_list) do
+  for _, itemInfo in ipairs(self._shopCmpInfo.m_exchange_item_list) do
     local isSpecial = itemInfo.m_is_special
     if isSpecial then
       bigList[#bigList + 1] = itemInfo
@@ -182,96 +119,71 @@ UIActivityN20Shop.RefreshGoodList = function(self, playAnim)
     self:StartTask(self.CreateBigItems, self, bigList, shopCom)
     self:StartTask(self.CreateSmallItems, self, smallList, shopCom)
   else
-    ;
-    (self._bigLoader):SpawnObjects("UIActivityN20ShopItem", #bigList)
-    local items = (self._bigLoader):GetAllSpawnList()
+    self._bigLoader:SpawnObjects("UIActivityN20ShopItem", #bigList)
+    local items = self._bigLoader:GetAllSpawnList()
     for i = 1, #items do
-      (items[i]):Refresh(bigList[i], shopCom, function(itemInfo)
-    -- function num : 0_13_0 , upvalues : self
-    self:StartTask(self.ExchangeItem, self, itemInfo)
-  end
-)
+      items[i]:Refresh(bigList[i], shopCom, function(itemInfo)
+        self:StartTask(self.ExchangeItem, self, itemInfo)
+      end)
     end
-    ;
-    (self._smallLoader):SpawnObjects("UIActivityN20ShopItem", #smallList)
-    local items = (self._smallLoader):GetAllSpawnList()
+    self._smallLoader:SpawnObjects("UIActivityN20ShopItem", #smallList)
+    local items = self._smallLoader:GetAllSpawnList()
     for i = 1, #items do
-      (items[i]):Refresh(smallList[i], shopCom, function(itemInfo)
-    -- function num : 0_13_1 , upvalues : self
-    self:StartTask(self.ExchangeItem, self, itemInfo)
-  end
-)
+      items[i]:Refresh(smallList[i], shopCom, function(itemInfo)
+        self:StartTask(self.ExchangeItem, self, itemInfo)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20Shop.CreateBigItems = function(self, TT, bigList, shopCom)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityN20Shop:CreateBigItems(TT, bigList, shopCom)
   self:Lock("UIActivityN20Shop_CreateBigItems")
-  ;
-  (self._bigLoader):SpawnObjects("UIActivityN20ShopItem", #bigList)
-  local items = (self._bigLoader):GetAllSpawnList()
+  self._bigLoader:SpawnObjects("UIActivityN20ShopItem", #bigList)
+  local items = self._bigLoader:GetAllSpawnList()
   for i = 1, #items do
-    (items[i]):SetVisible(false)
+    items[i]:SetVisible(false)
   end
   for i = 1, #items do
-    (items[i]):Refresh(bigList[i], shopCom, function(itemInfo)
-    -- function num : 0_14_0 , upvalues : self
-    self:StartTask(self.ExchangeItem, self, itemInfo)
-  end
-)
+    items[i]:Refresh(bigList[i], shopCom, function(itemInfo)
+      self:StartTask(self.ExchangeItem, self, itemInfo)
+    end)
     YIELD(TT, 100)
   end
   self:UnLock("UIActivityN20Shop_CreateBigItems")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20Shop.CreateSmallItems = function(self, TT, smallList, shopCom)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityN20Shop:CreateSmallItems(TT, smallList, shopCom)
   self:Lock("UIActivityN20Shop_CreateSmallItems")
-  ;
-  (self._smallLoader):SpawnObjects("UIActivityN20ShopItem", #smallList)
-  local items = (self._smallLoader):GetAllSpawnList()
+  self._smallLoader:SpawnObjects("UIActivityN20ShopItem", #smallList)
+  local items = self._smallLoader:GetAllSpawnList()
   for i = 1, #items do
-    (items[i]):SetVisible(false)
+    items[i]:SetVisible(false)
   end
   for i = 1, #items do
-    (items[i]):Refresh(smallList[i], shopCom, function(itemInfo)
-    -- function num : 0_15_0 , upvalues : self
-    self:StartTask(self.ExchangeItem, self, itemInfo)
-  end
-)
+    items[i]:Refresh(smallList[i], shopCom, function(itemInfo)
+      self:StartTask(self.ExchangeItem, self, itemInfo)
+    end)
     YIELD(TT, 100)
   end
   self:UnLock("UIActivityN20Shop_CreateSmallItems")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20Shop.ExchangeItem = function(self, TT, itemInfo)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityN20Shop:ExchangeItem(TT, itemInfo)
   local uiItemData = DCampaignShopItemBase:New()
   uiItemData:Refresh(itemInfo, self._shopComponent)
   local useNormalDlg = false
-  do
-    if not uiItemData:IsUnLimit() then
-      local remainCount = uiItemData:GetRemainCount()
-      if remainCount <= 0 then
-        return 
-      end
-      if remainCount == 1 then
-        useNormalDlg = true
-      end
+  if not uiItemData:IsUnLimit() then
+    local remainCount = uiItemData:GetRemainCount()
+    if remainCount <= 0 then
+      return
     end
-    if useNormalDlg then
-      self:ShowDialog("UICampaignShopConfirmNormalController", uiItemData)
-    else
-      self:ShowDialog("UICampaignShopConfirmDetailController", uiItemData)
+    if remainCount == 1 then
+      useNormalDlg = true
     end
   end
+  if useNormalDlg then
+    self:ShowDialog("UICampaignShopConfirmNormalController", uiItemData)
+  else
+    self:ShowDialog("UICampaignShopConfirmDetailController", uiItemData)
+  end
 end
-
-

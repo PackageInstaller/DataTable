@@ -1,75 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/lottery/ui_n27_lottery_award.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN27LotteryAward", UICustomWidget)
 UIN27LotteryAward = UIN27LotteryAward
 _class("UIN27LotteryAwardCell", UICustomWidget)
 UIN27LotteryAwardCell = UIN27LotteryAwardCell
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN27LotteryAward.Constructor = function(self)
-  -- function num : 0_0
+function UIN27LotteryAward:Constructor()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryAward.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN27LotteryAward:OnShow(uiParams)
   self._uiBig = self:GetUIComponent("UISelectObjectPath", "uiBig")
   self._uiNormal = self:GetUIComponent("UISelectObjectPath", "uiNormal")
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryAward.OnHide = function(self)
-  -- function num : 0_2
+function UIN27LotteryAward:OnHide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryAward.Flush = function(self, parent, dataItem)
-  -- function num : 0_3
+function UIN27LotteryAward:Flush(parent, dataItem)
   self._parent = parent
   self._dataItem = dataItem
   if self._uiBigSpawn ~= nil then
-    (((self._uiBigSpawn):View()).gameObject):SetActive(false)
+    self._uiBigSpawn:View().gameObject:SetActive(false)
   end
   if self._uiNormalSpawn ~= nil then
-    (((self._uiNormalSpawn):View()).gameObject):SetActive(false)
+    self._uiNormalSpawn:View().gameObject:SetActive(false)
   end
-  if (self._dataItem).m_is_big_reward then
-    self:ResetCellSize((((self._uiBig).dynamicInfoOfEngine).transform).sizeDelta)
-    self._uiBigSpawn = (self._uiBig):SpawnObject("UIN27LotteryAwardCell")
-    ;
-    (((self._uiBigSpawn):View()).gameObject):SetActive(true)
+  if self._dataItem.m_is_big_reward then
+    self:ResetCellSize(self._uiBig.dynamicInfoOfEngine.transform.sizeDelta)
+    self._uiBigSpawn = self._uiBig:SpawnObject("UIN27LotteryAwardCell")
+    self._uiBigSpawn:View().gameObject:SetActive(true)
   else
-    self:ResetCellSize((((self._uiNormal).dynamicInfoOfEngine).transform).sizeDelta)
-    self._uiNormalSpawn = (self._uiNormal):SpawnObject("UIN27LotteryAwardCell")
-    ;
-    (((self._uiNormalSpawn):View()).gameObject):SetActive(true)
+    self:ResetCellSize(self._uiNormal.dynamicInfoOfEngine.transform.sizeDelta)
+    self._uiNormalSpawn = self._uiNormal:SpawnObject("UIN27LotteryAwardCell")
+    self._uiNormalSpawn:View().gameObject:SetActive(true)
   end
   self:FlushSpawn()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryAward.FlushSpawn = function(self)
-  -- function num : 0_4
+function UIN27LotteryAward:FlushSpawn()
   if self._uiBigSpawn ~= nil then
-    (self._uiBigSpawn):Flush(self._parent, self._dataItem)
+    self._uiBigSpawn:Flush(self._parent, self._dataItem)
   end
   if self._uiNormalSpawn ~= nil then
-    (self._uiNormalSpawn):Flush(self._parent, self._dataItem)
+    self._uiNormalSpawn:Flush(self._parent, self._dataItem)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryAward.ResetCellSize = function(self, cellSize)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN27LotteryAward:ResetCellSize(cellSize)
   local view = self:View()
   local rt = view.transform
   rt.pivot = Vector2.one * 0.5
@@ -80,41 +56,28 @@ UIN27LotteryAward.ResetCellSize = function(self, cellSize)
   rt.anchoredPosition = Vector2.zero
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryAward.PlayAnimation = function(self, animName)
-  -- function num : 0_6
-  (self._animation):Play(animName)
+function UIN27LotteryAward:PlayAnimation(animName)
+  self._animation:Play(animName)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryAward.SetActive = function(self, inActive)
-  -- function num : 0_7
+function UIN27LotteryAward:SetActive(inActive)
   if self._uiBigSpawn ~= nil then
-    (((self._uiBigSpawn):View()).gameObject):SetActive(false)
+    self._uiBigSpawn:View().gameObject:SetActive(false)
   end
   if self._uiNormalSpawn ~= nil then
-    (((self._uiNormalSpawn):View()).gameObject):SetActive(false)
+    self._uiNormalSpawn:View().gameObject:SetActive(false)
   end
-  if (self._dataItem).m_is_big_reward then
-    (((self._uiBigSpawn):View()).gameObject):SetActive(inActive)
+  if self._dataItem.m_is_big_reward then
+    self._uiBigSpawn:View().gameObject:SetActive(inActive)
   else
-    ;
-    (((self._uiNormalSpawn):View()).gameObject):SetActive(inActive)
+    self._uiNormalSpawn:View().gameObject:SetActive(inActive)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryAwardCell.Constructor = function(self)
-  -- function num : 0_8
+function UIN27LotteryAwardCell:Constructor()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryAwardCell.OnShow = function(self, uiParams)
-  -- function num : 0_9
+function UIN27LotteryAwardCell:OnShow(uiParams)
   self._itemIcon = self:GetUIComponent("RawImageLoader", "itemIcon")
   self._itemNumText = self:GetUIComponent("UILocalizationText", "itemNumText")
   self._restNumText = self:GetUIComponent("UILocalizationText", "restNumText")
@@ -122,46 +85,27 @@ UIN27LotteryAwardCell.OnShow = function(self, uiParams)
   self._imgStar = self:GetUIComponent("RectTransform", "imgStar")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryAwardCell.OnHide = function(self)
-  -- function num : 0_10
+function UIN27LotteryAwardCell:OnHide()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryAwardCell.Flush = function(self, parent, dataItem)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN27LotteryAwardCell:Flush(parent, dataItem)
   self._parent = parent
   self._dataItem = dataItem
-  local itemCfg = (Cfg.cfg_item)[(self._dataItem).m_item_id]
-  do
-    if itemCfg then
-      local res = itemCfg.Icon
-      ;
-      (self._itemIcon):LoadImage(res)
-    end
-    ;
-    (self._itemNumText):SetText((string.format)("x%d", (self._dataItem).m_count))
-    local remain = (self._dataItem).m_lottery_count
-    local total = (self._dataItem).m_lottery_limit_count
-    ;
-    (self._restNumText):SetText((string.format)("%d/%d", remain, total))
-    ;
-    ((self._imgEmptyMask).gameObject):SetActive((self._dataItem).m_lottery_count == 0)
-    ;
-    ((self._imgStar).gameObject):SetActive(not (self._dataItem).m_is_big_reward or (self._dataItem).m_lottery_count > 0)
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  local itemCfg = Cfg.cfg_item[self._dataItem.m_item_id]
+  if itemCfg then
+    local res = itemCfg.Icon
+    self._itemIcon:LoadImage(res)
   end
+  self._itemNumText:SetText(string.format("x%d", self._dataItem.m_count))
+  local remain = self._dataItem.m_lottery_count
+  local total = self._dataItem.m_lottery_limit_count
+  self._restNumText:SetText(string.format("%d/%d", remain, total))
+  self._imgEmptyMask.gameObject:SetActive(self._dataItem.m_lottery_count == 0)
+  self._imgStar.gameObject:SetActive(self._dataItem.m_is_big_reward and self._dataItem.m_lottery_count > 0)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryAwardCell.ButtonOnClick = function(self, go)
-  -- function num : 0_12
+function UIN27LotteryAwardCell:ButtonOnClick(go)
   if self._parent ~= nil then
-    (self._parent):ShowAwardTips(self._dataItem, (go.transform).position)
+    self._parent:ShowAwardTips(self._dataItem, go.transform.position)
   end
 end
-
-

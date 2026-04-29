@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_pet_larrey.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_PetLarrey", PickUpPolicy_Base)
 PickUpPolicy_PetLarrey = PickUpPolicy_PetLarrey
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_PetLarrey.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PickUpPolicy_PetLarrey:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
   local activeSkillID = calcParam.activeSkillID
   local policyParam = calcParam.policyParam
@@ -17,62 +10,50 @@ PickUpPolicy_PetLarrey.CalcAutoFightPickUpPolicy = function(self, calcParam)
   local pickPosList = {}
   local attackPosList = {}
   local targetIdList = {}
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local validPosIdxList, validPosList = self:_CalcPickUpValidGridList(petEntity, activeSkillID)
   local env = self:_GetPickUpPolicyEnv()
   local posList = {}
-  for _,pos in ipairs(validPosList) do
+  for _, pos in ipairs(validPosList) do
     local posIdx = self:_Pos2Index(pos)
-    local color = (env.BoardPosPieces)[posIdx]
+    local color = env.BoardPosPieces[posIdx]
     if color and color ~= PieceType.Red and color ~= PieceType.Any then
       if not posList[pos.x] then
         posList[pos.x] = {}
       end
-      ;
-      (table.insert)(posList[pos.x], pos)
+      table.insert(posList[pos.x], pos)
     end
   end
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local boardMaxX = boardServiceLogic:GetCurBoardMaxX()
   for i = 1, boardMaxX do
-    if not posList[casterPos.x - i] then
-      local leftPosList = {}
-    end
-    if not posList[casterPos.x + i] then
-      local rightPosList = {}
-    end
-    if (table.count)(rightPosList) < (table.count)(leftPosList) then
+    local leftPosList = posList[casterPos.x - i] or {}
+    local rightPosList = posList[casterPos.x + i] or {}
+    if table.count(leftPosList) > table.count(rightPosList) then
       attackPosList = leftPosList
-    else
-      if (table.count)(leftPosList) < (table.count)(rightPosList) then
-        attackPosList = rightPosList
-      end
+    elseif table.count(leftPosList) < table.count(rightPosList) then
+      attackPosList = rightPosList
     end
-    if (table.count)(attackPosList) > 0 then
-      (table.sort)(attackPosList, function(a, b)
-    -- function num : 0_0_0 , upvalues : _ENV, casterPos
-    local disA = (Vector2.Distance)(casterPos, a)
-    local disB = (Vector2.Distance)(casterPos, b)
-    do return disA < disB end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-      pickPosList = {attackPosList[1]}
+    if table.count(attackPosList) > 0 then
+      table.sort(attackPosList, function(a, b)
+        local disA = Vector2.Distance(casterPos, a)
+        local disB = Vector2.Distance(casterPos, b)
+        return disA < disB
+      end)
+      pickPosList = {
+        attackPosList[1]
+      }
       break
     end
   end
-  do
-    do
-      if (table.count)(attackPosList) == 0 then
-        local curPosList = posList[casterPos.x]
-        if curPosList and (table.count)(curPosList) > 0 then
-          attackPosList = curPosList
-          pickPosList = {attackPosList[1]}
-        end
-      end
-      return pickPosList, attackPosList, targetIdList
+  if table.count(attackPosList) == 0 then
+    local curPosList = posList[casterPos.x]
+    if curPosList and table.count(curPosList) > 0 then
+      attackPosList = curPosList
+      pickPosList = {
+        attackPosList[1]
+      }
     end
   end
+  return pickPosList, attackPosList, targetIdList
 end
-
-

@@ -1,32 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/theme/ui_s4_quest_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4QuestBtn", UICustomWidget)
 UIS4QuestBtn = UIS4QuestBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4QuestBtn.OnShow = function(self)
-  -- function num : 0_0
+function UIS4QuestBtn:OnShow()
   self._constBtnName = self:GetName()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4QuestBtn.OnHide = function(self)
-  -- function num : 0_1
+function UIS4QuestBtn:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4QuestBtn.SetData = function(self, seasonId, component, playAnim)
-  -- function num : 0_2 , upvalues : _ENV
+function UIS4QuestBtn:SetData(seasonId, component, playAnim)
   self._seasonId = seasonId
   self._component = component
-  if component then
-    local isOpen = component:ComponentIsOpen()
-  end
+  local isOpen = component and component:ComponentIsOpen()
   self._state = isOpen and 1 or 2
   self:_SetState(self._state)
   local cur, total = self:_Calc(component)
@@ -34,52 +19,34 @@ UIS4QuestBtn.SetData = function(self, seasonId, component, playAnim)
   self:_SetFin(cur, total)
   self:_CheckPoint()
   if playAnim then
-    (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", "_anim", "uieffanim_UIS4_QuestBtn_in", 500, 333)
+    UIWidgetHelper.PlayAnimationInSequence(self, "_anim", "_anim", "uieffanim_UIS4_QuestBtn_in", 500, 333)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4QuestBtn._SetState = function(self, state)
-  -- function num : 0_3
-  (self:GetGameObject("_over")):SetActive(state == 2)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIS4QuestBtn:_SetState(state)
+  self:GetGameObject("_over"):SetActive(state == 2)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4QuestBtn._SetNum = function(self, cur, total)
-  -- function num : 0_4 , upvalues : _ENV
+function UIS4QuestBtn:_SetNum(cur, total)
   local show = total ~= 0
-  ;
-  (self:GetGameObject("_imgNum")):SetActive(show)
-  local str = (UIActivityHelper.GetColorText)("#FFFFFF", cur, "#F5B62F", "/" .. total)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtNum", str)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self:GetGameObject("_imgNum"):SetActive(show)
+  local str = UIActivityHelper.GetColorText("#FFFFFF", cur, "#F5B62F", "/" .. total)
+  UIWidgetHelper.SetLocalizationText(self, "_txtNum", str)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4QuestBtn._SetFin = function(self, cur, total)
-  -- function num : 0_5
+function UIS4QuestBtn:_SetFin(cur, total)
   local show = cur == total and total ~= 0
-  ;
-  (self:GetGameObject("_fin")):SetActive(show)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self:GetGameObject("_fin"):SetActive(show)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4QuestBtn._Calc = function(self, component)
-  -- function num : 0_6 , upvalues : _ENV
+function UIS4QuestBtn:_Calc(component)
   if component == nil then
     return 0, 0
   end
-  local questList = (UIS1Helper.GetQuestInfo_BySeasonFilter)(component)
+  local questList = UIS1Helper.GetQuestInfo_BySeasonFilter(component)
   local questStatus = component:GetCampaignQuestStatus(questList)
-  local cur, total = 0, (table.count)(questStatus)
-  for _,v in pairs(questStatus) do
+  local cur, total = 0, table.count(questStatus)
+  for _, v in pairs(questStatus) do
     if v == CampaignQuestStatus.CQS_Taken then
       cur = cur + 1
     end
@@ -87,53 +54,34 @@ UIS4QuestBtn._Calc = function(self, component)
   return cur, total
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4QuestBtn._CalcNew = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  if self._component then
-    local isOpen = (self._component):ComponentIsOpen()
-  end
-  local isNew = not (UISeasonLocalDBHelper.SeasonBtn_Has)(self._constBtnName, "New")
-  return not isOpen or isNew
+function UIS4QuestBtn:_CalcNew()
+  local isOpen = self._component and self._component:ComponentIsOpen()
+  local isNew = not UISeasonLocalDBHelper.SeasonBtn_Has(self._constBtnName, "New")
+  return isOpen and isNew
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4QuestBtn._CalcRed = function(self)
-  -- function num : 0_8
-  local isRed = self._component and (self._component):HaveRedPoint() or false
+function UIS4QuestBtn:_CalcRed()
+  local isRed = self._component and self._component:HaveRedPoint() or false
   return isRed
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4QuestBtn._CheckPoint = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIS4QuestBtn:_CheckPoint()
   local new = self:_CalcNew()
   local red = self:_CalcRed()
-  ;
-  (UIWidgetHelper.SetNewAndReds)(self, new, red, "_new", "_red")
+  UIWidgetHelper.SetNewAndReds(self, new, red, "_new", "_red")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4QuestBtn.BtnOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.info)("UIS4QuestBtn:BtnOnClick")
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+function UIS4QuestBtn:BtnOnClick()
+  Log.info("UIS4QuestBtn:BtnOnClick")
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
   if seasonModule:CheckSeasonClose_ShowClientError(self._seasonId) then
-    return 
+    return
   end
   if self._state == 2 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_s1_main_btn_over"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_season_s1_main_btn_over"))
+    return
   end
-  ;
-  (UISeasonLocalDBHelper.SeasonBtn_Set)(self._constBtnName, "New")
+  UISeasonLocalDBHelper.SeasonBtn_Set(self._constBtnName, "New")
   self:_CheckPoint()
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UISeasonQuestController")
+  GameGlobal.UIStateManager():ShowDialog("UISeasonQuestController")
 end
-
-

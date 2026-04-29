@@ -1,40 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/map/s_maze_map_room_resource.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("s_maze_map_room_base")
 _class("SMazeMapRoom_Resource", SMazeMapRoomBase)
 SMazeMapRoom_Resource = SMazeMapRoom_Resource
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeMapRoom_Resource.Constructor = function(self)
-  -- function num : 0_0
+function SMazeMapRoom_Resource:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoom_Resource.OnTrigger = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SMazeMapRoom_Resource:OnTrigger()
   self:BindEvent(GameEventType.OnSeasonMazeRoomOperationFinish, self.OnTriggerComplete)
   self:ShowDialog("UISeasonMazeRoomResources", self:NodeID())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoom_Resource.OnTriggerComplete = function(self, asset)
-  -- function num : 0_2 , upvalues : _ENV
+function SMazeMapRoom_Resource:OnTriggerComplete(asset)
   if asset then
     if asset:Type() == SeasonMazeEffectType.SMET_Pro then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUISeasonMazeAttChanged, asset:SubParam())
-    else
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUISeasonMazeAttChanged, asset:SubParam())
+    elseif asset:Type() == SeasonMazeEffectType.SMET_Bead then
     end
-    if asset:Type() == SeasonMazeEffectType.SMET_Bead then
-      self:SetAwardAssets({asset})
-      self:UnBindEvent(GameEventType.OnSeasonMazeRoomOperationFinish)
-      self:Finish()
-    end
+    self:SetAwardAssets({asset})
   end
+  self:UnBindEvent(GameEventType.OnSeasonMazeRoomOperationFinish)
+  self:Finish()
 end
-
-

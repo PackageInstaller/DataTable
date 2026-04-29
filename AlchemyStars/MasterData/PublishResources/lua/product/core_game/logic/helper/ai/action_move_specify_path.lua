@@ -1,43 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_specify_path.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_move_base")
 _class("ActionMoveSpecifyPath", ActionMoveBase)
 ActionMoveSpecifyPath = ActionMoveSpecifyPath
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMoveSpecifyPath.Constructor = function(self)
-  -- function num : 0_0
+function ActionMoveSpecifyPath:Constructor()
   self._index = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveSpecifyPath.Reset = function(self)
-  -- function num : 0_1
+function ActionMoveSpecifyPath:Reset()
   self._index = 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveSpecifyPath.FindNewTargetPos = function(self)
-  -- function num : 0_2
-  local path = ((self.m_entityOwn):AI()):GetAIMovePath_Test()
+function ActionMoveSpecifyPath:FindNewTargetPos()
+  local path = self.m_entityOwn:AI():GetAIMovePath_Test()
   return path[#path]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveSpecifyPath.FindNewWalkPos = function(self)
-  -- function num : 0_3
+function ActionMoveSpecifyPath:FindNewWalkPos()
   self._index = self._index + 1
-  local path = ((self.m_entityOwn):AI()):GetAIMovePath_Test()
+  local path = self.m_entityOwn:AI():GetAIMovePath_Test()
   if self._index <= #path then
     return path[self._index]
   end
-  return (self.m_entityOwn):GetGridPosition()
+  return self.m_entityOwn:GetGridPosition()
 end
-
-

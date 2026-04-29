@@ -1,61 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_deer_active_skill_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayDeerActiveSkillEffectInstruction", BaseInstruction)
 PlayDeerActiveSkillEffectInstruction = PlayDeerActiveSkillEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayDeerActiveSkillEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayDeerActiveSkillEffectInstruction:Constructor(paramList)
   self._effectID = 2927
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDeerActiveSkillEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayDeerActiveSkillEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local targetGridPos = phaseContext:GetCurGridPos()
   local renderPickUpComponent = casterEntity:RenderPickUpComponent()
-  do
-    if renderPickUpComponent then
-      local pickUpGridArray = renderPickUpComponent:GetAllValidPickUpGridPos()
-      targetGridPos = pickUpGridArray[1]
-    end
-    local world = casterEntity:GetOwnerWorld()
-    local effectService = world:GetService("Effect")
-    local effectEntity = effectService:CreatePositionEffect(self._effectID, (Vector3.New)(0, 0, 1))
-    local csgo = (effectEntity:View()):GetGameObject()
-    local grass = (GameObjectHelper.FindChild)(csgo.transform, "caodi")
-    if not grass or tostring(grass) == "null" then
-      return 
-    end
-    local csRenderer = (grass.gameObject):GetComponent(typeof(UnityEngine.MeshRenderer))
-    if not csRenderer then
-      return 
-    end
-    local boardServiceRender = world:GetService("BoardRender")
-    local worldPos = boardServiceRender:GridPos2RenderPos(targetGridPos)
-    local v4 = Vector4.zero
-    v4.x = worldPos.x
-    v4.y = worldPos.y
-    v4.z = worldPos.z
-    ;
-    (csRenderer.sharedMaterial):SetVector("_Location_xyz", v4)
+  if renderPickUpComponent then
+    local pickUpGridArray = renderPickUpComponent:GetAllValidPickUpGridPos()
+    targetGridPos = pickUpGridArray[1]
   end
+  local world = casterEntity:GetOwnerWorld()
+  local effectService = world:GetService("Effect")
+  local effectEntity = effectService:CreatePositionEffect(self._effectID, Vector3.New(0, 0, 1))
+  local csgo = effectEntity:View():GetGameObject()
+  local grass = GameObjectHelper.FindChild(csgo.transform, "caodi")
+  if not grass or tostring(grass) == "null" then
+    return
+  end
+  local csRenderer = grass.gameObject:GetComponent(typeof(UnityEngine.MeshRenderer))
+  if not csRenderer then
+    return
+  end
+  local boardServiceRender = world:GetService("BoardRender")
+  local worldPos = boardServiceRender:GridPos2RenderPos(targetGridPos)
+  local v4 = Vector4.zero
+  v4.x = worldPos.x
+  v4.y = worldPos.y
+  v4.z = worldPos.z
+  csRenderer.sharedMaterial:SetVector("_Location_xyz", v4)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDeerActiveSkillEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayDeerActiveSkillEffectInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

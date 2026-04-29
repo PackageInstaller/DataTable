@@ -1,102 +1,75 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/once_mission/ui_season_once_mission_stage_condition.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonOnceMissionStageCondition", UICustomWidget)
 UISeasonOnceMissionStageCondition = UISeasonOnceMissionStageCondition
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonOnceMissionStageCondition.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonOnceMissionStageCondition:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionStageCondition.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonOnceMissionStageCondition:InitWidget()
   self._conditionsGo = self:GetGameObject("conditionGo")
   self._conditionNo = self:GetGameObject("conditionNo")
   self.conditionsPool = self:GetUIComponent("UISelectObjectPath", "conditions")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionStageCondition.SetData = function(self, missionID, onceMissionData, cmpt)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonOnceMissionStageCondition:SetData(missionID, onceMissionData, cmpt)
   self._missionID = missionID
   self._onceMissionData = onceMissionData
   self._cmpt = cmpt
-  local cmpInfo = (self._cmpt):GetComponentInfo()
-  self._missionFinishInfo = (cmpInfo.m_pass_mission_info)[missionID]
+  local cmpInfo = self._cmpt:GetComponentInfo()
+  self._missionFinishInfo = cmpInfo.m_pass_mission_info[missionID]
   self._module = self:GetModule(MissionModule)
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   self:Flush(missionCfg)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionStageCondition.Flush = function(self, missionCfg)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonOnceMissionStageCondition:Flush(missionCfg)
   local threeStarConditions = {}
   if missionCfg.IgnoreThreeStar == 0 then
-    local ids = {missionCfg.ThreeStarCondition1, missionCfg.ThreeStarCondition2, missionCfg.ThreeStarCondition3}
-    for i,v in ipairs(ids) do
+    local ids = {
+      missionCfg.ThreeStarCondition1,
+      missionCfg.ThreeStarCondition2,
+      missionCfg.ThreeStarCondition3
+    }
+    for i, v in ipairs(ids) do
       local cond = StageCondition:New()
       cond:Init(i, v)
-      ;
-      (table.insert)(threeStarConditions, cond)
+      table.insert(threeStarConditions, cond)
     end
     if self._missionFinishInfo then
-      local starCount, completeStarList = (self._module):ParseStarInfo((self._missionFinishInfo).star)
+      local starCount, completeStarList = self._module:ParseStarInfo(self._missionFinishInfo.star)
       self:UpdateCondition(threeStarConditions, completeStarList)
     end
   end
-  do
-    if not missionCfg.ThreeStarCondition3 then
-      (self._conditionsGo):SetActive(false)
-      ;
-      (self._conditionNo):SetActive(true)
-    else
-      if #threeStarConditions > 0 then
-        (self._conditionsGo):SetActive(true)
-        ;
-        (self._conditionNo):SetActive(false)
-        ;
-        (self.conditionsPool):SpawnObjects("UIConditionItem", #threeStarConditions)
-        self._conditionWidgets = (self.conditionsPool):GetAllSpawnList()
-        for i,v in ipairs(self._conditionWidgets) do
-          v:Flush(threeStarConditions[i], i)
-        end
-      else
-        do
-          ;
-          (self._conditionsGo):SetActive(false)
-          ;
-          (self._conditionNo):SetActive(true)
-        end
-      end
+  if not missionCfg.ThreeStarCondition3 then
+    self._conditionsGo:SetActive(false)
+    self._conditionNo:SetActive(true)
+  elseif 0 < #threeStarConditions then
+    self._conditionsGo:SetActive(true)
+    self._conditionNo:SetActive(false)
+    self.conditionsPool:SpawnObjects("UIConditionItem", #threeStarConditions)
+    self._conditionWidgets = self.conditionsPool:GetAllSpawnList()
+    for i, v in ipairs(self._conditionWidgets) do
+      v:Flush(threeStarConditions[i], i)
     end
+  else
+    self._conditionsGo:SetActive(false)
+    self._conditionNo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionStageCondition.UpdateCondition = function(self, three_star_condition, conditions)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonOnceMissionStageCondition:UpdateCondition(three_star_condition, conditions)
   local l_cur_star_num = 0
-  for index,value in ipairs(three_star_condition) do
+  for index, value in ipairs(three_star_condition) do
     if value.satisfy == true then
       l_cur_star_num = l_cur_star_num + 1
     end
   end
   local l_finish_star_num = #conditions
-  for index,value in ipairs(three_star_condition) do
+  for index, value in ipairs(three_star_condition) do
     if l_finish_star_num == l_cur_star_num then
       value:FlushSatisfy(false)
     end
-    for i,v in ipairs(conditions) do
+    for i, v in ipairs(conditions) do
       if v == index then
         value:FlushSatisfy(true)
       end
@@ -104,11 +77,6 @@ UISeasonOnceMissionStageCondition.UpdateCondition = function(self, three_star_co
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionStageCondition.ThreeStarTipsBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UISeasonOnceMissionStageCondition:ThreeStarTipsBtnOnClick(go)
   self:ShowDialog("UIThreeStarTips")
 end
-
-

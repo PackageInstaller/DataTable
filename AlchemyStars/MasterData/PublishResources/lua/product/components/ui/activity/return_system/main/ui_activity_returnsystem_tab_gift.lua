@@ -1,60 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/main/ui_activity_returnsystem_tab_gift.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReturnSystemTabGift", UICustomWidget)
 UIActivityReturnSystemTabGift = UIActivityReturnSystemTabGift
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReturnSystemTabGift.SetData = function(self, campaign, remainingTimeCallback, tipsCallback)
-  -- function num : 0_0
+function UIActivityReturnSystemTabGift:SetData(campaign, remainingTimeCallback, tipsCallback)
   self._campaign = campaign
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabGift.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityReturnSystemTabGift:OnShow(uiParams)
   self._isOpen = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabGift.OnHide = function(self)
-  -- function num : 0_2
+function UIActivityReturnSystemTabGift:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabGift.Refresh = function(self)
-  -- function num : 0_3
+function UIActivityReturnSystemTabGift:Refresh()
   if self._isOpen then
     self:_SetGiftBoardGroup()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabGift._SetGiftBoardGroup = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local component = (UIActivityReturnSystemHelper.GetComponentByTabName)(self._campaign, "gift", 1)
+function UIActivityReturnSystemTabGift:_SetGiftBoardGroup()
+  local component = UIActivityReturnSystemHelper.GetComponentByTabName(self._campaign, "gift", 1)
   local giftList = component:GetAllGiftIDByType(CampaignGiftType.ECGT_BACK)
-  local giftCount = (table.count)(giftList)
-  ;
-  (Log.debug)("UIActivityReturnSystemTabGift:_SetGiftBoardGroup() giftCount = ", giftCount)
-  giftCount = (math.max)(giftCount, 3)
+  local giftCount = table.count(giftList)
+  Log.debug("UIActivityReturnSystemTabGift:_SetGiftBoardGroup() giftCount = ", giftCount)
+  giftCount = math.max(giftCount, 3)
   local sop = self:GetUIComponent("UISelectObjectPath", "GiftBoardGroup")
   sop:SpawnObjects("UIActivityReturnSystemBoard", giftCount)
   self._giftBoard = sop:GetAllSpawnList()
-  for i,v in ipairs(self._giftBoard) do
+  for i, v in ipairs(self._giftBoard) do
     v:SetData(self._campaign, component, giftList[i], function()
-    -- function num : 0_4_0 , upvalues : self
-    self:Refresh()
-  end
-)
+      self:Refresh()
+    end)
   end
 end
-
-

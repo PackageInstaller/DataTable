@@ -1,17 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/extra_mission/stn_extra_mission_request_summary.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("ExtraMission_RequestSummary", Common_AsyncBase)
 ExtraMission_RequestSummary = ExtraMission_RequestSummary
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ExtraMission_RequestSummary.TaskFunc = function(self, TT, outResult)
-  -- function num : 0_0 , upvalues : _ENV
-  local extModule = (GameGlobal.GetModule)(ExtMissionModule)
+function ExtraMission_RequestSummary:TaskFunc(TT, outResult)
+  local extModule = GameGlobal.GetModule(ExtMissionModule)
   extModule:Request_GetSummary_All(TT)
 end
-
-

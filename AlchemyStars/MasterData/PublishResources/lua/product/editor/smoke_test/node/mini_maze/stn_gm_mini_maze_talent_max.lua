@@ -1,19 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/mini_maze/stn_gm_mini_maze_talent_max.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("GM_MiniMazeTalentMax", Common_AsyncBase)
 GM_MiniMazeTalentMax = GM_MiniMazeTalentMax
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GM_MiniMazeTalentMax.TaskFunc = function(self, TT, status)
-  -- function num : 0_0 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  local campaignID, _, __ = campaignModule:ParseCfgComponentID(((self._manager):GetMissionRunData()):GetComponentConfigID())
-  ;
-  (self._manager):AsyncGM_MiniMazeTalentMax(TT, status, campaignID)
+function GM_MiniMazeTalentMax:TaskFunc(TT, status)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
+  local campaignID, _, __ = campaignModule:ParseCfgComponentID(self._manager:GetMissionRunData():GetComponentConfigID())
+  self._manager:AsyncGM_MiniMazeTalentMax(TT, status, campaignID)
 end
-
-

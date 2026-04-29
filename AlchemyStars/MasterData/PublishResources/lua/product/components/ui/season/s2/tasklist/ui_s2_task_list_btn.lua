@@ -1,89 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s2/tasklist/ui_s2_task_list_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS2TaskListBtn", UICustomWidget)
 UIS2TaskListBtn = UIS2TaskListBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS2TaskListBtn.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._seasonTaskModule = ((GameGlobal.GameLogic)()):GetModule(SeasonTaskModule)
-  self._uiModule = (GameGlobal.GetUIModule)(SeasonModule)
-  self._seasonManager = (self._uiModule):SeasonManager()
+function UIS2TaskListBtn:OnShow(uiParams)
+  self._seasonTaskModule = GameGlobal.GameLogic():GetModule(SeasonTaskModule)
+  self._uiModule = GameGlobal.GetUIModule(SeasonModule)
+  self._seasonManager = self._uiModule:SeasonManager()
   self:_Refresh()
   self:_AttachEvent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2TaskListBtn.OnHide = function(self)
-  -- function num : 0_1
+function UIS2TaskListBtn:OnHide()
   self:_DetachEvent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2TaskListBtn._Refresh = function(self)
-  -- function num : 0_2
+function UIS2TaskListBtn:_Refresh()
   if not self.view then
-    return 
+    return
   end
-  local node = (self._seasonTaskModule):GetCurNode()
-  local isShow = (self._seasonTaskModule):TaskListShow()
-  ;
-  (self:GetGameObject()):SetActive(isShow)
-  local isRed = (self._seasonTaskModule):TaskListRed()
-  ;
-  (self:GetGameObject("red")):SetActive(isRed)
+  local node = self._seasonTaskModule:GetCurNode()
+  local isShow = self._seasonTaskModule:TaskListShow()
+  self:GetGameObject():SetActive(isShow)
+  local isRed = self._seasonTaskModule:TaskListRed()
+  self:GetGameObject("red"):SetActive(isRed)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2TaskListBtn.BtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  local isShow = (self._seasonTaskModule):TaskListShow()
+function UIS2TaskListBtn:BtnOnClick(go)
+  local isShow = self._seasonTaskModule:TaskListShow()
   if not isShow then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_109"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_109"))
+    return
   end
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
   if not seasonModule:IsOpen() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_109"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_109"))
+    return
   end
   self:ShowDialog("UISeasonTaskListController")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2TaskListBtn._AttachEvent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIS2TaskListBtn:_AttachEvent()
   self:AttachEvent(GameEventType.OnSeasonTaskReset, self.OnSeasonTaskReset)
   self:AttachEvent(GameEventType.OnSeasonTaskRefreshed, self.OnSeasonTaskRefreshed)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2TaskListBtn._DetachEvent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIS2TaskListBtn:_DetachEvent()
   self:DetachEvent(GameEventType.OnSeasonTaskReset, self.OnSeasonTaskReset)
   self:DetachEvent(GameEventType.OnSeasonTaskRefreshed, self.OnSeasonTaskRefreshed)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2TaskListBtn.OnSeasonTaskReset = function(self)
-  -- function num : 0_6
+function UIS2TaskListBtn:OnSeasonTaskReset()
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2TaskListBtn.OnSeasonTaskRefreshed = function(self)
-  -- function num : 0_7
+function UIS2TaskListBtn:OnSeasonTaskRefreshed()
   self:_Refresh()
 end
-
-

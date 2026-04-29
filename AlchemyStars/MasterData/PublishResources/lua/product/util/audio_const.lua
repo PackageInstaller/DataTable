@@ -1,205 +1,167 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/audio_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-AudioConstValue = {BGMCrossFadeTime = 0.5, AuroralTimeMixerGroupName = "AisacControl_music", AuroralTimeMixerValue = 0.5, DefaultMixerValue = 0}
+AudioConstValue = {
+  BGMCrossFadeTime = 0.5,
+  AuroralTimeMixerGroupName = "AisacControl_music",
+  AuroralTimeMixerValue = 0.5,
+  DefaultMixerValue = 0
+}
 _enum("AudioConstValue", AudioConstValue)
 _class("AudioHelper", Object)
 AudioHelper = AudioHelper
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
 
-AudioHelper.GetAudioResName = function(configID)
-  -- function num : 0_0 , upvalues : _ENV
-  local config = (Cfg.cfg_audio)[configID]
+function AudioHelper.GetAudioResName(configID)
+  local config = Cfg.cfg_audio[configID]
   if config then
     return config.ResName
   else
-    ;
-    (Log.fatal)("can not find audio source by ID: " .. tostring(configID))
+    Log.fatal("can not find audio source by ID: " .. tostring(configID))
     return ""
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-AudioHelper.RequestAndPlayUIVoiceAutoRelease = function(audioID)
-  -- function num : 0_1 , upvalues : _ENV
+function AudioHelper.RequestAndPlayUIVoiceAutoRelease(audioID)
   if not audioID then
-    (Log.fatal)("attempt to play UIVoice with nil AudioID")
-    return 
+    Log.fatal("attempt to play UIVoice with nil AudioID")
+    return
   end
-  local config = (Cfg.cfg_audio)[audioID]
+  local config = Cfg.cfg_audio[audioID]
   if config then
-    return (AudioManager.Instance):RequestAndPlayUIVoiceAutoRelease(config.ResName)
+    return AudioManager.Instance:RequestAndPlayUIVoiceAutoRelease(config.ResName)
   else
-    ;
-    (Log.fatal)("can not find audio source by ID: " .. tostring(audioID))
+    Log.fatal("can not find audio source by ID: " .. tostring(audioID))
   end
   return -1
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-AudioHelper.PlayUISoundAutoRelease = function(audioID)
-  -- function num : 0_2 , upvalues : _ENV
+function AudioHelper.PlayUISoundAutoRelease(audioID)
   if not audioID then
-    (Log.fatal)("attempt to play UIVoice with nil AudioID")
-    return 
+    Log.fatal("attempt to play UIVoice with nil AudioID")
+    return
   end
-  local config = (Cfg.cfg_audio)[audioID]
+  local config = Cfg.cfg_audio[audioID]
   if config then
-    return (AudioManager.Instance):PlayUISoundAutoRelease(config.ResName)
+    return AudioManager.Instance:PlayUISoundAutoRelease(config.ResName)
   else
-    ;
-    (Log.fatal)("can not find audio source by ID: " .. tostring(audioID))
+    Log.fatal("can not find audio source by ID: " .. tostring(audioID))
   end
   return -1
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-AudioHelper.PlayUISoundAutoReleaseBylevelId = function(levelId)
-  -- function num : 0_3 , upvalues : _ENV
+function AudioHelper.PlayUISoundAutoReleaseBylevelId(levelId)
   if not levelId then
-    (Log.fatal)("AudioHelper.PlayUISoundAutoReleaseBylevelId attempt to play UIVoice with nil levelId")
+    Log.fatal("AudioHelper.PlayUISoundAutoReleaseBylevelId attempt to play UIVoice with nil levelId")
   end
-  local audioID_cfg = (Cfg.cfg_global)["audio_wave_warning_" .. levelId]
+  local audioID_cfg = Cfg.cfg_global["audio_wave_warning_" .. levelId]
   local audioID = CriAudioIDConst.SoundUIBossAlarm
   if not audioID_cfg then
-    audioID = ((Cfg.cfg_global).audio_wave_warning_default).IntValue
+    audioID = Cfg.cfg_global.audio_wave_warning_default.IntValue
     if not audioID then
       return -1
     end
   end
-  return (AudioHelperController.PlayUISoundAutoRelease)(audioID)
+  return AudioHelperController.PlayUISoundAutoRelease(audioID)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-AudioHelper.RequestUISound = function(audioID)
-  -- function num : 0_4 , upvalues : _ENV
+function AudioHelper.RequestUISound(audioID)
   if not audioID then
-    (Log.fatal)("attempt to request UIVoice with nil AudioID")
-    return 
+    Log.fatal("attempt to request UIVoice with nil AudioID")
+    return
   end
-  local config = (Cfg.cfg_audio)[audioID]
+  local config = Cfg.cfg_audio[audioID]
   if config then
-    return (AudioManager.Instance):RequestUISound(config.ResName)
+    return AudioManager.Instance:RequestUISound(config.ResName)
   else
-    ;
-    (Log.fatal)("can not find audio source by ID: " .. tostring(audioID))
+    Log.fatal("can not find audio source by ID: " .. tostring(audioID))
   end
   return -1
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-AudioHelper.GetConfigName = function(audioID)
-  -- function num : 0_5 , upvalues : _ENV
+function AudioHelper.GetConfigName(audioID)
   if not audioID then
-    (Log.fatal)("attempt to request UIVoice with nil AudioID")
+    Log.fatal("attempt to request UIVoice with nil AudioID")
     return ""
   end
-  local config = (Cfg.cfg_audio)[audioID]
+  local config = Cfg.cfg_audio[audioID]
   if config then
     return config.ResName
   else
-    ;
-    (Log.fatal)("can not find audio source by ID: " .. tostring(audioID))
+    Log.fatal("can not find audio source by ID: " .. tostring(audioID))
   end
   return ""
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-AudioHelper.RequestUISoundSync = function(audioID)
-  -- function num : 0_6 , upvalues : _ENV
+function AudioHelper.RequestUISoundSync(audioID)
   if not audioID then
-    (Log.fatal)("attempt to request UIVoice with nil AudioID")
+    Log.fatal("attempt to request UIVoice with nil AudioID")
     return ""
   end
-  local config = (Cfg.cfg_audio)[audioID]
+  local config = Cfg.cfg_audio[audioID]
   if config then
-    return (AudioManager.Instance):RequestUISoundSync(config.ResName)
+    return AudioManager.Instance:RequestUISoundSync(config.ResName)
   else
-    ;
-    (Log.fatal)("can not find audio source by ID: " .. tostring(audioID))
+    Log.fatal("can not find audio source by ID: " .. tostring(audioID))
   end
   return -1
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-AudioHelper.PlayRequestedUISound = function(audioID)
-  -- function num : 0_7 , upvalues : _ENV
+function AudioHelper.PlayRequestedUISound(audioID)
   if not audioID then
-    (Log.fatal)("attempt to play UIVoice with nil AudioID")
+    Log.fatal("attempt to play UIVoice with nil AudioID")
     return ""
   end
-  local config = (Cfg.cfg_audio)[audioID]
+  local config = Cfg.cfg_audio[audioID]
   if config then
-    return (AudioManager.Instance):PlayUISound(config.ResName)
+    return AudioManager.Instance:PlayUISound(config.ResName)
   else
-    ;
-    (Log.fatal)("can not find audio source by ID: " .. tostring(audioID))
+    Log.fatal("can not find audio source by ID: " .. tostring(audioID))
   end
   return -1
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-AudioHelper.ReleaseUISound = function(audioID)
-  -- function num : 0_8 , upvalues : _ENV
+function AudioHelper.ReleaseUISound(audioID)
   if not audioID then
-    (Log.fatal)("attempt to release UIVoice with nil AudioID")
+    Log.fatal("attempt to release UIVoice with nil AudioID")
     return ""
   end
-  local config = (Cfg.cfg_audio)[audioID]
+  local config = Cfg.cfg_audio[audioID]
   if config then
-    return (AudioManager.Instance):ReleaseUISound(config.ResName)
+    return AudioManager.Instance:ReleaseUISound(config.ResName)
   else
-    ;
-    (Log.fatal)("can not find audio source by ID: " .. tostring(audioID))
+    Log.fatal("can not find audio source by ID: " .. tostring(audioID))
   end
   return -1
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-AudioHelper.CacheCommonUISound = function()
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.info)("[Audio] Cache common sound")
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
+function AudioHelper.CacheCommonUISound()
+  Log.info("[Audio] Cache common sound")
   if not AudioHelper._commonSoundList then
-    AudioHelper._commonSoundList = {CriAudioIDConst.SoundCancel, CriAudioIDConst.SoundSwitch, CriAudioIDConst.SoundSlide, CriAudioIDConst.SoundAddUp, CriAudioIDConst.SoundUISlideStory}
+    AudioHelper._commonSoundList = {
+      CriAudioIDConst.SoundCancel,
+      CriAudioIDConst.SoundSwitch,
+      CriAudioIDConst.SoundSlide,
+      CriAudioIDConst.SoundAddUp,
+      CriAudioIDConst.SoundUISlideStory
+    }
   end
   local soundList = AudioHelper._commonSoundList
   for i = 1, #soundList do
-    local config = (Cfg.cfg_audio)[soundList[i]]
+    local config = Cfg.cfg_audio[soundList[i]]
     if config then
-      return (AudioManager.Instance):RequestUISound(config.ResName)
+      return AudioManager.Instance:RequestUISound(config.ResName)
     end
   end
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-AudioHelper.UnloadCommonUISound = function()
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.info)("[Audio] Unload common sound")
+function AudioHelper.UnloadCommonUISound()
+  Log.info("[Audio] Unload common sound")
   if not AudioHelper._commonSoundList then
-    (Log.info)("[Audio] No common sound list")
-    return 
+    Log.info("[Audio] No common sound list")
+    return
   end
   local soundList = AudioHelper._commonSoundList
   for i = 1, #soundList do
-    local config = (Cfg.cfg_audio)[soundList[i]]
+    local config = Cfg.cfg_audio[soundList[i]]
     if config then
-      return (AudioManager.Instance):ReleaseUISound(config.ResName)
+      return AudioManager.Instance:ReleaseUISound(config.ResName)
     end
   end
 end
-
-

@@ -1,140 +1,88 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/ext_mission/ext_mission_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ExtMissionModule", GameModule)
 ExtMissionModule = ExtMissionModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ExtMissionModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ExtMissionModule:Constructor()
   self.m_mapExtMission = {}
   self.m_vecNewExtMission = ArrayList:New()
   self.m_nGuideExtMission = 0
   self.m_mapExtStory = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self.caller):RegisterPushHandler(CEventExtMission_Summary, self.OnRecvMsg_ExtMission_Summary, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventExtMission_FailCount, self.OnRecvMsg_ExtMission_FailCount, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventExtMission_StoryData, self.OnRecvMs_ExtMission_StoryData, self)
+function ExtMissionModule:Init()
+  self.caller:RegisterPushHandler(CEventExtMission_Summary, self.OnRecvMsg_ExtMission_Summary, self)
+  self.caller:RegisterPushHandler(CEventExtMission_FailCount, self.OnRecvMsg_ExtMission_FailCount, self)
+  self.caller:RegisterPushHandler(CEventExtMission_StoryData, self.OnRecvMs_ExtMission_StoryData, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.Update = function(self, deltaTimeMS)
-  -- function num : 0_2
+function ExtMissionModule:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.InitExtMissionInfo = function(self)
-  -- function num : 0_3
+function ExtMissionModule:InitExtMissionInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule._GetDetailData_ExtMission = function(self, nExtMissionID)
-  -- function num : 0_4 , upvalues : _ENV
-  local detailExtMission = (self.m_mapExtMission)[nExtMissionID]
-  if detailExtMission == nil then
+function ExtMissionModule:_GetDetailData_ExtMission(nExtMissionID)
+  local detailExtMission = self.m_mapExtMission[nExtMissionID]
+  if nil == detailExtMission then
     detailExtMission = DDetailExtMission:New()
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.m_mapExtMission)[nExtMissionID] = detailExtMission
+    self.m_mapExtMission[nExtMissionID] = detailExtMission
   end
   return detailExtMission
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule._SaveSummaryData = function(self, vecExtMission, bOnlyNew)
-  -- function num : 0_5 , upvalues : _ENV
+function ExtMissionModule:_SaveSummaryData(vecExtMission, bOnlyNew)
   for i = 1, #vecExtMission do
     local summaryExtMission = vecExtMission[i]
     local detailExtMission = self:_GetDetailData_ExtMission(summaryExtMission.m_nExtMissionID)
     detailExtMission.m_nExtMissionID = summaryExtMission.m_nExtMissionID
     detailExtMission.m_nStarCount = summaryExtMission.m_nStarCount
     detailExtMission.m_nAwardRecord = summaryExtMission.m_nAwardRecord
-    for _,summaryExtTask in pairs(summaryExtMission.m_vecExtTask) do
+    for _, summaryExtTask in pairs(summaryExtMission.m_vecExtTask) do
       local detailExtTask = self:_FindExtTaskDetail2(detailExtMission, summaryExtTask.m_nExtTaskID)
-      if detailExtTask == nil then
+      if nil == detailExtTask then
         detailExtTask = DDetailExtTask:New()
         local nVecCount = #detailExtMission.m_vecExtTask
-        -- DECOMPILER ERROR at PC32: Confused about usage of register: R16 in 'UnsetPending'
-
-        ;
-        (detailExtMission.m_vecExtTask)[nVecCount + 1] = detailExtTask
+        detailExtMission.m_vecExtTask[nVecCount + 1] = detailExtTask
       end
-      do
-        do
-          detailExtTask.m_nExtTaskID = summaryExtTask.m_nExtTaskID
-          detailExtTask.m_nStarCount = summaryExtTask.m_nStarCount
-          detailExtTask.pass_without_help = summaryExtTask.pass_without_help
-          -- DECOMPILER ERROR at PC39: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
-      end
+      detailExtTask.m_nExtTaskID = summaryExtTask.m_nExtTaskID
+      detailExtTask.m_nStarCount = summaryExtTask.m_nStarCount
+      detailExtTask.pass_without_help = summaryExtTask.pass_without_help
     end
     if bOnlyNew and detailExtMission.m_nStarCount <= 0 then
-      (self.m_vecNewExtMission):PushBack(summaryExtMission.m_nExtMissionID)
+      self.m_vecNewExtMission:PushBack(summaryExtMission.m_nExtMissionID)
     end
   end
-  ;
-  (Log.debug)("[ExtMission] Save Summary Data, nExtTaskCount = ", #vecExtMission)
+  Log.debug("[ExtMission] Save Summary Data, nExtTaskCount = ", #vecExtMission)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.OnRecvMsg_ExtMission_Summary = function(self, msg)
-  -- function num : 0_6
+function ExtMissionModule:OnRecvMsg_ExtMission_Summary(msg)
   self:_SaveSummaryData(msg.m_vecExtMission, msg.m_bOnlyNew)
   self.m_nGuideExtMission = msg.m_nGuideData
   self:UI_SaveExtMissionNewState(msg.m_vecExtMission, msg.m_bOnlyNew)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.OnRecvMsg_ExtMission_FailCount = function(self, msg)
-  -- function num : 0_7
+function ExtMissionModule:OnRecvMsg_ExtMission_FailCount(msg)
   local detailTask = self:_FindExtTaskDetail(msg.m_nExtMissionID, msg.m_nExtTaskID)
   if detailTask then
     detailTask.m_nFailCount = msg.m_nFailCount
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.OnRecvMs_ExtMission_StoryData = function(self, msg)
-  -- function num : 0_8
+function ExtMissionModule:OnRecvMs_ExtMission_StoryData(msg)
   self:SaveExtStoryData(msg.m_extStroy)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.SaveExtStoryData = function(self, extStoryData)
-  -- function num : 0_9
+function ExtMissionModule:SaveExtStoryData(extStoryData)
   self.m_mapExtStory = extStoryData.m_mapExtStory
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.Request_GetSummary_All = function(self, TT, nExtMissionID)
-  -- function num : 0_10 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventExtMission_SummaryReq)
+function ExtMissionModule:Request_GetSummary_All(TT, nExtMissionID)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventExtMission_SummaryReq)
   request.m_nExtMissionID = nExtMissionID or 0
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     if reply.msg then
-      res:SetResult((reply.msg).m_nResult)
+      res:SetResult(reply.msg.m_nResult)
     else
       res:SetResult(ENUM_ExtMission_ErrorCode.E_ExtMission_Fail)
     end
@@ -147,71 +95,54 @@ ExtMissionModule.Request_GetSummary_All = function(self, TT, nExtMissionID)
   return res
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.Request_GetDetail_ExtMission = function(self, TT, nExtMissionID)
-  -- function num : 0_11 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventExtMission_DetailReq)
+function ExtMissionModule:Request_GetDetail_ExtMission(TT, nExtMissionID)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventExtMission_DetailReq)
   request.m_nExtMissionID = nExtMissionID
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     if reply.msg then
-      res:SetResult((reply.msg).m_nResult)
+      res:SetResult(reply.msg.m_nResult)
     else
       res:SetResult(ENUM_ExtMission_ErrorCode.E_ExtMission_Fail)
     end
     return res
   end
   res:SetSucc(true)
-  local nAswExtMissionID = ((reply.msg).m_extMissionData).m_nExtMissionID
-  do
-    if nAswExtMissionID > 0 then
-      local extMissionData = (reply.msg).m_extMissionData
-      -- DECOMPILER ERROR at PC47: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self.m_mapExtMission)[nAswExtMissionID] = (table.cloneconf)(extMissionData)
-    end
-    return res
+  local nAswExtMissionID = reply.msg.m_extMissionData.m_nExtMissionID
+  if 0 < nAswExtMissionID then
+    local extMissionData = reply.msg.m_extMissionData
+    self.m_mapExtMission[nAswExtMissionID] = table.cloneconf(extMissionData)
   end
+  return res
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.Request_GetDetail_ExtTask = function(self, TT, nExtMissionID, nExtTaskID)
-  -- function num : 0_12 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventExtTask_DetailReq)
+function ExtMissionModule:Request_GetDetail_ExtTask(TT, nExtMissionID, nExtTaskID)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventExtTask_DetailReq)
   request.m_nExtMissionID = nExtMissionID
   request.m_nExtTaskID = nExtTaskID
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     if reply.msg then
-      res:SetResult((reply.msg).m_nResult)
+      res:SetResult(reply.msg.m_nResult)
     else
       res:SetResult(ENUM_ExtMission_ErrorCode.E_ExtMission_Fail)
     end
     return res
   end
   res:SetSucc(true)
-  local detailExtMission = self:_GetDetailData_ExtMission((reply.msg).m_nExtMissionID)
-  local detailExtTaskIndex = self:_FindExtTaskDetailIndex(detailExtMission, ((reply.msg).m_extTaskData).m_nExtTaskID)
-  if detailExtTaskIndex == nil then
+  local detailExtMission = self:_GetDetailData_ExtMission(reply.msg.m_nExtMissionID)
+  local detailExtTaskIndex = self:_FindExtTaskDetailIndex(detailExtMission, reply.msg.m_extTaskData.m_nExtTaskID)
+  if nil == detailExtTaskIndex then
     detailExtTaskIndex = #detailExtMission.m_vecExtTask + 1
   end
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (detailExtMission.m_vecExtTask)[detailExtTaskIndex] = (table.cloneconf)((reply.msg).m_extTaskData)
+  detailExtMission.m_vecExtTask[detailExtTaskIndex] = table.cloneconf(reply.msg.m_extTaskData)
   return res
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.Request_GetAward = function(self, TT, nExtMissionID, nStarCount)
-  -- function num : 0_13 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventExtMission_AwardReq)
+function ExtMissionModule:Request_GetAward(TT, nExtMissionID, nStarCount)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventExtMission_AwardReq)
   request.m_nExtMissionID = nExtMissionID
   request.m_nExtTaskID = 0
   request.m_nStarCount = nStarCount
@@ -219,183 +150,137 @@ ExtMissionModule.Request_GetAward = function(self, TT, nExtMissionID, nStarCount
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     if reply.msg then
-      res:SetResult((reply.msg).m_nResult)
+      res:SetResult(reply.msg.m_nResult)
     else
       res:SetResult(ENUM_ExtMission_ErrorCode.E_ExtMission_Fail)
     end
     return res
   end
   res:SetSucc(true)
-  local nExtMissionID = (reply.msg).m_nExtMissionID
-  local nExtTaskID = (reply.msg).m_nExtTaskID
-  if nExtTaskID == 0 then
+  local nExtMissionID = reply.msg.m_nExtMissionID
+  local nExtTaskID = reply.msg.m_nExtTaskID
+  if 0 == nExtTaskID then
     local detailExtMission = self:_GetDetailData_ExtMission(nExtMissionID)
-    detailExtMission.m_nAwardRecord = (reply.msg).m_nAwardRecord
+    detailExtMission.m_nAwardRecord = reply.msg.m_nAwardRecord
   else
-    do
-      do
-        local detailExtTask = self:_FindExtTaskDetail(nExtMissionID, nExtTaskID)
-        if detailExtTask then
-          detailExtTask.m_nAwardRecord = (reply.msg).m_nAwardRecord
-        end
-        return res
-      end
+    local detailExtTask = self:_FindExtTaskDetail(nExtMissionID, nExtTaskID)
+    if detailExtTask then
+      detailExtTask.m_nAwardRecord = reply.msg.m_nAwardRecord
     end
   end
+  return res
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.Request_Guide = function(self, TT, nGuideData)
-  -- function num : 0_14 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventSetGuideReq)
+function ExtMissionModule:Request_Guide(TT, nGuideData)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventSetGuideReq)
   request.m_nGuideKey = EnumRoleGuideType.E_RoleGuide_ExtMission
   request.m_nGuideData = nGuideData
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     if reply.msg then
-      res:SetResult((reply.msg).m_nResult)
+      res:SetResult(reply.msg.m_nResult)
     else
       res:SetResult(ENUM_ExtMission_ErrorCode.E_ExtMission_Fail)
     end
     return res
   end
   res:SetSucc(true)
-  self.m_nGuideExtMission = (reply.msg).m_nGuideData
+  self.m_nGuideExtMission = reply.msg.m_nGuideData
   return res
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.Request_StoryActive = function(self, TT, nExtTaskID, activeType)
-  -- function num : 0_15 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventExtMission_StoryReq)
+function ExtMissionModule:Request_StoryActive(TT, nExtTaskID, activeType)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventExtMission_StoryReq)
   request.m_nExtTaskID = nExtTaskID or 0
-  if not activeType then
-    request.m_nExtStroyData = ActiveStoryType.ActiveStoryType_None
-    local reply = self:Call(TT, request)
-    local res = AsyncRequestRes:New()
-    if reply.res ~= CallResultType.Normal then
-      if reply.msg then
-        res:SetResult((reply.msg).m_nResult)
-      else
-        res:SetResult(ENUM_ExtMission_ErrorCode.E_ExtMission_Fail)
-      end
-      return res
+  request.m_nExtStroyData = activeType or ActiveStoryType.ActiveStoryType_None
+  local reply = self:Call(TT, request)
+  local res = AsyncRequestRes:New()
+  if reply.res ~= CallResultType.Normal then
+    if reply.msg then
+      res:SetResult(reply.msg.m_nResult)
+    else
+      res:SetResult(ENUM_ExtMission_ErrorCode.E_ExtMission_Fail)
     end
-    res:SetSucc(true)
-    local replyEvent = reply.msg
-    res:SetResult(replyEvent.m_result)
-    local extStoryTask = DExtStoryTask:New()
-    extStoryTask.m_nExtTaskID = replyEvent.m_nExtTaskID
-    extStoryTask.m_nExtStroyData = replyEvent.m_nExtStroyData
-    -- DECOMPILER ERROR at PC56: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.m_mapExtStory)[replyEvent.m_nExtTaskID] = extStoryTask
     return res
   end
+  res:SetSucc(true)
+  local replyEvent = reply.msg
+  res:SetResult(replyEvent.m_result)
+  local extStoryTask = DExtStoryTask:New()
+  extStoryTask.m_nExtTaskID = replyEvent.m_nExtTaskID
+  extStoryTask.m_nExtStroyData = replyEvent.m_nExtStroyData
+  self.m_mapExtStory[replyEvent.m_nExtTaskID] = extStoryTask
+  return res
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule._GetConditionDesc = function(self, condition_id)
-  -- function num : 0_16 , upvalues : _ENV
+function ExtMissionModule:_GetConditionDesc(condition_id)
   local missionModule = self:GetModule(MissionModule)
   return missionModule:Get3StarConditionDesc(condition_id)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule._FindExtMissionDetail = function(self, nExtMissionID)
-  -- function num : 0_17
-  return (self.m_mapExtMission)[nExtMissionID]
+function ExtMissionModule:_FindExtMissionDetail(nExtMissionID)
+  return self.m_mapExtMission[nExtMissionID]
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule._FindExtTaskDetail2 = function(self, extMission, nExtTaskID)
-  -- function num : 0_18
-  if extMission == nil then
+function ExtMissionModule:_FindExtTaskDetail2(extMission, nExtTaskID)
+  if nil == extMission then
     return nil
   end
   for i = 1, #extMission.m_vecExtTask do
-    if ((extMission.m_vecExtTask)[i]).m_nExtTaskID == nExtTaskID then
-      return (extMission.m_vecExtTask)[i]
+    if extMission.m_vecExtTask[i].m_nExtTaskID == nExtTaskID then
+      return extMission.m_vecExtTask[i]
     end
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule._FindExtTaskDetailIndex = function(self, extMission, nExtTaskID)
-  -- function num : 0_19
-  if extMission == nil then
+function ExtMissionModule:_FindExtTaskDetailIndex(extMission, nExtTaskID)
+  if nil == extMission then
     return nil
   end
   for i = 1, #extMission.m_vecExtTask do
-    if ((extMission.m_vecExtTask)[i]).m_nExtTaskID == nExtTaskID then
+    if extMission.m_vecExtTask[i].m_nExtTaskID == nExtTaskID then
       return i
     end
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule._FindExtTaskDetail = function(self, nExtMissionID, nExtTaskID)
-  -- function num : 0_20
+function ExtMissionModule:_FindExtTaskDetail(nExtMissionID, nExtTaskID)
   local extMission = self:_FindExtMissionDetail(nExtMissionID)
   return self:_FindExtTaskDetail2(extMission, nExtTaskID)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule._IsConditionPass = function(self, vecCondition, nConditionID)
-  -- function num : 0_21 , upvalues : _ENV
-  if vecCondition ~= nConditionID then
-    do return type(vecCondition) ~= "number" end
-    for _,conditionPass in pairs(vecCondition) do
-      if conditionPass == nConditionID then
-        return true
-      end
-    end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function ExtMissionModule:_IsConditionPass(vecCondition, nConditionID)
+  if type(vecCondition) == "number" then
+    return vecCondition == nConditionID
   end
+  for _, conditionPass in pairs(vecCondition) do
+    if conditionPass == nConditionID then
+      return true
+    end
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule._LessComparer = function(nItemIDA, nItemIDB)
-  -- function num : 0_22 , upvalues : _ENV
-  local cfgItemA = (Cfg.cfg_item)[nItemIDA.assetid]
-  local cfgItemB = (Cfg.cfg_item)[nItemIDB.assetid]
+function ExtMissionModule._LessComparer(nItemIDA, nItemIDB)
+  local cfgItemA = Cfg.cfg_item[nItemIDA.assetid]
+  local cfgItemB = Cfg.cfg_item[nItemIDB.assetid]
   if cfgItemA.Color < cfgItemB.Color then
     return -1
+  elseif cfgItemA.Color > cfgItemB.Color then
+    return 1
+  elseif nItemIDA.assetid < nItemIDB.assetid then
+    return 1
+  elseif nItemIDA.assetid > nItemIDB.assetid then
+    return -1
   else
-    if cfgItemB.Color < cfgItemA.Color then
-      return 1
-    else
-      if nItemIDA.assetid < nItemIDB.assetid then
-        return 1
-      else
-        if nItemIDB.assetid < nItemIDA.assetid then
-          return -1
-        else
-          return 0
-        end
-      end
-    end
+    return 0
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule._CopyItemData = function(self, cfgItemID, cfgItemCount)
-  -- function num : 0_23 , upvalues : _ENV
+function ExtMissionModule:_CopyItemData(cfgItemID, cfgItemCount)
   local vecSort = SortedArray:New(Algorithm.COMPARE_CUSTOM, ExtMissionModule._LessComparer)
   for i = 1, #cfgItemID do
     local roleAsset = RoleAsset:New()
@@ -406,10 +291,7 @@ ExtMissionModule._CopyItemData = function(self, cfgItemID, cfgItemCount)
   return vecSort.elements
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule._ConvertCondition = function(self, vecPassCondition, nConditionID)
-  -- function num : 0_24 , upvalues : _ENV
+function ExtMissionModule:_ConvertCondition(vecPassCondition, nConditionID)
   local uiExtCondition = UI_DetailExtCondition:New()
   uiExtCondition.m_nID = nConditionID
   uiExtCondition.m_nParam = 0
@@ -418,11 +300,8 @@ ExtMissionModule._ConvertCondition = function(self, vecPassCondition, nCondition
   return uiExtCondition
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.IsExtTaskPass = function(self, nExtTaskID)
-  -- function num : 0_25 , upvalues : _ENV
-  for keyExtID,extMission in pairs(self.m_mapExtMission) do
+function ExtMissionModule:IsExtTaskPass(nExtTaskID)
+  for keyExtID, extMission in pairs(self.m_mapExtMission) do
     local detailExtTask = self:_FindExtTaskDetail2(extMission, nExtTaskID)
     if detailExtTask then
       if detailExtTask.m_nStarCount > 0 then
@@ -435,33 +314,24 @@ ExtMissionModule.IsExtTaskPass = function(self, nExtTaskID)
   return false
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule._IsNewExtMission = function(self, nExtMissionID)
-  -- function num : 0_26
-  local nCount = (self.m_vecNewExtMission):Size()
+function ExtMissionModule:_IsNewExtMission(nExtMissionID)
+  local nCount = self.m_vecNewExtMission:Size()
   if nCount <= 0 then
     return false
   end
   for i = 1, nCount do
-    if (self.m_vecNewExtMission):GetAt(i) == nExtMissionID then
+    if self.m_vecNewExtMission:GetAt(i) == nExtMissionID then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.UI_ClearNewExtMission = function(self, nExtMissionID)
-  -- function num : 0_27
-  (self.m_vecNewExtMission):Remove(nExtMissionID)
+function ExtMissionModule:UI_ClearNewExtMission(nExtMissionID)
+  self.m_vecNewExtMission:Remove(nExtMissionID)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.UI_IsFirstFail = function(self, nExtMissionID, nExtTaskID)
-  -- function num : 0_28
+function ExtMissionModule:UI_IsFirstFail(nExtMissionID, nExtTaskID)
   local detailTask = self:_FindExtTaskDetail(nExtMissionID, nExtTaskID)
   if detailTask and detailTask.m_nFailCount < 1 then
     return true
@@ -469,95 +339,59 @@ ExtMissionModule.UI_IsFirstFail = function(self, nExtMissionID, nExtTaskID)
   return false
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.UI_GetExtMissionAward = function(self, nExtMissionID)
-  -- function num : 0_29 , upvalues : _ENV
-  local cfgExtMission = (Cfg.cfg_extra_mission)[nExtMissionID]
-  if cfgExtMission == nil then
+function ExtMissionModule:UI_GetExtMissionAward(nExtMissionID)
+  local cfgExtMission = Cfg.cfg_extra_mission[nExtMissionID]
+  if nil == cfgExtMission then
     return nil
   end
   local uiExtMission = UI_DetailExtMission:New()
   uiExtMission.m_nID = nExtMissionID
-  uiExtMission.m_stName = (StringTable.Get)(cfgExtMission.ExtMissionName)
+  uiExtMission.m_stName = StringTable.Get(cfgExtMission.ExtMissionName)
   local detailExtMission = self:_FindExtMissionDetail(nExtMissionID)
   if detailExtMission then
     uiExtMission.m_nStarCount = detailExtMission.m_nStarCount
   end
   for i = 1, #cfgExtMission.AwardStar do
-    local nCfgStarCount = (cfgExtMission.AwardStar)[i]
+    local nCfgStarCount = cfgExtMission.AwardStar[i]
     local uiExtAward = UI_DetailExtAward:New()
     uiExtAward.m_nStarCount = nCfgStarCount
     uiExtAward.m_nAwardStat = EnumAwardRecord.Disable
-    do
-      do
-        if detailExtMission then
-          local awardLevel = UI_AwardLevel:New(detailExtMission.m_nAwardRecord)
-          uiExtAward.m_nAwardStat = awardLevel:GetAwardStat(detailExtMission.m_nStarCount, nCfgStarCount)
-        end
-        uiExtAward.m_vecAwardItem = self:_CopyItemData((cfgExtMission.AwardListItemID)[i], (cfgExtMission.AwardListItemCount)[i])
-        -- DECOMPILER ERROR at PC56: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (uiExtMission.m_vecAward)[i] = uiExtAward
-        -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if detailExtMission then
+      local awardLevel = UI_AwardLevel:New(detailExtMission.m_nAwardRecord)
+      uiExtAward.m_nAwardStat = awardLevel:GetAwardStat(detailExtMission.m_nStarCount, nCfgStarCount)
     end
+    uiExtAward.m_vecAwardItem = self:_CopyItemData(cfgExtMission.AwardListItemID[i], cfgExtMission.AwardListItemCount[i])
+    uiExtMission.m_vecAward[i] = uiExtAward
   end
   return uiExtMission
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.UI_GetExtTaskDetail = function(self, nExtMissionID, nExtTaskID)
-  -- function num : 0_30 , upvalues : _ENV
-  local cfgExt = (Cfg.cfg_extra_mission)[nExtMissionID]
-  local cfgTask = (Cfg.cfg_extra_mission_task)[nExtTaskID]
+function ExtMissionModule:UI_GetExtTaskDetail(nExtMissionID, nExtTaskID)
+  local cfgExt = Cfg.cfg_extra_mission[nExtMissionID]
+  local cfgTask = Cfg.cfg_extra_mission_task[nExtTaskID]
   local detailTask = self:_FindExtTaskDetail(nExtMissionID, nExtTaskID)
-  if detailTask == nil then
-    (Log.debug)("[ExtMission] 没有找到副本关卡详细数据：nExtMissionID=", nExtMissionID, ", nExtTaskID=", nExtTaskID)
+  if nil == detailTask then
+    Log.debug("[ExtMission] 没有找到副本关卡详细数据：nExtMissionID=", nExtMissionID, ", nExtTaskID=", nExtTaskID)
   end
   local uiExtTask = UI_DetailExtTask:New()
   uiExtTask.m_nID = nExtTaskID
-  uiExtTask.m_stName = (StringTable.Get)(cfgTask.TaskName)
-  uiExtTask.m_stExtName = (StringTable.Get)(cfgExt.ExtMissionName)
-  uiExtTask.m_stDesc = (StringTable.Get)(cfgTask.TaskDesc)
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (uiExtTask.m_vecCondition)[1] = self:_ConvertCondition(detailTask.m_vecCondition, cfgTask.ThreeStarCondition1)
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (uiExtTask.m_vecCondition)[2] = self:_ConvertCondition(detailTask.m_vecCondition, cfgTask.ThreeStarCondition2)
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (uiExtTask.m_vecCondition)[3] = self:_ConvertCondition(detailTask.m_vecCondition, cfgTask.ThreeStarCondition3)
-  if detailTask ~= nil then
+  uiExtTask.m_stName = StringTable.Get(cfgTask.TaskName)
+  uiExtTask.m_stExtName = StringTable.Get(cfgExt.ExtMissionName)
+  uiExtTask.m_stDesc = StringTable.Get(cfgTask.TaskDesc)
+  uiExtTask.m_vecCondition[1] = self:_ConvertCondition(detailTask.m_vecCondition, cfgTask.ThreeStarCondition1)
+  uiExtTask.m_vecCondition[2] = self:_ConvertCondition(detailTask.m_vecCondition, cfgTask.ThreeStarCondition2)
+  uiExtTask.m_vecCondition[3] = self:_ConvertCondition(detailTask.m_vecCondition, cfgTask.ThreeStarCondition3)
+  if nil ~= detailTask then
     uiExtTask.m_stStarCount = detailTask.m_nStarCount
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (uiExtTask.m_awardPerfect).m_nAwardRecord = detailTask.m_nAwardRecord
+    uiExtTask.m_awardPerfect.m_nAwardRecord = detailTask.m_nAwardRecord
   end
-  -- DECOMPILER ERROR at PC68: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (uiExtTask.m_awardNormal).m_vecAwardItem = self:_CopyItemData(cfgTask.AwardListItemID, cfgTask.AwardListItemCount)
-  -- DECOMPILER ERROR at PC74: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (uiExtTask.m_awardPerfect).m_vecAwardItem = self:_CopyItemData(cfgTask.PerfectAwardListItemID, cfgTask.PerfectAwardListItemCount)
+  uiExtTask.m_awardNormal.m_vecAwardItem = self:_CopyItemData(cfgTask.AwardListItemID, cfgTask.AwardListItemCount)
+  uiExtTask.m_awardPerfect.m_vecAwardItem = self:_CopyItemData(cfgTask.PerfectAwardListItemID, cfgTask.PerfectAwardListItemCount)
   uiExtTask.m_nExpendPower = cfgTask.ExpendPower
   return uiExtTask
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule._IsHaveExtAward = function(self, extMissionData)
-  -- function num : 0_31 , upvalues : _ENV
+function ExtMissionModule:_IsHaveExtAward(extMissionData)
   local awardLevel = UI_AwardLevel:New(extMissionData.m_nAwardRecord)
   if awardLevel:IsHaveAward(extMissionData.m_nStarCount) then
     return true
@@ -565,12 +399,9 @@ ExtMissionModule._IsHaveExtAward = function(self, extMissionData)
   return false
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.UI_IsExtAwardRed = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function ExtMissionModule:UI_IsExtAwardRed()
   local temp = DDetailExtMission:New()
-  for nExtMissionID,extMissionData in pairs(self.m_mapExtMission) do
+  for nExtMissionID, extMissionData in pairs(self.m_mapExtMission) do
     if self:_IsHaveExtAward(extMissionData) then
       return true
     end
@@ -578,16 +409,13 @@ ExtMissionModule.UI_IsExtAwardRed = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.UI_IsExtNewChapter = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  for nExtMissionID,extMissionData in pairs(self.m_mapExtMission) do
+function ExtMissionModule:UI_IsExtNewChapter()
+  for nExtMissionID, extMissionData in pairs(self.m_mapExtMission) do
     local extMissionDataID = extMissionData.m_nExtMissionID
-    local key = tostring(((GameGlobal.GameLogic)()):GetOpenId()) .. tostring(extMissionDataID)
-    local newState = ((UnityEngine.PlayerPrefs).HasKey)(key)
+    local key = tostring(GameGlobal.GameLogic():GetOpenId()) .. tostring(extMissionDataID)
+    local newState = UnityEngine.PlayerPrefs.HasKey(key)
     if newState then
-      local newValue = ((UnityEngine.PlayerPrefs).GetInt)(key)
+      local newValue = UnityEngine.PlayerPrefs.GetInt(key)
       if newValue == 1 then
         return true
       end
@@ -596,12 +424,9 @@ ExtMissionModule.UI_IsExtNewChapter = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtMissionModule.UI_GetExtAwardRed = function(self, nExtMissionID)
-  -- function num : 0_34
+function ExtMissionModule:UI_GetExtAwardRed(nExtMissionID)
   local detailExtMissionData = self:_FindExtMissionDetail(nExtMissionID)
-  if detailExtMissionData == nil then
+  if nil == detailExtMissionData then
     return false
   end
   if self:_IsHaveExtAward(detailExtMissionData) then
@@ -610,90 +435,72 @@ ExtMissionModule.UI_GetExtAwardRed = function(self, nExtMissionID)
   return false
 end
 
-local EnumExtMissionState = {Disable = 0, Open = 1, New = 2, Down = 3}
+local EnumExtMissionState = {
+  Disable = 0,
+  Open = 1,
+  New = 2,
+  Down = 3
+}
 _enum("EnumExtMissionState", EnumExtMissionState)
--- DECOMPILER ERROR at PC122: Confused about usage of register: R1 in 'UnsetPending'
 
-ExtMissionModule.UI_GetExtMissionState = function(self, nExtMissionID)
-  -- function num : 0_35 , upvalues : EnumExtMissionState, _ENV
+function ExtMissionModule:UI_GetExtMissionState(nExtMissionID)
   local nReturn = EnumExtMissionState.Disable
   local extMissionData = self:_FindExtMissionDetail(nExtMissionID)
-  if extMissionData == nil then
+  if nil == extMissionData then
     return nReturn
   end
   local nPassCount = 0
   local nActiveCount = 0
   local nTaskCount = #extMissionData.m_vecExtTask
-  if 3 * nTaskCount <= extMissionData.m_nStarCount then
+  if extMissionData.m_nStarCount >= 3 * nTaskCount then
     nPassCount = nTaskCount
   else
-    for _,detailExtTask in pairs(extMissionData.m_vecExtTask) do
-      if detailExtTask.m_nStarCount > 0 then
+    for _, detailExtTask in pairs(extMissionData.m_vecExtTask) do
+      if 0 < detailExtTask.m_nStarCount then
         nPassCount = nPassCount + 1
+      elseif 0 == detailExtTask.m_nStarCount then
+        nActiveCount = nActiveCount + 1
       else
-        if detailExtTask.m_nStarCount == 0 then
-          nActiveCount = nActiveCount + 1
-        else
-          break
-        end
+        break
       end
     end
   end
-  do
-    if nTaskCount <= nPassCount then
-      if 3 * nTaskCount <= extMissionData.m_nStarCount then
-        nReturn = EnumExtMissionState.Down
-      else
-        nReturn = EnumExtMissionState.Open
-      end
+  if nTaskCount <= nPassCount then
+    if extMissionData.m_nStarCount >= 3 * nTaskCount then
+      nReturn = EnumExtMissionState.Down
     else
-      if nPassCount == 0 then
-        if nActiveCount > 0 then
-          nReturn = EnumExtMissionState.Open
-        else
-          nReturn = EnumExtMissionState.Disable
-        end
-      else
-        nReturn = EnumExtMissionState.Open
-      end
+      nReturn = EnumExtMissionState.Open
     end
-    return nReturn
+  elseif 0 == nPassCount then
+    if 0 < nActiveCount then
+      nReturn = EnumExtMissionState.Open
+    else
+      nReturn = EnumExtMissionState.Disable
+    end
+  else
+    nReturn = EnumExtMissionState.Open
   end
+  return nReturn
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R1 in 'UnsetPending'
-
-ExtMissionModule.UI_GetExtTaskState = function(self, nExtMissionID, nExtTaskID)
-  -- function num : 0_36
+function ExtMissionModule:UI_GetExtTaskState(nExtMissionID, nExtTaskID)
   local detailExtTask = self:_FindExtTaskDetail(nExtMissionID, nExtTaskID)
-  if detailExtTask == nil then
+  if nil == detailExtTask then
     return -100
   end
   return detailExtTask.m_nStarCount
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R1 in 'UnsetPending'
-
-ExtMissionModule.Module_ConvertMatchResult = function(self, recvResult, bVictory)
-  -- function num : 0_37 , upvalues : _ENV
+function ExtMissionModule:Module_ConvertMatchResult(recvResult, bVictory)
   local uiMatchResult = UI_MatchResult:New()
   uiMatchResult.m_nMatchType = MatchType.MT_ExtMission
   uiMatchResult.m_nID = recvResult.m_nExtTaskID
-  local cfgTask = (Cfg.cfg_extra_mission_task)[recvResult.m_nExtTaskID]
-  uiMatchResult.m_stShowName = (StringTable.Get)(cfgTask.TaskName)
-  uiMatchResult.m_stShowDesc = (StringTable.Get)(cfgTask.TaskDesc)
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (uiMatchResult.m_vecCondition)[1] = self:_ConvertCondition(recvResult.m_vecCondition, cfgTask.ThreeStarCondition1)
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (uiMatchResult.m_vecCondition)[2] = self:_ConvertCondition(recvResult.m_vecCondition, cfgTask.ThreeStarCondition2)
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (uiMatchResult.m_vecCondition)[3] = self:_ConvertCondition(recvResult.m_vecCondition, cfgTask.ThreeStarCondition3)
+  local cfgTask = Cfg.cfg_extra_mission_task[recvResult.m_nExtTaskID]
+  uiMatchResult.m_stShowName = StringTable.Get(cfgTask.TaskName)
+  uiMatchResult.m_stShowDesc = StringTable.Get(cfgTask.TaskDesc)
+  uiMatchResult.m_vecCondition[1] = self:_ConvertCondition(recvResult.m_vecCondition, cfgTask.ThreeStarCondition1)
+  uiMatchResult.m_vecCondition[2] = self:_ConvertCondition(recvResult.m_vecCondition, cfgTask.ThreeStarCondition2)
+  uiMatchResult.m_vecCondition[3] = self:_ConvertCondition(recvResult.m_vecCondition, cfgTask.ThreeStarCondition3)
   uiMatchResult.m_vecAwardNormal = recvResult.m_vecAwardNormal
   uiMatchResult.m_vecFirstPassAward = recvResult.m_firstpass_award
   uiMatchResult.m_vecAwardPerfect = recvResult.m_vecAwardPerfect
@@ -704,77 +511,73 @@ ExtMissionModule.Module_ConvertMatchResult = function(self, recvResult, bVictory
       local nStartCount = 0
       local vecPassCondition = {}
       for i = 1, #uiMatchResult.m_vecCondition do
-        local detailExtCondition = (uiMatchResult.m_vecCondition)[i]
+        local detailExtCondition = uiMatchResult.m_vecCondition[i]
         if detailExtCondition.m_bPass then
           nStartCount = nStartCount + 1
-          ;
-          (table.insert)(vecPassCondition, detailExtCondition.m_nID)
+          table.insert(vecPassCondition, detailExtCondition.m_nID)
         end
       end
-      if extTaskData.m_nStarCount <= nStartCount then
+      if nStartCount >= extTaskData.m_nStarCount then
         extTaskData.m_nStarCount = nStartCount
         extTaskData.m_vecCondition = vecPassCondition
       end
       extTaskData.pass_without_help = recvResult.pass_without_help
     end
   end
-  do
-    return uiMatchResult
-  end
+  return uiMatchResult
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-ExtMissionModule.UI_GetPassExtTask = function(self, nExtMissionID)
-  -- function num : 0_38 , upvalues : _ENV
+function ExtMissionModule:UI_GetPassExtTask(nExtMissionID)
   local detailExtMission = self:_FindExtMissionDetail(nExtMissionID)
-  if detailExtMission == nil then
+  if nil == detailExtMission then
     return {}
   end
   local vecPassTask = {}
-  for nTaskID,detailExtTask in pairs(detailExtMission.m_vecExtTask) do
+  for nTaskID, detailExtTask in pairs(detailExtMission.m_vecExtTask) do
     if detailExtTask.m_nStarCount > 0 then
-      (table.insert)(vecPassTask, detailExtTask.m_nExtTaskID)
+      table.insert(vecPassTask, detailExtTask.m_nExtTaskID)
     end
   end
   return vecPassTask
 end
 
-local EnumEnableGuide = {Show = 1, Hide = 2, Animation = 3}
+local EnumEnableGuide = {
+  Show = 1,
+  Hide = 2,
+  Animation = 3
+}
 _enum("EnumEnableGuide", EnumEnableGuide)
--- DECOMPILER ERROR at PC142: Confused about usage of register: R2 in 'UnsetPending'
 
-ExtMissionModule.UI_IsEnableExtMissionGuide = function(self)
-  -- function num : 0_39 , upvalues : EnumEnableGuide, _ENV
+function ExtMissionModule:UI_IsEnableExtMissionGuide()
   local nReturn = EnumEnableGuide.Hide
   if self.m_nGuideExtMission <= 0 then
     local nExtMissionCount = 0
-    for keyExtID,extMission in pairs(self.m_mapExtMission) do
+    for keyExtID, extMission in pairs(self.m_mapExtMission) do
       nExtMissionCount = nExtMissionCount + 1
     end
-    if nExtMissionCount > 0 then
+    if 0 < nExtMissionCount then
       nReturn = EnumEnableGuide.Animation
     else
       nReturn = EnumEnableGuide.Hide
     end
-  else
-    do
-      if self.m_nGuideExtMission > 0 then
-        nReturn = EnumEnableGuide.Show
-      end
-      return nReturn
-    end
+  elseif self.m_nGuideExtMission > 0 then
+    nReturn = EnumEnableGuide.Show
   end
+  return nReturn
 end
 
-local EnumLockReason = {Unlock = 0, Lock_level = 1, Lock_mission = 2, Lock_extTask = 3, Lock_error = 4}
+local EnumLockReason = {
+  Unlock = 0,
+  Lock_level = 1,
+  Lock_mission = 2,
+  Lock_extTask = 3,
+  Lock_error = 4
+}
 _enum("EnumLockReason", EnumLockReason)
--- DECOMPILER ERROR at PC155: Confused about usage of register: R3 in 'UnsetPending'
 
-ExtMissionModule.UI_GetLockReason = function(self, nExtMissionID)
-  -- function num : 0_40 , upvalues : _ENV, EnumLockReason
-  local cfgExtMission = (Cfg.cfg_extra_mission)[nExtMissionID]
-  if cfgExtMission == nil then
+function ExtMissionModule:UI_GetLockReason(nExtMissionID)
+  local cfgExtMission = Cfg.cfg_extra_mission[nExtMissionID]
+  if nil == cfgExtMission then
     return EnumLockReason.Lock_error
   end
   local roleModule = self:GetModule(RoleModule)
@@ -783,99 +586,87 @@ ExtMissionModule.UI_GetLockReason = function(self, nExtMissionID)
     return EnumLockReason.Lock_level, cfgExtMission.DependLevel, nPlayerLevel
   end
   local nDependMissionID = cfgExtMission.DependMissionID
-  if nDependMissionID > 0 then
+  if 0 < nDependMissionID then
     local missionModule = self:GetModule(MissionModule)
     local bMissionPass = missionModule:GetPassMissionById(nDependMissionID)
-    if bMissionPass == nil then
+    if nil == bMissionPass then
       return EnumLockReason.Lock_mission, nDependMissionID
     end
   end
-  do
-    local nDependTaskID = cfgExtMission.DependTaskID
-    if nDependTaskID > 0 and self:IsExtTaskPass(nDependTaskID) == false then
-      return EnumLockReason.Lock_extTask, nDependTaskID
-    end
-    return EnumLockReason.Unlock
+  local nDependTaskID = cfgExtMission.DependTaskID
+  if 0 < nDependTaskID and false == self:IsExtTaskPass(nDependTaskID) then
+    return EnumLockReason.Lock_extTask, nDependTaskID
   end
+  return EnumLockReason.Unlock
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R3 in 'UnsetPending'
-
-ExtMissionModule.UI_SetCurExtData = function(self, nExtMissionID, nExtTaskID)
-  -- function num : 0_41
+function ExtMissionModule:UI_SetCurExtData(nExtMissionID, nExtTaskID)
   self.m_nCurExtMissionID = nExtMissionID
   self.m_nCurExtTaskID = nExtTaskID
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R3 in 'UnsetPending'
-
-ExtMissionModule.UI_GetCurExtData = function(self)
-  -- function num : 0_42
+function ExtMissionModule:UI_GetCurExtData()
   return self.m_nCurExtMissionID, self.m_nCurExtTaskID
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R3 in 'UnsetPending'
-
-ExtMissionModule.UI_IsMissionStoryActive = function(self, extTaskID, activeStoryType)
-  -- function num : 0_43
-  if self.m_mapExtStory == nil then
+function ExtMissionModule:UI_IsMissionStoryActive(extTaskID, activeStoryType)
+  if nil == self.m_mapExtStory then
     return false
   end
-  local storyTask = (self.m_mapExtStory)[extTaskID]
-  if storyTask == nil then
+  local storyTask = self.m_mapExtStory[extTaskID]
+  if nil == storyTask then
     return false
   end
   local t = storyTask.m_nExtStroyData & activeStoryType
-  do return t ~= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return t ~= 0
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R3 in 'UnsetPending'
-
-ExtMissionModule.GetErrorMsg = function(self, nErrorCode)
-  -- function num : 0_44 , upvalues : _ENV
-  local vecErrorMsg = {[ENUM_ExtMission_ErrorCode.E_ExtMission_Success] = (StringTable.Get)("str_extra_mission_error_success"), [ENUM_ExtMission_ErrorCode.E_ExtMission_Fail] = (StringTable.Get)("str_extra_mission_error_fail"), [ENUM_ExtMission_ErrorCode.E_ExtMission_Level] = (StringTable.Get)("str_extra_mission_error_level"), [ENUM_ExtMission_ErrorCode.E_ExtMission_MissionID] = (StringTable.Get)("str_extra_mission_error_mission_id"), [ENUM_ExtMission_ErrorCode.E_ExtMission_TaskID] = (StringTable.Get)("str_extra_mission_error_task_id"), [ENUM_ExtMission_ErrorCode.E_ExtMission_LowPower] = (StringTable.Get)("str_extra_mission_error_low_power"), [ENUM_ExtMission_ErrorCode.E_ExtMission_TaskLock] = (StringTable.Get)("str_extra_mission_error_task_lock"), [ENUM_ExtMission_ErrorCode.E_ExtMission_InvalidStar] = (StringTable.Get)("str_extra_mission_error_invalid_star"), [ENUM_ExtMission_ErrorCode.E_ExtMission_MissionData] = (StringTable.Get)("str_extra_mission_error_mission_data"), [ENUM_ExtMission_ErrorCode.E_ExtMission_AwardOver] = (StringTable.Get)("str_extra_mission_error_award_over"), [ENUM_ExtMission_ErrorCode.E_ExtMission_MissionLock] = (StringTable.Get)("str_extra_mission_error_mission_lock"), [ENUM_ExtMission_ErrorCode.E_ExtMission_StoryType] = (StringTable.Get)("str_extra_mission_error_story_type"), [ENUM_ExtMission_ErrorCode.E_ExtMission_Else] = (StringTable.Get)("str_extra_mission_error_else")}
+function ExtMissionModule:GetErrorMsg(nErrorCode)
+  local vecErrorMsg = {
+    [ENUM_ExtMission_ErrorCode.E_ExtMission_Success] = StringTable.Get("str_extra_mission_error_success"),
+    [ENUM_ExtMission_ErrorCode.E_ExtMission_Fail] = StringTable.Get("str_extra_mission_error_fail"),
+    [ENUM_ExtMission_ErrorCode.E_ExtMission_Level] = StringTable.Get("str_extra_mission_error_level"),
+    [ENUM_ExtMission_ErrorCode.E_ExtMission_MissionID] = StringTable.Get("str_extra_mission_error_mission_id"),
+    [ENUM_ExtMission_ErrorCode.E_ExtMission_TaskID] = StringTable.Get("str_extra_mission_error_task_id"),
+    [ENUM_ExtMission_ErrorCode.E_ExtMission_LowPower] = StringTable.Get("str_extra_mission_error_low_power"),
+    [ENUM_ExtMission_ErrorCode.E_ExtMission_TaskLock] = StringTable.Get("str_extra_mission_error_task_lock"),
+    [ENUM_ExtMission_ErrorCode.E_ExtMission_InvalidStar] = StringTable.Get("str_extra_mission_error_invalid_star"),
+    [ENUM_ExtMission_ErrorCode.E_ExtMission_MissionData] = StringTable.Get("str_extra_mission_error_mission_data"),
+    [ENUM_ExtMission_ErrorCode.E_ExtMission_AwardOver] = StringTable.Get("str_extra_mission_error_award_over"),
+    [ENUM_ExtMission_ErrorCode.E_ExtMission_MissionLock] = StringTable.Get("str_extra_mission_error_mission_lock"),
+    [ENUM_ExtMission_ErrorCode.E_ExtMission_StoryType] = StringTable.Get("str_extra_mission_error_story_type"),
+    [ENUM_ExtMission_ErrorCode.E_ExtMission_Else] = StringTable.Get("str_extra_mission_error_else")
+  }
   local stErrorMsg = vecErrorMsg[nErrorCode]
-  if stErrorMsg == nil then
+  if nil == stErrorMsg then
     return "Unknown ErrorCode"
   end
   return stErrorMsg
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R3 in 'UnsetPending'
-
-ExtMissionModule.IsMissionStoryActive = function(self, extTaskID, activeStoryType)
-  -- function num : 0_45
+function ExtMissionModule:IsMissionStoryActive(extTaskID, activeStoryType)
   return self:UI_IsMissionStoryActive(extTaskID, activeStoryType)
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R3 in 'UnsetPending'
-
-ExtMissionModule.SetMissionStoryActive = function(self, TT, extTaskID, activeType)
-  -- function num : 0_46
+function ExtMissionModule:SetMissionStoryActive(TT, extTaskID, activeType)
   return self:Request_StoryActive(TT, extTaskID, activeType)
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R3 in 'UnsetPending'
-
-ExtMissionModule.UI_SaveExtMissionNewState = function(self, ExtTable, BeNew)
-  -- function num : 0_47 , upvalues : _ENV
+function ExtMissionModule:UI_SaveExtMissionNewState(ExtTable, BeNew)
   local extTable = ExtTable
   local beNew = BeNew
-  if extTable and (table.count)(extTable) > 0 and beNew then
-    local openid = ((GameGlobal.GameLogic)()):GetOpenId()
-    for _,value in pairs(extTable) do
+  if extTable and table.count(extTable) > 0 and beNew then
+    local openid = GameGlobal.GameLogic():GetOpenId()
+    for _, value in pairs(extTable) do
       local extid = value.m_nExtMissionID
       local key = tostring(openid) .. tostring(extid)
-      local newState = ((UnityEngine.PlayerPrefs).HasKey)(key)
+      local newState = UnityEngine.PlayerPrefs.HasKey(key)
       if not newState then
-        ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+        UnityEngine.PlayerPrefs.SetInt(key, 1)
       else
-        local v = (((UnityEngine.PlayerPrefs).GetInt)(key))
-        local aa = nil
+        local v = UnityEngine.PlayerPrefs.GetInt(key)
+        local aa
       end
     end
   end
 end
-
-

@@ -1,16 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/offlinemsg/offlinemsg_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local OFFLINE_MSG_TYPE = {OMT_START = 0, OMT_IDIP = 1, OMT_ROLE = 2, OMT_CHAT_MSG = 1001, OMT_CAMPAIGN_OFFLINE_DATA = 1002, OMT_END = 1003}
+local OFFLINE_MSG_TYPE = {
+  OMT_START = 0,
+  OMT_IDIP = 1,
+  OMT_ROLE = 2,
+  OMT_CHAT_MSG = 1001,
+  OMT_CAMPAIGN_OFFLINE_DATA = 1002,
+  OMT_END = 1003
+}
 _enum("OFFLINE_MSG_TYPE", OFFLINE_MSG_TYPE)
 _class("offlinemsg", Object)
 offlinemsg = offlinemsg
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
 
-offlinemsg.Constructor = function(self)
-  -- function num : 0_0
+function offlinemsg:Constructor()
   self.msg_id = 0
   self.receiver_id = 0
   self.type = -1
@@ -18,17 +18,16 @@ offlinemsg.Constructor = function(self)
   self.m_data = ""
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
 offlinemsg._proto = {
-[1] = {"msg_id", "int64"}
-, 
-[2] = {"receiver_id", "int64"}
-, 
-[3] = {"type", "int"}
-, 
-[4] = {"create_time", "time"}
-, 
-[5] = {"m_data", "buffer"}
+  [1] = {"msg_id", "int64"},
+  [2] = {
+    "receiver_id",
+    "int64"
+  },
+  [3] = {"type", "int"},
+  [4] = {
+    "create_time",
+    "time"
+  },
+  [5] = {"m_data", "buffer"}
 }
-

@@ -1,32 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/delete_caster_preview_eff_anim.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("DeleteCasterPreviewEffectAnimationInstruction", BaseInstruction)
 DeleteCasterPreviewEffectAnimationInstruction = DeleteCasterPreviewEffectAnimationInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DeleteCasterPreviewEffectAnimationInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function DeleteCasterPreviewEffectAnimationInstruction:Constructor(paramList)
   self._animName = paramList.anim
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DeleteCasterPreviewEffectAnimationInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function DeleteCasterPreviewEffectAnimationInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
   local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
   local effectIDList = activeSkillPickUpComponent:GetPickUpEffectEntityIDArray()
-  for i,id in ipairs(effectIDList) do
-    local effectEntity = (self._world):GetEntityByID(id)
+  for i, id in ipairs(effectIDList) do
+    local effectEntity = self._world:GetEntityByID(id)
     if effectEntity then
-      (self._world):DestroyEntity(effectEntity)
+      self._world:DestroyEntity(effectEntity)
     end
   end
   activeSkillPickUpComponent:ClearPickUpEffectEntityIDArray()
 end
-
-

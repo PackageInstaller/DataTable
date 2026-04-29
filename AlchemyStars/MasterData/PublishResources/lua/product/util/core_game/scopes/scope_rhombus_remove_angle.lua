@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_rhombus_remove_angle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_RhombusRemoveAngle", SkillScopeCalculator_Base)
 SkillScopeCalculator_RhombusRemoveAngle = SkillScopeCalculator_RhombusRemoveAngle
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_RhombusRemoveAngle.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_RhombusRemoveAngle:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local params = scopeParam
   local size = params[1]
   local isCenterIncluded = params[2]
@@ -18,7 +11,7 @@ SkillScopeCalculator_RhombusRemoveAngle.CalcRange = function(self, scopeType, sc
   local index = 1
   for i = -size, size do
     for j = -size, size do
-      if (math.abs)(i) + (math.abs)(j) <= size and (i ~= 0 or j ~= 0) then
+      if size >= math.abs(i) + math.abs(j) and (i ~= 0 or j ~= 0) then
         select_piece[index] = {i, j}
         index = index + 1
       end
@@ -26,34 +19,26 @@ SkillScopeCalculator_RhombusRemoveAngle.CalcRange = function(self, scopeType, sc
   end
   local range = {}
   local wholeArea = {}
-  for _,pos in ipairs(select_piece) do
+  for _, pos in ipairs(select_piece) do
     local tar = Vector2(centerPos.x + pos[1], centerPos.y + pos[2])
     self:_InsertTargetGrid(range, tar, wholeArea)
   end
   if isCenterIncluded then
     self:_InsertTargetGrid(range, centerPos, wholeArea)
   end
-  do
-    if canMoveFlag and canMoveFlag ~= 0 then
-      local newRange = {}
-      for _,pos in pairs(range) do
-        if not (self._gridFilter):IsPosBlock(pos, BlockFlag.LinkLine) then
-          (table.insert)(newRange, pos)
-        end
+  if canMoveFlag and canMoveFlag ~= 0 then
+    local newRange = {}
+    for _, pos in pairs(range) do
+      if not self._gridFilter:IsPosBlock(pos, BlockFlag.LinkLine) then
+        table.insert(newRange, pos)
       end
-      range = newRange
     end
-    ;
-    (table.removev)(range, Vector2(centerPos.x, centerPos.y + size))
-    ;
-    (table.removev)(range, Vector2(centerPos.x, centerPos.y - size))
-    ;
-    (table.removev)(range, Vector2(centerPos.x + size, centerPos.y))
-    ;
-    (table.removev)(range, Vector2(centerPos.x - size, centerPos.y))
-    local result = SkillScopeResult:New(SkillScopeType.RhombusRemoveAngle, centerPos, range, range)
-    return result
+    range = newRange
   end
+  table.removev(range, Vector2(centerPos.x, centerPos.y + size))
+  table.removev(range, Vector2(centerPos.x, centerPos.y - size))
+  table.removev(range, Vector2(centerPos.x + size, centerPos.y))
+  table.removev(range, Vector2(centerPos.x - size, centerPos.y))
+  local result = SkillScopeResult:New(SkillScopeType.RhombusRemoveAngle, centerPos, range, range)
+  return result
 end
-
-

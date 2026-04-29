@@ -1,84 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/build/ui_homeland_build_edit_rotate.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBuildEditRotate", UIController)
 UIHomelandBuildEditRotate = UIHomelandBuildEditRotate
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBuildEditRotate.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.mUIHomeland = (self.mHomeland):GetUIModule()
-  self.homelandClient = (self.mUIHomeland):GetClient()
-  self.homeBuildManager = (self.homelandClient):BuildManager()
-  self.rotateAngleStep = ((Cfg.cfg_global).ui_homeland_build_rotate_step).IntValue or 10
+function UIHomelandBuildEditRotate:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.mUIHomeland = self.mHomeland:GetUIModule()
+  self.homelandClient = self.mUIHomeland:GetClient()
+  self.homeBuildManager = self.homelandClient:BuildManager()
+  self.rotateAngleStep = Cfg.cfg_global.ui_homeland_build_rotate_step.IntValue or 10
   self.quaternion = Quaternion.identity
   self.dishRect = Vector2(360, 210)
-  self.offsetX = (self.dishRect).x * 0.5
-  self.offsetY = (self.dishRect).y * 0.5
+  self.offsetX = self.dishRect.x * 0.5
+  self.offsetY = self.dishRect.y * 0.5
   self.offset = 50
-  self.center = Vector2((UnityEngine.Screen).width * 0.5, (UnityEngine.Screen).height * 0.5)
-  self.showAnchorPositions = {Vector2(-self.offset - self.offsetX, -self.offset - self.offsetY), Vector2(self.offset + self.offsetX, -self.offset - self.offsetY), Vector2(self.offset + self.offsetX, self.offset + self.offsetY), Vector2(-self.offset - self.offsetX, self.offset + self.offsetY)}
+  self.center = Vector2(UnityEngine.Screen.width * 0.5, UnityEngine.Screen.height * 0.5)
+  self.showAnchorPositions = {
+    Vector2(-self.offset - self.offsetX, -self.offset - self.offsetY),
+    Vector2(self.offset + self.offsetX, -self.offset - self.offsetY),
+    Vector2(self.offset + self.offsetX, self.offset + self.offsetY),
+    Vector2(-self.offset - self.offsetX, self.offset + self.offsetY)
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditRotate.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandBuildEditRotate:OnShow(uiParams)
   self.circle = self:GetUIComponent("RectTransform", "circle")
   self.arrow = self:GetUIComponent("RectTransform", "arrow")
   self.txtDegree = self:GetUIComponent("UILocalizationText", "txtDegree")
   self.goCircle = self:GetGameObject("circle")
-  local etl = (UICustomUIEventListener.Get)(self.goCircle)
+  local etl = UICustomUIEventListener.Get(self.goCircle)
   self:AddUICustomEventListener(etl, UIEvent.BeginDrag, function(ped)
-    -- function num : 0_1_0 , upvalues : _ENV
-    (Log.debug)("### BeginDrag")
-  end
-)
+    Log.debug("### BeginDrag")
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Drag, function(ped)
-    -- function num : 0_1_1 , upvalues : self
     self:Rotate()
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.EndDrag, function(ped)
-    -- function num : 0_1_2 , upvalues : _ENV
-    (Log.debug)("### EndDrag")
-  end
-)
+    Log.debug("### EndDrag")
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Click, function(go)
-    -- function num : 0_1_3 , upvalues : self
     self:Rotate()
-  end
-)
-  local homeBuilding = (self.homeBuildManager):GetCurrentBuilding()
+  end)
+  local homeBuilding = self.homeBuildManager:GetCurrentBuilding()
   local angle = homeBuilding:RotY()
   self:FlushCirclePos()
   self:FlushArrow(angle)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnHomeBuildRotateOpen, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnHomeBuildRotateOpen, true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditRotate.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnHomeBuildRotateOpen, false)
+function UIHomelandBuildEditRotate:OnHide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnHomeBuildRotateOpen, false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditRotate.FlushCirclePos = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local homeBuilding = (self.homeBuildManager):GetCurrentBuilding()
+function UIHomelandBuildEditRotate:FlushCirclePos()
+  local homeBuilding = self.homeBuildManager:GetCurrentBuilding()
   local pos = homeBuilding:Pos()
-  local cameraController = ((self.homelandClient):CameraManager()):GlobalCameraController()
+  local cameraController = self.homelandClient:CameraManager():GlobalCameraController()
   local camera = cameraController:CameraCmp()
   local posScreen = camera:WorldToScreenPoint(pos)
   local index = 0
-  local isRight = (self.center).x < posScreen.x
-  local isUp = (self.center).y < posScreen.y
+  local isRight = posScreen.x > self.center.x
+  local isUp = posScreen.y > self.center.y
   if isRight then
     if isUp then
       index = 1
@@ -90,67 +70,41 @@ UIHomelandBuildEditRotate.FlushCirclePos = function(self)
   else
     index = 3
   end
-  -- DECOMPILER ERROR at PC60: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self.circle).anchoredPosition = Vector2(((self.circle).anchoredPosition).x + ((self.showAnchorPositions)[index]).x, ((self.circle).anchoredPosition).y + ((self.showAnchorPositions)[index]).y)
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  self.circle.anchoredPosition = Vector2(self.circle.anchoredPosition.x + self.showAnchorPositions[index].x, self.circle.anchoredPosition.y + self.showAnchorPositions[index].y)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditRotate.FlushArrow = function(self, angle)
-  -- function num : 0_4 , upvalues : _ENV
-  (self.quaternion):SetEuler(0, 0, -angle)
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.arrow).localRotation = self.quaternion
-  ;
-  (self.txtDegree):SetText((StringTable.Get)("str_homeland_build_degree", angle))
+function UIHomelandBuildEditRotate:FlushArrow(angle)
+  self.quaternion:SetEuler(0, 0, -angle)
+  self.arrow.localRotation = self.quaternion
+  self.txtDegree:SetText(StringTable.Get("str_homeland_build_degree", angle))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditRotate.bgOnClick = function(self, go)
-  -- function num : 0_5
+function UIHomelandBuildEditRotate:bgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditRotate.Rotate = function(self)
-  -- function num : 0_6
+function UIHomelandBuildEditRotate:Rotate()
   local angle = self:CalcAngle()
   angle = self:FormatAngle(angle)
   self:FlushArrow(angle)
-  ;
-  (self.homeBuildManager):Rotate(angle)
+  self.homeBuildManager:Rotate(angle)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditRotate.CalcAngle = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local mousePosition = (UnityEngine.Input).mousePosition
+function UIHomelandBuildEditRotate:CalcAngle()
+  local mousePosition = UnityEngine.Input.mousePosition
   local screenPos = Vector2(mousePosition.x, mousePosition.y)
-  local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
-  local pos = (UIHelper.ScreenPointToWorldPointInRectangle)((self.circle).parent, screenPos, camera)
-  local posCircle = (self.circle).position
+  local camera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
+  local pos = UIHelper.ScreenPointToWorldPointInRectangle(self.circle.parent, screenPos, camera)
+  local posCircle = self.circle.position
   local v3 = pos - posCircle
-  local angle = (Vector2.Angle)(Vector2.up, Vector2(v3.x, v3.y))
+  local angle = Vector2.Angle(Vector2.up, Vector2(v3.x, v3.y))
   if v3.x < 0 then
     angle = 360 - angle
   end
   return angle
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditRotate.FormatAngle = function(self, angle)
-  -- function num : 0_8 , upvalues : _ENV
-  local div = (math.floor)((angle + self.rotateAngleStep * 0.5) / self.rotateAngleStep) * self.rotateAngleStep
+function UIHomelandBuildEditRotate:FormatAngle(angle)
+  local div = math.floor((angle + self.rotateAngleStep * 0.5) / self.rotateAngleStep) * self.rotateAngleStep
   return div
 end
-
-

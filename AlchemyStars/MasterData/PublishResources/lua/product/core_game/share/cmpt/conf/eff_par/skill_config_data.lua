@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_config_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_scope_filter_param")
 _class("SkillConfigData", Object)
 SkillConfigData = SkillConfigData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillConfigData.Constructor = function(self, scopeParamParser, effectParamParser, viewParamParser, previewParamParser)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillConfigData:Constructor(scopeParamParser, effectParamParser, viewParamParser, previewParamParser)
   self._skillName = ""
   self._skillDesc = ""
   self._subSkillIDList = {}
@@ -35,303 +28,200 @@ SkillConfigData.Constructor = function(self, scopeParamParser, effectParamParser
   self._previewParamParser = previewParamParser
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.ParseSkillConfig = function(self, skillID)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillConfigData:ParseSkillConfig(skillID)
   local skillConfig = BattleSkillCfg(skillID)
   if skillConfig == nil then
-    (Log.fatal)("ParseSkillConfig skill not exist skillID=", skillID, " ", (Log.traceback)())
-    return 
+    Log.fatal("ParseSkillConfig skill not exist skillID=", skillID, " ", Log.traceback())
+    return
   end
   self._skillID = skillConfig.ID
   self._skillIcon = skillConfig.Icon
   self._skillDesc = skillConfig.Desc
   self._skillName = skillConfig.Name
   self._skillType = skillConfig.Type
-  if not skillConfig.SubSkillIDList then
-    self._subSkillIDList = {}
-    if not skillConfig.Tag then
-      self._skillTag = {}
-      self._triggerType = skillConfig.TriggerType
-      self._triggerParam = skillConfig.TriggerParam
-      self._triggerExtraParam = skillConfig.TriggerExtraParam
-      self._targetType = skillConfig.TargetType
-      self._targetTypeParam = skillConfig.TargetTypeParam
-      self._scopeCenterType = skillConfig.ScopeCenterType
-      self._scopeType = skillConfig.ScopeType
-      self._scopeParamData = (self._scopeParamParser):ParseScopeParam(skillConfig.ScopeType, skillConfig.ScopeParam)
-      if not skillConfig.SpecialView then
-        self._specialView = {}
-        self._scopeFilterParam = SkillScopeFilterParam:New({scopeCasterOccupiedFilter = skillConfig.ScopeCasterOccupiedFilter, obstructingTrapFilter = skillConfig.ScopeObstructingTrapFilter, monsterOccupiedPosFilter = skillConfig.ScopeMonsterOccupiedPosFilter, targetSelectionMode = skillConfig.TargetSelectionMode})
-        self._targetSelectionMode = skillConfig.TargetSelectionMode
-        self._skillViewParams = skillConfig.ViewParams
-        self._skillPhaseAdapter = skillConfig.ViewAdapter
-        self._pickUpType = skillConfig.PickUpType
-        self._pickUpParam = skillConfig.PickUpParam
-        self._previewType = skillConfig.PreviewType
-        self._previewParam = skillConfig.PreviewParam
-        self:ParsePreview(skillConfig)
-        self._skillEffectArray = (self._effectParamParser):ParseSkillEffectList(skillConfig.EffectTable, nil, self._skillType)
-        self._sourceSkillEffectTable = skillConfig.EffectTable
-        -- DECOMPILER ERROR at PC103: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._skillPhaseArray)[1] = self:ParseViewID(skillConfig.ViewID)
-        for skinId,viewID in pairs(self._specialView) do
-          -- DECOMPILER ERROR at PC112: Confused about usage of register: R8 in 'UnsetPending'
-
-          (self._skillPhaseArray)[skinId] = self:ParseViewID(viewID)
-        end
-        self:ParseAutoFightCondition(skillConfig.AutoFightCondition)
-        self._autoFightPickPosPolicyParam = skillConfig.AutoFightPickPosPolicyParam
-        self._autoFightSkillScopeTypeAndTargetType = skillConfig.AutoFightSkillScopeTypeAndTargetType
-        if not skillConfig.AutoFightPickPosPolicy then
-          self._autoFightPickPosPolicy = PickPosPolicy.MaxTargetCount
-          self._autoFightSkillOrder = skillConfig.AutoFightSkillOrder
-          self._autoFightChainSkillTag = skillConfig.ChainSkillTag
-          self._metaEffectTableArray = skillConfig.EffectTable
-        end
-      end
-    end
+  self._subSkillIDList = skillConfig.SubSkillIDList or {}
+  self._skillTag = skillConfig.Tag or {}
+  self._triggerType = skillConfig.TriggerType
+  self._triggerParam = skillConfig.TriggerParam
+  self._triggerExtraParam = skillConfig.TriggerExtraParam
+  self._targetType = skillConfig.TargetType
+  self._targetTypeParam = skillConfig.TargetTypeParam
+  self._scopeCenterType = skillConfig.ScopeCenterType
+  self._scopeType = skillConfig.ScopeType
+  self._scopeParamData = self._scopeParamParser:ParseScopeParam(skillConfig.ScopeType, skillConfig.ScopeParam)
+  self._specialView = skillConfig.SpecialView or {}
+  self._scopeFilterParam = SkillScopeFilterParam:New({
+    scopeCasterOccupiedFilter = skillConfig.ScopeCasterOccupiedFilter,
+    obstructingTrapFilter = skillConfig.ScopeObstructingTrapFilter,
+    monsterOccupiedPosFilter = skillConfig.ScopeMonsterOccupiedPosFilter,
+    targetSelectionMode = skillConfig.TargetSelectionMode
+  })
+  self._targetSelectionMode = skillConfig.TargetSelectionMode
+  self._skillViewParams = skillConfig.ViewParams
+  self._skillPhaseAdapter = skillConfig.ViewAdapter
+  self._pickUpType = skillConfig.PickUpType
+  self._pickUpParam = skillConfig.PickUpParam
+  self._previewType = skillConfig.PreviewType
+  self._previewParam = skillConfig.PreviewParam
+  self:ParsePreview(skillConfig)
+  self._skillEffectArray = self._effectParamParser:ParseSkillEffectList(skillConfig.EffectTable, nil, self._skillType)
+  self._sourceSkillEffectTable = skillConfig.EffectTable
+  self._skillPhaseArray[1] = self:ParseViewID(skillConfig.ViewID)
+  for skinId, viewID in pairs(self._specialView) do
+    self._skillPhaseArray[skinId] = self:ParseViewID(viewID)
   end
+  self:ParseAutoFightCondition(skillConfig.AutoFightCondition)
+  self._autoFightPickPosPolicyParam = skillConfig.AutoFightPickPosPolicyParam
+  self._autoFightSkillScopeTypeAndTargetType = skillConfig.AutoFightSkillScopeTypeAndTargetType
+  self._autoFightPickPosPolicy = skillConfig.AutoFightPickPosPolicy or PickPosPolicy.MaxTargetCount
+  self._autoFightSkillOrder = skillConfig.AutoFightSkillOrder
+  self._autoFightChainSkillTag = skillConfig.ChainSkillTag
+  self._metaEffectTableArray = skillConfig.EffectTable
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetID = function(self)
-  -- function num : 0_2
+function SkillConfigData:GetID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillIcon = function(self)
-  -- function num : 0_3
+function SkillConfigData:GetSkillIcon()
   return self._skillIcon
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillViewParams = function(self)
-  -- function num : 0_4
+function SkillConfigData:GetSkillViewParams()
   return self._skillViewParams
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillName = function(self)
-  -- function num : 0_5
+function SkillConfigData:GetSkillName()
   return self._skillName
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillDesc = function(self)
-  -- function num : 0_6
+function SkillConfigData:GetSkillDesc()
   return self._skillDesc
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetPetSkillDes = function(self, forceParam)
-  -- function num : 0_7 , upvalues : _ENV
-  if forceParam and #forceParam > 0 then
-    return (StringTable.Get)(self._skillDesc, (table.unpack)(forceParam))
+function SkillConfigData:GetPetSkillDes(forceParam)
+  if forceParam and 0 < #forceParam then
+    return StringTable.Get(self._skillDesc, table.unpack(forceParam))
   end
-  if self._skillEffectArray == nil or #self._skillEffectArray <= 0 then
-    return (StringTable.Get)(self._skillDesc)
+  if self._skillEffectArray == nil or 0 >= #self._skillEffectArray then
+    return StringTable.Get(self._skillDesc)
   end
-  local damageEffectParam = nil
+  local damageEffectParam
   for i = 1, #self._skillEffectArray do
-    local skillEffect = (self._skillEffectArray)[i]
+    local skillEffect = self._skillEffectArray[i]
     if skillEffect:GetEffectType() == SkillEffectType.Damage or skillEffect:GetEffectType() == SkillEffectType.StampDamage then
       damageEffectParam = skillEffect
       break
     end
   end
-  do
-    if not damageEffectParam then
-      return (StringTable.Get)(self._skillDesc)
-    end
-    local percent = damageEffectParam:GetDamagePercent()
-    if percent == nil or (table.count)(percent) <= 0 then
-      return (StringTable.Get)(self._skillDesc)
-    end
-    local des = nil
-    local percentCount = (table.count)(percent)
-    if percentCount == 1 then
-      local value = (math.floor)(percent[1] * 100 + 0.5)
-      des = (StringTable.Get)(self._skillDesc, tostring(value))
-    else
-      do
-        if percentCount == 2 then
-          local value1 = (math.floor)(percent[1] * 100 + 0.5)
-          local value2 = (math.floor)(percent[2] * 100 + 0.5)
-          des = (StringTable.Get)(self._skillDesc, tostring(value1), tostring(value2))
-        else
-          do
-            local value1 = (math.floor)(percent[1] * 100 + 0.5)
-            local value2 = (math.floor)(percent[2] * 100 + 0.5)
-            do
-              local value3 = (math.floor)(percent[3] * 100 + 0.5)
-              des = (StringTable.Get)(self._skillDesc, tostring(value1), tostring(value2), tostring(value3))
-              return des
-            end
-          end
-        end
-      end
-    end
+  if not damageEffectParam then
+    return StringTable.Get(self._skillDesc)
   end
+  local percent = damageEffectParam:GetDamagePercent()
+  if percent == nil or 0 >= table.count(percent) then
+    return StringTable.Get(self._skillDesc)
+  end
+  local des
+  local percentCount = table.count(percent)
+  if percentCount == 1 then
+    local value = math.floor(percent[1] * 100 + 0.5)
+    des = StringTable.Get(self._skillDesc, tostring(value))
+  elseif percentCount == 2 then
+    local value1 = math.floor(percent[1] * 100 + 0.5)
+    local value2 = math.floor(percent[2] * 100 + 0.5)
+    des = StringTable.Get(self._skillDesc, tostring(value1), tostring(value2))
+  else
+    local value1 = math.floor(percent[1] * 100 + 0.5)
+    local value2 = math.floor(percent[2] * 100 + 0.5)
+    local value3 = math.floor(percent[3] * 100 + 0.5)
+    des = StringTable.Get(self._skillDesc, tostring(value1), tostring(value2), tostring(value3))
+  end
+  return des
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillType = function(self)
-  -- function num : 0_8
+function SkillConfigData:GetSkillType()
   return self._skillType
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillTargetType = function(self)
-  -- function num : 0_9
+function SkillConfigData:GetSkillTargetType()
   return self._targetType
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillTargetTypeParam = function(self)
-  -- function num : 0_10
+function SkillConfigData:GetSkillTargetTypeParam()
   return self._targetTypeParam
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillScopeCenterType = function(self)
-  -- function num : 0_11
+function SkillConfigData:GetSkillScopeCenterType()
   return self._scopeCenterType
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillScopeType = function(self)
-  -- function num : 0_12
+function SkillConfigData:GetSkillScopeType()
   return self._scopeType
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillScopeParam = function(self)
-  -- function num : 0_13
+function SkillConfigData:GetSkillScopeParam()
   return self._scopeParamData
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillEffect = function(self)
-  -- function num : 0_14
+function SkillConfigData:GetSkillEffect()
   return self._skillEffectArray
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillSourceEffectTable = function(self)
-  -- function num : 0_15
+function SkillConfigData:GetSkillSourceEffectTable()
   return self._sourceSkillEffectTable
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillPhaseArray = function(self, skinID)
-  -- function num : 0_16
-  if not skinID then
-    skinID = 1
-  end
-  local ret = (self._skillPhaseArray)[skinID]
-  if not ret then
-    ret = (self._skillPhaseArray)[1]
-  end
+function SkillConfigData:GetSkillPhaseArray(skinID)
+  skinID = skinID or 1
+  local ret = self._skillPhaseArray[skinID]
+  ret = ret or self._skillPhaseArray[1]
   return ret
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillPreviewType = function(self)
-  -- function num : 0_17
+function SkillConfigData:GetSkillPreviewType()
   return self._previewType
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillPreviewParam = function(self)
-  -- function num : 0_18
+function SkillConfigData:GetSkillPreviewParam()
   return self._previewParam
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillPickType = function(self)
-  -- function num : 0_19
+function SkillConfigData:GetSkillPickType()
   return self._pickUpType
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillPickParam = function(self)
-  -- function num : 0_20
+function SkillConfigData:GetSkillPickParam()
   return self._pickUpParam
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillTriggerType = function(self)
-  -- function num : 0_21
+function SkillConfigData:GetSkillTriggerType()
   return self._triggerType
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillTriggerParam = function(self)
-  -- function num : 0_22
+function SkillConfigData:GetSkillTriggerParam()
   return self._triggerParam
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillTriggerExtraParam = function(self)
-  -- function num : 0_23
+function SkillConfigData:GetSkillTriggerExtraParam()
   return self._triggerExtraParam
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillPhaseAdapter = function(self)
-  -- function num : 0_24
+function SkillConfigData:GetSkillPhaseAdapter()
   return self._skillPhaseAdapter
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetScopeFilterParam = function(self)
-  -- function num : 0_25
+function SkillConfigData:GetScopeFilterParam()
   return self._scopeFilterParam
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.ParseScopeParam = function(self, nScopeType, scopeParam)
-  -- function num : 0_26
-  return (self._scopeParamParser):ParseScopeParam(nScopeType, scopeParam)
+function SkillConfigData:ParseScopeParam(nScopeType, scopeParam)
+  return self._scopeParamParser:ParseScopeParam(nScopeType, scopeParam)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.IsHaveEffect_Common = function(self, pCallBack)
-  -- function num : 0_27 , upvalues : _ENV
-  local nEffectCount = (table.count)(self._skillEffectArray)
+function SkillConfigData:IsHaveEffect_Common(pCallBack)
+  local nEffectCount = table.count(self._skillEffectArray)
   for i = 1, nEffectCount do
-    local effectData = (self._skillEffectArray)[i]
+    local effectData = self._skillEffectArray[i]
     if effectData then
       local nEffectType = effectData:GetEffectType()
       local bFind = pCallBack(self, nEffectType)
@@ -343,254 +233,162 @@ SkillConfigData.IsHaveEffect_Common = function(self, pCallBack)
   return false
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData._IsHaveEffect_HitBack = function(self, nEffectType)
-  -- function num : 0_28 , upvalues : _ENV
+function SkillConfigData:_IsHaveEffect_HitBack(nEffectType)
   if SkillEffectType.HitBack == nEffectType then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData._IsHaveEffect_Convert = function(self, nEffectType)
-  -- function num : 0_29 , upvalues : _ENV
+function SkillConfigData:_IsHaveEffect_Convert(nEffectType)
   if SkillEffectType.ConvertGridElement == nEffectType or SkillEffectType.ManualConvert == nEffectType or SkillEffectType.IslandConvert == nEffectType then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData._IsHaveEffect_Teleport = function(self, nEffectType)
-  -- function num : 0_30 , upvalues : _ENV
+function SkillConfigData:_IsHaveEffect_Teleport(nEffectType)
   if SkillEffectType.Teleport == nEffectType then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData._IsHaveEffect_Damage = function(self, nEffectType)
-  -- function num : 0_31 , upvalues : _ENV
-  do return nEffectType == SkillEffectType.Damage or nEffectType == SkillEffectType.DamageOnTargetCount or nEffectType == SkillEffectType.StampDamage end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SkillConfigData:_IsHaveEffect_Damage(nEffectType)
+  return nEffectType == SkillEffectType.Damage or nEffectType == SkillEffectType.DamageOnTargetCount or nEffectType == SkillEffectType.StampDamage
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.IsHaveEffect_HitBack = function(self)
-  -- function num : 0_32
+function SkillConfigData:IsHaveEffect_HitBack()
   return self:IsHaveEffect_Common(self._IsHaveEffect_HitBack)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.IsHaveEffect_Convert = function(self)
-  -- function num : 0_33
+function SkillConfigData:IsHaveEffect_Convert()
   return self:IsHaveEffect_Common(self._IsHaveEffect_Convert)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.IsHaveEffect_Teleport = function(self)
-  -- function num : 0_34
+function SkillConfigData:IsHaveEffect_Teleport()
   return self:IsHaveEffect_Common(self._IsHaveEffect_Teleport)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.IsHaveEffect_Damage = function(self)
-  -- function num : 0_35
+function SkillConfigData:IsHaveEffect_Damage()
   return self:IsHaveEffect_Common(self._IsHaveEffect_Damage)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillTag = function(self)
-  -- function num : 0_36
+function SkillConfigData:GetSkillTag()
   return self._skillTag
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.ParseViewID = function(self, viewID)
-  -- function num : 0_37 , upvalues : _ENV
-  local ret = nil
+function SkillConfigData:ParseViewID(viewID)
+  local ret
   if self._viewParamParser then
-    ret = (self._viewParamParser):ParseSkillView(viewID, self:GetSkillViewParams())
+    ret = self._viewParamParser:ParseSkillView(viewID, self:GetSkillViewParams())
   end
   if not ret and EDITOR then
-    (Log.warn)("no skill view, skillViewID = ", viewID)
+    Log.warn("no skill view, skillViewID = ", viewID)
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillViewID = function(self, skinID)
-  -- function num : 0_38
+function SkillConfigData:GetSkillViewID(skinID)
   return self._skillViewID
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.ParsePreview = function(self, skillConfig)
-  -- function num : 0_39 , upvalues : _ENV
+function SkillConfigData:ParsePreview(skillConfig)
   if skillConfig.PickUpScopeType then
     self._pickUpValidScopeList = {}
-    for _,v in ipairs(skillConfig.PickUpScopeType) do
+    for _, v in ipairs(skillConfig.PickUpScopeType) do
       local pickUpScopeParam = SkillPreviewScopeParam:New(v)
-      local scopeParamData = (self._scopeParamParser):ParseScopeParam(v.ScopeType, v.ScopeParam)
+      local scopeParamData = self._scopeParamParser:ParseScopeParam(v.ScopeType, v.ScopeParam)
       pickUpScopeParam:SetScopeParamData(scopeParamData)
-      ;
-      (table.insert)(self._pickUpValidScopeList, pickUpScopeParam)
+      table.insert(self._pickUpValidScopeList, pickUpScopeParam)
     end
   end
-  do
-    if skillConfig.PickUpInvalidScopeList then
-      self._pickUpInvalidScopeList = {}
-      for _,v in pairs(skillConfig.PickUpInvalidScopeList) do
-        local pickUpInvalidScopeParam = SkillPreviewScopeParam:New(v)
-        local pickUpScopeParamData = (self._scopeParamParser):ParseScopeParam(v.ScopeType, v.ScopeParam)
-        pickUpInvalidScopeParam:SetScopeParamData(pickUpScopeParamData)
-        ;
-        (table.insert)(self._pickUpInvalidScopeList, pickUpInvalidScopeParam)
-      end
+  if skillConfig.PickUpInvalidScopeList then
+    self._pickUpInvalidScopeList = {}
+    for _, v in pairs(skillConfig.PickUpInvalidScopeList) do
+      local pickUpInvalidScopeParam = SkillPreviewScopeParam:New(v)
+      local pickUpScopeParamData = self._scopeParamParser:ParseScopeParam(v.ScopeType, v.ScopeParam)
+      pickUpInvalidScopeParam:SetScopeParamData(pickUpScopeParamData)
+      table.insert(self._pickUpInvalidScopeList, pickUpInvalidScopeParam)
     end
-    do
-      if self._previewParamParser and skillConfig.PreviewList then
-        self._previewParamList = (self._previewParamParser):ParseSkillPreviewList(skillConfig.PreviewList)
-      end
-    end
+  end
+  if self._previewParamParser and skillConfig.PreviewList then
+    self._previewParamList = self._previewParamParser:ParseSkillPreviewList(skillConfig.PreviewList)
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.ParseAutoFightCondition = function(self, condition)
-  -- function num : 0_40 , upvalues : _ENV
+function SkillConfigData:ParseAutoFightCondition(condition)
   if not condition then
-    return 
+    return
   end
   self._autoFightCondition = {
-conds = {}
-, callback = function(t)
-    -- function num : 0_40_0 , upvalues : _ENV, condition
-    local code = (string.gsub)(condition, "%a+", function(s)
-      -- function num : 0_40_0_0 , upvalues : t
-      return (t.conds)[s]
+    conds = {},
+    callback = function(t)
+      local code = string.gsub(condition, "%a+", function(s)
+        return t.conds[s]
+      end)
+      code = string.gsub(code, "&", " and ")
+      code = string.gsub(code, "|", " or ")
+      code = "return " .. code
+      local f = load(code)
+      if not f then
+        Log.error("code:", code)
+      end
+      return f()
     end
-)
-    code = (string.gsub)(code, "&", " and ")
-    code = (string.gsub)(code, "|", " or ")
-    code = "return " .. code
-    local f = load(code)
-    if not f then
-      (Log.error)("code:", code)
-    end
-    return f()
-  end
-}
-  for cond in (string.gmatch)(condition, "%a+") do
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R6 in 'UnsetPending'
-
-    ((self._autoFightCondition).conds)[cond] = 0
+  }
+  for cond in string.gmatch(condition, "%a+") do
+    self._autoFightCondition.conds[cond] = 0
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetAutoFightCondition = function(self)
-  -- function num : 0_41
+function SkillConfigData:GetAutoFightCondition()
   return self._autoFightCondition
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetAutoFightSkillScopeTypeAndTargetType = function(self)
-  -- function num : 0_42
+function SkillConfigData:GetAutoFightSkillScopeTypeAndTargetType()
   return self._autoFightSkillScopeTypeAndTargetType
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetAutoFightPickPosPolicy = function(self)
-  -- function num : 0_43
+function SkillConfigData:GetAutoFightPickPosPolicy()
   return self._autoFightPickPosPolicy
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetAutoFightSkillOrder = function(self)
-  -- function num : 0_44
+function SkillConfigData:GetAutoFightSkillOrder()
   return self._autoFightSkillOrder
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetAutoFightChainSkillTag = function(self)
-  -- function num : 0_45
+function SkillConfigData:GetAutoFightChainSkillTag()
   return self._autoFightChainSkillTag
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetMetaEffectTableArray = function(self)
-  -- function num : 0_46
+function SkillConfigData:GetMetaEffectTableArray()
   return self._metaEffectTableArray
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSpecialView = function(self, key)
-  -- function num : 0_47
+function SkillConfigData:GetSpecialView(key)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetPickUpValidScopeConfig = function(self)
-  -- function num : 0_48
+function SkillConfigData:GetPickUpValidScopeConfig()
   return self._pickUpValidScopeList
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetPickUpInvalidScopeConfig = function(self)
-  -- function num : 0_49
+function SkillConfigData:GetPickUpInvalidScopeConfig()
   return self._pickUpInvalidScopeList
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetTargetSelectionModeConfig = function(self)
-  -- function num : 0_50
+function SkillConfigData:GetTargetSelectionModeConfig()
   return self._targetSelectionMode
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSkillEffectByIndex = function(self, index)
-  -- function num : 0_51
-  return (self._skillEffectArray)[index]
+function SkillConfigData:GetSkillEffectByIndex(index)
+  return self._skillEffectArray[index]
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetSubSkillIDList = function(self)
-  -- function num : 0_52
+function SkillConfigData:GetSubSkillIDList()
   return self._subSkillIDList
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigData.GetAutoFightPickPosPolicyParam = function(self)
-  -- function num : 0_53
+function SkillConfigData:GetAutoFightPickPosPolicyParam()
   return self._autoFightPickPosPolicyParam
 end
-
-

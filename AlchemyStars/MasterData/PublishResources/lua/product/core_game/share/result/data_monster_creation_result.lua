@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_monster_creation_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataMonsterCreationResult", Object)
 DataMonsterCreationResult = DataMonsterCreationResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataMonsterCreationResult.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function DataMonsterCreationResult:Constructor()
   self._templateID = -1
   self._resPath = nil
   self._curHp = -1
@@ -22,158 +15,90 @@ DataMonsterCreationResult.Constructor = function(self)
   self._gridLocRes = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.GetMonsterTemplateID = function(self)
-  -- function num : 0_1
+function DataMonsterCreationResult:GetMonsterTemplateID()
   return self._templateID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.SetMonsterTemplateID = function(self, id)
-  -- function num : 0_2
+function DataMonsterCreationResult:SetMonsterTemplateID(id)
   self._templateID = id
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.GetMonsterResPath = function(self)
-  -- function num : 0_3
+function DataMonsterCreationResult:GetMonsterResPath()
   return self._resPath
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.SetMonsterResPath = function(self, path)
-  -- function num : 0_4
+function DataMonsterCreationResult:SetMonsterResPath(path)
   self._resPath = path
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.GetMonsterHP = function(self)
-  -- function num : 0_5
+function DataMonsterCreationResult:GetMonsterHP()
   return self._curHp
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.SetMonsterHP = function(self, hp)
-  -- function num : 0_6
+function DataMonsterCreationResult:SetMonsterHP(hp)
   self._curHp = hp
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.GetMonsterMaxHP = function(self)
-  -- function num : 0_7
+function DataMonsterCreationResult:GetMonsterMaxHP()
   return self._maxHp
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.SetMonsterMaxHP = function(self, hp)
-  -- function num : 0_8
+function DataMonsterCreationResult:SetMonsterMaxHP(hp)
   self._maxHp = hp
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.GetMonsterHPOffset = function(self)
-  -- function num : 0_9
+function DataMonsterCreationResult:GetMonsterHPOffset()
   return self._hpOffset
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.SetMonsterHPOffset = function(self, offset)
-  -- function num : 0_10
+function DataMonsterCreationResult:SetMonsterHPOffset(offset)
   self._hpOffset = offset
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.GetMonsterIsBoss = function(self)
-  -- function num : 0_11
+function DataMonsterCreationResult:GetMonsterIsBoss()
   return self._isBoss
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.SetMonsterIsBoss = function(self, isBoss)
-  -- function num : 0_12
+function DataMonsterCreationResult:SetMonsterIsBoss(isBoss)
   self._isBoss = isBoss
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.GetMonsterElement = function(self)
-  -- function num : 0_13
+function DataMonsterCreationResult:GetMonsterElement()
   return self._elementType
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.SetMonsterElement = function(self, element)
-  -- function num : 0_14
+function DataMonsterCreationResult:SetMonsterElement(element)
   self._elementType = element
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.GetMonsterLockHPList = function(self)
-  -- function num : 0_15
+function DataMonsterCreationResult:GetMonsterLockHPList()
   return self._lockHpList
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.SetMonsterLockHPList = function(self, list)
-  -- function num : 0_16
+function DataMonsterCreationResult:SetMonsterLockHPList(list)
   self._lockHpList = list
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.GetMonsterChangeModelWithPetIndex = function(self)
-  -- function num : 0_17
+function DataMonsterCreationResult:GetMonsterChangeModelWithPetIndex()
   return self._isChangeModelWithPetIndex
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.SetMonsterChangeModelWithPetIndex = function(self, index)
-  -- function num : 0_18
+function DataMonsterCreationResult:SetMonsterChangeModelWithPetIndex(index)
   self._isChangeModelWithPetIndex = index
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.GetMonsterAppearSkillID = function(self)
-  -- function num : 0_19
+function DataMonsterCreationResult:GetMonsterAppearSkillID()
   return self._appearSkillID
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.SetMonsterAppearSkillID = function(self, skillID)
-  -- function num : 0_20
+function DataMonsterCreationResult:SetMonsterAppearSkillID(skillID)
   self._appearSkillID = skillID
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.GetMonsterGridLocResult = function(self)
-  -- function num : 0_21
+function DataMonsterCreationResult:GetMonsterGridLocResult()
   return self._gridLocRes
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-DataMonsterCreationResult.SetMonsterGridLocResult = function(self, res)
-  -- function num : 0_22
+function DataMonsterCreationResult:SetMonsterGridLocResult(res)
   self._gridLocRes = res
 end
-
-

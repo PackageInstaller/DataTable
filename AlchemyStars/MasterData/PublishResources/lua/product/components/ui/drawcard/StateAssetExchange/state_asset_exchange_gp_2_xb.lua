@@ -1,96 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/StateAssetExchange/state_asset_exchange_gp_2_xb.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateAssetExchangeGp2Xb", State)
 StateAssetExchangeGp2Xb = StateAssetExchangeGp2Xb
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateAssetExchangeGp2Xb.Init = function(self)
-  -- function num : 0_0
+function StateAssetExchangeGp2Xb:Init()
   self._fsm = self:GetFsm()
-  self._ui = (self._fsm):GetData()
-  self._uiData = (self._ui):GetUIData()
+  self._ui = self._fsm:GetData()
+  self._uiData = self._ui:GetUIData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAssetExchangeGp2Xb.OnEnter = function(self, TT, ...)
-  -- function num : 0_1 , upvalues : _ENV
+function StateAssetExchangeGp2Xb:OnEnter(TT, ...)
   self:Init()
-  local costGP, diffXB, alert = (table.unpack)({...})
+  local costGP, diffXB, alert = table.unpack({
+    ...
+  })
   if alert then
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_pay_drawcard_gp_2_xb", costGP, diffXB, (self._uiData):GetXBName((self._ui):GetIsSingle())), function(param)
-    -- function num : 0_1_0 , upvalues : self, costGP, diffXB
-    if self._fsm then
-      self:RequestGP2XB(costGP, diffXB)
-    end
-  end
-, nil, function(param)
-    -- function num : 0_1_1 , upvalues : self, _ENV
-    if self._fsm then
-      (self._fsm):ChangeState(StateAssetExchange.Init)
-    end
-  end
-, nil)
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_pay_drawcard_gp_2_xb", costGP, diffXB, self._uiData:GetXBName(self._ui:GetIsSingle())), function(param)
+      if self._fsm then
+        self:RequestGP2XB(costGP, diffXB)
+      end
+    end, nil, function(param)
+      if self._fsm then
+        self._fsm:ChangeState(StateAssetExchange.Init)
+      end
+    end, nil)
   else
     self:RequestGP2XB(costGP, diffXB)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAssetExchangeGp2Xb.OnExit = function(self, TT)
-  -- function num : 0_2
+function StateAssetExchangeGp2Xb:OnExit(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAssetExchangeGp2Xb.Destroy = function(self)
-  -- function num : 0_3
+function StateAssetExchangeGp2Xb:Destroy()
   self._fsm = nil
   self._ui = nil
   self._uiData = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAssetExchangeGp2Xb.RequestGP2XB = function(self, costGP, countXB)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV, countXB, costGP
-    ((self._ui):GetIsSingle())
-    local isSingle = nil
-    local costMat = nil
+function StateAssetExchangeGp2Xb:RequestGP2XB(costGP, countXB)
+  GameGlobal.TaskManager():StartTask(function(TT)
+    local isSingle = self._ui:GetIsSingle()
+    local costMat
     if isSingle then
-      costMat = (self._uiData).singleMat
+      costMat = self._uiData.singleMat
     else
-      costMat = (self._uiData).multipleMat
+      costMat = self._uiData.multipleMat
     end
-    local cfgv, goodsId = (ClientShop.GetXBCfg)(costMat)
+    local cfgv, goodsId = ClientShop.GetXBCfg(costMat)
     if not cfgv then
-      (self._fsm):ChangeState(StateAssetExchange.Init)
-      return 
+      self._fsm:ChangeState(StateAssetExchange.Init)
+      return
     end
     local sale_tpye = cfgv[ConfigKey.ConfigKey_SaleType]
     local price = cfgv[ConfigKey.ConfigKey_NowPrice]
-    local mShop = (GameGlobal.GetModule)(ShopModule)
-    ;
-    ((GameGlobal.UIStateManager)()):Lock("StateAssetExchangeGp2Xb")
+    local mShop = GameGlobal.GetModule(ShopModule)
+    GameGlobal.UIStateManager():Lock("StateAssetExchangeGp2Xb")
     local ret = mShop:BuyItem(TT, MarketType.Shop_GuangPo, goodsId, countXB, sale_tpye, price)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("StateAssetExchangeGp2Xb")
-    if (ClientShop.CheckShopCode)(ret) then
-      (self._fsm):ChangeState(StateAssetExchange.DrawCard)
+    GameGlobal.UIStateManager():UnLock("StateAssetExchangeGp2Xb")
+    if ClientShop.CheckShopCode(ret) then
+      self._fsm:ChangeState(StateAssetExchange.DrawCard)
     else
-      ;
-      (Log.fatal)("### RequestGP2XB failed.", costGP, countXB, ret)
-      ;
-      (self._fsm):ChangeState(StateAssetExchange.Init)
+      Log.fatal("### RequestGP2XB failed.", costGP, countXB, ret)
+      self._fsm:ChangeState(StateAssetExchange.Init)
     end
-  end
-, self)
+  end, self)
 end
-
-

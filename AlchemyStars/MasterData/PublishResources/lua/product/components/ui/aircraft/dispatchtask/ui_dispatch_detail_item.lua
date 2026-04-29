@@ -1,22 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/dispatchtask/ui_dispatch_detail_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDispatchDetailItem", UICustomWidget)
 UIDispatchDetailItem = UIDispatchDetailItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDispatchDetailItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self.Element2ImageName = {[ElementType.ElementType_Blue] = "str_shop_pet_shui", [ElementType.ElementType_Red] = "str_shop_pet_huo", [ElementType.ElementType_Green] = "str_shop_pet_sen", [ElementType.ElementType_Yellow] = "str_shop_pet_lei"}
-  self.ElementSpriteName = {[ElementType.ElementType_Blue] = "bing_color", [ElementType.ElementType_Red] = "huo_color", [ElementType.ElementType_Green] = "sen_color", [ElementType.ElementType_Yellow] = "lei_color"}
-  self._prof2Img = {[2001] = "spirit_prof_5", [2002] = "spirit_prof_1", [2003] = "spirit_prof_3", [2004] = "spirit_prof_7"}
-  self._prof2Tex = {[2001] = "str_pet_tag_job_name_color_change", [2002] = "str_pet_tag_job_name_return_blood", [2003] = "str_pet_tag_job_name_attack", [2004] = "str_pet_tag_job_name_function"}
+function UIDispatchDetailItem:OnShow(uiParams)
+  self.Element2ImageName = {
+    [ElementType.ElementType_Blue] = "str_shop_pet_shui",
+    [ElementType.ElementType_Red] = "str_shop_pet_huo",
+    [ElementType.ElementType_Green] = "str_shop_pet_sen",
+    [ElementType.ElementType_Yellow] = "str_shop_pet_lei"
+  }
+  self.ElementSpriteName = {
+    [ElementType.ElementType_Blue] = "bing_color",
+    [ElementType.ElementType_Red] = "huo_color",
+    [ElementType.ElementType_Green] = "sen_color",
+    [ElementType.ElementType_Yellow] = "lei_color"
+  }
+  self._prof2Img = {
+    [2001] = "spirit_prof_5",
+    [2002] = "spirit_prof_1",
+    [2003] = "spirit_prof_3",
+    [2004] = "spirit_prof_7"
+  }
+  self._prof2Tex = {
+    [2001] = "str_pet_tag_job_name_color_change",
+    [2002] = "str_pet_tag_job_name_return_blood",
+    [2003] = "str_pet_tag_job_name_attack",
+    [2004] = "str_pet_tag_job_name_function"
+  }
   self._uiHeartItemAtlas = self:GetAsset("UIHeartItem.spriteatlas", LoadType.SpriteAtlas)
-  self._aircraftModule = (GameGlobal.GetModule)(AircraftModule)
-  self._roomData = (self._aircraftModule):GetRoomByRoomType(AirRoomType.DispatchRoom)
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._aircraftModule = GameGlobal.GetModule(AircraftModule)
+  self._roomData = self._aircraftModule:GetRoomByRoomType(AirRoomType.DispatchRoom)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
   self._taskNameLabel = self:GetUIComponent("UILocalizationText", "TaskName")
   self._starLoader = self:GetUIComponent("UISelectObjectPath", "StarPanel")
   self._taskDesLabel = self:GetUIComponent("UILocalizationText", "TaskDes")
@@ -45,43 +58,37 @@ UIDispatchDetailItem.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.UpdateDispatchTaskItemInfo, self.RefreshTaskStatus)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDispatchDetailItem:OnHide()
   self._uiHeartItemAtlas = nil
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   self:DetachEvent(GameEventType.UpdateDispatchPetList, self._RefreshPetInfo)
   self:DetachEvent(GameEventType.UpdateDispatchTaskItemInfo, self.RefreshTaskStatus)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.Refresh = function(self, index, detailController)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDispatchDetailItem:Refresh(index, detailController)
   self._pointIndex = index
   self._detailController = detailController
-  self._workingPets = (self._detailController):GetWorkingPets()
-  local siteInfo = (self._roomData):GetSiteInfo(self._pointIndex)
+  self._workingPets = self._detailController:GetWorkingPets()
+  local siteInfo = self._roomData:GetSiteInfo(self._pointIndex)
   self._siteInfo = siteInfo
   if not siteInfo then
-    (self._detailController):Close()
-    return 
+    self._detailController:Close()
+    return
   end
   local state = siteInfo.state
   if state == DispatchTaskStateType.DTST_Invalid then
-    (self._detailController):Close()
-    return 
+    self._detailController:Close()
+    return
   end
   local taskId = siteInfo.taskId
-  local taskCfgs = (Cfg.cfg_aircraft_dispatch_task)({ID = taskId})
+  local taskCfgs = Cfg.cfg_aircraft_dispatch_task({ID = taskId})
   self._taskCfg = taskCfgs[1]
   self:_RefreshBaseInfo()
   self:_RefreshSuggestInfo()
@@ -90,767 +97,547 @@ UIDispatchDetailItem.Refresh = function(self, index, detailController)
   self:_RefreshTaskStatusInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.GetSiteInfo = function(self)
-  -- function num : 0_3
+function UIDispatchDetailItem:GetSiteInfo()
   return self._siteInfo
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.GetTaskState = function(self)
-  -- function num : 0_4
-  return (self._siteInfo).state
+function UIDispatchDetailItem:GetTaskState()
+  return self._siteInfo.state
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.GetSiteId = function(self)
-  -- function num : 0_5
+function UIDispatchDetailItem:GetSiteId()
   return self._pointIndex
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.GetSuggestInfo = function(self)
-  -- function num : 0_6
-  return (self._taskCfg).AssignPetId, (self._taskCfg).AssignPetType
+function UIDispatchDetailItem:GetSuggestInfo()
+  return self._taskCfg.AssignPetId, self._taskCfg.AssignPetType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.IsSuggestPet = function(self, pet)
-  -- function num : 0_7
-  local extraForce = (self._taskCfg).ExtraForce
-  if extraForce and extraForce > 0 then
+function UIDispatchDetailItem:IsSuggestPet(pet)
+  local extraForce = self._taskCfg.ExtraForce
+  if extraForce and 0 < extraForce then
     local tags = pet:GetPetTags()
     local tag = tags[1]
     if tag ~= extraForce then
       return false
     end
   end
-  do
-    local extraElement = (self._taskCfg).ExtraElement
-    if extraElement and extraElement > 0 and pet:GetPetFirstElement() ~= extraElement then
-      return false
-    end
-    local extraJop = (self._taskCfg).ExtraJop
-    if extraJop and extraJop > 0 and pet:GetProf() ~= extraJop then
-      return false
-    end
-    return true
+  local extraElement = self._taskCfg.ExtraElement
+  if extraElement and 0 < extraElement and pet:GetPetFirstElement() ~= extraElement then
+    return false
   end
+  local extraJop = self._taskCfg.ExtraJop
+  if extraJop and 0 < extraJop and pet:GetProf() ~= extraJop then
+    return false
+  end
+  return true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.GetWorkingSpace = function(self, pet)
-  -- function num : 0_8
+function UIDispatchDetailItem:GetWorkingSpace(pet)
   return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.IsSuggestPetIsElement = function(self)
-  -- function num : 0_9
-  local extraElement = (self._taskCfg).ExtraElement
-  if extraElement and extraElement > 0 then
+function UIDispatchDetailItem:IsSuggestPetIsElement()
+  local extraElement = self._taskCfg.ExtraElement
+  if extraElement and 0 < extraElement then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.RefreshTaskStatus = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local siteInfo = (self._roomData):GetSiteInfo(self._pointIndex)
+function UIDispatchDetailItem:RefreshTaskStatus()
+  local siteInfo = self._roomData:GetSiteInfo(self._pointIndex)
   self._siteInfo = siteInfo
-  local maxCount = (self._roomData):GetTeamMemberMaxNum()
+  local maxCount = self._roomData:GetTeamMemberMaxNum()
   for i = 1, maxCount do
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._dispatchPets)[i] = nil
+    self._dispatchPets[i] = nil
   end
-  local teamMembers = (self._siteInfo).teamMember
+  local teamMembers = self._siteInfo.teamMember
   if teamMembers then
-    local petModule = (GameGlobal.GetModule)(PetModule)
+    local petModule = GameGlobal.GetModule(PetModule)
     for i = 1, maxCount do
       local pstId = teamMembers[i]
-      if pstId and pstId > 0 then
+      if pstId and 0 < pstId then
         local pet = petModule:GetPet(pstId)
-        -- DECOMPILER ERROR at PC36: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (self._dispatchPets)[i] = pet
+        self._dispatchPets[i] = pet
       end
     end
   end
-  do
-    self:_RefreshPetInfo()
-    self:_RefreshReward(false)
-    self:_RefreshTaskStatusInfo()
-  end
+  self:_RefreshPetInfo()
+  self:_RefreshReward(false)
+  self:_RefreshTaskStatusInfo()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem._RefreshBaseInfo = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._taskNameLabel).text = (StringTable.Get)((self._taskCfg).Name)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._taskDesLabel).text = (StringTable.Get)((self._taskCfg).Des)
-  ;
-  (self._starLoader):SpawnObjects("UIDispatchTaskStar", (self._taskCfg).Star)
+function UIDispatchDetailItem:_RefreshBaseInfo()
+  self._taskNameLabel.text = StringTable.Get(self._taskCfg.Name)
+  self._taskDesLabel.text = StringTable.Get(self._taskCfg.Des)
+  self._starLoader:SpawnObjects("UIDispatchTaskStar", self._taskCfg.Star)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem._RefreshSuggestInfo = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIDispatchDetailItem:_RefreshSuggestInfo()
   local extraForce, extraElement, extraJop = self:GetSuggestCfg()
-  if extraForce and extraForce > 0 then
-    (self._suggestIcon1Go):SetActive(true)
-    ;
-    (self._profIcon1Go):SetActive(false)
-    local tagCfg = (Cfg.cfg_pet_tags)[extraForce]
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._suggestName1Label).text = (StringTable.Get)(tagCfg.Name)
-    ;
-    (self._suggestIcon1Img):LoadImage(tagCfg.Icon)
-  else
-    do
-      if extraJop and extraJop > 0 then
-        (self._suggestIcon1Go):SetActive(false)
-        ;
-        (self._profIcon1Go):SetActive(true)
-        -- DECOMPILER ERROR at PC46: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._suggestName1Label).text = (StringTable.Get)((self._prof2Tex)[extraJop])
-        -- DECOMPILER ERROR at PC53: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._profIcon1Img).sprite = (self._uiHeartItemAtlas):GetSprite((self._prof2Img)[extraJop])
-      end
-      if extraElement and extraElement > 0 then
-        (self._elementIconGo):SetActive(true)
-        ;
-        (self._profIcon2Go):SetActive(false)
-        -- DECOMPILER ERROR at PC72: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._suggestName2Label).text = (StringTable.Get)((self.Element2ImageName)[extraElement])
-        -- DECOMPILER ERROR at PC84: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._elementIconImg).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((self.ElementSpriteName)[extraElement]))
-      else
-        if extraJop and extraJop > 0 then
-          (self._elementIconGo):SetActive(false)
-          ;
-          (self._profIcon2Go):SetActive(true)
-          -- DECOMPILER ERROR at PC104: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (self._suggestName2Label).text = (StringTable.Get)((self._prof2Tex)[extraJop])
-          -- DECOMPILER ERROR at PC111: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (self._profIcon2Img).sprite = (self._uiHeartItemAtlas):GetSprite((self._prof2Img)[extraJop])
-        end
-      end
-    end
+  if extraForce and 0 < extraForce then
+    self._suggestIcon1Go:SetActive(true)
+    self._profIcon1Go:SetActive(false)
+    local tagCfg = Cfg.cfg_pet_tags[extraForce]
+    self._suggestName1Label.text = StringTable.Get(tagCfg.Name)
+    self._suggestIcon1Img:LoadImage(tagCfg.Icon)
+  elseif extraJop and 0 < extraJop then
+    self._suggestIcon1Go:SetActive(false)
+    self._profIcon1Go:SetActive(true)
+    self._suggestName1Label.text = StringTable.Get(self._prof2Tex[extraJop])
+    self._profIcon1Img.sprite = self._uiHeartItemAtlas:GetSprite(self._prof2Img[extraJop])
+  end
+  if extraElement and 0 < extraElement then
+    self._elementIconGo:SetActive(true)
+    self._profIcon2Go:SetActive(false)
+    self._suggestName2Label.text = StringTable.Get(self.Element2ImageName[extraElement])
+    self._elementIconImg.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(self.ElementSpriteName[extraElement]))
+  elseif extraJop and 0 < extraJop then
+    self._elementIconGo:SetActive(false)
+    self._profIcon2Go:SetActive(true)
+    self._suggestName2Label.text = StringTable.Get(self._prof2Tex[extraJop])
+    self._profIcon2Img.sprite = self._uiHeartItemAtlas:GetSprite(self._prof2Img[extraJop])
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.GetSuggestCfg = function(self)
-  -- function num : 0_13
-  return (self._taskCfg).ExtraForce, (self._taskCfg).ExtraElement, (self._taskCfg).ExtraJop
+function UIDispatchDetailItem:GetSuggestCfg()
+  return self._taskCfg.ExtraForce, self._taskCfg.ExtraElement, self._taskCfg.ExtraJop
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem._RefreshReward = function(self, isPlayAnim)
-  -- function num : 0_14 , upvalues : _ENV
-  local baseRewards, extraRewards, bookOrFuniture = (self._roomData):GetAward((self._siteInfo).awardId, (self._siteInfo).taskId)
+function UIDispatchDetailItem:_RefreshReward(isPlayAnim)
+  local baseRewards, extraRewards, bookOrFuniture = self._roomData:GetAward(self._siteInfo.awardId, self._siteInfo.taskId)
   local rewardCount = #baseRewards + #extraRewards + #bookOrFuniture
-  ;
-  (self._rewardLoader):SpawnObjects("UIDispatchRewardItem", rewardCount)
-  local rewardList = (self._rewardLoader):GetAllSpawnList()
+  self._rewardLoader:SpawnObjects("UIDispatchRewardItem", rewardCount)
+  local rewardList = self._rewardLoader:GetAllSpawnList()
   local rewards = {}
-  do
-    for i = #baseRewards, 1, -1 do
-      local itemId = (baseRewards[i]).id
-      do
-        if itemId == RoleAssetID.RoleAssetGlow then
-          do
-            rewards[#rewards + 1] = baseRewards[i]
-            ;
-            (table.remove)(baseRewards, i)
-            do break end
-            -- DECOMPILER ERROR at PC41: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC41: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
-    end
-  end
   for i = #baseRewards, 1, -1 do
-    local itemId = (baseRewards[i]).id
-    if itemId == RoleAssetID.RoleAssetGold then
+    local itemId = baseRewards[i].id
+    if itemId == RoleAssetID.RoleAssetGlow then
       rewards[#rewards + 1] = baseRewards[i]
-      ;
-      (table.remove)(baseRewards, i)
+      table.remove(baseRewards, i)
       break
     end
   end
-  do
-    for i = #baseRewards, 1, -1 do
-      local itemId = (baseRewards[i]).id
-      local itemCfgs = (Cfg.cfg_item)({ID = itemId})
-      if itemCfgs then
-        local itemCfg = itemCfgs[1]
-        if itemCfg.ItemSubType == ItemSubType.ItemSubType_PetExp then
-          rewards[#rewards + 1] = baseRewards[i]
-          ;
-          (table.remove)(baseRewards, i)
-        end
-      end
-    end
-    for i = 1, #baseRewards do
+  for i = #baseRewards, 1, -1 do
+    local itemId = baseRewards[i].id
+    if itemId == RoleAssetID.RoleAssetGold then
       rewards[#rewards + 1] = baseRewards[i]
+      table.remove(baseRewards, i)
+      break
     end
-    for i = 1, #rewards do
-      local rewardInfo = {id = (rewards[i]).id, count = (rewards[i]).count, des = nil, isNew = false, isMax = false, isBook = false, isFuniture = false, isExtraReward = false, maxCount = (rewards[i]).count}
-      local item = rewardList[i]
-      item:Refresh(rewardInfo, function()
-    -- function num : 0_14_0 , upvalues : self, rewardInfo, item
-    self:_RewardItemOnClick(rewardInfo, item:GetGameObject(), false)
   end
-, false)
-    end
-    self._extraRewardItem = nil
-    if #extraRewards > 0 then
-      local isMax = false
-      local extraMaxCount = (extraRewards[1]).count
-      local count = extraMaxCount
-      if (table.count)(self._dispatchPets) <= 0 then
-        count = "0~" .. extraMaxCount
-      else
-        local currentSocre = (self._roomData):GetScore(self._dispatchPets, (self._siteInfo).taskId)
-        local score = (self._taskCfg).Score
-        local percent = 1
-        if score ~= 0 then
-          percent = currentSocre / score
-        end
-        if percent > 1 then
-          percent = 1
-        end
-        local countRes = (math.floor)(extraMaxCount * percent)
-        count = countRes
-        if extraMaxCount <= countRes then
-          isMax = true
-        end
+  for i = #baseRewards, 1, -1 do
+    local itemId = baseRewards[i].id
+    local itemCfgs = Cfg.cfg_item({ID = itemId})
+    if itemCfgs then
+      local itemCfg = itemCfgs[1]
+      if itemCfg.ItemSubType == ItemSubType.ItemSubType_PetExp then
+        rewards[#rewards + 1] = baseRewards[i]
+        table.remove(baseRewards, i)
       end
-      do
-        local rewardInfo = {id = (extraRewards[1]).id, count = count, des = (StringTable.Get)("str_dispatch_room_extra_reward"), isNew = false, isMax = isMax, isBook = false, isFuniture = false, isExtraReward = true, maxCount = extraMaxCount}
-        do
-          local item = rewardList[#rewards + 1]
-          item:Refresh(rewardInfo, function()
-    -- function num : 0_14_1 , upvalues : self, rewardInfo, item
-    self:_RewardItemOnClick(rewardInfo, item:GetGameObject(), false)
+    end
   end
-, isPlayAnim)
-          self._extraRewardItem = item
-          if #bookOrFuniture > 0 then
-            local itemId = (bookOrFuniture[1]).id
-            local itemCfgs = (Cfg.cfg_item)({ID = itemId})
-            local isBook = false
-            local isFuniture = false
-            local isNew = self:_GetRewardItemRedPointStatus()
-            local des = ""
-            local odds = (self._taskCfg).Odds
-            local assignPetId = (self._taskCfg).AssignPetId
-            local assignPetType = (self._taskCfg).AssignPetType
-            if odds >= 1 then
-              des = (StringTable.Get)("str_dispatch_room_must")
-            else
-              if assignPetId == nil or (table.count)(assignPetId) <= 0 then
-                des = (StringTable.Get)("str_dispatch_room_rate")
-              else
-                if assignPetType == 1 then
-                  des = (StringTable.Get)("str_dispatch_room_rate")
-                  for _,petid in pairs(assignPetId) do
-                    for _,v in pairs(self._dispatchPets) do
-                      local pet = v
-                      if pet:GetTemplateID() == petid then
-                        des = (StringTable.Get)("str_dispatch_room_must")
-                        break
-                      end
-                    end
-                  end
-                else
-                  do
-                    do
-                      if assignPetType == 2 then
-                        local findCount = 0
-                        for _,petid in pairs(assignPetId) do
-                          for _,v in pairs(self._dispatchPets) do
-                            local pet = v
-                            if pet:GetTemplateID() == petid then
-                              findCount = findCount + 1
-                              break
-                            end
-                          end
-                        end
-                        if (table.count)(assignPetId) <= findCount then
-                          des = (StringTable.Get)("str_dispatch_room_must")
-                        else
-                          des = (StringTable.Get)("str_dispatch_room_rate")
-                        end
-                      end
-                      do
-                        if itemCfgs then
-                          local itemCfg = itemCfgs[1]
-                          if itemCfg.ItemSubType == ItemSubType.ItemSubType_Furniture then
-                            isFuniture = true
-                          end
-                          if itemCfg.ItemSubType == ItemSubType.ItemSubType_Book then
-                            isBook = true
-                          end
-                        end
-                        local rewardInfo = {id = (bookOrFuniture[1]).id, count = 1, des = des, isNew = isNew, isMax = false, isBook = isBook, isFuniture = isFuniture, isExtraReward = false, maxCount = 1}
-                        local item = rewardList[#rewards + #extraRewards + 1]
-                        item:Refresh(rewardInfo, function()
-    -- function num : 0_14_2 , upvalues : self, rewardInfo, item
-    self:_RewardItemOnClick(rewardInfo, item:GetGameObject(), true)
-    self:_SetRewardItemRedPointStatus()
+  for i = 1, #baseRewards do
+    rewards[#rewards + 1] = baseRewards[i]
   end
-, false)
-                      end
-                    end
-                  end
-                end
-              end
-            end
+  for i = 1, #rewards do
+    local rewardInfo = {
+      id = rewards[i].id,
+      count = rewards[i].count,
+      des = nil,
+      isNew = false,
+      isMax = false,
+      isBook = false,
+      isFuniture = false,
+      isExtraReward = false,
+      maxCount = rewards[i].count
+    }
+    local item = rewardList[i]
+    item:Refresh(rewardInfo, function()
+      self:_RewardItemOnClick(rewardInfo, item:GetGameObject(), false)
+    end, false)
+  end
+  self._extraRewardItem = nil
+  if 0 < #extraRewards then
+    local isMax = false
+    local extraMaxCount = extraRewards[1].count
+    local count = extraMaxCount
+    if 0 >= table.count(self._dispatchPets) then
+      count = "0~" .. extraMaxCount
+    else
+      local currentSocre = self._roomData:GetScore(self._dispatchPets, self._siteInfo.taskId)
+      local score = self._taskCfg.Score
+      local percent = 1
+      if score ~= 0 then
+        percent = currentSocre / score
+      end
+      if 1 < percent then
+        percent = 1
+      end
+      local countRes = math.floor(extraMaxCount * percent)
+      count = countRes
+      if extraMaxCount <= countRes then
+        isMax = true
+      end
+    end
+    local rewardInfo = {
+      id = extraRewards[1].id,
+      count = count,
+      des = StringTable.Get("str_dispatch_room_extra_reward"),
+      isNew = false,
+      isMax = isMax,
+      isBook = false,
+      isFuniture = false,
+      isExtraReward = true,
+      maxCount = extraMaxCount
+    }
+    local item = rewardList[#rewards + 1]
+    item:Refresh(rewardInfo, function()
+      self:_RewardItemOnClick(rewardInfo, item:GetGameObject(), false)
+    end, isPlayAnim)
+    self._extraRewardItem = item
+  end
+  if 0 < #bookOrFuniture then
+    local itemId = bookOrFuniture[1].id
+    local itemCfgs = Cfg.cfg_item({ID = itemId})
+    local isBook = false
+    local isFuniture = false
+    local isNew = self:_GetRewardItemRedPointStatus()
+    local des = ""
+    local odds = self._taskCfg.Odds
+    local assignPetId = self._taskCfg.AssignPetId
+    local assignPetType = self._taskCfg.AssignPetType
+    if 1 <= odds then
+      des = StringTable.Get("str_dispatch_room_must")
+    elseif assignPetId == nil or table.count(assignPetId) <= 0 then
+      des = StringTable.Get("str_dispatch_room_rate")
+    elseif assignPetType == 1 then
+      des = StringTable.Get("str_dispatch_room_rate")
+      for _, petid in pairs(assignPetId) do
+        for _, v in pairs(self._dispatchPets) do
+          local pet = v
+          if pet:GetTemplateID() == petid then
+            des = StringTable.Get("str_dispatch_room_must")
+            break
           end
         end
       end
+    elseif assignPetType == 2 then
+      local findCount = 0
+      for _, petid in pairs(assignPetId) do
+        for _, v in pairs(self._dispatchPets) do
+          local pet = v
+          if pet:GetTemplateID() == petid then
+            findCount = findCount + 1
+            break
+          end
+        end
+      end
+      if findCount >= table.count(assignPetId) then
+        des = StringTable.Get("str_dispatch_room_must")
+      else
+        des = StringTable.Get("str_dispatch_room_rate")
+      end
     end
+    if itemCfgs then
+      local itemCfg = itemCfgs[1]
+      if itemCfg.ItemSubType == ItemSubType.ItemSubType_Furniture then
+        isFuniture = true
+      end
+      if itemCfg.ItemSubType == ItemSubType.ItemSubType_Book then
+        isBook = true
+      end
+    end
+    local rewardInfo = {
+      id = bookOrFuniture[1].id,
+      count = 1,
+      des = des,
+      isNew = isNew,
+      isMax = false,
+      isBook = isBook,
+      isFuniture = isFuniture,
+      isExtraReward = false,
+      maxCount = 1
+    }
+    local item = rewardList[#rewards + #extraRewards + 1]
+    item:Refresh(rewardInfo, function()
+      self:_RewardItemOnClick(rewardInfo, item:GetGameObject(), true)
+      self:_SetRewardItemRedPointStatus()
+    end, false)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem._RewardItemOnClick = function(self, rewardInfo, go, isSpecialDes)
-  -- function num : 0_15 , upvalues : _ENV
-  local des = nil
+function UIDispatchDetailItem:_RewardItemOnClick(rewardInfo, go, isSpecialDes)
+  local des
   if isSpecialDes then
-    local desKey = (self._taskCfg).AwardDes
-    des = (StringTable.Get)(desKey)
-    local assignPetIds = (self._taskCfg).AssignPetId
+    local desKey = self._taskCfg.AwardDes
+    des = StringTable.Get(desKey)
+    local assignPetIds = self._taskCfg.AssignPetId
     if assignPetIds then
       local count = #assignPetIds
       if count == 1 then
-        local petNameStr = (StringTable.Get)(((Cfg.cfg_pet)[assignPetIds[1]]).Name)
-        des = (StringTable.Get)(desKey, petNameStr)
-      else
-        do
-          if count == 2 then
-            local petNameStr1 = (StringTable.Get)(((Cfg.cfg_pet)[assignPetIds[1]]).Name)
-            local petNameStr2 = (StringTable.Get)(((Cfg.cfg_pet)[assignPetIds[2]]).Name)
-            des = (StringTable.Get)(desKey, petNameStr1, petNameStr2)
-          else
-            do
-              if count == 3 then
-                local petNameStr1 = (StringTable.Get)(((Cfg.cfg_pet)[assignPetIds[1]]).Name)
-                local petNameStr2 = (StringTable.Get)(((Cfg.cfg_pet)[assignPetIds[2]]).Name)
-                local petNameStr3 = (StringTable.Get)(((Cfg.cfg_pet)[assignPetIds[3]]).Name)
-                des = (StringTable.Get)(desKey, petNameStr1, petNameStr2, petNameStr3)
-              end
-              do
-                ;
-                (self._detailController):ShowTips(rewardInfo.id, (go.transform).position, des)
-              end
-            end
-          end
-        end
+        local petNameStr = StringTable.Get(Cfg.cfg_pet[assignPetIds[1]].Name)
+        des = StringTable.Get(desKey, petNameStr)
+      elseif count == 2 then
+        local petNameStr1 = StringTable.Get(Cfg.cfg_pet[assignPetIds[1]].Name)
+        local petNameStr2 = StringTable.Get(Cfg.cfg_pet[assignPetIds[2]].Name)
+        des = StringTable.Get(desKey, petNameStr1, petNameStr2)
+      elseif count == 3 then
+        local petNameStr1 = StringTable.Get(Cfg.cfg_pet[assignPetIds[1]].Name)
+        local petNameStr2 = StringTable.Get(Cfg.cfg_pet[assignPetIds[2]].Name)
+        local petNameStr3 = StringTable.Get(Cfg.cfg_pet[assignPetIds[3]].Name)
+        des = StringTable.Get(desKey, petNameStr1, petNameStr2, petNameStr3)
       end
     end
   end
+  self._detailController:ShowTips(rewardInfo.id, go.transform.position, des)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem._GetRewardItemRedPointStatus = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIDispatchDetailItem:_GetRewardItemRedPointStatus()
   local key = self:_GetRedPointKey()
-  if not ((UnityEngine.PlayerPrefs).HasKey)(key) then
+  if not UnityEngine.PlayerPrefs.HasKey(key) then
     return true
   end
-  local value = ((UnityEngine.PlayerPrefs).GetInt)(key)
+  local value = UnityEngine.PlayerPrefs.GetInt(key)
   if value == 1 then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem._SetRewardItemRedPointStatus = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIDispatchDetailItem:_SetRewardItemRedPointStatus()
   local key = self:_GetRedPointKey()
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+  UnityEngine.PlayerPrefs.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem._GetRedPointKey = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIDispatchDetailItem:_GetRedPointKey()
   if self._redPointKey then
     return self._redPointKey
   end
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = "DISPATCH_TASK_REWARD_ITEM_RED_POINT" .. pstId
-  self._redPointKey = key .. self._pointIndex .. (self._siteInfo).taskId
+  self._redPointKey = key .. self._pointIndex .. self._siteInfo.taskId
   return self._redPointKey
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem._RefreshPetInfo = function(self)
-  -- function num : 0_19
-  self._dispatchPets = (self._detailController):GetDispatchPets(self._pointIndex)
-  ;
-  (self._petLoader):SpawnObjects("UIDispatchPetIconItem", (self._roomData):GetTeamMemberMaxNum())
-  self._petItemList = (self._petLoader):GetAllSpawnList()
+function UIDispatchDetailItem:_RefreshPetInfo()
+  self._dispatchPets = self._detailController:GetDispatchPets(self._pointIndex)
+  self._petLoader:SpawnObjects("UIDispatchPetIconItem", self._roomData:GetTeamMemberMaxNum())
+  self._petItemList = self._petLoader:GetAllSpawnList()
   for i = 1, #self._petItemList do
-    local petItem = (self._petItemList)[i]
+    local petItem = self._petItemList[i]
     petItem:Refresh(i, self)
   end
   self:_RefreshReward(false)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem._RefreshTaskStatusInfo = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local state = (self._siteInfo).state
+function UIDispatchDetailItem:_RefreshTaskStatusInfo()
+  local state = self._siteInfo.state
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   if state == DispatchTaskStateType.DTST_New then
-    (self._taskTimePanel):SetActive(true)
-    ;
-    (self._giveUpBtnGo):SetActive(false)
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._taskTimeLabel).text = (StringTable.Get)("str_dispatch_room_task_time_long", self:_GetTimeStr((self._taskCfg).CompleteTime))
-    local dispatchCount = (self._roomData):GetDispatchCount()
-    local roomCfg = (self._roomData):GetRoomConfig()
-    local dispatchTeamCount = (self._roomData):GetDispatchTeamCount()
-    if roomCfg.TeamMax <= dispatchTeamCount then
-      (self._autoSelectBtnGo):SetActive(false)
-      ;
-      (self._dispatchtBtnGo):SetActive(false)
-      ;
-      (self._tipsGo):SetActive(true)
-      -- DECOMPILER ERROR at PC67: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._tipsLabel).text = (StringTable.Get)("str_dispatch_room_dispatch_count_together", dispatchTeamCount .. "/" .. roomCfg.TeamMax)
+    self._taskTimePanel:SetActive(true)
+    self._giveUpBtnGo:SetActive(false)
+    self._taskTimeLabel.text = StringTable.Get("str_dispatch_room_task_time_long", self:_GetTimeStr(self._taskCfg.CompleteTime))
+    local dispatchCount = self._roomData:GetDispatchCount()
+    local roomCfg = self._roomData:GetRoomConfig()
+    local dispatchTeamCount = self._roomData:GetDispatchTeamCount()
+    if dispatchTeamCount >= roomCfg.TeamMax then
+      self._autoSelectBtnGo:SetActive(false)
+      self._dispatchtBtnGo:SetActive(false)
+      self._tipsGo:SetActive(true)
+      self._tipsLabel.text = StringTable.Get("str_dispatch_room_dispatch_count_together", dispatchTeamCount .. "/" .. roomCfg.TeamMax)
+    elseif dispatchCount <= 0 then
+      self._autoSelectBtnGo:SetActive(false)
+      self._dispatchtBtnGo:SetActive(false)
+      self._tipsGo:SetActive(true)
+      self:_ShowRecoverTime()
     else
-      if dispatchCount <= 0 then
-        (self._autoSelectBtnGo):SetActive(false)
-        ;
-        (self._dispatchtBtnGo):SetActive(false)
-        ;
-        (self._tipsGo):SetActive(true)
-        self:_ShowRecoverTime()
-      else
-        ;
-        (self._autoSelectBtnGo):SetActive(true)
-        ;
-        (self._dispatchtBtnGo):SetActive(true)
-        ;
-        (self._tipsGo):SetActive(false)
-      end
+      self._autoSelectBtnGo:SetActive(true)
+      self._dispatchtBtnGo:SetActive(true)
+      self._tipsGo:SetActive(false)
     end
-    return 
-  else
-    do
-      if state == DispatchTaskStateType.DTST_Doing then
-        (self._giveUpBtnGo):SetActive(true)
-        ;
-        (self._tipsGo):SetActive(false)
-        ;
-        (self._autoSelectBtnGo):SetActive(false)
-        ;
-        (self._dispatchtBtnGo):SetActive(false)
-        local str = (StringTable.Get)("str_dispatch_room_task_detail_complete", self:_GetRemainTimeStr((self._siteInfo).endTime))
-        -- DECOMPILER ERROR at PC129: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._taskTimeLabel).text = str
+    return
+  elseif state == DispatchTaskStateType.DTST_Doing then
+    self._giveUpBtnGo:SetActive(true)
+    self._tipsGo:SetActive(false)
+    self._autoSelectBtnGo:SetActive(false)
+    self._dispatchtBtnGo:SetActive(false)
+    local str = StringTable.Get("str_dispatch_room_task_detail_complete", self:_GetRemainTimeStr(self._siteInfo.endTime))
+    self._taskTimeLabel.text = str
+    if self._timerHandler then
+      GameGlobal.Timer():CancelEvent(self._timerHandler)
+      self._timerHandler = nil
+    end
+    self._timerHandler = GameGlobal.Timer():AddEventTimes(50, TimerTriggerCount.Infinite, function()
+      local str = StringTable.Get("str_dispatch_room_task_detail_complete", self:_GetRemainTimeStr(self._siteInfo.endTime))
+      self._taskTimeLabel.text = str
+      local nowTime = self._timeModule:GetServerTime() / 1000
+      local seconds = self._siteInfo.endTime - nowTime
+      if seconds <= 0 then
         if self._timerHandler then
-          ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+          GameGlobal.Timer():CancelEvent(self._timerHandler)
           self._timerHandler = nil
         end
-        self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(50, TimerTriggerCount.Infinite, function()
-    -- function num : 0_20_0 , upvalues : _ENV, self
-    local str = (StringTable.Get)("str_dispatch_room_task_detail_complete", self:_GetRemainTimeStr((self._siteInfo).endTime))
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._taskTimeLabel).text = str
-    local nowTime = (self._timeModule):GetServerTime() / 1000
-    local seconds = (self._siteInfo).endTime - nowTime
-    if seconds <= 0 then
-      if self._timerHandler then
-        ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
-        self._timerHandler = nil
+        self:ReqDataAndRefreshRoomMsg()
       end
-      self:ReqDataAndRefreshRoomMsg()
-    end
+    end)
+    return
   end
-)
-        return 
-      end
-      do
-        ;
-        (self._detailController):Close()
-      end
-    end
-  end
+  self._detailController:Close()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem._GetRemainTimeStr = function(self, endTime)
-  -- function num : 0_21 , upvalues : _ENV
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  local seconds = (math.floor)(endTime - nowTime)
+function UIDispatchDetailItem:_GetRemainTimeStr(endTime)
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  local seconds = math.floor(endTime - nowTime)
   if seconds < 0 then
     seconds = 0
   end
-  local hour = (math.floor)(seconds / 3600)
+  local hour = math.floor(seconds / 3600)
   seconds = seconds - hour * 3600
   local timeStr = ""
-  if hour > 0 then
-    timeStr = (StringTable.Get)("str_dispatch_room_task_detail_hour", hour)
+  if 0 < hour then
+    timeStr = StringTable.Get("str_dispatch_room_task_detail_hour", hour)
   end
   local min = 1
-  if seconds == 0 and hour > 0 then
+  if seconds == 0 and 0 < hour then
     min = 0
   end
-  if seconds > 60 then
-    min = (math.floor)((seconds) / 60)
+  if 60 < seconds then
+    min = math.floor(seconds / 60)
   end
-  if min > 0 then
-    timeStr = timeStr .. (StringTable.Get)("str_dispatch_room_task_detail_min", min)
+  if 0 < min then
+    timeStr = timeStr .. StringTable.Get("str_dispatch_room_task_detail_min", min)
   end
   return timeStr
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem._ShowRecoverTime = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local dispatchCount = (self._roomData):GetDispatchCount()
-  if dispatchCount > 0 then
+function UIDispatchDetailItem:_ShowRecoverTime()
+  local dispatchCount = self._roomData:GetDispatchCount()
+  if 0 < dispatchCount then
     if self._timer then
-      ((GameGlobal.Timer)()):CancelEvent(self._timer)
+      GameGlobal.Timer():CancelEvent(self._timer)
       self._timer = nil
     end
     self:ReqDataAndRefreshRoomMsg()
-    return 
+    return
   end
-  local time = (self._roomData):GetSurplusSecond()
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
+  local time = self._roomData:GetSurplusSecond()
   if time == -1 then
-    (self._tipsLabel).text = (StringTable.Get)("str_dispatch_room_next_dispatch_recover", "--:--:--")
-  else
-    if time >= 0 then
-      if self._timer then
-        ((GameGlobal.Timer)()):CancelEvent(self._timer)
-        self._timer = nil
-      end
-      -- DECOMPILER ERROR at PC51: Confused about usage of register: R3 in 'UnsetPending'
-
-      if time == 0 then
-        (self._tipsLabel).text = (StringTable.Get)("str_dispatch_room_next_dispatch_recover", "00:00:00")
-      else
-        -- DECOMPILER ERROR at PC67: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._tipsLabel).text = (StringTable.Get)("str_dispatch_room_next_dispatch_recover", (HelperProxy:GetInstance()):FormatTime((math.floor)(time)))
-      end
-      self._timer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_22_0 , upvalues : self, _ENV
-    local dispatchCount = ((self._roomData):GetDispatchCount())
-    local _text = nil
-    local time = (self._roomData):GetSurplusSecond()
-    if time == -1 then
-      _text = "--:--:--"
+    self._tipsLabel.text = StringTable.Get("str_dispatch_room_next_dispatch_recover", "--:--:--")
+  elseif 0 <= time then
+    if self._timer then
+      GameGlobal.Timer():CancelEvent(self._timer)
+      self._timer = nil
+    end
+    if time == 0 then
+      self._tipsLabel.text = StringTable.Get("str_dispatch_room_next_dispatch_recover", "00:00:00")
     else
-      if time == 0 or dispatchCount > 0 then
+      self._tipsLabel.text = StringTable.Get("str_dispatch_room_next_dispatch_recover", HelperProxy:GetInstance():FormatTime(math.floor(time)))
+    end
+    self._timer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+      local dispatchCount = self._roomData:GetDispatchCount()
+      local _text
+      local time = self._roomData:GetSurplusSecond()
+      if time == -1 then
+        _text = "--:--:--"
+      elseif time == 0 or 0 < dispatchCount then
         if self._timer then
-          ((GameGlobal.Timer)()):CancelEvent(self._timer)
+          GameGlobal.Timer():CancelEvent(self._timer)
           self._timer = nil
         end
         _text = "00:00:00"
         self:ReqDataAndRefreshRoomMsg()
       else
-        _text = (HelperProxy:GetInstance()):FormatTime((math.floor)(time))
+        _text = HelperProxy:GetInstance():FormatTime(math.floor(time))
       end
-    end
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._tipsLabel).text = (StringTable.Get)("str_dispatch_room_next_dispatch_recover", _text)
-  end
-)
-    end
+      self._tipsLabel.text = StringTable.Get("str_dispatch_room_next_dispatch_recover", _text)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.ReqDataAndRefreshRoomMsg = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self._ReqData, self)
+function UIDispatchDetailItem:ReqDataAndRefreshRoomMsg()
+  GameGlobal.TaskManager():StartTask(self._ReqData, self)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem._ReqData = function(self, TT)
-  -- function num : 0_24 , upvalues : _ENV
+function UIDispatchDetailItem:_ReqData(TT)
   self:Lock("UIDispatchDetailItem_ReqData")
-  local ack = (self._aircraftModule):AircraftUpdate(TT)
-  ;
-  (self._aircraftModule):HandleCEventDispatchSite(TT)
+  local ack = self._aircraftModule:AircraftUpdate(TT)
+  self._aircraftModule:HandleCEventDispatchSite(TT)
   if ack:GetSucc() then
-    local siteInfo = (self._roomData):GetSiteInfo(self._pointIndex)
+    local siteInfo = self._roomData:GetSiteInfo(self._pointIndex)
     self._siteInfo = siteInfo
     self:_RefreshTaskStatusInfo()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateDispatchTaskSiteInfo)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateDispatchTaskSiteInfo)
   else
-    do
-      ;
-      (ToastManager.ShowToast)((self._aircraftModule):GetErrorMsg(ack:GetResult()))
-      self:UnLock("UIDispatchDetailItem_ReqData")
-    end
+    ToastManager.ShowToast(self._aircraftModule:GetErrorMsg(ack:GetResult()))
   end
+  self:UnLock("UIDispatchDetailItem_ReqData")
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem._GetTimeStr = function(self, seconds)
-  -- function num : 0_25 , upvalues : _ENV
-  local hour = (math.floor)(seconds / 3600)
+function UIDispatchDetailItem:_GetTimeStr(seconds)
+  local hour = math.floor(seconds / 3600)
   seconds = seconds - hour * 3600
   local timeStr = ""
-  if hour > 0 then
-    timeStr = (StringTable.Get)("str_dispatch_room_task_detail_hour", hour)
+  if 0 < hour then
+    timeStr = StringTable.Get("str_dispatch_room_task_detail_hour", hour)
   end
   local min = 1
-  if seconds == 0 and hour > 0 then
+  if seconds == 0 and 0 < hour then
     min = 0
   end
-  if seconds > 60 then
-    min = (math.floor)((seconds) / 60)
+  if 60 < seconds then
+    min = math.floor(seconds / 60)
   end
-  if min > 0 then
-    timeStr = timeStr .. (StringTable.Get)("str_dispatch_room_task_detail_min", min)
+  if 0 < min then
+    timeStr = timeStr .. StringTable.Get("str_dispatch_room_task_detail_min", min)
   end
   return timeStr
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.GetDispatchPetByIndex = function(self, index)
-  -- function num : 0_26
-  return (self._dispatchPets)[index]
+function UIDispatchDetailItem:GetDispatchPetByIndex(index)
+  return self._dispatchPets[index]
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.GetDispatchPetList = function(self)
-  -- function num : 0_27
+function UIDispatchDetailItem:GetDispatchPetList()
   return self._dispatchPets
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.UpdatePetInfo = function(self, index, pet)
-  -- function num : 0_28
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._dispatchPets)[index] = pet
-  ;
-  ((self._petItemList)[index]):Refresh(index, self)
+function UIDispatchDetailItem:UpdatePetInfo(index, pet)
+  self._dispatchPets[index] = pet
+  self._petItemList[index]:Refresh(index, self)
   self:_RefreshReward(true)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.GetExcludePets = function(self)
-  -- function num : 0_29
-  return (self._detailController):GetExcludePets()
+function UIDispatchDetailItem:GetExcludePets()
+  return self._detailController:GetExcludePets()
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.SuggestBtnOnClick = function(self, go)
-  -- function num : 0_30
-  (self._detailController):ShowSuggestDesPanel()
+function UIDispatchDetailItem:SuggestBtnOnClick(go)
+  self._detailController:ShowSuggestDesPanel()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.AutoSelectBtnOnClick = function(self, go)
-  -- function num : 0_31
+function UIDispatchDetailItem:AutoSelectBtnOnClick(go)
   self:_AutoSelectPets()
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.DispatchtBtnOnClick = function(self, go)
-  -- function num : 0_32 , upvalues : _ENV
-  local pets = (self._detailController):GetDispatchPets(self._pointIndex)
-  local petCount = (table.count)(pets)
-  if petCount < (self._roomData):GetTeamMemberMaxNum() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_dispatch_room_team_person_not_enough", (self._roomData):GetTeamMemberMaxNum()))
-    return 
+function UIDispatchDetailItem:DispatchtBtnOnClick(go)
+  local pets = self._detailController:GetDispatchPets(self._pointIndex)
+  local petCount = table.count(pets)
+  if petCount < self._roomData:GetTeamMemberMaxNum() then
+    ToastManager.ShowToast(StringTable.Get("str_dispatch_room_team_person_not_enough", self._roomData:GetTeamMemberMaxNum()))
+    return
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._AcceptTask, self)
+  GameGlobal.TaskManager():StartTask(self._AcceptTask, self)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem._AcceptTask = function(self, TT)
-  -- function num : 0_33 , upvalues : _ENV
+function UIDispatchDetailItem:_AcceptTask(TT)
   self:Lock("UIDispatchDetailItem_AcceptTask")
-  local pets = (self._detailController):GetDispatchPets(self._pointIndex)
+  local pets = self._detailController:GetDispatchPets(self._pointIndex)
   local pstIds = {}
   local templateIds = {}
   for i = 1, #pets do
@@ -858,236 +645,175 @@ UIDispatchDetailItem._AcceptTask = function(self, TT)
     pstIds[#pstIds + 1] = pet:GetPstID()
     templateIds[#templateIds + 1] = pet:GetTemplateID()
   end
-  local res, replay = (self._aircraftModule):HandleCEventDispatchAcceptTask(TT, self._pointIndex, pstIds)
+  local res, replay = self._aircraftModule:HandleCEventDispatchAcceptTask(TT, self._pointIndex, pstIds)
   if res:GetSucc() then
-    (self._aircraftModule):HandleCEventDispatchSite(TT)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateDispatchTaskSiteInfo)
+    self._aircraftModule:HandleCEventDispatchSite(TT)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateDispatchTaskSiteInfo)
     self:DeletePets(templateIds)
-    ;
-    (self._detailController):Close()
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_dispatch_room_task_start"))
+    self._detailController:Close()
+    ToastManager.ShowToast(StringTable.Get("str_dispatch_room_task_start"))
   else
-    ;
-    (ToastManager.ShowToast)((self._aircraftModule):GetErrorMsg(res:GetResult()))
+    ToastManager.ShowToast(self._aircraftModule:GetErrorMsg(res:GetResult()))
   end
   self:UnLock("UIDispatchDetailItem_AcceptTask")
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.GiveUpBtnOnClick = function(self, go)
-  -- function num : 0_34
+function UIDispatchDetailItem:GiveUpBtnOnClick(go)
   self:ShowDialog("UIDispatchGiveUpController", self)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.DeletePets = function(self, templateIds)
-  -- function num : 0_35
+function UIDispatchDetailItem:DeletePets(templateIds)
   if not templateIds then
-    return 
+    return
   end
   for i = 1, #templateIds do
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem._getAutoPet = function(self, includeAssignPet)
-  -- function num : 0_36 , upvalues : _ENV
-  local maxCount = (self._roomData):GetTeamMemberMaxNum()
-  local targetScore = (self._taskCfg).Score
-  local assignPet = nil
-  if (self._taskCfg).Type == 3 and (self._taskCfg).AssignPetId then
-    assignPet = ((self._taskCfg).AssignPetId)[1]
+function UIDispatchDetailItem:_getAutoPet(includeAssignPet)
+  local maxCount = self._roomData:GetTeamMemberMaxNum()
+  local targetScore = self._taskCfg.Score
+  local assignPet
+  if self._taskCfg.Type == 3 and self._taskCfg.AssignPetId then
+    assignPet = self._taskCfg.AssignPetId[1]
   end
-  local pets = self:GetCanDispatchPetList((self:GetExcludePets()), nil)
+  local pets = self:GetCanDispatchPetList(self:GetExcludePets(), nil)
   local count = #pets
   local index = 1
-  while 1 do
-    while 1 do
-      if index <= count then
-        local pet = pets[index]
-        if self:GetWorkingSpace(pet) and (pet:GetTemplateID() ~= assignPet or not includeAssignPet) then
-          (table.remove)(pets, index)
-          count = count - 1
-          -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
-    end
-    index = index + 1
-  end
-  do
-    local targetPets = {}
-    local index = 0
-    for i = 1, maxCount do
-      if pets[i] ~= nil then
-        do
-          local score = (self._roomData):GetScore({pets[i]}, (self._siteInfo).taskId)
-          targetScore = targetScore - score
-          targetPets[i] = pets[i]
-          index = i
-          -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
-    end
-    if targetScore <= 0 or index < maxCount then
-      local tmpPets = {}
-      local count = maxCount - index
-      for i = 0, count - 1 do
-        local petIndex = #pets - i
-        if petIndex > index then
-          local pet = pets[petIndex]
-          if pet then
-            do
-              (table.insert)(tmpPets, 1, pet)
-              -- DECOMPILER ERROR at PC92: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC92: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC92: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC92: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
-      end
-      for i = 1, count do
-        local pet = tmpPets[i]
-        if pet then
-          do
-            targetPets[index + i] = pet
-            -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
-    end
-    do
-      local _1stIsAssignPet = false
-      if (targetPets[1]):GetTemplateID() ~= assignPet then
-        _1stIsAssignPet = #targetPets <= 0
-        do return targetPets, _1stIsAssignPet end
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
-      end
+  while count >= index do
+    local pet = pets[index]
+    if self:GetWorkingSpace(pet) and (pet:GetTemplateID() ~= assignPet or not includeAssignPet) then
+      table.remove(pets, index)
+      count = count - 1
+    else
+      index = index + 1
     end
   end
+  local targetPets = {}
+  local index = 0
+  for i = 1, maxCount do
+    if pets[i] == nil then
+      break
+    end
+    local score = self._roomData:GetScore({
+      pets[i]
+    }, self._siteInfo.taskId)
+    targetScore = targetScore - score
+    targetPets[i] = pets[i]
+    index = i
+    if targetScore <= 0 then
+      break
+    end
+  end
+  if maxCount > index then
+    local tmpPets = {}
+    local count = maxCount - index
+    for i = 0, count - 1 do
+      local petIndex = #pets - i
+      if index >= petIndex then
+        break
+      end
+      local pet = pets[petIndex]
+      if not pet then
+        break
+      end
+      table.insert(tmpPets, 1, pet)
+    end
+    for i = 1, count do
+      local pet = tmpPets[i]
+      if not pet then
+        break
+      end
+      targetPets[index + i] = pet
+    end
+  end
+  local _1stIsAssignPet = false
+  if 0 < #targetPets then
+    _1stIsAssignPet = targetPets[1]:GetTemplateID() == assignPet
+  end
+  return targetPets, _1stIsAssignPet
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem._AutoSelectPets = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function UIDispatchDetailItem:_AutoSelectPets()
   local pets, isAssignPet = self:_getAutoPet(true)
-  local tip = nil
-  local refresh = function(ps)
-    -- function num : 0_37_0 , upvalues : _ENV, self
-    for i,pet in ipairs(ps) do
-      -- DECOMPILER ERROR at PC6: Confused about usage of register: R6 in 'UnsetPending'
-
-      (self._dispatchPets)[i] = ps[i]
+  local tip
+  
+  local function refresh(ps)
+    for i, pet in ipairs(ps) do
+      self._dispatchPets[i] = ps[i]
     end
     self:_RefreshPetInfo()
     self:_RefreshReward(true)
   end
-
+  
   if tip then
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", tip, function()
-    -- function num : 0_37_1 , upvalues : refresh, pets
-    refresh(pets)
-  end
-, nil, function(param)
-    -- function num : 0_37_2 , upvalues : refresh, self
-    refresh(self:_getAutoPet(false))
-  end
-, nil, nil, nil, (StringTable.Get)("str_story_btn_skip"))
-    return 
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", tip, function()
+      refresh(pets)
+    end, nil, function(param)
+      refresh(self:_getAutoPet(false))
+    end, nil, nil, nil, StringTable.Get("str_story_btn_skip"))
+    return
   end
   refresh(pets)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.GetCanDispatchPetList = function(self, exculdePets, selectedPet)
-  -- function num : 0_38 , upvalues : _ENV
-  local pets = (self._roomData):GetDispatchPetList()
+function UIDispatchDetailItem:GetCanDispatchPetList(exculdePets, selectedPet)
+  local pets = self._roomData:GetDispatchPetList()
   if exculdePets then
-    for _,v in pairs(exculdePets) do
+    for _, v in pairs(exculdePets) do
       local pet = v
       if selectedPet == nil or pet:GetPstID() ~= selectedPet:GetPstID() then
-        for k,v1 in pairs(pets) do
+        for k, v1 in pairs(pets) do
           if pet:GetPstID() == v1:GetPstID() then
-            (table.remove)(pets, k)
+            table.remove(pets, k)
             break
           end
         end
       end
     end
   end
-  do
-    return self:_SortPets(pets, selectedPet)
-  end
+  return self:_SortPets(pets, selectedPet)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem._SortPets = function(self, pets, selectedPet)
-  -- function num : 0_39 , upvalues : _ENV
+function UIDispatchDetailItem:_SortPets(pets, selectedPet)
   if not pets then
     return {}
   end
-  local sortFuc = function(a, b)
-    -- function num : 0_39_0 , upvalues : self
+  
+  local function sortFuc(a, b)
     local aIsWorking = self:GetWorkingSpace(a)
     local bIsWorking = self:GetWorkingSpace(b)
-    if aIsWorking ~= nil then
-      do return aIsWorking == bIsWorking end
-      local aScore = (self._roomData):GetScore({a}, (self._siteInfo).taskId)
-      local bScore = (self._roomData):GetScore({b}, (self._siteInfo).taskId)
-      if bScore >= aScore then
-        do return aScore == bScore end
-        local aIsSuggestPet = self:IsSuggestPet(a)
-        local bIsSuggestPet = self:IsSuggestPet(b)
-        local aSuggestScore = 0
-        local bSuggestScore = 0
-        if aIsSuggestPet then
-          aSuggestScore = 1
-        end
-        if bIsSuggestPet then
-          bSuggestScore = 1
-        end
-        if bSuggestScore >= aSuggestScore then
-          do return aSuggestScore == bSuggestScore end
-          do return b:GetPstID() < a:GetPstID() end
-          -- DECOMPILER ERROR: 9 unprocessed JMP targets
-        end
-      end
+    if aIsWorking ~= bIsWorking then
+      return aIsWorking == nil
     end
+    local aScore = self._roomData:GetScore({a}, self._siteInfo.taskId)
+    local bScore = self._roomData:GetScore({b}, self._siteInfo.taskId)
+    if aScore ~= bScore then
+      return aScore > bScore
+    end
+    local aIsSuggestPet = self:IsSuggestPet(a)
+    local bIsSuggestPet = self:IsSuggestPet(b)
+    local aSuggestScore = 0
+    local bSuggestScore = 0
+    if aIsSuggestPet then
+      aSuggestScore = 1
+    end
+    if bIsSuggestPet then
+      bSuggestScore = 1
+    end
+    if aSuggestScore ~= bSuggestScore then
+      return aSuggestScore > bSuggestScore
+    end
+    return a:GetPstID() > b:GetPstID()
   end
-
-  ;
-  (table.sort)(pets, sortFuc)
+  
+  table.sort(pets, sortFuc)
   local assignPetId, assignPetType = self:GetSuggestInfo()
   if assignPetId then
     if assignPetType == 1 then
       local petResult = {}
-      for _,petid in pairs(assignPetId) do
-        for _,v in pairs(pets) do
+      for _, petid in pairs(assignPetId) do
+        for _, v in pairs(pets) do
           local pet = v
           if pet:GetTemplateID() == petid then
             petResult[#petResult + 1] = pet
@@ -1095,78 +821,55 @@ UIDispatchDetailItem._SortPets = function(self, pets, selectedPet)
           end
         end
       end
-      if #petResult > 0 then
-        (table.sort)(petResult, sortFuc)
+      if 0 < #petResult then
+        table.sort(petResult, sortFuc)
         local pet = petResult[1]
-        for pos,v in pairs(pets) do
+        for pos, v in pairs(pets) do
           if pet:GetTemplateID() == v:GetTemplateID() then
-            (table.remove)(pets, pos)
+            table.remove(pets, pos)
             break
           end
         end
-        do
-          do
-            ;
-            (table.insert)(pets, 1, pet)
-            do
-              if assignPetType == 2 then
-                local petResult = {}
-                for _,petid in pairs(assignPetId) do
-                  for _,v in pairs(pets) do
-                    local pet = v
-                    if pet:GetTemplateID() == petid then
-                      petResult[#petResult + 1] = pet
-                      break
-                    end
-                  end
-                end
-                if (table.count)(assignPetId) <= #petResult then
-                  (table.sort)(petResult, sortFuc)
-                  for i = 1, #petResult do
-                    local pet = petResult[i]
-                    for pos,v in pairs(pets) do
-                      if pet:GetTemplateID() == v:GetTemplateID() then
-                        (table.remove)(pets, pos)
-                        break
-                      end
-                    end
-                    do
-                      do
-                        ;
-                        (table.insert)(pets, 1, pet)
-                        -- DECOMPILER ERROR at PC137: LeaveBlock: unexpected jumping out DO_STMT
-
-                      end
-                    end
-                  end
-                end
-              end
-              if selectedPet then
-                for k,v1 in pairs(pets) do
-                  if selectedPet:GetPstID() == v1:GetPstID() then
-                    (table.remove)(pets, k)
-                    break
-                  end
-                end
-                do
-                  ;
-                  (table.insert)(pets, 1, selectedPet)
-                  return pets
-                end
-              end
+        table.insert(pets, 1, pet)
+      end
+    elseif assignPetType == 2 then
+      local petResult = {}
+      for _, petid in pairs(assignPetId) do
+        for _, v in pairs(pets) do
+          local pet = v
+          if pet:GetTemplateID() == petid then
+            petResult[#petResult + 1] = pet
+            break
+          end
+        end
+      end
+      if #petResult >= table.count(assignPetId) then
+        table.sort(petResult, sortFuc)
+        for i = 1, #petResult do
+          local pet = petResult[i]
+          for pos, v in pairs(pets) do
+            if pet:GetTemplateID() == v:GetTemplateID() then
+              table.remove(pets, pos)
+              break
             end
           end
+          table.insert(pets, 1, pet)
         end
       end
     end
   end
+  if selectedPet then
+    for k, v1 in pairs(pets) do
+      if selectedPet:GetPstID() == v1:GetPstID() then
+        table.remove(pets, k)
+        break
+      end
+    end
+    table.insert(pets, 1, selectedPet)
+  end
+  return pets
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailItem.GetExtraRewardItem = function(self)
-  -- function num : 0_40
+function UIDispatchDetailItem:GetExtraRewardItem()
   return self._extraRewardItem
 end
-
-

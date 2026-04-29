@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_swap_pet_team_order.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_SwapPetTeamOrder", SkillEffectResultBase)
 SkillEffectResult_SwapPetTeamOrder = SkillEffectResult_SwapPetTeamOrder
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_SwapPetTeamOrder.Constructor = function(self, targetEntityId, oldTeamOrder, teamOrder)
-  -- function num : 0_0
+function SkillEffectResult_SwapPetTeamOrder:Constructor(targetEntityId, oldTeamOrder, teamOrder)
   self._targetEntityId = targetEntityId
   self._oldTeamOrder = oldTeamOrder
   self._teamOrder = teamOrder
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SwapPetTeamOrder.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResult_SwapPetTeamOrder:GetEffectType()
   return SkillEffectType.SwapPetTeamOrder
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SwapPetTeamOrder.GetOldTeamOrder = function(self)
-  -- function num : 0_2
+function SkillEffectResult_SwapPetTeamOrder:GetOldTeamOrder()
   return self._oldTeamOrder
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SwapPetTeamOrder.GetNewTeamOrder = function(self)
-  -- function num : 0_3
+function SkillEffectResult_SwapPetTeamOrder:GetNewTeamOrder()
   return self._teamOrder
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SwapPetTeamOrder.GetTargetEntityID = function(self)
-  -- function num : 0_4
+function SkillEffectResult_SwapPetTeamOrder:GetTargetEntityID()
   return self._targetEntityId
 end
-
-

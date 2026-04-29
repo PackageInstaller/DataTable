@@ -1,95 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/newyear_dinner_minigame_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("NewYearDinnerMiniGameComponent", ICampaignComponent)
 NewYearDinnerMiniGameComponent = NewYearDinnerMiniGameComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-NewYearDinnerMiniGameComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function NewYearDinnerMiniGameComponent:Constructor()
   self.m_component_info = NewYearDinnerComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-NewYearDinnerMiniGameComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function NewYearDinnerMiniGameComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = NewYearDinnerComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-NewYearDinnerMiniGameComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function NewYearDinnerMiniGameComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-NewYearDinnerMiniGameComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function NewYearDinnerMiniGameComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_NEWYEAR_DINNER
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-NewYearDinnerMiniGameComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function NewYearDinnerMiniGameComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-NewYearDinnerMiniGameComponent.HandleNewYearDinnerMakeFood = function(self, TT, asyncRes, foodId)
-  -- function num : 0_5 , upvalues : _ENV
+function NewYearDinnerMiniGameComponent:HandleNewYearDinnerMakeFood(TT, asyncRes, foodId)
   local request = NewYearDinnerMakeFoodReq:New()
   local response = NewYearDinnerMakeFoodRep:New()
   request.food_id = foodId
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][IdolComponent] HandleNewYearDinnerMakeFood ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][IdolComponent] HandleNewYearDinnerMakeFood ret:", asyncRes.m_result)
     return -1
   end
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).data_info = response.data_info
+  self.m_component_info.data_info = response.data_info
   return response.ret
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-NewYearDinnerMiniGameComponent.HandleNewYearDinnerReward = function(self, TT, asyncRes, rewardType, reqId)
-  -- function num : 0_6 , upvalues : _ENV
+function NewYearDinnerMiniGameComponent:HandleNewYearDinnerReward(TT, asyncRes, rewardType, reqId)
   local request = NewYearDinnerRewardReq:New()
   local response = NewYearDinnerRewardRep:New()
   request.reward_type = rewardType
   request.req_id = reqId
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][IdolComponent] HandleNewYearDinnerReward ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][IdolComponent] HandleNewYearDinnerReward ret:", asyncRes.m_result)
     return -1
   end
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).data_info = (response.component_info).data_info
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).task_list = (response.component_info).task_list
+  self.m_component_info.data_info = response.component_info.data_info
+  self.m_component_info.task_list = response.component_info.task_list
   return response.ret, response.rewards
 end
-
-

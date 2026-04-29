@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/talent/ui_campaign_talent_inner_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICampaignTalentInnerInfo", UIController)
 UICampaignTalentInnerInfo = UICampaignTalentInnerInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICampaignTalentInnerInfo.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UICampaignTalentInnerInfo:LoadDataOnEnter(TT, res, uiParams)
   local serialautofightmodule = self:GetModule(SerialAutoFightModule)
   local running = serialautofightmodule:IsRunning()
   if running then
@@ -18,21 +11,18 @@ UICampaignTalentInnerInfo.LoadDataOnEnter = function(self, TT, res, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignTalentInnerInfo.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UICampaignTalentInnerInfo:OnShow(uiParams)
   self._detailContentText = self:GetUIComponent("UILocalizationText", "DetailContent")
   self._titleText = self:GetUIComponent("UILocalizationText", "Title")
   local match = self:GetModule(MatchModule)
   local matchEnterData = match:GetMatchEnterData()
   local campaignMissionInfo = matchEnterData:GetCampaignMissionInfo()
   if not campaignMissionInfo then
-    return 
+    return
   end
   local talentIDList = campaignMissionInfo.mTalentTreeSkills
   if not talentIDList then
-    return 
+    return
   end
   local attack = 0
   local defense = 0
@@ -41,9 +31,9 @@ UICampaignTalentInnerInfo.OnShow = function(self, uiParams)
   local pointMax = 0
   local skillIncrease = 0
   local slotStrInfoList = {}
-  for index,value in ipairs(talentIDList) do
-    local cfgGroup = (Cfg.cfg_component_talent_tree_skill)({SkillID = value})
-    if cfgGroup and #cfgGroup > 0 then
+  for index, value in ipairs(talentIDList) do
+    local cfgGroup = Cfg.cfg_component_talent_tree_skill({SkillID = value})
+    if cfgGroup and 0 < #cfgGroup then
       local cfg = cfgGroup[1]
       if cfg.Type == TalentTreeSkillType.TTST_Skill_Main then
         if cfg.Attack then
@@ -64,64 +54,52 @@ UICampaignTalentInnerInfo.OnShow = function(self, uiParams)
         if cfg.activeskill then
           skillIncrease = skillIncrease + cfg.activeskill
         end
-      else
-        if cfg.Type == TalentTreeSkillType.TTST_Skill_Common then
-          local innerCfg = (Cfg.cfg_battle_talent)[value]
-          if innerCfg then
-            local desc = innerCfg.Desc
-            if desc then
-              (table.insert)(slotStrInfoList, desc)
-            end
+      elseif cfg.Type == TalentTreeSkillType.TTST_Skill_Common then
+        local innerCfg = Cfg.cfg_battle_talent[value]
+        if innerCfg then
+          local desc = innerCfg.Desc
+          if desc then
+            table.insert(slotStrInfoList, desc)
           end
-        else
         end
+      elseif cfg.Type == TalentTreeSkillType.TTST_Skill_Pet then
       end
     end
   end
-  if cfg.Type == TalentTreeSkillType.TTST_Skill_Pet then
-    local tempStr = ""
-    tempStr = tempStr .. "<size=34><b>" .. (StringTable.Get)("str_battle_talent_small_title_01") .. "\n" .. "</b></size>"
-    tempStr = tempStr .. "<size=28>"
-    if #slotStrInfoList > 0 then
-      for index,str in ipairs(slotStrInfoList) do
-        tempStr = tempStr .. "-" .. (StringTable.Get)(str) .. "\n"
-      end
-    end
-    do
-      tempStr = tempStr .. "<size=10>" .. "\n" .. "</size>"
-      tempStr = tempStr .. "</size>"
-      tempStr = tempStr .. "<size=34><b>" .. (StringTable.Get)("str_battle_talent_small_title_02") .. "\n" .. "</b></size>"
-      tempStr = tempStr .. "<size=28>"
-      if attack > 0 then
-        tempStr = tempStr .. "-" .. (StringTable.Get)("str_season_talent_tree_desc_101", tostring(attack)) .. "\n"
-      end
-      if defense > 0 then
-        tempStr = tempStr .. "-" .. (StringTable.Get)("str_season_talent_tree_desc_102", tostring(defense)) .. "\n"
-      end
-      if hp > 0 then
-        tempStr = tempStr .. "-" .. (StringTable.Get)("str_season_talent_tree_desc_103", tostring(hp)) .. "\n"
-      end
-      if recoverPoint > 0 then
-        tempStr = tempStr .. "-" .. (StringTable.Get)("str_season_talent_tree_desc_104", tostring(recoverPoint)) .. "\n"
-      end
-      if pointMax > 0 then
-        tempStr = tempStr .. "-" .. (StringTable.Get)("str_season_talent_tree_desc_105", tostring(pointMax)) .. "\n"
-      end
-      if skillIncrease > 0 then
-        tempStr = tempStr .. "-" .. (StringTable.Get)("str_season_talent_tree_desc_106", tostring(skillIncrease)) .. "\n"
-      end
-      tempStr = tempStr .. "</size>"
-      ;
-      (self._detailContentText):SetText(tempStr)
+  local tempStr = ""
+  tempStr = tempStr .. "<size=34><b>" .. StringTable.Get("str_battle_talent_small_title_01") .. "\n" .. "</b></size>"
+  tempStr = tempStr .. "<size=28>"
+  if 0 < #slotStrInfoList then
+    for index, str in ipairs(slotStrInfoList) do
+      tempStr = tempStr .. "-" .. StringTable.Get(str) .. "\n"
     end
   end
+  tempStr = tempStr .. "<size=10>" .. "\n" .. "</size>"
+  tempStr = tempStr .. "</size>"
+  tempStr = tempStr .. "<size=34><b>" .. StringTable.Get("str_battle_talent_small_title_02") .. "\n" .. "</b></size>"
+  tempStr = tempStr .. "<size=28>"
+  if 0 < attack then
+    tempStr = tempStr .. "-" .. StringTable.Get("str_season_talent_tree_desc_101", tostring(attack)) .. "\n"
+  end
+  if 0 < defense then
+    tempStr = tempStr .. "-" .. StringTable.Get("str_season_talent_tree_desc_102", tostring(defense)) .. "\n"
+  end
+  if 0 < hp then
+    tempStr = tempStr .. "-" .. StringTable.Get("str_season_talent_tree_desc_103", tostring(hp)) .. "\n"
+  end
+  if 0 < recoverPoint then
+    tempStr = tempStr .. "-" .. StringTable.Get("str_season_talent_tree_desc_104", tostring(recoverPoint)) .. "\n"
+  end
+  if 0 < pointMax then
+    tempStr = tempStr .. "-" .. StringTable.Get("str_season_talent_tree_desc_105", tostring(pointMax)) .. "\n"
+  end
+  if 0 < skillIncrease then
+    tempStr = tempStr .. "-" .. StringTable.Get("str_season_talent_tree_desc_106", tostring(skillIncrease)) .. "\n"
+  end
+  tempStr = tempStr .. "</size>"
+  self._detailContentText:SetText(tempStr)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignTalentInnerInfo.FullScreenBtnOnClick = function(self, go)
-  -- function num : 0_2
+function UICampaignTalentInnerInfo:FullScreenBtnOnClick(go)
   self:CloseDialog()
 end
-
-

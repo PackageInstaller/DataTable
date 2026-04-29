@@ -1,34 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/suspect/ui_n29_detective_suspect_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN29DetectiveSuspectController", UIController)
 UIN29DetectiveSuspectController = UIN29DetectiveSuspectController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN29DetectiveSuspectController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._campaign = (UIActivityCampaign.New)()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N29, ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE)
-  self._localProcess = (self._campaign):GetLocalProcess()
+function UIN29DetectiveSuspectController:LoadDataOnEnter(TT, res, uiParams)
+  self._campaign = UIActivityCampaign.New()
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N29, ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE)
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-  self._comp = (self._localProcess):GetComponent(ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE)
-  self._info = (self._localProcess):GetComponentInfo(ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE)
-  self._curDetectiveInfo = (self._info).cur_info
-  self._clueList = (self._curDetectiveInfo).clue_list
-  self._psdId = (self._curDetectiveInfo).pstid
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
+  self._comp = self._localProcess:GetComponent(ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE)
+  self._info = self._localProcess:GetComponentInfo(ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE)
+  self._curDetectiveInfo = self._info.cur_info
+  self._clueList = self._curDetectiveInfo.clue_list
+  self._psdId = self._curDetectiveInfo.pstid
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.OnShow = function(self, uiParams, TT)
-  -- function num : 0_1
+function UIN29DetectiveSuspectController:OnShow(uiParams, TT)
   self:CheckTime()
   self._Id = uiParams[1]
   self._StageId = uiParams[2]
@@ -39,10 +27,7 @@ UIN29DetectiveSuspectController.OnShow = function(self, uiParams, TT)
   self:CheckGuide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController._GetComponent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN29DetectiveSuspectController:_GetComponent()
   self._rateText = self:GetUIComponent("UILocalizationText", "rateText")
   self._bagText = self:GetUIComponent("UILocalizationText", "bagText")
   self._tipsText = self:GetUIComponent("UILocalizationText", "tipsText")
@@ -61,388 +46,256 @@ UIN29DetectiveSuspectController._GetComponent = function(self)
   self._backBtnObj = self:GetGameObject("backBtn")
   local btns = self:GetUIComponent("UISelectObjectPath", "backBtn")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_2_0 , upvalues : self, _ENV
+  self._backBtn:SetData(function()
     self:SwitchState(UIStateType.UIActivityN29DetectiveMapController)
-  end
-, nil, nil, true, nil)
-  ;
-  (self._black):SetActive(false)
+  end, nil, nil, true, nil)
+  self._black:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController._Judge = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg_stage = (Cfg.cfg_component_detective_stage)[self._StageId]
-  if (UIN29DetectiveHelper.Judge)(cfg_stage.ClueList, self._clueList) then
+function UIN29DetectiveSuspectController:_Judge()
+  local cfg_stage = Cfg.cfg_component_detective_stage[self._StageId]
+  if UIN29DetectiveHelper.Judge(cfg_stage.ClueList, self._clueList) then
     self:ShowDialog("UIStoryController", cfg_stage.IntroPlot, function()
-    -- function num : 0_3_0 , upvalues : self
-    self:IntroStoryEnd()
-  end
-)
+      self:IntroStoryEnd()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.CheckTime = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = svrTimeModule and (math.floor)(svrTimeModule:GetServerTime() * 0.001) or 0
-  local closeTime = (self._info).m_close_time
-  local isOpen = nil
+function UIN29DetectiveSuspectController:CheckTime()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = svrTimeModule and math.floor(svrTimeModule:GetServerTime() * 0.001) or 0
+  local closeTime = self._info.m_close_time
+  local isOpen
   if curTime < closeTime then
     isOpen = true
   else
     isOpen = false
   end
   if not isOpen then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n24_specialtask_close"))
+    ToastManager.ShowToast(StringTable.Get("str_n24_specialtask_close"))
     self:SwitchState(UIStateType.UIActivityN29MainController)
   end
   return isOpen
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.InitData = function(self, TT, StoryEnd)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfg = (Cfg.cfg_n29_detective_search_point_detail)[self._Id]
-  local cfg_waypoint = (Cfg.cfg_component_detective_waypoint)[self._Id]
+function UIN29DetectiveSuspectController:InitData(TT, StoryEnd)
+  local cfg = Cfg.cfg_n29_detective_search_point_detail[self._Id]
+  local cfg_waypoint = Cfg.cfg_component_detective_waypoint[self._Id]
   local suspiciousIds = cfg_waypoint.WaypointContent
   local list = self:GetList(suspiciousIds)
   local cluelist = {}
-  for index,value in ipairs(list) do
-    local id = ((Cfg.cfg_component_detective_suspicious)[value]).ClueId
-    ;
-    (table.insert)(cluelist, id)
+  for index, value in ipairs(list) do
+    local id = Cfg.cfg_component_detective_suspicious[value].ClueId
+    table.insert(cluelist, id)
   end
   local bg = cfg.BG
-  ;
-  (self._bg):LoadImage(bg)
-  local bool, have = (UIN29DetectiveHelper.Judge)(cluelist, self._clueList)
+  self._bg:LoadImage(bg)
+  local bool, have = UIN29DetectiveHelper.Judge(cluelist, self._clueList)
   local havecount = #have
   local needcount = #list
-  local tips = (StringTable.Get)("str_n29_detective_search_progress", havecount, needcount)
-  ;
-  (self._rateText):SetText(tips)
+  local tips = StringTable.Get("str_n29_detective_search_progress", havecount, needcount)
+  self._rateText:SetText(tips)
   if havecount == needcount then
-    (self._Anim):Play("uieff_UIN29DetectiveSuspectController_in")
-    ;
-    (self._searchTips):SetActive(false)
-    ;
-    (self._topTips):SetText((StringTable.Get)("str_n29_detective_toptips_finish"))
+    self._Anim:Play("uieff_UIN29DetectiveSuspectController_in")
+    self._searchTips:SetActive(false)
+    self._topTips:SetText(StringTable.Get("str_n29_detective_toptips_finish"))
   else
-    ;
-    (self._topTips):SetText((StringTable.Get)("str_n29_detective_toptips_not_finish"))
-    ;
-    (self._top):SetActive(false)
-    ;
-    (self._rightup):SetActive(false)
-    ;
-    (self._backBtnObj):SetActive(false)
-    ;
-    (self._searchTips):SetActive(true)
+    self._topTips:SetText(StringTable.Get("str_n29_detective_toptips_not_finish"))
+    self._top:SetActive(false)
+    self._rightup:SetActive(false)
+    self._backBtnObj:SetActive(false)
+    self._searchTips:SetActive(true)
     if not StoryEnd then
       self:PlayEnterAnim(TT)
     end
     self:ShowAllUI()
-    ;
-    (self._Anim):Play("uieff_UIN29DetectiveSuspectController_in")
+    self._Anim:Play("uieff_UIN29DetectiveSuspectController_in")
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.PlayEnterAnim = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN29DetectiveSuspectController:PlayEnterAnim(TT)
   self:Lock("UIN29DetectiveSuspectController")
-  ;
-  (self._searchTipsAnim):Play("uieff_UIN29DetectiveSuspectController_search01")
+  self._searchTipsAnim:Play("uieff_UIN29DetectiveSuspectController_search01")
   YIELD(TT, 1100)
   self:UnLock("UIN29DetectiveSuspectController")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.LoadClue = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg_waypoint = (Cfg.cfg_component_detective_waypoint)[self._Id]
+function UIN29DetectiveSuspectController:LoadClue()
+  local cfg_waypoint = Cfg.cfg_component_detective_waypoint[self._Id]
   local suspiciousIds = cfg_waypoint.WaypointContent
   local list = self:GetList(suspiciousIds)
-  ;
-  (self._suspicious):SpawnObjects("UIN29DetectiveSuspectClueItem", #list)
-  self._allWidgets = (self._suspicious):GetAllSpawnList()
-  for index,item in pairs(self._allWidgets) do
-    local talkItem = (self._allWidgets)[index]
+  self._suspicious:SpawnObjects("UIN29DetectiveSuspectClueItem", #list)
+  self._allWidgets = self._suspicious:GetAllSpawnList()
+  for index, item in pairs(self._allWidgets) do
+    local talkItem = self._allWidgets[index]
     talkItem:SetData(list[index], self._clueList, self._psdId, function(StoryID, ClueId)
-    -- function num : 0_7_0 , upvalues : self
-    self:PlayStory(StoryID, ClueId)
-  end
-, function()
-    -- function num : 0_7_1 , upvalues : self
-    return self:CheckTime()
-  end
-)
+      self:PlayStory(StoryID, ClueId)
+    end, function()
+      return self:CheckTime()
+    end)
     talkItem:SetPivos()
-    local cfg = (Cfg.cfg_component_detective_suspicious)[list[index]]
+    local cfg = Cfg.cfg_component_detective_suspicious[list[index]]
     local offset = cfg.Offset
     local size = cfg.Size
     talkItem:SetPosition(offset, size)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.GetList = function(self, suspiciousIds)
-  -- function num : 0_8 , upvalues : _ENV
-  local cfg_waypoint = (Cfg.cfg_component_detective_stage)[self._StageId]
+function UIN29DetectiveSuspectController:GetList(suspiciousIds)
+  local cfg_waypoint = Cfg.cfg_component_detective_stage[self._StageId]
   local stageClue = cfg_waypoint.ClueList
   local lastStage = self._StageId - 1
   local list = {}
-  for index,Id in ipairs(suspiciousIds) do
-    local cfg = (Cfg.cfg_component_detective_suspicious)[Id]
+  for index, Id in ipairs(suspiciousIds) do
+    local cfg = Cfg.cfg_component_detective_suspicious[Id]
     local CanGetId = cfg.ClueId
     local needclue = cfg.NeedClue
     if needclue then
-      for index,value in ipairs(needclue) do
-        if (UIN29DetectiveHelper.IsInList)(value, self._clueList) and (UIN29DetectiveHelper.IsInList)(CanGetId, stageClue) then
-          (table.insert)(list, Id)
+      for index, value in ipairs(needclue) do
+        if UIN29DetectiveHelper.IsInList(value, self._clueList) and UIN29DetectiveHelper.IsInList(CanGetId, stageClue) then
+          table.insert(list, Id)
           break
         end
       end
-    else
-      do
-        do
-          if (UIN29DetectiveHelper.IsInList)(CanGetId, stageClue) then
-            (table.insert)(list, Id)
-          end
-          -- DECOMPILER ERROR at PC58: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC58: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC58: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+    elseif UIN29DetectiveHelper.IsInList(CanGetId, stageClue) then
+      table.insert(list, Id)
     end
   end
   if #list == 0 then
     if lastStage == 0 then
       return list
     end
-    local cfg_waypoint_last = (Cfg.cfg_component_detective_stage)[lastStage]
+    local cfg_waypoint_last = Cfg.cfg_component_detective_stage[lastStage]
     local lastStageClue = cfg_waypoint_last.ClueList
-    for index,Id in ipairs(suspiciousIds) do
-      local cfg = (Cfg.cfg_component_detective_suspicious)[Id]
+    for index, Id in ipairs(suspiciousIds) do
+      local cfg = Cfg.cfg_component_detective_suspicious[Id]
       local CanGetId = cfg.ClueId
       local needclue = cfg.NeedClue
       if needclue then
-        for index,value in ipairs(needclue) do
-          if (UIN29DetectiveHelper.IsInList)(value, self._clueList) and (UIN29DetectiveHelper.IsInList)(CanGetId, lastStageClue) then
-            (table.insert)(list, Id)
+        for index, value in ipairs(needclue) do
+          if UIN29DetectiveHelper.IsInList(value, self._clueList) and UIN29DetectiveHelper.IsInList(CanGetId, lastStageClue) then
+            table.insert(list, Id)
             break
           end
         end
-      else
-        do
-          do
-            if (UIN29DetectiveHelper.IsInList)(CanGetId, lastStageClue) then
-              (table.insert)(list, Id)
-            end
-            -- DECOMPILER ERROR at PC120: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC120: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC120: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+      elseif UIN29DetectiveHelper.IsInList(CanGetId, lastStageClue) then
+        table.insert(list, Id)
       end
     end
   end
-  do
-    return list
-  end
+  return list
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.IntroStoryEnd = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg_stage = (Cfg.cfg_component_detective_stage)[self._StageId]
+function UIN29DetectiveSuspectController:IntroStoryEnd()
+  local cfg_stage = Cfg.cfg_component_detective_stage[self._StageId]
   local storyID = cfg_stage.BeforeReasoningPlot
   local db = UIN29DetectiveLocalDb:New()
-  ;
-  (CutsceneManager.ExcuteCutsceneIn)("UIN29Detective_Common_Switch", function()
-    -- function num : 0_9_0 , upvalues : db, _ENV, self, storyID
+  CutsceneManager.ExcuteCutsceneIn("UIN29Detective_Common_Switch", function()
     db:GameIdReasoning(UIN29DetectiveLocalDb.Game_Continue_Reasoning)
     self:ShowDialog("UIStoryController", storyID, function()
-      -- function num : 0_9_0_0 , upvalues : self
       self:HideAllUI()
-      ;
-      (self._black):SetActive(true)
+      self._black:SetActive(true)
       self:ShowDialog("UIN29DetectiveReasoningPopController", self._StageId)
-    end
-)
-    ;
-    (CutsceneManager.ExcuteCutsceneOut)()
-  end
-)
+    end)
+    CutsceneManager.ExcuteCutsceneOut()
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.PlayStory = function(self, StoryID, suspiciousId)
-  -- function num : 0_10
+function UIN29DetectiveSuspectController:PlayStory(StoryID, suspiciousId)
   self:CheckTime()
   self:SubmitClue(suspiciousId)
   self:HideAllUI()
   self:ShowDialog("UIStoryController", StoryID, function()
-    -- function num : 0_10_0 , upvalues : self, suspiciousId
     self:StoryEnd(suspiciousId)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.SubmitClue = function(self, suspiciousId)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.SubmitClueTask, self, suspiciousId)
+function UIN29DetectiveSuspectController:SubmitClue(suspiciousId)
+  GameGlobal.TaskManager():StartTask(self.SubmitClueTask, self, suspiciousId)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.SubmitClueTask = function(self, TT, suspiciousId)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN29DetectiveSuspectController:SubmitClueTask(TT, suspiciousId)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   local info = SubmitClueInfo:New()
   info.type = 1
   info.id = suspiciousId
   local list = {}
-  ;
-  (table.insert)(list, info)
-  ;
-  (self._comp):HandleSubmitItem(TT, res, self._StageId, list, {}, {})
+  table.insert(list, info)
+  self._comp:HandleSubmitItem(TT, res, self._StageId, list, {}, {})
   if res:GetSucc() then
-    (Log.fatal)("成功")
+    Log.fatal("成功")
     self:RefreshData()
   else
-    ;
-    (Log.fatal)("请求失败", res:GetResult())
+    Log.fatal("请求失败", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.RefreshData = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  self._curDetectiveInfo = (self._info).cur_info
-  self._clueList = (self._curDetectiveInfo).clue_list
-  self._psdId = (self._curDetectiveInfo).pstid
+function UIN29DetectiveSuspectController:RefreshData()
+  self._curDetectiveInfo = self._info.cur_info
+  self._clueList = self._curDetectiveInfo.clue_list
+  self._psdId = self._curDetectiveInfo.pstid
   self:LoadClue()
   self:_Judge()
-  if (self._tipsOn).activeSelf then
-    for index,item in pairs(self._allWidgets) do
-      local talkItem = (self._allWidgets)[index]
+  if self._tipsOn.activeSelf then
+    for index, item in pairs(self._allWidgets) do
+      local talkItem = self._allWidgets[index]
       talkItem:SetTips(true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.StoryEnd = function(self, suspiciousId, TT)
-  -- function num : 0_14 , upvalues : _ENV
-  local cfg_suspect = (Cfg.cfg_component_detective_suspicious)[suspiciousId]
+function UIN29DetectiveSuspectController:StoryEnd(suspiciousId, TT)
+  local cfg_suspect = Cfg.cfg_component_detective_suspicious[suspiciousId]
   local ClueId = cfg_suspect.ClueId
   local StoryEnd = true
   self:ShowDialog("UIN29DetectiveCluePopController", ClueId, UIN29DetectiveType.Suspect, function()
-    -- function num : 0_14_0 , upvalues : self, TT, StoryEnd
     self:_Judge()
     self:ShowAllUI()
     self:InitData(TT, StoryEnd)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.SetTipsState = function(self, bool)
-  -- function num : 0_15
+function UIN29DetectiveSuspectController:SetTipsState(bool)
   if bool then
-    (self._tipsOn):SetActive(true)
-    ;
-    (self._tipsOff):SetActive(false)
-    ;
-    (self._tipsText):SetText("ON")
+    self._tipsOn:SetActive(true)
+    self._tipsOff:SetActive(false)
+    self._tipsText:SetText("ON")
   else
-    ;
-    (self._tipsOn):SetActive(false)
-    ;
-    (self._tipsOff):SetActive(true)
-    ;
-    (self._tipsText):SetText("OFF")
+    self._tipsOn:SetActive(false)
+    self._tipsOff:SetActive(true)
+    self._tipsText:SetText("OFF")
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.OnHide = function(self)
-  -- function num : 0_16
+function UIN29DetectiveSuspectController:OnHide()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.ShowAllUI = function(self)
-  -- function num : 0_17
-  (self._top):SetActive(true)
-  ;
-  (self._center):SetActive(true)
-  ;
-  (self._rightup):SetActive(true)
-  ;
-  (self._backBtnObj):SetActive(true)
+function UIN29DetectiveSuspectController:ShowAllUI()
+  self._top:SetActive(true)
+  self._center:SetActive(true)
+  self._rightup:SetActive(true)
+  self._backBtnObj:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.HideAllUI = function(self)
-  -- function num : 0_18
-  (self._top):SetActive(false)
-  ;
-  (self._center):SetActive(false)
-  ;
-  (self._rightup):SetActive(false)
-  ;
-  (self._backBtnObj):SetActive(false)
+function UIN29DetectiveSuspectController:HideAllUI()
+  self._top:SetActive(false)
+  self._center:SetActive(false)
+  self._rightup:SetActive(false)
+  self._backBtnObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.BagOnClick = function(self)
-  -- function num : 0_19
+function UIN29DetectiveSuspectController:BagOnClick()
   self:CheckTime()
   self:ShowDialog("UIActivityN29DetectiveBagController", true, self._curDetectiveInfo, true)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.BGOnClick = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIN29DetectiveSuspectController:BGOnClick()
   self:CheckTime()
-  ;
-  (ToastManager.ShowToast)((StringTable.Get)("str_n29_detective_not_suspicious_item"))
+  ToastManager.ShowToast(StringTable.Get("str_n29_detective_not_suspicious_item"))
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.TipsOnClick = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIN29DetectiveSuspectController:TipsOnClick()
   self:CheckTime()
   if self.state then
     self.state = false
@@ -450,17 +303,12 @@ UIN29DetectiveSuspectController.TipsOnClick = function(self)
     self.state = true
   end
   self:SetTipsState(self.state)
-  for index,item in pairs(self._allWidgets) do
-    local talkItem = (self._allWidgets)[index]
+  for index, item in pairs(self._allWidgets) do
+    local talkItem = self._allWidgets[index]
     talkItem:SetTips(self.state)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectController.CheckGuide = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN29DetectiveSuspectController)
+function UIN29DetectiveSuspectController:CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN29DetectiveSuspectController)
 end
-
-

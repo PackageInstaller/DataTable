@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21_crisis_contract/level/ui_activity_n21cc_level_affix_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN21CCLevelAffixItem", UICustomWidget)
 UIActivityN21CCLevelAffixItem = UIActivityN21CCLevelAffixItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN21CCLevelAffixItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN21CCLevelAffixItem:OnShow()
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
   self._scoreLabel = self:GetUIComponent("UILocalizationText", "Score")
   self._mask = self:GetGameObject("Mask")
@@ -25,156 +18,101 @@ UIActivityN21CCLevelAffixItem.OnShow = function(self)
   self:AttachEvent(GameEventType.N21CCClearAllSelectAffix, self.RefreshSelectStatus)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelAffixItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN21CCLevelAffixItem:OnHide()
   self:DetachEvent(GameEventType.N21CCClearAllSelectAffix, self.RefreshSelectStatus)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelAffixItem.Refresh = function(self, affixData, isOpen, playAnim, callback)
-  -- function num : 0_2
+function UIActivityN21CCLevelAffixItem:Refresh(affixData, isOpen, playAnim, callback)
   self._affixData = affixData
   if affixData == nil then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
-  ;
-  (self._go):SetActive(true)
+  self._go:SetActive(true)
   self._callback = callback
   self._isOpen = isOpen
   self:RefreshUI()
   if not playAnim then
-    (self._anim):Play("UIActivityN21CCLevelAffixItem")
+    self._anim:Play("UIActivityN21CCLevelAffixItem")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelAffixItem.RefreshSelectStatus = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN21CCLevelAffixItem:RefreshSelectStatus()
   if self._affixData == nil then
-    return 
+    return
   end
-  ;
-  (self._mask):SetActive(false)
-  ;
-  (self._unSelcted):SetActive(false)
-  ;
-  (self._selected):SetActive(false)
-  ;
-  (self._selectScoreBg):SetActive(false)
-  ;
-  (self._unSelectScoreBg):SetActive(false)
-  ;
-  (self._lockScoreBg):SetActive(false)
-  ;
-  (self._selectedBg):SetActive(false)
-  ;
-  (self._lock):SetActive(false)
-  local isSelected = (self._affixData):IsSelected()
+  self._mask:SetActive(false)
+  self._unSelcted:SetActive(false)
+  self._selected:SetActive(false)
+  self._selectScoreBg:SetActive(false)
+  self._unSelectScoreBg:SetActive(false)
+  self._lockScoreBg:SetActive(false)
+  self._selectedBg:SetActive(false)
+  self._lock:SetActive(false)
+  local isSelected = self._affixData:IsSelected()
   if not self._isOpen then
-    (self._mask):SetActive(true)
-    ;
-    (self._lock):SetActive(true)
-    ;
-    (self._lockScoreBg):SetActive(true)
-    -- DECOMPILER ERROR at PC61: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._nameLabel).color = Color(0.25882352941176, 0.25882352941176, 0.24705882352941, 1)
+    self._mask:SetActive(true)
+    self._lock:SetActive(true)
+    self._lockScoreBg:SetActive(true)
+    self._nameLabel.color = Color(0.25882352941176473, 0.25882352941176473, 0.24705882352941178, 1)
+  elseif isSelected then
+    self._unSelcted:SetActive(true)
+    self._selected:SetActive(true)
+    self._selectScoreBg:SetActive(true)
+    self._selectedBg:SetActive(true)
+    self._nameLabel.color = Color(0.9882352941176471, 0.9882352941176471, 0.9882352941176471, 1)
   else
-    if isSelected then
-      (self._unSelcted):SetActive(true)
-      ;
-      (self._selected):SetActive(true)
-      ;
-      (self._selectScoreBg):SetActive(true)
-      ;
-      (self._selectedBg):SetActive(true)
-      -- DECOMPILER ERROR at PC88: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._nameLabel).color = Color(0.98823529411765, 0.98823529411765, 0.98823529411765, 1)
+    local isGroupSelected = false
+    local affixGroupData = self._affixData:GetAffixGroupData()
+    local affixDatas = affixGroupData:GetAffixDatas()
+    for i = 1, #affixDatas do
+      if affixDatas[i]:IsSelected() then
+        isGroupSelected = true
+        break
+      end
+    end
+    self._unSelcted:SetActive(true)
+    self._nameLabel.color = Color(0.25882352941176473, 0.25882352941176473, 0.24705882352941178, 1)
+    if isGroupSelected then
+      self._selectScoreBg:SetActive(true)
+      self._mask:SetActive(true)
     else
-      local isGroupSelected = false
-      local affixGroupData = (self._affixData):GetAffixGroupData()
-      local affixDatas = affixGroupData:GetAffixDatas()
-      for i = 1, #affixDatas do
-        if (affixDatas[i]):IsSelected() then
-          isGroupSelected = true
-          break
-        end
-      end
-      do
-        ;
-        (self._unSelcted):SetActive(true)
-        -- DECOMPILER ERROR at PC119: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._nameLabel).color = Color(0.25882352941176, 0.25882352941176, 0.24705882352941, 1)
-        if isGroupSelected then
-          (self._selectScoreBg):SetActive(true)
-          ;
-          (self._mask):SetActive(true)
-        else
-          ;
-          (self._unSelectScoreBg):SetActive(true)
-        end
-      end
+      self._unSelectScoreBg:SetActive(true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelAffixItem.RefreshData = function(self, isOpen)
-  -- function num : 0_4
+function UIActivityN21CCLevelAffixItem:RefreshData(isOpen)
   self._isOpen = isOpen
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelAffixItem.RefreshUI = function(self)
-  -- function num : 0_5
+function UIActivityN21CCLevelAffixItem:RefreshUI()
   if not self._affixData then
-    return 
+    return
   end
-  ;
-  (self._nameLabel):SetText((self._affixData):GetDes())
+  self._nameLabel:SetText(self._affixData:GetDes())
   local scoreStr = ""
-  local score = (self._affixData):GetScroe()
-  if score >= 0 then
+  local score = self._affixData:GetScroe()
+  if 0 <= score then
     scoreStr = "<color=#ffbf14>+" .. score .. "</color>"
   else
     scoreStr = "<color=#b3f12d>" .. score .. "</color>"
   end
-  ;
-  (self._scoreLabel):SetText(scoreStr)
+  self._scoreLabel:SetText(scoreStr)
   self:RefreshSelectStatus()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelAffixItem.BtnOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityN21CCLevelAffixItem:BtnOnClick()
   if not self._isOpen then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n20_crisis_contract_affix_lock_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_n20_crisis_contract_affix_lock_tips"))
+    return
   end
   if self._callback then
-    (self._callback)(self._affixData)
+    self._callback(self._affixData)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelAffixItem.PlayAnim = function(self)
-  -- function num : 0_7
-  (self._anim):Play("UIActivityN21CCLevelAffixItem")
+function UIActivityN21CCLevelAffixItem:PlayAnim()
+  self._anim:Play("UIActivityN21CCLevelAffixItem")
 end
-
-

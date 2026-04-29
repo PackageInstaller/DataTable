@@ -1,22 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_corss_a_back_b_near_caster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_CrossABackBNearCaster", SkillScopeCalculator_Base)
 SkillScopeCalculator_CrossABackBNearCaster = SkillScopeCalculator_CrossABackBNearCaster
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_CrossABackBNearCaster.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_CrossABackBNearCaster:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local backOffset = scopeParam[1]
   local trapID = scopeParam[2]
   local areaPosList = {}
-  for i,p in ipairs(bodyArea) do
+  for i, p in ipairs(bodyArea) do
     local curPos = centerPos + p
-    ;
-    (table.insert)(areaPosList, curPos)
+    table.insert(areaPosList, curPos)
   end
   local startIdx = 1
   local backIdx = startIdx + backOffset
@@ -24,47 +16,45 @@ SkillScopeCalculator_CrossABackBNearCaster.CalcRange = function(self, scopeType,
   local validCorssAPosList = {}
   local validBackBPosList = {}
   local sortPosList = {}
-  local preDashDir = {Vector2.up, Vector2.down, Vector2.left, Vector2.right}
-  for i,p in ipairs(areaPosList) do
-    for _,dir in ipairs(preDashDir) do
+  local preDashDir = {
+    Vector2.up,
+    Vector2.down,
+    Vector2.left,
+    Vector2.right
+  }
+  for i, p in ipairs(areaPosList) do
+    for _, dir in ipairs(preDashDir) do
       local prePos = p + dir
       local backOffsetPos = p + dir:Mul(backIdx)
-      if self:CheckPosValid(prePos, trapID) and self:CheckPosValid(backOffsetPos, trapID) and not (table.icontains)(validCorssAPosList, prePos) and not (table.icontains)(validBackBPosList, backOffsetPos) then
+      if self:CheckPosValid(prePos, trapID) and self:CheckPosValid(backOffsetPos, trapID) and not table.icontains(validCorssAPosList, prePos) and not table.icontains(validBackBPosList, backOffsetPos) then
         validCorssAPosList[#validCorssAPosList + 1] = prePos
         sortPosList[#sortPosList + 1] = prePos
         validBackBPosList[#validBackBPosList + 1] = backOffsetPos
       end
     end
   end
-  if #sortPosList > 0 then
+  if 0 < #sortPosList then
     HelperProxy:SortPosByCenterPosDistance(casterPos, sortPosList)
     local neareastPos = sortPosList[1]
-    for i,pos in ipairs(validCorssAPosList) do
+    for i, pos in ipairs(validCorssAPosList) do
       if pos == neareastPos then
         attackRange[#attackRange + 1] = pos
         attackRange[#attackRange + 1] = validBackBPosList[i]
       end
     end
   end
-  do
-    local result = SkillScopeResult:New(SkillScopeType.CrossABackBNearCaster, casterPos, attackRange, attackRange)
-    return result
-  end
+  local result = SkillScopeResult:New(SkillScopeType.CrossABackBNearCaster, casterPos, attackRange, attackRange)
+  return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_CrossABackBNearCaster.CheckPosValid = function(self, pos, trapID)
-  -- function num : 0_1 , upvalues : _ENV
-  local isValid = (self._gridFilter):IsValidPiecePos(pos)
+function SkillScopeCalculator_CrossABackBNearCaster:CheckPosValid(pos, trapID)
+  local isValid = self._gridFilter:IsValidPiecePos(pos)
   if not isValid then
     return false
   end
-  local isBlocked = (self._gridFilter):IsPosBlock(pos, BlockFlag.MonsterLand | BlockFlag.MonsterFly)
+  local isBlocked = self._gridFilter:IsPosBlock(pos, BlockFlag.MonsterLand | BlockFlag.MonsterFly)
   if isBlocked then
-    return (self._gridFilter):IsPosHasTrapByTrapID(pos, trapID)
+    return self._gridFilter:IsPosHasTrapByTrapID(pos, trapID)
   end
   return true
 end
-
-

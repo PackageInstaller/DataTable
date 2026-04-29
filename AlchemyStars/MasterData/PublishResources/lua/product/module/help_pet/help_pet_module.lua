@@ -1,50 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/help_pet/help_pet_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HelpPetModule", GameModule)
 HelpPetModule = HelpPetModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HelpPetModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function HelpPetModule:Constructor()
   self.m_nHelpPetKey = 0
   self.m_supportInfo = CEventHelpPet_SupportInfoAsw:New()
-  self.m_listPetType = {ElementType.ElementType_Blue, ElementType.ElementType_Red, ElementType.ElementType_Green, ElementType.ElementType_Yellow}
+  self.m_listPetType = {
+    ElementType.ElementType_Blue,
+    ElementType.ElementType_Red,
+    ElementType.ElementType_Green,
+    ElementType.ElementType_Yellow
+  }
   self.m_mapVecHelpData = {}
   self.m_nCurFreshTeamID = 0
   self._lastRefreshTime = 0
   self:_InitHelpList()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.Dispose = function(self)
-  -- function num : 0_1
+function HelpPetModule:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.Init = function(self)
-  -- function num : 0_2
+function HelpPetModule:Init()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.Update = function(self, deltaTimeMS)
-  -- function num : 0_3
+function HelpPetModule:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule._Request_Packet = function(self, TT, packetRequest)
-  -- function num : 0_4 , upvalues : _ENV
+function HelpPetModule:_Request_Packet(TT, packetRequest)
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, packetRequest)
   if reply.res ~= CallResultType.Normal then
     if reply.msg then
-      res:SetResult((reply.msg).m_nResult)
+      res:SetResult(reply.msg.m_nResult)
     else
       res:SetResult(ErrorCode_HelpPet.E_Error_HelpPet_Fail)
     end
@@ -54,11 +40,8 @@ HelpPetModule._Request_Packet = function(self, TT, packetRequest)
   return reply.msg, res
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.RequestHelpPet_SupportInfo = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHelpPet_SupportInfoReq)
+function HelpPetModule:RequestHelpPet_SupportInfo(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHelpPet_SupportInfoReq)
   local replyMsg, res = self:_Request_Packet(TT, request)
   if replyMsg and ErrorCode_HelpPet.E_Error_HelpPet_Succ == replyMsg.m_nResult then
     self.m_supportInfo = replyMsg
@@ -66,37 +49,26 @@ HelpPetModule.RequestHelpPet_SupportInfo = function(self, TT)
   return res
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.RequestHelpPet_SupportSet = function(self, TT, nTemplateID, bAddSupport)
-  -- function num : 0_6 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHelpPet_SupportSetReq)
+function HelpPetModule:RequestHelpPet_SupportSet(TT, nTemplateID, bAddSupport)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHelpPet_SupportSetReq)
   request.m_bAddSupport = bAddSupport or 1
   request.m_nTemplateID = nTemplateID
   local replyMsg, res = self:_Request_Packet(TT, request)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyMsg and ErrorCode_HelpPet.E_Error_HelpPet_Succ == replyMsg.m_nResult then
     if bAddSupport then
-      ((self.m_supportInfo).m_mapPetSupport)[replyMsg.m_nPetType] = replyMsg.m_supportPetData
+      self.m_supportInfo.m_mapPetSupport[replyMsg.m_nPetType] = replyMsg.m_supportPetData
     else
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      ((self.m_supportInfo).m_mapPetSupport)[replyMsg.m_nPetType] = nil
+      self.m_supportInfo.m_mapPetSupport[replyMsg.m_nPetType] = nil
     end
   end
   return res
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.RequestHelpPet_HelpRefresh = function(self, TT, nPetType, nTeamID, match_type, component_id, mission_component_id)
-  -- function num : 0_7 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHelpPet_HelpRefreshReq)
+function HelpPetModule:RequestHelpPet_HelpRefresh(TT, nPetType, nTeamID, match_type, component_id, mission_component_id)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHelpPet_HelpRefreshReq)
   request.m_nPetType = nPetType
   request.m_nTeamID = nTeamID
-  local petType = (math.floor)(self.m_nHelpPetKey / 256)
+  local petType = math.floor(self.m_nHelpPetKey / 256)
   local nPetIndex = self.m_nHelpPetKey % 256
   local selectHelpPet = self:_FindtHelpPetData(petType, nPetIndex)
   if selectHelpPet then
@@ -109,16 +81,11 @@ HelpPetModule.RequestHelpPet_HelpRefresh = function(self, TT, nPetType, nTeamID,
   request.m_mission_component_id = mission_component_id
   local replyMsg, res = self:_Request_Packet(TT, request)
   if replyMsg and ErrorCode_HelpPet.E_Error_HelpPet_Succ == replyMsg.m_nResult then
-    for nRecvPetType,listHelpData in pairs(replyMsg.m_mapVecHelpData) do
-      -- DECOMPILER ERROR at PC49: Confused about usage of register: R18 in 'UnsetPending'
-
-      if (self.m_mapVecHelpData)[nRecvPetType] == nil then
-        (self.m_mapVecHelpData)[nRecvPetType] = {}
+    for nRecvPetType, listHelpData in pairs(replyMsg.m_mapVecHelpData) do
+      if nil == self.m_mapVecHelpData[nRecvPetType] then
+        self.m_mapVecHelpData[nRecvPetType] = {}
       end
-      -- DECOMPILER ERROR at PC51: Confused about usage of register: R18 in 'UnsetPending'
-
-      ;
-      (self.m_mapVecHelpData)[nRecvPetType] = listHelpData
+      self.m_mapVecHelpData[nRecvPetType] = listHelpData
       if selectHelpPet and nRecvPetType == petType then
         nPetIndex = #listHelpData
         self.m_nHelpPetKey = petType * 256 + nPetIndex
@@ -129,181 +96,128 @@ HelpPetModule.RequestHelpPet_HelpRefresh = function(self, TT, nPetType, nTeamID,
   return res
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.RequestHelpPet_HelpInitData = function(self, TT, nData)
-  -- function num : 0_8 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHelpPet_InitData)
+function HelpPetModule:RequestHelpPet_HelpInitData(TT, nData)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHelpPet_InitData)
   request.m_nData = nData
   self:Push(request)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.RequestHelpPet_HelpList = function(self, TT, nTeamID)
-  -- function num : 0_9 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHelpPet_HelpListReq)
+function HelpPetModule:RequestHelpPet_HelpList(TT, nTeamID)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHelpPet_HelpListReq)
   request.m_nTeamID = nTeamID
   self.m_nCurFreshTeamID = 0
   local replyMsg, res = self:_Request_Packet(TT, request)
   if replyMsg and ErrorCode_HelpPet.E_Error_HelpPet_Succ == replyMsg.m_nResult then
     self.m_nCurFreshTeamID = nTeamID
-    for key,nPetType in pairs(self.m_listPetType) do
-      -- DECOMPILER ERROR at PC26: Confused about usage of register: R11 in 'UnsetPending'
-
-      (self.m_mapVecHelpData)[nPetType] = {}
-      local listRecvPet = (replyMsg.m_mapVecHelpData)[nPetType]
-      -- DECOMPILER ERROR at PC38: Confused about usage of register: R12 in 'UnsetPending'
-
-      if listRecvPet and (table.count)(listRecvPet) > 0 then
-        (self.m_mapVecHelpData)[nPetType] = listRecvPet
+    for key, nPetType in pairs(self.m_listPetType) do
+      self.m_mapVecHelpData[nPetType] = {}
+      local listRecvPet = replyMsg.m_mapVecHelpData[nPetType]
+      if listRecvPet and 0 < table.count(listRecvPet) then
+        self.m_mapVecHelpData[nPetType] = listRecvPet
       end
     end
   end
-  do
-    return res
-  end
+  return res
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.ComputePetSortData = function(self, nLevel, nAwake, nGrade, nRefineLevel, nEquipLevel)
-  -- function num : 0_10
+function HelpPetModule:ComputePetSortData(nLevel, nAwake, nGrade, nRefineLevel, nEquipLevel)
   local nSortData = nGrade * 1000000 + nRefineLevel * 100000 + nEquipLevel * 10000 + nLevel
   return nSortData
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule._FindtHelpPetData = function(self, nPetType, nPetIndex)
-  -- function num : 0_11
-  local pFindHelpPetList = (self.m_mapVecHelpData)[nPetType]
-  if pFindHelpPetList == nil then
+function HelpPetModule:_FindtHelpPetData(nPetType, nPetIndex)
+  local pFindHelpPetList = self.m_mapVecHelpData[nPetType]
+  if nil == pFindHelpPetList then
     return nil
   end
   return pFindHelpPetList[nPetIndex]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule._FindtHelpPetDataByPstId = function(self, nPetType, pstId)
-  -- function num : 0_12 , upvalues : _ENV
-  local pFindHelpPetList = (self.m_mapVecHelpData)[nPetType]
-  if pFindHelpPetList == nil then
+function HelpPetModule:_FindtHelpPetDataByPstId(nPetType, pstId)
+  local pFindHelpPetList = self.m_mapVecHelpData[nPetType]
+  if nil == pFindHelpPetList then
     return nil
   end
-  local data, index = nil, nil
-  for i,value in ipairs(pFindHelpPetList) do
+  local data, index
+  for i, value in ipairs(pFindHelpPetList) do
     if value.m_nPstID == pstId then
       data = value
       index = i
       break
     end
   end
-  do
-    return data, index
-  end
+  return data, index
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule._InitHelpList = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  for key,value in pairs(self.m_listPetType) do
-    -- DECOMPILER ERROR at PC6: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self.m_mapVecHelpData)[value] = {}
+function HelpPetModule:_InitHelpList()
+  for key, value in pairs(self.m_listPetType) do
+    self.m_mapVecHelpData[value] = {}
   end
   self.m_nCurFreshTeamID = 0
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.UI_FindSupportPet = function(self, nPetType)
-  -- function num : 0_14
-  local pFindSupportPet = ((self.m_supportInfo).m_mapPetSupport)[nPetType]
+function HelpPetModule:UI_FindSupportPet(nPetType)
+  local pFindSupportPet = self.m_supportInfo.m_mapPetSupport[nPetType]
   return pFindSupportPet
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.UI_FindHelpPet = function(self, nPetType)
-  -- function num : 0_15
-  local pFindHelpPetList = (self.m_mapVecHelpData)[nPetType]
+function HelpPetModule:UI_FindHelpPet(nPetType)
+  local pFindHelpPetList = self.m_mapVecHelpData[nPetType]
   return pFindHelpPetList
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.UI_EnumHelpPet = function(self, nPetType)
-  -- function num : 0_16
-  local pFindHelpPetList = (self.m_mapVecHelpData)[nPetType]
-  if pFindHelpPetList == nil then
+function HelpPetModule:UI_EnumHelpPet(nPetType)
+  local pFindHelpPetList = self.m_mapVecHelpData[nPetType]
+  if nil == pFindHelpPetList then
     return nil
   end
   return self:UI_ReSort(pFindHelpPetList)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.UI_ReSort = function(self, pFindHelpPetList)
-  -- function num : 0_17 , upvalues : _ENV
+function HelpPetModule:UI_ReSort(pFindHelpPetList)
   local sortList = SortedArray:New(Algorithm.COMPARE_CUSTOM, function(dataA, dataB)
-    -- function num : 0_17_0 , upvalues : _ENV, self
     if dataA.m_nSourceType ~= dataB.m_nSourceType then
       if EnumHelpSourceType.E_HelpSource_Default == dataA.m_nSourceType then
         return -1
+      elseif EnumHelpSourceType.E_HelpSource_Default == dataB.m_nSourceType then
+        return 1
       else
-        if EnumHelpSourceType.E_HelpSource_Default == dataB.m_nSourceType then
-          return 1
-        else
-          return dataA.m_nSourceType - dataB.m_nSourceType
-        end
+        return dataA.m_nSourceType - dataB.m_nSourceType
       end
     else
       local nSortDataA = self:ComputePetSortData(dataA.m_nLevel, dataA.m_nAwake, dataA.m_nGrade, dataA.m_nEquipRefineLevel, dataA.m_nEquipLevel)
       local nSortDataB = self:ComputePetSortData(dataB.m_nLevel, dataB.m_nAwake, dataB.m_nGrade, dataB.m_nEquipRefineLevel, dataB.m_nEquipLevel)
       return nSortDataA - nSortDataB
     end
-  end
-)
+  end)
   sortList:AllowDuplicate()
-  for key,value in pairs(pFindHelpPetList) do
+  for key, value in pairs(pFindHelpPetList) do
     sortList:Insert(value)
   end
   return sortList
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.UI_SetSelectHelpPet = function(self, nPetType, nPetIndex)
-  -- function num : 0_18
+function HelpPetModule:UI_SetSelectHelpPet(nPetType, nPetIndex)
   self.m_nHelpPetKey = 0
   local pFindHelpPet = self:_FindtHelpPetData(nPetType, nPetIndex)
-  if pFindHelpPet == nil then
+  if nil == pFindHelpPet then
     return nil
   end
   self.m_nHelpPetKey = nPetType * 256 + nPetIndex
-  return 
+  return
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.UI_SetSelectHelpPetPstId = function(self, nPetType, PstId)
-  -- function num : 0_19
+function HelpPetModule:UI_SetSelectHelpPetPstId(nPetType, PstId)
   self.m_nHelpPetKey = 0
   local pFindHelpPet, index = self:_FindtHelpPetDataByPstId(nPetType, PstId)
-  if pFindHelpPet == nil then
+  if nil == pFindHelpPet then
     return nil
   end
   self.m_nHelpPetKey = nPetType * 256 + index
-  return 
+  return
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.UI_GetSelectConstructHelpPet = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function HelpPetModule:UI_GetSelectConstructHelpPet()
   local data = self:UI_GetTeamMaxPet()
   local tempData = pet_data:New()
   tempData.template_id = data.m_nTemplateID
@@ -320,69 +234,51 @@ HelpPetModule.UI_GetSelectConstructHelpPet = function(self)
   return pet
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.UI_GetTeamMaxMatchPet = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function HelpPetModule:UI_GetTeamMaxMatchPet()
   local _module = self:GetModule(MissionModule)
   local petModule = self:GetModule(PetModule)
   local ctx = _module:TeamCtx()
   local _teams = ctx.teams
-  local maxPet = nil
+  local maxPet
   if _teams then
     local curTeamId = ctx:GetCurrTeamId()
     local team = _teams:Get(curTeamId)
     if team then
       local maxLevel = 0
       local list = {}
-      for index,pstid in ipairs(team:GetPets()) do
+      for index, pstid in ipairs(team:GetPets()) do
         if index < 5 then
           local pet = petModule:GetPet(pstid)
-          ;
-          (table.insert)(list, pet)
+          table.insert(list, pet)
         end
       end
-      ;
-      (table.sort)(list, function(a, b)
-    -- function num : 0_21_0
-    if b:GetPetLevel() >= a:GetPetLevel() then
-      do return a:GetPetGrade() ~= b:GetPetGrade() end
-      do return b:GetPetGrade() < a:GetPetGrade() end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
-    end
-  end
-)
+      table.sort(list, function(a, b)
+        if a:GetPetGrade() == b:GetPetGrade() then
+          return a:GetPetLevel() > b:GetPetLevel()
+        else
+          return a:GetPetGrade() > b:GetPetGrade()
+        end
+      end)
       maxPet = list[1]
     end
   end
-  do
-    return maxPet
-  end
+  return maxPet
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.UI_GetTeamMaxPet = function(self)
-  -- function num : 0_22
+function HelpPetModule:UI_GetTeamMaxPet()
   local maxPet = self:UI_GetTeamMaxMatchPet()
   local data = self:UI_GetSelectHelpPet(maxPet)
   return data
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.UI_GetSelectHelpPet = function(self, maxTeamPet)
-  -- function num : 0_23 , upvalues : _ENV
-  local nPetType = (math.floor)(self.m_nHelpPetKey / 256)
+function HelpPetModule:UI_GetSelectHelpPet(maxTeamPet)
+  local nPetType = math.floor(self.m_nHelpPetKey / 256)
   local nPetIndex = self.m_nHelpPetKey % 256
   local pFindHelpPet = self:_FindtHelpPetData(nPetType, nPetIndex)
   return self:ConvertDataByMaxPet(pFindHelpPet, maxTeamPet)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.ConvertDataByMaxPet = function(self, pFindHelpPet, maxTeamPet, ui)
-  -- function num : 0_24 , upvalues : _ENV
+function HelpPetModule:ConvertDataByMaxPet(pFindHelpPet, maxTeamPet, ui)
   local bOriginal = true
   if bOriginal then
     return pFindHelpPet
@@ -401,95 +297,73 @@ HelpPetModule.ConvertDataByMaxPet = function(self, pFindHelpPet, maxTeamPet, ui)
   else
     local maxPetGrade = maxTeamPet:GetPetGrade()
     petDataReturn.m_nAwake = pFindHelpPet.m_nAwake
-    if pFindHelpPet.m_nGrade < maxPetGrade then
+    if maxPetGrade > pFindHelpPet.m_nGrade then
       petDataReturn.m_nGrade = pFindHelpPet.m_nGrade
       petDataReturn.m_nLevel = pFindHelpPet.m_nLevel
-    else
-      if maxPetGrade == pFindHelpPet.m_nGrade then
-        petDataReturn.m_nGrade = pFindHelpPet.m_nGrade
-        local maxPetLevel = (maxTeamPet._data).level
-        if maxPetLevel < pFindHelpPet.m_nLevel then
-          petDataReturn.m_nLevel = maxPetLevel
-        else
-          petDataReturn.m_nLevel = pFindHelpPet.m_nLevel
-        end
+    elseif maxPetGrade == pFindHelpPet.m_nGrade then
+      petDataReturn.m_nGrade = pFindHelpPet.m_nGrade
+      local maxPetLevel = maxTeamPet._data.level
+      if maxPetLevel < pFindHelpPet.m_nLevel then
+        petDataReturn.m_nLevel = maxPetLevel
       else
-        do
-          do
-            if maxPetGrade < pFindHelpPet.m_nGrade then
-              petDataReturn.m_nGrade = (maxTeamPet._data).grade
-              petDataReturn.m_nLevel = (maxTeamPet._data).level
-            end
-            local nMaxEquipLevel = ((Cfg.cfg_global).help_pet_max_equip_level).IntValue
-            if nMaxEquipLevel and nMaxEquipLevel > 0 then
-              if nMaxEquipLevel <= pFindHelpPet.m_nEquipLevel then
-                petDataReturn.m_nEquipLevel = nMaxEquipLevel
-              else
-                petDataReturn.m_nEquipLevel = pFindHelpPet.m_nEquipLevel
-              end
-            else
-              petDataReturn.m_nEquipLevel = pFindHelpPet.m_nEquipLevel
-            end
-            return petDataReturn
-          end
-        end
+        petDataReturn.m_nLevel = pFindHelpPet.m_nLevel
       end
+    elseif maxPetGrade < pFindHelpPet.m_nGrade then
+      petDataReturn.m_nGrade = maxTeamPet._data.grade
+      petDataReturn.m_nLevel = maxTeamPet._data.level
     end
   end
+  local nMaxEquipLevel = Cfg.cfg_global.help_pet_max_equip_level.IntValue
+  if nMaxEquipLevel and 0 < nMaxEquipLevel then
+    if nMaxEquipLevel <= pFindHelpPet.m_nEquipLevel then
+      petDataReturn.m_nEquipLevel = nMaxEquipLevel
+    else
+      petDataReturn.m_nEquipLevel = pFindHelpPet.m_nEquipLevel
+    end
+  else
+    petDataReturn.m_nEquipLevel = pFindHelpPet.m_nEquipLevel
+  end
+  return petDataReturn
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.UI_GetHelpPetKey = function(self)
-  -- function num : 0_25
+function HelpPetModule:UI_GetHelpPetKey()
   return self.m_nHelpPetKey
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.UI_ClearHelpPet = function(self)
-  -- function num : 0_26
+function HelpPetModule:UI_ClearHelpPet()
   self.m_nHelpPetKey = 0
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.UI_GetSupportInfo = function(self)
-  -- function num : 0_27
+function HelpPetModule:UI_GetSupportInfo()
   return self.m_supportInfo
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.UI_GetCurFreshTeamID = function(self)
-  -- function num : 0_28
+function HelpPetModule:UI_GetCurFreshTeamID()
   return self.m_nCurFreshTeamID
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.UI_GetLastRefreshTime = function(self)
-  -- function num : 0_29
+function HelpPetModule:UI_GetLastRefreshTime()
   return self._lastRefreshTime
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.UI_SetLastRefreshTime = function(self, time)
-  -- function num : 0_30
+function HelpPetModule:UI_SetLastRefreshTime(time)
   self._lastRefreshTime = time
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-HelpPetModule.GetErrorMsg = function(self, nErrorCode)
-  -- function num : 0_31 , upvalues : _ENV
-  local vecErrorMsg = {[ErrorCode_QuestChat.E_Error_HelpPet_Fail] = (StringTable.Get)("str_help_pet_error_Fail"), [ErrorCode_QuestChat.E_Error_HelpPet_Succ] = (StringTable.Get)("str_help_pet_error_Succ"), [ErrorCode_QuestChat.E_Error_HelpPet_Sql] = (StringTable.Get)("str_help_pet_error_Sql"), [ErrorCode_QuestChat.E_Error_HelpPet_DB] = (StringTable.Get)("str_help_pet_error_DB"), [ErrorCode_QuestChat.E_Error_HelpPet_Pet] = (StringTable.Get)("str_help_pet_error_Pet"), [ErrorCode_QuestChat.E_Error_HelpPet_PetType] = (StringTable.Get)("str_help_pet_error_PetType"), [ErrorCode_QuestChat.E_Error_HelpPet_ModuleLock] = (StringTable.Get)("str_help_pet_error_ModuleLock"), [ErrorCode_QuestChat.E_Error_HelpPet_RefreshLimit] = (StringTable.Get)("str_chat_error_code_frequency_limit")}
+function HelpPetModule:GetErrorMsg(nErrorCode)
+  local vecErrorMsg = {
+    [ErrorCode_QuestChat.E_Error_HelpPet_Fail] = StringTable.Get("str_help_pet_error_Fail"),
+    [ErrorCode_QuestChat.E_Error_HelpPet_Succ] = StringTable.Get("str_help_pet_error_Succ"),
+    [ErrorCode_QuestChat.E_Error_HelpPet_Sql] = StringTable.Get("str_help_pet_error_Sql"),
+    [ErrorCode_QuestChat.E_Error_HelpPet_DB] = StringTable.Get("str_help_pet_error_DB"),
+    [ErrorCode_QuestChat.E_Error_HelpPet_Pet] = StringTable.Get("str_help_pet_error_Pet"),
+    [ErrorCode_QuestChat.E_Error_HelpPet_PetType] = StringTable.Get("str_help_pet_error_PetType"),
+    [ErrorCode_QuestChat.E_Error_HelpPet_ModuleLock] = StringTable.Get("str_help_pet_error_ModuleLock"),
+    [ErrorCode_QuestChat.E_Error_HelpPet_RefreshLimit] = StringTable.Get("str_chat_error_code_frequency_limit")
+  }
   local stErrorMsg = vecErrorMsg[nErrorCode]
-  if stErrorMsg == nil then
+  if nil == stErrorMsg then
     return "Unknown ErrorCode"
   end
   return stErrorMsg
 end
-
-

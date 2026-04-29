@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/stn_self_test_random_build_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("SelfTest_RandomBuildTeam", Common_AsyncBase)
 SelfTest_RandomBuildTeam = SelfTest_RandomBuildTeam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SelfTest_RandomBuildTeam.TaskFunc = function(self, TT, result)
-  -- function num : 0_0 , upvalues : _ENV
-  local runData = (self._manager):GetMissionRunData()
+function SelfTest_RandomBuildTeam:TaskFunc(TT, result)
+  local runData = self._manager:GetMissionRunData()
   local petPoolOptions = SmokeTestTeamBuildPoolOptions:New()
-  local buildResult = (self._manager):BuildRandomTeam(runData, petPoolOptions)
+  local buildResult = self._manager:BuildRandomTeam(runData, petPoolOptions)
   if not buildResult then
     self.m_nLogicResult = 2
-    return 
+    return
   end
-  ;
-  (self._manager):Log("Build once. ")
+  self._manager:Log("Build once. ")
   self.m_nLogicResult = 1
 end
-
-

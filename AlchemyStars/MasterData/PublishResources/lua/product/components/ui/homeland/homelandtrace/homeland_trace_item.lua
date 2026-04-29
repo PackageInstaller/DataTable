@@ -1,39 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/homelandtrace/homeland_trace_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeTraceItem", Object)
 HomeTraceItem = HomeTraceItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeTraceItem.Constructor = function(self, traceID, taskItem, traceManager, position)
-  -- function num : 0_0 , upvalues : _ENV
+function HomeTraceItem:Constructor(traceID, taskItem, traceManager, position)
   self._traceID = traceID
   self._position = position
   self._taskItem = taskItem
   self._tracemanager = traceManager
-  self._traceManagerHelper = (self._tracemanager):GetHomelandTraceManagerHelper()
-  self._traceCfg = (self._traceManagerHelper):GetTraceInfo(traceID)
+  self._traceManagerHelper = self._tracemanager:GetHomelandTraceManagerHelper()
+  self._traceCfg = self._traceManagerHelper:GetTraceInfo(traceID)
   if self._traceCfg then
-    self._traceType = (self._traceCfg).TraceType
+    self._traceType = self._traceCfg.TraceType
   end
-  self._homelandClient = (self._tracemanager):GetHomelandClient()
-  self._buildManager = (self._homelandClient):BuildManager()
-  self._homelandCameraManager = (self._homelandClient):CameraManager()
-  self._camera = (self._homelandCameraManager):GetCamera()
-  self._homelandPetManager = (self._homelandClient):PetManager()
-  self._homelandCharatorController = (self._homelandClient):CharacterManager()
-  self._onEnterBuildInteract = (GameHelper:GetInstance()):CreateCallback(self.EnterBuildInteract, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.EnterBuildInteract, self._onEnterBuildInteract)
-  self._onLeaveBuildInteract = (GameHelper:GetInstance()):CreateCallback(self.LeaveBuildInteract, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.LeaveBuildInteract, self._onLeaveBuildInteract)
-  self._uiRootGo = ((UnityEngine.GameObject).Find)("UIHomelandMain")
+  self._homelandClient = self._tracemanager:GetHomelandClient()
+  self._buildManager = self._homelandClient:BuildManager()
+  self._homelandCameraManager = self._homelandClient:CameraManager()
+  self._camera = self._homelandCameraManager:GetCamera()
+  self._homelandPetManager = self._homelandClient:PetManager()
+  self._homelandCharatorController = self._homelandClient:CharacterManager()
+  self._onEnterBuildInteract = GameHelper:GetInstance():CreateCallback(self.EnterBuildInteract, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.EnterBuildInteract, self._onEnterBuildInteract)
+  self._onLeaveBuildInteract = GameHelper:GetInstance():CreateCallback(self.LeaveBuildInteract, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.LeaveBuildInteract, self._onLeaveBuildInteract)
+  self._uiRootGo = UnityEngine.GameObject.Find("UIHomelandMain")
   if self._uiRootGo then
-    self._uiCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIHomelandMain")
-    self._uiRootRectTransform = ((self._uiRootGo).transform):Find("UICanvas/SafeArea/Trace")
+    self._uiCamera = GameGlobal.UIStateManager():GetControllerCamera("UIHomelandMain")
+    self._uiRootRectTransform = self._uiRootGo.transform:Find("UICanvas/SafeArea/Trace")
     self._canUpdate = true
   else
     self._canUpdate = false
@@ -47,119 +38,93 @@ HomeTraceItem.Constructor = function(self, traceID, taskItem, traceManager, posi
   self._showInUI = true
   self._traceFinished = false
   self._petOffect = Vector3(0, 1.6, 0)
-  self.screenOffset = Vector2((UnityEngine.Screen).width / 2, (UnityEngine.Screen).height / 2)
+  self.screenOffset = Vector2(UnityEngine.Screen.width / 2, UnityEngine.Screen.height / 2)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem.GetManager = function(self)
-  -- function num : 0_1
+function HomeTraceItem:GetManager()
   return self._tracemanager
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem.GetTraceId = function(self)
-  -- function num : 0_2
+function HomeTraceItem:GetTraceId()
   return self._traceID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem.GetTraceType = function(self)
-  -- function num : 0_3
+function HomeTraceItem:GetTraceType()
   return self._traceType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem.Dispose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function HomeTraceItem:Dispose()
   if self._onEnterBuildInteract then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.EnterBuildInteract, self._onEnterBuildInteract)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.EnterBuildInteract, self._onEnterBuildInteract)
     self._onEnterBuildInteract = nil
   end
   if self._onLeaveBuildInteract then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.LeaveBuildInteract, self._onLeaveBuildInteract)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.LeaveBuildInteract, self._onLeaveBuildInteract)
     self._onLeaveBuildInteract = nil
   end
   if self._iconRes then
     for i = 1, #self._iconRes do
-      ((self._iconRes)[i]):Dispose()
+      self._iconRes[i]:Dispose()
     end
   end
-  do
-    self._iconRes = nil
-    if self._tracePoints then
-      for i = 1, #self._tracePoints do
-        ((self._tracePoints)[i]):Dispose()
-      end
-    end
-    do
-      self._tracePoints = nil
-      self._traceID = nil
-      self._traceCfg = nil
-      self._tracemanager = nil
-      self._traceResPositions = nil
+  self._iconRes = nil
+  if self._tracePoints then
+    for i = 1, #self._tracePoints do
+      self._tracePoints[i]:Dispose()
     end
   end
+  self._tracePoints = nil
+  self._traceID = nil
+  self._traceCfg = nil
+  self._tracemanager = nil
+  self._traceResPositions = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem.SetShow = function(self, bShow)
-  -- function num : 0_5
+function HomeTraceItem:SetShow(bShow)
   self._showInUI = bShow
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem.Update = function(self, deltaTimeMS)
-  -- function num : 0_6
+function HomeTraceItem:Update(deltaTimeMS)
   if self._canUpdate then
     self:UpdateFun()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem.UpdateFun = function(self, deltaTimeMS)
-  -- function num : 0_7 , upvalues : _ENV
+function HomeTraceItem:UpdateFun(deltaTimeMS)
   if self._traceResPositions and #self._traceResPositions > 0 then
     self._iconTransformInfos = {}
     for i = 1, #self._traceResPositions do
-      self._camera = (self._homelandCameraManager):GetCamera()
-      local targetPos = (self._traceResPositions)[i]
-      local targetScPoint = (self._traceManagerHelper):WorldToScreenPoint(self._camera, targetPos)
-      local isInner = (self._traceManagerHelper):CheckInEllipse(targetScPoint.x, targetScPoint.y)
-      local distance = (self._traceManagerHelper):GetDistance(((self._homelandCharatorController):GetCharacterTransform()).position, targetPos)
+      self._camera = self._homelandCameraManager:GetCamera()
+      local targetPos = self._traceResPositions[i]
+      local targetScPoint = self._traceManagerHelper:WorldToScreenPoint(self._camera, targetPos)
+      local isInner = self._traceManagerHelper:CheckInEllipse(targetScPoint.x, targetScPoint.y)
+      local distance = self._traceManagerHelper:GetDistance(self._homelandCharatorController:GetCharacterTransform().position, targetPos)
       local targevec = Vector2(targetScPoint.x, targetScPoint.y)
       local dirInfo = {}
-      if isInner <= 1 and targetScPoint.z >= 0 then
-        dirInfo = {targevec, isInner, distance, targetScPoint.z}
-        ;
-        (table.insert)(self._iconTransformInfos, dirInfo)
+      if isInner <= 1 and 0 <= targetScPoint.z then
+        dirInfo = {
+          targevec,
+          isInner,
+          distance,
+          targetScPoint.z
+        }
+        table.insert(self._iconTransformInfos, dirInfo)
       else
-        local cross1, cross2, k = (self._traceManagerHelper):CheckIntersect(self.screenOffset, targevec)
-        local inner = (self._traceManagerHelper):CheckInLine(cross1, self.screenOffset, targevec)
+        local cross1, cross2, k = self._traceManagerHelper:CheckIntersect(self.screenOffset, targevec)
+        local inner = self._traceManagerHelper:CheckInLine(cross1, self.screenOffset, targevec)
         local point = Vector2(0, 0)
-        if not inner or not cross2 then
-          do
-            point = targetScPoint.z >= 0 or cross1
-            point = inner and cross1 or cross2
-            dirInfo = {point, isInner, distance, targetScPoint.z}
-            ;
-            (table.insert)(self._iconTransformInfos, dirInfo)
-            -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        if 0 > targetScPoint.z then
+          point = inner and cross2 or cross1
+        else
+          point = inner and cross1 or cross2
         end
+        dirInfo = {
+          point,
+          isInner,
+          distance,
+          targetScPoint.z
+        }
+        table.insert(self._iconTransformInfos, dirInfo)
       end
     end
   end
@@ -168,81 +133,61 @@ HomeTraceItem.UpdateFun = function(self, deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem.UpdateIcon = function(self)
-  -- function num : 0_8
+function HomeTraceItem:UpdateIcon()
   if not self._iconRes then
-    return 
+    return
   end
   if #self._iconTransformInfos > 0 and self._uiRootRectTransform ~= nil then
     for i = 1, #self._iconRes do
-      if (self._iconRes)[i] then
-        local res, pos = (self._traceManagerHelper):ScreenPointToLocalPointInRectangle(self._uiRootRectTransform, self._uiCamera, ((self._iconTransformInfos)[i])[1])
-        ;
-        (((self._iconRes)[i]):GetTransform()).anchoredPosition = pos
-        ;
-        ((self._iconRes)[i]):SetTracePointDir((self._iconTransformInfos)[i])
+      if self._iconRes[i] then
+        local res, pos = self._traceManagerHelper:ScreenPointToLocalPointInRectangle(self._uiRootRectTransform, self._uiCamera, self._iconTransformInfos[i][1])
+        self._iconRes[i]:GetTransform().anchoredPosition = pos
+        self._iconRes[i]:SetTracePointDir(self._iconTransformInfos[i])
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem.StartRun = function(self)
-  -- function num : 0_9
+function HomeTraceItem:StartRun()
   if self._tracemanager then
     self:CreateTraceObjs()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem.StopRun = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function HomeTraceItem:StopRun()
   if self._tracemanager then
-    for index,value in ipairs(self._traceResPositions) do
+    for index, value in ipairs(self._traceResPositions) do
       value:Dispose()
     end
     for i = 1, #self._iconRes do
-      ((self._iconRes)[i]):Dispose()
+      self._iconRes[i]:Dispose()
     end
   end
-  do
-    self._traceResPositions = {}
-    self._iconRes = {}
-  end
+  self._traceResPositions = {}
+  self._iconRes = {}
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem.CreateIcons = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function HomeTraceItem:CreateIcons()
   if not self._canUpdate then
-    return 
+    return
   end
   if not self._traceCfg then
-    return 
+    return
   end
   for i = 1, #self._traceResPositions do
     local iconItem = HomeTraceIcon:New(self._traceID, self, self._uiRootRectTransform)
-    ;
-    (table.insert)(self._iconRes, iconItem)
+    table.insert(self._iconRes, iconItem)
     iconItem:SetParent(self._uiRootRectTransform, false)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem.CreateTraceObjs = function(self)
-  -- function num : 0_12
+function HomeTraceItem:CreateTraceObjs()
   if not self._traceCfg then
-    return 
+    return
   end
   if self._traceResPositions then
     for i = 1, #self._traceResPositions do
-      ((self._traceResPositions)[i]):ClearInteractPoint()
+      self._traceResPositions[i]:ClearInteractPoint()
     end
     self._traceResPositions = {}
   end
@@ -254,32 +199,22 @@ HomeTraceItem.CreateTraceObjs = function(self)
   self:CreateIcons()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem._CreateTraceObjs_Core = function(self, info, obj, traceResPos)
-  -- function num : 0_13 , upvalues : _ENV
+function HomeTraceItem:_CreateTraceObjs_Core(info, obj, traceResPos)
   self._traceCount = self._traceCount + 1
   local point = HomelandTracePoint:New(self, info, self._traceCount, obj)
-  ;
-  (table.insert)(self._traceResPositions, traceResPos)
-  ;
-  (table.insert)(self._tracePoints, point)
+  table.insert(self._traceResPositions, traceResPos)
+  table.insert(self._tracePoints, point)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem._CreateTraceObjs_Pos = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  if (self._traceCfg).Pos then
-    for i = 1, #(self._traceCfg).Pos do
-      if not self._position then
-        local pos = Vector3((((self._traceCfg).Pos)[i])[1], (((self._traceCfg).Pos)[i])[2], (((self._traceCfg).Pos)[i])[3])
-      end
+function HomeTraceItem:_CreateTraceObjs_Pos()
+  if self._traceCfg.Pos then
+    for i = 1, #self._traceCfg.Pos do
+      local pos = self._position or Vector3(self._traceCfg.Pos[i][1], self._traceCfg.Pos[i][2], self._traceCfg.Pos[i][3])
       local info = {}
       info.obj = self._prefabName
       info.position = pos
       info.config = self._traceCfg
-      info.radius = (self._traceCfg).Radius
+      info.radius = self._traceCfg.Radius
       info.effectObj = self._tracePoint
       info.isNpc = false
       self:_CreateTraceObjs_Core(info, nil, pos)
@@ -287,19 +222,16 @@ HomeTraceItem._CreateTraceObjs_Pos = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem._CreateTraceObjs_Npc = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  if (self._traceCfg).NpcId ~= nil then
-    for i = 1, #(self._traceCfg).NpcId do
-      local pets = (self._taskItem):GetTaskNpcs()
-      for key,value in pairs(pets) do
+function HomeTraceItem:_CreateTraceObjs_Npc()
+  if self._traceCfg.NpcId ~= nil then
+    for i = 1, #self._traceCfg.NpcId do
+      local pets = self._taskItem:GetTaskNpcs()
+      for key, value in pairs(pets) do
         local config = value:GetPetConfig()
-        if config.Id == ((self._traceCfg).NpcId)[i] and (pets[key]):AgentTransform() then
-          local pos = ((pets[key]):AgentTransform()).position + self._petOffect
+        if config.Id == self._traceCfg.NpcId[i] and pets[key]:AgentTransform() then
+          local pos = pets[key]:AgentTransform().position + self._petOffect
           local info = {}
-          info.position = (pets[key]):GetInteractPosition()
+          info.position = pets[key]:GetInteractPosition()
           info.config = self._traceCfg
           info.isNpc = true
           self:_CreateTraceObjs_Core(info, pets[key], pos)
@@ -309,13 +241,10 @@ HomeTraceItem._CreateTraceObjs_Npc = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem._CreateTraceObjs_Build = function(self)
-  -- function num : 0_16
-  local architectureId = (self._traceCfg).ArchitectureId
+function HomeTraceItem:_CreateTraceObjs_Build()
+  local architectureId = self._traceCfg.ArchitectureId
   if architectureId ~= nil then
-    local building = (self._buildManager):FindBuildingByCfgID(architectureId)
+    local building = self._buildManager:FindBuildingByCfgID(architectureId)
     if building then
       local pos = building:Pos()
       local info = {}
@@ -327,18 +256,11 @@ HomeTraceItem._CreateTraceObjs_Build = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem._CreateTraceObjs_BuildHang = function(self)
-  -- function num : 0_17
-  if (self._traceCfg).TargetHangPoint then
-    local architectureId = ((self._traceCfg).TargetHangPoint)[1]
-  end
-  if (self._traceCfg).TargetHangPoint then
-    local hangId = ((self._traceCfg).TargetHangPoint)[2]
-  end
+function HomeTraceItem:_CreateTraceObjs_BuildHang()
+  local architectureId = self._traceCfg.TargetHangPoint and self._traceCfg.TargetHangPoint[1]
+  local hangId = self._traceCfg.TargetHangPoint and self._traceCfg.TargetHangPoint[2]
   if architectureId ~= nil and hangId ~= nil then
-    local building = (self._buildManager):FindBuildingByCfgID(architectureId)
+    local building = self._buildManager:FindBuildingByCfgID(architectureId)
     if building then
       local pos = building:GetHangPointPosByID(hangId)
       if pos then
@@ -352,48 +274,34 @@ HomeTraceItem._CreateTraceObjs_BuildHang = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem.Emphasize = function(self)
-  -- function num : 0_18
+function HomeTraceItem:Emphasize()
   if self._iconRes then
     for i = 1, #self._iconRes do
-      ((self._iconRes)[i]):Emphasize()
+      self._iconRes[i]:Emphasize()
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem.EnterBuildInteract = function(self, point)
-  -- function num : 0_19
+function HomeTraceItem:EnterBuildInteract(point)
   if self._tracePoints and #self._tracePoints > 0 then
     for i = 1, #self._tracePoints do
-      ((self._tracePoints)[i]):OnTrigger(point)
+      self._tracePoints[i]:OnTrigger(point)
     end
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem.LeaveBuildInteract = function(self, point)
-  -- function num : 0_20
+function HomeTraceItem:LeaveBuildInteract(point)
   if self._tracePoints and #self._tracePoints > 0 then
     for i = 1, #self._tracePoints do
-      ((self._tracePoints)[i]):OnLeave(point)
+      self._tracePoints[i]:OnLeave(point)
     end
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceItem.ShowTraceIcons = function(self, bShow)
-  -- function num : 0_21
+function HomeTraceItem:ShowTraceIcons(bShow)
   if self._iconRes then
     for i = 1, #self._iconRes do
-      ((self._iconRes)[i]):SetShow(bShow)
+      self._iconRes[i]:SetShow(bShow)
     end
   end
 end
-
-

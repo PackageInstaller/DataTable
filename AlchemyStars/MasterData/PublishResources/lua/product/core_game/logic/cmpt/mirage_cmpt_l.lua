@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/mirage_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MirageComponent", Object)
 MirageComponent = MirageComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MirageComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function MirageComponent:Constructor()
   self._isOpen = false
   self._maxRound = 5
   self._curRound = 0
@@ -19,85 +12,52 @@ MirageComponent.Constructor = function(self)
   self._mirageBossEntityID = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageComponent.SetMirageOpenState = function(self, isOpen)
-  -- function num : 0_1
+function MirageComponent:SetMirageOpenState(isOpen)
   self._isOpen = isOpen
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageComponent.IsMirageOpen = function(self)
-  -- function num : 0_2
+function MirageComponent:IsMirageOpen()
   return self._isOpen
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageComponent.SetMirageForceClose = function(self, forceClose)
-  -- function num : 0_3
+function MirageComponent:SetMirageForceClose(forceClose)
   self._forceClose = forceClose
   if self._forceClose then
     self._isOpen = false
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageComponent.IsMirageForceClose = function(self)
-  -- function num : 0_4
+function MirageComponent:IsMirageForceClose()
   return self._forceClose
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageComponent.SetTrapRefreshID = function(self, refreshID)
-  -- function num : 0_5
+function MirageComponent:SetTrapRefreshID(refreshID)
   self._trapRefreshID = refreshID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageComponent.GetTrapRefreshID = function(self)
-  -- function num : 0_6
+function MirageComponent:GetTrapRefreshID()
   return self._trapRefreshID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageComponent.SetMirageTrapInheritAttributes = function(self, attributes)
-  -- function num : 0_7
+function MirageComponent:SetMirageTrapInheritAttributes(attributes)
   self._trapInheritAttributes = attributes
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageComponent.GetMirageTrapInheritAttributes = function(self)
-  -- function num : 0_8
+function MirageComponent:GetMirageTrapInheritAttributes()
   return self._trapInheritAttributes
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageComponent.SetMirageBossEntityID = function(self, bossEntityID)
-  -- function num : 0_9
+function MirageComponent:SetMirageBossEntityID(bossEntityID)
   self._mirageBossEntityID = bossEntityID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageComponent.GetMirageBossEntityID = function(self)
-  -- function num : 0_10
+function MirageComponent:GetMirageBossEntityID()
   return self._mirageBossEntityID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageComponent.SetRoundCount = function(self, curRound)
-  -- function num : 0_11
-  if self._maxRound < curRound then
-    return 
+function MirageComponent:SetRoundCount(curRound)
+  if curRound > self._maxRound then
+    return
   end
   if curRound == self._maxRound then
     self:SetMirageOpenState(false)
@@ -105,97 +65,59 @@ MirageComponent.SetRoundCount = function(self, curRound)
   self._curRound = curRound
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageComponent.GetRoundCount = function(self)
-  -- function num : 0_12
+function MirageComponent:GetRoundCount()
   return self._curRound
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageComponent.GetRemainRoundCount = function(self)
-  -- function num : 0_13
+function MirageComponent:GetRemainRoundCount()
   return self._maxRound - self._curRound
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageComponent.IsRoundOver = function(self)
-  -- function num : 0_14
-  if self._curRound < self._maxRound then
+function MirageComponent:IsRoundOver()
+  if self._maxRound > self._curRound then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageComponent.SetMovePos = function(self, gridPos)
-  -- function num : 0_15
+function MirageComponent:SetMovePos(gridPos)
   self._movePos = gridPos
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageComponent.GetMovePos = function(self)
-  -- function num : 0_16
+function MirageComponent:GetMovePos()
   return self._movePos
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageComponent.SetWalkResult = function(self, walkResult)
-  -- function num : 0_17
+function MirageComponent:SetWalkResult(walkResult)
   self._walkResult = walkResult
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageComponent.GetWalkResult = function(self)
-  -- function num : 0_18
+function MirageComponent:GetWalkResult()
   return self._walkResult
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Mirage = function(self)
-  -- function num : 0_19
-  return self:GetComponent((self.WEComponentsEnum).Mirage)
+function Entity:Mirage()
+  return self:GetComponent(self.WEComponentsEnum.Mirage)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasMirage = function(self)
-  -- function num : 0_20
-  return self:HasComponent((self.WEComponentsEnum).Mirage)
+function Entity:HasMirage()
+  return self:HasComponent(self.WEComponentsEnum.Mirage)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddMirage = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Mirage
+function Entity:AddMirage()
+  local index = self.WEComponentsEnum.Mirage
   local component = MirageComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceMirage = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Mirage
+function Entity:ReplaceMirage()
+  local index = self.WEComponentsEnum.Mirage
   local component = MirageComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveMirage = function(self)
-  -- function num : 0_23
+function Entity:RemoveMirage()
   if self:HasMirage() then
-    self:RemoveComponent((self.WEComponentsEnum).Mirage)
+    self:RemoveComponent(self.WEComponentsEnum.Mirage)
   end
 end
-
-

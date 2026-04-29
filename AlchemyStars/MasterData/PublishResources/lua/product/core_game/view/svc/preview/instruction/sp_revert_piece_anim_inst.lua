@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_revert_piece_anim_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewRevertPieceAnimInstruction", SkillPreviewBaseInstruction)
 SkillPreviewRevertPieceAnimInstruction = SkillPreviewRevertPieceAnimInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewRevertPieceAnimInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewRevertPieceAnimInstruction:Constructor(params)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewRevertPieceAnimInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1
+function SkillPreviewRevertPieceAnimInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = previewContext:GetWorld()
   local previewActiveSkillService = world:GetService("PreviewActiveSkill")
   previewActiveSkillService:_RevertBright()
 end
-
-

@@ -1,58 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/extension/ui_extension/data_structure/tree/tree.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Tree", Object)
 Tree = Tree
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Tree.Constructor = function(self, head)
-  -- function num : 0_0
+function Tree:Constructor(head)
   self.head = head
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Tree.DFS = function(self, id)
-  -- function num : 0_1
+function Tree:DFS(id)
   local head = self.head
-  local temp = nil
+  local temp
   if head then
     if id == head.id then
       temp = head
     else
       for i = 1, head:GetChildCount() do
-        if not temp then
-          temp = self:DFS(id)
-        end
+        temp = temp or self:DFS(id)
       end
     end
   end
-  do
-    return temp
-  end
+  return temp
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Tree.BFT = function(self, func)
-  -- function num : 0_2 , upvalues : _ENV
+function Tree:BFT(func)
   local head = self.head
-  local node = nil
+  local node
   local queue = {}
   head.level = 0
-  ;
-  (table.insert)(queue, head)
-  while (table.count)(queue) ~= 0 do
+  table.insert(queue, head)
+  while table.count(queue) ~= 0 do
     node = queue[1]
-    ;
-    (table.remove)(queue, 1)
+    table.remove(queue, 1)
     for i = 1, node:GetChildCount() do
-      local child = (node.children)[i]
+      local child = node.children[i]
       child.level = node.level + 1
-      ;
-      (table.insert)(queue, child)
+      table.insert(queue, child)
       if func then
         func(child)
       end
@@ -60,10 +40,7 @@ Tree.BFT = function(self, func)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Tree.Free = function(self, head)
-  -- function num : 0_3
+function Tree:Free(head)
   if head ~= nil then
     head = nil
   end
@@ -71,30 +48,19 @@ end
 
 _class("TreeNode", Object)
 TreeNode = TreeNode
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-TreeNode.Constructor = function(self, id)
-  -- function num : 0_4
+function TreeNode:Constructor(id)
   self.id = id
   self.level = 0
   self.parent = nil
   self.children = {}
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TreeNode.AddChild = function(self, child)
-  -- function num : 0_5 , upvalues : _ENV
+function TreeNode:AddChild(child)
   child.parent = self
-  ;
-  (table.insert)(self.children, child)
+  table.insert(self.children, child)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TreeNode.GetChildCount = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  return (table.count)(self.children)
+function TreeNode:GetChildCount()
+  return table.count(self.children)
 end
-
-

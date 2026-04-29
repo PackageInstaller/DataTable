@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/alchemy/ui_cn20_mat_unless_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20MatUnlessItem", UICustomWidget)
 UICN20MatUnlessItem = UICN20MatUnlessItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20MatUnlessItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN20MatUnlessItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatUnlessItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN20MatUnlessItem:InitWidget()
   self.nameText = self:GetUIComponent("UILocalizationText", "NameText")
   self.item = self:GetUIComponent("UISelectObjectPath", "Item")
   self.root = self:GetGameObject("root")
@@ -28,91 +18,53 @@ UICN20MatUnlessItem.InitWidget = function(self)
   self._atlas = self:GetAsset("UICN20N49.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatUnlessItem.SetPopActive = function(self, active)
-  -- function num : 0_2
-  (self.root):SetActive(active)
+function UICN20MatUnlessItem:SetPopActive(active)
+  self.root:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatUnlessItem.SetData = function(self, itemid)
-  -- function num : 0_3 , upvalues : _ENV
-  local itemCfg = (Cfg.cfg_item)[itemid]
+function UICN20MatUnlessItem:SetData(itemid)
+  local itemCfg = Cfg.cfg_item[itemid]
   if not itemCfg then
-    (Log.error)("itemCfg IS NIL", itemid)
-    return 
+    Log.error("itemCfg IS NIL", itemid)
+    return
   end
   self._cfg_item = itemCfg
-  local matCfg = (Cfg.cfg_component_alchemy_material)[itemid]
+  local matCfg = Cfg.cfg_component_alchemy_material[itemid]
   if matCfg == nil then
-    (Log.error)("alchemyCfg matCfg IS nil", itemid)
-    return 
+    Log.error("alchemyCfg matCfg IS nil", itemid)
+    return
   end
   self.matCfg = matCfg
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R4 in 'UnsetPending'
-
-  if (self.matCfg).Property == 1 then
-    (self.matIcon).sprite = (self._atlas):GetSprite("cn20_ljjm_ljsx02")
-  else
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R4 in 'UnsetPending'
-
-    if (self.matCfg).Property == 2 then
-      (self.matIcon).sprite = (self._atlas):GetSprite("cn20_ljjm_ljsx01")
-    else
-      -- DECOMPILER ERROR at PC55: Confused about usage of register: R4 in 'UnsetPending'
-
-      if (self.matCfg).Property == 3 then
-        (self.matIcon).sprite = (self._atlas):GetSprite("cn20_ljjm_ljsx03")
-      else
-        -- DECOMPILER ERROR at PC66: Confused about usage of register: R4 in 'UnsetPending'
-
-        if (self.matCfg).Property == 4 then
-          (self.matIcon).sprite = (self._atlas):GetSprite("cn20_ljjm_ljsx04")
-        end
-      end
-    end
+  if self.matCfg.Property == 1 then
+    self.matIcon.sprite = self._atlas:GetSprite("cn20_ljjm_ljsx02")
+  elseif self.matCfg.Property == 2 then
+    self.matIcon.sprite = self._atlas:GetSprite("cn20_ljjm_ljsx01")
+  elseif self.matCfg.Property == 3 then
+    self.matIcon.sprite = self._atlas:GetSprite("cn20_ljjm_ljsx03")
+  elseif self.matCfg.Property == 4 then
+    self.matIcon.sprite = self._atlas:GetSprite("cn20_ljjm_ljsx04")
   end
-  ;
-  (self.matCountText):SetText("" .. (self.matCfg).PropertyVal)
-  if (self.matCfg).PropertyVal == 1 then
-    ((self.lock1).gameObject):SetActive(false)
-    ;
-    ((self.lock2).gameObject):SetActive(true)
-    ;
-    ((self.lock3).gameObject):SetActive(true)
-  else
-    if (self.matCfg).PropertyVal == 2 then
-      ((self.lock1).gameObject):SetActive(false)
-      ;
-      ((self.lock2).gameObject):SetActive(false)
-      ;
-      ((self.lock3).gameObject):SetActive(true)
-    else
-      if (self.matCfg).PropertyVal == 3 then
-        ((self.lock1).gameObject):SetActive(false)
-        ;
-        ((self.lock2).gameObject):SetActive(false)
-        ;
-        ((self.lock3).gameObject):SetActive(false)
-      end
-    end
+  self.matCountText:SetText("" .. self.matCfg.PropertyVal)
+  if self.matCfg.PropertyVal == 1 then
+    self.lock1.gameObject:SetActive(false)
+    self.lock2.gameObject:SetActive(true)
+    self.lock3.gameObject:SetActive(true)
+  elseif self.matCfg.PropertyVal == 2 then
+    self.lock1.gameObject:SetActive(false)
+    self.lock2.gameObject:SetActive(false)
+    self.lock3.gameObject:SetActive(true)
+  elseif self.matCfg.PropertyVal == 3 then
+    self.lock1.gameObject:SetActive(false)
+    self.lock2.gameObject:SetActive(false)
+    self.lock3.gameObject:SetActive(false)
   end
-  local name = (StringTable.Get)((self._cfg_item).Name)
-  ;
-  (self.nameText):SetText(name)
-  self.selectItem = (self.item):SpawnObject("UICN20SelectMatItem")
-  ;
-  (self.selectItem):SetData(itemid)
+  local name = StringTable.Get(self._cfg_item.Name)
+  self.nameText:SetText(name)
+  self.selectItem = self.item:SpawnObject("UICN20SelectMatItem")
+  self.selectItem:SetData(itemid)
   self:SetPopActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatUnlessItem.ClickBGOnClick = function(self, go)
-  -- function num : 0_4
+function UICN20MatUnlessItem:ClickBGOnClick(go)
   self:SetPopActive(false)
 end
-
-

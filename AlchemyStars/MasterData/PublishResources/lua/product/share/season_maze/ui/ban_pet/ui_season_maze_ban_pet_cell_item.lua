@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/ban_pet/ui_season_maze_ban_pet_cell_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeBanPetCellItem", UICustomWidget)
 UISeasonMazeBanPetCellItem = UISeasonMazeBanPetCellItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeBanPetCellItem.OnShow = function(self)
-  -- function num : 0_0
+function UISeasonMazeBanPetCellItem:OnShow()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetCellItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self._uiSeasonMazeModule = (self._seasonMazeModule).uiModule
+function UISeasonMazeBanPetCellItem:InitWidget()
+  self._seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self._uiSeasonMazeModule = self._seasonMazeModule.uiModule
   self._infoGen = self:GetUIComponent("UISelectObjectPath", "info")
   self._infoGo = self:GetGameObject("info")
   self._anim = self:GetUIComponent("Animation", "anim")
@@ -29,10 +19,7 @@ UISeasonMazeBanPetCellItem.InitWidget = function(self)
   self._lockText = self:GetUIComponent("UILocalizationText", "LockText")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetCellItem.SetData = function(self, cellIndex, pet, isManual, isRotate, isLockByBank, unlockBankLevel, isInDiscovery, clickCb)
-  -- function num : 0_2
+function UISeasonMazeBanPetCellItem:SetData(cellIndex, pet, isManual, isRotate, isLockByBank, unlockBankLevel, isInDiscovery, clickCb)
   self._cellIndex = cellIndex
   self._pet = pet
   self._isManual = isManual
@@ -48,68 +35,42 @@ UISeasonMazeBanPetCellItem.SetData = function(self, cellIndex, pet, isManual, is
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetCellItem.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._infoGo):SetActive(false)
-  ;
-  (self._manualBanLayerGo):SetActive(false)
-  ;
-  (self._rotateBanLayerGo):SetActive(false)
-  ;
-  (self._addLayerGo):SetActive(false)
-  ;
-  (self._lockLayerGo):SetActive(false)
-  ;
-  (self._disableLayerGo):SetActive(false)
+function UISeasonMazeBanPetCellItem:Flush()
+  self._infoGo:SetActive(false)
+  self._manualBanLayerGo:SetActive(false)
+  self._rotateBanLayerGo:SetActive(false)
+  self._addLayerGo:SetActive(false)
+  self._lockLayerGo:SetActive(false)
+  self._disableLayerGo:SetActive(false)
   if self._pet then
-    (self._infoGo):SetActive(true)
-    self._heartItem = (self._infoGen):SpawnObject("UISeasonMazeBanPetHeartItem")
-    ;
-    (self._heartItem):SetData(self._pet, function(id)
-    -- function num : 0_3_0
-  end
-, false, false, TeamOpenerType.SeasonMaze, PetSkinEffectPath.CARD_PET_LIST, false, false)
+    self._infoGo:SetActive(true)
+    self._heartItem = self._infoGen:SpawnObject("UISeasonMazeBanPetHeartItem")
+    self._heartItem:SetData(self._pet, function(id)
+    end, false, false, TeamOpenerType.SeasonMaze, PetSkinEffectPath.CARD_PET_LIST, false, false)
     if self._isManual then
-      (self._manualBanLayerGo):SetActive(true)
-    else
-      if self._isRotate then
-        (self._rotateBanLayerGo):SetActive(true)
-      end
+      self._manualBanLayerGo:SetActive(true)
+    elseif self._isRotate then
+      self._rotateBanLayerGo:SetActive(true)
     end
-  else
-    if self._showAdd then
-      (self._addLayerGo):SetActive(true)
-    else
-      if self._isLockByBank then
-        (self._lockLayerGo):SetActive(true)
-        ;
-        (self._lockText):SetText((StringTable.Get)("str_season_maze_ban_pet_tips2", self._unlockBankLevel))
-      end
-    end
+  elseif self._showAdd then
+    self._addLayerGo:SetActive(true)
+  elseif self._isLockByBank then
+    self._lockLayerGo:SetActive(true)
+    self._lockText:SetText(StringTable.Get("str_season_maze_ban_pet_tips2", self._unlockBankLevel))
   end
   if self._isManual and not self._isLockByBank and self._isInDiscovery then
-    (self._disableLayerGo):SetActive(true)
+    self._disableLayerGo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetCellItem.CellBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UISeasonMazeBanPetCellItem:CellBtnOnClick(go)
   if self._clickCb then
-    (self._clickCb)(self._cellIndex)
+    self._clickCb(self._cellIndex)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetCellItem.AddLayerOnClick = function(self, go)
-  -- function num : 0_5
+function UISeasonMazeBanPetCellItem:AddLayerOnClick(go)
   if self._clickCb then
-    (self._clickCb)(self._cellIndex)
+    self._clickCb(self._cellIndex)
   end
 end
-
-

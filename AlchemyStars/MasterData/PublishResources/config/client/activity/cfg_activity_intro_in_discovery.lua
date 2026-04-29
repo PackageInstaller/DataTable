@@ -1,166 +1,636 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/cfg_activity_intro_in_discovery.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {CampaignID = 1, BindComponentId = 2, SpecialEndTimeIndex = 3, IconImg = 4, IconSize = 5, IconPos = 6, TitleText = 7, TitleTextSet = 8, TitlePos = 9, ActivityIntroKey = 10, IntroLoaderKey = 11}
-local common = {"m_end_date_time", "str_activity_common_Intro", "N25_map_help", "UIActivityN25MainController", "UIN25Intro", "n26_map_help", "n28_map_help", "UIActivityN28MainController", "UIN28Intro", "n40_activity_icon", "UINExploreIntro", "UICN12N41Intro", "N43_activity_icon01", "UIN43Intro", 
-{221, 185}
-, 
-{0, 0}
-, 
-{80, 80}
-, 
-{89, 89}
-, 
-{119, 90}
-, 
-{105, 91}
-, 
-{97, 97}
-, 
-{111, 111}
+local key = {
+  CampaignID = 1,
+  BindComponentId = 2,
+  SpecialEndTimeIndex = 3,
+  IconImg = 4,
+  IconSize = 5,
+  IconPos = 6,
+  TitleText = 7,
+  TitleTextSet = 8,
+  TitlePos = 9,
+  ActivityIntroKey = 10,
+  IntroLoaderKey = 11
+}
+local common = {
+  "m_end_date_time",
+  "str_activity_common_Intro",
+  "N25_map_help",
+  "UIActivityN25MainController",
+  "UIN25Intro",
+  "n26_map_help",
+  "n28_map_help",
+  "UIActivityN28MainController",
+  "UIN28Intro",
+  "n40_activity_icon",
+  "UINExploreIntro",
+  "UICN12N41Intro",
+  "N43_activity_icon01",
+  "UIN43Intro",
+  {221, 185},
+  {0, 0},
+  {80, 80},
+  {89, 89},
+  {119, 90},
+  {105, 91},
+  {97, 97},
+  {111, 111}
 }
 local config = {
-[1002] = {1002, 1, common[1], "legend_zhangjie_icon5", common[15], common[16], common[2], nil, 
-{-16.7, -54.2}
-, "UISakuraController"}
-, 
-[1010] = {1010, 7, nil, "n9_map_shuoming", common[15], common[16], "str_activity_n9_common_Intro", nil, 
-{0, 0}
-, "UIN9BuffIntro"}
-, 
-[1011] = {1011, 1, common[1], "n10_battle_explain_bg 1", 
-{187, 195}
-, common[16], common[2], nil, 
-{-4, -54.2}
-, "UIN10MainController"}
-, 
-[1017] = {1017, 1, nil, "n11_map_shuoming", 
-{202, 101}
-, 
-{0, -39}
-, "str_n11_common_Intro", 
-{
-color = {62, 71, 75}
-, fontSize = 34}
-, 
-{0, -39}
-, "UIN11BuffIntro"}
-, 
-[1021] = {1021, nil, nil, "n13_zjm_kuang06", 
-{253, 182}
-, common[16], nil, nil, nil, "UIN13MainController"}
-, 
-[1022] = {1022, nil, common[1], "n14_map_shuoming", 
-{255, 207}
-, common[16], common[2], nil, nil, "UIN14Main"}
-, 
-[1025] = {1025, 5, nil, "n15_map_shuoming", 
-{230, 159}
-, common[16], common[2], 
-{
-color = {236, 228, 213}
-, fontSize = 33}
-, 
-{0, -17}
-, "UIN15MainController"}
-, 
-[1026] = {1026, nil, common[1], "n16_dt_bnt001", 
-{202, 214}
-, common[16], "str_activity_n16_addbuff", 
-{
-color = {43, 1, 1}
-, fontSize = 28, 
-outline = {213, 212, 203}
-, font = 2}
-, 
-{0, -42}
-, "UIN16Intro"}
-, 
-[1059] = {1059, 4, nil, "n17_event_rk_btn03", common[17], common[16], nil, nil, nil, "UIN17Intro2Controller_Daily"}
-, 
-[1060] = {1060, nil, common[1], "n18_map_help", common[17], common[16], nil, nil, nil, "UIN18Main"}
-, 
-[1062] = {1062, 1, nil, "n19_rk_icon02", 
-{105, 72}
-, common[16], nil, nil, nil, "UIN19P5Controller"}
-, 
-[1063] = {1063, nil, nil, "n20_map_help", common[17], common[16], nil, nil, nil, "UIActivityN20MainController"}
-, 
-[1067] = {1067, nil, nil, "n21_map_help", common[17], common[16], nil, nil, nil, "UIActivityN21CCMainController"}
-, 
-[1068] = {1068, nil, nil, "N22_map_help01", common[17], common[16], nil, nil, nil, "UIActivityN22MainController"}
-, 
-[1069] = {1069, nil, nil, "n23_map_help", common[17], common[16], nil, nil, nil, "UIActivityN23MainController", "UIN23Intro"}
-, 
-[1072] = {1072, nil, nil, "N24_map_help01", common[17], common[16], nil, nil, nil, nil, "UIN24Intro"}
-, 
-[1076] = {1076, nil, nil, common[3], common[17], common[16], nil, nil, nil, common[4], common[5]}
-, 
-[1080] = {1080, nil, nil, common[6], common[17], common[16], nil, nil, nil, "UIActivityN26MainController", "UIN26Intro"}
-, 
-[1081] = {1081, 3, nil, "n27_map_help", common[17], common[16], nil, nil, nil, "UIN27Controller"}
-, 
-[1084] = {1084, nil, nil, common[7], common[17], common[16], nil, nil, nil, common[8], common[9]}
-, 
-[1089] = {1089, nil, nil, "n29_map_help", common[17], common[16], nil, nil, nil, nil, "UIN29Intro"}
-, 
-[1093] = {1093, nil, nil, "n30_map_help", common[17], common[16], nil, nil, nil, nil, "UIN30Intro"}
-, 
-[1098] = {1098, nil, nil, "n31_map_help", common[17], common[16], nil, nil, nil, "UIActivityN31MainController", "UIN31Intro"}
-, 
-[1105] = {1105, nil, nil, "n32_map_help", common[17], common[16], nil, nil, nil, nil, "UIN32Intro"}
-, 
-[1110] = {1110, nil, nil, "n33_map_help", common[17], common[16], nil, nil, nil, nil, "UIN33Intro"}
-, 
-[1116] = {1116, nil, nil, "n34_map_ent", common[17], common[16], nil, nil, nil, nil, "UIN34Intro"}
-, 
-[5025] = {5025, nil, nil, "n34_activity_icon", 
-{89, 75}
-, common[16], nil, nil, nil, nil, "UICN6N35Intro"}
-, 
-[5027] = {5027, nil, nil, "n36_zjm_icon08", 
-{64, 65}
-, common[16], nil, nil, nil, "UICN7N36MainController"}
-, 
-[5028] = {5028, nil, nil, "n37_zjm_di07", common[18], common[16], nil, nil, nil, nil, "UIN37Intro"}
-, 
-[5032] = {5032, nil, nil, common[6], common[17], common[16], nil, nil, nil, nil, "UIN38Intro"}
-, 
-[5039] = {5039, nil, nil, "n39_zjm_bt03", 
-{121, 121}
-, 
-{0, 10}
-, nil, nil, nil, nil, "UIN39Intro"}
-, 
-[1136] = {1136, nil, nil, common[10], common[19], common[16], nil, nil, nil, nil, common[11]}
-, 
-[5141] = {5141, nil, nil, "n41_map_help", common[18], common[16], nil, nil, nil, common[12], common[12]}
-, 
-[1145] = {1145, nil, nil, common[7], common[17], common[16], nil, nil, nil, common[8], common[9]}
-, 
-[5142] = {5142, nil, nil, common[13], common[20], common[16], nil, nil, nil, nil, common[14]}
-, 
-[1212] = {1212, nil, nil, common[3], common[17], common[16], nil, nil, nil, common[4], common[5]}
-, 
-[5050] = {5050, nil, nil, "cn16_hqs_di02", common[21], common[16], nil, nil, nil, nil, "UICN16N45Intro"}
-, 
-[5053] = {5053, nil, nil, "n46_zjmrk_di04", common[21], common[16], nil, nil, nil, nil, "UICN17N46Intro"}
-, 
-[5059] = {5059, nil, nil, "cn18_hqs_di02", common[21], common[16], nil, nil, nil, nil, "UICN18N47Intro"}
-, 
-[1221] = {1221, nil, nil, "n48_hqs_di02", common[21], common[16], nil, nil, nil, "UIActivityN48MainController", "UIN48Intro"}
-, 
-[5068] = {5068, nil, nil, "cn20_buff_01", common[22], common[16], nil, nil, nil, "UICN20N49MainController", "UICN20N49Intro"}
-, 
-[5073] = {5073, nil, nil, "n50_hqs_di02", common[22], common[16], nil, nil, nil, "UICN21N50MainController", "UICN21N50Intro"}
-, 
-[5077] = {5077, nil, nil, "n51_hqs_di02", common[22], common[16], nil, nil, nil, "UICN22N51MainController", "UICN22N51Intro"}
-, 
-[1444] = {1444, nil, nil, common[10], common[19], common[16], nil, nil, nil, nil, common[11]}
-, 
-[1445] = {1445, nil, nil, common[13], common[20], common[16], nil, nil, nil, nil, common[14]}
+  [1002] = {
+    1002,
+    1,
+    common[1],
+    "legend_zhangjie_icon5",
+    common[15],
+    common[16],
+    common[2],
+    nil,
+    {-16.7, -54.2},
+    "UISakuraController"
+  },
+  [1010] = {
+    1010,
+    7,
+    nil,
+    "n9_map_shuoming",
+    common[15],
+    common[16],
+    "str_activity_n9_common_Intro",
+    nil,
+    {0, 0},
+    "UIN9BuffIntro"
+  },
+  [1011] = {
+    1011,
+    1,
+    common[1],
+    "n10_battle_explain_bg 1",
+    {187, 195},
+    common[16],
+    common[2],
+    nil,
+    {-4, -54.2},
+    "UIN10MainController"
+  },
+  [1017] = {
+    1017,
+    1,
+    nil,
+    "n11_map_shuoming",
+    {202, 101},
+    {0, -39},
+    "str_n11_common_Intro",
+    {
+      color = {
+        62,
+        71,
+        75
+      },
+      fontSize = 34
+    },
+    {0, -39},
+    "UIN11BuffIntro"
+  },
+  [1021] = {
+    1021,
+    nil,
+    nil,
+    "n13_zjm_kuang06",
+    {253, 182},
+    common[16],
+    nil,
+    nil,
+    nil,
+    "UIN13MainController"
+  },
+  [1022] = {
+    1022,
+    nil,
+    common[1],
+    "n14_map_shuoming",
+    {255, 207},
+    common[16],
+    common[2],
+    nil,
+    nil,
+    "UIN14Main"
+  },
+  [1025] = {
+    1025,
+    5,
+    nil,
+    "n15_map_shuoming",
+    {230, 159},
+    common[16],
+    common[2],
+    {
+      color = {
+        236,
+        228,
+        213
+      },
+      fontSize = 33
+    },
+    {0, -17},
+    "UIN15MainController"
+  },
+  [1026] = {
+    1026,
+    nil,
+    common[1],
+    "n16_dt_bnt001",
+    {202, 214},
+    common[16],
+    "str_activity_n16_addbuff",
+    {
+      color = {
+        43,
+        1,
+        1
+      },
+      fontSize = 28,
+      outline = {
+        213,
+        212,
+        203
+      },
+      font = 2
+    },
+    {0, -42},
+    "UIN16Intro"
+  },
+  [1059] = {
+    1059,
+    4,
+    nil,
+    "n17_event_rk_btn03",
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    "UIN17Intro2Controller_Daily"
+  },
+  [1060] = {
+    1060,
+    nil,
+    common[1],
+    "n18_map_help",
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    "UIN18Main"
+  },
+  [1062] = {
+    1062,
+    1,
+    nil,
+    "n19_rk_icon02",
+    {105, 72},
+    common[16],
+    nil,
+    nil,
+    nil,
+    "UIN19P5Controller"
+  },
+  [1063] = {
+    1063,
+    nil,
+    nil,
+    "n20_map_help",
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    "UIActivityN20MainController"
+  },
+  [1067] = {
+    1067,
+    nil,
+    nil,
+    "n21_map_help",
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    "UIActivityN21CCMainController"
+  },
+  [1068] = {
+    1068,
+    nil,
+    nil,
+    "N22_map_help01",
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    "UIActivityN22MainController"
+  },
+  [1069] = {
+    1069,
+    nil,
+    nil,
+    "n23_map_help",
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    "UIActivityN23MainController",
+    "UIN23Intro"
+  },
+  [1072] = {
+    1072,
+    nil,
+    nil,
+    "N24_map_help01",
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    "UIN24Intro"
+  },
+  [1076] = {
+    1076,
+    nil,
+    nil,
+    common[3],
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    common[4],
+    common[5]
+  },
+  [1080] = {
+    1080,
+    nil,
+    nil,
+    common[6],
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    "UIActivityN26MainController",
+    "UIN26Intro"
+  },
+  [1081] = {
+    1081,
+    3,
+    nil,
+    "n27_map_help",
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    "UIN27Controller"
+  },
+  [1084] = {
+    1084,
+    nil,
+    nil,
+    common[7],
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    common[8],
+    common[9]
+  },
+  [1089] = {
+    1089,
+    nil,
+    nil,
+    "n29_map_help",
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    "UIN29Intro"
+  },
+  [1093] = {
+    1093,
+    nil,
+    nil,
+    "n30_map_help",
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    "UIN30Intro"
+  },
+  [1098] = {
+    1098,
+    nil,
+    nil,
+    "n31_map_help",
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    "UIActivityN31MainController",
+    "UIN31Intro"
+  },
+  [1105] = {
+    1105,
+    nil,
+    nil,
+    "n32_map_help",
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    "UIN32Intro"
+  },
+  [1110] = {
+    1110,
+    nil,
+    nil,
+    "n33_map_help",
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    "UIN33Intro"
+  },
+  [1116] = {
+    1116,
+    nil,
+    nil,
+    "n34_map_ent",
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    "UIN34Intro"
+  },
+  [5025] = {
+    5025,
+    nil,
+    nil,
+    "n34_activity_icon",
+    {89, 75},
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    "UICN6N35Intro"
+  },
+  [5027] = {
+    5027,
+    nil,
+    nil,
+    "n36_zjm_icon08",
+    {64, 65},
+    common[16],
+    nil,
+    nil,
+    nil,
+    "UICN7N36MainController"
+  },
+  [5028] = {
+    5028,
+    nil,
+    nil,
+    "n37_zjm_di07",
+    common[18],
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    "UIN37Intro"
+  },
+  [5032] = {
+    5032,
+    nil,
+    nil,
+    common[6],
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    "UIN38Intro"
+  },
+  [5039] = {
+    5039,
+    nil,
+    nil,
+    "n39_zjm_bt03",
+    {121, 121},
+    {0, 10},
+    nil,
+    nil,
+    nil,
+    nil,
+    "UIN39Intro"
+  },
+  [1136] = {
+    1136,
+    nil,
+    nil,
+    common[10],
+    common[19],
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    common[11]
+  },
+  [5141] = {
+    5141,
+    nil,
+    nil,
+    "n41_map_help",
+    common[18],
+    common[16],
+    nil,
+    nil,
+    nil,
+    common[12],
+    common[12]
+  },
+  [1145] = {
+    1145,
+    nil,
+    nil,
+    common[7],
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    common[8],
+    common[9]
+  },
+  [5142] = {
+    5142,
+    nil,
+    nil,
+    common[13],
+    common[20],
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    common[14]
+  },
+  [1212] = {
+    1212,
+    nil,
+    nil,
+    common[3],
+    common[17],
+    common[16],
+    nil,
+    nil,
+    nil,
+    common[4],
+    common[5]
+  },
+  [5050] = {
+    5050,
+    nil,
+    nil,
+    "cn16_hqs_di02",
+    common[21],
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    "UICN16N45Intro"
+  },
+  [5053] = {
+    5053,
+    nil,
+    nil,
+    "n46_zjmrk_di04",
+    common[21],
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    "UICN17N46Intro"
+  },
+  [5059] = {
+    5059,
+    nil,
+    nil,
+    "cn18_hqs_di02",
+    common[21],
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    "UICN18N47Intro"
+  },
+  [1221] = {
+    1221,
+    nil,
+    nil,
+    "n48_hqs_di02",
+    common[21],
+    common[16],
+    nil,
+    nil,
+    nil,
+    "UIActivityN48MainController",
+    "UIN48Intro"
+  },
+  [5068] = {
+    5068,
+    nil,
+    nil,
+    "cn20_buff_01",
+    common[22],
+    common[16],
+    nil,
+    nil,
+    nil,
+    "UICN20N49MainController",
+    "UICN20N49Intro"
+  },
+  [5073] = {
+    5073,
+    nil,
+    nil,
+    "n50_hqs_di02",
+    common[22],
+    common[16],
+    nil,
+    nil,
+    nil,
+    "UICN21N50MainController",
+    "UICN21N50Intro"
+  },
+  [5077] = {
+    5077,
+    nil,
+    nil,
+    "n51_hqs_di02",
+    common[22],
+    common[16],
+    nil,
+    nil,
+    nil,
+    "UICN22N51MainController",
+    "UICN22N51Intro"
+  },
+  [1444] = {
+    1444,
+    nil,
+    nil,
+    common[10],
+    common[19],
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    common[11]
+  },
+  [1445] = {
+    1445,
+    nil,
+    nil,
+    common[13],
+    common[20],
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    common[14]
+  }
 }
 return config, "CampaignID", key
-

@@ -1,17 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_skins/ui_pet_skins_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetSkinsMainController", UIController)
 UIPetSkinsMainController = UIPetSkinsMainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetSkinsMainController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetSkinsMainController:Constructor()
   self._rawImageLoaderHelper = RawImageLoaderHelper:New()
-  ;
-  (self._rawImageLoaderHelper):Init(1)
+  self._rawImageLoaderHelper:Init(1)
   self._cardWidth = 70
   self._cardHeight = 488
   self._havePet = true
@@ -28,82 +20,69 @@ UIPetSkinsMainController.Constructor = function(self)
   self._petModule = self:GetModule(PetModule)
   self._skinsStateData = nil
   self._cgState = DynamicAndStaticState.Dynamic
-  self._campBg = {[PetFilterType.BaiYeCheng] = "sbc_byc", [PetFilterType.BaiYeXiaCheng] = "sbc_xc", [PetFilterType.QiGuang] = "sbc_qg", [PetFilterType.BeiJing] = "sbc_bj", [PetFilterType.HongYouBanShou] = "sbc_hybs", [PetFilterType.TaiYangJiaoTuan] = "sbc_zljs", [PetFilterType.YouMin] = "sbc_wzy", [PetFilterType.LongZhou] = "sbc_lz"}
-  self._campSubTitleAreaColor = {[PetFilterType.BaiYeCheng] = Color(0.87843137254902, 0.52941176470588, 0), [PetFilterType.BaiYeXiaCheng] = Color(0.47843137254902, 0.19607843137255, 0.76078431372549), [PetFilterType.QiGuang] = Color(0.72156862745098, 0.62352941176471, 0.027450980392157), [PetFilterType.BeiJing] = Color(0, 0.6, 0.73725490196078), [PetFilterType.HongYouBanShou] = Color(0.78039215686275, 0.2, 0), [PetFilterType.TaiYangJiaoTuan] = Color(0.58039215686275, 0, 0), [PetFilterType.YouMin] = Color(0.22745098039216, 0.57254901960784, 0.54901960784314), [PetFilterType.LongZhou] = Color(0.94117647058824, 0.30980392156863, 0.12549019607843)}
+  self._campBg = {
+    [PetFilterType.BaiYeCheng] = "sbc_byc",
+    [PetFilterType.BaiYeXiaCheng] = "sbc_xc",
+    [PetFilterType.QiGuang] = "sbc_qg",
+    [PetFilterType.BeiJing] = "sbc_bj",
+    [PetFilterType.HongYouBanShou] = "sbc_hybs",
+    [PetFilterType.TaiYangJiaoTuan] = "sbc_zljs",
+    [PetFilterType.YouMin] = "sbc_wzy",
+    [PetFilterType.LongZhou] = "sbc_lz"
+  }
+  self._campSubTitleAreaColor = {
+    [PetFilterType.BaiYeCheng] = Color(0.8784313725490196, 0.5294117647058824, 0),
+    [PetFilterType.BaiYeXiaCheng] = Color(0.47843137254901963, 0.19607843137254902, 0.7607843137254902),
+    [PetFilterType.QiGuang] = Color(0.7215686274509804, 0.6235294117647059, 0.027450980392156862),
+    [PetFilterType.BeiJing] = Color(0, 0.6, 0.7372549019607844),
+    [PetFilterType.HongYouBanShou] = Color(0.7803921568627451, 0.2, 0),
+    [PetFilterType.TaiYangJiaoTuan] = Color(0.5803921568627451, 0, 0),
+    [PetFilterType.YouMin] = Color(0.22745098039215686, 0.5725490196078431, 0.5490196078431373),
+    [PetFilterType.LongZhou] = Color(0.9411764705882353, 0.30980392156862746, 0.12549019607843137)
+  }
   self._sortTb = {}
   self._lastContentPosX = 0
   self._modelShowMng = PetSkinShowModelManager:New()
   self._shareSkinDatas = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.ShowStaticAndDynamic = function(self)
-  -- function num : 0_1
+function UIPetSkinsMainController:ShowStaticAndDynamic()
   self:ChangeStaticAndDynamicTween(self._cgState)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.StaticAndDynamicOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPetSkinsMainController:StaticAndDynamicOnClick()
   if self._cgState == DynamicAndStaticState.Static then
     self._cgState = DynamicAndStaticState.Dynamic
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSlideDynamic)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSlideDynamic)
   else
     self._cgState = DynamicAndStaticState.Static
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSlide)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSlide)
   end
   self:ChangeStaticAndDynamicTween(self._cgState)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.ChangeStaticAndDynamicTween = function(self, state)
-  -- function num : 0_3 , upvalues : _ENV
+function UIPetSkinsMainController:ChangeStaticAndDynamicTween(state)
   if self._dsTween then
-    (self._dsTween):Kill()
+    self._dsTween:Kill()
   end
   if state == DynamicAndStaticState.Dynamic then
-    (self._cgRoot):SetActive(false)
-    ;
-    (self._spineRoot):SetActive(true)
-    local pos = (self._dynamicRect).anchoredPosition
-    self._dsTween = ((self._staticAndDynamicImg):DOAnchorPos(pos, 0.3)):SetEase(((DG.Tweening).Ease).InOutCubic)
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._dynamicText).color = Color.black
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._staticText).color = Color(0.38823529411765, 0.38823529411765, 0.38823529411765, 1)
+    self._cgRoot:SetActive(false)
+    self._spineRoot:SetActive(true)
+    local pos = self._dynamicRect.anchoredPosition
+    self._dsTween = self._staticAndDynamicImg:DOAnchorPos(pos, 0.3):SetEase(DG.Tweening.Ease.InOutCubic)
+    self._dynamicText.color = Color.black
+    self._staticText.color = Color(0.38823529411764707, 0.38823529411764707, 0.38823529411764707, 1)
   else
-    do
-      ;
-      (self._cgRoot):SetActive(true)
-      ;
-      (self._spineRoot):SetActive(false)
-      local pos = (self._staticRect).anchoredPosition
-      self._dsTween = ((self._staticAndDynamicImg):DOAnchorPos(pos, 0.3)):SetEase(((DG.Tweening).Ease).InOutCubic)
-      -- DECOMPILER ERROR at PC70: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._staticText).color = Color.black
-      -- DECOMPILER ERROR at PC78: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._dynamicText).color = Color(0.38823529411765, 0.38823529411765, 0.38823529411765, 1)
-    end
+    self._cgRoot:SetActive(true)
+    self._spineRoot:SetActive(false)
+    local pos = self._staticRect.anchoredPosition
+    self._dsTween = self._staticAndDynamicImg:DOAnchorPos(pos, 0.3):SetEase(DG.Tweening.Ease.InOutCubic)
+    self._staticText.color = Color.black
+    self._dynamicText.color = Color(0.38823529411764707, 0.38823529411764707, 0.38823529411764707, 1)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.OpenBtnsOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIPetSkinsMainController:OpenBtnsOnClick()
   local tempData = pet_data:New()
   tempData.template_id = self._petId
   tempData.current_skin = self._curSelSkinId
@@ -112,294 +91,263 @@ UIPetSkinsMainController.OpenBtnsOnClick = function(self)
   tempData.grade = maxGrade
   tempData.level = pet:GetMaxLevel()
   tempData.awakening = pet:GetMaxAwakening()
-  tempData.equip_lv = ((ResourceHelper:GetInstance()):GetPetEquip()):GetMaxLv(pet:GetTemplateID())
+  tempData.equip_lv = ResourceHelper:GetInstance():GetPetEquip():GetMaxLv(pet:GetTemplateID())
   tempData.affinity_level = pet:GetPetAffinityMaxLevel()
   pet:SetData(tempData)
   self:ShowDialog("UISpiritDetailLookCgAndSpineController", pet, self._cgState)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.OnShow = function(self, uiParams)
-  -- function num : 0_5 , upvalues : _ENV
+function UIPetSkinsMainController:OnShow(uiParams)
   self:Lock("UIPetSkinsMainController_Anim")
   if self._animEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._animEvent)
+    GameGlobal.Timer():CancelEvent(self._animEvent)
     self._animEvent = nil
   end
-  self._animEvent = ((GameGlobal.Timer)()):AddEvent(633, function()
-    -- function num : 0_5_0 , upvalues : self
+  self._animEvent = GameGlobal.Timer():AddEvent(633, function()
     self:UnLock("UIPetSkinsMainController_Anim")
     self._animEvent = nil
-  end
-)
+  end)
   self.atlas = self:GetAsset("UIPetSkin.spriteatlas", LoadType.SpriteAtlas)
   self._openType = uiParams[1]
   if self._openType == PetSkinUiOpenType.PSUOT_SHOW_LIST then
     self._petId = uiParams[2]
-  else
-    if self._openType == PetSkinUiOpenType.PSUT_SHOP_DETAIL then
-      self._shopGoodData = uiParams[2]
-      if self._shopGoodData then
-        self._curSelSkinId = (self._shopGoodData)._skinId
-      end
-      local skinCfg = (Cfg.cfg_pet_skin)[self._curSelSkinId]
-      if skinCfg then
-        self._petId = skinCfg.PetId
-      end
-      self._shopModule = self:GetModule(ShopModule)
-      self._clientShop = (self._shopModule):GetClientShop()
-    else
-      do
-        if self._openType == PetSkinUiOpenType.PSUOT_TIPS then
-          self._curSelSkinId = uiParams[2]
-          local skinCfg = (Cfg.cfg_pet_skin)[self._curSelSkinId]
-          if skinCfg then
-            self._petId = skinCfg.PetId
-          end
-          self._hideHomeBtn = true
-        else
-          do
-            if self._openType == PetSkinUiOpenType.PSUOT_SEASON_SKIN then
-              self._curSelSkinId = uiParams[2]
-              local skinCfg = (Cfg.cfg_pet_skin)[self._curSelSkinId]
-              if skinCfg then
-                self._petId = skinCfg.PetId
-              end
-              self._hideHomeBtn = true
-              self._seasonID = uiParams[3]
-              self._seasonComp = uiParams[4]
-              self._seasonCompItemInfo = uiParams[5]
-            else
-              do
-                if self._openType == PetSkinUiOpenType.PSUT_ACTIVITY_DETAIL then
-                  self._curSelSkinId = uiParams[2]
-                  local skinCfg = (Cfg.cfg_pet_skin)[self._curSelSkinId]
-                  if skinCfg then
-                    self._petId = skinCfg.PetId
-                  end
-                  self._hideHomeBtn = true
-                  self._activityShopData = uiParams[3]
-                  self._buyCallback = uiParams[4]
-                end
-                do
-                  self._cfgPet = (Cfg.cfg_pet)[self._petId]
-                  self._isScrollReady = false
-                  self:InitWidget()
-                  self:_InitSkinListData()
-                  self:_RefreshPetInfo()
-                  self:_initSkinsListScroll()
-                  self:_selDefaultIndex()
-                  self._isScrollReady = true
-                  self:AttachEvent(GameEventType.OnCurrencyBySkinSuccess, self._OnCurrencyBuySkinSuccess)
-                  self:AttachEvent(GameEventType.OnPetSkinChange, self._ForceRefreshUi)
-                  self:AttachEvent(GameEventType.OpenShop, self.OpenShop)
-                end
-              end
-            end
-          end
-        end
-      end
+  elseif self._openType == PetSkinUiOpenType.PSUT_SHOP_DETAIL then
+    self._shopGoodData = uiParams[2]
+    if self._shopGoodData then
+      self._curSelSkinId = self._shopGoodData._skinId
     end
+    local skinCfg = Cfg.cfg_pet_skin[self._curSelSkinId]
+    if skinCfg then
+      self._petId = skinCfg.PetId
+    end
+    self._shopModule = self:GetModule(ShopModule)
+    self._clientShop = self._shopModule:GetClientShop()
+  elseif self._openType == PetSkinUiOpenType.PSUOT_TIPS then
+    self._curSelSkinId = uiParams[2]
+    local skinCfg = Cfg.cfg_pet_skin[self._curSelSkinId]
+    if skinCfg then
+      self._petId = skinCfg.PetId
+    end
+    self._hideHomeBtn = true
+  elseif self._openType == PetSkinUiOpenType.PSUOT_SEASON_SKIN then
+    self._curSelSkinId = uiParams[2]
+    local skinCfg = Cfg.cfg_pet_skin[self._curSelSkinId]
+    if skinCfg then
+      self._petId = skinCfg.PetId
+    end
+    self._hideHomeBtn = true
+    self._seasonID = uiParams[3]
+    self._seasonComp = uiParams[4]
+    self._seasonCompItemInfo = uiParams[5]
+  elseif self._openType == PetSkinUiOpenType.PSUT_ACTIVITY_DETAIL then
+    self._curSelSkinId = uiParams[2]
+    local skinCfg = Cfg.cfg_pet_skin[self._curSelSkinId]
+    if skinCfg then
+      self._petId = skinCfg.PetId
+    end
+    self._hideHomeBtn = true
+    self._activityShopData = uiParams[3]
+    self._buyCallback = uiParams[4]
   end
+  self._cfgPet = Cfg.cfg_pet[self._petId]
+  self._isScrollReady = false
+  self:InitWidget()
+  self:_InitSkinListData()
+  self:_RefreshPetInfo()
+  self:_initSkinsListScroll()
+  self:_selDefaultIndex()
+  self._isScrollReady = true
+  self:AttachEvent(GameEventType.OnCurrencyBySkinSuccess, self._OnCurrencyBuySkinSuccess)
+  self:AttachEvent(GameEventType.OnPetSkinChange, self._ForceRefreshUi)
+  self:AttachEvent(GameEventType.OpenShop, self.OpenShop)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.OnHide = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIPetSkinsMainController:OnHide()
   self:DetachEvent(GameEventType.OnCurrencyBySkinSuccess, self._OnCurrencyBuySkinSuccess)
   self:DetachEvent(GameEventType.OnPetSkinChange, self._ForceRefreshUi)
   self:DetachEvent(GameEventType.OpenShop, self.OpenShop)
   if self._unlockCgTaskID then
-    ((GameGlobal.TaskManager)()):KillTask(self._unlockCgTaskID)
+    GameGlobal.TaskManager():KillTask(self._unlockCgTaskID)
     self._unlockCgTaskID = nil
   end
   if self._tryUseSkinTaskId then
-    ((GameGlobal.TaskManager)()):KillTask(self._tryUseSkinTaskId)
+    GameGlobal.TaskManager():KillTask(self._tryUseSkinTaskId)
     self._tryUseSkinTaskId = nil
   end
   if self._modelShowMng then
-    (self._modelShowMng):Dispose()
+    self._modelShowMng:Dispose()
     self._modelShowMng = nil
   end
-  for key,value in pairs(self._timeEvents) do
-    ((GameGlobal.Timer)()):CancelEvent(value)
+  for key, value in pairs(self._timeEvents) do
+    GameGlobal.Timer():CancelEvent(value)
   end
-  if (self._timeEvents)._cgSwitchTimer then
-    ((GameGlobal.Timer)()):CancelEvent((self._timeEvents)._cgSwitchTimer)
-    -- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._timeEvents)._cgSwitchTimer = nil
+  if self._timeEvents._cgSwitchTimer then
+    GameGlobal.Timer():CancelEvent(self._timeEvents._cgSwitchTimer)
+    self._timeEvents._cgSwitchTimer = nil
   end
   if self._spineEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+    GameGlobal.Timer():CancelEvent(self._spineEvent)
     self._spineEvent = nil
     self._playSpineAnim = false
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.InitWidget = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIPetSkinsMainController:InitWidget()
   self._campBgLoader = self:GetUIComponent("RawImageLoader", "CampBg")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "BackBtns")
   local lookBtnRect = self:GetUIComponent("RectTransform", "LookBtn")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  self._homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
-  if not self._hideHomeBtn and nil then
-    local hideHomeBtn = (self._homeLandModule):IsRunning()
+  self._homeLandModule = GameGlobal.GetUIModule(HomelandModule)
+  local hideHomeBtn = not self._hideHomeBtn and nil and self._homeLandModule:IsRunning()
+  if hideHomeBtn then
+    local pos = lookBtnRect.anchoredPosition
+    lookBtnRect.anchoredPosition = Vector3(pos.x - 130, pos.y, pos.z)
   end
-  do
-    if hideHomeBtn then
-      local pos = lookBtnRect.anchoredPosition
-      lookBtnRect.anchoredPosition = Vector3(pos.x - 130, pos.y, pos.z)
-    end
-    ;
-    (self._backBtns):SetData(function()
-    -- function num : 0_7_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
+  end, nil, nil, hideHomeBtn)
+  self._petLogoIconLoader = self:GetUIComponent("RawImageLoader", "PetIcon")
+  self._petSkinNameText = self:GetUIComponent("UILocalizationText", "PetSkinName")
+  self._petNameCHLabel = self:GetUIComponent("UILocalizationText", "PetNameCH")
+  self._petNameENLabel = self:GetUIComponent("UILocalizationText", "PetNameEN")
+  self._petNameENBgGo = self:GetGameObject("PetNameENBg")
+  self._skinsNumText = self:GetUIComponent("UILocalizationText", "SkinsNumText")
+  self._skinsNumAreaGo = self:GetGameObject("SkinsNumArea")
+  self._skinsNumTextGo = self:GetGameObject("SkinsNumText")
+  self._subPanelTitleAreaImg = self:GetUIComponent("Image", "SubPanelTitleArea")
+  self._subPanelTitleText = self:GetUIComponent("UILocalizationText", "SubPanelTitleText")
+  self._subPanelAreaGo = self:GetGameObject("SubPanelShowArea")
+  self._closeSubPanelAreaGo = self:GetGameObject("CloseSubPanelArea")
+  self._3DPanelGo = self:GetGameObject("3DPanel")
+  self._designPanelGo = self:GetGameObject("DesignPanel")
+  self._designText = self:GetUIComponent("UILocalizationText", "DesignText")
+  self._designTextTrans = self:GetUIComponent("RectTransform", "DesignText")
+  self._cgBtnAreaGo = self:GetGameObject("CgBtnArea")
+  self._cgMiniImgLoader = self:GetUIComponent("RawImageLoader", "CgPreview")
+  self._cgTipsText = self:GetUIComponent("UILocalizationText", "CgTipsText")
+  self._content = self:GetUIComponent("RectTransform", "Content")
+  self._swithArrowAreaGo = self:GetGameObject("SwithArrowArea")
+  self._scrollRect = self:GetUIComponent("ScrollRect", "SkinsList")
+  self._curSkinAreaGo = self:GetGameObject("CurSkinArea")
+  self._useBtnGo = self:GetGameObject("UseBtn")
+  self._buyBtnGo = self:GetGameObject("BuyBtn")
+  self._getPathAreaGo = self:GetGameObject("GetPathArea")
+  self._gotSkinAreaGo = self:GetGameObject("GotSkinArea")
+  self._stateAreas = {
+    [PetSkinStateType.PSST_CUR_SKIN] = self._curSkinAreaGo,
+    [PetSkinStateType.PSST_CAN_USE] = self._useBtnGo,
+    [PetSkinStateType.PSST_SHOP_BUY] = self._buyBtnGo,
+    [PetSkinStateType.PSST_NOT_OBTAIN] = self._getPathAreaGo,
+    [PetSkinStateType.PSST_SHOP_OBTAINED] = self._gotSkinAreaGo
+  }
+  self._getPathText = self:GetUIComponent("RollingText", "GetPathText")
+  self._priceText = self:GetUIComponent("UILocalizationText", "PriceText")
+  self._imgPrice = self:GetUIComponent("Image", "ImgPrice")
+  self._modelBtnGo = self:GetGameObject("ModelBtn")
+  if self._modelBtnGo then
+    self._modelBtnGo:SetActive(false)
   end
-, nil, nil, hideHomeBtn)
-    self._petLogoIconLoader = self:GetUIComponent("RawImageLoader", "PetIcon")
-    self._petSkinNameText = self:GetUIComponent("UILocalizationText", "PetSkinName")
-    self._petNameCHLabel = self:GetUIComponent("UILocalizationText", "PetNameCH")
-    self._petNameENLabel = self:GetUIComponent("UILocalizationText", "PetNameEN")
-    self._petNameENBgGo = self:GetGameObject("PetNameENBg")
-    self._skinsNumText = self:GetUIComponent("UILocalizationText", "SkinsNumText")
-    self._skinsNumAreaGo = self:GetGameObject("SkinsNumArea")
-    self._skinsNumTextGo = self:GetGameObject("SkinsNumText")
-    self._subPanelTitleAreaImg = self:GetUIComponent("Image", "SubPanelTitleArea")
-    self._subPanelTitleText = self:GetUIComponent("UILocalizationText", "SubPanelTitleText")
-    self._subPanelAreaGo = self:GetGameObject("SubPanelShowArea")
-    self._closeSubPanelAreaGo = self:GetGameObject("CloseSubPanelArea")
-    self._3DPanelGo = self:GetGameObject("3DPanel")
-    self._designPanelGo = self:GetGameObject("DesignPanel")
-    self._designText = self:GetUIComponent("UILocalizationText", "DesignText")
-    self._designTextTrans = self:GetUIComponent("RectTransform", "DesignText")
-    self._cgBtnAreaGo = self:GetGameObject("CgBtnArea")
-    self._cgMiniImgLoader = self:GetUIComponent("RawImageLoader", "CgPreview")
-    self._cgTipsText = self:GetUIComponent("UILocalizationText", "CgTipsText")
-    self._content = self:GetUIComponent("RectTransform", "Content")
-    self._swithArrowAreaGo = self:GetGameObject("SwithArrowArea")
-    self._scrollRect = self:GetUIComponent("ScrollRect", "SkinsList")
-    self._curSkinAreaGo = self:GetGameObject("CurSkinArea")
-    self._useBtnGo = self:GetGameObject("UseBtn")
-    self._buyBtnGo = self:GetGameObject("BuyBtn")
-    self._getPathAreaGo = self:GetGameObject("GetPathArea")
-    self._gotSkinAreaGo = self:GetGameObject("GotSkinArea")
-    self._stateAreas = {[PetSkinStateType.PSST_CUR_SKIN] = self._curSkinAreaGo, [PetSkinStateType.PSST_CAN_USE] = self._useBtnGo, [PetSkinStateType.PSST_SHOP_BUY] = self._buyBtnGo, [PetSkinStateType.PSST_NOT_OBTAIN] = self._getPathAreaGo, [PetSkinStateType.PSST_SHOP_OBTAINED] = self._gotSkinAreaGo}
-    self._getPathText = self:GetUIComponent("RollingText", "GetPathText")
-    self._priceText = self:GetUIComponent("UILocalizationText", "PriceText")
-    self._imgPrice = self:GetUIComponent("Image", "ImgPrice")
-    self._modelBtnGo = self:GetGameObject("ModelBtn")
-    if self._modelBtnGo then
-      (self._modelBtnGo):SetActive(false)
-    end
-    self._designInfoBtnGo = self:GetGameObject("DesignInfoBtn")
-    self._modelBtnImg = self:GetUIComponent("Image", "ModelBtn")
-    self._designInfoBtnImg = self:GetUIComponent("Image", "DesignInfoBtn")
-    self._modelBtnText = self:GetUIComponent("UILocalizationText", "ModelBtnText")
-    self._designInfoBtnText = self:GetUIComponent("UILocalizationText", "DesignInfoBtnText")
-    self._designScroll = self:GetUIComponent("ScrollRect", "DesignInfoScroll")
-    self._designScrollRect = self:GetUIComponent("RectTransform", "DesignInfoScroll")
-    self._dynamicText = self:GetUIComponent("UILocalizationText", "dynamicText")
-    self._staticText = self:GetUIComponent("UILocalizationText", "staticText")
-    self._staticAndDynamicImg = self:GetUIComponent("RectTransform", "bar")
-    self._dynamicRect = self:GetUIComponent("RectTransform", "dynamicRect")
-    self._staticRect = self:GetUIComponent("RectTransform", "staticRect")
-    self._storyInfoBtnObj = self:GetGameObject("StoryInfoBtn")
-    self._StoryInfoBtnText = self:GetUIComponent("UILocalizationText", "StoryInfoBtnText")
-    self._storyRedPointObj = self:GetGameObject("storyRedPoint")
-    self._storyLockObj = self:GetGameObject("story_lock")
-    self._ui3DRawImg = self:GetUIComponent("RawImage", "TmpUi3d")
-    if self._modelShowMng then
-      (self._modelShowMng):SetRenderTexture((self._ui3DRawImg).mainTexture)
-    end
-    self._ui3DGo = self:GetGameObject("TmpUi3d")
-    self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._ui3DGo), UIEvent.Drag, function(eventData)
-    -- function num : 0_7_1 , upvalues : self
+  self._designInfoBtnGo = self:GetGameObject("DesignInfoBtn")
+  self._modelBtnImg = self:GetUIComponent("Image", "ModelBtn")
+  self._designInfoBtnImg = self:GetUIComponent("Image", "DesignInfoBtn")
+  self._modelBtnText = self:GetUIComponent("UILocalizationText", "ModelBtnText")
+  self._designInfoBtnText = self:GetUIComponent("UILocalizationText", "DesignInfoBtnText")
+  self._designScroll = self:GetUIComponent("ScrollRect", "DesignInfoScroll")
+  self._designScrollRect = self:GetUIComponent("RectTransform", "DesignInfoScroll")
+  self._dynamicText = self:GetUIComponent("UILocalizationText", "dynamicText")
+  self._staticText = self:GetUIComponent("UILocalizationText", "staticText")
+  self._staticAndDynamicImg = self:GetUIComponent("RectTransform", "bar")
+  self._dynamicRect = self:GetUIComponent("RectTransform", "dynamicRect")
+  self._staticRect = self:GetUIComponent("RectTransform", "staticRect")
+  self._storyInfoBtnObj = self:GetGameObject("StoryInfoBtn")
+  self._StoryInfoBtnText = self:GetUIComponent("UILocalizationText", "StoryInfoBtnText")
+  self._storyRedPointObj = self:GetGameObject("storyRedPoint")
+  self._storyLockObj = self:GetGameObject("story_lock")
+  self._ui3DRawImg = self:GetUIComponent("RawImage", "TmpUi3d")
+  if self._modelShowMng then
+    self._modelShowMng:SetRenderTexture(self._ui3DRawImg.mainTexture)
+  end
+  self._ui3DGo = self:GetGameObject("TmpUi3d")
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._ui3DGo), UIEvent.Drag, function(eventData)
     self:_3dDrag(eventData)
-  end
-)
-    self._cgRoot = self:GetGameObject("cgRoot")
-    self._spineRoot = self:GetGameObject("spineRoot")
-    self._cg_mid = self:GetUIComponent("RawImageLoader", "cgMid")
-    self._cg_mid_rect = self:GetUIComponent("RectTransform", "cgMid")
-    self._cgRect = self:GetUIComponent("RectTransform", "cgNormal")
-    self._cgNormal = self:GetUIComponent("MultiplyImageLoader", "cgNormal")
-    self._img = self:GetUIComponent("RawImage", "cgNormal")
-    self._atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
-    self._bgAnim = self:GetUIComponent("Animation", "BgAnim")
-    self._uiAnim = self:GetUIComponent("Animation", "UiAnim")
-    self._animNames = {
-show_3d = {name = "UIPetSkinsMainController_u_in_3D", time_len = 500}
-, 
-show_design = {name = "UIPetSkinsMainController_u_in_Design", time_len = 500}
-, 
-left_out = {name_bg = "UIPetSkinsMainController_b_out_l", name_ui = "UIPetSkinsMainController_u_out_l", time_len = 233}
-, 
-left_in = {name_bg = "UIPetSkinsMainController_b_in_l", name_ui = "UIPetSkinsMainController_u_in_l", time_len = 500}
-, 
-right_out = {name_bg = "UIPetSkinsMainController_b_out_r", name_ui = "UIPetSkinsMainController_u_out_r", time_len = 233}
-, 
-right_in = {name_bg = "UIPetSkinsMainController_b_in_r", name_ui = "UIPetSkinsMainController_u_in_r", time_len = 500}
-}
-    self._timeEvents = {}
-    self._binderCurrency = self:GetGameObject("binderCurrency")
-    self._binderCurrencyPrice = self:GetUIComponent("UILocalizationText", "binderCurrencyPrice")
-    self._binderNormalPrice = self:GetUIComponent("UILocalizationText", "binderNormalPrice")
-    self._binderNormalImg = self:GetUIComponent("Image", "binderNormalImg")
-    self._cgSpecial = self:GetUIComponent("RawImageLoader", "cgSpecial")
-    self._topTipGo = self:GetGameObject("topMenu")
-    local toptipPool = self:GetUIComponent("UISelectObjectPath", "topMenu")
-    self._topTip = toptipPool:SpawnObject("UICurrencyMenu")
-    self._petLogoGo = self:GetGameObject("petLogo")
-    self._petLogoImageLoader = self:GetUIComponent("RawImageLoader", "petLogo")
-    ;
-    (self._petLogoGo):SetActive(false)
-    self._pets = self:GetGameObject("Pets")
-    self._petHeadIcon = {}
-    -- DECOMPILER ERROR at PC459: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._petHeadIcon)[1] = self:GetUIComponent("RawImageLoader", "HeadIcon1")
-    -- DECOMPILER ERROR at PC465: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._petHeadIcon)[2] = self:GetUIComponent("RawImageLoader", "HeadIcon2")
-    self._petDesc = self:GetUIComponent("UILocalizationText", "PetDesc")
-    self._petMark = self:GetUIComponent("RectTransform", "PetMark")
-  end
+  end)
+  self._cgRoot = self:GetGameObject("cgRoot")
+  self._spineRoot = self:GetGameObject("spineRoot")
+  self._cg_mid = self:GetUIComponent("RawImageLoader", "cgMid")
+  self._cg_mid_rect = self:GetUIComponent("RectTransform", "cgMid")
+  self._cgRect = self:GetUIComponent("RectTransform", "cgNormal")
+  self._cgNormal = self:GetUIComponent("MultiplyImageLoader", "cgNormal")
+  self._img = self:GetUIComponent("RawImage", "cgNormal")
+  self._atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
+  self._bgAnim = self:GetUIComponent("Animation", "BgAnim")
+  self._uiAnim = self:GetUIComponent("Animation", "UiAnim")
+  self._animNames = {
+    show_3d = {
+      name = "UIPetSkinsMainController_u_in_3D",
+      time_len = 500
+    },
+    show_design = {
+      name = "UIPetSkinsMainController_u_in_Design",
+      time_len = 500
+    },
+    left_out = {
+      name_bg = "UIPetSkinsMainController_b_out_l",
+      name_ui = "UIPetSkinsMainController_u_out_l",
+      time_len = 233
+    },
+    left_in = {
+      name_bg = "UIPetSkinsMainController_b_in_l",
+      name_ui = "UIPetSkinsMainController_u_in_l",
+      time_len = 500
+    },
+    right_out = {
+      name_bg = "UIPetSkinsMainController_b_out_r",
+      name_ui = "UIPetSkinsMainController_u_out_r",
+      time_len = 233
+    },
+    right_in = {
+      name_bg = "UIPetSkinsMainController_b_in_r",
+      name_ui = "UIPetSkinsMainController_u_in_r",
+      time_len = 500
+    }
+  }
+  self._timeEvents = {}
+  self._binderCurrency = self:GetGameObject("binderCurrency")
+  self._binderCurrencyPrice = self:GetUIComponent("UILocalizationText", "binderCurrencyPrice")
+  self._binderNormalPrice = self:GetUIComponent("UILocalizationText", "binderNormalPrice")
+  self._binderNormalImg = self:GetUIComponent("Image", "binderNormalImg")
+  self._cgSpecial = self:GetUIComponent("RawImageLoader", "cgSpecial")
+  self._topTipGo = self:GetGameObject("topMenu")
+  local toptipPool = self:GetUIComponent("UISelectObjectPath", "topMenu")
+  self._topTip = toptipPool:SpawnObject("UICurrencyMenu")
+  self._petLogoGo = self:GetGameObject("petLogo")
+  self._petLogoImageLoader = self:GetUIComponent("RawImageLoader", "petLogo")
+  self._petLogoGo:SetActive(false)
+  self._pets = self:GetGameObject("Pets")
+  self._petHeadIcon = {}
+  self._petHeadIcon[1] = self:GetUIComponent("RawImageLoader", "HeadIcon1")
+  self._petHeadIcon[2] = self:GetUIComponent("RawImageLoader", "HeadIcon2")
+  self._petDesc = self:GetUIComponent("UILocalizationText", "PetDesc")
+  self._petMark = self:GetUIComponent("RectTransform", "PetMark")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._selDefaultIndex = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIPetSkinsMainController:_selDefaultIndex()
   local defaultIndex = 1
   if self._uiSkinsData then
-    for index,uiData in ipairs(self._uiSkinsData) do
+    for index, uiData in ipairs(self._uiSkinsData) do
       if uiData:IsCurrentSkin() then
         defaultIndex = index
         break
       end
     end
   end
-  do
-    self:_SelectSkinCellIdx(defaultIndex, true)
-    self:_SetMoveToCurSelIdx()
-  end
+  self:_SelectSkinCellIdx(defaultIndex, true)
+  self:_SetMoveToCurSelIdx()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._initSkinsListScroll = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIPetSkinsMainController:_initSkinsListScroll()
   if not self._petSkinCfg then
-    return 
+    return
   end
   self._skinsCellCount = #self._petSkinCfg
   self._count = self._skinsCellCount
@@ -407,72 +355,42 @@ UIPetSkinsMainController._initSkinsListScroll = function(self)
   self:_CreateScrollItem()
   self:_RefreshScrollItemStateData()
   self:_RefreshScrollItemUiState()
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
   if self._count <= 1 then
-    (self._scrollRect).horizontal = false
+    self._scrollRect.horizontal = false
   else
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._scrollRect).horizontal = true
+    self._scrollRect.horizontal = true
   end
   if self._openType == PetSkinUiOpenType.PSUOT_SHOW_LIST then
-    (self._swithArrowAreaGo):SetActive(true)
-    ;
-    (self._skinsNumAreaGo):SetActive(true)
-    ;
-    (self._skinsNumTextGo):SetActive(true)
-    ;
-    (self._skinsNumText):SetText((StringTable.Get)("str_pet_skin_list_num", self._skinsCellCount))
-  else
-    if self._openType == PetSkinUiOpenType.PSUT_SHOP_DETAIL then
-      (self._swithArrowAreaGo):SetActive(false)
-      ;
-      (self._skinsNumAreaGo):SetActive(false)
-      ;
-      (self._skinsNumTextGo):SetActive(false)
-    else
-      if self._openType == PetSkinUiOpenType.PSUOT_TIPS then
-        (self._swithArrowAreaGo):SetActive(false)
-        ;
-        (self._skinsNumAreaGo):SetActive(false)
-        ;
-        (self._skinsNumTextGo):SetActive(false)
-      else
-        if self._openType == PetSkinUiOpenType.PSUOT_SEASON_SKIN then
-          (self._swithArrowAreaGo):SetActive(false)
-          ;
-          (self._skinsNumAreaGo):SetActive(false)
-          ;
-          (self._skinsNumTextGo):SetActive(false)
-        else
-          if self._openType == PetSkinUiOpenType.PSUT_ACTIVITY_DETAIL then
-            (self._swithArrowAreaGo):SetActive(false)
-            ;
-            (self._skinsNumAreaGo):SetActive(false)
-            ;
-            (self._skinsNumTextGo):SetActive(false)
-          end
-        end
-      end
-    end
+    self._swithArrowAreaGo:SetActive(true)
+    self._skinsNumAreaGo:SetActive(true)
+    self._skinsNumTextGo:SetActive(true)
+    self._skinsNumText:SetText(StringTable.Get("str_pet_skin_list_num", self._skinsCellCount))
+  elseif self._openType == PetSkinUiOpenType.PSUT_SHOP_DETAIL then
+    self._swithArrowAreaGo:SetActive(false)
+    self._skinsNumAreaGo:SetActive(false)
+    self._skinsNumTextGo:SetActive(false)
+  elseif self._openType == PetSkinUiOpenType.PSUOT_TIPS then
+    self._swithArrowAreaGo:SetActive(false)
+    self._skinsNumAreaGo:SetActive(false)
+    self._skinsNumTextGo:SetActive(false)
+  elseif self._openType == PetSkinUiOpenType.PSUOT_SEASON_SKIN then
+    self._swithArrowAreaGo:SetActive(false)
+    self._skinsNumAreaGo:SetActive(false)
+    self._skinsNumTextGo:SetActive(false)
+  elseif self._openType == PetSkinUiOpenType.PSUT_ACTIVITY_DETAIL then
+    self._swithArrowAreaGo:SetActive(false)
+    self._skinsNumAreaGo:SetActive(false)
+    self._skinsNumTextGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._ForceRefreshUi = function(self)
-  -- function num : 0_10
+function UIPetSkinsMainController:_ForceRefreshUi()
   self:_RefreshScrollItemStateData()
   self:_RefreshScrollItemUiState()
   self:_RefreshUiByCurSkinIndex()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._SelectSkinCellIdx = function(self, idx, bNoAnim)
-  -- function num : 0_11 , upvalues : _ENV
+function UIPetSkinsMainController:_SelectSkinCellIdx(idx, bNoAnim)
   local useAnim = true
   if bNoAnim then
     useAnim = false
@@ -480,59 +398,39 @@ UIPetSkinsMainController._SelectSkinCellIdx = function(self, idx, bNoAnim)
   if idx == self._curSelSkinIndex then
     useAnim = false
   end
-  local bLeft = self._curSelSkinIndex <= idx
+  local bLeft = idx >= self._curSelSkinIndex
   self._curSelSkinIndex = idx
   if useAnim then
     if bLeft then
       self:PlayLeftOut()
-      -- DECOMPILER ERROR at PC30: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._timeEvents)._swithLeftTimeEvent = ((GameGlobal.Timer)()):AddEvent(((self._animNames).left_out).time_len, function()
-    -- function num : 0_11_0 , upvalues : self
-    self:_RefreshUiByCurSkinIndex()
-    self:PlayLeftIn()
-  end
-)
+      self._timeEvents._swithLeftTimeEvent = GameGlobal.Timer():AddEvent(self._animNames.left_out.time_len, function()
+        self:_RefreshUiByCurSkinIndex()
+        self:PlayLeftIn()
+      end)
     else
       self:PlayRightOut()
-      -- DECOMPILER ERROR at PC44: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._timeEvents)._swithLeftTimeEvent = ((GameGlobal.Timer)()):AddEvent(((self._animNames).right_out).time_len, function()
-    -- function num : 0_11_1 , upvalues : self
-    self:_RefreshUiByCurSkinIndex()
-    self:PlayRightIn()
-  end
-)
+      self._timeEvents._swithLeftTimeEvent = GameGlobal.Timer():AddEvent(self._animNames.right_out.time_len, function()
+        self:_RefreshUiByCurSkinIndex()
+        self:PlayRightIn()
+      end)
     end
   else
     self:_RefreshUiByCurSkinIndex()
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._SetMoveToCurSelIdx = function(self)
-  -- function num : 0_12
+function UIPetSkinsMainController:_SetMoveToCurSelIdx()
   self._targetPosX = self:_CalcPosX(self._curSelSkinIndex)
   self:_RefreshClothListSibling()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._CreateScrollItem = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIPetSkinsMainController:_CreateScrollItem()
   self._contentWidth = self._cardWidth * self._skinsCellCount
   self._contentCenterPosX = self._contentWidth / 2
   self._sortTb = {}
   local itemPool = self:GetUIComponent("UISelectObjectPath", "Content")
-  local y = ((self._content).sizeDelta).y
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._content).sizeDelta = Vector2(self._contentWidth, y)
+  local y = self._content.sizeDelta.y
+  self._content.sizeDelta = Vector2(self._contentWidth, y)
   itemPool:SpawnObjects("UIPetSkinsSelectCell", self._skinsCellCount)
   local items = itemPool:GetAllSpawnList()
   self._items = items
@@ -541,211 +439,115 @@ UIPetSkinsMainController._CreateScrollItem = function(self)
     cellSortTb.idx = 0
     cellSortTb.posX = 0
     cellSortTb.absDis = 0
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._sortTb)[i] = cellSortTb
-    local itemGo = (items[i]):GetGameObject()
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (itemGo.transform).anchorMin = Vector2(0, 0.5)
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (itemGo.transform).anchorMax = Vector2(0, 0.5)
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (itemGo.transform).sizeDelta = Vector2(self._cardWidth, self._cardHeight)
-    local posY = ((((items[i]):GetGameObject()).transform).anchoredPosition).y
-    -- DECOMPILER ERROR at PC76: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (itemGo.transform).anchoredPosition = Vector2(self._cardWidth * (i - 1) + self._cardWidth / 2, posY)
-    ;
-    (items[i]):SetData((self._petSkinCfg)[i], i, function(idx)
-    -- function num : 0_13_0 , upvalues : self
-    if self._count <= 1 then
-      return 
-    end
-    ;
-    (self._cgBtnAreaGo):SetActive(false)
-    self:_SelectSkinCellIdx(idx)
-    self:_SetMoveToCurSelIdx()
-    self._isDarging = false
-  end
-, function(eventData)
-    -- function num : 0_13_1 , upvalues : self
-    if self._count <= 1 then
-      return 
-    end
-    self._bDragPosX = (eventData.position).x
-    self._isDarging = true
-    self._tmpContentPosX = ((self._content).anchoredPosition).x
-    ;
-    (self._cgBtnAreaGo):SetActive(false)
-  end
-, function(eventData)
-    -- function num : 0_13_2
-  end
-, function(eventData)
-    -- function num : 0_13_3 , upvalues : self, _ENV
-    if self._count <= 1 then
-      return 
-    end
-    local lPosX = ((self._content).anchoredPosition).x - self._contentWidth / 2
-    if lPosX >= 0 then
-      lPosX = -self._cardWidth / 2
-    else
-      if lPosX <= -self._contentWidth then
+    self._sortTb[i] = cellSortTb
+    local itemGo = items[i]:GetGameObject()
+    itemGo.transform.anchorMin = Vector2(0, 0.5)
+    itemGo.transform.anchorMax = Vector2(0, 0.5)
+    itemGo.transform.sizeDelta = Vector2(self._cardWidth, self._cardHeight)
+    local posY = items[i]:GetGameObject().transform.anchoredPosition.y
+    itemGo.transform.anchoredPosition = Vector2(self._cardWidth * (i - 1) + self._cardWidth / 2, posY)
+    items[i]:SetData(self._petSkinCfg[i], i, function(idx)
+      if self._count <= 1 then
+        return
+      end
+      self._cgBtnAreaGo:SetActive(false)
+      self:_SelectSkinCellIdx(idx)
+      self:_SetMoveToCurSelIdx()
+      self._isDarging = false
+    end, function(eventData)
+      if self._count <= 1 then
+        return
+      end
+      self._bDragPosX = eventData.position.x
+      self._isDarging = true
+      self._tmpContentPosX = self._content.anchoredPosition.x
+      self._cgBtnAreaGo:SetActive(false)
+    end, function(eventData)
+    end, function(eventData)
+      if self._count <= 1 then
+        return
+      end
+      local lPosX = self._content.anchoredPosition.x - self._contentWidth / 2
+      if 0 <= lPosX then
+        lPosX = -self._cardWidth / 2
+      elseif lPosX <= -self._contentWidth then
         lPosX = -self._contentWidth + self._cardWidth / 2
       end
-    end
-    local absLPosX = (math.abs)(lPosX)
-    local c = (math.ceil)(absLPosX / self._cardWidth)
-    local _, d = (math.modf)(absLPosX / self._cardWidth)
-    local tmpIdx = self._curSelSkinIndex
-    self._eDragPosX = (eventData.position).x
-    tmpIdx = c
-    -- DECOMPILER ERROR at PC53: Unhandled construct in 'MakeBoolean' P1
-
-    -- DECOMPILER ERROR at PC53: Unhandled construct in 'MakeBoolean' P1
-
-    if tmpIdx == self._curSelSkinIndex and self._eDragPosX < self._bDragPosX and d > 0.7 then
-      tmpIdx = tmpIdx + 1
-    end
-    if d < 0.3 then
-      tmpIdx = tmpIdx - 1
-    end
-    local finalIdx = 1
-    if self._count < tmpIdx then
-      finalIdx = self._count
-    else
-      if tmpIdx <= 0 then
+      local absLPosX = math.abs(lPosX)
+      local c = math.ceil(absLPosX / self._cardWidth)
+      local _, d = math.modf(absLPosX / self._cardWidth)
+      local tmpIdx = self._curSelSkinIndex
+      self._eDragPosX = eventData.position.x
+      tmpIdx = c
+      if tmpIdx == self._curSelSkinIndex then
+        if self._eDragPosX < self._bDragPosX then
+          if 0.7 < d then
+            tmpIdx = tmpIdx + 1
+          end
+        elseif d < 0.3 then
+          tmpIdx = tmpIdx - 1
+        end
+      end
+      local finalIdx = 1
+      if tmpIdx > self._count then
+        finalIdx = self._count
+      elseif tmpIdx <= 0 then
         finalIdx = 1
       else
         finalIdx = tmpIdx
       end
-    end
-    self:_SelectSkinCellIdx(finalIdx)
-    self:_SetMoveToCurSelIdx()
-    self._isDarging = false
-  end
-)
+      self:_SelectSkinCellIdx(finalIdx)
+      self:_SetMoveToCurSelIdx()
+      self._isDarging = false
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._RefreshScrollItemStateData = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIPetSkinsMainController:_RefreshScrollItemStateData()
   if self._openType == PetSkinUiOpenType.PSUOT_SHOW_LIST then
     self:_Detail_RefreshScrollItemStateData()
-  else
-    if self._openType == PetSkinUiOpenType.PSUT_SHOP_DETAIL then
-      self:_Shop_RefreshScrollItemStateData()
-    else
-      if self._openType == PetSkinUiOpenType.PSUOT_TIPS then
-        self:_Tips_RefreshScrollItemStateData()
-      else
-        if self._openType == PetSkinUiOpenType.PSUOT_SEASON_SKIN then
-          self:_Shop_RefreshScrollItemStateData()
-        else
-          if self._openType == PetSkinUiOpenType.PSUT_ACTIVITY_DETAIL then
-            self:_ACTIVITY_RefreshScrollItemStateData()
-          end
-        end
-      end
-    end
+  elseif self._openType == PetSkinUiOpenType.PSUT_SHOP_DETAIL then
+    self:_Shop_RefreshScrollItemStateData()
+  elseif self._openType == PetSkinUiOpenType.PSUOT_TIPS then
+    self:_Tips_RefreshScrollItemStateData()
+  elseif self._openType == PetSkinUiOpenType.PSUOT_SEASON_SKIN then
+    self:_Shop_RefreshScrollItemStateData()
+  elseif self._openType == PetSkinUiOpenType.PSUT_ACTIVITY_DETAIL then
+    self:_ACTIVITY_RefreshScrollItemStateData()
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._Detail_RefreshScrollItemStateData = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIPetSkinsMainController:_Detail_RefreshScrollItemStateData()
   if not self._petModule then
-    return 
+    return
   end
   self._uiSkinsData = {}
-  local petModuleInfo = (self._petModule):GetPetByTemplateId(self._petId)
+  local petModuleInfo = self._petModule:GetPetByTemplateId(self._petId)
   if not petModuleInfo then
-    return 
+    return
   end
-  self._cfg_grade = (Cfg.cfg_pet_grade)({PetID = self._petId, Grade = petModuleInfo:GetPetGrade()})
-  self._skinsStateData = (self._petModule):GetPetSkinsData(self._petId)
-  if not self._skinsStateData or self._petSkinCfg then
-    for idx,skinCfg in ipairs(self._petSkinCfg) do
+  self._cfg_grade = Cfg.cfg_pet_grade({
+    PetID = self._petId,
+    Grade = petModuleInfo:GetPetGrade()
+  })
+  self._skinsStateData = self._petModule:GetPetSkinsData(self._petId)
+  if self._skinsStateData then
+  end
+  if self._petSkinCfg then
+    for idx, skinCfg in ipairs(self._petSkinCfg) do
       local uiSkinData = DPetSkinDetailCard:New(skinCfg)
       uiSkinData:SetIsShopDetail(false)
       local is_obtain = false
       if self._skinsStateData then
-        local curSkin = (self._skinsStateData).current_skin
+        local curSkin = self._skinsStateData.current_skin
         local isCurSkin = curSkin == skinCfg.id
-        if idx ~= 1 then
-          isCurSkin = curSkin ~= 0
-          uiSkinData:SetIsCurrentSkin(isCurSkin)
-          local obtainedSkinInfo = (self._skinsStateData).skin_info
-          if obtainedSkinInfo then
-            for _,skinInfo in pairs(obtainedSkinInfo) do
-              if skinInfo and skinInfo.skin_id == skinCfg.id then
-                is_obtain = true
-                uiSkinData:SetUnlockCg(skinInfo.unlock_CG)
-                break
-              end
-            end
-          end
-          do
-            do
-              local isCurSkin = idx == 1
-              uiSkinData:SetIsCurrentSkin(isCurSkin)
-              uiSkinData:SetObtained(is_obtain)
-              ;
-              (table.insert)(self._uiSkinsData, uiSkinData)
-              -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+        if curSkin == 0 then
+          isCurSkin = idx == 1
         end
-      end
-    end
-  end
-  -- DECOMPILER ERROR: 9 unprocessed JMP targets
-end
-
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._Shop_RefreshScrollItemStateData = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  if not self._petModule then
-    return 
-  end
-  self._havePet = true
-  self._uiSkinsData = {}
-  local petModuleInfo = (self._petModule):GetPetByTemplateId(self._petId)
-  if not petModuleInfo then
-    self._havePet = false
-  end
-  self._skinsStateData = (self._petModule):GetPetSkinsData(self._petId)
-  if not self._skinsStateData or self._petSkinCfg then
-    for idx,skinCfg in ipairs(self._petSkinCfg) do
-      local uiSkinData = DPetSkinDetailCard:New(skinCfg)
-      uiSkinData:SetIsShopDetail(true)
-      local is_obtain = false
-      uiSkinData:SetIsCurrentSkin(false)
-      if self._skinsStateData then
-        local obtainedSkinInfo = (self._skinsStateData).skin_info
+        uiSkinData:SetIsCurrentSkin(isCurSkin)
+        local obtainedSkinInfo = self._skinsStateData.skin_info
         if obtainedSkinInfo then
-          for _,skinInfo in pairs(obtainedSkinInfo) do
+          for _, skinInfo in pairs(obtainedSkinInfo) do
             if skinInfo and skinInfo.skin_id == skinCfg.id then
               is_obtain = true
               uiSkinData:SetUnlockCg(skinInfo.unlock_CG)
@@ -753,44 +555,77 @@ UIPetSkinsMainController._Shop_RefreshScrollItemStateData = function(self)
             end
           end
         end
+      else
+        local isCurSkin = idx == 1
+        uiSkinData:SetIsCurrentSkin(isCurSkin)
       end
-      do
-        do
-          uiSkinData:SetObtained(is_obtain)
-          ;
-          (table.insert)(self._uiSkinsData, uiSkinData)
-          -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
-      end
+      uiSkinData:SetObtained(is_obtain)
+      table.insert(self._uiSkinsData, uiSkinData)
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._Tips_RefreshScrollItemStateData = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIPetSkinsMainController:_Shop_RefreshScrollItemStateData()
   if not self._petModule then
-    return 
+    return
   end
   self._havePet = true
   self._uiSkinsData = {}
-  local petModuleInfo = (self._petModule):GetPetByTemplateId(self._petId)
+  local petModuleInfo = self._petModule:GetPetByTemplateId(self._petId)
   if not petModuleInfo then
     self._havePet = false
   end
-  self._skinsStateData = (self._petModule):GetPetSkinsData(self._petId)
-  if not self._skinsStateData or self._petSkinCfg then
-    for idx,skinCfg in ipairs(self._petSkinCfg) do
+  self._skinsStateData = self._petModule:GetPetSkinsData(self._petId)
+  if self._skinsStateData then
+  end
+  if self._petSkinCfg then
+    for idx, skinCfg in ipairs(self._petSkinCfg) do
+      local uiSkinData = DPetSkinDetailCard:New(skinCfg)
+      uiSkinData:SetIsShopDetail(true)
+      local is_obtain = false
+      uiSkinData:SetIsCurrentSkin(false)
+      if self._skinsStateData then
+        local obtainedSkinInfo = self._skinsStateData.skin_info
+        if obtainedSkinInfo then
+          for _, skinInfo in pairs(obtainedSkinInfo) do
+            if skinInfo and skinInfo.skin_id == skinCfg.id then
+              is_obtain = true
+              uiSkinData:SetUnlockCg(skinInfo.unlock_CG)
+              break
+            end
+          end
+        end
+      else
+      end
+      uiSkinData:SetObtained(is_obtain)
+      table.insert(self._uiSkinsData, uiSkinData)
+    end
+  end
+end
+
+function UIPetSkinsMainController:_Tips_RefreshScrollItemStateData()
+  if not self._petModule then
+    return
+  end
+  self._havePet = true
+  self._uiSkinsData = {}
+  local petModuleInfo = self._petModule:GetPetByTemplateId(self._petId)
+  if not petModuleInfo then
+    self._havePet = false
+  end
+  self._skinsStateData = self._petModule:GetPetSkinsData(self._petId)
+  if self._skinsStateData then
+  end
+  if self._petSkinCfg then
+    for idx, skinCfg in ipairs(self._petSkinCfg) do
       local uiSkinData = DPetSkinDetailCard:New(skinCfg)
       uiSkinData:SetIsTipsDetail(true)
       local is_obtain = false
       uiSkinData:SetIsCurrentSkin(false)
       if self._skinsStateData then
-        local obtainedSkinInfo = (self._skinsStateData).skin_info
+        local obtainedSkinInfo = self._skinsStateData.skin_info
         if obtainedSkinInfo then
-          for _,skinInfo in pairs(obtainedSkinInfo) do
+          for _, skinInfo in pairs(obtainedSkinInfo) do
             if skinInfo and skinInfo.skin_id == skinCfg.id then
               is_obtain = true
               uiSkinData:SetUnlockCg(skinInfo.unlock_CG)
@@ -798,44 +633,37 @@ UIPetSkinsMainController._Tips_RefreshScrollItemStateData = function(self)
             end
           end
         end
+      else
       end
-      do
-        do
-          uiSkinData:SetObtained(is_obtain)
-          ;
-          (table.insert)(self._uiSkinsData, uiSkinData)
-          -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
-      end
+      uiSkinData:SetObtained(is_obtain)
+      table.insert(self._uiSkinsData, uiSkinData)
     end
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._ACTIVITY_RefreshScrollItemStateData = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIPetSkinsMainController:_ACTIVITY_RefreshScrollItemStateData()
   if not self._petModule then
-    return 
+    return
   end
   self._havePet = true
   self._uiSkinsData = {}
-  local petModuleInfo = (self._petModule):GetPetByTemplateId(self._petId)
+  local petModuleInfo = self._petModule:GetPetByTemplateId(self._petId)
   if not petModuleInfo then
     self._havePet = false
   end
-  self._skinsStateData = (self._petModule):GetPetSkinsData(self._petId)
-  if not self._skinsStateData or self._petSkinCfg then
-    for idx,skinCfg in ipairs(self._petSkinCfg) do
+  self._skinsStateData = self._petModule:GetPetSkinsData(self._petId)
+  if self._skinsStateData then
+  end
+  if self._petSkinCfg then
+    for idx, skinCfg in ipairs(self._petSkinCfg) do
       local uiSkinData = DPetSkinDetailCard:New(skinCfg)
       uiSkinData:SetIsShopDetail(true)
       local is_obtain = false
       uiSkinData:SetIsCurrentSkin(false)
       if self._skinsStateData then
-        local obtainedSkinInfo = (self._skinsStateData).skin_info
+        local obtainedSkinInfo = self._skinsStateData.skin_info
         if obtainedSkinInfo then
-          for _,skinInfo in pairs(obtainedSkinInfo) do
+          for _, skinInfo in pairs(obtainedSkinInfo) do
             if skinInfo and skinInfo.skin_id == skinCfg.id then
               is_obtain = true
               uiSkinData:SetUnlockCg(skinInfo.unlock_CG)
@@ -843,37 +671,25 @@ UIPetSkinsMainController._ACTIVITY_RefreshScrollItemStateData = function(self)
             end
           end
         end
+      else
       end
-      do
-        do
-          uiSkinData:SetObtained(is_obtain)
-          ;
-          (table.insert)(self._uiSkinsData, uiSkinData)
-          -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
-      end
+      uiSkinData:SetObtained(is_obtain)
+      table.insert(self._uiSkinsData, uiSkinData)
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._RefreshScrollItemUiState = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIPetSkinsMainController:_RefreshScrollItemUiState()
   if not self._uiSkinsData then
-    return 
+    return
   end
-  for idx,item in ipairs(self._items) do
-    local data = (self._uiSkinsData)[idx]
+  for idx, item in ipairs(self._items) do
+    local data = self._uiSkinsData[idx]
     item:RefreshData(data)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._CalcPosX = function(self, idx)
-  -- function num : 0_20
+function UIPetSkinsMainController:_CalcPosX(idx)
   local posx = 0
   if not idx or self._count <= 1 then
     return posx
@@ -883,319 +699,218 @@ UIPetSkinsMainController._CalcPosX = function(self, idx)
   return posx
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._RefreshPetInfo = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIPetSkinsMainController:_RefreshPetInfo()
   if not self._cfgPet then
-    return 
+    return
   end
-  ;
-  (self._petNameCHLabel):SetText((StringTable.Get)((self._cfgPet).Name))
-  local enName = (self._cfgPet).EnglishName
-  local strEnName = (StringTable.Get)(enName)
-  ;
-  (self._petNameENLabel):SetText(strEnName)
-  ;
-  (self._petLogoIconLoader):LoadImage((self._cfgPet).Logo)
+  self._petNameCHLabel:SetText(StringTable.Get(self._cfgPet.Name))
+  local enName = self._cfgPet.EnglishName
+  local strEnName = StringTable.Get(enName)
+  self._petNameENLabel:SetText(strEnName)
+  self._petLogoIconLoader:LoadImage(self._cfgPet.Logo)
   self:_SetSubTitleColor()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._Refresh3DModel = function(self)
-  -- function num : 0_22
+function UIPetSkinsMainController:_Refresh3DModel()
   if self._modelShowMng then
-    (self._modelShowMng):ShowPetSkinModel(self._curSelSkinId)
+    self._modelShowMng:ShowPetSkinModel(self._curSelSkinId)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._Release3d = function(self)
-  -- function num : 0_23
+function UIPetSkinsMainController:_Release3d()
   if self._modelShowMng then
-    (self._modelShowMng):Reset()
+    self._modelShowMng:Reset()
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._RefreshDesignInfo = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local cfgSkin = (Cfg.cfg_pet_skin)[self._curSelSkinId]
+function UIPetSkinsMainController:_RefreshDesignInfo()
+  local cfgSkin = Cfg.cfg_pet_skin[self._curSelSkinId]
   if cfgSkin then
-    (self._designText):SetText((StringTable.Get)(cfgSkin.DesignStr))
-    local timerEvent = ((GameGlobal.Timer)()):AddEventTimes(100, 1, function()
-    -- function num : 0_24_0 , upvalues : self
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-    if ((self._designTextTrans).sizeDelta).y < ((self._designScrollRect).sizeDelta).y then
-      (self._designScroll).vertical = false
-    else
-      -- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-      ;
-      (self._designScroll).vertical = true
-    end
-  end
-)
+    self._designText:SetText(StringTable.Get(cfgSkin.DesignStr))
+    local timerEvent = GameGlobal.Timer():AddEventTimes(100, 1, function()
+      if self._designTextTrans.sizeDelta.y < self._designScrollRect.sizeDelta.y then
+        self._designScroll.vertical = false
+      else
+        self._designScroll.vertical = true
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.CloseSubPanelAreaOnClick = function(self, go)
-  -- function num : 0_25
+function UIPetSkinsMainController:CloseSubPanelAreaOnClick(go)
   if self._3DModelShow then
     self:ModelBtnOnClick(nil)
-  else
-    if self._DesignInfoShow then
-      self:DesignInfoBtnOnClick(nil)
-    end
+  elseif self._DesignInfoShow then
+    self:DesignInfoBtnOnClick(nil)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.ModelBtnOnClick = function(self, go)
-  -- function num : 0_26 , upvalues : _ENV
-  do return  end
+function UIPetSkinsMainController:ModelBtnOnClick(go)
+  do return end
   self._3DModelShow = not self._3DModelShow
   self._DesignInfoShow = false
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._designInfoBtnImg).sprite = (self.atlas):GetSprite("fashion_main_frame9")
-  ;
-  (self._designInfoBtnText):SetText((StringTable.Get)("str_pet_skin_show_design_info"))
-  ;
-  (self._subPanelAreaGo):SetActive(self._3DModelShow)
-  ;
-  (self._closeSubPanelAreaGo):SetActive(self._3DModelShow)
-  ;
-  (self._3DPanelGo):SetActive(self._3DModelShow)
-  ;
-  (self._designPanelGo):SetActive(false)
+  self._designInfoBtnImg.sprite = self.atlas:GetSprite("fashion_main_frame9")
+  self._designInfoBtnText:SetText(StringTable.Get("str_pet_skin_show_design_info"))
+  self._subPanelAreaGo:SetActive(self._3DModelShow)
+  self._closeSubPanelAreaGo:SetActive(self._3DModelShow)
+  self._3DPanelGo:SetActive(self._3DModelShow)
+  self._designPanelGo:SetActive(false)
   if self._3DModelShow then
     self:_Set3DModelTitle()
     self:_Refresh3DModel()
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._modelBtnImg).sprite = (self.atlas):GetSprite("fashion_main_frame10")
-    ;
-    (self._modelBtnText):SetText((StringTable.Get)("str_pet_skin_hide_model"))
+    self._modelBtnImg.sprite = self.atlas:GetSprite("fashion_main_frame10")
+    self._modelBtnText:SetText(StringTable.Get("str_pet_skin_hide_model"))
   else
     self:_Release3d()
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._modelBtnImg).sprite = (self.atlas):GetSprite("fashion_main_frame9")
-    ;
-    (self._modelBtnText):SetText((StringTable.Get)("str_pet_skin_show_model"))
+    self._modelBtnImg.sprite = self.atlas:GetSprite("fashion_main_frame9")
+    self._modelBtnText:SetText(StringTable.Get("str_pet_skin_show_model"))
   end
   if self._3DModelShow then
     self:Lock("UIPetSkinsMainController:ModelBtnOnClick")
     if self._uiAnim then
-      (self._uiAnim):Play(((self._animNames).show_3d).name)
+      self._uiAnim:Play(self._animNames.show_3d.name)
     end
-    -- DECOMPILER ERROR at PC95: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._timeEvents)._show3dTimeEvent = ((GameGlobal.Timer)()):AddEvent(((self._animNames).show_3d).time_len, function()
-    -- function num : 0_26_0 , upvalues : self
-    self:UnLock("UIPetSkinsMainController:ModelBtnOnClick")
-  end
-)
+    self._timeEvents._show3dTimeEvent = GameGlobal.Timer():AddEvent(self._animNames.show_3d.time_len, function()
+      self:UnLock("UIPetSkinsMainController:ModelBtnOnClick")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.DesignInfoBtnOnClick = function(self, go)
-  -- function num : 0_27 , upvalues : _ENV
+function UIPetSkinsMainController:DesignInfoBtnOnClick(go)
   self._DesignInfoShow = not self._DesignInfoShow
   self._3DModelShow = false
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._modelBtnImg).sprite = (self.atlas):GetSprite("fashion_main_frame9")
-  ;
-  (self._modelBtnText):SetText((StringTable.Get)("str_pet_skin_show_model"))
+  self._modelBtnImg.sprite = self.atlas:GetSprite("fashion_main_frame9")
+  self._modelBtnText:SetText(StringTable.Get("str_pet_skin_show_model"))
   self:_Release3d()
-  ;
-  (self._subPanelAreaGo):SetActive(self._DesignInfoShow)
-  ;
-  (self._closeSubPanelAreaGo):SetActive(self._DesignInfoShow)
-  ;
-  (self._designPanelGo):SetActive(self._DesignInfoShow)
-  ;
-  (self._3DPanelGo):SetActive(false)
+  self._subPanelAreaGo:SetActive(self._DesignInfoShow)
+  self._closeSubPanelAreaGo:SetActive(self._DesignInfoShow)
+  self._designPanelGo:SetActive(self._DesignInfoShow)
+  self._3DPanelGo:SetActive(false)
   if self._DesignInfoShow then
     self:_SetDesignTitle()
     self:_RefreshDesignInfo()
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._designInfoBtnImg).sprite = (self.atlas):GetSprite("fashion_main_frame10")
-    ;
-    (self._designInfoBtnText):SetText((StringTable.Get)("str_pet_skin_hide_design_info"))
+    self._designInfoBtnImg.sprite = self.atlas:GetSprite("fashion_main_frame10")
+    self._designInfoBtnText:SetText(StringTable.Get("str_pet_skin_hide_design_info"))
   else
-    -- DECOMPILER ERROR at PC61: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._designInfoBtnImg).sprite = (self.atlas):GetSprite("fashion_main_frame9")
-    ;
-    (self._designInfoBtnText):SetText((StringTable.Get)("str_pet_skin_show_design_info"))
+    self._designInfoBtnImg.sprite = self.atlas:GetSprite("fashion_main_frame9")
+    self._designInfoBtnText:SetText(StringTable.Get("str_pet_skin_show_design_info"))
   end
   if self._DesignInfoShow then
     self:Lock("UIPetSkinsMainController:DesignInfoBtnOnClick")
     if self._uiAnim then
-      (self._uiAnim):Play(((self._animNames).show_design).name)
+      self._uiAnim:Play(self._animNames.show_design.name)
     end
-    -- DECOMPILER ERROR at PC94: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._timeEvents)._showDesignTimeEvent = ((GameGlobal.Timer)()):AddEvent(((self._animNames).show_design).time_len, function()
-    -- function num : 0_27_0 , upvalues : self
-    self:UnLock("UIPetSkinsMainController:DesignInfoBtnOnClick")
-  end
-)
+    self._timeEvents._showDesignTimeEvent = GameGlobal.Timer():AddEvent(self._animNames.show_design.time_len, function()
+      self:UnLock("UIPetSkinsMainController:DesignInfoBtnOnClick")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.FullScreenAnimBtnOnClick = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UIPetSkinsMainController:FullScreenAnimBtnOnClick()
   if self._playSpineAnim then
-    return 
+    return
   end
-  local cfg_pet_skin = (Cfg.cfg_pet_skin)[self._curSelSkinId]
+  local cfg_pet_skin = Cfg.cfg_pet_skin[self._curSelSkinId]
   if not cfg_pet_skin then
-    (Log.error)("###[UIMainLobbyFinal] cfg_pet_skin is nil ! id --> ", skinid)
-    return 
+    Log.error("###[UIMainLobbyFinal] cfg_pet_skin is nil ! id --> ", skinid)
+    return
   end
   local spineAnims = cfg_pet_skin.MainLobbySpineAnim
   if not spineAnims then
-    return 
+    return
   end
   local animList = {}
   for i = 1, #spineAnims do
     local spineAnim = spineAnims[i]
-    ;
-    (table.insert)(animList, spineAnim)
+    table.insert(animList, spineAnim)
   end
   if #animList == 0 then
-    (Log.error)("###[UIMainLobbyFinal] animList is nil ! skinid --> ", skinid)
-    return 
+    Log.error("###[UIMainLobbyFinal] animList is nil ! skinid --> ", skinid)
+    return
   end
-  local randomVal = (math.random)(#animList)
+  local randomVal = math.random(#animList)
   local anim = animList[randomVal]
   local animationName = anim
   if not self._dcgHandle then
-    (Log.debug)("###[UIMainLobbyFinal] self._dcgHandle is nil --> ", self._dynamicSpineSettings)
-    return 
+    Log.debug("###[UIMainLobbyFinal] self._dcgHandle is nil --> ", self._dynamicSpineSettings)
+    return
   end
-  local entry = (self._dcgHandle):SetAnimationWithTrackEntryReturn(0, animationName, false)
-  ;
-  (self._dcgHandle):SetAnimMixTime(0)
-  ;
-  (self._dcgHandle):Update(0)
-  if (self._dcgHandle):GetCurDynamicCGType() == DynamicCGType.Spine or (self._dcgHandle):GetCurDynamicCGType() == DynamicCGType.None then
+  local entry = self._dcgHandle:SetAnimationWithTrackEntryReturn(0, animationName, false)
+  self._dcgHandle:SetAnimMixTime(0)
+  self._dcgHandle:Update(0)
+  if self._dcgHandle:GetCurDynamicCGType() == DynamicCGType.Spine or self._dcgHandle:GetCurDynamicCGType() == DynamicCGType.None then
     self:PlayClickAnimBackIdleBySpine(entry)
-  else
-    if (self._dcgHandle):GetCurDynamicCGType() == DynamicCGType.Live2D then
-      self:PlayClickAnimBackIdleByLive2d(entry)
-    end
+  elseif self._dcgHandle:GetCurDynamicCGType() == DynamicCGType.Live2D then
+    self:PlayClickAnimBackIdleByLive2d(entry)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.PlayClickAnimBackIdleBySpine = function(self, entry)
-  -- function num : 0_29 , upvalues : _ENV
+function UIPetSkinsMainController:PlayClickAnimBackIdleBySpine(entry)
   if not entry then
-    return 
+    return
   end
   local anim = entry.Animation
   local duration = anim.Duration
-  local yieldTime = (math.floor)(duration * 1000)
+  local yieldTime = math.floor(duration * 1000)
   if self._spineEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+    GameGlobal.Timer():CancelEvent(self._spineEvent)
     self._spineEvent = nil
     self._playSpineAnim = false
   end
   self._playSpineAnim = true
-  self._spineEvent = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_29_0 , upvalues : self
+  self._spineEvent = GameGlobal.Timer():AddEvent(yieldTime, function()
     self._playSpineAnim = false
     local animationName = "idle"
-    ;
-    (self._dcgHandle):SetAnimation(0, animationName, true)
-    ;
-    (self._dcgHandle):SetAnimMixTime(0)
-    ;
-    (self._dcgHandle):Update(0)
-  end
-)
-  ;
-  (Log.debug)("###[UIMainLobbyFinal] spine 动画名字[", animationName, "] 动画时长[", duration, "]")
+    self._dcgHandle:SetAnimation(0, animationName, true)
+    self._dcgHandle:SetAnimMixTime(0)
+    self._dcgHandle:Update(0)
+  end)
+  Log.debug("###[UIMainLobbyFinal] spine 动画名字[", animationName, "] 动画时长[", duration, "]")
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.PlayClickAnimBackIdleByLive2d = function(self, anim)
-  -- function num : 0_30 , upvalues : _ENV
+function UIPetSkinsMainController:PlayClickAnimBackIdleByLive2d(anim)
   if anim then
     local duration = anim.length
-    local yieldTime = (math.floor)(duration * 1000)
+    local yieldTime = math.floor(duration * 1000)
     if self._spineEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+      GameGlobal.Timer():CancelEvent(self._spineEvent)
       self._spineEvent = nil
       self._playSpineAnim = false
     end
     self._playSpineAnim = true
-    self._spineEvent = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_30_0 , upvalues : self
-    self._playSpineAnim = false
-    local animationName = "idle"
-    ;
-    (self._dcgHandle):SetAnimationWithTrackEntryReturn(0, animationName, true)
-  end
-)
+    self._spineEvent = GameGlobal.Timer():AddEvent(yieldTime, function()
+      self._playSpineAnim = false
+      local animationName = "idle"
+      self._dcgHandle:SetAnimationWithTrackEntryReturn(0, animationName, true)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.CgBtnOnClick = function(self, go)
-  -- function num : 0_31 , upvalues : _ENV
-  local curUiData = (self._uiSkinsData)[self._curSelSkinIndex]
-  local skinCfg = (self._petSkinCfg)[self._curSelSkinIndex]
-  if curUiData and skinCfg and curUiData:IsObtained() and skinCfg.CgId then
-    if curUiData:IsUnlockCg() then
-      self:_PlayCurSelSkinCg(false)
+function UIPetSkinsMainController:CgBtnOnClick(go)
+  local curUiData = self._uiSkinsData[self._curSelSkinIndex]
+  local skinCfg = self._petSkinCfg[self._curSelSkinIndex]
+  if curUiData and skinCfg then
+    if curUiData:IsObtained() then
+      if skinCfg.CgId then
+        if curUiData:IsUnlockCg() then
+          self:_PlayCurSelSkinCg(false)
+        else
+          ToastManager.ShowToast(StringTable.Get("str_pet_skin_cg_lock_story"))
+        end
+      end
     else
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_pet_skin_cg_lock_story"))
+      ToastManager.ShowToast(StringTable.Get("str_pet_skin_cg_lock_story"))
     end
   end
-  ;
-  (ToastManager.ShowToast)((StringTable.Get)("str_pet_skin_cg_lock_story"))
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._ConfirmToPlayCurSelSkinStory = function(self, bFirst)
-  -- function num : 0_32 , upvalues : _ENV
+function UIPetSkinsMainController:_ConfirmToPlayCurSelSkinStory(bFirst)
   local strTitle = ""
   local strText = ""
-  local cfgSkin = (Cfg.cfg_pet_skin)[self._curSelSkinId]
+  local cfgSkin = Cfg.cfg_pet_skin[self._curSelSkinId]
   if cfgSkin then
     local storyId = cfgSkin.StoryId
-    local storyCfg = (Cfg.cfg_pet_story)[storyId]
+    local storyCfg = Cfg.cfg_pet_story[storyId]
     if storyCfg then
       local tipsStr = "str_pet_skin_collect_fashion_story_tips_2"
       local titleStr = "str_quest_base_type_stroy"
@@ -1203,166 +918,125 @@ UIPetSkinsMainController._ConfirmToPlayCurSelSkinStory = function(self, bFirst)
         tipsStr = "str_pet_skin_collect_fashion_story_tips_1"
         titleStr = "str_pet_skin_collect_fashion_story"
       end
-      strText = (StringTable.Get)(tipsStr, (StringTable.Get)(storyCfg.Title))
-      strTitle = (StringTable.Get)(titleStr)
+      strText = StringTable.Get(tipsStr, StringTable.Get(storyCfg.Title))
+      strTitle = StringTable.Get(titleStr)
     else
-      do
-        do
-          ;
-          (Log.exception)("cfg_pet_story 中缺少配置:", storyId)
-          local okCb = function()
-    -- function num : 0_32_0 , upvalues : self, bFirst
+      Log.exception("cfg_pet_story 中缺少配置:", storyId)
+    end
+  end
+  
+  local function okCb()
     self:_PlayCurSelSkinStory(bFirst)
   end
-
-          local okBtnText = (StringTable.Get)("str_pet_skin_enter")
-          ;
-          (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, strTitle, strText, okCb, nil, nil, nil, nil, okBtnText)
-        end
-      end
-    end
-  end
+  
+  local okBtnText = StringTable.Get("str_pet_skin_enter")
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, strTitle, strText, okCb, nil, nil, nil, nil, okBtnText)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._PlayCurSelSkinStory = function(self, bFirst)
-  -- function num : 0_33 , upvalues : _ENV
+function UIPetSkinsMainController:_PlayCurSelSkinStory(bFirst)
   local isFirst = bFirst or false
-  local skinCfg = (self._petSkinCfg)[self._curSelSkinIndex]
+  local skinCfg = self._petSkinCfg[self._curSelSkinIndex]
   if skinCfg and skinCfg.StoryId then
-    local storyCfg = (Cfg.cfg_pet_story)[skinCfg.StoryId]
+    local storyCfg = Cfg.cfg_pet_story[skinCfg.StoryId]
     if storyCfg then
-      ((GameGlobal.GetModule)(StoryModule)):StartStory(storyCfg.StoryID, function()
-    -- function num : 0_33_0 , upvalues : self, skinCfg, isFirst
-    self:_StoryPlayEnd(skinCfg.StoryId, isFirst, skinCfg.CgId)
-  end
-, true)
+      GameGlobal.GetModule(StoryModule):StartStory(storyCfg.StoryID, function()
+        self:_StoryPlayEnd(skinCfg.StoryId, isFirst, skinCfg.CgId)
+      end, true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._PlayCurSelSkinCg = function(self, bFirst)
-  -- function num : 0_34 , upvalues : _ENV
+function UIPetSkinsMainController:_PlayCurSelSkinCg(bFirst)
   local isFirst = bFirst or false
-  local skinCfg = (self._petSkinCfg)[self._curSelSkinIndex]
+  local skinCfg = self._petSkinCfg[self._curSelSkinIndex]
   if skinCfg and skinCfg.CgId then
-    local cgCfg = (Cfg.cfg_cg_book)[(skinCfg.CgId)[1]]
+    local cgCfg = Cfg.cfg_cg_book[skinCfg.CgId[1]]
     if cgCfg then
       self:ShowDialog("UIPetSkinsGetCgController", cgCfg.StaticPic, isFirst, skinCfg.CgId, 1)
     end
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._StoryPlayEnd = function(self, storyid, isFirst, cgId)
-  -- function num : 0_35 , upvalues : _ENV
+function UIPetSkinsMainController:_StoryPlayEnd(storyid, isFirst, cgId)
   if isFirst then
     self._unlockCgTaskID = self:StartTask(function(TT)
-    -- function num : 0_35_0 , upvalues : self, cgId, _ENV
-    self:Lock("UIPetSkinsMainController:_StoryPlayEnd")
-    local res = (self._petModule):UnlockSkinCG(TT, self._curSelSkinId)
-    if res:GetSucc() then
-      if cgId then
-        self:_PlayCurSelSkinCg(true)
-      else
-        self:_ShowStoryTips()
+      self:Lock("UIPetSkinsMainController:_StoryPlayEnd")
+      local res = self._petModule:UnlockSkinCG(TT, self._curSelSkinId)
+      if res:GetSucc() then
+        if cgId then
+          self:_PlayCurSelSkinCg(true)
+        else
+          self:_ShowStoryTips()
+        end
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.WatchPetSkinStory)
       end
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.WatchPetSkinStory)
-    end
-    self:_ForceRefreshUi()
-    self:UnLock("UIPetSkinsMainController:_StoryPlayEnd")
-  end
-)
+      self:_ForceRefreshUi()
+      self:UnLock("UIPetSkinsMainController:_StoryPlayEnd")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._ShowStoryTips = function(self)
-  -- function num : 0_36 , upvalues : _ENV
+function UIPetSkinsMainController:_ShowStoryTips()
   self:Lock("UIPetSkinsMainController:_ShowStoryTips")
-  self:ShowDialog("UIAircraftUnlockFileController", (StringTable.Get)("str_aircraft_review_story"), (StringTable.Get)("str_aircraft_review_story_en"))
-  ;
-  ((GameGlobal.Timer)()):AddEvent(3000, function()
-    -- function num : 0_36_0 , upvalues : _ENV, self
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIAircraftUnlockFileController")
+  self:ShowDialog("UIAircraftUnlockFileController", StringTable.Get("str_aircraft_review_story"), StringTable.Get("str_aircraft_review_story_en"))
+  GameGlobal.Timer():AddEvent(3000, function()
+    GameGlobal.UIStateManager():CloseDialog("UIAircraftUnlockFileController")
     self:UnLock("UIPetSkinsMainController:_ShowStoryTips")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._ConfirmToUseNewSkin = function(self)
-  -- function num : 0_37 , upvalues : _ENV
-  local strTitle = (StringTable.Get)("str_pet_skin_get_new_skin")
-  local petName = (StringTable.Get)((self._cfgPet).Name)
-  local cfgSkin = (Cfg.cfg_pet_skin)[self._curSelSkinId]
+function UIPetSkinsMainController:_ConfirmToUseNewSkin()
+  local strTitle = StringTable.Get("str_pet_skin_get_new_skin")
+  local petName = StringTable.Get(self._cfgPet.Name)
+  local cfgSkin = Cfg.cfg_pet_skin[self._curSelSkinId]
   local skinName = ""
   local skinType = ""
   if cfgSkin then
-    skinName = (StringTable.Get)(cfgSkin.SkinName)
+    skinName = StringTable.Get(cfgSkin.SkinName)
     if cfgSkin.SkinType == PetSkinFlag.PSF_NORMAL then
-      skinType = (StringTable.Get)("str_pet_skin_fashion")
-    else
-      if cfgSkin.SkinType == PetSkinFlag.PSF_COLLECTION then
-        skinType = (StringTable.Get)("str_pet_skin_collect_fashion")
-      end
+      skinType = StringTable.Get("str_pet_skin_fashion")
+    elseif cfgSkin.SkinType == PetSkinFlag.PSF_COLLECTION then
+      skinType = StringTable.Get("str_pet_skin_collect_fashion")
     end
   end
-  local strText = (StringTable.Get)("str_pet_skin_net_skin_tips", petName, skinType, skinName)
-  local okCb = function()
-    -- function num : 0_37_0 , upvalues : self
+  local strText = StringTable.Get("str_pet_skin_net_skin_tips", petName, skinType, skinName)
+  
+  local function okCb()
     self:_TryUseSkin(self._curSelSkinId, true)
   end
-
-  local okBtnText = (StringTable.Get)("str_pet_skin_change")
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, strTitle, strText, okCb, nil, nil, nil, nil, okBtnText)
+  
+  local okBtnText = StringTable.Get("str_pet_skin_change")
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, strTitle, strText, okCb, nil, nil, nil, nil, okBtnText)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._TryUseSkin = function(self, skinId, inShop)
-  -- function num : 0_38 , upvalues : _ENV
-  local cfgSkin = (Cfg.cfg_pet_skin)[self._curSelSkinId]
+function UIPetSkinsMainController:_TryUseSkin(skinId, inShop)
+  local cfgSkin = Cfg.cfg_pet_skin[self._curSelSkinId]
   if not cfgSkin then
-    return 
+    return
   end
-  if not (self._petModule):HasPet(cfgSkin.PetId) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_pet_skin_change_fail_tips"))
-    return 
+  if not self._petModule:HasPet(cfgSkin.PetId) then
+    ToastManager.ShowToast(StringTable.Get("str_pet_skin_change_fail_tips"))
+    return
   end
   if GameSingle then
     PlayerPrefsSetPersonString("PetSkin_" .. cfgSkin.PetId, skinId)
-    local skindata = (self._petModule):GetPetSkinsData(cfgSkin.PetId)
+    local skindata = self._petModule:GetPetSkinsData(cfgSkin.PetId)
     if skindata ~= nil then
       skindata.current_skin = skinId
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPetSkinChange)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPetSkinChange)
     end
     self:_ForceRefreshUi()
-    return 
+    return
   end
-  do
-    self._tryUseSkinTaskId = self:StartTask(self._TaskTryUseSkin, self, skinId, inShop)
-  end
+  self._tryUseSkinTaskId = self:StartTask(self._TaskTryUseSkin, self, skinId, inShop)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._TaskTryUseSkin = function(self, TT, skinId, inShop)
-  -- function num : 0_39 , upvalues : _ENV
+function UIPetSkinsMainController:_TaskTryUseSkin(TT, skinId, inShop)
   self:Lock("UIPetSkinsMainController_UseSkin")
-  local res = (self._petModule):PetSkinChange(TT, skinId)
+  local res = self._petModule:PetSkinChange(TT, skinId)
   if res:GetSucc() then
     if inShop then
-      (ToastManager.ShowToast)((StringTable.Get)("str_pet_skin_change_success_tips"))
+      ToastManager.ShowToast(StringTable.Get("str_pet_skin_change_success_tips"))
     end
     self:_ForceRefreshUi()
     self:UnLock("UIPetSkinsMainController_UseSkin")
@@ -1371,97 +1045,75 @@ UIPetSkinsMainController._TaskTryUseSkin = function(self, TT, skinId, inShop)
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.UseBtnOnClick = function(self, go)
-  -- function num : 0_40
+function UIPetSkinsMainController:UseBtnOnClick(go)
   self:_TryUseSkin(self._curSelSkinId, false)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._Set3DModelTitle = function(self)
-  -- function num : 0_41 , upvalues : _ENV
+function UIPetSkinsMainController:_Set3DModelTitle()
   if not self._cfgPet then
-    return 
+    return
   end
-  local petName = (StringTable.Get)((self._cfgPet).Name)
-  local cfgSkin = (Cfg.cfg_pet_skin)[self._curSelSkinId]
+  local petName = StringTable.Get(self._cfgPet.Name)
+  local cfgSkin = Cfg.cfg_pet_skin[self._curSelSkinId]
   local skinName = ""
   if cfgSkin then
-    skinName = (StringTable.Get)(cfgSkin.SkinName)
+    skinName = StringTable.Get(cfgSkin.SkinName)
   end
-  local title = (StringTable.Get)("str_pet_skin_show_model_title")
-  ;
-  (self._subPanelTitleText):SetText(title)
+  local title = StringTable.Get("str_pet_skin_show_model_title")
+  self._subPanelTitleText:SetText(title)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._SetDesignTitle = function(self)
-  -- function num : 0_42 , upvalues : _ENV
+function UIPetSkinsMainController:_SetDesignTitle()
   if not self._cfgPet then
-    return 
+    return
   end
-  local petName = (StringTable.Get)((self._cfgPet).Name)
-  local cfgSkin = (Cfg.cfg_pet_skin)[self._curSelSkinId]
+  local petName = StringTable.Get(self._cfgPet.Name)
+  local cfgSkin = Cfg.cfg_pet_skin[self._curSelSkinId]
   local skinName = ""
   if cfgSkin then
-    skinName = (StringTable.Get)(cfgSkin.SkinName)
+    skinName = StringTable.Get(cfgSkin.SkinName)
   end
-  local title = (StringTable.Get)("str_pet_skin_show_design_info")
-  ;
-  (self._subPanelTitleText):SetText(title)
+  local title = StringTable.Get("str_pet_skin_show_design_info")
+  self._subPanelTitleText:SetText(title)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._SetSubTitleColor = function(self)
-  -- function num : 0_43
+function UIPetSkinsMainController:_SetSubTitleColor()
   local petCfg = self._cfgPet
   local tags = petCfg.Tags
   if not tags or tags[1] == nil then
-    return 
+    return
   end
   local tag = tags[1]
-  local color = (self._campSubTitleAreaColor)[tag]
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R5 in 'UnsetPending'
-
+  local color = self._campSubTitleAreaColor[tag]
   if color then
-    (self._subPanelTitleAreaImg).color = color
+    self._subPanelTitleAreaImg.color = color
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._SetCampBg = function(self, templateId, skinId, imageLoader)
-  -- function num : 0_44 , upvalues : _ENV
-  local skinCfg = (Cfg.cfg_pet_skin)[skinId]
+function UIPetSkinsMainController:_SetCampBg(templateId, skinId, imageLoader)
+  local skinCfg = Cfg.cfg_pet_skin[skinId]
   if skinCfg and skinCfg.CampBg then
     imageLoader:LoadImage(skinCfg.CampBg)
-    return 
+    return
   end
   local petCfg = self._cfgPet
   local tags = petCfg.Tags
   if not tags or tags[1] == nil then
-    return 
+    return
   end
   local tag = tags[1]
-  local campBg = (self._campBg)[tag]
+  local campBg = self._campBg[tag]
   if campBg then
     imageLoader:LoadImage(campBg)
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.LeftArrowOnClick = function(self, go)
-  -- function num : 0_45
+function UIPetSkinsMainController:LeftArrowOnClick(go)
   if self._count <= 1 then
-    return 
+    return
   end
-  if self._curSelSkinIndex <= 1 then
-    return 
+  if 1 >= self._curSelSkinIndex then
+    return
   end
   local idx = self._curSelSkinIndex - 1
   self:_SelectSkinCellIdx(idx)
@@ -1469,15 +1121,12 @@ UIPetSkinsMainController.LeftArrowOnClick = function(self, go)
   self._isDarging = false
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.RightArrowOnClick = function(self, go)
-  -- function num : 0_46
+function UIPetSkinsMainController:RightArrowOnClick(go)
   if self._count <= 1 then
-    return 
+    return
   end
-  if self._count <= self._curSelSkinIndex then
-    return 
+  if self._curSelSkinIndex >= self._count then
+    return
   end
   local idx = self._curSelSkinIndex + 1
   self:_SelectSkinCellIdx(idx)
@@ -1485,69 +1134,42 @@ UIPetSkinsMainController.RightArrowOnClick = function(self, go)
   self._isDarging = false
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._InitSkinListData = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function UIPetSkinsMainController:_InitSkinListData()
   if self._openType == PetSkinUiOpenType.PSUOT_SHOW_LIST then
-    self._petSkinCfg = (Cfg.cfg_pet_skin)({PetId = self._petId})
-    ;
-    (table.sort)(self._petSkinCfg, function(a, b)
-    -- function num : 0_47_0
-    do return a.id < b.id end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    self._petSkinCfg = Cfg.cfg_pet_skin({
+      PetId = self._petId
+    })
+    table.sort(self._petSkinCfg, function(a, b)
+      return a.id < b.id
+    end)
+  elseif self._openType == PetSkinUiOpenType.PSUT_SHOP_DETAIL then
+    self._petSkinCfg = {}
+    self._petSkinCfg[1] = Cfg.cfg_pet_skin[self._curSelSkinId]
+  elseif self._openType == PetSkinUiOpenType.PSUOT_TIPS then
+    self._petSkinCfg = {}
+    self._petSkinCfg[1] = Cfg.cfg_pet_skin[self._curSelSkinId]
+  elseif self._openType == PetSkinUiOpenType.PSUOT_SEASON_SKIN then
+    self._petSkinCfg = {}
+    self._petSkinCfg[1] = Cfg.cfg_pet_skin[self._curSelSkinId]
   else
-    if self._openType == PetSkinUiOpenType.PSUT_SHOP_DETAIL then
+    if self._openType == PetSkinUiOpenType.PSUT_ACTIVITY_DETAIL then
       self._petSkinCfg = {}
-      -- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._petSkinCfg)[1] = (Cfg.cfg_pet_skin)[self._curSelSkinId]
+      self._petSkinCfg[1] = Cfg.cfg_pet_skin[self._curSelSkinId]
     else
-      if self._openType == PetSkinUiOpenType.PSUOT_TIPS then
-        self._petSkinCfg = {}
-        -- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._petSkinCfg)[1] = (Cfg.cfg_pet_skin)[self._curSelSkinId]
-      else
-        if self._openType == PetSkinUiOpenType.PSUOT_SEASON_SKIN then
-          self._petSkinCfg = {}
-          -- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-          ;
-          (self._petSkinCfg)[1] = (Cfg.cfg_pet_skin)[self._curSelSkinId]
-        else
-          if self._openType == PetSkinUiOpenType.PSUT_ACTIVITY_DETAIL then
-            self._petSkinCfg = {}
-            -- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-            ;
-            (self._petSkinCfg)[1] = (Cfg.cfg_pet_skin)[self._curSelSkinId]
-          end
-        end
-      end
     end
   end
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._RefreshUiByCurSkinIndex = function(self)
-  -- function num : 0_48 , upvalues : _ENV
-  local curCfg = (self._petSkinCfg)[self._curSelSkinIndex]
+function UIPetSkinsMainController:_RefreshUiByCurSkinIndex()
+  local curCfg = self._petSkinCfg[self._curSelSkinIndex]
   if not curCfg then
-    return 
+    return
   end
-  if (string.isnullorempty)(curCfg.Logo) then
-    (self._petLogoGo):SetActive(false)
+  if string.isnullorempty(curCfg.Logo) then
+    self._petLogoGo:SetActive(false)
   else
-    ;
-    (self._petLogoGo):SetActive(true)
-    ;
-    (self._petLogoImageLoader):LoadImage(curCfg.Logo)
+    self._petLogoGo:SetActive(true)
+    self._petLogoImageLoader:LoadImage(curCfg.Logo)
   end
   self._curSelSkinId = curCfg.id
   self:_SetCgBySkin(self._curSelSkinId)
@@ -1557,10 +1179,8 @@ UIPetSkinsMainController._RefreshUiByCurSkinIndex = function(self)
   self:_CheckInfoBtnShow()
   if self._3DModelShow then
     self:_Refresh3DModel()
-  else
-    if self._DesignInfoShow then
-      self:_RefreshDesignInfo()
-    end
+  elseif self._DesignInfoShow then
+    self:_RefreshDesignInfo()
   end
   self:ShowStaticAndDynamic()
   self:_RefreshStateAreaByCurSkinIndex()
@@ -1568,72 +1188,55 @@ UIPetSkinsMainController._RefreshUiByCurSkinIndex = function(self)
   self:_CheckOtherSkin()
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._CheckInfoBtnShow = function(self)
-  -- function num : 0_49 , upvalues : _ENV
-  local curUiData = (self._uiSkinsData)[self._curSelSkinIndex]
-  local skinCfg = (Cfg.cfg_pet_skin)[self._curSelSkinId]
+function UIPetSkinsMainController:_CheckInfoBtnShow()
+  local curUiData = self._uiSkinsData[self._curSelSkinIndex]
+  local skinCfg = Cfg.cfg_pet_skin[self._curSelSkinId]
   if not skinCfg then
-    return 
+    return
   end
   if not skinCfg.DesignStr or skinCfg.DesignStr == "" then
-    (self._designInfoBtnGo):SetActive(false)
+    self._designInfoBtnGo:SetActive(false)
     if self._DesignInfoShow then
       self:DesignInfoBtnOnClick(nil)
     end
   else
-    ;
-    (self._designInfoBtnGo):SetActive(true)
+    self._designInfoBtnGo:SetActive(true)
   end
   if skinCfg.StoryId then
-    (self._storyInfoBtnObj):SetActive(true)
+    self._storyInfoBtnObj:SetActive(true)
     if curUiData:IsObtained() then
-      (self._StoryInfoBtnText):SetText((StringTable.Get)("str_pet_skin_story_obtained"))
-      ;
-      (self._storyLockObj):SetActive(false)
+      self._StoryInfoBtnText:SetText(StringTable.Get("str_pet_skin_story_obtained"))
+      self._storyLockObj:SetActive(false)
       if curUiData:IsUnlockCg() then
-        (self._storyRedPointObj):SetActive(false)
+        self._storyRedPointObj:SetActive(false)
       else
-        ;
-        (self._storyRedPointObj):SetActive(true)
+        self._storyRedPointObj:SetActive(true)
       end
     else
-      ;
-      (self._storyRedPointObj):SetActive(false)
-      ;
-      (self._storyLockObj):SetActive(true)
-      ;
-      (self._StoryInfoBtnText):SetText((StringTable.Get)("str_pet_skin_story_unobtained"))
+      self._storyRedPointObj:SetActive(false)
+      self._storyLockObj:SetActive(true)
+      self._StoryInfoBtnText:SetText(StringTable.Get("str_pet_skin_story_unobtained"))
     end
   else
-    ;
-    (self._storyInfoBtnObj):SetActive(false)
+    self._storyInfoBtnObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._SetSkinNameBySkin = function(self, skinId)
-  -- function num : 0_50 , upvalues : _ENV
-  local skinCfg = (Cfg.cfg_pet_skin)[skinId]
+function UIPetSkinsMainController:_SetSkinNameBySkin(skinId)
+  local skinCfg = Cfg.cfg_pet_skin[skinId]
   if not skinCfg then
-    return 
+    return
   end
   local skinTitleFmt = "\"%s\""
-  local title = (string.format)(skinTitleFmt, (StringTable.Get)(skinCfg.SkinName))
-  ;
-  (self._petSkinNameText):SetText(title)
+  local title = string.format(skinTitleFmt, StringTable.Get(skinCfg.SkinName))
+  self._petSkinNameText:SetText(title)
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._RefreshStateAreaByCurSkinIndex = function(self)
-  -- function num : 0_51 , upvalues : _ENV
+function UIPetSkinsMainController:_RefreshStateAreaByCurSkinIndex()
   if not self._uiSkinsData then
-    return 
+    return
   end
-  local curUiData = (self._uiSkinsData)[self._curSelSkinIndex]
+  local curUiData = self._uiSkinsData[self._curSelSkinIndex]
   if curUiData then
     if curUiData:IsShopDetail() then
       if curUiData:IsObtained() then
@@ -1642,257 +1245,165 @@ UIPetSkinsMainController._RefreshStateAreaByCurSkinIndex = function(self)
         self:_ShowStateArea(PetSkinStateType.PSST_SHOP_BUY)
         self:_RefreshPriceBtn()
       end
-    else
-      if curUiData:IsTipsDetail() then
-        if curUiData:IsObtained() then
-          self:_ShowStateArea(PetSkinStateType.PSST_SHOP_OBTAINED)
-        else
-          self:_ShowStateArea(PetSkinStateType.PSST_NOT_OBTAIN)
-          self:_RefreshSkinGetPathText()
-        end
+    elseif curUiData:IsTipsDetail() then
+      if curUiData:IsObtained() then
+        self:_ShowStateArea(PetSkinStateType.PSST_SHOP_OBTAINED)
       else
-        if curUiData:IsCurrentSkin() then
-          self:_ShowStateArea(PetSkinStateType.PSST_CUR_SKIN)
-        else
-          if curUiData:IsObtained() then
-            self:_ShowStateArea(PetSkinStateType.PSST_CAN_USE)
-          else
-            self:_ShowStateArea(PetSkinStateType.PSST_NOT_OBTAIN)
-            self:_RefreshSkinGetPathText()
-          end
-        end
+        self:_ShowStateArea(PetSkinStateType.PSST_NOT_OBTAIN)
+        self:_RefreshSkinGetPathText()
       end
+    elseif curUiData:IsCurrentSkin() then
+      self:_ShowStateArea(PetSkinStateType.PSST_CUR_SKIN)
+    elseif curUiData:IsObtained() then
+      self:_ShowStateArea(PetSkinStateType.PSST_CAN_USE)
+    else
+      self:_ShowStateArea(PetSkinStateType.PSST_NOT_OBTAIN)
+      self:_RefreshSkinGetPathText()
     end
   end
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._RefreshCgMiniBtnAreaByCurSkinIndex = function(self, skinCfg)
-  -- function num : 0_52 , upvalues : _ENV
+function UIPetSkinsMainController:_RefreshCgMiniBtnAreaByCurSkinIndex(skinCfg)
   local showArea = false
-  if (self._timeEvents)._cgSwitchTimer then
-    ((GameGlobal.Timer)()):CancelEvent((self._timeEvents)._cgSwitchTimer)
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._timeEvents)._cgSwitchTimer = nil
+  if self._timeEvents._cgSwitchTimer then
+    GameGlobal.Timer():CancelEvent(self._timeEvents._cgSwitchTimer)
+    self._timeEvents._cgSwitchTimer = nil
   end
-  if skinCfg and skinCfg.CgId then
-    showArea = true
-    local cgCfg = (Cfg.cfg_cg_book)[(skinCfg.CgId)[1]]
-    if cgCfg then
-      if cgCfg.SkinCgPreview then
-        (self._cgMiniImgLoader):LoadImage(cgCfg.SkinCgPreview)
-      end
-      -- DECOMPILER ERROR at PC50: Confused about usage of register: R4 in 'UnsetPending'
-
-      if (table.count)(skinCfg.CgId) > 1 then
-        (self._timeEvents)._cgSwitchTimer = ((GameGlobal.Timer)()):AddEventTimes(self._cgPreviewSwitchTimer, TimerTriggerCount.Infinite, function()
-    -- function num : 0_52_0 , upvalues : _ENV, self, skinCfg
-    if (tolua.isnull)(self._cgMiniImgLoader) then
-      return 
-    end
-    local lastIndex = self._cgPreviewSwitchIndex + 1
-    self._cgPreviewSwitchIndex = (table.count)(skinCfg.CgId) < lastIndex and 1 or lastIndex
-    local cgCfg = (Cfg.cfg_cg_book)[(skinCfg.CgId)[self._cgPreviewSwitchIndex]]
-    ;
-    (self._cgMiniImgLoader):LoadImage(cgCfg.SkinCgPreview)
-  end
-)
-      end
-    end
-  else
-    do
-      showArea = false
-      ;
-      (self._cgBtnAreaGo):SetActive(showArea)
-      if showArea then
-        if (table.count)(skinCfg.CgId) > 1 then
-          (self._cgTipsText):SetText((StringTable.Get)("str_pet_skin_double_text", (table.count)(skinCfg.CgId)))
-        else
-          ;
-          (self._cgTipsText):SetText((StringTable.Get)("str_pet_skin_cg_text"))
+  if skinCfg then
+    if skinCfg.CgId then
+      showArea = true
+      local cgCfg = Cfg.cfg_cg_book[skinCfg.CgId[1]]
+      if cgCfg then
+        if cgCfg.SkinCgPreview then
+          self._cgMiniImgLoader:LoadImage(cgCfg.SkinCgPreview)
+        end
+        if 1 < table.count(skinCfg.CgId) then
+          self._timeEvents._cgSwitchTimer = GameGlobal.Timer():AddEventTimes(self._cgPreviewSwitchTimer, TimerTriggerCount.Infinite, function()
+            if tolua.isnull(self._cgMiniImgLoader) then
+              return
+            end
+            local lastIndex = self._cgPreviewSwitchIndex + 1
+            self._cgPreviewSwitchIndex = lastIndex > table.count(skinCfg.CgId) and 1 or lastIndex
+            local cgCfg = Cfg.cfg_cg_book[skinCfg.CgId[self._cgPreviewSwitchIndex]]
+            self._cgMiniImgLoader:LoadImage(cgCfg.SkinCgPreview)
+          end)
         end
       end
+    else
+      showArea = false
+    end
+  end
+  self._cgBtnAreaGo:SetActive(showArea)
+  if showArea then
+    if table.count(skinCfg.CgId) > 1 then
+      self._cgTipsText:SetText(StringTable.Get("str_pet_skin_double_text", table.count(skinCfg.CgId)))
+    else
+      self._cgTipsText:SetText(StringTable.Get("str_pet_skin_cg_text"))
     end
   end
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._ShowStateArea = function(self, state)
-  -- function num : 0_53 , upvalues : _ENV
-  for key,value in pairs(self._stateAreas) do
+function UIPetSkinsMainController:_ShowStateArea(state)
+  for key, value in pairs(self._stateAreas) do
     value:SetActive(key == state)
   end
   if state == PetSkinStateType.PSST_SHOP_OBTAINED then
-    (self._binderCurrency):SetActive(false)
+    self._binderCurrency:SetActive(false)
   end
-  ;
-  (self._topTipGo):SetActive(false)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self._topTipGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._RefreshSkinGetPathText = function(self)
-  -- function num : 0_54 , upvalues : _ENV
-  local skinCfg = (self._petSkinCfg)[self._curSelSkinIndex]
+function UIPetSkinsMainController:_RefreshSkinGetPathText()
+  local skinCfg = self._petSkinCfg[self._curSelSkinIndex]
   if skinCfg then
     local getPathStr = ""
     if skinCfg.ObtainPathStr then
       getPathStr = skinCfg.ObtainPathStr
-    else
-      if skinCfg.UnlockType then
-        local unlockType = (skinCfg.UnlockType)[1]
-      end
-    end
-    do
-      if unlockType ~= PetSkinUnlockType.PSUT_BASE or unlockType == PetSkinUnlockType.PSUT_GRADE then
+    elseif skinCfg.UnlockType then
+      local unlockType = skinCfg.UnlockType[1]
+      if unlockType == PetSkinUnlockType.PSUT_BASE then
+      elseif unlockType == PetSkinUnlockType.PSUT_GRADE then
         getPathStr = "str_pet_skin_get_path_1"
-      else
-        if unlockType == PetSkinUnlockType.PSUT_SHOP then
-          getPathStr = "str_pet_skin_get_path_2"
-        else
-          if unlockType == PetSkinUnlockType.PSUT_Dream then
-            getPathStr = "str_pet_skin_get_path_6"
-          end
-        end
+      elseif unlockType == PetSkinUnlockType.PSUT_SHOP then
+        getPathStr = "str_pet_skin_get_path_2"
+      elseif unlockType == PetSkinUnlockType.PSUT_Dream then
+        getPathStr = "str_pet_skin_get_path_6"
       end
-      ;
-      (self._getPathText):RefreshText((StringTable.Get)(getPathStr))
     end
+    self._getPathText:RefreshText(StringTable.Get(getPathStr))
   end
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._RefreshPriceBtn = function(self)
-  -- function num : 0_55 , upvalues : _ENV
+function UIPetSkinsMainController:_RefreshPriceBtn()
   if self._shopGoodData then
-    local binderItem = (self._shopGoodData):GetBinderSkin()
+    local binderItem = self._shopGoodData:GetBinderSkin()
     if binderItem then
-      (self._buyBtnGo):SetActive(false)
-      ;
-      (self._binderCurrency):SetActive(true)
-      local img = (self._shopGoodData):GetPriceIcon()
-      -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._binderNormalImg).sprite = (self._atlas):GetSprite((self._shopGoodData):GetPriceIcon())
-      ;
-      (self._binderNormalPrice):SetText((self._shopGoodData):GetPrice())
-      ;
-      (self._binderCurrencyPrice):SetText(binderItem:GetPriceWithCurrencySymbol())
+      self._buyBtnGo:SetActive(false)
+      self._binderCurrency:SetActive(true)
+      local img = self._shopGoodData:GetPriceIcon()
+      self._binderNormalImg.sprite = self._atlas:GetSprite(self._shopGoodData:GetPriceIcon())
+      self._binderNormalPrice:SetText(self._shopGoodData:GetPrice())
+      self._binderCurrencyPrice:SetText(binderItem:GetPriceWithCurrencySymbol())
     else
-      do
-        ;
-        (self._buyBtnGo):SetActive(true)
-        ;
-        (self._binderCurrency):SetActive(false)
-        do
-          local itemtType = (self._shopGoodData):GetType()
-          if itemtType == SkinsPayType.Currency then
-            ((self._imgPrice).gameObject):SetActive(false)
-            ;
-            (self._priceText):SetText((self._shopGoodData):GetPriceWithCurrencySymbol())
-          else
-            if itemtType == SkinsPayType.Free then
-              ((self._imgPrice).gameObject):SetActive(false)
-              ;
-              (self._priceText):SetText((StringTable.Get)("str_pay_free"))
-            else
-              ;
-              ((self._imgPrice).gameObject):SetActive(true)
-              -- DECOMPILER ERROR at PC95: Confused about usage of register: R3 in 'UnsetPending'
-
-              ;
-              (self._imgPrice).sprite = (self._atlas):GetSprite((self._shopGoodData):GetPriceIcon())
-              ;
-              (self._priceText):SetText((self._shopGoodData):GetPrice())
-            end
-          end
-          local id = nil
-          do
-            local type = (self._shopGoodData):GetType()
-            if type == SkinsPayType.Guangpo then
-              id = RoleAssetID.RoleAssetGlow
-            else
-              if type == SkinsPayType.Yaojing then
-                id = RoleAssetID.RoleAssetDiamond
-              else
-                if type == SkinsPayType.Item then
-                  id = (self._shopGoodData):GetPriceItemId()
-                else
-                  if type == SkinsPayType.ConvertCost then
-                    id = (self._shopGoodData):GetPriceItemId()
-                  end
-                end
-              end
-            end
-            if id then
-              (self._topTipGo):SetActive(true)
-              ;
-              (self._topTip):SetData({id}, false)
-            end
-            if self._activityShopData then
-              (self._buyBtnGo):SetActive(true)
-              ;
-              (self._binderCurrency):SetActive(false)
-              ;
-              ((self._imgPrice).gameObject):SetActive(true)
-              local costItemID = (self._activityShopData):GetCostItemId()
-              local topCfg = (Cfg.cfg_top_tips)[costItemID]
-              -- DECOMPILER ERROR at PC178: Confused about usage of register: R3 in 'UnsetPending'
-
-              ;
-              (self._imgPrice).sprite = (self._atlas):GetSprite(topCfg.Icon)
-              ;
-              (self._priceText):SetText((self._activityShopData):GetSalePrice())
-              ;
-              (self._topTipGo):SetActive(true)
-              ;
-              (self._topTip):SetData({costItemID}, false)
-            else
-              do
-                if self._seasonID then
-                  (self._buyBtnGo):SetActive(true)
-                  ;
-                  (self._binderCurrency):SetActive(false)
-                  ;
-                  ((self._imgPrice).gameObject):SetActive(true)
-                  local costItemID = (self._seasonCompItemInfo).m_cost_item_id
-                  local topCfg = (Cfg.cfg_top_tips)[costItemID]
-                  -- DECOMPILER ERROR at PC223: Confused about usage of register: R3 in 'UnsetPending'
-
-                  ;
-                  (self._imgPrice).sprite = (self._atlas):GetSprite(topCfg.Icon)
-                  ;
-                  (self._priceText):SetText((self._seasonCompItemInfo).m_cost_count)
-                  ;
-                  (self._topTipGo):SetActive(true)
-                  ;
-                  (self._topTip):SetData({costItemID}, false)
-                end
-              end
-            end
-          end
-        end
+      self._buyBtnGo:SetActive(true)
+      self._binderCurrency:SetActive(false)
+      local itemtType = self._shopGoodData:GetType()
+      if itemtType == SkinsPayType.Currency then
+        self._imgPrice.gameObject:SetActive(false)
+        self._priceText:SetText(self._shopGoodData:GetPriceWithCurrencySymbol())
+      elseif itemtType == SkinsPayType.Free then
+        self._imgPrice.gameObject:SetActive(false)
+        self._priceText:SetText(StringTable.Get("str_pay_free"))
+      else
+        self._imgPrice.gameObject:SetActive(true)
+        self._imgPrice.sprite = self._atlas:GetSprite(self._shopGoodData:GetPriceIcon())
+        self._priceText:SetText(self._shopGoodData:GetPrice())
       end
     end
+    local id
+    local type = self._shopGoodData:GetType()
+    if type == SkinsPayType.Guangpo then
+      id = RoleAssetID.RoleAssetGlow
+    elseif type == SkinsPayType.Yaojing then
+      id = RoleAssetID.RoleAssetDiamond
+    elseif type == SkinsPayType.Item then
+      id = self._shopGoodData:GetPriceItemId()
+    elseif type == SkinsPayType.ConvertCost then
+      id = self._shopGoodData:GetPriceItemId()
+    end
+    if id then
+      self._topTipGo:SetActive(true)
+      self._topTip:SetData({id}, false)
+    end
+  elseif self._activityShopData then
+    self._buyBtnGo:SetActive(true)
+    self._binderCurrency:SetActive(false)
+    self._imgPrice.gameObject:SetActive(true)
+    local costItemID = self._activityShopData:GetCostItemId()
+    local topCfg = Cfg.cfg_top_tips[costItemID]
+    self._imgPrice.sprite = self._atlas:GetSprite(topCfg.Icon)
+    self._priceText:SetText(self._activityShopData:GetSalePrice())
+    self._topTipGo:SetActive(true)
+    self._topTip:SetData({costItemID}, false)
+  elseif self._seasonID then
+    self._buyBtnGo:SetActive(true)
+    self._binderCurrency:SetActive(false)
+    self._imgPrice.gameObject:SetActive(true)
+    local costItemID = self._seasonCompItemInfo.m_cost_item_id
+    local topCfg = Cfg.cfg_top_tips[costItemID]
+    self._imgPrice.sprite = self._atlas:GetSprite(topCfg.Icon)
+    self._priceText:SetText(self._seasonCompItemInfo.m_cost_count)
+    self._topTipGo:SetActive(true)
+    self._topTip:SetData({costItemID}, false)
   end
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._SetCgBySkin = function(self, skinId)
-  -- function num : 0_56 , upvalues : _ENV
-  local skinCfg = (Cfg.cfg_pet_skin)[skinId]
+function UIPetSkinsMainController:_SetCgBySkin(skinId)
+  local skinCfg = Cfg.cfg_pet_skin[skinId]
   if not skinCfg then
-    return 
+    return
   end
-  local staticBody = nil
+  local staticBody
   if skinCfg.MainLobbyCg then
     staticBody = skinCfg.MainLobbyCg
   else
@@ -1903,108 +1414,73 @@ UIPetSkinsMainController._SetCgBySkin = function(self, skinId)
     local isSpecial = false
     if skinCfg.MainLobbySize then
       isSpecial = true
-      ;
-      (self._cgSpecial):LoadImage(staticBody)
+      self._cgSpecial:LoadImage(staticBody)
     else
       isSpecial = false
-      ;
-      (UICG.SetTransform)((self._cg_mid).transform, uiName .. "_mid", staticBody)
-      ;
-      (UICG.SetTransform)(self._cgRect, uiName, staticBody)
-      ;
-      (Log.debug)("UIPetSkinsMainController cgNormal Load ", skinId, " ", staticBody)
-      ;
-      (self._cgNormal):Load(staticBody)
+      UICG.SetTransform(self._cg_mid.transform, uiName .. "_mid", staticBody)
+      UICG.SetTransform(self._cgRect, uiName, staticBody)
+      Log.debug("UIPetSkinsMainController cgNormal Load ", skinId, " ", staticBody)
+      self._cgNormal:Load(staticBody)
     end
-    ;
-    ((self._cgNormal).gameObject):SetActive(not isSpecial)
-    ;
-    ((self._cgSpecial).gameObject):SetActive(isSpecial)
-    ;
-    (self._cg_mid):LoadImage(staticBody)
+    self._cgNormal.gameObject:SetActive(not isSpecial)
+    self._cgSpecial.gameObject:SetActive(isSpecial)
+    self._cg_mid:LoadImage(staticBody)
   else
-    do
-      ;
-      (Log.fatal)("### [error] pet [", skinId, "] no StaticBody")
-    end
+    Log.fatal("### [error] pet [", skinId, "] no StaticBody")
   end
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._SetSpineBySkin = function(self, spineName)
-  -- function num : 0_57 , upvalues : _ENV
+function UIPetSkinsMainController:_SetSpineBySkin(spineName)
   if self._dcgHandle == nil then
-    self._dcgHandle = (DynamicCG.SyncLoad)(spineName, nil, self._spineRoot)
+    self._dcgHandle = DynamicCG.SyncLoad(spineName, nil, self._spineRoot)
   else
-    ;
-    (self._dcgHandle):ChangeDynamicCGSync(spineName)
+    self._dcgHandle:ChangeDynamicCGSync(spineName)
   end
-  ;
-  (UICG.SetTransform)((self._spineRoot).transform, self:GetName(), spineName)
+  UICG.SetTransform(self._spineRoot.transform, self:GetName(), spineName)
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_58 , upvalues : _ENV
+function UIPetSkinsMainController:OnUpdate(deltaTimeMS)
   if self._isScrollReady then
     if self._count <= 1 then
-      return 
+      return
     end
     if not self._isDarging then
-      local absDis = (math.abs)(((self._content).anchoredPosition).x - self._targetPosX)
-      if absDis > 1 then
+      local absDis = math.abs(self._content.anchoredPosition.x - self._targetPosX)
+      if 1 < absDis then
         local moveTime = 0.5
-        -- DECOMPILER ERROR at PC35: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._content).anchoredPosition = Vector2((Mathf.Lerp)(((self._content).anchoredPosition).x, self._targetPosX, moveTime), ((self._content).anchoredPosition).y)
+        self._content.anchoredPosition = Vector2(Mathf.Lerp(self._content.anchoredPosition.x, self._targetPosX, moveTime), self._content.anchoredPosition.y)
       else
-        do
-          do
-            -- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-            ;
-            (self._content).anchoredPosition = Vector2(self._targetPosX, ((self._content).anchoredPosition).y)
-            if ((self._content).anchoredPosition).x ~= self._lastContentPosX then
-              self._lastContentPosX = ((self._content).anchoredPosition).x
-              self:_RefreshClothListSibling()
-            end
-          end
-        end
+        self._content.anchoredPosition = Vector2(self._targetPosX, self._content.anchoredPosition.y)
       end
+    end
+    if self._content.anchoredPosition.x ~= self._lastContentPosX then
+      self._lastContentPosX = self._content.anchoredPosition.x
+      self:_RefreshClothListSibling()
     end
   end
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._CalSkinListOrderLayer = function(self, absDis)
-  -- function num : 0_59 , upvalues : _ENV
+function UIPetSkinsMainController:_CalSkinListOrderLayer(absDis)
   local param = self._cardWidth
   if param <= 0 then
     return 1
   end
-  local a, b = (math.modf)(absDis / param)
+  local a, b = math.modf(absDis / param)
   return a
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._RefreshClothListSibling = function(self)
-  -- function num : 0_60 , upvalues : _ENV
+function UIPetSkinsMainController:_RefreshClothListSibling()
   if not self._items then
-    return 
+    return
   end
-  local curCenterPosX = self._contentCenterPosX - ((self._content).anchoredPosition).x
+  local curCenterPosX = self._contentCenterPosX - self._content.anchoredPosition.x
   local minAbs = -1
   local topCellPos = -1
-  for index,item in ipairs(self._items) do
-    local posX = (((item:GetGameObject()).transform).anchoredPosition).x
-    local absDis = (math.abs)(curCenterPosX - posX)
-    local tmpCell = (self._sortTb)[index]
-    if minAbs < 0 or absDis < minAbs then
+  for index, item in ipairs(self._items) do
+    local posX = item:GetGameObject().transform.anchoredPosition.x
+    local absDis = math.abs(curCenterPosX - posX)
+    local tmpCell = self._sortTb[index]
+    if minAbs < 0 or minAbs > absDis then
       minAbs = absDis
       topCellPos = posX
     end
@@ -2014,508 +1490,347 @@ UIPetSkinsMainController._RefreshClothListSibling = function(self)
       tmpCell.absDis = absDis
     end
   end
-  ;
-  (table.sort)(self._sortTb, function(a, b)
-    -- function num : 0_60_0
-    do return b.absDis < a.absDis end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  for index,value in ipairs(self._sortTb) do
-    local item = (self._items)[value.idx]
+  table.sort(self._sortTb, function(a, b)
+    return a.absDis > b.absDis
+  end)
+  for index, value in ipairs(self._sortTb) do
+    local item = self._items[value.idx]
     local itemGo = item:GetGameObject()
-    ;
-    (itemGo.transform):SetSiblingIndex(index - 1)
+    itemGo.transform:SetSiblingIndex(index - 1)
     if index == self._skinsCellCount then
       item:SetIsOnTop(true)
     else
       item:SetIsOnTop(false)
     end
-    local absToTop = (math.abs)(value.posX - topCellPos)
+    local absToTop = math.abs(value.posX - topCellPos)
     local orderLayer = self:_CalSkinListOrderLayer(absToTop + 1)
     item:SetOrderLayer(orderLayer)
   end
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.BuyBtnOnClick = function(self, go)
-  -- function num : 0_61 , upvalues : _ENV
-  do
-    if (self._openType ~= PetSkinUiOpenType.PSUOT_SHOW_LIST or self._openType == PetSkinUiOpenType.PSUT_SHOP_DETAIL) and self._shopGoodData then
-      local itemtType = (self._shopGoodData):GetType()
+function UIPetSkinsMainController:BuyBtnOnClick(go)
+  if self._openType == PetSkinUiOpenType.PSUOT_SHOW_LIST then
+  elseif self._openType == PetSkinUiOpenType.PSUT_SHOP_DETAIL then
+    if self._shopGoodData then
+      local itemtType = self._shopGoodData:GetType()
       if itemtType == SkinsPayType.Yaojing then
         self:_buyConfirmForYaojing()
       else
         self:_goBuyFunc()
       end
     end
-    if self._openType == PetSkinUiOpenType.PSUT_ACTIVITY_DETAIL and self._buyCallback then
-      (self._buyCallback)()
+  elseif self._openType == PetSkinUiOpenType.PSUT_ACTIVITY_DETAIL then
+    if self._buyCallback then
+      self._buyCallback()
     end
-    if self._openType == PetSkinUiOpenType.PSUOT_SEASON_SKIN then
-      self:BuySeasonSkin()
-    end
+  elseif self._openType == PetSkinUiOpenType.PSUOT_SEASON_SKIN then
+    self:BuySeasonSkin()
   end
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.BuySeasonSkin = function(self, go)
-  -- function num : 0_62
+function UIPetSkinsMainController:BuySeasonSkin(go)
   self:ShowDialog("UISeasonSkinConfirmNormalController", self._seasonID, self._seasonComp, self._seasonCompItemInfo)
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.binderNormalBuyBtnOnClick = function(self, go)
-  -- function num : 0_63
+function UIPetSkinsMainController:binderNormalBuyBtnOnClick(go)
   self:BuyBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.binderCurrencyBuyBtnOnClick = function(self, go)
-  -- function num : 0_64 , upvalues : _ENV
-  if (self._openType ~= PetSkinUiOpenType.PSUOT_SHOW_LIST or self._openType == PetSkinUiOpenType.PSUT_SHOP_DETAIL) and self._shopGoodData then
-    (ToastManager.ShowToast)((StringTable.Get)("str_common_stop_pay"))
+function UIPetSkinsMainController:binderCurrencyBuyBtnOnClick(go)
+  if self._openType == PetSkinUiOpenType.PSUOT_SHOW_LIST then
+  elseif self._openType == PetSkinUiOpenType.PSUT_SHOP_DETAIL and self._shopGoodData then
+    ToastManager.ShowToast(StringTable.Get("str_common_stop_pay"))
   end
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.OnCurrencyBtnOnClick = function(self)
-  -- function num : 0_65 , upvalues : _ENV
-  local binderItem = (self._shopGoodData):GetBinderSkin()
+function UIPetSkinsMainController:OnCurrencyBtnOnClick()
+  local binderItem = self._shopGoodData:GetBinderSkin()
   local midasId = binderItem:GetMidasId()
-  if (string.isnullorempty)(midasId) then
-    ((GameGlobal.GetUIModule)(ShopModule)):ReportPayStep(PayStep.ClickPurchaseButton, false, -1, "midasId_is_empty")
-    ;
-    (Log.fatal)("###[UIPetSkinsMainController] [Pay] midasId can\'t be empty")
-    return 
+  if string.isnullorempty(midasId) then
+    GameGlobal.GetUIModule(ShopModule):ReportPayStep(PayStep.ClickPurchaseButton, false, -1, "midasId_is_empty")
+    Log.fatal("###[UIPetSkinsMainController] [Pay] midasId can't be empty")
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_65_0 , upvalues : self, binderItem, _ENV, midasId
-    local ret = (self._shopModule):CEventBuyPetSkin(TT, binderItem:GetId())
-    if (ClientShop.CheckShopCode)(ret:GetResult()) then
+    local ret = self._shopModule:CEventBuyPetSkin(TT, binderItem:GetId())
+    if ClientShop.CheckShopCode(ret:GetResult()) then
       self:CanCharge(midasId, binderItem)
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._buyConfirmForYaojing = function(self)
-  -- function num : 0_66 , upvalues : _ENV
-  local price = (self._shopGoodData):GetPrice()
-  local petName = (StringTable.Get)((self._cfgPet).Name)
-  local cfgSkin = (Cfg.cfg_pet_skin)[self._curSelSkinId]
+function UIPetSkinsMainController:_buyConfirmForYaojing()
+  local price = self._shopGoodData:GetPrice()
+  local petName = StringTable.Get(self._cfgPet.Name)
+  local cfgSkin = Cfg.cfg_pet_skin[self._curSelSkinId]
   local skinName = ""
   local msgStrKey = ""
   if cfgSkin then
-    skinName = (StringTable.Get)(cfgSkin.SkinName)
+    skinName = StringTable.Get(cfgSkin.SkinName)
     if cfgSkin.SkinType == PetSkinFlag.PSF_NORMAL then
       msgStrKey = "str_shop_skin_confirm_to_buy_1"
-    else
-      if cfgSkin.SkinType == PetSkinFlag.PSF_COLLECTION then
-        msgStrKey = "str_shop_skin_confirm_to_buy_2"
-      else
-        if cfgSkin.SkinType == PetSkinFlag.PSF_MEMORY then
-          msgStrKey = "str_shop_skin_confirm_to_buy_4"
-        end
-      end
+    elseif cfgSkin.SkinType == PetSkinFlag.PSF_COLLECTION then
+      msgStrKey = "str_shop_skin_confirm_to_buy_2"
+    elseif cfgSkin.SkinType == PetSkinFlag.PSF_MEMORY then
+      msgStrKey = "str_shop_skin_confirm_to_buy_4"
     end
-    if cfgSkin.UnlockSkinID and (self._shareSkinDatas)[1] and (self._shareSkinDatas)[2] then
-      petName = (StringTable.Get)((((self._shareSkinDatas)[1]).petCfg).Name) .. "/" .. (StringTable.Get)((((self._shareSkinDatas)[2]).petCfg).Name)
+    if cfgSkin.UnlockSkinID and self._shareSkinDatas[1] and self._shareSkinDatas[2] then
+      petName = StringTable.Get(self._shareSkinDatas[1].petCfg.Name) .. "/" .. StringTable.Get(self._shareSkinDatas[2].petCfg.Name)
     end
   end
-  local strText = (StringTable.Get)(msgStrKey, price, petName, skinName)
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", strText, function(param)
-    -- function num : 0_66_0 , upvalues : self
+  local strText = StringTable.Get(msgStrKey, price, petName, skinName)
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", strText, function(param)
     self:_goBuyFunc()
-  end
-, nil, nil, nil)
+  end, nil, nil, nil)
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._goBuyFunc = function(self)
-  -- function num : 0_67 , upvalues : _ENV
-  if (self._openType ~= PetSkinUiOpenType.PSUOT_SHOW_LIST or self._openType == PetSkinUiOpenType.PSUT_SHOP_DETAIL) and self._shopGoodData then
-    local itemtType = (self._shopGoodData):GetType()
+function UIPetSkinsMainController:_goBuyFunc()
+  if self._openType == PetSkinUiOpenType.PSUOT_SHOW_LIST then
+  elseif self._openType == PetSkinUiOpenType.PSUT_SHOP_DETAIL and self._shopGoodData then
+    local itemtType = self._shopGoodData:GetType()
     if itemtType == SkinsPayType.Currency then
-      local midasId = (self._shopGoodData):GetMidasId()
-      if (string.isnullorempty)(midasId) then
-        ((GameGlobal.GetUIModule)(ShopModule)):ReportPayStep(PayStep.ClickPurchaseButton, false, -1, "midasId_is_empty")
-        ;
-        (Log.fatal)("### [Pay]midasId can\'t be empty")
-        return 
+      local midasId = self._shopGoodData:GetMidasId()
+      if string.isnullorempty(midasId) then
+        GameGlobal.GetUIModule(ShopModule):ReportPayStep(PayStep.ClickPurchaseButton, false, -1, "midasId_is_empty")
+        Log.fatal("### [Pay]midasId can't be empty")
+        return
       end
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_common_stop_pay"))
-    else
-      do
-        if itemtType == SkinsPayType.Yaojing then
-          local price = (self._shopGoodData):GetPrice()
-          if (self._clientShop):CheckEnoughYJ(price, true, function()
-    -- function num : 0_67_0 , upvalues : self
-    self:CloseDialog()
-  end
-) then
-            self:RequestBuySkin()
-          end
+      ToastManager.ShowToast(StringTable.Get("str_common_stop_pay"))
+    elseif itemtType == SkinsPayType.Yaojing then
+      local price = self._shopGoodData:GetPrice()
+      if self._clientShop:CheckEnoughYJ(price, true, function()
+        self:CloseDialog()
+      end) then
+        self:RequestBuySkin()
+      else
+      end
+    elseif itemtType == SkinsPayType.Guangpo then
+      local price = self._shopGoodData:GetPrice()
+      if self._clientShop:CheckEnoughGP(price) then
+        self:RequestBuySkin()
+      else
+        self:CloseDialog()
+      end
+    elseif itemtType == SkinsPayType.Item then
+      local mRole = self:GetModule(RoleModule)
+      local price = self._shopGoodData:GetPrice()
+      local assetId = self._shopGoodData:GetPriceItemId()
+      local count = mRole:GetAssetCount(assetId)
+      if count and price and price <= count then
+        if assetId == RoleAssetID.RoleAssetHistory then
+          self:RequestBuySkinWithSeason()
         else
-          do
-            if itemtType == SkinsPayType.Guangpo then
-              local price = (self._shopGoodData):GetPrice()
-              if (self._clientShop):CheckEnoughGP(price) then
-                self:RequestBuySkin()
-              else
-                self:CloseDialog()
-              end
-            else
-              do
-                if itemtType == SkinsPayType.Item then
-                  local mRole = self:GetModule(RoleModule)
-                  local price = (self._shopGoodData):GetPrice()
-                  local assetId = (self._shopGoodData):GetPriceItemId()
-                  local count = mRole:GetAssetCount(assetId)
-                  if count and price and price <= count then
-                    if assetId == RoleAssetID.RoleAssetHistory then
-                      self:RequestBuySkinWithSeason()
-                    else
-                      self:RequestBuySkin()
-                    end
-                  else
-                    ;
-                    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_pay_item_not_enough"))
-                  end
-                else
-                  do
-                    if itemtType == SkinsPayType.Free then
-                      self:RequestBuySkin()
-                    else
-                      if itemtType == SkinsPayType.ConvertCost then
-                        local itemtConvertType = (self._shopGoodData):GetConvertType()
-                        if itemtConvertType == SkinsConvertPayType.BattlePass then
-                          self:RequestBuySkinWithBattlePass()
-                        end
-                      else
-                        do
-                          ;
-                          (Log.fatal)("### invalid SkinsPayType. itemtType=", itemtType)
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
+          self:RequestBuySkin()
         end
+      else
+        PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_pay_item_not_enough"))
       end
+    elseif itemtType == SkinsPayType.Free then
+      self:RequestBuySkin()
+    elseif itemtType == SkinsPayType.ConvertCost then
+      local itemtConvertType = self._shopGoodData:GetConvertType()
+      if itemtConvertType == SkinsConvertPayType.BattlePass then
+        self:RequestBuySkinWithBattlePass()
+      end
+    else
+      Log.fatal("### invalid SkinsPayType. itemtType=", itemtType)
     end
   end
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.RequestBuySkin = function(self)
-  -- function num : 0_68 , upvalues : _ENV
+function UIPetSkinsMainController:RequestBuySkin()
   self:StartTask(function(TT)
-    -- function num : 0_68_0 , upvalues : self, _ENV
     self:Lock("UIPetSkinsMainControllerRequestBuySkin")
-    local id = (self._shopGoodData):GetId()
-    local ret = (self._shopModule):CEventBuyPetSkin(TT, id)
-    if (ClientShop.CheckShopCode)(ret:GetResult()) then
-      (self._clientShop):SendProtocal(TT, ShopMainTabType.Skins)
+    local id = self._shopGoodData:GetId()
+    local ret = self._shopModule:CEventBuyPetSkin(TT, id)
+    if ClientShop.CheckShopCode(ret:GetResult()) then
+      self._clientShop:SendProtocal(TT, ShopMainTabType.Skins)
       self:_ShowSkinObtain(self._curSelSkinId)
       self:_ForceRefreshUi()
     end
     self:UnLock("UIPetSkinsMainControllerRequestBuySkin")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.RequestBuySkinWithSeason = function(self)
-  -- function num : 0_69 , upvalues : _ENV
+function UIPetSkinsMainController:RequestBuySkinWithSeason()
   self:StartTask(function(TT)
-    -- function num : 0_69_0 , upvalues : self, _ENV
     self:Lock("UIPetSkinsMainControllerRequestBuySkin")
     local shopModule = self:GetModule(ShopModule)
-    local result = shopModule:BuyItem(TT, MarketType.Shop_Season, (self._shopGoodData):GetId(), 1, (self._shopGoodData):GetPriceItemId(), (self._shopGoodData):GetPrice())
-    if result and (ClientShop.CheckShopCode)(result) then
-      (self._clientShop):SendProtocal(TT, ShopMainTabType.Exchange)
+    local result = shopModule:BuyItem(TT, MarketType.Shop_Season, self._shopGoodData:GetId(), 1, self._shopGoodData:GetPriceItemId(), self._shopGoodData:GetPrice())
+    if result and ClientShop.CheckShopCode(result) then
+      self._clientShop:SendProtocal(TT, ShopMainTabType.Exchange)
       self:_ShowSkinObtain(self._curSelSkinId)
       self:_ForceRefreshUi()
     end
     self:UnLock("UIPetSkinsMainControllerRequestBuySkin")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.RequestBuySkinWithBattlePass = function(self)
-  -- function num : 0_70 , upvalues : _ENV
+function UIPetSkinsMainController:RequestBuySkinWithBattlePass()
   self:StartTask(function(TT)
-    -- function num : 0_70_0 , upvalues : self, _ENV
     self:Lock("UIPetSkinsMainControllerRequestBuySkinWithBattlePass")
     local shopModule = self:GetModule(ShopModule)
-    local result = shopModule:BuyItem(TT, MarketType.Shop_BattlePass, (self._shopGoodData):GetId(), 1, (self._shopGoodData):GetCostPriceItemId(), (self._shopGoodData):GetCostPrice())
-    if result and (ClientShop.CheckShopCode)(result) then
-      (self._clientShop):SendProtocal(TT, ShopMainTabType.Secret, MarketType.Shop_BattlePass)
+    local result = shopModule:BuyItem(TT, MarketType.Shop_BattlePass, self._shopGoodData:GetId(), 1, self._shopGoodData:GetCostPriceItemId(), self._shopGoodData:GetCostPrice())
+    if result and ClientShop.CheckShopCode(result) then
+      self._clientShop:SendProtocal(TT, ShopMainTabType.Secret, MarketType.Shop_BattlePass)
       self:_ShowSkinObtain(self._curSelSkinId)
       self:_ForceRefreshUi()
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateSecretBattlePassShop)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateSecretBattlePassShop)
     end
     self:UnLock("UIPetSkinsMainControllerRequestBuySkinWithBattlePass")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._OnCurrencyBuySkinSuccess = function(self)
-  -- function num : 0_71
+function UIPetSkinsMainController:_OnCurrencyBuySkinSuccess()
   self:_ShowSkinObtain(self._curSelSkinId)
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._ShowSkinObtain = function(self, skinId)
-  -- function num : 0_72 , upvalues : _ENV
+function UIPetSkinsMainController:_ShowSkinObtain(skinId)
   local roleAsset = RoleAsset:New()
   roleAsset.assetid = skinId
   roleAsset.count = 1
   local tempPets = {roleAsset}
   self:ShowDialog("UIPetSkinObtainController", roleAsset, function()
-    -- function num : 0_72_0 , upvalues : _ENV, self
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetSkinObtainController")
+    GameGlobal.UIStateManager():CloseDialog("UIPetSkinObtainController")
     self:_ConfirmToUseNewSkin()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.testbtnOnClick = function(self)
-  -- function num : 0_73 , upvalues : _ENV
+function UIPetSkinsMainController:testbtnOnClick()
   local id = 90303
   local roleAsset = RoleAsset:New()
   roleAsset.assetid = id
   roleAsset.count = 1
   local tempPets = {roleAsset}
   self:ShowDialog("UIPetSkinObtainController", roleAsset, function()
-    -- function num : 0_73_0
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.CanCharge = function(self, midasId, buyItem)
-  -- function num : 0_74 , upvalues : _ENV
+function UIPetSkinsMainController:CanCharge(midasId, buyItem)
   self:Lock("UIPetSkinsMainController_CanCharge")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.CanChargeCoro, self, midasId, buyItem)
+  GameGlobal.TaskManager():StartTask(self.CanChargeCoro, self, midasId, buyItem)
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.CanChargeCoro = function(self, TT, midasId, buyItem)
-  -- function num : 0_75 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIPetSkinsMainController:CanChargeCoro(TT, midasId, buyItem)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   if not roleModule:IsJapanZone() then
     self:StartTask(self.BuyGoodsTask, self, midasId, 1, buyItem)
     self:UnLock("UIPetSkinsMainController_CanCharge")
-    return 
+    return
   end
-  local payModule = (GameGlobal.GetModule)(PayModule)
+  local payModule = GameGlobal.GetModule(PayModule)
   if payModule:NeedSelectAge(TT) then
     self:ShowDialog("UISetAgeConfirmController")
     self:UnLock("UIPetSkinsMainController_CanCharge")
-    return 
+    return
   end
   self:StartTask(self.BuyGoodsTask, self, midasId, 1, buyItem)
   self:UnLock("UIPetSkinsMainController_CanCharge")
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.BuyGoodsTask = function(self, TT, itemId, itemCount, buyItem)
-  -- function num : 0_76 , upvalues : _ENV
+function UIPetSkinsMainController:BuyGoodsTask(TT, itemId, itemCount, buyItem)
   local mPay = self:GetModule(PayModule)
   if IsAndroid() or IsUnityEditor() or IsPc() then
     if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
       local res, replyEvent = mPay:SendBuyGoodsRequest(TT, itemId, itemCount)
-      ;
-      (Log.debug)("UIDemoPayController:BuyGoodsTask IsAndroid start res ", res.m_result)
+      Log.debug("UIDemoPayController:BuyGoodsTask IsAndroid start res ", res.m_result)
       if not res:GetSucc() then
         if res.m_result == PayErrorCode.PAY_ERROR_NOT_USE_MIDAS then
-          (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_pay_direct_buy_need_open_switch"))
+          PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_pay_direct_buy_need_open_switch"))
         else
-          ;
-          (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_pay_direct_buy_fail_try_later"))
+          PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_pay_direct_buy_fail_try_later"))
         end
-      else
-        if not replyEvent then
-          (Log.debug)("UIDemoPayController:BuyGoodsTask failed no replyEvent")
-        else
-          if res.m_result == PayErrorCode.PAY_SUCC then
-            local token = replyEvent.token
-            local url = replyEvent.url_params
-            ;
-            (Log.debug)("UIDemoPayController:BuyGoodsTask success token ", token, " url ", url)
-            mPay:BuySkinGoodsByUrl(url, buyItem)
-          end
-        end
+      elseif not replyEvent then
+        Log.debug("UIDemoPayController:BuyGoodsTask failed no replyEvent")
+      elseif res.m_result == PayErrorCode.PAY_SUCC then
+        local token = replyEvent.token
+        local url = replyEvent.url_params
+        Log.debug("UIDemoPayController:BuyGoodsTask success token ", token, " url ", url)
+        mPay:BuySkinGoodsByUrl(url, buyItem)
       end
-    else
-      do
-        if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-          mPay:BuyGoodsBySkinShopItem(buyItem, itemCount)
-        end
-        if IsIos() then
-          mPay:BuyGoodsBySkinShopItem(buyItem, itemCount)
-        end
-      end
+    elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+      mPay:BuyGoodsBySkinShopItem(buyItem, itemCount)
     end
+  elseif IsIos() then
+    mPay:BuyGoodsBySkinShopItem(buyItem, itemCount)
   end
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._3dDrag = function(self, eventData)
-  -- function num : 0_77
+function UIPetSkinsMainController:_3dDrag(eventData)
   if self._modelShowMng then
-    (self._modelShowMng):OnDrag(eventData)
+    self._modelShowMng:OnDrag(eventData)
   end
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.PlayLeftOut = function(self)
-  -- function num : 0_78 , upvalues : _ENV
+function UIPetSkinsMainController:PlayLeftOut()
   self:Lock("UIPetSkinsMainController:PlayLeftOut")
   if self._uiAnim and self._bgAnim then
-    (self._uiAnim):Play(((self._animNames).left_out).name_ui)
-    ;
-    (self._bgAnim):Play(((self._animNames).left_out).name_bg)
+    self._uiAnim:Play(self._animNames.left_out.name_ui)
+    self._bgAnim:Play(self._animNames.left_out.name_bg)
   end
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._timeEvents)._leftOutTimeEvent = ((GameGlobal.Timer)()):AddEvent(((self._animNames).left_out).time_len, function()
-    -- function num : 0_78_0 , upvalues : self
+  self._timeEvents._leftOutTimeEvent = GameGlobal.Timer():AddEvent(self._animNames.left_out.time_len, function()
     self:UnLock("UIPetSkinsMainController:PlayLeftOut")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.PlayLeftIn = function(self)
-  -- function num : 0_79 , upvalues : _ENV
+function UIPetSkinsMainController:PlayLeftIn()
   self:Lock("UIPetSkinsMainController:PlayLeftIn")
   if self._uiAnim and self._bgAnim then
-    (self._uiAnim):Play(((self._animNames).left_in).name_ui)
-    ;
-    (self._bgAnim):Play(((self._animNames).left_in).name_bg)
+    self._uiAnim:Play(self._animNames.left_in.name_ui)
+    self._bgAnim:Play(self._animNames.left_in.name_bg)
   end
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._timeEvents)._leftInTimeEvent = ((GameGlobal.Timer)()):AddEvent(((self._animNames).left_in).time_len, function()
-    -- function num : 0_79_0 , upvalues : self
+  self._timeEvents._leftInTimeEvent = GameGlobal.Timer():AddEvent(self._animNames.left_in.time_len, function()
     self:UnLock("UIPetSkinsMainController:PlayLeftIn")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.PlayRightOut = function(self)
-  -- function num : 0_80 , upvalues : _ENV
+function UIPetSkinsMainController:PlayRightOut()
   self:Lock("UIPetSkinsMainController:PlayRightOut")
   if self._uiAnim and self._bgAnim then
-    (self._uiAnim):Play(((self._animNames).right_out).name_ui)
-    ;
-    (self._bgAnim):Play(((self._animNames).right_out).name_bg)
+    self._uiAnim:Play(self._animNames.right_out.name_ui)
+    self._bgAnim:Play(self._animNames.right_out.name_bg)
   end
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._timeEvents)._rightOutTimeEvent = ((GameGlobal.Timer)()):AddEvent(((self._animNames).right_out).time_len, function()
-    -- function num : 0_80_0 , upvalues : self
+  self._timeEvents._rightOutTimeEvent = GameGlobal.Timer():AddEvent(self._animNames.right_out.time_len, function()
     self:UnLock("UIPetSkinsMainController:PlayRightOut")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.PlayRightIn = function(self)
-  -- function num : 0_81 , upvalues : _ENV
+function UIPetSkinsMainController:PlayRightIn()
   self:Lock("UIPetSkinsMainController:PlayRightIn")
   if self._uiAnim and self._bgAnim then
-    (self._uiAnim):Play(((self._animNames).right_in).name_ui)
-    ;
-    (self._bgAnim):Play(((self._animNames).right_in).name_bg)
+    self._uiAnim:Play(self._animNames.right_in.name_ui)
+    self._bgAnim:Play(self._animNames.right_in.name_bg)
   end
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._timeEvents)._rightInTimeEvent = ((GameGlobal.Timer)()):AddEvent(((self._animNames).right_in).time_len, function()
-    -- function num : 0_81_0 , upvalues : self
+  self._timeEvents._rightInTimeEvent = GameGlobal.Timer():AddEvent(self._animNames.right_in.time_len, function()
     self:UnLock("UIPetSkinsMainController:PlayRightIn")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.OpenShop = function(self)
-  -- function num : 0_82
+function UIPetSkinsMainController:OpenShop()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.StoryInfoBtnOnClick = function(self)
-  -- function num : 0_83 , upvalues : _ENV
+function UIPetSkinsMainController:StoryInfoBtnOnClick()
   if self:IsShareSkin() then
-    local data = (self._shareSkinDatas)[self._curShareSkinIndex]
+    local data = self._shareSkinDatas[self._curShareSkinIndex]
     if data and data.skinCfg then
       local isObtained, isUnlock = self:_IsObtainUnlock(data)
       if isObtained then
         local isFirst = not isUnlock
         self:_ConfirmToPlayCurSelSkinStory(isFirst)
       else
-        do
-          do
-            ;
-            (ToastManager.ShowToast)((StringTable.Get)("str_pet_skin_story_lock_buy"))
-            local curUiData = (self._uiSkinsData)[self._curSelSkinIndex]
-            local skinCfg = (self._petSkinCfg)[self._curSelSkinIndex]
-            if curUiData and skinCfg then
-              if curUiData:IsObtained() then
-                local isFirst = not curUiData:IsUnlockCg()
-                self:_ConfirmToPlayCurSelSkinStory(isFirst)
-              else
-                do
-                  ;
-                  (ToastManager.ShowToast)((StringTable.Get)("str_pet_skin_story_lock_buy"))
-                end
-              end
-            end
-          end
-        end
+        ToastManager.ShowToast(StringTable.Get("str_pet_skin_story_lock_buy"))
+      end
+    end
+  else
+    local curUiData = self._uiSkinsData[self._curSelSkinIndex]
+    local skinCfg = self._petSkinCfg[self._curSelSkinIndex]
+    if curUiData and skinCfg then
+      if curUiData:IsObtained() then
+        local isFirst = not curUiData:IsUnlockCg()
+        self:_ConfirmToPlayCurSelSkinStory(isFirst)
+      else
+        ToastManager.ShowToast(StringTable.Get("str_pet_skin_story_lock_buy"))
       end
     end
   end
@@ -2523,201 +1838,139 @@ end
 
 _class("ShareSkinData", Object)
 ShareSkinData = ShareSkinData
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
 
-ShareSkinData.Constructor = function(self, petCfg, skinCfg)
-  -- function num : 0_84
+function ShareSkinData:Constructor(petCfg, skinCfg)
   self.petCfg = petCfg
   self.skinCfg = skinCfg
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.IsShareSkin = function(self)
-  -- function num : 0_85
-  do return #self._shareSkinDatas > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIPetSkinsMainController:IsShareSkin()
+  return #self._shareSkinDatas > 0
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._CheckOtherSkin = function(self)
-  -- function num : 0_86 , upvalues : _ENV
+function UIPetSkinsMainController:_CheckOtherSkin()
   if self._openType == PetSkinUiOpenType.PSUOT_SHOW_LIST then
-    (self._pets):SetActive(false)
-    return 
+    self._pets:SetActive(false)
+    return
   end
   local showPets = false
-  local curSkinCfg = (Cfg.cfg_pet_skin)[self._curSelSkinId]
-  local skinNameStr = (StringTable.Get)(curSkinCfg.SkinName)
+  local curSkinCfg = Cfg.cfg_pet_skin[self._curSelSkinId]
+  local skinNameStr = StringTable.Get(curSkinCfg.SkinName)
   local petNameStr = ""
   if curSkinCfg and curSkinCfg.UnlockSkinID then
-    local otherSkinCfg = (Cfg.cfg_pet_skin)[curSkinCfg.UnlockSkinID]
+    local otherSkinCfg = Cfg.cfg_pet_skin[curSkinCfg.UnlockSkinID]
     if otherSkinCfg then
-      local petCfg = (Cfg.cfg_pet)[curSkinCfg.PetId]
-      local otherPetCfg = (Cfg.cfg_pet)[otherSkinCfg.PetId]
-      -- DECOMPILER ERROR at PC49: Confused about usage of register: R8 in 'UnsetPending'
-
+      local petCfg = Cfg.cfg_pet[curSkinCfg.PetId]
+      local otherPetCfg = Cfg.cfg_pet[otherSkinCfg.PetId]
       if petCfg and otherPetCfg then
-        (self._shareSkinDatas)[1] = ShareSkinData:New(petCfg, curSkinCfg)
-        -- DECOMPILER ERROR at PC56: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._shareSkinDatas)[2] = ShareSkinData:New(otherPetCfg, otherSkinCfg)
+        self._shareSkinDatas[1] = ShareSkinData:New(petCfg, curSkinCfg)
+        self._shareSkinDatas[2] = ShareSkinData:New(otherPetCfg, otherSkinCfg)
         local grade1 = 0
         local grade2 = 0
-        local pet1 = (self._petModule):GetPetByTemplateId(petCfg.ID)
+        local pet1 = self._petModule:GetPetByTemplateId(petCfg.ID)
         if pet1 then
           grade1 = pet1:GetPetGrade()
         end
-        local pet2 = (self._petModule):GetPetByTemplateId(otherPetCfg.ID)
+        local pet2 = self._petModule:GetPetByTemplateId(otherPetCfg.ID)
         if pet2 then
           grade2 = pet2:GetPetGrade()
         end
-        local icon1 = (HelperProxy:GetInstance()):GetPetHead(petCfg.ID, grade1, curSkinCfg.ID, PetSkinEffectPath.HEAD_ICON_PLAYER_INFO_HELP)
-        local icon2 = (HelperProxy:GetInstance()):GetPetHead(otherPetCfg.ID, grade2, otherSkinCfg.ID, PetSkinEffectPath.HEAD_ICON_PLAYER_INFO_HELP)
-        ;
-        ((self._petHeadIcon)[1]):LoadImage(icon1)
-        ;
-        ((self._petHeadIcon)[2]):LoadImage(icon2)
-        petNameStr = (StringTable.Get)(petCfg.Name) .. "/" .. (StringTable.Get)(otherPetCfg.Name)
+        local icon1 = HelperProxy:GetInstance():GetPetHead(petCfg.ID, grade1, curSkinCfg.ID, PetSkinEffectPath.HEAD_ICON_PLAYER_INFO_HELP)
+        local icon2 = HelperProxy:GetInstance():GetPetHead(otherPetCfg.ID, grade2, otherSkinCfg.ID, PetSkinEffectPath.HEAD_ICON_PLAYER_INFO_HELP)
+        self._petHeadIcon[1]:LoadImage(icon1)
+        self._petHeadIcon[2]:LoadImage(icon2)
+        petNameStr = StringTable.Get(petCfg.Name) .. "/" .. StringTable.Get(otherPetCfg.Name)
         showPets = true
       end
     end
   end
-  do
-    ;
-    (self._pets):SetActive(showPets)
-    ;
-    (self._petDesc):SetText((StringTable.Get)("str_pet_skin_sp_skin_desc", skinNameStr, petNameStr))
-    self:_OnPetHeadOnClick(self._curShareSkinIndex)
-  end
+  self._pets:SetActive(showPets)
+  self._petDesc:SetText(StringTable.Get("str_pet_skin_sp_skin_desc", skinNameStr, petNameStr))
+  self:_OnPetHeadOnClick(self._curShareSkinIndex)
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.PetHead1OnClick = function(self, go)
-  -- function num : 0_87
+function UIPetSkinsMainController:PetHead1OnClick(go)
   self:_OnPetHeadOnClick(1)
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.PetHead2OnClick = function(self, go)
-  -- function num : 0_88
+function UIPetSkinsMainController:PetHead2OnClick(go)
   self:_OnPetHeadOnClick(2)
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._OnPetHeadOnClick = function(self, index)
-  -- function num : 0_89 , upvalues : _ENV
-  if not index then
-    index = 1
-  end
+function UIPetSkinsMainController:_OnPetHeadOnClick(index)
+  index = index or 1
   self._curShareSkinIndex = index
-  local data = (self._shareSkinDatas)[self._curShareSkinIndex]
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
+  local data = self._shareSkinDatas[self._curShareSkinIndex]
   if data then
     if self._curShareSkinIndex == 1 then
-      (self._petMark).anchoredPosition = Vector2(-327.7, 0)
+      self._petMark.anchoredPosition = Vector2(-327.7, 0)
     else
-      -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._petMark).anchoredPosition = Vector2(-146.3, 0)
+      self._petMark.anchoredPosition = Vector2(-146.3, 0)
     end
     self:_RefreshNameStoryCG(data)
   end
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._RefreshNameStoryCG = function(self, data)
-  -- function num : 0_90 , upvalues : _ENV
+function UIPetSkinsMainController:_RefreshNameStoryCG(data)
   local skinCfg = data.skinCfg
   self:_RefreshName(data.petCfg)
   if self._DesignInfoShow then
     self:DesignInfoBtnOnClick(nil)
   end
-  ;
-  (self._designInfoBtnGo):SetActive(not (string.isnullorempty)(skinCfg.DesignStr))
-  ;
-  (self._petLogoIconLoader):LoadImage((data.petCfg).Logo)
+  self._designInfoBtnGo:SetActive(not string.isnullorempty(skinCfg.DesignStr))
+  self._petLogoIconLoader:LoadImage(data.petCfg.Logo)
   self:_RefreshStoryBtn(data)
   self:_RefreshCgMiniBtnAreaByCurSkinIndex(skinCfg)
   self:RefreshCell(data)
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController.RefreshCell = function(self, data)
-  -- function num : 0_91
+function UIPetSkinsMainController:RefreshCell(data)
   if self._items then
-    local item = (self._items)[self._curSelSkinIndex]
+    local item = self._items[self._curSelSkinIndex]
     if item then
-      item:RefreshLogo((data.petCfg).Logo)
+      item:RefreshLogo(data.petCfg.Logo)
     end
   end
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._RefreshName = function(self, cfgPet)
-  -- function num : 0_92 , upvalues : _ENV
-  (self._petNameCHLabel):SetText((StringTable.Get)(cfgPet.Name))
-  ;
-  (self._petNameENLabel):SetText((StringTable.Get)(cfgPet.EnglishName))
+function UIPetSkinsMainController:_RefreshName(cfgPet)
+  self._petNameCHLabel:SetText(StringTable.Get(cfgPet.Name))
+  self._petNameENLabel:SetText(StringTable.Get(cfgPet.EnglishName))
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._RefreshStoryBtn = function(self, data)
-  -- function num : 0_93 , upvalues : _ENV
-  if (data.skinCfg).StoryId then
-    (self._storyInfoBtnObj):SetActive(true)
+function UIPetSkinsMainController:_RefreshStoryBtn(data)
+  if data.skinCfg.StoryId then
+    self._storyInfoBtnObj:SetActive(true)
     local isObtained, isUnlock = self:_IsObtainUnlock(data)
     if isObtained then
-      (self._StoryInfoBtnText):SetText((StringTable.Get)("str_pet_skin_story_obtained"))
+      self._StoryInfoBtnText:SetText(StringTable.Get("str_pet_skin_story_obtained"))
       if isUnlock then
-        (self._storyRedPointObj):SetActive(false)
+        self._storyRedPointObj:SetActive(false)
       else
-        ;
-        (self._storyRedPointObj):SetActive(true)
+        self._storyRedPointObj:SetActive(true)
       end
-      ;
-      (self._storyLockObj):SetActive(false)
+      self._storyLockObj:SetActive(false)
     else
-      ;
-      (self._storyLockObj):SetActive(true)
-      ;
-      (self._storyRedPointObj):SetActive(false)
-      ;
-      (self._StoryInfoBtnText):SetText((StringTable.Get)("str_pet_skin_story_unobtained"))
+      self._storyLockObj:SetActive(true)
+      self._storyRedPointObj:SetActive(false)
+      self._StoryInfoBtnText:SetText(StringTable.Get("str_pet_skin_story_unobtained"))
     end
   else
-    do
-      ;
-      (self._storyInfoBtnObj):SetActive(false)
-    end
+    self._storyInfoBtnObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsMainController._IsObtainUnlock = function(self, data)
-  -- function num : 0_94 , upvalues : _ENV
+function UIPetSkinsMainController:_IsObtainUnlock(data)
   local isObtain = false
   local isUnlock = false
-  local skinData = (self._petModule):GetPetSkinsData((data.petCfg).ID)
+  local skinData = self._petModule:GetPetSkinsData(data.petCfg.ID)
   if skinData then
     local obtainedSkinInfo = skinData.skin_info
     if obtainedSkinInfo then
-      for _,skinInfo in pairs(obtainedSkinInfo) do
-        if skinInfo and skinInfo.skin_id == (data.skinCfg).id then
+      for _, skinInfo in pairs(obtainedSkinInfo) do
+        if skinInfo and skinInfo.skin_id == data.skinCfg.id then
           isObtain = true
-          if skinInfo.unlock_CG == 1 and (data.skinCfg).StoryId then
+          if skinInfo.unlock_CG == 1 and data.skinCfg.StoryId then
             isUnlock = true
           end
           break
@@ -2725,9 +1978,5 @@ UIPetSkinsMainController._IsObtainUnlock = function(self, data)
       end
     end
   end
-  do
-    return isObtain, isUnlock
-  end
+  return isObtain, isUnlock
 end
-
-

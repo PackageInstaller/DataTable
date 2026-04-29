@@ -1,62 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21_crisis_contract/ui_activity_n21cc_intro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN21CCIntro", UIController)
 UIActivityN21CCIntro = UIActivityN21CCIntro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN21CCIntro.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN21CCIntro:OnShow(uiParams)
   self._param = uiParams[1] or "nil"
-  self._cfg = (Cfg.cfg_activityintro)[self._param]
+  self._cfg = Cfg.cfg_activityintro[self._param]
   if self._cfg == nil then
-    (Log.fatal)("###[UIActivityN21CCIntro] self._cfg is nil. param --> ", self._param)
+    Log.fatal("###[UIActivityN21CCIntro] self._cfg is nil. param --> ", self._param)
   end
   self:InitWidget()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCIntro.InitWidget = function(self)
-  -- function num : 0_1
+function UIActivityN21CCIntro:InitWidget()
   self._title = self:GetUIComponent("UILocalizationText", "Title")
   self._desLabel = self:GetUIComponent("UILocalizationText", "Des")
   self._subTitlePanel = self:GetGameObject("SubTitlePanel")
   self._subTitle = self:GetUIComponent("UILocalizationText", "SubTitle")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCIntro._OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._cfg).SubTitle == nil or (self._cfg).SubTitle == "" then
-    (self._subTitlePanel):SetActive(false)
+function UIActivityN21CCIntro:_OnValue()
+  if self._cfg.SubTitle == nil or self._cfg.SubTitle == "" then
+    self._subTitlePanel:SetActive(false)
   else
-    ;
-    (self._subTitlePanel):SetActive(true)
-    ;
-    (self._subTitle):SetText((StringTable.Get)((self._cfg).SubTitle))
+    self._subTitlePanel:SetActive(true)
+    self._subTitle:SetText(StringTable.Get(self._cfg.SubTitle))
   end
-  ;
-  (self._title):SetText((StringTable.Get)((self._cfg).Title))
-  ;
-  (self._desLabel):SetText((StringTable.Get)((self._cfg).Intro))
+  self._title:SetText(StringTable.Get(self._cfg.Title))
+  self._desLabel:SetText(StringTable.Get(self._cfg.Intro))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCIntro.btnCloseOnClick = function(self, go)
-  -- function num : 0_3
+function UIActivityN21CCIntro:btnCloseOnClick(go)
   self:Lock("UIActivityN21CCIntro:OnHide")
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self
     self:UnLock("UIActivityN21CCIntro:OnHide")
     self:CloseDialog()
-  end
-, self)
+  end, self)
 end
-
-

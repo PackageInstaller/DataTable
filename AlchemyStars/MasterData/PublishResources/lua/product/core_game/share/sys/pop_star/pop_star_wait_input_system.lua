@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/pop_star/pop_star_wait_input_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("PopStarWaitInputSystem", MainStateSystem)
 PopStarWaitInputSystem = PopStarWaitInputSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarWaitInputSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PopStarWaitInputSystem:_GetMainStateID()
   return GameStateID.WaitInput
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaitInputSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function PopStarWaitInputSystem:_OnMainStateEnter(TT)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   self:_DoRenderHidePetEntity(TT, teamEntity)
   self:_DoLogicCalc3StarProgress()
   self:_DoLogicCalcBonusObjective()
@@ -36,61 +26,44 @@ PopStarWaitInputSystem._OnMainStateEnter = function(self, TT)
   self:_DoLogicEnableHandleInput()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaitInputSystem._DoLogicCalc3StarProgress = function(self)
-  -- function num : 0_2
-  local popStarSvc = (self._world):GetService("PopStarLogic")
+function PopStarWaitInputSystem:_DoLogicCalc3StarProgress()
+  local popStarSvc = self._world:GetService("PopStarLogic")
   popStarSvc:Calculate3StarProgress()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaitInputSystem._DoLogicCalcBonusObjective = function(self)
-  -- function num : 0_3
-  local bonusService = (self._world):GetService("BonusCalc")
+function PopStarWaitInputSystem:_DoLogicCalcBonusObjective()
+  local bonusService = self._world:GetService("BonusCalc")
   bonusService:CalcBonusObjective()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaitInputSystem._DoLogicRestBattleState = function(self)
-  -- function num : 0_4
-  local battleStatCmpt = (self._world):BattleStat()
+function PopStarWaitInputSystem:_DoLogicRestBattleState()
+  local battleStatCmpt = self._world:BattleStat()
   battleStatCmpt:IncWaitInputCount()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaitInputSystem._DoLogicWaitInputBuff = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((self._world):GetService("Trigger")):Notify(NTWaitInput:New())
+function PopStarWaitInputSystem:_DoLogicWaitInputBuff()
+  self._world:GetService("Trigger"):Notify(NTWaitInput:New())
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaitInputSystem._DoL2RBoardLogicData = function(self)
-  -- function num : 0_6
-  local t = ((self._world):GetService("BoardLogic")):CalcPieceEntities()
-  ;
-  (((self._world):GetBoardEntity()):Board()):SetPieceEntities(t)
-  local svc = (self._world):GetService("L2R")
+function PopStarWaitInputSystem:_DoL2RBoardLogicData()
+  local t = self._world:GetService("BoardLogic"):CalcPieceEntities()
+  self._world:GetBoardEntity():Board():SetPieceEntities(t)
+  local svc = self._world:GetService("L2R")
   svc:L2RBoardLogicData()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaitInputSystem._DoLogicUpdateMatchData = function(self, teamEntity)
-  -- function num : 0_7 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    local logic = (self._world):GetCoreGameLogic()
+function PopStarWaitInputSystem:_DoLogicUpdateMatchData(teamEntity)
+  if self._world:RunAtServer() then
+    local logic = self._world:GetCoreGameLogic()
     if logic:IsRunningAI() then
       local actorID = logic:GetActorID()
       local data = logic:GetAIData()
       update_match_state(actorID, data)
-      local battleStatCmpt = (self._world):BattleStat()
+      local battleStatCmpt = self._world:BattleStat()
       local cmd = MovePathDoneCommand:New()
-      cmd:SetChainPath({teamEntity:GetGridPosition()})
+      cmd:SetChainPath({
+        teamEntity:GetGridPosition()
+      })
       cmd:SetElementType(0)
       cmd.EntityID = 2
       cmd.RoundCount = battleStatCmpt:GetGameRoundCount()
@@ -101,62 +74,32 @@ PopStarWaitInputSystem._DoLogicUpdateMatchData = function(self, teamEntity)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaitInputSystem._DoLogicEnableHandleInput = function(self)
-  -- function num : 0_8
-  local gameFsmCmpt = (self._world):GameFSM()
+function PopStarWaitInputSystem:_DoLogicEnableHandleInput()
+  local gameFsmCmpt = self._world:GameFSM()
   gameFsmCmpt:EnableHandleInput(true)
-  ;
-  ((self._world):GetDataLogger()):AddDataLog("OnShowEnd")
+  self._world:GetDataLogger():AddDataLog("OnShowEnd")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaitInputSystem._DoRenderHidePetEntity = function(self, TT, teamEntity)
-  -- function num : 0_9
+function PopStarWaitInputSystem:_DoRenderHidePetEntity(TT, teamEntity)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaitInputSystem._DoRenderPieceAnimation = function(self, TT)
-  -- function num : 0_10
+function PopStarWaitInputSystem:_DoRenderPieceAnimation(TT)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaitInputSystem._DoRenderPlayWaitInputBuff = function(self, TT)
-  -- function num : 0_11
+function PopStarWaitInputSystem:_DoRenderPlayWaitInputBuff(TT)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaitInputSystem._DoRenderShowPetHeadUI = function(self, TT)
-  -- function num : 0_12
+function PopStarWaitInputSystem:_DoRenderShowPetHeadUI(TT)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaitInputSystem._DoRenderShowPlayerTurnInfo = function(self, TT, teamEntity)
-  -- function num : 0_13
+function PopStarWaitInputSystem:_DoRenderShowPlayerTurnInfo(TT, teamEntity)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaitInputSystem._DoRenderCompareHPLog = function(self, TT)
-  -- function num : 0_14
+function PopStarWaitInputSystem:_DoRenderCompareHPLog(TT)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaitInputSystem._DoRenderComparePieceType = function(self, TT)
-  -- function num : 0_15
+function PopStarWaitInputSystem:_DoRenderComparePieceType(TT)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaitInputSystem._DoRenderSetPreviewTeam = function(self, teamEntity)
-  -- function num : 0_16
+function PopStarWaitInputSystem:_DoRenderSetPreviewTeam(teamEntity)
 end
-
-

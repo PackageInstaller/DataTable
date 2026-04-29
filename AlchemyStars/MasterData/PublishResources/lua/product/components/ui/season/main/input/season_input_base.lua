@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/input/season_input_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonInputBase", Object)
 SeasonInputBase = SeasonInputBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonInputBase.Constructor = function(self, seasonID)
-  -- function num : 0_0 , upvalues : _ENV
-  self._seasonManger = ((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()
-  self._player = ((self._seasonManger):SeasonPlayerManager()):GetPlayer()
-  self._camera = ((self._seasonManger):SeasonCameraManager()):Camera()
-  self._seasonCamera = ((self._seasonManger):SeasonCameraManager()):SeasonCamera()
-  self._zoneFlagLayer = ((self._seasonManger):SeasonSceneManager()):GetLayer(SeasonSceneLayer.ZoneFlag)
-  self._input = (GameGlobal.EngineInput)()
+function SeasonInputBase:Constructor(seasonID)
+  self._seasonManger = GameGlobal.GetUIModule(SeasonModule):SeasonManager()
+  self._player = self._seasonManger:SeasonPlayerManager():GetPlayer()
+  self._camera = self._seasonManger:SeasonCameraManager():Camera()
+  self._seasonCamera = self._seasonManger:SeasonCameraManager():SeasonCamera()
+  self._zoneFlagLayer = self._seasonManger:SeasonSceneManager():GetLayer(SeasonSceneLayer.ZoneFlag)
+  self._input = GameGlobal.EngineInput()
   self._clickTime = 0.2
   self._clickDownTime = 0
   self._curClickEventPoint = nil
@@ -24,79 +17,46 @@ SeasonInputBase.Constructor = function(self, seasonID)
   self._functionTag = "Function"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputBase.Update = function(self, deltaTime)
-  -- function num : 0_1
-  (self._clickEffect):Update(deltaTime)
+function SeasonInputBase:Update(deltaTime)
+  self._clickEffect:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputBase.Dispose = function(self)
-  -- function num : 0_2
+function SeasonInputBase:Dispose()
   self._player = nil
-  ;
-  (self._clickEffect):Dispose()
+  self._clickEffect:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputBase.GetCurClickEventPoint = function(self)
-  -- function num : 0_3
+function SeasonInputBase:GetCurClickEventPoint()
   return self._curClickEventPoint
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputBase.SetCurClickEventPoint = function(self, eventPoint)
-  -- function num : 0_4
+function SeasonInputBase:SetCurClickEventPoint(eventPoint)
   self._curClickEventPoint = eventPoint
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputBase.GetClickUnLockZone = function(self)
-  -- function num : 0_5
+function SeasonInputBase:GetClickUnLockZone()
   return self._clickPositionInUnlockZone
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputBase.GetClickZoneID = function(self)
-  -- function num : 0_6
+function SeasonInputBase:GetClickZoneID()
   return self._clickZoneId
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputBase.SetClickZoneID = function(self, zoneId)
-  -- function num : 0_7
+function SeasonInputBase:SetClickZoneID(zoneId)
   self._clickZoneId = zoneId
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputBase.SetClickUnLockZone = function(self, clickUnlock)
-  -- function num : 0_8
+function SeasonInputBase:SetClickUnLockZone(clickUnlock)
   self._clickPositionInUnlockZone = clickUnlock
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputBase.GetClickEffect = function(self)
-  -- function num : 0_9
+function SeasonInputBase:GetClickEffect()
   return self._clickEffect
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputBase.GetEventPointByFunction = function(self, gameObject)
-  -- function num : 0_10
-  local ui = ((self._seasonManger):SeasonUIManager()):UI()
+function SeasonInputBase:GetEventPointByFunction(gameObject)
+  local ui = self._seasonManger:SeasonUIManager():UI()
   if ui then
     return ui:GetEventPointByFunction(gameObject)
   end
 end
-
-

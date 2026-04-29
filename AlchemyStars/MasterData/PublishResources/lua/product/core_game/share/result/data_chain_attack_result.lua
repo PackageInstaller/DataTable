@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_chain_attack_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataChainAttackResult", Object)
 DataChainAttackResult = DataChainAttackResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataChainAttackResult.Constructor = function(self)
-  -- function num : 0_0
+function DataChainAttackResult:Constructor()
   self._chainSkillID = -1
   self._shadowAtkDataList = {}
   self._agentAtkDataList = {}
@@ -18,102 +11,58 @@ DataChainAttackResult.Constructor = function(self)
   self._multiStageAttackDataList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainAttackResult.SetChainAttackResultSkillID = function(self, skillID)
-  -- function num : 0_1
+function DataChainAttackResult:SetChainAttackResultSkillID(skillID)
   self._chainSkillID = skillID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainAttackResult.SetChainAttackResultShadowAtkDataList = function(self, dataList)
-  -- function num : 0_2
+function DataChainAttackResult:SetChainAttackResultShadowAtkDataList(dataList)
   self._shadowAtkDataList = dataList
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainAttackResult.SetChainAttackResultAgentAtkDataList = function(self, dataList)
-  -- function num : 0_3
+function DataChainAttackResult:SetChainAttackResultAgentAtkDataList(dataList)
   self._agentAtkDataList = dataList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainAttackResult.SetChainAttackResultReplaceAtkDataList = function(self, dataList)
-  -- function num : 0_4
+function DataChainAttackResult:SetChainAttackResultReplaceAtkDataList(dataList)
   self._replaceAtkDataList = dataList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainAttackResult.SetChainAttackResultCastSkillFlag = function(self, flag)
-  -- function num : 0_5
+function DataChainAttackResult:SetChainAttackResultCastSkillFlag(flag)
   self._hasCastSkill = flag
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainAttackResult.SetDeadEntityIDList = function(self, ids)
-  -- function num : 0_6
+function DataChainAttackResult:SetDeadEntityIDList(ids)
   self._deadEntityIDList = ids
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainAttackResult.GetChainAttackResultSkillID = function(self)
-  -- function num : 0_7
+function DataChainAttackResult:GetChainAttackResultSkillID()
   return self._chainSkillID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainAttackResult.GetChainAttackResultShadowAtkDataList = function(self)
-  -- function num : 0_8
+function DataChainAttackResult:GetChainAttackResultShadowAtkDataList()
   return self._shadowAtkDataList
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainAttackResult.GetChainAttackResultAgentAtkDataList = function(self)
-  -- function num : 0_9
+function DataChainAttackResult:GetChainAttackResultAgentAtkDataList()
   return self._agentAtkDataList
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainAttackResult.GetChainAttackResultReplaceAtkDataList = function(self)
-  -- function num : 0_10
+function DataChainAttackResult:GetChainAttackResultReplaceAtkDataList()
   return self._replaceAtkDataList
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainAttackResult.GetChainAttackResultCastSkillFlag = function(self)
-  -- function num : 0_11
+function DataChainAttackResult:GetChainAttackResultCastSkillFlag()
   return self._hasCastSkill
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainAttackResult.GetDeadEntityIDList = function(self)
-  -- function num : 0_12
+function DataChainAttackResult:GetDeadEntityIDList()
   return self._deadEntityIDList
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainAttackResult.SetChainAttackResultAtkDataList = function(self, dataList)
-  -- function num : 0_13
+function DataChainAttackResult:SetChainAttackResultAtkDataList(dataList)
   self._multiStageAttackDataList = dataList
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainAttackResult.GetChainAttackResultAtkDataList = function(self)
-  -- function num : 0_14
+function DataChainAttackResult:GetChainAttackResultAtkDataList()
   return self._multiStageAttackDataList
 end
-
-

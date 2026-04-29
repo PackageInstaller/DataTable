@@ -1,27 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/debug/homeland_pet_debug_text.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandPetDebugText", Object)
 HomelandPetDebugTextText = HomelandPetDebugText
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetDebugText.Constructor = function(self, go)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandPetDebugText:Constructor(go)
   self._uiView = go:GetComponent(typeof(UIView))
-  self._text = (self._uiView):GetUIComponent("UILocalizationText", "txt")
+  self._text = self._uiView:GetUIComponent("UILocalizationText", "txt")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetDebugText.Refresh = function(self, position, str)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  ((self._uiView).transform).position = position
-  ;
-  (self._text):SetText(str)
+function HomelandPetDebugText:Refresh(position, str)
+  self._uiView.transform.position = position
+  self._text:SetText(str)
 end
-
-

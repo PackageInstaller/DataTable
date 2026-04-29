@@ -1,58 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_ruguelike/ui_relic_info_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIRelicInfoController", UIController)
 UIRelicInfoController = UIRelicInfoController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIRelicInfoController.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UIRelicInfoController:OnShow(uiParam)
   self._atlas = self:GetAsset("UIMazeChoose.spriteatlas", LoadType.SpriteAtlas)
-  self.ItemColorToTextColor = {[ItemColor.ItemColor_White] = Color(0.81176470588235, 0.81176470588235, 0.81176470588235, 1), [ItemColor.ItemColor_Green] = Color(0.12549019607843, 0.84705882352941, 0.64705882352941, 1), [ItemColor.ItemColor_Blue] = Color(0.2156862745098, 0.65882352941176, 1, 1), [ItemColor.ItemColor_Purple] = Color(0.69803921568627, 0.53725490196078, 0.98039215686275, 1), [ItemColor.ItemColor_Yellow] = Color(1, 0.95294117647059, 0.2156862745098, 1), [ItemColor.ItemColor_Golden] = Color(1, 0.55686274509804, 0 / 255, 1)}
+  self.ItemColorToTextColor = {
+    [ItemColor.ItemColor_White] = Color(0.8117647058823529, 0.8117647058823529, 0.8117647058823529, 1),
+    [ItemColor.ItemColor_Green] = Color(0.12549019607843137, 0.8470588235294118, 0.6470588235294118, 1),
+    [ItemColor.ItemColor_Blue] = Color(0.21568627450980393, 0.6588235294117647, 1.0, 1),
+    [ItemColor.ItemColor_Purple] = Color(0.6980392156862745, 0.5372549019607843, 0.9803921568627451, 1),
+    [ItemColor.ItemColor_Yellow] = Color(1.0, 0.9529411764705882, 0.21568627450980393, 1),
+    [ItemColor.ItemColor_Golden] = Color(1.0, 0.5568627450980392, 0 / 255, 1)
+  }
   self._relicID = uiParam[1]
   if not self._relicID then
-    (Log.fatal)("###error --> maze relic info controller - the uiParam is nil !")
-    return 
+    Log.fatal("###error --> maze relic info controller - the uiParam is nil !")
+    return
   end
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRelicInfoController.GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIRelicInfoController:GetComponents()
   local relicPool = self:GetUIComponent("UISelectObjectPath", "relicPool")
   local item = relicPool:SpawnObject("UIRugueLikeBackpackItem")
   item:SetData(1, self._relicID, function(tIndex)
-    -- function num : 0_1_0
-  end
-, false)
+  end, false)
   local nameTex = self:GetUIComponent("UILocalizationText", "name")
   local descTex = self:GetUIComponent("UILocalizationText", "desc")
   local colorBg = self:GetUIComponent("Image", "colorDown")
-  local cfg = (Cfg.cfg_item)[self._relicID]
+  local cfg = Cfg.cfg_item[self._relicID]
   if cfg then
-    nameTex:SetText((StringTable.Get)(cfg.Name))
-    descTex:SetText((StringTable.Get)(cfg.RpIntro))
-    colorBg.sprite = (self._atlas):GetSprite("map_shengwu_xian" .. cfg.Color)
+    nameTex:SetText(StringTable.Get(cfg.Name))
+    descTex:SetText(StringTable.Get(cfg.RpIntro))
+    colorBg.sprite = self._atlas:GetSprite("map_shengwu_xian" .. cfg.Color)
     local c = Color(1, 1, 1, 1)
-    c = (self.ItemColorToTextColor)[cfg.Color]
+    c = self.ItemColorToTextColor[cfg.Color]
     nameTex.color = c
   else
-    do
-      ;
-      (Log.fatal)("###error --> maze relic info controller - the cfg_item is nil ! id --> ", self._relicID)
-    end
+    Log.fatal("###error --> maze relic info controller - the cfg_item is nil ! id --> ", self._relicID)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRelicInfoController.bgOnClick = function(self)
-  -- function num : 0_2
+function UIRelicInfoController:bgOnClick()
   self:CloseDialog()
 end
-
-

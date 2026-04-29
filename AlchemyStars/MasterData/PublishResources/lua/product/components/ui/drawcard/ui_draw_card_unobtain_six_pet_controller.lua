@@ -1,64 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_unobtain_six_pet_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIUnObtainSixPetController", UIController)
 UIUnObtainSixPetController = UIUnObtainSixPetController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIUnObtainSixPetController.Constructor = function(self)
-  -- function num : 0_0
+function UIUnObtainSixPetController:Constructor()
   self.isDynamicSvInited = nil
   self._itemCountPerRow = 5
   self._dynamicListSize = 0
   self.petIdList = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUnObtainSixPetController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIUnObtainSixPetController:OnShow(uiParams)
   self:InitWidget()
   self.petIdList = uiParams[1]
   self:InitPetList()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUnObtainSixPetController.InitWidget = function(self)
-  -- function num : 0_2
+function UIUnObtainSixPetController:InitWidget()
   self.dynamicSv = self:GetUIComponent("UIDynamicScrollView", "dynamicSv")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUnObtainSixPetController.InitPetList = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIUnObtainSixPetController:InitPetList()
   if not self.petIdList then
-    return 
+    return
   end
   local len = #self.petIdList
-  if len > 0 then
-    self._dynamicListSize = (math.floor)((len - 1) / self._itemCountPerRow + 1)
+  if 0 < len then
+    self._dynamicListSize = math.floor((len - 1) / self._itemCountPerRow + 1)
     if not self.isDynamicSvInited then
       self.isDynamicSvInited = true
-      ;
-      (self.dynamicSv):InitListView(self._dynamicListSize, function(scrollView, index)
-    -- function num : 0_3_0 , upvalues : self
-    return self:SpawnListItem(scrollView, index)
-  end
-)
+      self.dynamicSv:InitListView(self._dynamicListSize, function(scrollView, index)
+        return self:SpawnListItem(scrollView, index)
+      end)
     else
       self:RefreshItemScroll(self._dynamicListSize, self.dynamicSv)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUnObtainSixPetController.SpawnListItem = function(self, scrollView, rowIndex)
-  -- function num : 0_4
+function UIUnObtainSixPetController:SpawnListItem(scrollView, rowIndex)
   if rowIndex < 0 then
     return nil
   end
@@ -72,46 +50,31 @@ UIUnObtainSixPetController.SpawnListItem = function(self, scrollView, rowIndex)
   for i = 1, self._itemCountPerRow do
     local subItem = rowList[i]
     local itemIndex = rowIndex * self._itemCountPerRow + i
-    if #self.petIdList < itemIndex then
-      (subItem:GetGameObject()):SetActive(false)
+    if itemIndex > #self.petIdList then
+      subItem:GetGameObject():SetActive(false)
     else
-      ;
-      (subItem:GetGameObject()):SetActive(true)
+      subItem:GetGameObject():SetActive(true)
       self:RefreshPetItem(subItem, itemIndex)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUnObtainSixPetController.RefreshItemScroll = function(self, count, list)
-  -- function num : 0_5
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UIUnObtainSixPetController:RefreshItemScroll(count, list)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(count)
   list:MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((list.ScrollRect).content).localPosition = contentPos
+  list.ScrollRect.content.localPosition = contentPos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUnObtainSixPetController.RefreshPetItem = function(self, item, index)
-  -- function num : 0_6
+function UIUnObtainSixPetController:RefreshPetItem(item, index)
   if not self.petIdList then
-    return 
+    return
   end
-  local petId = (self.petIdList)[index]
+  local petId = self.petIdList[index]
   item:SetData(petId)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUnObtainSixPetController.CloseBtnOnClick = function(self, go)
-  -- function num : 0_7
+function UIUnObtainSixPetController:CloseBtnOnClick(go)
   self:CloseDialog()
 end
-
-

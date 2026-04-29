@@ -1,32 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_map_sub_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMapSubItem", UICustomWidget)
 UIMapSubItem = UIMapSubItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMapSubItem.OnShow = function(self)
-  -- function num : 0_0
+function UIMapSubItem:OnShow()
   self._imgMapSub = self:GetUIComponent("RawImageLoader", "imgMapSub")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapSubItem.OnHide = function(self)
-  -- function num : 0_1
+function UIMapSubItem:OnHide()
   if self._imgMapSub then
-    (self._imgMapSub):DestoryLastImage()
+    self._imgMapSub:DestoryLastImage()
     self._imgMapSub = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapSubItem.Flush = function(self, idx, map)
-  -- function num : 0_2
-  (self._imgMapSub):LoadImage(map)
+function UIMapSubItem:Flush(idx, map)
+  self._imgMapSub:LoadImage(map)
 end
-
-

@@ -1,44 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_compare_boss_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ActionCompareBossCount", AINewNode)
 ActionCompareBossCount = ActionCompareBossCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCompareBossCount.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionCompareBossCount:OnUpdate()
   local compareMode = self:GetLogicData(-1)
   local count = self:GetLogicData(-2)
-  local gBoss = (self._world):GetGroup(((self._world).BW_WEMatchers).Boss)
+  local gBoss = self._world:GetGroup(self._world.BW_WEMatchers.Boss)
   local bosses = gBoss:GetEntities()
-  local bossCount = (table.count)(bosses)
+  local bossCount = table.count(bosses)
   local res = false
-  if bossCount ~= count then
-    res = compareMode ~= "eq"
-    if bossCount == count then
-      res = compareMode ~= "ne"
-      if count >= bossCount then
-        res = compareMode ~= "gt"
-        if count > bossCount then
-          res = compareMode ~= "ge"
-          if bossCount >= count then
-            res = compareMode ~= "lt"
-            if bossCount > count then
-              res = compareMode ~= "le"
-              if res then
-                return AINewNodeStatus.Success
-              else
-                return AINewNodeStatus.Failure
-              end
-              -- DECOMPILER ERROR: 14 unprocessed JMP targets
-            end
-          end
-        end
-      end
-    end
+  if compareMode == "eq" then
+    res = bossCount == count
+  elseif compareMode == "ne" then
+    res = bossCount ~= count
+  elseif compareMode == "gt" then
+    res = count < bossCount
+  elseif compareMode == "ge" then
+    res = count <= bossCount
+  elseif compareMode == "lt" then
+    res = count > bossCount
+  elseif compareMode == "le" then
+    res = count >= bossCount
+  end
+  if res then
+    return AINewNodeStatus.Success
+  else
+    return AINewNodeStatus.Failure
   end
 end
-
-

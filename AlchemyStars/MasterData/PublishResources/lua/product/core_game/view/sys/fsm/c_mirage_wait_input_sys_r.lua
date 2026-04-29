@@ -1,45 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_mirage_wait_input_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("mirage_wait_input_system")
 _class("ClientMirageWaitInputSystem_Render", MirageWaitInputSystem)
 ClientMirageWaitInputSystem_Render = ClientMirageWaitInputSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientMirageWaitInputSystem_Render._DoRenderResetBattleState = function(self, TT)
-  -- function num : 0_0
+function ClientMirageWaitInputSystem_Render:_DoRenderResetBattleState(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMirageWaitInputSystem_Render._DoRenderPieceAnimation = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local piece_service = (self._world):GetService("Piece")
+function ClientMirageWaitInputSystem_Render:_DoRenderPieceAnimation(TT)
+  local piece_service = self._world:GetService("Piece")
   piece_service:RefreshPieceAnim()
   piece_service:RefreshMonsterAreaOutLine(TT)
   piece_service:SetAllPieceDark()
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local utilData = (self._world):GetService("UtilData")
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local utilData = self._world:GetService("UtilData")
   local roundGrids = utilData:GetRoundGrid(teamEntity:GetGridPosition())
-  for _,gridPos in ipairs(roundGrids) do
+  for _, gridPos in ipairs(roundGrids) do
     piece_service:SetPieceAnimNormal(gridPos)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowMirageChooseGrid, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowMirageChooseGrid, true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMirageWaitInputSystem_Render._DoRenderCompareHPLog = function(self, TT)
-  -- function num : 0_2
+function ClientMirageWaitInputSystem_Render:_DoRenderCompareHPLog(TT)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMirageWaitInputSystem_Render._DoRenderComparePieceType = function(self, TT)
-  -- function num : 0_3
+function ClientMirageWaitInputSystem_Render:_DoRenderComparePieceType(TT)
 end
-
-

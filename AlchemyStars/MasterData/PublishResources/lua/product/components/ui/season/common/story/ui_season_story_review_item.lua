@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/story/ui_season_story_review_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonStoryReviewItem", UICustomWidget)
 UISeasonStoryReviewItem = UISeasonStoryReviewItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonStoryReviewItem.Constructor = function(self)
-  -- function num : 0_0
+function UISeasonStoryReviewItem:Constructor()
   self._splitChar = "|"
   self._maxWidth = 1100
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryReviewItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISeasonStoryReviewItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryReviewItem._GetComponents = function(self)
-  -- function num : 0_2
+function UISeasonStoryReviewItem:_GetComponents()
   self._lHead = self:GetUIComponent("RawImageLoader", "lHead")
   self._lSpeekerName = self:GetUIComponent("UILocalizedTMP", "lSpeakerName")
   self._lTalkTxt = self:GetUIComponent("UILocalizationText", "lTalkTxt")
@@ -40,99 +27,47 @@ UISeasonStoryReviewItem._GetComponents = function(self)
   self._rightAreaObj = self:GetGameObject("RightArea")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryReviewItem.SetData = function(self, storyID)
-  -- function num : 0_3
+function UISeasonStoryReviewItem:SetData(storyID)
   self._storyID = storyID
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryReviewItem._InitComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (Cfg.cfg_season_story_talk)[self._storyID]
-  local content = (SeasonStoryHelper.GetContentInfo)((StringTable.Get)(cfg.ChatWord))
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
+function UISeasonStoryReviewItem:_InitComponents()
+  local cfg = Cfg.cfg_season_story_talk[self._storyID]
+  local content = SeasonStoryHelper.GetContentInfo(StringTable.Get(cfg.ChatWord))
   if cfg.IsMainActorWord == 1 then
-    (self._layout).childAlignment = (UnityEngine.TextAnchor).UpperLeft
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._rect).pivot = Vector2(0, 0.5)
-    ;
-    (self._leftAreaObj):SetActive(true)
-    ;
-    (self._rightAreaObj):SetActive(false)
-    ;
-    (self._lHead):LoadImage(cfg.SpeakerHead)
-    ;
-    (self._lSpeekerName):SetText((SeasonStoryHelper.DoEscape)((StringTable.Get)(cfg.SpeakerName)))
-    ;
-    (self._lTalkTxt):SetText(content)
-    ;
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._lTalkBgRect)
-    -- DECOMPILER ERROR at PC69: Confused about usage of register: R3 in 'UnsetPending'
-
-    if self._maxWidth < ((self._lTalkBgRect).sizeDelta).x then
-      (self._lTalkBgFitter).horizontalFit = (((UnityEngine.UI).ContentSizeFitter).FitMode).Unconstrained
-      local v2 = Vector2(self._maxWidth, ((self._lTalkBgRect).sizeDelta).y)
-      -- DECOMPILER ERROR at PC77: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._lTalkBgRect).sizeDelta = v2
+    self._layout.childAlignment = UnityEngine.TextAnchor.UpperLeft
+    self._rect.pivot = Vector2(0, 0.5)
+    self._leftAreaObj:SetActive(true)
+    self._rightAreaObj:SetActive(false)
+    self._lHead:LoadImage(cfg.SpeakerHead)
+    self._lSpeekerName:SetText(SeasonStoryHelper.DoEscape(StringTable.Get(cfg.SpeakerName)))
+    self._lTalkTxt:SetText(content)
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._lTalkBgRect)
+    if self._lTalkBgRect.sizeDelta.x > self._maxWidth then
+      self._lTalkBgFitter.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.Unconstrained
+      local v2 = Vector2(self._maxWidth, self._lTalkBgRect.sizeDelta.y)
+      self._lTalkBgRect.sizeDelta = v2
     else
-      do
-        -- DECOMPILER ERROR at PC85: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._lTalkBgFitter).horizontalFit = (((UnityEngine.UI).ContentSizeFitter).FitMode).PreferredSize
-        ;
-        (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._lTalkBgRect)
-        -- DECOMPILER ERROR at PC97: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._layout).childAlignment = (UnityEngine.TextAnchor).UpperRight
-        -- DECOMPILER ERROR at PC103: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._rect).pivot = Vector2(1, 0.5)
-        ;
-        (self._leftAreaObj):SetActive(false)
-        ;
-        (self._rightAreaObj):SetActive(true)
-        ;
-        (self._rHead):LoadImage(cfg.SpeakerHead)
-        ;
-        (self._rSpeekerName):SetText((SeasonStoryHelper.DoEscape)((StringTable.Get)(cfg.SpeakerName)))
-        ;
-        (self._rTalkTxt):SetText(content)
-        ;
-        (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._rTalkBgRect)
-        -- DECOMPILER ERROR at PC148: Confused about usage of register: R3 in 'UnsetPending'
-
-        if self._maxWidth < ((self._rTalkBgRect).sizeDelta).x then
-          (self._rTalkBgFitter).horizontalFit = (((UnityEngine.UI).ContentSizeFitter).FitMode).Unconstrained
-          local v2 = Vector2(self._maxWidth, ((self._rTalkBgRect).sizeDelta).y)
-          -- DECOMPILER ERROR at PC156: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (self._rTalkBgRect).sizeDelta = v2
-        else
-          do
-            -- DECOMPILER ERROR at PC164: Confused about usage of register: R3 in 'UnsetPending'
-
-            ;
-            (self._rTalkBgFitter).horizontalFit = (((UnityEngine.UI).ContentSizeFitter).FitMode).PreferredSize
-            ;
-            (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._rTalkBgRect)
-          end
-        end
-      end
+      self._lTalkBgFitter.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.PreferredSize
     end
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._lTalkBgRect)
+  else
+    self._layout.childAlignment = UnityEngine.TextAnchor.UpperRight
+    self._rect.pivot = Vector2(1, 0.5)
+    self._leftAreaObj:SetActive(false)
+    self._rightAreaObj:SetActive(true)
+    self._rHead:LoadImage(cfg.SpeakerHead)
+    self._rSpeekerName:SetText(SeasonStoryHelper.DoEscape(StringTable.Get(cfg.SpeakerName)))
+    self._rTalkTxt:SetText(content)
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._rTalkBgRect)
+    if self._rTalkBgRect.sizeDelta.x > self._maxWidth then
+      self._rTalkBgFitter.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.Unconstrained
+      local v2 = Vector2(self._maxWidth, self._rTalkBgRect.sizeDelta.y)
+      self._rTalkBgRect.sizeDelta = v2
+    else
+      self._rTalkBgFitter.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.PreferredSize
+    end
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._rTalkBgRect)
   end
 end
-
-

@@ -1,235 +1,140 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/StateAVGStory/n28_state_avg_story_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("state")
 _class("N28StateAVGStoryBase", State)
 N28StateAVGStoryBase = N28StateAVGStoryBase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-N28StateAVGStoryBase.Init = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function N28StateAVGStoryBase:Init()
   self.fsm = self:GetFsm()
-  self.ui = (self.fsm):GetData()
-  self.data = (self.ui).data
-  self.atlas = (self.ui):GetAsset("UIN28AVG.spriteatlas", LoadType.SpriteAtlas)
+  self.ui = self.fsm:GetData()
+  self.data = self.ui.data
+  self.atlas = self.ui:GetAsset("UIN28AVG.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.Destroy = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((N28StateAVGStoryBase.super).Destroy)(self)
+function N28StateAVGStoryBase:Destroy()
+  N28StateAVGStoryBase.super.Destroy(self)
   self.ui = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.NodeId = function(self, nodeId)
-  -- function num : 0_2
-  return (self.ui):NodeId(nodeId)
+function N28StateAVGStoryBase:NodeId(nodeId)
+  return self.ui:NodeId(nodeId)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.NextNodeId = function(self, nextNodeId)
-  -- function num : 0_3
-  return (self.ui):NextNodeId(nextNodeId)
+function N28StateAVGStoryBase:NextNodeId(nextNodeId)
+  return self.ui:NextNodeId(nextNodeId)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.PassSectionId = function(self, sectionSign)
-  -- function num : 0_4
-  return (self.ui):PassSectionId(sectionSign)
+function N28StateAVGStoryBase:PassSectionId(sectionSign)
+  return self.ui:PassSectionId(sectionSign)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.ClearPassSectionIds = function(self)
-  -- function num : 0_5
-  (self.ui):ClearPassSectionIds()
+function N28StateAVGStoryBase:ClearPassSectionIds()
+  self.ui:ClearPassSectionIds()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.InitEvidenceBookShowStatus = function(self)
-  -- function num : 0_6
-  (self.ui):InitEvidenceBookShowStatus()
+function N28StateAVGStoryBase:InitEvidenceBookShowStatus()
+  self.ui:InitEvidenceBookShowStatus()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.ShowJumpAnim = function(self, callback)
-  -- function num : 0_7
-  (self.ui):ShowJumpAnim(callback)
+function N28StateAVGStoryBase:ShowJumpAnim(callback)
+  self.ui:ShowJumpAnim(callback)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.SetShowEvienceCount = function(self, manualID)
-  -- function num : 0_8
-  (self.ui):SetShowEvienceCount(manualID)
+function N28StateAVGStoryBase:SetShowEvienceCount(manualID)
+  self.ui:SetShowEvienceCount(manualID)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.GetShowEvienceCount = function(self, manualID)
-  -- function num : 0_9
-  return (self.ui):GetShowEvienceCount(manualID)
+function N28StateAVGStoryBase:GetShowEvienceCount(manualID)
+  return self.ui:GetShowEvienceCount(manualID)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.ClearShowEvienceCount = function(self)
-  -- function num : 0_10
-  return (self.ui):ClearShowEvienceCount()
+function N28StateAVGStoryBase:ClearShowEvienceCount()
+  return self.ui:ClearShowEvienceCount()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.CopyEvidenceDataInCache = function(self)
-  -- function num : 0_11
-  (self.ui):CopyEvidenceDataInCache()
+function N28StateAVGStoryBase:CopyEvidenceDataInCache()
+  self.ui:CopyEvidenceDataInCache()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.GetEvidenceDataInCache = function(self)
-  -- function num : 0_12
-  return (self.ui):GetEvidenceDataInCache()
+function N28StateAVGStoryBase:GetEvidenceDataInCache()
+  return self.ui:GetEvidenceDataInCache()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.ChangeEvidenceDataInCache = function(self, eid, isAdd)
-  -- function num : 0_13
-  (self.ui):ChangeEvidenceDataInCache(eid, isAdd)
+function N28StateAVGStoryBase:ChangeEvidenceDataInCache(eid, isAdd)
+  self.ui:ChangeEvidenceDataInCache(eid, isAdd)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.CalcCurData = function(self)
-  -- function num : 0_14
-  return (self.ui):CalcCurData()
+function N28StateAVGStoryBase:CalcCurData()
+  return self.ui:CalcCurData()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.InitStoryManager = function(self)
-  -- function num : 0_15
-  return (self.ui):InitStoryManager()
+function N28StateAVGStoryBase:InitStoryManager()
+  return self.ui:InitStoryManager()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.ShowHideOption = function(self, isShow)
-  -- function num : 0_16
-  (self.ui):ShowHideOption(isShow)
+function N28StateAVGStoryBase:ShowHideOption(isShow)
+  self.ui:ShowHideOption(isShow)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.ShowHideGainEvidence = function(self, isShow)
-  -- function num : 0_17
-  (self.ui):ShowHideGainEvidence(isShow)
+function N28StateAVGStoryBase:ShowHideGainEvidence(isShow)
+  self.ui:ShowHideGainEvidence(isShow)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.ShowHideShowEvidence = function(self, isShow)
-  -- function num : 0_18
-  (self.ui):ShowHideShowEvidence(isShow)
+function N28StateAVGStoryBase:ShowHideShowEvidence(isShow)
+  self.ui:ShowHideShowEvidence(isShow)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.ShowHideShowEvidenceEff = function(self, isShow)
-  -- function num : 0_19
-  (self.ui):ShowHideShowEvidenceEff(isShow)
+function N28StateAVGStoryBase:ShowHideShowEvidenceEff(isShow)
+  self.ui:ShowHideShowEvidenceEff(isShow)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.ShowHideJumpBtn = function(self, isShow)
-  -- function num : 0_20
+function N28StateAVGStoryBase:ShowHideJumpBtn(isShow)
   if self.ui then
-    (self.ui):ShowHideJumpBtn(isShow)
+    self.ui:ShowHideJumpBtn(isShow)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.UpdateDriveByState = function(self, deltaTimeMS)
-  -- function num : 0_21
+function N28StateAVGStoryBase:UpdateDriveByState(deltaTimeMS)
   if self.ui then
-    (self.ui):UpdateDriveByState(deltaTimeMS)
+    self.ui:UpdateDriveByState(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.ShowHideButtonAuto = function(self, isShow)
-  -- function num : 0_22
-  ((self.ui).goAuto):SetActive(isShow)
+function N28StateAVGStoryBase:ShowHideButtonAuto(isShow)
+  self.ui.goAuto:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.ShowHideButtonReview = function(self, isShow)
-  -- function num : 0_23
-  ((self.ui).btnReview):SetActive(isShow)
+function N28StateAVGStoryBase:ShowHideButtonReview(isShow)
+  self.ui.btnReview:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.ShowHideButtonShowHideUI = function(self, isShow)
-  -- function num : 0_24
-  ((self.ui).goShowHideUI):SetActive(isShow)
+function N28StateAVGStoryBase:ShowHideButtonShowHideUI(isShow)
+  self.ui.goShowHideUI:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.ShowHideButtonNext = function(self, isShow)
-  -- function num : 0_25
-  ((self.ui).btnNext):SetActive(isShow)
+function N28StateAVGStoryBase:ShowHideButtonNext(isShow)
+  self.ui.btnNext:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.ShowHideButtonGraph = function(self, isShow)
-  -- function num : 0_26
-  ((self.ui).btnGraph):SetActive(isShow)
+function N28StateAVGStoryBase:ShowHideButtonGraph(isShow)
+  self.ui.btnGraph:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.ShowHideButtonExit = function(self, isShow)
-  -- function num : 0_27
-  ((self.ui).btnExit):SetActive(isShow)
+function N28StateAVGStoryBase:ShowHideButtonExit(isShow)
+  self.ui.btnExit:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.ShowHideButtonEvidenceBook = function(self, isShow)
-  -- function num : 0_28
-  (self.ui):SetBtnEvidenceBookActive(isShow)
+function N28StateAVGStoryBase:ShowHideButtonEvidenceBook(isShow)
+  self.ui:SetBtnEvidenceBookActive(isShow)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryBase.HandleSetCurrentLocation = function(self, TT, nodeId, callback, errCallback)
-  -- function num : 0_29 , upvalues : _ENV
-  local com = (self.data):GetComponentAVG()
+function N28StateAVGStoryBase:HandleSetCurrentLocation(TT, nodeId, callback, errCallback)
+  local com = self.data:GetComponentAVG()
   local res = AsyncRequestRes:New()
   local ret = com:HandleSetCurrentLocation(TT, res, nodeId)
-  if (N28AVGData.CheckCode)(res) and callback then
-    callback()
-  end
-  if errCallback then
+  if N28AVGData.CheckCode(res) then
+    if callback then
+      callback()
+    end
+  elseif errCallback then
     errCallback()
   end
 end
-
-

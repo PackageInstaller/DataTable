@@ -1,283 +1,198 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/active_task/ui_active_task_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ActiveTaskData", Object)
 ActiveTaskData = ActiveTaskData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ActiveTaskData.Constructor = function(self)
-  -- function num : 0_0
+function ActiveTaskData:Constructor()
   self._dailyTaskList = nil
   self._accumTaskList = nil
   self._matrixIndex = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.SetCampaign = function(self, campaign)
-  -- function num : 0_1
+function ActiveTaskData:SetCampaign(campaign)
   self._campaign = campaign
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.GetCampaign = function(self)
-  -- function num : 0_2
+function ActiveTaskData:GetCampaign()
   return self._campaign
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.GetCampaignID = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ActiveTaskData:GetCampaignID()
   return ECampaignType.CAMPAIGN_TYPE_N32_VIG_QUEST
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.GetSample = function(self)
-  -- function num : 0_4
-  return (self._campaign):GetSample()
+function ActiveTaskData:GetSample()
+  return self._campaign:GetSample()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.GetCampaignLocalProgress = function(self)
-  -- function num : 0_5
+function ActiveTaskData:GetCampaignLocalProgress()
   local campaign = self:GetCampaign()
   if campaign then
     return campaign:GetLocalProcess()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.GetCampaignEndTime = function(self)
-  -- function num : 0_6
+function ActiveTaskData:GetCampaignEndTime()
   local sample = self:GetSample()
   return sample.end_time
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.CheckFlipRed = function(self)
-  -- function num : 0_7
+function ActiveTaskData:CheckFlipRed()
   local comp = self:GetFlipComp()
   local hasRed = comp:HaveRedPoint()
   return hasRed
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.CheckMissionRed = function(self)
-  -- function num : 0_8
+function ActiveTaskData:CheckMissionRed()
   local comp = self:GetMissionComp()
   local hasRed = comp:HaveRedPoint()
-  if not hasRed then
-    return self:CheckDailyTaskRed()
-  end
+  return hasRed or self:CheckDailyTaskRed()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.GetFlipComp = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function ActiveTaskData:GetFlipComp()
   local localProcess = self:GetCampaignLocalProgress()
   if localProcess then
     return localProcess:GetComponent(ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_TURNCARD)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.GetFlipCompInfo = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function ActiveTaskData:GetFlipCompInfo()
   local localProcess = self:GetCampaignLocalProgress()
   if localProcess then
     return localProcess:GetComponentInfo(ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_TURNCARD)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.GetMissionComp = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function ActiveTaskData:GetMissionComp()
   local localProcess = self:GetCampaignLocalProgress()
   if localProcess then
     return localProcess:GetComponent(ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_QUEST)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.GetMissionCompInfo = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function ActiveTaskData:GetMissionCompInfo()
   local localProcess = self:GetCampaignLocalProgress()
   if localProcess then
     return localProcess:GetComponentInfo(ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_QUEST)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData._GetAllTask = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function ActiveTaskData:_GetAllTask()
   local dailyTaskList = {}
   local accumTaskList = {}
   local compInfo = self:GetMissionCompInfo()
   local questList = compInfo.m_accept_cam_quest_list
   local timeMap = compInfo.m_quest_time_param_map
-  for i,v in pairs(questList) do
+  for i, v in pairs(questList) do
     local item = timeMap[v]
     if item.m_need_daily_reset then
-      (table.insert)(dailyTaskList, v)
+      table.insert(dailyTaskList, v)
     else
-      ;
-      (table.insert)(accumTaskList, v)
+      table.insert(accumTaskList, v)
     end
   end
   return dailyTaskList, accumTaskList
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.GetDailyTaskEndTime = function(self)
-  -- function num : 0_14
+function ActiveTaskData:GetDailyTaskEndTime()
   local comp = self:GetMissionComp()
   return comp:GetEarliestEndTimeInDailyQuest()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.GetDailyTask = function(self)
-  -- function num : 0_15
+function ActiveTaskData:GetDailyTask()
   local dailyTaskList, accumTaskList = self:_GetAllTask()
   dailyTaskList = self:_SortTask(dailyTaskList)
   return dailyTaskList
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.GetAccumTask = function(self)
-  -- function num : 0_16
+function ActiveTaskData:GetAccumTask()
   local dailyTaskList, accumTaskList = self:_GetAllTask()
   accumTaskList = self:_SortTask(accumTaskList)
   return accumTaskList
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData._SortTask = function(self, taskList)
-  -- function num : 0_17 , upvalues : _ENV
-  local questModule = (GameGlobal.GetModule)(QuestModule)
+function ActiveTaskData:_SortTask(taskList)
+  local questModule = GameGlobal.GetModule(QuestModule)
   local resTaskTb = {}
   local unFinish = {}
   local received = {}
-  for _,taskId in pairs(taskList) do
+  for _, taskId in pairs(taskList) do
     local task = questModule:GetQuest(taskId)
     local status = task:Status()
     if status == QuestStatus.QUEST_Accepted then
-      (table.insert)(unFinish, task)
-    else
-      if status == QuestStatus.QUEST_Completed then
-        (table.insert)(resTaskTb, task)
-      else
-        if status == QuestStatus.QUEST_Taken then
-          (table.insert)(received, task)
-        end
-      end
+      table.insert(unFinish, task)
+    elseif status == QuestStatus.QUEST_Completed then
+      table.insert(resTaskTb, task)
+    elseif status == QuestStatus.QUEST_Taken then
+      table.insert(received, task)
     end
   end
-  for _,task in pairs(unFinish) do
-    (table.insert)(resTaskTb, task)
+  for _, task in pairs(unFinish) do
+    table.insert(resTaskTb, task)
   end
-  for _,task in pairs(received) do
-    (table.insert)(resTaskTb, task)
+  for _, task in pairs(received) do
+    table.insert(resTaskTb, task)
   end
   return resTaskTb
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.GetActiveTaskCfg = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function ActiveTaskData:GetActiveTaskCfg()
   local comp = self:GetFlipComp()
-  local cfg = ((Cfg.cfg_active_task_main)({ComponentID = comp:GetComponentCfgId()}))[1]
+  local cfg = Cfg.cfg_active_task_main({
+    ComponentID = comp:GetComponentCfgId()
+  })[1]
   return cfg
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.GetTurnCardCfg = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function ActiveTaskData:GetTurnCardCfg()
   local comp = self:GetFlipComp()
-  local cfg = ((Cfg.cfg_component_turn_card)({ComponentID = comp:GetComponentCfgId()}))[1]
+  local cfg = Cfg.cfg_component_turn_card({
+    ComponentID = comp:GetComponentCfgId()
+  })[1]
   return cfg
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.CheckTaskStatus = function(self, questId)
-  -- function num : 0_20 , upvalues : _ENV
-  local questModule = (GameGlobal.GetModule)(QuestModule)
+function ActiveTaskData:CheckTaskStatus(questId)
+  local questModule = GameGlobal.GetModule(QuestModule)
   local quest = questModule:GetQuest(questId)
   if not quest then
-    return 
+    return
   end
   local questComponent = self:GetMissionComp()
   local status = questComponent:CheckCampaignQuestStatus(quest:QuestInfo())
   return status
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.CheckTaskIsOver = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+function ActiveTaskData:CheckTaskIsOver()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local questInfo = self:GetMissionCompInfo()
   local closeTime = questInfo.m_close_time
-  if closeTime < curTime then
-    local result = (self._campaign):CheckComponentOpenClientError(ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_QUEST)
-    ;
-    (self._campaign):CheckErrorCode(result)
+  if curTime > closeTime then
+    local result = self._campaign:CheckComponentOpenClientError(ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_QUEST)
+    self._campaign:CheckErrorCode(result)
     return true
   else
-    do
-      do return false end
-    end
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.CheckFlipIsOver = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+function ActiveTaskData:CheckFlipIsOver()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local questInfo = self:GetFlipCompInfo()
   local closeTime = questInfo.m_close_time
-  if closeTime < curTime then
-    local result = (self._campaign):CheckComponentOpenClientError(ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_QUEST)
-    ;
-    (self._campaign):CheckErrorCode(result)
+  if curTime > closeTime then
+    local result = self._campaign:CheckComponentOpenClientError(ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_QUEST)
+    self._campaign:CheckErrorCode(result)
     return true
   else
-    do
-      do return false end
-    end
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.CheckDailyTaskIsOver = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function ActiveTaskData:CheckDailyTaskIsOver()
   local closeTime = self:GetDailyTaskEndTime()
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   if closeTime < curTime then
     return true
   else
@@ -285,87 +200,66 @@ ActiveTaskData.CheckDailyTaskIsOver = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.GetMatrixIndex = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function ActiveTaskData:GetMatrixIndex()
   if not self._matrixIndex then
     local flipInfo = self:GetFlipCompInfo()
-    for i,v in pairs(flipInfo.m_matrix) do
+    for i, v in pairs(flipInfo.m_matrix) do
       self._matrixIndex = i
-      do return self._matrixIndex end
+      return self._matrixIndex
     end
   end
-  do
-    return self._matrixIndex
-  end
+  return self._matrixIndex
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.GetTurnCardInfo = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  (self:GetFlipCompInfo())
-  local flipInfo = nil
-  local m_matrix = nil
-  for _,v in pairs(flipInfo.m_matrix) do
+function ActiveTaskData:GetTurnCardInfo()
+  local flipInfo = self:GetFlipCompInfo()
+  local m_matrix
+  for _, v in pairs(flipInfo.m_matrix) do
     m_matrix = v.m_matrix_item
-    do break end
+    break
   end
-  do
-    local itemList = {}
-    local maskList = {}
-    for _,v in pairs(m_matrix) do
-      local item = {}
-      item.id = v.m_id
-      item.isGet = true
-      item.maskList = v.m_is_turn
-      for i,isFlip in pairs(v.m_is_turn) do
-        if not item.index then
-          item.index = i
-        else
-          item.index = (math.min)(item.index, i)
-        end
-        local mask = {}
-        mask.index = i
-        mask.isFlip = isFlip
-        item.isGet = not item.isGet or isFlip
-        ;
-        (table.insert)(maskList, mask)
+  local itemList = {}
+  local maskList = {}
+  for _, v in pairs(m_matrix) do
+    local item = {}
+    item.id = v.m_id
+    item.isGet = true
+    item.maskList = v.m_is_turn
+    for i, isFlip in pairs(v.m_is_turn) do
+      if not item.index then
+        item.index = i
+      else
+        item.index = math.min(item.index, i)
       end
-      ;
-      (table.insert)(itemList, item)
+      local mask = {}
+      mask.index = i
+      mask.isFlip = isFlip
+      item.isGet = item.isGet and isFlip
+      table.insert(maskList, mask)
     end
-    return itemList, maskList
+    table.insert(itemList, item)
   end
+  return itemList, maskList
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.ReloadCampaignInfo = function(self, TT)
-  -- function num : 0_26 , upvalues : _ENV
+function ActiveTaskData:ReloadCampaignInfo(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N32_VIG_QUEST, ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_TURNCARD, ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_QUEST)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N32_VIG_QUEST, ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_TURNCARD, ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_QUEST)
   if res and not res:GetSucc() then
-    local result = (self._campaign):CheckComponentOpenClientError(ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_QUEST)
-    ;
-    (self._campaign):CheckErrorCode(result)
-    return 
+    local result = self._campaign:CheckComponentOpenClientError(ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_QUEST)
+    self._campaign:CheckErrorCode(result)
+    return
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.CheckDailyTaskRed = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function ActiveTaskData:CheckDailyTaskRed()
   local dailyTask = self:_GetAllTask()
   local firstTaskID = dailyTask[1]
-  local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
+  local open_id = GameGlobal.GameLogic():GetOpenId()
   local str = "ActiveTaskData_CheckDailyTaskRed" .. open_id .. firstTaskID
-  local v = (LocalDB.GetInt)(str)
+  local v = LocalDB.GetInt(str)
   if v ~= 1 then
     return true
   else
@@ -373,16 +267,10 @@ ActiveTaskData.CheckDailyTaskRed = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveTaskData.CancelDailyTaskRed = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function ActiveTaskData:CancelDailyTaskRed()
   local dailyTask = self:_GetAllTask()
   local firstTaskID = dailyTask[1]
-  local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
+  local open_id = GameGlobal.GameLogic():GetOpenId()
   local str = "ActiveTaskData_CheckDailyTaskRed" .. open_id .. firstTaskID
-  ;
-  (LocalDB.SetInt)(str, 1)
+  LocalDB.SetInt(str, 1)
 end
-
-

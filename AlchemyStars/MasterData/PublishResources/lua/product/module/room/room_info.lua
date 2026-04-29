@@ -1,59 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/room/room_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local RoomType = {RT_ANY = 0, RT_EMPTY = 1}
 _enum("RoomType", RoomType)
 _class("RoomCreateInfo", Object)
 RoomCreateInfo = RoomCreateInfo
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-RoomCreateInfo.Constructor = function(self)
-  -- function num : 0_0 , upvalues : RoomType
+function RoomCreateInfo:Constructor()
   self.room_type = RoomType.RT_EMPTY
   self.creator_id = 0
   self.max_player = 0
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
 RoomCreateInfo._proto = {
-[1] = {"room_type", "int"}
-, 
-[2] = {"creator_id", "int64"}
-, 
-[3] = {"max_player", "int"}
+  [1] = {"room_type", "int"},
+  [2] = {"creator_id", "int64"},
+  [3] = {"max_player", "int"}
 }
 _class("RoomSyncInfo", Object)
 RoomSyncInfo = RoomSyncInfo
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
 
-RoomSyncInfo.Constructor = function(self)
-  -- function num : 0_1
+function RoomSyncInfo:Constructor()
   self.nick = ""
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
 RoomSyncInfo._proto = {
-[1] = {"nick", "string"}
+  [1] = {"nick", "string"}
 }
 _class("RoomInfo", Object)
 RoomInfo = RoomInfo
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
 
-RoomInfo.Constructor = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function RoomInfo:Constructor()
   self.room_type = 0
   self.room_token = GroupToken:New()
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
 RoomInfo._proto = {
-[1] = {"room_type", "int"}
-, 
-[2] = {"room_token", "GroupToken"}
+  [1] = {"room_type", "int"},
+  [2] = {"room_token", "GroupToken"}
 }
-

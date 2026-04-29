@@ -1,43 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/task/main/ui_n34_task_delegate_person_progress_reward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN34TaskDelegatePersonProgressReward", UICustomWidget)
 UIN34TaskDelegatePersonProgressReward = UIN34TaskDelegatePersonProgressReward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN34TaskDelegatePersonProgressReward.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN34TaskDelegatePersonProgressReward:OnShow(uiParams)
   self._countLabel = self:GetUIComponent("UILocalizationText", "Count")
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._go = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePersonProgressReward.SetData = function(self, reward, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN34TaskDelegatePersonProgressReward:SetData(reward, callback)
   self._callback = callback
-  ;
-  (self._countLabel):SetText(reward.count)
-  local cfg_item = (Cfg.cfg_item)[reward.assetid]
+  self._countLabel:SetText(reward.count)
+  local cfg_item = Cfg.cfg_item[reward.assetid]
   self._reward = reward
   if not cfg_item then
-    return 
+    return
   end
   local icon = cfg_item.Icon
-  ;
-  (self._iconLoader):LoadImage(icon)
+  self._iconLoader:LoadImage(icon)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePersonProgressReward.IconOnClick = function(self)
-  -- function num : 0_2
+function UIN34TaskDelegatePersonProgressReward:IconOnClick()
   if self._callback then
-    (self._callback)((self._reward).assetid, ((self._go).transform).position)
+    self._callback(self._reward.assetid, self._go.transform.position)
   end
 end
-
-

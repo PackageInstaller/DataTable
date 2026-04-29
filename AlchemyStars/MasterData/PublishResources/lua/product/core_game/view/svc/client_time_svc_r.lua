@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/client_time_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("time_base_service")
 _class("ClientTimeService", TimeBaseService)
 ClientTimeService = ClientTimeService
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientTimeService.SetCurrentTime = function(self, curTimeMS)
-  -- function num : 0_0
+function ClientTimeService:SetCurrentTime(curTimeMS)
   self._CurTimeMS = curTimeMS
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientTimeService.SetDeltaTime = function(self, deltaTimeMS)
-  -- function num : 0_1
+function ClientTimeService:SetDeltaTime(deltaTimeMS)
   self._DeltaTimeMS = deltaTimeMS
   self._DeltaTime = deltaTimeMS / 1000
 end
-
-

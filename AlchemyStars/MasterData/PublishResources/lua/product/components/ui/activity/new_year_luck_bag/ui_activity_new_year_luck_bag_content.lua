@@ -1,99 +1,85 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/new_year_luck_bag/ui_activity_new_year_luck_bag_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UIActivityNewYearLuckBagContent", UISideEnterCenterContentBase)
 UIActivityNewYearLuckBagContent = UIActivityNewYearLuckBagContent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityNewYearLuckBagContent.DoInit = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityNewYearLuckBagContent:DoInit(params)
   self._timerName = "UIActivityNewYearLuckBagContent_TimerHolder"
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_INLAND_RANDOM_DRAW
   self._randomLotteryComponentId = ECampaignPetSkinComponentID.RANDOMLOTTERY
   self._actionPointComponentId = ECCampaignSeasonComponentID.ACTION_POINT
   self._storyComponentId = ECampaignRandomDrawComponentID.STORY
-  if params then
-    self._campaignId = params.campaign_id
-    self._curSelectType = nil
-    self._svrTimeModule = self:GetModule(SvrTimeModule)
-    self._campaign = self._data
-  end
+  self._campaignId = params and params.campaign_id
+  self._curSelectType = nil
+  self._svrTimeModule = self:GetModule(SvrTimeModule)
+  self._campaign = self._data
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.DoShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityNewYearLuckBagContent:DoShow()
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._randomLotteryComponent = (self._campaign):GetComponent(self._randomLotteryComponentId)
-  self._actionPointComponent = (self._campaign):GetComponent(self._actionPointComponentId)
-  self._storyComponent = (self._campaign):GetComponent(self._storyComponentId)
-  self._randomLotteryComponentInfo = (self._campaign):GetComponentInfo(self._randomLotteryComponentId)
+    self._campaign:ClearCampaignNew(TT)
+  end)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._randomLotteryComponent = self._campaign:GetComponent(self._randomLotteryComponentId)
+  self._actionPointComponent = self._campaign:GetComponent(self._actionPointComponentId)
+  self._storyComponent = self._campaign:GetComponent(self._storyComponentId)
+  self._randomLotteryComponentInfo = self._campaign:GetComponentInfo(self._randomLotteryComponentId)
   self:GetComponents()
   self:InitWidgets()
   self:RefreshDrawResult()
   self._timerHolder = UITimerHolder:New()
   self:RefreshCountdown()
   if self:CheckActivityOver() then
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent._GetRemainTime = function(self, time)
-  -- function num : 0_2 , upvalues : _ENV
-  local day, hour, minute = nil, nil, nil
-  day = (math.floor)(time / 86400)
-  hour = (math.floor)(time / 3600) % 24
-  minute = (math.floor)(time / 60) % 60
+function UIActivityNewYearLuckBagContent:_GetRemainTime(time)
+  local day, hour, minute
+  day = math.floor(time / 86400)
+  hour = math.floor(time / 3600) % 24
+  minute = math.floor(time / 60) % 60
   local timestring = ""
-  if day > 0 then
-    timestring = day .. (StringTable.Get)("str_activity_common_day") .. hour .. (StringTable.Get)("str_activity_common_hour")
+  if 0 < day then
+    timestring = day .. StringTable.Get("str_activity_common_day") .. hour .. StringTable.Get("str_activity_common_hour")
+  elseif 0 < hour then
+    timestring = hour .. StringTable.Get("str_activity_common_hour") .. minute .. StringTable.Get("str_activity_common_minute")
+  elseif 0 < minute then
+    timestring = minute .. StringTable.Get("str_activity_common_minute")
   else
-    if hour > 0 then
-      timestring = hour .. (StringTable.Get)("str_activity_common_hour") .. minute .. (StringTable.Get)("str_activity_common_minute")
-    else
-      if minute > 0 then
-        timestring = minute .. (StringTable.Get)("str_activity_common_minute")
-      else
-        timestring = (StringTable.Get)("str_activity_common_less_minute")
-      end
-    end
+    timestring = StringTable.Get("str_activity_common_less_minute")
   end
-  return (string.format)((StringTable.Get)("str_activity_common_over"), timestring)
+  return string.format(StringTable.Get("str_activity_common_over"), timestring)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.DoHide = function(self)
-  -- function num : 0_3
-  (self._timerHolder):StopTimer(self._timerName)
+function UIActivityNewYearLuckBagContent:DoHide()
+  self._timerHolder:StopTimer(self._timerName)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.DoDestroy = function(self)
-  -- function num : 0_4
+function UIActivityNewYearLuckBagContent:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.GetComponents = function(self)
-  -- function num : 0_5
-  self._DRAWTYPE = {Fortune = 1, Career = 2, Marriage = 3}
-  self._DRAWResult = {Bad = 1, Ordinary = 2, Extremely = 3}
+function UIActivityNewYearLuckBagContent:GetComponents()
+  self._DRAWTYPE = {
+    Fortune = 1,
+    Career = 2,
+    Marriage = 3
+  }
+  self._DRAWResult = {
+    Bad = 1,
+    Ordinary = 2,
+    Extremely = 3
+  }
   self.MAXDRAWTIME = 3
-  self._drawTypeBtnGroup = {[(self._DRAWTYPE).Fortune] = self:GetGameObject("DrawTypeButton1"), [(self._DRAWTYPE).Career] = self:GetGameObject("DrawTypeButton2"), [(self._DRAWTYPE).Marriage] = self:GetGameObject("DrawTypeButton3")}
-  self._drawTypeIDGroup = {[(self._DRAWTYPE).Fortune] = 3, [(self._DRAWTYPE).Career] = 4, [(self._DRAWTYPE).Marriage] = 5}
+  self._drawTypeBtnGroup = {
+    [self._DRAWTYPE.Fortune] = self:GetGameObject("DrawTypeButton1"),
+    [self._DRAWTYPE.Career] = self:GetGameObject("DrawTypeButton2"),
+    [self._DRAWTYPE.Marriage] = self:GetGameObject("DrawTypeButton3")
+  }
+  self._drawTypeIDGroup = {
+    [self._DRAWTYPE.Fortune] = 3,
+    [self._DRAWTYPE.Career] = 4,
+    [self._DRAWTYPE.Marriage] = 5
+  }
   self._nextFlushTimeText = self:GetUIComponent("UILocalizationText", "NextDrawTimeText")
   self._remainDrawTimeText = self:GetUIComponent("UILocalizationText", "RemainDrawTimeText")
   self._activityRemainTimeText = self:GetUIComponent("UILocalizationText", "ActivityRemainTimeText")
@@ -112,116 +98,91 @@ UIActivityNewYearLuckBagContent.GetComponents = function(self)
   self._chooseTipObj = self:GetGameObject("chooseTip")
   self._sixFullAnim = self:GetUIComponent("Animation", "SixFull")
   self._anim = self:GetUIComponent("Animation", "anim")
-  self._drawResultBtnGroup = {[1] = self:GetGameObject("resultButton1"), [2] = self:GetGameObject("resultButton2"), [3] = self:GetGameObject("resultButton3")}
+  self._drawResultBtnGroup = {
+    [1] = self:GetGameObject("resultButton1"),
+    [2] = self:GetGameObject("resultButton2"),
+    [3] = self:GetGameObject("resultButton3")
+  }
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.InitWidgets = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityNewYearLuckBagContent:InitWidgets()
   self._curSelectType = nil
-  for t,v in pairs(self._drawTypeBtnGroup) do
-    do
-      (((v.transform):Find("select")).gameObject):SetActive(false)
-    end
+  for t, v in pairs(self._drawTypeBtnGroup) do
+    v.transform:Find("select").gameObject:SetActive(false)
   end
-  for type,obj in pairs(self._drawTypeBtnGroup) do
-    self:AddUICustomEventListener((UICustomUIEventListener.Get)(obj), UIEvent.Click, function(go)
-    -- function num : 0_6_0 , upvalues : self, type, _ENV
-    if self._curSelectType == type then
-      return 
-    end
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
-    ;
-    (self._btnGroupObj):SetActive(true)
-    self._curSelectType = type
-    self:SetBriefIntro()
-    for t,v in pairs(self._drawTypeBtnGroup) do
-      (((v.transform):Find("select")).gameObject):SetActive(self._curSelectType == t)
-      ;
-      ((v.transform):GetComponent("Animation")):Play("uieff_UIActivityNewYearLuckBagContent_SixFull_LuckBagGroup")
-      self:StartTask(function(TT)
-      -- function num : 0_6_0_0 , upvalues : self, _ENV
-      self:Lock("uieff_UIActivityNewYearLuckBagContent_SixFull_LuckBagGroup")
-      YIELD(TT, 600)
-      self:UnLock("uieff_UIActivityNewYearLuckBagContent_SixFull_LuckBagGroup")
-    end
-)
-    end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  for type, obj in pairs(self._drawTypeBtnGroup) do
+    self:AddUICustomEventListener(UICustomUIEventListener.Get(obj), UIEvent.Click, function(go)
+      if self._curSelectType == type then
+        return
+      end
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
+      self._btnGroupObj:SetActive(true)
+      self._curSelectType = type
+      self:SetBriefIntro()
+      for t, v in pairs(self._drawTypeBtnGroup) do
+        v.transform:Find("select").gameObject:SetActive(self._curSelectType == t)
+        v.transform:GetComponent("Animation"):Play("uieff_UIActivityNewYearLuckBagContent_SixFull_LuckBagGroup")
+        self:StartTask(function(TT)
+          self:Lock("uieff_UIActivityNewYearLuckBagContent_SixFull_LuckBagGroup")
+          YIELD(TT, 600)
+          self:UnLock("uieff_UIActivityNewYearLuckBagContent_SixFull_LuckBagGroup")
+        end)
+      end
+    end)
   end
-)
-  end
-  ;
-  (self._btnGroupObj):SetActive(false)
+  self._btnGroupObj:SetActive(false)
   self._curSelectDrawIndex = 1
   self:SetBriefIntro()
   self._hasGetReward = false
   self._todayRefreshFlag = false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.RefreshCountdown = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local refreshTime = (self._randomLotteryComponentInfo).draw_refresh_time
-  local activityRemainTime = (self._randomLotteryComponentInfo).m_close_time
-  local countDown = function()
-    -- function num : 0_7_0 , upvalues : self, refreshTime, activityRemainTime, _ENV
-    local nowTime = (self._timeModule):GetServerTime() / 1000
+function UIActivityNewYearLuckBagContent:RefreshCountdown()
+  local refreshTime = self._randomLotteryComponentInfo.draw_refresh_time
+  local activityRemainTime = self._randomLotteryComponentInfo.m_close_time
+  
+  local function countDown()
+    local nowTime = self._timeModule:GetServerTime() / 1000
     local remainTime = refreshTime - nowTime
     local activituRemain = activityRemainTime - nowTime
-    if (tolua.isnull)(self._nextFlushTimeText) then
-      return 
+    if tolua.isnull(self._nextFlushTimeText) then
+      return
     end
-    if activituRemain > 0 then
+    if 0 < activituRemain then
       if remainTime < 0 then
         if not self._todayRefreshFlag then
           self._todayRefreshFlag = true
           self:StartTask(function(TT)
-      -- function num : 0_7_0_0 , upvalues : _ENV, self
-      local luckBagController = ((GameGlobal.UIStateManager)()):GetController("UIActivityNewYearLuckBagController")
-      if luckBagController then
-        luckBagController:SetExpire(true)
-      end
-      YIELD(TT, 2000)
-      local res = AsyncRequestRes:New()
-      ;
-      (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-      if res:GetSucc() then
-        self:OnCN12LuckBagDrawRefresh()
-      else
-        ;
-        (Log.fatal)("新年抽签强制刷新数据错误：", res:GetResult())
-      end
-    end
-)
+            local luckBagController = GameGlobal.UIStateManager():GetController("UIActivityNewYearLuckBagController")
+            if luckBagController then
+              luckBagController:SetExpire(true)
+            end
+            YIELD(TT, 2000)
+            local res = AsyncRequestRes:New()
+            self._campaign:ReLoadCampaignInfo_Force(TT, res)
+            if res:GetSucc() then
+              self:OnCN12LuckBagDrawRefresh()
+            else
+              Log.fatal("新年抽签强制刷新数据错误：", res:GetResult())
+            end
+          end)
         end
-        return 
+        return
       end
-      ;
-      (self._nextFlushTimeText):SetText((StringTable.Get)("str_cn12_n41_game_time1", self:_GetRemainTime(remainTime)))
-      ;
-      (self._activityRemainTimeText):SetText((StringTable.Get)("str_cn12_n41_game_time2", self:_GetRemainTime(activituRemain)))
+      self._nextFlushTimeText:SetText(StringTable.Get("str_cn12_n41_game_time1", self:_GetRemainTime(remainTime)))
+      self._activityRemainTimeText:SetText(StringTable.Get("str_cn12_n41_game_time2", self:_GetRemainTime(activituRemain)))
     else
-      ;
-      (self._nextFlushTimeText):SetText((StringTable.Get)("str_activity_common_notice_content"))
-      ;
-      (self._activityRemainTimeText):SetText((StringTable.Get)("str_activity_common_notice_content"))
+      self._nextFlushTimeText:SetText(StringTable.Get("str_activity_common_notice_content"))
+      self._activityRemainTimeText:SetText(StringTable.Get("str_activity_common_notice_content"))
     end
   end
-
+  
   countDown()
-  ;
-  (self._timerHolder):StartTimerInfinite(self._timerName, 1000, countDown)
+  self._timerHolder:StartTimerInfinite(self._timerName, 1000, countDown)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.GetDrawType = function(self, cfgID)
-  -- function num : 0_8 , upvalues : _ENV
-  for type,v in pairs(self._drawTypeIDGroup) do
+function UIActivityNewYearLuckBagContent:GetDrawType(cfgID)
+  for type, v in pairs(self._drawTypeIDGroup) do
     if v == cfgID then
       return type
     end
@@ -229,398 +190,281 @@ UIActivityNewYearLuckBagContent.GetDrawType = function(self, cfgID)
   return nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.OnCN12LuckBagDrawRefresh = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  if (tolua.isnull)(self._nextFlushTimeText) then
-    return 
+function UIActivityNewYearLuckBagContent:OnCN12LuckBagDrawRefresh()
+  if tolua.isnull(self._nextFlushTimeText) then
+    return
   end
-  ;
-  (ToastManager.ShowToast)((StringTable.Get)("str_cn12_n41_game_tip6"))
-  ;
-  (self._anim):Play("uieff_UIActivityNewYearLuckBagContent_in")
+  ToastManager.ShowToast(StringTable.Get("str_cn12_n41_game_tip6"))
+  self._anim:Play("uieff_UIActivityNewYearLuckBagContent_in")
   self:InitWidgets()
   self:RefreshDrawResult()
   self:RefreshCountdown()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.RefreshDrawResult = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  if (self._randomLotteryComponentInfo).m_draw and #(self._randomLotteryComponentInfo).m_draw > 0 then
-    for _,v in pairs((self._randomLotteryComponentInfo).m_draw) do
+function UIActivityNewYearLuckBagContent:RefreshDrawResult()
+  if self._randomLotteryComponentInfo.m_draw and #self._randomLotteryComponentInfo.m_draw > 0 then
+    for _, v in pairs(self._randomLotteryComponentInfo.m_draw) do
       if v.is_get then
         self._hasGetReward = true
       end
     end
-    ;
-    (self._drawedRoot):SetActive(true)
-    ;
-    (self._firstRoot):SetActive(false)
+    self._drawedRoot:SetActive(true)
+    self._firstRoot:SetActive(false)
     local stage = 1
     if self._hasGetReward then
       stage = 2
     end
-    local dialogCfg = ((Cfg.cfg_luckbag_dialog)({Stage = stage}))[1]
-    ;
-    (self._spineText):SetText((StringTable.Get)(dialogCfg.Dialog))
+    local dialogCfg = Cfg.cfg_luckbag_dialog({Stage = stage})[1]
+    self._spineText:SetText(StringTable.Get(dialogCfg.Dialog))
     self:FlushDrawedPanel()
   else
-    do
-      do
-        local dialogCfg = ((Cfg.cfg_luckbag_dialog)({Stage = 1}))[1]
-        ;
-        (self._spineText):SetText((StringTable.Get)(dialogCfg.Dialog))
-        ;
-        (self._drawedRoot):SetActive(false)
-        ;
-        (self._firstRoot):SetActive(true)
-        self:FlushFirstDrawPanel()
-        local leftTime = self.MAXDRAWTIME - (table.count)((self._randomLotteryComponentInfo).m_draw)
-        if leftTime ~= 0 or not "<color=#FF0000>" .. leftTime .. "</color>" then
-          local tempRemindTime = "<color=#ffd257>" .. leftTime .. "/" .. self.MAXDRAWTIME .. "</color>"
-          local tempTxt = (StringTable.Get)("str_cn12_n41_game_tip2", tempRemindTime)
-          ;
-          (self._remainDrawTimeText):SetText(tempTxt)
-        end
-      end
-    end
+    local dialogCfg = Cfg.cfg_luckbag_dialog({Stage = 1})[1]
+    self._spineText:SetText(StringTable.Get(dialogCfg.Dialog))
+    self._drawedRoot:SetActive(false)
+    self._firstRoot:SetActive(true)
+    self:FlushFirstDrawPanel()
   end
+  local leftTime = self.MAXDRAWTIME - table.count(self._randomLotteryComponentInfo.m_draw)
+  leftTime = leftTime == 0 and "<color=#FF0000>" .. leftTime .. "</color>" or leftTime
+  local tempRemindTime = "<color=#ffd257>" .. leftTime .. "/" .. self.MAXDRAWTIME .. "</color>"
+  local tempTxt = StringTable.Get("str_cn12_n41_game_tip2", tempRemindTime)
+  self._remainDrawTimeText:SetText(tempTxt)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.FlushFirstDrawPanel = function(self)
-  -- function num : 0_11
-  (self._startRoot):SetActive(true)
-  ;
-  (self._drawTypeRoot):SetActive(false)
+function UIActivityNewYearLuckBagContent:FlushFirstDrawPanel()
+  self._startRoot:SetActive(true)
+  self._drawTypeRoot:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.FlushDrawedPanel = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local drawListLength = #(self._randomLotteryComponentInfo).m_draw
-  ;
-  (self._drawedList):SetActive(not self._hasGetReward)
-  ;
-  (self._chooseTipObj):SetActive(not self._hasGetReward)
-  ;
-  (self._drawedButtonGroup):SetActive(not self._hasGetReward)
-  ;
-  (self._reDrawButton):SetActive(drawListLength ~= self.MAXDRAWTIME)
-  local lastSelectObj, lastSelectTxt = nil, nil
-  self._drawResultPool = (self._DrawResult):SpawnObject("UIActivityNewYearLuckBagResultItem")
+function UIActivityNewYearLuckBagContent:FlushDrawedPanel()
+  local drawListLength = #self._randomLotteryComponentInfo.m_draw
+  self._drawedList:SetActive(not self._hasGetReward)
+  self._chooseTipObj:SetActive(not self._hasGetReward)
+  self._drawedButtonGroup:SetActive(not self._hasGetReward)
+  self._reDrawButton:SetActive(drawListLength ~= self.MAXDRAWTIME)
+  local lastSelectObj, lastSelectTxt
+  self._drawResultPool = self._DrawResult:SpawnObject("UIActivityNewYearLuckBagResultItem")
   for i = 1, #self._drawResultBtnGroup do
-    do
-      local obj = (self._drawResultBtnGroup)[i]
-      local drawInfo = ((self._randomLotteryComponentInfo).m_draw)[i]
-      ;
-      (((obj.transform):Find("bgNormal")).gameObject):SetActive(drawInfo ~= nil)
-      ;
-      (((obj.transform):Find("bgNotDraw")).gameObject):SetActive(drawInfo == nil)
-      local txt = ((obj.transform):Find("resultTxt")):GetComponent(typeof(UILocalizationText))
-      if drawInfo then
-        txt:SetText((StringTable.Get)("str_cn12_n41_game_luck" .. drawInfo.random_type))
-        txt.color = Color(0.47843137254902, 0.30980392156863, 0.1921568627451)
-      else
-        txt:SetText((StringTable.Get)("str_cn12_n41_game_luck_none"))
-        txt.color = Color(0.29019607843137, 0.16078431372549, 0.098039215686275)
-      end
-      ;
-      (((obj.transform):Find("bgSelect")).gameObject):SetActive(false)
-      local callback = function()
-    -- function num : 0_12_0 , upvalues : drawInfo, self, i, lastSelectObj, lastSelectTxt, _ENV, obj
+    local obj = self._drawResultBtnGroup[i]
+    local drawInfo = self._randomLotteryComponentInfo.m_draw[i]
+    obj.transform:Find("bgNormal").gameObject:SetActive(drawInfo ~= nil)
+    obj.transform:Find("bgNotDraw").gameObject:SetActive(drawInfo == nil)
+    local txt = obj.transform:Find("resultTxt"):GetComponent(typeof(UILocalizationText))
     if drawInfo then
-      (self._drawResultPool):FlushData(drawInfo, self, self._hasGetReward, function(id, pos)
-      -- function num : 0_12_0_0 , upvalues : self
-      self:OnItemSelect(id, pos)
-    end
-)
-      self._curSelectDrawIndex = i
+      txt:SetText(StringTable.Get("str_cn12_n41_game_luck" .. drawInfo.random_type))
+      txt.color = Color(0.47843137254901963, 0.30980392156862746, 0.19215686274509805)
     else
-      return 
+      txt:SetText(StringTable.Get("str_cn12_n41_game_luck_none"))
+      txt.color = Color(0.2901960784313726, 0.1607843137254902, 0.09803921568627451)
     end
-    if lastSelectObj then
-      lastSelectObj:SetActive(false)
-      lastSelectTxt.color = Color(0.47843137254902, 0.30980392156863, 0.1921568627451)
+    obj.transform:Find("bgSelect").gameObject:SetActive(false)
+    
+    local function callback()
+      if drawInfo then
+        self._drawResultPool:FlushData(drawInfo, self, self._hasGetReward, function(id, pos)
+          self:OnItemSelect(id, pos)
+        end)
+        self._curSelectDrawIndex = i
+      else
+        return
+      end
+      if lastSelectObj then
+        lastSelectObj:SetActive(false)
+        lastSelectTxt.color = Color(0.47843137254901963, 0.30980392156862746, 0.19215686274509805)
+      end
+      lastSelectObj = obj.transform:Find("bgSelect").gameObject
+      lastSelectTxt = obj.transform:Find("resultTxt"):GetComponent(typeof(UILocalizationText))
+      lastSelectObj:SetActive(true)
+      lastSelectTxt.color = Color(0.9647058823529412, 0.9333333333333333, 0.7764705882352941)
     end
-    lastSelectObj = ((obj.transform):Find("bgSelect")).gameObject
-    lastSelectTxt = ((obj.transform):Find("resultTxt")):GetComponent(typeof(UILocalizationText))
-    lastSelectObj:SetActive(true)
-    lastSelectTxt.color = Color(0.96470588235294, 0.93333333333333, 0.77647058823529)
-  end
-
-      self:AddUICustomEventListener((UICustomUIEventListener.Get)(obj), UIEvent.Click, function(go)
-    -- function num : 0_12_1 , upvalues : callback
-    callback()
-  end
-)
-      if self._hasGetReward and drawInfo and drawInfo.is_get then
+    
+    self:AddUICustomEventListener(UICustomUIEventListener.Get(obj), UIEvent.Click, function(go)
+      callback()
+    end)
+    if self._hasGetReward then
+      if drawInfo and drawInfo.is_get then
         callback()
       end
-      if i == drawListLength then
-        callback()
-      end
+    elseif i == drawListLength then
+      callback()
     end
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.OnItemSelect = function(self, id, pos)
-  -- function num : 0_13
+function UIActivityNewYearLuckBagContent:OnItemSelect(id, pos)
   if not self._selectInfo then
-    self._selectInfo = (self._selectInfoPool):SpawnObject("UISelectInfo")
+    self._selectInfo = self._selectInfoPool:SpawnObject("UISelectInfo")
   end
-  ;
-  (self._selectInfo):SetData(id, pos)
+  self._selectInfo:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.StartButtonOnClick = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityNewYearLuckBagContent:StartButtonOnClick()
   if self:CheckActivityOver() then
-    return 
+    return
   end
-  ;
-  (self._startRoot):SetActive(false)
-  ;
-  (self._drawTypeRoot):SetActive(true)
+  self._startRoot:SetActive(false)
+  self._drawTypeRoot:SetActive(true)
   self:StartTask(function(TT)
-    -- function num : 0_14_0 , upvalues : self, _ENV
     self:Lock("uieff_UIActivityNewYearLuckBagContent_SixFull")
-    ;
-    (self._sixFullAnim):Play("uieff_UIActivityNewYearLuckBagContent_SixFull")
+    self._sixFullAnim:Play("uieff_UIActivityNewYearLuckBagContent_SixFull")
     YIELD(TT, 667)
     self:UnLock("uieff_UIActivityNewYearLuckBagContent_SixFull")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.DrawButtonOnClick = function(self)
-  -- function num : 0_15
+function UIActivityNewYearLuckBagContent:DrawButtonOnClick()
   if self:CheckActivityOver() then
-    return 
+    return
   end
-  if not self._curSelectType and not (self._randomLotteryComponentInfo).m_draw then
-    return 
+  if not self._curSelectType and not self._randomLotteryComponentInfo.m_draw then
+    return
   end
   self:DrawAction(function()
-    -- function num : 0_15_0 , upvalues : self
     self:ShowDialog("UIActivityNewYearLuckBagAnimController", self._randomLotteryComponentInfo, self, self._storyComponent)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.CancelDrawButtonOnClick = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityNewYearLuckBagContent:CancelDrawButtonOnClick()
   if self:CheckActivityOver() then
-    return 
+    return
   end
   self._curSelectType = nil
-  for t,v in pairs(self._drawTypeBtnGroup) do
-    (((v.transform):Find("select")).gameObject):SetActive(false)
+  for t, v in pairs(self._drawTypeBtnGroup) do
+    v.transform:Find("select").gameObject:SetActive(false)
   end
-  ;
-  (self._btnGroupObj):SetActive(false)
+  self._btnGroupObj:SetActive(false)
   self:SetBriefIntro()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.ReDrawButtonOnClick = function(self)
-  -- function num : 0_17
+function UIActivityNewYearLuckBagContent:ReDrawButtonOnClick()
   if self:CheckActivityOver() then
-    return 
+    return
   end
   self:DrawAction(function()
-    -- function num : 0_17_0 , upvalues : self
     self:ShowDialog("UIActivityNewYearLuckBagAnimController", self._randomLotteryComponentInfo, self, self._storyComponent)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.ConfirmButtonOnClick = function(self)
-  -- function num : 0_18
+function UIActivityNewYearLuckBagContent:ConfirmButtonOnClick()
   self:GetReward(self._curSelectDrawIndex, function()
-    -- function num : 0_18_0 , upvalues : self
     self._hasGetReward = true
     if self._drawResultPool then
-      (self._drawResultPool):SetFinishDrawState(self._hasGetReward)
+      self._drawResultPool:SetFinishDrawState(self._hasGetReward)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.GetReward = function(self, index, callback)
-  -- function num : 0_19 , upvalues : _ENV
+function UIActivityNewYearLuckBagContent:GetReward(index, callback)
   self:StartTask(function(TT)
-    -- function num : 0_19_0 , upvalues : _ENV, self, index, callback
     local asyncRes = AsyncRequestRes:New()
-    local respone = (self._randomLotteryComponent):HandleRandomLotteryComponentDrawReward(TT, asyncRes, index)
+    local respone = self._randomLotteryComponent:HandleRandomLotteryComponentDrawReward(TT, asyncRes, index)
     local replyResult = asyncRes:GetResult()
     if asyncRes:GetSucc() then
-      local rewards = (respone.m_draw).m_rewards
+      local rewards = respone.m_draw.m_rewards
       self:ShowDialog("UIGetItemController", rewards, function()
-      -- function num : 0_19_0_0 , upvalues : callback, self, _ENV
-      if callback then
-        callback()
-      end
-      self:StartTask(function(TT)
-        -- function num : 0_19_0_0_0 , upvalues : self, _ENV
-        (self._anim):Play("uieff_UIActivityNewYearLuckBagContent_out")
-        YIELD(TT, 534)
-        self:InitWidgets()
-        self:RefreshDrawResult()
-      end
-)
-    end
-)
+        if callback then
+          callback()
+        end
+        self:StartTask(function(TT)
+          self._anim:Play("uieff_UIActivityNewYearLuckBagContent_out")
+          YIELD(TT, 534)
+          self:InitWidgets()
+          self:RefreshDrawResult()
+        end)
+      end)
     else
-      do
-        local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-        campaignModule:CheckErrorCode(asyncRes:GetResult(), (self._campaign)._id, function()
-      -- function num : 0_19_0_1 , upvalues : _ENV
-      local luckBagController = ((GameGlobal.UIStateManager)()):GetController("UIActivityNewYearLuckBagController")
-      if luckBagController then
-        ((GameGlobal.UIStateManager)()):CloseDialog("UIActivityNewYearLuckBagController")
-      end
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      campaignModule:CheckErrorCode(asyncRes:GetResult(), self._campaign._id, function()
+        local luckBagController = GameGlobal.UIStateManager():GetController("UIActivityNewYearLuckBagController")
+        if luckBagController then
+          GameGlobal.UIStateManager():CloseDialog("UIActivityNewYearLuckBagController")
+        end
+      end, function()
+        self:CloseDialog()
+      end)
     end
-, function()
-      -- function num : 0_19_0_2 , upvalues : self
-      self:CloseDialog()
-    end
-)
-      end
-    end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.SetBriefIntro = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIActivityNewYearLuckBagContent:SetBriefIntro()
   if not self._curSelectType then
-    (self._briefTip):SetText((StringTable.Get)("str_cn12_n41_game_tip3"))
-    return 
+    self._briefTip:SetText(StringTable.Get("str_cn12_n41_game_tip3"))
+    return
   end
   local commonTxt = "str_cn12_n41_game_luck_txt"
-  local typeTxt = (StringTable.Get)(commonTxt .. self._curSelectType)
-  local tipTxt = (StringTable.Get)("str_cn12_n41_game_tip4", typeTxt)
-  ;
-  (self._briefTip):SetText(tipTxt)
+  local typeTxt = StringTable.Get(commonTxt .. self._curSelectType)
+  local tipTxt = StringTable.Get("str_cn12_n41_game_tip4", typeTxt)
+  self._briefTip:SetText(tipTxt)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.DrawAction = function(self, callback)
-  -- function num : 0_21 , upvalues : _ENV
-  do
-    if self:CheckActivityOver() then
-      local luckBagController = ((GameGlobal.UIStateManager)()):GetController("UIActivityNewYearLuckBagController")
-      if luckBagController then
-        ((GameGlobal.UIStateManager)()):CloseDialog("UIActivityNewYearLuckBagController")
-      end
-      return 
+function UIActivityNewYearLuckBagContent:DrawAction(callback)
+  if self:CheckActivityOver() then
+    local luckBagController = GameGlobal.UIStateManager():GetController("UIActivityNewYearLuckBagController")
+    if luckBagController then
+      GameGlobal.UIStateManager():CloseDialog("UIActivityNewYearLuckBagController")
     end
-    local cur, need, cfgID = self:GetActionPointAndNeed(self._curSelectType)
-    if cur then
-      if cur < need then
-        self:StartTask(function(TT)
-    -- function num : 0_21_0 , upvalues : self, _ENV, cfgID, callback
-    self:Lock("HandleRandomLotteryComponentDraw")
-    local asyncRes = AsyncRequestRes:New()
-    ;
-    (self._randomLotteryComponent):HandleRandomLotteryComponentDraw(TT, asyncRes, cfgID)
-    local replyResult = asyncRes:GetResult()
-    if asyncRes:GetSucc() then
-      if callback then
-        callback()
-      end
-      YIELD(TT, 1000)
-      self:UnLock("HandleRandomLotteryComponentDraw")
-      self:InitWidgets()
-      self:RefreshDrawResult()
-    else
-      local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-      campaignModule:CheckErrorCode(asyncRes:GetResult(), (self._campaign)._id, function()
-      -- function num : 0_21_0_0 , upvalues : _ENV
-      local luckBagController = ((GameGlobal.UIStateManager)()):GetController("UIActivityNewYearLuckBagController")
-      if luckBagController then
-        ((GameGlobal.UIStateManager)()):CloseDialog("UIActivityNewYearLuckBagController")
-      end
-    end
-, function()
-      -- function num : 0_21_0_1 , upvalues : self
-      self:CloseDialog()
-    end
-)
-    end
+    return
   end
-)
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.GetActionPointAndNeed = function(self, type)
-  -- function num : 0_22 , upvalues : _ENV
-  if not type then
-    if (table.count)((self._randomLotteryComponentInfo).m_draw) == 0 then
-      return 
-    end
-    type = (((self._randomLotteryComponentInfo).m_draw)[1]).draw_cfg_id
+  local cur, need, cfgID = self:GetActionPointAndNeed(self._curSelectType)
+  if not cur or cur < need then
   else
-    type = (self._drawTypeIDGroup)[type]
-  end
-  local lotteryCfg = (Cfg.cfg_component_random_lottery)[type]
-  do
-    if lotteryCfg then
-      local cur, ceil = self.MAXDRAWTIME, nil
-      return cur, lotteryCfg.OneCostCount, lotteryCfg.ID
-    end
-    return nil
+    self:StartTask(function(TT)
+      self:Lock("HandleRandomLotteryComponentDraw")
+      local asyncRes = AsyncRequestRes:New()
+      self._randomLotteryComponent:HandleRandomLotteryComponentDraw(TT, asyncRes, cfgID)
+      local replyResult = asyncRes:GetResult()
+      if asyncRes:GetSucc() then
+        if callback then
+          callback()
+        end
+        YIELD(TT, 1000)
+        self:UnLock("HandleRandomLotteryComponentDraw")
+        self:InitWidgets()
+        self:RefreshDrawResult()
+      else
+        local campaignModule = GameGlobal.GetModule(CampaignModule)
+        campaignModule:CheckErrorCode(asyncRes:GetResult(), self._campaign._id, function()
+          local luckBagController = GameGlobal.UIStateManager():GetController("UIActivityNewYearLuckBagController")
+          if luckBagController then
+            GameGlobal.UIStateManager():CloseDialog("UIActivityNewYearLuckBagController")
+          end
+        end, function()
+          self:CloseDialog()
+        end)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
+function UIActivityNewYearLuckBagContent:GetActionPointAndNeed(type)
+  if not type then
+    if table.count(self._randomLotteryComponentInfo.m_draw) == 0 then
+      return
+    end
+    type = self._randomLotteryComponentInfo.m_draw[1].draw_cfg_id
+  else
+    type = self._drawTypeIDGroup[type]
+  end
+  local lotteryCfg = Cfg.cfg_component_random_lottery[type]
+  if lotteryCfg then
+    local cur, ceil = self.MAXDRAWTIME
+    return cur, lotteryCfg.OneCostCount, lotteryCfg.ID
+  end
+  return nil
+end
 
-UIActivityNewYearLuckBagContent.IntroBtnOnClick = function(self)
-  -- function num : 0_23
+function UIActivityNewYearLuckBagContent:IntroBtnOnClick()
   self:ShowDialog("UIIntroLoader", "UIActivityNewYearLuckBagIntr")
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagContent.CheckActivityOver = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local closeTime = (self._randomLotteryComponentInfo).m_close_time
-  local nowTime = (self._timeModule):GetServerTime() / 1000
+function UIActivityNewYearLuckBagContent:CheckActivityOver()
+  local closeTime = self._randomLotteryComponentInfo.m_close_time
+  local nowTime = self._timeModule:GetServerTime() / 1000
   local activituRemain = closeTime - nowTime
   if activituRemain < 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, self._campaignId)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaignId)
     return true
   end
   return false
 end
-
-

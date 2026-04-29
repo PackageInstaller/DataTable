@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/helper/custom_logic/custom_logic.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("custom_node_static")
 require("custom_node")
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CustomNodeConfigStatic.Check_CustomLogicCfg = function(nodeCfg)
-  -- function num : 0_0
+function CustomNodeConfigStatic.Check_CustomLogicCfg(nodeCfg)
   if nodeCfg.Type and nodeCfg.ID and nodeCfg.Nodes then
     return true
   end
   return false
 end
 
-;
-(CustomNodeConfigStatic.AddChecker)("CustomLogic", CustomNodeConfigStatic.Check_CustomLogicCfg)
+CustomNodeConfigStatic.AddChecker("CustomLogic", CustomNodeConfigStatic.Check_CustomLogicCfg)
 _class("CustomLogic", CustomNode)
 CustomLogic = CustomLogic
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-CustomLogic.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CustomLogic:Constructor()
   self.InstanceID = -1
   self.nodes = ArrayList:New()
   self.genInfo = nil
@@ -30,140 +20,98 @@ CustomLogic.Constructor = function(self)
   self:RegisterOutsideEvent()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomLogic.InitializeNode = function(self, cfg, context)
-  -- function num : 0_2 , upvalues : _ENV
-  ((CustomLogic.super).InitializeNode)(self, cfg, context)
+function CustomLogic:InitializeNode(cfg, context)
+  CustomLogic.super.InitializeNode(self, cfg, context)
   self.genInfo = context.GenInfo
   local usedTempLogicSet = {}
   self:InitializeCheckTemplete(cfg, context, usedTempLogicSet)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomLogic.InitializeCheckTemplete = function(self, cfg, context, usedTempLogicSet)
-  -- function num : 0_3 , upvalues : _ENV
+function CustomLogic:InitializeCheckTemplete(cfg, context, usedTempLogicSet)
   local nodeCfgList = cfg.Nodes
   for i = 1, #nodeCfgList do
-    while 1 do
+    while true do
       local nodeCfg = nodeCfgList[i]
       local templeteID = nodeCfg.LogicTemplete
-      if templeteID and not usedTempLogicSet[templeteID] then
+      if templeteID then
+        if usedTempLogicSet[templeteID] then
+          break
+        end
         usedTempLogicSet[templeteID] = true
-        local logiccfg = (context.ConfigMng)[templeteID]
+        local logiccfg = context.ConfigMng[templeteID]
         if logiccfg then
           self:InitializeCheckTemplete(logiccfg, context, usedTempLogicSet)
           break
         end
-        ;
-        (Log.fatal)("ERROR: CustomLogic模板找不到 RootLogicID=" .. (self.genInfo).ConfigID .. ", templeteID=" .. templeteID)
+        Log.fatal("ERROR: CustomLogic模板找不到 RootLogicID=" .. self.genInfo.ConfigID .. ", templeteID=" .. templeteID)
+        break
       end
-      do
-        do break end
-        do
-          local theNode = self:CreateNode(nodeCfg, context)
-          theNode:Activate()
-          self:AddNode(theNode)
-          do break end
-          -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
-      end
+      local theNode = self:CreateNode(nodeCfg, context)
+      theNode:Activate()
+      self:AddNode(theNode)
+      break
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomLogic.Destroy = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function CustomLogic:Destroy()
   local nodes = self.nodes
   for i = 1, nodes:Size() do
-    (nodes:GetAt(i)):Destroy()
+    nodes:GetAt(i):Destroy()
   end
-  ;
-  (self.nodes):Clear()
+  self.nodes:Clear()
   self:ClearInterfaceCache()
   self.varLibImp = nil
-  ;
-  ((CustomLogic.super).Destroy)(self)
+  CustomLogic.super.Destroy(self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomLogic.Activate = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((CustomLogic.super).Activate)(self)
+function CustomLogic:Activate()
+  CustomLogic.super.Activate(self)
   local nodes = self.nodes
   for i = 1, nodes:Size() do
-    (nodes:GetAt(i)):Activate()
+    nodes:GetAt(i):Activate()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomLogic.Deactivate = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  ((CustomLogic.super).Deactivate)(self)
+function CustomLogic:Deactivate()
+  CustomLogic.super.Deactivate(self)
   local nodes = self.nodes
   for i = 1, nodes:Size() do
-    (nodes:GetAt(i)):Deactivate()
+    nodes:GetAt(i):Deactivate()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomLogic.CollectInterfaceInChildren = function(self, interfaceList, funcName)
-  -- function num : 0_7 , upvalues : _ENV
+function CustomLogic:CollectInterfaceInChildren(interfaceList, funcName)
   local nodes = self.nodes
   for i = 1, nodes:Size() do
     local node = nodes:GetAt(i)
-    ;
-    (CustomNodeStatic.TraverseCollectInterface)(interfaceList, funcName, node)
+    CustomNodeStatic.TraverseCollectInterface(interfaceList, funcName, node)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomLogic.AddNode = function(self, node)
-  -- function num : 0_8
-  (self.nodes):PushBack(node)
+function CustomLogic:AddNode(node)
+  self.nodes:PushBack(node)
   self:CacheInterface(node)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomLogic.CacheInterface = function(self, node)
-  -- function num : 0_9 , upvalues : _ENV
+function CustomLogic:CacheInterface(node)
   if node.Update then
-    (self.Nodes_NeedUpdate):PushBack(node)
+    self.Nodes_NeedUpdate:PushBack(node)
   end
-  ;
-  (CustomNodeStatic.TraverseCollectInterface)(self.Nodes_NeedStopCheck, "CanStop", node)
+  CustomNodeStatic.TraverseCollectInterface(self.Nodes_NeedStopCheck, "CanStop", node)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomLogic.ClearInterfaceCache = function(self, node)
-  -- function num : 0_10
-  (self.Nodes_NeedUpdate):Clear()
-  ;
-  (self.Nodes_NeedStopCheck):Clear()
+function CustomLogic:ClearInterfaceCache(node)
+  self.Nodes_NeedUpdate:Clear()
+  self.Nodes_NeedStopCheck:Clear()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomLogic.RegisterOutsideEvent = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function CustomLogic:RegisterOutsideEvent()
   self.Nodes_NeedUpdate = ArrayList:New()
   self.Nodes_NeedStopCheck = ArrayList:New()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomLogic.Update = function(self, dt)
-  -- function num : 0_12
+function CustomLogic:Update(dt)
   local nodelist = self.Nodes_NeedUpdate
   for i = 1, nodelist:Size() do
     local node = nodelist:GetAt(i)
@@ -173,10 +121,7 @@ CustomLogic.Update = function(self, dt)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomLogic.CanStop = function(self)
-  -- function num : 0_13
+function CustomLogic:CanStop()
   local nodelist = self.Nodes_NeedStopCheck
   for i = 1, nodelist:Size() do
     local node = nodelist:GetAt(i)
@@ -187,17 +132,12 @@ CustomLogic.CanStop = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomLogic.CreateNode = function(self, nodeCfg, context)
-  -- function num : 0_14 , upvalues : _ENV
+function CustomLogic:CreateNode(nodeCfg, context)
   if not Classes[nodeCfg.Type] then
-    (Log.warn)("CustomLogic:CreateNode unknown type:", nodeCfg.Type)
+    Log.warn("CustomLogic:CreateNode unknown type:", nodeCfg.Type)
     return nil
   end
-  local node = (Classes[nodeCfg.Type]):New()
+  local node = Classes[nodeCfg.Type]:New()
   node:InitializeNode(nodeCfg, context)
   return node
 end
-
-

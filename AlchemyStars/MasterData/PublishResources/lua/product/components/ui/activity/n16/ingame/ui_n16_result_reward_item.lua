@@ -1,39 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n16/ingame/ui_n16_result_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN16ResultRewardItem", UICustomWidget)
 UIN16ResultRewardItem = UIN16ResultRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN16ResultRewardItem.OnShow = function(self)
-  -- function num : 0_0
+function UIN16ResultRewardItem:OnShow()
   self._iconImg = self:GetUIComponent("RawImageLoader", "Icon")
   self._countLabel = self:GetUIComponent("UILocalizationText", "Count")
   self._go = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16ResultRewardItem.Refresh = function(self, reward)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._go):SetActive(true)
+function UIN16ResultRewardItem:Refresh(reward)
+  self._go:SetActive(true)
   self._rewardId = reward[1]
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._countLabel).text = reward[2]
-  local ItemTempleate = (Cfg.cfg_item)[self._rewardId]
-  ;
-  (self._iconImg):LoadImage(ItemTempleate.Icon)
+  self._countLabel.text = reward[2]
+  local ItemTempleate = Cfg.cfg_item[self._rewardId]
+  self._iconImg:LoadImage(ItemTempleate.Icon)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16ResultRewardItem.BtnOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN16SubjectRewardItemClicked, self._rewardId, ((self._go).transform).position)
+function UIN16ResultRewardItem:BtnOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN16SubjectRewardItemClicked, self._rewardId, self._go.transform.position)
 end
-
-

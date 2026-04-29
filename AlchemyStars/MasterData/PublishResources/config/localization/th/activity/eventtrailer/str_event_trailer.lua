@@ -1,8 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/th/activity/eventtrailer/str_event_trailer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_event_trailer_title1 = "ล่าสุดจากแอสตรา", str_event_trailer_title2 = "ข่าวล่าสุด", str_event_trailer_item_btn1 = "เร็ว ๆ นี้", str_event_trailer_item_btn2 = "ตัวอย่าง", str_event_trailer_item_btn3 = "ไปยัง", str_event_trailer_item_btn4 = "สิ้นสุดแล้ว", str_event_trailer_timer1 = "ระยะเวลากิจกรรม:", str_event_trailer_type_1 = "อีเวนต์เวอร์ชัน", str_event_trailer_type_2 = "เกมเพลย์จำกัดเวลา", str_event_trailer_type_3 = "ท้าทาย", str_event_trailer_type_4 = "ฝันใหม่", str_event_trailer_type_5 = "ชุดใหม่", str_event_trailer_type_6 = "อัปเดตเนื้อเรื่องหลักแล้ว", str_event_trailer_type_7 = "ปริศนาที่ส่องแสง", str_event_trailer_name_1 = "การรับสมัครด้วยใจจริง", str_event_trailer_name_2 = "รักในการทดลอง", str_event_trailer_name_3 = "โรยรา", str_event_trailer_name_4 = "ร่วงโรย", str_event_trailer_name_5 = "ส่งหวาน", str_event_trailer_name_6 = "เฝ้ารอพันปี", str_event_trailer_locked_tips_1 = "ต้องการเคลียร์ด่าน {1}", str_event_trailer_locked_tips_2 = "ต้องการไอเทม {1}.", str_event_trailer_name_7 = "ฉากเสริม ส่วนที่ II มาแล้ว", str_event_trailer_name_8 = "ซากปรักหักพังแห่งฝันร้าย", str_event_trailer_name_9 = "ค่ายฝึกศิลา", str_event_trailer_name_10 = "ซูเปอร์วายร้าย โกรงเกนสไตน์ รู", str_event_trailer_name_11 = "เสียงสะท้อนแห่งฝัน", str_event_trailer_name_12 = "เพลงที่ยอดเยี่ยม", str_event_trailer_name_13 = "Dreamy Nostalgia: แสงนอนหลับ", str_event_trailer_name_14 = "หน่วยงาน Starlit", str_event_trailer_name_15 = "Dreamy Nostalgia: ฝันลึก", str_event_trailer_name_16 = "ถ้ำนรก", str_event_trailer_name_17 = "คำปฏิญาณไม่เป็นชิ้นเป็นอัน", str_event_trailer_name_18 = "สวรรค์อาหารแปลกและประหลาด", str_event_trailer_name_19 = "ซากปรักหักพังแห่งฝันร้าย", str_event_trailer_name_20 = "การบินขึ้น", str_event_trailer_name_21 = "อาหารทะเลหลงโจว", str_event_trailer_name_22 = "ล่าไม่หยุด", str_event_trailer_name_23 = "ค่ายฝึกศิลา", str_event_trailer_name_24 = "เริ่ม", str_event_trailer_name_25 = "ยาก", str_event_trailer_name_26 = "ลางมรณะ", str_event_trailer_name_27 = "ปรมาจารย์การตกปลา", str_event_trailer_name_28 = "การคืนสภาพภาพถ่าย", str_event_trailer_name_29 = "ไปที่สนามฝึกฝน", str_event_trailer_name_30 = "การฝึกอบรมพิเศษ", str_event_trailer_name_31 = "ผู้รักษาแห่งออโรรา", str_event_trailer_name_32 = "คืนที่หายไปด้วยแสงดาว", str_event_trailer_name_33 = "ซากปรักหักพังแห่งฝันร้าย", str_event_trailer_name_34 = "กรรมที่ผูกพันกัน", str_event_trailer_name_35 = "โมบิอุส", str_event_trailer_name_36 = "การชิงชัยน้ำแข็งไส", str_event_trailer_name_37 = "ค่ายฝึกศิลา"}
+local config = {
+  str_event_trailer_title1 = "ล่าสุดจากแอสตรา",
+  str_event_trailer_title2 = "ข่าวล่าสุด",
+  str_event_trailer_item_btn1 = "เร็ว ๆ นี้",
+  str_event_trailer_item_btn2 = "ตัวอย่าง",
+  str_event_trailer_item_btn3 = "ไปยัง",
+  str_event_trailer_item_btn4 = "สิ้นสุดแล้ว",
+  str_event_trailer_timer1 = "ระยะเวลากิจกรรม:",
+  str_event_trailer_type_1 = "อีเวนต์เวอร์ชัน",
+  str_event_trailer_type_2 = "เกมเพลย์จำกัดเวลา",
+  str_event_trailer_type_3 = "ท้าทาย",
+  str_event_trailer_type_4 = "ฝันใหม่",
+  str_event_trailer_type_5 = "ชุดใหม่",
+  str_event_trailer_type_6 = "อัปเดตเนื้อเรื่องหลักแล้ว",
+  str_event_trailer_type_7 = "ปริศนาที่ส่องแสง",
+  str_event_trailer_name_1 = "การรับสมัครด้วยใจจริง",
+  str_event_trailer_name_2 = "รักในการทดลอง",
+  str_event_trailer_name_3 = "โรยรา",
+  str_event_trailer_name_4 = "ร่วงโรย",
+  str_event_trailer_name_5 = "ส่งหวาน",
+  str_event_trailer_name_6 = "เฝ้ารอพันปี",
+  str_event_trailer_locked_tips_1 = "ต้องการเคลียร์ด่าน {1}",
+  str_event_trailer_locked_tips_2 = "ต้องการไอเทม {1}.",
+  str_event_trailer_name_7 = "ฉากเสริม ส่วนที่ II มาแล้ว",
+  str_event_trailer_name_8 = "ซากปรักหักพังแห่งฝันร้าย",
+  str_event_trailer_name_9 = "ค่ายฝึกศิลา",
+  str_event_trailer_name_10 = "ซูเปอร์วายร้าย โกรงเกนสไตน์ รู",
+  str_event_trailer_name_11 = "เสียงสะท้อนแห่งฝัน",
+  str_event_trailer_name_12 = "เพลงที่ยอดเยี่ยม",
+  str_event_trailer_name_13 = "Dreamy Nostalgia: แสงนอนหลับ",
+  str_event_trailer_name_14 = "หน่วยงาน Starlit",
+  str_event_trailer_name_15 = "Dreamy Nostalgia: ฝันลึก",
+  str_event_trailer_name_16 = "ถ้ำนรก",
+  str_event_trailer_name_17 = "คำปฏิญาณไม่เป็นชิ้นเป็นอัน",
+  str_event_trailer_name_18 = "สวรรค์อาหารแปลกและประหลาด",
+  str_event_trailer_name_19 = "ซากปรักหักพังแห่งฝันร้าย",
+  str_event_trailer_name_20 = "การบินขึ้น",
+  str_event_trailer_name_21 = "อาหารทะเลหลงโจว",
+  str_event_trailer_name_22 = "ล่าไม่หยุด",
+  str_event_trailer_name_23 = "ค่ายฝึกศิลา",
+  str_event_trailer_name_24 = "เริ่ม",
+  str_event_trailer_name_25 = "ยาก",
+  str_event_trailer_name_26 = "ลางมรณะ",
+  str_event_trailer_name_27 = "ปรมาจารย์การตกปลา",
+  str_event_trailer_name_28 = "การคืนสภาพภาพถ่าย",
+  str_event_trailer_name_29 = "ไปที่สนามฝึกฝน",
+  str_event_trailer_name_30 = "การฝึกอบรมพิเศษ",
+  str_event_trailer_name_31 = "ผู้รักษาแห่งออโรรา",
+  str_event_trailer_name_32 = "คืนที่หายไปด้วยแสงดาว",
+  str_event_trailer_name_33 = "ซากปรักหักพังแห่งฝันร้าย",
+  str_event_trailer_name_34 = "กรรมที่ผูกพันกัน",
+  str_event_trailer_name_35 = "โมบิอุส",
+  str_event_trailer_name_36 = "การชิงชัยน้ำแข็งไส",
+  str_event_trailer_name_37 = "ค่ายฝึกศิลา"
+}
 return config
-

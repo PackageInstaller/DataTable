@@ -1,39 +1,80 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/service_filter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _staticClass("ServiceFilter")
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
+ServiceFilter.RenderServices = {
+  PlaySkill = true,
+  Effect = true,
+  Camera = true,
+  Resource = true,
+  CanMoveArrow = true,
+  ResourcesPool = true,
+  PreviewActiveSkill = true,
+  EventListener = true,
+  RenderEntity = true,
+  LinkageRender = true,
+  InnerStory = true,
+  PlayBuff = true,
+  Loading = true,
+  PlayAI = true,
+  RenderBattle = true,
+  TestRobot = true,
+  BoardRender = true,
+  MonsterMoveRender = true,
+  ChainAttackRender = true,
+  PlayDamage = true,
+  TransformRenderer = true,
+  PlaySkillInstruction = true,
+  TrapRender = true,
+  EntityPool = true,
+  PreviewCalcEffect = true,
+  MonsterShowRender = true,
+  LinkLine = true,
+  Piece = true,
+  Guide = true,
+  RandomRender = true,
+  DataListener = true,
+  MonsterCreationRender = true,
+  AutoTest = true,
+  SpawnPieceRender = true,
+  Cutscene = true,
+  ChessRender = true,
+  FeatureRender = true,
+  SyncMoveRender = true,
+  RideRender = true,
+  BoardMultiRender = true,
+  PieceMulti = true,
+  PartnerRender = true,
+  PreviewMonsterTrap = true,
+  MirageRender = true,
+  PreviewLinkLine = true,
+  PopStarRender = true,
+  PreviewPuzzle = true,
+  PopStarProRender = true,
+  AutoBeadRender = true
+}
+ServiceFilter.ShareServices = {
+  Config = true,
+  Math = true,
+  Time = true,
+  UtilData = true,
+  UtilCalc = true,
+  UtilScopeCalc = true,
+  UtilStat = true,
+  AutoFight = true
+}
 
-ServiceFilter.RenderServices = {PlaySkill = true, Effect = true, Camera = true, Resource = true, CanMoveArrow = true, ResourcesPool = true, PreviewActiveSkill = true, EventListener = true, RenderEntity = true, LinkageRender = true, InnerStory = true, PlayBuff = true, Loading = true, PlayAI = true, RenderBattle = true, TestRobot = true, BoardRender = true, MonsterMoveRender = true, ChainAttackRender = true, PlayDamage = true, TransformRenderer = true, PlaySkillInstruction = true, TrapRender = true, EntityPool = true, PreviewCalcEffect = true, MonsterShowRender = true, LinkLine = true, Piece = true, Guide = true, RandomRender = true, DataListener = true, MonsterCreationRender = true, AutoTest = true, SpawnPieceRender = true, Cutscene = true, ChessRender = true, FeatureRender = true, SyncMoveRender = true, RideRender = true, BoardMultiRender = true, PieceMulti = true, PartnerRender = true, PreviewMonsterTrap = true, MirageRender = true, PreviewLinkLine = true, PopStarRender = true, PreviewPuzzle = true, PopStarProRender = true, AutoBeadRender = true}
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ServiceFilter.ShareServices = {Config = true, Math = true, Time = true, UtilData = true, UtilCalc = true, UtilScopeCalc = true, UtilStat = true, AutoFight = true}
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ServiceFilter.CheckService = function(self, serviceName, worldRunningPostion)
-  -- function num : 0_0 , upvalues : _ENV
-  if (self.RenderServices)[serviceName] and worldRunningPostion == WorldRunPostion.AtServer then
+function ServiceFilter:CheckService(serviceName, worldRunningPostion)
+  if self.RenderServices[serviceName] and worldRunningPostion == WorldRunPostion.AtServer then
     return false
   else
     return true
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-ServiceFilter.GetServiceResponsibilityType = function(self, serviceName)
-  -- function num : 0_1 , upvalues : _ENV
+function ServiceFilter:GetServiceResponsibilityType(serviceName)
   local respType = ResponsibilityType.Logic
-  if (self.RenderServices)[serviceName] then
+  if self.RenderServices[serviceName] then
     respType = ResponsibilityType.Render
-  else
-    if (self.ShareServices)[serviceName] then
-      respType = ResponsibilityType.Share
-    end
+  elseif self.ShareServices[serviceName] then
+    respType = ResponsibilityType.Share
   end
   return respType
 end
-
-

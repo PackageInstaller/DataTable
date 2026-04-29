@@ -1,37 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_pick_color_anim_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayPickColorAnimInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayPickColorAnimInstruction = SkillPreviewPlayPickColorAnimInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayPickColorAnimInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewPlayPickColorAnimInstruction:Constructor(params)
   self._anim = params.Anim
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayPickColorAnimInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayPickColorAnimInstruction:DoInstruction(TT, casterEntity, previewContext)
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
   self._world = previewContext:GetWorld()
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
   local allPickUpPos = previewPickUpComponent:GetAllValidPickUpGridPos()
   local pickUpPieceType = {}
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local pieceTypeList = {}
-  for k,pos in pairs(allPickUpPos) do
+  for k, pos in pairs(allPickUpPos) do
     local pieceType = utilDataSvc:GetPieceType(pos)
-    if not (table.icontains)(pieceTypeList, pieceType) then
-      (table.insert)(pieceTypeList, pieceType)
+    if not table.icontains(pieceTypeList, pieceType) then
+      table.insert(pieceTypeList, pieceType)
     end
   end
   local gridList = utilDataSvc:GetPiecePosByType(pieceTypeList)
   previewActiveSkillService:DoConvert(gridList, self._anim, "Dark")
 end
-
-

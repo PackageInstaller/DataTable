@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_grade_detail_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIGradeDetailItem", UICustomWidget)
 UIGradeDetailItem = UIGradeDetailItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGradeDetailItem.Constructor = function(self)
-  -- function num : 0_0
+function UIGradeDetailItem:Constructor()
   self._skillInfo = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeDetailItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIGradeDetailItem:OnShow(uiParams)
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeDetailItem.GetComponents = function(self)
-  -- function num : 0_2
+function UIGradeDetailItem:GetComponents()
   self._lineGo = self:GetGameObject("line")
   self._beforeTips = self:GetUIComponent("UILocalizationText", "beforeTips")
   self._arrow = self:GetGameObject("GradeArrow")
@@ -32,19 +19,12 @@ UIGradeDetailItem.GetComponents = function(self)
   self._skillTo = self:GetUIComponent("UISelectObjectPath", "skillTo")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeDetailItem.OnHide = function(self)
-  -- function num : 0_3
+function UIGradeDetailItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeDetailItem.SetData = function(self, petData, skillInfo, idx, allCount, lastGrade, nextGrade, lastBreak, nextBreak)
-  -- function num : 0_4
+function UIGradeDetailItem:SetData(petData, skillInfo, idx, allCount, lastGrade, nextGrade, lastBreak, nextBreak)
   local isLast = idx == allCount
-  ;
-  (self._lineGo):SetActive(not isLast)
+  self._lineGo:SetActive(not isLast)
   self._petData = petData
   self._skillInfo = skillInfo
   self._tag = skillInfo.type
@@ -56,72 +36,56 @@ UIGradeDetailItem.SetData = function(self, petData, skillInfo, idx, allCount, la
   self._isActive = false
   if self._tag == "active" then
     self._isActive = true
-  end
-  if (self._tag == "extra" and self._tag ~= "passive") or self._tag == "chain" then
+  elseif self._tag == "extra" then
+  elseif self._tag == "passive" then
+  elseif self._tag == "chain" then
     self._isChain = true
+  elseif self._tag == "work" then
   end
-  if self._tag == "work" then
-    self._state = (self._skillInfo).changeType
-    self:ShowSkill()
-    -- DECOMPILER ERROR: 6 unprocessed JMP targets
-  end
+  self._state = self._skillInfo.changeType
+  self:ShowSkill()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeDetailItem.ShowSkill = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIGradeDetailItem:ShowSkill()
   if self._state == PetSkillChangeState.Improved then
-    (self._beforeTips):SetText((StringTable.Get)("str_pet_config_before_grade_info"))
-    ;
-    (self._arrow):SetActive(true)
-    ;
-    (self._skillToGo):SetActive(true)
-    ;
-    (self._afterTipsGo):SetActive(true)
-    local skillInfoFrom = {skillList = (self._skillInfo).from, param = (self._skillInfo).fromParam}
-    local skillInfoTo = {skillList = (self._skillInfo).to, param = (self._skillInfo).toParam}
-    local skillLuaFrom = (self._skillFrom):SpawnObject("UIFightSkillItem")
+    self._beforeTips:SetText(StringTable.Get("str_pet_config_before_grade_info"))
+    self._arrow:SetActive(true)
+    self._skillToGo:SetActive(true)
+    self._afterTipsGo:SetActive(true)
+    local skillInfoFrom = {
+      skillList = self._skillInfo.from,
+      param = self._skillInfo.fromParam
+    }
+    local skillInfoTo = {
+      skillList = self._skillInfo.to,
+      param = self._skillInfo.toParam
+    }
+    local skillLuaFrom = self._skillFrom:SpawnObject("UIFightSkillItem")
     skillLuaFrom:SetData(skillInfoFrom, self._petData, nil, nil, nil, self._lastGrade, self._lastBreak)
-    local skillLuaTo = (self._skillTo):SpawnObject("UIFightSkillItem")
+    local skillLuaTo = self._skillTo:SpawnObject("UIFightSkillItem")
     skillLuaTo:SetData(skillInfoTo, self._petData, nil, nil, nil, self._nextGrade, self._nextBreak)
-  else
-    do
-      if self._state == PetSkillChangeState.NewGain then
-        local showTex = ""
-        if self._tag == "passive" then
-          showTex = "str_pet_config_unlock_equip_skill"
-        else
-          if self._tag == "work" then
-            showTex = "str_pet_config_unlock_work_skill"
-          else
-            if self._tag == "chain" then
-              showTex = "str_pet_config_unlock_chain_skill"
-            else
-              if self._tag == "active" then
-                showTex = "str_pet_config_unlock_active_skill"
-              else
-                if self._tag == "extra" then
-                  showTex = "str_pet_config_unlock_active_skill"
-                end
-              end
-            end
-          end
-        end
-        ;
-        (self._beforeTips):SetText((StringTable.Get)(showTex))
-        ;
-        (self._arrow):SetActive(false)
-        ;
-        (self._skillToGo):SetActive(false)
-        ;
-        (self._afterTipsGo):SetActive(false)
-        local skillInfoTo = {skillList = (self._skillInfo).to, param = (self._skillInfo).param}
-        local skillLua = (self._skillFrom):SpawnObject("UIFightSkillItem")
-        skillLua:SetData(skillInfoTo, self._petData)
-      end
+  elseif self._state == PetSkillChangeState.NewGain then
+    local showTex = ""
+    if self._tag == "passive" then
+      showTex = "str_pet_config_unlock_equip_skill"
+    elseif self._tag == "work" then
+      showTex = "str_pet_config_unlock_work_skill"
+    elseif self._tag == "chain" then
+      showTex = "str_pet_config_unlock_chain_skill"
+    elseif self._tag == "active" then
+      showTex = "str_pet_config_unlock_active_skill"
+    elseif self._tag == "extra" then
+      showTex = "str_pet_config_unlock_active_skill"
     end
+    self._beforeTips:SetText(StringTable.Get(showTex))
+    self._arrow:SetActive(false)
+    self._skillToGo:SetActive(false)
+    self._afterTipsGo:SetActive(false)
+    local skillInfoTo = {
+      skillList = self._skillInfo.to,
+      param = self._skillInfo.param
+    }
+    local skillLua = self._skillFrom:SpawnObject("UIFightSkillItem")
+    skillLua:SetData(skillInfoTo, self._petData)
   end
 end
-
-

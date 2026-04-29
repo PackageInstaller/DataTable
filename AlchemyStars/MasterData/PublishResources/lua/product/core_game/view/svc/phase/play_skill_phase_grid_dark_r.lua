@@ -1,32 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_phase_grid_dark_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillPhase_GridDark", PlaySkillPhaseBase)
 PlaySkillPhase_GridDark = PlaySkillPhase_GridDark
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillPhase_GridDark.Constructor = function(self)
-  -- function num : 0_0
+function PlaySkillPhase_GridDark:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhase_GridDark.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillPhase_GridDark:PlayFlight(TT, casterEntity, phaseParam)
   local paramWork = phaseParam
-  local pieceService = (self._world):GetService("Piece")
-  if not paramWork:GetDarkType() then
-    local nDarkType = SkillPhaseParam_GridDark_Type.Dark
-  end
+  local pieceService = self._world:GetService("Piece")
+  local nDarkType = paramWork:GetDarkType() or SkillPhaseParam_GridDark_Type.Dark
   if SkillPhaseParam_GridDark_Type.Dark == nDarkType then
     pieceService:SetAllPieceDark()
-  else
-  end
-  if SkillPhaseParam_GridDark_Type.Resume == nDarkType then
+  elseif SkillPhaseParam_GridDark_Type.Resume == nDarkType then
   end
 end
-
-

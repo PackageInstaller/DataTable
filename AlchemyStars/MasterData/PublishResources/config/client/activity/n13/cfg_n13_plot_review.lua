@@ -1,39 +1,99 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/n13/cfg_n13_plot_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Type = 2, Title = 3, Desc = 4}
+local key = {
+  ID = 1,
+  Type = 2,
+  Title = 3,
+  Desc = 4
+}
 local config = {
-{1, 1, "str_n13_build_plot_zhixian_title_2", "str_n13_build_plot_zhixian_desc_2"}
-, 
-{2, 1, "str_n13_build_plot_zhixian_title_3", "str_n13_build_plot_zhixian_desc_3"}
-, 
-{3, 1, "str_n13_build_plot_zhixian_title_4", "str_n13_build_plot_zhixian_desc_4"}
-, 
-{4, 1, "str_n13_build_plot_zhixian_title_5", "str_n13_build_plot_zhixian_desc_5"}
-, 
-{5, 1, "str_n13_build_plot_zhixian_title_6", "str_n13_build_plot_zhixian_desc_6"}
-, 
-{6, 1, "str_n13_build_plot_zhixian_title_7", "str_n13_build_plot_zhixian_desc_7"}
-, 
-{7, 1, "str_n13_build_plot_zhixian_title_8", "str_n13_build_plot_zhixian_desc_8"}
-, 
-{8, 1, "str_n13_build_plot_zhixian_title_9", "str_n13_build_plot_zhixian_desc_9"}
-, 
-{9, 1, "str_n13_build_plot_zhixian_title_10", "str_n13_build_plot_zhixian_desc_10"}
-, 
-{10, 2, "str_n13_build_plot_fanwai_title_1", "str_n13_build_plot_fanwai_desc_1"}
-, 
-{11, 2, "str_n13_build_plot_fanwai_title_4", "str_n13_build_plot_fanwai_desc_4"}
-, 
-{12, 2, "str_n13_build_plot_fanwai_title_5", "str_n13_build_plot_fanwai_desc_5"}
-, 
-{13, 2, "str_n13_build_plot_fanwai_title_6", "str_n13_build_plot_fanwai_desc_6"}
-, 
-{14, 2, "str_n13_build_plot_fanwai_title_2", "str_n13_build_plot_fanwai_desc_2"}
-, 
-{15, 2, "str_n13_build_plot_fanwai_title_3", "str_n13_build_plot_fanwai_desc_3"}
+  {
+    1,
+    1,
+    "str_n13_build_plot_zhixian_title_2",
+    "str_n13_build_plot_zhixian_desc_2"
+  },
+  {
+    2,
+    1,
+    "str_n13_build_plot_zhixian_title_3",
+    "str_n13_build_plot_zhixian_desc_3"
+  },
+  {
+    3,
+    1,
+    "str_n13_build_plot_zhixian_title_4",
+    "str_n13_build_plot_zhixian_desc_4"
+  },
+  {
+    4,
+    1,
+    "str_n13_build_plot_zhixian_title_5",
+    "str_n13_build_plot_zhixian_desc_5"
+  },
+  {
+    5,
+    1,
+    "str_n13_build_plot_zhixian_title_6",
+    "str_n13_build_plot_zhixian_desc_6"
+  },
+  {
+    6,
+    1,
+    "str_n13_build_plot_zhixian_title_7",
+    "str_n13_build_plot_zhixian_desc_7"
+  },
+  {
+    7,
+    1,
+    "str_n13_build_plot_zhixian_title_8",
+    "str_n13_build_plot_zhixian_desc_8"
+  },
+  {
+    8,
+    1,
+    "str_n13_build_plot_zhixian_title_9",
+    "str_n13_build_plot_zhixian_desc_9"
+  },
+  {
+    9,
+    1,
+    "str_n13_build_plot_zhixian_title_10",
+    "str_n13_build_plot_zhixian_desc_10"
+  },
+  {
+    10,
+    2,
+    "str_n13_build_plot_fanwai_title_1",
+    "str_n13_build_plot_fanwai_desc_1"
+  },
+  {
+    11,
+    2,
+    "str_n13_build_plot_fanwai_title_4",
+    "str_n13_build_plot_fanwai_desc_4"
+  },
+  {
+    12,
+    2,
+    "str_n13_build_plot_fanwai_title_5",
+    "str_n13_build_plot_fanwai_desc_5"
+  },
+  {
+    13,
+    2,
+    "str_n13_build_plot_fanwai_title_6",
+    "str_n13_build_plot_fanwai_desc_6"
+  },
+  {
+    14,
+    2,
+    "str_n13_build_plot_fanwai_title_2",
+    "str_n13_build_plot_fanwai_desc_2"
+  },
+  {
+    15,
+    2,
+    "str_n13_build_plot_fanwai_title_3",
+    "str_n13_build_plot_fanwai_desc_3"
+  }
 }
 return config, "ID", key
-

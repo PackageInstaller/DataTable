@@ -1,108 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/fishing/logic/homeland_fishting_status_fishing.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandFishingStatusFishing", HomelandFishingStatus)
 HomelandFishingStatusFishing = HomelandFishingStatusFishing
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandFishingStatusFishing.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._guideModule = (GameGlobal.GetModule)(GuideModule)
+function HomelandFishingStatusFishing:Constructor()
+  self._guideModule = GameGlobal.GetModule(GuideModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusFishing.OnEnter = function(self, param)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandFishingStatusFishing:OnEnter(param)
   self._floatPosition = param
-  self._biteTime = (HomelandFishingConst.GetFishBiteTime)()
-  if (self._guideModule):IsGuideProcessKey("guide_fishing") then
+  self._biteTime = HomelandFishingConst.GetFishBiteTime()
+  if self._guideModule:IsGuideProcessKey("guide_fishing") then
     self._biteTime = 5
   end
   self._biteTimeLength = self._biteTime
   if self._collectCallback == nil then
-    self._collectCallback = (GameHelper:GetInstance()):CreateCallback(self.FishingCollect, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.FishingCollect, self._collectCallback)
+    self._collectCallback = GameHelper:GetInstance():CreateCallback(self.FishingCollect, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.FishingCollect, self._collectCallback)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetInteractPointUIStatus, false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetInteractPointUIStatus, false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusFishing.OnExit = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function HomelandFishingStatusFishing:OnExit()
   if self._collectCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.FishingCollect, self._collectCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.FishingCollect, self._collectCallback)
     self._collectCallback = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusFishing.FishingStatus = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandFishingStatusFishing:FishingStatus()
   return FishgingStatus.Fishing
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusFishing.OnUpdate = function(self, deltaTime)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandFishingStatusFishing:OnUpdate(deltaTime)
   if self:GetStatusLength() < self._biteTime then
-    return 
+    return
   end
   if self:IsMatchFishing() then
     self:EnterFishMatch()
+  elseif self:IsRiverFishing() then
+    self:EnterBiteStatus()
   else
-    if self:IsRiverFishing() then
-      self:EnterBiteStatus()
-    else
-      local fishs = (HomelandWishingConst.GetRaiseFishList)()
-      if fishs == nil or (table.count)(fishs) <= 0 then
-        return 
-      end
-      local t = {}
-      for k,v in pairs(fishs) do
-        t[#t + 1] = v
-      end
-      local index = (math.random)(1, #t)
-      ;
-      (HomelandFishingConst.SetBitFishId)((t[index]).ID)
-      ;
-      (HomelandFishingConst.SettWishingFishInfo)(t[index])
-      self:SwitchStatus(FishgingStatus.Bite, self._floatPosition)
+    local fishs = HomelandWishingConst.GetRaiseFishList()
+    if fishs == nil or table.count(fishs) <= 0 then
+      return
     end
+    local t = {}
+    for k, v in pairs(fishs) do
+      t[#t + 1] = v
+    end
+    local index = math.random(1, #t)
+    HomelandFishingConst.SetBitFishId(t[index].ID)
+    HomelandFishingConst.SettWishingFishInfo(t[index])
+    self:SwitchStatus(FishgingStatus.Bite, self._floatPosition)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusFishing.OnDestroy = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandFishingStatusFishing:OnDestroy()
   if self._collectCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.FishingCollect, self._collectCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.FishingCollect, self._collectCallback)
     self._collectCallback = nil
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusFishing.FishingCollect = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.FishingCollectCoro, self)
+function HomelandFishingStatusFishing:FishingCollect()
+  GameGlobal.TaskManager():StartTask(self.FishingCollectCoro, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusFishing.FishingCollectCoro = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function HomelandFishingStatusFishing:FishingCollectCoro(TT)
   self:LockStatus()
   self:LockUI("HomelandFishingStatusThrow_FishingCollectCoro")
-  local anim = (HomelandFishingConst.GetAnimationCfg)(FishgingAnimation.FishCancel)
+  local anim = HomelandFishingConst.GetAnimationCfg(FishgingAnimation.FishCancel)
   self:PlayAnimation(anim.name)
   self:PlayFishRodAnimation(anim.rodname)
   YIELD(TT, anim.length)
@@ -112,82 +78,60 @@ HomelandFishingStatusFishing.FishingCollectCoro = function(self, TT)
   self:UnLockStatus()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusFishing.EnterBiteStatus = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.EneterBiteStatusCoro, self)
+function HomelandFishingStatusFishing:EnterBiteStatus()
+  GameGlobal.TaskManager():StartTask(self.EneterBiteStatusCoro, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusFishing.EneterBiteStatusCoro = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
+function HomelandFishingStatusFishing:EneterBiteStatusCoro(TT)
   self:LockUI("HomelandFishingStatusFishing_EneterBiteStatusCoro")
   self:LockStatus()
-  local fishingPositionId, positionType = (self._homelandFishing):GetFishingPosition(self._floatPosition)
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
+  local fishingPositionId, positionType = self._homelandFishing:GetFishingPosition(self._floatPosition)
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
   local type = FishingEntryType.FET_Normal
   if positionType == FishingPositionType.Normal then
     type = FishingEntryType.FET_Normal
-  else
-    if positionType == FishingPositionType.WishingCoin then
-      type = FishingEntryType.FET_SpecialWishingCoin
-    else
-      if positionType == FishingPositionType.RareFishing then
-        type = FishingEntryType.FET_RarePosition
-      else
-        if positionType == FishingPositionType.PetFishing then
-          type = FishingEntryType.FET_RarePosition
-        end
-      end
-    end
+  elseif positionType == FishingPositionType.WishingCoin then
+    type = FishingEntryType.FET_SpecialWishingCoin
+  elseif positionType == FishingPositionType.RareFishing then
+    type = FishingEntryType.FET_RarePosition
+  elseif positionType == FishingPositionType.PetFishing then
+    type = FishingEntryType.FET_RarePosition
   end
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
-  local followList = (homelandClient:PetManager()):GetFollowPets()
+  local followList = homelandClient:PetManager():GetFollowPets()
   local followPetIDs = {}
-  for k,pet in pairs(followList) do
-    (table.insert)(followPetIDs, pet:TemplateID())
+  for k, pet in pairs(followList) do
+    table.insert(followPetIDs, pet:TemplateID())
   end
   local result = homelandModule:ApplyFishBiteHook(TT, type, fishingPositionId, followPetIDs)
   if result:GetSucc() then
-    (HomelandFishingConst.SetBitFishId)(homelandModule:GetCurrentBiteFishID())
+    HomelandFishingConst.SetBitFishId(homelandModule:GetCurrentBiteFishID())
     self:SwitchStatus(FishgingStatus.Bite, self._floatPosition)
   else
-    ;
-    (Log.error)("钓鱼失败 reason code : ", result:GetResult())
+    Log.error("钓鱼失败 reason code : ", result:GetResult())
     self._biteTime = self._biteTime + self._biteTimeLength
   end
   self:UnLockUI("HomelandFishingStatusFishing_EneterBiteStatusCoro")
   self:UnLockStatus()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusFishing.EnterFishMatch = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self._EnterFishMatch, self)
+function HomelandFishingStatusFishing:EnterFishMatch()
+  GameGlobal.TaskManager():StartTask(self._EnterFishMatch, self)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusFishing._EnterFishMatch = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
+function HomelandFishingStatusFishing:_EnterFishMatch(TT)
   self:LockUI("HomelandFishingStatusFishing_EneterBiteStatusCoro")
   self:LockStatus()
-  local homeLandModule = (GameGlobal.GetModule)(HomelandModule)
+  local homeLandModule = GameGlobal.GetModule(HomelandModule)
   local result = homeLandModule:ApplyFishBiteHook(TT, FishingEntryType.FET_FishingPetChallenge, 0, {})
   if result:GetSucc() then
-    (HomelandFishingConst.SetBitFishId)(homeLandModule:GetCurrentBiteFishID())
+    HomelandFishingConst.SetBitFishId(homeLandModule:GetCurrentBiteFishID())
     self:SwitchStatus(FishgingStatus.Bite, 0)
   else
-    ;
-    (Log.error)("钓鱼失败 reason code : ", result:GetResult())
+    Log.error("钓鱼失败 reason code : ", result:GetResult())
     self._biteTime = self._biteTime + self._biteTimeLength
   end
   self:UnLockUI("HomelandFishingStatusFishing_EneterBiteStatusCoro")
   self:UnLockStatus()
 end
-
-

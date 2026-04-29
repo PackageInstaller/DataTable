@@ -1,55 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_addhp_by_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddHPByLayer", BuffLogicBase)
 BuffLogicAddHPByLayer = BuffLogicAddHPByLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddHPByLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._costLayer = logicParam.costLayer
-    self._perLayer = logicParam.perLayer
-    self._attrType = logicParam.attrType
-  end
+function BuffLogicAddHPByLayer:Constructor(buffInstance, logicParam)
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._costLayer = logicParam.costLayer
+  self._perLayer = logicParam.perLayer
+  self._attrType = logicParam.attrType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddHPByLayer.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local casterEntity = (self._buffInstance):Entity()
+function BuffLogicAddHPByLayer:DoLogic(notify)
+  local casterEntity = self._buffInstance:Entity()
   local e = casterEntity
-  local rate = (e:Attributes()):GetAttribute("AddBloodRate") or 0
+  local rate = e:Attributes():GetAttribute("AddBloodRate") or 0
   local defenderRate = 0
-  ;
-  (Log.info)("BuffLogicAddHPByLayer:DoLogic CasterRate = ", rate)
+  Log.info("BuffLogicAddHPByLayer:DoLogic CasterRate = ", rate)
   if casterEntity:PetPstID() then
-    e = (casterEntity:Pet()):GetOwnerTeamEntity()
-    defenderRate = (e:Attributes()):GetAttribute("AddBloodRate") or 0
-    ;
-    (Log.info)("BuffLogicAddHPByLayer:DoLogic TeamEntity = ", rate)
-    rate = rate + (defenderRate)
+    e = casterEntity:Pet():GetOwnerTeamEntity()
+    defenderRate = e:Attributes():GetAttribute("AddBloodRate") or 0
+    Log.info("BuffLogicAddHPByLayer:DoLogic TeamEntity = ", rate)
+    rate = rate + defenderRate
   end
-  local battleSvc = (self._world):GetService("Battle")
+  local battleSvc = self._world:GetService("Battle")
   local curHP, maxHP = battleSvc:GetCasterHP(casterEntity)
   if curHP <= 0 then
-    return 
+    return
   end
-  if (e:Attributes()):GetAttribute("BuffForbidCure") then
-    return 
+  if e:Attributes():GetAttribute("BuffForbidCure") then
+    return
   end
   local attrCmpt = casterEntity:Attributes()
-  local svc = (self._world):GetService("BuffLogic")
+  local svc = self._world:GetService("BuffLogic")
   local curMarkLayer = svc:GetBuffLayer(self._entity, self._layerType)
   local add_value = 0
-  local value = nil
+  local value
   local count = 0
   local sourceLayer = curMarkLayer
-  while self._costLayer <= curMarkLayer and curHP < maxHP do
+  while curMarkLayer >= self._costLayer and curHP < maxHP do
     value = self:_CalcAddBlood(casterEntity, self._attrType, self._perLayer, 0)
     curHP = curHP + value
     add_value = add_value + value
@@ -57,14 +43,12 @@ BuffLogicAddHPByLayer.DoLogic = function(self, notify)
     count = count + 1
   end
   local damageType = DamageType.Recover
-  ;
-  (Log.info)("BuffLogicAddHPByLayer:DoLogic FinalRage = ", rate, "SourceValue = ", add_value, "FinalValue = ", (add_value) * (1 + (rate)))
-  local final_value = (add_value) * (1 + (rate))
-  local calcDamageSvc = (self._world):GetService("CalcDamage")
+  Log.info("BuffLogicAddHPByLayer:DoLogic FinalRage = ", rate, "SourceValue = ", add_value, "FinalValue = ", add_value * (1 + rate))
+  local final_value = add_value * (1 + rate)
+  local calcDamageSvc = self._world:GetService("CalcDamage")
   local damageInfo = DamageInfo:New(final_value, damageType)
   calcDamageSvc:AddTargetHP(e:GetID(), damageInfo)
-  ;
-  (Log.fatal)("AddHPByLayer addValue:", final_value, "NewLayer:", curMarkLayer)
+  Log.fatal("AddHPByLayer addValue:", final_value, "NewLayer:", curMarkLayer)
   local tmp, buffinst = svc:SetBuffLayer(self._entity, self._layerType, curMarkLayer)
   local layerName = svc:GetBuffLayerName(self._layerType)
   local totalLayerCount = svc:GetBuffTotalLayer(self._entity, layerName)
@@ -73,22 +57,17 @@ BuffLogicAddHPByLayer.DoLogic = function(self, notify)
   return res
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddHPByLayer._CalcAddBlood = function(self, casterEntity, nByAttribute, nAddPercent, nConfigData)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffLogicAddHPByLayer:_CalcAddBlood(casterEntity, nByAttribute, nAddPercent, nConfigData)
   local nByAttributeVal = 0
-  if nByAttribute == AddBlood_Attribute.Attack then
-    if not (casterEntity:Attributes()):GetAttack() then
-      nByAttributeVal = not casterEntity or 0
-      if not (casterEntity:Attributes()):GetDefence() then
-        nByAttributeVal = nByAttribute ~= AddBlood_Attribute.Defense or 0
-        nByAttributeVal = nByAttribute ~= AddBlood_Attribute.MaxHP or (casterEntity:Attributes()):CalcMaxHp() or 0
-        local nAddData = nConfigData + (nByAttributeVal) * nAddPercent
-        return nAddData
-      end
+  if casterEntity then
+    if nByAttribute == AddBlood_Attribute.Attack then
+      nByAttributeVal = casterEntity:Attributes():GetAttack() or 0
+    elseif nByAttribute == AddBlood_Attribute.Defense then
+      nByAttributeVal = casterEntity:Attributes():GetDefence() or 0
+    elseif nByAttribute == AddBlood_Attribute.MaxHP then
+      nByAttributeVal = casterEntity:Attributes():CalcMaxHp() or 0
     end
   end
+  local nAddData = nConfigData + nByAttributeVal * nAddPercent
+  return nAddData
 end
-
-

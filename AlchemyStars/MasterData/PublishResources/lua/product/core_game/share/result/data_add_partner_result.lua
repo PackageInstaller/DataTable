@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_add_partner_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataAddPartnerResult", Object)
 DataAddPartnerResult = DataAddPartnerResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataAddPartnerResult.Constructor = function(self, partnerID, petInfo, matchPet, petRes, hp, maxHP)
-  -- function num : 0_0
+function DataAddPartnerResult:Constructor(partnerID, petInfo, matchPet, petRes, hp, maxHP)
   self._partnerID = partnerID
   self._petInfo = petInfo
   self._matchPet = matchPet
@@ -17,78 +10,47 @@ DataAddPartnerResult.Constructor = function(self, partnerID, petInfo, matchPet, 
   self._maxHP = maxHP
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataAddPartnerResult.GetPartnerID = function(self)
-  -- function num : 0_1
+function DataAddPartnerResult:GetPartnerID()
   return self._partnerID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataAddPartnerResult.GetPetInfo = function(self)
-  -- function num : 0_2
+function DataAddPartnerResult:GetPetInfo()
   return self._petInfo
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataAddPartnerResult.GetMatchPet = function(self)
-  -- function num : 0_3
+function DataAddPartnerResult:GetMatchPet()
   return self._matchPet
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataAddPartnerResult.GetPetRes = function(self)
-  -- function num : 0_4
+function DataAddPartnerResult:GetPetRes()
   return self._petRes
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DataAddPartnerResult.GetHP = function(self)
-  -- function num : 0_5
+function DataAddPartnerResult:GetHP()
   return self._hp
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DataAddPartnerResult.GetMaxHP = function(self)
-  -- function num : 0_6
+function DataAddPartnerResult:GetMaxHP()
   return self._maxHP
 end
 
 _class("DataAddRelicResult", Object)
 DataAddRelicResult = DataAddRelicResult
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-DataAddRelicResult.Constructor = function(self, relicID, buffSeqList, switchState)
-  -- function num : 0_7
+function DataAddRelicResult:Constructor(relicID, buffSeqList, switchState)
   self._relicID = relicID
   self._buffSeqList = buffSeqList
   self._switchState = switchState
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DataAddRelicResult.GetRelicID = function(self)
-  -- function num : 0_8
+function DataAddRelicResult:GetRelicID()
   return self._relicID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-DataAddRelicResult.GetBuffSeqList = function(self)
-  -- function num : 0_9
+function DataAddRelicResult:GetBuffSeqList()
   return self._buffSeqList
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-DataAddRelicResult.GetSwitchState = function(self)
-  -- function num : 0_10
+function DataAddRelicResult:GetSwitchState()
   return self._switchState
 end
-
-

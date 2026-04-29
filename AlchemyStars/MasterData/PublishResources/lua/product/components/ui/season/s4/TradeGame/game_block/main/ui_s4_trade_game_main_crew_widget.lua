@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/game_block/main/ui_s4_trade_game_main_crew_widget.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4TradeGameMainCrewWidget", UICustomWidget)
 UIS4TradeGameMainCrewWidget = UIS4TradeGameMainCrewWidget
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4TradeGameMainCrewWidget.Constructor = function(self)
-  -- function num : 0_0
+function UIS4TradeGameMainCrewWidget:Constructor()
   self._sliderWidth = 515
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainCrewWidget.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIS4TradeGameMainCrewWidget:OnShow(uiParams)
   self._atlas = self:GetAsset("UIS4TradeGame.spriteatlas", LoadType.SpriteAtlas)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainCrewWidget._GetComponents = function(self)
-  -- function num : 0_2
+function UIS4TradeGameMainCrewWidget:_GetComponents()
   local comp1, comp2, comp3 = {}, {}, {}
   comp1.valueComp = self:GetUIComponent("UILocalizationText", "power1Value")
   comp1.sliderComp = self:GetUIComponent("Slider", "power1Slider")
@@ -40,174 +27,92 @@ UIS4TradeGameMainCrewWidget._GetComponents = function(self)
   comp3.targetRect = self:GetUIComponent("RectTransform", "targetMark3")
   comp3.fill = self:GetUIComponent("Image", "Fill3")
   comp3.previewSlider = self:GetUIComponent("Slider", "power3PreviewSlider")
-  self._compTb = {comp1, comp2, comp3}
+  self._compTb = {
+    comp1,
+    comp2,
+    comp3
+  }
   self._comp0 = {}
-  -- DECOMPILER ERROR at PC91: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._comp0).valueComp = self:GetUIComponent("UILocalizationText", "power0Value")
-  -- DECOMPILER ERROR at PC97: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._comp0).sliderComp = self:GetUIComponent("Slider", "power0Slider")
-  -- DECOMPILER ERROR at PC103: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._comp0).previewSlider = self:GetUIComponent("Slider", "power0PreviewSlider")
+  self._comp0.valueComp = self:GetUIComponent("UILocalizationText", "power0Value")
+  self._comp0.sliderComp = self:GetUIComponent("Slider", "power0Slider")
+  self._comp0.previewSlider = self:GetUIComponent("Slider", "power0PreviewSlider")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainCrewWidget.SetData = function(self, tradeData, selectID)
-  -- function num : 0_3
+function UIS4TradeGameMainCrewWidget:SetData(tradeData, selectID)
   self._tradeData = tradeData
   self._selectID = selectID
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainCrewWidget._InitComponents = function(self)
-  -- function num : 0_4
+function UIS4TradeGameMainCrewWidget:_InitComponents()
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainCrewWidget.Refresh = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local maxSpeed, maxLoad = (self._tradeData):GetShipLoadValueByID(self._selectID)
-  local nowSpeed, nowLoad = (self._tradeData):GetNowSpeedAndLoad(self._selectID)
-  local maxValue = (self._tradeData):GetShipMaxValueByID(self._selectID)
-  local curValue = (self._tradeData):GetShipCurValueByID(self._selectID)
-  local needValue = (self._tradeData):GetShipNeedValueByID(self._selectID)
-  for i,comp in pairs(self._compTb) do
+function UIS4TradeGameMainCrewWidget:Refresh()
+  local maxSpeed, maxLoad = self._tradeData:GetShipLoadValueByID(self._selectID)
+  local nowSpeed, nowLoad = self._tradeData:GetNowSpeedAndLoad(self._selectID)
+  local maxValue = self._tradeData:GetShipMaxValueByID(self._selectID)
+  local curValue = self._tradeData:GetShipCurValueByID(self._selectID)
+  local needValue = self._tradeData:GetShipNeedValueByID(self._selectID)
+  for i, comp in pairs(self._compTb) do
     local value = ""
-    if needValue[i] <= curValue[i] then
+    if curValue[i] >= needValue[i] then
       value = "<color=#bb9246>" .. curValue[i] .. "</color>" .. "/" .. needValue[i]
-      -- DECOMPILER ERROR at PC40: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (comp.fill).sprite = (self._atlas):GetSprite("exp_s4_paoshang_zjm_jdt2")
+      comp.fill.sprite = self._atlas:GetSprite("exp_s4_paoshang_zjm_jdt2")
     else
       value = "<color=#985542>" .. curValue[i] .. "</color>" .. "/" .. needValue[i]
-      -- DECOMPILER ERROR at PC53: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (comp.fill).sprite = (self._atlas):GetSprite("exp_s4_paoshang_zjm_jdt3")
+      comp.fill.sprite = self._atlas:GetSprite("exp_s4_paoshang_zjm_jdt3")
     end
-    -- DECOMPILER ERROR at PC56: Confused about usage of register: R14 in 'UnsetPending'
-
-    ;
-    (comp.sliderComp).maxValue = maxValue[i]
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R14 in 'UnsetPending'
-
-    ;
-    (comp.sliderComp).value = curValue[i]
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R14 in 'UnsetPending'
-
-    ;
-    (comp.previewSlider).maxValue = maxValue[i]
-    -- DECOMPILER ERROR at PC65: Confused about usage of register: R14 in 'UnsetPending'
-
-    ;
-    (comp.previewSlider).value = curValue[i]
-    ;
-    (comp.valueComp):SetText(value)
-    -- DECOMPILER ERROR at PC79: Confused about usage of register: R14 in 'UnsetPending'
-
-    ;
-    (comp.targetRect).anchoredPosition = Vector2(self._sliderWidth * needValue[i] / maxValue[i], 2)
+    comp.sliderComp.maxValue = maxValue[i]
+    comp.sliderComp.value = curValue[i]
+    comp.previewSlider.maxValue = maxValue[i]
+    comp.previewSlider.value = curValue[i]
+    comp.valueComp:SetText(value)
+    comp.targetRect.anchoredPosition = Vector2(self._sliderWidth * needValue[i] / maxValue[i], 2)
   end
-  ;
-  ((self._comp0).valueComp):SetText("<color=#bb9246>" .. nowLoad .. "</color>")
-  -- DECOMPILER ERROR at PC92: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  ((self._comp0).sliderComp).maxValue = maxLoad
-  -- DECOMPILER ERROR at PC95: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  ((self._comp0).sliderComp).value = nowLoad
-  -- DECOMPILER ERROR at PC98: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  ((self._comp0).previewSlider).maxValue = maxLoad
-  -- DECOMPILER ERROR at PC101: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  ((self._comp0).previewSlider).value = nowLoad
+  self._comp0.valueComp:SetText("<color=#bb9246>" .. nowLoad .. "</color>")
+  self._comp0.sliderComp.maxValue = maxLoad
+  self._comp0.sliderComp.value = nowLoad
+  self._comp0.previewSlider.maxValue = maxLoad
+  self._comp0.previewSlider.value = nowLoad
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainCrewWidget.OptionRefresh = function(self, optionValue, previewOptionValue)
-  -- function num : 0_6 , upvalues : _ENV
-  if not previewOptionValue then
-    previewOptionValue = {0, 0, 0, 0}
-  end
-  local needValue = (self._tradeData):GetShipNeedValueByID(self._selectID)
-  local optionValues = (self._tradeData):GetShipOptionValue(self._selectID, optionValue)
-  for i,comp in pairs(self._compTb) do
+function UIS4TradeGameMainCrewWidget:OptionRefresh(optionValue, previewOptionValue)
+  previewOptionValue = previewOptionValue or {
+    0,
+    0,
+    0,
+    0
+  }
+  local needValue = self._tradeData:GetShipNeedValueByID(self._selectID)
+  local optionValues = self._tradeData:GetShipOptionValue(self._selectID, optionValue)
+  for i, comp in pairs(self._compTb) do
     local value = ""
     local changeValue = ""
-    if optionValues[i] >= 0 or not 0 then
-      do
-        optionValues[i] = optionValues[i]
-        if previewOptionValue[i + 1] ~= 0 and (previewOptionValue[i + 1] <= 0 or not "+" .. previewOptionValue[i + 1]) then
-          changeValue = previewOptionValue[i + 1]
-        end
-        if needValue[i] <= optionValues[i] then
-          value = "<color=#bb9246>" .. optionValues[i] .. changeValue .. "</color>" .. "/" .. needValue[i]
-          -- DECOMPILER ERROR at PC64: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          (comp.fill).sprite = (self._atlas):GetSprite("exp_s4_paoshang_zjm_jdt2")
-        else
-          value = "<color=#985542>" .. optionValues[i] .. changeValue .. "</color>" .. "/" .. needValue[i]
-          -- DECOMPILER ERROR at PC78: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          (comp.fill).sprite = (self._atlas):GetSprite("exp_s4_paoshang_zjm_jdt3")
-        end
-        -- DECOMPILER ERROR at PC81: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (comp.sliderComp).value = optionValues[i]
-        -- DECOMPILER ERROR at PC87: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (comp.previewSlider).value = optionValues[i] + previewOptionValue[i + 1]
-        ;
-        (comp.valueComp):SetText(value)
-        -- DECOMPILER ERROR at PC92: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC92: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    optionValues[i] = optionValues[i] < 0 and 0 or optionValues[i]
+    if previewOptionValue[i + 1] ~= 0 then
+      changeValue = 0 < previewOptionValue[i + 1] and "+" .. previewOptionValue[i + 1] or previewOptionValue[i + 1]
     end
+    if optionValues[i] >= needValue[i] then
+      value = "<color=#bb9246>" .. optionValues[i] .. changeValue .. "</color>" .. "/" .. needValue[i]
+      comp.fill.sprite = self._atlas:GetSprite("exp_s4_paoshang_zjm_jdt2")
+    else
+      value = "<color=#985542>" .. optionValues[i] .. changeValue .. "</color>" .. "/" .. needValue[i]
+      comp.fill.sprite = self._atlas:GetSprite("exp_s4_paoshang_zjm_jdt3")
+    end
+    comp.sliderComp.value = optionValues[i]
+    comp.previewSlider.value = optionValues[i] + previewOptionValue[i + 1]
+    comp.valueComp:SetText(value)
   end
   local loadChangeValue = ""
-  if previewOptionValue[1] ~= 0 and (previewOptionValue[1] <= 0 or not "+" .. previewOptionValue[1]) then
-    loadChangeValue = previewOptionValue[1]
+  if previewOptionValue[1] ~= 0 then
+    loadChangeValue = 0 < previewOptionValue[1] and "+" .. previewOptionValue[1] or previewOptionValue[1]
   end
-  ;
-  ((self._comp0).valueComp):SetText("<color=#bb9246>" .. optionValues[4] .. loadChangeValue .. "</color>")
-  -- DECOMPILER ERROR at PC119: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self._comp0).sliderComp).value = optionValues[4]
-  -- DECOMPILER ERROR at PC125: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self._comp0).previewSlider).value = optionValues[4] + previewOptionValue[1]
+  self._comp0.valueComp:SetText("<color=#bb9246>" .. optionValues[4] .. loadChangeValue .. "</color>")
+  self._comp0.sliderComp.value = optionValues[4]
+  self._comp0.previewSlider.value = optionValues[4] + previewOptionValue[1]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainCrewWidget.GetCompByType = function(self, type)
-  -- function num : 0_7
-  return (self._compTb)[type + 1]
+function UIS4TradeGameMainCrewWidget:GetCompByType(type)
+  return self._compTb[type + 1]
 end
-
-

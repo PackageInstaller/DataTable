@@ -1,60 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/ui_luckland_res_calcu_popup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandResCalcuPopUp", UIController)
 UILuckLandResCalcuPopUp = UILuckLandResCalcuPopUp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandResCalcuPopUp.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UILuckLandResCalcuPopUp:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandResCalcuPopUp.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UILuckLandResCalcuPopUp:OnShow(uiParams)
   self.speed = uiParams[1]
   self:InitWidget()
   self:AttachEvent(GameEventType.LuckLandResColl, self._ResColl)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandResCalcuPopUp.InitWidget = function(self)
-  -- function num : 0_2
+function UILuckLandResCalcuPopUp:InitWidget()
   self._anim = self:GetUIComponent("Animator", "_anim")
   self.resText = self:GetUIComponent("UILocalizationText", "ResText")
-  ;
-  (self.resText):SetText("0")
-  ;
-  (self._anim):Play("uieff_UILuckLandResCalcuPopUp_in", 1)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._anim).speed = self.speed
+  self.resText:SetText("0")
+  self._anim:Play("uieff_UILuckLandResCalcuPopUp_in", 1)
+  self._anim.speed = self.speed
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandResCalcuPopUp._ResColl = function(self, value)
-  -- function num : 0_3
-  (self.resText):SetText("" .. value)
+function UILuckLandResCalcuPopUp:_ResColl(value)
+  self.resText:SetText("" .. value)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandResCalcuPopUp.OnClose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UILuckLandResCalcuPopUp:OnClose()
   self:DetachEvent(GameEventType.LuckLandResColl)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandResCalcuPopUp.BgOnClick = function(self, go)
-  -- function num : 0_5
+function UILuckLandResCalcuPopUp:BgOnClick(go)
 end
-
-

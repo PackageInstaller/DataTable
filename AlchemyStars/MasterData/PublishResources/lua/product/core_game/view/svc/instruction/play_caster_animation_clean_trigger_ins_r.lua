@@ -1,38 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_animation_clean_trigger_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterAnimationCleanTriggerInstruction", BaseInstruction)
 PlayCasterAnimationCleanTriggerInstruction = PlayCasterAnimationCleanTriggerInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterAnimationCleanTriggerInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayCasterAnimationCleanTriggerInstruction:Constructor(paramList)
   self._animName = paramList.animName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterAnimationCleanTriggerInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayCasterAnimationCleanTriggerInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local e = casterEntity
-  do
-    if casterEntity:HasSuperEntity() and (casterEntity:EntityType()):IsSkillHolder() then
-      local cSuperEntity = casterEntity:SuperEntityComponent()
-      e = cSuperEntity:GetSuperEntity()
-    end
-    local csgo = ((casterEntity:View()).ViewWrapper).GameObject
-    local csTransformRoot = (csgo.transform):Find("Root")
-    if not csTransformRoot then
-      return 
-    end
-    local csAnimator = csTransformRoot:GetComponent("Animator")
-    if csAnimator then
-      csAnimator:ResetTrigger(self._animName)
-    end
+  if casterEntity:HasSuperEntity() and casterEntity:EntityType():IsSkillHolder() then
+    local cSuperEntity = casterEntity:SuperEntityComponent()
+    e = cSuperEntity:GetSuperEntity()
+  end
+  local csgo = casterEntity:View().ViewWrapper.GameObject
+  local csTransformRoot = csgo.transform:Find("Root")
+  if not csTransformRoot then
+    return
+  end
+  local csAnimator = csTransformRoot:GetComponent("Animator")
+  if csAnimator then
+    csAnimator:ResetTrigger(self._animName)
   end
 end
-
-

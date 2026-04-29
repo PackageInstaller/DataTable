@@ -1,72 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/lib/debug_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
--- DECOMPILER ERROR at PC2: Confused about usage of register: R0 in 'UnsetPending'
-
-debug.getlocals = function(t)
-  -- function num : 0_0 , upvalues : _ENV
+function debug.getlocals(t)
   assert(type(t) == "thread", "argument #1 thread expected")
+  
   local as = {}
   local i = 1
-  while 1 do
-    local name, value = (debug.getlocal)(t, 1, i)
-    if name then
-      do
-        as[name] = value
-        i = i + 1
-        -- DECOMPILER ERROR at PC22: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC22: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  while true do
+    local name, value = debug.getlocal(t, 1, i)
+    if not name then
+      break
     end
+    as[name] = value
+    i = i + 1
   end
-  do return as end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return as
 end
 
-local getmetatable = getmetatable
+local getmetatable = _ENV.getmetatable
 local n = 0
 local stack = {}
--- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
 
-debug.findobj = function(start, comp, root)
-  -- function num : 0_1 , upvalues : _ENV, stack, getmetatable
+function debug.findobj(start, comp, root)
   local passed = {}
   passed[tostring] = true
   passed[debug] = true
   passed[table] = true
-  local getupvalues = function(f)
-    -- function num : 0_1_0 , upvalues : _ENV
+  
+  local function getupvalues(f)
     local ups = {}
     local i = 1
-    while 1 do
-      local a, b = (debug.getupvalue)(f, i)
-      if a then
-        do
-          i = i + 1
-          ups[a] = b
-          -- DECOMPILER ERROR at PC11: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC11: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+    while true do
+      local a, b = debug.getupvalue(f, i)
+      if not a then
+        break
       end
+      i = i + 1
+      ups[a] = b
     end
     return ups
   end
-
-  local cp = function(t)
-    -- function num : 0_1_1 , upvalues : _ENV
+  
+  local function cp(t)
     local res = {}
-    for k,v in pairs(t) do
+    for k, v in pairs(t) do
       res[k] = v
     end
     return res
   end
-
+  
   local checktype = {}
   checktype.userdata = true
   checktype.table = true
@@ -74,19 +53,19 @@ debug.findobj = function(start, comp, root)
   checktype.thread = true
   local res = {}
   stack = {}
-  local restrain = function(obj, name)
-    -- function num : 0_1_2 , upvalues : comp, stack, res, cp, passed, _ENV, getupvalues, restrain, getmetatable, checktype
+  
+  local function restrain(obj, name)
     if comp(obj) then
       stack[#stack + 1] = name
       res[#res + 1] = cp(stack)
       stack[#stack] = nil
-      return 
+      return
     end
     if passed[obj] then
-      return 
+      return
     end
     if not obj then
-      for i,v in ipairs(res) do
+      for i, v in ipairs(res) do
         print(v)
       end
       assert(false)
@@ -94,319 +73,210 @@ debug.findobj = function(start, comp, root)
     passed[obj] = true
     if type(obj) == "function" then
       local mt = getupvalues(obj)
-      local info = (debug.getinfo)(obj)
+      local info = debug.getinfo(obj)
       stack[#stack + 1] = ("%s(function %s|%s)"):format(name, info.short_src, info.linedefined)
       restrain(mt, "upvalues")
       stack[#stack] = nil
-    else
-      do
-        if type(obj) == "userdata" then
-          local mt = getmetatable(obj)
-          if mt then
-            stack[#stack + 1] = ("%s(userdata)"):format(name)
-            restrain(mt, "metatables")
-            stack[#stack] = nil
+    elseif type(obj) == "userdata" then
+      local mt = getmetatable(obj)
+      if mt then
+        stack[#stack + 1] = ("%s(userdata)"):format(name)
+        restrain(mt, "metatables")
+        stack[#stack] = nil
+      end
+    elseif type(obj) == "thread" then
+      local as = debug.getlocals(obj)
+      stack[#stack + 1] = ("%s(thread)"):format(name)
+      restrain(as, "locals")
+      stack[#stack] = nil
+    elseif type(obj) == "table" then
+      local mt = getmetatable(obj)
+      local countk = true
+      local countv = true
+      if mt then
+        stack[#stack + 1] = ("%s(table).MT=%s"):format(name, mt)
+        restrain(mt, "metatable")
+        stack[#stack] = nil
+        local mode = rawget(mt, "__mode")
+        if mode then
+          if mode:find("k") then
+            countk = false
           end
-        else
-          do
-            if type(obj) == "thread" then
-              local as = (debug.getlocals)(obj)
-              stack[#stack + 1] = ("%s(thread)"):format(name)
-              restrain(as, "locals")
-              stack[#stack] = nil
-            else
-              do
-                if type(obj) == "table" then
-                  local mt = getmetatable(obj)
-                  local countk = true
-                  local countv = true
-                  if mt then
-                    stack[#stack + 1] = ("%s(table).MT=%s"):format(name, mt)
-                    restrain(mt, "metatable")
-                    stack[#stack] = nil
-                    local mode = rawget(mt, "__mode")
-                    if mode then
-                      if mode:find("k") then
-                        countk = false
-                      end
-                      if mode:find("v") then
-                        countv = false
-                      end
-                    end
-                  end
-                  do
-                    for k,v in next do
-                      if countk and checktype[type(k)] then
-                        stack[#stack + 1] = ("%s(table)"):format(name)
-                        restrain(k, ("key|k=%s(%s) v=%s(%s)"):format(tostring(k), type(k), tostring(v), type(v)))
-                        stack[#stack] = nil
-                      end
-                      if countv and checktype[type(v)] then
-                        stack[#stack + 1] = ("%s(table)"):format(name)
-                        restrain(v, ("val|k=%s(%s) v=%s(%s)"):format(tostring(k), type(k), tostring(v), type(v)))
-                        stack[#stack] = nil
-                      end
-                    end
-                  end
-                end
-              end
-            end
+          if mode:find("v") then
+            countv = false
           end
+        end
+      end
+      for k, v in next, obj, nil do
+        if countk and checktype[type(k)] then
+          stack[#stack + 1] = ("%s(table)"):format(name)
+          restrain(k, ("key|k=%s(%s) v=%s(%s)"):format(tostring(k), type(k), tostring(v), type(v)))
+          stack[#stack] = nil
+        end
+        if countv and checktype[type(v)] then
+          stack[#stack + 1] = ("%s(table)"):format(name)
+          restrain(v, ("val|k=%s(%s) v=%s(%s)"):format(tostring(k), type(k), tostring(v), type(v)))
+          stack[#stack] = nil
         end
       end
     end
   end
-
+  
   restrain(start, root or "root")
   return res
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-debug.findall = function(comp)
-  -- function num : 0_2 , upvalues : _ENV
-  local res = (debug.findobj)(_G, comp, "root")
-  local rs = (debug.findobj)((debug.GetRegistry)(), comp, "registry")
+function debug.findall(comp)
+  local res = debug.findobj(_G, comp, "root")
+  local rs = debug.findobj(debug.GetRegistry(), comp, "registry")
   for ii = 1, #rs do
     res[#res + 1] = rs[ii]
   end
   return res
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-debug.logCall = function(b)
-  -- function num : 0_3 , upvalues : _ENV
+function debug.logCall(b)
   if b then
-    (debug.sethook)(function(event, line)
-    -- function num : 0_3_0 , upvalues : _ENV
-    (Log.debug)("hook ", (Log.traceback)())
-  end
-, "c")
+    debug.sethook(function(event, line)
+      Log.debug("hook ", Log.traceback())
+    end, "c")
   else
-    ;
-    (debug.sethook)()
+    debug.sethook()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-debug.dumpreg = function()
-  -- function num : 0_4 , upvalues : _ENV
-  (App.ClearMemory)()
+function debug.dumpreg()
+  App.ClearMemory()
   local str = ""
   collectgarbage("collect")
-  local tb = (debug.getregistry)()
+  local tb = debug.getregistry()
   local strs = {}
-  for k2,v2 in next do
-    do
-      local v2str = tostring(v2)
-      strs[#strs + 1] = tostring(k2)
-      strs[#strs + 1] = tostring("=")
-      strs[#strs + 1] = v2str
-      strs[#strs + 1] = tostring("\n")
-    end
-  end
-  ;
-  (Log.error)((table.concat)(strs))
-  str = str .. tostring((table.concat)(strs)) .. "\n"
-  strs = {}
-  for k2,v2 in next do
+  for k2, v2 in next, tb, nil do
     local v2str = tostring(v2)
-    if (tostring(v2)):find("null") or (tostring(v2)):find("<invalid c# object>") then
-      local o = (debug.findobj)(_G, function(tb)
-    -- function num : 0_4_0 , upvalues : _ENV, v2str, v2
-    do return tostring(tb) == v2str and tb == v2 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+    strs[#strs + 1] = tostring(k2)
+    strs[#strs + 1] = tostring("=")
+    strs[#strs + 1] = v2str
+    strs[#strs + 1] = tostring("\n")
   end
-)
-      local str1 = (string.format)("_G[%s][%s][%s]", tostring(R13_PC92), R13_PC92, (table.tostr)(o))
-      ;
-      (Log.error)(str1)
-      -- DECOMPILER ERROR at PC105: Overwrote pending register: R13 in 'AssignReg'
-
-      str = str .. str1 .. R13_PC92
-      -- DECOMPILER ERROR at PC112: Overwrote pending register: R13 in 'AssignReg'
-
-      local o = (debug.findobj)((debug.getregistry)(), R13_PC92)
-      -- DECOMPILER ERROR at PC116: Overwrote pending register: R13 in 'AssignReg'
-
-      local str2 = (string.format)(R13_PC92, tostring(R15_PC119), R15_PC119, (table.tostr)(o))
-      -- DECOMPILER ERROR at PC126: Overwrote pending register: R13 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC127: Overwrote pending register: R13 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC129: Overwrote pending register: R15 in 'AssignReg'
-
-      R13_PC92("Reg[%s][%s][%s]", R15_PC119, R16_PC131, (table.tostr)(o))
-      -- DECOMPILER ERROR at PC138: Overwrote pending register: R13 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC140: Overwrote pending register: R13 in 'AssignReg'
-
-      return R13_PC92
+  Log.error(table.concat(strs))
+  str = str .. tostring(table.concat(strs)) .. "\n"
+  strs = {}
+  for k2, v2 in next, tb, nil do
+    local v2str = tostring(v2)
+    if tostring(v2):find("null") or tostring(v2):find("<invalid c# object>") then
+      local o = debug.findobj(_G, function(tb)
+        return tostring(tb) == v2str and tb == v2
+      end)
+      local str1 = string.format("_G[%s][%s][%s]", tostring(k2), v2str, table.tostr(o))
+      Log.error(str1)
+      str = str .. str1 .. "\n"
+      local o = debug.findobj(debug.getregistry(), function(tb)
+        return tostring(tb) == v2str and tb == v2
+      end)
+      local str2 = string.format("Reg[%s][%s][%s]", tostring(k2), v2str, table.tostr(o))
+      Log.error("Reg[%s][%s][%s]", tostring(k2), v2str, table.tostr(o))
+      return str .. str2
     end
-    do
-      do
-        strs[#strs + 1] = tostring(R11_PC146)
-        strs[#strs + 1] = tostring(R11_PC146)
-        strs[#strs + 1] = v2str
-        -- DECOMPILER ERROR at PC160: Overwrote pending register: R11 in 'AssignReg'
-
-        strs[#strs + 1] = tostring(R11_PC146)
-        -- DECOMPILER ERROR at PC165: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    strs[#strs + 1] = tostring(k2)
+    strs[#strs + 1] = tostring("=")
+    strs[#strs + 1] = v2str
+    strs[#strs + 1] = tostring("\n")
   end
-  local str3 = nil
-  -- DECOMPILER ERROR at PC172: Overwrote pending register: R4 in 'AssignReg'
-
-  str3((table.concat)(strs))
-  -- DECOMPILER ERROR at PC175: Overwrote pending register: R4 in 'AssignReg'
-
-  -- DECOMPILER ERROR at PC177: Overwrote pending register: R4 in 'AssignReg'
-
-  return str3
+  local str3 = table.concat(strs)
+  Log.error(str3)
+  return str .. str3
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-debug.regfunc = function()
-  -- function num : 0_5 , upvalues : _ENV
-  local regidtry = (debug.getregistry)()
+function debug.regfunc()
+  local regidtry = debug.getregistry()
   local funcs = {}
-  for k,v in next do
+  for k, v in next, regidtry, nil do
     if type(v) == "function" then
-      local info = (debug.getinfo)(v)
-      local funckey = (string.format)("%s%s", info.source, info.linedefined)
+      local info = debug.getinfo(v)
+      local funckey = string.format("%s%s", info.source, info.linedefined)
       funcs[funckey] = (funcs[funckey] or 0) + 1
     end
   end
   return funcs
 end
 
-local cnttb = function(tb)
-  -- function num : 0_6 , upvalues : _ENV
+local function cnttb(tb)
   local cnt = 0
-  for k,v in next do
+  for k, v in next, tb, nil do
     cnt = cnt + 1
   end
   return cnt
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-debug.getupvalues = function(f)
-  -- function num : 0_7 , upvalues : _ENV
+function debug.getupvalues(f)
   local ups = {}
   local i = 1
-  while 1 do
-    local a, b = (debug.getupvalue)(f, i)
-    if a then
-      do
-        i = i + 1
-        ups[a] = b
-        -- DECOMPILER ERROR at PC11: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC11: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  while true do
+    local a, b = debug.getupvalue(f, i)
+    if not a then
+      break
     end
+    i = i + 1
+    ups[a] = b
   end
   return ups
 end
 
-local exceedtb = function(env, tb, head)
-  -- function num : 0_8 , upvalues : _ENV, cnttb, exceedtb, getmetatable
+local function exceedtb(env, tb, head)
   if type(tb) ~= "table" then
-    return 
+    return
   end
   local visited = env.visited
   if visited[tb] then
-    return 
+    return
   end
   visited[tb] = true
   env.visitedn = env.visitedn + 1
   local paths = env.paths
   local n = cnttb(tb)
-  if n > 100 then
+  if 100 < n then
     paths[head] = n
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (env.pathtbs)[head] = tb
+    env.pathtbs[head] = tb
   end
-  for k,v in next do
+  for k, v in next, tb, nil do
     if type(k) == "table" then
       exceedtb(env, k, head .. "/val|" .. tostring(v))
       local meta = getmetatable(k)
       if meta then
-        exceedtb(env, meta, (string.format)("%s/val=%s|%s(table).meta", head, tostring(v), tostring(k)))
+        exceedtb(env, meta, string.format("%s/val=%s|%s(table).meta", head, tostring(v), tostring(k)))
       end
-    else
-      do
-        if type(k) == "function" and not visited[k] then
-          visited[k] = true
-          env.visitedn = env.visitedn + 1
-          local ups = (debug.getupvalues)(k)
-          local info = (debug.getinfo)(k)
-          exceedtb(env, ups, (string.format)("%s/val=%s(function %s@%s)", head, tostring(v), info.linedefined, info.short_src))
-        end
-        do
-          do
-            if type(k) == "userdata" then
-              local meta = getmetatable(k)
-              if meta then
-                exceedtb(env, meta, (string.format)("%s/val=%s|%s(userdata).meta", head, tostring(v), tostring(k)))
-              end
-            end
-            if type(v) == "table" then
-              exceedtb(env, v, (string.format)("%s/%s(table)", head, k))
-              local meta = getmetatable(v)
-              if meta then
-                exceedtb(env, meta, (string.format)("%s/%s(table).meta", head, v))
-              end
-            else
-              do
-                if type(v) == "function" and not visited[v] then
-                  visited[v] = true
-                  env.visitedn = env.visitedn + 1
-                  local ups = (debug.getupvalues)(v)
-                  local info = (debug.getinfo)(v)
-                  exceedtb(env, ups, (string.format)("%s/%s(function %s@%s)", head, tostring(k), info.linedefined, info.short_src))
-                end
-                do
-                  do
-                    if type(v) == "userdata" then
-                      local meta = getmetatable(v)
-                      if meta then
-                        exceedtb(env, meta, (string.format)("%s/%s(userdata).meta", head, k))
-                      end
-                    end
-                    -- DECOMPILER ERROR at PC210: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC210: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC210: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC210: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC210: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC210: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC210: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC210: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC210: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
-                end
-              end
-            end
-          end
-        end
+    elseif type(k) == "function" then
+      if not visited[k] then
+        visited[k] = true
+        env.visitedn = env.visitedn + 1
+        local ups = debug.getupvalues(k)
+        local info = debug.getinfo(k)
+        exceedtb(env, ups, string.format("%s/val=%s(function %s@%s)", head, tostring(v), info.linedefined, info.short_src))
+      end
+    elseif type(k) == "userdata" then
+      local meta = getmetatable(k)
+      if meta then
+        exceedtb(env, meta, string.format("%s/val=%s|%s(userdata).meta", head, tostring(v), tostring(k)))
+      end
+    end
+    if type(v) == "table" then
+      exceedtb(env, v, string.format("%s/%s(table)", head, k))
+      local meta = getmetatable(v)
+      if meta then
+        exceedtb(env, meta, string.format("%s/%s(table).meta", head, v))
+      end
+    elseif type(v) == "function" then
+      if not visited[v] then
+        visited[v] = true
+        env.visitedn = env.visitedn + 1
+        local ups = debug.getupvalues(v)
+        local info = debug.getinfo(v)
+        exceedtb(env, ups, string.format("%s/%s(function %s@%s)", head, tostring(k), info.linedefined, info.short_src))
+      end
+    elseif type(v) == "userdata" then
+      local meta = getmetatable(v)
+      if meta then
+        exceedtb(env, meta, string.format("%s/%s(userdata).meta", head, k))
       end
     end
   end
@@ -416,25 +286,17 @@ local exceedtb = function(env, tb, head)
   end
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R5 in 'UnsetPending'
-
-debug.findexceedtb = function()
-  -- function num : 0_9 , upvalues : _ENV, exceedtb
+function debug.findexceedtb()
   collectgarbage("collect")
   local env = {
-paths = {}
-, 
-pathtbs = {}
-, 
-visited = {}
-, visitedn = 0}
-  ;
-  (Log.error)("findexceedtb")
+    paths = {},
+    pathtbs = {},
+    visited = {},
+    visitedn = 0
+  }
+  Log.error("findexceedtb")
   exceedtb(env, _G, "_G")
-  ;
-  (Log.error)("findexceedtb._G")
-  exceedtb(env, (debug.getregistry)(), "registry")
+  Log.error("findexceedtb._G")
+  exceedtb(env, debug.getregistry(), "registry")
   return env.paths, env.pathtbs
 end
-
-

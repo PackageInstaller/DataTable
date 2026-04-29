@@ -1,36 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_recover_from_grey_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicRecoverFromGreyHP", BuffLogicBase)
 BuffLogicRecoverFromGreyHP = BuffLogicRecoverFromGreyHP
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRecoverFromGreyHP.Constructor = function(self, _, logicParam)
-  -- function num : 0_0
+function BuffLogicRecoverFromGreyHP:Constructor(_, logicParam)
   self._recoveryRate = logicParam.rate
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRecoverFromGreyHP.DoLogic = function(self, _)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicRecoverFromGreyHP:DoLogic(_)
   local e = self:GetEntity()
   if e:HasSuperEntity() then
     e = e:GetSuperEntity()
   end
-  local damageInfo = (self._buffLogicService):GetRecoverFromGreyHPDamageInfo(e, self._recoveryRate)
+  local damageInfo = self._buffLogicService:GetRecoverFromGreyHPDamageInfo(e, self._recoveryRate)
   if not damageInfo then
-    return 
+    return
   end
-  local calcDamageSvc = (self._world):GetService("CalcDamage")
+  local calcDamageSvc = self._world:GetService("CalcDamage")
   calcDamageSvc:AddTargetHP(e:GetID(), damageInfo)
-  ;
-  (self._buffLogicService):ChangeGreyHP(e, damageInfo:GetChangeHP() * -1)
-  local currentVal = (e:BuffComponent()):GetGreyHPValue(true)
+  self._buffLogicService:ChangeGreyHP(e, damageInfo:GetChangeHP() * -1)
+  local currentVal = e:BuffComponent():GetGreyHPValue(true)
   return BuffResultRecoverFromGreyHP:New(e:GetID(), damageInfo, currentVal)
 end
-
-

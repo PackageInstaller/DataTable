@@ -1,240 +1,180 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/petinvite/ui_home_pet_invite_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandPetInviteManager", Object)
 HomelandPetInviteManager = HomelandPetInviteManager
-local PetInviteStateEnum = {Success = 1, AllBusy = 2, AllInvite = 3, AllOut = 4}
+local PetInviteStateEnum = {
+  Success = 1,
+  AllBusy = 2,
+  AllInvite = 3,
+  AllOut = 4
+}
 _enum("PetInviteStateEnum", PetInviteStateEnum)
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
 
-HomelandPetInviteManager.Constructor = function(self)
-  -- function num : 0_0
+function HomelandPetInviteManager:Constructor()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.Init = function(self, homelandClient)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandPetInviteManager:Init(homelandClient)
   self._homelandClient = homelandClient
-  self._buildManager = (self._homelandClient):BuildManager()
-  self._petModule = (GameGlobal.GetModule)(PetModule)
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  self._characterManager = (self._homelandClient):CharacterManager()
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._homelandTaskManager = (self._homelandClient):GetHomelandTaskManager()
-  self._homelandPetManager = (self._homelandClient):PetManager()
+  self._buildManager = self._homelandClient:BuildManager()
+  self._petModule = GameGlobal.GetModule(PetModule)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
+  self._characterManager = self._homelandClient:CharacterManager()
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._homelandTaskManager = self._homelandClient:GetHomelandTaskManager()
+  self._homelandPetManager = self._homelandClient:PetManager()
   self._inviteEnterList = {}
   self._inviteOutList = {}
   self._interactingList = {}
   self._cdQueue = {}
-  self._CD = ((Cfg.cfg_homeland_global).PetInvinteCD).IntValue * 1000
-  self._checkDistance = ((Cfg.cfg_homeland_global).PetInvinteRange).IntValue
-  local cfg = (Cfg.cfg_homeland_pet_behavior_lib)({BehaviorType = HomelandPetBehaviorType.InteractingFurniture})
-  self._buildCfgCheckDistance = (cfg[1]).Range
+  self._CD = Cfg.cfg_homeland_global.PetInvinteCD.IntValue * 1000
+  self._checkDistance = Cfg.cfg_homeland_global.PetInvinteRange.IntValue
+  local cfg = Cfg.cfg_homeland_pet_behavior_lib({
+    BehaviorType = HomelandPetBehaviorType.InteractingFurniture
+  })
+  self._buildCfgCheckDistance = cfg[1].Range
   self:StartTimer()
   self._dataChanged = false
   self._lastOperatePet = nil
   self._interactPointLimit = false
   self._interactPointPets = {}
   self._invitedPets = {}
-  self._homelandPetInviteRefresh = (GameHelper:GetInstance()):CreateCallback(self.RefreshInteractingList, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnPetBehaviorInteractingFurniture, self._homelandPetInviteRefresh)
-  self._onHomeInteractClose = (GameHelper:GetInstance()):CreateCallback(self.OnHomePetInteractCloseForInivte, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnHomePetInteractCloseForInivte, self._onHomeInteractClose)
+  self._homelandPetInviteRefresh = GameHelper:GetInstance():CreateCallback(self.RefreshInteractingList, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnPetBehaviorInteractingFurniture, self._homelandPetInviteRefresh)
+  self._onHomeInteractClose = GameHelper:GetInstance():CreateCallback(self.OnHomePetInteractCloseForInivte, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnHomePetInteractCloseForInivte, self._onHomeInteractClose)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function HomelandPetInviteManager:Dispose()
   if self._homelandPetInviteRefresh then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnPetBehaviorInteractingFurniture, self._homelandPetInviteRefresh)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnPetBehaviorInteractingFurniture, self._homelandPetInviteRefresh)
     self._homelandPetInviteRefresh = nil
   end
   if self._onHomeInteractClose then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnHomePetInteractCloseForInivte, self._onHomeInteractClose)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnHomePetInteractCloseForInivte, self._onHomeInteractClose)
     self._onHomeInteractClose = nil
   end
   self:CancelTimer()
   self._homelandClient = nil
   self._lastOperatePet = nil
   self._interactPointLimit = false
-  ;
-  (table.clear)(self._interactPointPets)
-  ;
-  (table.clear)(self._invitedPets)
+  table.clear(self._interactPointPets)
+  table.clear(self._invitedPets)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.SetOperateBuilding = function(self, building, inviteItemId)
-  -- function num : 0_3
+function HomelandPetInviteManager:SetOperateBuilding(building, inviteItemId)
   self._building = building
   self._inviteItemId = 1
-  self._maxCapacity = (self._building):GetInteractingPetCountMax()
+  self._maxCapacity = self._building:GetInteractingPetCountMax()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.GetOperateBuilding = function(self)
-  -- function num : 0_4
+function HomelandPetInviteManager:GetOperateBuilding()
   return self._building
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.GetCfg = function(self, petID)
-  -- function num : 0_5
+function HomelandPetInviteManager:GetCfg(petID)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.Update = function(self)
-  -- function num : 0_6
+function HomelandPetInviteManager:Update()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.HaveChange = function(self)
-  -- function num : 0_7 , upvalues : PetInviteStateEnum, _ENV
+function HomelandPetInviteManager:HaveChange()
   local state = PetInviteStateEnum.Success
   self._dataChanged = false
-  local buildid = (self._building):InsID()
+  local buildid = self._building:InsID()
   if #self._inviteEnterList > 0 and #self._inviteOutList == 0 then
     for i = 1, #self._inviteEnterList do
-      if not self:CheckInInteractingList((self._inviteEnterList)[i], buildid, self._inviteItemId) then
+      if not self:CheckInInteractingList(self._inviteEnterList[i], buildid, self._inviteItemId) then
         self._dataChanged = true
         state = PetInviteStateEnum.AllInvite
         break
       end
     end
-    do
-      do return self._dataChanged, state end
-      if #self._inviteEnterList == 0 and #self._inviteOutList > 0 then
-        for i = 1, #self._inviteOutList do
-          if self:CheckInInteractingList((self._inviteOutList)[i], buildid, self._inviteItemId) then
-            self._dataChanged = true
-            state = PetInviteStateEnum.AllOut
-            break
-          end
-        end
-        do
-          do return self._dataChanged, state end
-          local entercount = self._inviteEnterList and #self._inviteEnterList or 0
-          local outcount = self._inviteOutList and #self._inviteOutList or 0
-          local haveChange = false
-          if entercount ~= outcount then
-            haveChange = true
-          else
-            for index,value in ipairs(self._inviteOutList) do
-              if not self:CheckInList(self._inviteEnterList, value) then
-                haveChange = true
-                break
-              end
-            end
-          end
-          do
-            self._dataChanged = haveChange
-            return self._dataChanged, state
-          end
-        end
+    return self._dataChanged, state
+  end
+  if #self._inviteEnterList == 0 and 0 < #self._inviteOutList then
+    for i = 1, #self._inviteOutList do
+      if self:CheckInInteractingList(self._inviteOutList[i], buildid, self._inviteItemId) then
+        self._dataChanged = true
+        state = PetInviteStateEnum.AllOut
+        break
+      end
+    end
+    return self._dataChanged, state
+  end
+  local entercount = self._inviteEnterList and #self._inviteEnterList or 0
+  local outcount = self._inviteOutList and #self._inviteOutList or 0
+  local haveChange = false
+  if entercount ~= outcount then
+    haveChange = true
+  else
+    for index, value in ipairs(self._inviteOutList) do
+      if not self:CheckInList(self._inviteEnterList, value) then
+        haveChange = true
+        break
       end
     end
   end
+  self._dataChanged = haveChange
+  return self._dataChanged, state
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.OnModeChanged = function(self, mode)
-  -- function num : 0_8
+function HomelandPetInviteManager:OnModeChanged(mode)
   self._mode = mode
   self._nearInviteEnablePet = {}
   self._inviteEnterList = {}
   self._inviteOutList = {}
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.GetLimitCD = function(self)
-  -- function num : 0_9
+function HomelandPetInviteManager:GetLimitCD()
   return self._CD
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.GetContainerCount = function(self)
-  -- function num : 0_10
+function HomelandPetInviteManager:GetContainerCount()
   return self._maxCapacity
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager._SortFun1 = function(x, y)
-  -- function num : 0_11 , upvalues : _ENV
-  local xCfg = (Cfg.cfg_pet)[x:TemplateID()]
-  local yCfg = (Cfg.cfg_pet)[y:TemplateID()]
-  if xCfg.ID >= yCfg.ID then
-    do return xCfg.Star ~= yCfg.Star end
-    do return xCfg.Star < yCfg.Star end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function HomelandPetInviteManager._SortFun1(x, y)
+  local xCfg = Cfg.cfg_pet[x:TemplateID()]
+  local yCfg = Cfg.cfg_pet[y:TemplateID()]
+  if xCfg.Star == yCfg.Star then
+    return xCfg.ID < yCfg.ID
   end
+  return xCfg.Star < yCfg.Star
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager._SortFun2 = function(x, y)
-  -- function num : 0_12 , upvalues : _ENV
-  local xCfg = (Cfg.cfg_pet)[x:TemplateID()]
-  local yCfg = (Cfg.cfg_pet)[y:TemplateID()]
-  if yCfg.ID >= xCfg.ID then
-    do return xCfg.Star ~= yCfg.Star end
-    do return yCfg.Star < xCfg.Star end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function HomelandPetInviteManager._SortFun2(x, y)
+  local xCfg = Cfg.cfg_pet[x:TemplateID()]
+  local yCfg = Cfg.cfg_pet[y:TemplateID()]
+  if xCfg.Star == yCfg.Star then
+    return xCfg.ID > yCfg.ID
   end
+  return xCfg.Star > yCfg.Star
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager._RemoveFun = function(self, tb, pet)
-  -- function num : 0_13 , upvalues : _ENV
+function HomelandPetInviteManager:_RemoveFun(tb, pet)
   if tb ~= nil and pet ~= nil then
     for i = #tb, 1, -1 do
-      if pet:TemplateID() == (tb[i]):TemplateID() then
-        (table.remove)(tb, i)
+      if pet:TemplateID() == tb[i]:TemplateID() then
+        table.remove(tb, i)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager._AddFun = function(self, tb, pet)
-  -- function num : 0_14 , upvalues : _ENV
+function HomelandPetInviteManager:_AddFun(tb, pet)
   if tb ~= nil and pet ~= nil then
     for i = #tb, 1, -1 do
-      if pet:TemplateID() == (tb[i]):TemplateID() then
-        return 
+      if pet:TemplateID() == tb[i]:TemplateID() then
+        return
       end
     end
   end
-  do
-    ;
-    (table.insert)(tb, pet)
-  end
+  table.insert(tb, pet)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CheckInList = function(self, list, pet)
-  -- function num : 0_15 , upvalues : _ENV
+function HomelandPetInviteManager:CheckInList(list, pet)
   if not list then
     return false
   end
-  for key,value in pairs(list) do
+  for key, value in pairs(list) do
     if value:TemplateID() == pet:TemplateID() then
       return true
     end
@@ -242,98 +182,68 @@ HomelandPetInviteManager.CheckInList = function(self, list, pet)
   return false
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.GetInviteEnterList = function(self)
-  -- function num : 0_16
+function HomelandPetInviteManager:GetInviteEnterList()
   return self._inviteEnterList
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.GetInviteOutList = function(self)
-  -- function num : 0_17
+function HomelandPetInviteManager:GetInviteOutList()
   return self._inviteOutList
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CheckIsSwimming = function(self, pet)
-  -- function num : 0_18 , upvalues : _ENV
+function HomelandPetInviteManager:CheckIsSwimming(pet)
   local isSwimming = false
-  do
-    if ((pet:GetPetBehavior()):GetCurBehavior()):GetBehaviorType() == HomelandPetBehaviorType.SwimmingPool then
-      local behaviorSwimmingPool = (pet:GetPetBehavior()):GetHomelandPetBehavior(HomelandPetBehaviorType.SwimmingPool)
-      isSwimming = behaviorSwimmingPool
-    end
-    return isSwimming
+  if pet:GetPetBehavior():GetCurBehavior():GetBehaviorType() == HomelandPetBehaviorType.SwimmingPool then
+    local behaviorSwimmingPool = pet:GetPetBehavior():GetHomelandPetBehavior(HomelandPetBehaviorType.SwimmingPool)
+    isSwimming = behaviorSwimmingPool
   end
+  return isSwimming
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.ExchangeInvitetingItem = function(self, pet, isAdd)
-  -- function num : 0_19 , upvalues : _ENV
-  local buildid = (self._building):InsID()
+function HomelandPetInviteManager:ExchangeInvitetingItem(pet, isAdd)
+  local buildid = self._building:InsID()
   local interactingPet = self:GetInteractingList(buildid, self._inviteItemId)
-  do
-    if #interactingPet > 0 then
-      local isbusy = self:CheckIsBusy(interactingPet[1])
-      if isbusy then
-        (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_invite_item_busy"))
-        return 
-      end
+  if 0 < #interactingPet then
+    local isbusy = self:CheckIsBusy(interactingPet[1])
+    if isbusy then
+      ToastManager.ShowHomeToast(StringTable.Get("str_homeland_invite_item_busy"))
+      return
     end
-    if not self._inviteEnterList then
-      self._inviteEnterList = {}
-    end
-    if not self._inviteEnterList then
-      self._inviteOutList = {}
-    end
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R5 in 'UnsetPending'
-
-    if isAdd then
-      (self._inviteEnterList)[1] = pet
-      self._inviteOutList = {}
-      -- DECOMPILER ERROR at PC51: Confused about usage of register: R5 in 'UnsetPending'
-
-      if #interactingPet > 0 and (interactingPet[1]):TemplateID() ~= pet:TemplateID() then
-        (self._inviteOutList)[1] = interactingPet[1]
-      end
-    else
-      if #self._inviteEnterList > 0 and ((self._inviteEnterList)[1]):TemplateID() == pet:TemplateID() then
-        self._inviteEnterList = {}
-        self._inviteOutList = {}
-      else
-        -- DECOMPILER ERROR at PC71: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._inviteOutList)[1] = pet
-        self._inviteEnterList = {}
-      end
-    end
-    self:HaveChange()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPetInvitePreview)
   end
+  if not self._inviteEnterList then
+    self._inviteEnterList = {}
+  end
+  if not self._inviteEnterList then
+    self._inviteOutList = {}
+  end
+  if isAdd then
+    self._inviteEnterList[1] = pet
+    self._inviteOutList = {}
+    if 0 < #interactingPet and interactingPet[1]:TemplateID() ~= pet:TemplateID() then
+      self._inviteOutList[1] = interactingPet[1]
+    end
+  elseif 0 < #self._inviteEnterList and self._inviteEnterList[1]:TemplateID() == pet:TemplateID() then
+    self._inviteEnterList = {}
+    self._inviteOutList = {}
+  else
+    self._inviteOutList[1] = pet
+    self._inviteEnterList = {}
+  end
+  self:HaveChange()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPetInvitePreview)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.InviteEnterListPreview = function(self, pet, isAdd)
-  -- function num : 0_20 , upvalues : _ENV
+function HomelandPetInviteManager:InviteEnterListPreview(pet, isAdd)
   if self:GetContainerCount() == 1 then
     self:ExchangeInvitetingItem(pet, isAdd)
     self:HaveChange()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPetInvitePreview)
-    return 
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPetInvitePreview)
+    return
   end
   local data = self:GetInvitedGroup()
   self._lastGroupData = data
-  if isAdd and self:GetContainerCount() > 1 and self:GetContainerCount() <= #data then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_invite_item_full"))
-    return 
+  if isAdd and self:GetContainerCount() > 1 and #data >= self:GetContainerCount() then
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_invite_item_full"))
+    return
   end
   if isAdd then
     self:_AddFun(self._inviteEnterList, pet)
@@ -345,149 +255,112 @@ HomelandPetInviteManager.InviteEnterListPreview = function(self, pet, isAdd)
     self:_AddFun(self._inviteOutList, pet)
   end
   self:HaveChange()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPetInvitePreview)
-  ;
-  (Log.info)("InviteEnterListPreview")
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPetInvitePreview)
+  Log.info("InviteEnterListPreview")
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.ClearCache = function(self)
-  -- function num : 0_21
+function HomelandPetInviteManager:ClearCache()
   self._inviteEnterList = {}
   self._inviteOutList = {}
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.GetInvitedGroup = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local buildid = (self._building):InsID()
+function HomelandPetInviteManager:GetInvitedGroup()
+  local buildid = self._building:InsID()
   local endList = {}
   local interactings = self:GetInteractingList(buildid, self._inviteItemId)
   for i = 1, #interactings do
     local pet = interactings[i]
-    local interactionAnimation = ((pet:GetPetBehavior()):GetCurBehavior()):GetComponent(HomelandPetComponentType.InteractionAnimation)
+    local interactionAnimation = pet:GetPetBehavior():GetCurBehavior():GetComponent(HomelandPetComponentType.InteractionAnimation)
     if interactionAnimation and interactionAnimation.state == HomelandPetComponentState.Running then
       self:_AddFun(endList, pet)
     end
     if self:CheckIsSwimming(pet) then
-      local swimmingpool = (pet:GetPetBehavior()):GetHomelandPetBehavior(HomelandPetBehaviorType.SwimmingPool)
+      local swimmingpool = pet:GetPetBehavior():GetHomelandPetBehavior(HomelandPetBehaviorType.SwimmingPool)
       if swimmingpool._stage == HomelandPetSwimStage.Swimming then
         self:_AddFun(endList, pet)
       end
     end
   end
   for i = 1, #self._inviteEnterList do
-    local pet = (self._inviteEnterList)[i]
+    local pet = self._inviteEnterList[i]
     self:_AddFun(endList, pet)
   end
   for i = 1, #self._inviteOutList do
-    local pet = (self._inviteOutList)[i]
+    local pet = self._inviteOutList[i]
     self:_RemoveFun(endList, pet)
   end
-  ;
-  (table.sort)(endList, self._SortFun2)
-  if self:GetContainerCount() == 1 and #endList > 0 then
-    return {endList[#endList]}
+  table.sort(endList, self._SortFun2)
+  if self:GetContainerCount() == 1 and 0 < #endList then
+    return {
+      endList[#endList]
+    }
   end
   return endList
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.GetInteractingList = function(self, buildid, inviteItemId)
-  -- function num : 0_23
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._interactingList)[buildid] then
-    (self._interactingList)[buildid] = {}
+function HomelandPetInviteManager:GetInteractingList(buildid, inviteItemId)
+  if not self._interactingList[buildid] then
+    self._interactingList[buildid] = {}
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not ((self._interactingList)[buildid])[inviteItemId] then
-    ((self._interactingList)[buildid])[inviteItemId] = {}
+  if not self._interactingList[buildid][inviteItemId] then
+    self._interactingList[buildid][inviteItemId] = {}
   end
-  return ((self._interactingList)[buildid])[inviteItemId]
+  return self._interactingList[buildid][inviteItemId]
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CheckInInteractingList = function(self, checkpet, buildid, inviteItemId)
-  -- function num : 0_24 , upvalues : _ENV
-  if not ((self._interactingList)[buildid])[inviteItemId] then
+function HomelandPetInviteManager:CheckInInteractingList(checkpet, buildid, inviteItemId)
+  if not self._interactingList[buildid][inviteItemId] then
     return false
   end
-  local tb = ((self._interactingList)[buildid])[inviteItemId]
+  local tb = self._interactingList[buildid][inviteItemId]
   for i = 1, #tb do
-    if (tb[i]):TemplateID() == checkpet:TemplateID() then
+    if tb[i]:TemplateID() == checkpet:TemplateID() then
       return true
     end
   end
   if not buildid then
-    for i,v in pairs(self._interactingList) do
-      for k,l in pairs(v) do
+    for i, v in pairs(self._interactingList) do
+      for k, l in pairs(v) do
         if v:TemplateID() == checkpet:TemplateID() then
           return true
         end
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.ClearInteractingList = function(self, checkpet, buildid, inviteItemId)
-  -- function num : 0_25 , upvalues : _ENV
-  for lastbuildid,v in pairs(self._interactingList) do
-    for lastitemid,itemIds in pairs(v) do
-      for index,pet in pairs(itemIds) do
+function HomelandPetInviteManager:ClearInteractingList(checkpet, buildid, inviteItemId)
+  for lastbuildid, v in pairs(self._interactingList) do
+    for lastitemid, itemIds in pairs(v) do
+      for index, pet in pairs(itemIds) do
         if pet:TemplateID() == checkpet:TemplateID() and (buildid ~= lastbuildid or inviteItemId ~= lastitemid) then
-          (table.remove)(itemIds, lastitemid)
+          table.remove(itemIds, lastitemid)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CheckIsLastInteract = function(self, checkpet)
-  -- function num : 0_26 , upvalues : _ENV
-  local buildid = (self._building):InsID()
-  for lastbuildid,v in pairs(self._interactingList) do
-    for lastitemid,itemIds in pairs(v) do
-      for index,pet in pairs(itemIds) do
-        if lastbuildid ~= buildid or lastitemid ~= self._inviteItemId then
-          do
-            do return pet:TemplateID() ~= checkpet:TemplateID() end
-            -- DECOMPILER ERROR at PC29: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC29: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+function HomelandPetInviteManager:CheckIsLastInteract(checkpet)
+  local buildid = self._building:InsID()
+  for lastbuildid, v in pairs(self._interactingList) do
+    for lastitemid, itemIds in pairs(v) do
+      for index, pet in pairs(itemIds) do
+        if pet:TemplateID() == checkpet:TemplateID() then
+          return lastbuildid == buildid and lastitemid == self._inviteItemId
         end
       end
     end
   end
-  do return false end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.RefreshInteractingList = function(self, enter, pet, build, beSet, inviteItemId)
-  -- function num : 0_27 , upvalues : _ENV
+function HomelandPetInviteManager:RefreshInteractingList(enter, pet, build, beSet, inviteItemId)
   if not build then
-    return 
+    return
   end
-  if not inviteItemId then
-    inviteItemId = 1
-  end
+  inviteItemId = inviteItemId or 1
   local buildid = build:InsID()
   if enter then
     if beSet then
@@ -499,122 +372,97 @@ HomelandPetInviteManager.RefreshInteractingList = function(self, enter, pet, bui
     pet:SetInvited(false)
     self:_RemoveFun(self:GetInteractingList(buildid, inviteItemId), pet)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPetInvitePreview, pet, enter)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPetInvitePreview, pet, enter)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.OnHomePetInteractCloseForInivte = function(self, pet)
-  -- function num : 0_28
+function HomelandPetInviteManager:OnHomePetInteractCloseForInivte(pet)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.GetNearInviteEnablePetList = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function HomelandPetInviteManager:GetNearInviteEnablePetList()
   if not self._building then
-    return 
+    return
   end
-  local buildid = (self._building):InsID()
+  local buildid = self._building:InsID()
   local interactingList = self:GetInteractingList(buildid, self._inviteItemId)
-  local filterFunc = function(pet)
-    -- function num : 0_29_0 , upvalues : interactingList, _ENV
+  
+  local function filterFunc(pet)
     if interactingList then
-      for _,_pet in pairs(interactingList) do
+      for _, _pet in pairs(interactingList) do
         if _pet == pet then
           return false
         end
       end
     end
-    do
-      return true
-    end
+    return true
   end
-
-  local allPet = (self._homelandPetManager):GetAllPets()
+  
+  local allPet = self._homelandPetManager:GetAllPets()
   self._nearInviteEnablePet = {}
-  for key,pet in pairs(allPet) do
+  for key, pet in pairs(allPet) do
     if self:_AviliablePetsFilter(self._building, pet) and filterFunc(pet) then
-      (table.insert)(self._nearInviteEnablePet, pet)
+      table.insert(self._nearInviteEnablePet, pet)
     end
   end
   for i = #self._nearInviteEnablePet, 1, -1 do
-    local pet = (self._nearInviteEnablePet)[i]
-    local cfgSwimmingPool = (Cfg.cfg_homeland_swimming_pool)[(self._building):GetBuildId()]
-    do
-      if cfgSwimmingPool and self:CheckIsSwimming(pet) then
-        local swimmingpool = (pet:GetPetBehavior()):GetHomelandPetBehavior(HomelandPetBehaviorType.SwimmingPool)
+    local pet = self._nearInviteEnablePet[i]
+    local cfgSwimmingPool = Cfg.cfg_homeland_swimming_pool[self._building:GetBuildId()]
+    if cfgSwimmingPool then
+      if self:CheckIsSwimming(pet) then
+        local swimmingpool = pet:GetPetBehavior():GetHomelandPetBehavior(HomelandPetBehaviorType.SwimmingPool)
         if swimmingpool._stage == HomelandPetSwimStage.Swimming then
           self:_RemoveFun(self._nearInviteEnablePet, pet)
         end
       end
-      do
-        if pet:GetInteractingBuilding() ~= nil and (pet:GetInteractingBuilding()):InsID() == (self._building):InsID() then
-          local interactionAnimation = ((pet:GetPetBehavior()):GetCurBehavior()):GetComponent(HomelandPetComponentType.InteractionAnimation)
-          if interactionAnimation and interactionAnimation.state == HomelandPetComponentState.Running then
-            self:_RemoveFun(self._nearInviteEnablePet, pet)
-          end
-        end
-        -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out DO_STMT
-
+    elseif pet:GetInteractingBuilding() ~= nil and pet:GetInteractingBuilding():InsID() == self._building:InsID() then
+      local interactionAnimation = pet:GetPetBehavior():GetCurBehavior():GetComponent(HomelandPetComponentType.InteractionAnimation)
+      if interactionAnimation and interactionAnimation.state == HomelandPetComponentState.Running then
+        self:_RemoveFun(self._nearInviteEnablePet, pet)
       end
     end
   end
   for k = 1, #self._inviteEnterList do
     for i = #self._nearInviteEnablePet, 1, -1 do
-      local pet = (self._inviteEnterList)[i]
+      local pet = self._inviteEnterList[i]
       self:_RemoveFun(self._nearInviteEnablePet, pet)
     end
   end
   if self._inviteOutList then
     for i = 1, #self._inviteOutList do
-      local pet = (self._inviteOutList)[i]
+      local pet = self._inviteOutList[i]
       self:_AddFun(self._nearInviteEnablePet, pet)
     end
   end
-  do
-    local nearList = {}
-    local other = {}
-    for i = 1, #self._nearInviteEnablePet do
-      if self:CheckIsNear((self._nearInviteEnablePet)[i], self._building) and not self:CheckIsBusy((self._nearInviteEnablePet)[i], self._building) then
-        (table.insert)(nearList, (self._nearInviteEnablePet)[i])
-      else
-        ;
-        (table.insert)(other, (self._nearInviteEnablePet)[i])
-      end
+  local nearList = {}
+  local other = {}
+  for i = 1, #self._nearInviteEnablePet do
+    if self:CheckIsNear(self._nearInviteEnablePet[i], self._building) and not self:CheckIsBusy(self._nearInviteEnablePet[i], self._building) then
+      table.insert(nearList, self._nearInviteEnablePet[i])
+    else
+      table.insert(other, self._nearInviteEnablePet[i])
     end
-    ;
-    (table.sort)(nearList, self._SortFun2)
-    ;
-    (table.sort)(other, self._SortFun2)
-    for i = 1, #other do
-      (table.insert)(nearList, other[i])
-    end
-    self._nearInviteEnablePet = nearList
-    return self._nearInviteEnablePet
   end
+  table.sort(nearList, self._SortFun2)
+  table.sort(other, self._SortFun2)
+  for i = 1, #other do
+    table.insert(nearList, other[i])
+  end
+  self._nearInviteEnablePet = nearList
+  return self._nearInviteEnablePet
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager._CheckIsNpc = function(self, pet)
-  -- function num : 0_30
+function HomelandPetInviteManager:_CheckIsNpc(pet)
   if not self._homelandTaskManager then
     return false
   end
-  return (self._homelandTaskManager):IsPetOccupiedAsNpc(pet:TemplateID())
+  return self._homelandTaskManager:IsPetOccupiedAsNpc(pet:TemplateID())
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager._AviliablePetsFilter = function(self, building, pet)
-  -- function num : 0_31 , upvalues : _ENV
+function HomelandPetInviteManager:_AviliablePetsFilter(building, pet)
   if self:_CheckIsNpc(pet) then
     return false
   end
   local unRestraint = false
-  local cfgSwimmingPool = (Cfg.cfg_homeland_swimming_pool)[building:GetBuildId()]
+  local cfgSwimmingPool = Cfg.cfg_homeland_swimming_pool[building:GetBuildId()]
   if cfgSwimmingPool then
     local behavior = pet:GetPetBehavior()
     local behaviorSwimmingPool = behavior:GetHomelandPetBehavior(HomelandPetBehaviorType.SwimmingPool)
@@ -622,52 +470,45 @@ HomelandPetInviteManager._AviliablePetsFilter = function(self, building, pet)
       unRestraint = behaviorSwimmingPool:BuildingFilter(building, true)
     end
   else
-    do
-      local cfgArchitecture = (Cfg.cfg_item_architecture)[building:GetBuildId()]
-      if not cfgArchitecture or not cfgArchitecture.Interaction then
-        return false
-      end
-      for _,value in pairs(cfgArchitecture.Interaction) do
-        local cfgBuildingPet = (Cfg.cfg_homeland_building_pet)[value]
-        if cfgBuildingPet then
-          if cfgBuildingPet.BlackList and ((table.icontains)(cfgBuildingPet.BlackList, pet:TemplateID()) or (table.icontains)(cfgBuildingPet.BlackList, pet:SkinID())) then
-            unRestraint = false
-            return unRestraint
-          end
-          if not cfgBuildingPet.petIDs then
-            unRestraint = true
-            break
-          end
-          local finishEventList = ((self._homelandModule):GetHomeLandEventInfo()).finish_event_list
-          local lockEvent = false
-          if self:_IsUnLock(pet:TemplateID(), value, finishEventList) then
-            lockEvent = true
-          end
-          if ((table.icontains)(cfgBuildingPet.petIDs, pet:TemplateID()) or (table.icontains)(cfgBuildingPet.petIDs, pet:SkinID())) and lockEvent then
-            unRestraint = true
-            break
-          end
+    local cfgArchitecture = Cfg.cfg_item_architecture[building:GetBuildId()]
+    if not cfgArchitecture or not cfgArchitecture.Interaction then
+      return false
+    end
+    for _, value in pairs(cfgArchitecture.Interaction) do
+      local cfgBuildingPet = Cfg.cfg_homeland_building_pet[value]
+      if cfgBuildingPet then
+        if cfgBuildingPet.BlackList and (table.icontains(cfgBuildingPet.BlackList, pet:TemplateID()) or table.icontains(cfgBuildingPet.BlackList, pet:SkinID())) then
+          unRestraint = false
+          return unRestraint
         end
-      end
-      do
-        return unRestraint
+        if not cfgBuildingPet.petIDs then
+          unRestraint = true
+          break
+        end
+        local finishEventList = self._homelandModule:GetHomeLandEventInfo().finish_event_list
+        local lockEvent = false
+        if self:_IsUnLock(pet:TemplateID(), value, finishEventList) then
+          lockEvent = true
+        end
+        if (table.icontains(cfgBuildingPet.petIDs, pet:TemplateID()) or table.icontains(cfgBuildingPet.petIDs, pet:SkinID())) and lockEvent then
+          unRestraint = true
+          break
+        end
       end
     end
   end
+  return unRestraint
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.GetInteractEnablePetList = function(self, building)
-  -- function num : 0_32 , upvalues : _ENV
+function HomelandPetInviteManager:GetInteractEnablePetList(building)
   if not building then
-    return 
+    return
   end
   local data = {}
-  local cfgArchitecture = (Cfg.cfg_item_architecture)[building:GetBuildId()]
+  local cfgArchitecture = Cfg.cfg_item_architecture[building:GetBuildId()]
   local isSwimmingPool = false
   local cancheck = false
-  local cfgSwimmingPool = (Cfg.cfg_homeland_swimming_pool)[building:GetBuildId()]
+  local cfgSwimmingPool = Cfg.cfg_homeland_swimming_pool[building:GetBuildId()]
   if cfgSwimmingPool then
     cancheck = true
     isSwimmingPool = true
@@ -675,126 +516,107 @@ HomelandPetInviteManager.GetInteractEnablePetList = function(self, building)
   if not cancheck and (not cfgArchitecture or not cfgArchitecture.Interaction) then
     return nil
   end
-  local checkInDataFun = function(data, petId)
-    -- function num : 0_32_0 , upvalues : _ENV
-    for key,value in pairs(data) do
+  
+  local function checkInDataFun(data, petId)
+    for key, value in pairs(data) do
       if value:GetPetId() == petId then
         return value
       end
     end
     return nil
   end
-
+  
   if isSwimmingPool then
-    local cfg = (Cfg.cfg_homeland_swimming_pool)[building:GetBuildId()]
-    for index,value in ipairs(cfg.PetSkinIDs) do
-      local dataitem = nil
+    local cfg = Cfg.cfg_homeland_swimming_pool[building:GetBuildId()]
+    for index, value in ipairs(cfg.PetSkinIDs) do
+      local dataitem
       local skincfg = self:GetSkinByPrefabId(value)
       if skincfg then
-        local endValue = checkInDataFun(data, (skincfg[1]).PetId)
+        local endValue = checkInDataFun(data, skincfg[1].PetId)
         if not endValue then
-          dataitem = UIHomePetInviteItemEnableInfo:New(0, (skincfg[1]).PetId)
+          dataitem = UIHomePetInviteItemEnableInfo:New(0, skincfg[1].PetId)
           dataitem:AddSkin(skincfg[1])
-          ;
-          (table.insert)(data, dataitem)
+          table.insert(data, dataitem)
         else
           dataitem = endValue
           dataitem:AddSkin(skincfg[1])
         end
-        dataitem:SetOriginalSkin("head1_" .. (skincfg[1]).PetId)
-        local pet = (self._homelandPetManager):GetPet((skincfg[1]).PetId)
+        dataitem:SetOriginalSkin("head1_" .. skincfg[1].PetId)
+        local pet = self._homelandPetManager:GetPet(skincfg[1].PetId)
         if pet then
           dataitem:SetUsingSkin("head1_" .. pet:SkinID())
         end
       end
     end
   else
-    do
-      for _,value in pairs(cfgArchitecture.Interaction) do
-        local cfgBuildingPet = (Cfg.cfg_homeland_building_pet)[value]
-        if cfgBuildingPet then
-          if not cfgBuildingPet.petIDs then
-            return nil
-          end
-          for index,value in ipairs(cfgBuildingPet.petIDs) do
-            local dataitem = nil
-            local skincfg = self:GetSkinByPrefabId(value)
-            if skincfg then
-              local endValue = checkInDataFun(data, (skincfg[1]).PetId)
-              if not endValue then
-                dataitem = UIHomePetInviteItemEnableInfo:New(cfgBuildingPet.ID, (skincfg[1]).PetId)
-                dataitem:AddSkin(skincfg[1])
-                ;
-                (table.insert)(data, dataitem)
-              else
-                dataitem = endValue
-                dataitem:AddSkin(skincfg[1])
-              end
-              dataitem:SetOriginalSkin("head1_" .. (skincfg[1]).PetId)
-              local pet = (self._homelandPetManager):GetPet((skincfg[1]).PetId)
-              if pet then
-                dataitem:SetUsingSkin("head1_" .. pet:SkinID())
-              end
+    for _, value in pairs(cfgArchitecture.Interaction) do
+      local cfgBuildingPet = Cfg.cfg_homeland_building_pet[value]
+      if cfgBuildingPet then
+        if not cfgBuildingPet.petIDs then
+          return nil
+        end
+        for index, value in ipairs(cfgBuildingPet.petIDs) do
+          local dataitem
+          local skincfg = self:GetSkinByPrefabId(value)
+          if skincfg then
+            local endValue = checkInDataFun(data, skincfg[1].PetId)
+            if not endValue then
+              dataitem = UIHomePetInviteItemEnableInfo:New(cfgBuildingPet.ID, skincfg[1].PetId)
+              dataitem:AddSkin(skincfg[1])
+              table.insert(data, dataitem)
+            else
+              dataitem = endValue
+              dataitem:AddSkin(skincfg[1])
+            end
+            dataitem:SetOriginalSkin("head1_" .. skincfg[1].PetId)
+            local pet = self._homelandPetManager:GetPet(skincfg[1].PetId)
+            if pet then
+              dataitem:SetUsingSkin("head1_" .. pet:SkinID())
             end
           end
-          ;
-          (Log.fatal)("GetInteractEnablePetList")
         end
-      end
-      do
-        return data
+        Log.fatal("GetInteractEnablePetList")
       end
     end
   end
+  return data
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CheckInPetCfg = function(self, petId)
-  -- function num : 0_33 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet)[petId]
+function HomelandPetInviteManager:CheckInPetCfg(petId)
+  local cfg = Cfg.cfg_pet[petId]
   return cfg
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.GetSkinByPrefabId = function(self, petID)
-  -- function num : 0_34 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet_skin)({Prefab = petID .. ".prefab"})
+function HomelandPetInviteManager:GetSkinByPrefabId(petID)
+  local cfg = Cfg.cfg_pet_skin({
+    Prefab = petID .. ".prefab"
+  })
   return cfg
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager._GetInteractionCfg = function(self, petid, interactions)
-  -- function num : 0_35 , upvalues : _ENV
-  local cfg = nil
-  local finishEventList = ((self._homelandModule):GetHomeLandEventInfo()).finish_event_list
-  for _,id in pairs(interactions) do
+function HomelandPetInviteManager:_GetInteractionCfg(petid, interactions)
+  local cfg
+  local finishEventList = self._homelandModule:GetHomeLandEventInfo().finish_event_list
+  for _, id in pairs(interactions) do
     if self:_IsUnLock(petid, id, finishEventList) then
-      local cfgBuildingPet = (Cfg.cfg_homeland_building_pet)[id]
-      if cfgBuildingPet and (not cfgBuildingPet.petIDs or (table.icontains)(cfgBuildingPet.petIDs, (self._pet):TemplateID()) or (table.icontains)(cfgBuildingPet.petIDs, (self._pet):SkinID())) then
+      local cfgBuildingPet = Cfg.cfg_homeland_building_pet[id]
+      if cfgBuildingPet and (not cfgBuildingPet.petIDs or table.icontains(cfgBuildingPet.petIDs, self._pet:TemplateID()) or table.icontains(cfgBuildingPet.petIDs, self._pet:SkinID())) then
         cfg = cfgBuildingPet
         break
       end
     end
   end
-  do
-    return cfg
-  end
+  return cfg
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager._IsUnLock = function(self, petID, interactionid, finishEventList)
-  -- function num : 0_36 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_homeland_event)({PetID = petID})
+function HomelandPetInviteManager:_IsUnLock(petID, interactionid, finishEventList)
+  local cfgs = Cfg.cfg_homeland_event({PetID = petID})
   if not cfgs then
     return true
   end
-  for _,cfg in pairs(cfgs) do
-    if cfg.RewardsInteractID and (table.icontains)(cfg.RewardsInteractID, interactionid) then
-      for eventID,eventTime in pairs(finishEventList) do
+  for _, cfg in pairs(cfgs) do
+    if cfg.RewardsInteractID and table.icontains(cfg.RewardsInteractID, interactionid) then
+      for eventID, eventTime in pairs(finishEventList) do
         if eventID == cfg.ID then
           return true
         end
@@ -805,26 +627,20 @@ HomelandPetInviteManager._IsUnLock = function(self, petID, interactionid, finish
   return true
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CheckHadPet = function(self, petID)
-  -- function num : 0_37
-  return (self._petModule):HasPet(petID)
+function HomelandPetInviteManager:CheckHadPet(petID)
+  return self._petModule:HasPet(petID)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CheckEventFinish = function(self, interactId, petID)
-  -- function num : 0_38 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_homeland_event)({PetID = petID})
+function HomelandPetInviteManager:CheckEventFinish(interactId, petID)
+  local cfgs = Cfg.cfg_homeland_event({PetID = petID})
   if not cfgs then
     return true
   end
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  local finishEventList = (homelandModule:GetHomeLandEventInfo()).finish_event_list
-  for _,cfg in pairs(cfgs) do
-    if cfg.RewardsInteractID and (table.icontains)(cfg.RewardsInteractID, interactId) then
-      for eventID,eventTime in pairs(finishEventList) do
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
+  local finishEventList = homelandModule:GetHomeLandEventInfo().finish_event_list
+  for _, cfg in pairs(cfgs) do
+    if cfg.RewardsInteractID and table.icontains(cfg.RewardsInteractID, interactId) then
+      for eventID, eventTime in pairs(finishEventList) do
         if eventID == cfg.ID then
           return true
         end
@@ -835,44 +651,30 @@ HomelandPetInviteManager.CheckEventFinish = function(self, interactId, petID)
   return true
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CheckHadSkin = function(self, skinId)
-  -- function num : 0_39
-  return (self._petModule):HaveSkin(skinId)
+function HomelandPetInviteManager:CheckHadSkin(skinId)
+  return self._petModule:HaveSkin(skinId)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CheckHaveEventPet = function(self, petID)
-  -- function num : 0_40
-  return (self._petModule):HasPet(petID)
+function HomelandPetInviteManager:CheckHaveEventPet(petID)
+  return self._petModule:HasPet(petID)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CheckIsNear = function(self, pet, building)
-  -- function num : 0_41 , upvalues : _ENV
+function HomelandPetInviteManager:CheckIsNear(pet, building)
   local isNear = false
-  if not building then
-    building = self._building
-  end
-  if (Vector3.Distance)(pet:GetPosition(), building:Pos()) <= self._checkDistance then
+  building = building or self._building
+  if Vector3.Distance(pet:GetPosition(), building:Pos()) <= self._checkDistance then
     isNear = true
   end
   return isNear
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CheckCurInteractPoint = function(self, pet)
-  -- function num : 0_42 , upvalues : _ENV
+function HomelandPetInviteManager:CheckCurInteractPoint(pet)
   if not self._interactPointLimit then
     return true
   end
   local id = pet:TemplateID()
   local skinId = pet:SkinID()
-  for _,value in pairs(self._interactPointPets) do
+  for _, value in pairs(self._interactPointPets) do
     if value == id or value == skinId then
       return true
     end
@@ -880,270 +682,191 @@ HomelandPetInviteManager.CheckCurInteractPoint = function(self, pet)
   return false
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.SetInvite = function(self)
-  -- function num : 0_43
+function HomelandPetInviteManager:SetInvite()
   self:TrueInvitePets()
   self._dataChanged = false
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CheckOnSend = function(self)
-  -- function num : 0_44 , upvalues : PetInviteStateEnum
+function HomelandPetInviteManager:CheckOnSend()
   local change, state = self:HaveChange()
   local tipStr = "str_homeland_invite_sended"
   if state == PetInviteStateEnum.Success then
     tipStr = "str_homeland_invite_sended"
-  else
-    if state == PetInviteStateEnum.AllOut then
-      tipStr = "str_homeland_invite_remove"
-    else
-      if state == PetInviteStateEnum.AllInvite then
-        tipStr = "str_homeland_invite_sended"
-      end
-    end
+  elseif state == PetInviteStateEnum.AllOut then
+    tipStr = "str_homeland_invite_remove"
+  elseif state == PetInviteStateEnum.AllInvite then
+    tipStr = "str_homeland_invite_sended"
   end
   return tipStr
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.TrueInvitePets = function(self)
-  -- function num : 0_45 , upvalues : _ENV
-  local buildid = (self._building):InsID()
+function HomelandPetInviteManager:TrueInvitePets()
+  local buildid = self._building:InsID()
   local pets = self:GetInvitedGroup()
   if not pets then
-    return 
+    return
   end
-  local buildholdpetlist = (self._building):GetInteractingPetList()
-  -- DECOMPILER ERROR at PC21: Unhandled construct in 'MakeBoolean' P1
-
-  if self:GetContainerCount() == 1 and #buildholdpetlist > 0 then
-    for i = 1, #buildholdpetlist do
+  local buildholdpetlist = self._building:GetInteractingPetList()
+  if self:GetContainerCount() == 1 then
+    if 0 < #buildholdpetlist then
+      for i = 1, #buildholdpetlist do
+      end
     end
-  end
-  do
+  else
     local holdCount = #buildholdpetlist
     local cacheEnter = #self._inviteEnterList
     local add = holdCount + cacheEnter - self:GetContainerCount()
-    if self:GetContainerCount() < holdCount + cacheEnter then
+    if holdCount + cacheEnter > self:GetContainerCount() then
       for i = 1, add do
       end
     end
-    do
-      self._inviteEnterList = {}
-      local cfgSwimmingPool = (Cfg.cfg_homeland_swimming_pool)[(self._building):GetBuildId()]
-      if self._inviteOutList and #self._inviteOutList > 0 then
-        for i = 1, #self._inviteOutList do
-          if self:CheckInInteractingList((self._inviteOutList)[i], buildid, self._inviteItemId) then
-            local pet = (self._inviteOutList)[i]
-            if cfgSwimmingPool then
-              local behavior = pet:GetPetBehavior()
-              local behaviorSwimmingPool = behavior:GetHomelandPetBehavior(HomelandPetBehaviorType.SwimmingPool)
-              if behaviorSwimmingPool then
-                behaviorSwimmingPool:OnChangeSwimStage(HomelandPetSwimStage.Leaving)
-              end
-            else
-              do
-                do
-                  ;
-                  (pet._behavior):RandomBehavior()
-                  -- DECOMPILER ERROR at PC89: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC89: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC89: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC89: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC89: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
-            end
+  end
+  self._inviteEnterList = {}
+  local cfgSwimmingPool = Cfg.cfg_homeland_swimming_pool[self._building:GetBuildId()]
+  if self._inviteOutList and 0 < #self._inviteOutList then
+    for i = 1, #self._inviteOutList do
+      if self:CheckInInteractingList(self._inviteOutList[i], buildid, self._inviteItemId) then
+        local pet = self._inviteOutList[i]
+        if cfgSwimmingPool then
+          local behavior = pet:GetPetBehavior()
+          local behaviorSwimmingPool = behavior:GetHomelandPetBehavior(HomelandPetBehaviorType.SwimmingPool)
+          if behaviorSwimmingPool then
+            behaviorSwimmingPool:OnChangeSwimStage(HomelandPetSwimStage.Leaving)
           end
+        else
+          pet._behavior:RandomBehavior()
         end
       end
-      self._inviteOutList = {}
-      for i = 1, #pets do
-        if self:PetChangeInviteState(pets[i]) then
-          local lastbuild = (pets[i]):GetInteractingBuilding()
-          if lastbuild == nil or lastbuild:InsID() ~= (self._building):InsID() then
-            if cfgSwimmingPool then
-              self:ClearInteractingList(pets[i])
-              ;
-              (pets[i]):ChangeBehavior(HomelandPetBehaviorType.SwimmingPool, self._building)
-            else
-              self:ClearInteractingList(pets[i])
-              ;
-              (pets[i]):ChangeBehavior(HomelandPetBehaviorType.InteractingFurniture, self._building, true, self:GetInteractPointIndex(pets[i]))
-            end
-          end
+    end
+  end
+  self._inviteOutList = {}
+  for i = 1, #pets do
+    if self:PetChangeInviteState(pets[i]) then
+      local lastbuild = pets[i]:GetInteractingBuilding()
+      if lastbuild == nil or lastbuild:InsID() ~= self._building:InsID() then
+        if cfgSwimmingPool then
+          self:ClearInteractingList(pets[i])
+          pets[i]:ChangeBehavior(HomelandPetBehaviorType.SwimmingPool, self._building)
+        else
+          self:ClearInteractingList(pets[i])
+          pets[i]:ChangeBehavior(HomelandPetBehaviorType.InteractingFurniture, self._building, true, self:GetInteractPointIndex(pets[i]))
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.PetChangeInviteState = function(self, pet)
-  -- function num : 0_46 , upvalues : _ENV
+function HomelandPetInviteManager:PetChangeInviteState(pet)
   if not pet then
     return false
   end
-  local petstate = ((pet:GetPetBehavior()):GetCurBehavior()):GetBehaviorType()
+  local petstate = pet:GetPetBehavior():GetCurBehavior():GetBehaviorType()
   if petstate == HomelandPetBehaviorType.InteractingPlayer or petstate == HomelandPetBehaviorType.TreasureIdle or petstate == HomelandPetBehaviorType.StoryPlaying or petstate == HomelandPetBehaviorType.StoryWaitdingBuild or petstate == HomelandPetBehaviorType.StoryWaitingBuildStand or petstate == HomelandPetBehaviorType.StoryWaitingStand or petstate == HomelandPetBehaviorType.StoryWaitingWalk then
     return false
   end
   if petstate == HomelandPetBehaviorType.Following then
-    (self._homelandPetManager):OnHomeInteractFollow(false, pet)
+    self._homelandPetManager:OnHomeInteractFollow(false, pet)
   end
-  do
-    if petstate == HomelandPetBehaviorType.FurnitureInvite then
-      local isLast = self:CheckIsLastInteract(pet)
-      if isLast then
-        return false
-      end
+  if petstate == HomelandPetBehaviorType.FurnitureInvite then
+    local isLast = self:CheckIsLastInteract(pet)
+    if isLast then
+      return false
     end
-    return true
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CheckIsBusy = function(self, pet)
-  -- function num : 0_47 , upvalues : _ENV
+function HomelandPetInviteManager:CheckIsBusy(pet)
   if not pet then
-    return 
+    return
   end
-  local petstate = ((pet:GetPetBehavior()):GetCurBehavior()):GetBehaviorType()
+  local petstate = pet:GetPetBehavior():GetCurBehavior():GetBehaviorType()
   if petstate == HomelandPetBehaviorType.InteractingPlayer or petstate == HomelandPetBehaviorType.TreasureIdle or petstate == HomelandPetBehaviorType.StoryPlaying or petstate == HomelandPetBehaviorType.StoryWaitingBuild or petstate == HomelandPetBehaviorType.StoryWaitingBuildStand or petstate == HomelandPetBehaviorType.StoryWaitingStand or petstate == HomelandPetBehaviorType.StoryWaitingWalk then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.StartTimer = function(self)
-  -- function num : 0_48 , upvalues : _ENV
-  self._timerEvent = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_48_0 , upvalues : self
+function HomelandPetInviteManager:StartTimer()
+  self._timerEvent = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:TimerFun()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CancelTimer = function(self)
-  -- function num : 0_49 , upvalues : _ENV
+function HomelandPetInviteManager:CancelTimer()
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
     self._timerEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.TimerFun = function(self)
-  -- function num : 0_50 , upvalues : _ENV
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  for key,value in pairs(self._cdQueue) do
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R7 in 'UnsetPending'
-
+function HomelandPetInviteManager:TimerFun()
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  for key, value in pairs(self._cdQueue) do
     if value and value <= nowTime then
-      (self._cdQueue)[key] = nil
+      self._cdQueue[key] = nil
     end
   end
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.EnterCD = function(self, pet)
-  -- function num : 0_51
+function HomelandPetInviteManager:EnterCD(pet)
   if not self._cdQueue then
     self._cdQueue = {}
   end
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._cdQueue)[pet:TemplateID()] then
-    (self._cdQueue)[pet:TemplateID()] = nowTime + self:GetLimitCD()
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  if not self._cdQueue[pet:TemplateID()] then
+    self._cdQueue[pet:TemplateID()] = nowTime + self:GetLimitCD()
   end
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.RemoveCD = function(self, pet)
-  -- function num : 0_52 , upvalues : _ENV
+function HomelandPetInviteManager:RemoveCD(pet)
   if not self._cdQueue then
-    return 
+    return
   end
-  for key,value in pairs(self._cdQueue) do
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R7 in 'UnsetPending'
-
+  for key, value in pairs(self._cdQueue) do
     if pet:TemplateID() == key then
-      (self._cdQueue)[key] = nil
+      self._cdQueue[key] = nil
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CheckInInviteingCDTime = function(self, pet)
-  -- function num : 0_53
+function HomelandPetInviteManager:CheckInInviteingCDTime(pet)
   local petId = pet:TemplateID()
-  if (self._cdQueue)[petId] then
+  if self._cdQueue[petId] then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CheckIsMax = function(self)
-  -- function num : 0_54
-  local buildid = (self._building):InsID()
+function HomelandPetInviteManager:CheckIsMax()
+  local buildid = self._building:InsID()
   local pets = self:GetInteractingList(buildid, self._inviteItemId)
   if self:GetContainerCount() == 1 then
     return false
-  else
-    if self:GetContainerCount() <= #pets then
-      return true
-    end
+  elseif #pets >= self:GetContainerCount() then
+    return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CheckIsBuildingBusy = function(self)
-  -- function num : 0_55
+function HomelandPetInviteManager:CheckIsBuildingBusy()
   local busyCount = 0
-  local buildid = (self._building):InsID()
+  local buildid = self._building:InsID()
   local pets = self:GetInteractingList(buildid, self._inviteItemId)
   for i = 1, #pets do
     if self:CheckIsGroupBusy(pets[i]) then
       busyCount = busyCount + 1
     end
   end
-  do return self:GetContainerCount() <= busyCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return busyCount >= self:GetContainerCount()
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CheckIsGroupBusy = function(self, pet)
-  -- function num : 0_56 , upvalues : _ENV
-  local buildid = (self._building):InsID()
+function HomelandPetInviteManager:CheckIsGroupBusy(pet)
+  local buildid = self._building:InsID()
   local pets = self:GetInteractingList(buildid, self._inviteItemId)
-  local interactionAnimation = ((pet:GetPetBehavior()):GetCurBehavior()):GetComponent(HomelandPetComponentType.InteractionAnimation)
-  for key,value in pairs(pets) do
+  local interactionAnimation = pet:GetPetBehavior():GetCurBehavior():GetComponent(HomelandPetComponentType.InteractionAnimation)
+  for key, value in pairs(pets) do
     if pet:TemplateID() == value:TemplateID() and interactionAnimation and interactionAnimation.state == HomelandPetComponentState.Running then
       return true
     end
@@ -1154,38 +877,27 @@ HomelandPetInviteManager.CheckIsGroupBusy = function(self, pet)
   return false
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CanBuildingInteracting = function(build, inviteItemId)
-  -- function num : 0_57 , upvalues : _ENV
+function HomelandPetInviteManager.CanBuildingInteracting(build, inviteItemId)
   if self:GetContainerCount() == 1 then
     local buildid = build:InsID()
     local pets = self:GetInteractingList(buildid, inviteItemId)
-    if #pets >= 1 then
+    if 1 <= #pets then
       return false
     end
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.SetUIHomelandPetInteract = function(self, pet)
-  -- function num : 0_58
+function HomelandPetInviteManager:SetUIHomelandPetInteract(pet)
   self._lastOperatePet = pet
   self._lastBuilding = pet:GetInteractingBuilding()
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.CheckUIHomelandPetInteract = function(self, pet)
-  -- function num : 0_59
+function HomelandPetInviteManager:CheckUIHomelandPetInteract(pet)
   if not self._lastOperatePet or not pet then
     return false
   end
-  if (self._lastOperatePet):TemplateID() == pet:TemplateID() then
+  if self._lastOperatePet:TemplateID() == pet:TemplateID() then
     self._lastOperatePet = nil
     return true
   end
@@ -1193,51 +905,33 @@ HomelandPetInviteManager.CheckUIHomelandPetInteract = function(self, pet)
   return false
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.GetUIHomelandPetInteract = function(self)
-  -- function num : 0_60
+function HomelandPetInviteManager:GetUIHomelandPetInteract()
   return self._lastBuilding, self._lastOperatePet
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.SetInteractPointLimit = function(self, isLimit, pets)
-  -- function num : 0_61
+function HomelandPetInviteManager:SetInteractPointLimit(isLimit, pets)
   self._interactPointLimit = isLimit
   self._interactPointPets = pets
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.UpdateInvitedPets = function(self, index, pet)
-  -- function num : 0_62 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
+function HomelandPetInviteManager:UpdateInvitedPets(index, pet)
   if pet then
-    (self._invitedPets)[pet] = index
+    self._invitedPets[pet] = index
   else
-    for _pet,_index in pairs(self._invitedPets) do
-      -- DECOMPILER ERROR at PC12: Confused about usage of register: R8 in 'UnsetPending'
-
+    for _pet, _index in pairs(self._invitedPets) do
       if _index == index then
-        (self._invitedPets)[_pet] = nil
+        self._invitedPets[_pet] = nil
         break
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetInviteManager.GetInteractPointIndex = function(self, pet)
-  -- function num : 0_63 , upvalues : _ENV
-  for _pet,_index in pairs(self._invitedPets) do
+function HomelandPetInviteManager:GetInteractPointIndex(pet)
+  for _pet, _index in pairs(self._invitedPets) do
     if pet == _pet then
       return _index
     end
   end
   return 1
 end
-
-

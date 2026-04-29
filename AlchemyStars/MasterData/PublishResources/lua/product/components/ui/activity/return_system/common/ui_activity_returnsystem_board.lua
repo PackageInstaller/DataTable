@@ -1,64 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/common/ui_activity_returnsystem_board.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReturnSystemBoard", UICustomWidget)
 UIActivityReturnSystemBoard = UIActivityReturnSystemBoard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReturnSystemBoard._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityReturnSystemBoard:_GetComponents()
   self._stateObj = {
-{self:GetGameObject("bg_normal"), self:GetGameObject("bg_limit_normal"), self:GetGameObject("title_gift_normal")}
-, 
-{self:GetGameObject("bg_soldout"), self:GetGameObject("bg_limit_soldout"), self:GetGameObject("title_gift_soldout")}
-}
+    {
+      self:GetGameObject("bg_normal"),
+      self:GetGameObject("bg_limit_normal"),
+      self:GetGameObject("title_gift_normal")
+    },
+    {
+      self:GetGameObject("bg_soldout"),
+      self:GetGameObject("bg_limit_soldout"),
+      self:GetGameObject("title_gift_soldout")
+    }
+  }
   self._pressObj = {
-{self:GetGameObject("bg_click_normal")}
-, 
-{self:GetGameObject("bg_click_pressed")}
-}
+    {
+      self:GetGameObject("bg_click_normal")
+    },
+    {
+      self:GetGameObject("bg_click_pressed")
+    }
+  }
   self._limitObj = {
-{self:GetGameObject("limit")}
-}
+    {
+      self:GetGameObject("limit")
+    }
+  }
   self._freeObj = {
-{self:GetGameObject("title_gift_free")}
-, 
-{self:GetGameObject("title_gift_cost")}
-}
-  self._textGiftName = {self:GetUIComponent("UILocalizationText", "txtGiftName_free"), self:GetUIComponent("UILocalizationText", "txtGiftName_cost"), self:GetUIComponent("UILocalizationText", "txtGiftName_soldout")}
-  self._textGiftPrice = {self:GetUIComponent("UILocalizationText", "txtGiftPrice_free"), self:GetUIComponent("UILocalizationText", "txtGiftPrice_cost"), self:GetUIComponent("UILocalizationText", "txtGiftPrice_soldout")}
+    {
+      self:GetGameObject("title_gift_free")
+    },
+    {
+      self:GetGameObject("title_gift_cost")
+    }
+  }
+  self._textGiftName = {
+    self:GetUIComponent("UILocalizationText", "txtGiftName_free"),
+    self:GetUIComponent("UILocalizationText", "txtGiftName_cost"),
+    self:GetUIComponent("UILocalizationText", "txtGiftName_soldout")
+  }
+  self._textGiftPrice = {
+    self:GetUIComponent("UILocalizationText", "txtGiftPrice_free"),
+    self:GetUIComponent("UILocalizationText", "txtGiftPrice_cost"),
+    self:GetUIComponent("UILocalizationText", "txtGiftPrice_soldout")
+  }
   self._txtLimit = self:GetUIComponent("UILocalizationText", "txtLimit")
   self._buyBtn = self:GetUIComponent("Button", "buyBtn")
   self._red = self:GetGameObject("red")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemBoard.OnShow = function(self)
-  -- function num : 0_1
+function UIActivityReturnSystemBoard:OnShow()
   self._isOpen = true
   self:_GetComponents()
   self:_SetPressEvent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemBoard.OnHide = function(self)
-  -- function num : 0_2
+function UIActivityReturnSystemBoard:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemBoard.SetData = function(self, campaign, component, gift_id, callback)
-  -- function num : 0_3
+function UIActivityReturnSystemBoard:SetData(campaign, component, gift_id, callback)
   self._campaign = campaign
   self._component = component
   self._giftId = gift_id
   self._callback = callback
-  self._buyCount = (self._component):GetGiftBuyCount(self._giftId)
+  self._buyCount, self._saleCount = self._component:GetGiftBuyCount(self._giftId)
   self:_SetBg()
   self:_SetState()
   self:_SetPress()
@@ -68,13 +75,22 @@ UIActivityReturnSystemBoard.SetData = function(self, campaign, component, gift_i
   self:_SetText()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemBoard._SetBg = function(self)
-  -- function num : 0_4
-  local normalBg = {[1050001] = "shop_libao_back_1000", [1050002] = "shop_libao_back_1001", [1050003] = "shop_libao_back_1002"}
-  local pressBg = {[1050001] = "shop_libao_back_1000_sel", [1050002] = "shop_libao_back_1001_sel", [1050003] = "shop_libao_back_1002_sel"}
-  local soldoutBg = {[1050001] = "shop_libao_back_1000_sod", [1050002] = "shop_libao_back_1001_sod", [1050003] = "shop_libao_back_1002_sod"}
+function UIActivityReturnSystemBoard:_SetBg()
+  local normalBg = {
+    [1050001] = "shop_libao_back_1000",
+    [1050002] = "shop_libao_back_1001",
+    [1050003] = "shop_libao_back_1002"
+  }
+  local pressBg = {
+    [1050001] = "shop_libao_back_1000_sel",
+    [1050002] = "shop_libao_back_1001_sel",
+    [1050003] = "shop_libao_back_1002_sel"
+  }
+  local soldoutBg = {
+    [1050001] = "shop_libao_back_1000_sod",
+    [1050002] = "shop_libao_back_1001_sod",
+    [1050003] = "shop_libao_back_1002_sod"
+  }
   local bg_click_normal = self:GetUIComponent("RawImageLoader", "bg_click_normal")
   bg_click_normal:LoadImage(normalBg[self._giftId])
   local bg_click_pressed = self:GetUIComponent("RawImageLoader", "bg_click_pressed")
@@ -83,125 +99,78 @@ UIActivityReturnSystemBoard._SetBg = function(self)
   bg_soldout:LoadImage(soldoutBg[self._giftId])
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemBoard._SetState = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityReturnSystemBoard:_SetState()
   self._state = self._buyCount < self._saleCount and 1 or 2
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, self._state)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, self._state)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemBoard._SetPress = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (UIWidgetHelper.SetObjGroupShow)(self._pressObj, 1)
+function UIActivityReturnSystemBoard:_SetPress()
+  UIWidgetHelper.SetObjGroupShow(self._pressObj, 1)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemBoard._SetLimit = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityReturnSystemBoard:_SetLimit()
   self._limit = self._saleCount ~= SpecialNum.MysteryGoodsUnlimitedNum and 1 or 2
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._limitObj, self._limit)
-  local n2m = (string.format)(" %s/%s", self._saleCount - self._buyCount, self._saleCount)
-  local strLimit = (string.format)((StringTable.Get)("str_pay_purchase_limitation_normal", n2m))
-  ;
-  (self._txtLimit):SetText(strLimit)
+  UIWidgetHelper.SetObjGroupShow(self._limitObj, self._limit)
+  local n2m = string.format(" %s/%s", self._saleCount - self._buyCount, self._saleCount)
+  local strLimit = string.format(StringTable.Get("str_pay_purchase_limitation_normal", n2m))
+  self._txtLimit:SetText(strLimit)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemBoard._SetFree = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local good = (self._component):GetGoodCfgById(self._giftId)
+function UIActivityReturnSystemBoard:_SetFree()
+  local good = self._component:GetGoodCfgById(self._giftId)
   local saleType = good.SaleType
   self._free = saleType == 0 and 1 or 2
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._freeObj, self._free)
+  UIWidgetHelper.SetObjGroupShow(self._freeObj, self._free)
   local red = self._buyCount < self._saleCount and saleType == 0
-  ;
-  (self._red):SetActive(red)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._red:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemBoard._SetBuyBtn = function(self)
-  -- function num : 0_9
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._buyBtn).interactable = self._buyCount < self._saleCount
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIActivityReturnSystemBoard:_SetBuyBtn()
+  self._buyBtn.interactable = self._buyCount < self._saleCount
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemBoard._SetText = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local gift = (self._component):GetGiftCfgById(self._giftId)
-  local name = (gift.Name)[1]
-  for _,v in pairs(self._textGiftName) do
-    v:SetText((StringTable.Get)(name))
+function UIActivityReturnSystemBoard:_SetText()
+  local gift = self._component:GetGiftCfgById(self._giftId)
+  local name = gift.Name[1]
+  for _, v in pairs(self._textGiftName) do
+    v:SetText(StringTable.Get(name))
   end
-  local price = (self._component):GetGiftPriceForShowById(self._giftId)
-  local good = (self._component):GetGoodCfgById(self._giftId)
+  local price = self._component:GetGiftPriceForShowById(self._giftId)
+  local good = self._component:GetGoodCfgById(self._giftId)
   if good.SaleType == 0 then
-    price = (StringTable.Get)("str_pay_recharge_label_3")
+    price = StringTable.Get("str_pay_recharge_label_3")
   end
-  for _,v in pairs(self._textGiftPrice) do
+  for _, v in pairs(self._textGiftPrice) do
     v:SetText(price)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemBoard.OnBuyResult = function(self, res)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityReturnSystemBoard:OnBuyResult(res)
   if res:GetSucc() then
-    local rewards = (self._component):GetGiftExtraAwardById(self._giftId)
-    ;
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
+    local rewards = self._component:GetGiftExtraAwardById(self._giftId)
+    UIActivityHelper.ShowUIGetRewards(rewards)
   else
-    do
-      local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-      campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, self._callback, nil)
-    end
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, self._callback, nil)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemBoard.BuyBtnOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityReturnSystemBoard:BuyBtnOnClick(go)
   self._giftNum = 1
-  if (self._buyBtn).interactable then
-    (Log.info)("UIActivityReturnSystemBoard:BuyBtnOnClick")
+  if self._buyBtn.interactable then
+    Log.info("UIActivityReturnSystemBoard:BuyBtnOnClick")
     self:ShowDialog("UIActivityGiftPackDetail", self._campaign, self._component, self._giftId, self._giftNum, function(res)
-    -- function num : 0_12_0 , upvalues : self
-    self:OnBuyResult(res)
-  end
-)
+      self:OnBuyResult(res)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemBoard._SetPressEvent = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityReturnSystemBoard:_SetPressEvent()
   local obj = self:GetGameObject("buyBtn")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(obj), UIEvent.Press, function(go)
-    -- function num : 0_13_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetObjGroupShow)(self._pressObj, 2)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(obj), UIEvent.Release, function(go)
-    -- function num : 0_13_1 , upvalues : _ENV, self
-    (UIWidgetHelper.SetObjGroupShow)(self._pressObj, 1)
-  end
-)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(obj), UIEvent.Press, function(go)
+    UIWidgetHelper.SetObjGroupShow(self._pressObj, 2)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(obj), UIEvent.Release, function(go)
+    UIWidgetHelper.SetObjGroupShow(self._pressObj, 1)
+  end)
 end
-
-

@@ -1,13 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/n13/cfg_n13_map_node_picnic.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {BuildItemId = 1, MapNodeId = 2}
 local config = {
-[5011001] = {5011001, 10012}
-, 
-[5011002] = {5011002, 10007}
+  [5011001] = {5011001, 10012},
+  [5011002] = {5011002, 10007}
 }
 return config, "BuildItemId", key
-

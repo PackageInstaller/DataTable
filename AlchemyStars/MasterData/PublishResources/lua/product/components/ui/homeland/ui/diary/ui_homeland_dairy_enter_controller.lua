@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/diary/ui_homeland_dairy_enter_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeLandDiaryEnterController", UIController)
 UIHomeLandDiaryEnterController = UIHomeLandDiaryEnterController
 local DiaryOpenType = {Diary = 1, Story = 2}
 _enum("DiaryOpenType", DiaryOpenType)
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-UIHomeLandDiaryEnterController.Constructor = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIHomeLandDiaryEnterController:Constructor(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomeLandDiaryEnterController.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomeLandDiaryEnterController:OnShow()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
   self:AttachEvent(GameEventType.StoryTaskTraceSuccess, self.StoryTaskTraceSuccess)
   self._dairyEnterData = UIHomelandDairyEnterData:New()
@@ -24,74 +14,45 @@ UIHomeLandDiaryEnterController.OnShow = function(self)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomeLandDiaryEnterController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomeLandDiaryEnterController:OnHide()
   self:DetachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
   self:DetachEvent(GameEventType.StoryTaskTraceSuccess, self.StoryTaskTraceSuccess)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomeLandDiaryEnterController.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomeLandDiaryEnterController:Flush()
   local itemCount = 2
-  ;
-  (self._content):SpawnObjects("UIHomeLandDiaryEnterItem", itemCount)
+  self._content:SpawnObjects("UIHomeLandDiaryEnterItem", itemCount)
   local data = {}
-  local uiItems = (self._content):GetAllSpawnList()
-  for i,uiItem in ipairs(uiItems) do
+  local uiItems = self._content:GetAllSpawnList()
+  for i, uiItem in ipairs(uiItems) do
     uiItem:Flush(i, data, self._dairyEnterData, self.EnterCallBack)
   end
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomeLandDiaryEnterController.EnterCallBack = function(self, type)
-  -- function num : 0_4 , upvalues : DiaryOpenType
+function UIHomeLandDiaryEnterController:EnterCallBack(type)
   if type == DiaryOpenType.Diary then
     self:ShowDialog("UIHomeLandDiaryController")
-  else
-    if type == DiaryOpenType.Story then
-      self:ShowDialog("UIHomelandStoryTaskController")
-    end
+  elseif type == DiaryOpenType.Story then
+    self:ShowDialog("UIHomelandStoryTaskController")
   end
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomeLandDiaryEnterController.ClosebtnOnClick = function(self)
-  -- function num : 0_5
+function UIHomeLandDiaryEnterController:ClosebtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomeLandDiaryEnterController.AfterUILayerChanged = function(self)
-  -- function num : 0_6
+function UIHomeLandDiaryEnterController:AfterUILayerChanged()
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomeLandDiaryEnterController.HasPrefs = function(self, key)
-  -- function num : 0_7
-  ((self._dairyEnterData).HasPrefs)(key)
+function UIHomeLandDiaryEnterController:HasPrefs(key)
+  self._dairyEnterData.HasPrefs(key)
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomeLandDiaryEnterController.SetPrefs = function(self, key)
-  -- function num : 0_8
-  ((self._dairyEnterData).SetPrefs)(key)
+function UIHomeLandDiaryEnterController:SetPrefs(key)
+  self._dairyEnterData.SetPrefs(key)
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomeLandDiaryEnterController.StoryTaskTraceSuccess = function(self)
-  -- function num : 0_9
+function UIHomeLandDiaryEnterController:StoryTaskTraceSuccess()
   self:CloseDialog()
 end
-
-

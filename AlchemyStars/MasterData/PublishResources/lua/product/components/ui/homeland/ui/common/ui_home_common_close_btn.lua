@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/common/ui_home_common_close_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeCommonCloseBtn", UICustomWidget)
 UIHomeCommonCloseBtn = UIHomeCommonCloseBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeCommonCloseBtn.Constructor = function(self)
-  -- function num : 0_0
+function UIHomeCommonCloseBtn:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeCommonCloseBtn.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomeCommonCloseBtn:OnShow(uiParams)
   self._square = self:GetGameObject("square")
   self._circle = self:GetGameObject("circle")
   self._help = self:GetGameObject("help")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeCommonCloseBtn.SetData = function(self, _backCB, _helpCB, _circleBtn)
-  -- function num : 0_2
+function UIHomeCommonCloseBtn:SetData(_backCB, _helpCB, _circleBtn)
   local showBackBtn = false
   local useCircle = false
   if _backCB then
@@ -34,64 +21,44 @@ UIHomeCommonCloseBtn.SetData = function(self, _backCB, _helpCB, _circleBtn)
   end
   if showBackBtn then
     if useCircle then
-      (self._circle):SetActive(true)
-      ;
-      (self._square):SetActive(false)
+      self._circle:SetActive(true)
+      self._square:SetActive(false)
     else
-      ;
-      (self._square):SetActive(true)
-      ;
-      (self._circle):SetActive(false)
+      self._square:SetActive(true)
+      self._circle:SetActive(false)
     end
   else
-    ;
-    (self._square):SetActive(false)
-    ;
-    (self._circle):SetActive(false)
+    self._square:SetActive(false)
+    self._circle:SetActive(false)
   end
   local showHelp = false
   if _helpCB then
     showHelp = true
   end
-  ;
-  (self._help):SetActive(showHelp)
+  self._help:SetActive(showHelp)
   self._backCb = _backCB
   self._helpCb = _helpCB
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeCommonCloseBtn.SquareBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIHomeCommonCloseBtn:SquareBtnOnClick(go)
   if self._backCb then
-    (self._backCb)()
+    self._backCb()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeCommonCloseBtn.CircleBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIHomeCommonCloseBtn:CircleBtnOnClick(go)
   if self._backCb then
-    (self._backCb)()
+    self._backCb()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeCommonCloseBtn.HelpBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIHomeCommonCloseBtn:HelpBtnOnClick(go)
   if self._helpCb then
-    (self._helpCb)(go)
+    self._helpCb(go)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeCommonCloseBtn.OnHide = function(self)
-  -- function num : 0_6
+function UIHomeCommonCloseBtn:OnHide()
   self._backCb = nil
   self._helpCb = nil
 end
-
-

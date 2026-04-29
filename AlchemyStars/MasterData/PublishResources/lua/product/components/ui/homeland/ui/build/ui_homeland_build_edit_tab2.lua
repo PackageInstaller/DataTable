@@ -1,125 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/build/ui_homeland_build_edit_tab2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBuildEditTab2", UICustomWidget)
 UIHomelandBuildEditTab2 = UIHomelandBuildEditTab2
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBuildEditTab2.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.mUIHomeland = (self.mHomeland):GetUIModule()
-  self.homelandClient = (self.mUIHomeland):GetClient()
-  self.homeBuildManager = (self.homelandClient):BuildManager()
+function UIHomelandBuildEditTab2:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.mUIHomeland = self.mHomeland:GetUIModule()
+  self.homelandClient = self.mUIHomeland:GetClient()
+  self.homeBuildManager = self.homelandClient:BuildManager()
   self.lockState = false
-  self.colorText = {Color(0.41176470588235, 0.4078431372549, 0.4078431372549), Color(0.9843137254902, 0.9843137254902, 0.9843137254902)}
+  self.colorText = {
+    Color(0.4117647058823529, 0.40784313725490196, 0.40784313725490196),
+    Color(0.984313725490196, 0.984313725490196, 0.984313725490196)
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditTab2.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandBuildEditTab2:OnShow()
   self.imgTab = self:GetUIComponent("Image", "imgTab")
   self.txtFilter = self:GetUIComponent("UILocalizationText", "txtFilter")
   self.new = self:GetGameObject("new")
-  ;
-  (self.new):SetActive(false)
+  self.new:SetActive(false)
   self.lock = self:GetGameObject("lock")
   self.atlas = self:GetAsset("UIHomelandBuildInfo.spriteatlas", LoadType.SpriteAtlas)
   self:AttachEvent(GameEventType.HomelandBuildFilterTab2, self.HomelandBuildFilterTab2)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditTab2.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandBuildEditTab2:OnHide()
   self:DetachEvent(GameEventType.HomelandBuildFilterTab2, self.HomelandBuildFilterTab2)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditTab2.Flush = function(self, id, childId, filterID2SubType)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandBuildEditTab2:Flush(id, childId, filterID2SubType)
   self.id = id
   self.childId = childId
-  local filter = (UIHomelandBuildEdit.GetBuildFilterBy2Id)(id, childId)
-  ;
-  (self.txtFilter):SetText(filter.name)
+  local filter = UIHomelandBuildEdit.GetBuildFilterBy2Id(id, childId)
+  self.txtFilter:SetText(filter.name)
   self.lockState = false
   local subType = filterID2SubType[childId]
   if subType then
-    local homeBuildManager = (((GameGlobal.GetUIModule)(HomelandModule)):GetClient()):BuildManager()
+    local homeBuildManager = GameGlobal.GetUIModule(HomelandModule):GetClient():BuildManager()
     local building = homeBuildManager:GetBuildingBySubType(subType)
     if building:IsShabby() then
       self.lockState = true
     end
   end
-  do
-    ;
-    (self.lock):SetActive(self.lockState)
-  end
+  self.lock:SetActive(self.lockState)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditTab2.SetNew = function(self, new)
-  -- function num : 0_4
+function UIHomelandBuildEditTab2:SetNew(new)
   if new then
-    (self.new):SetActive(true)
+    self.new:SetActive(true)
   else
-    ;
-    (self.new):SetActive(false)
+    self.new:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditTab2.HomelandBuildFilterTab2 = function(self, id, childId)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
+function UIHomelandBuildEditTab2:HomelandBuildFilterTab2(id, childId)
   if self.childId == childId then
-    (self.imgTab).sprite = (self.atlas):GetSprite("n17_layout_btn04")
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.txtFilter).color = (self.colorText)[2]
+    self.imgTab.sprite = self.atlas:GetSprite("n17_layout_btn04")
+    self.txtFilter.color = self.colorText[2]
+  elseif self.lockState then
+    self.imgTab.sprite = self.atlas:GetSprite("n17_layout_btn10")
+    self.txtFilter.color = self.colorText[2]
   else
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-    if self.lockState then
-      (self.imgTab).sprite = (self.atlas):GetSprite("n17_layout_btn10")
-      -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.txtFilter).color = (self.colorText)[2]
-    else
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.imgTab).sprite = (self.atlas):GetSprite("n17_layout_btn03")
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.txtFilter).color = (self.colorText)[1]
-    end
+    self.imgTab.sprite = self.atlas:GetSprite("n17_layout_btn03")
+    self.txtFilter.color = self.colorText[1]
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditTab2.imgTabOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandBuildFilterTab2, self.id, self.childId)
+function UIHomelandBuildEditTab2:imgTabOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandBuildFilterTab2, self.id, self.childId)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditTab2.lockOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_build_architecture_lock"))
+function UIHomelandBuildEditTab2:lockOnClick(go)
+  ToastManager.ShowHomeToast(StringTable.Get("str_homeland_build_architecture_lock"))
 end
-
-

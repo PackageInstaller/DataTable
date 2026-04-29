@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_change_animator_layer_weight.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultChangeAnimatorLayerWeight", BuffResultBase)
 BuffResultChangeAnimatorLayerWeight = BuffResultChangeAnimatorLayerWeight
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeAnimatorLayerWeight.Constructor = function(self, changeInfo)
-  -- function num : 0_0
+function BuffResultChangeAnimatorLayerWeight:Constructor(changeInfo)
   self._changeInfo = changeInfo
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAnimatorLayerWeight.GetChangeInfo = function(self)
-  -- function num : 0_1
+function BuffResultChangeAnimatorLayerWeight:GetChangeInfo()
   return self._changeInfo
 end
-
-

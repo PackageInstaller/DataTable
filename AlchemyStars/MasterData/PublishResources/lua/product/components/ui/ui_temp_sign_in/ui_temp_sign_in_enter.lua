@@ -1,48 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_temp_sign_in/ui_temp_sign_in_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_base")
 _class("UITempSignInEnter", UISideEnterItem_Base)
 UITempSignInEnter = UITempSignInEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UITempSignInEnter.CheckOpen = function()
-  -- function num : 0_0 , upvalues : _ENV
-  local isPassMissionID = ((Cfg.cfg_global).signInPassMissionID).IntValue
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+function UITempSignInEnter.CheckOpen()
+  local isPassMissionID = Cfg.cfg_global.signInPassMissionID.IntValue
+  local missionModule = GameGlobal.GetModule(MissionModule)
   local isPass = missionModule:IsPassMissionID(isPassMissionID)
   if not isPass then
     return false
   end
-  local tb = {NewPlayerLoginStatus.NPLS_UnReach, NewPlayerLoginStatus.NPLS_UnAccept}
-  local isOpen = (UITempSignInEnter.CheckDayStatus)(tb)
+  local tb = {
+    NewPlayerLoginStatus.NPLS_UnReach,
+    NewPlayerLoginStatus.NPLS_UnAccept
+  }
+  local isOpen = UITempSignInEnter.CheckDayStatus(tb)
   if isOpen == 0 then
-    (Log.debug)("UITempSignInEnter:CheckOpen() temp sign is close !")
+    Log.debug("UITempSignInEnter:CheckOpen() temp sign is close !")
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInEnter.CheckRed = function()
-  -- function num : 0_1 , upvalues : _ENV
-  local tb = {NewPlayerLoginStatus.NPLS_UnAccept}
-  local idx = (UITempSignInEnter.CheckDayStatus)(tb)
-  do return idx ~= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UITempSignInEnter.CheckRed()
+  local tb = {
+    NewPlayerLoginStatus.NPLS_UnAccept
+  }
+  local idx = UITempSignInEnter.CheckDayStatus(tb)
+  return idx ~= 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInEnter.CheckDayStatus = function(target)
-  -- function num : 0_2 , upvalues : _ENV
-  local dic = (table.reverse)(target)
-  local signInModule = (GameGlobal.GetModule)(SignInModule)
+function UITempSignInEnter.CheckDayStatus(target)
+  local dic = table.reverse(target)
+  local signInModule = GameGlobal.GetModule(SignInModule)
   local dayInfo = signInModule:GetNewPlayerSignupStatus()
-  for index,value in ipairs(dayInfo) do
+  for index, value in ipairs(dayInfo) do
     if dic[value] ~= nil then
       return index
     end
@@ -50,96 +41,58 @@ UITempSignInEnter.CheckDayStatus = function(target)
   return 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInEnter.OnShow = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UITempSignInEnter:OnShow()
   self:AttachEvent(GameEventType.OnTempSignInAwardGot, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInEnter.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UITempSignInEnter:OnHide()
   self:DetachEvent(GameEventType.OnTempSignInAwardGot, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInEnter.SetData = function(self, btnCfg)
-  -- function num : 0_5
+function UITempSignInEnter:SetData(btnCfg)
   self._btnCfg = btnCfg
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInEnter._CheckOpen = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  return (UITempSignInEnter.CheckOpen)()
+function UITempSignInEnter:_CheckOpen(TT)
+  return UITempSignInEnter.CheckOpen()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInEnter.GetSideEnterRawImage = function(self)
-  -- function num : 0_7
+function UITempSignInEnter:GetSideEnterRawImage()
   return "gh_xsqd_di09"
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInEnter.DoShow = function(self)
-  -- function num : 0_8
+function UITempSignInEnter:DoShow()
   self:_SetTitle()
   self:_SetBg()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInEnter._CalcNew = function(self)
-  -- function num : 0_9
+function UITempSignInEnter:_CalcNew()
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInEnter._CalcRed = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  return (UITempSignInEnter.CheckRed)()
+function UITempSignInEnter:_CalcRed()
+  return UITempSignInEnter.CheckRed()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInEnter._Refresh = function(self)
-  -- function num : 0_11
+function UITempSignInEnter:_Refresh()
   self:_CheckPoint()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInEnter._SetTitle = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UITempSignInEnter:_SetTitle()
   local widgetName = "txtTitle"
   local strId = "str_sign_in_btn_str_new"
   if widgetName and strId then
-    (UIWidgetHelper.SetLocalizationText)(self, widgetName, (StringTable.Get)(strId))
+    UIWidgetHelper.SetLocalizationText(self, widgetName, StringTable.Get(strId))
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInEnter._SetBg = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UITempSignInEnter:_SetBg()
   local widgetName = "bg"
   local sideEnterIcon = self:GetSideEnterRawImage()
   if widgetName and sideEnterIcon then
-    (UIWidgetHelper.SetRawImage)(self, widgetName, sideEnterIcon)
+    UIWidgetHelper.SetRawImage(self, widgetName, sideEnterIcon)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInEnter.BtnOnClick = function(self, go)
-  -- function num : 0_14
+function UITempSignInEnter:BtnOnClick(go)
 end
-
-

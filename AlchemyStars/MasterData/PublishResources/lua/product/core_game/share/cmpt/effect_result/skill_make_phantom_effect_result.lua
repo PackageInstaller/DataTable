@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_make_phantom_effect_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillMakePhantomEffectResult", SkillEffectResultBase)
 SkillMakePhantomEffectResult = SkillMakePhantomEffectResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillMakePhantomEffectResult.Constructor = function(self, owner, hpPercent, targetID, pos, rot)
-  -- function num : 0_0
+function SkillMakePhantomEffectResult:Constructor(owner, hpPercent, targetID, pos, rot)
   self.owner = owner
   self.hpPercent = hpPercent
   self.pos = pos
@@ -17,60 +10,34 @@ SkillMakePhantomEffectResult.Constructor = function(self, owner, hpPercent, targ
   self.targetEntityID = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillMakePhantomEffectResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillMakePhantomEffectResult:GetEffectType()
   return SkillEffectType.MakePhantom
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillMakePhantomEffectResult.GetHPPercent = function(self)
-  -- function num : 0_2
+function SkillMakePhantomEffectResult:GetHPPercent()
   return self.hpPercent
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillMakePhantomEffectResult.GetBornPos = function(self)
-  -- function num : 0_3
+function SkillMakePhantomEffectResult:GetBornPos()
   return self.pos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillMakePhantomEffectResult.GetBornRot = function(self)
-  -- function num : 0_4
+function SkillMakePhantomEffectResult:GetBornRot()
   return self.rot
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillMakePhantomEffectResult.GetOwnerID = function(self)
-  -- function num : 0_5
+function SkillMakePhantomEffectResult:GetOwnerID()
   return self.owner
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillMakePhantomEffectResult.GetTargetID = function(self)
-  -- function num : 0_6
+function SkillMakePhantomEffectResult:GetTargetID()
   return self.targetID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillMakePhantomEffectResult.SetTargetEntityID = function(self, entityID)
-  -- function num : 0_7
+function SkillMakePhantomEffectResult:SetTargetEntityID(entityID)
   self.targetEntityID = entityID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillMakePhantomEffectResult.GetTargetEntityID = function(self)
-  -- function num : 0_8
+function SkillMakePhantomEffectResult:GetTargetEntityID()
   return self.targetEntityID
 end
-
-

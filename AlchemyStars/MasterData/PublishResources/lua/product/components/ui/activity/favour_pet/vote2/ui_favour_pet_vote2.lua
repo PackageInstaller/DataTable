@@ -1,93 +1,63 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/favour_pet/vote2/ui_favour_pet_vote2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UIFavourPetVote2", UISideEnterCenterContentBase)
 UIFavourPetVote2 = UIFavourPetVote2
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFavourPetVote2.DoInit = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function UIFavourPetVote2:DoInit(params)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_INLAND_VOTE
   self._componentId = ECampaignVoteComponentID.ECAMPAIGN_VOTE
-  if params then
-    self._campaignId = params.campaign_id
-    self._campaign = self._data
-    self._component = (self._campaign):GetComponent(self._componentId)
-    self:_ForceRefresh()
-  end
+  self._campaignId = params and params.campaign_id
+  self._campaign = self._data
+  self._component = self._campaign:GetComponent(self._componentId)
+  self:_ForceRefresh()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2.DoShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._campaign):CheckCampaignClose_ShowClientError() then
-    return 
+function UIFavourPetVote2:DoShow()
+  if self._campaign:CheckCampaignClose_ShowClientError() then
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
+    self._campaign:ClearCampaignNew(TT)
+  end)
+  
+  function self._tipsCallback(matid, pos)
+    UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
   end
-)
-  self._tipsCallback = function(matid, pos)
-    -- function num : 0_1_1 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
-  end
-
+  
   self:_SetReqTime()
-  local closeTime = ((self._campaign):GetSample()).end_time
+  local closeTime = self._campaign:GetSample().end_time
   self:_SetRemainingTime("_time", "str_favour_pet_remain_time", closeTime)
   local animName, duration = "uieff_UIFavourPet_Vote2_in", 467
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", animName, duration, nil, true)
+  UIWidgetHelper.PlayAnimation(self, "_anim", animName, duration, nil, true)
   self:_Refresh(true)
   self:_AttachEvent()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2.DoHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (UIWidgetHelper.ClearWidgets)(self, "_tipsPool")
+function UIFavourPetVote2:DoHide()
+  UIWidgetHelper.ClearWidgets(self, "_tipsPool")
   self:_DetachEvent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2.DoDestroy = function(self)
-  -- function num : 0_3
+function UIFavourPetVote2:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2._ForceRefresh = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIFavourPetVote2:_ForceRefresh()
   if self._refreshTaskID ~= nil then
-    return 
+    return
   end
   self._refreshTaskID = self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    ;
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+    self._campaign:ReLoadCampaignInfo_Force(TT, res)
     if res and res:GetSucc() then
       self:_Refresh()
     end
     self._refreshTaskID = nil
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2._Refresh = function(self, playAnim)
-  -- function num : 0_5
+function UIFavourPetVote2:_Refresh(playAnim)
   if not self.view then
-    return 
+    return
   end
   self:_SetCoin()
   self:_SetQuest()
@@ -95,162 +65,105 @@ UIFavourPetVote2._Refresh = function(self, playAnim)
   self:_PlayAnim_List(playAnim)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2._SetRemainingTime = function(self, widgetName, descId, endTime, stopCallback)
-  -- function num : 0_6 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UIFavourPetVote2:_SetRemainingTime(widgetName, descId, endTime, stopCallback)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   obj:SetAdvanceText(descId)
   obj:SetData(endTime, nil, stopCallback)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2._SetCoin = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_coin", "UIFavourPetCoin")
+function UIFavourPetVote2:_SetCoin()
+  local obj = UIWidgetHelper.SpawnObject(self, "_coin", "UIFavourPetCoin")
   obj:SetData(self._component, self._tipsCallback)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2._SetQuest = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_quest", "UIFavourPetVote2QuestCell")
+function UIFavourPetVote2:_SetQuest()
+  local obj = UIWidgetHelper.SpawnObject(self, "_quest", "UIFavourPetVote2QuestCell")
   obj:SetData(self._campaign, self._tipsCallback)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2._SetList = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local listData = (self._component):GetAllVoteItemId()
-  local champion = (self._component):CalcZonePetVoteChampion()
-  local clickCallback = function(voteId)
-    -- function num : 0_9_0 , upvalues : self
+function UIFavourPetVote2:_SetList()
+  local listData = self._component:GetAllVoteItemId()
+  local champion = self._component:CalcZonePetVoteChampion()
+  
+  local function clickCallback(voteId)
     self:_VoteBtnOnClick(voteId)
   end
-
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_item", "UIFavourPetVote2Item", #listData)
-  for i,v in ipairs(objs) do
+  
+  local objs = UIWidgetHelper.SpawnObjects(self, "_item", "UIFavourPetVote2Item", #listData)
+  for i, v in ipairs(objs) do
     local voteId = listData[i]
     local isChampion = champion == voteId
     v:SetData(self._campaign, self._component, voteId, isChampion, clickCallback)
   end
   self._list = objs
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2._PlayAnim_List = function(self, isPlay)
-  -- function num : 0_10 , upvalues : _ENV
+function UIFavourPetVote2:_PlayAnim_List(isPlay)
   if not isPlay then
-    return 
+    return
   end
-  for i,v in ipairs(self._list) do
+  for i, v in ipairs(self._list) do
     v:PlayAnimationInSequence(i)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2._SetReqTime = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIFavourPetVote2:_SetReqTime()
   if not self.view then
-    return 
+    return
   end
-  local curTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() / 1000
+  local curTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() / 1000
   local reqTime = curTime + 180
   self:_SetRemainingTime("_reqTime", nil, reqTime, function()
-    -- function num : 0_11_0 , upvalues : self
     if not self.view then
-      return 
+      return
     end
-    ;
-    (self._component):Start_HandleGetZoneInfo(function()
-      -- function num : 0_11_0_0 , upvalues : self
+    self._component:Start_HandleGetZoneInfo(function()
       self:_Refresh()
-    end
-)
+    end)
     self:_SetReqTime()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2._VoteBtnOnClick = function(self, voteId)
-  -- function num : 0_12 , upvalues : _ENV
-  local isVoted = (UIFavourPetHelper.NotEnoughVoteItem)(self._component)
+function UIFavourPetVote2:_VoteBtnOnClick(voteId)
+  local isVoted = UIFavourPetHelper.NotEnoughVoteItem(self._component)
   if isVoted then
-    local text = (StringTable.Get)("str_favour_pet_2_vote_fin_msg")
-    ;
-    (ToastManager.ShowToast)(text)
+    local text = StringTable.Get("str_favour_pet_2_vote_fin_msg")
+    ToastManager.ShowToast(text)
   else
-    do
-      self:ShowDialog("UIFavourPetVote2Confirm", self._component, voteId, function()
-    -- function num : 0_12_0 , upvalues : self, voteId
-    self:_Start_HandleVote(voteId)
-  end
-)
-    end
+    self:ShowDialog("UIFavourPetVote2Confirm", self._component, voteId, function()
+      self:_Start_HandleVote(voteId)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2._Start_HandleVote = function(self, voteId)
-  -- function num : 0_13 , upvalues : _ENV
-  (self._component):Start_HandleVote(voteId, 1, function(res, ret)
-    -- function num : 0_13_0 , upvalues : _ENV, self, voteId
+function UIFavourPetVote2:_Start_HandleVote(voteId)
+  self._component:Start_HandleVote(voteId, 1, function(res, ret)
     if res:GetSucc() then
-      local cfg = (UIFavourPetHelper.GetSkinInfo)(self._component, voteId)
-      local skinName = (StringTable.Get)(cfg.SkinName)
-      local text = (StringTable.Get)("str_favour_pet_2_vote_succ_msg", skinName)
-      ;
-      (ToastManager.ShowToast)(text)
+      local cfg = UIFavourPetHelper.GetSkinInfo(self._component, voteId)
+      local skinName = StringTable.Get(cfg.SkinName)
+      local text = StringTable.Get("str_favour_pet_2_vote_succ_msg", skinName)
+      ToastManager.ShowToast(text)
       self:_Refresh()
     else
-      do
-        ;
-        (self._campaign):CheckErrorCode(res.m_result, function()
-      -- function num : 0_13_0_0 , upvalues : self
-      self:_Refresh()
+      self._campaign:CheckErrorCode(res.m_result, function()
+        self:_Refresh()
+      end)
     end
-)
-      end
-    end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2.IntroBtnOnClick = function(self, go)
-  -- function num : 0_14
+function UIFavourPetVote2:IntroBtnOnClick(go)
   self:ShowDialog("UIIntroLoader", "UIFavourPetVote2Intro")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2._AttachEvent = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIFavourPetVote2:_AttachEvent()
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2._DetachEvent = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIFavourPetVote2:_DetachEvent()
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2.OnUIGetItemCloseInQuest = function(self)
-  -- function num : 0_17
+function UIFavourPetVote2:OnUIGetItemCloseInQuest()
   self:_Refresh()
 end
-
-

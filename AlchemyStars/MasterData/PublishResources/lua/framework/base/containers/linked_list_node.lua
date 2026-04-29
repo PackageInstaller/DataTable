@@ -1,25 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/containers/linked_list_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LinkedListNode", Object)
 LinkedListNode = LinkedListNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LinkedListNode.Constructor = function(self, v)
-  -- function num : 0_0
+function LinkedListNode:Constructor(v)
   self.value = v
   self.next = nil
   self.prev = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkedListNode.SetNear = function(self, prev, next)
-  -- function num : 0_1
+function LinkedListNode:SetNear(prev, next)
   self.prev = prev
   self.next = next
 end
-
-

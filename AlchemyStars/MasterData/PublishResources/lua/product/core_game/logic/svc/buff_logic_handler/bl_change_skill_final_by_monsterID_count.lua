@@ -1,62 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_skill_final_by_monsterID_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillFinalByMonsterIDCount", BuffLogicBase)
 BuffLogicChangeSkillFinalByMonsterIDCount = BuffLogicChangeSkillFinalByMonsterIDCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillFinalByMonsterIDCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeSkillFinalByMonsterIDCount:Constructor(buffInstance, logicParam)
   self._minAddValue = logicParam.minAddValue or 0
   self._changeValue = logicParam.changeValue or 0
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffInstance)._effectList = logicParam.effectList
+  self._buffInstance._effectList = logicParam.effectList
   self._entity = buffInstance._entity
-  if not logicParam.monsterClassIDList then
-    self._monsterClassIDList = {}
-  end
+  self._monsterClassIDList = logicParam.monsterClassIDList or {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillFinalByMonsterIDCount.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeSkillFinalByMonsterIDCount:DoLogic()
   if #self._monsterClassIDList > 0 then
-    local monsterEntityList = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).MonsterID)
+    local monsterEntityList = self._world:GetGroupEntities(self._world.BW_WEMatchers.MonsterID)
     local addCount = 0
-    for i,entity in ipairs(monsterEntityList) do
-      local monsterID = (entity:MonsterID()):GetMonsterClassID()
-      if not entity:HasDeadMark() and (table.icontains)(self._monsterClassIDList, monsterID) then
+    for i, entity in ipairs(monsterEntityList) do
+      local monsterID = entity:MonsterID():GetMonsterClassID()
+      if not entity:HasDeadMark() and table.icontains(self._monsterClassIDList, monsterID) then
         addCount = addCount + 1
       end
     end
-    local changeValue = self._minAddValue + self._changeValue * (addCount)
-    for _,paramType in ipairs((self._buffInstance)._effectList) do
-      (self._buffLogicService):ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, changeValue)
+    local changeValue = self._minAddValue + self._changeValue * addCount
+    for _, paramType in ipairs(self._buffInstance._effectList) do
+      self._buffLogicService:ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, changeValue)
     end
   end
 end
 
 _class("BuffLogicRemoveChangeSkillFinalByMonsterIDCount", BuffLogicBase)
 BuffLogicRemoveChangeSkillFinalByMonsterIDCount = BuffLogicRemoveChangeSkillFinalByMonsterIDCount
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveChangeSkillFinalByMonsterIDCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveChangeSkillFinalByMonsterIDCount:Constructor(buffInstance, logicParam)
   self._entity = buffInstance._entity
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveChangeSkillFinalByMonsterIDCount.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
+function BuffLogicRemoveChangeSkillFinalByMonsterIDCount:DoLogic()
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
   end
 end
-
-

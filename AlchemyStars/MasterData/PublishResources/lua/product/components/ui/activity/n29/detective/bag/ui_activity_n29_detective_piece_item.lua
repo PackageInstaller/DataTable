@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/bag/ui_activity_n29_detective_piece_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN29DetectivePieceItem", UICustomWidget)
 UIActivityN29DetectivePieceItem = UIActivityN29DetectivePieceItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN29DetectivePieceItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityN29DetectivePieceItem:OnShow(uiParams)
   self._delay = 0.05
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectivePieceItem._GetComponent = function(self)
-  -- function num : 0_1
+function UIActivityN29DetectivePieceItem:_GetComponent()
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._info = self:GetUIComponent("UILocalizationText", "info")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectivePieceItem.SetData = function(self, data, index)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN29DetectivePieceItem:SetData(data, index)
   self._data = data
-  ;
-  (self._icon):LoadImage((self._data).Icon)
-  ;
-  (self._name):SetText((StringTable.Get)((self._data).Name))
-  ;
-  (self._info):SetText((StringTable.Get)((self._data).Info))
+  self._icon:LoadImage(self._data.Icon)
+  self._name:SetText(StringTable.Get(self._data.Name))
+  self._info:SetText(StringTable.Get(self._data.Info))
   self:_SetAnimation(self._delay * (index - 1))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectivePieceItem._SetAnimation = function(self, delay)
-  -- function num : 0_3 , upvalues : _ENV
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "anim", "anim", "uieff_UIN29DetectivePieceItem_in", delay, 300, nil)
+function UIActivityN29DetectivePieceItem:_SetAnimation(delay)
+  UIWidgetHelper.PlayAnimationInSequence(self, "anim", "anim", "uieff_UIN29DetectivePieceItem_in", delay, 300, nil)
 end
-
-

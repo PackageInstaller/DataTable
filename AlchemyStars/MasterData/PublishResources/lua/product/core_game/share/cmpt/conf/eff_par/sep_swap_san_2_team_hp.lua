@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_swap_san_2_team_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamSwapSan2TeamHp", SkillEffectParamBase)
 SkillEffectParamSwapSan2TeamHp = SkillEffectParamSwapSan2TeamHp
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamSwapSan2TeamHp.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamSwapSan2TeamHp:Constructor(t)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSwapSan2TeamHp.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamSwapSan2TeamHp:GetEffectType()
   return SkillEffectType.SwapSan2TeamHp
 end
-
-

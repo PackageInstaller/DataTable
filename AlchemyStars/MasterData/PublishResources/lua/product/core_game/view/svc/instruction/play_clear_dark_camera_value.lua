@@ -1,26 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_clear_dark_camera_value.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayClearDarkCameraValueInstruction", BaseInstruction)
 PlayClearDarkCameraValueInstruction = PlayClearDarkCameraValueInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayClearDarkCameraValueInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayClearDarkCameraValueInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayClearDarkCameraValueInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayClearDarkCameraValueInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   self._world = world
   local mainCameraCmpt = world:MainCamera()
   mainCameraCmpt:ClearDarkCameraValue()
-  return 
+  return
 end
-
-

@@ -1,46 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/l2r_auto_bead_attack_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("L2R_AutoBeadAttackResult", Object)
 L2R_AutoBeadAttackResult = L2R_AutoBeadAttackResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-L2R_AutoBeadAttackResult.Constructor = function(self, dataList, holderEntityID)
-  -- function num : 0_0
+function L2R_AutoBeadAttackResult:Constructor(dataList, holderEntityID)
   self._autoBeadAtkResultList = dataList
   self._holderEntityID = holderEntityID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_AutoBeadAttackResult.GetHolderEntityID = function(self)
-  -- function num : 0_1
+function L2R_AutoBeadAttackResult:GetHolderEntityID()
   return self._holderEntityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_AutoBeadAttackResult.GetHolderAutoBeadSkillDataList = function(self, entityID)
-  -- function num : 0_2
-  local autoBeadResData = (self._autoBeadAtkResultList)[entityID]
+function L2R_AutoBeadAttackResult:GetHolderAutoBeadSkillDataList(entityID)
+  local autoBeadResData = self._autoBeadAtkResultList[entityID]
   if autoBeadResData == nil then
     return nil
   end
   return autoBeadResData:GetAutoBeadAttackResultAtkDataList()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_AutoBeadAttackResult.AutoBeadAttackResultHasDamage = function(self, entityID)
-  -- function num : 0_3 , upvalues : _ENV
-  local autoBeadResData = (self._autoBeadAtkResultList)[entityID]
+function L2R_AutoBeadAttackResult:AutoBeadAttackResultHasDamage(entityID)
+  local autoBeadResData = self._autoBeadAtkResultList[entityID]
   if autoBeadResData == nil then
     return false
   end
   local effectResListTable = autoBeadResData:GetAutoBeadAttackResultAtkDataList()
-  for i,v in ipairs(effectResListTable) do
+  for i, v in ipairs(effectResListTable) do
     local autoBeadAttackData = v
     if autoBeadAttackData:HasDamage() then
       return true
@@ -49,15 +33,10 @@ L2R_AutoBeadAttackResult.AutoBeadAttackResultHasDamage = function(self, entityID
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_AutoBeadAttackResult.GetDeadEntityIDListByHolder = function(self, entityID)
-  -- function num : 0_4
-  local autoBeadResData = (self._autoBeadAtkResultList)[entityID]
+function L2R_AutoBeadAttackResult:GetDeadEntityIDListByHolder(entityID)
+  local autoBeadResData = self._autoBeadAtkResultList[entityID]
   if autoBeadResData == nil then
     return nil
   end
   return autoBeadResData:GetDeadEntityIDList()
 end
-
-

@@ -1,48 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_feature_san.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetFeatureSan", UICustomWidget)
 UIWidgetFeatureSan = UIWidgetFeatureSan
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetFeatureSan.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetFeatureSan:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureSan.InitWidget = function(self)
-  -- function num : 0_1
+function UIWidgetFeatureSan:InitWidget()
   self._imageNormalGo = self:GetGameObject("ImageNormal")
   self._imageWarningGo = self:GetGameObject("ImageWarning")
   self._imageNormal = self:GetUIComponent("Image", "ImageNormal")
   self._imageWarning = self:GetUIComponent("Image", "ImageWarning")
   self._sanValue = self:GetUIComponent("UILocalizationText", "SanValue")
   self._anim = self:GetUIComponent("Animation", "UIWidgetFeatureSan")
-  ;
-  (self._imageWarningGo):SetActive(false)
-  self._animName = {[1] = "uieffanim_N16_UIWidgetFeatureSan_01", [2] = "uieffanim_N16_UIWidgetFeatureSan_02"}
+  self._imageWarningGo:SetActive(false)
+  self._animName = {
+    [1] = "uieffanim_N16_UIWidgetFeatureSan_01",
+    [2] = "uieffanim_N16_UIWidgetFeatureSan_02"
+  }
   self._curAnimLevel = 0
   self:RegisterEvent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureSan.RegisterEvent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetFeatureSan:RegisterEvent()
   self:AttachEvent(GameEventType.FeatureSanValueChange, self._OnFeatureSanValueChange)
   self:AttachEvent(GameEventType.FeatureSanMaxValueChange, self._OnFeatureSanMaxValueChange)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureSan.SetData = function(self, sanInitInfo)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWidgetFeatureSan:SetData(sanInitInfo)
   self._sanInitData = sanInitInfo
-  local sanityParam = (self._sanInitData):GetSanityParam()
+  local sanityParam = self._sanInitData:GetSanityParam()
   self._sanEffTopVal = BattleConst.SanViewEffDefaultStartVal
   if sanityParam and sanityParam.viewEffStartVal then
     self._sanEffTopVal = sanityParam.viewEffStartVal
@@ -53,68 +39,47 @@ UIWidgetFeatureSan.SetData = function(self, sanInitInfo)
   self:SetValue(enterValue)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureSan.UIWidgetFeatureSanOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  if (InnerGameHelperRender.IsPuzzleState)() or (InnerGameHelperRender.IsPet1702361ActiveSkillPreview)() then
-    return 
+function UIWidgetFeatureSan:UIWidgetFeatureSanOnClick(go)
+  if InnerGameHelperRender.IsPuzzleState() or InnerGameHelperRender.IsPet1702361ActiveSkillPreview() then
+    return
   end
   self:ShowDialog("UIFeatureSanInfo", self._sanInitData, self._curVal, self._maxVal)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureSan.SetValue = function(self, sanValue)
-  -- function num : 0_5
+function UIWidgetFeatureSan:SetValue(sanValue)
   self._curVal = sanValue
   self:_SetUiValue(self._curVal)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureSan._SetUiValue = function(self, sanValue)
-  -- function num : 0_6 , upvalues : _ENV
-  if self._maxVal < sanValue then
+function UIWidgetFeatureSan:_SetUiValue(sanValue)
+  if sanValue > self._maxVal then
     sanValue = self._maxVal
   end
   if sanValue < self._minVal then
     sanValue = self._minVal
   end
-  sanValue = (math.floor)(sanValue + 0.5)
-  ;
-  (self._sanValue):SetText(sanValue)
-  local sanNormal = sanValue > 0
-  ;
-  (self._imageNormalGo):SetActive(sanNormal)
-  ;
-  (self._imageWarningGo):SetActive(not sanNormal)
-  -- DECOMPILER ERROR at PC37: Unhandled construct in 'MakeBoolean' P1
-
-  if sanValue <= self._sanEffTopVal and sanValue > 0 and self._curAnimLevel ~= 1 then
-    self._curAnimLevel = 1
-    ;
-    (self._anim):Play((self._animName)[1])
-  end
-  -- DECOMPILER ERROR at PC49: Unhandled construct in 'MakeBoolean' P1
-
-  if sanValue == 0 and self._curAnimLevel ~= 2 then
-    self._curAnimLevel = 2
-    ;
-    (self._anim):Play((self._animName)[2])
-  end
-  if self._curAnimLevel ~= 0 then
+  sanValue = math.floor(sanValue + 0.5)
+  self._sanValue:SetText(sanValue)
+  local sanNormal = 0 < sanValue
+  self._imageNormalGo:SetActive(sanNormal)
+  self._imageWarningGo:SetActive(not sanNormal)
+  if sanValue <= self._sanEffTopVal and 0 < sanValue then
+    if self._curAnimLevel ~= 1 then
+      self._curAnimLevel = 1
+      self._anim:Play(self._animName[1])
+    end
+  elseif sanValue == 0 then
+    if self._curAnimLevel ~= 2 then
+      self._curAnimLevel = 2
+      self._anim:Play(self._animName[2])
+    end
+  elseif self._curAnimLevel ~= 0 then
     self._curAnimLevel = 0
-    ;
-    (self._anim):Stop()
+    self._anim:Stop()
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureSan._OnFeatureSanValueChange = function(self, curValue, oldValue, modifyValue, forceRefresh)
-  -- function num : 0_7
+function UIWidgetFeatureSan:_OnFeatureSanValueChange(curValue, oldValue, modifyValue, forceRefresh)
   self._curVal = self._curVal + modifyValue
   self:SetValue(self._curVal)
   if forceRefresh == 1 then
@@ -123,13 +88,8 @@ UIWidgetFeatureSan._OnFeatureSanValueChange = function(self, curValue, oldValue,
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureSan._OnFeatureSanMaxValueChange = function(self, curValue, oldValue, modifyValue, curMaxValue)
-  -- function num : 0_8
+function UIWidgetFeatureSan:_OnFeatureSanMaxValueChange(curValue, oldValue, modifyValue, curMaxValue)
   self._maxVal = curMaxValue
   self._curVal = self._curVal + modifyValue
   self:SetValue(self._curVal)
 end
-
-

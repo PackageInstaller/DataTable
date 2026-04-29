@@ -1,52 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_summon_trap_by_sue_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlaySummonTrapBySummonEveryThingInstruction", BaseInstruction)
 PlaySummonTrapBySummonEveryThingInstruction = PlaySummonTrapBySummonEveryThingInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySummonTrapBySummonEveryThingInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySummonTrapBySummonEveryThingInstruction:Constructor(paramList)
   self._trapID = tonumber(paramList.trapID)
   self._effectID = tonumber(paramList.effectID)
   self._interval = tonumber(paramList.interval)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySummonTrapBySummonEveryThingInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySummonTrapBySummonEveryThingInstruction:GetCacheResource()
   local t = {}
   if self._trapID then
-    local cfgTrap = (Cfg.cfg_trap)[self._trapID]
+    local cfgTrap = Cfg.cfg_trap[self._trapID]
     if cfgTrap then
-      for i,resPath in ipairs(cfgTrap.ResPath) do
-        (table.insert)(t, {resPath, 1})
+      for i, resPath in ipairs(cfgTrap.ResPath) do
+        table.insert(t, {resPath, 1})
       end
     end
   end
-  do
-    do
-      if self._effectID then
-        local cfgfx = (Cfg.cfg_effect)[self._effectID]
-        if cfgfx then
-          (table.insert)(t, {cfgfx.ResPath, 1})
-        end
-      end
-      return t
+  if self._effectID then
+    local cfgfx = Cfg.cfg_effect[self._effectID]
+    if cfgfx then
+      table.insert(t, {
+        cfgfx.ResPath,
+        1
+      })
     end
   end
+  return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySummonTrapBySummonEveryThingInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySummonTrapBySummonEveryThingInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local summonResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SummonEverything)
   if summonResultArray then
     for i = 1, #summonResultArray do
@@ -60,25 +46,19 @@ PlaySummonTrapBySummonEveryThingInstruction.DoInstruction = function(self, TT, c
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySummonTrapBySummonEveryThingInstruction._ShowTrapFromSummonEverything = function(self, TT, world, summonRes)
-  -- function num : 0_3 , upvalues : _ENV
+function PlaySummonTrapBySummonEveryThingInstruction:_ShowTrapFromSummonEverything(TT, world, summonRes)
   local summonMonsterData = summonRes:GetTrapData()
   local posSummon = summonRes:GetSummonPos()
   local summonTrapID = summonRes:GetSummonID()
   local trapEntity = world:GetEntityByID(summonMonsterData.m_entityWorkID)
   if not trapEntity then
-    (Log.error)(self._className, "trap not found: ", tostring(posSummon), " id=", summonTrapID)
-    return 
+    Log.error(self._className, "trap not found: ", tostring(posSummon), " id=", summonTrapID)
+    return
   end
   self:_ShowTrap(TT, world, trapEntity, posSummon)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySummonTrapBySummonEveryThingInstruction._ShowTrap = function(self, TT, world, trapEntity, posSummon)
-  -- function num : 0_4
+function PlaySummonTrapBySummonEveryThingInstruction:_ShowTrap(TT, world, trapEntity, posSummon)
   trapEntity:SetPosition(posSummon)
   local trapServiceRender = world:GetService("TrapRender")
   trapServiceRender:CreateSingleTrapRender(TT, trapEntity, true)
@@ -87,5 +67,3 @@ PlaySummonTrapBySummonEveryThingInstruction._ShowTrap = function(self, TT, world
     effectService:CreateWorldPositionDirectionEffect(self._effectID, posSummon)
   end
 end
-
-

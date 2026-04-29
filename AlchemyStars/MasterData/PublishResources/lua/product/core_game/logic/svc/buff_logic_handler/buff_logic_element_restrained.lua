@@ -1,41 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_element_restrained.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddElementRestrained", BuffLogicBase)
 BuffLogicAddElementRestrained = BuffLogicAddElementRestrained
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddElementRestrained.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddElementRestrained:Constructor(buffInstance, logicParam)
   self._mulValue = logicParam.mulValue
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddElementRestrained.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):ChangeExElementParam(e, (self._buffInstance):BuffSeq(), self._mulValue)
+function BuffLogicAddElementRestrained:DoLogic()
+  local e = self._buffInstance:Entity()
+  self._buffLogicService:ChangeExElementParam(e, self._buffInstance:BuffSeq(), self._mulValue)
 end
 
 _class("BuffLogicRemoveElementRestrained", BuffLogicBase)
 BuffLogicRemoveElementRestrained = BuffLogicRemoveElementRestrained
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveElementRestrained.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveElementRestrained:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveElementRestrained.DoLogic = function(self)
-  -- function num : 0_3
-  local e = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):RemoveExElementParam(e, (self._buffInstance):BuffSeq())
+function BuffLogicRemoveElementRestrained:DoLogic()
+  local e = self._buffInstance:Entity()
+  self._buffLogicService:RemoveExElementParam(e, self._buffInstance:BuffSeq())
 end
-
-

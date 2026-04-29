@@ -1,78 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/ui_activity_math.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityMath", Object)
 UIActivityMath = UIActivityMath
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityMath.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityMath:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMath.IsInRect = function(p, rect)
-  -- function num : 0_1
-  do return rect.xMin <= p.x and p.x <= rect.xMax and rect.yMin <= p.y and p.y <= rect.yMax end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIActivityMath.IsInRect(p, rect)
+  return p.x >= rect.xMin and p.x <= rect.xMax and p.y >= rect.yMin and p.y <= rect.yMax
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMath.IsIntersection_V2 = function(a, b, c, d)
-  -- function num : 0_2 , upvalues : _ENV
-  return (UIActivityMath.IsIntersection)(Vector3(a.x, 0, a.y), Vector3(b.x, 0, b.y), Vector3(c.x, 0, c.y), Vector3(d.x, 0, d.y))
+function UIActivityMath.IsIntersection_V2(a, b, c, d)
+  return UIActivityMath.IsIntersection(Vector3(a.x, 0, a.y), Vector3(b.x, 0, b.y), Vector3(c.x, 0, c.y), Vector3(d.x, 0, d.y))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMath.IsIntersection = function(a, b, c, d)
-  -- function num : 0_3 , upvalues : _ENV
-  local c1 = (Vector3.Cross)(d - c, a - c)
-  local c2 = (Vector3.Cross)(d - c, b - c)
-  local crossA = (Mathf.Sign)(((Vector3.Cross)(d - c, a - c)).y)
-  local crossB = (Mathf.Sign)(((Vector3.Cross)(d - c, b - c)).y)
-  if (Mathf.Approximately)(crossA, crossB) then
+function UIActivityMath.IsIntersection(a, b, c, d)
+  local c1 = Vector3.Cross(d - c, a - c)
+  local c2 = Vector3.Cross(d - c, b - c)
+  local crossA = Mathf.Sign(Vector3.Cross(d - c, a - c).y)
+  local crossB = Mathf.Sign(Vector3.Cross(d - c, b - c).y)
+  if Mathf.Approximately(crossA, crossB) then
     return false
   end
-  local crossC = (Mathf.Sign)(((Vector3.Cross)(b - a, c - a)).y)
-  local crossD = (Mathf.Sign)(((Vector3.Cross)(b - a, d - a)).y)
-  if (Mathf.Approximately)(crossC, crossD) then
+  local crossC = Mathf.Sign(Vector3.Cross(b - a, c - a).y)
+  local crossD = Mathf.Sign(Vector3.Cross(b - a, d - a).y)
+  if Mathf.Approximately(crossC, crossD) then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMath.Cross = function(p1, p2, p3, p4)
-  -- function num : 0_4
+function UIActivityMath.Cross(p1, p2, p3, p4)
   return (p2.x - p1.x) * (p4.y - p3.y) - (p2.y - p1.y) * (p4.x - p3.x)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMath.Area = function(p1, p2, p3)
-  -- function num : 0_5 , upvalues : _ENV
-  return (UIActivityMath.Cross)(p1, p2, p1, p3)
+function UIActivityMath.Area(p1, p2, p3)
+  return UIActivityMath.Cross(p1, p2, p1, p3)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMath.fArea = function(p1, p2, p3)
-  -- function num : 0_6 , upvalues : _ENV
-  return (Mathf.Abs)((UIActivityMath.Area)(p1, p2, p3))
+function UIActivityMath.fArea(p1, p2, p3)
+  return Mathf.Abs(UIActivityMath.Area(p1, p2, p3))
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMath.Inter = function(p1, p2, p3, p4)
-  -- function num : 0_7 , upvalues : _ENV
-  local s1 = (UIActivityMath.fArea)(p1, p2, p3)
-  local s2 = (UIActivityMath.fArea)(p1, p2, p4)
+function UIActivityMath.Inter(p1, p2, p3, p4)
+  local s1 = UIActivityMath.fArea(p1, p2, p3)
+  local s2 = UIActivityMath.fArea(p1, p2, p4)
   return Vector2((p4.x * s1 + p3.x * s2) / (s1 + s2), (p4.y * s1 + p3.y * s2) / (s1 + s2))
 end
-
-

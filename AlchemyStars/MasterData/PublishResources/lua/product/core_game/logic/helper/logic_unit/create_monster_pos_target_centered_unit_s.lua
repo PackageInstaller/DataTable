@@ -1,138 +1,99 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/logic_unit/create_monster_pos_target_centered_unit_s.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CreateMonsterPosTargetCenteredUnit", Object)
 CreateMonsterPosTargetCenteredUnit = CreateMonsterPosTargetCenteredUnit
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CreateMonsterPosTargetCenteredUnit.Constructor = function(self, world)
-  -- function num : 0_0
+function CreateMonsterPosTargetCenteredUnit:Constructor(world)
   self._world = world
   self._gridList = {}
   self._gridByRing = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosTargetCenteredUnit.InitGridList = function(self, v2CenterPos, filterBlockFlag)
-  -- function num : 0_1 , upvalues : _ENV
-  local eBoard = (self._world):GetBoardEntity()
+function CreateMonsterPosTargetCenteredUnit:InitGridList(v2CenterPos, filterBlockFlag)
+  local eBoard = self._world:GetBoardEntity()
   local cBoard = eBoard:Board()
-  for x,ys in pairs(cBoard._blockFlags) do
-    for y,blockData in pairs(ys) do
+  for x, ys in pairs(cBoard._blockFlags) do
+    for y, blockData in pairs(ys) do
       if x ~= v2CenterPos.x or y ~= v2CenterPos.y then
         local posBlockFlag = blockData:GetBlock()
         if posBlockFlag & filterBlockFlag ~= filterBlockFlag then
-          (table.insert)(self._gridList, (Vector2.New)(x, y))
+          table.insert(self._gridList, Vector2.New(x, y))
         end
       end
     end
   end
-  for _,v2 in ipairs(self._gridList) do
-    local ring = (math.max)((math.abs)(v2.x - v2CenterPos.x), (math.abs)(v2.y - v2CenterPos.y))
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R11 in 'UnsetPending'
-
-    if not (self._gridByRing)[ring] then
-      (self._gridByRing)[ring] = {}
+  for _, v2 in ipairs(self._gridList) do
+    local ring = math.max(math.abs(v2.x - v2CenterPos.x), math.abs(v2.y - v2CenterPos.y))
+    if not self._gridByRing[ring] then
+      self._gridByRing[ring] = {}
     end
-    ;
-    (table.insert)((self._gridByRing)[ring], v2)
+    table.insert(self._gridByRing[ring], v2)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosTargetCenteredUnit.GetPosByBlockFlag = function(self, blockFlag, preferRadius, area)
-  -- function num : 0_2 , upvalues : _ENV
+function CreateMonsterPosTargetCenteredUnit:GetPosByBlockFlag(blockFlag, preferRadius, area)
   if #self._gridList == 0 then
-    (Log.info)(self._className, "Not enough empty grid. ")
+    Log.info(self._className, "Not enough empty grid. ")
     return nil
   end
-  local v2SelectedPos = nil
+  local v2SelectedPos
   local preferPool = {}
   for i = 1, preferRadius do
-    if (self._gridByRing)[i] then
-      (table.appendArray)(preferPool, (self._gridByRing)[i])
+    if self._gridByRing[i] then
+      table.appendArray(preferPool, self._gridByRing[i])
     end
   end
-  local lsvcBoard = (self._world):GetService("BoardLogic")
-  local theoryMaxRing = (math.max)(lsvcBoard:GetCurBoardMaxX(), lsvcBoard:GetCurBoardMaxY())
-  local usvcUtilData = (self._world):GetService("UtilData")
-  local lsvcRandom = (self._world):GetService("RandomLogic")
+  local lsvcBoard = self._world:GetService("BoardLogic")
+  local theoryMaxRing = math.max(lsvcBoard:GetCurBoardMaxX(), lsvcBoard:GetCurBoardMaxY())
+  local usvcUtilData = self._world:GetService("UtilData")
+  local lsvcRandom = self._world:GetService("RandomLogic")
   local currentRing = preferRadius
-  while 1 do
-    while 1 do
-      if not v2SelectedPos then
-        if #preferPool ~= 0 then
-          local index = lsvcRandom:LogicRand(1, #preferPool)
-          local v2 = (table.remove)(preferPool, index)
-          local isPosSuitable = true
-          for _,v2Relative in ipairs(area) do
-            local v2Pos = v2 + v2Relative
-            if not usvcUtilData:IsPosBlock(v2Pos, blockFlag) then
-              isPosSuitable = false
-              break
-            end
-          end
-          do
-            do
-              if isPosSuitable then
-                v2SelectedPos = v2
-              end
-              -- DECOMPILER ERROR at PC81: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC81: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC81: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC81: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC81: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+  while not v2SelectedPos do
+    if #preferPool ~= 0 then
+      local index = lsvcRandom:LogicRand(1, #preferPool)
+      local v2 = table.remove(preferPool, index)
+      local isPosSuitable = true
+      for _, v2Relative in ipairs(area) do
+        local v2Pos = v2 + v2Relative
+        if not usvcUtilData:IsPosBlock(v2Pos, blockFlag) then
+          isPosSuitable = false
+          break
         end
       end
-    end
-    for i = currentRing + 1, theoryMaxRing do
-      if (self._gridByRing)[i] then
-        for k,v in ipairs((self._gridByRing)[i]) do
-          preferPool[k] = v
+      if isPosSuitable then
+        v2SelectedPos = v2
+      end
+    else
+      for i = currentRing + 1, theoryMaxRing do
+        if self._gridByRing[i] then
+          for k, v in ipairs(self._gridByRing[i]) do
+            preferPool[k] = v
+          end
+          currentRing = i
+          break
         end
-        currentRing = i
+      end
+      if currentRing == theoryMaxRing then
         break
       end
     end
   end
-  do
-    if currentRing ~= theoryMaxRing then
-      return v2SelectedPos
-    end
-  end
+  return v2SelectedPos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosTargetCenteredUnit.RemovePosFromCache = function(self, v2, body)
-  -- function num : 0_3 , upvalues : _ENV
-  if not body then
-    body = {Vector2.zero}
-  end
-  for _,v2Relative in ipairs(body) do
+function CreateMonsterPosTargetCenteredUnit:RemovePosFromCache(v2, body)
+  body = body or {
+    Vector2.zero
+  }
+  for _, v2Relative in ipairs(body) do
     local v2Pos = v2 + v2Relative
-    local gridIndex = (table.ikey)(self._gridList, v2Pos)
+    local gridIndex = table.ikey(self._gridList, v2Pos)
     if gridIndex then
-      (table.remove)(self._gridList, gridIndex)
+      table.remove(self._gridList, gridIndex)
     end
-    for _,list in pairs(self._gridByRing) do
-      local gridRingIndex = (table.ikey)(self._gridList, v2Pos)
+    for _, list in pairs(self._gridByRing) do
+      local gridRingIndex = table.ikey(self._gridList, v2Pos)
       if gridRingIndex then
-        (table.remove)(list, gridRingIndex)
+        table.remove(list, gridRingIndex)
       end
     end
   end
 end
-
-

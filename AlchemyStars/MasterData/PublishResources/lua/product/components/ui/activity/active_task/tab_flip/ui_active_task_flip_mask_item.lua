@@ -1,36 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/active_task/tab_flip/ui_active_task_flip_mask_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActiveTaskFlipMaskItem", UICustomWidget)
 UIActiveTaskFlipMaskItem = UIActiveTaskFlipMaskItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActiveTaskFlipMaskItem.OnShow = function(self)
-  -- function num : 0_0
+function UIActiveTaskFlipMaskItem:OnShow()
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipMaskItem.OnHide = function(self)
-  -- function num : 0_1
+function UIActiveTaskFlipMaskItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipMaskItem._GetComponent = function(self)
-  -- function num : 0_2
+function UIActiveTaskFlipMaskItem:_GetComponent()
   self._bgObj = self:GetGameObject("bg")
   self._rect = self:GetUIComponent("RectTransform", "rect")
   self._anim = self:GetUIComponent("Animation", "rect")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipMaskItem.SetData = function(self, data, gridSize, callback)
-  -- function num : 0_3
+function UIActiveTaskFlipMaskItem:SetData(data, gridSize, callback)
   self._isFliped = data.isFlip
   self._index = data.index
   self._gridSize = gridSize
@@ -38,71 +22,38 @@ UIActiveTaskFlipMaskItem.SetData = function(self, data, gridSize, callback)
   self:InitComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipMaskItem.InitComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActiveTaskFlipMaskItem:InitComponent()
   self:SetFlipState(self._isFliped)
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMax = Vector2(0, 1)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMin = Vector2(0, 1)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).sizeDelta = Vector2((self._gridSize).x, (self._gridSize).y)
-  local row = (math.floor)(self._index / 10)
+  self._rect.anchorMax = Vector2(0, 1)
+  self._rect.anchorMin = Vector2(0, 1)
+  self._rect.sizeDelta = Vector2(self._gridSize.x, self._gridSize.y)
+  local row = math.floor(self._index / 10)
   local arrange = -(self._index % 10)
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = Vector2(row * (self._gridSize).x, arrange * (self._gridSize).y)
+  self._rect.anchoredPosition = Vector2(row * self._gridSize.x, arrange * self._gridSize.y)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipMaskItem.SetFlipState = function(self, isFlip)
-  -- function num : 0_5
+function UIActiveTaskFlipMaskItem:SetFlipState(isFlip)
   self._isFliped = isFlip
-  ;
-  (self._bgObj):SetActive(not self._isFliped)
+  self._bgObj:SetActive(not self._isFliped)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipMaskItem.GetCellIndex = function(self)
-  -- function num : 0_6
+function UIActiveTaskFlipMaskItem:GetCellIndex()
   return self._index
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipMaskItem.GetMaskPos = function(self)
-  -- function num : 0_7
-  return (self._rect).anchoredPosition
+function UIActiveTaskFlipMaskItem:GetMaskPos()
+  return self._rect.anchoredPosition
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipMaskItem.IsMaskFliped = function(self)
-  -- function num : 0_8
+function UIActiveTaskFlipMaskItem:IsMaskFliped()
   return self._isFliped
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipMaskItem.MaskBtnOnClick = function(self)
-  -- function num : 0_9
+function UIActiveTaskFlipMaskItem:MaskBtnOnClick()
   if self._isFliped then
-    return 
+    return
   end
   if self._callback then
-    (self._callback)(self)
+    self._callback(self)
   end
 end
-
-

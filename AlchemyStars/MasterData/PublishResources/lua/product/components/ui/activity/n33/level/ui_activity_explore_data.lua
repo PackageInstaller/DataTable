@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/level/ui_activity_explore_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityExploreBuildBossData", Object)
 UIActivityExploreBuildBossData = UIActivityExploreBuildBossData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityExploreBuildBossData.Constructor = function(self, cfg)
-  -- function num : 0_0 , upvalues : _ENV
-  self._name = (StringTable.Get)(cfg.BossName)
+function UIActivityExploreBuildBossData:Constructor(cfg)
+  self._name = StringTable.Get(cfg.BossName)
   self._spine = cfg.Spine
   self._idleAnim = cfg.IdleAnim
   self._unlockAnim = cfg.UnLockAnim
@@ -18,202 +11,137 @@ UIActivityExploreBuildBossData.Constructor = function(self, cfg)
   self._disappearAnimLength = cfg.DisappearAnimLength
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildBossData.GetName = function(self)
-  -- function num : 0_1
+function UIActivityExploreBuildBossData:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildBossData.GetSpine = function(self)
-  -- function num : 0_2
+function UIActivityExploreBuildBossData:GetSpine()
   return self._spine
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildBossData.GetIdleAnim = function(self)
-  -- function num : 0_3
+function UIActivityExploreBuildBossData:GetIdleAnim()
   return self._idleAnim
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildBossData.GetUnlockAnim = function(self)
-  -- function num : 0_4
+function UIActivityExploreBuildBossData:GetUnlockAnim()
   return self._unlockAnim
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildBossData.GetDisappearAnim = function(self)
-  -- function num : 0_5
+function UIActivityExploreBuildBossData:GetDisappearAnim()
   return self._disappearAnim
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildBossData.GetUnlockAnimLength = function(self)
-  -- function num : 0_6
+function UIActivityExploreBuildBossData:GetUnlockAnimLength()
   return self._unlockAnimLength
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildBossData.GetDisappearAnimLength = function(self)
-  -- function num : 0_7
+function UIActivityExploreBuildBossData:GetDisappearAnimLength()
   return self._disappearAnimLength
 end
 
 _class("UIActivityExploreLevelData", Object)
 UIActivityExploreLevelData = UIActivityExploreLevelData
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityExploreLevelData.Constructor = function(self, missionId, component, componentInfo, isHard)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityExploreLevelData:Constructor(missionId, component, componentInfo, isHard)
   self._isHard = isHard
   self._component = component
   self._componentInfo = componentInfo
   self._missionId = missionId
-  self._isComplete = ((self._componentInfo).m_pass_mission_info)[self._missionId] ~= nil
-  local cmpID = (self._component):GetComponentCfgId()
-  local lineMissionCfgs = (Cfg.cfg_component_line_mission)({ComponentID = cmpID, CampaignMissionId = self._missionId})
+  self._isComplete = self._componentInfo.m_pass_mission_info[self._missionId] ~= nil
+  local cmpID = self._component:GetComponentCfgId()
+  local lineMissionCfgs = Cfg.cfg_component_line_mission({
+    ComponentID = cmpID,
+    CampaignMissionId = self._missionId
+  })
   local lineMissionCfg = lineMissionCfgs[1]
   self._isOpen = true
   local needMissionId = lineMissionCfg.NeedMissionId
-  if ((self._componentInfo).m_pass_mission_info)[needMissionId] == nil then
-    self._isOpen = needMissionId == nil or needMissionId <= 0
-    local needMissionCfg = (Cfg.cfg_campaign_mission)[needMissionId]
-    do
-      local missionName = (StringTable.Get)(needMissionCfg.Name)
-      self._tips = (StringTable.Get)("str_n33_level_lock_tips", missionName)
-      local missionCfg = (Cfg.cfg_campaign_mission)[self._missionId]
-      self._name = (StringTable.Get)(missionCfg.Name)
-      self._star = 0
-      local passInfo = ((self._componentInfo).m_pass_mission_info)[self._missionId]
-      do
-        if passInfo then
-          local module = (GameGlobal.GetModule)(MissionModule)
-          self._star = module:ParseStarInfo(passInfo.star)
-          if self._isHard then
-            self._star = 1
-          end
-        end
-        self._totalStar = 3
-        if self._isHard then
-          self._totalStar = 1
-        end
-        self._levelType = missionCfg.Type
-        if self._levelType == DiscoveryStageType.Plot then
-          self._totalStar = 0
-        end
-        self._boss = nil
-        do
-          if self._levelType == DiscoveryStageType.FightBoss then
-            local cfg = (Cfg.cfg_n33_boss)[self._missionId]
-            if cfg then
-              self._boss = UIActivityExploreBuildBossData:New(cfg)
-            end
-          end
-          -- DECOMPILER ERROR: 7 unprocessed JMP targets
-        end
-      end
+  if needMissionId ~= nil and 0 < needMissionId then
+    self._isOpen = self._componentInfo.m_pass_mission_info[needMissionId] ~= nil
+    local needMissionCfg = Cfg.cfg_campaign_mission[needMissionId]
+    local missionName = StringTable.Get(needMissionCfg.Name)
+    self._tips = StringTable.Get("str_n33_level_lock_tips", missionName)
+  end
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionId]
+  self._name = StringTable.Get(missionCfg.Name)
+  self._star = 0
+  local passInfo = self._componentInfo.m_pass_mission_info[self._missionId]
+  if passInfo then
+    local module = GameGlobal.GetModule(MissionModule)
+    self._star = module:ParseStarInfo(passInfo.star)
+    if self._isHard then
+      self._star = 1
+    end
+  end
+  self._totalStar = 3
+  if self._isHard then
+    self._totalStar = 1
+  end
+  self._levelType = missionCfg.Type
+  if self._levelType == DiscoveryStageType.Plot then
+    self._totalStar = 0
+  end
+  self._boss = nil
+  if self._levelType == DiscoveryStageType.FightBoss then
+    local cfg = Cfg.cfg_n33_boss[self._missionId]
+    if cfg then
+      self._boss = UIActivityExploreBuildBossData:New(cfg)
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreLevelData.IsHard = function(self)
-  -- function num : 0_9
+function UIActivityExploreLevelData:IsHard()
   return self._isHard
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreLevelData.GetTips = function(self)
-  -- function num : 0_10
+function UIActivityExploreLevelData:GetTips()
   return self._tips
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreLevelData.GetComponent = function(self)
-  -- function num : 0_11
+function UIActivityExploreLevelData:GetComponent()
   return self._component
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreLevelData.GetComponentInfo = function(self)
-  -- function num : 0_12
+function UIActivityExploreLevelData:GetComponentInfo()
   return self._componentInfo
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreLevelData.GetMissionId = function(self)
-  -- function num : 0_13
+function UIActivityExploreLevelData:GetMissionId()
   return self._missionId
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreLevelData.GetTotalStar = function(self)
-  -- function num : 0_14
+function UIActivityExploreLevelData:GetTotalStar()
   return self._totalStar
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreLevelData.GetStar = function(self)
-  -- function num : 0_15
+function UIActivityExploreLevelData:GetStar()
   return self._star
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreLevelData.GetLevelType = function(self)
-  -- function num : 0_16
+function UIActivityExploreLevelData:GetLevelType()
   return self._levelType
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreLevelData.IsOpen = function(self)
-  -- function num : 0_17
+function UIActivityExploreLevelData:IsOpen()
   return self._isOpen
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreLevelData.IsComplete = function(self)
-  -- function num : 0_18
+function UIActivityExploreLevelData:IsComplete()
   return self._isComplete
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreLevelData.GetName = function(self)
-  -- function num : 0_19
+function UIActivityExploreLevelData:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreLevelData.GetBoss = function(self)
-  -- function num : 0_20
+function UIActivityExploreLevelData:GetBoss()
   return self._boss
 end
 
 _class("UIActivityExploreBuildData", Object)
 UIActivityExploreBuildData = UIActivityExploreBuildData
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityExploreBuildData.Constructor = function(self, cfg, component, componentInfo, lockIcon, openIcon, selectIcon, isHard)
-  -- function num : 0_21 , upvalues : _ENV
+function UIActivityExploreBuildData:Constructor(cfg, component, componentInfo, lockIcon, openIcon, selectIcon, isHard)
   self._isHard = isHard
   self._component = component
   self._componentInfo = componentInfo
@@ -221,141 +149,94 @@ UIActivityExploreBuildData.Constructor = function(self, cfg, component, componen
   self._openIcon = openIcon
   self._selectIcon = selectIcon
   self._buildId = cfg.ArchitectureId
-  self._name = (StringTable.Get)(cfg.Name)
-  self._des = (StringTable.Get)(cfg.Des)
+  self._name = StringTable.Get(cfg.Name)
+  self._des = StringTable.Get(cfg.Des)
   self._buildUnLockAnimationLength = cfg.BuildUnLockAnimLength
   self._missions = {}
   if cfg.MissionIds then
     for i = 1, #cfg.MissionIds do
-      -- DECOMPILER ERROR at PC42: Confused about usage of register: R12 in 'UnsetPending'
-
-      (self._missions)[#self._missions + 1] = UIActivityExploreLevelData:New((cfg.MissionIds)[i], self._component, self._componentInfo, self._isHard)
+      self._missions[#self._missions + 1] = UIActivityExploreLevelData:New(cfg.MissionIds[i], self._component, self._componentInfo, self._isHard)
     end
   end
-  do
-    self._lockMissionId = cfg.BuildLockMissionId
-    if not self._lockMissionId then
-      self:PlayOpenAnim()
-    end
-    self._position = Vector2((cfg.Position)[1], (cfg.Position)[2])
+  self._lockMissionId = cfg.BuildLockMissionId
+  if not self._lockMissionId then
+    self:PlayOpenAnim()
   end
+  self._position = Vector2(cfg.Position[1], cfg.Position[2])
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.GetBuildUnlockAnimationLength = function(self)
-  -- function num : 0_22
+function UIActivityExploreBuildData:GetBuildUnlockAnimationLength()
   return 700
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.GetLockIcon = function(self)
-  -- function num : 0_23
+function UIActivityExploreBuildData:GetLockIcon()
   return self._lockIcon
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.GetOpenIcon = function(self)
-  -- function num : 0_24
+function UIActivityExploreBuildData:GetOpenIcon()
   return self._openIcon
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.GetSelectIcon = function(self)
-  -- function num : 0_25
+function UIActivityExploreBuildData:GetSelectIcon()
   return self._selectIcon
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.BuildId = function(self)
-  -- function num : 0_26
+function UIActivityExploreBuildData:BuildId()
   return self._buildId
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.GetName = function(self)
-  -- function num : 0_27
+function UIActivityExploreBuildData:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.GetDes = function(self)
-  -- function num : 0_28
+function UIActivityExploreBuildData:GetDes()
   return self._des
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.GetMissions = function(self)
-  -- function num : 0_29
+function UIActivityExploreBuildData:GetMissions()
   return self._missions
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.GetPosition = function(self)
-  -- function num : 0_30
+function UIActivityExploreBuildData:GetPosition()
   return self._position
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.IsOpen = function(self)
-  -- function num : 0_31
+function UIActivityExploreBuildData:IsOpen()
   if self._lockMissionId == nil or self._lockMissionId <= 0 then
     return true
   end
-  do return ((self._componentInfo).m_pass_mission_info)[self._lockMissionId] ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return self._componentInfo.m_pass_mission_info[self._lockMissionId] ~= nil
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.TotalStar = function(self)
-  -- function num : 0_32
+function UIActivityExploreBuildData:TotalStar()
   local totalStar = 0
   for i = 1, #self._missions do
-    local mission = (self._missions)[i]
+    local mission = self._missions[i]
     if mission:IsOpen() then
-      totalStar = totalStar + ((self._missions)[i]):GetTotalStar()
+      totalStar = totalStar + self._missions[i]:GetTotalStar()
     end
   end
   return totalStar
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.GetStar = function(self)
-  -- function num : 0_33
+function UIActivityExploreBuildData:GetStar()
   local star = 0
   for i = 1, #self._missions do
-    star = star + ((self._missions)[i]):GetStar()
+    star = star + self._missions[i]:GetStar()
   end
   return star
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.GetCanPlayOpenAnim = function(self)
-  -- function num : 0_34
+function UIActivityExploreBuildData:GetCanPlayOpenAnim()
   if self:IsOpen() and self:HasPlayOpenAnim() == false then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.GetCanPlayDiappearAnimBoss = function(self)
-  -- function num : 0_35
+function UIActivityExploreBuildData:GetCanPlayDiappearAnimBoss()
   for i = 1, #self._missions do
-    local mission = (self._missions)[i]
+    local mission = self._missions[i]
     if mission:GetBoss() ~= nil and mission:IsOpen() and mission:IsComplete() and self:HasPlayDisappearAnim(mission:GetMissionId()) == false then
       return mission
     end
@@ -363,12 +244,9 @@ UIActivityExploreBuildData.GetCanPlayDiappearAnimBoss = function(self)
   return nil
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.GetCanPlayEnterAnimBoss = function(self)
-  -- function num : 0_36
+function UIActivityExploreBuildData:GetCanPlayEnterAnimBoss()
   for i = 1, #self._missions do
-    local mission = (self._missions)[i]
+    local mission = self._missions[i]
     if mission:GetBoss() ~= nil and mission:IsOpen() and mission:IsComplete() == false and self:HasPlayEnterAnim(mission:GetMissionId()) == false then
       return mission
     end
@@ -376,12 +254,9 @@ UIActivityExploreBuildData.GetCanPlayEnterAnimBoss = function(self)
   return nil
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.GetCurrentLevel = function(self)
-  -- function num : 0_37
+function UIActivityExploreBuildData:GetCurrentLevel()
   for i = 1, #self._missions do
-    local mission = (self._missions)[i]
+    local mission = self._missions[i]
     if mission:IsOpen() == true and mission:IsComplete() == false then
       return mission
     end
@@ -389,99 +264,62 @@ UIActivityExploreBuildData.GetCurrentLevel = function(self)
   return nil
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.IsCurrentBuild = function(self)
-  -- function num : 0_38
+function UIActivityExploreBuildData:IsCurrentBuild()
   local currentLevel = self:GetCurrentLevel()
-  do return currentLevel ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return currentLevel ~= nil
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.HasPlayOpenAnim = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function UIActivityExploreBuildData:HasPlayOpenAnim()
   local key = self:GetOpenAnimSaveKey()
-  if not ((UnityEngine.PlayerPrefs).HasKey)(key) then
+  if not UnityEngine.PlayerPrefs.HasKey(key) then
     return false
   end
-  local value = ((UnityEngine.PlayerPrefs).GetInt)(key)
-  do return value == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local value = UnityEngine.PlayerPrefs.GetInt(key)
+  return value == 1
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.PlayOpenAnim = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function UIActivityExploreBuildData:PlayOpenAnim()
   local key = self:GetOpenAnimSaveKey()
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+  UnityEngine.PlayerPrefs.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.HasPlayEnterAnim = function(self, missionId)
-  -- function num : 0_41 , upvalues : _ENV
+function UIActivityExploreBuildData:HasPlayEnterAnim(missionId)
   local key = self:GetEnterBossSaveKey(missionId)
-  if not ((UnityEngine.PlayerPrefs).HasKey)(key) then
+  if not UnityEngine.PlayerPrefs.HasKey(key) then
     return false
   end
-  local value = ((UnityEngine.PlayerPrefs).GetInt)(key)
-  do return value == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local value = UnityEngine.PlayerPrefs.GetInt(key)
+  return value == 1
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.PlayEnterAnim = function(self, missionId)
-  -- function num : 0_42 , upvalues : _ENV
+function UIActivityExploreBuildData:PlayEnterAnim(missionId)
   local key = self:GetEnterBossSaveKey(missionId)
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+  UnityEngine.PlayerPrefs.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.HasPlayDisappearAnim = function(self, missionId)
-  -- function num : 0_43 , upvalues : _ENV
+function UIActivityExploreBuildData:HasPlayDisappearAnim(missionId)
   local key = self:GetDisappearBossSaveKey(missionId)
-  if not ((UnityEngine.PlayerPrefs).HasKey)(key) then
+  if not UnityEngine.PlayerPrefs.HasKey(key) then
     return false
   end
-  local value = ((UnityEngine.PlayerPrefs).GetInt)(key)
-  do return value == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local value = UnityEngine.PlayerPrefs.GetInt(key)
+  return value == 1
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.PlayDisappearAnim = function(self, missionId)
-  -- function num : 0_44 , upvalues : _ENV
+function UIActivityExploreBuildData:PlayDisappearAnim(missionId)
   local key = self:GetDisappearBossSaveKey(missionId)
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+  UnityEngine.PlayerPrefs.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.GetDisappearBossSaveKey = function(self, missionId)
-  -- function num : 0_45
+function UIActivityExploreBuildData:GetDisappearBossSaveKey(missionId)
   return self:GetCustomFlagKey("BOSS_DISAPPEAR_KEY_" .. missionId)
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.GetEnterBossSaveKey = function(self, missionId)
-  -- function num : 0_46
+function UIActivityExploreBuildData:GetEnterBossSaveKey(missionId)
   return self:GetCustomFlagKey("BOSS_ENTER_KEY_" .. missionId)
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.GetOpenAnimSaveKey = function(self)
-  -- function num : 0_47
+function UIActivityExploreBuildData:GetOpenAnimSaveKey()
   local buildType = 1
   if self._isHard then
     buildType = 2
@@ -489,14 +327,9 @@ UIActivityExploreBuildData.GetOpenAnimSaveKey = function(self)
   return self:GetCustomFlagKey("OPEN_ANIMATION_ENTER_KEY_" .. self._buildId .. buildType)
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityExploreBuildData.GetCustomFlagKey = function(self, id)
-  -- function num : 0_48 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityExploreBuildData:GetCustomFlagKey(id)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. id
   return key
 end
-
-

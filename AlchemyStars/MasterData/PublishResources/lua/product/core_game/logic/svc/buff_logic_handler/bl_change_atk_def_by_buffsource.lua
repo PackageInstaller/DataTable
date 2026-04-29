@@ -1,41 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_atk_def_by_buffsource.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeAtkDefByBuffSource", BuffLogicBase)
 BuffLogicChangeAtkDefByBuffSource = BuffLogicChangeAtkDefByBuffSource
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeAtkDefByBuffSource.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeAtkDefByBuffSource:Constructor(buffInstance, logicParam)
   self._percent = logicParam.percent or 0
   self._entity = buffInstance._entity
   self._type = logicParam.type
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAtkDefByBuffSource.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeAtkDefByBuffSource:DoLogic()
   local sourceEntity = self:GetBuffSourceEntity()
   if sourceEntity then
-    local teamEntity = (sourceEntity:Pet()):GetOwnerTeamEntity()
+    local teamEntity = sourceEntity:Pet():GetOwnerTeamEntity()
     if self._type == ChangeAtkDefType.ChangeDefByAtk then
-      local atk = (sourceEntity:Attributes()):GetAttribute("Attack")
-      local value = (math.floor)(atk * self._percent)
-      ;
-      (self._buffLogicService):ChangeBaseDefence(sourceEntity, (self._buffInstance):BuffSeq(), ModifyBaseDefenceType.DefenceConstantFix, value)
+      local atk = sourceEntity:Attributes():GetAttribute("Attack")
+      local value = math.floor(atk * self._percent)
+      self._buffLogicService:ChangeBaseDefence(sourceEntity, self._buffInstance:BuffSeq(), ModifyBaseDefenceType.DefenceConstantFix, value)
       self:UpdateTeamDefenceLogic(teamEntity)
-    else
-      do
-        if self._type == ChangeAtkDefType.ChangeAtkByDef then
-          local def = (sourceEntity:Attributes()):GetAttribute("Defense")
-          local value = (math.floor)(def * self._percent)
-          ;
-          (self._buffLogicService):ChangeBaseAttack(self._entity, (self._buffInstance):BuffSeq(), ModifyBaseAttackType.AttackConstantFix, value)
-        end
-      end
+    elseif self._type == ChangeAtkDefType.ChangeAtkByDef then
+      local def = sourceEntity:Attributes():GetAttribute("Defense")
+      local value = math.floor(def * self._percent)
+      self._buffLogicService:ChangeBaseAttack(self._entity, self._buffInstance:BuffSeq(), ModifyBaseAttackType.AttackConstantFix, value)
     end
   end
 end
@@ -44,25 +28,16 @@ local ChangeAtkDefType = {ChangeAtkByDef = 1, ChangeDefByAtk = 2}
 _enum("ChangeAtkDefType", ChangeAtkDefType)
 _class("BuffLogicRemoveChangeAtkDefByBuffSource", BuffLogicBase)
 BuffLogicRemoveChangeAtkDefByBuffSource = BuffLogicRemoveChangeAtkDefByBuffSource
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicRemoveChangeAtkDefByBuffSource.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveChangeAtkDefByBuffSource:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicRemoveChangeAtkDefByBuffSource.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function BuffLogicRemoveChangeAtkDefByBuffSource:DoLogic()
   local sourceEntity = self:GetBuffSourceEntity()
   if sourceEntity then
-    local teamEntity = (sourceEntity:Pet()):GetOwnerTeamEntity()
-    ;
-    (self._buffLogicService):RemoveBaseDefence(sourceEntity, (self._buffInstance):BuffSeq(), ModifyBaseDefenceType.DefenceConstantFix)
+    local teamEntity = sourceEntity:Pet():GetOwnerTeamEntity()
+    self._buffLogicService:RemoveBaseDefence(sourceEntity, self._buffInstance:BuffSeq(), ModifyBaseDefenceType.DefenceConstantFix)
     self:UpdateTeamDefenceLogic(teamEntity)
-    ;
-    (self._buffLogicService):RemoveBaseAttack(self._entity, (self._buffInstance):BuffSeq(), ModifyBaseAttackType.AttackConstantFix)
+    self._buffLogicService:RemoveBaseAttack(self._entity, self._buffInstance:BuffSeq(), ModifyBaseAttackType.AttackConstantFix)
   end
 end
-
-

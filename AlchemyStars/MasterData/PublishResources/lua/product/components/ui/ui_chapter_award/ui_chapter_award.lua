@@ -1,26 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chapter_award/ui_chapter_award.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChapterAward", UIController)
 UIChapterAward = UIChapterAward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChapterAward.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChapterAward:Constructor()
   self._module = self:GetModule(MissionModule)
-  ;
-  (self._module):SetShowChapterPreview(false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FlushChapterPreview)
-  self._data = (self._module):GetDiscoveryData()
+  self._module:SetShowChapterPreview(false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FlushChapterPreview)
+  self._data = self._module:GetDiscoveryData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChapterAward.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIChapterAward:OnShow(uiParams)
   self._chapterId = uiParams[1]
   self._txtStarCount = self:GetUIComponent("UILocalizationText", "txtStarCount")
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
@@ -31,45 +19,29 @@ UIChapterAward.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.ShowItemTips, self.ShowTips)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChapterAward.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIChapterAward:OnHide()
   self:DetachEvent(GameEventType.UpdateChapterAwardData, self.Flush)
   self:DetachEvent(GameEventType.ShowItemTips, self.ShowTips)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChapterAward.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local chapterData = ((self._data).chapterAwardData):GetChapterAwardChapterByChapterId(self._chapterId)
+function UIChapterAward:Flush()
+  local chapterData = self._data.chapterAwardData:GetChapterAwardChapterByChapterId(self._chapterId)
   if not chapterData then
-    (Log.warn)("### no award in chapter:", self._chapterId)
-    return 
+    Log.warn("### no award in chapter:", self._chapterId)
+    return
   end
-  ;
-  (self._content):SpawnObjects("UIChapterAwardItem", (table.count)(chapterData.grades))
-  self._grades = (self._content):GetAllSpawnList()
-  ;
-  (self._txtStarCount):SetText((StringTable.Get)("str_discovery_chapter_star_count") .. (StringTable.Get)("str_common_colon") .. "<color=#ffad48>" .. chapterData.star_count .. "</color>")
-  for i,v in ipairs(self._grades) do
+  self._content:SpawnObjects("UIChapterAwardItem", table.count(chapterData.grades))
+  self._grades = self._content:GetAllSpawnList()
+  self._txtStarCount:SetText(StringTable.Get("str_discovery_chapter_star_count") .. StringTable.Get("str_common_colon") .. "<color=#ffad48>" .. chapterData.star_count .. "</color>")
+  for i, v in ipairs(self._grades) do
     v:Flush(i, chapterData)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChapterAward.bgOnClick = function(self, go)
-  -- function num : 0_4
+function UIChapterAward:bgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChapterAward.ShowTips = function(self, itemId, pos)
-  -- function num : 0_5
-  (self._tips):SetData(itemId, pos)
+function UIChapterAward:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
-
-

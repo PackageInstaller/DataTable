@@ -1,23 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/ui_homeland_minimap_icon_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapIconData", Object)
 UIHomelandMinimapIconData = UIHomelandMinimapIconData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapIconData.Constructor = function(self, miniMap, id, index, transform, iconContainer, params)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandMinimapIconData:Constructor(miniMap, id, index, transform, iconContainer, params)
   self._markType = nil
   self._markId = nil
   self._id = id
   self._index = index
   self._transform = transform
   self._iconContainer = iconContainer
-  local cfg = (Cfg.cfg_homeland_minimap_icon)[id]
+  local cfg = Cfg.cfg_homeland_minimap_icon[id]
   if cfg == nil then
-    (Log.error)(" UIHomelandMinimapIconData:Constructor cfg_homeland_minimap_icon cant find ", index)
+    Log.error(" UIHomelandMinimapIconData:Constructor cfg_homeland_minimap_icon cant find ", index)
   end
   self._prefabName = cfg.IconPrefab
   self._scriptName = cfg.IconScript
@@ -28,269 +21,164 @@ UIHomelandMinimapIconData.Constructor = function(self, miniMap, id, index, trans
   self._showIcon = cfg.ShowIcon
   self._showName = nil
   if cfg.ShowName then
-    self._showName = (StringTable.Get)(cfg.ShowName)
+    self._showName = StringTable.Get(cfg.ShowName)
   end
-  self._showMinScaleRange = (cfg.ShowScaleRange)[1] / 1000
-  self._showMaxScaleRange = (cfg.ShowScaleRange)[2] / 1000
+  self._showMinScaleRange = cfg.ShowScaleRange[1] / 1000
+  self._showMaxScaleRange = cfg.ShowScaleRange[2] / 1000
   self._params = params
   self._showArrow = cfg.ShowArrow == 1
   self._arrowIconRotation = cfg.ArrowIconRotation == 1
   self._arrowIcon = cfg.ArrowIcon
-  self._arrowIconOffset = Vector2((cfg.Offset)[1] / 1000, (cfg.Offset)[2] / 1000)
-  self._arrowIconSize = Vector2((cfg.Size)[1] / 1000, (cfg.Size)[2] / 1000)
+  self._arrowIconOffset = Vector2(cfg.Offset[1] / 1000, cfg.Offset[2] / 1000)
+  self._arrowIconSize = Vector2(cfg.Size[1] / 1000, cfg.Size[2] / 1000)
   self._miniMap = miniMap
   self._arrowItem = nil
   if self._showArrow then
-    self._arrowItem = (self._miniMap):AddArrow(self)
+    self._arrowItem = self._miniMap:AddArrow(self)
   end
-  ;
-  (self._iconContainer):Refresh(self)
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  self._iconContainer:Refresh(self)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetMarkType = function(self)
-  -- function num : 0_1
+function UIHomelandMinimapIconData:GetMarkType()
   return self._markType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.SetMarkType = function(self, markType)
-  -- function num : 0_2
+function UIHomelandMinimapIconData:SetMarkType(markType)
   self._markType = markType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetMarkId = function(self)
-  -- function num : 0_3
+function UIHomelandMinimapIconData:GetMarkId()
   return self._markId
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.SetMarkId = function(self, markId)
-  -- function num : 0_4
+function UIHomelandMinimapIconData:SetMarkId(markId)
   self._markId = markId
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetMinimap = function(self)
-  -- function num : 0_5
+function UIHomelandMinimapIconData:GetMinimap()
   return self._miniMap
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetMinimapStatus = function(self)
-  -- function num : 0_6
-  return (self._miniMap):GetMapStatus()
+function UIHomelandMinimapIconData:GetMinimapStatus()
+  return self._miniMap:GetMapStatus()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetScreenInfo = function(self)
-  -- function num : 0_7
-  return (self._miniMap):GetScreenInfo()
+function UIHomelandMinimapIconData:GetScreenInfo()
+  return self._miniMap:GetScreenInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.UpdateArrowItem = function(self, item)
-  -- function num : 0_8
+function UIHomelandMinimapIconData:UpdateArrowItem(item)
   self._arrowItem = item
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.UpdateContainerItem = function(self, item)
-  -- function num : 0_9
+function UIHomelandMinimapIconData:UpdateContainerItem(item)
   self._iconContainer = item
-  ;
-  (self._iconContainer):Refresh(self)
+  self._iconContainer:Refresh(self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetArrowItem = function(self)
-  -- function num : 0_10
+function UIHomelandMinimapIconData:GetArrowItem()
   return self._arrowItem
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.IsShowArrow = function(self)
-  -- function num : 0_11
+function UIHomelandMinimapIconData:IsShowArrow()
   return self._showArrow
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.IsArrowIconRotation = function(self)
-  -- function num : 0_12
+function UIHomelandMinimapIconData:IsArrowIconRotation()
   return self._arrowIconRotation
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetArrowIcon = function(self)
-  -- function num : 0_13
+function UIHomelandMinimapIconData:GetArrowIcon()
   return self._arrowIcon
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetArrowIconOffset = function(self)
-  -- function num : 0_14
+function UIHomelandMinimapIconData:GetArrowIconOffset()
   return self._arrowIconOffset
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetArrowIconSize = function(self)
-  -- function num : 0_15
+function UIHomelandMinimapIconData:GetArrowIconSize()
   return self._arrowIconSize
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetId = function(self)
-  -- function num : 0_16
+function UIHomelandMinimapIconData:GetId()
   return self._id
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetIndex = function(self)
-  -- function num : 0_17
+function UIHomelandMinimapIconData:GetIndex()
   return self._index
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetSerializeId = function(self)
-  -- function num : 0_18
+function UIHomelandMinimapIconData:GetSerializeId()
   if self._index == nil then
     return self._id * 10000
   end
   return self._id * 10000 + self._index
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetTransform = function(self)
-  -- function num : 0_19
+function UIHomelandMinimapIconData:GetTransform()
   return self._transform
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetPrefabName = function(self)
-  -- function num : 0_20
+function UIHomelandMinimapIconData:GetPrefabName()
   return self._prefabName
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetScriptName = function(self)
-  -- function num : 0_21
+function UIHomelandMinimapIconData:GetScriptName()
   return self._scriptName
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetIconContainer = function(self)
-  -- function num : 0_22
+function UIHomelandMinimapIconData:GetIconContainer()
   return self._iconContainer
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetDetailPrefab = function(self)
-  -- function num : 0_23
+function UIHomelandMinimapIconData:GetDetailPrefab()
   return self._detailPrefab
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetDetailScript = function(self)
-  -- function num : 0_24
+function UIHomelandMinimapIconData:GetDetailScript()
   return self._detailScript
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetCanClick = function(self)
-  -- function num : 0_25
+function UIHomelandMinimapIconData:GetCanClick()
   return self._canClick
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetCanRotate = function(self)
-  -- function num : 0_26
+function UIHomelandMinimapIconData:GetCanRotate()
   return self._canRotate
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetShowIcon = function(self)
-  -- function num : 0_27
+function UIHomelandMinimapIconData:GetShowIcon()
   return self._showIcon
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetShowName = function(self)
-  -- function num : 0_28
+function UIHomelandMinimapIconData:GetShowName()
   return self._showName
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.CanShow = function(self, scale)
-  -- function num : 0_29
-  if scale < self._showMinScaleRange or self._showMaxScaleRange < scale then
-    return (self._iconContainer):CanShow()
+function UIHomelandMinimapIconData:CanShow(scale)
+  if scale < self._showMinScaleRange or scale > self._showMaxScaleRange then
+    return self._iconContainer:CanShow()
   end
   return true
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetMapScale = function(self)
-  -- function num : 0_30
-  return (self._miniMap):GetMapScale()
+function UIHomelandMinimapIconData:GetMapScale()
+  return self._miniMap:GetMapScale()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.GetParam = function(self)
-  -- function num : 0_31
+function UIHomelandMinimapIconData:GetParam()
   return self._params
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.Update = function(self)
-  -- function num : 0_32
+function UIHomelandMinimapIconData:Update()
   if self._iconContainer then
-    (self._iconContainer):Update()
+    self._iconContainer:Update()
   end
   if self._arrowItem then
-    (self._arrowItem):Update()
+    self._arrowItem:Update()
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconData.IsPlayer = function(self)
-  -- function num : 0_33
-  do return self:GetScriptName() == "UIHomelandMinimapIconPlayer" end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIHomelandMinimapIconData:IsPlayer()
+  return "UIHomelandMinimapIconPlayer" == self:GetScriptName()
 end
-
-

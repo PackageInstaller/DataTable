@@ -1,26 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/forge/cls/ui_forge_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIForgeData", Object)
 UIForgeData = UIForgeData
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
+UIForgeData.qualityColors = {
+  Color(0.86, 0.86, 0.86),
+  Color(0.51, 0.91, 0.83),
+  Color(0.33, 0.62, 0.93),
+  Color(0.78, 0.49, 0.93),
+  Color(0.98, 0.67, 0.16)
+}
 
-UIForgeData.qualityColors = {Color(0.86, 0.86, 0.86), Color(0.51, 0.91, 0.83), Color(0.33, 0.62, 0.93), Color(0.78, 0.49, 0.93), Color(0.98, 0.67, 0.16)}
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.mUIHomeland = (self.mHomeland):GetUIModule()
-  self.homelandClient = (self.mUIHomeland):GetClient()
-  self.homeBuildManager = (self.homelandClient):BuildManager()
-  self.mItem = (GameGlobal.GetModule)(ItemModule)
+function UIForgeData:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.mUIHomeland = self.mHomeland:GetUIModule()
+  self.homelandClient = self.mUIHomeland:GetClient()
+  self.homeBuildManager = self.homelandClient:BuildManager()
+  self.mItem = GameGlobal.GetModule(ItemModule)
   self.accItems = {}
-  local cfg_item_forge_accelerate = (Cfg.cfg_item_forge_accelerate)()
-  for _,cfgv in pairs(cfg_item_forge_accelerate) do
-    (table.insert)(self.accItems, {itemId = cfgv.ID, accSeconds = cfgv.Time})
+  local cfg_item_forge_accelerate = Cfg.cfg_item_forge_accelerate()
+  for _, cfgv in pairs(cfg_item_forge_accelerate) do
+    table.insert(self.accItems, {
+      itemId = cfgv.ID,
+      accSeconds = cfgv.Time
+    })
   end
   self.filters = {}
   self.sequnces = {}
@@ -28,70 +28,68 @@ UIForgeData.Constructor = function(self)
   self.list = {}
   self.filter = 0
   self.forgeItemPool = {}
-  self.tSort = {ForgeSortType.Quality, true}
-  self.strsWillGetable = {"str_homeland_forge_sequence_done_d_h", "str_homeland_forge_sequence_done_d", "str_homeland_forge_sequence_done_h_m", "str_homeland_forge_sequence_done_h", "str_homeland_forge_sequence_done_m"}
+  self.tSort = {
+    ForgeSortType.Quality,
+    true
+  }
+  self.strsWillGetable = {
+    "str_homeland_forge_sequence_done_d_h",
+    "str_homeland_forge_sequence_done_d",
+    "str_homeland_forge_sequence_done_h_m",
+    "str_homeland_forge_sequence_done_h",
+    "str_homeland_forge_sequence_done_m"
+  }
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.Init = function(self, clientHomelandInfo)
-  -- function num : 0_1
+function UIForgeData:Init(clientHomelandInfo)
   self:InitFilterTree()
   local forge_info = clientHomelandInfo.forge_info
   self:InitSequence(forge_info.forge_list)
   self:InitList(forge_info.unlock_architecture_list)
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.InitFilterTree = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIForgeData:InitFilterTree()
   local all = ForgeFilter:New()
   all.id = 0
-  all.name = (StringTable.Get)("str_homeland_filter_0")
+  all.name = StringTable.Get("str_homeland_filter_0")
   self.filters = {all}
   local children = {}
-  local cfg_homeland_filter = (Cfg.cfg_homeland_filter)()
-  for _,cfgv in pairs(cfg_homeland_filter) do
+  local cfg_homeland_filter = Cfg.cfg_homeland_filter()
+  for _, cfgv in pairs(cfg_homeland_filter) do
     if cfgv.Type == HomelandFilterType.All or cfgv.Type == HomelandFilterType.Forge then
       local f = ForgeFilter:New()
       f.id = cfgv.Filter
-      f.name = (StringTable.Get)(cfgv.Name)
+      f.name = StringTable.Get(cfgv.Name)
       if cfgv.Parent then
         if not children[cfgv.Parent] then
           children[cfgv.Parent] = {}
         end
-        ;
-        (table.insert)(children[cfgv.Parent], f)
+        table.insert(children[cfgv.Parent], f)
       else
-        ;
-        (table.insert)(self.filters, f)
+        table.insert(self.filters, f)
       end
     end
   end
-  for _,f in ipairs(self.filters) do
+  for _, f in ipairs(self.filters) do
     f.children = children[f.id]
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.InitSequence = function(self, forge_list)
-  -- function num : 0_3 , upvalues : _ENV
-  local visitInfo = (((GameGlobal.GetModule)(HomelandModule)):GetHomelandInfo()).visit_int_info
+function UIForgeData:InitSequence(forge_list)
+  local visitInfo = GameGlobal.GetModule(HomelandModule):GetHomelandInfo().visit_int_info
   self.sequnces = {}
-  local cfg_homeland_level = (Cfg.cfg_homeland_level)()
+  local cfg_homeland_level = Cfg.cfg_homeland_level()
   local sequnceCount = 0
-  for k,v in pairs(cfg_homeland_level) do
+  for k, v in pairs(cfg_homeland_level) do
     if sequnceCount < v.QueueNum then
       sequnceCount = v.QueueNum
     end
   end
   local fogingOrGetables = {}
-  for _,v in ipairs(forge_list) do
+  for _, v in ipairs(forge_list) do
     fogingOrGetables[v.index] = v
   end
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   for i = 1, sequnceCount do
     local s = ForgeSequence:New()
     s.index = i
@@ -99,7 +97,7 @@ UIForgeData.InitSequence = function(self, forge_list)
     if f then
       s.forgeItemId = f.item_id
       s.doneTimestamp = f.end_time
-      if (UICommonHelper.GetNowTimestamp)() < f.begin_time then
+      if UICommonHelper.GetNowTimestamp() < f.begin_time then
         svrTimeModule:InitServerTime(f.begin_time)
       end
       if s:IsForging() then
@@ -107,192 +105,114 @@ UIForgeData.InitSequence = function(self, forge_list)
       else
         s.state = ForgeSequenceState.Getable
       end
-      local helpTime = (visitInfo.forge_acc_map)[i]
+      local helpTime = visitInfo.forge_acc_map[i]
       if helpTime then
         s.doneTimestamp = f.end_time - helpTime.offline_help_time
-        s.helpRemainTime = (math.min)(helpTime.help_surplus_time, helpTime.help_once_time)
-        local totalHelpTime = ((Cfg.cfg_item_architecture)[s.forgeItemId]).HelpAllTime
+        s.helpRemainTime = math.min(helpTime.help_surplus_time, helpTime.help_once_time)
+        local totalHelpTime = Cfg.cfg_item_architecture[s.forgeItemId].HelpAllTime
         s.helpedTime = totalHelpTime - helpTime.help_surplus_time
       end
-      do
-        do
-          s.forgeCount = ((Cfg.cfg_item_architecture)[s.forgeItemId]).ForgeStack
-          do
-            local cfgv = (Cfg.cfg_homeland_level)[(self.mHomeland):GetHomelandLevel()]
-            if i <= cfgv.QueueNum then
-              s.state = ForgeSequenceState.Idle
-            else
-              s.state = ForgeSequenceState.Locked
-            end
-            local cfgs = (Cfg.cfg_homeland_level)({QueueNum = i})
-            do
-              do
-                if cfgs then
-                  local level = 999
-                  for _,cfgv in pairs(cfgs) do
-                    if cfgv.ID < level then
-                      level = cfgv.ID
-                    end
-                  end
-                  s.unlockLevel = level
-                end
-                ;
-                (table.insert)(self.sequnces, s)
-                -- DECOMPILER ERROR at PC140: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC140: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC140: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC140: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC140: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC140: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
-          end
-        end
+      s.forgeCount = Cfg.cfg_item_architecture[s.forgeItemId].ForgeStack
+    else
+      local cfgv = Cfg.cfg_homeland_level[self.mHomeland:GetHomelandLevel()]
+      if i <= cfgv.QueueNum then
+        s.state = ForgeSequenceState.Idle
+      else
+        s.state = ForgeSequenceState.Locked
       end
     end
+    local cfgs = Cfg.cfg_homeland_level({QueueNum = i})
+    if cfgs then
+      local level = 999
+      for _, cfgv in pairs(cfgs) do
+        if level > cfgv.ID then
+          level = cfgv.ID
+        end
+      end
+      s.unlockLevel = level
+    end
+    table.insert(self.sequnces, s)
   end
   self:SortSequence()
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.InitList = function(self, unlock_architecture_list)
-  -- function num : 0_4 , upvalues : _ENV
+function UIForgeData:InitList(unlock_architecture_list)
   self.listRaw = {}
-  local cfg_item_architecture = (Cfg.cfg_item_architecture)()
+  local cfg_item_architecture = Cfg.cfg_item_architecture()
   if cfg_item_architecture then
-    for id,cfgv in pairs(cfg_item_architecture) do
+    for id, cfgv in pairs(cfg_item_architecture) do
       if cfgv.IsForge > 0 then
-        local item = (self.forgeItemPool)[cfgv.ID]
+        local item = self.forgeItemPool[cfgv.ID]
         if not item then
           item = ForgeInfoItem:New()
-          -- DECOMPILER ERROR at PC25: Confused about usage of register: R9 in 'UnsetPending'
-
-          ;
-          (self.forgeItemPool)[cfgv.ID] = item
+          self.forgeItemPool[cfgv.ID] = item
         end
         item.id = cfgv.ID
-        local cfg_itemv = (Cfg.cfg_item)[cfgv.ID]
+        local cfg_itemv = Cfg.cfg_item[cfgv.ID]
         if cfg_itemv == nil then
-          (Log.error)("UIForgeData:InitList cant find ", cfgv.ID)
+          Log.error("UIForgeData:InitList cant find ", cfgv.ID)
         end
-        item.name = (StringTable.Get)(cfg_itemv.Name)
+        item.name = StringTable.Get(cfg_itemv.Name)
         item.icon = cfgv.Icon
         item.quality = cfg_itemv.Color
         item.filter = cfgv.Filter
-        -- DECOMPILER ERROR at PC53: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (item.size).x = (cfgv.Size)[1]
-        -- DECOMPILER ERROR at PC57: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (item.size).y = (cfgv.Size)[2]
+        item.size.x = cfgv.Size[1]
+        item.size.y = cfgv.Size[2]
         item.livableValue = cfgv.LivableValue
         item.forgeSecond = cfgv.CostTime
         item.max = cfgv.ForgeMaxCount
         if cfgv.SubType == ArchitectureSubType.Dormitory then
-          local levelCfg = (Cfg.cfg_homeland_level)[(self.mHomeland):GetHomelandLevel()]
-          item.max = (math.min)(item.max, levelCfg.ForgeDormitoryLimit)
-        else
-          do
-            do
-              if cfgv.SubType == ArchitectureSubType.Land then
-                local levelCfg = (Cfg.cfg_homeland_level)[(self.mHomeland):GetHomelandLevel()]
-                item.max = (math.min)(item.max, levelCfg.ForgeLandLimit)
-              end
-              item.firstExp = cfgv.ExtraExp or 0
-              do
-                if cfgv.UnlockDrawing and cfgv.UnlockDrawing > 0 then
-                  local raUnlock = RoleAsset:New()
-                  raUnlock.assetid = cfgv.UnlockDrawing
-                  raUnlock.count = 1
-                  item.unlockCosts = {raUnlock}
-                end
-                item.forgeCosts = {}
-                if cfgv.Cost then
-                  for index,cost in ipairs(cfgv.Cost) do
-                    local ra = RoleAsset:New()
-                    ra.assetid = cost[1]
-                    ra.count = cost[2]
-                    ;
-                    (table.insert)(item.forgeCosts, ra)
-                  end
-                end
-                do
-                  item.unlocked = false
-                  if item.unlockCosts and (table.count)(item.unlockCosts) > 0 then
-                    for _,unlock_architecture in ipairs(unlock_architecture_list) do
-                      if unlock_architecture == cfgv.ID then
-                        item.unlocked = true
-                        break
-                      end
-                    end
-                  else
-                    do
-                      do
-                        item.unlocked = true
-                        item.forgeCount = cfgv.ForgeStack
-                        item:CheckUnlockCostsEnough()
-                        ;
-                        (table.insert)(self.listRaw, item)
-                        -- DECOMPILER ERROR at PC175: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC175: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                        -- DECOMPILER ERROR at PC175: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC175: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC175: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC175: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC175: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC175: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                        -- DECOMPILER ERROR at PC175: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC175: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                        -- DECOMPILER ERROR at PC175: LeaveBlock: unexpected jumping out IF_STMT
-
-                      end
-                    end
-                  end
-                end
-              end
-            end
+          local levelCfg = Cfg.cfg_homeland_level[self.mHomeland:GetHomelandLevel()]
+          item.max = math.min(item.max, levelCfg.ForgeDormitoryLimit)
+        elseif cfgv.SubType == ArchitectureSubType.Land then
+          local levelCfg = Cfg.cfg_homeland_level[self.mHomeland:GetHomelandLevel()]
+          item.max = math.min(item.max, levelCfg.ForgeLandLimit)
+        end
+        item.firstExp = cfgv.ExtraExp or 0
+        if cfgv.UnlockDrawing and 0 < cfgv.UnlockDrawing then
+          local raUnlock = RoleAsset:New()
+          raUnlock.assetid = cfgv.UnlockDrawing
+          raUnlock.count = 1
+          item.unlockCosts = {raUnlock}
+        end
+        item.forgeCosts = {}
+        if cfgv.Cost then
+          for index, cost in ipairs(cfgv.Cost) do
+            local ra = RoleAsset:New()
+            ra.assetid = cost[1]
+            ra.count = cost[2]
+            table.insert(item.forgeCosts, ra)
           end
         end
+        item.unlocked = false
+        if item.unlockCosts and 0 < table.count(item.unlockCosts) then
+          for _, unlock_architecture in ipairs(unlock_architecture_list) do
+            if unlock_architecture == cfgv.ID then
+              item.unlocked = true
+              break
+            end
+          end
+        else
+          item.unlocked = true
+        end
+        item.forgeCount = cfgv.ForgeStack
+        item:CheckUnlockCostsEnough()
+        table.insert(self.listRaw, item)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.GetForgeAccItem = function(self)
-  -- function num : 0_5
-  local e = (self.accItems)[1]
+function UIForgeData:GetForgeAccItem()
+  local e = self.accItems[1]
   local id = e.itemId
   local seconds = e.accSeconds
   return id, seconds
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.GetForgeFilterById = function(self, id)
-  -- function num : 0_6 , upvalues : _ENV
+function UIForgeData:GetForgeFilterById(id)
   if self.filters then
-    for _,f in ipairs(self.filters) do
+    for _, f in ipairs(self.filters) do
       if f.id == id then
         return f
       end
@@ -300,12 +220,9 @@ UIForgeData.GetForgeFilterById = function(self, id)
   end
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.GetForgeSequenceByIndex = function(self, index)
-  -- function num : 0_7 , upvalues : _ENV
+function UIForgeData:GetForgeSequenceByIndex(index)
   if self.sequnces then
-    for _,s in ipairs(self.sequnces) do
+    for _, s in ipairs(self.sequnces) do
       if s.index == index then
         return s
       end
@@ -313,26 +230,18 @@ UIForgeData.GetForgeSequenceByIndex = function(self, index)
   end
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.HasCanUnlockItem = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIForgeData:HasCanUnlockItem()
   if self.listRaw then
-    for _,item in ipairs(self.listRaw) do
+    for _, item in ipairs(self.listRaw) do
       if self:CanItemUnlock(item.id) then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.CanItemUnlock = function(self, tplId)
-  -- function num : 0_9
+function UIForgeData:CanItemUnlock(tplId)
   local item = self:GetForgeInfoItemById(tplId)
   if not item.unlocked and item:IsUnlockCostsEnough() then
     return true
@@ -340,10 +249,7 @@ UIForgeData.CanItemUnlock = function(self, tplId)
   return false
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.IsForgeable = function(self, item)
-  -- function num : 0_10 , upvalues : _ENV
+function UIForgeData:IsForgeable(item)
   if not item.unlocked then
     return false
   end
@@ -356,28 +262,20 @@ UIForgeData.IsForgeable = function(self, item)
     return false
   end
   local canCount, max = self:GetCanForgeCountAndMax(item)
-  if max > 0 and canCount < 1 then
+  if 0 < max and canCount < 1 then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.IsEnough = function(assetId, cost)
-  -- function num : 0_11 , upvalues : _ENV
-  local count = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(assetId)
+function UIForgeData.IsEnough(assetId, cost)
+  local count = GameGlobal.GetModule(ItemModule):GetItemCount(assetId)
   local isEnough = cost <= count
-  do return isEnough end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return isEnough
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.SortSequence = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  (table.sort)(self.sequnces, function(a, b)
-    -- function num : 0_12_0 , upvalues : _ENV
+function UIForgeData:SortSequence()
+  table.sort(self.sequnces, function(a, b)
     local lockeda = a.state == ForgeSequenceState.Locked
     local lockedb = b.state == ForgeSequenceState.Locked
     local idlea = a.state == ForgeSequenceState.Idle
@@ -385,71 +283,68 @@ UIForgeData.SortSequence = function(self)
     if lockeda ~= lockedb then
       return not lockeda
     end
-    if a.unlockLevel >= b.unlockLevel then
-      do return not lockeda end
-      if idlea ~= idleb then
-        return not idlea
-      end
-      do return a.index < b.index end
-      -- DECOMPILER ERROR: 9 unprocessed JMP targets
+    if lockeda then
+      return a.unlockLevel < b.unlockLevel
     end
-  end
-)
+    if idlea ~= idleb then
+      return not idlea
+    end
+    return a.index < b.index
+  end)
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.FilterList = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIForgeData:FilterList()
   self.list = {}
-  for i,v in ipairs(self.listRaw) do
+  for i, v in ipairs(self.listRaw) do
     if self.filter == 0 then
-      (table.insert)(self.list, v)
-    else
-      if v.filter == self.filter then
-        (table.insert)(self.list, v)
-      end
+      table.insert(self.list, v)
+    elseif v.filter == self.filter then
+      table.insert(self.list, v)
     end
   end
   self:SortList()
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.SortList = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (table.sort)(self.list, function(a, b)
-    -- function num : 0_14_0 , upvalues : _ENV, self
+function UIForgeData:SortList()
+  table.sort(self.list, function(a, b)
     local aCostEnought = a:IsUnlockCostsEnough() and 0 or 1
     local bCostEnought = b:IsUnlockCostsEnough() and 0 or 1
-    if aCostEnought >= bCostEnought then
-      do return aCostEnought == bCostEnought end
-      local compValues = {}
-      local ia = a.unlocked and 0 or 1
-      local ib = b.unlocked and 0 or 1
-      ;
-      (table.insert)(compValues, {ia, ib, false})
-      if (self.tSort)[1] == ForgeSortType.Quality then
-        (table.insert)(compValues, {a.quality, b.quality, (self.tSort)[2]})
-      elseif (self.tSort)[1] == ForgeSortType.Size then
-        local sizea = (a.size).x * (a.size).y
-        local sizeb = (b.size).x * (b.size).y
-        ;
-        (table.insert)(compValues, {sizea, sizeb, (self.tSort)[2]})
-      end
-      ;
-      (table.insert)(compValues, {a.id, b.id, false})
-      do return self:Compare(compValues, 1) end
-      -- DECOMPILER ERROR: 8 unprocessed JMP targets
+    if aCostEnought ~= bCostEnought then
+      return aCostEnought < bCostEnought
     end
-  end
-)
+    local compValues = {}
+    local ia = a.unlocked and 0 or 1
+    local ib = b.unlocked and 0 or 1
+    table.insert(compValues, {
+      ia,
+      ib,
+      false
+    })
+    if self.tSort[1] == ForgeSortType.Quality then
+      table.insert(compValues, {
+        a.quality,
+        b.quality,
+        self.tSort[2]
+      })
+    elseif self.tSort[1] == ForgeSortType.Size then
+      local sizea = a.size.x * a.size.y
+      local sizeb = b.size.x * b.size.y
+      table.insert(compValues, {
+        sizea,
+        sizeb,
+        self.tSort[2]
+      })
+    end
+    table.insert(compValues, {
+      a.id,
+      b.id,
+      false
+    })
+    return self:Compare(compValues, 1)
+  end)
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.Compare = function(self, compValues, i)
-  -- function num : 0_15
+function UIForgeData:Compare(compValues, i)
   local cv = compValues[i]
   local l, r, asc = cv[1], cv[2], cv[3]
   if l == r then
@@ -459,21 +354,16 @@ UIForgeData.Compare = function(self, compValues, i)
     else
       return false
     end
+  elseif asc then
+    return l > r
   else
-    if r >= l then
-      do return not asc end
-      do return l < r end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
-    end
+    return l < r
   end
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.GetForgeInfoItemById = function(self, id)
-  -- function num : 0_16 , upvalues : _ENV
+function UIForgeData:GetForgeInfoItemById(id)
   if self.listRaw then
-    for _,item in ipairs(self.listRaw) do
+    for _, item in ipairs(self.listRaw) do
       if item.id == id then
         return item
       end
@@ -481,12 +371,9 @@ UIForgeData.GetForgeInfoItemById = function(self, id)
   end
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.Get1stIdleSequence = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIForgeData:Get1stIdleSequence()
   if self.sequnces then
-    for _,s in ipairs(self.sequnces) do
+    for _, s in ipairs(self.sequnces) do
       if s.state == ForgeSequenceState.Idle then
         return s
       end
@@ -494,61 +381,44 @@ UIForgeData.Get1stIdleSequence = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.GetSequenceStateCountMap = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIForgeData:GetSequenceStateCountMap()
   local mapStateCount = {}
-  for _,value in pairs(ForgeSequenceState) do
+  for _, value in pairs(ForgeSequenceState) do
     mapStateCount[value] = 0
   end
   local using, unlock = 0, 0
   if self.sequnces then
-    for _,s in ipairs(self.sequnces) do
+    for _, s in ipairs(self.sequnces) do
       mapStateCount[s.state] = mapStateCount[s.state] + 1
     end
   end
-  do
-    return mapStateCount
-  end
+  return mapStateCount
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.GetOwnPlaceCount = function(tplId)
-  -- function num : 0_19 , upvalues : _ENV
-  local own = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(tplId)
+function UIForgeData.GetOwnPlaceCount(tplId)
+  local own = GameGlobal.GetModule(ItemModule):GetItemCount(tplId)
   local place = 0
-  local placedBuildings = (((((GameGlobal.GetModule)(HomelandModule)):GetUIModule()):GetClient()):BuildManager()):GetBuildings()
+  local placedBuildings = GameGlobal.GetModule(HomelandModule):GetUIModule():GetClient():BuildManager():GetBuildings()
   if placedBuildings then
-    for _,b in pairs(placedBuildings) do
+    for _, b in pairs(placedBuildings) do
       if b:GetBuildId() == tplId then
         place = place + 1
       end
     end
   end
-  do
-    return own, place
-  end
+  return own, place
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.CheckCode = function(result)
-  -- function num : 0_20 , upvalues : _ENV
+function UIForgeData.CheckCode(result)
   if result == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
     return true
   end
-  local msg = (StringTable.Get)("str_homeland_error_code_" .. result)
-  ;
-  (ToastManager.ShowHomeToast)(msg)
+  local msg = StringTable.Get("str_homeland_error_code_" .. result)
+  ToastManager.ShowHomeToast(msg)
   return false
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.GetCanForgeCountAndMax = function(self, item)
-  -- function num : 0_21
+function UIForgeData:GetCanForgeCountAndMax(item)
   local max = item.max
   local curCount = self:GetItemCount(item)
   local countInSequence = self:GetItemCountInSequence(item)
@@ -556,61 +426,47 @@ UIForgeData.GetCanForgeCountAndMax = function(self, item)
   return canCount, max
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.GetItemCount = function(self, item)
-  -- function num : 0_22
-  local count = (self.mItem):GetItemCount(item.id)
+function UIForgeData:GetItemCount(item)
+  local count = self.mItem:GetItemCount(item.id)
   return count
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.GetItemCountInSequence = function(self, item)
-  -- function num : 0_23 , upvalues : _ENV
+function UIForgeData:GetItemCountInSequence(item)
   local count = 0
   if self.sequnces then
-    for _,s in ipairs(self.sequnces) do
+    for _, s in ipairs(self.sequnces) do
       if s.forgeItemId == item.id then
         count = count + 1
       end
     end
   end
-  do
-    return count
-  end
+  return count
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.ResetSort = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  self.tSort = {ForgeSortType.Quality, true}
+function UIForgeData:ResetSort()
+  self.tSort = {
+    ForgeSortType.Quality,
+    true
+  }
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.IsUnforged = function(self, id)
-  -- function num : 0_25 , upvalues : _ENV
-  local homelandInfo = (self.mHomeland):GetHomelandInfo()
-  local already_forge_list = (homelandInfo.forge_info).already_forge_list
-  if already_forge_list and (table.ikey)(already_forge_list, id) then
+function UIForgeData:IsUnforged(id)
+  local homelandInfo = self.mHomeland:GetHomelandInfo()
+  local already_forge_list = homelandInfo.forge_info.already_forge_list
+  if already_forge_list and table.ikey(already_forge_list, id) then
     return false
   end
   for i = 1, #self.sequnces do
-    if ((self.sequnces)[i]).forgeItemId == id then
+    if self.sequnces[i].forgeItemId == id then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeData.GetAllUnlockableItem = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIForgeData:GetAllUnlockableItem()
   local items = {}
-  for _,item in ipairs(self.listRaw) do
+  for _, item in ipairs(self.listRaw) do
     if not item.unlocked and item:IsUnlockCostsEnough() then
       items[#items + 1] = item
     end
@@ -622,21 +478,16 @@ _enum("ForgeSortType", {Quality = 1, Size = 2})
 ForgeSortType = ForgeSortType
 _class("ForgeFilter", Object)
 ForgeFilter = ForgeFilter
--- DECOMPILER ERROR at PC132: Confused about usage of register: R0 in 'UnsetPending'
 
-ForgeFilter.Constructor = function(self)
-  -- function num : 0_27
+function ForgeFilter:Constructor()
   self.id = 0
   self.name = ""
   self.children = {}
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R0 in 'UnsetPending'
-
-ForgeFilter.GetChildById = function(self, id)
-  -- function num : 0_28 , upvalues : _ENV
+function ForgeFilter:GetChildById(id)
   if self.children then
-    for _,c in ipairs(self.children) do
+    for _, c in ipairs(self.children) do
       if c.id == id then
         return c
       end
@@ -644,21 +495,16 @@ ForgeFilter.GetChildById = function(self, id)
   end
 end
 
--- DECOMPILER ERROR at PC138: Confused about usage of register: R0 in 'UnsetPending'
-
-ForgeFilter.HasChildren = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  if self.children and (table.count)(self.children) > 0 then
+function ForgeFilter:HasChildren()
+  if self.children and table.count(self.children) > 0 then
     return true
   end
 end
 
 _class("ForgeSequence", Object)
 ForgeSequence = ForgeSequence
--- DECOMPILER ERROR at PC147: Confused about usage of register: R0 in 'UnsetPending'
 
-ForgeSequence.Constructor = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function ForgeSequence:Constructor()
   self.index = 0
   self.state = ForgeSequenceState.Locked
   self.unlockLevel = 0
@@ -667,29 +513,27 @@ ForgeSequence.Constructor = function(self)
   self.forgeCount = 1
 end
 
--- DECOMPILER ERROR at PC150: Confused about usage of register: R0 in 'UnsetPending'
-
-ForgeSequence.IsForging = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  do
-    if self.doneTimestamp > 0 then
-      local leftSecond = (UICommonHelper.CalcLeftSeconds)(self.doneTimestamp)
-      if leftSecond > 0 then
-        return true
-      end
+function ForgeSequence:IsForging()
+  if self.doneTimestamp > 0 then
+    local leftSecond = UICommonHelper.CalcLeftSeconds(self.doneTimestamp)
+    if 0 < leftSecond then
+      return true
     end
-    return false
   end
+  return false
 end
 
-_enum("ForgeSequenceState", {Locked = 1, Idle = 2, Forging = 3, Getable = 4})
+_enum("ForgeSequenceState", {
+  Locked = 1,
+  Idle = 2,
+  Forging = 3,
+  Getable = 4
+})
 ForgeSequenceState = ForgeSequenceState
 _class("ForgeInfoItem", Object)
 ForgeInfoItem = ForgeInfoItem
--- DECOMPILER ERROR at PC169: Confused about usage of register: R0 in 'UnsetPending'
 
-ForgeInfoItem.Constructor = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function ForgeInfoItem:Constructor()
   self.id = 0
   self.name = ""
   self.icon = ""
@@ -706,49 +550,34 @@ ForgeInfoItem.Constructor = function(self)
   self._unlockCostEnought = false
 end
 
--- DECOMPILER ERROR at PC172: Confused about usage of register: R0 in 'UnsetPending'
-
-ForgeInfoItem.IsUnlockCostsEnough = function(self)
-  -- function num : 0_33
+function ForgeInfoItem:IsUnlockCostsEnough()
   return self._unlockCostEnought
 end
 
--- DECOMPILER ERROR at PC175: Confused about usage of register: R0 in 'UnsetPending'
-
-ForgeInfoItem.CheckUnlockCostsEnough = function(self)
-  -- function num : 0_34 , upvalues : _ENV
+function ForgeInfoItem:CheckUnlockCostsEnough()
   if self.unlocked then
     self._unlockCostEnought = false
     return self._unlockCostEnought
   end
-  if self.unlockCosts and (table.count)(self.unlockCosts) > 0 then
-    for _,cost in ipairs(self.unlockCosts) do
-      if not (UIForgeData.IsEnough)(cost.assetid, cost.count) then
+  if self.unlockCosts and table.count(self.unlockCosts) > 0 then
+    for _, cost in ipairs(self.unlockCosts) do
+      if not UIForgeData.IsEnough(cost.assetid, cost.count) then
         self._unlockCostEnought = false
         return self._unlockCostEnought
       end
     end
   end
-  do
-    self._unlockCostEnought = true
-    return self._unlockCostEnought
-  end
+  self._unlockCostEnought = true
+  return self._unlockCostEnought
 end
 
--- DECOMPILER ERROR at PC178: Confused about usage of register: R0 in 'UnsetPending'
-
-ForgeInfoItem.IsForgeCostsEnough = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  if self.forgeCosts and (table.count)(self.forgeCosts) > 0 then
-    for _,cost in ipairs(self.forgeCosts) do
-      if not (UIForgeData.IsEnough)(cost.assetid, cost.count) then
+function ForgeInfoItem:IsForgeCostsEnough()
+  if self.forgeCosts and table.count(self.forgeCosts) > 0 then
+    for _, cost in ipairs(self.forgeCosts) do
+      if not UIForgeData.IsEnough(cost.assetid, cost.count) then
         return false
       end
     end
   end
-  do
-    return true
-  end
+  return true
 end
-
-

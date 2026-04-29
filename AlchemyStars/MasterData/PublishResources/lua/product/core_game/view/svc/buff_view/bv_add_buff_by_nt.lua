@@ -1,49 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_add_buff_by_nt.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddBuffByAddBuff", BuffViewBase)
 BuffViewAddBuffByAddBuff = BuffViewAddBuffByAddBuff
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddBuffByAddBuff.PlayView = function(self, TT, notify, trace)
-  -- function num : 0_0 , upvalues : _ENV
-  local playBuffSvc = (self._world):GetService("PlayBuff")
-  local arr = (self._buffResult):GetBuffArray()
-  for i,v in ipairs(arr) do
+function BuffViewAddBuffByAddBuff:PlayView(TT, notify, trace)
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  local arr = self._buffResult:GetBuffArray()
+  for i, v in ipairs(arr) do
     local eid, seq = v[1], v[2]
-    ;
-    (Log.debug)("BuffViewAddBuffByAddBuff entityid=", eid, "buffseq=", seq, "trace: ", trace)
-    local entity = (self._world):GetEntityByID(eid)
+    Log.debug("BuffViewAddBuffByAddBuff entityid=", eid, "buffseq=", seq, "trace: ", trace)
+    local entity = self._world:GetEntityByID(eid)
     if entity then
-      local inst = (entity:BuffView()):GetBuffViewInstance(seq)
+      local inst = entity:BuffView():GetBuffViewInstance(seq)
       if inst then
-        playBuffSvc:PlayAddBuff(TT, inst, (self._entity):GetID(), true)
-        if (self._buffResult):GetLight() == 1 then
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivatePassive, (entity:PetPstID()):GetPstID(), true)
+        playBuffSvc:PlayAddBuff(TT, inst, self._entity:GetID(), true)
+        if self._buffResult:GetLight() == 1 then
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivatePassive, entity:PetPstID():GetPstID(), true)
         end
       end
     end
   end
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
-  local cfg = (self._viewInstance):BuffConfigData()
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
+  local cfg = self._viewInstance:BuffConfigData()
   local effectID = cfg:GetExecEffectID()
   if effectID then
-    ((self._world):GetService("Effect")):CreateEffect(effectID, self._entity)
+    self._world:GetService("Effect"):CreateEffect(effectID, self._entity)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddBuffByAddBuff.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  if notify:GetBuffSeq() ~= (self._buffResult):GetAddBuffSeq() then
-    do return not notify or notify:GetNotifyType() ~= NotifyType.AfterEntityAddBuff end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function BuffViewAddBuffByAddBuff:IsNotifyMatch(notify)
+  if notify and notify:GetNotifyType() == NotifyType.AfterEntityAddBuff then
+    return notify:GetBuffSeq() == self._buffResult:GetAddBuffSeq()
   end
+  return false
 end
-
-

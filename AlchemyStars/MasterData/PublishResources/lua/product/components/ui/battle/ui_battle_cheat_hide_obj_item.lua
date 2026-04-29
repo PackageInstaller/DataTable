@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_cheat_hide_obj_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleCheatHideObjItem", UICustomWidget)
 UIBattleCheatHideObjItem = UIBattleCheatHideObjItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleCheatHideObjItem.OnShow = function(self, uiparam)
-  -- function num : 0_0
+function UIBattleCheatHideObjItem:OnShow(uiparam)
   self._uiLocalizationText = self:GetUIComponent("UILocalizationText", "describe")
   self._tgl = self:GetUIComponent("Toggle", "HideObjItem")
   self._hide = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleCheatHideObjItem.OnHide = function(self)
-  -- function num : 0_1
+function UIBattleCheatHideObjItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleCheatHideObjItem.SetData = function(self, index, text, hide, getCallback)
-  -- function num : 0_2
+function UIBattleCheatHideObjItem:SetData(index, text, hide, getCallback)
   self._index = index
   self._str = text
   self._hide = hide
@@ -31,21 +18,12 @@ UIBattleCheatHideObjItem.SetData = function(self, index, text, hide, getCallback
   self._getCallback = getCallback
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleCheatHideObjItem.OnRefresh = function(self)
-  -- function num : 0_3
-  (self._uiLocalizationText):SetText(self._str)
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._tgl).isOn = self._hide
+function UIBattleCheatHideObjItem:OnRefresh()
+  self._uiLocalizationText:SetText(self._str)
+  self._tgl.isOn = self._hide
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleCheatHideObjItem.HideObjItemOnClick = function(self)
-  -- function num : 0_4
+function UIBattleCheatHideObjItem:HideObjItemOnClick()
   if self._hide == true then
     self._hide = false
   else
@@ -53,8 +31,6 @@ UIBattleCheatHideObjItem.HideObjItemOnClick = function(self)
   end
   self:OnRefresh()
   if self._getCallback then
-    (self._getCallback)(self._index, self._str, self._hide)
+    self._getCallback(self._index, self._str, self._hide)
   end
 end
-
-

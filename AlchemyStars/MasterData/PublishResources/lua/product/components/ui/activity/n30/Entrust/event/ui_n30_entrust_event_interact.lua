@@ -1,110 +1,69 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n30/Entrust/event/ui_n30_entrust_event_interact.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local e = require("ui_n30_entrust_event")
 e:Class("N30EntrustEventInteract", N30EntrustEvent, EntrustEventType.EntrustEventType_Interact)
--- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
 
-N30EntrustEventInteract.Constructor = function(self)
-  -- function num : 0_0
+function N30EntrustEventInteract:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventInteract.DebugName = function(self)
-  -- function num : 0_1
+function N30EntrustEventInteract:DebugName()
   return "Interact"
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventInteract.GetIconName = function(self)
-  -- function num : 0_2
+function N30EntrustEventInteract:GetIconName()
   if self._isPass then
     return "n30_wt_ld_icon15"
+  elseif self._isLocked then
+    return "n30_wt_ld_icon16"
   else
-    if self._isLocked then
-      return "n30_wt_ld_icon16"
-    else
-      return "n30_wt_ld_icon10"
-    end
+    return "n30_wt_ld_icon10"
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventInteract.GetWidgetName = function(self)
-  -- function num : 0_3
+function N30EntrustEventInteract:GetWidgetName()
   return "UIN30EntrustEventInteract"
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventInteract.OnArrived = function(self, ui)
-  -- function num : 0_4 , upvalues : _ENV
+function N30EntrustEventInteract:OnArrived(ui)
   local cfg = self:Cfg()
   local interactionTeam = ui:GetStepOnTeam(cfg.InteractionID)
   if self:IsPass() then
     ui:ShowDialog("UIN30EntrustEvent", self)
+  elseif interactionTeam == nil then
+    ui:ShowDialog("UIN30EntrustEvent", self)
   else
-    if interactionTeam == nil then
-      ui:ShowDialog("UIN30EntrustEvent", self)
-    else
-      ui:CallUIMethod("UIN30EntrustLine", "CompleteEvent", self:ID(), function()
-    -- function num : 0_4_0 , upvalues : _ENV, ui, self, cfg
-    local txtPopup = (StringTable.Get)("str_n30_entrust_event_interact_finish")
-    ;
-    (ToastManager.ShowToast)(txtPopup)
-    ui:CallUIMethod("UIN30EntrustLine", "OnInteractFinish", {self:ID(), cfg.InteractionID})
-  end
-)
-    end
+    ui:CallUIMethod("UIN30EntrustLine", "CompleteEvent", self:ID(), function()
+      local txtPopup = StringTable.Get("str_n30_entrust_event_interact_finish")
+      ToastManager.ShowToast(txtPopup)
+      ui:CallUIMethod("UIN30EntrustLine", "OnInteractFinish", {
+        self:ID(),
+        cfg.InteractionID
+      })
+    end)
   end
 end
 
 _class("UIN30EntrustEventInteract", UIN30EntrustEventWidget)
 UIN30EntrustEventInteract = UIN30EntrustEventInteract
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN30EntrustEventInteract.Constructor = function(self)
-  -- function num : 0_5
+function UIN30EntrustEventInteract:Constructor()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventInteract.OnShow = function(self, uiParams)
-  -- function num : 0_6
+function UIN30EntrustEventInteract:OnShow(uiParams)
   self._txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventInteract.OnHide = function(self)
-  -- function num : 0_7
+function UIN30EntrustEventInteract:OnHide()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventInteract.GetIcon = function(self)
-  -- function num : 0_8
+function UIN30EntrustEventInteract:GetIcon()
   return "n30_wt_icon09"
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventInteract.Refresh = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local descKey = (self._event):ParamDesc()
+function UIN30EntrustEventInteract:Refresh()
+  local descKey = self._event:ParamDesc()
   if descKey ~= nil then
-    ((self._txtDesc).gameObject):SetActive(true)
-    ;
-    (self._txtDesc):SetText((StringTable.Get)(descKey))
+    self._txtDesc.gameObject:SetActive(true)
+    self._txtDesc:SetText(StringTable.Get(descKey))
   else
-    ;
-    ((self._txtDesc).gameObject):SetActive(false)
+    self._txtDesc.gameObject:SetActive(false)
   end
 end
-
-

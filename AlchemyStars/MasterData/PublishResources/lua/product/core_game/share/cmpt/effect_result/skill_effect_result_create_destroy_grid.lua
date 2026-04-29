@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_create_destroy_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_CreateDestroyGrid", SkillEffectResultBase)
 SkillEffectResult_CreateDestroyGrid = SkillEffectResult_CreateDestroyGrid
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_CreateDestroyGrid.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectResult_CreateDestroyGrid:GetEffectType()
   return SkillEffectType.CreateDestroyGrid
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_CreateDestroyGrid.Constructor = function(self, isCreate, scopeRange)
-  -- function num : 0_1
+function SkillEffectResult_CreateDestroyGrid:Constructor(isCreate, scopeRange)
   self._isCreate = isCreate
   self._scopeRange = scopeRange
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_CreateDestroyGrid.GetIsCreate = function(self)
-  -- function num : 0_2
+function SkillEffectResult_CreateDestroyGrid:GetIsCreate()
   return self._isCreate
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_CreateDestroyGrid.GetScopeRange = function(self)
-  -- function num : 0_3
+function SkillEffectResult_CreateDestroyGrid:GetScopeRange()
   return self._scopeRange
 end
-
-

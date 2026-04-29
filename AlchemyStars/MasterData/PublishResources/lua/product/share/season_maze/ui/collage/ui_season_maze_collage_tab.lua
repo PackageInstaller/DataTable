@@ -1,62 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/collage/ui_season_maze_collage_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeCollageTab", UICustomWidget)
 UISeasonMazeCollageTab = UISeasonMazeCollageTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeCollageTab.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMazeCollageTab:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageTab.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMazeCollageTab:InitWidget()
   self.txtName = self:GetUIComponent("UILocalizationText", "shadowName")
   self.select = self:GetGameObject("select")
-  ;
-  (self.select):SetActive(false)
+  self.select:SetActive(false)
   self.red = self:GetGameObject("red")
-  ;
-  (self.red):SetActive(false)
+  self.red:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageTab.SetData = function(self, index, nameKey, clickCb)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeCollageTab:SetData(index, nameKey, clickCb)
   self.index = index
   self.clickCb = clickCb
-  local name = (StringTable.Get)(nameKey)
-  ;
-  (self.txtName):SetText(name)
+  local name = StringTable.Get(nameKey)
+  self.txtName:SetText(name)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageTab.SetSelect = function(self, bSelect)
-  -- function num : 0_3
-  (self.select):SetActive(bSelect)
+function UISeasonMazeCollageTab:SetSelect(bSelect)
+  self.select:SetActive(bSelect)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageTab.SetRed = function(self, bVisible)
-  -- function num : 0_4
-  (self.red):SetActive(bVisible)
+function UISeasonMazeCollageTab:SetRed(bVisible)
+  self.red:SetActive(bVisible)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageTab.RootOnClick = function(self, go)
-  -- function num : 0_5
+function UISeasonMazeCollageTab:RootOnClick(go)
   if self.clickCb then
-    (self.clickCb)(self.index)
+    self.clickCb(self.index)
   end
 end
-
-

@@ -1,66 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_achievement/ui_quest_achievement_finish_list.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestAchievementFinishList", UIController)
 UIQuestAchievementFinishList = UIQuestAchievementFinishList
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestAchievementFinishList.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIQuestAchievementFinishList:OnShow(uiParams)
   self:_GetComponents()
   self._itemCountPerRow = 1
   self._list = uiParams[1]
   self._hideCallback = uiParams[2]
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
+  self._questModule = GameGlobal.GetModule(QuestModule)
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementFinishList.OnHide = function(self)
-  -- function num : 0_1
+function UIQuestAchievementFinishList:OnHide()
   if self._hideCallback then
-    (self._hideCallback)()
+    self._hideCallback()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementFinishList._GetComponents = function(self)
-  -- function num : 0_2
+function UIQuestAchievementFinishList:_GetComponents()
   local itemInfo = self:GetUIComponent("UISelectObjectPath", "itemInfo")
   self._selectInfo = itemInfo:SpawnObject("UISelectInfo")
   self._detailScrollView = self:GetUIComponent("UIDynamicScrollView", "taskDetailList")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementFinishList.AwardClick = function(self, id, pos)
-  -- function num : 0_3
+function UIQuestAchievementFinishList:AwardClick(id, pos)
   if self._selectInfo then
-    (self._selectInfo):SetData(id, pos)
+    self._selectInfo:SetData(id, pos)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementFinishList.InitScrollView = function(self)
-  -- function num : 0_4
+function UIQuestAchievementFinishList:InitScrollView()
   local count = #self._list
-  ;
-  (self._detailScrollView):InitListView(count, function(scrollView, index)
-    -- function num : 0_4_0 , upvalues : self
+  self._detailScrollView:InitListView(count, function(scrollView, index)
     return self:OnInitScrollView(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementFinishList.OnInitScrollView = function(self, scrollView, index)
-  -- function num : 0_5
+function UIQuestAchievementFinishList:OnInitScrollView(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -79,44 +54,25 @@ UIQuestAchievementFinishList.OnInitScrollView = function(self, scrollView, index
   return item
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementFinishList._ShowAchieveItem = function(self, heartItem, itemIndex)
-  -- function num : 0_6
-  local data = (self._list)[itemIndex]
-  ;
-  (heartItem:GetGameObject()):SetActive(true)
+function UIQuestAchievementFinishList:_ShowAchieveItem(heartItem, itemIndex)
+  local data = self._list[itemIndex]
+  heartItem:GetGameObject():SetActive(true)
   if data ~= nil then
     heartItem:SetData(itemIndex, data, function()
-    -- function num : 0_6_0
-  end
-, function(matid, pos)
-    -- function num : 0_6_1 , upvalues : self
-    self:AwardClick(matid, pos)
-  end
-, true)
+    end, function(matid, pos)
+      self:AwardClick(matid, pos)
+    end, true)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementFinishList.CloseBtnOnClick = function(self)
-  -- function num : 0_7
+function UIQuestAchievementFinishList:CloseBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementFinishList._OnValue = function(self)
-  -- function num : 0_8
+function UIQuestAchievementFinishList:_OnValue()
   self:InitScrollView()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementFinishList.BgOnClick = function(self)
-  -- function num : 0_9
+function UIQuestAchievementFinishList:BgOnClick()
   self:CloseDialog()
 end
-
-

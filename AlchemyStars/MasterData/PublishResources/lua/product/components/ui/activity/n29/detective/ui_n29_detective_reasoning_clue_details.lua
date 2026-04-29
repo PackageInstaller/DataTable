@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/ui_n29_detective_reasoning_clue_details.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN29DetectiveReasoningClueDetails", UIController)
 UIN29DetectiveReasoningClueDetails = UIN29DetectiveReasoningClueDetails
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN29DetectiveReasoningClueDetails.Constructor = function(self)
-  -- function num : 0_0
+function UIN29DetectiveReasoningClueDetails:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningClueDetails.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIN29DetectiveReasoningClueDetails:LoadDataOnEnter(TT, res, uiParams)
   self._idClue = uiParams[1]
   self._isCheck = uiParams[2]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningClueDetails.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN29DetectiveReasoningClueDetails:OnShow(uiParams)
   self._txtNameValue = self:GetUIComponent("UILocalizationText", "txtNameValue")
   self._txtPlaceValue = self:GetUIComponent("UILocalizationText", "txtPlaceValue")
   self._txtDescValue = self:GetUIComponent("UILocalizationText", "txtDescValue")
@@ -33,64 +20,39 @@ UIN29DetectiveReasoningClueDetails.OnShow = function(self, uiParams)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningClueDetails.OnHide = function(self)
-  -- function num : 0_3
+function UIN29DetectiveReasoningClueDetails:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningClueDetails.BtnCloseOnClick = function(self, go)
-  -- function num : 0_4
+function UIN29DetectiveReasoningClueDetails:BtnCloseOnClick(go)
   self:CloseDialogAnimation()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningClueDetails.BtnAnywhereOnClick = function(self, go)
-  -- function num : 0_5
+function UIN29DetectiveReasoningClueDetails:BtnAnywhereOnClick(go)
   self:CloseDialogAnimation()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningClueDetails.Flush = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local allClue = (Cfg.cfg_component_detective_item)({})
+function UIN29DetectiveReasoningClueDetails:Flush()
+  local allClue = Cfg.cfg_component_detective_item({})
   local cfgClue = allClue[self._idClue]
   if cfgClue == nil then
-    (Log.error)("cfg_component_detective_item 缺少配置! id --> ", self._idClue)
-    return 
+    Log.error("cfg_component_detective_item 缺少配置! id --> ", self._idClue)
+    return
   end
-  ;
-  (self._txtNameValue):SetText((StringTable.Get)(cfgClue.Name))
-  ;
-  (self._txtPlaceValue):SetText((StringTable.Get)(cfgClue.Place))
-  ;
-  (self._txtDescValue):SetText((StringTable.Get)(cfgClue.Info))
-  ;
-  ((self._titleChecked).gameObject):SetActive(self._isCheck)
-  ;
-  ((self._titleUnchecked).gameObject):SetActive(not self._isCheck)
-  ;
-  (self._iconLoader):LoadImage(cfgClue.Icon)
+  self._txtNameValue:SetText(StringTable.Get(cfgClue.Name))
+  self._txtPlaceValue:SetText(StringTable.Get(cfgClue.Place))
+  self._txtDescValue:SetText(StringTable.Get(cfgClue.Info))
+  self._titleChecked.gameObject:SetActive(self._isCheck)
+  self._titleUnchecked.gameObject:SetActive(not self._isCheck)
+  self._iconLoader:LoadImage(cfgClue.Icon)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningClueDetails.CloseDialogAnimation = function(self, cbFinish)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN29DetectiveReasoningClueDetails:CloseDialogAnimation(cbFinish)
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV, cbFinish
-    (self._animation):Play("uieff_UIN29DetectiveReasoningClueDetails_out")
+    self._animation:Play("uieff_UIN29DetectiveReasoningClueDetails_out")
     YIELD(TT, 167)
     self:CloseDialog()
     if cbFinish then
       cbFinish()
     end
-  end
-)
+  end)
 end
-
-

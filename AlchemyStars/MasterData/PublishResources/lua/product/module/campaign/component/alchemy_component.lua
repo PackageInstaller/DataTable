@@ -1,110 +1,75 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/alchemy_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("AlchemyComponent", ICampaignComponent)
 AlchemyComponent = AlchemyComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AlchemyComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function AlchemyComponent:Constructor()
   self.m_component_info = AlchemyComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AlchemyComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function AlchemyComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = AlchemyComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AlchemyComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function AlchemyComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AlchemyComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function AlchemyComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_ALCHEMY
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AlchemyComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function AlchemyComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AlchemyComponent.HandleAlchemyMakeup = function(self, TT, asyncRes, item_id, num)
-  -- function num : 0_5 , upvalues : _ENV
+function AlchemyComponent:HandleAlchemyMakeup(TT, asyncRes, item_id, num)
   local request = AlchemyComponentMakeupReq:New()
   request.item_id = item_id
   request.num = num
   local response = AlchemyComponentMakeupRes:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][AlchemyComponent] HandleAlchemyMakeup ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][AlchemyComponent] HandleAlchemyMakeup ret:", asyncRes.m_result)
     return nil
   end
   return asyncRes, response
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AlchemyComponent.HandleAlchemyShopSell = function(self, TT, asyncRes, items)
-  -- function num : 0_6 , upvalues : _ENV
+function AlchemyComponent:HandleAlchemyShopSell(TT, asyncRes, items)
   local request = AlchemyComponentSellReq:New()
   request.items = items
   local response = AlchemyComponentSellRes:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][AlchemyComponent] HandleAlchemyShopSell ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][AlchemyComponent] HandleAlchemyShopSell ret:", asyncRes.m_result)
     return nil
   end
   return response
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AlchemyComponent.HandleAlchemyShopBuy = function(self, TT, asyncRes, type, buy_id)
-  -- function num : 0_7 , upvalues : _ENV
+function AlchemyComponent:HandleAlchemyShopBuy(TT, asyncRes, type, buy_id)
   local request = AlchemyComponentBuyReq:New()
   request.type = type
   request.buy_id = buy_id
   local response = AlchemyComponentBuyRes:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][AlchemyComponent] HandleAlchemyShopBuy ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][AlchemyComponent] HandleAlchemyShopBuy ret:", asyncRes.m_result)
     return nil
   end
   if type == EAlchemyShopItemType.EAlchemyShopItemType_TipBuff then
     ComponentInfo.show_tip_buff_id = response.new_id
     ComponentInfo.tip_buff_finish = response.bfinish
-  else
-    if type == EAlchemyShopItemType.EAlchemyShopItemType_ExtraItem then
-      ComponentInfo.show_extra_buff_id = response.new_id
-      ComponentInfo.extra_buff_finsih = response.bfinish
-    end
+  elseif type == EAlchemyShopItemType.EAlchemyShopItemType_ExtraItem then
+    ComponentInfo.show_extra_buff_id = response.new_id
+    ComponentInfo.extra_buff_finsih = response.bfinish
   end
   return response
 end
-
-

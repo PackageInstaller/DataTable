@@ -1,13 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2002901/cfg_skill_view_200290104.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" TankTowerResetRotation,time=300; PlayAudio,audioID=7045,audioType=1; PlayTankRushPerGrid,rushSpeed=8,rushAnimatorTrigger=Skill01,hitAnimName=Hit,hitEffectID=200290103,turnToTarget=1,deathClear=1,rotateTime=1000,rushEffectID=200290102,rushEffectDestroyDelay=1000,rushEndEffectID=200290101,; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " TankTowerResetRotation,time=300; PlayAudio,audioID=7045,audioType=1; PlayTankRushPerGrid,rushSpeed=8,rushAnimatorTrigger=Skill01,hitAnimName=Hit,hitEffectID=200290103,turnToTarget=1,deathClear=1,rotateTime=1000,rushEffectID=200290102,rushEffectDestroyDelay=1000,rushEndEffectID=200290101,; "
+    }
+  }
 }
 return config, "ID", key
-

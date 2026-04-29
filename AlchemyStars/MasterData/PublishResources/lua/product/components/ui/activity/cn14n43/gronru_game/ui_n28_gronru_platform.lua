@@ -1,44 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/gronru_game/ui_n28_gronru_platform.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28GronruPlatform", UIController)
 UIN28GronruPlatform = UIN28GronruPlatform
-local UIN28GronruPlatformType = {Album_Page_Empty = 1, Album_Page_Game = 2, Album_Project_Alarm = 1, Album_Project_Adventure = 2, Adventure_Steam_Game = 1, Adventure_Steam_Community = 2, Adventure_Page_Error = 1, Adventure_Page_Entrance = 2, Adventure_Page_Forum = 3, Forum_Comment_Agree = 1, Forum_Comment_Disagree = 2, Forum_Layout_Short = 1, Forum_Layout_Long = 2}
+local UIN28GronruPlatformType = {
+  Album_Page_Empty = 1,
+  Album_Page_Game = 2,
+  Album_Project_Alarm = 1,
+  Album_Project_Adventure = 2,
+  Adventure_Steam_Game = 1,
+  Adventure_Steam_Community = 2,
+  Adventure_Page_Error = 1,
+  Adventure_Page_Entrance = 2,
+  Adventure_Page_Forum = 3,
+  Forum_Comment_Agree = 1,
+  Forum_Comment_Disagree = 2,
+  Forum_Layout_Short = 1,
+  Forum_Layout_Long = 2
+}
 _enum("UIN28GronruPlatformType", UIN28GronruPlatformType)
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN28GronruPlatform.Constructor = function(self)
-  -- function num : 0_0
+function UIN28GronruPlatform:Constructor()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruPlatform.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN28GronruPlatform:LoadDataOnEnter(TT, res, uiParams)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   local campaignModule = self:GetModule(CampaignModule)
   self._campaignModule = campaignModule
-  self._campaign = (UIActivityCampaign.New)()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N28_MINI_GAME, ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._campaign = UIActivityCampaign.New()
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N28_MINI_GAME, ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-  self._componentInfo = (self._campaign):GetComponentInfo(ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
-  local sample = (self._campaign):GetSample()
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
+  self._componentInfo = self._campaign:GetComponentInfo(ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
+  local sample = self._campaign:GetSample()
   self._endTime = sample.end_time
   self._animationPlayIn = false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruPlatform.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN28GronruPlatform:OnShow(uiParams)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._Refresh)
   self._arrowPage = self:GetUIComponent("Image", "arrowPage")
   self._arrowProject = self:GetUIComponent("Image", "arrowProject")
@@ -46,13 +45,12 @@ UIN28GronruPlatform.OnShow = function(self, uiParams)
   self._txtBrowserProject = self:GetUIComponent("UILocalizationText", "txtBrowserProject")
   self._uiGameAlbum = self:GetUIComponent("UISelectObjectPath", "uiGameAlbum")
   self._uiGameAdventure = self:GetUIComponent("UISelectObjectPath", "uiGameAdventure")
-  self._uiWidgetAlbum = (self._uiGameAlbum):SpawnObject("UIN28GronruGameAlbum")
-  self._uiWidgetAdventure = (self._uiGameAdventure):SpawnObject("UIN28GronruGameAdventure")
+  self._uiWidgetAlbum = self._uiGameAlbum:SpawnObject("UIN28GronruGameAlbum")
+  self._uiWidgetAdventure = self._uiGameAdventure:SpawnObject("UIN28GronruGameAdventure")
   self._animation = self:GetUIComponent("Animation", "animation")
   self._atlas = self:GetAsset("UIN28GronruGame.spriteatlas", LoadType.SpriteAtlas)
   self:AttachEvent(GameEventType.ActivityCloseEvent, self.OnActivityCloseEvent)
-  ;
-  (self._animation):Play("UIN28GronruPlatform_in")
+  self._animation:Play("UIN28GronruPlatform_in")
   self._animationPlayIn = false
   self:ShowGameAdventure()
   self:ShowGameAlbum()
@@ -63,163 +61,106 @@ UIN28GronruPlatform.OnShow = function(self, uiParams)
   self.hideCallFun = uiParams[2]
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruPlatform.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN28GronruPlatform:OnHide()
   self:DetachEvent(GameEventType.AfterUILayerChanged, self._Refresh)
   if self.hideCallFun then
-    (self.hideCallFun)()
+    self.hideCallFun()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruPlatform.BtnCloseOnClick = function(self, go)
-  -- function num : 0_4
+function UIN28GronruPlatform:BtnCloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruPlatform.BtnReturnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN28GronruPlatform:BtnReturnOnClick(go)
   if self:CheckActivityOver() then
-    return 
+    return
   end
   self:ShowGameAlbum()
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BounceFolder)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BounceFolder)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruPlatform.OnActivityCloseEvent = function(self, id)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._campaignModule):ShowErrorToast(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED, true)
+function UIN28GronruPlatform:OnActivityCloseEvent(id)
+  self._campaignModule:ShowErrorToast(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED, true)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruPlatform.ShowGameAlbum = function(self)
-  -- function num : 0_7
-  (((self._uiGameAlbum):Engine()).gameObject):SetActive(true)
-  ;
-  (((self._uiGameAdventure):Engine()).gameObject):SetActive(false)
-  self._uiWidgetAlbum = (self._uiGameAlbum):SpawnObject("UIN28GronruGameAlbum")
-  ;
-  (self._uiWidgetAlbum):Flush()
+function UIN28GronruPlatform:ShowGameAlbum()
+  self._uiGameAlbum:Engine().gameObject:SetActive(true)
+  self._uiGameAdventure:Engine().gameObject:SetActive(false)
+  self._uiWidgetAlbum = self._uiGameAlbum:SpawnObject("UIN28GronruGameAlbum")
+  self._uiWidgetAlbum:Flush()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruPlatform.ShowGameAdventure = function(self)
-  -- function num : 0_8
-  (((self._uiGameAlbum):Engine()).gameObject):SetActive(false)
-  ;
-  (((self._uiGameAdventure):Engine()).gameObject):SetActive(true)
-  self._uiWidgetAdventure = (self._uiGameAdventure):SpawnObject("UIN28GronruGameAdventure")
-  ;
-  (self._uiWidgetAdventure):Flush()
-  ;
-  (self._uiWidgetAdventure):SetCheckActivityOverFun(function()
-    -- function num : 0_8_0 , upvalues : self
+function UIN28GronruPlatform:ShowGameAdventure()
+  self._uiGameAlbum:Engine().gameObject:SetActive(false)
+  self._uiGameAdventure:Engine().gameObject:SetActive(true)
+  self._uiWidgetAdventure = self._uiGameAdventure:SpawnObject("UIN28GronruGameAdventure")
+  self._uiWidgetAdventure:Flush()
+  self._uiWidgetAdventure:SetCheckActivityOverFun(function()
     return self:CheckActivityOver()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruPlatform.BrowserPath = function(self, isPage, txtPathName)
-  -- function num : 0_9
-  if txtPathName == nil then
-    ((self._arrowPage).gameObject):SetActive(not isPage)
-    ;
-    ((self._txtBrowserPage).gameObject):SetActive(txtPathName ~= nil)
+function UIN28GronruPlatform:BrowserPath(isPage, txtPathName)
+  if isPage then
+    self._arrowPage.gameObject:SetActive(txtPathName ~= nil)
+    self._txtBrowserPage.gameObject:SetActive(txtPathName ~= nil)
     if txtPathName ~= nil then
-      (self._txtBrowserPage):SetText(txtPathName)
+      self._txtBrowserPage:SetText(txtPathName)
     end
-    ;
-    ((self._arrowProject).gameObject):SetActive(txtPathName ~= nil)
-    ;
-    ((self._txtBrowserProject).gameObject):SetActive(txtPathName ~= nil)
+  else
+    self._arrowProject.gameObject:SetActive(txtPathName ~= nil)
+    self._txtBrowserProject.gameObject:SetActive(txtPathName ~= nil)
     if txtPathName ~= nil then
-      (self._txtBrowserProject):SetText(txtPathName)
+      self._txtBrowserProject:SetText(txtPathName)
     end
-    -- DECOMPILER ERROR: 6 unprocessed JMP targets
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruPlatform.GetSpriteAtlas = function(self)
-  -- function num : 0_10
+function UIN28GronruPlatform:GetSpriteAtlas()
   return self._atlas
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruPlatform.GetDefaultProject = function(self)
-  -- function num : 0_11
-  return (self._uiWidgetAlbum):GetDefaultProject()
+function UIN28GronruPlatform:GetDefaultProject()
+  return self._uiWidgetAlbum:GetDefaultProject()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruPlatform.GetMissionComponent = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  return (self._localProcess):GetComponent(ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
+function UIN28GronruPlatform:GetMissionComponent()
+  return self._localProcess:GetComponent(ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruPlatform.PlayAnimation = function(self, animName, duration, cbComplete)
-  -- function num : 0_13 , upvalues : _ENV
+function UIN28GronruPlatform:PlayAnimation(animName, duration, cbComplete)
   local lockName = "UIN28GronruPlatform:PlayAnimation_" .. animName
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_13_0 , upvalues : self, lockName, animName, _ENV, duration, cbComplete
+  TaskManager:GetInstance():StartTask(function(TT)
     self:Lock(lockName)
-    ;
-    (self._animation):Play(animName)
+    self._animation:Play(animName)
     self._animationPlayIn = true
     YIELD(TT, duration)
     self:UnLock(lockName)
     if cbComplete then
       cbComplete()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruPlatform._Refresh = function(self, bo)
-  -- function num : 0_14 , upvalues : _ENV
-  local topDepth = (((GameGlobal.UIStateManager)()).uiControllerManager):TopDepth()
+function UIN28GronruPlatform:_Refresh(bo)
+  local topDepth = GameGlobal.UIStateManager().uiControllerManager:TopDepth()
   if topDepth == self:GetDepth() and self:CheckActivityOver() then
-    return 
+    return
   end
   if topDepth == self:GetDepth() and self._animationPlayIn then
-    (self._uiWidgetAdventure):Flush()
-    ;
-    (self._animation):Play("UIN28GronruPlatform_in")
+    self._uiWidgetAdventure:Flush()
+    self._animation:Play("UIN28GronruPlatform_in")
     self._animationPlayIn = false
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruPlatform.CheckActivityOver = function(self)
-  -- function num : 0_15
+function UIN28GronruPlatform:CheckActivityOver()
   local closeTime = self._endTime
-  local nowtime = (self._svrTimeModule):GetServerTime() * 0.001
+  local nowtime = self._svrTimeModule:GetServerTime() * 0.001
   if closeTime < nowtime then
     self:CloseDialog()
     return true
   end
   return false
 end
-
-

@@ -1,50 +1,82 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/config/ui_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UIConst = {TurnTipsOutTick = 200, TurnTipsInTick = 200, TurnTipsStayTick = 500, UIDiscoveryUnlockShowTime = 2000, ConnectorString = "-", BranchMissionIndexPrefix = "S", IsShieldPay = false, End = 99999}
+local UIConst = {
+  TurnTipsOutTick = 200,
+  TurnTipsInTick = 200,
+  TurnTipsStayTick = 500,
+  UIDiscoveryUnlockShowTime = 2000,
+  ConnectorString = "-",
+  BranchMissionIndexPrefix = "S",
+  IsShieldPay = false,
+  End = 99999
+}
 _enum("UIConst", UIConst)
 UIEnum = {}
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
 
-UIEnum.ItemColorFrame = function(color)
-  -- function num : 0_0 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIEnum.ItemColorFrame(color)
   if not UIEnum._itemColorFrame then
-    UIEnum._itemColorFrame = {[ItemColor.ItemColor_White] = "spirit_shengji_se1", [ItemColor.ItemColor_Green] = "spirit_shengji_se2", [ItemColor.ItemColor_Blue] = "spirit_shengji_se3", [ItemColor.ItemColor_Purple] = "spirit_shengji_se4", [ItemColor.ItemColor_Yellow] = "spirit_shengji_se5", [ItemColor.ItemColor_Golden] = "spirit_shengji_se6"}
+    UIEnum._itemColorFrame = {
+      [ItemColor.ItemColor_White] = "spirit_shengji_se1",
+      [ItemColor.ItemColor_Green] = "spirit_shengji_se2",
+      [ItemColor.ItemColor_Blue] = "spirit_shengji_se3",
+      [ItemColor.ItemColor_Purple] = "spirit_shengji_se4",
+      [ItemColor.ItemColor_Yellow] = "spirit_shengji_se5",
+      [ItemColor.ItemColor_Golden] = "spirit_shengji_se6"
+    }
   end
-  return (UIEnum._itemColorFrame)[color] or ""
+  return UIEnum._itemColorFrame[color] or ""
 end
 
-local UIItemRandomType = {Guding = 1, DaGaiLv = 2, YiBanGaiLv = 3, XiaoGaiLv = 4, JiXiaoGaiLv = 5, TeBieDiaoLuo = 6}
+local UIItemRandomType = {
+  Guding = 1,
+  DaGaiLv = 2,
+  YiBanGaiLv = 3,
+  XiaoGaiLv = 4,
+  JiXiaoGaiLv = 5,
+  TeBieDiaoLuo = 6
+}
 _enum("UIItemRandomType", UIItemRandomType)
--- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
 
-UIEnum.ItemRandomStr = function(randomType)
-  -- function num : 0_1 , upvalues : _ENV, UIItemRandomType
+function UIEnum.ItemRandomStr(randomType)
   if not randomType then
     return ""
   end
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
   if not UIEnum._itemRandomTypeStr then
-    UIEnum._itemRandomTypeStr = {[UIItemRandomType.Guding] = (StringTable.Get)("str_item_guding"), [UIItemRandomType.DaGaiLv] = (StringTable.Get)("str_item_dagailv"), [UIItemRandomType.YiBanGaiLv] = (StringTable.Get)("str_item_yibangailv"), [UIItemRandomType.XiaoGaiLv] = (StringTable.Get)("str_item_xiaogailv"), [UIItemRandomType.JiXiaoGaiLv] = (StringTable.Get)("str_item_jixiaogailv"), [UIItemRandomType.TeBieDiaoLuo] = (StringTable.Get)("str_battle_special_drop")}
+    UIEnum._itemRandomTypeStr = {
+      [UIItemRandomType.Guding] = StringTable.Get("str_item_guding"),
+      [UIItemRandomType.DaGaiLv] = StringTable.Get("str_item_dagailv"),
+      [UIItemRandomType.YiBanGaiLv] = StringTable.Get("str_item_yibangailv"),
+      [UIItemRandomType.XiaoGaiLv] = StringTable.Get("str_item_xiaogailv"),
+      [UIItemRandomType.JiXiaoGaiLv] = StringTable.Get("str_item_jixiaogailv"),
+      [UIItemRandomType.TeBieDiaoLuo] = StringTable.Get("str_battle_special_drop")
+    }
   end
-  return (UIEnum._itemRandomTypeStr)[randomType] or ""
+  return UIEnum._itemRandomTypeStr[randomType] or ""
 end
 
 PetAwakeSpriteName = {
-[1] = {[0] = "spirit_juexing1_big0", [1] = "spirit_juexing1_big1"}
-, 
-[2] = {[0] = "spirit_juexing2_big0", [1] = "spirit_juexing2_big1", [2] = "spirit_juexing2_big2"}
-, 
-[3] = {[0] = "spirit_juexing3_big0", [1] = "spirit_juexing3_big1", [2] = "spirit_juexing3_big2", [3] = "spirit_juexing3_big3"}
+  [1] = {
+    [0] = "spirit_juexing1_big0",
+    [1] = "spirit_juexing1_big1"
+  },
+  [2] = {
+    [0] = "spirit_juexing2_big0",
+    [1] = "spirit_juexing2_big1",
+    [2] = "spirit_juexing2_big2"
+  },
+  [3] = {
+    [0] = "spirit_juexing3_big0",
+    [1] = "spirit_juexing3_big1",
+    [2] = "spirit_juexing3_big2",
+    [3] = "spirit_juexing3_big3"
+  }
 }
 PetAwakeSpriteGlowName = {
-[2] = {[1] = "spirit_juexing_icon6", [2] = "spirit_juexing_icon7"}
-, 
-[3] = {[1] = "spirit_juexing_icon6", [2] = "spirit_juexing_icon7", [3] = "spirit_juexing_icon8"}
+  [2] = {
+    [1] = "spirit_juexing_icon6",
+    [2] = "spirit_juexing_icon7"
+  },
+  [3] = {
+    [1] = "spirit_juexing_icon6",
+    [2] = "spirit_juexing_icon7",
+    [3] = "spirit_juexing_icon8"
+  }
 }
-

@@ -1,8 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/pt/story/charastory/str_charastory_tuoer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {ui_story_31330401_1_dialog_content = "Por que você está tão sem fôlego, PlayerName? Você deve estar realmente animado para experimentar minha comida!", ui_story_31330401_2_dialog_content = "Isso era de se esperar. Afinal, fui eu quem fez isso e ninguém mais poderia sequer sonhar em replicá-lo!", ui_story_31330401_3_dialog_content = "Você está certo, acho que ninguém conseguiria replicar o quão chocante isso é.", ui_story_31330401_4_dialog_content = "Estou realmente feliz que você conseguiu voltar e tudo mais, mas você poderia parar de pesquisar pratos estranhos por um tempo, por favor?", ui_story_31330401_5_dialog_content = "Já recebi muitas reclamações de outras pessoas.", ui_story_31330401_6_dialog_content = "Vice! O que aconteceu, Vice?! Qual é o problema?!", ui_story_31330401_7_dialog_content = "A-Apressa-te... Diga ao PlayerName para... evacuar o Colossus... E-Esse é meu último desejo...", ui_story_31330401_8_dialog_content = "Qual é dessa fumaça estranha? Estamos sob ataque Eclipsite?!", ui_story_31330401_9_dialog_content = "N-Não são Eclipsitas... É a Tohru, ela... ela está cozinhando algo terrível... C-Corra para salvar sua vida!", ui_story_31330401_10_dialog_content = "Por que você saiu correndo, Senhorita Vice? Venha experimentar meu Eclipsita frito e aranha da areia, é incrível!", ui_story_31330401_11_dialog_content = "Vice desenvolveu uma aversão psicológica aos Eclipsitas depois disso.", ui_story_31330401_12_dialog_content = "Is-Isso foi apenas um acidente! Relaxa, eu prometo que não usei Eclipsitas para fazer comida desta vez!", ui_story_31330401_13_dialog_content = "Então me diga, o que você fez desta vez?", ui_story_31330401_14_dialog_content = "Um prato fusion com muitos sabores desafiadores e diferentes!", ui_story_31330401_15_dialog_content = "Estou acabado... Já estou com um mau pressentimento sobre isso.", ui_story_31330401_16_dialog_content = "Comecei reunindo alguns temperos de Illumina.", ui_story_31330401_17_dialog_content = "Hã? Isso na verdade soa bem normal.", ui_story_31330401_18_dialog_content = "Em seguida, viajei para Longzhou para colher pessoalmente algumas pimentas frescas.", ui_story_31330401_19_dialog_content = "Entendi, então é um prato de Longzhou? Estou começando a ficar ansioso por isso!", ui_story_31330401_20_dialog_content = "Depois disso veio o destaque do prato! Eu procurei por todo o Deserto Rediesel por muito tempo e finalmente encontrei isso: um lagarto do deserto altamente venenoso!", ui_story_31330401_21_dialog_content = "Ha?", ui_story_31330401_22_dialog_content = "Depois de adicionar algumas frutas do meu mundo natal, meu prato de lagarto picante com frutas finalmente ficou pronto!", ui_story_31330401_23_dialog_content = "<color=#e8d9bb>Flutuando dentro da espessa sopa vermelha, há um lagarto que não parece estar completamente morto. Um prato verdadeiramente aterrorizante e que provoca gritos.</color>", ui_story_31330401_24_dialog_content = "Tohru... Você não pode simplesmente fazer comida normal?", ui_story_31330401_25_dialog_content = "Comida normal não é suficiente! Se eu fizer isso... talvez não consiga expressar minha gratidão adequadamente...", ui_story_31330401_26_dialog_content = "Não esqueci o quanto você nos ajudou naquela época. É por isso que eu... Eu quero fazer um prato que mais ninguém poderia fazer.", ui_story_31330401_27_dialog_content = "Então... você vai comê-lo?", ui_story_31330401_28_option_content = "Claro que vou", ui_story_31330401_29_dialog_content = "Eu posso dizer que você trabalhou muito duro nisso.", ui_story_31330401_30_dialog_content = "Mesmo que pareça um pouco assustador, ainda pretendo comê-lo.", ui_story_31330401_31_option_content = "É um pouco, ah...", ui_story_31330401_32_dialog_content = "... Entendo. Eu realmente sinto muito por isso... Vou jogar fora imediatamente.", ui_story_31330401_33_dialog_content = "Mas eu ainda planejo comê-lo!", ui_story_31330401_34_dialog_content = "Afinal, você fez isso só para mim, certo? É o único prato desse tipo no mundo!", ui_story_31330401_35_dialog_content = "PlayerName!", ui_story_31330401_36_dialog_content = "(Olhem por mim, meu povo! Abençoem-me com a coragem para superar este desafio!)", ui_story_31330401_37_dialog_content = "...", ui_story_31330401_38_dialog_content = "<size=50>Umm—!</size> Espere, na verdade é muito bom!", ui_story_31330401_39_dialog_content = "Te falei! Não se esqueça, eu sou a melhor empregada do mundo. Eu nunca poderia fazer algo que tivesse um gosto ruim!", ui_story_31330401_40_dialog_content = "(Transformar ingredientes normais em algo assustador assim... Acho que isso também é uma habilidade especial por si só.)", ui_story_31330401_41_dialog_content = "Tudo bem! Hora de continuar explorando os ingredientes deste mundo! O que devo cozinhar na próxima vez?!", ui_story_31330401_42_dialog_content = "M-Talvez apenas uma comidinha caseira simples?"}
+local config = {
+  ui_story_31330401_1_dialog_content = "Por que você está tão sem fôlego, PlayerName? Você deve estar realmente animado para experimentar minha comida!",
+  ui_story_31330401_2_dialog_content = "Isso era de se esperar. Afinal, fui eu quem fez isso e ninguém mais poderia sequer sonhar em replicá-lo!",
+  ui_story_31330401_3_dialog_content = "Você está certo, acho que ninguém conseguiria replicar o quão chocante isso é.",
+  ui_story_31330401_4_dialog_content = "Estou realmente feliz que você conseguiu voltar e tudo mais, mas você poderia parar de pesquisar pratos estranhos por um tempo, por favor?",
+  ui_story_31330401_5_dialog_content = "Já recebi muitas reclamações de outras pessoas.",
+  ui_story_31330401_6_dialog_content = "Vice! O que aconteceu, Vice?! Qual é o problema?!",
+  ui_story_31330401_7_dialog_content = "A-Apressa-te... Diga ao PlayerName para... evacuar o Colossus... E-Esse é meu último desejo...",
+  ui_story_31330401_8_dialog_content = "Qual é dessa fumaça estranha? Estamos sob ataque Eclipsite?!",
+  ui_story_31330401_9_dialog_content = "N-Não são Eclipsitas... É a Tohru, ela... ela está cozinhando algo terrível... C-Corra para salvar sua vida!",
+  ui_story_31330401_10_dialog_content = "Por que você saiu correndo, Senhorita Vice? Venha experimentar meu Eclipsita frito e aranha da areia, é incrível!",
+  ui_story_31330401_11_dialog_content = "Vice desenvolveu uma aversão psicológica aos Eclipsitas depois disso.",
+  ui_story_31330401_12_dialog_content = "Is-Isso foi apenas um acidente! Relaxa, eu prometo que não usei Eclipsitas para fazer comida desta vez!",
+  ui_story_31330401_13_dialog_content = "Então me diga, o que você fez desta vez?",
+  ui_story_31330401_14_dialog_content = "Um prato fusion com muitos sabores desafiadores e diferentes!",
+  ui_story_31330401_15_dialog_content = "Estou acabado... Já estou com um mau pressentimento sobre isso.",
+  ui_story_31330401_16_dialog_content = "Comecei reunindo alguns temperos de Illumina.",
+  ui_story_31330401_17_dialog_content = "Hã? Isso na verdade soa bem normal.",
+  ui_story_31330401_18_dialog_content = "Em seguida, viajei para Longzhou para colher pessoalmente algumas pimentas frescas.",
+  ui_story_31330401_19_dialog_content = "Entendi, então é um prato de Longzhou? Estou começando a ficar ansioso por isso!",
+  ui_story_31330401_20_dialog_content = "Depois disso veio o destaque do prato! Eu procurei por todo o Deserto Rediesel por muito tempo e finalmente encontrei isso: um lagarto do deserto altamente venenoso!",
+  ui_story_31330401_21_dialog_content = "Ha?",
+  ui_story_31330401_22_dialog_content = "Depois de adicionar algumas frutas do meu mundo natal, meu prato de lagarto picante com frutas finalmente ficou pronto!",
+  ui_story_31330401_23_dialog_content = "<color=#e8d9bb>Flutuando dentro da espessa sopa vermelha, há um lagarto que não parece estar completamente morto. Um prato verdadeiramente aterrorizante e que provoca gritos.</color>",
+  ui_story_31330401_24_dialog_content = "Tohru... Você não pode simplesmente fazer comida normal?",
+  ui_story_31330401_25_dialog_content = "Comida normal não é suficiente! Se eu fizer isso... talvez não consiga expressar minha gratidão adequadamente...",
+  ui_story_31330401_26_dialog_content = "Não esqueci o quanto você nos ajudou naquela época. É por isso que eu... Eu quero fazer um prato que mais ninguém poderia fazer.",
+  ui_story_31330401_27_dialog_content = "Então... você vai comê-lo?",
+  ui_story_31330401_28_option_content = "Claro que vou",
+  ui_story_31330401_29_dialog_content = "Eu posso dizer que você trabalhou muito duro nisso.",
+  ui_story_31330401_30_dialog_content = "Mesmo que pareça um pouco assustador, ainda pretendo comê-lo.",
+  ui_story_31330401_31_option_content = "É um pouco, ah...",
+  ui_story_31330401_32_dialog_content = "... Entendo. Eu realmente sinto muito por isso... Vou jogar fora imediatamente.",
+  ui_story_31330401_33_dialog_content = "Mas eu ainda planejo comê-lo!",
+  ui_story_31330401_34_dialog_content = "Afinal, você fez isso só para mim, certo? É o único prato desse tipo no mundo!",
+  ui_story_31330401_35_dialog_content = "PlayerName!",
+  ui_story_31330401_36_dialog_content = "(Olhem por mim, meu povo! Abençoem-me com a coragem para superar este desafio!)",
+  ui_story_31330401_37_dialog_content = "...",
+  ui_story_31330401_38_dialog_content = "<size=50>Umm—!</size> Espere, na verdade é muito bom!",
+  ui_story_31330401_39_dialog_content = "Te falei! Não se esqueça, eu sou a melhor empregada do mundo. Eu nunca poderia fazer algo que tivesse um gosto ruim!",
+  ui_story_31330401_40_dialog_content = "(Transformar ingredientes normais em algo assustador assim... Acho que isso também é uma habilidade especial por si só.)",
+  ui_story_31330401_41_dialog_content = "Tudo bem! Hora de continuar explorando os ingredientes deste mundo! O que devo cozinhar na próxima vez?!",
+  ui_story_31330401_42_dialog_content = "M-Talvez apenas uma comidinha caseira simples?"
+}
 return config
-

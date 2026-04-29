@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n31/hard/ui_n31_hard_level_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN31HardLevelBtn", UICustomWidget)
 UIN31HardLevelBtn = UIN31HardLevelBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN31HardLevelBtn.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN31HardLevelBtn:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31HardLevelBtn.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN31HardLevelBtn:InitWidget()
   self._bg = self:GetUIComponent("Image", "bg")
   self.select = self:GetUIComponent("Image", "select")
   self.unSelect = self:GetUIComponent("Image", "unSelect")
@@ -25,18 +15,15 @@ UIN31HardLevelBtn.InitWidget = function(self)
   self.rootRt = self:GetUIComponent("RectTransform", "rootRt")
   self.levelBtn = self:GetUIComponent("Button", "rootRt")
   self._rootAni = self:GetUIComponent("Animation", "rootRt")
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local playerId = roleModule:GetPstId()
   self.key = playerId .. "UIN31HardLevelBtnTips"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31HardLevelBtn.SetData = function(self, atlas, logName, clickCallback)
-  -- function num : 0_2
+function UIN31HardLevelBtn:SetData(atlas, logName, clickCallback)
   self.atlas = atlas
   self.clickCallback = clickCallback
-  local bgSpriteName, btnSpriteName, maskSpriteName, lockSpriteName, multiLangaugeName = nil, nil, nil, nil, nil
+  local bgSpriteName, btnSpriteName, maskSpriteName, lockSpriteName, multiLangaugeName
   if logName == 1 then
     bgSpriteName = "n31_kng_btn01"
     maskSpriteName = "n31_kng_mask01"
@@ -48,73 +35,42 @@ UIN31HardLevelBtn.SetData = function(self, atlas, logName, clickCallback)
     lockSpriteName = "n31_kng_lock01"
     multiLangaugeName = "n31_kng_zi02"
   end
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self._bg).sprite = atlas:GetSprite(bgSpriteName)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self.unSelect).sprite = atlas:GetSprite(maskSpriteName)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self.locker).sprite = atlas:GetSprite(lockSpriteName)
-  ;
-  (self.logName):LoadImage(multiLangaugeName)
+  self._bg.sprite = atlas:GetSprite(bgSpriteName)
+  self.unSelect.sprite = atlas:GetSprite(maskSpriteName)
+  self.locker.sprite = atlas:GetSprite(lockSpriteName)
+  self.logName:LoadImage(multiLangaugeName)
   self:SetLockVisible(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31HardLevelBtn.SetLockVisible = function(self, bVisible, first)
-  -- function num : 0_3 , upvalues : _ENV
-  local value = (LocalDB.GetInt)(self.key, 2)
+function UIN31HardLevelBtn:SetLockVisible(bVisible, first)
+  local value = LocalDB.GetInt(self.key, 2)
   if self.locker then
     if not bVisible and first and value == 2 then
-      ((self.locker).gameObject):SetActive(true)
-      ;
-      (LocalDB.SetInt)(self.key, 1)
-      ;
-      (self._rootAni):Play("uieff_UIN31HardLevelBtn_lock")
+      self.locker.gameObject:SetActive(true)
+      LocalDB.SetInt(self.key, 1)
+      self._rootAni:Play("uieff_UIN31HardLevelBtn_lock")
     else
-      ;
-      ((self.locker).gameObject):SetActive(bVisible)
+      self.locker.gameObject:SetActive(bVisible)
     end
   end
   self.isLock = bVisible
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31HardLevelBtn.SetSelect = function(self, bSelect, le2, isLevel2Lock)
-  -- function num : 0_4
+function UIN31HardLevelBtn:SetSelect(bSelect, le2, isLevel2Lock)
   if le2 and isLevel2Lock then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R4 in 'UnsetPending'
-
   if bSelect then
-    (self._HideGroup).alpha = 1
-    ;
-    (self._HideGroup):DOFade(0, 0.3)
+    self._HideGroup.alpha = 1
+    self._HideGroup:DOFade(0, 0.3)
   else
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._HideGroup).alpha = 0
-    ;
-    (self._HideGroup):DOFade(1, 0.3)
+    self._HideGroup.alpha = 0
+    self._HideGroup:DOFade(1, 0.3)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31HardLevelBtn.LevelBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIN31HardLevelBtn:LevelBtnOnClick(go)
   if self.clickCallback then
-    (self.clickCallback)()
+    self.clickCallback()
   end
 end
-
-

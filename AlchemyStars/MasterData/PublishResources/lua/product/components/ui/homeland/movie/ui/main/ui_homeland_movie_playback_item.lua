@@ -1,63 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/main/ui_homeland_movie_playback_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMoviePlaybackItem", UICustomWidget)
 UIHomelandMoviePlaybackItem = UIHomelandMoviePlaybackItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMoviePlaybackItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandMoviePlaybackItem:Constructor()
   self._actorId = nil
   self._movieData = nil
   self._callBack = nil
   self._altas = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePlaybackItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandMoviePlaybackItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePlaybackItem.InitWidget = function(self)
-  -- function num : 0_2
+function UIHomelandMoviePlaybackItem:InitWidget()
   self._actorHead = self:GetUIComponent("RawImageLoader", "actorHead")
   self._actorName = self:GetUIComponent("UILocalizationText", "actorName")
   self._actorType = self:GetUIComponent("UILocalizationText", "actorType")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePlaybackItem.SetData = function(self, data, movieData)
-  -- function num : 0_3
+function UIHomelandMoviePlaybackItem:SetData(data, movieData)
   self._actorId = data
   self._movieData = movieData
   self:InitData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePlaybackItem.GetData = function(self)
-  -- function num : 0_4
+function UIHomelandMoviePlaybackItem:GetData()
   return self._actorId
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePlaybackItem.InitData = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local typeText = (MovieDataManager:GetInstance()):GetMoviePointByID((self._movieData).ID, self._actorId)
-  ;
-  (self._actorType):SetText((StringTable.Get)(typeText))
-  ;
-  (self._actorHead):LoadImage("head1_" .. self._actorId)
-  ;
-  (self._actorName):SetText((StringTable.Get)(((Cfg.cfg_item)[self._actorId]).Name))
+function UIHomelandMoviePlaybackItem:InitData()
+  local typeText = MovieDataManager:GetInstance():GetMoviePointByID(self._movieData.ID, self._actorId)
+  self._actorType:SetText(StringTable.Get(typeText))
+  self._actorHead:LoadImage("head1_" .. self._actorId)
+  self._actorName:SetText(StringTable.Get(Cfg.cfg_item[self._actorId].Name))
 end
-
-

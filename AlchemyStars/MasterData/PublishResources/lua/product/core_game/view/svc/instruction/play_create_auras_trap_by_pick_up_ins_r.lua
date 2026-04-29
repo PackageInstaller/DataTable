@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_create_auras_trap_by_pick_up_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCreateAurasTrapByPickUpInstruction", BaseInstruction)
 PlayCreateAurasTrapByPickUpInstruction = PlayCreateAurasTrapByPickUpInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCreateAurasTrapByPickUpInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCreateAurasTrapByPickUpInstruction:Constructor(paramList)
   self._trapID = tonumber(paramList.trapID)
   self._trapEffDelayTime = tonumber(paramList.trapEffDelay) or 0
   self._trapEffID = tonumber(paramList.trapEffID)
   local strArray = paramList.trapAnimNames
-  self._trapAnimNames = (string.split)(strArray, "|")
+  self._trapAnimNames = string.split(strArray, "|")
   self._flyStartOffset = tonumber(paramList.flyStartOffset) or 1
   self._flyRotateOffset = tonumber(paramList.flyRotateOffset) or -0.3
   self._flyStartHeight = tonumber(paramList.flyStartHeight) or 1
@@ -22,66 +15,60 @@ PlayCreateAurasTrapByPickUpInstruction.Constructor = function(self, paramList)
   self._flyEffID = tonumber(paramList.flyEffID)
   self._flyTotalTime = tonumber(paramList.flyTotalTime) or 1000
   strArray = paramList.flyAnimNames
-  self._flyAnimNames = (string.split)(strArray, "|")
+  self._flyAnimNames = string.split(strArray, "|")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCreateAurasTrapByPickUpInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCreateAurasTrapByPickUpInstruction:GetCacheResource()
   local t = {}
   if self._trapID then
-    local cfgTrap = (Cfg.cfg_trap)[self._trapID]
+    local cfgTrap = Cfg.cfg_trap[self._trapID]
     if cfgTrap then
-      for i,resPath in ipairs(cfgTrap.ResPath) do
-        (table.insert)(t, {resPath, 1})
+      for i, resPath in ipairs(cfgTrap.ResPath) do
+        table.insert(t, {resPath, 1})
       end
     end
   end
-  do
-    do
-      if self._trapEffID then
-        local cfgEff = (Cfg.cfg_effect)[self._trapEffID]
-        if cfgEff then
-          (table.insert)(t, {cfgEff.ResPath, 1})
-        end
-      end
-      do
-        if self._flyEffID then
-          local cfgEff = (Cfg.cfg_effect)[self._flyEffID]
-          if cfgEff then
-            (table.insert)(t, {cfgEff.ResPath, 1})
-          end
-        end
-        return t
-      end
+  if self._trapEffID then
+    local cfgEff = Cfg.cfg_effect[self._trapEffID]
+    if cfgEff then
+      table.insert(t, {
+        cfgEff.ResPath,
+        1
+      })
     end
   end
+  if self._flyEffID then
+    local cfgEff = Cfg.cfg_effect[self._flyEffID]
+    if cfgEff then
+      table.insert(t, {
+        cfgEff.ResPath,
+        1
+      })
+    end
+  end
+  return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCreateAurasTrapByPickUpInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayCreateAurasTrapByPickUpInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   if not skillEffectResultContainer then
-    (Log.error)("PlayCreateAurasTrapByPickUp: result container is nil")
-    return 
+    Log.error("PlayCreateAurasTrapByPickUp: result container is nil")
+    return
   end
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.CreateAurasTrapByPickUp)
   if not resultArray then
-    (Log.error)("PlayCreateAurasTrapByPickUp: result is nil")
-    return 
+    Log.error("PlayCreateAurasTrapByPickUp: result is nil")
+    return
   end
   if #resultArray ~= 1 then
-    (Log.error)("PlayCreateAurasTrapByPickUp: result count error, count=", #resultArray)
-    return 
+    Log.error("PlayCreateAurasTrapByPickUp: result count error, count=", #resultArray)
+    return
   end
   local skillRes = resultArray[1]
   local trapEntity = world:GetEntityByID(skillRes:GetTrapEntityID())
   if not trapEntity then
-    return 
+    return
   end
   local pos = skillRes:GetPos()
   trapEntity:SetPosition(pos)
@@ -94,26 +81,21 @@ PlayCreateAurasTrapByPickUpInstruction.DoInstruction = function(self, TT, caster
     effHolderCmpt = trapEntity:EffectHolder()
   end
   local flyEffEntityList, taskIDs = self:_PlayFly(TT, casterEntity, pos, squareRingNum)
-  if #flyEffEntityList > 0 then
-    for _,flyEffEntity in ipairs(flyEffEntityList) do
+  if 0 < #flyEffEntityList then
+    for _, flyEffEntity in ipairs(flyEffEntityList) do
       effHolderCmpt:AttachEffectByEffectID(self._flyEffID, flyEffEntity:GetID())
     end
   end
-  do
-    local trapEffEntity = self:_PlayAuras(TT, pos, squareRingNum, world)
-    if trapEffEntity then
-      effHolderCmpt:AttachEffectByEffectID(self._trapEffID, trapEffEntity:GetID())
-    end
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDs) do
-      YIELD(TT)
-    end
+  local trapEffEntity = self:_PlayAuras(TT, pos, squareRingNum, world)
+  if trapEffEntity then
+    effHolderCmpt:AttachEffectByEffectID(self._trapEffID, trapEffEntity:GetID())
+  end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDs) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCreateAurasTrapByPickUpInstruction._PlayAuras = function(self, TT, pos, squareRingNum, world)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayCreateAurasTrapByPickUpInstruction:_PlayAuras(TT, pos, squareRingNum, world)
   local minX = pos.x - squareRingNum
   local maxX = pos.x + squareRingNum
   local minY = pos.y - squareRingNum
@@ -122,23 +104,20 @@ PlayCreateAurasTrapByPickUpInstruction._PlayAuras = function(self, TT, pos, squa
     YIELD(TT, self._trapEffDelayTime)
   end
   if not self._trapEffID or self._trapEffID == 0 then
-    return 
+    return
   end
   local centerPos = pos
   local effectSvc = world:GetService("Effect")
   local trapEffEntity = effectSvc:CreateWorldPositionEffect(self._trapEffID, centerPos)
-  local effObject = (trapEffEntity:View()):GetGameObject()
+  local effObject = trapEffEntity:View():GetGameObject()
   local transWork = effObject.transform
-  local scale = (Vector3.New)(maxX - minX + 1, 1, maxY - minY + 1)
+  local scale = Vector3.New(maxX - minX + 1, 1, maxY - minY + 1)
   transWork:DOScale(scale, 0)
   self:_PlayAnimation(trapEffEntity, self._trapAnimNames)
   return trapEffEntity
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCreateAurasTrapByPickUpInstruction._PlayFly = function(self, TT, casterEntity, pos, squareRingNum)
-  -- function num : 0_4 , upvalues : _ENV
+function PlayCreateAurasTrapByPickUpInstruction:_PlayFly(TT, casterEntity, pos, squareRingNum)
   local flyEffEntityList = {}
   local world = casterEntity:GetOwnerWorld()
   local boardSvc = world:GetService("BoardRender")
@@ -162,74 +141,63 @@ PlayCreateAurasTrapByPickUpInstruction._PlayFly = function(self, TT, casterEntit
   flysquareRingNumList[4] = Vector2(maxX + 0.5, minY - 0.5)
   local centerPos = pos
   local trajectoryInfoArray = {}
-  for _,endGridPos in ipairs(flysquareRingNumList) do
+  for _, endGridPos in ipairs(flysquareRingNumList) do
     local effEntity = effectSvc:CreatePositionEffect(self._flyEffID, v3StartPos)
-    do
-      if effEntity then
-        local effDir = centerPos - endGridPos
-        effDir = effDir:Normalize()
-        effEntity:SetDirection(effDir, self._flyRotateOffset)
-        self:_PlayAnimation(effEntity, self._flyAnimNames)
-        ;
-        (table.insert)(flyEffEntityList, effEntity)
-      end
-      local endRenderPos = boardSvc:GridPos2RenderPos(endGridPos)
-      endRenderPos.y = endRenderPos.y + self._flyStartHeight
-      do
-        local trajectoryInfo = {startHeight = self._flyStartHeight, endHeight = 0, totalTime = self._flyTotalTime * 0.001, totalTimeMs = self._flyTotalTime, targetRenderPos = endRenderPos, currentTime = 0, trajectoryID = self._flyEffID, trajectoryEntity = effEntity}
-        ;
-        (table.insert)(trajectoryInfoArray, trajectoryInfo)
-        -- DECOMPILER ERROR at PC114: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if effEntity then
+      local effDir = centerPos - endGridPos
+      effDir = effDir:Normalize()
+      effEntity:SetDirection(effDir, self._flyRotateOffset)
+      self:_PlayAnimation(effEntity, self._flyAnimNames)
+      table.insert(flyEffEntityList, effEntity)
     end
+    local endRenderPos = boardSvc:GridPos2RenderPos(endGridPos)
+    endRenderPos.y = endRenderPos.y + self._flyStartHeight
+    local trajectoryInfo = {
+      startHeight = self._flyStartHeight,
+      endHeight = 0,
+      totalTime = self._flyTotalTime * 0.001,
+      totalTimeMs = self._flyTotalTime,
+      targetRenderPos = endRenderPos,
+      currentTime = 0,
+      trajectoryID = self._flyEffID,
+      trajectoryEntity = effEntity
+    }
+    table.insert(trajectoryInfoArray, trajectoryInfo)
   end
   YIELD(TT)
   local taskIDs = {}
-  for _,trajectoryInfo in ipairs(trajectoryInfoArray) do
-    local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoFly, self, trajectoryInfo)
-    ;
-    (table.insert)(taskIDs, taskID)
+  for _, trajectoryInfo in ipairs(trajectoryInfoArray) do
+    local taskID = GameGlobal.TaskManager():CoreGameStartTask(self._DoFly, self, trajectoryInfo)
+    table.insert(taskIDs, taskID)
   end
   return flyEffEntityList, taskIDs
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCreateAurasTrapByPickUpInstruction._DoFly = function(self, TT, trajectoryInfo)
-  -- function num : 0_5 , upvalues : _ENV
+function PlayCreateAurasTrapByPickUpInstruction:_DoFly(TT, trajectoryInfo)
   local entity = trajectoryInfo.trajectoryEntity
   local effectViewCmpt = entity:View()
   local effectObject = effectViewCmpt:GetGameObject()
   local transWork = effectObject.transform
-  ;
-  (transWork:DOMove(trajectoryInfo.targetRenderPos, trajectoryInfo.totalTime, false)):SetEase(((DG.Tweening).Ease).OutQuart)
+  transWork:DOMove(trajectoryInfo.targetRenderPos, trajectoryInfo.totalTime, false):SetEase(DG.Tweening.Ease.OutQuart)
   YIELD(TT, trajectoryInfo.totalTimeMs)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCreateAurasTrapByPickUpInstruction._PlayAnimation = function(self, entity, animNames)
-  -- function num : 0_6 , upvalues : _ENV
+function PlayCreateAurasTrapByPickUpInstruction:_PlayAnimation(entity, animNames)
   if not entity:HasView() then
-    return 
+    return
   end
-  local go = (entity:View()):GetGameObject()
+  local go = entity:View():GetGameObject()
   local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
   if anim == nil then
-    (Log.fatal)("Cant play legacy animation, animation not found in ", go.name)
-    return 
+    Log.fatal("Cant play legacy animation, animation not found in ", go.name)
+    return
   end
-  if (table.count)(animNames) > 1 then
+  if table.count(animNames) > 1 then
     anim:Stop()
     for i = 1, #animNames do
       anim:PlayQueued(animNames[i])
     end
   else
-    do
-      anim:Play(animNames[1])
-    end
+    anim:Play(animNames[1])
   end
 end
-
-

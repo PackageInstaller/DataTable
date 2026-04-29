@@ -1,183 +1,132 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/social/air_group_action_state_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("fsm_state")
 _class("AirGroupActionStateBase", FSMState)
 AirGroupActionStateBase = AirGroupActionStateBase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AirGroupActionStateBase.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function AirGroupActionStateBase:Constructor()
   self.actions = {}
-  self.owner = (self.stateMachine):GetOwner()
-  self.socialArea = (self.owner):GetSocialArea()
-  self.pets = (self.owner):GetPets()
-  self.petIds = (table.keys)(self.pets)
-  self.libMaker = (self.owner):GetLibMaker()
+  self.owner = self.stateMachine:GetOwner()
+  self.socialArea = self.owner:GetSocialArea()
+  self.pets = self.owner:GetPets()
+  self.petIds = table.keys(self.pets)
+  self.libMaker = self.owner:GetLibMaker()
   self.childMachines = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionStateBase.GetAirMain = function(self)
-  -- function num : 0_1
-  return (self.owner):GetAirMain()
+function AirGroupActionStateBase:GetAirMain()
+  return self.owner:GetAirMain()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionStateBase.AddChild = function(self, stateTypes, callBack, sender)
-  -- function num : 0_2 , upvalues : _ENV
+function AirGroupActionStateBase:AddChild(stateTypes, callBack, sender)
   local m = AirGroupActionMachine:New(self.owner, stateTypes)
   m:SetProcessFinish(callBack, sender)
-  ;
-  (table.insert)(self.childMachines, m)
+  table.insert(self.childMachines, m)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionStateBase.OnDispose = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for index,value in ipairs(self.childMachines) do
+function AirGroupActionStateBase:OnDispose()
+  for index, value in ipairs(self.childMachines) do
     value:Dispose()
   end
   self.childMachines = {}
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionStateBase.Excute = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function AirGroupActionStateBase:Excute()
   if self.pets then
-    for key,pet in pairs(self.pets) do
+    for key, pet in pairs(self.pets) do
       if not pet:IsAlive() then
-        (self:GetAirMain()):StopSocialByPet(pet)
-        return 
+        self:GetAirMain():StopSocialByPet(pet)
+        return
       end
     end
   end
-  do
-    local count = 0
-    for index,action in ipairs(self.actions) do
-      if action:IsOver() then
-        count = count + 1
-      end
+  local count = 0
+  for index, action in ipairs(self.actions) do
+    if action:IsOver() then
+      count = count + 1
     end
-    if self.actions and count == #self.actions then
-      (self.stateMachine):ChangeNextState()
-    end
+  end
+  if self.actions and count == #self.actions then
+    self.stateMachine:ChangeNextState()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionStateBase.Exit = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (FSMState.Exit)(self)
+function AirGroupActionStateBase:Exit()
+  FSMState.Exit(self)
   self.actions = {}
 end
 
 _class("AirGroupActionNoneState", AirGroupActionStateBase)
 AirGroupActionNoneState = AirGroupActionNoneState
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-AirGroupActionNoneState.Enter = function(self, machine)
-  -- function num : 0_6
+function AirGroupActionNoneState:Enter(machine)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionNoneState.Exit = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (AirGroupActionStateBase.Exit)(self)
+function AirGroupActionNoneState:Exit()
+  AirGroupActionStateBase.Exit(self)
 end
 
 _class("AirGroupActionMoveState", AirGroupActionStateBase)
 AirGroupActionMoveState = AirGroupActionMoveState
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-AirGroupActionMoveState.Enter = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local pos = (self.libMaker):PopPoint((table.count)(self.pets))
-  for _,pet in pairs(self.pets) do
+function AirGroupActionMoveState:Enter()
+  local pos = self.libMaker:PopPoint(table.count(self.pets))
+  for _, pet in pairs(self.pets) do
     local floor = pet:GetFloor()
-    local pos = (self.libMaker):GetCurPos(pet:TemplateID())
+    local pos = self.libMaker:GetCurPos(pet:TemplateID())
     if pos then
-      local action = AirActionMove:New(pet, pos, floor, (self.owner):GetAirMain())
-      ;
-      (self.owner):PlayAction(pet, action)
-      ;
-      (table.insert)(self.actions, action)
+      local action = AirActionMove:New(pet, pos, floor, self.owner:GetAirMain())
+      self.owner:PlayAction(pet, action)
+      table.insert(self.actions, action)
     end
   end
 end
 
 _class("AirGroupActionFollowState", AirGroupActionStateBase)
 AirGroupActionFollowState = AirGroupActionFollowState
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
 
-AirGroupActionFollowState.Enter = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self.libMaker):PopPoint((table.count)(self.pets))
-  local pets = (table.toArray)(self.pets)
+function AirGroupActionFollowState:Enter()
+  self.libMaker:PopPoint(table.count(self.pets))
+  local pets = table.toArray(self.pets)
   local beFollowPet = pets[1]
-  local beFollowAction = nil
-  do
-    if beFollowPet then
-      local floor = beFollowPet:GetFloor()
-      beFollowAction = AirActionMove:New(beFollowPet, (self.libMaker):GetCurPos(beFollowPet:TemplateID()), floor, (self.owner):GetAirMain())
-      ;
-      (self.owner):PlayAction(beFollowPet, beFollowAction)
-      ;
-      (table.insert)(self.actions, beFollowAction)
-    end
-    local followPet = pets[2]
-    if followPet then
-      local floor = followPet:GetFloor()
-      local action = AirActionMove:New(followPet, (self.libMaker):GetCurPos(followPet:TemplateID()), floor, (self.owner):GetAirMain())
-      ;
-      (self.owner):PlayAction(followPet, action)
-      ;
-      (table.insert)(self.actions, action)
-    end
-    do
-      if (table.count)(self.pets) > 2 then
-        for index,pet in ipairs(pets) do
-          if index > 2 then
-            ((self.owner):GetAirMain()):RandomActionForPet(pet)
-          end
-        end
-        ;
-        (Log.exception)("并排走出现了三个人？")
+  local beFollowAction
+  if beFollowPet then
+    local floor = beFollowPet:GetFloor()
+    beFollowAction = AirActionMove:New(beFollowPet, self.libMaker:GetCurPos(beFollowPet:TemplateID()), floor, self.owner:GetAirMain())
+    self.owner:PlayAction(beFollowPet, beFollowAction)
+    table.insert(self.actions, beFollowAction)
+  end
+  local followPet = pets[2]
+  if followPet then
+    local floor = followPet:GetFloor()
+    local action = AirActionMove:New(followPet, self.libMaker:GetCurPos(followPet:TemplateID()), floor, self.owner:GetAirMain())
+    self.owner:PlayAction(followPet, action)
+    table.insert(self.actions, action)
+  end
+  if table.count(self.pets) > 2 then
+    for index, pet in ipairs(pets) do
+      if 2 < index then
+        self.owner:GetAirMain():RandomActionForPet(pet)
       end
     end
+    Log.exception("并排走出现了三个人？")
   end
 end
 
 _class("AirGroupActionLookAtState", AirGroupActionStateBase)
 AirGroupActionLookAtState = AirGroupActionLookAtState
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
 
-AirGroupActionLookAtState.Enter = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local pos = (self.libMaker):GetTargetPos()
-  for index,pet in pairs(self.pets) do
+function AirGroupActionLookAtState:Enter()
+  local pos = self.libMaker:GetTargetPos()
+  for index, pet in pairs(self.pets) do
     local action = AirActionRotate:New(pet, pos, 100)
-    ;
-    (self.owner):PlayAction(pet, action)
-    ;
-    (table.insert)(self.actions, action)
+    self.owner:PlayAction(pet, action)
+    table.insert(self.actions, action)
   end
 end
 
 _class("AirGroupActionTalkState", AirGroupActionStateBase)
 AirGroupActionTalkState = AirGroupActionTalkState
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
 
-AirGroupActionTalkState.Constructor = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function AirGroupActionTalkState:Constructor()
   self.curPetIndex = 1
   self.maxRound = 0
   self.curAction = nil
@@ -185,63 +134,44 @@ AirGroupActionTalkState.Constructor = function(self)
   self.petInCam = false
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionTalkState.Enter = function(self, maxRound)
-  -- function num : 0_12
+function AirGroupActionTalkState:Enter(maxRound)
   self.curPetIndex = 1
-  self.curRound = (self.socialArea):GetSocialRound()
-  if not maxRound then
-    self.maxRound = (self.socialArea):GetMaxRound()
-    self:Talk()
-  end
+  self.curRound = self.socialArea:GetSocialRound()
+  self.maxRound = maxRound or self.socialArea:GetMaxRound()
+  self:Talk()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionTalkState.GetAirCamera3D = function(self)
-  -- function num : 0_13
-  return (self:GetAirMain()):GetMainCamera()
+function AirGroupActionTalkState:GetAirCamera3D()
+  return self:GetAirMain():GetMainCamera()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionTalkState.CheckPetInCam = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function AirGroupActionTalkState:CheckPetInCam()
   if not self.petInCam then
     local camera3d = self:GetAirCamera3D()
-    for id,pet in pairs(self.pets) do
+    for id, pet in pairs(self.pets) do
       local tr = pet:Transform()
       local petPos = tr.position
       local screenPos = camera3d:WorldToScreenPoint(petPos)
-      if screenPos.x <= (UnityEngine.Screen).width and screenPos.x > 0 and screenPos.y <= (UnityEngine.Screen).height and screenPos.y > 0 then
+      if screenPos.x <= UnityEngine.Screen.width and screenPos.x > 0 and screenPos.y <= UnityEngine.Screen.height and 0 < screenPos.y then
         self.petInCam = true
         break
       end
     end
   end
-  do
-    return self.petInCam
-  end
+  return self.petInCam
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionTalkState.CanRealTalk = function(self)
-  -- function num : 0_15
+function AirGroupActionTalkState:CanRealTalk()
   local airMain = self:GetAirMain()
   local nearByState = airMain:GetCamNearbyState()
   local petInCam = self:CheckPetInCam()
-  return not nearByState or petInCam
+  return nearByState and petInCam
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionTalkState.Talk = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local talkCfg = nil
+function AirGroupActionTalkState:Talk()
+  local talkCfg
   if self.takeState == AircraftSocialTalkType.Normal and self:CanRealTalk() then
-    talkCfg = (AirHelper.GetGroupTalk)(self.pets, nil)
+    talkCfg = AirHelper.GetGroupTalk(self.pets, nil)
     if talkCfg then
       self.takeState = AircraftSocialTalkType.RealTalk
     else
@@ -249,70 +179,54 @@ AirGroupActionTalkState.Talk = function(self)
     end
   end
   if self.takeState == AircraftSocialTalkType.Normal then
-    local pet = (self.pets)[(self.petIds)[self.curPetIndex]]
+    local pet = self.pets[self.petIds[self.curPetIndex]]
     if pet then
       local action = AirActionFace:New(pet, pet:GetRandomFace())
-      ;
-      (self.owner):PlayAction(pet, action)
+      self.owner:PlayAction(pet, action)
       self.curAction = action
     end
-  else
-    do
-      if self.takeState == AircraftSocialTalkType.RealTalk then
-        local action = AirActionGroupTalk:New(self.pets, talkCfg, self:GetAirMain())
-        self.curAction = action
-        for k,pet in pairs(self.pets) do
-          pet:SetSocialGroupTalk(action)
-        end
-        action:Start()
-      end
+  elseif self.takeState == AircraftSocialTalkType.RealTalk then
+    local action = AirActionGroupTalk:New(self.pets, talkCfg, self:GetAirMain())
+    self.curAction = action
+    for k, pet in pairs(self.pets) do
+      pet:SetSocialGroupTalk(action)
     end
+    action:Start()
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionTalkState.Exit = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  (AirGroupActionStateBase.Exit)(self)
+function AirGroupActionTalkState:Exit()
+  AirGroupActionStateBase.Exit(self)
   self.curPetIndex = 1
   self.curRound = 0
   self.maxRound = 0
   self.curAction = nil
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionTalkState.Excute = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function AirGroupActionTalkState:Excute()
   if self.pets then
-    for key,pet in pairs(self.pets) do
+    for key, pet in pairs(self.pets) do
       if not pet:IsAlive() then
-        (self:GetAirMain()):StopSocialByPet(pet)
-        return 
+        self:GetAirMain():StopSocialByPet(pet)
+        return
       end
     end
   end
-  do
-    if self.curAction and (self.curAction):IsOver() then
-      if self.takeState == AircraftSocialTalkType.RealTalk then
-        (self.stateMachine):ChangeNextState()
+  if self.curAction and self.curAction:IsOver() then
+    if self.takeState == AircraftSocialTalkType.RealTalk then
+      self.stateMachine:ChangeNextState()
+    elseif self.takeState == AircraftSocialTalkType.Normal then
+      if self.curPetIndex < #self.petIds then
+        self.curPetIndex = self.curPetIndex + 1
       else
-        if self.takeState == AircraftSocialTalkType.Normal then
-          if self.curPetIndex < #self.petIds then
-            self.curPetIndex = self.curPetIndex + 1
-          else
-            self.curPetIndex = 1
-          end
-          self.curRound = self.curRound + 1
-          ;
-          (self.socialArea):SetSocialRound(self.curRound, true)
-          if self.maxRound < self.curRound then
-            (self.stateMachine):ChangeNextState()
-          else
-            self:Talk()
-          end
-        end
+        self.curPetIndex = 1
+      end
+      self.curRound = self.curRound + 1
+      self.socialArea:SetSocialRound(self.curRound, true)
+      if self.curRound > self.maxRound then
+        self.stateMachine:ChangeNextState()
+      else
+        self:Talk()
       end
     end
   end
@@ -320,123 +234,60 @@ end
 
 _class("AirGroupActionFurnitureState", AirGroupActionStateBase)
 AirGroupActionFurnitureState = AirGroupActionFurnitureState
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
 
-AirGroupActionFurnitureState.Enter = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local seqMaker = (self.libMaker):GetSeqMaker()
+function AirGroupActionFurnitureState:Enter()
+  local seqMaker = self.libMaker:GetSeqMaker()
   self.isActionSeq = seqMaker ~= nil
   if seqMaker then
-    local furn = (self.libMaker):GetFurniture()
-    do
-      if furn then
-        local index = 1
-        for petTempId,pet in pairs(self.pets) do
-          do
-            local point = (self.libMaker):GetFurniturePoint(petTempId)
-            local pos, rot = point:InteractionPoint()
-            local endPos = point:MovePoint()
-            local furnAction = AirActionSequence:New(pet, pos, rot, endPos, seqMaker, index, (self.socialArea):GetSocialRound(), function()
-    -- function num : 0_19_0 , upvalues : pet, furn
-    pet:SetFurnitureType(furn:Type())
-  end
-, function(round, index)
-    -- function num : 0_19_1 , upvalues : self
-    (self.socialArea):SetSocialRound(round, true, index)
-  end
-, function()
-    -- function num : 0_19_2 , upvalues : furn, point, pet
-    furn:ReleasePoint(point)
-    pet:SetFurnitureType(0)
-  end
-)
-            ;
-            (self.owner):PlayAction(pet, furnAction)
-            ;
-            (table.insert)(self.actions, furnAction)
-            index = index + 1
-          end
-        end
-        -- DECOMPILER ERROR at PC58: Confused about usage of register R8 for local variables in 'ReleaseLocals'
-
-      else
-        index = Log
-        index = index.error
-        index("没找到家具直接进入下回合")
-        index = self.stateMachine
-        index(index)
-      end
-      -- DECOMPILER ERROR at PC67: Confused about usage of register R7 for local variables in 'ReleaseLocals'
-
-    end
-  else
-    furn = self.libMaker
-    -- DECOMPILER ERROR at PC69: Overwrote pending register: R3 in 'AssignReg'
-
-    furn = furn:GetFurniture
-    furn = furn(index)
-    local furn = nil
-    -- DECOMPILER ERROR at PC73: Overwrote pending register: R3 in 'AssignReg'
-
+    local furn = self.libMaker:GetFurniture()
     if furn then
-      index = index(self.pets)
-      for petTempId,furn in index do
-        local l_0_19_15, l_0_19_16, l_0_19_17, petTempId, pet = nil
-        l_0_19_15 = self.libMaker
-        l_0_19_15, l_0_19_16 = l_0_19_15:GetFurniturePoint, l_0_19_15
-        l_0_19_17 = 
-        l_0_19_15 = l_0_19_15(l_0_19_16, l_0_19_17)
-        local point = nil
-        l_0_19_16, l_0_19_17 = furn:GetSocialRemainTime, furn
-        l_0_19_16 = l_0_19_16(l_0_19_17)
-        local duration = nil
-        l_0_19_17 = AircraftPetFurPointCondition
-        l_0_19_17, petTempId = l_0_19_17:New, l_0_19_17
-        pet = furn
-        point = furn
-        duration = nil
-        l_0_19_17 = l_0_19_17(petTempId, pet, point, duration, l_0_19_15)
-        local cond = nil
-        petTempId = AirActionOnFurniture
-        petTempId, pet = petTempId:New, petTempId
-        point = furn
-        duration = furn
-        cond = l_0_19_15
-        petTempId = petTempId(pet, point, duration, cond, l_0_19_17, l_0_19_16)
-        local furnAction = nil
-        pet = self.owner
-        pet, point = pet:PlayAction, pet
-        duration = furn
-        cond = petTempId
-        pet(point, duration, cond)
-        pet = table
-        pet = pet.insert
-        point = self.actions
-        duration = petTempId
-        pet(point, duration)
+      local index = 1
+      for petTempId, pet in pairs(self.pets) do
+        local point = self.libMaker:GetFurniturePoint(petTempId)
+        local pos, rot = point:InteractionPoint()
+        local endPos = point:MovePoint()
+        local furnAction = AirActionSequence:New(pet, pos, rot, endPos, seqMaker, index, self.socialArea:GetSocialRound(), function()
+          pet:SetFurnitureType(furn:Type())
+        end, function(round, index)
+          self.socialArea:SetSocialRound(round, true, index)
+        end, function()
+          furn:ReleasePoint(point)
+          pet:SetFurnitureType(0)
+        end)
+        self.owner:PlayAction(pet, furnAction)
+        table.insert(self.actions, furnAction)
+        index = index + 1
       end
     else
-      (Log.error)("没找到家具直接进入下回合")
-      ;
-      (self.stateMachine):ChangeNextState()
-      -- DECOMPILER ERROR at PC118: Confused about usage of register R7 for local variables in 'ReleaseLocals'
-
+      Log.error("没找到家具直接进入下回合")
+      self.stateMachine:ChangeNextState()
+    end
+  else
+    local furn = self.libMaker:GetFurniture()
+    if furn then
+      for petTempId, pet in pairs(self.pets) do
+        local point = self.libMaker:GetFurniturePoint(petTempId)
+        local duration = pet:GetSocialRemainTime()
+        local cond = AircraftPetFurPointCondition:New(pet, furn, nil, point)
+        local furnAction = AirActionOnFurniture:New(pet, furn, point, cond, duration)
+        self.owner:PlayAction(pet, furnAction)
+        table.insert(self.actions, furnAction)
+      end
+    else
+      Log.error("没找到家具直接进入下回合")
+      self.stateMachine:ChangeNextState()
     end
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionFurnitureState.Excute = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  (AirGroupActionStateBase.Excute)(self)
+function AirGroupActionFurnitureState:Excute()
+  AirGroupActionStateBase.Excute(self)
   if not self.isActionSeq then
-    for _,action in pairs(self.actions) do
+    for _, action in pairs(self.actions) do
       local time = action:CurrentTime()
       local duration = action:Duration()
-      local remainTime = (math.floor)(duration - time)
-      local pet = (action:GetPets())[1]
+      local remainTime = math.floor(duration - time)
+      local pet = action:GetPets()[1]
       if pet then
         pet:SetSocialRemainTime(remainTime)
       end
@@ -446,154 +297,112 @@ end
 
 _class("AirGroupActionStandState", AirGroupActionStateBase)
 AirGroupActionStandState = AirGroupActionStandState
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
 
-AirGroupActionStandState.Enter = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  for _,pet in pairs(self.pets) do
+function AirGroupActionStandState:Enter()
+  for _, pet in pairs(self.pets) do
     local action = AirActionStand:New(pet, 5000, 7000)
-    ;
-    (self.owner):PlayAction(pet, action)
-    ;
-    (table.insert)(self.actions, action)
+    self.owner:PlayAction(pet, action)
+    table.insert(self.actions, action)
   end
 end
 
 _class("AirGroupActionCloserState", AirGroupActionStateBase)
 AirGroupActionCloserState = AirGroupActionCloserState
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
 
-AirGroupActionCloserState.Enter = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  for _,pet in pairs(self.pets) do
+function AirGroupActionCloserState:Enter()
+  for _, pet in pairs(self.pets) do
     local floor = pet:GetFloor()
-    local pos = (self.libMaker):GetCloserPos()
+    local pos = self.libMaker:GetCloserPos()
     if pos then
-      local action = AirActionMove:New(pet, pos, floor, (self.owner):GetAirMain())
-      ;
-      (self.owner):PlayAction(pet, action)
-      ;
-      (table.insert)(self.actions, action)
+      local action = AirActionMove:New(pet, pos, floor, self.owner:GetAirMain())
+      self.owner:PlayAction(pet, action)
+      table.insert(self.actions, action)
     end
   end
 end
 
 _class("AirGroupActionLocatedState", AirGroupActionStateBase)
 AirGroupActionLocatedState = AirGroupActionLocatedState
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
 
-AirGroupActionLocatedState.Enter = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local pos = (self.libMaker):PopPoint((table.count)(self.pets))
-  for _,pet in pairs(self.pets) do
+function AirGroupActionLocatedState:Enter()
+  local pos = self.libMaker:PopPoint(table.count(self.pets))
+  for _, pet in pairs(self.pets) do
     local floor = pet:GetFloor()
-    local pos = (self.libMaker):GetCurPos(pet:TemplateID())
+    local pos = self.libMaker:GetCurPos(pet:TemplateID())
     if pos then
       local action = AirActionLocated:New(pet, pos, floor)
-      ;
-      (self.owner):PlayAction(pet, action)
-      ;
-      (table.insert)(self.actions, action)
+      self.owner:PlayAction(pet, action)
+      table.insert(self.actions, action)
     end
   end
 end
 
 _class("AirGroupActionMoveTalkState", AirGroupActionStateBase)
 AirGroupActionMoveTalkState = AirGroupActionMoveTalkState
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
 
-AirGroupActionMoveTalkState.Enter = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function AirGroupActionMoveTalkState:Enter()
   local subStates = AirSocialSubLibType[self:GetStateType()]
   self:AddChild(subStates, function()
-    -- function num : 0_24_0 , upvalues : self
-    ((self.childMachines)[1]):StartState()
-    ;
-    (self.libMaker):ReleasePoint()
-  end
-)
-  self:AddChild({AirGroupActionStateType.Talk}, function()
-    -- function num : 0_24_1 , upvalues : self
-    (self.owner):OnProcessFinish()
-  end
-)
-  ;
-  ((self.childMachines)[1]):StartState()
-  ;
-  ((self.childMachines)[2]):ChangeState(AirGroupActionStateType.Talk)
+    self.childMachines[1]:StartState()
+    self.libMaker:ReleasePoint()
+  end)
+  self:AddChild({
+    AirGroupActionStateType.Talk
+  }, function()
+    self.owner:OnProcessFinish()
+  end)
+  self.childMachines[1]:StartState()
+  self.childMachines[2]:ChangeState(AirGroupActionStateType.Talk)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionMoveTalkState.Excute = function(self)
-  -- function num : 0_25
+function AirGroupActionMoveTalkState:Excute()
 end
 
 _class("AirGroupActionCorrectState", AirGroupActionStateBase)
 AirGroupActionCorrectState = AirGroupActionCorrectState
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
 
-AirGroupActionCorrectState.Enter = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  local pets = (table.toArray)(self.pets)
+function AirGroupActionCorrectState:Enter()
+  local pets = table.toArray(self.pets)
   local beFollowPet = pets[1]
-  local beFollowAction = nil
-  do
-    if beFollowPet then
-      local action = AirActionRotate:New(beFollowPet, beFollowPet:WorldPosition() + Vector3(0, 0, -1.5), 100)
-      ;
-      (self.owner):PlayAction(beFollowPet, action)
-      ;
-      (table.insert)(self.actions, action)
-    end
-    local followPet = pets[2]
-    if followPet then
-      local floor = followPet:GetFloor()
-      local action = AirActionMove:New(followPet, beFollowPet:WorldPosition() + Vector3(0, 0, -1.5), floor, (self.owner):GetAirMain())
-      ;
-      (self.owner):PlayAction(followPet, action)
-      ;
-      (table.insert)(self.actions, action)
-    end
-    do
-      if (table.count)(self.pets) > 2 then
-        for index,pet in ipairs(pets) do
-          if index > 2 then
-            ((self.owner):GetAirMain()):RandomActionForPet(pet)
-          end
-        end
-        ;
-        (Log.exception)("并排走出现了三个人？")
+  local beFollowAction
+  if beFollowPet then
+    local action = AirActionRotate:New(beFollowPet, beFollowPet:WorldPosition() + Vector3(0, 0, -1.5), 100)
+    self.owner:PlayAction(beFollowPet, action)
+    table.insert(self.actions, action)
+  end
+  local followPet = pets[2]
+  if followPet then
+    local floor = followPet:GetFloor()
+    local action = AirActionMove:New(followPet, beFollowPet:WorldPosition() + Vector3(0, 0, -1.5), floor, self.owner:GetAirMain())
+    self.owner:PlayAction(followPet, action)
+    table.insert(self.actions, action)
+  end
+  if 2 < table.count(self.pets) then
+    for index, pet in ipairs(pets) do
+      if 2 < index then
+        self.owner:GetAirMain():RandomActionForPet(pet)
       end
     end
+    Log.exception("并排走出现了三个人？")
   end
 end
 
 _class("AirGroupActionFurnitureTalkState", AirGroupActionStateBase)
 AirGroupActionFurnitureTalkState = AirGroupActionFurnitureTalkState
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
 
-AirGroupActionFurnitureTalkState.Enter = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  self:AddChild({AirGroupActionStateType.Furniture}, function()
-    -- function num : 0_27_0 , upvalues : self
-    (self.owner):OnProcessFinish()
-  end
-)
-  self:AddChild({AirGroupActionStateType.Talk}, function()
-    -- function num : 0_27_1
-  end
-)
-  ;
-  ((self.childMachines)[1]):StartState()
-  ;
-  ((self.childMachines)[2]):ChangeState(AirGroupActionStateType.Talk, 99999999)
+function AirGroupActionFurnitureTalkState:Enter()
+  self:AddChild({
+    AirGroupActionStateType.Furniture
+  }, function()
+    self.owner:OnProcessFinish()
+  end)
+  self:AddChild({
+    AirGroupActionStateType.Talk
+  }, function()
+  end)
+  self.childMachines[1]:StartState()
+  self.childMachines[2]:ChangeState(AirGroupActionStateType.Talk, 99999999)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionFurnitureTalkState.Excute = function(self)
-  -- function num : 0_28
+function AirGroupActionFurnitureTalkState:Excute()
 end
-
-

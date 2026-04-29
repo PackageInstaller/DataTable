@@ -1,21 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_skill_cost_feature_step_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_SkillCostFeatureStepPoint", SkillEffectCalc_Base)
 SkillEffectCalc_SkillCostFeatureStepPoint = SkillEffectCalc_SkillCostFeatureStepPoint
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SkillCostFeatureStepPoint.CalculateOnSingleTarget = function(self, calcParam, targetEntityID)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_SkillCostFeatureStepPoint:CalculateOnSingleTarget(calcParam, targetEntityID)
   if targetEntityID <= 0 then
-    return 
+    return
   end
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   if not lsvcFeature:HasFeatureType(FeatureType.StepPoint) then
-    return 
+    return
   end
   local param = calcParam:GetSkillEffectParam()
   local val = param:GetCostStepPointValue()
@@ -31,5 +24,3 @@ SkillEffectCalc_SkillCostFeatureStepPoint.CalculateOnSingleTarget = function(sel
   local costVal = oldVal - curVal
   return SkillEffectResult_SkillCostFeatureStepPoint:New(curVal, oldVal, costVal)
 end
-
-

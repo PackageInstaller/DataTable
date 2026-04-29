@@ -1,47 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_add_extra_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddExtraLayer", BuffViewBase)
 BuffViewAddExtraLayer = BuffViewAddExtraLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddExtraLayer.IsNotifyMatch = function(self, notify)
-  -- function num : 0_0 , upvalues : _ENV
-  do
-    if notify:GetNotifyType() == NotifyType.NotifyLayerChange then
-      local n = notify
-      if (self._buffResult).__oldFinalLayer ~= n.__oldFinalLayer then
-        return false
-      end
-      if n:GetNotifyEntity() and (self._buffResult):GetEntity() ~= n:GetNotifyEntity() then
-        return false
-      end
+function BuffViewAddExtraLayer:IsNotifyMatch(notify)
+  if notify:GetNotifyType() == NotifyType.NotifyLayerChange then
+    local n = notify
+    if self._buffResult.__oldFinalLayer ~= n.__oldFinalLayer then
+      return false
     end
-    return true
+    if n:GetNotifyEntity() and self._buffResult:GetEntity() ~= n:GetNotifyEntity() then
+      return false
+    end
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddExtraLayer.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewAddExtraLayer:PlayView(TT)
   local result = self._buffResult
   local targetEntity = result:GetEntity()
   local buffView = targetEntity:BuffView()
   local buffSeq = result:GetTargetBuffSeq()
   local viewInstance = buffView:GetBuffViewInstance(buffSeq)
   if not viewInstance then
-    return 
+    return
   end
   local totalLayer = result:GetFinalLayer()
   viewInstance:SetLayerCount(TT, totalLayer)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
   if targetEntity:HasPetPstID() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetAccumulateNum, (targetEntity:PetPstID()):GetPstID(), totalLayer)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.SetAccumulateNum, targetEntity:PetPstID():GetPstID(), totalLayer)
   end
 end
-
-

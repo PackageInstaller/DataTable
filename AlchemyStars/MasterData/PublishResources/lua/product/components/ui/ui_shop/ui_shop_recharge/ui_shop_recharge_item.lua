@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_recharge/ui_shop_recharge_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopRechargeItem", UICustomWidget)
 UIShopRechargeItem = UIShopRechargeItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopRechargeItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopRechargeItem:Constructor()
   self.shopModule = self:GetModule(ShopModule)
-  self.clientShop = (self.shopModule):GetClientShop()
-  self._data = (self.clientShop):GetRechargeShopData()
-  self._giftData = (self.clientShop):GetGiftPackShopData()
+  self.clientShop = self.shopModule:GetClientShop()
+  self._data = self.clientShop:GetRechargeShopData()
+  self._giftData = self.clientShop:GetGiftPackShopData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopRechargeItem:OnShow()
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._txtNameShadow = self:GetUIComponent("UILocalizationText", "txtNameShadow")
   self._label = self:GetGameObject("label")
@@ -33,8 +23,7 @@ UIShopRechargeItem.OnShow = function(self)
   self._txtPrice = self:GetUIComponent("UILocalizationText", "txtPrice")
   self._txtTotal = self:GetUIComponent("UILocalizationText", "txtTotal")
   self._txtGift = self:GetUIComponent("UILocalizationText", "txtGift")
-  ;
-  (self._txtPrice):SetText("")
+  self._txtPrice:SetText("")
   self._freeObj = self:GetGameObject("free")
   self._totalGO = self:GetGameObject("total")
   self._offset = self:GetGameObject("offset")
@@ -55,376 +44,256 @@ UIShopRechargeItem.OnShow = function(self)
   self._monthCardValue2Text = self:GetUIComponent("UILocalizationText", "MonthCardValue2Text")
   self._monthCardValue3 = self:GetUIComponent("UILocalizationText", "MonthCardValue3")
   self._monthCardValue4 = self:GetUIComponent("UILocalizationText", "MonthCardValue4")
-  self.animation = (self:GetGameObject()):GetComponent("Animation")
+  self.animation = self:GetGameObject():GetComponent("Animation")
   self:AttachEvent(GameEventType.UpdateRechargeItemPrice, self.FlushPrice)
   self:AttachEvent(GameEventType.UpdateRechargeItemPresent, self.FlushPresent)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopRechargeItem:OnHide()
   self:DetachEvent(GameEventType.UpdateRechargeItemPrice, self.FlushPrice)
   self:DetachEvent(GameEventType.UpdateRechargeItemPresent, self.FlushPresent)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeItem.Flush = function(self, id, isMonthCard, isGift)
-  -- function num : 0_3 , upvalues : _ENV
-  self._itemData = (self._data):GetGoodBuyId(id)
-  ;
-  (self._offset):SetActive(true)
+function UIShopRechargeItem:Flush(id, isMonthCard, isGift)
+  self._itemData = self._data:GetGoodBuyId(id)
+  self._offset:SetActive(true)
   self._isMonthCard = isMonthCard
   self._isGift = isGift
   if self._isMonthCard then
-    self._itemData = (self._data):GetMonthCardGoods()
+    self._itemData = self._data:GetMonthCardGoods()
+  elseif self._isGift then
+    self._itemData = self._giftData:GetGoodBuyId(id)
   else
-    if self._isGift then
-      self._itemData = (self._giftData):GetGoodBuyId(id)
-    else
-      self._itemData = (self._data):GetGoodBuyId(id)
-    end
+    self._itemData = self._data:GetGoodBuyId(id)
   end
-  ;
-  (self._txtName):SetText((self._itemData):GetName())
-  ;
-  (self._txtNameShadow):SetText((self._itemData):GetName())
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R4 in 'UnsetPending'
-
+  self._txtName:SetText(self._itemData:GetName())
+  self._txtNameShadow:SetText(self._itemData:GetName())
   if self._isGift then
-    (self._txtName).color = Color(1, 0.85490196078431, 0.53725490196078)
+    self._txtName.color = Color(1.0, 0.8549019607843137, 0.5372549019607843)
   else
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._txtName).color = (self._txtName).color
+    self._txtName.color = self._txtName.color
   end
-  ;
-  (self._imgIcon):LoadImage((self._itemData):GetIcon())
+  self._imgIcon:LoadImage(self._itemData:GetIcon())
   if self._isMonthCard then
-    (self._monthCardValue2Text):SetText((StringTable.Get)("str_shop_monthcard_notice2", 30))
-    local immediatelyData = (self._itemData):GetAwardsImmediately()
+    self._monthCardValue2Text:SetText(StringTable.Get("str_shop_monthcard_notice2", 30))
+    local immediatelyData = self._itemData:GetAwardsImmediately()
     if next(immediatelyData) then
-      (self._monthCardValue1):SetText((immediatelyData[1]):GetCount())
+      self._monthCardValue1:SetText(immediatelyData[1]:GetCount())
     end
-    local dailyData = (self._itemData):GetAwardsDaily()
+    local dailyData = self._itemData:GetAwardsDaily()
     if next(dailyData) then
-      (self._monthCardValue2):SetText("*" .. (dailyData[1]):GetCount())
-      ;
-      (self._monthCardValue3):SetText("*" .. (dailyData[2]):GetCount())
-      ;
-      (self._monthCardValue4):SetText("*" .. (dailyData[3]):GetCount())
+      self._monthCardValue2:SetText("*" .. dailyData[1]:GetCount())
+      self._monthCardValue3:SetText("*" .. dailyData[2]:GetCount())
+      self._monthCardValue4:SetText("*" .. dailyData[3]:GetCount())
     end
-    ;
-    (self._monthCardAwardGO):SetActive(true)
+    self._monthCardAwardGO:SetActive(true)
+  elseif self._isGift then
+    self._monthCardAwardGO:SetActive(false)
   else
-    do
-      if self._isGift then
-        (self._monthCardAwardGO):SetActive(false)
-      else
-        ;
-        (self._txtPaid):SetText((self._itemData):GetCount())
-        ;
-        (self._monthCardAwardGO):SetActive(false)
-      end
-      ;
-      (self._paidObj):SetActive((not self._isMonthCard and not self._isGift))
-      self:FlushPrice()
-      self:FlushPresent()
-      self:FlushMonthCardOrGift()
-      -- DECOMPILER ERROR: 2 unprocessed JMP targets
-    end
+    self._txtPaid:SetText(self._itemData:GetCount())
+    self._monthCardAwardGO:SetActive(false)
   end
+  self._paidObj:SetActive(not self._isMonthCard and not self._isGift)
+  self:FlushPrice()
+  self:FlushPresent()
+  self:FlushMonthCardOrGift()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeItem.FlushPrice = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIShopRechargeItem:FlushPrice()
   local price = ""
   if self._isMonthCard then
-    price = (ClientShop.PriceUnit)() .. (self._itemData):GetPrice()
+    price = ClientShop.PriceUnit() .. self._itemData:GetPrice()
+  elseif self._isGift then
+    price = self._itemData:GetPriceWithCurrencySymbol()
   else
-    if self._isGift then
-      price = (self._itemData):GetPriceWithCurrencySymbol()
-    else
-      if not self._itemData then
-        return 
-      end
-      price = (self._itemData):GetPrice()
+    if not self._itemData then
+      return
     end
+    price = self._itemData:GetPrice()
   end
   local priceStr = GiftPackShopItem:GetPriceWithSymbolSize(price, 36)
-  ;
-  (self._txtPrice):SetText(priceStr)
+  self._txtPrice:SetText(priceStr)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeItem.FlushPresent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIShopRechargeItem:FlushPresent()
   if not self._itemData then
-    return 
+    return
   end
   if self._isMonthCard then
-    (self._label):SetActive(false)
-    ;
-    (self._freeObj):SetActive(false)
-    ;
-    (self._totalGO):SetActive(false)
-    ;
-    (self._giftGO):SetActive(false)
+    self._label:SetActive(false)
+    self._freeObj:SetActive(false)
+    self._totalGO:SetActive(false)
+    self._giftGO:SetActive(false)
+  elseif self._isGift then
+    self._label:SetActive(false)
+    self._freeObj:SetActive(false)
+    self._totalGO:SetActive(false)
+    self._giftGO:SetActive(true)
+    local awards = self._itemData:GetAwardsImmediately()
+    local count = 0
+    for _, value in pairs(awards) do
+      count = count + value:GetCount()
+    end
+    self._txtGift:SetText(count)
   else
-    if self._isGift then
-      (self._label):SetActive(false)
-      ;
-      (self._freeObj):SetActive(false)
-      ;
-      (self._totalGO):SetActive(false)
-      ;
-      (self._giftGO):SetActive(true)
-      local awards = (self._itemData):GetAwardsImmediately()
-      local count = 0
-      for _,value in pairs(awards) do
-        count = count + value:GetCount()
-      end
-      ;
-      (self._txtGift):SetText(count)
+    local freeCount = self._itemData:GetCountFree()
+    if self._itemData:GetCount() ~= freeCount then
+      self._label:SetActive(false)
     else
-      do
-        local freeCount = (self._itemData):GetCountFree()
-        if (self._itemData):GetCount() ~= freeCount then
-          (self._label):SetActive(false)
-        else
-          ;
-          (self._label):SetActive(true)
-          local label = (self._itemData):GetLabel()
-          ;
-          (self._txtLabel):SetText(label)
-        end
-        do
-          do
-            if freeCount > 0 then
-              (self._txtFree):SetText((self._itemData):GetCountFree())
-              ;
-              (self._txtFreeTMP):SetText(tostring((self._itemData):GetCountFree()))
-            end
-            ;
-            (self._freeObj):SetActive(freeCount > 0)
-            ;
-            (self._txtTotal):SetText((self._itemData):GetCountFree() + (self._itemData):GetCount())
-            ;
-            (self._totalGO):SetActive((self._itemData):GetCountFree() > 0)
-            ;
-            (self._giftGO):SetActive(false)
-            -- DECOMPILER ERROR: 3 unprocessed JMP targets
-          end
-        end
-      end
+      self._label:SetActive(true)
+      local label = self._itemData:GetLabel()
+      self._txtLabel:SetText(label)
     end
+    if 0 < freeCount then
+      self._txtFree:SetText(self._itemData:GetCountFree())
+      self._txtFreeTMP:SetText(tostring(self._itemData:GetCountFree()))
+    else
+    end
+    self._freeObj:SetActive(0 < freeCount)
+    self._txtTotal:SetText(self._itemData:GetCountFree() + self._itemData:GetCount())
+    self._totalGO:SetActive(0 < self._itemData:GetCountFree())
+    self._giftGO:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeItem.FlushMonthCardOrGift = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._new):SetActive(false)
-  ;
-  (self._discountLabel):SetActive(false)
-  ;
-  (self._tips):SetActive(false)
-  ;
-  (self._refresh):SetActive(false)
-  ;
-  (self._limit):SetActive(false)
+function UIShopRechargeItem:FlushMonthCardOrGift()
+  self._new:SetActive(false)
+  self._discountLabel:SetActive(false)
+  self._tips:SetActive(false)
+  self._refresh:SetActive(false)
+  self._limit:SetActive(false)
   if not self._isMonthCard and not self._isGift then
-    return 
+    return
   end
-  local discount = (self._itemData):GetDiscountEx(true)
+  local discount = self._itemData:GetDiscountEx(true)
   if discount then
-    local discountStr = (StringTable.Get)("str_pay_discount_percent", (string.format)("<size=39>%s</size>", discount))
-    ;
-    (self._discountLabel):SetActive(true)
-    ;
-    (self._discountTxtLabel):SetText(discountStr)
+    local discountStr = StringTable.Get("str_pay_discount_percent", string.format("<size=39>%s</size>", discount))
+    self._discountLabel:SetActive(true)
+    self._discountTxtLabel:SetText(discountStr)
   else
-    do
-      ;
-      (self._discountLabel):SetActive(false)
-      local strCycleType = (self._itemData):GetCycleTypeStr()
-      if (string.isnullorempty)(strCycleType) then
-        (self._tips):SetActive(false)
-      else
-        ;
-        (self._tips):SetActive(true)
-        ;
-        (self._txtTips):SetText(strCycleType)
-      end
-      local txtRefreshTimeStr = strCycleType
-      if (string.isnullorempty)(txtRefreshTimeStr) then
-        txtRefreshTimeStr = (self._itemData):GetRefreshTimeStr()
-      end
-      if (string.isnullorempty)(txtRefreshTimeStr) then
-        (self._refresh):SetActive(false)
-      else
-        ;
-        (self._refresh):SetActive(true)
-        ;
-        (self.txRefresh):SetText(txtRefreshTimeStr)
-      end
-      local str = (self._itemData):GetCountStr()
-      if (string.isnullorempty)(str) then
-        (self._limit):SetActive(false)
-      else
-        ;
-        (self._limit):SetActive(false)
-        ;
-        (self._txtLimit):SetText(str)
-      end
-      local isNew = false
-      if self._isGift then
-        local new, list = (self.shopModule):GetRechargeTabNew()
-        for key,value in pairs(list) do
-          if value == (self._itemData):GetId() then
-            isNew = true
-            break
-          end
-        end
-      else
-        do
-          isNew = (self._itemData):GetNew()
-          ;
-          (self._new):SetActive(isNew)
-          local isRed = false
-          ;
-          (self._redGo):SetActive(isRed)
-        end
+    self._discountLabel:SetActive(false)
+  end
+  local strCycleType = self._itemData:GetCycleTypeStr()
+  if string.isnullorempty(strCycleType) then
+    self._tips:SetActive(false)
+  else
+    self._tips:SetActive(true)
+    self._txtTips:SetText(strCycleType)
+  end
+  local txtRefreshTimeStr = strCycleType
+  if string.isnullorempty(txtRefreshTimeStr) then
+    txtRefreshTimeStr = self._itemData:GetRefreshTimeStr()
+  end
+  if string.isnullorempty(txtRefreshTimeStr) then
+    self._refresh:SetActive(false)
+  else
+    self._refresh:SetActive(true)
+    self.txRefresh:SetText(txtRefreshTimeStr)
+  end
+  local str = self._itemData:GetCountStr()
+  if string.isnullorempty(str) then
+    self._limit:SetActive(false)
+  else
+    self._limit:SetActive(false)
+    self._txtLimit:SetText(str)
+  end
+  local isNew = false
+  if self._isGift then
+    local new, list = self.shopModule:GetRechargeTabNew()
+    for key, value in pairs(list) do
+      if value == self._itemData:GetId() then
+        isNew = true
+        break
       end
     end
+  else
+    isNew = self._itemData:GetNew()
   end
+  self._new:SetActive(isNew)
+  local isRed = false
+  self._redGo:SetActive(isRed)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeItem.BgOnClick = function(self)
-  -- function num : 0_7
+function UIShopRechargeItem:BgOnClick()
   self:CanCharge()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeItem.BtnPriceOnClick = function(self)
-  -- function num : 0_8
+function UIShopRechargeItem:BtnPriceOnClick()
   self:CanCharge()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeItem.CanCharge = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  if (string.isnullorempty)((self._txtPrice).text) then
-    return 
+function UIShopRechargeItem:CanCharge()
+  if string.isnullorempty(self._txtPrice.text) then
+    return
   end
   if self._isMonthCard then
     self:OpenUIShopGiftPackDetail(ShopMainTabType.Recharge)
+  elseif self._isGift then
+    self:OpenUIShopGiftPackDetail(ShopMainTabType.Gift)
   else
-    if self._isGift then
-      self:OpenUIShopGiftPackDetail(ShopMainTabType.Gift)
-    else
-      self:Lock("UIShopRechargeItem_CanCharge")
-      ;
-      ((GameGlobal.TaskManager)()):StartTask(self.CanChargeCoro, self)
-    end
+    self:Lock("UIShopRechargeItem_CanCharge")
+    GameGlobal.TaskManager():StartTask(self.CanChargeCoro, self)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeItem.CanChargeCoro = function(self, TT)
-  -- function num : 0_10 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIShopRechargeItem:CanChargeCoro(TT)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   if not roleModule:IsJapanZone() then
     self:Charge()
     self:UnLock("UIShopRechargeItem_CanCharge")
-    return 
+    return
   end
-  local payModule = (GameGlobal.GetModule)(PayModule)
+  local payModule = GameGlobal.GetModule(PayModule)
   if payModule:NeedSelectAge(TT) then
     self:ShowDialog("UISetAgeConfirmController")
     self:UnLock("UIShopRechargeItem_CanCharge")
-    return 
+    return
   end
   self:Charge()
   self:UnLock("UIShopRechargeItem_CanCharge")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeItem.Charge = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIShopRechargeItem:Charge()
   if not self._itemData then
-    (Log.fatal)("### self._itemData is nil.")
-    ;
-    ((GameGlobal.GetUIModule)(ShopModule)):ReportPayStep(PayStep.LaunchPurchaseUI, false, -1, "nil")
-    return 
+    Log.fatal("### self._itemData is nil.")
+    GameGlobal.GetUIModule(ShopModule):ReportPayStep(PayStep.LaunchPurchaseUI, false, -1, "nil")
+    return
   end
-  ;
-  ((GameGlobal.GetUIModule)(ShopModule)):ReportPayStep(PayStep.LaunchPurchaseUI, true, 0, "Charge" .. tostring((self._itemData):GetCount()))
+  GameGlobal.GetUIModule(ShopModule):ReportPayStep(PayStep.LaunchPurchaseUI, true, 0, "Charge" .. tostring(self._itemData:GetCount()))
   local mPay = self:GetModule(PayModule)
   mPay:Recharge(self._itemData)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeItem.OpenUIShopGiftPackDetail = function(self, mainTabType)
-  -- function num : 0_12 , upvalues : _ENV
+function UIShopRechargeItem:OpenUIShopGiftPackDetail(mainTabType)
   self:_RecordClick()
-  if (self._itemData):GetType() == GiftPackType.Currency then
-    ((GameGlobal.GetUIModule)(ShopModule)):ReportPayStep(PayStep.LaunchPurchaseUI, true, 0, tostring((self._itemData):GetId()))
+  if self._itemData:GetType() == GiftPackType.Currency then
+    GameGlobal.GetUIModule(ShopModule):ReportPayStep(PayStep.LaunchPurchaseUI, true, 0, tostring(self._itemData:GetId()))
   end
-  self:ShowDialog("UIShopGiftPackDetail", (self._itemData):GetId(), mainTabType)
-  if (self._itemData):GetNew() then
-    (self.shopModule):CancelNewMark(MarketType.Shop_PayMarket, (self._itemData):GetId())
-    ;
-    (self._itemData):SetNew(false)
-    ;
-    (self._new):SetActive(false)
+  self:ShowDialog("UIShopGiftPackDetail", self._itemData:GetId(), mainTabType)
+  if self._itemData:GetNew() then
+    self.shopModule:CancelNewMark(MarketType.Shop_PayMarket, self._itemData:GetId())
+    self._itemData:SetNew(false)
+    self._new:SetActive(false)
   end
-  if (self._itemData):GetRechargeGift() then
-    (self.shopModule):CancelRechargeGiftNewMark((self._itemData):GetId())
-    ;
-    (self._itemData):SetNew(false)
-    ;
-    (self._new):SetActive(false)
+  if self._itemData:GetRechargeGift() then
+    self.shopModule:CancelRechargeGiftNewMark(self._itemData:GetId())
+    self._itemData:SetNew(false)
+    self._new:SetActive(false)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopNew)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopNew)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeItem.GetNewFlagKey = function(self, id)
-  -- function num : 0_13 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIShopRechargeItem:GetNewFlagKey(id)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. id
   return key
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeItem._RecordClick = function(self)
-  -- function num : 0_14
+function UIShopRechargeItem:_RecordClick()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeItem.PlayInAnimation = function(self)
-  -- function num : 0_15
-  (self.animation):Play("uianim_UIShopRechargeItem_in")
+function UIShopRechargeItem:PlayInAnimation()
+  self.animation:Play("uianim_UIShopRechargeItem_in")
   return 867
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/alchemy/ui_cn20_ryza_formula_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20RyzaFormulaItem", UICustomWidget)
 UICN20RyzaFormulaItem = UICN20RyzaFormulaItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20RyzaFormulaItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN20RyzaFormulaItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20RyzaFormulaItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN20RyzaFormulaItem:InitWidget()
   self.selectbg = self:GetUIComponent("Image", "selectbg")
   self.bg = self:GetUIComponent("Image", "bg")
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
@@ -28,121 +18,83 @@ UICN20RyzaFormulaItem.InitWidget = function(self)
   self._atlas = self:GetAsset("UICN20N49.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20RyzaFormulaItem.SetData = function(self, formulaCfg, select_cb, index)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN20RyzaFormulaItem:SetData(formulaCfg, select_cb, index)
   self.formulaCfg = formulaCfg
   self.select_cb = select_cb
   self.index = index
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
-  local itemId = (self.formulaCfg).ID
-  local itemCfg = (Cfg.cfg_item)[itemId]
+  self.itemModule = GameGlobal.GetModule(ItemModule)
+  local itemId = self.formulaCfg.ID
+  local itemCfg = Cfg.cfg_item[itemId]
   if not itemCfg then
-    (Log.error)("itemCfg IS NIL", itemId)
-    return 
+    Log.error("itemCfg IS NIL", itemId)
+    return
   end
   self._cfg_item = itemCfg
-  local alchemyCfgs = (Cfg.cfg_component_alchemy_item)({FormulaID = itemId})
+  local alchemyCfgs = Cfg.cfg_component_alchemy_item({FormulaID = itemId})
   if not alchemyCfgs then
-    (Log.error)("alchemyCfgs IS NIL", itemId)
-    return 
+    Log.error("alchemyCfgs IS NIL", itemId)
+    return
   end
   if #alchemyCfgs == 0 then
-    (Log.error)("alchemyCfg IS zero", itemId)
-    return 
+    Log.error("alchemyCfg IS zero", itemId)
+    return
   end
   local firstAlchemyCfg = alchemyCfgs[1]
   self.makeAlchemyCfg = firstAlchemyCfg
-  ;
-  ((self.selectbg).gameObject):SetActive(false)
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.canvasGroup).alpha = 1
-  -- DECOMPILER ERROR at PC59: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.singleMoneyText).color = Color(0.384, 0.266, 0.054)
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.moneyText).color = Color(0.384, 0.266, 0.054)
-  local ALitemCfg = (Cfg.cfg_item)[(self.makeAlchemyCfg).ID]
+  self.selectbg.gameObject:SetActive(false)
+  self.canvasGroup.alpha = 1
+  self.singleMoneyText.color = Color(0.384, 0.266, 0.054)
+  self.moneyText.color = Color(0.384, 0.266, 0.054)
+  local ALitemCfg = Cfg.cfg_item[self.makeAlchemyCfg.ID]
   if not ALitemCfg then
-    (Log.error)("ALitemCfg matCfg IS NIL", (self.makeAlchemyCfg).ID)
+    Log.error("ALitemCfg matCfg IS NIL", self.makeAlchemyCfg.ID)
   end
   local icon = ALitemCfg.Icon
-  ;
-  (self.icon):LoadImage(icon)
-  local AlchitemCfg = (Cfg.cfg_item)[firstAlchemyCfg.ID]
+  self.icon:LoadImage(icon)
+  local AlchitemCfg = Cfg.cfg_item[firstAlchemyCfg.ID]
   if not AlchitemCfg then
-    (Log.error)("AlchitemCfg IS NIL", firstAlchemyCfg.ID)
-    return 
+    Log.error("AlchitemCfg IS NIL", firstAlchemyCfg.ID)
+    return
   end
-  local name = (StringTable.Get)(AlchitemCfg.Name)
-  ;
-  (self.nameText):SetText(name)
+  local name = StringTable.Get(AlchitemCfg.Name)
+  self.nameText:SetText(name)
   local color = firstAlchemyCfg.Quality
-  -- DECOMPILER ERROR at PC113: Confused about usage of register: R13 in 'UnsetPending'
-
   if color == 3 then
-    (self.quilaty).sprite = (self._atlas):GetSprite("cn20_ljdp_gezi05_01")
+    self.quilaty.sprite = self._atlas:GetSprite("cn20_ljdp_gezi05_01")
+  elseif color == 4 then
+    self.quilaty.sprite = self._atlas:GetSprite("cn20_ljdp_gezi04_01")
+  elseif color == 5 then
+    self.quilaty.sprite = self._atlas:GetSprite("cn20_ljdp_gezi03_01")
   else
-    -- DECOMPILER ERROR at PC122: Confused about usage of register: R13 in 'UnsetPending'
-
-    if color == 4 then
-      (self.quilaty).sprite = (self._atlas):GetSprite("cn20_ljdp_gezi04_01")
-    else
-      -- DECOMPILER ERROR at PC131: Confused about usage of register: R13 in 'UnsetPending'
-
-      if color == 5 then
-        (self.quilaty).sprite = (self._atlas):GetSprite("cn20_ljdp_gezi03_01")
-      else
-        -- DECOMPILER ERROR at PC138: Confused about usage of register: R13 in 'UnsetPending'
-
-        ;
-        (self.quilaty).sprite = (self._atlas):GetSprite("cn20_ljdp_gezi01_01")
-      end
-    end
+    self.quilaty.sprite = self._atlas:GetSprite("cn20_ljdp_gezi01_01")
   end
-  self.mats = (self.formulaCfg).Materials
-  ;
-  (self.moneyText):SetText("00" .. firstAlchemyCfg.Price)
+  self.mats = self.formulaCfg.Materials
+  self.moneyText:SetText("00" .. firstAlchemyCfg.Price)
   self:CalcuCanCount()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20RyzaFormulaItem.GetCanMakeCount = function(self)
-  -- function num : 0_3
+function UICN20RyzaFormulaItem:GetCanMakeCount()
   return self.canCount
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20RyzaFormulaItem.GetCanMakeItemId = function(self)
-  -- function num : 0_4
-  return (self.makeAlchemyCfg).ID
+function UICN20RyzaFormulaItem:GetCanMakeItemId()
+  return self.makeAlchemyCfg.ID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20RyzaFormulaItem.CalcuCanCount = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UICN20RyzaFormulaItem:CalcuCanCount()
   local matList = {}
   for i = 1, #self.mats do
-    if matList[(self.mats)[i]] ~= nil then
-      matList[(self.mats)[i]] = matList[(self.mats)[i]] + 1
+    if matList[self.mats[i]] ~= nil then
+      matList[self.mats[i]] = matList[self.mats[i]] + 1
     else
-      matList[(self.mats)[i]] = 1
+      matList[self.mats[i]] = 1
     end
   end
   local canCount = 0
   local matCanCountList = {}
-  for itemid,singleCount in pairs(matList) do
-    local canUseCount = (self.itemModule):GetItemCount(itemid)
-    local singleMatCanCount = (math.floor)(canUseCount / singleCount)
+  for itemid, singleCount in pairs(matList) do
+    local canUseCount = self.itemModule:GetItemCount(itemid)
+    local singleMatCanCount = math.floor(canUseCount / singleCount)
     if singleMatCanCount == nil then
       singleMatCanCount = 0
     end
@@ -150,81 +102,41 @@ UICN20RyzaFormulaItem.CalcuCanCount = function(self)
   end
   canCount = matCanCountList[1]
   for i = 2, #matCanCountList do
-    if matCanCountList[i] < canCount then
+    if canCount > matCanCountList[i] then
       canCount = matCanCountList[i]
     end
   end
-  if canCount > 0 then
-    (self.canCountText):SetText((StringTable.Get)("str_cn20_ryza_can_formula", canCount))
+  if 0 < canCount then
+    self.canCountText:SetText(StringTable.Get("str_cn20_ryza_can_formula", canCount))
   else
-    ;
-    (self.canCountText):SetText((StringTable.Get)("str_cn20_ryza_uncan_formula"))
+    self.canCountText:SetText(StringTable.Get("str_cn20_ryza_uncan_formula"))
   end
   self.canCount = canCount
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20RyzaFormulaItem.SetUnSelect = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UICN20RyzaFormulaItem:SetUnSelect()
   self:CalcuCanCount()
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.canvasGroup).alpha = 0.5
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.singleMoneyText).color = Color(0.384, 0.266, 0.054)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.moneyText).color = Color(0.384, 0.266, 0.054)
-  ;
-  ((self.selectbg).gameObject):SetActive(false)
+  self.canvasGroup.alpha = 0.5
+  self.singleMoneyText.color = Color(0.384, 0.266, 0.054)
+  self.moneyText.color = Color(0.384, 0.266, 0.054)
+  self.selectbg.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20RyzaFormulaItem.SetSelect = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.canvasGroup).alpha = 1
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.singleMoneyText).color = Color(0.917, 0.89, 0.815)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.moneyText).color = Color(0.917, 0.89, 0.815)
-  ;
-  ((self.selectbg).gameObject):SetActive(true)
+function UICN20RyzaFormulaItem:SetSelect()
+  self.canvasGroup.alpha = 1
+  self.singleMoneyText.color = Color(0.917, 0.89, 0.815)
+  self.moneyText.color = Color(0.917, 0.89, 0.815)
+  self.selectbg.gameObject:SetActive(true)
   self:CalcuCanCount()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20RyzaFormulaItem.BgOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.canvasGroup).alpha = 1
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.singleMoneyText).color = Color(0.917, 0.89, 0.815)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.moneyText).color = Color(0.917, 0.89, 0.815)
-  ;
-  ((self.selectbg).gameObject):SetActive(true)
+function UICN20RyzaFormulaItem:BgOnClick(go)
+  self.canvasGroup.alpha = 1
+  self.singleMoneyText.color = Color(0.917, 0.89, 0.815)
+  self.moneyText.color = Color(0.917, 0.89, 0.815)
+  self.selectbg.gameObject:SetActive(true)
   if self.select_cb then
-    (self.select_cb)(self.index)
+    self.select_cb(self.index)
   end
   self:CalcuCanCount()
 end
-
-

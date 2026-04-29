@@ -1,68 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/ui_cn14n43_black_record_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN14N43BlackRecordController", UIController)
 UICN14N43BlackRecordController = UICN14N43BlackRecordController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN14N43BlackRecordController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN14N43BlackRecordController:OnShow(uiParams)
   self._stageInfo = uiParams[1]
   self:InitChildStageIDs()
   self._records = uiParams[2]
   self._exitGame = uiParams[3]
   local topButton = self:GetUIComponent("UISelectObjectPath", "TopButtons")
   self.topButtonWidget = topButton:SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_0_0 , upvalues : self
+  self.topButtonWidget:SetData(function()
     self:CloseDialog()
-  end
-, nil, function()
-    -- function num : 0_0_1 , upvalues : self, _ENV
+  end, nil, function()
     if self._exitGame then
-      (GameGlobal:GetInstance()):ExitCoreGame()
+      GameGlobal:GetInstance():ExitCoreGame()
     end
     self:SwitchState(UIStateType.UIMain)
-  end
-)
+  end)
   self:InitWidget()
   self._recordPets = {}
-  self.ChildBtnsNodeH = {[1] = 20, [2] = 80, [3] = 130}
-  ;
-  (table.sort)(self._records, function(a, b)
-    -- function num : 0_0_2
-    do return b.pass_time < a.pass_time end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  for idx,record in ipairs(self._records) do
+  self.ChildBtnsNodeH = {
+    [1] = 20,
+    [2] = 80,
+    [3] = 130
+  }
+  table.sort(self._records, function(a, b)
+    return a.pass_time > b.pass_time
+  end)
+  for idx, record in ipairs(self._records) do
     local infos = record.formation_info
-    for key,value in pairs(infos) do
+    for key, value in pairs(infos) do
       local pets = {}
-      for i,data in ipairs(value) do
+      for i, data in ipairs(value) do
         if data.template_id > 0 then
           local pet = SimplePet:New()
           pet:SetData(data)
-          ;
-          (table.insert)(pets, pet)
+          table.insert(pets, pet)
         end
       end
-      -- DECOMPILER ERROR at PC72: Confused about usage of register: R15 in 'UnsetPending'
-
-      if not (self._recordPets)[idx] then
-        (self._recordPets)[idx] = {}
+      if not self._recordPets[idx] then
+        self._recordPets[idx] = {}
       end
-      -- DECOMPILER ERROR at PC75: Confused about usage of register: R15 in 'UnsetPending'
-
-      ;
-      ((self._recordPets)[idx])[key] = pets
+      self._recordPets[idx][key] = pets
     end
   end
-  local len = (table.count)(self._recordPets)
-  self.pageMax = (math.ceil)(len / 5)
+  local len = table.count(self._recordPets)
+  self.pageMax = math.ceil(len / 5)
   self.currPage = 1
   self.lastPage = 0
   self.currSelectRecordIndex = nil
@@ -72,10 +54,7 @@ UICN14N43BlackRecordController.OnShow = function(self, uiParams)
   self:OnSelect(1, 1)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43BlackRecordController.InitWidget = function(self)
-  -- function num : 0_1
+function UICN14N43BlackRecordController:InitWidget()
   self.player_icon = self:GetUIComponent("RawImageLoader", "player_icon")
   self.headFrameRect = self:GetUIComponent("RectTransform", "headFrame")
   self.headFrame = self:GetUIComponent("RawImageLoader", "headFrame")
@@ -87,265 +66,194 @@ UICN14N43BlackRecordController.InitWidget = function(self)
   self.head_bg_mask_rect = self:GetUIComponent("RectTransform", "headBgMask")
   self.head_root = self:GetUIComponent("RectTransform", "headRoot")
   self.ChildBtnsNode = self:GetUIComponent("RectTransform", "ChildBtns")
-  self.ChildBtnsNodeParent = (self.ChildBtnsNode).parent
+  self.ChildBtnsNodeParent = self.ChildBtnsNode.parent
   self.ChildBtnNode1 = self:GetUIComponent("RectTransform", "ChildBtnNode1")
   self.ChildBtnNode2 = self:GetUIComponent("RectTransform", "ChildBtnNode2")
   self.ChildBtnNode3 = self:GetUIComponent("RectTransform", "ChildBtnNode3")
   self.ChildBtnText1 = self:GetUIComponent("UILocalizationText", "ChildBtnText1")
   self.ChildBtnText2 = self:GetUIComponent("UILocalizationText", "ChildBtnText2")
   self.ChildBtnText3 = self:GetUIComponent("UILocalizationText", "ChildBtnText3")
-  self._childBtns = {self:GetUIComponent("Button", "ChildBtn1"), self:GetUIComponent("Button", "ChildBtn2"), self:GetUIComponent("Button", "ChildBtn3")}
-  self._buttons = {self:GetUIComponent("Button", "Button1"), self:GetUIComponent("Button", "Button2"), self:GetUIComponent("Button", "Button3"), self:GetUIComponent("Button", "Button4"), self:GetUIComponent("Button", "Button5")}
-  self._underlines = {[1] = self:GetUIComponent("RectTransform", "Underline1"), [2] = self:GetUIComponent("RectTransform", "Underline2"), [3] = self:GetUIComponent("RectTransform", "Underline3"), [4] = self:GetUIComponent("RectTransform", "Underline4"), [5] = self:GetUIComponent("RectTransform", "Underline5")}
+  self._childBtns = {
+    self:GetUIComponent("Button", "ChildBtn1"),
+    self:GetUIComponent("Button", "ChildBtn2"),
+    self:GetUIComponent("Button", "ChildBtn3")
+  }
+  self._buttons = {
+    self:GetUIComponent("Button", "Button1"),
+    self:GetUIComponent("Button", "Button2"),
+    self:GetUIComponent("Button", "Button3"),
+    self:GetUIComponent("Button", "Button4"),
+    self:GetUIComponent("Button", "Button5")
+  }
+  self._underlines = {
+    [1] = self:GetUIComponent("RectTransform", "Underline1"),
+    [2] = self:GetUIComponent("RectTransform", "Underline2"),
+    [3] = self:GetUIComponent("RectTransform", "Underline3"),
+    [4] = self:GetUIComponent("RectTransform", "Underline4"),
+    [5] = self:GetUIComponent("RectTransform", "Underline5")
+  }
   self._anim = self:GetUIComponent("Animation", "UITowerRecord")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43BlackRecordController.OnSelect = function(self, idx, childIndex)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN14N43BlackRecordController:OnSelect(idx, childIndex)
   if self.lastPage == self.currPage and idx == self.currSelectRecordIndex and childIndex == self.currSelectChildRecordIndex then
-    return 
+    return
   end
   local selectRecordIndex = idx + (self.currPage - 1) * 5
-  if #self._records < selectRecordIndex or #self.childStageIDs < childIndex then
-    (ToastManager.ShowToast)((StringTable.Get)("str_tower_no_record_now"))
-    return 
+  if selectRecordIndex > #self._records or childIndex > #self.childStageIDs then
+    ToastManager.ShowToast(StringTable.Get("str_tower_no_record_now"))
+    return
   end
   self.lastPage = self.currPage
-  local childStageID = (self.childStageIDs)[childIndex]
-  local pets = ((self._recordPets)[selectRecordIndex])[childStageID]
+  local childStageID = self.childStageIDs[childIndex]
+  local pets = self._recordPets[selectRecordIndex][childStageID]
   if not pets then
-    (ToastManager.ShowToast)((StringTable.Get)("str_tower_no_record_now"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_tower_no_record_now"))
+    return
   end
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._anim).enabled = true
-  ;
-  (self._anim):Play("uieff_TowerRecord_Switch")
-  -- DECOMPILER ERROR at PC60: Confused about usage of register: R6 in 'UnsetPending'
-
+  self._anim.enabled = true
+  self._anim:Play("uieff_TowerRecord_Switch")
   if self.currSelectRecordIndex then
-    ((self._buttons)[self.currSelectRecordIndex]).interactable = true
+    self._buttons[self.currSelectRecordIndex].interactable = true
   end
   self.currSelectRecordIndex = idx
   self.currSelectChildRecordIndex = childIndex
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self._buttons)[self.currSelectRecordIndex]).interactable = false
+  self._buttons[self.currSelectRecordIndex].interactable = false
   self:RefchildBtnNode()
-  ;
-  (self.list):SpawnObjects("UIHeartItem", #pets)
-  self._petList = (self.list):GetAllSpawnList()
+  self.list:SpawnObjects("UIHeartItem", #pets)
+  self._petList = self.list:GetAllSpawnList()
   for i = 1, #pets do
     local pet = pets[i]
-    local item = (self._petList)[i]
+    local item = self._petList[i]
     item:SetData(pet, nil, nil, nil, TeamOpenerType.Tower, PetSkinEffectPath.CARD_TOWER)
   end
-  local record = (self._records)[selectRecordIndex]
-  ;
-  (self.player_name):SetText(record.nick)
-  ;
-  (self.player_id):SetText((string.format)((StringTable.Get)("str_tower_id_title"), (self._loginModule):GetShowIdByPstId(record.pstid)))
-  local colorCfg = (Cfg.cfg_player_head_bg)[record.head_bg]
-  local headCfg = (Cfg.cfg_role_head_image)[record.head]
-  local head, color = nil, nil
+  local record = self._records[selectRecordIndex]
+  self.player_name:SetText(record.nick)
+  self.player_id:SetText(string.format(StringTable.Get("str_tower_id_title"), self._loginModule:GetShowIdByPstId(record.pstid)))
+  local colorCfg = Cfg.cfg_player_head_bg[record.head_bg]
+  local headCfg = Cfg.cfg_role_head_image[record.head]
+  local head, color
   if headCfg == nil then
-    (Log.exception)("[Tower] 找不到头像配置：", record.head)
-    return 
+    Log.exception("[Tower] 找不到头像配置：", record.head)
+    return
   end
   head = headCfg.Icon
   if colorCfg == nil then
-    (Log.warn)("[Tower] 找不到头像背景，使用默认1。id：", record.head_bg)
-    color = ((Cfg.cfg_player_head_bg)[1]).Icon
+    Log.warn("[Tower] 找不到头像背景，使用默认1。id：", record.head_bg)
+    color = Cfg.cfg_player_head_bg[1].Icon
   else
     color = colorCfg.Icon
   end
-  ;
-  (self.player_icon):LoadImage(head)
-  ;
-  (self.head_color):LoadImage(color)
+  self.player_icon:LoadImage(head)
+  self.head_color:LoadImage(color)
   local headFrame = record.frame_id
   if not headFrame or headFrame == 0 then
-    (Log.warn)("[Tower] 找不到头像框，使用默认1001。id：", record.frame_id)
-    headFrame = (HelperProxy:GetInstance()):GetHeadFrameDefaultID()
+    Log.warn("[Tower] 找不到头像框，使用默认1001。id：", record.frame_id)
+    headFrame = HelperProxy:GetInstance():GetHeadFrameDefaultID()
   end
-  local cfg_head_frame = (Cfg.cfg_role_head_frame)[headFrame]
-  ;
-  (self.headFrame):LoadImage(cfg_head_frame.Icon)
-  ;
-  (HelperProxy:GetInstance()):GetHeadBgSizeWithTag(self.head_bg_rect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadBgMaskSizeWithTag(self.head_bg_mask_rect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadFrameSizeWithTag(self.headFrameRect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadRootSizeWithTag(self.head_root, RoleHeadFrameSizeType.Size5)
+  local cfg_head_frame = Cfg.cfg_role_head_frame[headFrame]
+  self.headFrame:LoadImage(cfg_head_frame.Icon)
+  HelperProxy:GetInstance():GetHeadBgSizeWithTag(self.head_bg_rect)
+  HelperProxy:GetInstance():GetHeadBgMaskSizeWithTag(self.head_bg_mask_rect)
+  HelperProxy:GetInstance():GetHeadFrameSizeWithTag(self.headFrameRect)
+  HelperProxy:GetInstance():GetHeadRootSizeWithTag(self.head_root, RoleHeadFrameSizeType.Size5)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43BlackRecordController.Record1OnClick = function(self, go)
-  -- function num : 0_3
+function UICN14N43BlackRecordController:Record1OnClick(go)
   self:SelectRecordIndex(1, 1)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43BlackRecordController.Record2OnClick = function(self, go)
-  -- function num : 0_4
+function UICN14N43BlackRecordController:Record2OnClick(go)
   self:SelectRecordIndex(2, 1)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43BlackRecordController.Record3OnClick = function(self, go)
-  -- function num : 0_5
+function UICN14N43BlackRecordController:Record3OnClick(go)
   self:SelectRecordIndex(3, 1)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43BlackRecordController.Record4OnClick = function(self, go)
-  -- function num : 0_6
+function UICN14N43BlackRecordController:Record4OnClick(go)
   self:SelectRecordIndex(4, 1)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43BlackRecordController.Record5OnClick = function(self, go)
-  -- function num : 0_7
+function UICN14N43BlackRecordController:Record5OnClick(go)
   self:SelectRecordIndex(5, 1)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43BlackRecordController.SelectRecordIndex = function(self, idx)
-  -- function num : 0_8
+function UICN14N43BlackRecordController:SelectRecordIndex(idx)
   if self.currSelectRecordIndex == idx then
     self:SetChildBtnNodeActive()
-    return 
+    return
   end
-  local go = (self.ChildBtnsNode).gameObject
+  local go = self.ChildBtnsNode.gameObject
   go:SetActive(true)
   self:OnSelect(idx, 1)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43BlackRecordController.RefchildBtnNode = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  ((self.ChildBtnsNode).transform):SetSiblingIndex(self.currSelectRecordIndex)
+function UICN14N43BlackRecordController:RefchildBtnNode()
+  self.ChildBtnsNode.transform:SetSiblingIndex(self.currSelectRecordIndex)
   for i = 1, 3 do
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R5 in 'UnsetPending'
-
-    ((self._childBtns)[i]).interactable = self.currSelectChildRecordIndex ~= i
+    self._childBtns[i].interactable = self.currSelectChildRecordIndex ~= i
   end
   for i = 1, #self._underlines do
     if i == self.currSelectRecordIndex then
       local stages = self._stageInfo
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      ((self._underlines)[i]).localPosition = Vector3(0, 0 - 55 * #stages, 0)
+      self._underlines[i].localPosition = Vector3(0, 0 - 55 * #stages, 0)
     else
-      -- DECOMPILER ERROR at PC45: Confused about usage of register: R5 in 'UnsetPending'
-
-      ((self._underlines)[i]).localPosition = Vector3(0, 0, 0)
+      self._underlines[i].localPosition = Vector3(0, 0, 0)
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43BlackRecordController.SetChildBtnNodeActive = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local go = (self.ChildBtnsNode).gameObject
+function UICN14N43BlackRecordController:SetChildBtnNodeActive()
+  local go = self.ChildBtnsNode.gameObject
   local isShow = not go.activeSelf
   go:SetActive(isShow)
   if isShow then
     local stages = self._stageInfo
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    ((self._underlines)[self.currSelectRecordIndex]).localPosition = Vector3(0, 0 - 55 * #stages, 0)
+    self._underlines[self.currSelectRecordIndex].localPosition = Vector3(0, 0 - 55 * #stages, 0)
   else
-    do
-      -- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      ((self._underlines)[self.currSelectRecordIndex]).localPosition = Vector3(0, 0, 0)
-    end
+    self._underlines[self.currSelectRecordIndex].localPosition = Vector3(0, 0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43BlackRecordController.ChildBtn1OnClick = function(self, go)
-  -- function num : 0_11
+function UICN14N43BlackRecordController:ChildBtn1OnClick(go)
   self:OnSelect(self.currSelectRecordIndex, 1)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43BlackRecordController.ChildBtn2OnClick = function(self, go)
-  -- function num : 0_12
+function UICN14N43BlackRecordController:ChildBtn2OnClick(go)
   self:OnSelect(self.currSelectRecordIndex, 2)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43BlackRecordController.ChildBtn3OnClick = function(self, go)
-  -- function num : 0_13
+function UICN14N43BlackRecordController:ChildBtn3OnClick(go)
   self:OnSelect(self.currSelectRecordIndex, 3)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43BlackRecordController.InitChildBtns = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UICN14N43BlackRecordController:InitChildBtns()
   local stages = self._stageInfo
   local stageLen = #stages
-  local x = ((self.ChildBtnsNode).sizeDelta).x
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.ChildBtnsNode).sizeDelta = Vector2(x, (self.ChildBtnsNodeH)[stageLen])
+  local x = self.ChildBtnsNode.sizeDelta.x
+  self.ChildBtnsNode.sizeDelta = Vector2(x, self.ChildBtnsNodeH[stageLen])
   for i = 1, 3 do
     local stage = stages[i]
-    local isShow = i <= stageLen
-    ;
-    ((self["ChildBtnNode" .. i]).gameObject):SetActive(isShow)
+    local isShow = stageLen >= i
+    self["ChildBtnNode" .. i].gameObject:SetActive(isShow)
     if isShow then
-      (self["ChildBtnText" .. i]):SetText(stage:GetName())
+      self["ChildBtnText" .. i]:SetText(stage:GetName())
     end
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43BlackRecordController.InitChildStageIDs = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UICN14N43BlackRecordController:InitChildStageIDs()
   self.childStageIDs = {}
   local stages = self._stageInfo
-  for index,value in ipairs(stages) do
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self.childStageIDs)[index] = value:GetID()
+  for index, value in ipairs(stages) do
+    self.childStageIDs[index] = value:GetID()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43BlackRecordController.ChangePageBtnOnClick = function(self, go)
-  -- function num : 0_16
+function UICN14N43BlackRecordController:ChangePageBtnOnClick(go)
   self.currPage = self.currPage + 1
-  if self.pageMax < self.currPage then
+  if self.currPage > self.pageMax then
     self.currPage = 1
   end
   self:OnSelect(1, 1)
@@ -353,34 +261,21 @@ end
 
 _class("UICN14N43BlackRecordSatgeData", Object)
 UICN14N43BlackRecordSatgeData = UICN14N43BlackRecordSatgeData
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN14N43BlackRecordSatgeData.Constructor = function(self)
-  -- function num : 0_17
+function UICN14N43BlackRecordSatgeData:Constructor()
   self._name = ""
   self._id = ""
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43BlackRecordSatgeData.InitData = function(self, n, i)
-  -- function num : 0_18
+function UICN14N43BlackRecordSatgeData:InitData(n, i)
   self._name = n
   self._id = i
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43BlackRecordSatgeData.GetID = function(self)
-  -- function num : 0_19
+function UICN14N43BlackRecordSatgeData:GetID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43BlackRecordSatgeData.GetName = function(self)
-  -- function num : 0_20
+function UICN14N43BlackRecordSatgeData:GetName()
   return self._name
 end
-
-

@@ -1,87 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/guide_preview_link_line_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("guide_svc_r")
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
 
-GuideServiceRender.IsGuidePreviewLineLineInvokeType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  do return self:GetPLLInvokeType() == GuideInvokeType.GuidePreviewLinkLine end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function GuideServiceRender:IsGuidePreviewLineLineInvokeType()
+  return self:GetPLLInvokeType() == GuideInvokeType.GuidePreviewLinkLine
 end
 
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideServiceRender.GetPLLInvokeType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local reBoard = (self._world):GetRenderBoardEntity()
+function GuideServiceRender:GetPLLInvokeType()
+  local reBoard = self._world:GetRenderBoardEntity()
   local guidePLLCmpt = reBoard:GuidePreviewLinkLine()
-  if not guidePLLCmpt or not guidePLLCmpt:GetInvokeType() then
-    return GuideInvokeType.None
-  end
+  return guidePLLCmpt and guidePLLCmpt:GetInvokeType() or GuideInvokeType.None
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideServiceRender.ShowPLLGuideLine = function(self, guideParam)
-  -- function num : 0_2 , upvalues : _ENV
+function GuideServiceRender:ShowPLLGuideLine(guideParam)
   self:_ShowPLLGuideLine(GuideRefreshType.StartGuidePath, guideParam)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideServiceRender._ShowPLLGuideLine = function(self, guideRefreshType, guideParam)
-  -- function num : 0_3 , upvalues : _ENV
-  local reBoard = (self._world):GetRenderBoardEntity()
+function GuideServiceRender:_ShowPLLGuideLine(guideRefreshType, guideParam)
+  local reBoard = self._world:GetRenderBoardEntity()
   local guidePLLCmpt = reBoard:GuidePreviewLinkLine()
   local curGuideRefreshType = guidePLLCmpt:GetGuideRefreshType()
   if curGuideRefreshType ~= GuideRefreshType.StartGuidePath then
-    do
-      if guideParam then
-        local path = guideParam.LogicParams
-        guidePLLCmpt:SetGuidePLLPath(path)
-        guidePLLCmpt:SetInvokeType(guideParam.InvokeType)
-      end
-      guidePLLCmpt:SetGuideRefreshType(guideRefreshType)
-      reBoard:ReplaceGuidePreviewLinkLine()
-      ;
-      (self._eventDispatcher):Dispatch(GameEventType.ShowGuideMask, true)
+    if guideParam then
+      local path = guideParam.LogicParams
+      guidePLLCmpt:SetGuidePLLPath(path)
+      guidePLLCmpt:SetInvokeType(guideParam.InvokeType)
     end
+    guidePLLCmpt:SetGuideRefreshType(guideRefreshType)
+    reBoard:ReplaceGuidePreviewLinkLine()
+    self._eventDispatcher:Dispatch(GameEventType.ShowGuideMask, true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideServiceRender.HandlePLLCameraMoveToNormalTrigger = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function GuideServiceRender:HandlePLLCameraMoveToNormalTrigger()
   local invokeType = self:GetPLLInvokeType()
   if invokeType ~= GuideInvokeType.GuidePreviewLinkLine then
     return false
   end
-  local previewEntity = (self._world):GetPreviewEntity()
+  local previewEntity = self._world:GetPreviewEntity()
   local previewLinkLineCmpt = previewEntity:PreviewLinkLine()
   local chainPath = previewLinkLineCmpt:GetPreviewChainPath()
   local finishGuide = self:CheckGuidePLLPathFinish(chainPath)
   if finishGuide == false then
-    local previewEntity = (self._world):GetPreviewEntity()
+    local previewEntity = self._world:GetPreviewEntity()
     previewEntity:ReplacePreviewLinkLine({}, PieceType.None, PieceType.None)
-    local linkLineSvc = (self._world):GetService("PreviewLinkLine")
+    local linkLineSvc = self._world:GetService("PreviewLinkLine")
     linkLineSvc:NotifyPickUpTargetChange()
     self:_ReShowPLLGuideLine()
     return true
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideServiceRender.CheckGuidePLLPathFinish = function(self, chainPath)
-  -- function num : 0_5 , upvalues : _ENV
-  local reBoard = (self._world):GetRenderBoardEntity()
+function GuideServiceRender:CheckGuidePLLPathFinish(chainPath)
+  local reBoard = self._world:GetRenderBoardEntity()
   local guidePLLCmpt = reBoard:GuidePreviewLinkLine()
   local guidePath = guidePLLCmpt:GetGuidePLLPath()
   if chainPath == nil or guidePath == nil then
@@ -90,7 +60,7 @@ GuideServiceRender.CheckGuidePLLPathFinish = function(self, chainPath)
   if #chainPath ~= #guidePath then
     return false
   end
-  for index,pathPoint in ipairs(chainPath) do
+  for index, pathPoint in ipairs(chainPath) do
     local curGuidePoint = guidePath[index]
     if curGuidePoint ~= pathPoint then
       return false
@@ -99,25 +69,19 @@ GuideServiceRender.CheckGuidePLLPathFinish = function(self, chainPath)
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideServiceRender._ReShowPLLGuideLine = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local reBoard = (self._world):GetRenderBoardEntity()
+function GuideServiceRender:_ReShowPLLGuideLine()
+  local reBoard = self._world:GetRenderBoardEntity()
   local guidePLLCmpt = reBoard:GuidePreviewLinkLine()
   guidePLLCmpt:SetGuideRefreshType(GuideRefreshType.RestartGuidePath)
   reBoard:ReplaceGuidePreviewLinkLine()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideServiceRender.HandlePLLCameraMoveToFocusTrigger = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function GuideServiceRender:HandlePLLCameraMoveToFocusTrigger()
   local invokeType = self:GetPLLInvokeType()
   if invokeType ~= GuideInvokeType.GuidePreviewLinkLine then
-    return 
+    return
   end
-  local reBoard = (self._world):GetRenderBoardEntity()
+  local reBoard = self._world:GetRenderBoardEntity()
   local guidePLLCmpt = reBoard:GuidePreviewLinkLine()
   local curGuideRefreshType = guidePLLCmpt:GetGuideRefreshType()
   if curGuideRefreshType ~= GuideRefreshType.ShowGuideLine then
@@ -126,35 +90,27 @@ GuideServiceRender.HandlePLLCameraMoveToFocusTrigger = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideServiceRender.HandlePLLBeginDragTrigger = function(self, newGridPos)
-  -- function num : 0_8 , upvalues : _ENV
+function GuideServiceRender:HandlePLLBeginDragTrigger(newGridPos)
   self:PauseGuideWeakLine()
   local invokeType = self:GetPLLInvokeType()
   if invokeType == GuideInvokeType.GuidePreviewLinkLine then
-    local reBoard = (self._world):GetRenderBoardEntity()
+    local reBoard = self._world:GetRenderBoardEntity()
     local guidePLLCmpt = reBoard:GuidePreviewLinkLine()
     guidePLLCmpt:SetGuideRefreshType(GuideRefreshType.ShowGuideLine)
     reBoard:ReplaceGuidePreviewLinkLine()
     return self:_CheckGuidePLLHasPos(newGridPos)
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideServiceRender._CheckGuidePLLHasPos = function(self, gridPos)
-  -- function num : 0_9 , upvalues : _ENV
-  local reBoard = (self._world):GetRenderBoardEntity()
+function GuideServiceRender:_CheckGuidePLLHasPos(gridPos)
+  local reBoard = self._world:GetRenderBoardEntity()
   local guidePLLCmpt = reBoard:GuidePreviewLinkLine()
   local guidePath = guidePLLCmpt:GetGuidePLLPath()
   if guidePath == nil then
     return false
   end
-  for _,v in ipairs(guidePath) do
+  for _, v in ipairs(guidePath) do
     if v == gridPos then
       return true
     end
@@ -162,16 +118,13 @@ GuideServiceRender._CheckGuidePLLHasPos = function(self, gridPos)
   return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideServiceRender.HandlePLLEndDragTrigger = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function GuideServiceRender:HandlePLLEndDragTrigger()
   local invokeType = self:GetPLLInvokeType()
   if invokeType == GuideInvokeType.GuidePreviewLinkLine then
-    local previewEntity = (self._world):GetPreviewEntity()
+    local previewEntity = self._world:GetPreviewEntity()
     local previewLinkLineCmpt = previewEntity:PreviewLinkLine()
     local chainPath = previewLinkLineCmpt:GetPreviewChainPath()
-    local reBoard = (self._world):GetRenderBoardEntity()
+    local reBoard = self._world:GetRenderBoardEntity()
     local guidePLLCmpt = reBoard:GuidePreviewLinkLine()
     local finishGuide = self:CheckGuidePLLPathFinish(chainPath)
     if finishGuide == true then
@@ -179,47 +132,36 @@ GuideServiceRender.HandlePLLEndDragTrigger = function(self)
       guidePLLCmpt:SetGuideRefreshType(GuideRefreshType.StopGuidePath)
       guidePLLCmpt:SetGuidePLLPath({})
       reBoard:ReplaceGuidePreviewLinkLine()
-      ;
-      (self._eventDispatcher):Dispatch(GameEventType.ShowGuideMask, false)
-      ;
-      (self._eventDispatcher):Dispatch(GameEventType.FinishGuideStep, GuideType.PreviewLinkLine)
+      self._eventDispatcher:Dispatch(GameEventType.ShowGuideMask, false)
+      self._eventDispatcher:Dispatch(GameEventType.FinishGuideStep, GuideType.PreviewLinkLine)
     else
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_guide_link_warn"))
+      ToastManager.ShowToast(StringTable.Get("str_guide_link_warn"))
       return false
     end
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideServiceRender.HandlePLLDragTrigger = function(self, newGridPos)
-  -- function num : 0_11 , upvalues : _ENV
+function GuideServiceRender:HandlePLLDragTrigger(newGridPos)
   local invokeType = self:GetPLLInvokeType()
   if invokeType ~= GuideInvokeType.GuidePreviewLinkLine then
     return true
   end
-  local previewEntity = (self._world):GetPreviewEntity()
+  local previewEntity = self._world:GetPreviewEntity()
   local previewLinkLineCmpt = previewEntity:PreviewLinkLine()
   local chainPath = previewLinkLineCmpt:GetPreviewChainPath()
   local newPosIndex = #chainPath + 1
   return self:_CheckChainPosMatchGuidePLLPath(newPosIndex, newGridPos)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideServiceRender._CheckChainPosMatchGuidePLLPath = function(self, index, gridPos)
-  -- function num : 0_12
-  local reBoard = (self._world):GetRenderBoardEntity()
+function GuideServiceRender:_CheckChainPosMatchGuidePLLPath(index, gridPos)
+  local reBoard = self._world:GetRenderBoardEntity()
   local guidePLLCmpt = reBoard:GuidePreviewLinkLine()
   local guidePath = guidePLLCmpt:GetGuidePLLPath()
   if guidePath == nil then
     return false
   end
-  if #guidePath < index then
+  if index > #guidePath then
     return false
   end
   local guidePoint = guidePath[index]
@@ -228,5 +170,3 @@ GuideServiceRender._CheckChainPosMatchGuidePLLPath = function(self, index, gridP
   end
   return true
 end
-
-

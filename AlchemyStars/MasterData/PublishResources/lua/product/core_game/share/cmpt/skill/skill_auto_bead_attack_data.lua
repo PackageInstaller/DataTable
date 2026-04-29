@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/skill/skill_auto_bead_attack_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillAutoBeadAttackData", Object)
 SkillAutoBeadAttackData = SkillAutoBeadAttackData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillAutoBeadAttackData.Constructor = function(self, autoBeadID, skillID, skillIndex, skillTurnIndex, skillBeadIndex, skillExtraIndex, skillRepeatIndex)
-  -- function num : 0_0
+function SkillAutoBeadAttackData:Constructor(autoBeadID, skillID, skillIndex, skillTurnIndex, skillBeadIndex, skillExtraIndex, skillRepeatIndex)
   self._autoBeadID = autoBeadID
   self._autoBeadSkillID = skillID
   self._autoBeadSkillIndex = skillIndex
@@ -19,91 +12,53 @@ SkillAutoBeadAttackData.Constructor = function(self, autoBeadID, skillID, skillI
   self._resultContainer = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAutoBeadAttackData.GetResultContainer = function(self)
-  -- function num : 0_1
+function SkillAutoBeadAttackData:GetResultContainer()
   return self._resultContainer
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAutoBeadAttackData.SetResultContainer = function(self, rc)
-  -- function num : 0_2
+function SkillAutoBeadAttackData:SetResultContainer(rc)
   self._resultContainer = rc
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAutoBeadAttackData.GetAutoBeadID = function(self)
-  -- function num : 0_3
+function SkillAutoBeadAttackData:GetAutoBeadID()
   return self._autoBeadID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAutoBeadAttackData.GetAutoBeadAttackDataSkillID = function(self)
-  -- function num : 0_4
+function SkillAutoBeadAttackData:GetAutoBeadAttackDataSkillID()
   return self._autoBeadSkillID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAutoBeadAttackData.GetAutoBeadSkillIndex = function(self)
-  -- function num : 0_5
+function SkillAutoBeadAttackData:GetAutoBeadSkillIndex()
   return self._autoBeadSkillIndex
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAutoBeadAttackData.GetAutoBeadSkillTurnIndex = function(self)
-  -- function num : 0_6
+function SkillAutoBeadAttackData:GetAutoBeadSkillTurnIndex()
   return self._autoBeadSkillTurnIndex
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAutoBeadAttackData.GetAutoBeadSkillBeadIndex = function(self)
-  -- function num : 0_7
+function SkillAutoBeadAttackData:GetAutoBeadSkillBeadIndex()
   return self._autoBeadSkillBeadIndex
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAutoBeadAttackData.GetAutoBeadSkillExtraIndex = function(self)
-  -- function num : 0_8
+function SkillAutoBeadAttackData:GetAutoBeadSkillExtraIndex()
   return self._autoBeadSkillExtraIndex
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAutoBeadAttackData.GetAutoBeadSkillRepeatIndex = function(self)
-  -- function num : 0_9
+function SkillAutoBeadAttackData:GetAutoBeadSkillRepeatIndex()
   return self.skillRepeatIndex
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAutoBeadAttackData.HasDamage = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  if self._resultContainer and (self._resultContainer):GetEffectResultByArray(SkillEffectType.Damage) then
+function SkillAutoBeadAttackData:HasDamage()
+  if self._resultContainer and self._resultContainer:GetEffectResultByArray(SkillEffectType.Damage) then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAutoBeadAttackData.SetFinalAttack = function(self, isFinalAttack)
-  -- function num : 0_11
+function SkillAutoBeadAttackData:SetFinalAttack(isFinalAttack)
   self._isFinalAttack = isFinalAttack
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAutoBeadAttackData.IsFinalAttack = function(self)
-  -- function num : 0_12
+function SkillAutoBeadAttackData:IsFinalAttack()
   return self._isFinalAttack
 end
-
-

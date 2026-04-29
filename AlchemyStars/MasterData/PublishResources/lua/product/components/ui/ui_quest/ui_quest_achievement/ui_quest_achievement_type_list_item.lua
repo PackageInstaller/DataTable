@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_achievement/ui_quest_achievement_type_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestAchievementTypeListItem", UICustomWidget)
 UIQuestAchievementTypeListItem = UIQuestAchievementTypeListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestAchievementTypeListItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._atlas = (self:RootUIOwner()):GetAsset("UIQuest.spriteatlas", LoadType.SpriteAtlas)
+function UIQuestAchievementTypeListItem:OnShow(uiParams)
+  self._atlas = self:RootUIOwner():GetAsset("UIQuest.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementTypeListItem.SetData = function(self, type, sp1, sp2, nameStr, callback)
-  -- function num : 0_1
+function UIQuestAchievementTypeListItem:SetData(type, sp1, sp2, nameStr, callback)
   self._select = 0
   self:_GetComponents()
   self._type = type
@@ -25,109 +15,66 @@ UIQuestAchievementTypeListItem.SetData = function(self, type, sp1, sp2, nameStr,
   self._callback = callback
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementTypeListItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIQuestAchievementTypeListItem:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementTypeListItem._GetComponents = function(self)
-  -- function num : 0_3
+function UIQuestAchievementTypeListItem:_GetComponents()
   self._icon = self:GetUIComponent("Image", "icon")
   self._name1 = self:GetUIComponent("UILocalizedTMP", "name1")
   self._name1Go = self:GetGameObject("name1")
   self._name2 = self:GetUIComponent("UILocalizedTMP", "name2")
   self._name2Go = self:GetGameObject("name2")
   self._selectGo = self:GetGameObject("select")
-  ;
-  (self._selectGo):SetActive(true)
+  self._selectGo:SetActive(true)
   self._selectImg = self:GetUIComponent("Image", "select")
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementTypeListItem._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  if not self._select or not self._sp2 then
-    local spName = self._sp1
-  end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._icon).sprite = (self._atlas):GetSprite(spName)
-  ;
-  (self._name2Go):SetActive(not self._select)
-  ;
-  (self._name1Go):SetActive(self._select)
-  ;
-  (self._name1):SetText((StringTable.Get)(self._nameStr))
-  ;
-  (self._name2):SetText((StringTable.Get)(self._nameStr))
+function UIQuestAchievementTypeListItem:_OnValue()
+  local spName = self._select and self._sp2 or self._sp1
+  self._icon.sprite = self._atlas:GetSprite(spName)
+  self._name2Go:SetActive(not self._select)
+  self._name1Go:SetActive(self._select)
+  self._name1:SetText(StringTable.Get(self._nameStr))
+  self._name2:SetText(StringTable.Get(self._nameStr))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementTypeListItem.BtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIQuestAchievementTypeListItem:BtnOnClick(go)
   if self._select == true then
-    return 
+    return
   end
   if self._callback then
-    (self._callback)(self._type)
+    self._callback(self._type)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementTypeListItem.Select = function(self, type)
-  -- function num : 0_6 , upvalues : _ENV
+function UIQuestAchievementTypeListItem:Select(type)
   local select = self._type == type
-  ;
-  (Log.fatal)("###[UIQuestAchievementTypeListItem] type:", type, "|select:", select)
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
+  Log.fatal("###[UIQuestAchievementTypeListItem] type:", type, "|select:", select)
   if self._select == 0 then
     if select then
-      (self._selectImg).color = Color(1, 1, 1, 1)
+      self._selectImg.color = Color(1, 1, 1, 1)
     else
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-      (self._selectImg).color = Color(1, 1, 1, 0)
+      self._selectImg.color = Color(1, 1, 1, 0)
     end
   else
-    (self._anim):Stop()
+    self._anim:Stop()
     if self._select == false and select == true then
       if self._timer then
-        ((GameGlobal.Timer)()):CancelEvent(self._timer)
+        GameGlobal.Timer():CancelEvent(self._timer)
       end
-      self._timer = ((GameGlobal.Timer)()):AddEvent(50, function()
-    -- function num : 0_6_0 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._selectImg).color = Color(1, 1, 1, 0)
-    ;
-    (self._anim):Play("uieffanim_UIQuestAchievementTypeListItem_in")
-  end
-)
-    else
-      -- DECOMPILER ERROR at PC73: Confused about usage of register: R3 in 'UnsetPending'
-
-      if self._select == true and select == false then
-        (self._selectImg).color = Color(1, 1, 1, 1)
-        ;
-        (self._anim):Play("uieffanim_UIQuestAchievementTypeListItem_out")
-      end
+      self._timer = GameGlobal.Timer():AddEvent(50, function()
+        self._selectImg.color = Color(1, 1, 1, 0)
+        self._anim:Play("uieffanim_UIQuestAchievementTypeListItem_in")
+      end)
+    elseif self._select == true and select == false then
+      self._selectImg.color = Color(1, 1, 1, 1)
+      self._anim:Play("uieffanim_UIQuestAchievementTypeListItem_out")
     end
   end
   self._select = select
   self:_OnValue()
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
-
-

@@ -1,29 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/StateAVGStory/n28_state_avg_story_play.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N28StateAVGStoryPlay", N28StateAVGStoryBase)
 N28StateAVGStoryPlay = N28StateAVGStoryPlay
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N28StateAVGStoryPlay.OnEnter = function(self, TT, ...)
-  -- function num : 0_0
+function N28StateAVGStoryPlay:OnEnter(TT, ...)
   self:ShowHideJumpBtn(true)
   self:Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryPlay.OnExit = function(self, TT)
-  -- function num : 0_1
+function N28StateAVGStoryPlay:OnExit(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryPlay.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_2
+function N28StateAVGStoryPlay:OnUpdate(deltaTimeMS)
   self:UpdateDriveByState(deltaTimeMS)
 end
-
-

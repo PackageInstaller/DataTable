@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/active_task/award_show/ui_active_task_award_show_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActiveTaskAwardShowItem", UICustomWidget)
 UIActiveTaskAwardShowItem = UIActiveTaskAwardShowItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActiveTaskAwardShowItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActiveTaskAwardShowItem:OnShow()
   self._gridSize = Vector2(135, 135)
   self._atlas = self:GetAsset("ActiveTask.spriteatlas", LoadType.SpriteAtlas)
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskAwardShowItem.OnHide = function(self)
-  -- function num : 0_1
+function UIActiveTaskAwardShowItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskAwardShowItem._GetComponent = function(self)
-  -- function num : 0_2
+function UIActiveTaskAwardShowItem:_GetComponent()
   self._itemNum = self:GetUIComponent("UILocalizationText", "itemNum")
   self._itemNumSmall = self:GetUIComponent("UILocalizationText", "itemNum_s")
   self._remain = self:GetUIComponent("UILocalizationText", "remain")
@@ -38,127 +25,71 @@ UIActiveTaskAwardShowItem._GetComponent = function(self)
   self._itemNumSmallObj = self:GetGameObject("ItemNumBg_s")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskAwardShowItem.SetData = function(self, id, data, clickCallback)
-  -- function num : 0_3
+function UIActiveTaskAwardShowItem:SetData(id, data, clickCallback)
   self._id = id
   self._data = data
   self._clickCallback = clickCallback
   self:InitComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskAwardShowItem.InitComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._cfg = (Cfg.cfg_component_turn_card_item)[self._id]
-  local rewards = (self._cfg).Reward
-  ;
-  (self._icon):LoadImage((self._cfg).ItemEntireIcon)
-  ;
-  (self._remain):SetText((StringTable.Get)("str_n32_turn_card_remain", self._data))
-  ;
-  (self._remainSmall):SetText((StringTable.Get)("str_n32_turn_card_remain", self._data))
-  ;
-  (self._allGetObj):SetActive(self._data == 0)
-  self._height = (self._gridSize).y
-  self._width = (self._gridSize).x
-  ;
-  (((self._remain).transform).gameObject):SetActive((self._cfg).RewardLevel ~= 3)
-  ;
-  (((self._remainSmall).transform).gameObject):SetActive((self._cfg).RewardLevel == 3)
-  if (self._cfg).RewardLevel == 1 then
-    self._height = (self._gridSize).y * 2
-    self._width = (self._gridSize).x * 2
-    ;
-    (self._itemNumObj):SetActive(true)
-    ;
-    (self._itemNumSmallObj):SetActive(false)
-    -- DECOMPILER ERROR at PC89: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._allGet).sprite = (self._atlas):GetSprite("N32_hywf_mask01")
-    -- DECOMPILER ERROR at PC96: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._getRect).localScale = Vector3(1, 1, 1)
-  elseif (self._cfg).RewardLevel == 2 then
-    self._width = (self._gridSize).x * 2
-    ;
-    (self._itemNumObj):SetActive(true)
-    ;
-    (self._itemNumSmallObj):SetActive(false)
-    -- DECOMPILER ERROR at PC119: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._allGet).sprite = (self._atlas):GetSprite("N32_hywf_mask03")
-    -- DECOMPILER ERROR at PC126: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._getRect).localScale = Vector3(0.7, 0.7, 0.7)
-  elseif (self._cfg).RewardLevel == 3 then
-    (self._itemNumObj):SetActive(false)
-    ;
-    (self._itemNumSmallObj):SetActive(true)
-    -- DECOMPILER ERROR at PC145: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._allGet).sprite = (self._atlas):GetSprite("N32_hywf_mask04")
-    -- DECOMPILER ERROR at PC152: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._getRect).localScale = Vector3(0.7, 0.7, 0.7)
+function UIActiveTaskAwardShowItem:InitComponent()
+  self._cfg = Cfg.cfg_component_turn_card_item[self._id]
+  local rewards = self._cfg.Reward
+  self._icon:LoadImage(self._cfg.ItemEntireIcon)
+  self._remain:SetText(StringTable.Get("str_n32_turn_card_remain", self._data))
+  self._remainSmall:SetText(StringTable.Get("str_n32_turn_card_remain", self._data))
+  self._allGetObj:SetActive(self._data == 0)
+  self._height = self._gridSize.y
+  self._width = self._gridSize.x
+  self._remain.transform.gameObject:SetActive(self._cfg.RewardLevel ~= 3)
+  self._remainSmall.transform.gameObject:SetActive(self._cfg.RewardLevel == 3)
+  if self._cfg.RewardLevel == 1 then
+    self._height = self._gridSize.y * 2
+    self._width = self._gridSize.x * 2
+    self._itemNumObj:SetActive(true)
+    self._itemNumSmallObj:SetActive(false)
+    self._allGet.sprite = self._atlas:GetSprite("N32_hywf_mask01")
+    self._getRect.localScale = Vector3(1, 1, 1)
+  elseif self._cfg.RewardLevel == 2 then
+    self._width = self._gridSize.x * 2
+    self._itemNumObj:SetActive(true)
+    self._itemNumSmallObj:SetActive(false)
+    self._allGet.sprite = self._atlas:GetSprite("N32_hywf_mask03")
+    self._getRect.localScale = Vector3(0.7, 0.7, 0.7)
+  elseif self._cfg.RewardLevel == 3 then
+    self._itemNumObj:SetActive(false)
+    self._itemNumSmallObj:SetActive(true)
+    self._allGet.sprite = self._atlas:GetSprite("N32_hywf_mask04")
+    self._getRect.localScale = Vector3(0.7, 0.7, 0.7)
   end
-  -- DECOMPILER ERROR at PC158: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._iconRect).sizeDelta = Vector2(self._width, self._height)
-  if #rewards > 1 then
-    (self._itemNum):SetText("1")
-    ;
-    (self._itemNumSmall):SetText("1")
+  self._iconRect.sizeDelta = Vector2(self._width, self._height)
+  if 1 < #rewards then
+    self._itemNum:SetText("1")
+    self._itemNumSmall:SetText("1")
   else
     local reward = rewards[1]
     local num = reward[2]
-    ;
-    (self._itemNum):SetText(num)
-    ;
-    (self._itemNumSmall):SetText(num)
+    self._itemNum:SetText(num)
+    self._itemNumSmall:SetText(num)
   end
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskAwardShowItem.IconBtnOnClick = function(self)
-  -- function num : 0_5
+function UIActiveTaskAwardShowItem:IconBtnOnClick()
   if self._clickCallback then
-    (self._clickCallback)(self)
+    self._clickCallback(self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskAwardShowItem.GetItemInfo = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  return (StringTable.Get)((self._cfg).ItemInfo)
+function UIActiveTaskAwardShowItem:GetItemInfo()
+  return StringTable.Get(self._cfg.ItemInfo)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskAwardShowItem.GetPosition = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local pos = Vector2((((self._allGetObj).transform).position).x, (((self._allGetObj).transform).position).y)
-  pos = Vector2(pos.x + self._width * 0.001, pos.y - self._height * 0.0008)
+function UIActiveTaskAwardShowItem:GetPosition()
+  local pos = Vector2(self._allGetObj.transform.position.x, self._allGetObj.transform.position.y)
+  pos = Vector2(pos.x + self._width * 0.001, pos.y - self._height * 8.0E-4)
   return pos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskAwardShowItem.Close = function(self)
-  -- function num : 0_8
-  (self._anim):Play("uieff_UIActiveTaskAwardShowItem_out")
+function UIActiveTaskAwardShowItem:Close()
+  self._anim:Play("uieff_UIActiveTaskAwardShowItem_out")
 end
-
-

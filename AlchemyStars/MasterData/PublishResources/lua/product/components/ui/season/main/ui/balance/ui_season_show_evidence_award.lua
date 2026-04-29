@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/balance/ui_season_show_evidence_award.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonShowEvidenceAward", UIController)
 UISeasonShowEvidenceAward = UISeasonShowEvidenceAward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonShowEvidenceAward.GetComponents = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonShowEvidenceAward:GetComponents()
   self._desc = self:GetUIComponent("UILocalizationText", "desc")
   self._title = self:GetUIComponent("UILocalizationText", "title")
   self._img = self:GetUIComponent("RawImageLoader", "Img")
@@ -17,70 +10,47 @@ UISeasonShowEvidenceAward.GetComponents = function(self)
   self._type2name = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonShowEvidenceAward.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonShowEvidenceAward:OnShow(uiParams)
   self._closeCallback = uiParams[2]
   self:GetComponents()
-  local item_module = (GameGlobal.GetModule)(ItemModule)
+  local item_module = GameGlobal.GetModule(ItemModule)
   if not uiParams[1] then
-    (Log.fatal)("###[UISeasonShowCollectionAward] uiParams[1] is nil !")
+    Log.fatal("###[UISeasonShowCollectionAward] uiParams[1] is nil !")
   end
   self.roleAsset = uiParams[1]
   self:ShowEvidenceInfo()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonShowEvidenceAward.ShowEvidenceInfo = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonShowEvidenceAward:ShowEvidenceInfo()
   if self.roleAsset then
-    local assetid = (self.roleAsset).assetid
-    local cfg = (Cfg.cfg_item)[assetid]
+    local assetid = self.roleAsset.assetid
+    local cfg = Cfg.cfg_item[assetid]
     if not cfg then
-      (Log.error)("###[UISeasonShowEvidenceAward] cfg is nil ! id : ", assetid)
+      Log.error("###[UISeasonShowEvidenceAward] cfg is nil ! id : ", assetid)
     end
     local icon = cfg.Icon
     local name = cfg.Name
     local desc = cfg.Intro
-    ;
-    (self._title):SetText((StringTable.Get)(name))
-    ;
-    (self._img):LoadImage(icon)
-    ;
-    (self._desc):SetText((StringTable.Get)(desc))
+    self._title:SetText(StringTable.Get(name))
+    self._img:LoadImage(icon)
+    self._desc:SetText(StringTable.Get(desc))
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonShowEvidenceAward.ClosePanel = function(self)
-  -- function num : 0_3
+function UISeasonShowEvidenceAward:ClosePanel()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonShowEvidenceAward.OnHide = function(self)
-  -- function num : 0_4
+function UISeasonShowEvidenceAward:OnHide()
   if self._closeCallback then
-    (self._closeCallback)()
+    self._closeCallback()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonShowEvidenceAward.BgOnClick = function(self, go)
-  -- function num : 0_5
+function UISeasonShowEvidenceAward:BgOnClick(go)
   self:ClosePanel()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonShowEvidenceAward.CloseBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UISeasonShowEvidenceAward:CloseBtnOnClick(go)
   self:ClosePanel()
 end
-
-

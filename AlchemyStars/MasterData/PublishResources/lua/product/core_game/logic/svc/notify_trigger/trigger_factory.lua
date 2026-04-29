@@ -1,40 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/notify_trigger/trigger_factory.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TriggerFactory", Object)
 TriggerFactory = TriggerFactory
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TriggerFactory.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function TriggerFactory:Constructor()
   self._triggerPrototype = {}
-  for k,v in pairs(TriggerType) do
+  for k, v in pairs(TriggerType) do
     local clsName = "TT" .. k
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._triggerPrototype)[v] = Classes[clsName]
+    self._triggerPrototype[v] = Classes[clsName]
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerFactory.CreateTrigger = function(self, triggerOwner, triggerCond, world)
-  -- function num : 0_1 , upvalues : _ENV
+function TriggerFactory:CreateTrigger(triggerOwner, triggerCond, world)
   local notifyTypes = triggerCond[1]
-  for i,n in ipairs(notifyTypes) do
+  for i, n in ipairs(notifyTypes) do
     notifyTypes[i] = world:ReplaceNotifyType(n)
   end
   local triggers = CombinedTrigger:New(triggerOwner, notifyTypes, world)
-  for i,cond in ipairs(triggerCond) do
-    if i > 1 then
+  for i, cond in ipairs(triggerCond) do
+    if 1 < i then
       local triggerType = cond[1]
-      local triggerProto = (self._triggerPrototype)[triggerType]
+      local triggerProto = self._triggerPrototype[triggerType]
       if not triggerProto then
-        (Log.error)("TriggerFactory:CreateTrigger() not find trigger type:", triggerType)
-        return 
+        Log.error("TriggerFactory:CreateTrigger() not find trigger type:", triggerType)
+        return
       end
       local trigger = triggerProto:New(triggers, cond)
       triggers:AddTrigger(trigger)
@@ -42,5 +29,3 @@ TriggerFactory.CreateTrigger = function(self, triggerOwner, triggerCond, world)
   end
   return triggers
 end
-
-

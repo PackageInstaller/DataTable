@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/tale_pet/ui_trial_level/ui_trail_level_buff_pet_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITrailLevelBuffPetItem", UICustomWidget)
 UITrailLevelBuffPetItem = UITrailLevelBuffPetItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITrailLevelBuffPetItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UITrailLevelBuffPetItem:OnShow()
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   self._headImg = self:GetUIComponent("RawImageLoader", "Head")
   self._firstElementImg = self:GetUIComponent("Image", "FirstElement")
@@ -17,44 +10,42 @@ UITrailLevelBuffPetItem.OnShow = function(self)
   self._lockGo = self:GetGameObject("Lock")
   self._selectGo = self:GetGameObject("Select")
   self._infoGo = self:GetGameObject("Info")
-  self.ElementSpriteName = {[ElementType.ElementType_Blue] = "bing_color", [ElementType.ElementType_Red] = "huo_color", [ElementType.ElementType_Green] = "sen_color", [ElementType.ElementType_Yellow] = "lei_color"}
+  self.ElementSpriteName = {
+    [ElementType.ElementType_Blue] = "bing_color",
+    [ElementType.ElementType_Red] = "huo_color",
+    [ElementType.ElementType_Green] = "sen_color",
+    [ElementType.ElementType_Yellow] = "lei_color"
+  }
   self._starPanel = self:GetUIComponent("UISelectObjectPath", "StarPanel")
-  ;
-  (self._selectGo):SetActive(false)
+  self._selectGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffPetItem.ParseConfig = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UITrailLevelBuffPetItem:ParseConfig()
   if not self._petTemplateId then
-    return 
+    return
   end
-  local cfg_pet = (Cfg.cfg_pet)[self._petTemplateId]
+  local cfg_pet = Cfg.cfg_pet[self._petTemplateId]
   if not cfg_pet then
-    return 
+    return
   end
   self._firstElement = cfg_pet.FirstElement
   self._secondElement = 0
-  if cfg_pet.Element2NeedGrade <= self._grade then
+  if self._grade >= cfg_pet.Element2NeedGrade then
     self._secondElement = cfg_pet.SecondElement
   end
-  local cfg = (Cfg.cfg_tale_pet)[self._petTemplateId]
+  local cfg = Cfg.cfg_tale_pet[self._petTemplateId]
   self._head = cfg.PetIcon
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffPetItem.Refresh = function(self, data, buffDes)
-  -- function num : 0_2 , upvalues : _ENV
+function UITrailLevelBuffPetItem:Refresh(data, buffDes)
   if not data then
-    return 
+    return
   end
   self._buffDesUI = buffDes
   self._petTemplateId = data.templateId
   self._isLock = data.lock
-  local petData = nil
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  local petData
+  local petModule = GameGlobal.GetModule(PetModule)
   if self._isLock then
     self._grade = self:GetMaxGrade(self._petTemplateId)
   else
@@ -62,53 +53,37 @@ UITrailLevelBuffPetItem.Refresh = function(self, data, buffDes)
     self._grade = petData:GetPetGrade()
   end
   self:ParseConfig()
-  ;
-  (self._headImg):LoadImage(self._head)
+  self._headImg:LoadImage(self._head)
   if self._isLock then
-    (self._infoGo):SetActive(false)
+    self._infoGo:SetActive(false)
   else
-    ;
-    (self._infoGo):SetActive(true)
-    local cfg_pet = (Cfg.cfg_pet)[self._petTemplateId]
+    self._infoGo:SetActive(true)
+    local cfg_pet = Cfg.cfg_pet[self._petTemplateId]
     local star = cfg_pet.Star
     local awake = petData:GetPetAwakening()
-    ;
-    (self._starPanel):SpawnObjects("UITrailLevelBuffPetStar", star)
-    local starItems = (self._starPanel):GetAllSpawnList()
+    self._starPanel:SpawnObjects("UITrailLevelBuffPetStar", star)
+    local starItems = self._starPanel:GetAllSpawnList()
     for i = 1, awake do
-      (starItems[i]):Refresh(true)
+      starItems[i]:Refresh(true)
     end
     for i = awake + 1, star do
-      (starItems[i]):Refresh(false)
+      starItems[i]:Refresh(false)
     end
   end
-  do
-    -- DECOMPILER ERROR at PC91: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._firstElementImg).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((self.ElementSpriteName)[self._firstElement]))
-    if self._secondElement <= 0 then
-      (self._secondElementGo):SetActive(false)
-    else
-      ;
-      (self._secondElementGo):SetActive(true)
-      -- DECOMPILER ERROR at PC116: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._secondElementImg).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((self.ElementSpriteName)[self._secondElement]))
-    end
-    ;
-    (self._lockGo):SetActive(self._isLock)
+  self._firstElementImg.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(self.ElementSpriteName[self._firstElement]))
+  if self._secondElement <= 0 then
+    self._secondElementGo:SetActive(false)
+  else
+    self._secondElementGo:SetActive(true)
+    self._secondElementImg.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(self.ElementSpriteName[self._secondElement]))
   end
+  self._lockGo:SetActive(self._isLock)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffPetItem.GetMaxGrade = function(self, templateId)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_pet_grade)({PetID = templateId})
+function UITrailLevelBuffPetItem:GetMaxGrade(templateId)
+  local cfgs = Cfg.cfg_pet_grade({PetID = templateId})
   local max = 0
-  for _,c in pairs(cfgs) do
+  for _, c in pairs(cfgs) do
     if max < c.Grade then
       max = c.Grade
     end
@@ -116,30 +91,18 @@ UITrailLevelBuffPetItem.GetMaxGrade = function(self, templateId)
   return max
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffPetItem.PetBtnOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UITrailLevelBuffPetItem:PetBtnOnClick()
   if self._isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_tale_pet_trail_level_pet_unget_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_tale_pet_trail_level_pet_unget_tips"))
+    return
   end
-  ;
-  (self._buffDesUI):OnPetClick(self)
+  self._buffDesUI:OnPetClick(self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffPetItem.Select = function(self)
-  -- function num : 0_5
-  (self._selectGo):SetActive(true)
+function UITrailLevelBuffPetItem:Select()
+  self._selectGo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffPetItem.UnSelect = function(self)
-  -- function num : 0_6
-  (self._selectGo):SetActive(false)
+function UITrailLevelBuffPetItem:UnSelect()
+  self._selectGo:SetActive(false)
 end
-
-

@@ -1,48 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/ui_choose_assistant_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChooseAssistantItem", UICustomWidget)
 UIChooseAssistantItem = UIChooseAssistantItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChooseAssistantItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChooseAssistantItem:OnShow()
   self._module = self:GetModule(PetModule)
   self:_GetComponents()
   self:AttachEvent(GameEventType.OnAssistantPetItemClick, self.OnPetItemClick)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantItem.SetData = function(self, data, currID, currGrade, cuurSkinId, currAsId, selectID, selectGrade, selectSkinId, selectAsId, callback, getHeadIcon)
-  -- function num : 0_1 , upvalues : _ENV
+function UIChooseAssistantItem:SetData(data, currID, currGrade, cuurSkinId, currAsId, selectID, selectGrade, selectSkinId, selectAsId, callback, getHeadIcon)
   local _data = data
   self._petid = _data.petid
   if self._petid == -1 then
-    do
-      local cfg = (Cfg.cfg_pet)[self._petid]
-      if not cfg then
-        (Log.error)("###[UIChooseAssistantItem] cfg is nil ! id --> ", self._petid)
-      end
-      self._petName = cfg.Name
-      self._grade = _data.grade
-      self._skinId = _data.skinid
-      self._asId = _data.asid
-      self._currID = currID
-      self._selectID = selectID
-      self._callback = callback
-      self._getHeadIcon = getHeadIcon
-      self:_OnValue()
+  else
+    local cfg = Cfg.cfg_pet[self._petid]
+    if not cfg then
+      Log.error("###[UIChooseAssistantItem] cfg is nil ! id --> ", self._petid)
     end
+    self._petName = cfg.Name
   end
+  self._grade = _data.grade
+  self._skinId = _data.skinid
+  self._asId = _data.asid
+  self._currID = currID
+  self._selectID = selectID
+  self._callback = callback
+  self._getHeadIcon = getHeadIcon
+  self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIChooseAssistantItem:_GetComponents()
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._head = self:GetUIComponent("RawImageLoader", "head")
   self._select = self:GetGameObject("select")
@@ -52,70 +38,49 @@ UIChooseAssistantItem._GetComponents = function(self)
   self._noPetGo = self:GetGameObject("noPet")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantItem._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._petGo):SetActive(self._petid ~= -1)
-  ;
-  (self._noPetGo):SetActive(self._petid == -1)
-  do
-    if self._petid ~= -1 or self._getHeadIcon then
-      local headIcon = (self._getHeadIcon)(self._petid, self._grade, self._skinId, self._asId)
-      ;
-      (self._head):LoadImage(headIcon)
+function UIChooseAssistantItem:_OnValue()
+  self._petGo:SetActive(self._petid ~= -1)
+  self._noPetGo:SetActive(self._petid == -1)
+  if self._petid == -1 then
+  else
+    if self._getHeadIcon then
+      local headIcon = self._getHeadIcon(self._petid, self._grade, self._skinId, self._asId)
+      self._head:LoadImage(headIcon)
     end
-    ;
-    (self._name):SetText((StringTable.Get)(self._petName))
-    ;
-    (self._gradeGo):SetActive(self._grade > 0)
-    local current = false
-    local select = false
-    if self._currID == self._petid then
-      current = true
-    end
-    if self._selectID == self._petid then
-      select = true
-    end
-    ;
-    (self._current):SetActive(current)
-    ;
-    (self._select):SetActive(select)
-    -- DECOMPILER ERROR: 8 unprocessed JMP targets
+    self._name:SetText(StringTable.Get(self._petName))
+    self._gradeGo:SetActive(self._grade > 0)
   end
+  local current = false
+  local select = false
+  if self._currID == self._petid then
+    current = true
+  end
+  if self._selectID == self._petid then
+    select = true
+  end
+  self._current:SetActive(current)
+  self._select:SetActive(select)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantItem.bgOnClick = function(self)
-  -- function num : 0_4
-  if (self._select).activeSelf then
-    return 
+function UIChooseAssistantItem:bgOnClick()
+  if self._select.activeSelf then
+    return
   end
   if self._callback then
-    (self._callback)(self._petid, self._grade, self._skinId, self._asId)
+    self._callback(self._petid, self._grade, self._skinId, self._asId)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantItem.OnPetItemClick = function(self, petid)
-  -- function num : 0_5
+function UIChooseAssistantItem:OnPetItemClick(petid)
   if self._petid then
     local select = false
     if petid == self._petid then
       select = true
     end
-    ;
-    (self._select):SetActive(select)
+    self._select:SetActive(select)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantItem.OnHide = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIChooseAssistantItem:OnHide()
   self:DetachEvent(GameEventType.OnAssistantPetItemClick, self.OnPetItemClick)
 end
-
-

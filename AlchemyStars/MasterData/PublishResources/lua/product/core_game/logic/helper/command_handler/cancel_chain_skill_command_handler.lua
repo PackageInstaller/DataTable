@@ -1,30 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/command_handler/cancel_chain_skill_command_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("command_base_handler")
 _class("CancelChainSkillCommandHandler", CommandBaseHandler)
 CancelChainSkillCommandHandler = CancelChainSkillCommandHandler
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CancelChainSkillCommandHandler.DoHandleCommand = function(self, cmd)
-  -- function num : 0_0 , upvalues : _ENV
-  local flag = ((self._world):BattleStat()):GetTriggerDimensionFlag()
+function CancelChainSkillCommandHandler:DoHandleCommand(cmd)
+  local flag = self._world:BattleStat():GetTriggerDimensionFlag()
   local nextId = 2
   if flag == TriggerDimensionFlag.WaitInput then
     nextId = 3
-  else
-    if flag == TriggerDimensionFlag.RoundResult then
-      nextId = 4
-    end
+  elseif flag == TriggerDimensionFlag.RoundResult then
+    nextId = 4
   end
-  ;
-  ((self._world):BattleStat()):SetTriggerDimensionFlag(TriggerDimensionFlag.None)
-  ;
-  ((self._world):BattleStat()):SetCastChainByDimensionDoorState(false)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.PickUpChainSkillTargetFinish, nextId)
+  self._world:BattleStat():SetTriggerDimensionFlag(TriggerDimensionFlag.None)
+  self._world:BattleStat():SetCastChainByDimensionDoorState(false)
+  self._world:EventDispatcher():Dispatch(GameEventType.PickUpChainSkillTargetFinish, nextId)
 end
-
-

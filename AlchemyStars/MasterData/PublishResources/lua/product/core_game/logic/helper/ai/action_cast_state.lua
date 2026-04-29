@@ -1,26 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_cast_state.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_is_base")
 _class("ActionCastState", ActionIsBase)
 ActionCastState = ActionCastState
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCastState.OnBegin = function(self)
-  -- function num : 0_0
+function ActionCastState:OnBegin()
   self.m_stActionName = "检查施法状态"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionCastState.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local aiCmpt = (self.m_entityOwn):AI()
+function ActionCastState:OnUpdate()
+  local aiCmpt = self.m_entityOwn:AI()
   local curState = aiCmpt:GetCastState()
   self:PrintLog("检查施法状态：" .. curState)
   return AINewNodeStatus.Other + curState
 end
-
-

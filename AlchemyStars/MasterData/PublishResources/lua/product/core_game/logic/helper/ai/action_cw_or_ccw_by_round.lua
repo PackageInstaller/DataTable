@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_cw_or_ccw_by_round.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCWOrCCWByRound", AINewNode)
 ActionCWOrCCWByRound = ActionCWOrCCWByRound
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCWOrCCWByRound.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local attrCmpt = (self.m_entityOwn):Attributes()
+function ActionCWOrCCWByRound:OnUpdate()
+  local attrCmpt = self.m_entityOwn:Attributes()
   local totalRound = attrCmpt:GetAttribute("TotalRound")
   local nGameRound = self:GetGameRountNow()
   if nGameRound % totalRound == 0 then
@@ -22,5 +15,3 @@ ActionCWOrCCWByRound.OnUpdate = function(self)
   end
   return AINewNodeStatus.Other + 1
 end
-
-

@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/ui_medal_card/ui_medal_card_new.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalCard_New", UICustomWidget)
 UIMedalCard_New = UIMedalCard_New
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalCard_New.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIMedalCard_New:Constructor()
+  self.roleModule = GameGlobal.GetModule(RoleModule)
   self.visitData = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCard_New.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIMedalCard_New:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCard_New.InitWidget = function(self)
-  -- function num : 0_2
+function UIMedalCard_New:InitWidget()
   self.root = self:GetGameObject("root")
   self.imgLock = self:GetGameObject("imgLock")
   self.imgEdit = self:GetGameObject("imgEdit")
@@ -32,112 +19,73 @@ UIMedalCard_New.InitWidget = function(self)
   self._rightTopGO = self:GetGameObject("rightTop")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCard_New.SetData = function(self, visitData, hideRightTop, closeCB)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMedalCard_New:SetData(visitData, hideRightTop, closeCB)
   if visitData then
     self.visitData = visitData
     self:_SetPlaceData(visitData, true)
-    ;
-    (self.imgLock):SetActive(false)
-    ;
-    (self.imgEdit):SetActive(false)
+    self.imgLock:SetActive(false)
+    self.imgEdit:SetActive(false)
   else
-    local medalMoule = (GameGlobal.GetModule)(MedalModule)
+    local medalMoule = GameGlobal.GetModule(MedalModule)
     local placeData = medalMoule:GetPlacementInfo()
     self:_SetPlaceData(placeData)
-    local unLock = (self.roleModule):CheckModuleUnlock(GameModuleID.MD_MEDAL)
-    ;
-    (self.imgLock):SetActive(not unLock)
-    ;
-    (self.imgEdit):SetActive(unLock)
-    ;
-    (self.imgDetail):SetActive(unLock)
+    local unLock = self.roleModule:CheckModuleUnlock(GameModuleID.MD_MEDAL)
+    self.imgLock:SetActive(not unLock)
+    self.imgEdit:SetActive(unLock)
+    self.imgDetail:SetActive(unLock)
   end
-  do
-    if hideRightTop then
-      (self._rightTopGO):SetActive(false)
-    end
-    self.closeCB = closeCB
+  if hideRightTop then
+    self._rightTopGO:SetActive(false)
   end
+  self.closeCB = closeCB
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCard_New._SetPlaceData = function(self, placeData, visit)
-  -- function num : 0_4 , upvalues : _ENV
-  do
-    if not self.visitData then
-      local unLock = (self.roleModule):CheckModuleUnlock(GameModuleID.MD_MEDAL)
-      if not unLock then
-        return 
-      end
+function UIMedalCard_New:_SetPlaceData(placeData, visit)
+  if not self.visitData then
+    local unLock = self.roleModule:CheckModuleUnlock(GameModuleID.MD_MEDAL)
+    if not unLock then
+      return
     end
-    if not self.card then
-      self.card = (self.cardPool):SpawnObject("UIMedalCardSimple")
-    end
-    ;
-    (self.card):SetData(672, placeData, visit, function()
-    -- function num : 0_4_0 , upvalues : self
+  end
+  if not self.card then
+    self.card = self.cardPool:SpawnObject("UIMedalCardSimple")
+  end
+  self.card:SetData(672, placeData, visit, function()
     self:_OnBgClicked()
-  end
-)
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCard_New._OnBgClicked = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  do
-    if not self.visitData then
-      local unLock = (self.roleModule):CheckModuleUnlock(GameModuleID.MD_MEDAL)
-      if not unLock then
-        (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_unlock"))
-        return 
-      end
+function UIMedalCard_New:_OnBgClicked()
+  if not self.visitData then
+    local unLock = self.roleModule:CheckModuleUnlock(GameModuleID.MD_MEDAL)
+    if not unLock then
+      ToastManager.ShowToast(StringTable.Get("str_function_lock_unlock"))
+      return
     end
-    self:ShowDetailDialog()
   end
-end
-
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCard_New.ImgEditOnClick = function(self, go)
-  -- function num : 0_6
-  self:ShowDialog("UIN22MedalEdit")
-end
-
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCard_New.ImgDetailOnClick = function(self, go)
-  -- function num : 0_7
   self:ShowDetailDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCard_New.ImgLockOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_zidongzhandou_tips"))
+function UIMedalCard_New:ImgEditOnClick(go)
+  self:ShowDialog("UIN22MedalEdit")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
+function UIMedalCard_New:ImgDetailOnClick(go)
+  self:ShowDetailDialog()
+end
 
-UIMedalCard_New.ShowDetailDialog = function(self)
-  -- function num : 0_9
+function UIMedalCard_New:ImgLockOnClick(go)
+  ToastManager.ShowToast(StringTable.Get("str_function_lock_zidongzhandou_tips"))
+end
+
+function UIMedalCard_New:ShowDetailDialog()
   if self.visitData then
     self:ShowDialog("UIMedalCardDetailController", self.visitData)
   else
     self:ShowDialog("UIMedalCardDetailController", nil, function()
-    -- function num : 0_9_0 , upvalues : self
-    if self.closeCB then
-      (self.closeCB)()
-    end
-  end
-)
+      if self.closeCB then
+        self.closeCB()
+      end
+    end)
   end
 end
-
-

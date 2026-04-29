@@ -1,62 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_trap_trigger_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataTrapTriggerSkill", Object)
 DataTrapTriggerSkill = DataTrapTriggerSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataTrapTriggerSkill.Constructor = function(self)
-  -- function num : 0_0
+function DataTrapTriggerSkill:Constructor()
   self._trapEntity = nil
   self._triggerEntity = nil
   self._resultContainer = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapTriggerSkill.SetTrapEntity = function(self, e)
-  -- function num : 0_1
+function DataTrapTriggerSkill:SetTrapEntity(e)
   self._trapEntity = e
   return self
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapTriggerSkill.GetTrapEntity = function(self)
-  -- function num : 0_2
+function DataTrapTriggerSkill:GetTrapEntity()
   return self._trapEntity
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapTriggerSkill.SetTriggerEntity = function(self, e)
-  -- function num : 0_3
+function DataTrapTriggerSkill:SetTriggerEntity(e)
   self._triggerEntity = e
   return self
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapTriggerSkill.GetTriggerEntity = function(self)
-  -- function num : 0_4
+function DataTrapTriggerSkill:GetTriggerEntity()
   return self._triggerEntity
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapTriggerSkill.SetResultContainer = function(self, container)
-  -- function num : 0_5
+function DataTrapTriggerSkill:SetResultContainer(container)
   self._resultContainer = container
   return self
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapTriggerSkill.GetResultContainer = function(self)
-  -- function num : 0_6
+function DataTrapTriggerSkill:GetResultContainer()
   return self._resultContainer
 end
-
-

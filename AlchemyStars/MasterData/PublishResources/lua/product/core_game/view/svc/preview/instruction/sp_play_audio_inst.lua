@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_audio_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayAudioInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayAudioInstruction = SkillPreviewPlayAudioInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayAudioInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayAudioInstruction:Constructor(params)
   self._audioID = tonumber(params.audioID)
   local audioType = params.audioType
   if audioType == nil then
@@ -19,28 +12,19 @@ SkillPreviewPlayAudioInstruction.Constructor = function(self, params)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayAudioInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
-  if ((GameGlobal.GetModule)(SkillPerfModule)):IsBeginPerf() then
-    return 
+function SkillPreviewPlayAudioInstruction:DoInstruction(TT, casterEntity, previewContext)
+  if GameGlobal.GetModule(SkillPerfModule):IsBeginPerf() then
+    return
   end
   if self._audioType == SkillAudioType.Cast then
-    local playingID = (AudioHelperController.PlayInnerGameSfx)(self._audioID)
+    local playingID = AudioHelperController.PlayInnerGameSfx(self._audioID)
     local effectCpmt = casterEntity:EffectHolder()
     if not effectCpmt then
       casterEntity:AddEffectHolder()
       effectCpmt = casterEntity:EffectHolder()
     end
     effectCpmt:AttachAudioID(self._audioID, playingID)
-  else
-    do
-      if self._audioType == SkillAudioType.Voice then
-        (InnerGameHelperRender.InnerGamePlayPetVoid)(self._audioID, casterEntity)
-      end
-    end
+  elseif self._audioType == SkillAudioType.Voice then
+    InnerGameHelperRender.InnerGamePlayPetVoid(self._audioID, casterEntity)
   end
 end
-
-

@@ -1,23 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_test/config/config_temp_fsm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("custom_nodes_lookup")
 require("logic_fsm_demo_character")
 ConfigDada_MainFSM = {
-[100] = {ID = 100, Tips = "角色状态机.测试", Type = "CustomLogic", 
-Nodes = {
-{Type = "FSMNode", DefaultState = "Idle", MaxTransitionsPerFrame = 10, 
-Nodes = {
-{Type = "CharacterIdleState", StateID = CharacterStateID.Idle}
-, 
-{Type = "CharacterMoveState", StateID = CharacterStateID.Move}
-, 
-{Type = "CharacterSkillState", StateID = CharacterStateID.Skill}
+  [100] = {
+    ID = 100,
+    Tips = "角色状态机.测试",
+    Type = "CustomLogic",
+    Nodes = {
+      {
+        Type = "FSMNode",
+        DefaultState = "Idle",
+        MaxTransitionsPerFrame = 10,
+        Nodes = {
+          {
+            Type = "CharacterIdleState",
+            StateID = CharacterStateID.Idle
+          },
+          {
+            Type = "CharacterMoveState",
+            StateID = CharacterStateID.Move
+          },
+          {
+            Type = "CharacterSkillState",
+            StateID = CharacterStateID.Skill
+          }
+        }
+      }
+    }
+  }
 }
-}
-}
-}
-}
-

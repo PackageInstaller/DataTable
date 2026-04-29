@@ -1,69 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_test/components/spawn_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ISpawnRule", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-ISpawnRule.MakeSpawn = function(self, entity)
-  -- function num : 0_0
+function ISpawnRule:MakeSpawn(entity)
 end
 
 _class("ISpawnRuleWitchManager", Object)
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
 
-ISpawnRuleWitchManager.MakeSpawnByMng = function(self, entity)
-  -- function num : 0_1
+function ISpawnRuleWitchManager:MakeSpawnByMng(entity)
 end
 
 _class("SpawnComponent", Object)
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-SpawnComponent.Constructor = function(self, spawnRule)
-  -- function num : 0_2
+function SpawnComponent:Constructor(spawnRule)
   self.SpawnRule = spawnRule
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Spawn = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).Spawn)
+function Entity:Spawn()
+  return self:GetComponent(self.WEComponentsEnum.Spawn)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasSpawn = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).Spawn)
+function Entity:HasSpawn()
+  return self:HasComponent(self.WEComponentsEnum.Spawn)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddSpawn = function(self, spawnRule)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Spawn
+function Entity:AddSpawn(spawnRule)
+  local index = self.WEComponentsEnum.Spawn
   local component = SpawnComponent:New(spawnRule)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceSpawn = function(self, spawnRule)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Spawn
+function Entity:ReplaceSpawn(spawnRule)
+  local index = self.WEComponentsEnum.Spawn
   local component = SpawnComponent:New(spawnRule)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveSpawn = function(self)
-  -- function num : 0_7
+function Entity:RemoveSpawn()
   if self:HasSpawn() then
-    self:RemoveComponent((self.WEComponentsEnum).Spawn)
+    self:RemoveComponent(self.WEComponentsEnum.Spawn)
   end
 end
-
-

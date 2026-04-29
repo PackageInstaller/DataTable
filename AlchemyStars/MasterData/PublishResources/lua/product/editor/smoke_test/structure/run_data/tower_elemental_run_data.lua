@@ -1,26 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/run_data/tower_elemental_run_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ElementalTowerRunData", TestRobotElementalRunData)
 ElementalTowerRunData = ElementalTowerRunData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ElementalTowerRunData.ParseLevelData = function(self, rawargs)
-  -- function num : 0_0 , upvalues : _ENV
-  local s = (string.split)(rawargs, ",")
+function ElementalTowerRunData:ParseLevelData(rawargs)
+  local s = string.split(rawargs, ",")
   local missionID = tonumber(s[2])
   self._missionID = missionID
   local towerElementType = tonumber(s[1])
   self._towerElementType = towerElementType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalTowerRunData.GetTowerElementType = function(self)
-  -- function num : 0_1
+function ElementalTowerRunData:GetTowerElementType()
   return self._towerElementType
 end
-
-

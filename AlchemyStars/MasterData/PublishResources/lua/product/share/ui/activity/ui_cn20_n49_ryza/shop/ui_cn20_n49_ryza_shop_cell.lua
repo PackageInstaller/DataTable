@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/shop/ui_cn20_n49_ryza_shop_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49Ryza_ShopCell", UICustomWidget)
 UICN20N49Ryza_ShopCell = UICN20N49Ryza_ShopCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49Ryza_ShopCell.OnShow = function(self)
-  -- function num : 0_0
+function UICN20N49Ryza_ShopCell:OnShow()
   self:InitWidgets()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopCell.InitWidgets = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN20N49Ryza_ShopCell:InitWidgets()
   self._countTex = self:GetUIComponent("UILocalizationText", "Count")
   self._priceTex = self:GetUIComponent("UILocalizationText", "Price")
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
@@ -28,57 +18,38 @@ UICN20N49Ryza_ShopCell.InitWidgets = function(self)
   self._atlas = self:GetAsset("UICN20N49_Ryza.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopCell.ShowHideCellAddGo = function(self, show)
-  -- function num : 0_2
+function UICN20N49Ryza_ShopCell:ShowHideCellAddGo(show)
   if self._addGo then
-    (self._addGo):SetActive(show)
+    self._addGo:SetActive(show)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopCell.BtnOnClick = function(self, go)
-  -- function num : 0_3
+function UICN20N49Ryza_ShopCell:BtnOnClick(go)
   if self._callback then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopCell.SetData = function(self, idx, info, callback)
-  -- function num : 0_4 , upvalues : _ENV
+function UICN20N49Ryza_ShopCell:SetData(idx, info, callback)
   self._idx = idx
   self._callback = callback
   self._info = info
-  ;
-  (self._noGo):SetActive(self._info == nil)
-  ;
-  (self._infoGo):SetActive(self._info ~= nil)
+  self._noGo:SetActive(self._info == nil)
+  self._infoGo:SetActive(self._info ~= nil)
   if self._info then
-    local cfg = (Cfg.cfg_item)[(self._info).id]
+    local cfg = Cfg.cfg_item[self._info.id]
     if cfg then
-      (self._icon):LoadImage(cfg.Icon)
+      self._icon:LoadImage(cfg.Icon)
     end
-    local spName = (UICN20N49Ryza_Shop.Color2SpName)((self._info).color)
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._color).sprite = (self._atlas):GetSprite(spName)
-    ;
-    (self._priceGo):SetActive((self._info).price ~= nil)
-    if (self._info).price then
-      (self._priceTex):SetText((self._info).price)
+    local spName = UICN20N49Ryza_Shop.Color2SpName(self._info.color)
+    self._color.sprite = self._atlas:GetSprite(spName)
+    self._priceGo:SetActive(self._info.price ~= nil)
+    if self._info.price then
+      self._priceTex:SetText(self._info.price)
     end
-    ;
-    (self._countGo):SetActive((self._info).count ~= nil)
-    if (self._info).count then
-      (self._countTex):SetText((UICN20N49Ryza_Shop.MulString)() .. (self._info).count)
+    self._countGo:SetActive(self._info.count ~= nil)
+    if self._info.count then
+      self._countTex:SetText(UICN20N49Ryza_Shop.MulString() .. self._info.count)
     end
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
-
-

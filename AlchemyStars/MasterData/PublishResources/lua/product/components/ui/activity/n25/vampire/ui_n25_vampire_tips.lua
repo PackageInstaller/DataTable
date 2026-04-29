@@ -1,27 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/vampire/ui_n25_vampire_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25VampireTips", UIController)
 UIN25VampireTips = UIN25VampireTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25VampireTips.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN25VampireTips:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTips.OnHide = function(self)
-  -- function num : 0_1
+function UIN25VampireTips:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTips.BtnCloseOnClick = function(self, go)
-  -- function num : 0_2
+function UIN25VampireTips:BtnCloseOnClick(go)
   self:CloseDialog()
 end
-
-

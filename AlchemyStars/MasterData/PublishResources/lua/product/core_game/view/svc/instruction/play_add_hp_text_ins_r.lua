@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_add_hp_text_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayAddHpTextInstruction", BaseInstruction)
 PlayAddHpTextInstruction = PlayAddHpTextInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayAddHpTextInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayAddHpTextInstruction:Constructor(paramList)
   self._stageIndex = tonumber(paramList.damageStageIndex) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAddHpTextInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayAddHpTextInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local playDamageService = world:GetService("PlayDamage")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local addHpResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AddBlood, self._stageIndex)
   if not addHpResultArray then
-    return 
+    return
   end
   local addHpResult = addHpResultArray[1]
   local targetID = addHpResult:GetTargetID()
@@ -37,11 +27,6 @@ PlayAddHpTextInstruction.DoInstruction = function(self, TT, casterEntity, phaseC
     addHpDamageInfo:SetRenderGridPos(targetPos)
     playDamageService:AsyncUpdateHPAndDisplayDamage(targetEntity, addHpDamageInfo)
   else
-    do
-      ;
-      (Log.error)("[PlayInstruction_AddHpText] 没有找到目标， nSkillID = ", skillID, ", TargetID = ", targetID)
-    end
+    Log.error("[PlayInstruction_AddHpText] 没有找到目标， nSkillID = ", skillID, ", TargetID = ", targetID)
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_cls/UndirectedGraph/ui_undirected_graph_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIUndirectedGraphData", Object)
 UIUndirectedGraphData = UIUndirectedGraphData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIUndirectedGraphData.Constructor = function(self, node_cfg, line_cfg, node_Pos, line_StartNodeId, line_EndNodeId)
-  -- function num : 0_0
+function UIUndirectedGraphData:Constructor(node_cfg, line_cfg, node_Pos, line_StartNodeId, line_EndNodeId)
   self._nodes = node_cfg
   self._lines = line_cfg
   self._node_Pos = node_Pos or "Pos"
@@ -19,147 +12,88 @@ UIUndirectedGraphData.Constructor = function(self, node_cfg, line_cfg, node_Pos,
   self._adjacencyList = self:_GetAdjacencyList()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUndirectedGraphData.GetNodeIdList = function(self)
-  -- function num : 0_1
+function UIUndirectedGraphData:GetNodeIdList()
   return self._nodeIdList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUndirectedGraphData.GetNode = function(self, id)
-  -- function num : 0_2
-  return (self._nodes)[id]
+function UIUndirectedGraphData:GetNode(id)
+  return self._nodes[id]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUndirectedGraphData.GetNodePos = function(self, id, isV3)
-  -- function num : 0_3 , upvalues : _ENV
-  local pos = ((self._nodes)[id])[self._node_Pos]
-  if not isV3 or not Vector3(pos[1], pos[2]) then
-    return Vector2(pos[1], pos[2])
-  end
+function UIUndirectedGraphData:GetNodePos(id, isV3)
+  local pos = self._nodes[id][self._node_Pos]
+  return isV3 and Vector3(pos[1], pos[2]) or Vector2(pos[1], pos[2])
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUndirectedGraphData.GetLineIdList = function(self)
-  -- function num : 0_4
+function UIUndirectedGraphData:GetLineIdList()
   return self._lineIdList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUndirectedGraphData.GetLine = function(self, id)
-  -- function num : 0_5
-  return (self._lines)[id]
+function UIUndirectedGraphData:GetLine(id)
+  return self._lines[id]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUndirectedGraphData.GetLinePos = function(self, id)
-  -- function num : 0_6
-  local a = ((self._lines)[id])[self._line_StartNodeId]
-  local b = ((self._lines)[id])[self._line_EndNodeId]
+function UIUndirectedGraphData:GetLinePos(id)
+  local a = self._lines[id][self._line_StartNodeId]
+  local b = self._lines[id][self._line_EndNodeId]
   return self:GetNodePos(a), self:GetNodePos(b)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUndirectedGraphData.GetAdjacentNodes = function(self, id)
-  -- function num : 0_7
-  if not (self._adjacencyList)[id] then
-    return {}
-  end
+function UIUndirectedGraphData:GetAdjacentNodes(id)
+  return self._adjacencyList[id] or {}
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUndirectedGraphData.GetAPathToTarget = function(self, start_id, target_ids, limit_step)
-  -- function num : 0_8 , upvalues : _ENV
-  if not limit_step then
-    limit_step = 100
-  end
-  if (table.count)(target_ids) == 0 then
+function UIUndirectedGraphData:GetAPathToTarget(start_id, target_ids, limit_step)
+  limit_step = limit_step or 100
+  if table.count(target_ids) == 0 then
     return {}
   end
-  local targets = (table.reverse)(target_ids)
+  local targets = table.reverse(target_ids)
   local queue = {start_id}
   local path = {
-[start_id] = {start_id}
-}
-  while 1 do
-    if (table.count)(queue) ~= 0 then
-      local cur = queue[1]
-      ;
-      (table.remove)(queue, 1)
-      local step = #path[cur] - 1
-      if step ~= limit_step then
-        local next = self:GetAdjacentNodes(cur)
-        for _,v in ipairs(next) do
-          if not path[v] then
-            path[v] = (table.collect)(path[cur])
-            ;
-            (table.insert)(path[v], v)
-            ;
-            (table.insert)(queue, v)
-          end
-          if targets[v] then
-            return path[v]
-          end
-        end
-        -- DECOMPILER ERROR at PC72: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC72: LeaveBlock: unexpected jumping out IF_STMT
-
-        -- DECOMPILER ERROR at PC72: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC72: LeaveBlock: unexpected jumping out IF_STMT
-
+    [start_id] = {start_id}
+  }
+  while table.count(queue) ~= 0 do
+    local cur = queue[1]
+    table.remove(queue, 1)
+    local step = #path[cur] - 1
+    if step == limit_step then
+      break
+    end
+    local next = self:GetAdjacentNodes(cur)
+    for _, v in ipairs(next) do
+      if not path[v] then
+        path[v] = table.collect(path[cur])
+        table.insert(path[v], v)
+        table.insert(queue, v)
+      end
+      if targets[v] then
+        return path[v]
       end
     end
   end
   return {}
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUndirectedGraphData.GetAllPathsInLimitStep = function(self, start_id, limit_step)
-  -- function num : 0_9 , upvalues : _ENV
-  if not limit_step then
-    limit_step = 1
-  end
+function UIUndirectedGraphData:GetAllPathsInLimitStep(start_id, limit_step)
+  limit_step = limit_step or 1
   local queue = {start_id}
   local path = {
-[start_id] = {start_id}
-}
-  while 1 do
-    if (table.count)(queue) ~= 0 then
-      local cur = queue[1]
-      ;
-      (table.remove)(queue, 1)
-      local step = #path[cur] - 1
-      if step ~= limit_step then
-        local next = self:GetAdjacentNodes(cur)
-        for _,v in ipairs(next) do
-          if not path[v] then
-            path[v] = (table.collect)(path[cur])
-            ;
-            (table.insert)(path[v], v)
-            ;
-            (table.insert)(queue, v)
-          end
-        end
-        -- DECOMPILER ERROR at PC55: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC55: LeaveBlock: unexpected jumping out IF_STMT
-
-        -- DECOMPILER ERROR at PC55: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC55: LeaveBlock: unexpected jumping out IF_STMT
-
+    [start_id] = {start_id}
+  }
+  while table.count(queue) ~= 0 do
+    local cur = queue[1]
+    table.remove(queue, 1)
+    local step = #path[cur] - 1
+    if step == limit_step then
+      break
+    end
+    local next = self:GetAdjacentNodes(cur)
+    for _, v in ipairs(next) do
+      if not path[v] then
+        path[v] = table.collect(path[cur])
+        table.insert(path[v], v)
+        table.insert(queue, v)
       end
     end
   end
@@ -167,39 +101,28 @@ UIUndirectedGraphData.GetAllPathsInLimitStep = function(self, start_id, limit_st
   return path
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUndirectedGraphData._GetSortedIDList = function(self, tb_in)
-  -- function num : 0_10 , upvalues : _ENV
+function UIUndirectedGraphData:_GetSortedIDList(tb_in)
   local tb = {}
-  for k,v in pairs(tb_in) do
-    (table.insert)(tb, k)
+  for k, v in pairs(tb_in) do
+    table.insert(tb, k)
   end
-  ;
-  (table.sort)(tb)
+  table.sort(tb)
   return tb
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUndirectedGraphData._GetAdjacencyList = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIUndirectedGraphData:_GetAdjacencyList()
   local tb = {}
-  for k,v in pairs(self._lines) do
+  for k, v in pairs(self._lines) do
     local a = v[self._line_StartNodeId]
     local b = v[self._line_EndNodeId]
     if tb[a] == nil then
       tb[a] = {}
     end
-    ;
-    (table.insert)(tb[a], b)
+    table.insert(tb[a], b)
     if tb[b] == nil then
       tb[b] = {}
     end
-    ;
-    (table.insert)(tb[b], a)
+    table.insert(tb[b], a)
   end
   return tb
 end
-
-

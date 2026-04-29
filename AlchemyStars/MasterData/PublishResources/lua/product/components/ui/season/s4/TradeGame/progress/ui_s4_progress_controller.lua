@@ -1,31 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/progress/ui_s4_progress_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4ProgressController", UIController)
 UIS4ProgressController = UIS4ProgressController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4ProgressController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIS4ProgressController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ProgressController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIS4ProgressController:OnShow(uiParams)
   self._tradeData = uiParams[1]
   self._campaign = uiParams[2]
-  self.TotalProcessCompInfo = (self._tradeData):GetTotalProcessCompInfo()
-  self.RewardProcessCompInfo = (self._tradeData):GetRewardProcessCompInfo()
-  self.TotalProcessComp = (self._tradeData):GetTotalProcessComp()
-  self.RewardProcessComp = (self._tradeData):GetRewardProcessComp()
-  self.TotalList = (self.TotalProcessComp):GetProgressList()
-  self.RewardList = (self.RewardProcessComp):GetProgressList()
-  self.TotalCurrentProgress = (self.TotalProcessCompInfo).m_current_progress
-  self.RewardCurrentProgress = (self.RewardProcessCompInfo).m_current_progress
+  self.TotalProcessCompInfo = self._tradeData:GetTotalProcessCompInfo()
+  self.RewardProcessCompInfo = self._tradeData:GetRewardProcessCompInfo()
+  self.TotalProcessComp = self._tradeData:GetTotalProcessComp()
+  self.RewardProcessComp = self._tradeData:GetRewardProcessComp()
+  self.TotalList = self.TotalProcessComp:GetProgressList()
+  self.RewardList = self.RewardProcessComp:GetProgressList()
+  self.TotalCurrentProgress = self.TotalProcessCompInfo.m_current_progress
+  self.RewardCurrentProgress = self.RewardProcessCompInfo.m_current_progress
   self:AttachEvent(GameEventType.ShowItemTips, self.ShowTips)
   local s = self:GetUIComponent("UISelectObjectPath", "itemTips")
   self._tips = s:SpawnObject("UISelectInfo")
@@ -34,35 +24,23 @@ UIS4ProgressController.OnShow = function(self, uiParams)
   self:PlayLevelUpAnimIn()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ProgressController.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIS4ProgressController:InitWidget()
   self._backBtns = self:GetUIComponent("UISelectObjectPath", "_backBtns")
-  self._commonTopBtn = (self._backBtns):SpawnObject("UISeasonTopBtn")
-  ;
-  (self._commonTopBtn):SetData(function()
-    -- function num : 0_2_0 , upvalues : self, _ENV
+  self._commonTopBtn = self._backBtns:SpawnObject("UISeasonTopBtn")
+  self._commonTopBtn:SetData(function()
     local LockName = "UIS4ProgressController_AnimOut"
     self:StartTask(function(TT)
-      -- function num : 0_2_0_0 , upvalues : self, LockName, _ENV
       self:Lock(LockName)
-      ;
-      (self._anim):Play("uianim_UIS4ProgressController_out")
+      self._anim:Play("uianim_UIS4ProgressController_out")
       YIELD(TT, 300)
       self:UnLock(LockName)
       self:CloseDialog()
-    end
-)
+    end)
     self:CloseDialog()
-  end
-, function()
-    -- function num : 0_2_1 , upvalues : _ENV
-    local seasonModule = (GameGlobal.GetModule)(SeasonModule)
-    ;
-    (seasonModule:UIModule()):ExitSeasonTo(UIStateType.UIMain)
-  end
-, nil, nil, nil)
+  end, function()
+    local seasonModule = GameGlobal.GetModule(SeasonModule)
+    seasonModule:UIModule():ExitSeasonTo(UIStateType.UIMain)
+  end, nil, nil, nil)
   self.businessContent = self:GetUIComponent("UISelectObjectPath", "BusinessContent")
   self.profitContent = self:GetUIComponent("UISelectObjectPath", "ProfitContent")
   self.level = self:GetUIComponent("UILocalizationText", "Level")
@@ -81,10 +59,7 @@ UIS4ProgressController.InitWidget = function(self)
   self.LastLevel = self:GetUIComponent("UILocalizationText", "LastLevel")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ProgressController.InitData = function(self)
-  -- function num : 0_3
+function UIS4ProgressController:InitData()
   self:LoadBusiness()
   self:LoadProfit(true)
   self:SetProfitLevelData()
@@ -92,72 +67,53 @@ UIS4ProgressController.InitData = function(self)
   self:RefreshRedPoint()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ProgressController.LoadBusiness = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local count = (table.count)(self.TotalList)
-  self.BusinessItems = (self.businessContent):SpawnObjects("UIS4BusinessProgress", count)
-  for i,v in ipairs(self.BusinessItems) do
-    local progress = (self.TotalList)[i]
-    local status = (self.TotalProcessComp):CheckItemStatus(progress)
-    local rewards = (self.TotalProcessComp):GetProgressRewards(progress)
+function UIS4ProgressController:LoadBusiness()
+  local count = table.count(self.TotalList)
+  self.BusinessItems = self.businessContent:SpawnObjects("UIS4BusinessProgress", count)
+  for i, v in ipairs(self.BusinessItems) do
+    local progress = self.TotalList[i]
+    local status = self.TotalProcessComp:CheckItemStatus(progress)
+    local rewards = self.TotalProcessComp:GetProgressRewards(progress)
     v:SetData(i, status, progress, rewards, function(progress)
-    -- function num : 0_4_0 , upvalues : self
-    (self.TotalProcessComp):Start_HandleReceiveReward(progress, function(res, rewards)
-      -- function num : 0_4_0_0 , upvalues : self
-      self:_OnBusinessReceiveRewards(res, rewards)
-    end
-)
+      self.TotalProcessComp:Start_HandleReceiveReward(progress, function(res, rewards)
+        self:_OnBusinessReceiveRewards(res, rewards)
+      end)
+    end)
   end
-)
-  end
-  for i,v in ipairs(self.BusinessItems) do
+  for i, v in ipairs(self.BusinessItems) do
     v:PlayProgressAnimIn()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ProgressController._OnBusinessReceiveRewards = function(self, res, rewards)
-  -- function num : 0_5 , upvalues : _ENV
+function UIS4ProgressController:_OnBusinessReceiveRewards(res, rewards)
   if res:GetSucc() then
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
-    self.TotalList = (self.TotalProcessComp):GetProgressList()
+    UIActivityHelper.ShowUIGetRewards(rewards)
+    self.TotalList = self.TotalProcessComp:GetProgressList()
     self:LoadBusiness()
     self:RefreshRedPoint()
   else
-    ;
-    (self._campaign):CheckErrorCode(res.m_result)
+    self._campaign:CheckErrorCode(res.m_result)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ProgressController.LoadProfit = function(self, playAnim)
-  -- function num : 0_6 , upvalues : _ENV
-  local count = (table.count)(self.RewardList)
+function UIS4ProgressController:LoadProfit(playAnim)
+  local count = table.count(self.RewardList)
   local NormalList = self:GetListForNumber(self.RewardList)
-  ;
-  (self.RewardProcessComp):SortProgressListByCampaignPersonProgressStatus(self.RewardList)
-  self.ProfitItems = (self.profitContent):SpawnObjects("UIS4ProfitTarget", count)
-  for i,v in ipairs(self.ProfitItems) do
-    local number = NormalList[(self.RewardList)[i]]
-    local progress = (self.RewardList)[i]
-    local status = (self.RewardProcessComp):CheckItemStatus(progress)
-    local rewards = (self.RewardProcessComp):GetProgressRewards(progress)
+  self.RewardProcessComp:SortProgressListByCampaignPersonProgressStatus(self.RewardList)
+  self.ProfitItems = self.profitContent:SpawnObjects("UIS4ProfitTarget", count)
+  for i, v in ipairs(self.ProfitItems) do
+    local number = NormalList[self.RewardList[i]]
+    local progress = self.RewardList[i]
+    local status = self.RewardProcessComp:CheckItemStatus(progress)
+    local rewards = self.RewardProcessComp:GetProgressRewards(progress)
     v:SetData(i, number, status, progress, rewards, function(progress)
-    -- function num : 0_6_0 , upvalues : self
-    (self.RewardProcessComp):Start_HandleReceiveReward(progress, function(res, rewards)
-      -- function num : 0_6_0_0 , upvalues : self
-      self:_OnProfitReceiveRewards(res, rewards)
-    end
-)
-  end
-)
+      self.RewardProcessComp:Start_HandleReceiveReward(progress, function(res, rewards)
+        self:_OnProfitReceiveRewards(res, rewards)
+      end)
+    end)
   end
   if playAnim then
-    for i,v in ipairs(self.ProfitItems) do
+    for i, v in ipairs(self.ProfitItems) do
       if i < 100 then
         v:PlayProfitAnimIn()
       else
@@ -167,251 +123,177 @@ UIS4ProgressController.LoadProfit = function(self, playAnim)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ProgressController._OnProfitReceiveRewards = function(self, res, rewards)
-  -- function num : 0_7 , upvalues : _ENV
+function UIS4ProgressController:_OnProfitReceiveRewards(res, rewards)
   if res:GetSucc() then
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
-    self.RewardList = (self.RewardProcessComp):GetProgressList()
+    UIActivityHelper.ShowUIGetRewards(rewards)
+    self.RewardList = self.RewardProcessComp:GetProgressList()
     self:LoadProfit()
     self:RefreshRedPoint()
   else
-    ;
-    (self._campaign):CheckErrorCode(res.m_result)
+    self._campaign:CheckErrorCode(res.m_result)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ProgressController.GetListForNumber = function(self, RewardList)
-  -- function num : 0_8 , upvalues : _ENV
+function UIS4ProgressController:GetListForNumber(RewardList)
   local list = {}
-  for k,v in pairs(RewardList) do
+  for k, v in pairs(RewardList) do
     list[v] = k
   end
   return list
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ProgressController.BtnChose = function(self, ToBusiness)
-  -- function num : 0_9 , upvalues : _ENV
+function UIS4ProgressController:BtnChose(ToBusiness)
   local LockName = "UIS4ProgressController_Change"
   if ToBusiness then
-    (self.shopOnChoose):SetActive(true)
-    ;
-    (self.profitOnChoose):SetActive(false)
-    for i,v in ipairs(self.BusinessItems) do
+    self.shopOnChoose:SetActive(true)
+    self.profitOnChoose:SetActive(false)
+    for i, v in ipairs(self.BusinessItems) do
       v:PlayProgressAnimIn()
     end
     self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, LockName, _ENV
-    self:Lock(LockName)
-    ;
-    (self._anim):Play("uianim_UIS4ProgressController_Business")
-    YIELD(TT, 300)
-    self:UnLock(LockName)
-  end
-)
+      self:Lock(LockName)
+      self._anim:Play("uianim_UIS4ProgressController_Business")
+      YIELD(TT, 300)
+      self:UnLock(LockName)
+    end)
   else
-    ;
-    (self.shopOnChoose):SetActive(false)
-    ;
-    (self.profitOnChoose):SetActive(true)
-    for i,v in ipairs(self.ProfitItems) do
+    self.shopOnChoose:SetActive(false)
+    self.profitOnChoose:SetActive(true)
+    for i, v in ipairs(self.ProfitItems) do
       if i < 10 then
         v:PlayProfitAnimIn()
       else
         break
       end
     end
-    do
-      self:StartTask(function(TT)
-    -- function num : 0_9_1 , upvalues : self, LockName, _ENV
-    self:Lock(LockName)
-    ;
-    (self._anim):Play("uianim_UIS4ProgressController_profit")
-    YIELD(TT, 300)
-    self:UnLock(LockName)
-  end
-)
-    end
+    self:StartTask(function(TT)
+      self:Lock(LockName)
+      self._anim:Play("uianim_UIS4ProgressController_profit")
+      YIELD(TT, 300)
+      self:UnLock(LockName)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ProgressController.SetProfitLevelData = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIS4ProgressController:SetProfitLevelData()
   local level = 0
-  local m_progress = (self.RewardProcessCompInfo).m_progress
-  local OrderList = (self.RewardProcessComp):GetProgressList()
+  local m_progress = self.RewardProcessCompInfo.m_progress
+  local OrderList = self.RewardProcessComp:GetProgressList()
   local max = OrderList[1]
-  for i,v in ipairs(OrderList) do
-    -- DECOMPILER ERROR at PC19: Unhandled construct in 'MakeBoolean' P1
-
-    if v <= m_progress and level < (table.count)(OrderList) then
-      level = level + 1
+  for i, v in ipairs(OrderList) do
+    if v <= m_progress then
+      if level < table.count(OrderList) then
+        level = level + 1
+      end
+    else
+      max = v
+      break
     end
-    max = v
-    do break end
   end
-  do
-    ;
-    (self.level):SetText(level)
-    self.levelNumber = level
-    local countStr = nil
-    if self.RewardCurrentProgress < max then
-      (self.LockMask):SetActive(true)
-      ;
-      (self.LevelRedPoint):SetActive(false)
-      countStr = "<color=#e64712>" .. self.RewardCurrentProgress .. "</color>"
-    else
-      ;
-      (self.LockMask):SetActive(false)
-      ;
-      (self.LevelRedPoint):SetActive(true)
-      countStr = "<color=#EAE1D0>" .. max .. "</color>"
-    end
-    if m_progress == OrderList[(table.count)(OrderList)] then
-      (self.levelUpBtnObj):SetActive(false)
-      ;
-      (self.maxLevelObj):SetActive(true)
-      countStr = "<color=#EAE1D0>" .. m_progress .. "</color>"
-      ;
-      (self.processCount):SetText(countStr .. "/" .. m_progress)
-    else
-      ;
-      (self.processCount):SetText(countStr .. "/" .. max)
-    end
+  self.level:SetText(level)
+  self.levelNumber = level
+  local countStr
+  if max > self.RewardCurrentProgress then
+    self.LockMask:SetActive(true)
+    self.LevelRedPoint:SetActive(false)
+    countStr = "<color=#e64712>" .. self.RewardCurrentProgress .. "</color>"
+  else
+    self.LockMask:SetActive(false)
+    self.LevelRedPoint:SetActive(true)
+    countStr = "<color=#EAE1D0>" .. max .. "</color>"
+  end
+  if m_progress == OrderList[table.count(OrderList)] then
+    self.levelUpBtnObj:SetActive(false)
+    self.maxLevelObj:SetActive(true)
+    countStr = "<color=#EAE1D0>" .. m_progress .. "</color>"
+    self.processCount:SetText(countStr .. "/" .. m_progress)
+  else
+    self.processCount:SetText(countStr .. "/" .. max)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ProgressController.RefreshRedPoint = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local totalRed = (self.TotalProcessComp):HasCanGetReward()
-  local ProfitAwardRed = (self.RewardProcessComp):HasCanGetReward()
-  local ProfitLevelRed = (self.RewardProcessComp):HasCanLevelUp()
-  ;
-  (self.BusinessRed):SetActive(totalRed)
-  ;
-  (self.ProfitRed):SetActive(ProfitAwardRed or ProfitLevelRed)
-  local controller = ((GameGlobal.UIStateManager)()):GetController("UIS4TradeMainController")
+function UIS4ProgressController:RefreshRedPoint()
+  local totalRed = self.TotalProcessComp:HasCanGetReward()
+  local ProfitAwardRed = self.RewardProcessComp:HasCanGetReward()
+  local ProfitLevelRed = self.RewardProcessComp:HasCanLevelUp()
+  self.BusinessRed:SetActive(totalRed)
+  self.ProfitRed:SetActive(ProfitAwardRed or ProfitLevelRed)
+  local controller = GameGlobal.UIStateManager():GetController("UIS4TradeMainController")
   controller:RefreshRedPoint()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ProgressController.LevelUpBtnOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  local m_progress = (self.RewardProcessCompInfo).m_progress
-  local m_current_progress = (self.RewardProcessCompInfo).m_current_progress
-  local HandleProgress = nil
-  local OrderList = (self.RewardProcessComp):GetProgressList()
-  for key,value in pairs(OrderList) do
-    if m_progress < value then
+function UIS4ProgressController:LevelUpBtnOnClick(go)
+  local m_progress = self.RewardProcessCompInfo.m_progress
+  local m_current_progress = self.RewardProcessCompInfo.m_current_progress
+  local HandleProgress
+  local OrderList = self.RewardProcessComp:GetProgressList()
+  for key, value in pairs(OrderList) do
+    if value > m_progress then
       HandleProgress = value
       break
     end
   end
-  do
-    if m_current_progress < HandleProgress then
-      return 
-    end
-    self:StartTask(self.ProfitLevelUp, self, HandleProgress)
+  if m_current_progress < HandleProgress then
+    return
   end
+  self:StartTask(self.ProfitLevelUp, self, HandleProgress)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ProgressController.ProfitLevelUp = function(self, TT, progress)
-  -- function num : 0_13 , upvalues : _ENV
+function UIS4ProgressController:ProfitLevelUp(TT, progress)
   local lockName = "UIS4ProgressController:ProfitLevelUp"
   self:Lock(lockName)
   local res = AsyncRequestRes:New()
-  local result = (self.RewardProcessComp):HandlePersonProgressProgressReq(TT, res, progress)
+  local result = self.RewardProcessComp:HandlePersonProgressProgressReq(TT, res, progress)
   self:UnLock(lockName)
   if res:GetSucc() then
-    self.RewardList = (self.RewardProcessComp):GetProgressList()
+    self.RewardList = self.RewardProcessComp:GetProgressList()
     self:LoadProfit(false)
     self:RefreshRedPoint()
     local LockName = "UIS4ProgressController_AnimIN"
-    do
-      self:StartTask(function(TT)
-    -- function num : 0_13_0 , upvalues : self, LockName, _ENV
-    self:Lock(LockName)
-    ;
-    (self.level):SetText(self.levelNumber + 1)
-    ;
-    ((self.LastLevel).gameObject):SetActive(true)
-    ;
-    (self.LastLevel):SetText(self.levelNumber)
-    local OrderList = (self.RewardProcessComp):GetProgressList()
-    if (self.RewardProcessCompInfo).m_progress == OrderList[(table.count)(OrderList)] then
-      (self.levelUpBtnObj):SetActive(false)
-      ;
-      (self.maxLevelObj):SetActive(true)
-    end
-    ;
-    (self._anim):Play("uianim_UIS4ProgressController_up")
-    YIELD(TT, 700)
-    self:UnLock(LockName)
-    self:SetProfitLevelData()
-  end
-)
-    end
+    self:StartTask(function(TT)
+      self:Lock(LockName)
+      self.level:SetText(self.levelNumber + 1)
+      self.LastLevel.gameObject:SetActive(true)
+      self.LastLevel:SetText(self.levelNumber)
+      local OrderList = self.RewardProcessComp:GetProgressList()
+      if self.RewardProcessCompInfo.m_progress == OrderList[table.count(OrderList)] then
+        self.levelUpBtnObj:SetActive(false)
+        self.maxLevelObj:SetActive(true)
+      end
+      self._anim:Play("uianim_UIS4ProgressController_up")
+      YIELD(TT, 700)
+      self:UnLock(LockName)
+      self:SetProfitLevelData()
+    end)
   else
-    do
-      ;
-      (Log.error)("###[UIS4ProgressController] ProfitLevelUp fail, result:", res:GetResult(), " progress:", progress)
-    end
+    Log.error("###[UIS4ProgressController] ProfitLevelUp fail, result:", res:GetResult(), " progress:", progress)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ProgressController.ChangeBusinessOnClick = function(self, go)
-  -- function num : 0_14
-  if (self.shopOnChoose).activeSelf then
-    return 
+function UIS4ProgressController:ChangeBusinessOnClick(go)
+  if self.shopOnChoose.activeSelf then
+    return
   end
   self:BtnChose(true)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ProgressController.ChangeProfitOnClick = function(self, go)
-  -- function num : 0_15
-  if (self.profitOnChoose).activeSelf then
-    return 
+function UIS4ProgressController:ChangeProfitOnClick(go)
+  if self.profitOnChoose.activeSelf then
+    return
   end
   self:BtnChose(false)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ProgressController.ShowTips = function(self, itemId, pos)
-  -- function num : 0_16
-  (self._tips):SetData(itemId, pos)
+function UIS4ProgressController:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ProgressController.PlayLevelUpAnimIn = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIS4ProgressController:PlayLevelUpAnimIn()
   local LockName = "UIS4ProgressController_AnimIN"
   self:StartTask(function(TT)
-    -- function num : 0_17_0 , upvalues : self, LockName, _ENV
     self:Lock(LockName)
-    ;
-    (self._anim):Play("uianim_UIS4ProgressController_in")
+    self._anim:Play("uianim_UIS4ProgressController_in")
     YIELD(TT, 500)
     self:UnLock(LockName)
-  end
-)
+  end)
 end
-
-

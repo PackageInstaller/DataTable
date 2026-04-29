@@ -1,29 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/aquarium/homeland_aquarium.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandAquarium", HomeBuilding)
 HomelandAquarium = HomelandAquarium
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandAquarium.Constructor = function(self, insID, architecture, cfg)
-  -- function num : 0_0
+function HomelandAquarium:Constructor(insID, architecture, cfg)
   self._isInited = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquarium.InitAquarium = function(self, architecture)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandAquarium:InitAquarium(architecture)
   if self._isInited then
-    return 
+    return
   end
   self._isInited = true
-  self._uiModule = (GameGlobal.GetUIModule)(HomelandModule)
-  self._isVisit = ((self._uiModule):GetClient()):IsVisit()
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
+  self._uiModule = GameGlobal.GetUIModule(HomelandModule)
+  self._isVisit = self._uiModule:GetClient():IsVisit()
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
   self._pstid = architecture.pstid
   self._buildID = self:GetBuildId()
   self._buildPstID = self:GetBuildPstId()
@@ -36,301 +26,223 @@ HomelandAquarium.InitAquarium = function(self, architecture)
     self:_InitAquarium()
   end
   self._refreshWithBuild = false
-  self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1, TimerTriggerCount.Infinite, function()
-    -- function num : 0_1_0 , upvalues : self, _ENV
-    if (self._homelandClient):CurrentMode() == HomelandMode.Build and self._wishingFishs and self._refreshWithBuild == false then
-      for k,v in pairs(self._wishingFishs) do
-        v:Destroy()
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(1, TimerTriggerCount.Infinite, function()
+    if self._homelandClient:CurrentMode() == HomelandMode.Build then
+      if self._wishingFishs and self._refreshWithBuild == false then
+        for k, v in pairs(self._wishingFishs) do
+          v:Destroy()
+        end
+        self._wishingFishs = {}
+        self._refreshWithBuild = true
       end
-      self._wishingFishs = {}
-      self._refreshWithBuild = true
+    else
+      self:OnCheckAquariumActive()
+      if self._refreshWithBuild == true then
+        self:RefreshAquarium()
+        self._refreshWithBuild = false
+      end
     end
-    self:OnCheckAquariumActive()
-    if self._refreshWithBuild == true then
-      self:RefreshAquarium()
-      self._refreshWithBuild = false
-    end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquarium.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((HomelandAquarium.super).Dispose)(self)
+function HomelandAquarium:Dispose()
+  HomelandAquarium.super.Dispose(self)
   self:ClearFishs()
-  ;
-  (HomelandWishingConst.ForceUpdateAquariumFishData)()
+  HomelandWishingConst.ForceUpdateAquariumFishData()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquarium.ClearFishs = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandAquarium:ClearFishs()
   if self._wishingFishs then
-    for k,v in pairs(self._wishingFishs) do
+    for k, v in pairs(self._wishingFishs) do
       v:Destroy()
     end
   end
-  do
-    self:RemoveEvents()
-  end
+  self:RemoveEvents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquarium.OnSaveBuilding = function(self, updateBuildings, deleteBuildings)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,building in ipairs(deleteBuildings) do
+function HomelandAquarium:OnSaveBuilding(updateBuildings, deleteBuildings)
+  for _, building in ipairs(deleteBuildings) do
     if self._pstid == building._pstid then
-      (HomelandWishingConst.DeleteAquariumFish)(self._pstid)
-      return 
+      HomelandWishingConst.DeleteAquariumFish(self._pstid)
+      return
     end
   end
-  for _,building in ipairs(updateBuildings) do
+  for _, building in ipairs(updateBuildings) do
     if self._pstid == building._pstid then
       self._refreshWithBuild = true
-      return 
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquarium.RemoveEvents = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandAquarium:RemoveEvents()
   if self._addAquariumFishCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.AquariumAddFish, self._addAquariumFishCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.AquariumAddFish, self._addAquariumFishCallback)
     self._addAquariumFishCallback = nil
   end
   if self._removeAquariumFishCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.AquariumRemoveFish, self._removeAquariumFishCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.AquariumRemoveFish, self._removeAquariumFishCallback)
     self._removeAquariumFishCallback = nil
   end
   if self._refreshAquariumFishCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.AquariumRefreshFish, self._refreshAquariumFishCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.AquariumRefreshFish, self._refreshAquariumFishCallback)
     self._refreshAquariumFishCallback = nil
   end
   if self._saveBuildingCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.HomelandBuildOnSaveBuilding, self._saveBuildingCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.HomelandBuildOnSaveBuilding, self._saveBuildingCallback)
     self._saveBuildingCallback = nil
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquarium._InitAquarium = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function HomelandAquarium:_InitAquarium()
   if self._addAquariumFishCallback == nil then
-    self._addAquariumFishCallback = (GameHelper:GetInstance()):CreateCallback(self.AddAquariumFish, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.AquariumAddFish, self._addAquariumFishCallback)
+    self._addAquariumFishCallback = GameHelper:GetInstance():CreateCallback(self.AddAquariumFish, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.AquariumAddFish, self._addAquariumFishCallback)
   end
   if self._removeAquariumFishCallback == nil then
-    self._removeAquariumFishCallback = (GameHelper:GetInstance()):CreateCallback(self.RemoveAquariumFish, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.AquariumRemoveFish, self._removeAquariumFishCallback)
+    self._removeAquariumFishCallback = GameHelper:GetInstance():CreateCallback(self.RemoveAquariumFish, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.AquariumRemoveFish, self._removeAquariumFishCallback)
   end
   if self._refreshAquariumFishCallback == nil then
-    self._refreshAquariumFishCallback = (GameHelper:GetInstance()):CreateCallback(self.RefreshAquariumFish, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.AquariumRefreshFish, self._refreshAquariumFishCallback)
+    self._refreshAquariumFishCallback = GameHelper:GetInstance():CreateCallback(self.RefreshAquariumFish, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.AquariumRefreshFish, self._refreshAquariumFishCallback)
   end
   if self._saveBuildingCallback == nil then
-    self._saveBuildingCallback = (GameHelper:GetInstance()):CreateCallback(self.OnSaveBuilding, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.HomelandBuildOnSaveBuilding, self._saveBuildingCallback)
+    self._saveBuildingCallback = GameHelper:GetInstance():CreateCallback(self.OnSaveBuilding, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.HomelandBuildOnSaveBuilding, self._saveBuildingCallback)
   end
   self:RefreshAquarium()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquarium.RefreshAquarium = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function HomelandAquarium:RefreshAquarium()
   if self._wishingFishs then
-    for k,v in pairs(self._wishingFishs) do
+    for k, v in pairs(self._wishingFishs) do
       v:Destroy()
     end
   end
-  do
-    self._wishingFishs = {}
-    if not self._isVisit or not (HomelandVisitHelper.GetAquariumFishList)(self._pstid) then
-      local aquariumFishList = (HomelandWishingConst.GetCurAquariumFishList)(self._pstid)
-    end
-    for i = 1, #aquariumFishList do
-      local fish = aquariumFishList[i]
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._wishingFishs)[fish.InstanceId] = HomelandAquariumFishModel:New(self._transform, fish.ID, fish.InstanceId, self._buildID, self)
-    end
-    self:NotifyFishs()
+  self._wishingFishs = {}
+  local aquariumFishList = self._isVisit and HomelandVisitHelper.GetAquariumFishList(self._pstid) or HomelandWishingConst.GetCurAquariumFishList(self._pstid)
+  for i = 1, #aquariumFishList do
+    local fish = aquariumFishList[i]
+    self._wishingFishs[fish.InstanceId] = HomelandAquariumFishModel:New(self._transform, fish.ID, fish.InstanceId, self._buildID, self)
   end
-end
-
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquarium.AddAquariumFish = function(self, buildPstID, id, fishInstanceId)
-  -- function num : 0_8 , upvalues : _ENV
-  if buildPstID ~= self._buildPstID then
-    return 
-  end
-  if (self._wishingFishs)[fishInstanceId] then
-    return 
-  end
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._wishingFishs)[fishInstanceId] = HomelandAquariumFishModel:New(self._transform, id, fishInstanceId, self._buildID, self)
   self:NotifyFishs()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquarium.RemoveAquariumFish = function(self, buildPstID, fishInstanceId)
-  -- function num : 0_9
+function HomelandAquarium:AddAquariumFish(buildPstID, id, fishInstanceId)
   if buildPstID ~= self._buildPstID then
-    return 
+    return
   end
-  if (self._wishingFishs)[fishInstanceId] then
-    ((self._wishingFishs)[fishInstanceId]):Destroy()
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
+  if self._wishingFishs[fishInstanceId] then
+    return
+  end
+  self._wishingFishs[fishInstanceId] = HomelandAquariumFishModel:New(self._transform, id, fishInstanceId, self._buildID, self)
+  self:NotifyFishs()
+end
 
-    ;
-    (self._wishingFishs)[fishInstanceId] = nil
+function HomelandAquarium:RemoveAquariumFish(buildPstID, fishInstanceId)
+  if buildPstID ~= self._buildPstID then
+    return
+  end
+  if self._wishingFishs[fishInstanceId] then
+    self._wishingFishs[fishInstanceId]:Destroy()
+    self._wishingFishs[fishInstanceId] = nil
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquarium.RefreshAquariumFish = function(self, buildPstID)
-  -- function num : 0_10 , upvalues : _ENV
+function HomelandAquarium:RefreshAquariumFish(buildPstID)
   if buildPstID ~= self._buildPstID then
-    return 
+    return
   end
   local lastList = {}
   if self._wishingFishs then
-    for k,v in pairs(self._wishingFishs) do
-      (table.insert)(lastList, v)
+    for k, v in pairs(self._wishingFishs) do
+      table.insert(lastList, v)
     end
   end
-  do
-    self._wishingFishs = {}
-    local aquariumFishList = (HomelandWishingConst.GetCurAquariumFishList)(self._pstid)
-    for i = 1, #aquariumFishList do
-      local fish = aquariumFishList[i]
-      local fishID = fish.ID
-      local homelandAquariumFishModel = nil
-      for k,v in pairs(lastList) do
-        if v._id == fishID then
-          homelandAquariumFishModel = v
-          lastList[k] = nil
-          break
-        end
-      end
-      do
-        do
-          -- DECOMPILER ERROR at PC48: Confused about usage of register: R11 in 'UnsetPending'
-
-          if homelandAquariumFishModel then
-            (self._wishingFishs)[fish.InstanceId] = homelandAquariumFishModel
-          else
-            -- DECOMPILER ERROR at PC60: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            (self._wishingFishs)[fish.InstanceId] = HomelandAquariumFishModel:New(self._transform, fish.ID, fish.InstanceId, self._buildID, self)
-          end
-          -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+  self._wishingFishs = {}
+  local aquariumFishList = HomelandWishingConst.GetCurAquariumFishList(self._pstid)
+  for i = 1, #aquariumFishList do
+    local fish = aquariumFishList[i]
+    local fishID = fish.ID
+    local homelandAquariumFishModel
+    for k, v in pairs(lastList) do
+      if v._id == fishID then
+        homelandAquariumFishModel = v
+        lastList[k] = nil
+        break
       end
     end
-    for k,v in pairs(lastList) do
-      v:Destroy()
+    if homelandAquariumFishModel then
+      self._wishingFishs[fish.InstanceId] = homelandAquariumFishModel
+    else
+      self._wishingFishs[fish.InstanceId] = HomelandAquariumFishModel:New(self._transform, fish.ID, fish.InstanceId, self._buildID, self)
     end
-    self:NotifyFishs()
   end
+  for k, v in pairs(lastList) do
+    v:Destroy()
+  end
+  self:NotifyFishs()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquarium.NotifyFishs = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function HomelandAquarium:NotifyFishs()
   if self._wishingFishs then
-    for k,v in pairs(self._wishingFishs) do
+    for k, v in pairs(self._wishingFishs) do
       v:NotifyFishs(self._wishingFishs)
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquarium.AquariumIsActive = function(self)
-  -- function num : 0_12
+function HomelandAquarium:AquariumIsActive()
   return self._isActive
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquarium.OnCheckAquariumActive = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function HomelandAquarium:OnCheckAquariumActive()
   self._isActive = false
   local isDelete = self:IsDelete()
   if isDelete then
-    return 
+    return
   end
   if not self._camera then
-    local cameraMgr = (self._homelandClient):CameraManager()
-    do
-      do
-        if cameraMgr then
-          local homelandFollowCameraController = cameraMgr:FollowCameraController()
-          self._camera = homelandFollowCameraController:CameraCmp()
-        end
-        if not self._camera then
-          return 
-        end
-        local distance = (Vector3.Distance)((self._transform).position, (((self._camera).gameObject).transform).position)
-        if distance > 25 then
-          return 
-        end
-        local inCameraField = false
-        for _,pos in ipairs(self._fishingAreaPointList) do
-          inCameraField = self:_CheckInCameraField(pos)
-        end
-        do
-          if inCameraField or inCameraField == false then
-            return 
-          end
-          self._isActive = true
-        end
-      end
+    local cameraMgr = self._homelandClient:CameraManager()
+    if cameraMgr then
+      local homelandFollowCameraController = cameraMgr:FollowCameraController()
+      self._camera = homelandFollowCameraController:CameraCmp()
+    end
+    if not self._camera then
+      return
     end
   end
+  local distance = Vector3.Distance(self._transform.position, self._camera.gameObject.transform.position)
+  if 25 < distance then
+    return
+  end
+  local inCameraField = false
+  for _, pos in ipairs(self._fishingAreaPointList) do
+    inCameraField = self:_CheckInCameraField(pos)
+    if inCameraField then
+      break
+    end
+  end
+  if inCameraField == false then
+    return
+  end
+  self._isActive = true
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquarium._CheckInCameraField = function(self, position)
-  -- function num : 0_14 , upvalues : _ENV
-  local viewPoint = (self._camera):WorldToViewportPoint(position)
-  local dir = (position - (((self._camera).gameObject).transform).position).normalized
-  local dot = (Vector3.Dot)((((self._camera).gameObject).transform).forward, dir)
-  do return dot > 0 and viewPoint.x >= 0 and viewPoint.x <= 1 and viewPoint.y >= 0 and viewPoint.y <= 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandAquarium:_CheckInCameraField(position)
+  local viewPoint = self._camera:WorldToViewportPoint(position)
+  local dir = (position - self._camera.gameObject.transform.position).normalized
+  local dot = Vector3.Dot(self._camera.gameObject.transform.forward, dir)
+  return 0 < dot and 0 <= viewPoint.x and viewPoint.x <= 1 and 0 <= viewPoint.y and 1 >= viewPoint.y
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquarium.GetFishingAreaPolygon = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local fishingAreaObj = (GameObjectHelper.FindChild)(self._transform, "AreaRoot")
+function HomelandAquarium:GetFishingAreaPolygon()
+  local fishingAreaObj = GameObjectHelper.FindChild(self._transform, "AreaRoot")
   local areaNode = {}
   for i = 0, fishingAreaObj.childCount - 1 do
     local childTransform = fishingAreaObj:GetChild(i)
@@ -338,5 +250,3 @@ HomelandAquarium.GetFishingAreaPolygon = function(self)
   end
   return areaNode
 end
-
-

@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_pull_around_effect_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillPullAroundEffectParam", SkillEffectParamBase)
 SkillPullAroundEffectParam = SkillPullAroundEffectParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPullAroundEffectParam.Constructor = function(self)
-  -- function num : 0_0
+function SkillPullAroundEffectParam:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPullAroundEffectParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPullAroundEffectParam:GetEffectType()
   return SkillEffectType.PullAround
 end
-
-

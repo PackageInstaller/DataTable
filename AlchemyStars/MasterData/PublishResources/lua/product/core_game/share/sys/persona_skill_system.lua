@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/persona_skill_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("PersonaSkillSystem", MainStateSystem)
 PersonaSkillSystem = PersonaSkillSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PersonaSkillSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PersonaSkillSystem:_GetMainStateID()
   return GameStateID.PersonaSkill
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function PersonaSkillSystem:_OnMainStateEnter(TT)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local featureSkillCmpt = teamEntity:FeatureSkill()
   local skillID = featureSkillCmpt:GetFeatureSkillID()
   local featureType = featureSkillCmpt:GetFeatureType()
   local casterEntityID = featureSkillCmpt:GetFeatureSkillCasterEntityID()
-  local casterEntity = (self._world):GetEntityByID(casterEntityID)
+  local casterEntity = self._world:GetEntityByID(casterEntityID)
   self:_DoRenderPreFeatureSkillStart(TT)
   local posCasterOld = teamEntity:GetGridPosition()
   self:_DoLogicCastFeatureSkill(teamEntity, casterEntity)
@@ -55,108 +45,78 @@ PersonaSkillSystem._OnMainStateEnter = function(self, TT)
   self:_DoLogicSwitchMainState(teamEntity)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoLogicFeatureSkillMonsterDead = function(self, teamEntity, casterEntity)
-  -- function num : 0_2
+function PersonaSkillSystem:_DoLogicFeatureSkillMonsterDead(teamEntity, casterEntity)
   local deadMonsterList = self:_DoLogicMonsterDead()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoLogicCastFeatureSkill = function(self, teamEntity, casterEntity)
-  -- function num : 0_3 , upvalues : _ENV
+function PersonaSkillSystem:_DoLogicCastFeatureSkill(teamEntity, casterEntity)
   local featureSkillCmpt = teamEntity:FeatureSkill()
   local skillID = featureSkillCmpt:GetFeatureSkillID()
   local featureType = featureSkillCmpt:GetFeatureType()
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   skillEffectResultContainer:Clear()
-  ;
-  (Log.debug)("CastPersonaSkill skillID=", skillID)
-  local logicService = (self._world):GetService("SkillLogic")
+  Log.debug("CastPersonaSkill skillID=", skillID)
+  local logicService = self._world:GetService("SkillLogic")
   logicService:CalcSkillEffect(casterEntity, skillID, SkillType.FeatureSkill)
   local notifyData = NTFeatureSkillAttackEnd:New(featureType, skillID)
-  ;
-  ((self._world):GetService("Trigger")):Notify(notifyData)
-  local svc = (self._world):GetService("L2R")
+  self._world:GetService("Trigger"):Notify(notifyData)
+  local svc = self._world:GetService("L2R")
   svc:L2RFeatureAttackData(casterEntity, skillID)
   svc:L2RBoardLogicData()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoLogicUpdateBattleStat = function(self, skillID)
-  -- function num : 0_4 , upvalues : _ENV
-  local configsvc = (self._world):GetService("Config")
+function PersonaSkillSystem:_DoLogicUpdateBattleStat(skillID)
+  local configsvc = self._world:GetService("Config")
   local skillConfig = configsvc:GetSkillConfigData(skillID)
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local logicFeatureCmpt = boardEntity:LogicFeature()
   if skillConfig:GetSkillPickType() == SkillPickUpType.FeatureSkipPreview then
-    local battleStatCmpt = (self._world):BattleStat()
+    local battleStatCmpt = self._world:BattleStat()
     local levelRound = battleStatCmpt:GetLevelTotalRoundCount()
     logicFeatureCmpt:AddBanPetSkillCastRound(skillID, levelRound)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoLogicCalcIsFinalAttack = function(self)
-  -- function num : 0_5
-  local battleService = (self._world):GetService("Battle")
+function PersonaSkillSystem:_DoLogicCalcIsFinalAttack()
+  local battleService = self._world:GetService("Battle")
   local isFinalAttack = battleService:IsFinalAttack()
   return isFinalAttack
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoLogicTrapDeadSkill = function(self)
-  -- function num : 0_6
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function PersonaSkillSystem:_DoLogicTrapDeadSkill()
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   trapServiceLogic:CalcActiveSkillDeadTrapDeadSkill()
   self:_DoLogicTrapDie()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoLogicResetPickUp = function(self, teamEntity)
-  -- function num : 0_7
+function PersonaSkillSystem:_DoLogicResetPickUp(teamEntity)
   local logicPickUpCmpt = teamEntity:LogicPickUp()
   logicPickUpCmpt:ResetLogicPickUp()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoLogicSwitchMainState = function(self, teamEntity)
-  -- function num : 0_8 , upvalues : _ENV
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function PersonaSkillSystem:_DoLogicSwitchMainState(teamEntity)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local isTriggerDimension = boardServiceLogic:IsPlayerOnDimension(teamEntity)
   local nextState = self:_DoCheckNextState(teamEntity)
   if isTriggerDimension then
     if nextState == 2 then
-      ((self._world):BattleStat()):SetTriggerDimensionFlag(TriggerDimensionFlag.RoundResult)
-    else
-      if nextState == 1 then
-        ((self._world):BattleStat()):SetTriggerDimensionFlag(TriggerDimensionFlag.WaitInput)
-      end
+      self._world:BattleStat():SetTriggerDimensionFlag(TriggerDimensionFlag.RoundResult)
+    elseif nextState == 1 then
+      self._world:BattleStat():SetTriggerDimensionFlag(TriggerDimensionFlag.WaitInput)
     end
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.PersonaSkillFinish, 3)
+    self._world:EventDispatcher():Dispatch(GameEventType.PersonaSkillFinish, 3)
   else
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.PersonaSkillFinish, nextState)
+    self._world:EventDispatcher():Dispatch(GameEventType.PersonaSkillFinish, nextState)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoCheckNextState = function(self, teamEntity)
-  -- function num : 0_9
-  local battleStatCmpt = (self._world):BattleStat()
+function PersonaSkillSystem:_DoCheckNextState(teamEntity)
+  local battleStatCmpt = self._world:BattleStat()
   local nextState = 0
   if battleStatCmpt:AssignWaveResult() then
     nextState = 1
   else
-    local battleService = (self._world):GetService("Battle")
+    local battleService = self._world:GetService("Battle")
     local allMonsterDead = battleService:CheckAllMonstersDead(teamEntity)
     local specificTrapDead = battleService:CheckSpecificTrapDead()
     if allMonsterDead and specificTrapDead then
@@ -167,128 +127,77 @@ PersonaSkillSystem._DoCheckNextState = function(self, teamEntity)
         nextState = 2
       end
     else
-      do
-        nextState = 1
-        do
-          local waveFinish = battleService:BattleCalculation(teamEntity)
-          if waveFinish then
-            nextState = 2
-          end
-          return nextState
-        end
-      end
+      nextState = 1
+    end
+    local waveFinish = battleService:BattleCalculation(teamEntity)
+    if waveFinish then
+      nextState = 2
     end
   end
+  return nextState
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoLogicFeatureSkillEnd = function(self, teamEntity, casterEntity)
-  -- function num : 0_10
+function PersonaSkillSystem:_DoLogicFeatureSkillEnd(teamEntity, casterEntity)
   casterEntity:RemoveActiveSkillPickUpComponent()
   local featureSkillCmpt = teamEntity:FeatureSkill()
   featureSkillCmpt:SetFeatureSkillID(nil, nil, nil)
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local logicFeatureCmpt = boardEntity:LogicFeature()
   if logicFeatureCmpt then
     logicFeatureCmpt:ClearShopRecentSelectedCellList()
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoLogicWaitTeleportFinish = function(self, teamEntity, casterEntity, posCasterOld)
-  -- function num : 0_11 , upvalues : _ENV
+function PersonaSkillSystem:_DoLogicWaitTeleportFinish(teamEntity, casterEntity, posCasterOld)
   local posCasterNew = teamEntity:GetGridPosition()
   local bHaveTeleport = posCasterNew ~= posCasterOld
   if not bHaveTeleport then
-    local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+    local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
     local teleportResultNew = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Teleport, 1)
     if teleportResultNew then
       bHaveTeleport = true
     end
   end
-  local listTrapTrigger = nil
-  do
-    if bHaveTeleport then
-      local sTrapLogic = (self._world):GetService("TrapLogic")
-      listTrapTrigger = sTrapLogic:TriggerTrapByTeleport(teamEntity, true)
-    end
-    do return listTrapTrigger end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  local listTrapTrigger
+  if bHaveTeleport then
+    local sTrapLogic = self._world:GetService("TrapLogic")
+    listTrapTrigger = sTrapLogic:TriggerTrapByTeleport(teamEntity, true)
   end
+  return listTrapTrigger
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoRenderPreFeatureSkillStart = function(self, TT)
-  -- function num : 0_12
+function PersonaSkillSystem:_DoRenderPreFeatureSkillStart(TT)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoRenderNotifyFeatureSkillStart = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_13
+function PersonaSkillSystem:_DoRenderNotifyFeatureSkillStart(TT, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoRenderWaitPlaySkillTaskFinish = function(self, TT)
-  -- function num : 0_14
+function PersonaSkillSystem:_DoRenderWaitPlaySkillTaskFinish(TT)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoRenderWaitTeleportFinish = function(self, TT, listTrapTrigger, teamEntity, casterEntity)
-  -- function num : 0_15
+function PersonaSkillSystem:_DoRenderWaitTeleportFinish(TT, listTrapTrigger, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoRenderResetPieceAnim = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_16
+function PersonaSkillSystem:_DoRenderResetPieceAnim(TT, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoRenderResetPreview = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_17
+function PersonaSkillSystem:_DoRenderResetPreview(TT, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoRenderNotifyFeatureSkillFinish = function(self, TT, teamEntity, casterEntity, featureType, skillID)
-  -- function num : 0_18
+function PersonaSkillSystem:_DoRenderNotifyFeatureSkillFinish(TT, teamEntity, casterEntity, featureType, skillID)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoRenderShowAfterFeatureSkill = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_19
+function PersonaSkillSystem:_DoRenderShowAfterFeatureSkill(TT, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoRenderPlayFeatureSkill = function(self, isFinalAttack, teamEntity, casterEntity)
-  -- function num : 0_20
+function PersonaSkillSystem:_DoRenderPlayFeatureSkill(isFinalAttack, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoRenderMonsterDead = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_21
+function PersonaSkillSystem:_DoRenderMonsterDead(TT, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoRenderResetPickUp = function(self)
-  -- function num : 0_22
+function PersonaSkillSystem:_DoRenderResetPickUp()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonaSkillSystem._DoRenderFeatureSkillEnd = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_23
+function PersonaSkillSystem:_DoRenderFeatureSkillEnd(TT, teamEntity, casterEntity)
 end
-
-

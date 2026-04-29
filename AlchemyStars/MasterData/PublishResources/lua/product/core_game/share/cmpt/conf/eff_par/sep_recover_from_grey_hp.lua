@@ -1,29 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_recover_from_grey_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectParam_RecoverFromGreyHP", SkillEffectParamBase)
 SkillEffectParam_RecoverFromGreyHP = SkillEffectParam_RecoverFromGreyHP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_RecoverFromGreyHP.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_RecoverFromGreyHP:Constructor(t)
   self._recoverRate = t.rate
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_RecoverFromGreyHP.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_RecoverFromGreyHP:GetEffectType()
   return SkillEffectType.RecoverFromGreyHP
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_RecoverFromGreyHP.GetRecoverRate = function(self)
-  -- function num : 0_2
+function SkillEffectParam_RecoverFromGreyHP:GetRecoverRate()
   return self._recoverRate
 end
-
-

@@ -1,56 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/old/next/ui_aircraft_evilcaptureroom_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftEvilCaptureRoomItem", UICustomWidget)
 UIAircraftEvilCaptureRoomItem = UIAircraftEvilCaptureRoomItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftEvilCaptureRoomItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIAircraftEvilCaptureRoomItem:OnShow(uiParams)
   self:InitWidget()
-  self.roomInfoWidget = (self.roomInfo):SpawnObject("UIAircraftRoomInfoItem")
+  self.roomInfoWidget = self.roomInfo:SpawnObject("UIAircraftRoomInfoItem")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEvilCaptureRoomItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIAircraftEvilCaptureRoomItem:InitWidget()
   self.textSpiritCeiling = self:GetUIComponent("Text", "TextStoreCeiling")
   self.textFireflyRecover = self:GetUIComponent("Text", "TextEvilGrade")
   self.roomInfo = self:GetUIComponent("UISelectObjectPath", "RoomInfo")
   self.textName = self:GetUIComponent("UILocalizationText", "TextName")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEvilCaptureRoomItem.Refresh = function(self, _roomData)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftEvilCaptureRoomItem:Refresh(_roomData)
   self.roomData = _roomData
-  ;
-  (self:GetGameObject()):SetActive(true)
-  ;
-  (self.roomInfoWidget):SetData(self.roomData)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.textName).text = (string.format)("%s/%s", (self.roomData):Level(), (self.roomData):MaxLevel())
+  self:GetGameObject():SetActive(true)
+  self.roomInfoWidget:SetData(self.roomData)
+  self.textName.text = string.format("%s/%s", self.roomData:Level(), self.roomData:MaxLevel())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEvilCaptureRoomItem.Close = function(self)
-  -- function num : 0_3
-  (self:GetGameObject()):SetActive(false)
-  ;
-  (self.roomInfoWidget):OnClose()
+function UIAircraftEvilCaptureRoomItem:Close()
+  self:GetGameObject():SetActive(false)
+  self.roomInfoWidget:OnClose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEvilCaptureRoomItem.ButtonSearchOnClick = function(self, go)
-  -- function num : 0_4
+function UIAircraftEvilCaptureRoomItem:ButtonSearchOnClick(go)
 end
-
-

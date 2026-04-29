@@ -1,32 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_trap_auras_state_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayTrapAurasStateInstruction", BaseInstruction)
 PlayTrapAurasStateInstruction = PlayTrapAurasStateInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTrapAurasStateInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTrapAurasStateInstruction:Constructor(paramList)
   self.effectName = paramList.effectName
   self.state = tonumber(paramList.state)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrapAurasStateInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTrapAurasStateInstruction:GetCacheResource()
   local t = {}
-  ;
-  (table.insert)(t, {self.effectName, 1})
+  table.insert(t, {
+    self.effectName,
+    1
+  })
   return t
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrapAurasStateInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayTrapAurasStateInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   if casterEntity:HasSuperEntity() then
     casterEntity = casterEntity:GetSuperEntity()
@@ -36,12 +25,8 @@ PlayTrapAurasStateInstruction.DoInstruction = function(self, TT, casterEntity, p
     trapRenderComponent:SetAurasStatus(self.state)
     if self.state == TrapAurasState.Open then
       casterEntity:ReplaceTrapAurasOutline()
-    else
-      if self.state == TrapAurasState.Close then
-        casterEntity:ReplaceTrapAurasOutline()
-      end
+    elseif self.state == TrapAurasState.Close then
+      casterEntity:ReplaceTrapAurasOutline()
     end
   end
 end
-
-

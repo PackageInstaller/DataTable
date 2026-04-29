@@ -1,60 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/challenges/ui_n12_challenge_task_reward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12ChallengeTaskReward", UIController)
 UIN12ChallengeTaskReward = UIN12ChallengeTaskReward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12ChallengeTaskReward.Constructor = function(self)
-  -- function num : 0_0
+function UIN12ChallengeTaskReward:Constructor()
   self._itemCountPerRow = 5
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengeTaskReward.OnShow = function(self, uiParams)
-  -- function num : 0_1
-  if not uiParams[1] then
-    self._rewardList = {}
-    self:_GetComponent()
-    self:_OnValue()
-  end
+function UIN12ChallengeTaskReward:OnShow(uiParams)
+  self._rewardList = uiParams[1] or {}
+  self:_GetComponent()
+  self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengeTaskReward._GetComponent = function(self)
-  -- function num : 0_2
+function UIN12ChallengeTaskReward:_GetComponent()
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengeTaskReward._OnValue = function(self)
-  -- function num : 0_3
+function UIN12ChallengeTaskReward:_OnValue()
   self:_InitScrollView()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengeTaskReward._InitScrollView = function(self)
-  -- function num : 0_4
-  (self._scrollView):InitListView(self:_CalcTotalRow(), function(scrollView, index)
-    -- function num : 0_4_0 , upvalues : self
+function UIN12ChallengeTaskReward:_InitScrollView()
+  self._scrollView:InitListView(self:_CalcTotalRow(), function(scrollView, index)
     return self:_InitListView(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengeTaskReward._InitListView = function(self, scrollView, index)
-  -- function num : 0_5
+function UIN12ChallengeTaskReward:_InitListView(scrollView, index)
   local rowItem = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", rowItem.gameObject)
-  local gridLayoutGroup = (rowItem.gameObject):GetComponent("GridLayoutGroup")
+  local gridLayoutGroup = rowItem.gameObject:GetComponent("GridLayoutGroup")
   if rowItem.IsInitHandlerCalled == false then
     rowItem.IsInitHandlerCalled = true
     rowPool:SpawnObjects("UIN12ChallengeTaskRewardItem", self._itemCountPerRow)
@@ -64,40 +38,29 @@ UIN12ChallengeTaskReward._InitListView = function(self, scrollView, index)
   for i = 1, self._itemCountPerRow do
     local item = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if #self._rewardList < itemIndex then
-      (item:GetGameObject()):SetActive(false)
+    if itemIndex > #self._rewardList then
+      item:GetGameObject():SetActive(false)
       padding = padding + 1
     else
-      ;
-      (item:GetGameObject()):SetActive(true)
-      item:SetData((self._rewardList)[itemIndex])
+      item:GetGameObject():SetActive(true)
+      item:SetData(self._rewardList[itemIndex])
     end
   end
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R8 in 'UnsetPending'
-
-  if padding > 0 then
-    (gridLayoutGroup.padding).left = ((gridLayoutGroup.cellSize).x + (gridLayoutGroup.spacing).x) / 2 * (padding)
+  if 0 < padding then
+    gridLayoutGroup.padding.left = (gridLayoutGroup.cellSize.x + gridLayoutGroup.spacing.x) / 2 * padding
   end
   return rowItem
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengeTaskReward._CalcTotalRow = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN12ChallengeTaskReward:_CalcTotalRow()
   local rowCount = #self._rewardList / self._itemCountPerRow
-  local integral, fractional = (math.modf)(rowCount)
-  if fractional > 0 then
+  local integral, fractional = math.modf(rowCount)
+  if 0 < fractional then
     rowCount = integral + 1
   end
   return rowCount
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengeTaskReward.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_7
+function UIN12ChallengeTaskReward:ConfirmBtnOnClick(go)
   self:CloseDialog()
 end
-
-

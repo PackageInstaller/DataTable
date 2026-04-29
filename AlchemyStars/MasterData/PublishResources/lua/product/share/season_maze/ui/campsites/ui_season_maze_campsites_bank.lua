@@ -1,20 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/campsites/ui_season_maze_campsites_bank.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_season_maze_campsites_base")
 _class("UISeasonMaze_Campsites_Bank", UISeasonMaze_Campsites_Base)
 UISeasonMaze_Campsites_Bank = UISeasonMaze_Campsites_Bank
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMaze_Campsites_Bank.InitWidget = function(self)
-  -- function num : 0_0
+function UISeasonMaze_Campsites_Bank:InitWidget()
   self.topBtn = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._pool = self:GetUIComponent("UISelectObjectPath", "Content")
   self._TipsAreaGo = self:GetGameObject("TipsArea")
-  ;
-  (self._TipsAreaGo):SetActive(false)
+  self._TipsAreaGo:SetActive(false)
   self._TipsText = self:GetUIComponent("UILocalizationText", "Tips")
   self._CurrentSaveCountTex = self:GetUIComponent("UILocalizationText", "CurrentSaveCount")
   self._SaveCount1Text = self:GetUIComponent("UILocalizationText", "SaveCount1")
@@ -30,91 +22,68 @@ UISeasonMaze_Campsites_Bank.InitWidget = function(self)
   self._ProgressTipsText = self:GetUIComponent("UILocalizationText", "ProgressTips")
   self.UISeasonMazeTopIcon = self:GetUIComponent("UISelectObjectPath", "UISeasonMazeTopIcon")
   local contentGrid = self:GetUIComponent("GridLayoutGroup", "Content")
-  self._paddingTop = (contentGrid.padding).top
-  self._cellSizeY = (contentGrid.cellSize).y
-  self._cellSpaceY = (contentGrid.spacing).y
+  self._paddingTop = contentGrid.padding.top
+  self._cellSizeY = contentGrid.cellSize.y
+  self._cellSpaceY = contentGrid.spacing.y
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
-  self._viewPortHeight = ((self:GetUIComponent("RectTransform", "Viewport")).rect).height
+  self._viewPortHeight = self:GetUIComponent("RectTransform", "Viewport").rect.height
   self._scrollRect = self:GetUIComponent("ScrollRect", "ScrollView")
-  ;
-  ((self._scrollRect).onValueChanged):AddListener(function()
-    -- function num : 0_0_0 , upvalues : self
+  self._scrollRect.onValueChanged:AddListener(function()
     self:_OnScrollMove()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank._OnScrollMove = function(self)
-  -- function num : 0_1
-  if ((self._contentRect).sizeDelta).y <= 0 then
-    return 
+function UISeasonMaze_Campsites_Bank:_OnScrollMove()
+  if self._contentRect.sizeDelta.y <= 0 then
+    return
   end
   local deltaHeight = 50
-  if ((self._contentRect).sizeDelta).y < ((self._contentRect).anchoredPosition).y + self._viewPortHeight + deltaHeight then
+  if self._contentRect.anchoredPosition.y + self._viewPortHeight + deltaHeight > self._contentRect.sizeDelta.y then
     self:CheckShowTipsArea()
   else
-    ;
-    (self._TipsAreaGo):SetActive(false)
+    self._TipsAreaGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.SetQuestPool = function(self)
-  -- function num : 0_2
-  (self._pool):SpawnObjects("UISeasonMaze_Campsites_BankWidget", #self._saveList)
-  local pools = (self._pool):GetAllSpawnList()
+function UISeasonMaze_Campsites_Bank:SetQuestPool()
+  self._pool:SpawnObjects("UISeasonMaze_Campsites_BankWidget", #self._saveList)
+  local pools = self._pool:GetAllSpawnList()
   self._cellWidgets = pools
   for i = 1, #self._saveList do
-    local save = (self._saveList)[i]
+    local save = self._saveList[i]
     local widget = pools[i]
     widget:SetData(i, save, self._currentSaveCount)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.LocateScroll = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMaze_Campsites_Bank:LocateScroll()
   local index = self._unlockCount
-  index = (math.max)(index, 1)
+  index = math.max(index, 1)
   local needScrollCount = 6
   local onePageCells = 7
-  if #self._saveList < index + onePageCells then
+  if index + onePageCells > #self._saveList then
     index = #self._saveList - 5
     self._uiLocateCell = index
+  elseif needScrollCount >= index then
+    index = 1
+    self._uiLocateCell = index
+    return
   else
-    if index <= needScrollCount then
-      index = 1
-      self._uiLocateCell = index
-      return 
-    else
-      index = index - 3
-      index = (math.max)(index, 1)
-      self._uiLocateCell = index
-    end
+    index = index - 3
+    index = math.max(index, 1)
+    self._uiLocateCell = index
   end
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._contentRect)
-  local height = ((self._contentRect).rect).height
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._contentRect)
+  local height = self._contentRect.rect.height
   local y = self._paddingTop + (self._cellSizeY + self._cellSpaceY) * (index - 1) - self._cellSpaceY / 2
-  y = (Mathf.Clamp)(y, 0, (math.max)(height - self._viewPortHeight, 0))
-  -- DECOMPILER ERROR at PC69: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._contentRect).anchoredPosition = Vector2(0, y)
+  y = Mathf.Clamp(y, 0, math.max(height - self._viewPortHeight, 0))
+  self._contentRect.anchoredPosition = Vector2(0, y)
   self:_OnScrollMove()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.PlayQuestPoolShowInAnim = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMaze_Campsites_Bank:PlayQuestPoolShowInAnim()
   local lockName = "UISeasonMaze_Campsites_Bank:PlayQuestPoolShowInAnim"
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV
     local eachDelay = 50
     local maxShowCells = 7
     local lockTime = 500
@@ -122,20 +91,20 @@ UISeasonMaze_Campsites_Bank.PlayQuestPoolShowInAnim = function(self)
     local startCell = 1
     local showStartCell = self._uiLocateCell
     if not showStartCell then
-      showStartCell = (math.max)(self._unlockCount, 1)
+      showStartCell = math.max(self._unlockCount, 1)
       showStartCell = showStartCell - 3
-      showStartCell = (math.max)(showStartCell, 1)
+      showStartCell = math.max(showStartCell, 1)
     end
     local showEndCell = showStartCell + maxShowCells - 1
     local maxCell = #self._saveList
     if maxCell <= showStartCell + maxShowCells - 1 then
       showEndCell = maxCell
       showStartCell = showEndCell - maxShowCells + 1
-      showStartCell = (math.max)(showStartCell, 1)
+      showStartCell = math.max(showStartCell, 1)
     end
     if self._cellWidgets then
-      for index,widget in ipairs(self._cellWidgets) do
-        if showStartCell <= index and index <= showEndCell then
+      for index, widget in ipairs(self._cellWidgets) do
+        if index >= showStartCell and index <= showEndCell then
           local delayIndex = index - showStartCell
           local delayMs = delayIndex * eachDelay
           widget:PlayShowInAnim(delayMs)
@@ -143,124 +112,86 @@ UISeasonMaze_Campsites_Bank.PlayQuestPoolShowInAnim = function(self)
         end
       end
     end
-    do
-      lockTime = lockTime + maxDelayMs
-    end
-  end
-)
+    lockTime = lockTime + maxDelayMs
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.CreateData = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local comInfo = (self._com):GetComponentInfo()
+function UISeasonMaze_Campsites_Bank:CreateData()
+  local comInfo = self._com:GetComponentInfo()
   self._currentHard = comInfo.hard
   local maxHard = 0
-  local mazeCfgs = (Cfg.cfg_component_season_maze)({ComponentID = self._comCfgID})
-  if mazeCfgs and #mazeCfgs > 0 then
-    for _,v in pairs(mazeCfgs) do
+  local mazeCfgs = Cfg.cfg_component_season_maze({
+    ComponentID = self._comCfgID
+  })
+  if mazeCfgs and 0 < #mazeCfgs then
+    for _, v in pairs(mazeCfgs) do
       if maxHard < v.Hard then
         maxHard = v.Hard
       end
     end
   end
-  do
-    self._maxHard = maxHard
-    self._saveList = {}
-    self._saveMax = nil
-    local cfgs = (Cfg.cfg_component_season_maze_save)({ComponentID = self._comCfgID})
-    if cfgs and (table.count)(cfgs) > 0 then
-      for key,value in pairs(cfgs) do
-        if value.LockHard <= self._currentHard then
-          (table.insert)(self._saveList, value)
-          if not self._saveMax then
-            self._saveMax = value.NeedNum
-          else
-            if self._saveMax < value.NeedNum then
-              self._saveMax = value.NeedNum
-            end
-          end
+  self._maxHard = maxHard
+  self._saveList = {}
+  self._saveMax = nil
+  local cfgs = Cfg.cfg_component_season_maze_save({
+    ComponentID = self._comCfgID
+  })
+  if cfgs and 0 < table.count(cfgs) then
+    for key, value in pairs(cfgs) do
+      if value.LockHard <= self._currentHard then
+        table.insert(self._saveList, value)
+        if not self._saveMax then
+          self._saveMax = value.NeedNum
+        elseif value.NeedNum > self._saveMax then
+          self._saveMax = value.NeedNum
         end
       end
     end
-    do
-      ;
-      (table.sort)(self._saveList, function(a, b)
-    -- function num : 0_5_0
-    do return a.Lv < b.Lv end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
   end
-)
-      self._currentSaveCount = (comInfo.save_info).exp or 0
-      self._saveCount1 = 10
-      self._saveCount2 = 100
-      local unlockCount = 0
-      for index,value in ipairs(self._saveList) do
-        if value.NeedNum <= self._currentSaveCount then
-          unlockCount = unlockCount + 1
-        end
-      end
-      self._unlockCount = unlockCount
+  table.sort(self._saveList, function(a, b)
+    return a.Lv < b.Lv
+  end)
+  self._currentSaveCount = comInfo.save_info.exp or 0
+  self._saveCount1 = 10
+  self._saveCount2 = 100
+  local unlockCount = 0
+  for index, value in ipairs(self._saveList) do
+    if self._currentSaveCount >= value.NeedNum then
+      unlockCount = unlockCount + 1
     end
   end
+  self._unlockCount = unlockCount
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.InitRecordCurrentCellState = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonMaze_Campsites_Bank:InitRecordCurrentCellState()
   self._cellLockStates = {}
   if self._saveList and self._currentSaveCount then
-    for index,cfg in ipairs(self._saveList) do
+    for index, cfg in ipairs(self._saveList) do
       local isLock = self._currentSaveCount < cfg.NeedNum
-      -- DECOMPILER ERROR at PC19: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._cellLockStates)[index] = isLock
+      self._cellLockStates[index] = isLock
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.ChecKUnlockAnim = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonMaze_Campsites_Bank:ChecKUnlockAnim()
   if self._saveList and self._currentSaveCount then
-    for index,cfg in ipairs(self._saveList) do
+    for index, cfg in ipairs(self._saveList) do
       local isLock = self._currentSaveCount < cfg.NeedNum
-      local oriLock = (self._cellLockStates)[index]
-      do
-        do
-          if oriLock and not isLock then
-            local widget = (self._cellWidgets)[index]
-            if widget then
-              widget:PlayUnlockAnim()
-            end
-          end
-          -- DECOMPILER ERROR at PC29: Confused about usage of register: R8 in 'UnsetPending'
-
-          ;
-          (self._cellLockStates)[index] = isLock
-          -- DECOMPILER ERROR at PC30: LeaveBlock: unexpected jumping out DO_STMT
-
+      local oriLock = self._cellLockStates[index]
+      if oriLock and not isLock then
+        local widget = self._cellWidgets[index]
+        if widget then
+          widget:PlayUnlockAnim()
         end
       end
+      self._cellLockStates[index] = isLock
     end
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.OnShowUI = function(self, uiParams)
-  -- function num : 0_8 , upvalues : _ENV
-  self._mulitOpen = (UnityEngine.Input).multiTouchEnabled
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (UnityEngine.Input).multiTouchEnabled = false
+function UISeasonMaze_Campsites_Bank:OnShowUI(uiParams)
+  self._mulitOpen = UnityEngine.Input.multiTouchEnabled
+  UnityEngine.Input.multiTouchEnabled = false
   self:InitWidget()
   self:CreateData()
   self:InitRecordCurrentCellState()
@@ -273,215 +204,134 @@ UISeasonMaze_Campsites_Bank.OnShowUI = function(self, uiParams)
   self:SetTipsArea()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.SetUISeasonMazeTopIcon = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonMaze_Campsites_Bank:SetUISeasonMazeTopIcon()
   if self.UISeasonMazeTopIcon then
     if not self.UISeasonMazeTopIconWidget then
-      self.UISeasonMazeTopIconWidget = (self.UISeasonMazeTopIcon):SpawnObject("UISeasonMazeTopIcon")
+      self.UISeasonMazeTopIconWidget = self.UISeasonMazeTopIcon:SpawnObject("UISeasonMazeTopIcon")
     end
-    local typeList = {SeasonMazeTopIconType.Money}
-    ;
-    (self.UISeasonMazeTopIconWidget):SetData(typeList)
+    local typeList = {
+      SeasonMazeTopIconType.Money
+    }
+    self.UISeasonMazeTopIconWidget:SetData(typeList)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.SetSaveInfo = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local saveNumStr = nil
+function UISeasonMaze_Campsites_Bank:SetSaveInfo()
+  local saveNumStr
   if self._saveMax and self._saveMax > 0 then
     local formatStr = "<color=#252525><size=40>%s</size></color><color=#b83c3c><size=32>/%s</size></color>"
-    saveNumStr = (string.format)(formatStr, tostring(self._currentSaveCount), tostring(self._saveMax))
+    saveNumStr = string.format(formatStr, tostring(self._currentSaveCount), tostring(self._saveMax))
   else
-    do
-      do
-        local formatStr = "<color=#252525><size=40>%s</size></color>"
-        saveNumStr = (string.format)(formatStr, tostring(self._currentSaveCount))
-        ;
-        (self._CurrentSaveCountTex):SetText(saveNumStr)
-        local totalCount = #self._saveList
-        local unlockCount = self._unlockCount
-        local numStr = (string.format)("%s/%s", tostring(unlockCount), tostring(totalCount))
-        local progressStr = (StringTable.Get)("str_season_maze_bank_progress", numStr)
-        ;
-        (self._ProgressTipsText):SetText(progressStr)
-        local enoughColor = Color(1, 1, 1, 1)
-        local notEnoughColor = Color(0.67058823529412, 0.14117647058824, 0.14117647058824, 1)
-        if self:CheckCountEnough(self._saveCount1) then
-          local saveStr = "<color=#ffffff>" .. tostring(self._saveCount1) .. "</color>"
-          ;
-          (self._SaveCount1Text):SetText(saveStr)
-          -- DECOMPILER ERROR at PC83: Confused about usage of register: R9 in 'UnsetPending'
-
-          ;
-          (self._SaveTag1Text).color = enoughColor
-        else
-          do
-            do
-              local saveStr = "<color=#ab2424>" .. tostring(self._saveCount1) .. "</color>"
-              ;
-              (self._SaveCount1Text):SetText(saveStr)
-              -- DECOMPILER ERROR at PC96: Confused about usage of register: R9 in 'UnsetPending'
-
-              ;
-              (self._SaveTag1Text).color = notEnoughColor
-              if self:CheckCountEnough(self._saveCount2) then
-                local saveStr = "<color=#ffffff>" .. tostring(self._saveCount2) .. "</color>"
-                ;
-                (self._SaveCount2Text):SetText(saveStr)
-                -- DECOMPILER ERROR at PC113: Confused about usage of register: R9 in 'UnsetPending'
-
-                ;
-                (self._SaveTag2Text).color = enoughColor
-              else
-                do
-                  local saveStr = "<color=#ab2424>" .. tostring(self._saveCount2) .. "</color>"
-                  ;
-                  (self._SaveCount2Text):SetText(saveStr)
-                  -- DECOMPILER ERROR at PC126: Confused about usage of register: R9 in 'UnsetPending'
-
-                  ;
-                  (self._SaveTag2Text).color = notEnoughColor
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+    local formatStr = "<color=#252525><size=40>%s</size></color>"
+    saveNumStr = string.format(formatStr, tostring(self._currentSaveCount))
+  end
+  self._CurrentSaveCountTex:SetText(saveNumStr)
+  local totalCount = #self._saveList
+  local unlockCount = self._unlockCount
+  local numStr = string.format("%s/%s", tostring(unlockCount), tostring(totalCount))
+  local progressStr = StringTable.Get("str_season_maze_bank_progress", numStr)
+  self._ProgressTipsText:SetText(progressStr)
+  local enoughColor = Color(1, 1, 1, 1)
+  local notEnoughColor = Color(0.6705882352941176, 0.1411764705882353, 0.1411764705882353, 1)
+  if self:CheckCountEnough(self._saveCount1) then
+    local saveStr = "<color=#ffffff>" .. tostring(self._saveCount1) .. "</color>"
+    self._SaveCount1Text:SetText(saveStr)
+    self._SaveTag1Text.color = enoughColor
+  else
+    local saveStr = "<color=#ab2424>" .. tostring(self._saveCount1) .. "</color>"
+    self._SaveCount1Text:SetText(saveStr)
+    self._SaveTag1Text.color = notEnoughColor
+  end
+  if self:CheckCountEnough(self._saveCount2) then
+    local saveStr = "<color=#ffffff>" .. tostring(self._saveCount2) .. "</color>"
+    self._SaveCount2Text:SetText(saveStr)
+    self._SaveTag2Text.color = enoughColor
+  else
+    local saveStr = "<color=#ab2424>" .. tostring(self._saveCount2) .. "</color>"
+    self._SaveCount2Text:SetText(saveStr)
+    self._SaveTag2Text.color = notEnoughColor
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.SetTopBtn = function(self)
-  -- function num : 0_11
-  ((self.topBtn):SpawnObject("UISMazeCommonTopButton")):SetData(function()
-    -- function num : 0_11_0 , upvalues : self
+function UISeasonMaze_Campsites_Bank:SetTopBtn()
+  self.topBtn:SpawnObject("UISMazeCommonTopButton"):SetData(function()
     self:CloseDialog()
-  end
-, nil, nil, true)
+  end, nil, nil, true)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.SaveBtnMask1OnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
+function UISeasonMaze_Campsites_Bank:SaveBtnMask1OnClick(go)
   self:PlaySaveBtnAnim(self._SaveBtnAnim1)
-  do
-    -- DECOMPILER ERROR at PC17: Unhandled construct in 'MakeBoolean' P1
-
-    if self._saveMax and self._saveMax > 0 and self._currentSaveCount == self._saveMax then
-      local tips = (StringTable.Get)("str_season_maze_bank_full_tips")
-      ;
-      (ToastManager.ShowToast)(tips)
-      return 
+  if self._saveMax and self._saveMax > 0 then
+    if self._currentSaveCount == self._saveMax then
+      local tips = StringTable.Get("str_season_maze_bank_full_tips")
+      ToastManager.ShowToast(tips)
+      return
     end
-    do return  end
-    if self:CheckCountEnough(self._saveCount1) then
-      local maxSave = self._saveMax - self._currentSaveCount
-      local saveNum = (math.min)(self._saveCount1, maxSave)
-      self:ReqSaveLv(saveNum)
-    else
-      do
-        local tips = (StringTable.Get)("str_season_maze_gold_not_enough")
-        ;
-        (ToastManager.ShowToast)(tips)
-      end
-    end
+  else
+    return
+  end
+  if self:CheckCountEnough(self._saveCount1) then
+    local maxSave = self._saveMax - self._currentSaveCount
+    local saveNum = math.min(self._saveCount1, maxSave)
+    self:ReqSaveLv(saveNum)
+  else
+    local tips = StringTable.Get("str_season_maze_gold_not_enough")
+    ToastManager.ShowToast(tips)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.SaveBtnMask2OnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonMaze_Campsites_Bank:SaveBtnMask2OnClick(go)
   self:PlaySaveBtnAnim(self._SaveBtnAnim2)
-  do
-    -- DECOMPILER ERROR at PC17: Unhandled construct in 'MakeBoolean' P1
-
-    if self._saveMax and self._saveMax > 0 and self._currentSaveCount == self._saveMax then
-      local tips = (StringTable.Get)("str_season_maze_bank_full_tips")
-      ;
-      (ToastManager.ShowToast)(tips)
-      return 
+  if self._saveMax and self._saveMax > 0 then
+    if self._currentSaveCount == self._saveMax then
+      local tips = StringTable.Get("str_season_maze_bank_full_tips")
+      ToastManager.ShowToast(tips)
+      return
     end
-    do return  end
-    if self:CheckCountEnough(self._saveCount2) then
-      local maxSave = self._saveMax - self._currentSaveCount
-      local saveNum = (math.min)(self._saveCount2, maxSave)
-      self:ReqSaveLv(saveNum)
-    else
-      do
-        local tips = (StringTable.Get)("str_season_maze_gold_not_enough")
-        ;
-        (ToastManager.ShowToast)(tips)
-      end
-    end
+  else
+    return
+  end
+  if self:CheckCountEnough(self._saveCount2) then
+    local maxSave = self._saveMax - self._currentSaveCount
+    local saveNum = math.min(self._saveCount2, maxSave)
+    self:ReqSaveLv(saveNum)
+  else
+    local tips = StringTable.Get("str_season_maze_gold_not_enough")
+    ToastManager.ShowToast(tips)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.PlaySaveBtnAnim = function(self, anim)
-  -- function num : 0_14 , upvalues : _ENV
-  (self._SaveBtnAnim1):Stop()
-  ;
-  (self._SaveBtnAnim2):Stop()
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._SaveBtnRect1).localScale = Vector3(1, 1, 1)
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._SaveMaskImage1).color = Color(0.54901960784314, 0.54901960784314, 0.54901960784314, 0)
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._SaveBtnRect2).localScale = Vector3(1, 1, 1)
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._SaveMaskImage2).color = Color(0.54901960784314, 0.54901960784314, 0.54901960784314, 0)
+function UISeasonMaze_Campsites_Bank:PlaySaveBtnAnim(anim)
+  self._SaveBtnAnim1:Stop()
+  self._SaveBtnAnim2:Stop()
+  self._SaveBtnRect1.localScale = Vector3(1, 1, 1)
+  self._SaveMaskImage1.color = Color(0.5490196078431373, 0.5490196078431373, 0.5490196078431373, 0)
+  self._SaveBtnRect2.localScale = Vector3(1, 1, 1)
+  self._SaveMaskImage2.color = Color(0.5490196078431373, 0.5490196078431373, 0.5490196078431373, 0)
   anim:Play("uieffanim_UISeasonMaze_Campsites_Bank_SaveBtn1_click")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.ReqSaveLv = function(self, num)
-  -- function num : 0_15 , upvalues : _ENV
+function UISeasonMaze_Campsites_Bank:ReqSaveLv(num)
   self:Lock("UISeasonMaze_Campsites_Bank:ReqSaveLv")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.TaskReqSaveLv, self, num)
+  GameGlobal.TaskManager():StartTask(self.TaskReqSaveLv, self, num)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.TaskReqSaveLv = function(self, TT, num)
-  -- function num : 0_16 , upvalues : _ENV
+function UISeasonMaze_Campsites_Bank:TaskReqSaveLv(TT, num)
   local res = AsyncRequestRes:New()
-  local response = (self._com):HandleSeasonMazeSaveLv(TT, res, num)
+  local response = self._com:HandleSeasonMazeSaveLv(TT, res, num)
   self:UnLock("UISeasonMaze_Campsites_Bank:ReqSaveLv")
   if res:GetSucc() then
     self:OnSaveEnd()
   else
     local result = res:GetResult()
-    ;
-    (Log.error)("###[UISeasonMaze_Campsites_Bank] HandleSeasonMazeSaveLv fail! result:", result)
-    if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-      return 
+    Log.error("###[UISeasonMaze_Campsites_Bank] HandleSeasonMazeSaveLv fail! result:", result)
+    if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.OnSaveEnd = function(self)
-  -- function num : 0_17
+function UISeasonMaze_Campsites_Bank:OnSaveEnd()
   self:CreateData()
   self:SetSaveInfo()
   self:SetQuestPool()
@@ -490,54 +340,34 @@ UISeasonMaze_Campsites_Bank.OnSaveEnd = function(self)
   self:SetTipsArea()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.OnHide = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  (UnityEngine.Input).multiTouchEnabled = self._mulitOpen
+function UISeasonMaze_Campsites_Bank:OnHide()
+  UnityEngine.Input.multiTouchEnabled = self._mulitOpen
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.CheckCountEnough = function(self, count)
-  -- function num : 0_19 , upvalues : _ENV
-  local curGold = (self._com):GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
-  do return count <= curGold end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UISeasonMaze_Campsites_Bank:CheckCountEnough(count)
+  local curGold = self._com:GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
+  return count <= curGold
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.RefreshMoney = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUISeasonMazeAttChanged, SeasonMazeAttrType.SMAT_Gold)
+function UISeasonMaze_Campsites_Bank:RefreshMoney()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUISeasonMazeAttChanged, SeasonMazeAttrType.SMAT_Gold)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.CheckShowTipsArea = function(self)
-  -- function num : 0_21
+function UISeasonMaze_Campsites_Bank:CheckShowTipsArea()
   if self._currentHard == self._maxHard then
-    (self._TipsAreaGo):SetActive(false)
+    self._TipsAreaGo:SetActive(false)
   else
-    ;
-    (self._TipsAreaGo):SetActive(true)
+    self._TipsAreaGo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Bank.SetTipsArea = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UISeasonMaze_Campsites_Bank:SetTipsArea()
   if self._currentHard == self._maxHard then
+  else
     local tipsStrKey = "str_season_maze_bank_limit_tips_s1_" .. tostring(self._currentHard)
-    local tipsStr = (StringTable.Get)(tipsStrKey)
+    local tipsStr = StringTable.Get(tipsStrKey)
     if tipsStr then
-      (self._TipsText):SetText(tipsStr)
+      self._TipsText:SetText(tipsStr)
     end
   end
 end
-
-

@@ -1,74 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_multi_traction_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayMultiTractionInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayMultiTractionInstruction = SkillPreviewPlayMultiTractionInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayMultiTractionInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayMultiTractionInstruction:Constructor(params)
   self._transCenter = tonumber(params.transCenter)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayMultiTractionInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayMultiTractionInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = previewContext:GetWorld()
   local previewEffectCalcService = world:GetService("PreviewCalcEffect")
   local scopeGridList = previewContext:GetScopeResult()
   local effect = previewContext:GetEffect(SkillEffectType.MultiTraction)
   local effectParam = previewEffectCalcService:CreateSkillEffectParam(SkillEffectType.MultiTraction, effect)
-  local transContextCenter = not self._transCenter or self._transCenter == 1
+  local transContextCenter = self._transCenter and self._transCenter == 1
   local result = previewEffectCalcService:CalcMultiTraction(casterEntity, previewContext, effectParam, transContextCenter)
   self:_DoPresentation(TT, world, result)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayMultiTractionInstruction._DoPresentation = function(self, TT, world, result)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPreviewPlayMultiTractionInstruction:_DoPresentation(TT, world, result)
   local taskIDs = {}
   if result then
     local array = result:GetResultArray()
-    for _,info in ipairs(array) do
+    for _, info in ipairs(array) do
       local entity = world:GetEntityByID(info.entityID)
       local startPos = entity:GetGridPosition()
       local endPos = info.finalPos
       if startPos ~= endPos then
-        (table.insert)(taskIDs, self:_DoSingleTarget(TT, world, info, entity))
+        table.insert(taskIDs, self:_DoSingleTarget(TT, world, info, entity))
       end
     end
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDs) do
-      YIELD(TT)
-    end
-    return InstructionConst.PhaseEnd
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDs) do
+    YIELD(TT)
   end
+  return InstructionConst.PhaseEnd
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayMultiTractionInstruction._DoSingleTarget = function(self, TT, world, info, entity)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillPreviewPlayMultiTractionInstruction:_DoSingleTarget(TT, world, info, entity)
   local boardServiceRender = world:GetService("BoardRender")
   local entitySvc = world:GetService("RenderEntity")
   local gridPos = entity:GetGridPosition()
   local ghostEntity = entitySvc:CreateGhost(gridPos, entity)
   ghostEntity:AddGridMove(BattleConst.TractionSpeed, info.finalPos, gridPos)
-  return ((GameGlobal.TaskManager)()):CoreGameStartTask(self._IsMoveFinished, self, ghostEntity)
+  return GameGlobal.TaskManager():CoreGameStartTask(self._IsMoveFinished, self, ghostEntity)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayMultiTractionInstruction._IsMoveFinished = function(self, TT, entity)
-  -- function num : 0_4
+function SkillPreviewPlayMultiTractionInstruction:_IsMoveFinished(TT, entity)
   return not entity:HasGridMove()
 end
-
-

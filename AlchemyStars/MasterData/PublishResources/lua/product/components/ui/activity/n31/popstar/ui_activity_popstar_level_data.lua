@@ -1,98 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n31/popstar/ui_activity_popstar_level_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local UIActivityPopStarLevelType = {Normal = 1, Challenge = 2}
 _enum("UIActivityPopStarLevelType", UIActivityPopStarLevelType)
 _class("UIActivityPopStarLevelTask", Object)
 UIActivityPopStarLevelTask = UIActivityPopStarLevelTask
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityPopStarLevelTask.Constructor = function(self, cfg, progress, isComplete)
-  -- function num : 0_0
+function UIActivityPopStarLevelTask:Constructor(cfg, progress, isComplete)
   self._id = cfg.ID
   self._progress = progress
   self._total = cfg.KillNum
-  if self._total < self._progress then
+  if self._progress > self._total then
     self._progress = self._total
   end
   self._isComplete = isComplete
   self._rewards = {}
   for i = 1, #cfg.Rewards do
     local reward = {}
-    reward[1] = ((cfg.Rewards)[i])[1]
-    reward[2] = ((cfg.Rewards)[i])[2] or 0
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._rewards)[#self._rewards + 1] = reward
+    reward[1] = cfg.Rewards[i][1]
+    reward[2] = cfg.Rewards[i][2] or 0
+    self._rewards[#self._rewards + 1] = reward
   end
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelTask.GetId = function(self)
-  -- function num : 0_1
+function UIActivityPopStarLevelTask:GetId()
   return self._id
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelTask.GetRewards = function(self)
-  -- function num : 0_2
+function UIActivityPopStarLevelTask:GetRewards()
   return self._rewards
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelTask.GetProgress = function(self)
-  -- function num : 0_3
+function UIActivityPopStarLevelTask:GetProgress()
   return self._progress
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelTask.GetTotal = function(self)
-  -- function num : 0_4
+function UIActivityPopStarLevelTask:GetTotal()
   return self._total
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelTask.IsComplete = function(self)
-  -- function num : 0_5
+function UIActivityPopStarLevelTask:IsComplete()
   return self._isComplete
 end
 
 _class("PopStarSuggestTeamData", Object)
 PopStarSuggestTeamData = PopStarSuggestTeamData
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
 
-PopStarSuggestTeamData.Constructor = function(self, team, teamName)
-  -- function num : 0_6 , upvalues : _ENV
+function PopStarSuggestTeamData:Constructor(team, teamName)
   self._team = team
-  self._name = (StringTable.Get)(teamName)
+  self._name = StringTable.Get(teamName)
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-PopStarSuggestTeamData.GetName = function(self)
-  -- function num : 0_7
+function PopStarSuggestTeamData:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-PopStarSuggestTeamData.GetTeam = function(self)
-  -- function num : 0_8
+function PopStarSuggestTeamData:GetTeam()
   return self._team
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-PopStarSuggestTeamData.IsSame = function(self, team)
-  -- function num : 0_9
+function PopStarSuggestTeamData:IsSame(team)
   if team == nil then
     return false
   end
@@ -100,20 +64,14 @@ PopStarSuggestTeamData.IsSame = function(self, team)
   for i = 1, #self._team do
     local find = false
     for j = 1, #team do
-      if (self._team)[i] == team[j] then
+      if self._team[i] == team[j] then
         find = true
         findCount = findCount + 1
         break
       end
     end
-    do
-      do
-        if find == false then
-          return false
-        end
-        -- DECOMPILER ERROR at PC28: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if find == false then
+      return false
     end
   end
   if findCount == #self._team then
@@ -124,10 +82,8 @@ end
 
 _class("UIActivityPopStarLevelData", Object)
 UIActivityPopStarLevelData = UIActivityPopStarLevelData
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityPopStarLevelData.Constructor = function(self, cfg, campaign, component, componentInfo)
-  -- function num : 0_10 , upvalues : UIActivityPopStarLevelType, _ENV
+function UIActivityPopStarLevelData:Constructor(cfg, campaign, component, componentInfo)
   self._campaign = campaign
   self._component = component
   self._componentInfo = componentInfo
@@ -137,152 +93,108 @@ UIActivityPopStarLevelData.Constructor = function(self, cfg, campaign, component
   if cfg.Type == 2 then
     self._levelType = UIActivityPopStarLevelType.Challenge
   end
-  local missionCfg = (Cfg.cfg_popstar_mission)[self._missionId]
-  self._name = (StringTable.Get)(missionCfg.Name)
-  self._des = (StringTable.Get)(missionCfg.Desc)
+  local missionCfg = Cfg.cfg_popstar_mission[self._missionId]
+  self._name = StringTable.Get(missionCfg.Name)
+  self._des = StringTable.Get(missionCfg.Desc)
   self._levelDetailIcon = missionCfg.DetailIcon
   self._passReward = self:GetRewardsByDropId(missionCfg.FirstDropId)
   self._threeStarReward = self:GetRewardsByDropId(missionCfg.ThreeStarDropId)
-  self._bestScore = (self._componentInfo).m_max_score
+  self._bestScore = self._componentInfo.m_max_score
   self._star = 0
   self._isopen = false
   self._isComplete = false
   if self:IsLevePass(self._missionId) then
-    local missionInfo = ((self._componentInfo).m_pass_mission_info)[self._missionId]
+    local missionInfo = self._componentInfo.m_pass_mission_info[self._missionId]
     if missionInfo.star == 1 then
       self._star = 1
-    else
-      if missionInfo.star == 3 then
-        self._star = 2
-      else
-        if missionInfo.star == 7 then
-          self._star = 3
-        end
-      end
+    elseif missionInfo.star == 3 then
+      self._star = 2
+    elseif missionInfo.star == 7 then
+      self._star = 3
     end
     self._isopen = true
     self._isComplete = true
   else
-    do
-      do
-        local needMissionId = cfg.NeedMissionId
-        if needMissionId <= 0 or self:IsLevePass(needMissionId) then
-          self._isopen = true
-        end
-        self._team = {}
-        for i = 1, 5 do
-          -- DECOMPILER ERROR at PC86: Confused about usage of register: R10 in 'UnsetPending'
-
-          (self._team)[i] = 0
-        end
-        if cfg.Team then
-          for i = 1, #cfg.Team do
-            -- DECOMPILER ERROR at PC99: Confused about usage of register: R10 in 'UnsetPending'
-
-            (self._team)[i] = (cfg.Team)[i]
-          end
-        end
-        do
-          if self._levelType == UIActivityPopStarLevelType.Challenge then
-            local petList = (self._componentInfo).formation_pet_list
-            if petList then
-              for i = 1, #petList do
-                -- DECOMPILER ERROR at PC115: Confused about usage of register: R11 in 'UnsetPending'
-
-                (self._team)[i] = petList[i]
-              end
-            end
-          end
-          do
-            self._suggestTeams = {}
-            local suggestTeams = cfg.SuggestTeam
-            if suggestTeams then
-              for i = 1, #suggestTeams do
-                local team = {}
-                for j = 1, #suggestTeams[i] do
-                  team[#team + 1] = (suggestTeams[i])[j]
-                end
-                -- DECOMPILER ERROR at PC148: Confused about usage of register: R12 in 'UnsetPending'
-
-                ;
-                (self._suggestTeams)[#self._suggestTeams + 1] = PopStarSuggestTeamData:New(team, (cfg.SuggestTeamName)[i])
-              end
-            end
-            do
-              self._tasks = {}
-              if self._levelType == UIActivityPopStarLevelType.Challenge then
-                local componentConfigId = component:GetComponentCfgId()
-                local cfgs = (Cfg.cfg_component_popstar_mission_reward)({ComponentID = componentConfigId})
-                local sortCfgs = {}
-                for k,v in pairs(cfgs) do
-                  sortCfgs[#sortCfgs + 1] = v
-                end
-                for i = 1, #sortCfgs do
-                  local cfg = sortCfgs[i]
-                  local isComplete = ((self._componentInfo).m_received)[cfg.EntiesID] ~= nil
-                  -- DECOMPILER ERROR at PC196: Confused about usage of register: R16 in 'UnsetPending'
-
-                  ;
-                  (self._tasks)[#self._tasks + 1] = UIActivityPopStarLevelTask:New(cfg, self._bestScore, isComplete)
-                end
-                ;
-                (table.sort)(self._tasks, function(a, b)
-    -- function num : 0_10_0
-    local aComplete = a:IsComplete()
-    local bComplete = b:IsComplete()
-    if a:GetId() >= b:GetId() then
-      do return aComplete ~= bComplete end
+    local needMissionId = cfg.NeedMissionId
+    if needMissionId <= 0 or self:IsLevePass(needMissionId) then
+      self._isopen = true
+    end
+  end
+  self._team = {}
+  for i = 1, 5 do
+    self._team[i] = 0
+  end
+  if cfg.Team then
+    for i = 1, #cfg.Team do
+      self._team[i] = cfg.Team[i]
+    end
+  end
+  if self._levelType == UIActivityPopStarLevelType.Challenge then
+    local petList = self._componentInfo.formation_pet_list
+    if petList then
+      for i = 1, #petList do
+        self._team[i] = petList[i]
+      end
+    end
+  end
+  self._suggestTeams = {}
+  local suggestTeams = cfg.SuggestTeam
+  if suggestTeams then
+    for i = 1, #suggestTeams do
+      local team = {}
+      for j = 1, #suggestTeams[i] do
+        team[#team + 1] = suggestTeams[i][j]
+      end
+      self._suggestTeams[#self._suggestTeams + 1] = PopStarSuggestTeamData:New(team, cfg.SuggestTeamName[i])
+    end
+  end
+  self._tasks = {}
+  if self._levelType == UIActivityPopStarLevelType.Challenge then
+    local componentConfigId = component:GetComponentCfgId()
+    local cfgs = Cfg.cfg_component_popstar_mission_reward({ComponentID = componentConfigId})
+    local sortCfgs = {}
+    for k, v in pairs(cfgs) do
+      sortCfgs[#sortCfgs + 1] = v
+    end
+    for i = 1, #sortCfgs do
+      local cfg = sortCfgs[i]
+      local isComplete = self._componentInfo.m_received[cfg.EntiesID] ~= nil
+      self._tasks[#self._tasks + 1] = UIActivityPopStarLevelTask:New(cfg, self._bestScore, isComplete)
+    end
+    table.sort(self._tasks, function(a, b)
+      local aComplete = a:IsComplete()
+      local bComplete = b:IsComplete()
+      if aComplete == bComplete then
+        return a:GetId() < b:GetId()
+      end
       if not aComplete then
         return true
       end
-      do return false end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
-  end
-)
-              end
-              -- DECOMPILER ERROR: 2 unprocessed JMP targets
-            end
-          end
-        end
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.IsActivityOpen = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  do
-    if not (self._campaign):CheckComponentOpen(ECampaignN31CenterComponentID.ECAMPAIGN_N31Center_POPSTAR_MISSION) then
-      local result = (self._campaign):CheckComponentOpenClientError(ECampaignN31CenterComponentID.ECAMPAIGN_N31Center_POPSTAR_MISSION)
-      ;
-      (self._campaign):CheckErrorCode(result, nil, nil)
-      ;
-      ((GameGlobal.UIStateManager)()):CloseDialog("UIPopStarTeam")
-      ;
-      ((GameGlobal.UIStateManager)()):CloseDialog("UIPopStarChallengeLevelDetail")
-      ;
-      ((GameGlobal.UIStateManager)()):CloseDialog("UIPopStarTeamSuggest")
-      ;
-      ((GameGlobal.UIStateManager)()):CloseDialog("UIPopStarNormalLevelDetail")
       return false
-    end
-    return true
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
+function UIActivityPopStarLevelData:IsActivityOpen()
+  if not self._campaign:CheckComponentOpen(ECampaignN31CenterComponentID.ECAMPAIGN_N31Center_POPSTAR_MISSION) then
+    local result = self._campaign:CheckComponentOpenClientError(ECampaignN31CenterComponentID.ECAMPAIGN_N31Center_POPSTAR_MISSION)
+    self._campaign:CheckErrorCode(result, nil, nil)
+    GameGlobal.UIStateManager():CloseDialog("UIPopStarTeam")
+    GameGlobal.UIStateManager():CloseDialog("UIPopStarChallengeLevelDetail")
+    GameGlobal.UIStateManager():CloseDialog("UIPopStarTeamSuggest")
+    GameGlobal.UIStateManager():CloseDialog("UIPopStarNormalLevelDetail")
+    return false
+  end
+  return true
+end
 
-UIActivityPopStarLevelData.GetRewardsByDropId = function(self, id)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityPopStarLevelData:GetRewardsByDropId(id)
   if not id then
     return {}
   end
-  local cfgs = (Cfg.cfg_drop)({DropID = id})
+  local cfgs = Cfg.cfg_drop({DropID = id})
   local rewards = {}
-  for k,v in pairs(cfgs) do
+  for k, v in pairs(cfgs) do
     local reward = {}
     reward[1] = v.AssetID
     reward[2] = v.MaxCount
@@ -291,247 +203,166 @@ UIActivityPopStarLevelData.GetRewardsByDropId = function(self, id)
   return rewards
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.IsLevePass = function(self, missionId)
-  -- function num : 0_13
-  do return ((self._componentInfo).m_pass_mission_info)[missionId] ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIActivityPopStarLevelData:IsLevePass(missionId)
+  return self._componentInfo.m_pass_mission_info[missionId] ~= nil
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.GetSuggestTeams = function(self)
-  -- function num : 0_14
+function UIActivityPopStarLevelData:GetSuggestTeams()
   return self._suggestTeams
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.AddTeamPet = function(self, id)
-  -- function num : 0_15
+function UIActivityPopStarLevelData:AddTeamPet(id)
   if id <= 0 then
     return false
   end
   for i = 1, #self._team do
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R6 in 'UnsetPending'
-
-    if (self._team)[i] <= 0 then
-      (self._team)[i] = id
+    if 0 >= self._team[i] then
+      self._team[i] = id
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.RemoveTeamPet = function(self, id)
-  -- function num : 0_16
+function UIActivityPopStarLevelData:RemoveTeamPet(id)
   if id <= 0 then
-    return 
+    return
   end
   for i = 1, #self._team do
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R6 in 'UnsetPending'
-
-    if (self._team)[i] == id then
-      (self._team)[i] = 0
+    if self._team[i] == id then
+      self._team[i] = 0
     end
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R6 in 'UnsetPending'
-
-    if (self._team)[i] == 0 and i < #self._team then
-      (self._team)[i] = (self._team)[i + 1]
-      -- DECOMPILER ERROR at PC29: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._team)[i + 1] = 0
+    if self._team[i] == 0 and i < #self._team then
+      self._team[i] = self._team[i + 1]
+      self._team[i + 1] = 0
     end
   end
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.TeamHasPet = function(self, id)
-  -- function num : 0_17
+function UIActivityPopStarLevelData:TeamHasPet(id)
   if id <= 0 then
     return false
   end
   for i = 1, #self._team do
-    if (self._team)[i] == id then
+    if self._team[i] == id then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.GetName = function(self)
-  -- function num : 0_18
+function UIActivityPopStarLevelData:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.GetDes = function(self)
-  -- function num : 0_19
+function UIActivityPopStarLevelData:GetDes()
   return self._des
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.GetlevelDetailIcon = function(self)
-  -- function num : 0_20
+function UIActivityPopStarLevelData:GetlevelDetailIcon()
   return self._levelDetailIcon
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.GetStar = function(self)
-  -- function num : 0_21
+function UIActivityPopStarLevelData:GetStar()
   return self._star
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.IsThreeStarRewardComplete = function(self)
-  -- function num : 0_22
-  do return self._star >= 3 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIActivityPopStarLevelData:IsThreeStarRewardComplete()
+  return self._star >= 3
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.IsOpen = function(self)
-  -- function num : 0_23
+function UIActivityPopStarLevelData:IsOpen()
   return self._isopen
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.GetTeam = function(self)
-  -- function num : 0_24
+function UIActivityPopStarLevelData:GetTeam()
   return self._team
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.GetPassReward = function(self)
-  -- function num : 0_25
+function UIActivityPopStarLevelData:GetPassReward()
   return self._passReward
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.GetThreeStarReward = function(self)
-  -- function num : 0_26
+function UIActivityPopStarLevelData:GetThreeStarReward()
   return self._threeStarReward
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.GetLevelType = function(self)
-  -- function num : 0_27
+function UIActivityPopStarLevelData:GetLevelType()
   return self._levelType
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.GetTasks = function(self)
-  -- function num : 0_28
+function UIActivityPopStarLevelData:GetTasks()
   return self._tasks
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.GetBestScore = function(self)
-  -- function num : 0_29
+function UIActivityPopStarLevelData:GetBestScore()
   return self._bestScore
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.IsComplete = function(self)
-  -- function num : 0_30
+function UIActivityPopStarLevelData:IsComplete()
   return self._isComplete
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.UpdateTeam = function(self, TT)
-  -- function num : 0_31 , upvalues : _ENV
+function UIActivityPopStarLevelData:UpdateTeam(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   local team = {}
   for i = 1, #self._team do
-    if (self._team)[i] > 0 then
-      team[#team + 1] = (self._team)[i]
+    if self._team[i] > 0 then
+      team[#team + 1] = self._team[i]
     end
   end
-  ;
-  (self._component):HandlePopStarChangeFormation(TT, res, team)
+  self._component:HandlePopStarChangeFormation(TT, res, team)
   if res:GetSucc() then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC123: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.TeamClone = function(self)
-  -- function num : 0_32
+function UIActivityPopStarLevelData:TeamClone()
   local team = {}
   for i = 1, #self._team do
-    team[i] = (self._team)[i]
+    team[i] = self._team[i]
   end
   return team
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.UseTeam = function(self, team)
-  -- function num : 0_33
+function UIActivityPopStarLevelData:UseTeam(team)
   self._team = {}
   for i = 1, 5 do
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._team)[#self._team + 1] = 0
+    self._team[#self._team + 1] = 0
   end
   for i = 1, #team do
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._team)[i] = team[i]
+    self._team[i] = team[i]
   end
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPopStarLevelData.EnterBattle = function(self, TT)
-  -- function num : 0_34 , upvalues : _ENV, UIActivityPopStarLevelType
+function UIActivityPopStarLevelData:EnterBattle(TT)
   local isEmpty = true
   for i = 1, #self._team do
-    if (self._team)[i] > 0 then
+    if self._team[i] > 0 then
       isEmpty = false
       break
     end
   end
-  do
-    if isEmpty then
-      (ToastManager.ShowToast)((StringTable.Get)("str_n31_popstar_tishi_1"))
-      return 
-    end
-    local game = (GameGlobal.GetModule)(GameMatchModule)
-    local is_challenge = false
-    if self._levelType == UIActivityPopStarLevelType.Challenge then
-      is_challenge = true
-    end
-    local params = {self._missionId, (self._component):GetCampaignMissionComponentId(), (self._component):GetCampaignMissionParamKeyMap(), is_challenge}
-    local info = game:GetMatchCreateInfo(MatchType.MT_PopStar, params)
-    local res = game:StartMatchTask(TT, MatchType.MT_PopStar, 1, info)
-    if not res:GetSucc() then
-      (ToastManager.ShowToast)(game:GetErrorMsg(res:GetResult()))
-    end
+  if isEmpty then
+    ToastManager.ShowToast(StringTable.Get("str_n31_popstar_tishi_1"))
+    return
+  end
+  local game = GameGlobal.GetModule(GameMatchModule)
+  local is_challenge = false
+  if self._levelType == UIActivityPopStarLevelType.Challenge then
+    is_challenge = true
+  end
+  local params = {
+    self._missionId,
+    self._component:GetCampaignMissionComponentId(),
+    self._component:GetCampaignMissionParamKeyMap(),
+    is_challenge
+  }
+  local info = game:GetMatchCreateInfo(MatchType.MT_PopStar, params)
+  local res = game:StartMatchTask(TT, MatchType.MT_PopStar, 1, info)
+  if not res:GetSucc() then
+    ToastManager.ShowToast(game:GetErrorMsg(res:GetResult()))
   end
 end
-
-

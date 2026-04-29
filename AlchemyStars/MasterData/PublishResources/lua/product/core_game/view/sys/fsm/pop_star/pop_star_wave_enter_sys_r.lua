@@ -1,96 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/pop_star/pop_star_wave_enter_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pop_star_wave_enter_system")
 _class("PopStarWaveEnterSystem_Render", PopStarWaveEnterSystem)
 PopStarWaveEnterSystem_Render = PopStarWaveEnterSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarWaveEnterSystem_Render._DoRenderWaveInfo = function(self, TT)
-  -- function num : 0_0
-  local utilStatSvc = (self._world):GetService("UtilData")
+function PopStarWaveEnterSystem_Render:_DoRenderWaveInfo(TT)
+  local utilStatSvc = self._world:GetService("UtilData")
   local waveNum = utilStatSvc:GetStatCurWaveIndex()
   self:_PlayWaveBgm(waveNum)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveEnterSystem_Render._PlayWaveBgm = function(self, waveNum)
-  -- function num : 0_1 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function PopStarWaveEnterSystem_Render:_PlayWaveBgm(waveNum)
+  local configService = self._world:GetService("Config")
   local levelConfigData = configService:GetLevelConfigData()
   local bgmID = levelConfigData:BGMParam(waveNum)
   if not bgmID then
-    return 
+    return
   end
-  ;
-  (AudioHelperController.PlayBGMById)(bgmID)
+  AudioHelperController.PlayBGMById(bgmID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveEnterSystem_Render._DoRenderShowWaveTraps = function(self, TT, spawnTraps)
-  -- function num : 0_2 , upvalues : _ENV
-  local trapRSvc = (self._world):GetService("TrapRender")
-  return ((GameGlobal.TaskManager)()):CoreGameStartTask(trapRSvc.ShowTraps, trapRSvc, spawnTraps)
+function PopStarWaveEnterSystem_Render:_DoRenderShowWaveTraps(TT, spawnTraps)
+  local trapRSvc = self._world:GetService("TrapRender")
+  return GameGlobal.TaskManager():CoreGameStartTask(trapRSvc.ShowTraps, trapRSvc, spawnTraps)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveEnterSystem_Render._DoRenderPlayPreMove = function(self, TT)
-  -- function num : 0_3
-  local playAISvc = (self._world):GetService("PlayAI")
+function PopStarWaveEnterSystem_Render:_DoRenderPlayPreMove(TT)
+  local playAISvc = self._world:GetService("PlayAI")
   if playAISvc == nil then
-    return 
+    return
   end
   playAISvc:DoCommonRountine(TT)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveEnterSystem_Render._DoRenderShowUIBattleStart = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  if not (GuideHelper.DontShowThreeMission)() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowBonusInfo, true)
+function PopStarWaveEnterSystem_Render:_DoRenderShowUIBattleStart(TT)
+  if not GuideHelper.DontShowThreeMission() then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowBonusInfo, true)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideUIBattle, true)
-  ;
-  (HelperProxy:GetInstance()):SetGameTimeScale((BattleConst.TimeSpeedList)[BattleConst.Speed2Index])
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActiveBattlePet)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideUIBattle, true)
+  HelperProxy:GetInstance():SetGameTimeScale(BattleConst.TimeSpeedList[BattleConst.Speed2Index])
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ActiveBattlePet)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveEnterSystem_Render._DoRenderAutoAddBuff = function(self, TT, buffSeqList)
-  -- function num : 0_5 , upvalues : _ENV
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+function PopStarWaveEnterSystem_Render:_DoRenderAutoAddBuff(TT, buffSeqList)
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayBuffSeqs(TT, buffSeqList)
   playBuffSvc:PlayAutoAddBuff(TT)
   playBuffSvc:PlayBuffView(TT, NTGameStart:New())
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveEnterSystem_Render._DoRenderDestroyBattleEnterResource = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function PopStarWaveEnterSystem_Render:_DoRenderDestroyBattleEnterResource(TT)
   self:UnloadEffect(GameResourceConst.EffRuchangBlackboard)
   self:UnloadEffect(GameResourceConst.EffBoardShowLine)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveEnterSystem_Render.UnloadEffect = function(self, effID)
-  -- function num : 0_7
-  local poolSvc = (self._world):GetService("ResourcesPool")
-  local effSvc = (self._world):GetService("Effect")
+function PopStarWaveEnterSystem_Render:UnloadEffect(effID)
+  local poolSvc = self._world:GetService("ResourcesPool")
+  local effSvc = self._world:GetService("Effect")
   local effResPath = effSvc:GetEffectResPath(effID)
   if effResPath then
     poolSvc:DestroyCache(effResPath)
   end
 end
-
-

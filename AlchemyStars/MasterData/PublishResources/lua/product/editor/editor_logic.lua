@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/editor_logic.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("match_module")
 require("ui_story_controller")
 require("ui_n25_idol_story_controller")
@@ -12,141 +7,86 @@ require("home_story_manager")
 require("ui_home_movie_story_controller")
 require("home_movie_story_manager")
 Editor = {}
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
 Editor.PetData = {}
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
 Editor.MatchEnterData = {}
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
 Editor.MissionData = {}
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
 
-Editor.Enter = function()
-  -- function num : 0_0 , upvalues : _ENV
-  (Editor.InitEnterData)()
-  ;
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Battle_Loading, nil)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : _ENV
+function Editor.Enter()
+  Editor.InitEnterData()
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Battle_Loading, nil)
+  GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT, 1000)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LoadingFinish, 1)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.LoadingFinish, 1)
+  end)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R0 in 'UnsetPending'
-
-Editor.InitEnterData = function()
-  -- function num : 0_1 , upvalues : _ENV
-  local mission = (Cfg.cfg_mission)()
+function Editor.InitEnterData()
+  local mission = Cfg.cfg_mission()
   local res, config = dofile("editor_missiondata")
-  ;
-  (Log.debug)(res, config)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
+  Log.debug(res, config)
   Editor.MissionData = config
-  res = dofile("editor_petdata")
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
+  res, config = dofile("editor_petdata")
   Editor.PetData = config
-  -- DECOMPILER ERROR at PC23: Overwrote pending register: R2 in 'AssignReg'
-
-  res = dofile("editor_match_enterdata")
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
+  res, config = dofile("editor_match_enterdata")
   Editor.MatchEnterData = config
-  mission[(Editor.MissionData).ID] = Editor.MissionData
-  local petmoudle = (GameGlobal.GetModule)(PetModule)
+  mission[Editor.MissionData.ID] = Editor.MissionData
+  local petmoudle = GameGlobal.GetModule(PetModule)
   petmoudle:AddPet(Editor.PetData)
-  local match = (GameGlobal.GetModule)(MatchModule)
-  ;
-  (Log.debug)(match.Editor_EnterMatch, "+++++++++++++++++")
+  local match = GameGlobal.GetModule(MatchModule)
+  Log.debug(match.Editor_EnterMatch, "+++++++++++++++++")
   match:Editor_EnterMatch()
   local enterData = match:GetMatchEnterData()
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R0 in 'UnsetPending'
-
-Editor.Restart = function(pdata, edata, mdata)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
+function Editor.Restart(pdata, edata, mdata)
   Editor.MissionData = mdata
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
   Editor.PetData = pdata
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
   Editor.MatchEnterData = edata
-  ;
-  (GameGlobal:GetInstance()):ExitCoreGame()
-  ;
-  ((GameGlobal.UIStateManager)()):PushAndSwitchState(UIStateType.UISKillEditor)
+  GameGlobal:GetInstance():ExitCoreGame()
+  GameGlobal.UIStateManager():PushAndSwitchState(UIStateType.UISKillEditor)
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R0 in 'UnsetPending'
-
-Editor.ActiveSkill = function(pskilid)
-  -- function num : 0_3 , upvalues : _ENV
-  (EditorGlobal.SetEditorMode)(true)
+function Editor.ActiveSkill(pskilid)
+  EditorGlobal.SetEditorMode(true)
   local skillID = tonumber(pskilid)
-  local world = (GameGlobal:GetInstance()):GetMainWorld()
-  ;
-  (Log.debug)("skiil id=", skillID, (world:GameFSM()):CurStateID())
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(Editor._TaskDoSkill, skillID)
+  local world = GameGlobal:GetInstance():GetMainWorld()
+  Log.debug("skiil id=", skillID, world:GameFSM():CurStateID())
+  GameGlobal.TaskManager():StartTask(Editor._TaskDoSkill, skillID)
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R0 in 'UnsetPending'
-
-Editor._TaskDoSkill = function(sid)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.debug)("about: " .. sid)
-  local world = (GameGlobal:GetInstance()):GetMainWorld()
+function Editor._TaskDoSkill(sid)
+  Log.debug("about: " .. sid)
+  local world = GameGlobal:GetInstance():GetMainWorld()
   local configService = world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(sid)
   local pickUpType = skillConfigData:GetSkillPickType()
-  local world = (GameGlobal:GetInstance()):GetMainWorld()
-  local playerEntity = (world:Player()):GetLocalTeamEntity()
-  local _group = (world:GetGroup((world.BW_WEMatchers).MonsterID))
-  local monsterEnity = nil
-  for _,e in ipairs(_group:GetEntities()) do
-    (Log.debug)((e:GridLocation()):GetGridPos())
+  local world = GameGlobal:GetInstance():GetMainWorld()
+  local playerEntity = world:Player():GetLocalTeamEntity()
+  local _group = world:GetGroup(world.BW_WEMatchers.MonsterID)
+  local monsterEnity
+  for _, e in ipairs(_group:GetEntities()) do
+    Log.debug(e:GridLocation():GetGridPos())
     monsterEnity = e
-    do break end
+    break
   end
-  do
-    do
-      if monsterEnity ~= nil then
-        local olddir = (monsterEnity:GridLocation()).Direction
-        monsterEnity:SetGridLocation((playerEntity:GridLocation()).Position + Vector2(0, 1), olddir)
-      end
-      YIELD(TT, 100)
-      local activeSkillCmpt = playerEntity:ActiveSkill()
-      activeSkillCmpt:SetActiveSkillID(sid, (Editor.PetData).pet_pstid)
-      if pickUpType == SkillPickUpType.None then
-        (Log.debug)(">>>>>>>>>>>>>>>>>>>>>gamestate id[", (world:GameFSM()):CurStateID(), "]<<<<<<<<<<<<<<<")
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.WaitInputFinish, 3)
-        YIELD(TT, 100)
-        ;
-        (Log.debug)((world:GameFSM()):CurStateID())
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CastActiveSkill, sid, (Editor.PetData).pet_pstid)
-      end
-    end
+  if monsterEnity ~= nil then
+    local olddir = monsterEnity:GridLocation().Direction
+    monsterEnity:SetGridLocation(playerEntity:GridLocation().Position + Vector2(0, 1), olddir)
+  end
+  YIELD(TT, 100)
+  local activeSkillCmpt = playerEntity:ActiveSkill()
+  activeSkillCmpt:SetActiveSkillID(sid, Editor.PetData.pet_pstid)
+  if pickUpType == SkillPickUpType.None then
+    Log.debug(">>>>>>>>>>>>>>>>>>>>>gamestate id[", world:GameFSM():CurStateID(), "]<<<<<<<<<<<<<<<")
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.WaitInputFinish, 3)
+    YIELD(TT, 100)
+    Log.debug(world:GameFSM():CurStateID())
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.CastActiveSkill, sid, Editor.PetData.pet_pstid)
   end
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R0 in 'UnsetPending'
-
-Editor.PreviewSkillScope = function(sid, state)
-  -- function num : 0_5 , upvalues : _ENV
-  local world = (GameGlobal:GetInstance()):GetMainWorld()
+function Editor.PreviewSkillScope(sid, state)
+  local world = GameGlobal:GetInstance():GetMainWorld()
   local skillid = tonumber(sid)
   local configService = world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillid)
@@ -155,20 +95,20 @@ Editor.PreviewSkillScope = function(sid, state)
     local utilScopeSvc = world:GetService("UtilScopeCalc")
     local configService = world:GetService("Config")
     local skillConfigData = configService:GetSkillConfigData(skillid)
-    local teamEntity = (world:Player()):GetLocalTeamEntity()
-    local casterPos = (teamEntity:GridLocation()).Position
+    local teamEntity = world:Player():GetLocalTeamEntity()
+    local casterPos = teamEntity:GridLocation().Position
     local scopeResult = self:CalcSkillScope(skillConfigData, casterPos, teamEntity)
     local pieceSvc = world:GetService("Piece")
     local scopePoss = scope:GetWholeGridRange()
-    for key,value in ipairs(scopePoss) do
+    for key, value in ipairs(scopePoss) do
       local piece = pieceSvc:FindPieceEntity(value)
       if piece ~= nil then
-        local go = (piece:View()):GetGameObject()
+        local go = piece:View():GetGameObject()
         if go ~= nil then
-          local go = (piece:View()):GetGameObject()
-          local trans = (go.transform):Find("Root")
+          local go = piece:View():GetGameObject()
+          local trans = go.transform:Find("Root")
           if trans ~= nil then
-            local renderer = (trans.gameObject):GetComponent(typeof(UnityEngine.Renderer))
+            local renderer = trans.gameObject:GetComponent(typeof(UnityEngine.Renderer))
             if renderer ~= nil then
               renderer.enabled = state
             end
@@ -179,333 +119,214 @@ Editor.PreviewSkillScope = function(sid, state)
   end
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R0 in 'UnsetPending'
-
-Editor.UpdateSkillData = function(skillTable, viewTable)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.debug)("---------------------------")
-  local world = (GameGlobal:GetInstance()):GetMainWorld()
+function Editor.UpdateSkillData(skillTable, viewTable)
+  Log.debug("---------------------------")
+  local world = GameGlobal:GetInstance():GetMainWorld()
   local configService = world:GetService("Config")
   configService:ClearSkillConfigData()
-  local logic = (Cfg.cfg_pet_battle_skill)()
-  do
-    if skillTable ~= nil then
-      local skillID = skillTable.ID
-      logic[skillID] = skillTable
-    end
-    local skillview = (Cfg.cfg_skill_view)()
-    if viewTable ~= nil then
-      local viewID = (viewTable[1]).ViewID
-      local skillViewFileName = "cfg_skill_view_" .. viewID
-      local fileExist = (ResourceManager:GetInstance()):HasLua(skillViewFileName)
-      if not fileExist then
-        for i = #skillview, 1, -1 do
-          local vid = skillview[i]
-          if vid ~= nil and vid.ViewID == viewID then
-            (table.remove)(skillview, i)
-          end
+  local logic = Cfg.cfg_pet_battle_skill()
+  if skillTable ~= nil then
+    local skillID = skillTable.ID
+    logic[skillID] = skillTable
+  end
+  local skillview = Cfg.cfg_skill_view()
+  if viewTable ~= nil then
+    local viewID = viewTable[1].ViewID
+    local skillViewFileName = "cfg_skill_view_" .. viewID
+    local fileExist = ResourceManager:GetInstance():HasLua(skillViewFileName)
+    if not fileExist then
+      for i = #skillview, 1, -1 do
+        local vid = skillview[i]
+        if vid ~= nil and vid.ViewID == viewID then
+          table.remove(skillview, i)
         end
-        local maxIndex = nil
-        for i,v in ipairs(skillview) do
-          if maxIndex == nil then
-            maxIndex = i
-          else
-            if maxIndex < i then
-              maxIndex = i
-            end
-          end
+      end
+      local maxIndex
+      for i, v in ipairs(skillview) do
+        if maxIndex == nil then
+          maxIndex = i
+        elseif i > maxIndex then
+          maxIndex = i
         end
-        for key,value in ipairs(viewTable) do
-          maxIndex = maxIndex + 1
-          skillview[maxIndex] = value
-          value.ID = maxIndex
+      end
+      for key, value in ipairs(viewTable) do
+        maxIndex = maxIndex + 1
+        skillview[maxIndex] = value
+        value.ID = maxIndex
+      end
+    else
+      local skillViewList = Cfg[skillViewFileName]()
+      if skillViewList ~= nil then
+        for i = #skillViewList, 1, -1 do
+          table.remove(skillViewList, i)
         end
-      else
-        do
-          local skillViewList = (Cfg[skillViewFileName])()
-          if skillViewList ~= nil then
-            for i = #skillViewList, 1, -1 do
-              (table.remove)(skillViewList, i)
-            end
-            for key,value in ipairs(viewTable) do
-              skillViewList[key] = value
-            end
-          end
+        for key, value in ipairs(viewTable) do
+          skillViewList[key] = value
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R0 in 'UnsetPending'
-
-Editor.IsPlayingPhase = function(phaseIndex)
-  -- function num : 0_7 , upvalues : _ENV
-  local doingdata = (EditorGlobal.GetRunningPhaseData)()
+function Editor.IsPlayingPhase(phaseIndex)
+  local doingdata = EditorGlobal.GetRunningPhaseData()
   local taskId = doingdata[phaseIndex]
-  if (TaskHelper:GetInstance()):IsTaskFinished(taskId) ~= false then
-    do return taskId == nil end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if taskId ~= nil then
+    return TaskHelper:GetInstance():IsTaskFinished(taskId) == false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R0 in 'UnsetPending'
-
-Editor.RoleInvincible = function()
-  -- function num : 0_8
+function Editor.RoleInvincible()
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchModule.Editor_EnterMatch = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  self.m_match_enter_data = MatchEnterData:New(1, (Editor.MatchEnterData).create_info, (Editor.MatchEnterData).player_list)
-  self.m_match_enter_preference_data = MatchEnterPreFerenceData:New((self.m_match_enter_data)._joined_players)
+function MatchModule:Editor_EnterMatch()
+  self.m_match_enter_data = MatchEnterData:New(1, Editor.MatchEnterData.create_info, Editor.MatchEnterData.player_list)
+  self.m_match_enter_preference_data = MatchEnterPreFerenceData:New(self.m_match_enter_data._joined_players)
   self.m_have_match_start = true
 end
 
-local N20AVGData_GetComponentAVG = function()
-  -- function num : 0_10 , upvalues : _ENV
+local function N20AVGData_GetComponentAVG()
   return EditorAvgMinigameComponent:New()
 end
 
-local N20AVGData_GetServerNodeDataByNodeId = function(nodeId)
-  -- function num : 0_11 , upvalues : _ENV
+local function N20AVGData_GetServerNodeDataByNodeId(nodeId)
   local info = AVGStoryMissionInfo:New()
   info.mission_id = nodeId
   info.end_formation_info = AVGStoryFormationInfo:New()
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (info.end_formation_info).leader_hp = 10
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (info.end_formation_info).teammate_affinity = {}
+  info.end_formation_info.leader_hp = 10
+  info.end_formation_info.teammate_affinity = {}
   return info
 end
 
-local N20AVGData_CheckCode = function(res)
-  -- function num : 0_12
+local function N20AVGData_CheckCode(res)
   return true
 end
 
-local N20AVGData_IsSelectedOption = function(optionId)
-  -- function num : 0_13
+local function N20AVGData_IsSelectedOption(optionId)
   return true
 end
 
-local N20AVGData_CurNode = function(self)
-  -- function num : 0_14
+local function N20AVGData_CurNode(self)
   return self:GetNodeByStoryId(self._curStoryID)
 end
 
-local AVGStoryOption_IsSatisfyUnlock = function()
-  -- function num : 0_15
+local function AVGStoryOption_IsSatisfyUnlock()
   return true
 end
 
-local AVGStoryOption_IsSatisfyVisible = function()
-  -- function num : 0_16
+local function AVGStoryOption_IsSatisfyVisible()
   return true
 end
 
-local N28AVGData_GetComponentAVG = function()
-  -- function num : 0_17 , upvalues : _ENV
+local function N28AVGData_GetComponentAVG()
   return EditorAvgMinigameComponent:New()
 end
 
-local N28AVGData_GetServerNodeDataByNodeId = function(nodeId)
-  -- function num : 0_18 , upvalues : _ENV
+local function N28AVGData_GetServerNodeDataByNodeId(nodeId)
   local info = AVGStoryMissionInfo:New()
   info.mission_id = nodeId
   info.end_formation_info = AVGStoryFormationInfo:New()
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (info.end_formation_info).leader_hp = 10
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (info.end_formation_info).teammate_affinity = {}
+  info.end_formation_info.leader_hp = 10
+  info.end_formation_info.teammate_affinity = {}
   return info
 end
 
-local N28AVGData_CheckCode = function(res)
-  -- function num : 0_19
+local function N28AVGData_CheckCode(res)
   return true
 end
 
-local N28AVGData_IsSelectedOption = function(optionId)
-  -- function num : 0_20
+local function N28AVGData_IsSelectedOption(optionId)
   return true
 end
 
-local N28AVGData_CurNode = function(self)
-  -- function num : 0_21
+local function N28AVGData_CurNode(self)
   return self:GetNodeByStoryId(self._curStoryID)
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R12 in 'UnsetPending'
-
-Editor.EnterStroy = function(param, storyTable)
-  -- function num : 0_22 , upvalues : _ENV, N20AVGData_GetComponentAVG, N20AVGData_GetServerNodeDataByNodeId, N20AVGData_CheckCode, N20AVGData_IsSelectedOption, N20AVGData_CurNode, AVGStoryOption_IsSatisfyUnlock, AVGStoryOption_IsSatisfyVisible, N28AVGData_GetComponentAVG, N28AVGData_GetServerNodeDataByNodeId, N28AVGData_CheckCode, N28AVGData_IsSelectedOption, N28AVGData_CurNode
-  (EditorGlobal.SetEditorMode)(true)
-  ;
-  (EditorGlobal.SetEditorRunStoryConfig)(storyTable)
-  ;
-  (EditorGlobal.SetEnterParam)(param)
-  local controller = (EditorGlobal.GetStroyController)()
+function Editor.EnterStroy(param, storyTable)
+  EditorGlobal.SetEditorMode(true)
+  EditorGlobal.SetEditorRunStoryConfig(storyTable)
+  EditorGlobal.SetEnterParam(param)
+  local controller = EditorGlobal.GetStroyController()
   if controller ~= nil then
-    (Editor.ExitStroy)()
-  else
-    if ((GameGlobal.UIStateManager)()):IsShow("UIN20AVGStory") then
-      ((GameGlobal.UIStateManager)()):CloseDialog("UIN20AVGStory")
-    else
-      if ((GameGlobal.UIStateManager)()):IsShow("UIN28AVGStory") then
-        ((GameGlobal.UIStateManager)()):CloseDialog("UIN28AVGStory")
-      else
-        if ((GameGlobal.UIStateManager)()):IsShow("UIN25IdolStoryController") then
-          ((GameGlobal.UIStateManager)()):CloseDialog("UIN25IdolStoryController")
-        end
-      end
-    end
+    Editor.ExitStroy()
+  elseif GameGlobal.UIStateManager():IsShow("UIN20AVGStory") then
+    GameGlobal.UIStateManager():CloseDialog("UIN20AVGStory")
+  elseif GameGlobal.UIStateManager():IsShow("UIN28AVGStory") then
+    GameGlobal.UIStateManager():CloseDialog("UIN28AVGStory")
+  elseif GameGlobal.UIStateManager():IsShow("UIN25IdolStoryController") then
+    GameGlobal.UIStateManager():CloseDialog("UIN25IdolStoryController")
   end
-  -- DECOMPILER ERROR at PC74: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (string.find)(storyTable.Name, "event_story_N20avg_") then
+  if string.find(storyTable.Name, "event_story_N20avg_") then
     N20AVGData.GetComponentAVG = N20AVGData_GetComponentAVG
-    -- DECOMPILER ERROR at PC77: Confused about usage of register: R3 in 'UnsetPending'
-
     N20AVGData.GetServerNodeDataByNodeId = N20AVGData_GetServerNodeDataByNodeId
-    -- DECOMPILER ERROR at PC80: Confused about usage of register: R3 in 'UnsetPending'
-
     N20AVGData.CheckCode = N20AVGData_CheckCode
-    -- DECOMPILER ERROR at PC83: Confused about usage of register: R3 in 'UnsetPending'
-
     N20AVGData.IsSelectedOption = N20AVGData_IsSelectedOption
-    -- DECOMPILER ERROR at PC86: Confused about usage of register: R3 in 'UnsetPending'
-
-    N20AVGData.InitLines = function()
-    -- function num : 0_22_0
-  end
-
-    -- DECOMPILER ERROR at PC89: Confused about usage of register: R3 in 'UnsetPending'
-
+    
+    function N20AVGData.InitLines()
+    end
+    
     N20AVGData.CurNode = N20AVGData_CurNode
-    -- DECOMPILER ERROR at PC92: Confused about usage of register: R3 in 'UnsetPending'
-
     N20AVGData._curStoryID = storyTable.ID
-    -- DECOMPILER ERROR at PC95: Confused about usage of register: R3 in 'UnsetPending'
-
     AVGStoryOption.IsSatisfyUnlock = AVGStoryOption_IsSatisfyUnlock
-    -- DECOMPILER ERROR at PC98: Confused about usage of register: R3 in 'UnsetPending'
-
     AVGStoryOption.IsSatisfyVisible = AVGStoryOption_IsSatisfyVisible
-    local data = ((GameGlobal.GetModule)(CampaignModule)):GetN20AVGData()
+    local data = GameGlobal.GetModule(CampaignModule):GetN20AVGData()
     data.componentId = 106310709
     data:Init()
     local node = data:GetNodeByStoryId(storyTable.ID)
     if node then
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIN20AVGStory", node.id, function()
-    -- function num : 0_22_1 , upvalues : _ENV
-    (EditorGlobal.SetStroyController)(nil)
-    ;
-    (EditorGlobal.SetStroyManager)(nil)
-  end
-, true)
+      GameGlobal.UIStateManager():ShowDialog("UIN20AVGStory", node.id, function()
+        EditorGlobal.SetStroyController(nil)
+        EditorGlobal.SetStroyManager(nil)
+      end, true)
     else
-      ;
-      (Log.fatal)("### Excel中没有剧情id为", storyTable.ID, "的信息")
+      Log.fatal("### Excel中没有剧情id为", storyTable.ID, "的信息")
     end
+  elseif string.find(storyTable.Name, "event_story_N28avg_") then
+    N28AVGData.GetComponentAVG = N28AVGData_GetComponentAVG
+    N28AVGData.GetServerNodeDataByNodeId = N28AVGData_GetServerNodeDataByNodeId
+    N28AVGData.CheckCode = N28AVGData_CheckCode
+    N28AVGData.IsSelectedOption = N28AVGData_IsSelectedOption
+    
+    function N28AVGData.InitLines()
+    end
+    
+    N28AVGData.CurNode = N28AVGData_CurNode
+    N28AVGData._curStoryID = storyTable.ID
+    AVGStoryOption.IsSatisfyUnlock = AVGStoryOption_IsSatisfyUnlock
+    AVGStoryOption.IsSatisfyVisible = AVGStoryOption_IsSatisfyVisible
+    local data = GameGlobal.GetModule(CampaignModule):GetN28AVGData()
+    data.componentId = 108410708
+    data:Init()
+    local node = data:GetNodeByStoryId(storyTable.ID)
+    if node then
+      GameGlobal.UIStateManager():ShowDialog("UIN28AVGStory", node.id, function()
+        EditorGlobal.SetStroyController(nil)
+        EditorGlobal.SetStroyManager(nil)
+      end, true, true, true)
+    else
+      Log.fatal("### Excel中没有剧情id为", storyTable.ID, "的信息")
+    end
+  elseif string.find(storyTable.Name, "event_story_N25wanfa") then
+    GameGlobal.UIStateManager():ShowDialog("UIN25IdolStoryController", param.StoryID, function()
+      EditorGlobal.SetStroyController(nil)
+      EditorGlobal.SetStroyManager(nil)
+    end, true)
   else
-    do
-      -- DECOMPILER ERROR at PC139: Confused about usage of register: R3 in 'UnsetPending'
-
-      if (string.find)(storyTable.Name, "event_story_N28avg_") then
-        N28AVGData.GetComponentAVG = N28AVGData_GetComponentAVG
-        -- DECOMPILER ERROR at PC142: Confused about usage of register: R3 in 'UnsetPending'
-
-        N28AVGData.GetServerNodeDataByNodeId = N28AVGData_GetServerNodeDataByNodeId
-        -- DECOMPILER ERROR at PC145: Confused about usage of register: R3 in 'UnsetPending'
-
-        N28AVGData.CheckCode = N28AVGData_CheckCode
-        -- DECOMPILER ERROR at PC148: Confused about usage of register: R3 in 'UnsetPending'
-
-        N28AVGData.IsSelectedOption = N28AVGData_IsSelectedOption
-        -- DECOMPILER ERROR at PC151: Confused about usage of register: R3 in 'UnsetPending'
-
-        N28AVGData.InitLines = function()
-    -- function num : 0_22_2
-  end
-
-        -- DECOMPILER ERROR at PC154: Confused about usage of register: R3 in 'UnsetPending'
-
-        N28AVGData.CurNode = N28AVGData_CurNode
-        -- DECOMPILER ERROR at PC157: Confused about usage of register: R3 in 'UnsetPending'
-
-        N28AVGData._curStoryID = storyTable.ID
-        -- DECOMPILER ERROR at PC160: Confused about usage of register: R3 in 'UnsetPending'
-
-        AVGStoryOption.IsSatisfyUnlock = AVGStoryOption_IsSatisfyUnlock
-        -- DECOMPILER ERROR at PC163: Confused about usage of register: R3 in 'UnsetPending'
-
-        AVGStoryOption.IsSatisfyVisible = AVGStoryOption_IsSatisfyVisible
-        local data = ((GameGlobal.GetModule)(CampaignModule)):GetN28AVGData()
-        data.componentId = 108410708
-        data:Init()
-        local node = data:GetNodeByStoryId(storyTable.ID)
-        if node then
-          ((GameGlobal.UIStateManager)()):ShowDialog("UIN28AVGStory", node.id, function()
-    -- function num : 0_22_3 , upvalues : _ENV
-    (EditorGlobal.SetStroyController)(nil)
-    ;
-    (EditorGlobal.SetStroyManager)(nil)
-  end
-, true, true, true)
-        else
-          ;
-          (Log.fatal)("### Excel中没有剧情id为", storyTable.ID, "的信息")
-        end
-      else
-        do
-          if (string.find)(storyTable.Name, "event_story_N25wanfa") then
-            ((GameGlobal.UIStateManager)()):ShowDialog("UIN25IdolStoryController", param.StoryID, function()
-    -- function num : 0_22_4 , upvalues : _ENV
-    (EditorGlobal.SetStroyController)(nil)
-    ;
-    (EditorGlobal.SetStroyManager)(nil)
-  end
-, true)
-          else
-            ;
-            ((GameGlobal.GetModule)(StoryModule)):StartStory(param.StoryID, function()
-    -- function num : 0_22_5 , upvalues : _ENV
-    (EditorGlobal.SetStroyController)(nil)
-    ;
-    (EditorGlobal.SetStroyManager)(nil)
-  end
-, true, true)
-          end
-        end
-      end
-    end
+    GameGlobal.GetModule(StoryModule):StartStory(param.StoryID, function()
+      EditorGlobal.SetStroyController(nil)
+      EditorGlobal.SetStroyManager(nil)
+    end, true, true)
   end
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R12 in 'UnsetPending'
-
-Editor.ExitStroy = function()
-  -- function num : 0_23 , upvalues : _ENV
-  ((EditorGlobal.GetStroyController)()):SkipStoryNoDialog()
+function Editor.ExitStroy()
+  EditorGlobal.GetStroyController():SkipStoryNoDialog()
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R12 in 'UnsetPending'
-
-Editor.GetCurentPlayTime = function()
-  -- function num : 0_24 , upvalues : _ENV
-  local storyManager = (EditorGlobal.GetStroyManager)()
+function Editor.GetCurentPlayTime()
+  local storyManager = EditorGlobal.GetStroyManager()
   if storyManager ~= nil then
     return storyManager._currentTime
   else
@@ -513,126 +334,85 @@ Editor.GetCurentPlayTime = function()
   end
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R12 in 'UnsetPending'
-
-Editor.EnterStroy3D = function(param, storyTable)
-  -- function num : 0_25 , upvalues : _ENV
+function Editor.EnterStroy3D(param, storyTable)
   param.StoryID = 9999
-  ;
-  (EditorGlobal.SetEditorMode)(true)
-  ;
-  (EditorGlobal.SetEditorRunStoryConfig)(storyTable)
-  ;
-  (EditorGlobal.SetEnterParam)(param)
-  local controller = (EditorGlobal.GetStroyController)()
+  EditorGlobal.SetEditorMode(true)
+  EditorGlobal.SetEditorRunStoryConfig(storyTable)
+  EditorGlobal.SetEnterParam(param)
+  local controller = EditorGlobal.GetStroyController()
   if controller ~= nil then
-    (Editor.ExitStroy)()
+    Editor.ExitStroy()
   end
-  if (EditorGlobal.IsHomeMovieMode)() then
-    ((GameGlobal.UIStateManager)()):CallUIMethod("UIStoryViewer3D", "ShowRoot", false)
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIHomeMovieStoryController", param.StoryID, function()
-    -- function num : 0_25_0 , upvalues : _ENV
-    (EditorGlobal.SetStroyController)(nil)
-    ;
-    (EditorGlobal.SetStroyManager)(nil)
-    ;
-    ((GameGlobal.UIStateManager)()):CallUIMethod("UIStoryViewer3D", "ShowRoot", true)
-  end
-, nil, true, true, false, true)
+  if EditorGlobal.IsHomeMovieMode() then
+    GameGlobal.UIStateManager():CallUIMethod("UIStoryViewer3D", "ShowRoot", false)
+    GameGlobal.UIStateManager():ShowDialog("UIHomeMovieStoryController", param.StoryID, function()
+      EditorGlobal.SetStroyController(nil)
+      EditorGlobal.SetStroyManager(nil)
+      GameGlobal.UIStateManager():CallUIMethod("UIStoryViewer3D", "ShowRoot", true)
+    end, nil, true, true, false, true)
   else
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIHomeStoryController", param.StoryID, function()
-    -- function num : 0_25_1 , upvalues : _ENV
-    (EditorGlobal.SetStroyController)(nil)
-    ;
-    (EditorGlobal.SetStroyManager)(nil)
-    ;
-    ((GameGlobal.UIStateManager)()):CallUIMethod("UIStoryViewer3D", "ShowRoot", true)
-  end
-, true, true, true)
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIHomeStoryController, param.StoryID, function()
-    -- function num : 0_25_2 , upvalues : _ENV
-    (EditorGlobal.SetStroyController)(nil)
-    ;
-    (EditorGlobal.SetStroyManager)(nil)
-  end
-, true, true, true)
+    GameGlobal.UIStateManager():ShowDialog("UIHomeStoryController", param.StoryID, function()
+      EditorGlobal.SetStroyController(nil)
+      EditorGlobal.SetStroyManager(nil)
+      GameGlobal.UIStateManager():CallUIMethod("UIStoryViewer3D", "ShowRoot", true)
+    end, true, true, true)
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIHomeStoryController, param.StoryID, function()
+      EditorGlobal.SetStroyController(nil)
+      EditorGlobal.SetStroyManager(nil)
+    end, true, true, true)
   end
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R12 in 'UnsetPending'
-
-UIStoryController.SkipStoryNoDialog = function(self)
-  -- function num : 0_26
+function UIStoryController:SkipStoryNoDialog()
   if self._skipLock then
-    return 
+    return
   end
   self._skipLock = true
-  ;
-  (self._storyManager):SkipStory()
+  self._storyManager:SkipStory()
   self:_EndStory()
   self._skipLock = false
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R12 in 'UnsetPending'
-
-UIHomeStoryController.SkipStoryNoDialog = function(self)
-  -- function num : 0_27
+function UIHomeStoryController:SkipStoryNoDialog()
   if self._skipLock then
-    return 
+    return
   end
   self._skipLock = true
-  ;
-  (self._storyManager):SkipStory()
+  self._storyManager:SkipStory()
   self:_EndStory()
   self._skipLock = false
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R12 in 'UnsetPending'
-
-UIHomeMovieStoryController.SkipStoryNoDialog = function(self)
-  -- function num : 0_28
+function UIHomeMovieStoryController:SkipStoryNoDialog()
   if self._skipLock then
-    return 
+    return
   end
   self._skipLock = true
-  ;
-  (self._storyManager):SkipStory()
+  self._storyManager:SkipStory()
   self:_EndStory()
   self._skipLock = false
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R12 in 'UnsetPending'
-
-UIN25IdolStoryController.SkipStoryNoDialog = function(self)
-  -- function num : 0_29
+function UIN25IdolStoryController:SkipStoryNoDialog()
   if self._skipLock then
-    return 
+    return
   end
   self._skipLock = true
-  ;
-  (self._storyManager):SkipStory()
+  self._storyManager:SkipStory()
   self:_EndStory()
   self._skipLock = false
 end
 
-local StoryEntity_UpdateAnimation = function(entity, time)
-  -- function num : 0_30 , upvalues : _ENV
+local function StoryEntity_UpdateAnimation(entity, time)
   local sortedAnimData = {}
-  for aniData,aniInfo in pairs(entity._animationData) do
-    (table.insert)(sortedAnimData, {aniData = aniData, aniInfo = aniInfo})
+  for aniData, aniInfo in pairs(entity._animationData) do
+    table.insert(sortedAnimData, {aniData = aniData, aniInfo = aniInfo})
   end
-  ;
-  (table.sort)(sortedAnimData, function(a, b)
-    -- function num : 0_30_0
-    do return (a.aniInfo)[2] < (b.aniInfo)[2] end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(sortedAnimData, function(a, b)
+    return a.aniInfo[2] < b.aniInfo[2]
+  end)
   local allEnd = true
-  for _,anim in ipairs(sortedAnimData) do
+  for _, anim in ipairs(sortedAnimData) do
     allEnd = false
     local t = 1
     local aniData = anim.aniData
@@ -640,119 +420,86 @@ local StoryEntity_UpdateAnimation = function(entity, time)
     if aniData.Duration > 0 then
       t = (time - aniInfo[2]) / aniData.Duration
     end
-    if t > 1 then
+    if 1 < t then
       t = 1
     end
     if aniInfo[1] == StoryEntityAnimationType.AlphaChange then
-      entity:_SetAlpha((lmathext.lerp)(aniInfo[3], aniInfo[4], t))
-    else
-      if aniInfo[1] == StoryEntityAnimationType.BrightnessChange then
-        entity:_SetBrightness((lmathext.lerp)(aniInfo[3], aniInfo[4], t))
-      else
-        if aniInfo[1] == StoryEntityAnimationType.Translate then
-          entity:_SetPosition((Vector3.Lerp)(aniInfo[3], aniInfo[4], t))
-          ;
-          (Log.info)("_SetPosition", (Vector3.Lerp)(aniInfo[3], aniInfo[4], t), aniInfo[3], aniInfo[4], t)
-        else
-          if aniInfo[1] == StoryEntityAnimationType.Rotate then
-            entity:_SetRotation((Quaternion.Lerp)(aniInfo[3], aniInfo[4], t))
-          else
-            if aniInfo[1] == StoryEntityAnimationType.Scale then
-              entity:_SetScaling((Vector3.Lerp)(aniInfo[3], aniInfo[4], t))
-            else
-              if aniInfo[1] == StoryEntityAnimationType.BlurChange then
-                entity:_SetPicBlur(aniInfo[3], aniInfo[4], (lmathext.lerp)(aniInfo[6], aniInfo[7], t))
-              else
-                if aniInfo[1] == StoryEntityAnimationType.Shake and not (aniInfo[3]):IsComplete() then
-                  allEnd = false
-                end
-              end
-            end
-          end
-        end
-      end
+      entity:_SetAlpha(lmathext.lerp(aniInfo[3], aniInfo[4], t))
+    elseif aniInfo[1] == StoryEntityAnimationType.BrightnessChange then
+      entity:_SetBrightness(lmathext.lerp(aniInfo[3], aniInfo[4], t))
+    elseif aniInfo[1] == StoryEntityAnimationType.Translate then
+      entity:_SetPosition(Vector3.Lerp(aniInfo[3], aniInfo[4], t))
+      Log.info("_SetPosition", Vector3.Lerp(aniInfo[3], aniInfo[4], t), aniInfo[3], aniInfo[4], t)
+    elseif aniInfo[1] == StoryEntityAnimationType.Rotate then
+      entity:_SetRotation(Quaternion.Lerp(aniInfo[3], aniInfo[4], t))
+    elseif aniInfo[1] == StoryEntityAnimationType.Scale then
+      entity:_SetScaling(Vector3.Lerp(aniInfo[3], aniInfo[4], t))
+    elseif aniInfo[1] == StoryEntityAnimationType.BlurChange then
+      entity:_SetPicBlur(aniInfo[3], aniInfo[4], lmathext.lerp(aniInfo[6], aniInfo[7], t))
+    elseif aniInfo[1] == StoryEntityAnimationType.Shake and not aniInfo[3]:IsComplete() then
+      allEnd = false
     end
-    -- DECOMPILER ERROR at PC151: Confused about usage of register: R12 in 'UnsetPending'
-
     if t == 1 then
-      (entity._animationData)[aniData] = nil
+      entity._animationData[aniData] = nil
     end
   end
   return allEnd
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R13 in 'UnsetPending'
-
-StoryManager._FindPath = function(self, paragraphid, sectionid)
-  -- function num : 0_31 , upvalues : _ENV
+function StoryManager:_FindPath(paragraphid, sectionid)
   self.allpaths = {}
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.allpaths)[1] = {}
+  self.allpaths[1] = {}
   self.stcount = 0
-  self:_Step(self._currentParagraphID, self._currentSectionIndex, (self.allpaths)[1])
-  local result = nil
-  for i,v in ipairs(self.allpaths) do
+  self:_Step(self._currentParagraphID, self._currentSectionIndex, self.allpaths[1])
+  local result
+  for i, v in ipairs(self.allpaths) do
     result = {}
     local isFind = false
-    for ii,vv in ipairs(v) do
+    for ii, vv in ipairs(v) do
       result[ii] = vv
       if vv[1] == paragraphid and sectionid == vv[2] then
         isFind = true
         break
       end
     end
-    do
-      if not isFind then
-        do
-          result = nil
-          -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
-      end
+    if isFind then
+      break
     end
+    result = nil
   end
   return result
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R13 in 'UnsetPending'
-
-StoryManager._CopyPathTable = function(self, copy)
-  -- function num : 0_32 , upvalues : _ENV
+function StoryManager:_CopyPathTable(copy)
   local t = {}
-  for i,v in ipairs(copy) do
+  for i, v in ipairs(copy) do
     t[i] = v
   end
   local m = t
   return t
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R13 in 'UnsetPending'
-
-StoryManager._Step = function(self, curPID, curSID, paths)
-  -- function num : 0_33 , upvalues : _ENV
-  local paragraph = (self._paragraphList)[curPID]
+function StoryManager:_Step(curPID, curSID, paths)
+  local paragraph = self._paragraphList[curPID]
   if not paragraph then
-    return 
+    return
   end
-  local section = (paragraph.Sections)[curSID]
+  local section = paragraph.Sections[curSID]
   if not section then
-    return 
+    return
   end
-  for i,v in ipairs(paths) do
+  for i, v in ipairs(paths) do
     if v[1] == curPID and v[2] == curSID then
-      (Log.error)("警告 段落跳转循环 段落=", curPID, "小节=", curSID)
-      return 
+      Log.error("警告 段落跳转循环 段落=", curPID, "小节=", curSID)
+      return
     end
   end
-  paths[#paths + 1] = {[1] = curPID, [2] = curSID}
-  local option = nil
-  for trackID,track in ipairs(section) do
+  paths[#paths + 1] = {
+    [1] = curPID,
+    [2] = curSID
+  }
+  local option
+  for trackID, track in ipairs(section) do
     if track.Options ~= nil then
       option = track.Options
     end
@@ -760,175 +507,133 @@ StoryManager._Step = function(self, curPID, curSID, paths)
   if option ~= nil then
     if option.LoopOverParagraphID == nil then
       local tmep = self:_CopyPathTable(paths)
-      self:_Step((option[1]).NextParagraphID, 1, paths)
-      for index,data in ipairs(option) do
-        -- DECOMPILER ERROR at PC74: Confused about usage of register: R13 in 'UnsetPending'
-
+      self:_Step(option[1].NextParagraphID, 1, paths)
+      for index, data in ipairs(option) do
         if index ~= 1 then
-          (self.allpaths)[#self.allpaths + 1] = self:_CopyPathTable(tmep)
-          self:_Step(data.NextParagraphID, 1, (self.allpaths)[#self.allpaths])
+          self.allpaths[#self.allpaths + 1] = self:_CopyPathTable(tmep)
+          self:_Step(data.NextParagraphID, 1, self.allpaths[#self.allpaths])
         end
       end
     else
-      do
-        for index,data in ipairs(option) do
-          self:_Step((option[index]).NextParagraphID, 1, paths)
-        end
-        self:_Step(option.LoopOverParagraphID, 1, paths)
-        do return  end
-        local showEvidence = nil
-        for trackID,track in ipairs(section) do
-          if track.ShowEvidence ~= nil then
-            showEvidence = track.ShowEvidence
-          end
-        end
-        do
-          if showEvidence ~= nil then
-            local tmep = self:_CopyPathTable(paths)
-            self:_Step((showEvidence[1]).NextParagraphID, 1, paths)
-            for index,data in ipairs(showEvidence) do
-              -- DECOMPILER ERROR at PC139: Confused about usage of register: R14 in 'UnsetPending'
-
-              if index ~= 1 then
-                (self.allpaths)[#self.allpaths + 1] = self:_CopyPathTable(tmep)
-                self:_Step(data.NextParagraphID, 1, (self.allpaths)[#self.allpaths])
-              end
-            end
-            return 
-          end
-          if section.NextParagraphID then
-            self:_Step(section.NextParagraphID, 1, paths)
-          else
-            curSID = curSID + 1
-            self:_Step(curPID, curSID, paths)
-          end
-        end
+      for index, data in ipairs(option) do
+        self:_Step(option[index].NextParagraphID, 1, paths)
+      end
+      self:_Step(option.LoopOverParagraphID, 1, paths)
+    end
+    return
+  end
+  local showEvidence
+  for trackID, track in ipairs(section) do
+    if track.ShowEvidence ~= nil then
+      showEvidence = track.ShowEvidence
+    end
+  end
+  if showEvidence ~= nil then
+    local tmep = self:_CopyPathTable(paths)
+    self:_Step(showEvidence[1].NextParagraphID, 1, paths)
+    for index, data in ipairs(showEvidence) do
+      if index ~= 1 then
+        self.allpaths[#self.allpaths + 1] = self:_CopyPathTable(tmep)
+        self:_Step(data.NextParagraphID, 1, self.allpaths[#self.allpaths])
       end
     end
+    return
+  end
+  if section.NextParagraphID then
+    self:_Step(section.NextParagraphID, 1, paths)
+  else
+    curSID = curSID + 1
+    self:_Step(curPID, curSID, paths)
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R13 in 'UnsetPending'
-
-StoryManager._Seek = function(self, paragraphid, sectionid)
-  -- function num : 0_34 , upvalues : _ENV, StoryEntity_UpdateAnimation
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
+function StoryManager:_Seek(paragraphid, sectionid)
   StoryEntityMovable._UpdateAnimation = StoryEntity_UpdateAnimation
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
   StoryCameraTrackController._UpdateAnimation = StoryEntity_UpdateAnimation
   local path = self:_FindPath(paragraphid, sectionid)
   if path == nil then
-    (Log.error)("Editor --> can not find path ", paragraphid, sectionid)
-    return 
+    Log.error("Editor --> can not find path ", paragraphid, sectionid)
+    return
   end
   self:SetAuto(true)
-  ;
-  (Log.debug)("-----------------------------》", true)
+  Log.debug("-----------------------------》", true)
   local seekCount = 1
   local pID = self._currentParagraphID
   local sID = self._currentSectionIndex
   local doCount = 0
-  local nextParagraphId = nil
-  while 1 do
-    if paragraphid ~= self._currentParagraphID or sectionid ~= self._currentSectionIndex then
-      if pID ~= self._currentParagraphID or sID ~= self._currentSectionIndex then
-        seekCount = seekCount + 1
-        pID = self._currentParagraphID
-        sID = self._currentSectionIndex
-      end
-      local optionEntity, opindex, loopOverParagraphID = nil, nil, nil
-      local paragraph = (self._paragraphList)[self._currentParagraphID]
-      do
-        do
-          if paragraph ~= nil then
-            local section = (paragraph.Sections)[self._currentSectionIndex]
-            if section ~= nil then
-              for trackID,track in ipairs(section) do
-                if track.RefEntityID then
-                  local storyEntity = (self._storyEntityList)[track.RefEntityID]
-                  if storyEntity and track.Options ~= nil and (track.Options).LoopOverParagraphID == nil then
-                    for opid,opvalue in ipairs(track.Options) do
-                      if opvalue.NextParagraphID == (path[seekCount + 1])[1] then
-                        opindex = opid
-                        optionEntity = storyEntity
-                        nextParagraphId = opvalue.NextParagraphID
-                        break
-                      end
-                    end
-                  end
-                  do
-                    if storyEntity and track.Options ~= nil and (track.Options).LoopOverParagraphID ~= nil then
-                      loopOverParagraphID = (track.Options).LoopOverParagraphID
-                      if ((track.Options)[1]).NextParagraphID < (path[seekCount])[1] then
-                        seekCount = seekCount - 1
-                      end
-                      for opid,opvalue in ipairs(track.Options) do
-                        if opvalue.NextParagraphID == (path[seekCount + 1])[1] then
-                          opindex = 1
-                          optionEntity = storyEntity
-                          nextParagraphId = opvalue.NextParagraphID
-                          break
-                        end
-                      end
-                    end
-                    do
-                      -- DECOMPILER ERROR at PC128: LeaveBlock: unexpected jumping out DO_STMT
-
-                      -- DECOMPILER ERROR at PC128: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                      -- DECOMPILER ERROR at PC128: LeaveBlock: unexpected jumping out IF_STMT
-
-                    end
-                  end
+  local nextParagraphId
+  while paragraphid ~= self._currentParagraphID or sectionid ~= self._currentSectionIndex do
+    if pID ~= self._currentParagraphID or sID ~= self._currentSectionIndex then
+      seekCount = seekCount + 1
+      pID = self._currentParagraphID
+      sID = self._currentSectionIndex
+    end
+    local optionEntity, opindex, loopOverParagraphID
+    local paragraph = self._paragraphList[self._currentParagraphID]
+    if paragraph ~= nil then
+      local section = paragraph.Sections[self._currentSectionIndex]
+      if section ~= nil then
+        for trackID, track in ipairs(section) do
+          if track.RefEntityID then
+            local storyEntity = self._storyEntityList[track.RefEntityID]
+            if storyEntity and track.Options ~= nil and track.Options.LoopOverParagraphID == nil then
+              for opid, opvalue in ipairs(track.Options) do
+                if opvalue.NextParagraphID == path[seekCount + 1][1] then
+                  opindex = opid
+                  optionEntity = storyEntity
+                  nextParagraphId = opvalue.NextParagraphID
+                  break
+                end
+              end
+            end
+            if storyEntity and track.Options ~= nil and track.Options.LoopOverParagraphID ~= nil then
+              loopOverParagraphID = track.Options.LoopOverParagraphID
+              if path[seekCount][1] > track.Options[1].NextParagraphID then
+                seekCount = seekCount - 1
+              end
+              for opid, opvalue in ipairs(track.Options) do
+                if opvalue.NextParagraphID == path[seekCount + 1][1] then
+                  opindex = 1
+                  optionEntity = storyEntity
+                  nextParagraphId = opvalue.NextParagraphID
+                  break
                 end
               end
             end
           end
-          self:Update(120000)
-          if optionEntity ~= nil and opindex ~= nil then
-            if optionEntity._className == "StoryEntityDialog" then
-              if loopOverParagraphID == nil then
-                optionEntity:_ChooseOption(opindex)
-              else
-                optionEntity:_ChooseOption(1)
-              end
-            else
-              self:SetNextParagraphID(nextParagraphId)
-              optionEntity:_DialogEnd()
-            end
-            self:Update(2000)
-          end
-          doCount = doCount + 1
-          if doCount > 1000 then
-            (Log.error)("Editor --> 无法预览该片段，请设置导航至该片段的NextParagraphID ", paragraphid, sectionid)
-            break
-          end
-          -- DECOMPILER ERROR at PC168: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC168: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC168: LeaveBlock: unexpected jumping out IF_STMT
-
         end
       end
     end
+    self:Update(120000)
+    if optionEntity ~= nil and opindex ~= nil then
+      if optionEntity._className == "StoryEntityDialog" then
+        if loopOverParagraphID == nil then
+          optionEntity:_ChooseOption(opindex)
+        else
+          optionEntity:_ChooseOption(1)
+        end
+      else
+        self:SetNextParagraphID(nextParagraphId)
+        optionEntity:_DialogEnd()
+      end
+      self:Update(2000)
+    end
+    doCount = doCount + 1
+    if 1000 < doCount then
+      Log.error("Editor --> 无法预览该片段，请设置导航至该片段的NextParagraphID ", paragraphid, sectionid)
+      break
+    end
   end
   self:SetAuto(false)
-  ;
-  (Log.debug)("-----------------------------》", false)
+  Log.debug("-----------------------------》", false)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R13 in 'UnsetPending'
-
-StoryManager._FindDialogParagraphSection = function(self, stringKey)
-  -- function num : 0_35 , upvalues : _ENV
-  for pKey,pValue in pairs(self._paragraphList) do
+function StoryManager:_FindDialogParagraphSection(stringKey)
+  for pKey, pValue in pairs(self._paragraphList) do
     if pValue.Sections then
-      for sKey,sValue in pairs(pValue.Sections) do
+      for sKey, sValue in pairs(pValue.Sections) do
         for i = 1, #sValue do
-          if (sValue[i]).DialogContentStr == stringKey then
+          if sValue[i].DialogContentStr == stringKey then
             return pKey, sKey
           end
         end
@@ -937,120 +642,93 @@ StoryManager._FindDialogParagraphSection = function(self, stringKey)
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R13 in 'UnsetPending'
-
-HomeStoryManager._FindPath = function(self, paragraphid, sectionid)
-  -- function num : 0_36 , upvalues : _ENV
+function HomeStoryManager:_FindPath(paragraphid, sectionid)
   self.allpaths = {}
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.allpaths)[1] = {}
+  self.allpaths[1] = {}
   self.stcount = 0
-  self:_Step(self._currentParagraphID, self._currentSectionIndex, (self.allpaths)[1])
-  local result = nil
-  for i,v in ipairs(self.allpaths) do
+  self:_Step(self._currentParagraphID, self._currentSectionIndex, self.allpaths[1])
+  local result
+  for i, v in ipairs(self.allpaths) do
     result = {}
     local isFind = false
-    for ii,vv in ipairs(v) do
+    for ii, vv in ipairs(v) do
       result[ii] = vv
       if vv[1] == paragraphid and sectionid == vv[2] then
         isFind = true
         break
       end
     end
-    do
-      if not isFind then
-        do
-          result = nil
-          -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
-      end
+    if isFind then
+      break
     end
+    result = nil
   end
   return result
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R13 in 'UnsetPending'
-
-HomeStoryManager._CopyPathTable = function(self, copy)
-  -- function num : 0_37 , upvalues : _ENV
+function HomeStoryManager:_CopyPathTable(copy)
   local t = {}
-  for i,v in ipairs(copy) do
+  for i, v in ipairs(copy) do
     t[i] = v
   end
   local m = t
   return t
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R13 in 'UnsetPending'
-
-HomeStoryManager._Step = function(self, curPID, curSID, paths)
-  -- function num : 0_38 , upvalues : _ENV
-  local paragraph = (self._paragraphList)[curPID]
+function HomeStoryManager:_Step(curPID, curSID, paths)
+  local paragraph = self._paragraphList[curPID]
   if not paragraph then
-    return 
+    return
   end
-  local section = (paragraph.Sections)[curSID]
+  local section = paragraph.Sections[curSID]
   if not section then
-    return 
+    return
   end
-  for i,v in ipairs(paths) do
+  for i, v in ipairs(paths) do
     if v[1] == curPID and v[2] == curSID then
-      (Log.error)("警告 段落跳转循环 段落=", curPID, "小节=", curSID)
-      return 
+      Log.error("警告 段落跳转循环 段落=", curPID, "小节=", curSID)
+      return
     end
   end
-  paths[#paths + 1] = {[1] = curPID, [2] = curSID}
-  local option = nil
-  for trackID,track in ipairs(section) do
+  paths[#paths + 1] = {
+    [1] = curPID,
+    [2] = curSID
+  }
+  local option
+  for trackID, track in ipairs(section) do
     if track.Options ~= nil then
       option = track.Options
     end
   end
-  do
-    if option ~= nil then
-      local tmep = self:_CopyPathTable(paths)
-      self:_Step((option[1]).NextParagraphID, 1, paths)
-      for index,data in ipairs(option) do
-        -- DECOMPILER ERROR at PC71: Confused about usage of register: R13 in 'UnsetPending'
-
-        if index ~= 1 then
-          (self.allpaths)[#self.allpaths + 1] = self:_CopyPathTable(tmep)
-          self:_Step(data.NextParagraphID, 1, (self.allpaths)[#self.allpaths])
-        end
+  if option ~= nil then
+    local tmep = self:_CopyPathTable(paths)
+    self:_Step(option[1].NextParagraphID, 1, paths)
+    for index, data in ipairs(option) do
+      if index ~= 1 then
+        self.allpaths[#self.allpaths + 1] = self:_CopyPathTable(tmep)
+        self:_Step(data.NextParagraphID, 1, self.allpaths[#self.allpaths])
       end
-      return 
     end
-    if section.NextParagraphID then
-      self:_Step(section.NextParagraphID, 1, paths)
-    else
-      curSID = curSID + 1
-      self:_Step(curPID, curSID, paths)
-    end
+    return
+  end
+  if section.NextParagraphID then
+    self:_Step(section.NextParagraphID, 1, paths)
+  else
+    curSID = curSID + 1
+    self:_Step(curPID, curSID, paths)
   end
 end
 
-local homeStoryEntity_UpdateAnimation = function(entity, time)
-  -- function num : 0_39 , upvalues : _ENV
+local function homeStoryEntity_UpdateAnimation(entity, time)
   local sortedAnimData = {}
-  for aniData,aniInfo in pairs(entity._animationData) do
-    (table.insert)(sortedAnimData, {aniData = aniData, aniInfo = aniInfo})
+  for aniData, aniInfo in pairs(entity._animationData) do
+    table.insert(sortedAnimData, {aniData = aniData, aniInfo = aniInfo})
   end
-  ;
-  (table.sort)(sortedAnimData, function(a, b)
-    -- function num : 0_39_0
-    do return (a.aniInfo)[2] < (b.aniInfo)[2] end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(sortedAnimData, function(a, b)
+    return a.aniInfo[2] < b.aniInfo[2]
+  end)
   local allEnd = true
-  for _,anim in ipairs(sortedAnimData) do
+  for _, anim in ipairs(sortedAnimData) do
     allEnd = false
     local t = 1
     local aniData = anim.aniData
@@ -1058,112 +736,78 @@ local homeStoryEntity_UpdateAnimation = function(entity, time)
     if aniData.Duration > 0 then
       t = (time - aniInfo[2]) / aniData.Duration
     end
-    if t > 1 then
+    if 1 < t then
       t = 1
     end
     if aniInfo[1] == HomeStoryEntityAnimationType.AlphaChange then
-      entity:_SetAlpha((lmathext.lerp)(aniInfo[3], aniInfo[4], t))
-    else
-      if aniInfo[1] == HomeStoryEntityAnimationType.BrightnessChange then
-        entity:_SetBrightness((lmathext.lerp)(aniInfo[3], aniInfo[4], t))
-      else
-        if aniInfo[1] == HomeStoryEntityAnimationType.Translate then
-          entity:_SetPosition((Vector3.Lerp)(aniInfo[3], aniInfo[4], t))
-        else
-          if aniInfo[1] == HomeStoryEntityAnimationType.Rotate then
-            entity:_SetRotation((Quaternion.Lerp)(aniInfo[3], aniInfo[4], t))
-          else
-            if aniInfo[1] == HomeStoryEntityAnimationType.Scale then
-              entity:_SetScaling((Vector3.Lerp)(aniInfo[3], aniInfo[4], t))
-            else
-              if aniInfo[1] == HomeStoryEntityAnimationType.Shake and not (aniInfo[3]):IsComplete() then
-                allEnd = false
-              end
-            end
-          end
-        end
-      end
+      entity:_SetAlpha(lmathext.lerp(aniInfo[3], aniInfo[4], t))
+    elseif aniInfo[1] == HomeStoryEntityAnimationType.BrightnessChange then
+      entity:_SetBrightness(lmathext.lerp(aniInfo[3], aniInfo[4], t))
+    elseif aniInfo[1] == HomeStoryEntityAnimationType.Translate then
+      entity:_SetPosition(Vector3.Lerp(aniInfo[3], aniInfo[4], t))
+    elseif aniInfo[1] == HomeStoryEntityAnimationType.Rotate then
+      entity:_SetRotation(Quaternion.Lerp(aniInfo[3], aniInfo[4], t))
+    elseif aniInfo[1] == HomeStoryEntityAnimationType.Scale then
+      entity:_SetScaling(Vector3.Lerp(aniInfo[3], aniInfo[4], t))
+    elseif aniInfo[1] == HomeStoryEntityAnimationType.Shake and not aniInfo[3]:IsComplete() then
+      allEnd = false
     end
-    -- DECOMPILER ERROR at PC122: Confused about usage of register: R12 in 'UnsetPending'
-
     if t == 1 then
-      (entity._animationData)[aniData] = nil
+      entity._animationData[aniData] = nil
     end
   end
   return allEnd
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R14 in 'UnsetPending'
-
-HomeStoryManager._Seek = function(self, paragraphid, sectionid)
-  -- function num : 0_40 , upvalues : _ENV, homeStoryEntity_UpdateAnimation
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
+function HomeStoryManager:_Seek(paragraphid, sectionid)
   HomeStoryEntityMovable._UpdateAnimation = homeStoryEntity_UpdateAnimation
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
   HomeStoryCameraTrackController._UpdateAnimation = homeStoryEntity_UpdateAnimation
   local path = self:_FindPath(paragraphid, sectionid)
   if path == nil then
-    (Log.error)("Editor --> can not find path ", paragraphid, sectionid)
-    return 
+    Log.error("Editor --> can not find path ", paragraphid, sectionid)
+    return
   end
   self:SetAuto(true)
-  ;
-  (Log.debug)("-----------------------------》", true)
+  Log.debug("-----------------------------》", true)
   local seekCount = 1
   local pID = self._currentParagraphID
   local sID = self._currentSectionIndex
   local doCount = 0
-  while 1 do
-    if paragraphid ~= self._currentParagraphID or sectionid ~= self._currentSectionIndex then
-      if pID ~= self._currentParagraphID or sID ~= self._currentSectionIndex then
-        seekCount = seekCount + 1
-        pID = self._currentParagraphID
-        sID = self._currentSectionIndex
-      end
-      do
-        local optionEntity, opindex = nil, nil
-        opindex = self:GetEntityAndIdx(seekCount, path)
-        self:Update(120000)
-        if optionEntity ~= nil and opindex ~= nil then
-          optionEntity:_ChooseOption(opindex)
-          self:Update(2000)
-        end
-        doCount = doCount + 1
-        if doCount > 1000 then
-          (Log.error)("Editor --> 无法预览该片段，请设置导航至该片段的NextParagraphID ", paragraphid, sectionid)
-          break
-        end
-        -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  while paragraphid ~= self._currentParagraphID or sectionid ~= self._currentSectionIndex do
+    if pID ~= self._currentParagraphID or sID ~= self._currentSectionIndex then
+      seekCount = seekCount + 1
+      pID = self._currentParagraphID
+      sID = self._currentSectionIndex
+    end
+    local optionEntity, opindex
+    opindex, optionEntity = self:GetEntityAndIdx(seekCount, path)
+    self:Update(120000)
+    if optionEntity ~= nil and opindex ~= nil then
+      optionEntity:_ChooseOption(opindex)
+      self:Update(2000)
+    end
+    doCount = doCount + 1
+    if 1000 < doCount then
+      Log.error("Editor --> 无法预览该片段，请设置导航至该片段的NextParagraphID ", paragraphid, sectionid)
+      break
     end
   end
-  -- DECOMPILER ERROR at PC77: Overwrote pending register: R8 in 'AssignReg'
-
-  optionEntity(self, false)
-  ;
-  (Log.debug)("-----------------------------》", false)
+  self:SetAuto(false)
+  Log.debug("-----------------------------》", false)
 end
 
--- DECOMPILER ERROR at PC132: Confused about usage of register: R14 in 'UnsetPending'
-
-HomeStoryManager.GetEntityAndIdx = function(self, seekCount, path)
-  -- function num : 0_41 , upvalues : _ENV
-  local opindex, optionEntity = nil, nil
-  local paragraph = (self._paragraphList)[self._currentParagraphID]
+function HomeStoryManager:GetEntityAndIdx(seekCount, path)
+  local opindex, optionEntity
+  local paragraph = self._paragraphList[self._currentParagraphID]
   if paragraph ~= nil then
-    local section = (paragraph.Sections)[self._currentSectionIndex]
+    local section = paragraph.Sections[self._currentSectionIndex]
     if section ~= nil then
-      for trackID,track in ipairs(section) do
+      for trackID, track in ipairs(section) do
         if track.RefEntityID then
-          local storyEntity = (self._storyEntityList)[track.RefEntityID]
+          local storyEntity = self._storyEntityList[track.RefEntityID]
           if storyEntity and track.Options ~= nil then
-            for opid,opvalue in ipairs(track.Options) do
-              if opvalue.NextParagraphID == (path[seekCount + 1])[1] then
+            for opid, opvalue in ipairs(track.Options) do
+              if opvalue.NextParagraphID == path[seekCount + 1][1] then
                 opindex = opid
                 optionEntity = storyEntity
                 break
@@ -1174,145 +818,95 @@ HomeStoryManager.GetEntityAndIdx = function(self, seekCount, path)
       end
     end
   end
-  do
-    return opindex, optionEntity
-  end
+  return opindex, optionEntity
 end
 
 _class("EditorAvgMinigameComponent", Object)
--- DECOMPILER ERROR at PC139: Confused about usage of register: R14 in 'UnsetPending'
 
-EditorAvgMinigameComponent.Constructor = function(self)
-  -- function num : 0_42 , upvalues : _ENV
+function EditorAvgMinigameComponent:Constructor()
   self.m_component_info = AVGStoryComponentClientInfo:New()
 end
 
--- DECOMPILER ERROR at PC142: Confused about usage of register: R14 in 'UnsetPending'
-
-EditorAvgMinigameComponent.HandleSetCurrentLocation = function(self, TT, asyncRes, nodeID)
-  -- function num : 0_43
+function EditorAvgMinigameComponent:HandleSetCurrentLocation(TT, asyncRes, nodeID)
   return 0
 end
 
--- DECOMPILER ERROR at PC145: Confused about usage of register: R14 in 'UnsetPending'
-
-EditorAvgMinigameComponent.HandleUpdateNodeData = function(self, TT, asyncRes, data, complate_node_id)
-  -- function num : 0_44
+function EditorAvgMinigameComponent:HandleUpdateNodeData(TT, asyncRes, data, complate_node_id)
   return 0
 end
 
--- DECOMPILER ERROR at PC148: Confused about usage of register: R14 in 'UnsetPending'
-
-EditorAvgMinigameComponent.HandleManualChoose = function(self, TT, asyncRes, manual_id)
-  -- function num : 0_45
+function EditorAvgMinigameComponent:HandleManualChoose(TT, asyncRes, manual_id)
   return 0
 end
 
--- DECOMPILER ERROR at PC151: Confused about usage of register: R14 in 'UnsetPending'
-
-EditorAvgMinigameComponent.HandleComplateEnding = function(self, TT, asyncRes, ending_id)
-  -- function num : 0_46
+function EditorAvgMinigameComponent:HandleComplateEnding(TT, asyncRes, ending_id)
   return 0
 end
 
--- DECOMPILER ERROR at PC154: Confused about usage of register: R14 in 'UnsetPending'
-
-EditorAvgMinigameComponent.HandleAcceptCgReward = function(self, TT, asyncRes, CgItemTemplateid)
-  -- function num : 0_47
+function EditorAvgMinigameComponent:HandleAcceptCgReward(TT, asyncRes, CgItemTemplateid)
 end
 
--- DECOMPILER ERROR at PC157: Confused about usage of register: R14 in 'UnsetPending'
-
-EditorAvgMinigameComponent.HandleGetBadgeReward = function(self, TT, asyncRes, badge_reward_id)
-  -- function num : 0_48
+function EditorAvgMinigameComponent:HandleGetBadgeReward(TT, asyncRes, badge_reward_id)
   return 0
 end
 
--- DECOMPILER ERROR at PC160: Confused about usage of register: R14 in 'UnsetPending'
-
-EditorAvgMinigameComponent.HandleShowEvidence = function(self, TT, asyncRes, evidence_manual_id, evidence_id)
-  -- function num : 0_49
+function EditorAvgMinigameComponent:HandleShowEvidence(TT, asyncRes, evidence_manual_id, evidence_id)
   return 0
 end
 
--- DECOMPILER ERROR at PC163: Confused about usage of register: R14 in 'UnsetPending'
-
-EditorAvgMinigameComponent.HandleGainEvidence = function(self, TT, asyncRes, evidence_id)
-  -- function num : 0_50
+function EditorAvgMinigameComponent:HandleGainEvidence(TT, asyncRes, evidence_id)
   return 0
 end
 
--- DECOMPILER ERROR at PC166: Confused about usage of register: R14 in 'UnsetPending'
-
-HomeMovieStoryManager._Seek = function(self, paragraphid, sectionid)
-  -- function num : 0_51 , upvalues : _ENV, homeStoryEntity_UpdateAnimation
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
+function HomeMovieStoryManager:_Seek(paragraphid, sectionid)
   HomeStoryEntityMovable._UpdateAnimation = homeStoryEntity_UpdateAnimation
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
   HomeStoryCameraTrackController._UpdateAnimation = homeStoryEntity_UpdateAnimation
   local path = self:_FindPath(paragraphid, sectionid)
   if path == nil then
-    (Log.error)("Editor --> can not find path ", paragraphid, sectionid)
-    return 
+    Log.error("Editor --> can not find path ", paragraphid, sectionid)
+    return
   end
   self:SetAuto(true)
-  ;
-  (Log.debug)("-----------------------------》", true)
+  Log.debug("-----------------------------》", true)
   local seekCount = 1
   local pID = self._currentParagraphID
   local sID = self._currentSectionIndex
   local doCount = 0
-  while 1 do
-    if paragraphid ~= self._currentParagraphID or sectionid ~= self._currentSectionIndex then
-      if pID ~= self._currentParagraphID or sID ~= self._currentSectionIndex then
-        seekCount = seekCount + 1
-        pID = self._currentParagraphID
-        sID = self._currentSectionIndex
-      end
-      do
-        local optionEntity, opindex = nil, nil
-        opindex = self:GetEntityAndIdx(seekCount, path)
-        self:Update(120000)
-        if optionEntity ~= nil and opindex ~= nil then
-          optionEntity:_EditorChooseOption(opindex)
-          self:Update(2000)
-        end
-        doCount = doCount + 1
-        if doCount > 1000 then
-          (Log.error)("Editor --> 无法预览该片段，请设置导航至该片段的NextParagraphID ", paragraphid, sectionid)
-          break
-        end
-        -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  while paragraphid ~= self._currentParagraphID or sectionid ~= self._currentSectionIndex do
+    if pID ~= self._currentParagraphID or sID ~= self._currentSectionIndex then
+      seekCount = seekCount + 1
+      pID = self._currentParagraphID
+      sID = self._currentSectionIndex
+    end
+    local optionEntity, opindex
+    opindex, optionEntity = self:GetEntityAndIdx(seekCount, path)
+    self:Update(120000)
+    if optionEntity ~= nil and opindex ~= nil then
+      optionEntity:_EditorChooseOption(opindex)
+      self:Update(2000)
+    end
+    doCount = doCount + 1
+    if 1000 < doCount then
+      Log.error("Editor --> 无法预览该片段，请设置导航至该片段的NextParagraphID ", paragraphid, sectionid)
+      break
     end
   end
-  -- DECOMPILER ERROR at PC77: Overwrote pending register: R8 in 'AssignReg'
-
-  optionEntity(self, false)
-  ;
-  (Log.debug)("-----------------------------》", false)
+  self:SetAuto(false)
+  Log.debug("-----------------------------》", false)
 end
 
--- DECOMPILER ERROR at PC169: Confused about usage of register: R14 in 'UnsetPending'
-
-HomeMovieStoryManager.GetEntityAndIdx = function(self, seekCount, path)
-  -- function num : 0_52 , upvalues : _ENV
-  local opindex, optionEntity = nil, nil
-  local paragraph = (self._paragraphList)[self._currentParagraphID]
+function HomeMovieStoryManager:GetEntityAndIdx(seekCount, path)
+  local opindex, optionEntity
+  local paragraph = self._paragraphList[self._currentParagraphID]
   if paragraph ~= nil then
-    local section = (paragraph.Sections)[self._currentSectionIndex]
+    local section = paragraph.Sections[self._currentSectionIndex]
     if section ~= nil then
-      for trackID,track in ipairs(section) do
+      for trackID, track in ipairs(section) do
         if track.RefEntityID then
-          local storyEntity = (self._storyEntityList)[track.RefEntityID]
+          local storyEntity = self._storyEntityList[track.RefEntityID]
           if storyEntity and track.Options ~= nil then
-            for opid,opvalue in ipairs(track.Options) do
-              if opvalue.NextParagraphID == (path[seekCount + 1])[1] then
+            for opid, opvalue in ipairs(track.Options) do
+              if opvalue.NextParagraphID == path[seekCount + 1][1] then
                 opindex = opid
                 optionEntity = storyEntity
                 break
@@ -1323,115 +917,87 @@ HomeMovieStoryManager.GetEntityAndIdx = function(self, seekCount, path)
       end
     end
   end
-  do
-    return opindex, optionEntity
-  end
+  return opindex, optionEntity
 end
 
--- DECOMPILER ERROR at PC172: Confused about usage of register: R14 in 'UnsetPending'
-
-HomeMovieStoryManager._FindPath = function(self, paragraphid, sectionid)
-  -- function num : 0_53 , upvalues : _ENV
+function HomeMovieStoryManager:_FindPath(paragraphid, sectionid)
   self.allpaths = {}
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.allpaths)[1] = {}
+  self.allpaths[1] = {}
   self.stcount = 0
-  self:_Step(self._currentParagraphID, self._currentSectionIndex, (self.allpaths)[1])
-  local result = nil
-  for i,v in ipairs(self.allpaths) do
+  self:_Step(self._currentParagraphID, self._currentSectionIndex, self.allpaths[1])
+  local result
+  for i, v in ipairs(self.allpaths) do
     result = {}
     local isFind = false
-    for ii,vv in ipairs(v) do
+    for ii, vv in ipairs(v) do
       result[ii] = vv
       if vv[1] == paragraphid and sectionid == vv[2] then
         isFind = true
         break
       end
     end
-    do
-      if not isFind then
-        do
-          result = nil
-          -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
-      end
+    if isFind then
+      break
     end
+    result = nil
   end
   return result
 end
 
--- DECOMPILER ERROR at PC175: Confused about usage of register: R14 in 'UnsetPending'
-
-HomeMovieStoryManager._CopyPathTable = function(self, copy)
-  -- function num : 0_54 , upvalues : _ENV
+function HomeMovieStoryManager:_CopyPathTable(copy)
   local t = {}
-  for i,v in ipairs(copy) do
+  for i, v in ipairs(copy) do
     t[i] = v
   end
   local m = t
   return t
 end
 
--- DECOMPILER ERROR at PC178: Confused about usage of register: R14 in 'UnsetPending'
-
-HomeMovieStoryManager._Step = function(self, curPID, curSID, paths)
-  -- function num : 0_55 , upvalues : _ENV
-  local paragraph = (self._paragraphList)[curPID]
+function HomeMovieStoryManager:_Step(curPID, curSID, paths)
+  local paragraph = self._paragraphList[curPID]
   if not paragraph then
-    return 
+    return
   end
-  local section = (paragraph.Sections)[curSID]
+  local section = paragraph.Sections[curSID]
   if not section then
-    return 
+    return
   end
-  for i,v in ipairs(paths) do
+  for i, v in ipairs(paths) do
     if v[1] == curPID and v[2] == curSID then
-      (Log.error)("警告 段落跳转循环 段落=", curPID, "小节=", curSID)
-      return 
+      Log.error("警告 段落跳转循环 段落=", curPID, "小节=", curSID)
+      return
     end
   end
-  paths[#paths + 1] = {[1] = curPID, [2] = curSID}
-  local option = nil
-  for trackID,track in ipairs(section) do
+  paths[#paths + 1] = {
+    [1] = curPID,
+    [2] = curSID
+  }
+  local option
+  for trackID, track in ipairs(section) do
     if track.Options ~= nil then
       option = track.Options
     end
   end
-  do
-    if option ~= nil then
-      local tmep = self:_CopyPathTable(paths)
-      self:_Step((option[1]).NextParagraphID, 1, paths)
-      for index,data in ipairs(option) do
-        -- DECOMPILER ERROR at PC71: Confused about usage of register: R13 in 'UnsetPending'
-
-        if index ~= 1 then
-          (self.allpaths)[#self.allpaths + 1] = self:_CopyPathTable(tmep)
-          self:_Step(data.NextParagraphID, 1, (self.allpaths)[#self.allpaths])
-        end
-      end
-      return 
-    end
-    if section.Branch then
-      for _,v in pairs(section.Branch) do
-        self:_Step(v.NextParagraphID, 1, paths)
+  if option ~= nil then
+    local tmep = self:_CopyPathTable(paths)
+    self:_Step(option[1].NextParagraphID, 1, paths)
+    for index, data in ipairs(option) do
+      if index ~= 1 then
+        self.allpaths[#self.allpaths + 1] = self:_CopyPathTable(tmep)
+        self:_Step(data.NextParagraphID, 1, self.allpaths[#self.allpaths])
       end
     end
-    do
-      if section.NextParagraphID then
-        self:_Step(section.NextParagraphID, 1, paths)
-      else
-        curSID = curSID + 1
-        self:_Step(curPID, curSID, paths)
-      end
+    return
+  end
+  if section.Branch then
+    for _, v in pairs(section.Branch) do
+      self:_Step(v.NextParagraphID, 1, paths)
     end
   end
+  if section.NextParagraphID then
+    self:_Step(section.NextParagraphID, 1, paths)
+  else
+    curSID = curSID + 1
+    self:_Step(curPID, curSID, paths)
+  end
 end
-
-

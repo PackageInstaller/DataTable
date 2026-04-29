@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_pet_1601821_chain_jump_damage_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayPet1601821ChainJumpDamageInstruction", BaseInstruction)
 PlayPet1601821ChainJumpDamageInstruction = PlayPet1601821ChainJumpDamageInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayPet1601821ChainJumpDamageInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayPet1601821ChainJumpDamageInstruction:Constructor(paramList)
   self._casterAnimateTrigger = paramList.casterAnimateTrigger
   self._jumpTimeMs = tonumber(paramList.jumpTimeMs)
   self._landingTimeMs = tonumber(paramList.landingTimeMs)
@@ -18,39 +11,39 @@ PlayPet1601821ChainJumpDamageInstruction.Constructor = function(self, paramList)
   self._waitDamageTimeMs = tonumber(paramList.waitDamageTimeMs)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPet1601821ChainJumpDamageInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayPet1601821ChainJumpDamageInstruction:GetCacheResource()
   local t = {}
   if self._centerGridEffectID and self._centerGridEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._centerGridEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._centerGridEffectID].ResPath,
+      1
+    })
   end
-  if self._damageGridEffectID and self._damageGridEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._damageGridEffectID]).ResPath, 10})
+  if self._damageGridEffectID and 0 < self._damageGridEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._damageGridEffectID].ResPath,
+      10
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPet1601821ChainJumpDamageInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayPet1601821ChainJumpDamageInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
-  if not skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.DynamicCenterDamage) then
-    local resultArray = {}
-  end
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.DynamicCenterDamage) or {}
   local result = resultArray[1]
   if not result then
-    return 
+    return
   end
   local centerScope = result:GetDamageScope()
   local viewCenterPos = centerScope:GetCenterPos()
   local effectService = world:GetService("Effect")
   effectService:CreateCommonGridEffect(self._centerGridEffectID, viewCenterPos, casterEntity:GetRenderGridDirection())
   local viewPosition = casterEntity:GetRenderGridPosition()
-  casterEntity:SetAnimatorControllerTriggers({self._casterAnimateTrigger})
+  casterEntity:SetAnimatorControllerTriggers({
+    self._casterAnimateTrigger
+  })
   YIELD(TT, self._jumpTimeMs)
   casterEntity:SetLocation(viewCenterPos)
   YIELD(TT, self._landingTimeMs)
@@ -62,44 +55,43 @@ PlayPet1601821ChainJumpDamageInstruction.DoInstruction = function(self, TT, cast
   local curDamageResultStageIndex = phaseContext:GetCurDamageResultStageIndex() or 1
   local damageResults = result:GetDamageResults()
   local damageByPosIndex = {}
-  for _,damageResult in ipairs(damageResults) do
+  for _, damageResult in ipairs(damageResults) do
     local target = damageResult:GetTargetID()
     local damageInfo = damageResult:GetDamageInfo(curDamageInfoIndex)
-    if target and target > 0 and damageInfo then
+    if target and 0 < target and damageInfo then
       local eTarget = world:GetEntityByID(target)
       local damageGridPos = damageResult:GetGridPos()
-      local posIndex = (Vector2.Pos2Index)(damageGridPos)
+      local posIndex = Vector2.Pos2Index(damageGridPos)
       if not damageByPosIndex[posIndex] then
         damageByPosIndex[posIndex] = {}
       end
-      ;
-      (table.insert)(damageByPosIndex[posIndex], damageResult)
+      table.insert(damageByPosIndex[posIndex], damageResult)
     end
   end
   local damageScope = result:GetDamageScope()
   local scopeGridSort = DataSortScopeGridRangeInstruction:New({sortType = 1})
   local res, maxGridCount = scopeGridSort:_SortGridNearToFar(damageScope:GetAttackRange(), viewCenterPos)
   for rangeIndex = 1, maxGridCount do
-    for _,range in pairs(res) do
+    for _, range in pairs(res) do
       if range then
         local posList = range[rangeIndex]
         if posList then
-          local len = (table.count)(posList)
+          local len = table.count(posList)
           for i = 1, len do
             local pos = posList[i]
             local targetPos = pos
             effectService:CreateWorldPositionDirectionEffect(self._damageGridEffectID, targetPos, targetPos - viewCenterPos)
-            local posIndex = (Vector2.Pos2Index)(pos)
+            local posIndex = Vector2.Pos2Index(pos)
             if damageByPosIndex[posIndex] then
               local damageResultsAtPos = damageByPosIndex[posIndex]
-              for _,damageResult in ipairs(damageResultsAtPos) do
+              for _, damageResult in ipairs(damageResultsAtPos) do
                 local target = damageResult:GetTargetID()
                 local damageInfo = damageResult:GetDamageInfo(curDamageInfoIndex)
-                if target and target > 0 and damageInfo then
+                if target and 0 < target and damageInfo then
                   local eTarget = world:GetEntityByID(target)
                   local damageGridPos = damageResult:GetGridPos()
-                  local beHitParam = (((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(eTarget)):SetHandleBeHitParam_HitAnimName("hit")):SetHandleBeHitParam_HitEffectID(0)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damageGridPos)):SetHandleBeHitParam_HitTurnTarget(1)):SetHandleBeHitParam_DeathClear(0)):SetHandleBeHitParam_IsFinalHit(playFinalAttack)):SetHandleBeHitParam_SkillID(skillID)):SetHandleBeHitParam_DamageIndex(curDamageIndex)
-                  local hitBackTaskID = (TaskManager:GetInstance()):CoreGameStartTask(playSkillService.HandleBeHit, playSkillService, beHitParam)
+                  local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(eTarget):SetHandleBeHitParam_HitAnimName("hit"):SetHandleBeHitParam_HitEffectID(0):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damageGridPos):SetHandleBeHitParam_HitTurnTarget(1):SetHandleBeHitParam_DeathClear(0):SetHandleBeHitParam_IsFinalHit(playFinalAttack):SetHandleBeHitParam_SkillID(skillID):SetHandleBeHitParam_DamageIndex(curDamageIndex)
+                  local hitBackTaskID = TaskManager:GetInstance():CoreGameStartTask(playSkillService.HandleBeHit, playSkillService, beHitParam)
                   phaseContext:AddPhaseTask(hitBackTaskID)
                 end
               end
@@ -113,5 +105,3 @@ PlayPet1601821ChainJumpDamageInstruction.DoInstruction = function(self, TT, cast
   YIELD(TT, self._waitDamageTimeMs)
   casterEntity:SetLocation(viewPosition)
 end
-
-

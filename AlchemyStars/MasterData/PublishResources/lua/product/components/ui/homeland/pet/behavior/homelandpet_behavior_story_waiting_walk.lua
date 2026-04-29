@@ -1,165 +1,113 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/homelandpet_behavior_story_waiting_walk.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homelandpet_behavior_base")
 _class("HomelandPetBehaviorStoryWaitingWalk", HomelandPetBehaviorBase)
 HomelandPetBehaviorStoryWaitingWalk = HomelandPetBehaviorStoryWaitingWalk
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetBehaviorStoryWaitingWalk.Constructor = function(self, behaviorType, pet)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomelandPetBehaviorStoryWaitingWalk.super).Constructor)(self, behaviorType, pet)
+function HomelandPetBehaviorStoryWaitingWalk:Constructor(behaviorType, pet)
+  HomelandPetBehaviorStoryWaitingWalk.super.Constructor(self, behaviorType, pet)
   self._yieldTime = 0
   self._moveComponent = self:GetComponent(HomelandPetComponentType.Move)
   self._bubbleComponent = self:GetComponent(HomelandPetComponentType.Bubble)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorStoryWaitingWalk.Enter = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((HomelandPetBehaviorStoryWaitingWalk.super).Enter)(self)
-  ;
-  (self._bubbleComponent):Show()
+function HomelandPetBehaviorStoryWaitingWalk:Enter()
+  HomelandPetBehaviorStoryWaitingWalk.super.Enter(self)
+  self._bubbleComponent:Show()
   if self._inited then
     local target = self:GetNextTarget()
     if target then
-      (self._moveComponent):SetTarget(target)
+      self._moveComponent:SetTarget(target)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorStoryWaitingWalk.Exit = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((HomelandPetBehaviorStoryWaitingWalk.super).Exit)(self)
+function HomelandPetBehaviorStoryWaitingWalk:Exit()
+  HomelandPetBehaviorStoryWaitingWalk.super.Exit(self)
   self._yieldTime = 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorStoryWaitingWalk.CanInterrupt = function(self)
-  -- function num : 0_3
+function HomelandPetBehaviorStoryWaitingWalk:CanInterrupt()
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorStoryWaitingWalk.Update = function(self, dms)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandPetBehaviorStoryWaitingWalk:Update(dms)
   if self._type then
     self._yieldTime = self._yieldTime - dms
     if self._yieldTime <= 0 then
       self._yieldTime = 1000
-      if (self._moveComponent).state == HomelandPetComponentState.Success then
-        (self._moveComponent):Stop()
-        ;
-        (self._moveComponent):Resting()
+      if self._moveComponent.state == HomelandPetComponentState.Success then
+        self._moveComponent:Stop()
+        self._moveComponent:Resting()
         local target = self:GetNextTarget()
         if target then
-          (self._moveComponent):SetTarget(target)
+          self._moveComponent:SetTarget(target)
         end
       end
     end
   end
-  do
-    ;
-    ((HomelandPetBehaviorStoryWaitingWalk.super).Update)(self, dms)
-  end
+  HomelandPetBehaviorStoryWaitingWalk.super.Update(self, dms)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorStoryWaitingWalk.GetNextTarget = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local target = nil
+function HomelandPetBehaviorStoryWaitingWalk:GetNextTarget()
+  local target
   if self._type == 1 then
-    target = (HomelandNavmeshTool:GetInstance()):GetRandomPositionCircle(self._r, self._coc)
-  else
-    if self._type == 2 then
-      local randomList = {}
-      for i = 1, #self._posList do
-        if self._oldPosIdx == i then
-          do
-            local data = {}
-            data.idx = i
-            data.pos = (self._posList)[i]
-            ;
-            (table.insert)(randomList, data)
-            -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
-      if #randomList > 0 then
-        local idx = (math.random)(1, #randomList)
-        local data = randomList[idx]
-        target = data.pos
-        self._oldPosIdx = data.idx
+    target = HomelandNavmeshTool:GetInstance():GetRandomPositionCircle(self._r, self._coc)
+  elseif self._type == 2 then
+    local randomList = {}
+    for i = 1, #self._posList do
+      if self._oldPosIdx == i then
       else
-        do
-          do
-            ;
-            (Log.debug)("###[HomelandPetBehaviorStoryWaitingWalk] randomList is empty !")
-            return target
-          end
-        end
+        local data = {}
+        data.idx = i
+        data.pos = self._posList[i]
+        table.insert(randomList, data)
       end
     end
+    if 0 < #randomList then
+      local idx = math.random(1, #randomList)
+      local data = randomList[idx]
+      target = data.pos
+      self._oldPosIdx = data.idx
+    else
+      Log.debug("###[HomelandPetBehaviorStoryWaitingWalk] randomList is empty !")
+    end
   end
+  return target
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorStoryWaitingWalk.TriggerSucc = function(self, type, cfg)
-  -- function num : 0_6 , upvalues : _ENV
+function HomelandPetBehaviorStoryWaitingWalk:TriggerSucc(type, cfg)
   self.triggerSuccParam = {type, cfg}
   self._type = type
-  local startPos = nil
+  local startPos
   local succ = true
   if self._type == 1 then
-    self._coc = Vector3((cfg.WalkPos)[1], (cfg.WalkPos)[2], (cfg.WalkPos)[3])
+    self._coc = Vector3(cfg.WalkPos[1], cfg.WalkPos[2], cfg.WalkPos[3])
     self._r = cfg.WalkR
     startPos = self._coc
-  else
-    if self._type == 2 then
-      self._posList = {}
-      for i = 1, #cfg.WalkPoints do
-        local pos = Vector3(((cfg.WalkPoints)[i])[1], ((cfg.WalkPoints)[i])[2], ((cfg.WalkPoints)[i])[3])
-        ;
-        (table.insert)(self._posList, pos)
-      end
-      if #self._posList <= 0 then
-        self._type = nil
-        ;
-        (Log.error)("###[HomelandPetBehaviorStoryWaitingWalk] 触发失败，#self._posList <= 0。ID-->", cfg.ID)
-        succ = false
-      else
-        startPos = (self._posList)[1]
-      end
-    else
-      self._type = nil
-      ;
-      (Log.error)("###[HomelandPetBehaviorStoryWaitingWalk] 触发失败，type[", type, "] ID-->", cfg.ID)
-      succ = false
+  elseif self._type == 2 then
+    self._posList = {}
+    for i = 1, #cfg.WalkPoints do
+      local pos = Vector3(cfg.WalkPoints[i][1], cfg.WalkPoints[i][2], cfg.WalkPoints[i][3])
+      table.insert(self._posList, pos)
     end
+    if #self._posList <= 0 then
+      self._type = nil
+      Log.error("###[HomelandPetBehaviorStoryWaitingWalk] 触发失败，#self._posList <= 0。ID-->", cfg.ID)
+      succ = false
+    else
+      startPos = self._posList[1]
+    end
+  else
+    self._type = nil
+    Log.error("###[HomelandPetBehaviorStoryWaitingWalk] 触发失败，type[", type, "] ID-->", cfg.ID)
+    succ = false
   end
   if startPos then
-    (self._pet):SetPosition(startPos)
+    self._pet:SetPosition(startPos)
     local target = self:GetNextTarget()
     if target then
-      (self._moveComponent):SetTarget(target)
+      self._moveComponent:SetTarget(target)
     end
   end
-  do
-    self._inited = true
-    return succ
-  end
+  self._inited = true
+  return succ
 end
-
-

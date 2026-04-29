@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/viewteam/ui_worldboss_viewteam.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorldBossViewTeam", UIController)
 UIWorldBossViewTeam = UIWorldBossViewTeam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossViewTeam.Constructor = function(self)
-  -- function num : 0_0
+function UIWorldBossViewTeam:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeam.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIWorldBossViewTeam:LoadDataOnEnter(TT, res, uiParams)
   self._simpleRank = uiParams[1]
   self._teamInfo = uiParams[2]
   if self._simpleRank == nil or self._teamInfo == nil then
@@ -22,10 +12,7 @@ UIWorldBossViewTeam.LoadDataOnEnter = function(self, TT, res, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeam.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWorldBossViewTeam:OnShow(uiParams)
   self._uiWidget = self:GetUIComponent("RectTransform", "uiWidget")
   self._btnAnywhere = self:GetUIComponent("RectTransform", "btnAnywhere")
   self._animation = self:GetUIComponent("Animation", "animation")
@@ -44,160 +31,104 @@ UIWorldBossViewTeam.OnShow = function(self, uiParams)
   self:DefaultIndex()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeam.OnHide = function(self)
-  -- function num : 0_3
+function UIWorldBossViewTeam:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeam.BtnAnywhereOnClick = function(self, go)
-  -- function num : 0_4
+function UIWorldBossViewTeam:BtnAnywhereOnClick(go)
   self:EnterFullScreenBg(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeam.BtnCloseOnClick = function(self, go)
-  -- function num : 0_5
+function UIWorldBossViewTeam:BtnCloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeam.EnterFullScreenBg = function(self, isEnter)
-  -- function num : 0_6
-  ((self._uiWidget).gameObject):SetActive(not isEnter)
-  ;
-  ((self._btnAnywhere).gameObject):SetActive(isEnter)
+function UIWorldBossViewTeam:EnterFullScreenBg(isEnter)
+  self._uiWidget.gameObject:SetActive(not isEnter)
+  self._btnAnywhere.gameObject:SetActive(isEnter)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeam.FlushSimple = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg_header = (Cfg.cfg_role_head_image)[(self._simpleRank).head]
+function UIWorldBossViewTeam:FlushSimple()
+  local cfg_header = Cfg.cfg_role_head_image[self._simpleRank.head]
   if cfg_header then
-    (self._playerHeadLoader):LoadImage(cfg_header.Icon)
+    self._playerHeadLoader:LoadImage(cfg_header.Icon)
   else
-    ;
-    ((self._playerHeadLoader).gameObject):SetActive(false)
+    self._playerHeadLoader.gameObject:SetActive(false)
   end
   local loginModule = self:GetModule(LoginModule)
-  local showId = loginModule:GetShowIdByPstId((self._simpleRank).pstid)
-  ;
-  (self._playerName):SetText((self._simpleRank).nick)
-  ;
-  (self._playerId):SetText((string.format)("ID:%d", showId))
+  local showId = loginModule:GetShowIdByPstId(self._simpleRank.pstid)
+  self._playerName:SetText(self._simpleRank.nick)
+  self._playerId:SetText(string.format("ID:%d", showId))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeam.CreateIndex = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIWorldBossViewTeam:CreateIndex()
   self._dataIndexPool = {}
-  for k,v in pairs((self._teamInfo).infos) do
-    (table.insert)(self._dataIndexPool, k)
+  for k, v in pairs(self._teamInfo.infos) do
+    table.insert(self._dataIndexPool, k)
   end
-  ;
-  (table.sort)(self._dataIndexPool, function(a, b)
-    -- function num : 0_8_0
-    do return a < b end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  self._widgetIndexPool = (self._indexContent):SpawnObjects("UIWorldBossViewTeamIndex", #self._dataIndexPool)
+  table.sort(self._dataIndexPool, function(a, b)
+    return a < b
+  end)
+  self._widgetIndexPool = self._indexContent:SpawnObjects("UIWorldBossViewTeamIndex", #self._dataIndexPool)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeam.FlushIndex = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  for k,v in pairs(self._dataIndexPool) do
-    local ui = (self._widgetIndexPool)[k]
+function UIWorldBossViewTeam:FlushIndex()
+  for k, v in pairs(self._dataIndexPool) do
+    local ui = self._widgetIndexPool[k]
     ui:Flush(v)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeam.DefaultIndex = function(self)
-  -- function num : 0_10
-  local index = (self._dataIndexPool)[1]
+function UIWorldBossViewTeam:DefaultIndex()
+  local index = self._dataIndexPool[1]
   self:SelectIndex(index)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeam.SelectIndex = function(self, index)
-  -- function num : 0_11 , upvalues : _ENV
+function UIWorldBossViewTeam:SelectIndex(index)
   if self._selIndex == index then
-    return 
+    return
   else
     self._selIndex = index
   end
-  for k,v in pairs(self._dataIndexPool) do
-    local ui = (self._widgetIndexPool)[k]
+  for k, v in pairs(self._dataIndexPool) do
+    local ui = self._widgetIndexPool[k]
     ui:SetSelected(v == index)
   end
-  local petList = ((self._teamInfo).infos)[index]
+  local petList = self._teamInfo.infos[index]
   self:FlushTeam(petList)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeam.IndexOnClick = function(self, go, index)
-  -- function num : 0_12
+function UIWorldBossViewTeam:IndexOnClick(go, index)
   self:SelectIndex(index)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeam.FlushTeam = function(self, petList)
-  -- function num : 0_13 , upvalues : _ENV
-  local widgetTeamPool = (self._teamContent):SpawnObjects("UIWorldBossViewTeamPet", #petList)
-  for k,v in pairs(petList) do
+function UIWorldBossViewTeam:FlushTeam(petList)
+  local widgetTeamPool = self._teamContent:SpawnObjects("UIWorldBossViewTeamPet", #petList)
+  for k, v in pairs(petList) do
     local ui = widgetTeamPool[k]
     ui:SetData(v)
     ui:Flush(v)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeam.GetAtlasProperty = function(self)
-  -- function num : 0_14
+function UIWorldBossViewTeam:GetAtlasProperty()
   return self._atlasProperty
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeam.GetAtlasAwake = function(self)
-  -- function num : 0_15
+function UIWorldBossViewTeam:GetAtlasAwake()
   return self._atlasAwake
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeam.GetHeartItemAtlas = function(self)
-  -- function num : 0_16
+function UIWorldBossViewTeam:GetHeartItemAtlas()
   return self._uiHeartItemAtlas
 end
 
 _class("UIWorldBossViewTeamIndex", UICustomWidget)
 UIWorldBossViewTeamIndex = UIWorldBossViewTeamIndex
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossViewTeamIndex.Constructor = function(self)
-  -- function num : 0_17
+function UIWorldBossViewTeamIndex:Constructor()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamIndex.OnShow = function(self, uiParams)
-  -- function num : 0_18
+function UIWorldBossViewTeamIndex:OnShow(uiParams)
   self._txtNameSel = self:GetUIComponent("UILocalizationText", "txtNameSel")
   self._txtNameUnsel = self:GetUIComponent("UILocalizationText", "txtNameUnsel")
   self._uiSelected = self:GetUIComponent("RectTransform", "uiSelected")
@@ -205,61 +136,38 @@ UIWorldBossViewTeamIndex.OnShow = function(self, uiParams)
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamIndex.OnHide = function(self)
-  -- function num : 0_19
+function UIWorldBossViewTeamIndex:OnHide()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamIndex.BtnOnClick = function(self, go)
-  -- function num : 0_20
-  (self:RootUIOwner()):IndexOnClick(go, self._index)
+function UIWorldBossViewTeamIndex:BtnOnClick(go)
+  self:RootUIOwner():IndexOnClick(go, self._index)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamIndex.Flush = function(self, index)
-  -- function num : 0_21 , upvalues : _ENV
+function UIWorldBossViewTeamIndex:Flush(index)
   self._index = index
-  local key = (string.format)("str_world_boss_n31_team_%d", self._index)
-  local label = (StringTable.Get)(key)
-  ;
-  (self._txtNameSel):SetText(label)
-  ;
-  (self._txtNameUnsel):SetText(label)
+  local key = string.format("str_world_boss_n31_team_%d", self._index)
+  local label = StringTable.Get(key)
+  self._txtNameSel:SetText(label)
+  self._txtNameUnsel:SetText(label)
   self:SetSelected(false)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamIndex.SetSelected = function(self, isChecked)
-  -- function num : 0_22
-  ((self._uiSelected).gameObject):SetActive(isChecked)
-  ;
-  ((self._uiUnselected).gameObject):SetActive(not isChecked)
+function UIWorldBossViewTeamIndex:SetSelected(isChecked)
+  self._uiSelected.gameObject:SetActive(isChecked)
+  self._uiUnselected.gameObject:SetActive(not isChecked)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamIndex.PlayAnimation = function(self, animName)
-  -- function num : 0_23
-  (self._animation):Play(animName)
+function UIWorldBossViewTeamIndex:PlayAnimation(animName)
+  self._animation:Play(animName)
 end
 
 _class("UIWorldBossViewTeamPet", UICustomWidget)
 UIWorldBossViewTeamPet = UIWorldBossViewTeamPet
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossViewTeamPet.Constructor = function(self)
-  -- function num : 0_24
+function UIWorldBossViewTeamPet:Constructor()
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamPet.OnShow = function(self, uiParams)
-  -- function num : 0_25
+function UIWorldBossViewTeamPet:OnShow(uiParams)
   self._nameText = self:GetUIComponent("UILocalizationText", "name")
   self._lvValueText = self:GetUIComponent("UILocalizationText", "lvValue")
   self._gradeIcon = self:GetUIComponent("Image", "grade")
@@ -279,201 +187,136 @@ UIWorldBossViewTeamPet.OnShow = function(self, uiParams)
   self._lvPart = self:GetUIComponent("RectTransform", "LVPart")
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamPet.OnHide = function(self)
-  -- function num : 0_26
+function UIWorldBossViewTeamPet:OnHide()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamPet.GetTemplateID = function(self)
-  -- function num : 0_27
-  return (self._petData).pet_template_id
+function UIWorldBossViewTeamPet:GetTemplateID()
+  return self._petData.pet_template_id
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamPet.GetPetFirstElement = function(self)
-  -- function num : 0_28
-  return (self._cfg_pet).FirstElement
+function UIWorldBossViewTeamPet:GetPetFirstElement()
+  return self._cfg_pet.FirstElement
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamPet.GetPetSecondElement = function(self)
-  -- function num : 0_29
-  if (self._cfg_pet).Element2NeedGrade <= (self._petData).grade and (self._cfg_pet).SecondElement > 0 then
-    return (self._cfg_pet).SecondElement
+function UIWorldBossViewTeamPet:GetPetSecondElement()
+  if self._petData.grade >= self._cfg_pet.Element2NeedGrade and self._cfg_pet.SecondElement > 0 then
+    return self._cfg_pet.SecondElement
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamPet.GetPetGrade = function(self)
-  -- function num : 0_30
-  return (self._petData).grade
+function UIWorldBossViewTeamPet:GetPetGrade()
+  return self._petData.grade
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamPet.GetSkinId = function(self)
-  -- function num : 0_31
+function UIWorldBossViewTeamPet:GetSkinId()
   local skinId = 1
   if self:GetPetGrade() == 0 then
-    skinId = (self._cfg_pet).SkinId
+    skinId = self._cfg_pet.SkinId
   else
-    skinId = (self._cfg_grade).SkinId
+    skinId = self._cfg_grade.SkinId
   end
   return skinId or 1
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamPet.GetPetStar = function(self)
-  -- function num : 0_32
-  return (self._cfg_pet).Star
+function UIWorldBossViewTeamPet:GetPetStar()
+  return self._cfg_pet.Star
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamPet.GetPetAwakening = function(self)
-  -- function num : 0_33
-  return (self._petData).awake
+function UIWorldBossViewTeamPet:GetPetAwakening()
+  return self._petData.awake
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamPet.GetPetLogo = function(self)
-  -- function num : 0_34
-  return (self._cfg_pet).Logo
+function UIWorldBossViewTeamPet:GetPetLogo()
+  return self._cfg_pet.Logo
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamPet.GetEquipLv = function(self)
-  -- function num : 0_35
-  return (self._petData).equip_level
+function UIWorldBossViewTeamPet:GetEquipLv()
+  return self._petData.equip_level
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamPet.GetEquipRefineLv = function(self)
-  -- function num : 0_36
-  return (self._petData).equip_refine_level
+function UIWorldBossViewTeamPet:GetEquipRefineLv()
+  return self._petData.equip_refine_level
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamPet.SetEquipLv = function(self)
-  -- function num : 0_37 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_equipLv", "UIPetEquipLvIcon")
+function UIWorldBossViewTeamPet:SetEquipLv()
+  local obj = UIWidgetHelper.SpawnObject(self, "_equipLv", "UIPetEquipLvIcon")
   obj:SetData(self, true)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamPet.SetData = function(self, petData)
-  -- function num : 0_38 , upvalues : _ENV
+function UIWorldBossViewTeamPet:SetData(petData)
   self._petData = petData
   if petData.pet_template_id == nil or petData.pet_template_id == 0 then
-    return 
+    return
   end
-  local cfg_pet = (Cfg.cfg_pet)[petData.pet_template_id]
+  local cfg_pet = Cfg.cfg_pet[petData.pet_template_id]
   self._cfg_pet = cfg_pet
-  self._cfg_grade = (Cfg.cfg_pet_grade)({PetID = self:GetTemplateID(), Grade = self:GetPetGrade()})
+  self._cfg_grade = Cfg.cfg_pet_grade({
+    PetID = self:GetTemplateID(),
+    Grade = self:GetPetGrade()
+  })
   if self._cfg_grade ~= nil then
-    self._cfg_grade = (self._cfg_grade)[1]
+    self._cfg_grade = self._cfg_grade[1]
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamPet.Flush = function(self, petData)
-  -- function num : 0_39 , upvalues : _ENV
-  if (self._petData).pet_template_id == nil or (self._petData).pet_template_id == 0 then
-    ((self._root).gameObject):SetActive(false)
-    return 
+function UIWorldBossViewTeamPet:Flush(petData)
+  if self._petData.pet_template_id == nil or self._petData.pet_template_id == 0 then
+    self._root.gameObject:SetActive(false)
+    return
   else
-    ;
-    ((self._root).gameObject):SetActive(true)
+    self._root.gameObject:SetActive(true)
   end
-  ;
-  (self._nameText):SetText((StringTable.Get)((self._cfg_pet).Name))
-  ;
-  (self._lvValueText):SetText((StringTable.Get)("str_pet_config_level") .. (self._petData).level)
-  local atlasAwake = (self:RootUIOwner()):GetAtlasAwake()
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._gradeIcon).sprite = atlasAwake:GetSprite((UIPetModule.GetAwakeSpriteName)((self._petData).pet_template_id, (self._petData).grade))
-  local cfg_pet_element = (Cfg.cfg_pet_element)({})
+  self._nameText:SetText(StringTable.Get(self._cfg_pet.Name))
+  self._lvValueText:SetText(StringTable.Get("str_pet_config_level") .. self._petData.level)
+  local atlasAwake = self:RootUIOwner():GetAtlasAwake()
+  self._gradeIcon.sprite = atlasAwake:GetSprite(UIPetModule.GetAwakeSpriteName(self._petData.pet_template_id, self._petData.grade))
+  local cfg_pet_element = Cfg.cfg_pet_element({})
   if cfg_pet_element ~= nil then
-    local atlasProperty = (self:RootUIOwner()):GetAtlasProperty()
+    local atlasProperty = self:RootUIOwner():GetAtlasProperty()
     local firstElement = self:GetPetFirstElement()
     local secondElement = self:GetPetSecondElement()
-    local firstIcon = (cfg_pet_element[firstElement]).Icon
-    local firstSpriteName = (UIPropertyHelper:GetInstance()):GetColorBlindSprite(firstIcon)
-    -- DECOMPILER ERROR at PC79: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._firstAttIcon).sprite = atlasProperty:GetSprite(firstSpriteName)
-    ;
-    (self._secondGo):SetActive(false)
-    if secondElement ~= nil and secondElement > 0 then
-      (self._secondGo):SetActive(true)
-      local secondIcon = (cfg_pet_element[secondElement]).Icon
-      local secondSpriteName = (UIPropertyHelper:GetInstance()):GetColorBlindSprite(secondIcon)
-      -- DECOMPILER ERROR at PC104: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self._secondAttribute).sprite = atlasProperty:GetSprite(secondSpriteName)
+    local firstIcon = cfg_pet_element[firstElement].Icon
+    local firstSpriteName = UIPropertyHelper:GetInstance():GetColorBlindSprite(firstIcon)
+    self._firstAttIcon.sprite = atlasProperty:GetSprite(firstSpriteName)
+    self._secondGo:SetActive(false)
+    if secondElement ~= nil and 0 < secondElement then
+      self._secondGo:SetActive(true)
+      local secondIcon = cfg_pet_element[secondElement].Icon
+      local secondSpriteName = UIPropertyHelper:GetInstance():GetColorBlindSprite(secondIcon)
+      self._secondAttribute.sprite = atlasProperty:GetSprite(secondSpriteName)
     end
   end
-  do
-    local skinEffectPath = PetSkinEffectPath.CARD_PET_LIST
-    local petBody = (HelperProxy:GetInstance()):GetPetBody(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), skinEffectPath)
-    if petBody ~= nil then
-      (self._rawDrawIcon):LoadImage(petBody)
-    end
+  local skinEffectPath = PetSkinEffectPath.CARD_PET_LIST
+  local petBody = HelperProxy:GetInstance():GetPetBody(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), skinEffectPath)
+  if petBody ~= nil then
+    self._rawDrawIcon:LoadImage(petBody)
+  end
+  local petStar = self:GetPetStar()
+  local uiHeartItemAtlas = self:RootUIOwner():GetHeartItemAtlas()
+  self._qualityIcon.sprite = uiHeartItemAtlas:GetSprite("map_biandui_pin" .. petStar)
+  self._logo:LoadImage(self:GetPetLogo())
+  self:SetEquipLv()
+  if self._stars ~= nil then
     local petStar = self:GetPetStar()
-    local uiHeartItemAtlas = (self:RootUIOwner()):GetHeartItemAtlas()
-    -- DECOMPILER ERROR at PC137: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._qualityIcon).sprite = uiHeartItemAtlas:GetSprite("map_biandui_pin" .. petStar)
-    ;
-    (self._logo):LoadImage(self:GetPetLogo())
-    self:SetEquipLv()
-    if self._stars ~= nil then
-      local petStar = self:GetPetStar()
-      local awakenStep = self:GetPetAwakening()
-      self._starSp1 = uiHeartItemAtlas:GetSprite("spirit_xing3_frame")
-      self._starSp2 = uiHeartItemAtlas:GetSprite("spirit_xing2_frame")
-      ;
-      (self._stars):SpawnObjects("UIHeartItemStar", petStar)
-      local stars = (self._stars):GetAllSpawnList()
-      local awakenStartIndex = petStar - awakenStep
-      for i = 1, #stars do
-        local sp = nil
-        if awakenStartIndex < i then
-          sp = self._starSp1
-        else
-          sp = self._starSp2
-        end
-        ;
-        (stars[i]):SetData(sp)
+    local awakenStep = self:GetPetAwakening()
+    self._starSp1 = uiHeartItemAtlas:GetSprite("spirit_xing3_frame")
+    self._starSp2 = uiHeartItemAtlas:GetSprite("spirit_xing2_frame")
+    self._stars:SpawnObjects("UIHeartItemStar", petStar)
+    local stars = self._stars:GetAllSpawnList()
+    local awakenStartIndex = petStar - awakenStep
+    for i = 1, #stars do
+      local sp
+      if i > awakenStartIndex then
+        sp = self._starSp1
+      else
+        sp = self._starSp2
       end
+      stars[i]:SetData(sp)
     end
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossViewTeamPet.PlayAnimation = function(self, animName)
-  -- function num : 0_40
-  (self._animation):Play(animName)
+function UIWorldBossViewTeamPet:PlayAnimation(animName)
+  self._animation:Play(animName)
 end
-
-

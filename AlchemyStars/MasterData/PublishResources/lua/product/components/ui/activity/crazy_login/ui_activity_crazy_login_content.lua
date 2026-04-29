@@ -1,120 +1,85 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/crazy_login/ui_activity_crazy_login_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UIActivityCrazyLoginContent", UISideEnterCenterContentBase)
 UIActivityCrazyLoginContent = UIActivityCrazyLoginContent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityCrazyLoginContent.DoInit = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityCrazyLoginContent:DoInit(params)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_SIGN_IN
   self._componentId = ECampaignSignInComponentID.ECAMPAIGN_SIGN_IN_CUMULATIVE_LOGIN
-  if params then
-    self._campaignId = params.campaign_id
-    self._event = nil
-    self._nextRefreshEvent = nil
-    self._complateFlag = nil
-    self._cmptCloseTime = 0
-    self._nextRefreshTime = 0
-    self._svrTimeModule = self:GetModule(SvrTimeModule)
-    self._campaign = self._data
-  end
+  self._campaignId = params and params.campaign_id
+  self._event = nil
+  self._nextRefreshEvent = nil
+  self._complateFlag = nil
+  self._cmptCloseTime = 0
+  self._nextRefreshTime = 0
+  self._svrTimeModule = self:GetModule(SvrTimeModule)
+  self._campaign = self._data
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent.DoShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityCrazyLoginContent:DoShow()
   self:_AttachEvent()
-  self._component = (self._campaign):GetComponent(self._componentId)
-  local cfgId = (self._component):GetComponentCfgId()
-  self._clientCfg = (Cfg.cfg_activity_crazy_login_content)[cfgId]
+  self._component = self._campaign:GetComponent(self._componentId)
+  local cfgId = self._component:GetComponentCfgId()
+  self._clientCfg = Cfg.cfg_activity_crazy_login_content[cfgId]
   if not self._clientCfg then
-    (Log.fatal)("UIActivityCrazyLoginContent:_Refresh() cfg_activity_crazy_login_content is nil ! id --> ", cfgId)
+    Log.fatal("UIActivityCrazyLoginContent:_Refresh() cfg_activity_crazy_login_content is nil ! id --> ", cfgId)
   end
   self:_FillUIByCfg(self._clientCfg)
   self:InitWidget()
   self:_Refresh()
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
+    self._campaign:ClearCampaignNew(TT)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent.DoHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityCrazyLoginContent:DoHide()
   self:_DetachEvent()
-  ;
-  (UIWidgetHelper.ClearWidgets)(self, "ItemInfo")
+  UIWidgetHelper.ClearWidgets(self, "ItemInfo")
   if self._refreshTaskID then
-    ((GameGlobal.TaskManager)()):KillTask(self._refreshTaskID)
+    GameGlobal.TaskManager():KillTask(self._refreshTaskID)
     self._refreshTaskID = nil
   end
   if self._event then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._event)
+    GameGlobal.RealTimer():CancelEvent(self._event)
     self._event = nil
   end
   if self._nextRefreshEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._nextRefreshEvent)
+    GameGlobal.RealTimer():CancelEvent(self._nextRefreshEvent)
     self._nextRefreshEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent.DoDestroy = function(self)
-  -- function num : 0_3
+function UIActivityCrazyLoginContent:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._ForceRefresh = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityCrazyLoginContent:_ForceRefresh()
   if self._refreshTaskID ~= nil then
-    return 
+    return
   end
   self._refreshTaskID = self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    ;
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+    self._campaign:ReLoadCampaignInfo_Force(TT, res)
     if res and res:GetSucc() then
       self:_Refresh()
     end
     self._refreshTaskID = nil
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._Refresh = function(self, notMove)
-  -- function num : 0_5
-  local componentInfo = (self._component):GetComponentInfo()
-  if componentInfo then
-    self._cmptCloseTime = componentInfo.m_close_time
-    self._nextRefreshTime = self:_GetRefreshTime()
-    self:_InitData()
-    self:_SetCellList()
-    if not notMove then
-      self:_InitScrollPos()
-    end
-    self:_OnValueRemainingTime()
-    self:_OnValueNextRefreshRemainingTime()
+function UIActivityCrazyLoginContent:_Refresh(notMove)
+  local componentInfo = self._component:GetComponentInfo()
+  self._cmptCloseTime = componentInfo and componentInfo.m_close_time
+  self._nextRefreshTime, self._complateFlag = self:_GetRefreshTime()
+  self:_InitData()
+  self:_SetCellList()
+  if not notMove then
+    self:_InitScrollPos()
   end
+  self:_OnValueRemainingTime()
+  self:_OnValueNextRefreshRemainingTime()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent.InitWidget = function(self)
-  -- function num : 0_6
+function UIActivityCrazyLoginContent:InitWidget()
   self._refreshTaskID = nil
   self._curSelectedDayNum = -1
   self._restTimeText = self:GetUIComponent("UILocalizationText", "RestTimeText")
@@ -123,75 +88,50 @@ UIActivityCrazyLoginContent.InitWidget = function(self)
   self._nextTimeAreaGo = self:GetGameObject("NextTimeArea")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._GetRefreshTime = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local sample = (self._campaign):GetSample()
+function UIActivityCrazyLoginContent:_GetRefreshTime()
+  local sample = self._campaign:GetSample()
   if sample then
-    local time = (sample.m_extend_info_time)[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_NEXT_REFRESH_TIME]
-    local flag = (sample.m_extend_info)[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_CUMULATIVE_LOGIN_COMPLATE]
+    local time = sample.m_extend_info_time[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_NEXT_REFRESH_TIME]
+    local flag = sample.m_extend_info[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_CUMULATIVE_LOGIN_COMPLATE]
     return time, flag
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._FillUIByCfg = function(self, clientCfg)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityCrazyLoginContent:_FillUIByCfg(clientCfg)
   self._showLast = clientCfg.ShowLastAward and true or false
   self:_SetTitleText(clientCfg)
   self:_SetTitleTextBg(clientCfg)
   self:_SetTitleTextBgRawImage(clientCfg)
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "Bg", clientCfg.BgImage)
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "SideImg", clientCfg.SideImage)
+  UIWidgetHelper.SetRawImage(self, "Bg", clientCfg.BgImage)
+  UIWidgetHelper.SetRawImage(self, "SideImg", clientCfg.SideImage)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._SetTitleText = function(self, clientCfg)
-  -- function num : 0_9 , upvalues : _ENV
-  local text = (StringTable.Get)(clientCfg.Title, clientCfg.TitleParam)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "TitleText", text)
+function UIActivityCrazyLoginContent:_SetTitleText(clientCfg)
+  local text = StringTable.Get(clientCfg.Title, clientCfg.TitleParam)
+  UIWidgetHelper.SetLocalizationText(self, "TitleText", text)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._SetTitleTextBg = function(self, clientCfg)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityCrazyLoginContent:_SetTitleTextBg(clientCfg)
   local widgetName = "titleTextBg"
   local ttbgName = clientCfg.TitleTextBgName
   if ttbgName then
-    (UIWidgetHelper.SetImageSprite)(self, widgetName, ttbgName[1], ttbgName[2])
+    UIWidgetHelper.SetImageSprite(self, widgetName, ttbgName[1], ttbgName[2])
     self:_SetTitleTextBgTrans(widgetName, clientCfg)
   end
-  ;
-  (self:GetGameObject(widgetName)):SetActive(ttbgName ~= nil)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self:GetGameObject(widgetName):SetActive(ttbgName ~= nil)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._SetTitleTextBgRawImage = function(self, clientCfg)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityCrazyLoginContent:_SetTitleTextBgRawImage(clientCfg)
   local widgetName = "titleTextBgR"
   local ttbgName = clientCfg.TitleTextBgRawName
   if ttbgName then
-    (UIWidgetHelper.SetRawImage)(self, widgetName, ttbgName)
+    UIWidgetHelper.SetRawImage(self, widgetName, ttbgName)
     self:_SetTitleTextBgTrans(widgetName, clientCfg)
   end
-  ;
-  (self:GetGameObject(widgetName)):SetActive(ttbgName ~= nil)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self:GetGameObject(widgetName):SetActive(ttbgName ~= nil)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._SetTitleTextBgTrans = function(self, widgetName, clientCfg)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityCrazyLoginContent:_SetTitleTextBgTrans(widgetName, clientCfg)
   local ttbgInfo = clientCfg.TitleTextBgInfo
   if ttbgInfo then
     local trans = self:GetUIComponent("RectTransform", widgetName)
@@ -200,102 +140,71 @@ UIActivityCrazyLoginContent._SetTitleTextBgTrans = function(self, widgetName, cl
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._InitData = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityCrazyLoginContent:_InitData()
   self._cells = {}
   if self._component then
-    local cmptInfo = (self._component):GetComponentInfo()
+    local cmptInfo = self._component:GetComponentInfo()
     if cmptInfo then
-      for key,value in pairs(cmptInfo.m_cumulative_info) do
+      for key, value in pairs(cmptInfo.m_cumulative_info) do
         local cellData = {}
         cellData._state = value.m_reward_status
         cellData._dayNum = value.m_login_days
         cellData._isSpecial = value.m_is_special
         cellData._items = {}
-        for rewardIndex,rewardValue in ipairs(value.m_rewards) do
+        for rewardIndex, rewardValue in ipairs(value.m_rewards) do
           local ra = RoleAsset:New()
           ra.assetid = rewardValue.assetid
           ra.count = rewardValue.count
-          ;
-          (table.insert)(cellData._items, ra)
+          table.insert(cellData._items, ra)
         end
-        ;
-        (table.insert)(self._cells, cellData)
+        table.insert(self._cells, cellData)
       end
     end
-    do
-      ;
-      (table.sort)(self._cells, function(e1, e2)
-    -- function num : 0_13_0
-    do return e1._dayNum < e2._dayNum end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-    end
+    table.sort(self._cells, function(e1, e2)
+      return e1._dayNum < e2._dayNum
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._SetCellList = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityCrazyLoginContent:_SetCellList()
   local datas = self._cells
-  if not self._showLast or not #datas - 1 then
-    local listCount = #datas
+  local listCount = self._showLast and #datas - 1 or #datas
+  local items = UIWidgetHelper.SpawnObjects(self, "Content", "UIActivityCrazyLoginCell", listCount)
+  self:GetGameObject("lastDataPool"):SetActive(self._showLast)
+  if self._showLast then
+    local lastItem = UIWidgetHelper.SpawnObject(self, "lastDataPool", "UIActivityCrazyLoginCell")
+    table.insert(items, lastItem)
   end
-  local items = (UIWidgetHelper.SpawnObjects)(self, "Content", "UIActivityCrazyLoginCell", listCount)
-  ;
-  (self:GetGameObject("lastDataPool")):SetActive(self._showLast)
-  do
-    if self._showLast then
-      local lastItem = (UIWidgetHelper.SpawnObject)(self, "lastDataPool", "UIActivityCrazyLoginCell")
-      ;
-      (table.insert)(items, lastItem)
-    end
-    self._items = items
-    for i,v in ipairs(self._items) do
-      local isLastDay = not self._showLast or i == #self._items
-      v:SetData(i, datas[i], self._clientCfg, function(idx)
-    -- function num : 0_14_0 , upvalues : _ENV, self
-    for i,v in ipairs(self._items) do
-      v:SetSelected(i == idx)
-    end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-, function(idx)
-    -- function num : 0_14_1 , upvalues : self
-    self:GetTotalAward(idx)
-  end
-, function(matid, pos)
-    -- function num : 0_14_2 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "ItemInfo", matid, pos)
-  end
-, isLastDay)
-    end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self._items = items
+  for i, v in ipairs(self._items) do
+    local isLastDay = self._showLast and i == #self._items
+    v:SetData(i, datas[i], self._clientCfg, function(idx)
+      for i, v in ipairs(self._items) do
+        v:SetSelected(i == idx)
+      end
+    end, function(idx)
+      self:GetTotalAward(idx)
+    end, function(matid, pos)
+      UIWidgetHelper.SetAwardItemTips(self, "ItemInfo", matid, pos)
+    end, isLastDay)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._InitScrollPos = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityCrazyLoginContent:_InitScrollPos()
   local canGetIdx = self:_CheckCanGetIndex()
   if canGetIdx ~= 0 then
     local content = self:GetUIComponent("RectTransform", "Content")
     local height = (canGetIdx - 1) * 139
-    content.anchoredPosition = Vector2((content.anchoredPosition).x, height)
+    content.anchoredPosition = Vector2(content.anchoredPosition.x, height)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._CheckCanGetIndex = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  for index,value in ipairs(self._cells) do
-    local tb_check = {[ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV] = true, [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK] = true}
+function UIActivityCrazyLoginContent:_CheckCanGetIndex()
+  for index, value in ipairs(self._cells) do
+    local tb_check = {
+      [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV] = true,
+      [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK] = true
+    }
     if tb_check[value._state] then
       return index
     end
@@ -303,178 +212,138 @@ UIActivityCrazyLoginContent._CheckCanGetIndex = function(self)
   return 1
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent.GetTotalAward = function(self, idx)
-  -- function num : 0_17
-  local days = ((self._cells)[idx])._dayNum
-  ;
-  (self._component):Start_HandleReceiveCumulativeLoginReward(days, function(res, rewards)
-    -- function num : 0_17_0 , upvalues : self, idx
+function UIActivityCrazyLoginContent:GetTotalAward(idx)
+  local days = self._cells[idx]._dayNum
+  self._component:Start_HandleReceiveCumulativeLoginReward(days, function(res, rewards)
     self:_OnReceiveRewards(idx, res, rewards)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._OnReceiveRewards = function(self, idx, res, rewards)
-  -- function num : 0_18
+function UIActivityCrazyLoginContent:_OnReceiveRewards(idx, res, rewards)
   if self.view == nil then
-    return 
+    return
   end
   if res:GetSucc() then
-    ((self._items)[idx]):OnAwardGot(rewards)
+    self._items[idx]:OnAwardGot(rewards)
   else
-    ;
-    (self._campaign):CheckErrorCode(res.m_result, nil, nil)
+    self._campaign:CheckErrorCode(res.m_result, nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._OnValueRemainingTime = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIActivityCrazyLoginContent:_OnValueRemainingTime()
   self:_ShowRemainingTime()
   if self._event then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._event)
+    GameGlobal.RealTimer():CancelEvent(self._event)
     self._event = nil
   end
-  self._event = ((GameGlobal.RealTimer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_19_0 , upvalues : self
+  self._event = GameGlobal.RealTimer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:_ShowRemainingTime()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._ShowRemainingTime = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIActivityCrazyLoginContent:_ShowRemainingTime()
   local stopTime = self._cmptCloseTime
-  local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
+  local nowTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
   local remainingTime = stopTime - nowTime
   if remainingTime <= 0 then
     if self._event then
-      ((GameGlobal.RealTimer)()):CancelEvent(self._event)
+      GameGlobal.RealTimer():CancelEvent(self._event)
       self._event = nil
     end
-    ;
-    (self._restTimeAreaGo):SetActive(false)
+    self._restTimeAreaGo:SetActive(false)
     remainingTime = 0
   else
-    ;
-    (self._restTimeAreaGo):SetActive(true)
+    self._restTimeAreaGo:SetActive(true)
   end
-  ;
-  (self._restTimeText):SetText(self:_GetFormatString(remainingTime))
+  self._restTimeText:SetText(self:_GetFormatString(remainingTime))
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._GetFormatString = function(self, stamp)
-  -- function num : 0_21 , upvalues : _ENV
+function UIActivityCrazyLoginContent:_GetFormatString(stamp)
   local formatStr = "%s <color=#%s>%s</color>"
-  local descStr = (StringTable.Get)("str_activity_common_login_reward_remainingtime")
+  local descStr = StringTable.Get("str_activity_common_login_reward_remainingtime")
   local colorStr = "FFD862"
-  local timeStr = (UIActivityHelper.GetFormatTimerStr)(stamp)
-  local showStr = (string.format)(formatStr, descStr, colorStr, timeStr)
+  local timeStr = UIActivityHelper.GetFormatTimerStr(stamp)
+  local showStr = string.format(formatStr, descStr, colorStr, timeStr)
   return showStr
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._OnValueNextRefreshRemainingTime = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIActivityCrazyLoginContent:_OnValueNextRefreshRemainingTime()
   local isAllUnlocked = self:_IsAllRewardUnlocked()
   local isNotEnoughTime = false
   if not isAllUnlocked then
     local stopTime = self._cmptCloseTime
-    local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
+    local nowTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
     local remainingTime = stopTime - nowTime
     local nextTime = self._nextRefreshTime
-  end
-  if nextTime and nextTime < stopTime then
-    do
+    if nextTime and stopTime > nextTime then
+    else
       isNotEnoughTime = true
-      if isAllUnlocked or isNotEnoughTime then
-        if self._nextRefreshEvent then
-          ((GameGlobal.RealTimer)()):CancelEvent(self._nextRefreshEvent)
-          self._nextRefreshEvent = nil
-        end
-        ;
-        (self._nextTimeAreaGo):SetActive(false)
-        return 
-      end
-      self:_ShowNextRefreshRemainingTime()
-      if self._nextRefreshEvent then
-        ((GameGlobal.RealTimer)()):CancelEvent(self._nextRefreshEvent)
-        self._nextRefreshEvent = nil
-      end
-      self._nextRefreshEvent = ((GameGlobal.RealTimer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_22_0 , upvalues : self
-    self:_ShowNextRefreshRemainingTime()
-  end
-)
     end
   end
+  if isAllUnlocked or isNotEnoughTime then
+    if self._nextRefreshEvent then
+      GameGlobal.RealTimer():CancelEvent(self._nextRefreshEvent)
+      self._nextRefreshEvent = nil
+    end
+    self._nextTimeAreaGo:SetActive(false)
+    return
+  end
+  self:_ShowNextRefreshRemainingTime()
+  if self._nextRefreshEvent then
+    GameGlobal.RealTimer():CancelEvent(self._nextRefreshEvent)
+    self._nextRefreshEvent = nil
+  end
+  self._nextRefreshEvent = GameGlobal.RealTimer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+    self:_ShowNextRefreshRemainingTime()
+  end)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._ShowNextRefreshRemainingTime = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIActivityCrazyLoginContent:_ShowNextRefreshRemainingTime()
   if not self._nextRefreshTime then
-    (self._nextTimeAreaGo):SetActive(false)
-    return 
+    self._nextTimeAreaGo:SetActive(false)
+    return
   end
   local nextTime = self._nextRefreshTime
-  local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
+  local nowTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
   local remainingTime = nextTime - nowTime
   local isNotEnoughTime = false
   local stopTime = self._cmptCloseTime
   local stopRemainTime = stopTime - nowTime
-  if stopTime <= nextTime then
+  if nextTime >= stopTime then
     isNotEnoughTime = true
   end
   if remainingTime <= 0 or isNotEnoughTime then
     if self._nextRefreshEvent then
-      ((GameGlobal.RealTimer)()):CancelEvent(self._nextRefreshEvent)
+      GameGlobal.RealTimer():CancelEvent(self._nextRefreshEvent)
       self._nextRefreshEvent = nil
     end
-    ;
-    (self._nextTimeAreaGo):SetActive(false)
+    self._nextTimeAreaGo:SetActive(false)
     remainingTime = 0
-    if nextTime > 0 and remainingTime <= 0 then
+    if 0 < nextTime and remainingTime <= 0 then
       self:_ForceRefresh()
     end
-    return 
+    return
   else
-    ;
-    (self._nextTimeAreaGo):SetActive(true)
+    self._nextTimeAreaGo:SetActive(true)
   end
-  ;
-  (self._nextTimeText):SetText(self:_GetNextRefreshFormatString(remainingTime))
+  self._nextTimeText:SetText(self:_GetNextRefreshFormatString(remainingTime))
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._GetNextRefreshFormatString = function(self, stamp)
-  -- function num : 0_24 , upvalues : _ENV
+function UIActivityCrazyLoginContent:_GetNextRefreshFormatString(stamp)
   local formatStr = "%s <color=#%s>%s</color>"
-  local descStr = (StringTable.Get)("str_activity_common_login_reward_next_remain_time")
+  local descStr = StringTable.Get("str_activity_common_login_reward_next_remain_time")
   local colorStr = "FFD862"
-  local timeStr = (UIActivityHelper.GetFormatTimerStr)(stamp)
-  local showStr = (string.format)(formatStr, descStr, colorStr, timeStr)
+  local timeStr = UIActivityHelper.GetFormatTimerStr(stamp)
+  local showStr = string.format(formatStr, descStr, colorStr, timeStr)
   return showStr
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._IsAllRewardUnlocked = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  local tb_check = {[ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV] = true, [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED] = true}
-  for index,value in ipairs(self._cells) do
+function UIActivityCrazyLoginContent:_IsAllRewardUnlocked()
+  local tb_check = {
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV] = true,
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED] = true
+  }
+  for index, value in ipairs(self._cells) do
     if not tb_check[value._state] then
       return false
     end
@@ -482,25 +351,14 @@ UIActivityCrazyLoginContent._IsAllRewardUnlocked = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._AttachEvent = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIActivityCrazyLoginContent:_AttachEvent()
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent._DetachEvent = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UIActivityCrazyLoginContent:_DetachEvent()
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginContent.OnUIGetItemCloseInQuest = function(self)
-  -- function num : 0_28
+function UIActivityCrazyLoginContent:OnUIGetItemCloseInQuest()
   self:_Refresh(true)
 end
-
-

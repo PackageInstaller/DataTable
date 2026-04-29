@@ -1,183 +1,121 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_res_instance/ui_res_instance_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIResInstanceData", Object)
 UIResInstanceData = UIResInstanceData
 local StringGet = StringTable.Get
--- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
 
-UIResInstanceData.Constructor = function(self, instanceId)
-  -- function num : 0_0 , upvalues : _ENV
-  self.cfg = (Cfg.cfg_res_instance_detail)[instanceId]
-  self.aircraftModule = (GameGlobal.GetModule)(AircraftModule)
+function UIResInstanceData:Constructor(instanceId)
+  self.cfg = Cfg.cfg_res_instance_detail[instanceId]
+  self.aircraftModule = GameGlobal.GetModule(AircraftModule)
   self:InitRewards()
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceData.InitRewards = function(self)
-  -- function num : 0_1 , upvalues : _ENV, StringGet
+function UIResInstanceData:InitRewards()
   self.rewards = {}
-  local list, randomList = (UICommonHelper:GetInstance()):GetPassAward(AwardHeadType.ResInstance, (self.cfg).ID, true)
+  local list, randomList = UICommonHelper:GetInstance():GetPassAward(AwardHeadType.ResInstance, self.cfg.ID, true)
   if list then
-    for index,value in ipairs(list) do
+    for index, value in ipairs(list) do
       local reward = {}
       reward.id = value.ItemID
       reward.count = value.Count
       reward.randomType = value.Type
       reward.fix = true
-      local cfg = (Cfg.cfg_item)[value.ItemID]
+      local cfg = Cfg.cfg_item[value.ItemID]
       if cfg then
         reward.name = StringGet(cfg.Name)
         reward.icon = cfg.Icon
         reward.color = cfg.Color
       end
-      ;
-      (table.insert)(self.rewards, reward)
+      table.insert(self.rewards, reward)
     end
   end
-  do
-    if randomList then
-      for index,value in ipairs(randomList) do
-        local reward = {}
-        reward.id = value.ItemID
-        reward.count = value.Count
-        reward.randomType = value.Type
-        reward.fix = false
-        local cfg = (Cfg.cfg_item)[value.ItemID]
-        if cfg then
-          reward.name = StringGet(cfg.Name)
-          reward.icon = cfg.Icon
-          reward.color = cfg.Color
-        end
-        ;
-        (table.insert)(self.rewards, reward)
+  if randomList then
+    for index, value in ipairs(randomList) do
+      local reward = {}
+      reward.id = value.ItemID
+      reward.count = value.Count
+      reward.randomType = value.Type
+      reward.fix = false
+      local cfg = Cfg.cfg_item[value.ItemID]
+      if cfg then
+        reward.name = StringGet(cfg.Name)
+        reward.icon = cfg.Icon
+        reward.color = cfg.Color
       end
+      table.insert(self.rewards, reward)
     end
   end
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceData.GetId = function(self)
-  -- function num : 0_2
-  return self.cfg and (self.cfg).ID or 0
+function UIResInstanceData:GetId()
+  return self.cfg and self.cfg.ID or 0
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceData.GetMainType = function(self)
-  -- function num : 0_3
-  return self.cfg and (self.cfg).MainType or 0
+function UIResInstanceData:GetMainType()
+  return self.cfg and self.cfg.MainType or 0
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceData.GetName = function(self)
-  -- function num : 0_4 , upvalues : StringGet
-  return self.cfg and StringGet((self.cfg).Name) or ""
+function UIResInstanceData:GetName()
+  return self.cfg and StringGet(self.cfg.Name) or ""
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceData.GetLevelNum = function(self)
-  -- function num : 0_5
-  return self.cfg and (self.cfg).Lv or 0
+function UIResInstanceData:GetLevelNum()
+  return self.cfg and self.cfg.Lv or 0
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceData.GetUnLockLevel = function(self)
-  -- function num : 0_6
-  return self.cfg and (self.cfg).UnlockCondition or 0
+function UIResInstanceData:GetUnLockLevel()
+  return self.cfg and self.cfg.UnlockCondition or 0
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceData.GetLevelCN = function(self)
-  -- function num : 0_7 , upvalues : StringGet
-  return (self.cfg).LvCN and StringGet((self.cfg).LvCN) or ""
+function UIResInstanceData:GetLevelCN()
+  return self.cfg.LvCN and StringGet(self.cfg.LvCN) or ""
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceData.GetDifficultyName = function(self)
-  -- function num : 0_8 , upvalues : StringGet
-  return self.cfg and StringGet((self.cfg).DifficultyName) or ""
+function UIResInstanceData:GetDifficultyName()
+  return self.cfg and StringGet(self.cfg.DifficultyName) or ""
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceData.GetPower = function(self)
-  -- function num : 0_9
-  do return not self.cfg or (self.cfg).NeedPower or 0 end
+function UIResInstanceData:GetPower()
+  if self.cfg then
+    return self.cfg.NeedPower or 0
+  end
   return 0
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceData.GetRewards = function(self)
-  -- function num : 0_10
+function UIResInstanceData:GetRewards()
   return self.rewards
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceData.GetId = function(self)
-  -- function num : 0_11
-  return self.cfg and (self.cfg).ID or 0
+function UIResInstanceData:GetId()
+  return self.cfg and self.cfg.ID or 0
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceData.GetSubType = function(self)
-  -- function num : 0_12
-  return self.cfg and (self.cfg).SubType or 0
+function UIResInstanceData:GetSubType()
+  return self.cfg and self.cfg.SubType or 0
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceData.Open = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIResInstanceData:Open()
   local mainType = self:GetMainType()
-  local resModule = (GameGlobal.GetModule)(ResDungeonModule)
+  local resModule = GameGlobal.GetModule(ResDungeonModule)
   local sList = resModule:GetInstanceDataList(mainType)
-  if sList and (table.ikey)(sList, self:GetId()) then
+  if sList and table.ikey(sList, self:GetId()) then
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceData.GetWarn = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local s = (StringTable.Get)("str_res_instance_detail_detail_lock_str")
-  return (string.format)(s, self:GetUnLockLevel())
+function UIResInstanceData:GetWarn()
+  local s = StringTable.Get("str_res_instance_detail_detail_lock_str")
+  return string.format(s, self:GetUnLockLevel())
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceData.GetEnemys = function(self)
-  -- function num : 0_15
-  return self.cfg and (self.cfg).MonsterList or ""
+function UIResInstanceData:GetEnemys()
+  return self.cfg and self.cfg.MonsterList or ""
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceData.GetLevelId = function(self)
-  -- function num : 0_16
-  return self.cfg and (self.cfg).FightLevelid or 0
+function UIResInstanceData:GetLevelId()
+  return self.cfg and self.cfg.FightLevelid or 0
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceData.GetWorldBuffId = function(self)
-  -- function num : 0_17
-  return self.cfg and (self.cfg).WordBuff or 0
+function UIResInstanceData:GetWorldBuffId()
+  return self.cfg and self.cfg.WordBuff or 0
 end
-
-

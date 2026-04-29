@@ -1,32 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/room/room_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local roomMessageDef = {CLSID_CEventRequestCreateRoom = 21000, CLSID_CEventReplyCreateRoom = 21001, CLSID_CEventRequestJoinRoom = 21002, CLSID_CEventReplyJoinRoom = 21003, CLSID_CEventRequestEnterRoom = 21004, CLSID_CEventReplyEnterRoom = 21005, CLSID_CEventRequestLeaveRoom = 21006, CLSID_CEventReplyLeaveRoom = 21007, CLSID_CEventPushRoomClose = 21008, CLSID_CEventPushLeaveRoom = 21009, CLSID_CEventRequestStartMatch = 21010, CLSID_CEventReplyStartMatch = 21011, CLSID_CEventPushEnterMatch = 21012}
-;
-(table.append)(MessageDef, roomMessageDef)
+local roomMessageDef = {
+  CLSID_CEventRequestCreateRoom = 21000,
+  CLSID_CEventReplyCreateRoom = 21001,
+  CLSID_CEventRequestJoinRoom = 21002,
+  CLSID_CEventReplyJoinRoom = 21003,
+  CLSID_CEventRequestEnterRoom = 21004,
+  CLSID_CEventReplyEnterRoom = 21005,
+  CLSID_CEventRequestLeaveRoom = 21006,
+  CLSID_CEventReplyLeaveRoom = 21007,
+  CLSID_CEventPushRoomClose = 21008,
+  CLSID_CEventPushLeaveRoom = 21009,
+  CLSID_CEventRequestStartMatch = 21010,
+  CLSID_CEventReplyStartMatch = 21011,
+  CLSID_CEventPushEnterMatch = 21012
+}
+table.append(MessageDef, roomMessageDef)
 _class("CEventRequestCreateRoom", CCallRequestEvent)
 CEventRequestCreateRoom = CEventRequestCreateRoom
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRequestCreateRoom.Constructor = function(self)
-  -- function num : 0_0
+function CEventRequestCreateRoom:Constructor()
   self.m_room_type = 0
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventRequestCreateRoom._proto = {
-[1] = {"m_room_type", "int"}
+  [1] = {
+    "m_room_type",
+    "int"
+  }
 }
 _class("CEventReplyCreateRoom", CCallReplyEvent)
 CEventReplyCreateRoom = CEventReplyCreateRoom
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyCreateRoom.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CEventReplyCreateRoom:Constructor()
   self.m_ret = 0
   self.m_room_created = GroupToken:New()
   self.m_vkey = 0
@@ -34,39 +39,39 @@ CEventReplyCreateRoom.Constructor = function(self)
   self.m_server_port = 0
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyCreateRoom._proto = {
-[1] = {"m_ret", "int"}
-, 
-[2] = {"m_room_created", "GroupToken"}
-, 
-[3] = {"m_vkey", "int"}
-, 
-[4] = {"m_server_ip", "string"}
-, 
-[5] = {"m_server_port", "short"}
+  [1] = {"m_ret", "int"},
+  [2] = {
+    "m_room_created",
+    "GroupToken"
+  },
+  [3] = {"m_vkey", "int"},
+  [4] = {
+    "m_server_ip",
+    "string"
+  },
+  [5] = {
+    "m_server_port",
+    "short"
+  }
 }
 _class("CEventRequestJoinRoom", CCallRequestEvent)
 CEventRequestJoinRoom = CEventRequestJoinRoom
--- DECOMPILER ERROR at PC84: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRequestJoinRoom.Constructor = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function CEventRequestJoinRoom:Constructor()
   self.m_room_to_join = GroupToken:New()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventRequestJoinRoom._proto = {
-[1] = {"m_room_to_join", "GroupToken"}
+  [1] = {
+    "m_room_to_join",
+    "GroupToken"
+  }
 }
 _class("CEventReplyJoinRoom", CCallReplyEvent)
 CEventReplyJoinRoom = CEventReplyJoinRoom
--- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyJoinRoom.Constructor = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CEventReplyJoinRoom:Constructor()
   self.m_ret = 0
   self.m_room_to_join = GroupToken:New()
   self.m_vkey = 0
@@ -74,146 +79,121 @@ CEventReplyJoinRoom.Constructor = function(self)
   self.m_server_port = 0
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyJoinRoom._proto = {
-[1] = {"m_ret", "int"}
-, 
-[2] = {"m_room_to_join", "GroupToken"}
-, 
-[3] = {"m_vkey", "int"}
-, 
-[4] = {"m_server_ip", "string"}
-, 
-[5] = {"m_server_port", "short"}
+  [1] = {"m_ret", "int"},
+  [2] = {
+    "m_room_to_join",
+    "GroupToken"
+  },
+  [3] = {"m_vkey", "int"},
+  [4] = {
+    "m_server_ip",
+    "string"
+  },
+  [5] = {
+    "m_server_port",
+    "short"
+  }
 }
 _class("CEventRequestEnterRoom", CCallRequestEvent)
 CEventRequestEnterRoom = CEventRequestEnterRoom
--- DECOMPILER ERROR at PC138: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRequestEnterRoom.Constructor = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function CEventRequestEnterRoom:Constructor()
   self.m_room_to_enter = GroupToken:New()
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventRequestEnterRoom._proto = {
-[1] = {"m_room_to_enter", "GroupToken"}
+  [1] = {
+    "m_room_to_enter",
+    "GroupToken"
+  }
 }
 _class("CEventReplyEnterRoom", CCallReplyEvent)
 CEventReplyEnterRoom = CEventReplyEnterRoom
--- DECOMPILER ERROR at PC155: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyEnterRoom.Constructor = function(self)
-  -- function num : 0_5
+function CEventReplyEnterRoom:Constructor()
   self.m_ret = 0
   self.m_time = 0
 end
 
--- DECOMPILER ERROR at PC168: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyEnterRoom._proto = {
-[1] = {"m_ret", "int"}
-, 
-[2] = {"m_time", "time"}
+  [1] = {"m_ret", "int"},
+  [2] = {"m_time", "time"}
 }
 _class("CEventRequestLeaveRoom", CCallRequestEvent)
 CEventRequestLeaveRoom = CEventRequestLeaveRoom
--- DECOMPILER ERROR at PC177: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRequestLeaveRoom.Constructor = function(self)
-  -- function num : 0_6
+function CEventRequestLeaveRoom:Constructor()
 end
-
--- DECOMPILER ERROR at PC180: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventRequestLeaveRoom._proto = {}
 _class("CEventReplyLeaveRoom", CCallReplyEvent)
 CEventReplyLeaveRoom = CEventReplyLeaveRoom
--- DECOMPILER ERROR at PC189: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyLeaveRoom.Constructor = function(self)
-  -- function num : 0_7
+function CEventReplyLeaveRoom:Constructor()
   self.m_ret = 0
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyLeaveRoom._proto = {
-[1] = {"m_ret", "int"}
+  [1] = {"m_ret", "int"}
 }
 _class("CEventPushRoomClose", CSvrPushEvent)
 CEventPushRoomClose = CEventPushRoomClose
--- DECOMPILER ERROR at PC206: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushRoomClose.Constructor = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function CEventPushRoomClose:Constructor()
   self.m_room_to_close = GroupToken:New()
 end
 
--- DECOMPILER ERROR at PC214: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventPushRoomClose._proto = {
-[1] = {"m_room_to_close", "GroupToken"}
+  [1] = {
+    "m_room_to_close",
+    "GroupToken"
+  }
 }
 _class("CEventPushLeaveRoom", CSvrPushEvent)
 CEventPushLeaveRoom = CEventPushLeaveRoom
--- DECOMPILER ERROR at PC223: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushLeaveRoom.Constructor = function(self)
-  -- function num : 0_9
+function CEventPushLeaveRoom:Constructor()
 end
-
--- DECOMPILER ERROR at PC226: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventPushLeaveRoom._proto = {}
 _class("CEventRequestStartMatch", CCallRequestEvent)
 CEventRequestStartMatch = CEventRequestStartMatch
--- DECOMPILER ERROR at PC235: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRequestStartMatch.Constructor = function(self)
-  -- function num : 0_10
+function CEventRequestStartMatch:Constructor()
   self.m_match_type = 0
   self.m_level_id = 0
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventRequestStartMatch._proto = {
-[1] = {"m_match_type", "int"}
-, 
-[2] = {"m_level_id", "int"}
+  [1] = {
+    "m_match_type",
+    "int"
+  },
+  [2] = {"m_level_id", "int"}
 }
 _class("CEventReplyStartMatch", CCallReplyEvent)
 CEventReplyStartMatch = CEventReplyStartMatch
--- DECOMPILER ERROR at PC257: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyStartMatch.Constructor = function(self)
-  -- function num : 0_11
+function CEventReplyStartMatch:Constructor()
   self.m_ret = 0
 end
 
--- DECOMPILER ERROR at PC265: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyStartMatch._proto = {
-[1] = {"m_ret", "int"}
+  [1] = {"m_ret", "int"}
 }
 _class("CEventPushEnterMatch", CSvrPushEvent)
 CEventPushEnterMatch = CEventPushEnterMatch
--- DECOMPILER ERROR at PC274: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushEnterMatch.Constructor = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function CEventPushEnterMatch:Constructor()
   self.m_match_to_enter = GroupToken:New()
   self.m_vkey = 0
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventPushEnterMatch._proto = {
-[1] = {"m_match_to_enter", "GroupToken"}
-, 
-[2] = {"m_vkey", "int"}
+  [1] = {
+    "m_match_to_enter",
+    "GroupToken"
+  },
+  [2] = {"m_vkey", "int"}
 }
-

@@ -1,65 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_convert_element_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseConvertElementParam", SkillPhaseParamBase)
 SkillPhaseConvertElementParam = SkillPhaseConvertElementParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseConvertElementParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseConvertElementParam:Constructor(t)
   self._gridEffectID = t.gridEffectID
   self._bestEffectTime = t.bestEffectTime
   self._finishDelayTime = t.finishDelayTime
   self._notifyPreview = t.notifyPreview
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertElementParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseConvertElementParam:GetCacheTable()
   local t = {}
   if self._gridEffectID and self._gridEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._gridEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._gridEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertElementParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseConvertElementParam:GetPhaseType()
   return SkillViewPhaseType.ConvertElment
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertElementParam.GetGridEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseConvertElementParam:GetGridEffectID()
   return self._gridEffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertElementParam.GetBestEffectTime = function(self)
-  -- function num : 0_4
+function SkillPhaseConvertElementParam:GetBestEffectTime()
   return self._bestEffectTime
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertElementParam.GetFinishDelayTime = function(self)
-  -- function num : 0_5
+function SkillPhaseConvertElementParam:GetFinishDelayTime()
   return self._finishDelayTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertElementParam.GetNotifyPreview = function(self)
-  -- function num : 0_6
+function SkillPhaseConvertElementParam:GetNotifyPreview()
   return self._notifyPreview
 end
-
-

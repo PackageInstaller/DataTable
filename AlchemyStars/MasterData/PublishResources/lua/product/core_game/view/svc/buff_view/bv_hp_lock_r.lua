@@ -1,43 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_hp_lock_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewHPLock", BuffViewBase)
 BuffViewHPLock = BuffViewHPLock
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewHPLock.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewHPLock:PlayView(TT)
   local result = self:GetBuffResult()
   local index = result:GetLockIndex()
-  local param = (((self._viewInstance):BuffConfigData()):GetViewParams())
-  local skillID = nil
-  for k,v in pairs(param) do
+  local param = self._viewInstance:BuffConfigData():GetViewParams()
+  local skillID
+  for k, v in pairs(param) do
     if v.index == index then
       skillID = v.SkillID
       break
     end
   end
-  do
-    local skillHolder = self:Entity()
-    local playSkillSvc = (self._world):GetService("PlaySkill")
-    local configSvc = (self._world):GetService("Config")
-    local skillConfigData = configSvc:GetSkillConfigData(skillID, skillHolder)
-    local skillPhaseArray = skillConfigData:GetSkillPhaseArray()
-    local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : playSkillSvc, skillHolder, skillPhaseArray, skillID
+  local skillHolder = self:Entity()
+  local playSkillSvc = self._world:GetService("PlaySkill")
+  local configSvc = self._world:GetService("Config")
+  local skillConfigData = configSvc:GetSkillConfigData(skillID, skillHolder)
+  local skillPhaseArray = skillConfigData:GetSkillPhaseArray()
+  local taskID = GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     playSkillSvc:_SkillRoutineTask(TT, skillHolder, skillPhaseArray, skillID)
+  end)
+  local previewEntity = self._world:GetPreviewEntity()
+  local renderState = previewEntity:RenderState()
+  if not renderState then
+    previewEntity:AddRenderState()
+    renderState = previewEntity:RenderState()
   end
-)
-    local previewEntity = (self._world):GetPreviewEntity()
-    local renderState = previewEntity:RenderState()
-    if not renderState then
-      previewEntity:AddRenderState()
-      renderState = previewEntity:RenderState()
-    end
-    renderState:SetRenderStateAndParam(RenderStateType.WaitPlayTask, taskID)
-  end
+  renderState:SetRenderStateAndParam(RenderStateType.WaitPlayTask, taskID)
 end
-
-

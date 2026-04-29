@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_init_arrow_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewInitArrowInstruction", SkillPreviewBaseInstruction)
 SkillPreviewInitArrowInstruction = SkillPreviewInitArrowInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewInitArrowInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewInitArrowInstruction:Constructor(params)
   self._number = params.Number
   self._showOutGrid = false
   if params.ShowOutGrid and params.ShowOutGrid == "true" then
@@ -18,29 +11,25 @@ SkillPreviewInitArrowInstruction.Constructor = function(self, params)
   self._skillPreviewCenterType = tonumber(params.SkillPreviewCenterType) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewInitArrowInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewInitArrowInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = previewContext:GetWorld()
-  local centerPos = (casterEntity:GridLocation()).Position
+  local centerPos = casterEntity:GridLocation().Position
   if self._skillPreviewCenterType == SkillPreviewCenterType.PickUp then
     local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
     local scopeGridList = previewPickUpComponent:GetAllValidPickUpGridPos()
     centerPos = scopeGridList[1]
   end
-  do
-    local previewActiveSkillService = world:GetService("PreviewActiveSkill")
-    if self._number == "4" then
-      previewActiveSkillService:ShowFourPickUpArrow(self._showOutGrid, centerPos)
-    else
-      if self._number == "8" then
-        previewActiveSkillService:ShowEightPickUpArrow(self._showOutGrid, centerPos)
-      end
-    end
+  local previewActiveSkillService = world:GetService("PreviewActiveSkill")
+  if self._number == "4" then
+    previewActiveSkillService:ShowFourPickUpArrow(self._showOutGrid, centerPos)
+  elseif self._number == "8" then
+    previewActiveSkillService:ShowEightPickUpArrow(self._showOutGrid, centerPos)
   end
 end
 
-local SkillPreviewCenterType = {Team = 1, PickUp = 2, MAX = 99}
+local SkillPreviewCenterType = {
+  Team = 1,
+  PickUp = 2,
+  MAX = 99
+}
 _enum("SkillPreviewCenterType", SkillPreviewCenterType)
-

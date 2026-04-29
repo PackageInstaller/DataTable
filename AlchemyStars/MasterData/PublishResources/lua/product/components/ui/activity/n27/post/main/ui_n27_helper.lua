@@ -1,267 +1,185 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/post/main/ui_n27_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN27Helper", Object)
 UIActivityN27Helper = UIActivityN27Helper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN27Helper.LoadData = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  self._campaign = (UIActivityCampaign.New)()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N27, ECampaignN27ComponentID.ECAMPAIGN_N27_CUMULATIVE_LOGIN, ECampaignN27ComponentID.ECAMPAIGN_N27_FIRST_MEET, ECampaignN27ComponentID.ECAMPAIGN_N27_POWER2ITEM, ECampaignN27ComponentID.ECAMPAIGN_N27_LINE_MISSION, ECampaignN27ComponentID.ECAMPAIGN_N27_DIFFICULT_MISSION, ECampaignN27ComponentID.ECAMPAIGN_N27_SHOP, ECampaignN27ComponentID.ECAMPAIGN_N27_BLOODSUCKER, ECampaignN27ComponentID.ECAMPAIGN_N27_IDOL)
+function UIActivityN27Helper:LoadData(TT, res)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
+  self._campaign = UIActivityCampaign.New()
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N27, ECampaignN27ComponentID.ECAMPAIGN_N27_CUMULATIVE_LOGIN, ECampaignN27ComponentID.ECAMPAIGN_N27_FIRST_MEET, ECampaignN27ComponentID.ECAMPAIGN_N27_POWER2ITEM, ECampaignN27ComponentID.ECAMPAIGN_N27_LINE_MISSION, ECampaignN27ComponentID.ECAMPAIGN_N27_DIFFICULT_MISSION, ECampaignN27ComponentID.ECAMPAIGN_N27_SHOP, ECampaignN27ComponentID.ECAMPAIGN_N27_BLOODSUCKER, ECampaignN27ComponentID.ECAMPAIGN_N27_IDOL)
   if res and not res:GetSucc() then
     return res
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   local bpRes = AsyncRequestRes:New()
   bpRes:SetSucc(true)
   self._battlepassCampaign = UIActivityCampaign:New()
-  ;
-  (self._battlepassCampaign):LoadCampaignInfo(TT, bpRes, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
+  self._battlepassCampaign:LoadCampaignInfo(TT, bpRes, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
   if not bpRes:GetSucc() then
-    (Log.info)("获取战斗通行证数据失败")
+    Log.info("获取战斗通行证数据失败")
   end
-  self._cumulativeLoginComponent = (self._localProcess):GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_CUMULATIVE_LOGIN)
-  self._cumulativeLoginComponentInfo = (self._localProcess):GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_CUMULATIVE_LOGIN)
-  self._fixTeamComponent = (self._localProcess):GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_FIRST_MEET)
-  self._fixTeamCompInfo = (self._localProcess):GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_FIRST_MEET)
-  self._lineComp = (self._localProcess):GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_LINE_MISSION)
-  self._lineCompInfo = (self._localProcess):GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_LINE_MISSION)
-  self._hardComp = (self._localProcess):GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_DIFFICULT_MISSION)
-  self._hardCompInfo = (self._localProcess):GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_DIFFICULT_MISSION)
-  self._power2itemComponent = (self._localProcess):GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_POWER2ITEM)
-  self._power2itemComponentInfo = (self._localProcess):GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_POWER2ITEM)
-  self._exchangeComponent = (self._localProcess):GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_SHOP)
-  self._exchangeComponentInfo = (self._localProcess):GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_SHOP)
-  self._idolMiniGameComponent = (self._localProcess):GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_IDOL)
-  self._idolMiniGameCompInfo = (self._localProcess):GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_IDOL)
-  self._bloodsuckerComponet = (self._localProcess):GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_BLOODSUCKER)
-  self._bloodsuckerComponentInfo = (self._localProcess):GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_BLOODSUCKER)
-  local cfg_campaign = (Cfg.cfg_campaign)[(self._campaign)._id]
-  self._name = (StringTable.Get)(cfg_campaign.CampaignName)
-  self._subName = (StringTable.Get)(cfg_campaign.CampaignSubtitle)
-  local sample = (self._campaign):GetSample()
+  self._cumulativeLoginComponent = self._localProcess:GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_CUMULATIVE_LOGIN)
+  self._cumulativeLoginComponentInfo = self._localProcess:GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_CUMULATIVE_LOGIN)
+  self._fixTeamComponent = self._localProcess:GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_FIRST_MEET)
+  self._fixTeamCompInfo = self._localProcess:GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_FIRST_MEET)
+  self._lineComp = self._localProcess:GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_LINE_MISSION)
+  self._lineCompInfo = self._localProcess:GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_LINE_MISSION)
+  self._hardComp = self._localProcess:GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_DIFFICULT_MISSION)
+  self._hardCompInfo = self._localProcess:GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_DIFFICULT_MISSION)
+  self._power2itemComponent = self._localProcess:GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_POWER2ITEM)
+  self._power2itemComponentInfo = self._localProcess:GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_POWER2ITEM)
+  self._exchangeComponent = self._localProcess:GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_SHOP)
+  self._exchangeComponentInfo = self._localProcess:GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_SHOP)
+  self._idolMiniGameComponent = self._localProcess:GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_IDOL)
+  self._idolMiniGameCompInfo = self._localProcess:GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_IDOL)
+  self._bloodsuckerComponet = self._localProcess:GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_BLOODSUCKER)
+  self._bloodsuckerComponentInfo = self._localProcess:GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_BLOODSUCKER)
+  local cfg_campaign = Cfg.cfg_campaign[self._campaign._id]
+  self._name = StringTable.Get(cfg_campaign.CampaignName)
+  self._subName = StringTable.Get(cfg_campaign.CampaignSubtitle)
+  local sample = self._campaign:GetSample()
   if not sample then
-    return 
+    return
   end
-  local nowTime = (self._timeModule):GetServerTime() / 1000
+  local nowTime = self._timeModule:GetServerTime() / 1000
   self._activeEndTime = sample.end_time
-  local power2itemEndTime = (self._power2itemComponentInfo).m_close_time
-  if power2itemEndTime <= nowTime then
+  local power2itemEndTime = self._power2itemComponentInfo.m_close_time
+  if nowTime >= power2itemEndTime then
     self._status = 2
   else
     self._status = 1
     self._endTime = power2itemEndTime
   end
-  if self._activeEndTime < nowTime then
-    (Log.error)("Time error!")
-    return 
+  if nowTime > self._activeEndTime then
+    Log.error("Time error!")
+    return
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.ForceRefresh = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN27Helper:ForceRefresh(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetCampaign = function(self)
-  -- function num : 0_2
+function UIActivityN27Helper:GetCampaign()
   return self._campaign
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetCampaignId = function(self)
-  -- function num : 0_3
-  return (self._campaign)._id
+function UIActivityN27Helper:GetCampaignId()
+  return self._campaign._id
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetName = function(self)
-  -- function num : 0_4
+function UIActivityN27Helper:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetSubName = function(self)
-  -- function num : 0_5
+function UIActivityN27Helper:GetSubName()
   return self._subName
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetActiveEndTime = function(self)
-  -- function num : 0_6
+function UIActivityN27Helper:GetActiveEndTime()
   return self._activeEndTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetStatus = function(self)
-  -- function num : 0_7
+function UIActivityN27Helper:GetStatus()
   return self._status
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.SetStatus = function(self, status)
-  -- function num : 0_8
+function UIActivityN27Helper:SetStatus(status)
   self._status = status
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.IsActivityEnd = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  local seconds = (math.floor)(self._activeEndTime - nowTime)
+function UIActivityN27Helper:IsActivityEnd()
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  local seconds = math.floor(self._activeEndTime - nowTime)
   if seconds <= 0 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetTryPetComponent = function(self)
-  -- function num : 0_10
+function UIActivityN27Helper:GetTryPetComponent()
   return self._fixTeamComponent, self._fixTeamCompInfo
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetShopComponent = function(self)
-  -- function num : 0_11
+function UIActivityN27Helper:GetShopComponent()
   return self._exchangeComponent, self._exchangeComponentInfo
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetLineComponent = function(self)
-  -- function num : 0_12
+function UIActivityN27Helper:GetLineComponent()
   return self._lineComp, self._lineCompInfo
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetHardComponent = function(self)
-  -- function num : 0_13
+function UIActivityN27Helper:GetHardComponent()
   return self._hardComp, self._hardCompInfo
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetIdolComponent = function(self)
-  -- function num : 0_14
+function UIActivityN27Helper:GetIdolComponent()
   return self._idolMiniGameComponent, self._idolMiniGameCompInfo
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetBloodSuckerComponent = function(self)
-  -- function num : 0_15
+function UIActivityN27Helper:GetBloodSuckerComponent()
   return self._bloodsuckerComponet, self._bloodsuckerComponentInfo
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.IsTryPetEnable = function(self)
-  -- function num : 0_16
+function UIActivityN27Helper:IsTryPetEnable()
   if self:IsActivityEnd() then
     return false
   end
   if not self._fixTeamComponent then
     return false
   end
-  return (self._fixTeamComponent):ComponentIsOpen()
+  return self._fixTeamComponent:ComponentIsOpen()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.IsPower2ItemEnable = function(self)
-  -- function num : 0_17
+function UIActivityN27Helper:IsPower2ItemEnable()
   if self:IsActivityEnd() then
     return false
   end
   if not self._power2itemComponent then
     return false
   end
-  return (self._power2itemComponent):ComponentIsOpen()
+  return self._power2itemComponent:ComponentIsOpen()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.IsShowEntryNew = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIActivityN27Helper:IsShowEntryNew()
   if self:IsActivityEnd() then
     return false
   end
-  if not (UIActivityN27Helper.GetEnterNewStatus)() and not self:CheckNewHard() and not self:CheckNewNormal() and not self:CheckGameIdolNew() then
-    local isNew = self:CheckGameBloodSuckerNew()
-  end
+  local isNew = UIActivityN27Helper.GetEnterNewStatus() or self:CheckNewHard() or self:CheckNewNormal() or self:CheckGameIdolNew() or self:CheckGameBloodSuckerNew()
   return isNew
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.CheckNewNormal = function(self)
-  -- function num : 0_19
+function UIActivityN27Helper:CheckNewNormal()
   return false
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.CheckNewHard = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  if not (N27Data.HasPrefs)((N27Data.GetPrefsKeyHard)()) and self._hardCompInfo and self:GetState(self._hardCompInfo) == UISummerOneEnterBtnState.Normal then
+function UIActivityN27Helper:CheckNewHard()
+  if not N27Data.HasPrefs(N27Data.GetPrefsKeyHard()) and self._hardCompInfo and self:GetState(self._hardCompInfo) == UISummerOneEnterBtnState.Normal then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.CheckGameIdolNew = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  if not (N27Data.HasPrefs)((N27Data.GetPrefsKeyGameIdol)()) and self._idolMiniGameCompInfo and self:GetState(self._idolMiniGameCompInfo) == UISummerOneEnterBtnState.Normal then
+function UIActivityN27Helper:CheckGameIdolNew()
+  if not N27Data.HasPrefs(N27Data.GetPrefsKeyGameIdol()) and self._idolMiniGameCompInfo and self:GetState(self._idolMiniGameCompInfo) == UISummerOneEnterBtnState.Normal then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.CheckGameBloodSuckerNew = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  if not (N27Data.HasPrefs)((N27Data.GetPrefsKeyGameBloodSucker)()) and self._bloodsuckerComponentInfo and self:GetState(self._bloodsuckerComponentInfo) == UISummerOneEnterBtnState.Normal then
+function UIActivityN27Helper:CheckGameBloodSuckerNew()
+  if not N27Data.HasPrefs(N27Data.GetPrefsKeyGameBloodSucker()) and self._bloodsuckerComponentInfo and self:GetState(self._bloodsuckerComponentInfo) == UISummerOneEnterBtnState.Normal then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.IsShowEntryRed = function(self)
-  -- function num : 0_23
+function UIActivityN27Helper:IsShowEntryRed()
   if self:IsActivityEnd() then
     return false
   end
@@ -286,349 +204,241 @@ UIActivityN27Helper.IsShowEntryRed = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.CheckRedAward = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local red = (self._campaign):CheckComponentRed(self._localProcess, ECampaignN27ComponentID.ECAMPAIGN_N27_CUMULATIVE_LOGIN)
+function UIActivityN27Helper:CheckRedAward()
+  local red = self._campaign:CheckComponentRed(self._localProcess, ECampaignN27ComponentID.ECAMPAIGN_N27_CUMULATIVE_LOGIN)
   return red
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.CheckRedTryPet = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIActivityN27Helper:CheckRedTryPet()
   local state = self:GetStateTryPet()
-  do
-    if state == UISummerOneEnterBtnState.Normal then
-      local red = (self._campaign):CheckComponentRed(self._localProcess, ECampaignN27ComponentID.ECAMPAIGN_N27_FIRST_MEET)
-      return red
-    end
-    return false
+  if state == UISummerOneEnterBtnState.Normal then
+    local red = self._campaign:CheckComponentRed(self._localProcess, ECampaignN27ComponentID.ECAMPAIGN_N27_FIRST_MEET)
+    return red
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.CheckRedNormal = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIActivityN27Helper:CheckRedNormal()
   local state = self:GetStateNormal()
-  do
-    if state == UISummerOneEnterBtnState.Normal then
-      local red = (self._campaign):CheckComponentRed(self._localProcess, ECampaignN27ComponentID.ECAMPAIGN_N27_LINE_MISSION)
-      return red
-    end
-    return false
+  if state == UISummerOneEnterBtnState.Normal then
+    local red = self._campaign:CheckComponentRed(self._localProcess, ECampaignN27ComponentID.ECAMPAIGN_N27_LINE_MISSION)
+    return red
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.CheckRedHard = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UIActivityN27Helper:CheckRedHard()
   local state = self:GetStateHard()
-  do
-    if state == UISummerOneEnterBtnState.Normal then
-      local red = (self._campaign):CheckComponentRed(self._localProcess, ECampaignN27ComponentID.ECAMPAIGN_N27_DIFFICULT_MISSION)
-      return red
-    end
-    return false
+  if state == UISummerOneEnterBtnState.Normal then
+    local red = self._campaign:CheckComponentRed(self._localProcess, ECampaignN27ComponentID.ECAMPAIGN_N27_DIFFICULT_MISSION)
+    return red
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.CheckRedShop = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UIActivityN27Helper:CheckRedShop()
   local state = self:GetStateShop()
-  do
-    if state == UISummerOneEnterBtnState.Normal then
-      local red = (self._campaign):CheckComponentRed(self._localProcess, self.componentIdShop)
-      return red
-    end
-    return false
+  if state == UISummerOneEnterBtnState.Normal then
+    local red = self._campaign:CheckComponentRed(self._localProcess, self.componentIdShop)
+    return red
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.IsShowBattlePassRed = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UIActivityN27Helper:IsShowBattlePassRed()
   if self._battlepassCampaign then
-    return (UIActivityHelper.CheckCampaignSampleRedPoint)(self._battlepassCampaign)
+    return UIActivityHelper.CheckCampaignSampleRedPoint(self._battlepassCampaign)
   end
   return false
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.CheckGameIdolRed = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UIActivityN27Helper:CheckGameIdolRed()
   local state = self:GetStateGameIdol()
-  do
-    if state == UISummerOneEnterBtnState.Normal then
-      local red = (self._campaign):CheckComponentRed(self._localProcess, ECampaignN27ComponentID.ECAMPAIGN_N27_IDOL)
-      return red
-    end
-    return false
+  if state == UISummerOneEnterBtnState.Normal then
+    local red = self._campaign:CheckComponentRed(self._localProcess, ECampaignN27ComponentID.ECAMPAIGN_N27_IDOL)
+    return red
   end
-end
-
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.CheckGameBloodSuckerRed = function(self)
-  -- function num : 0_31
   return false
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
+function UIActivityN27Helper:CheckGameBloodSuckerRed()
+  return false
+end
 
-UIActivityN27Helper.GetNewFlagKey = function(id)
-  -- function num : 0_32 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityN27Helper.GetNewFlagKey(id)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. "ACTIVITY_N27_MODULE_NEW_FLAG" .. id
   return key
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetNewFlagStatus = function(id)
-  -- function num : 0_33 , upvalues : _ENV
-  local key = (UIActivityN27Helper.GetNewFlagKey)(id)
-  if not ((UnityEngine.PlayerPrefs).HasKey)(key) then
+function UIActivityN27Helper.GetNewFlagStatus(id)
+  local key = UIActivityN27Helper.GetNewFlagKey(id)
+  if not UnityEngine.PlayerPrefs.HasKey(key) then
     return true
   end
-  local value = ((UnityEngine.PlayerPrefs).GetInt)(key)
-  do return value == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local value = UnityEngine.PlayerPrefs.GetInt(key)
+  return value == 0
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.SetNewFlagStatus = function(id, status)
-  -- function num : 0_34 , upvalues : _ENV
-  local key = (UIActivityN27Helper.GetNewFlagKey)(id)
+function UIActivityN27Helper.SetNewFlagStatus(id, status)
+  local key = UIActivityN27Helper.GetNewFlagKey(id)
   if status then
-    ((UnityEngine.PlayerPrefs).SetInt)(key, 0)
+    UnityEngine.PlayerPrefs.SetInt(key, 0)
   else
-    ;
-    ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+    UnityEngine.PlayerPrefs.SetInt(key, 1)
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetEnterNewStatus = function()
-  -- function num : 0_35 , upvalues : _ENV
-  return (UIActivityN27Helper.GetNewFlagStatus)("ENTRY_NEW")
+function UIActivityN27Helper.GetEnterNewStatus()
+  return UIActivityN27Helper.GetNewFlagStatus("ENTRY_NEW")
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.ClearEnterNewStatus = function()
-  -- function num : 0_36 , upvalues : _ENV
-  (UIActivityN27Helper.SetNewFlagStatus)("ENTRY_NEW", false)
+function UIActivityN27Helper.ClearEnterNewStatus()
+  UIActivityN27Helper.SetNewFlagStatus("ENTRY_NEW", false)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetStateShop = function(self)
-  -- function num : 0_37
+function UIActivityN27Helper:GetStateShop()
   if self._exchangeComponentInfo then
     return self:GetState(self._exchangeComponentInfo)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetStateNormal = function(self)
-  -- function num : 0_38
+function UIActivityN27Helper:GetStateNormal()
   if self._lineCompInfo then
     return self:GetState(self._lineCompInfo)
   end
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetStateHard = function(self)
-  -- function num : 0_39
+function UIActivityN27Helper:GetStateHard()
   if self._hardCompInfo then
     return self:GetState(self._hardCompInfo)
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetStateTryPet = function(self)
-  -- function num : 0_40
+function UIActivityN27Helper:GetStateTryPet()
   if self._fixTeamCompInfo then
     return self:GetState(self._fixTeamCompInfo)
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetStateGameIdol = function(self)
-  -- function num : 0_41
+function UIActivityN27Helper:GetStateGameIdol()
   if self._idolMiniGameCompInfo then
     return self:GetState(self._idolMiniGameCompInfo)
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetStateGameBloodSucker = function(self)
-  -- function num : 0_42
+function UIActivityN27Helper:GetStateGameBloodSucker()
   if self._bloodsuckerComponentInfo then
     return self:GetState(self._bloodsuckerComponentInfo)
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetState = function(self, cInfo)
-  -- function num : 0_43 , upvalues : _ENV
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+function UIActivityN27Helper:GetState(cInfo)
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   if nowTimestamp < cInfo.m_unlock_time then
     return UISummerOneEnterBtnState.NotOpen
+  elseif nowTimestamp > cInfo.m_close_time then
+    return UISummerOneEnterBtnState.Closed
+  elseif cInfo.m_b_unlock then
+    return UISummerOneEnterBtnState.Normal
   else
-    if cInfo.m_close_time < nowTimestamp then
-      return UISummerOneEnterBtnState.Closed
+    local cfgv = Cfg.cfg_campaign_mission[cInfo.m_need_mission_id]
+    if cfgv then
+      return UISummerOneEnterBtnState.Locked
     else
-      if cInfo.m_b_unlock then
-        return UISummerOneEnterBtnState.Normal
-      else
-        local cfgv = (Cfg.cfg_campaign_mission)[cInfo.m_need_mission_id]
-        if cfgv then
-          return UISummerOneEnterBtnState.Locked
-        else
-          return UISummerOneEnterBtnState.Normal
-        end
-      end
+      return UISummerOneEnterBtnState.Normal
     end
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetTimeString = function(seconds)
-  -- function num : 0_44 , upvalues : _ENV
+function UIActivityN27Helper.GetTimeString(seconds)
   local timeStr = ""
-  local day = (math.floor)(seconds / 3600 / 24)
-  if day > 0 then
+  local day = math.floor(seconds / 3600 / 24)
+  if 0 < day then
     seconds = seconds - day * 3600 * 24
-    local hour = (math.floor)((seconds) / 3600)
-    timeStr = (StringTable.Get)("str_N27_day", day)
-    if hour > 0 then
-      timeStr = timeStr .. (StringTable.Get)("str_N27_hour", hour)
+    local hour = math.floor(seconds / 3600)
+    timeStr = StringTable.Get("str_N27_day", day)
+    if 0 < hour then
+      timeStr = timeStr .. StringTable.Get("str_N27_hour", hour)
+    end
+  elseif 60 <= seconds then
+    local hour = math.floor(seconds / 3600)
+    seconds = seconds - hour * 3600
+    if 0 < hour then
+      timeStr = StringTable.Get("str_N27_hour", hour)
+    end
+    local minus = math.floor(seconds / 60)
+    if minus then
+      timeStr = timeStr .. StringTable.Get("str_N27_minus", minus)
     end
   else
-    do
-      if seconds >= 60 then
-        local hour = (math.floor)((seconds) / 3600)
-        seconds = seconds - hour * 3600
-        if hour > 0 then
-          timeStr = (StringTable.Get)("str_N27_hour", hour)
-        end
-        local minus = (math.floor)((seconds) / 60)
-        if minus then
-          timeStr = timeStr .. (StringTable.Get)("str_N27_minus", minus)
-        end
-      else
-        do
-          timeStr = (StringTable.Get)("str_N27_less_one_minus")
-          return timeStr
-        end
-      end
-    end
+    timeStr = StringTable.Get("str_N27_less_one_minus")
   end
+  return timeStr
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetItemCountStr = function(count, preColor, countColor)
-  -- function num : 0_45 , upvalues : _ENV
+function UIActivityN27Helper.GetItemCountStr(count, preColor, countColor)
   local dight = 0
   local tmpCount = count
   if tmpCount < 0 then
     tmpCount = -tmpCount
   end
-  while tmpCount > 0 do
-    tmpCount = (math.floor)(tmpCount / 10)
+  while 0 < tmpCount do
+    tmpCount = math.floor(tmpCount / 10)
     dight = dight + 1
   end
   local pre = ""
-  if count >= 0 then
-    for i = 1, 7 - (dight) do
+  if 0 <= count then
+    for i = 1, 7 - dight do
       pre = pre .. "0"
     end
   else
-    do
-      for i = 1, 7 - (dight) - 1 do
-        pre = pre .. "0"
-      end
-      do
-        if count > 0 then
-          return (string.format)("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
-        else
-          if count == 0 then
-            return (string.format)("<color=" .. preColor .. ">%s</color>", pre)
-          else
-            return (string.format)("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
-          end
-        end
-      end
+    for i = 1, 7 - dight - 1 do
+      pre = pre .. "0"
     end
+  end
+  if 0 < count then
+    return string.format("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
+  elseif count == 0 then
+    return string.format("<color=" .. preColor .. ">%s</color>", pre)
+  else
+    return string.format("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.ShowRewards = function(rewards, callback)
-  -- function num : 0_46 , upvalues : _ENV
+function UIActivityN27Helper.ShowRewards(rewards, callback)
   local petIdList = {}
-  local mPet = (GameGlobal.GetModule)(PetModule)
-  for _,reward in pairs(rewards) do
+  local mPet = GameGlobal.GetModule(PetModule)
+  for _, reward in pairs(rewards) do
     if mPet:IsPetID(reward.assetid) then
-      (table.insert)(petIdList, reward)
+      table.insert(petIdList, reward)
     end
   end
-  if (table.count)(petIdList) > 0 then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIPetObtain", petIdList, function()
-    -- function num : 0_46_0 , upvalues : _ENV, rewards, callback
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", rewards, function()
-      -- function num : 0_46_0_0 , upvalues : callback
-      if callback then
-        callback()
-      end
-    end
-)
+  if table.count(petIdList) > 0 then
+    GameGlobal.UIStateManager():ShowDialog("UIPetObtain", petIdList, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      GameGlobal.UIStateManager():ShowDialog("UIGetItemController", rewards, function()
+        if callback then
+          callback()
+        end
+      end)
+    end)
+    return
   end
-)
-    return 
-  end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", rewards, function()
-    -- function num : 0_46_1 , upvalues : callback
+  GameGlobal.UIStateManager():ShowDialog("UIGetItemController", rewards, function()
     if callback then
       callback()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetSpineAndBgm = function(self)
-  -- function num : 0_47 , upvalues : _ENV
-  local cfg = (Cfg.cfg_N27_const)[1]
+function UIActivityN27Helper:GetSpineAndBgm()
+  local cfg = Cfg.cfg_N27_const[1]
   if self._lineCompInfo and cfg then
-    local missionModule = (GameGlobal.GetModule)(MissionModule)
-    local passInfo = (self._lineCompInfo).m_pass_mission_info
-    for _,info in pairs(passInfo) do
+    local missionModule = GameGlobal.GetModule(MissionModule)
+    local passInfo = self._lineCompInfo.m_pass_mission_info
+    for _, info in pairs(passInfo) do
       local storyId = missionModule:GetStoryByStageIdStoryType(info.mission_id, StoryTriggerType.Node)
       if storyId == cfg.StoryID then
         return cfg.Spine2, cfg.Bgm2
@@ -636,83 +446,56 @@ UIActivityN27Helper.GetSpineAndBgm = function(self)
     end
     return cfg.Spine1, cfg.Bgm1
   end
-  do
-    return nil, nil
-  end
+  return nil, nil
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.CheckBloodSuckerMissionPassed = function(self, missionId)
-  -- function num : 0_48 , upvalues : _ENV
+function UIActivityN27Helper:CheckBloodSuckerMissionPassed(missionId)
   if not self._bloodsuckerComponentInfo then
     return false
   end
-  if (self._bloodsuckerComponentInfo).mission_infos then
-    for index,value in pairs((self._bloodsuckerComponentInfo).mission_infos) do
-      if value.is_pass ~= 1 then
-        do
-          do return index ~= missionId end
-          -- DECOMPILER ERROR at PC22: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC22: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+  if self._bloodsuckerComponentInfo.mission_infos then
+    for index, value in pairs(self._bloodsuckerComponentInfo.mission_infos) do
+      if index == missionId then
+        return value.is_pass == 1
       end
     end
   end
-  do return false end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.CheckBloodSuckerMissionJoind = function(self, missionId)
-  -- function num : 0_49 , upvalues : _ENV
+function UIActivityN27Helper:CheckBloodSuckerMissionJoind(missionId)
   if not self._bloodsuckerComponentInfo then
     return false
   end
-  if (self._bloodsuckerComponentInfo).join_mission_list then
-    for index,value in pairs((self._bloodsuckerComponentInfo).join_mission_list) do
+  if self._bloodsuckerComponentInfo.join_mission_list then
+    for index, value in pairs(self._bloodsuckerComponentInfo.join_mission_list) do
       if value == missionId then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetTaskRedPoint = function(self)
-  -- function num : 0_50 , upvalues : _ENV
-  self._questComponent = (self._localProcess):GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_QUEST)
+function UIActivityN27Helper:GetTaskRedPoint()
+  self._questComponent = self._localProcess:GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_QUEST)
   if not self._questComponent then
     return false
   end
-  return (self._questComponent):HaveRedPoint()
+  return self._questComponent:HaveRedPoint()
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27Helper.GetShowFirstTaskIndex = function(self)
-  -- function num : 0_51 , upvalues : _ENV
+function UIActivityN27Helper:GetShowFirstTaskIndex()
   local firstShow = 1
   if not self._bloodsuckerComponentInfo then
     return firstShow
   end
-  if (self._bloodsuckerComponentInfo).mission_infos then
-    for index,value in pairs((self._bloodsuckerComponentInfo).mission_infos) do
+  if self._bloodsuckerComponentInfo.mission_infos then
+    for index, value in pairs(self._bloodsuckerComponentInfo.mission_infos) do
       if value.is_pass == 1 then
         firstShow = firstShow + 1
       end
     end
   end
-  do
-    return firstShow
-  end
+  return firstShow
 end
-
-

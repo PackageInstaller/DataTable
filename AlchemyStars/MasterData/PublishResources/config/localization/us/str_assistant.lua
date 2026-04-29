@@ -1,8 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/us/str_assistant.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_assistant_current_assistant = "Current Assistant", str_assistant_choose = "Selected", str_assistant_current_skin = "Current Outfit", str_assistant_choose_current_assistant = "Chosen as Current Assistant", str_assistant_all = "All", str_assistant_change_assistant = "Change Assistant", str_assistant_preview_assistant = "Assistant Preview", str_assistant_main_bg_cancel = "Cancel", str_assistant_main_bg_save = "Save", str_assistant_main_bg_using = "In use", str_assistant_pos_btn = "Position", str_assistant_bg_btn = "Background", str_assistant_skin_btn = "Outfit", str_assistant_change_assistant_skin = "Change Assistant/Outfit", str_assistant_current_use_skin = "Current Outfit", str_assistant_main_cg_cancel = "Discard Setting", str_assistant_main_cg_save = "Save Setting", str_assistant_main_cg_reply = "Restore to Default", str_assistant_current_pet_null = "None", str_assistant_main_bg_move = "Move", str_assistant_main_bg_hide_as = "Hide Assistant", str_assistant_cg_bg_btn = "CG Background", str_assistant_cg_bg_btn1 = "Scene", str_assistant_cg_bg_btn2 = "Plot Artwork", str_assistant_cg_bg_btn3 = "Outfit Artwork", str_assistant_cg_bg_btn4 = "Event Artwork", str_assistant_cg_bg_tip1 = "Complete Collector\'s Outfit scenario to unlock.", str_assistant_cg_bg_tip2 = "Obtain the corresponding event artwork to unlock.", str_assistant_cg_bg_tip3 = "Complete the main chapters to unlock.", str_assistant_mulSpine_btn_txt = "Slideshow", str_assistant_mulSpine_btn_txt2 = "Solo", str_assistant_cg_bgPos = "Background Position", str_assistant_cg_petPos = "Assistant Position", str_assistant_main_change_sp = "Change Assistant", str_assistant_main_change_bg = "Change Background", str_assistant_main_change_pos = "Position and Size", str_assistant_main_change_min = "-", str_assistant_main_change_max = "+", str_assistant_main_change_cg_des = "Drag the Aurorian to move and resize.", str_assistant_main_change_role = "Aurorian", str_assistant_main_change_bg1 = "Background", str_assistant_main_bg_sure = "Confirm", str_assistant_main_change_bj_des = "Drag the Background to move and resize.", str_assistant_main_change_no_cg_des = "No assistant selected.", str_assistant_main_cg_dressup_title = "Main Screen Outfit Set", str_assistant_main_cg_dressup_tips = "You can switch between selected outfit sets by swiping left or right on the main screen.", str_assistant_main_cg_dressup_single_name_1 = "Outfit Set 1", str_assistant_main_cg_dressup_single_name_2 = "Outfit Set 2", str_assistant_main_cg_dressup_single_name_3 = "Outfit Set 3", str_assistant_main_cg_dressup_single_name_4 = "Outfit Set 4", str_assistant_main_cg_dressup_single_name_5 = "Outfit Set 5", str_assistant_main_cg_dressup_warning_un_open = "You need to select at least one outfit set."}
+local config = {
+  str_assistant_current_assistant = "Current Assistant",
+  str_assistant_choose = "Selected",
+  str_assistant_current_skin = "Current Outfit",
+  str_assistant_choose_current_assistant = "Chosen as Current Assistant",
+  str_assistant_all = "All",
+  str_assistant_change_assistant = "Change Assistant",
+  str_assistant_preview_assistant = "Assistant Preview",
+  str_assistant_main_bg_cancel = "Cancel",
+  str_assistant_main_bg_save = "Save",
+  str_assistant_main_bg_using = "In use",
+  str_assistant_pos_btn = "Position",
+  str_assistant_bg_btn = "Background",
+  str_assistant_skin_btn = "Outfit",
+  str_assistant_change_assistant_skin = "Change Assistant/Outfit",
+  str_assistant_current_use_skin = "Current Outfit",
+  str_assistant_main_cg_cancel = "Discard Setting",
+  str_assistant_main_cg_save = "Save Setting",
+  str_assistant_main_cg_reply = "Restore to Default",
+  str_assistant_current_pet_null = "None",
+  str_assistant_main_bg_move = "Move",
+  str_assistant_main_bg_hide_as = "Hide Assistant",
+  str_assistant_cg_bg_btn = "CG Background",
+  str_assistant_cg_bg_btn1 = "Scene",
+  str_assistant_cg_bg_btn2 = "Plot Artwork",
+  str_assistant_cg_bg_btn3 = "Outfit Artwork",
+  str_assistant_cg_bg_btn4 = "Event Artwork",
+  str_assistant_cg_bg_tip1 = "Complete Collector's Outfit scenario to unlock.",
+  str_assistant_cg_bg_tip2 = "Obtain the corresponding event artwork to unlock.",
+  str_assistant_cg_bg_tip3 = "Complete the main chapters to unlock.",
+  str_assistant_mulSpine_btn_txt = "Slideshow",
+  str_assistant_mulSpine_btn_txt2 = "Solo",
+  str_assistant_cg_bgPos = "Background Position",
+  str_assistant_cg_petPos = "Assistant Position",
+  str_assistant_main_change_sp = "Change Assistant",
+  str_assistant_main_change_bg = "Change Background",
+  str_assistant_main_change_pos = "Position and Size",
+  str_assistant_main_change_min = "-",
+  str_assistant_main_change_max = "+",
+  str_assistant_main_change_cg_des = "Drag the Aurorian to move and resize.",
+  str_assistant_main_change_role = "Aurorian",
+  str_assistant_main_change_bg1 = "Background",
+  str_assistant_main_bg_sure = "Confirm",
+  str_assistant_main_change_bj_des = "Drag the Background to move and resize.",
+  str_assistant_main_change_no_cg_des = "No assistant selected.",
+  str_assistant_main_cg_dressup_title = "Main Screen Outfit Set",
+  str_assistant_main_cg_dressup_tips = "You can switch between selected outfit sets by swiping left or right on the main screen.",
+  str_assistant_main_cg_dressup_single_name_1 = "Outfit Set 1",
+  str_assistant_main_cg_dressup_single_name_2 = "Outfit Set 2",
+  str_assistant_main_cg_dressup_single_name_3 = "Outfit Set 3",
+  str_assistant_main_cg_dressup_single_name_4 = "Outfit Set 4",
+  str_assistant_main_cg_dressup_single_name_5 = "Outfit Set 5",
+  str_assistant_main_cg_dressup_warning_un_open = "You need to select at least one outfit set."
+}
 return config
-

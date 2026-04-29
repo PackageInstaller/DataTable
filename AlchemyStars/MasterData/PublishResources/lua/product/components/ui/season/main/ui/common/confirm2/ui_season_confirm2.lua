@@ -1,38 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/common/confirm2/ui_season_confirm2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonConfirm2", UIController)
 UISeasonConfirm2 = UISeasonConfirm2
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonConfirm2.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonConfirm2:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonConfirm2.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISeasonConfirm2:OnShow(uiParams)
   self._txtTitle = uiParams[1]
   self._txtContent = uiParams[2]
   self._confirmCb = uiParams[3]
   self._cancleCb = uiParams[4]
   self:InitWidget()
-  ;
-  (self.title):SetText(self._txtTitle)
-  ;
-  (self.titleShodow):SetText(self._txtTitle)
-  ;
-  (self.content):SetText(self._txtContent)
+  self.title:SetText(self._txtTitle)
+  self.titleShodow:SetText(self._txtTitle)
+  self.content:SetText(self._txtContent)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonConfirm2.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonConfirm2:InitWidget()
   self.offset = self:GetGameObject("offset")
   self.content = self:GetUIComponent("UILocalizationText", "Content")
   self.title = self:GetUIComponent("UILocalizationText", "Title")
@@ -40,49 +24,31 @@ UISeasonConfirm2.InitWidget = function(self)
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonConfirm2.CloseOnClick = function(self, go)
-  -- function num : 0_3
+function UISeasonConfirm2:CloseOnClick(go)
   self:PlayoutAni(function()
-    -- function num : 0_3_0 , upvalues : self
     if self._cancleCb then
-      (self._cancleCb)()
+      self._cancleCb()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonConfirm2.ConfirmOnClick = function(self, go)
-  -- function num : 0_4
+function UISeasonConfirm2:ConfirmOnClick(go)
   self:PlayoutAni(function()
-    -- function num : 0_4_0 , upvalues : self
     if self._confirmCb then
-      (self._confirmCb)()
+      self._confirmCb()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonConfirm2.PlayoutAni = function(self, cb)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonConfirm2:PlayoutAni(cb)
   self:Lock("UISeasonConfirm2_PlayoutAni")
-  ;
-  (self._animation):Play("uieff_UISeasonConfirm2_out")
+  self._animation:Play("uieff_UISeasonConfirm2_out")
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self, cb
     YIELD(TT, 168)
     self:UnLock("UISeasonConfirm2_PlayoutAni")
     self:CloseDialog()
     if cb then
       cb()
     end
-  end
-)
+  end)
 end
-
-

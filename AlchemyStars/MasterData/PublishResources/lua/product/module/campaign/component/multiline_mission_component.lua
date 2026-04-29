@@ -1,89 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/multiline_mission_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("MultiLineMissionComponent", ICampaignComponent)
 MultiLineMissionComponent = MultiLineMissionComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MultiLineMissionComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function MultiLineMissionComponent:Constructor()
   self.m_component_info = MultiLineComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MultiLineMissionComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function MultiLineMissionComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = MultiLineComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MultiLineMissionComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function MultiLineMissionComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MultiLineMissionComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function MultiLineMissionComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_MULTILINE_MISSION
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MultiLineMissionComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function MultiLineMissionComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MultiLineMissionComponent.GetCampaignMissionComponentId = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function MultiLineMissionComponent:GetCampaignMissionComponentId()
   return ECampaignMissionComponentId.ECampaignMissionComponentId_MultiLine
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MultiLineMissionComponent.GetCampaignMissionParamKeyMap = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function MultiLineMissionComponent:GetCampaignMissionParamKeyMap()
   local componentInfo = self:ComponentInfo()
   local nCfgId = self:GetComponetCfgId(componentInfo.m_campaign_id, componentInfo.m_component_id)
-  return {[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId}
+  return {
+    [ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId
+  }
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MultiLineMissionComponent.HandleMultiLineMissionSettle = function(self, TT, asyncRes, nMissionId)
-  -- function num : 0_7 , upvalues : _ENV
+function MultiLineMissionComponent:HandleMultiLineMissionSettle(TT, asyncRes, nMissionId)
   local request = CompleteMultiLineReq:New()
   local response = CompleteMultiLineRep:New()
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (request.m_create_info).nCampaignMissionId = nMissionId
+  request.m_create_info.nCampaignMissionId = nMissionId
   local ComponentInfo = self:ComponentInfo()
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (request.m_create_info).nMissionComId = self:GetCampaignMissionComponentId()
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (request.m_create_info).CampaignMissionParams = self:GetCampaignMissionParamKeyMap()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  request.m_create_info.nMissionComId = self:GetCampaignMissionComponentId()
+  request.m_create_info.CampaignMissionParams = self:GetCampaignMissionParamKeyMap()
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][MultiLineMissionComponent] HandleMultiLineMissionSettle ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][MultiLineMissionComponent] HandleMultiLineMissionSettle ret:", asyncRes.m_result)
     return nil
   end
   if response.nErrorCode ~= MatchOpResCode.MATCH_SUCCESS then
@@ -93,109 +57,71 @@ MultiLineMissionComponent.HandleMultiLineMissionSettle = function(self, TT, asyn
   return response.reward, response.m_files_id
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MultiLineMissionComponent.HandleMultiLineMissionGetReward = function(self, TT, asyncRes, petid)
-  -- function num : 0_8 , upvalues : _ENV
+function MultiLineMissionComponent:HandleMultiLineMissionGetReward(TT, asyncRes, petid)
   local request = MultiLineGetRewardReq:New()
   local response = MultiLineGetRewardRes:New()
   request.pet_id = petid
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   local res = AsyncRequestRes:New()
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][MultiLineMissionComponent] HandleMultiLineMissionGetReward ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][MultiLineMissionComponent] HandleMultiLineMissionGetReward ret:", asyncRes.m_result)
     res:SetResult(asyncRes.m_result)
     return res
   end
   res:SetSucc(true)
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).m_files_received = response.m_files_received
+  self.m_component_info.m_files_received = response.m_files_received
   return res, response.reward
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MultiLineMissionComponent.ECCH_HandleMultiLineSetMark = function(self, TT, asyncRes, mltiline)
-  -- function num : 0_9 , upvalues : _ENV
+function MultiLineMissionComponent:ECCH_HandleMultiLineSetMark(TT, asyncRes, mltiline)
   local request = MultiLineSetMarkReq:New()
   local response = MultiLineSetMarkRes:New()
-  request.m_mark = (self.m_component_info).m_mark | 1 << mltiline
+  request.m_mark = self.m_component_info.m_mark | 1 << mltiline
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   local res = AsyncRequestRes:New()
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][MultiLineMissionComponent] ECCH_HandleMultiLineSetMark ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][MultiLineMissionComponent] ECCH_HandleMultiLineSetMark ret:", asyncRes.m_result)
     res:SetResult(asyncRes.m_result)
     return res
   end
   res:SetSucc(true)
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).m_mark = request.m_mark
+  self.m_component_info.m_mark = request.m_mark
   return res
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MultiLineMissionComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_10 , upvalues : _ENV
+function MultiLineMissionComponent:CampaignComponentPushNotify(notify_data)
   if MultiLineComponentNotifyType.MultiLineComponentNotifyType_InfoChanged == notify_data.m_notify_type then
     local ev = NotifyMultiLineComponentInfoChanged:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
-      (self.m_component_info).m_pass_mission_info = ev.m_pass_mission_info
-      -- DECOMPILER ERROR at PC20: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self.m_component_info).m_pet_files = ev.m_pet_files
+      self.m_component_info.m_pass_mission_info = ev.m_pass_mission_info
+      self.m_component_info.m_pet_files = ev.m_pet_files
     else
-      ;
-      (Log.error)("[CampaignCom][MultiLineMissionComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][MultiLineMissionComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MultiLineMissionComponent.SetMissionStoryActive = function(self, TT, mission_id, activeStoryType)
-  -- function num : 0_11 , upvalues : _ENV
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+function MultiLineMissionComponent:SetMissionStoryActive(TT, mission_id, activeStoryType)
+  local missionModule = GameGlobal.GetModule(MissionModule)
   return missionModule:SetMissionStoryActive(TT, mission_id, activeStoryType)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MultiLineMissionComponent.IsMissionStoryActive = function(self, mission_id, activeStoryType)
-  -- function num : 0_12 , upvalues : _ENV
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+function MultiLineMissionComponent:IsMissionStoryActive(mission_id, activeStoryType)
+  local missionModule = GameGlobal.GetModule(MissionModule)
   missionModule:IsMissionStoryActive(mission_id, activeStoryType)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MultiLineMissionComponent.IsPassCamMissionID = function(self, camMissionId)
-  -- function num : 0_13
-  if ((self.m_component_info).m_pass_mission_info)[camMissionId] then
+function MultiLineMissionComponent:IsPassCamMissionID(camMissionId)
+  if self.m_component_info.m_pass_mission_info[camMissionId] then
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MultiLineMissionComponent.GetMark = function(self, mltiline)
-  -- function num : 0_14
-  do return (self.m_component_info).m_mark & 1 << mltiline > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MultiLineMissionComponent:GetMark(mltiline)
+  return self.m_component_info.m_mark & 1 << mltiline > 0
 end
-
-

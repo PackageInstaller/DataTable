@@ -1,22 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_logic/normal_skill_calculator.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("NormalSkillCalculator", Object)
 NormalSkillCalculator = NormalSkillCalculator
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-NormalSkillCalculator.Constructor = function(self, world)
-  -- function num : 0_0
+function NormalSkillCalculator:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
-  self._skillLogicService = (self._world):GetService("SkillLogic")
-  self._skillEffectCalcService = (self._world):GetService("SkillEffectCalc")
-  self._trapServiceLogic = (self._world):GetService("TrapLogic")
-  self._battleService = (self._world):GetService("Battle")
-  self._triggerService = (self._world):GetService("Trigger")
-  self._skillScopeTargetSelector = (self._world):GetSkillScopeTargetSelector()
+  self._configService = self._world:GetService("Config")
+  self._skillLogicService = self._world:GetService("SkillLogic")
+  self._skillEffectCalcService = self._world:GetService("SkillEffectCalc")
+  self._trapServiceLogic = self._world:GetService("TrapLogic")
+  self._battleService = self._world:GetService("Battle")
+  self._triggerService = self._world:GetService("Trigger")
+  self._skillScopeTargetSelector = self._world:GetSkillScopeTargetSelector()
   self._frameTimeMultipleDic = {}
   self._deadChainIndx = 10000
   self._playNormalSkillSequence = {}
@@ -25,33 +18,26 @@ NormalSkillCalculator.Constructor = function(self, world)
   self._pathMoveStartWaitTime = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator.DoCalculateNormalSkill = function(self, teamEntity)
-  -- function num : 0_1
+function NormalSkillCalculator:DoCalculateNormalSkill(teamEntity)
   self:_OnInitializeData(teamEntity)
   self:_NotifyNormalAttackStart()
   self:_OnGetTimeAttackListDic(teamEntity)
   self:_OnCalcAndApply(teamEntity)
   self:_OnCheckTriggerTrapAfterAttackAll(teamEntity)
-  local pos = (teamEntity:GridLocation()):GetMoveLastPosition()
+  local pos = teamEntity:GridLocation():GetMoveLastPosition()
   teamEntity:SetGridPosition(pos)
   self:_NotifyNormalAttackEnd()
   self:_SetNormalAttackDead()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._OnInitializeData = function(self, teamEntity)
-  -- function num : 0_2 , upvalues : _ENV
+function NormalSkillCalculator:_OnInitializeData(teamEntity)
   local logicChainPathCmpt = teamEntity:LogicChainPath()
   self._chainPathData = logicChainPathCmpt:GetLogicChainPath()
   self._chainPathElementType = logicChainPathCmpt:GetLogicPieceType()
   local LogicRoundTeam = teamEntity:LogicRoundTeam()
   self._petRoundTeam = LogicRoundTeam:GetPetRoundTeam()
   self._timeTrapDic = SortedDictionary:New()
-  ;
-  (self._triggerService):Notify(NTTeamNormalAttackStart:New(self._chainPathElementType, self._chainPathData))
+  self._triggerService:Notify(NTTeamNormalAttackStart:New(self._chainPathElementType, self._chainPathData))
   self._indexTrapDic = self:_GetIndexTrapDic(teamEntity)
   local pathSuperGridCount = self:_GetPathSuperGridCount()
   pathSuperGridCount = self:_ModifyPathSuperGridCount(pathSuperGridCount, teamEntity)
@@ -65,36 +51,25 @@ NormalSkillCalculator._OnInitializeData = function(self, teamEntity)
   self._stopPos = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._NotifyNormalAttackStart = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function NormalSkillCalculator:_NotifyNormalAttackStart()
   for petIndex = 1, #self._petRoundTeam do
-    local petEntityID = (self._petRoundTeam)[petIndex]
-    local petEntity = (self._world):GetEntityByID(petEntityID)
-    ;
-    (self._triggerService):Notify(NTNormalAttackStart:New(petEntity, self._chainPathElementType, self._chainPathData))
+    local petEntityID = self._petRoundTeam[petIndex]
+    local petEntity = self._world:GetEntityByID(petEntityID)
+    self._triggerService:Notify(NTNormalAttackStart:New(petEntity, self._chainPathElementType, self._chainPathData))
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._NotifyNormalAttackEnd = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function NormalSkillCalculator:_NotifyNormalAttackEnd()
   for petIndex = 1, #self._petRoundTeam do
-    local petEntityID = (self._petRoundTeam)[petIndex]
-    local petEntity = (self._world):GetEntityByID(petEntityID)
-    ;
-    (self._triggerService):Notify(NTNormalAttackEnd:New(petEntity))
+    local petEntityID = self._petRoundTeam[petIndex]
+    local petEntity = self._world:GetEntityByID(petEntityID)
+    self._triggerService:Notify(NTNormalAttackEnd:New(petEntity))
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._GetOneGridMoveTime = function(self, pathPosition, chainIndex)
-  -- function num : 0_5 , upvalues : _ENV
+function NormalSkillCalculator:_GetOneGridMoveTime(pathPosition, chainIndex)
   local oneGridMoveTime = 0
-  if self:_IsPosInCrossLine(pathPosition, (self._chainPathData)[chainIndex - 1]) then
+  if self:_IsPosInCrossLine(pathPosition, self._chainPathData[chainIndex - 1]) then
     oneGridMoveTime = self:_MakeTimeFrameTimeMultiple(BattleConst.OneGridMoveTime)
   else
     oneGridMoveTime = self:_MakeTimeFrameTimeMultiple(BattleConst.OneGridObliqueMoveTime)
@@ -102,50 +77,39 @@ NormalSkillCalculator._GetOneGridMoveTime = function(self, pathPosition, chainIn
   return oneGridMoveTime
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._OnGetTimeAttackListDic = function(self, teamEntity)
-  -- function num : 0_6 , upvalues : _ENV
+function NormalSkillCalculator:_OnGetTimeAttackListDic(teamEntity)
   local currentTime = 0
   local petGridTimeDic = {}
   local petsAttactList = self:_OnGetPathAttackList(teamEntity, self._chainPathData)
   self._pathMoveStartWaitTime = self:_OnGetPathMoveStartWaitTime(petsAttactList)
   for petIndex = 1, #self._petRoundTeam do
-    local petEntityID = (self._petRoundTeam)[petIndex]
-    local petEntity = (self._world):GetEntityByID(petEntityID)
+    local petEntityID = self._petRoundTeam[petIndex]
+    local petEntity = self._world:GetEntityByID(petEntityID)
     local petAttackDataCmpt = petEntity:SkillPetAttackData()
     local normalAttackData = petAttackDataCmpt:GetNormalAttackData()
     petGridTimeDic[petIndex] = {}
-    for chainIndex,pathPosition in ipairs(self._chainPathData) do
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R18 in 'UnsetPending'
-
-      (petGridTimeDic[petIndex])[chainIndex] = {}
+    for chainIndex, pathPosition in ipairs(self._chainPathData) do
+      petGridTimeDic[petIndex][chainIndex] = {}
       currentTime = self:_OnCalcAttackFinishTimeBeforeMove(currentTime, petIndex, chainIndex, pathPosition)
-      currentTime = self:_OnCalcMoveFinishTime(currentTime, petIndex, chainIndex, pathPosition, petGridTimeDic)
+      currentTime, petGridTimeDic = self:_OnCalcMoveFinishTime(currentTime, petIndex, chainIndex, pathPosition, petGridTimeDic)
       local pathPointAttackData = normalAttackData:GetPathPointAttackData(pathPosition)
       if pathPointAttackData ~= nil then
         currentTime = self:_OnCalcAttackFinishTime(currentTime, petIndex, chainIndex, pathPosition)
       end
-      -- DECOMPILER ERROR at PC67: Confused about usage of register: R19 in 'UnsetPending'
-
-      ;
-      ((petGridTimeDic[petIndex])[chainIndex])[2] = currentTime + BattleConst.FrameTime
+      petGridTimeDic[petIndex][chainIndex][2] = currentTime + BattleConst.FrameTime
       if chainIndex <= #self._chainPathData and chainIndex == 2 and petIndex == #self._petRoundTeam then
-        ((self._world):GetService("Trigger")):Notify(NTPlayerFirstMoveEnd:New(petEntity, (self._chainPathData)[1]))
+        self._world:GetService("Trigger"):Notify(NTPlayerFirstMoveEnd:New(petEntity, self._chainPathData[1]))
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._OnCalcMoveFinishTime = function(self, currentTime, petIndex, chainIndex, pathPosition, petGridTimeDic)
-  -- function num : 0_7 , upvalues : _ENV
-  local petEntityID = (self._petRoundTeam)[petIndex]
-  local petEntity = (self._world):GetEntityByID(petEntityID)
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
+function NormalSkillCalculator:_OnCalcMoveFinishTime(currentTime, petIndex, chainIndex, pathPosition, petGridTimeDic)
+  local petEntityID = self._petRoundTeam[petIndex]
+  local petEntity = self._world:GetEntityByID(petEntityID)
+  local utilCalcSvc = self._world:GetService("UtilCalc")
   local prePetAttackTime = 0
-  if petIndex > 1 then
+  if 1 < petIndex then
     prePetAttackTime = self:_GetNormalAttackTime(petIndex - 1, pathPosition)
   end
   local curPetAttackTime = self:_GetNormalAttackTime(petIndex, pathPosition)
@@ -153,101 +117,65 @@ NormalSkillCalculator._OnCalcMoveFinishTime = function(self, currentTime, petInd
   if waitAttactTime < 0 then
     waitAttactTime = 0
   end
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R12 in 'UnsetPending'
-
-  if not (self._pathNormalSkillWaitTimeDic)[petIndex] then
-    (self._pathNormalSkillWaitTimeDic)[petIndex] = {}
+  if not self._pathNormalSkillWaitTimeDic[petIndex] then
+    self._pathNormalSkillWaitTimeDic[petIndex] = {}
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  ((self._pathNormalSkillWaitTimeDic)[petIndex])[chainIndex] = waitAttactTime
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R12 in 'UnsetPending'
-
+  self._pathNormalSkillWaitTimeDic[petIndex][chainIndex] = waitAttactTime
   if petIndex == 1 and chainIndex == 1 then
-    ((petGridTimeDic[petIndex])[chainIndex])[1] = 0
+    petGridTimeDic[petIndex][chainIndex][1] = 0
     currentTime = 0
-  else
-    if petIndex == 1 then
-      local oneGridMoveTime = self:_GetOneGridMoveTime(pathPosition, chainIndex)
-      local t = currentTime + BattleConst.FrameTime + oneGridMoveTime
-      -- DECOMPILER ERROR at PC57: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      ((petGridTimeDic[petIndex])[chainIndex])[1] = t
-      currentTime = ((petGridTimeDic[petIndex])[chainIndex])[1]
-      local attackList = {}
-      if (self._timeAttackListDic):ContainsKey(t) then
-        attackList = (self._timeAttackListDic):Find(t)
-      else
-        ;
-        (self._timeAttackListDic):Insert(t, attackList)
-      end
-      ;
-      (table.insert)(attackList, ChainMoveData:New(petEntityID, pathPosition, chainIndex))
-      if (self._indexTrapDic)[chainIndex] then
-        (self._timeTrapDic):Insert(currentTime, chainIndex)
-        local trapDelay = self:_GetTrapDelay((self._indexTrapDic)[chainIndex])
-        currentTime = ((petGridTimeDic[petIndex])[chainIndex])[1] + self:_MakeTimeFrameTimeMultiple(trapDelay)
-      end
+  elseif petIndex == 1 then
+    local oneGridMoveTime = self:_GetOneGridMoveTime(pathPosition, chainIndex)
+    local t = currentTime + BattleConst.FrameTime + oneGridMoveTime
+    petGridTimeDic[petIndex][chainIndex][1] = t
+    currentTime = petGridTimeDic[petIndex][chainIndex][1]
+    local attackList = {}
+    if self._timeAttackListDic:ContainsKey(t) then
+      attackList = self._timeAttackListDic:Find(t)
     else
-      do
-        -- DECOMPILER ERROR at PC123: Confused about usage of register: R12 in 'UnsetPending'
-
-        if chainIndex == 1 then
-          ((petGridTimeDic[petIndex])[chainIndex])[1] = ((petGridTimeDic[petIndex - 1])[chainIndex])[1] + self:_MakeTimeFrameTimeMultiple(self._pathMoveStartWaitTime) + waitAttactTime
-          currentTime = ((petGridTimeDic[petIndex])[chainIndex])[1]
-          local attackList = {}
-          if (self._timeAttackListDic):ContainsKey(currentTime) then
-            attackList = (self._timeAttackListDic):Find(currentTime)
-          else
-            ;
-            (self._timeAttackListDic):Insert(currentTime, attackList)
-          end
-          ;
-          (table.insert)(attackList, ChainMoveData:New(petEntityID, pathPosition, chainIndex))
-        else
-          do
-            local oneGridMoveTime = self:_GetOneGridMoveTime(pathPosition, chainIndex)
-            local prePetFinishActionTime = ((petGridTimeDic[petIndex - 1])[chainIndex])[2]
-            if chainIndex ~= #self._chainPathData and currentTime <= prePetFinishActionTime then
-              local nextChainIndex = chainIndex + 1
-              local nextPathPosition = (self._chainPathData)[nextChainIndex]
-              local prePetLeaveMoveTime = 0
-              currentTime = prePetFinishActionTime + prePetLeaveMoveTime + BattleConst.FrameTime
-            end
-            do
-              -- DECOMPILER ERROR at PC182: Confused about usage of register: R14 in 'UnsetPending'
-
-              ;
-              ((petGridTimeDic[petIndex])[chainIndex])[1] = currentTime + oneGridMoveTime + waitAttactTime
-              currentTime = ((petGridTimeDic[petIndex])[chainIndex])[1]
-              do
-                local attackList = {}
-                if (self._timeAttackListDic):ContainsKey(currentTime) then
-                  attackList = (self._timeAttackListDic):Find(currentTime)
-                else
-                  ;
-                  (self._timeAttackListDic):Insert(currentTime, attackList)
-                end
-                ;
-                (table.insert)(attackList, ChainMoveData:New(petEntityID, pathPosition, chainIndex))
-                return currentTime, petGridTimeDic
-              end
-            end
-          end
-        end
-      end
+      self._timeAttackListDic:Insert(t, attackList)
     end
+    table.insert(attackList, ChainMoveData:New(petEntityID, pathPosition, chainIndex))
+    if self._indexTrapDic[chainIndex] then
+      self._timeTrapDic:Insert(currentTime, chainIndex)
+      local trapDelay = self:_GetTrapDelay(self._indexTrapDic[chainIndex])
+      currentTime = petGridTimeDic[petIndex][chainIndex][1] + self:_MakeTimeFrameTimeMultiple(trapDelay)
+    end
+  elseif chainIndex == 1 then
+    petGridTimeDic[petIndex][chainIndex][1] = petGridTimeDic[petIndex - 1][chainIndex][1] + self:_MakeTimeFrameTimeMultiple(self._pathMoveStartWaitTime) + waitAttactTime
+    currentTime = petGridTimeDic[petIndex][chainIndex][1]
+    local attackList = {}
+    if self._timeAttackListDic:ContainsKey(currentTime) then
+      attackList = self._timeAttackListDic:Find(currentTime)
+    else
+      self._timeAttackListDic:Insert(currentTime, attackList)
+    end
+    table.insert(attackList, ChainMoveData:New(petEntityID, pathPosition, chainIndex))
+  else
+    local oneGridMoveTime = self:_GetOneGridMoveTime(pathPosition, chainIndex)
+    local prePetFinishActionTime = petGridTimeDic[petIndex - 1][chainIndex][2]
+    if chainIndex ~= #self._chainPathData and currentTime <= prePetFinishActionTime then
+      local nextChainIndex = chainIndex + 1
+      local nextPathPosition = self._chainPathData[nextChainIndex]
+      local prePetLeaveMoveTime = 0
+      currentTime = prePetFinishActionTime + prePetLeaveMoveTime + BattleConst.FrameTime
+    end
+    petGridTimeDic[petIndex][chainIndex][1] = currentTime + oneGridMoveTime + waitAttactTime
+    currentTime = petGridTimeDic[petIndex][chainIndex][1]
+    local attackList = {}
+    if self._timeAttackListDic:ContainsKey(currentTime) then
+      attackList = self._timeAttackListDic:Find(currentTime)
+    else
+      self._timeAttackListDic:Insert(currentTime, attackList)
+    end
+    table.insert(attackList, ChainMoveData:New(petEntityID, pathPosition, chainIndex))
   end
+  return currentTime, petGridTimeDic
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._OnCalcAttackFinishTime = function(self, currentTime, petIndex, chainIndex, pathPosition)
-  -- function num : 0_8 , upvalues : _ENV
-  local petEntityID = (self._petRoundTeam)[petIndex]
-  local petEntity = (self._world):GetEntityByID(petEntityID)
+function NormalSkillCalculator:_OnCalcAttackFinishTime(currentTime, petIndex, chainIndex, pathPosition)
+  local petEntityID = self._petRoundTeam[petIndex]
+  local petEntity = self._world:GetEntityByID(petEntityID)
   local buffComp = petEntity:BuffComponent()
   local forbidPetNormalSkill = buffComp:GetBuffValue("ForbidPetNormalSkill")
   if forbidPetNormalSkill then
@@ -264,7 +192,7 @@ NormalSkillCalculator._OnCalcAttackFinishTime = function(self, currentTime, petI
   local attackGridDicAdditional = pathPointAttackData:GetAttackGridDicAdditional()
   local orderGridArray = pathPointAttackData:GetPetOrderGridArray(petEntity, pathPosition)
   local gridCount = #orderGridArray
-  if (petEntity:BuffComponent()):GetBuffValue("ForcePetNormalAttackAfterMove") then
+  if petEntity:BuffComponent():GetBuffValue("ForcePetNormalAttackAfterMove") then
     if chainIndex ~= 1 then
       orderGridArray = {pathPosition}
       gridCount = 1
@@ -274,17 +202,21 @@ NormalSkillCalculator._OnCalcAttackFinishTime = function(self, currentTime, petI
     end
   end
   local hasCalcPosList = {}
-  for i,beAttackPos in ipairs(orderGridArray) do
+  for i, beAttackPos in ipairs(orderGridArray) do
     local attackGridData = self:_FindAttackGridData(attackGridDic, beAttackPos)
     local attackGridDataAdditional = self:_FindAttackGridData(attackGridDicAdditional, beAttackPos)
     local isLastAttackPos = i == gridCount
     if attackGridData then
-      local normalAttackDataParam = {chainIndex = chainIndex, pathPosition = pathPosition, beAttackPos = beAttackPos, isLastAttackPos = isLastAttackPos}
+      local normalAttackDataParam = {
+        chainIndex = chainIndex,
+        pathPosition = pathPosition,
+        beAttackPos = beAttackPos,
+        isLastAttackPos = isLastAttackPos
+      }
       if attackGridDataAdditional then
-        if not (table.icontains)(hasCalcPosList, beAttackPos) then
+        if not table.icontains(hasCalcPosList, beAttackPos) then
           currentTime = self:_OnAddNormalAttackDataForTimeDic(currentTime, attackGridData, normalAttackDataParam, 1)
-          ;
-          (table.insert)(hasCalcPosList, beAttackPos)
+          table.insert(hasCalcPosList, beAttackPos)
         else
           currentTime = self:_OnAddNormalAttackDataForTimeDic(currentTime, attackGridDataAdditional, normalAttackDataParam, 2)
         end
@@ -293,20 +225,16 @@ NormalSkillCalculator._OnCalcAttackFinishTime = function(self, currentTime, petI
       end
     end
   end
-  do return currentTime end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  return currentTime
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._OnAddNormalAttackDataForTimeDic = function(self, currentTime, attackGridData, normalAttackDataParam, normalAttackIndex)
-  -- function num : 0_9 , upvalues : _ENV
+function NormalSkillCalculator:_OnAddNormalAttackDataForTimeDic(currentTime, attackGridData, normalAttackDataParam, normalAttackIndex)
   local chainIndex = normalAttackDataParam.chainIndex
   local pathPosition = normalAttackDataParam.pathPosition
   local beAttackPos = normalAttackDataParam.beAttackPos
   local isLastAttackPos = normalAttackDataParam.isLastAttackPos
   local petEntityID = attackGridData:GetPetEntityID()
-  local petEntity = (self._world):GetEntityByID(petEntityID)
+  local petEntity = self._world:GetEntityByID(petEntityID)
   local normalSkillID = attackGridData:GetAttackGridSkillId()
   currentTime = currentTime + BattleConst.FrameTime
   local normalAttackData = NormalAttackData:New(attackGridData, petEntityID, normalSkillID, beAttackPos, chainIndex, pathPosition, isLastAttackPos)
@@ -316,25 +244,27 @@ NormalSkillCalculator._OnAddNormalAttackDataForTimeDic = function(self, currentT
   local hitTime, length = self:_GetNormalAttackHitTimeAndLength(normalSkillID, isLastAttackPos, petEntity)
   local attackTime = currentTime + self:_MakeTimeFrameTimeMultiple(hitTime)
   currentTime = currentTime + self:_MakeTimeFrameTimeMultiple(length)
-  ;
-  ((self._world):GetSyncLogger()):Trace({key = "NormalAttackGridDataTime", entityID = petEntityID, attackTime = attackTime, chainIndex = chainIndex, beAttackPos = tostring(beAttackPos), attackPos = tostring(pathPosition)})
+  self._world:GetSyncLogger():Trace({
+    key = "NormalAttackGridDataTime",
+    entityID = petEntityID,
+    attackTime = attackTime,
+    chainIndex = chainIndex,
+    beAttackPos = tostring(beAttackPos),
+    attackPos = tostring(pathPosition)
+  })
   local attackList = {}
-  if (self._timeAttackListDic):ContainsKey(attackTime) then
-    attackList = (self._timeAttackListDic):Find(attackTime)
+  if self._timeAttackListDic:ContainsKey(attackTime) then
+    attackList = self._timeAttackListDic:Find(attackTime)
   else
-    ;
-    (self._timeAttackListDic):Insert(attackTime, attackList)
+    self._timeAttackListDic:Insert(attackTime, attackList)
   end
   attackList[#attackList + 1] = normalAttackData
   return currentTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._OnCalcAttackFinishTimeBeforeMove = function(self, currentTime, petIndex, chainIndex, pathPosition)
-  -- function num : 0_10 , upvalues : _ENV
-  local petEntityID = (self._petRoundTeam)[petIndex]
-  local petEntity = (self._world):GetEntityByID(petEntityID)
+function NormalSkillCalculator:_OnCalcAttackFinishTimeBeforeMove(currentTime, petIndex, chainIndex, pathPosition)
+  local petEntityID = self._petRoundTeam[petIndex]
+  local petEntity = self._world:GetEntityByID(petEntityID)
   local buffComp = petEntity:BuffComponent()
   local normalSkillBeforeMove = buffComp:GetBuffValue("NormalSkillBeforeMove")
   if not normalSkillBeforeMove then
@@ -349,7 +279,7 @@ NormalSkillCalculator._OnCalcAttackFinishTimeBeforeMove = function(self, current
   local attackGridDic = pathPointAttackData:GetAttackGridDic()
   local orderGridArray = pathPointAttackData:GetPetOrderGridArray(petEntity, pathPosition)
   local gridCount = #orderGridArray
-  if (petEntity:BuffComponent()):GetBuffValue("ForcePetNormalAttackAfterMove") then
+  if petEntity:BuffComponent():GetBuffValue("ForcePetNormalAttackAfterMove") then
     if chainIndex ~= 1 then
       orderGridArray = {pathPosition}
       gridCount = 1
@@ -358,7 +288,7 @@ NormalSkillCalculator._OnCalcAttackFinishTimeBeforeMove = function(self, current
       gridCount = 0
     end
   end
-  for i,beAttackPos in ipairs(orderGridArray) do
+  for i, beAttackPos in ipairs(orderGridArray) do
     local attackGridData = self:_FindAttackGridData(attackGridDic, beAttackPos)
     local isLastAttackPos = i == gridCount
     if attackGridData then
@@ -366,53 +296,55 @@ NormalSkillCalculator._OnCalcAttackFinishTimeBeforeMove = function(self, current
       local normalAttackData = NormalAttackData:New(attackGridData, petEntityID, normalSkillID, beAttackPos, chainIndex, pathPosition, isLastAttackPos)
       local hitTime, length = self:_GetNormalAttackHitTimeAndLength(normalSkillID, isLastAttackPos, petEntity)
       local attackTime = currentTime + self:_MakeTimeFrameTimeMultiple(hitTime)
-      ;
-      ((self._world):GetSyncLogger()):Trace({key = "NormalAttackGridDataTime", entityID = petEntityID, attackTime = attackTime, chainIndex = chainIndex, beAttackPos = tostring(beAttackPos), attackPos = tostring(pathPosition)})
+      self._world:GetSyncLogger():Trace({
+        key = "NormalAttackGridDataTime",
+        entityID = petEntityID,
+        attackTime = attackTime,
+        chainIndex = chainIndex,
+        beAttackPos = tostring(beAttackPos),
+        attackPos = tostring(pathPosition)
+      })
       local attackList = {}
-      if (self._timeAttackListDic):ContainsKey(attackTime) then
-        attackList = (self._timeAttackListDic):Find(attackTime)
+      if self._timeAttackListDic:ContainsKey(attackTime) then
+        attackList = self._timeAttackListDic:Find(attackTime)
       else
-        (self._timeAttackListDic):Insert(attackTime, attackList)
+        self._timeAttackListDic:Insert(attackTime, attackList)
       end
       attackList[#attackList + 1] = normalAttackData
     end
   end
-  do return currentTime end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  return currentTime
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._OnCalcAndApply = function(self, teamEntity)
-  -- function num : 0_11 , upvalues : _ENV
+function NormalSkillCalculator:_OnCalcAndApply(teamEntity)
   self._playNormalSkillSequence = {}
   self._pathTriggerTrapsDic = {}
   local normalSkillIndex = 1
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
-  local triggerSvc = (self._world):GetService("Trigger")
-  local boardService = (self._world):GetService("BoardLogic")
-  local utilData = (self._world):GetService("UtilData")
-  local board = ((self._world):GetBoardEntity()):Board()
-  local battleStatCmpt = (self._world):BattleStat()
+  local trapServiceLogic = self._world:GetService("TrapLogic")
+  local triggerSvc = self._world:GetService("Trigger")
+  local boardService = self._world:GetService("BoardLogic")
+  local utilData = self._world:GetService("UtilData")
+  local board = self._world:GetBoardEntity():Board()
+  local battleStatCmpt = self._world:BattleStat()
   local teamEntityLeader = teamEntity:GetTeamLeaderPetEntity()
   local logicChainPathCmpt = teamEntity:LogicChainPath()
   local chainPath = logicChainPathCmpt:GetLogicChainPath()
   for petIndex = 1, #self._petRoundTeam do
-    local petEntityID = (self._petRoundTeam)[petIndex]
-    local petEntity = (self._world):GetEntityByID(petEntityID)
+    local petEntityID = self._petRoundTeam[petIndex]
+    local petEntity = self._world:GetEntityByID(petEntityID)
     local ntPetChainMoveBegin = NTPetChainMoveBegin:New(petEntity, chainPath[1], 0, nil, 1)
     triggerSvc:Notify(ntPetChainMoveBegin)
   end
-  for i = 1, (self._timeAttackListDic):Size() do
+  for i = 1, self._timeAttackListDic:Size() do
     self:_OnCheckTriggerTrapBeforeAttack(teamEntity, i)
-    local attackList = (self._timeAttackListDic):GetAt(i)
+    local attackList = self._timeAttackListDic:GetAt(i)
     for k = 1, #attackList do
       local data = attackList[k]
       if data._className == "NormalAttackData" then
         local normalAttackData = attackList[k]
         local attackGridData = normalAttackData:GetAttackGridData()
         local petEntityID = normalAttackData:GetPetEntityID()
-        local casterEntity = (self._world):GetEntityByID(petEntityID)
+        local casterEntity = self._world:GetEntityByID(petEntityID)
         local originaBeAttackPos = normalAttackData:GetBeAttackPos()
         local originalSkillID = attackGridData:GetAttackGridSkillId()
         local originalAttackPosList = attackGridData:GetAttackPosList()
@@ -420,9 +352,8 @@ NormalSkillCalculator._OnCalcAndApply = function(self, teamEntity)
         local newAttackSkillId = originalSkillID
         local directReplace = 0
         local attackPos = normalAttackData:GetPathPosition()
-        ;
-        ((self._world):GetService("Trigger")):Notify(NTNormalAttackChangeBefore:New(casterEntity, attackPos, originaBeAttackPos))
-        attackGridData = self:_CalcNormalSkillExtraScope(normalAttackData)
+        self._world:GetService("Trigger"):Notify(NTNormalAttackChangeBefore:New(casterEntity, attackPos, originaBeAttackPos))
+        attackGridData, newAttackSkillId, directReplace = self:_CalcNormalSkillExtraScope(normalAttackData)
         if self:CanAttackByPos(attackPos) then
           self:_CalcNormalSkillEffect(teamEntity, normalAttackData, attackGridData, originalSkillID, originaBeAttackPos, directReplace, false)
           self:_SaveAttackGridData(normalAttackData, attackGridData)
@@ -431,76 +362,47 @@ NormalSkillCalculator._OnCalcAndApply = function(self, teamEntity)
             self:_ForNormalAttackDouble(teamEntity, casterEntity, normalAttackData, originalAttackPosList, originalTargetIdList, originaBeAttackPos, originalSkillID)
           end
         end
-        ;
-        ((self._world):GetService("Trigger")):Notify(NTNormalAttackChangeAfter:New(casterEntity, attackPos, originaBeAttackPos))
-      else
-        do
-          if data._className == "ChainMoveData" then
-            local chainMoveData = data
-            local v2Pos = chainMoveData:GetPos()
-            if self:CanMoveToPos(v2Pos) then
-              local petEntityID = chainMoveData:GetPetEntityID()
-              local petEntity = (self._world):GetEntityByID(petEntityID)
-              local pieceType = utilData:FindPieceElement(v2Pos)
-              local chainIndex = chainMoveData:GetChainIndex()
-              -- DECOMPILER ERROR at PC198: Overwrote pending register: R30 in 'AssignReg'
-
-              -- DECOMPILER ERROR at PC199: Overwrote pending register: R31 in 'AssignReg'
-
-              local ntPlayerEachMoveStart = NTPlayerEachMoveStart:New(newAttackSkillId, directReplace, pieceType, chainIndex, ((self._world):BattleStat()):IsActiveSkillLinkLine())
-              triggerSvc:Notify(ntPlayerEachMoveStart)
-              local pieceEffectType = PieceEffectType.Normal
-              local traps = (self._pathTriggerTrapsDic)[chainIndex]
-              if traps then
-                for _,e in ipairs(traps) do
-                  local prismGridValue = (e:Trap()):GetPrismGridValue()
-                  if prismGridValue then
-                    pieceEffectType = prismGridValue
-                    break
-                  end
-                end
-              end
-              do
-                petEntity:SetGridPosition(v2Pos)
-                local chainIndexOld = (math.max)(1, chainIndex - 1)
-                local posOld = chainPath[chainIndexOld]
-                local ntPlayerEachMoveEnd = NTPlayerEachMoveEnd:New(petEntity, v2Pos, pieceType, posOld, chainIndex, ((self._world):BattleStat()):IsActiveSkillLinkLine())
-                ntPlayerEachMoveEnd:SetPieceEffectType(pieceEffectType)
-                triggerSvc:Notify(ntPlayerEachMoveEnd)
-                if petEntityID == teamEntityLeader:GetID() or battleStatCmpt:IsActiveSkillLinkLine() then
-                  local v2TeamMoveBeginPos = teamEntity:GetGridPosition()
-                  teamEntity:SetGridPosition(v2Pos)
-                  local ntTeamLeaderEachMoveStart = NTTeamLeaderEachMoveStart:New(petEntity, v2Pos, pieceType, posOld)
-                  triggerSvc:Notify(ntTeamLeaderEachMoveStart)
-                  local ntTeamEachMoveStart = NTTeamEachMoveStart:New(teamEntity, v2Pos, pieceType, posOld)
-                  triggerSvc:Notify(ntTeamEachMoveStart)
-                  local ntTeamLeaderEachMoveEnd = NTTeamLeaderEachMoveEnd:New(petEntity, v2Pos, pieceType, posOld)
-                  ntTeamLeaderEachMoveEnd:SetPieceEffectType(pieceEffectType)
-                  triggerSvc:Notify(ntTeamLeaderEachMoveEnd)
-                  local ntTeamEachMoveEnd = NTTeamEachMoveEnd:New(teamEntity, v2Pos, pieceType, posOld)
-                  ntTeamEachMoveEnd:SetPieceEffectType(pieceEffectType)
-                  triggerSvc:Notify(ntTeamEachMoveEnd)
-                end
-                do
-                  -- DECOMPILER ERROR at PC318: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC318: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC318: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC318: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC318: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC318: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC318: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC318: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
+        self._world:GetService("Trigger"):Notify(NTNormalAttackChangeAfter:New(casterEntity, attackPos, originaBeAttackPos))
+      elseif data._className == "ChainMoveData" then
+        local chainMoveData = data
+        local v2Pos = chainMoveData:GetPos()
+        if self:CanMoveToPos(v2Pos) then
+          local petEntityID = chainMoveData:GetPetEntityID()
+          local petEntity = self._world:GetEntityByID(petEntityID)
+          local pieceType = utilData:FindPieceElement(v2Pos)
+          local chainIndex = chainMoveData:GetChainIndex()
+          local ntPlayerEachMoveStart = NTPlayerEachMoveStart:New(petEntity, v2Pos, pieceType, chainIndex, self._world:BattleStat():IsActiveSkillLinkLine())
+          triggerSvc:Notify(ntPlayerEachMoveStart)
+          local pieceEffectType = PieceEffectType.Normal
+          local traps = self._pathTriggerTrapsDic[chainIndex]
+          if traps then
+            for _, e in ipairs(traps) do
+              local prismGridValue = e:Trap():GetPrismGridValue()
+              if prismGridValue then
+                pieceEffectType = prismGridValue
+                break
               end
             end
+          end
+          petEntity:SetGridPosition(v2Pos)
+          local chainIndexOld = math.max(1, chainIndex - 1)
+          local posOld = chainPath[chainIndexOld]
+          local ntPlayerEachMoveEnd = NTPlayerEachMoveEnd:New(petEntity, v2Pos, pieceType, posOld, chainIndex, self._world:BattleStat():IsActiveSkillLinkLine())
+          ntPlayerEachMoveEnd:SetPieceEffectType(pieceEffectType)
+          triggerSvc:Notify(ntPlayerEachMoveEnd)
+          if petEntityID == teamEntityLeader:GetID() or battleStatCmpt:IsActiveSkillLinkLine() then
+            local v2TeamMoveBeginPos = teamEntity:GetGridPosition()
+            teamEntity:SetGridPosition(v2Pos)
+            local ntTeamLeaderEachMoveStart = NTTeamLeaderEachMoveStart:New(petEntity, v2Pos, pieceType, posOld)
+            triggerSvc:Notify(ntTeamLeaderEachMoveStart)
+            local ntTeamEachMoveStart = NTTeamEachMoveStart:New(teamEntity, v2Pos, pieceType, posOld)
+            triggerSvc:Notify(ntTeamEachMoveStart)
+            local ntTeamLeaderEachMoveEnd = NTTeamLeaderEachMoveEnd:New(petEntity, v2Pos, pieceType, posOld)
+            ntTeamLeaderEachMoveEnd:SetPieceEffectType(pieceEffectType)
+            triggerSvc:Notify(ntTeamLeaderEachMoveEnd)
+            local ntTeamEachMoveEnd = NTTeamEachMoveEnd:New(teamEntity, v2Pos, pieceType, posOld)
+            ntTeamEachMoveEnd:SetPieceEffectType(pieceEffectType)
+            triggerSvc:Notify(ntTeamEachMoveEnd)
           end
         end
       end
@@ -508,13 +410,10 @@ NormalSkillCalculator._OnCalcAndApply = function(self, teamEntity)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._CalcNormalSkillExtraScope = function(self, normalAttackData)
-  -- function num : 0_12 , upvalues : _ENV
+function NormalSkillCalculator:_CalcNormalSkillExtraScope(normalAttackData)
   local attackGridData = normalAttackData:GetAttackGridData()
   local petEntityID = normalAttackData:GetPetEntityID()
-  local petEntity = (self._world):GetEntityByID(petEntityID)
+  local petEntity = self._world:GetEntityByID(petEntityID)
   local normalSkillID = attackGridData:GetAttackGridSkillId()
   local beAttackPos = normalAttackData:GetBeAttackPos()
   local chainIndex = normalAttackData:GetChainIndex()
@@ -533,139 +432,119 @@ NormalSkillCalculator._CalcNormalSkillExtraScope = function(self, normalAttackDa
   if onlyReplaceNormalSkillInXScope and onlyReplaceNormalSkillInXScope == 1 and (pathPosition.x == beAttackPos.x or pathPosition.y == beAttackPos.y) then
     bScopeCheckOk = false
   end
-  if normalAttackUseSkillTarget > 0 then
-    (Log.fatal)("触发替换 skillID", newAttackSkillId)
+  if 0 < normalAttackUseSkillTarget then
+    Log.fatal("触发替换 skillID", newAttackSkillId)
     newAttackSkillCount = 1
   end
   local normalAttackIndex = normalAttackData:GetNormalAttackIndex()
-  do
-    if normalAttackIndex and normalAttackIndex > 1 then
-      local separateDoubleSkillID = buffComp:GetBuffValue("NormalAttackSeparateDoubleSkillID")
-      newAttackSkillId = separateDoubleSkillID
+  if normalAttackIndex and 1 < normalAttackIndex then
+    local separateDoubleSkillID = buffComp:GetBuffValue("NormalAttackSeparateDoubleSkillID")
+    newAttackSkillId = separateDoubleSkillID
+  end
+  if newAttackSkillId and 0 < newAttackSkillCount and bScopeCheckOk then
+    if normalAttackUseSkillTarget == 0 then
+      buffComp:SetBuffValue("ChangeNormalSkillCount", newAttackSkillCount - 1)
     end
-    if newAttackSkillId and newAttackSkillCount > 0 and bScopeCheckOk then
-      if normalAttackUseSkillTarget == 0 then
-        buffComp:SetBuffValue("ChangeNormalSkillCount", newAttackSkillCount - 1)
+    local targetIds = {}
+    local gridPosArr = {}
+    if normalSkillDirectReplace == 1 then
+      attackGridData:SetAttackGridSkillID(newAttackSkillId)
+    else
+      local centerPos = beAttackPos
+      if useAttackPosAsCenter == 1 then
+        centerPos = pathPosition
       end
-      local targetIds = {}
-      local gridPosArr = {}
-      if normalSkillDirectReplace == 1 then
-        attackGridData:SetAttackGridSkillID(newAttackSkillId)
+      local skillConfigData = self._configService:GetSkillConfigData(newAttackSkillId)
+      local skillTargetType = skillConfigData:GetSkillTargetType()
+      local casterDir = beAttackPos - pathPosition
+      local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+      local scopeResult = utilScopeSvc:CalcSkillScope(skillConfigData, centerPos, petEntity, casterDir)
+      local skill_range_grid_list = scopeResult:GetAttackRange()
+      if newNormalSkillExcludeOriPos == 1 then
+        table.removev(skill_range_grid_list, beAttackPos)
+      end
+      if 0 < normalAttackCrossTwoCount then
+        local tmpRange = {}
+        for _, gridPos in ipairs(skill_range_grid_list) do
+          local distance = Vector2.Distance(gridPos, beAttackPos)
+          if distance == 1 then
+            table.insert(tmpRange, gridPos)
+          end
+        end
+        skill_range_grid_list = tmpRange
+      end
+      skill_range_grid_list[#skill_range_grid_list + 1] = beAttackPos
+      local targetEntities
+      if self._world:MatchType() == MatchType.MT_BlackFist then
+        targetEntities = {
+          self._world:Player():GetCurrentEnemyTeamEntity()
+        }
       else
-        local centerPos = beAttackPos
-        if useAttackPosAsCenter == 1 then
-          centerPos = pathPosition
+        local monster_group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+        targetEntities = monster_group:GetEntities()
+      end
+      if 0 < normalAttackUseSkillTarget then
+        targetEntities = {}
+        local targetEntityIDArray = self._skillScopeTargetSelector:DoSelectSkillTarget(petEntity, skillTargetType, scopeResult, newAttackSkillId, {1})
+        for _, id in ipairs(targetEntityIDArray) do
+          local entity = self._world:GetEntityByID(id)
+          table.insert(targetEntities, entity)
         end
-        local skillConfigData = (self._configService):GetSkillConfigData(newAttackSkillId)
-        local skillTargetType = skillConfigData:GetSkillTargetType()
-        local casterDir = beAttackPos - pathPosition
-        local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-        local scopeResult = utilScopeSvc:CalcSkillScope(skillConfigData, centerPos, petEntity, casterDir)
-        local skill_range_grid_list = scopeResult:GetAttackRange()
-        if newNormalSkillExcludeOriPos == 1 then
-          (table.removev)(skill_range_grid_list, beAttackPos)
-        end
-        do
-          if normalAttackCrossTwoCount > 0 then
-            local tmpRange = {}
-            for _,gridPos in ipairs(skill_range_grid_list) do
-              local distance = (Vector2.Distance)(gridPos, beAttackPos)
-              if distance == 1 then
-                (table.insert)(tmpRange, gridPos)
-              end
+      end
+      for _, e in ipairs(targetEntities) do
+        if self._skillScopeTargetSelector:SelectConditionFilter(e, true) then
+          local monster_grid_pos = e:GetGridPosition()
+          local monster_body_area_cmpt = e:BodyArea()
+          local monster_body_area = monster_body_area_cmpt:GetArea()
+          local targetBodyPosInSkillRangePosList = {}
+          for i, bodyArea in ipairs(monster_body_area) do
+            local curMonsterBodyPos = monster_grid_pos + bodyArea
+            if table.icontains(skill_range_grid_list, curMonsterBodyPos) then
+              table.insert(targetBodyPosInSkillRangePosList, curMonsterBodyPos)
             end
-            skill_range_grid_list = tmpRange
           end
-          skill_range_grid_list[#skill_range_grid_list + 1] = beAttackPos
-          local targetEntities = nil
-          if (self._world):MatchType() == MatchType.MT_BlackFist then
-            targetEntities = {((self._world):Player()):GetCurrentEnemyTeamEntity()}
-          else
-            local monster_group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-            targetEntities = monster_group:GetEntities()
-          end
-          do
-            if normalAttackUseSkillTarget > 0 then
-              targetEntities = {}
-              local targetEntityIDArray = (self._skillScopeTargetSelector):DoSelectSkillTarget(petEntity, skillTargetType, scopeResult, newAttackSkillId, {1})
-              for _,id in ipairs(targetEntityIDArray) do
-                local entity = (self._world):GetEntityByID(id)
-                ;
-                (table.insert)(targetEntities, entity)
-              end
-            end
-            do
-              for _,e in ipairs(targetEntities) do
-                if (self._skillScopeTargetSelector):SelectConditionFilter(e, true) then
-                  local monster_grid_pos = e:GetGridPosition()
-                  local monster_body_area_cmpt = e:BodyArea()
-                  local monster_body_area = monster_body_area_cmpt:GetArea()
-                  local targetBodyPosInSkillRangePosList = {}
-                  for i,bodyArea in ipairs(monster_body_area) do
-                    local curMonsterBodyPos = monster_grid_pos + bodyArea
-                    if (table.icontains)(skill_range_grid_list, curMonsterBodyPos) then
-                      (table.insert)(targetBodyPosInSkillRangePosList, curMonsterBodyPos)
-                    end
-                  end
-                  if (table.count)(targetBodyPosInSkillRangePosList) > 0 then
-                    if normalAttackRemoveSameTarget == 1 then
-                      (table.sort)(targetBodyPosInSkillRangePosList, function(a, b)
-    -- function num : 0_12_0 , upvalues : _ENV, pathPosition
-    local disA = (Vector2.Distance)(pathPosition, a)
-    local disB = (Vector2.Distance)(pathPosition, b)
-    do return disA < disB end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-                      ;
-                      (table.insert)(targetIds, e:GetID())
-                      ;
-                      (table.insert)(gridPosArr, targetBodyPosInSkillRangePosList[1])
-                    else
-                      for i,pos in ipairs(targetBodyPosInSkillRangePosList) do
-                        (table.insert)(targetIds, e:GetID())
-                        ;
-                        (table.insert)(gridPosArr, pos)
-                      end
-                    end
-                  end
-                end
-              end
-              do
-                do
-                  local NewAttackGridData = attackGridData
-                  if normalSkillID ~= newAttackSkillId then
-                    NewAttackGridData = AttackGridData:New(nil, nil, nil, newAttackSkillId, petEntityID)
-                  end
-                  NewAttackGridData:ClearTargetIdList()
-                  for i = 1, #targetIds do
-                    NewAttackGridData:AddTargetId(targetIds[i])
-                  end
-                  NewAttackGridData:ClearAttackPosList()
-                  for i = 1, #gridPosArr do
-                    NewAttackGridData:AddAttackPos(gridPosArr[i])
-                  end
-                  attackGridData = NewAttackGridData
-                  normalAttackData:SetAttackGridData(NewAttackGridData)
-                  normalSkillID = newAttackSkillId
-                  return attackGridData, normalSkillID, normalSkillDirectReplace
-                end
+          if 0 < table.count(targetBodyPosInSkillRangePosList) then
+            if normalAttackRemoveSameTarget == 1 then
+              table.sort(targetBodyPosInSkillRangePosList, function(a, b)
+                local disA = Vector2.Distance(pathPosition, a)
+                local disB = Vector2.Distance(pathPosition, b)
+                return disA < disB
+              end)
+              table.insert(targetIds, e:GetID())
+              table.insert(gridPosArr, targetBodyPosInSkillRangePosList[1])
+            else
+              for i, pos in ipairs(targetBodyPosInSkillRangePosList) do
+                table.insert(targetIds, e:GetID())
+                table.insert(gridPosArr, pos)
               end
             end
           end
         end
       end
+      local NewAttackGridData = attackGridData
+      if normalSkillID ~= newAttackSkillId then
+        NewAttackGridData = AttackGridData:New(nil, nil, nil, newAttackSkillId, petEntityID)
+      end
+      NewAttackGridData:ClearTargetIdList()
+      for i = 1, #targetIds do
+        NewAttackGridData:AddTargetId(targetIds[i])
+      end
+      NewAttackGridData:ClearAttackPosList()
+      for i = 1, #gridPosArr do
+        NewAttackGridData:AddAttackPos(gridPosArr[i])
+      end
+      attackGridData = NewAttackGridData
+      normalAttackData:SetAttackGridData(NewAttackGridData)
     end
+    normalSkillID = newAttackSkillId
   end
+  return attackGridData, normalSkillID, normalSkillDirectReplace
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._CalcNormalSkillEffect = function(self, teamEntity, normalAttackData, attackGridData, originalSkillID, originaBeAttackPos, directReplace, isNormalAttackDouble)
-  -- function num : 0_13 , upvalues : _ENV
+function NormalSkillCalculator:_CalcNormalSkillEffect(teamEntity, normalAttackData, attackGridData, originalSkillID, originaBeAttackPos, directReplace, isNormalAttackDouble)
   local endChainIndx = self:_CalcEndIndex()
   local petEntityID = normalAttackData:GetPetEntityID()
-  local petEntity = (self._world):GetEntityByID(petEntityID)
+  local petEntity = self._world:GetEntityByID(petEntityID)
   local normalSkillID = attackGridData:GetAttackGridSkillId()
   local chainIndex = normalAttackData:GetChainIndex()
   local beAttackEntityIdList = attackGridData:GetTargetIdList()
@@ -676,9 +555,9 @@ NormalSkillCalculator._CalcNormalSkillEffect = function(self, teamEntity, normal
   end
   local buffComp = petEntity:BuffComponent()
   local normalAttackOneDamageOneCombo = buffComp:GetBuffValue("NormalAttackOneDamageOneCombo")
-  if chainIndex < self._deadChainIndx and chainIndex < endChainIndx then
+  if chainIndex < self._deadChainIndx and endChainIndx > chainIndex then
     local petAtkComponent = petEntity:SkillPetAttackData()
-    local utilCalcSvc = (self._world):GetService("UtilCalc")
+    local utilCalcSvc = self._world:GetService("UtilCalc")
     local logicChainPathCmpt = teamEntity:LogicChainPath()
     local chainRate = logicChainPathCmpt:GetChainRateAtIndex(chainIndex)
     petAtkComponent:SetCurrentChainDamageRate(chainRate)
@@ -686,14 +565,13 @@ NormalSkillCalculator._CalcNormalSkillEffect = function(self, teamEntity, normal
     petAtkComponent:SetCurrentSuperGridNum(superGridNum)
     local poorGridNum = logicChainPathCmpt:GetPoorGridCountAtPathIndex(chainIndex)
     petAtkComponent:SetCurrentPoorGridNum(poorGridNum)
-    local chainPathPoint = (self._chainPathData)[chainIndex]
-    ;
-    ((self._world):GetService("Trigger")):Notify(NTNormalAttackCalcStart:New(petEntity, attackGridData))
-    local firstDefender, firstDefenderPos, firstDamagePos = nil, nil, nil
+    local chainPathPoint = self._chainPathData[chainIndex]
+    self._world:GetService("Trigger"):Notify(NTNormalAttackCalcStart:New(petEntity, attackGridData))
+    local firstDefender, firstDefenderPos, firstDamagePos
     for i = 1, #beAttackEntityIdList do
       local beAttackEntityID = beAttackEntityIdList[i]
-      local defenderEntity = (self._world):GetEntityByID(beAttackEntityID)
-      local pos = (defenderEntity:GridLocation()).Position
+      local defenderEntity = self._world:GetEntityByID(beAttackEntityID)
+      local pos = defenderEntity:GridLocation().Position
       if not firstDefender then
         firstDefender = defenderEntity
         firstDefenderPos = pos
@@ -702,9 +580,7 @@ NormalSkillCalculator._CalcNormalSkillEffect = function(self, teamEntity, normal
       if gridPosArr and gridPosArr[i] then
         gridPos = gridPosArr[i]
       end
-      if not firstDamagePos then
-        firstDamagePos = gridPos
-      end
+      firstDamagePos = firstDamagePos or gridPos
       local skillID = normalSkillID
       if gridPos == originaBeAttackPos and directReplace == 0 then
         skillID = originalSkillID
@@ -722,9 +598,9 @@ NormalSkillCalculator._CalcNormalSkillEffect = function(self, teamEntity, normal
       end
     end
     local hasDamageEffect = false
-    local svcCfgDeco = (self._world):GetService("ConfigDecoration")
+    local svcCfgDeco = self._world:GetService("ConfigDecoration")
     local skillEffectArray = svcCfgDeco:GetLatestEffectParamArray(petEntity:GetID(), normalSkillID)
-    for _,v in ipairs(skillEffectArray) do
+    for _, v in ipairs(skillEffectArray) do
       local skillEffectParam = v
       local skillEffectType = skillEffectParam:GetEffectType()
       if skillEffectType == SkillEffectType.Damage then
@@ -732,49 +608,39 @@ NormalSkillCalculator._CalcNormalSkillEffect = function(self, teamEntity, normal
         break
       end
     end
-    do
-      if hasDamageEffect then
-        self:_AddCombo(teamEntity)
-      end
-      local nt = NTNormalAttackCalcEnd:New(petEntity, firstDefender, chainPathPoint, firstDamagePos)
-      nt:SetSkillID(normalSkillID)
-      nt:SetSkillType(SkillType.Normal)
-      nt:SetNormalAttackIndex(normalAttackIndex)
-      ;
-      ((self._world):GetService("Trigger")):Notify(nt)
-      local nt1 = NTNormalAttackCalcEndUseOriPos:New(petEntity, firstDefender, chainPathPoint, originaBeAttackPos)
-      nt1:SetSkillID(normalSkillID)
-      nt1:SetSkillType(SkillType.Normal)
-      nt1:SetNormalAttackIndex(normalAttackIndex)
-      ;
-      ((self._world):GetService("Trigger")):Notify(nt1)
+    if hasDamageEffect then
+      self:_AddCombo(teamEntity)
     end
+    local nt = NTNormalAttackCalcEnd:New(petEntity, firstDefender, chainPathPoint, firstDamagePos)
+    nt:SetSkillID(normalSkillID)
+    nt:SetSkillType(SkillType.Normal)
+    nt:SetNormalAttackIndex(normalAttackIndex)
+    self._world:GetService("Trigger"):Notify(nt)
+    local nt1 = NTNormalAttackCalcEndUseOriPos:New(petEntity, firstDefender, chainPathPoint, originaBeAttackPos)
+    nt1:SetSkillID(normalSkillID)
+    nt1:SetSkillType(SkillType.Normal)
+    nt1:SetNormalAttackIndex(normalAttackIndex)
+    self._world:GetService("Trigger"):Notify(nt1)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._AddCombo = function(self, teamEntity)
-  -- function num : 0_14
-  local battleSvc = (self._world):GetService("Battle")
-  local battleStatComponent = (self._world):BattleStat()
+function NormalSkillCalculator:_AddCombo(teamEntity)
+  local battleSvc = self._world:GetService("Battle")
+  local battleStatComponent = self._world:BattleStat()
   local curComboNum = battleSvc:GetLogicComboNum()
   curComboNum = curComboNum + 1
   battleSvc:SetLogicComboNum(curComboNum)
   battleStatComponent:SetOneChainMaxNormalAttack(teamEntity, curComboNum)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._OnApplyEachSkillEffect = function(self, petEntity, attackGridData, t, isNormalAttackDouble)
-  -- function num : 0_15 , upvalues : _ENV
-  local logger = (self._world):GetMatchLogger()
+function NormalSkillCalculator:_OnApplyEachSkillEffect(petEntity, attackGridData, t, isNormalAttackDouble)
+  local logger = self._world:GetMatchLogger()
   logger:BeginSkill(t.casterEntityID, t.attackPos, t.skillID, t.skillRange)
   self:_NotifyNormalSkillBegin(t, attackGridData)
   local saveSkillDamageEffectResult = self:_SaveDamageResultBeforeAddBlood(t)
   local totalDamage = 0
-  local damageType = nil
-  local skillEffectResultArray = (self._skillEffectCalcService):CalcSkillEffect_All(t)
+  local damageType
+  local skillEffectResultArray = self._skillEffectCalcService:CalcSkillEffect_All(t)
   for effectResultIndex = 1, #skillEffectResultArray do
     local skillResultData = skillEffectResultArray[effectResultIndex]
     local skillEffectType = skillResultData:GetEffectType()
@@ -795,67 +661,38 @@ NormalSkillCalculator._OnApplyEachSkillEffect = function(self, petEntity, attack
       damageType = damageInfo:GetDamageType()
       attackGridData:AddDamageValue(targetID, castDamage)
       totalDamage = totalDamage + castDamage
-    else
-      do
-        if skillEffectType == SkillEffectType.AddBlood then
-          damageType = DamageType.Invalid
-          attackGridData:AddEffectResult(saveSkillDamageEffectResult)
-          local addBloodResult = skillResultData
-          local targetID = addBloodResult:GetTargetID()
-          local healValue = addBloodResult:GetAddValue()
-          local addHpDamageInfo = DamageInfo:New(healValue, DamageType.Recover)
-          local calcDamageSvc = (self._world):GetService("CalcDamage")
-          calcDamageSvc:AddTargetHP(targetID, addHpDamageInfo)
-          addBloodResult:SetDamageInfo(addHpDamageInfo)
-          attackGridData:AddEffectResult(addBloodResult)
-        else
-          do
-            do
-              if skillEffectType == SkillEffectType.WeikeNotify then
-                local executor = SkillEffectLogicExecutor:New(self._world)
-                executor:_ApplyWeikeNotify(petEntity, {}, {skillResultData})
-                attackGridData:AddEffectResult(skillResultData)
-              end
-              -- DECOMPILER ERROR at PC121: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC121: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC121: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC121: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC121: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC121: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
-      end
+    elseif skillEffectType == SkillEffectType.AddBlood then
+      damageType = DamageType.Invalid
+      attackGridData:AddEffectResult(saveSkillDamageEffectResult)
+      local addBloodResult = skillResultData
+      local targetID = addBloodResult:GetTargetID()
+      local healValue = addBloodResult:GetAddValue()
+      local addHpDamageInfo = DamageInfo:New(healValue, DamageType.Recover)
+      local calcDamageSvc = self._world:GetService("CalcDamage")
+      calcDamageSvc:AddTargetHP(targetID, addHpDamageInfo)
+      addBloodResult:SetDamageInfo(addHpDamageInfo)
+      attackGridData:AddEffectResult(addBloodResult)
+    elseif skillEffectType == SkillEffectType.WeikeNotify then
+      local executor = SkillEffectLogicExecutor:New(self._world)
+      executor:_ApplyWeikeNotify(petEntity, {}, {skillResultData})
+      attackGridData:AddEffectResult(skillResultData)
     end
   end
   self:_NotifyNormalSkillEnd(t, damageType, totalDamage, saveSkillDamageEffectResult, attackGridData)
   logger:EndSkill(t.casterEntityID)
-  ;
-  ((self._world):GetDataLogger()):AddDataLog("OnNormalSkillEnd", petEntity, t.skillID, totalDamage)
+  self._world:GetDataLogger():AddDataLog("OnNormalSkillEnd", petEntity, t.skillID, totalDamage)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._SaveDamageResultBeforeAddBlood = function(self, t)
-  -- function num : 0_16 , upvalues : _ENV
+function NormalSkillCalculator:_SaveDamageResultBeforeAddBlood(t)
   local damageInfo = DamageInfo:New(0, DamageType.Invalid)
-  local skillDamageEffectResult = SkillDamageEffectResult:New(t.gridPos, (t.targetEntityIDs)[1], 0, {damageInfo})
+  local skillDamageEffectResult = SkillDamageEffectResult:New(t.gridPos, t.targetEntityIDs[1], 0, {damageInfo})
   return skillDamageEffectResult
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._NotifyNormalSkillBegin = function(self, t, attackGridData)
-  -- function num : 0_17 , upvalues : _ENV
-  local triggerSvc = (self._world):GetService("Trigger")
-  local attacker = (self._world):GetEntityByID(t.casterEntityID)
-  local defender = (self._world):GetEntityByID((t.targetEntityIDs)[1])
+function NormalSkillCalculator:_NotifyNormalSkillBegin(t, attackGridData)
+  local triggerSvc = self._world:GetService("Trigger")
+  local attacker = self._world:GetEntityByID(t.casterEntityID)
+  local defender = self._world:GetEntityByID(t.targetEntityIDs[1])
   local nt = NTNormalEachAttackStart:New(attacker, defender, t.attackPos, t.gridPos)
   nt:SetSkillID(t.skillID)
   nt:SetSkillType(SkillType.Normal)
@@ -863,15 +700,15 @@ NormalSkillCalculator._NotifyNormalSkillBegin = function(self, t, attackGridData
   triggerSvc:Notify(nt)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._NotifyNormalSkillEnd = function(self, t, damageType, damageValue, damageResult, attackGridData)
-  -- function num : 0_18 , upvalues : _ENV
-  local triggerSvc = (self._world):GetService("Trigger")
-  local attacker = (self._world):GetEntityByID(t.casterEntityID)
-  local defender = (self._world):GetEntityByID(damageResult:GetTargetID())
-  local battleStatComponent = (self._world):BattleStat()
-  local heroLastAttackMonster = {defender:GetID(), damageResult:GetGridPos()}
+function NormalSkillCalculator:_NotifyNormalSkillEnd(t, damageType, damageValue, damageResult, attackGridData)
+  local triggerSvc = self._world:GetService("Trigger")
+  local attacker = self._world:GetEntityByID(t.casterEntityID)
+  local defender = self._world:GetEntityByID(damageResult:GetTargetID())
+  local battleStatComponent = self._world:BattleStat()
+  local heroLastAttackMonster = {
+    defender:GetID(),
+    damageResult:GetGridPos()
+  }
   battleStatComponent:SetHeroLastAttackMonster(heroLastAttackMonster)
   local nt = NTNormalEachAttackEnd:New(attacker, defender, t.attackPos, damageResult:GetGridPos())
   nt:SetSkillID(t.skillID)
@@ -882,17 +719,14 @@ NormalSkillCalculator._NotifyNormalSkillEnd = function(self, t, damageType, dama
   triggerSvc:Notify(nt)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._SaveAttackGridData = function(self, normalAttackData, attackGridData)
-  -- function num : 0_19 , upvalues : _ENV
+function NormalSkillCalculator:_SaveAttackGridData(normalAttackData, attackGridData)
   local petEntityID = normalAttackData:GetPetEntityID()
-  local petEntity = (self._world):GetEntityByID(petEntityID)
+  local petEntity = self._world:GetEntityByID(petEntityID)
   local chainIndex = normalAttackData:GetChainIndex()
   local beAttackPos = normalAttackData:GetBeAttackPos()
   local skillPetAttackDataComponent = petEntity:SkillPetAttackData()
   local normalAtkData = skillPetAttackDataComponent:GetNormalAttackData()
-  local pos = (self._chainPathData)[chainIndex]
+  local pos = self._chainPathData[chainIndex]
   local pathPointNormalAttackData = normalAtkData:GetPathPointAttackData(pos)
   local attackGridDic = {}
   local normalAttackIndex = normalAttackData:GetNormalAttackIndex()
@@ -901,8 +735,8 @@ NormalSkillCalculator._SaveAttackGridData = function(self, normalAttackData, att
   else
     attackGridDic = pathPointNormalAttackData:GetAttackGridDic()
   end
-  for k,v in pairs(attackGridDic) do
-    local kPos = (Vector2.Index2Pos)(k)
+  for k, v in pairs(attackGridDic) do
+    local kPos = Vector2.Index2Pos(k)
     if kPos.x == beAttackPos.x and kPos.y == beAttackPos.y then
       attackGridDic[k] = attackGridData
       break
@@ -910,15 +744,12 @@ NormalSkillCalculator._SaveAttackGridData = function(self, normalAttackData, att
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._GetNormalAttackHitTimeAndLength = function(self, skillID, isLastAttackPos, casterEntity)
-  -- function num : 0_20 , upvalues : _ENV
+function NormalSkillCalculator:_GetNormalAttackHitTimeAndLength(skillID, isLastAttackPos, casterEntity)
   local skinId = 1
   if casterEntity:MatchPet() then
-    skinId = ((casterEntity:MatchPet()):GetMatchPet()):GetSkinId()
+    skinId = casterEntity:MatchPet():GetMatchPet():GetSkinId()
   end
-  local skillConfigData = (self._configService):GetSkillConfigData(skillID)
+  local skillConfigData = self._configService:GetSkillConfigData(skillID)
   local skillPhaseArray = skillConfigData:GetSkillPhaseArray(skinId)
   if skillPhaseArray == nil or #skillPhaseArray == 0 then
     if self._skillViewParser == nil then
@@ -926,69 +757,51 @@ NormalSkillCalculator._GetNormalAttackHitTimeAndLength = function(self, skillID,
     end
     local skillConfig = BattleSkillCfg(skillID)
     local skillViewID = skillConfig.ViewID
-    do
-      do
-        if skillConfig.SpecialView then
-          local skinSkillViewID = (skillConfig.SpecialView)[skinId]
-          if skinSkillViewID then
-            skillViewID = skinSkillViewID
-          end
-        end
-        skillPhaseArray = (self._skillViewParser):ParseSkillView(skillViewID)
-        if #skillPhaseArray < 1 then
-          (Log.fatal)("_GetNormalAttackHitTimeAndLength, skill phase array size < 1, skillID:" .. skillID)
-          return 0, 0
-        end
-        local phaseData = nil
-        for i = 1, #skillPhaseArray do
-          local tmpPhaseData = skillPhaseArray[i]
-          local posdirParam = tmpPhaseData:GetPosDirParam()
-          local phaseParam = tmpPhaseData:GetPhaseParam()
-          local phaseType = phaseParam:GetPhaseType()
-          if phaseType == SkillViewPhaseType.AttackAnimation or phaseType == SkillViewPhaseType.NormalAttackForAddBlood or phaseType == SkillViewPhaseType.NormalAttackOnlyAnimation or phaseType == SkillViewPhaseType.NormalAttackWithMove then
-            phaseData = tmpPhaseData
-            break
-          end
-        end
-        do
-          if not phaseData then
-            (Log.fatal)("_GetNormalAttackHitTimeAndLength, phaseType ~= SkillViewPhaseType.AttackAnimation, skillID:" .. skillID)
-            return 0, 0
-          end
-          local phaseParam = phaseData:GetPhaseParam()
-          return phaseParam:GetHitPointDelay(isLastAttackPos) / 1000, phaseParam:GetCastTotalTime(isLastAttackPos) / 1000
-        end
+    if skillConfig.SpecialView then
+      local skinSkillViewID = skillConfig.SpecialView[skinId]
+      if skinSkillViewID then
+        skillViewID = skinSkillViewID
       end
     end
+    skillPhaseArray = self._skillViewParser:ParseSkillView(skillViewID)
   end
-end
-
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._MakeTimeFrameTimeMultiple = function(self, time)
-  -- function num : 0_21 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._frameTimeMultipleDic)[time] then
-    (self._frameTimeMultipleDic)[time] = (math.ceil)(time / BattleConst.FrameTime) * BattleConst.FrameTime
+  if #skillPhaseArray < 1 then
+    Log.fatal("_GetNormalAttackHitTimeAndLength, skill phase array size < 1, skillID:" .. skillID)
+    return 0, 0
   end
-  return (self._frameTimeMultipleDic)[time]
+  local phaseData
+  for i = 1, #skillPhaseArray do
+    local tmpPhaseData = skillPhaseArray[i]
+    local posdirParam = tmpPhaseData:GetPosDirParam()
+    local phaseParam = tmpPhaseData:GetPhaseParam()
+    local phaseType = phaseParam:GetPhaseType()
+    if phaseType == SkillViewPhaseType.AttackAnimation or phaseType == SkillViewPhaseType.NormalAttackForAddBlood or phaseType == SkillViewPhaseType.NormalAttackOnlyAnimation or phaseType == SkillViewPhaseType.NormalAttackWithMove then
+      phaseData = tmpPhaseData
+      break
+    end
+  end
+  if not phaseData then
+    Log.fatal("_GetNormalAttackHitTimeAndLength, phaseType ~= SkillViewPhaseType.AttackAnimation, skillID:" .. skillID)
+    return 0, 0
+  end
+  local phaseParam = phaseData:GetPhaseParam()
+  return phaseParam:GetHitPointDelay(isLastAttackPos) / 1000, phaseParam:GetCastTotalTime(isLastAttackPos) / 1000
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._IsPosInCrossLine = function(self, pos1, pos2)
-  -- function num : 0_22
-  do return pos1.x - pos2.x == 0 or pos1.y - pos2.y == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function NormalSkillCalculator:_MakeTimeFrameTimeMultiple(time)
+  if not self._frameTimeMultipleDic[time] then
+    self._frameTimeMultipleDic[time] = math.ceil(time / BattleConst.FrameTime) * BattleConst.FrameTime
+  end
+  return self._frameTimeMultipleDic[time]
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
+function NormalSkillCalculator:_IsPosInCrossLine(pos1, pos2)
+  return pos1.x - pos2.x == 0 or pos1.y - pos2.y == 0
+end
 
-NormalSkillCalculator._FindAttackGridData = function(self, attackGridDic, beAttackPos)
-  -- function num : 0_23 , upvalues : _ENV
-  for k,v in pairs(attackGridDic) do
-    local v2 = (Vector2.Index2Pos)(k)
+function NormalSkillCalculator:_FindAttackGridData(attackGridDic, beAttackPos)
+  for k, v in pairs(attackGridDic) do
+    local v2 = Vector2.Index2Pos(k)
     if v2 == beAttackPos then
       return v
     end
@@ -996,22 +809,16 @@ NormalSkillCalculator._FindAttackGridData = function(self, attackGridDic, beAtta
   return nil
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._GetTrapDelay = function(self, trapEntityList)
-  -- function num : 0_24
+function NormalSkillCalculator:_GetTrapDelay(trapEntityList)
   return 0
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._CalcTrapTrigger = function(self, trapEntityList, targetID)
-  -- function num : 0_25 , upvalues : _ENV
+function NormalSkillCalculator:_CalcTrapTrigger(trapEntityList, targetID)
   local maxLevel = -1
   local minLevel = 100000
-  for key,_ in pairs(trapEntityList) do
+  for key, _ in pairs(trapEntityList) do
     if key then
-      if maxLevel < key then
+      if key > maxLevel then
         maxLevel = key
       end
       if key < minLevel then
@@ -1023,39 +830,32 @@ NormalSkillCalculator._CalcTrapTrigger = function(self, trapEntityList, targetID
   for i = maxLevel, minLevel, -1 do
     local trap = trapEntityList[i]
     if trap then
-      local eTarget = (self._world):GetEntityByID(targetID)
-      local taps = (self._trapServiceLogic):CalcTrapTriggerSkill(trap, eTarget)
-      ;
-      (table.appendArray)(triggerTraps, taps)
+      local eTarget = self._world:GetEntityByID(targetID)
+      local taps = self._trapServiceLogic:CalcTrapTriggerSkill(trap, eTarget)
+      table.appendArray(triggerTraps, taps)
     end
   end
   return triggerTraps
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._GetIndexTrapDic = function(self, teamEntity)
-  -- function num : 0_26 , upvalues : _ENV
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
-  local utilDataSvc = (self._world):GetService("UtilData")
+function NormalSkillCalculator:_GetIndexTrapDic(teamEntity)
+  local trapServiceLogic = self._world:GetService("TrapLogic")
+  local utilDataSvc = self._world:GetService("UtilData")
   local res = {}
   if utilDataSvc:IsPreviewNeedShowLinkageNumForCostStep() then
     return res
   end
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-  for _,e in ipairs(trapGroup:GetEntities()) do
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  for _, e in ipairs(trapGroup:GetEntities()) do
     local trapCmpt = e:Trap()
     if trapServiceLogic:CanSelectByRaceType(e, teamEntity) and trapCmpt:GetTriggerSkillID() then
-      local pos = (e:GridLocation()).Position
+      local pos = e:GridLocation().Position
       for i = 1, #self._chainPathData do
-        if pos == (self._chainPathData)[i] then
+        if pos == self._chainPathData[i] then
           if not res[i] then
             res[i] = {}
           end
-          -- DECOMPILER ERROR at PC57: Confused about usage of register: R17 in 'UnsetPending'
-
-          ;
-          (res[i])[trapCmpt:GetTrapLevel()] = e
+          res[i][trapCmpt:GetTrapLevel()] = e
         end
       end
     end
@@ -1063,24 +863,21 @@ NormalSkillCalculator._GetIndexTrapDic = function(self, teamEntity)
   return res
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._GetPathSuperGridCount = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function NormalSkillCalculator:_GetPathSuperGridCount()
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   local mapSuperGridTrapEntities = {}
-  local GLOBALtrapGroupEntities = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).Trap)
-  for _,e in ipairs(GLOBALtrapGroupEntities) do
+  local GLOBALtrapGroupEntities = self._world:GetGroupEntities(self._world.BW_WEMatchers.Trap)
+  for _, e in ipairs(GLOBALtrapGroupEntities) do
     local cTrap = e:Trap()
     if cTrap:IsSuperGrid() and not e:HasDeadMark() then
-      local posIndex = (e:GetGridPosition()):Pos2Index()
+      local posIndex = e:GetGridPosition():Pos2Index()
       mapSuperGridTrapEntities[posIndex] = e
     end
   end
   local t = {}
   local count = 0
   for i = 1, #self._chainPathData do
-    local posIndex = ((self._chainPathData)[i]):Pos2Index()
+    local posIndex = self._chainPathData[i]:Pos2Index()
     if mapSuperGridTrapEntities[posIndex] then
       count = count + 1
     end
@@ -1089,43 +886,35 @@ NormalSkillCalculator._GetPathSuperGridCount = function(self)
   return t
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._ModifyPathSuperGridCount = function(self, pathSuperGridCount, teamEntity)
-  -- function num : 0_28 , upvalues : _ENV
+function NormalSkillCalculator:_ModifyPathSuperGridCount(pathSuperGridCount, teamEntity)
   local buffComp = teamEntity:BuffComponent()
   local addCountVal = buffComp:GetBuffValue("PetAbsorbSuperGridCount")
   if addCountVal then
     local addCount = tonumber(addCountVal)
-    if addCount > 0 then
-      for index,count in ipairs(pathSuperGridCount) do
+    if 0 < addCount then
+      for index, count in ipairs(pathSuperGridCount) do
         pathSuperGridCount[index] = count + addCount
       end
     end
   end
-  do
-    return pathSuperGridCount
-  end
+  return pathSuperGridCount
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._GetPathPoorGridCount = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function NormalSkillCalculator:_GetPathPoorGridCount()
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   local poorGridEntityByPosIndex = {}
-  local globalTrapEntities = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).Trap)
-  for _,e in ipairs(globalTrapEntities) do
+  local globalTrapEntities = self._world:GetGroupEntities(self._world.BW_WEMatchers.Trap)
+  for _, e in ipairs(globalTrapEntities) do
     local cTrap = e:Trap()
     if cTrap:IsPoorGrid() and not e:HasDeadMark() then
-      local posIndex = (e:GetGridPosition()):Pos2Index()
+      local posIndex = e:GetGridPosition():Pos2Index()
       poorGridEntityByPosIndex[posIndex] = e
     end
   end
   local t = {}
   local count = 0
   for i = 1, #self._chainPathData do
-    local posIndex = ((self._chainPathData)[i]):Pos2Index()
+    local posIndex = self._chainPathData[i]:Pos2Index()
     if poorGridEntityByPosIndex[posIndex] then
       count = count + 1
     end
@@ -1134,81 +923,61 @@ NormalSkillCalculator._GetPathPoorGridCount = function(self)
   return t
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._CalcEndIndex = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function NormalSkillCalculator:_CalcEndIndex()
   if self._chainPathData then
-    local utilDataSvc = (self._world):GetService("UtilData")
-    local lastIdx = (table.count)(self._chainPathData)
-    local lastPos = (self._chainPathData)[lastIdx]
+    local utilDataSvc = self._world:GetService("UtilData")
+    local lastIdx = table.count(self._chainPathData)
+    local lastPos = self._chainPathData[lastIdx]
     if utilDataSvc:IsPosExit(lastPos) then
       return lastIdx
     end
   end
-  do
-    return 99999
-  end
+  return 99999
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._OnCheckTriggerTrapBeforeAttack = function(self, teamEntity, index)
-  -- function num : 0_31
-  local attackTime = (self._timeAttackListDic):GetKeyAt(index)
-  do
-    while self._triggerTrapIndex <= (self._timeTrapDic):Size() and (self._timeTrapDic):GetKeyAt(self._triggerTrapIndex) <= attackTime do
-      local jump = self:_OnCheckTriggerTrap(teamEntity)
-    end
-    if not jump then
+function NormalSkillCalculator:_OnCheckTriggerTrapBeforeAttack(teamEntity, index)
+  local attackTime = self._timeAttackListDic:GetKeyAt(index)
+  while self._timeTrapDic:Size() >= self._triggerTrapIndex and attackTime >= self._timeTrapDic:GetKeyAt(self._triggerTrapIndex) do
+    local jump = self:_OnCheckTriggerTrap(teamEntity)
+    if jump then
+      break
     end
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._OnCheckTriggerTrapAfterAttackAll = function(self, teamEntity)
-  -- function num : 0_32
-  do
-    while self._triggerTrapIndex <= (self._timeTrapDic):Size() and not teamEntity:HasTeamDeadMark() do
-      local jump = self:_OnCheckTriggerTrap(teamEntity)
-    end
-    if not jump then
+function NormalSkillCalculator:_OnCheckTriggerTrapAfterAttackAll(teamEntity)
+  while self._timeTrapDic:Size() >= self._triggerTrapIndex and not teamEntity:HasTeamDeadMark() do
+    local jump = self:_OnCheckTriggerTrap(teamEntity)
+    if jump then
+      break
     end
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._OnCheckTriggerTrap = function(self, teamEntity)
-  -- function num : 0_33 , upvalues : _ENV
-  local chainIndex = (self._timeTrapDic):GetAt(self._triggerTrapIndex)
-  if self._stopChainIndex and self._stopChainIndex <= chainIndex then
+function NormalSkillCalculator:_OnCheckTriggerTrap(teamEntity)
+  local chainIndex = self._timeTrapDic:GetAt(self._triggerTrapIndex)
+  if self._stopChainIndex and chainIndex >= self._stopChainIndex then
     return true
   end
-  if self._deadChainIndx <= chainIndex then
+  if chainIndex >= self._deadChainIndx then
     return true
   end
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   if utilData:PlayerIsDead(teamEntity) then
     self._deadChainIndx = chainIndex
     if teamEntity:HasTeamDeadMark() then
-      (Log.fatal)("Player already dead")
+      Log.fatal("Player already dead")
     else
-      teamEntity:AddTeamDeadMark((self._chainPathData)[chainIndex])
-      ;
-      (Log.info)("Trap cause player dead at", (self._chainPathData)[chainIndex])
+      teamEntity:AddTeamDeadMark(self._chainPathData[chainIndex])
+      Log.info("Trap cause player dead at", self._chainPathData[chainIndex])
     end
     return true
   end
-  local position = (self._chainPathData)[chainIndex]
+  local position = self._chainPathData[chainIndex]
   teamEntity:SetGridPosition(position)
-  local triggerTraps = self:_CalcTrapTrigger((self._indexTrapDic)[chainIndex], teamEntity:GetID())
-  -- DECOMPILER ERROR at PC60: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._pathTriggerTrapsDic)[chainIndex] = triggerTraps
-  if (teamEntity:BuffComponent()):HasFlag(BuffFlags.Benumb) and not self._stopChainIndex then
+  local triggerTraps = self:_CalcTrapTrigger(self._indexTrapDic[chainIndex], teamEntity:GetID())
+  self._pathTriggerTrapsDic[chainIndex] = triggerTraps
+  if teamEntity:BuffComponent():HasFlag(BuffFlags.Benumb) and not self._stopChainIndex then
     self._stopChainIndex = chainIndex
     self:RebuildChainPath(teamEntity)
   end
@@ -1216,49 +985,38 @@ NormalSkillCalculator._OnCheckTriggerTrap = function(self, teamEntity)
   return false
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._SetNormalAttackDead = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  local sMonsterShowLogic = (self._world):GetService("MonsterShowLogic")
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,e in ipairs(monsterGroup:GetEntities()) do
+function NormalSkillCalculator:_SetNormalAttackDead()
+  local sMonsterShowLogic = self._world:GetService("MonsterShowLogic")
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(monsterGroup:GetEntities()) do
     sMonsterShowLogic:AddMonsterDeadMark(e)
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._GetNormalAttackTime = function(self, petIndex, pathPosition)
-  -- function num : 0_35 , upvalues : _ENV
+function NormalSkillCalculator:_GetNormalAttackTime(petIndex, pathPosition)
   local attackCount = self:_GetNormalAttackCount(petIndex, pathPosition)
   local attackTime = 0
-  if attackCount > 0 then
+  if 0 < attackCount then
     attackTime = attackTime + 0.5 + BattleConst.FrameTime * 3
-    if attackCount > 1 then
+    if 1 < attackCount then
       local addTime = 0.333 + BattleConst.FrameTime * 3
       attackTime = attackTime + (attackCount - 1) * addTime
     end
   end
-  do
-    return attackTime
-  end
+  return attackTime
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._GetNormalAttackCount = function(self, petIndex, pathPosition)
-  -- function num : 0_36
-  local petEntityID = (self._petRoundTeam)[petIndex]
-  local petEntity = (self._world):GetEntityByID(petEntityID)
+function NormalSkillCalculator:_GetNormalAttackCount(petIndex, pathPosition)
+  local petEntityID = self._petRoundTeam[petIndex]
+  local petEntity = self._world:GetEntityByID(petEntityID)
   local attackCount = 0
   local petAttackDataCmpt = petEntity:SkillPetAttackData()
   local normalAttackData = petAttackDataCmpt:GetNormalAttackData()
   local pathPointAttackData = normalAttackData:GetPathPointAttackData(pathPosition)
   if pathPointAttackData ~= nil then
     local orderGridArray = pathPointAttackData:GetPetOrderGridArray(petEntity, pathPosition)
-    if (petEntity:BuffComponent()):GetBuffValue("ForcePetNormalAttackAfterMove") then
-      local chainPath = (((petEntity:Pet()):GetOwnerTeamEntity()):LogicChainPath()):GetLogicChainPath()
+    if petEntity:BuffComponent():GetBuffValue("ForcePetNormalAttackAfterMove") then
+      local chainPath = petEntity:Pet():GetOwnerTeamEntity():LogicChainPath():GetLogicChainPath()
       local beginGrid = chainPath[1]
       if beginGrid ~= pathPosition then
         orderGridArray = {}
@@ -1266,32 +1024,25 @@ NormalSkillCalculator._GetNormalAttackCount = function(self, petIndex, pathPosit
         orderGridArray = {pathPosition}
       end
     end
-    do
-      do
-        attackCount = attackCount + #orderGridArray
-        return attackCount
-      end
-    end
+    attackCount = attackCount + #orderGridArray
   end
+  return attackCount
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._OnGetPathAttackList = function(self, teamEntity, chain_path)
-  -- function num : 0_37 , upvalues : _ENV
+function NormalSkillCalculator:_OnGetPathAttackList(teamEntity, chain_path)
   local petsAttactList = {}
   local logicTeamCmpt = teamEntity:LogicRoundTeam()
   local petRoundTeam = logicTeamCmpt:GetPetRoundTeam()
-  for i,petEntityID in ipairs(petRoundTeam) do
-    local petEntity = (self._world):GetEntityByID(petEntityID)
+  for i, petEntityID in ipairs(petRoundTeam) do
+    local petEntity = self._world:GetEntityByID(petEntityID)
     local attackCount = 0
-    for chainIndex,pathPosition in ipairs(chain_path) do
+    for chainIndex, pathPosition in ipairs(chain_path) do
       local petAttackDataCmpt = petEntity:SkillPetAttackData()
       local normalAttackData = petAttackDataCmpt:GetNormalAttackData()
       local pathPointAttackData = normalAttackData:GetPathPointAttackData(pathPosition)
       if pathPointAttackData ~= nil then
         local orderGridArray = pathPointAttackData:GetPetOrderGridArray(petEntity, pathPosition)
-        if (petEntity:BuffComponent()):GetBuffValue("ForcePetNormalAttackAfterMove") then
+        if petEntity:BuffComponent():GetBuffValue("ForcePetNormalAttackAfterMove") then
           if chainIndex ~= 1 then
             orderGridArray = {pathPosition}
           else
@@ -1301,76 +1052,54 @@ NormalSkillCalculator._OnGetPathAttackList = function(self, teamEntity, chain_pa
         attackCount = attackCount + #orderGridArray
       end
     end
-    if attackCount > 0 then
-      (table.insert)(petsAttactList, attackCount)
+    if 0 < attackCount then
+      table.insert(petsAttactList, attackCount)
     end
   end
   return petsAttactList
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._OnGetPathMoveStartWaitTime = function(self, petsAttactList)
-  -- function num : 0_38 , upvalues : _ENV
+function NormalSkillCalculator:_OnGetPathMoveStartWaitTime(petsAttactList)
   local moveWaitTime = 0
   if #petsAttactList == 0 then
     moveWaitTime = 10 * BattleConst.FrameTime
   else
     local hasEightDirectionAttack = false
     local petAttackCount = 0
-    for i,attackCount in ipairs(petsAttactList) do
+    for i, attackCount in ipairs(petsAttactList) do
       if i ~= 1 and petAttackCount ~= attackCount then
         hasEightDirectionAttack = true
         break
       end
       petAttackCount = attackCount
     end
-    do
-      do
-        moveWaitTime = (petAttackCount - 1) * 0.333 + 0.5
-        if moveWaitTime > 1 then
-          moveWaitTime = 1
-        end
-        return moveWaitTime
-      end
+    moveWaitTime = (petAttackCount - 1) * 0.333 + 0.5
+    if 1 < moveWaitTime then
+      moveWaitTime = 1
     end
   end
+  return moveWaitTime
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator.GetPlayNormalSkillSequence = function(self)
-  -- function num : 0_39
+function NormalSkillCalculator:GetPlayNormalSkillSequence()
   return self._playNormalSkillSequence
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator.GetTriggerTraps = function(self)
-  -- function num : 0_40
+function NormalSkillCalculator:GetTriggerTraps()
   return self._pathTriggerTrapsDic
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator.GetPathNormalSkillWaitTimes = function(self)
-  -- function num : 0_41
+function NormalSkillCalculator:GetPathNormalSkillWaitTimes()
   return self._pathNormalSkillWaitTimeDic
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator.GetPathMoveStartWaitTime = function(self)
-  -- function num : 0_42
+function NormalSkillCalculator:GetPathMoveStartWaitTime()
   return self._pathMoveStartWaitTime
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator.CanAttackByPos = function(self, attackPos)
-  -- function num : 0_43 , upvalues : _ENV
+function NormalSkillCalculator:CanAttackByPos(attackPos)
   if self._stopChainIndex then
-    for i,v in ipairs(self._chainPathData) do
+    for i, v in ipairs(self._chainPathData) do
       if v.x == attackPos.x and v.y == attackPos.y and i ~= self._stopChainIndex then
         return true
       end
@@ -1381,12 +1110,9 @@ NormalSkillCalculator.CanAttackByPos = function(self, attackPos)
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator.CanMoveToPos = function(self, movePos)
-  -- function num : 0_44 , upvalues : _ENV
+function NormalSkillCalculator:CanMoveToPos(movePos)
   if self._stopChainIndex then
-    for i,v in ipairs(self._chainPathData) do
+    for i, v in ipairs(self._chainPathData) do
       if v.x == movePos.x and v.y == movePos.y and i <= self._stopChainIndex then
         return true
       end
@@ -1397,30 +1123,23 @@ NormalSkillCalculator.CanMoveToPos = function(self, movePos)
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator.RebuildChainPath = function(self, teamEntity)
-  -- function num : 0_45 , upvalues : _ENV
-  self._chainPathData = (table.sub)(self._chainPathData, 1, self._stopChainIndex)
+function NormalSkillCalculator:RebuildChainPath(teamEntity)
+  self._chainPathData = table.sub(self._chainPathData, 1, self._stopChainIndex)
   local logicChainPathCmpt = teamEntity:LogicChainPath()
   local logicPath = logicChainPathCmpt:GetLogicChainPath()
   local cutChainPath = {}
-  for index,pos in ipairs(logicPath) do
-    if self._stopChainIndex < index then
+  for index, pos in ipairs(logicPath) do
+    if index > self._stopChainIndex then
       cutChainPath[index] = pos
     end
   end
-  logicPath = (table.sub)(logicPath, 1, self._stopChainIndex)
+  logicPath = table.sub(logicPath, 1, self._stopChainIndex)
   logicChainPathCmpt:SetLogicChainPath(logicPath, logicChainPathCmpt:GetLogicPieceType())
   logicChainPathCmpt:SetCutChainPath(cutChainPath)
-  ;
-  (self._skillLogicService):UpdateTeamGridLocationByChainPath(teamEntity, logicPath)
+  self._skillLogicService:UpdateTeamGridLocationByChainPath(teamEntity, logicPath)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._OnSavePlayNormalSkillSequence = function(self, casterEntity, normalSkillIndex, originalSkillID, newAttackSkillId, normalAttackData, originaBeAttackPos, attackGridData)
-  -- function num : 0_46 , upvalues : _ENV
+function NormalSkillCalculator:_OnSavePlayNormalSkillSequence(casterEntity, normalSkillIndex, originalSkillID, newAttackSkillId, normalAttackData, originaBeAttackPos, attackGridData)
   local hitTime, length = self:_GetNormalAttackHitTimeAndLength(originalSkillID, normalAttackData:GetisLastAttackPos(), casterEntity)
   local playNormalSkill = {}
   playNormalSkill.order = normalSkillIndex
@@ -1430,69 +1149,54 @@ NormalSkillCalculator._OnSavePlayNormalSkillSequence = function(self, casterEnti
   playNormalSkill.attackGridData = attackGridData
   playNormalSkill.hitPointDelay = hitTime * 1000
   playNormalSkill.playStartTime = 0
-  ;
-  (table.insert)(self._playNormalSkillSequence, playNormalSkill)
+  table.insert(self._playNormalSkillSequence, playNormalSkill)
   normalSkillIndex = normalSkillIndex + 1
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._OnCheckNormalAttackDouble = function(self, casterEntity, normalAttackData)
-  -- function num : 0_47
+function NormalSkillCalculator:_OnCheckNormalAttackDouble(casterEntity, normalAttackData)
   local buffComponent = casterEntity:BuffComponent()
   local normalAttackDoubleCountKey = "NormalAttackDoubleCount"
   local normalAttackDoubleCount = buffComponent:GetBuffValue(normalAttackDoubleCountKey)
-  do
-    if normalAttackDoubleCount and normalAttackDoubleCount > 0 then
-      local newCount = normalAttackDoubleCount - 1
-      buffComponent:SetBuffValue(normalAttackDoubleCountKey, newCount)
-      return true
+  if normalAttackDoubleCount and 0 < normalAttackDoubleCount then
+    local newCount = normalAttackDoubleCount - 1
+    buffComponent:SetBuffValue(normalAttackDoubleCountKey, newCount)
+    return true
+  end
+  local normalAttackDoubleBaseRateKey = "NormalAttackDoubleBaseRate"
+  local normalAttackDoubleEachMoveIncreaseRateKey = "NormalAttackDoubleEachMoveIncreaseRate"
+  local normalAttackDoubleBaseRate = buffComponent:GetBuffValue(normalAttackDoubleBaseRateKey)
+  local normalAttackDoubleEachMoveIncreaseRate = buffComponent:GetBuffValue(normalAttackDoubleEachMoveIncreaseRateKey)
+  local chainIndex = normalAttackData:GetChainIndex()
+  if normalAttackDoubleBaseRate then
+    local doubleRate = normalAttackDoubleBaseRate
+    if normalAttackDoubleEachMoveIncreaseRate and normalAttackDoubleEachMoveIncreaseRate ~= 0 then
+      doubleRate = doubleRate + (chainIndex - 1) * normalAttackDoubleEachMoveIncreaseRate
     end
-    local normalAttackDoubleBaseRateKey = "NormalAttackDoubleBaseRate"
-    local normalAttackDoubleEachMoveIncreaseRateKey = "NormalAttackDoubleEachMoveIncreaseRate"
-    local normalAttackDoubleBaseRate = buffComponent:GetBuffValue(normalAttackDoubleBaseRateKey)
-    local normalAttackDoubleEachMoveIncreaseRate = buffComponent:GetBuffValue(normalAttackDoubleEachMoveIncreaseRateKey)
-    local chainIndex = normalAttackData:GetChainIndex()
-    if normalAttackDoubleBaseRate then
-      local doubleRate = normalAttackDoubleBaseRate
-      if normalAttackDoubleEachMoveIncreaseRate and normalAttackDoubleEachMoveIncreaseRate ~= 0 then
-        doubleRate = doubleRate + (chainIndex - 1) * normalAttackDoubleEachMoveIncreaseRate
-      end
-      if doubleRate > 1 then
-        doubleRate = 1
-      end
-      if doubleRate > 0 then
-        local checkParam = doubleRate * 1000
-        local randomSvc = (self._world):GetService("RandomLogic")
-        local nRandNum = randomSvc:LogicRand(1, 1000)
-        if nRandNum <= checkParam then
-          return true
-        end
-      end
+    if 1 < doubleRate then
+      doubleRate = 1
     end
-    do
-      return false
+    if 0 < doubleRate then
+      local checkParam = doubleRate * 1000
+      local randomSvc = self._world:GetService("RandomLogic")
+      local nRandNum = randomSvc:LogicRand(1, 1000)
+      if checkParam >= nRandNum then
+        return true
+      end
     end
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalSkillCalculator._ForNormalAttackDouble = function(self, teamEntity, casterEntity, normalAttackData, originalAttackPosList, originalTargetIdList, originaBeAttackPos, originalSkillID)
-  -- function num : 0_48 , upvalues : _ENV
+function NormalSkillCalculator:_ForNormalAttackDouble(teamEntity, casterEntity, normalAttackData, originalAttackPosList, originalTargetIdList, originaBeAttackPos, originalSkillID)
   local attackGridData = normalAttackData:GetAttackGridData()
   attackGridData:SetAttackPosList(originalAttackPosList)
   attackGridData:SetTargetIdList(originalTargetIdList)
   local attackPos = normalAttackData:GetPathPosition()
-  ;
-  ((self._world):GetService("Trigger")):Notify(NTNormalAttackChangeBefore:New(casterEntity, attackPos, originaBeAttackPos))
+  self._world:GetService("Trigger"):Notify(NTNormalAttackChangeBefore:New(casterEntity, attackPos, originaBeAttackPos))
   local newAttackSkillId = originalSkillID
   local directReplace = 0
-  attackGridData = self:_CalcNormalSkillExtraScope(normalAttackData)
+  attackGridData, newAttackSkillId, directReplace = self:_CalcNormalSkillExtraScope(normalAttackData)
   local isNormalAttackDouble = true
   self:_CalcNormalSkillEffect(teamEntity, normalAttackData, attackGridData, originalSkillID, originaBeAttackPos, directReplace, isNormalAttackDouble)
-  ;
-  ((self._world):GetService("Trigger")):Notify(NTNormalAttackChangeAfter:New(casterEntity, attackPos, originaBeAttackPos))
+  self._world:GetService("Trigger"):Notify(NTNormalAttackChangeAfter:New(casterEntity, attackPos, originaBeAttackPos))
 end
-
-

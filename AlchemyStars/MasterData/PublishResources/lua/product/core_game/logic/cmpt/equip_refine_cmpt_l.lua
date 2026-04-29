@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/equip_refine_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("EquipRefineComponent", Object)
 EquipRefineComponent = EquipRefineComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-EquipRefineComponent.Constructor = function(self)
-  -- function num : 0_0
+function EquipRefineComponent:Constructor()
   self._equipRefineBuffList = nil
   self._extraChainSkillList = nil
   self._extraActiveSkillList = nil
@@ -17,141 +10,82 @@ EquipRefineComponent.Constructor = function(self)
   self._variantActiveSkillInfo = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-EquipRefineComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_1
+function EquipRefineComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-EquipRefineComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_2
+function EquipRefineComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-EquipRefineComponent.SetEquipRefineBuffList = function(self, param)
-  -- function num : 0_3
+function EquipRefineComponent:SetEquipRefineBuffList(param)
   self._equipRefineBuffList = param
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-EquipRefineComponent.GetEquipRefineBuffList = function(self)
-  -- function num : 0_4
+function EquipRefineComponent:GetEquipRefineBuffList()
   return self._equipRefineBuffList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-EquipRefineComponent.SetEquipRefineExtraChainSkillList = function(self, param)
-  -- function num : 0_5
+function EquipRefineComponent:SetEquipRefineExtraChainSkillList(param)
   self._extraChainSkillList = param
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-EquipRefineComponent.GetEquipRefineExtraChainSkillList = function(self)
-  -- function num : 0_6
+function EquipRefineComponent:GetEquipRefineExtraChainSkillList()
   return self._extraChainSkillList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-EquipRefineComponent.SetEquipRefineIntensifyParam = function(self, param)
-  -- function num : 0_7
+function EquipRefineComponent:SetEquipRefineIntensifyParam(param)
   self._equipRefineIntensifyParam = param
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-EquipRefineComponent.GetEquipRefineIntensifyParam = function(self)
-  -- function num : 0_8
+function EquipRefineComponent:GetEquipRefineIntensifyParam()
   return self._equipRefineIntensifyParam
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-EquipRefineComponent.SetEquipRefineExtraActiveSkillList = function(self, param)
-  -- function num : 0_9
+function EquipRefineComponent:SetEquipRefineExtraActiveSkillList(param)
   self._extraActiveSkillList = param
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-EquipRefineComponent.GetEquipRefineExtraActiveSkillList = function(self)
-  -- function num : 0_10
+function EquipRefineComponent:GetEquipRefineExtraActiveSkillList()
   return self._extraActiveSkillList
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-EquipRefineComponent.SetEquipRefineFeatureList = function(self, param)
-  -- function num : 0_11
+function EquipRefineComponent:SetEquipRefineFeatureList(param)
   self._featureList = param
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-EquipRefineComponent.GetEquipRefineFeatureListFromCmpt = function(self)
-  -- function num : 0_12
+function EquipRefineComponent:GetEquipRefineFeatureListFromCmpt()
   return self._featureList
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-EquipRefineComponent.SetEquipRefineVariantActiveSkillInfo = function(self, param)
-  -- function num : 0_13
+function EquipRefineComponent:SetEquipRefineVariantActiveSkillInfo(param)
   self._variantActiveSkillInfo = param
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-EquipRefineComponent.GetEquipRefineVariantActiveSkillInfo = function(self)
-  -- function num : 0_14
+function EquipRefineComponent:GetEquipRefineVariantActiveSkillInfo()
   return self._variantActiveSkillInfo
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.EquipRefine = function(self)
-  -- function num : 0_15
-  return self:GetComponent((self.WEComponentsEnum).EquipRefine)
+function Entity:EquipRefine()
+  return self:GetComponent(self.WEComponentsEnum.EquipRefine)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasEquipRefine = function(self)
-  -- function num : 0_16
-  return self:HasComponent((self.WEComponentsEnum).EquipRefine)
+function Entity:HasEquipRefine()
+  return self:HasComponent(self.WEComponentsEnum.EquipRefine)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddEquipRefine = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).EquipRefine
+function Entity:AddEquipRefine()
+  local index = self.WEComponentsEnum.EquipRefine
   local component = EquipRefineComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceEquipRefine = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).EquipRefine
+function Entity:ReplaceEquipRefine()
+  local index = self.WEComponentsEnum.EquipRefine
   local component = EquipRefineComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveEquipRefine = function(self)
-  -- function num : 0_19
+function Entity:RemoveEquipRefine()
   if self:HasEquipRefine() then
-    self:RemoveComponent((self.WEComponentsEnum).EquipRefine)
+    self:RemoveComponent(self.WEComponentsEnum.EquipRefine)
   end
 end
-
-

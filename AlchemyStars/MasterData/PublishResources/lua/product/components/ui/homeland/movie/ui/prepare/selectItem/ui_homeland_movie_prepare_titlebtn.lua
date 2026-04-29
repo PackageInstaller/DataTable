@@ -1,46 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/prepare/selectItem/ui_homeland_movie_prepare_titlebtn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMoviePrepareTitleBtn", UICustomWidget)
 UIHomelandMoviePrepareTitleBtn = UIHomelandMoviePrepareTitleBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMoviePrepareTitleBtn.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIHomelandMoviePrepareTitleBtn:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareTitleBtn.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandMoviePrepareTitleBtn:OnShow(uiParams)
   self:InitWidget()
   self:AttachEvent(GameEventType.UIHomelandMoviePrepareItemSelect, self.RefreshUI)
-  self._btnNames = {[1] = "str_movie_item_btn_type1", [2] = "str_movie_item_btn_type2", [3] = "str_movie_item_btn_type3", [4] = "str_movie_item_btn_type4"}
+  self._btnNames = {
+    [1] = "str_movie_item_btn_type1",
+    [2] = "str_movie_item_btn_type2",
+    [3] = "str_movie_item_btn_type3",
+    [4] = "str_movie_item_btn_type4"
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareTitleBtn.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandMoviePrepareTitleBtn:OnHide()
   self:DetachEvent(GameEventType.UIHomelandMoviePrepareItemSelect, self.RefreshUI)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareTitleBtn.InitWidget = function(self)
-  -- function num : 0_3
+function UIHomelandMoviePrepareTitleBtn:InitWidget()
   self._selectImg = self:GetUIComponent("Image", "select")
   self._select = self:GetGameObject("select")
   self._mask = self:GetGameObject("mask")
   self._txt = self:GetUIComponent("UILocalizationText", "txt")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareTitleBtn.SetData = function(self, index, data, prepareType, selectTitleId, atlas)
-  -- function num : 0_4
+function UIHomelandMoviePrepareTitleBtn:SetData(index, data, prepareType, selectTitleId, atlas)
   self._index = index
   self._atlas = atlas
   self._data = data
@@ -49,35 +35,17 @@ UIHomelandMoviePrepareTitleBtn.SetData = function(self, index, data, prepareType
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareTitleBtn.RefreshUI = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandMoviePrepareTitleBtn:RefreshUI()
   if not self._data then
-    return 
+    return
   end
-  ;
-  (self._select):SetActive(self._selectTitleId == (self._data).ID)
-  local sp = self._selectTitleId == (self._data).ID and "n17_layout_btn03" or "n17_layout_btn03"
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectImg).sprite = (self._atlas):GetSprite(sp)
-  ;
-  (self._txt):SetText((StringTable.Get)((self._data).Name))
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
-
-  if self._selectTitleId ~= (self._data).ID or not Color(1, 1, 1) then
-    (self._txt).color = Color(0.4078431372549, 0.4078431372549, 0.4078431372549)
-    -- DECOMPILER ERROR: 5 unprocessed JMP targets
-  end
+  self._select:SetActive(self._selectTitleId == self._data.ID)
+  local sp = self._selectTitleId == self._data.ID and "n17_layout_btn03" or "n17_layout_btn03"
+  self._selectImg.sprite = self._atlas:GetSprite(sp)
+  self._txt:SetText(StringTable.Get(self._data.Name))
+  self._txt.color = self._selectTitleId == self._data.ID and Color(1, 1, 1) or Color(0.40784313725490196, 0.40784313725490196, 0.40784313725490196)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareTitleBtn.BtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIHomelandMoviePrepareTitleBtnClick, (self._data).ID, self._prepareType)
+function UIHomelandMoviePrepareTitleBtn:BtnOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIHomelandMoviePrepareTitleBtnClick, self._data.ID, self._prepareType)
 end
-
-

@@ -1,109 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/animation/legacy_animation_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LegacyAnimationComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-LegacyAnimationComponent.Constructor = function(self, animNameList)
-  -- function num : 0_0
+function LegacyAnimationComponent:Constructor(animNameList)
   self._animNameList = animNameList
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-LegacyAnimationComponent.GetLegacyAnimationList = function(self)
-  -- function num : 0_1
+function LegacyAnimationComponent:GetLegacyAnimationList()
   return self._animNameList
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-LegacyAnimationComponent.SetLegacyAnimationList = function(self, animList)
-  -- function num : 0_2
+function LegacyAnimationComponent:SetLegacyAnimationList(animList)
   self._animNameList = animList
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-LegacyAnimationComponent.SetU3DAnimationCmpt = function(self, u3dAnimCmpt)
-  -- function num : 0_3
+function LegacyAnimationComponent:SetU3DAnimationCmpt(u3dAnimCmpt)
   self._u3dAnimCmpt = u3dAnimCmpt
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-LegacyAnimationComponent.GetU3DAnimationCmpt = function(self)
-  -- function num : 0_4
+function LegacyAnimationComponent:GetU3DAnimationCmpt()
   return self._u3dAnimCmpt
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-LegacyAnimationComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_5
+function LegacyAnimationComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-LegacyAnimationComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_6
+function LegacyAnimationComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.LegacyAnimation = function(self)
-  -- function num : 0_7
-  return self:GetComponent((self.WEComponentsEnum).LegacyAnimation)
+function Entity:LegacyAnimation()
+  return self:GetComponent(self.WEComponentsEnum.LegacyAnimation)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasLegacyAnimation = function(self)
-  -- function num : 0_8
-  return self:HasComponent((self.WEComponentsEnum).LegacyAnimation)
+function Entity:HasLegacyAnimation()
+  return self:HasComponent(self.WEComponentsEnum.LegacyAnimation)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddLegacyAnimation = function(self, animNameList)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LegacyAnimation
+function Entity:AddLegacyAnimation(animNameList)
+  local index = self.WEComponentsEnum.LegacyAnimation
   local component = LegacyAnimationComponent:New(animNameList)
   local viewCmpt = self:View()
   if viewCmpt then
     local viewWrapper = viewCmpt.ViewWrapper
     if viewWrapper.GameObject then
       local gameObject = viewWrapper.GameObject
-      if ((gameObject.transform).position).y == BattleConst.CacheHeight then
-        if #animNameList > 1 then
-          for _,v in ipairs(animNameList) do
+      if gameObject.transform.position.y == BattleConst.CacheHeight then
+        if 1 < #animNameList then
+          for _, v in ipairs(animNameList) do
             if v ~= "OffScreenNormal" then
-              (Log.exception)("位置:(" .. ((gameObject.transform).position).x .. "," .. ((gameObject.transform).position).y .. "," .. ((gameObject.transform).position).z .. ") 播放动画名称:" .. v, (Log.traceback)())
+              Log.exception("位置:(" .. gameObject.transform.position.x .. "," .. gameObject.transform.position.y .. "," .. gameObject.transform.position.z .. ") 播放动画名称:" .. v, Log.traceback())
             end
           end
         else
-          do
-            do
-              local curAnim = animNameList[1]
-              if curAnim ~= "OffScreenNormal" then
-                (Log.exception)("位置:(" .. ((gameObject.transform).position).x .. "," .. ((gameObject.transform).position).y .. "," .. ((gameObject.transform).position).z .. ") 播放动画名称:" .. curAnim, (Log.traceback)())
-              end
-              self:AddComponent(index, component)
-            end
+          local curAnim = animNameList[1]
+          if curAnim ~= "OffScreenNormal" then
+            Log.exception("位置:(" .. gameObject.transform.position.x .. "," .. gameObject.transform.position.y .. "," .. gameObject.transform.position.z .. ") 播放动画名称:" .. curAnim, Log.traceback())
           end
         end
       end
     end
   end
+  self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceLegacyAnimation = function(self, animNameList)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LegacyAnimation
+function Entity:ReplaceLegacyAnimation(animNameList)
+  local index = self.WEComponentsEnum.LegacyAnimation
   local component = self:LegacyAnimation()
   component:SetLegacyAnimationList(animNameList)
   self:ReplaceComponent(index, component)
@@ -112,19 +71,17 @@ Entity.ReplaceLegacyAnimation = function(self, animNameList)
     local viewWrapper = viewCmpt.ViewWrapper
     if viewWrapper.GameObject then
       local gameObject = viewWrapper.GameObject
-      if ((gameObject.transform).position).y == BattleConst.CacheHeight then
-        if #animNameList > 1 then
-          for _,v in ipairs(animNameList) do
+      if gameObject.transform.position.y == BattleConst.CacheHeight then
+        if 1 < #animNameList then
+          for _, v in ipairs(animNameList) do
             if v ~= "OffScreenNormal" then
-              (Log.exception)("位置:(" .. ((gameObject.transform).position).x .. "," .. ((gameObject.transform).position).y .. "," .. ((gameObject.transform).position).z .. ") 播放动画名称:" .. v, (Log.traceback)())
+              Log.exception("位置:(" .. gameObject.transform.position.x .. "," .. gameObject.transform.position.y .. "," .. gameObject.transform.position.z .. ") 播放动画名称:" .. v, Log.traceback())
             end
           end
         else
-          do
-            local curAnim = animNameList[1]
-            if curAnim ~= "OffScreenNormal" then
-              (Log.exception)("位置:(" .. ((gameObject.transform).position).x .. "," .. ((gameObject.transform).position).y .. "," .. ((gameObject.transform).position).z .. ") 播放动画名称:" .. curAnim, (Log.traceback)())
-            end
+          local curAnim = animNameList[1]
+          if curAnim ~= "OffScreenNormal" then
+            Log.exception("位置:(" .. gameObject.transform.position.x .. "," .. gameObject.transform.position.y .. "," .. gameObject.transform.position.z .. ") 播放动画名称:" .. curAnim, Log.traceback())
           end
         end
       end
@@ -132,13 +89,8 @@ Entity.ReplaceLegacyAnimation = function(self, animNameList)
   end
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveLegacyAnimation = function(self)
-  -- function num : 0_11
+function Entity:RemoveLegacyAnimation()
   if self:HasLegacyAnimation() then
-    self:RemoveComponent((self.WEComponentsEnum).LegacyAnimation)
+    self:RemoveComponent(self.WEComponentsEnum.LegacyAnimation)
   end
 end
-
-

@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_camp_center/activity_dantang_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_lobby_center_camp_data")
 _class("ActivityDanTangEnter", MainLobbyCenterCampData)
 ActivityDanTangEnter = ActivityDanTangEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActivityDanTangEnter.CheckRed = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(CampaignModule)
+function ActivityDanTangEnter:CheckRed()
+  local module = GameGlobal.GetModule(CampaignModule)
   local preSample = module:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_INLAND_S0)
   local preRed = false
   if preSample then
@@ -20,5 +13,3 @@ ActivityDanTangEnter.CheckRed = function(self)
   local red = (preRed or mainRed) and 1 or 0
   return red
 end
-
-

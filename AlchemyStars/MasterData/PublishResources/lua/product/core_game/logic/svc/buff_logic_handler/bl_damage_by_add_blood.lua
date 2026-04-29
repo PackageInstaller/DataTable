@@ -1,43 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_damage_by_add_blood.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicDamageByAddBlood", BuffLogicBase)
 BuffLogicDamageByAddBlood = BuffLogicDamageByAddBlood
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDamageByAddBlood.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicDamageByAddBlood:Constructor(buffInstance, logicParam)
   self._percent = logicParam.percent or 1
   self._formulaID = logicParam.formulaID or 155
   self._useHPSpilled = logicParam.useHPSpilled or false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDamageByAddBlood.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicDamageByAddBlood:DoLogic(notify)
   if not NTPlayerHPChange:IsInstanceOfType(notify) then
-    return 
+    return
   end
   local attacker = notify:GetNotifyEntity()
   if attacker:HasPetPstID() then
-    attacker = (attacker:Pet()):GetOwnerTeamEntity()
+    attacker = attacker:Pet():GetOwnerTeamEntity()
   end
-  local defender = (self._buffInstance):Entity()
+  local defender = self._buffInstance:Entity()
   local changeHP = notify:GetChangeHP()
   if not changeHP or changeHP <= 0 then
-    return 
+    return
   end
   if not self._useHPSpilled then
     changeHP = changeHP - notify:GetHPSpilled()
   end
-  local buffSvc = (self._world):GetService("BuffLogic")
-  local damageParam = {percent = self._percent, formulaID = self._formulaID, changeHP = changeHP}
-  local damageInfo = buffSvc:DoBuffDamage((self._buffInstance):BuffID(), attacker, defender, damageParam)
+  local buffSvc = self._world:GetService("BuffLogic")
+  local damageParam = {
+    percent = self._percent,
+    formulaID = self._formulaID,
+    changeHP = changeHP
+  }
+  local damageInfo = buffSvc:DoBuffDamage(self._buffInstance:BuffID(), attacker, defender, damageParam)
   local buffResult = BuffResultDamage:New(damageInfo)
   return buffResult
 end
-
-

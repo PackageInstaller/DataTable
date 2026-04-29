@@ -1,58 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_mail/ui_mail_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMailRewardItem", UICustomWidget)
 UIMailRewardItem = UIMailRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMailRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMailRewardItem:OnShow(uiParams)
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base)
-  ;
-  (self.uiItem):SetClickCallBack(function()
-    -- function num : 0_0_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.Base)
+  self.uiItem:SetClickCallBack(function()
     self:ButtonItemOnClick()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailRewardItem.Refresh = function(self, reward)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMailRewardItem:Refresh(reward)
   if not reward then
-    return 
+    return
   end
-  local templateData = (Cfg.cfg_item)[reward.assetid]
+  local templateData = Cfg.cfg_item[reward.assetid]
   if not templateData then
-    (Log.fatal)("###cfg_item is nil ! id --> ", reward.assetid)
-    return 
+    Log.fatal("###cfg_item is nil ! id --> ", reward.assetid)
+    return
   end
   self._matID = reward.assetid
   self._uiItemAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
   local icon = templateData.Icon
   local quality = templateData.Color
   local text1 = reward.count
-  local text2 = (StringTable.Get)(templateData.Name)
+  local text2 = StringTable.Get(templateData.Name)
   local itemId = templateData.ID
-  ;
-  (self.uiItem):SetData({icon = icon, quality = quality, text1 = text1, itemId = itemId})
+  self.uiItem:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = text1,
+    itemId = itemId
+  })
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailRewardItem.ButtonItemOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMailRewardItem:ButtonItemOnClick(go)
   if not self._matID then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftInteractiveEventRewardShowItemTips, self._matID, ((self:GetGameObject()).transform).position)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftInteractiveEventRewardShowItemTips, self._matID, self:GetGameObject().transform.position)
 end
-
-

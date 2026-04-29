@@ -1,153 +1,187 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n11/hard_level/ui_activity_n11_hardlevel_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivtiyN11HardLevelController", UIController)
 UIActivtiyN11HardLevelController = UIActivtiyN11HardLevelController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivtiyN11HardLevelController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIActivtiyN11HardLevelController:LoadDataOnEnter(TT, res)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N11, ECampaignN11ComponentID.ECAMPAIGN_N11_LEVEL_HARD)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N11, ECampaignN11ComponentID.ECAMPAIGN_N11_LEVEL_HARD)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
   if res and res:GetSucc() then
-    local camp = (self._campaign):GetComponent(ECampaignN11ComponentID.ECAMPAIGN_N11_LEVEL_HARD)
+    local camp = self._campaign:GetComponent(ECampaignN11ComponentID.ECAMPAIGN_N11_LEVEL_HARD)
     local campInfo = camp:GetComponentInfo()
     local openTime = campInfo.m_unlock_time
     local closeTime = campInfo.m_close_time
-    local now = (self:GetModule(SvrTimeModule)):GetServerTime() / 1000
-    if now < openTime then
+    local now = self:GetModule(SvrTimeModule):GetServerTime() / 1000
+    if openTime > now then
       res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN
       campaignModule:ShowErrorToast(res.m_result, true)
-      return 
-    else
-      if closeTime < now then
-        res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
-        campaignModule:ShowErrorToast(res.m_result, true)
-        return 
-      end
+      return
+    elseif closeTime < now then
+      res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
+      campaignModule:ShowErrorToast(res.m_result, true)
+      return
     end
     if not campInfo.m_b_unlock then
       res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_UNLOCK
-      local cfgv = (Cfg.cfg_campaign_mission)[campInfo.m_need_mission_id]
+      local cfgv = Cfg.cfg_campaign_mission[campInfo.m_need_mission_id]
       if cfgv then
-        local lvName = (StringTable.Get)(cfgv.Name)
-        local msg = (StringTable.Get)("str_activity_common_will_open_after_clearance", lvName)
-        ;
-        (ToastManager.ShowToast)(msg)
+        local lvName = StringTable.Get(cfgv.Name)
+        local msg = StringTable.Get("str_activity_common_will_open_after_clearance", lvName)
+        ToastManager.ShowToast(msg)
       end
-      do
-        do return  end
-      end
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivtiyN11HardLevelController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivtiyN11HardLevelController:OnShow(uiParams)
   self:InitWidget()
-  self.topButtonWidget = (self.topbuttons):SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_1_0 , upvalues : _ENV, self
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-    campaignModule:CampaignSwitchState(true, UIStateType.UIN11Main, UIStateType.UIMain, nil, (self._campaign)._id)
-  end
-, nil, function()
-    -- function num : 0_1_1 , upvalues : self, _ENV
+  self.topButtonWidget = self.topbuttons:SpawnObject("UICommonTopButton")
+  self.topButtonWidget:SetData(function()
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    campaignModule:CampaignSwitchState(true, UIStateType.UIN11Main, UIStateType.UIMain, nil, self._campaign._id)
+  end, nil, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-)
+  end)
   local fromBattle = false
   local isWin = false
   if uiParams[1] then
-    fromBattle = (uiParams[1])[1]
-    isWin = (uiParams[1])[2]
+    fromBattle = uiParams[1][1]
+    isWin = uiParams[1][2]
   end
-  -- DECOMPILER ERROR at PC112: Confused about usage of register: R4 in 'UnsetPending'
-
   UIActivtiyN11HardLevelController.LevelCfg = {
-[1] = {title = "n11_kng_title", normal = "n11_kng_stage01", click = "n11_kng_stage01_click", close = "n11_kng_stage01_close"}
-, 
-[2] = {title = "n11_kng_title2", normal = "n11_kng_stage02", click = "n11_kng_stage02_click", close = "n11_kng_stage02_close"}
-, 
-[3] = {title = "n11_kng_title", normal = "n11_kng_stage03", click = "n11_kng_stage03_click", close = "n11_kng_stage03_close"}
-, 
-[4] = {title = "n11_kng_title", normal = "n11_kng_stage04", click = "n11_kng_stage04_click", close = "n11_kng_stage04_close"}
-, 
-[5] = {title = "n11_kng_title2", normal = "n11_kng_stage05", click = "n11_kng_stage05_click", close = "n11_kng_stage05_close"}
-, 
-[6] = {title = "n11_kng_title2", normal = "n11_kng_stage06", click = "n11_kng_stage06_click", close = "n11_kng_stage06_close"}
-, 
-[7] = {title = "n11_kng2_title", normal = "n11_kng2_stage01", click = "n11_kng2_stage01_click", close = "n11_kng2_stage01_close"}
-, 
-[8] = {title = "n11_kng2_title2", normal = "n11_kng2_stage02", click = "n11_kng2_stage02_click", close = "n11_kng2_stage02_close"}
-, 
-[9] = {title = "n11_kng2_title", normal = "n11_kng2_stage03", click = "n11_kng2_stage03_click", close = "n11_kng2_stage03_close"}
-, 
-[10] = {title = "n11_kng2_title", normal = "n11_kng2_stage04", click = "n11_kng2_stage04_click", close = "n11_kng2_stage04_close"}
-, 
-[11] = {title = "n11_kng2_title2", normal = "n11_kng2_stage05", click = "n11_kng2_stage05_click", close = "n11_kng2_stage05_close"}
-, 
-[12] = {title = "n11_kng2_title2", normal = "n11_kng2_stage06", click = "n11_kng2_stage06_click", close = "n11_kng2_stage06_close"}
-, 
-bghard = {Bg = "n11_kng_bg", Bg2 = "n11_kng_bg3", Bg1 = "n11_kng_bg2", Bg3 = "n11_kng_edge_l", Bg4 = "n11_kng_edge_r", TimeBg = "n11_xxg_timedi"}
-, 
-bgevil = {Bg = "n11_kng2_bg", Bg2 = "n11_kng2_bg3", Bg1 = "n11_kng2_bg2", Bg3 = "n11_kng2_edge_l", Bg4 = "n11_kng2_edge_r", TimeBg = "n11_kng2_timedi"}
-}
+    [1] = {
+      title = "n11_kng_title",
+      normal = "n11_kng_stage01",
+      click = "n11_kng_stage01_click",
+      close = "n11_kng_stage01_close"
+    },
+    [2] = {
+      title = "n11_kng_title2",
+      normal = "n11_kng_stage02",
+      click = "n11_kng_stage02_click",
+      close = "n11_kng_stage02_close"
+    },
+    [3] = {
+      title = "n11_kng_title",
+      normal = "n11_kng_stage03",
+      click = "n11_kng_stage03_click",
+      close = "n11_kng_stage03_close"
+    },
+    [4] = {
+      title = "n11_kng_title",
+      normal = "n11_kng_stage04",
+      click = "n11_kng_stage04_click",
+      close = "n11_kng_stage04_close"
+    },
+    [5] = {
+      title = "n11_kng_title2",
+      normal = "n11_kng_stage05",
+      click = "n11_kng_stage05_click",
+      close = "n11_kng_stage05_close"
+    },
+    [6] = {
+      title = "n11_kng_title2",
+      normal = "n11_kng_stage06",
+      click = "n11_kng_stage06_click",
+      close = "n11_kng_stage06_close"
+    },
+    [7] = {
+      title = "n11_kng2_title",
+      normal = "n11_kng2_stage01",
+      click = "n11_kng2_stage01_click",
+      close = "n11_kng2_stage01_close"
+    },
+    [8] = {
+      title = "n11_kng2_title2",
+      normal = "n11_kng2_stage02",
+      click = "n11_kng2_stage02_click",
+      close = "n11_kng2_stage02_close"
+    },
+    [9] = {
+      title = "n11_kng2_title",
+      normal = "n11_kng2_stage03",
+      click = "n11_kng2_stage03_click",
+      close = "n11_kng2_stage03_close"
+    },
+    [10] = {
+      title = "n11_kng2_title",
+      normal = "n11_kng2_stage04",
+      click = "n11_kng2_stage04_click",
+      close = "n11_kng2_stage04_close"
+    },
+    [11] = {
+      title = "n11_kng2_title2",
+      normal = "n11_kng2_stage05",
+      click = "n11_kng2_stage05_click",
+      close = "n11_kng2_stage05_close"
+    },
+    [12] = {
+      title = "n11_kng2_title2",
+      normal = "n11_kng2_stage06",
+      click = "n11_kng2_stage06_click",
+      close = "n11_kng2_stage06_close"
+    },
+    bghard = {
+      Bg = "n11_kng_bg",
+      Bg2 = "n11_kng_bg3",
+      Bg1 = "n11_kng_bg2",
+      Bg3 = "n11_kng_edge_l",
+      Bg4 = "n11_kng_edge_r",
+      TimeBg = "n11_xxg_timedi"
+    },
+    bgevil = {
+      Bg = "n11_kng2_bg",
+      Bg2 = "n11_kng2_bg3",
+      Bg1 = "n11_kng2_bg2",
+      Bg3 = "n11_kng2_edge_l",
+      Bg4 = "n11_kng2_edge_r",
+      TimeBg = "n11_kng2_timedi"
+    }
+  }
   self._atlas = self:GetAsset("N11hardlevel.spriteatlas", LoadType.SpriteAtlas)
-  self._levelCpt = (self._campaign):GetComponent(ECampaignN11ComponentID.ECAMPAIGN_N11_LEVEL_HARD)
-  self._levelCptInfo = (self._levelCpt):GetComponentInfo()
-  local cptID = (self._levelCpt):GetComponentCfgId()
-  local allMissions = (Cfg.cfg_component_line_mission)({ComponentID = cptID})
-  ;
-  (table.sort)(allMissions, function(a, b)
-    -- function num : 0_1_2
-    do return a.SortId < b.SortId end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  self._levelCpt = self._campaign:GetComponent(ECampaignN11ComponentID.ECAMPAIGN_N11_LEVEL_HARD)
+  self._levelCptInfo = self._levelCpt:GetComponentInfo()
+  local cptID = self._levelCpt:GetComponentCfgId()
+  local allMissions = Cfg.cfg_component_line_mission({ComponentID = cptID})
+  table.sort(allMissions, function(a, b)
+    return a.SortId < b.SortId
+  end)
   if #allMissions ~= 12 then
-    (Log.exception)("N11高难关的数量必须是12")
+    Log.exception("N11高难关的数量必须是12")
   end
-  self._passInfo = (self._levelCptInfo).m_pass_mission_info
+  self._passInfo = self._levelCptInfo.m_pass_mission_info
   self._levelCfgs = allMissions
   local cur = 1
-  for i,cfg in ipairs(allMissions) do
-    if cfg.CampaignMissionId == (self._levelCptInfo).m_cur_mission then
+  for i, cfg in ipairs(allMissions) do
+    if cfg.CampaignMissionId == self._levelCptInfo.m_cur_mission then
       cur = i + 1
     end
   end
   self._curIndex = cur
-  self._isLevel2Lock = self._curIndex <= 6
+  self._isLevel2Lock = 6 >= self._curIndex
   self._showLevel1 = self._isLevel2Lock
   self._time = self:GetUIComponent("UILocalizationText", "RemainTime")
-  local closeTime = (self._levelCptInfo).m_close_time
-  local countDown = function()
-    -- function num : 0_1_3 , upvalues : self, _ENV, closeTime
-    local now = (self:GetModule(SvrTimeModule)):GetServerTime() / 1000
-    local time = (math.ceil)(closeTime - now)
-    local timeStr = (UIActivityHelper.GetFormatTimerStr)(time)
+  local closeTime = self._levelCptInfo.m_close_time
+  
+  local function countDown()
+    local now = self:GetModule(SvrTimeModule):GetServerTime() / 1000
+    local time = math.ceil(closeTime - now)
+    local timeStr = UIActivityHelper.GetFormatTimerStr(time)
     if self._timeString ~= timeStr then
-      (self._time):SetText(timeStr)
+      self._time:SetText(timeStr)
       self._timeString = timeStr
     end
     if time < 0 and self._countdownTimer then
-      ((GameGlobal.Timer)()):CancelEvent(self._countdownTimer)
+      GameGlobal.Timer():CancelEvent(self._countdownTimer)
       self._countdownTimer = nil
     end
   end
-
+  
   countDown()
-  self._countdownTimer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, countDown)
+  self._countdownTimer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, countDown)
   self._firstShow = true
   if fromBattle and isWin then
     self:fadeInAnim()
@@ -155,88 +189,59 @@ bgevil = {Bg = "n11_kng2_bg", Bg2 = "n11_kng2_bg3", Bg1 = "n11_kng2_bg2", Bg3 = 
     self:refreshPoint()
   end
   self._isShow = true
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstid = roleModule:GetPstId()
-  ;
-  (LocalDB.SetInt)("UIActivityN11HardLevel" .. pstid, 1)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  LocalDB.SetInt("UIActivityN11HardLevel" .. pstid, 1)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivtiyN11HardLevelController.fadeInAnim = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivtiyN11HardLevelController:fadeInAnim()
   self:refreshPoint()
-  self._fadeInTimer = ((GameGlobal.Timer)()):AddEvent(650, function()
-    -- function num : 0_2_0 , upvalues : self
+  self._fadeInTimer = GameGlobal.Timer():AddEvent(650, function()
     self._fadeInTimer = nil
     if not self._isLevel2Lock and self._curIndex == 7 then
-      (self._level2OpenTip):SetActive(true)
+      self._level2OpenTip:SetActive(true)
       local ani = self:GetUIComponent("Animation", "lv2OpenTip")
       ani:Play("uieff_N11_Hard_Unlock")
     else
-      do
-        local idx = self._curIndex
-        if idx > 6 then
-          idx = idx - 6
-        end
-        ;
-        ((self._levels)[idx - 1]):Anim_Pass()
-        if idx <= 6 then
-          ((self._levels)[idx]):Anim_Open()
-        end
+      local idx = self._curIndex
+      if 6 < idx then
+        idx = idx - 6
+      end
+      self._levels[idx - 1]:Anim_Pass()
+      if idx <= 6 then
+        self._levels[idx]:Anim_Open()
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivtiyN11HardLevelController.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivtiyN11HardLevelController:OnHide()
   if self._countdownTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._countdownTimer)
+    GameGlobal.Timer():CancelEvent(self._countdownTimer)
     self._countdownTimer = nil
   end
   if self._fadeInTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._fadeInTimer)
+    GameGlobal.Timer():CancelEvent(self._fadeInTimer)
     self._fadeInTimer = nil
   end
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
   UIActivtiyN11HardLevelController.LevelCfg = nil
   self._isShow = false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivtiyN11HardLevelController.InitWidget = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivtiyN11HardLevelController:InitWidget()
   self.topbuttons = self:GetUIComponent("UISelectObjectPath", "topbuttons")
   self.topbuttons = self:GetUIComponent("UISelectObjectPath", "topbuttons")
   self._levels = {}
   for i = 1, 6 do
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R5 in 'UnsetPending'
-
-    (self._levels)[i] = UIActivityN11HardLevelItem:New(self:GetUIComponent("UIView", "Level" .. i))
+    self._levels[i] = UIActivityN11HardLevelItem:New(self:GetUIComponent("UIView", "Level" .. i))
   end
   self._shot = self:GetUIComponent("H3DUIBlurHelper", "BlurHelper")
   self._shotRect = self:GetUIComponent("RectTransform", "BlurHelper")
-  self._width = ((self._shotRect).rect).width
-  self._height = ((self._shotRect).rect).height
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._shot).width = self._width
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._shot).height = self._height
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._shot).blurTimes = 0
+  self._width = self._shotRect.rect.width
+  self._height = self._shotRect.rect.height
+  self._shot.width = self._width
+  self._shot.height = self._height
+  self._shot.blurTimes = 0
   self._scale = 1.2
   self._bgR1Loader = self:GetUIComponent("RawImageLoader", "bg")
   self._bgR2Loader = self:GetUIComponent("RawImageLoader", "bg2")
@@ -251,8 +256,7 @@ UIActivtiyN11HardLevelController.InitWidget = function(self)
   self._level2OpenTip = self:GetGameObject("lv2OpenTip")
   self._txtDescevil = self:GetGameObject("txtDescevil")
   self._txtDeschard = self:GetGameObject("txtDeschard")
-  ;
-  (self._level2OpenTip):SetActive(false)
+  self._level2OpenTip:SetActive(false)
   self._switchAnim = self:GetUIComponent("Animation", "anim")
   self._tipAnim = self:GetUIComponent("Animation", "lv2OpenTip")
   self._bg2loader = self:GetUIComponent("RawImageLoader", "Bg2")
@@ -261,220 +265,148 @@ UIActivtiyN11HardLevelController.InitWidget = function(self)
   self._bg4loader = self:GetUIComponent("RawImageLoader", "Bg4")
   self._level1Btn = self:GetUIComponent("Button", "Image1")
   self._level2Btn = self:GetUIComponent("Button", "Image2")
-  ;
-  (self._switchAnim):Play("uieff_N11_Hard_In")
+  self._switchAnim:Play("uieff_N11_Hard_In")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivtiyN11HardLevelController.enterLevel = function(self, idx)
-  -- function num : 0_5 , upvalues : _ENV
-  if idx < 1 and idx > 6 then
-    return 
+function UIActivtiyN11HardLevelController:enterLevel(idx)
+  if idx < 1 and 6 < idx then
+    return
   end
-  local levelIndex = nil
+  local levelIndex
   if self._showLevel1 then
     levelIndex = idx
   else
     levelIndex = idx + 6
   end
-  local missionID = ((self._levelCfgs)[levelIndex]).CampaignMissionId
-  if self._curIndex < levelIndex then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_clear_mission_to_unlock"))
-    return 
+  local missionID = self._levelCfgs[levelIndex].CampaignMissionId
+  if levelIndex > self._curIndex then
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_clear_mission_to_unlock"))
+    return
   end
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._shot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
-  ;
-  (self._shot):CleanRenderTexture()
-  local rt = (self._shot):RefreshBlurTexture()
-  local maxOffset = 529
-  local pos = ((self._levels)[idx]):LocalPosition()
+  self._shot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
+  self._shot:CleanRenderTexture()
+  local rt = self._shot:RefreshBlurTexture()
+  local maxOffset = 529.0
+  local pos = self._levels[idx]:LocalPosition()
   local posX = -pos.x
   local posY = -pos.y
-  posX = (math.max)((math.min)(posX, maxOffset), -maxOffset)
+  posX = math.max(math.min(posX, maxOffset), -maxOffset)
   self._offset = Vector2(posX, posY)
-  self:ShowDialog("UIActivityStage", missionID, (self._passInfo)[missionID], self._levelCpt, rt, self._offset * self._scale, self._width, self._height, self._scale, false)
+  self:ShowDialog("UIActivityStage", missionID, self._passInfo[missionID], self._levelCpt, rt, self._offset * self._scale, self._width, self._height, self._scale, false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivtiyN11HardLevelController.refreshPoint = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivtiyN11HardLevelController:refreshPoint()
   for i = 1, 6 do
     local idx = i
     if not self._showLevel1 then
       idx = idx + 6
     end
-    ;
-    ((self._levels)[i]):SetData(idx, (self._levelCfgs)[idx], (self._passInfo)[((self._levelCfgs)[idx]).CampaignMissionId], self._curIndex, self._atlas)
+    self._levels[i]:SetData(idx, self._levelCfgs[idx], self._passInfo[self._levelCfgs[idx].CampaignMissionId], self._curIndex, self._atlas)
   end
   local bgs = {}
   if self._showLevel1 then
-    bgs = (UIActivtiyN11HardLevelController.LevelCfg).bghard
-    ;
-    (self._level1BtnRect):SetAsLastSibling()
+    bgs = UIActivtiyN11HardLevelController.LevelCfg.bghard
+    self._level1BtnRect:SetAsLastSibling()
   else
-    bgs = (UIActivtiyN11HardLevelController.LevelCfg).bgevil
-    ;
-    (self._level2BtnRect):SetAsLastSibling()
+    bgs = UIActivtiyN11HardLevelController.LevelCfg.bgevil
+    self._level2BtnRect:SetAsLastSibling()
   end
   if self._firstShow then
-    (self._bgR1Loader):LoadImage(bgs.Bg)
+    self._bgR1Loader:LoadImage(bgs.Bg)
   end
   self:doLevelBtnSwitch(self._showLevel1)
-  ;
-  (self._bg2loader):LoadImage(bgs.Bg2)
-  ;
-  (self._bg1loader):LoadImage(bgs.Bg1)
-  ;
-  (self._bg3loader):LoadImage(bgs.Bg3)
-  ;
-  (self._bg4loader):LoadImage(bgs.Bg4)
-  -- DECOMPILER ERROR at PC72: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._timeBgImg).sprite = (self._atlas):GetSprite(bgs.TimeBg)
-  ;
-  (self._txtDescevil):SetActive(not self._showLevel1)
-  ;
-  (self._txtDeschard):SetActive(self._showLevel1)
+  self._bg2loader:LoadImage(bgs.Bg2)
+  self._bg1loader:LoadImage(bgs.Bg1)
+  self._bg3loader:LoadImage(bgs.Bg3)
+  self._bg4loader:LoadImage(bgs.Bg4)
+  self._timeBgImg.sprite = self._atlas:GetSprite(bgs.TimeBg)
+  self._txtDescevil:SetActive(not self._showLevel1)
+  self._txtDeschard:SetActive(self._showLevel1)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivtiyN11HardLevelController.press1OnClick = function(self)
-  -- function num : 0_7
+function UIActivtiyN11HardLevelController:press1OnClick()
   self:enterLevel(1)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivtiyN11HardLevelController.press2OnClick = function(self)
-  -- function num : 0_8
+function UIActivtiyN11HardLevelController:press2OnClick()
   self:enterLevel(2)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivtiyN11HardLevelController.press3OnClick = function(self)
-  -- function num : 0_9
+function UIActivtiyN11HardLevelController:press3OnClick()
   self:enterLevel(3)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivtiyN11HardLevelController.press4OnClick = function(self)
-  -- function num : 0_10
+function UIActivtiyN11HardLevelController:press4OnClick()
   self:enterLevel(4)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivtiyN11HardLevelController.press5OnClick = function(self)
-  -- function num : 0_11
+function UIActivtiyN11HardLevelController:press5OnClick()
   self:enterLevel(5)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivtiyN11HardLevelController.press6OnClick = function(self)
-  -- function num : 0_12
+function UIActivtiyN11HardLevelController:press6OnClick()
   self:enterLevel(6)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivtiyN11HardLevelController.level1OnClick = function(self)
-  -- function num : 0_13
+function UIActivtiyN11HardLevelController:level1OnClick()
   if self._showLevel1 then
-    return 
+    return
   end
   self._showLevel1 = true
-  ;
-  (self._level1BtnRect):SetAsLastSibling()
+  self._level1BtnRect:SetAsLastSibling()
   self:doLevelBtnSwitch(true)
   if self._isShow then
     self:refreshPoint()
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivtiyN11HardLevelController.doLevelBtnSwitch = function(self, blevel1)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivtiyN11HardLevelController:doLevelBtnSwitch(blevel1)
   self:StartTask(function(TT)
-    -- function num : 0_14_0 , upvalues : self, blevel1, _ENV
     for i = 1, #self._levels do
-      ((self._levels)[i]):SetActive(false)
+      self._levels[i]:SetActive(false)
     end
-    do
-      if (not blevel1 and not self._isLevel2Lock) or not (UIActivtiyN11HardLevelController.LevelCfg).bghard then
-        local bg = (UIActivtiyN11HardLevelController.LevelCfg).bgevil
-      end
-      ;
-      (self._bgR2Loader):LoadImage(bg.Bg)
-      if self._firstShow then
-        (self._switchAnim):Play("uieff_N11_Hard_In")
-        self._firstShow = false
-      else
-        ;
-        (self._switchAnim):Play("uieff_N11_Hard_Switch")
-      end
-      self:Lock(self:GetName())
-      YIELD(TT, 300)
-      for i = 1, #self._levels do
-        ((self._levels)[i]):SetActive(true)
-      end
-      ;
-      (self._bgR1Loader):LoadImage(bg.Bg)
-      YIELD(TT, 500)
-      self:UnLock(self:GetName())
+    local bg = (blevel1 or self._isLevel2Lock) and UIActivtiyN11HardLevelController.LevelCfg.bghard or UIActivtiyN11HardLevelController.LevelCfg.bgevil
+    self._bgR2Loader:LoadImage(bg.Bg)
+    if self._firstShow then
+      self._switchAnim:Play("uieff_N11_Hard_In")
+      self._firstShow = false
+    else
+      self._switchAnim:Play("uieff_N11_Hard_Switch")
     end
-  end
-)
-end
-
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivtiyN11HardLevelController.level2OnClick = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  if self._isLevel2Lock then
-    local cfgv = (Cfg.cfg_campaign_mission)[((self._levelCfgs)[6]).CampaignMissionId]
-    local lvName = (StringTable.Get)(cfgv.Name)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_will_open_after_clearance", lvName))
-    return 
-  end
-  do
-    if not self._showLevel1 then
-      return 
-    end
-    self._showLevel1 = false
-    ;
-    (self._level2BtnRect):SetAsLastSibling()
-    self:doLevelBtnSwitch(false)
-    if self._isShow then
-      self:refreshPoint()
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivtiyN11HardLevelController.closeTipBtnOnClick = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  self:StartTask(function(TT)
-    -- function num : 0_16_0 , upvalues : self, _ENV
     self:Lock(self:GetName())
-    ;
-    (self._level2OpenTip):SetActive(false)
+    YIELD(TT, 300)
+    for i = 1, #self._levels do
+      self._levels[i]:SetActive(true)
+    end
+    self._bgR1Loader:LoadImage(bg.Bg)
+    YIELD(TT, 500)
+    self:UnLock(self:GetName())
+  end)
+end
+
+function UIActivtiyN11HardLevelController:level2OnClick()
+  if self._isLevel2Lock then
+    local cfgv = Cfg.cfg_campaign_mission[self._levelCfgs[6].CampaignMissionId]
+    local lvName = StringTable.Get(cfgv.Name)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_will_open_after_clearance", lvName))
+    return
+  end
+  if not self._showLevel1 then
+    return
+  end
+  self._showLevel1 = false
+  self._level2BtnRect:SetAsLastSibling()
+  self:doLevelBtnSwitch(false)
+  if self._isShow then
+    self:refreshPoint()
+  end
+end
+
+function UIActivtiyN11HardLevelController:closeTipBtnOnClick()
+  self:StartTask(function(TT)
+    self:Lock(self:GetName())
+    self._level2OpenTip:SetActive(false)
     YIELD(TT, 350)
     self:UnLock(self:GetName())
-  end
-)
+  end)
 end
-
-

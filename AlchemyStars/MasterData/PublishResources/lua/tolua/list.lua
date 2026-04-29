@@ -1,33 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/list.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local setmetatable = setmetatable
+local setmetatable = _ENV.setmetatable
 local list = {}
 list.__index = list
-list.new = function(self)
-  -- function num : 0_0 , upvalues : setmetatable, list
-  local t = {length = 0, _prev = 0, _next = 0}
+
+function list:new()
+  local t = {
+    length = 0,
+    _prev = 0,
+    _next = 0
+  }
   t._prev = t
   t._next = t
   return setmetatable(t, list)
 end
 
-list.clear = function(self)
-  -- function num : 0_1
+function list:clear()
   self._next = self
   self._prev = self
   self.length = 0
 end
 
-list.push = function(self, value)
-  -- function num : 0_2
-  local node = {value = value, _prev = 0, _next = 0, removed = false}
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._prev)._next = node
+function list:push(value)
+  local node = {
+    value = value,
+    _prev = 0,
+    _next = 0,
+    removed = false
+  }
+  self._prev._next = node
   node._next = self
   node._prev = self._prev
   self._prev = node
@@ -35,15 +34,11 @@ list.push = function(self, value)
   return node
 end
 
-list.pushnode = function(self, node)
-  -- function num : 0_3
+function list:pushnode(node)
   if not node.removed then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._prev)._next = node
+  self._prev._next = node
   node._next = self
   node._prev = self._prev
   self._prev = node
@@ -51,20 +46,20 @@ list.pushnode = function(self, node)
   self.length = self.length + 1
 end
 
-list.pop = function(self)
-  -- function num : 0_4
+function list:pop()
   local _prev = self._prev
   self:remove(_prev)
   return _prev.value
 end
 
-list.unshift = function(self, v)
-  -- function num : 0_5
-  local node = {value = v, _prev = 0, _next = 0, removed = false}
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._next)._prev = node
+function list:unshift(v)
+  local node = {
+    value = v,
+    _prev = 0,
+    _next = 0,
+    removed = false
+  }
+  self._next._prev = node
   node._prev = self
   node._next = self._next
   self._next = node
@@ -72,31 +67,26 @@ list.unshift = function(self, v)
   return node
 end
 
-list.shift = function(self)
-  -- function num : 0_6
+function list:shift()
   local _next = self._next
   self:remove(_next)
   return _next.value
 end
 
-list.remove = function(self, iter)
-  -- function num : 0_7 , upvalues : _ENV
+function list:remove(iter)
   if iter.removed then
-    return 
+    return
   end
   local _prev = iter._prev
   local _next = iter._next
   _next._prev = _prev
   _prev._next = _next
-  self.length = (math.max)(0, self.length - 1)
+  self.length = math.max(0, self.length - 1)
   iter.removed = true
 end
 
-list.find = function(self, v, iter)
-  -- function num : 0_8
-  if not iter then
-    iter = self
-  end
+function list:find(v, iter)
+  iter = iter or self
   repeat
     if v == iter.value then
       return iter
@@ -107,11 +97,8 @@ list.find = function(self, v, iter)
   return nil
 end
 
-list.findlast = function(self, v, iter)
-  -- function num : 0_9
-  if not iter then
-    iter = self
-  end
+function list:findlast(v, iter)
+  iter = iter or self
   repeat
     if v == iter.value then
       return iter
@@ -121,8 +108,7 @@ list.findlast = function(self, v, iter)
   return nil
 end
 
-list.next = function(self, iter)
-  -- function num : 0_10
+function list:next(iter)
   local _next = iter._next
   if _next ~= self then
     return _next, _next.value
@@ -130,8 +116,7 @@ list.next = function(self, iter)
   return nil
 end
 
-list.prev = function(self, iter)
-  -- function num : 0_11
+function list:prev(iter)
   local _prev = iter._prev
   if _prev ~= self then
     return _prev, _prev.value
@@ -139,24 +124,25 @@ list.prev = function(self, iter)
   return nil
 end
 
-list.erase = function(self, v)
-  -- function num : 0_12
+function list:erase(v)
   local iter = self:find(v)
   if iter then
     self:remove(iter)
   end
 end
 
-list.insert = function(self, v, iter)
-  -- function num : 0_13
+function list:insert(v, iter)
   if not iter then
     return self:push(v)
   end
-  local node = {value = v, _next = 0, _prev = 0, removed = false}
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
+  local node = {
+    value = v,
+    _next = 0,
+    _prev = 0,
+    removed = false
+  }
   if iter._next then
-    (iter._next)._prev = node
+    iter._next._prev = node
     node._next = iter._next
   else
     self.last = node
@@ -167,35 +153,31 @@ list.insert = function(self, v, iter)
   return node
 end
 
-list.head = function(self)
-  -- function num : 0_14
-  return (self._next).value
+function list:head()
+  return self._next.value
 end
 
-list.tail = function(self)
-  -- function num : 0_15
-  return (self._prev).value
+function list:tail()
+  return self._prev.value
 end
 
-list.clone = function(self)
-  -- function num : 0_16 , upvalues : list
+function list:clone()
   local t = list:new()
-  for i,v in list.next do
+  for i, v in list.next, self, self do
     t:push(v)
   end
   return t
 end
 
-ilist = function(_list)
-  -- function num : 0_17 , upvalues : list
+function ilist(_list)
   return list.next, _list, _list
 end
 
-rilist = function(_list)
-  -- function num : 0_18 , upvalues : list
+function rilist(_list)
   return list.prev, _list, _list
 end
 
-setmetatable(list, {__call = list.new})
+setmetatable(list, {
+  __call = list.new
+})
 return list
-

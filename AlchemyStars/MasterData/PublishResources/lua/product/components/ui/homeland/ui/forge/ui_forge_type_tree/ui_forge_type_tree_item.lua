@@ -1,161 +1,97 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/forge/ui_forge_type_tree/ui_forge_type_tree_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIForgeTypeTreeItem", UICustomWidget)
 UIForgeTypeTreeItem = UIForgeTypeTreeItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIForgeTypeTreeItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.data = (self.mHomeland):GetForgeData()
+function UIForgeTypeTreeItem:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.data = self.mHomeland:GetForgeData()
   self.quaternionArrow = Quaternion.identity
   self._landBtn = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeTypeTreeItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIForgeTypeTreeItem:OnShow()
   self.bg = self:GetUIComponent("Image", "bg")
   self.txt = self:GetUIComponent("UILocalizationText", "txt")
   self.goArrow = self:GetGameObject("imgArrow")
   self.rectArrow = self:GetUIComponent("RectTransform", "imgArrow")
   self.imgArrow = self:GetUIComponent("Image", "imgArrow")
   self.goChildren = self:GetGameObject("children")
-  ;
-  (self.goChildren):SetActive(false)
+  self.goChildren:SetActive(false)
   self.poolChildren = self:GetUIComponent("UISelectObjectPath", "children")
   self.line = self:GetUIComponent("RectTransform", "line")
   self.atlas = self:GetAsset("UIHomelandBuildInfo.spriteatlas", LoadType.SpriteAtlas)
   self:AttachEvent(GameEventType.HomelandForgeFoldFilter, self.FoldFilter)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeTypeTreeItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIForgeTypeTreeItem:OnHide()
   self:DetachEvent(GameEventType.HomelandForgeFoldFilter, self.FoldFilter)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeTypeTreeItem.Init = function(self, id)
-  -- function num : 0_3 , upvalues : _ENV
+function UIForgeTypeTreeItem:Init(id)
   self.id = id
-  local f = (self.data):GetForgeFilterById(id)
-  ;
-  (self.txt):SetText(f.name)
+  local f = self.data:GetForgeFilterById(id)
+  self.txt:SetText(f.name)
   if f:HasChildren() then
-    local len = (table.count)(f.children)
-    ;
-    (self.poolChildren):SpawnObjects("UIForgeTypeTreeItemChild", len)
-    local uis = (self.poolChildren):GetAllSpawnList()
-    for i,ui in ipairs(uis) do
-      ui:Init(id, ((f.children)[i]).id)
-      if ((f.children)[i]).id == 403 and not self._landBtn then
+    local len = table.count(f.children)
+    self.poolChildren:SpawnObjects("UIForgeTypeTreeItemChild", len)
+    local uis = self.poolChildren:GetAllSpawnList()
+    for i, ui in ipairs(uis) do
+      ui:Init(id, f.children[i].id)
+      if f.children[i].id == 403 and not self._landBtn then
         self._landBtn = ui
       end
     end
-    ;
-    (self.goArrow):SetActive(true)
+    self.goArrow:SetActive(true)
   else
-    do
-      ;
-      (self.goArrow):SetActive(false)
-      ;
-      (self.line):SetAsLastSibling()
-    end
+    self.goArrow:SetActive(false)
   end
+  self.line:SetAsLastSibling()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeTypeTreeItem.FoldFilter = function(self, id)
-  -- function num : 0_4
-  local f = (self.data):GetForgeFilterById(self.id)
+function UIForgeTypeTreeItem:FoldFilter(id)
+  local f = self.data:GetForgeFilterById(self.id)
   if id == self.id then
     if f:HasChildren() then
-      if (self.goChildren).activeInHierarchy then
-        (self.goChildren):SetActive(false)
+      if self.goChildren.activeInHierarchy then
+        self.goChildren:SetActive(false)
         self:FlushArrow(true)
       else
-        ;
-        (self.goChildren):SetActive(true)
+        self.goChildren:SetActive(true)
         self:FlushArrow(false)
       end
     end
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.bg).sprite = (self.atlas):GetSprite("N17_produce_btn_classify_1")
+    self.bg.sprite = self.atlas:GetSprite("N17_produce_btn_classify_1")
   else
     if f:HasChildren() then
       self:FlushArrow(true)
     end
-    ;
-    (self.goChildren):SetActive(false)
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.bg).sprite = (self.atlas):GetSprite("N17_produce_btn_classify_2")
+    self.goChildren:SetActive(false)
+    self.bg.sprite = self.atlas:GetSprite("N17_produce_btn_classify_2")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeTypeTreeItem.FlushArrow = function(self, isUp)
-  -- function num : 0_5 , upvalues : _ENV
+function UIForgeTypeTreeItem:FlushArrow(isUp)
   if isUp then
-    (self.quaternionArrow):SetEuler(0, 0, 0)
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.rectArrow).localRotation = self.quaternionArrow
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.imgArrow).color = Color(0.6, 0.6, 0.6)
+    self.quaternionArrow:SetEuler(0, 0, 0)
+    self.rectArrow.localRotation = self.quaternionArrow
+    self.imgArrow.color = Color(0.6, 0.6, 0.6)
   else
-    ;
-    (self.quaternionArrow):SetEuler(0, 0, 180)
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.rectArrow).localRotation = self.quaternionArrow
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.imgArrow).color = Color(0.97, 0.79, 0.49)
+    self.quaternionArrow:SetEuler(0, 0, 180)
+    self.rectArrow.localRotation = self.quaternionArrow
+    self.imgArrow.color = Color(0.97, 0.79, 0.49)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeTypeTreeItem.bgOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandForgeFoldFilter, self.id)
-  local f = (self.data):GetForgeFilterById(self.id)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
+function UIForgeTypeTreeItem:bgOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandForgeFoldFilter, self.id)
+  local f = self.data:GetForgeFilterById(self.id)
   if not f:HasChildren() then
-    (self.data).filter = self.id
-    ;
-    (self.data):FilterList()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideListSequence, true)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandForgeUpdateList)
+    self.data.filter = self.id
+    self.data:FilterList()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideListSequence, true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandForgeUpdateList)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeTypeTreeItem.GetLandBtn = function(self)
-  -- function num : 0_7
-  return (self._landBtn):GetGameObject("bg")
+function UIForgeTypeTreeItem:GetLandBtn()
+  return self._landBtn:GetGameObject("bg")
 end
-
-

@@ -1,37 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_moye_move.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultMoyeMove", SkillEffectResultBase)
 SkillEffectResultMoyeMove = SkillEffectResultMoyeMove
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultMoyeMove.Constructor = function(self)
-  -- function num : 0_0
+function SkillEffectResultMoyeMove:Constructor()
   self._teleportResult = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoyeMove.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultMoyeMove:GetEffectType()
   return SkillEffectType.MoyeMove
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoyeMove.SetTeleportResult = function(self, teleportRes)
-  -- function num : 0_2
+function SkillEffectResultMoyeMove:SetTeleportResult(teleportRes)
   self._teleportResult = teleportRes
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoyeMove.GetTeleportResult = function(self)
-  -- function num : 0_3
+function SkillEffectResultMoyeMove:GetTeleportResult()
   return self._teleportResult
 end
-
-

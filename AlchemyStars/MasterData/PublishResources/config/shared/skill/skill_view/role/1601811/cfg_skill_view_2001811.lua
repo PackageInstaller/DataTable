@@ -1,21 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/role/1601811/cfg_skill_view_2001811.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{"PlayZhongxuWaitRevert;"}
-}
-, 
-{2, 2, 0, 2, 1, 0, 
-{" PlayCasterAnimation,animName = AtkChain; PlayCasterBindEffect,effectID =160181110; PlayAudio,audioID = 2584,audioType=1; Wait,waitTime=396; "}
-}
-, 
-{3, 3, 90, 1, 2, 1700, 
-{effectID = 160181111, offsetPosX = 0.25, offsetPosY = 1.628, offsetPosZ = -0.33, fireTimeMin = 1701, fireTimeMax = 2205, flyTime = 980, flyRandomDis = 2, flyRandomPointCount = 10, destroyBulletDelay = 2000, targetHitOffsetMin = 0, targetHitOffsetMax = 0, targetHit = "Hit", turnToTarget = 1, hitAnimName = "Hit", hitEffectID = 160181112, hitSoundID = 0, hitPointDelay = 0}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      "PlayZhongxuWaitRevert;"
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    2,
+    1,
+    0,
+    {
+      " PlayCasterAnimation,animName = AtkChain; PlayCasterBindEffect,effectID =160181110; PlayAudio,audioID = 2584,audioType=1; Wait,waitTime=396; "
+    }
+  },
+  {
+    3,
+    3,
+    90,
+    1,
+    2,
+    1700,
+    {
+      effectID = 160181111,
+      offsetPosX = 0.25,
+      offsetPosY = 1.628,
+      offsetPosZ = -0.33,
+      fireTimeMin = 1701,
+      fireTimeMax = 2205,
+      flyTime = 980,
+      flyRandomDis = 2,
+      flyRandomPointCount = 10,
+      destroyBulletDelay = 2000,
+      targetHitOffsetMin = 0,
+      targetHitOffsetMax = 0,
+      targetHit = "Hit",
+      turnToTarget = 1,
+      hitAnimName = "Hit",
+      hitEffectID = 160181112,
+      hitSoundID = 0,
+      hitPointDelay = 0
+    }
+  }
 }
 return config, "ID", key
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n31/popstar/ui_popstar_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPopStarTeam", UIController)
 UIPopStarTeam = UIPopStarTeam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPopStarTeam.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPopStarTeam:OnShow(uiParams)
   self._levelData = uiParams[1]
   self._callback = uiParams[2]
   self._teamsLoader = self:GetUIComponent("UISelectObjectPath", "Teams")
@@ -18,191 +11,134 @@ UIPopStarTeam.OnShow = function(self, uiParams)
   local s = self:GetUIComponent("UISelectObjectPath", "skillTips")
   self._skilltips = s:SpawnObject("UIPopStarSkillInfo")
   self._pets = {}
-  local cfgs = (Cfg.cfg_popstar_pet_list)({})
-  for k,v in pairs(cfgs) do
-    -- DECOMPILER ERROR at PC49: Confused about usage of register: R9 in 'UnsetPending'
-
-    (self._pets)[#self._pets + 1] = {id = v.PetId, item = nil}
+  local cfgs = Cfg.cfg_popstar_pet_list({})
+  for k, v in pairs(cfgs) do
+    self._pets[#self._pets + 1] = {
+      id = v.PetId,
+      item = nil
+    }
   end
-  ;
-  (table.sort)(self._pets, function(a, b)
-    -- function num : 0_0_0
-    do return a.id < b.id end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._pets, function(a, b)
+    return a.id < b.id
+  end)
   self:AttachEvent(GameEventType.PopStarRefreshTeam, self.Refresh)
   self:Init()
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeam.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPopStarTeam:OnHide()
   self:DetachEvent(GameEventType.PopStarRefreshTeam, self.Refresh)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeam.Init = function(self)
-  -- function num : 0_2
-  (self._petLoader):SpawnObjects("UIPopStarPetItem", #self._pets)
-  local list = (self._petLoader):GetAllSpawnList()
+function UIPopStarTeam:Init()
+  self._petLoader:SpawnObjects("UIPopStarPetItem", #self._pets)
+  local list = self._petLoader:GetAllSpawnList()
   for i = 1, #list do
     local item = list[i]
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self._pets)[i]).item = item
-    item:SetData(((self._pets)[i]).id, 0.8, function(id, pos)
-    -- function num : 0_2_0 , upvalues : self
-    self:ShowUseSkillTips(id, pos)
-  end
-, "uieff_UIPopStarPetItem_in")
+    self._pets[i].item = item
+    item:SetData(self._pets[i].id, 0.8, function(id, pos)
+      self:ShowUseSkillTips(id, pos)
+    end, "uieff_UIPopStarPetItem_in")
     item:SetEmptyActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeam.Refresh = function(self, addId)
-  -- function num : 0_3
-  local team = (self._levelData):GetTeam()
-  ;
-  (self._teamsLoader):SpawnObjects("UIPopStarPetItem", #team)
-  local list = (self._teamsLoader):GetAllSpawnList()
+function UIPopStarTeam:Refresh(addId)
+  local team = self._levelData:GetTeam()
+  self._teamsLoader:SpawnObjects("UIPopStarPetItem", #team)
+  local list = self._teamsLoader:GetAllSpawnList()
   for i = 1, #list do
     local id = team[i]
     local item = list[i]
-    local animName = nil
+    local animName
     if addId == id then
       animName = "uieff_UIPopStarPetItem_in_turn"
     end
     item:SetData(id, 0.8, function(id, pos)
-    -- function num : 0_3_0 , upvalues : self
-    self:ShowDownSkillTips(id, pos)
-  end
-, animName)
+      self:ShowDownSkillTips(id, pos)
+    end, animName)
   end
   for i = 1, #self._pets do
-    if (self._levelData):TeamHasPet(((self._pets)[i]).id) then
-      (((self._pets)[i]).item):SetActive(false)
+    if self._levelData:TeamHasPet(self._pets[i].id) then
+      self._pets[i].item:SetActive(false)
     else
-      ;
-      (((self._pets)[i]).item):SetActive(true)
+      self._pets[i].item:SetActive(true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeam.ShowUseSkillTips = function(self, petId, pos)
-  -- function num : 0_4
-  (self._skilltips):SetData(pos, 2, petId, function(id)
-    -- function num : 0_4_0 , upvalues : self
+function UIPopStarTeam:ShowUseSkillTips(petId, pos)
+  self._skilltips:SetData(pos, 2, petId, function(id)
     self:StartTask(self.UsePetCoro, self, id)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeam.ShowDownSkillTips = function(self, petId, pos)
-  -- function num : 0_5
-  (self._skilltips):SetData(pos, 1, petId, function(id)
-    -- function num : 0_5_0 , upvalues : self
+function UIPopStarTeam:ShowDownSkillTips(petId, pos)
+  self._skilltips:SetData(pos, 1, petId, function(id)
     self:StartTask(self.DownPetCoro, self, id)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeam.UsePetCoro = function(self, TT, id)
-  -- function num : 0_6 , upvalues : _ENV
-  if not (self._levelData):IsActivityOpen() then
-    return 
+function UIPopStarTeam:UsePetCoro(TT, id)
+  if not self._levelData:IsActivityOpen() then
+    return
   end
   self:Lock("UIPopStarTeam_UsePetCoro")
-  local ret = (self._levelData):AddTeamPet(id)
+  local ret = self._levelData:AddTeamPet(id)
   if not ret then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n31_popstar_tishi_2"))
+    ToastManager.ShowToast(StringTable.Get("str_n31_popstar_tishi_2"))
     self:UnLock("UIPopStarTeam_UsePetCoro")
-    return 
+    return
   end
-  local result = (self._levelData):UpdateTeam(TT)
+  local result = self._levelData:UpdateTeam(TT)
   if result == false then
-    (self._levelData):RemoveTeamPet(id)
+    self._levelData:RemoveTeamPet(id)
   end
   self:Refresh(id)
   self:UnLock("UIPopStarTeam_UsePetCoro")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeam.DownPetCoro = function(self, TT, id)
-  -- function num : 0_7
-  if not (self._levelData):IsActivityOpen() then
-    return 
+function UIPopStarTeam:DownPetCoro(TT, id)
+  if not self._levelData:IsActivityOpen() then
+    return
   end
   self:Lock("UIPopStarTeam_DownPetCoro")
-  ;
-  (self._levelData):RemoveTeamPet(id)
-  local result = (self._levelData):UpdateTeam(TT)
+  self._levelData:RemoveTeamPet(id)
+  local result = self._levelData:UpdateTeam(TT)
   if result == false then
-    (self._levelData):AddTeamPet(id)
+    self._levelData:AddTeamPet(id)
   end
   self:Refresh()
   self:UnLock("UIPopStarTeam_DownPetCoro")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeam.BtnCloseOnClick = function(self)
-  -- function num : 0_8
+function UIPopStarTeam:BtnCloseOnClick()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeam.BtnStartBattleOnClick = function(self)
-  -- function num : 0_9
-  if not (self._levelData):IsActivityOpen() then
-    return 
+function UIPopStarTeam:BtnStartBattleOnClick()
+  if not self._levelData:IsActivityOpen() then
+    return
   end
   self:StartTask(self.EnterBattle, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeam.EnterBattle = function(self, TT)
-  -- function num : 0_10
+function UIPopStarTeam:EnterBattle(TT)
   self:Lock("UIPopStarTeam_EnterBattle")
-  ;
-  (self._levelData):EnterBattle(TT)
+  self._levelData:EnterBattle(TT)
   self:UnLock("UIPopStarTeam_EnterBattle")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeam.BtnSuggestOnClick = function(self)
-  -- function num : 0_11
-  if not (self._levelData):IsActivityOpen() then
-    return 
+function UIPopStarTeam:BtnSuggestOnClick()
+  if not self._levelData:IsActivityOpen() then
+    return
   end
-  ;
-  (self._tipsGo):SetActive(false)
+  self._tipsGo:SetActive(false)
   self:ShowDialog("UIPopStarTeamSuggest", self._levelData, function()
-    -- function num : 0_11_0 , upvalues : self
-    (self._anim):Play("uieff_UIPopStarTeam_in_02")
-    ;
-    (self._tipsGo):SetActive(true)
-  end
-)
+    self._anim:Play("uieff_UIPopStarTeam_in_02")
+    self._tipsGo:SetActive(true)
+  end)
 end
-
-

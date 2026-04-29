@@ -1,41 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_camera_move_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCameraMoveInstruction", BaseInstruction)
 PlayCameraMoveInstruction = PlayCameraMoveInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCameraMoveInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCameraMoveInstruction:Constructor(paramList)
   self._index = tonumber(paramList.index)
   self._moveTime = tonumber(paramList.moveTime)
   self._waitTime = tonumber(paramList.waitTime)
   self._resetTime = tonumber(paramList.resetTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCameraMoveInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCameraMoveInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local minHeight = BattleConst.MinScreenHeight
   local maxHeight = BattleConst.MaxScreenHeight
-  local offset = (BattleConst.CameraOffsetArray)[self._index]
+  local offset = BattleConst.CameraOffsetArray[self._index]
   local maxOffsetX = offset.x
   local maxOffsetY = offset.y
   local maxOffsetZ = offset.z
   local world = casterEntity:GetOwnerWorld()
-  local mainCamera = (world:MainCamera()):Camera()
+  local mainCamera = world:MainCamera():Camera()
   local location = casterEntity:Location()
   local casterPos = location.Position
   local viewPortPos = mainCamera:WorldToViewportPoint(casterPos)
-  if viewPortPos.y <= minHeight then
-    return 
+  if minHeight >= viewPortPos.y then
+    return
   end
   local percent = (viewPortPos.y - minHeight) / (maxHeight - minHeight)
-  if percent > 1 then
+  if 1 < percent then
     percent = 1
   end
   local offsetY = maxOffsetY * percent
@@ -44,11 +34,9 @@ PlayCameraMoveInstruction.DoInstruction = function(self, TT, casterEntity, phase
   local cameraTran = mainCamera.transform
   local targetPos = cameraTran:TransformPoint(Vector3(offsetX, offsetY, offsetZ))
   local originalPos = cameraTran.position
-  cameraTran:DOMove(targetPos, self._moveTime / 1000, false)
+  cameraTran:DOMove(targetPos, self._moveTime / 1000.0, false)
   YIELD(TT, self._moveTime)
   YIELD(TT, self._waitTime)
-  cameraTran:DOMove(originalPos, self._resetTime / 1000, false)
+  cameraTran:DOMove(originalPos, self._resetTime / 1000.0, false)
   YIELD(TT, self._resetTime)
 end
-
-

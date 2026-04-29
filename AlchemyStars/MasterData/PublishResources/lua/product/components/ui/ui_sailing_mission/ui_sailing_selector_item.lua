@@ -1,122 +1,85 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sailing_mission/ui_sailing_selector_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISailingSelectorItem", UICustomWidget)
 UISailingSelectorItem = UISailingSelectorItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISailingSelectorItem.Constructor = function(self)
-  -- function num : 0_0
+function UISailingSelectorItem:Constructor()
   self._luaIndex = 1
   self._cfg = nil
   self._cfgState = {
-[0] = {bkImage = "n22_dhh_zjm_M0", shadowGray = "", stateLock = "n22_dhh_zjm_M1_lock"}
-, 
-[1] = {bkImage = "n22_dhh_zjm_M1", shadowGray = "n22_dhh_zjm_M1_shad", stateLock = "n22_dhh_zjm_M1_lock"}
-, 
-[2] = {bkImage = "n22_dhh_zjm_M2", shadowGray = "n22_dhh_zjm_M2_shad", stateLock = "n22_dhh_zjm_M2_lock"}
-}
+    [0] = {
+      bkImage = "n22_dhh_zjm_M0",
+      shadowGray = "",
+      stateLock = "n22_dhh_zjm_M1_lock"
+    },
+    [1] = {
+      bkImage = "n22_dhh_zjm_M1",
+      shadowGray = "n22_dhh_zjm_M1_shad",
+      stateLock = "n22_dhh_zjm_M1_lock"
+    },
+    [2] = {
+      bkImage = "n22_dhh_zjm_M2",
+      shadowGray = "n22_dhh_zjm_M2_shad",
+      stateLock = "n22_dhh_zjm_M2_lock"
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingSelectorItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISailingSelectorItem:OnShow()
   self._bkImage = self:GetUIComponent("Image", "bkImage")
-  self._redChapter = (self:View()):GetUIComponent("UISelectObjectPath", "redChapter")
+  self._redChapter = self:View():GetUIComponent("UISelectObjectPath", "redChapter")
   self._txtChapterValue = UISailingImageNumber:New(self, "n22_dhh_num1_%d")
-  ;
-  (self._txtChapterValue):AddDigitImage(self:GetUIComponent("Image", "txtChapterValue0"))
-  ;
-  (self._txtChapterValue):AddDigitImage(self:GetUIComponent("Image", "txtChapterValue1"))
-  ;
-  (self._txtChapterValue):AddDigitImage(self:GetUIComponent("Image", "txtChapterValue2"))
-  ;
-  (self._txtChapterValue):AddDigitImage(self:GetUIComponent("Image", "txtChapterValue3"))
+  self._txtChapterValue:AddDigitImage(self:GetUIComponent("Image", "txtChapterValue0"))
+  self._txtChapterValue:AddDigitImage(self:GetUIComponent("Image", "txtChapterValue1"))
+  self._txtChapterValue:AddDigitImage(self:GetUIComponent("Image", "txtChapterValue2"))
+  self._txtChapterValue:AddDigitImage(self:GetUIComponent("Image", "txtChapterValue3"))
   self._shadowGray = self:GetUIComponent("Image", "shadowGray")
   self._stateLock = self:GetUIComponent("Image", "stateLock")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingSelectorItem.OnHide = function(self)
-  -- function num : 0_2
+function UISailingSelectorItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingSelectorItem.Init = function(self, luaIndex, cfg)
-  -- function num : 0_3
+function UISailingSelectorItem:Init(luaIndex, cfg)
   self._luaIndex = luaIndex
   self._cfg = cfg
-  ;
-  (self._txtChapterValue):SetValue(self._luaIndex)
+  self._txtChapterValue:SetValue(self._luaIndex)
   self:SetBackGround(0)
   self:SetLocked(false, 0)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingSelectorItem.GetChapterCfg = function(self)
-  -- function num : 0_4
+function UISailingSelectorItem:GetChapterCfg()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingSelectorItem.SetBackGround = function(self, cfgIndex)
-  -- function num : 0_5
-  local atlasProperty = (self:RootUIOwner()):GetAtlasSailing()
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._bkImage).sprite = atlasProperty:GetSprite(((self._cfgState)[cfgIndex]).bkImage)
+function UISailingSelectorItem:SetBackGround(cfgIndex)
+  local atlasProperty = self:RootUIOwner():GetAtlasSailing()
+  self._bkImage.sprite = atlasProperty:GetSprite(self._cfgState[cfgIndex].bkImage)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingSelectorItem.SetShadow = function(self, isShadow, cfgIndex)
-  -- function num : 0_6
-  if ((self._shadowGray).gameObject).activeSelf ~= isShadow then
-    ((self._shadowGray).gameObject):SetActive(isShadow)
+function UISailingSelectorItem:SetShadow(isShadow, cfgIndex)
+  if self._shadowGray.gameObject.activeSelf ~= isShadow then
+    self._shadowGray.gameObject:SetActive(isShadow)
   end
   if isShadow then
-    local atlasProperty = (self:RootUIOwner()):GetAtlasSailing()
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._shadowGray).sprite = atlasProperty:GetSprite(((self._cfgState)[cfgIndex]).shadowGray)
+    local atlasProperty = self:RootUIOwner():GetAtlasSailing()
+    self._shadowGray.sprite = atlasProperty:GetSprite(self._cfgState[cfgIndex].shadowGray)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingSelectorItem.SetLocked = function(self, isLocked, cfgIndex)
-  -- function num : 0_7
-  if ((self._stateLock).gameObject).activeSelf ~= isLocked then
-    ((self._stateLock).gameObject):SetActive(isLocked)
+function UISailingSelectorItem:SetLocked(isLocked, cfgIndex)
+  if self._stateLock.gameObject.activeSelf ~= isLocked then
+    self._stateLock.gameObject:SetActive(isLocked)
   end
   if isLocked then
-    local atlasProperty = (self:RootUIOwner()):GetAtlasSailing()
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._stateLock).sprite = atlasProperty:GetSprite(((self._cfgState)[cfgIndex]).stateLock)
+    local atlasProperty = self:RootUIOwner():GetAtlasSailing()
+    self._stateLock.sprite = atlasProperty:GetSprite(self._cfgState[cfgIndex].stateLock)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingSelectorItem.SetRedDot = function(self, showRedDot)
-  -- function num : 0_8
-  if ((self._redChapter).gameObject).activeSelf ~= showRedDot then
-    ((self._redChapter).gameObject):SetActive(showRedDot)
+function UISailingSelectorItem:SetRedDot(showRedDot)
+  if self._redChapter.gameObject.activeSelf ~= showRedDot then
+    self._redChapter.gameObject:SetActive(showRedDot)
   end
   if showRedDot then
-    (self._redChapter):SpawnOneObject("ManualLoad0")
+    self._redChapter:SpawnOneObject("ManualLoad0")
   end
 end
-
-

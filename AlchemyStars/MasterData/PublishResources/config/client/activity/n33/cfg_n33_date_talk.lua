@@ -1,189 +1,364 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/n33/cfg_n33_date_talk.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {ID = 1, TalkTxt = 2}
 local config = {
-{1, "str_n33_date_random_chat_1"}
-, 
-{2, "str_n33_date_random_chat_2"}
-, 
-{3, "str_n33_date_random_chat_3"}
-, 
-{4, "str_n33_date_random_chat_4"}
-, 
-{5, "str_n33_date_random_chat_5"}
-, 
-{6, "str_n33_date_random_chat_6"}
-, 
-{7, "str_n33_date_random_chat_7"}
-, 
-{8, "str_n33_date_random_chat_8"}
-, 
-{9, "str_n33_date_random_chat_9"}
-, 
-{10, "str_n33_date_random_chat_10"}
-, 
-{11, "str_n33_date_random_chat_11"}
-, 
-{12, "str_n33_date_random_chat_12"}
-, 
-{13, "str_n33_date_random_chat_13"}
-, 
-{14, "str_n33_date_random_chat_14"}
-, 
-{15, "str_n33_date_random_chat_15"}
-, 
-{16, "str_n33_date_random_chat_16"}
-, 
-{17, "str_n33_date_random_chat_17"}
-, 
-{18, "str_n33_date_random_chat_18"}
-, 
-{19, "str_n33_date_random_chat_19"}
-, 
-{20, "str_n33_date_random_chat_20"}
-, 
-{21, "str_n33_date_random_chat_21"}
-, 
-{22, "str_n33_date_random_chat_22"}
-, 
-{23, "str_n33_date_random_chat_23"}
-, 
-{24, "str_n33_date_random_chat_24"}
-, 
-{25, "str_n33_date_random_chat_25"}
-, 
-{26, "str_n33_date_random_chat_26"}
-, 
-{27, "str_n33_date_random_chat_27"}
-, 
-{28, "str_n33_date_random_chat_28"}
-, 
-{29, "str_n33_date_random_chat_29"}
-, 
-{30, "str_n33_date_random_chat_30"}
-, 
-{31, "str_n33_date_random_chat_31"}
-, 
-{32, "str_n33_date_random_chat_32"}
-, 
-{33, "str_n33_date_random_chat_33"}
-, 
-{34, "str_n33_date_random_chat_34"}
-, 
-{35, "str_n33_date_random_chat_35"}
-, 
-{36, "str_n33_date_random_chat_36"}
-, 
-{37, "str_n33_date_random_chat_37"}
-, 
-{38, "str_n33_date_random_chat_38"}
-, 
-{39, "str_n33_date_random_chat_39"}
-, 
-{40, "str_n33_date_random_chat_40"}
-, 
-{41, "str_n33_date_random_chat_41"}
-, 
-{42, "str_n33_date_random_chat_42"}
-, 
-{43, "str_n33_date_random_chat_43"}
-, 
-{44, "str_n33_date_random_chat_44"}
-, 
-{45, "str_n33_date_random_chat_45"}
-, 
-{46, "str_n33_date_random_chat_46"}
-, 
-{47, "str_n33_date_random_chat_47"}
-, 
-{48, "str_n33_date_random_chat_48"}
-, 
-{49, "str_n33_date_random_chat_49"}
-, 
-{50, "str_n33_date_random_chat_50"}
-, 
-{51, "str_n33_date_random_chat_51"}
-, 
-{52, "str_n33_date_random_chat_52"}
-, 
-{53, "str_n33_date_random_chat_53"}
-, 
-{54, "str_n33_date_random_chat_54"}
-, 
-{55, "str_n33_date_random_chat_55"}
-, 
-{56, "str_n33_date_random_chat_56"}
-, 
-{57, "str_n33_date_random_chat_57"}
-, 
-{58, "str_n33_date_random_chat_58"}
-, 
-{59, "str_n33_date_random_chat_59"}
-, 
-{60, "str_n33_date_random_chat_60"}
-, 
-{61, "str_n33_date_random_chat_61"}
-, 
-{62, "str_n33_date_random_chat_62"}
-, 
-{63, "str_n33_date_random_chat_63"}
-, 
-{64, "str_n33_date_random_chat_64"}
-, 
-{65, "str_n33_date_random_chat_65"}
-, 
-{66, "str_n33_date_random_chat_66"}
-, 
-{67, "str_n33_date_random_chat_67"}
-, 
-{68, "str_n33_date_random_chat_68"}
-, 
-{69, "str_n33_date_random_chat_69"}
-, 
-{70, "str_n33_date_random_chat_70"}
-, 
-{71, "str_n33_date_random_chat_71"}
-, 
-{72, "str_n33_date_random_chat_72"}
-, 
-{73, "str_n33_date_random_chat_73"}
-, 
-{74, "str_n33_date_random_chat_74"}
-, 
-{75, "str_n33_date_random_chat_75"}
-, 
-{76, "str_n33_date_random_chat_76"}
-, 
-{77, "str_n33_date_random_chat_77"}
-, 
-{78, "str_n33_date_random_chat_78"}
-, 
-{79, "str_n33_date_random_chat_79"}
-, 
-{80, "str_n33_date_random_chat_80"}
-, 
-{81, "str_n33_date_random_chat_81"}
-, 
-{82, "str_n33_date_random_chat_82"}
-, 
-{83, "str_n33_date_random_chat_83"}
-, 
-{84, "str_n33_date_random_chat_84"}
-, 
-{85, "str_n33_date_random_chat_85"}
-, 
-{86, "str_n33_date_random_chat_86"}
-, 
-{87, "str_n33_date_random_chat_87"}
-, 
-{88, "str_n33_date_random_chat_88"}
-, 
-{89, "str_n33_date_random_chat_89"}
-, 
-{90, "str_n33_date_random_chat_90"}
+  {
+    1,
+    "str_n33_date_random_chat_1"
+  },
+  {
+    2,
+    "str_n33_date_random_chat_2"
+  },
+  {
+    3,
+    "str_n33_date_random_chat_3"
+  },
+  {
+    4,
+    "str_n33_date_random_chat_4"
+  },
+  {
+    5,
+    "str_n33_date_random_chat_5"
+  },
+  {
+    6,
+    "str_n33_date_random_chat_6"
+  },
+  {
+    7,
+    "str_n33_date_random_chat_7"
+  },
+  {
+    8,
+    "str_n33_date_random_chat_8"
+  },
+  {
+    9,
+    "str_n33_date_random_chat_9"
+  },
+  {
+    10,
+    "str_n33_date_random_chat_10"
+  },
+  {
+    11,
+    "str_n33_date_random_chat_11"
+  },
+  {
+    12,
+    "str_n33_date_random_chat_12"
+  },
+  {
+    13,
+    "str_n33_date_random_chat_13"
+  },
+  {
+    14,
+    "str_n33_date_random_chat_14"
+  },
+  {
+    15,
+    "str_n33_date_random_chat_15"
+  },
+  {
+    16,
+    "str_n33_date_random_chat_16"
+  },
+  {
+    17,
+    "str_n33_date_random_chat_17"
+  },
+  {
+    18,
+    "str_n33_date_random_chat_18"
+  },
+  {
+    19,
+    "str_n33_date_random_chat_19"
+  },
+  {
+    20,
+    "str_n33_date_random_chat_20"
+  },
+  {
+    21,
+    "str_n33_date_random_chat_21"
+  },
+  {
+    22,
+    "str_n33_date_random_chat_22"
+  },
+  {
+    23,
+    "str_n33_date_random_chat_23"
+  },
+  {
+    24,
+    "str_n33_date_random_chat_24"
+  },
+  {
+    25,
+    "str_n33_date_random_chat_25"
+  },
+  {
+    26,
+    "str_n33_date_random_chat_26"
+  },
+  {
+    27,
+    "str_n33_date_random_chat_27"
+  },
+  {
+    28,
+    "str_n33_date_random_chat_28"
+  },
+  {
+    29,
+    "str_n33_date_random_chat_29"
+  },
+  {
+    30,
+    "str_n33_date_random_chat_30"
+  },
+  {
+    31,
+    "str_n33_date_random_chat_31"
+  },
+  {
+    32,
+    "str_n33_date_random_chat_32"
+  },
+  {
+    33,
+    "str_n33_date_random_chat_33"
+  },
+  {
+    34,
+    "str_n33_date_random_chat_34"
+  },
+  {
+    35,
+    "str_n33_date_random_chat_35"
+  },
+  {
+    36,
+    "str_n33_date_random_chat_36"
+  },
+  {
+    37,
+    "str_n33_date_random_chat_37"
+  },
+  {
+    38,
+    "str_n33_date_random_chat_38"
+  },
+  {
+    39,
+    "str_n33_date_random_chat_39"
+  },
+  {
+    40,
+    "str_n33_date_random_chat_40"
+  },
+  {
+    41,
+    "str_n33_date_random_chat_41"
+  },
+  {
+    42,
+    "str_n33_date_random_chat_42"
+  },
+  {
+    43,
+    "str_n33_date_random_chat_43"
+  },
+  {
+    44,
+    "str_n33_date_random_chat_44"
+  },
+  {
+    45,
+    "str_n33_date_random_chat_45"
+  },
+  {
+    46,
+    "str_n33_date_random_chat_46"
+  },
+  {
+    47,
+    "str_n33_date_random_chat_47"
+  },
+  {
+    48,
+    "str_n33_date_random_chat_48"
+  },
+  {
+    49,
+    "str_n33_date_random_chat_49"
+  },
+  {
+    50,
+    "str_n33_date_random_chat_50"
+  },
+  {
+    51,
+    "str_n33_date_random_chat_51"
+  },
+  {
+    52,
+    "str_n33_date_random_chat_52"
+  },
+  {
+    53,
+    "str_n33_date_random_chat_53"
+  },
+  {
+    54,
+    "str_n33_date_random_chat_54"
+  },
+  {
+    55,
+    "str_n33_date_random_chat_55"
+  },
+  {
+    56,
+    "str_n33_date_random_chat_56"
+  },
+  {
+    57,
+    "str_n33_date_random_chat_57"
+  },
+  {
+    58,
+    "str_n33_date_random_chat_58"
+  },
+  {
+    59,
+    "str_n33_date_random_chat_59"
+  },
+  {
+    60,
+    "str_n33_date_random_chat_60"
+  },
+  {
+    61,
+    "str_n33_date_random_chat_61"
+  },
+  {
+    62,
+    "str_n33_date_random_chat_62"
+  },
+  {
+    63,
+    "str_n33_date_random_chat_63"
+  },
+  {
+    64,
+    "str_n33_date_random_chat_64"
+  },
+  {
+    65,
+    "str_n33_date_random_chat_65"
+  },
+  {
+    66,
+    "str_n33_date_random_chat_66"
+  },
+  {
+    67,
+    "str_n33_date_random_chat_67"
+  },
+  {
+    68,
+    "str_n33_date_random_chat_68"
+  },
+  {
+    69,
+    "str_n33_date_random_chat_69"
+  },
+  {
+    70,
+    "str_n33_date_random_chat_70"
+  },
+  {
+    71,
+    "str_n33_date_random_chat_71"
+  },
+  {
+    72,
+    "str_n33_date_random_chat_72"
+  },
+  {
+    73,
+    "str_n33_date_random_chat_73"
+  },
+  {
+    74,
+    "str_n33_date_random_chat_74"
+  },
+  {
+    75,
+    "str_n33_date_random_chat_75"
+  },
+  {
+    76,
+    "str_n33_date_random_chat_76"
+  },
+  {
+    77,
+    "str_n33_date_random_chat_77"
+  },
+  {
+    78,
+    "str_n33_date_random_chat_78"
+  },
+  {
+    79,
+    "str_n33_date_random_chat_79"
+  },
+  {
+    80,
+    "str_n33_date_random_chat_80"
+  },
+  {
+    81,
+    "str_n33_date_random_chat_81"
+  },
+  {
+    82,
+    "str_n33_date_random_chat_82"
+  },
+  {
+    83,
+    "str_n33_date_random_chat_83"
+  },
+  {
+    84,
+    "str_n33_date_random_chat_84"
+  },
+  {
+    85,
+    "str_n33_date_random_chat_85"
+  },
+  {
+    86,
+    "str_n33_date_random_chat_86"
+  },
+  {
+    87,
+    "str_n33_date_random_chat_87"
+  },
+  {
+    88,
+    "str_n33_date_random_chat_88"
+  },
+  {
+    89,
+    "str_n33_date_random_chat_89"
+  },
+  {
+    90,
+    "str_n33_date_random_chat_90"
+  }
 }
 return config, "ID", key
-

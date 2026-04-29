@@ -1,163 +1,107 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/edit/ui_n22_medal_edit_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22MedalEditItem", UICustomWidget)
 UIN22MedalEditItem = UIN22MedalEditItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22MedalEditItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mMedal = (GameGlobal.GetModule)(MedalModule)
-  self.data = (self.mMedal):GetN22MedalEditData()
+function UIN22MedalEditItem:Constructor()
+  self.mMedal = GameGlobal.GetModule(MedalModule)
+  self.data = self.mMedal:GetN22MedalEditData()
   self.curDragMedalId = 0
   self.yDragging = 300
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEditItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self.anim = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
+function UIN22MedalEditItem:OnShow()
+  self.anim = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
   self.bg = self:GetGameObject("bg")
   self.imgIcon = self:GetUIComponent("Image", "imgIcon")
   self.rtIcon = self:GetUIComponent("RectTransform", "imgIcon")
   self.new = self:GetGameObject("new")
   self.atlas = self:GetAsset("UIMedal.spriteatlas", LoadType.SpriteAtlas)
-  self.camera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIN22MedalEdit")
-  local etl = (UICustomUIEventListener.Get)(self.bg)
+  self.camera = GameGlobal.UIStateManager():GetControllerCamera("UIN22MedalEdit")
+  local etl = UICustomUIEventListener.Get(self.bg)
   self:AddUICustomEventListener(etl, UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_1_0 , upvalues : self
-    (self.ui):SetIsDraggingMedal(false)
+    self.ui:SetIsDraggingMedal(false)
     self:ClearNew()
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Drag, function(eventData)
-    -- function num : 0_1_1 , upvalues : self
-    if (self.ui):GetIsDraggingMedal() then
-      (self.ui):SetCurDragScreenPosition(eventData.position)
-    else
-      if self.yDragging <= (eventData.position).y then
-        (self.ui):SetIsDraggingMedal(true)
-        ;
-        (self.anim):Play("uieff_UIN22MedalEditItem_in")
-        self.curDragMedalId = (self.item):GetID()
-        ;
-        (self.ui):InsertMedal(self.curDragMedalId)
-        ;
-        (self.ui):SetCurDragScreenPosition(eventData.position)
-        ;
-        (self.ui):FlushSelectBoarMedalWithoutAnim(0)
-      end
+    if self.ui:GetIsDraggingMedal() then
+      self.ui:SetCurDragScreenPosition(eventData.position)
+    elseif eventData.position.y >= self.yDragging then
+      self.ui:SetIsDraggingMedal(true)
+      self.anim:Play("uieff_UIN22MedalEditItem_in")
+      self.curDragMedalId = self.item:GetID()
+      self.ui:InsertMedal(self.curDragMedalId)
+      self.ui:SetCurDragScreenPosition(eventData.position)
+      self.ui:FlushSelectBoarMedalWithoutAnim(0)
     end
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.EndDrag, function(eventData)
-    -- function num : 0_1_2 , upvalues : self
-    (self.ui):SetIsDraggingMedal(false)
+    self.ui:SetIsDraggingMedal(false)
     if self.curDragMedalId and self.curDragMedalId > 0 then
-      (self.ui):ClampBoardMedalUI(self.curDragMedalId)
-      ;
-      (self.ui):FlushSelectBoarMedal(self.curDragMedalId)
+      self.ui:ClampBoardMedalUI(self.curDragMedalId)
+      self.ui:FlushSelectBoarMedal(self.curDragMedalId)
       self.curDragMedalId = 0
-      ;
-      (self.ui):FlushList()
+      self.ui:FlushList()
     end
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Click, function(go)
-    -- function num : 0_1_3 , upvalues : self
     self:ClearNew(function()
-      -- function num : 0_1_3_0 , upvalues : self
-      (self.ui):InsertMedal((self.item):GetID())
-      ;
-      (self.ui):FlushList()
-    end
-)
-  end
-)
+      self.ui:InsertMedal(self.item:GetID())
+      self.ui:FlushList()
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEditItem.OnHide = function(self)
-  -- function num : 0_2
+function UIN22MedalEditItem:OnHide()
   self.new = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEditItem.Init = function(self, rtBoard, ui)
-  -- function num : 0_3
+function UIN22MedalEditItem:Init(rtBoard, ui)
   self.rtBoard = rtBoard
   self.ui = ui
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEditItem.Flush = function(self, item)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN22MedalEditItem:Flush(item)
   self.item = item
-  local iconMedal = (BoardMedal.IconMedalById)(item:GetID())
-  local sprite = (UIN22MedalEditItem.GetSprite)(self.atlas, iconMedal)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.imgIcon).sprite = sprite
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.rtIcon).sizeDelta = Vector2((sprite.rect).width, (sprite.rect).height) * 0.3
+  local iconMedal = BoardMedal.IconMedalById(item:GetID())
+  local sprite = UIN22MedalEditItem.GetSprite(self.atlas, iconMedal)
+  self.imgIcon.sprite = sprite
+  self.rtIcon.sizeDelta = Vector2(sprite.rect.width, sprite.rect.height) * 0.3
   self:FlushNew()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEditItem.FlushNew = function(self)
-  -- function num : 0_5
+function UIN22MedalEditItem:FlushNew()
   if self.new then
-    (self.new):SetActive((self.item):IsNew())
+    self.new:SetActive(self.item:IsNew())
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEditItem.ClearNew = function(self, callback)
-  -- function num : 0_6 , upvalues : _ENV
-  if not (self.item):IsNew() and callback then
-    callback()
+function UIN22MedalEditItem:ClearNew(callback)
+  if not self.item:IsNew() then
+    if callback then
+      callback()
+    end
+    return
   end
-  do return  end
-  local pstId = (self.item):GetPstId()
-  if not pstId and callback then
-    callback()
+  local pstId = self.item:GetPstId()
+  if not pstId then
+    if callback then
+      callback()
+    end
+    return
   end
-  do return  end
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, _ENV, pstId, callback
     local key = "UIN22MedalEditItemClearNew"
     self:Lock(key)
-    ;
-    (self:GetModule(ItemModule)):SetItemUnnew(TT, pstId)
+    self:GetModule(ItemModule):SetItemUnnew(TT, pstId)
     self:FlushNew()
     if callback then
       callback()
     end
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEditItem.GetSprite = function(spriteAtlas, spriteName)
-  -- function num : 0_7
+function UIN22MedalEditItem.GetSprite(spriteAtlas, spriteName)
   local sprite = spriteAtlas:GetSprite(spriteName)
-  if not sprite then
-    sprite = spriteAtlas:GetSprite("item_modle_icon_6000001")
-  end
+  sprite = sprite or spriteAtlas:GetSprite("item_modle_icon_6000001")
   return sprite
 end
-
-

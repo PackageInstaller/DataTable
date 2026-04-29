@@ -1,66 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_zhongxu_wait_revert_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayZhongxuWaitRevertInstruction", BaseInstruction)
 PlayZhongxuWaitRevertInstruction = PlayZhongxuWaitRevertInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayZhongxuWaitRevertInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayZhongxuWaitRevertInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayZhongxuWaitRevertInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayZhongxuWaitRevertInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
   local bvcmpt = casterEntity:BuffView()
   if not bvcmpt then
-    return 
+    return
   end
   local transToCatTaskID = bvcmpt:GetBuffValue("ZhongxuTrasnRevertTaskID")
-  do
-    if transToCatTaskID and transToCatTaskID > 0 then
-      local taskIDs = {transToCatTaskID}
-      while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDs) do
-        YIELD(TT)
-      end
+  if transToCatTaskID and 0 < transToCatTaskID then
+    local taskIDs = {transToCatTaskID}
+    while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDs) do
+      YIELD(TT)
     end
-    local transToPetPlayed = bvcmpt:GetBuffValue("ZhongxuCatTrasnToPetPlayed")
-    if transToPetPlayed and transToPetPlayed == 1 then
-      local entity = casterEntity
-      local effectHolderCmpt = entity:EffectHolder()
-      if effectHolderCmpt then
-        local effectService = (self._world):GetService("Effect")
-        local permanentEffectList = effectHolderCmpt:GetChainMovePermanentEffect()
-        effectService:_DestroyEffectArray(permanentEffectList)
-        effectHolderCmpt:ClearChainMovePermanentEffectIDListAfterDestroy()
-        self:_ZhongxuShowHideModel(entity, true)
-        bvcmpt:SetBuffValue("ZhongxuCatTrasnToPetPlayed", 1)
-      end
+  end
+  local transToPetPlayed = bvcmpt:GetBuffValue("ZhongxuCatTrasnToPetPlayed")
+  if transToPetPlayed and transToPetPlayed == 1 then
+  else
+    local entity = casterEntity
+    local effectHolderCmpt = entity:EffectHolder()
+    if effectHolderCmpt then
+      local effectService = self._world:GetService("Effect")
+      local permanentEffectList = effectHolderCmpt:GetChainMovePermanentEffect()
+      effectService:_DestroyEffectArray(permanentEffectList)
+      effectHolderCmpt:ClearChainMovePermanentEffectIDListAfterDestroy()
+      self:_ZhongxuShowHideModel(entity, true)
+      bvcmpt:SetBuffValue("ZhongxuCatTrasnToPetPlayed", 1)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayZhongxuWaitRevertInstruction._ZhongxuShowHideModel = function(self, entity, bShow)
-  -- function num : 0_2 , upvalues : _ENV
-  (Log.debug)("PlayZhongxuWaitRevertInstruction, ZhongxuShowHideModel ,", bShow)
+function PlayZhongxuWaitRevertInstruction:_ZhongxuShowHideModel(entity, bShow)
+  Log.debug("PlayZhongxuWaitRevertInstruction, ZhongxuShowHideModel ,", bShow)
   local cView = entity:View()
   if cView then
     local CSGameObject = cView:GetGameObject()
-    local CSGameObjectRoot = (CSGameObject.transform):Find("Root")
-    local tSkinnedMeshRender = (CSGameObjectRoot.transform):GetComponentsInChildren(typeof(UnityEngine.SkinnedMeshRenderer))
+    local CSGameObjectRoot = CSGameObject.transform:Find("Root")
+    local tSkinnedMeshRender = CSGameObjectRoot.transform:GetComponentsInChildren(typeof(UnityEngine.SkinnedMeshRenderer))
     for i = 0, tSkinnedMeshRender.Length - 1 do
-      -- DECOMPILER ERROR at PC28: Confused about usage of register: R11 in 'UnsetPending'
-
-      (tSkinnedMeshRender[i]).enabled = bShow
+      tSkinnedMeshRender[i].enabled = bShow
     end
   end
 end
-
-

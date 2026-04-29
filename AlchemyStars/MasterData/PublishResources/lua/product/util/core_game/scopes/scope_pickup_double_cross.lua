@@ -1,143 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_pickup_double_cross.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_PickUpDoubleCross", SkillScopeCalculator_Base)
 SkillScopeCalculator_PickUpDoubleCross = SkillScopeCalculator_PickUpDoubleCross
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_PickUpDoubleCross.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_PickUpDoubleCross:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   if #centerPos == 0 then
     centerPos = {centerPos}
   end
-  local world = (self._gridFilter)._world
+  local world = self._gridFilter._world
   local boardServiceLogic = world:GetService("BoardLogic")
   local maxLen = boardServiceLogic:GetCurBoardMaxLen()
   local validGridArray = {}
   local length = maxLen
-  for _,pos in ipairs(centerPos) do
+  for _, pos in ipairs(centerPos) do
     local gridArray = {}
     local type = self:GetDirection(pos, casterPos)
     if type == HitBackDirectionType.RightDown then
       for i = 1, length do
         gridArray[i] = Vector2(casterPos.x + i, casterPos.y - i)
       end
-    else
-      do
-        if type == HitBackDirectionType.LeftDown then
-          for i = 1, length do
-            gridArray[i] = Vector2(casterPos.x - i, casterPos.y - i)
-          end
-        else
-          do
-            if type == HitBackDirectionType.LeftUp then
-              for i = 1, length do
-                gridArray[i] = Vector2(casterPos.x - i, casterPos.y + i)
-              end
-            else
-              do
-                if type == HitBackDirectionType.RightUp then
-                  for i = 1, length do
-                    gridArray[i] = Vector2(casterPos.x + i, casterPos.y + i)
-                  end
-                else
-                  do
-                    if type == HitBackDirectionType.Right then
-                      for i = 1, length do
-                        gridArray[i] = Vector2(casterPos.x + i, casterPos.y)
-                      end
-                    else
-                      do
-                        if type == HitBackDirectionType.Left then
-                          for i = 1, length do
-                            gridArray[i] = Vector2(casterPos.x - i, casterPos.y)
-                          end
-                        else
-                          do
-                            if type == HitBackDirectionType.Down then
-                              for i = 1, length do
-                                gridArray[i] = Vector2(casterPos.x, casterPos.y - i)
-                              end
-                            else
-                              do
-                                if type == HitBackDirectionType.Up then
-                                  for i = 1, length do
-                                    gridArray[i] = Vector2(casterPos.x, casterPos.y + i)
-                                  end
-                                end
-                                do
-                                  for _,v in pairs(gridArray) do
-                                    if (self._gridFilter):IsValidPiecePos(v) then
-                                      (table.insert)(validGridArray, v)
-                                    end
-                                  end
-                                  do
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out DO_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out DO_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out IF_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out DO_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out IF_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out DO_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out IF_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out DO_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out IF_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out DO_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out IF_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out DO_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out IF_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out DO_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                    -- DECOMPILER ERROR at PC173: LeaveBlock: unexpected jumping out IF_STMT
-
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+    elseif type == HitBackDirectionType.LeftDown then
+      for i = 1, length do
+        gridArray[i] = Vector2(casterPos.x - i, casterPos.y - i)
+      end
+    elseif type == HitBackDirectionType.LeftUp then
+      for i = 1, length do
+        gridArray[i] = Vector2(casterPos.x - i, casterPos.y + i)
+      end
+    elseif type == HitBackDirectionType.RightUp then
+      for i = 1, length do
+        gridArray[i] = Vector2(casterPos.x + i, casterPos.y + i)
+      end
+    elseif type == HitBackDirectionType.Right then
+      for i = 1, length do
+        gridArray[i] = Vector2(casterPos.x + i, casterPos.y)
+      end
+    elseif type == HitBackDirectionType.Left then
+      for i = 1, length do
+        gridArray[i] = Vector2(casterPos.x - i, casterPos.y)
+      end
+    elseif type == HitBackDirectionType.Down then
+      for i = 1, length do
+        gridArray[i] = Vector2(casterPos.x, casterPos.y - i)
+      end
+    elseif type == HitBackDirectionType.Up then
+      for i = 1, length do
+        gridArray[i] = Vector2(casterPos.x, casterPos.y + i)
+      end
+    end
+    for _, v in pairs(gridArray) do
+      if self._gridFilter:IsValidPiecePos(v) then
+        table.insert(validGridArray, v)
       end
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.PickUpDoubleCross, centerPos, validGridArray, validGridArray)
   return result
 end
-
-

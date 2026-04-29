@@ -1,53 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/view_extensions/replace_material_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ReplaceMaterialComponent", Object)
 ReplaceMaterialComponent = ReplaceMaterialComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ReplaceMaterialComponent.Constructor = function(self, materialAssetName)
-  -- function num : 0_0
+function ReplaceMaterialComponent:Constructor(materialAssetName)
   self._materialAssetName = materialAssetName
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ReplaceMaterialComponent.GetMaterialAssetName = function(self)
-  -- function num : 0_1
+function ReplaceMaterialComponent:GetMaterialAssetName()
   return self._materialAssetName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceMaterialComponent = function(self)
-  -- function num : 0_2
-  return self:GetComponent((self.WEComponentsEnum).ReplaceMaterial)
+function Entity:ReplaceMaterialComponent()
+  return self:GetComponent(self.WEComponentsEnum.ReplaceMaterial)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasReplaceMaterialComponent = function(self)
-  -- function num : 0_3
-  return self:HasComponent((self.WEComponentsEnum).ReplaceMaterial)
+function Entity:HasReplaceMaterialComponent()
+  return self:HasComponent(self.WEComponentsEnum.ReplaceMaterial)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddReplaceMaterialComponent = function(self, materialPath)
-  -- function num : 0_4 , upvalues : _ENV
+function Entity:AddReplaceMaterialComponent(materialPath)
   if self:HasReplaceMaterialComponent() then
     self:RemoveReplaceMaterialComponent()
   end
-  self:AddComponent((self.WEComponentsEnum).ReplaceMaterial, ReplaceMaterialComponent:New(materialPath))
+  self:AddComponent(self.WEComponentsEnum.ReplaceMaterial, ReplaceMaterialComponent:New(materialPath))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveReplaceMaterialComponent = function(self)
-  -- function num : 0_5
-  self:RemoveComponent((self.WEComponentsEnum).ReplaceMaterial)
+function Entity:RemoveReplaceMaterialComponent()
+  self:RemoveComponent(self.WEComponentsEnum.ReplaceMaterial)
 end
-
-

@@ -1,23 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_check_team_dead.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCheckTeamDead", AINewNode)
 ActionCheckTeamDead = ActionCheckTeamDead
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckTeamDead.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+function ActionCheckTeamDead:OnUpdate()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   if teamEntity:HasDeadMark() then
     return AINewNodeStatus.Success
   end
-  if (teamEntity:Attributes()):GetCurrentHP() == 0 then
+  if teamEntity:Attributes():GetCurrentHP() == 0 then
     return AINewNodeStatus.Success
   end
   return AINewNodeStatus.Failure
 end
-
-

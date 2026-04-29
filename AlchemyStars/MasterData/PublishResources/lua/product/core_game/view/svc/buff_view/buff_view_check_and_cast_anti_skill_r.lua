@@ -1,41 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_check_and_cast_anti_skill_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewCheckAndCastAntiSkill", BuffViewBase)
 BuffViewCheckAndCastAntiSkill = BuffViewCheckAndCastAntiSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewCheckAndCastAntiSkill.IsNotifyMatch = function(self, notify)
-  -- function num : 0_0
+function BuffViewCheckAndCastAntiSkill:IsNotifyMatch(notify)
   return true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewCheckAndCastAntiSkill.PlayView = function(self, TT, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewCheckAndCastAntiSkill:PlayView(TT, notify)
   local result = self._buffResult
   local entityID = result:GetEntityID()
   local resultBuffSeq = result:GetBuffSeq()
   local skillResult = result:GetSkillResult()
   local skillID = result:GetSkillID()
   if skillID then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateAntiActiveSkill, entityID, 0)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateAntiActiveSkill, entityID, 0)
     local skillHolder = self._entity
-    ;
-    (skillHolder:SkillRoutine()):SetResultContainer(skillResult)
-    local playSkillSvc = (self._world):GetService("PlaySkill")
-    local configSvc = (self._world):GetService("Config")
+    skillHolder:SkillRoutine():SetResultContainer(skillResult)
+    local playSkillSvc = self._world:GetService("PlaySkill")
+    local configSvc = self._world:GetService("Config")
     local skillConfigData = configSvc:GetSkillConfigData(skillID)
     local skillPhaseArray = skillConfigData:GetSkillPhaseArray()
     playSkillSvc:_SkillRoutineTask(TT, skillHolder, skillPhaseArray, skillID)
   end
-  do
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateAntiActiveSkill, entityID)
-  end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateAntiActiveSkill, entityID)
 end
-
-

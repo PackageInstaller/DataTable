@@ -1,44 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n39/ui_n39_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN39Helper", Object)
 UIN39Helper = UIN39Helper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN39Helper.GetCampaignType = function()
-  -- function num : 0_0 , upvalues : _ENV
+function UIN39Helper.GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N39
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39Helper.GetComponentIds = function()
-  -- function num : 0_1 , upvalues : _ENV
-  return {ECampaignN39ComponentID.ECAMPAIGN_N39_CUMULATIVE_LOGIN, ECampaignN39ComponentID.ECAMPAIGN_N39_LINE_MISSION, ECampaignN39ComponentID.ECAMPAIGN_N39_HARD_LINE_MISSION, ECampaignN39ComponentID.ECAMPAIGN_N39_BLACK_DIFFICULT_MISSION, ECampaignN39ComponentID.ECAMPAIGN_N39_POWER2ITEM, ECampaignN39ComponentID.ECAMPAIGN_N39_SHOP}
+function UIN39Helper.GetComponentIds()
+  return {
+    ECampaignN39ComponentID.ECAMPAIGN_N39_CUMULATIVE_LOGIN,
+    ECampaignN39ComponentID.ECAMPAIGN_N39_LINE_MISSION,
+    ECampaignN39ComponentID.ECAMPAIGN_N39_HARD_LINE_MISSION,
+    ECampaignN39ComponentID.ECAMPAIGN_N39_BLACK_DIFFICULT_MISSION,
+    ECampaignN39ComponentID.ECAMPAIGN_N39_POWER2ITEM,
+    ECampaignN39ComponentID.ECAMPAIGN_N39_SHOP
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39Helper.GetComponentId = function(name)
-  -- function num : 0_2 , upvalues : _ENV
-  local tb = {login = ECampaignN39ComponentID.ECAMPAIGN_N39_CUMULATIVE_LOGIN, line = ECampaignN39ComponentID.ECAMPAIGN_N39_LINE_MISSION, hard = ECampaignN39ComponentID.ECAMPAIGN_N39_HARD_LINE_MISSION, black = ECampaignN39ComponentID.ECAMPAIGN_N39_BLACK_DIFFICULT_MISSION, power = ECampaignN39ComponentID.ECAMPAIGN_N39_POWER2ITEM, exchange = ECampaignN39ComponentID.ECAMPAIGN_N39_SHOP}
+function UIN39Helper.GetComponentId(name)
+  local tb = {
+    login = ECampaignN39ComponentID.ECAMPAIGN_N39_CUMULATIVE_LOGIN,
+    line = ECampaignN39ComponentID.ECAMPAIGN_N39_LINE_MISSION,
+    hard = ECampaignN39ComponentID.ECAMPAIGN_N39_HARD_LINE_MISSION,
+    black = ECampaignN39ComponentID.ECAMPAIGN_N39_BLACK_DIFFICULT_MISSION,
+    power = ECampaignN39ComponentID.ECAMPAIGN_N39_POWER2ITEM,
+    exchange = ECampaignN39ComponentID.ECAMPAIGN_N39_SHOP
+  }
   return tb[name]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39Helper.CheckComRedTime = function(tag)
-  -- function num : 0_3 , upvalues : _ENV
-  local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
+function UIN39Helper.CheckComRedTime(tag)
+  local open_id = GameGlobal.GameLogic():GetOpenId()
   local key = "n39_red_time" .. tag .. open_id
-  local val = (LocalDB.GetInt)(key, 0)
+  local val = LocalDB.GetInt(key, 0)
   if val == 0 then
     return true
   else
-    local svrTime = (math.modf)(((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001)
-    if (UIN39Helper.IsSameDay)(svrTime, val) then
+    local svrTime = math.modf(GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001)
+    if UIN39Helper.IsSameDay(svrTime, val) then
       return true
     else
       return false
@@ -46,30 +44,23 @@ UIN39Helper.CheckComRedTime = function(tag)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39Helper.SetComRedTime = function(tag)
-  -- function num : 0_4 , upvalues : _ENV
-  if (UIN39Helper.CheckComRedTime)(tag) then
-    local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
+function UIN39Helper.SetComRedTime(tag)
+  if UIN39Helper.CheckComRedTime(tag) then
+    local open_id = GameGlobal.GameLogic():GetOpenId()
     local key = "n39_red_time" .. tag .. open_id
-    local svrTime = (math.modf)(((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001)
-    ;
-    (LocalDB.SetInt)(key, svrTime)
+    local svrTime = math.modf(GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001)
+    LocalDB.SetInt(key, svrTime)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39Helper.IsSameDay = function(svrTime, localTime)
-  -- function num : 0_5 , upvalues : _ENV
-  if svrTime - localTime >= 86400 then
+function UIN39Helper.IsSameDay(svrTime, localTime)
+  if 86400 <= svrTime - localTime then
     return true
   else
-    local next_zero_time = ((GameGlobal.GetModule)(LoginModule)):GetGMTNextZeroTime()
+    local next_zero_time = GameGlobal.GetModule(LoginModule):GetGMTNextZeroTime()
     local hourOffset = 5
     next_zero_time = next_zero_time + (hourOffset - 24) * 60 * 60
-    if next_zero_time < svrTime then
+    if svrTime > next_zero_time then
       if localTime < next_zero_time then
         return true
       else
@@ -81,170 +72,114 @@ UIN39Helper.IsSameDay = function(svrTime, localTime)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39Helper.CheckNew = function(tag)
-  -- function num : 0_6 , upvalues : _ENV
-  local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
+function UIN39Helper.CheckNew(tag)
+  local open_id = GameGlobal.GameLogic():GetOpenId()
   local key = "n39" .. tag .. open_id
-  local val = (LocalDB.GetInt)(key, 0)
-  do return val == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local val = LocalDB.GetInt(key, 0)
+  return val == 0
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39Helper.ClearNew = function(tag)
-  -- function num : 0_7 , upvalues : _ENV
-  local isNew = (UIN39Helper.CheckNew)(tag)
+function UIN39Helper.ClearNew(tag)
+  local isNew = UIN39Helper.CheckNew(tag)
   if isNew then
-    local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
+    local open_id = GameGlobal.GameLogic():GetOpenId()
     local key = "n39" .. tag .. open_id
-    ;
-    (LocalDB.SetInt)(key, 1)
+    LocalDB.SetInt(key, 1)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39Helper.GetComponent = function(campaign, name)
-  -- function num : 0_8 , upvalues : _ENV
-  local cmptId = (UIN39Helper.GetComponentId)(name)
+function UIN39Helper.GetComponent(campaign, name)
+  local cmptId = UIN39Helper.GetComponentId(name)
   local component = campaign:GetComponent(cmptId)
   local componentInfo = campaign:GetComponentInfo(cmptId)
   return cmptId, component, componentInfo
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39Helper.SetBattlePassBtn = function(uiView, widgetName, bp_campaign)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN39Helper.SetBattlePassBtn(uiView, widgetName, bp_campaign)
   local useStateUI = false
   local open_sample = bp_campaign:CheckCampaignOpen()
-  do
-    if open_sample then
-      local obj = (UIWidgetHelper.SpawnObject)(uiView, widgetName, "UIActivityCommonCampaignEnter")
-      obj:SetData(bp_campaign, useStateUI)
-    end
-    local obj = uiView:GetGameObject(widgetName)
-    obj:SetActive(open_sample)
+  if open_sample then
+    local obj = UIWidgetHelper.SpawnObject(uiView, widgetName, "UIActivityCommonCampaignEnter")
+    obj:SetData(bp_campaign, useStateUI)
   end
+  local obj = uiView:GetGameObject(widgetName)
+  obj:SetActive(open_sample)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39Helper.SetExchangeBtn = function(uiView, widgetName, campaign)
-  -- function num : 0_10 , upvalues : _ENV
-  local cmptId, component, componentInfo = (UIN39Helper.GetComponent)(campaign, "exchange")
-  local obj = (UIWidgetHelper.SpawnObject)(uiView, widgetName, "UIActivityCommonComponentEnter")
+function UIN39Helper.SetExchangeBtn(uiView, widgetName, campaign)
+  local cmptId, component, componentInfo = UIN39Helper.GetComponent(campaign, "exchange")
+  local obj = UIWidgetHelper.SpawnObject(uiView, widgetName, "UIActivityCommonComponentEnter")
   local btnName = "ExchangeBtn"
-  local newCallback = function()
-    -- function num : 0_10_0 , upvalues : _ENV, btnName
-    local new = not (UIN39Helper.LocalDB_Has)(btnName, "New")
+  
+  local function newCallback()
+    local new = not UIN39Helper.LocalDB_Has(btnName, "New")
     return new
   end
-
+  
   obj:SetNew("_new", newCallback)
-  local redCallback = function()
-    -- function num : 0_10_1 , upvalues : campaign, cmptId
-    if campaign:CheckComponentOpen(cmptId) then
-      return campaign:CheckComponentRed(cmptId)
-    end
+  
+  local function redCallback()
+    return campaign:CheckComponentOpen(cmptId) and campaign:CheckComponentRed(cmptId)
   end
-
+  
   obj:SetRed("_red", redCallback)
   local color1, color2 = "#71a29c", "#ffffff"
-  ;
-  (UIN39Helper.SetExchangeCostItem_PreZero)(component, obj, "icon", "text", color1, color2)
-  local clickCallback = function()
-    -- function num : 0_10_2 , upvalues : _ENV, campaign, btnName
-    if (UIN39Helper.CheckCampaignOpen)(campaign) then
-      (UIN39Helper.LocalDB_Set)(btnName, "New")
-      ;
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIN39ExchangeController")
+  UIN39Helper.SetExchangeCostItem_PreZero(component, obj, "icon", "text", color1, color2)
+  
+  local function clickCallback()
+    if UIN39Helper.CheckCampaignOpen(campaign) then
+      UIN39Helper.LocalDB_Set(btnName, "New")
+      GameGlobal.UIStateManager():ShowDialog("UIN39ExchangeController")
     end
   end
-
+  
   obj:SetData(campaign, clickCallback)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39Helper.CheckCampaignOpen = function(campaign)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN39Helper.CheckCampaignOpen(campaign)
   local open_sample = campaign:CheckCampaignOpen()
   if open_sample then
     return true
   else
-    local tips = (StringTable.Get)("str_activity_common_notice_content")
-    ;
-    (ToastManager.ShowToast)(tips)
+    local tips = StringTable.Get("str_activity_common_notice_content")
+    ToastManager.ShowToast(tips)
     return false
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39Helper.SetExchangeCostItem_PreZero = function(component, uiView, widgeIcon, widgeCount, color1, color2)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN39Helper.SetExchangeCostItem_PreZero(component, uiView, widgeIcon, widgeCount, color1, color2)
   local itemId = component:GetCostItemId()
-  ;
-  (UIWidgetHelper.SetItemCount)(uiView, itemId, widgeCount, function(count)
-    -- function num : 0_12_0 , upvalues : _ENV, color1, color2
-    count = (math.min)(count, 999999)
-    local preZero = (UIActivityHelper.GetZeroStrFrontNum)(6, count)
-    local str = (UIActivityHelper.GetColorText)(color1, preZero, color2, tostring(count))
+  UIWidgetHelper.SetItemCount(uiView, itemId, widgeCount, function(count)
+    count = math.min(count, 999999)
+    local preZero = UIActivityHelper.GetZeroStrFrontNum(6, count)
+    local str = UIActivityHelper.GetColorText(color1, preZero, color2, tostring(count))
     return str
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39Helper._LocalDB_GetKey = function(btnName, funcName)
-  -- function num : 0_13 , upvalues : _ENV
+function UIN39Helper._LocalDB_GetKey(btnName, funcName)
   local key = "UIN39Helper_" .. btnName .. "_" .. funcName .. "_"
-  return (UIActivityHelper.GetLocalDBKeyWithPstId)(key)
+  return UIActivityHelper.GetLocalDBKeyWithPstId(key)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39Helper.LocalDB_Has = function(btnName, funcName)
-  -- function num : 0_14 , upvalues : _ENV
-  local key = (UIN39Helper._LocalDB_GetKey)(btnName, funcName)
-  return (LocalDB.HasKey)(key)
+function UIN39Helper.LocalDB_Has(btnName, funcName)
+  local key = UIN39Helper._LocalDB_GetKey(btnName, funcName)
+  return LocalDB.HasKey(key)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39Helper.LocalDB_Get = function(btnName, funcName, value)
-  -- function num : 0_15 , upvalues : _ENV
-  if not value then
-    value = 1
-  end
-  local key = (UIN39Helper._LocalDB_GetKey)(btnName, funcName)
-  return (LocalDB.GetInt)(key, value)
+function UIN39Helper.LocalDB_Get(btnName, funcName, value)
+  value = value or 1
+  local key = UIN39Helper._LocalDB_GetKey(btnName, funcName)
+  return LocalDB.GetInt(key, value)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39Helper.LocalDB_Set = function(btnName, funcName, value)
-  -- function num : 0_16 , upvalues : _ENV
-  if not value then
-    value = 1
-  end
-  local key = (UIN39Helper._LocalDB_GetKey)(btnName, funcName)
-  ;
-  (LocalDB.SetInt)(key, value)
+function UIN39Helper.LocalDB_Set(btnName, funcName, value)
+  value = value or 1
+  local key = UIN39Helper._LocalDB_GetKey(btnName, funcName)
+  LocalDB.SetInt(key, value)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39Helper.LocalDB_Delete = function(btnName, funcName)
-  -- function num : 0_17 , upvalues : _ENV
-  local key = (UIN39Helper._LocalDB_GetKey)(btnName, funcName)
-  ;
-  (LocalDB.Delete)(key)
+function UIN39Helper.LocalDB_Delete(btnName, funcName)
+  local key = UIN39Helper._LocalDB_GetKey(btnName, funcName)
+  LocalDB.Delete(key)
 end
-
-

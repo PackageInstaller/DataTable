@@ -1,55 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s5/help/ui_s5_helper_banner_idx_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS5HelperBannerIdxItem", UICustomWidget)
 UIS5HelperBannerIdxItem = UIS5HelperBannerIdxItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS5HelperBannerIdxItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIS5HelperBannerIdxItem:OnShow()
   self._atlas = self:GetAsset("UIS5Main.spriteatlas", LoadType.SpriteAtlas)
   self._img = self:GetUIComponent("Image", "img")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5HelperBannerIdxItem.OnHide = function(self)
-  -- function num : 0_1
+function UIS5HelperBannerIdxItem:OnHide()
   self._idx = nil
   self._atlas = nil
   self._img = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5HelperBannerIdxItem.SetData = function(self, idx, currIdx)
-  -- function num : 0_2
+function UIS5HelperBannerIdxItem:SetData(idx, currIdx)
   self._idx = idx
   self:Flush(currIdx)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5HelperBannerIdxItem.Flush = function(self, currIdx)
-  -- function num : 0_3
+function UIS5HelperBannerIdxItem:Flush(currIdx)
   if not self._atlas then
-    return 
+    return
   end
   if not self._img then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
   if self._idx == currIdx then
-    (self._img).sprite = (self._atlas):GetSprite("exp_s5_help_di05")
+    self._img.sprite = self._atlas:GetSprite("exp_s5_help_di05")
   else
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._img).sprite = (self._atlas):GetSprite("exp_s5_help_di06")
+    self._img.sprite = self._atlas:GetSprite("exp_s5_help_di06")
   end
 end
-
-

@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sign_in/ui_sign_in_total_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISignInTotalItem", UICustomWidget)
 UISignInTotalItem = UISignInTotalItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISignInTotalItem.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UISignInTotalItem:OnShow(uiParam)
   self:GetComponents()
   self:AttachEvent(GameEventType.OnTotalAwardGot, self.OnGetTotalAward)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInTotalItem.SetData = function(self, data, currentTotalDay, normalCallback, getAwardCallback, yieldTime)
-  -- function num : 0_1
+function UISignInTotalItem:SetData(data, currentTotalDay, normalCallback, getAwardCallback, yieldTime)
   self._isActive = true
   self._data = data
   self._currentTotalDay = currentTotalDay
@@ -26,79 +16,42 @@ UISignInTotalItem.SetData = function(self, data, currentTotalDay, normalCallback
   self:PlayInAnim(yieldTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInTotalItem.OnHide = function(self)
-  -- function num : 0_2
+function UISignInTotalItem:OnHide()
   self._isActive = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInTotalItem.PlayInAnim = function(self, yieldTime)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
+function UISignInTotalItem:PlayInAnim(yieldTime)
   if yieldTime then
-    (self._alpha).alpha = 0
-    ;
-    ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_3_0 , upvalues : self
-    -- DECOMPILER ERROR at PC4: Confused about usage of register: R0 in 'UnsetPending'
-
-    if self._isActive then
-      (self._anim).enabled = false
-      -- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
-
-      ;
-      (self._anim).enabled = true
-      ;
-      (self._anim):Stop()
-      ;
-      (self._anim):Play("uieff_SignIn_UISignInTotalItem_in")
-    end
-  end
-)
+    self._alpha.alpha = 0
+    GameGlobal.Timer():AddEvent(yieldTime, function()
+      if self._isActive then
+        self._anim.enabled = false
+        self._anim.enabled = true
+        self._anim:Stop()
+        self._anim:Play("uieff_SignIn_UISignInTotalItem_in")
+      end
+    end)
   else
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._alpha).alpha = 1
+    self._alpha.alpha = 1
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInTotalItem.OnGetTotalAward = function(self, days, data)
-  -- function num : 0_4
-  if (self._data).DayCount == days then
+function UISignInTotalItem:OnGetTotalAward(days, data)
+  if self._data.DayCount == days then
     self._data = data
     self:_OnValue()
     self:PlayGetAnim()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInTotalItem.PlayGetAnim = function(self)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._anim).enabled = false
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._anim).enabled = true
-  ;
-  (self._anim):Stop()
-  ;
-  (self._anim):Play("uieff_SignIn_UISignInTotalItem_Get")
+function UISignInTotalItem:PlayGetAnim()
+  self._anim.enabled = false
+  self._anim.enabled = true
+  self._anim:Stop()
+  self._anim:Play("uieff_SignIn_UISignInTotalItem_Get")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInTotalItem.GetComponents = function(self)
-  -- function num : 0_6
+function UISignInTotalItem:GetComponents()
   self._awardPool = self:GetUIComponent("UISelectObjectPath", "awardPool")
   self._dayCount = self:GetUIComponent("UILocalizationText", "dayCount")
   self._got = self:GetGameObject("got")
@@ -108,50 +61,32 @@ UISignInTotalItem.GetComponents = function(self)
   self._alpha = self:GetUIComponent("CanvasGroup", "Root")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInTotalItem._OnValue = function(self)
-  -- function num : 0_7
-  local dayCount = (self._data).DayCount
-  ;
-  (self._dayCount):SetText(dayCount)
+function UISignInTotalItem:_OnValue()
+  local dayCount = self._data.DayCount
+  self._dayCount:SetText(dayCount)
   local getState = 0
-  if (self._data).Got then
+  if self._data.Got then
     getState = 3
+  elseif self._currentTotalDay < self._data.DayCount then
+    getState = 1
   else
-    if self._currentTotalDay < (self._data).DayCount then
-      getState = 1
-    else
-      getState = 2
-    end
+    getState = 2
   end
-  ;
-  (self._got):SetActive(getState == 3)
-  ;
-  (self._get):SetActive(getState == 2)
-  ;
-  (self._not_finish):SetActive(getState == 1)
-  local awards = (self._data).Items
-  ;
-  (self._awardPool):SpawnObjects("UISignInTotalAwardsItem", #awards)
-  local items = (self._awardPool):GetAllSpawnList()
+  self._got:SetActive(getState == 3)
+  self._get:SetActive(getState == 2)
+  self._not_finish:SetActive(getState == 1)
+  local awards = self._data.Items
+  self._awardPool:SpawnObjects("UISignInTotalAwardsItem", #awards)
+  local items = self._awardPool:GetAllSpawnList()
   for i = 1, #items do
-    (items[i]):SetData(i, awards[i], function(matid, pos)
-    -- function num : 0_7_0 , upvalues : self
-    (self._normalCallback)(matid, pos)
+    items[i]:SetData(i, awards[i], function(matid, pos)
+      self._normalCallback(matid, pos)
+    end, false)
   end
-, false)
-  end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInTotalItem.getOnClick = function(self, go)
-  -- function num : 0_8
+function UISignInTotalItem:getOnClick(go)
   if self._getAwardCallback then
-    (self._getAwardCallback)((self._data).DayCount)
+    self._getAwardCallback(self._data.DayCount)
   end
 end
-
-

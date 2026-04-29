@@ -1,61 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/3dui/season_ui_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonUIManager", Object)
 SeasonUIManager = SeasonUIManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonUIManager.Constructor = function(self)
-  -- function num : 0_0
+function SeasonUIManager:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIManager.OnInit = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonUIManager:OnInit()
   self._ui = SeasonUI:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIManager.Update = function(self, deltaTime)
-  -- function num : 0_2
-  (self._ui):Update(deltaTime)
+function SeasonUIManager:Update(deltaTime)
+  self._ui:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIManager.Dispose = function(self)
-  -- function num : 0_3
-  (self._ui):Dispose()
+function SeasonUIManager:Dispose()
+  self._ui:Dispose()
   self._ui = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIManager.Refresh = function(self)
-  -- function num : 0_4
+function SeasonUIManager:Refresh()
   if self._ui then
-    (self._ui):Refresh()
+    self._ui:Refresh()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIManager.SwitchDiff = function(self, diff)
-  -- function num : 0_5
+function SeasonUIManager:SwitchDiff(diff)
   if self._ui then
-    (self._ui):SwitchDiff(diff)
+    self._ui:SwitchDiff(diff)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIManager.UI = function(self)
-  -- function num : 0_6
+function SeasonUIManager:UI()
   return self._ui
 end
-
-

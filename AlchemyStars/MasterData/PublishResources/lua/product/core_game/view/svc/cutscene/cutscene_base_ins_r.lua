@@ -1,81 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/cutscene/cutscene_base_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CutsceneBaseInstruction", Object)
 CutsceneBaseInstruction = CutsceneBaseInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneBaseInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function CutsceneBaseInstruction:Constructor(params)
   self._label = params.label
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneBaseInstruction.GetInstructionType = function(self)
-  -- function num : 0_1
+function CutsceneBaseInstruction:GetInstructionType()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneBaseInstruction.GetInstructionLabel = function(self)
-  -- function num : 0_2
+function CutsceneBaseInstruction:GetInstructionLabel()
   return self._label
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneBaseInstruction.DoInstruction = function(self, TT, phaseContext)
-  -- function num : 0_3
+function CutsceneBaseInstruction:DoInstruction(TT, phaseContext)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneBaseInstruction.GetCacheResource = function(self)
-  -- function num : 0_4
+function CutsceneBaseInstruction:GetCacheResource()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneBaseInstruction.GetCacheAudio = function(self)
-  -- function num : 0_5
+function CutsceneBaseInstruction:GetCacheAudio()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneBaseInstruction.GetCacheVoice = function(self)
-  -- function num : 0_6
+function CutsceneBaseInstruction:GetCacheVoice()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneBaseInstruction.GetCutsceneID = function(self)
-  -- function num : 0_7
+function CutsceneBaseInstruction:GetCutsceneID()
   return 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneBaseInstruction.GetEffectResCacheInfo = function(self, effectID, count)
-  -- function num : 0_8 , upvalues : _ENV
-  if not count then
-    count = 1
-  end
+function CutsceneBaseInstruction:GetEffectResCacheInfo(effectID, count)
+  count = count or 1
   if not effectID then
     return nil
   end
-  if not (Cfg.cfg_effect)[effectID] then
-    (Log.exception)(self._className, "effectID not found: ", tostring(effectID))
+  if not Cfg.cfg_effect[effectID] then
+    Log.exception(self._className, "effectID not found: ", tostring(effectID))
     return nil
   end
-  local resPath = ((Cfg.cfg_effect)[effectID]).ResPath
-  if not (ResourceManager:GetInstance()):HasResource(resPath) then
-    (Log.exception)(self._className, "res not found: ", tostring(resPath))
+  local resPath = Cfg.cfg_effect[effectID].ResPath
+  if not ResourceManager:GetInstance():HasResource(resPath) then
+    Log.exception(self._className, "res not found: ", tostring(resPath))
     return nil
   end
   return {resPath, count}
 end
-
-

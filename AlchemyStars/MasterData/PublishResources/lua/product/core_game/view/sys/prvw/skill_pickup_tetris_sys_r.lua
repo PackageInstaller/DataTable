@@ -1,29 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/skill_pickup_tetris_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPickUpTetrisInstSystem_Render", ReactiveSystem)
 SkillPickUpTetrisInstSystem_Render = SkillPickUpTetrisInstSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPickUpTetrisInstSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillPickUpTetrisInstSystem_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpTetrisInstSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local c = Collector:New({world:GetGroup((world.BW_WEMatchers).PickUpTarget)}, {"Added"})
+function SkillPickUpTetrisInstSystem_Render:GetTrigger(world)
+  local c = Collector:New({
+    world:GetGroup(world.BW_WEMatchers.PickUpTarget)
+  }, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpTetrisInstSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPickUpTetrisInstSystem_Render:Filter(entity)
   local pickUpTargetCmpt = entity:PickUpTarget()
   local skillHandleType = pickUpTargetCmpt:GetPickUpTargetType()
   if skillHandleType == SkillPickUpType.PickUpAndTurnTetris then
@@ -32,86 +21,64 @@ SkillPickUpTetrisInstSystem_Render.Filter = function(self, entity)
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpTetrisInstSystem_Render.IsPosInvalid = function(self, pos)
-  -- function num : 0_3
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+function SkillPickUpTetrisInstSystem_Render:IsPosInvalid(pos)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpTetrisInstSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_4 , upvalues : _ENV
-  local previewActiveSkill = (self._world):GetService("PreviewActiveSkill")
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function SkillPickUpTetrisInstSystem_Render:ExecuteEntities(entities)
+  local previewActiveSkill = self._world:GetService("PreviewActiveSkill")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   local activeSkillID = pickUpTargetCmpt:GetCurActiveSkillID()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local petEntityId = utilDataSvc:GetEntityIDByPstID(pickUpTargetCmpt:GetPetPstid())
-  local petEntity = (self._world):GetEntityByID(petEntityId)
-  local configService = (self._world):GetService("Config")
+  local petEntity = self._world:GetEntityByID(petEntityId)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(activeSkillID, petEntity)
   local pickUpGridPos = pickUpTargetCmpt:GetCurPickUpGridPos()
   local petPstID = pickUpTargetCmpt:GetPetPstid()
   local validGridList = utilScopeSvc:BuildScopeGridList(skillConfigData._pickUpValidScopeList, petEntity)
-  local pickUpNum = tonumber((skillConfigData._pickUpParam)[1])
+  local pickUpNum = tonumber(skillConfigData._pickUpParam[1])
   if not petEntity:HasPreviewPickUpComponent() then
     petEntity:AddPreviewPickUpComponent()
   end
   local activeSkillPickUpComponent = petEntity:ActiveSkillPickUpComponent()
   local alreadyPickUpGrid = activeSkillPickUpComponent:GetAllValidPickUpGridPos()
-  local guideService = (self._world):GetService("Guide")
-  if guideService and guideService:IsValidGuidePiecePos(pickUpGridPos.x, pickUpGridPos.y) then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.FinishGuideStep, GuideType.Piece)
-  else
-    return 
-  end
-  if #alreadyPickUpGrid == 0 then
-    if (table.icontains)(validGridList, pickUpGridPos) then
-      local utilDataSvcL = (self._world):GetService("UtilData")
-      local newDirIndex = utilDataSvcL:GetFeatureTetrisDirIndex()
-      activeSkillPickUpComponent:SetTetrisDirIndex(newDirIndex)
-      ;
-      (Log.debug)("第一次点选，坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
-      activeSkillPickUpComponent:AddGridPos(pickUpGridPos)
-      utilScopeSvc:ChangeGameFSMState2PickUp()
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.RefreshPickUpNum, 0)
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.EnablePickUpSkillCast, true)
-      ;
-      ((GameGlobal.TaskManager)()):CoreGameStartTask(previewActiveSkill._DoPickUpInstruction, previewActiveSkill, PickUpInstructionType.Valid, skillConfigData, petEntity, pickUpGridPos)
+  local guideService = self._world:GetService("Guide")
+  if guideService then
+    if guideService:IsValidGuidePiecePos(pickUpGridPos.x, pickUpGridPos.y) then
+      self._world:EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.Piece)
     else
-      do
-        previewActiveSkill:PickUpInvalidGridCancelPreview(activeSkillID, pickUpTargetCmpt:GetPetPstid())
-        ;
-        (Log.debug)("本次点选无效，坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
-        if (table.Vector2Include)(alreadyPickUpGrid, pickUpGridPos) then
-          local utilCalcSvcL = (self._world):GetService("UtilCalc")
-          local newDirType, newDirIndex = utilCalcSvcL:TurnTetrisDir()
-          activeSkillPickUpComponent:SetTetrisDirIndex(newDirIndex)
-          ;
-          (Log.debug)("重复点选,旋转,坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
-          ;
-          ((GameGlobal.TaskManager)()):CoreGameStartTask(previewActiveSkill._DoPickUpInstruction, previewActiveSkill, PickUpInstructionType.Repeat, skillConfigData, petEntity, pickUpGridPos)
-        else
-          do
-            ;
-            (Log.debug)("点选其他格子，坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
-            activeSkillPickUpComponent:ClearGridPos()
-            ;
-            ((self._world):EventDispatcher()):Dispatch(GameEventType.RefreshPickUpNum, pickUpNum)
-            ;
-            ((self._world):EventDispatcher()):Dispatch(GameEventType.EnablePickUpSkillCast, false)
-            ;
-            ((GameGlobal.TaskManager)()):CoreGameStartTask(previewActiveSkill._DoPickUpInstruction, previewActiveSkill, PickUpInstructionType.Empty, skillConfigData, petEntity, pickUpGridPos)
-          end
-        end
-      end
+      return
     end
   end
+  if #alreadyPickUpGrid == 0 then
+    if table.icontains(validGridList, pickUpGridPos) then
+      local utilDataSvcL = self._world:GetService("UtilData")
+      local newDirIndex = utilDataSvcL:GetFeatureTetrisDirIndex()
+      activeSkillPickUpComponent:SetTetrisDirIndex(newDirIndex)
+      Log.debug("第一次点选，坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
+      activeSkillPickUpComponent:AddGridPos(pickUpGridPos)
+      utilScopeSvc:ChangeGameFSMState2PickUp()
+      self._world:EventDispatcher():Dispatch(GameEventType.RefreshPickUpNum, 0)
+      self._world:EventDispatcher():Dispatch(GameEventType.EnablePickUpSkillCast, true)
+      GameGlobal.TaskManager():CoreGameStartTask(previewActiveSkill._DoPickUpInstruction, previewActiveSkill, PickUpInstructionType.Valid, skillConfigData, petEntity, pickUpGridPos)
+    else
+      previewActiveSkill:PickUpInvalidGridCancelPreview(activeSkillID, pickUpTargetCmpt:GetPetPstid())
+      Log.debug("本次点选无效，坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
+    end
+  elseif table.Vector2Include(alreadyPickUpGrid, pickUpGridPos) then
+    local utilCalcSvcL = self._world:GetService("UtilCalc")
+    local newDirType, newDirIndex = utilCalcSvcL:TurnTetrisDir()
+    activeSkillPickUpComponent:SetTetrisDirIndex(newDirIndex)
+    Log.debug("重复点选,旋转,坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
+    GameGlobal.TaskManager():CoreGameStartTask(previewActiveSkill._DoPickUpInstruction, previewActiveSkill, PickUpInstructionType.Repeat, skillConfigData, petEntity, pickUpGridPos)
+  else
+    Log.debug("点选其他格子，坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
+    activeSkillPickUpComponent:ClearGridPos()
+    self._world:EventDispatcher():Dispatch(GameEventType.RefreshPickUpNum, pickUpNum)
+    self._world:EventDispatcher():Dispatch(GameEventType.EnablePickUpSkillCast, false)
+    GameGlobal.TaskManager():CoreGameStartTask(previewActiveSkill._DoPickUpInstruction, previewActiveSkill, PickUpInstructionType.Empty, skillConfigData, petEntity, pickUpGridPos)
+  end
 end
-
-

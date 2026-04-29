@@ -1,110 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/mark_grid_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MarkGridComponent", Object)
 MarkGridComponent = MarkGridComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MarkGridComponent.Constructor = function(self)
-  -- function num : 0_0
+function MarkGridComponent:Constructor()
   self.gridIndexMap = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkGridComponent.MarkGrid = function(self, index, series)
-  -- function num : 0_1 , upvalues : _ENV
-  if not series then
-    series = 1
+function MarkGridComponent:MarkGrid(index, series)
+  series = series or 1
+  if not self.gridIndexMap[series] then
+    self.gridIndexMap[series] = {}
   end
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self.gridIndexMap)[series] then
-    (self.gridIndexMap)[series] = {}
-  end
-  ;
-  (Log.info)(self._className, "Pos ", index, " marked. ")
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self.gridIndexMap)[series])[index] = true
+  Log.info(self._className, "Pos ", index, " marked. ")
+  self.gridIndexMap[series][index] = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkGridComponent.IsPosMarked = function(self, series, nPosIndex)
-  -- function num : 0_2
-  if not series then
-    series = 1
-  end
-  if not (self.gridIndexMap)[series] then
+function MarkGridComponent:IsPosMarked(series, nPosIndex)
+  series = series or 1
+  if not self.gridIndexMap[series] then
     return false
   end
-  return ((self.gridIndexMap)[series])[nPosIndex]
+  return self.gridIndexMap[series][nPosIndex]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkGridComponent.ClearMark = function(self, series)
-  -- function num : 0_3 , upvalues : _ENV
-  if not series then
-    series = 1
-  end
-  if not (self.gridIndexMap)[series] then
-    return 
+function MarkGridComponent:ClearMark(series)
+  series = series or 1
+  if not self.gridIndexMap[series] then
+    return
   end
   local result = {}
-  for _,index in ipairs((self.gridIndexMap)[series]) do
-    (table.insert)(result, (Vector2.Index2Pos)(index))
+  for _, index in ipairs(self.gridIndexMap[series]) do
+    table.insert(result, Vector2.Index2Pos(index))
   end
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.gridIndexMap)[series] = nil
+  self.gridIndexMap[series] = nil
   return result
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.MarkGridComponent = function(self)
-  -- function num : 0_4
-  return self:GetComponent((self.WEComponentsEnum).MarkGrid)
+function Entity:MarkGridComponent()
+  return self:GetComponent(self.WEComponentsEnum.MarkGrid)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasMarkGridComponent = function(self)
-  -- function num : 0_5
-  return self:HasComponent((self.WEComponentsEnum).MarkGrid)
+function Entity:HasMarkGridComponent()
+  return self:HasComponent(self.WEComponentsEnum.MarkGrid)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddMarkGridComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MarkGrid
+function Entity:AddMarkGridComponent()
+  local index = self.WEComponentsEnum.MarkGrid
   local component = MarkGridComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceMarkGridComponent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MarkGrid
+function Entity:ReplaceMarkGridComponent()
+  local index = self.WEComponentsEnum.MarkGrid
   local component = MarkGridComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveMarkGridComponent = function(self)
-  -- function num : 0_8
+function Entity:RemoveMarkGridComponent()
   if self:HasMarkGrid() then
-    self:RemoveComponent((self.WEComponentsEnum).MarkGrid)
+    self:RemoveComponent(self.WEComponentsEnum.MarkGrid)
   end
 end
-
-

@@ -1,82 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/lineTalent/ui_cn20_n49_line_talent_stage_sweep_condition.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49LineTalentStageSweepCondition", UICustomWidget)
 UICN20N49LineTalentStageSweepCondition = UICN20N49LineTalentStageSweepCondition
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49LineTalentStageSweepCondition.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN20N49LineTalentStageSweepCondition:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStageSweepCondition.InitWidget = function(self)
-  -- function num : 0_1
+function UICN20N49LineTalentStageSweepCondition:InitWidget()
   self._conditionsGo = self:GetGameObject("conditionGo")
   self._conditionNo = self:GetGameObject("conditionNo")
   self.conditionsPool = self:GetUIComponent("UISelectObjectPath", "conditions")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStageSweepCondition.SetData = function(self, missionID, cmpt)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN20N49LineTalentStageSweepCondition:SetData(missionID, cmpt)
   self._missionID = missionID
   self._cmpt = cmpt
-  local cmpInfo = (self._cmpt):GetComponentInfo()
-  self._missionFinishInfo = (cmpInfo.m_pass_mission_info)[missionID]
+  local cmpInfo = self._cmpt:GetComponentInfo()
+  self._missionFinishInfo = cmpInfo.m_pass_mission_info[missionID]
   self._module = self:GetModule(MissionModule)
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   self:Flush(missionCfg)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStageSweepCondition.Flush = function(self, missionCfg)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN20N49LineTalentStageSweepCondition:Flush(missionCfg)
   local sweepConditions = {}
   local ids = {0}
-  for i,v in ipairs(ids) do
+  for i, v in ipairs(ids) do
     local cond = StageCondition:New()
     cond.id = v
-    cond.content = (StringTable.Get)("str_cn20_line_talent_sweep_condition")
+    cond.content = StringTable.Get("str_cn20_line_talent_sweep_condition")
     local isPass = false
     if self._missionFinishInfo then
       isPass = true
     end
     cond:FlushSatisfy(isPass)
-    ;
-    (table.insert)(sweepConditions, cond)
+    table.insert(sweepConditions, cond)
   end
-  if #sweepConditions > 0 then
-    (self._conditionsGo):SetActive(true)
-    ;
-    (self._conditionNo):SetActive(false)
-    ;
-    (self.conditionsPool):SpawnObjects("UIConditionItem", #sweepConditions)
-    self._conditionWidgets = (self.conditionsPool):GetAllSpawnList()
-    for i,v in ipairs(self._conditionWidgets) do
+  if 0 < #sweepConditions then
+    self._conditionsGo:SetActive(true)
+    self._conditionNo:SetActive(false)
+    self.conditionsPool:SpawnObjects("UIConditionItem", #sweepConditions)
+    self._conditionWidgets = self.conditionsPool:GetAllSpawnList()
+    for i, v in ipairs(self._conditionWidgets) do
       v:Flush(sweepConditions[i], i)
     end
   else
-    do
-      ;
-      (self._conditionsGo):SetActive(false)
-      ;
-      (self._conditionNo):SetActive(true)
-    end
+    self._conditionsGo:SetActive(false)
+    self._conditionNo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStageSweepCondition.SweepTipsBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UICN20N49LineTalentStageSweepCondition:SweepTipsBtnOnClick(go)
   self:ShowDialog("UICN20N49SweepConditionTips")
 end
-
-

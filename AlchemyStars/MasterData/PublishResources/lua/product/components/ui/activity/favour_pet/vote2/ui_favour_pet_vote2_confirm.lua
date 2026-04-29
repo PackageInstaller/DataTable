@@ -1,63 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/favour_pet/vote2/ui_favour_pet_vote2_confirm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFavourPetVote2Confirm", UIController)
 UIFavourPetVote2Confirm = UIFavourPetVote2Confirm
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFavourPetVote2Confirm.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  if uiParams then
-    local component = uiParams[1]
-  end
-  if uiParams then
-    local voteId = uiParams[2]
-  end
-  if uiParams then
-    self._callback = uiParams[3]
-    local cfg = (UIFavourPetHelper.GetSkinInfo)(component, voteId)
-    if cfg then
-      local skinName = cfg.SkinName
-      ;
-      (UIWidgetHelper.SetLocalizationText)(self, "_name", (StringTable.Get)(skinName))
-    end
+function UIFavourPetVote2Confirm:OnShow(uiParams)
+  local component = uiParams and uiParams[1]
+  local voteId = uiParams and uiParams[2]
+  self._callback = uiParams and uiParams[3]
+  local cfg = UIFavourPetHelper.GetSkinInfo(component, voteId)
+  if cfg then
+    local skinName = cfg.SkinName
+    UIWidgetHelper.SetLocalizationText(self, "_name", StringTable.Get(skinName))
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2Confirm.OnHide = function(self)
-  -- function num : 0_1
+function UIFavourPetVote2Confirm:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2Confirm.ConfirmBtnOnClick = function(self)
-  -- function num : 0_2
+function UIFavourPetVote2Confirm:ConfirmBtnOnClick()
   self:_CloseDialogWithAnim(self._callback)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2Confirm.CancelBtnOnClick = function(self)
-  -- function num : 0_3
+function UIFavourPetVote2Confirm:CancelBtnOnClick()
   self:_CloseDialogWithAnim()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2Confirm._CloseDialogWithAnim = function(self, callback)
-  -- function num : 0_4 , upvalues : _ENV
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", "uianim_UIFavourPetVote2Confirm_out", 467, function()
-    -- function num : 0_4_0 , upvalues : callback, self
+function UIFavourPetVote2Confirm:_CloseDialogWithAnim(callback)
+  UIWidgetHelper.PlayAnimation(self, "_anim", "uianim_UIFavourPetVote2Confirm_out", 467, function()
     if callback then
       callback()
     end
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

@@ -1,18 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/UnityEngine/UMathf.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local math = math
+local math = _ENV.math
 local floor = math.floor
 local abs = math.abs
-local Mathf = Mathf
-Mathf.Deg2Rad = (math.rad)(1)
-Mathf.Epsilon = 1.4013e-45
+local Mathf = _ENV.Mathf
+Mathf.Deg2Rad = math.rad(1)
+Mathf.Epsilon = 1.4013E-45
 Mathf.Infinity = math.huge
 Mathf.NegativeInfinity = -math.huge
 Mathf.PI = math.pi
-Mathf.Rad2Deg = (math.deg)(1)
+Mathf.Rad2Deg = math.deg(1)
 Mathf.Abs = math.abs
 Mathf.Acos = math.acos
 Mathf.Asin = math.asin
@@ -33,65 +28,51 @@ Mathf.Tan = math.tan
 Mathf.Deg = math.deg
 Mathf.Rad = math.rad
 Mathf.Random = math.random
-Mathf.Approximately = function(a, b)
-  -- function num : 0_0 , upvalues : abs, math
-  do return abs(b - a) < (math.max)(1e-06 * (math.max)(abs(a), abs(b)), 1.121039e-44) end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+
+function Mathf.Approximately(a, b)
+  return abs(b - a) < math.max(1.0E-6 * math.max(abs(a), abs(b)), 1.121039E-44)
 end
 
-Mathf.Clamp = function(value, min, max)
-  -- function num : 0_1
+function Mathf.Clamp(value, min, max)
   if value < min then
     value = min
-  else
-    if max < value then
-      value = max
-    end
+  elseif max < value then
+    value = max
   end
   return value
 end
 
-Mathf.Clamp01 = function(value)
-  -- function num : 0_2
+function Mathf.Clamp01(value)
   if value < 0 then
     return 0
-  else
-    if value > 1 then
-      return 1
-    end
+  elseif 1 < value then
+    return 1
   end
   return value
 end
 
-Mathf.DeltaAngle = function(current, target)
-  -- function num : 0_3 , upvalues : Mathf
-  local num = (Mathf.Repeat)(target - current, 360)
-  if num > 180 then
+function Mathf.DeltaAngle(current, target)
+  local num = Mathf.Repeat(target - current, 360)
+  if 180 < num then
     num = num - 360
   end
   return num
 end
 
-Mathf.Gamma = function(value, absmax, gamma)
-  -- function num : 0_4 , upvalues : abs, math
+function Mathf.Gamma(value, absmax, gamma)
   local flag = false
   if value < 0 then
     flag = true
   end
   local num = abs(value)
   if absmax < num then
-    if flag or not num then
-      do return -num end
-      local num2 = (math.pow)(num / absmax, gamma) * absmax
-      if flag or not num2 then
-        return -num2
-      end
-    end
+    return not flag and num or -num
   end
+  local num2 = math.pow(num / absmax, gamma) * absmax
+  return not flag and num2 or -num2
 end
 
-Mathf.InverseLerp = function(from, to, value)
-  -- function num : 0_5
+function Mathf.InverseLerp(from, to, value)
   if from < to then
     if value < from then
       return 0
@@ -100,13 +81,13 @@ Mathf.InverseLerp = function(from, to, value)
       return 1
     end
     value = value - from
-    value = (value) / (to - from)
+    value = value / (to - from)
     return value
   end
   if from <= to then
     return 0
   end
-  if value < to then
+  if to > value then
     return 1
   end
   if from < value then
@@ -115,129 +96,100 @@ Mathf.InverseLerp = function(from, to, value)
   return 1 - (value - to) / (from - to)
 end
 
-Mathf.Lerp = function(from, to, t)
-  -- function num : 0_6 , upvalues : Mathf
-  return from + (to - from) * (Mathf.Clamp01)(t)
+function Mathf.Lerp(from, to, t)
+  return from + (to - from) * Mathf.Clamp01(t)
 end
 
-Mathf.LerpAngle = function(a, b, t)
-  -- function num : 0_7 , upvalues : Mathf
-  local num = (Mathf.Repeat)(b - a, 360)
-  if num > 180 then
+function Mathf.LerpAngle(a, b, t)
+  local num = Mathf.Repeat(b - a, 360)
+  if 180 < num then
     num = num - 360
   end
-  return a + (num) * (Mathf.Clamp01)(t)
+  return a + num * Mathf.Clamp01(t)
 end
 
-Mathf.LerpUnclamped = function(a, b, t)
-  -- function num : 0_8
+function Mathf.LerpUnclamped(a, b, t)
   return a + (b - a) * t
 end
 
-Mathf.MoveTowards = function(current, target, maxDelta)
-  -- function num : 0_9 , upvalues : abs, Mathf
-  if abs(target - current) <= maxDelta then
+function Mathf.MoveTowards(current, target, maxDelta)
+  if maxDelta >= abs(target - current) then
     return target
   end
-  return current + (Mathf.Sign)(target - current) * maxDelta
+  return current + Mathf.Sign(target - current) * maxDelta
 end
 
-Mathf.MoveTowardsAngle = function(current, target, maxDelta)
-  -- function num : 0_10 , upvalues : Mathf
-  target = current + (Mathf.DeltaAngle)(current, target)
-  return (Mathf.MoveTowards)(current, target, maxDelta)
+function Mathf.MoveTowardsAngle(current, target, maxDelta)
+  target = current + Mathf.DeltaAngle(current, target)
+  return Mathf.MoveTowards(current, target, maxDelta)
 end
 
-Mathf.PingPong = function(t, length)
-  -- function num : 0_11 , upvalues : Mathf, abs
-  t = (Mathf.Repeat)(t, length * 2)
+function Mathf.PingPong(t, length)
+  t = Mathf.Repeat(t, length * 2)
   return length - abs(t - length)
 end
 
-Mathf.Repeat = function(t, length)
-  -- function num : 0_12 , upvalues : floor
+function Mathf.Repeat(t, length)
   return t - floor(t / length) * length
 end
 
-Mathf.Round = function(num)
-  -- function num : 0_13 , upvalues : floor
+function Mathf.Round(num)
   return floor(num + 0.5)
 end
 
-Mathf.Sign = function(num)
-  -- function num : 0_14
-  if num > 0 then
+function Mathf.Sign(num)
+  if 0 < num then
     num = 1
+  elseif num < 0 then
+    num = -1
   else
-    if num < 0 then
-      num = -1
-    else
-      num = 0
-    end
+    num = 0
   end
   return num
 end
 
-Mathf.SmoothDamp = function(current, target, currentVelocity, smoothTime, maxSpeed, deltaTime)
-  -- function num : 0_15 , upvalues : Mathf, _ENV
-  if not maxSpeed then
-    maxSpeed = Mathf.Infinity
-  end
-  if not deltaTime then
-    deltaTime = Time.deltaTime
-  end
-  smoothTime = (Mathf.Max)(0.0001, smoothTime)
+function Mathf.SmoothDamp(current, target, currentVelocity, smoothTime, maxSpeed, deltaTime)
+  maxSpeed = maxSpeed or Mathf.Infinity
+  deltaTime = deltaTime or Time.deltaTime
+  smoothTime = Mathf.Max(1.0E-4, smoothTime)
   local num = 2 / smoothTime
   local num2 = num * deltaTime
   local num3 = 1 / (1 + num2 + 0.48 * num2 * num2 + 0.235 * num2 * num2 * num2)
   local num4 = current - target
   local num5 = target
   local max = maxSpeed * smoothTime
-  num4 = (Mathf.Clamp)(num4, -max, max)
+  num4 = Mathf.Clamp(num4, -max, max)
   target = current - num4
   local num7 = (currentVelocity + num * num4) * deltaTime
   currentVelocity = (currentVelocity - num * num7) * num3
   local num8 = target + (num4 + num7) * num3
-  if current < num5 == num5 < num8 then
+  if current < num5 == (num5 < num8) then
     num8 = num5
     currentVelocity = (num8 - num5) / deltaTime
   end
-  do return num8, currentVelocity end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return num8, currentVelocity
 end
 
-Mathf.SmoothDampAngle = function(current, target, currentVelocity, smoothTime, maxSpeed, deltaTime)
-  -- function num : 0_16 , upvalues : _ENV, Mathf
-  if not deltaTime then
-    deltaTime = Time.deltaTime
-  end
-  if not maxSpeed then
-    maxSpeed = Mathf.Infinity
-  end
-  target = current + (Mathf.DeltaAngle)(current, target)
-  return (Mathf.SmoothDamp)(current, target, currentVelocity, smoothTime, maxSpeed, deltaTime)
+function Mathf.SmoothDampAngle(current, target, currentVelocity, smoothTime, maxSpeed, deltaTime)
+  deltaTime = deltaTime or Time.deltaTime
+  maxSpeed = maxSpeed or Mathf.Infinity
+  target = current + Mathf.DeltaAngle(current, target)
+  return Mathf.SmoothDamp(current, target, currentVelocity, smoothTime, maxSpeed, deltaTime)
 end
 
-Mathf.SmoothStep = function(from, to, t)
-  -- function num : 0_17 , upvalues : Mathf
-  t = (Mathf.Clamp01)(t)
+function Mathf.SmoothStep(from, to, t)
+  t = Mathf.Clamp01(t)
   t = -2 * t * t * t + 3 * t * t
-  return to * (t) + from * (1 - (t))
+  return to * t + from * (1 - t)
 end
 
-Mathf.HorizontalAngle = function(dir)
-  -- function num : 0_18 , upvalues : math
-  return (math.deg)((math.atan2)(dir.x, dir.z))
+function Mathf.HorizontalAngle(dir)
+  return math.deg(math.atan2(dir.x, dir.z))
 end
 
-Mathf.IsNan = function(number)
-  -- function num : 0_19
-  do return number ~= number end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function Mathf.IsNan(number)
+  return number ~= number
 end
-
--- DECOMPILER ERROR at PC101: Confused about usage of register: R4 in 'UnsetPending'
 
 UnityEngine.Mathf = Mathf
 return Mathf
-

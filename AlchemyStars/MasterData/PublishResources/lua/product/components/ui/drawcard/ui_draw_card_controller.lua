@@ -1,102 +1,89 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardController", UIController)
 UIDrawCardController = UIDrawCardController
-local ClientPrizePoolType = {SubType_Hand = 1, SubType_UP = 2, SubType_Turn = 3, SubType_Always = 4}
+local ClientPrizePoolType = {
+  SubType_Hand = 1,
+  SubType_UP = 2,
+  SubType_Turn = 3,
+  SubType_Always = 4
+}
 _enum("ClientPrizePoolType", ClientPrizePoolType)
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
 
-UIDrawCardController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDrawCardController:LoadDataOnEnter(TT, res, uiParams)
   local module = self:GetModule(GambleModule)
   local ack = module:ApplyAllPoolInfo(TT)
   if ack:GetSucc() then
     res:SetSucc(true)
-    ;
-    (Log.notice)("[DrawCard] get draw card data success, open ui")
+    Log.notice("[DrawCard] get draw card data success, open ui")
   else
     res:SetSucc(false)
-    ;
-    (Log.notice)("[DrawCard] promotion time up, refresh pools failed")
-    ;
-    (ToastManager.ShowToast)(module:GetReasonByErrorCode(ack:GetResult()))
+    Log.notice("[DrawCard] promotion time up, refresh pools failed")
+    ToastManager.ShowToast(module:GetReasonByErrorCode(ack:GetResult()))
   end
   local shopModule = self:GetModule(ShopModule)
   shopModule:RequestGlowMarket(TT)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV, ClientPrizePoolType
+function UIDrawCardController:OnShow(uiParams)
   self.isSceneLoaded = false
   self._sceneLoadingTask = self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, self
-    if (UIHelper.GetActiveSceneName)() ~= "Ckt_01_new" then
-      self.preLoadScene = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, "Ckt_01_new.unity", LoadType.Unity)
+    if UIHelper.GetActiveSceneName() ~= "Ckt_01_new" then
+      self.preLoadScene = ResourceManager:GetInstance():AsyncLoadAsset(TT, "Ckt_01_new.unity", LoadType.Unity)
     end
-    local camera = (UnityEngine.Camera).main
-    if camera and not ((GameGlobal.UIStateManager)()):IsShow("UIDrawCardAnimController") then
-      (camera.gameObject):SetActive(false)
+    local camera = UnityEngine.Camera.main
+    if camera and not GameGlobal.UIStateManager():IsShow("UIDrawCardAnimController") then
+      camera.gameObject:SetActive(false)
     end
     self.isSceneLoaded = true
-  end
-)
-  ;
-  (AudioHelperController.RequestUISoundList)({CriAudioIDConst.DrawCard_tuijingtou, CriAudioIDConst.DrawCard_lagan_new, CriAudioIDConst.Drawcard_lagan_eft_3, CriAudioIDConst.Drawcard_lagan_eft_4, CriAudioIDConst.Drawcard_lagan_eft_5, CriAudioIDConst.Drawcard_lagan_eft_6, CriAudioIDConst.Drawcard_light_one, CriAudioIDConst.Drawcard_light_more, CriAudioIDConst.Drawcard_light_one, CriAudioIDConst.Drawcard_mul_show, CriAudioIDConst.Drawcard_lagan_once})
+  end)
+  AudioHelperController.RequestUISoundList({
+    CriAudioIDConst.DrawCard_tuijingtou,
+    CriAudioIDConst.DrawCard_lagan_new,
+    CriAudioIDConst.Drawcard_lagan_eft_3,
+    CriAudioIDConst.Drawcard_lagan_eft_4,
+    CriAudioIDConst.Drawcard_lagan_eft_5,
+    CriAudioIDConst.Drawcard_lagan_eft_6,
+    CriAudioIDConst.Drawcard_light_one,
+    CriAudioIDConst.Drawcard_light_more,
+    CriAudioIDConst.Drawcard_light_one,
+    CriAudioIDConst.Drawcard_mul_show,
+    CriAudioIDConst.Drawcard_lagan_once
+  })
   self._openID = nil
   if uiParams[1] then
     self._openID = uiParams[1]
   end
-  local module = (GameGlobal.GetModule)(GambleModule)
+  local module = GameGlobal.GetModule(GambleModule)
   module:InitContext(self.sceneResReq)
-  self._lastBGMResName = (AudioHelperController.GetCurrentBgm)()
+  self._lastBGMResName = AudioHelperController.GetCurrentBgm()
   local sop = self:GetUIComponent("UISelectObjectPath", "currencyMenu")
   self.currencyMenu = sop:SpawnObject("UICurrencyMenu")
   self.specailCurrency = self:GetUIComponent("UISelectObjectPath", "specailCurrency")
   local topButton = self:GetUIComponent("UISelectObjectPath", "TopButtons")
   self.topButtonWidget = topButton:SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_1_1 , upvalues : _ENV, self
-    if ((GameGlobal.UIStateManager)()):CurUIStateType() ~= UIStateType.UIDrawCard then
+  self.topButtonWidget:SetData(function()
+    if GameGlobal.UIStateManager():CurUIStateType() ~= UIStateType.UIDrawCard then
       self:CloseDialog()
     else
-      ;
-      ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
+      GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
     end
-  end
-, function()
-    -- function num : 0_1_2 , upvalues : self, _ENV, ClientPrizePoolType
-    local poolData = ((self._poolsUIData)[self.currentIdx]).poolData
-    local poolCfg = (Cfg.cfg_drawcard_pool_view)[poolData.performance_id]
+  end, function()
+    local poolData = self._poolsUIData[self.currentIdx].poolData
+    local poolCfg = Cfg.cfg_drawcard_pool_view[poolData.performance_id]
     local openidx = 1
-    do
-      if poolCfg then
-        local subType = poolCfg.Subtype
-        if subType == ClientPrizePoolType.SubType_Hand then
-          openidx = 1
-        else
-          if subType == ClientPrizePoolType.SubType_UP then
-            openidx = 2
-          else
-            if subType == ClientPrizePoolType.SubType_Turn then
-              openidx = 3
-            else
-              if subType == ClientPrizePoolType.SubType_Always then
-                openidx = 4
-              end
-            end
-          end
-        end
+    if poolCfg then
+      local subType = poolCfg.Subtype
+      if subType == ClientPrizePoolType.SubType_Hand then
+        openidx = 1
+      elseif subType == ClientPrizePoolType.SubType_UP then
+        openidx = 2
+      elseif subType == ClientPrizePoolType.SubType_Turn then
+        openidx = 3
+      elseif subType == ClientPrizePoolType.SubType_Always then
+        openidx = 4
       end
-      self:ShowDialog("UIHelpController", "UIDrawCardController", openidx)
     end
-  end
-)
+    self:ShowDialog("UIHelpController", "UIDrawCardController", openidx)
+  end)
   self._diamondId = RoleAssetID.RoleAssetGlow
   self._gambleModule = self:GetModule(GambleModule)
   self._roleModule = self:GetModule(RoleModule)
@@ -107,22 +94,19 @@ UIDrawCardController.OnShow = function(self, uiParams)
   self:_RefreshUI()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController._RefreshUI = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDrawCardController:_RefreshUI()
   self.currentIdx = -1
-  self._awardPools = (self._gambleModule):GetPrizePools()
+  self._awardPools = self._gambleModule:GetPrizePools()
   self.awardPoolCount = #self._awardPools
   if self.awardPoolCount == 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_toast_manager_there_is_no_open_prize_pool"))
+    ToastManager.ShowToast(StringTable.Get("str_toast_manager_there_is_no_open_prize_pool"))
     self:CloseDialog()
-    return 
+    return
   end
-  self.isDrawCard = ((self._gambleModule):Context()):GetStateDrawCard()
-  self.isHaveMaxStar = ((self._gambleModule):Context()):GetHaveMaxStarPet()
-  self.drawCardPoolIndex = ((self._gambleModule):Context()):GetDefaultPoolIndex()
-  self.maxStar = ((self._gambleModule):Context()):GetMaxStarPetId()
+  self.isDrawCard = self._gambleModule:Context():GetStateDrawCard()
+  self.isHaveMaxStar = self._gambleModule:Context():GetHaveMaxStarPet()
+  self.drawCardPoolIndex = self._gambleModule:Context():GetDefaultPoolIndex()
+  self.maxStar, self.maxStarId = self._gambleModule:Context():GetMaxStarPetId()
   self:GuideAppraise()
   self:InitData()
   self:InitWidgets()
@@ -131,616 +115,445 @@ UIDrawCardController._RefreshUI = function(self)
   self:InitUIDrawCardPoolItem()
   self:UpdateDrawCardRed()
   if #self._awardPools == 1 then
-    (self:GetGameObject("indexs")):SetActive(false)
-    ;
-    (self.lastPoolBtn):SetActive(false)
-    ;
-    (self.nextPoolBtn):SetActive(false)
-    ;
-    (self._leftRed):SetActive(false)
-    ;
-    (self._rightRed):SetActive(false)
+    self:GetGameObject("indexs"):SetActive(false)
+    self.lastPoolBtn:SetActive(false)
+    self.nextPoolBtn:SetActive(false)
+    self._leftRed:SetActive(false)
+    self._rightRed:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController._WaitForRecuitSceneLoadFinish = function(self, callback)
-  -- function num : 0_3 , upvalues : _ENV
+function UIDrawCardController:_WaitForRecuitSceneLoadFinish(callback)
   if not self.isSceneLoaded then
     self:Lock("UIDrawCardController_WaitForRecuitSceneLoadFinish")
     self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, _ENV, callback
-    while not self.isSceneLoaded do
-      YIELD(TT)
-    end
-    self:UnLock("UIDrawCardController_WaitForRecuitSceneLoadFinish")
-    if callback then
-      callback()
-    end
-  end
-)
-  else
-    if callback then
-      callback()
-    end
+      while not self.isSceneLoaded do
+        YIELD(TT)
+      end
+      self:UnLock("UIDrawCardController_WaitForRecuitSceneLoadFinish")
+      if callback then
+        callback()
+      end
+    end)
+  elseif callback then
+    callback()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.InitWidgets = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIDrawCardController:InitWidgets()
   self.lastPoolBtn = self:GetGameObject("ButtonLastPool")
   self.nextPoolBtn = self:GetGameObject("ButtonNextPool")
   self._leftRed = self:GetGameObject("leftRed")
   self._rightRed = self:GetGameObject("rightRed")
   local atlas = self:GetAsset("UIDrawCard.spriteatlas", LoadType.SpriteAtlas)
-  self.indexIcons = {Current = atlas:GetSprite("obtain_xinshou_icon4"), Normal = atlas:GetSprite("obtain_xinshou_icon3")}
+  self.indexIcons = {
+    Current = atlas:GetSprite("obtain_xinshou_icon4"),
+    Normal = atlas:GetSprite("obtain_xinshou_icon3")
+  }
   self._videoWidget = self:GetGameObject("VideoWidget")
   self._uiLayout = self:GetUIComponent("RectTransform", "uiLayout")
   self._uiWish = self:GetUIComponent("RectTransform", "uiWish")
   self._uiWishRed = self:GetChildComponent(self._uiWish, "RectTransform", "red")
-  self._videoCanvasGroups = ((self._videoWidget).gameObject):AddComponent(typeof(UnityEngine.CanvasGroup))
+  self._videoCanvasGroups = self._videoWidget.gameObject:AddComponent(typeof(UnityEngine.CanvasGroup))
   self._blackMask = self:GetGameObject("BlackMask")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.InitData = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIDrawCardController:InitData()
   self._poolsUIData = {}
-  for idx,pool in ipairs(self._awardPools) do
+  for idx, pool in ipairs(self._awardPools) do
     local uiData = UIDrawCardPoolInfo:New(pool, idx)
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._poolsUIData)[idx] = uiData
+    self._poolsUIData[idx] = uiData
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.InitUIDrawCardPoolItem = function(self)
-  -- function num : 0_6
+function UIDrawCardController:InitUIDrawCardPoolItem()
   local cardPool = self:GetUIComponent("UISelectObjectPath", "cardPool")
   cardPool:ClearWidgets()
   self._widgetCardPool = cardPool:SpawnObject("UIDrawCardPoolItem")
-  ;
-  (self._widgetCardPool):Init(self._poolsUIData, self, self._openID)
+  self._widgetCardPool:Init(self._poolsUIData, self, self._openID)
   self._openID = nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.OnHide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIDrawCardController:OnHide()
   if self.promotionTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self.promotionTimer)
+    GameGlobal.Timer():CancelEvent(self.promotionTimer)
     self.promotionTimer = nil
   end
-  ;
-  (AudioHelperController.PlayBGM)(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
+  AudioHelperController.PlayBGM(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
   if not self.dontSwitchScene then
     self:Lock("UIDrawCardController_OnHide")
     self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV
-    while not self.isSceneLoaded do
-      YIELD(TT)
-    end
-    ;
-    (ResourceManager:GetInstance()):AsyncLoadAsset(TT, "UI.unity", LoadType.Unity)
-    ;
-    (self.preLoadScene):Dispose()
-    self:UnLock("UIDrawCardController_OnHide")
-  end
-)
+      while not self.isSceneLoaded do
+        YIELD(TT)
+      end
+      ResourceManager:GetInstance():AsyncLoadAsset(TT, "UI.unity", LoadType.Unity)
+      self.preLoadScene:Dispose()
+      self:UnLock("UIDrawCardController_OnHide")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.InitScrollView = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIDrawCardController:InitScrollView()
   self.idxLoader = self:GetUIComponent("UISelectObjectPath", "indexs")
-  ;
-  (self.idxLoader):SpawnObjects("UIEmptyWidget", self.awardPoolCount)
-  local pool = (self.idxLoader):GetAllSpawnList()
+  self.idxLoader:SpawnObjects("UIEmptyWidget", self.awardPoolCount)
+  local pool = self.idxLoader:GetAllSpawnList()
   self.indexsImages = {}
   for i = 1, self.awardPoolCount do
-    local item = (pool[i]):GetGameObject()
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.indexsImages)[i] = item:GetComponent(typeof((UnityEngine.UI).Image))
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (((self.indexsImages)[i]).rectTransform).sizeDelta = Vector2(38, 39)
+    local item = pool[i]:GetGameObject()
+    self.indexsImages[i] = item:GetComponent(typeof(UnityEngine.UI.Image))
+    self.indexsImages[i].rectTransform.sizeDelta = Vector2(38, 39)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.ShowAwardPool = function(self, idx, isInit)
-  -- function num : 0_9 , upvalues : _ENV
-  if idx < 0 or self.awardPoolCount < idx then
-    (Log.fatal)("[DrawCard] award pool index error:", idx)
-    return 
+function UIDrawCardController:ShowAwardPool(idx, isInit)
+  if idx < 0 or idx > self.awardPoolCount then
+    Log.fatal("[DrawCard] award pool index error:", idx)
+    return
   end
   if self.currentIdx == idx then
-    return 
+    return
   end
-  if self.currentIdx > 0 then
-    self.currentIdx = idx
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
-    if isInit then
-      (((self.indexsImages)[self.currentIdx]).rectTransform).sizeDelta = Vector2(73, 39)
-    end
-    ;
-    (self.lastPoolBtn):SetActive(self.currentIdx ~= 1)
-    ;
-    (self.nextPoolBtn):SetActive(self.currentIdx ~= self.awardPoolCount)
-    self:OtherPoolsRed()
-    self:RefreshItemInfo()
-    self:_RefreshPetWish((self._poolsUIData)[self.currentIdx])
-    if not self._isPvPlaying then
-      self:_CheckGuide()
-    end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  if 0 < self.currentIdx then
+  end
+  self.currentIdx = idx
+  if isInit then
+    self.indexsImages[self.currentIdx].rectTransform.sizeDelta = Vector2(73, 39)
+  end
+  self.lastPoolBtn:SetActive(self.currentIdx ~= 1)
+  self.nextPoolBtn:SetActive(self.currentIdx ~= self.awardPoolCount)
+  self:OtherPoolsRed()
+  self:RefreshItemInfo()
+  self:_RefreshPetWish(self._poolsUIData[self.currentIdx])
+  if not self._isPvPlaying then
+    self:_CheckGuide()
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.OtherPoolsRed = function(self)
-  -- function num : 0_10
+function UIDrawCardController:OtherPoolsRed()
   local leftRed = false
   local rightRed = false
   for i = 1, #self._awardPools do
-    local pool = (self._poolsUIData)[i]
+    local pool = self._poolsUIData[i]
     if not leftRed and i < self.currentIdx and pool:HasFreeDraw() then
       leftRed = true
     end
-    if not rightRed and self.currentIdx < i and pool:HasFreeDraw() then
+    if not rightRed and i > self.currentIdx and pool:HasFreeDraw() then
       rightRed = true
     end
   end
-  ;
-  (self._leftRed):SetActive(leftRed)
-  ;
-  (self._rightRed):SetActive(rightRed)
+  self._leftRed:SetActive(leftRed)
+  self._rightRed:SetActive(rightRed)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.RefreshItemInfo = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local tips = ((self._poolsUIData)[self.currentIdx]):GetTopTips()
-  if #tips > 2 then
+function UIDrawCardController:RefreshItemInfo()
+  local tips = self._poolsUIData[self.currentIdx]:GetTopTips()
+  if 2 < #tips then
     local normal = {}
     local specail = {}
-    for idx,id in ipairs(tips) do
+    for idx, id in ipairs(tips) do
       if idx <= #tips - 2 then
         specail[#specail + 1] = id
       else
         normal[#normal + 1] = id
       end
     end
-    ;
-    (self.currencyMenu):SetData(normal)
-    local items = (self.specailCurrency):SpawnObjects("UICurrencyItem", #specail)
+    self.currencyMenu:SetData(normal)
+    local items = self.specailCurrency:SpawnObjects("UICurrencyItem", #specail)
     for i = 1, #specail do
-      (items[i]):SetAsShortForm(true)
-      ;
-      (items[i]):SetData(specail[i], function(id, go)
-    -- function num : 0_11_0 , upvalues : self
-    ((self.currencyMenu)._topTipsInfo):SetData(id, go)
-  end
-, true)
+      items[i]:SetAsShortForm(true)
+      items[i]:SetData(specail[i], function(id, go)
+        self.currencyMenu._topTipsInfo:SetData(id, go)
+      end, true)
     end
   else
-    do
-      ;
-      (self.currencyMenu):SetData(tips)
-      ;
-      (self.specailCurrency):SpawnObjects("UICurrencyItem", 0)
-      local viewID = ((self._awardPools)[self.currentIdx]).performance_id
-      local cfg = (Cfg.cfg_drawcard_pool_view)[viewID]
-      if cfg and cfg.bgmID then
-        (AudioHelperController.PlayBGM)(cfg.bgmID, AudioConstValue.BGMCrossFadeTime)
-      else
-        ;
-        (AudioHelperController.PlayBGM)(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
-      end
-      local poolInfo = (self._poolsUIData)[self.currentIdx]
-      self:_ShowPVBtn(poolInfo)
-    end
+    self.currencyMenu:SetData(tips)
+    self.specailCurrency:SpawnObjects("UICurrencyItem", 0)
   end
+  local viewID = self._awardPools[self.currentIdx].performance_id
+  local cfg = Cfg.cfg_drawcard_pool_view[viewID]
+  if cfg and cfg.bgmID then
+    AudioHelperController.PlayBGM(cfg.bgmID, AudioConstValue.BGMCrossFadeTime)
+  else
+    AudioHelperController.PlayBGM(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
+  end
+  local poolInfo = self._poolsUIData[self.currentIdx]
+  self:_ShowPVBtn(poolInfo)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.CfgItem = function(self, id)
-  -- function num : 0_12 , upvalues : _ENV
+function UIDrawCardController:CfgItem(id)
   if not self._cfg_item then
-    self._cfg_item = (Cfg.cfg_item)({})
+    self._cfg_item = Cfg.cfg_item({})
   end
-  local cfg_item = (self._cfg_item)[id]
+  local cfg_item = self._cfg_item[id]
   if not cfg_item then
-    (Log.error)("###[UIDrawCardController] cfg_item is nil ! id --> ", id)
+    Log.error("###[UIDrawCardController] cfg_item is nil ! id --> ", id)
   end
   return cfg_item
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.HandlePromotionPool = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIDrawCardController:HandlePromotionPool()
   local now = GetSvrTimeNow()
   local time = 86400
-  for _,pool in ipairs(self._poolsUIData) do
+  for _, pool in ipairs(self._poolsUIData) do
     local refreshTime = pool:GetRefreshTime()
     if refreshTime then
       local deltaTime = refreshTime - now
-      if deltaTime > 0 and deltaTime < time then
+      if 0 < deltaTime and time > deltaTime then
         time = deltaTime
       end
     end
   end
   if time < 86400 then
     if self.promotionTimer then
-      ((GameGlobal.Timer)()):CancelEvent(self.promotionTimer)
+      GameGlobal.Timer():CancelEvent(self.promotionTimer)
     end
-    self.promotionTimer = ((GameGlobal.Timer)()):AddEvent(time * 1000, function()
-    -- function num : 0_13_0 , upvalues : self
-    self.promotionTimer = nil
-    self:ReLoadDataAndRefresh()
-  end
-)
+    self.promotionTimer = GameGlobal.Timer():AddEvent(time * 1000, function()
+      self.promotionTimer = nil
+      self:ReLoadDataAndRefresh()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.ReLoadDataAndRefresh = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIDrawCardController:ReLoadDataAndRefresh()
   self:Lock("UIDrawCardController_ReLoadDataAndRefresh")
   self:StartTask(function(TT)
-    -- function num : 0_14_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
     self:LoadDataOnEnter(TT, res)
     self:_RefreshUI()
     self:UnLock("UIDrawCardController_ReLoadDataAndRefresh")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.ButtonAddDiamondOnClick = function(self)
-  -- function num : 0_15
-  self:JumpToGetway(((self._awardPools)[self.currentIdx]).cost2_id)
+function UIDrawCardController:ButtonAddDiamondOnClick()
+  self:JumpToGetway(self._awardPools[self.currentIdx].cost2_id)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.JumpToGetway = function(self, _id, _notEnough)
-  -- function num : 0_16 , upvalues : _ENV
+function UIDrawCardController:JumpToGetway(_id, _notEnough)
   if _id == self._diamondId then
-    (ToastManager.ShowToast)((StringTable.Get)("str_toast_manager_no_recharge_interface"))
+    ToastManager.ShowToast(StringTable.Get("str_toast_manager_no_recharge_interface"))
+  elseif _notEnough then
   else
-  end
-  if _notEnough then
     self:ShowDialog("UIItemGetPathController", _id)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.ButtonLastPoolOnClick = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIDrawCardController:ButtonLastPoolOnClick()
   if self.currentIdx == 1 then
-    (Log.error)("[DrawCard] first page, cant change")
-    return 
+    Log.error("[DrawCard] first page, cant change")
+    return
   end
-  ;
-  (self._widgetCardPool):ButtonLastPoolOnClick()
+  self._widgetCardPool:ButtonLastPoolOnClick()
   if self._videoWidget then
-    ((self._videoWidget).gameObject):SetActive(false)
+    self._videoWidget.gameObject:SetActive(false)
   end
   if self._uiLayout then
-    ((self._uiLayout).gameObject):SetActive(false)
+    self._uiLayout.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.ButtonNextPoolOnClick = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIDrawCardController:ButtonNextPoolOnClick()
   if self.currentIdx == self.awardPoolCount then
-    (Log.error)("[DrawCard] last page, cant change")
-    return 
+    Log.error("[DrawCard] last page, cant change")
+    return
   end
-  ;
-  (self._widgetCardPool):ButtonNextPoolOnClick()
+  self._widgetCardPool:ButtonNextPoolOnClick()
   if self._videoWidget then
-    ((self._videoWidget).gameObject):SetActive(false)
+    self._videoWidget.gameObject:SetActive(false)
   end
   if self._uiLayout then
-    ((self._uiLayout).gameObject):SetActive(false)
+    self._uiLayout.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.HideVideoAndHeart = function(self)
-  -- function num : 0_19
+function UIDrawCardController:HideVideoAndHeart()
   if self._videoWidget then
-    ((self._videoWidget).gameObject):SetActive(false)
+    self._videoWidget.gameObject:SetActive(false)
   end
   if self._uiLayout then
-    ((self._uiLayout).gameObject):SetActive(false)
+    self._uiLayout.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.id1IconOnClick = function(self, go)
-  -- function num : 0_20
-  (self._toptipsInfo):SetData(((self._awardPools)[self.currentIdx]).cost1_id, go)
+function UIDrawCardController:id1IconOnClick(go)
+  self._toptipsInfo:SetData(self._awardPools[self.currentIdx].cost1_id, go)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.id2IconOnClick = function(self, go)
-  -- function num : 0_21
-  (self._toptipsInfo):SetData(((self._awardPools)[self.currentIdx]).cost2_id, go)
+function UIDrawCardController:id2IconOnClick(go)
+  self._toptipsInfo:SetData(self._awardPools[self.currentIdx].cost2_id, go)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.GetOneBtn = function(self, index)
-  -- function num : 0_22
-  if self._widgetCardPool then
-    return (self._widgetCardPool):GetGameObject("SingleDrawButton")
-  end
+function UIDrawCardController:GetOneBtn(index)
+  return self._widgetCardPool and self._widgetCardPool:GetGameObject("SingleDrawButton")
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.GetTopButtonBack = function(self)
-  -- function num : 0_23
-  if self.topButtonWidget then
-    return (self.topButtonWidget):GetGameObject("ButtonBack")
-  end
+function UIDrawCardController:GetTopButtonBack()
+  return self.topButtonWidget and self.topButtonWidget:GetGameObject("ButtonBack")
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_24
-  (self._widgetCardPool):OnUpdate(deltaTimeMS)
+function UIDrawCardController:OnUpdate(deltaTimeMS)
+  self._widgetCardPool:OnUpdate(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.GuideAppraise = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIDrawCardController:GuideAppraise()
   if self.isDrawCard then
-    local idx, type = ((self._gambleModule):Context()):GetPoolIDAndType()
+    local idx, type = self._gambleModule:Context():GetPoolIDAndType()
     local maxStar = self.maxStar
     local maxStarId = self.maxStarId
     local isHaveMaxStar = self.isHaveMaxStar
     if maxStar < 6 then
-      return 
+      return
     end
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
+    local roleModule = GameGlobal.GetModule(RoleModule)
     local pstId = roleModule:GetPstId()
     local dbKey = pstId .. "GuideAppTime"
     local dbResultKey = pstId .. "GuideAppResult"
     local timeState = true
     self._svrTimeModule = self:GetModule(SvrTimeModule)
-    local lastTime = (LocalDB.GetInt)(dbKey)
-    local lastResult = (LocalDB.GetInt)(dbResultKey)
-    local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+    local lastTime = LocalDB.GetInt(dbKey)
+    local lastResult = LocalDB.GetInt(dbResultKey)
+    local nowTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
     local dif = nowTime - lastTime
-    if dif < 31536000 then
-      timeState = lastResult ~= 1
-      if dif < 2592000 then
-        timeState = lastResult ~= -1
-        if lastResult == 0 then
-          if lastTime == 0 then
-            timeState = true
-          else
-            timeState = dif >= 2592000
-          end
-        end
-        local coverState = false
-        do
-          local cfg = (Cfg.cfg_drawcard_pool_view)[idx]
-          if cfg == nil then
-            (Log.fatal)("###error -- drawcard - cfg_drawcard_pool_view is nil ! key --> ", idx)
-            return 
-          end
-          for index,value in pairs(cfg.PetList) do
-            if value == maxStarId then
-              coverState = true
-            end
-          end
-          -- DECOMPILER ERROR at PC105: Unhandled construct in 'MakeBoolean' P1
-
-          if isHaveMaxStar and type == PrizePoolType.PROMOTION_POOL and timeState and coverState then
-            self:PopupGuide(dbKey, dbResultKey)
-          end
-          self:PopupGuide(dbKey, dbResultKey)
-          -- DECOMPILER ERROR: 11 unprocessed JMP targets
-        end
+    if lastResult == 1 then
+      timeState = 31536000 <= dif
+    elseif lastResult == -1 then
+      timeState = 2592000 <= dif
+    elseif lastResult == 0 then
+      if lastTime == 0 then
+        timeState = true
+      else
+        timeState = 2592000 <= dif
       end
+    end
+    local coverState = false
+    local cfg = Cfg.cfg_drawcard_pool_view[idx]
+    if cfg == nil then
+      Log.fatal("###error -- drawcard - cfg_drawcard_pool_view is nil ! key --> ", idx)
+      return
+    end
+    for index, value in pairs(cfg.PetList) do
+      if value == maxStarId then
+        coverState = true
+      end
+    end
+    if isHaveMaxStar then
+      if type == PrizePoolType.PROMOTION_POOL and timeState and coverState then
+        self:PopupGuide(dbKey, dbResultKey)
+      end
+    else
+      self:PopupGuide(dbKey, dbResultKey)
     end
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.PopupGuide = function(self, dbKey, dbResultKey)
-  -- function num : 0_26 , upvalues : _ENV
+function UIDrawCardController:PopupGuide(dbKey, dbResultKey)
   if IsPc() then
-    return 
+    return
   end
   local char_mod = self:GetModule(RoleModule)
   if char_mod:CanStoreReview() == false then
-    return 
+    return
   end
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, (StringTable.Get)("str_common_guide_appraise_title"), (StringTable.Get)("str_common_guide_appraise_context"), function()
-    -- function num : 0_26_0 , upvalues : _ENV, self, dbResultKey
-    local gv = (HelperProxy:GetInstance()):GetGameVersion()
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, StringTable.Get("str_common_guide_appraise_title"), StringTable.Get("str_common_guide_appraise_context"), function()
+    local gv = HelperProxy:GetInstance():GetGameVersion()
     local app_store_id = ""
     if gv == GameVersionType.INTL then
       app_store_id = "1529088856"
+    elseif gv == GameVersionType.USA then
+      app_store_id = "1563326554"
     else
-      if gv == GameVersionType.USA then
-        app_store_id = "1563326554"
-      else
-        app_store_id = "1577315941"
-      end
+      app_store_id = "1577315941"
     end
-    self.srm = (GameStore.StoreReviewManager):New()
-    ;
-    (self.srm):RequestSystemBasedReview(app_store_id)
-    ;
-    (LocalDB.SetInt)(dbResultKey, 1)
-  end
-, nil, function()
-    -- function num : 0_26_1 , upvalues : _ENV, dbResultKey
-    (LocalDB.SetInt)(dbResultKey, -1)
-  end
-, nil)
-  ;
-  (LocalDB.SetInt)(dbKey, (math.floor)((self._svrTimeModule):GetServerTime() * 0.001))
+    self.srm = GameStore.StoreReviewManager:New()
+    self.srm:RequestSystemBasedReview(app_store_id)
+    LocalDB.SetInt(dbResultKey, 1)
+  end, nil, function()
+    LocalDB.SetInt(dbResultKey, -1)
+  end, nil)
+  LocalDB.SetInt(dbKey, math.floor(self._svrTimeModule:GetServerTime() * 0.001))
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.IndexerTweenWidth = function(self, next)
-  -- function num : 0_27 , upvalues : _ENV
-  local seq = (((DG.Tweening).DOTween).Sequence)()
-  local indexImageCurr = (self.indexsImages)[self.currentIdx]
-  local indexImageNext = (self.indexsImages)[next]
+function UIDrawCardController:IndexerTweenWidth(next)
+  local seq = DG.Tweening.DOTween.Sequence()
+  local indexImageCurr = self.indexsImages[self.currentIdx]
+  local indexImageNext = self.indexsImages[next]
   if indexImageCurr and indexImageNext then
-    local zoomOut = ((indexImageCurr.rectTransform):DOSizeDelta(Vector2(38, 39), 0.6)):SetEase(((DG.Tweening).Ease).Linear)
-    local zoomIn = ((indexImageNext.rectTransform):DOSizeDelta(Vector2(73, 39), 0.7)):SetEase(((DG.Tweening).Ease).OutCubic)
+    local zoomOut = indexImageCurr.rectTransform:DOSizeDelta(Vector2(38, 39), 0.6):SetEase(DG.Tweening.Ease.Linear)
+    local zoomIn = indexImageNext.rectTransform:DOSizeDelta(Vector2(73, 39), 0.7):SetEase(DG.Tweening.Ease.OutCubic)
     seq:Append(zoomOut)
     seq:Append(zoomIn)
   else
-    do
-      ;
-      (Log.fatal)("### indexsImages not exist index: ", self.currentIdx, next)
-    end
+    Log.fatal("### indexsImages not exist index: ", self.currentIdx, next)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController._ShowPVBtn = function(self, poolInfo)
-  -- function num : 0_28 , upvalues : _ENV
-  local cfg = (Cfg.cfg_drawcard_pool_view)[(poolInfo.poolData).performance_id]
-  local childCount = ((self._videoWidget).transform).childCount
+function UIDrawCardController:_ShowPVBtn(poolInfo)
+  local cfg = Cfg.cfg_drawcard_pool_view[poolInfo.poolData.performance_id]
+  local childCount = self._videoWidget.transform.childCount
   for i = 0, childCount - 1 do
-    (UIHelper.DestroyGameObject)((((self._videoWidget).transform):GetChild(0)).gameObject)
+    UIHelper.DestroyGameObject(self._videoWidget.transform:GetChild(0).gameObject)
   end
-  ;
-  ((HotUpdate.ActivityLuaProxy).AddListener)(nil)
+  HotUpdate.ActivityLuaProxy.AddListener(nil)
   if self:_CheckDownLoadPV(cfg) then
     self:_InitDownLoadVedioBtn(cfg)
-    return 
+    return
   end
   self:_InitVedioBtn(cfg)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController._InitVedioBtn = function(self, cfg)
-  -- function num : 0_29 , upvalues : _ENV
+function UIDrawCardController:_InitVedioBtn(cfg)
   if cfg.PlayVideoName then
-    ((self._uiLayout).gameObject):SetActive(true)
-    ;
-    ((self._videoWidget).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
+    self._uiLayout.gameObject:SetActive(true)
+    self._videoWidget.gameObject:SetActive(true)
     if self._videoCanvasGroups ~= nil then
-      (self._videoCanvasGroups).alpha = 0
-      ;
-      (self._videoCanvasGroups):DOFade(1, 1)
+      self._videoCanvasGroups.alpha = 0
+      self._videoCanvasGroups:DOFade(1, 1)
     end
-    local go = (UIHelper.GetGameObject)(cfg.PlayVideoPrefab .. ".prefab")
+    local go = UIHelper.GetGameObject(cfg.PlayVideoPrefab .. ".prefab")
     local tf = go.transform
-    tf:SetParent((self._videoWidget).transform)
-    ;
-    (tf:GetComponent("RectTransform")).anchoredPosition = Vector2.zero
+    tf:SetParent(self._videoWidget.transform)
+    tf:GetComponent("RectTransform").anchoredPosition = Vector2.zero
     tf.localScale = Vector3.one
     tf.localRotation = Quaternion.identity
-    ;
-    ((UIEventTriggerListener.Get)(go)).onClick = function()
-    -- function num : 0_29_0 , upvalues : self, _ENV, cfg
-    (self._blackMask):SetActive(true)
-    ;
-    (Log.debug)("fx: click playvedio")
-    self:ShowVideo(cfg.PlayVideoName, cfg.PlayVideoBg, function()
-      -- function num : 0_29_0_0 , upvalues : self
-      (self._blackMask):SetActive(false)
+    UIEventTriggerListener.Get(go).onClick = function()
+      self._blackMask:SetActive(true)
+      Log.debug("fx: click playvedio")
+      self:ShowVideo(cfg.PlayVideoName, cfg.PlayVideoBg, function()
+        self._blackMask:SetActive(false)
+      end)
     end
-)
-  end
-
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
+    local roleModule = GameGlobal.GetModule(RoleModule)
     local pstId = roleModule:GetPstId()
     local dbKey = "UIDrawCardControllerFirstPlayPV_" .. cfg.PlayVideoName .. pstId
-    if (LocalDB.GetInt)(dbKey, 0) == 0 then
-      (self._blackMask):SetActive(true)
-      ;
-      (Log.debug)("fx: click playvedio")
+    if LocalDB.GetInt(dbKey, 0) == 0 then
+      self._blackMask:SetActive(true)
+      Log.debug("fx: click playvedio")
       self._isPvPlaying = true
       self:ShowVideo(cfg.PlayVideoName, cfg.PlayVideoBg, function()
-    -- function num : 0_29_1 , upvalues : self
-    (self._blackMask):SetActive(false)
-    self:_OnPvPlayFinish()
-  end
-)
-      ;
-      (LocalDB.SetInt)(dbKey, 1)
+        self._blackMask:SetActive(false)
+        self:_OnPvPlayFinish()
+      end)
+      LocalDB.SetInt(dbKey, 1)
     end
     self:_FixVedioBtnState(cfg, go)
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController._OnPvPlayFinish = function(self)
-  -- function num : 0_30
+function UIDrawCardController:_OnPvPlayFinish()
   self._isPvPlaying = nil
   self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController._CheckGuide = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  local poolInfo = (self._poolsUIData)[self.currentIdx]
+function UIDrawCardController:_CheckGuide()
+  local poolInfo = self._poolsUIData[self.currentIdx]
   local module = self:GetModule(GambleModule)
   local idOptional = module:GetCfgOptionalPoolId(poolInfo.index)
-  local cfgOptional = (Cfg.cfg_optional_pool)[idOptional]
+  local cfgOptional = Cfg.cfg_optional_pool[idOptional]
   if cfgOptional ~= nil then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIDrawCardController_PetWish)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIDrawCardController_PetWish)
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.ShowVideo = function(self, videoName, Bg, func)
-  -- function num : 0_32 , upvalues : _ENV
+function UIDrawCardController:ShowVideo(videoName, Bg, func)
   if CriWare.CriManaMovieControllerForUI then
     self:ShowDialog("UICriVideoController", videoName, Bg, func, nil)
   else
@@ -748,67 +561,49 @@ UIDrawCardController.ShowVideo = function(self, videoName, Bg, func)
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController._FixVedioBtnState = function(self, cfg, go)
-  -- function num : 0_33 , upvalues : _ENV
+function UIDrawCardController:_FixVedioBtnState(cfg, go)
   if tonumber(cfg.VedioDownLoadId) ~= nil then
     self.downLoadBtnAnim = go:GetComponent("Animation")
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
     if self.downLoadBtnAnim then
-      (self.downLoadBtnAnim).enabled = false
+      self.downLoadBtnAnim.enabled = false
     end
-    local loadState = (go.transform):GetChild(1)
-    ;
-    (loadState.gameObject):SetActive(false)
-    local loadState2 = (go.transform):GetChild(0)
-    ;
-    (loadState2.gameObject):SetActive(true)
+    local loadState = go.transform:GetChild(1)
+    loadState.gameObject:SetActive(false)
+    local loadState2 = go.transform:GetChild(0)
+    loadState2.gameObject:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController._CheckDownLoadPV = function(self, cfg)
-  -- function num : 0_34 , upvalues : _ENV
-  (Log.debug)("cfg.VedioDownLoadId", cfg.VedioDownLoadId)
+function UIDrawCardController:_CheckDownLoadPV(cfg)
+  Log.debug("cfg.VedioDownLoadId", cfg.VedioDownLoadId)
   if tonumber(cfg.VedioDownLoadId) == nil then
     return false
   end
   if EDITOR then
     return false
   end
-  if ((HotUpdate.ActivityLuaProxy).CurrProcessingActivityID)() == tonumber(cfg.VedioDownLoadId) then
+  if HotUpdate.ActivityLuaProxy.CurrProcessingActivityID() == tonumber(cfg.VedioDownLoadId) then
     return true
   end
-  if not ((HotUpdate.ActivityLuaProxy).HasDownloadList)(tonumber(cfg.VedioDownLoadId)) then
-    (Log.debug)("tonumber(cfg.VedioDownLoadId) load over", tonumber(cfg.VedioDownLoadId), "HasDownloadList:   ")
+  if not HotUpdate.ActivityLuaProxy.HasDownloadList(tonumber(cfg.VedioDownLoadId)) then
+    Log.debug("tonumber(cfg.VedioDownLoadId) load over", tonumber(cfg.VedioDownLoadId), "HasDownloadList:   ")
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController._InitDownLoadVedioBtn = function(self, cfg)
-  -- function num : 0_35 , upvalues : _ENV
+function UIDrawCardController:_InitDownLoadVedioBtn(cfg)
   if cfg.PlayVideoName then
-    local go = (UIHelper.GetGameObject)(cfg.PlayVideoPrefab .. ".prefab")
+    local go = UIHelper.GetGameObject(cfg.PlayVideoPrefab .. ".prefab")
     local tf = go.transform
-    tf:SetParent((self._videoWidget).transform)
-    ;
-    (tf:GetComponent("RectTransform")).anchoredPosition = Vector2.zero
+    tf:SetParent(self._videoWidget.transform)
+    tf:GetComponent("RectTransform").anchoredPosition = Vector2.zero
     tf.localScale = Vector3.one
     tf.localRotation = Quaternion.identity
-    local loadState = (go.transform):GetChild(1)
-    ;
-    (loadState.gameObject):SetActive(true)
+    local loadState = go.transform:GetChild(1)
+    loadState.gameObject:SetActive(true)
     self.downLoadBtnAnim = go:GetComponent("Animation")
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.downLoadBtnAnim).enabled = false
+    self.downLoadBtnAnim.enabled = false
     self:_CheckNotWifiFirstDownLoad(go, cfg)
     self:_AddDownLoadListener(go, cfg)
     self:_InitDownLoadPvClick(go, cfg)
@@ -816,386 +611,260 @@ UIDrawCardController._InitDownLoadVedioBtn = function(self, cfg)
   end
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController._Check4GNeedQuik = function(self, go, cfg)
-  -- function num : 0_36 , upvalues : _ENV
+function UIDrawCardController:_Check4GNeedQuik(go, cfg)
   if cfg.VedioDownLoadId == nil then
-    return 
+    return
   end
-  ;
-  (Log.debug)("###[fx] dbKey2", ((HotUpdate.ActivityLuaProxy).HasDownloadList)(tonumber(cfg.VedioDownLoadId)))
-  ;
-  (Log.debug)("###[fx] dbKey3", ((HotUpdate.ActivityLuaProxy).CurrProcessingActivityID)() ~= tonumber(cfg.VedioDownLoadId), ((HotUpdate.ActivityLuaProxy).CurrProcessingActivityID)(), tonumber(cfg.VedioDownLoadId))
-  if ((HotUpdate.ActivityLuaProxy).HasDownloadList)(tonumber(cfg.VedioDownLoadId)) and ((HotUpdate.ActivityLuaProxy).CurrProcessingActivityID)() ~= tonumber(cfg.VedioDownLoadId) then
-    local loadState = (go.transform):GetChild(1)
-    ;
-    (loadState.gameObject):SetActive(true)
-    local loadText = (((loadState.transform):GetChild(2)).gameObject):GetComponent("Text")
+  Log.debug("###[fx] dbKey2", HotUpdate.ActivityLuaProxy.HasDownloadList(tonumber(cfg.VedioDownLoadId)))
+  Log.debug("###[fx] dbKey3", HotUpdate.ActivityLuaProxy.CurrProcessingActivityID() ~= tonumber(cfg.VedioDownLoadId), HotUpdate.ActivityLuaProxy.CurrProcessingActivityID(), tonumber(cfg.VedioDownLoadId))
+  if HotUpdate.ActivityLuaProxy.HasDownloadList(tonumber(cfg.VedioDownLoadId)) and HotUpdate.ActivityLuaProxy.CurrProcessingActivityID() ~= tonumber(cfg.VedioDownLoadId) then
+    local loadState = go.transform:GetChild(1)
+    loadState.gameObject:SetActive(true)
+    local loadText = loadState.transform:GetChild(2).gameObject:GetComponent("Text")
     if loadText ~= nil then
-      loadText.text = (StringTable.Get)("str_draw_card_new_click_download")
+      loadText.text = StringTable.Get("str_draw_card_new_click_download")
     end
     local canvasGroup = loadState:GetComponent("CanvasGroup")
     if canvasGroup ~= nil then
       canvasGroup.alpha = 1
     end
+  else
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController._CheckNotWifiFirstDownLoad = function(self, go, cfg)
-  -- function num : 0_37 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIDrawCardController:_CheckNotWifiFirstDownLoad(go, cfg)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local dbKey = "UIDrawCardControllerFirstDownLoadPV_" .. cfg.PlayVideoName .. pstId
-  ;
-  (Log.debug)("###[fx] dbKey", (LocalDB.GetInt)(dbKey, 0))
-  if (LocalDB.GetInt)(dbKey, 0) == 0 and ((HotUpdate.ActivityLuaProxy).HasDownloadList)(tonumber(cfg.VedioDownLoadId)) and ((HotUpdate.ActivityLuaProxy).CurrProcessingActivityID)() ~= tonumber(cfg.VedioDownLoadId) then
-    local reach_ability = (UnityEngine.Application).internetReachability
-    if reach_ability == (UnityEngine.NetworkReachability).ReachableViaCarrierDataNetwork then
-      local strTitle = ""
-      local size = ((HotUpdate.ActivityLuaProxy).GetTotalSize)(tonumber(cfg.VedioDownLoadId))
-      local fileLensStr = (string.format)("%.2f", size / 1024 / 1024) .. "M"
-      local titleStr = (StringTable.Get)("str_draw_card_video_title_" .. cfg.ID)
-      local stringTable = (StringTable.Get)("str_draw_card_new_can_download_pv", titleStr, fileLensStr)
-      local strText = stringTable
-      local okCb = function()
-    -- function num : 0_37_0 , upvalues : _ENV, cfg, dbKey, go, self
-    (Log.debug)("###[fx] 开始下载PV资源包:", tonumber(cfg.VedioDownLoadId))
-    ;
-    ((HotUpdate.ActivityLuaProxy).StartDownload)(tonumber(cfg.VedioDownLoadId))
-    ;
-    (LocalDB.SetInt)(dbKey, 1)
-    local loadState = (go.transform):GetChild(1)
-    local loadText = (((loadState.transform):GetChild(2)).gameObject):GetComponent("Text")
-    loadText.text = (StringTable.Get)("str_draw_card_new_downloading")
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.downLoadBtnAnim).enabled = true
-    ;
-    (self.downLoadBtnAnim):Play("UIDrawCardLongFeiVideoButton_downloading")
-  end
-
-      local cancelCb = function()
-    -- function num : 0_37_1 , upvalues : _ENV, cfg
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
-    local pstId = roleModule:GetPstId()
-    local dbKey2 = "UIDrawCardControllerFirstDownLoadPV_" .. cfg.PlayVideoName .. pstId
-    ;
-    (Log.debug)("###[fx] cancelCb", dbKey2)
-    ;
-    (LocalDB.SetInt)(dbKey2, 1)
-  end
-
-      ;
-      (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, strTitle, strText, okCb, cancelCb)
-      ;
-      (LocalDB.SetInt)(dbKey, 1)
-    else
+  Log.debug("###[fx] dbKey", LocalDB.GetInt(dbKey, 0))
+  if LocalDB.GetInt(dbKey, 0) == 0 then
+    if HotUpdate.ActivityLuaProxy.HasDownloadList(tonumber(cfg.VedioDownLoadId)) and HotUpdate.ActivityLuaProxy.CurrProcessingActivityID() ~= tonumber(cfg.VedioDownLoadId) then
       do
-        if reach_ability == (UnityEngine.NetworkReachability).ReachableViaLocalAreaNetwork then
-          local title = ""
-          local str = (StringTable.Get)("str_draw_card_new_begin_download")
-          ;
-          (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, title, str)
-          ;
-          (Log.debug)("###[fx] 开始下载PV资源包:", tonumber(cfg.VedioDownLoadId))
-          ;
-          ((HotUpdate.ActivityLuaProxy).StartDownload)(tonumber(cfg.VedioDownLoadId))
-          ;
-          (LocalDB.SetInt)(dbKey, 1)
-          local loadState = (go.transform):GetChild(1)
-          local loadText = (((loadState.transform):GetChild(2)).gameObject):GetComponent("Text")
-          loadText.text = (StringTable.Get)("str_draw_card_new_downloading")
-          -- DECOMPILER ERROR at PC158: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          (self.downLoadBtnAnim).enabled = true
-          ;
-          (self.downLoadBtnAnim):Play("UIDrawCardLongFeiVideoButton_downloading")
-        end
-        do
-          local reach_ability = (UnityEngine.Application).internetReachability
-          if reach_ability == (UnityEngine.NetworkReachability).ReachableViaLocalAreaNetwork then
-            if ((HotUpdate.ActivityLuaProxy).HasDownloadList)(tonumber(cfg.VedioDownLoadId)) and ((HotUpdate.ActivityLuaProxy).CurrProcessingActivityID)() ~= tonumber(cfg.VedioDownLoadId) then
-              (Log.debug)("###[fx] 没wifi 下载有问题 重连", tonumber(cfg.VedioDownLoadId))
-            end
-            ;
-            (Log.debug)("###[fx] 开始下载PV资源包:", tonumber(cfg.VedioDownLoadId))
-            ;
-            ((HotUpdate.ActivityLuaProxy).StartDownload)(tonumber(cfg.VedioDownLoadId))
-            -- DECOMPILER ERROR at PC213: Confused about usage of register: R7 in 'UnsetPending'
-
-            ;
-            (self.downLoadBtnAnim).enabled = true
-            ;
-            (self.downLoadBtnAnim):Play("UIDrawCardLongFeiVideoButton_downloading")
-          else
-            -- DECOMPILER ERROR at PC234: Confused about usage of register: R7 in 'UnsetPending'
-
-            if reach_ability == (UnityEngine.NetworkReachability).ReachableViaCarrierDataNetwork and ((HotUpdate.ActivityLuaProxy).HasDownloadList)(tonumber(cfg.VedioDownLoadId)) then
-              (self.downLoadBtnAnim).enabled = true
-              ;
-              (self.downLoadBtnAnim):Play("UIDrawCardLongFeiVideoButton_downloading")
-            end
+        local reach_ability = UnityEngine.Application.internetReachability
+        if reach_ability == UnityEngine.NetworkReachability.ReachableViaCarrierDataNetwork then
+          local strTitle = ""
+          local size = HotUpdate.ActivityLuaProxy.GetTotalSize(tonumber(cfg.VedioDownLoadId))
+          local fileLensStr = string.format("%.2f", size / 1024 / 1024) .. "M"
+          local titleStr = StringTable.Get("str_draw_card_video_title_" .. cfg.ID)
+          local stringTable = StringTable.Get("str_draw_card_new_can_download_pv", titleStr, fileLensStr)
+          local strText = stringTable
+          
+          local function okCb()
+            Log.debug("###[fx] 开始下载PV资源包:", tonumber(cfg.VedioDownLoadId))
+            HotUpdate.ActivityLuaProxy.StartDownload(tonumber(cfg.VedioDownLoadId))
+            LocalDB.SetInt(dbKey, 1)
+            local loadState = go.transform:GetChild(1)
+            local loadText = loadState.transform:GetChild(2).gameObject:GetComponent("Text")
+            loadText.text = StringTable.Get("str_draw_card_new_downloading")
+            self.downLoadBtnAnim.enabled = true
+            self.downLoadBtnAnim:Play("UIDrawCardLongFeiVideoButton_downloading")
           end
-          if reach_ability == (UnityEngine.NetworkReachability).NotReachable then
-            (Log.debug)("###[fx] 没网")
+          
+          local function cancelCb()
+            local roleModule = GameGlobal.GetModule(RoleModule)
+            local pstId = roleModule:GetPstId()
+            local dbKey2 = "UIDrawCardControllerFirstDownLoadPV_" .. cfg.PlayVideoName .. pstId
+            Log.debug("###[fx] cancelCb", dbKey2)
+            LocalDB.SetInt(dbKey2, 1)
           end
-        end
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController._InitDownLoadPvClick = function(self, go, cfg)
-  -- function num : 0_38 , upvalues : _ENV
-  ((UIEventTriggerListener.Get)(go)).onClick = function()
-    -- function num : 0_38_0 , upvalues : _ENV, cfg, go, self
-    if ((HotUpdate.ActivityLuaProxy).CurrProcessingActivityID)() == tonumber(cfg.VedioDownLoadId) then
-      local title = ""
-      local str = (StringTable.Get)("str_draw_card_new_downloading_tips")
-      ;
-      (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, title, str)
-      local loadState = (go.transform):GetChild(1)
-      local loadText = (((loadState.transform):GetChild(2)).gameObject):GetComponent("Text")
-      loadText.text = (StringTable.Get)("str_draw_card_new_downloading")
-      -- DECOMPILER ERROR at PC42: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self.downLoadBtnAnim).enabled = true
-      ;
-      (self.downLoadBtnAnim):Play("UIDrawCardLongFeiVideoButton_downloading")
-    else
-      do
-        if not ((HotUpdate.ActivityLuaProxy).HasDownloadList)(tonumber(cfg.VedioDownLoadId)) then
-          (self._blackMask):SetActive(true)
-          ;
-          (Log.debug)("fx: click playvedio 已经下载完成 正常播放")
-          self:ShowVideo(cfg.PlayVideoName, cfg.PlayVideoBg, function()
-      -- function num : 0_38_0_0 , upvalues : self
-      (self._blackMask):SetActive(false)
-    end
-)
-          local roleModule = (GameGlobal.GetModule)(RoleModule)
-          local pstId = roleModule:GetPstId()
-          local dbKey = "UIDrawCardControllerFirstPlayPV_" .. cfg.PlayVideoName .. pstId
-          ;
-          (LocalDB.SetInt)(dbKey, 1)
+          
+          PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, strTitle, strText, okCb, cancelCb)
+          LocalDB.SetInt(dbKey, 1)
         else
-          do
-            local wifi = false
-            local reach_ability = (UnityEngine.Application).internetReachability
-            if reach_ability == (UnityEngine.NetworkReachability).NotReachable then
-              (Log.error)("###[fx:] UnityEngine.NetworkReachability.NotReachable !")
-              return 
-            else
-              if reach_ability == (UnityEngine.NetworkReachability).ReachableViaCarrierDataNetwork then
-                wifi = false
-              else
-                if reach_ability == (UnityEngine.NetworkReachability).ReachableViaLocalAreaNetwork then
-                  wifi = true
-                end
-              end
-            end
-            if wifi then
-              if ((HotUpdate.ActivityLuaProxy).CurrProcessingActivityID)() ~= tonumber(cfg.VedioDownLoadId) then
-                local title = ""
-                local str = (StringTable.Get)("str_draw_card_new_begin_download")
-                ;
-                (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, title, str)
-                ;
-                (Log.debug)("###[fx] 开始下载PV资源包:", tonumber(cfg.VedioDownLoadId), "当前下载id", ((HotUpdate.ActivityLuaProxy).CurrProcessingActivityID)())
-                self:_AddDownLoadListener(go, cfg)
-                ;
-                ((HotUpdate.ActivityLuaProxy).StartDownload)(tonumber(cfg.VedioDownLoadId))
-                local loadState = (go.transform):GetChild(1)
-                local loadText = (((loadState.transform):GetChild(2)).gameObject):GetComponent("Text")
-                loadText.text = (StringTable.Get)("str_draw_card_new_downloading")
-                -- DECOMPILER ERROR at PC183: Confused about usage of register: R6 in 'UnsetPending'
-
-                ;
-                (self.downLoadBtnAnim).enabled = true
-                ;
-                (self.downLoadBtnAnim):Play("UIDrawCardLongFeiVideoButton_downloading")
-              else
-                do
-                  local title = ""
-                  local str = (StringTable.Get)("str_draw_card_new_downloading_tips")
-                  ;
-                  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, title, str)
-                  local loadState = (go.transform):GetChild(1)
-                  do
-                    local loadText = (((loadState.transform):GetChild(2)).gameObject):GetComponent("Text")
-                    loadText.text = (StringTable.Get)("str_draw_card_new_downloading")
-                    -- DECOMPILER ERROR at PC222: Confused about usage of register: R6 in 'UnsetPending'
-
-                    ;
-                    (self.downLoadBtnAnim).enabled = true
-                    ;
-                    (self.downLoadBtnAnim):Play("UIDrawCardLongFeiVideoButton_downloading")
-                    local strTitle = ""
-                    local size = ((HotUpdate.ActivityLuaProxy).GetTotalSize)(tonumber(cfg.VedioDownLoadId))
-                    local fileLensStr = (string.format)("%.2f", size / 1024 / 1024) .. "M"
-                    local titleStr = (StringTable.Get)("str_draw_card_video_title_" .. cfg.ID)
-                    local stringTable = (StringTable.Get)("str_draw_card_new_can_download_pv", titleStr, fileLensStr)
-                    local strText = stringTable
-                    local okCb = function()
-      -- function num : 0_38_0_1 , upvalues : _ENV, cfg, self, go
-      (Log.debug)("###[fx] 开始下载PV资源包:", tonumber(cfg.VedioDownLoadId))
-      self:_AddDownLoadListener(go, cfg)
-      ;
-      ((HotUpdate.ActivityLuaProxy).StartDownload)(tonumber(cfg.VedioDownLoadId))
-      local loadState = (go.transform):GetChild(1)
-      local loadText = (((loadState.transform):GetChild(2)).gameObject):GetComponent("Text")
-      loadText.text = (StringTable.Get)("str_draw_card_new_downloading")
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.downLoadBtnAnim).enabled = true
-      ;
-      (self.downLoadBtnAnim):Play("UIDrawCardLongFeiVideoButton_downloading")
-    end
-
-                    do
-                      local cancelCb = function()
-      -- function num : 0_38_0_2 , upvalues : _ENV
-      (Log.debug)("###[fx] 手动取消下载")
-    end
-
-                      ;
-                      (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, strTitle, strText, okCb, cancelCb)
-                      local roleModule = (GameGlobal.GetModule)(RoleModule)
-                      local pstId = roleModule:GetPstId()
-                      local dbKey = "UIDrawCardControllerFirstPlayPV_" .. cfg.PlayVideoName .. pstId
-                      do
-                        -- DECOMPILER ERROR at PC296: Unhandled construct in 'MakeBoolean' P1
-
-                        if (LocalDB.GetInt)(dbKey, 0) ~= 0 and (go.transform).childCount > 2 then
-                          local loadState = (go.transform):GetChild(2)
-                          ;
-                          (loadState.gameObject):SetActive(false)
-                        end
-                        if (go.transform).childCount > 2 then
-                          local loadState = (go.transform):GetChild(1)
-                          if (loadState.gameObject).activeSelf then
-                            return 
-                          end
-                          local loadState = (go.transform):GetChild(2)
-                          ;
-                          (Log.debug)("###[fx] 设置红点")
-                          ;
-                          (loadState.gameObject):SetActive(true)
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
+          if reach_ability == UnityEngine.NetworkReachability.ReachableViaLocalAreaNetwork then
+            local title = ""
+            local str = StringTable.Get("str_draw_card_new_begin_download")
+            PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, title, str)
+            Log.debug("###[fx] 开始下载PV资源包:", tonumber(cfg.VedioDownLoadId))
+            HotUpdate.ActivityLuaProxy.StartDownload(tonumber(cfg.VedioDownLoadId))
+            LocalDB.SetInt(dbKey, 1)
+            local loadState = go.transform:GetChild(1)
+            local loadText = loadState.transform:GetChild(2).gameObject:GetComponent("Text")
+            loadText.text = StringTable.Get("str_draw_card_new_downloading")
+            self.downLoadBtnAnim.enabled = true
+            self.downLoadBtnAnim:Play("UIDrawCardLongFeiVideoButton_downloading")
+          else
           end
         end
       end
     end
+  else
+    local reach_ability = UnityEngine.Application.internetReachability
+    if reach_ability == UnityEngine.NetworkReachability.ReachableViaLocalAreaNetwork then
+      if HotUpdate.ActivityLuaProxy.HasDownloadList(tonumber(cfg.VedioDownLoadId)) and HotUpdate.ActivityLuaProxy.CurrProcessingActivityID() ~= tonumber(cfg.VedioDownLoadId) then
+        Log.debug("###[fx] 没wifi 下载有问题 重连", tonumber(cfg.VedioDownLoadId))
+      end
+      Log.debug("###[fx] 开始下载PV资源包:", tonumber(cfg.VedioDownLoadId))
+      HotUpdate.ActivityLuaProxy.StartDownload(tonumber(cfg.VedioDownLoadId))
+      self.downLoadBtnAnim.enabled = true
+      self.downLoadBtnAnim:Play("UIDrawCardLongFeiVideoButton_downloading")
+    elseif reach_ability == UnityEngine.NetworkReachability.ReachableViaCarrierDataNetwork then
+      if HotUpdate.ActivityLuaProxy.HasDownloadList(tonumber(cfg.VedioDownLoadId)) then
+        self.downLoadBtnAnim.enabled = true
+        self.downLoadBtnAnim:Play("UIDrawCardLongFeiVideoButton_downloading")
+      end
+    elseif reach_ability == UnityEngine.NetworkReachability.NotReachable then
+      Log.debug("###[fx] 没网")
+    end
   end
-
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController._AddDownLoadListener = function(self, go, cfg)
-  -- function num : 0_39 , upvalues : _ENV
-  if not ((HotUpdate.ActivityLuaProxy).HasDownloadList)(tonumber(cfg.VedioDownLoadId)) then
-    (Log.fatal)("###[fx] 已经下载完成 不监听：", tonumber(cfg.VedioDownLoadId))
-  end
-  ;
-  (Log.fatal)("###[fx] ：proces", ((HotUpdate.ActivityLuaProxy).CurrProcessingActivityID)(), "downloadid", tonumber(cfg.VedioDownLoadId))
-  ;
-  ((HotUpdate.ActivityLuaProxy).AddListener)(function(callbackType, activityId, unityActionCallBack)
-    -- function num : 0_39_0 , upvalues : _ENV, cfg, go, self
-    if callbackType == (HotUpdate.ActivityDownloaderCallbackType).DownloadError or callbackType == (HotUpdate.ActivityDownloaderCallbackType).FatalError then
-      (Log.fatal)("###[fx] 下载包失败：", tonumber(cfg.VedioDownLoadId))
+function UIDrawCardController:_InitDownLoadPvClick(go, cfg)
+  UIEventTriggerListener.Get(go).onClick = function()
+    if HotUpdate.ActivityLuaProxy.CurrProcessingActivityID() == tonumber(cfg.VedioDownLoadId) then
+      local title = ""
+      local str = StringTable.Get("str_draw_card_new_downloading_tips")
+      PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, title, str)
+      local loadState = go.transform:GetChild(1)
+      local loadText = loadState.transform:GetChild(2).gameObject:GetComponent("Text")
+      loadText.text = StringTable.Get("str_draw_card_new_downloading")
+      self.downLoadBtnAnim.enabled = true
+      self.downLoadBtnAnim:Play("UIDrawCardLongFeiVideoButton_downloading")
+    elseif not HotUpdate.ActivityLuaProxy.HasDownloadList(tonumber(cfg.VedioDownLoadId)) then
+      self._blackMask:SetActive(true)
+      Log.debug("fx: click playvedio 已经下载完成 正常播放")
+      self:ShowVideo(cfg.PlayVideoName, cfg.PlayVideoBg, function()
+        self._blackMask:SetActive(false)
+      end)
+      local roleModule = GameGlobal.GetModule(RoleModule)
+      local pstId = roleModule:GetPstId()
+      local dbKey = "UIDrawCardControllerFirstPlayPV_" .. cfg.PlayVideoName .. pstId
+      LocalDB.SetInt(dbKey, 1)
     else
-      if callbackType == (HotUpdate.ActivityDownloaderCallbackType).Finish then
-        (Log.debug)("###[fx] 下包完成:", tonumber(cfg.VedioDownLoadId))
-        local loadState = (go.transform):GetChild(1)
-        ;
-        (loadState.gameObject):SetActive(false)
-        do
-          do
-            if (go.transform).childCount > 2 then
-              local loadState = (go.transform):GetChild(2)
-              ;
-              (Log.debug)("###[fx] 设置红点")
-              ;
-              (loadState.gameObject):SetActive(true)
-            end
-            -- DECOMPILER ERROR at PC55: Confused about usage of register: R4 in 'UnsetPending'
-
-            ;
-            (self.downLoadBtnAnim).enabled = true
-            ;
-            (self.downLoadBtnAnim):Play("UIDrawCardLongFeiVideoButton_complete")
-            if callbackType == (HotUpdate.ActivityDownloaderCallbackType).SpaceNotEnough then
-              (Log.fatal)("###[fx] 下载包失败，磁盘空间不足:", tonumber(cfg.VedioDownLoadId))
-            else
-              if callbackType == (HotUpdate.ActivityDownloaderCallbackType).NotUseWifi then
-                (Log.debug)("###[fx] 使用4G下载包:", tonumber(cfg.VedioDownLoadId))
-                unityActionCallBack:DynamicInvoke(true)
-              end
-            end
-          end
+      local wifi = false
+      local reach_ability = UnityEngine.Application.internetReachability
+      if reach_ability == UnityEngine.NetworkReachability.NotReachable then
+        Log.error("###[fx:] UnityEngine.NetworkReachability.NotReachable !")
+        return
+      elseif reach_ability == UnityEngine.NetworkReachability.ReachableViaCarrierDataNetwork then
+        wifi = false
+      elseif reach_ability == UnityEngine.NetworkReachability.ReachableViaLocalAreaNetwork then
+        wifi = true
+      end
+      if wifi then
+        if HotUpdate.ActivityLuaProxy.CurrProcessingActivityID() ~= tonumber(cfg.VedioDownLoadId) then
+          local title = ""
+          local str = StringTable.Get("str_draw_card_new_begin_download")
+          PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, title, str)
+          Log.debug("###[fx] 开始下载PV资源包:", tonumber(cfg.VedioDownLoadId), "当前下载id", HotUpdate.ActivityLuaProxy.CurrProcessingActivityID())
+          self:_AddDownLoadListener(go, cfg)
+          HotUpdate.ActivityLuaProxy.StartDownload(tonumber(cfg.VedioDownLoadId))
+          local loadState = go.transform:GetChild(1)
+          local loadText = loadState.transform:GetChild(2).gameObject:GetComponent("Text")
+          loadText.text = StringTable.Get("str_draw_card_new_downloading")
+          self.downLoadBtnAnim.enabled = true
+          self.downLoadBtnAnim:Play("UIDrawCardLongFeiVideoButton_downloading")
+        else
+          local title = ""
+          local str = StringTable.Get("str_draw_card_new_downloading_tips")
+          PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, title, str)
+          local loadState = go.transform:GetChild(1)
+          local loadText = loadState.transform:GetChild(2).gameObject:GetComponent("Text")
+          loadText.text = StringTable.Get("str_draw_card_new_downloading")
+          self.downLoadBtnAnim.enabled = true
+          self.downLoadBtnAnim:Play("UIDrawCardLongFeiVideoButton_downloading")
         end
+      else
+        local strTitle = ""
+        local size = HotUpdate.ActivityLuaProxy.GetTotalSize(tonumber(cfg.VedioDownLoadId))
+        local fileLensStr = string.format("%.2f", size / 1024 / 1024) .. "M"
+        local titleStr = StringTable.Get("str_draw_card_video_title_" .. cfg.ID)
+        local stringTable = StringTable.Get("str_draw_card_new_can_download_pv", titleStr, fileLensStr)
+        local strText = stringTable
+        
+        local function okCb()
+          Log.debug("###[fx] 开始下载PV资源包:", tonumber(cfg.VedioDownLoadId))
+          self:_AddDownLoadListener(go, cfg)
+          HotUpdate.ActivityLuaProxy.StartDownload(tonumber(cfg.VedioDownLoadId))
+          local loadState = go.transform:GetChild(1)
+          local loadText = loadState.transform:GetChild(2).gameObject:GetComponent("Text")
+          loadText.text = StringTable.Get("str_draw_card_new_downloading")
+          self.downLoadBtnAnim.enabled = true
+          self.downLoadBtnAnim:Play("UIDrawCardLongFeiVideoButton_downloading")
+        end
+        
+        local function cancelCb()
+          Log.debug("###[fx] 手动取消下载")
+        end
+        
+        PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, strTitle, strText, okCb, cancelCb)
       end
     end
+    local roleModule = GameGlobal.GetModule(RoleModule)
+    local pstId = roleModule:GetPstId()
+    local dbKey = "UIDrawCardControllerFirstPlayPV_" .. cfg.PlayVideoName .. pstId
+    if LocalDB.GetInt(dbKey, 0) ~= 0 then
+      if go.transform.childCount > 2 then
+        local loadState = go.transform:GetChild(2)
+        loadState.gameObject:SetActive(false)
+      end
+    elseif go.transform.childCount > 2 then
+      local loadState = go.transform:GetChild(1)
+      if loadState.gameObject.activeSelf then
+        return
+      end
+      local loadState = go.transform:GetChild(2)
+      Log.debug("###[fx] 设置红点")
+      loadState.gameObject:SetActive(true)
+    end
   end
-)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R1 in 'UnsetPending'
+function UIDrawCardController:_AddDownLoadListener(go, cfg)
+  if not HotUpdate.ActivityLuaProxy.HasDownloadList(tonumber(cfg.VedioDownLoadId)) then
+    Log.fatal("###[fx] 已经下载完成 不监听：", tonumber(cfg.VedioDownLoadId))
+  end
+  Log.fatal("###[fx] ：proces", HotUpdate.ActivityLuaProxy.CurrProcessingActivityID(), "downloadid", tonumber(cfg.VedioDownLoadId))
+  HotUpdate.ActivityLuaProxy.AddListener(function(callbackType, activityId, unityActionCallBack)
+    if callbackType == HotUpdate.ActivityDownloaderCallbackType.DownloadError or callbackType == HotUpdate.ActivityDownloaderCallbackType.FatalError then
+      Log.fatal("###[fx] 下载包失败：", tonumber(cfg.VedioDownLoadId))
+    elseif callbackType == HotUpdate.ActivityDownloaderCallbackType.Finish then
+      Log.debug("###[fx] 下包完成:", tonumber(cfg.VedioDownLoadId))
+      local loadState = go.transform:GetChild(1)
+      loadState.gameObject:SetActive(false)
+      if go.transform.childCount > 2 then
+        local loadState = go.transform:GetChild(2)
+        Log.debug("###[fx] 设置红点")
+        loadState.gameObject:SetActive(true)
+      end
+      self.downLoadBtnAnim.enabled = true
+      self.downLoadBtnAnim:Play("UIDrawCardLongFeiVideoButton_complete")
+    elseif callbackType == HotUpdate.ActivityDownloaderCallbackType.SpaceNotEnough then
+      Log.fatal("###[fx] 下载包失败，磁盘空间不足:", tonumber(cfg.VedioDownLoadId))
+    elseif callbackType == HotUpdate.ActivityDownloaderCallbackType.NotUseWifi then
+      Log.debug("###[fx] 使用4G下载包:", tonumber(cfg.VedioDownLoadId))
+      unityActionCallBack:DynamicInvoke(true)
+    end
+  end)
+end
 
-UIDrawCardController._RefreshPetWish = function(self, poolInfo)
-  -- function num : 0_40 , upvalues : _ENV
+function UIDrawCardController:_RefreshPetWish(poolInfo)
   local module = self:GetModule(GambleModule)
   local idOptional = module:GetCfgOptionalPoolId(poolInfo.index)
-  local cfgOptional = (Cfg.cfg_optional_pool)[idOptional]
+  local cfgOptional = Cfg.cfg_optional_pool[idOptional]
   local showRed = module:CheckOptionalRed(poolInfo.index)
-  ;
-  ((self._uiLayout).gameObject):SetActive(true)
-  ;
-  ((self._uiWish).gameObject):SetActive(cfgOptional ~= nil)
-  ;
-  ((self._uiWishRed).gameObject):SetActive(showRed)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._uiLayout.gameObject:SetActive(true)
+  self._uiWish.gameObject:SetActive(cfgOptional ~= nil)
+  self._uiWishRed.gameObject:SetActive(showRed)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.BtnWishOnClick = function(self, go)
-  -- function num : 0_41 , upvalues : _ENV
+function UIDrawCardController:BtnWishOnClick(go)
   local module = self:GetModule(GambleModule)
-  local poolInfo = (self._poolsUIData)[self.currentIdx]
-  local param = {indexPool = self.currentIdx, idRecruit = (poolInfo.poolData).performance_id, idOptional = module:GetCfgOptionalPoolId(poolInfo.index)}
+  local poolInfo = self._poolsUIData[self.currentIdx]
+  local param = {
+    indexPool = self.currentIdx,
+    idRecruit = poolInfo.poolData.performance_id,
+    idOptional = module:GetCfgOptionalPoolId(poolInfo.index)
+  }
   self:ShowDialog("UIRecruitWish", param)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDrawCardController.UpdateDrawCardRed = function(self)
-  -- function num : 0_42 , upvalues : _ENV
+function UIDrawCardController:UpdateDrawCardRed()
   local module = self:GetModule(GambleModule)
   local showRed = module:CheckOptionalRed(self.currentIdx)
-  ;
-  ((self._uiWishRed).gameObject):SetActive(showRed)
-  do return  end
-  for k,v in pairs(self._thumbItems) do
+  self._uiWishRed.gameObject:SetActive(showRed)
+  do return end
+  for k, v in pairs(self._thumbItems) do
     v:PublicCheckWishRed()
   end
 end
-
-

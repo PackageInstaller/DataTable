@@ -1,44 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_charge_grey_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewDisableGreyHPCharge", BuffViewBase)
 BuffViewDisableGreyHPCharge = BuffViewDisableGreyHPCharge
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewDisableGreyHPCharge.PlayView = function(self, TT)
-  -- function num : 0_0
+function BuffViewDisableGreyHPCharge:PlayView(TT)
   local result = self._buffResult
-  ;
-  (self._entity):ReplaceGreyHP(0)
+  self._entity:ReplaceGreyHP(0)
 end
 
 _class("BuffViewChargeGreyHP", BuffViewBase)
 BuffViewChargeGreyHP = BuffViewChargeGreyHP
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChargeGreyHP.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewChargeGreyHP:IsNotifyMatch(notify)
   if notify:GetNotifyType() == NotifyType.MonsterHPCChange then
     local r = self._buffResult
     local isRecovery = false
-    if notify:GetDamageInfo() and (notify:GetDamageInfo()):GetDamageType() == DamageType.Recover then
+    if notify:GetDamageInfo() and notify:GetDamageInfo():GetDamageType() == DamageType.Recover then
       isRecovery = true
     end
     return not isRecovery and r:GetNotifyType() == NotifyType.MonsterHPCChange and r:GetDamageHP() == notify:GetChangeHP()
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewChargeGreyHP.PlayView = function(self, TT)
-  -- function num : 0_2
+function BuffViewChargeGreyHP:PlayView(TT)
   local result = self._buffResult
   local val = result:GetGreyHPVal()
-  ;
-  (self._entity):ReplaceGreyHP(val)
+  self._entity:ReplaceGreyHP(val)
 end
-
-

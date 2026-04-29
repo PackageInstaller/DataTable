@@ -1,18 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_play_anim_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewPlayAnim", BuffViewBase)
 BuffViewPlayAnim = BuffViewPlayAnim
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewPlayAnim.PlayView = function(self, TT)
-  -- function num : 0_0
-  local param = ((self._viewInstance):BuffConfigData()):GetViewParams()
+function BuffViewPlayAnim:PlayView(TT)
+  local param = self._viewInstance:BuffConfigData():GetViewParams()
   local materialAnim = param.MaterialAnim
   local ownerEntity = self:Entity()
   ownerEntity:PlayMaterialAnim(materialAnim)
 end
-
-

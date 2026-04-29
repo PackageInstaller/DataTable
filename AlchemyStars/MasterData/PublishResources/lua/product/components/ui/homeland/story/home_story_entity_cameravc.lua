@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/story/home_story_entity_cameravc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeStoryEntityCameraVC", HomeStoryEntity)
 HomeStoryEntityCameraVC = HomeStoryEntityCameraVC
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeStoryEntityCameraVC.Constructor = function(self, ID, gameObject, resRequest, storyManager, cfg)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomeStoryEntityCameraVC.super).Constructor)(self, ID, gameObject, resRequest, storyManager)
+function HomeStoryEntityCameraVC:Constructor(ID, gameObject, resRequest, storyManager, cfg)
+  HomeStoryEntityCameraVC.super.Constructor(self, ID, gameObject, resRequest, storyManager)
   self._type = HomeStoryEntityType.CameraVC
   self._subType = cfg.SubType
   self._isSmoothPath = false
@@ -17,14 +10,8 @@ HomeStoryEntityCameraVC.Constructor = function(self, ID, gameObject, resRequest,
   self:ResetTr()
   if self._subType == CameraVCSubType.Cart then
     self._cart = gameObject:GetComponentInChildren(typeof(Cinemachine.CinemachineDollyCart))
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._cart).m_Speed = 0
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._cart).m_Position = 0
+    self._cart.m_Speed = 0
+    self._cart.m_Position = 0
     self._path = gameObject:GetComponentInChildren(typeof(Cinemachine.CinemachineSmoothPath))
     if self._path then
       self._isSmoothPath = true
@@ -33,112 +20,70 @@ HomeStoryEntityCameraVC.Constructor = function(self, ID, gameObject, resRequest,
       if self._path then
         self._isSmoothPath = false
       else
-        ;
-        (Log.error)("###[HomeStoryEntityCameraVC] path vc not find path ! ID --> ", ID)
+        Log.error("###[HomeStoryEntityCameraVC] path vc not find path ! ID --> ", ID)
       end
     end
-    -- DECOMPILER ERROR at PC76: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self._path).transform).localPosition = Vector3(0, 0, 0)
+    self._path.transform.localPosition = Vector3(0, 0, 0)
   end
   self._active = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityCameraVC.ResetTr = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomeStoryEntityCameraVC:ResetTr()
   if self._vc then
-    local tr = (self._vc).transform
+    local tr = self._vc.transform
     tr.localPosition = Vector3(0, 0, 0)
     tr.localScale = Vector3(1, 1, 1)
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._vc).Priority = 0
+    self._vc.Priority = 0
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityCameraVC._SetPosition = function(self, pos)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._gameObject).transform).localPosition = pos
+function HomeStoryEntityCameraVC:_SetPosition(pos)
+  self._gameObject.transform.localPosition = pos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityCameraVC._SetRotation = function(self, rot)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._gameObject).transform).localRotation = rot
+function HomeStoryEntityCameraVC:_SetRotation(rot)
+  self._gameObject.transform.localRotation = rot
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityCameraVC._TriggerKeyframe = function(self, keyframeData)
-  -- function num : 0_4 , upvalues : _ENV
-  ((HomeStoryEntityCameraVC.super)._TriggerKeyframe)(self, keyframeData)
+function HomeStoryEntityCameraVC:_TriggerKeyframe(keyframeData)
+  HomeStoryEntityCameraVC.super._TriggerKeyframe(self, keyframeData)
   if keyframeData.Active ~= nil then
     self:SetActive(keyframeData.Active)
   end
   if keyframeData.Position3D ~= nil then
-    self:_SetPosition(Vector3((keyframeData.Position3D)[1], (keyframeData.Position3D)[2], (keyframeData.Position3D)[3]))
+    self:_SetPosition(Vector3(keyframeData.Position3D[1], keyframeData.Position3D[2], keyframeData.Position3D[3]))
   end
   if keyframeData.Rotation3D ~= nil then
-    self:_SetRotation((Quaternion.Euler)((keyframeData.Rotation3D)[1], (keyframeData.Rotation3D)[2], (keyframeData.Rotation3D)[3]))
+    self:_SetRotation(Quaternion.Euler(keyframeData.Rotation3D[1], keyframeData.Rotation3D[2], keyframeData.Rotation3D[3]))
   end
   if keyframeData.Shake ~= nil then
     local shakeData = keyframeData.Shake
     self:ShakeCamera(shakeData)
-  else
-    do
-      if keyframeData.StartShake ~= nil then
-        local shakeData = keyframeData.StartShake
-        self:StartShake(shakeData)
-      else
-        do
-          if keyframeData.StopShake ~= nil then
-            self:StopShake()
-          end
-          do
-            if keyframeData.Look then
-              local lookid = keyframeData.Look
-              self:LookEntity(lookid)
-            end
-            if keyframeData.Fov then
-              self:SetFov(keyframeData.Fov)
-            end
-            if keyframeData.OpenPath then
-              self:OpenPath(keyframeData.OpenPath)
-            end
-          end
-        end
-      end
-    end
+  elseif keyframeData.StartShake ~= nil then
+    local shakeData = keyframeData.StartShake
+    self:StartShake(shakeData)
+  elseif keyframeData.StopShake ~= nil then
+    self:StopShake()
+  end
+  if keyframeData.Look then
+    local lookid = keyframeData.Look
+    self:LookEntity(lookid)
+  end
+  if keyframeData.Fov then
+    self:SetFov(keyframeData.Fov)
+  end
+  if keyframeData.OpenPath then
+    self:OpenPath(keyframeData.OpenPath)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityCameraVC.OpenPath = function(self, data)
-  -- function num : 0_5 , upvalues : _ENV
+function HomeStoryEntityCameraVC:OpenPath(data)
   local duration = data.Duration
   local ease = data.Ease
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._cart).m_Speed = 0
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._cart).m_Position = 0
+  self._cart.m_Speed = 0
+  self._cart.m_Position = 0
   if not duration or duration <= 0 then
-    (Log.error)("###[HomeStoryEntityCameraVC] Open Path bug duration is nil or <= 0 ! id --> ", self._ID)
+    Log.error("###[HomeStoryEntityCameraVC] Open Path bug duration is nil or <= 0 ! id --> ", self._ID)
   else
     self._pathing = true
     self._pathStartTime = 0
@@ -148,171 +93,97 @@ HomeStoryEntityCameraVC.OpenPath = function(self, data)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityCameraVC.GetEase = function(self, type)
-  -- function num : 0_6 , upvalues : _ENV
-  local ease = ((DG.Tweening).Ease).Linear
+function HomeStoryEntityCameraVC:GetEase(type)
+  local ease = DG.Tweening.Ease.Linear
   if not type then
     return ease
   end
   if type == 0 then
-    ease = ((DG.Tweening).Ease).Linear
+    ease = DG.Tweening.Ease.Linear
+  elseif type == 1 then
+    ease = DG.Tweening.Ease.InSine
+  elseif type == 2 then
+    ease = DG.Tweening.Ease.OutSine
+  elseif type == 3 then
+    ease = DG.Tweening.Ease.InOutSine
+  elseif type == 4 then
+    ease = DG.Tweening.Ease.InQuad
+  elseif type == 5 then
+    ease = DG.Tweening.Ease.OutQuad
+  elseif type == 6 then
+    ease = DG.Tweening.Ease.InOutQuad
+  elseif type == 7 then
+    ease = DG.Tweening.Ease.InCubic
+  elseif type == 8 then
+    ease = DG.Tweening.Ease.OutCubic
+  elseif type == 9 then
+    ease = DG.Tweening.Ease.InOutCubic
+  elseif type == 10 then
+    ease = DG.Tweening.Ease.InQuart
+  elseif type == 11 then
+    ease = DG.Tweening.Ease.OutQuart
+  elseif type == 12 then
+    ease = DG.Tweening.Ease.InOutQuart
+  elseif type == 13 then
+    ease = DG.Tweening.Ease.InQuint
+  elseif type == 14 then
+    ease = DG.Tweening.Ease.OutQuint
+  elseif type == 15 then
+    ease = DG.Tweening.Ease.InOutQuint
+  elseif type == 16 then
+    ease = DG.Tweening.Ease.InExpo
+  elseif type == 17 then
+    ease = DG.Tweening.Ease.OutExpo
+  elseif type == 18 then
+    ease = DG.Tweening.Ease.InOutExpo
+  elseif type == 19 then
+    ease = DG.Tweening.Ease.InCirc
+  elseif type == 20 then
+    ease = DG.Tweening.Ease.OutCirc
+  elseif type == 21 then
+    ease = DG.Tweening.Ease.InOutCirc
+  elseif type == 22 then
+    ease = DG.Tweening.Ease.InBack
+  elseif type == 23 then
+    ease = DG.Tweening.Ease.OutBack
+  elseif type == 24 then
+    ease = DG.Tweening.Ease.InOutBack
+  elseif type == 25 then
+    ease = DG.Tweening.Ease.InElastic
+  elseif type == 26 then
+    ease = DG.Tweening.Ease.OutElastic
+  elseif type == 27 then
+    ease = DG.Tweening.Ease.InOutElastic
+  elseif type == 28 then
+    ease = DG.Tweening.Ease.InBounce
+  elseif type == 29 then
+    ease = DG.Tweening.Ease.OutBounce
+  elseif type == 30 then
+    ease = DG.Tweening.Ease.InOutBounce
   else
-    if type == 1 then
-      ease = ((DG.Tweening).Ease).InSine
-    else
-      if type == 2 then
-        ease = ((DG.Tweening).Ease).OutSine
-      else
-        if type == 3 then
-          ease = ((DG.Tweening).Ease).InOutSine
-        else
-          if type == 4 then
-            ease = ((DG.Tweening).Ease).InQuad
-          else
-            if type == 5 then
-              ease = ((DG.Tweening).Ease).OutQuad
-            else
-              if type == 6 then
-                ease = ((DG.Tweening).Ease).InOutQuad
-              else
-                if type == 7 then
-                  ease = ((DG.Tweening).Ease).InCubic
-                else
-                  if type == 8 then
-                    ease = ((DG.Tweening).Ease).OutCubic
-                  else
-                    if type == 9 then
-                      ease = ((DG.Tweening).Ease).InOutCubic
-                    else
-                      if type == 10 then
-                        ease = ((DG.Tweening).Ease).InQuart
-                      else
-                        if type == 11 then
-                          ease = ((DG.Tweening).Ease).OutQuart
-                        else
-                          if type == 12 then
-                            ease = ((DG.Tweening).Ease).InOutQuart
-                          else
-                            if type == 13 then
-                              ease = ((DG.Tweening).Ease).InQuint
-                            else
-                              if type == 14 then
-                                ease = ((DG.Tweening).Ease).OutQuint
-                              else
-                                if type == 15 then
-                                  ease = ((DG.Tweening).Ease).InOutQuint
-                                else
-                                  if type == 16 then
-                                    ease = ((DG.Tweening).Ease).InExpo
-                                  else
-                                    if type == 17 then
-                                      ease = ((DG.Tweening).Ease).OutExpo
-                                    else
-                                      if type == 18 then
-                                        ease = ((DG.Tweening).Ease).InOutExpo
-                                      else
-                                        if type == 19 then
-                                          ease = ((DG.Tweening).Ease).InCirc
-                                        else
-                                          if type == 20 then
-                                            ease = ((DG.Tweening).Ease).OutCirc
-                                          else
-                                            if type == 21 then
-                                              ease = ((DG.Tweening).Ease).InOutCirc
-                                            else
-                                              if type == 22 then
-                                                ease = ((DG.Tweening).Ease).InBack
-                                              else
-                                                if type == 23 then
-                                                  ease = ((DG.Tweening).Ease).OutBack
-                                                else
-                                                  if type == 24 then
-                                                    ease = ((DG.Tweening).Ease).InOutBack
-                                                  else
-                                                    if type == 25 then
-                                                      ease = ((DG.Tweening).Ease).InElastic
-                                                    else
-                                                      if type == 26 then
-                                                        ease = ((DG.Tweening).Ease).OutElastic
-                                                      else
-                                                        if type == 27 then
-                                                          ease = ((DG.Tweening).Ease).InOutElastic
-                                                        else
-                                                          if type == 28 then
-                                                            ease = ((DG.Tweening).Ease).InBounce
-                                                          else
-                                                            if type == 29 then
-                                                              ease = ((DG.Tweening).Ease).OutBounce
-                                                            else
-                                                              if type == 30 then
-                                                                ease = ((DG.Tweening).Ease).InOutBounce
-                                                              else
-                                                                ease = ((DG.Tweening).Ease).Linear
-                                                              end
-                                                            end
-                                                          end
-                                                        end
-                                                      end
-                                                    end
-                                                  end
-                                                end
-                                              end
-                                            end
-                                          end
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+    ease = DG.Tweening.Ease.Linear
   end
   return ease
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityCameraVC.SetFov = function(self, fov)
-  -- function num : 0_7
+function HomeStoryEntityCameraVC:SetFov(fov)
   local val = fov.Value
   local duration = fov.Duration
-  if duration and duration > 0 then
+  if duration and 0 < duration then
     self._foving = true
     self._fovStartTime = 0
     self._fovTime = duration
-    self._oldFov = ((self._vc).m_Lens).FieldOfView
+    self._oldFov = self._vc.m_Lens.FieldOfView
     local ease = fov.Ease
     self._fovEase = self:GetEase(ease)
     self._newFov = val
   else
-    do
-      -- DECOMPILER ERROR at PC22: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      ((self._vc).m_Lens).FieldOfView = val
-    end
+    self._vc.m_Lens.FieldOfView = val
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityCameraVC.ActiveVC = function(self, active)
-  -- function num : 0_8
-  local priority = nil
+function HomeStoryEntityCameraVC:ActiveVC(active)
+  local priority
   if active then
     priority = 1
     self:ResetTr()
@@ -322,56 +193,36 @@ HomeStoryEntityCameraVC.ActiveVC = function(self, active)
   if not self._active then
     self:SetActive(true)
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._vc).Priority = priority
+  self._vc.Priority = priority
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityCameraVC.LookEntity = function(self, id)
-  -- function num : 0_9
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
+function HomeStoryEntityCameraVC:LookEntity(id)
   if id == -1 then
-    (self._vc).m_LookAt = nil
+    self._vc.m_LookAt = nil
   else
-    local tr = ((self._storyManager):GetEntityGo(id)).transform
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._vc).m_LookAt = tr
+    local tr = self._storyManager:GetEntityGo(id).transform
+    self._vc.m_LookAt = tr
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityCameraVC.ShakeCamera = function(self, data)
-  -- function num : 0_10 , upvalues : _ENV
-  local noise = (self._vc):GetCinemachineComponent(((Cinemachine.CinemachineCore).Stage).Noise)
+function HomeStoryEntityCameraVC:ShakeCamera(data)
+  local noise = self._vc:GetCinemachineComponent(Cinemachine.CinemachineCore.Stage.Noise)
   noise.m_AmplitudeGain = data.Strength
   noise.m_FrequencyGain = data.Speed
-  noise.m_PivotOffset = Vector3((data.Offset)[1], (data.Offset)[2], (data.Offset)[3])
+  noise.m_PivotOffset = Vector3(data.Offset[1], data.Offset[2], data.Offset[3])
   self._shaking = true
   self._shakeTime = data.Duration
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityCameraVC.StartShake = function(self, data)
-  -- function num : 0_11 , upvalues : _ENV
-  local noise = (self._vc):GetCinemachineComponent(((Cinemachine.CinemachineCore).Stage).Noise)
+function HomeStoryEntityCameraVC:StartShake(data)
+  local noise = self._vc:GetCinemachineComponent(Cinemachine.CinemachineCore.Stage.Noise)
   noise.m_AmplitudeGain = data.Strength
   noise.m_FrequencyGain = data.Speed
   noise.m_PivotOffset = data.Offset
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityCameraVC.StopShake = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local noise = (self._vc):GetCinemachineComponent(((Cinemachine.CinemachineCore).Stage).Noise)
+function HomeStoryEntityCameraVC:StopShake()
+  local noise = self._vc:GetCinemachineComponent(Cinemachine.CinemachineCore.Stage.Noise)
   noise.m_AmplitudeGain = 0
   noise.m_FrequencyGain = 0
   noise.m_PivotOffset = Vector3(0, 0, 0)
@@ -379,97 +230,62 @@ HomeStoryEntityCameraVC.StopShake = function(self)
   self._shaking = false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityCameraVC.SetActive = function(self, active)
-  -- function num : 0_13
+function HomeStoryEntityCameraVC:SetActive(active)
   self._active = active
-  ;
-  (self._gameObject):SetActive(active)
+  self._gameObject:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityCameraVC.SetPos = function(self, pos)
-  -- function num : 0_14
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._gameObject).transform).position = pos
+function HomeStoryEntityCameraVC:SetPos(pos)
+  self._gameObject.transform.position = pos
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityCameraVC.Dispose = function(self)
-  -- function num : 0_15
+function HomeStoryEntityCameraVC:Dispose()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityCameraVC.Destroy = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  ((HomeStoryEntityCameraVC.super).Destroy)(self)
+function HomeStoryEntityCameraVC:Destroy()
+  HomeStoryEntityCameraVC.super.Destroy(self)
   self:Dispose()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityCameraVC._UpdateAnimation = function(self, time)
-  -- function num : 0_17 , upvalues : _ENV
-  local res = ((HomeStoryEntityCameraVC.super)._UpdateAnimation)(self, time)
+function HomeStoryEntityCameraVC:_UpdateAnimation(time)
+  local res = HomeStoryEntityCameraVC.super._UpdateAnimation(self, time)
   local allEnd = true
-  -- DECOMPILER ERROR at PC14: Unhandled construct in 'MakeBoolean' P1
-
-  if self._shaking and self._shakeTime < time then
-    self:StopShake()
-  else
-    allEnd = false
+  if self._shaking then
+    if time > self._shakeTime then
+      self:StopShake()
+    else
+      allEnd = false
+    end
   end
-  return not res or allEnd
+  return res and allEnd
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityCameraVC.OnUpdate = function(self, dms)
-  -- function num : 0_18 , upvalues : _ENV
+function HomeStoryEntityCameraVC:OnUpdate(dms)
   if self._foving then
     self._fovStartTime = self._fovStartTime + dms
     local rate = self._fovStartTime / self._fovTime
-    if rate > 1 then
+    if 1 < rate then
       rate = 1
     end
-    local fov = (((DG.Tweening).DOVirtual).EasedValue)(self._oldFov, self._newFov, rate, self._fovEase)
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    ((self._vc).m_Lens).FieldOfView = fov
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R4 in 'UnsetPending'
-
+    local fov = DG.Tweening.DOVirtual.EasedValue(self._oldFov, self._newFov, rate, self._fovEase)
+    self._vc.m_Lens.FieldOfView = fov
     if rate == 1 then
-      ((self._vc).m_Lens).FieldOfView = self._newFov
+      self._vc.m_Lens.FieldOfView = self._newFov
       self._oldFov = self._newFov
       self._foving = false
     end
   end
-  do
-    if self._pathing then
-      self._pathStartTime = self._pathStartTime + dms
-      local rate = self._pathStartTime / self._pathDuration
-      if rate > 1 then
-        rate = 1
-      end
-      local normlize = (((DG.Tweening).DOVirtual).EasedValue)(0, 1, rate, self._ease)
-      -- DECOMPILER ERROR at PC55: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._cart).m_Position = normlize
-      -- DECOMPILER ERROR at PC59: Confused about usage of register: R4 in 'UnsetPending'
-
-      if rate == 1 then
-        (self._cart).m_Position = 1
-        self._pathing = false
-      end
+  if self._pathing then
+    self._pathStartTime = self._pathStartTime + dms
+    local rate = self._pathStartTime / self._pathDuration
+    if 1 < rate then
+      rate = 1
+    end
+    local normlize = DG.Tweening.DOVirtual.EasedValue(0, 1, rate, self._ease)
+    self._cart.m_Position = normlize
+    if rate == 1 then
+      self._cart.m_Position = 1
+      self._pathing = false
     end
   end
 end
-
-

@@ -1,21 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_chain_scope.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetChainSkillUseChainScope", BuffLogicBase)
 BuffLogicSetChainSkillUseChainScope = BuffLogicSetChainSkillUseChainScope
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetChainSkillUseChainScope.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetChainSkillUseChainScope:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetChainSkillUseChainScope.DoLogic = function(self, notify)
-  -- function num : 0_1
-  ((self._entity):BuffComponent()):SetBuffValue("ChainSkillUseChainScope", 1)
+function BuffLogicSetChainSkillUseChainScope:DoLogic(notify)
+  self._entity:BuffComponent():SetBuffValue("ChainSkillUseChainScope", 1)
 end
-
-

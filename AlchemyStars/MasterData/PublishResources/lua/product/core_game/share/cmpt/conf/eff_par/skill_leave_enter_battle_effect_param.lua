@@ -1,50 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_leave_enter_battle_effect_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillLeaveEnterBattleFieldEffectParam", SkillEffectParamBase)
 SkillLeaveEnterBattleFieldEffectParam = SkillLeaveEnterBattleFieldEffectParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillLeaveEnterBattleFieldEffectParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillLeaveEnterBattleFieldEffectParam:Constructor(t)
   self._leave = t.leave
   if t.pos then
-    self._pos = Vector2((t.pos)[1], (t.pos)[2])
+    self._pos = Vector2(t.pos[1], t.pos[2])
   end
   if t.dir then
-    self._dir = Vector2((t.dir)[1], (t.dir)[2])
+    self._dir = Vector2(t.dir[1], t.dir[2])
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillLeaveEnterBattleFieldEffectParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillLeaveEnterBattleFieldEffectParam:GetEffectType()
   return SkillEffectType.LeaveEnterBattleField
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillLeaveEnterBattleFieldEffectParam.IsLeave = function(self)
-  -- function num : 0_2
+function SkillLeaveEnterBattleFieldEffectParam:IsLeave()
   return self._leave
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillLeaveEnterBattleFieldEffectParam.EnterPos = function(self)
-  -- function num : 0_3
+function SkillLeaveEnterBattleFieldEffectParam:EnterPos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillLeaveEnterBattleFieldEffectParam.EnterDir = function(self)
-  -- function num : 0_4
+function SkillLeaveEnterBattleFieldEffectParam:EnterDir()
   return self._dir
 end
-
-

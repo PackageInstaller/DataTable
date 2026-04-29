@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/activity/main/ui_activity_n29_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN29MainController", UIActivityMainBase)
 UIActivityN29MainController = UIActivityN29MainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN29MainController.OnInit = function(self)
-  -- function num : 0_0
+function UIActivityN29MainController:OnInit()
   self._shopCountLabel = self:GetUIComponent("UILocalizationText", "ShopCount")
   self._timeLabel = self:GetUIComponent("UILocalizationText", "Time")
   self._anim = self:GetUIComponent("Animation", "Anim")
@@ -16,66 +9,45 @@ UIActivityN29MainController.OnInit = function(self)
   self:StartTask(self.PlayAnimEnterCoro, self)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29MainController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_1
+function UIActivityN29MainController:OnUpdate(deltaTimeMS)
   self:RefreshActivityRemainTime()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29MainController.RefreshActivityRemainTime = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._activityConst):IsActivityEnd() then
-    (self._timeLabel):SetText((StringTable.Get)("str_n29_activity_end"))
-    return 
+function UIActivityN29MainController:RefreshActivityRemainTime()
+  if self._activityConst:IsActivityEnd() then
+    self._timeLabel:SetText(StringTable.Get("str_n29_activity_end"))
+    return
   end
   local timeTips = ""
-  local status, time = (self._activityConst):GetComponentStatus(ECampaignN29ComponentID.ECAMPAIGN_N29_LINE_MISSION)
+  local status, time = self._activityConst:GetComponentStatus(ECampaignN29ComponentID.ECAMPAIGN_N29_LINE_MISSION)
   if status == ActivityComponentStatus.Open then
-    local timeStr = (UIActivityCustomHelper.GetTimeString)(time, "str_n29_day", "str_n29_hour", "str_n29_minus", "str_n29_less_one_minus")
-    timeTips = (StringTable.Get)("str_n29_activity_remain_time", timeStr)
+    local timeStr = UIActivityCustomHelper.GetTimeString(time, "str_n29_day", "str_n29_hour", "str_n29_minus", "str_n29_less_one_minus")
+    timeTips = StringTable.Get("str_n29_activity_remain_time", timeStr)
   else
-    do
-      local endTime = (self._activityConst):GetActiveEndTime()
-      local nowTime = (self._timeModule):GetServerTime() / 1000
-      local seconds = (math.floor)(endTime - nowTime)
-      if seconds <= 0 then
-        seconds = 0
-      end
-      do
-        local timeStr = (UIActivityCustomHelper.GetTimeString)(seconds, "str_n29_day", "str_n29_hour", "str_n29_minus", "str_n29_less_one_minus")
-        timeTips = (StringTable.Get)("str_n29_activity_get_reward_remain_time", timeStr)
-        ;
-        (self._timeLabel):SetText(timeTips)
-      end
+    local endTime = self._activityConst:GetActiveEndTime()
+    local nowTime = self._timeModule:GetServerTime() / 1000
+    local seconds = math.floor(endTime - nowTime)
+    if seconds <= 0 then
+      seconds = 0
     end
+    local timeStr = UIActivityCustomHelper.GetTimeString(seconds, "str_n29_day", "str_n29_hour", "str_n29_minus", "str_n29_less_one_minus")
+    timeTips = StringTable.Get("str_n29_activity_get_reward_remain_time", timeStr)
   end
+  self._timeLabel:SetText(timeTips)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29MainController.OnRefresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local com, comInfo = nil, nil
-  com = (self._activityConst):GetComponent(ECampaignN29ComponentID.ECAMPAIGN_N29_LOTTERY)
+function UIActivityN29MainController:OnRefresh()
+  local com, comInfo
+  com, comInfo = self._activityConst:GetComponent(ECampaignN29ComponentID.ECAMPAIGN_N29_LOTTERY)
   local icon, count = com:GetLotteryCostItemIconText()
-  ;
-  (self._shopCountLabel):SetText((UIActivityCustomHelper.GetItemCountStr)(7, count, "#2B2218", "#F2E6DA"))
+  self._shopCountLabel:SetText(UIActivityCustomHelper.GetItemCountStr(7, count, "#2B2218", "#F2E6DA"))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29MainController.GetCampaignType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN29MainController:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N29
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29MainController.GetComponentIds = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN29MainController:GetComponentIds()
   local componentIds = {}
   componentIds[#componentIds + 1] = ECampaignN29ComponentID.ECAMPAIGN_N29_CUMULATIVE_LOGIN
   componentIds[#componentIds + 1] = ECampaignN29ComponentID.ECAMPAIGN_N29_FIRST_MEET
@@ -89,34 +61,27 @@ UIActivityN29MainController.GetComponentIds = function(self)
   return componentIds
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29MainController.GetLoginComponentId = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityN29MainController:GetLoginComponentId()
   return ECampaignN29ComponentID.ECAMPAIGN_N29_CUMULATIVE_LOGIN
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29MainController.GetCustomTimeStr = function(self)
-  -- function num : 0_7
+function UIActivityN29MainController:GetCustomTimeStr()
   return "str_n29_day", "str_n29_hour", "str_n29_minus", "str_n29_less_one_minus"
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29MainController.GetButtonStatusConfig = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityN29MainController:GetButtonStatusConfig()
   local configs = {}
   local normalLevel = {}
   normalLevel.Name = "Normal"
   normalLevel.ComponentId = ECampaignN29ComponentID.ECAMPAIGN_N29_LINE_MISSION
-  normalLevel.CheckRedComponentIds = {ECampaignN29ComponentID.ECAMPAIGN_N29_FIRST_MEET}
-  normalLevel.Callback = function()
-    -- function num : 0_8_0 , upvalues : self
+  normalLevel.CheckRedComponentIds = {
+    ECampaignN29ComponentID.ECAMPAIGN_N29_FIRST_MEET
+  }
+  
+  function normalLevel.Callback()
     self:ShowDialog("UIActivityN29LineLevel")
   end
-
+  
   normalLevel.RemainTimeStr = "str_n29_activity_normal_level_remain_time"
   normalLevel.UnlockTimeStr = ""
   normalLevel.UnlockMissionStr = ""
@@ -124,12 +89,14 @@ UIActivityN29MainController.GetButtonStatusConfig = function(self)
   local hardLevel = {}
   hardLevel.Name = "Hard"
   hardLevel.ComponentId = ECampaignN29ComponentID.ECAMPAIGN_N29_DIFFICULT_MISSION
-  hardLevel.CheckRedComponentIds = {ECampaignN29ComponentID.ECAMPAIGN_N29_BLACK_DIFFICULT_MISSION}
-  hardLevel.Callback = function()
-    -- function num : 0_8_1 , upvalues : self
+  hardLevel.CheckRedComponentIds = {
+    ECampaignN29ComponentID.ECAMPAIGN_N29_BLACK_DIFFICULT_MISSION
+  }
+  
+  function hardLevel.Callback()
     self:ShowDialog("UIActivityN29HardLevelMain")
   end
-
+  
   hardLevel.RemainTimeStr = "str_n29_activity_hard_level_remain_time"
   hardLevel.UnlockTimeStr = "str_n29_activity_hard_level_lock_time_tips"
   hardLevel.UnlockMissionStr = "str_n29_activity_hard_level_lock_mission_tips"
@@ -138,11 +105,11 @@ UIActivityN29MainController.GetButtonStatusConfig = function(self)
   chess.Name = "ChessGame"
   chess.ComponentId = ECampaignN29ComponentID.ECAMPAIGN_N29_CHESS
   chess.CheckRedComponentIds = nil
-  chess.Callback = function()
-    -- function num : 0_8_2 , upvalues : self
+  
+  function chess.Callback()
     self:SwitchState("UIN29ChessController")
   end
-
+  
   chess.RemainTimeStr = "str_n29_activity_chess_game_remain_time"
   chess.UnlockTimeStr = "str_n29_activity_chess_game_lock_time_tips"
   chess.UnlockMissionStr = "str_n29_activity_chess_game_lock_mission_tips"
@@ -151,11 +118,11 @@ UIActivityN29MainController.GetButtonStatusConfig = function(self)
   detective.Name = "DetectiveGame"
   detective.ComponentId = ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE
   detective.CheckRedComponentIds = nil
-  detective.Callback = function()
-    -- function num : 0_8_3 , upvalues : self, _ENV
+  
+  function detective.Callback()
     self:SwitchState(UIStateType.UIN29DetectiveLogin)
   end
-
+  
   detective.RemainTimeStr = "str_n29_activity_detective_game_remain_time"
   detective.UnlockTimeStr = "str_n29_activity_detective_game_lock_time_tips"
   detective.UnlockMissionStr = "str_n29_activity_detective_game_lock_mission_tips"
@@ -164,11 +131,11 @@ UIActivityN29MainController.GetButtonStatusConfig = function(self)
   shop.Name = "Shop"
   shop.ComponentId = ECampaignN29ComponentID.ECAMPAIGN_N29_LOTTERY
   shop.CheckRedComponentIds = nil
-  shop.Callback = function()
-    -- function num : 0_8_4 , upvalues : self, _ENV
+  
+  function shop.Callback()
     self:SwitchState(UIStateType.UIN29Shop, cache_rt)
   end
-
+  
   shop.RemainTimeStr = "str_n29_activity_shop_remain_time"
   shop.UnlockTimeStr = ""
   shop.UnlockMissionStr = ""
@@ -176,67 +143,41 @@ UIActivityN29MainController.GetButtonStatusConfig = function(self)
   return configs
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29MainController.NormalLevelOnClick = function(self)
-  -- function num : 0_9
+function UIActivityN29MainController:NormalLevelOnClick()
   self:ClickButton("Normal")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29MainController.HardLevelOnClick = function(self)
-  -- function num : 0_10
+function UIActivityN29MainController:HardLevelOnClick()
   self:ClickButton("Hard")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29MainController.ChessGameOnClick = function(self)
-  -- function num : 0_11
+function UIActivityN29MainController:ChessGameOnClick()
   self:ClickButton("ChessGame")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29MainController.DetectiveGameOnClick = function(self)
-  -- function num : 0_12
+function UIActivityN29MainController:DetectiveGameOnClick()
   self:ClickButton("DetectiveGame")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29MainController.ShopOnClick = function(self)
-  -- function num : 0_13
+function UIActivityN29MainController:ShopOnClick()
   self:ClickButton("Shop")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29MainController.CheckGuide = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN29MainController)
+function UIActivityN29MainController:CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN29MainController)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29MainController.SetPanelStatus = function(self, TT, isShow)
-  -- function num : 0_15
-  (self._showBtn):SetActive(not isShow)
+function UIActivityN29MainController:SetPanelStatus(TT, isShow)
+  self._showBtn:SetActive(not isShow)
   if isShow then
-    (self._anim):Play("uieff_UIActivityN29MainController_chuxian")
+    self._anim:Play("uieff_UIActivityN29MainController_chuxian")
   else
-    ;
-    (self._anim):Play("uieff_UIActivityN29MainController_yincang")
+    self._anim:Play("uieff_UIActivityN29MainController_yincang")
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29MainController.PlayAnimEnterCoro = function(self, TT)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityN29MainController:PlayAnimEnterCoro(TT)
   self:PlayPlot(function()
-    -- function num : 0_16_0 , upvalues : self, _ENV, TT
     self:Lock("UIActivityN29MainController_PlayAnimEnterCoro")
     local loader = self:GetUIComponent("RawImageLoader", "Loader")
     local loaderImg = self:GetUIComponent("RawImage", "Loader")
@@ -249,19 +190,12 @@ UIActivityN29MainController.PlayAnimEnterCoro = function(self, TT)
     if quadmat then
       quadmat:SetTexture("_MainTex", mainTex)
     end
-    ;
-    (self._anim):Play("UIActivityN29MainController_in")
+    self._anim:Play("UIActivityN29MainController_in")
     YIELD(TT, 1700)
     self:CheckGuide()
     self:UnLock("UIActivityN29MainController_PlayAnimEnterCoro")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29MainController.OnPlayPlot = function(self)
-  -- function num : 0_17
+function UIActivityN29MainController:OnPlayPlot()
 end
-
-

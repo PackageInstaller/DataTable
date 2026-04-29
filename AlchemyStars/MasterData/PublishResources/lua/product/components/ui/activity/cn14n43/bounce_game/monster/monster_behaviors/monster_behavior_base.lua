@@ -1,126 +1,69 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/monster/monster_behaviors/monster_behavior_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("behavior_base")
 _class("MonsterBeHaviorBase", BeHaviorBase)
 MonsterBeHaviorBase = MonsterBeHaviorBase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterBeHaviorBase.SetMonster = function(self, monster)
-  -- function num : 0_0
+function MonsterBeHaviorBase:SetMonster(monster)
   self.monster = monster
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorBase.GetMonster = function(self)
-  -- function num : 0_1
+function MonsterBeHaviorBase:GetMonster()
   return self.monster
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorBase.GetMonsterData = function(self)
-  -- function num : 0_2
-  return (self.monster):GetMonsterData()
+function MonsterBeHaviorBase:GetMonsterData()
+  return self.monster:GetMonsterData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorBase.GetCfg = function(self)
-  -- function num : 0_3
-  local monsterCfg = (self:GetMonsterData()).cfg
+function MonsterBeHaviorBase:GetCfg()
+  local monsterCfg = self:GetMonsterData().cfg
   return monsterCfg
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorBase.GetBehavior = function(self, behaviorName)
-  -- function num : 0_4
-  return (self.monster):GetBehavior(behaviorName)
+function MonsterBeHaviorBase:GetBehavior(behaviorName)
+  return self.monster:GetBehavior(behaviorName)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorBase.GetCoreController = function(self)
-  -- function num : 0_5
-  return (self.monster):GetCoreController()
+function MonsterBeHaviorBase:GetCoreController()
+  return self.monster:GetCoreController()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorBase.GetBounceData = function(self)
-  -- function num : 0_6
-  return ((self.monster):GetCoreController()):GetData()
+function MonsterBeHaviorBase:GetBounceData()
+  return self.monster:GetCoreController():GetData()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorBase.Exec = function(self)
-  -- function num : 0_7
+function MonsterBeHaviorBase:Exec()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorBase.ExecAsync = function(self, TT, finishCall)
-  -- function num : 0_8
+function MonsterBeHaviorBase:ExecAsync(TT, finishCall)
   if finishCall then
     finishCall()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorBase.Init = function(self, param)
-  -- function num : 0_9
+function MonsterBeHaviorBase:Init(param)
   self:OnInit(param)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorBase.Show = function(self)
-  -- function num : 0_10
+function MonsterBeHaviorBase:Show()
   self:OnShow()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorBase.Reset = function(self)
-  -- function num : 0_11
+function MonsterBeHaviorBase:Reset()
   self:OnReset()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorBase.Release = function(self)
-  -- function num : 0_12
+function MonsterBeHaviorBase:Release()
   self:OnRelease()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorBase.OnShow = function(self)
-  -- function num : 0_13
+function MonsterBeHaviorBase:OnShow()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorBase.OnInit = function(self, param)
-  -- function num : 0_14
+function MonsterBeHaviorBase:OnInit(param)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorBase.OnReset = function(self)
-  -- function num : 0_15
+function MonsterBeHaviorBase:OnReset()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorBase.OnRelease = function(self)
-  -- function num : 0_16
+function MonsterBeHaviorBase:OnRelease()
 end
-
-

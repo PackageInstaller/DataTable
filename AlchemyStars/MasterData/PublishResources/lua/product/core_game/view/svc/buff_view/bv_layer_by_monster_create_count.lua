@@ -1,52 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_layer_by_monster_create_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddLayerByMonsterCreateCount", BuffViewBase)
 BuffViewAddLayerByMonsterCreateCount = BuffViewAddLayerByMonsterCreateCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddLayerByMonsterCreateCount.PlayView = function(self, TT, notify, trace)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewAddLayerByMonsterCreateCount:PlayView(TT, notify, trace)
   local res = self._buffResult
   local curLayer = res:GetLayer()
   local buffseq = res:GetBuffSeq()
   local addLayer = res:GetAddLayer()
-  local buffView = (self._entity):BuffView()
+  local buffView = self._entity:BuffView()
   local viewInstance = buffView:GetBuffViewInstance(buffseq)
   if not viewInstance then
-    (Log.error)("BuffViewAddLayerByMonsterCreateCount not find viewInstance! entity=", (self._entity):GetID(), " layer=", curLayer)
-    return 
+    Log.error("BuffViewAddLayerByMonsterCreateCount not find viewInstance! entity=", self._entity:GetID(), " layer=", curLayer)
+    return
   end
-  ;
-  (Log.debug)("BuffViewAddLayerByMonsterCreateCount entity=", (self._entity):GetID(), " layer=", curLayer)
-  local casterEntity = (self:BuffViewInstance()):GetBuffViewContext() and ((self:BuffViewInstance()):GetBuffViewContext()).casterEntity or nil
+  Log.debug("BuffViewAddLayerByMonsterCreateCount entity=", self._entity:GetID(), " layer=", curLayer)
+  local casterEntity = self:BuffViewInstance():GetBuffViewContext() and self:BuffViewInstance():GetBuffViewContext().casterEntity or nil
   viewInstance:SetLayerCount(TT, curLayer, res.totalLayerCount, casterEntity)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
   if res:IsDontDisplay() then
-    return 
+    return
   end
   local buffEffectEntityID = viewInstance:GetBuffEffectEntityID()
   local effectAnimList = viewInstance:GetBuffEffectLayerAnimList()
-  local buffEffectEntity = (self._world):GetEntityByID(buffEffectEntityID)
+  local buffEffectEntity = self._world:GetEntityByID(buffEffectEntityID)
   if effectAnimList and buffEffectEntity then
-    local effectGameObj = ((buffEffectEntity:View()).ViewWrapper).GameObject
+    local effectGameObj = buffEffectEntity:View().ViewWrapper.GameObject
     local anim = effectGameObj:GetComponentInChildren(typeof(UnityEngine.Animation))
     if anim then
-      (Log.info)("CurLayer ", curLayer, " totalLayer ", res.totalLayerCount)
+      Log.info("CurLayer ", curLayer, " totalLayer ", res.totalLayerCount)
       local animName = effectAnimList[curLayer]
-      ;
-      (Log.info)(" CurAnim ", animName)
+      Log.info(" CurAnim ", animName)
       anim:Play(animName)
     else
-      do
-        ;
-        (Log.fatal)("Can not find view layer animation cmpt")
-      end
+      Log.fatal("Can not find view layer animation cmpt")
     end
   end
 end
-
-

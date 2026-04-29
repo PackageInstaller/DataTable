@@ -1,34 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/character/homeland_actor_state_idle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homeland_actor_state")
 _class("HomelandActorStateIdle", HomelandActorState)
 HomelandActorStateIdle = HomelandActorStateIdle
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandActorStateIdle.Constructor = function(self)
-  -- function num : 0_0
+function HomelandActorStateIdle:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateIdle.GetType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandActorStateIdle:GetType()
   return HomelandActorStateType.Idle
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateIdle.Enter = function(self)
-  -- function num : 0_2
+function HomelandActorStateIdle:Enter()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateIdle.Exit = function(self)
-  -- function num : 0_3
+function HomelandActorStateIdle:Exit()
 end
-
-

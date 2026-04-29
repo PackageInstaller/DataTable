@@ -1,76 +1,154 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_view.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LuaUIView", Object)
 LuaUIView = LuaUIView
-local UIEvent = {Guide = 0, Click = 1, DoubleClick = 2, Press = 3, Release = 4, Hovered = 5, Unhovered = 6, Select = 7, UpdateSelect = 8, BeginDrag = 9, Drag = 10, EndDrag = 11, Scroll = 12, ApplicationFocus = 13, LongClick = 14, LongPress = 15, ToggleChanged = 16, SliderChanged = 17, DropdownChanged = 18, ScrollRectChanged = 19, InputFieldChanged = 20, InputFieldEndEdit = 21, InputFieldValidate = 22}
+local UIEvent = {
+  Guide = 0,
+  Click = 1,
+  DoubleClick = 2,
+  Press = 3,
+  Release = 4,
+  Hovered = 5,
+  Unhovered = 6,
+  Select = 7,
+  UpdateSelect = 8,
+  BeginDrag = 9,
+  Drag = 10,
+  EndDrag = 11,
+  Scroll = 12,
+  ApplicationFocus = 13,
+  LongClick = 14,
+  LongPress = 15,
+  ToggleChanged = 16,
+  SliderChanged = 17,
+  DropdownChanged = 18,
+  ScrollRectChanged = 19,
+  InputFieldChanged = 20,
+  InputFieldEndEdit = 21,
+  InputFieldValidate = 22
+}
 _enum("UIEvent", UIEvent)
 local UIEventFuncs = {
-{"OnClick", "onClick", "AddClickListener"}
-, 
-{"OnDoubleClick", "onDoubleClick", "AddDoubleClickListener"}
-, 
-{"OnPressed", "onDown", "AddPressListener"}
-, 
-{"OnReleased", "onUp", "AddReleaseListener"}
-, 
-{"OnHovered", "onEnter", "AddHoveredListener"}
-, 
-{"OnUnhovered", "onExit", "AddUnhoveredListener"}
-, 
-{"OnSelect", "onSelect", "AddSelectListener"}
-, 
-{"OnUpdateSelect", "onUpdateSelect", "AddUpdateSelectListener"}
-, 
-{"OnBeginDrag", "onBeginDrag", "AddBeginDragListener"}
-, 
-{"OnDrag", "onDrag", "AddDragListener"}
-, 
-{"OnEndDrag", "onEndDrag", "AddEndDragListener"}
-, 
-{"OnScroll", "onScroll", "AddScrollListener"}
-, 
-{"OnApplicationFocus", "onApplicationFocus", "AddFocusListener"}
-, 
-{"OnLongClick", "onClick", "AddLongClickListener"}
-, 
-{"OnLongPress", "onLongPress", "AddLongPressListener"}
-, 
-{"OnValueChanged", "onValueChanged", "AddToggleListener"}
-, 
-{"OnValueChanged", "onValueChanged", "AddSliderListener"}
-, 
-{"OnValueChanged", "onValueChanged", "AddDropDownListener"}
-, 
-{"OnValueChanged", "onValueChanged", "AddScrollRectListener"}
-, 
-{"OnValueChanged", "onValueChanged", "AddInputFieldListener"}
-, 
-{"OnEndEdit", "onEndEdit", "AddInputFieldEndEdit"}
-, 
-{"OnValidateInput", "onValidateInput", "AddInputFieldValidate"}
+  {
+    "OnClick",
+    "onClick",
+    "AddClickListener"
+  },
+  {
+    "OnDoubleClick",
+    "onDoubleClick",
+    "AddDoubleClickListener"
+  },
+  {
+    "OnPressed",
+    "onDown",
+    "AddPressListener"
+  },
+  {
+    "OnReleased",
+    "onUp",
+    "AddReleaseListener"
+  },
+  {
+    "OnHovered",
+    "onEnter",
+    "AddHoveredListener"
+  },
+  {
+    "OnUnhovered",
+    "onExit",
+    "AddUnhoveredListener"
+  },
+  {
+    "OnSelect",
+    "onSelect",
+    "AddSelectListener"
+  },
+  {
+    "OnUpdateSelect",
+    "onUpdateSelect",
+    "AddUpdateSelectListener"
+  },
+  {
+    "OnBeginDrag",
+    "onBeginDrag",
+    "AddBeginDragListener"
+  },
+  {
+    "OnDrag",
+    "onDrag",
+    "AddDragListener"
+  },
+  {
+    "OnEndDrag",
+    "onEndDrag",
+    "AddEndDragListener"
+  },
+  {
+    "OnScroll",
+    "onScroll",
+    "AddScrollListener"
+  },
+  {
+    "OnApplicationFocus",
+    "onApplicationFocus",
+    "AddFocusListener"
+  },
+  {
+    "OnLongClick",
+    "onClick",
+    "AddLongClickListener"
+  },
+  {
+    "OnLongPress",
+    "onLongPress",
+    "AddLongPressListener"
+  },
+  {
+    "OnValueChanged",
+    "onValueChanged",
+    "AddToggleListener"
+  },
+  {
+    "OnValueChanged",
+    "onValueChanged",
+    "AddSliderListener"
+  },
+  {
+    "OnValueChanged",
+    "onValueChanged",
+    "AddDropDownListener"
+  },
+  {
+    "OnValueChanged",
+    "onValueChanged",
+    "AddScrollRectListener"
+  },
+  {
+    "OnValueChanged",
+    "onValueChanged",
+    "AddInputFieldListener"
+  },
+  {
+    "OnEndEdit",
+    "onEndEdit",
+    "AddInputFieldEndEdit"
+  },
+  {
+    "OnValidateInput",
+    "onValidateInput",
+    "AddInputFieldValidate"
+  }
 }
--- DECOMPILER ERROR at PC148: Confused about usage of register: R2 in 'UnsetPending'
 
-LuaUIView.Constructor = function(self)
-  -- function num : 0_0
+function LuaUIView:Constructor()
   self.uiEventListeners = {}
 end
 
--- DECOMPILER ERROR at PC151: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.Dispose = function(self)
-  -- function num : 0_1
+function LuaUIView:Dispose()
 end
 
--- DECOMPILER ERROR at PC154: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.SetShow = function(self, bShow, ui)
-  -- function num : 0_2
+function LuaUIView:SetShow(bShow, ui)
   if self.isShow == bShow then
-    return 
+    return
   end
   self.isShow = bShow
   if bShow then
@@ -80,587 +158,383 @@ LuaUIView.SetShow = function(self, bShow, ui)
   end
 end
 
--- DECOMPILER ERROR at PC157: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.OnShow = function(self, ui)
-  -- function num : 0_3
+function LuaUIView:OnShow(ui)
   self.ui = ui
   self:AddUIListeners()
 end
 
--- DECOMPILER ERROR at PC160: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.OnHide = function(self)
-  -- function num : 0_4
+function LuaUIView:OnHide()
   self:RemoveUIListeners()
 end
 
--- DECOMPILER ERROR at PC163: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddUIEvent = function(self, uiEventType, widget, name)
-  -- function num : 0_5 , upvalues : UIEventFuncs
-  (self[(UIEventFuncs[uiEventType])[3]])(self, widget, name)
+function LuaUIView:AddUIEvent(uiEventType, widget, name)
+  self[UIEventFuncs[uiEventType][3]](self, widget, name)
 end
 
--- DECOMPILER ERROR at PC166: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddClickListener = function(self, widget, name)
-  -- function num : 0_6 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddClickListener(widget, name)
+  name = name or widget.name
   local listener = UIClickListener:New(self.ui, name, widget)
   if not listener:IsSucceed() then
-    return 
+    return
   end
-  local listeners = (self.uiEventListeners)[UIEvent.Click]
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.Click]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.Click] = {}
-    listeners = (self.uiEventListeners)[UIEvent.Click]
+    self.uiEventListeners[UIEvent.Click] = {}
+    listeners = self.uiEventListeners[UIEvent.Click]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC169: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddDoubleClickListener = function(self, widget, name)
-  -- function num : 0_7 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddDoubleClickListener(widget, name)
+  name = name or widget.name
   local listener = UIDoubleClickListener:New(self.ui, name, widget)
   if not listener:IsSucceed() then
-    return 
+    return
   end
-  local listeners = (self.uiEventListeners)[UIEvent.DoubleClick]
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.DoubleClick]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.DoubleClick] = {}
-    listeners = (self.uiEventListeners)[UIEvent.DoubleClick]
+    self.uiEventListeners[UIEvent.DoubleClick] = {}
+    listeners = self.uiEventListeners[UIEvent.DoubleClick]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC172: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddPressListener = function(self, widget, name)
-  -- function num : 0_8 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddPressListener(widget, name)
+  name = name or widget.name
   local listener = UIPressedListener:New(self.ui, name, widget)
   if not listener:IsSucceed() then
-    return 
+    return
   end
-  local listeners = (self.uiEventListeners)[UIEvent.Press]
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.Press]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.Press] = {}
-    listeners = (self.uiEventListeners)[UIEvent.Press]
+    self.uiEventListeners[UIEvent.Press] = {}
+    listeners = self.uiEventListeners[UIEvent.Press]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC175: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddReleaseListener = function(self, widget, name)
-  -- function num : 0_9 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddReleaseListener(widget, name)
+  name = name or widget.name
   local listener = UIReleaseListener:New(self.ui, name, widget)
   if not listener:IsSucceed() then
-    return 
+    return
   end
-  local listeners = (self.uiEventListeners)[UIEvent.Release]
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.Release]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.Release] = {}
-    listeners = (self.uiEventListeners)[UIEvent.Release]
+    self.uiEventListeners[UIEvent.Release] = {}
+    listeners = self.uiEventListeners[UIEvent.Release]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC178: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddHoveredListener = function(self, widget, name)
-  -- function num : 0_10 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddHoveredListener(widget, name)
+  name = name or widget.name
   local listener = UIHoveredListener:New(self.ui, name, widget)
   if not listener:IsSucceed() then
-    return 
+    return
   end
-  local listeners = (self.uiEventListeners)[UIEvent.Hovered]
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.Hovered]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.Hovered] = {}
-    listeners = (self.uiEventListeners)[UIEvent.Hovered]
+    self.uiEventListeners[UIEvent.Hovered] = {}
+    listeners = self.uiEventListeners[UIEvent.Hovered]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC181: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddUnhoveredListener = function(self, widget, name)
-  -- function num : 0_11 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddUnhoveredListener(widget, name)
+  name = name or widget.name
   local listener = UIUnHoveredListener:New(self.ui, name, widget)
   if not listener:IsSucceed() then
-    return 
+    return
   end
-  local listeners = (self.uiEventListeners)[UIEvent.Unhovered]
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.Unhovered]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.Unhovered] = {}
-    listeners = (self.uiEventListeners)[UIEvent.Unhovered]
+    self.uiEventListeners[UIEvent.Unhovered] = {}
+    listeners = self.uiEventListeners[UIEvent.Unhovered]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC184: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddSelectListener = function(self, widget, name)
-  -- function num : 0_12 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddSelectListener(widget, name)
+  name = name or widget.name
   local listener = UISelectListener:New(self.ui, name, widget)
   if not listener:IsSucceed() then
-    return 
+    return
   end
-  local listeners = (self.uiEventListeners)[UIEvent.Select]
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.Select]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.Select] = {}
-    listeners = (self.uiEventListeners)[UIEvent.Select]
+    self.uiEventListeners[UIEvent.Select] = {}
+    listeners = self.uiEventListeners[UIEvent.Select]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC187: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddUpdateSelectListener = function(self, widget, name)
-  -- function num : 0_13 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddUpdateSelectListener(widget, name)
+  name = name or widget.name
   local listener = UIUpdateSelectListener:New(self.ui, name, widget)
   if not listener:IsSucceed() then
-    return 
+    return
   end
-  local listeners = (self.uiEventListeners)[UIEvent.UpdateSelect]
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.UpdateSelect]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.UpdateSelect] = {}
-    listeners = (self.uiEventListeners)[UIEvent.UpdateSelect]
+    self.uiEventListeners[UIEvent.UpdateSelect] = {}
+    listeners = self.uiEventListeners[UIEvent.UpdateSelect]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC190: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddBeginDragListener = function(self, widget, name)
-  -- function num : 0_14 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddBeginDragListener(widget, name)
+  name = name or widget.name
   local listener = UIBeginDragListener:New(self.ui, name, widget)
   if not listener:IsSucceed() then
-    return 
+    return
   end
-  local listeners = (self.uiEventListeners)[UIEvent.BeginDrag]
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.BeginDrag]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.BeginDrag] = {}
-    listeners = (self.uiEventListeners)[UIEvent.BeginDrag]
+    self.uiEventListeners[UIEvent.BeginDrag] = {}
+    listeners = self.uiEventListeners[UIEvent.BeginDrag]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC193: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddDragListener = function(self, widget, name)
-  -- function num : 0_15 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddDragListener(widget, name)
+  name = name or widget.name
   local listener = UIDragListener:New(self.ui, name, widget)
   if not listener:IsSucceed() then
-    return 
+    return
   end
-  local listeners = (self.uiEventListeners)[UIEvent.Drag]
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.Drag]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.Drag] = {}
-    listeners = (self.uiEventListeners)[UIEvent.Drag]
+    self.uiEventListeners[UIEvent.Drag] = {}
+    listeners = self.uiEventListeners[UIEvent.Drag]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC196: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddEndDragListener = function(self, widget, name)
-  -- function num : 0_16 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddEndDragListener(widget, name)
+  name = name or widget.name
   local listener = UIEndDragListener:New(self.ui, name, widget)
   if not listener:IsSucceed() then
-    return 
+    return
   end
-  local listeners = (self.uiEventListeners)[UIEvent.EndDrag]
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.EndDrag]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.EndDrag] = {}
-    listeners = (self.uiEventListeners)[UIEvent.EndDrag]
+    self.uiEventListeners[UIEvent.EndDrag] = {}
+    listeners = self.uiEventListeners[UIEvent.EndDrag]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC199: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddScrollListener = function(self, widget, name)
-  -- function num : 0_17 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddScrollListener(widget, name)
+  name = name or widget.name
   local listener = UIScrollListener:New(self.ui, name, widget)
   if not listener:IsSucceed() then
-    return 
+    return
   end
-  local listeners = (self.uiEventListeners)[UIEvent.Scroll]
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.Scroll]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.Scroll] = {}
-    listeners = (self.uiEventListeners)[UIEvent.Scroll]
+    self.uiEventListeners[UIEvent.Scroll] = {}
+    listeners = self.uiEventListeners[UIEvent.Scroll]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC202: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddFocusListener = function(self, widget, name)
-  -- function num : 0_18 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddFocusListener(widget, name)
+  name = name or widget.name
   local listener = UIFocusListener:New(self.ui, name, widget)
   if not listener:IsSucceed() then
-    return 
+    return
   end
-  local listeners = (self.uiEventListeners)[UIEvent.ApplicationFocus]
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.ApplicationFocus]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.ApplicationFocus] = {}
-    listeners = (self.uiEventListeners)[UIEvent.ApplicationFocus]
+    self.uiEventListeners[UIEvent.ApplicationFocus] = {}
+    listeners = self.uiEventListeners[UIEvent.ApplicationFocus]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC205: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddLongClickListener = function(self, widget, name)
-  -- function num : 0_19 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddLongClickListener(widget, name)
+  name = name or widget.name
   local listener = LongClickListener:New(self.ui, name, widget)
   if not listener:IsSucceed() then
-    return 
+    return
   end
-  local listeners = (self.uiEventListeners)[UIEvent.LongClick]
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.LongClick]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.LongClick] = {}
-    listeners = (self.uiEventListeners)[UIEvent.LongClick]
+    self.uiEventListeners[UIEvent.LongClick] = {}
+    listeners = self.uiEventListeners[UIEvent.LongClick]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC208: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddLongPressListener = function(self, widget, name)
-  -- function num : 0_20 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddLongPressListener(widget, name)
+  name = name or widget.name
   local listener = LongPressListener:New(self.ui, name, widget)
   if not listener:IsSucceed() then
-    return 
+    return
   end
-  local listeners = (self.uiEventListeners)[UIEvent.LongPress]
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.LongPress]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.LongPress] = {}
-    listeners = (self.uiEventListeners)[UIEvent.LongPress]
+    self.uiEventListeners[UIEvent.LongPress] = {}
+    listeners = self.uiEventListeners[UIEvent.LongPress]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC211: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddToggleListener = function(self, widget, name)
-  -- function num : 0_21 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddToggleListener(widget, name)
+  name = name or widget.name
   local listener = ToggleListener:New(self.ui, name, widget)
-  local listeners = (self.uiEventListeners)[UIEvent.ToggleChanged]
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.ToggleChanged]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.ToggleChanged] = {}
-    listeners = (self.uiEventListeners)[UIEvent.ToggleChanged]
+    self.uiEventListeners[UIEvent.ToggleChanged] = {}
+    listeners = self.uiEventListeners[UIEvent.ToggleChanged]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC214: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddSliderListener = function(self, widget, name)
-  -- function num : 0_22 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddSliderListener(widget, name)
+  name = name or widget.name
   local listener = SliderListener:New(self.ui, name, widget)
-  local listeners = (self.uiEventListeners)[UIEvent.SliderChanged]
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.SliderChanged]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.SliderChanged] = {}
-    listeners = (self.uiEventListeners)[UIEvent.SliderChanged]
+    self.uiEventListeners[UIEvent.SliderChanged] = {}
+    listeners = self.uiEventListeners[UIEvent.SliderChanged]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC217: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddDropDownListener = function(self, widget, name)
-  -- function num : 0_23 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddDropDownListener(widget, name)
+  name = name or widget.name
   local listener = DropDownListener:New(self.ui, name, widget)
-  local listeners = (self.uiEventListeners)[UIEvent.DropdownChanged]
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.DropdownChanged]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.DropdownChanged] = {}
-    listeners = (self.uiEventListeners)[UIEvent.DropdownChanged]
+    self.uiEventListeners[UIEvent.DropdownChanged] = {}
+    listeners = self.uiEventListeners[UIEvent.DropdownChanged]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC220: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddScrollRectListener = function(self, widget, name)
-  -- function num : 0_24 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddScrollRectListener(widget, name)
+  name = name or widget.name
   local listener = ScrollRectListener:New(self.ui, name, widget)
-  local listeners = (self.uiEventListeners)[UIEvent.ScrollRectChanged]
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.ScrollRectChanged]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.ScrollRectChanged] = {}
-    listeners = (self.uiEventListeners)[UIEvent.ScrollRectChanged]
+    self.uiEventListeners[UIEvent.ScrollRectChanged] = {}
+    listeners = self.uiEventListeners[UIEvent.ScrollRectChanged]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC223: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddInputFieldListener = function(self, widget, name)
-  -- function num : 0_25 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddInputFieldListener(widget, name)
+  name = name or widget.name
   local listener = InputFieldListener:New(self.ui, name, widget)
-  local listeners = (self.uiEventListeners)[UIEvent.InputFieldChanged]
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.InputFieldChanged]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.InputFieldChanged] = {}
-    listeners = (self.uiEventListeners)[UIEvent.InputFieldChanged]
+    self.uiEventListeners[UIEvent.InputFieldChanged] = {}
+    listeners = self.uiEventListeners[UIEvent.InputFieldChanged]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC226: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddInputFieldEndEdit = function(self, widget, name)
-  -- function num : 0_26 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddInputFieldEndEdit(widget, name)
+  name = name or widget.name
   local listener = InputFieldEndEdit:New(self.ui, name, widget)
-  local listeners = (self.uiEventListeners)[UIEvent.InputFieldEndEdit]
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.InputFieldEndEdit]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.InputFieldEndEdit] = {}
-    listeners = (self.uiEventListeners)[UIEvent.InputFieldEndEdit]
+    self.uiEventListeners[UIEvent.InputFieldEndEdit] = {}
+    listeners = self.uiEventListeners[UIEvent.InputFieldEndEdit]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC229: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddInputFieldValidate = function(self, widget, name)
-  -- function num : 0_27 , upvalues : _ENV, UIEvent
-  if not name then
-    name = widget.name
-  end
+function LuaUIView:AddInputFieldValidate(widget, name)
+  name = name or widget.name
   local listener = InputFieldValidata:New(self.ui, name, widget)
-  local listeners = (self.uiEventListeners)[UIEvent.InputFieldValidate]
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
+  local listeners = self.uiEventListeners[UIEvent.InputFieldValidate]
   if not listeners then
-    (self.uiEventListeners)[UIEvent.InputFieldValidate] = {}
-    listeners = (self.uiEventListeners)[UIEvent.InputFieldValidate]
+    self.uiEventListeners[UIEvent.InputFieldValidate] = {}
+    listeners = self.uiEventListeners[UIEvent.InputFieldValidate]
   end
   listeners[name] = listener
 end
 
--- DECOMPILER ERROR at PC232: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.AddUIListeners = function(self)
-  -- function num : 0_28
+function LuaUIView:AddUIListeners()
 end
 
--- DECOMPILER ERROR at PC235: Confused about usage of register: R2 in 'UnsetPending'
-
-LuaUIView.RemoveUIListeners = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  for _,listeners in next do
-    for _,v in next do
+function LuaUIView:RemoveUIListeners()
+  for _, listeners in next, self.uiEventListeners, nil do
+    for _, v in next, listeners, nil do
       v:RemoveListener()
       v:Dispose()
     end
   end
-  ;
-  (table.clear)(self.uiEventListeners)
+  table.clear(self.uiEventListeners)
 end
 
 _class("UIListener", Object)
 UIListener = UIListener
 local widgets = {}
--- DECOMPILER ERROR at PC245: Confused about usage of register: R3 in 'UnsetPending'
 
-UIListener.Constructor = function(self, target, name, widget)
-  -- function num : 0_30
+function UIListener:Constructor(target, name, widget)
   self.widget = widget
   self.name = name
   self.target = target
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R3 in 'UnsetPending'
-
-UIListener.IsSucceed = function(self)
-  -- function num : 0_31
-  do return self.handler ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIListener:IsSucceed()
+  return self.handler ~= nil
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R3 in 'UnsetPending'
-
-UIListener.AddEvent = function(self)
-  -- function num : 0_32 , upvalues : UIEventFuncs
-  local methodName = self.name .. (UIEventFuncs[self.kind])[1]
+function UIListener:AddEvent()
+  local methodName = self.name .. UIEventFuncs[self.kind][1]
   self.handler = self:CreateVoidEventHandler(self.target, methodName)
   if self.handler then
     self:AddListener()
   end
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R3 in 'UnsetPending'
-
-UIListener.CreateVoidEventHandler = function(self, target, methodName)
-  -- function num : 0_33 , upvalues : _ENV
+function UIListener:CreateVoidEventHandler(target, methodName)
   if not target then
-    (Log.fatal)("[UI] Cannot Find Lua Table For UIEvent")
-    return 
+    Log.fatal("[UI] Cannot Find Lua Table For UIEvent")
+    return
   end
   local func = target[methodName]
   if not func then
-    (Log.fatal)("[UI] Cannot Find Lua Function For UIEvent, ", methodName, "  ui ", target._className)
-    return 
+    Log.fatal("[UI] Cannot Find Lua Function For UIEvent, ", methodName, "  ui ", target._className)
+    return
   end
   return func
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R3 in 'UnsetPending'
-
-UIListener.CallMethond = function(widget, kind, ...)
-  -- function num : 0_34 , upvalues : widgets
-  local listener = (widgets[kind])[widget]
-  return (listener.handler)(listener.target, ...)
+function UIListener.CallMethond(widget, kind, ...)
+  local listener = widgets[kind][widget]
+  return listener.handler(listener.target, ...)
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R3 in 'UnsetPending'
-
-UIListener.AddListener = function(self)
-  -- function num : 0_35 , upvalues : UIEventFuncs, _ENV, widgets
+function UIListener:AddListener()
   if self.widget then
-    self.event = (self.widget)[(UIEventFuncs[self.kind])[2]]
+    self.event = self.widget[UIEventFuncs[self.kind][2]]
     local widget = tostring(self.widget)
-    do
-      self.address = widget
-      local kind = self.kind
-      if not widgets[kind] then
-        widgets[kind] = {}
-      end
-      -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (widgets[kind])[widget] = self
-      ;
-      (self.event):AddListener(function(...)
-    -- function num : 0_35_0 , upvalues : _ENV, widget, kind
-    (UIListener.CallMethond)(widget, kind, ...)
-  end
-)
+    self.address = widget
+    local kind = self.kind
+    if not widgets[kind] then
+      widgets[kind] = {}
     end
+    widgets[kind][widget] = self
+    self.event:AddListener(function(...)
+      UIListener.CallMethond(widget, kind, ...)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R3 in 'UnsetPending'
-
-UIListener.RemoveListener = function(self)
-  -- function num : 0_36
+function UIListener:RemoveListener()
   if self.widget then
-    (self.event):RemoveAllListeners()
+    self.event:RemoveAllListeners()
   end
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R3 in 'UnsetPending'
-
-UIListener.Dispose = function(self)
-  -- function num : 0_37 , upvalues : widgets
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  (widgets[self.kind])[self.address] = nil
+function UIListener:Dispose()
+  widgets[self.kind][self.address] = nil
   self.widget = nil
   self.handler = nil
   self.target = nil
@@ -669,386 +543,272 @@ end
 
 _class("TriggerListener", UIListener)
 TriggerListener = TriggerListener
--- DECOMPILER ERROR at PC275: Confused about usage of register: R3 in 'UnsetPending'
 
-TriggerListener.AddListener = function(self)
-  -- function num : 0_38 , upvalues : _ENV, widgets, UIEventFuncs
+function TriggerListener:AddListener()
   if self.widget then
     local widget = tostring(self.widget)
-    do
-      self.address = widget
-      local kind = self.kind
-      if not widgets[kind] then
-        widgets[kind] = {}
-      end
-      -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (widgets[kind])[widget] = self
-      self.event = (UIEventTriggerListener.Get)((self.widget).gameObject)
-      -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.event)[(UIEventFuncs[self.kind])[2]] = function(...)
-    -- function num : 0_38_0 , upvalues : _ENV, widget, kind
-    (UIListener.CallMethond)(widget, kind, ...)
-  end
-
+    self.address = widget
+    local kind = self.kind
+    if not widgets[kind] then
+      widgets[kind] = {}
+    end
+    widgets[kind][widget] = self
+    self.event = UIEventTriggerListener.Get(self.widget.gameObject)
+    self.event[UIEventFuncs[self.kind][2]] = function(...)
+      UIListener.CallMethond(widget, kind, ...)
     end
   end
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R3 in 'UnsetPending'
-
-TriggerListener.RemoveListener = function(self)
-  -- function num : 0_39 , upvalues : UIEventFuncs
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
+function TriggerListener:RemoveListener()
   if self.widget then
-    (self.event)[(UIEventFuncs[self.kind])[2]] = nil
+    self.event[UIEventFuncs[self.kind][2]] = nil
   end
 end
 
 _class("LongPressTrigger", TriggerListener)
 LongPressTrigger = LongPressTrigger
--- DECOMPILER ERROR at PC287: Confused about usage of register: R3 in 'UnsetPending'
 
-LongPressTrigger.AddListener = function(self)
-  -- function num : 0_40 , upvalues : _ENV, widgets, UIEventFuncs
+function LongPressTrigger:AddListener()
   if self.widget then
     local widget = tostring(self.widget)
-    do
-      self.address = widget
-      local kind = self.kind
-      if not widgets[kind] then
-        widgets[kind] = {}
-      end
-      -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (widgets[kind])[widget] = self
-      self.event = (UILongPressTriggerListener.Get)((self.widget).gameObject)
-      -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.event)[(UIEventFuncs[self.kind])[2]] = function(...)
-    -- function num : 0_40_0 , upvalues : _ENV, widget, kind
-    (UIListener.CallMethond)(widget, kind, ...)
-  end
-
+    self.address = widget
+    local kind = self.kind
+    if not widgets[kind] then
+      widgets[kind] = {}
+    end
+    widgets[kind][widget] = self
+    self.event = UILongPressTriggerListener.Get(self.widget.gameObject)
+    self.event[UIEventFuncs[self.kind][2]] = function(...)
+      UIListener.CallMethond(widget, kind, ...)
     end
   end
 end
 
 _class("UIClickListener", TriggerListener)
 UIClickListener = UIClickListener
--- DECOMPILER ERROR at PC296: Confused about usage of register: R3 in 'UnsetPending'
 
-UIClickListener.Constructor = function(self)
-  -- function num : 0_41 , upvalues : UIEvent
+function UIClickListener:Constructor()
   self.kind = UIEvent.Click
   self:AddEvent()
 end
 
 _class("UIDoubleClickListener", TriggerListener)
 UIDoubleClickListener = UIDoubleClickListener
--- DECOMPILER ERROR at PC305: Confused about usage of register: R3 in 'UnsetPending'
 
-UIDoubleClickListener.Constructor = function(self)
-  -- function num : 0_42 , upvalues : UIEvent
+function UIDoubleClickListener:Constructor()
   self.kind = UIEvent.DoubleClick
   self:AddEvent()
 end
 
 _class("UIPressedListener", TriggerListener)
 UIPressedListener = UIPressedListener
--- DECOMPILER ERROR at PC314: Confused about usage of register: R3 in 'UnsetPending'
 
-UIPressedListener.Constructor = function(self)
-  -- function num : 0_43 , upvalues : UIEvent
+function UIPressedListener:Constructor()
   self.kind = UIEvent.Press
   self:AddEvent()
 end
 
 _class("UIReleaseListener", TriggerListener)
 UIReleaseListener = UIReleaseListener
--- DECOMPILER ERROR at PC323: Confused about usage of register: R3 in 'UnsetPending'
 
-UIReleaseListener.Constructor = function(self)
-  -- function num : 0_44 , upvalues : UIEvent
+function UIReleaseListener:Constructor()
   self.kind = UIEvent.Release
   self:AddEvent()
 end
 
 _class("UIHoveredListener", TriggerListener)
 UIHoveredListener = UIHoveredListener
--- DECOMPILER ERROR at PC332: Confused about usage of register: R3 in 'UnsetPending'
 
-UIHoveredListener.Constructor = function(self)
-  -- function num : 0_45 , upvalues : UIEvent
+function UIHoveredListener:Constructor()
   self.kind = UIEvent.Hovered
   self:AddEvent()
 end
 
 _class("UIUnHoveredListener", TriggerListener)
 UIUnHoveredListener = UIUnHoveredListener
--- DECOMPILER ERROR at PC341: Confused about usage of register: R3 in 'UnsetPending'
 
-UIUnHoveredListener.Constructor = function(self)
-  -- function num : 0_46 , upvalues : UIEvent
+function UIUnHoveredListener:Constructor()
   self.kind = UIEvent.Unhovered
   self:AddEvent()
 end
 
 _class("UISelectListener", TriggerListener)
 UISelectListener = UISelectListener
--- DECOMPILER ERROR at PC350: Confused about usage of register: R3 in 'UnsetPending'
 
-UISelectListener.Constructor = function(self)
-  -- function num : 0_47 , upvalues : UIEvent
+function UISelectListener:Constructor()
   self.kind = UIEvent.Select
   self:AddEvent()
 end
 
 _class("UIUpdateSelectListener", TriggerListener)
 UIUpdateSelectListener = UIUpdateSelectListener
--- DECOMPILER ERROR at PC359: Confused about usage of register: R3 in 'UnsetPending'
 
-UIUpdateSelectListener.Constructor = function(self)
-  -- function num : 0_48 , upvalues : UIEvent
+function UIUpdateSelectListener:Constructor()
   self.kind = UIEvent.UpdateSelect
   self:AddEvent()
 end
 
 _class("UIBeginDragListener", TriggerListener)
 UIBeginDragListener = UIBeginDragListener
--- DECOMPILER ERROR at PC368: Confused about usage of register: R3 in 'UnsetPending'
 
-UIBeginDragListener.Constructor = function(self)
-  -- function num : 0_49 , upvalues : UIEvent
+function UIBeginDragListener:Constructor()
   self.kind = UIEvent.BeginDrag
   self:AddEvent()
 end
 
 _class("UIDragListener", TriggerListener)
 UIDragListener = UIDragListener
--- DECOMPILER ERROR at PC377: Confused about usage of register: R3 in 'UnsetPending'
 
-UIDragListener.Constructor = function(self)
-  -- function num : 0_50 , upvalues : UIEvent
+function UIDragListener:Constructor()
   self.kind = UIEvent.Drag
   self:AddEvent()
 end
 
 _class("UIEndDragListener", TriggerListener)
 UIEndDragListener = UIEndDragListener
--- DECOMPILER ERROR at PC386: Confused about usage of register: R3 in 'UnsetPending'
 
-UIEndDragListener.Constructor = function(self)
-  -- function num : 0_51 , upvalues : UIEvent
+function UIEndDragListener:Constructor()
   self.kind = UIEvent.EndDrag
   self:AddEvent()
 end
 
 _class("UIScrollListener", TriggerListener)
 UIScrollListener = UIScrollListener
--- DECOMPILER ERROR at PC395: Confused about usage of register: R3 in 'UnsetPending'
 
-UIScrollListener.Constructor = function(self)
-  -- function num : 0_52 , upvalues : UIEvent
+function UIScrollListener:Constructor()
   self.kind = UIEvent.Scroll
   self:AddEvent()
 end
 
 _class("UIFocusListener", TriggerListener)
 UIFocusListener = UIFocusListener
--- DECOMPILER ERROR at PC404: Confused about usage of register: R3 in 'UnsetPending'
 
-UIFocusListener.Constructor = function(self)
-  -- function num : 0_53 , upvalues : UIEvent
+function UIFocusListener:Constructor()
   self.kind = UIEvent.ApplicationFocus
   self:AddEvent()
 end
 
 _class("LongClickListener", LongPressTrigger)
 LongClickListener = LongClickListener
--- DECOMPILER ERROR at PC413: Confused about usage of register: R3 in 'UnsetPending'
 
-LongClickListener.Constructor = function(self)
-  -- function num : 0_54 , upvalues : UIEvent
+function LongClickListener:Constructor()
   self.kind = UIEvent.LongClick
   self:AddEvent()
 end
 
 _class("LongPressListener", LongPressTrigger)
 LongPressListener = LongPressListener
--- DECOMPILER ERROR at PC422: Confused about usage of register: R3 in 'UnsetPending'
 
-LongPressListener.Constructor = function(self)
-  -- function num : 0_55 , upvalues : UIEvent
+function LongPressListener:Constructor()
   self.kind = UIEvent.LongPress
   self:AddEvent()
 end
 
 _class("ToggleListener", UIListener)
 ToggleListener = ToggleListener
--- DECOMPILER ERROR at PC431: Confused about usage of register: R3 in 'UnsetPending'
 
-ToggleListener.Constructor = function(self)
-  -- function num : 0_56 , upvalues : UIEvent
+function ToggleListener:Constructor()
   self.kind = UIEvent.ToggleChanged
   self:AddEvent()
 end
 
--- DECOMPILER ERROR at PC434: Confused about usage of register: R3 in 'UnsetPending'
-
-ToggleListener.AddListener = function(self)
-  -- function num : 0_57 , upvalues : _ENV, widgets
+function ToggleListener:AddListener()
   if self.widget then
     if not self.h3dToggle then
-      local go = (self.widget).gameObject
-      do
-        local h3dToggle = go:GetComponent("H3DToggle")
-        if not h3dToggle then
-          h3dToggle = go:AddComponent(typeof(H3DToggle))
-        end
-        self.h3dToggle = h3dToggle
-      end
+      local go = self.widget.gameObject
+      local h3dToggle = go:GetComponent("H3DToggle")
+      h3dToggle = h3dToggle or go:AddComponent(typeof(H3DToggle))
+      self.h3dToggle = h3dToggle
     end
-    do
-      local widget = tostring(self.widget)
-      self.address = widget
-      local kind = self.kind
-      if not widgets[kind] then
-        widgets[kind] = {}
-      end
-      -- DECOMPILER ERROR at PC31: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (widgets[kind])[widget] = self
-      ;
-      (self.h3dToggle):OnValueChanged(function(...)
-    -- function num : 0_57_0 , upvalues : _ENV, widget, kind
-    (UIListener.CallMethond)(widget, kind, ...)
-  end
-)
+    local widget = tostring(self.widget)
+    self.address = widget
+    local kind = self.kind
+    if not widgets[kind] then
+      widgets[kind] = {}
     end
+    widgets[kind][widget] = self
+    self.h3dToggle:OnValueChanged(function(...)
+      UIListener.CallMethond(widget, kind, ...)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC437: Confused about usage of register: R3 in 'UnsetPending'
-
-ToggleListener.RemoveListener = function(self)
-  -- function num : 0_58
+function ToggleListener:RemoveListener()
   if self.widget and self.h3dToggle then
-    (self.h3dToggle):OnValueChanged(nil)
+    self.h3dToggle:OnValueChanged(nil)
   end
 end
 
--- DECOMPILER ERROR at PC440: Confused about usage of register: R3 in 'UnsetPending'
-
-ToggleListener.Dispose = function(self)
-  -- function num : 0_59
+function ToggleListener:Dispose()
   self.h3dToggle = nil
 end
 
 _class("SliderListener", UIListener)
 SliderListener = SliderListener
--- DECOMPILER ERROR at PC449: Confused about usage of register: R3 in 'UnsetPending'
 
-SliderListener.Constructor = function(self)
-  -- function num : 0_60 , upvalues : UIEvent
+function SliderListener:Constructor()
   self.kind = UIEvent.SliderChanged
   self:AddEvent()
 end
 
 _class("DropDownListener", UIListener)
 DropDownListener = DropDownListener
--- DECOMPILER ERROR at PC458: Confused about usage of register: R3 in 'UnsetPending'
 
-DropDownListener.Constructor = function(self)
-  -- function num : 0_61 , upvalues : UIEvent
+function DropDownListener:Constructor()
   self.kind = UIEvent.DropdownChanged
   self:AddEvent()
 end
 
 _class("ScrollRectListener", UIListener)
 ScrollRectListener = ScrollRectListener
--- DECOMPILER ERROR at PC467: Confused about usage of register: R3 in 'UnsetPending'
 
-ScrollRectListener.Constructor = function(self)
-  -- function num : 0_62 , upvalues : UIEvent
+function ScrollRectListener:Constructor()
   self.kind = UIEvent.ScrollRectChanged
   self:AddEvent()
 end
 
 _class("InputFieldListener", UIListener)
 InputFieldListener = InputFieldListener
--- DECOMPILER ERROR at PC476: Confused about usage of register: R3 in 'UnsetPending'
 
-InputFieldListener.Constructor = function(self)
-  -- function num : 0_63 , upvalues : UIEvent
+function InputFieldListener:Constructor()
   self.kind = UIEvent.InputFieldChanged
   self:AddEvent()
 end
 
 _class("InputFieldEndEdit", UIListener)
 InputFieldEndEdit = InputFieldEndEdit
--- DECOMPILER ERROR at PC485: Confused about usage of register: R3 in 'UnsetPending'
 
-InputFieldEndEdit.Constructor = function(self)
-  -- function num : 0_64 , upvalues : UIEvent
+function InputFieldEndEdit:Constructor()
   self.kind = UIEvent.InputFieldEndEdit
   self:AddEvent()
 end
 
 _class("InputFieldValidata", UIListener)
 InputFieldValidata = InputFieldValidata
--- DECOMPILER ERROR at PC494: Confused about usage of register: R3 in 'UnsetPending'
 
-InputFieldValidata.Constructor = function(self)
-  -- function num : 0_65 , upvalues : UIEvent
+function InputFieldValidata:Constructor()
   self.kind = UIEvent.InputFieldValidate
   self:AddEvent()
 end
 
--- DECOMPILER ERROR at PC497: Confused about usage of register: R3 in 'UnsetPending'
-
-InputFieldValidata.AddListener = function(self)
-  -- function num : 0_66 , upvalues : _ENV, widgets, UIEventFuncs
+function InputFieldValidata:AddListener()
   if self.widget then
     local widget = tostring(self.widget)
-    do
-      self.address = widget
-      local kind = self.kind
-      if not widgets[kind] then
-        widgets[kind] = {}
-      end
-      -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (widgets[kind])[widget] = self
-      -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.widget)[(UIEventFuncs[self.kind])[2]] = function(...)
-    -- function num : 0_66_0 , upvalues : _ENV, widget, kind
-    return (UIListener.CallMethond)(widget, kind, ...)
-  end
-
+    self.address = widget
+    local kind = self.kind
+    if not widgets[kind] then
+      widgets[kind] = {}
+    end
+    widgets[kind][widget] = self
+    self.widget[UIEventFuncs[self.kind][2]] = function(...)
+      return UIListener.CallMethond(widget, kind, ...)
     end
   end
 end
 
--- DECOMPILER ERROR at PC500: Confused about usage of register: R3 in 'UnsetPending'
-
-InputFieldValidata.RemoveListener = function(self)
-  -- function num : 0_67 , upvalues : UIEventFuncs
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
+function InputFieldValidata:RemoveListener()
   if self.widget then
-    (self.widget)[(UIEventFuncs[self.kind])[2]] = nil
+    self.widget[UIEventFuncs[self.kind][2]] = nil
   end
 end
-
-

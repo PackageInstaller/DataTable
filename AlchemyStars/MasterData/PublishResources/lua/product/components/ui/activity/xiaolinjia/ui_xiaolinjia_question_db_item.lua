@@ -1,65 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/ui_xiaolinjia_question_db_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXiaoLinJiaQuestionDBItem", UICustomWidget)
 UIXiaoLinJiaQuestionDBItem = UIXiaoLinJiaQuestionDBItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXiaoLinJiaQuestionDBItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.atlas = (self:RootUIOwner()):GetAsset("XiaoLinJia.spriteatlas", LoadType.SpriteAtlas)
+function UIXiaoLinJiaQuestionDBItem:OnShow()
+  self.atlas = self:RootUIOwner():GetAsset("XiaoLinJia.spriteatlas", LoadType.SpriteAtlas)
   self.title = self:GetUIComponent("UILocalizationText", "title")
-  self.textList = {[1] = self:GetUIComponent("UILocalizationText", "questionText1"), [2] = self:GetUIComponent("UILocalizationText", "questionText2")}
-  self.rightObjList = {[1] = self:GetGameObject("right1"), [2] = self:GetGameObject("right2")}
-  self.playerHeadObjList = {[1] = self:GetGameObject("player1"), [2] = self:GetGameObject("player2")}
-  self.roleHeadList = {[1] = self:GetUIComponent("Image", "role1"), [2] = self:GetUIComponent("Image", "role2")}
+  self.textList = {
+    [1] = self:GetUIComponent("UILocalizationText", "questionText1"),
+    [2] = self:GetUIComponent("UILocalizationText", "questionText2")
+  }
+  self.rightObjList = {
+    [1] = self:GetGameObject("right1"),
+    [2] = self:GetGameObject("right2")
+  }
+  self.playerHeadObjList = {
+    [1] = self:GetGameObject("player1"),
+    [2] = self:GetGameObject("player2")
+  }
+  self.roleHeadList = {
+    [1] = self:GetUIComponent("Image", "role1"),
+    [2] = self:GetUIComponent("Image", "role2")
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaQuestionDBItem.SetData = function(self, session, selectIdx, icon, isRight)
-  -- function num : 0_1 , upvalues : _ENV
-  local title = (StringTable.Get)(session.Topic)
+function UIXiaoLinJiaQuestionDBItem:SetData(session, selectIdx, icon, isRight)
+  local title = StringTable.Get(session.Topic)
   local options = session.Options
-  ;
-  (self.title):SetText(title)
-  ;
-  ((self.textList)[1]):SetText((StringTable.Get)(options[1]))
-  ;
-  ((self.textList)[2]):SetText((StringTable.Get)(options[2]))
+  self.title:SetText(title)
+  self.textList[1]:SetText(StringTable.Get(options[1]))
+  self.textList[2]:SetText(StringTable.Get(options[2]))
   if isRight then
-    ((self.rightObjList)[selectIdx]):SetActive(true)
-    ;
-    ((self.playerHeadObjList)[selectIdx]):SetActive(true)
-    ;
-    (((self.roleHeadList)[selectIdx]).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC49: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self.roleHeadList)[selectIdx]).sprite = (self.atlas):GetSprite(icon)
-    -- DECOMPILER ERROR at PC58: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self.textList)[selectIdx]).color = Color(1, 1, 1, 1)
+    self.rightObjList[selectIdx]:SetActive(true)
+    self.playerHeadObjList[selectIdx]:SetActive(true)
+    self.roleHeadList[selectIdx].gameObject:SetActive(true)
+    self.roleHeadList[selectIdx].sprite = self.atlas:GetSprite(icon)
+    self.textList[selectIdx].color = Color(1, 1, 1, 1)
   else
     local wrongIndex = 3 - selectIdx
-    ;
-    ((self.rightObjList)[selectIdx]):SetActive(true)
-    ;
-    ((self.playerHeadObjList)[wrongIndex]):SetActive(true)
-    ;
-    (((self.roleHeadList)[selectIdx]).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC83: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((self.roleHeadList)[selectIdx]).sprite = (self.atlas):GetSprite(icon)
-    -- DECOMPILER ERROR at PC92: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((self.textList)[selectIdx]).color = Color(1, 1, 1, 1)
+    self.rightObjList[selectIdx]:SetActive(true)
+    self.playerHeadObjList[wrongIndex]:SetActive(true)
+    self.roleHeadList[selectIdx].gameObject:SetActive(true)
+    self.roleHeadList[selectIdx].sprite = self.atlas:GetSprite(icon)
+    self.textList[selectIdx].color = Color(1, 1, 1, 1)
   end
 end
-
-

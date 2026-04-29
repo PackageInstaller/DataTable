@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/ui_battle_visible_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("UiBattleVisibleInstruction", BaseInstruction)
 UiBattleVisibleInstruction = UiBattleVisibleInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UiBattleVisibleInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function UiBattleVisibleInstruction:Constructor(paramList)
   self._visible = tonumber(paramList.visible)
   self._time = 0
   local timeStr = paramList.time
@@ -18,11 +11,6 @@ UiBattleVisibleInstruction.Constructor = function(self, paramList)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UiBattleVisibleInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UiBattleVisible, self._visible, self._time)
+function UiBattleVisibleInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UiBattleVisible, self._visible, self._time)
 end
-
-

@@ -1,113 +1,88 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/chain_skill_range_flash_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChainSkllRangeFlashSystem_Render", Object)
 ChainSkllRangeFlashSystem_Render = ChainSkllRangeFlashSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChainSkllRangeFlashSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function ChainSkllRangeFlashSystem_Render:Constructor(world)
   self._world = world
   self._timeService = world:GetService("Time")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkllRangeFlashSystem_Render.Execute = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local reBoard = (self._world):GetRenderBoardEntity()
+function ChainSkllRangeFlashSystem_Render:Execute()
+  local reBoard = self._world:GetRenderBoardEntity()
   if reBoard == nil then
-    return 
+    return
   end
   local previewChainSkillRangeCmpt = reBoard:PreviewChainSkillRange()
   local isEnable = previewChainSkillRangeCmpt:GetPreviewChainSkillRangeEnable()
-  if not isEnable and previewChainSkillRangeCmpt:HasPreviewChainSkillData() then
-    self:_DestroyChainSkillRange()
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.UpdateBuffLayerActiveSkillEnergyPreview, {shutdown = true})
+  if not isEnable then
+    if previewChainSkillRangeCmpt:HasPreviewChainSkillData() then
+      self:_DestroyChainSkillRange()
+      self._world:EventDispatcher():Dispatch(GameEventType.UpdateBuffLayerActiveSkillEnergyPreview, {shutdown = true})
+    end
+    return
   end
-  do return  end
   if not previewChainSkillRangeCmpt:HasPreviewChainSkillData() then
     self:_ClearFlashTarget()
-    local linkrsvc = (self._world):GetService("LinkageRender")
+    local linkrsvc = self._world:GetService("LinkageRender")
     linkrsvc:HideChainSkillIcon()
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.UpdateBuffLayerActiveSkillEnergyPreview, {shutdown = true})
-    return 
+    self._world:EventDispatcher():Dispatch(GameEventType.UpdateBuffLayerActiveSkillEnergyPreview, {shutdown = true})
+    return
   end
-  do
-    local previewIndex = previewChainSkillRangeCmpt:GetPreviewTypeIndex()
-    if previewIndex <= 0 then
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.UpdateBuffLayerActiveSkillEnergyPreview, {shutdown = true})
-      return 
-    end
-    local isFlashRange = previewChainSkillRangeCmpt:IsFlashChainSkillRange()
-    if isFlashRange == true then
-      local previewStartTime = previewChainSkillRangeCmpt:GetPreviewStartTime()
-      local curTime = (self._timeService):GetCurrentTimeMs()
-      if previewStartTime <= 0 then
-        self:_CreatePreviewChainSkill(previewIndex)
-      else
-        local activeTime = curTime - previewStartTime
-        local showTime = previewChainSkillRangeCmpt:GetPreviewShowTime()
-        if showTime < activeTime then
-          self:_HidePreviewChainSkill(previewIndex)
-        end
-      end
+  local previewIndex = previewChainSkillRangeCmpt:GetPreviewTypeIndex()
+  if previewIndex <= 0 then
+    self._world:EventDispatcher():Dispatch(GameEventType.UpdateBuffLayerActiveSkillEnergyPreview, {shutdown = true})
+    return
+  end
+  local isFlashRange = previewChainSkillRangeCmpt:IsFlashChainSkillRange()
+  if isFlashRange == true then
+    local previewStartTime = previewChainSkillRangeCmpt:GetPreviewStartTime()
+    local curTime = self._timeService:GetCurrentTimeMs()
+    if previewStartTime <= 0 then
+      self:_CreatePreviewChainSkill(previewIndex)
     else
-      do
-        if previewIndex > 0 then
-          self:_CreatePreviewChainSkill(previewIndex)
-        end
+      local activeTime = curTime - previewStartTime
+      local showTime = previewChainSkillRangeCmpt:GetPreviewShowTime()
+      if activeTime > showTime then
+        self:_HidePreviewChainSkill(previewIndex)
       end
     end
+  elseif 0 < previewIndex then
+    self:_CreatePreviewChainSkill(previewIndex)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkllRangeFlashSystem_Render._ShowOutlineEntityArray = function(self, outlineEntityArray)
-  -- function num : 0_2 , upvalues : _ENV
-  for k,outlineEntityID in ipairs(outlineEntityArray) do
-    local outlineEntity = (self._world):GetEntityByID(outlineEntityID)
+function ChainSkllRangeFlashSystem_Render:_ShowOutlineEntityArray(outlineEntityArray)
+  for k, outlineEntityID in ipairs(outlineEntityArray) do
+    local outlineEntity = self._world:GetEntityByID(outlineEntityID)
     self:_SetOutlineEntityVisible(outlineEntity, true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkllRangeFlashSystem_Render._HideOutlineEntityArray = function(self, outlineEntityArray)
-  -- function num : 0_3 , upvalues : _ENV
-  for k,outlineEntityID in ipairs(outlineEntityArray) do
-    local outlineEntity = (self._world):GetEntityByID(outlineEntityID)
+function ChainSkllRangeFlashSystem_Render:_HideOutlineEntityArray(outlineEntityArray)
+  for k, outlineEntityID in ipairs(outlineEntityArray) do
+    local outlineEntity = self._world:GetEntityByID(outlineEntityID)
     self:_SetOutlineEntityVisible(outlineEntity, false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkllRangeFlashSystem_Render._FlashTarget = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local flashEnemyEntities = ((self._world):GetGroup(((self._world).BW_WEMatchers).MaterialAnimation)):GetEntities()
+function ChainSkllRangeFlashSystem_Render:_FlashTarget()
+  local flashEnemyEntities = self._world:GetGroup(self._world.BW_WEMatchers.MaterialAnimation):GetEntities()
   local chainAttackTargetList = {}
-  local previewEntity = (self._world):GetPreviewEntity()
+  local previewEntity = self._world:GetPreviewEntity()
   local selectPetCmpt = previewEntity:PreviewChainSelectPet()
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local petList = selectPetCmpt:GetRenderPetList()
-  for i,v in ipairs(petList) do
+  for i, v in ipairs(petList) do
     local petEntityID = v
     local chainSkillID = selectPetCmpt:GetPreviewChainSelectPetSkillID(petEntityID)
     local scopeResult = selectPetCmpt:GetPreviewChainSelectPetScopeResult(petEntityID)
     local skillConfigData = configService:GetSkillConfigData(chainSkillID)
     local preViewType = skillConfigData:GetSkillPreviewType()
     if preViewType ~= SkillPreviewType.AddHPChainSkill then
-      (table.appendArray)(chainAttackTargetList, scopeResult:GetTargetIDs())
+      table.appendArray(chainAttackTargetList, scopeResult:GetTargetIDs())
     end
   end
-  for _,beAttackEntityID in pairs(chainAttackTargetList) do
-    local beAttackEntity = (self._world):GetEntityByID(beAttackEntityID)
+  for _, beAttackEntityID in pairs(chainAttackTargetList) do
+    local beAttackEntity = self._world:GetEntityByID(beAttackEntityID)
     if beAttackEntity then
       local hasFlash = self:_IsFlashEntity(beAttackEntityID, flashEnemyEntities)
       if not hasFlash and self:_GetCanPlayMaterialAnimationWithBuff(beAttackEntity) then
@@ -115,9 +90,9 @@ ChainSkllRangeFlashSystem_Render._FlashTarget = function(self)
       end
     end
   end
-  for _,v in ipairs(flashEnemyEntities) do
+  for _, v in ipairs(flashEnemyEntities) do
     local curEntityID = v:GetID()
-    local beAttackEntity = (self._world):GetEntityByID(curEntityID)
+    local beAttackEntity = self._world:GetEntityByID(curEntityID)
     if beAttackEntity and not beAttackEntity:HasOutsideRegion() and not beAttackEntity:HasOffBoardMonster() then
       local inAttackRange = self:_InAttackTargetList(curEntityID, chainAttackTargetList)
       if not inAttackRange and not v:HasPetPstID() and self:_GetCanPlayMaterialAnimationWithBuff(beAttackEntity) then
@@ -127,36 +102,27 @@ ChainSkllRangeFlashSystem_Render._FlashTarget = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkllRangeFlashSystem_Render._GetCanPlayMaterialAnimationWithBuff = function(self, entity)
-  -- function num : 0_5 , upvalues : _ENV
+function ChainSkllRangeFlashSystem_Render:_GetCanPlayMaterialAnimationWithBuff(entity)
   if not entity then
     return false
   end
-  if entity:BuffView() and (entity:BuffView()):HasBuffEffect(BuffEffectType.NotPlayMaterialAnimation) then
+  if entity:BuffView() and entity:BuffView():HasBuffEffect(BuffEffectType.NotPlayMaterialAnimation) then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkllRangeFlashSystem_Render._IsFlashEntity = function(self, entityID, entityGroup)
-  -- function num : 0_6 , upvalues : _ENV
-  for k,entityInGroup in pairs(entityGroup) do
-    if entityInGroup:GetID() == entityID and entityInGroup:MaterialAnimationComponent() and (entityInGroup:MaterialAnimationComponent()):IsPlayingSelectAlpha() then
+function ChainSkllRangeFlashSystem_Render:_IsFlashEntity(entityID, entityGroup)
+  for k, entityInGroup in pairs(entityGroup) do
+    if entityInGroup:GetID() == entityID and entityInGroup:MaterialAnimationComponent() and entityInGroup:MaterialAnimationComponent():IsPlayingSelectAlpha() then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkllRangeFlashSystem_Render._InAttackTargetList = function(self, curEntityID, chainAttackTargetList)
-  -- function num : 0_7 , upvalues : _ENV
-  for _,entityID in pairs(chainAttackTargetList) do
+function ChainSkllRangeFlashSystem_Render:_InAttackTargetList(curEntityID, chainAttackTargetList)
+  for _, entityID in pairs(chainAttackTargetList) do
     if entityID == curEntityID then
       return true
     end
@@ -164,140 +130,95 @@ ChainSkllRangeFlashSystem_Render._InAttackTargetList = function(self, curEntityI
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkllRangeFlashSystem_Render._ClearFlashTarget = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local flashEnemyEntities = ((self._world):GetGroup(((self._world).BW_WEMatchers).MaterialAnimation)):GetEntities()
-  for _,v in ipairs(flashEnemyEntities) do
-    if v:MaterialAnimationComponent() and (v:MaterialAnimationComponent()):IsPlayingSelectAlpha() and not v:HasPetPstID() then
+function ChainSkllRangeFlashSystem_Render:_ClearFlashTarget()
+  local flashEnemyEntities = self._world:GetGroup(self._world.BW_WEMatchers.MaterialAnimation):GetEntities()
+  for _, v in ipairs(flashEnemyEntities) do
+    if v:MaterialAnimationComponent() and v:MaterialAnimationComponent():IsPlayingSelectAlpha() and not v:HasPetPstID() then
       v:NewEnableGhost()
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkllRangeFlashSystem_Render._DestroyChainSkillRange = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local renderBattleService = (self._world):GetService("RenderBattle")
+function ChainSkllRangeFlashSystem_Render:_DestroyChainSkillRange()
+  local renderBattleService = self._world:GetService("RenderBattle")
   renderBattleService:ClearChainSkillPreviewRenderData()
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.UpdateBuffLayerActiveSkillEnergyPreview, {shutdown = true})
+  self._world:EventDispatcher():Dispatch(GameEventType.UpdateBuffLayerActiveSkillEnergyPreview, {shutdown = true})
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkllRangeFlashSystem_Render._SetOutlineEntityVisible = function(self, outLineEntity, visible)
-  -- function num : 0_10 , upvalues : _ENV
+function ChainSkllRangeFlashSystem_Render:_SetOutlineEntityVisible(outLineEntity, visible)
   local viewCmpt = outLineEntity:View()
   if viewCmpt == nil then
-    (Log.fatal)("outline entity has no view")
-    return 
+    Log.fatal("outline entity has no view")
+    return
   end
   local gameObj = viewCmpt:GetGameObject()
-  local curPos = (gameObj.transform).position
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R6 in 'UnsetPending'
-
-  -- DECOMPILER ERROR at PC28: Unhandled construct in 'MakeBoolean' P1
-
-  if visible and curPos ~= Vector3(curPos.x, 0, curPos.z) then
-    (gameObj.transform).position = Vector3(curPos.x, 0, curPos.z)
-  end
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R6 in 'UnsetPending'
-
-  if curPos ~= Vector3(curPos.x, 1000, curPos.z) then
-    (gameObj.transform).position = Vector3(curPos.x, 1000, curPos.z)
+  local curPos = gameObj.transform.position
+  if visible then
+    if curPos ~= Vector3(curPos.x, 0, curPos.z) then
+      gameObj.transform.position = Vector3(curPos.x, 0, curPos.z)
+    end
+  elseif curPos ~= Vector3(curPos.x, 1000, curPos.z) then
+    gameObj.transform.position = Vector3(curPos.x, 1000, curPos.z)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkllRangeFlashSystem_Render._HidePreviewChainSkill = function(self, previewIndex)
-  -- function num : 0_11 , upvalues : _ENV
+function ChainSkllRangeFlashSystem_Render:_HidePreviewChainSkill(previewIndex)
   local previewChainSkillRangeCmpt, chainSkillRangeEntityDic = self:_GetPreviewChainSkillRangeAndRangeEntityDic()
   local type = previewChainSkillRangeCmpt:GetPreviewChainSkillTypeByPreviewIndex(previewIndex)
-  local curTime = (self._timeService):GetCurrentTimeMs()
+  local curTime = self._timeService:GetCurrentTimeMs()
   if type == PreviewChainSkillType.Range then
     local outlineEntityArray = chainSkillRangeEntityDic[previewIndex]
     self:_HideOutlineEntityArray(outlineEntityArray)
-  else
-    do
-      if type == PreviewChainSkillType.SingleEntity then
-        self:_HidePreviewSnipeEffect(previewIndex)
-      else
-        if type == PreviewChainSkillType.AddHP then
-          self:_HideAddHPPetAnim(previewIndex)
-        else
-          if type == PreviewChainSkillType.RangeAndSingleEntity then
-            local outlineEntityArray = chainSkillRangeEntityDic[previewIndex]
-            self:_HideOutlineEntityArray(outlineEntityArray)
-            self:_HidePreviewSnipeEffect(previewIndex)
-          end
-        end
-      end
-      do
-        local nextIndex = previewIndex + 1
-        if previewChainSkillRangeCmpt:GetPreviewChainSkillTypeByPreviewIndex(nextIndex) == PreviewChainSkillType.None then
-          nextIndex = 1
-        end
-        previewChainSkillRangeCmpt:SetPreviewTypeIndex(nextIndex)
-        previewChainSkillRangeCmpt:SetPreviewStartTime(0)
-        local linkrsvc = (self._world):GetService("LinkageRender")
-        linkrsvc:HideChainSkillIcon()
-      end
-    end
+  elseif type == PreviewChainSkillType.SingleEntity then
+    self:_HidePreviewSnipeEffect(previewIndex)
+  elseif type == PreviewChainSkillType.AddHP then
+    self:_HideAddHPPetAnim(previewIndex)
+  elseif type == PreviewChainSkillType.RangeAndSingleEntity then
+    local outlineEntityArray = chainSkillRangeEntityDic[previewIndex]
+    self:_HideOutlineEntityArray(outlineEntityArray)
+    self:_HidePreviewSnipeEffect(previewIndex)
   end
+  local nextIndex = previewIndex + 1
+  if previewChainSkillRangeCmpt:GetPreviewChainSkillTypeByPreviewIndex(nextIndex) == PreviewChainSkillType.None then
+    nextIndex = 1
+  end
+  previewChainSkillRangeCmpt:SetPreviewTypeIndex(nextIndex)
+  previewChainSkillRangeCmpt:SetPreviewStartTime(0)
+  local linkrsvc = self._world:GetService("LinkageRender")
+  linkrsvc:HideChainSkillIcon()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkllRangeFlashSystem_Render._CreatePreviewChainSkill = function(self, previewIndex)
-  -- function num : 0_12 , upvalues : _ENV
+function ChainSkllRangeFlashSystem_Render:_CreatePreviewChainSkill(previewIndex)
   self:_FlashTarget()
   local previewChainSkillRangeCmpt, chainSkillRangeEntityDic = self:_GetPreviewChainSkillRangeAndRangeEntityDic()
   local type = previewChainSkillRangeCmpt:GetPreviewChainSkillTypeByPreviewIndex(previewIndex)
-  local curTime = (self._timeService):GetCurrentTimeMs()
+  local curTime = self._timeService:GetCurrentTimeMs()
   if type == PreviewChainSkillType.Range then
     local outlineEntityArray = chainSkillRangeEntityDic[previewIndex]
     self:_ShowOutlineEntityArray(outlineEntityArray)
+  elseif type == PreviewChainSkillType.SingleEntity then
+    self:_ShowPreviewSnipeEffect(previewIndex)
+  elseif type == PreviewChainSkillType.AddHP then
+    self:_ShowAddHPPetAnim(previewIndex)
+  elseif type == PreviewChainSkillType.RangeAndSingleEntity then
+    local outlineEntityArray = chainSkillRangeEntityDic[previewIndex]
+    self:_ShowOutlineEntityArray(outlineEntityArray)
+    self:_ShowPreviewSnipeEffect(previewIndex)
   else
-    do
-      if type == PreviewChainSkillType.SingleEntity then
-        self:_ShowPreviewSnipeEffect(previewIndex)
-      else
-        if type == PreviewChainSkillType.AddHP then
-          self:_ShowAddHPPetAnim(previewIndex)
-        else
-          if type == PreviewChainSkillType.RangeAndSingleEntity then
-            local outlineEntityArray = chainSkillRangeEntityDic[previewIndex]
-            self:_ShowOutlineEntityArray(outlineEntityArray)
-            self:_ShowPreviewSnipeEffect(previewIndex)
-          else
-            do
-              ;
-              (Log.fatal)("")
-              previewChainSkillRangeCmpt:SetPreviewStartTime(curTime)
-              local petEntityID = previewChainSkillRangeCmpt:GetPreviewPetID(previewIndex)
-              local linkrsvc = (self._world):GetService("LinkageRender")
-              linkrsvc:ShowChainSkillIcon(petEntityID)
-            end
-          end
-        end
-      end
-    end
+    Log.fatal("")
   end
+  previewChainSkillRangeCmpt:SetPreviewStartTime(curTime)
+  local petEntityID = previewChainSkillRangeCmpt:GetPreviewPetID(previewIndex)
+  local linkrsvc = self._world:GetService("LinkageRender")
+  linkrsvc:ShowChainSkillIcon(petEntityID)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkllRangeFlashSystem_Render._ShowPreviewSnipeEffect = function(self, previewType)
-  -- function num : 0_13 , upvalues : _ENV
+function ChainSkllRangeFlashSystem_Render:_ShowPreviewSnipeEffect(previewType)
   local previewChainSkillRangeCmpt, _ = self:_GetPreviewChainSkillRangeAndRangeEntityDic()
   local entityList = previewChainSkillRangeCmpt:GetPreviewChainSkillSingleEffectList(previewType)
   local attackElementType = previewChainSkillRangeCmpt:GetChainSkillAttackElementType(previewType)
-  local renderBattleService = (self._world):GetService("RenderBattle")
-  for k,entity in pairs(entityList) do
+  local renderBattleService = self._world:GetService("RenderBattle")
+  for k, entity in pairs(entityList) do
     if not entity:IsViewVisible() then
       entity:SetViewVisible(true)
     end
@@ -305,14 +226,11 @@ ChainSkllRangeFlashSystem_Render._ShowPreviewSnipeEffect = function(self, previe
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkllRangeFlashSystem_Render._HidePreviewSnipeEffect = function(self, previewType)
-  -- function num : 0_14 , upvalues : _ENV
+function ChainSkllRangeFlashSystem_Render:_HidePreviewSnipeEffect(previewType)
   local previewChainSkillRangeCmpt, _ = self:_GetPreviewChainSkillRangeAndRangeEntityDic()
   local entityList = previewChainSkillRangeCmpt:GetPreviewChainSkillSingleEffectList(previewType)
-  local renderBattleService = (self._world):GetService("RenderBattle")
-  for k,entity in pairs(entityList) do
+  local renderBattleService = self._world:GetService("RenderBattle")
+  for k, entity in pairs(entityList) do
     renderBattleService:StopAnimation(entity)
     if entity:IsViewVisible() then
       entity:SetViewVisible(false)
@@ -320,33 +238,22 @@ ChainSkllRangeFlashSystem_Render._HidePreviewSnipeEffect = function(self, previe
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkllRangeFlashSystem_Render._ShowAddHPPetAnim = function(self, previewType)
-  -- function num : 0_15
-  local teamEntity = ((self._world):Player()):GetPreviewTeamEntity()
+function ChainSkllRangeFlashSystem_Render:_ShowAddHPPetAnim(previewType)
+  local teamEntity = self._world:Player():GetPreviewTeamEntity()
   local teamLeaderEntity = teamEntity:GetTeamLeaderPetEntity()
   teamLeaderEntity:PlayCurePreMaterialAnim()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkllRangeFlashSystem_Render._HideAddHPPetAnim = function(self, previewType)
-  -- function num : 0_16
-  local teamEntity = ((self._world):Player()):GetPreviewTeamEntity()
+function ChainSkllRangeFlashSystem_Render:_HideAddHPPetAnim(previewType)
+  local teamEntity = self._world:Player():GetPreviewTeamEntity()
   local teamLeaderEntity = teamEntity:GetTeamLeaderPetEntity()
   teamLeaderEntity:StopCurePreAnim()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkllRangeFlashSystem_Render._GetPreviewChainSkillRangeAndRangeEntityDic = function(self)
-  -- function num : 0_17
-  local reBoard = (self._world):GetRenderBoardEntity()
+function ChainSkllRangeFlashSystem_Render:_GetPreviewChainSkillRangeAndRangeEntityDic()
+  local reBoard = self._world:GetRenderBoardEntity()
   local previewChainSkillRangeCmpt = reBoard:PreviewChainSkillRange()
   local chainSkillRangeData = previewChainSkillRangeCmpt:GetChainSkillRangeOutlineDic()
   local chainSkillRangeEntityDic = chainSkillRangeData:GetChainSkillOutlineEntityDic()
   return previewChainSkillRangeCmpt, chainSkillRangeEntityDic
 end
-
-

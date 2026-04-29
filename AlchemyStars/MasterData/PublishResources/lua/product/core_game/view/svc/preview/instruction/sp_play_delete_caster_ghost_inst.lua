@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_delete_caster_ghost_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayDeleteCasterGhostInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayDeleteCasterGhostInstruction = SkillPreviewPlayDeleteCasterGhostInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayDeleteCasterGhostInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewPlayDeleteCasterGhostInstruction:Constructor(params)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayDeleteCasterGhostInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1
-  local svc = (casterEntity:GetOwnerWorld()):GetService("RenderEntity")
+function SkillPreviewPlayDeleteCasterGhostInstruction:DoInstruction(TT, casterEntity, previewContext)
+  local svc = casterEntity:GetOwnerWorld():GetService("RenderEntity")
   svc:DestroyGhost()
 end
-
-

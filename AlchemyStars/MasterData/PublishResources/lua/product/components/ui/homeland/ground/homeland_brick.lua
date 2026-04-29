@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ground/homeland_brick.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandBrick", Object)
 HomelandBrick = HomelandBrick
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandBrick.Constructor = function(self, build, forward, after, left, right)
-  -- function num : 0_0
+function HomelandBrick:Constructor(build, forward, after, left, right)
   self._build = build
   self._forwardEdge = forward
   self._afterEdge = after
@@ -16,10 +9,7 @@ HomelandBrick.Constructor = function(self, build, forward, after, left, right)
   self._rightEdig = right
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandBrick.GetEdge = function(self, direction)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandBrick:GetEdge(direction)
   if direction == HomelandBrickDirection.Forward then
     return self._forwardEdge
   end
@@ -34,159 +24,108 @@ HomelandBrick.GetEdge = function(self, direction)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandBrick.Destroy = function(self)
-  -- function num : 0_2
+function HomelandBrick:Destroy()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandBrick.SetEdgeVisible = function(self, direction, status)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandBrick:SetEdgeVisible(direction, status)
   if direction == HomelandBrickDirection.Forward then
-    (self._forwardEdge):SetVisible(status)
+    self._forwardEdge:SetVisible(status)
   end
   if direction == HomelandBrickDirection.AFTER then
-    (self._afterEdge):SetVisible(status)
+    self._afterEdge:SetVisible(status)
   end
   if direction == HomelandBrickDirection.LEFT then
-    (self._leftEdge):SetVisible(status)
+    self._leftEdge:SetVisible(status)
   end
   if direction == HomelandBrickDirection.RIGHT then
-    (self._rightEdig):SetVisible(status)
+    self._rightEdig:SetVisible(status)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandBrick.GetBuild = function(self)
-  -- function num : 0_4
+function HomelandBrick:GetBuild()
   return self._build
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandBrick.Equal = function(self, brick)
-  -- function num : 0_5
-  do return self == brick or brick:GetBuild() == self._build end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandBrick:Equal(brick)
+  return self == brick or brick:GetBuild() == self._build
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandBrick.GetAngleY = function(self)
-  -- function num : 0_6
-  return (((self._build).transform).eulerAngles).y
+function HomelandBrick:GetAngleY()
+  return self._build.transform.eulerAngles.y
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandBrick.GetPosition = function(self)
-  -- function num : 0_7
-  return ((self._build).transform).position
+function HomelandBrick:GetPosition()
+  return self._build.transform.position
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandBrick.GetDirectionPosition = function(self, direction)
-  -- function num : 0_8 , upvalues : _ENV
-  local pos = nil
+function HomelandBrick:GetDirectionPosition(direction)
+  local pos
   if direction == HomelandBrickDirection.Forward then
-    pos = ((self._build).transform):TransformPoint(Vector3(0, 0, self:GetHeight()))
-  else
-    if direction == HomelandBrickDirection.AFTER then
-      pos = ((self._build).transform):TransformPoint(Vector3(0, 0, -self:GetHeight()))
-    else
-      if direction == HomelandBrickDirection.LEFT then
-        pos = ((self._build).transform):TransformPoint(Vector3(-self:GetWidth(), 0, 0))
-      else
-        if direction == HomelandBrickDirection.RIGHT then
-          pos = ((self._build).transform):TransformPoint(Vector3(self:GetWidth(), 0, 0))
-        end
-      end
-    end
+    pos = self._build.transform:TransformPoint(Vector3(0, 0, self:GetHeight()))
+  elseif direction == HomelandBrickDirection.AFTER then
+    pos = self._build.transform:TransformPoint(Vector3(0, 0, -self:GetHeight()))
+  elseif direction == HomelandBrickDirection.LEFT then
+    pos = self._build.transform:TransformPoint(Vector3(-self:GetWidth(), 0, 0))
+  elseif direction == HomelandBrickDirection.RIGHT then
+    pos = self._build.transform:TransformPoint(Vector3(self:GetWidth(), 0, 0))
   end
   return Vector2(pos.x, pos.z)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandBrick.GetWidth = function(self)
-  -- function num : 0_9
+function HomelandBrick:GetWidth()
   return 1
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandBrick.GetHeight = function(self)
-  -- function num : 0_10
+function HomelandBrick:GetHeight()
   return 1
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandBrick.IsSameType = function(self, brick)
-  -- function num : 0_11
+function HomelandBrick:IsSameType(brick)
   return true
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandBrick.IsConnect = function(self, brick)
-  -- function num : 0_12 , upvalues : _ENV
+function HomelandBrick:IsConnect(brick)
   if not self:IsSameType(brick) then
     return false
   end
   local angle = brick:GetAngleY()
-  local angleDiff = (math.abs)(angle - self:GetAngleY())
+  local angleDiff = math.abs(angle - self:GetAngleY())
   if self:GetWidth() == self:GetHeight() then
-    local int, float = (math.modf)(angleDiff / 90)
-    if float > 0 then
+    local int, float = math.modf(angleDiff / 90)
+    if 0 < float then
       return false
     end
   else
-    do
-      do
-        local int, float = (math.modf)(angleDiff / 180)
-        if float > 0 then
-          return false
-        end
-        local result, firstDirection = self:GetAdjacentEdgeDirection(brick)
-        do
-          if result then
-            local _, secondDirection = brick:GetAdjacentEdgeDirection(self)
-            return true, firstDirection, secondDirection
-          end
-          return false
-        end
-      end
+    local int, float = math.modf(angleDiff / 180)
+    if 0 < float then
+      return false
     end
   end
+  local result, firstDirection = self:GetAdjacentEdgeDirection(brick)
+  if result then
+    local _, secondDirection = brick:GetAdjacentEdgeDirection(self)
+    return true, firstDirection, secondDirection
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandBrick.GetAdjacentEdgeDirection = function(self, brick)
-  -- function num : 0_13 , upvalues : _ENV
+function HomelandBrick:GetAdjacentEdgeDirection(brick)
   local position = brick:GetPosition()
   local pos = Vector2(position.x, position.z)
   local forwardPos = self:GetDirectionPosition(HomelandBrickDirection.Forward)
-  if (Vector2.Distance)(pos, forwardPos) == 0 then
+  if Vector2.Distance(pos, forwardPos) == 0 then
     return true, HomelandBrickDirection.Forward
   end
   local afterPos = self:GetDirectionPosition(HomelandBrickDirection.AFTER)
-  if (Vector2.Distance)(pos, afterPos) == 0 then
+  if Vector2.Distance(pos, afterPos) == 0 then
     return true, HomelandBrickDirection.AFTER
   end
   local leftPos = self:GetDirectionPosition(HomelandBrickDirection.LEFT)
-  if (Vector2.Distance)(pos, leftPos) == 0 then
+  if Vector2.Distance(pos, leftPos) == 0 then
     return true, HomelandBrickDirection.LEFT
   end
   local rightPos = self:GetDirectionPosition(HomelandBrickDirection.RIGHT)
-  if (Vector2.Distance)(pos, rightPos) == 0 then
+  if Vector2.Distance(pos, rightPos) == 0 then
     return true, HomelandBrickDirection.RIGHT
   end
 end
-
-

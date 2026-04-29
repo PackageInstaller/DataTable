@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/preview_pickup_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewPickUpComponent", Object)
 PreviewPickUpComponent = PreviewPickUpComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewPickUpComponent.Constructor = function(self)
-  -- function num : 0_0
+function PreviewPickUpComponent:Constructor()
   self._previewContextList = {}
   self._multiPickUpGridPosList = {}
   self._lastPickUpGridPos = nil
@@ -24,10 +17,7 @@ PreviewPickUpComponent.Constructor = function(self)
   self._pickUpPetPstID = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.Clear = function(self)
-  -- function num : 0_1
+function PreviewPickUpComponent:Clear()
   self._previewContextList = {}
   self._lastPickUpGridPos = nil
   self._skillEffectScopeResultList = {}
@@ -41,20 +31,12 @@ PreviewPickUpComponent.Clear = function(self)
   self._pickUpPetPstID = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.SetPreviewContext = function(self, id, context)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._previewContextList)[id] = context
+function PreviewPickUpComponent:SetPreviewContext(id, context)
+  self._previewContextList[id] = context
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.GetPreviewContext = function(self, id)
-  -- function num : 0_3 , upvalues : _ENV
-  for _id,context in pairs(self._previewContextList) do
+function PreviewPickUpComponent:GetPreviewContext(id)
+  for _id, context in pairs(self._previewContextList) do
     if _id == id then
       return context
     end
@@ -62,20 +44,12 @@ PreviewPickUpComponent.GetPreviewContext = function(self, id)
   return nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.SetSkillEffectScope = function(self, effectType, scopeResult)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._skillEffectScopeResultList)[effectType] = scopeResult
+function PreviewPickUpComponent:SetSkillEffectScope(effectType, scopeResult)
+  self._skillEffectScopeResultList[effectType] = scopeResult
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.GetSkillEffectScope = function(self, effectType)
-  -- function num : 0_5 , upvalues : _ENV
-  for _effectType,scopeResult in pairs(self._skillEffectScopeResultList) do
+function PreviewPickUpComponent:GetSkillEffectScope(effectType)
+  for _effectType, scopeResult in pairs(self._skillEffectScopeResultList) do
     if _effectType == effectType then
       return scopeResult
     end
@@ -83,366 +57,218 @@ PreviewPickUpComponent.GetSkillEffectScope = function(self, effectType)
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.AddGridPosList = function(self, gridList)
-  -- function num : 0_6 , upvalues : _ENV
-  for _,pos in ipairs(gridList) do
+function PreviewPickUpComponent:AddGridPosList(gridList)
+  for _, pos in ipairs(gridList) do
     self:AddGridPos(pos)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.AddGridPos = function(self, pickUpGridPos)
-  -- function num : 0_7 , upvalues : _ENV
-  (table.insert)(self._multiPickUpGridPosList, pickUpGridPos)
+function PreviewPickUpComponent:AddGridPos(pickUpGridPos)
+  table.insert(self._multiPickUpGridPosList, pickUpGridPos)
   self._lastPickUpGridPos = pickUpGridPos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.RemoveGridPos = function(self, pickUpGridPos)
-  -- function num : 0_8 , upvalues : _ENV
-  (table.removev)(self._multiPickUpGridPosList, pickUpGridPos)
+function PreviewPickUpComponent:RemoveGridPos(pickUpGridPos)
+  table.removev(self._multiPickUpGridPosList, pickUpGridPos)
   if self._lastPickUpGridPos == pickUpGridPos then
-    self._lastPickUpGridPos = (self._multiPickUpGridPosList)[#self._multiPickUpGridPosList]
+    self._lastPickUpGridPos = self._multiPickUpGridPosList[#self._multiPickUpGridPosList]
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.ClearGridPos = function(self)
-  -- function num : 0_9
+function PreviewPickUpComponent:ClearGridPos()
   self._multiPickUpGridPosList = {}
   self._lastPickUpGridPos = nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.AddPickExtraParamList = function(self, extraParamList)
-  -- function num : 0_10 , upvalues : _ENV
+function PreviewPickUpComponent:AddPickExtraParamList(extraParamList)
   if extraParamList then
-    for _,param in ipairs(extraParamList) do
+    for _, param in ipairs(extraParamList) do
       self:AddPickExtraParam(param)
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.AddPickExtraParam = function(self, extraParam)
-  -- function num : 0_11 , upvalues : _ENV
-  (table.insert)(self._pickUpExtraParamList, extraParam)
+function PreviewPickUpComponent:AddPickExtraParam(extraParam)
+  table.insert(self._pickUpExtraParamList, extraParam)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.RemovePickExtraParam = function(self, extraParam)
-  -- function num : 0_12 , upvalues : _ENV
-  (table.removev)(self._pickUpExtraParamList, extraParam)
+function PreviewPickUpComponent:RemovePickExtraParam(extraParam)
+  table.removev(self._pickUpExtraParamList, extraParam)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.ClearPickExtraParam = function(self)
-  -- function num : 0_13
+function PreviewPickUpComponent:ClearPickExtraParam()
   self._pickUpExtraParamList = {}
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.GetAllPickExtraParam = function(self)
-  -- function num : 0_14
+function PreviewPickUpComponent:GetAllPickExtraParam()
   return self._pickUpExtraParamList
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.HasPickExtraParam = function(self, param)
-  -- function num : 0_15 , upvalues : _ENV
-  if (table.icontains)(self._pickUpExtraParamList, param) then
+function PreviewPickUpComponent:HasPickExtraParam(param)
+  if table.icontains(self._pickUpExtraParamList, param) then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.AddDirectionList = function(self, directionPickupPos, pickUpDirection, lastPickUpDirection)
-  -- function num : 0_16
+function PreviewPickUpComponent:AddDirectionList(directionPickupPos, pickUpDirection, lastPickUpDirection)
   self._directionPickupPos = directionPickupPos
   self._pickUpDirection = pickUpDirection
   self._lastPickUpDirection = lastPickUpDirection
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.AddDirection = function(self, direction, pickUpGridPos)
-  -- function num : 0_17 , upvalues : _ENV
-  (table.insert)(self._pickUpDirection, direction)
+function PreviewPickUpComponent:AddDirection(direction, pickUpGridPos)
+  table.insert(self._pickUpDirection, direction)
   self._lastPickUpDirection = direction
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._directionPickupPos)[direction] = pickUpGridPos
+  self._directionPickupPos[direction] = pickUpGridPos
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.RemoveDirection = function(self, direction)
-  -- function num : 0_18 , upvalues : _ENV
-  (table.removev)(self._pickUpDirection, direction)
+function PreviewPickUpComponent:RemoveDirection(direction)
+  table.removev(self._pickUpDirection, direction)
   if self._lastPickUpDirection == direction then
-    self._lastPickUpDirection = (self._pickUpDirection)[#self._pickUpDirection]
+    self._lastPickUpDirection = self._pickUpDirection[#self._pickUpDirection]
   end
-  local pos = (self._directionPickupPos)[direction]
+  local pos = self._directionPickupPos[direction]
   if pos then
     self:RemoveGridPos(pos)
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._directionPickupPos)[direction] = nil
+    self._directionPickupPos[direction] = nil
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.IsRepeatDirection = function(self, direction)
-  -- function num : 0_19 , upvalues : _ENV
-  if (table.icontains)(self._pickUpDirection, direction) then
+function PreviewPickUpComponent:IsRepeatDirection(direction)
+  if table.icontains(self._pickUpDirection, direction) then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.ClearDirection = function(self)
-  -- function num : 0_20
+function PreviewPickUpComponent:ClearDirection()
   self._pickUpDirection = {}
   self._lastPickUpDirection = nil
   self._directionPickupPos = {}
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.GetAllDirection = function(self)
-  -- function num : 0_21
+function PreviewPickUpComponent:GetAllDirection()
   return self._pickUpDirection
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.GetLastPickDirectionAndPickPos = function(self)
-  -- function num : 0_22
-  return self._lastPickUpDirection, (self._directionPickupPos)[self._lastPickUpDirection]
+function PreviewPickUpComponent:GetLastPickDirectionAndPickPos()
+  return self._lastPickUpDirection, self._directionPickupPos[self._lastPickUpDirection]
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.GetPickUpDirectionPos = function(self)
-  -- function num : 0_23
+function PreviewPickUpComponent:GetPickUpDirectionPos()
   return self._directionPickupPos
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.GetLastPickUpDirection = function(self)
-  -- function num : 0_24
+function PreviewPickUpComponent:GetLastPickUpDirection()
   return self._lastPickUpDirection
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.IsRepeatPickUP = function(self, pickUpGridPos)
-  -- function num : 0_25 , upvalues : _ENV
-  return (table.icontains)(self._multiPickUpGridPosList, pickUpGridPos)
+function PreviewPickUpComponent:IsRepeatPickUP(pickUpGridPos)
+  return table.icontains(self._multiPickUpGridPosList, pickUpGridPos)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.GetLastPickUpGridPos = function(self)
-  -- function num : 0_26
+function PreviewPickUpComponent:GetLastPickUpGridPos()
   return self._lastPickUpGridPos
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.GetAllValidPickUpGridPos = function(self)
-  -- function num : 0_27
+function PreviewPickUpComponent:GetAllValidPickUpGridPos()
   return self._multiPickUpGridPosList
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.GetAllValidPickUpGridPosCount = function(self)
-  -- function num : 0_28
+function PreviewPickUpComponent:GetAllValidPickUpGridPosCount()
   return #self._multiPickUpGridPosList
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.AddPickUpEffectEntityID = function(self, id, effectID)
-  -- function num : 0_29 , upvalues : _ENV
-  (table.insert)(self._pickUpEffectEntityIDs, id)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._pickUpEffectEntityIDsByEffectID)[effectID] then
-    (self._pickUpEffectEntityIDsByEffectID)[effectID] = {}
+function PreviewPickUpComponent:AddPickUpEffectEntityID(id, effectID)
+  table.insert(self._pickUpEffectEntityIDs, id)
+  if not self._pickUpEffectEntityIDsByEffectID[effectID] then
+    self._pickUpEffectEntityIDsByEffectID[effectID] = {}
   end
-  ;
-  (table.insert)((self._pickUpEffectEntityIDsByEffectID)[effectID], id)
+  table.insert(self._pickUpEffectEntityIDsByEffectID[effectID], id)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.GetPickUpEffectEntityIDArrayByEffectID = function(self, effectID)
-  -- function num : 0_30
-  if not (self._pickUpEffectEntityIDsByEffectID)[effectID] then
-    return {}
-  end
+function PreviewPickUpComponent:GetPickUpEffectEntityIDArrayByEffectID(effectID)
+  return self._pickUpEffectEntityIDsByEffectID[effectID] or {}
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.GetPickUpEffectEntityIDArray = function(self)
-  -- function num : 0_31
+function PreviewPickUpComponent:GetPickUpEffectEntityIDArray()
   return self._pickUpEffectEntityIDs
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.GetFirstValidPickUpGridPos = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function PreviewPickUpComponent:GetFirstValidPickUpGridPos()
   if #self._multiPickUpGridPosList >= 1 then
-    return (self._multiPickUpGridPosList)[1]
+    return self._multiPickUpGridPosList[1]
   else
-    ;
-    (Log.fatal)("No PickUpGridPos Data")
+    Log.fatal("No PickUpGridPos Data")
     return nil
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.SetReflectDir = function(self, dir)
-  -- function num : 0_33
+function PreviewPickUpComponent:SetReflectDir(dir)
   self._reflectDir = dir
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.GetReflectDir = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  if not self._reflectDir then
-    return ReflectDirectionType.Heng
-  end
+function PreviewPickUpComponent:GetReflectDir()
+  return self._reflectDir or ReflectDirectionType.Heng
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.SetReflectPos = function(self, pos)
-  -- function num : 0_35
+function PreviewPickUpComponent:SetReflectPos(pos)
   self._reflectPos = pos
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.GetReflectPos = function(self)
-  -- function num : 0_36
+function PreviewPickUpComponent:GetReflectPos()
   return self._reflectPos
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.GetRotateGhost = function(self)
-  -- function num : 0_37
+function PreviewPickUpComponent:GetRotateGhost()
   return self._rotateGhost
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.SetRotateGhost = function(self, ghost)
-  -- function num : 0_38
+function PreviewPickUpComponent:SetRotateGhost(ghost)
   self._rotateGhost = ghost
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.IsIgnorePickCheck = function(self)
-  -- function num : 0_39
+function PreviewPickUpComponent:IsIgnorePickCheck()
   return self._ignorePickCheck
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.SetIgnorePickCheck = function(self, ignorePickCheck)
-  -- function num : 0_40
+function PreviewPickUpComponent:SetIgnorePickCheck(ignorePickCheck)
   self._ignorePickCheck = ignorePickCheck
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.SetPickUpPetPstID = function(self, petPstID)
-  -- function num : 0_41
+function PreviewPickUpComponent:SetPickUpPetPstID(petPstID)
   self._pickUpPetPstID = petPstID
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.GetPickUpPetPstID = function(self)
-  -- function num : 0_42
+function PreviewPickUpComponent:GetPickUpPetPstID()
   return self._pickUpPetPstID
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.SetTetrisDirIndex = function(self, index)
-  -- function num : 0_43
+function PreviewPickUpComponent:SetTetrisDirIndex(index)
   self._tetrisDirIndex = index
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPickUpComponent.GetTetrisDirIndex = function(self)
-  -- function num : 0_44
+function PreviewPickUpComponent:GetTetrisDirIndex()
   return self._tetrisDirIndex
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PreviewPickUpComponent = function(self)
-  -- function num : 0_45
+function Entity:PreviewPickUpComponent()
   return self:ActiveSkillPickUpComponent()
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPreviewPickUpComponent = function(self)
-  -- function num : 0_46
+function Entity:HasPreviewPickUpComponent()
   return self:HasActiveSkillPickUpComponent()
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPreviewPickUpComponent = function(self)
-  -- function num : 0_47
+function Entity:AddPreviewPickUpComponent()
   self:AddActiveSkillPickUpComponent()
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePreviewPickUpComponent = function(self)
-  -- function num : 0_48
+function Entity:ReplacePreviewPickUpComponent()
   self:ReplaceActiveSkillPickUpComponent()
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePreviewPickUpComponent = function(self)
-  -- function num : 0_49
+function Entity:RemovePreviewPickUpComponent()
   self:RemoveActiveSkillPickUpComponent()
 end
-
-

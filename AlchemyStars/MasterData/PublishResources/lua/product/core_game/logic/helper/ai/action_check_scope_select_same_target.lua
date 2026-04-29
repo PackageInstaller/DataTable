@@ -1,49 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_check_scope_select_same_target.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCheckScopeSelectSameTarget", AINewNode)
 ActionCheckScopeSelectSameTarget = ActionCheckScopeSelectSameTarget
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckScopeSelectSameTarget.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionCheckScopeSelectSameTarget:OnUpdate()
   local skill = self:GetLogicData(-1)
   local entityCaster = self.m_entityOwn
   local aiComponent = entityCaster:AI()
-  if aiComponent == nil then
+  if nil == aiComponent then
     return false
   end
   local selfPos = entityCaster:GetGridPosition()
-  local dir = (entityCaster:GridLocation()).Direction
-  local selfBodyArea = (entityCaster:BodyArea()):GetArea()
+  local dir = entityCaster:GridLocation().Direction
+  local selfBodyArea = entityCaster:BodyArea():GetArea()
   local skillRangeData = self:CalculateSkillRange(skill, selfPos, dir, selfBodyArea)
   local targetPos = skillRangeData[1]
   local skillScope = {}
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,entity in ipairs(monsterGroup:GetEntities()) do
-    local bodyAreaList = (entity:BodyArea()):GetArea()
-    local gridPos = (entity:GridLocation()):GetGridPos()
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, entity in ipairs(monsterGroup:GetEntities()) do
+    local bodyAreaList = entity:BodyArea():GetArea()
+    local gridPos = entity:GridLocation():GetGridPos()
     local monsterArea = {}
-    for _,bodyArea in ipairs(bodyAreaList) do
+    for _, bodyArea in ipairs(bodyAreaList) do
       local workPos = gridPos + bodyArea
-      ;
-      (table.insert)(monsterArea, workPos)
+      table.insert(monsterArea, workPos)
     end
-    if (table.intable)(monsterArea, selfPos) then
-      (table.appendArray)(skillScope, monsterArea)
+    if table.intable(monsterArea, selfPos) then
+      table.appendArray(skillScope, monsterArea)
       break
     end
   end
-  do
-    if (table.intable)(skillScope, targetPos) then
-      return AINewNodeStatus.Success
-    else
-      return AINewNodeStatus.Failure
-    end
+  if table.intable(skillScope, targetPos) then
+    return AINewNodeStatus.Success
+  else
+    return AINewNodeStatus.Failure
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_chain_path_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataChainPathResult", Object)
 DataChainPathResult = DataChainPathResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataChainPathResult.Constructor = function(self)
-  -- function num : 0_0
+function DataChainPathResult:Constructor()
   self._chainPathResult = {}
   self._chainElementResult = nil
   self._chainTeamResult = {}
@@ -16,74 +9,42 @@ DataChainPathResult.Constructor = function(self)
   self._pathChainRate = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainPathResult.SetChainPathResult = function(self, res)
-  -- function num : 0_1
+function DataChainPathResult:SetChainPathResult(res)
   self._chainPathResult = res
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainPathResult.GetChainPathResult = function(self)
-  -- function num : 0_2
+function DataChainPathResult:GetChainPathResult()
   return self._chainPathResult
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainPathResult.GetChainElementResult = function(self)
-  -- function num : 0_3
+function DataChainPathResult:GetChainElementResult()
   return self._chainElementResult
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainPathResult.SetChainElementResult = function(self, elem)
-  -- function num : 0_4
+function DataChainPathResult:SetChainElementResult(elem)
   self._chainElementResult = elem
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainPathResult.SetPathChainRate = function(self, v)
-  -- function num : 0_5
+function DataChainPathResult:SetPathChainRate(v)
   self._pathChainRate = v
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainPathResult.GetPathChainRate = function(self)
-  -- function num : 0_6
+function DataChainPathResult:GetPathChainRate()
   return self._pathChainRate
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainPathResult.GetChainTeamResult = function(self)
-  -- function num : 0_7
+function DataChainPathResult:GetChainTeamResult()
   return self._chainTeamResult
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainPathResult.SetChainTeamResult = function(self, team)
-  -- function num : 0_8
+function DataChainPathResult:SetChainTeamResult(team)
   self._chainTeamResult = team
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainPathResult.SetCutChainPathResult = function(self, cutChainPathResult)
-  -- function num : 0_9
+function DataChainPathResult:SetCutChainPathResult(cutChainPathResult)
   self._cutChainPathResult = cutChainPathResult
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChainPathResult.GetCutChainPathResult = function(self)
-  -- function num : 0_10
+function DataChainPathResult:GetCutChainPathResult()
   return self._cutChainPathResult
 end
-
-

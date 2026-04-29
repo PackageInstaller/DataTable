@@ -1,31 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/enter/ui_season_maze_boss_single_word_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeBossSingleWordItem", UICustomWidget)
 UISeasonMazeBossSingleWordItem = UISeasonMazeBossSingleWordItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeBossSingleWordItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMazeBossSingleWordItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBossSingleWordItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMazeBossSingleWordItem:InitWidget()
   self.DifficultyNumText = self:GetUIComponent("UILocalizationText", "DifficultyNum")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBossSingleWordItem.SetData = function(self, Des, Color)
-  -- function num : 0_2 , upvalues : _ENV
-  local str = (StringTable.Get)(Des)
-  ;
-  (self.DifficultyNumText):SetText(str)
+function UISeasonMazeBossSingleWordItem:SetData(Des, Color)
+  local str = StringTable.Get(Des)
+  self.DifficultyNumText:SetText(str)
 end
-
-

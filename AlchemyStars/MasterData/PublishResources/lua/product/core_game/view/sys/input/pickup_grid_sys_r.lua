@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/input/pickup_grid_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PickUpGridSystem_Render", UniqueReactiveSystem)
 PickUpGridSystem_Render = PickUpGridSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpGridSystem_Render.IsInterested = function(self, index, previousComponent, component)
-  -- function num : 0_0 , upvalues : _ENV
+function PickUpGridSystem_Render:IsInterested(index, previousComponent, component)
   if component == nil then
     return false
   end
@@ -18,58 +11,44 @@ PickUpGridSystem_Render.IsInterested = function(self, index, previousComponent, 
   return true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpGridSystem_Render.Filter = function(self, world)
-  -- function num : 0_1
+function PickUpGridSystem_Render:Filter(world)
   return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpGridSystem_Render.ExecuteWorld = function(self, world)
-  -- function num : 0_2 , upvalues : _ENV
+function PickUpGridSystem_Render:ExecuteWorld(world)
   self._world = world
   local cPickUp = world:PickUp()
   local clickRenderPos = cPickUp:GetClickPos()
   local boardServiceRender = world:GetService("BoardRender")
   local gridPos = boardServiceRender:BoardRenderPos2GridPos(clickRenderPos)
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local stateId = utilDataSvc:GetCurMainStateID()
   if stateId == GameStateID.PickUpActiveSkillTarget or stateId == GameStateID.PreviewActiveSkill then
     local curSkillID = cPickUp:GetCurActiveSkillID()
     if not curSkillID then
-      (Log.debug)("Handle pick up activeSkillID is nil")
-      return 
+      Log.debug("Handle pick up activeSkillID is nil")
+      return
     end
     if curSkillID < 0 then
-      (Log.debug)("Handle pick up activeSkillID is invalid ", curSkillID)
-      return 
+      Log.debug("Handle pick up activeSkillID is invalid ", curSkillID)
+      return
     end
     self:SetPickUpGrid(cPickUp, gridPos)
+  elseif stateId == GameStateID.PickUpChainSkillTarget then
+    self:SetChainSkillPickUpGrid(cPickUp, gridPos)
   else
-    do
-      if stateId == GameStateID.PickUpChainSkillTarget then
-        self:SetChainSkillPickUpGrid(cPickUp, gridPos)
-      else
-        ;
-        (Log.fatal)("### invalid state. stateId=", stateId)
-      end
-    end
+    Log.fatal("### invalid state. stateId=", stateId)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpGridSystem_Render.SetPickUpGrid = function(self, cPickUp, gridPos)
-  -- function num : 0_3 , upvalues : _ENV
+function PickUpGridSystem_Render:SetPickUpGrid(cPickUp, gridPos)
   local activeSkillID = cPickUp:GetCurActiveSkillID()
   local casterPetPstID = cPickUp:GetCurActiveSkillPetPstID()
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(activeSkillID)
   local activeSkillPickUpType = skillConfigData:GetSkillPickType()
-  local utilData = (self._world):GetService("UtilData")
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local utilData = self._world:GetService("UtilData")
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   pickUpTargetCmpt:SetPickUpTargetType(activeSkillPickUpType)
   pickUpTargetCmpt:SetPickUpGridPos(gridPos)
@@ -80,25 +59,19 @@ PickUpGridSystem_Render.SetPickUpGrid = function(self, cPickUp, gridPos)
   renderBoardEntity:ReplacePickUpTarget()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpGridSystem_Render.SetChainSkillPickUpGrid = function(self, cPickUp, gridPos)
-  -- function num : 0_4 , upvalues : _ENV
-  local utilData = (self._world):GetService("UtilData")
+function PickUpGridSystem_Render:SetChainSkillPickUpGrid(cPickUp, gridPos)
+  local utilData = self._world:GetService("UtilData")
   if utilData:GetBoardIsPosNil(gridPos) then
-    return 
+    return
   end
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   pickUpTargetCmpt:SetPickUpTargetType(SkillPickUpType.ChainInstruction)
   pickUpTargetCmpt:SetPickUpGridPos(gridPos)
   if utilData:IsValidPiecePos(gridPos) and not utilData:IsPosBlock(gridPos, BlockFlag.LinkLine) and not utilData:IsPosDimensionDoor(gridPos) then
     pickUpTargetCmpt:SetPickUpGridSafePos(gridPos)
   else
-    ;
-    (Log.fatal)("GridPos:", tostring(gridPos), " Is Invalid ")
+    Log.fatal("GridPos:", tostring(gridPos), " Is Invalid ")
   end
   renderBoardEntity:ReplacePickUpTarget()
 end
-
-

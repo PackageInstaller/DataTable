@@ -1,37 +1,172 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/homeland/homeland_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local homelandMessageDef = {CLSID_CEventEnterHomelandReq = 40000, CLSID_CEventEnterHomelandRes = 40001, CLSID_CEventForgeReq = 40002, CLSID_CEventForgeRes = 40003, CLSID_CEventUnlockReq = 40004, CLSID_CEventUnlockRes = 40005, CLSID_CEventOneClickUnlockReq = 40006, CLSID_CEventOneClickUnlockRes = 40007, CLSID_CEventAccelerateReq = 40008, CLSID_CEventAccelerateRes = 40009, CLSID_CEventCancelReq = 40010, CLSID_CEventCancelRes = 40011, CLSID_CEventPickUpReq = 40012, CLSID_CEventPickUpRes = 40013, CLSID_CEventSelectSkinReq = 40014, CLSID_CEventSelectSkinRes = 40015, CLSID_CEventHomelandBuildReq = 40016, CLSID_CEventHomelandBuildRes = 40017, CLSID_CEventHomelandGetFishingDataReq = 40018, CLSID_CEventHomelandGetFishingDataReply = 40019, CLSID_CEventHomelandFishBiteReq = 40020, CLSID_CEventHomelandFishBiteReply = 40021, CLSID_CEventHomelandFishingComfirmReq = 40022, CLSID_CEventHomelandFishingComfirmReply = 40023, CLSID_CEventHomelandRefreshRarePositionReq = 40024, CLSID_CEventHomelandRefreshRarePositionReply = 40025, CLSID_CEventHomelandShopReq = 40026, CLSID_CEventHomelandShopReply = 40027, CLSID_CEventHomelandSellReq = 40028, CLSID_CEventHomelandSellReply = 40029, CLSID_CEventHomelandGoodsReq = 40030, CLSID_CEventHomelandGoodsReply = 40031, CLSID_CEventHomelandShopUpdate = 40032, CLSID_CEventHomelandTreasureReq = 40033, CLSID_CEventHomelandTreasureReply = 40034, CLSID_CEventHomelandTreasureStateReq = 40035, CLSID_CEventHomelandTreasureStateReply = 40036, CLSID_CEventHomelandTreasureUpdate = 40037, CLSID_CEventHomelandFellReq = 40038, CLSID_CEventHomelandFellRes = 40039, CLSID_CEventFellInfoReq = 40040, CLSID_CEventFellInfoRes = 40041, CLSID_CEventDormitoryChangeNameReq = 40042, CLSID_CEventDormitoryChangeNameRes = 40043, CLSID_CEventDormitoryUpdatePetReq = 40044, CLSID_CEventDormitoryUpdatePetRes = 40045, CLSID_CEventClientTriggerEventReq = 40046, CLSID_CEventClientTriggerEventRes = 40047, CLSID_CEventClientFinishEventReq = 40048, CLSID_CEventClientFinishEventRes = 40049, CLSID_CEventPushFinishHomeChatId = 40050, CLSID_CEventPushEventChange = 40051, CLSID_CEventCultivationReq = 40052, CLSID_CEventCultivationRes = 40053, CLSID_CEventCultivationCancelReq = 40054, CLSID_CEventCultivationCancelRes = 40055, CLSID_CEventCultivationAccelerateReq = 40056, CLSID_CEventDyeingTreeReq = 40057, CLSID_CEventDyeingTreeRes = 40058, CLSID_CEventCultivationAccelerateRes = 40059, CLSID_CEventCultivationPickUpReq = 40060, CLSID_CEventCultivationPickUpRes = 40061, CLSID_CEventWishingPoolCollectReq = 40062, CLSID_CEventWishingPoolCollectReply = 40063, CLSID_CEventWishingPoolTakeOutReq = 40064, CLSID_CEventWishingPoolTakeOutReply = 40065, CLSID_CEventWishingPoolUpdateFishReq = 40066, CLSID_CEventWishingPoolUpdateFishReply = 40067, CLSID_CEventFishTankUpdateFishReq = 40068, CLSID_CEventFishTankUpdateFishReply = 40069, CLSID_CEventHomelandDormitoryUpdate = 40070, CLSID_CEventHomelandMiningReq = 40071, CLSID_CEventHomelandMiningRes = 40072, CLSID_CEventMiningInfoReq = 40073, CLSID_CEventMiningInfoRes = 40074, CLSID_CEventHomelandReadedDairyReq = 40075, CLSID_CEventHomelandReadedDairyRes = 40076, CLSID_CEventHomelandSignReq = 40077, CLSID_CEventHomelandSignRes = 40078, CLSID_CEventPushLevelInfo = 40079, CLSID_CEventHomelandLevelRewardReq = 40080, CLSID_CEventHomelandLevelRewardRes = 40081, CLSID_CEventGetSignInfoReq = 40082, CLSID_CEventGetSignInfoRes = 40083, CLSID_CEventHomelandVisitListReq = 40084, CLSID_CEventHomelandVisitListReply = 40085, CLSID_CEventHomelandVisitFriendReq = 40086, CLSID_CEventHomelandVisitFriendReply = 40087, CLSID_CEventHomelandTakeItemReq = 40088, CLSID_CEventHomelandTakeItemReply = 40089, CLSID_CEventHomelandAccForgeReq = 40090, CLSID_CEventHomelandAccForgeReply = 40091, CLSID_CEventHomelandAccCultivateReq = 40092, CLSID_CEventHomelandAccCultivateReply = 40093, CLSID_CEventHomelandMoveItemReq = 40094, CLSID_CEventHomelandMoveItemReply = 40095, CLSID_CEventHomelandVisitLogReq = 40096, CLSID_CEventHomelandVisitLogReply = 40097, CLSID_CEventHomelandForgeUpdate = 40098, CLSID_CEventHomelandCultivationUpdate = 40099, CLSID_CEventHomelandVisitItemUpdate = 40100, CLSID_CEventHomelandFinishTaskReq = 40101, CLSID_CEventHomelandFinishTaskRes = 40102, CLSID_CEventHomelandUpdateTaskReq = 40103, CLSID_CEventHomelandUpdateTaskRes = 40104, CLSID_CEventHomelandTraceReq = 40105, CLSID_CEventHomelandTraceRes = 40106, CLSID_CEventHomelandTaskViewStoryReq = 40107, CLSID_CEventHomelandTaskViewStoryRes = 40108, CLSID_CEventHomelandTaskQuestTakeReq = 40109, CLSID_CEventHomelandTaskQuestTakeRes = 40110, CLSID_CEventHomelandTaskGroupTakeReq = 40111, CLSID_CEventHomelandTaskGroupTakeRes = 40112, CLSID_CEventPushHomelandFunctionUnlocked = 40113, CLSID_CEventHomelandFixShabbyReq = 40114, CLSID_CEventHomelandFixShabbyRes = 40115, CLSID_CEventHomelandShopRefreshReq = 40116, CLSID_CEventHomelandShopRefreshReply = 40117, CLSID_CEventHomelandVisitUpdate = 40118, CLSID_CEventHomelandStoryTaskUnlockReq = 40119, CLSID_CEventHomelandStoryTaskUnlockReply = 40120, CLSID_CEventHomelandStoryTaskAutoOperateReq = 40121, CLSID_CEventHomelandStoryTaskAutoOperateReply = 40122, CLSID_CEventHomelandStoryTaskUpdate = 40123, CLSID_CEventHomelandStoryTaskMoudleUnlockReq = 40124, CLSID_CEventHomelandStoryTaskMoudleUnlockReply = 40125, CLSID_CEventUnlockFatherHangPointReq = 40126, CLSID_CEventUnlockFatherHangPointRes = 40127, CLSID_CEventFatherHangPointUpdate = 40128, CLSID_CEventEnterMakingMoviceReq = 40129, CLSID_CEventEnterMakingMoviceRes = 40130, CLSID_CEventSubmitRecordNameReq = 40131, CLSID_CEventSubmitRecordNameRes = 40132, CLSID_CEventRequestScoreReq = 40133, CLSID_CEventRequestScoreRes = 40134, CLSID_CEventSaveRecordReq = 40135, CLSID_CEventSaveRecordRes = 40136, CLSID_CEventRequestRecordArchReq = 40137, CLSID_CEventRequestRecordArchRes = 40138, CLSID_CEventHomelandRefreshRarePositionPush = 40139, CLSID_CEventFishingChallengeReq = 40140, CLSID_CEventFishingChallengeRes = 40141, CLSID_CEventFishingChallengeEndReq = 40142, CLSID_CEventFishingChallengeEndRes = 40143, CLSID_CEventCancelFishingChallengeReq = 40144, CLSID_CEventCancelFishingChallengeRes = 40145, CLSID_CEventReceiveAnonymousLetterRewardReq = 40146, CLSID_CEventReceiveAnonymousLetterRewardRes = 40147}
-;
-((_ENV.table).append)(_ENV.MessageDef, homelandMessageDef)
-;
-(_ENV._class)("CEventEnterHomelandReq", _ENV.CCallRequestEvent)
-_ENV.CEventEnterHomelandReq = _ENV.CEventEnterHomelandReq
--- DECOMPILER ERROR at PC216: Confused about usage of register: R1 in 'UnsetPending'
+local homelandMessageDef = {
+  CLSID_CEventEnterHomelandReq = 40000,
+  CLSID_CEventEnterHomelandRes = 40001,
+  CLSID_CEventForgeReq = 40002,
+  CLSID_CEventForgeRes = 40003,
+  CLSID_CEventUnlockReq = 40004,
+  CLSID_CEventUnlockRes = 40005,
+  CLSID_CEventOneClickUnlockReq = 40006,
+  CLSID_CEventOneClickUnlockRes = 40007,
+  CLSID_CEventAccelerateReq = 40008,
+  CLSID_CEventAccelerateRes = 40009,
+  CLSID_CEventCancelReq = 40010,
+  CLSID_CEventCancelRes = 40011,
+  CLSID_CEventPickUpReq = 40012,
+  CLSID_CEventPickUpRes = 40013,
+  CLSID_CEventSelectSkinReq = 40014,
+  CLSID_CEventSelectSkinRes = 40015,
+  CLSID_CEventHomelandBuildReq = 40016,
+  CLSID_CEventHomelandBuildRes = 40017,
+  CLSID_CEventHomelandGetFishingDataReq = 40018,
+  CLSID_CEventHomelandGetFishingDataReply = 40019,
+  CLSID_CEventHomelandFishBiteReq = 40020,
+  CLSID_CEventHomelandFishBiteReply = 40021,
+  CLSID_CEventHomelandFishingComfirmReq = 40022,
+  CLSID_CEventHomelandFishingComfirmReply = 40023,
+  CLSID_CEventHomelandRefreshRarePositionReq = 40024,
+  CLSID_CEventHomelandRefreshRarePositionReply = 40025,
+  CLSID_CEventHomelandShopReq = 40026,
+  CLSID_CEventHomelandShopReply = 40027,
+  CLSID_CEventHomelandSellReq = 40028,
+  CLSID_CEventHomelandSellReply = 40029,
+  CLSID_CEventHomelandGoodsReq = 40030,
+  CLSID_CEventHomelandGoodsReply = 40031,
+  CLSID_CEventHomelandShopUpdate = 40032,
+  CLSID_CEventHomelandTreasureReq = 40033,
+  CLSID_CEventHomelandTreasureReply = 40034,
+  CLSID_CEventHomelandTreasureStateReq = 40035,
+  CLSID_CEventHomelandTreasureStateReply = 40036,
+  CLSID_CEventHomelandTreasureUpdate = 40037,
+  CLSID_CEventHomelandFellReq = 40038,
+  CLSID_CEventHomelandFellRes = 40039,
+  CLSID_CEventFellInfoReq = 40040,
+  CLSID_CEventFellInfoRes = 40041,
+  CLSID_CEventDormitoryChangeNameReq = 40042,
+  CLSID_CEventDormitoryChangeNameRes = 40043,
+  CLSID_CEventDormitoryUpdatePetReq = 40044,
+  CLSID_CEventDormitoryUpdatePetRes = 40045,
+  CLSID_CEventClientTriggerEventReq = 40046,
+  CLSID_CEventClientTriggerEventRes = 40047,
+  CLSID_CEventClientFinishEventReq = 40048,
+  CLSID_CEventClientFinishEventRes = 40049,
+  CLSID_CEventPushFinishHomeChatId = 40050,
+  CLSID_CEventPushEventChange = 40051,
+  CLSID_CEventCultivationReq = 40052,
+  CLSID_CEventCultivationRes = 40053,
+  CLSID_CEventCultivationCancelReq = 40054,
+  CLSID_CEventCultivationCancelRes = 40055,
+  CLSID_CEventCultivationAccelerateReq = 40056,
+  CLSID_CEventDyeingTreeReq = 40057,
+  CLSID_CEventDyeingTreeRes = 40058,
+  CLSID_CEventCultivationAccelerateRes = 40059,
+  CLSID_CEventCultivationPickUpReq = 40060,
+  CLSID_CEventCultivationPickUpRes = 40061,
+  CLSID_CEventWishingPoolCollectReq = 40062,
+  CLSID_CEventWishingPoolCollectReply = 40063,
+  CLSID_CEventWishingPoolTakeOutReq = 40064,
+  CLSID_CEventWishingPoolTakeOutReply = 40065,
+  CLSID_CEventWishingPoolUpdateFishReq = 40066,
+  CLSID_CEventWishingPoolUpdateFishReply = 40067,
+  CLSID_CEventFishTankUpdateFishReq = 40068,
+  CLSID_CEventFishTankUpdateFishReply = 40069,
+  CLSID_CEventHomelandDormitoryUpdate = 40070,
+  CLSID_CEventHomelandMiningReq = 40071,
+  CLSID_CEventHomelandMiningRes = 40072,
+  CLSID_CEventMiningInfoReq = 40073,
+  CLSID_CEventMiningInfoRes = 40074,
+  CLSID_CEventHomelandReadedDairyReq = 40075,
+  CLSID_CEventHomelandReadedDairyRes = 40076,
+  CLSID_CEventHomelandSignReq = 40077,
+  CLSID_CEventHomelandSignRes = 40078,
+  CLSID_CEventPushLevelInfo = 40079,
+  CLSID_CEventHomelandLevelRewardReq = 40080,
+  CLSID_CEventHomelandLevelRewardRes = 40081,
+  CLSID_CEventGetSignInfoReq = 40082,
+  CLSID_CEventGetSignInfoRes = 40083,
+  CLSID_CEventHomelandVisitListReq = 40084,
+  CLSID_CEventHomelandVisitListReply = 40085,
+  CLSID_CEventHomelandVisitFriendReq = 40086,
+  CLSID_CEventHomelandVisitFriendReply = 40087,
+  CLSID_CEventHomelandTakeItemReq = 40088,
+  CLSID_CEventHomelandTakeItemReply = 40089,
+  CLSID_CEventHomelandAccForgeReq = 40090,
+  CLSID_CEventHomelandAccForgeReply = 40091,
+  CLSID_CEventHomelandAccCultivateReq = 40092,
+  CLSID_CEventHomelandAccCultivateReply = 40093,
+  CLSID_CEventHomelandMoveItemReq = 40094,
+  CLSID_CEventHomelandMoveItemReply = 40095,
+  CLSID_CEventHomelandVisitLogReq = 40096,
+  CLSID_CEventHomelandVisitLogReply = 40097,
+  CLSID_CEventHomelandForgeUpdate = 40098,
+  CLSID_CEventHomelandCultivationUpdate = 40099,
+  CLSID_CEventHomelandVisitItemUpdate = 40100,
+  CLSID_CEventHomelandFinishTaskReq = 40101,
+  CLSID_CEventHomelandFinishTaskRes = 40102,
+  CLSID_CEventHomelandUpdateTaskReq = 40103,
+  CLSID_CEventHomelandUpdateTaskRes = 40104,
+  CLSID_CEventHomelandTraceReq = 40105,
+  CLSID_CEventHomelandTraceRes = 40106,
+  CLSID_CEventHomelandTaskViewStoryReq = 40107,
+  CLSID_CEventHomelandTaskViewStoryRes = 40108,
+  CLSID_CEventHomelandTaskQuestTakeReq = 40109,
+  CLSID_CEventHomelandTaskQuestTakeRes = 40110,
+  CLSID_CEventHomelandTaskGroupTakeReq = 40111,
+  CLSID_CEventHomelandTaskGroupTakeRes = 40112,
+  CLSID_CEventPushHomelandFunctionUnlocked = 40113,
+  CLSID_CEventHomelandFixShabbyReq = 40114,
+  CLSID_CEventHomelandFixShabbyRes = 40115,
+  CLSID_CEventHomelandShopRefreshReq = 40116,
+  CLSID_CEventHomelandShopRefreshReply = 40117,
+  CLSID_CEventHomelandVisitUpdate = 40118,
+  CLSID_CEventHomelandStoryTaskUnlockReq = 40119,
+  CLSID_CEventHomelandStoryTaskUnlockReply = 40120,
+  CLSID_CEventHomelandStoryTaskAutoOperateReq = 40121,
+  CLSID_CEventHomelandStoryTaskAutoOperateReply = 40122,
+  CLSID_CEventHomelandStoryTaskUpdate = 40123,
+  CLSID_CEventHomelandStoryTaskMoudleUnlockReq = 40124,
+  CLSID_CEventHomelandStoryTaskMoudleUnlockReply = 40125,
+  CLSID_CEventUnlockFatherHangPointReq = 40126,
+  CLSID_CEventUnlockFatherHangPointRes = 40127,
+  CLSID_CEventFatherHangPointUpdate = 40128,
+  CLSID_CEventEnterMakingMoviceReq = 40129,
+  CLSID_CEventEnterMakingMoviceRes = 40130,
+  CLSID_CEventSubmitRecordNameReq = 40131,
+  CLSID_CEventSubmitRecordNameRes = 40132,
+  CLSID_CEventRequestScoreReq = 40133,
+  CLSID_CEventRequestScoreRes = 40134,
+  CLSID_CEventSaveRecordReq = 40135,
+  CLSID_CEventSaveRecordRes = 40136,
+  CLSID_CEventRequestRecordArchReq = 40137,
+  CLSID_CEventRequestRecordArchRes = 40138,
+  CLSID_CEventHomelandRefreshRarePositionPush = 40139,
+  CLSID_CEventFishingChallengeReq = 40140,
+  CLSID_CEventFishingChallengeRes = 40141,
+  CLSID_CEventFishingChallengeEndReq = 40142,
+  CLSID_CEventFishingChallengeEndRes = 40143,
+  CLSID_CEventCancelFishingChallengeReq = 40144,
+  CLSID_CEventCancelFishingChallengeRes = 40145,
+  CLSID_CEventReceiveAnonymousLetterRewardReq = 40146,
+  CLSID_CEventReceiveAnonymousLetterRewardRes = 40147
+}
+table.append(MessageDef, homelandMessageDef)
+_class("CEventEnterHomelandReq", CCallRequestEvent)
+CEventEnterHomelandReq = CEventEnterHomelandReq
 
-;
-(_ENV.CEventEnterHomelandReq).Constructor = function(self)
-  -- function num : 0_0
+function CEventEnterHomelandReq:Constructor()
   self.player_pstid = 0
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventEnterHomelandReq)._proto = {
-[1] = {"player_pstid", "int64"}
+CEventEnterHomelandReq._proto = {
+  [1] = {
+    "player_pstid",
+    "int64"
+  }
 }
-;
-(_ENV._class)("CEventEnterHomelandRes", _ENV.CCallReplyEvent)
-_ENV.CEventEnterHomelandRes = _ENV.CEventEnterHomelandRes
--- DECOMPILER ERROR at PC242: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventEnterHomelandRes", CCallReplyEvent)
+CEventEnterHomelandRes = CEventEnterHomelandRes
 
-;
-(_ENV.CEventEnterHomelandRes).Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CEventEnterHomelandRes:Constructor()
   self.nRet = 0
   self.data = ClientHomelandInfo:New()
   self.can_trigger_event_list = {}
@@ -40,1180 +175,902 @@ _ENV.CEventEnterHomelandRes = _ENV.CEventEnterHomelandRes
   self.task_group_close_timeline = {}
 end
 
--- DECOMPILER ERROR at PC283: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventEnterHomelandRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"data", "ClientHomelandInfo"}
-, 
-[3] = {"can_trigger_event_list", "list<int>"}
-, 
-[4] = {"can_trigger_event_num", "int"}
-, 
-[5] = {"task_group_timeline", "list<homeland_sametime_group>"}
-, 
-[6] = {"task_group_close_timeline", "list<homeland_sametime_group>"}
+CEventEnterHomelandRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "data",
+    "ClientHomelandInfo"
+  },
+  [3] = {
+    "can_trigger_event_list",
+    "list<int>"
+  },
+  [4] = {
+    "can_trigger_event_num",
+    "int"
+  },
+  [5] = {
+    "task_group_timeline",
+    "list<homeland_sametime_group>"
+  },
+  [6] = {
+    "task_group_close_timeline",
+    "list<homeland_sametime_group>"
+  }
 }
-;
-(_ENV._class)("CEventForgeReq", _ENV.CCallRequestEvent)
-_ENV.CEventForgeReq = _ENV.CEventForgeReq
--- DECOMPILER ERROR at PC298: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventForgeReq", CCallRequestEvent)
+CEventForgeReq = CEventForgeReq
 
-;
-(_ENV.CEventForgeReq).Constructor = function(self)
-  -- function num : 0_2
+function CEventForgeReq:Constructor()
   self.architecture_id = 0
   self.queue_index = 0
 end
 
--- DECOMPILER ERROR at PC315: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventForgeReq)._proto = {
-[1] = {"architecture_id", "int"}
-, 
-[2] = {"queue_index", "int"}
+CEventForgeReq._proto = {
+  [1] = {
+    "architecture_id",
+    "int"
+  },
+  [2] = {
+    "queue_index",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventForgeRes", _ENV.CCallReplyEvent)
-_ENV.CEventForgeRes = _ENV.CEventForgeRes
--- DECOMPILER ERROR at PC330: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventForgeRes", CCallReplyEvent)
+CEventForgeRes = CEventForgeRes
 
-;
-(_ENV.CEventForgeRes).Constructor = function(self)
-  -- function num : 0_3
+function CEventForgeRes:Constructor()
   self.nRet = 0
   self.forge_list = {}
 end
 
--- DECOMPILER ERROR at PC347: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventForgeRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"forge_list", "list<ForgeItemInfo>"}
+CEventForgeRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "forge_list",
+    "list<ForgeItemInfo>"
+  }
 }
-;
-(_ENV._class)("CEventUnlockReq", _ENV.CCallRequestEvent)
-_ENV.CEventUnlockReq = _ENV.CEventUnlockReq
--- DECOMPILER ERROR at PC362: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventUnlockReq", CCallRequestEvent)
+CEventUnlockReq = CEventUnlockReq
 
-;
-(_ENV.CEventUnlockReq).Constructor = function(self)
-  -- function num : 0_4
+function CEventUnlockReq:Constructor()
   self.architecture_id = 0
 end
 
--- DECOMPILER ERROR at PC373: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventUnlockReq)._proto = {
-[1] = {"architecture_id", "int"}
+CEventUnlockReq._proto = {
+  [1] = {
+    "architecture_id",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventUnlockRes", _ENV.CCallReplyEvent)
-_ENV.CEventUnlockRes = _ENV.CEventUnlockRes
--- DECOMPILER ERROR at PC388: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventUnlockRes", CCallReplyEvent)
+CEventUnlockRes = CEventUnlockRes
 
-;
-(_ENV.CEventUnlockRes).Constructor = function(self)
-  -- function num : 0_5
+function CEventUnlockRes:Constructor()
   self.nRet = 0
   self.unlock_architecture_list = {}
 end
 
--- DECOMPILER ERROR at PC405: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventUnlockRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"unlock_architecture_list", "list<int>"}
+CEventUnlockRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "unlock_architecture_list",
+    "list<int>"
+  }
 }
-;
-(_ENV._class)("CEventOneClickUnlockReq", _ENV.CCallRequestEvent)
-_ENV.CEventOneClickUnlockReq = _ENV.CEventOneClickUnlockReq
--- DECOMPILER ERROR at PC420: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventOneClickUnlockReq", CCallRequestEvent)
+CEventOneClickUnlockReq = CEventOneClickUnlockReq
 
-;
-(_ENV.CEventOneClickUnlockReq).Constructor = function(self)
-  -- function num : 0_6
+function CEventOneClickUnlockReq:Constructor()
   self.architecture_ids = {}
 end
 
--- DECOMPILER ERROR at PC431: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventOneClickUnlockReq)._proto = {
-[1] = {"architecture_ids", "list<int>"}
+CEventOneClickUnlockReq._proto = {
+  [1] = {
+    "architecture_ids",
+    "list<int>"
+  }
 }
-;
-(_ENV._class)("CEventOneClickUnlockRes", _ENV.CCallReplyEvent)
-_ENV.CEventOneClickUnlockRes = _ENV.CEventOneClickUnlockRes
--- DECOMPILER ERROR at PC446: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventOneClickUnlockRes", CCallReplyEvent)
+CEventOneClickUnlockRes = CEventOneClickUnlockRes
 
-;
-(_ENV.CEventOneClickUnlockRes).Constructor = function(self)
-  -- function num : 0_7
+function CEventOneClickUnlockRes:Constructor()
   self.nRet = 0
   self.unlock_architecture_list = {}
 end
 
--- DECOMPILER ERROR at PC463: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventOneClickUnlockRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"unlock_architecture_list", "list<int>"}
+CEventOneClickUnlockRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "unlock_architecture_list",
+    "list<int>"
+  }
 }
-;
-(_ENV._class)("CEventAccelerateReq", _ENV.CCallRequestEvent)
-_ENV.CEventAccelerateReq = _ENV.CEventAccelerateReq
--- DECOMPILER ERROR at PC478: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventAccelerateReq", CCallRequestEvent)
+CEventAccelerateReq = CEventAccelerateReq
 
-;
-(_ENV.CEventAccelerateReq).Constructor = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function CEventAccelerateReq:Constructor()
   self.queue_index = 0
   self.item = RoleAsset:New()
 end
 
--- DECOMPILER ERROR at PC495: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventAccelerateReq)._proto = {
-[1] = {"queue_index", "int"}
-, 
-[2] = {"item", "RoleAsset"}
+CEventAccelerateReq._proto = {
+  [1] = {
+    "queue_index",
+    "int"
+  },
+  [2] = {"item", "RoleAsset"}
 }
-;
-(_ENV._class)("CEventAccelerateRes", _ENV.CCallReplyEvent)
-_ENV.CEventAccelerateRes = _ENV.CEventAccelerateRes
--- DECOMPILER ERROR at PC510: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventAccelerateRes", CCallReplyEvent)
+CEventAccelerateRes = CEventAccelerateRes
 
-;
-(_ENV.CEventAccelerateRes).Constructor = function(self)
-  -- function num : 0_9
+function CEventAccelerateRes:Constructor()
   self.nRet = 0
   self.forge_list = {}
 end
 
--- DECOMPILER ERROR at PC527: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventAccelerateRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"forge_list", "list<ForgeItemInfo>"}
+CEventAccelerateRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "forge_list",
+    "list<ForgeItemInfo>"
+  }
 }
-;
-(_ENV._class)("CEventCancelReq", _ENV.CCallRequestEvent)
-_ENV.CEventCancelReq = _ENV.CEventCancelReq
--- DECOMPILER ERROR at PC542: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventCancelReq", CCallRequestEvent)
+CEventCancelReq = CEventCancelReq
 
-;
-(_ENV.CEventCancelReq).Constructor = function(self)
-  -- function num : 0_10
+function CEventCancelReq:Constructor()
   self.queue_index = 0
 end
 
--- DECOMPILER ERROR at PC553: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventCancelReq)._proto = {
-[1] = {"queue_index", "int"}
+CEventCancelReq._proto = {
+  [1] = {
+    "queue_index",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventCancelRes", _ENV.CCallReplyEvent)
-_ENV.CEventCancelRes = _ENV.CEventCancelRes
--- DECOMPILER ERROR at PC568: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventCancelRes", CCallReplyEvent)
+CEventCancelRes = CEventCancelRes
 
-;
-(_ENV.CEventCancelRes).Constructor = function(self)
-  -- function num : 0_11
+function CEventCancelRes:Constructor()
   self.nRet = 0
   self.forge_list = {}
   self.return_material = {}
 end
 
--- DECOMPILER ERROR at PC591: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventCancelRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"forge_list", "list<ForgeItemInfo>"}
-, 
-[3] = {"return_material", "list<RoleAsset>"}
+CEventCancelRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "forge_list",
+    "list<ForgeItemInfo>"
+  },
+  [3] = {
+    "return_material",
+    "list<RoleAsset>"
+  }
 }
-;
-(_ENV._class)("CEventPickUpReq", _ENV.CCallRequestEvent)
-_ENV.CEventPickUpReq = _ENV.CEventPickUpReq
--- DECOMPILER ERROR at PC606: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventPickUpReq", CCallRequestEvent)
+CEventPickUpReq = CEventPickUpReq
 
-;
-(_ENV.CEventPickUpReq).Constructor = function(self)
-  -- function num : 0_12
+function CEventPickUpReq:Constructor()
   self.queue_index = 0
 end
 
--- DECOMPILER ERROR at PC617: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventPickUpReq)._proto = {
-[1] = {"queue_index", "int"}
+CEventPickUpReq._proto = {
+  [1] = {
+    "queue_index",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventPickUpRes", _ENV.CCallReplyEvent)
-_ENV.CEventPickUpRes = _ENV.CEventPickUpRes
--- DECOMPILER ERROR at PC632: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventPickUpRes", CCallReplyEvent)
+CEventPickUpRes = CEventPickUpRes
 
-;
-(_ENV.CEventPickUpRes).Constructor = function(self)
-  -- function num : 0_13
+function CEventPickUpRes:Constructor()
   self.nRet = 0
   self.forge_list = {}
   self.architecture = {}
   self.already_forge_list = {}
 end
 
--- DECOMPILER ERROR at PC661: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventPickUpRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"forge_list", "list<ForgeItemInfo>"}
-, 
-[3] = {"architecture", "list<RoleAsset>"}
-, 
-[4] = {"already_forge_list", "list<int>"}
+CEventPickUpRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "forge_list",
+    "list<ForgeItemInfo>"
+  },
+  [3] = {
+    "architecture",
+    "list<RoleAsset>"
+  },
+  [4] = {
+    "already_forge_list",
+    "list<int>"
+  }
 }
-;
-(_ENV._class)("CEventSelectSkinReq", _ENV.CCallRequestEvent)
-_ENV.CEventSelectSkinReq = _ENV.CEventSelectSkinReq
--- DECOMPILER ERROR at PC676: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventSelectSkinReq", CCallRequestEvent)
+CEventSelectSkinReq = CEventSelectSkinReq
 
-;
-(_ENV.CEventSelectSkinReq).Constructor = function(self)
-  -- function num : 0_14
+function CEventSelectSkinReq:Constructor()
   self.pstid = 0
   self.skin_id = 0
 end
 
--- DECOMPILER ERROR at PC693: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventSelectSkinReq)._proto = {
-[1] = {"pstid", "uint64"}
-, 
-[2] = {"skin_id", "int"}
+CEventSelectSkinReq._proto = {
+  [1] = {"pstid", "uint64"},
+  [2] = {"skin_id", "int"}
 }
-;
-(_ENV._class)("CEventSelectSkinRes", _ENV.CCallReplyEvent)
-_ENV.CEventSelectSkinRes = _ENV.CEventSelectSkinRes
--- DECOMPILER ERROR at PC708: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventSelectSkinRes", CCallReplyEvent)
+CEventSelectSkinRes = CEventSelectSkinRes
 
-;
-(_ENV.CEventSelectSkinRes).Constructor = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function CEventSelectSkinRes:Constructor()
   self.nRet = 0
   self.architecture_info = Architecture:New()
 end
 
--- DECOMPILER ERROR at PC725: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventSelectSkinRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"architecture_info", "Architecture"}
+CEventSelectSkinRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "architecture_info",
+    "Architecture"
+  }
 }
-;
-(_ENV._class)("CEventHomelandBuildReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandBuildReq = _ENV.CEventHomelandBuildReq
--- DECOMPILER ERROR at PC740: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandBuildReq", CCallRequestEvent)
+CEventHomelandBuildReq = CEventHomelandBuildReq
 
-;
-(_ENV.CEventHomelandBuildReq).Constructor = function(self)
-  -- function num : 0_16
+function CEventHomelandBuildReq:Constructor()
   self.add_architectures = {}
   self.delete_pstids = {}
   self.update_architectures = {}
 end
 
--- DECOMPILER ERROR at PC763: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandBuildReq)._proto = {
-[1] = {"add_architectures", "list<Architecture>"}
-, 
-[2] = {"delete_pstids", "list<uint64>"}
-, 
-[3] = {"update_architectures", "list<Architecture>"}
+CEventHomelandBuildReq._proto = {
+  [1] = {
+    "add_architectures",
+    "list<Architecture>"
+  },
+  [2] = {
+    "delete_pstids",
+    "list<uint64>"
+  },
+  [3] = {
+    "update_architectures",
+    "list<Architecture>"
+  }
 }
-;
-(_ENV._class)("CEventHomelandBuildRes", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandBuildRes = _ENV.CEventHomelandBuildRes
--- DECOMPILER ERROR at PC778: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandBuildRes", CCallReplyEvent)
+CEventHomelandBuildRes = CEventHomelandBuildRes
 
-;
-(_ENV.CEventHomelandBuildRes).Constructor = function(self)
-  -- function num : 0_17
+function CEventHomelandBuildRes:Constructor()
   self.nRet = 0
   self.add_architectures = {}
   self.delete_pstids = {}
   self.update_architectures = {}
 end
 
--- DECOMPILER ERROR at PC807: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandBuildRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"add_architectures", "list<Architecture>"}
-, 
-[3] = {"delete_pstids", "list<uint64>"}
-, 
-[4] = {"update_architectures", "list<Architecture>"}
+CEventHomelandBuildRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "add_architectures",
+    "list<Architecture>"
+  },
+  [3] = {
+    "delete_pstids",
+    "list<uint64>"
+  },
+  [4] = {
+    "update_architectures",
+    "list<Architecture>"
+  }
 }
-;
-(_ENV._class)("CEventHomelandGetFishingDataReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandGetFishingDataReq = _ENV.CEventHomelandGetFishingDataReq
--- DECOMPILER ERROR at PC822: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandGetFishingDataReq", CCallRequestEvent)
+CEventHomelandGetFishingDataReq = CEventHomelandGetFishingDataReq
 
-;
-(_ENV.CEventHomelandGetFishingDataReq).Constructor = function(self)
-  -- function num : 0_18
+function CEventHomelandGetFishingDataReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC827: Confused about usage of register: R1 in 'UnsetPending'
+CEventHomelandGetFishingDataReq._proto = {}
+_class("CEventHomelandGetFishingDataReply", CCallReplyEvent)
+CEventHomelandGetFishingDataReply = CEventHomelandGetFishingDataReply
 
-;
-(_ENV.CEventHomelandGetFishingDataReq)._proto = {}
-;
-(_ENV._class)("CEventHomelandGetFishingDataReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandGetFishingDataReply = _ENV.CEventHomelandGetFishingDataReply
--- DECOMPILER ERROR at PC842: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandGetFishingDataReply).Constructor = function(self)
-  -- function num : 0_19
+function CEventHomelandGetFishingDataReply:Constructor()
   self.nRet = 0
   self.fishing_postions = {}
   self.append_wishingcoin_position = {}
   self.clue_submit_status = {}
 end
 
--- DECOMPILER ERROR at PC871: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandGetFishingDataReply)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"fishing_postions", "list<FishingPositionData>"}
-, 
-[3] = {"append_wishingcoin_position", "list<int>"}
-, 
-[4] = {"clue_submit_status", "map<int,ClueRareStatus>"}
+CEventHomelandGetFishingDataReply._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "fishing_postions",
+    "list<FishingPositionData>"
+  },
+  [3] = {
+    "append_wishingcoin_position",
+    "list<int>"
+  },
+  [4] = {
+    "clue_submit_status",
+    "map<int,ClueRareStatus>"
+  }
 }
-;
-(_ENV._class)("CEventHomelandFishBiteReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandFishBiteReq = _ENV.CEventHomelandFishBiteReq
--- DECOMPILER ERROR at PC886: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandFishBiteReq", CCallRequestEvent)
+CEventHomelandFishBiteReq = CEventHomelandFishBiteReq
 
-;
-(_ENV.CEventHomelandFishBiteReq).Constructor = function(self)
-  -- function num : 0_20
+function CEventHomelandFishBiteReq:Constructor()
   self.fishing_position_id = 0
   self.fishing_entry_type = 0
   self.follow_fishing_id = 0
 end
 
--- DECOMPILER ERROR at PC909: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandFishBiteReq)._proto = {
-[1] = {"fishing_position_id", "int"}
-, 
-[2] = {"fishing_entry_type", "int"}
-, 
-[3] = {"follow_fishing_id", "int"}
+CEventHomelandFishBiteReq._proto = {
+  [1] = {
+    "fishing_position_id",
+    "int"
+  },
+  [2] = {
+    "fishing_entry_type",
+    "int"
+  },
+  [3] = {
+    "follow_fishing_id",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventHomelandFishBiteReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandFishBiteReply = _ENV.CEventHomelandFishBiteReply
--- DECOMPILER ERROR at PC924: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandFishBiteReply", CCallReplyEvent)
+CEventHomelandFishBiteReply = CEventHomelandFishBiteReply
 
-;
-(_ENV.CEventHomelandFishBiteReply).Constructor = function(self)
-  -- function num : 0_21
+function CEventHomelandFishBiteReply:Constructor()
   self.nRet = 0
   self.result_fish_id = 0
 end
 
--- DECOMPILER ERROR at PC941: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandFishBiteReply)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"result_fish_id", "int"}
+CEventHomelandFishBiteReply._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "result_fish_id",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventHomelandFishingComfirmReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandFishingComfirmReq = _ENV.CEventHomelandFishingComfirmReq
--- DECOMPILER ERROR at PC956: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandFishingComfirmReq", CCallRequestEvent)
+CEventHomelandFishingComfirmReq = CEventHomelandFishingComfirmReq
 
-;
-(_ENV.CEventHomelandFishingComfirmReq).Constructor = function(self)
-  -- function num : 0_22
+function CEventHomelandFishingComfirmReq:Constructor()
   self.fishing_entry_type = 0
 end
 
--- DECOMPILER ERROR at PC967: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandFishingComfirmReq)._proto = {
-[1] = {"fishing_entry_type", "int"}
+CEventHomelandFishingComfirmReq._proto = {
+  [1] = {
+    "fishing_entry_type",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventHomelandFishingComfirmReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandFishingComfirmReply = _ENV.CEventHomelandFishingComfirmReply
--- DECOMPILER ERROR at PC982: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandFishingComfirmReply", CCallReplyEvent)
+CEventHomelandFishingComfirmReply = CEventHomelandFishingComfirmReply
 
-;
-(_ENV.CEventHomelandFishingComfirmReply).Constructor = function(self)
-  -- function num : 0_23
+function CEventHomelandFishingComfirmReply:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC993: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandFishingComfirmReply)._proto = {
-[1] = {"nRet", "int"}
+CEventHomelandFishingComfirmReply._proto = {
+  [1] = {"nRet", "int"}
 }
-;
-(_ENV._class)("CEventHomelandRefreshRarePositionReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandRefreshRarePositionReq = _ENV.CEventHomelandRefreshRarePositionReq
--- DECOMPILER ERROR at PC1008: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandRefreshRarePositionReq", CCallRequestEvent)
+CEventHomelandRefreshRarePositionReq = CEventHomelandRefreshRarePositionReq
 
-;
-(_ENV.CEventHomelandRefreshRarePositionReq).Constructor = function(self)
-  -- function num : 0_24
+function CEventHomelandRefreshRarePositionReq:Constructor()
   self.rare_clue_id = 0
 end
 
--- DECOMPILER ERROR at PC1019: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandRefreshRarePositionReq)._proto = {
-[1] = {"rare_clue_id", "int"}
+CEventHomelandRefreshRarePositionReq._proto = {
+  [1] = {
+    "rare_clue_id",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventHomelandRefreshRarePositionReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandRefreshRarePositionReply = _ENV.CEventHomelandRefreshRarePositionReply
--- DECOMPILER ERROR at PC1034: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandRefreshRarePositionReply", CCallReplyEvent)
+CEventHomelandRefreshRarePositionReply = CEventHomelandRefreshRarePositionReply
 
-;
-(_ENV.CEventHomelandRefreshRarePositionReply).Constructor = function(self)
-  -- function num : 0_25
+function CEventHomelandRefreshRarePositionReply:Constructor()
   self.nRet = 0
   self.clue_submit_status = {}
   self.assets = {}
 end
 
--- DECOMPILER ERROR at PC1057: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandRefreshRarePositionReply)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"clue_submit_status", "map<int,ClueRareStatus>"}
-, 
-[3] = {"assets", "list<RoleAsset>"}
+CEventHomelandRefreshRarePositionReply._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "clue_submit_status",
+    "map<int,ClueRareStatus>"
+  },
+  [3] = {
+    "assets",
+    "list<RoleAsset>"
+  }
 }
-;
-(_ENV._class)("CEventHomelandShopReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandShopReq = _ENV.CEventHomelandShopReq
--- DECOMPILER ERROR at PC1072: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandShopReq", CCallRequestEvent)
+CEventHomelandShopReq = CEventHomelandShopReq
 
-;
-(_ENV.CEventHomelandShopReq).Constructor = function(self)
-  -- function num : 0_26
+function CEventHomelandShopReq:Constructor()
   self.id = 0
   self.num = 0
 end
 
--- DECOMPILER ERROR at PC1089: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandShopReq)._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"num", "int"}
+CEventHomelandShopReq._proto = {
+  [1] = {"id", "int"},
+  [2] = {"num", "int"}
 }
-;
-(_ENV._class)("CEventHomelandShopReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandShopReply = _ENV.CEventHomelandShopReply
--- DECOMPILER ERROR at PC1104: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandShopReply", CCallReplyEvent)
+CEventHomelandShopReply = CEventHomelandShopReply
 
-;
-(_ENV.CEventHomelandShopReply).Constructor = function(self)
-  -- function num : 0_27
+function CEventHomelandShopReply:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC1115: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandShopReply)._proto = {
-[1] = {"nRet", "int"}
+CEventHomelandShopReply._proto = {
+  [1] = {"nRet", "int"}
 }
-;
-(_ENV._class)("CEventHomelandSellReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandSellReq = _ENV.CEventHomelandSellReq
--- DECOMPILER ERROR at PC1130: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandSellReq", CCallRequestEvent)
+CEventHomelandSellReq = CEventHomelandSellReq
 
-;
-(_ENV.CEventHomelandSellReq).Constructor = function(self)
-  -- function num : 0_28
+function CEventHomelandSellReq:Constructor()
   self.id_num = {}
 end
 
--- DECOMPILER ERROR at PC1141: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandSellReq)._proto = {
-[1] = {"id_num", "map<int,int>"}
+CEventHomelandSellReq._proto = {
+  [1] = {
+    "id_num",
+    "map<int,int>"
+  }
 }
-;
-(_ENV._class)("CEventHomelandSellReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandSellReply = _ENV.CEventHomelandSellReply
--- DECOMPILER ERROR at PC1156: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandSellReply", CCallReplyEvent)
+CEventHomelandSellReply = CEventHomelandSellReply
 
-;
-(_ENV.CEventHomelandSellReply).Constructor = function(self)
-  -- function num : 0_29
+function CEventHomelandSellReply:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC1167: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandSellReply)._proto = {
-[1] = {"nRet", "int"}
+CEventHomelandSellReply._proto = {
+  [1] = {"nRet", "int"}
 }
-;
-(_ENV._class)("CEventHomelandGoodsReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandGoodsReq = _ENV.CEventHomelandGoodsReq
--- DECOMPILER ERROR at PC1182: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandGoodsReq", CCallRequestEvent)
+CEventHomelandGoodsReq = CEventHomelandGoodsReq
 
-;
-(_ENV.CEventHomelandGoodsReq).Constructor = function(self)
-  -- function num : 0_30
+function CEventHomelandGoodsReq:Constructor()
   self.id = 0
   self.is_sell = false
 end
 
--- DECOMPILER ERROR at PC1199: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandGoodsReq)._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"is_sell", "bool"}
+CEventHomelandGoodsReq._proto = {
+  [1] = {"id", "int"},
+  [2] = {"is_sell", "bool"}
 }
-;
-(_ENV._class)("CEventHomelandGoodsReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandGoodsReply = _ENV.CEventHomelandGoodsReply
--- DECOMPILER ERROR at PC1214: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandGoodsReply", CCallReplyEvent)
+CEventHomelandGoodsReply = CEventHomelandGoodsReply
 
-;
-(_ENV.CEventHomelandGoodsReply).Constructor = function(self)
-  -- function num : 0_31
+function CEventHomelandGoodsReply:Constructor()
   self.nRet = 0
   self.goods_info = {}
   self.goods_refresh_time = 0
 end
 
--- DECOMPILER ERROR at PC1237: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandGoodsReply)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"goods_info", "map<int,homelandGoodsInfo>"}
-, 
-[3] = {"goods_refresh_time", "time"}
+CEventHomelandGoodsReply._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "goods_info",
+    "map<int,homelandGoodsInfo>"
+  },
+  [3] = {
+    "goods_refresh_time",
+    "time"
+  }
 }
-;
-(_ENV._class)("CEventHomelandShopUpdate", _ENV.CSvrPushEvent)
-_ENV.CEventHomelandShopUpdate = _ENV.CEventHomelandShopUpdate
--- DECOMPILER ERROR at PC1252: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandShopUpdate", CSvrPushEvent)
+CEventHomelandShopUpdate = CEventHomelandShopUpdate
 
-;
-(_ENV.CEventHomelandShopUpdate).Constructor = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function CEventHomelandShopUpdate:Constructor()
   self.shop_info = homelandShopInfo:New()
 end
 
--- DECOMPILER ERROR at PC1263: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandShopUpdate)._proto = {
-[1] = {"shop_info", "homelandShopInfo"}
+CEventHomelandShopUpdate._proto = {
+  [1] = {
+    "shop_info",
+    "homelandShopInfo"
+  }
 }
-;
-(_ENV._class)("CEventHomelandTreasureReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandTreasureReq = _ENV.CEventHomelandTreasureReq
--- DECOMPILER ERROR at PC1278: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandTreasureReq", CCallRequestEvent)
+CEventHomelandTreasureReq = CEventHomelandTreasureReq
 
-;
-(_ENV.CEventHomelandTreasureReq).Constructor = function(self)
-  -- function num : 0_33
+function CEventHomelandTreasureReq:Constructor()
   self.birth_id = 0
 end
 
--- DECOMPILER ERROR at PC1289: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandTreasureReq)._proto = {
-[1] = {"birth_id", "int"}
+CEventHomelandTreasureReq._proto = {
+  [1] = {"birth_id", "int"}
 }
-;
-(_ENV._class)("CEventHomelandTreasureReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandTreasureReply = _ENV.CEventHomelandTreasureReply
--- DECOMPILER ERROR at PC1304: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandTreasureReply", CCallReplyEvent)
+CEventHomelandTreasureReply = CEventHomelandTreasureReply
 
-;
-(_ENV.CEventHomelandTreasureReply).Constructor = function(self)
-  -- function num : 0_34 , upvalues : _ENV
+function CEventHomelandTreasureReply:Constructor()
   self.nRet = 0
   self.trea_info = homelandTreasure:New()
 end
 
--- DECOMPILER ERROR at PC1321: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandTreasureReply)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"trea_info", "homelandTreasure"}
+CEventHomelandTreasureReply._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "trea_info",
+    "homelandTreasure"
+  }
 }
-;
-(_ENV._class)("CEventHomelandTreasureStateReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandTreasureStateReq = _ENV.CEventHomelandTreasureStateReq
--- DECOMPILER ERROR at PC1336: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandTreasureStateReq", CCallRequestEvent)
+CEventHomelandTreasureStateReq = CEventHomelandTreasureStateReq
 
-;
-(_ENV.CEventHomelandTreasureStateReq).Constructor = function(self)
-  -- function num : 0_35
+function CEventHomelandTreasureStateReq:Constructor()
   self.birth_id = 0
   self.state = 0
 end
 
--- DECOMPILER ERROR at PC1353: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandTreasureStateReq)._proto = {
-[1] = {"birth_id", "int"}
-, 
-[2] = {"state", "int"}
+CEventHomelandTreasureStateReq._proto = {
+  [1] = {"birth_id", "int"},
+  [2] = {"state", "int"}
 }
-;
-(_ENV._class)("CEventHomelandTreasureStateReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandTreasureStateReply = _ENV.CEventHomelandTreasureStateReply
--- DECOMPILER ERROR at PC1368: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandTreasureStateReply", CCallReplyEvent)
+CEventHomelandTreasureStateReply = CEventHomelandTreasureStateReply
 
-;
-(_ENV.CEventHomelandTreasureStateReply).Constructor = function(self)
-  -- function num : 0_36
+function CEventHomelandTreasureStateReply:Constructor()
   self.nRet = 0
   self.assets = {}
 end
 
--- DECOMPILER ERROR at PC1385: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandTreasureStateReply)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"assets", "list<RoleAsset>"}
+CEventHomelandTreasureStateReply._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "assets",
+    "list<RoleAsset>"
+  }
 }
-;
-(_ENV._class)("CEventHomelandTreasureUpdate", _ENV.CSvrPushEvent)
-_ENV.CEventHomelandTreasureUpdate = _ENV.CEventHomelandTreasureUpdate
--- DECOMPILER ERROR at PC1400: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandTreasureUpdate", CSvrPushEvent)
+CEventHomelandTreasureUpdate = CEventHomelandTreasureUpdate
 
-;
-(_ENV.CEventHomelandTreasureUpdate).Constructor = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function CEventHomelandTreasureUpdate:Constructor()
   self.trea_info = homelandTreasure:New()
 end
 
--- DECOMPILER ERROR at PC1411: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandTreasureUpdate)._proto = {
-[1] = {"trea_info", "homelandTreasure"}
+CEventHomelandTreasureUpdate._proto = {
+  [1] = {
+    "trea_info",
+    "homelandTreasure"
+  }
 }
-;
-(_ENV._class)("CEventHomelandFellReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandFellReq = _ENV.CEventHomelandFellReq
--- DECOMPILER ERROR at PC1426: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandFellReq", CCallRequestEvent)
+CEventHomelandFellReq = CEventHomelandFellReq
 
-;
-(_ENV.CEventHomelandFellReq).Constructor = function(self)
-  -- function num : 0_38
+function CEventHomelandFellReq:Constructor()
   self.tree_id = 0
   self.feel_times = 0
 end
 
--- DECOMPILER ERROR at PC1443: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandFellReq)._proto = {
-[1] = {"tree_id", "int"}
-, 
-[2] = {"feel_times", "int"}
+CEventHomelandFellReq._proto = {
+  [1] = {"tree_id", "int"},
+  [2] = {"feel_times", "int"}
 }
-;
-(_ENV._class)("CEventHomelandFellRes", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandFellRes = _ENV.CEventHomelandFellRes
--- DECOMPILER ERROR at PC1458: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandFellRes", CCallReplyEvent)
+CEventHomelandFellRes = CEventHomelandFellRes
 
-;
-(_ENV.CEventHomelandFellRes).Constructor = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function CEventHomelandFellRes:Constructor()
   self.nRet = 0
   self.assets = {}
   self.fell_info = FellInfo:New()
 end
 
--- DECOMPILER ERROR at PC1481: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandFellRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"assets", "list<RoleAsset>"}
-, 
-[3] = {"fell_info", "FellInfo"}
+CEventHomelandFellRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "assets",
+    "list<RoleAsset>"
+  },
+  [3] = {"fell_info", "FellInfo"}
 }
-;
-(_ENV._class)("CEventFellInfoReq", _ENV.CCallRequestEvent)
-_ENV.CEventFellInfoReq = _ENV.CEventFellInfoReq
--- DECOMPILER ERROR at PC1496: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventFellInfoReq", CCallRequestEvent)
+CEventFellInfoReq = CEventFellInfoReq
 
-;
-(_ENV.CEventFellInfoReq).Constructor = function(self)
-  -- function num : 0_40
+function CEventFellInfoReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC1501: Confused about usage of register: R1 in 'UnsetPending'
+CEventFellInfoReq._proto = {}
+_class("CEventFellInfoRes", CCallReplyEvent)
+CEventFellInfoRes = CEventFellInfoRes
 
-;
-(_ENV.CEventFellInfoReq)._proto = {}
-;
-(_ENV._class)("CEventFellInfoRes", _ENV.CCallReplyEvent)
-_ENV.CEventFellInfoRes = _ENV.CEventFellInfoRes
--- DECOMPILER ERROR at PC1516: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventFellInfoRes).Constructor = function(self)
-  -- function num : 0_41 , upvalues : _ENV
+function CEventFellInfoRes:Constructor()
   self.nRet = 0
   self.fell_info = FellInfo:New()
 end
 
--- DECOMPILER ERROR at PC1533: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventFellInfoRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"fell_info", "FellInfo"}
+CEventFellInfoRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {"fell_info", "FellInfo"}
 }
-;
-(_ENV._class)("CEventDormitoryChangeNameReq", _ENV.CCallRequestEvent)
-_ENV.CEventDormitoryChangeNameReq = _ENV.CEventDormitoryChangeNameReq
--- DECOMPILER ERROR at PC1548: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventDormitoryChangeNameReq", CCallRequestEvent)
+CEventDormitoryChangeNameReq = CEventDormitoryChangeNameReq
 
-;
-(_ENV.CEventDormitoryChangeNameReq).Constructor = function(self)
-  -- function num : 0_42
+function CEventDormitoryChangeNameReq:Constructor()
   self.index = 0
   self.name = ""
 end
 
--- DECOMPILER ERROR at PC1565: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventDormitoryChangeNameReq)._proto = {
-[1] = {"index", "int"}
-, 
-[2] = {"name", "string"}
+CEventDormitoryChangeNameReq._proto = {
+  [1] = {"index", "int"},
+  [2] = {"name", "string"}
 }
-;
-(_ENV._class)("CEventDormitoryChangeNameRes", _ENV.CCallReplyEvent)
-_ENV.CEventDormitoryChangeNameRes = _ENV.CEventDormitoryChangeNameRes
--- DECOMPILER ERROR at PC1580: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventDormitoryChangeNameRes", CCallReplyEvent)
+CEventDormitoryChangeNameRes = CEventDormitoryChangeNameRes
 
-;
-(_ENV.CEventDormitoryChangeNameRes).Constructor = function(self)
-  -- function num : 0_43
+function CEventDormitoryChangeNameRes:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC1591: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventDormitoryChangeNameRes)._proto = {
-[1] = {"nRet", "int"}
+CEventDormitoryChangeNameRes._proto = {
+  [1] = {"nRet", "int"}
 }
-;
-(_ENV._class)("CEventDormitoryUpdatePetReq", _ENV.CCallRequestEvent)
-_ENV.CEventDormitoryUpdatePetReq = _ENV.CEventDormitoryUpdatePetReq
--- DECOMPILER ERROR at PC1606: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventDormitoryUpdatePetReq", CCallRequestEvent)
+CEventDormitoryUpdatePetReq = CEventDormitoryUpdatePetReq
 
-;
-(_ENV.CEventDormitoryUpdatePetReq).Constructor = function(self)
-  -- function num : 0_44
+function CEventDormitoryUpdatePetReq:Constructor()
   self.updateData = {}
 end
 
--- DECOMPILER ERROR at PC1617: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventDormitoryUpdatePetReq)._proto = {
-[1] = {"updateData", "map<int,map<int,int64>>"}
+CEventDormitoryUpdatePetReq._proto = {
+  [1] = {
+    "updateData",
+    "map<int,map<int,int64>>"
+  }
 }
-;
-(_ENV._class)("CEventDormitoryUpdatePetRes", _ENV.CCallReplyEvent)
-_ENV.CEventDormitoryUpdatePetRes = _ENV.CEventDormitoryUpdatePetRes
--- DECOMPILER ERROR at PC1632: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventDormitoryUpdatePetRes", CCallReplyEvent)
+CEventDormitoryUpdatePetRes = CEventDormitoryUpdatePetRes
 
-;
-(_ENV.CEventDormitoryUpdatePetRes).Constructor = function(self)
-  -- function num : 0_45
+function CEventDormitoryUpdatePetRes:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC1643: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventDormitoryUpdatePetRes)._proto = {
-[1] = {"nRet", "int"}
+CEventDormitoryUpdatePetRes._proto = {
+  [1] = {"nRet", "int"}
 }
-;
-(_ENV._class)("CEventClientTriggerEventReq", _ENV.CCallRequestEvent)
-_ENV.CEventClientTriggerEventReq = _ENV.CEventClientTriggerEventReq
--- DECOMPILER ERROR at PC1658: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventClientTriggerEventReq", CCallRequestEvent)
+CEventClientTriggerEventReq = CEventClientTriggerEventReq
 
-;
-(_ENV.CEventClientTriggerEventReq).Constructor = function(self)
-  -- function num : 0_46
+function CEventClientTriggerEventReq:Constructor()
   self.trigger_event_list = {}
 end
 
--- DECOMPILER ERROR at PC1669: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventClientTriggerEventReq)._proto = {
-[1] = {"trigger_event_list", "list<int>"}
+CEventClientTriggerEventReq._proto = {
+  [1] = {
+    "trigger_event_list",
+    "list<int>"
+  }
 }
-;
-(_ENV._class)("CEventClientTriggerEventRes", _ENV.CCallReplyEvent)
-_ENV.CEventClientTriggerEventRes = _ENV.CEventClientTriggerEventRes
--- DECOMPILER ERROR at PC1684: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventClientTriggerEventRes", CCallReplyEvent)
+CEventClientTriggerEventRes = CEventClientTriggerEventRes
 
-;
-(_ENV.CEventClientTriggerEventRes).Constructor = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function CEventClientTriggerEventRes:Constructor()
   self.nRet = 0
   self.event_info = homelandEventInfo:New()
 end
 
--- DECOMPILER ERROR at PC1701: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventClientTriggerEventRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"event_info", "homelandEventInfo"}
+CEventClientTriggerEventRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "event_info",
+    "homelandEventInfo"
+  }
 }
-;
-(_ENV._class)("CEventClientFinishEventReq", _ENV.CCallRequestEvent)
-_ENV.CEventClientFinishEventReq = _ENV.CEventClientFinishEventReq
--- DECOMPILER ERROR at PC1716: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventClientFinishEventReq", CCallRequestEvent)
+CEventClientFinishEventReq = CEventClientFinishEventReq
 
-;
-(_ENV.CEventClientFinishEventReq).Constructor = function(self)
-  -- function num : 0_48
+function CEventClientFinishEventReq:Constructor()
   self.finish_event_id = 0
 end
 
--- DECOMPILER ERROR at PC1727: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventClientFinishEventReq)._proto = {
-[1] = {"finish_event_id", "int"}
+CEventClientFinishEventReq._proto = {
+  [1] = {
+    "finish_event_id",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventClientFinishEventRes", _ENV.CCallReplyEvent)
-_ENV.CEventClientFinishEventRes = _ENV.CEventClientFinishEventRes
--- DECOMPILER ERROR at PC1742: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventClientFinishEventRes", CCallReplyEvent)
+CEventClientFinishEventRes = CEventClientFinishEventRes
 
-;
-(_ENV.CEventClientFinishEventRes).Constructor = function(self)
-  -- function num : 0_49 , upvalues : _ENV
+function CEventClientFinishEventRes:Constructor()
   self.nRet = 0
   self.event_info = homelandEventInfo:New()
   self.wishing_coin_position = 0
 end
 
--- DECOMPILER ERROR at PC1765: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventClientFinishEventRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"event_info", "homelandEventInfo"}
-, 
-[3] = {"wishing_coin_position", "int"}
+CEventClientFinishEventRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "event_info",
+    "homelandEventInfo"
+  },
+  [3] = {
+    "wishing_coin_position",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventPushFinishHomeChatId", _ENV.CCliPushEvent)
-_ENV.CEventPushFinishHomeChatId = _ENV.CEventPushFinishHomeChatId
--- DECOMPILER ERROR at PC1780: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventPushFinishHomeChatId", CCliPushEvent)
+CEventPushFinishHomeChatId = CEventPushFinishHomeChatId
 
-;
-(_ENV.CEventPushFinishHomeChatId).Constructor = function(self)
-  -- function num : 0_50
+function CEventPushFinishHomeChatId:Constructor()
   self.pet_template_id = 0
   self.finish_home_pet_chat_id = 0
 end
 
--- DECOMPILER ERROR at PC1797: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventPushFinishHomeChatId)._proto = {
-[1] = {"pet_template_id", "int"}
-, 
-[2] = {"finish_home_pet_chat_id", "int"}
+CEventPushFinishHomeChatId._proto = {
+  [1] = {
+    "pet_template_id",
+    "int"
+  },
+  [2] = {
+    "finish_home_pet_chat_id",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventPushEventChange", _ENV.CSvrPushEvent)
-_ENV.CEventPushEventChange = _ENV.CEventPushEventChange
--- DECOMPILER ERROR at PC1812: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventPushEventChange", CSvrPushEvent)
+CEventPushEventChange = CEventPushEventChange
 
-;
-(_ENV.CEventPushEventChange).Constructor = function(self)
-  -- function num : 0_51 , upvalues : _ENV
+function CEventPushEventChange:Constructor()
   self.erase_event_id = {}
   self.event_info = homelandEventInfo:New()
   self.trigger_immediately_event = 0
 end
 
--- DECOMPILER ERROR at PC1835: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventPushEventChange)._proto = {
-[1] = {"erase_event_id", "list<int>"}
-, 
-[2] = {"event_info", "homelandEventInfo"}
-, 
-[3] = {"trigger_immediately_event", "int"}
+CEventPushEventChange._proto = {
+  [1] = {
+    "erase_event_id",
+    "list<int>"
+  },
+  [2] = {
+    "event_info",
+    "homelandEventInfo"
+  },
+  [3] = {
+    "trigger_immediately_event",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventCultivationReq", _ENV.CCallRequestEvent)
-_ENV.CEventCultivationReq = _ENV.CEventCultivationReq
--- DECOMPILER ERROR at PC1850: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventCultivationReq", CCallRequestEvent)
+CEventCultivationReq = CEventCultivationReq
 
-;
-(_ENV.CEventCultivationReq).Constructor = function(self)
-  -- function num : 0_52 , upvalues : _ENV
+function CEventCultivationReq:Constructor()
   self.cultivation_info = ClietCultivationInfo:New()
 end
 
--- DECOMPILER ERROR at PC1861: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventCultivationReq)._proto = {
-[1] = {"cultivation_info", "ClietCultivationInfo"}
+CEventCultivationReq._proto = {
+  [1] = {
+    "cultivation_info",
+    "ClietCultivationInfo"
+  }
 }
-;
-(_ENV._class)("CEventCultivationRes", _ENV.CCallReplyEvent)
-_ENV.CEventCultivationRes = _ENV.CEventCultivationRes
--- DECOMPILER ERROR at PC1876: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventCultivationRes", CCallReplyEvent)
+CEventCultivationRes = CEventCultivationRes
 
-;
-(_ENV.CEventCultivationRes).Constructor = function(self)
-  -- function num : 0_53 , upvalues : _ENV
+function CEventCultivationRes:Constructor()
   self.nRet = 0
   self.infos = CultivationInfo:New()
 end
 
--- DECOMPILER ERROR at PC1893: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventCultivationRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"infos", "CultivationInfo"}
+CEventCultivationRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "infos",
+    "CultivationInfo"
+  }
 }
-;
-(_ENV._class)("CEventCultivationCancelReq", _ENV.CCallRequestEvent)
-_ENV.CEventCultivationCancelReq = _ENV.CEventCultivationCancelReq
--- DECOMPILER ERROR at PC1908: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventCultivationCancelReq", CCallRequestEvent)
+CEventCultivationCancelReq = CEventCultivationCancelReq
 
-;
-(_ENV.CEventCultivationCancelReq).Constructor = function(self)
-  -- function num : 0_54
+function CEventCultivationCancelReq:Constructor()
   self.land_pstid = 0
 end
 
--- DECOMPILER ERROR at PC1919: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventCultivationCancelReq)._proto = {
-[1] = {"land_pstid", "int64"}
+CEventCultivationCancelReq._proto = {
+  [1] = {"land_pstid", "int64"}
 }
-;
-(_ENV._class)("CEventCultivationCancelRes", _ENV.CCallReplyEvent)
-_ENV.CEventCultivationCancelRes = _ENV.CEventCultivationCancelRes
--- DECOMPILER ERROR at PC1934: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventCultivationCancelRes", CCallReplyEvent)
+CEventCultivationCancelRes = CEventCultivationCancelRes
 
-;
-(_ENV.CEventCultivationCancelRes).Constructor = function(self)
-  -- function num : 0_55 , upvalues : _ENV
+function CEventCultivationCancelRes:Constructor()
   self.nRet = 0
   self.infos = CultivationInfo:New()
 end
 
--- DECOMPILER ERROR at PC1951: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventCultivationCancelRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"infos", "CultivationInfo"}
+CEventCultivationCancelRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "infos",
+    "CultivationInfo"
+  }
 }
-;
-(_ENV._class)("CEventCultivationAccelerateReq", _ENV.CCallRequestEvent)
-_ENV.CEventCultivationAccelerateReq = _ENV.CEventCultivationAccelerateReq
--- DECOMPILER ERROR at PC1966: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventCultivationAccelerateReq", CCallRequestEvent)
+CEventCultivationAccelerateReq = CEventCultivationAccelerateReq
 
-;
-(_ENV.CEventCultivationAccelerateReq).Constructor = function(self)
-  -- function num : 0_56 , upvalues : _ENV
+function CEventCultivationAccelerateReq:Constructor()
   self.land_pstid = 0
   self.item_info = RoleAsset:New()
 end
 
--- DECOMPILER ERROR at PC1983: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventCultivationAccelerateReq)._proto = {
-[1] = {"land_pstid", "int64"}
-, 
-[2] = {"item_info", "RoleAsset"}
+CEventCultivationAccelerateReq._proto = {
+  [1] = {"land_pstid", "int64"},
+  [2] = {"item_info", "RoleAsset"}
 }
-;
-(_ENV._class)("CEventDyeingTreeReq", _ENV.CCallRequestEvent)
-_ENV.CEventDyeingTreeReq = _ENV.CEventDyeingTreeReq
--- DECOMPILER ERROR at PC1998: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventDyeingTreeReq", CCallRequestEvent)
+CEventDyeingTreeReq = CEventDyeingTreeReq
 
-;
-(_ENV.CEventDyeingTreeReq).Constructor = function(self)
-  -- function num : 0_57
+function CEventDyeingTreeReq:Constructor()
   self.architecture_pstid = 0
   self.select_tree_id = 0
   self.dye_item_id = 0
 end
 
--- DECOMPILER ERROR at PC2021: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventDyeingTreeReq)._proto = {
-[1] = {"architecture_pstid", "int64"}
-, 
-[2] = {"select_tree_id", "int"}
-, 
-[3] = {"dye_item_id", "int"}
+CEventDyeingTreeReq._proto = {
+  [1] = {
+    "architecture_pstid",
+    "int64"
+  },
+  [2] = {
+    "select_tree_id",
+    "int"
+  },
+  [3] = {
+    "dye_item_id",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventDyeingTreeRes", _ENV.CCallReplyEvent)
-_ENV.CEventDyeingTreeRes = _ENV.CEventDyeingTreeRes
--- DECOMPILER ERROR at PC2036: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventDyeingTreeRes", CCallReplyEvent)
+CEventDyeingTreeRes = CEventDyeingTreeRes
 
-;
-(_ENV.CEventDyeingTreeRes).Constructor = function(self)
-  -- function num : 0_58 , upvalues : _ENV
+function CEventDyeingTreeRes:Constructor()
   self.nRet = 0
   self.arch_info = Architecture:New()
 end
 
--- DECOMPILER ERROR at PC2053: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventDyeingTreeRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"arch_info", "Architecture"}
+CEventDyeingTreeRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "arch_info",
+    "Architecture"
+  }
 }
-;
-(_ENV._class)("CEventCultivationAccelerateRes", _ENV.CCallReplyEvent)
-_ENV.CEventCultivationAccelerateRes = _ENV.CEventCultivationAccelerateRes
--- DECOMPILER ERROR at PC2068: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventCultivationAccelerateRes", CCallReplyEvent)
+CEventCultivationAccelerateRes = CEventCultivationAccelerateRes
 
-;
-(_ENV.CEventCultivationAccelerateRes).Constructor = function(self)
-  -- function num : 0_59 , upvalues : _ENV
+function CEventCultivationAccelerateRes:Constructor()
   self.nRet = 0
   self.infos = CultivationInfo:New()
 end
 
--- DECOMPILER ERROR at PC2085: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventCultivationAccelerateRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"infos", "CultivationInfo"}
+CEventCultivationAccelerateRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "infos",
+    "CultivationInfo"
+  }
 }
-;
-(_ENV._class)("CEventCultivationPickUpReq", _ENV.CCallRequestEvent)
-_ENV.CEventCultivationPickUpReq = _ENV.CEventCultivationPickUpReq
--- DECOMPILER ERROR at PC2100: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventCultivationPickUpReq", CCallRequestEvent)
+CEventCultivationPickUpReq = CEventCultivationPickUpReq
 
-;
-(_ENV.CEventCultivationPickUpReq).Constructor = function(self)
-  -- function num : 0_60
+function CEventCultivationPickUpReq:Constructor()
   self.land_pstid = 0
 end
 
--- DECOMPILER ERROR at PC2111: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventCultivationPickUpReq)._proto = {
-[1] = {"land_pstid", "int64"}
+CEventCultivationPickUpReq._proto = {
+  [1] = {"land_pstid", "int64"}
 }
-;
-(_ENV._class)("CEventCultivationPickUpRes", _ENV.CCallReplyEvent)
-_ENV.CEventCultivationPickUpRes = _ENV.CEventCultivationPickUpRes
--- DECOMPILER ERROR at PC2126: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventCultivationPickUpRes", CCallReplyEvent)
+CEventCultivationPickUpRes = CEventCultivationPickUpRes
 
-;
-(_ENV.CEventCultivationPickUpRes).Constructor = function(self)
-  -- function num : 0_61 , upvalues : _ENV
+function CEventCultivationPickUpRes:Constructor()
   self.nRet = 0
   self.infos = CultivationInfo:New()
   self.items = {}
@@ -1221,1378 +1078,986 @@ _ENV.CEventCultivationPickUpRes = _ENV.CEventCultivationPickUpRes
   self.is_first = false
 end
 
--- DECOMPILER ERROR at PC2161: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventCultivationPickUpRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"infos", "CultivationInfo"}
-, 
-[3] = {"items", "list<RoleAsset>"}
-, 
-[4] = {"homeland_exp", "int"}
-, 
-[5] = {"is_first", "bool"}
+CEventCultivationPickUpRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "infos",
+    "CultivationInfo"
+  },
+  [3] = {
+    "items",
+    "list<RoleAsset>"
+  },
+  [4] = {
+    "homeland_exp",
+    "int"
+  },
+  [5] = {"is_first", "bool"}
 }
-;
-(_ENV._class)("CEventWishingPoolCollectReq", _ENV.CCallRequestEvent)
-_ENV.CEventWishingPoolCollectReq = _ENV.CEventWishingPoolCollectReq
--- DECOMPILER ERROR at PC2176: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventWishingPoolCollectReq", CCallRequestEvent)
+CEventWishingPoolCollectReq = CEventWishingPoolCollectReq
 
-;
-(_ENV.CEventWishingPoolCollectReq).Constructor = function(self)
-  -- function num : 0_62
+function CEventWishingPoolCollectReq:Constructor()
   self.item_id = 0
 end
 
--- DECOMPILER ERROR at PC2187: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventWishingPoolCollectReq)._proto = {
-[1] = {"item_id", "int"}
+CEventWishingPoolCollectReq._proto = {
+  [1] = {"item_id", "int"}
 }
-;
-(_ENV._class)("CEventWishingPoolCollectReply", _ENV.CCallReplyEvent)
-_ENV.CEventWishingPoolCollectReply = _ENV.CEventWishingPoolCollectReply
--- DECOMPILER ERROR at PC2202: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventWishingPoolCollectReply", CCallReplyEvent)
+CEventWishingPoolCollectReply = CEventWishingPoolCollectReply
 
-;
-(_ENV.CEventWishingPoolCollectReply).Constructor = function(self)
-  -- function num : 0_63
+function CEventWishingPoolCollectReply:Constructor()
   self.nRet = 0
   self.item_count = {}
   self.reward = {}
   self.wishing_coin_list = {}
 end
 
--- DECOMPILER ERROR at PC2231: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventWishingPoolCollectReply)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"item_count", "map<int,int>"}
-, 
-[3] = {"reward", "list<RoleAsset>"}
-, 
-[4] = {"wishing_coin_list", "list<int>"}
+CEventWishingPoolCollectReply._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "item_count",
+    "map<int,int>"
+  },
+  [3] = {
+    "reward",
+    "list<RoleAsset>"
+  },
+  [4] = {
+    "wishing_coin_list",
+    "list<int>"
+  }
 }
-;
-(_ENV._class)("CEventWishingPoolTakeOutReq", _ENV.CCallRequestEvent)
-_ENV.CEventWishingPoolTakeOutReq = _ENV.CEventWishingPoolTakeOutReq
--- DECOMPILER ERROR at PC2246: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventWishingPoolTakeOutReq", CCallRequestEvent)
+CEventWishingPoolTakeOutReq = CEventWishingPoolTakeOutReq
 
-;
-(_ENV.CEventWishingPoolTakeOutReq).Constructor = function(self)
-  -- function num : 0_64
+function CEventWishingPoolTakeOutReq:Constructor()
   self.item_id = 0
 end
 
--- DECOMPILER ERROR at PC2257: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventWishingPoolTakeOutReq)._proto = {
-[1] = {"item_id", "int"}
+CEventWishingPoolTakeOutReq._proto = {
+  [1] = {"item_id", "int"}
 }
-;
-(_ENV._class)("CEventWishingPoolTakeOutReply", _ENV.CCallReplyEvent)
-_ENV.CEventWishingPoolTakeOutReply = _ENV.CEventWishingPoolTakeOutReply
--- DECOMPILER ERROR at PC2272: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventWishingPoolTakeOutReply", CCallReplyEvent)
+CEventWishingPoolTakeOutReply = CEventWishingPoolTakeOutReply
 
-;
-(_ENV.CEventWishingPoolTakeOutReply).Constructor = function(self)
-  -- function num : 0_65
+function CEventWishingPoolTakeOutReply:Constructor()
   self.nRet = 0
   self.item_count = {}
 end
 
--- DECOMPILER ERROR at PC2289: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventWishingPoolTakeOutReply)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"item_count", "map<int,int>"}
+CEventWishingPoolTakeOutReply._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "item_count",
+    "map<int,int>"
+  }
 }
-;
-(_ENV._class)("CEventWishingPoolUpdateFishReq", _ENV.CCallRequestEvent)
-_ENV.CEventWishingPoolUpdateFishReq = _ENV.CEventWishingPoolUpdateFishReq
--- DECOMPILER ERROR at PC2304: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventWishingPoolUpdateFishReq", CCallRequestEvent)
+CEventWishingPoolUpdateFishReq = CEventWishingPoolUpdateFishReq
 
-;
-(_ENV.CEventWishingPoolUpdateFishReq).Constructor = function(self)
-  -- function num : 0_66
+function CEventWishingPoolUpdateFishReq:Constructor()
   self.all_fish_num = {}
 end
 
--- DECOMPILER ERROR at PC2315: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventWishingPoolUpdateFishReq)._proto = {
-[1] = {"all_fish_num", "map<int,int>"}
+CEventWishingPoolUpdateFishReq._proto = {
+  [1] = {
+    "all_fish_num",
+    "map<int,int>"
+  }
 }
-;
-(_ENV._class)("CEventWishingPoolUpdateFishReply", _ENV.CCallReplyEvent)
-_ENV.CEventWishingPoolUpdateFishReply = _ENV.CEventWishingPoolUpdateFishReply
--- DECOMPILER ERROR at PC2330: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventWishingPoolUpdateFishReply", CCallReplyEvent)
+CEventWishingPoolUpdateFishReply = CEventWishingPoolUpdateFishReply
 
-;
-(_ENV.CEventWishingPoolUpdateFishReply).Constructor = function(self)
-  -- function num : 0_67
+function CEventWishingPoolUpdateFishReply:Constructor()
   self.nRet = 0
   self.item_count = {}
 end
 
--- DECOMPILER ERROR at PC2347: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventWishingPoolUpdateFishReply)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"item_count", "map<int,int>"}
+CEventWishingPoolUpdateFishReply._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "item_count",
+    "map<int,int>"
+  }
 }
-;
-(_ENV._class)("CEventFishTankUpdateFishReq", _ENV.CCallRequestEvent)
-_ENV.CEventFishTankUpdateFishReq = _ENV.CEventFishTankUpdateFishReq
--- DECOMPILER ERROR at PC2362: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventFishTankUpdateFishReq", CCallRequestEvent)
+CEventFishTankUpdateFishReq = CEventFishTankUpdateFishReq
 
-;
-(_ENV.CEventFishTankUpdateFishReq).Constructor = function(self)
-  -- function num : 0_68
+function CEventFishTankUpdateFishReq:Constructor()
   self.tank_pst_id = 0
   self.fish2num = {}
 end
 
--- DECOMPILER ERROR at PC2379: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventFishTankUpdateFishReq)._proto = {
-[1] = {"tank_pst_id", "int64"}
-, 
-[2] = {"fish2num", "map<int,int>"}
+CEventFishTankUpdateFishReq._proto = {
+  [1] = {
+    "tank_pst_id",
+    "int64"
+  },
+  [2] = {
+    "fish2num",
+    "map<int,int>"
+  }
 }
-;
-(_ENV._class)("CEventFishTankUpdateFishReply", _ENV.CCallReplyEvent)
-_ENV.CEventFishTankUpdateFishReply = _ENV.CEventFishTankUpdateFishReply
--- DECOMPILER ERROR at PC2394: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventFishTankUpdateFishReply", CCallReplyEvent)
+CEventFishTankUpdateFishReply = CEventFishTankUpdateFishReply
 
-;
-(_ENV.CEventFishTankUpdateFishReply).Constructor = function(self)
-  -- function num : 0_69
+function CEventFishTankUpdateFishReply:Constructor()
   self.nRet = 0
   self.fish_tank_item_count = {}
 end
 
--- DECOMPILER ERROR at PC2411: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventFishTankUpdateFishReply)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"fish_tank_item_count", "map<int,int>"}
+CEventFishTankUpdateFishReply._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "fish_tank_item_count",
+    "map<int,int>"
+  }
 }
-;
-(_ENV._class)("CEventHomelandDormitoryUpdate", _ENV.CSvrPushEvent)
-_ENV.CEventHomelandDormitoryUpdate = _ENV.CEventHomelandDormitoryUpdate
--- DECOMPILER ERROR at PC2426: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandDormitoryUpdate", CSvrPushEvent)
+CEventHomelandDormitoryUpdate = CEventHomelandDormitoryUpdate
 
-;
-(_ENV.CEventHomelandDormitoryUpdate).Constructor = function(self)
-  -- function num : 0_70
+function CEventHomelandDormitoryUpdate:Constructor()
   self.list = {}
 end
 
--- DECOMPILER ERROR at PC2437: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandDormitoryUpdate)._proto = {
-[1] = {"list", "list<dormitory_room>"}
+CEventHomelandDormitoryUpdate._proto = {
+  [1] = {
+    "list",
+    "list<dormitory_room>"
+  }
 }
-;
-(_ENV._class)("CEventHomelandMiningReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandMiningReq = _ENV.CEventHomelandMiningReq
--- DECOMPILER ERROR at PC2452: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandMiningReq", CCallRequestEvent)
+CEventHomelandMiningReq = CEventHomelandMiningReq
 
-;
-(_ENV.CEventHomelandMiningReq).Constructor = function(self)
-  -- function num : 0_71
+function CEventHomelandMiningReq:Constructor()
   self.mine_id = 0
   self.mining_times = 0
 end
 
--- DECOMPILER ERROR at PC2469: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandMiningReq)._proto = {
-[1] = {"mine_id", "int"}
-, 
-[2] = {"mining_times", "int"}
+CEventHomelandMiningReq._proto = {
+  [1] = {"mine_id", "int"},
+  [2] = {
+    "mining_times",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventHomelandMiningRes", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandMiningRes = _ENV.CEventHomelandMiningRes
--- DECOMPILER ERROR at PC2484: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandMiningRes", CCallReplyEvent)
+CEventHomelandMiningRes = CEventHomelandMiningRes
 
-;
-(_ENV.CEventHomelandMiningRes).Constructor = function(self)
-  -- function num : 0_72 , upvalues : _ENV
+function CEventHomelandMiningRes:Constructor()
   self.nRet = 0
   self.assets = {}
   self.mining_info = MiningInfo:New()
 end
 
--- DECOMPILER ERROR at PC2507: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandMiningRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"assets", "list<RoleAsset>"}
-, 
-[3] = {"mining_info", "MiningInfo"}
+CEventHomelandMiningRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "assets",
+    "list<RoleAsset>"
+  },
+  [3] = {
+    "mining_info",
+    "MiningInfo"
+  }
 }
-;
-(_ENV._class)("CEventMiningInfoReq", _ENV.CCallRequestEvent)
-_ENV.CEventMiningInfoReq = _ENV.CEventMiningInfoReq
--- DECOMPILER ERROR at PC2522: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventMiningInfoReq", CCallRequestEvent)
+CEventMiningInfoReq = CEventMiningInfoReq
 
-;
-(_ENV.CEventMiningInfoReq).Constructor = function(self)
-  -- function num : 0_73
+function CEventMiningInfoReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC2527: Confused about usage of register: R1 in 'UnsetPending'
+CEventMiningInfoReq._proto = {}
+_class("CEventMiningInfoRes", CCallReplyEvent)
+CEventMiningInfoRes = CEventMiningInfoRes
 
-;
-(_ENV.CEventMiningInfoReq)._proto = {}
-;
-(_ENV._class)("CEventMiningInfoRes", _ENV.CCallReplyEvent)
-_ENV.CEventMiningInfoRes = _ENV.CEventMiningInfoRes
--- DECOMPILER ERROR at PC2542: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventMiningInfoRes).Constructor = function(self)
-  -- function num : 0_74 , upvalues : _ENV
+function CEventMiningInfoRes:Constructor()
   self.nRet = 0
   self.mining_info = MiningInfo:New()
 end
 
--- DECOMPILER ERROR at PC2559: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventMiningInfoRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"mining_info", "MiningInfo"}
+CEventMiningInfoRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "mining_info",
+    "MiningInfo"
+  }
 }
-;
-(_ENV._class)("CEventHomelandReadedDairyReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandReadedDairyReq = _ENV.CEventHomelandReadedDairyReq
--- DECOMPILER ERROR at PC2574: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandReadedDairyReq", CCallRequestEvent)
+CEventHomelandReadedDairyReq = CEventHomelandReadedDairyReq
 
-;
-(_ENV.CEventHomelandReadedDairyReq).Constructor = function(self)
-  -- function num : 0_75
+function CEventHomelandReadedDairyReq:Constructor()
   self.nReadDairyId = 0
 end
 
--- DECOMPILER ERROR at PC2585: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandReadedDairyReq)._proto = {
-[1] = {"nReadDairyId", "int"}
+CEventHomelandReadedDairyReq._proto = {
+  [1] = {
+    "nReadDairyId",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventHomelandReadedDairyRes", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandReadedDairyRes = _ENV.CEventHomelandReadedDairyRes
--- DECOMPILER ERROR at PC2600: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandReadedDairyRes", CCallReplyEvent)
+CEventHomelandReadedDairyRes = CEventHomelandReadedDairyRes
 
-;
-(_ENV.CEventHomelandReadedDairyRes).Constructor = function(self)
-  -- function num : 0_76
+function CEventHomelandReadedDairyRes:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC2611: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandReadedDairyRes)._proto = {
-[1] = {"nRet", "int"}
+CEventHomelandReadedDairyRes._proto = {
+  [1] = {"nRet", "int"}
 }
-;
-(_ENV._class)("CEventHomelandSignReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandSignReq = _ENV.CEventHomelandSignReq
--- DECOMPILER ERROR at PC2626: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandSignReq", CCallRequestEvent)
+CEventHomelandSignReq = CEventHomelandSignReq
 
-;
-(_ENV.CEventHomelandSignReq).Constructor = function(self)
-  -- function num : 0_77
+function CEventHomelandSignReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC2631: Confused about usage of register: R1 in 'UnsetPending'
+CEventHomelandSignReq._proto = {}
+_class("CEventHomelandSignRes", CCallReplyEvent)
+CEventHomelandSignRes = CEventHomelandSignRes
 
-;
-(_ENV.CEventHomelandSignReq)._proto = {}
-;
-(_ENV._class)("CEventHomelandSignRes", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandSignRes = _ENV.CEventHomelandSignRes
--- DECOMPILER ERROR at PC2646: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandSignRes).Constructor = function(self)
-  -- function num : 0_78 , upvalues : _ENV
+function CEventHomelandSignRes:Constructor()
   self.nRet = 0
   self.info = HomelandSignInfo:New()
 end
 
--- DECOMPILER ERROR at PC2663: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandSignRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"info", "HomelandSignInfo"}
+CEventHomelandSignRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "info",
+    "HomelandSignInfo"
+  }
 }
-;
-(_ENV._class)("CEventPushLevelInfo", _ENV.CSvrPushEvent)
-_ENV.CEventPushLevelInfo = _ENV.CEventPushLevelInfo
--- DECOMPILER ERROR at PC2678: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventPushLevelInfo", CSvrPushEvent)
+CEventPushLevelInfo = CEventPushLevelInfo
 
-;
-(_ENV.CEventPushLevelInfo).Constructor = function(self)
-  -- function num : 0_79
+function CEventPushLevelInfo:Constructor()
   self.level = 0
   self.exp = 0
 end
 
--- DECOMPILER ERROR at PC2695: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventPushLevelInfo)._proto = {
-[1] = {"level", "int"}
-, 
-[2] = {"exp", "int64"}
+CEventPushLevelInfo._proto = {
+  [1] = {"level", "int"},
+  [2] = {"exp", "int64"}
 }
-;
-(_ENV._class)("CEventHomelandLevelRewardReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandLevelRewardReq = _ENV.CEventHomelandLevelRewardReq
--- DECOMPILER ERROR at PC2710: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandLevelRewardReq", CCallRequestEvent)
+CEventHomelandLevelRewardReq = CEventHomelandLevelRewardReq
 
-;
-(_ENV.CEventHomelandLevelRewardReq).Constructor = function(self)
-  -- function num : 0_80
+function CEventHomelandLevelRewardReq:Constructor()
   self.level = 0
 end
 
--- DECOMPILER ERROR at PC2721: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandLevelRewardReq)._proto = {
-[1] = {"level", "int"}
+CEventHomelandLevelRewardReq._proto = {
+  [1] = {"level", "int"}
 }
-;
-(_ENV._class)("CEventHomelandLevelRewardRes", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandLevelRewardRes = _ENV.CEventHomelandLevelRewardRes
--- DECOMPILER ERROR at PC2736: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandLevelRewardRes", CCallReplyEvent)
+CEventHomelandLevelRewardRes = CEventHomelandLevelRewardRes
 
-;
-(_ENV.CEventHomelandLevelRewardRes).Constructor = function(self)
-  -- function num : 0_81 , upvalues : _ENV
+function CEventHomelandLevelRewardRes:Constructor()
   self.nRet = 0
   self.info = HomelandSignInfo:New()
   self.assets = {}
 end
 
--- DECOMPILER ERROR at PC2759: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandLevelRewardRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"info", "HomelandSignInfo"}
-, 
-[3] = {"assets", "list<RoleAsset>"}
+CEventHomelandLevelRewardRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "info",
+    "HomelandSignInfo"
+  },
+  [3] = {
+    "assets",
+    "list<RoleAsset>"
+  }
 }
-;
-(_ENV._class)("CEventGetSignInfoReq", _ENV.CCallRequestEvent)
-_ENV.CEventGetSignInfoReq = _ENV.CEventGetSignInfoReq
--- DECOMPILER ERROR at PC2774: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventGetSignInfoReq", CCallRequestEvent)
+CEventGetSignInfoReq = CEventGetSignInfoReq
 
-;
-(_ENV.CEventGetSignInfoReq).Constructor = function(self)
-  -- function num : 0_82
+function CEventGetSignInfoReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC2779: Confused about usage of register: R1 in 'UnsetPending'
+CEventGetSignInfoReq._proto = {}
+_class("CEventGetSignInfoRes", CCallReplyEvent)
+CEventGetSignInfoRes = CEventGetSignInfoRes
 
-;
-(_ENV.CEventGetSignInfoReq)._proto = {}
-;
-(_ENV._class)("CEventGetSignInfoRes", _ENV.CCallReplyEvent)
-_ENV.CEventGetSignInfoRes = _ENV.CEventGetSignInfoRes
--- DECOMPILER ERROR at PC2794: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventGetSignInfoRes).Constructor = function(self)
-  -- function num : 0_83 , upvalues : _ENV
+function CEventGetSignInfoRes:Constructor()
   self.nRet = 0
   self.info = HomelandSignInfo:New()
 end
 
--- DECOMPILER ERROR at PC2811: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventGetSignInfoRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"info", "HomelandSignInfo"}
+CEventGetSignInfoRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "info",
+    "HomelandSignInfo"
+  }
 }
-;
-(_ENV._class)("CEventHomelandVisitListReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandVisitListReq = _ENV.CEventHomelandVisitListReq
--- DECOMPILER ERROR at PC2826: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandVisitListReq", CCallRequestEvent)
+CEventHomelandVisitListReq = CEventHomelandVisitListReq
 
-;
-(_ENV.CEventHomelandVisitListReq).Constructor = function(self)
-  -- function num : 0_84
+function CEventHomelandVisitListReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC2831: Confused about usage of register: R1 in 'UnsetPending'
+CEventHomelandVisitListReq._proto = {}
+_class("CEventHomelandVisitListReply", CCallReplyEvent)
+CEventHomelandVisitListReply = CEventHomelandVisitListReply
 
-;
-(_ENV.CEventHomelandVisitListReq)._proto = {}
-;
-(_ENV._class)("CEventHomelandVisitListReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandVisitListReply = _ENV.CEventHomelandVisitListReply
--- DECOMPILER ERROR at PC2846: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandVisitListReply).Constructor = function(self)
-  -- function num : 0_85
+function CEventHomelandVisitListReply:Constructor()
   self.nRet = 0
   self.visit_list = {}
 end
 
--- DECOMPILER ERROR at PC2863: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandVisitListReply)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"visit_list", "list<visit_simple_info>"}
+CEventHomelandVisitListReply._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "visit_list",
+    "list<visit_simple_info>"
+  }
 }
-;
-(_ENV._class)("CEventHomelandVisitFriendReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandVisitFriendReq = _ENV.CEventHomelandVisitFriendReq
--- DECOMPILER ERROR at PC2878: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandVisitFriendReq", CCallRequestEvent)
+CEventHomelandVisitFriendReq = CEventHomelandVisitFriendReq
 
-;
-(_ENV.CEventHomelandVisitFriendReq).Constructor = function(self)
-  -- function num : 0_86
+function CEventHomelandVisitFriendReq:Constructor()
   self.pstid = 0
 end
 
--- DECOMPILER ERROR at PC2889: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandVisitFriendReq)._proto = {
-[1] = {"pstid", "int64"}
+CEventHomelandVisitFriendReq._proto = {
+  [1] = {"pstid", "int64"}
 }
-;
-(_ENV._class)("CEventHomelandVisitFriendReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandVisitFriendReply = _ENV.CEventHomelandVisitFriendReply
--- DECOMPILER ERROR at PC2904: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandVisitFriendReply", CCallReplyEvent)
+CEventHomelandVisitFriendReply = CEventHomelandVisitFriendReply
 
-;
-(_ENV.CEventHomelandVisitFriendReply).Constructor = function(self)
-  -- function num : 0_87 , upvalues : _ENV
+function CEventHomelandVisitFriendReply:Constructor()
   self.nRet = 0
   self.infos = FriendHomelandInfo:New()
 end
 
--- DECOMPILER ERROR at PC2921: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandVisitFriendReply)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"infos", "FriendHomelandInfo"}
+CEventHomelandVisitFriendReply._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "infos",
+    "FriendHomelandInfo"
+  }
 }
-;
-(_ENV._class)("CEventHomelandTakeItemReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandTakeItemReq = _ENV.CEventHomelandTakeItemReq
--- DECOMPILER ERROR at PC2936: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandTakeItemReq", CCallRequestEvent)
+CEventHomelandTakeItemReq = CEventHomelandTakeItemReq
 
-;
-(_ENV.CEventHomelandTakeItemReq).Constructor = function(self)
-  -- function num : 0_88
+function CEventHomelandTakeItemReq:Constructor()
   self.pstid = 0
   self.index = 0
   self.item_pstid = 0
 end
 
--- DECOMPILER ERROR at PC2959: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandTakeItemReq)._proto = {
-[1] = {"pstid", "int64"}
-, 
-[2] = {"index", "int"}
-, 
-[3] = {"item_pstid", "int64"}
+CEventHomelandTakeItemReq._proto = {
+  [1] = {"pstid", "int64"},
+  [2] = {"index", "int"},
+  [3] = {"item_pstid", "int64"}
 }
-;
-(_ENV._class)("CEventHomelandTakeItemReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandTakeItemReply = _ENV.CEventHomelandTakeItemReply
--- DECOMPILER ERROR at PC2974: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandTakeItemReply", CCallReplyEvent)
+CEventHomelandTakeItemReply = CEventHomelandTakeItemReply
 
-;
-(_ENV.CEventHomelandTakeItemReply).Constructor = function(self)
-  -- function num : 0_89
+function CEventHomelandTakeItemReply:Constructor()
   self.nRet = 0
   self.newInfo = {}
 end
 
--- DECOMPILER ERROR at PC2991: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandTakeItemReply)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"newInfo", "map<int,SpecItemAsset>"}
+CEventHomelandTakeItemReply._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "newInfo",
+    "map<int,SpecItemAsset>"
+  }
 }
-;
-(_ENV._class)("CEventHomelandAccForgeReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandAccForgeReq = _ENV.CEventHomelandAccForgeReq
--- DECOMPILER ERROR at PC3006: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandAccForgeReq", CCallRequestEvent)
+CEventHomelandAccForgeReq = CEventHomelandAccForgeReq
 
-;
-(_ENV.CEventHomelandAccForgeReq).Constructor = function(self)
-  -- function num : 0_90
+function CEventHomelandAccForgeReq:Constructor()
   self.pstid = 0
 end
 
--- DECOMPILER ERROR at PC3017: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandAccForgeReq)._proto = {
-[1] = {"pstid", "int64"}
+CEventHomelandAccForgeReq._proto = {
+  [1] = {"pstid", "int64"}
 }
-;
-(_ENV._class)("CEventHomelandAccForgeReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandAccForgeReply = _ENV.CEventHomelandAccForgeReply
--- DECOMPILER ERROR at PC3032: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandAccForgeReply", CCallReplyEvent)
+CEventHomelandAccForgeReply = CEventHomelandAccForgeReply
 
-;
-(_ENV.CEventHomelandAccForgeReply).Constructor = function(self)
-  -- function num : 0_91 , upvalues : _ENV
+function CEventHomelandAccForgeReply:Constructor()
   self.nRet = 0
   self.newInfo = ForgeQueueInfo:New()
   self.forge_time = {}
   self.help_list = {}
 end
 
--- DECOMPILER ERROR at PC3061: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandAccForgeReply)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"newInfo", "ForgeQueueInfo"}
-, 
-[3] = {"forge_time", "map<int,VisitHelpTimeInfo>"}
-, 
-[4] = {"help_list", "list<int>"}
+CEventHomelandAccForgeReply._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "newInfo",
+    "ForgeQueueInfo"
+  },
+  [3] = {
+    "forge_time",
+    "map<int,VisitHelpTimeInfo>"
+  },
+  [4] = {"help_list", "list<int>"}
 }
-;
-(_ENV._class)("CEventHomelandAccCultivateReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandAccCultivateReq = _ENV.CEventHomelandAccCultivateReq
--- DECOMPILER ERROR at PC3076: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandAccCultivateReq", CCallRequestEvent)
+CEventHomelandAccCultivateReq = CEventHomelandAccCultivateReq
 
-;
-(_ENV.CEventHomelandAccCultivateReq).Constructor = function(self)
-  -- function num : 0_92
+function CEventHomelandAccCultivateReq:Constructor()
   self.pstid = 0
   self.land_pstid = 0
 end
 
--- DECOMPILER ERROR at PC3093: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandAccCultivateReq)._proto = {
-[1] = {"pstid", "int64"}
-, 
-[2] = {"land_pstid", "int64"}
+CEventHomelandAccCultivateReq._proto = {
+  [1] = {"pstid", "int64"},
+  [2] = {"land_pstid", "int64"}
 }
-;
-(_ENV._class)("CEventHomelandAccCultivateReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandAccCultivateReply = _ENV.CEventHomelandAccCultivateReply
--- DECOMPILER ERROR at PC3108: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandAccCultivateReply", CCallReplyEvent)
+CEventHomelandAccCultivateReply = CEventHomelandAccCultivateReply
 
-;
-(_ENV.CEventHomelandAccCultivateReply).Constructor = function(self)
-  -- function num : 0_93 , upvalues : _ENV
+function CEventHomelandAccCultivateReply:Constructor()
   self.nRet = 0
   self.newInfo = CultivationInfo:New()
   self.cul_time = VisitHelpTimeInfo:New()
 end
 
--- DECOMPILER ERROR at PC3131: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandAccCultivateReply)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"newInfo", "CultivationInfo"}
-, 
-[3] = {"cul_time", "VisitHelpTimeInfo"}
+CEventHomelandAccCultivateReply._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "newInfo",
+    "CultivationInfo"
+  },
+  [3] = {
+    "cul_time",
+    "VisitHelpTimeInfo"
+  }
 }
-;
-(_ENV._class)("CEventHomelandMoveItemReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandMoveItemReq = _ENV.CEventHomelandMoveItemReq
--- DECOMPILER ERROR at PC3146: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandMoveItemReq", CCallRequestEvent)
+CEventHomelandMoveItemReq = CEventHomelandMoveItemReq
 
-;
-(_ENV.CEventHomelandMoveItemReq).Constructor = function(self)
-  -- function num : 0_94 , upvalues : _ENV
+function CEventHomelandMoveItemReq:Constructor()
   self.item = RoleAsset:New()
   self.index = 0
 end
 
--- DECOMPILER ERROR at PC3163: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandMoveItemReq)._proto = {
-[1] = {"item", "RoleAsset"}
-, 
-[2] = {"index", "int"}
+CEventHomelandMoveItemReq._proto = {
+  [1] = {"item", "RoleAsset"},
+  [2] = {"index", "int"}
 }
-;
-(_ENV._class)("CEventHomelandMoveItemReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandMoveItemReply = _ENV.CEventHomelandMoveItemReply
--- DECOMPILER ERROR at PC3178: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandMoveItemReply", CCallReplyEvent)
+CEventHomelandMoveItemReply = CEventHomelandMoveItemReply
 
-;
-(_ENV.CEventHomelandMoveItemReply).Constructor = function(self)
-  -- function num : 0_95 , upvalues : _ENV
+function CEventHomelandMoveItemReply:Constructor()
   self.nRet = 0
   self.item = SpecItemAsset:New()
 end
 
--- DECOMPILER ERROR at PC3195: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandMoveItemReply)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"item", "SpecItemAsset"}
+CEventHomelandMoveItemReply._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "item",
+    "SpecItemAsset"
+  }
 }
-;
-(_ENV._class)("CEventHomelandVisitLogReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandVisitLogReq = _ENV.CEventHomelandVisitLogReq
--- DECOMPILER ERROR at PC3210: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandVisitLogReq", CCallRequestEvent)
+CEventHomelandVisitLogReq = CEventHomelandVisitLogReq
 
-;
-(_ENV.CEventHomelandVisitLogReq).Constructor = function(self)
-  -- function num : 0_96
+function CEventHomelandVisitLogReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC3215: Confused about usage of register: R1 in 'UnsetPending'
+CEventHomelandVisitLogReq._proto = {}
+_class("CEventHomelandVisitLogReply", CCallReplyEvent)
+CEventHomelandVisitLogReply = CEventHomelandVisitLogReply
 
-;
-(_ENV.CEventHomelandVisitLogReq)._proto = {}
-;
-(_ENV._class)("CEventHomelandVisitLogReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandVisitLogReply = _ENV.CEventHomelandVisitLogReply
--- DECOMPILER ERROR at PC3230: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandVisitLogReply).Constructor = function(self)
-  -- function num : 0_97 , upvalues : _ENV
+function CEventHomelandVisitLogReply:Constructor()
   self.nRet = 0
   self.log_list = homelandVisitLog:New()
 end
 
--- DECOMPILER ERROR at PC3247: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandVisitLogReply)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"log_list", "homelandVisitLog"}
+CEventHomelandVisitLogReply._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "log_list",
+    "homelandVisitLog"
+  }
 }
-;
-(_ENV._class)("CEventHomelandForgeUpdate", _ENV.CSvrPushEvent)
-_ENV.CEventHomelandForgeUpdate = _ENV.CEventHomelandForgeUpdate
--- DECOMPILER ERROR at PC3262: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandForgeUpdate", CSvrPushEvent)
+CEventHomelandForgeUpdate = CEventHomelandForgeUpdate
 
-;
-(_ENV.CEventHomelandForgeUpdate).Constructor = function(self)
-  -- function num : 0_98
+function CEventHomelandForgeUpdate:Constructor()
   self.forge_list = {}
   self.forge_time = {}
 end
 
--- DECOMPILER ERROR at PC3279: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandForgeUpdate)._proto = {
-[1] = {"forge_list", "list<ForgeItemInfo>"}
-, 
-[2] = {"forge_time", "map<int,VisitHelpTimeInfo>"}
+CEventHomelandForgeUpdate._proto = {
+  [1] = {
+    "forge_list",
+    "list<ForgeItemInfo>"
+  },
+  [2] = {
+    "forge_time",
+    "map<int,VisitHelpTimeInfo>"
+  }
 }
-;
-(_ENV._class)("CEventHomelandCultivationUpdate", _ENV.CSvrPushEvent)
-_ENV.CEventHomelandCultivationUpdate = _ENV.CEventHomelandCultivationUpdate
--- DECOMPILER ERROR at PC3294: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandCultivationUpdate", CSvrPushEvent)
+CEventHomelandCultivationUpdate = CEventHomelandCultivationUpdate
 
-;
-(_ENV.CEventHomelandCultivationUpdate).Constructor = function(self)
-  -- function num : 0_99 , upvalues : _ENV
+function CEventHomelandCultivationUpdate:Constructor()
   self.infos = CultivationInfo:New()
   self.cul_time = {}
 end
 
--- DECOMPILER ERROR at PC3311: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandCultivationUpdate)._proto = {
-[1] = {"infos", "CultivationInfo"}
-, 
-[2] = {"cul_time", "map<int64,VisitHelpTimeInfo>"}
+CEventHomelandCultivationUpdate._proto = {
+  [1] = {
+    "infos",
+    "CultivationInfo"
+  },
+  [2] = {
+    "cul_time",
+    "map<int64,VisitHelpTimeInfo>"
+  }
 }
-;
-(_ENV._class)("CEventHomelandVisitItemUpdate", _ENV.CSvrPushEvent)
-_ENV.CEventHomelandVisitItemUpdate = _ENV.CEventHomelandVisitItemUpdate
--- DECOMPILER ERROR at PC3326: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandVisitItemUpdate", CSvrPushEvent)
+CEventHomelandVisitItemUpdate = CEventHomelandVisitItemUpdate
 
-;
-(_ENV.CEventHomelandVisitItemUpdate).Constructor = function(self)
-  -- function num : 0_100
+function CEventHomelandVisitItemUpdate:Constructor()
   self.index = 0
 end
 
--- DECOMPILER ERROR at PC3337: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandVisitItemUpdate)._proto = {
-[1] = {"index", "int"}
+CEventHomelandVisitItemUpdate._proto = {
+  [1] = {"index", "int"}
 }
-;
-(_ENV._class)("CEventHomelandFinishTaskReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandFinishTaskReq = _ENV.CEventHomelandFinishTaskReq
--- DECOMPILER ERROR at PC3352: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandFinishTaskReq", CCallRequestEvent)
+CEventHomelandFinishTaskReq = CEventHomelandFinishTaskReq
 
-;
-(_ENV.CEventHomelandFinishTaskReq).Constructor = function(self)
-  -- function num : 0_101
+function CEventHomelandFinishTaskReq:Constructor()
   self.nQuestCfgId = 0
 end
 
--- DECOMPILER ERROR at PC3363: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandFinishTaskReq)._proto = {
-[1] = {"nQuestCfgId", "int"}
+CEventHomelandFinishTaskReq._proto = {
+  [1] = {
+    "nQuestCfgId",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventHomelandFinishTaskRes", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandFinishTaskRes = _ENV.CEventHomelandFinishTaskRes
--- DECOMPILER ERROR at PC3378: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandFinishTaskRes", CCallReplyEvent)
+CEventHomelandFinishTaskRes = CEventHomelandFinishTaskRes
 
-;
-(_ENV.CEventHomelandFinishTaskRes).Constructor = function(self)
-  -- function num : 0_102
+function CEventHomelandFinishTaskRes:Constructor()
   self.nRet = 0
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC3395: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandFinishTaskRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
+CEventHomelandFinishTaskRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
-;
-(_ENV._class)("CEventHomelandUpdateTaskReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandUpdateTaskReq = _ENV.CEventHomelandUpdateTaskReq
--- DECOMPILER ERROR at PC3410: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandUpdateTaskReq", CCallRequestEvent)
+CEventHomelandUpdateTaskReq = CEventHomelandUpdateTaskReq
 
-;
-(_ENV.CEventHomelandUpdateTaskReq).Constructor = function(self)
-  -- function num : 0_103
+function CEventHomelandUpdateTaskReq:Constructor()
   self.nGroupCfgIdVec = {}
 end
 
--- DECOMPILER ERROR at PC3421: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandUpdateTaskReq)._proto = {
-[1] = {"nGroupCfgIdVec", "list<int>"}
+CEventHomelandUpdateTaskReq._proto = {
+  [1] = {
+    "nGroupCfgIdVec",
+    "list<int>"
+  }
 }
-;
-(_ENV._class)("CEventHomelandUpdateTaskRes", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandUpdateTaskRes = _ENV.CEventHomelandUpdateTaskRes
--- DECOMPILER ERROR at PC3436: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandUpdateTaskRes", CCallReplyEvent)
+CEventHomelandUpdateTaskRes = CEventHomelandUpdateTaskRes
 
-;
-(_ENV.CEventHomelandUpdateTaskRes).Constructor = function(self)
-  -- function num : 0_104
+function CEventHomelandUpdateTaskRes:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC3447: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandUpdateTaskRes)._proto = {
-[1] = {"nRet", "int"}
+CEventHomelandUpdateTaskRes._proto = {
+  [1] = {"nRet", "int"}
 }
-;
-(_ENV._class)("CEventHomelandTraceReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandTraceReq = _ENV.CEventHomelandTraceReq
--- DECOMPILER ERROR at PC3462: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandTraceReq", CCallRequestEvent)
+CEventHomelandTraceReq = CEventHomelandTraceReq
 
-;
-(_ENV.CEventHomelandTraceReq).Constructor = function(self)
-  -- function num : 0_105
+function CEventHomelandTraceReq:Constructor()
   self.trace_type = 0
   self.trace_id = 0
 end
 
--- DECOMPILER ERROR at PC3479: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandTraceReq)._proto = {
-[1] = {"trace_type", "int"}
-, 
-[2] = {"trace_id", "int"}
+CEventHomelandTraceReq._proto = {
+  [1] = {"trace_type", "int"},
+  [2] = {"trace_id", "int"}
 }
-;
-(_ENV._class)("CEventHomelandTraceRes", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandTraceRes = _ENV.CEventHomelandTraceRes
--- DECOMPILER ERROR at PC3494: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandTraceRes", CCallReplyEvent)
+CEventHomelandTraceRes = CEventHomelandTraceRes
 
-;
-(_ENV.CEventHomelandTraceRes).Constructor = function(self)
-  -- function num : 0_106
+function CEventHomelandTraceRes:Constructor()
   self.nRet = 0
   self.trace_info = {}
 end
 
--- DECOMPILER ERROR at PC3511: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandTraceRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"trace_info", "map<int,TypeTraceInfo>"}
+CEventHomelandTraceRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "trace_info",
+    "map<int,TypeTraceInfo>"
+  }
 }
-;
-(_ENV._class)("CEventHomelandTaskViewStoryReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandTaskViewStoryReq = _ENV.CEventHomelandTaskViewStoryReq
--- DECOMPILER ERROR at PC3526: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandTaskViewStoryReq", CCallRequestEvent)
+CEventHomelandTaskViewStoryReq = CEventHomelandTaskViewStoryReq
 
-;
-(_ENV.CEventHomelandTaskViewStoryReq).Constructor = function(self)
-  -- function num : 0_107
+function CEventHomelandTaskViewStoryReq:Constructor()
   self.nQuestCfgId = 0
   self.nHomeLandGroupTaskStoryMask = 0
 end
 
--- DECOMPILER ERROR at PC3543: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandTaskViewStoryReq)._proto = {
-[1] = {"nQuestCfgId", "int"}
-, 
-[2] = {"nHomeLandGroupTaskStoryMask", "int"}
+CEventHomelandTaskViewStoryReq._proto = {
+  [1] = {
+    "nQuestCfgId",
+    "int"
+  },
+  [2] = {
+    "nHomeLandGroupTaskStoryMask",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventHomelandTaskViewStoryRes", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandTaskViewStoryRes = _ENV.CEventHomelandTaskViewStoryRes
--- DECOMPILER ERROR at PC3558: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandTaskViewStoryRes", CCallReplyEvent)
+CEventHomelandTaskViewStoryRes = CEventHomelandTaskViewStoryRes
 
-;
-(_ENV.CEventHomelandTaskViewStoryRes).Constructor = function(self)
-  -- function num : 0_108
+function CEventHomelandTaskViewStoryRes:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC3569: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandTaskViewStoryRes)._proto = {
-[1] = {"nRet", "int"}
+CEventHomelandTaskViewStoryRes._proto = {
+  [1] = {"nRet", "int"}
 }
-;
-(_ENV._class)("CEventHomelandTaskQuestTakeReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandTaskQuestTakeReq = _ENV.CEventHomelandTaskQuestTakeReq
--- DECOMPILER ERROR at PC3584: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandTaskQuestTakeReq", CCallRequestEvent)
+CEventHomelandTaskQuestTakeReq = CEventHomelandTaskQuestTakeReq
 
-;
-(_ENV.CEventHomelandTaskQuestTakeReq).Constructor = function(self)
-  -- function num : 0_109
+function CEventHomelandTaskQuestTakeReq:Constructor()
   self.nQuestCfgId = 0
 end
 
--- DECOMPILER ERROR at PC3595: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandTaskQuestTakeReq)._proto = {
-[1] = {"nQuestCfgId", "int"}
+CEventHomelandTaskQuestTakeReq._proto = {
+  [1] = {
+    "nQuestCfgId",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventHomelandTaskQuestTakeRes", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandTaskQuestTakeRes = _ENV.CEventHomelandTaskQuestTakeRes
--- DECOMPILER ERROR at PC3610: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandTaskQuestTakeRes", CCallReplyEvent)
+CEventHomelandTaskQuestTakeRes = CEventHomelandTaskQuestTakeRes
 
-;
-(_ENV.CEventHomelandTaskQuestTakeRes).Constructor = function(self)
-  -- function num : 0_110
+function CEventHomelandTaskQuestTakeRes:Constructor()
   self.nRet = 0
   self.rewards = {}
   self.nQuestRet = 0
 end
 
--- DECOMPILER ERROR at PC3633: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandTaskQuestTakeRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
-, 
-[3] = {"nQuestRet", "int"}
+CEventHomelandTaskQuestTakeRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [3] = {"nQuestRet", "int"}
 }
-;
-(_ENV._class)("CEventHomelandTaskGroupTakeReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandTaskGroupTakeReq = _ENV.CEventHomelandTaskGroupTakeReq
--- DECOMPILER ERROR at PC3648: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandTaskGroupTakeReq", CCallRequestEvent)
+CEventHomelandTaskGroupTakeReq = CEventHomelandTaskGroupTakeReq
 
-;
-(_ENV.CEventHomelandTaskGroupTakeReq).Constructor = function(self)
-  -- function num : 0_111
+function CEventHomelandTaskGroupTakeReq:Constructor()
   self.nTaskGroupId = 0
 end
 
--- DECOMPILER ERROR at PC3659: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandTaskGroupTakeReq)._proto = {
-[1] = {"nTaskGroupId", "int"}
+CEventHomelandTaskGroupTakeReq._proto = {
+  [1] = {
+    "nTaskGroupId",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventHomelandTaskGroupTakeRes", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandTaskGroupTakeRes = _ENV.CEventHomelandTaskGroupTakeRes
--- DECOMPILER ERROR at PC3674: Confused about usage of register: R1 in 'UnsetPending'
+_class("CEventHomelandTaskGroupTakeRes", CCallReplyEvent)
+CEventHomelandTaskGroupTakeRes = CEventHomelandTaskGroupTakeRes
 
-;
-(_ENV.CEventHomelandTaskGroupTakeRes).Constructor = function(self)
-  -- function num : 0_112
+function CEventHomelandTaskGroupTakeRes:Constructor()
   self.nRet = 0
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC3691: Confused about usage of register: R1 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandTaskGroupTakeRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
+CEventHomelandTaskGroupTakeRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
-local EHomelandFunctionUnlock = {HOMELAND_FUNCTION_UNLOCK_MASK_BIT = 64, HOMELAND_FUNCTION_UNLOCK_MASK_NUM = 2, HOMELAND_FUNCTION_UNLOCK_MASK_MAX_BIT_NUM = 128}
-;
-(_ENV._enum)("EHomelandFunctionUnlock", EHomelandFunctionUnlock)
-;
-(_ENV._class)("CEventPushHomelandFunctionUnlocked", _ENV.CSvrPushEvent)
-_ENV.CEventPushHomelandFunctionUnlocked = _ENV.CEventPushHomelandFunctionUnlocked
--- DECOMPILER ERROR at PC3721: Confused about usage of register: R2 in 'UnsetPending'
+local EHomelandFunctionUnlock = {
+  HOMELAND_FUNCTION_UNLOCK_MASK_BIT = 64,
+  HOMELAND_FUNCTION_UNLOCK_MASK_NUM = 2,
+  HOMELAND_FUNCTION_UNLOCK_MASK_MAX_BIT_NUM = 128
+}
+_enum("EHomelandFunctionUnlock", EHomelandFunctionUnlock)
+_class("CEventPushHomelandFunctionUnlocked", CSvrPushEvent)
+CEventPushHomelandFunctionUnlocked = CEventPushHomelandFunctionUnlocked
 
-;
-(_ENV.CEventPushHomelandFunctionUnlocked).Constructor = function(self)
-  -- function num : 0_113
+function CEventPushHomelandFunctionUnlocked:Constructor()
   self.unlock_functions = {}
   self.function_unlock_type = 0
 end
 
--- DECOMPILER ERROR at PC3738: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventPushHomelandFunctionUnlocked)._proto = {
-[1] = {"unlock_functions", "list<int64>"}
-, 
-[2] = {"function_unlock_type", "int"}
+CEventPushHomelandFunctionUnlocked._proto = {
+  [1] = {
+    "unlock_functions",
+    "list<int64>"
+  },
+  [2] = {
+    "function_unlock_type",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventHomelandFixShabbyReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandFixShabbyReq = _ENV.CEventHomelandFixShabbyReq
--- DECOMPILER ERROR at PC3753: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventHomelandFixShabbyReq", CCallRequestEvent)
+CEventHomelandFixShabbyReq = CEventHomelandFixShabbyReq
 
-;
-(_ENV.CEventHomelandFixShabbyReq).Constructor = function(self)
-  -- function num : 0_114
+function CEventHomelandFixShabbyReq:Constructor()
   self.arch_pstid = 0
 end
 
--- DECOMPILER ERROR at PC3764: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandFixShabbyReq)._proto = {
-[1] = {"arch_pstid", "uint64"}
+CEventHomelandFixShabbyReq._proto = {
+  [1] = {"arch_pstid", "uint64"}
 }
-;
-(_ENV._class)("CEventHomelandFixShabbyRes", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandFixShabbyRes = _ENV.CEventHomelandFixShabbyRes
--- DECOMPILER ERROR at PC3779: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventHomelandFixShabbyRes", CCallReplyEvent)
+CEventHomelandFixShabbyRes = CEventHomelandFixShabbyRes
 
-;
-(_ENV.CEventHomelandFixShabbyRes).Constructor = function(self)
-  -- function num : 0_115 , upvalues : _ENV
+function CEventHomelandFixShabbyRes:Constructor()
   self.nRet = 0
   self.architecture_info = Architecture:New()
 end
 
--- DECOMPILER ERROR at PC3796: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandFixShabbyRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"architecture_info", "Architecture"}
+CEventHomelandFixShabbyRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "architecture_info",
+    "Architecture"
+  }
 }
-;
-(_ENV._class)("CEventHomelandShopRefreshReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandShopRefreshReq = _ENV.CEventHomelandShopRefreshReq
--- DECOMPILER ERROR at PC3811: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventHomelandShopRefreshReq", CCallRequestEvent)
+CEventHomelandShopRefreshReq = CEventHomelandShopRefreshReq
 
-;
-(_ENV.CEventHomelandShopRefreshReq).Constructor = function(self)
-  -- function num : 0_116
+function CEventHomelandShopRefreshReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC3816: Confused about usage of register: R2 in 'UnsetPending'
+CEventHomelandShopRefreshReq._proto = {}
+_class("CEventHomelandShopRefreshReply", CCallReplyEvent)
+CEventHomelandShopRefreshReply = CEventHomelandShopRefreshReply
 
-;
-(_ENV.CEventHomelandShopRefreshReq)._proto = {}
-;
-(_ENV._class)("CEventHomelandShopRefreshReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandShopRefreshReply = _ENV.CEventHomelandShopRefreshReply
--- DECOMPILER ERROR at PC3831: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandShopRefreshReply).Constructor = function(self)
-  -- function num : 0_117 , upvalues : _ENV
+function CEventHomelandShopRefreshReply:Constructor()
   self.nRet = 0
   self.shop_info = homelandShopInfo:New()
 end
 
--- DECOMPILER ERROR at PC3848: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandShopRefreshReply)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"shop_info", "homelandShopInfo"}
+CEventHomelandShopRefreshReply._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "shop_info",
+    "homelandShopInfo"
+  }
 }
-;
-(_ENV._class)("CEventHomelandVisitUpdate", _ENV.CSvrPushEvent)
-_ENV.CEventHomelandVisitUpdate = _ENV.CEventHomelandVisitUpdate
--- DECOMPILER ERROR at PC3863: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventHomelandVisitUpdate", CSvrPushEvent)
+CEventHomelandVisitUpdate = CEventHomelandVisitUpdate
 
-;
-(_ENV.CEventHomelandVisitUpdate).Constructor = function(self)
-  -- function num : 0_118 , upvalues : _ENV
+function CEventHomelandVisitUpdate:Constructor()
   self.info = homelandVisit:New()
 end
 
--- DECOMPILER ERROR at PC3874: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandVisitUpdate)._proto = {
-[1] = {"info", "homelandVisit"}
+CEventHomelandVisitUpdate._proto = {
+  [1] = {
+    "info",
+    "homelandVisit"
+  }
 }
-;
-(_ENV._class)("CEventHomelandStoryTaskUnlockReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandStoryTaskUnlockReq = _ENV.CEventHomelandStoryTaskUnlockReq
--- DECOMPILER ERROR at PC3889: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventHomelandStoryTaskUnlockReq", CCallRequestEvent)
+CEventHomelandStoryTaskUnlockReq = CEventHomelandStoryTaskUnlockReq
 
-;
-(_ENV.CEventHomelandStoryTaskUnlockReq).Constructor = function(self)
-  -- function num : 0_119
+function CEventHomelandStoryTaskUnlockReq:Constructor()
   self.id = 0
 end
 
--- DECOMPILER ERROR at PC3900: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandStoryTaskUnlockReq)._proto = {
-[1] = {"id", "int"}
+CEventHomelandStoryTaskUnlockReq._proto = {
+  [1] = {"id", "int"}
 }
-;
-(_ENV._class)("CEventHomelandStoryTaskUnlockReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandStoryTaskUnlockReply = _ENV.CEventHomelandStoryTaskUnlockReply
--- DECOMPILER ERROR at PC3915: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventHomelandStoryTaskUnlockReply", CCallReplyEvent)
+CEventHomelandStoryTaskUnlockReply = CEventHomelandStoryTaskUnlockReply
 
-;
-(_ENV.CEventHomelandStoryTaskUnlockReply).Constructor = function(self)
-  -- function num : 0_120
+function CEventHomelandStoryTaskUnlockReply:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC3926: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandStoryTaskUnlockReply)._proto = {
-[1] = {"nRet", "int"}
+CEventHomelandStoryTaskUnlockReply._proto = {
+  [1] = {"nRet", "int"}
 }
-;
-(_ENV._class)("CEventHomelandStoryTaskAutoOperateReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandStoryTaskAutoOperateReq = _ENV.CEventHomelandStoryTaskAutoOperateReq
--- DECOMPILER ERROR at PC3941: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventHomelandStoryTaskAutoOperateReq", CCallRequestEvent)
+CEventHomelandStoryTaskAutoOperateReq = CEventHomelandStoryTaskAutoOperateReq
 
-;
-(_ENV.CEventHomelandStoryTaskAutoOperateReq).Constructor = function(self)
-  -- function num : 0_121
+function CEventHomelandStoryTaskAutoOperateReq:Constructor()
   self.id = 0
 end
 
--- DECOMPILER ERROR at PC3952: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandStoryTaskAutoOperateReq)._proto = {
-[1] = {"id", "int"}
+CEventHomelandStoryTaskAutoOperateReq._proto = {
+  [1] = {"id", "int"}
 }
-;
-(_ENV._class)("CEventHomelandStoryTaskAutoOperateReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandStoryTaskAutoOperateReply = _ENV.CEventHomelandStoryTaskAutoOperateReply
--- DECOMPILER ERROR at PC3967: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventHomelandStoryTaskAutoOperateReply", CCallReplyEvent)
+CEventHomelandStoryTaskAutoOperateReply = CEventHomelandStoryTaskAutoOperateReply
 
-;
-(_ENV.CEventHomelandStoryTaskAutoOperateReply).Constructor = function(self)
-  -- function num : 0_122
+function CEventHomelandStoryTaskAutoOperateReply:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC3978: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandStoryTaskAutoOperateReply)._proto = {
-[1] = {"nRet", "int"}
+CEventHomelandStoryTaskAutoOperateReply._proto = {
+  [1] = {"nRet", "int"}
 }
-;
-(_ENV._class)("CEventHomelandStoryTaskUpdate", _ENV.CSvrPushEvent)
-_ENV.CEventHomelandStoryTaskUpdate = _ENV.CEventHomelandStoryTaskUpdate
--- DECOMPILER ERROR at PC3993: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventHomelandStoryTaskUpdate", CSvrPushEvent)
+CEventHomelandStoryTaskUpdate = CEventHomelandStoryTaskUpdate
 
-;
-(_ENV.CEventHomelandStoryTaskUpdate).Constructor = function(self)
-  -- function num : 0_123 , upvalues : _ENV
+function CEventHomelandStoryTaskUpdate:Constructor()
   self.info = homelandStoryTask:New()
 end
 
--- DECOMPILER ERROR at PC4004: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandStoryTaskUpdate)._proto = {
-[1] = {"info", "homelandStoryTask"}
+CEventHomelandStoryTaskUpdate._proto = {
+  [1] = {
+    "info",
+    "homelandStoryTask"
+  }
 }
-;
-(_ENV._class)("CEventHomelandStoryTaskMoudleUnlockReq", _ENV.CCallRequestEvent)
-_ENV.CEventHomelandStoryTaskMoudleUnlockReq = _ENV.CEventHomelandStoryTaskMoudleUnlockReq
--- DECOMPILER ERROR at PC4019: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventHomelandStoryTaskMoudleUnlockReq", CCallRequestEvent)
+CEventHomelandStoryTaskMoudleUnlockReq = CEventHomelandStoryTaskMoudleUnlockReq
 
-;
-(_ENV.CEventHomelandStoryTaskMoudleUnlockReq).Constructor = function(self)
-  -- function num : 0_124
+function CEventHomelandStoryTaskMoudleUnlockReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC4024: Confused about usage of register: R2 in 'UnsetPending'
+CEventHomelandStoryTaskMoudleUnlockReq._proto = {}
+_class("CEventHomelandStoryTaskMoudleUnlockReply", CCallReplyEvent)
+CEventHomelandStoryTaskMoudleUnlockReply = CEventHomelandStoryTaskMoudleUnlockReply
 
-;
-(_ENV.CEventHomelandStoryTaskMoudleUnlockReq)._proto = {}
-;
-(_ENV._class)("CEventHomelandStoryTaskMoudleUnlockReply", _ENV.CCallReplyEvent)
-_ENV.CEventHomelandStoryTaskMoudleUnlockReply = _ENV.CEventHomelandStoryTaskMoudleUnlockReply
--- DECOMPILER ERROR at PC4039: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandStoryTaskMoudleUnlockReply).Constructor = function(self)
-  -- function num : 0_125 , upvalues : _ENV
+function CEventHomelandStoryTaskMoudleUnlockReply:Constructor()
   self.nRet = 0
   self.info = homelandStoryTask:New()
 end
 
--- DECOMPILER ERROR at PC4056: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandStoryTaskMoudleUnlockReply)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"info", "homelandStoryTask"}
+CEventHomelandStoryTaskMoudleUnlockReply._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "info",
+    "homelandStoryTask"
+  }
 }
-;
-(_ENV._class)("CEventUnlockFatherHangPointReq", _ENV.CCallRequestEvent)
-_ENV.CEventUnlockFatherHangPointReq = _ENV.CEventUnlockFatherHangPointReq
--- DECOMPILER ERROR at PC4071: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventUnlockFatherHangPointReq", CCallRequestEvent)
+CEventUnlockFatherHangPointReq = CEventUnlockFatherHangPointReq
 
-;
-(_ENV.CEventUnlockFatherHangPointReq).Constructor = function(self)
-  -- function num : 0_126
+function CEventUnlockFatherHangPointReq:Constructor()
   self.pstid = 0
   self.hang_point_id = 0
 end
 
--- DECOMPILER ERROR at PC4088: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventUnlockFatherHangPointReq)._proto = {
-[1] = {"pstid", "int64"}
-, 
-[2] = {"hang_point_id", "int"}
+CEventUnlockFatherHangPointReq._proto = {
+  [1] = {"pstid", "int64"},
+  [2] = {
+    "hang_point_id",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventUnlockFatherHangPointRes", _ENV.CCallReplyEvent)
-_ENV.CEventUnlockFatherHangPointRes = _ENV.CEventUnlockFatherHangPointRes
--- DECOMPILER ERROR at PC4103: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventUnlockFatherHangPointRes", CCallReplyEvent)
+CEventUnlockFatherHangPointRes = CEventUnlockFatherHangPointRes
 
-;
-(_ENV.CEventUnlockFatherHangPointRes).Constructor = function(self)
-  -- function num : 0_127 , upvalues : _ENV
+function CEventUnlockFatherHangPointRes:Constructor()
   self.nRet = 0
   self.data = FatherArchitectureData:New()
 end
 
--- DECOMPILER ERROR at PC4120: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventUnlockFatherHangPointRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"data", "FatherArchitectureData"}
+CEventUnlockFatherHangPointRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "data",
+    "FatherArchitectureData"
+  }
 }
-;
-(_ENV._class)("CEventFatherHangPointUpdate", _ENV.CSvrPushEvent)
-_ENV.CEventFatherHangPointUpdate = _ENV.CEventFatherHangPointUpdate
--- DECOMPILER ERROR at PC4135: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventFatherHangPointUpdate", CSvrPushEvent)
+CEventFatherHangPointUpdate = CEventFatherHangPointUpdate
 
-;
-(_ENV.CEventFatherHangPointUpdate).Constructor = function(self)
-  -- function num : 0_128 , upvalues : _ENV
+function CEventFatherHangPointUpdate:Constructor()
   self.father_arch_info = FatherArchitectureData:New()
 end
 
--- DECOMPILER ERROR at PC4146: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventFatherHangPointUpdate)._proto = {
-[1] = {"father_arch_info", "FatherArchitectureData"}
+CEventFatherHangPointUpdate._proto = {
+  [1] = {
+    "father_arch_info",
+    "FatherArchitectureData"
+  }
 }
-;
-(_ENV._class)("CEventEnterMakingMoviceReq", _ENV.CCallRequestEvent)
-_ENV.CEventEnterMakingMoviceReq = _ENV.CEventEnterMakingMoviceReq
--- DECOMPILER ERROR at PC4161: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventEnterMakingMoviceReq", CCallRequestEvent)
+CEventEnterMakingMoviceReq = CEventEnterMakingMoviceReq
 
-;
-(_ENV.CEventEnterMakingMoviceReq).Constructor = function(self)
-  -- function num : 0_129
+function CEventEnterMakingMoviceReq:Constructor()
   self.movice_id = 0
 end
 
--- DECOMPILER ERROR at PC4172: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventEnterMakingMoviceReq)._proto = {
-[1] = {"movice_id", "int"}
+CEventEnterMakingMoviceReq._proto = {
+  [1] = {"movice_id", "int"}
 }
-;
-(_ENV._class)("CEventEnterMakingMoviceRes", _ENV.CCallReplyEvent)
-_ENV.CEventEnterMakingMoviceRes = _ENV.CEventEnterMakingMoviceRes
--- DECOMPILER ERROR at PC4187: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventEnterMakingMoviceRes", CCallReplyEvent)
+CEventEnterMakingMoviceRes = CEventEnterMakingMoviceRes
 
-;
-(_ENV.CEventEnterMakingMoviceRes).Constructor = function(self)
-  -- function num : 0_130
+function CEventEnterMakingMoviceRes:Constructor()
   self.nRet = 0
   self.pstid = 0
 end
 
--- DECOMPILER ERROR at PC4204: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventEnterMakingMoviceRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"pstid", "uint64"}
+CEventEnterMakingMoviceRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {"pstid", "uint64"}
 }
-;
-(_ENV._class)("CEventSubmitRecordNameReq", _ENV.CCallRequestEvent)
-_ENV.CEventSubmitRecordNameReq = _ENV.CEventSubmitRecordNameReq
--- DECOMPILER ERROR at PC4219: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventSubmitRecordNameReq", CCallRequestEvent)
+CEventSubmitRecordNameReq = CEventSubmitRecordNameReq
 
-;
-(_ENV.CEventSubmitRecordNameReq).Constructor = function(self)
-  -- function num : 0_131
+function CEventSubmitRecordNameReq:Constructor()
   self.pstid = 0
   self.name = ""
 end
 
--- DECOMPILER ERROR at PC4236: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventSubmitRecordNameReq)._proto = {
-[1] = {"pstid", "uint64"}
-, 
-[2] = {"name", "string"}
+CEventSubmitRecordNameReq._proto = {
+  [1] = {"pstid", "uint64"},
+  [2] = {"name", "string"}
 }
-;
-(_ENV._class)("CEventSubmitRecordNameRes", _ENV.CCallReplyEvent)
-_ENV.CEventSubmitRecordNameRes = _ENV.CEventSubmitRecordNameRes
--- DECOMPILER ERROR at PC4251: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventSubmitRecordNameRes", CCallReplyEvent)
+CEventSubmitRecordNameRes = CEventSubmitRecordNameRes
 
-;
-(_ENV.CEventSubmitRecordNameRes).Constructor = function(self)
-  -- function num : 0_132
+function CEventSubmitRecordNameRes:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC4262: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventSubmitRecordNameRes)._proto = {
-[1] = {"nRet", "int"}
+CEventSubmitRecordNameRes._proto = {
+  [1] = {"nRet", "int"}
 }
-;
-(_ENV._class)("CEventRequestScoreReq", _ENV.CCallRequestEvent)
-_ENV.CEventRequestScoreReq = _ENV.CEventRequestScoreReq
--- DECOMPILER ERROR at PC4277: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventRequestScoreReq", CCallRequestEvent)
+CEventRequestScoreReq = CEventRequestScoreReq
 
-;
-(_ENV.CEventRequestScoreReq).Constructor = function(self)
-  -- function num : 0_133 , upvalues : _ENV
+function CEventRequestScoreReq:Constructor()
   self.record = MoviceRecord:New()
   self.pstid = 0
 end
 
--- DECOMPILER ERROR at PC4294: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventRequestScoreReq)._proto = {
-[1] = {"record", "MoviceRecord"}
-, 
-[2] = {"pstid", "uint64"}
+CEventRequestScoreReq._proto = {
+  [1] = {
+    "record",
+    "MoviceRecord"
+  },
+  [2] = {"pstid", "uint64"}
 }
-;
-(_ENV._class)("CEventRequestScoreRes", _ENV.CCallReplyEvent)
-_ENV.CEventRequestScoreRes = _ENV.CEventRequestScoreRes
--- DECOMPILER ERROR at PC4309: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventRequestScoreRes", CCallReplyEvent)
+CEventRequestScoreRes = CEventRequestScoreRes
 
-;
-(_ENV.CEventRequestScoreRes).Constructor = function(self)
-  -- function num : 0_134 , upvalues : _ENV
+function CEventRequestScoreRes:Constructor()
   self.nRet = 0
   self.item_score = 0
   self.option_score = 0
@@ -2601,277 +2066,213 @@ _ENV.CEventRequestScoreRes = _ENV.CEventRequestScoreRes
   self.data = MoviceData:New()
 end
 
--- DECOMPILER ERROR at PC4350: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventRequestScoreRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"item_score", "int"}
-, 
-[3] = {"option_score", "int"}
-, 
-[4] = {"pet_score", "int"}
-, 
-[5] = {"rewards", "list<RoleAsset>"}
-, 
-[6] = {"data", "MoviceData"}
+CEventRequestScoreRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {"item_score", "int"},
+  [3] = {
+    "option_score",
+    "int"
+  },
+  [4] = {"pet_score", "int"},
+  [5] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [6] = {"data", "MoviceData"}
 }
-;
-(_ENV._class)("CEventSaveRecordReq", _ENV.CCallRequestEvent)
-_ENV.CEventSaveRecordReq = _ENV.CEventSaveRecordReq
--- DECOMPILER ERROR at PC4365: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventSaveRecordReq", CCallRequestEvent)
+CEventSaveRecordReq = CEventSaveRecordReq
 
-;
-(_ENV.CEventSaveRecordReq).Constructor = function(self)
-  -- function num : 0_135
+function CEventSaveRecordReq:Constructor()
   self.cur_record_pstid = 0
   self.replace_record_pstid = 0
   self.arch_list = {}
 end
 
--- DECOMPILER ERROR at PC4388: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventSaveRecordReq)._proto = {
-[1] = {"cur_record_pstid", "uint64"}
-, 
-[2] = {"replace_record_pstid", "uint64"}
-, 
-[3] = {"arch_list", "list<Architecture>"}
+CEventSaveRecordReq._proto = {
+  [1] = {
+    "cur_record_pstid",
+    "uint64"
+  },
+  [2] = {
+    "replace_record_pstid",
+    "uint64"
+  },
+  [3] = {
+    "arch_list",
+    "list<Architecture>"
+  }
 }
-;
-(_ENV._class)("CEventSaveRecordRes", _ENV.CCallReplyEvent)
-_ENV.CEventSaveRecordRes = _ENV.CEventSaveRecordRes
--- DECOMPILER ERROR at PC4403: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventSaveRecordRes", CCallReplyEvent)
+CEventSaveRecordRes = CEventSaveRecordRes
 
-;
-(_ENV.CEventSaveRecordRes).Constructor = function(self)
-  -- function num : 0_136 , upvalues : _ENV
+function CEventSaveRecordRes:Constructor()
   self.nRet = 0
   self.data = MoviceData:New()
 end
 
--- DECOMPILER ERROR at PC4420: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventSaveRecordRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"data", "MoviceData"}
+CEventSaveRecordRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {"data", "MoviceData"}
 }
-;
-(_ENV._class)("CEventRequestRecordArchReq", _ENV.CCallRequestEvent)
-_ENV.CEventRequestRecordArchReq = _ENV.CEventRequestRecordArchReq
--- DECOMPILER ERROR at PC4435: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventRequestRecordArchReq", CCallRequestEvent)
+CEventRequestRecordArchReq = CEventRequestRecordArchReq
 
-;
-(_ENV.CEventRequestRecordArchReq).Constructor = function(self)
-  -- function num : 0_137
+function CEventRequestRecordArchReq:Constructor()
   self.pstid = 0
   self.movice_id = 0
 end
 
--- DECOMPILER ERROR at PC4452: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventRequestRecordArchReq)._proto = {
-[1] = {"pstid", "uint64"}
-, 
-[2] = {"movice_id", "int"}
+CEventRequestRecordArchReq._proto = {
+  [1] = {"pstid", "uint64"},
+  [2] = {"movice_id", "int"}
 }
-;
-(_ENV._class)("CEventRequestRecordArchRes", _ENV.CCallReplyEvent)
-_ENV.CEventRequestRecordArchRes = _ENV.CEventRequestRecordArchRes
--- DECOMPILER ERROR at PC4467: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventRequestRecordArchRes", CCallReplyEvent)
+CEventRequestRecordArchRes = CEventRequestRecordArchRes
 
-;
-(_ENV.CEventRequestRecordArchRes).Constructor = function(self)
-  -- function num : 0_138
+function CEventRequestRecordArchRes:Constructor()
   self.nRet = 0
   self.arch_list = {}
 end
 
--- DECOMPILER ERROR at PC4484: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventRequestRecordArchRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"arch_list", "list<Architecture>"}
+CEventRequestRecordArchRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "arch_list",
+    "list<Architecture>"
+  }
 }
-;
-(_ENV._class)("CEventHomelandRefreshRarePositionPush", _ENV.CSvrPushEvent)
-_ENV.CEventHomelandRefreshRarePositionPush = _ENV.CEventHomelandRefreshRarePositionPush
--- DECOMPILER ERROR at PC4499: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventHomelandRefreshRarePositionPush", CSvrPushEvent)
+CEventHomelandRefreshRarePositionPush = CEventHomelandRefreshRarePositionPush
 
-;
-(_ENV.CEventHomelandRefreshRarePositionPush).Constructor = function(self)
-  -- function num : 0_139
+function CEventHomelandRefreshRarePositionPush:Constructor()
   self.clue_submit_status = {}
 end
 
--- DECOMPILER ERROR at PC4510: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventHomelandRefreshRarePositionPush)._proto = {
-[1] = {"clue_submit_status", "map<int,ClueRareStatus>"}
+CEventHomelandRefreshRarePositionPush._proto = {
+  [1] = {
+    "clue_submit_status",
+    "map<int,ClueRareStatus>"
+  }
 }
-;
-(_ENV._class)("CEventFishingChallengeReq", _ENV.CCallRequestEvent)
-_ENV.CEventFishingChallengeReq = _ENV.CEventFishingChallengeReq
--- DECOMPILER ERROR at PC4525: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventFishingChallengeReq", CCallRequestEvent)
+CEventFishingChallengeReq = CEventFishingChallengeReq
 
-;
-(_ENV.CEventFishingChallengeReq).Constructor = function(self)
-  -- function num : 0_140
+function CEventFishingChallengeReq:Constructor()
   self.match_main_id = 0
 end
 
--- DECOMPILER ERROR at PC4536: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventFishingChallengeReq)._proto = {
-[1] = {"match_main_id", "int"}
+CEventFishingChallengeReq._proto = {
+  [1] = {
+    "match_main_id",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventFishingChallengeRes", _ENV.CCallReplyEvent)
-_ENV.CEventFishingChallengeRes = _ENV.CEventFishingChallengeRes
--- DECOMPILER ERROR at PC4551: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventFishingChallengeRes", CCallReplyEvent)
+CEventFishingChallengeRes = CEventFishingChallengeRes
 
-;
-(_ENV.CEventFishingChallengeRes).Constructor = function(self)
-  -- function num : 0_141
+function CEventFishingChallengeRes:Constructor()
   self.nRet = 0
   self.end_time = 0
   self.pet_ability_id = 0
 end
 
--- DECOMPILER ERROR at PC4574: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventFishingChallengeRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"end_time", "time"}
-, 
-[3] = {"pet_ability_id", "int"}
+CEventFishingChallengeRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {"end_time", "time"},
+  [3] = {
+    "pet_ability_id",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventFishingChallengeEndReq", _ENV.CCallRequestEvent)
-_ENV.CEventFishingChallengeEndReq = _ENV.CEventFishingChallengeEndReq
--- DECOMPILER ERROR at PC4589: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventFishingChallengeEndReq", CCallRequestEvent)
+CEventFishingChallengeEndReq = CEventFishingChallengeEndReq
 
-;
-(_ENV.CEventFishingChallengeEndReq).Constructor = function(self)
-  -- function num : 0_142
+function CEventFishingChallengeEndReq:Constructor()
   self.pet_fish_num = 0
 end
 
--- DECOMPILER ERROR at PC4600: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventFishingChallengeEndReq)._proto = {
-[1] = {"pet_fish_num", "int"}
+CEventFishingChallengeEndReq._proto = {
+  [1] = {
+    "pet_fish_num",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventFishingChallengeEndRes", _ENV.CCallReplyEvent)
-_ENV.CEventFishingChallengeEndRes = _ENV.CEventFishingChallengeEndRes
--- DECOMPILER ERROR at PC4615: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventFishingChallengeEndRes", CCallReplyEvent)
+CEventFishingChallengeEndRes = CEventFishingChallengeEndRes
 
-;
-(_ENV.CEventFishingChallengeEndRes).Constructor = function(self)
-  -- function num : 0_143
+function CEventFishingChallengeEndRes:Constructor()
   self.nRet = 0
   self.success = 0
   self.rewards = {}
   self.challenge_pet_times = {}
 end
 
--- DECOMPILER ERROR at PC4644: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventFishingChallengeEndRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"success", "int"}
-, 
-[3] = {"rewards", "list<RoleAsset>"}
-, 
-[4] = {"challenge_pet_times", "map<int,int>"}
+CEventFishingChallengeEndRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {"success", "int"},
+  [3] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [4] = {
+    "challenge_pet_times",
+    "map<int,int>"
+  }
 }
-;
-(_ENV._class)("CEventCancelFishingChallengeReq", _ENV.CCallRequestEvent)
-_ENV.CEventCancelFishingChallengeReq = _ENV.CEventCancelFishingChallengeReq
--- DECOMPILER ERROR at PC4659: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventCancelFishingChallengeReq", CCallRequestEvent)
+CEventCancelFishingChallengeReq = CEventCancelFishingChallengeReq
 
-;
-(_ENV.CEventCancelFishingChallengeReq).Constructor = function(self)
-  -- function num : 0_144
+function CEventCancelFishingChallengeReq:Constructor()
   self.match_main_id = 0
 end
 
--- DECOMPILER ERROR at PC4670: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventCancelFishingChallengeReq)._proto = {
-[1] = {"match_main_id", "int"}
+CEventCancelFishingChallengeReq._proto = {
+  [1] = {
+    "match_main_id",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventCancelFishingChallengeRes", _ENV.CCallReplyEvent)
-_ENV.CEventCancelFishingChallengeRes = _ENV.CEventCancelFishingChallengeRes
--- DECOMPILER ERROR at PC4685: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventCancelFishingChallengeRes", CCallReplyEvent)
+CEventCancelFishingChallengeRes = CEventCancelFishingChallengeRes
 
-;
-(_ENV.CEventCancelFishingChallengeRes).Constructor = function(self)
-  -- function num : 0_145
+function CEventCancelFishingChallengeRes:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC4696: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventCancelFishingChallengeRes)._proto = {
-[1] = {"nRet", "int"}
+CEventCancelFishingChallengeRes._proto = {
+  [1] = {"nRet", "int"}
 }
-;
-(_ENV._class)("CEventReceiveAnonymousLetterRewardReq", _ENV.CCallRequestEvent)
-_ENV.CEventReceiveAnonymousLetterRewardReq = _ENV.CEventReceiveAnonymousLetterRewardReq
--- DECOMPILER ERROR at PC4711: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventReceiveAnonymousLetterRewardReq", CCallRequestEvent)
+CEventReceiveAnonymousLetterRewardReq = CEventReceiveAnonymousLetterRewardReq
 
-;
-(_ENV.CEventReceiveAnonymousLetterRewardReq).Constructor = function(self)
-  -- function num : 0_146
+function CEventReceiveAnonymousLetterRewardReq:Constructor()
   self.anonymous_letter_id = 0
 end
 
--- DECOMPILER ERROR at PC4722: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventReceiveAnonymousLetterRewardReq)._proto = {
-[1] = {"anonymous_letter_id", "int"}
+CEventReceiveAnonymousLetterRewardReq._proto = {
+  [1] = {
+    "anonymous_letter_id",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventReceiveAnonymousLetterRewardRes", _ENV.CCallReplyEvent)
-_ENV.CEventReceiveAnonymousLetterRewardRes = _ENV.CEventReceiveAnonymousLetterRewardRes
--- DECOMPILER ERROR at PC4737: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventReceiveAnonymousLetterRewardRes", CCallReplyEvent)
+CEventReceiveAnonymousLetterRewardRes = CEventReceiveAnonymousLetterRewardRes
 
-;
-(_ENV.CEventReceiveAnonymousLetterRewardRes).Constructor = function(self)
-  -- function num : 0_147
+function CEventReceiveAnonymousLetterRewardRes:Constructor()
   self.nRet = 0
   self.rewards = {}
   self.anonymous_letter_receive = {}
 end
 
--- DECOMPILER ERROR at PC4760: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventReceiveAnonymousLetterRewardRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
-, 
-[3] = {"anonymous_letter_receive", "list<int>"}
+CEventReceiveAnonymousLetterRewardRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [3] = {
+    "anonymous_letter_receive",
+    "list<int>"
+  }
 }
-

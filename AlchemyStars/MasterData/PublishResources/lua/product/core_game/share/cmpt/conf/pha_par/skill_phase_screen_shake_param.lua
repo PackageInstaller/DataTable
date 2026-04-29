@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_screen_shake_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseScreenShakeParam", SkillPhaseParamBase)
 SkillPhaseScreenShakeParam = SkillPhaseScreenShakeParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseScreenShakeParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseScreenShakeParam:Constructor(t)
   self._angleRandomness = t.angleRandomness
   self._decayRate = t.decayRate
   self._delay = t.delay
@@ -20,73 +13,41 @@ SkillPhaseScreenShakeParam.Constructor = function(self, t)
   self._vibrato = t.vibrato
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScreenShakeParam.GetCacheTable = function(self)
-  -- function num : 0_1
+function SkillPhaseScreenShakeParam:GetCacheTable()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScreenShakeParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseScreenShakeParam:GetPhaseType()
   return SkillViewPhaseType.ScreenShake
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScreenShakeParam.GetAngleRandomness = function(self)
-  -- function num : 0_3
+function SkillPhaseScreenShakeParam:GetAngleRandomness()
   return self._angleRandomness
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScreenShakeParam.GetDecayRate = function(self)
-  -- function num : 0_4
+function SkillPhaseScreenShakeParam:GetDecayRate()
   return self._decayRate
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScreenShakeParam.GetDelay = function(self)
-  -- function num : 0_5
+function SkillPhaseScreenShakeParam:GetDelay()
   return self._delay
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScreenShakeParam.GetDuration = function(self)
-  -- function num : 0_6
+function SkillPhaseScreenShakeParam:GetDuration()
   return self._duration
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScreenShakeParam.GetIntenseRandomness = function(self)
-  -- function num : 0_7
+function SkillPhaseScreenShakeParam:GetIntenseRandomness()
   return self._intenseRandomness
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScreenShakeParam.GetMainVibAngle = function(self)
-  -- function num : 0_8
+function SkillPhaseScreenShakeParam:GetMainVibAngle()
   return self._mainVibAngle
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScreenShakeParam.GetIntensity = function(self)
-  -- function num : 0_9
+function SkillPhaseScreenShakeParam:GetIntensity()
   return self._intensity
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScreenShakeParam.GetVibrato = function(self)
-  -- function num : 0_10
+function SkillPhaseScreenShakeParam:GetVibrato()
   return self._vibrato
 end
-
-

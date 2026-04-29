@@ -1,35 +1,115 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/season_maze/cfg_component_season_maze_fake_rank.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Name = 2, Head = 3, FrameID = 4, HeadBG = 5, Damage = 6}
+local key = {
+  ID = 1,
+  Name = 2,
+  Head = 3,
+  FrameID = 4,
+  HeadBG = 5,
+  Damage = 6
+}
 local config = {
-{1, "str_season_maze_world_boss_ranking_fakename1", 1393, 3024, 3024, 469576}
-, 
-{2, "str_season_maze_world_boss_ranking_fakename2", 1394, 3025, 3025, 377869}
-, 
-{3, "str_season_maze_world_boss_ranking_fakename3", 1395, 3026, 3026, 375278}
-, 
-{4, "str_season_maze_world_boss_ranking_fakename4", 1396, 3027, 3027, 334724}
-, 
-{5, "str_season_maze_world_boss_ranking_fakename5", 1397, 3028, 3028, 319762}
-, 
-{6, "str_season_maze_world_boss_ranking_fakename6", 1398, 3029, 3029, 301264}
-, 
-{7, "str_season_maze_world_boss_ranking_fakename7", 1399, 3030, 3030, 277922}
-, 
-{8, "str_season_maze_world_boss_ranking_fakename8", 1400, 3031, 3031, 259366}
-, 
-{9, "str_season_maze_world_boss_ranking_fakename9", 1401, 3041, 3041, 200198}
-, 
-{10, "str_season_maze_world_boss_ranking_fakename10", 1393, 3024, 3024, 149907}
-, 
-{11, "str_season_maze_world_boss_ranking_fakename11", 1394, 3025, 3025, 144074}
-, 
-{12, "str_season_maze_world_boss_ranking_fakename12", 1395, 3026, 3026, 127033}
-, 
-{13, "str_season_maze_world_boss_ranking_fakename13", 1396, 3027, 3027, 54375}
+  {
+    1,
+    "str_season_maze_world_boss_ranking_fakename1",
+    1393,
+    3024,
+    3024,
+    469576
+  },
+  {
+    2,
+    "str_season_maze_world_boss_ranking_fakename2",
+    1394,
+    3025,
+    3025,
+    377869
+  },
+  {
+    3,
+    "str_season_maze_world_boss_ranking_fakename3",
+    1395,
+    3026,
+    3026,
+    375278
+  },
+  {
+    4,
+    "str_season_maze_world_boss_ranking_fakename4",
+    1396,
+    3027,
+    3027,
+    334724
+  },
+  {
+    5,
+    "str_season_maze_world_boss_ranking_fakename5",
+    1397,
+    3028,
+    3028,
+    319762
+  },
+  {
+    6,
+    "str_season_maze_world_boss_ranking_fakename6",
+    1398,
+    3029,
+    3029,
+    301264
+  },
+  {
+    7,
+    "str_season_maze_world_boss_ranking_fakename7",
+    1399,
+    3030,
+    3030,
+    277922
+  },
+  {
+    8,
+    "str_season_maze_world_boss_ranking_fakename8",
+    1400,
+    3031,
+    3031,
+    259366
+  },
+  {
+    9,
+    "str_season_maze_world_boss_ranking_fakename9",
+    1401,
+    3041,
+    3041,
+    200198
+  },
+  {
+    10,
+    "str_season_maze_world_boss_ranking_fakename10",
+    1393,
+    3024,
+    3024,
+    149907
+  },
+  {
+    11,
+    "str_season_maze_world_boss_ranking_fakename11",
+    1394,
+    3025,
+    3025,
+    144074
+  },
+  {
+    12,
+    "str_season_maze_world_boss_ranking_fakename12",
+    1395,
+    3026,
+    3026,
+    127033
+  },
+  {
+    13,
+    "str_season_maze_world_boss_ranking_fakename13",
+    1396,
+    3027,
+    3027,
+    54375
+  }
 }
 return config, "ID", key
-

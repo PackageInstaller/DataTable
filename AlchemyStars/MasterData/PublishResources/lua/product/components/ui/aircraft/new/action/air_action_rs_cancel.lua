@@ -1,60 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_rs_cancel.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirAction_RS_Cancel", AirActionBase)
 AirAction_RS_Cancel = AirAction_RS_Cancel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirAction_RS_Cancel.Constructor = function(self, pet, main, storyid)
-  -- function num : 0_0 , upvalues : _ENV
+function AirAction_RS_Cancel:Constructor(pet, main, storyid)
   self._pet = pet
   self._main = main
   self._storyid = storyid
-  local cfg = (Cfg.cfg_aircraft_pet_stroy_refresh)[self._storyid]
+  local cfg = Cfg.cfg_aircraft_pet_stroy_refresh[self._storyid]
   if not cfg then
-    (Log.fatal)("###[RandomStory]cfg_aircraft_pet_stroy_refresh is nil ! id --> ", self._storyid)
-    return 
+    Log.fatal("###[RandomStory]cfg_aircraft_pet_stroy_refresh is nil ! id --> ", self._storyid)
+    return
   end
   self._timeLength = 5000
   self._timeOutBubble = cfg.CancelHeadBubbleID
   self._startTime = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Cancel.Start = function(self)
-  -- function num : 0_1
+function AirAction_RS_Cancel:Start()
   self._running = true
   self:CancelRandomStory()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Cancel.Update = function(self, deltaTimeMS)
-  -- function num : 0_2
+function AirAction_RS_Cancel:Update(deltaTimeMS)
   if self._running and self._timeOutOn then
     self._startTime = self._startTime + deltaTimeMS
-    if self._timeLength <= self._startTime then
+    if self._startTime >= self._timeLength then
       self._timeOutOn = false
       self:Close()
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Cancel.Close = function(self)
-  -- function num : 0_3
-  (self._main):RemoveOneRandomEvent(self._storyid)
+function AirAction_RS_Cancel:Close()
+  self._main:RemoveOneRandomEvent(self._storyid)
   self:Stop()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Cancel.CancelRandomStory = function(self)
-  -- function num : 0_4
+function AirAction_RS_Cancel:CancelRandomStory()
   if self._timeOutBubble then
     self:CancelShow()
     self._timeOutOn = true
@@ -63,18 +44,15 @@ AirAction_RS_Cancel.CancelRandomStory = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Cancel.CancelShow = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_click_action_lib)[self._timeOutBubble]
+function AirAction_RS_Cancel:CancelShow()
+  local cfg = Cfg.cfg_aircraft_click_action_lib[self._timeOutBubble]
   if cfg then
     local sentence = cfg.Sentence
     local bubble = cfg.Bubble
     local anim = cfg.Anim
     local audio = cfg.Audio
     local skinList = cfg.SkinID
-    local currSkinID = (self._pet):ClothSkinID()
+    local currSkinID = self._pet:ClothSkinID()
     local _playIdx = 0
     if skinList then
       for i = 1, #skinList do
@@ -85,80 +63,52 @@ AirAction_RS_Cancel.CancelShow = function(self)
         end
       end
     end
-    do
-      local playIdx = _playIdx + 1
-      local sentenceTex = nil
-      if sentence then
-        sentenceTex = sentence[playIdx]
+    local playIdx = _playIdx + 1
+    local sentenceTex
+    if sentence then
+      sentenceTex = sentence[playIdx]
+    elseif audio then
+      local cfg_voice = AudioHelperController.GetCfgAudio(audio[playIdx])
+      sentenceTex = cfg_voice.Content
+    end
+    if sentenceTex ~= nil then
+      self._sentenceAction = AirActionSentence:New(self._pet, sentenceTex, self._main)
+      self._pet:StartViceAction(self._sentenceAction)
+    end
+    if bubble then
+      local faceAction = AirActionFace:New(self._pet, bubble[playIdx])
+      self._pet:StartViceAction(faceAction)
+    end
+    if anim then
+      local animationAction = AirAnimationAction:New(self._pet, anim[playIdx])
+      self._pet:StartViceAction(animationAction)
+      self._animLength = GetTimeLengthByAnim(anim[playIdx])
+    end
+    if audio then
+      local audioModule = GameGlobal.GetModule(PetAudioModule)
+      audioModule:PlayAudio(audio[playIdx])
+      self._audioLength = GetTimeLengthByAudio(audio[playIdx])
+    end
+    if self._audioLength or self._animLength then
+      if self._audioLength > self._animLength then
+        self._timeLength = self._audioLength
       else
-        if audio then
-          local cfg_voice = (AudioHelperController.GetCfgAudio)(audio[playIdx])
-          sentenceTex = cfg_voice.Content
-        end
-      end
-      do
-        if sentenceTex ~= nil then
-          self._sentenceAction = AirActionSentence:New(self._pet, sentenceTex, self._main)
-          ;
-          (self._pet):StartViceAction(self._sentenceAction)
-        end
-        do
-          if bubble then
-            local faceAction = AirActionFace:New(self._pet, bubble[playIdx])
-            ;
-            (self._pet):StartViceAction(faceAction)
-          end
-          do
-            if anim then
-              local animationAction = AirAnimationAction:New(self._pet, anim[playIdx])
-              ;
-              (self._pet):StartViceAction(animationAction)
-              self._animLength = GetTimeLengthByAnim(anim[playIdx])
-            end
-            do
-              do
-                if audio then
-                  local audioModule = (GameGlobal.GetModule)(PetAudioModule)
-                  audioModule:PlayAudio(audio[playIdx])
-                  self._audioLength = GetTimeLengthByAudio(audio[playIdx])
-                end
-                if self._audioLength or self._animLength then
-                  if self._animLength < self._audioLength then
-                    self._timeLength = self._audioLength
-                  else
-                    self._timeLength = self._animLength
-                  end
-                end
-                ;
-                (Log.fatal)("###cfg_aircraft_click_action_lib is nil ! id --> ", self._timeOutBubble)
-              end
-            end
-          end
-        end
+        self._timeLength = self._animLength
       end
     end
+  else
+    Log.fatal("###cfg_aircraft_click_action_lib is nil ! id --> ", self._timeOutBubble)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Cancel.GetTimeLength = function(self)
-  -- function num : 0_6
+function AirAction_RS_Cancel:GetTimeLength()
   return self._timeLength
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Cancel.IsOver = function(self)
-  -- function num : 0_7
+function AirAction_RS_Cancel:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Cancel.Stop = function(self)
-  -- function num : 0_8
+function AirAction_RS_Cancel:Stop()
   self._running = false
 end
-
-

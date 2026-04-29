@@ -1,88 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_we_chat/d_we_chat_role.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DWeChatRole", Object)
 DWeChatRole = DWeChatRole
-local WeChatTalkType = {Left = 1, Right = 2, Voice = 3, Start = 4}
+local WeChatTalkType = {
+  Left = 1,
+  Right = 2,
+  Voice = 3,
+  Start = 4
+}
 _enum("WeChatTalkType", WeChatTalkType)
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
 
-DWeChatRole.Constructor = function(self, serverChatsData, owner, fromStorage)
-  -- function num : 0_0 , upvalues : _ENV
+function DWeChatRole:Constructor(serverChatsData, owner, fromStorage)
   self.weChatProxy = owner
   self.chats = {}
   self.talks = {}
   self.speakerId = serverChatsData.m_nSpeakerID
-  self.CfgQuestChatSpeaker = (Cfg.cfg_quest_chat_speaker)[self.speakerId]
-  if (string.isnullorempty)(serverChatsData.m_stSpeakerName) or not serverChatsData.m_stSpeakerName then
-    self.name = (StringTable.Get)((self.CfgQuestChatSpeaker).Name)
-    self.petModule = (GameGlobal.GetModule)(PetModule)
-    self:Decode(serverChatsData.m_vecChatData, fromStorage)
-  end
+  self.CfgQuestChatSpeaker = Cfg.cfg_quest_chat_speaker[self.speakerId]
+  self.name = not string.isnullorempty(serverChatsData.m_stSpeakerName) and serverChatsData.m_stSpeakerName or StringTable.Get(self.CfgQuestChatSpeaker.Name)
+  self.petModule = GameGlobal.GetModule(PetModule)
+  self:Decode(serverChatsData.m_vecChatData, fromStorage)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.Decode = function(self, serverChatDatas, fromStorage)
-  -- function num : 0_1 , upvalues : _ENV
-  for _,serverChatData in ipairs(serverChatDatas) do
+function DWeChatRole:Decode(serverChatDatas, fromStorage)
+  for _, serverChatData in ipairs(serverChatDatas) do
     self:UpdateChat(serverChatData, fromStorage)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.UpdateChat = function(self, serverChatData, fromStorage)
-  -- function num : 0_2 , upvalues : _ENV
+function DWeChatRole:UpdateChat(serverChatData, fromStorage)
   local chatId = serverChatData.m_nChatID
   local triggerIndex = serverChatData.m_nCount
   local chat = self:GetChat(chatId, triggerIndex)
   if chat then
-    for _,serverTalkData in ipairs(serverChatData.m_vecTalkData) do
+    for _, serverTalkData in ipairs(serverChatData.m_vecTalkData) do
       self:UpdateTalk(chatId, triggerIndex, serverTalkData, fromStorage)
     end
   else
-    do
-      self:AddChat(serverChatData, fromStorage)
-      self:UpdateChatState(chatId, serverChatData, fromStorage)
-    end
+    self:AddChat(serverChatData, fromStorage)
   end
+  self:UpdateChatState(chatId, serverChatData, fromStorage)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.AddChat = function(self, serverChatData, fromStorage)
-  -- function num : 0_3 , upvalues : _ENV
+function DWeChatRole:AddChat(serverChatData, fromStorage)
   local chatId = serverChatData.m_nChatID
   local triggerIndex = serverChatData.m_nCount
-  if chatId then
-    local cfg = (Cfg.cfg_quest_chat)[chatId]
-  end
+  local cfg = chatId and Cfg.cfg_quest_chat[chatId]
   if cfg then
     local chat = {}
     chat.chatId = chatId
     chat.triggerIndex = triggerIndex
     chat.talks = {}
-    ;
-    (table.insert)(self.chats, chat)
-    for _,serverTalkData in ipairs(serverChatData.m_vecTalkData) do
+    table.insert(self.chats, chat)
+    for _, serverTalkData in ipairs(serverChatData.m_vecTalkData) do
       self:UpdateTalk(chatId, triggerIndex, serverTalkData, fromStorage)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.UpdateChatState = function(self, chatId, serverChatData, fromStorage)
-  -- function num : 0_4 , upvalues : _ENV
+function DWeChatRole:UpdateChatState(chatId, serverChatData, fromStorage)
   local triggerIndex = serverChatData.m_nCount
   local chat = self:GetChat(chatId, triggerIndex)
-  if chat then
-    local talks = chat.talks
-  end
-  if talks and talks[#talks] and (talks[#talks]).isEnd == true then
+  local talks = chat and chat.talks
+  if talks and talks[#talks] and talks[#talks].isEnd == true then
     serverChatData.m_nStatus = QuestChatStatus.E_ChatState_Completed
   end
   local state = serverChatData.m_nStatus
@@ -91,15 +68,12 @@ DWeChatRole.UpdateChatState = function(self, chatId, serverChatData, fromStorage
       chat.state = state
     end
     if not fromStorage then
-      (self.weChatProxy):SaveLocalSpeaker(self.speakerId, self:GetChats())
+      self.weChatProxy:SaveLocalSpeaker(self.speakerId, self:GetChats())
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.UpdateTalk = function(self, chatId, triggerIndex, serverTalkData, fromStorage)
-  -- function num : 0_5
+function DWeChatRole:UpdateTalk(chatId, triggerIndex, serverTalkData, fromStorage)
   local talk = self:GetTalk(chatId, serverTalkData.m_nTalkID, triggerIndex)
   if talk then
     talk.readed = serverTalkData.m_bReaded
@@ -108,163 +82,142 @@ DWeChatRole.UpdateTalk = function(self, chatId, triggerIndex, serverTalkData, fr
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.AddTalk = function(self, chatId, triggerIdex, serverTalkData, needSave)
-  -- function num : 0_6 , upvalues : _ENV, WeChatTalkType
+function DWeChatRole:AddTalk(chatId, triggerIdex, serverTalkData, needSave)
   local talkId = serverTalkData.m_nTalkID
   local readed = serverTalkData.m_bReaded
   local chat = self:GetChat(chatId, triggerIdex)
   if not chat then
-    return 
+    return
   end
   local talks = chat.talks
-  local cfg = (Cfg.cfg_quest_talk)[talkId]
+  local cfg = Cfg.cfg_quest_talk[talkId]
   if not cfg then
-    return 
+    return
   end
   local talk = {}
   talk.readed = readed
   talk.chatId = chatId
   talk.triggerIndex = triggerIdex
-  if cfg.NextWord ~= 0 then
-    talk.isEnd = not cfg.NextWord
+  if cfg.NextWord then
+    talk.isEnd = cfg.NextWord == 0
+  else
     talk.isEnd = false
-    local cfg_chat = (Cfg.cfg_quest_chat)[chatId]
-    if cfg_chat then
-      local talkBgm = cfg_chat.TalkBGM
-      if talkBgm then
-        local talkBgm_bgmid = talkBgm[1]
-        local talkBgm_start_talkid = talkBgm[2]
-        local talkBgm_end_talkid = talkBgm[3]
-        if talkBgm_start_talkid == talkId then
-          talk.startBgm = talkBgm_bgmid
-        end
-        if talkBgm_end_talkid == talkId then
-          talk.endBgm = talkBgm_bgmid
-        end
+  end
+  local cfg_chat = Cfg.cfg_quest_chat[chatId]
+  if cfg_chat then
+    local talkBgm = cfg_chat.TalkBGM
+    if talkBgm then
+      local talkBgm_bgmid = talkBgm[1]
+      local talkBgm_start_talkid = talkBgm[2]
+      local talkBgm_end_talkid = talkBgm[3]
+      if talkBgm_start_talkid == talkId then
+        talk.startBgm = talkBgm_bgmid
+      end
+      if talkBgm_end_talkid == talkId then
+        talk.endBgm = talkBgm_bgmid
       end
     end
-    local talkType = nil
-    if cfg and cfg.IsFirst == 1 then
-      local startTalk = {}
-      startTalk.talkId = cfg.ID - 1
-      startTalk.chatId = chatId
-      startTalk.talkType = WeChatTalkType.Start
-      ;
-      (table.insert)(talks, startTalk)
-      local inner = false
-      local innerChatId = nil
-      for i = 1, #self.talks do
-        local talkRoot = (self.talks)[i]
-        if talkRoot and talkRoot.chatid == chatId then
-          innerChatId = chatId
-          ;
-          (table.insert)(talkRoot.talks, startTalk)
-          inner = true
-          break
-        end
-      end
-      if not inner then
-        local talkRoot = {}
-        talkRoot.chatid = chatId
-        talkRoot.talks = {}
-        ;
-        (table.insert)(talkRoot.talks, startTalk)
-        ;
-        (table.insert)(self.talks, talkRoot)
-      end
-    end
-    local txt = cfg and (StringTable.Get)(cfg.ChatWord) or ""
-    if cfg.IsMainActorWord == 1 then
-      talkType = WeChatTalkType.Right
-      if cfg.AnswerID then
-        talk.options = {}
-        for _,talkId in ipairs(cfg.AnswerID) do
-          local option = {}
-          option.talkId = talkId
-          local opTxt = (StringTable.Get)(((Cfg.cfg_quest_talk)[talkId]).ChatWord)
-          option.txt = opTxt
-          ;
-          (table.insert)(talk.options, option)
-        end
-      end
-      talk.jumpId = cfg.JumpId
-      talk.jumpDesc = cfg.JumpDesc
-      talk.isClickJump = (self.weChatProxy):IsConstructor()
-    else
-      if cfg.AnswerID then
-        talk.options = {}
-        for _,talkId in ipairs(cfg.AnswerID) do
-          local option = {}
-          option.talkId = talkId
-          if not (Cfg.cfg_quest_talk)[talkId] then
-            (Log.error)("###[DWeChatRole] not Cfg.cfg_quest_talk, id --> ", talkId, "|ID-->", cfg.ID)
-          end
-          local opTxt = (StringTable.Get)(((Cfg.cfg_quest_talk)[talkId]).ChatWord)
-          option.txt = opTxt
-          ;
-          (table.insert)(talk.options, option)
-        end
-      end
-      if cfg.VoiceID then
-        talk.voiceId = cfg.VoiceID
-        talkType = WeChatTalkType.Voice
-      else
-        talkType = WeChatTalkType.Left
-        talk.jumpId = cfg.JumpId
-        talk.jumpDesc = cfg.JumpDesc
-        talk.isClickJump = (self.weChatProxy):IsConstructor()
-      end
-    end
-    talk.talkId = talkId
-    talk.txt = txt
-    talk.talkType = talkType
-    ;
-    (table.insert)(talks, talk)
+  end
+  local talkType
+  if cfg and cfg.IsFirst == 1 then
+    local startTalk = {}
+    startTalk.talkId = cfg.ID - 1
+    startTalk.chatId = chatId
+    startTalk.talkType = WeChatTalkType.Start
+    table.insert(talks, startTalk)
     local inner = false
-    local innerChatId = nil
+    local innerChatId
     for i = 1, #self.talks do
-      local talkRoot = (self.talks)[i]
+      local talkRoot = self.talks[i]
       if talkRoot and talkRoot.chatid == chatId then
         innerChatId = chatId
-        ;
-        (table.insert)(talkRoot.talks, talk)
+        table.insert(talkRoot.talks, startTalk)
         inner = true
         break
       end
     end
-    do
-      if not inner then
-        local talkRoot = {}
-        talkRoot.chatid = chatId
-        talkRoot.talks = {}
-        ;
-        (table.insert)(talkRoot.talks, talk)
-        ;
-        (table.insert)(self.talks, talkRoot)
-      end
-      chat.talks = talks
-      if needSave then
-        (self.weChatProxy):SaveSpeakerLastTime(self.speakerId, (os.time)())
-      end
-      -- DECOMPILER ERROR: 22 unprocessed JMP targets
+    if not inner then
+      local talkRoot = {}
+      talkRoot.chatid = chatId
+      talkRoot.talks = {}
+      table.insert(talkRoot.talks, startTalk)
+      table.insert(self.talks, talkRoot)
     end
+  end
+  local txt = cfg and StringTable.Get(cfg.ChatWord) or ""
+  if cfg.IsMainActorWord == 1 then
+    talkType = WeChatTalkType.Right
+    if cfg.AnswerID then
+      talk.options = {}
+      for _, talkId in ipairs(cfg.AnswerID) do
+        local option = {}
+        option.talkId = talkId
+        local opTxt = StringTable.Get(Cfg.cfg_quest_talk[talkId].ChatWord)
+        option.txt = opTxt
+        table.insert(talk.options, option)
+      end
+    end
+    talk.jumpId = cfg.JumpId
+    talk.jumpDesc = cfg.JumpDesc
+    talk.isClickJump = self.weChatProxy:IsConstructor()
+  else
+    if cfg.AnswerID then
+      talk.options = {}
+      for _, talkId in ipairs(cfg.AnswerID) do
+        local option = {}
+        option.talkId = talkId
+        if not Cfg.cfg_quest_talk[talkId] then
+          Log.error("###[DWeChatRole] not Cfg.cfg_quest_talk, id --> ", talkId, "|ID-->", cfg.ID)
+        end
+        local opTxt = StringTable.Get(Cfg.cfg_quest_talk[talkId].ChatWord)
+        option.txt = opTxt
+        table.insert(talk.options, option)
+      end
+    end
+    if cfg.VoiceID then
+      talk.voiceId = cfg.VoiceID
+      talkType = WeChatTalkType.Voice
+    else
+      talkType = WeChatTalkType.Left
+      talk.jumpId = cfg.JumpId
+      talk.jumpDesc = cfg.JumpDesc
+      talk.isClickJump = self.weChatProxy:IsConstructor()
+    end
+  end
+  talk.talkId = talkId
+  talk.txt = txt
+  talk.talkType = talkType
+  table.insert(talks, talk)
+  local inner = false
+  local innerChatId
+  for i = 1, #self.talks do
+    local talkRoot = self.talks[i]
+    if talkRoot and talkRoot.chatid == chatId then
+      innerChatId = chatId
+      table.insert(talkRoot.talks, talk)
+      inner = true
+      break
+    end
+  end
+  if not inner then
+    local talkRoot = {}
+    talkRoot.chatid = chatId
+    talkRoot.talks = {}
+    table.insert(talkRoot.talks, talk)
+    table.insert(self.talks, talkRoot)
+  end
+  chat.talks = talks
+  if needSave then
+    self.weChatProxy:SaveSpeakerLastTime(self.speakerId, os.time())
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.GetChats = function(self)
-  -- function num : 0_7
+function DWeChatRole:GetChats()
   return self.chats
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.GetChat = function(self, chatId, triggerIndex)
-  -- function num : 0_8 , upvalues : _ENV
-  for index,chat in ipairs(self.chats) do
+function DWeChatRole:GetChat(chatId, triggerIndex)
+  for index, chat in ipairs(self.chats) do
     if chat.chatId == chatId and chat.triggerIndex == triggerIndex then
       return chat
     end
@@ -272,26 +225,20 @@ DWeChatRole.GetChat = function(self, chatId, triggerIndex)
   return nil
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.GetTalks = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function DWeChatRole:GetTalks()
   local _talks = {}
-  for index,chat in ipairs(self.chats) do
+  for index, chat in ipairs(self.chats) do
     local talks = chat.talks
-    for index,talk in ipairs(talks) do
-      (table.insert)(_talks, talk)
+    for index, talk in ipairs(talks) do
+      table.insert(_talks, talk)
     end
   end
   return _talks
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.GetTalk = function(self, chatId, talkId, triggerIndex)
-  -- function num : 0_10
+function DWeChatRole:GetTalk(chatId, talkId, triggerIndex)
   for i = 1, #self.talks do
-    local talkRoot = (self.talks)[i]
+    local talkRoot = self.talks[i]
     if talkRoot and talkRoot.chatid == chatId then
       local talks = talkRoot.talks
       for j = 1, #talks do
@@ -305,22 +252,16 @@ DWeChatRole.GetTalk = function(self, chatId, talkId, triggerIndex)
   return nil
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.SetTalkReaded = function(self, chatId, talkId, triggerIndex)
-  -- function num : 0_11
+function DWeChatRole:SetTalkReaded(chatId, talkId, triggerIndex)
   local talk = self:GetTalk(chatId, talkId, triggerIndex)
   if talk then
     talk.readed = true
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.SetAllTalkReaded = function(self, readed)
-  -- function num : 0_12
+function DWeChatRole:SetAllTalkReaded(readed)
   for i = 1, #self.talks do
-    local talkRoot = (self.talks)[i]
+    local talkRoot = self.talks[i]
     if talkRoot then
       local talks = talkRoot.talks
       for j = 1, #talks do
@@ -333,38 +274,23 @@ DWeChatRole.SetAllTalkReaded = function(self, readed)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.AddChats = function(self, serverChatDatas)
-  -- function num : 0_13
+function DWeChatRole:AddChats(serverChatDatas)
   self:Decode(serverChatDatas)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.GetPic = function(self)
-  -- function num : 0_14
-  return (self.CfgQuestChatSpeaker).Icon
+function DWeChatRole:GetPic()
+  return self.CfgQuestChatSpeaker.Icon
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.GetSpeakerId = function(self)
-  -- function num : 0_15
+function DWeChatRole:GetSpeakerId()
   return self.speakerId
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.SetGroupID = function(self, id)
-  -- function num : 0_16
+function DWeChatRole:SetGroupID(id)
   self._groupID = id
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.GetGroupId = function(self)
-  -- function num : 0_17
+function DWeChatRole:GetGroupId()
   if self._groupID then
     return self._groupID
   else
@@ -372,90 +298,63 @@ DWeChatRole.GetGroupId = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.GetName = function(self)
-  -- function num : 0_18
+function DWeChatRole:GetName()
   return self.name
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.GetEnName = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  if (self.CfgQuestChatSpeaker).SpeakerType == 1 then
-    local petTemplateId = (self.CfgQuestChatSpeaker).TemplateID
-    return (StringTable.Get)(((Cfg.cfg_pet)[petTemplateId]).EnglishName)
+function DWeChatRole:GetEnName()
+  if self.CfgQuestChatSpeaker.SpeakerType == 1 then
+    local petTemplateId = self.CfgQuestChatSpeaker.TemplateID
+    return StringTable.Get(Cfg.cfg_pet[petTemplateId].EnglishName)
   else
-    do
-      do return "" end
-    end
+    return ""
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.GetFriendCount = function(self)
-  -- function num : 0_20
-  if (self.CfgQuestChatSpeaker).SpeakerType == 1 then
-    local pet = (self.petModule):GetPetByTemplateId((self.CfgQuestChatSpeaker).TemplateID)
+function DWeChatRole:GetFriendCount()
+  if self.CfgQuestChatSpeaker.SpeakerType == 1 then
+    local pet = self.petModule:GetPetByTemplateId(self.CfgQuestChatSpeaker.TemplateID)
     return pet and pet:GetPetAffinityLevel() or 1
   else
-    do
-      do return -1 end
-    end
+    return -1
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.GetFriendRate = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  if (self.CfgQuestChatSpeaker).SpeakerType == 1 then
-    local pet = (self.petModule):GetPetByTemplateId((self.CfgQuestChatSpeaker).TemplateID)
+function DWeChatRole:GetFriendRate()
+  if self.CfgQuestChatSpeaker.SpeakerType == 1 then
+    local pet = self.petModule:GetPetByTemplateId(self.CfgQuestChatSpeaker.TemplateID)
     if pet then
       local level = pet:GetPetAffinityLevel()
       local _realExp = pet:GetPetAffinityExp()
       local _realMaxExp = pet:GetPetAffinityMaxExp(level)
       local _maxAffinityMaxLevel = pet:GetPetAffinityMaxLevel()
-      if _maxAffinityMaxLevel <= level then
+      if level >= _maxAffinityMaxLevel then
         return 1
       else
-        local cur = _realExp - ((Cfg.cfg_pet_affinity_exp)[level]).NeedAffintyExp
+        local cur = _realExp - Cfg.cfg_pet_affinity_exp[level].NeedAffintyExp
         return cur / _realMaxExp
       end
     else
-      do
-        do
-          do return 0 end
-          do return 0 end
-        end
-      end
+      return 0
     end
+  else
+    return 0
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.GetFriendMaxCount = function(self)
-  -- function num : 0_22
-  if (self.CfgQuestChatSpeaker).SpeakerType == 1 then
-    local pet = (self.petModule):GetPetByTemplateId((self.CfgQuestChatSpeaker).TemplateID)
+function DWeChatRole:GetFriendMaxCount()
+  if self.CfgQuestChatSpeaker.SpeakerType == 1 then
+    local pet = self.petModule:GetPetByTemplateId(self.CfgQuestChatSpeaker.TemplateID)
     return pet and pet:GetPetAffinityMaxLevel() or 0
   else
-    do
-      do return 0 end
-    end
+    return 0
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.GetUnReadCount = function(self)
-  -- function num : 0_23
+function DWeChatRole:GetUnReadCount()
   local count = 0
   for i = 1, #self.talks do
-    local talkRoot = (self.talks)[i]
+    local talkRoot = self.talks[i]
     if talkRoot then
       local talks = talkRoot.talks
       for j = 1, #talks do
@@ -469,37 +368,28 @@ DWeChatRole.GetUnReadCount = function(self)
   return count
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.GetUnReadChats = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function DWeChatRole:GetUnReadChats()
   local tbl = {}
-  for _,chat in ipairs(self.chats) do
+  for _, chat in ipairs(self.chats) do
     local talks = chat.talks
-    for _,talk in ipairs(talks) do
-      if talk.readed == false and not (table.ikey)(tbl, talk.chatId) then
-        (table.insert)(tbl, talk.chatId)
+    for _, talk in ipairs(talks) do
+      if talk.readed == false and not table.ikey(tbl, talk.chatId) then
+        table.insert(tbl, talk.chatId)
       end
     end
   end
   return tbl
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.GetLastTalk = function(self)
-  -- function num : 0_25
-  local lastTalkRoot = (self.talks)[#self.talks]
+function DWeChatRole:GetLastTalk()
+  local lastTalkRoot = self.talks[#self.talks]
   if lastTalkRoot then
-    local lastTalk = (lastTalkRoot.talks)[#lastTalkRoot.talks]
+    local lastTalk = lastTalkRoot.talks[#lastTalkRoot.talks]
     return lastTalk
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.HasRed = function(self)
-  -- function num : 0_26
+function DWeChatRole:HasRed()
   local l = self:GetLastTalk()
   local canReply = false
   if l and l.options then
@@ -508,13 +398,6 @@ DWeChatRole.HasRed = function(self)
   return canReply
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-DWeChatRole.UpdateName = function(self, name)
-  -- function num : 0_27 , upvalues : _ENV
-  if (string.isnullorempty)(name) or not name then
-    self.name = (StringTable.Get)((self.CfgQuestChatSpeaker).Name)
-  end
+function DWeChatRole:UpdateName(name)
+  self.name = not string.isnullorempty(name) and name or StringTable.Get(self.CfgQuestChatSpeaker.Name)
 end
-
-

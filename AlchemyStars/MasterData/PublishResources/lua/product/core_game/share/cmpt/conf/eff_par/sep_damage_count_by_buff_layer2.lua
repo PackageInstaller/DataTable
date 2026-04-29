@@ -1,76 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_damage_count_by_buff_layer2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 require("skill_damage_effect_param")
 _class("SkillEffectDamageCountByBuffLayer2Param", SkillDamageEffectParam)
 SkillEffectDamageCountByBuffLayer2Param = SkillEffectDamageCountByBuffLayer2Param
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectDamageCountByBuffLayer2Param.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectDamageCountByBuffLayer2Param:Constructor(t)
   self._buffEffectType = t.buffEffectType
   self._buffPreCount = t.buffPreCount or 1
   self._effectScopeType = t.effectScopeType
   local scopeParser = SkillScopeParamParser:New()
   self._effectScopeParam = scopeParser:ParseScopeParam(self._effectScopeType, t.effectScopeParam)
-  if not t.effectTargetType then
-    self._effectTargetType = SkillTargetType.MonsterTrap
-    if not t.effectCenterType then
-      self._effectCenterType = SkillSplashCenterType.Caster
-    end
-  end
+  self._effectTargetType = t.effectTargetType or SkillTargetType.MonsterTrap
+  self._effectCenterType = t.effectCenterType or SkillSplashCenterType.Caster
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageCountByBuffLayer2Param.GetMyEffectScopeType = function(self)
-  -- function num : 0_1
+function SkillEffectDamageCountByBuffLayer2Param:GetMyEffectScopeType()
   return self._effectScopeType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageCountByBuffLayer2Param.GetMyEffectScopeParam = function(self)
-  -- function num : 0_2
+function SkillEffectDamageCountByBuffLayer2Param:GetMyEffectScopeParam()
   return self._effectScopeParam
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageCountByBuffLayer2Param.GetMyEffectTargetType = function(self)
-  -- function num : 0_3
+function SkillEffectDamageCountByBuffLayer2Param:GetMyEffectTargetType()
   return self._effectTargetType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageCountByBuffLayer2Param.GetMyEffectCenterType = function(self)
-  -- function num : 0_4
+function SkillEffectDamageCountByBuffLayer2Param:GetMyEffectCenterType()
   return self._effectCenterType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageCountByBuffLayer2Param.GetBuffPreCount = function(self)
-  -- function num : 0_5
+function SkillEffectDamageCountByBuffLayer2Param:GetBuffPreCount()
   return self._buffPreCount
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageCountByBuffLayer2Param.GetEffectType = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillEffectDamageCountByBuffLayer2Param:GetEffectType()
   return SkillEffectType.DamageCountByBuffLayer2
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageCountByBuffLayer2Param.GetAddPercentBuffEffectType = function(self)
-  -- function num : 0_7
+function SkillEffectDamageCountByBuffLayer2Param:GetAddPercentBuffEffectType()
   return self._buffEffectType
 end
-
-

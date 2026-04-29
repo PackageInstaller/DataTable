@@ -1,118 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_education/condition/ui_education_condition.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEducationCondition", Object)
 UIEducationCondition = UIEducationCondition
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEducationCondition.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIEducationCondition:Constructor()
   self._type = ConditionType.CT_NONE
   self._completed = 0
   self._quantity = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationCondition.Type = function(self)
-  -- function num : 0_1
+function UIEducationCondition:Type()
   return self._type
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationCondition.GetCompleted = function(self)
-  -- function num : 0_2
+function UIEducationCondition:GetCompleted()
   return self._completed
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationCondition.GetQuantity = function(self)
-  -- function num : 0_3
+function UIEducationCondition:GetQuantity()
   return self._quantity
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationCondition.IsMet = function(self)
-  -- function num : 0_4
-  do return self._quantity <= self._completed end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIEducationCondition:IsMet()
+  return self._completed >= self._quantity
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationCondition.Test = function(self)
-  -- function num : 0_5
+function UIEducationCondition:Test()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationCondition.Unmarshal = function(self, openCondition)
-  -- function num : 0_6 , upvalues : _ENV
+function UIEducationCondition:Unmarshal(openCondition)
   local lst = {}
   local dic = {}
-  local oneLevel = (string.split)(openCondition, "&")
-  for k,v in pairs(oneLevel) do
-    local twoLevel = (string.split)(v, ",")
-    for sk,sv in pairs(twoLevel) do
+  local oneLevel = string.split(openCondition, "&")
+  for k, v in pairs(oneLevel) do
+    local twoLevel = string.split(v, ",")
+    for sk, sv in pairs(twoLevel) do
       twoLevel[sk] = tonumber(sv)
     end
     local paramCount = #twoLevel
-    if twoLevel[1] == ConditionType.CT_TowerType and paramCount >= 3 then
+    if twoLevel[1] == ConditionType.CT_TowerType and 3 <= paramCount then
       local testCondition = UIEducationConditionTower:New(twoLevel[2], twoLevel[3])
-      ;
-      (table.insert)(lst, testCondition)
+      table.insert(lst, testCondition)
+      dic[testCondition:Type()] = testCondition
+    elseif twoLevel[1] == ConditionType.CT_PetGradeY and 3 <= paramCount then
+      local testCondition = UIEducationConditionGrade:New(twoLevel[2], twoLevel[3])
+      table.insert(lst, testCondition)
+      dic[testCondition:Type()] = testCondition
+    elseif twoLevel[1] == ConditionType.CT_PetYElementZLevel and 4 <= paramCount then
+      local testCondition = UIEducationConditionElementLevel:New(twoLevel[2], twoLevel[3], twoLevel[4])
+      table.insert(lst, testCondition)
       dic[testCondition:Type()] = testCondition
     else
-      do
-        if twoLevel[1] == ConditionType.CT_PetGradeY and paramCount >= 3 then
-          local testCondition = UIEducationConditionGrade:New(twoLevel[2], twoLevel[3])
-          ;
-          (table.insert)(lst, testCondition)
-          dic[testCondition:Type()] = testCondition
-        else
-          do
-            if twoLevel[1] == ConditionType.CT_PetYElementZLevel and paramCount >= 4 then
-              local testCondition = UIEducationConditionElementLevel:New(twoLevel[2], twoLevel[3], twoLevel[4])
-              ;
-              (table.insert)(lst, testCondition)
-              dic[testCondition:Type()] = testCondition
-            else
-              do
-                do
-                  ;
-                  (Log.exception)("UIEducationCondition:Unmarshal openCondition 条件未实现 id --> ", v)
-                  -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
-            end
-          end
-        end
-      end
+      Log.exception("UIEducationCondition:Unmarshal openCondition 条件未实现 id --> ", v)
     end
   end
   return lst, dic
 end
-
-

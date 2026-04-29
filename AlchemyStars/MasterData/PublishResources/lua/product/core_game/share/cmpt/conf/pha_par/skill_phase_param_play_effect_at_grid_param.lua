@@ -1,41 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_param_play_effect_at_grid_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhasePlayEffectAtGridParam", SkillPhaseParamBase)
 SkillPhasePlayEffectAtGridParam = SkillPhasePlayEffectAtGridParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhasePlayEffectAtGridParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhasePlayEffectAtGridParam:Constructor(t)
   self._gridEffectList = t
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayEffectAtGridParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhasePlayEffectAtGridParam:GetCacheTable()
   local effectList = {}
-  for k,v in ipairs(self._gridEffectList) do
-    (table.insert)(effectList, {((Cfg.cfg_effect)[v.effectID]).ResPath, 1})
+  for k, v in ipairs(self._gridEffectList) do
+    table.insert(effectList, {
+      Cfg.cfg_effect[v.effectID].ResPath,
+      1
+    })
   end
   return effectList
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayEffectAtGridParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhasePlayEffectAtGridParam:GetPhaseType()
   return SkillViewPhaseType.PlayEffectAtGrid
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayEffectAtGridParam.GetGirdEffectList = function(self)
-  -- function num : 0_3
+function SkillPhasePlayEffectAtGridParam:GetGirdEffectList()
   return self._gridEffectList
 end
-
-

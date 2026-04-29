@@ -1,70 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/story/story_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StoryModule", GameModule)
 StoryModule = StoryModule
 StoryModule = StoryModule
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
 
-StoryModule.Constructor = function(self)
-  -- function num : 0_0
+function StoryModule:Constructor()
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function StoryModule:Init()
   self.mStoryAffinity = {}
-  self.mStoryAffinityRes = (ResourceHelper:GetInstance()):GetStoryAffinity()
+  self.mStoryAffinityRes = ResourceHelper:GetInstance():GetStoryAffinity()
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryModule.StartStory = function(self, storyID, endCallback, closeSelf)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIStoryController", storyID, endCallback, closeSelf)
+function StoryModule:StartStory(storyID, endCallback, closeSelf)
+  GameGlobal.UIStateManager():ShowDialog("UIStoryController", storyID, endCallback, closeSelf)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryModule.IsFinish = function(self, storyId)
-  -- function num : 0_3 , upvalues : _ENV
-  local ids = (self.mStoryAffinityRes):GetStoryIds(storyId)
+function StoryModule:IsFinish(storyId)
+  local ids = self.mStoryAffinityRes:GetStoryIds(storyId)
   if ids == nil then
     return true
   end
-  for k,v in pairs(ids) do
-    if (self.mStoryAffinity)[k] ~= true then
+  for k, v in pairs(ids) do
+    if self.mStoryAffinity[k] ~= true then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryModule.IsAdded = function(self, StoryID, ParagraphID, SectionID)
-  -- function num : 0_4 , upvalues : _ENV
-  local ids = (self.mStoryAffinityRes):GetStoryOptionIds(StoryID, ParagraphID, SectionID)
+function StoryModule:IsAdded(StoryID, ParagraphID, SectionID)
+  local ids = self.mStoryAffinityRes:GetStoryOptionIds(StoryID, ParagraphID, SectionID)
   if ids == nil then
     return true
   end
-  for k,v in pairs(ids) do
-    if (self.mStoryAffinity)[k] == true then
+  for k, v in pairs(ids) do
+    if self.mStoryAffinity[k] == true then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryModule.ReqAddMsg = function(self, TT, StoryID, ParagraphID, SectionID, OptionID)
-  -- function num : 0_5 , upvalues : _ENV
+function StoryModule:ReqAddMsg(TT, StoryID, ParagraphID, SectionID, OptionID)
   local res = AsyncRequestRes:New()
-  local cfg = (self.mStoryAffinityRes):GetCfgID(StoryID, ParagraphID, SectionID, OptionID)
+  local cfg = self.mStoryAffinityRes:GetCfgID(StoryID, ParagraphID, SectionID, OptionID)
   if cfg == nil then
     res:SetSucc(false)
     res:SetResult(ROLE_RESULT_CODE.ROLE_STORYAFFINITY_NO_ID)
@@ -75,12 +53,12 @@ StoryModule.ReqAddMsg = function(self, TT, StoryID, ParagraphID, SectionID, Opti
     res:SetResult(ROLE_RESULT_CODE.ROLE_STORYAFFINITY_RECEIVED)
     return res
   end
-  if (self:GetModule(PetModule)):HasPet(cfg.PetID) ~= true then
+  if self:GetModule(PetModule):HasPet(cfg.PetID) ~= true then
     res:SetSucc(false)
     res:SetResult(ROLE_RESULT_CODE.ROLE_STORYAFFINITY_NO_PET)
     return res
   end
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventAddStoryAffinity)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventAddStoryAffinity)
   request.id = cfg.ID
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -99,47 +77,34 @@ StoryModule.ReqAddMsg = function(self, TT, StoryID, ParagraphID, SectionID, Opti
   return res
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryModule.SetSAData = function(self, info)
-  -- function num : 0_6 , upvalues : _ENV
+function StoryModule:SetSAData(info)
   if info == nil then
-    return 
+    return
   end
-  for key,value in pairs(info) do
+  for key, value in pairs(info) do
     self:AddSAData(value)
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryModule.AddSAData = function(self, cfgID)
-  -- function num : 0_7 , upvalues : _ENV
-  local ids = (self.mStoryAffinityRes):GetStoryOptionIdsById(cfgID)
+function StoryModule:AddSAData(cfgID)
+  local ids = self.mStoryAffinityRes:GetStoryOptionIdsById(cfgID)
   if ids == nil then
-    return 
+    return
   end
-  for k,v in pairs(ids) do
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self.mStoryAffinity)[k] = true
+  for k, v in pairs(ids) do
+    self.mStoryAffinity[k] = true
   end
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryModule.IsFinishSPO = function(self, cfgID)
-  -- function num : 0_8 , upvalues : _ENV
-  local ids = (self.mStoryAffinityRes):GetStoryOptionIdsById(cfgID)
+function StoryModule:IsFinishSPO(cfgID)
+  local ids = self.mStoryAffinityRes:GetStoryOptionIdsById(cfgID)
   if ids == nil then
     return true
   end
-  for k,v in pairs(ids) do
-    if (self.mStoryAffinity)[k] == true then
+  for k, v in pairs(ids) do
+    if self.mStoryAffinity[k] == true then
       return true
     end
   end
   return false
 end
-
-

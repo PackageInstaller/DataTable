@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/chain_result/skill_pet_attack_data_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPetAttackDataComponent", Object)
 SkillPetAttackDataComponent = SkillPetAttackDataComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPetAttackDataComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPetAttackDataComponent:Constructor()
   self._chainSkillID = -1
   self._normalAttackData = SkillPathNormalAttackData:New()
   self._chainSkillShadowData = {}
@@ -29,294 +22,176 @@ SkillPetAttackDataComponent.Constructor = function(self)
   self._chainSkillStageList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.ClearPetAttackData = function(self)
-  -- function num : 0_1
+function SkillPetAttackDataComponent:ClearPetAttackData()
   self._curCastDamage = 0
   self._chainSkillID = -1
   self._curChainSkillTimeIndex = 0
   self._curChainSkillStage = 0
-  ;
-  (self._normalAttackData):ClearNormalAttackData()
+  self._normalAttackData:ClearNormalAttackData()
   self:ClearPetChainAttackData()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetShadowChainAttackDataList = function(self)
-  -- function num : 0_2
+function SkillPetAttackDataComponent:GetShadowChainAttackDataList()
   return self._chainSkillShadowData
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetAgentChainAttackDataList = function(self)
-  -- function num : 0_3
+function SkillPetAttackDataComponent:GetAgentChainAttackDataList()
   return self._chainSkillAgentData
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetReplaceChainAttackDataList = function(self)
-  -- function num : 0_4
+function SkillPetAttackDataComponent:GetReplaceChainAttackDataList()
   return self._chainSkillReplaceData
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.ClearPetChainAttackData = function(self)
-  -- function num : 0_5
+function SkillPetAttackDataComponent:ClearPetChainAttackData()
   self._chainSkillShadowData = {}
   self._chainSkillAgentData = {}
   self._chainSkillReplaceData = {}
   self._multiStageChainSkillAttackDataList = {}
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetNormalAttackData = function(self)
-  -- function num : 0_6
+function SkillPetAttackDataComponent:GetNormalAttackData()
   return self._normalAttackData
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetChainShadowData = function(self, idx)
-  -- function num : 0_7
+function SkillPetAttackDataComponent:GetChainShadowData(idx)
   if idx == nil then
     return self._chainSkillShadowData
   end
-  return (self._chainSkillShadowData)[idx]
+  return self._chainSkillShadowData[idx]
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetChainAgentData = function(self, idx)
-  -- function num : 0_8
+function SkillPetAttackDataComponent:GetChainAgentData(idx)
   if idx == nil then
     return self._chainSkillAgentData
   end
-  return (self._chainSkillAgentData)[idx]
+  return self._chainSkillAgentData[idx]
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetChainReplaceData = function(self, idx)
-  -- function num : 0_9
+function SkillPetAttackDataComponent:GetChainReplaceData(idx)
   if idx == nil then
     return self._chainSkillReplaceData
   end
-  return (self._chainSkillReplaceData)[idx]
+  return self._chainSkillReplaceData[idx]
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetChainSkillID = function(self)
-  -- function num : 0_10
+function SkillPetAttackDataComponent:GetChainSkillID()
   return self._chainSkillID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.SetChainSkillID = function(self, chainSkillID)
-  -- function num : 0_11
+function SkillPetAttackDataComponent:SetChainSkillID(chainSkillID)
   self._chainSkillID = chainSkillID
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.SetCurChainSkillTimeIndex = function(self, idx)
-  -- function num : 0_12
+function SkillPetAttackDataComponent:SetCurChainSkillTimeIndex(idx)
   self._curChainSkillTimeIndex = idx
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetCurChainSkillTimeIndex = function(self)
-  -- function num : 0_13
+function SkillPetAttackDataComponent:GetCurChainSkillTimeIndex()
   return self._curChainSkillTimeIndex
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.SetCurChainSkillStage = function(self, chainSkillStage)
-  -- function num : 0_14
+function SkillPetAttackDataComponent:SetCurChainSkillStage(chainSkillStage)
   self._curChainSkillStage = chainSkillStage
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetCurChainSkillStage = function(self)
-  -- function num : 0_15
+function SkillPetAttackDataComponent:GetCurChainSkillStage()
   return self._curChainSkillStage
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.AddNormalAttackData = function(self, pathPointPosition, pathPointNormalAttackData)
-  -- function num : 0_16
-  (self._normalAttackData):AddPathPointNormalAttackData(pathPointPosition, pathPointNormalAttackData)
+function SkillPetAttackDataComponent:AddNormalAttackData(pathPointPosition, pathPointNormalAttackData)
+  self._normalAttackData:AddPathPointNormalAttackData(pathPointPosition, pathPointNormalAttackData)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.AddChainShadowData = function(self, idx)
-  -- function num : 0_17 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._chainSkillShadowData)[idx] == nil then
-    (self._chainSkillShadowData)[idx] = SkillChainAttackData:New(idx)
+function SkillPetAttackDataComponent:AddChainShadowData(idx)
+  if self._chainSkillShadowData[idx] == nil then
+    self._chainSkillShadowData[idx] = SkillChainAttackData:New(idx)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.AddChainAgentData = function(self, idx)
-  -- function num : 0_18 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._chainSkillAgentData)[idx] == nil then
-    (self._chainSkillAgentData)[idx] = SkillChainAttackData:New(idx)
+function SkillPetAttackDataComponent:AddChainAgentData(idx)
+  if self._chainSkillAgentData[idx] == nil then
+    self._chainSkillAgentData[idx] = SkillChainAttackData:New(idx)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.AddChainReplaceData = function(self, idx)
-  -- function num : 0_19 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._chainSkillReplaceData)[idx] == nil then
-    (self._chainSkillReplaceData)[idx] = SkillChainAttackData:New(idx)
+function SkillPetAttackDataComponent:AddChainReplaceData(idx)
+  if self._chainSkillReplaceData[idx] == nil then
+    self._chainSkillReplaceData[idx] = SkillChainAttackData:New(idx)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.HasNormalAttackData = function(self, pathPointPosition)
-  -- function num : 0_20
-  return (self._normalAttackData):HasPathPointNormalAttackData(pathPointPosition)
+function SkillPetAttackDataComponent:HasNormalAttackData(pathPointPosition)
+  return self._normalAttackData:HasPathPointNormalAttackData(pathPointPosition)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.RemoveNormalAttackData = function(self, pathPointPosition)
-  -- function num : 0_21
-  (self._normalAttackData):RemovePathPointNormalAttackData(pathPointPosition)
+function SkillPetAttackDataComponent:RemoveNormalAttackData(pathPointPosition)
+  self._normalAttackData:RemovePathPointNormalAttackData(pathPointPosition)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.RemoveUnusedPathPointData = function(self, chain_path_data)
-  -- function num : 0_22
-  (self._normalAttackData):RemoveUnusedPathPointData(chain_path_data)
+function SkillPetAttackDataComponent:RemoveUnusedPathPointData(chain_path_data)
+  self._normalAttackData:RemoveUnusedPathPointData(chain_path_data)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetCastChainSkill = function(self)
-  -- function num : 0_23
+function SkillPetAttackDataComponent:GetCastChainSkill()
   return self._castChainSkill
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.SetCastChainSkill = function(self, cast)
-  -- function num : 0_24
+function SkillPetAttackDataComponent:SetCastChainSkill(cast)
   self._castChainSkill = cast
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.SetCurrentChainDamageRate = function(self, value)
-  -- function num : 0_25
+function SkillPetAttackDataComponent:SetCurrentChainDamageRate(value)
   self._curChainDamageRate = value
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetCurrentChainDamageRate = function(self)
-  -- function num : 0_26
+function SkillPetAttackDataComponent:GetCurrentChainDamageRate()
   return self._curChainDamageRate
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.SetCurrentSuperGridNum = function(self, value)
-  -- function num : 0_27
+function SkillPetAttackDataComponent:SetCurrentSuperGridNum(value)
   self._curSuperGridNum = value
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetCurrentSuperGridNum = function(self)
-  -- function num : 0_28
+function SkillPetAttackDataComponent:GetCurrentSuperGridNum()
   return self._curSuperGridNum
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.SetCurrentPoorGridNum = function(self, value)
-  -- function num : 0_29
+function SkillPetAttackDataComponent:SetCurrentPoorGridNum(value)
   self._curPoorGridNum = value
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetCurrentPoorGridNum = function(self)
-  -- function num : 0_30
+function SkillPetAttackDataComponent:GetCurrentPoorGridNum()
   return self._curPoorGridNum
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetMultiStageChainAttackDataList = function(self)
-  -- function num : 0_31
+function SkillPetAttackDataComponent:GetMultiStageChainAttackDataList()
   return self._multiStageChainSkillAttackDataList
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetMultiStageChainAttackData = function(self, timeIndex, index)
-  -- function num : 0_32
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self._multiStageChainSkillAttackDataList)[timeIndex] == nil then
-    (self._multiStageChainSkillAttackDataList)[timeIndex] = {}
+function SkillPetAttackDataComponent:GetMultiStageChainAttackData(timeIndex, index)
+  if self._multiStageChainSkillAttackDataList[timeIndex] == nil then
+    self._multiStageChainSkillAttackDataList[timeIndex] = {}
   end
-  return ((self._multiStageChainSkillAttackDataList)[timeIndex])[index]
+  return self._multiStageChainSkillAttackDataList[timeIndex][index]
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.AddMultiStageChainAttackData = function(self, timeIndex, index, chainSkillID)
-  -- function num : 0_33 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R4 in 'UnsetPending'
-
-  if (self._multiStageChainSkillAttackDataList)[timeIndex] == nil then
-    (self._multiStageChainSkillAttackDataList)[timeIndex] = {}
+function SkillPetAttackDataComponent:AddMultiStageChainAttackData(timeIndex, index, chainSkillID)
+  if self._multiStageChainSkillAttackDataList[timeIndex] == nil then
+    self._multiStageChainSkillAttackDataList[timeIndex] = {}
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-  if ((self._multiStageChainSkillAttackDataList)[timeIndex])[index] == nil then
-    ((self._multiStageChainSkillAttackDataList)[timeIndex])[index] = {}
+  if self._multiStageChainSkillAttackDataList[timeIndex][index] == nil then
+    self._multiStageChainSkillAttackDataList[timeIndex][index] = {}
   end
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._multiStageChainSkillAttackDataList)[timeIndex])[index] = SkillChainAttackData:New(timeIndex, index, chainSkillID)
+  self._multiStageChainSkillAttackDataList[timeIndex][index] = SkillChainAttackData:New(timeIndex, index, chainSkillID)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetChainSkillStageIndexWithSkillIDAndTimeIndex = function(self, chainSkillID, chainTimeIndex)
-  -- function num : 0_34 , upvalues : _ENV
+function SkillPetAttackDataComponent:GetChainSkillStageIndexWithSkillIDAndTimeIndex(chainSkillID, chainTimeIndex)
   local chainStageIndex = 1
   local multiStageChainAttackDataList = self:GetMultiStageChainAttackDataList()
   if multiStageChainAttackDataList and multiStageChainAttackDataList[chainTimeIndex] then
     local chainAttackDataList = multiStageChainAttackDataList[chainTimeIndex]
-    for k,skillChainAttackData in pairs(chainAttackDataList) do
+    for k, skillChainAttackData in pairs(chainAttackDataList) do
       local attdata = skillChainAttackData
       if attdata:GetChainAttackDataSkillID() == chainSkillID then
         chainStageIndex = attdata:GetChainSkillStageIndex()
@@ -324,128 +199,80 @@ SkillPetAttackDataComponent.GetChainSkillStageIndexWithSkillIDAndTimeIndex = fun
       end
     end
   end
-  do
-    local agentChainAttackDataList = self:GetAgentChainAttackDataList()
-    for k,skillChainAttackData in pairs(agentChainAttackDataList) do
-      local attdata = skillChainAttackData
-      if attdata:GetChainAttackDataSkillID() == chainSkillID then
-        chainStageIndex = attdata:GetChainSkillStageIndex()
-        return chainStageIndex
-      end
+  local agentChainAttackDataList = self:GetAgentChainAttackDataList()
+  for k, skillChainAttackData in pairs(agentChainAttackDataList) do
+    local attdata = skillChainAttackData
+    if attdata:GetChainAttackDataSkillID() == chainSkillID then
+      chainStageIndex = attdata:GetChainSkillStageIndex()
+      return chainStageIndex
     end
-    local replaceChainAttackDataList = self:GetReplaceChainAttackDataList()
-    for k,skillChainAttackData in pairs(replaceChainAttackDataList) do
-      local attdata = skillChainAttackData
-      if attdata:GetChainAttackDataSkillID() == chainSkillID then
-        chainStageIndex = attdata:GetChainSkillStageIndex()
-        return chainStageIndex
-      end
-    end
-    return chainStageIndex
   end
+  local replaceChainAttackDataList = self:GetReplaceChainAttackDataList()
+  for k, skillChainAttackData in pairs(replaceChainAttackDataList) do
+    local attdata = skillChainAttackData
+    if attdata:GetChainAttackDataSkillID() == chainSkillID then
+      chainStageIndex = attdata:GetChainSkillStageIndex()
+      return chainStageIndex
+    end
+  end
+  return chainStageIndex
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetChainRateList = function(self, skillID)
-  -- function num : 0_35
-  local chainRate = (self._chainRateList)[skillID]
-  if not chainRate then
-    chainRate = self:GetCurrentChainDamageRate()
-  end
+function SkillPetAttackDataComponent:GetChainRateList(skillID)
+  local chainRate = self._chainRateList[skillID]
+  chainRate = chainRate or self:GetCurrentChainDamageRate()
   return chainRate
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.SetChainRateList = function(self, skillID, chainRate)
-  -- function num : 0_36
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._chainRateList)[skillID] = chainRate
+function SkillPetAttackDataComponent:SetChainRateList(skillID, chainRate)
+  self._chainRateList[skillID] = chainRate
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetChainSuperGridNumList = function(self, skillID)
-  -- function num : 0_37
-  local chainSuperGridNum = (self._chainSuperGridNumList)[skillID]
-  if not chainSuperGridNum then
-    chainSuperGridNum = self:GetCurrentSuperGridNum()
-  end
+function SkillPetAttackDataComponent:GetChainSuperGridNumList(skillID)
+  local chainSuperGridNum = self._chainSuperGridNumList[skillID]
+  chainSuperGridNum = chainSuperGridNum or self:GetCurrentSuperGridNum()
   return chainSuperGridNum
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.SetChainSuperGridNumList = function(self, skillID, superGridNum)
-  -- function num : 0_38
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._chainSuperGridNumList)[skillID] = superGridNum
+function SkillPetAttackDataComponent:SetChainSuperGridNumList(skillID, superGridNum)
+  self._chainSuperGridNumList[skillID] = superGridNum
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.GetChainPoorGridNumList = function(self, skillID)
-  -- function num : 0_39
-  local chainPoorGridNum = (self._chainPoorGridNumList)[skillID]
-  if not chainPoorGridNum then
-    chainPoorGridNum = self:GetCurrentPoorGridNum()
-  end
+function SkillPetAttackDataComponent:GetChainPoorGridNumList(skillID)
+  local chainPoorGridNum = self._chainPoorGridNumList[skillID]
+  chainPoorGridNum = chainPoorGridNum or self:GetCurrentPoorGridNum()
   return chainPoorGridNum
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPetAttackDataComponent.SetChainPoorGridNumList = function(self, skillID, poorGridNum)
-  -- function num : 0_40
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._chainPoorGridNumList)[skillID] = poorGridNum
+function SkillPetAttackDataComponent:SetChainPoorGridNumList(skillID, poorGridNum)
+  self._chainPoorGridNumList[skillID] = poorGridNum
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SkillPetAttackData = function(self)
-  -- function num : 0_41 , upvalues : _ENV
+function Entity:SkillPetAttackData()
   if EDITOR and CHECK_RENDER_ACCESS_LOGIC then
-    local debugInfo = (debug.getinfo)(2, "S")
+    local debugInfo = debug.getinfo(2, "S")
     local filePath = debugInfo.short_src
-    local renderIndex = (string.find)(filePath, "_r.lua")
+    local renderIndex = string.find(filePath, "_r.lua")
     if renderIndex ~= nil then
-      (Log.exception)("render file :", filePath, " call SkillPetAttackData() ", (Log.traceback)())
+      Log.exception("render file :", filePath, " call SkillPetAttackData() ", Log.traceback())
       return nil
     end
   end
-  do
-    return self:GetComponent((self.WEComponentsEnum).SkillPetAttackData)
-  end
+  return self:GetComponent(self.WEComponentsEnum.SkillPetAttackData)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasSkillPetAttackData = function(self)
-  -- function num : 0_42
-  return self:HasComponent((self.WEComponentsEnum).SkillPetAttackData)
+function Entity:HasSkillPetAttackData()
+  return self:HasComponent(self.WEComponentsEnum.SkillPetAttackData)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddSkillPetAttackData = function(self)
-  -- function num : 0_43 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).SkillPetAttackData
+function Entity:AddSkillPetAttackData()
+  local index = self.WEComponentsEnum.SkillPetAttackData
   local component = SkillPetAttackDataComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveSkillPetAttackData = function(self)
-  -- function num : 0_44
+function Entity:RemoveSkillPetAttackData()
   if self:HasSkillPetAttackData() then
-    self:RemoveComponent((self.WEComponentsEnum).SkillPetAttackData)
+    self:RemoveComponent(self.WEComponentsEnum.SkillPetAttackData)
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/input/link_grid_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LinkGridSystem_Render", UniqueReactiveSystem)
 LinkGridSystem_Render = LinkGridSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LinkGridSystem_Render.IsInterested = function(self, index, previousComponent, component)
-  -- function num : 0_0 , upvalues : _ENV
+function LinkGridSystem_Render:IsInterested(index, previousComponent, component)
   if component == nil then
     return false
   end
@@ -24,10 +17,7 @@ LinkGridSystem_Render.IsInterested = function(self, index, previousComponent, co
   return true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkGridSystem_Render.ExecuteWorld = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
+function LinkGridSystem_Render:ExecuteWorld(world)
   local gridTouchComponent = world:GridTouch()
   local inputComponent = world:Input()
   local gridTouchState = GridTouchStateID.Invalid
@@ -36,45 +26,33 @@ LinkGridSystem_Render.ExecuteWorld = function(self, world)
     gridTouchState = self:_CalcMultiDragPos(inputComponent, boardServiceRender, gridTouchComponent)
     inputComponent:SetTouchEnd(false)
     gridTouchComponent:SetGridTouchStateID(gridTouchState)
-    world:SetUniqueComponent((world.BW_UniqueComponentsEnum).GridTouch, gridTouchComponent)
-  else
-    if inputComponent:TouchHasBegin() then
-      gridTouchState = self:_CalcDragBeginPos(inputComponent, boardServiceRender, gridTouchComponent)
-      local lastGridTouchID = gridTouchComponent:GetGridTouchStateID()
-      if lastGridTouchID ~= GridTouchStateID.PLLBeginDrag then
-        inputComponent:SetTouchEnd(false)
-        gridTouchComponent:SetGridTouchStateID(gridTouchState)
-        world:SetUniqueComponent((world.BW_UniqueComponentsEnum).GridTouch, gridTouchComponent)
-      end
-    else
-      do
-        if inputComponent:TouchEnd() then
-          gridTouchState = self:_CalcDragEndPos(inputComponent, boardServiceRender, gridTouchComponent)
-          inputComponent:SetTouchEnd(false)
-          gridTouchComponent:SetGridTouchStateID(gridTouchState)
-          world:SetUniqueComponent((world.BW_UniqueComponentsEnum).GridTouch, gridTouchComponent)
-        end
-      end
+    world:SetUniqueComponent(world.BW_UniqueComponentsEnum.GridTouch, gridTouchComponent)
+  elseif inputComponent:TouchHasBegin() then
+    gridTouchState = self:_CalcDragBeginPos(inputComponent, boardServiceRender, gridTouchComponent)
+    local lastGridTouchID = gridTouchComponent:GetGridTouchStateID()
+    if lastGridTouchID ~= GridTouchStateID.PLLBeginDrag then
+      inputComponent:SetTouchEnd(false)
+      gridTouchComponent:SetGridTouchStateID(gridTouchState)
+      world:SetUniqueComponent(world.BW_UniqueComponentsEnum.GridTouch, gridTouchComponent)
     end
+  elseif inputComponent:TouchEnd() then
+    gridTouchState = self:_CalcDragEndPos(inputComponent, boardServiceRender, gridTouchComponent)
+    inputComponent:SetTouchEnd(false)
+    gridTouchComponent:SetGridTouchStateID(gridTouchState)
+    world:SetUniqueComponent(world.BW_UniqueComponentsEnum.GridTouch, gridTouchComponent)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkGridSystem_Render.Filter = function(self, world)
-  -- function num : 0_2
+function LinkGridSystem_Render:Filter(world)
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkGridSystem_Render._CalcMultiDragPos = function(self, inputComponent, boardServiceRender, gridTouchComponent)
-  -- function num : 0_3 , upvalues : _ENV
+function LinkGridSystem_Render:_CalcMultiDragPos(inputComponent, boardServiceRender, gridTouchComponent)
   local lastTouchGridPosBefore = gridTouchComponent:GetLastTouchGridPos()
   gridTouchComponent:ClearGridMove()
-  local timeService = (self._world):GetService("Time")
+  local timeService = self._world:GetService("Time")
   local touchMovePosArray = inputComponent:GetTouchMovePositionArray()
-  for _,curTouchPos in ipairs(touchMovePosArray) do
+  for _, curTouchPos in ipairs(touchMovePosArray) do
     local gridPos = boardServiceRender:BoardRenderPos2FloatGridPos(curTouchPos)
     local offset = boardServiceRender:BoardGridPosOffset(curTouchPos)
     gridTouchComponent:AddGridMovePosition(gridPos)
@@ -88,10 +66,7 @@ LinkGridSystem_Render._CalcMultiDragPos = function(self, inputComponent, boardSe
   return GridTouchStateID.PLLDrag
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkGridSystem_Render._CalcDragBeginPos = function(self, inputComponent, boardServiceRender, gridTouchComponent)
-  -- function num : 0_4 , upvalues : _ENV
+function LinkGridSystem_Render:_CalcDragBeginPos(inputComponent, boardServiceRender, gridTouchComponent)
   local beginPos = inputComponent:GetTouchBeginPosition()
   local gridPos = boardServiceRender:BoardRenderPos2FloatGridPos(beginPos)
   gridTouchComponent:SetGridTouchBeginPosition(gridPos)
@@ -100,11 +75,6 @@ LinkGridSystem_Render._CalcDragBeginPos = function(self, inputComponent, boardSe
   return GridTouchStateID.PLLBeginDrag
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkGridSystem_Render._CalcDragEndPos = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function LinkGridSystem_Render:_CalcDragEndPos()
   return GridTouchStateID.PLLEndDrag
 end
-
-

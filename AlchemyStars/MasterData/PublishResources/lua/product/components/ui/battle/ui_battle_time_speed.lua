@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_time_speed.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleTimeSpeed", UICustomWidget)
 UIBattleTimeSpeed = UIBattleTimeSpeed
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleTimeSpeed.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._roleModule = (GameGlobal.GetModule)(RoleModule)
-  local pstId = (self._roleModule):GetPstId()
+function UIBattleTimeSpeed:Constructor()
+  self._roleModule = GameGlobal.GetModule(RoleModule)
+  local pstId = self._roleModule:GetPstId()
   local match = self:GetModule(MatchModule)
   local enterData = match:GetMatchEnterData()
   self._isLevelPass = enterData:LevelIsPass()
@@ -25,17 +18,18 @@ UIBattleTimeSpeed.Constructor = function(self)
       self:SavePlayerTimeSpeed()
     end
   end
-  self._btImgName = {"thread_junei_btn1", "thread_junei_btn2", "thread_junei_4xbtn"}
+  self._btImgName = {
+    "thread_junei_btn1",
+    "thread_junei_btn2",
+    "thread_junei_4xbtn"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTimeSpeed.GetPlayerPrefsIndex = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local ret = nil
+function UIBattleTimeSpeed:GetPlayerPrefsIndex()
+  local ret
   if not self:IsSerialAutoFight() then
-    ret = ((UnityEngine.PlayerPrefs).GetInt)(self._playerPrefsKey, 1)
-    if ret == (table.count)(BattleConst.TimeSpeedList) and not self:IsSpeedExBtnEnable() then
+    ret = UnityEngine.PlayerPrefs.GetInt(self._playerPrefsKey, 1)
+    if ret == table.count(BattleConst.TimeSpeedList) and not self:IsSpeedExBtnEnable() then
       ret = ret - 1
     end
   else
@@ -44,77 +38,45 @@ UIBattleTimeSpeed.GetPlayerPrefsIndex = function(self)
   return ret
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTimeSpeed.IsSerialAutoFight = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBattleTimeSpeed:IsSerialAutoFight()
   local mdSerialFight = self:GetModule(SerialAutoFightModule)
   return mdSerialFight:IsRunning()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTimeSpeed.GetSerialAutoFightBattleTimeSpeed = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  return (table.count)(BattleConst.TimeSpeedList)
+function UIBattleTimeSpeed:GetSerialAutoFightBattleTimeSpeed()
+  return table.count(BattleConst.TimeSpeedList)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTimeSpeed.OnShow = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIBattleTimeSpeed:OnShow()
   self.enableFakeInput = true
   self._img = self:GetUIComponent("Image", "img")
   self._atlas = self:GetAsset("UIBattle.spriteatlas", LoadType.SpriteAtlas)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
   if not self:IsSpeedBthEnable() then
-    (self._img).color = Color.gray
-    return 
+    self._img.color = Color.gray
+    return
   end
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._img).color = Color.white
+  self._img.color = Color.white
   self:AttachEvent(GameEventType.BattleTimeSpeed, self.ToggleTimeScale)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTimeSpeed.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (HelperProxy:GetInstance()):SetGameTimeScale(1)
+function UIBattleTimeSpeed:OnHide()
+  HelperProxy:GetInstance():SetGameTimeScale(1)
   self:DetachEvent(GameEventType.BattleTimeSpeed, self.ToggleTimeScale)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTimeSpeed.FlushTimeScale = function(self, ignoreUI)
-  -- function num : 0_6 , upvalues : _ENV
-  local minScale = (BattleConst.TimeSpeedList)[1]
-  local timeScale = (BattleConst.TimeSpeedList)[self._curTimeSpeedIdx]
-  ;
-  (HelperProxy:GetInstance()):SetGameTimeScale(timeScale)
-  do
-    if not ignoreUI then
-      local imgName = (self._btImgName)[self._curTimeSpeedIdx]
-      if not imgName then
-        imgName = (self._btImgName)[1]
-      end
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._img).sprite = (self._atlas):GetSprite(imgName)
-    end
-    ;
-    (AudioHelperController.SetInnerGameSoundPlaySpeed)(timeScale)
+function UIBattleTimeSpeed:FlushTimeScale(ignoreUI)
+  local minScale = BattleConst.TimeSpeedList[1]
+  local timeScale = BattleConst.TimeSpeedList[self._curTimeSpeedIdx]
+  HelperProxy:GetInstance():SetGameTimeScale(timeScale)
+  if not ignoreUI then
+    local imgName = self._btImgName[self._curTimeSpeedIdx]
+    imgName = imgName or self._btImgName[1]
+    self._img.sprite = self._atlas:GetSprite(imgName)
   end
+  AudioHelperController.SetInnerGameSoundPlaySpeed(timeScale)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTimeSpeed.ToggleTimeScale = function(self, isReset, ignoreUI)
-  -- function num : 0_7
+function UIBattleTimeSpeed:ToggleTimeScale(isReset, ignoreUI)
   if isReset then
     self._curTimeSpeedIdx = self:GetPlayerPrefsIndex()
   else
@@ -123,70 +85,56 @@ UIBattleTimeSpeed.ToggleTimeScale = function(self, isReset, ignoreUI)
   self:FlushTimeScale(ignoreUI)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTimeSpeed.imgOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIBattleTimeSpeed", input = "imgOnClick", 
-args = {}
-})
+function UIBattleTimeSpeed:imgOnClick()
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIBattleTimeSpeed",
+    input = "imgOnClick",
+    args = {}
+  })
   if not self:IsSpeedBthEnable() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_battle_speed_mission_error"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_battle_speed_mission_error"))
+    return
   end
-  local maxSpeedIndex = (table.count)(BattleConst.TimeSpeedList)
+  local maxSpeedIndex = table.count(BattleConst.TimeSpeedList)
   if not self:IsSpeedExBtnEnable() then
     maxSpeedIndex = BattleConst.Speed2Index
   end
-  if self._curTimeSpeedIdx < maxSpeedIndex then
+  if maxSpeedIndex > self._curTimeSpeedIdx then
     self._curTimeSpeedIdx = self._curTimeSpeedIdx + 1
   else
     self._curTimeSpeedIdx = 1
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DoubleSpeed, self._curTimeSpeedIdx)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.DoubleSpeed, self._curTimeSpeedIdx)
   self:SavePlayerTimeSpeed()
   self:FlushTimeScale()
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("FightClick", {"PlaySpeed", self._curTimeSpeedIdx}, false, true)
+  GameGlobal.UAReportForceGuideEvent("FightClick", {
+    "PlaySpeed",
+    self._curTimeSpeedIdx
+  }, false, true)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTimeSpeed.SavePlayerTimeSpeed = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)(self._playerPrefsKey, self._curTimeSpeedIdx)
+function UIBattleTimeSpeed:SavePlayerTimeSpeed()
+  UnityEngine.PlayerPrefs.SetInt(self._playerPrefsKey, self._curTimeSpeedIdx)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTimeSpeed.ForceDefaultSpeed = function(self)
-  -- function num : 0_10
+function UIBattleTimeSpeed:ForceDefaultSpeed()
   self._curTimeSpeedIdx = 1
   self:SavePlayerTimeSpeed()
   self:FlushTimeScale()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTimeSpeed.IsSpeedExBtnEnable = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIBattleTimeSpeed:IsSpeedExBtnEnable()
   if self._autoFightEnable == nil then
-    local match = (GameGlobal.GetUIModule)(MatchModule)
+    local match = GameGlobal.GetUIModule(MatchModule)
     local data = match:CheckAutoEnable()
     self._autoFightEnable = data.bEnable
     self._enableExSpeed = match:CheckExSpeedEnable()
   end
-  do
-    return self._enableExSpeed
-  end
+  return self._enableExSpeed
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTimeSpeed.IsSpeedBthEnable = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local cfg = ((Cfg.cfg_global).ui_battle_time_speed_mission).TableValue
+function UIBattleTimeSpeed:IsSpeedBthEnable()
+  local cfg = Cfg.cfg_global.ui_battle_time_speed_mission.TableValue
   if not cfg then
     return false
   end
@@ -204,7 +152,7 @@ UIBattleTimeSpeed.IsSpeedBthEnable = function(self)
     return true
   end
   local mission = self:GetModule(MissionModule)
-  for _,missionID in ipairs(missions) do
+  for _, missionID in ipairs(missions) do
     if not mission:IsPassMissionID(missionID) then
       return false
     end
@@ -212,9 +160,7 @@ UIBattleTimeSpeed.IsSpeedBthEnable = function(self)
   if self._isLevelPass then
     return true
   end
-  local curStageId = (enterData:GetMissionCreateInfo()).mission_id
-  local inDisableList = (table.icontains)(missions, curStageId)
+  local curStageId = enterData:GetMissionCreateInfo().mission_id
+  local inDisableList = table.icontains(missions, curStageId)
   return not inDisableList
 end
-
-

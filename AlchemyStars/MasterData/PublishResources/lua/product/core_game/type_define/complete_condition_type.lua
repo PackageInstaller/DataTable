@@ -1,8 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/complete_condition_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-CompleteConditionType = {None = 0, AllMonsterDead = 1, CollectItems = 2, WaveEnd = 3, RuneDisappear = 4, AllBossNotSurvival = 5, MonsterEscape = 6, RoundCountLimit = 7, ArriveAtPos = 8, MonsterDead = 9, AllRefreshMonsterDead = 10, AllRefreshMonsterDeadOrRoundCountLimit = 11, CheckFlagBuffCount = 12, AssignWaveAndRandomNextWave = 13, KillAnyMonsterCount = 14, UpHoldAndKillAllInternalRefreshMonster = 15, AllMonsterNotSurvival = 16, RemotePlayerDead = 17, AllConfigMonsterDead = 18, AllConfigMonsterHPLock = 19, CombinedCompleteCondition = 20, TrapTypeDeadAndAllMonsterDead = 21, RoundCountLimitAndCheckMonsterEscape = 22, ChessEscape = 23, SelectChessEscape = 24, CompareMonsterNumber = 25, OnlySpecifiedMonsterSurvival = 26, AllMonsterNotSurvivaldifferent = 27, ComparePopStarNumber = 28, KillSpecificMonsterCount = 29, KillMoreThanPetMonster = 30, AllMonsterDeadOrCollectItems = 31, Max = 99}
+CompleteConditionType = {
+  None = 0,
+  AllMonsterDead = 1,
+  CollectItems = 2,
+  WaveEnd = 3,
+  RuneDisappear = 4,
+  AllBossNotSurvival = 5,
+  MonsterEscape = 6,
+  RoundCountLimit = 7,
+  ArriveAtPos = 8,
+  MonsterDead = 9,
+  AllRefreshMonsterDead = 10,
+  AllRefreshMonsterDeadOrRoundCountLimit = 11,
+  CheckFlagBuffCount = 12,
+  AssignWaveAndRandomNextWave = 13,
+  KillAnyMonsterCount = 14,
+  UpHoldAndKillAllInternalRefreshMonster = 15,
+  AllMonsterNotSurvival = 16,
+  RemotePlayerDead = 17,
+  AllConfigMonsterDead = 18,
+  AllConfigMonsterHPLock = 19,
+  CombinedCompleteCondition = 20,
+  TrapTypeDeadAndAllMonsterDead = 21,
+  RoundCountLimitAndCheckMonsterEscape = 22,
+  ChessEscape = 23,
+  SelectChessEscape = 24,
+  CompareMonsterNumber = 25,
+  OnlySpecifiedMonsterSurvival = 26,
+  AllMonsterNotSurvivaldifferent = 27,
+  ComparePopStarNumber = 28,
+  KillSpecificMonsterCount = 29,
+  KillMoreThanPetMonster = 30,
+  AllMonsterDeadOrCollectItems = 31,
+  Max = 99
+}
 _enum("CompleteConditionType", CompleteConditionType)
-

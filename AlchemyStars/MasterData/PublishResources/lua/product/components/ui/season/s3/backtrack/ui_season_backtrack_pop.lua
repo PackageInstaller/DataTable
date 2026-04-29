@@ -1,65 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/backtrack/ui_season_backtrack_pop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBackTrackPop", UIController)
 UISeasonBackTrackPop = UISeasonBackTrackPop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBackTrackPop.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonBackTrackPop:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrackPop.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISeasonBackTrackPop:OnShow(uiParams)
   self._id = uiParams[1]
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrackPop.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonBackTrackPop:InitWidget()
   self._desc = self:GetUIComponent("UILocalizationText", "Desc")
-  local cfg = (Cfg.cfg_season_backtrack)[self._id]
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
+  local cfg = Cfg.cfg_season_backtrack[self._id]
   if cfg then
-    (self._desc).text = (StringTable.Get)("str_season_backtrack_pop_desc", (StringTable.Get)(cfg.Name))
+    self._desc.text = StringTable.Get("str_season_backtrack_pop_desc", StringTable.Get(cfg.Name))
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrackPop.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonBackTrackPop:ConfirmBtnOnClick(go)
   local seasonModule = self:GetModule(SeasonModule)
   if self._id == seasonModule:GetCurSeasonID() then
-    (seasonModule.uiModule):BackToCurSeason()
+    seasonModule.uiModule:BackToCurSeason()
   else
-    ;
-    (seasonModule.uiModule):SeasonBackTrack(self._id)
+    seasonModule.uiModule:SeasonBackTrack(self._id)
   end
-  ;
-  (Log.info)("UISeasonBackTrackPop backtrack to ", self._id)
+  Log.info("UISeasonBackTrackPop backtrack to ", self._id)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrackPop.CancelBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UISeasonBackTrackPop:CancelBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrackPop.BackgroundOnClick = function(self, go)
-  -- function num : 0_5
+function UISeasonBackTrackPop:BackgroundOnClick(go)
   self:CloseDialog()
 end
-
-

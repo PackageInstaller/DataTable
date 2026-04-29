@@ -1,89 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/config/luckland_pet_config_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LLPetConfigData", Object)
 LLPetConfigData = LLPetConfigData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LLPetConfigData.Constructor = function(self, ID)
-  -- function num : 0_0 , upvalues : _ENV
-  self._cfg = (Cfg.cfg_luckland_client_card)[ID]
+function LLPetConfigData:Constructor(ID)
+  self._cfg = Cfg.cfg_luckland_client_card[ID]
   if not self._cfg then
-    (Log.fatal)("LLPetConfigData not find PetID:", ID)
+    Log.fatal("LLPetConfigData not find PetID:", ID)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LLPetConfigData.GetPetTemplateID = function(self)
-  -- function num : 0_1
-  return (self._cfg).ID
+function LLPetConfigData:GetPetTemplateID()
+  return self._cfg.ID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLPetConfigData.GetPetLevel = function(self)
-  -- function num : 0_2
-  return (self._cfg).CardStar
+function LLPetConfigData:GetPetLevel()
+  return self._cfg.CardStar
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLPetConfigData.GetPetType = function(self)
-  -- function num : 0_3
-  return (self._cfg).CardAttribute
+function LLPetConfigData:GetPetType()
+  return self._cfg.CardAttribute
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LLPetConfigData.GetPetCamp = function(self)
-  -- function num : 0_4
-  return (self._cfg).CardCamp
+function LLPetConfigData:GetPetCamp()
+  return self._cfg.CardCamp
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LLPetConfigData.GetPetResType = function(self)
-  -- function num : 0_5
-  return ((self._cfg).CardGameRes)[1]
+function LLPetConfigData:GetPetResType()
+  return self._cfg.CardGameRes[1]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LLPetConfigData.GetPetResBase = function(self)
-  -- function num : 0_6
-  return ((self._cfg).CardGameRes)[2]
+function LLPetConfigData:GetPetResBase()
+  return self._cfg.CardGameRes[2]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LLPetConfigData.GetBuffIDList = function(self)
-  -- function num : 0_7
-  return (self._cfg).CardBuff
+function LLPetConfigData:GetBuffIDList()
+  return self._cfg.CardBuff
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LLPetConfigData.GetCountDown = function(self)
-  -- function num : 0_8
-  return (self._cfg).CountDown
+function LLPetConfigData:GetCountDown()
+  return self._cfg.CountDown
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LLPetConfigData.IsPetUnique = function(self)
-  -- function num : 0_9
-  do return (self._cfg).IsUnique == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function LLPetConfigData:IsPetUnique()
+  return self._cfg.IsUnique == 1
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LLPetConfigData.GetPetName = function(self)
-  -- function num : 0_10
-  return (self._cfg).CardName
+function LLPetConfigData:GetPetName()
+  return self._cfg.CardName
 end
-
-

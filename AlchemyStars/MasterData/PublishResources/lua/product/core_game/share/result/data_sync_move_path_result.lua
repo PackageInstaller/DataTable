@@ -1,44 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_sync_move_path_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataSyncMovePathResult", Object)
 DataSyncMovePathResult = DataSyncMovePathResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSyncMovePathResult.Constructor = function(self, entityID, movePath)
-  -- function num : 0_0
+function DataSyncMovePathResult:Constructor(entityID, movePath)
   self._entityID = entityID
   self._syncMovePathResult = movePath
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSyncMovePathResult.SetEntityID = function(self, entityID)
-  -- function num : 0_1
+function DataSyncMovePathResult:SetEntityID(entityID)
   self._entityID = entityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSyncMovePathResult.GetEntityID = function(self)
-  -- function num : 0_2
+function DataSyncMovePathResult:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSyncMovePathResult.SetSyncMovePathResult = function(self, res)
-  -- function num : 0_3
+function DataSyncMovePathResult:SetSyncMovePathResult(res)
   self._syncMovePathResult = res
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSyncMovePathResult.GetSyncMovePathResult = function(self)
-  -- function num : 0_4
+function DataSyncMovePathResult:GetSyncMovePathResult()
   return self._syncMovePathResult
 end
-
-

@@ -1,23 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_select_piece_by_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_SelectPieceByType", SkillScopeCalculator_Base)
 SkillScopeCalculator_SelectPieceByType = SkillScopeCalculator_SelectPieceByType
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_SelectPieceByType.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
-  local world = (self._gridFilter)._world
+function SkillScopeCalculator_SelectPieceByType:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
+  local world = self._gridFilter._world
   if not world then
-    (Log.exception)(self._className, "这个范围只能在局内展示")
-    return 
+    Log.exception(self._className, "这个范围只能在局内展示")
+    return
   end
   local boardServiceLogic = world:GetService("BoardLogic")
   local pieceRange = boardServiceLogic:GetGridPosByPieceType(scopeParam)
   return SkillScopeResult:New(SkillScopeType.SelectPieceByType, centerPos, pieceRange, pieceRange)
 end
-
-

@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/oval/oval_shape.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("OvalShape", Object)
 OvalShape = OvalShape
-local EPSINON = 1e-05
+local EPSINON = 1.0E-5
 local abs = math.abs
 local sqrt = math.sqrt
-local equal = function(a, b)
-  -- function num : 0_0 , upvalues : abs, EPSINON
-  do return abs(a - b) < EPSINON end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+
+local function equal(a, b)
+  return abs(a - b) < EPSINON
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-OvalShape.Constructor = function(self, a, b)
-  -- function num : 0_1 , upvalues : _ENV, sqrt
+function OvalShape:Constructor(a, b)
   if a < b or a < 0 or b < 0 then
-    (Log.exception)("椭圆参数错误:", a, b)
+    Log.exception("椭圆参数错误:", a, b)
   end
-  ;
-  (Log.info)("初始化椭圆:", a, b)
+  Log.info("初始化椭圆:", a, b)
   self._a = a
   self._b = b
   self._aa = a * a
@@ -33,28 +23,19 @@ OvalShape.Constructor = function(self, a, b)
   self._focus2 = Vector2(focusX, 0)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
-OvalShape.IsInside = function(self, point)
-  -- function num : 0_2 , upvalues : _ENV
-  if point.x <= -self._a or self._a <= point.x then
+function OvalShape:IsInside(point)
+  if point.x <= -self._a or point.x >= self._a then
     return false
-  else
-    if point.y <= -self._b or self._b <= point.y then
-      return false
-    end
+  elseif point.y <= -self._b or point.y >= self._b then
+    return false
   end
-  local distance = (Vector2.Distance)(point, self._focus1) + (Vector2.Distance)(point, self._focus2)
-  do return distance < self._longAxis end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local distance = Vector2.Distance(point, self._focus1) + Vector2.Distance(point, self._focus2)
+  return distance < self._longAxis
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R4 in 'UnsetPending'
-
-OvalShape.CrossPoint = function(self, target)
-  -- function num : 0_3 , upvalues : equal, _ENV, sqrt
+function OvalShape:CrossPoint(target)
   if equal(target.x, 0) then
-    if target.y > 0 then
+    if 0 < target.y then
       return Vector2(0, self._b)
     else
       return Vector2(0, -self._b)
@@ -70,5 +51,3 @@ OvalShape.CrossPoint = function(self, target)
     return Vector2(x, y)
   end
 end
-
-

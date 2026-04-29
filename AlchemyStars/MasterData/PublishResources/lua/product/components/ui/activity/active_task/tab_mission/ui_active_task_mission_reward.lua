@@ -1,38 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/active_task/tab_mission/ui_active_task_mission_reward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActiveTaskMissionReward", UICustomWidget)
 UIActiveTaskMissionReward = UIActiveTaskMissionReward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActiveTaskMissionReward.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mRole = (GameGlobal.GetModule)(RoleModule)
+function UIActiveTaskMissionReward:Constructor()
+  self.mRole = GameGlobal.GetModule(RoleModule)
   self.colorTxtCount = Color.white
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionReward.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActiveTaskMissionReward:OnShow()
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
-  self.colorTxtCount = (self.txtCount).color
+  self.colorTxtCount = self.txtCount.color
   self.atlas = self:GetAsset("UIHomelandBuildInfo.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionReward.OnHide = function(self)
-  -- function num : 0_2
+function UIActiveTaskMissionReward:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionReward.Flush = function(self, roleAsset, funcClick)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActiveTaskMissionReward:Flush(roleAsset, funcClick)
   self.roleAsset = roleAsset
   local icon = ""
   local count = 0
@@ -40,73 +24,44 @@ UIActiveTaskMissionReward.Flush = function(self, roleAsset, funcClick)
     icon = ""
     count = roleAsset.count
   else
-    local cfg = (Cfg.cfg_item)[roleAsset.assetid]
+    local cfg = Cfg.cfg_item[roleAsset.assetid]
     icon = cfg.Icon
     count = roleAsset.count
   end
-  do
-    ;
-    (self.imgIcon):LoadImage(icon)
-    ;
-    (self.txtCount):SetText(self:FormatCount(count))
-    self.funcClick = funcClick
-  end
+  self.imgIcon:LoadImage(icon)
+  self.txtCount:SetText(self:FormatCount(count))
+  self.funcClick = funcClick
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionReward.FormatCount = function(self, count)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActiveTaskMissionReward:FormatCount(count)
   if not count or count == "" then
     return ""
   end
-  if count > 999999 then
-    local c = (math.floor)(count * 0.0001)
-    return (StringTable.Get)("str_homeland_backpack_n_w", c)
-  else
-    do
-      do
-        if count > 99999 then
-          local c = (math.floor)(count * 0.001) * 0.1
-          return (StringTable.Get)("str_homeland_backpack_n_w", c)
-        end
-        return tostring(count)
-      end
-    end
+  if 999999 < count then
+    local c = math.floor(count * 1.0E-4)
+    return StringTable.Get("str_homeland_backpack_n_w", c)
+  elseif 99999 < count then
+    local c = math.floor(count * 0.001) * 0.1
+    return StringTable.Get("str_homeland_backpack_n_w", c)
   end
+  return tostring(count)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionReward.TxtCountRedIfNotEnough = function(self, cost)
-  -- function num : 0_5 , upvalues : _ENV
-  local c = (self.mRole):GetAssetCount((self.roleAsset).assetid) or 0
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
+function UIActiveTaskMissionReward:TxtCountRedIfNotEnough(cost)
+  local c = self.mRole:GetAssetCount(self.roleAsset.assetid) or 0
   if cost <= c then
-    (self.txtCount).color = self.colorTxtCount
+    self.txtCount.color = self.colorTxtCount
   else
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.txtCount).color = Color.red
+    self.txtCount.color = Color.red
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionReward.BtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIActiveTaskMissionReward:BtnOnClick(go)
   if self.funcClick then
-    (self.funcClick)((self.roleAsset).assetid, (go.transform).position)
+    self.funcClick(self.roleAsset.assetid, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionReward.ClearTextCount = function(self)
-  -- function num : 0_7
-  (self.txtCount):SetText("")
+function UIActiveTaskMissionReward:ClearTextCount()
+  self.txtCount:SetText("")
 end
-
-

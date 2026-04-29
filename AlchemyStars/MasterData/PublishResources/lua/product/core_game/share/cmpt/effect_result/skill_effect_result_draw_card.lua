@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_draw_card.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultDrawCard", SkillEffectResultBase)
 SkillEffectResultDrawCard = SkillEffectResultDrawCard
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultDrawCard.Constructor = function(self, cardType)
-  -- function num : 0_0
+function SkillEffectResultDrawCard:Constructor(cardType)
   self._cardType = cardType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultDrawCard.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultDrawCard:GetEffectType()
   return SkillEffectType.DrawCard
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultDrawCard.GetCardType = function(self)
-  -- function num : 0_2
+function SkillEffectResultDrawCard:GetCardType()
   return self._cardType
 end
-
-

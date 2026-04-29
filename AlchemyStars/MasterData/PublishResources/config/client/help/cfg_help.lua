@@ -1,398 +1,1025 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/help/cfg_help.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, TitleBig = 2, TitleSmall = 3, Intr = 4, Icon = 5, Enum = 6}
-local common = {"str_help_maze_explain", "str_help_uidrawcardcontroller_explain", "str_help_sailing_explain", 
-{"str_help_dispatch_title1", "str_help_dispatch_title2"}
-, 
-{"str_help_dispatch_details1", "str_help_dispatch_details2"}
-, 
-{"help_shuoming_paiqian1", "help_shuoming_paiqian2"}
-, 
-{"str_help_eve_title1", "str_help_eve_title2"}
-, 
-{"str_help_eve_details1", "str_help_eve_details2"}
-, 
-{"help_shuoming_yifu1", "help_shuoming_yifu2"}
-, 
-{"str_help_battlepass_tittle1", "str_help_battlepass_tittle2", "str_help_battlepass_tittle3"}
-, 
-{"str_help_battlepass_details1", "str_help_battlepass_details2", "str_help_battlepass_details3"}
-, 
-{"help_shuoming_tbsjb4", "help_shuoming_tbsjb5", "help_shuoming_tbsjb6"}
-, 
-{"help_shuoming_worldbosshelp1", "help_shuoming_worldbosshelp2", "help_shuoming_worldbosshelp3", "help_shuoming_worldbosshelp4"}
-, 
-{"help_shuoming_blackunderbellydungeon"}
-, 
-{"str_help_sailing_title3", "str_help_sailing_title4"}
-, 
-{"str_help_sailing_details3", "str_help_sailing_details4"}
-, 
-{"help_sailing_shuoming3", "help_sailing_shuoming4"}
+local key = {
+  ID = 1,
+  TitleBig = 2,
+  TitleSmall = 3,
+  Intr = 4,
+  Icon = 5,
+  Enum = 6
+}
+local common = {
+  "str_help_maze_explain",
+  "str_help_uidrawcardcontroller_explain",
+  "str_help_sailing_explain",
+  {
+    "str_help_dispatch_title1",
+    "str_help_dispatch_title2"
+  },
+  {
+    "str_help_dispatch_details1",
+    "str_help_dispatch_details2"
+  },
+  {
+    "help_shuoming_paiqian1",
+    "help_shuoming_paiqian2"
+  },
+  {
+    "str_help_eve_title1",
+    "str_help_eve_title2"
+  },
+  {
+    "str_help_eve_details1",
+    "str_help_eve_details2"
+  },
+  {
+    "help_shuoming_yifu1",
+    "help_shuoming_yifu2"
+  },
+  {
+    "str_help_battlepass_tittle1",
+    "str_help_battlepass_tittle2",
+    "str_help_battlepass_tittle3"
+  },
+  {
+    "str_help_battlepass_details1",
+    "str_help_battlepass_details2",
+    "str_help_battlepass_details3"
+  },
+  {
+    "help_shuoming_tbsjb4",
+    "help_shuoming_tbsjb5",
+    "help_shuoming_tbsjb6"
+  },
+  {
+    "help_shuoming_worldbosshelp1",
+    "help_shuoming_worldbosshelp2",
+    "help_shuoming_worldbosshelp3",
+    "help_shuoming_worldbosshelp4"
+  },
+  {
+    "help_shuoming_blackunderbellydungeon"
+  },
+  {
+    "str_help_sailing_title3",
+    "str_help_sailing_title4"
+  },
+  {
+    "str_help_sailing_details3",
+    "str_help_sailing_details4"
+  },
+  {
+    "help_sailing_shuoming3",
+    "help_sailing_shuoming4"
+  }
 }
 local config = {
-Maze = {"Maze", common[1], 
-{"str_help_maze_title8", "str_help_maze_title7", "str_help_maze_title6", "str_help_maze_title1", "str_help_maze_title2", "str_help_maze_title3", "str_help_maze_title4", "str_help_maze_title5"}
-, 
-{"str_help_maze_details8", "str_help_maze_details7", "str_help_maze_details6", "str_help_maze_details1", "str_help_maze_details2", "str_help_maze_details3", "str_help_maze_details4", "str_help_maze_details5"}
-, 
-{"help_shuoming_mijing8", "help_shuoming_mijing7", "help_shuoming_mijing6", "help_shuoming_mijing1", "help_shuoming_mijing2", "help_shuoming_mijing3", "help_shuoming_mijing4", "help_shuoming_mijing5"}
-, 1}
-, 
-UISpiritDetailGroupController = {"UISpiritDetailGroupController", "str_help_uispiritdetailgroupcontroller_explain", 
-{"str_help_uispiritdetailgroupcontroller_title1", "str_help_uispiritdetailgroupcontroller_title2", "str_help_uispiritdetailgroupcontroller_title3", "str_help_uispiritdetailgroupcontroller_title4", "str_help_uispiritdetailgroupcontroller_title5", "str_help_uispiritdetailgroupcontroller_title6", "str_help_uispiritdetailgroupcontroller_title7"}
-, 
-{"str_help_uispiritdetailgroupcontroller_details1", "str_help_uispiritdetailgroupcontroller_details2", "str_help_uispiritdetailgroupcontroller_details3", "str_help_uispiritdetailgroupcontroller_details4", "str_help_uispiritdetailgroupcontroller_details5", "str_help_uispiritdetailgroupcontroller_details6", "str_help_uispiritdetailgroupcontroller_details7"}
-, 
-{"help_shuoming_xiangqing1", "help_shuoming_xiangqing2", "help_shuoming_xiangqing3", "help_shuoming_xiangqing4", "help_shuoming_xiangqing5", "help_shuoming_xiangqing6", "help_shuoming_xiangqing7"}
-, 2}
-, 
-UIGradeInterfaceController = {"UIGradeInterfaceController", "str_help_uigradeInterfacecontroller_explain", 
-{"str_help_uigradeInterfacecontroller_title1", "str_help_uigradeInterfacecontroller_title2", "str_help_uigradeInterfacecontroller_title3"}
-, 
-{"str_help_uigradeInterfacecontroller_details1", "str_help_uigradeInterfacecontroller_details2", "str_help_uigradeInterfacecontroller_details3"}
-, 
-{"help_shuoming_juexing1", "help_shuoming_juexing2", "help_shuoming_juexing3"}
-, 3}
-, 
-UIBreakController = {"UIBreakController", "str_help_uibreakcontroller_explain", 
-{"str_help_uibreakcontroller_title1", "str_help_uibreakcontroller_title2", "str_help_uibreakcontroller_title3", "str_help_uibreakcontroller_title4", "str_help_uibreakcontroller_title5"}
-, 
-{"str_help_uibreakcontroller_details1", "str_help_uibreakcontroller_details2", "str_help_uibreakcontroller_details3", "str_help_uibreakcontroller_details4", "str_help_uibreakcontroller_details5"}
-, 
-{"help_shuoming_tupo1", "help_shuoming_tupo2", "help_shuoming_tupo3", "help_shuoming_tupo4", "help_shuoming_tupo1"}
-, 4}
-, 
-UIAircraftController = {"UIAircraftController", "str_help_uiaircraftcontorller_explain", 
-{"str_help_uiaircraftcontorller_title1", "str_help_uiaircraftcontorller_title2", "str_help_uiaircraftcontorller_title3", "str_help_uiaircraftcontorller_title4", "str_help_uiaircraftcontorller_title5"}
-, 
-{"str_help_uiaircraftcontorller_details1", "str_help_uiaircraftcontorller_details2", "str_help_uiaircraftcontorller_details3", "str_help_uiaircraftcontorller_details4", "str_help_uiaircraftcontorller_details5"}
-, 
-{"help_shuoming_fengchuan1", "help_shuoming_fengchuan2", "help_shuoming_fengchuan3", "help_shuoming_fengchuan4", "help_shuoming_jiaju1"}
-, 5}
-, 
-UIAircraftCentralRoom = {"UIAircraftCentralRoom", "str_help_uiaircraftcentralroom_explain", 
-{"str_help_uiaircraftcentralroom_title1"}
-, 
-{"str_help_uiaircraftcentralroom_details1"}
-, 
-{"help_shuoming_fengchuan6"}
-, 6}
-, 
-UIAircraftPowerRoom = {"UIAircraftPowerRoom", "str_help_uiaircraftpowerroom_explain", 
-{"str_help_uiaircraftpowerroom_title1"}
-, 
-{"str_help_uiaircraftpowerroom_details1"}
-, 
-{"help_shuoming_fengchuan7"}
-, 7}
-, 
-UIAircraftMazeRoom = {"UIAircraftMazeRoom", "str_help_uiaircraftmazeroom_explain", 
-{"str_help_uiaircraftmazeroom_title1", "str_help_uiaircraftmazeroom_title2"}
-, 
-{"str_help_uiaircraftmazeroom_details1", "str_help_uiaircraftmazeroom_details2"}
-, 
-{"help_shuoming_fengchuan9", "help_shuoming_fengchuan15"}
-, 8}
-, 
-UIAircraftResourceRoom = {"UIAircraftResourceRoom", "str_help_uiaircraftresourceroom_explain", 
-{"str_help_uiaircraftresourceroom_title1", "str_help_uiaircraftresourceroom_title2"}
-, 
-{"str_help_uiaircraftresourceroom_details1", "str_help_uiaircraftresourceroom_details2"}
-, 
-{"help_shuoming_fengchuan10", "help_shuoming_fengchuan11"}
-, 9}
-, 
-UIAircraftPrismRoom = {"UIAircraftPrismRoom", "str_help_uiaircraftprismroom_explain", 
-{"str_help_uiaircraftprismroom_title1"}
-, 
-{"str_help_uiaircraftprismroom_details1"}
-, 
-{"help_shuoming_fengchuan8"}
-, 10}
-, 
-UIAircraftTowerRoom = {"UIAircraftTowerRoom", "str_help_uiaircrafttowerroom_explain", 
-{"str_help_uiaircrafttowerroom_title1"}
-, 
-{"str_help_uiaircrafttowerroom_details1"}
-, 
-{"help_shuoming_fengchuan12"}
-, 11}
-, 
-UIDiscovery = {"UIDiscovery", "str_help_uidiscovery_explain", 
-{"str_help_uidiscovery_title1", "str_help_uidiscovery_title2", "str_help_uidiscovery_title3", "str_help_uidiscovery_title4"}
-, 
-{"str_help_uidiscovery_details1", "str_help_uidiscovery_details2", "str_help_uidiscovery_details3", "str_help_uidiscovery_details4"}
-, 
-{"help_shuoming_diffmission7", "help_shuoming_diffmission6", "help_shuoming_diffmission9", "help_shuoming_diffmission8"}
-, 12}
-, 
-UIDrawCardController = {"UIDrawCardController", common[2], 
-{"str_help_uidrawcardcontroller_title1", "str_help_uidrawcardcontroller_title2", "str_help_uidrawcardcontroller_title5", "str_help_uidrawcardcontroller_title3", "str_help_uidrawcardcontroller_title4"}
-, 
-{"str_help_uidrawcardcontroller_details1", "str_help_uidrawcardcontroller_details2", "str_help_uidrawcardcontroller_details5", "str_help_uidrawcardcontroller_details3", "str_help_uidrawcardcontroller_details4"}
-, 
-{"help_shuoming_chouka3", "help_shuoming_chouka4", "help_shuoming_chouka1", "help_shuoming_chouka1", "help_shuoming_chouka2"}
-, 13}
-, 
-UIAircraftSmeltRoom = {"UIAircraftSmeltRoom", "str_help_uiaircraftsmeltroom_explain", 
-{"str_help_uiaircraftsmeltroom_title1", "str_help_uiaircraftsmeltroom_title2"}
-, 
-{"str_help_uiaircraftsmeltroom_details1", "str_help_uiaircraftsmeltroom_details2"}
-, 
-{"help_shuoming_fengchuan14", "help_shuoming_fengchuan13"}
-, 14}
-, 
-UIHelpPetManageController = {"UIHelpPetManageController", common[1], 
-{"str_help_helppet_title1"}
-, 
-{"str_help_helppet_details1"}
-, 
-{"help_shuoming_zhuzhan1"}
-, 15}
-, 
-UIHelpPetSelectController = {"UIHelpPetSelectController", common[1], 
-{"str_help_helppet_title2", "str_help_helppet_title3"}
-, 
-{"str_help_helppet_details2", "str_help_helppet_details3"}
-, 
-{"help_shuoming_zhuzhan2", "help_shuoming_zhuzhan3"}
-, 16}
-, 
-UIPetEquipController = {"UIPetEquipController", common[1], 
-{"str_help_petequip_title1", "str_help_petequip_title2", "str_help_petequip_title3"}
-, 
-{"str_help_petequip_details1", "str_help_petequip_details2", "str_help_petequip_details3"}
-, 
-{"help_shuoming_lingge1", "help_shuoming_lingge2", "help_shuoming_lingge3"}
-, 17}
-, 
-UIDispatchMapController = {"UIDispatchMapController", common[1], common[4], common[5], common[6], 18}
-, 
-UIDispatchDetailController = {"UIDispatchDetailController", common[1], common[4], common[5], common[6], 19}
-, 
-UISakuraDrawShopController = {"UISakuraDrawShopController", common[2], 
-{"str_help_sakura_title1"}
-, 
-{"str_help_sakura_details1"}
-, 
-{"help_shuoming_choujiang1"}
-, 20}
-, 
-UIShopPetDetailController = {"UIShopPetDetailController", common[1], 
-{"str_help_talepettask_title1", "str_help_talepettask_title2"}
-, 
-{"str_help_talepettask_details1", "str_help_talepettask_details2"}
-, 
-{"help_shuoming_chuanshuo2", "help_shuoming_chuanshuo1"}
-, 21}
-, 
-UITalePetMissionController = {"UITalePetMissionController", common[1], 
-{"str_help_talepettask_title1", "str_help_talepettask_title2", "str_help_talepettask_title3"}
-, 
-{"str_help_talepettask_details1", "str_help_talepettask_details2", "str_help_talepettask_details3"}
-, 
-{"help_shuoming_chuanshuo2", "help_shuoming_chuanshuo1", "help_shuoming_chuanshuo5"}
-, 22}
-, 
-UITrailLevelController = {"UITrailLevelController", common[1], 
-{"str_help_talepetlevel_title1", "str_help_talepetlevel_title2"}
-, 
-{"str_help_talepetlevel_details1", "str_help_talepetlevel_details2"}
-, 
-{"help_shuoming_chuanshuo3", "help_shuoming_chuanshuo4"}
-, 23}
-, 
-UIActivityEveSinsaMainController = {"UIActivityEveSinsaMainController", common[1], common[7], common[8], common[9], 24}
-, 
-UISummerActivityTwoLevelController = {"UISummerActivityTwoLevelController", common[1], 
-{"str_help_summer_activity_two_title1", "str_help_summer_activity_two_title2"}
-, 
-{"str_help_summer_activity_two_details1", "str_help_summer_activity_two_details2"}
-, 
-{"help_shuoming_xhii1", "help_shuoming_xhii2"}
-, 25}
-, 
-UISummerActivityTwoSelectEntryController = {"UISummerActivityTwoSelectEntryController", common[1], 
-{"str_help_summer_activity_two_title3"}
-, 
-{"str_help_summer_activity_two_details3"}
-, 
-{"help_shuoming_xhii3"}
-, 26}
-, 
-UIMiniGameStageController = {"UIMiniGameStageController", common[2], 
-{"str_help_summerminigame_tittle1", "str_help_summerminigame_tittle2", "str_help_summerminigame_tittle3", "str_help_summerminigame_tittle4"}
-, 
-{"str_help_summerminigame_details1", "str_help_summerminigame_details2", "str_help_summerminigame_details3", "str_help_summerminigame_details4"}
-, 
-{"help_shuoming_baobing1", "help_shuoming_baobing2", "help_shuoming_baobing3", "help_shuoming_baobing4"}
-, 27}
-, 
-UISummer1 = {"UISummer1", common[1], common[7], common[8], common[9], 28}
-, 
-UIActivityBattlePassMainController = {"UIActivityBattlePassMainController", common[1], common[10], common[11], common[12], 29}
-, 
-UIActivityNPlusSixBuildingMainController = {"UIActivityNPlusSixBuildingMainController", common[1], common[10], common[11], common[12], 30}
-, 
-UIWorldBossController = {"UIWorldBossController", common[1], 
-{"str_help_world_boss_title1", "str_help_world_boss_title2", "str_help_world_boss_title3", "str_help_world_boss_title4"}
-, 
-{"str_help_world_boss_details1", "str_help_world_boss_details2", "str_help_world_boss_details3", "str_help_world_boss_details4"}
-, common[13], 31}
-, 
-UIAircraftTactic = {"UIAircraftTactic", common[1], 
-{"str_help_shuoming_aircrafttactic_help_title1", "str_help_shuoming_aircrafttactic_help_title2", "str_help_shuoming_aircrafttactic_help_title3", "str_help_shuoming_aircrafttactic_help_title4", "str_help_shuoming_aircrafttactic_help_title5", "str_help_shuoming_aircrafttactic_help_title6"}
-, 
-{"str_help_shuoming_aircrafttactic_help_desc1", "str_help_shuoming_aircrafttactic_help_desc2", "str_help_shuoming_aircrafttactic_help_desc3", "str_help_shuoming_aircrafttactic_help_desc4", "str_help_shuoming_aircrafttactic_help_desc5", "str_help_shuoming_aircrafttactic_help_desc6"}
-, 
-{"help_shuoming_aircrafttactic_help1", "help_shuoming_aircrafttactic_help2", "help_shuoming_aircrafttactic_help3", "help_shuoming_aircrafttactic_help4", "help_shuoming_aircrafttactic_help5", "help_shuoming_aircrafttactic_help6"}
-, 32}
-, 
-UIActivityN8BattleSimulatorController = {"UIActivityN8BattleSimulatorController", common[1], 
-{"str_help_shuoming_n8_help_title1", "str_help_shuoming_n8_help_title2"}
-, 
-{"str_help_shuoming_n8_help_desc1", "str_help_shuoming_n8_help_desc2"}
-, 
-{"help_shuoming_n8_help1", "help_shuoming_n8_help2"}
-, 33}
-, 
-UIHelpBlackUnderbellyDungeon = {"UIHelpBlackUnderbellyDungeon", common[1], 
-{"str_help_shuoming_blackunderbellydungeon_help_title1"}
-, 
-{"str_help_shuoming_blackunderbellydungeon_help_desc1"}
-, common[14], 35}
-, 
-UIFindTreasureDetail = {"UIFindTreasureDetail", common[1], 
-{"str_help_shuoming_tanbao_title1", "str_help_shuoming_tanbao_title2", "str_help_shuoming_tanbao_title3", "str_help_shuoming_tanbao_title4"}
-, 
-{"str_help_shuoming_tanbao_desc1", "str_help_shuoming_tanbao_desc2", "str_help_shuoming_tanbao_desc3", "str_help_shuoming_tanbao_desc4"}
-, 
-{"help_shuoming_tanbao_1", "help_shuoming_tanbao_2", "help_shuoming_tanbao_3", "help_shuoming_tanbao_4"}
-, 36}
-, 
-UIForge = {"UIForge", common[1], 
-{"str_help_shuoming_fengxinta_title"}
-, 
-{"str_help_shuoming_fengxinta_desc"}
-, 
-{"help_hmland_jiayuan2"}
-, 37}
-, 
-UIBuildInfo = {"UIBuildInfo", common[1], 
-{"str_help_shuoming_homelevel_title1", "str_help_shuoming_homelevel_title2", "str_help_shuoming_homelevel_title3", "str_help_shuoming_homelevel_title4", "str_help_shuoming_homelevel_title5", "str_help_shuoming_homelevel_title6", "str_help_shuoming_homelevel_title7"}
-, 
-{"str_help_shuoming_homelevel_desc1", "str_help_shuoming_homelevel_desc2", "str_help_shuoming_homelevel_desc3", "str_help_shuoming_homelevel_desc4", "str_help_shuoming_homelevel_desc5", "str_help_shuoming_homelevel_desc6", "str_help_shuoming_homelevel_desc7"}
-, 
-{"help_hmland_jiayuan1", "help_hmland_jiayuan2", "help_hmland_jiayuan3", "help_hmland_jiayuan4", "help_hmland_jiayuan5", "help_hmland_jiayuan6", "help_hmland_jiayuan7"}
-, 39}
-, 
-UIBuildWishingPool = {"UIBuildWishingPool", common[1], 
-{"str_help_homeland_wishing_title1", "str_help_homeland_wishing_title2", "str_help_homeland_wishing_title3"}
-, 
-{"str_help_homeland_wishing_desc1", "str_help_homeland_wishing_desc2", "str_help_homeland_wishing_desc3"}
-, 
-{"help_hmland_jiayuan5", "help_hmland_xuyuanchi2", "help_hmland_xuyuanchi3"}
-, 40}
-, 
-UIFindTreasureDetail2 = {"UIFindTreasureDetail2", common[1], 
-{"str_help_shuoming_baifang_title1", "str_help_shuoming_baifang_title2", "str_help_shuoming_baifang_title3"}
-, 
-{"str_help_shuoming_baifang_desc1", "str_help_shuoming_baifang_desc2", "str_help_shuoming_baifang_desc3"}
-, common[14], 38}
-, 
-UIHomeVisitFriends = {"UIHomeVisitFriends", common[1], 
-{"str_help_shuoming_baifang_title1", "str_help_shuoming_baifang_title2"}
-, 
-{"str_help_shuoming_baifang_desc1", "str_help_shuoming_baifang_desc2"}
-, 
-{"help_hmland_baifang", "help_hmland_qijishu2"}
-, 40}
-, 
-UIHomeStorehouse = {"UIHomeStorehouse", common[1], 
-{"str_help_shuoming_baifang_title3"}
-, 
-{"str_help_shuoming_baifang_desc3"}
-, 
-{"help_hmland_jiayuan7"}
-, 40}
-, 
-UIDiffMission = {"UIDiffMission", common[1], 
-{"str_help_diff_mission_title1", "str_help_diff_mission_title2", "str_help_diff_mission_title3", "str_help_diff_mission_title4", "str_help_diff_mission_title5"}
-, 
-{"str_help_diff_mission_desc1", "str_help_diff_mission_desc2", "str_help_diff_mission_desc3", "str_help_diff_mission_desc4", "str_help_diff_mission_desc5"}
-, 
-{"help_shuoming_diffmission1", "help_shuoming_diffmission2", "help_shuoming_diffmission3", "help_shuoming_diffmission4", "help_shuoming_diffmission5"}
-, 41}
-, 
-UIHomelandBreed = {"UIHomelandBreed", common[1], 
-{"str_help_shuoming_breed_title1", "str_help_shuoming_breed_title2", "str_help_shuoming_breed_title3", "str_help_shuoming_breed_title4", "str_help_shuoming_breed_title5", "str_help_shuoming_breed_title6", "str_help_shuoming_breed_title7", "str_help_shuoming_breed_title8"}
-, 
-{"str_help_shuoming_breed_desc1", "str_help_shuoming_breed_desc2", "str_help_shuoming_breed_desc3", "str_help_shuoming_breed_desc4", "str_help_shuoming_breed_desc5", "str_help_shuoming_breed_desc6", "str_help_shuoming_breed_desc7", "str_help_shuoming_breed_desc8"}
-, 
-{"help_hmland_qijishu1", "help_hmland_qijishu3", "help_hmland_qijishu4", "help_hmland_qijishu5", "help_hmland_qijishu6", "help_hmland_qijishu2", "help_hmland_qijishu4", "help_hmland_qijishu7"}
-, 42}
-, 
-UIActivityN20Shop = {"UIActivityN20Shop", common[1], 
-{"str_help_shuoming_breed_title1", "str_help_shuoming_breed_title2", "str_help_shuoming_breed_title3", "str_help_shuoming_breed_title4", "str_help_shuoming_breed_title5", "str_help_shuoming_breed_title6"}
-, 
-{"str_help_shuoming_breed_desc1", "str_help_shuoming_breed_desc2", "str_help_shuoming_breed_desc3", "str_help_shuoming_breed_desc4", "str_help_shuoming_breed_desc5", "str_help_shuoming_breed_desc6"}
-, 
-{"help_hmland_qijishu1", "help_hmland_qijishu3", "help_hmland_qijishu4", "help_hmland_qijishu5", "help_hmland_qijishu6", "help_hmland_qijishu2"}
-, 42}
-, 
-UIN20MiniGameStageController = {"UIN20MiniGameStageController", common[1], 
-{"str_help_n20minigame_tittle1", "str_help_n20minigame_tittle2", "str_help_n20minigame_tittle3", "str_help_n20minigame_tittle4"}
-, 
-{"str_help_n20minigame_details1", "str_help_n20minigame_details2", "str_help_n20minigame_details3", "str_help_n20minigame_details4"}
-, 
-{"help_shuoming_ramen1", "help_shuoming_ramen2", "help_shuoming_ramen3", "help_shuoming_ramen4"}
-, 43}
-, 
-UIActivityReview = {"UIActivityReview", common[1], 
-{"str_help_activity_review_tittle1"}
-, 
-{"str_help_activity_review_desc1"}
-, 
-{"help_shuoming_activity_review1"}
-, 44}
-, 
-UISailing = {"UISailing", common[3], 
-{"str_help_sailing_title1", "str_help_sailing_title2"}
-, 
-{"str_help_sailing_details1", "str_help_sailing_details2"}
-, 
-{"help_sailing_shuoming1", "help_sailing_shuoming2"}
-, 45}
-, 
-UISailingChapter = {"UISailingChapter", common[3], common[15], common[16], common[17], 46}
-, 
-UIN33LevelController = {"UIN33LevelController", common[3], common[15], common[16], common[17], 46}
-, 
-UIEducationMain = {"UIEducationMain", common[1], 
-{"str_help_shuoming_property_cultivate_title1", "str_help_shuoming_property_cultivate_title2"}
-, 
-{"str_help_shuoming_property_cultivate_desc1", "str_help_shuoming_property_cultivate_desc2"}
-, 
-{"help_shuoming_property_cultivate1", "help_shuoming_property_cultivate2"}
-, 47}
-, 
-UIEliminateController = {"UIEliminateController", "str_help_elimate_explain", 
-{"str_help_elimate_tittle1", "str_help_elimate_tittle2", "str_help_elimate_tittle3", "str_help_elimate_tittle4", "str_help_elimate_tittle5"}
-, 
-{"str_help_elimate_details1", "str_help_elimate_details2", "str_help_elimate_details3", "str_help_elimate_details4", "str_help_elimate_details5"}
-, 
-{"help_shuoming_qdhl1", "help_shuoming_qdhl2", "help_shuoming_qdhl3", "help_shuoming_qdhl4", "help_shuoming_qdhl5"}
-, 48}
-, 
-UIWorldBossController_Eliminate = {"UIWorldBossController_Eliminate", common[1], 
-{"str_help_world_boss_title1_new", "str_help_world_boss_title2", "str_help_world_boss_title3", "str_help_world_boss_title4"}
-, 
-{"str_help_world_boss_details1_new", "str_help_world_boss_details2", "str_help_world_boss_details3", "str_help_world_boss_details4"}
-, common[13], 49}
+  Maze = {
+    "Maze",
+    common[1],
+    {
+      "str_help_maze_title8",
+      "str_help_maze_title7",
+      "str_help_maze_title6",
+      "str_help_maze_title1",
+      "str_help_maze_title2",
+      "str_help_maze_title3",
+      "str_help_maze_title4",
+      "str_help_maze_title5"
+    },
+    {
+      "str_help_maze_details8",
+      "str_help_maze_details7",
+      "str_help_maze_details6",
+      "str_help_maze_details1",
+      "str_help_maze_details2",
+      "str_help_maze_details3",
+      "str_help_maze_details4",
+      "str_help_maze_details5"
+    },
+    {
+      "help_shuoming_mijing8",
+      "help_shuoming_mijing7",
+      "help_shuoming_mijing6",
+      "help_shuoming_mijing1",
+      "help_shuoming_mijing2",
+      "help_shuoming_mijing3",
+      "help_shuoming_mijing4",
+      "help_shuoming_mijing5"
+    },
+    1
+  },
+  UISpiritDetailGroupController = {
+    "UISpiritDetailGroupController",
+    "str_help_uispiritdetailgroupcontroller_explain",
+    {
+      "str_help_uispiritdetailgroupcontroller_title1",
+      "str_help_uispiritdetailgroupcontroller_title2",
+      "str_help_uispiritdetailgroupcontroller_title3",
+      "str_help_uispiritdetailgroupcontroller_title4",
+      "str_help_uispiritdetailgroupcontroller_title5",
+      "str_help_uispiritdetailgroupcontroller_title6",
+      "str_help_uispiritdetailgroupcontroller_title7"
+    },
+    {
+      "str_help_uispiritdetailgroupcontroller_details1",
+      "str_help_uispiritdetailgroupcontroller_details2",
+      "str_help_uispiritdetailgroupcontroller_details3",
+      "str_help_uispiritdetailgroupcontroller_details4",
+      "str_help_uispiritdetailgroupcontroller_details5",
+      "str_help_uispiritdetailgroupcontroller_details6",
+      "str_help_uispiritdetailgroupcontroller_details7"
+    },
+    {
+      "help_shuoming_xiangqing1",
+      "help_shuoming_xiangqing2",
+      "help_shuoming_xiangqing3",
+      "help_shuoming_xiangqing4",
+      "help_shuoming_xiangqing5",
+      "help_shuoming_xiangqing6",
+      "help_shuoming_xiangqing7"
+    },
+    2
+  },
+  UIGradeInterfaceController = {
+    "UIGradeInterfaceController",
+    "str_help_uigradeInterfacecontroller_explain",
+    {
+      "str_help_uigradeInterfacecontroller_title1",
+      "str_help_uigradeInterfacecontroller_title2",
+      "str_help_uigradeInterfacecontroller_title3"
+    },
+    {
+      "str_help_uigradeInterfacecontroller_details1",
+      "str_help_uigradeInterfacecontroller_details2",
+      "str_help_uigradeInterfacecontroller_details3"
+    },
+    {
+      "help_shuoming_juexing1",
+      "help_shuoming_juexing2",
+      "help_shuoming_juexing3"
+    },
+    3
+  },
+  UIBreakController = {
+    "UIBreakController",
+    "str_help_uibreakcontroller_explain",
+    {
+      "str_help_uibreakcontroller_title1",
+      "str_help_uibreakcontroller_title2",
+      "str_help_uibreakcontroller_title3",
+      "str_help_uibreakcontroller_title4",
+      "str_help_uibreakcontroller_title5"
+    },
+    {
+      "str_help_uibreakcontroller_details1",
+      "str_help_uibreakcontroller_details2",
+      "str_help_uibreakcontroller_details3",
+      "str_help_uibreakcontroller_details4",
+      "str_help_uibreakcontroller_details5"
+    },
+    {
+      "help_shuoming_tupo1",
+      "help_shuoming_tupo2",
+      "help_shuoming_tupo3",
+      "help_shuoming_tupo4",
+      "help_shuoming_tupo1"
+    },
+    4
+  },
+  UIAircraftController = {
+    "UIAircraftController",
+    "str_help_uiaircraftcontorller_explain",
+    {
+      "str_help_uiaircraftcontorller_title1",
+      "str_help_uiaircraftcontorller_title2",
+      "str_help_uiaircraftcontorller_title3",
+      "str_help_uiaircraftcontorller_title4",
+      "str_help_uiaircraftcontorller_title5"
+    },
+    {
+      "str_help_uiaircraftcontorller_details1",
+      "str_help_uiaircraftcontorller_details2",
+      "str_help_uiaircraftcontorller_details3",
+      "str_help_uiaircraftcontorller_details4",
+      "str_help_uiaircraftcontorller_details5"
+    },
+    {
+      "help_shuoming_fengchuan1",
+      "help_shuoming_fengchuan2",
+      "help_shuoming_fengchuan3",
+      "help_shuoming_fengchuan4",
+      "help_shuoming_jiaju1"
+    },
+    5
+  },
+  UIAircraftCentralRoom = {
+    "UIAircraftCentralRoom",
+    "str_help_uiaircraftcentralroom_explain",
+    {
+      "str_help_uiaircraftcentralroom_title1"
+    },
+    {
+      "str_help_uiaircraftcentralroom_details1"
+    },
+    {
+      "help_shuoming_fengchuan6"
+    },
+    6
+  },
+  UIAircraftPowerRoom = {
+    "UIAircraftPowerRoom",
+    "str_help_uiaircraftpowerroom_explain",
+    {
+      "str_help_uiaircraftpowerroom_title1"
+    },
+    {
+      "str_help_uiaircraftpowerroom_details1"
+    },
+    {
+      "help_shuoming_fengchuan7"
+    },
+    7
+  },
+  UIAircraftMazeRoom = {
+    "UIAircraftMazeRoom",
+    "str_help_uiaircraftmazeroom_explain",
+    {
+      "str_help_uiaircraftmazeroom_title1",
+      "str_help_uiaircraftmazeroom_title2"
+    },
+    {
+      "str_help_uiaircraftmazeroom_details1",
+      "str_help_uiaircraftmazeroom_details2"
+    },
+    {
+      "help_shuoming_fengchuan9",
+      "help_shuoming_fengchuan15"
+    },
+    8
+  },
+  UIAircraftResourceRoom = {
+    "UIAircraftResourceRoom",
+    "str_help_uiaircraftresourceroom_explain",
+    {
+      "str_help_uiaircraftresourceroom_title1",
+      "str_help_uiaircraftresourceroom_title2"
+    },
+    {
+      "str_help_uiaircraftresourceroom_details1",
+      "str_help_uiaircraftresourceroom_details2"
+    },
+    {
+      "help_shuoming_fengchuan10",
+      "help_shuoming_fengchuan11"
+    },
+    9
+  },
+  UIAircraftPrismRoom = {
+    "UIAircraftPrismRoom",
+    "str_help_uiaircraftprismroom_explain",
+    {
+      "str_help_uiaircraftprismroom_title1"
+    },
+    {
+      "str_help_uiaircraftprismroom_details1"
+    },
+    {
+      "help_shuoming_fengchuan8"
+    },
+    10
+  },
+  UIAircraftTowerRoom = {
+    "UIAircraftTowerRoom",
+    "str_help_uiaircrafttowerroom_explain",
+    {
+      "str_help_uiaircrafttowerroom_title1"
+    },
+    {
+      "str_help_uiaircrafttowerroom_details1"
+    },
+    {
+      "help_shuoming_fengchuan12"
+    },
+    11
+  },
+  UIDiscovery = {
+    "UIDiscovery",
+    "str_help_uidiscovery_explain",
+    {
+      "str_help_uidiscovery_title1",
+      "str_help_uidiscovery_title2",
+      "str_help_uidiscovery_title3",
+      "str_help_uidiscovery_title4"
+    },
+    {
+      "str_help_uidiscovery_details1",
+      "str_help_uidiscovery_details2",
+      "str_help_uidiscovery_details3",
+      "str_help_uidiscovery_details4"
+    },
+    {
+      "help_shuoming_diffmission7",
+      "help_shuoming_diffmission6",
+      "help_shuoming_diffmission9",
+      "help_shuoming_diffmission8"
+    },
+    12
+  },
+  UIDrawCardController = {
+    "UIDrawCardController",
+    common[2],
+    {
+      "str_help_uidrawcardcontroller_title1",
+      "str_help_uidrawcardcontroller_title2",
+      "str_help_uidrawcardcontroller_title5",
+      "str_help_uidrawcardcontroller_title3",
+      "str_help_uidrawcardcontroller_title4"
+    },
+    {
+      "str_help_uidrawcardcontroller_details1",
+      "str_help_uidrawcardcontroller_details2",
+      "str_help_uidrawcardcontroller_details5",
+      "str_help_uidrawcardcontroller_details3",
+      "str_help_uidrawcardcontroller_details4"
+    },
+    {
+      "help_shuoming_chouka3",
+      "help_shuoming_chouka4",
+      "help_shuoming_chouka1",
+      "help_shuoming_chouka1",
+      "help_shuoming_chouka2"
+    },
+    13
+  },
+  UIAircraftSmeltRoom = {
+    "UIAircraftSmeltRoom",
+    "str_help_uiaircraftsmeltroom_explain",
+    {
+      "str_help_uiaircraftsmeltroom_title1",
+      "str_help_uiaircraftsmeltroom_title2"
+    },
+    {
+      "str_help_uiaircraftsmeltroom_details1",
+      "str_help_uiaircraftsmeltroom_details2"
+    },
+    {
+      "help_shuoming_fengchuan14",
+      "help_shuoming_fengchuan13"
+    },
+    14
+  },
+  UIHelpPetManageController = {
+    "UIHelpPetManageController",
+    common[1],
+    {
+      "str_help_helppet_title1"
+    },
+    {
+      "str_help_helppet_details1"
+    },
+    {
+      "help_shuoming_zhuzhan1"
+    },
+    15
+  },
+  UIHelpPetSelectController = {
+    "UIHelpPetSelectController",
+    common[1],
+    {
+      "str_help_helppet_title2",
+      "str_help_helppet_title3"
+    },
+    {
+      "str_help_helppet_details2",
+      "str_help_helppet_details3"
+    },
+    {
+      "help_shuoming_zhuzhan2",
+      "help_shuoming_zhuzhan3"
+    },
+    16
+  },
+  UIPetEquipController = {
+    "UIPetEquipController",
+    common[1],
+    {
+      "str_help_petequip_title1",
+      "str_help_petequip_title2",
+      "str_help_petequip_title3"
+    },
+    {
+      "str_help_petequip_details1",
+      "str_help_petequip_details2",
+      "str_help_petequip_details3"
+    },
+    {
+      "help_shuoming_lingge1",
+      "help_shuoming_lingge2",
+      "help_shuoming_lingge3"
+    },
+    17
+  },
+  UIDispatchMapController = {
+    "UIDispatchMapController",
+    common[1],
+    common[4],
+    common[5],
+    common[6],
+    18
+  },
+  UIDispatchDetailController = {
+    "UIDispatchDetailController",
+    common[1],
+    common[4],
+    common[5],
+    common[6],
+    19
+  },
+  UISakuraDrawShopController = {
+    "UISakuraDrawShopController",
+    common[2],
+    {
+      "str_help_sakura_title1"
+    },
+    {
+      "str_help_sakura_details1"
+    },
+    {
+      "help_shuoming_choujiang1"
+    },
+    20
+  },
+  UIShopPetDetailController = {
+    "UIShopPetDetailController",
+    common[1],
+    {
+      "str_help_talepettask_title1",
+      "str_help_talepettask_title2"
+    },
+    {
+      "str_help_talepettask_details1",
+      "str_help_talepettask_details2"
+    },
+    {
+      "help_shuoming_chuanshuo2",
+      "help_shuoming_chuanshuo1"
+    },
+    21
+  },
+  UITalePetMissionController = {
+    "UITalePetMissionController",
+    common[1],
+    {
+      "str_help_talepettask_title1",
+      "str_help_talepettask_title2",
+      "str_help_talepettask_title3"
+    },
+    {
+      "str_help_talepettask_details1",
+      "str_help_talepettask_details2",
+      "str_help_talepettask_details3"
+    },
+    {
+      "help_shuoming_chuanshuo2",
+      "help_shuoming_chuanshuo1",
+      "help_shuoming_chuanshuo5"
+    },
+    22
+  },
+  UITrailLevelController = {
+    "UITrailLevelController",
+    common[1],
+    {
+      "str_help_talepetlevel_title1",
+      "str_help_talepetlevel_title2"
+    },
+    {
+      "str_help_talepetlevel_details1",
+      "str_help_talepetlevel_details2"
+    },
+    {
+      "help_shuoming_chuanshuo3",
+      "help_shuoming_chuanshuo4"
+    },
+    23
+  },
+  UIActivityEveSinsaMainController = {
+    "UIActivityEveSinsaMainController",
+    common[1],
+    common[7],
+    common[8],
+    common[9],
+    24
+  },
+  UISummerActivityTwoLevelController = {
+    "UISummerActivityTwoLevelController",
+    common[1],
+    {
+      "str_help_summer_activity_two_title1",
+      "str_help_summer_activity_two_title2"
+    },
+    {
+      "str_help_summer_activity_two_details1",
+      "str_help_summer_activity_two_details2"
+    },
+    {
+      "help_shuoming_xhii1",
+      "help_shuoming_xhii2"
+    },
+    25
+  },
+  UISummerActivityTwoSelectEntryController = {
+    "UISummerActivityTwoSelectEntryController",
+    common[1],
+    {
+      "str_help_summer_activity_two_title3"
+    },
+    {
+      "str_help_summer_activity_two_details3"
+    },
+    {
+      "help_shuoming_xhii3"
+    },
+    26
+  },
+  UIMiniGameStageController = {
+    "UIMiniGameStageController",
+    common[2],
+    {
+      "str_help_summerminigame_tittle1",
+      "str_help_summerminigame_tittle2",
+      "str_help_summerminigame_tittle3",
+      "str_help_summerminigame_tittle4"
+    },
+    {
+      "str_help_summerminigame_details1",
+      "str_help_summerminigame_details2",
+      "str_help_summerminigame_details3",
+      "str_help_summerminigame_details4"
+    },
+    {
+      "help_shuoming_baobing1",
+      "help_shuoming_baobing2",
+      "help_shuoming_baobing3",
+      "help_shuoming_baobing4"
+    },
+    27
+  },
+  UISummer1 = {
+    "UISummer1",
+    common[1],
+    common[7],
+    common[8],
+    common[9],
+    28
+  },
+  UIActivityBattlePassMainController = {
+    "UIActivityBattlePassMainController",
+    common[1],
+    common[10],
+    common[11],
+    common[12],
+    29
+  },
+  UIActivityNPlusSixBuildingMainController = {
+    "UIActivityNPlusSixBuildingMainController",
+    common[1],
+    common[10],
+    common[11],
+    common[12],
+    30
+  },
+  UIWorldBossController = {
+    "UIWorldBossController",
+    common[1],
+    {
+      "str_help_world_boss_title1",
+      "str_help_world_boss_title2",
+      "str_help_world_boss_title3",
+      "str_help_world_boss_title4"
+    },
+    {
+      "str_help_world_boss_details1",
+      "str_help_world_boss_details2",
+      "str_help_world_boss_details3",
+      "str_help_world_boss_details4"
+    },
+    common[13],
+    31
+  },
+  UIAircraftTactic = {
+    "UIAircraftTactic",
+    common[1],
+    {
+      "str_help_shuoming_aircrafttactic_help_title1",
+      "str_help_shuoming_aircrafttactic_help_title2",
+      "str_help_shuoming_aircrafttactic_help_title3",
+      "str_help_shuoming_aircrafttactic_help_title4",
+      "str_help_shuoming_aircrafttactic_help_title5",
+      "str_help_shuoming_aircrafttactic_help_title6"
+    },
+    {
+      "str_help_shuoming_aircrafttactic_help_desc1",
+      "str_help_shuoming_aircrafttactic_help_desc2",
+      "str_help_shuoming_aircrafttactic_help_desc3",
+      "str_help_shuoming_aircrafttactic_help_desc4",
+      "str_help_shuoming_aircrafttactic_help_desc5",
+      "str_help_shuoming_aircrafttactic_help_desc6"
+    },
+    {
+      "help_shuoming_aircrafttactic_help1",
+      "help_shuoming_aircrafttactic_help2",
+      "help_shuoming_aircrafttactic_help3",
+      "help_shuoming_aircrafttactic_help4",
+      "help_shuoming_aircrafttactic_help5",
+      "help_shuoming_aircrafttactic_help6"
+    },
+    32
+  },
+  UIActivityN8BattleSimulatorController = {
+    "UIActivityN8BattleSimulatorController",
+    common[1],
+    {
+      "str_help_shuoming_n8_help_title1",
+      "str_help_shuoming_n8_help_title2"
+    },
+    {
+      "str_help_shuoming_n8_help_desc1",
+      "str_help_shuoming_n8_help_desc2"
+    },
+    {
+      "help_shuoming_n8_help1",
+      "help_shuoming_n8_help2"
+    },
+    33
+  },
+  UIHelpBlackUnderbellyDungeon = {
+    "UIHelpBlackUnderbellyDungeon",
+    common[1],
+    {
+      "str_help_shuoming_blackunderbellydungeon_help_title1"
+    },
+    {
+      "str_help_shuoming_blackunderbellydungeon_help_desc1"
+    },
+    common[14],
+    35
+  },
+  UIFindTreasureDetail = {
+    "UIFindTreasureDetail",
+    common[1],
+    {
+      "str_help_shuoming_tanbao_title1",
+      "str_help_shuoming_tanbao_title2",
+      "str_help_shuoming_tanbao_title3",
+      "str_help_shuoming_tanbao_title4"
+    },
+    {
+      "str_help_shuoming_tanbao_desc1",
+      "str_help_shuoming_tanbao_desc2",
+      "str_help_shuoming_tanbao_desc3",
+      "str_help_shuoming_tanbao_desc4"
+    },
+    {
+      "help_shuoming_tanbao_1",
+      "help_shuoming_tanbao_2",
+      "help_shuoming_tanbao_3",
+      "help_shuoming_tanbao_4"
+    },
+    36
+  },
+  UIForge = {
+    "UIForge",
+    common[1],
+    {
+      "str_help_shuoming_fengxinta_title"
+    },
+    {
+      "str_help_shuoming_fengxinta_desc"
+    },
+    {
+      "help_hmland_jiayuan2"
+    },
+    37
+  },
+  UIBuildInfo = {
+    "UIBuildInfo",
+    common[1],
+    {
+      "str_help_shuoming_homelevel_title1",
+      "str_help_shuoming_homelevel_title2",
+      "str_help_shuoming_homelevel_title3",
+      "str_help_shuoming_homelevel_title4",
+      "str_help_shuoming_homelevel_title5",
+      "str_help_shuoming_homelevel_title6",
+      "str_help_shuoming_homelevel_title7"
+    },
+    {
+      "str_help_shuoming_homelevel_desc1",
+      "str_help_shuoming_homelevel_desc2",
+      "str_help_shuoming_homelevel_desc3",
+      "str_help_shuoming_homelevel_desc4",
+      "str_help_shuoming_homelevel_desc5",
+      "str_help_shuoming_homelevel_desc6",
+      "str_help_shuoming_homelevel_desc7"
+    },
+    {
+      "help_hmland_jiayuan1",
+      "help_hmland_jiayuan2",
+      "help_hmland_jiayuan3",
+      "help_hmland_jiayuan4",
+      "help_hmland_jiayuan5",
+      "help_hmland_jiayuan6",
+      "help_hmland_jiayuan7"
+    },
+    39
+  },
+  UIBuildWishingPool = {
+    "UIBuildWishingPool",
+    common[1],
+    {
+      "str_help_homeland_wishing_title1",
+      "str_help_homeland_wishing_title2",
+      "str_help_homeland_wishing_title3"
+    },
+    {
+      "str_help_homeland_wishing_desc1",
+      "str_help_homeland_wishing_desc2",
+      "str_help_homeland_wishing_desc3"
+    },
+    {
+      "help_hmland_jiayuan5",
+      "help_hmland_xuyuanchi2",
+      "help_hmland_xuyuanchi3"
+    },
+    40
+  },
+  UIFindTreasureDetail2 = {
+    "UIFindTreasureDetail2",
+    common[1],
+    {
+      "str_help_shuoming_baifang_title1",
+      "str_help_shuoming_baifang_title2",
+      "str_help_shuoming_baifang_title3"
+    },
+    {
+      "str_help_shuoming_baifang_desc1",
+      "str_help_shuoming_baifang_desc2",
+      "str_help_shuoming_baifang_desc3"
+    },
+    common[14],
+    38
+  },
+  UIHomeVisitFriends = {
+    "UIHomeVisitFriends",
+    common[1],
+    {
+      "str_help_shuoming_baifang_title1",
+      "str_help_shuoming_baifang_title2"
+    },
+    {
+      "str_help_shuoming_baifang_desc1",
+      "str_help_shuoming_baifang_desc2"
+    },
+    {
+      "help_hmland_baifang",
+      "help_hmland_qijishu2"
+    },
+    40
+  },
+  UIHomeStorehouse = {
+    "UIHomeStorehouse",
+    common[1],
+    {
+      "str_help_shuoming_baifang_title3"
+    },
+    {
+      "str_help_shuoming_baifang_desc3"
+    },
+    {
+      "help_hmland_jiayuan7"
+    },
+    40
+  },
+  UIDiffMission = {
+    "UIDiffMission",
+    common[1],
+    {
+      "str_help_diff_mission_title1",
+      "str_help_diff_mission_title2",
+      "str_help_diff_mission_title3",
+      "str_help_diff_mission_title4",
+      "str_help_diff_mission_title5"
+    },
+    {
+      "str_help_diff_mission_desc1",
+      "str_help_diff_mission_desc2",
+      "str_help_diff_mission_desc3",
+      "str_help_diff_mission_desc4",
+      "str_help_diff_mission_desc5"
+    },
+    {
+      "help_shuoming_diffmission1",
+      "help_shuoming_diffmission2",
+      "help_shuoming_diffmission3",
+      "help_shuoming_diffmission4",
+      "help_shuoming_diffmission5"
+    },
+    41
+  },
+  UIHomelandBreed = {
+    "UIHomelandBreed",
+    common[1],
+    {
+      "str_help_shuoming_breed_title1",
+      "str_help_shuoming_breed_title2",
+      "str_help_shuoming_breed_title3",
+      "str_help_shuoming_breed_title4",
+      "str_help_shuoming_breed_title5",
+      "str_help_shuoming_breed_title6",
+      "str_help_shuoming_breed_title7",
+      "str_help_shuoming_breed_title8"
+    },
+    {
+      "str_help_shuoming_breed_desc1",
+      "str_help_shuoming_breed_desc2",
+      "str_help_shuoming_breed_desc3",
+      "str_help_shuoming_breed_desc4",
+      "str_help_shuoming_breed_desc5",
+      "str_help_shuoming_breed_desc6",
+      "str_help_shuoming_breed_desc7",
+      "str_help_shuoming_breed_desc8"
+    },
+    {
+      "help_hmland_qijishu1",
+      "help_hmland_qijishu3",
+      "help_hmland_qijishu4",
+      "help_hmland_qijishu5",
+      "help_hmland_qijishu6",
+      "help_hmland_qijishu2",
+      "help_hmland_qijishu4",
+      "help_hmland_qijishu7"
+    },
+    42
+  },
+  UIActivityN20Shop = {
+    "UIActivityN20Shop",
+    common[1],
+    {
+      "str_help_shuoming_breed_title1",
+      "str_help_shuoming_breed_title2",
+      "str_help_shuoming_breed_title3",
+      "str_help_shuoming_breed_title4",
+      "str_help_shuoming_breed_title5",
+      "str_help_shuoming_breed_title6"
+    },
+    {
+      "str_help_shuoming_breed_desc1",
+      "str_help_shuoming_breed_desc2",
+      "str_help_shuoming_breed_desc3",
+      "str_help_shuoming_breed_desc4",
+      "str_help_shuoming_breed_desc5",
+      "str_help_shuoming_breed_desc6"
+    },
+    {
+      "help_hmland_qijishu1",
+      "help_hmland_qijishu3",
+      "help_hmland_qijishu4",
+      "help_hmland_qijishu5",
+      "help_hmland_qijishu6",
+      "help_hmland_qijishu2"
+    },
+    42
+  },
+  UIN20MiniGameStageController = {
+    "UIN20MiniGameStageController",
+    common[1],
+    {
+      "str_help_n20minigame_tittle1",
+      "str_help_n20minigame_tittle2",
+      "str_help_n20minigame_tittle3",
+      "str_help_n20minigame_tittle4"
+    },
+    {
+      "str_help_n20minigame_details1",
+      "str_help_n20minigame_details2",
+      "str_help_n20minigame_details3",
+      "str_help_n20minigame_details4"
+    },
+    {
+      "help_shuoming_ramen1",
+      "help_shuoming_ramen2",
+      "help_shuoming_ramen3",
+      "help_shuoming_ramen4"
+    },
+    43
+  },
+  UIActivityReview = {
+    "UIActivityReview",
+    common[1],
+    {
+      "str_help_activity_review_tittle1"
+    },
+    {
+      "str_help_activity_review_desc1"
+    },
+    {
+      "help_shuoming_activity_review1"
+    },
+    44
+  },
+  UISailing = {
+    "UISailing",
+    common[3],
+    {
+      "str_help_sailing_title1",
+      "str_help_sailing_title2"
+    },
+    {
+      "str_help_sailing_details1",
+      "str_help_sailing_details2"
+    },
+    {
+      "help_sailing_shuoming1",
+      "help_sailing_shuoming2"
+    },
+    45
+  },
+  UISailingChapter = {
+    "UISailingChapter",
+    common[3],
+    common[15],
+    common[16],
+    common[17],
+    46
+  },
+  UIN33LevelController = {
+    "UIN33LevelController",
+    common[3],
+    common[15],
+    common[16],
+    common[17],
+    46
+  },
+  UIEducationMain = {
+    "UIEducationMain",
+    common[1],
+    {
+      "str_help_shuoming_property_cultivate_title1",
+      "str_help_shuoming_property_cultivate_title2"
+    },
+    {
+      "str_help_shuoming_property_cultivate_desc1",
+      "str_help_shuoming_property_cultivate_desc2"
+    },
+    {
+      "help_shuoming_property_cultivate1",
+      "help_shuoming_property_cultivate2"
+    },
+    47
+  },
+  UIEliminateController = {
+    "UIEliminateController",
+    "str_help_elimate_explain",
+    {
+      "str_help_elimate_tittle1",
+      "str_help_elimate_tittle2",
+      "str_help_elimate_tittle3",
+      "str_help_elimate_tittle4",
+      "str_help_elimate_tittle5"
+    },
+    {
+      "str_help_elimate_details1",
+      "str_help_elimate_details2",
+      "str_help_elimate_details3",
+      "str_help_elimate_details4",
+      "str_help_elimate_details5"
+    },
+    {
+      "help_shuoming_qdhl1",
+      "help_shuoming_qdhl2",
+      "help_shuoming_qdhl3",
+      "help_shuoming_qdhl4",
+      "help_shuoming_qdhl5"
+    },
+    48
+  },
+  UIWorldBossController_Eliminate = {
+    "UIWorldBossController_Eliminate",
+    common[1],
+    {
+      "str_help_world_boss_title1_new",
+      "str_help_world_boss_title2",
+      "str_help_world_boss_title3",
+      "str_help_world_boss_title4"
+    },
+    {
+      "str_help_world_boss_details1_new",
+      "str_help_world_boss_details2",
+      "str_help_world_boss_details3",
+      "str_help_world_boss_details4"
+    },
+    common[13],
+    49
+  }
 }
 return config, "ID", key
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/UIBlackFight/ui_black_fight_paper_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBlackFightPaperItem", UICustomWidget)
 UIBlackFightPaperItem = UIBlackFightPaperItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBlackFightPaperItem.OnShow = function(self)
-  -- function num : 0_0
+function UIBlackFightPaperItem:OnShow()
   self.root = self:GetGameObject("root")
   self.txtPhase = self:GetUIComponent("UILocalizationText", "txtPhase")
   self.poolL = self:GetUIComponent("UISelectObjectPath", "l")
@@ -19,44 +12,29 @@ UIBlackFightPaperItem.OnShow = function(self)
   self.reputationValue = self:GetUIComponent("UILocalizationText", "reputationValue")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightPaperItem.OnHide = function(self)
-  -- function num : 0_1
+function UIBlackFightPaperItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightPaperItem.Flush = function(self, paper)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBlackFightPaperItem:Flush(paper)
   local unlock = paper:IsUnlock()
   if unlock then
-    (self.txtPhase):SetText(218 + paper.idx)
+    self.txtPhase:SetText(218 + paper.idx)
     self:FlushLR(paper, true)
     self:FlushLR(paper, false)
     self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self, _ENV
-    (self.root):SetActive(false)
-    YIELD(TT)
-    ;
-    (self.root):SetActive(true)
-  end
-, self)
+      self.root:SetActive(false)
+      YIELD(TT)
+      self.root:SetActive(true)
+    end, self)
   else
-    ;
-    (self.reputationValue):SetText(paper.unlockReputation)
+    self.reputationValue:SetText(paper.unlockReputation)
   end
-  ;
-  (self.lock):SetActive(not unlock)
-  ;
-  (self.root):SetActive(unlock)
+  self.lock:SetActive(not unlock)
+  self.root:SetActive(unlock)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightPaperItem.FlushLR = function(self, paper, isL)
-  -- function num : 0_3 , upvalues : _ENV
-  local pool, elements = nil, nil
+function UIBlackFightPaperItem:FlushLR(paper, isL)
+  local pool, elements
   if isL then
     pool = self.poolL
     elements = paper.elementsL
@@ -64,12 +42,10 @@ UIBlackFightPaperItem.FlushLR = function(self, paper, isL)
     pool = self.poolR
     elements = paper.elementsR
   end
-  local len = (table.count)(elements)
+  local len = table.count(elements)
   pool:SpawnObjects("UIBlackFightPaperElement", len)
   local uis = pool:GetAllSpawnList()
-  for i,ui in ipairs(uis) do
+  for i, ui in ipairs(uis) do
     ui:Flush(elements[i])
   end
 end
-
-

@@ -1,60 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/world_boss/world_boss_build_team_by_run_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("WorldBoss_BuildTeam", Common_AsyncBase)
 WorldBoss_BuildTeam = WorldBoss_BuildTeam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-WorldBoss_BuildTeam.Constructor = function(self, _, teamIndex)
-  -- function num : 0_0 , upvalues : _ENV
-  if not teamIndex then
-    self._teamIndex = TestConst.MissionTeamIndex
-  end
+function WorldBoss_BuildTeam:Constructor(_, teamIndex)
+  self._teamIndex = teamIndex or TestConst.MissionTeamIndex
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBoss_BuildTeam.TaskFunc = function(self, TT, result)
-  -- function num : 0_1 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function WorldBoss_BuildTeam:TaskFunc(TT, result)
+  local runData = self.m_pManager:GetMissionRunData()
   local petPoolOptions = SmokeTestTeamBuildPoolOptions:New()
-  if runData:IsRandomTeam() and not (self._manager):BuildRandomTeam(runData, petPoolOptions) then
-    self.m_nLogicResult = 2
-    return 
-  end
-  ;
-  (self._manager):AsyncBuildWorldBossTeamByRunData(TT, self._teamIndex, result)
-  if result:IsErrorOccured() then
-    self.m_nLogicResult = 3
-    return 
+  if runData:IsRandomTeam() then
+    if not self._manager:BuildRandomTeam(runData, petPoolOptions) then
+      self.m_nLogicResult = 2
+      return
+    end
   else
-    self.m_nLogicResult = 1
-    return 
+    self._manager:AsyncBuildWorldBossTeamByRunData(TT, self._teamIndex, result)
+    if result:IsErrorOccured() then
+      self.m_nLogicResult = 3
+      return
+    else
+      self.m_nLogicResult = 1
+      return
+    end
   end
   local currentTeamPetBuildData = runData:GetCurrentTeamBuild()
-  ;
-  (self._manager):PreparePetsByBuildDataList(TT, currentTeamPetBuildData, result)
+  self._manager:PreparePetsByBuildDataList(TT, currentTeamPetBuildData, result)
   if result:IsErrorOccured() then
     self.m_nLogicResult = 3
-    return 
+    return
   end
   local pstIDs = runData:GeneratePetPstID()
-  local worldBossModule = (GameGlobal.GetModule)(WorldBossModule)
+  local worldBossModule = GameGlobal.GetModule(WorldBossModule)
   local updateFormationResult = worldBossModule:ReqWorldBossChangeFormationInfo(TT, pstIDs)
   if updateFormationResult.m_call_err ~= CallResultType.Normal then
-    (self._manager):Log(self._className, "Update team failed. result=", updateFormationResult.m_result)
+    self._manager:Log(self._className, "Update team failed. result=", updateFormationResult.m_result)
     result:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
     result:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
     self.m_nLogicResult = 3
-    return 
+    return
   end
   result:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
   result:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
   result:SetCustomData("PetPstIDs", pstIDs)
   self.m_nLogicResult = 1
 end
-
-

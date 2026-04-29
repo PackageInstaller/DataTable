@@ -1,41 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_high_frequency_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectHighFrequencyDamageResult", SkillEffectResultBase)
 SkillEffectHighFrequencyDamageResult = SkillEffectHighFrequencyDamageResult
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
 SkillEffectHighFrequencyDamageResult.__EFFECT_TYPE = SkillEffectType.HighFrequencyDamage
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectHighFrequencyDamageResult.Constructor = function(self, tDamageInfo)
-  -- function num : 0_0
+function SkillEffectHighFrequencyDamageResult:Constructor(tDamageInfo)
   self._tDamageResult = tDamageInfo
   self._finalAttackIndex = 0
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectHighFrequencyDamageResult.GetDamageResultArray = function(self)
-  -- function num : 0_1
+function SkillEffectHighFrequencyDamageResult:GetDamageResultArray()
   return self._tDamageResult
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectHighFrequencyDamageResult.GetFinalAttackIndex = function(self)
-  -- function num : 0_2
+function SkillEffectHighFrequencyDamageResult:GetFinalAttackIndex()
   return self._finalAttackIndex
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectHighFrequencyDamageResult.SetFinalAttackIndex = function(self, i)
-  -- function num : 0_3
+function SkillEffectHighFrequencyDamageResult:SetFinalAttackIndex(i)
   self._finalAttackIndex = i
 end
-
-

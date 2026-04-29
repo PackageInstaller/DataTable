@@ -1,30 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/player/fsm/state_bounce_player_init.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateBouncePlayerInit", StateBouncePlayerBase)
 StateBouncePlayerInit = StateBouncePlayerInit
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateBouncePlayerInit.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
+function StateBouncePlayerInit:OnEnter(TT, ...)
   self:Init()
-  ;
-  (self.player):ChgPlayerState(StateBouncePlayer.Walk)
+  self.player:ChgPlayerState(StateBouncePlayer.Walk)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerInit.OnExit = function(self, TT)
-  -- function num : 0_1
+function StateBouncePlayerInit:OnExit(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerInit.GetStateType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function StateBouncePlayerInit:GetStateType()
   return StateBouncePlayer.Init
 end
-
-

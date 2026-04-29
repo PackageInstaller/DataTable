@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/logic_chain_path_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LogicChainPathComponent", Object)
 LogicChainPathComponent = LogicChainPathComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LogicChainPathComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function LogicChainPathComponent:Constructor()
   self._elementType = -1
   self._chainPath = {}
   self._cutChainPath = {}
@@ -18,10 +11,7 @@ LogicChainPathComponent.Constructor = function(self)
   self._chainPathStartPos = Vector2.zero
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.ClearLogicChainPath = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function LogicChainPathComponent:ClearLogicChainPath()
   self._elementType = -1
   self._chainPath = {}
   self._cutChainPath = {}
@@ -31,205 +21,121 @@ LogicChainPathComponent.ClearLogicChainPath = function(self)
   self._chainPathStartPos = Vector2.zero
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.GetLogicChainPath = function(self)
-  -- function num : 0_2
+function LogicChainPathComponent:GetLogicChainPath()
   return self._chainPath
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.GetLogicPieceType = function(self)
-  -- function num : 0_3
+function LogicChainPathComponent:GetLogicPieceType()
   return self._elementType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.SetLogicChainPath = function(self, chainPath, elementType)
-  -- function num : 0_4
+function LogicChainPathComponent:SetLogicChainPath(chainPath, elementType)
   self._chainPath = chainPath
   self._elementType = elementType
   self._chainPathStartPos = chainPath[1]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.SetChainRateAtIndex = function(self, index, rate)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._pathChainRate)[index] = rate
+function LogicChainPathComponent:SetChainRateAtIndex(index, rate)
+  self._pathChainRate[index] = rate
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.GetChainRateAtIndex = function(self, index)
-  -- function num : 0_6
-  return (self._pathChainRate)[index] or 1
+function LogicChainPathComponent:GetChainRateAtIndex(index)
+  return self._pathChainRate[index] or 1
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.SetCutChainPath = function(self, cutChainPath)
-  -- function num : 0_7
+function LogicChainPathComponent:SetCutChainPath(cutChainPath)
   self._cutChainPath = cutChainPath
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.GetCutChainPath = function(self)
-  -- function num : 0_8
+function LogicChainPathComponent:GetCutChainPath()
   return self._cutChainPath
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.SetPathSuperGridCount = function(self, t)
-  -- function num : 0_9
+function LogicChainPathComponent:SetPathSuperGridCount(t)
   self._pathSuperGridCount = t
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.GetPathSuperGridCount = function(self)
-  -- function num : 0_10
+function LogicChainPathComponent:GetPathSuperGridCount()
   return self._pathSuperGridCount
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.GetSuperGridCountAtPathIndex = function(self, index)
-  -- function num : 0_11
-  return (self._pathSuperGridCount)[index]
+function LogicChainPathComponent:GetSuperGridCountAtPathIndex(index)
+  return self._pathSuperGridCount[index]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.SetPathPoorGridCount = function(self, t)
-  -- function num : 0_12
+function LogicChainPathComponent:SetPathPoorGridCount(t)
   self._pathPoorGridCount = t
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.GetPathPoorGridCount = function(self)
-  -- function num : 0_13
+function LogicChainPathComponent:GetPathPoorGridCount()
   return self._pathPoorGridCount
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.GetPoorGridCountAtPathIndex = function(self, index)
-  -- function num : 0_14
-  return (self._pathPoorGridCount)[index]
+function LogicChainPathComponent:GetPoorGridCountAtPathIndex(index)
+  return self._pathPoorGridCount[index]
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.SetChainAcrossMonster = function(self, chainAcrossMonster)
-  -- function num : 0_15
+function LogicChainPathComponent:SetChainAcrossMonster(chainAcrossMonster)
   self._chainAcrossMonster = chainAcrossMonster
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.GetChainAcrossMonster = function(self)
-  -- function num : 0_16
+function LogicChainPathComponent:GetChainAcrossMonster()
   return self._chainAcrossMonster
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.SetChainMonsterPosList = function(self, monsterPosList)
-  -- function num : 0_17
+function LogicChainPathComponent:SetChainMonsterPosList(monsterPosList)
   self._monsterPosList = monsterPosList
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.GetChainMonsterPosList = function(self)
-  -- function num : 0_18
+function LogicChainPathComponent:GetChainMonsterPosList()
   return self._monsterPosList
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.SetChainAcrossSelectMonster = function(self, remove, entityID)
-  -- function num : 0_19 , upvalues : _ENV
+function LogicChainPathComponent:SetChainAcrossSelectMonster(remove, entityID)
   if not self._chainAcrossMonsterIDList then
     self._chainAcrossMonsterIDList = {}
   end
   if remove then
-    (table.removev)(self._chainAcrossMonsterIDList, entityID)
-  else
-    if not (table.icontains)(self._chainAcrossMonsterIDList, entityID) then
-      (table.insert)(self._chainAcrossMonsterIDList, entityID)
-    end
+    table.removev(self._chainAcrossMonsterIDList, entityID)
+  elseif not table.icontains(self._chainAcrossMonsterIDList, entityID) then
+    table.insert(self._chainAcrossMonsterIDList, entityID)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.GetChainAcrossMonsterIDList = function(self)
-  -- function num : 0_20
+function LogicChainPathComponent:GetChainAcrossMonsterIDList()
   return self._chainAcrossMonsterIDList
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.SetChainPathStartPos = function(self, pos)
-  -- function num : 0_21
+function LogicChainPathComponent:SetChainPathStartPos(pos)
   self._chainPathStartPos = pos
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainPathComponent.GetChainPathStartPos = function(self)
-  -- function num : 0_22
+function LogicChainPathComponent:GetChainPathStartPos()
   return self._chainPathStartPos
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.LogicChainPath = function(self)
-  -- function num : 0_23
-  return self:GetComponent((self.WEComponentsEnum).LogicChainPath)
+function Entity:LogicChainPath()
+  return self:GetComponent(self.WEComponentsEnum.LogicChainPath)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasLogicChainPath = function(self)
-  -- function num : 0_24
-  return self:HasComponent((self.WEComponentsEnum).LogicChainPath)
+function Entity:HasLogicChainPath()
+  return self:HasComponent(self.WEComponentsEnum.LogicChainPath)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddLogicChainPath = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LogicChainPath
+function Entity:AddLogicChainPath()
+  local index = self.WEComponentsEnum.LogicChainPath
   local component = LogicChainPathComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceLogicChainPath = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LogicChainPath
+function Entity:ReplaceLogicChainPath()
+  local index = self.WEComponentsEnum.LogicChainPath
   local component = LogicChainPathComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveLogicChainPath = function(self)
-  -- function num : 0_27
+function Entity:RemoveLogicChainPath()
   if self:HasLogicChainPath() then
-    self:RemoveComponent((self.WEComponentsEnum).LogicChainPath)
+    self:RemoveComponent(self.WEComponentsEnum.LogicChainPath)
   end
 end
-
-

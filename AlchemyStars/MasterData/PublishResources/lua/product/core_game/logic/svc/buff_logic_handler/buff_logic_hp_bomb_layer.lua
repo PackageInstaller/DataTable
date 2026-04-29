@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_hp_bomb_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicHPBombLayer", BuffLogicBase)
 BuffLogicHPBombLayer = BuffLogicHPBombLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicHPBombLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicHPBombLayer:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicHPBombLayer.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  local newLayer = (self._buffInstance):GetLayerCount()
+function BuffLogicHPBombLayer:DoLogic(notify)
+  local e = self._buffInstance:Entity()
+  local newLayer = self._buffInstance:GetLayerCount()
   local buffResult = BuffResultHPBombLayer:New(e:GetID(), newLayer)
   return buffResult
 end
-
-

@@ -1,66 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_save_normal_attack_dir_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewSaveNormalAttackDir", BuffViewBase)
 BuffViewSaveNormalAttackDir = BuffViewSaveNormalAttackDir
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewSaveNormalAttackDir.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewSaveNormalAttackDir:PlayView(TT)
   local result = self._buffResult
   local dirNum = result:GetDirNum()
-  local effectHolder = (self._entity):EffectHolder()
+  local effectHolder = self._entity:EffectHolder()
   if not effectHolder then
-    (self._entity):AddEffectHolder()
-    effectHolder = (self._entity):EffectHolder()
+    self._entity:AddEffectHolder()
+    effectHolder = self._entity:EffectHolder()
   end
   local effectKey = "SetNormalAttackDirEff" .. dirNum
-  if not effectHolder:GetEffectList(effectKey) then
-    local effectIDList = {}
-  end
-  if effectIDList and (table.count)(effectIDList) > 0 then
-    local viewParams = (((self._viewInstance):BuffConfigData()):GetViewParams())
-    do
-      local removeAnim, removeAnimTime = nil, nil
-      if viewParams then
-        removeAnim = viewParams.removeAnim
-        removeAnimTime = viewParams.removeAnimTime
-      end
-      for _,effID in ipairs(effectIDList) do
-        local effEntity = (self._world):GetEntityByID(effID)
-        do
-          if effEntity then
-            ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : effEntity, _ENV, removeAnim, removeAnimTime
-    local go = (effEntity:View()):GetGameObject()
-    local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
-    if go and anim and anim.clip and removeAnim then
-      anim:Play(removeAnim)
-      if removeAnimTime then
-        YIELD(TT, removeAnimTime)
-      end
-      go:SetActive(false)
+  local effectIDList = effectHolder:GetEffectList(effectKey) or {}
+  if effectIDList and table.count(effectIDList) > 0 then
+    local viewParams = self._viewInstance:BuffConfigData():GetViewParams()
+    local removeAnim, removeAnimTime
+    if viewParams then
+      removeAnim = viewParams.removeAnim
+      removeAnimTime = viewParams.removeAnimTime
     end
-  end
-)
+    for _, effID in ipairs(effectIDList) do
+      local effEntity = self._world:GetEntityByID(effID)
+      if effEntity then
+        GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+          local go = effEntity:View():GetGameObject()
+          local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
+          if go and anim and anim.clip and removeAnim then
+            anim:Play(removeAnim)
+            if removeAnimTime then
+              YIELD(TT, removeAnimTime)
+            end
+            go:SetActive(false)
           end
-        end
+        end)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewSaveNormalAttackDir.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewSaveNormalAttackDir:IsNotifyMatch(notify)
   local result = self._buffResult
   if result.__notify_attackPos == notify:GetAttackPos() and result.__notify_beAttackPos == notify:GetTargetPos() then
     return true
   end
   return false
 end
-
-

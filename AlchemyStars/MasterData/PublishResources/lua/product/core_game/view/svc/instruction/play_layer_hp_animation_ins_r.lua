@@ -1,48 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_layer_hp_animation_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayLayerHPAnimationInstruction", BaseInstruction)
 PlayLayerHPAnimationInstruction = PlayLayerHPAnimationInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayLayerHPAnimationInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
-  local tKvp = (string.split)(paramList.animClipNameMap, "|")
+function PlayLayerHPAnimationInstruction:Constructor(paramList)
+  local tKvp = string.split(paramList.animClipNameMap, "|")
   assert(#tKvp % 2 == 0)
   self._animClipNameMap = {}
   for i = 1, #tKvp, 2 do
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._animClipNameMap)[tonumber(tKvp[i])] = tKvp[i + 1]
+    self._animClipNameMap[tonumber(tKvp[i])] = tKvp[i + 1]
   end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayLayerHPAnimationInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayLayerHPAnimationInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local cView = casterEntity:View()
   local udGo = cView:GetGameObject()
   if not udGo then
-    return 
+    return
   end
   local monoAnimation = udGo:GetComponent(typeof(UnityEngine.Animation))
   if not monoAnimation then
-    return 
+    return
   end
   monoAnimation:Stop()
   YIELD(TT)
   local cHP = casterEntity:HP()
   local hp = cHP:GetRedHP()
-  if not (self._animClipNameMap)[hp] then
-    return 
+  if not self._animClipNameMap[hp] then
+    return
   end
-  local animClipName = (self._animClipNameMap)[hp]
+  local animClipName = self._animClipNameMap[hp]
   monoAnimation:Play(animClipName)
 end
-
-

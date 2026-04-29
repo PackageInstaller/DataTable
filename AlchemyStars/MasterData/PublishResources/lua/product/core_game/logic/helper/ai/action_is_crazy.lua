@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_is_crazy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionIsCrazy", AINewNode)
 ActionIsCrazy = ActionIsCrazy
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionIsCrazy.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  if (self.m_entityOwn):HasCrazyMode() then
+function ActionIsCrazy:OnUpdate()
+  if self.m_entityOwn:HasCrazyMode() then
     return AINewNodeStatus.Success
   end
   return AINewNodeStatus.Failure
@@ -18,12 +11,8 @@ end
 
 _class("ActionBeCrazy", AINewNode)
 ActionBeCrazy = ActionBeCrazy
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionBeCrazy.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self.m_entityOwn):ReplaceCrazyMode()
+function ActionBeCrazy:OnUpdate()
+  self.m_entityOwn:ReplaceCrazyMode()
   return AINewNodeStatus.Success
 end
-
-

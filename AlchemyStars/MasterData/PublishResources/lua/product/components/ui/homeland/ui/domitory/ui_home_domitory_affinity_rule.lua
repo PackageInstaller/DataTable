@@ -1,61 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/domitory/ui_home_domitory_affinity_rule.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeDomitoryAffinityRule", UIController)
 UIHomeDomitoryAffinityRule = UIHomeDomitoryAffinityRule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeDomitoryAffinityRule.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomeDomitoryAffinityRule:OnShow(uiParams)
   self:InitWidget()
-  local topBtns = (self.topBtn):SpawnObject("UIHomeCommonCloseBtn")
+  local topBtns = self.topBtn:SpawnObject("UIHomeCommonCloseBtn")
   topBtns:SetData(function()
-    -- function num : 0_0_0 , upvalues : self
     self:CloseDialog()
-  end
-, nil, true)
-  local tmp = (Cfg.cfg_homeland_dormitory_favorability)({})
+  end, nil, true)
+  local tmp = Cfg.cfg_homeland_dormitory_favorability({})
   local cfgs = {}
-  for _,value in pairs(tmp) do
-    (table.insert)(cfgs, value)
+  for _, value in pairs(tmp) do
+    table.insert(cfgs, value)
   end
-  ;
-  (table.sort)(cfgs, function(a, b)
-    -- function num : 0_0_1
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(cfgs, function(a, b)
+    return a.ID < b.ID
+  end)
   local text1 = {}
   for i = 1, #cfgs do
     if i == 1 then
       text1[i] = "0"
     else
-      text1[i] = (cfgs[i - 1]).AtmosphereValue + 1 .. "-" .. (cfgs[i]).AtmosphereValue
+      text1[i] = cfgs[i - 1].AtmosphereValue + 1 .. "-" .. cfgs[i].AtmosphereValue
     end
   end
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.chart).preferredHeight = (#cfgs + 1) * 64
-  local rows = (self.rows):SpawnObjects("UIHomeDomitoryChartRow", #cfgs)
+  self.chart.preferredHeight = (#cfgs + 1) * 64
+  local rows = self.rows:SpawnObjects("UIHomeDomitoryChartRow", #cfgs)
   for i = 1, #cfgs do
-    (rows[i]):SetData(i, text1[i], cfgs[i])
+    rows[i]:SetData(i, text1[i], cfgs[i])
   end
   for i = 1, #cfgs do
-    local line = ((UnityEngine.Object).Instantiate)(self.line, ((self.line).transform).parent)
+    local line = UnityEngine.Object.Instantiate(self.line, self.line.transform.parent)
     local rect = line:GetComponent(typeof(UnityEngine.RectTransform))
     rect.anchoredPosition = Vector2(0, -i * 64)
     line:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeDomitoryAffinityRule.InitWidget = function(self)
-  -- function num : 0_1
+function UIHomeDomitoryAffinityRule:InitWidget()
   self.topBtn = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self.title1 = self:GetUIComponent("UILocalizationText", "title1")
   self.title2 = self:GetUIComponent("UILocalizationText", "title2")
@@ -63,5 +44,3 @@ UIHomeDomitoryAffinityRule.InitWidget = function(self)
   self.line = self:GetGameObject("line")
   self.chart = self:GetUIComponent("LayoutElement", "chart")
 end
-
-

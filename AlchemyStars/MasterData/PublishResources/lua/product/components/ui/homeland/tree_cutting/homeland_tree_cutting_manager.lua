@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/tree_cutting/homeland_tree_cutting_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandTreeCuttingManager", Object)
 HomelandTreeCuttingManager = HomelandTreeCuttingManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandTreeCuttingManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandTreeCuttingManager:Constructor()
   self._trees = {}
   self._interactCfgID = 4
   self._takeOutAxePeriod = 1000
@@ -21,80 +14,61 @@ HomelandTreeCuttingManager.Constructor = function(self)
   self._dropNeedCutTimes = 0
   self._hitEffect = nil
   self._dropEffect = nil
-  self._itemUpgradeCallback = (GameHelper:GetInstance()):CreateCallback(self.OnItemUpgrade, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnItemUpgrade, self._itemUpgradeCallback)
-  self._itemChangeCallback = (GameHelper:GetInstance()):CreateCallback(self.OnItemChange, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.ItemCountChanged, self._itemChangeCallback)
+  self._itemUpgradeCallback = GameHelper:GetInstance():CreateCallback(self.OnItemUpgrade, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnItemUpgrade, self._itemUpgradeCallback)
+  self._itemChangeCallback = GameHelper:GetInstance():CreateCallback(self.OnItemChange, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.ItemCountChanged, self._itemChangeCallback)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreeCuttingManager.Init = function(self, homelandClient)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandTreeCuttingManager:Init(homelandClient)
   self._homelandClient = homelandClient
-  self._interactPointManager = (self._homelandClient):InteractPointManager()
-  self._charCtrl = ((self._homelandClient):CharacterManager()):MainCharacterController()
-  self._camCtrl = ((self._homelandClient):CameraManager()):FollowCameraController()
+  self._interactPointManager = self._homelandClient:InteractPointManager()
+  self._charCtrl = self._homelandClient:CharacterManager():MainCharacterController()
+  self._camCtrl = self._homelandClient:CameraManager():FollowCameraController()
   local sceneManager = homelandClient:SceneManager()
-  local treesRoot = (sceneManager:SceneRootTrans()):Find("Trees")
+  local treesRoot = sceneManager:SceneRootTrans():Find("Trees")
   if treesRoot then
     for i = 0, treesRoot.childCount - 1 do
       local treeTrans = treesRoot:GetChild(i)
       local treeID = tonumber(treeTrans.name)
       if treeID then
-        local treeCfg = (Cfg.cfg_homeland_tree)[treeID]
+        local treeCfg = Cfg.cfg_homeland_tree[treeID]
         if treeCfg then
           local tree = HomelandTree:New(treeID, treeTrans.gameObject, treeCfg, self)
-          ;
-          (self._interactPointManager):AddBuildInteractPoint(tree, i, self._interactCfgID)
-          -- DECOMPILER ERROR at PC58: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          (self._trees)[treeID] = tree
+          self._interactPointManager:AddBuildInteractPoint(tree, i, self._interactCfgID)
+          self._trees[treeID] = tree
         end
       end
     end
   end
-  do
-    self:RefreshTreeDropInfo()
-    self:ResetTimer()
-    self:RefreshAxeInfo()
-  end
+  self:RefreshTreeDropInfo()
+  self:ResetTimer()
+  self:RefreshAxeInfo()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreeCuttingManager.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnItemUpgrade, self._itemUpgradeCallback)
-  ;
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.ItemCountChanged, self._itemChangeCallback)
+function HomelandTreeCuttingManager:Dispose()
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnItemUpgrade, self._itemUpgradeCallback)
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.ItemCountChanged, self._itemChangeCallback)
   if self._hitEffect then
-    (self._hitEffect):Dispose()
+    self._hitEffect:Dispose()
   end
   if self._dropEffect then
-    (self._dropEffect):Dispose()
+    self._dropEffect:Dispose()
   end
-  ;
-  (self._timerEvent):Cancel()
+  self._timerEvent:Cancel()
   self._timerEvent = nil
   self:StopCutTask()
   self._trees = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreeCuttingManager.RefreshTreeDropInfo = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local homelandInfo = ((GameGlobal.GetModule)(HomelandModule)):GetHomelandInfo()
-  local treeInfoList = (homelandInfo.fell_info).infos
+function HomelandTreeCuttingManager:RefreshTreeDropInfo()
+  local homelandInfo = GameGlobal.GetModule(HomelandModule):GetHomelandInfo()
+  local treeInfoList = homelandInfo.fell_info.infos
   local treeInfoDic = {}
   for i = 1, #treeInfoList do
-    treeInfoDic[(treeInfoList[i]).tree_id] = treeInfoList[i]
+    treeInfoDic[treeInfoList[i].tree_id] = treeInfoList[i]
   end
-  for id,tree in pairs(self._trees) do
+  for id, tree in pairs(self._trees) do
     local treeInfo = treeInfoDic[id]
     if treeInfo then
       tree:SetDropTimes(treeInfo.fell_times)
@@ -104,185 +78,130 @@ HomelandTreeCuttingManager.RefreshTreeDropInfo = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreeCuttingManager.ResetTimer = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
+function HomelandTreeCuttingManager:ResetTimer()
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
   if not homelandModule then
-    (Log.fatal)("HomelandModule is nil, may need login")
-    return 
+    Log.fatal("HomelandModule is nil, may need login")
+    return
   end
-  local nextRefreshTime = ((homelandModule:GetHomelandInfo()).fell_info).next_refresh_time * 1000
-  local now = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime()
-  self._timerEvent = ((GameGlobal.Timer)()):AddEvent(nextRefreshTime - now, function()
-    -- function num : 0_4_0 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(self.RefreshTreeInfoProcess, self)
-  end
-)
+  local nextRefreshTime = homelandModule:GetHomelandInfo().fell_info.next_refresh_time * 1000
+  local now = GameGlobal.GetModule(SvrTimeModule):GetServerTime()
+  self._timerEvent = GameGlobal.Timer():AddEvent(nextRefreshTime - now, function()
+    GameGlobal.TaskManager():StartTask(self.RefreshTreeInfoProcess, self)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreeCuttingManager.RefreshAxeInfo = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandTreeCuttingManager:RefreshAxeInfo()
   local lastDropNeedCutTimes = self._dropNeedCutTimes
-  local axeCfg = ((GameGlobal.GetUIModule)(HomelandModule)):GetCurrentToolCfg(ToolType.TT_AXE)
+  local axeCfg = GameGlobal.GetUIModule(HomelandModule):GetCurrentToolCfg(ToolType.TT_AXE)
   if axeCfg then
     self._dropNeedCutTimes = axeCfg.param
   else
     self._dropNeedCutTimes = 0
   end
   if self._dropNeedCutTimes ~= lastDropNeedCutTimes then
-    local tree = (self._trees)[self._lastCutTreeID]
+    local tree = self._trees[self._lastCutTreeID]
     if tree then
       tree:ClearCutTimes()
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreeCuttingManager.HaveAxe = function(self)
-  -- function num : 0_6
-  do return self._dropNeedCutTimes > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandTreeCuttingManager:HaveAxe()
+  return self._dropNeedCutTimes > 0
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreeCuttingManager.CutTree = function(self, tree)
-  -- function num : 0_7 , upvalues : _ENV
-  if (self._charCtrl):State() == HomelandActorStateType.Dash then
-    return 
+function HomelandTreeCuttingManager:CutTree(tree)
+  if self._charCtrl:State() == HomelandActorStateType.Dash then
+    return
   end
-  self._currentTaskID = ((GameGlobal.TaskManager)()):StartTask(self.CutTreeProcess, self, tree)
+  self._currentTaskID = GameGlobal.TaskManager():StartTask(self.CutTreeProcess, self, tree)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreeCuttingManager.IsCutting = function(self)
-  -- function num : 0_8
-  do return self._currentTaskID ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandTreeCuttingManager:IsCutting()
+  return self._currentTaskID ~= nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreeCuttingManager.CutTreeProcess = function(self, TT, tree)
-  -- function num : 0_9 , upvalues : _ENV
-  local vec = tree:GetInteractPosition() - (self._charCtrl):Position()
+function HomelandTreeCuttingManager:CutTreeProcess(TT, tree)
+  local vec = tree:GetInteractPosition() - self._charCtrl:Position()
   local normal = vec:Normalize()
   local dis = vec:Magnitude()
   local radius = tree:GetCutRadius()
-  if radius + 0.1 < dis then
-    local target = normal * (dis - radius + 0.1) + (self._charCtrl):Position()
-    local success = (self._charCtrl):NavigateToPos(TT, target)
+  if dis > radius + 0.1 then
+    local target = normal * (dis - radius + 0.1) + self._charCtrl:Position()
+    local success = self._charCtrl:NavigateToPos(TT, target)
     if not success then
       self._currentTaskID = nil
-      return 
+      return
     end
   end
-  do
-    ;
-    (self._charCtrl):SetForbiddenMove(true, true)
-    local forward = tree:GetInteractPosition() - (self._charCtrl):Position()
-    forward.y = 0
-    ;
-    (self._charCtrl):SetForward(forward)
-    if (self._charCtrl):State() ~= HomelandActorStateType.Axe then
-      (self._charCtrl):SetHoldAxe()
-      YIELD(TT, self._takeOutAxePeriod)
-    end
-    ;
-    (self._charCtrl):SetAnimatorTrigger("WaveAxe")
-    YIELD(TT, self._beforeHitPeriod)
-    self:PlayHitEff(tree:GetTreeRootTrans())
-    ;
-    (self._camCtrl):DoShake()
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioCutTree)
-    if self:CheckDrop(tree) then
-      self:PlayDropEff(tree:GetTreeRootTrans())
-    end
-    YIELD(TT, self._beforeDropPeriod)
-    local treeID = tree:ID()
-    do
-      if self._lastCutTreeID ~= treeID then
-        local tree = (self._trees)[self._lastCutTreeID]
-        if tree then
-          tree:ClearCutTimes()
-        end
-        self._lastCutTreeID = treeID
-      end
-      local cutTimes = tree:IncreaseCutTimes()
-      ;
-      (Log.info)("Felling tree  id:" .. treeID .. " total times:" .. cutTimes)
-      if self._dropNeedCutTimes <= cutTimes then
-        local homelandModule = (GameGlobal.GetModule)(HomelandModule)
-        local res, assetList = homelandModule:HomelandFell(TT, treeID, cutTimes)
-        if res:GetSucc() then
-          tree:ClearCutTimes()
-          tree:IncreaseDropTimes()
-          local asset = assetList[1]
-          local itemCfg = (Cfg.cfg_item)[asset.assetid]
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomeShowUIBubble, (StringTable.Get)("str_homeland_collect_item", (StringTable.Get)(itemCfg.Name), asset.count), itemCfg.Icon)
-          ;
-          (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioJumpOutGift)
-        else
-          do
-            do
-              if res:GetResult() ~= HomeLandErrorType.E_DROP_TIMES_LIMIT then
-                (Log.fatal)("[Homeland] HomelandTreeCuttingManager:CutTreeProcess HomelandFell fail, res:" .. res:GetResult())
-              end
-              tree:ResetClearTimer()
-              YIELD(TT, self._afterDropPeriod)
-              ;
-              (self._charCtrl):SetForbiddenMove(false)
-              self._currentTaskID = nil
-            end
-          end
-        end
-      end
-    end
+  self._charCtrl:SetForbiddenMove(true, true)
+  local forward = tree:GetInteractPosition() - self._charCtrl:Position()
+  forward.y = 0
+  self._charCtrl:SetForward(forward)
+  if self._charCtrl:State() ~= HomelandActorStateType.Axe then
+    self._charCtrl:SetHoldAxe()
+    YIELD(TT, self._takeOutAxePeriod)
   end
+  self._charCtrl:SetAnimatorTrigger("WaveAxe")
+  YIELD(TT, self._beforeHitPeriod)
+  self:PlayHitEff(tree:GetTreeRootTrans())
+  self._camCtrl:DoShake()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioCutTree)
+  if self:CheckDrop(tree) then
+    self:PlayDropEff(tree:GetTreeRootTrans())
+  end
+  YIELD(TT, self._beforeDropPeriod)
+  local treeID = tree:ID()
+  if self._lastCutTreeID ~= treeID then
+    local tree = self._trees[self._lastCutTreeID]
+    if tree then
+      tree:ClearCutTimes()
+    end
+    self._lastCutTreeID = treeID
+  end
+  local cutTimes = tree:IncreaseCutTimes()
+  Log.info("Felling tree  id:" .. treeID .. " total times:" .. cutTimes)
+  if cutTimes >= self._dropNeedCutTimes then
+    local homelandModule = GameGlobal.GetModule(HomelandModule)
+    local res, assetList = homelandModule:HomelandFell(TT, treeID, cutTimes)
+    if res:GetSucc() then
+      tree:ClearCutTimes()
+      tree:IncreaseDropTimes()
+      local asset = assetList[1]
+      local itemCfg = Cfg.cfg_item[asset.assetid]
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.HomeShowUIBubble, StringTable.Get("str_homeland_collect_item", StringTable.Get(itemCfg.Name), asset.count), itemCfg.Icon)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioJumpOutGift)
+    elseif res:GetResult() ~= HomeLandErrorType.E_DROP_TIMES_LIMIT then
+      Log.fatal("[Homeland] HomelandTreeCuttingManager:CutTreeProcess HomelandFell fail, res:" .. res:GetResult())
+    end
+  else
+    tree:ResetClearTimer()
+  end
+  YIELD(TT, self._afterDropPeriod)
+  self._charCtrl:SetForbiddenMove(false)
+  self._currentTaskID = nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreeCuttingManager.PlayHitEff = function(self, root)
-  -- function num : 0_10 , upvalues : _ENV
+function HomelandTreeCuttingManager:PlayHitEff(root)
   if not self._hitEffect then
-    self._hitEffect = (ResourceManager:GetInstance()):SyncLoadAsset("eff_jy_log_axe_hit.prefab", LoadType.GameObject)
+    self._hitEffect = ResourceManager:GetInstance():SyncLoadAsset("eff_jy_log_axe_hit.prefab", LoadType.GameObject)
   end
-  ;
-  ((self._hitEffect).Obj):SetActive(false)
-  ;
-  (((self._hitEffect).Obj).transform):SetParent(root, false)
-  ;
-  ((self._hitEffect).Obj):SetActive(true)
+  self._hitEffect.Obj:SetActive(false)
+  self._hitEffect.Obj.transform:SetParent(root, false)
+  self._hitEffect.Obj:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreeCuttingManager.PlayDropEff = function(self, root)
-  -- function num : 0_11 , upvalues : _ENV
+function HomelandTreeCuttingManager:PlayDropEff(root)
   if not self._dropEffect then
-    self._dropEffect = (ResourceManager:GetInstance()):SyncLoadAsset("eff_jy_log_axe_leaf.prefab", LoadType.GameObject)
+    self._dropEffect = ResourceManager:GetInstance():SyncLoadAsset("eff_jy_log_axe_leaf.prefab", LoadType.GameObject)
   end
-  ;
-  ((self._dropEffect).Obj):SetActive(false)
-  ;
-  (((self._dropEffect).Obj).transform):SetParent(root, false)
-  ;
-  ((self._dropEffect).Obj):SetActive(true)
+  self._dropEffect.Obj:SetActive(false)
+  self._dropEffect.Obj.transform:SetParent(root, false)
+  self._dropEffect.Obj:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreeCuttingManager.CheckDrop = function(self, tree)
-  -- function num : 0_12
+function HomelandTreeCuttingManager:CheckDrop(tree)
   if tree:ForbiddenCut() then
     return false
   end
@@ -291,60 +210,44 @@ HomelandTreeCuttingManager.CheckDrop = function(self, tree)
   if self._lastCutTreeID == treeID then
     cutTimes = tree:GetCutTimes()
   end
-  do return self._dropNeedCutTimes <= cutTimes + 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return cutTimes + 1 >= self._dropNeedCutTimes
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreeCuttingManager.StopCutTask = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function HomelandTreeCuttingManager:StopCutTask()
   if self._currentTaskID then
-    ((GameGlobal.TaskManager)()):KillTask(self._currentTaskID)
+    GameGlobal.TaskManager():KillTask(self._currentTaskID)
     self._currentTaskID = nil
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreeCuttingManager.OnItemUpgrade = function(self, tplID)
-  -- function num : 0_14 , upvalues : _ENV
-  local axeCfg = (Cfg.cfg_item_tool_upgrade)[tplID]
+function HomelandTreeCuttingManager:OnItemUpgrade(tplID)
+  local axeCfg = Cfg.cfg_item_tool_upgrade[tplID]
   if not axeCfg then
-    return 
+    return
   end
   if axeCfg.ToolType == ToolType.TT_AXE then
     self:RefreshAxeInfo()
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreeCuttingManager.OnItemChange = function(self)
-  -- function num : 0_15
+function HomelandTreeCuttingManager:OnItemChange()
   self:RefreshAxeInfo()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreeCuttingManager.RefreshTreeInfoProcess = function(self, TT)
-  -- function num : 0_16 , upvalues : _ENV
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
+function HomelandTreeCuttingManager:RefreshTreeInfoProcess(TT)
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
   if not homelandModule then
-    (Log.fatal)("HomelandModule is nil, may need login")
-    return 
+    Log.fatal("HomelandModule is nil, may need login")
+    return
   end
   local res = homelandModule:HomelandGetFellInfo(TT)
-  if self._timerEvent == nil or (self._timerEvent):IsCancel() then
-    return 
+  if self._timerEvent == nil or self._timerEvent:IsCancel() then
+    return
   end
   if res:GetSucc() then
     self:RefreshTreeDropInfo()
   else
-    ;
-    (Log.fatal)("[Homeland] HomelandTreeCuttingManager:RefreshTreeInfoProcess get fell info fail, res:" .. res:GetResult())
+    Log.fatal("[Homeland] HomelandTreeCuttingManager:RefreshTreeInfoProcess get fell info fail, res:" .. res:GetResult())
   end
   self:ResetTimer()
 end
-
-

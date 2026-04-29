@@ -1,8 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/th/str_extra_mission_stage_index.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_extra_mission_stage_index_1 = "I", str_extra_mission_stage_index_2 = "II", str_extra_mission_stage_index_3 = "III", str_extra_mission_stage_index_4 = "IV", str_extra_mission_stage_index_5 = "V", str_extra_mission_stage_index_6 = "VI"}
+local config = {
+  str_extra_mission_stage_index_1 = "I",
+  str_extra_mission_stage_index_2 = "II",
+  str_extra_mission_stage_index_3 = "III",
+  str_extra_mission_stage_index_4 = "IV",
+  str_extra_mission_stage_index_5 = "V",
+  str_extra_mission_stage_index_6 = "VI"
+}
 return config
-

@@ -1,36 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_achieve_finish/achievement_manager_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AchievementManagerItem", Object)
 AchievementManagerItem = AchievementManagerItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AchievementManagerItem.SetGameObject = function(self, go)
-  -- function num : 0_0
+function AchievementManagerItem:SetGameObject(go)
   self._go = go
   self:_GetComponents()
-  ;
-  (self._go):SetActive(false)
+  self._go:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManagerItem.OnHide = function(self)
-  -- function num : 0_1
-  (self._go):SetActive(false)
+function AchievementManagerItem:OnHide()
+  self._go:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManagerItem.SetData = function(self, quest)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._go):SetActive(true)
-  ;
-  (self._achieveTagTex):SetText((StringTable.Get)(quest.QuestName))
-  ;
-  (self._achieveDesTex):SetText((StringTable.Get)(quest.QuestDesc))
+function AchievementManagerItem:SetData(quest)
+  self._go:SetActive(true)
+  self._achieveTagTex:SetText(StringTable.Get(quest.QuestName))
+  self._achieveDesTex:SetText(StringTable.Get(quest.QuestDesc))
   local _c = 0
   local rewards = quest.rewards
   for i = 1, #rewards do
@@ -40,53 +24,31 @@ AchievementManagerItem.SetData = function(self, quest)
       break
     end
   end
-  do
-    ;
-    (self._achievePointTex):SetText("+" .. _c)
-  end
+  self._achievePointTex:SetText("+" .. _c)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManagerItem.DoTween = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._tweenImg):DOFillAmount(1, 0.4)
-  ;
-  (self._quan):DOLocalRotate(Vector3(0, 0, 360), 0.4, ((DG.Tweening).RotateMode).FastBeyond360)
+function AchievementManagerItem:DoTween()
+  self._tweenImg:DOFillAmount(1, 0.4)
+  self._quan:DOLocalRotate(Vector3(0, 0, 360), 0.4, DG.Tweening.RotateMode.FastBeyond360)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManagerItem.ReplyTween = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._quan).localRotation = Quaternion:SetEuler(0, 0, -150)
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._tweenImg).fillAmount = 0
+function AchievementManagerItem:ReplyTween()
+  self._quan.localRotation = Quaternion:SetEuler(0, 0, -150)
+  self._tweenImg.fillAmount = 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManagerItem._GetComponents = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._rect = ((((self._go).transform):Find("rect")).gameObject):GetComponent("RectTransform")
-  self._titleTex = ((((self._go).transform):Find("rect/Title/LocalizationText")).gameObject):GetComponent("UILocalizationText")
-  ;
-  (self._titleTex):SetText((StringTable.Get)("str_quest_base_new_achievement"))
-  self._achieveTagTex = ((((self._go).transform):Find("rect/achieveTagTex")).gameObject):GetComponent("UILocalizationText")
-  self._achieveDesTex = ((((self._go).transform):Find("rect/GameObject/achieveDesTex")).gameObject):GetComponent("UILocalizationText")
-  self._achievePointTex = ((((self._go).transform):Find("rect/GameObject/GameObject/Image/achievePointTex")).gameObject):GetComponent("UILocalizationText")
-  self._tweenImg = ((((self._go).transform):Find("rect/Title/LocalizationText/GameObject/dui")).gameObject):GetComponent("Image")
-  self._quan = ((((self._go).transform):Find("rect/Title/LocalizationText/GameObject/quan")).gameObject):GetComponent("Transform")
+function AchievementManagerItem:_GetComponents()
+  self._rect = self._go.transform:Find("rect").gameObject:GetComponent("RectTransform")
+  self._titleTex = self._go.transform:Find("rect/Title/LocalizationText").gameObject:GetComponent("UILocalizationText")
+  self._titleTex:SetText(StringTable.Get("str_quest_base_new_achievement"))
+  self._achieveTagTex = self._go.transform:Find("rect/achieveTagTex").gameObject:GetComponent("UILocalizationText")
+  self._achieveDesTex = self._go.transform:Find("rect/GameObject/achieveDesTex").gameObject:GetComponent("UILocalizationText")
+  self._achievePointTex = self._go.transform:Find("rect/GameObject/GameObject/Image/achievePointTex").gameObject:GetComponent("UILocalizationText")
+  self._tweenImg = self._go.transform:Find("rect/Title/LocalizationText/GameObject/dui").gameObject:GetComponent("Image")
+  self._quan = self._go.transform:Find("rect/Title/LocalizationText/GameObject/quan").gameObject:GetComponent("Transform")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManagerItem.Dispose = function(self)
-  -- function num : 0_6
+function AchievementManagerItem:Dispose()
   self._rect = nil
   self._achieveTagTex = nil
   self._achieveDesTex = nil
@@ -96,30 +58,20 @@ AchievementManagerItem.Dispose = function(self)
   self._go = nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManagerItem.GetRectTransform = function(self)
-  -- function num : 0_7
+function AchievementManagerItem:GetRectTransform()
   return self._rect
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManagerItem._OnValue = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (self._achieveTagTex):SetText((StringTable.Get)((self.quest).QuestName))
-  ;
-  (self._achieveDesTex):SetText((StringTable.Get)((self.quest).QuestDesc))
+function AchievementManagerItem:_OnValue()
+  self._achieveTagTex:SetText(StringTable.Get(self.quest.QuestName))
+  self._achieveDesTex:SetText(StringTable.Get(self.quest.QuestDesc))
   local _c = 0
-  local rewards = (self.quest).rewards
+  local rewards = self.quest.rewards
   for i = 1, #rewards do
     local reward = rewards[i]
     if reward.assetid == RoleAssetID.RoleAssetAchPoint then
       _c = reward.count
     end
   end
-  ;
-  (self._achievePointTex):SetText("+" .. _c)
+  self._achievePointTex:SetText("+" .. _c)
 end
-
-

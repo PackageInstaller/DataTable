@@ -1,8 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/enum/test_robot_running_mode.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-TestRobotRunningMode = {Legacy = 0, Mission = 1, ExtraMission = 2, Maze = 3, ResDungeon = 4, Tower = 5, Elementary = 6, GoldbergEvent = 7, AutoTest = 8, SummerI = 9, SummerII = 10, N5Mission = 11, N5RandomWave = 12, BlackFist = 13, WorldBoss = 14, Cartridge = 15, Tale = 16, DifficultyMission = 17, SailingMission = 18, MiniMaze = 19, ActivityDifficultyMission = 20, ActivityDifficultyMissionN29 = 21, ActivityDifficultyMissionN31 = 22, ActivityDifficultyMissionN32 = 23, EightPets = 24, ActivityDifficultyMissionCN6 = 25, PopStarPro = 26, AniPopStar = 27, TalentCampaign = 28, SeasonMaze = 29, Season = 50, CCAffix = 51, MAX = 99}
+TestRobotRunningMode = {
+  Legacy = 0,
+  Mission = 1,
+  ExtraMission = 2,
+  Maze = 3,
+  ResDungeon = 4,
+  Tower = 5,
+  Elementary = 6,
+  GoldbergEvent = 7,
+  AutoTest = 8,
+  SummerI = 9,
+  SummerII = 10,
+  N5Mission = 11,
+  N5RandomWave = 12,
+  BlackFist = 13,
+  WorldBoss = 14,
+  Cartridge = 15,
+  Tale = 16,
+  DifficultyMission = 17,
+  SailingMission = 18,
+  MiniMaze = 19,
+  ActivityDifficultyMission = 20,
+  ActivityDifficultyMissionN29 = 21,
+  ActivityDifficultyMissionN31 = 22,
+  ActivityDifficultyMissionN32 = 23,
+  EightPets = 24,
+  ActivityDifficultyMissionCN6 = 25,
+  PopStarPro = 26,
+  AniPopStar = 27,
+  TalentCampaign = 28,
+  SeasonMaze = 29,
+  Season = 50,
+  CCAffix = 51,
+  MAX = 99
+}
 _enum("TestRobotRunningMode", TestRobotRunningMode)
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/psparam_absorb_traps_and_damage_by_pickup_target.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam", SkillPhaseParamBase)
 SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam = SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam:Constructor(t)
   self._hitAnimName = t.hitAnim
   self._hitDelayTime = t.hitDelayTime
   self._hitEffectID = t.hitEffectID
@@ -22,98 +15,69 @@ SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam.Constructor = function(self, t
   self._trapFlyTotalTime = t.trapFlyTotalTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam:GetCacheTable()
   local t = {}
   if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    })
   end
-  if self._trapTrajectoryID and self._trapTrajectoryID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._trapTrajectoryID]).ResPath, 1})
+  if self._trapTrajectoryID and 0 < self._trapTrajectoryID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._trapTrajectoryID].ResPath,
+      1
+    })
   end
-  if self._trapGridEffID and self._trapGridEffID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._trapGridEffID]).ResPath, 1})
+  if self._trapGridEffID and 0 < self._trapGridEffID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._trapGridEffID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam:GetPhaseType()
   return SkillViewPhaseType.AbsorbTrapsAndDamageByPickupTarget
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam.GetHitAnimationName = function(self)
-  -- function num : 0_3
+function SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam:GetHitAnimationName()
   return self._hitAnimName
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam.GetHitDelayTime = function(self)
-  -- function num : 0_4
+function SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam:GetHitDelayTime()
   return self._hitDelayTime
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam.GetEachDamageTime = function(self)
-  -- function num : 0_5
+function SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam:GetEachDamageTime()
   return self._eachDamageTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam.GetHitEffectId = function(self)
-  -- function num : 0_6
+function SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam:GetHitEffectId()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam.GetTrapStartDelay = function(self)
-  -- function num : 0_7
+function SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam:GetTrapStartDelay()
   return self._trapStartDelay
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam.GetTrapTrajectoryID = function(self)
-  -- function num : 0_8
+function SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam:GetTrapTrajectoryID()
   return self._trapTrajectoryID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam.GetTrapGridEffID = function(self)
-  -- function num : 0_9
+function SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam:GetTrapGridEffID()
   return self._trapGridEffID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam.GetTrapStartHeight = function(self)
-  -- function num : 0_10
+function SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam:GetTrapStartHeight()
   return self._trapStartHeight
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam.GetTrapEndHeight = function(self)
-  -- function num : 0_11
+function SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam:GetTrapEndHeight()
   return self._trapEndHeight
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam.GetTrapFlyTotalTime = function(self)
-  -- function num : 0_12
+function SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam:GetTrapFlyTotalTime()
   return self._trapFlyTotalTime
 end
-
-

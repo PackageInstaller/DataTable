@@ -1,25 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/base_world_creation_context.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("world_creation_context")
 _class("BaseWorldCreationContext", WorldCreationContext)
 BaseWorldCreationContext = BaseWorldCreationContext
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BaseWorldCreationContext.Constructor = function(self)
-  -- function num : 0_0
+function BaseWorldCreationContext:Constructor()
   self.BWCC_EComponentsEnum = {TotalComponents = 0}
   self.BWCC_EMatchers = {}
   self.BWCC_WUniqueComponentsEnum = {TotalComponents = 0}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorldCreationContext.WCC_EntityTotalComponents = function(self)
-  -- function num : 0_1
-  return (self.BWCC_EComponentsEnum).TotalComponents
+function BaseWorldCreationContext:WCC_EntityTotalComponents()
+  return self.BWCC_EComponentsEnum.TotalComponents
 end
-
-

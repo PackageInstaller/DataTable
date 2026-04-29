@@ -1,68 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn21_n50/hard/ui_cn21_n50_hard_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN21N50HardLevel", UIController)
 UICN21N50HardLevel = UICN21N50HardLevel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN21N50HardLevel.Constructor = function(self)
-  -- function num : 0_0
+function UICN21N50HardLevel:Constructor()
   self._isReview = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  self._campaignType = (UICN21N50Helper.GetCampaignType)(self._isReview)
-  self._componentId_BlackMission = (UICN21N50Helper.GetComponentId)("black", self._isReview)
-  self._campaign = (UIActivityHelper.LoadDataOnEnter)(TT, res, self._campaignType, {self._componentId_BlackMission})
-  self._blackHardCompInfo = (self._campaign):GetComponentInfo(self._componentId_BlackMission)
-  local openTime = (self._blackHardCompInfo).m_unlock_time
-  local closeTime = (self._blackHardCompInfo).m_close_time
-  local now = (self:GetModule(SvrTimeModule)):GetServerTime() / 1000
-  if now < openTime then
+function UICN21N50HardLevel:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
+  self._campaignType = UICN21N50Helper.GetCampaignType(self._isReview)
+  self._componentId_BlackMission = UICN21N50Helper.GetComponentId("black", self._isReview)
+  self._campaign = UIActivityHelper.LoadDataOnEnter(TT, res, self._campaignType, {
+    self._componentId_BlackMission
+  })
+  self._blackHardCompInfo = self._campaign:GetComponentInfo(self._componentId_BlackMission)
+  local openTime = self._blackHardCompInfo.m_unlock_time
+  local closeTime = self._blackHardCompInfo.m_close_time
+  local now = self:GetModule(SvrTimeModule):GetServerTime() / 1000
+  if openTime > now then
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN
     campaignModule:ShowErrorToast(res.m_result, true)
-    return 
-  else
-    if closeTime < now then
-      res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
-      campaignModule:ShowErrorToast(res.m_result, true)
-      return 
-    end
+    return
+  elseif closeTime < now then
+    res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
+    campaignModule:ShowErrorToast(res.m_result, true)
+    return
   end
-  if not (self._blackHardCompInfo).m_b_unlock then
+  if not self._blackHardCompInfo.m_b_unlock then
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_UNLOCK
-    local cfgv = (Cfg.cfg_campaign_mission)[(self._blackHardCompInfo).m_need_mission_id]
+    local cfgv = Cfg.cfg_campaign_mission[self._blackHardCompInfo.m_need_mission_id]
     if cfgv then
-      local lvName = (StringTable.Get)(cfgv.Name)
-      local msg = (StringTable.Get)("str_activity_common_will_open_after_clearance", lvName)
-      ;
-      (ToastManager.ShowToast)(msg)
+      local lvName = StringTable.Get(cfgv.Name)
+      local msg = StringTable.Get("str_activity_common_will_open_after_clearance", lvName)
+      ToastManager.ShowToast(msg)
     end
-    do
-      do
-        do return  end
-        local fRes = AsyncRequestRes:New()
-        ;
-        (self._campaign):ReLoadCampaignInfo_Force(TT, fRes)
-        ;
-        (UIActivityDiffLevelCupData.CreateEntiesDesc)()
-      end
-    end
+    return
   end
+  local fRes = AsyncRequestRes:New()
+  self._campaign:ReLoadCampaignInfo_Force(TT, fRes)
+  UIActivityDiffLevelCupData.CreateEntiesDesc()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  self._black_component = (self._campaign):GetComponent(self._componentId_BlackMission)
-  self._blackHardCompInfo = (self._campaign):GetComponentInfo(self._componentId_BlackMission)
+function UICN21N50HardLevel:OnShow(uiParams)
+  self._black_component = self._campaign:GetComponent(self._componentId_BlackMission)
+  self._blackHardCompInfo = self._campaign:GetComponentInfo(self._componentId_BlackMission)
   self:AttachEvent(GameEventType.ActivityComponentCloseEvent, self.OnComponentClose)
   self:AttachEvent(GameEventType.OnCampDiffTeamReset, self.ClearTeam)
   self:InitWidget()
@@ -71,165 +51,105 @@ UICN21N50HardLevel.OnShow = function(self, uiParams)
   self:SetTimeTex()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel._InitLevelData = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN21N50HardLevel:_InitLevelData()
   if not self._levelDatas then
     self._levelDatas = {}
-    local componentCfgId = (self._black_component):GetComponentCfgId()
-    local cfgs = (Cfg.cfg_difficulty_parent_mission)({ComponentID = componentCfgId})
+    local componentCfgId = self._black_component:GetComponentCfgId()
+    local cfgs = Cfg.cfg_difficulty_parent_mission({ComponentID = componentCfgId})
     cfgs = self:_SortCfg(cfgs)
     if cfgs ~= nil then
-      for k,cfg in pairs(cfgs) do
+      for k, cfg in pairs(cfgs) do
         local data = UIActivityDiffLevelData:New()
         data:InitParentLevel(self._black_component, self._blackHardCompInfo, cfg)
-        -- DECOMPILER ERROR at PC35: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self._levelDatas)[#self._levelDatas + 1] = data
+        self._levelDatas[#self._levelDatas + 1] = data
       end
     end
   else
-    do
-      for i = 1, #self._levelDatas do
-        ((self._levelDatas)[i]):RefreshParentLevel(self._black_component, self._blackHardCompInfo)
-      end
-      do
-        self._curIndex = 1
-        self._passInfo = (self._blackHardCompInfo).infos
-        self._curIndex = (table.count)(self._passInfo) + 1
-        if #self._levelDatas < (table.count)(self._passInfo) then
-          self._curIndex = #self._levelDatas
-        end
-        self:_Refresh()
-      end
+    for i = 1, #self._levelDatas do
+      self._levelDatas[i]:RefreshParentLevel(self._black_component, self._blackHardCompInfo)
     end
   end
+  self._curIndex = 1
+  self._passInfo = self._blackHardCompInfo.infos
+  self._curIndex = table.count(self._passInfo) + 1
+  if table.count(self._passInfo) > #self._levelDatas then
+    self._curIndex = #self._levelDatas
+  end
+  self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel._SortCfg = function(self, cfgs)
-  -- function num : 0_4 , upvalues : _ENV
-  (table.sort)(cfgs, function(a, b)
-    -- function num : 0_4_0
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+function UICN21N50HardLevel:_SortCfg(cfgs)
+  table.sort(cfgs, function(a, b)
+    return a.ID < b.ID
+  end)
   return cfgs
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel._Refresh = function(self, playAnim)
-  -- function num : 0_5
+function UICN21N50HardLevel:_Refresh(playAnim)
   for i = 1, 6 do
-    local data = (self._levelDatas)[i]
-    ;
-    ((self._levels)[i]):SetData(i, data, self._passInfo, self._curIndex)
+    local data = self._levelDatas[i]
+    self._levels[i]:SetData(i, data, self._passInfo, self._curIndex)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel.SetTimeTex = function(self)
-  -- function num : 0_6
+function UICN21N50HardLevel:SetTimeTex()
   if not self._isReview then
-    local endTime = ((self._black_component):GetComponentInfo()).m_close_time
+    local endTime = self._black_component:GetComponentInfo().m_close_time
     self:_SetRemainingTime("_time", "str_cn21_n50_remain_time_in_activity", endTime)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel._SetRemainingTime = function(self, widgetName, descId, endTime)
-  -- function num : 0_7 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UICN21N50HardLevel:_SetRemainingTime(widgetName, descId, endTime)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   obj:SetCustomTimeStr_Common_1()
   obj:SetExtraRollingText()
   obj:SetAdvanceText(descId)
   obj:SetData(endTime, nil, nil)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel.InitCommonTopButton = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self.topButtonWidget = (self.topbuttons):SpawnObject("UINewCommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_8_0 , upvalues : _ENV, self
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-    campaignModule:CampaignSwitchState(true, UIStateType.UICN21N50MainController, UIStateType.UIMain, nil, (self._campaign)._id)
-  end
-, nil, function()
-    -- function num : 0_8_1 , upvalues : self, _ENV
+function UICN21N50HardLevel:InitCommonTopButton()
+  self.topButtonWidget = self.topbuttons:SpawnObject("UINewCommonTopButton")
+  self.topButtonWidget:SetData(function()
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    campaignModule:CampaignSwitchState(true, UIStateType.UICN21N50MainController, UIStateType.UIMain, nil, self._campaign._id)
+  end, nil, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel.OnHide = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UICN21N50HardLevel:OnHide()
   self:DetachEvent(GameEventType.ActivityComponentCloseEvent, self.OnComponentClose)
   self:DetachEvent(GameEventType.OnCampDiffTeamReset, self.ClearTeam)
   self._isShow = false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel.ClearTeam = function(self)
-  -- function num : 0_10
+function UICN21N50HardLevel:ClearTeam()
   self:_InitLevelData()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel.OnComponentClose = function(self, componentCfgId)
-  -- function num : 0_11
+function UICN21N50HardLevel:OnComponentClose(componentCfgId)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel._Back = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local campaignMain = (CampaignConst.GetSafeStateInfo)((self._campaign)._id, nil, UIStateType.UICN21N50MainController, nil)
-  local uiMain = (CampaignConst.GetSafeStateInfo)(nil, nil, UIStateType.UIMain, nil)
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UICN21N50HardLevel:_Back()
+  local campaignMain = CampaignConst.GetSafeStateInfo(self._campaign._id, nil, UIStateType.UICN21N50MainController, nil)
+  local uiMain = CampaignConst.GetSafeStateInfo(nil, nil, UIStateType.UIMain, nil)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   campaignModule:SwitchState_Safe(true, {campaignMain, uiMain})
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel.InitWidget = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UICN21N50HardLevel:InitWidget()
   self.topbuttons = self:GetUIComponent("UISelectObjectPath", "topbuttons")
   self._levels = {}
   for i = 1, 6 do
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R5 in 'UnsetPending'
-
-    (self._levels)[i] = UICN21N50HardLevelItem:New(self:GetUIComponent("UIView", "Level" .. i))
+    self._levels[i] = UICN21N50HardLevelItem:New(self:GetUIComponent("UIView", "Level" .. i))
   end
   self._shot = self:GetUIComponent("H3DUIBlurHelper", "BlurHelper")
   self._shotRect = self:GetUIComponent("RectTransform", "BlurHelper")
-  self._width = ((self._shotRect).rect).width
-  self._height = ((self._shotRect).rect).height
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._shot).width = self._width
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._shot).height = self._height
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._shot).blurTimes = 0
+  self._width = self._shotRect.rect.width
+  self._height = self._shotRect.rect.height
+  self._shot.width = self._width
+  self._shot.height = self._height
+  self._shot.blurTimes = 0
   self._scale = 1.2
   self._level1pos1 = self:GetUIComponent("RectTransform", "level1pos1")
   self._level1pos2 = self:GetUIComponent("RectTransform", "level1pos2")
@@ -238,102 +158,67 @@ UICN21N50HardLevel.InitWidget = function(self)
   self._bg2loader = self:GetUIComponent("RawImageLoader", "Bg2")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel._EnterLevel = function(self, idx)
-  -- function num : 0_14 , upvalues : _ENV
-  local leveldata = (self._levelDatas)[idx]
+function UICN21N50HardLevel:_EnterLevel(idx)
+  local leveldata = self._levelDatas[idx]
   local isOpen = leveldata._isOpen
   if not isOpen then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_diff_unlock_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_activity_diff_unlock_tips"))
+    return
   end
-  local endTime = (self._blackHardCompInfo).m_close_time
+  local endTime = self._blackHardCompInfo.m_close_time
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local remainTime = endTime - curTime
-  remainTime = (math.max)(remainTime, 0)
-  do
-    if remainTime <= 0 then
-      local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_107"))
-      campaignModule:CampaignSwitchState(true, UIStateType.UICN21N50MainController, UIStateType.UIMain, nil, (self._campaign)._id)
-      return 
-    end
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIActivityDiffLevelDetail", leveldata, self._black_component)
+  remainTime = math.max(remainTime, 0)
+  if remainTime <= 0 then
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_107"))
+    campaignModule:CampaignSwitchState(true, UIStateType.UICN21N50MainController, UIStateType.UIMain, nil, self._campaign._id)
+    return
   end
+  GameGlobal.UIStateManager():ShowDialog("UIActivityDiffLevelDetail", leveldata, self._black_component)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel.Press1OnClick = function(self)
-  -- function num : 0_15
+function UICN21N50HardLevel:Press1OnClick()
   self:_EnterLevel(1)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel.Press2OnClick = function(self)
-  -- function num : 0_16
+function UICN21N50HardLevel:Press2OnClick()
   self:_EnterLevel(2)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel.Press3OnClick = function(self)
-  -- function num : 0_17
+function UICN21N50HardLevel:Press3OnClick()
   self:_EnterLevel(3)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel.Press4OnClick = function(self)
-  -- function num : 0_18
+function UICN21N50HardLevel:Press4OnClick()
   self:_EnterLevel(4)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel.Press5OnClick = function(self)
-  -- function num : 0_19
+function UICN21N50HardLevel:Press5OnClick()
   self:_EnterLevel(5)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel.Press6OnClick = function(self)
-  -- function num : 0_20
+function UICN21N50HardLevel:Press6OnClick()
   self:_EnterLevel(6)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel.InfoBtnOnClick = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local endTime = (self._blackHardCompInfo).m_close_time
+function UICN21N50HardLevel:InfoBtnOnClick()
+  local endTime = self._blackHardCompInfo.m_close_time
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local remainTime = endTime - curTime
-  remainTime = (math.max)(remainTime, 0)
-  do
-    if remainTime <= 0 then
-      local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-      campaignModule:CampaignSwitchState(true, UIStateType.UICN21N50HardLevel, UIStateType.UIMain, nil, (self._campaign)._id)
-      return 
-    end
-    self:ShowDialog("UIIntroLoader", "UICN21N50HardLevel")
+  remainTime = math.max(remainTime, 0)
+  if remainTime <= 0 then
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    campaignModule:CampaignSwitchState(true, UIStateType.UICN21N50HardLevel, UIStateType.UIMain, nil, self._campaign._id)
+    return
   end
+  self:ShowDialog("UIIntroLoader", "UICN21N50HardLevel")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50HardLevel._SpawnObject = function(self, widgetName, className)
-  -- function num : 0_22
+function UICN21N50HardLevel:_SpawnObject(widgetName, className)
   local pool = self:GetUIComponent("UISelectObjectPath", widgetName)
   local obj = pool:SpawnObject(className)
   return obj
 end
-
-

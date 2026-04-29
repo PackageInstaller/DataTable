@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_first_pick_monster_in_second_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayFirstPickMonsterInSecondPosInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayFirstPickMonsterInSecondPosInstruction = SkillPreviewPlayFirstPickMonsterInSecondPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayFirstPickMonsterInSecondPosInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewPlayFirstPickMonsterInSecondPosInstruction:Constructor(params)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayFirstPickMonsterInSecondPosInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1
+function SkillPreviewPlayFirstPickMonsterInSecondPosInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = casterEntity:GetOwnerWorld()
   local entitySvc = world:GetService("RenderEntity")
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
@@ -29,5 +19,3 @@ SkillPreviewPlayFirstPickMonsterInSecondPosInstruction.DoInstruction = function(
     end
   end
 end
-
-

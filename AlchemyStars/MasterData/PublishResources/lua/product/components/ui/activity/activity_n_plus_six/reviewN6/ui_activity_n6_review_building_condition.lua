@@ -1,56 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/activity_n_plus_six/reviewN6/ui_activity_n6_review_building_condition.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN6ReviewBuildingCondition", Object)
 UIActivityN6ReviewBuildingCondition = UIActivityN6ReviewBuildingCondition
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN6ReviewBuildingCondition.Constructor = function(self, cfg, localProcess)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN6ReviewBuildingCondition:Constructor(cfg, localProcess)
   self._localProcess = localProcess
-  self._lineMissionComponet = (self._localProcess):GetComponent(ECampaignReviewN6ComponentID.LINE_MISSION)
-  self._lineMissionCompInfo = (self._localProcess):GetComponentInfo(ECampaignReviewN6ComponentID.LINE_MISSION)
+  self._lineMissionComponet = self._localProcess:GetComponent(ECampaignReviewN6ComponentID.LINE_MISSION)
+  self._lineMissionCompInfo = self._localProcess:GetComponentInfo(ECampaignReviewN6ComponentID.LINE_MISSION)
   self._preBuildingIdList = {}
   self._preBuildingStatusList = {}
   if not cfg then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R3 in 'UnsetPending'
-
   if cfg.NeedItemId > 0 then
-    (self._preBuildingIdList)[#self._preBuildingIdList + 1] = cfg.NeedItemId
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._preBuildingStatusList)[#self._preBuildingStatusList + 1] = cfg.NeedItemStatus
+    self._preBuildingIdList[#self._preBuildingIdList + 1] = cfg.NeedItemId
+    self._preBuildingStatusList[#self._preBuildingStatusList + 1] = cfg.NeedItemStatus
   end
   self._needMissionList = cfg.NeedMissionList
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingCondition.IsUnLock = function(self, buildingDatas)
-  -- function num : 0_1
+function UIActivityN6ReviewBuildingCondition:IsUnLock(buildingDatas)
   for i = 1, #self._preBuildingIdList do
-    local buildingData = buildingDatas:GetBuilding((self._preBuildingIdList)[i])
-    local statusType = (self._preBuildingStatusList)[i]
-    if statusType >= 0 and buildingData:IsUnLockStatus((self._preBuildingStatusList)[i]) == false then
+    local buildingData = buildingDatas:GetBuilding(self._preBuildingIdList[i])
+    local statusType = self._preBuildingStatusList[i]
+    if 0 <= statusType and buildingData:IsUnLockStatus(self._preBuildingStatusList[i]) == false then
       return false
     end
   end
   if self._needMissionList then
-    local passMissionInfos = (self._lineMissionCompInfo).m_pass_mission_info
+    local passMissionInfos = self._lineMissionCompInfo.m_pass_mission_info
     for i = 1, #self._needMissionList do
-      if (self._lineMissionComponet):IsPassCamMissionID((self._needMissionList)[i]) == false then
+      if self._lineMissionComponet:IsPassCamMissionID(self._needMissionList[i]) == false then
         return false
       end
     end
   end
-  do
-    return true
-  end
+  return true
 end
-
-

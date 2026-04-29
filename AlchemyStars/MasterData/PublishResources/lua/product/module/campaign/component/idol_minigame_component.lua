@@ -1,107 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/idol_minigame_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("IdolMiniGameComponent", ICampaignComponent)
 IdolMiniGameComponent = IdolMiniGameComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-IdolMiniGameComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function IdolMiniGameComponent:Constructor()
   self.m_component_info = IdolComponentInfo:New()
   self.m_endingId = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function IdolMiniGameComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = IdolComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function IdolMiniGameComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function IdolMiniGameComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_IDOL_GAME
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function IdolMiniGameComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.GetCurrentEndingId = function(self)
-  -- function num : 0_5
+function IdolMiniGameComponent:GetCurrentEndingId()
   return self.m_endingId
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.HandleIdolStartPlay = function(self, TT, asyncRes, startType, processType)
-  -- function num : 0_6 , upvalues : _ENV
+function IdolMiniGameComponent:HandleIdolStartPlay(TT, asyncRes, startType, processType)
   local request = IdolStartPlayReq:New()
   local response = IdolStartPlayRep:New()
   request.start_type = startType
   request.process_type = processType
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][IdolComponent] HandleIdolStartPlay ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][IdolComponent] HandleIdolStartPlay ret:", asyncRes.m_result)
     return -1
   end
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).break_info = response.break_info
+  self.m_component_info.break_info = response.break_info
   return response.ret
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.HandleIdolTrain = function(self, TT, asyncRes, roundIndex, roundState, trainType)
-  -- function num : 0_7 , upvalues : _ENV
+function IdolMiniGameComponent:HandleIdolTrain(TT, asyncRes, roundIndex, roundState, trainType)
   local request = IdolTrainReq:New()
   local response = IdolTrainRep:New()
   request.round_index = roundIndex
   request.round_state = roundState
   request.train_type = trainType
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][IdolComponent] HandleIdolTrain ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][IdolComponent] HandleIdolTrain ret:", asyncRes.m_result)
     return -1
   end
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).break_info = response.break_info
+  self.m_component_info.break_info = response.break_info
   return response.ret
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.HandleIdolCompleteEvent = function(self, TT, asyncRes, eventType, optionType, eventId, trainType)
-  -- function num : 0_8 , upvalues : _ENV
+function IdolMiniGameComponent:HandleIdolCompleteEvent(TT, asyncRes, eventType, optionType, eventId, trainType)
   local request = IdolCompleteEventReq:New()
   local response = IdolCompleteEventRep:New()
   request.event_type = eventType
@@ -109,301 +70,203 @@ IdolMiniGameComponent.HandleIdolCompleteEvent = function(self, TT, asyncRes, eve
   request.event_id = eventId
   request.train_type = trainType
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][IdolComponent] HandleIdolCompleteEvent ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][IdolComponent] HandleIdolCompleteEvent ret:", asyncRes.m_result)
     return -1
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).break_info = response.break_info
+  self.m_component_info.break_info = response.break_info
   return response.ret
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.HandleIdolCompleteActivity = function(self, TT, asyncRes, activityId)
-  -- function num : 0_9 , upvalues : _ENV
+function IdolMiniGameComponent:HandleIdolCompleteActivity(TT, asyncRes, activityId)
   local request = IdolCompleteActivityReq:New()
   local response = IdolCompleteActivityRep:New()
   request.activity_id = activityId
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][IdolComponent] HandleIdolCompleteActivity ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][IdolComponent] HandleIdolCompleteActivity ret:", asyncRes.m_result)
     return -1
   end
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).break_info = response.break_info
+  self.m_component_info.break_info = response.break_info
   return response.ret
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.HandleIdolGetAchieveReward = function(self, TT, asyncRes, achieveId)
-  -- function num : 0_10 , upvalues : _ENV
+function IdolMiniGameComponent:HandleIdolGetAchieveReward(TT, asyncRes, achieveId)
   local request = IdolGetAchieveRewardReq:New()
   local response = IdolGetAchieveRewardRep:New()
   request.achieve_id = achieveId
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][IdolComponent] HandleIdolGetAchieveReward ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][IdolComponent] HandleIdolGetAchieveReward ret:", asyncRes.m_result)
     return -1
   end
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).collect_info = response.collect_info
+  self.m_component_info.collect_info = response.collect_info
   return response.ret
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.HandleIdolComplateEnding = function(self, TT, asyncRes, endingId)
-  -- function num : 0_11 , upvalues : _ENV
+function IdolMiniGameComponent:HandleIdolComplateEnding(TT, asyncRes, endingId)
   local request = IdolComplateEndingReq:New()
   local response = IdolComplateEndingRep:New()
   request.ending_id = endingId
   self.m_ending_list = {}
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     self.m_endingId = 0
-    ;
-    (Log.error)("[CampaignCom][IdolComponent] HandleIdolComplateEnding ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][IdolComponent] HandleIdolComplateEnding ret:", asyncRes.m_result)
     return -1
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).ending_list = response.ending_list
+  self.m_component_info.ending_list = response.ending_list
   self.m_endingId = endingId
   return response.ret
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.HandleIdolConcertFail = function(self, TT, asyncRes, is_sucess)
-  -- function num : 0_12 , upvalues : _ENV
+function IdolMiniGameComponent:HandleIdolConcertFail(TT, asyncRes, is_sucess)
   local request = IdolConcertFailReq:New()
   local response = IdolConcertFailRep:New()
   request.isSucess = is_sucess
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][IdolComponent] HandleIdolConcertFail ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][IdolComponent] HandleIdolConcertFail ret:", asyncRes.m_result)
     return -1
   end
   return response.ret
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.Start_HandleIdolTrain = function(self, roundIndex, roundState, trainType, callback)
-  -- function num : 0_13 , upvalues : _ENV
+function IdolMiniGameComponent:Start_HandleIdolTrain(roundIndex, roundState, trainType, callback)
   local lockName = "IdolMiniGameComponent:Start_HandleIdolTrain"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_13_0 , upvalues : _ENV, self, roundIndex, roundState, trainType, lockName, callback
+  GameGlobal.UIStateManager():Lock(lockName)
+  TaskManager:GetInstance():StartTask(function(TT)
     local res = AsyncRequestRes:New()
     local ret = self:HandleIdolTrain(TT, res, roundIndex, roundState, trainType)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockName)
+    GameGlobal.UIStateManager():UnLock(lockName)
     if res and res:GetSucc() then
-      local breakInfo = (self.m_component_info).break_info
+      local breakInfo = self.m_component_info.break_info
       local str = "IdolMiniGameComponent:Start_HandleIdolTrain() Succ, RoundState = " .. breakInfo.round_state
-      ;
-      (Log.info)(str)
+      Log.info(str)
       if callback then
         callback()
       end
     else
-      do
-        local str = "IdolMiniGameComponent:Start_HandleIdolTrain() Failed, res = %d, round = %d, state = %d, trainType = %d"
-        str = (string.format)(str, res.m_result, roundIndex, roundState, trainType)
-        ;
-        (Log.error)(str)
-        if res.m_result == CampaignErrorType.E_COMPONENT_IDOL_ROUND_NO_OPEN then
-          (CutsceneManager.ExcuteCutsceneIn)("UIN25Idol_Common_Switch", function()
-      -- function num : 0_13_0_0 , upvalues : _ENV
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIN25IdolNotOpenNextDay")
-    end
-)
-        end
+      local str = "IdolMiniGameComponent:Start_HandleIdolTrain() Failed, res = %d, round = %d, state = %d, trainType = %d"
+      str = string.format(str, res.m_result, roundIndex, roundState, trainType)
+      Log.error(str)
+      if res.m_result == CampaignErrorType.E_COMPONENT_IDOL_ROUND_NO_OPEN then
+        CutsceneManager.ExcuteCutsceneIn("UIN25Idol_Common_Switch", function()
+          GameGlobal.UIStateManager():ShowDialog("UIN25IdolNotOpenNextDay")
+        end)
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.Start_HandleIdolCompleteEvent = function(self, eventType, optionType, eventId, trainType, callback)
-  -- function num : 0_14 , upvalues : _ENV
+function IdolMiniGameComponent:Start_HandleIdolCompleteEvent(eventType, optionType, eventId, trainType, callback)
   local lockName = "IdolMiniGameComponent:Start_HandleIdolCompleteEvent"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_14_0 , upvalues : _ENV, self, eventType, optionType, eventId, trainType, lockName, callback
+  GameGlobal.UIStateManager():Lock(lockName)
+  TaskManager:GetInstance():StartTask(function(TT)
     local res = AsyncRequestRes:New()
     local ret = self:HandleIdolCompleteEvent(TT, res, eventType, optionType, eventId, trainType)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockName)
+    GameGlobal.UIStateManager():UnLock(lockName)
     if res and res:GetSucc() then
       local str = "IdolMiniGameComponent:Start_HandleIdolCompleteEvent() Succ"
-      ;
-      (Log.info)(str)
+      Log.info(str)
       if callback then
         callback()
       end
     else
-      do
-        local str = "IdolMiniGameComponent:Start_HandleIdolCompleteEvent() Failed, res = %d, eventType = %d, optionType = %d, eventId = %d, trainType = %d"
-        str = (string.format)(str, res.m_result, eventType, optionType, eventId, trainType)
-        ;
-        (Log.error)(str)
-      end
+      local str = "IdolMiniGameComponent:Start_HandleIdolCompleteEvent() Failed, res = %d, eventType = %d, optionType = %d, eventId = %d, trainType = %d"
+      str = string.format(str, res.m_result, eventType, optionType, eventId, trainType)
+      Log.error(str)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_GetRoundIndex = function(self)
-  -- function num : 0_15
-  local breakInfo = (self.m_component_info).break_info
+function IdolMiniGameComponent:UI_GetRoundIndex()
+  local breakInfo = self.m_component_info.break_info
   local roundIndex = breakInfo.round_index
-  if not roundIndex or roundIndex <= 0 or not roundIndex then
-    roundIndex = 1
-  end
+  roundIndex = roundIndex and 0 < roundIndex and roundIndex or 1
   return roundIndex
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_GetRoundState = function(self)
-  -- function num : 0_16
-  local breakInfo = (self.m_component_info).break_info
+function IdolMiniGameComponent:UI_GetRoundState()
+  local breakInfo = self.m_component_info.break_info
   return breakInfo.round_state
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_GetTrainPoint = function(self, trainType)
-  -- function num : 0_17
-  local breakInfo = (self.m_component_info).break_info
-  return (breakInfo.train_data)[trainType]
+function IdolMiniGameComponent:UI_GetTrainPoint(trainType)
+  local breakInfo = self.m_component_info.break_info
+  return breakInfo.train_data[trainType]
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_GetFunNum = function(self)
-  -- function num : 0_18
-  local breakInfo = (self.m_component_info).break_info
+function IdolMiniGameComponent:UI_GetFunNum()
+  local breakInfo = self.m_component_info.break_info
   return breakInfo.funs_num
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_GetLevel = function(self, trainType)
-  -- function num : 0_19
-  local breakInfo = (self.m_component_info).break_info
-  return (breakInfo.level)[trainType]
+function IdolMiniGameComponent:UI_GetLevel(trainType)
+  local breakInfo = self.m_component_info.break_info
+  return breakInfo.level[trainType]
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_Cfg_GetLevelInfo = function(self, level)
-  -- function num : 0_20 , upvalues : _ENV
+function IdolMiniGameComponent:UI_Cfg_GetLevelInfo(level)
   local cfgComponentId = self:GetComponentCfgId()
-  local cfgs = (Cfg.cfg_component_idol_level)({ComponentID = cfgComponentId, Level = level})
-  if cfgs then
-    local cfg = cfgs[1]
-  end
+  local cfgs = Cfg.cfg_component_idol_level({ComponentID = cfgComponentId, Level = level})
+  local cfg = cfgs and cfgs[1]
   if not cfg then
-    (Log.exception)("IdolMiniGameComponent:UI_Cfg_GetLevelInfo() cfg = nil, level = ", level)
+    Log.exception("IdolMiniGameComponent:UI_Cfg_GetLevelInfo() cfg = nil, level = ", level)
   end
   return cfg
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_Cfg_GetLevelInfoByTrainType = function(self, level, trainType, name)
-  -- function num : 0_21
+function IdolMiniGameComponent:UI_Cfg_GetLevelInfoByTrainType(level, trainType, name)
   local cfg = self:UI_Cfg_GetLevelInfo(level)
-  if cfg then
-    local info = cfg[name]
-  end
+  local info = cfg and cfg[name]
   return info[trainType]
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_Cfg_GetTrainPointAddValue = function(self, trainType)
-  -- function num : 0_22
+function IdolMiniGameComponent:UI_Cfg_GetTrainPointAddValue(trainType)
   local roundIndex = self:UI_GetRoundIndex()
   local level = self:UI_GetLevel(trainType)
   local cfg = self:UI_Cfg_GetLevelInfo(level)
-  local values = {cfg.Music, cfg.Dance, cfg.Perform}
+  local values = {
+    cfg.Music,
+    cfg.Dance,
+    cfg.Perform
+  }
   local value = values[trainType]
   local muse = self:UI_Cfg_GetTrainMuse(roundIndex, trainType)
   return muse or value
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_Cfg_GetTrainPointSong = function(self, trainType)
-  -- function num : 0_23
+function IdolMiniGameComponent:UI_Cfg_GetTrainPointSong(trainType)
   local level = self:UI_GetLevel(trainType)
   return self:UI_Cfg_GetLevelInfoByTrainType(level, trainType, "TrainContent")
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_Cfg_GetTrainResult = function(self, trainType)
-  -- function num : 0_24
+function IdolMiniGameComponent:UI_Cfg_GetTrainResult(trainType)
   local level = self:UI_GetLevel(trainType)
   local resultA = self:UI_Cfg_GetLevelInfoByTrainType(level, trainType, "TrainResultA")
   local resultB = self:UI_Cfg_GetLevelInfoByTrainType(level, trainType, "TrainResultB")
   return resultA, resultB
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_Cfg_GetRoundInfo = function(self, roundIndex)
-  -- function num : 0_25 , upvalues : _ENV
+function IdolMiniGameComponent:UI_Cfg_GetRoundInfo(roundIndex)
   if roundIndex then
     local cfgComponentId = self:GetComponentCfgId()
-    local cfgs = (Cfg.cfg_component_idol_round)({ComponentID = cfgComponentId, Round = roundIndex})
-    if cfgs then
-      do return cfgs[1] end
-    end
+    local cfgs = Cfg.cfg_component_idol_round({ComponentID = cfgComponentId, Round = roundIndex})
+    return cfgs and cfgs[1]
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_Cfg_GetRoundInfoByTrainType = function(self, roundIndex, trainType, name)
-  -- function num : 0_26 , upvalues : _ENV
+function IdolMiniGameComponent:UI_Cfg_GetRoundInfoByTrainType(roundIndex, trainType, name)
   local cfg = self:UI_Cfg_GetRoundInfo(roundIndex)
-  if cfg then
-    local info = cfg[name]
-  end
+  local info = cfg and cfg[name]
   if info then
-    for _,v in pairs(info) do
+    for _, v in pairs(info) do
       if v[1] == trainType then
         return v[2]
       end
@@ -411,44 +274,27 @@ IdolMiniGameComponent.UI_Cfg_GetRoundInfoByTrainType = function(self, roundIndex
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_Cfg_GetAgreedEvent = function(self, roundIndex, trainType)
-  -- function num : 0_27
+function IdolMiniGameComponent:UI_Cfg_GetAgreedEvent(roundIndex, trainType)
   return self:UI_Cfg_GetRoundInfoByTrainType(roundIndex, trainType, "AgreedEventId")
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_Cfg_GetSuddenlyEvent = function(self, roundIndex, trainType)
-  -- function num : 0_28
+function IdolMiniGameComponent:UI_Cfg_GetSuddenlyEvent(roundIndex, trainType)
   return self:UI_Cfg_GetRoundInfoByTrainType(roundIndex, trainType, "SuddenlyEventId")
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_Cfg_GetTrainMuse = function(self, roundIndex, trainType)
-  -- function num : 0_29
+function IdolMiniGameComponent:UI_Cfg_GetTrainMuse(roundIndex, trainType)
   return self:UI_Cfg_GetRoundInfoByTrainType(roundIndex, trainType, "Muse")
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_Cfg_GetEventInfo = function(self, eventId)
-  -- function num : 0_30 , upvalues : _ENV
+function IdolMiniGameComponent:UI_Cfg_GetEventInfo(eventId)
   if eventId then
     local cfgComponentId = self:GetComponentCfgId()
-    local cfgs = (Cfg.cfg_component_idol_event)({ComponentID = cfgComponentId, EventId = eventId})
-    if cfgs then
-      do return cfgs[1] end
-    end
+    local cfgs = Cfg.cfg_component_idol_event({ComponentID = cfgComponentId, EventId = eventId})
+    return cfgs and cfgs[1]
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_Cfg_GetSuddenlyEventItemInfo = function(self, eventId)
-  -- function num : 0_31 , upvalues : _ENV
+function IdolMiniGameComponent:UI_Cfg_GetSuddenlyEventItemInfo(eventId)
   local cfg = self:UI_Cfg_GetEventInfo(eventId)
   if not cfg then
     return {}
@@ -456,161 +302,119 @@ IdolMiniGameComponent.UI_Cfg_GetSuddenlyEventItemInfo = function(self, eventId)
   local tb_out = {}
   for i = 1, 3 do
     local tb = {}
-    tb.DesFuns = (cfg.DesFuns)[i]
+    tb.DesFuns = cfg.DesFuns[i]
     tb.StoryId = cfg.StoryId
-    local condLimits = {cfg.CondLimit1, cfg.CondLimit2, cfg.CondLimit3}
+    local condLimits = {
+      cfg.CondLimit1,
+      cfg.CondLimit2,
+      cfg.CondLimit3
+    }
     tb.CondLimit = condLimits[i]
-    tb.CondLimitHead = (cfg.CondLimitHead)[i]
-    tb.CondLimitName = (cfg.CondLimitName)[i]
-    tb.CondLimitResult = (cfg.CondLimitResult)[i]
-    tb.CondLimitSpine = (cfg.CondLimitSpine)[i]
+    tb.CondLimitHead = cfg.CondLimitHead[i]
+    tb.CondLimitName = cfg.CondLimitName[i]
+    tb.CondLimitResult = cfg.CondLimitResult[i]
+    tb.CondLimitSpine = cfg.CondLimitSpine[i]
     tb.Question = cfg.Question
     tb.Enable = self:UI_CheckSuddenlyEventEnable(tb.CondLimit)
-    ;
-    (table.insert)(tb_out, tb)
+    table.insert(tb_out, tb)
   end
   return tb_out
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_CheckSuddenlyEventEnable = function(self, condLimit)
-  -- function num : 0_32 , upvalues : _ENV
+function IdolMiniGameComponent:UI_CheckSuddenlyEventEnable(condLimit)
   if condLimit then
-    for _,v in ipairs(condLimit) do
+    for _, v in ipairs(condLimit) do
       local trainPoint = self:UI_GetTrainPoint(v[1])
       if trainPoint < v[2] then
         return false
       end
     end
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_Cfg_CheckSuddenlyEventLimit = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function IdolMiniGameComponent:UI_Cfg_CheckSuddenlyEventLimit()
   local cfgComponentId = self:GetComponentCfgId()
-  local cfgs = (Cfg.cfg_component_idol_const)({ComponentID = cfgComponentId, ConstID = 100})
-  local limit = cfgs and cfgs[1] and (cfgs[1]).Value or 0
-  local events = ((self.m_component_info).break_info).suddenly_events
+  local cfgs = Cfg.cfg_component_idol_const({ComponentID = cfgComponentId, ConstID = 100})
+  local limit = cfgs and cfgs[1] and cfgs[1].Value or 0
+  local events = self.m_component_info.break_info.suddenly_events
   local weekIdx, weekDay = self:UI_Calc_WeekDay(self:UI_GetRoundIndex())
-  do return events[weekIdx] < limit end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return limit > events[weekIdx]
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_CheckSuddenlyEvent = function(self, trainType)
-  -- function num : 0_34 , upvalues : _ENV
+function IdolMiniGameComponent:UI_CheckSuddenlyEvent(trainType)
   local roundState = self:UI_GetRoundState()
   if roundState ~= IdolRoundState.IdolRoundState_Begin then
     return false
   end
   local roundIndex = self:UI_GetRoundIndex()
   local eventId = self:UI_Cfg_GetSuddenlyEvent(roundIndex, trainType)
-  if eventId then
-    local isShow = self:UI_Cfg_CheckSuddenlyEventLimit()
-  end
-  return not isShow or eventId
+  local isShow = eventId and self:UI_Cfg_CheckSuddenlyEventLimit()
+  return isShow and eventId
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_IsFinishAgreedEvent = function(self, eventId)
-  -- function num : 0_35 , upvalues : _ENV
-  local breakInfo = (self.m_component_info).break_info
+function IdolMiniGameComponent:UI_IsFinishAgreedEvent(eventId)
+  local breakInfo = self.m_component_info.break_info
   local finishList = breakInfo.agree_events
-  if finishList then
-    return (table.icontains)(finishList, eventId)
-  end
+  return finishList and table.icontains(finishList, eventId)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_Cfg_IsFinishAgreedPreEvent = function(self, eventId)
-  -- function num : 0_36
+function IdolMiniGameComponent:UI_Cfg_IsFinishAgreedPreEvent(eventId)
   local eventInfo = self:UI_Cfg_GetEventInfo(eventId)
-  if eventInfo then
-    local preEventId = eventInfo.PreEventId
-  end
-  do return preEventId and self:UI_IsFinishAgreedEvent(preEventId) end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local preEventId = eventInfo and eventInfo.PreEventId
+  return not preEventId or self:UI_IsFinishAgreedEvent(preEventId)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_CheckAgreedEvent = function(self, trainType)
-  -- function num : 0_37
+function IdolMiniGameComponent:UI_CheckAgreedEvent(trainType)
   local roundIndex = self:UI_GetRoundIndex()
   local eventId = self:UI_Cfg_GetAgreedEvent(roundIndex, trainType)
   local isPreFinish = self:UI_Cfg_IsFinishAgreedPreEvent(eventId)
-  if isPreFinish then
-    local isOpen = not self:UI_IsFinishAgreedEvent(eventId)
-  end
-  return not isOpen or eventId
+  local isOpen = isPreFinish and not self:UI_IsFinishAgreedEvent(eventId)
+  return isOpen and eventId
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_GetWeekApEvent = function(self, filterFinish)
-  -- function num : 0_38 , upvalues : _ENV
+function IdolMiniGameComponent:UI_GetWeekApEvent(filterFinish)
   local roundIndex = self:UI_GetRoundIndex()
   local monday = self:UI_Calc_Monday(roundIndex)
   local tb_out = {}
   for round = monday, monday + 6 do
     local cfg = self:UI_Cfg_GetRoundInfo(round)
-    if cfg then
-      local events = cfg.AgreedEventId
-    end
+    local events = cfg and cfg.AgreedEventId
     if events then
-      for _,v in pairs(events) do
+      for _, v in pairs(events) do
         local trainType = v[1]
         local eventId = v[2]
         local isPreFinish = self:UI_Cfg_IsFinishAgreedPreEvent(eventId)
         local isCurFinish = self:UI_IsFinishAgreedEvent(eventId)
-        if filterFinish then
-          local filterAndNotFinish = not isCurFinish
-        end
-        local notFilterAndPreFinish = (not filterFinish and isPreFinish)
+        local filterAndNotFinish = filterFinish and not isCurFinish
+        local notFilterAndPreFinish = not filterFinish and isPreFinish
         if filterAndNotFinish or notFilterAndPreFinish then
           local data = {}
           data.roomid = trainType
           data.eventid = eventId
           data.round = round
           data.finish = isCurFinish
-          ;
-          (table.insert)(tb_out, data)
+          table.insert(tb_out, data)
         end
       end
     end
   end
-  do return tb_out end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  return tb_out
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_Cfg_GetConcertInfo = function(self)
-  -- function num : 0_39 , upvalues : _ENV
-  local cfgs = nil
+function IdolMiniGameComponent:UI_Cfg_GetConcertInfo()
+  local cfgs
   local cfgComponentId = self:GetComponentCfgId()
   if cfgComponentId == 107610808 then
-    cfgs = (Cfg.cfg_n25_concert)({})
-    if not cfgs or (table.count)(cfgs) <= 0 then
-      (Log.error)("###[IdolMiniGameComponent] UI_Cfg_GetConcertInfo cfg is nil !")
-    end
-    return cfgs
   end
+  cfgs = Cfg.cfg_n25_concert({})
+  if not cfgs or table.count(cfgs) <= 0 then
+    Log.error("###[IdolMiniGameComponent] UI_Cfg_GetConcertInfo cfg is nil !")
+  end
+  return cfgs
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_GetCurrentConcertId = function(self)
-  -- function num : 0_40
+function IdolMiniGameComponent:UI_GetCurrentConcertId()
   local currentTurn = self:UI_GetRoundIndex()
   local cfgClone = self:UI_Cfg_GetConcertInfo()
   for i = 1, #cfgClone do
@@ -621,21 +425,13 @@ IdolMiniGameComponent.UI_GetCurrentConcertId = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_GetNextConcertInfo = function(self)
-  -- function num : 0_41
+function IdolMiniGameComponent:UI_GetNextConcertInfo()
   local id = self:UI_GetCurrentConcertId()
   local cfgClone = self:UI_Cfg_GetConcertInfo()
-  if id then
-    return cfgClone[id]
-  end
+  return id and cfgClone[id]
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_CheckConcert = function(self)
-  -- function num : 0_42 , upvalues : _ENV
+function IdolMiniGameComponent:UI_CheckConcert()
   local roundState = self:UI_GetRoundState()
   if roundState ~= IdolRoundState.IdolRoundState_End then
     return false
@@ -644,58 +440,41 @@ IdolMiniGameComponent.UI_CheckConcert = function(self)
   local concertInfo = self:UI_GetNextConcertInfo()
   local isToday = roundIndex == concertInfo.Turn
   local fansNum = self:UI_GetFunNum()
-  local fansEnough = concertInfo.Fans <= fansNum
+  local fansEnough = fansNum >= concertInfo.Fans
   local gapFans = concertInfo.Fans - fansNum
-  do return isToday, fansEnough, gapFans end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return isToday, fansEnough, gapFans
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_Cfg_GetActivityInfo = function(self, weekIdx)
-  -- function num : 0_43 , upvalues : _ENV
+function IdolMiniGameComponent:UI_Cfg_GetActivityInfo(weekIdx)
   local cfgComponentId = self:GetComponentCfgId()
-  return (Cfg.cfg_component_idol_activity)({ComponentID = cfgComponentId, BeginWeek = weekIdx})
+  return Cfg.cfg_component_idol_activity({ComponentID = cfgComponentId, BeginWeek = weekIdx})
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_GetWeekIdolAct = function(self)
-  -- function num : 0_44
+function IdolMiniGameComponent:UI_GetWeekIdolAct()
   local currentTurn = self:UI_GetRoundIndex()
   local weekIdx, weekDay = self:UI_Calc_WeekDay(currentTurn)
   return self:UI_Cfg_GetActivityInfo(weekIdx)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_GetActLimit = function(self, activityCfg, trainType)
-  -- function num : 0_45 , upvalues : _ENV
-  for _,v in ipairs(activityCfg.Limit) do
+function IdolMiniGameComponent:UI_GetActLimit(activityCfg, trainType)
+  for _, v in ipairs(activityCfg.Limit) do
     if trainType == v[1] then
       return v[2]
     end
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_CheckActLimit = function(self, activityCfg, trainType)
-  -- function num : 0_46
+function IdolMiniGameComponent:UI_CheckActLimit(activityCfg, trainType)
   local limitValue = self:UI_GetActLimit(activityCfg, trainType)
-  do return limitValue <= self:UI_GetTrainPoint(trainType) end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return limitValue <= self:UI_GetTrainPoint(trainType)
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_CheckActOnWeekend = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function IdolMiniGameComponent:UI_CheckActOnWeekend()
   local currentTurn = self:UI_GetRoundIndex()
   local roundState = self:UI_GetRoundState()
   if currentTurn % 7 == 0 and roundState == IdolRoundState.IdolRoundState_End then
     local cfgs = self:UI_GetWeekIdolAct()
-    for key,value in pairs(cfgs) do
+    for key, value in pairs(cfgs) do
       local id = value.ActId
       if not self:UI_GetActFinishStatus(id) then
         local limit = value.Limit
@@ -705,98 +484,67 @@ IdolMiniGameComponent.UI_CheckActOnWeekend = function(self)
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_CheckActEnough = function(self, limits)
-  -- function num : 0_48 , upvalues : _ENV
+function IdolMiniGameComponent:UI_CheckActEnough(limits)
   local enough = true
   if limits then
-    for key,limit in pairs(limits) do
+    for key, limit in pairs(limits) do
       local type = limit[1]
       local needValue = limit[2]
-      local train_data = ((self.m_component_info).break_info).train_data
+      local train_data = self.m_component_info.break_info.train_data
       local hadValue = train_data[type]
-      if hadValue < needValue then
+      if needValue > hadValue then
         enough = false
         break
       end
     end
   end
-  do
-    return enough
-  end
+  return enough
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_GetActFinishStatus = function(self, id)
-  -- function num : 0_49 , upvalues : _ENV
-  local break_info = (self.m_component_info).break_info
+function IdolMiniGameComponent:UI_GetActFinishStatus(id)
+  local break_info = self.m_component_info.break_info
   local finish_activity = break_info.finish_activity
-  return (table.icontains)(finish_activity, id)
+  return table.icontains(finish_activity, id)
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_Calc_WeekDay = function(self, roundIndex)
-  -- function num : 0_50
+function IdolMiniGameComponent:UI_Calc_WeekDay(roundIndex)
   local weekIdx = (roundIndex + 6) // 7
   local weekDay = roundIndex % 7
-  if weekDay ~= 0 or not 7 then
-    return weekIdx, weekDay
-  end
+  weekDay = weekDay == 0 and 7 or weekDay
+  return weekIdx, weekDay
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_Calc_Monday = function(self, roundIndex)
-  -- function num : 0_51
+function IdolMiniGameComponent:UI_Calc_Monday(roundIndex)
   local weekIdx, weekDay = self:UI_Calc_WeekDay(roundIndex)
   return roundIndex - weekDay + 1
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_SetActRed = function(self)
-  -- function num : 0_52 , upvalues : _ENV
+function IdolMiniGameComponent:UI_SetActRed()
   local key_l = "N25IdolActRed_"
-  local break_info = (self.m_component_info).break_info
+  local break_info = self.m_component_info.break_info
   local turn = break_info.round_index
   local week, day = self:UI_Calc_WeekDay(turn)
   local key = key_l .. week
-  ;
-  (LocalDB.SetInt)(key, 1)
+  LocalDB.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_GetActRed = function(self)
-  -- function num : 0_53 , upvalues : _ENV
+function IdolMiniGameComponent:UI_GetActRed()
   local key_l = "N25IdolActRed_"
-  local break_info = (self.m_component_info).break_info
+  local break_info = self.m_component_info.break_info
   local turn = break_info.round_index
   local week, day = self:UI_Calc_WeekDay(turn)
   local key = key_l .. week
-  local val = (LocalDB.GetInt)(key, 0)
-  do return val == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local val = LocalDB.GetInt(key, 0)
+  return val == 0
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolMiniGameComponent.UI_ResetActRed = function(self)
-  -- function num : 0_54 , upvalues : _ENV
+function IdolMiniGameComponent:UI_ResetActRed()
   local key_l = "N25IdolActRed_"
   for i = 1, 7 do
     local key = key_l .. i
-    ;
-    (LocalDB.Delete)(key)
+    LocalDB.Delete(key)
   end
 end
-
-

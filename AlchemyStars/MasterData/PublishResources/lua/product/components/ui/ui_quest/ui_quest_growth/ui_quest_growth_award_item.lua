@@ -1,237 +1,148 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_growth/ui_quest_growth_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestGrowthAwardItem", UICustomWidget)
 UIQuestGrowthAwardItem = UIQuestGrowthAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestGrowthAwardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._atlas = (self:RootUIOwner()):GetAsset("UIQuest.spriteatlas", LoadType.SpriteAtlas)
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
+function UIQuestGrowthAwardItem:OnShow(uiParams)
+  self._atlas = self:RootUIOwner():GetAsset("UIQuest.spriteatlas", LoadType.SpriteAtlas)
+  self._questModule = GameGlobal.GetModule(QuestModule)
   self:_GetComponents()
   self:AttachEvents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthAwardItem._GetComponents = function(self)
-  -- function num : 0_1
+function UIQuestGrowthAwardItem:_GetComponents()
   self._awardImg = self:GetUIComponent("Image", "awardImg")
   self._awardFinishTex = self:GetUIComponent("UILocalizationText", "awardFinishTex")
   self._closeTex = self:GetUIComponent("UILocalizationText", "closeTex")
   self._awardLightAnim = self:GetUIComponent("Animation", "UIQuestGrowthAwardItem")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthAwardItem.OnHide = function(self)
-  -- function num : 0_2
+function UIQuestGrowthAwardItem:OnHide()
   self:RemoveEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthAwardItem.AttachEvents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIQuestGrowthAwardItem:AttachEvents()
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:AttachEvent(GameEventType.OnUIPetObtainCloseInQuest, self.OnUIPetObtainCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthAwardItem.RemoveEvents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIQuestGrowthAwardItem:RemoveEvents()
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:DetachEvent(GameEventType.OnUIPetObtainCloseInQuest, self.OnUIPetObtainCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthAwardItem.SetData = function(self, index, quest, refrenshCb, anim)
-  -- function num : 0_5 , upvalues : _ENV
+function UIQuestGrowthAwardItem:SetData(index, quest, refrenshCb, anim)
   self._index = index
   self._questLua = quest
   self._refrenshCb = refrenshCb
-  self._quest = (self._questLua):QuestInfo()
+  self._quest = self._questLua:QuestInfo()
   if self._quest == nil then
-    (Log.fatal)("[quest] error --> quest is nil ! id --> " .. (self._quest).quest_id)
-    return 
+    Log.fatal("[quest] error --> quest is nil ! id --> " .. self._quest.quest_id)
+    return
   end
   self:_OnValue(anim)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthAwardItem._OnValue = function(self, anim)
-  -- function num : 0_6 , upvalues : _ENV
-  self._getState = (self._quest).status
+function UIQuestGrowthAwardItem:_OnValue(anim)
+  self._getState = self._quest.status
   local progress = ""
-  if (self._quest).ShowType == 1 then
-    local c, d = (math.modf)((self._quest).cur_progress * 100 / (self._quest).total_progress)
-    if c < 1 and d > 0 then
+  if self._quest.ShowType == 1 then
+    local c, d = math.modf(self._quest.cur_progress * 100 / self._quest.total_progress)
+    if c < 1 and 0 < d then
       c = 1
     end
     progress = c .. "%"
   else
-    do
-      progress = (self._quest).cur_progress .. "/" .. (self._quest).total_progress
-      ;
-      (self._awardFinishTex):SetText(progress)
-      ;
-      (self._awardImg):CrossFadeAlpha(1, 0, true)
-      local color = Color(1, 1, 1)
-      if self._getState <= QuestStatus.QUEST_Accepted then
-        (self._closeTex):SetText((StringTable.Get)("str_quest_base_un_open"))
-        -- DECOMPILER ERROR at PC64: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._awardImg).sprite = (self._atlas):GetSprite("task_chengzhang_icon8")
-      else
-        if self._getState == QuestStatus.QUEST_Completed then
-          (self._closeTex):SetText((StringTable.Get)("str_quest_base_can_get"))
-          color = Color(1, 0.62352941176471, 0.13333333333333)
-          -- DECOMPILER ERROR at PC89: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (self._awardImg).sprite = (self._atlas):GetSprite("task_chengzhang_icon12")
-        else
-          if self._getState == QuestStatus.QUEST_Taken then
-            (self._closeTex):SetText((StringTable.Get)("str_quest_base_got"))
-            color = Color(0.54117647058824, 0.54117647058824, 0.54117647058824)
-            -- DECOMPILER ERROR at PC114: Confused about usage of register: R4 in 'UnsetPending'
-
-            ;
-            (self._awardImg).sprite = (self._atlas):GetSprite("task_chengzhang_icon9")
-          else
-            ;
-            (Log.fatal)("### UIQuestGrowthAwardItem")
-          end
-        end
-      end
-      if anim then
-        (self._awardLightAnim):Play("uieff_Quest_GrowthAwardItem_In")
-      end
-      -- DECOMPILER ERROR at PC127: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._closeTex).color = color
-      -- DECOMPILER ERROR at PC129: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._awardFinishTex).color = color
-    end
+    progress = self._quest.cur_progress .. "/" .. self._quest.total_progress
   end
+  self._awardFinishTex:SetText(progress)
+  self._awardImg:CrossFadeAlpha(1, 0, true)
+  local color = Color(1, 1, 1)
+  if self._getState <= QuestStatus.QUEST_Accepted then
+    self._closeTex:SetText(StringTable.Get("str_quest_base_un_open"))
+    self._awardImg.sprite = self._atlas:GetSprite("task_chengzhang_icon8")
+  elseif self._getState == QuestStatus.QUEST_Completed then
+    self._closeTex:SetText(StringTable.Get("str_quest_base_can_get"))
+    color = Color(1, 0.6235294117647059, 0.13333333333333333)
+    self._awardImg.sprite = self._atlas:GetSprite("task_chengzhang_icon12")
+  elseif self._getState == QuestStatus.QUEST_Taken then
+    self._closeTex:SetText(StringTable.Get("str_quest_base_got"))
+    color = Color(0.5411764705882353, 0.5411764705882353, 0.5411764705882353)
+    self._awardImg.sprite = self._atlas:GetSprite("task_chengzhang_icon9")
+  else
+    Log.fatal("### UIQuestGrowthAwardItem")
+  end
+  if anim then
+    self._awardLightAnim:Play("uieff_Quest_GrowthAwardItem_In")
+  end
+  self._closeTex.color = color
+  self._awardFinishTex.color = color
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthAwardItem.SetDataTaken = function(self, index)
-  -- function num : 0_7 , upvalues : _ENV
+function UIQuestGrowthAwardItem:SetDataTaken(index)
   self._index = index
   self._quest = MobileQuestInfo:New()
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._quest).status = QuestStatus.QUEST_Taken
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._quest).cur_progress = 3
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._quest).total_progress = 3
+  self._quest.status = QuestStatus.QUEST_Taken
+  self._quest.cur_progress = 3
+  self._quest.total_progress = 3
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthAwardItem.bgOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIQuestGrowthAwardItem:bgOnClick()
   if self._getState <= QuestStatus.QUEST_Accepted then
-    self:ShowDialog("UIQuestAwardsInfoController", (self._quest).rewards)
-  else
-    if self._getState == QuestStatus.QUEST_Completed then
-      ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
-      self:Lock("UIQuestGet")
-      ;
-      ((GameGlobal.TaskManager)()):StartTask(self._OnbgOnClick, self)
-    else
-      if self._getState == QuestStatus.QUEST_Taken then
-        (ToastManager.ShowToast)((StringTable.Get)("str_quest_base_achieve_awards") .. (StringTable.Get)("str_quest_base_got"))
-      end
-    end
+    self:ShowDialog("UIQuestAwardsInfoController", self._quest.rewards)
+  elseif self._getState == QuestStatus.QUEST_Completed then
+    GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
+    self:Lock("UIQuestGet")
+    GameGlobal.TaskManager():StartTask(self._OnbgOnClick, self)
+  elseif self._getState == QuestStatus.QUEST_Taken then
+    ToastManager.ShowToast(StringTable.Get("str_quest_base_achieve_awards") .. StringTable.Get("str_quest_base_got"))
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthAwardItem.OnUIGetItemCloseInQuest = function(self, type)
-  -- function num : 0_9 , upvalues : _ENV
+function UIQuestGrowthAwardItem:OnUIGetItemCloseInQuest(type)
   if type == QuestType.QT_Growth + 10000 and self._refrenshCb then
-    (self._refrenshCb)()
+    self._refrenshCb()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthAwardItem.OnUIPetObtainCloseInQuest = function(self, type)
-  -- function num : 0_10 , upvalues : _ENV
+function UIQuestGrowthAwardItem:OnUIPetObtainCloseInQuest(type)
   if type == QuestType.QT_Growth + 10000 then
     self:ShowDialog("UIGetItemController", self._tempMsgRewards, function()
-    -- function num : 0_10_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Growth + 10000)
-  end
-)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Growth + 10000)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthAwardItem._OnbgOnClick = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
+function UIQuestGrowthAwardItem:_OnbgOnClick(TT)
   if self._questModule == nil then
-    (Log.fatal)("[quest] error --> questModule is nil !")
-    return 
+    Log.fatal("[quest] error --> questModule is nil !")
+    return
   end
-  local res, msg = (self._questModule):TakeQuestReward(TT, (self._quest).quest_id)
+  local res, msg = self._questModule:TakeQuestReward(TT, self._quest.quest_id)
   self:UnLock("UIQuestGet")
   if self.uiOwner == nil then
-    return 
+    return
   end
   if res:GetSucc() then
     local tempPets = {}
     local pets = msg.rewards
     self._tempMsgRewards = msg.rewards
-    if #pets > 0 then
+    if 0 < #pets then
       for i = 1, #pets do
-        local ispet = ((GameGlobal.GetModule)(PetModule)):IsPetID((pets[i]).assetid)
+        local ispet = GameGlobal.GetModule(PetModule):IsPetID(pets[i].assetid)
         if ispet then
-          (table.insert)(tempPets, pets[i])
+          table.insert(tempPets, pets[i])
         end
       end
     end
-    do
-      if #tempPets > 0 then
-        self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_11_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIPetObtainCloseInQuest, QuestType.QT_Growth + 10000)
-  end
-)
-      else
-        self:ShowDialog("UIGetItemController", msg.rewards, function()
-    -- function num : 0_11_1 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Growth + 10000)
-  end
-)
-      end
+    if 0 < #tempPets then
+      self:ShowDialog("UIPetObtain", tempPets, function()
+        GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIPetObtainCloseInQuest, QuestType.QT_Growth + 10000)
+      end)
+    else
+      self:ShowDialog("UIGetItemController", msg.rewards, function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Growth + 10000)
+      end)
     end
   end
 end
-
-

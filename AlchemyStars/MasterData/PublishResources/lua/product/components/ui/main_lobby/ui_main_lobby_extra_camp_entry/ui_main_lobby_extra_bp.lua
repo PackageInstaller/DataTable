@@ -1,70 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_extra_camp_entry/ui_main_lobby_extra_bp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_main_lobby_extra_base")
 _class("UIMainLobbyExtraBP", UIMainLobbyExtraBase)
 UIMainLobbyExtraBP = UIMainLobbyExtraBP
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyExtraBP.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._campModule = (GameGlobal.GetModule)(CampaignModule)
+function UIMainLobbyExtraBP:OnShow()
+  self._campModule = GameGlobal.GetModule(CampaignModule)
   self:AttachEvent(GameEventType.BattlePassRedPoint, self.SetRed)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyExtraBP.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMainLobbyExtraBP:OnHide()
   self:DetachEvent(GameEventType.BattlePassRedPoint, self.SetRed)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyExtraBP.RefreshView = function(self)
-  -- function num : 0_2
+function UIMainLobbyExtraBP:RefreshView()
   self:SetRed()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyExtraBP.BtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMainLobbyExtraBP:BtnOnClick(go)
   if self:CheckCampaignOpen() then
-    ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_BATTLE_PASS)
-    ;
-    (UIActivityBattlePassHelper.OpenMainController)()
+    GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_BATTLE_PASS)
+    UIActivityBattlePassHelper.OpenMainController()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyExtraBP.SetRed = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIMainLobbyExtraBP:SetRed()
   local redGo = self:GetGameObject("redGo")
   local red = false
-  local campType = (self._sample_info).camp_type
-  local campID = (self._sample_info).id
-  local localPro = (self._campModule):GetCampaignLocalProcessByCampaignId_Local(campType, campID)
+  local campType = self._sample_info.camp_type
+  local campID = self._sample_info.id
+  local localPro = self._campModule:GetCampaignLocalProcessByCampaignId_Local(campType, campID)
   if not localPro then
-    (Log.error)("###[UIMainLobbyExtraBP] localPro is nil !")
-    return 
+    Log.error("###[UIMainLobbyExtraBP] localPro is nil !")
+    return
   end
   local component = localPro:GetComponent(ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD)
   if not component then
-    (Log.error)("###[UIMainLobbyExtraBP] component is nil !")
-    return 
+    Log.error("###[UIMainLobbyExtraBP] component is nil !")
+    return
   end
   local isMax = component:CheckIsLevelMax()
   if isMax then
-    do
-      local checkComs = {ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3}
-      red = (self._campModule):CheckComponentRed(localPro, (table.unpack)(checkComs))
-      redGo:SetActive(red)
-    end
+  else
+    local checkComs = {
+      ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD,
+      ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1,
+      ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2,
+      ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3
+    }
+    red = self._campModule:CheckComponentRed(localPro, table.unpack(checkComs))
   end
+  redGo:SetActive(red)
 end
-
-

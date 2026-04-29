@@ -1,25 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_extra_mission/ui_extra_mission_star_pool.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIExtraMissionStarPool", UICustomWidget)
 UIExtraMissionStarPool = UIExtraMissionStarPool
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIExtraMissionStarPool.OnShow = function(self)
-  -- function num : 0_0
+function UIExtraMissionStarPool:OnShow()
   self._starPool = self:GetUIComponent("UISelectObjectPath", "starPool")
   self._indexTex = self:GetUIComponent("UILocalizationText", "index")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStarPool.SetData = function(self, extraMissionIndex, stageIndex, starCount)
-  -- function num : 0_1
-  (self._indexTex):SetText(extraMissionIndex .. "-" .. stageIndex)
-  ;
-  (self._starPool):SpawnObjects("UIExtraMissionNodeStar", starCount)
+function UIExtraMissionStarPool:SetData(extraMissionIndex, stageIndex, starCount)
+  self._indexTex:SetText(extraMissionIndex .. "-" .. stageIndex)
+  self._starPool:SpawnObjects("UIExtraMissionNodeStar", starCount)
 end
-
-

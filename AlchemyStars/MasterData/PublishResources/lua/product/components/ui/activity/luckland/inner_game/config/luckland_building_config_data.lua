@@ -1,97 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/config/luckland_building_config_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LLBuildingConfigData", Object)
 LLBuildingConfigData = LLBuildingConfigData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuildingConfigData.Constructor = function(self, ID)
-  -- function num : 0_0 , upvalues : _ENV
-  self._cfg = (Cfg.cfg_luckland_client_build)[ID]
+function LLBuildingConfigData:Constructor(ID)
+  self._cfg = Cfg.cfg_luckland_client_build[ID]
   if not self._cfg then
-    (Log.fatal)("LLBuildingConfigData not find building, ID:", ID)
+    Log.fatal("LLBuildingConfigData not find building, ID:", ID)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuildingConfigData.GetBuildingID = function(self)
-  -- function num : 0_1
-  return (self._cfg).ID
+function LLBuildingConfigData:GetBuildingID()
+  return self._cfg.ID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuildingConfigData.GetBuildingLevel = function(self)
-  -- function num : 0_2
+function LLBuildingConfigData:GetBuildingLevel()
   local buildingID = self:GetBuildingID()
   local level = buildingID % 100
   return level
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuildingConfigData.GetBuildingType = function(self)
-  -- function num : 0_3
-  return (self._cfg).BuildType
+function LLBuildingConfigData:GetBuildingType()
+  return self._cfg.BuildType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuildingConfigData.GetMaxLevel = function(self)
-  -- function num : 0_4
-  return (self._cfg).MaxLevel
+function LLBuildingConfigData:GetMaxLevel()
+  return self._cfg.MaxLevel
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuildingConfigData.GetUpgradeCost = function(self)
-  -- function num : 0_5
-  return (self._cfg).UpgradeCost
+function LLBuildingConfigData:GetUpgradeCost()
+  return self._cfg.UpgradeCost
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuildingConfigData.GetBuffIDList = function(self)
-  -- function num : 0_6
-  return (self._cfg).BuffIDList
+function LLBuildingConfigData:GetBuffIDList()
+  return self._cfg.BuffIDList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuildingConfigData.GetCountDown = function(self)
-  -- function num : 0_7
-  return (self._cfg).CountDown
+function LLBuildingConfigData:GetCountDown()
+  return self._cfg.CountDown
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuildingConfigData.GetCardPool = function(self)
-  -- function num : 0_8
-  return (self._cfg).CardPool
+function LLBuildingConfigData:GetCardPool()
+  return self._cfg.CardPool
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuildingConfigData.GetPosList = function(self)
-  -- function num : 0_9
-  return (self._cfg).PosList
+function LLBuildingConfigData:GetPosList()
+  return self._cfg.PosList
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuildingConfigData.GetDefRate = function(self)
-  -- function num : 0_10
-  return (self._cfg).DefRate
+function LLBuildingConfigData:GetDefRate()
+  return self._cfg.DefRate
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuildingConfigData.GetMaxHPIncreaseParam = function(self)
-  -- function num : 0_11
-  return (self._cfg).MaxHPIncreaseParam
+function LLBuildingConfigData:GetMaxHPIncreaseParam()
+  return self._cfg.MaxHPIncreaseParam
 end
-
-

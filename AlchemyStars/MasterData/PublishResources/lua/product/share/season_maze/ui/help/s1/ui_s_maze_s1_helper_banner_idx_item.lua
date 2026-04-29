@@ -1,55 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/help/s1/ui_s_maze_s1_helper_banner_idx_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISMazeS1HelperBannerIdxItem", UICustomWidget)
 UISMazeS1HelperBannerIdxItem = UISMazeS1HelperBannerIdxItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISMazeS1HelperBannerIdxItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISMazeS1HelperBannerIdxItem:OnShow()
   self._atlas = self:GetAsset("UIS5Main.spriteatlas", LoadType.SpriteAtlas)
   self._img = self:GetUIComponent("Image", "img")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeS1HelperBannerIdxItem.OnHide = function(self)
-  -- function num : 0_1
+function UISMazeS1HelperBannerIdxItem:OnHide()
   self._idx = nil
   self._atlas = nil
   self._img = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeS1HelperBannerIdxItem.SetData = function(self, idx, currIdx)
-  -- function num : 0_2
+function UISMazeS1HelperBannerIdxItem:SetData(idx, currIdx)
   self._idx = idx
   self:Flush(currIdx)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeS1HelperBannerIdxItem.Flush = function(self, currIdx)
-  -- function num : 0_3
+function UISMazeS1HelperBannerIdxItem:Flush(currIdx)
   if not self._atlas then
-    return 
+    return
   end
   if not self._img then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
   if self._idx == currIdx then
-    (self._img).sprite = (self._atlas):GetSprite("exp_s5_help_di05")
+    self._img.sprite = self._atlas:GetSprite("exp_s5_help_di05")
   else
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._img).sprite = (self._atlas):GetSprite("exp_s5_help_di06")
+    self._img.sprite = self._atlas:GetSprite("exp_s5_help_di06")
   end
 end
-
-

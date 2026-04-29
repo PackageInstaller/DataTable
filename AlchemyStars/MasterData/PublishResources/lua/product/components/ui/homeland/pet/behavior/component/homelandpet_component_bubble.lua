@@ -1,83 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/component/homelandpet_component_bubble.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homelandpet_component_base")
 _class("HomelandPetComponentBubble", HomelandPetComponentBase)
 HomelandPetComponentBubble = HomelandPetComponentBubble
 local HomePetBubbleType = {Bubble = 1, Tex = 2}
 _enum("HomePetBubbleType", HomePetBubbleType)
-local HomePetBubble = {None = 0, Happy = 1, Sad = 2}
+local HomePetBubble = {
+  None = 0,
+  Happy = 1,
+  Sad = 2
+}
 _enum("HomePetBubble", HomePetBubble)
--- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
 
-HomelandPetComponentBubble.Constructor = function(self, componentType, pet, behavior)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomelandPetComponentBubble.super).Constructor)(self, componentType, pet, behavior)
-  local homeModule = (GameGlobal.GetUIModule)(HomelandModule)
+function HomelandPetComponentBubble:Constructor(componentType, pet, behavior)
+  HomelandPetComponentBubble.super.Constructor(self, componentType, pet, behavior)
+  local homeModule = GameGlobal.GetUIModule(HomelandModule)
   local homeClient = homeModule:GetClient()
   self._effMng = homeClient:GetHomelandSceneEffectManager()
   self._canShow = true
   self._randomBubbleID = 0
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandPetComponentBubble.OnExcute = function(self)
-  -- function num : 0_1 , upvalues : _ENV, HomePetBubbleType
+function HomelandPetComponentBubble:OnExcute()
   if self.state == HomelandPetComponentState.Resting then
     if self._randomBubbleID <= 0 then
       self.state = HomelandPetComponentState.Success
-      return 
+      return
     end
-    self._cfg = (Cfg.cfg_home_pet_bubble)[self._randomBubbleID]
+    self._cfg = Cfg.cfg_home_pet_bubble[self._randomBubbleID]
     if not self._cfg then
       self.state = HomelandPetComponentState.Success
-      ;
-      (Log.error)("###[HomelandPetComponentBubble] cfg_home_pet_bubble is nil ! id --> ", self._randomBubbleID)
-      return 
+      Log.error("###[HomelandPetComponentBubble] cfg_home_pet_bubble is nil ! id --> ", self._randomBubbleID)
+      return
     end
     self:_Stop()
-    self._params = (self._cfg).Params
-    self._faceSeq = (self._cfg).FaceSeq
-    if (self._cfg).Offset then
-      self._offset = Vector3(((self._cfg).Offset)[1], ((self._cfg).Offset)[2], ((self._cfg).Offset)[3])
+    self._params = self._cfg.Params
+    self._faceSeq = self._cfg.FaceSeq
+    if self._cfg.Offset then
+      self._offset = Vector3(self._cfg.Offset[1], self._cfg.Offset[2], self._cfg.Offset[3])
     else
       self._offset = Vector3(0, 0, 0)
     end
-    if (self._cfg).Scale then
-      self._scale = Vector3(((self._cfg).Scale)[1], ((self._cfg).Scale)[2], ((self._cfg).Scale)[3])
+    if self._cfg.Scale then
+      self._scale = Vector3(self._cfg.Scale[1], self._cfg.Scale[2], self._cfg.Scale[3])
     else
       self._scale = Vector3(1, 1, 1)
     end
-    self._length = (self._cfg).Length
-    local homeModule = (GameGlobal.GetUIModule)(HomelandModule)
+    self._length = self._cfg.Length
+    local homeModule = GameGlobal.GetUIModule(HomelandModule)
     local homeClient = homeModule:GetClient()
     self._camera = homeClient:CameraManager()
-    self._type = (self._cfg).Type
+    self._type = self._cfg.Type
     if self._type == HomePetBubbleType.Bubble then
       self:_ShowBubble()
-    else
-      if self._type == HomePetBubbleType.Tex then
-        self:_ShowTex()
-      end
+    elseif self._type == HomePetBubbleType.Tex then
+      self:_ShowTex()
     end
     self._faceSeq = {}
     self._faceIdx = 1
     self._curTime = 0
-    if (self._cfg).FaceSeq then
-      for i,value in ipairs((self._cfg).FaceSeq) do
+    if self._cfg.FaceSeq then
+      for i, value in ipairs(self._cfg.FaceSeq) do
         local face = {}
         face.frame = value[1]
         local time = value[2]
         face.time = time
-        -- DECOMPILER ERROR at PC133: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._faceSeq)[#self._faceSeq + 1] = face
+        self._faceSeq[#self._faceSeq + 1] = face
       end
-      self:_SetFace(((self._faceSeq)[1]).frame)
+      self:_SetFace(self._faceSeq[1].frame)
       self._hasFace = true
     else
       self._hasFace = false
@@ -86,26 +74,24 @@ HomelandPetComponentBubble.OnExcute = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandPetComponentBubble.Exit = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((HomelandPetComponentBubble.super).Exit)(self)
+function HomelandPetComponentBubble:Exit()
+  HomelandPetComponentBubble.super.Exit(self)
   self:_Stop()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandPetComponentBubble.Show = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local _petid = (self._pet):TemplateID()
+function HomelandPetComponentBubble:Show()
+  local _petid = self._pet:TemplateID()
   local _self = 1
-  local _type = ((self._pet):GetPetBehavior()):GetCurBehaviorType()
-  local cfgs = (Cfg.cfg_home_pet_solilo)({PetID = _petid, Self = _self, State = _type})
-  if cfgs and (table.count)(cfgs) > 0 then
+  local _type = self._pet:GetPetBehavior():GetCurBehaviorType()
+  local cfgs = Cfg.cfg_home_pet_solilo({
+    PetID = _petid,
+    Self = _self,
+    State = _type
+  })
+  if cfgs and table.count(cfgs) > 0 then
     local cfg = cfgs[1]
     if _type == HomelandPetBehaviorType.InteractingFurniture then
-      local build = (self._pet):GetInteractingBuilding()
+      local build = self._pet:GetInteractingBuilding()
       local buildID = build:GetBuildId()
       local buildRandomList = cfg.BuildRandomList
       if buildRandomList[buildID] then
@@ -114,93 +100,75 @@ HomelandPetComponentBubble.Show = function(self)
         self._randomList = cfg.RandomList
       end
     else
-      do
-        do
-          self._randomList = cfg.RandomList
-          self._randomList = nil
-          if self._randomBubbleID ~= 0 then
-            return 
-          end
-          if not self._randomList then
-            return 
-          end
-          self._randomBubbleID = self:RandomID()
-        end
-      end
+      self._randomList = cfg.RandomList
     end
+  else
+    self._randomList = nil
   end
+  if self._randomBubbleID ~= 0 then
+    return
+  end
+  if not self._randomList then
+    return
+  end
+  self._randomBubbleID = self:RandomID()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandPetComponentBubble.SetBubbleID = function(self, bubbleID)
-  -- function num : 0_4
+function HomelandPetComponentBubble:SetBubbleID(bubbleID)
   self._randomBubbleID = bubbleID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandPetComponentBubble._SetFace = function(self, frame)
-  -- function num : 0_5
+function HomelandPetComponentBubble:_SetFace(frame)
   if self._pet then
-    local mat = (self._pet):GetFaceMat()
+    local mat = self._pet:GetFaceMat()
     if mat then
       mat:SetInt("_Frame", frame)
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandPetComponentBubble.ShowBubble = function(self, bubble)
-  -- function num : 0_6 , upvalues : _ENV, HomePetBubbleType
-  self._cfg = (Cfg.cfg_home_pet_bubble)[bubble]
+function HomelandPetComponentBubble:ShowBubble(bubble)
+  self._cfg = Cfg.cfg_home_pet_bubble[bubble]
   if not self._cfg then
     self.state = HomelandPetComponentState.Success
-    ;
-    (Log.error)("###[HomelandPetComponentBubble] cfg_home_pet_bubble is nil ! id --> ", self._randomBubbleID)
-    return 
+    Log.error("###[HomelandPetComponentBubble] cfg_home_pet_bubble is nil ! id --> ", self._randomBubbleID)
+    return
   end
   self:_Stop()
-  self._params = (self._cfg).Params
-  self._faceSeq = (self._cfg).FaceSeq
-  if (self._cfg).Offset then
-    self._offset = Vector3(((self._cfg).Offset)[1], ((self._cfg).Offset)[2], ((self._cfg).Offset)[3])
+  self._params = self._cfg.Params
+  self._faceSeq = self._cfg.FaceSeq
+  if self._cfg.Offset then
+    self._offset = Vector3(self._cfg.Offset[1], self._cfg.Offset[2], self._cfg.Offset[3])
   else
     self._offset = Vector3(0, 0, 0)
   end
-  if (self._cfg).Scale then
-    self._scale = Vector3(((self._cfg).Scale)[1], ((self._cfg).Scale)[2], ((self._cfg).Scale)[3])
+  if self._cfg.Scale then
+    self._scale = Vector3(self._cfg.Scale[1], self._cfg.Scale[2], self._cfg.Scale[3])
   else
     self._scale = Vector3(1, 1, 1)
   end
-  self._length = (self._cfg).Length
-  local homeModule = (GameGlobal.GetUIModule)(HomelandModule)
+  self._length = self._cfg.Length
+  local homeModule = GameGlobal.GetUIModule(HomelandModule)
   local homeClient = homeModule:GetClient()
   self._camera = homeClient:CameraManager()
-  self._type = (self._cfg).Type
+  self._type = self._cfg.Type
   if self._type == HomePetBubbleType.Bubble then
     self:_ShowBubble()
-  else
-    if self._type == HomePetBubbleType.Tex then
-      self:_ShowTex()
-    end
+  elseif self._type == HomePetBubbleType.Tex then
+    self:_ShowTex()
   end
   self._faceSeq = {}
   self._faceIdx = 1
   self._curTime = 0
-  if (self._cfg).FaceSeq then
-    for i,value in ipairs((self._cfg).FaceSeq) do
+  if self._cfg.FaceSeq then
+    for i, value in ipairs(self._cfg.FaceSeq) do
       local face = {}
       face.frame = value[1]
       local time = value[2]
       face.time = time
-      -- DECOMPILER ERROR at PC120: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self._faceSeq)[#self._faceSeq + 1] = face
+      self._faceSeq[#self._faceSeq + 1] = face
     end
-    self:_SetFace(((self._faceSeq)[1]).frame)
+    self:_SetFace(self._faceSeq[1].frame)
     self._hasFace = true
   else
     self._hasFace = false
@@ -209,63 +177,44 @@ HomelandPetComponentBubble.ShowBubble = function(self, bubble)
   return self._length
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandPetComponentBubble._ShowBubble = function(self)
-  -- function num : 0_7
-  local anis = (self._cfg).BubbleAni
+function HomelandPetComponentBubble:_ShowBubble()
+  local anis = self._cfg.BubbleAni
   if anis == nil then
     anis = {}
   end
-  self._bubbleEffectID = (self._effMng):NewEffect(self._params, anis[1], anis[2], anis[3])
-  ;
-  (self._effMng):SetScale(self._bubbleEffectID, self._scale)
-  ;
-  (self._effMng):Execute(self._bubbleEffectID)
+  self._bubbleEffectID, self._bubbleitem = self._effMng:NewEffect(self._params, anis[1], anis[2], anis[3])
+  self._effMng:SetScale(self._bubbleEffectID, self._scale)
+  self._effMng:Execute(self._bubbleEffectID)
   self:UpdateBubblePos()
   if self._bubbleitem then
-    (self._bubbleitem):SetVisible(self._canShow)
+    self._bubbleitem:SetVisible(self._canShow)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandPetComponentBubble.UpdateBubblePos = function(self)
-  -- function num : 0_8
-  local rot = (self._camera):Rotation()
-  local pos = (self._pet):HeadPos() + self._offset
-  ;
-  (self._effMng):UpdatePosRota(self._bubbleEffectID, pos, rot)
+function HomelandPetComponentBubble:UpdateBubblePos()
+  local rot = self._camera:Rotation()
+  local pos = self._pet:HeadPos() + self._offset
+  self._effMng:UpdatePosRota(self._bubbleEffectID, pos, rot)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandPetComponentBubble.Setvisible = function(self, value)
-  -- function num : 0_9
+function HomelandPetComponentBubble:Setvisible(value)
   if self._bubbleEffectID then
-    (self._effMng):SetVisible(self._bubbleEffectID, value)
+    self._effMng:SetVisible(self._bubbleEffectID, value)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandPetComponentBubble._ShowTex = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local homeModule = (GameGlobal.GetUIModule)(HomelandModule)
+function HomelandPetComponentBubble:_ShowTex()
+  local homeModule = GameGlobal.GetUIModule(HomelandModule)
   local homeClient = homeModule:GetClient()
   self._3duiMgr = homeClient:Home3DUIManager()
-  self._talkUnit = (self._3duiMgr):GetTalkUnit()
+  self._talkUnit = self._3duiMgr:GetTalkUnit()
   if not self._talkUnit then
-    return 
+    return
   end
-  ;
-  (self._talkUnit):SetTex((HelperProxy:GetInstance()):ReplacePlayerName((StringTable.Get)(self._params)))
+  self._talkUnit:SetTex(HelperProxy:GetInstance():ReplacePlayerName(StringTable.Get(self._params)))
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandPetComponentBubble.RandomID = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function HomelandPetComponentBubble:RandomID()
   if self._randomList == nil then
     return 0
   end
@@ -273,89 +222,70 @@ HomelandPetComponentBubble.RandomID = function(self)
   local all = 0
   local weightTab = {}
   for i = 1, #self._randomList do
-    all = all + ((self._randomList)[i])[2]
+    all = all + self._randomList[i][2]
     local weightTabItem = {}
-    weightTabItem.id = ((self._randomList)[i])[1]
+    weightTabItem.id = self._randomList[i][1]
     weightTabItem.weight = all
-    ;
-    (table.insert)(weightTab, weightTabItem)
+    table.insert(weightTab, weightTabItem)
   end
   if all < 1 then
     all = 1
   end
-  local randomNumber = (math.random)(1, all)
+  local randomNumber = math.random(1, all)
   for i = 1, #weightTab do
-    if randomNumber <= (weightTab[i]).weight then
-      id = (weightTab[i]).id
+    if randomNumber <= weightTab[i].weight then
+      id = weightTab[i].id
       break
     end
   end
-  do
-    return id
-  end
+  return id
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandPetComponentBubble.Update = function(self, deltaTime)
-  -- function num : 0_12 , upvalues : _ENV, HomePetBubbleType
+function HomelandPetComponentBubble:Update(deltaTime)
   self._curTime = self._curTime + deltaTime
-  if self._length > 0 and self._length <= self._curTime then
+  if self._length > 0 and self._curTime >= self._length then
     self:_Stop()
     self.state = HomelandPetComponentState.Success
   else
-    if self._type == HomePetBubbleType.Tex and self._talkUnit then
-      local pos = (self._pet):HeadPos()
-      local petName = (self._pet):TemplateID()
-      ;
-      (self._talkUnit):SetPos(pos)
-      local rot = (self._camera):Rotation()
-      ;
-      (self._talkUnit):SetRotation(rot)
-    end
-    do
-      if self._type == HomePetBubbleType.Bubble and self._bubbleEffectID then
-        self:UpdateBubblePos()
+    if self._type == HomePetBubbleType.Tex then
+      if self._talkUnit then
+        local pos = self._pet:HeadPos()
+        local petName = self._pet:TemplateID()
+        self._talkUnit:SetPos(pos)
+        local rot = self._camera:Rotation()
+        self._talkUnit:SetRotation(rot)
       end
-      if self._hasFace and self._faceIdx <= #self._faceSeq and ((self._faceSeq)[self._faceIdx]).time < self._curTime then
-        self._faceIdx = self._faceIdx + 1
-        if self._faceIdx <= #self._faceSeq then
-          self:_SetFace(((self._faceSeq)[self._faceIdx]).frame)
-        end
+    elseif self._type == HomePetBubbleType.Bubble and self._bubbleEffectID then
+      self:UpdateBubblePos()
+    end
+    if self._hasFace and self._faceIdx <= #self._faceSeq and self._curTime > self._faceSeq[self._faceIdx].time then
+      self._faceIdx = self._faceIdx + 1
+      if self._faceIdx <= #self._faceSeq then
+        self:_SetFace(self._faceSeq[self._faceIdx].frame)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandPetComponentBubble._Stop = function(self)
-  -- function num : 0_13 , upvalues : HomePetBubbleType
-  if self._type == HomePetBubbleType.Tex and self._talkUnit then
-    (self._3duiMgr):ReturnTalkUnit(self._talkUnit)
-    self._talkUnit = nil
-  end
-  if self._type == HomePetBubbleType.Bubble then
+function HomelandPetComponentBubble:_Stop()
+  if self._type == HomePetBubbleType.Tex then
+    if self._talkUnit then
+      self._3duiMgr:ReturnTalkUnit(self._talkUnit)
+      self._talkUnit = nil
+    end
+  elseif self._type == HomePetBubbleType.Bubble then
     if self._bubbleEffectID then
-      (self._effMng):Exit(self._bubbleEffectID)
+      self._effMng:Exit(self._bubbleEffectID)
     end
     self._bubbleEffectID = nil
   end
   self._type = nil
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandPetComponentBubble.Hide = function(self)
-  -- function num : 0_14
+function HomelandPetComponentBubble:Hide()
   self:_Stop()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandPetComponentBubble.SetCanShowBubble = function(self, canShow)
-  -- function num : 0_15
+function HomelandPetComponentBubble:SetCanShowBubble(canShow)
   self._canShow = canShow
 end
-
-

@@ -1,61 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/aircraft_enter_loading_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftEnterLoadingHandler", LoadingHandler)
 AircraftEnterLoadingHandler = AircraftEnterLoadingHandler
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftEnterLoadingHandler.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.notice)("[Aircraft] 开始风船Loading")
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("AircraftEnterLoading")
+function AircraftEnterLoadingHandler:Constructor()
+  Log.notice("[Aircraft] 开始风船Loading")
+  GameGlobal.UIStateManager():Lock("AircraftEnterLoading")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftEnterLoadingHandler.PreLoadBeforeLoadLevel = function(self)
-  -- function num : 0_1
+function AircraftEnterLoadingHandler:PreLoadBeforeLoadLevel()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftEnterLoadingHandler.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  (LoadingHandler.PreLoadAfterLoadLevel)(self, TT, ...)
+function AircraftEnterLoadingHandler:PreLoadAfterLoadLevel(TT, ...)
+  LoadingHandler.PreLoadAfterLoadLevel(self, TT, ...)
   self:ReqData(TT)
-  local _module = (GameGlobal.GetModule)(AircraftModule)
+  local _module = GameGlobal.GetModule(AircraftModule)
   _module:ReqFurnitureInfo(TT)
   if _module:GetClientMain() then
-    (Log.exception)("严重错误，当前风船正在运行！")
+    Log.exception("严重错误，当前风船正在运行！")
   end
   local _main = AircraftMain:New()
   _main:Init()
   _module:SetClientMain(_main)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftEnterLoadingHandler.ReqData = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  local airModule = ((GameGlobal.GameLogic)()):GetModule(AircraftModule)
+function AircraftEnterLoadingHandler:ReqData(TT)
+  local airModule = GameGlobal.GameLogic():GetModule(AircraftModule)
   local ack = airModule:AircraftUpdate(TT, true)
   if ack:GetSucc() then
-    (ToastManager.ShowToast)(airModule:GetErrorMsg(ack:GetResult()))
+  else
+    ToastManager.ShowToast(airModule:GetErrorMsg(ack:GetResult()))
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftEnterLoadingHandler.OnLoadingFinish = function(self, ...)
-  -- function num : 0_4 , upvalues : _ENV
-  local loadingParams = {...}
-  ;
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIAircraft, self.sceneResReq, (table.unpack)(loadingParams))
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("AircraftEnterLoading")
+function AircraftEnterLoadingHandler:OnLoadingFinish(...)
+  local loadingParams = {
+    ...
+  }
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIAircraft, self.sceneResReq, table.unpack(loadingParams))
+  GameGlobal.UIStateManager():UnLock("AircraftEnterLoading")
 end
-
-

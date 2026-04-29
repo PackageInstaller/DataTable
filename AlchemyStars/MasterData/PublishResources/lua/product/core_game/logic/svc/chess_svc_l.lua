@@ -1,54 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/chess_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChessServiceLogic", BaseService)
 ChessServiceLogic = ChessServiceLogic
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChessServiceLogic.DoChessPetPathMove = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function ChessServiceLogic:DoChessPetPathMove()
+  local boardEntity = self._world:GetBoardEntity()
   local logicChessPathComponent = boardEntity:LogicChessPath()
   local chessPath = logicChessPathComponent:GetLogicChessPath()
   local entityID = logicChessPathComponent:GetLogicChessPetEntityID()
-  local chessPetEntity = (self._world):GetEntityByID(entityID)
+  local chessPetEntity = self._world:GetEntityByID(entityID)
   if not chessPetEntity then
-    return 
+    return
   end
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local monsterWalkResultList = {}
-  for _,pos in ipairs(chessPath) do
-    if not chessPetEntity:HasMonsterEscape() then
-      local walkRes = MonsterWalkResult:New()
-      do
-        local lastPos = chessPetEntity:GetGridPosition()
-        boardServiceLogic:UpdateEntityBlockFlag(chessPetEntity, lastPos, pos)
-        chessPetEntity:SetGridPosition(pos)
-        walkRes:SetWalkPos(pos)
-        self:_OnChessPetMoveArrivePos(chessPetEntity, walkRes)
-        ;
-        (table.insert)(monsterWalkResultList, walkRes)
-        -- DECOMPILER ERROR at PC54: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC54: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  for _, pos in ipairs(chessPath) do
+    if chessPetEntity:HasMonsterEscape() then
+      break
     end
+    local walkRes = MonsterWalkResult:New()
+    local lastPos = chessPetEntity:GetGridPosition()
+    boardServiceLogic:UpdateEntityBlockFlag(chessPetEntity, lastPos, pos)
+    chessPetEntity:SetGridPosition(pos)
+    walkRes:SetWalkPos(pos)
+    self:_OnChessPetMoveArrivePos(chessPetEntity, walkRes)
+    table.insert(monsterWalkResultList, walkRes)
   end
   logicChessPathComponent:SetLogicWalkResultList(monsterWalkResultList)
   return entityID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessServiceLogic._OnChessPetMoveArrivePos = function(self, chessPetEntity, walkRes)
-  -- function num : 0_1 , upvalues : _ENV
-  local utilSvc = (self._world):GetService("UtilData")
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function ChessServiceLogic:_OnChessPetMoveArrivePos(chessPetEntity, walkRes)
+  local utilSvc = self._world:GetService("UtilData")
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   local listTrapWork, listTrapResult = trapServiceLogic:TriggerTrapByEntity(chessPetEntity, TrapTriggerOrigin.Move)
-  for i,e in ipairs(listTrapWork) do
+  for i, e in ipairs(listTrapWork) do
     local trapEntity = e
     local skillEffectResultContainer = listTrapResult[i]
     local aiResult = AISkillResult:New()
@@ -56,20 +40,20 @@ ChessServiceLogic._OnChessPetMoveArrivePos = function(self, chessPetEntity, walk
     walkRes:AddWalkTrap(trapEntity:GetID(), aiResult)
   end
   local passGrids = {}
-  local isDuplicate = function(pos)
-    -- function num : 0_1_0 , upvalues : _ENV, passGrids
-    for _,value in ipairs(passGrids) do
+  
+  local function isDuplicate(pos)
+    for _, value in ipairs(passGrids) do
       if value.x == pos.x and value.y == pos.y then
         return true
       end
     end
     return false
   end
-
-  local bodyArea = (chessPetEntity:BodyArea()):GetArea()
-  local dir = (chessPetEntity:GridLocation()):GetGridDir()
+  
+  local bodyArea = chessPetEntity:BodyArea():GetArea()
+  local dir = chessPetEntity:GridLocation():GetGridDir()
   local curPos = chessPetEntity:GetGridPosition()
-  for _,value in ipairs(bodyArea) do
+  for _, value in ipairs(bodyArea) do
     local pos = curPos + value - dir
     if not isDuplicate(pos) then
       passGrids[#passGrids + 1] = pos
@@ -78,54 +62,41 @@ ChessServiceLogic._OnChessPetMoveArrivePos = function(self, chessPetEntity, walk
   walkRes:SetWalkPassedGrid(passGrids)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessServiceLogic.DoChessPetAttack = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function ChessServiceLogic:DoChessPetAttack()
+  local boardEntity = self._world:GetBoardEntity()
   local logicChessPathComponent = boardEntity:LogicChessPath()
   local chessPath = logicChessPathComponent:GetLogicChessPath()
   local entityID = logicChessPathComponent:GetLogicChessPetEntityID()
-  local chessPetEntity = (self._world):GetEntityByID(entityID)
+  local chessPetEntity = self._world:GetEntityByID(entityID)
   if not chessPetEntity then
-    return 
+    return
   end
   local chessPetCmpt = chessPetEntity:ChessPet()
   local attackSkill = chessPetCmpt:GetAttackSkillID()
   local ntChessPetSkillAttackStart = NTChessPetSkillAttackStart:New(chessPetEntity, attackSkill)
-  ;
-  ((self._world):GetService("Trigger")):Notify(ntChessPetSkillAttackStart)
-  local skillLogicSvc = (self._world):GetService("SkillLogic")
+  self._world:GetService("Trigger"):Notify(ntChessPetSkillAttackStart)
+  local skillLogicSvc = self._world:GetService("SkillLogic")
   skillLogicSvc:CalcSkillEffect(chessPetEntity, attackSkill)
   local ntChessPetSkillAttackEnd = NTChessPetSkillAttackEnd:New(chessPetEntity, attackSkill)
-  ;
-  ((self._world):GetService("Trigger")):Notify(ntChessPetSkillAttackEnd)
+  self._world:GetService("Trigger"):Notify(ntChessPetSkillAttackEnd)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessServiceLogic.FinishChessPetTurn = function(self, finishAll, targetEntityID)
-  -- function num : 0_3 , upvalues : _ENV
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).ChessPet)
+function ChessServiceLogic:FinishChessPetTurn(finishAll, targetEntityID)
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.ChessPet)
   local chessPetEntities = group:GetEntities()
-  for i,v in ipairs(chessPetEntities) do
+  for i, v in ipairs(chessPetEntities) do
     local chessPetCmpt = v:ChessPet()
     if finishAll then
       chessPetCmpt:SetChessPetFinishTurn(true)
-    else
-      if targetEntityID == v:GetID() then
-        chessPetCmpt:SetChessPetFinishTurn(true)
-      end
+    elseif targetEntityID == v:GetID() then
+      chessPetCmpt:SetChessPetFinishTurn(true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessServiceLogic.IsAllChessPetTurnFinish = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).ChessPet)
-  for i,entity in ipairs(group:GetEntities()) do
+function ChessServiceLogic:IsAllChessPetTurnFinish()
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.ChessPet)
+  for i, entity in ipairs(group:GetEntities()) do
     if self:_OnCheckChessCanAction(entity) then
       return false
     end
@@ -133,10 +104,7 @@ ChessServiceLogic.IsAllChessPetTurnFinish = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessServiceLogic._OnCheckChessCanAction = function(self, entity)
-  -- function num : 0_5 , upvalues : _ENV
+function ChessServiceLogic:_OnCheckChessCanAction(entity)
   if entity:HasDeadMark() then
     return false
   end
@@ -155,52 +123,43 @@ ChessServiceLogic._OnCheckChessCanAction = function(self, entity)
   return true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessServiceLogic.DoChessPetListDeadLogic = function(self, deadEntityIDList)
-  -- function num : 0_6 , upvalues : _ENV
-  for _,v in ipairs(deadEntityIDList) do
-    local e = (self._world):GetEntityByID(v)
+function ChessServiceLogic:DoChessPetListDeadLogic(deadEntityIDList)
+  for _, v in ipairs(deadEntityIDList) do
+    local e = self._world:GetEntityByID(v)
     self:AddChessPetDeadMark(e)
     self:_DoOneChessLogicDead(e)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessServiceLogic._DoOneChessLogicDead = function(self, chessPetEntity)
-  -- function num : 0_7 , upvalues : _ENV
+function ChessServiceLogic:_DoOneChessLogicDead(chessPetEntity)
   if not chessPetEntity:HasDeadMark() then
-    return 
+    return
   end
   local deadMarkCmpt = chessPetEntity:DeadMark()
   if deadMarkCmpt:HasDoLogicDead() then
-    return 
+    return
   end
   local chessPetCmpt = chessPetEntity:ChessPet()
   if not chessPetCmpt then
-    return 
+    return
   end
   deadMarkCmpt:SetDoLogicDead(true)
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local stateId = utilDataSvc:GetCurMainStateID()
   if stateId ~= GameStateID.ChessPetResult then
     self:_CalcChessPetDeathSkill(chessPetEntity)
   end
-  local sBoard = (self._world):GetService("BoardLogic")
-  sBoard:RemoveEntityBlockFlag(chessPetEntity, (chessPetEntity:GridLocation()).Position)
-  local sTrigger = (self._world):GetService("Trigger")
+  local sBoard = self._world:GetService("BoardLogic")
+  sBoard:RemoveEntityBlockFlag(chessPetEntity, chessPetEntity:GridLocation().Position)
+  local sTrigger = self._world:GetService("Trigger")
   sTrigger:Notify(NTChessDead:New(chessPetEntity))
   chessPetEntity:SetGridPosition(Vector2(BattleConst.CacheHeight, BattleConst.CacheHeight))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessServiceLogic.GetDeadChessPetList = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function ChessServiceLogic:GetDeadChessPetList()
   local deadChessPetEntityIDList = {}
-  local chessPetGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).ChessPet)
-  for _,e in ipairs(chessPetGroup:GetEntities()) do
+  local chessPetGroup = self._world:GetGroup(self._world.BW_WEMatchers.ChessPet)
+  for _, e in ipairs(chessPetGroup:GetEntities()) do
     local attrCmpt = e:Attributes()
     local curHp = attrCmpt:GetCurrentHP()
     if curHp <= 0 and not e:HasDeadMark() then
@@ -210,13 +169,10 @@ ChessServiceLogic.GetDeadChessPetList = function(self)
   return deadChessPetEntityIDList
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessServiceLogic.GetHasDeadMarkChessPetList = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function ChessServiceLogic:GetHasDeadMarkChessPetList()
   local deadChessPetEntityIDList = {}
-  local chessPetGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).ChessPet)
-  for _,e in ipairs(chessPetGroup:GetEntities()) do
+  local chessPetGroup = self._world:GetGroup(self._world.BW_WEMatchers.ChessPet)
+  for _, e in ipairs(chessPetGroup:GetEntities()) do
     local attrCmpt = e:Attributes()
     local curHp = attrCmpt:GetCurrentHP()
     if e:HasDeadMark() then
@@ -226,36 +182,28 @@ ChessServiceLogic.GetHasDeadMarkChessPetList = function(self)
   return deadChessPetEntityIDList
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessServiceLogic.AddChessPetDeadMark = function(self, e)
-  -- function num : 0_10
+function ChessServiceLogic:AddChessPetDeadMark(e)
   if not e:HasChessPet() then
-    return 
+    return
   end
   local cAttributes = e:Attributes()
   local curHp = cAttributes:GetCurrentHP()
-  if curHp > 0 then
-    return 
+  if 0 < curHp then
+    return
   end
   if e:HasDeadMark() then
-    return 
+    return
   end
   e:AddDeadMark()
   return e:DeadMark()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessServiceLogic._CalcChessPetDeathSkill = function(self, chessPetEntity)
-  -- function num : 0_11
+function ChessServiceLogic:_CalcChessPetDeathSkill(chessPetEntity)
   local chessPetCmpt = chessPetEntity:ChessPet()
   local deathSkillID = chessPetCmpt:GetDieSkillID()
-  if deathSkillID and deathSkillID > 0 then
-    local skillLogicService = (self._world):GetService("SkillLogic")
+  if deathSkillID and 0 < deathSkillID then
+    local skillLogicService = self._world:GetService("SkillLogic")
     skillLogicService:CalcSkillEffect(chessPetEntity, deathSkillID)
     skillLogicService:UpdateRenderSkillRoutine(chessPetEntity)
   end
 end
-
-

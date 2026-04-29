@@ -1,46 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/season_maze/stn_season_maze_set_teams_primary.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("SeasonMaze_SetTeamsPrimary", Common_AsyncBase)
 SeasonMaze_SetTeamsPrimary = SeasonMaze_SetTeamsPrimary
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMaze_SetTeamsPrimary.TaskFunc = function(self, TT, result)
-  -- function num : 0_0 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function SeasonMaze_SetTeamsPrimary:TaskFunc(TT, result)
+  local runData = self.m_pManager:GetMissionRunData()
   local componentsID = runData:GetComponentID()
-  self._seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self._uiSeasonMazeModule = (self._seasonMazeModule).uiModule
-  self._seasonObj = (self._seasonMazeModule):CurSeasonObj()
-  self._com = (self._seasonObj):GetMazeComponent()
+  self._seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self._uiSeasonMazeModule = self._seasonMazeModule.uiModule
+  self._seasonObj = self._seasonMazeModule:CurSeasonObj()
+  self._com = self._seasonObj:GetMazeComponent()
   local diff = 3
   local res = AsyncRequestRes:New()
   local petList = {}
-  ;
-  (table.insert)(petList, 1600011)
-  ;
-  (table.insert)(petList, 1600021)
-  ;
-  (table.insert)(petList, 1600061)
-  ;
-  (table.insert)(petList, 1500091)
-  ;
-  (self._com):HandleSeasonMazeSelectHard(TT, res, diff, petList)
+  table.insert(petList, 1600011)
+  table.insert(petList, 1600021)
+  table.insert(petList, 1600061)
+  table.insert(petList, 1500091)
+  self._com:HandleSeasonMazeSelectHard(TT, res, diff, petList)
   if res:GetSucc() then
-    (self._uiSeasonMazeModule):Enter()
+    self._uiSeasonMazeModule:Enter()
   else
     local result = res:GetResult()
-    ;
-    (Log.error)("###[UISeasonMazePetsTeamsPrimary] HandleSeasonMazeSelectHard fail ! result:", result)
-    ;
-    ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res)
+    Log.error("###[UISeasonMazePetsTeamsPrimary] HandleSeasonMazeSelectHard fail ! result:", result)
+    GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res)
   end
-  do
-    self.m_nNodeState = 1
-  end
+  self.m_nNodeState = 1
 end
-
-

@@ -1,39 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/monster_move_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 _class("MonsterMoveServiceLogic", BaseService)
 MonsterMoveServiceLogic = MonsterMoveServiceLogic
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterMoveServiceLogic.Constructor = function(self, world)
-  -- function num : 0_0
+function MonsterMoveServiceLogic:Constructor(world)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveServiceLogic._DoLogicTrapBeforeMonster = function(self)
-  -- function num : 0_1
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function MonsterMoveServiceLogic:_DoLogicTrapBeforeMonster()
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   trapServiceLogic:StartBeforeMainAI()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveServiceLogic._DoLogicTrapAfterMonster = function(self)
-  -- function num : 0_2
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function MonsterMoveServiceLogic:_DoLogicTrapAfterMonster()
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   trapServiceLogic:TrapActionAfterAI()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveServiceLogic._DoLogicCalcMonsterAction = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local aiService = (self._world):GetService("AI")
+function MonsterMoveServiceLogic:_DoLogicCalcMonsterAction()
+  local aiService = self._world:GetService("AI")
   aiService:RunAiLogic_WaitEnd(AILogicPeriodType.Main)
 end
-
-

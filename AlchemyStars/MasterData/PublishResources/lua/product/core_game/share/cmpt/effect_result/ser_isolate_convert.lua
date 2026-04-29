@@ -1,70 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_isolate_convert.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_IsolateConvert_AtomicData", Object)
 SkillEffectResult_IsolateConvert_AtomicData = SkillEffectResult_IsolateConvert_AtomicData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_IsolateConvert_AtomicData.Constructor = function(self, gridPos, oldPieceType, newPieceType, trapArray)
-  -- function num : 0_0
+function SkillEffectResult_IsolateConvert_AtomicData:Constructor(gridPos, oldPieceType, newPieceType, trapArray)
   self._position = gridPos
   self._oldPieceType = oldPieceType
   self._targetPieceType = newPieceType
   self._destroyedTrapArray = trapArray
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IsolateConvert_AtomicData.GetPosition = function(self)
-  -- function num : 0_1
+function SkillEffectResult_IsolateConvert_AtomicData:GetPosition()
   return self._position
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IsolateConvert_AtomicData.GetOldPieceType = function(self)
-  -- function num : 0_2
+function SkillEffectResult_IsolateConvert_AtomicData:GetOldPieceType()
   return self._oldPieceType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IsolateConvert_AtomicData.GetTargetPieceType = function(self)
-  -- function num : 0_3
+function SkillEffectResult_IsolateConvert_AtomicData:GetTargetPieceType()
   return self._targetPieceType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IsolateConvert_AtomicData.GetDestroyedTrapArray = function(self)
-  -- function num : 0_4
+function SkillEffectResult_IsolateConvert_AtomicData:GetDestroyedTrapArray()
   return self._destroyedTrapArray
 end
 
 _class("SkillEffectResult_IsolateConvert", SkillEffectResultBase)
 SkillEffectResult_IsolateConvert = SkillEffectResult_IsolateConvert
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_IsolateConvert.Constructor = function(self, tAtomData)
-  -- function num : 0_5
+function SkillEffectResult_IsolateConvert:Constructor(tAtomData)
   self._atomicDataArray = tAtomData
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IsolateConvert.GetEffectType = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillEffectResult_IsolateConvert:GetEffectType()
   return SkillEffectType.IsolateConvert
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IsolateConvert.GetAtomicDataArray = function(self)
-  -- function num : 0_7
+function SkillEffectResult_IsolateConvert:GetAtomicDataArray()
   return self._atomicDataArray
 end
-
-

@@ -1,54 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n16/ingame/ui_n16_answer_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN16AnswerController", UIController)
 UIN16AnswerController = UIN16AnswerController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN16AnswerController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._lastBGMResName = (AudioHelperController.GetCurrentBgm)()
+function UIN16AnswerController:Constructor()
+  self._lastBGMResName = AudioHelperController.GetCurrentBgm()
 end
 
-local UIN16AnswerType = {OnReady = 1, OnAnswer = 2, OnOver = 3, OnPause = 5}
+local UIN16AnswerType = {
+  OnReady = 1,
+  OnAnswer = 2,
+  OnOver = 3,
+  OnPause = 5
+}
 _enum("UIN16AnswerType", UIN16AnswerType)
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN16AnswerController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN16AnswerController:LoadDataOnEnter(TT, res, uiParams)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N16, ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N16, ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV, UIN16AnswerType
+function UIN16AnswerController:OnShow(uiParams)
   self:InitWidget()
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   self._grad = uiParams[1]
   self._ingameDatas = UIN16ImGameData:New(uiParams[1])
-  self._gameType = (uiParams[1]):GetLevelType()
-  if not uiParams[2] then
-    self._gradData = {}
-    self._scrollViewInited = false
-    self._questionIndex = 0
-    self._updateTimer = nil
-    self._perCount = 2
-    self._items = {}
-    self._faultTolerantItems = {}
-    self._pressing = false
-    self:EnterState(UIN16AnswerType.OnReady)
-  end
+  self._gameType = uiParams[1]:GetLevelType()
+  self._gradData = uiParams[2] or {}
+  self._scrollViewInited = false
+  self._questionIndex = 0
+  self._updateTimer = nil
+  self._perCount = 2
+  self._items = {}
+  self._faultTolerantItems = {}
+  self._pressing = false
+  self:EnterState(UIN16AnswerType.OnReady)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN16AnswerController:InitWidget()
   self.countDownText = self:GetUIComponent("UILocalizationText", "CountDownText")
   self.answerList = self:GetUIComponent("UIDynamicScrollView", "AnswerList")
   self.itemInfo = self:GetUIComponent("UISelectObjectPath", "ItemInfo")
@@ -70,14 +57,22 @@ UIN16AnswerController.InitWidget = function(self)
   self.spine = self:GetGameObject("Spine")
   self.questionTipTexProcess = self:GetUIComponent("UILocalizationText", "QuestionTipTexProcess")
   self.numAniObgs = {}
-  ;
-  (table.insert)(self.numAniObgs, {self:GetGameObject("ReadyCountDown0"), self:GetUIComponent("Image", "ReadyCountDown0")})
-  ;
-  (table.insert)(self.numAniObgs, {self:GetGameObject("ReadyCountDown1"), self:GetUIComponent("Image", "ReadyCountDown1")})
-  ;
-  (table.insert)(self.numAniObgs, {self:GetGameObject("ReadyCountDown2"), self:GetUIComponent("Image", "ReadyCountDown2")})
-  ;
-  (table.insert)(self.numAniObgs, {self:GetGameObject("ReadyCountDown3"), self:GetUIComponent("Image", "ReadyCountDown3")})
+  table.insert(self.numAniObgs, {
+    self:GetGameObject("ReadyCountDown0"),
+    self:GetUIComponent("Image", "ReadyCountDown0")
+  })
+  table.insert(self.numAniObgs, {
+    self:GetGameObject("ReadyCountDown1"),
+    self:GetUIComponent("Image", "ReadyCountDown1")
+  })
+  table.insert(self.numAniObgs, {
+    self:GetGameObject("ReadyCountDown2"),
+    self:GetUIComponent("Image", "ReadyCountDown2")
+  })
+  table.insert(self.numAniObgs, {
+    self:GetGameObject("ReadyCountDown3"),
+    self:GetUIComponent("Image", "ReadyCountDown3")
+  })
   self.onReadyAnim = self:GetUIComponent("Animation", "OnReady")
   self.onAnswerAnim = self:GetUIComponent("Animation", "OnAnswer")
   self.countDownAnim = self:GetUIComponent("Animation", "CountDown")
@@ -87,10 +82,7 @@ UIN16AnswerController.InitWidget = function(self)
   self:SetFontMat(self.titleText, "uieff_n16_ingame_detial1.mat")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN16AnswerController:OnHide()
   self.countDownTime = 0
   self._svrTimeModule = nil
   self._ingameDatas = nil
@@ -103,42 +95,26 @@ UIN16AnswerController.OnHide = function(self)
   self._pressing = false
   self:DetachEvent(GameEventType.OnN16PauseClick, self.OnN16PauseClick)
   self:DetachEvent(GameEventType.ActivityCloseEvent, self.OnActivityClose)
-  ;
-  (AudioHelperController.PlayBGM)(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
+  AudioHelperController.PlayBGM(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController.PauseButtonOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : UIN16AnswerType
+function UIN16AnswerController:PauseButtonOnClick(go)
   self:EnterState(UIN16AnswerType.OnPause)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController.NextButtonOnClick = function(self, go)
-  -- function num : 0_6
+function UIN16AnswerController:NextButtonOnClick(go)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController.QuitButtonOnClick = function(self, go)
-  -- function num : 0_7
+function UIN16AnswerController:QuitButtonOnClick(go)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._ChangeState = function(self)
-  -- function num : 0_8
+function UIN16AnswerController:_ChangeState()
   self._curTypeEnum = self._curTypeEnum + 1
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController.EnterState = function(self, nState)
-  -- function num : 0_9 , upvalues : UIN16AnswerType, _ENV
+function UIN16AnswerController:EnterState(nState)
   if self._close then
-    return 
+    return
   end
   self._curTypeEnum = nState
   self:_ShowState()
@@ -146,104 +122,74 @@ UIN16AnswerController.EnterState = function(self, nState)
     if self._updateTimer then
       self._updateTimer = nil
     end
-    local interTime = (self._ingameDatas):GetTimeInter(nState)
+    local interTime = self._ingameDatas:GetTimeInter(nState)
     self.countDownTime = interTime
     self:ShowTime()
     if self._curTypeEnum == UIN16AnswerType.OnReady then
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameStart)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameStart)
     end
-    if self._curTypeEnum ~= UIN16AnswerType.OnReady or not interTime then
-      interTime = interTime + 1
-    end
+    interTime = self._curTypeEnum == UIN16AnswerType.OnReady and interTime or interTime + 1
     self._updateTimer = UpdatTimer:New(interTime, 1, function()
-    -- function num : 0_9_0 , upvalues : self
-    self:ShowTime()
+      self:ShowTime()
+    end)
+    self._updateTimer:SetEndEvent(function()
+      self:OnStateOver()
+    end)
   end
-)
-    ;
-    (self._updateTimer):SetEndEvent(function()
-    -- function num : 0_9_1 , upvalues : self
-    self:OnStateOver()
+  if self._curTypeEnum == UIN16AnswerType.OnOver and self._updateTimer then
+    self._updateTimer = nil
+    return
   end
-)
-  end
-  do
-    if self._curTypeEnum == UIN16AnswerType.OnOver and self._updateTimer then
-      self._updateTimer = nil
-      return 
-    end
-    if self._curTypeEnum == UIN16AnswerType.OnPause and self._updateTimer then
-      (self._updateTimer):SetPause(true)
-    end
+  if self._curTypeEnum == UIN16AnswerType.OnPause and self._updateTimer then
+    self._updateTimer:SetPause(true)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController.OnStateOver = function(self)
-  -- function num : 0_10 , upvalues : UIN16AnswerType
+function UIN16AnswerController:OnStateOver()
   if self._updateTimer then
     self._updateTimer = nil
     self._pressing = false
   end
   if self._curTypeEnum == UIN16AnswerType.OnAnswer then
     self:_OnNoSelectAnswer()
-  else
-    if self._curTypeEnum == UIN16AnswerType.OnReady then
-      self:_ChangeState()
-      self:EnterState(self._curTypeEnum)
-    end
+  elseif self._curTypeEnum == UIN16AnswerType.OnReady then
+    self:_ChangeState()
+    self:EnterState(self._curTypeEnum)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController.ShowTime = function(self)
-  -- function num : 0_11 , upvalues : _ENV, UIN16AnswerType
+function UIN16AnswerController:ShowTime()
   if self.countDownTime >= 0 then
     self.countDownTime = self.countDownTime - 1
     local showCount = self.countDownTime + 2
-    for i,v in pairs(self.numAniObgs) do
-      ((v[2]).gameObject):SetActive(i == showCount)
+    for i, v in pairs(self.numAniObgs) do
+      v[2].gameObject:SetActive(i == showCount)
     end
-    if showCount > 1 then
-      (self.onReadyAnim):Play("uieff_Answer_Ready")
+    if 1 < showCount then
+      self.onReadyAnim:Play("uieff_Answer_Ready")
     else
-      (self.onReadyAnim):Play("uieff_Answer_Start")
+      self.onReadyAnim:Play("uieff_Answer_Start")
       self:StartTask(function(TT)
-    -- function num : 0_11_0
-  end
-, self)
+      end, self)
     end
     if self._curTypeEnum == UIN16AnswerType.OnReady then
-      (self.titleText):SetText((StringTable.Get)("str_activity_n16_onready"))
+      self.titleText:SetText(StringTable.Get("str_activity_n16_onready"))
     end
     if self._curTypeEnum == UIN16AnswerType.OnAnswer then
-      (self.countDownText):SetText(showCount)
+      self.countDownText:SetText(showCount)
     end
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController.StateIsChanged = function(self, nState)
-  -- function num : 0_12
-  do return self._curTypeEnum == nState end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIN16AnswerController:StateIsChanged(nState)
+  return self._curTypeEnum == nState
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._ShowState = function(self)
-  -- function num : 0_13 , upvalues : UIN16AnswerType
-  (self.onReady):SetActive(self._curTypeEnum == UIN16AnswerType.OnReady)
-  ;
-  (self.letfRoot):SetActive(self._curTypeEnum ~= UIN16AnswerType.OnReady)
-  ;
-  (self.onAnswer):SetActive(self._curTypeEnum ~= UIN16AnswerType.OnReady)
-  ;
-  (self.onPause):SetActive(false)
+function UIN16AnswerController:_ShowState()
+  self.onReady:SetActive(self._curTypeEnum == UIN16AnswerType.OnReady)
+  self.letfRoot:SetActive(self._curTypeEnum ~= UIN16AnswerType.OnReady)
+  self.onAnswer:SetActive(self._curTypeEnum ~= UIN16AnswerType.OnReady)
+  self.onPause:SetActive(false)
   if self._curTypeEnum == UIN16AnswerType.OnReady then
     self:_ShowOnReady()
   elseif self._curTypeEnum == UIN16AnswerType.OnAnswer then
@@ -253,125 +199,81 @@ UIN16AnswerController._ShowState = function(self)
   elseif self._curTypeEnum == UIN16AnswerType.OnOver then
     self:_ShowOnOver()
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_14 , upvalues : UIN16AnswerType
+function UIN16AnswerController:OnUpdate(deltaTimeMS)
   if self._updateTimer then
-    if not self._pressing and (self._updateTimer):GetLastTime() <= 5 and self._curTypeEnum == UIN16AnswerType.OnAnswer then
+    if not self._pressing and self._updateTimer:GetLastTime() <= 5 and self._curTypeEnum == UIN16AnswerType.OnAnswer then
       self:_LoadSpine(4)
       self._pressing = true
     end
-    ;
-    (self._updateTimer):OnUpdateEvent(deltaTimeMS * 0.001)
+    self._updateTimer:OnUpdateEvent(deltaTimeMS * 0.001)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._ShowOnReady = function(self)
-  -- function num : 0_15
+function UIN16AnswerController:_ShowOnReady()
   self:_CreateFaultTolerants()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._ShowOnPause = function(self)
-  -- function num : 0_16
+function UIN16AnswerController:_ShowOnPause()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._ShowOnAnswer = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  (self.countDownAnim):Stop()
-  ;
-  (self.countDownAnim):Play("uieff_CountDown")
+function UIN16AnswerController:_ShowOnAnswer()
+  self.countDownAnim:Stop()
+  self.countDownAnim:Play("uieff_CountDown")
   self:StartTask(function(TT)
-    -- function num : 0_17_0 , upvalues : _ENV, self
     YIELD(TT, 100)
     self:_InitQuests()
     if not self._scrollViewInited then
       self:_InitScrollView()
     else
-      ;
-      (self.answerList):RefreshAllShownItem()
+      self.answerList:RefreshAllShownItem()
     end
     self:_ShowFaultTolerant()
-    ;
-    (self.onAnswerAnim):Play("uieff_Answer_Answer_Switch2")
-  end
-, self)
+    self.onAnswerAnim:Play("uieff_Answer_Answer_Switch2")
+  end, self)
   self:_LoadSpine(1)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._ShowOnOver = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIN16AnswerController:_ShowOnOver()
   self:Lock("UIN16AnswerController")
   self:StartTask(function(TT)
-    -- function num : 0_18_0 , upvalues : _ENV, self
     YIELD(TT, 433)
     self:UnLock("UIN16AnswerController")
     self:ShowDialog("UIN16ResultController", self._grad, self._ingameDatas, self._gradData)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._InitQuests = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local quest = (self._ingameDatas):GetOneQuestion()
+function UIN16AnswerController:_InitQuests()
+  local quest = self._ingameDatas:GetOneQuestion()
   if not quest then
-    return 
+    return
   end
   self._questionIndex = self._questionIndex + 1
-  ;
-  (self.questionTipText):SetText((StringTable.Get)("str_activity_n16_questiontitle", self._questionIndex))
-  ;
-  (self.questionText):SetText(quest:GetDes())
-  ;
-  (self.questionTipTexProcess):SetText((StringTable.Get)("str_activity_n16_questiontip", self._questionIndex, (self._ingameDatas):GetTotalCount()))
+  self.questionTipText:SetText(StringTable.Get("str_activity_n16_questiontitle", self._questionIndex))
+  self.questionText:SetText(quest:GetDes())
+  self.questionTipTexProcess:SetText(StringTable.Get("str_activity_n16_questiontip", self._questionIndex, self._ingameDatas:GetTotalCount()))
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController.CalcPetScrollViewCount = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  self._listShowItemCount = (math.ceil)((self._ingameDatas):GetAnswerCount() / self._perCount)
+function UIN16AnswerController:CalcPetScrollViewCount()
+  self._listShowItemCount = math.ceil(self._ingameDatas:GetAnswerCount() / self._perCount)
   return self._listShowItemCount
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._InitScrollView = function(self)
-  -- function num : 0_21
-  (self.answerList):InitListView(self:CalcPetScrollViewCount(), function(scrollView, index)
-    -- function num : 0_21_0 , upvalues : self
+function UIN16AnswerController:_InitScrollView()
+  self.answerList:InitListView(self:CalcPetScrollViewCount(), function(scrollView, index)
     return self:_OnGetUIN16AnswerItem(scrollView, index)
-  end
-, self:GetScrollViewParam())
+  end, self:GetScrollViewParam())
   self._scrollViewInited = true
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController.GetScrollViewParam = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIN16AnswerController:GetScrollViewParam()
   local param = UIDynamicScrollViewInitParam:New()
   param.mItemDefaultWithPaddingSize = 50
   return param
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._OnGetUIN16AnswerItem = function(self, scrollView, index)
-  -- function num : 0_23 , upvalues : _ENV
+function UIN16AnswerController:_OnGetUIN16AnswerItem(scrollView, index)
   local item = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   rowPool:SpawnObjects("UIN16AnswerItem", self._perCount)
@@ -379,52 +281,34 @@ UIN16AnswerController._OnGetUIN16AnswerItem = function(self, scrollView, index)
   for i = 1, self._perCount do
     local itemWidget = rowList[i]
     local itemIndex = index * self._perCount + i
-    if (self._ingameDatas):GetAnswerCount() < itemIndex then
-      (itemWidget:GetGameObject()):SetActive(false)
+    if itemIndex > self._ingameDatas:GetAnswerCount() then
+      itemWidget:GetGameObject():SetActive(false)
     else
       self:_RefreshAnswerItemInfo(itemWidget, itemIndex)
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self._items)[itemIndex] = itemWidget
+      self._items[itemIndex] = itemWidget
     end
   end
-  ;
-  (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
+  UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
   return item
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._GetAnswerData = function(self, index)
-  -- function num : 0_24
-  local data = ((self._ingameDatas):GetCurQuestion()):GetOptions()
+function UIN16AnswerController:_GetAnswerData(index)
+  local data = self._ingameDatas:GetCurQuestion():GetOptions()
   return data[index]
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._RefreshAnswerItemInfo = function(self, itemWidget, index)
-  -- function num : 0_25
+function UIN16AnswerController:_RefreshAnswerItemInfo(itemWidget, index)
   itemWidget:SetData(index, function(index)
-    -- function num : 0_25_0 , upvalues : self
     self:OnSelectAnswer(index)
-  end
-)
+  end)
   itemWidget:Refresh(self:_GetAnswerData(index))
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._OnNoSelectAnswer = function(self)
-  -- function num : 0_26
+function UIN16AnswerController:_OnNoSelectAnswer()
   self:OnSelectAnswer(0)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController.OnSelectAnswer = function(self, nIndex)
-  -- function num : 0_27 , upvalues : _ENV, UIN16AnswerType
+function UIN16AnswerController:OnSelectAnswer(nIndex)
   local bSelet, rightAnswerIndex = self:_SetSelectData(nIndex)
   self:_LoadSpine(bSelet == 1 and 2 or 3)
   if self._updateTimer then
@@ -437,100 +321,72 @@ UIN16AnswerController.OnSelectAnswer = function(self, nIndex)
     timer = 1500
   end
   self:StartTask(function(TT)
-    -- function num : 0_27_0 , upvalues : self, _ENV, timer, UIN16AnswerType
     self:Lock("UIN16AnswerController:OnSelectAnswer")
     YIELD(TT, timer)
     self:_ChangeState()
-    if self._curTypeEnum == UIN16AnswerType.OnOver and (self._ingameDatas):GetLastCount() > 0 then
+    if self._curTypeEnum == UIN16AnswerType.OnOver and self._ingameDatas:GetLastCount() > 0 then
       self._curTypeEnum = UIN16AnswerType.OnAnswer
     end
     self:EnterState(self._curTypeEnum)
     self:UnLock("UIN16AnswerController:OnSelectAnswer")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._SetSelectData = function(self, nIndex)
-  -- function num : 0_28
-  local nState = (self._ingameDatas):GetAnswerState(nIndex)
-  local rightAnswerIndex = ((self._ingameDatas):GetCurQuestion()):GetAnswerIndex()
+function UIN16AnswerController:_SetSelectData(nIndex)
+  local nState = self._ingameDatas:GetAnswerState(nIndex)
+  local rightAnswerIndex = self._ingameDatas:GetCurQuestion():GetAnswerIndex()
   local bSelet = 0
   local isRight = 0
   if nState == 1 then
     bSelet = 1
     isRight = 1
-    ;
-    (self._ingameDatas):SetTrueRight(self._questionIndex, bSelet)
+    self._ingameDatas:SetTrueRight(self._questionIndex, bSelet)
+  elseif nState == 2 then
+    bSelet = 1
   else
-    if nState == 2 then
-      bSelet = 1
-    else
-      self:_ChangeState()
-      self:EnterState(self._curTypeEnum)
-    end
+    self:_ChangeState()
+    self:EnterState(self._curTypeEnum)
   end
   self:_ShowFaultTolerant()
   self:_ShowRightAnswer(rightAnswerIndex, nIndex)
-  ;
-  (self._ingameDatas):SetSelects(self._questionIndex, bSelet)
+  self._ingameDatas:SetSelects(self._questionIndex, bSelet)
   return isRight, rightAnswerIndex
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._ShowFaultTolerant = function(self)
-  -- function num : 0_29
+function UIN16AnswerController:_ShowFaultTolerant()
   self:_RefreshFaultTolerantItem()
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._ShowRightAnswer = function(self, rightIndex, seletIndex)
-  -- function num : 0_30 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN16SelectClick, rightIndex, seletIndex)
+function UIN16AnswerController:_ShowRightAnswer(rightIndex, seletIndex)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN16SelectClick, rightIndex, seletIndex)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._ShowAnswerAnimation = function(self)
-  -- function num : 0_31
+function UIN16AnswerController:_ShowAnswerAnimation()
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._SwitchBg = function(self)
-  -- function num : 0_32
+function UIN16AnswerController:_SwitchBg()
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._CreateFaultTolerants = function(self)
-  -- function num : 0_33
+function UIN16AnswerController:_CreateFaultTolerants()
   local rowPool = self:GetUIComponent("UISelectObjectPath", "Group")
-  rowPool:SpawnObjects("UIN16FaultTolerantItem", (self._ingameDatas):GetDefultFaultTolerantCount())
+  rowPool:SpawnObjects("UIN16FaultTolerantItem", self._ingameDatas:GetDefultFaultTolerantCount())
   local rowList = rowPool:GetAllSpawnList()
   self._faultTolerantItems = rowList
   for i = 1, #rowList do
-    (rowList[i]):SetData(R9_PC20)
-    ;
-    (rowList[i]):Refresh()
+    rowList[i]:SetData(i)
+    rowList[i]:Refresh()
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._RefreshFaultTolerantItem = function(self)
-  -- function num : 0_34
+function UIN16AnswerController:_RefreshFaultTolerantItem()
   if not self._faultTolerantItems then
-    return 
+    return
   end
-  local count = (self._ingameDatas):GetDefultFaultTolerantCount()
-  local usedCount = count - (self._ingameDatas):GetFaultTolerantCount()
+  local count = self._ingameDatas:GetDefultFaultTolerantCount()
+  local usedCount = count - self._ingameDatas:GetFaultTolerantCount()
   for i = 1, count do
     if i <= usedCount then
-      local itemWidget = (self._faultTolerantItems)[i]
+      local itemWidget = self._faultTolerantItems[i]
       itemWidget:SetUsed(true)
       if usedCount == i then
         itemWidget:PlayeAni()
@@ -539,87 +395,67 @@ UIN16AnswerController._RefreshFaultTolerantItem = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController._LoadSpine = function(self, nState)
-  -- function num : 0_35 , upvalues : _ENV
+function UIN16AnswerController:_LoadSpine(nState)
   local spineName = "jiaersi_n16_spine_idle"
   local aniName = "Story_norm"
   if nState == 1 then
     aniName = "Story_norm"
-  else
-    if nState == 2 then
-      aniName = "Story_smile"
-    else
-      if nState == 3 then
-        aniName = "Story_snicker"
-      else
-        if nState == 4 then
-          aniName = "Story_watchful"
-        end
-      end
-    end
+  elseif nState == 2 then
+    aniName = "Story_smile"
+  elseif nState == 3 then
+    aniName = "Story_snicker"
+  elseif nState == 4 then
+    aniName = "Story_watchful"
   end
-  if (string.isnullorempty)(spineName) then
-    return 
+  if string.isnullorempty(spineName) then
+    return
   end
   self._spine = self:GetUIComponent("SpineLoader", "Spine")
   if not self._spineSke then
-    (self._spine):LoadSpine(spineName)
+    self._spine:LoadSpine(spineName)
   end
   if self._spine then
-    self._spineSke = (self._spine).CurrentSkeleton
+    self._spineSke = self._spine.CurrentSkeleton
     if not self._spineSke then
-      self._spineSke = (self._spine).CurrentMultiSkeleton
+      self._spineSke = self._spine.CurrentMultiSkeleton
     end
     if self._spineSke then
-      ((self._spineSke).AnimationState):SetAnimation(0, aniName, true)
+      self._spineSke.AnimationState:SetAnimation(0, aniName, true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController.OnN16PauseClick = function(self, goAhead)
-  -- function num : 0_36 , upvalues : UIN16AnswerType
-  -- DECOMPILER ERROR at PC7: Unhandled construct in 'MakeBoolean' P1
-
-  if goAhead and self._curTypeEnum == UIN16AnswerType.OnPause then
-    self._curTypeEnum = UIN16AnswerType.OnAnswer
+function UIN16AnswerController:OnN16PauseClick(goAhead)
+  if goAhead then
+    if self._curTypeEnum == UIN16AnswerType.OnPause then
+      self._curTypeEnum = UIN16AnswerType.OnAnswer
+      if self._updateTimer then
+        self._updateTimer:SetPause(false)
+      end
+    end
+  else
     if self._updateTimer then
-      (self._updateTimer):SetPause(false)
+      self._updateTimer = nil
     end
+    self._curTypeEnum = UIN16AnswerType.OnOver
+    self:EnterState(self._curTypeEnum)
   end
-  if self._updateTimer then
-    self._updateTimer = nil
-  end
-  self._curTypeEnum = UIN16AnswerType.OnOver
-  self:EnterState(self._curTypeEnum)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController.SetFontMat = function(self, lable, resname)
-  -- function num : 0_37 , upvalues : _ENV
-  local res = (ResourceManager:GetInstance()):SyncLoadAsset(resname, LoadType.Mat)
+function UIN16AnswerController:SetFontMat(lable, resname)
+  local res = ResourceManager:GetInstance():SyncLoadAsset(resname, LoadType.Mat)
   if not res then
-    return 
+    return
   end
   self._mat = res
   local obj = res.Obj
   local mat = lable.fontMaterial
   lable.fontMaterial = obj
-  ;
-  (lable.fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  lable.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16AnswerController.OnActivityClose = function(self, id)
-  -- function num : 0_38
-  if (self._campaign)._id == id then
+function UIN16AnswerController:OnActivityClose(id)
+  if self._campaign._id == id then
     self._close = true
   end
 end
-
-

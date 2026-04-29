@@ -1,181 +1,119 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/SpecialTask/special_task_v2/ui_special_task_v2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UISpecialTaskV2", UISideEnterCenterContentBase)
 UISpecialTaskV2 = UISpecialTaskV2
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISpecialTaskV2.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISpecialTaskV2:Constructor()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._preSelectedItem = nil
   self:AttachEvent(GameEventType.QuestUpdate, self.Refresh)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskV2.DoInit = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISpecialTaskV2:DoInit()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo_Local(ECampaignType.CAMPAIGN_TYPE_SPECIAL)
-  self._localProcess = (self._campaign):GetLocalProcess()
-  self._questComponent = (self._localProcess):GetComponent(ECampaignSpecialComponentID.ECAMPAIGN_SPECIAL_QUEST)
-  self._questComponentInfo = (self._questComponent):GetComponentInfo()
+  self._campaign:LoadCampaignInfo_Local(ECampaignType.CAMPAIGN_TYPE_SPECIAL)
+  self._localProcess = self._campaign:GetLocalProcess()
+  self._questComponent = self._localProcess:GetComponent(ECampaignSpecialComponentID.ECAMPAIGN_SPECIAL_QUEST)
+  self._questComponentInfo = self._questComponent:GetComponentInfo()
   self:_RefreshRemainTime()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskV2.DoShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UISpecialTaskV2:DoShow(uiParams)
   self._callback = uiParams[1]
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
+    self._campaign:ClearCampaignNew(TT)
+  end)
+  
+  function self._tipsCallback(matid, pos)
+    UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
   end
-)
-  self._tipsCallback = function(matid, pos)
-    -- function num : 0_2_1 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
-  end
-
-  self._timeEvent = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_2_2 , upvalues : self
+  
+  self._timeEvent = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:_RefreshRemainTime()
-  end
-)
+  end)
   self:_SetIntro()
   self:_SetDailyTips()
-  if (self._questComponent):Check_CamQuestDailyReset() then
-    (self._questComponent):Start_HandleCamQuestDailyReset(function(TT, res)
-    -- function num : 0_2_3 , upvalues : self
-    self:Refresh(true)
-  end
-)
+  if self._questComponent:Check_CamQuestDailyReset() then
+    self._questComponent:Start_HandleCamQuestDailyReset(function(TT, res)
+      self:Refresh(true)
+    end)
   end
   self:Refresh(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskV2.DoHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (UIWidgetHelper.ClearWidgets)(self, "_tipsPool")
+function UISpecialTaskV2:DoHide()
+  UIWidgetHelper.ClearWidgets(self, "_tipsPool")
   if self._timeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timeEvent)
+    GameGlobal.Timer():CancelEvent(self._timeEvent)
     self._timeEvent = nil
   end
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskV2.DoDestroy = function(self)
-  -- function num : 0_4
+function UISpecialTaskV2:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskV2.Refresh = function(self, first)
-  -- function num : 0_5 , upvalues : _ENV
-  self._questList = (self._questComponent):GetQuestInfo()
-  ;
-  (UISpecialTaskHelper.QuestSort)(self._questList)
+function UISpecialTaskV2:Refresh(first)
+  self._questList = self._questComponent:GetQuestInfo()
+  UISpecialTaskHelper.QuestSort(self._questList)
   self:_SetCellList()
   self:_PlayAnim_CellList(first)
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskV2._RefreshRemainTime = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local curtime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  local remainTime = (self._questComponentInfo).m_close_time - curtime
-  if remainTime > 0 then
-    local textId = (UISpecialTaskHelper.GetStrIdInCampaign)(self._campaign, "str_special_task_time_desc")
-    local text = (StringTable.Get)(textId, (UISpecialTaskToolFunctions.GetRemainTime)(remainTime))
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, "RemainTimeText", text)
+function UISpecialTaskV2:_RefreshRemainTime()
+  local curtime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  local remainTime = self._questComponentInfo.m_close_time - curtime
+  if 0 < remainTime then
+    local textId = UISpecialTaskHelper.GetStrIdInCampaign(self._campaign, "str_special_task_time_desc")
+    local text = StringTable.Get(textId, UISpecialTaskToolFunctions.GetRemainTime(remainTime))
+    UIWidgetHelper.SetLocalizationText(self, "RemainTimeText", text)
   else
-    do
-      ;
-      (self._campaign):CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED)
-    end
+    self._campaign:CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskV2._SetIntro = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local textId = (UISpecialTaskHelper.GetStrIdInCampaign)(self._campaign, "str_special_task_main_intro")
-  local text = (StringTable.Get)(textId)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "IntroText", text)
+function UISpecialTaskV2:_SetIntro()
+  local textId = UISpecialTaskHelper.GetStrIdInCampaign(self._campaign, "str_special_task_main_intro")
+  local text = StringTable.Get(textId)
+  UIWidgetHelper.SetLocalizationText(self, "IntroText", text)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskV2._SetDailyTips = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local textId = (UISpecialTaskHelper.GetStrIdInCampaign)(self._campaign, "str_special_task_daily_desc")
-  local text = (StringTable.Get)(textId)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "DailyTipsText", text)
+function UISpecialTaskV2:_SetDailyTips()
+  local textId = UISpecialTaskHelper.GetStrIdInCampaign(self._campaign, "str_special_task_daily_desc")
+  local text = StringTable.Get(textId)
+  UIWidgetHelper.SetLocalizationText(self, "DailyTipsText", text)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskV2._SetCellList = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "Content", "UISpecialTaskV2Cell", #self._questList)
-  for i,v in ipairs(objs) do
-    local quest = (self._questList)[i]
+function UISpecialTaskV2:_SetCellList()
+  local objs = UIWidgetHelper.SpawnObjects(self, "Content", "UISpecialTaskV2Cell", #self._questList)
+  for i, v in ipairs(objs) do
+    local quest = self._questList[i]
     v:SetData(self._questComponent, quest, function(widget)
-    -- function num : 0_9_0 , upvalues : self
-    self:OnSelectItem(widget)
-  end
-, self._tipsCallback, function()
-    -- function num : 0_9_1 , upvalues : self
-    self:Refresh()
-  end
-, function(result)
-    -- function num : 0_9_2 , upvalues : self
-    (self._campaign):CheckErrorCode(result, nil, nil)
-  end
-)
+      self:OnSelectItem(widget)
+    end, self._tipsCallback, function()
+      self:Refresh()
+    end, function(result)
+      self._campaign:CheckErrorCode(result, nil, nil)
+    end)
   end
   self._cells = objs
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskV2.OnSelectItem = function(self, widget)
-  -- function num : 0_10
+function UISpecialTaskV2:OnSelectItem(widget)
   if self._preSelectedItem and self._preSelectedItem ~= widget then
-    (self._preSelectedItem):OnSelect(false)
+    self._preSelectedItem:OnSelect(false)
   end
   self._preSelectedItem = widget
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskV2._PlayAnim_CellList = function(self, isPlay)
-  -- function num : 0_11 , upvalues : _ENV
+function UISpecialTaskV2:_PlayAnim_CellList(isPlay)
   if isPlay then
-    for i,v in ipairs(self._cells) do
+    for i, v in ipairs(self._cells) do
       v:PlayAnimationInSequence(i)
     end
   end
 end
-
-

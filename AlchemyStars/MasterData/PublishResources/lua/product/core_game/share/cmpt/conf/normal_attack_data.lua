@@ -1,87 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/normal_attack_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("NormalAttackData", Object)
 NormalAttackData = NormalAttackData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-NormalAttackData.Constructor = function(self, attackGridData, petEntityID, normalSkillID, beAttackPos, chainIndex, pathPosition, isLastAttackPos)
-  -- function num : 0_0
-  self._data = {attackGridData, petEntityID, normalSkillID, beAttackPos, chainIndex, pathPosition, isLastAttackPos}
+function NormalAttackData:Constructor(attackGridData, petEntityID, normalSkillID, beAttackPos, chainIndex, pathPosition, isLastAttackPos)
+  self._data = {
+    attackGridData,
+    petEntityID,
+    normalSkillID,
+    beAttackPos,
+    chainIndex,
+    pathPosition,
+    isLastAttackPos
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalAttackData.GetAttackGridData = function(self)
-  -- function num : 0_1
-  return (self._data)[1]
+function NormalAttackData:GetAttackGridData()
+  return self._data[1]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalAttackData.SetAttackGridData = function(self, attackGridData)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._data)[1] = attackGridData
+function NormalAttackData:SetAttackGridData(attackGridData)
+  self._data[1] = attackGridData
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalAttackData.GetPetEntityID = function(self)
-  -- function num : 0_3
-  return (self._data)[2]
+function NormalAttackData:GetPetEntityID()
+  return self._data[2]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalAttackData.GetNormalSkillID = function(self)
-  -- function num : 0_4
-  return (self._data)[3]
+function NormalAttackData:GetNormalSkillID()
+  return self._data[3]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalAttackData.GetBeAttackPos = function(self)
-  -- function num : 0_5
-  return (self._data)[4]
+function NormalAttackData:GetBeAttackPos()
+  return self._data[4]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalAttackData.GetChainIndex = function(self)
-  -- function num : 0_6
-  return (self._data)[5]
+function NormalAttackData:GetChainIndex()
+  return self._data[5]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalAttackData.GetPathPosition = function(self)
-  -- function num : 0_7
-  return (self._data)[6]
+function NormalAttackData:GetPathPosition()
+  return self._data[6]
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalAttackData.GetisLastAttackPos = function(self)
-  -- function num : 0_8
-  return (self._data)[7]
+function NormalAttackData:GetisLastAttackPos()
+  return self._data[7]
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalAttackData.GetNormalAttackIndex = function(self)
-  -- function num : 0_9
+function NormalAttackData:GetNormalAttackIndex()
   return self._normalAttackIndex
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-NormalAttackData.SetNormalAttackIndex = function(self, index)
-  -- function num : 0_10
+function NormalAttackData:SetNormalAttackIndex(index)
   self._normalAttackIndex = index
 end
-
-

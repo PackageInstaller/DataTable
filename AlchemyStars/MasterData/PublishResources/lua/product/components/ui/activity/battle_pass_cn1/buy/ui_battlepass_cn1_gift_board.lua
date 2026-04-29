@@ -1,234 +1,154 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_cn1/buy/ui_battlepass_cn1_gift_board.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattlePassCN1GiftBoard", UICustomWidget)
 UIBattlePassCN1GiftBoard = UIBattlePassCN1GiftBoard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattlePassCN1GiftBoard.OnShow = function(self)
-  -- function num : 0_0
+function UIBattlePassCN1GiftBoard:OnShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1GiftBoard.OnHide = function(self)
-  -- function num : 0_1
+function UIBattlePassCN1GiftBoard:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1GiftBoard.SetData = function(self, campaign, type, callback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBattlePassCN1GiftBoard:SetData(campaign, type, callback)
   self._campaign = campaign
   self._type = type
   self._callback = callback
-  self._cmptId = (UIActivityBattlePassHelper.Component_BuyGift)(self._campaign)
-  local giftId = (self._component):GetFirstGiftIDByType(R6_PC7)
-  -- DECOMPILER ERROR at PC15: Overwrote pending register: R6 in 'AssignReg'
-
-  local price = (self._component):GetGiftPriceForShowById(giftId, true, true)
-  -- DECOMPILER ERROR at PC20: Overwrote pending register: R6 in 'AssignReg'
-
-  -- DECOMPILER ERROR at PC21: Overwrote pending register: R6 in 'AssignReg'
-
-  R6_PC7 = R6_PC7(R6_PC7, giftId)
-  self._dynamicListInfo = R6_PC7
-  R6_PC7 = R6_PC7(self, self._dynamicListInfo)
-  self._dynamicListInfo = R6_PC7
-  R6_PC7 = UIBattlePassStyleHelper
-  R6_PC7 = R6_PC7.FitStyle_Widget
-  R6_PC7(self._campaign, self)
-  R6_PC7(self, self._type)
-  -- DECOMPILER ERROR at PC37: Overwrote pending register: R6 in 'AssignReg'
-
-  R6_PC7(self)
-  -- DECOMPILER ERROR at PC39: Overwrote pending register: R6 in 'AssignReg'
-
-  R6_PC7(self)
-  -- DECOMPILER ERROR at PC41: Overwrote pending register: R6 in 'AssignReg'
-
-  R6_PC7(self)
-  -- DECOMPILER ERROR at PC43: Overwrote pending register: R6 in 'AssignReg'
-
-  R6_PC7(self)
-  -- DECOMPILER ERROR at PC45: Overwrote pending register: R6 in 'AssignReg'
-
-  R6_PC7(self)
-  -- DECOMPILER ERROR at PC47: Overwrote pending register: R6 in 'AssignReg'
-
-  R6_PC7(self)
-  -- DECOMPILER ERROR at PC49: Overwrote pending register: R6 in 'AssignReg'
-
-  R6_PC7(self, price)
-  -- DECOMPILER ERROR at PC52: Overwrote pending register: R6 in 'AssignReg'
-
-  R6_PC7(self)
-  -- DECOMPILER ERROR at PC54: Overwrote pending register: R6 in 'AssignReg'
-
-  R6_PC7(self)
+  self._cmptId, self._component, self._componentInfo = UIActivityBattlePassHelper.Component_BuyGift(self._campaign)
+  local giftId = self._component:GetFirstGiftIDByType(self._type)
+  local price = self._component:GetGiftPriceForShowById(giftId, true, true)
+  self._dynamicListInfo = self._component:GetGiftCfgShowAwardById(giftId)
+  self._dynamicListInfo = self:_RemoveFirstData(self._dynamicListInfo)
+  UIBattlePassStyleHelper.FitStyle_Widget(self._campaign, self)
+  self:_SetState(self._type)
+  self:_SetBg()
+  self:_SetTitle()
+  self:_SetMainImg()
+  self:_SetDescImg()
+  self:_SetDesc()
+  self:_SetPriceSign()
+  self:_SetPrice(price)
+  self:_SetBuyBtn()
+  self:_SetRewards()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1GiftBoard._SetState = function(self, state)
-  -- function num : 0_3 , upvalues : _ENV
+function UIBattlePassCN1GiftBoard:_SetState(state)
   local tb = {
-[CampaignGiftType.ECGT_ADVANCED] = {"Title", "Price", "desc1", "desc2"}
-, 
-[CampaignGiftType.ECGT_LUXURY] = {"Title_Deluxe", "Price_Deluxe", "desc3_Deluxe"}
-, 
-[CampaignGiftType.ECGT_ADDITIONALBUY] = {"Title_Deluxe", "Price_Deluxe", "desc3_Deluxe"}
-}
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, tb, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+    [CampaignGiftType.ECGT_ADVANCED] = {
+      "Title",
+      "Price",
+      "desc1",
+      "desc2"
+    },
+    [CampaignGiftType.ECGT_LUXURY] = {
+      "Title_Deluxe",
+      "Price_Deluxe",
+      "desc3_Deluxe"
+    },
+    [CampaignGiftType.ECGT_ADDITIONALBUY] = {
+      "Title_Deluxe",
+      "Price_Deluxe",
+      "desc3_Deluxe"
+    }
+  }
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, tb, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1GiftBoard._TypeConvertStyleKey = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local convert = {[CampaignGiftType.ECGT_ADVANCED] = "_advanced", [CampaignGiftType.ECGT_LUXURY] = "_luxury", [CampaignGiftType.ECGT_ADDITIONALBUY] = "_addition"}
+function UIBattlePassCN1GiftBoard:_TypeConvertStyleKey()
+  local convert = {
+    [CampaignGiftType.ECGT_ADVANCED] = "_advanced",
+    [CampaignGiftType.ECGT_LUXURY] = "_luxury",
+    [CampaignGiftType.ECGT_ADDITIONALBUY] = "_addition"
+  }
   return convert[self._type]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1GiftBoard._SetBg = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local tb = (UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName)(self._campaign, self, "_Bg")
+function UIBattlePassCN1GiftBoard:_SetBg()
+  local tb = UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName(self._campaign, self, "_Bg")
   local key = self:_TypeConvertStyleKey()
-  if not tb[key] then
-    local styleInfo = {}
-  end
-  ;
-  (UIStyleHelper.FitStyle_Widget)(styleInfo, self, "_bg")
+  local styleInfo = tb[key] or {}
+  UIStyleHelper.FitStyle_Widget(styleInfo, self, "_bg")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1GiftBoard._SetTitle = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local tb = {[CampaignGiftType.ECGT_ADVANCED] = "str_activity_battlepass_elite", [CampaignGiftType.ECGT_LUXURY] = "str_activity_battlepass_deluxe", [CampaignGiftType.ECGT_ADDITIONALBUY] = "str_activity_battlepass_deluxe"}
-  local text = (StringTable.Get)(tb[self._type])
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "txtTitle", text)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "txtTitle_Deluxe", text)
+function UIBattlePassCN1GiftBoard:_SetTitle()
+  local tb = {
+    [CampaignGiftType.ECGT_ADVANCED] = "str_activity_battlepass_elite",
+    [CampaignGiftType.ECGT_LUXURY] = "str_activity_battlepass_deluxe",
+    [CampaignGiftType.ECGT_ADDITIONALBUY] = "str_activity_battlepass_deluxe"
+  }
+  local text = StringTable.Get(tb[self._type])
+  UIWidgetHelper.SetLocalizationText(self, "txtTitle", text)
+  UIWidgetHelper.SetLocalizationText(self, "txtTitle_Deluxe", text)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1GiftBoard._SetMainImg = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local tb = (UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName)(self._campaign, self, "_mainImg")
+function UIBattlePassCN1GiftBoard:_SetMainImg()
+  local tb = UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName(self._campaign, self, "_mainImg")
   local key = self:_TypeConvertStyleKey()
-  if not tb[key] then
-    local styleInfo = {}
-  end
-  ;
-  (UIStyleHelper.FitStyle_Widget)(styleInfo, self, "_mainImg")
+  local styleInfo = tb[key] or {}
+  UIStyleHelper.FitStyle_Widget(styleInfo, self, "_mainImg")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1GiftBoard._SetDescImg = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local tb = (UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName)(self._campaign, self, "_descImg")
+function UIBattlePassCN1GiftBoard:_SetDescImg()
+  local tb = UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName(self._campaign, self, "_descImg")
   local key = self:_TypeConvertStyleKey()
-  if not tb[key] then
-    local styleInfo = {}
-  end
-  ;
-  (UIStyleHelper.FitStyle_Widget)(styleInfo, self, "_descImg")
+  local styleInfo = tb[key] or {}
+  UIStyleHelper.FitStyle_Widget(styleInfo, self, "_descImg")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1GiftBoard._SetDesc = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local strId = (UIActivityBattlePassHelper.GetStrIdInCampaign)(self._campaign, "str_activity_battlepass_n5_cg_name_1")
-  local text2 = (StringTable.Get)(strId)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "desc1", text2)
+function UIBattlePassCN1GiftBoard:_SetDesc()
+  local strId = UIActivityBattlePassHelper.GetStrIdInCampaign(self._campaign, "str_activity_battlepass_n5_cg_name_1")
+  local text2 = StringTable.Get(strId)
+  UIWidgetHelper.SetLocalizationText(self, "desc1", text2)
   if self._type == CampaignGiftType.ECGT_LUXURY or self._type == CampaignGiftType.ECGT_ADDITIONALBUY then
-    local tb = (UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName)(self._campaign, self, "_deluxeDesc")
-    local color = (tb.color).textColor
-    local text = (StringTable.Get)("str_activity_battlepass_buy_deluxe_desc_color", color)
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, "desc3_Deluxe", text)
+    local tb = UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName(self._campaign, self, "_deluxeDesc")
+    local color = tb.color.textColor
+    local text = StringTable.Get("str_activity_battlepass_buy_deluxe_desc_color", color)
+    UIWidgetHelper.SetLocalizationText(self, "desc3_Deluxe", text)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1GiftBoard._SetPriceSign = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local isShow = (UIActivityZhHelper.IsZh)()
-  ;
-  (self:GetGameObject("txtPriceSign")):SetActive(isShow)
-  ;
-  (self:GetGameObject("txtPriceSign_Deluxe")):SetActive(isShow)
+function UIBattlePassCN1GiftBoard:_SetPriceSign()
+  local isShow = UIActivityZhHelper.IsZh()
+  self:GetGameObject("txtPriceSign"):SetActive(isShow)
+  self:GetGameObject("txtPriceSign_Deluxe"):SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1GiftBoard._SetPrice = function(self, price)
-  -- function num : 0_11 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "txtPrice", tostring(price))
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "txtPrice_Deluxe", tostring(price))
+function UIBattlePassCN1GiftBoard:_SetPrice(price)
+  UIWidgetHelper.SetLocalizationText(self, "txtPrice", tostring(price))
+  UIWidgetHelper.SetLocalizationText(self, "txtPrice_Deluxe", tostring(price))
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1GiftBoard._SetBuyBtn = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local tb = {[CampaignGiftType.ECGT_ADVANCED] = (self._componentInfo).m_buy_state ~= BuyGiftStateType.EBGST_INIT, [CampaignGiftType.ECGT_LUXURY] = (self._componentInfo).m_buy_state == BuyGiftStateType.EBGST_LUXURY, [CampaignGiftType.ECGT_ADDITIONALBUY] = (self._componentInfo).m_buy_state == BuyGiftStateType.EBGST_LUXURY}
+function UIBattlePassCN1GiftBoard:_SetBuyBtn()
+  local tb = {
+    [CampaignGiftType.ECGT_ADVANCED] = self._componentInfo.m_buy_state ~= BuyGiftStateType.EBGST_INIT,
+    [CampaignGiftType.ECGT_LUXURY] = self._componentInfo.m_buy_state == BuyGiftStateType.EBGST_LUXURY,
+    [CampaignGiftType.ECGT_ADDITIONALBUY] = self._componentInfo.m_buy_state == BuyGiftStateType.EBGST_LUXURY
+  }
   local allreadyBuy = tb[self._type]
-  ;
-  (self:GetGameObject("buyBtn")):SetActive(not allreadyBuy)
-  ;
-  (self:GetGameObject("Purchased")):SetActive(allreadyBuy)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self:GetGameObject("buyBtn"):SetActive(not allreadyBuy)
+  self:GetGameObject("Purchased"):SetActive(allreadyBuy)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1GiftBoard._SetRewards = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "Content", "UIBattlePassCN1IconText", #self._dynamicListInfo)
-  for i,v in ipairs(objs) do
-    local info = (self._dynamicListInfo)[i]
+function UIBattlePassCN1GiftBoard:_SetRewards()
+  local objs = UIWidgetHelper.SpawnObjects(self, "Content", "UIBattlePassCN1IconText", #self._dynamicListInfo)
+  for i, v in ipairs(objs) do
+    local info = self._dynamicListInfo[i]
     v:SetData(i, info.ShowIcon, info.ShowDesc)
-    ;
-    (UIBattlePassStyleHelper.FitStyle_Widget)(self._campaign, v)
+    UIBattlePassStyleHelper.FitStyle_Widget(self._campaign, v)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1GiftBoard._RemoveFirstData = function(self, tb)
-  -- function num : 0_14 , upvalues : _ENV
+function UIBattlePassCN1GiftBoard:_RemoveFirstData(tb)
   local newTb = {}
-  for i,v in ipairs(tb) do
+  for i, v in ipairs(tb) do
     if i ~= 1 then
-      (table.insert)(newTb, v)
+      table.insert(newTb, v)
     end
   end
   return newTb
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1GiftBoard.BuyBtnOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : _ENV
-  (Log.info)("UIBattlePassCN1GiftBoard:BuyBtnOnClick")
+function UIBattlePassCN1GiftBoard:BuyBtnOnClick(go)
+  Log.info("UIBattlePassCN1GiftBoard:BuyBtnOnClick")
   if self._callback then
-    (self._callback)(self._type)
+    self._callback(self._type)
   end
 end
-
-

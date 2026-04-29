@@ -1,44 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/camera/aircraft_camera.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftCamera", Object)
 AircraftCamera = AircraftCamera
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftCamera.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._lerpValue = ((Cfg.cfg_aircraft_camera).lerpParam).Value
-  self._clickPetPosZ = ((Cfg.cfg_aircraft_camera).clickPetPosZ).Value
-  self._backPosZ = ((Cfg.cfg_aircraft_camera).backPosZ).Value
-  self._topDistance = ((Cfg.cfg_aircraft_camera).mainTopDistance).Value
-  self._decorateTopDistance = ((Cfg.cfg_aircraft_camera).decorateTopDistance).Value
-  self._nearDistance = ((Cfg.cfg_aircraft_camera).mainNearDistance).Value
-  self._dragParamFar = ((Cfg.cfg_aircraft_camera).mainDragParamFar).Value
-  self._dragParamNear = ((Cfg.cfg_aircraft_camera).mainDragParamNear).Value
-  self._zoomParam = ((Cfg.cfg_aircraft_camera).mainZoomParam).Value
-  self._riseUpDistance = ((Cfg.cfg_aircraft_camera).riseUpDistance).Value
-  self._riseUpMaxY = ((Cfg.cfg_aircraft_camera).riseUpMaxY).Value
-  self._minFov = ((Cfg.cfg_aircraft_camera).minFov).Value
-  self._maxFov = ((Cfg.cfg_aircraft_camera).maxFov).Value
-  self._joyStickParam = ((Cfg.cfg_aircraft_camera).joyStickDragParam).Value
-  self._joyStickAngleVer = ((Cfg.cfg_aircraft_camera).joyStickAngleVertical).Value
-  self._joyStickAngleHor = ((Cfg.cfg_aircraft_camera).joyStickAngleHorizontal).Value
-  self._clickSmeltPosZ = ((Cfg.cfg_aircraft_camera).uiHidePosX).Value
-  self._clickBookShelfPosZ = ((Cfg.cfg_aircraft_camera).clickBookShelfPosZ).Value
-  self._clickDispatchTaskMapPosZ = ((Cfg.cfg_aircraft_camera).clickDispatchTaskMapPosZ).Value
-  self._fovParam = ((Cfg.cfg_aircraft_camera).fovScaleParam).Value
-  self._minFovDragParam = ((Cfg.cfg_aircraft_camera).minFovDragParam).Value
+function AircraftCamera:Constructor()
+  self._lerpValue = Cfg.cfg_aircraft_camera.lerpParam.Value
+  self._clickPetPosZ = Cfg.cfg_aircraft_camera.clickPetPosZ.Value
+  self._backPosZ = Cfg.cfg_aircraft_camera.backPosZ.Value
+  self._topDistance = Cfg.cfg_aircraft_camera.mainTopDistance.Value
+  self._decorateTopDistance = Cfg.cfg_aircraft_camera.decorateTopDistance.Value
+  self._nearDistance = Cfg.cfg_aircraft_camera.mainNearDistance.Value
+  self._dragParamFar = Cfg.cfg_aircraft_camera.mainDragParamFar.Value
+  self._dragParamNear = Cfg.cfg_aircraft_camera.mainDragParamNear.Value
+  self._zoomParam = Cfg.cfg_aircraft_camera.mainZoomParam.Value
+  self._riseUpDistance = Cfg.cfg_aircraft_camera.riseUpDistance.Value
+  self._riseUpMaxY = Cfg.cfg_aircraft_camera.riseUpMaxY.Value
+  self._minFov = Cfg.cfg_aircraft_camera.minFov.Value
+  self._maxFov = Cfg.cfg_aircraft_camera.maxFov.Value
+  self._joyStickParam = Cfg.cfg_aircraft_camera.joyStickDragParam.Value
+  self._joyStickAngleVer = Cfg.cfg_aircraft_camera.joyStickAngleVertical.Value
+  self._joyStickAngleHor = Cfg.cfg_aircraft_camera.joyStickAngleHorizontal.Value
+  self._clickSmeltPosZ = Cfg.cfg_aircraft_camera.uiHidePosX.Value
+  self._clickBookShelfPosZ = Cfg.cfg_aircraft_camera.clickBookShelfPosZ.Value
+  self._clickDispatchTaskMapPosZ = Cfg.cfg_aircraft_camera.clickDispatchTaskMapPosZ.Value
+  self._fovParam = Cfg.cfg_aircraft_camera.fovScaleParam.Value
+  self._minFovDragParam = Cfg.cfg_aircraft_camera.minFovDragParam.Value
   self._defaultAspect = BattleConst.CameraDefaultAspect
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.Init = function(self, camera, input, clickCallback)
-  -- function num : 0_1 , upvalues : _ENV
+function AircraftCamera:Init(camera, input, clickCallback)
   self._camera = camera
-  self._hudCamera = ((((self._camera).transform):GetChild(0)).gameObject):GetComponent(typeof(UnityEngine.Camera))
+  self._hudCamera = self._camera.transform:GetChild(0).gameObject:GetComponent(typeof(UnityEngine.Camera))
   self._input = input
   self._clickCB = clickCallback
   self._fovT = 1
@@ -46,40 +36,32 @@ AircraftCamera.Init = function(self, camera, input, clickCallback)
   self._distance = nil
   self._joyX = 0
   self._joyY = 0
-  self._currentPos = ((self._camera).transform).position
-  self._currentRot = ((self._camera).transform).rotation
+  self._currentPos = self._camera.transform.position
+  self._currentRot = self._camera.transform.rotation
   self._active = true
   self._anim = nil
   self._fov = self._maxFov
   camera.fieldOfView = self._fov
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._hudCamera).fieldOfView = self._fov
+  self._hudCamera.fieldOfView = self._fov
   self._aspect = camera.aspect
-  do
-    if self._aspect < self._defaultAspect then
-      local widthDistance = self._topDistance * self._defaultAspect
-      self._topDistance = widthDistance / self._aspect
-      self._decorateTopDistance = self._decorateTopDistance * self._defaultAspect / self._aspect
-    end
-    self._tangent = (math.tan)((math.rad)(self._fov / 2))
-    self._horAngle = (math.deg)((math.atan)((math.tan)((math.rad)(self._fov / 2) * self._aspect)))
-    self._field = Vector2(self._topDistance * self._aspect, self._topDistance)
-    self._farDistance = self._topDistance / self._tangent
-    self._decorateDistance = self._decorateTopDistance / self._tangent
-    self._targetField = Vector2.zero
-    local maxTargetY = self._topDistance - self._nearDistance * self._tangent
-    self._targetMaxField = Vector2(maxTargetY * self._aspect, maxTargetY)
-    self:RefreshTarget()
-    self._focusing = false
+  if self._defaultAspect > self._aspect then
+    local widthDistance = self._topDistance * self._defaultAspect
+    self._topDistance = widthDistance / self._aspect
+    self._decorateTopDistance = self._decorateTopDistance * self._defaultAspect / self._aspect
   end
+  self._tangent = math.tan(math.rad(self._fov / 2))
+  self._horAngle = math.deg(math.atan(math.tan(math.rad(self._fov / 2) * self._aspect)))
+  self._field = Vector2(self._topDistance * self._aspect, self._topDistance)
+  self._farDistance = self._topDistance / self._tangent
+  self._decorateDistance = self._decorateTopDistance / self._tangent
+  self._targetField = Vector2.zero
+  local maxTargetY = self._topDistance - self._nearDistance * self._tangent
+  self._targetMaxField = Vector2(maxTargetY * self._aspect, maxTargetY)
+  self:RefreshTarget()
+  self._focusing = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.RefreshTarget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function AircraftCamera:RefreshTarget()
   local pos = self._currentPos
   local p1 = Vector3(pos.x, pos.y, 0)
   local dir = Vector3.forward * self._currentRot
@@ -88,46 +70,37 @@ AircraftCamera.RefreshTarget = function(self)
   self._cameraTarget = pos + dir * n
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.IsOutOfField = function(self, pos, dir)
-  -- function num : 0_3 , upvalues : _ENV
-  local rot = (Quaternion.LookRotation)(dir)
+function AircraftCamera:IsOutOfField(pos, dir)
+  local rot = Quaternion.LookRotation(dir)
   local rightAxis = Vector3.right * rot
   local upAxis = Vector3.up * rot
-  local left = self:GetRayPoint(pos, (Quaternion.AngleAxis)(-self._horAngle, upAxis) * dir)
+  local left = self:GetRayPoint(pos, Quaternion.AngleAxis(-self._horAngle, upAxis) * dir)
   if not self:IsInEdge(left) then
     return true
   end
-  local right = self:GetRayPoint(pos, (Quaternion.AngleAxis)(self._horAngle, upAxis) * dir)
+  local right = self:GetRayPoint(pos, Quaternion.AngleAxis(self._horAngle, upAxis) * dir)
   if not self:IsInEdge(right) then
     return true
   end
-  local top = self:GetRayPoint(pos, (Quaternion.AngleAxis)(-self._fov / 2, rightAxis) * dir)
+  local top = self:GetRayPoint(pos, Quaternion.AngleAxis(-self._fov / 2, rightAxis) * dir)
   if not self:IsInEdge(top) then
     return true
   end
-  local bottom = self:GetRayPoint(pos, (Quaternion.AngleAxis)(self._fov / 2, rightAxis) * dir)
+  local bottom = self:GetRayPoint(pos, Quaternion.AngleAxis(self._fov / 2, rightAxis) * dir)
   if not self:IsInEdge(bottom) then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.IsInEdge = function(self, p)
-  -- function num : 0_4
-  if -(self._field).x < p.x and p.x < (self._field).x and -(self._field).y < p.y and p.y < (self._field).y then
+function AircraftCamera:IsInEdge(p)
+  if p.x > -self._field.x and p.x < self._field.x and p.y > -self._field.y and p.y < self._field.y then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.GetRayPoint = function(self, pos, dir)
-  -- function num : 0_5 , upvalues : _ENV
+function AircraftCamera:GetRayPoint(pos, dir)
   local p1 = Vector3(pos.x, pos.y, 0)
   local nor = Vector3.back
   local n = (nor.x * p1.x - nor.x * pos.x + nor.y * p1.y - nor.y * pos.y + nor.z * p1.z - nor.z * pos.z) / (nor.x * dir.x + nor.y * dir.y + nor.z * dir.z)
@@ -135,81 +108,66 @@ AircraftCamera.GetRayPoint = function(self, pos, dir)
   return p
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.SetStick = function(self, stick, onStart, focus, onEnd)
-  -- function num : 0_6 , upvalues : _ENV
+function AircraftCamera:SetStick(stick, onStart, focus, onEnd)
   self._stick = stick
-  stick.onBegin = function()
-    -- function num : 0_6_0 , upvalues : self, _ENV
+  
+  function stick.onBegin()
     self:RefreshTarget()
-    self._joyX = (((self._camera).transform).eulerAngles).y
-    self._joyY = -(((self._camera).transform).eulerAngles).x
-    self._distance = (Vector3.Distance)(self._currentPos, self._cameraTarget)
+    self._joyX = self._camera.transform.eulerAngles.y
+    self._joyY = -self._camera.transform.eulerAngles.x
+    self._distance = Vector3.Distance(self._currentPos, self._cameraTarget)
     self._stickOffset = true
   end
-
-  stick.onEnd = function()
-    -- function num : 0_6_1 , upvalues : self
+  
+  function stick.onEnd()
     return not self:IsCamareAtFarPoint()
   end
-
-  stick.onReset = function()
-    -- function num : 0_6_2 , upvalues : self, _ENV
+  
+  function stick.onReset()
     self._stickOffset = false
     self._currentRot = Quaternion.identity
-    local distance = (Vector3.Distance)(self._currentPos, self._cameraTarget)
-    self._currentPos = self:_CalPos(Vector3((self._cameraTarget).x, (self._cameraTarget).y, -distance), self._currentRot)
+    local distance = Vector3.Distance(self._currentPos, self._cameraTarget)
+    self._currentPos = self:_CalPos(Vector3(self._cameraTarget.x, self._cameraTarget.y, -distance), self._currentRot)
   end
-
+  
   self._onFocusStart = onStart
   self._onFocusEnd = onEnd
   self._onFocuse = focus
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.Dispose = function(self)
-  -- function num : 0_7
+function AircraftCamera:Dispose()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.SetActive = function(self, active)
-  -- function num : 0_8
+function AircraftCamera:SetActive(active)
   self._active = active
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.Update = function(self, deltaTimeMS)
-  -- function num : 0_9 , upvalues : _ENV
+function AircraftCamera:Update(deltaTimeMS)
   if not self._active then
-    return 
+    return
   end
   if self._anim then
-    (self._anim):Update(deltaTimeMS)
-    if (self._anim):IsComplete() then
+    self._anim:Update(deltaTimeMS)
+    if self._anim:IsComplete() then
       self._anim = nil
       self:RefreshTarget()
     end
   else
-    ;
-    (self._stick):Update(deltaTimeMS)
-    local down, downPos = (self._input):GetMouseDown()
+    self._stick:Update(deltaTimeMS)
+    local down, downPos = self._input:GetMouseDown()
     if down then
       local layers = 0
-      if self._clickSmeltPosZ < (self._currentPos).z then
+      if self._currentPos.z > self._clickSmeltPosZ then
         layers = layers | 1 << AircraftLayer.Smelt
       end
-      if self._clickDispatchTaskMapPosZ < (self._currentPos).z then
+      if self._currentPos.z > self._clickDispatchTaskMapPosZ then
         layers = layers | 1 << AircraftLayer.DispatchTaskMap
       end
-      if layers > 0 then
-        local downRay = (self._camera):ScreenPointToRay(downPos)
-        local castRes, hitInfo = ((UnityEngine.Physics).Raycast)(downRay, nil, 1000, layers)
+      if 0 < layers then
+        local downRay = self._camera:ScreenPointToRay(downPos)
+        local castRes, hitInfo = UnityEngine.Physics.Raycast(downRay, nil, 1000, layers)
         if castRes then
-          local view = ((hitInfo.transform).gameObject):GetComponent(typeof(UIView))
+          local view = hitInfo.transform.gameObject:GetComponent(typeof(UIView))
           if view then
             local outline = view:GetUIComponent("Animation", "outline")
             if outline then
@@ -220,271 +178,211 @@ AircraftCamera.Update = function(self, deltaTimeMS)
         end
       end
     end
-    do
-      local up, upPos = (self._input):GetMouseUp()
-      if up and self._outlineAnim then
-        (self._outlineAnim):Play("eff_fengchuan_outline_fade")
-        self._outlineAnim = nil
+    local up, upPos = self._input:GetMouseUp()
+    if up and self._outlineAnim then
+      self._outlineAnim:Play("eff_fengchuan_outline_fade")
+      self._outlineAnim = nil
+    end
+    local clicked, clickPos = self._input:GetClick()
+    local scaling, scaleLength, scaleCenterPos = self._input:GetScale()
+    local dragging, dragStartPos, dragEndPos = self._input:GetDrag()
+    local sticking, offset = self._stick:GetDrag()
+    if clicked then
+      local clickRay = self._camera:ScreenPointToRay(clickPos)
+      local layers = AircraftLayer.Default
+      if self._currentPos.z > self._clickPetPosZ then
+        layers = layers | 1 << AircraftLayer.Pet
       end
-      local clicked, clickPos = (self._input):GetClick()
-      local scaling, scaleLength, scaleCenterPos = (self._input):GetScale()
-      local dragging, dragStartPos, dragEndPos = (self._input):GetDrag()
-      local sticking, offset = (self._stick):GetDrag()
-      if clicked then
-        local clickRay = (self._camera):ScreenPointToRay(clickPos)
-        local layers = AircraftLayer.Default
-        if self._clickPetPosZ < (self._currentPos).z then
-          layers = layers | 1 << AircraftLayer.Pet
-        end
-        if self._clickSmeltPosZ < (self._currentPos).z then
-          layers = layers | 1 << AircraftLayer.Smelt
-          layers = layers | 1 << AircraftLayer.Tactic
-        end
-        if self._clickBookShelfPosZ < (self._currentPos).z then
-          layers = layers | 1 << AircraftLayer.BookShelf
-        end
-        if self._clickDispatchTaskMapPosZ < (self._currentPos).z then
-          layers = layers | 1 << AircraftLayer.DispatchTaskMap
-          layers = layers | 1 << AircraftLayer.Award
-        end
-        local results = ((UnityEngine.Physics).RaycastAll)(clickRay, 1000, layers)
-        if results and results.Length > 0 then
-          local t = {}
-          for i = 1, results.Length do
-            t[i] = results[i - 1]
-          end
-          ;
-          (table.sort)(t, function(a, b)
-    -- function num : 0_9_0
-    do return a.distance < b.distance end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-          ;
-          (self._clickCB)(t)
-          return 
-        end
+      if self._currentPos.z > self._clickSmeltPosZ then
+        layers = layers | 1 << AircraftLayer.Smelt
+        layers = layers | 1 << AircraftLayer.Tactic
       end
-      do
-        if scaling then
-          if self._focusing then
-            local delta = scaleLength * self._fovParam
-            self:SetFovT(self._fovT - delta)
-            ;
-            (self._onFocuse)(self._fovT)
-            if delta < 0 and self._fovT >= 1 then
-              self._focusing = false
-              ;
-              (self._onFocusEnd)()
-            end
-          else
-            do
-              local forward = Vector3.forward * self._currentRot
-              local oz = (self._currentPos).z
-              local delta = forward * (scaleLength * self._zoomParam)
-              local target = self._currentPos + delta
-              if -self._nearDistance < target.z then
-                target.z = -self._nearDistance
-                self._currentPos = target
-              else
-                if self:IsOutOfField(target, forward) then
-                  if delta.z < 0 then
-                    if target.z <= -self._farDistance then
-                      self._currentPos = Vector3(0, 0, -self._farDistance)
-                      self._currentRot = Quaternion.identity
-                    else
-                      target.z = (Mathf.Clamp)(target.z, -self._farDistance, -self._nearDistance)
-                      local deltaZ = (math.abs)(target.z - oz)
-                      local z = (math.abs)(oz)
-                      local t = deltaZ / (self._farDistance - z)
-                      self._currentRot = (Quaternion.Lerp)(self._currentRot, Quaternion.identity, t)
-                      self._currentPos = self:_CalPos(target, self._currentRot)
-                    end
-                  end
-                  do
-                    do
-                      self:RefreshTarget()
-                      self._currentPos = target
-                      if -self._nearDistance - 0.1 < (self._currentPos).z then
-                        self._focusing = true
-                        ;
-                        (self._onFocusStart)()
-                      end
-                      if dragging then
-                        local forward = Vector3.forward * self._currentRot
-                        local _dragParam = self:_CalDragParam((self._currentPos).z)
-                        local delta = (dragStartPos - dragEndPos) * _dragParam
-                        local target = self._currentPos + delta
-                        if self:IsOutOfField(target, forward) then
-                          do
-                            self._currentPos = target
-                            self:RefreshTarget()
-                            if sticking and not self:IsCamareAtFarPoint() then
-                              local euler = ((self._currentRot).eulerAngles):Clone()
-                              local x = self._joyX + offset.x * self._joyStickParam
-                              local y = self._joyY + offset.y * self._joyStickParam
-                              if x < -180 then
-                                x = x + 360
-                              else
-                                if x > 180 then
-                                  x = x - 360
-                                end
-                              end
-                              if y < -180 then
-                                y = y + 360
-                              else
-                                if y > 180 then
-                                  y = y - 360
-                                end
-                              end
-                              x = (Mathf.Clamp)(x, -self._joyStickAngleHor, self._joyStickAngleHor)
-                              y = (Mathf.Clamp)(y, -self._joyStickAngleVer, self._joyStickAngleVer)
-                              local rot = (Quaternion.Euler)(-y, x, 0)
-                              local target = rot * Vector3(0, 0, -self._distance) + self._cameraTarget
-                              local forward = Vector3.forward * rot
-                            end
-                            if self:IsOutOfField(target, forward) then
-                              do
-                                self._currentPos = target
-                                self._currentRot = rot
-                                self._joyX = x
-                                self._joyY = y
-                                local cur = ((self._camera).transform).position
-                                cur = (Vector3.Lerp)(cur, self._currentPos, self._lerpValue)
-                                -- DECOMPILER ERROR at PC424: Confused about usage of register: R3 in 'UnsetPending'
-
-                                ;
-                                ((self._camera).transform).position = cur
-                                if -self._nearDistance - 0.1 < cur.z and not self._showFocus then
-                                  (self._onFocusStart)()
-                                  self._showFocus = true
-                                else
-                                  if cur.z < -self._nearDistance - 0.1 and self._showFocus then
-                                    (self._onFocusEnd)()
-                                    self._showFocus = false
-                                  end
-                                end
-                                local curRot = ((self._camera).transform).rotation
-                                curRot = (Quaternion.Lerp)(curRot, self._currentRot, self._lerpValue)
-                                -- DECOMPILER ERROR at PC462: Confused about usage of register: R4 in 'UnsetPending'
-
-                                ;
-                                ((self._camera).transform).rotation = curRot
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
+      if self._currentPos.z > self._clickBookShelfPosZ then
+        layers = layers | 1 << AircraftLayer.BookShelf
+      end
+      if self._currentPos.z > self._clickDispatchTaskMapPosZ then
+        layers = layers | 1 << AircraftLayer.DispatchTaskMap
+        layers = layers | 1 << AircraftLayer.Award
+      end
+      local results = UnityEngine.Physics.RaycastAll(clickRay, 1000, layers)
+      if results and 0 < results.Length then
+        local t = {}
+        for i = 1, results.Length do
+          t[i] = results[i - 1]
+        end
+        table.sort(t, function(a, b)
+          return a.distance < b.distance
+        end)
+        self._clickCB(t)
+        return
+      end
+    end
+    if scaling then
+      if self._focusing then
+        local delta = scaleLength * self._fovParam
+        self:SetFovT(self._fovT - delta)
+        self._onFocuse(self._fovT)
+        if delta < 0 and 1 <= self._fovT then
+          self._focusing = false
+          self._onFocusEnd()
+        end
+      else
+        local forward = Vector3.forward * self._currentRot
+        local oz = self._currentPos.z
+        local delta = forward * (scaleLength * self._zoomParam)
+        local target = self._currentPos + delta
+        if target.z > -self._nearDistance then
+          target.z = -self._nearDistance
+          self._currentPos = target
+        elseif self:IsOutOfField(target, forward) then
+          if 0 > delta.z then
+            if target.z <= -self._farDistance then
+              self._currentPos = Vector3(0, 0, -self._farDistance)
+              self._currentRot = Quaternion.identity
+            else
+              target.z = Mathf.Clamp(target.z, -self._farDistance, -self._nearDistance)
+              local deltaZ = math.abs(target.z - oz)
+              local z = math.abs(oz)
+              local t = deltaZ / (self._farDistance - z)
+              self._currentRot = Quaternion.Lerp(self._currentRot, Quaternion.identity, t)
+              self._currentPos = self:_CalPos(target, self._currentRot)
             end
           end
+          self:RefreshTarget()
+        else
+          self._currentPos = target
         end
+        if self._currentPos.z > -self._nearDistance - 0.1 then
+          self._focusing = true
+          self._onFocusStart()
+        end
+      end
+    elseif dragging then
+      local forward = Vector3.forward * self._currentRot
+      local _dragParam = self:_CalDragParam(self._currentPos.z)
+      local delta = (dragStartPos - dragEndPos) * _dragParam
+      local target = self._currentPos + delta
+      if self:IsOutOfField(target, forward) then
+      else
+        self._currentPos = target
+        self:RefreshTarget()
+      end
+    elseif sticking and not self:IsCamareAtFarPoint() then
+      local euler = self._currentRot.eulerAngles:Clone()
+      local x = self._joyX + offset.x * self._joyStickParam
+      local y = self._joyY + offset.y * self._joyStickParam
+      if x < -180 then
+        x = x + 360
+      elseif 180 < x then
+        x = x - 360
+      end
+      if y < -180 then
+        y = y + 360
+      elseif 180 < y then
+        y = y - 360
+      end
+      x = Mathf.Clamp(x, -self._joyStickAngleHor, self._joyStickAngleHor)
+      y = Mathf.Clamp(y, -self._joyStickAngleVer, self._joyStickAngleVer)
+      local rot = Quaternion.Euler(-y, x, 0)
+      local target = rot * Vector3(0, 0, -self._distance) + self._cameraTarget
+      local forward = Vector3.forward * rot
+      if self:IsOutOfField(target, forward) then
+      else
+        self._currentPos = target
+        self._currentRot = rot
+        self._joyX = x
+        self._joyY = y
       end
     end
   end
+  local cur = self._camera.transform.position
+  cur = Vector3.Lerp(cur, self._currentPos, self._lerpValue)
+  self._camera.transform.position = cur
+  if cur.z > -self._nearDistance - 0.1 and not self._showFocus then
+    self._onFocusStart()
+    self._showFocus = true
+  elseif cur.z < -self._nearDistance - 0.1 and self._showFocus then
+    self._onFocusEnd()
+    self._showFocus = false
+  end
+  local curRot = self._camera.transform.rotation
+  curRot = Quaternion.Lerp(curRot, self._currentRot, self._lerpValue)
+  self._camera.transform.rotation = curRot
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera._CalRiseUp = function(self, z)
-  -- function num : 0_10
+function AircraftCamera:_CalRiseUp(z)
   local delta = z + self._riseUpDistance
   local riseUp = 0
   if delta < 0 then
-    do
-      local dis = -(z + self._nearDistance)
-      riseUp = (1 - dis / (self._riseUpDistance - self._nearDistance)) * self._riseUpMaxY
-      return riseUp
-    end
+  else
+    local dis = -(z + self._nearDistance)
+    riseUp = (1 - dis / (self._riseUpDistance - self._nearDistance)) * self._riseUpMaxY
   end
+  return riseUp
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera._CalDragParam = function(self, z)
-  -- function num : 0_11 , upvalues : _ENV
+function AircraftCamera:_CalDragParam(z)
   if self._fovT < 1 then
     return self._fovT * (self._dragParamNear - self._minFovDragParam) + self._minFovDragParam
   else
     local rate = (self._dragParamFar - self._dragParamNear) / (self._farDistance - self._nearDistance)
-    return ((math.abs)(z) - self._nearDistance) * rate + self._dragParamNear
+    return (math.abs(z) - self._nearDistance) * rate + self._dragParamNear
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera._CalPos = function(self, pos, rot)
-  -- function num : 0_12 , upvalues : _ENV
+function AircraftCamera:_CalPos(pos, rot)
   local dir = Vector3.forward * rot
   local right = Vector3.right * rot
   local up = Vector3.up * rot
-  local left = self:GetRayPoint(pos, (Quaternion.AngleAxis)(-self._horAngle, up) * dir)
-  local top = self:GetRayPoint(pos, (Quaternion.AngleAxis)(-self._fov / 2, right) * dir)
-  local x, y = 0, nil
-  if left.x < -(self._field).x then
-    x = -left.x - (self._field).x
+  local left = self:GetRayPoint(pos, Quaternion.AngleAxis(-self._horAngle, up) * dir)
+  local top = self:GetRayPoint(pos, Quaternion.AngleAxis(-self._fov / 2, right) * dir)
+  local x, y = 0
+  if left.x < -self._field.x then
+    x = -left.x - self._field.x
   else
-    local right = self:GetRayPoint(pos, (Quaternion.AngleAxis)(self._horAngle, up) * dir)
-    if (self._field).x < right.x then
-      x = (self._field).x - right.x
-    end
-  end
-  do
-    if (self._field).y < top.y then
-      y = (self._field).y - top.y
+    local right = self:GetRayPoint(pos, Quaternion.AngleAxis(self._horAngle, up) * dir)
+    if right.x > self._field.x then
+      x = self._field.x - right.x
     else
-      local bottom = self:GetRayPoint(pos, (Quaternion.AngleAxis)(self._fov / 2, right) * dir)
-      if bottom.y < -(self._field).y then
-        y = -bottom.y - (self._field).y
-      end
-    end
-    do
-      return Vector3(x, y, 0) + pos
     end
   end
+  if top.y > self._field.y then
+    y = self._field.y - top.y
+  else
+    local bottom = self:GetRayPoint(pos, Quaternion.AngleAxis(self._fov / 2, right) * dir)
+    if bottom.y < -self._field.y then
+      y = -bottom.y - self._field.y
+    else
+    end
+  end
+  return Vector3(x, y, 0) + pos
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.IsCamareAtFarPoint = function(self)
-  -- function num : 0_13
-  do return (self._currentPos).z <= -self._farDistance end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftCamera:IsCamareAtFarPoint()
+  return self._currentPos.z <= -self._farDistance
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.IsFocusing = function(self)
-  -- function num : 0_14
+function AircraftCamera:IsFocusing()
   return self._focusing
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.OnAnimate = function(self, target)
-  -- function num : 0_15 , upvalues : _ENV
+function AircraftCamera:OnAnimate(target)
   local riseUp = self:_CalRiseUp(target.z)
   local pos = target:Clone()
   pos.y = target.y + riseUp
-  local rot = (Quaternion.LookRotation)(Vector3(0, -riseUp, -pos.z))
+  local rot = Quaternion.LookRotation(Vector3(0, -riseUp, -pos.z))
   pos = self:_CalPos(pos, rot)
   return pos, rot
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.MoveAnim = function(self, target, callback, time)
-  -- function num : 0_16 , upvalues : _ENV
+function AircraftCamera:MoveAnim(target, callback, time)
   if self._anim then
-    (Log.exception)("重复的相机动画:", (debug.traceback)())
+    Log.exception("重复的相机动画:", debug.traceback())
   else
-    AirLog("相机动画", (debug.traceback)())
+    AirLog("相机动画", debug.traceback())
   end
-  local originPos = (self._currentPos):Clone()
-  local originRot = (self._currentRot):Clone()
+  local originPos = self._currentPos:Clone()
+  local originRot = self._currentRot:Clone()
   local pos, rot = self:OnAnimate(target)
   if time then
     self._anim = AircraftCameraAnim:New(self, originPos, originRot, pos, rot, time, callback)
@@ -493,39 +391,25 @@ AircraftCamera.MoveAnim = function(self, target, callback, time)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.SetCameraToNavMenuPos = function(self, pos)
-  -- function num : 0_17 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._camera).transform).position = pos
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._camera).transform).rotation = Quaternion.identity
+function AircraftCamera:SetCameraToNavMenuPos(pos)
+  self._camera.transform.position = pos
+  self._camera.transform.rotation = Quaternion.identity
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.MoveBack = function(self, z)
-  -- function num : 0_18 , upvalues : _ENV
+function AircraftCamera:MoveBack(z)
   AirLog("相机动画，返回")
-  local originPos = (self._currentPos):Clone()
-  local originRot = (self._currentRot):Clone()
+  local originPos = self._currentPos:Clone()
+  local originRot = self._currentRot:Clone()
   self._currentRot = Quaternion.identity
   local target = Vector3(0, 0, z)
   local pos, rot = self:OnAnimate(target)
   self._anim = AircraftCameraAnim:New(self, originPos, originRot, pos, rot, 700)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.MoveToFar = function(self, callback)
-  -- function num : 0_19 , upvalues : _ENV
+function AircraftCamera:MoveToFar(callback)
   AirLog("相机动画，移向最远处")
-  local originPos = (self._currentPos):Clone()
-  local originRot = (self._currentRot):Clone()
+  local originPos = self._currentPos:Clone()
+  local originRot = self._currentRot:Clone()
   local pos = Vector3(0, 0, -self._farDistance)
   local rot = Quaternion.identity
   self._currentPos = pos
@@ -533,13 +417,10 @@ AircraftCamera.MoveToFar = function(self, callback)
   self._anim = AircraftCameraAnim:New(self, originPos, originRot, pos, rot, 700, callback)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.MoveToPosNotTime = function(self, tpos, callback)
-  -- function num : 0_20 , upvalues : _ENV
+function AircraftCamera:MoveToPosNotTime(tpos, callback)
   AirLog("相机动画，移向某处,notTime")
-  local originPos = (self._currentPos):Clone()
-  local originRot = (self._currentRot):Clone()
+  local originPos = self._currentPos:Clone()
+  local originRot = self._currentRot:Clone()
   local pos = tpos
   local rot = Quaternion.identity
   self._currentPos = pos
@@ -547,115 +428,71 @@ AircraftCamera.MoveToPosNotTime = function(self, tpos, callback)
   self._anim = AircraftCameraAnimNotTime:New(self, originPos, originRot, pos, rot, 700, callback)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.CloseFocus = function(self, callback)
-  -- function num : 0_21 , upvalues : _ENV
+function AircraftCamera:CloseFocus(callback)
   AirLog("相机动画，关闭聚焦")
   if self._onFocusEnd then
-    (self._onFocusEnd)()
+    self._onFocusEnd()
   end
   self._focusing = false
   self._anim = AircraftCameraFovAnim:New(self, 1, callback)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.SetFovT = function(self, t)
-  -- function num : 0_22 , upvalues : _ENV
-  self._fovT = (Mathf.Clamp01)(t)
-  local fov = (Mathf.Lerp)(self._minFov, self._maxFov, self._fovT)
+function AircraftCamera:SetFovT(t)
+  self._fovT = Mathf.Clamp01(t)
+  local fov = Mathf.Lerp(self._minFov, self._maxFov, self._fovT)
   self._fov = fov
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._camera).fieldOfView = fov
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._hudCamera).fieldOfView = fov
+  self._camera.fieldOfView = fov
+  self._hudCamera.fieldOfView = fov
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.SetHudCameraActive = function(self, active)
-  -- function num : 0_23
-  ((self._hudCamera).gameObject):SetActive(active)
+function AircraftCamera:SetHudCameraActive(active)
+  self._hudCamera.gameObject:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.SetPos = function(self, pos)
-  -- function num : 0_24
+function AircraftCamera:SetPos(pos)
   self._currentPos = pos
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.SetRot = function(self, rot)
-  -- function num : 0_25
+function AircraftCamera:SetRot(rot)
   self._currentRot = rot
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.Camera = function(self)
-  -- function num : 0_26
+function AircraftCamera:Camera()
   return self._camera
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.CameraFovPercent = function(self)
-  -- function num : 0_27
+function AircraftCamera:CameraFovPercent()
   return self._fovT
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.FarPoint = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function AircraftCamera:FarPoint()
   return Vector3(0, 0, -self._farDistance)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.DecorateViewPoint = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function AircraftCamera:DecorateViewPoint()
   return Vector3(0, 0, -self._decorateDistance)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.Reset = function(self)
-  -- function num : 0_30
-  self._currentPos = ((self._camera).transform).position
-  self._currentRot = ((self._camera).transform).rotation
+function AircraftCamera:Reset()
+  self._currentPos = self._camera.transform.position
+  self._currentRot = self._camera.transform.rotation
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.ResetFov = function(self)
-  -- function num : 0_31
+function AircraftCamera:ResetFov()
   self:SetFovT(1)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCamera.FocusPoint = function(self)
-  -- function num : 0_32
+function AircraftCamera:FocusPoint()
   return self._cameraTarget
 end
 
 _class("AircraftCameraAnim", Object)
 AircraftCameraAnim = AircraftCameraAnim
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftCameraAnim.Constructor = function(self, camera, originPos, originRot, targetPos, targetRot, duration, onFinish)
-  -- function num : 0_33 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, true, "AircraftCameraAnim")
+function AircraftCameraAnim:Constructor(camera, originPos, originRot, targetPos, targetRot, duration, onFinish)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, true, "AircraftCameraAnim")
   self._cameraManager = camera
-  self._transform = ((self._cameraManager):Camera()).transform
+  self._transform = self._cameraManager:Camera().transform
   self._fromPos = originPos
   self._fromRot = originRot
   self._targetPos = targetPos
@@ -668,87 +505,61 @@ AircraftCameraAnim.Constructor = function(self, camera, originPos, originRot, ta
   self._rot = nil
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraAnim.Update = function(self, deltaTimeMS)
-  -- function num : 0_34 , upvalues : _ENV
+function AircraftCameraAnim:Update(deltaTimeMS)
   if self._completed then
-    return 
+    return
   end
   if self._timer < self._duration then
     local t = self._timer / self._duration
     self._timer = self._timer + deltaTimeMS
-    ;
-    (self._cameraManager):SetPos((Vector3.Lerp)(self._fromPos, self._targetPos, t))
-    ;
-    (self._cameraManager):SetRot((Quaternion.Lerp)(self._fromRot, self._targetRot, t))
+    self._cameraManager:SetPos(Vector3.Lerp(self._fromPos, self._targetPos, t))
+    self._cameraManager:SetRot(Quaternion.Lerp(self._fromRot, self._targetRot, t))
   else
-    do
-      ;
-      (self._cameraManager):SetPos(self._targetPos)
-      ;
-      (self._cameraManager):SetRot(self._targetRot)
-      self._completed = true
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, false, "AircraftCameraAnim")
-      if self._onfinish then
-        (self._onfinish)()
-      end
+    self._cameraManager:SetPos(self._targetPos)
+    self._cameraManager:SetRot(self._targetRot)
+    self._completed = true
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, false, "AircraftCameraAnim")
+    if self._onfinish then
+      self._onfinish()
     end
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraAnim.IsComplete = function(self)
-  -- function num : 0_35
+function AircraftCameraAnim:IsComplete()
   return self._completed
 end
 
 _class("AircraftCameraFovAnim", Object)
 AircraftCameraFovAnim = AircraftCameraFovAnim
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftCameraFovAnim.Constructor = function(self, camera, speed, onFinish)
-  -- function num : 0_36 , upvalues : _ENV
+function AircraftCameraFovAnim:Constructor(camera, speed, onFinish)
   self._cameraManager = camera
   self._targetFov = 1
-  self._originFov = (self._cameraManager):CameraFovPercent()
+  self._originFov = self._cameraManager:CameraFovPercent()
   self._speed = speed / 1000
   self._onFinish = onFinish
   self._completed = false
   self._current = self._originFov
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, true, "AircraftCameraFovAnim")
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, true, "AircraftCameraFovAnim")
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraFovAnim.Update = function(self, deltaTimeMS)
-  -- function num : 0_37 , upvalues : _ENV
+function AircraftCameraFovAnim:Update(deltaTimeMS)
   if self._completed then
-    return 
+    return
   end
   self._current = self._current + deltaTimeMS * self._speed
   if self._current < self._targetFov then
-    (self._cameraManager):SetFovT(self._current)
+    self._cameraManager:SetFovT(self._current)
   else
-    ;
-    (self._cameraManager):SetFovT(self._targetFov)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, false, "AircraftCameraFovAnim")
+    self._cameraManager:SetFovT(self._targetFov)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, false, "AircraftCameraFovAnim")
     self._completed = true
     if self._onFinish then
-      (self._onFinish)()
+      self._onFinish()
     end
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraFovAnim.IsComplete = function(self)
-  -- function num : 0_38
+function AircraftCameraFovAnim:IsComplete()
   return self._completed
 end
-
-

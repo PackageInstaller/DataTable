@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/psparam_gather_throw_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseGatherThrowDamageParam", SkillPhaseParamBase)
 SkillPhaseGatherThrowDamageParam = SkillPhaseGatherThrowDamageParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseGatherThrowDamageParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhaseGatherThrowDamageParam:Constructor(t)
   self._hitAnimName = t.hitAnim
   self._hitDelayTime = t.hitDelayTime
   self._hitEffectID = t.hitEffectID
@@ -21,203 +14,149 @@ SkillPhaseGatherThrowDamageParam.Constructor = function(self, t)
   self._monsterFlyTotalTime = t.monsterFlyTotalTime
   self._monsterMinScale = t.monsterMinScale or 1
   local monsterFlyToPosTb = t.monsterFlyToPos
-  if monsterFlyToPosTb and #monsterFlyToPosTb >= 2 then
+  if monsterFlyToPosTb and 2 <= #monsterFlyToPosTb then
     local posX = tonumber(monsterFlyToPosTb[1])
     local posY = tonumber(monsterFlyToPosTb[2])
     self._monsterFlyToPos = Vector2(posX, posY)
   end
-  do
-    self._bowlderStartDelay = t.bowlderStartDelay
-    self._bowlderTrajectoryID = t.bowlderTrajectoryID
-    self._bowlderJumpHeight = t.bowlderJumpHeight
-    self._bowlderEndHeight = t.bowlderEndHeight
-    self._bowlderFlyTotalTime = t.bowlderFlyTotalTime
-    local bowlderStartPosTb = t.bowlderStartPos
-    if bowlderStartPosTb and #bowlderStartPosTb >= 3 then
-      local posX = tonumber(bowlderStartPosTb[1])
-      local posY = tonumber(bowlderStartPosTb[2])
-      local posZ = tonumber(bowlderStartPosTb[3])
-      self._bowlderStartPos = Vector3(posX, posY, posZ)
-    end
-    do
-      self.appearDuration = t.appearDuration or 0
-      self.stealthDuration = t.stealthDuration or 0
-      self.appearAnimation = t.appearAnimation
-    end
+  self._bowlderStartDelay = t.bowlderStartDelay
+  self._bowlderTrajectoryID = t.bowlderTrajectoryID
+  self._bowlderJumpHeight = t.bowlderJumpHeight
+  self._bowlderEndHeight = t.bowlderEndHeight
+  self._bowlderFlyTotalTime = t.bowlderFlyTotalTime
+  local bowlderStartPosTb = t.bowlderStartPos
+  if bowlderStartPosTb and 3 <= #bowlderStartPosTb then
+    local posX = tonumber(bowlderStartPosTb[1])
+    local posY = tonumber(bowlderStartPosTb[2])
+    local posZ = tonumber(bowlderStartPosTb[3])
+    self._bowlderStartPos = Vector3(posX, posY, posZ)
   end
+  self.appearDuration = t.appearDuration or 0
+  self.stealthDuration = t.stealthDuration or 0
+  self.appearAnimation = t.appearAnimation
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetMonsterStartDelay = function(self)
-  -- function num : 0_1
+function SkillPhaseGatherThrowDamageParam:GetMonsterStartDelay()
   return self._monsterStartDelay
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetCastEffectID = function(self)
-  -- function num : 0_2
+function SkillPhaseGatherThrowDamageParam:GetCastEffectID()
   return self._castEffectID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetCasterAnimName = function(self)
-  -- function num : 0_3
+function SkillPhaseGatherThrowDamageParam:GetCasterAnimName()
   return self._casterAnimName
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetHitAnimationName = function(self)
-  -- function num : 0_4
+function SkillPhaseGatherThrowDamageParam:GetHitAnimationName()
   return self._hitAnimName
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetHitDelayTime = function(self)
-  -- function num : 0_5
+function SkillPhaseGatherThrowDamageParam:GetHitDelayTime()
   return self._hitDelayTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetHitEffectId = function(self)
-  -- function num : 0_6
+function SkillPhaseGatherThrowDamageParam:GetHitEffectId()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetCacheTable = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillPhaseGatherThrowDamageParam:GetCacheTable()
   local t = {}
   if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    })
   end
-  if self._castEffectID and self._castEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._castEffectID]).ResPath, 1})
+  if self._castEffectID and 0 < self._castEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._castEffectID].ResPath,
+      1
+    })
   end
-  if self._noMonsterCasterEffectID and self._noMonsterCasterEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._noMonsterCasterEffectID]).ResPath, 1})
+  if self._noMonsterCasterEffectID and 0 < self._noMonsterCasterEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._noMonsterCasterEffectID].ResPath,
+      1
+    })
   end
-  if self._successCasterEffectID and self._successCasterEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._successCasterEffectID]).ResPath, 1})
+  if self._successCasterEffectID and 0 < self._successCasterEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._successCasterEffectID].ResPath,
+      1
+    })
   end
-  if self._monsterTrajectoryID and self._monsterTrajectoryID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._monsterTrajectoryID]).ResPath, 1})
+  if self._monsterTrajectoryID and 0 < self._monsterTrajectoryID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._monsterTrajectoryID].ResPath,
+      1
+    })
   end
-  if self._bowlderTrajectoryID and self._bowlderTrajectoryID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._bowlderTrajectoryID]).ResPath, 1})
+  if self._bowlderTrajectoryID and 0 < self._bowlderTrajectoryID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._bowlderTrajectoryID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetPhaseType = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function SkillPhaseGatherThrowDamageParam:GetPhaseType()
   return SkillViewPhaseType.GatherThrowDamage
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetCasterEffectID = function(self)
-  -- function num : 0_9
+function SkillPhaseGatherThrowDamageParam:GetCasterEffectID()
   return self._casterEffectID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetNoMonsterCasterEffectID = function(self)
-  -- function num : 0_10
+function SkillPhaseGatherThrowDamageParam:GetNoMonsterCasterEffectID()
   return self._noMonsterCasterEffectID
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetSuccessCasterEffectID = function(self)
-  -- function num : 0_11
+function SkillPhaseGatherThrowDamageParam:GetSuccessCasterEffectID()
   return self._successCasterEffectID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetMonsterTrajectoryID = function(self)
-  -- function num : 0_12
+function SkillPhaseGatherThrowDamageParam:GetMonsterTrajectoryID()
   return self._monsterTrajectoryID
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetMonsterEndHeight = function(self)
-  -- function num : 0_13
+function SkillPhaseGatherThrowDamageParam:GetMonsterEndHeight()
   return self._monsterEndHeight
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetMonsterFlyTotalTime = function(self)
-  -- function num : 0_14
+function SkillPhaseGatherThrowDamageParam:GetMonsterFlyTotalTime()
   return self._monsterFlyTotalTime
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetMonsterMinScale = function(self)
-  -- function num : 0_15
+function SkillPhaseGatherThrowDamageParam:GetMonsterMinScale()
   return self._monsterMinScale
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetMonsterFlyToPos = function(self)
-  -- function num : 0_16
+function SkillPhaseGatherThrowDamageParam:GetMonsterFlyToPos()
   return self._monsterFlyToPos
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetBowlderTrajectoryID = function(self)
-  -- function num : 0_17
+function SkillPhaseGatherThrowDamageParam:GetBowlderTrajectoryID()
   return self._bowlderTrajectoryID
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetBowlderEndHeight = function(self)
-  -- function num : 0_18
+function SkillPhaseGatherThrowDamageParam:GetBowlderEndHeight()
   return self._bowlderEndHeight
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetBowlderFlyTotalTime = function(self)
-  -- function num : 0_19
+function SkillPhaseGatherThrowDamageParam:GetBowlderFlyTotalTime()
   return self._bowlderFlyTotalTime
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetBowlderStartDelay = function(self)
-  -- function num : 0_20
+function SkillPhaseGatherThrowDamageParam:GetBowlderStartDelay()
   return self._bowlderStartDelay or 0
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetBowlderStartPos = function(self)
-  -- function num : 0_21
+function SkillPhaseGatherThrowDamageParam:GetBowlderStartPos()
   return self._bowlderStartPos
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGatherThrowDamageParam.GetBowlderJumpHeight = function(self)
-  -- function num : 0_22
+function SkillPhaseGatherThrowDamageParam:GetBowlderJumpHeight()
   return self._bowlderJumpHeight
 end
-
-

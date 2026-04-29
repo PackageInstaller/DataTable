@@ -1,55 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/mission/stn_mission_build_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("Mission_BuildTeam", Common_AsyncBase)
 Mission_BuildTeam = Mission_BuildTeam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Mission_BuildTeam.Constructor = function(self, _, teamIndex)
-  -- function num : 0_0 , upvalues : _ENV
-  if not teamIndex then
-    self._teamIndex = TestConst.MissionTeamIndex
-  end
+function Mission_BuildTeam:Constructor(_, teamIndex)
+  self._teamIndex = teamIndex or TestConst.MissionTeamIndex
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Mission_BuildTeam.TaskFunc = function(self, TT, result)
-  -- function num : 0_1 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function Mission_BuildTeam:TaskFunc(TT, result)
+  local runData = self.m_pManager:GetMissionRunData()
   local petPoolOptions = SmokeTestTeamBuildPoolOptions:New()
-  if runData:IsRandomTeam() and not (self._manager):BuildRandomTeam(runData, petPoolOptions) then
-    self.m_nLogicResult = 2
-    return 
-  end
-  ;
-  (self._manager):AsyncBuildTeamByRunData(TT, self._teamIndex, result)
-  if result:IsErrorOccured() then
-    self.m_nLogicResult = 3
-    return 
+  if runData:IsRandomTeam() then
+    if not self._manager:BuildRandomTeam(runData, petPoolOptions) then
+      self.m_nLogicResult = 2
+      return
+    end
   else
-    self.m_nLogicResult = 1
-    return 
+    self._manager:AsyncBuildTeamByRunData(TT, self._teamIndex, result)
+    if result:IsErrorOccured() then
+      self.m_nLogicResult = 3
+      return
+    else
+      self.m_nLogicResult = 1
+      return
+    end
   end
   local currentTeamPetBuildData = runData:GetCurrentTeamBuild()
-  ;
-  (self._manager):PreparePetsByBuildDataList(TT, currentTeamPetBuildData, result)
+  self._manager:PreparePetsByBuildDataList(TT, currentTeamPetBuildData, result)
   if result:IsErrorOccured() then
     self.m_nLogicResult = 3
-    return 
+    return
   end
   local petPstIds = runData:GeneratePetPstID()
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+  local missionModule = GameGlobal.GetModule(MissionModule)
   for i = 1, 3 do
     local updateFormationResult = missionModule:UpdateMainFormationInfo(TT, TestConst.MissionTeamIndex, TestConst.MissionTeamName, petPstIds)
     if updateFormationResult:GetSucc() then
       result:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
       result:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
       self.m_nLogicResult = 1
-      return 
+      return
     else
       result:SetCustomData("result", updateFormationResult.m_result)
     end
@@ -57,8 +46,5 @@ Mission_BuildTeam.TaskFunc = function(self, TT, result)
   result:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
   result:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
   self.m_nLogicResult = 3
-  ;
-  (Log.exception)(self._className, "UpdateMainFormationInfo failed, result: ", tostring(result:GetCustomData("result")))
+  Log.exception(self._className, "UpdateMainFormationInfo failed, result: ", tostring(result:GetCustomData("result")))
 end
-
-

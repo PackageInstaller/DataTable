@@ -1,78 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/pop_star_pro_role_turn_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("PopStarProRoleTurnSystem", MainStateSystem)
 PopStarProRoleTurnSystem = PopStarProRoleTurnSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarProRoleTurnSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PopStarProRoleTurnSystem:_GetMainStateID()
   return GameStateID.RoleTurn
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProRoleTurnSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function PopStarProRoleTurnSystem:_OnMainStateEnter(TT)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   self:_DoRenderPetHeadShow(TT)
   self:_DoRendererTeleport(TT, teamEntity)
   self:_DoLogicGotoNextState()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProRoleTurnSystem._DoLogicGetChainElementType = function(self)
-  -- function num : 0_2
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function PopStarProRoleTurnSystem:_DoLogicGetChainElementType()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local logicChainPathCmpt = teamEntity:LogicChainPath()
   return logicChainPathCmpt:GetLogicPieceType()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProRoleTurnSystem._DoLogicGotoNextState = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.RoleTurnFinish, 1)
+function PopStarProRoleTurnSystem:_DoLogicGotoNextState()
+  self._world:EventDispatcher():Dispatch(GameEventType.RoleTurnFinish, 1)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProRoleTurnSystem._DoRenderPetHeadShow = function(self, TT)
-  -- function num : 0_4
+function PopStarProRoleTurnSystem:_DoRenderPetHeadShow(TT)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProRoleTurnSystem._DoRendererTeleport = function(self, TT, teamEntity)
-  -- function num : 0_5
+function PopStarProRoleTurnSystem:_DoRendererTeleport(TT, teamEntity)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProRoleTurnSystem._DoRenderNotifyBuff = function(self, TT)
-  -- function num : 0_6
+function PopStarProRoleTurnSystem:_DoRenderNotifyBuff(TT)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProRoleTurnSystem._DoRenderNotifyBuffNormalAttackEnd = function(self, TT)
-  -- function num : 0_7
+function PopStarProRoleTurnSystem:_DoRenderNotifyBuffNormalAttackEnd(TT)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProRoleTurnSystem._DoRenderResetPieceAnim = function(self, TT)
-  -- function num : 0_8
+function PopStarProRoleTurnSystem:_DoRenderResetPieceAnim(TT)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProRoleTurnSystem._SendPrismNotify = function(self, TT)
-  -- function num : 0_9
+function PopStarProRoleTurnSystem:_SendPrismNotify(TT)
 end
-
-

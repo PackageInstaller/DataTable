@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/hard_level/ui_activity_n25_hardlevel_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25HardLevelBtn", UICustomWidget)
 UIN25HardLevelBtn = UIN25HardLevelBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25HardLevelBtn.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIN25HardLevelBtn:OnShow(uiParams)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25HardLevelBtn.InitWidget = function(self)
-  -- function num : 0_1
+function UIN25HardLevelBtn:InitWidget()
   self.select = self:GetGameObject("select")
   self.unSelect = self:GetGameObject("unSelect")
   self.locker = self:GetGameObject("locker")
@@ -28,20 +18,13 @@ UIN25HardLevelBtn.InitWidget = function(self)
   self.lockTimeTex = self:GetUIComponent("UILocalizationText", "lockTimeTex")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25HardLevelBtn.SetData = function(self, logName, clickCallback)
-  -- function num : 0_2
+function UIN25HardLevelBtn:SetData(logName, clickCallback)
   self.clickCallback = clickCallback
   self:SetLockVisible(false)
-  ;
-  (self.logNameLoader):LoadImage(logName)
+  self.logNameLoader:LoadImage(logName)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25HardLevelBtn.SetLockVisible = function(self, bVisible, openTime, timerCb)
-  -- function num : 0_3
+function UIN25HardLevelBtn:SetLockVisible(bVisible, openTime, timerCb)
   local lockTime = false
   if openTime then
     lockTime = true
@@ -50,10 +33,11 @@ UIN25HardLevelBtn.SetLockVisible = function(self, bVisible, openTime, timerCb)
   if bVisible then
     lockMission = true
   end
-  ;
-  (self.locker):SetActive(not self.locker or lockMission or lockTime)
+  if self.locker then
+    self.locker:SetActive(lockMission or lockTime)
+  end
   if self.lockTime then
-    (self.lockTime):SetActive(lockTime)
+    self.lockTime:SetActive(lockTime)
     if lockTime then
       self._openTime = openTime
       self._timerCb = timerCb
@@ -63,78 +47,52 @@ UIN25HardLevelBtn.SetLockVisible = function(self, bVisible, openTime, timerCb)
   self.isLock = lockMission or lockTime
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25HardLevelBtn.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN25HardLevelBtn:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25HardLevelBtn.InitTimer = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN25HardLevelBtn:InitTimer()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
-  self._timer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_5_0 , upvalues : self
+  self._timer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:ShowTime()
-  end
-)
+  end)
   self:ShowTime()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25HardLevelBtn.ShowTime = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+function UIN25HardLevelBtn:ShowTime()
+  local nowTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   local sec = self._openTime - nowTime
-  if sec >= 0 then
-    local secStr = (HelperProxy:GetInstance()):Time2Tex(sec)
-    ;
-    (self.lockTimeTex):SetText((StringTable.Get)("str_n25_hard_level_open_time_str", secStr))
+  if 0 <= sec then
+    local secStr = HelperProxy:GetInstance():Time2Tex(sec)
+    self.lockTimeTex:SetText(StringTable.Get("str_n25_hard_level_open_time_str", secStr))
   else
-    do
-      if self._timer then
-        ((GameGlobal.Timer)()):CancelEvent(self._timer)
-      end
-      if self._timerCb then
-        (self._timerCb)()
-      end
+    if self._timer then
+      GameGlobal.Timer():CancelEvent(self._timer)
+    end
+    if self._timerCb then
+      self._timerCb()
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25HardLevelBtn.SetSelect = function(self, bSelect, localPosition)
-  -- function num : 0_7
-  (self.select):SetActive(bSelect)
-  ;
-  (self.unSelect):SetActive(not bSelect)
-  local color = (self.logName).color
+function UIN25HardLevelBtn:SetSelect(bSelect, localPosition)
+  self.select:SetActive(bSelect)
+  self.unSelect:SetActive(not bSelect)
+  local color = self.logName.color
   if bSelect then
     color.a = 1
   else
     color.a = 0.5
   end
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.levelBtn).interactable = not bSelect
+  self.levelBtn.interactable = not bSelect
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25HardLevelBtn.LevelBtnOnClick = function(self, go)
-  -- function num : 0_8
+function UIN25HardLevelBtn:LevelBtnOnClick(go)
   if self.clickCallback then
-    (self.clickCallback)()
+    self.clickCallback()
   end
 end
-
-

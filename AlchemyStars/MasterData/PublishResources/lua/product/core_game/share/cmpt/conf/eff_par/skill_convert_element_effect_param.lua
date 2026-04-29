@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_convert_element_effect_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillConvertGridElementEffectParam", SkillEffectParamBase)
 SkillConvertGridElementEffectParam = SkillConvertGridElementEffectParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillConvertGridElementEffectParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillConvertGridElementEffectParam:Constructor(t)
   self._sourceGridElement = t.src
   self._targetGridElement = t.target
   self._targetCount = t.count
@@ -22,81 +15,46 @@ SkillConvertGridElementEffectParam.Constructor = function(self, t)
   self._saveTetrisIndex = t.saveTetrisIndex or false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillConvertGridElementEffectParam:GetEffectType()
   return SkillEffectType.ConvertGridElement
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectParam.GetSourceGridElement = function(self)
-  -- function num : 0_2
+function SkillConvertGridElementEffectParam:GetSourceGridElement()
   return self._sourceGridElement
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectParam.GetTargetGridElement = function(self)
-  -- function num : 0_3
+function SkillConvertGridElementEffectParam:GetTargetGridElement()
   return self._targetGridElement
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectParam.GetTargetGridElementCount = function(self)
-  -- function num : 0_4
+function SkillConvertGridElementEffectParam:GetTargetGridElementCount()
   return self._targetCount
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectParam.NeedRandom = function(self)
-  -- function num : 0_5
+function SkillConvertGridElementEffectParam:NeedRandom()
   return self._random
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectParam.IsIgnoreBlock = function(self)
-  -- function num : 0_6
+function SkillConvertGridElementEffectParam:IsIgnoreBlock()
   return self._ignoreBlock
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectParam.GetLegendPowerCount = function(self)
-  -- function num : 0_7
+function SkillConvertGridElementEffectParam:GetLegendPowerCount()
   return self._legendPowerCount
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectParam.IsConvertToCasterElement = function(self)
-  -- function num : 0_8
+function SkillConvertGridElementEffectParam:IsConvertToCasterElement()
   return self._convertToCasterElement
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectParam.IsConvertToTeamLeaderElement = function(self)
-  -- function num : 0_9
+function SkillConvertGridElementEffectParam:IsConvertToTeamLeaderElement()
   return self._convertToTeamLeaderElement
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectParam.IsUseTeamElementCount = function(self)
-  -- function num : 0_10
+function SkillConvertGridElementEffectParam:IsUseTeamElementCount()
   return self._useTeamElementCount
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectParam.IsSaveTetrisIndex = function(self)
-  -- function num : 0_11
+function SkillConvertGridElementEffectParam:IsSaveTetrisIndex()
   return self._saveTetrisIndex
 end
-
-

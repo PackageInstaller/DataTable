@@ -1,74 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/UnityEngine/Profiler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local LuaProfiler = LuaProfiler
+local LuaProfiler = _ENV.LuaProfiler
 local ffnames = {
-event = {[20] = "_xpcall.__call", [142] = "event.__call"}
-, 
-slot = {[11] = "slot.__call"}
-, 
-MainScene = {[250] = "MainScene.Update"}
+  event = {
+    [20] = "_xpcall.__call",
+    [142] = "event.__call"
+  },
+  slot = {
+    [11] = "slot.__call"
+  },
+  MainScene = {
+    [250] = "MainScene.Update"
+  }
 }
-local blacklist = {ipairs_aux = 1, ["_xpcall.__call"] = 1, unknow = 1}
+local blacklist = {
+  ipairs_aux = 1,
+  ["_xpcall.__call"] = 1,
+  unknow = 1
+}
 local profiler = {mark = 1, cache = 1}
 local stacktrace = {}
-profiler.scan = function(self, t, name)
-  -- function num : 0_0 , upvalues : _ENV, blacklist
-  if (self.mark)[t] then
-    return 
-  end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
 
-  ;
-  (self.mark)[t] = true
-  for k,v in pairs(t) do
+function profiler:scan(t, name)
+  if self.mark[t] then
+    return
+  end
+  self.mark[t] = true
+  for k, v in pairs(t) do
     if type(k) == "string" then
       if type(v) == "function" then
         local str = k
         if name then
           str = name .. "." .. str
         end
-        -- DECOMPILER ERROR at PC39: Confused about usage of register: R9 in 'UnsetPending'
-
         if not blacklist[str] and k ~= "__index" and k ~= "__newindex" then
-          (self.cache)[v] = {name = str, id = -1}
+          self.cache[v] = {name = str, id = -1}
         end
-      else
-        do
-          do
-            if type(v) == "table" and not (self.mark)[v] then
-              self:scan(v, k)
-            end
-            if (name and k == tolua.gettag) or k == tolua.settag then
-              self:scan(v, name)
-            end
-            -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+      elseif type(v) == "table" and not self.mark[v] then
+        self:scan(v, k)
       end
+    elseif name and k == tolua.gettag or k == tolua.settag then
+      self:scan(v, name)
     end
   end
 end
 
-profiler.scanlibs = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function profiler:scanlibs()
   local t = package.loaded
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.mark)[t] = true
-  for k,v in pairs(t) do
+  self.mark[t] = true
+  for k, v in pairs(t) do
     if type(k) == "string" and type(v) == "table" then
       self:scan(v, k)
       local mt = getmetatable(v)
@@ -79,10 +57,9 @@ profiler.scanlibs = function(self)
   end
 end
 
-local findstack = function(func)
-  -- function num : 0_2 , upvalues : stacktrace, _ENV
+local function findstack(func)
   local pos = #stacktrace + 1
-  for i,v in ipairs(stacktrace) do
+  for i, v in ipairs(stacktrace) do
     if v == func then
       pos = i
     end
@@ -90,198 +67,152 @@ local findstack = function(func)
   return pos
 end
 
-local jitreturn = function(count)
-  -- function num : 0_3 , upvalues : stacktrace, _ENV, findstack, LuaProfiler
+local function jitreturn(count)
   local top = #stacktrace
-  if top > 0 then
-    local ar = (debug.getinfo)(5, "f")
+  if 0 < top then
+    local ar = debug.getinfo(5, "f")
     if ar then
       local func = ar.func
       local index = findstack(func)
       if top < index then
-        ar = (debug.getinfo)(6, "f")
+        ar = debug.getinfo(6, "f")
         if ar then
           func = ar.func
+          index = findstack(func) or index
         end
       end
-      if not findstack(func) then
-        for i = index + 1, top do
-          (table.remove)(stacktrace)
-          ;
-          (LuaProfiler.EndSample)()
-        end
+      for i = index + 1, top do
+        table.remove(stacktrace)
+        LuaProfiler.EndSample()
       end
     end
   end
 end
 
-local BeginSample = function(name, func, cache)
-  -- function num : 0_4 , upvalues : jitreturn, _ENV, stacktrace, LuaProfiler
+local function BeginSample(name, func, cache)
   jitreturn()
-  ;
-  (table.insert)(stacktrace, func)
+  table.insert(stacktrace, func)
   if cache.id == -1 then
     cache.name = name
-    cache.id = (LuaProfiler.GetID)(name)
+    cache.id = LuaProfiler.GetID(name)
   end
-  ;
-  (LuaProfiler.BeginSample)(cache.id)
+  LuaProfiler.BeginSample(cache.id)
 end
 
-local BeginSampleNick = function(name, func, cache)
-  -- function num : 0_5 , upvalues : jitreturn, _ENV, stacktrace, LuaProfiler
+local function BeginSampleNick(name, func, cache)
   jitreturn()
-  ;
-  (table.insert)(stacktrace, func)
+  table.insert(stacktrace, func)
   local id = -1
   if cache.nick == nil then
     cache.nick = {}
   end
-  id = (cache.nick)[name]
+  id = cache.nick[name]
   if not id then
-    id = (LuaProfiler.GetID)(name)
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (cache.nick)[name] = id
+    id = LuaProfiler.GetID(name)
+    cache.nick[name] = id
   end
-  ;
-  (LuaProfiler.BeginSample)(id)
+  LuaProfiler.BeginSample(id)
 end
 
-profiler_hook = function(event, line)
-  -- function num : 0_6 , upvalues : _ENV, profiler, blacklist, BeginSampleNick, BeginSample, ffnames, stacktrace, LuaProfiler, findstack
+function profiler_hook(event, line)
   if event == "call" then
-    local name = nil
-    local func = ((debug.getinfo)(2, "f")).func
-    local cache = (profiler.cache)[func]
+    local name
+    local func = debug.getinfo(2, "f").func
+    local cache = profiler.cache[func]
     if cache then
       name = cache.name
     end
     if blacklist[name] then
-      return 
+      return
     end
     if name == "event.__call" then
-      local ar = (debug.getinfo)(2, "n")
+      local ar = debug.getinfo(2, "n")
       BeginSampleNick(ar.name or name, func, cache)
+    elseif name then
+      BeginSample(name, func, cache)
     else
-      do
-        if name then
-          BeginSample(name, func, cache)
-        else
-          local ar = (debug.getinfo)(2, "Sn")
-          local method = ar.name
-          local linedefined = ar.linedefined
-          if not cache then
-            cache = {name = "unknow", id = -1}
-            -- DECOMPILER ERROR at PC56: Confused about usage of register: R8 in 'UnsetPending'
-
-            ;
-            (profiler.cache)[func] = cache
-          end
-          if ar.short_src == "[C]" then
-            if method == "__index" or method == "__newindex" then
-              return 
-            end
-            local name = tostring(func)
-            local index = name:match("function: builtin#(%d+)")
-            if not index then
-              if method then
-                name = method
-                BeginSample(method, func, cache)
-              else
-                if linedefined ~= -1 then
-                  name = ar.short_src .. linedefined
-                  BeginSample(name, func, cache)
-                end
-              end
-            else
-              if not blacklist[name] then
-                BeginSample(name, func, cache)
-              end
-            end
-          else
-            do
-              if linedefined ~= -1 or method then
-                local short_src = ar.short_src
-                if not method then
-                  method = linedefined
-                end
-                local name = nil
-                name = short_src:match("([^/\\]+)%.%w+$")
-                if not name then
-                  name = short_src:match("([^/\\]+)$")
-                end
-                local ffname = ffnames[name]
-                if ffname then
-                  name = ffname[linedefined]
-                else
-                  name = name .. "." .. method
-                end
-                if not name then
-                  name = short_src .. "." .. method
-                end
-                BeginSample(name, func, cache)
-              else
-                do
-                  do
-                    BeginSample(name, func, cache)
-                    if event == "return" then
-                      local top = #stacktrace
-                      if top == 0 then
-                        return 
-                      end
-                      local ar = (debug.getinfo)(2, "f")
-                      if ar.func == stacktrace[top] then
-                        (table.remove)(stacktrace)
-                        ;
-                        (LuaProfiler.EndSample)()
-                      else
-                        local index = findstack(ar.func)
-                        if top < index then
-                          return 
-                        end
-                        for i = index, top do
-                          (table.remove)(stacktrace)
-                          ;
-                          (LuaProfiler.EndSample)()
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
+      local ar = debug.getinfo(2, "Sn")
+      local method = ar.name
+      local linedefined = ar.linedefined
+      if not cache then
+        cache = {name = "unknow", id = -1}
+        profiler.cache[func] = cache
+      end
+      if ar.short_src == "[C]" then
+        if method == "__index" or method == "__newindex" then
+          return
         end
+        local name = tostring(func)
+        local index = name:match("function: builtin#(%d+)")
+        if not index then
+          if method then
+            name = method
+            BeginSample(method, func, cache)
+          elseif linedefined ~= -1 then
+            name = ar.short_src .. linedefined
+            BeginSample(name, func, cache)
+          end
+        elseif not blacklist[name] then
+          BeginSample(name, func, cache)
+        end
+      elseif linedefined ~= -1 or method then
+        local short_src = ar.short_src
+        method = method or linedefined
+        local name
+        name = short_src:match("([^/\\]+)%.%w+$")
+        name = name or short_src:match("([^/\\]+)$")
+        local ffname = ffnames[name]
+        if ffname then
+          name = ffname[linedefined]
+        else
+          name = name .. "." .. method
+        end
+        name = name or short_src .. "." .. method
+        BeginSample(name, func, cache)
+      else
+        BeginSample(name, func, cache)
+      end
+    end
+  elseif event == "return" then
+    local top = #stacktrace
+    if top == 0 then
+      return
+    end
+    local ar = debug.getinfo(2, "f")
+    if ar.func == stacktrace[top] then
+      table.remove(stacktrace)
+      LuaProfiler.EndSample()
+    else
+      local index = findstack(ar.func)
+      if top < index then
+        return
+      end
+      for i = index, top do
+        table.remove(stacktrace)
+        LuaProfiler.EndSample()
       end
     end
   end
 end
 
-profiler.start = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function profiler:start()
   self.mark = {}
   self.cache = {__mode = "k"}
   self:scan(_G, nil)
   self:scanlibs()
   self.mark = nil
-  ;
-  (debug.sethook)(profiler_hook, "cr", 0)
+  debug.sethook(profiler_hook, "cr", 0)
 end
 
-profiler.print = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  for k,v in pairs(self.cache) do
-    (Log.debug)(v.name)
+function profiler:print()
+  for k, v in pairs(self.cache) do
+    Log.debug(v.name)
   end
 end
 
-profiler.stop = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (debug.sethook)(nil)
+function profiler:stop()
+  debug.sethook(nil)
   self.cache = nil
 end
 
 return profiler
-

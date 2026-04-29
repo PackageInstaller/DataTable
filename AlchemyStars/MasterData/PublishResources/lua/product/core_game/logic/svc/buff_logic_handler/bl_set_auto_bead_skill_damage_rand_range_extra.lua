@@ -1,41 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_auto_bead_skill_damage_rand_range_extra.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetAutoBeadSkillDamageRandRangeExtra", BuffLogicBase)
 BuffLogicSetAutoBeadSkillDamageRandRangeExtra = BuffLogicSetAutoBeadSkillDamageRandRangeExtra
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetAutoBeadSkillDamageRandRangeExtra.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetAutoBeadSkillDamageRandRangeExtra:Constructor(buffInstance, logicParam)
   self._rangeExtra = logicParam.rangeExtra or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetAutoBeadSkillDamageRandRangeExtra.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
+function BuffLogicSetAutoBeadSkillDamageRandRangeExtra:DoLogic(notify)
+  local e = self._buffInstance:Entity()
   local buffComponent = e:BuffComponent()
   buffComponent:SetBuffValue("AutoBeadDamageRandRangeExtra", self._rangeExtra)
 end
 
 _class("BuffLogicResetAutoBeadSkillDamageRandRangeExtra", BuffLogicBase)
 BuffLogicResetAutoBeadSkillDamageRandRangeExtra = BuffLogicResetAutoBeadSkillDamageRandRangeExtra
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetAutoBeadSkillDamageRandRangeExtra.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetAutoBeadSkillDamageRandRangeExtra:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetAutoBeadSkillDamageRandRangeExtra.DoLogic = function(self, notify)
-  -- function num : 0_3
-  local e = (self._buffInstance):Entity()
+function BuffLogicResetAutoBeadSkillDamageRandRangeExtra:DoLogic(notify)
+  local e = self._buffInstance:Entity()
   local buffComponent = e:BuffComponent()
   buffComponent:SetBuffValue("AutoBeadDamageRandRangeExtra", nil)
 end
-
-

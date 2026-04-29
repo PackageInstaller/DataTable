@@ -1,49 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_damage_by_select_piece_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_DamageBySelectPieceCount", SkillEffectCalc_Base)
 SkillEffectCalc_DamageBySelectPieceCount = SkillEffectCalc_DamageBySelectPieceCount
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_DamageBySelectPieceCount.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_DamageBySelectPieceCount:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DamageBySelectPieceCount.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectService = (self._world):GetService("SkillEffectCalc")
+function SkillEffectCalc_DamageBySelectPieceCount:DoSkillEffectCalculator(skillEffectCalcParam)
+  local skillEffectService = self._world:GetService("SkillEffectCalc")
   local skillEffectParam = skillEffectCalcParam.skillEffectParam
-  local attacker = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local attacker = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local attackPos = skillEffectCalcParam.attackPos
   local gridPos = skillEffectCalcParam.gridPos
   local damageStageIndex = skillEffectParam:GetSkillEffectDamageStageIndex()
   local pieceTypeList = skillEffectParam:GetPieceTypeList()
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local pieceRange = boardServiceLogic:GetGridPosByPieceType(pieceTypeList)
   local basePercent = skillEffectParam:GetBaseValue()
   local changeValue = skillEffectParam:GetChangeValue()
-  local addPercent = changeValue * (table.count)(pieceRange)
+  local addPercent = changeValue * table.count(pieceRange)
   local damageParam = SkillDamageEffectParam:New({
-percent = {basePercent}
-, formulaID = skillEffectParam:GetDamageFormulaID(), damageStageIndex = damageStageIndex, addPercent = addPercent})
+    percent = {basePercent},
+    formulaID = skillEffectParam:GetDamageFormulaID(),
+    damageStageIndex = damageStageIndex,
+    addPercent = addPercent
+  })
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
-    local target = (self._world):GetEntityByID(targetID)
+  for _, targetID in ipairs(targets) do
+    local target = self._world:GetEntityByID(targetID)
     if target then
       local nTotalDamage, listDamageInfo = skillEffectService:ComputeSkillDamage(attacker, attackPos, target, gridPos, skillEffectCalcParam.skillID, damageParam, SkillEffectType.Damage, damageStageIndex)
       local skillResult = skillEffectService:NewSkillDamageEffectResult(gridPos, targetID, nTotalDamage, listDamageInfo, damageStageIndex)
-      ;
-      (table.insert)(results, skillResult)
+      table.insert(results, skillResult)
     end
   end
   return results
 end
-
-

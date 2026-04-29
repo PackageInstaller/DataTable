@@ -1,54 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/homelandpet_behavior_factory.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandPetBehaviorFactory", Object)
 HomelandPetBehaviorFactory = HomelandPetBehaviorFactory
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetBehaviorFactory.Constructor = function(self)
-  -- function num : 0_0
+function HomelandPetBehaviorFactory:Constructor()
   self._behaviors = {}
   self:_Register()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFactory._RegistorBehavior = function(self, behaviorType, behavior)
-  -- function num : 0_1 , upvalues : _ENV
-  local _behavior = (self._behaviors)[behaviorType]
-  if _behavior ~= nil then
-    (Log.error)("HomelandPetBehavior is exist! HomelandPetBehaviorType:", behaviorType, ", Behavior:", _behavior)
-    return 
+function HomelandPetBehaviorFactory:_RegistorBehavior(behaviorType, behavior)
+  local _behavior = self._behaviors[behaviorType]
+  if nil ~= _behavior then
+    Log.error("HomelandPetBehavior is exist! HomelandPetBehaviorType:", behaviorType, ", Behavior:", _behavior)
+    return
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._behaviors)[behaviorType] = behavior
+  self._behaviors[behaviorType] = behavior
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFactory.CreateHomelandPetBehavior = function(self, behaviorType, pet)
-  -- function num : 0_2 , upvalues : _ENV
-  local type = (self._behaviors)[behaviorType]
+function HomelandPetBehaviorFactory:CreateHomelandPetBehavior(behaviorType, pet)
+  local type = self._behaviors[behaviorType]
   if not type then
-    (Log.error)("HomelandPetBehavior is not exist! HomelandPetBehaviorType:", behaviorType)
-    return 
+    Log.error("HomelandPetBehavior is not exist! HomelandPetBehaviorType:", behaviorType)
+    return
   end
   local behavior = type:New(behaviorType, pet)
   if not behavior then
-    (Log.error)("HomelandPetBehavior create fail! HomelandPetBehaviorType:", behaviorType)
-    return 
+    Log.error("HomelandPetBehavior create fail! HomelandPetBehaviorType:", behaviorType)
+    return
   end
   return behavior
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFactory._Register = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandPetBehaviorFactory:_Register()
   self:_RegistorBehavior(HomelandPetBehaviorType.Free, HomelandPetBehaviorFree)
   self:_RegistorBehavior(HomelandPetBehaviorType.Roam, HomelandPetBehaviorRoam)
   self:_RegistorBehavior(HomelandPetBehaviorType.InteractingPlayer, HomelandPetBehaviorInteractingPlayer)
@@ -65,5 +46,3 @@ HomelandPetBehaviorFactory._Register = function(self)
   self:_RegistorBehavior(HomelandPetBehaviorType.FishingPrepare, HomelandPetBehaviorFishingPrepare)
   self:_RegistorBehavior(HomelandPetBehaviorType.FishingMatch, HomelandPetBehaviorFishingMatch)
 end
-
-

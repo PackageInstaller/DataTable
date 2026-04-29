@@ -1,26 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_feature_day_night_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeFeatureDayNightData", BuffLogicBase)
 BuffLogicChangeFeatureDayNightData = BuffLogicChangeFeatureDayNightData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeFeatureDayNightData.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeFeatureDayNightData:Constructor(buffInstance, logicParam)
   self._toState = logicParam.toState
   self._restRound = logicParam.restRound
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeFeatureDayNightData.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+function BuffLogicChangeFeatureDayNightData:DoLogic()
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   local oldState, newState, restRound = lsvcFeature:ModifyDayNightData(self._toState, self._restRound)
   local buffResult = BuffResultChangeFeatureDayData:New(oldState, newState, restRound)
   return buffResult
 end
-
-

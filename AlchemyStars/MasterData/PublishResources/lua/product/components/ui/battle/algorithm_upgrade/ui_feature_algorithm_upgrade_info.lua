@@ -1,54 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/algorithm_upgrade/ui_feature_algorithm_upgrade_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFeatureAlgorithmUpgradeInfo", UIController)
 UIFeatureAlgorithmUpgradeInfo = UIFeatureAlgorithmUpgradeInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFeatureAlgorithmUpgradeInfo.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIFeatureAlgorithmUpgradeInfo:OnShow(uiParams)
   self._auData = uiParams[1]
   self:InitWidget()
   self:_RefreshContent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureAlgorithmUpgradeInfo.InitWidget = function(self)
-  -- function num : 0_1
+function UIFeatureAlgorithmUpgradeInfo:InitWidget()
   self._titleText = self:GetUIComponent("UILocalizationText", "TitleText")
   self._content = self:GetUIComponent("UILocalizationText", "Content")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureAlgorithmUpgradeInfo.DotBGOnClick = function(self)
-  -- function num : 0_2
+function UIFeatureAlgorithmUpgradeInfo:DotBGOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureAlgorithmUpgradeInfo._RefreshContent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local activeRelics = (InnerGameHelperRender.GetFeatureAUActiveRelics)()
+function UIFeatureAlgorithmUpgradeInfo:_RefreshContent()
+  local activeRelics = InnerGameHelperRender.GetFeatureAUActiveRelics()
   if self._auData then
-    local relicIDList = (self._auData):GetRelicIDList()
-    local relicDescList = (self._auData):GetRelicDescList()
+    local relicIDList = self._auData:GetRelicIDList()
+    local relicDescList = self._auData:GetRelicDescList()
     if #relicDescList ~= #relicIDList then
-      (Log.error)("AlgorithmUpgrade relic id and desc count is not match!")
-      return 
+      Log.error("AlgorithmUpgrade relic id and desc count is not match!")
+      return
     end
     local validColorStrFormat = "<color=#E2C017>%s</color>"
     if relicIDList then
       local paramCount = #relicIDList
       local contentStr = ""
-      for i,relicID in ipairs(relicIDList) do
-        local descStr = (StringTable.Get)(relicDescList[i])
-        if (table.icontains)(activeRelics, relicID) then
-          descStr = (string.format)(validColorStrFormat, descStr)
+      for i, relicID in ipairs(relicIDList) do
+        local descStr = StringTable.Get(relicDescList[i])
+        if table.icontains(activeRelics, relicID) then
+          descStr = string.format(validColorStrFormat, descStr)
         end
         if paramCount == i then
           contentStr = contentStr .. descStr
@@ -56,10 +40,7 @@ UIFeatureAlgorithmUpgradeInfo._RefreshContent = function(self)
           contentStr = contentStr .. descStr .. "\n"
         end
       end
-      ;
-      (self._content):SetText(contentStr)
+      self._content:SetText(contentStr)
     end
   end
 end
-
-

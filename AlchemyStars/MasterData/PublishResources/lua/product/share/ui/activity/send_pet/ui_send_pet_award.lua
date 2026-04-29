@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/send_pet/ui_send_pet_award.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISendPetAward", UICustomWidget)
 UISendPetAward = UISendPetAward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISendPetAward.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UISendPetAward:OnShow(uiParam)
   self._posRect = self:GetUIComponent("RectTransform", "pos")
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._countTex = self:GetUIComponent("UILocalizationText", "Count")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetAward.SetData = function(self, state, roleAsset, progress, isLastAward, isRed, pos, callback)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R8 in 'UnsetPending'
-
+function UISendPetAward:SetData(state, roleAsset, progress, isLastAward, isRed, pos, callback)
   if pos then
-    (self._posRect).anchoredPosition = Vector2(pos, 0)
+    self._posRect.anchoredPosition = Vector2(pos, 0)
   end
   self._state = state
   self._callback = callback
@@ -31,17 +19,12 @@ UISendPetAward.SetData = function(self, state, roleAsset, progress, isLastAward,
   self._isRed = isRed
   self._IconGO = self:GetGameObject("Icon")
   self._IconBigGO = self:GetGameObject("IconBig")
-  ;
-  (self._IconGO):SetActive(not isLastAward)
-  ;
-  (self._IconBigGO):SetActive(isLastAward)
+  self._IconGO:SetActive(not isLastAward)
+  self._IconBigGO:SetActive(isLastAward)
   self:DoShow()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetAward.DoShow = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISendPetAward:DoShow()
   local isbig = ""
   if self._isLastAward then
     isbig = "Big"
@@ -56,93 +39,63 @@ UISendPetAward.DoShow = function(self)
   self._takeGO = self:GetGameObject("take" .. isbig)
   self._overGO = self:GetGameObject("over" .. isbig)
   self._redGO = self:GetGameObject("red" .. isbig)
-  local cfg_item = (Cfg.cfg_item)[(self._roleAsset).assetid]
+  local cfg_item = Cfg.cfg_item[self._roleAsset.assetid]
   local icon = cfg_item.Icon
-  ;
-  (self._iconLoader):LoadImage(icon)
+  self._iconLoader:LoadImage(icon)
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetAward.Refresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._awardGO):SetActive(not self._isLastAward)
-  ;
-  (self._awardBigGO):SetActive(self._isLastAward)
-  ;
-  (self._doingGO):SetActive(false)
-  ;
-  (self._overGO):SetActive(false)
-  ;
-  (self._takeGO):SetActive(false)
-  ;
-  (self._redGO):SetActive(false)
-  ;
-  (self._countTex):SetText((self._roleAsset).count)
+function UISendPetAward:Refresh()
+  self._awardGO:SetActive(not self._isLastAward)
+  self._awardBigGO:SetActive(self._isLastAward)
+  self._doingGO:SetActive(false)
+  self._overGO:SetActive(false)
+  self._takeGO:SetActive(false)
+  self._redGO:SetActive(false)
+  self._countTex:SetText(self._roleAsset.count)
   if self._state == QuestStatus.QUEST_Completed then
     local finishColor = "#FFE8C9"
-    local str = (UIActivityHelper.GetColorText)(finishColor, self._progress)
-    ;
-    (self._porgressTex):SetText(str)
+    local str = UIActivityHelper.GetColorText(finishColor, self._progress)
+    self._porgressTex:SetText(str)
+  elseif self._state == QuestStatus.QUEST_Taken then
+    local finishColor = "#9C9C9C"
+    local str = UIActivityHelper.GetColorText(finishColor, self._progress)
+    self._porgressTex:SetText(str)
+  elseif self._state == QuestStatus.QUEST_Accepted then
+    local finishColor = "#FFFEFE"
+    local str = UIActivityHelper.GetColorText(finishColor, self._progress)
+    self._porgressTex:SetText(str)
+  end
+  self._countTex:SetText(self._roleAsset.count)
+  if self._state == QuestStatus.QUEST_Completed then
+    self._redGO:SetActive(true)
+    self._takeGO:SetActive(true)
+  elseif self._state == QuestStatus.QUEST_Accepted then
+    self._doingGO:SetActive(true)
   else
-    do
-      if self._state == QuestStatus.QUEST_Taken then
-        local finishColor = "#9C9C9C"
-        local str = (UIActivityHelper.GetColorText)(finishColor, self._progress)
-        ;
-        (self._porgressTex):SetText(str)
-      else
-        do
-          if self._state == QuestStatus.QUEST_Accepted then
-            local finishColor = "#FFFEFE"
-            local str = (UIActivityHelper.GetColorText)(finishColor, self._progress)
-            ;
-            (self._porgressTex):SetText(str)
-          end
-          do
-            ;
-            (self._countTex):SetText((self._roleAsset).count)
-            if self._state == QuestStatus.QUEST_Completed then
-              (self._redGO):SetActive(true)
-              ;
-              (self._takeGO):SetActive(true)
-            else
-              if self._state == QuestStatus.QUEST_Accepted then
-                (self._doingGO):SetActive(true)
-              else
-                if self._state == QuestStatus.QUEST_Taken then
-                  (self._overGO):SetActive(true)
-                end
-              end
-            end
-          end
-        end
-      end
+    if self._state == QuestStatus.QUEST_Taken then
+      self._overGO:SetActive(true)
+    else
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetAward.AwardOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  if self._state == QuestStatus.QUEST_Completed and self._callback then
-    (self._callback)()
+function UISendPetAward:AwardOnClick(go)
+  if self._state == QuestStatus.QUEST_Completed then
+    if self._callback then
+      self._callback()
+    end
+  else
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCampaignCenterShowItemTips, self._roleAsset.assetid, go.transform.position)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCampaignCenterShowItemTips, (self._roleAsset).assetid, (go.transform).position)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetAward.AwardBigOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  if self._state == QuestStatus.QUEST_Completed and self._callback then
-    (self._callback)()
+function UISendPetAward:AwardBigOnClick(go)
+  if self._state == QuestStatus.QUEST_Completed then
+    if self._callback then
+      self._callback()
+    end
+  else
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCampaignCenterShowItemTips, self._roleAsset.assetid, go.transform.position)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCampaignCenterShowItemTips, (self._roleAsset).assetid, (go.transform).position)
 end
-
-

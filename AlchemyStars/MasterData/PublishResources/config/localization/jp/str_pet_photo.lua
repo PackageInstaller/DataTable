@@ -1,8 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/str_pet_photo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_pet_photo_character_star_en = "CHARACTER/STAR", str_pet_photo_character_star = "表示光霊", str_pet_photo_default_state = "通常形態", str_pet_photo_awaken_state = "覚醒", str_pet_photo_awaken_state_tip = "覚醒形態"}
+local config = {
+  str_pet_photo_character_star_en = "CHARACTER/STAR",
+  str_pet_photo_character_star = "表示光霊",
+  str_pet_photo_default_state = "通常形態",
+  str_pet_photo_awaken_state = "覚醒",
+  str_pet_photo_awaken_state_tip = "覚醒形態"
+}
 return config
-

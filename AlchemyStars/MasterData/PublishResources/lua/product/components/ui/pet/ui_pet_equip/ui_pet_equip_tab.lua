@@ -1,74 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipTab", UICustomWidget)
 UIPetEquipTab = UIPetEquipTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipTab.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetEquipTab:OnShow(uiParams)
   self:InitWidget()
   self._atlas = self:GetAsset("UIPetEquip.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipTab.InitWidget = function(self)
-  -- function num : 0_1
+function UIPetEquipTab:InitWidget()
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self.imageBg = self:GetUIComponent("Image", "imgBg")
   self.redPointGo = self:GetGameObject("redPoint")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipTab.SetData = function(self, name, clickCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPetEquipTab:SetData(name, clickCallback)
   self.clickCallback = clickCallback
-  ;
-  (self.txtName):SetText((StringTable.Get)(name))
+  self.txtName:SetText(StringTable.Get(name))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipTab.SetSelect = function(self, bSelect)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIPetEquipTab:SetSelect(bSelect)
   if bSelect then
-    (self.imageBg).sprite = (self._atlas):GetSprite("spirit_lg_btn02")
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.txtName).color = Color(1, 1, 1)
+    self.imageBg.sprite = self._atlas:GetSprite("spirit_lg_btn02")
+    self.txtName.color = Color(1, 1, 1)
   else
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.imageBg).sprite = (self._atlas):GetSprite("spirit_lg_btn01")
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.txtName).color = Color(0.36862745098039, 0.36862745098039, 0.36862745098039)
+    self.imageBg.sprite = self._atlas:GetSprite("spirit_lg_btn01")
+    self.txtName.color = Color(0.3686274509803922, 0.3686274509803922, 0.3686274509803922)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipTab.BgOnClick = function(self, go)
-  -- function num : 0_4
+function UIPetEquipTab:BgOnClick(go)
   if self.clickCallback then
-    (self.clickCallback)()
+    self.clickCallback()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipTab.SetPoint = function(self, visible)
-  -- function num : 0_5
-  (self.redPointGo):SetActive(visible)
+function UIPetEquipTab:SetPoint(visible)
+  self.redPointGo:SetActive(visible)
 end
-
-

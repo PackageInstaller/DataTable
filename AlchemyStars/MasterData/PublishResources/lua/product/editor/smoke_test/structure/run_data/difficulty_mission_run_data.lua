@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/run_data/difficulty_mission_run_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("elemental_run_data")
 _class("DifficultyMissionRunData", TestRobotElementalRunData)
 DifficultyMissionRunData = DifficultyMissionRunData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DifficultyMissionRunData.ParseLevelData = function(self, rawargs)
-  -- function num : 0_0 , upvalues : _ENV
-  local args = (string.split)(rawargs, ",")
+function DifficultyMissionRunData:ParseLevelData(rawargs)
+  local args = string.split(rawargs, ",")
   self._nodeID = tonumber(args[1])
   self._missionID = tonumber(args[2])
   self._mission_component_id = tonumber(args[3])
@@ -20,63 +13,37 @@ DifficultyMissionRunData.ParseLevelData = function(self, rawargs)
   self:ParseConfigID()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionRunData.GetMissionID = function(self)
-  -- function num : 0_1
+function DifficultyMissionRunData:GetMissionID()
   return self._missionID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionRunData.GetNodeID = function(self)
-  -- function num : 0_2
+function DifficultyMissionRunData:GetNodeID()
   return self._nodeID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionRunData.GetMissionComponentID = function(self)
-  -- function num : 0_3
+function DifficultyMissionRunData:GetMissionComponentID()
   return self._mission_component_id
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionRunData.GetCampaignComponentCfgID = function(self)
-  -- function num : 0_4
+function DifficultyMissionRunData:GetCampaignComponentCfgID()
   return self._campaign_component_cfg_id
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionRunData.GetComponentConfigID = function(self)
-  -- function num : 0_5
+function DifficultyMissionRunData:GetComponentConfigID()
   return self._componentConfigID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionRunData.GetNeedMissionID = function(self)
-  -- function num : 0_6
+function DifficultyMissionRunData:GetNeedMissionID()
   return self._needMissionID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionRunData.ParseConfigID = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function DifficultyMissionRunData:ParseConfigID()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   if self._componentConfigID then
-    self._campaignID = campaignModule:ParseCfgComponentID(self._componentConfigID)
+    self._campaignID, self._componentID, self._componentType = campaignModule:ParseCfgComponentID(self._componentConfigID)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionRunData.GetCampaignID = function(self)
-  -- function num : 0_8
+function DifficultyMissionRunData:GetCampaignID()
   return self._campaignID
 end
-
-

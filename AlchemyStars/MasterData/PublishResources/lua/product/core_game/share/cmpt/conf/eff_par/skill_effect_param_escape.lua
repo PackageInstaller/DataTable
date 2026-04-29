@@ -1,40 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_escape.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParam_Escape", SkillEffectParamBase)
 SkillEffectParam_Escape = SkillEffectParam_Escape
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_Escape.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_Escape:Constructor(t)
   self._escapeType = t.escapeType or 1
   self._escapeParam = t.escapeParam
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_Escape.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_Escape:GetEffectType()
   return SkillEffectType.Escape
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_Escape.GetEscapeType = function(self)
-  -- function num : 0_2
+function SkillEffectParam_Escape:GetEscapeType()
   return self._escapeType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_Escape.GetEscapeParam = function(self)
-  -- function num : 0_3
+function SkillEffectParam_Escape:GetEscapeParam()
   return self._escapeParam
 end
 
-local EscapeType = {SkillTarget = 1, Chess = 2, MAX = 9}
+local EscapeType = {
+  SkillTarget = 1,
+  Chess = 2,
+  MAX = 9
+}
 _enum("EscapeType", EscapeType)
-

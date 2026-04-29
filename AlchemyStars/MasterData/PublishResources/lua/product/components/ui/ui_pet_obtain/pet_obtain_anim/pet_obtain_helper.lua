@@ -1,55 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_obtain/pet_obtain_anim/pet_obtain_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 PetObtainHelper = {}
--- DECOMPILER ERROR at PC4: Confused about usage of register: R0 in 'UnsetPending'
 
-PetObtainHelper.Init = function()
-  -- function num : 0_0
+function PetObtainHelper.Init()
 end
 
-local chsize = function(char)
-  -- function num : 0_1
+local function chsize(char)
   if not char then
     return 0
+  elseif 240 < char then
+    return 4
+  elseif 225 < char then
+    return 3
+  elseif 192 < char then
+    return 2
   else
-    if char > 240 then
-      return 4
-    else
-      if char > 225 then
-        return 3
-      else
-        if char > 192 then
-          return 2
-        else
-          return 1
-        end
-      end
-    end
+    return 1
   end
 end
 
--- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-PetObtainHelper.InsertChar = function(str, char)
-  -- function num : 0_2 , upvalues : _ENV, chsize
+function PetObtainHelper.InsertChar(str, char)
   if str == nil then
-    return 
+    return
   end
   local text = ""
   local currentIndex = 1
   while currentIndex <= #str do
-    local byte = (string.byte)(str, currentIndex)
+    local byte = string.byte(str, currentIndex)
     local len = chsize(byte)
-    local s = (string.sub)(str, currentIndex, currentIndex + len - 1)
+    local s = string.sub(str, currentIndex, currentIndex + len - 1)
     text = text .. s .. char
     currentIndex = currentIndex + len
   end
-  do
-    return text
-  end
+  return text
 end
-
-

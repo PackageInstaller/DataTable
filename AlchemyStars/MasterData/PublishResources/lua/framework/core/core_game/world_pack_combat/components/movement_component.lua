@@ -1,81 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_combat/components/movement_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MovementComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-MovementComponent.Constructor = function(self, movement)
-  -- function num : 0_0
+function MovementComponent:Constructor(movement)
   self.movementImp = movement or nil
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-MovementComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_1
+function MovementComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-MovementComponent.GetNextPosition = function(self)
-  -- function num : 0_2
-  return (self.movementImp).NextPosition
+function MovementComponent:GetNextPosition()
+  return self.movementImp.NextPosition
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-MovementComponent.GetNextDirection = function(self)
-  -- function num : 0_3
-  return (self.movementImp).NextDirection
+function MovementComponent:GetNextDirection()
+  return self.movementImp.NextDirection
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-MovementComponent.Update = function(self, locationCmpt, delta_time)
-  -- function num : 0_4
-  return (self.movementImp):Update(self.WEC_OwnerEntity, locationCmpt.Position, locationCmpt.Direction, delta_time)
+function MovementComponent:Update(locationCmpt, delta_time)
+  return self.movementImp:Update(self.WEC_OwnerEntity, locationCmpt.Position, locationCmpt.Direction, delta_time)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-MovementComponent.IsFinish = function(self)
-  -- function num : 0_5
-  do return self.movementImp ~= nil and (self.movementImp):IsFinish() end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function MovementComponent:IsFinish()
+  return self.movementImp == nil or self.movementImp:IsFinish()
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Movement = function(self)
-  -- function num : 0_6
-  return self:GetComponent((self.WEComponentsEnum).Movement)
+function Entity:Movement()
+  return self:GetComponent(self.WEComponentsEnum.Movement)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasMovement = function(self)
-  -- function num : 0_7
-  return self:HasComponent((self.WEComponentsEnum).Movement)
+function Entity:HasMovement()
+  return self:HasComponent(self.WEComponentsEnum.Movement)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceMovement = function(self, movement)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Movement
+function Entity:ReplaceMovement(movement)
+  local index = self.WEComponentsEnum.Movement
   local component = MovementComponent:New(movement)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveMovement = function(self)
-  -- function num : 0_9
+function Entity:RemoveMovement()
   if self:HasMovement() then
-    self:RemoveComponent((self.WEComponentsEnum).Movement)
+    self:RemoveComponent(self.WEComponentsEnum.Movement)
   end
 end
-
-

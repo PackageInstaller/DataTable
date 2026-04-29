@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_share_widget.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShareWidget", Object)
 UIShareWidget = UIShareWidget
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShareWidget.InitShare = function(self, controller, storyComponent, shareTipName)
-  -- function num : 0_0 , upvalues : _ENV
-  if not storyComponent or not ((GameGlobal.GetModule)(ShareModule)):CanShare() then
-    return 
+function UIShareWidget:InitShare(controller, storyComponent, shareTipName)
+  if not storyComponent or not GameGlobal.GetModule(ShareModule):CanShare() then
+    return
   end
   self._controller = controller
   self._isMainShare = false
@@ -20,62 +13,46 @@ UIShareWidget.InitShare = function(self, controller, storyComponent, shareTipNam
   if self._shareTipName == nil then
     self._shareTipName = "shareTip"
   end
-  ;
-  (self._controller):AttachEvent(GameEventType.OnFocusAfterShareBack, self.OnShareResult, self)
+  self._controller:AttachEvent(GameEventType.OnFocusAfterShareBack, self.OnShareResult, self)
   self:CheckShareBtnActive()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShareWidget.GetShareStoryID = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local comcfgid = (self._shareStoryComponent):GetComponentCfgId()
-  local cfg = (Cfg.cfg_component_story)[comcfgid]
+function UIShareWidget:GetShareStoryID()
+  local comcfgid = self._shareStoryComponent:GetComponentCfgId()
+  local cfg = Cfg.cfg_component_story[comcfgid]
   if not cfg then
-    (Log.error)("###[UIShareWidget] cfg is nil ! id --> ", comcfgid)
-    return 
+    Log.error("###[UIShareWidget] cfg is nil ! id --> ", comcfgid)
+    return
   end
   local storyList = cfg.StoryID
   if not storyList or not next(storyList) then
-    (Log.error)("###[UIShareWidget] storyList is nil !")
-    return 
+    Log.error("###[UIShareWidget] storyList is nil !")
+    return
   end
   return storyList[1]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShareWidget.CheckShareBtnActive = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local storyInfo = (self._shareStoryComponent):GetComponentInfo()
-  local storyid = (self:GetShareStoryID())
-  -- DECOMPILER ERROR at PC5: Overwrote pending register: R3 in 'AssignReg'
-
-  local dataActive = .end
-  if storyInfo.m_recieved_reward_story and (table.count)(storyInfo.m_recieved_reward_story) > 0 then
-    dataActive = not (table.icontains)(storyInfo.m_recieved_reward_story, storyid)
+function UIShareWidget:CheckShareBtnActive()
+  local storyInfo = self._shareStoryComponent:GetComponentInfo()
+  local storyid = self:GetShareStoryID()
+  local dataActive
+  if storyInfo.m_recieved_reward_story and table.count(storyInfo.m_recieved_reward_story) > 0 then
+    dataActive = not table.icontains(storyInfo.m_recieved_reward_story, storyid)
   else
-    local storyReward = ((Cfg.cfg_campaign_story)[storyid]).RewardList
+    local storyReward = Cfg.cfg_campaign_story[storyid].RewardList
     dataActive = storyReward
   end
-  do
-    if dataActive then
-      self._shareActive = ((GameGlobal.GetModule)(ShareModule)):CanShare()
-      local goShareTip = (self._controller):GetGameObject(self._shareTipName)
-      if goShareTip ~= nil then
-        goShareTip:SetActive(self._shareActive)
-      end
-      return self._shareActive
-    end
+  self._shareActive = dataActive and GameGlobal.GetModule(ShareModule):CanShare()
+  local goShareTip = self._controller:GetGameObject(self._shareTipName)
+  if goShareTip ~= nil then
+    goShareTip:SetActive(self._shareActive)
   end
+  return self._shareActive
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShareWidget.OnShare = function(self, beginCB, endCB, shareAnchor, shareScene)
-  -- function num : 0_3 , upvalues : _ENV
-  if not self._shareStoryComponent or not ((GameGlobal.GetModule)(ShareModule)):CanShare() then
-    return 
+function UIShareWidget:OnShare(beginCB, endCB, shareAnchor, shareScene)
+  if not self._shareStoryComponent or not GameGlobal.GetModule(ShareModule):CanShare() then
+    return
   end
   if shareAnchor == nil then
     shareAnchor = ShareAnchorType.BottomRight
@@ -84,43 +61,33 @@ UIShareWidget.OnShare = function(self, beginCB, endCB, shareAnchor, shareScene)
     shareScene = ShareSceneType.CampaignKV
   end
   local lockName = "UIShareWidget::OnShare"
-  ;
-  (self._controller):StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, lockName, beginCB, _ENV, shareAnchor, endCB, shareScene
-    (self._controller):Lock(lockName)
+  self._controller:StartTask(function(TT)
+    self._controller:Lock(lockName)
     self._isMainShare = true
     beginCB()
-    local goShareTip = (self._controller):GetGameObject(self._shareTipName)
+    local goShareTip = self._controller:GetGameObject(self._shareTipName)
     if goShareTip ~= nil then
       goShareTip:SetActive(false)
     end
     YIELD(TT)
-    ;
-    (self._controller):ShowDialog("UIShare", (self._controller):GetName(), shareAnchor, function()
-      -- function num : 0_3_0_0 , upvalues : self, goShareTip, endCB
+    self._controller:ShowDialog("UIShare", self._controller:GetName(), shareAnchor, function()
       self:CheckShareBtnActive()
       if goShareTip ~= nil then
         goShareTip:SetActive(self._shareActive)
       end
       endCB(self._shareActive)
-    end
-, nil, nil, nil, shareScene)
-    ;
-    (self._controller):UnLock(lockName)
-  end
-, self)
+    end, nil, nil, nil, shareScene)
+    self._controller:UnLock(lockName)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShareWidget.OnShareResult = function(controller, shareWidget)
-  -- function num : 0_4
+function UIShareWidget.OnShareResult(controller, shareWidget)
   if not shareWidget._isMainShare then
-    return 
+    return
   end
   shareWidget._isMainShare = false
   if not shareWidget._shareActive then
-    return 
+    return
   end
   local goShareTip = controller:GetGameObject(shareWidget._shareTipName)
   if goShareTip ~= nil then
@@ -130,43 +97,28 @@ UIShareWidget.OnShareResult = function(controller, shareWidget)
   controller:StartTask(shareWidget.OnFinishShareStory, shareWidget, storyid)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShareWidget.OnFinishShareStory = function(self, TT, storyid)
-  -- function num : 0_5 , upvalues : _ENV
+function UIShareWidget:OnFinishShareStory(TT, storyid)
   local lockName = "UIShareWidget::OnFinishShareStory"
-  ;
-  (self._controller):Lock(lockName)
+  self._controller:Lock(lockName)
   local res = AsyncRequestRes:New()
-  local rewards = (self._shareStoryComponent):HandleStoryTake(TT, res, storyid)
-  ;
-  (self._controller):UnLock(lockName)
+  local rewards = self._shareStoryComponent:HandleStoryTake(TT, res, storyid)
+  self._controller:UnLock(lockName)
   if res:GetSucc() then
     self:ShowShareRewards(rewards)
   else
-    ;
-    (Log.error)("###[UIShareWidget] OnFinishStory fail, result:", res:GetResult(), " storyid:", storyid)
+    Log.error("###[UIShareWidget] OnFinishStory fail, result:", res:GetResult(), " storyid:", storyid)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShareWidget.ShowShareRewards = function(self, rewards)
-  -- function num : 0_6 , upvalues : _ENV
+function UIShareWidget:ShowShareRewards(rewards)
   if not rewards then
-    return 
+    return
   end
-  if (self._controller).view == nil then
-    return 
+  if self._controller.view == nil then
+    return
   end
-  ;
-  (self._controller):ShowDialog("UIGetItemController", rewards, function()
-    -- function num : 0_6_0 , upvalues : self
+  self._controller:ShowDialog("UIGetItemController", rewards, function()
     self:CheckShareBtnActive()
-  end
-)
-  ;
-  ((GameGlobal.UIStateManager)()):CallUIMethod("UIShare", "HideTipsTex")
+  end)
+  GameGlobal.UIStateManager():CallUIMethod("UIShare", "HideTipsTex")
 end
-
-

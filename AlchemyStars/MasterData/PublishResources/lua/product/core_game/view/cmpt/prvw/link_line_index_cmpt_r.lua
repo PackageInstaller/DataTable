@@ -1,78 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/link_line_index_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LinkLineIndexComponent", Object)
 LinkLineIndexComponent = LinkLineIndexComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LinkLineIndexComponent.Constructor = function(self, idx)
-  -- function num : 0_0
+function LinkLineIndexComponent:Constructor(idx)
   self._path_index = idx or 0
   self._entityConfigId = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkLineIndexComponent.GetPathIndex = function(self)
-  -- function num : 0_1
+function LinkLineIndexComponent:GetPathIndex()
   return self._path_index
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkLineIndexComponent.SetEntityConfigId = function(self, configId)
-  -- function num : 0_2
+function LinkLineIndexComponent:SetEntityConfigId(configId)
   self._entityConfigId = configId
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkLineIndexComponent.GetEntityConfigId = function(self)
-  -- function num : 0_3
+function LinkLineIndexComponent:GetEntityConfigId()
   return self._entityConfigId
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.LinkLineIndex = function(self)
-  -- function num : 0_4
-  return self:GetComponent((self.WEComponentsEnum).LinkLineIndex)
+function Entity:LinkLineIndex()
+  return self:GetComponent(self.WEComponentsEnum.LinkLineIndex)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasLinkLineIndex = function(self)
-  -- function num : 0_5
-  return self:HasComponent((self.WEComponentsEnum).LinkLineIndex)
+function Entity:HasLinkLineIndex()
+  return self:HasComponent(self.WEComponentsEnum.LinkLineIndex)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddLinkLineIndex = function(self, pathindex)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LinkLineIndex
+function Entity:AddLinkLineIndex(pathindex)
+  local index = self.WEComponentsEnum.LinkLineIndex
   local component = LinkLineIndexComponent:New(pathindex)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceLinkLineIndex = function(self, pathindex)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LinkLineIndex
+function Entity:ReplaceLinkLineIndex(pathindex)
+  local index = self.WEComponentsEnum.LinkLineIndex
   local component = LinkLineIndexComponent:New(pathindex)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveLinkLineIndex = function(self)
-  -- function num : 0_8
+function Entity:RemoveLinkLineIndex()
   if self:HasLinkLineIndex() then
-    self:RemoveComponent((self.WEComponentsEnum).LinkLineIndex)
+    self:RemoveComponent(self.WEComponentsEnum.LinkLineIndex)
   end
 end
-
-

@@ -1,43 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_phase_bullet_fly_caster_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillPhaseBulletFlyCaster", PlaySkillPhaseBase)
 PlaySkillPhaseBulletFlyCaster = PlaySkillPhaseBulletFlyCaster
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillPhaseBulletFlyCaster.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._directions = {[1] = Vector3(0, 0, 1), [2] = Vector3(1, 0, 0), [3] = Vector3(0, 0, -1), [4] = Vector3(-1, 0, 0), [5] = (Vector3.New)(-1, 0, 1), [6] = (Vector3.New)(-1, 0, -1), [7] = (Vector3.New)(1, 0, 1), [8] = (Vector3.New)(1, 0, -1)}
+function PlaySkillPhaseBulletFlyCaster:Constructor()
+  self._directions = {
+    [1] = Vector3(0, 0, 1),
+    [2] = Vector3(1, 0, 0),
+    [3] = Vector3(0, 0, -1),
+    [4] = Vector3(-1, 0, 0),
+    [5] = Vector3.New(-1, 0, 1),
+    [6] = Vector3.New(-1, 0, -1),
+    [7] = Vector3.New(1, 0, 1),
+    [8] = Vector3.New(1, 0, -1)
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBulletFlyCaster.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillPhaseBulletFlyCaster:PlayFlight(TT, casterEntity, phaseParam)
   local cfgDir = phaseParam:GetDirection()
   local casterGridPos = casterEntity:GetGridPosition()
-  local bodyArea = (casterEntity:BodyArea()):GetArea()
+  local bodyArea = casterEntity:BodyArea():GetArea()
   if self:IsCloseToEdge(casterGridPos, bodyArea, cfgDir) then
-    (Log.notice)("在版边，没有弹道: ", cfgDir)
-    return 
+    Log.notice("在版边，没有弹道: ", cfgDir)
+    return
   end
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillResult = skillEffectResultContainer
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local skillRange = scopeResult:GetAttackRange()
   local targets = scopeResult:GetTargetIDs()
   local edgeDistance = phaseParam:GetDistanceToEdge()
   local flyDuration = phaseParam:GetBulletDuration()
-  local casterPos = (((casterEntity:View()):GetGameObject()).transform).position
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local casterPos = casterEntity:View():GetGameObject().transform.position
+  local boardServiceRender = self._world:GetService("BoardRender")
   local boardRect = boardServiceRender:GetBoardRect()
   local startPos, speed = self:_GetStartPosAndSpeedByDir(cfgDir, casterPos, boardRect, edgeDistance, flyDuration)
   local yieldScedule = self:_GetBulletScheduleByDir(casterEntity, cfgDir, startPos, speed, targets)
-  local eftSvc = (self._world):GetService("Effect")
-  local effectDir = (self._directions)[cfgDir]
+  local eftSvc = self._world:GetService("Effect")
+  local effectDir = self._directions[cfgDir]
   local bornEffect = eftSvc:CreatePositionEffect(phaseParam:GetBornEffect(), startPos)
   bornEffect:SetDirection(effectDir)
   YIELD(TT, phaseParam:GetBornDuration())
@@ -47,247 +46,170 @@ PlaySkillPhaseBulletFlyCaster.PlayFlight = function(self, TT, casterEntity, phas
   while not bulletEffect:HasView() do
     YIELD(TT)
   end
-  ;
-  ((((bulletEffect:View()):GetGameObject()).transform):DOMove(casterPos, flyDuration / 1000)):SetEase(((DG.Tweening).Ease).Linear)
-  ;
-  (table.sort)(yieldScedule, function(a, b)
-    -- function num : 0_1_0
-    do return a.beHitDelay < b.beHitDelay end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  bulletEffect:View():GetGameObject().transform:DOMove(casterPos, flyDuration / 1000):SetEase(DG.Tweening.Ease.Linear)
+  table.sort(yieldScedule, function(a, b)
+    return a.beHitDelay < b.beHitDelay
+  end)
   local beHitTask = {}
-  if #yieldScedule > 0 then
-    local playSkillSvc = (self._world):GetService("PlaySkill")
+  if 0 < #yieldScedule then
+    local playSkillSvc = self._world:GetService("PlaySkill")
     local timer = 0
     local idx = 1
-    local timeSvc = (self._world):GetService("Time")
-    while 1 do
-      if timer < flyDuration then
-        if idx <= #yieldScedule then
-          local scedule = yieldScedule[idx]
-          if scedule.beHitDelay < timer then
-            local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(scedule.beHitEntity)):SetHandleBeHitParam_HitAnimName(phaseParam:GetBeHitAnim())):SetHandleBeHitParam_HitEffectID(phaseParam:GetBeHitEffect())):SetHandleBeHitParam_DamageInfo((scedule.damageInfo):GetDamageInfo(1))):SetHandleBeHitParam_DamagePos((scedule.beHitEntity):GetGridPosition())):SetHandleBeHitParam_HitTurnTarget(phaseParam:GetTurnToTarget())):SetHandleBeHitParam_DeathClear(phaseParam:GetDeathClear())):SetHandleBeHitParam_IsFinalHit(skillEffectResultContainer:IsFinalAttack())):SetHandleBeHitParam_SkillID(skillEffectResultContainer:GetSkillID())
-            beHitTask[#beHitTask + 1] = ((GameGlobal.TaskManager)()):CoreGameStartTask(playSkillSvc.HandleBeHit, playSkillSvc, beHitParam)
-            idx = idx + 1
-          end
-        end
-        do
-          timer = timer + timeSvc:GetDeltaTimeMs()
-          YIELD(TT)
-          -- DECOMPILER ERROR at PC205: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC205: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC205: LeaveBlock: unexpected jumping out IF_STMT
-
+    local timeSvc = self._world:GetService("Time")
+    while flyDuration > timer do
+      if idx <= #yieldScedule then
+        local scedule = yieldScedule[idx]
+        if timer > scedule.beHitDelay then
+          local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(scedule.beHitEntity):SetHandleBeHitParam_HitAnimName(phaseParam:GetBeHitAnim()):SetHandleBeHitParam_HitEffectID(phaseParam:GetBeHitEffect()):SetHandleBeHitParam_DamageInfo(scedule.damageInfo:GetDamageInfo(1)):SetHandleBeHitParam_DamagePos(scedule.beHitEntity:GetGridPosition()):SetHandleBeHitParam_HitTurnTarget(phaseParam:GetTurnToTarget()):SetHandleBeHitParam_DeathClear(phaseParam:GetDeathClear()):SetHandleBeHitParam_IsFinalHit(skillEffectResultContainer:IsFinalAttack()):SetHandleBeHitParam_SkillID(skillEffectResultContainer:GetSkillID())
+          beHitTask[#beHitTask + 1] = GameGlobal.TaskManager():CoreGameStartTask(playSkillSvc.HandleBeHit, playSkillSvc, beHitParam)
+          idx = idx + 1
         end
       end
+      timer = timer + timeSvc:GetDeltaTimeMs()
+      YIELD(TT)
     end
     bulletEffect:SetViewVisible(false)
-    ;
-    (self._world):DestroyEntity(bulletEffect)
+    self._world:DestroyEntity(bulletEffect)
   else
-    do
-      YIELD(TT, flyDuration)
-      bulletEffect:SetViewVisible(false)
-      ;
-      (self._world):DestroyEntity(bulletEffect)
-      while not (TaskHelper:GetInstance()):IsAllTaskFinished(beHitTask) do
-        YIELD(TT)
-      end
-    end
+    YIELD(TT, flyDuration)
+    bulletEffect:SetViewVisible(false)
+    self._world:DestroyEntity(bulletEffect)
+  end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(beHitTask) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBulletFlyCaster.IsCloseToEdge = function(self, gridPos, bodeArea, direction)
-  -- function num : 0_2 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PlaySkillPhaseBulletFlyCaster:IsCloseToEdge(gridPos, bodeArea, direction)
+  local utilDataSvc = self._world:GetService("UtilData")
   local boardMaxX = utilDataSvc:GetCurBoardMaxX()
   local boardMaxY = utilDataSvc:GetCurBoardMaxY()
-  for _,offset in ipairs(bodeArea) do
+  for _, offset in ipairs(bodeArea) do
     local pos = gridPos + offset
-    -- DECOMPILER ERROR at PC19: Unhandled construct in 'MakeBoolean' P1
-
-    if direction == 1 and boardMaxY <= pos.y then
-      return true
-    end
-    -- DECOMPILER ERROR at PC27: Unhandled construct in 'MakeBoolean' P1
-
-    if direction == 2 and boardMaxX <= pos.x then
-      return true
-    end
-    -- DECOMPILER ERROR at PC35: Unhandled construct in 'MakeBoolean' P1
-
-    if direction == 3 and pos.y <= 1 then
-      return true
-    end
-    -- DECOMPILER ERROR at PC43: Unhandled construct in 'MakeBoolean' P1
-
-    if direction == 4 and pos.x <= 1 then
-      return true
-    end
-    -- DECOMPILER ERROR at PC54: Unhandled construct in 'MakeBoolean' P1
-
-    if direction == 5 and (pos.x <= 1 or boardMaxY <= pos.y) then
-      return true
-    end
-    -- DECOMPILER ERROR at PC65: Unhandled construct in 'MakeBoolean' P1
-
-    if direction == 6 and (pos.x <= 1 or pos.y <= 1) then
-      return true
-    end
-    -- DECOMPILER ERROR at PC76: Unhandled construct in 'MakeBoolean' P1
-
-    if direction == 7 and (boardMaxX <= pos.x or boardMaxY <= pos.y) then
-      return true
-    end
-    if direction == 8 and (boardMaxX <= pos.x or pos.y <= 1) then
+    if direction == 1 then
+      if boardMaxY <= pos.y then
+        return true
+      end
+    elseif direction == 2 then
+      if boardMaxX <= pos.x then
+        return true
+      end
+    elseif direction == 3 then
+      if 1 >= pos.y then
+        return true
+      end
+    elseif direction == 4 then
+      if 1 >= pos.x then
+        return true
+      end
+    elseif direction == 5 then
+      if 1 >= pos.x or boardMaxY <= pos.y then
+        return true
+      end
+    elseif direction == 6 then
+      if 1 >= pos.x or 1 >= pos.y then
+        return true
+      end
+    elseif direction == 7 then
+      if boardMaxX <= pos.x or boardMaxY <= pos.y then
+        return true
+      end
+    elseif direction == 8 and (boardMaxX <= pos.x or 1 >= pos.y) then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBulletFlyCaster._GetStartPosAndSpeedByDir = function(self, dir, casterPos, boardRect, edgeDistance, flyDuration)
-  -- function num : 0_3 , upvalues : _ENV
-  local startPos, speed = nil, nil
+function PlaySkillPhaseBulletFlyCaster:_GetStartPosAndSpeedByDir(dir, casterPos, boardRect, edgeDistance, flyDuration)
+  local startPos, speed
   if dir == 1 then
-    startPos = (Vector3.New)(casterPos.x, 0, boardRect.w + edgeDistance)
+    startPos = Vector3.New(casterPos.x, 0, boardRect.w + edgeDistance)
     speed = (boardRect.w + edgeDistance - casterPos.z) / flyDuration
-  else
-    if dir == 2 then
-      startPos = (Vector3.New)(boardRect.z + edgeDistance, 0, casterPos.z)
-      speed = (boardRect.z + edgeDistance - casterPos.x) / flyDuration
-    else
-      if dir == 3 then
-        startPos = (Vector3.New)(casterPos.x, 0, boardRect.y - edgeDistance)
-        speed = (casterPos.z - boardRect.y + edgeDistance) / flyDuration
-      else
-        if dir == 4 then
-          startPos = (Vector3.New)(boardRect.x - edgeDistance, 0, casterPos.z)
-          speed = (casterPos.x - boardRect.x + edgeDistance) / flyDuration
-        else
-          if dir == 5 then
-            startPos = (Vector3.New)(boardRect.x - edgeDistance, 0, boardRect.w + edgeDistance)
-            local distance = (math.sqrt)(casterPos.x - boardRect.x + edgeDistance ^ 2 + boardRect.w + edgeDistance - casterPos.z ^ 2)
-            speed = distance / flyDuration
-          else
-            do
-              if dir == 6 then
-                startPos = (Vector3.New)(boardRect.x - edgeDistance, 0, boardRect.y - edgeDistance)
-                local distance = (math.sqrt)(casterPos.x - boardRect.x + edgeDistance ^ 2 + casterPos.z - boardRect.y + edgeDistance ^ 2)
-                speed = distance / flyDuration
-              else
-                do
-                  if dir == 7 then
-                    startPos = (Vector3.New)(boardRect.z + edgeDistance, 0, boardRect.w + edgeDistance)
-                    local distance = (math.sqrt)(boardRect.z + edgeDistance - casterPos.x ^ 2 + boardRect.w + edgeDistance - casterPos.z ^ 2)
-                    speed = distance / flyDuration
-                  else
-                    do
-                      if dir == 8 then
-                        startPos = (Vector3.New)(boardRect.z + edgeDistance, 0, boardRect.y - edgeDistance)
-                        local distance = (math.sqrt)(boardRect.z + edgeDistance - casterPos.x ^ 2 + casterPos.z - boardRect.y + edgeDistance ^ 2)
-                        speed = distance / flyDuration
-                      end
-                      do
-                        return startPos, speed
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif dir == 2 then
+    startPos = Vector3.New(boardRect.z + edgeDistance, 0, casterPos.z)
+    speed = (boardRect.z + edgeDistance - casterPos.x) / flyDuration
+  elseif dir == 3 then
+    startPos = Vector3.New(casterPos.x, 0, boardRect.y - edgeDistance)
+    speed = (casterPos.z - boardRect.y + edgeDistance) / flyDuration
+  elseif dir == 4 then
+    startPos = Vector3.New(boardRect.x - edgeDistance, 0, casterPos.z)
+    speed = (casterPos.x - boardRect.x + edgeDistance) / flyDuration
+  elseif dir == 5 then
+    startPos = Vector3.New(boardRect.x - edgeDistance, 0, boardRect.w + edgeDistance)
+    local distance = math.sqrt((casterPos.x - boardRect.x + edgeDistance) ^ 2 + (boardRect.w + edgeDistance - casterPos.z) ^ 2)
+    speed = distance / flyDuration
+  elseif dir == 6 then
+    startPos = Vector3.New(boardRect.x - edgeDistance, 0, boardRect.y - edgeDistance)
+    local distance = math.sqrt((casterPos.x - boardRect.x + edgeDistance) ^ 2 + (casterPos.z - boardRect.y + edgeDistance) ^ 2)
+    speed = distance / flyDuration
+  elseif dir == 7 then
+    startPos = Vector3.New(boardRect.z + edgeDistance, 0, boardRect.w + edgeDistance)
+    local distance = math.sqrt((boardRect.z + edgeDistance - casterPos.x) ^ 2 + (boardRect.w + edgeDistance - casterPos.z) ^ 2)
+    speed = distance / flyDuration
+  elseif dir == 8 then
+    startPos = Vector3.New(boardRect.z + edgeDistance, 0, boardRect.y - edgeDistance)
+    local distance = math.sqrt((boardRect.z + edgeDistance - casterPos.x) ^ 2 + (casterPos.z - boardRect.y + edgeDistance) ^ 2)
+    speed = distance / flyDuration
+  end
+  return startPos, speed
+end
+
+function PlaySkillPhaseBulletFlyCaster:_IsTargetHitByThisBullet(dir, area, targetPos)
+  if dir == 1 then
+    return targetPos.x == area.x and targetPos.y > area.y
+  elseif dir == 2 then
+    return targetPos.y == area.y and targetPos.x > area.x
+  elseif dir == 3 then
+    return targetPos.x == area.x and targetPos.y < area.y
+  elseif dir == 4 then
+    return targetPos.y == area.y and targetPos.x < area.x
+  elseif dir == 5 then
+    return targetPos.x < area.x and targetPos.y > area.y
+  elseif dir == 6 then
+    return targetPos.x < area.x and targetPos.y < area.y
+  elseif dir == 7 then
+    return targetPos.x > area.x and targetPos.y > area.y
+  elseif dir == 8 then
+    return targetPos.x > area.x and targetPos.y < area.y
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBulletFlyCaster._IsTargetHitByThisBullet = function(self, dir, area, targetPos)
-  -- function num : 0_4
-  if targetPos.x ~= area.x or area.y >= targetPos.y then
-    do return dir ~= 1 end
-    if targetPos.y ~= area.y or area.x >= targetPos.x then
-      do return dir ~= 2 end
-      if targetPos.x ~= area.x or targetPos.y >= area.y then
-        do return dir ~= 3 end
-        if targetPos.y ~= area.y or targetPos.x >= area.x then
-          do return dir ~= 4 end
-          if targetPos.x >= area.x or area.y >= targetPos.y then
-            do return dir ~= 5 end
-            if targetPos.x >= area.x or targetPos.y >= area.y then
-              do return dir ~= 6 end
-              if area.x >= targetPos.x or area.y >= targetPos.y then
-                do return dir ~= 7 end
-                if area.x >= targetPos.x or targetPos.y >= area.y then
-                  do return dir ~= 8 end
-                  -- DECOMPILER ERROR: 23 unprocessed JMP targets
-                end
-              end
-            end
-          end
-        end
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBulletFlyCaster._CalculateHitDelay = function(self, dir, startPos, worldPos, speed)
-  -- function num : 0_5 , upvalues : _ENV
+function PlaySkillPhaseBulletFlyCaster:_CalculateHitDelay(dir, startPos, worldPos, speed)
   if dir == 1 then
     return (startPos.z - worldPos.z) / speed
+  elseif dir == 2 then
+    return (startPos.x - worldPos.x) / speed
+  elseif dir == 3 then
+    return (worldPos.z - startPos.z) / speed
+  elseif dir == 4 then
+    return (worldPos.x - startPos.x) / speed
   else
-    if dir == 2 then
-      return (startPos.x - worldPos.x) / speed
-    else
-      if dir == 3 then
-        return (worldPos.z - startPos.z) / speed
-      else
-        if dir == 4 then
-          return (worldPos.x - startPos.x) / speed
-        else
-          local dis = (math.sqrt)(startPos.z - worldPos.z ^ 2 + startPos.x - worldPos.x ^ 2)
-          return dis / speed
-        end
-      end
-    end
+    local dis = math.sqrt((startPos.z - worldPos.z) ^ 2 + (startPos.x - worldPos.x) ^ 2)
+    return dis / speed
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBulletFlyCaster._GetBulletScheduleByDir = function(self, casterEntity, dir, startPos, speed, targets)
-  -- function num : 0_6 , upvalues : _ENV
+function PlaySkillPhaseBulletFlyCaster:_GetBulletScheduleByDir(casterEntity, dir, startPos, speed, targets)
   if not targets or #targets == 0 then
     return {}
   end
   local casterGridPos = casterEntity:GetGridPosition()
-  local bodyArea = (casterEntity:BodyArea()):GetArea()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local bodyArea = casterEntity:BodyArea():GetArea()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local yieldSchedule = {}
   if dir == 2 then
-    (Log.error)()
+    Log.error()
   end
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  for _,id in ipairs(targets) do
-    local target = (self._world):GetEntityByID(id)
+  local boardServiceRender = self._world:GetService("BoardRender")
+  for _, id in ipairs(targets) do
+    local target = self._world:GetEntityByID(id)
     local defenderPos = target:GetGridPosition()
     local delay = 0
-    for _,offset in ipairs(bodyArea) do
+    for _, offset in ipairs(bodyArea) do
       local found = false
       local area = casterGridPos + offset
-      for __,defenderOffset in ipairs((target:BodyArea()):GetArea()) do
+      for __, defenderOffset in ipairs(target:BodyArea():GetArea()) do
         local targetPos = defenderOffset + defenderPos
         if self:_IsTargetHitByThisBullet(dir, area, targetPos) then
           local worldPos = boardServiceRender:GridPos2RenderPos(targetPos)
@@ -296,20 +218,23 @@ PlaySkillPhaseBulletFlyCaster._GetBulletScheduleByDir = function(self, casterEnt
           delay = curDelay
           local damageInfo = skillEffectResultContainer:GetEffectResultByPos(SkillEffectType.Damage, targetPos)
           if damageInfo == nil then
-            (Log.fatal)("严重错误，找到目标，但是没有伤害，位置：", targetPos)
+            Log.fatal("严重错误，找到目标，但是没有伤害，位置：", targetPos)
           end
           if damageInfo then
-            yieldSchedule[#yieldSchedule + 1] = {beHitDelay = deltaDelay, beHitEntity = target, damageInfo = damageInfo}
+            yieldSchedule[#yieldSchedule + 1] = {
+              beHitDelay = deltaDelay,
+              beHitEntity = target,
+              damageInfo = damageInfo
+            }
             found = true
             break
           end
         end
       end
+      if found then
+        break
+      end
     end
   end
-  if not found then
-    return yieldSchedule
-  end
+  return yieldSchedule
 end
-
-

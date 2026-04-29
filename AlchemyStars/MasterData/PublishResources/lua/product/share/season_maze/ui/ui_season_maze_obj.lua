@@ -1,58 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/ui_season_maze_obj.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeObj", Object)
 UISeasonMazeObj = UISeasonMazeObj
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeObj.Constructor = function(self, sample, module)
-  -- function num : 0_0
+function UISeasonMazeObj:Constructor(sample, module)
   self._mazeID = sample.id
   self._mazeType = sample.camp_type
   self._module = module
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeObj.GetMazeID = function(self)
-  -- function num : 0_1
+function UISeasonMazeObj:GetMazeID()
   return self._mazeID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeObj.GetComponent = function(self, cptID)
-  -- function num : 0_2
-  local proccess = (self._module):GetLocalProcess(self._mazeType, self._mazeID)
-  if proccess then
-    return proccess:GetComponent(cptID)
-  end
+function UISeasonMazeObj:GetComponent(cptID)
+  local proccess = self._module:GetLocalProcess(self._mazeType, self._mazeID)
+  return proccess and proccess:GetComponent(cptID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeObj.GetComponentInfo = function(self, cptID)
-  -- function num : 0_3
-  local localProcess = (self._module):GetLocalProcess(self._mazeType, self._mazeID)
-  if localProcess then
-    return localProcess:GetComponentInfo(cptID)
-  end
+function UISeasonMazeObj:GetComponentInfo(cptID)
+  local localProcess = self._module:GetLocalProcess(self._mazeType, self._mazeID)
+  return localProcess and localProcess:GetComponentInfo(cptID)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeObj.GetMazeComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMazeObj:GetMazeComponent()
   return self:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeObj.CheckErrorCode = function(self, result)
-  -- function num : 0_5
-  (self._module):CheckErrorCode(result)
+function UISeasonMazeObj:CheckErrorCode(result)
+  self._module:CheckErrorCode(result)
 end
-
-

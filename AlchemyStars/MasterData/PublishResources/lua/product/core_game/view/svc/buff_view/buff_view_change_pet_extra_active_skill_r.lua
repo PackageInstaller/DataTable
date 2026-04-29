@@ -1,19 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_change_pet_extra_active_skill_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangePetExtraActiveSkill", BuffViewBase)
 BuffViewChangePetExtraActiveSkill = BuffViewChangePetExtraActiveSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangePetExtraActiveSkill.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local pstId = ((self._entity):PetPstID()):GetPstID()
-  local skillID = (self._buffResult):GetNewSkillID()
-  local oriSkillID = (self._buffResult):GetOriSkillID()
-  ;
-  (GameGlobal:EventDispatcher()):Dispatch(GameEventType.ChangePetExtraActiveSkill, pstId, oriSkillID, skillID)
+function BuffViewChangePetExtraActiveSkill:PlayView(TT)
+  local pstId = self._entity:PetPstID():GetPstID()
+  local skillID = self._buffResult:GetNewSkillID()
+  local oriSkillID = self._buffResult:GetOriSkillID()
+  GameGlobal:EventDispatcher():Dispatch(GameEventType.ChangePetExtraActiveSkill, pstId, oriSkillID, skillID)
 end
-
-

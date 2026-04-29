@@ -1,29 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/BattleResult/ui_n12_battle_result_left.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12BattleResultLeft", UICustomWidget)
 UIN12BattleResultLeft = UIN12BattleResultLeft
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12BattleResultLeft.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN12BattleResultLeft:OnShow(uiParams)
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12BattleResultLeft._GetComponent = function(self)
-  -- function num : 0_1
+function UIN12BattleResultLeft:_GetComponent()
   self._name = self:GetUIComponent("UILocalizationText", "Name")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12BattleResultLeft.SetData = function(self, str)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._name):SetText((StringTable.Get)(str))
+function UIN12BattleResultLeft:SetData(str)
+  self._name:SetText(StringTable.Get(str))
 end
-
-

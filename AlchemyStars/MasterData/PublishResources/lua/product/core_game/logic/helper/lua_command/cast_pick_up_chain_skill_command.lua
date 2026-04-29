@@ -1,86 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/cast_pick_up_chain_skill_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CastPickUpChainSkillCommand", IEntityCommand)
 CastPickUpChainSkillCommand = CastPickUpChainSkillCommand
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CastPickUpChainSkillCommand.Constructor = function(self)
-  -- function num : 0_0
+function CastPickUpChainSkillCommand:Constructor()
   self._commandType = "CastPickUpChainSkill"
   self._pickUpPos = nil
   self._activeSkillID = -1
   self._casterPstID = -1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpChainSkillCommand.GetCommandType = function(self)
-  -- function num : 0_1
+function CastPickUpChainSkillCommand:GetCommandType()
   return self._commandType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpChainSkillCommand.GetExecStateID = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function CastPickUpChainSkillCommand:GetExecStateID()
   return GameStateID.PickUpChainSkillTarget
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpChainSkillCommand.IsExecExcluded = function(self)
-  -- function num : 0_3
+function CastPickUpChainSkillCommand:IsExecExcluded()
   return 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpChainSkillCommand.DependRoundCount = function(self)
-  -- function num : 0_4
+function CastPickUpChainSkillCommand:DependRoundCount()
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpChainSkillCommand.SetCmdPickUpResult = function(self, result)
-  -- function num : 0_5
+function CastPickUpChainSkillCommand:SetCmdPickUpResult(result)
   self._pickUpPos = result
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpChainSkillCommand.GetCmdPickUpResult = function(self)
-  -- function num : 0_6
+function CastPickUpChainSkillCommand:GetCmdPickUpResult()
   return self._pickUpPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpChainSkillCommand.ToNetMessage = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function CastPickUpChainSkillCommand:ToNetMessage()
   local msg = CEventCastPickUpChainSkillCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
   msg.ClientWaitInput = self.ClientWaitInput
   msg.IsAutoFight = self.IsAutoFight
   msg.CmdIndex = self.CmdIndex
-  msg.PickUpPos = (Vector2.Pos2Index)(self._pickUpPos)
+  msg.PickUpPos = Vector2.Pos2Index(self._pickUpPos)
   return msg
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpChainSkillCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_8 , upvalues : _ENV
+function CastPickUpChainSkillCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
   self.IsAutoFight = msg.IsAutoFight
   self.CmdIndex = msg.CmdIndex
-  self._pickUpPos = (Vector2.Index2Pos)(msg.PickUpPos)
+  self._pickUpPos = Vector2.Index2Pos(msg.PickUpPos)
 end
-
-

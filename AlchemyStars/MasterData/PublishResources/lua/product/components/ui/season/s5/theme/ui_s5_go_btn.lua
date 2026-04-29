@@ -1,155 +1,105 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s5/theme/ui_s5_go_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS5GoBtn", UICustomWidget)
 UIS5GoBtn = UIS5GoBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS5GoBtn.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._constBtnName = ((GameGlobal.GetUIModule)(SeasonModule)):GetGoBtnKey()
+function UIS5GoBtn:OnShow()
+  self._constBtnName = GameGlobal.GetUIModule(SeasonModule):GetGoBtnKey()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5GoBtn.OnHide = function(self)
-  -- function num : 0_1
+function UIS5GoBtn:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5GoBtn.SetData = function(self, seasonId, component, playAnim)
-  -- function num : 0_2 , upvalues : _ENV
+function UIS5GoBtn:SetData(seasonId, component, playAnim)
   self._seasonId = seasonId
   self._component = component
-  if component then
-    local isOpen = component:ComponentIsOpen()
-  end
+  local isOpen = component and component:ComponentIsOpen()
   self._state = isOpen and 1 or 2
   self:_SetState(self._state)
   self:_Refresh(component)
   if playAnim then
-    (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", "_anim", "uieffanim_UIS5_GoBtn_in", 0, 667)
+    UIWidgetHelper.PlayAnimationInSequence(self, "_anim", "_anim", "uieffanim_UIS5_GoBtn_in", 0, 667)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5GoBtn._Refresh = function(self, component)
-  -- function num : 0_3 , upvalues : _ENV
+function UIS5GoBtn:_Refresh(component)
   local isShow = component ~= nil
-  ;
-  (self:GetGameObject("_topTip")):SetActive(isShow)
+  self:GetGameObject("_topTip"):SetActive(isShow)
   if not isShow then
-    return 
+    return
   end
   local cur, ceil = component:GetItemCount()
-  local str = (UIActivityHelper.GetColorText)("#FFFFFF", cur, "#F5B62F", "/" .. ceil)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_text", str)
+  local str = UIActivityHelper.GetColorText("#FFFFFF", cur, "#F5B62F", "/" .. ceil)
+  UIWidgetHelper.SetLocalizationText(self, "_text", str)
   local itemId = component:GetItemId()
-  ;
-  (UIWidgetHelper.SetItemIconSprite)(self, itemId, "_icon")
+  UIWidgetHelper.SetItemIconSprite(self, itemId, "_icon")
   self:_CheckPoint()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5GoBtn._SetState = function(self, state)
-  -- function num : 0_4
-  (self:GetGameObject("_lock")):SetActive(state == 2)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIS5GoBtn:_SetState(state)
+  self:GetGameObject("_lock"):SetActive(state == 2)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5GoBtn._CalcNew = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if self._component then
-    local isOpen = (self._component):ComponentIsOpen()
-  end
-  local isNew = not (UISeasonLocalDBHelper.SeasonBtn_Has)(self._constBtnName, "New")
-  local sample = ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonSample()
+function UIS5GoBtn:_CalcNew()
+  local isOpen = self._component and self._component:ComponentIsOpen()
+  local isNew = not UISeasonLocalDBHelper.SeasonBtn_Has(self._constBtnName, "New")
+  local sample = GameGlobal.GetModule(SeasonModule):GetCurSeasonSample()
   local talentNew = false
   if isOpen and sample then
-    talentNew = (UISeasonHelper.TalentTreeNew)(sample)
+    talentNew = UISeasonHelper.TalentTreeNew(sample)
   end
   local TradeNew = false
   if isOpen and sample then
-    TradeNew = (UISeasonHelper.TradeGameNew)(sample)
+    TradeNew = UISeasonHelper.TradeGameNew(sample)
   end
   local OnceMissonNew = false
   if isOpen and sample then
-    OnceMissonNew = (UISeasonHelper.SeasonOnceMissonNew)(sample)
+    OnceMissonNew = UISeasonHelper.SeasonOnceMissonNew(sample)
   end
-  return not isOpen or isNew or talentNew or TradeNew or OnceMissonNew
+  return isOpen and (isNew or talentNew or TradeNew or OnceMissonNew)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5GoBtn._CalcRed = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if self._component then
-    local isOpen = (self._component):ComponentIsOpen()
-  end
+function UIS5GoBtn:_CalcRed()
+  local isOpen = self._component and self._component:ComponentIsOpen()
   if not isOpen then
     return isOpen
   end
-  local lastTime = (UISeasonLocalDBHelper.SeasonBtn_Get)(self._constBtnName, "Red")
-  ;
-  (Log.debug)("UIS5GoBtn:_CalcRed() lastTime = ", lastTime)
+  local lastTime = UISeasonLocalDBHelper.SeasonBtn_Get(self._constBtnName, "Red")
+  Log.debug("UIS5GoBtn:_CalcRed() lastTime = ", lastTime)
   local isCross = HelperProxy:IsCrossDayTo(lastTime)
-  local cur, ceil = (self._component):GetItemCount()
-  local haveItem = cur > 0
-  local isCoinRed = not isCross or haveItem
-  local isTaskRed = (((GameGlobal.GameLogic)()):GetModule(SeasonTaskModule)):TaskListRed()
-  local sample = ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonSample()
+  local cur, ceil = self._component:GetItemCount()
+  local haveItem = 0 < cur
+  local isCoinRed = isCross and haveItem
+  local isTaskRed = GameGlobal.GameLogic():GetModule(SeasonTaskModule):TaskListRed()
+  local sample = GameGlobal.GetModule(SeasonModule):GetCurSeasonSample()
   local talentRed = false
   if isOpen and sample then
-    talentRed = (UISeasonHelper.TalentTreeRed)(sample)
+    talentRed = UISeasonHelper.TalentTreeRed(sample)
   end
   local TradeRed = false
   if isOpen and sample then
-    TradeRed = (UISeasonHelper.TradeGameRed)(sample)
+    TradeRed = UISeasonHelper.TradeGameRed(sample)
   end
-  do return isCoinRed or isTaskRed or talentRed or TradeRed end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  return isCoinRed or isTaskRed or talentRed or TradeRed
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5GoBtn._CheckPoint = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIS5GoBtn:_CheckPoint()
   local new = self:_CalcNew()
   local red = self:_CalcRed()
-  ;
-  (UIWidgetHelper.SetNewAndReds)(self, new, red, "_new", "_red")
+  UIWidgetHelper.SetNewAndReds(self, new, red, "_new", "_red")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5GoBtn.BtnOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (Log.info)("UIS5GoBtn:BtnOnClick")
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+function UIS5GoBtn:BtnOnClick()
+  Log.info("UIS5GoBtn:BtnOnClick")
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
   if seasonModule:CheckSeasonClose_ShowClientError(self._seasonId) then
-    return 
+    return
   end
   if self._state == 2 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_s1_main_btn_over"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_season_s1_main_btn_over"))
+    return
   end
-  ;
-  ((GameGlobal.GetUIModule)(SeasonModule)):EnterCurrentSeasonMainUI()
-  ;
-  (UISeasonLocalDBHelper.SeasonBtn_Set)(self._constBtnName, "New")
-  local now = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
-  ;
-  (UISeasonLocalDBHelper.SeasonBtn_Set)(self._constBtnName, "Red", now)
+  GameGlobal.GetUIModule(SeasonModule):EnterCurrentSeasonMainUI()
+  UISeasonLocalDBHelper.SeasonBtn_Set(self._constBtnName, "New")
+  local now = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
+  UISeasonLocalDBHelper.SeasonBtn_Set(self._constBtnName, "Red", now)
   self:_CheckPoint()
 end
-
-

@@ -1,36 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn6/line/ui_cn6_n35_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_activity_line_level_base")
 _class("UICN6N35Line", UIActivityLineLevelBase)
 UICN6N35Line = UICN6N35Line
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN6N35Line.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._isNormalUI = not uiParams[1] or true
+function UICN6N35Line:OnShow(uiParams)
+  self._isNormalUI = uiParams[1] and true
   self._mainShot = uiParams[2]
   local backBtns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_0_0 , upvalues : self, _ENV
+  self._backBtns:SetData(function()
     if self._isNormalUI then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityMainStatusRefreshEvent)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityMainStatusRefreshEvent)
       self:CloseWindow()
     else
       self:SwitchMainUI()
     end
-  end
-)
+  end)
   self._scrollRect = self:GetUIComponent("ScrollRect", "MapContent")
   self._mapContentRect = self:GetUIComponent("RectTransform", "MapContent")
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
   self._linesPool = self:GetUIComponent("UISelectObjectPath", "Lines")
   self._nodesPool = self:GetUIComponent("UISelectObjectPath", "Nodes")
-  self._safeAreaSize = ((self:GetUIComponent("RectTransform", "SafeArea")).rect).size
+  self._safeAreaSize = self:GetUIComponent("RectTransform", "SafeArea").rect.size
   self._time = self:GetUIComponent("UILocalizationText", "Time")
   self._firstRedPoint = self:GetGameObject("RedPoint")
   self._bgLoader1 = self:GetUIComponent("RawImageLoader", "bg1")
@@ -44,190 +34,121 @@ UICN6N35Line.OnShow = function(self, uiParams)
   self:RefreshTryout()
   local lockName = "UINP7Level_OnShow"
   self:Lock(lockName)
-  ;
-  (self._timerHolder):StartTimer(lockName, 500, function()
-    -- function num : 0_0_1 , upvalues : self, lockName
+  self._timerHolder:StartTimer(lockName, 500, function()
     self:UnLock(lockName)
-  end
-)
+  end)
   self:AttachEvent(GameEventType.ItemCountChanged, self._ItemCountChanged)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35Line._ItemCountChanged = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local localProcess = (self._campaign):GetLocalProcess()
+function UICN6N35Line:_ItemCountChanged()
+  local localProcess = self._campaign:GetLocalProcess()
   local petComp = localProcess:GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_SHOP)
   local icon, count = petComp:GetCostItemIconText()
   if icon then
-    (self._exChangeBtn):SetIcon("icon", icon)
+    self._exChangeBtn:SetIcon("icon", icon)
   end
-  ;
-  (self._exChangeBtn):SetText("text", (UIActivityCustomHelper.GetItemCountStr)(7, count, "#4C618A", "#FFFFFF"))
+  self._exChangeBtn:SetText("text", UIActivityCustomHelper.GetItemCountStr(7, count, "#4C618A", "#FFFFFF"))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35Line.GetCampaignType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN6N35Line:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_INLAND_N6
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35Line.GetLineComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN6N35Line:GetLineComponentType()
   return ECampaignCN6ComponentID.ECAMPAIGN_N6_LINE_MISSION
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35Line.GetFirstMeetComponentType = function(self)
-  -- function num : 0_4
+function UICN6N35Line:GetFirstMeetComponentType()
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35Line.GetLevelNodeName = function(self)
-  -- function num : 0_5
+function UICN6N35Line:GetLevelNodeName()
   return "UICN6N35LineMapNode"
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35Line.GetLevelLineName = function(self)
-  -- function num : 0_6
+function UICN6N35Line:GetLevelLineName()
   return "UICN6N35LineMapLine"
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35Line.GetBgList = function(self)
-  -- function num : 0_7
-  return {"n35_xxg_bg01", "n35_xxg_bg02", "n35_xxg_bg03"}
+function UICN6N35Line:GetBgList()
+  return {
+    "n35_xxg_bg01",
+    "n35_xxg_bg02",
+    "n35_xxg_bg03"
+  }
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35Line.GetLineLevelState = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UICN6N35Line:GetLineLevelState()
   return UIStateType.UICN6N35Line
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35Line.GetCustomTimeStr = function(self)
-  -- function num : 0_9
+function UICN6N35Line:GetCustomTimeStr()
   return "str_cn6&n35_day", "str_cn6&n35_hour", "str_cn6&n35_minus", "str_cn6&n35_less_one_minus"
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35Line.GetCustomTimeTipsStr = function(self)
-  -- function num : 0_10
+function UICN6N35Line:GetCustomTimeTipsStr()
   return "str_cn6&n35_remain_time_in_activity"
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35Line.GetLockName = function(self)
-  -- function num : 0_11
+function UICN6N35Line:GetLockName()
   return self:GetName()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35Line.CloseWindow = function(self)
-  -- function num : 0_12
+function UICN6N35Line:CloseWindow()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35Line.PlotEndCallback = function(self, stageId)
-  -- function num : 0_13 , upvalues : _ENV
-  local isActive = (self._lineComponent):IsPassCamMissionID(stageId)
+function UICN6N35Line:PlotEndCallback(stageId)
+  local isActive = self._lineComponent:IsPassCamMissionID(stageId)
   if isActive then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_13_0 , upvalues : self, stageId, _ENV
-    (self._lineComponent):SetMissionStoryActive(TT, stageId, ActiveStoryType.ActiveStoryType_BeforeBattle)
+    self._lineComponent:SetMissionStoryActive(TT, stageId, ActiveStoryType.ActiveStoryType_BeforeBattle)
     local res = AsyncRequestRes:New()
-    local award = (self._lineComponent):HandleCompleteStoryMission(TT, res, stageId)
+    local award = self._lineComponent:HandleCompleteStoryMission(TT, res, stageId)
     if not res:GetSucc() then
-      (self._campModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+      self._campModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    elseif table.count(award) ~= 0 then
+      self:ShowDialog("UIGetItemController", award, function()
+        self:FlushNodes()
+      end)
     else
-      if (table.count)(award) ~= 0 then
-        self:ShowDialog("UIGetItemController", award, function()
-      -- function num : 0_13_0_0 , upvalues : self
       self:FlushNodes()
     end
-)
-      else
-        self:FlushNodes()
-      end
-    end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35Line.SwitchMainUI = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UICN6N35Line:SwitchMainUI()
   self:SwitchState(UIStateType.UIActivityCN6N35MainController)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35Line.OnInit = function(self)
-  -- function num : 0_15
+function UICN6N35Line:OnInit()
   self._anim = self:GetUIComponent("Animation", "anim")
   self:_SetExchangeBtn()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35Line.PlayAnim = function(self, AnimName)
-  -- function num : 0_16
-  (self._anim):Play(AnimName)
+function UICN6N35Line:PlayAnim(AnimName)
+  self._anim:Play(AnimName)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35Line._SetExchangeBtn = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UICN6N35Line:_SetExchangeBtn()
   local compId = ECampaignCN6ComponentID.ECAMPAIGN_N6_SHOP
-  local localProcess = (self._campaign):GetLocalProcess()
+  local localProcess = self._campaign:GetLocalProcess()
   local petComp = localProcess:GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_SHOP)
   local pool = self:GetUIComponent("UISelectObjectPath", "exchangeBtn")
   self._exChangeBtn = pool:SpawnObject("UIActivityCommonComponentEnter")
-  ;
-  (self._exChangeBtn):SetRed("red", function()
-    -- function num : 0_17_0 , upvalues : self, compId
-    if (self._campaign):CheckComponentOpen(compId) then
-      return (self._campaign):CheckComponentRed(compId)
-    end
-  end
-)
+  self._exChangeBtn:SetRed("red", function()
+    return self._campaign:CheckComponentOpen(compId) and self._campaign:CheckComponentRed(compId)
+  end)
   local icon, count = petComp:GetCostItemIconText()
   if icon then
-    (self._exChangeBtn):SetIcon("icon", icon)
+    self._exChangeBtn:SetIcon("icon", icon)
   end
-  ;
-  (self._exChangeBtn):SetText("text", (UIActivityCustomHelper.GetItemCountStr)(7, count, "#7E91B6", "#FFFFFF"))
-  ;
-  (self._exChangeBtn):SetData(self._campaign, function()
-    -- function num : 0_17_1 , upvalues : self
+  self._exChangeBtn:SetText("text", UIActivityCustomHelper.GetItemCountStr(7, count, "#7E91B6", "#FFFFFF"))
+  self._exChangeBtn:SetData(self._campaign, function()
     self:ShowDialog("UIActivityCN6N35Shop", 2, true)
-  end
-)
-  local lockTr = (self._exChangeBtn):GetUIComponent("RectTransform", "lock")
-  ;
-  (lockTr.gameObject):SetActive(false)
+  end)
+  local lockTr = self._exChangeBtn:GetUIComponent("RectTransform", "lock")
+  lockTr.gameObject:SetActive(false)
 end
-
-

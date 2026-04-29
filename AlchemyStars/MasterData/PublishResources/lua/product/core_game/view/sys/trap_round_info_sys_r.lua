@@ -1,32 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/trap_round_info_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TrapRoundInfoSystem_Render", Object)
 TrapRoundInfoSystem_Render = TrapRoundInfoSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TrapRoundInfoSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function TrapRoundInfoSystem_Render:Constructor(world)
   self._world = world
-  self._renderEntityService = (self._world):GetService("RenderEntity")
-  self._group = world:GetGroup((world.BW_WEMatchers).TrapRoundInfoRender)
+  self._renderEntityService = self._world:GetService("RenderEntity")
+  self._group = world:GetGroup(world.BW_WEMatchers.TrapRoundInfoRender)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoSystem_Render.Execute = function(self)
-  -- function num : 0_1
-  self:ExecuteEntities((self._group):GetEntities())
+function TrapRoundInfoSystem_Render:Execute()
+  self:ExecuteEntities(self._group:GetEntities())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_2 , upvalues : _ENV
+function TrapRoundInfoSystem_Render:ExecuteEntities(entities)
   local needRefresh = self:IsNeedRefresh()
-  for i,e in ipairs(entities) do
+  for i, e in ipairs(entities) do
     local refresh = needRefresh
     if e:HasGridMove() then
       refresh = true
@@ -37,13 +24,10 @@ TrapRoundInfoSystem_Render.ExecuteEntities = function(self, entities)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoSystem_Render._Refresh = function(self, e)
-  -- function num : 0_3 , upvalues : _ENV
+function TrapRoundInfoSystem_Render:_Refresh(e)
   local render = e:TrapRoundInfoRender()
   local round_entity_id = render:GetRoundInfoEntityID()
-  local round_entity = (self._world):GetEntityByID(round_entity_id)
+  local round_entity = self._world:GetEntityByID(round_entity_id)
   if round_entity then
     if render:GetIsShow() then
       round_entity:SetViewVisible(true)
@@ -56,26 +40,17 @@ TrapRoundInfoSystem_Render._Refresh = function(self, e)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoSystem_Render.IsNeedRefresh = function(self)
-  -- function num : 0_4
-  local mainCameraCmpt = (self._world):MainCamera()
+function TrapRoundInfoSystem_Render:IsNeedRefresh()
+  local mainCameraCmpt = self._world:MainCamera()
   if mainCameraCmpt then
     local isNormalState = mainCameraCmpt:IsNormalState()
     return not isNormalState
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoSystem_Render._RefreshRound = function(self, e, round_entity, trapRound)
-  -- function num : 0_5
+function TrapRoundInfoSystem_Render:_RefreshRound(e, round_entity, trapRound)
   if not round_entity then
-    return 
+    return
   end
-  ;
-  (self._renderEntityService):SetHudPosition(e, round_entity, trapRound:GetOffset())
+  self._renderEntityService:SetHudPosition(e, round_entity, trapRound:GetOffset())
 end
-
-

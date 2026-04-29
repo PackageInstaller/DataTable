@@ -1,64 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_up_lv_info_skill_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipUpLvInfoSkillItem", UICustomWidget)
 UIPetEquipUpLvInfoSkillItem = UIPetEquipUpLvInfoSkillItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipUpLvInfoSkillItem.Constructor = function(self)
-  -- function num : 0_0
+function UIPetEquipUpLvInfoSkillItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoSkillItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIPetEquipUpLvInfoSkillItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoSkillItem.OnHide = function(self)
-  -- function num : 0_2
+function UIPetEquipUpLvInfoSkillItem:OnHide()
   self._lv = nil
   self._desc = nil
   self._lvTex = nil
   self._descTex = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoSkillItem.SetData = function(self, data)
-  -- function num : 0_3
-  self._lv = data:GetData()
+function UIPetEquipUpLvInfoSkillItem:SetData(data)
+  self._lv, self._desc = data:GetData()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoSkillItem._GetComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIPetEquipUpLvInfoSkillItem:_GetComponents()
   self._lvTex = self:GetUIComponent("UILocalizationText", "lv")
   self._descTex = self:GetUIComponent("UILocalizedTMP", "desc")
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._descTex).onHrefClick = function(hrefName)
-    -- function num : 0_4_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):ShowDialog("UISkillHrefInfo", hrefName)
+  
+  function self._descTex.onHrefClick(hrefName)
+    GameGlobal.UIStateManager():ShowDialog("UISkillHrefInfo", hrefName)
   end
-
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoSkillItem._OnValue = function(self)
-  -- function num : 0_5
-  (self._lvTex):SetText("Lv." .. self._lv)
-  ;
-  (self._descTex):SetText(self._desc)
+function UIPetEquipUpLvInfoSkillItem:_OnValue()
+  self._lvTex:SetText("Lv." .. self._lv)
+  self._descTex:SetText(self._desc)
 end
-
-

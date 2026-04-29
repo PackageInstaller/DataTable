@@ -1,87 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/ui_n12_mainlobby_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12MainLobbyEntry", UICustomWidget)
 UIN12MainLobbyEntry = UIN12MainLobbyEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12MainLobbyEntry.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN12MainLobbyEntry:Constructor()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._campaignModule = self:GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainLobbyEntry.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN12MainLobbyEntry:OnShow(uiParams)
   self:_GetComponents()
   self:StartTask(self.RequestData, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainLobbyEntry._GetComponents = function(self)
-  -- function num : 0_2
+function UIN12MainLobbyEntry:_GetComponents()
   self._redPoint = self:GetGameObject("RedPoint")
   self._newFlag = self:GetGameObject("NewFlag")
   self._entrust = self:GetGameObject("Entrust")
   self._entrustText = self:GetUIComponent("RollingText", "EntrustText")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainLobbyEntry.RequestData = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN12MainLobbyEntry:RequestData(TT)
   self:Lock("UIN12MainLobbyEntry")
   local res = AsyncRequestRes:New()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N12, ECampaignN12ComponentID.ECAMPAIGN_N12_ENTRUST, ECampaignN12ComponentID.ECAMPAIGN_N12_DAILY_MISSION, ECampaignN12ComponentID.ECAMPAIGN_N12_CUMULATIVE_LOGIN, ECampaignN12ComponentID.ECAMPAIGN_N12_LEVEL_FIXTEAM, ECampaignN12ComponentID.ECAMPAIGN_N12_PERSON_PROGRESS_SCORE, ECampaignN12ComponentID.ECAMPAIGN_N12_STORY, ECampaignN12ComponentID.ECAMPAIGN_N12_QUEST_MISSION, ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N12, ECampaignN12ComponentID.ECAMPAIGN_N12_ENTRUST, ECampaignN12ComponentID.ECAMPAIGN_N12_DAILY_MISSION, ECampaignN12ComponentID.ECAMPAIGN_N12_CUMULATIVE_LOGIN, ECampaignN12ComponentID.ECAMPAIGN_N12_LEVEL_FIXTEAM, ECampaignN12ComponentID.ECAMPAIGN_N12_PERSON_PROGRESS_SCORE, ECampaignN12ComponentID.ECAMPAIGN_N12_STORY, ECampaignN12ComponentID.ECAMPAIGN_N12_QUEST_MISSION, ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   if res:GetSucc() then
-    local process = (self._campaignModule):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N12)
+    local process = self._campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N12)
     local showNew = process:GetStepStatusNew()
     local showredPoint = process:GetEntryRedDot()
-    ;
-    (self._newFlag):SetActive(showNew)
-    if showredPoint then
-      (self._redPoint):SetActive(not showNew)
-      local entrustComponentInfo = (self._campaign):GetComponentInfo(ECampaignN12ComponentID.ECAMPAIGN_N12_ENTRUST)
-      do
-        local remainTime = entrustComponentInfo.m_unlock_time - (self._svrTimeModule):GetServerTime() * 0.001
-        ;
-        (self._entrust):SetActive(remainTime <= 0)
-        if remainTime <= 0 then
-          (self._entrustText):RefreshText((StringTable.Get)("str_n12_entrust_open"))
-        end
-        self:UnLock("UIN12MainLobbyEntry")
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
-      end
+    self._newFlag:SetActive(showNew)
+    self._redPoint:SetActive(showredPoint and not showNew)
+    local entrustComponentInfo = self._campaign:GetComponentInfo(ECampaignN12ComponentID.ECAMPAIGN_N12_ENTRUST)
+    local remainTime = entrustComponentInfo.m_unlock_time - self._svrTimeModule:GetServerTime() * 0.001
+    self._entrust:SetActive(remainTime <= 0)
+    if remainTime <= 0 then
+      self._entrustText:RefreshText(StringTable.Get("str_n12_entrust_open"))
     end
   end
+  self:UnLock("UIN12MainLobbyEntry")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainLobbyEntry.EntryBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self.uiOwner)._screenShot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera((self.uiOwner):GetName())
-  local rt = ((self.uiOwner)._screenShot):RefreshBlurTexture()
-  local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
+function UIN12MainLobbyEntry:EntryBtnOnClick(go)
+  self.uiOwner._screenShot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self.uiOwner:GetName())
+  local rt = self.uiOwner._screenShot:RefreshBlurTexture()
+  local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, rt, cache_rt, self
     YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cache_rt)
+    UnityEngine.Graphics.Blit(rt, cache_rt)
     self:SwitchState(UIStateType.UIN12MainController, cache_rt)
-  end
-)
+  end)
 end
-
-

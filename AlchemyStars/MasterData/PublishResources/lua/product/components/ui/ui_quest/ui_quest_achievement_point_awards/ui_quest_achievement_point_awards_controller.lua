@@ -1,88 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_achievement_point_awards/ui_quest_achievement_point_awards_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestAchievementPointAwardsController", UIController)
 UIQuestAchievementPointAwardsController = UIQuestAchievementPointAwardsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestAchievementPointAwardsController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIQuestAchievementPointAwardsController:OnShow(uiParams)
   self:_GetComponents()
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
-  self._achievementPoint = (self._questModule):GetAchPoint()
-  self._cfg = (Cfg.cfg_achieve_reward)({})
+  self._questModule = GameGlobal.GetModule(QuestModule)
+  self._achievementPoint = self._questModule:GetAchPoint()
+  self._cfg = Cfg.cfg_achieve_reward({})
   if self._cfg == nil then
-    (Log.fatal)("###[quest] error --> cfg_achieve_reward is nil !")
-    return 
+    Log.fatal("###[quest] error --> cfg_achieve_reward is nil !")
+    return
   end
-  self._awardsCount = (table.count)(self._cfg)
-  self._achievementPointUpper = ((self._cfg)[self._awardsCount]).AchPoint
+  self._awardsCount = table.count(self._cfg)
+  self._achievementPointUpper = self._cfg[self._awardsCount].AchPoint
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementPointAwardsController.OnHide = function(self)
-  -- function num : 0_1
+function UIQuestAchievementPointAwardsController:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementPointAwardsController._GetComponents = function(self)
-  -- function num : 0_2
+function UIQuestAchievementPointAwardsController:_GetComponents()
   self._pointValueTex = self:GetUIComponent("UILocalizationText", "pointValueTex")
   self._pools = self:GetUIComponent("UISelectObjectPath", "pools")
   self._itemInfo = self:GetUIComponent("UISelectObjectPath", "itemInfo")
-  self._selectInfo = (self._itemInfo):SpawnObject("UISelectInfo")
+  self._selectInfo = self._itemInfo:SpawnObject("UISelectInfo")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementPointAwardsController._OnValue = function(self)
-  -- function num : 0_3
-  (self._pointValueTex):SetText("<size=42><color=#fdd100>" .. self._achievementPoint .. "</color></size><size=32><color=#f2f2f2>/" .. self._achievementPointUpper .. "</color></size>")
+function UIQuestAchievementPointAwardsController:_OnValue()
+  self._pointValueTex:SetText("<size=42><color=#fdd100>" .. self._achievementPoint .. "</color></size><size=32><color=#f2f2f2>/" .. self._achievementPointUpper .. "</color></size>")
   self:_InitScrollView()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementPointAwardsController._InitScrollView = function(self)
-  -- function num : 0_4
-  (self._pools):SpawnObjects("UIQuestAchievementPointAwardsItem", self._awardsCount)
-  local pools = (self._pools):GetAllSpawnList()
+function UIQuestAchievementPointAwardsController:_InitScrollView()
+  self._pools:SpawnObjects("UIQuestAchievementPointAwardsItem", self._awardsCount)
+  local pools = self._pools:GetAllSpawnList()
   for i = 1, self._awardsCount do
     local item = pools[i]
-    local data = (self._cfg)[i]
+    local data = self._cfg[i]
     item:SetData(i, data, self._achievementPoint, function(matid, pos)
-    -- function num : 0_4_0 , upvalues : self
-    self:_ItemClick(matid, pos)
-  end
-)
+      self:_ItemClick(matid, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementPointAwardsController._AwardItemClick = function(self, idx)
-  -- function num : 0_5
+function UIQuestAchievementPointAwardsController:_AwardItemClick(idx)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementPointAwardsController._ItemClick = function(self, matid, pos)
-  -- function num : 0_6
+function UIQuestAchievementPointAwardsController:_ItemClick(matid, pos)
   if self._selectInfo then
-    (self._selectInfo):SetData(matid, pos)
+    self._selectInfo:SetData(matid, pos)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementPointAwardsController.BgOnClick = function(self)
-  -- function num : 0_7
+function UIQuestAchievementPointAwardsController:BgOnClick()
   self:CloseDialog()
 end
-
-

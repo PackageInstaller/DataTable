@@ -1,72 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_def_by_san_change.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeDefenceBySanChange", BuffLogicBase)
 BuffLogicChangeDefenceBySanChange = BuffLogicChangeDefenceBySanChange
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeDefenceBySanChange.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicChangeDefenceBySanChange:Constructor(buffInstance, logicParam)
   self._maxDefMul = tonumber(logicParam.maxDefMul)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeDefenceBySanChange.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeDefenceBySanChange:DoLogic(notify)
   if not NTSanValueChange:IsInstanceOfType(notify) then
-    return 
+    return
   end
-  local def = ((self._entity):Attributes()):GetAttribute("Defense")
+  local def = self._entity:Attributes():GetAttribute("Defense")
   if not def then
-    return 
+    return
   end
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   local sanVal = lsvcFeature:GetSanValue()
   local maxSanVal = lsvcFeature:GetSanMaxValue()
   if maxSanVal <= 0 then
-    return 
+    return
   end
   local sanRate = sanVal / maxSanVal
   local val = def * self._maxDefMul * (1 - sanRate)
-  ;
-  (self._buffLogicService):ChangeBaseDefence(self._entity, self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix, val)
-  do
-    if (self._entity):HasPetPstID() then
-      local teamEntity = ((self._entity):Pet()):GetOwnerTeamEntity()
-      self:UpdateTeamDefenceLogic(teamEntity)
-    end
-    local result = BuffResultChangeDefence:New(ModifyBaseDefenceType.DefenceConstantFix, val, (self._entity):GetID(), self._light)
-    return result
+  self._buffLogicService:ChangeBaseDefence(self._entity, self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix, val)
+  if self._entity:HasPetPstID() then
+    local teamEntity = self._entity:Pet():GetOwnerTeamEntity()
+    self:UpdateTeamDefenceLogic(teamEntity)
   end
+  local result = BuffResultChangeDefence:New(ModifyBaseDefenceType.DefenceConstantFix, val, self._entity:GetID(), self._light)
+  return result
 end
 
 _class("BuffLogicChangeDefenceBySanChangeUndo", BuffLogicBase)
 BuffLogicChangeDefenceBySanChangeUndo = BuffLogicChangeDefenceBySanChangeUndo
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeDefenceBySanChangeUndo.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicChangeDefenceBySanChangeUndo:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeDefenceBySanChangeUndo.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):RemoveBaseDefence(e, self:GetBuffSeq(), (self._buffInstance)._ChangeDefenceType)
-  do
-    if e:HasPetPstID() then
-      local teamEntity = (e:Pet()):GetOwnerTeamEntity()
-      self:UpdateTeamDefenceLogic(teamEntity)
-    end
-    ;
-    (self._buffComponent):SetBuffValue("ChangeDefenceConstantFix", 0)
-    return BuffResultChangeDefenceUndo:New(self._black)
+function BuffLogicChangeDefenceBySanChangeUndo:DoLogic()
+  local e = self._buffInstance:Entity()
+  self._buffLogicService:RemoveBaseDefence(e, self:GetBuffSeq(), self._buffInstance._ChangeDefenceType)
+  if e:HasPetPstID() then
+    local teamEntity = e:Pet():GetOwnerTeamEntity()
+    self:UpdateTeamDefenceLogic(teamEntity)
   end
+  self._buffComponent:SetBuffValue("ChangeDefenceConstantFix", 0)
+  return BuffResultChangeDefenceUndo:New(self._black)
 end
-
-

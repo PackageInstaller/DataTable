@@ -1,109 +1,84 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_splash_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_SplashDamage", SkillEffectCalc_Base)
 SkillEffectCalc_SplashDamage = SkillEffectCalc_SplashDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SplashDamage.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SplashDamage:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SplashDamage.DoSkillEffectCalculator = function(self, param)
-  -- function num : 0_1 , upvalues : _ENV
-  local attacker = (self._world):GetEntityByID(param.casterEntityID)
+function SkillEffectCalc_SplashDamage:DoSkillEffectCalculator(param)
+  local attacker = self._world:GetEntityByID(param.casterEntityID)
   local cmptRoutine = attacker:SkillContext()
   local effectParam = param.skillEffectParam
-  if param.targetEntityIDs and #param.targetEntityIDs == 1 and (param.targetEntityIDs)[1] == -1 then
-    return {SkillEffectSplashDamageResult:New({}, SkillScopeResult:New(SkillScopeType.None, Vector2.zero, {}, {}), effectParam:GetSkillEffectDamageStageIndex())}
+  if param.targetEntityIDs and #param.targetEntityIDs == 1 and param.targetEntityIDs[1] == -1 then
+    return {
+      SkillEffectSplashDamageResult:New({}, SkillScopeResult:New(SkillScopeType.None, Vector2.zero, {}, {}), effectParam:GetSkillEffectDamageStageIndex())
+    }
   end
   local lastHitpoint = param.gridPos
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local calcScope = utilScopeSvc:GetSkillScopeCalc()
   local scopeType = effectParam:GetSplashScopeType()
   local scopeParam = effectParam:GetSplashScopeParam()
   local parser = SkillScopeParamParser:New()
   scopeParam = parser:ParseScopeParam(scopeType, scopeParam)
-  local casterBodyArea = (attacker:BodyArea()):GetArea()
+  local casterBodyArea = attacker:BodyArea():GetArea()
   local casterDirection = attacker:GetGridDirection()
   local targetType = SkillTargetType.MonsterTrap
   local splashScopeResult = calcScope:ComputeScopeRange(scopeType, scopeParam, lastHitpoint, casterBodyArea, casterDirection, SkillTargetType.MonsterTrap, lastHitpoint)
-  local skillEffectResultContainer = (attacker:SkillContext()):GetResultContainer()
+  local skillEffectResultContainer = attacker:SkillContext():GetResultContainer()
   local damageResults = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, effectParam:GetBaseDamageStageIndex())
   if not damageResults then
-    return {SkillEffectSplashDamageResult:New({}, SkillScopeResult:New(SkillScopeType.None, Vector2.zero, {}, {}), effectParam:GetSkillEffectDamageStageIndex())}
+    return {
+      SkillEffectSplashDamageResult:New({}, SkillScopeResult:New(SkillScopeType.None, Vector2.zero, {}, {}), effectParam:GetSkillEffectDamageStageIndex())
+    }
   end
   local baseDamage = 0
-  for _,result in ipairs(damageResults) do
+  for _, result in ipairs(damageResults) do
     if result:GetGridPos() == param.gridPos then
       baseDamage = result:GetTotalDamage()
     end
   end
   if baseDamage <= 0 then
-    return {SkillEffectSplashDamageResult:New({}, SkillScopeResult:New(SkillScopeType.None, Vector2.zero, {}, {}), effectParam:GetSkillEffectDamageStageIndex())}
+    return {
+      SkillEffectSplashDamageResult:New({}, SkillScopeResult:New(SkillScopeType.None, Vector2.zero, {}, {}), effectParam:GetSkillEffectDamageStageIndex())
+    }
   end
   local cSkillContext = attacker:SkillContext()
   cSkillContext:SetSplashBaseDamage(baseDamage)
-  local targetSelector = (self._world):GetSkillScopeTargetSelector()
+  local targetSelector = self._world:GetSkillScopeTargetSelector()
   local targetArray = targetSelector:DoSelectSkillTarget(attacker, SkillTargetType.MonsterTrap, splashScopeResult)
   local targetGridAreaMap = {}
-  for _,targetEntityID in ipairs(targetArray) do
-    local targetEntity = (self._world):GetEntityByID(targetEntityID)
+  for _, targetEntityID in ipairs(targetArray) do
+    local targetEntity = self._world:GetEntityByID(targetEntityID)
     if targetEntity then
       local targetCenterPos = targetEntity:GetGridPosition()
       local bodyAreaComponent = targetEntity:BodyArea()
       if bodyAreaComponent then
         local bodyAreaArray = bodyAreaComponent:GetArea()
-        for _,areaPos in ipairs(bodyAreaArray) do
+        for _, areaPos in ipairs(bodyAreaArray) do
           local absAreaPos = areaPos + targetCenterPos
           if not targetGridAreaMap[absAreaPos.x] then
             targetGridAreaMap[absAreaPos.x] = {}
           end
-          -- DECOMPILER ERROR at PC186: Confused about usage of register: R37 in 'UnsetPending'
-
-          ;
-          (targetGridAreaMap[absAreaPos.x])[absAreaPos.y] = targetEntityID
+          targetGridAreaMap[absAreaPos.x][absAreaPos.y] = targetEntityID
         end
       else
-        do
-          do
-            if not targetGridAreaMap[targetCenterPos.x] then
-              targetGridAreaMap[targetCenterPos.x] = {}
-            end
-            -- DECOMPILER ERROR at PC200: Confused about usage of register: R30 in 'UnsetPending'
-
-            ;
-            (targetGridAreaMap[targetCenterPos.x])[targetCenterPos.y] = targetEntityID
-            -- DECOMPILER ERROR at PC201: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC201: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC201: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC201: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC201: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        if not targetGridAreaMap[targetCenterPos.x] then
+          targetGridAreaMap[targetCenterPos.x] = {}
         end
+        targetGridAreaMap[targetCenterPos.x][targetCenterPos.y] = targetEntityID
       end
     end
   end
   local resultArray = {}
   local attackRange = splashScopeResult:GetAttackRange()
-  ;
-  (table.removev)(attackRange, lastHitpoint)
-  for _,attackPos in ipairs(attackRange) do
-    if targetGridAreaMap[attackPos.x] and (targetGridAreaMap[attackPos.x])[attackPos.y] then
-      local defenderEntityID = (targetGridAreaMap[attackPos.x])[attackPos.y]
-      local defender = (self._world):GetEntityByID(defenderEntityID)
+  table.removev(attackRange, lastHitpoint)
+  for _, attackPos in ipairs(attackRange) do
+    if targetGridAreaMap[attackPos.x] and targetGridAreaMap[attackPos.x][attackPos.y] then
+      local defenderEntityID = targetGridAreaMap[attackPos.x][attackPos.y]
+      local defender = self._world:GetEntityByID(defenderEntityID)
       local attackerPos = param.attackPos
       local gridPos = attackPos
       local skillDamageParam = param.skillEffectParam
@@ -111,11 +86,10 @@ SkillEffectCalc_SplashDamage.DoSkillEffectCalculator = function(self, param)
       local damageStageIndex = skillDamageParam:GetSkillEffectDamageStageIndex()
       local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(attacker, attackerPos, defender, gridPos, param.skillID, skillDamageParam, SkillEffectType.SplashDamage, damageStageIndex)
       local skillResult = effectCalcSvc:NewSkillDamageEffectResult(gridPos, defenderEntityID, nTotalDamage, listDamageInfo, damageStageIndex)
-      ;
-      (table.insert)(resultArray, skillResult)
+      table.insert(resultArray, skillResult)
     end
   end
-  return {SkillEffectSplashDamageResult:New(resultArray, splashScopeResult, effectParam:GetSkillEffectDamageStageIndex())}
+  return {
+    SkillEffectSplashDamageResult:New(resultArray, splashScopeResult, effectParam:GetSkillEffectDamageStageIndex())
+  }
 end
-
-

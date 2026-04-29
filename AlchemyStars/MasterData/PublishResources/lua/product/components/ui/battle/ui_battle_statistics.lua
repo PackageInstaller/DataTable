@@ -1,70 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_statistics.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UIBattleStatisticsPanelInex = {None = 0, Total = 1, Detail = 2}
+local UIBattleStatisticsPanelInex = {
+  None = 0,
+  Total = 1,
+  Detail = 2
+}
 _enum("UIBattleStatisticsPanelInex", UIBattleStatisticsPanelInex)
 _class("UIBattleStatisticsCellData", Object)
 UIBattleStatisticsCellData = UIBattleStatisticsCellData
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIBattleStatisticsCellData.Constructor = function(self, recordData, matchPet)
-  -- function num : 0_0
+function UIBattleStatisticsCellData:Constructor(recordData, matchPet)
   self._recordData = recordData
   self._matchPet = matchPet
   self._maxTotalDamage = 0
   self._maxDetailDamage = 0
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleStatisticsCellData.GetRecordData = function(self)
-  -- function num : 0_1
+function UIBattleStatisticsCellData:GetRecordData()
   return self._recordData
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleStatisticsCellData.GetMatchPet = function(self)
-  -- function num : 0_2
+function UIBattleStatisticsCellData:GetMatchPet()
   return self._matchPet
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleStatisticsCellData.SetMaxTotalDamage = function(self, damage)
-  -- function num : 0_3
+function UIBattleStatisticsCellData:SetMaxTotalDamage(damage)
   self._maxTotalDamage = damage
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleStatisticsCellData.GetMaxTotalDamage = function(self)
-  -- function num : 0_4
+function UIBattleStatisticsCellData:GetMaxTotalDamage()
   return self._maxTotalDamage
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleStatisticsCellData.SetMaxDetailDamage = function(self, damage)
-  -- function num : 0_5
+function UIBattleStatisticsCellData:SetMaxDetailDamage(damage)
   self._maxDetailDamage = damage
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleStatisticsCellData.GetMaxDetailDamage = function(self)
-  -- function num : 0_6
+function UIBattleStatisticsCellData:GetMaxDetailDamage()
   return self._maxDetailDamage
 end
 
 _class("UIBattleStatistics", UIController)
 UIBattleStatistics = UIBattleStatistics
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
 
-UIBattleStatistics.OnShow = function(self, uiParams)
-  -- function num : 0_7 , upvalues : UIBattleStatisticsPanelInex, _ENV
+function UIBattleStatistics:OnShow(uiParams)
   self._timeEvents = {}
   self._tabIndex = UIBattleStatisticsPanelInex.None
   self._totalInfoAreaGo = self:GetGameObject("TotalInfoArea")
@@ -84,34 +61,28 @@ UIBattleStatistics.OnShow = function(self, uiParams)
   self:InitCells()
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleStatistics.OnHide = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  for key,value in pairs(self._timeEvents) do
-    ((GameGlobal.Timer)()):CancelEvent(value)
+function UIBattleStatistics:OnHide()
+  for key, value in pairs(self._timeEvents) do
+    GameGlobal.Timer():CancelEvent(value)
   end
   if self._materialReq then
-    (self._materialReq):Dispose()
+    self._materialReq:Dispose()
     self._material = nil
     self._materialReq = nil
   end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleStatistics.InitData = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIBattleStatistics:InitData()
   self._uiTotalDataList = {}
   self._uiDetailDataList = {}
   if not self._matchPetData then
-    return 
+    return
   end
-  local damageStatisticsDataList = (InnerGameHelperRender.GetDamageStatisticsInfo)()
+  local damageStatisticsDataList = InnerGameHelperRender.GetDamageStatisticsInfo()
   local dataDic = {}
   local maxTotalDamage = 0
   local maxDetailDamage = 0
-  for _,v in pairs(damageStatisticsDataList) do
+  for _, v in pairs(damageStatisticsDataList) do
     local damageStatisticsData = v
     local dataPetTemplateID = damageStatisticsData:GetPetTemplateID()
     dataDic[dataPetTemplateID] = damageStatisticsData
@@ -124,31 +95,25 @@ UIBattleStatistics.InitData = function(self)
     local activeDamage = damageStatisticsData:GetPetActiveDamageValue()
     local buffDamage = damageStatisticsData:GetPetBuffDamageValue()
     local damageList = {}
-    ;
-    (table.insert)(damageList, normalDamage)
-    ;
-    (table.insert)(damageList, chainDamage)
-    ;
-    (table.insert)(damageList, activeDamage)
-    ;
-    (table.insert)(damageList, buffDamage)
-    for damageTypeIndex,singleDamage in ipairs(damageList) do
-      if maxDetailDamage < singleDamage then
+    table.insert(damageList, normalDamage)
+    table.insert(damageList, chainDamage)
+    table.insert(damageList, activeDamage)
+    table.insert(damageList, buffDamage)
+    for damageTypeIndex, singleDamage in ipairs(damageList) do
+      if singleDamage > maxDetailDamage then
         maxDetailDamage = singleDamage
       end
     end
   end
-  for index,matchPetInfo in ipairs(self._matchPetData) do
+  for index, matchPetInfo in ipairs(self._matchPetData) do
     local matchPetTemplateID = matchPetInfo:GetTemplateID()
     local damageStatisticsData = dataDic[matchPetTemplateID]
     if damageStatisticsData then
       local uiData = UIBattleStatisticsCellData:New(damageStatisticsData, matchPetInfo)
       uiData:SetMaxTotalDamage(maxTotalDamage)
       uiData:SetMaxDetailDamage(maxDetailDamage)
-      ;
-      (table.insert)(self._uiTotalDataList, uiData)
-      ;
-      (table.insert)(self._uiDetailDataList, uiData)
+      table.insert(self._uiTotalDataList, uiData)
+      table.insert(self._uiDetailDataList, uiData)
     end
   end
   local specialPetTemplateID = -1
@@ -157,152 +122,91 @@ UIBattleStatistics.InitData = function(self)
     local uiData = UIBattleStatisticsCellData:New(specialDamageStatisticsData, nil)
     uiData:SetMaxTotalDamage(maxTotalDamage)
     uiData:SetMaxDetailDamage(maxDetailDamage)
-    ;
-    (table.insert)(self._uiTotalDataList, uiData)
+    table.insert(self._uiTotalDataList, uiData)
   end
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleStatistics.InitCells = function(self)
-  -- function num : 0_10 , upvalues : UIBattleStatisticsPanelInex
+function UIBattleStatistics:InitCells()
   self:InitTotalCells()
   self:InitDetailCells()
   self._tabIndex = UIBattleStatisticsPanelInex.Total
   self:_LockForCellsAnim(1000)
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleStatistics.InitTotalCells = function(self)
-  -- function num : 0_11
+function UIBattleStatistics:InitTotalCells()
   if not self._uiTotalDataList then
-    return 
+    return
   end
   local count = #self._uiTotalDataList
-  ;
-  (self._totalCellGen):SpawnObjects("UIWidgetBattleStatisticsTotalCell", count)
-  self._totalCells = (self._totalCellGen):GetAllSpawnList()
+  self._totalCellGen:SpawnObjects("UIWidgetBattleStatisticsTotalCell", count)
+  self._totalCells = self._totalCellGen:GetAllSpawnList()
   for i = 1, #self._totalCells do
-    ((self._totalCells)[i]):SetData((self._uiTotalDataList)[i])
+    self._totalCells[i]:SetData(self._uiTotalDataList[i])
   end
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-  if count > 6 then
-    (self._totalScroll).vertical = true
+  if 6 < count then
+    self._totalScroll.vertical = true
   else
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._totalScroll).vertical = false
+    self._totalScroll.vertical = false
   end
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleStatistics.InitDetailCells = function(self)
-  -- function num : 0_12
+function UIBattleStatistics:InitDetailCells()
   if not self._uiDetailDataList then
-    return 
+    return
   end
   local count = #self._uiDetailDataList
-  ;
-  (self._detailCellGen):SpawnObjects("UIWidgetBattleStatisticsDetailCell", count)
-  self._detailCells = (self._detailCellGen):GetAllSpawnList()
+  self._detailCellGen:SpawnObjects("UIWidgetBattleStatisticsDetailCell", count)
+  self._detailCells = self._detailCellGen:GetAllSpawnList()
   for i = 1, #self._detailCells do
-    ((self._detailCells)[i]):SetData((self._uiDetailDataList)[i])
+    self._detailCells[i]:SetData(self._uiDetailDataList[i])
   end
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-  if count > 5 then
-    (self._detailScroll).vertical = true
+  if 5 < count then
+    self._detailScroll.vertical = true
   else
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._detailScroll).vertical = false
+    self._detailScroll.vertical = false
   end
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleStatistics.DotBGOnClick = function(self, go)
-  -- function num : 0_13
+function UIBattleStatistics:DotBGOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleStatistics.TotalBtnOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : UIBattleStatisticsPanelInex, _ENV
+function UIBattleStatistics:TotalBtnOnClick(go)
   if self._tabIndex == UIBattleStatisticsPanelInex.Total then
-    return 
+    return
   end
   self._tabIndex = UIBattleStatisticsPanelInex.Total
   self:_LockForCellsAnim(1000)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._btnSelectedCoverRect).anchoredPosition = Vector2(self._totalBtnSelectdPosX, 0)
-  ;
-  (self._totalInfoAreaGo):SetActive(true)
-  ;
-  (self._detailInfoAreaGo):SetActive(false)
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._totalScroll).horizontalNormalizedPosition = 0
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._detailScroll).horizontalNormalizedPosition = 0
+  self._btnSelectedCoverRect.anchoredPosition = Vector2(self._totalBtnSelectdPosX, 0)
+  self._totalInfoAreaGo:SetActive(true)
+  self._detailInfoAreaGo:SetActive(false)
+  self._totalScroll.horizontalNormalizedPosition = 0
+  self._detailScroll.horizontalNormalizedPosition = 0
   for i = 1, #self._totalCells do
-    ((self._totalCells)[i]):RefreshUI()
+    self._totalCells[i]:RefreshUI()
   end
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleStatistics.DetailBtnOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : UIBattleStatisticsPanelInex, _ENV
+function UIBattleStatistics:DetailBtnOnClick(go)
   if self._tabIndex == UIBattleStatisticsPanelInex.Detail then
-    return 
+    return
   end
   self._tabIndex = UIBattleStatisticsPanelInex.Detail
   self:_LockForCellsAnim(1000)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._btnSelectedCoverRect).anchoredPosition = Vector2(self._detailBtnSelectdPosX, 0)
-  ;
-  (self._totalInfoAreaGo):SetActive(false)
-  ;
-  (self._detailInfoAreaGo):SetActive(true)
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._totalScroll).horizontalNormalizedPosition = 0
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._detailScroll).horizontalNormalizedPosition = 0
+  self._btnSelectedCoverRect.anchoredPosition = Vector2(self._detailBtnSelectdPosX, 0)
+  self._totalInfoAreaGo:SetActive(false)
+  self._detailInfoAreaGo:SetActive(true)
+  self._totalScroll.horizontalNormalizedPosition = 0
+  self._detailScroll.horizontalNormalizedPosition = 0
   for i = 1, #self._detailCells do
-    ((self._detailCells)[i]):RefreshUI()
+    self._detailCells[i]:RefreshUI()
   end
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleStatistics._LockForCellsAnim = function(self, timeLen)
-  -- function num : 0_16 , upvalues : _ENV
+function UIBattleStatistics:_LockForCellsAnim(timeLen)
   self:Lock("UIBattleStatistics_LockForCellsAnim")
-  local te = ((GameGlobal.Timer)()):AddEvent(timeLen, function()
-    -- function num : 0_16_0 , upvalues : self
+  local te = GameGlobal.Timer():AddEvent(timeLen, function()
     self:UnLock("UIBattleStatistics_LockForCellsAnim")
-  end
-)
-  ;
-  (table.insert)(self._timeEvents, te)
+  end)
+  table.insert(self._timeEvents, te)
 end
-
-

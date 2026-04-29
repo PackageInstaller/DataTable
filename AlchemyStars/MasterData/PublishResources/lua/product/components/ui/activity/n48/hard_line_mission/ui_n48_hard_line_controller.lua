@@ -1,429 +1,308 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n48/hard_line_mission/ui_n48_hard_line_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN48HardController", UIController)
 UIN48HardController = UIN48HardController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN48HardController._SetCommonTopButton = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local closeCallback = function()
-    -- function num : 0_0_0 , upvalues : self
+function UIN48HardController:_SetCommonTopButton()
+  local function closeCallback()
     self:_Back()
   end
-
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_backBtns", "UINewCommonTopButton")
+  
+  local obj = UIWidgetHelper.SpawnObject(self, "_backBtns", "UINewCommonTopButton")
   obj:SetData(closeCallback)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController._Back = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local campaignMain = (CampaignConst.GetSafeStateInfo)((self._campaign)._id, nil, UIStateType.UIN48MainController, {true})
-  local uiMain = (CampaignConst.GetSafeStateInfo)(nil, nil, UIStateType.UIMain, nil)
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIN48HardController:_Back()
+  local campaignMain = CampaignConst.GetSafeStateInfo(self._campaign._id, nil, UIStateType.UIN48MainController, {true})
+  local uiMain = CampaignConst.GetSafeStateInfo(nil, nil, UIStateType.UIMain, nil)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   campaignModule:SwitchState_Safe(true, {campaignMain, uiMain})
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController._SetRemainingTime = function(self, widgetName, descId, endTime, tickCallback, stopCallback)
-  -- function num : 0_2 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UIN48HardController:_SetRemainingTime(widgetName, descId, endTime, tickCallback, stopCallback)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   obj:SetAdvanceText(descId)
   obj:SetData(endTime, tickCallback, stopCallback)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController._PlayAnim = function(self, idx, callback)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN48HardController:_PlayAnim(idx, callback)
   local tb = {
-hardin = {animName = "uieff_UIN48HardControllerlMain_in", duration = 200}
-, 
-diffin = {animName = "uieff_UIN48HardControllerlMain_red_in"}
-, 
-difftohard = {animName = "uieff_UIN48HardControllerlMain_red_out"}
-, 
-tipsin = {animName = "uieff_UIN48HardControllerlMain_Diff_in", duration = 250}
-, 
-tipsout = {animName = "uieff_UIN48HardControllerlMain_Diff_out", duration = 500}
-}
+    hardin = {
+      animName = "uieff_UIN48HardControllerlMain_in",
+      duration = 200
+    },
+    diffin = {
+      animName = "uieff_UIN48HardControllerlMain_red_in"
+    },
+    difftohard = {
+      animName = "uieff_UIN48HardControllerlMain_red_out"
+    },
+    tipsin = {
+      animName = "uieff_UIN48HardControllerlMain_Diff_in",
+      duration = 250
+    },
+    tipsout = {
+      animName = "uieff_UIN48HardControllerlMain_Diff_out",
+      duration = 500
+    }
+  }
   if tb[idx] ~= nil then
-    (UIWidgetHelper.PlayAnimation)(self, "_anim", (tb[idx]).animName, (tb[idx]).duration, callback)
-  else
-    if callback ~= nil then
-      callback()
-    end
+    UIWidgetHelper.PlayAnimation(self, "_anim", tb[idx].animName, tb[idx].duration, callback)
+  elseif callback ~= nil then
+    callback()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController.LoadData = function(self, TT, res)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN48HardController:LoadData(TT, res)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_N48
-  self._componentId_Black = (UIActivityN48Helper.GetComponentId)("black")
+  self._componentId_Black = UIActivityN48Helper.GetComponentId("black")
   self._showTips = false
-  self._campaign = (UIActivityHelper.LoadDataOnEnter)(TT, res, self._campaignType, {self._componentId_Black})
-  self._levelHardComponent = (self._campaign):GetComponent(self._componentId_Black)
-  self._levelHardCompInfo = (self._campaign):GetComponentInfo(self._componentId_Black)
-  self._blackHardComponent = (self._campaign):GetComponent(self._componentId_Black)
-  self._blackHardCompInfo = (self._campaign):GetComponentInfo(self._componentId_Black)
-  local status, time = (UIActivityN48Helper.CheckComponentStatus)(self._blackHardComponent)
-  local cfgv = (Cfg.cfg_campaign_mission)[(self._blackHardCompInfo).m_need_mission_id]
+  self._campaign = UIActivityHelper.LoadDataOnEnter(TT, res, self._campaignType, {
+    self._componentId_Black
+  })
+  self._levelHardComponent = self._campaign:GetComponent(self._componentId_Black)
+  self._levelHardCompInfo = self._campaign:GetComponentInfo(self._componentId_Black)
+  self._blackHardComponent = self._campaign:GetComponent(self._componentId_Black)
+  self._blackHardCompInfo = self._campaign:GetComponentInfo(self._componentId_Black)
+  local status, time = UIActivityN48Helper.CheckComponentStatus(self._blackHardComponent)
+  local cfgv = Cfg.cfg_campaign_mission[self._blackHardCompInfo.m_need_mission_id]
   if status == ActivityN48ComponentStatus.Close then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n48_activity_end"))
+    ToastManager.ShowToast(StringTable.Get("str_n48_activity_end"))
     return true
-  else
-    if status == ActivityN48ComponentStatus.ActivityEnd then
-      (ToastManager.ShowToast)((StringTable.Get)("str_n48_activity_end"))
-      return true
-    else
-      if status == ActivityN48ComponentStatus.TimeLock then
-        (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_110"))
-        return true
-      else
-        if status == ActivityN48ComponentStatus.MissionLock then
-          (ToastManager.ShowToast)((StringTable.Get)("str_n48_activity_hard_level_lock_mission_tips", (StringTable.Get)(cfgv.Name)))
-          return true
-        end
-      end
-    end
+  elseif status == ActivityN48ComponentStatus.ActivityEnd then
+    ToastManager.ShowToast(StringTable.Get("str_n48_activity_end"))
+    return true
+  elseif status == ActivityN48ComponentStatus.TimeLock then
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_110"))
+    return true
+  elseif status == ActivityN48ComponentStatus.MissionLock then
+    ToastManager.ShowToast(StringTable.Get("str_n48_activity_hard_level_lock_mission_tips", StringTable.Get(cfgv.Name)))
+    return true
   end
   local fRes = AsyncRequestRes:New()
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, fRes)
+  self._campaign:ReLoadCampaignInfo_Force(TT, fRes)
   if res and not res:GetSucc() then
-    (self._campModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    self._campModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN48HardController:LoadDataOnEnter(TT, res, uiParams)
   self._missionModule = self:GetModule(MissionModule)
-  self._campModule = (GameGlobal.GetModule)(CampaignModule)
+  self._campModule = GameGlobal.GetModule(CampaignModule)
   local err = self:LoadData(TT, res)
   if err then
     res:SetSucc(false)
-    return 
+    return
   end
-  ;
-  (UIActivityDiffLevelCupData.CreateEntiesDesc)()
+  UIActivityDiffLevelCupData.CreateEntiesDesc()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController.OnShow = function(self, uiParams)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN48HardController:OnShow(uiParams)
   self:_SetCommonTopButton()
   self.blur = self:GetGameObject("blur")
   self._diffLevel = UIN48HardBlack:New(self)
-  ;
-  (self._diffLevel):SetData(self._campaign, self._blackHardComponent)
-  ;
-  (self._diffLevel):SetActive(true)
-  ;
-  (UIActivityN48Helper.LocalDB_Set)("black", "New")
-  ;
-  (UIActivityN48Helper.LocalDB_Set_CrossDay)("black", "Red")
-  local closeTime = (self._blackHardCompInfo).m_close_time
+  self._diffLevel:SetData(self._campaign, self._blackHardComponent)
+  self._diffLevel:SetActive(true)
+  UIActivityN48Helper.LocalDB_Set("black", "New")
+  UIActivityN48Helper.LocalDB_Set_CrossDay("black", "Red")
+  local closeTime = self._blackHardCompInfo.m_close_time
   self:_SetRemainingTime("_time", "str_activity_common_remainingtime_3", closeTime, nil, function(first)
-    -- function num : 0_6_0 , upvalues : self
     if not first then
       self:_Refresh()
     end
-  end
-)
+  end)
   self:_Refresh()
   self:AttachEvent(GameEventType.OnCampDiffTeamReset, self.OnTeamReset)
   self:AttachEvents()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController.OnHide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN48HardController:OnHide()
   self:DetachEvent(GameEventType.OnCampDiffTeamReset, self.OnTeamReset)
   self:_DetachEvents()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityMainStatusRefreshEvent)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityMainStatusRefreshEvent)
   if self._diffLevel then
-    (self._diffLevel):Destroy()
+    self._diffLevel:Destroy()
   end
   if self._normalLevel then
-    (self._normalLevel):Destroy()
+    self._normalLevel:Destroy()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController.OnTeamReset = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN48HardController:OnTeamReset()
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV
     local lockName = "UIN48HardController:OnTeamReset"
     self:Lock(lockName)
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    ;
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-    ;
-    (self._diffLevel):SetData(self._campaign, self._blackHardComponent)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCampDiffTeamResetInternal)
+    self._campaign:ReLoadCampaignInfo_Force(TT, res)
+    self._diffLevel:SetData(self._campaign, self._blackHardComponent)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCampDiffTeamResetInternal)
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController._Refresh = function(self, noPlayAnim)
-  -- function num : 0_9
-  (self._diffLevel):_Refresh()
+function UIN48HardController:_Refresh(noPlayAnim)
+  self._diffLevel:_Refresh()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController._SetLineBtn = function(self, levelType)
-  -- function num : 0_10
+function UIN48HardController:_SetLineBtn(levelType)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController._SetBlackBtn = function(self, levelType)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN48HardController:_SetBlackBtn(levelType)
   local isLock = self:_GetBlackLevelIslock()
   local isOver = self:_GetIsOver()
   if not isOver then
     if isLock ~= ActivityN48ComponentStatus.Open then
       if isLock == ActivityN48ComponentStatus.TimeLock then
-        self:_SetRemainingTime("_blackTime", "str_N48_raffle_remaining_open_time", (self._blackHardCompInfo).m_unlock_time, nil, function()
-    -- function num : 0_11_0 , upvalues : self, _ENV
-    if ((self._levelHardCompInfo).m_pass_mission_info)[(self._blackHardCompInfo).m_need_mission_id] ~= nil then
-      (self:GetGameObject("_tips")):SetActive(true)
-      self:_ShowTips()
-      self._levelType = 2
-      ;
-      (UIActivityN48Helper.LocalDB_Set)("black", "New")
-      ;
-      (UIActivityN48Helper.LocalDB_Set_CrossDay)("black", "Red")
-    else
-      self:_Refresh()
-    end
-  end
-)
+        self:_SetRemainingTime("_blackTime", "str_N48_raffle_remaining_open_time", self._blackHardCompInfo.m_unlock_time, nil, function()
+          if self._levelHardCompInfo.m_pass_mission_info[self._blackHardCompInfo.m_need_mission_id] ~= nil then
+            self:GetGameObject("_tips"):SetActive(true)
+            self:_ShowTips()
+            self._levelType = 2
+            UIActivityN48Helper.LocalDB_Set("black", "New")
+            UIActivityN48Helper.LocalDB_Set_CrossDay("black", "Red")
+          else
+            self:_Refresh()
+          end
+        end)
       else
-        ;
-        (self:GetGameObject("_blackTime")):SetActive(false)
-        ;
-        (self:GetGameObject("_pass_lock")):SetActive(true)
+        self:GetGameObject("_blackTime"):SetActive(false)
+        self:GetGameObject("_pass_lock"):SetActive(true)
         local passlock = self:GetUIComponent("UILocalizationText", "_pass_lock")
-        local missionName = ((Cfg.cfg_campaign_mission)[(self._blackHardCompInfo).m_need_mission_id]).Name
-        local lvName = (StringTable.Get)(missionName)
-        local text = (StringTable.Get)("str_N48_pass_level_unlock", lvName)
+        local missionName = Cfg.cfg_campaign_mission[self._blackHardCompInfo.m_need_mission_id].Name
+        local lvName = StringTable.Get(missionName)
+        local text = StringTable.Get("str_N48_pass_level_unlock", lvName)
         passlock:SetText(text)
       end
     else
-      do
-        ;
-        (self:GetGameObject("_BlackBtnLock")):SetActive(isLock ~= ActivityN48ComponentStatus.Open)
-        if isLock == ActivityN48ComponentStatus.Open then
-          self:StartTask(function(TT)
-    -- function num : 0_11_1 , upvalues : _ENV, self
-    YIELD(TT, 200)
-    self:_ShowTips()
-  end
-)
-        end
-        ;
-        (self:GetGameObject("_blackTime")):SetActive(true)
-        ;
-        (self:GetGameObject("_pass_lock")):SetActive(false)
-        self:_SetRemainingTime("_blackTime", nil, (self._levelHardCompInfo).m_close_time, nil, function(first)
-    -- function num : 0_11_2 , upvalues : self
-    if not first then
-      self:_Refresh()
+      self:GetGameObject("_BlackBtnLock"):SetActive(isLock ~= ActivityN48ComponentStatus.Open)
     end
-  end
-)
-        -- DECOMPILER ERROR: 4 unprocessed JMP targets
+    if isLock == ActivityN48ComponentStatus.Open then
+      self:StartTask(function(TT)
+        YIELD(TT, 200)
+        self:_ShowTips()
+      end)
+    end
+  else
+    self:GetGameObject("_blackTime"):SetActive(true)
+    self:GetGameObject("_pass_lock"):SetActive(false)
+    self:_SetRemainingTime("_blackTime", nil, self._levelHardCompInfo.m_close_time, nil, function(first)
+      if not first then
+        self:_Refresh()
       end
-    end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController._ShowTips = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  if self:_BlackLevelFirstTipsLocalDB((self._blackHardCompInfo).m_campaign_id) then
-    self:_BlackLevelFirstTipsLocalDB((self._blackHardCompInfo).m_campaign_id, true)
+function UIN48HardController:_ShowTips()
+  if self:_BlackLevelFirstTipsLocalDB(self._blackHardCompInfo.m_campaign_id) then
+    self:_BlackLevelFirstTipsLocalDB(self._blackHardCompInfo.m_campaign_id, true)
     self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : _ENV, self
-    YIELD(TT)
-    self:_PlayAnim("tipsin", function()
-      -- function num : 0_12_0_0 , upvalues : self
-      (self:GetGameObject("ShowBtn")):SetActive(true)
-      self._showTips = true
-    end
-)
-  end
-)
+      YIELD(TT)
+      self:_PlayAnim("tipsin", function()
+        self:GetGameObject("ShowBtn"):SetActive(true)
+        self._showTips = true
+      end)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController._GetBlackLevelIslock = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local unlockTime = (self._blackHardCompInfo).m_unlock_time
+function UIN48HardController:_GetBlackLevelIslock()
+  local unlockTime = self._blackHardCompInfo.m_unlock_time
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local stamp = unlockTime - curTime
-  if stamp > 0 then
+  if 0 < stamp then
     return ActivityN48ComponentStatus.TimeLock
   end
-  if ((self._levelHardCompInfo).m_pass_mission_info)[(self._blackHardCompInfo).m_need_mission_id] == nil then
+  if self._levelHardCompInfo.m_pass_mission_info[self._blackHardCompInfo.m_need_mission_id] == nil then
     return ActivityN48ComponentStatus.MissionLock
   end
   return ActivityN48ComponentStatus.Open
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController._GetIsOver = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local closeTime = (self._blackHardCompInfo).m_close_time
+function UIN48HardController:_GetIsOver()
+  local closeTime = self._blackHardCompInfo.m_close_time
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  do return curTime - closeTime > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  return 0 < curTime - closeTime
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController.LineBtnOnClick = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN48HardController:LineBtnOnClick()
   self:ClosePetEnhanceTips()
   if self._levelType == 1 then
-    return 
+    return
   end
-  if (self._levelHardComponent):ComponentIsClose() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+  if self._levelHardComponent:ComponentIsClose() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     self:_Back()
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : self, _ENV
     self:_PlayAnim("difftohard")
     YIELD(TT, 300)
     self._levelType = 1
     self:PlaySwitchAnim(self._levelType)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController.IntroBtnOnClick = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN48HardController:IntroBtnOnClick()
   self:ShowDialog("UIIntroLoader", "UIN48HardLevel", MaskType.MT_BlurMask)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController.ShowBtnOnClick = function(self)
-  -- function num : 0_17
+function UIN48HardController:ShowBtnOnClick()
   if self._showTips == true then
-    (self:GetGameObject("ShowBtn")):SetActive(false)
+    self:GetGameObject("ShowBtn"):SetActive(false)
     self:_PlayAnim("tipsout")
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController.PlaySwitchAnim = function(self, levelType)
-  -- function num : 0_18 , upvalues : _ENV
+function UIN48HardController:PlaySwitchAnim(levelType)
   self:StartTask(function(TT)
-    -- function num : 0_18_0 , upvalues : levelType, self, _ENV
     if levelType == 1 then
-      (self._diffLevel):_HideAnim()
-      ;
-      (self._normalLevel):SetActive(true)
-    else
-      if levelType == 2 then
-        (self._normalLevel):_HideAnim()
-        ;
-        (self._diffLevel):SetActive(true)
-      end
+      self._diffLevel:_HideAnim()
+      self._normalLevel:SetActive(true)
+    elseif levelType == 2 then
+      self._normalLevel:_HideAnim()
+      self._diffLevel:SetActive(true)
     end
     YIELD(TT, 250)
     self:_Refresh()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController._BlackLevelFirstTipsLocalDB = function(self, campaignid, save)
-  -- function num : 0_19 , upvalues : _ENV
-  local key = (UIActivityHelper.GetLocalDBKeyWithPstId)("_BlackLevelFirstTips_" .. campaignid .. "_")
+function UIN48HardController:_BlackLevelFirstTipsLocalDB(campaignid, save)
+  local key = UIActivityHelper.GetLocalDBKeyWithPstId("_BlackLevelFirstTips_" .. campaignid .. "_")
   if save then
-    (LocalDB.SetInt)(key, 1)
+    LocalDB.SetInt(key, 1)
   else
-    return not (LocalDB.HasKey)(key)
+    return not LocalDB.HasKey(key)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController.ClosePetEnhanceTips = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClosePetEnhanceTips)
+function UIN48HardController:ClosePetEnhanceTips()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ClosePetEnhanceTips)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController.AttachEvents = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIN48HardController:AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.ActivityComponentCloseEvent, self._OnComponentClose)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController._DetachEvents = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIN48HardController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.ActivityComponentCloseEvent, self._OnComponentClose)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController._CheckActivityClose = function(self, id)
-  -- function num : 0_23 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIN48HardController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardController._OnComponentClose = function(self, componentCfgId)
-  -- function num : 0_24
+function UIN48HardController:_OnComponentClose(componentCfgId)
   local blackHardComponent = self._blackHardComponent
   if blackHardComponent and blackHardComponent:GetComponentCfgId() == componentCfgId then
     self:_Back()
-    return 
+    return
   end
 end
-
-

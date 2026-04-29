@@ -1,19 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/common/stn_common_enable_auto_battle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("Common_EnableAutoBattle", CTestRobot_Base)
 Common_EnableAutoBattle = Common_EnableAutoBattle
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Common_EnableAutoBattle.OnWorking = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.GetUIModule)(MatchModule)):SetIsAutoFighting(true)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AutoFight, true)
-  return ((Common_EnableAutoBattle.super).OnWorking)(self)
+function Common_EnableAutoBattle:OnWorking()
+  GameGlobal.GetUIModule(MatchModule):SetIsAutoFighting(true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AutoFight, true)
+  return Common_EnableAutoBattle.super.OnWorking(self)
 end
-
-

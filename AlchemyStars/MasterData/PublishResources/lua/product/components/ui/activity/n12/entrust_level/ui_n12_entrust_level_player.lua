@@ -1,56 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/entrust_level/ui_n12_entrust_level_player.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12EntrustLevelPlayer", UICustomWidget)
 UIN12EntrustLevelPlayer = UIN12EntrustLevelPlayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12EntrustLevelPlayer._PlayAnim = function(self, widgetName, animName, time, callback)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN12EntrustLevelPlayer:_PlayAnim(widgetName, animName, time, callback)
   local anim = self:GetUIComponent("Animation", widgetName)
   self:Lock(animName)
   anim:Play(animName)
   self:StartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : _ENV, time, self, animName, callback
     YIELD(TT, time)
     self:UnLock(animName)
     if callback then
       callback()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustLevelPlayer.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN12EntrustLevelPlayer:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustLevelPlayer.SetData = function(self, component, nodeId)
-  -- function num : 0_2
+function UIN12EntrustLevelPlayer:SetData(component, nodeId)
   local flag = self._nodeId ~= nodeId
   self._component = component
   self._nodeId = nodeId
   self:_SetPos(nodeId)
   self:_PlayAnim("root", "uieff_Level_Player", 400)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustLevelPlayer._SetPos = function(self, nodeId)
-  -- function num : 0_3 , upvalues : _ENV
-  local pos = (self._component):GetEventPointPos(nodeId)
-  local rect = (self:GetGameObject()):GetComponent("RectTransform")
+function UIN12EntrustLevelPlayer:_SetPos(nodeId)
+  local pos = self._component:GetEventPointPos(nodeId)
+  local rect = self:GetGameObject():GetComponent("RectTransform")
   rect.anchorMax = Vector2(0, 0.5)
   rect.anchorMin = Vector2(0, 0.5)
   rect.sizeDelta = Vector2.zero
   rect.anchoredPosition = pos
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_double_cross_be_blocked.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_DoubleCrossBeBlocked", SkillScopeCalculator_Base)
 SkillScopeCalculator_DoubleCrossBeBlocked = SkillScopeCalculator_DoubleCrossBeBlocked
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_DoubleCrossBeBlocked.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_DoubleCrossBeBlocked:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local casterPos = centerPos
   local casterbodyAreaArray = bodyArea
   local size = scopeParam
@@ -21,13 +14,13 @@ SkillScopeCalculator_DoubleCrossBeBlocked.CalcRange = function(self, scopeType, 
     end
   end
   local target_area_grid = {}
-  for i,p in ipairs(casterbodyAreaArray) do
-    (table.insert)(target_area_grid, Vector2(casterPos.x + p.x, casterPos.y + p.y))
+  for i, p in ipairs(casterbodyAreaArray) do
+    table.insert(target_area_grid, Vector2(casterPos.x + p.x, casterPos.y + p.y))
   end
   local cross_area = {}
   local wholeArea = {}
-  local blocks = (self._gridFilter):GetBlockGridTrapPosList()
-  for i,p in ipairs(target_area_grid) do
+  local blocks = self._gridFilter:GetBlockGridTrapPosList()
+  for i, p in ipairs(target_area_grid) do
     local center_x = p.x
     local center_y = p.y
     local upBlocked = false
@@ -48,7 +41,7 @@ SkillScopeCalculator_DoubleCrossBeBlocked.CalcRange = function(self, scopeType, 
       local leftUpPos = Vector2(center_x - index, center_y + index)
       local rightUpPos = Vector2(center_x + index, center_y + index)
       if not upBlocked then
-        if not (table.icontains)(blocks, upPos) then
+        if not table.icontains(blocks, upPos) then
           self:_InsertTargetGrid(cross_area, upPos, wholeArea)
         else
           upBlocked = true
@@ -58,7 +51,7 @@ SkillScopeCalculator_DoubleCrossBeBlocked.CalcRange = function(self, scopeType, 
         self:_InsertTargetGridIntoOneArea(upPos, wholeArea)
       end
       if not downBlocked then
-        if not (table.icontains)(blocks, downPos) then
+        if not table.icontains(blocks, downPos) then
           self:_InsertTargetGrid(cross_area, downPos, wholeArea)
         else
           downBlocked = true
@@ -68,7 +61,7 @@ SkillScopeCalculator_DoubleCrossBeBlocked.CalcRange = function(self, scopeType, 
         self:_InsertTargetGridIntoOneArea(downPos, wholeArea)
       end
       if not leftBlocked then
-        if not (table.icontains)(blocks, leftPos) then
+        if not table.icontains(blocks, leftPos) then
           self:_InsertTargetGrid(cross_area, leftPos, wholeArea)
         else
           leftBlocked = true
@@ -78,7 +71,7 @@ SkillScopeCalculator_DoubleCrossBeBlocked.CalcRange = function(self, scopeType, 
         self:_InsertTargetGridIntoOneArea(leftPos, wholeArea)
       end
       if not rightBlocked then
-        if not (table.icontains)(blocks, rightPos) then
+        if not table.icontains(blocks, rightPos) then
           self:_InsertTargetGrid(cross_area, rightPos, wholeArea)
         else
           rightBlocked = true
@@ -88,7 +81,7 @@ SkillScopeCalculator_DoubleCrossBeBlocked.CalcRange = function(self, scopeType, 
         self:_InsertTargetGridIntoOneArea(rightPos, wholeArea)
       end
       if not leftDownBlocked then
-        if not (table.icontains)(blocks, leftDownPos) then
+        if not table.icontains(blocks, leftDownPos) then
           self:_InsertTargetGrid(cross_area, leftDownPos, wholeArea)
         else
           leftDownBlocked = true
@@ -98,7 +91,7 @@ SkillScopeCalculator_DoubleCrossBeBlocked.CalcRange = function(self, scopeType, 
         self:_InsertTargetGridIntoOneArea(leftDownPos, wholeArea)
       end
       if not rightDownBlocked then
-        if not (table.icontains)(blocks, rightDownPos) then
+        if not table.icontains(blocks, rightDownPos) then
           self:_InsertTargetGrid(cross_area, rightDownPos, wholeArea)
         else
           rightDownBlocked = true
@@ -108,7 +101,7 @@ SkillScopeCalculator_DoubleCrossBeBlocked.CalcRange = function(self, scopeType, 
         self:_InsertTargetGridIntoOneArea(rightDownPos, wholeArea)
       end
       if not leftUpBlocked then
-        if not (table.icontains)(blocks, leftUpPos) then
+        if not table.icontains(blocks, leftUpPos) then
           self:_InsertTargetGrid(cross_area, leftUpPos, wholeArea)
         else
           leftUpBlocked = true
@@ -118,7 +111,7 @@ SkillScopeCalculator_DoubleCrossBeBlocked.CalcRange = function(self, scopeType, 
         self:_InsertTargetGridIntoOneArea(leftUpPos, wholeArea)
       end
       if not rightUpBlocked then
-        if not (table.icontains)(blocks, rightUpPos) then
+        if not table.icontains(blocks, rightUpPos) then
           self:_InsertTargetGrid(cross_area, rightUpPos, wholeArea)
         else
           rightUpBlocked = true
@@ -135,5 +128,3 @@ SkillScopeCalculator_DoubleCrossBeBlocked.CalcRange = function(self, scopeType, 
   local result = SkillScopeResult:New(SkillScopeType.DoubleCross, casterPos, cross_area, wholeArea)
   return result
 end
-
-

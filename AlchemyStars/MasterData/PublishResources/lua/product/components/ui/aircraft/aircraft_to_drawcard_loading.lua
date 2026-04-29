@@ -1,45 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/aircraft_to_drawcard_loading.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftToDrawcardLoading", LoadingHandler)
 AircraftToDrawcardLoading = AircraftToDrawcardLoading
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftToDrawcardLoading.PreLoadBeforeLoadLevel = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(AircraftModule)
+function AircraftToDrawcardLoading:PreLoadBeforeLoadLevel(TT)
+  local module = GameGlobal.GetModule(AircraftModule)
   local main = module:GetClientMain()
   main:Dispose()
   module:SetClientMain(nil)
   module:PushLeaveAircraft()
-  ;
-  (AudioHelperController.RequestUISoundList)({CriAudioIDConst.DrawCard_tuijingtou, CriAudioIDConst.DrawCard_lagan_new, CriAudioIDConst.Drawcard_lagan_eft_3, CriAudioIDConst.Drawcard_lagan_eft_4, CriAudioIDConst.Drawcard_lagan_eft_5, CriAudioIDConst.Drawcard_lagan_eft_6, CriAudioIDConst.Drawcard_light_one, CriAudioIDConst.Drawcard_light_more, CriAudioIDConst.Drawcard_light_one, CriAudioIDConst.Drawcard_mul_show, CriAudioIDConst.Drawcard_lagan_once})
+  AudioHelperController.RequestUISoundList({
+    CriAudioIDConst.DrawCard_tuijingtou,
+    CriAudioIDConst.DrawCard_lagan_new,
+    CriAudioIDConst.Drawcard_lagan_eft_3,
+    CriAudioIDConst.Drawcard_lagan_eft_4,
+    CriAudioIDConst.Drawcard_lagan_eft_5,
+    CriAudioIDConst.Drawcard_lagan_eft_6,
+    CriAudioIDConst.Drawcard_light_one,
+    CriAudioIDConst.Drawcard_light_more,
+    CriAudioIDConst.Drawcard_light_one,
+    CriAudioIDConst.Drawcard_mul_show,
+    CriAudioIDConst.Drawcard_lagan_once
+  })
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftToDrawcardLoading.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  (LoadingHandler.PreLoadAfterLoadLevel)(self, TT, ...)
+function AircraftToDrawcardLoading:PreLoadAfterLoadLevel(TT, ...)
+  LoadingHandler.PreLoadAfterLoadLevel(self, TT, ...)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftToDrawcardLoading.OnLoadingFinish = function(self, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(GambleModule)
+function AircraftToDrawcardLoading:OnLoadingFinish(...)
+  local module = GameGlobal.GetModule(GambleModule)
   module:InitContext(self.sceneResReq)
-  ;
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIDrawCard, ...)
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIDrawCard, ...)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftToDrawcardLoading.LoadingType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function AircraftToDrawcardLoading:LoadingType()
   return LoadingType.STATICPIC
 end
-
-

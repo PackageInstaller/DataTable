@@ -1,28 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s7/map/ui_season_main_oval_area_s7.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMainOvalAreaS7", UICustomWidget)
 UISeasonMainOvalAreaS7 = UISeasonMainOvalAreaS7
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMainOvalAreaS7.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMainOvalAreaS7:OnShow(uiParams)
   self:InitWidget()
-  self._rect = (self:GetGameObject()):GetComponent(typeof(UnityEngine.RectTransform))
-  local width = ((self._rect).rect).width
-  local height = ((self._rect).rect).height
+  self._rect = self:GetGameObject():GetComponent(typeof(UnityEngine.RectTransform))
+  local width = self._rect.rect.width
+  local height = self._rect.rect.height
   self._ovalCenter = Vector2(width / 2, height / 2)
-  self._seasonID = ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonID()
-  local cfg = (Cfg.cfg_season_campaign_client)[self._seasonID]
-  self._oval = OvalShape:New(width / 2 - (cfg.OvalTipPadding)[1], height / 2 - (cfg.OvalTipPadding)[2])
+  self._seasonID = GameGlobal.GetModule(SeasonModule):GetCurSeasonID()
+  local cfg = Cfg.cfg_season_campaign_client[self._seasonID]
+  self._oval = OvalShape:New(width / 2 - cfg.OvalTipPadding[1], height / 2 - cfg.OvalTipPadding[2])
   self._arrowPool = {}
   self._tips = {}
-  self._uiModule = (GameGlobal.GetUIModule)(SeasonModule)
-  self._camera = (((self._uiModule):SeasonManager()):SeasonCameraManager()):Camera()
-  self._uiCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera((UISeasonHelper.CurSeasonSceneUI)())
-  self._seasonManager = (self._uiModule):SeasonManager()
+  self._uiModule = GameGlobal.GetUIModule(SeasonModule)
+  self._camera = self._uiModule:SeasonManager():SeasonCameraManager():Camera()
+  self._uiCamera = GameGlobal.UIStateManager():GetControllerCamera(UISeasonHelper.CurSeasonSceneUI())
+  self._seasonManager = self._uiModule:SeasonManager()
   self:_RefreshMainLevelTarget()
   self:_RefreshDailyLevelTarget()
   self:_RefreshBoxTarget()
@@ -34,278 +27,202 @@ UISeasonMainOvalAreaS7.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.OnSeasonTaskRefreshed, self._RefreshTask)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalAreaS7.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMainOvalAreaS7:InitWidget()
   self._tipsParent = self:GetUIComponent("Transform", "tips")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalAreaS7.SetData = function(self)
-  -- function num : 0_2
+function UISeasonMainOvalAreaS7:SetData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalAreaS7.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,req in ipairs(self._arrowPool) do
+function UISeasonMainOvalAreaS7:OnHide()
+  for _, req in ipairs(self._arrowPool) do
     req:Dispose()
   end
   self._arrowPool = nil
-  for _,tip in pairs(self._tips) do
+  for _, tip in pairs(self._tips) do
     tip:Dispose()
   end
   self._tips = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalAreaS7.AddTarget = function(self, target, type)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self._tips)[target] then
-    (Log.error)("duplicate target")
-    return 
+function UISeasonMainOvalAreaS7:AddTarget(target, type)
+  if self._tips[target] then
+    Log.error("duplicate target")
+    return
   end
   local prefab = self:_LoadPrefab()
   local tip = UISeasonMainOvalTipS7:New(self._seasonID, prefab, function(tip)
-    -- function num : 0_4_0 , upvalues : self
     self:_OnTipClick(tip)
-  end
-)
+  end)
   tip:ResetTarget(target, type)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._tips)[target] = tip
+  self._tips[target] = tip
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalAreaS7.RemoveTarget = function(self, obj)
-  -- function num : 0_5 , upvalues : _ENV
-  if not (self._tips)[obj] then
-    (Log.error)("target not found")
-    return 
+function UISeasonMainOvalAreaS7:RemoveTarget(obj)
+  if not self._tips[obj] then
+    Log.error("target not found")
+    return
   end
-  local tip = (self._tips)[obj]
+  local tip = self._tips[obj]
   local req = tip:GetReq()
   self:_ReleaseTip(req)
   tip:Delete()
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._tips)[obj] = nil
+  self._tips[obj] = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalAreaS7.GetTipByType = function(self, type)
-  -- function num : 0_6 , upvalues : _ENV
-  for _,tip in pairs(self._tips) do
+function UISeasonMainOvalAreaS7:GetTipByType(type)
+  for _, tip in pairs(self._tips) do
     if tip:Type() == type then
       return tip
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalAreaS7.Update = function(self, dt)
-  -- function num : 0_7 , upvalues : _ENV
-  for _,tip in pairs(self._tips) do
-    local screenPos = (self._camera):WorldToScreenPoint(tip:TargetWorldPos())
-    local res, pos = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(self._rect, screenPos, self._uiCamera, nil)
+function UISeasonMainOvalAreaS7:Update(dt)
+  for _, tip in pairs(self._tips) do
+    local screenPos = self._camera:WorldToScreenPoint(tip:TargetWorldPos())
+    local res, pos = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(self._rect, screenPos, self._uiCamera, nil)
     local canShow = true
-    local arrowPos = (self._oval):CrossPoint(pos)
-    local distance = tip:GetCanShowDistance((self._camera).orthographicSize)
-    if (Vector2.Distance)(arrowPos, pos) < distance then
+    local arrowPos = self._oval:CrossPoint(pos)
+    local distance = tip:GetCanShowDistance(self._camera.orthographicSize)
+    if distance > Vector2.Distance(arrowPos, pos) then
       canShow = false
     end
-    if ((self._oval):IsInside(pos) or not canShow) and not tip:IsInOval() then
-      tip:Hide()
-    end
-    if tip:IsInOval() then
-      tip:Show()
-    end
-    if not arrowPos then
-      arrowPos = (self._oval):CrossPoint(pos)
-    end
-    local dir = Vector3(pos.x - arrowPos.x, pos.y - arrowPos.y, 0)
-    local lookRot = (Quaternion.LookRotation)(Vector3.forward, dir)
-    if lookRot then
-      local rot = lookRot
-      tip:Sync(arrowPos, rot)
+    if self._oval:IsInside(pos) or not canShow then
+      if not tip:IsInOval() then
+        tip:Hide()
+      end
+    else
+      if tip:IsInOval() then
+        tip:Show()
+      end
+      arrowPos = arrowPos or self._oval:CrossPoint(pos)
+      local dir = Vector3(pos.x - arrowPos.x, pos.y - arrowPos.y, 0)
+      local lookRot = Quaternion.LookRotation(Vector3.forward, dir)
+      if lookRot then
+        local rot = lookRot
+        tip:Sync(arrowPos, rot)
+      end
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalAreaS7._LoadPrefab = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonMainOvalAreaS7:_LoadPrefab()
   if #self._arrowPool == 0 then
-    local req = (ResourceManager:GetInstance()):SyncLoadAsset("UISeasonMainOvalTip.prefab", LoadType.GameObject)
-    local tr = (req.Obj).transform
+    local req = ResourceManager:GetInstance():SyncLoadAsset("UISeasonMainOvalTip.prefab", LoadType.GameObject)
+    local tr = req.Obj.transform
     tr:SetParent(self._tipsParent, false)
     tr.localPosition = Vector3.zero
     tr.localRotation = Quaternion.identity
     tr.localScale = Vector3.one
     return req
   else
-    do
-      local req = (self._arrowPool)[#self._arrowPool]
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._arrowPool)[#self._arrowPool] = nil
-      do return req end
-    end
+    local req = self._arrowPool[#self._arrowPool]
+    self._arrowPool[#self._arrowPool] = nil
+    return req
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalAreaS7._ReleaseTip = function(self, req)
-  -- function num : 0_9
+function UISeasonMainOvalAreaS7:_ReleaseTip(req)
   req:Dispose()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalAreaS7._ScreenToOval = function(self, screenPos)
-  -- function num : 0_10
+function UISeasonMainOvalAreaS7:_ScreenToOval(screenPos)
   return screenPos - self._ovalCenter
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalAreaS7._OnTipClick = function(self, tip)
-  -- function num : 0_11 , upvalues : _ENV
-  local uiModule = (GameGlobal.GetUIModule)(SeasonModule)
+function UISeasonMainOvalAreaS7:_OnTipClick(tip)
+  local uiModule = GameGlobal.GetUIModule(SeasonModule)
   if tip:Type() == UISeasonOvalTipType.Player then
-    ((uiModule:SeasonManager()):SeasonCameraManager()):SwitchMode(SeasonCameraMode.Follow)
-  else
-    if tip:Type() == UISeasonOvalTipType.Mission then
-      (((uiModule:SeasonManager()):SeasonCameraManager()):SeasonCamera()):Focus(tip:TargetWorldPos())
-    else
-      if tip:Type() == UISeasonOvalTipType.Box then
-        (((uiModule:SeasonManager()):SeasonCameraManager()):SeasonCamera()):Focus(tip:TargetWorldPos())
-      else
-        if tip:Type() == UISeasonOvalTipType.Daily then
-          (((uiModule:SeasonManager()):SeasonCameraManager()):SeasonCamera()):Focus(tip:TargetWorldPos())
-        else
-          if tip:Type() == UISeasonOvalTipType.Task then
-            (((uiModule:SeasonManager()):SeasonCameraManager()):SeasonCamera()):Focus(tip:TargetWorldPos())
-          end
-        end
-      end
-    end
+    uiModule:SeasonManager():SeasonCameraManager():SwitchMode(SeasonCameraMode.Follow)
+  elseif tip:Type() == UISeasonOvalTipType.Mission then
+    uiModule:SeasonManager():SeasonCameraManager():SeasonCamera():Focus(tip:TargetWorldPos())
+  elseif tip:Type() == UISeasonOvalTipType.Box then
+    uiModule:SeasonManager():SeasonCameraManager():SeasonCamera():Focus(tip:TargetWorldPos())
+  elseif tip:Type() == UISeasonOvalTipType.Daily then
+    uiModule:SeasonManager():SeasonCameraManager():SeasonCamera():Focus(tip:TargetWorldPos())
+  elseif tip:Type() == UISeasonOvalTipType.Task then
+    uiModule:SeasonManager():SeasonCameraManager():SeasonCamera():Focus(tip:TargetWorldPos())
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalAreaS7._RefreshMainLevelTarget = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local levelPoints = ((self._seasonManager):SeasonMapManager()):GetEventPointsByType(SeasonEventPointType.MainLevel)
-  ;
-  (((self._seasonManager):SeasonMapManager()):GetEventPointsByType(SeasonEventPointType.MainStory))
-  local storyPoints = nil
-  local level, story = nil, nil
-  for _,point in ipairs(levelPoints) do
+function UISeasonMainOvalAreaS7:_RefreshMainLevelTarget()
+  local levelPoints = self._seasonManager:SeasonMapManager():GetEventPointsByType(SeasonEventPointType.MainLevel)
+  local storyPoints = self._seasonManager:SeasonMapManager():GetEventPointsByType(SeasonEventPointType.MainStory)
+  local level, story
+  for _, point in ipairs(levelPoints) do
     if point:IsLastMainLevelGroup() then
       level = point
       break
     end
   end
-  do
-    for _,point in ipairs(storyPoints) do
-      if point:IsLastStory() then
-        story = point
-        break
-      end
+  for _, point in ipairs(storyPoints) do
+    if point:IsLastStory() then
+      story = point
+      break
     end
-    do
-      local target = nil
-      if level and not story then
+  end
+  local target
+  if level and not story then
+    target = level
+  elseif not level and story then
+    target = story
+  else
+    if level and story then
+      if level:GetMissionCfg().ID > story:GetMissionCfg().ID then
         target = level
       else
-        if not level and story then
-          target = story
-        else
-          if level and story then
-            if (story:GetMissionCfg()).ID < (level:GetMissionCfg()).ID then
-              target = level
-            else
-              target = story
-            end
-          end
-        end
+        target = story
       end
-      if target then
-        local tip = self:GetTipByType(UISeasonOvalTipType.Mission)
-        if tip then
-          tip:ResetTarget(target, UISeasonOvalTipType.Mission)
-        else
-          self:AddTarget(target, UISeasonOvalTipType.Mission)
-        end
-      else
-        do
-          local tip = self:GetTipByType(UISeasonOvalTipType.Mission)
-          if tip then
-            self:RemoveTarget(tip:Target())
-          end
-        end
-      end
+    else
+    end
+  end
+  if target then
+    local tip = self:GetTipByType(UISeasonOvalTipType.Mission)
+    if tip then
+      tip:ResetTarget(target, UISeasonOvalTipType.Mission)
+    else
+      self:AddTarget(target, UISeasonOvalTipType.Mission)
+    end
+  else
+    local tip = self:GetTipByType(UISeasonOvalTipType.Mission)
+    if tip then
+      self:RemoveTarget(tip:Target())
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalAreaS7._RefreshDailyLevelTarget = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonMainOvalAreaS7:_RefreshDailyLevelTarget()
   local tip = self:GetTipByType(UISeasonOvalTipType.Daily)
   if tip then
     self:RemoveTarget(tip:Target())
   end
-  local dailyLevels = ((self._seasonManager):SeasonMapManager()):GetEventPointsByType(SeasonEventPointType.DailyLevel)
+  local dailyLevels = self._seasonManager:SeasonMapManager():GetEventPointsByType(SeasonEventPointType.DailyLevel)
   if dailyLevels then
-    for _,point in ipairs(dailyLevels) do
+    for _, point in ipairs(dailyLevels) do
       self:AddTarget(point, UISeasonOvalTipType.Daily)
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalAreaS7._RefreshBoxTarget = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local boxPoints = ((self._seasonManager):SeasonMapManager()):GetEventPointsByType(SeasonEventPointType.Box)
-  local subBoxPoints = ((self._seasonManager):SeasonMapManager()):GetEventPointsByType(SeasonEventPointType.SubBox)
-  local trapPoints = ((self._seasonManager):SeasonMapManager()):GetEventPointsByType(SeasonEventPointType.Mechanism)
-  local subTrapPoints = ((self._seasonManager):SeasonMapManager()):GetEventPointsByType(SeasonEventPointType.SubMechanism)
-  ;
-  (table.appendArray)(boxPoints, subBoxPoints)
-  ;
-  (table.appendArray)(boxPoints, trapPoints)
-  ;
-  (table.appendArray)(boxPoints, subTrapPoints)
+function UISeasonMainOvalAreaS7:_RefreshBoxTarget()
+  local boxPoints = self._seasonManager:SeasonMapManager():GetEventPointsByType(SeasonEventPointType.Box)
+  local subBoxPoints = self._seasonManager:SeasonMapManager():GetEventPointsByType(SeasonEventPointType.SubBox)
+  local trapPoints = self._seasonManager:SeasonMapManager():GetEventPointsByType(SeasonEventPointType.Mechanism)
+  local subTrapPoints = self._seasonManager:SeasonMapManager():GetEventPointsByType(SeasonEventPointType.SubMechanism)
+  table.appendArray(boxPoints, subBoxPoints)
+  table.appendArray(boxPoints, trapPoints)
+  table.appendArray(boxPoints, subTrapPoints)
   local boxTargets = {}
-  for _,point in ipairs(boxPoints) do
+  for _, point in ipairs(boxPoints) do
     local curProgressExpress = point:CurProgressExpress()
     if curProgressExpress then
       local result, content = curProgressExpress:ContainExpress(SeasonExpressType.Show)
       if result and content and (not content.id or content.id == point:GetID()) and content.show then
         local expresses = curProgressExpress:GetExpresses(SeasonExpressType.Sign)
-        if not expresses then
-          expresses = curProgressExpress:GetExpresses(SeasonExpressType.Function)
-        end
+        expresses = expresses or curProgressExpress:GetExpresses(SeasonExpressType.Function)
         if expresses then
-          for _,express in pairs(expresses) do
+          for _, express in pairs(expresses) do
             content = express:Content()
             local signType = content.type
             if signType == SeasonExpressTiming.Before then
@@ -318,59 +235,40 @@ UISeasonMainOvalAreaS7._RefreshBoxTarget = function(self)
     end
   end
   local tips = {}
-  for _,tip in pairs(self._tips) do
+  for _, tip in pairs(self._tips) do
     if tip:Type() == UISeasonOvalTipType.Box then
-      (table.insert)(tips, tip)
+      table.insert(tips, tip)
     end
   end
-  for _,target in ipairs(boxTargets) do
-    if #tips > 0 then
-      local tip = (table.remove)(tips, 1)
+  for _, target in ipairs(boxTargets) do
+    if 0 < #tips then
+      local tip = table.remove(tips, 1)
       tip:ResetTarget(target, UISeasonOvalTipType.Box)
     else
-      do
-        do
-          self:AddTarget(target, UISeasonOvalTipType.Box)
-          -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      self:AddTarget(target, UISeasonOvalTipType.Box)
     end
   end
-  for _,tip in ipairs(tips) do
+  for _, tip in ipairs(tips) do
     self:RemoveTarget(tip:Target())
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalAreaS7._RefreshPlayer = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UISeasonMainOvalAreaS7:_RefreshPlayer()
   local tip = self:GetTipByType(UISeasonOvalTipType.Player)
   if tip then
-    tip:ResetTarget(((self._seasonManager):SeasonPlayerManager()):GetPlayer(), UISeasonOvalTipType.Player)
+    tip:ResetTarget(self._seasonManager:SeasonPlayerManager():GetPlayer(), UISeasonOvalTipType.Player)
   else
-    self:AddTarget(((self._seasonManager):SeasonPlayerManager()):GetPlayer(), UISeasonOvalTipType.Player)
+    self:AddTarget(self._seasonManager:SeasonPlayerManager():GetPlayer(), UISeasonOvalTipType.Player)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalAreaS7._RefreshTarget = function(self)
-  -- function num : 0_16
+function UISeasonMainOvalAreaS7:_RefreshTarget()
   self:_RefreshMainLevelTarget()
   self:_RefreshBoxTarget()
   self:_RefreshTask()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalAreaS7._OnModeChanged = function(self)
-  -- function num : 0_17
+function UISeasonMainOvalAreaS7:_OnModeChanged()
   self:_RefreshMainLevelTarget()
   self:_RefreshDailyLevelTarget()
   self:_RefreshBoxTarget()
@@ -378,29 +276,26 @@ UISeasonMainOvalAreaS7._OnModeChanged = function(self)
   self:_RefreshTask()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalAreaS7._RefreshTask = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UISeasonMainOvalAreaS7:_RefreshTask()
   local oldTips = {}
-  for _,tip in pairs(self._tips) do
+  for _, tip in pairs(self._tips) do
     if tip:Type() == UISeasonOvalTipType.Task then
-      (table.insert)(oldTips, tip)
+      table.insert(oldTips, tip)
     end
   end
-  for _,tip in pairs(oldTips) do
+  for _, tip in pairs(oldTips) do
     self:RemoveTarget(tip:Target())
   end
-  local tasks = ((self._seasonManager):SeasonMapManager()):GetEventPointsByType(SeasonEventPointType.Task)
+  local tasks = self._seasonManager:SeasonMapManager():GetEventPointsByType(SeasonEventPointType.Task)
   if tasks then
-    for _,point in ipairs(tasks) do
+    for _, point in ipairs(tasks) do
       local curProgressExpress = point:CurProgressExpress()
       if curProgressExpress then
         local result, content = curProgressExpress:ContainExpress(SeasonExpressType.Show)
         if result and content and (not content.id or content.id == point:GetID()) and content.show then
           local expresses = curProgressExpress:GetExpresses(SeasonExpressType.Sign)
           if expresses then
-            for _,express in pairs(expresses) do
+            for _, express in pairs(expresses) do
               content = express:Content()
               local signType = content.type
               if signType == SeasonExpressTiming.Before then
@@ -414,5 +309,3 @@ UISeasonMainOvalAreaS7._RefreshTask = function(self)
     end
   end
 end
-
-

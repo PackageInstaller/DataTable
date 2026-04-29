@@ -1,127 +1,79 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/link_renderer_data_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LinkRendererDataComponent", Object)
 LinkRendererDataComponent = LinkRendererDataComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LinkRendererDataComponent.Constructor = function(self)
-  -- function num : 0_0
+function LinkRendererDataComponent:Constructor()
   self._linkageNumEntityList = {}
   self._linkLineEntityList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkRendererDataComponent.GetLinkageNumEntityList = function(self)
-  -- function num : 0_1
+function LinkRendererDataComponent:GetLinkageNumEntityList()
   return self._linkageNumEntityList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkRendererDataComponent.AddLinkageNumEntity = function(self, entity)
-  -- function num : 0_2
+function LinkRendererDataComponent:AddLinkageNumEntity(entity)
   if self._linkageNumEntityList == nil then
     self._linkageNumEntityList = {}
   end
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._linkageNumEntityList)[#self._linkageNumEntityList + 1] = entity
+  self._linkageNumEntityList[#self._linkageNumEntityList + 1] = entity
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkRendererDataComponent.RemoveLinkageNumEntity = function(self, entity)
-  -- function num : 0_3 , upvalues : _ENV
+function LinkRendererDataComponent:RemoveLinkageNumEntity(entity)
   if not self._linkageNumEntityList then
-    return 
+    return
   end
   for i = 1, #self._linkageNumEntityList do
-    if (self._linkageNumEntityList)[i] == entity then
-      (table.remove)(self._linkageNumEntityList, i)
-      return 
+    if self._linkageNumEntityList[i] == entity then
+      table.remove(self._linkageNumEntityList, i)
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkRendererDataComponent.GetLinkLineEntityList = function(self)
-  -- function num : 0_4
+function LinkRendererDataComponent:GetLinkLineEntityList()
   return self._linkLineEntityList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkRendererDataComponent.AddLinkLineEntity = function(self, entity)
-  -- function num : 0_5
+function LinkRendererDataComponent:AddLinkLineEntity(entity)
   if self._linkLineEntityList == nil then
     self._linkLineEntityList = {}
   end
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._linkLineEntityList)[#self._linkLineEntityList + 1] = entity
+  self._linkLineEntityList[#self._linkLineEntityList + 1] = entity
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkRendererDataComponent.RemoveLinkLineEntity = function(self, entity)
-  -- function num : 0_6 , upvalues : _ENV
+function LinkRendererDataComponent:RemoveLinkLineEntity(entity)
   if not self._linkLineEntityList then
-    return 
+    return
   end
   for i = 1, #self._linkLineEntityList do
-    if ((self._linkLineEntityList)[i]):GetID() == entity:GetID() then
-      (table.remove)(self._linkLineEntityList, i)
-      return 
+    if self._linkLineEntityList[i]:GetID() == entity:GetID() then
+      table.remove(self._linkLineEntityList, i)
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.LinkRendererData = function(self)
-  -- function num : 0_7
-  return self:GetComponent((self.WEComponentsEnum).LinkRendererData)
+function Entity:LinkRendererData()
+  return self:GetComponent(self.WEComponentsEnum.LinkRendererData)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasLinkRendererData = function(self)
-  -- function num : 0_8
-  return self:HasComponent((self.WEComponentsEnum).LinkRendererData)
+function Entity:HasLinkRendererData()
+  return self:HasComponent(self.WEComponentsEnum.LinkRendererData)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddLinkRendererData = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LinkRendererData
+function Entity:AddLinkRendererData()
+  local index = self.WEComponentsEnum.LinkRendererData
   local component = LinkRendererDataComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceLinkRendererData = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LinkRendererData
+function Entity:ReplaceLinkRendererData()
+  local index = self.WEComponentsEnum.LinkRendererData
   local component = LinkRendererDataComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveLinkRendererData = function(self)
-  -- function num : 0_11
+function Entity:RemoveLinkRendererData()
   if self:HasLinkRendererData() then
-    self:RemoveComponent((self.WEComponentsEnum).LinkRendererData)
+    self:RemoveComponent(self.WEComponentsEnum.LinkRendererData)
   end
 end
-
-

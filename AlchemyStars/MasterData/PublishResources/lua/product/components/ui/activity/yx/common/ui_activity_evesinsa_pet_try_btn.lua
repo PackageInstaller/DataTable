@@ -1,87 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/yx/common/ui_activity_evesinsa_pet_try_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityEveSinsaPetTryBtn", UICustomWidget)
 UIActivityEveSinsaPetTryBtn = UIActivityEveSinsaPetTryBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityEveSinsaPetTryBtn._GetComponents = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityEveSinsaPetTryBtn:_GetComponents()
   self._press = self:GetGameObject("PetTryBtnPress")
   self._btn = self:GetGameObject("PetTryBtn")
   self._red = self:GetGameObject("red")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btn), UIEvent.Press, function(go)
-    -- function num : 0_0_0 , upvalues : self
-    (self._press):SetActive(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btn), UIEvent.Release, function(go)
-    -- function num : 0_0_1 , upvalues : self
-    (self._press):SetActive(false)
-  end
-)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btn), UIEvent.Press, function(go)
+    self._press:SetActive(true)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btn), UIEvent.Release, function(go)
+    self._press:SetActive(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaPetTryBtn.OnShow = function(self)
-  -- function num : 0_1
+function UIActivityEveSinsaPetTryBtn:OnShow()
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaPetTryBtn.SetData = function(self, campaign)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityEveSinsaPetTryBtn:SetData(campaign)
   self._campaign = campaign
-  self._line_component = (self._campaign):GetComponent(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_MISSION_FIXTEAM)
+  self._line_component = self._campaign:GetComponent(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_MISSION_FIXTEAM)
   self:_CheckRedPoint()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaPetTryBtn._CheckRedPoint = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityEveSinsaPetTryBtn:_CheckRedPoint()
   local campaignModule = self:GetModule(CampaignModule)
   local data = campaignModule:GetEveSinsaNewFlagRedPoint()
-  ;
-  (self._red):SetActive(data:PetStageRedPoint())
+  self._red:SetActive(data:PetStageRedPoint())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaPetTryBtn.PetTryBtnOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.info)("UIActivityEveSinsaPetTryBtn:btnOnClick")
+function UIActivityEveSinsaPetTryBtn:PetTryBtnOnClick()
+  Log.info("UIActivityEveSinsaPetTryBtn:btnOnClick")
   self:ShowDialog("UIActivityPetTryController", ECampaignType.CAMPAIGN_TYPE_EVERESCUEPLAN, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_MISSION_FIXTEAM, function(missionid)
-    -- function num : 0_4_0 , upvalues : self
     return self:ESPetTryMissionPass(missionid)
-  end
-, function(missionid)
-    -- function num : 0_4_1 , upvalues : self
+  end, function(missionid)
     self:ESPetTryGoBattle(missionid)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaPetTryBtn.ESPetTryMissionPass = function(self, missionid)
-  -- function num : 0_5
-  return (self._line_component):IsPassCamMissionID(missionid)
+function UIActivityEveSinsaPetTryBtn:ESPetTryMissionPass(missionid)
+  return self._line_component:IsPassCamMissionID(missionid)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaPetTryBtn.ESPetTryGoBattle = function(self, missionid)
-  -- function num : 0_6 , upvalues : _ENV
-  local missiontModule = (GameGlobal.GetModule)(MissionModule)
+function UIActivityEveSinsaPetTryBtn:ESPetTryGoBattle(missionid)
+  local missiontModule = GameGlobal.GetModule(MissionModule)
   local ctx = missiontModule:TeamCtx()
-  local param = {missionid, (self._line_component):GetCampaignMissionComponentId(), (self._line_component):GetCampaignMissionParamKeyMap()}
+  local param = {
+    missionid,
+    self._line_component:GetCampaignMissionComponentId(),
+    self._line_component:GetCampaignMissionParamKeyMap()
+  }
   ctx:Init(TeamOpenerType.Campaign, param)
   ctx:ShowDialogUITeams(false)
 end
-
-

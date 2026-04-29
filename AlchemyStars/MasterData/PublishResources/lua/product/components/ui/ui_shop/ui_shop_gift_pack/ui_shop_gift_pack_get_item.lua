@@ -1,97 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_gift_pack/ui_shop_gift_pack_get_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopGiftPackGetItem", UICustomWidget)
 UIShopGiftPackGetItem = UIShopGiftPackGetItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopGiftPackGetItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopGiftPackGetItem:OnShow()
   self._imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self._imgIconRect = self:GetUIComponent("RectTransform", "imgIcon")
-  self._imgIconRectDefaultSize = Vector2(((self._imgIconRect).sizeDelta).x, ((self._imgIconRect).sizeDelta).y)
+  self._imgIconRectDefaultSize = Vector2(self._imgIconRect.sizeDelta.x, self._imgIconRect.sizeDelta.y)
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
   self._rollingText = self:GetUIComponent("RollingText", "txtName")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackGetItem.Flush = function(self, award)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopGiftPackGetItem:Flush(award)
   if not award then
-    (Log.fatal)("### award is nil.")
-    return 
+    Log.fatal("### award is nil.")
+    return
   end
   self.ra = RoleAsset:New()
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.ra).assetid = award:GetTemplateId()
+  self.ra.assetid = award:GetTemplateId()
   local count = award:GetCount()
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.ra).count = count
+  self.ra.count = count
   self:FlushImage(award)
-  ;
-  (self._txtName):SetText(award:GetName())
-  ;
-  (self._rollingText):RefreshText(award:GetName())
-  ;
-  (self._txtCount):SetText("x" .. count)
+  self._txtName:SetText(award:GetName())
+  self._rollingText:RefreshText(award:GetName())
+  self._txtCount:SetText("x" .. count)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackGetItem.bgOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  if RoleAssetID.RoleAssetPetSkinBegin <= (self.ra).assetid and (self.ra).assetid <= RoleAssetID.RoleAssetPetSkinEnd then
-    self:ShowDialog("UIPetSkinsMainController", PetSkinUiOpenType.PSUOT_TIPS, (self.ra).assetid - 4000000)
+function UIShopGiftPackGetItem:bgOnClick(go)
+  if self.ra.assetid >= RoleAssetID.RoleAssetPetSkinBegin and self.ra.assetid <= RoleAssetID.RoleAssetPetSkinEnd then
+    self:ShowDialog("UIPetSkinsMainController", PetSkinUiOpenType.PSUOT_TIPS, self.ra.assetid - 4000000)
   else
-    local safeArea = (self:RootUIOwner())._anim
-    local deltaPosition = (go.transform).position - (safeArea.transform).position
+    local safeArea = self:RootUIOwner()._anim
+    local deltaPosition = go.transform.position - safeArea.transform.position
     self:ShowDialog("UICommonItemInfo", self.ra, deltaPosition)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackGetItem.FlushImage = function(self, award)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._imgIcon):LoadImage(award:GetIcon())
+function UIShopGiftPackGetItem:FlushImage(award)
+  self._imgIcon:LoadImage(award:GetIcon())
   local isHead = false
   local itemId = award:GetTemplateId()
-  if itemId >= 3750000 and itemId <= 3759999 then
+  if 3750000 <= itemId and itemId <= 3759999 then
     isHead = true
   end
   if isHead then
     local whRate = 1
-    if itemId >= 3751000 and itemId <= 3751999 then
-      whRate = 0.84210526315789
-    else
-      if itemId >= 3752000 and itemId <= 3752999 then
-        whRate = 0.63888888888889
-      else
-        if itemId >= 3753000 and itemId <= 3753999 then
-          whRate = 0.63888888888889
-        end
-      end
+    if 3751000 <= itemId and itemId <= 3751999 then
+      whRate = 0.8421052631578947
+    elseif 3752000 <= itemId and itemId <= 3752999 then
+      whRate = 0.6388888888888888
+    elseif 3753000 <= itemId and itemId <= 3753999 then
+      whRate = 0.6388888888888888
     end
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._imgIconRect).sizeDelta = Vector2(((self._imgIconRect).sizeDelta).x, ((self._imgIconRect).sizeDelta).x * whRate)
+    self._imgIconRect.sizeDelta = Vector2(self._imgIconRect.sizeDelta.x, self._imgIconRect.sizeDelta.x * whRate)
   else
-    do
-      -- DECOMPILER ERROR at PC47: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._imgIconRect).sizeDelta = self._imgIconRectDefaultSize
-    end
+    self._imgIconRect.sizeDelta = self._imgIconRectDefaultSize
   end
 end
-
-

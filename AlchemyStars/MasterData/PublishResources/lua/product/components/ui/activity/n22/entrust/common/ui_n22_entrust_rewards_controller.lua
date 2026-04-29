@@ -1,48 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/entrust/common/ui_n22_entrust_rewards_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22EntrustRewardsController", UIController)
 UIN22EntrustRewardsController = UIN22EntrustRewardsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22EntrustRewardsController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN22EntrustRewardsController:OnShow(uiParams)
   local title = uiParams[1] or ""
   local rewards = uiParams[2]
   self._confirm = uiParams[3]
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_mainTitle", title)
+  UIWidgetHelper.SetLocalizationText(self, "_mainTitle", title)
   self:_SetRewards(rewards)
-  local txtConfirm = (StringTable.Get)("str_common_confirm")
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtConfirmBtn", txtConfirm)
+  local txtConfirm = StringTable.Get("str_common_confirm")
+  UIWidgetHelper.SetLocalizationText(self, "_txtConfirmBtn", txtConfirm)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustRewardsController._SetRewards = function(self, rewards)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN22EntrustRewardsController:_SetRewards(rewards)
   local count = #rewards
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_rewardPool", "UIN22EntrustRewardItem", count)
+  local objs = UIWidgetHelper.SpawnObjects(self, "_rewardPool", "UIN22EntrustRewardItem", count)
   for i = 1, count do
-    (objs[i]):SetData(rewards[i], false, function(matid, pos)
-    -- function num : 0_1_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
-  end
-)
+    objs[i]:SetData(rewards[i], false, function(matid, pos)
+      UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustRewardsController.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_2
+function UIN22EntrustRewardsController:ConfirmBtnOnClick(go)
   self:CloseDialog()
   if self._confirm then
-    (self._confirm)()
+    self._confirm()
   end
 end
-
-

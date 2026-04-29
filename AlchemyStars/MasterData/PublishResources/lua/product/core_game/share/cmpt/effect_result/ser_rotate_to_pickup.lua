@@ -1,33 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_rotate_to_pickup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultRotateToPickup", SkillEffectResultBase)
 SkillEffectResultRotateToPickup = SkillEffectResultRotateToPickup
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
 SkillEffectResultRotateToPickup.__EFFECT_TYPE = SkillEffectType.RotateToPickup
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultRotateToPickup.Constructor = function(self, newDir)
-  -- function num : 0_0
+function SkillEffectResultRotateToPickup:Constructor(newDir)
   self._newDir = newDir
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultRotateToPickup.GetNewDir = function(self)
-  -- function num : 0_1
+function SkillEffectResultRotateToPickup:GetNewDir()
   return self._newDir
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultRotateToPickup.GetEffectType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectResultRotateToPickup:GetEffectType()
   return SkillEffectType.RotateToPickup
 end
-
-

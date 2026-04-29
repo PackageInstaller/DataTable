@@ -1,41 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_education/condition/ui_education_condition_grade.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_education_condition")
 _class("UIEducationConditionGrade", UIEducationCondition)
 UIEducationConditionGrade = UIEducationConditionGrade
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEducationConditionGrade.Constructor = function(self, count, level)
-  -- function num : 0_0 , upvalues : _ENV
+function UIEducationConditionGrade:Constructor(count, level)
   self._type = ConditionType.CT_PetGradeY
   self._quantity = count
   self._gradeCount = count
   self._gradeLevel = level
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationConditionGrade.GetGradeLevel = function(self)
-  -- function num : 0_1
+function UIEducationConditionGrade:GetGradeLevel()
   return self._gradeLevel
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationConditionGrade.Test = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIEducationConditionGrade:Test()
   self._completed = 0
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  local petModule = GameGlobal.GetModule(PetModule)
   local allPets = petModule:GetPets()
-  for k,v in pairs(allPets) do
-    if self._gradeLevel <= v:GetPetGrade() then
+  for k, v in pairs(allPets) do
+    if v:GetPetGrade() >= self._gradeLevel then
       self._completed = self._completed + 1
     end
   end
-  self._completed = (math.min)(self._completed, self._quantity)
+  self._completed = math.min(self._completed, self._quantity)
 end
-
-

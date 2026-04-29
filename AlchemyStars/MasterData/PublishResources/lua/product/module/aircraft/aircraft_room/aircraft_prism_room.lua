@@ -1,149 +1,98 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/aircraft/aircraft_room/aircraft_prism_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("aircraft_room_base")
 _class("AircraftPrismRoom", AircraftRoomBase)
 AircraftPrismRoom = AircraftPrismRoom
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftPrismRoom.Constructor = function(self)
-  -- function num : 0_0
+function AircraftPrismRoom:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPrismRoom.SetClientData = function(self, client_data)
-  -- function num : 0_1
+function AircraftPrismRoom:SetClientData(client_data)
   self._physic_room_rate = client_data[1]
   self._physic_pet_rate = client_data[2]
   self._physic_room_storage = client_data[3]
   self._physic_pet_storage = client_data[4]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPrismRoom.GetPrismRoomConfig = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_prism_room)[self._roomid]
+function AircraftPrismRoom:GetPrismRoomConfig()
+  local cfg = Cfg.cfg_aircraft_prism_room[self._roomid]
   return cfg
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPrismRoom.AwardID = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function AircraftPrismRoom:AwardID()
   return RoleAssetID.RoleAssetPhyPoint
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPrismRoom.GetPhysicStorage = function(self)
-  -- function num : 0_4
-  return (self._module):GetPhysicStorage()
+function AircraftPrismRoom:GetPhysicStorage()
+  return self._module:GetPhysicStorage()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPrismRoom.GetTotalPhysicStorageLimit = function(self)
-  -- function num : 0_5
+function AircraftPrismRoom:GetTotalPhysicStorageLimit()
   return self._physic_room_storage + self._physic_pet_storage
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPrismRoom.CanCollect = function(self)
-  -- function num : 0_6
-  do return self:GetTotalPhysicStorageLimit() < self:GetPhysicStorage() * 3 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftPrismRoom:CanCollect()
+  return self:GetPhysicStorage() * 3 > self:GetTotalPhysicStorageLimit()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPrismRoom.GetPhysicRate = function(self)
-  -- function num : 0_7
+function AircraftPrismRoom:GetPhysicRate()
   return self._physic_room_rate, self._physic_pet_rate
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPrismRoom.GetPhysicSpeed = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local l_rate = (math.max)(self._physic_room_rate + self._physic_pet_rate, 1)
+function AircraftPrismRoom:GetPhysicSpeed()
+  local l_rate = math.max(self._physic_room_rate + self._physic_pet_rate, 1)
   local total_speed = 3600 / l_rate
   local room_speed = 3600 / self._physic_room_rate
   local pet_work_speed = total_speed - room_speed
   return room_speed, pet_work_speed
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPrismRoom.GetNextLevelPhysicSpeed = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function AircraftPrismRoom:GetNextLevelPhysicSpeed()
   local room_cfg = self:GetConfig()
   if not room_cfg then
     return nil
   end
-  local nxt_prism_cfg = (Cfg.cfg_aircraft_prism_room)[room_cfg.NextLevelID]
+  local nxt_prism_cfg = Cfg.cfg_aircraft_prism_room[room_cfg.NextLevelID]
   if nxt_prism_cfg == nil then
     return nil
   end
   local cfg_value = nxt_prism_cfg.LocalRecover
-  local l_rate = (math.max)(cfg_value, 1)
+  local l_rate = math.max(cfg_value, 1)
   local room_speed = 3600 / l_rate
   return room_speed
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPrismRoom.GetLastLevelPhysicSpeed = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function AircraftPrismRoom:GetLastLevelPhysicSpeed()
   local room_cfg = self:GetConfig()
   if not room_cfg then
     return nil
   end
-  local last_prism_cfg = (Cfg.cfg_aircraft_prism_room)[room_cfg.PrevLevelID]
+  local last_prism_cfg = Cfg.cfg_aircraft_prism_room[room_cfg.PrevLevelID]
   if last_prism_cfg == nil then
     return nil
   end
   local cfg_value = last_prism_cfg.LocalRecover
-  local l_rate = (math.max)(cfg_value, 1)
+  local l_rate = math.max(cfg_value, 1)
   local room_speed = 3600 / l_rate
   return room_speed
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPrismRoom.GetPhysicStorageLimit = function(self)
-  -- function num : 0_11
+function AircraftPrismRoom:GetPhysicStorageLimit()
   return self._physic_room_storage, self._physic_pet_storage
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPrismRoom.GetExPhysicLimit = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_prism_room)[self._roomid]
+function AircraftPrismRoom:GetExPhysicLimit()
+  local cfg = Cfg.cfg_aircraft_prism_room[self._roomid]
   return cfg.ExMaxPhysic
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPrismRoom.CanCollectOutside = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local target = (math.floor)((self._physic_room_storage + self._physic_pet_storage) / 3)
-  local cur = (self._module):GetPhysicStorage()
-  do return cur >= 1 and target < cur end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftPrismRoom:CanCollectOutside()
+  local target = math.floor((self._physic_room_storage + self._physic_pet_storage) / 3)
+  local cur = self._module:GetPhysicStorage()
+  return 1 <= cur and target < cur
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.HandleCEventCollectPrism = function(self, TT, count)
-  -- function num : 0_14 , upvalues : _ENV
+function AircraftModule:HandleCEventCollectPrism(TT, count)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventCollectPrism)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventCollectPrism)
   request.prism_count = count
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -154,52 +103,68 @@ AircraftModule.HandleCEventCollectPrism = function(self, TT, count)
   res:SetSucc(true)
   local replyEvent = reply.msg
   res:SetResult(replyEvent.ret)
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.ret == AircraftEventResult.AircraftEventResult_Succ then
-    (self._aircraftInfo).physic_storage = (self._aircraftInfo).physic_storage - count
+    self._aircraftInfo.physic_storage = self._aircraftInfo.physic_storage - count
   end
   return res
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPrismRoom.GetUpgradeInfo = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function AircraftPrismRoom:GetUpgradeInfo()
   local room_cfg = self:GetConfig()
-  local next_cfg = (Cfg.cfg_aircraft_room)[room_cfg.NextLevelID]
+  local next_cfg = Cfg.cfg_aircraft_room[room_cfg.NextLevelID]
   if next_cfg == nil then
     return nil
   end
-  local cur_prism_cfg = (Cfg.cfg_aircraft_prism_room)[room_cfg.ID]
-  local nxt_prism_cfg = (Cfg.cfg_aircraft_prism_room)[room_cfg.NextLevelID]
+  local cur_prism_cfg = Cfg.cfg_aircraft_prism_room[room_cfg.ID]
+  local nxt_prism_cfg = Cfg.cfg_aircraft_prism_room[room_cfg.NextLevelID]
   return {
-{AirLevelInfoTitle.ExPhysicLimit, AirRoomChangeLevelDataType.NumberInt, cur_prism_cfg.ExMaxPhysic, nxt_prism_cfg.ExMaxPhysic}
-, 
-{AirLevelInfoTitle.PhysicStorageLimit, AirRoomChangeLevelDataType.NumberInt, cur_prism_cfg.LocalStorage, nxt_prism_cfg.LocalStorage}
-, 
-{AirLevelInfoTitle.PhyRecoverSpeed, AirRoomChangeLevelDataType.NumberFloat, self:GetPhysicSpeed(), self:GetNextLevelPhysicSpeed()}
-}
+    {
+      AirLevelInfoTitle.ExPhysicLimit,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_prism_cfg.ExMaxPhysic,
+      nxt_prism_cfg.ExMaxPhysic
+    },
+    {
+      AirLevelInfoTitle.PhysicStorageLimit,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_prism_cfg.LocalStorage,
+      nxt_prism_cfg.LocalStorage
+    },
+    {
+      AirLevelInfoTitle.PhyRecoverSpeed,
+      AirRoomChangeLevelDataType.NumberFloat,
+      self:GetPhysicSpeed(),
+      self:GetNextLevelPhysicSpeed()
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPrismRoom.GetDegradeInfo = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function AircraftPrismRoom:GetDegradeInfo()
   local room_cfg = self:GetConfig()
-  local prev_cfg = (Cfg.cfg_aircraft_room)[room_cfg.PrevLevelID]
+  local prev_cfg = Cfg.cfg_aircraft_room[room_cfg.PrevLevelID]
   if prev_cfg == nil then
     return nil
   end
-  local cur_prism_cfg = (Cfg.cfg_aircraft_prism_room)[room_cfg.ID]
-  local nxt_prism_cfg = (Cfg.cfg_aircraft_prism_room)[room_cfg.PrevLevelID]
+  local cur_prism_cfg = Cfg.cfg_aircraft_prism_room[room_cfg.ID]
+  local nxt_prism_cfg = Cfg.cfg_aircraft_prism_room[room_cfg.PrevLevelID]
   return {
-{AirLevelInfoTitle.ExPhysicLimit, AirRoomChangeLevelDataType.NumberInt, cur_prism_cfg.ExMaxPhysic, nxt_prism_cfg.ExMaxPhysic}
-, 
-{AirLevelInfoTitle.PhysicStorageLimit, AirRoomChangeLevelDataType.NumberInt, cur_prism_cfg.LocalStorage, nxt_prism_cfg.LocalStorage}
-, 
-{AirLevelInfoTitle.PhyRecoverSpeed, AirRoomChangeLevelDataType.NumberFloat, self:GetPhysicSpeed(), self:GetLastLevelPhysicSpeed()}
-}
+    {
+      AirLevelInfoTitle.ExPhysicLimit,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_prism_cfg.ExMaxPhysic,
+      nxt_prism_cfg.ExMaxPhysic
+    },
+    {
+      AirLevelInfoTitle.PhysicStorageLimit,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_prism_cfg.LocalStorage,
+      nxt_prism_cfg.LocalStorage
+    },
+    {
+      AirLevelInfoTitle.PhyRecoverSpeed,
+      AirRoomChangeLevelDataType.NumberFloat,
+      self:GetPhysicSpeed(),
+      self:GetLastLevelPhysicSpeed()
+    }
+  }
 end
-
-

@@ -1,75 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/ui_luckland_game_suc_popup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandGameSucPopUp", UIController)
 UILuckLandGameSucPopUp = UILuckLandGameSucPopUp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandGameSucPopUp.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
-  self._component = (LuckLandData:GetInstance()):CurLuckLandCmpt()
-  local curMoney = (LuckLandInnerGameHelper.GetCurMoney)()
-  local curHp, maxHp = (LuckLandInnerGameHelper.GetCurHP)()
-  local buildsData = (LuckLandInnerGameHelper.GetBuildingsData)()
-  local missionid = (LuckLandData:GetInstance()):GetCurMissionID()
+function UILuckLandGameSucPopUp:LoadDataOnEnter(TT, res)
+  self._component = LuckLandData:GetInstance():CurLuckLandCmpt()
+  local curMoney = LuckLandInnerGameHelper.GetCurMoney()
+  local curHp, maxHp = LuckLandInnerGameHelper.GetCurHP()
+  local buildsData = LuckLandInnerGameHelper.GetBuildingsData()
+  local missionid = LuckLandData:GetInstance():GetCurMissionID()
   local per = curHp / maxHp
-  local hpPercent = (math.ceil)(per * 100)
+  local hpPercent = math.ceil(per * 100)
   if curMoney == 0 then
     curMoney = 1
   end
   self._rewards = {}
   self._result = nil
-  local a, firstPassRewards, result, threeStarRewards = (self._component):HandleCompleteLuckLandMission(TT, res, missionid, curMoney, curHp, buildsData)
+  local a, firstPassRewards, result, threeStarRewards = self._component:HandleCompleteLuckLandMission(TT, res, missionid, curMoney, curHp, buildsData)
   self._result = result
   if res:GetSucc() then
     if firstPassRewards then
       for i = 1, #firstPassRewards do
         local data = {}
-        data.assetid = (firstPassRewards[i]).assetid
-        data.count = (firstPassRewards[i]).count
+        data.assetid = firstPassRewards[i].assetid
+        data.count = firstPassRewards[i].count
         data.type = StageAwardType.First
-        -- DECOMPILER ERROR at PC65: Confused about usage of register: R19 in 'UnsetPending'
-
-        ;
-        (self._rewards)[#self._rewards + 1] = data
+        self._rewards[#self._rewards + 1] = data
       end
     end
-    do
-      if threeStarRewards then
-        for i = 1, #threeStarRewards do
-          local data = {}
-          data.assetid = (threeStarRewards[i]).assetid
-          data.count = (threeStarRewards[i]).count
-          data.type = StageAwardType.Star
-          -- DECOMPILER ERROR at PC87: Confused about usage of register: R19 in 'UnsetPending'
-
-          ;
-          (self._rewards)[#self._rewards + 1] = data
-        end
-      end
-      do
-        ;
-        (self:GetModule(CampaignModule)):ShowErrorToast(res.m_result, true)
-        self:SwitchState(UIStateType.UIMain)
+    if threeStarRewards then
+      for i = 1, #threeStarRewards do
+        local data = {}
+        data.assetid = threeStarRewards[i].assetid
+        data.count = threeStarRewards[i].count
+        data.type = StageAwardType.Star
+        self._rewards[#self._rewards + 1] = data
       end
     end
+  else
+    self:GetModule(CampaignModule):ShowErrorToast(res.m_result, true)
+    self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandGameSucPopUp.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UILuckLandGameSucPopUp:OnShow(uiParams)
   self:InitWidget()
   self:InitUI(self._rewards, self._result)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandGameSucPopUp.InitWidget = function(self)
-  -- function num : 0_2
+function UILuckLandGameSucPopUp:InitWidget()
   self._animObj = self:GetGameObject("_anim")
   self.titleText = self:GetUIComponent("UILocalizedTMP", "TitleText")
   self.scoreText = self:GetUIComponent("UILocalizedTMP", "ScoreText")
@@ -81,120 +58,73 @@ UILuckLandGameSucPopUp.InitWidget = function(self)
   self._anim = self:GetUIComponent("Animation", "_anim")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandGameSucPopUp.InitUI = function(self, reawards, result)
-  -- function num : 0_3 , upvalues : _ENV
-  local threeCondDesc = (LuckLandData:GetInstance()):CurThreeDecData()
-  local infocmpt = (LuckLandData:GetInstance()):CurLuckLandInfoCmpt()
-  local id = (LuckLandData:GetInstance()):GetCurMissionID()
-  self._missionCfg = (Cfg.cfg_luckland_client_mission)[id]
-  ;
-  (self.missionNameText):SetText((StringTable.Get)((self._missionCfg).Name))
+function UILuckLandGameSucPopUp:InitUI(reawards, result)
+  local threeCondDesc = LuckLandData:GetInstance():CurThreeDecData()
+  local infocmpt = LuckLandData:GetInstance():CurLuckLandInfoCmpt()
+  local id = LuckLandData:GetInstance():GetCurMissionID()
+  self._missionCfg = Cfg.cfg_luckland_client_mission[id]
+  self.missionNameText:SetText(StringTable.Get(self._missionCfg.Name))
   if threeCondDesc then
-    local count = (table.count)(threeCondDesc)
-    if count > 0 then
-      self._conditionWidgets = (UIWidgetHelper.SpawnObjects)(self, "MissionStarArea", "UILuckLandConditionItem", count)
-      do
-        for key,conditionWidget in ipairs(self._conditionWidgets) do
-          do
-            conditionWidget:SetData(key, threeCondDesc[key], (infocmpt.m_pass_mission_info)[id], true)
-            ;
-            ((conditionWidget.view):GetGameObject()):SetActive(false)
-          end
-        end
+    local count = table.count(threeCondDesc)
+    if 0 < count then
+      self._conditionWidgets = UIWidgetHelper.SpawnObjects(self, "MissionStarArea", "UILuckLandConditionItem", count)
+      for key, conditionWidget in ipairs(self._conditionWidgets) do
+        conditionWidget:SetData(key, threeCondDesc[key], infocmpt.m_pass_mission_info[id], true)
+        conditionWidget.view:GetGameObject():SetActive(false)
       end
     end
   end
-  do
-    for i = 1, #self._conditionWidgets do
-      ((GameGlobal.Timer)()):AddEvent(50 * (i - 1), function()
-    -- function num : 0_3_0 , upvalues : self, i
-    local item = (self._conditionWidgets)[i]
-    ;
-    ((item.view):GetGameObject()):SetActive(true)
+  for i = 1, #self._conditionWidgets do
+    GameGlobal.Timer():AddEvent(50 * (i - 1), function()
+      local item = self._conditionWidgets[i]
+      item.view:GetGameObject():SetActive(true)
+    end)
   end
-)
-    end
-    self.gameTable = {}
-    -- DECOMPILER ERROR at PC80: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.gameTable)[1] = "str_luckland_money_score"
-    -- DECOMPILER ERROR at PC82: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.gameTable)[2] = "str_luckland_build_score"
-    -- DECOMPILER ERROR at PC84: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.gameTable)[3] = "str_luckland_hp_score"
-    local score = {}
-    score[1] = "+" .. result.money_score
-    score[2] = "+" .. result.build_score
-    score[3] = "+" .. result.hp_prop
-    local lastScore = result.total_score
-    ;
-    (self.scoreText):SetText("" .. lastScore)
-    self._gameScoreWidgets = (UIWidgetHelper.SpawnObjects)(self, "MissionScoreArea", "UILuckLandEndScoreItem", 3)
-    for i = 1, #self._gameScoreWidgets do
-      local item = (self._gameScoreWidgets)[i]
-      local str = (self.gameTable)[i]
-      item:SetData(str, score[i])
-      ;
-      ((item.view):GetGameObject()):SetActive(false)
-    end
-    for i = 1, #self._gameScoreWidgets do
-      ((GameGlobal.Timer)()):AddEvent(50 * (i - 1), function()
-    -- function num : 0_3_1 , upvalues : self, i
-    local item = (self._gameScoreWidgets)[i]
-    ;
-    ((item.view):GetGameObject()):SetActive(true)
+  self.gameTable = {}
+  self.gameTable[1] = "str_luckland_money_score"
+  self.gameTable[2] = "str_luckland_build_score"
+  self.gameTable[3] = "str_luckland_hp_score"
+  local score = {}
+  score[1] = "+" .. result.money_score
+  score[2] = "+" .. result.build_score
+  score[3] = "+" .. result.hp_prop
+  local lastScore = result.total_score
+  self.scoreText:SetText("" .. lastScore)
+  self._gameScoreWidgets = UIWidgetHelper.SpawnObjects(self, "MissionScoreArea", "UILuckLandEndScoreItem", 3)
+  for i = 1, #self._gameScoreWidgets do
+    local item = self._gameScoreWidgets[i]
+    local str = self.gameTable[i]
+    item:SetData(str, score[i])
+    item.view:GetGameObject():SetActive(false)
   end
-)
-    end
-    if #reawards > 0 then
-      self._rewardWidgets = (UIWidgetHelper.SpawnObjects)(self, "MissionItemArea", "UILuckLandRewardItem", #reawards)
-      for key,rewardWidget in ipairs(self._rewardWidgets) do
-        rewardWidget:SetData(reawards[key], function(id, pos)
-    -- function num : 0_3_2 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "ItemTips", id, pos)
+  for i = 1, #self._gameScoreWidgets do
+    GameGlobal.Timer():AddEvent(50 * (i - 1), function()
+      local item = self._gameScoreWidgets[i]
+      item.view:GetGameObject():SetActive(true)
+    end)
   end
-)
-      end
-    else
-      do
-        ;
-        (self.missionItemAreaObj):SetActive(false)
-        ;
-        (self._anim):Play("uieff_UILuckLandGameSucPopUp_in")
-      end
+  if 0 < #reawards then
+    self._rewardWidgets = UIWidgetHelper.SpawnObjects(self, "MissionItemArea", "UILuckLandRewardItem", #reawards)
+    for key, rewardWidget in ipairs(self._rewardWidgets) do
+      rewardWidget:SetData(reawards[key], function(id, pos)
+        UIWidgetHelper.SetAwardItemTips(self, "ItemTips", id, pos)
+      end)
     end
+  else
+    self.missionItemAreaObj:SetActive(false)
   end
+  self._anim:Play("uieff_UILuckLandGameSucPopUp_in")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandGameSucPopUp.BgOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):CloseDialog("UILuckLandMainGameController")
-  ;
-  ((GameGlobal.UIStateManager)()):CloseDialog("UILuckLandLevelInfo")
-  ;
-  (self._anim):Play("uieff_UILuckLandGameSucPopUp_out")
-  ;
-  ((GameGlobal.Timer)()):AddEvent(270, function()
-    -- function num : 0_4_0 , upvalues : self
+function UILuckLandGameSucPopUp:BgOnClick(go)
+  GameGlobal.UIStateManager():CloseDialog("UILuckLandMainGameController")
+  GameGlobal.UIStateManager():CloseDialog("UILuckLandLevelInfo")
+  self._anim:Play("uieff_UILuckLandGameSucPopUp_out")
+  GameGlobal.Timer():AddEvent(270, function()
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandGameSucPopUp.DetailBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UILuckLandGameSucPopUp:DetailBtnOnClick(go)
   self:ShowDialog("UIIntroLoader", "UILuckLandGameSucPopUp")
 end
-
-

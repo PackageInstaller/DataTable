@@ -1,117 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn18_n47/hard/ui_cn18_n47_hard_level_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN18N47HardLevelItem", UICustomWidget)
 UICN18N47HardLevelItem = UICN18N47HardLevelItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN18N47HardLevelItem.Constructor = function(self, uiview)
-  -- function num : 0_0
+function UICN18N47HardLevelItem:Constructor(uiview)
   self._view = uiview
   self:OnShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN18N47HardLevelItem.OnShow = function(self)
-  -- function num : 0_1
-  self._normal = (self._view):GetGameObject("normal")
-  self._pass = (self._view):GetUIComponent("Image", "pass")
-  self._close = (self._view):GetUIComponent("Image", "close")
-  self._lockIcon = (self._view):GetUIComponent("Image", "lockIcon")
-  self._passBg = (self._view):GetUIComponent("Image", "passBg")
-  self._name = (self._view):GetUIComponent("UILocalizationText", "name")
-  self._titleOutline = (self._view):GetUIComponent("H3D.UGUI.CircleOutline", "name")
-  self._closeCanvasGroup = (self._view):GetUIComponent("CanvasGroup", "close")
-  self._localPos = (((self._view).transform).localPosition):Clone()
-  self._titleBg = (self._view):GetUIComponent("Image", "TitleBg")
-  self._lockimg = (self._view):GetUIComponent("Image", "lockimg")
-  self._hadimg = (self._view):GetUIComponent("Image", "hadimg")
-  self._finishTxt = (self._view):GetUIComponent("UILocalizationText", "FinishedText")
-  self._anim = (self._view):GetUIComponent("Animation", "anim")
-  self._rewardCount = (self._view):GetUIComponent("UILocalizationText", "RewardCount")
-  self._rewardTop = (self._view):GetGameObject("RewardTop")
+function UICN18N47HardLevelItem:OnShow()
+  self._normal = self._view:GetGameObject("normal")
+  self._pass = self._view:GetUIComponent("Image", "pass")
+  self._close = self._view:GetUIComponent("Image", "close")
+  self._lockIcon = self._view:GetUIComponent("Image", "lockIcon")
+  self._passBg = self._view:GetUIComponent("Image", "passBg")
+  self._name = self._view:GetUIComponent("UILocalizationText", "name")
+  self._titleOutline = self._view:GetUIComponent("H3D.UGUI.CircleOutline", "name")
+  self._closeCanvasGroup = self._view:GetUIComponent("CanvasGroup", "close")
+  self._localPos = self._view.transform.localPosition:Clone()
+  self._titleBg = self._view:GetUIComponent("Image", "TitleBg")
+  self._lockimg = self._view:GetUIComponent("Image", "lockimg")
+  self._hadimg = self._view:GetUIComponent("Image", "hadimg")
+  self._finishTxt = self._view:GetUIComponent("UILocalizationText", "FinishedText")
+  self._anim = self._view:GetUIComponent("Animation", "anim")
+  self._rewardCount = self._view:GetUIComponent("UILocalizationText", "RewardCount")
+  self._rewardTop = self._view:GetGameObject("RewardTop")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN18N47HardLevelItem.OnHide = function(self)
-  -- function num : 0_2
+function UICN18N47HardLevelItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN18N47HardLevelItem.SetData = function(self, idx, cfg, passInfo, cur, atlas)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN18N47HardLevelItem:SetData(idx, cfg, passInfo, cur, atlas)
   if idx < cur then
     if not passInfo then
-      (Log.exception)("没有通关信息：", idx)
+      Log.exception("没有通关信息：", idx)
     end
-    ;
-    ((self._pass).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._closeCanvasGroup).alpha = 0
-    ;
-    (self._rewardTop):SetActive(false)
+    self._pass.gameObject:SetActive(true)
+    self._closeCanvasGroup.alpha = 0
+    self._rewardTop:SetActive(false)
+  elseif cur < idx then
+    self._pass.gameObject:SetActive(false)
+    self._closeCanvasGroup.alpha = 1
+    self._rewardTop:SetActive(true)
   else
-    if cur < idx then
-      ((self._pass).gameObject):SetActive(false)
-      -- DECOMPILER ERROR at PC29: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._closeCanvasGroup).alpha = 1
-      ;
-      (self._rewardTop):SetActive(true)
-    else
-      ;
-      (self._normal):SetActive(true)
-      ;
-      ((self._pass).gameObject):SetActive(false)
-      -- DECOMPILER ERROR at PC45: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._closeCanvasGroup).alpha = 0
-      ;
-      (self._rewardTop):SetActive(false)
-    end
+    self._normal:SetActive(true)
+    self._pass.gameObject:SetActive(false)
+    self._closeCanvasGroup.alpha = 0
+    self._rewardTop:SetActive(false)
   end
   local cups = cfg:GetCupDatas()
   local compelteCups = cfg:GetCompleteCupCount()
-  ;
-  (self._rewardCount):SetText(compelteCups .. "/" .. #cups)
-  ;
-  (self._name):SetText(cfg:GetNodeName())
+  self._rewardCount:SetText(compelteCups .. "/" .. #cups)
+  self._name:SetText(cfg:GetNodeName())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN18N47HardLevelItem.LocalPosition = function(self)
-  -- function num : 0_4
+function UICN18N47HardLevelItem:LocalPosition()
   return self._localPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN18N47HardLevelItem.Anim_Pass = function(self)
-  -- function num : 0_5
-  (self._anim):Play("uieff_UIN28HardLevel_Finish")
+function UICN18N47HardLevelItem:Anim_Pass()
+  self._anim:Play("uieff_UIN28HardLevel_Finish")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN18N47HardLevelItem.Anim_Open = function(self)
-  -- function num : 0_6
+function UICN18N47HardLevelItem:Anim_Open()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN18N47HardLevelItem.SetActive = function(self, bShow)
-  -- function num : 0_7
-  ((self._view).gameObject):SetActive(bShow)
+function UICN18N47HardLevelItem:SetActive(bShow)
+  self._view.gameObject:SetActive(bShow)
 end
-
-

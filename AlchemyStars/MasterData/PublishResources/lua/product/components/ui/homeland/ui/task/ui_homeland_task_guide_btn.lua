@@ -1,71 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/task/ui_homeland_task_guide_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandTaskGuideBtn", UICustomWidget)
 UIHomelandTaskGuideBtn = UIHomelandTaskGuideBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandTaskGuideBtn.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandTaskGuideBtn:Constructor()
   self._atlas = self:GetAsset("UIHomelandTask.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskGuideBtn.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandTaskGuideBtn:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskGuideBtn._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandTaskGuideBtn:_GetComponents()
   self._text = self:GetUIComponent("UILocalizationText", "Text")
   self._btnImg = self:GetUIComponent("Image", "Btn")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskGuideBtn.SetData = function(self, groupID, callBack)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandTaskGuideBtn:SetData(groupID, callBack)
   self._groupID = groupID
   self._callBack = callBack
-  local cfg = (Cfg.cfg_homeland_task_group)[self._groupID]
+  local cfg = Cfg.cfg_homeland_task_group[self._groupID]
   if cfg then
-    (self._text):SetText((StringTable.Get)(cfg.GroupTitle))
+    self._text:SetText(StringTable.Get(cfg.GroupTitle))
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskGuideBtn.BtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIHomelandTaskGuideBtn:BtnOnClick(go)
   if self._callBack then
-    (self._callBack)(self._groupID)
+    self._callBack(self._groupID)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskGuideBtn.RefreshBtn = function(self, groupID)
-  -- function num : 0_5 , upvalues : _ENV
-  local color = Color(0.56078431372549, 0.56078431372549, 0.56078431372549)
+function UIHomelandTaskGuideBtn:RefreshBtn(groupID)
+  local color = Color(0.5607843137254902, 0.5607843137254902, 0.5607843137254902)
   local sprite = "N17_task_btn02"
   if self._groupID == groupID then
     sprite = "N17_task_btn05"
     color = Color.white
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._text).color = color
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._btnImg).sprite = (self._atlas):GetSprite(sprite)
+  self._text.color = color
+  self._btnImg.sprite = self._atlas:GetSprite(sprite)
 end
-
-

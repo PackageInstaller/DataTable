@@ -1,111 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/explore_minigame_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("ExploreMinigameComponent", ICampaignComponent)
 ExploreMinigameComponent = ExploreMinigameComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ExploreMinigameComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ExploreMinigameComponent:Constructor()
   self.m_component_info = MiniGameExploreComponentLoadInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ExploreMinigameComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ExploreMinigameComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = MiniGameExploreComponentLoadInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ExploreMinigameComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function ExploreMinigameComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ExploreMinigameComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ExploreMinigameComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_MINI_GAME_EXPLORE
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ExploreMinigameComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function ExploreMinigameComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ExploreMinigameComponent.HandleRandomRewardPostion = function(self, TT, asyncRes)
-  -- function num : 0_5 , upvalues : _ENV
+function ExploreMinigameComponent:HandleRandomRewardPostion(TT, asyncRes)
   local request = MiniGameExploreComponentRandomLocationReq:New()
   local response = MiniGameExploreComponentRandomPostionReply:New()
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][DemoComponent] HandleDemo ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][DemoComponent] HandleDemo ret:", asyncRes.m_result)
     return -1
   end
   asyncRes:SetSucc(true)
   return response.postion_id
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ExploreMinigameComponent.HandleExploredReceiveReward = function(self, TT, asyncRes)
-  -- function num : 0_6 , upvalues : _ENV
+function ExploreMinigameComponent:HandleExploredReceiveReward(TT, asyncRes)
   local request = MiniGameExploreComponentRecvRewardReq:New()
   local response = MiniGameExploreComponentRecvRewardReply:New()
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][DemoComponent] HandleDemo ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][DemoComponent] HandleDemo ret:", asyncRes.m_result)
     return -1
   end
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).used_high_equip_num = response.used_high_equip_num
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).used_low_equip_num = response.used_low_equip_num
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).next_refresh_time = response.next_refresh_time
+  self.m_component_info.used_high_equip_num = response.used_high_equip_num
+  self.m_component_info.used_low_equip_num = response.used_low_equip_num
+  self.m_component_info.next_refresh_time = response.next_refresh_time
   asyncRes:SetSucc(true)
   return response.rewards
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ExploreMinigameComponent.HandleEnterExplored = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function ExploreMinigameComponent:HandleEnterExplored(TT)
   local asyncRes = AsyncRequestRes:New()
   local request = MiniGameExploreComponentClearNewEquipReq:New()
   local response = MiniGameExploreComponentClearNewEquipReply:New()
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).have_new_high_equip = false
-  return 
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_component_info.have_new_high_equip = false
+  return
 end
-
-

@@ -1,28 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/task/homeland_task_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeTaskItem", Object)
 HomeTaskItem = HomeTaskItem
-local TaskStateEnum = {UnAccept = 0, Accept = 1, Running = 2, Finished = 3, Submit = 4, Over = 5}
+local TaskStateEnum = {
+  UnAccept = 0,
+  Accept = 1,
+  Running = 2,
+  Finished = 3,
+  Submit = 4,
+  Over = 5
+}
 local TaskStoryType = {Special = 1, Normal = 2}
 local TaskCutinType = {CutinAfterEndSpecialStory = 1, CutinAddAfterTaskEnd = 2}
--- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
 
-HomeTaskItem.Constructor = function(self, taskID, taskCfg, taskGroup, serverData, startCallBack, endCallBack)
-  -- function num : 0_0 , upvalues : TaskStateEnum
+function HomeTaskItem:Constructor(taskID, taskCfg, taskGroup, serverData, startCallBack, endCallBack)
   self._taskID = taskID
   self._taskCfg = taskCfg
   self._taskGroup = taskGroup
   self._taskmanager = taskGroup:GetTaskManager()
-  self._taskManagerHelper = (self._taskmanager):GetHomelandTaskManagerHelper()
+  self._taskManagerHelper = self._taskmanager:GetHomelandTaskManagerHelper()
   self._taskFinished = false
-  self._homelandClient = (self._taskmanager):GetHomelandClient()
-  self._petHomelandManager = (self._homelandClient):PetManager()
+  self._homelandClient = self._taskmanager:GetHomelandClient()
+  self._petHomelandManager = self._homelandClient:PetManager()
   self._indexInGroup = 0
   self._totleTaskCount = 0
-  self._buildManager = (self._homelandClient):BuildManager()
+  self._buildManager = self._homelandClient:BuildManager()
   self._taskServerInfo = serverData
   self._startRunCallBack = startCallBack
   self._endRunCallBack = endCallBack
@@ -35,21 +35,15 @@ HomeTaskItem.Constructor = function(self, taskID, taskCfg, taskGroup, serverData
   self._holdBuildingId = nil
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetModles = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
-  self._tiemModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._petManager = ((self._taskmanager):GetHomelandClient()):PetManager()
+function HomeTaskItem:GetModles()
+  self._itemModule = GameGlobal.GetModule(ItemModule)
+  self._tiemModule = GameGlobal.GetModule(SvrTimeModule)
+  self._petManager = self._taskmanager:GetHomelandClient():PetManager()
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function HomeTaskItem:Dispose()
   if self._saveBuildingCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.HomelandBuildOnSave, self._saveBuildingCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.HomelandBuildOnSave, self._saveBuildingCallback)
   end
   self:DestroyNpcs()
   self._taskID = nil
@@ -57,225 +51,151 @@ HomeTaskItem.Dispose = function(self)
   self._taskGroup = nil
   self._taskmanager = nil
   if self.taskTarget then
-    (self.taskTarget):Destroy()
+    self.taskTarget:Destroy()
   end
   self._holdBuilding = nil
   self._holdBuildingId = nil
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.Update = function(self, deltaTimeMS)
-  -- function num : 0_3 , upvalues : TaskStateEnum, _ENV
+function HomeTaskItem:Update(deltaTimeMS)
   if self._taskState == TaskStateEnum.Running then
     self.hadFinished = self:CheckTaskFinish()
     if self.hadFinished then
       self._taskState = TaskStateEnum.Finished
     end
-  else
-    if self._taskState == TaskStateEnum.Finished and self._finishType ~= FinishConditionEnum.Dialog then
-      self:SubmitTask()
-    end
+  elseif self._taskState == TaskStateEnum.Finished and self._finishType ~= FinishConditionEnum.Dialog then
+    self:SubmitTask()
   end
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.StartRun = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._saveBuildingCallback = (GameHelper:GetInstance()):CreateCallback(self.OnSaveBuilding, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.HomelandBuildOnSave, self._saveBuildingCallback)
+function HomeTaskItem:StartRun()
+  self._saveBuildingCallback = GameHelper:GetInstance():CreateCallback(self.OnSaveBuilding, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.HomelandBuildOnSave, self._saveBuildingCallback)
   if self._taskmanager then
-    (self._taskmanager):OnTaskItemStart(self._taskID)
+    self._taskmanager:OnTaskItemStart(self._taskID)
   end
   if not self._taskCfg then
-    (Log.fatal)("HomeTaskItem:StartRun config is nil ")
-    return 
+    Log.fatal("HomeTaskItem:StartRun config is nil ")
+    return
   end
   if self:CheckTaskStoryPre() then
-    local viewState = ((self._taskmanager):GetHomelandModule()):CanViewGroupTaskStory(HomeLandGroupTaskStoryMask.HomeLandGroupTaskStoryMask_Before, self._taskID)
+    local viewState = self._taskmanager:GetHomelandModule():CanViewGroupTaskStory(HomeLandGroupTaskStoryMask.HomeLandGroupTaskStoryMask_Before, self._taskID)
     if viewState == EStoryViewStoryStatus.NotView then
       self:PlayStoryPre()
     else
       self:_StartInit()
     end
   else
-    do
-      self:_StartInit()
-    end
+    self:_StartInit()
   end
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.EndRun = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomeTaskItem:EndRun()
   if self._saveBuildingCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.HomelandBuildOnSave, self._saveBuildingCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.HomelandBuildOnSave, self._saveBuildingCallback)
   end
   self:DestroyNpcs()
   if self.taskTarget then
-    (self.taskTarget):Destroy()
+    self.taskTarget:Destroy()
   end
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.StartRunCoro = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("HomeTaskItem:StartRunCoro")
-  local res = ((self._taskmanager):GetHomelandModule()):HandleHomelandTaskViewStoryReq(TT, self._taskID, HomeLandGroupTaskStoryMask.HomeLandGroupTaskStoryMask_Before)
+function HomeTaskItem:StartRunCoro(TT)
+  GameGlobal.UIStateManager():Lock("HomeTaskItem:StartRunCoro")
+  local res = self._taskmanager:GetHomelandModule():HandleHomelandTaskViewStoryReq(TT, self._taskID, HomeLandGroupTaskStoryMask.HomeLandGroupTaskStoryMask_Before)
   if res:GetSucc() then
-    (Log.info)("[HomelandTask]开始观看任务前置剧情完毕 任务id:" .. self._taskID .. " 剧情id:" .. ((self._taskCfg).StoryPreId)[2])
+    Log.info("[HomelandTask]开始观看任务前置剧情完毕 任务id:" .. self._taskID .. " 剧情id:" .. self._taskCfg.StoryPreId[2])
   else
-    ;
-    (Log.fatal)("[HomeTaskItem] HandleHomelandTaskViewStoryReq fail, res:" .. res:GetResult())
-    return 
+    Log.fatal("[HomeTaskItem] HandleHomelandTaskViewStoryReq fail, res:" .. res:GetResult())
+    return
   end
   self:_StartInit()
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("HomeTaskItem:StartRunCoro")
+  GameGlobal.UIStateManager():UnLock("HomeTaskItem:StartRunCoro")
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem._StartInit = function(self)
-  -- function num : 0_7 , upvalues : _ENV, TaskStateEnum
-  (Log.info)("[HomelandTask]初始化任务运行时数据 任务id:" .. self._taskID)
+function HomeTaskItem:_StartInit()
+  Log.info("[HomelandTask]初始化任务运行时数据 任务id:" .. self._taskID)
   self._taskState = TaskStateEnum.Running
   self:CreateTaskItemCondition(self:GetFinishCondition())
   self:CreateTaskNpc()
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.CheckTaskStoryPre = function(self)
-  -- function num : 0_8
-  do return (self._taskCfg).StoryPreId ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomeTaskItem:CheckTaskStoryPre()
+  return self._taskCfg.StoryPreId ~= nil
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.CheckTaskStoryEnd = function(self)
-  -- function num : 0_9
-  do return (self._taskCfg).StoryEndId ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomeTaskItem:CheckTaskStoryEnd()
+  return self._taskCfg.StoryEndId ~= nil
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.PlayStoryPre = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.info)("[HomelandTask]开始观看任务前置剧情 任务id:" .. self._taskID .. " 剧情id:" .. ((self._taskCfg).StoryPreId)[2])
-  self:_PlayStory((self._taskCfg).StoryPreId, function()
-    -- function num : 0_10_0 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(self.StartRunCoro, self)
-  end
-)
+function HomeTaskItem:PlayStoryPre()
+  Log.info("[HomelandTask]开始观看任务前置剧情 任务id:" .. self._taskID .. " 剧情id:" .. self._taskCfg.StoryPreId[2])
+  self:_PlayStory(self._taskCfg.StoryPreId, function()
+    GameGlobal.TaskManager():StartTask(self.StartRunCoro, self)
+  end)
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.PlayStoryEnd = function(self, npc)
-  -- function num : 0_11 , upvalues : _ENV
-  (Log.info)("[HomelandTask]查看任务后置剧情 任务id:" .. self._taskID .. "剧情id:" .. ((self._taskCfg).StoryEndId)[2])
-  self:_PlayStory((self._taskCfg).StoryEndId, function()
-    -- function num : 0_11_0 , upvalues : self
+function HomeTaskItem:PlayStoryEnd(npc)
+  Log.info("[HomelandTask]查看任务后置剧情 任务id:" .. self._taskID .. "剧情id:" .. self._taskCfg.StoryEndId[2])
+  self:_PlayStory(self._taskCfg.StoryEndId, function()
     self:FinishTask()
-  end
-, npc)
+  end, npc)
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetFinishCondition = function(self)
-  -- function num : 0_12
-  return (self._taskCfg).FinishCondition
+function HomeTaskItem:GetFinishCondition()
+  return self._taskCfg.FinishCondition
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetTaskID = function(self)
-  -- function num : 0_13
+function HomeTaskItem:GetTaskID()
   return self._taskID
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetGuidId = function(self)
-  -- function num : 0_14
-  return (self._taskCfg).GuideId
+function HomeTaskItem:GetGuidId()
+  return self._taskCfg.GuideId
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetTaskInfo = function(self)
-  -- function num : 0_15
-  return (self._taskCfg).TaskTitle, (self._taskCfg).TaskContent, (self._taskCfg).TaskBg
+function HomeTaskItem:GetTaskInfo()
+  return self._taskCfg.TaskTitle, self._taskCfg.TaskContent, self._taskCfg.TaskBg
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetTaskInfoBg = function(self)
-  -- function num : 0_16
-  return (self._taskCfg).TaskBg
+function HomeTaskItem:GetTaskInfoBg()
+  return self._taskCfg.TaskBg
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetTaskReward = function(self)
-  -- function num : 0_17
-  return (self._taskCfg).Reward
+function HomeTaskItem:GetTaskReward()
+  return self._taskCfg.Reward
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.CheckIsOpening = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
+function HomeTaskItem:CheckIsOpening()
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
   local now = time_mod:GetServerTime() / 1000
-  do return (self._taskCfg).StartTime < now and now < (self._taskCfg).EndTime end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return now > self._taskCfg.StartTime and now < self._taskCfg.EndTime
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.SetTaskFinished = function(self, finish)
-  -- function num : 0_19
+function HomeTaskItem:SetTaskFinished(finish)
   self._taskFinished = finish
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetTaskFinished = function(self)
-  -- function num : 0_20
+function HomeTaskItem:GetTaskFinished()
   return self._taskFinished
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetTaskIndexAndTotle = function(self)
-  -- function num : 0_21
+function HomeTaskItem:GetTaskIndexAndTotle()
   return self._indexInGroup, self._totleTaskCount
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.CreateTaskNpc = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  if (HomelandFishMatchManager:GetInstance()):IsInTaskMatchState() then
-    return 
+function HomeTaskItem:CreateTaskNpc()
+  if HomelandFishMatchManager:GetInstance():IsInTaskMatchState() then
+    return
   end
-  local cfgNpcList = (self._taskCfg).NpcList
+  local cfgNpcList = self._taskCfg.NpcList
   if cfgNpcList then
-    for _,cfgNpcInfo in ipairs(cfgNpcList) do
+    for _, cfgNpcInfo in ipairs(cfgNpcList) do
       local npcId = cfgNpcInfo[1]
       local x, y, z = cfgNpcInfo[2], cfgNpcInfo[3], cfgNpcInfo[4]
       local rotationY = cfgNpcInfo[5]
       local chatId = cfgNpcInfo[6]
-      local npc = HomelandTaskNPC:New((Cfg.cfg_homeland_task_npc)[npcId], self._homelandClient)
+      local npc = HomelandTaskNPC:New(Cfg.cfg_homeland_task_npc[npcId], self._homelandClient)
       npc:SetTask(self)
       npc:SetLocation(x, y, z, rotationY)
       if self._checkNpcId ~= nil and self._checkNpcId == npcId then
@@ -283,35 +203,29 @@ HomeTaskItem.CreateTaskNpc = function(self)
       end
       npc:SetChatID(chatId)
       npc:InitInteract()
-      ;
-      (table.insert)(self.npcList, npc)
+      table.insert(self.npcList, npc)
     end
   end
-  do
-    self:CreateTaskHangPointNpc(false)
-  end
+  self:CreateTaskHangPointNpc(false)
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.CreateTaskHangPointNpc = function(self, force)
-  -- function num : 0_23 , upvalues : _ENV
-  local cfgNpcPathList = (self._taskCfg).HangPointNpcList
+function HomeTaskItem:CreateTaskHangPointNpc(force)
+  local cfgNpcPathList = self._taskCfg.HangPointNpcList
   if not cfgNpcPathList then
-    return 
+    return
   end
-  for _,cfgNpcInfo in ipairs(cfgNpcPathList) do
+  for _, cfgNpcInfo in ipairs(cfgNpcPathList) do
     local buildingId = cfgNpcInfo[1]
     self._holdBuildingId = buildingId
   end
-  if not force and (self._taskmanager):GetClientMode() == HomelandMode.Build then
-    return 
+  if not force and self._taskmanager:GetClientMode() == HomelandMode.Build then
+    return
   end
   if cfgNpcPathList then
-    for _,cfgNpcInfo in ipairs(cfgNpcPathList) do
+    for _, cfgNpcInfo in ipairs(cfgNpcPathList) do
       local buildingId = cfgNpcInfo[1]
       local hangPointId = cfgNpcInfo[2]
-      local building = (self._buildManager):FindBuildingByCfgID(buildingId)
+      local building = self._buildManager:FindBuildingByCfgID(buildingId)
       self._hangPointId = hangPointId
       self._holdBuildingId = buildingId
       if building then
@@ -322,12 +236,12 @@ HomeTaskItem.CreateTaskHangPointNpc = function(self, force)
         local rotationY = cfgNpcInfo[7]
         local chatId = cfgNpcInfo[8]
         if hangTrans then
-          local npc = HomelandTaskNPC:New((Cfg.cfg_homeland_task_npc)[npcId], self._homelandClient)
+          local npc = HomelandTaskNPC:New(Cfg.cfg_homeland_task_npc[npcId], self._homelandClient)
           npc:SetTask(self)
           npc:SetParent(hangTrans)
           npc:SetHoldBuilding(building)
           npc:SetLocation(x, y, z, rotationY, true)
-          if (self._buildManager):GetBuildEditorMode() == BuildEditorMode.Normal then
+          if self._buildManager:GetBuildEditorMode() == BuildEditorMode.Normal then
             npc:SetVisible(false)
           end
           if self._checkNpcId ~= nil and self._checkNpcId == npcId then
@@ -335,171 +249,112 @@ HomeTaskItem.CreateTaskHangPointNpc = function(self, force)
           end
           npc:SetChatID(chatId)
           npc:InitInteract()
-          ;
-          (table.insert)(self.npcList, npc)
+          table.insert(self.npcList, npc)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.DestroyNpcs = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  for _,npc in pairs(self.npcList) do
+function HomeTaskItem:DestroyNpcs()
+  for _, npc in pairs(self.npcList) do
     npc:Destroy()
   end
   self.npcList = {}
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.CreateTaskItemCondition = function(self, conditionId)
-  -- function num : 0_25 , upvalues : _ENV
+function HomeTaskItem:CreateTaskItemCondition(conditionId)
   local info = self:GetConditionInfo()
   if not info then
-    return 
+    return
   end
   conditionId = info.FinishType
   if conditionId == FinishConditionEnum.Position then
     self:_CreateConditionPosition()
-  else
-    if conditionId == FinishConditionEnum.Dialog then
-      self:_CreateConditionDialog()
-    else
-      if conditionId == FinishConditionEnum.Item then
-        self:_CreateConditionItem()
-      else
-        if conditionId == FinishConditionEnum.PetSearch then
-          self:_CreateConditionPetSearch()
-        else
-          if conditionId == FinishConditionEnum.PetNeed then
-            self:_CreateConditionPetNeed()
-          else
-            if conditionId == FinishConditionEnum.FinishGame then
-              self:_CreateConditionFinishGame()
-            else
-              if conditionId == FinishConditionEnum.Other then
-                self:_CreateConditionOther()
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif conditionId == FinishConditionEnum.Dialog then
+    self:_CreateConditionDialog()
+  elseif conditionId == FinishConditionEnum.Item then
+    self:_CreateConditionItem()
+  elseif conditionId == FinishConditionEnum.PetSearch then
+    self:_CreateConditionPetSearch()
+  elseif conditionId == FinishConditionEnum.PetNeed then
+    self:_CreateConditionPetNeed()
+  elseif conditionId == FinishConditionEnum.FinishGame then
+    self:_CreateConditionFinishGame()
+  elseif conditionId == FinishConditionEnum.Other then
+    self:_CreateConditionOther()
   end
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetTaskManager = function(self)
-  -- function num : 0_26
+function HomeTaskItem:GetTaskManager()
   return self._taskmanager
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetTaskGroup = function(self)
-  -- function num : 0_27
+function HomeTaskItem:GetTaskGroup()
   return self._taskGroup
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.CheckFinished = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  if self._taskServerInfo and QuestStatus.QUEST_Completed <= (self._taskServerInfo):Status() then
+function HomeTaskItem:CheckFinished()
+  if self._taskServerInfo and self._taskServerInfo:Status() >= QuestStatus.QUEST_Completed then
     self:SetTaskFinished(true)
   end
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem._PlayStory = function(self, story, callBack, npc)
-  -- function num : 0_29 , upvalues : TaskStoryType, _ENV
+function HomeTaskItem:_PlayStory(story, callBack, npc)
   local storyType = story[1]
   local storyId = story[2]
   if storyType == TaskStoryType.Special then
-    if not ((GameGlobal.GetUIModule)(HomelandModule)):IsRunning() then
-      (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIHomeStoryController .. "DirectIn")
-      local enterCallback = function()
-    -- function num : 0_29_0 , upvalues : _ENV, storyId, callBack
-    ((GameGlobal.GetUIModule)(HomelandModule)):SetEnterCallback(nil)
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIHomeStoryController, storyId, callBack)
-  end
-
-      ;
-      ((GameGlobal.GetUIModule)(HomelandModule)):SetEnterCallback(enterCallback)
-    else
-      do
-        ;
-        (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIHomeStoryController, function()
-    -- function num : 0_29_1 , upvalues : _ENV, storyId, callBack
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIHomeStoryController, storyId, callBack)
-  end
-)
-        if storyType == TaskStoryType.Normal then
-          ((GameGlobal.UIStateManager)()):ShowDialog("UIHomePetInteract", npc, callBack, storyId)
-          ;
-          (((self._homelandClient):InputManager()):GetControllerChar()):SetActive(false)
-        else
-          ;
-          (Log.fatal)("任务剧情类型配置错误 任务id:" .. self._taskID)
-          callBack()
-        end
+    if not GameGlobal.GetUIModule(HomelandModule):IsRunning() then
+      CutsceneManager.ExcuteCutsceneIn(UIStateType.UIHomeStoryController .. "DirectIn")
+      
+      local function enterCallback()
+        GameGlobal.GetUIModule(HomelandModule):SetEnterCallback(nil)
+        GameGlobal.UIStateManager():SwitchState(UIStateType.UIHomeStoryController, storyId, callBack)
       end
+      
+      GameGlobal.GetUIModule(HomelandModule):SetEnterCallback(enterCallback)
+    else
+      CutsceneManager.ExcuteCutsceneIn(UIStateType.UIHomeStoryController, function()
+        GameGlobal.UIStateManager():SwitchState(UIStateType.UIHomeStoryController, storyId, callBack)
+      end)
     end
+  elseif storyType == TaskStoryType.Normal then
+    GameGlobal.UIStateManager():ShowDialog("UIHomePetInteract", npc, callBack, storyId)
+    self._homelandClient:InputManager():GetControllerChar():SetActive(false)
+  else
+    Log.fatal("任务剧情类型配置错误 任务id:" .. self._taskID)
+    callBack()
   end
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.OpenTrace = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function HomeTaskItem:OpenTrace()
   local traceId = self:GetGuidId()
-  ;
-  ((self._homelandClient):GetHomelandTraceManager()):StartTrace(traceId, TraceEnum.Task, nil, self)
+  self._homelandClient:GetHomelandTraceManager():StartTrace(traceId, TraceEnum.Task, nil, self)
   return traceId
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.DisposeTrace = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function HomeTaskItem:DisposeTrace()
   local traceId = self:GetGuidId()
-  ;
-  ((self._homelandClient):GetHomelandTraceManager()):DisposeTrace(traceId, TraceEnum.Task)
+  self._homelandClient:GetHomelandTraceManager():DisposeTrace(traceId, TraceEnum.Task)
   return traceId
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetViewGroupTaskStoryState = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  return ((self._taskmanager):GetHomelandModule()):CanViewGroupTaskStory(HomeLandGroupTaskStoryMask.HomeLandGroupTaskStoryMast_After, self._taskID)
+function HomeTaskItem:GetViewGroupTaskStoryState()
+  return self._taskmanager:GetHomelandModule():CanViewGroupTaskStory(HomeLandGroupTaskStoryMask.HomeLandGroupTaskStoryMast_After, self._taskID)
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.SubmitTask = function(self, finish, npc)
-  -- function num : 0_33 , upvalues : TaskStateEnum, _ENV
-  if TaskStateEnum.Submit <= self._taskState then
-    return 
+function HomeTaskItem:SubmitTask(finish, npc)
+  if self._taskState >= TaskStateEnum.Submit then
+    return
   end
   if self.hadFinished or finish then
     self._taskState = TaskStateEnum.Submit
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.SubmitTaskCoro, self, npc)
+    GameGlobal.TaskManager():StartTask(self.SubmitTaskCoro, self, npc)
   end
 end
 
--- DECOMPILER ERROR at PC123: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.SubmitTaskCoro = function(self, TT, npc)
-  -- function num : 0_34 , upvalues : _ENV
-  (Log.info)("[HomelandTask]任务条件达成 任务id:" .. self._taskID)
+function HomeTaskItem:SubmitTaskCoro(TT, npc)
+  Log.info("[HomelandTask]任务条件达成 任务id:" .. self._taskID)
   if self:CheckTaskStoryEnd() then
     self:PlayStoryEnd(npc)
   else
@@ -507,175 +362,125 @@ HomeTaskItem.SubmitTaskCoro = function(self, TT, npc)
   end
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.StartSubmitTaskImmediatelyCoro = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.SubmitTaskImmediately, self)
+function HomeTaskItem:StartSubmitTaskImmediatelyCoro()
+  GameGlobal.TaskManager():StartTask(self.SubmitTaskImmediately, self)
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.SubmitTaskImmediately = function(self, TT)
-  -- function num : 0_36 , upvalues : _ENV
-  self._dialogRes = nil
-  self._dialogRes = ((self._taskmanager):GetHomelandModule()):HandleHomelandFinishTaskReq(TT, self._taskID)
-  ;
-  (Log.info)("[HomelandTask]主动立刻提交 任务id:" .. self._taskID .. ": 对话类不能配置后置激情")
+function HomeTaskItem:SubmitTaskImmediately(TT)
+  self._dialogRes, self.replyEvent = nil, nil
+  self._dialogRes, self.replyEvent = self._taskmanager:GetHomelandModule():HandleHomelandFinishTaskReq(TT, self._taskID)
+  Log.info("[HomelandTask]主动立刻提交 任务id:" .. self._taskID .. ": 对话类不能配置后置激情")
 end
 
--- DECOMPILER ERROR at PC132: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetRewardsImmediately = function(self, npc)
-  -- function num : 0_37 , upvalues : TaskStateEnum, _ENV
-  if self._dialogRes and (self._dialogRes):GetSucc() then
+function HomeTaskItem:GetRewardsImmediately(npc)
+  if self._dialogRes and self._dialogRes:GetSucc() then
     self._taskState = TaskStateEnum.Submit
-    local assetList = (self.replyEvent).rewards
-    if #assetList > 0 then
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIHomeShowAwards", assetList, function()
-    -- function num : 0_37_0 , upvalues : self
-    self:AfterFinishTask()
-  end
-, false, nil)
+    local assetList = self.replyEvent.rewards
+    if 0 < #assetList then
+      GameGlobal.UIStateManager():ShowDialog("UIHomeShowAwards", assetList, function()
+        self:AfterFinishTask()
+      end, false, nil)
     else
       self:AfterFinishTask()
     end
   else
-    do
-      ;
-      (Log.info)("[HomelandTask]任务结束 领奖成功 任务id:" .. self._taskID .. ": 对话类不能配置后置激情")
-    end
+    Log.info("[HomelandTask]任务结束 领奖成功 任务id:" .. self._taskID .. ": 对话类不能配置后置激情")
   end
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.FinishTaskCoro = function(self, TT, endStoryReq)
-  -- function num : 0_38 , upvalues : _ENV, TaskCutinType
-  ((GameGlobal.UIStateManager)()):Lock("HomeTaskItem:FinishTaskCoro")
+function HomeTaskItem:FinishTaskCoro(TT, endStoryReq)
+  GameGlobal.UIStateManager():Lock("HomeTaskItem:FinishTaskCoro")
   if endStoryReq then
-    if (self._taskCfg).CutinType == TaskCutinType.CutinAfterEndSpecialStory then
+    if self._taskCfg.CutinType == TaskCutinType.CutinAfterEndSpecialStory then
       self:DestroyNpcs()
     end
-    local res = ((self._taskmanager):GetHomelandModule()):HandleHomelandTaskViewStoryReq(TT, self._taskID, HomeLandGroupTaskStoryMask.HomeLandGroupTaskStoryMast_After)
-  end
-  if res:GetSucc() then
-    do
-      (Log.fatal)("[HomeTaskItem] HandleHomelandTaskViewStoryReq fail, res:" .. res:GetResult())
-      if self._isPassiveTask and (self._taskServerInfo):Status() == QuestStatus.QUEST_Taken then
-        (Log.info)("[HomelandTask]任务结束 没有奖品 任务id:" .. self._taskID .. " 是否被动任务:" .. tostring(self._isPassiveTask))
-        self:AfterFinishTask()
-        ;
-        ((GameGlobal.UIStateManager)()):UnLock("HomeTaskItem:FinishTaskCoro")
-        return 
-      end
-      ;
-      (Log.info)("[HomelandTask]任务结束 开始领奖 任务id:" .. self._taskID .. " 是否被动任务:" .. tostring(self._isPassiveTask))
-      local res, replyEvent = nil, nil
-      if self._isPassiveTask then
-        res = ((self._taskmanager):GetHomelandModule()):HandleHomelandTaskQuestTakeReq(TT, self._taskID)
-      else
-        -- DECOMPILER ERROR at PC96: Overwrote pending register: R4 in 'AssignReg'
-
-        res = ((self._taskmanager):GetHomelandModule()):HandleHomelandFinishTaskReq(TT, self._taskID)
-      end
-      if endStoryReq then
-        YIELD(TT, 500)
-      end
-      ;
-      ((GameGlobal.UIStateManager)()):UnLock("HomeTaskItem:FinishTaskCoro")
-      if res:GetSucc() then
-        (Log.info)("[HomelandTask]任务结束 领奖成功 任务id:" .. self._taskID)
-        local assetList = replyEvent.rewards
-        if #assetList > 0 then
-          ((GameGlobal.UIStateManager)()):ShowDialog("UIHomeShowAwards", assetList, function()
-    -- function num : 0_38_0 , upvalues : self
-    self:AfterFinishTask()
-  end
-, false, nil)
-        else
-          self:AfterFinishTask()
-        end
-      else
-        do
-          ;
-          (Log.fatal)("[HomeTaskItem] HandleHomelandFinishTaskReq fail, res:" .. res:GetResult())
-          do return  end
-        end
-      end
+    local res = self._taskmanager:GetHomelandModule():HandleHomelandTaskViewStoryReq(TT, self._taskID, HomeLandGroupTaskStoryMask.HomeLandGroupTaskStoryMast_After)
+    if res:GetSucc() then
+    else
+      Log.fatal("[HomeTaskItem] HandleHomelandTaskViewStoryReq fail, res:" .. res:GetResult())
     end
+  end
+  if self._isPassiveTask and self._taskServerInfo:Status() == QuestStatus.QUEST_Taken then
+    Log.info("[HomelandTask]任务结束 没有奖品 任务id:" .. self._taskID .. " 是否被动任务:" .. tostring(self._isPassiveTask))
+    self:AfterFinishTask()
+    GameGlobal.UIStateManager():UnLock("HomeTaskItem:FinishTaskCoro")
+    return
+  end
+  Log.info("[HomelandTask]任务结束 开始领奖 任务id:" .. self._taskID .. " 是否被动任务:" .. tostring(self._isPassiveTask))
+  local res, replyEvent
+  if self._isPassiveTask then
+    res, replyEvent = self._taskmanager:GetHomelandModule():HandleHomelandTaskQuestTakeReq(TT, self._taskID)
+  else
+    res, replyEvent = self._taskmanager:GetHomelandModule():HandleHomelandFinishTaskReq(TT, self._taskID)
+  end
+  if endStoryReq then
+    YIELD(TT, 500)
+  end
+  GameGlobal.UIStateManager():UnLock("HomeTaskItem:FinishTaskCoro")
+  if res:GetSucc() then
+    Log.info("[HomelandTask]任务结束 领奖成功 任务id:" .. self._taskID)
+    local assetList = replyEvent.rewards
+    if 0 < #assetList then
+      GameGlobal.UIStateManager():ShowDialog("UIHomeShowAwards", assetList, function()
+        self:AfterFinishTask()
+      end, false, nil)
+    else
+      self:AfterFinishTask()
+    end
+  else
+    Log.fatal("[HomeTaskItem] HandleHomelandFinishTaskReq fail, res:" .. res:GetResult())
+    return
   end
 end
 
--- DECOMPILER ERROR at PC138: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.AfterFinishTask = function(self)
-  -- function num : 0_39 , upvalues : TaskCutinType, _ENV
+function HomeTaskItem:AfterFinishTask()
   if not self._taskCfg then
-    return 
+    return
   end
-  if (self._taskCfg).CutinType == TaskCutinType.CutinAddAfterTaskEnd then
-    ((GameGlobal.UIStateManager)()):Lock("HomeTaskItem:AfterFinishTask")
-    ;
-    (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIHomeStoryController, function()
-    -- function num : 0_39_0 , upvalues : self
-    self:TaskOver(true)
-  end
-)
+  if self._taskCfg.CutinType == TaskCutinType.CutinAddAfterTaskEnd then
+    GameGlobal.UIStateManager():Lock("HomeTaskItem:AfterFinishTask")
+    CutsceneManager.ExcuteCutsceneIn(UIStateType.UIHomeStoryController, function()
+      self:TaskOver(true)
+    end)
   else
     self:TaskOver()
   end
 end
 
--- DECOMPILER ERROR at PC141: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.TaskOver = function(self, fromCutscene)
-  -- function num : 0_40 , upvalues : _ENV, TaskStateEnum
+function HomeTaskItem:TaskOver(fromCutscene)
   if fromCutscene then
-    ((GameGlobal.UIStateManager)()):UnLock("HomeTaskItem:AfterFinishTask")
-    ;
-    (CutsceneManager.ExcuteCutsceneOut)()
+    GameGlobal.UIStateManager():UnLock("HomeTaskItem:AfterFinishTask")
+    CutsceneManager.ExcuteCutsceneOut()
   end
   self:SetTaskFinished(true)
   self:DestroyNpcs()
   self._taskState = TaskStateEnum.Over
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnHomeLandTaskSubmit, (self._taskGroup):GetGroupID(), self:GetTaskID())
-  ;
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.HomelandBuildOnSave, self._saveBuildingCallback)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnHomeLandTaskSubmit, self._taskGroup:GetGroupID(), self:GetTaskID())
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.HomelandBuildOnSave, self._saveBuildingCallback)
 end
 
--- DECOMPILER ERROR at PC144: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.FinishTask = function(self)
-  -- function num : 0_41 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.FinishTaskCoro, self, true)
+function HomeTaskItem:FinishTask()
+  GameGlobal.TaskManager():StartTask(self.FinishTaskCoro, self, true)
 end
 
--- DECOMPILER ERROR at PC147: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.SetServerInfo = function(self, serverInfo)
-  -- function num : 0_42 , upvalues : TaskStateEnum, _ENV
+function HomeTaskItem:SetServerInfo(serverInfo)
   self._taskServerInfo = serverInfo
   self:CheckFinished()
   self:SetSpecialCheck()
-  if self._taskState == TaskStateEnum.Running and (self._taskServerInfo):Status() <= QuestStatus.QUEST_Completed and (self._taskServerInfo):IsHomeLandQuestComplete() and FinishConditionEnum.FinishConditionEnum_End < (self:GetConditionInfo()).FinishType and not self._specialCheck then
+  if self._taskState == TaskStateEnum.Running and self._taskServerInfo:Status() <= QuestStatus.QUEST_Completed and self._taskServerInfo:IsHomeLandQuestComplete() and self:GetConditionInfo().FinishType > FinishConditionEnum.FinishConditionEnum_End and not self._specialCheck then
     self:SubmitTask(true)
   end
 end
 
--- DECOMPILER ERROR at PC150: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.SetSpecialCheck = function(self)
-  -- function num : 0_43 , upvalues : _ENV
-  local cli_cfg = (GameGlobal.GetZoneCfgTable)("cfg_quest", self._taskID)
-  local condition = (self._taskManagerHelper):GetTaskConditionCfg(self:GetFinishCondition())
+function HomeTaskItem:SetSpecialCheck()
+  local cli_cfg = GameGlobal.GetZoneCfgTable("cfg_quest", self._taskID)
+  local condition = self._taskManagerHelper:GetTaskConditionCfg(self:GetFinishCondition())
   if cli_cfg and condition.FinishType == FinishConditionEnum.Other and self._inInit then
-    local checkType = nil
-    checkType = self:GetFixCheckConfig(cli_cfg.Cond)
+    local checkType
+    checkType, self._itemCheckId = self:GetFixCheckConfig(cli_cfg.Cond)
     if self._taskServerInfo and checkType then
-      local state = (self._taskServerInfo):Status()
-      local comp = (self._taskServerInfo):IsHomeLandQuestComplete()
+      local state = self._taskServerInfo:Status()
+      local comp = self._taskServerInfo:IsHomeLandQuestComplete()
       if state < QuestStatus.QUEST_Completed and not comp then
         self._inInit = false
         self._specialCheck = true
@@ -684,13 +489,10 @@ HomeTaskItem.SetSpecialCheck = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC153: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetFixCheckConfig = function(self, condStr)
-  -- function num : 0_44 , upvalues : _ENV
-  local conds = (string.split)(condStr, "&")
-  for _,cond in ipairs(conds) do
-    local c = (string.split)(cond, ",")
+function HomeTaskItem:GetFixCheckConfig(condStr)
+  local conds = string.split(condStr, "&")
+  for _, cond in ipairs(conds) do
+    local c = string.split(cond, ",")
     if c[1] and c[1] == "2006" then
       return true, c[2]
     end
@@ -698,35 +500,31 @@ HomeTaskItem.GetFixCheckConfig = function(self, condStr)
   return false
 end
 
--- DECOMPILER ERROR at PC156: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetConditionInfo = function(self)
-  -- function num : 0_45
+function HomeTaskItem:GetConditionInfo()
   local finishConditionId = self:GetFinishCondition()
-  local finishCondition = (self._taskManagerHelper):GetTaskConditionCfg(finishConditionId)
+  local finishCondition = self._taskManagerHelper:GetTaskConditionCfg(finishConditionId)
   return finishCondition
 end
 
--- DECOMPILER ERROR at PC159: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.CheckTaskFinish = function(self)
-  -- function num : 0_46 , upvalues : _ENV
-  self._finishCondition = (self._taskManagerHelper):GetTaskConditionCfg(self:GetFinishCondition())
+function HomeTaskItem:CheckTaskFinish()
+  self._finishCondition = self._taskManagerHelper:GetTaskConditionCfg(self:GetFinishCondition())
   if not self._finishCondition then
-    return 
+    return
   end
-  self._finishType = (self._finishCondition).FinishType
+  self._finishType = self._finishCondition.FinishType
   self.hadFinished = false
   if self._finishType == FinishConditionEnum.Position then
-    local playerPos = (((self._homelandClient):CharacterManager()):MainCharacterController()):Position()
+    local playerPos = self._homelandClient:CharacterManager():MainCharacterController():Position()
     if self.taskTarget then
-      local distance = (((self._finishCondition).Target)[2])[1]
-      self.hadFinished = (Vector3.Distance)(playerPos, ((self.taskTarget).transform).position) < distance
+      local distance = self._finishCondition.Target[2][1]
+      self.hadFinished = distance > Vector3.Distance(playerPos, self.taskTarget.transform.position)
     end
-  end
-  if ((self._finishType ~= FinishConditionEnum.Dialog or self._finishType == FinishConditionEnum.PetSearch) and self._finishType ~= FinishConditionEnum.PetNeed) or self._finishType == FinishConditionEnum.Item then
-    local itemId, itemCount = ((self._finishCondition).NeedItems)[1], ((self._finishCondition).NeedItems)[2]
-    local haveCount = (self._itemModule):GetItemCount(itemId)
+  elseif self._finishType == FinishConditionEnum.Dialog then
+  elseif self._finishType == FinishConditionEnum.PetSearch then
+  elseif self._finishType == FinishConditionEnum.PetNeed then
+  elseif self._finishType == FinishConditionEnum.Item then
+    local itemId, itemCount = self._finishCondition.NeedItems[1], self._finishCondition.NeedItems[2]
+    local haveCount = self._itemModule:GetItemCount(itemId)
     if itemCount <= haveCount then
       self.hadFinished = true
     else
@@ -734,216 +532,152 @@ HomeTaskItem.CheckTaskFinish = function(self)
     end
   elseif self._finishType == FinishConditionEnum.FinishGame then
     self.hadFinished = false
-  end
-  if self._finishType == FinishConditionEnum.Other and self._taskCfg and (not self._specialCheck or self._taskServerInfo) and (self._taskServerInfo):IsHomeLandQuestComplete() then
+  elseif not (self._finishType == FinishConditionEnum.Other and self._taskCfg) or self._specialCheck then
+  elseif self._taskServerInfo and self._taskServerInfo:IsHomeLandQuestComplete() then
     self._isPassiveTask = true
     self.hadFinished = true
   end
-  do return self.hadFinished end
-  -- DECOMPILER ERROR: 10 unprocessed JMP targets
+  return self.hadFinished
 end
 
--- DECOMPILER ERROR at PC162: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetClientMode = function(self)
-  -- function num : 0_47
-  local mode = (self._homelandClient):CurrentMode()
+function HomeTaskItem:GetClientMode()
+  local mode = self._homelandClient:CurrentMode()
   return mode
 end
 
--- DECOMPILER ERROR at PC165: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem._CreateCondition_ChatTargetId = function(self)
-  -- function num : 0_48 , upvalues : _ENV
+function HomeTaskItem:_CreateCondition_ChatTargetId()
   local finishCondition = self:GetConditionInfo()
   local chatTargetId = finishCondition.ChatTargetId
   if not chatTargetId then
-    (Log.fatal)("HomeTaskItem:_CreateConditionPetSearch is ERROR, cfg_homeland_task_finish_conditions[", finishCondition.id, "] ChatTargetId = nil")
+    Log.fatal("HomeTaskItem:_CreateConditionPetSearch is ERROR, cfg_homeland_task_finish_conditions[", finishCondition.id, "] ChatTargetId = nil")
   end
   self._checkNpcId = chatTargetId[1]
   self._checkchatId = chatTargetId[2]
   self._checktalkId = chatTargetId[3]
 end
 
--- DECOMPILER ERROR at PC168: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem._CreateConditionPosition = function(self)
-  -- function num : 0_49 , upvalues : _ENV
+function HomeTaskItem:_CreateConditionPosition()
   local finishCondition = self:GetConditionInfo()
   if not finishCondition then
-    (Log.error)(" no finishConditionId pos ：", finishCondition.Id)
-    return 
+    Log.error(" no finishConditionId pos ：", finishCondition.Id)
+    return
   end
   local transformInfo = finishCondition.Target
-  self._req = (ResourceManager:GetInstance()):SyncLoadAsset("TaskCheckPoint.prefab", LoadType.GameObject)
+  self._req = ResourceManager:GetInstance():SyncLoadAsset("TaskCheckPoint.prefab", LoadType.GameObject)
   if not self._req then
-    (Log.error)("找不到模型")
+    Log.error("找不到模型")
   end
-  self.taskTarget = (self._req).Obj
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self.taskTarget).transform).position = Vector3((transformInfo[1])[1], (transformInfo[1])[2], (transformInfo[1])[3])
+  self.taskTarget = self._req.Obj
+  self.taskTarget.transform.position = Vector3(transformInfo[1][1], transformInfo[1][2], transformInfo[1][3])
 end
 
--- DECOMPILER ERROR at PC171: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem._CreateConditionDialog = function(self)
-  -- function num : 0_50
+function HomeTaskItem:_CreateConditionDialog()
   self:_CreateCondition_ChatTargetId()
 end
 
--- DECOMPILER ERROR at PC174: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem._CreateConditionItem = function(self)
-  -- function num : 0_51
+function HomeTaskItem:_CreateConditionItem()
 end
 
--- DECOMPILER ERROR at PC177: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem._CreateConditionPetSearch = function(self)
-  -- function num : 0_52
+function HomeTaskItem:_CreateConditionPetSearch()
   self:_CreateCondition_ChatTargetId()
 end
 
--- DECOMPILER ERROR at PC180: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem._CreateConditionPetNeed = function(self)
-  -- function num : 0_53
+function HomeTaskItem:_CreateConditionPetNeed()
   self:_CreateCondition_ChatTargetId()
 end
 
--- DECOMPILER ERROR at PC183: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem._CreateConditionFinishGame = function(self)
-  -- function num : 0_54
+function HomeTaskItem:_CreateConditionFinishGame()
   local finishCondition = self:GetConditionInfo()
   self._checkGameFinish = finishCondition.GameFinish
 end
 
--- DECOMPILER ERROR at PC186: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem._CreateConditionOther = function(self)
-  -- function num : 0_55
+function HomeTaskItem:_CreateConditionOther()
 end
 
--- DECOMPILER ERROR at PC189: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.SetNpcsVisible = function(self, visible)
-  -- function num : 0_56 , upvalues : _ENV
-  for _,npc in pairs(self.npcList) do
+function HomeTaskItem:SetNpcsVisible(visible)
+  for _, npc in pairs(self.npcList) do
     npc:SetVisible(visible)
   end
 end
 
--- DECOMPILER ERROR at PC192: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetTaskNpcs = function(self)
-  -- function num : 0_57
+function HomeTaskItem:GetTaskNpcs()
   if self.npcList then
     return self.npcList
   end
 end
 
--- DECOMPILER ERROR at PC195: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.OnHomeLandSpecialCheck = function(self, args)
-  -- function num : 0_58 , upvalues : _ENV
-  if self._specialCheck and tostring(args) == self._itemCheckId and (self._taskServerInfo):IsHomeLandQuestComplete() then
+function HomeTaskItem:OnHomeLandSpecialCheck(args)
+  if self._specialCheck and tostring(args) == self._itemCheckId and self._taskServerInfo:IsHomeLandQuestComplete() then
     self._specialCheck = false
   end
 end
 
--- DECOMPILER ERROR at PC198: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetTaskServerInfo = function(self)
-  -- function num : 0_59
+function HomeTaskItem:GetTaskServerInfo()
   return self._taskServerInfo
 end
 
--- DECOMPILER ERROR at PC201: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetTaskConditionCfg = function(self)
-  -- function num : 0_60
-  return (self._taskManagerHelper):GetTaskConditionCfg(self:GetFinishCondition())
+function HomeTaskItem:GetTaskConditionCfg()
+  return self._taskManagerHelper:GetTaskConditionCfg(self:GetFinishCondition())
 end
 
--- DECOMPILER ERROR at PC204: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.CheckPetSearch = function(self)
-  -- function num : 0_61 , upvalues : _ENV
-  if not (self._finishCondition).NeedItems then
-    (Log.Error)(" task finish condition  Item is nil")
+function HomeTaskItem:CheckPetSearch()
+  if not self._finishCondition.NeedItems then
+    Log.Error(" task finish condition  Item is nil")
   end
-  local itemId, itemCount = ((self._finishCondition).NeedItems)[1], ((self._finishCondition).NeedItems)[2]
-  local haveCount = (self._itemModule):GetItemCount(itemId)
-  do return itemCount <= haveCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local itemId, itemCount = self._finishCondition.NeedItems[1], self._finishCondition.NeedItems[2]
+  local haveCount = self._itemModule:GetItemCount(itemId)
+  return itemCount <= haveCount
 end
 
--- DECOMPILER ERROR at PC207: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.CheckPetNeed = function(self)
-  -- function num : 0_62 , upvalues : _ENV
-  if not (self._finishCondition).NeedItems then
-    (Log.Error)(" task finish condition  Item is nil")
+function HomeTaskItem:CheckPetNeed()
+  if not self._finishCondition.NeedItems then
+    Log.Error(" task finish condition  Item is nil")
   end
-  local itemId, itemCount = ((self._finishCondition).NeedItems)[1], ((self._finishCondition).NeedItems)[2]
-  local haveCount = (self._itemModule):GetItemCount(itemId)
-  do return itemCount <= haveCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local itemId, itemCount = self._finishCondition.NeedItems[1], self._finishCondition.NeedItems[2]
+  local haveCount = self._itemModule:GetItemCount(itemId)
+  return itemCount <= haveCount
 end
 
--- DECOMPILER ERROR at PC210: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetCheckItem = function(self)
-  -- function num : 0_63
+function HomeTaskItem:GetCheckItem()
   local finishCondition = self:GetConditionInfo()
   if not finishCondition then
-    return 
+    return
   end
-  return (finishCondition.NeedItems)[1], (finishCondition.NeedItems)[2]
+  return finishCondition.NeedItems[1], finishCondition.NeedItems[2]
 end
 
--- DECOMPILER ERROR at PC213: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetGameFinish = function(self)
-  -- function num : 0_64
+function HomeTaskItem:GetGameFinish()
   local finishCondition = self:GetConditionInfo()
   if not finishCondition then
-    return 
+    return
   end
   return finishCondition.GameFinish
 end
 
--- DECOMPILER ERROR at PC216: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.OnSaveBuilding = function(self, delete, newadd)
-  -- function num : 0_65 , upvalues : _ENV
+function HomeTaskItem:OnSaveBuilding(delete, newadd)
   if not self._holdBuildingId then
-    return 
+    return
   end
-  for key,value in pairs(delete) do
+  for key, value in pairs(delete) do
     if value == self._holdBuildingId then
       for i = #self.npcList, 1, -1 do
-        for key,cfgNpcInfo in pairs((self._taskCfg).HangPointNpcList) do
-          if ((self.npcList)[i]).npcID == cfgNpcInfo[3] then
-            ((self.npcList)[i]):Destroy()
-            ;
-            (table.remove)(self.npcList, i)
+        for key, cfgNpcInfo in pairs(self._taskCfg.HangPointNpcList) do
+          if self.npcList[i].npcID == cfgNpcInfo[3] then
+            self.npcList[i]:Destroy()
+            table.remove(self.npcList, i)
           end
         end
       end
     end
   end
-  for key,value in pairs(newadd) do
+  for key, value in pairs(newadd) do
     if value == self._holdBuildingId then
-      local building = (self._buildManager):FindBuildingByCfgID(self._holdBuildingId)
+      local building = self._buildManager:FindBuildingByCfgID(self._holdBuildingId)
       self._holdBuilding = building
       if self._holdBuilding then
         self:CreateTaskHangPointNpc(true)
-        for _,npc in pairs(self.npcList) do
-          for key,cfgNpcInfo in pairs((self._taskCfg).HangPointNpcList) do
+        for _, npc in pairs(self.npcList) do
+          for key, cfgNpcInfo in pairs(self._taskCfg.HangPointNpcList) do
             if npc.npcID == cfgNpcInfo[3] then
               npc:SetVisible(false)
             end
@@ -955,29 +689,18 @@ HomeTaskItem.OnSaveBuilding = function(self, delete, newadd)
   end
 end
 
--- DECOMPILER ERROR at PC219: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.GetHoldBuilding = function(self)
-  -- function num : 0_66
+function HomeTaskItem:GetHoldBuilding()
   return self._holdBuildingId
 end
 
--- DECOMPILER ERROR at PC222: Confused about usage of register: R3 in 'UnsetPending'
-
-HomeTaskItem.ShowTraceInfo = function(self)
-  -- function num : 0_67 , upvalues : _ENV
+function HomeTaskItem:ShowTraceInfo()
   if self._holdBuildingId ~= nil then
-    local building = (self._buildManager):FindBuildingByCfgID(self._holdBuildingId)
+    local building = self._buildManager:FindBuildingByCfgID(self._holdBuildingId)
     if not building then
-      local cfg = (Cfg.cfg_item_architecture)[self._holdBuildingId]
-      ;
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_task_canttrace", (StringTable.Get)(cfg.Name)))
+      local cfg = Cfg.cfg_item_architecture[self._holdBuildingId]
+      ToastManager.ShowHomeToast(StringTable.Get("str_homeland_task_canttrace", StringTable.Get(cfg.Name)))
       return false
     end
   end
-  do
-    return true
-  end
+  return true
 end
-
-

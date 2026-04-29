@@ -1,112 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_guide/ui_guide_video_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIGuideVideoController", UIController)
 UIGuideVideoController = UIGuideVideoController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGuideVideoController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIGuideVideoController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideVideoController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIGuideVideoController:OnShow(uiParams)
   self:InitWidget()
-  local cfg = (Cfg.cfg_video)[uiParams[1]]
+  local cfg = Cfg.cfg_video[uiParams[1]]
   local freeExit = uiParams[2] or false
   local videoName = cfg.VideoName
   self:_LoadVideo(videoName)
   if freeExit then
     self._startCheck = false
-    ;
-    (self.exitGo):SetActive(true)
+    self.exitGo:SetActive(true)
   else
-    ;
-    (self.exitGo):SetActive(false)
+    self.exitGo:SetActive(false)
     self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self, _ENV
-    while not (self._videoPlayer).isPlaying do
-      YIELD(TT)
-    end
-    self._startCheck = true
-  end
-)
+      while not self._videoPlayer.isPlaying do
+        YIELD(TT)
+      end
+      self._startCheck = true
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideVideoController.Update = function(self)
-  -- function num : 0_2
+function UIGuideVideoController:Update()
   if not self._startCheck then
-    return 
+    return
   end
-  if not self._finish and not (self._videoPlayer).isPlaying then
+  if not self._finish and not self._videoPlayer.isPlaying then
     self._finish = true
-    ;
-    (self._videoPlayer):Pause()
-    ;
-    (self.exitGo):SetActive(true)
+    self._videoPlayer:Pause()
+    self.exitGo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideVideoController.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIGuideVideoController:InitWidget()
   self._videoPlayer = self:GetUIComponent("VideoPlayer", "videoPlayer")
   self._rawImage = self:GetUIComponent("RawImage", "videoPlayer")
-  self._rt = (UnityEngine.RenderTexture):New(1420, 805, 16)
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rawImage).texture = self._rt
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._videoPlayer).targetTexture = self._rt
+  self._rt = UnityEngine.RenderTexture:New(1420, 805, 16)
+  self._rawImage.texture = self._rt
+  self._videoPlayer.targetTexture = self._rt
   self.exitGo = self:GetGameObject("exit")
-  ;
-  (self.exitGo):SetActive(false)
+  self.exitGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideVideoController._LoadVideo = function(self, videoName)
-  -- function num : 0_4 , upvalues : _ENV
-  local url = (ResourceManager:GetInstance()):GetAssetPath(videoName .. ".mp4", LoadType.VideoClip)
-  ;
-  (Log.debug)("[guide movie] move url ", url)
-  ;
-  ((self._videoPlayer).gameObject):SetActive(true)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._videoPlayer).url = url
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._videoPlayer).isLooping = false
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._videoPlayer).targetCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIGuideVideoController")
-  ;
-  (self._videoPlayer):Play()
-  ;
-  (((GameGlobal.UIStateManager)()):GetControllerCamera("UIGuideVideoController")):Render()
+function UIGuideVideoController:_LoadVideo(videoName)
+  local url = ResourceManager:GetInstance():GetAssetPath(videoName .. ".mp4", LoadType.VideoClip)
+  Log.debug("[guide movie] move url ", url)
+  self._videoPlayer.gameObject:SetActive(true)
+  self._videoPlayer.url = url
+  self._videoPlayer.isLooping = false
+  self._videoPlayer.targetCamera = GameGlobal.UIStateManager():GetControllerCamera("UIGuideVideoController")
+  self._videoPlayer:Play()
+  GameGlobal.UIStateManager():GetControllerCamera("UIGuideVideoController"):Render()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideVideoController.ExitBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIGuideVideoController:ExitBtnOnClick(go)
   self:CloseDialog()
 end
-
-

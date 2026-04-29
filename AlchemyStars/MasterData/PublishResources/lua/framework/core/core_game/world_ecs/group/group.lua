@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_ecs/group/group.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Group", Object)
 Group = Group
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Group.Constructor = function(self, matcher)
-  -- function num : 0_0 , upvalues : _ENV
+function Group:Constructor(matcher)
   self.Ev_OnEntityAdded = DelegateEvent:New()
   self.Ev_OnEntityRemoved = DelegateEvent:New()
   self.Ev_OnEntityUpdated = DelegateEvent:New()
@@ -16,10 +9,7 @@ Group.Constructor = function(self, matcher)
   self._entities = SortedArray:New(Algorithm.COMPARE_CUSTOM, Group._ComparerByID)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Group.Dispose = function(self)
-  -- function num : 0_1
+function Group:Dispose()
   self.Ev_OnEntityAdded = nil
   self.Ev_OnEntityRemoved = nil
   self.Ev_OnEntityUpdated = nil
@@ -27,46 +17,32 @@ Group.Dispose = function(self)
   self._entities = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Group.UpdateEntity = function(self, entity, index, previousComponent, newComponent)
-  -- function num : 0_2
-  local findRes = (self._entities):Find(entity)
+function Group:UpdateEntity(entity, index, previousComponent, newComponent)
+  local findRes = self._entities:Find(entity)
   if findRes ~= -1 then
-    (self.Ev_OnEntityRemoved)(self, entity, index, previousComponent)
-    ;
-    (self.Ev_OnEntityAdded)(self, entity, index, newComponent)
-    ;
-    (self.Ev_OnEntityUpdated)(self, entity, index, previousComponent, newComponent)
+    self.Ev_OnEntityRemoved(self, entity, index, previousComponent)
+    self.Ev_OnEntityAdded(self, entity, index, newComponent)
+    self.Ev_OnEntityUpdated(self, entity, index, previousComponent, newComponent)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Group.RemoveAllEventHandlers = function(self)
-  -- function num : 0_3
-  (self.Ev_OnEntityAdded):Clear()
-  ;
-  (self.Ev_OnEntityRemoved):Clear()
-  ;
-  (self.Ev_OnEntityUpdated):Clear()
+function Group:RemoveAllEventHandlers()
+  self.Ev_OnEntityAdded:Clear()
+  self.Ev_OnEntityRemoved:Clear()
+  self.Ev_OnEntityUpdated:Clear()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Group.HandleEntity = function(self, entity, isGetEvent)
-  -- function num : 0_4
-  local findRes = ((self._entities):Find(entity))
-  local ev = nil
-  -- DECOMPILER ERROR at PC16: Unhandled construct in 'MakeBoolean' P1
-
-  if (self._matcher):Matches(entity) and findRes == -1 then
-    (self._entities):Insert(entity)
-    entity:Retain(self)
-    ev = self.Ev_OnEntityAdded
-  end
-  if findRes ~= -1 then
-    (self._entities):Remove(entity)
+function Group:HandleEntity(entity, isGetEvent)
+  local findRes = self._entities:Find(entity)
+  local ev
+  if self._matcher:Matches(entity) then
+    if findRes == -1 then
+      self._entities:Insert(entity)
+      entity:Retain(self)
+      ev = self.Ev_OnEntityAdded
+    end
+  elseif findRes ~= -1 then
+    self._entities:Remove(entity)
     entity:Release(self)
     ev = self.Ev_OnEntityRemoved
   end
@@ -75,59 +51,40 @@ Group.HandleEntity = function(self, entity, isGetEvent)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Group.GetEntities = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function Group:GetEntities()
   local t = {}
-  ;
-  (table.appendArray)(t, (self._entities).elements)
+  table.appendArray(t, self._entities.elements)
   return t
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Group.GetSingleEntity = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function Group:GetSingleEntity()
   local array = self:GetEntities()
   local cnt = #array
   if cnt == 1 then
     return array[1]
+  elseif 1 < cnt then
+    Log.fatal("Group:GetSingleEntity cnt > 1")
+    return array[1]
   else
-    if cnt > 1 then
-      (Log.fatal)("Group:GetSingleEntity cnt > 1")
-      return array[1]
-    else
-      return nil
-    end
+    return nil
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Group.HandleForeach = function(self, handler, handlerFunc, ...)
-  -- function num : 0_7 , upvalues : _ENV
+function Group:HandleForeach(handler, handlerFunc, ...)
   local entities = self:GetEntities()
-  for i,entity in ipairs(entities) do
+  for i, entity in ipairs(entities) do
     handlerFunc(handler, entity, ...)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Group._ComparerByID = function(leftEntity, rightEntity)
-  -- function num : 0_8
+function Group._ComparerByID(leftEntity, rightEntity)
   local leftEntityID = leftEntity:GetID()
   local rightEntityID = rightEntity:GetID()
-  if rightEntityID < leftEntityID then
+  if leftEntityID > rightEntityID then
     return -1
+  elseif leftEntityID < rightEntityID then
+    return 1
   else
-    if leftEntityID < rightEntityID then
-      return 1
-    else
-      return 0
-    end
+    return 0
   end
 end
-
-

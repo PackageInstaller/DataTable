@@ -1,140 +1,87 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/match_core_game_entry_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MatchCoreGameEntry", Object)
 MatchCoreGameEntry = MatchCoreGameEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MatchCoreGameEntry.Constructor = function(self, matchEnterData, enterPreferenceData)
-  -- function num : 0_0
+function MatchCoreGameEntry:Constructor(matchEnterData, enterPreferenceData)
   self._matchEnterData = matchEnterData
   self._enterPreferenceData = enterPreferenceData
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchCoreGameEntry.InitalizeCoreGame = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local worldInfo = (self._matchEnterData):CreateWorldInfo(MainWorldCreationContextType.Client)
-  worldInfo.enterTime = (self._enterPreferenceData).enterTime
-  worldInfo.preferenceSkillSpine = (self._enterPreferenceData).preferenceSkillSpine
-  worldInfo.preferenceSkillSpineLastPlayList = (self._enterPreferenceData).preferenceSkillSpineLastPlayList
-  worldInfo.hadPlaySkillSpineNameList = (self._enterPreferenceData).hadPlaySkillSpineNameList
+function MatchCoreGameEntry:InitalizeCoreGame()
+  local worldInfo = self._matchEnterData:CreateWorldInfo(MainWorldCreationContextType.Client)
+  worldInfo.enterTime = self._enterPreferenceData.enterTime
+  worldInfo.preferenceSkillSpine = self._enterPreferenceData.preferenceSkillSpine
+  worldInfo.preferenceSkillSpineLastPlayList = self._enterPreferenceData.preferenceSkillSpineLastPlayList
+  worldInfo.hadPlaySkillSpineNameList = self._enterPreferenceData.hadPlaySkillSpineNameList
   local clientWorld = ClientWorld:New(worldInfo)
   self.clientWorld = clientWorld
-  ;
-  (clientWorld:GetSyncLogger()):CheckEnabled()
-  ;
-  (clientWorld:GetMatchLogger()):CheckEnabled()
-  ;
-  (clientWorld:GetDetailMatchLogger()):CheckEnabled()
+  clientWorld:GetSyncLogger():CheckEnabled()
+  clientWorld:GetMatchLogger():CheckEnabled()
+  clientWorld:GetDetailMatchLogger():CheckEnabled()
   clientWorld:EnterWorld()
-  ;
-  (clientWorld:GetDataLogger()):EnableDataLog()
-  ;
-  (clientWorld:GetDataLogger()):AddDataLog("OnBattleStart")
-  self._timeService = (self.clientWorld):GetService("Time")
+  clientWorld:GetDataLogger():EnableDataLog()
+  clientWorld:GetDataLogger():AddDataLog("OnBattleStart")
+  self._timeService = self.clientWorld:GetService("Time")
   self._running = true
   self._print_mem_time = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchCoreGameEntry.Stop = function(self)
-  -- function num : 0_2
+function MatchCoreGameEntry:Stop()
   self._running = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchCoreGameEntry.Running = function(self)
-  -- function num : 0_3
+function MatchCoreGameEntry:Running()
   return self._running
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchCoreGameEntry.Dispose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function MatchCoreGameEntry:Dispose()
   self._matchEnterData = nil
   self._enterPreferenceData = nil
-  ;
-  (self.clientWorld):ExitWorld()
-  ;
-  (self.clientWorld):Dispose()
-  ;
-  (InnerGameHelperRender:GetInstance()):Dispose()
+  self.clientWorld:ExitWorld()
+  self.clientWorld:Dispose()
+  InnerGameHelperRender:GetInstance():Dispose()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchCoreGameEntry.Update = function(self, curTimeMS, deltaTimeMS)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._timeService):SetCurrentTime(curTimeMS)
-  ;
-  (self._timeService):SetDeltaTime(deltaTimeMS)
-  ;
-  (self.clientWorld):UpdateWorld(deltaTimeMS)
+function MatchCoreGameEntry:Update(curTimeMS, deltaTimeMS)
+  self._timeService:SetCurrentTime(curTimeMS)
+  self._timeService:SetDeltaTime(deltaTimeMS)
+  self.clientWorld:UpdateWorld(deltaTimeMS)
   self._print_mem_time = self._print_mem_time + deltaTimeMS
   if self._print_mem_time > 20000 then
-    local memoryCount = (math.floor)(collectgarbage("count") / 1024)
-    ;
-    (Log.prof)("[luamem] coregame current memory: ", memoryCount, " MB")
+    local memoryCount = math.floor(collectgarbage("count") / 1024)
+    Log.prof("[luamem] coregame current memory: ", memoryCount, " MB")
     self._print_mem_time = 0
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchCoreGameEntry.GetCurWorldStateID = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  do
-    if self.clientWorld ~= nil then
-      local utilDataSvc = (self.clientWorld):GetService("UtilData")
-      return utilDataSvc:GetCurMainStateID()
-    end
-    return GameStateID.Invalid
+function MatchCoreGameEntry:GetCurWorldStateID()
+  if self.clientWorld ~= nil then
+    local utilDataSvc = self.clientWorld:GetService("UtilData")
+    return utilDataSvc:GetCurMainStateID()
   end
+  return GameStateID.Invalid
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchCoreGameEntry.InputEnalbe = function(self)
-  -- function num : 0_7
+function MatchCoreGameEntry:InputEnalbe()
   if self.clientWorld ~= nil then
-    local isNormalState = ((self.clientWorld):MainCamera()):IsNormalState()
-    local utilDataSvc = (self.clientWorld):GetService("UtilData")
-    return not utilDataSvc:GetMainStateInputEnable() or isNormalState
+    local isNormalState = self.clientWorld:MainCamera():IsNormalState()
+    local utilDataSvc = self.clientWorld:GetService("UtilData")
+    return utilDataSvc:GetMainStateInputEnable() and isNormalState
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchCoreGameEntry.IsLinkLineState = function(self)
-  -- function num : 0_8
+function MatchCoreGameEntry:IsLinkLineState()
   if self.clientWorld ~= nil then
-    local mainCameraComponent = (self.clientWorld):MainCamera()
+    local mainCameraComponent = self.clientWorld:MainCamera()
     local isLinkLineState = mainCameraComponent:IsFocusPlayer()
     return isLinkLineState
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchCoreGameEntry.CloseCoreGameCamera = function(self)
-  -- function num : 0_9
+function MatchCoreGameEntry:CloseCoreGameCamera()
   if self.clientWorld ~= nil then
-    local cameraCmpt = (self.clientWorld):MainCamera()
+    local cameraCmpt = self.clientWorld:MainCamera()
     cameraCmpt:CloseCamera()
   end
 end
-
-

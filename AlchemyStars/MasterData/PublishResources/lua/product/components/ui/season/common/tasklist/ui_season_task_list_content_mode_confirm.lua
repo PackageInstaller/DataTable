@@ -1,34 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/tasklist/ui_season_task_list_content_mode_confirm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTaskListContentModeConfirm", UICustomWidget)
 UISeasonTaskListContentModeConfirm = UISeasonTaskListContentModeConfirm
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTaskListContentModeConfirm.SetData = function(self, confrimCallback, cancelCallback)
-  -- function num : 0_0
+function UISeasonTaskListContentModeConfirm:SetData(confrimCallback, cancelCallback)
   self._confrimCallback = confrimCallback
   self._cancelCallback = cancelCallback
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContentModeConfirm.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_1
+function UISeasonTaskListContentModeConfirm:ConfirmBtnOnClick(go)
   if self._confrimCallback then
-    (self._confrimCallback)()
+    self._confrimCallback()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContentModeConfirm.CancelBtnOnClick = function(self, go)
-  -- function num : 0_2
+function UISeasonTaskListContentModeConfirm:CancelBtnOnClick(go)
   if self._cancelCallback then
-    (self._cancelCallback)()
+    self._cancelCallback()
   end
 end
-
-

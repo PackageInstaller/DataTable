@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_pickup_cross.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_PickUpCross", SkillScopeCalculator_Base)
 SkillScopeCalculator_PickUpCross = SkillScopeCalculator_PickUpCross
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_PickUpCross.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_PickUpCross:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   if #centerPos == 0 then
     centerPos = {centerPos}
   end
@@ -19,7 +12,7 @@ SkillScopeCalculator_PickUpCross.CalcRange = function(self, scopeType, scopePara
   local noRepeat = scopeParam[4] or 0
   local cross_area = {}
   local wholeArea = {}
-  for _,pos in ipairs(centerPos) do
+  for _, pos in ipairs(centerPos) do
     local center_x = pos.x
     local center_y = pos.y
     if selectBodyArea == 1 then
@@ -35,16 +28,16 @@ SkillScopeCalculator_PickUpCross.CalcRange = function(self, scopeType, scopePara
       self:_InsertPos(wholeArea, downPos, noRepeat)
       self:_InsertPos(wholeArea, leftPos, noRepeat)
       self:_InsertPos(wholeArea, rightPos, noRepeat)
-      if (self._gridFilter):IsValidPiecePos(upPos) then
+      if self._gridFilter:IsValidPiecePos(upPos) then
         self:_InsertPos(cross_area, upPos, noRepeat)
       end
-      if (self._gridFilter):IsValidPiecePos(rightPos) then
+      if self._gridFilter:IsValidPiecePos(rightPos) then
         self:_InsertPos(cross_area, rightPos, noRepeat)
       end
-      if (self._gridFilter):IsValidPiecePos(downPos) then
+      if self._gridFilter:IsValidPiecePos(downPos) then
         self:_InsertPos(cross_area, downPos, noRepeat)
       end
-      if (self._gridFilter):IsValidPiecePos(leftPos) then
+      if self._gridFilter:IsValidPiecePos(leftPos) then
         self:_InsertPos(cross_area, leftPos, noRepeat)
       end
     end
@@ -53,21 +46,13 @@ SkillScopeCalculator_PickUpCross.CalcRange = function(self, scopeType, scopePara
   return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_PickUpCross._InsertPos = function(self, targetTb, pos, noRepeat)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeCalculator_PickUpCross:_InsertPos(targetTb, pos, noRepeat)
   if noRepeat and noRepeat == 1 then
-    local contain = (table.icontains)(targetTb, pos)
+    local contain = table.icontains(targetTb, pos)
     if not contain then
-      (table.insert)(targetTb, pos)
+      table.insert(targetTb, pos)
     end
   else
-    do
-      ;
-      (table.insert)(targetTb, pos)
-    end
+    table.insert(targetTb, pos)
   end
 end
-
-

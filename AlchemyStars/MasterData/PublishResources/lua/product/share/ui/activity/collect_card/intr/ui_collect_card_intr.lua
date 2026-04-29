@@ -1,9 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/collect_card/intr/ui_collect_card_intr.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_nx_intr_base")
 _class("UICollectCardIntr", UINxIntrBase)
 UICollectCardIntr = UICollectCardIntr
-

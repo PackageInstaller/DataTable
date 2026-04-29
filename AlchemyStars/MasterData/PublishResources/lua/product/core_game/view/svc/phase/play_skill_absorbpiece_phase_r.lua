@@ -1,27 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_absorbpiece_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillAbsorbPiecePhase", PlaySkillPhaseBase)
 PlaySkillAbsorbPiecePhase = PlaySkillAbsorbPiecePhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillAbsorbPiecePhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillAbsorbPiecePhase:PlayFlight(TT, casterEntity, phaseParam)
   local absorbPieceParam = phaseParam
   local changeDelay = absorbPieceParam:GetChangeDelay()
   local displayDelay = absorbPieceParam:GetDisPlayDelay()
   local gridEffectID = absorbPieceParam:GetGridEffectID()
   local scopeDelay = absorbPieceParam:GetScopeDelay()
   local gridPlayType = absorbPieceParam:GetGridPlayType()
-  local castPos = (casterEntity:GridLocation()).Position
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local castPos = casterEntity:GridLocation().Position
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local absorbResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.AbsorbPiece)
   local absorbPieceList = absorbResult:GetAbsorbPieceList()
   if not absorbPieceList or #absorbPieceList == 0 then
-    return 
+    return
   end
   local newPieceList = absorbResult:GetNewPieceList()
   local targetGirdList, _, maxGridCount = InnerGameSortGridHelperRender:SortGrid(absorbPieceList, castPos)
@@ -30,11 +23,10 @@ PlaySkillAbsorbPiecePhase.PlayFlight = function(self, TT, casterEntity, phasePar
     for dir = 1, 8 do
       local t = targetGirdList[dir]
       if i <= #t.gridList then
-        local gridPos = (t.gridList)[i]
+        local gridPos = t.gridList[i]
         if gridPos then
           needWait = true
-          ;
-          ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoEffect, self, gridPos, self:_GetPieceType(newPieceList, gridPos), gridEffectID, changeDelay, displayDelay)
+          GameGlobal.TaskManager():CoreGameStartTask(self._DoEffect, self, gridPos, self:_GetPieceType(newPieceList, gridPos), gridEffectID, changeDelay, displayDelay)
         end
       end
     end
@@ -44,11 +36,8 @@ PlaySkillAbsorbPiecePhase.PlayFlight = function(self, TT, casterEntity, phasePar
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillAbsorbPiecePhase._GetPieceType = function(self, newPieceList, gridPos)
-  -- function num : 0_1 , upvalues : _ENV
-  for _,grid in pairs(newPieceList) do
+function PlaySkillAbsorbPiecePhase:_GetPieceType(newPieceList, gridPos)
+  for _, grid in pairs(newPieceList) do
     if grid.x == gridPos.x and grid.y == gridPos.y then
       return grid.color
     end
@@ -56,29 +45,21 @@ PlaySkillAbsorbPiecePhase._GetPieceType = function(self, newPieceList, gridPos)
   return nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillAbsorbPiecePhase._DoEffect = function(self, TT, gridPos, newPieceType, effectID, changeDelay, displayDelay)
-  -- function num : 0_2 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  ;
-  ((self._world):GetService("Effect")):CreateWorldPositionEffect(effectID, gridPos)
+function PlaySkillAbsorbPiecePhase:_DoEffect(TT, gridPos, newPieceType, effectID, changeDelay, displayDelay)
+  local boardServiceRender = self._world:GetService("BoardRender")
+  self._world:GetService("Effect"):CreateWorldPositionEffect(effectID, gridPos)
   if changeDelay and changeDelay ~= 0 then
     YIELD(TT, changeDelay)
   end
-  local pieceSvc = (self._world):GetService("Piece")
+  local pieceSvc = self._world:GetService("Piece")
   local pieceEntity = pieceSvc:FindPieceEntity(gridPos)
-  ;
-  ((pieceEntity:View()):GetGameObject()):SetActive(false)
+  pieceEntity:View():GetGameObject():SetActive(false)
   local entity = boardServiceRender:CreateEmptyGridEffectEntity(gridPos)
   if displayDelay and displayDelay ~= 0 then
     YIELD(TT, displayDelay)
   else
     YIELD(TT)
   end
-  ;
-  (self._world):DestroyEntity(entity)
+  self._world:DestroyEntity(entity)
   boardServiceRender:ReCreateGridEntity(newPieceType, gridPos, false, true)
 end
-
-

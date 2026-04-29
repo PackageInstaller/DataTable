@@ -1,32 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_delete_waring_area_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayDeleteWaringAreaInstruction", BaseInstruction)
 PlayDeleteWaringAreaInstruction = PlayDeleteWaringAreaInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayDeleteWaringAreaInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
-  if not tonumber(paramList.warningTextEffectID) then
-    self._warningTextEffectID = BattleConst.DefaultWarningAreaTextEffectID
-  end
+function PlayDeleteWaringAreaInstruction:Constructor(paramList)
+  self._warningTextEffectID = tonumber(paramList.warningTextEffectID) or BattleConst.DefaultWarningAreaTextEffectID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDeleteWaringAreaInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayDeleteWaringAreaInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local group = world:GetGroup((world.BW_WEMatchers).DamageWarningAreaElement)
+  local group = world:GetGroup(world.BW_WEMatchers.DamageWarningAreaElement)
   local pubListEntity = group:GetEntities()
   local listEntity = {}
-  for _,entity in ipairs(pubListEntity) do
+  for _, entity in ipairs(pubListEntity) do
     local cmpt = entity:DamageWarningAreaElement()
     if cmpt:GetOwnerEntityID() and cmpt:GetOwnerEntityID() ~= 0 then
-      (table.insert)(listEntity, entity)
+      table.insert(listEntity, entity)
     end
   end
   local entityPoolSvcR = world:GetService("EntityPool")
@@ -43,15 +31,15 @@ PlayDeleteWaringAreaInstruction.DoInstruction = function(self, TT, casterEntity,
   end
   local fxHoldCmpt = casterEntity:EffectHolder()
   if not fxHoldCmpt then
-    return 
+    return
   end
   local dicFxHeld = fxHoldCmpt:GetEffectIDEntityDic()
   local lstFx = dicFxHeld[self._warningTextEffectID]
   if not lstFx then
-    return 
+    return
   end
   local fxSvc = world:GetService("Effect")
-  for _,eid in pairs(lstFx) do
+  for _, eid in pairs(lstFx) do
     local e = world:GetEntityByID(eid)
     if e then
       world:DestroyEntity(e)
@@ -59,5 +47,3 @@ PlayDeleteWaringAreaInstruction.DoInstruction = function(self, TT, casterEntity,
   end
   dicFxHeld[self._warningTextEffectID] = nil
 end
-
-

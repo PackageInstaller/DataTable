@@ -1,26 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_build_room/aircraft_build_need_build_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircrafBuildNeedCondition", Object)
 AircrafBuildNeedCondition = AircrafBuildNeedCondition
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircrafBuildNeedCondition.Constructor = function(self)
-  -- function num : 0_0
+function AircrafBuildNeedCondition:Constructor()
   self._buildType = 0
   self._buildLv = 0
   self._buildCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircrafBuildNeedCondition.Init = function(self, buildType, buildLv, buildCount)
-  -- function num : 0_1
+function AircrafBuildNeedCondition:Init(buildType, buildLv, buildCount)
   self._buildType = buildType
   self._buildLv = buildLv
   self._buildCount = buildCount
 end
-
-

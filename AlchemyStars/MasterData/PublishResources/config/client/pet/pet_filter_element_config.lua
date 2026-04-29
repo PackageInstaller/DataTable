@@ -1,17 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/pet/pet_filter_element_config.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Name = 2, attributeID = 3}
+local key = {
+  ID = 1,
+  Name = 2,
+  attributeID = 3
+}
 local config = {
-{1, "str_pet_filter_water_element", 1}
-, 
-{2, "str_pet_filter_fire_element", 2}
-, 
-{3, "str_pet_filter_sen_element", 3}
-, 
-{4, "str_pet_filter_electricity_element", 4}
+  {
+    1,
+    "str_pet_filter_water_element",
+    1
+  },
+  {
+    2,
+    "str_pet_filter_fire_element",
+    2
+  },
+  {
+    3,
+    "str_pet_filter_sen_element",
+    3
+  },
+  {
+    4,
+    "str_pet_filter_electricity_element",
+    4
+  }
 }
 return config, "ID", key
-

@@ -1,50 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_do_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicDoDamage", BuffLogicBase)
 BuffLogicDoDamage = BuffLogicDoDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDoDamage.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicDoDamage:Constructor(buffInstance, logicParam)
   self._damageParam = logicParam
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDoDamage.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicDoDamage:DoLogic(notify)
   local casterEntity = self:GetCasterEntity()
   if casterEntity:EntityType() == nil then
     casterEntity = self._entity
   end
   local defender = self._entity
-  local blsvc = (self._world):GetService("BuffLogic")
-  local damageInfo = blsvc:DoBuffDamage((self._buffInstance):BuffID(), casterEntity, defender, self._damageParam)
+  local blsvc = self._world:GetService("BuffLogic")
+  local damageInfo = blsvc:DoBuffDamage(self._buffInstance:BuffID(), casterEntity, defender, self._damageParam)
   local buffResult = BuffResultDamage:New(damageInfo)
   if notify:GetNotifyType() == NotifyType.MonsterMoveOneFinish then
     local walkPos = notify:GetWalkPos()
     buffResult:SetWalkPos(walkPos)
-  else
-    do
-      if notify:GetNotifyType() == NotifyType.HitBackEnd then
-        local endPos = notify:GetPosEnd()
-        buffResult:SetEndPos(endPos)
-      else
-        do
-          do
-            if notify:GetNotifyType() == NotifyType.PlayerBeHit then
-              local attack = notify:GetAttackerEntity()
-              buffResult:SetAttackID(attack:GetID())
-            end
-            return buffResult
-          end
-        end
-      end
-    end
+  elseif notify:GetNotifyType() == NotifyType.HitBackEnd then
+    local endPos = notify:GetPosEnd()
+    buffResult:SetEndPos(endPos)
+  elseif notify:GetNotifyType() == NotifyType.PlayerBeHit then
+    local attack = notify:GetAttackerEntity()
+    buffResult:SetAttackID(attack:GetID())
   end
+  return buffResult
 end
-
-

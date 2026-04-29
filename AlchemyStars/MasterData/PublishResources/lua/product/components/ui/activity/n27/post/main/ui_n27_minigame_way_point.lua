@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/post/main/ui_n27_minigame_way_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN27MiniGameWayPoint", UICustomWidget)
 UIN27MiniGameWayPoint = UIN27MiniGameWayPoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN27MiniGameWayPoint.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN27MiniGameWayPoint:OnShow(uiParams)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayPoint._GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN27MiniGameWayPoint:_GetComponents()
   self._di = self:GetGameObject("di")
   self._diImg = self:GetUIComponent("Image", "di")
   self._diImg2 = self:GetUIComponent("Image", "di2")
@@ -32,31 +22,19 @@ UIN27MiniGameWayPoint._GetComponents = function(self)
   self._atlas = self:GetAsset("UIN27PostStation.spriteatlas", LoadType.SpriteAtlas)
   self._animation = self:GetUIComponent("Animation", "ani")
   self._time = self:GetUIComponent("UILocalizationText", "Time")
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
   self._maskObj = self:GetGameObject("Mask")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayPoint.PlayAni = function(self)
-  -- function num : 0_2
+function UIN27MiniGameWayPoint:PlayAni()
   local aniIn = "uieff_UIN27MiniGameWayPoint_up"
   aniIn = self._index % 2 == 1 and "uieff_UIN27MiniGameWayPoint_up" or "uieff_UIN27MiniGameWayPoint_down"
-  ;
-  (self._animation):Play(aniIn)
+  self._animation:Play(aniIn)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayPoint.SetData = function(self, stagecontroller, index, cfg, miss_info, servertime, callback, showNew, isCurrent, missionLock)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R10 in 'UnsetPending'
-
-  (self._rectTransform).sizeDelta = Vector2.zero
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = Vector2(cfg.MapPosX, cfg.MapPosY)
+function UIN27MiniGameWayPoint:SetData(stagecontroller, index, cfg, miss_info, servertime, callback, showNew, isCurrent, missionLock)
+  self._rectTransform.sizeDelta = Vector2.zero
+  self._rectTransform.anchoredPosition = Vector2(cfg.MapPosX, cfg.MapPosY)
   self._stageController = stagecontroller
   self._index = index
   self._cfg = cfg
@@ -66,108 +44,73 @@ UIN27MiniGameWayPoint.SetData = function(self, stagecontroller, index, cfg, miss
   self._showNew = showNew
   self._isCurrent = isCurrent
   self._missionLock = missionLock
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   self._unlockTime = loginModule:GetTimeStampByTimeStr(cfg.UnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  self._scrollRect = (self._stageController):GetUIComponent("ScrollRect", "ScrollView")
+  self._scrollRect = self._stageController:GetUIComponent("ScrollRect", "ScrollView")
   if self._btn then
-    self.etl = (UICustomUIEventListener.Get)(self._btn)
+    self.etl = UICustomUIEventListener.Get(self._btn)
     self:AddUICustomEventListener(self.etl, UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_3_0 , upvalues : self
-    self._draging = true
-    ;
-    (self._scrollRect):OnBeginDrag(eventData)
-  end
-)
+      self._draging = true
+      self._scrollRect:OnBeginDrag(eventData)
+    end)
     self:AddUICustomEventListener(self.etl, UIEvent.Drag, function(eventData)
-    -- function num : 0_3_1 , upvalues : self
-    (self._scrollRect):OnDrag(eventData)
-  end
-)
+      self._scrollRect:OnDrag(eventData)
+    end)
     self:AddUICustomEventListener(self.etl, UIEvent.EndDrag, function(eventData)
-    -- function num : 0_3_2 , upvalues : self
-    self._draging = false
-    ;
-    (self._scrollRect):OnEndDrag(eventData)
-  end
-)
+      self._draging = false
+      self._scrollRect:OnEndDrag(eventData)
+    end)
   end
   self:_SetUIInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayPoint._SetUIInfo = function(self)
-  -- function num : 0_4
+function UIN27MiniGameWayPoint:_SetUIInfo()
   self:RefreshRedpointState(self._miss_info)
   self:RefreshUnLockState(self._serverTime, self._missionLock)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayPoint.RefreshRedNew = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN27MiniGameWayPoint:RefreshRedNew()
   self:RefreshRedpointState(self._miss_info)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UISideEnterItemRefreshRedNew)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UISideEnterItemRefreshRedNew)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayPoint.RefreshUnLockState = function(self, servertime, missionLock)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN27MiniGameWayPoint:RefreshUnLockState(servertime, missionLock)
   self._serverTime = servertime
   self._missionLock = missionLock
-  ;
-  (self._name):SetText((StringTable.Get)((self._cfg).Title))
-  ;
-  (self._lock):SetActive(self._serverTime < self._unlockTime)
-  ;
-  (self._lock2):SetActive(not self._missionLock or self._unlockTime <= self._serverTime)
-  if self._serverTime < self._unlockTime or self._missionLock then
-    (self._headBg):LoadImage((self._cfg).BgLock)
-    ;
-    (self._maskObj):SetActive(true)
+  self._name:SetText(StringTable.Get(self._cfg.Title))
+  self._lock:SetActive(self._unlockTime > self._serverTime)
+  self._lock2:SetActive(self._missionLock and self._unlockTime <= self._serverTime)
+  if self._unlockTime > self._serverTime or self._missionLock then
+    self._headBg:LoadImage(self._cfg.BgLock)
+    self._maskObj:SetActive(true)
   else
-    (self._maskObj):SetActive(false)
+    self._maskObj:SetActive(false)
     if self._missionLock then
-      (self._name):SetText((StringTable.Get)("str_n27_poststation_lock_title"))
+      self._name:SetText(StringTable.Get("str_n27_poststation_lock_title"))
     else
-      (self._name):SetText((StringTable.Get)((self._cfg).Title))
+      self._name:SetText(StringTable.Get(self._cfg.Title))
     end
-    ;
-    (self._headBg):LoadImage((self._cfg).Bg)
+    self._headBg:LoadImage(self._cfg.Bg)
   end
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
-  if self._serverTime < self._unlockTime then
+  if self._unlockTime > self._serverTime then
     self:RefreshWayPointStatus()
-    self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_6_0 , upvalues : self
-    self:RefreshWayPointStatus()
+    self._timerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+      self:RefreshWayPointStatus()
+    end)
   end
-)
-  end
-  -- DECOMPILER ERROR: 10 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayPoint.RefreshRedpointState = function(self, miss_info)
-  -- function num : 0_7
+function UIN27MiniGameWayPoint:RefreshRedpointState(miss_info)
   local showredpoint = self:_CheckRedpoint(miss_info)
-  ;
-  (self._redPoint):SetActive(showredpoint)
-  if self:_CheckNewpoint(self._index) then
-    (self._newPoint):SetActive(not self._missionLock)
-  end
+  self._redPoint:SetActive(showredpoint)
+  self._newPoint:SetActive(self:_CheckNewpoint(self._index) and not self._missionLock)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayPoint._CheckRedpoint = function(self, miss_info)
-  -- function num : 0_8
+function UIN27MiniGameWayPoint:_CheckRedpoint(miss_info)
   if not miss_info then
     return false
   end
@@ -177,169 +120,118 @@ UIN27MiniGameWayPoint._CheckRedpoint = function(self, miss_info)
   return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayPoint._CheckNewpoint = function(self, index)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN27MiniGameWayPoint:_CheckNewpoint(index)
   if not self._showNew then
     return false
   end
   local key = self:GetNewFlagKey(index)
-  local hasNew = (LocalDB.GetInt)("UIN42MiniGameWayPoint" .. key)
-  if hasNew > 0 then
+  local hasNew = LocalDB.GetInt("UIN42MiniGameWayPoint" .. key)
+  if 0 < hasNew then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayPoint.GetNewFlagKey = function(self, id)
-  -- function num : 0_10 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIN27MiniGameWayPoint:GetNewFlagKey(id)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. id
   return key
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayPoint.BtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  if self._serverTime < self._unlockTime then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n27_poststation_lock"))
-    return 
+function UIN27MiniGameWayPoint:BtnOnClick(go)
+  if self._unlockTime > self._serverTime then
+    ToastManager.ShowToast(StringTable.Get("str_n27_poststation_lock"))
+    return
   end
   if self._missionLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n27_poststation_lock_preposition_mission_tip"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_n27_poststation_lock_preposition_mission_tip"))
+    return
   end
   if self:_CheckNewpoint(self._index) then
-    (self._newPoint):SetActive(false)
+    self._newPoint:SetActive(false)
   end
   if self._showNew then
     self._showNew = false
   end
-  ;
-  (self._callBack)(self._index)
+  self._callBack(self._index)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayPoint.RefreshClickStatus = function(self, clickIndex)
-  -- function num : 0_12
+function UIN27MiniGameWayPoint:RefreshClickStatus(clickIndex)
   if self._index == clickIndex then
-    if self._serverTime < self._unlockTime or self._missionLock then
-      (self._headBg):LoadImage((self._cfg).BgLock)
+    if self._unlockTime > self._serverTime or self._missionLock then
+      self._headBg:LoadImage(self._cfg.BgLock)
     else
-      ;
-      (self._headBg):LoadImage((self._cfg).BgSelect)
+      self._headBg:LoadImage(self._cfg.BgSelect)
     end
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._nameBg).sprite = (self._atlas):GetSprite("n27_yz_xxg_btndi02")
+    self._nameBg.sprite = self._atlas:GetSprite("n27_yz_xxg_btndi02")
   else
-    if self._serverTime < self._unlockTime or self._missionLock then
-      (self._headBg):LoadImage((self._cfg).BgLock)
+    if self._unlockTime > self._serverTime or self._missionLock then
+      self._headBg:LoadImage(self._cfg.BgLock)
     else
-      ;
-      (self._headBg):LoadImage((self._cfg).Bg)
+      self._headBg:LoadImage(self._cfg.Bg)
     end
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._nameBg).sprite = (self._atlas):GetSprite("n27_yz_xxg_btndi01")
+    self._nameBg.sprite = self._atlas:GetSprite("n27_yz_xxg_btndi01")
   end
-  local showFinish = self._miss_info ~= nil and (self._miss_info).suc == 1 and #(self._miss_info).can_get_target_list == 0 and #(self._miss_info).already_get_target_list == 3
-  ;
-  ((self._diImg).gameObject):SetActive(not showFinish)
-  ;
-  ((self._diImg2).gameObject):SetActive(showFinish)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local showFinish = self._miss_info ~= nil and self._miss_info.suc == 1 and #self._miss_info.can_get_target_list == 0 and #self._miss_info.already_get_target_list == 3
+  self._diImg.gameObject:SetActive(not showFinish)
+  self._diImg2.gameObject:SetActive(showFinish)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayPoint.LockOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  if self._serverTime < self._unlockTime then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n27_poststation_lock"))
-    return 
+function UIN27MiniGameWayPoint:LockOnClick(go)
+  if self._unlockTime > self._serverTime then
+    ToastManager.ShowToast(StringTable.Get("str_n27_poststation_lock"))
+    return
   end
   if self._missionLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n27_poststation_lock_mission_tip"))
+    ToastManager.ShowToast(StringTable.Get("str_n27_poststation_lock_mission_tip"))
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayPoint.RefreshData = function(self, data)
-  -- function num : 0_14
+function UIN27MiniGameWayPoint:RefreshData(data)
   self._miss_info = data
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayPoint.RefreshWayPointStatus = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local servertime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+function UIN27MiniGameWayPoint:RefreshWayPointStatus()
+  local servertime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   local time = self._unlockTime - servertime
   if time < 0 then
     if self._timerHandler then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+      GameGlobal.Timer():CancelEvent(self._timerHandler)
       self._timerHandler = nil
     end
-    ;
-    (self._stageController):_RefreshWayPointWayLineInfo()
-    ;
-    (self._newPoint):SetActive(not self._missionLock)
+    self._stageController:_RefreshWayPointWayLineInfo()
+    self._newPoint:SetActive(not self._missionLock)
   end
   local str = self:_GetRemainTime(time)
-  ;
-  (self._time):SetText(str)
+  self._time:SetText(str)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayPoint._GetRemainTime = function(self, time)
-  -- function num : 0_16 , upvalues : _ENV
-  local day, hour, minute = nil, nil, nil
-  day = (math.floor)(time / 86400)
-  hour = (math.floor)(time / 3600) % 24
-  minute = (math.floor)(time / 60) % 60
+function UIN27MiniGameWayPoint:_GetRemainTime(time)
+  local day, hour, minute
+  day = math.floor(time / 86400)
+  hour = math.floor(time / 3600) % 24
+  minute = math.floor(time / 60) % 60
   local timestring = ""
-  if day > 0 then
-    timestring = day .. (StringTable.Get)("str_activity_common_day") .. hour .. (StringTable.Get)("str_activity_common_hour")
+  if 0 < day then
+    timestring = day .. StringTable.Get("str_activity_common_day") .. hour .. StringTable.Get("str_activity_common_hour")
+  elseif 0 < hour then
+    timestring = hour .. StringTable.Get("str_activity_common_hour") .. minute .. StringTable.Get("str_activity_common_minute")
+  elseif 0 < minute then
+    timestring = minute .. StringTable.Get("str_activity_common_minute")
   else
-    if hour > 0 then
-      timestring = hour .. (StringTable.Get)("str_activity_common_hour") .. minute .. (StringTable.Get)("str_activity_common_minute")
-    else
-      if minute > 0 then
-        timestring = minute .. (StringTable.Get)("str_activity_common_minute")
-      else
-        timestring = (StringTable.Get)("str_activity_common_less_minute")
-      end
-    end
+    timestring = StringTable.Get("str_activity_common_less_minute")
   end
-  return (string.format)((StringTable.Get)("str_activity_common_over"), timestring)
+  return string.format(StringTable.Get("str_activity_common_over"), timestring)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayPoint.OnHide = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIN27MiniGameWayPoint:OnHide()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayPoint.GetRectTransform = function(self)
-  -- function num : 0_18
+function UIN27MiniGameWayPoint:GetRectTransform()
   return self._rectTransform
 end
-
-

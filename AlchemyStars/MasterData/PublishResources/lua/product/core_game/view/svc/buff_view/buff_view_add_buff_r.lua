@@ -1,183 +1,158 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_add_buff_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddBuff", BuffViewBase)
 BuffViewAddBuff = BuffViewAddBuff
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddBuff.PlayView = function(self, TT, notify, trace)
-  -- function num : 0_0 , upvalues : _ENV
-  local playBuffSvc = (self._world):GetService("PlayBuff")
-  local arr = (self._buffResult):GetBuffArray()
-  for i,v in ipairs(arr) do
+function BuffViewAddBuff:PlayView(TT, notify, trace)
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  local arr = self._buffResult:GetBuffArray()
+  for i, v in ipairs(arr) do
     local eid, seq = v[1], v[2]
-    ;
-    (Log.debug)("BuffViewAddBuff entityid=", eid, "buffseq=", seq, "trace: ", trace)
-    local entity = (self._world):GetEntityByID(eid)
+    Log.debug("BuffViewAddBuff entityid=", eid, "buffseq=", seq, "trace: ", trace)
+    local entity = self._world:GetEntityByID(eid)
     if entity then
-      local inst = (entity:BuffView()):GetBuffViewInstance(seq)
+      local inst = entity:BuffView():GetBuffViewInstance(seq)
       if inst then
         playBuffSvc:PlayAddBuff(TT, inst)
-        if (self._buffResult):GetLight() == 1 then
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivatePassive, (entity:PetPstID()):GetPstID(), true)
+        if self._buffResult:GetLight() == 1 then
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivatePassive, entity:PetPstID():GetPstID(), true)
         end
       end
     end
   end
-  local cfg = (self._viewInstance):BuffConfigData()
+  local cfg = self._viewInstance:BuffConfigData()
   local effectID = cfg:GetExecEffectID()
   if effectID then
-    ((self._world):GetService("Effect")):CreateEffect(effectID, self._entity)
+    self._world:GetService("Effect"):CreateEffect(effectID, self._entity)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddBuff.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  if notify.GetRandHalfDamageIndex and (self._buffResult).GetRandHalfDamageIndex then
+function BuffViewAddBuff:IsNotifyMatch(notify)
+  if notify.GetRandHalfDamageIndex and self._buffResult.GetRandHalfDamageIndex then
     local halfRandDamageIndex = notify:GetRandHalfDamageIndex()
     if halfRandDamageIndex then
-      local buffHalfRandDamageIndex = (self._buffResult):GetRandHalfDamageIndex()
+      local buffHalfRandDamageIndex = self._buffResult:GetRandHalfDamageIndex()
       if buffHalfRandDamageIndex and buffHalfRandDamageIndex ~= halfRandDamageIndex then
         return false
       end
     end
   end
-  do
-    local attackPos = (self._buffResult):GetAttackPos()
-    local targetPos = (self._buffResult):GetTargetPos()
-    if notify.GetAttackPos and notify.GetTargetPos then
-      if attackPos == notify:GetAttackPos() and targetPos == notify:GetTargetPos() then
-        if notify:GetNotifyType() == NotifyType.AutoBeadSkillEachAttackEnd then
-          local resultAutoBeadSkillIndex = (self._buffResult):GetAutoBeadSkillIndex()
-          local notifyAutoBeadSkillIndex = notify:GetAutoBeadSkillIndex()
-          if resultAutoBeadSkillIndex and notifyAutoBeadSkillIndex and resultAutoBeadSkillIndex == notifyAutoBeadSkillIndex then
-            return true
-          else
-            return false
-          end
+  local attackPos = self._buffResult:GetAttackPos()
+  local targetPos = self._buffResult:GetTargetPos()
+  if notify.GetAttackPos and notify.GetTargetPos then
+    if attackPos == notify:GetAttackPos() and targetPos == notify:GetTargetPos() then
+      if notify:GetNotifyType() == NotifyType.AutoBeadSkillEachAttackEnd then
+        local resultAutoBeadSkillIndex = self._buffResult:GetAutoBeadSkillIndex()
+        local notifyAutoBeadSkillIndex = notify:GetAutoBeadSkillIndex()
+        if resultAutoBeadSkillIndex and notifyAutoBeadSkillIndex and resultAutoBeadSkillIndex == notifyAutoBeadSkillIndex then
+          return true
         else
-          do
-            local attackIndexMatch = true
-            local normalAttackIndex = (self._buffResult):GetNormalAttackIndex()
-            attackIndexMatch = not normalAttackIndex or not notify.GetNormalAttackIndex or not notify:GetNormalAttackIndex() or normalAttackIndex == notify:GetNormalAttackIndex()
-            local skillIDMatch = true
-            do
-              local skillID = (self._buffResult):GetSkillID()
-              skillIDMatch = not skillID or not notify.skillID or not notify:GetSkillID() or skillID == notify:GetSkillID()
-              do return not attackIndexMatch or skillIDMatch end
-              do return false end
-              do
-                if notify:GetNotifyType() == NotifyType.MonsterShow then
-                  local arr = (self._buffResult):GetBuffArray()
-                  for i,v in ipairs(arr) do
-                    local eid, seq = v[1], v[2]
-                    if eid == (notify:GetNotifyEntity()):GetID() then
-                      return true
-                    end
-                  end
-                  return false
-                end
-                if (self._buffResult):GetWalkPos() ~= notify:GetPos() then
-                  do return notify:GetNotifyType() ~= NotifyType.TeamLeaderEachMoveEnd end
-                  do
-                    if notify:GetNotifyType() == NotifyType.NotifyLayerChange then
-                      local n = notify
-                      if (self._buffResult).__oldFinalLayer ~= n.__oldFinalLayer then
-                        return false
-                      end
-                      if n:GetNotifyEntity() and (self._buffResult):GetNotifyLayerChange_Entity() ~= n:GetNotifyEntity() then
-                        return false
-                      end
-                      return true
-                    end
-                    if (self._buffResult):GetWalkPos() ~= notify:GetPosNew() then
-                      do return not notify or notify:GetNotifyType() ~= NotifyType.EntityMoveEnd end
-                      do return true end
-                      -- DECOMPILER ERROR: 16 unprocessed JMP targets
-                    end
-                  end
-                end
-              end
-            end
-          end
+          return false
         end
+      else
+        local attackIndexMatch = true
+        local normalAttackIndex = self._buffResult:GetNormalAttackIndex()
+        if normalAttackIndex and notify.GetNormalAttackIndex and notify:GetNormalAttackIndex() then
+          attackIndexMatch = normalAttackIndex == notify:GetNormalAttackIndex()
+        end
+        local skillIDMatch = true
+        local skillID = self._buffResult:GetSkillID()
+        if skillID and notify.skillID and notify:GetSkillID() then
+          skillIDMatch = skillID == notify:GetSkillID()
+        end
+        return attackIndexMatch and skillIDMatch
       end
+    else
+      return false
     end
   end
+  if notify:GetNotifyType() == NotifyType.MonsterShow then
+    local arr = self._buffResult:GetBuffArray()
+    for i, v in ipairs(arr) do
+      local eid, seq = v[1], v[2]
+      if eid == notify:GetNotifyEntity():GetID() then
+        return true
+      end
+    end
+    return false
+  end
+  if notify:GetNotifyType() == NotifyType.TeamLeaderEachMoveEnd then
+    return self._buffResult:GetWalkPos() == notify:GetPos()
+  end
+  if notify:GetNotifyType() == NotifyType.NotifyLayerChange then
+    local n = notify
+    if self._buffResult.__oldFinalLayer ~= n.__oldFinalLayer then
+      return false
+    end
+    if n:GetNotifyEntity() and self._buffResult:GetNotifyLayerChange_Entity() ~= n:GetNotifyEntity() then
+      return false
+    end
+    return true
+  end
+  if notify and notify:GetNotifyType() == NotifyType.EntityMoveEnd then
+    return self._buffResult:GetWalkPos() == notify:GetPosNew()
+  end
+  return true
 end
 
 _class("BuffViewRemoveBuff", BuffViewBase)
 BuffViewRemoveBuff = BuffViewRemoveBuff
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewRemoveBuff.IsNotifyMatch = function(self, notify)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffViewRemoveBuff:IsNotifyMatch(notify)
   local result = self._buffResult
-  if notify.GetRandHalfDamageIndex and (self._buffResult).GetRandHalfDamageIndex then
+  if notify.GetRandHalfDamageIndex and self._buffResult.GetRandHalfDamageIndex then
     local halfRandDamageIndex = notify:GetRandHalfDamageIndex()
     if halfRandDamageIndex then
-      local buffHalfRandDamageIndex = (self._buffResult):GetRandHalfDamageIndex()
+      local buffHalfRandDamageIndex = self._buffResult:GetRandHalfDamageIndex()
       if buffHalfRandDamageIndex and buffHalfRandDamageIndex ~= halfRandDamageIndex then
         return false
       end
     end
   end
-  do
-    if (self._buffResult):GetWalkPos() ~= notify:GetPos() then
-      do return notify:GetNotifyType() ~= NotifyType.TeamLeaderEachMoveEnd and notify:GetNotifyType() ~= NotifyType.TeamLeaderEachMoveStart end
-      if notify and notify:GetNotifyType() == NotifyType.ChainSkillAttackEnd then
-        local entityCheckPass = false
-        local atkEntity = notify:GetNotifyEntity()
-        entityCheckPass = not atkEntity or result:GetNotifyEntityID() == atkEntity:GetID()
-        local skillTimeIndexPass = result:GetNotifyChainSkillTimeIndex() == notify:GetChainSkillTimeIndex()
-        local skillStageIndexPass = result:GetNotifyChainSkillStageIndex() == notify:GetChainSkillStageIndex()
-        local skillIdPass = result:GetNotifyChainSkillId() == notify:GetChainSkillId()
-        return not entityCheckPass or not skillTimeIndexPass or not skillStageIndexPass or skillIdPass
-      end
-      if (self._buffResult):GetWalkPos() ~= notify:GetPosNew() then
-        do return not notify or notify:GetNotifyType() ~= NotifyType.EntityMoveEnd end
-        if notify and notify:GetNotifyType() == NotifyType.AutoBeadSkillEachEnd then
-          local resultAutoBeadSkillIndex = (self._buffResult):GetAutoBeadSkillIndex()
-          local notifyAutoBeadSkillIndex = notify:GetAutoBeadSkillIndex()
-          if resultAutoBeadSkillIndex and notifyAutoBeadSkillIndex and resultAutoBeadSkillIndex == notifyAutoBeadSkillIndex then
-            return true
-          else
-            return false
-          end
-        end
-        do return true end
-        -- DECOMPILER ERROR: 13 unprocessed JMP targets
-      end
+  if notify:GetNotifyType() == NotifyType.TeamLeaderEachMoveEnd or notify:GetNotifyType() == NotifyType.TeamLeaderEachMoveStart then
+    return self._buffResult:GetWalkPos() == notify:GetPos()
+  end
+  if notify and notify:GetNotifyType() == NotifyType.ChainSkillAttackEnd then
+    local entityCheckPass = false
+    local atkEntity = notify:GetNotifyEntity()
+    if atkEntity then
+      entityCheckPass = result:GetNotifyEntityID() == atkEntity:GetID()
+    end
+    local skillTimeIndexPass = result:GetNotifyChainSkillTimeIndex() == notify:GetChainSkillTimeIndex()
+    local skillStageIndexPass = result:GetNotifyChainSkillStageIndex() == notify:GetChainSkillStageIndex()
+    local skillIdPass = result:GetNotifyChainSkillId() == notify:GetChainSkillId()
+    return entityCheckPass and skillTimeIndexPass and skillStageIndexPass and skillIdPass
+  end
+  if notify and notify:GetNotifyType() == NotifyType.EntityMoveEnd then
+    return self._buffResult:GetWalkPos() == notify:GetPosNew()
+  end
+  if notify and notify:GetNotifyType() == NotifyType.AutoBeadSkillEachEnd then
+    local resultAutoBeadSkillIndex = self._buffResult:GetAutoBeadSkillIndex()
+    local notifyAutoBeadSkillIndex = notify:GetAutoBeadSkillIndex()
+    if resultAutoBeadSkillIndex and notifyAutoBeadSkillIndex and resultAutoBeadSkillIndex == notifyAutoBeadSkillIndex then
+      return true
+    else
+      return false
     end
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewRemoveBuff.PlayView = function(self, TT, notify)
-  -- function num : 0_3 , upvalues : _ENV
-  local playBuffSvc = (self._world):GetService("PlayBuff")
-  local arr = (self._buffResult):GetBuffArray()
-  for i,v in ipairs(arr) do
+function BuffViewRemoveBuff:PlayView(TT, notify)
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  local arr = self._buffResult:GetBuffArray()
+  for i, v in ipairs(arr) do
     local eid = v.eid
     local tSeqID = v.tSeqID
-    local entity = (self._world):GetEntityByID(eid)
+    local entity = self._world:GetEntityByID(eid)
     if entity then
-      for _,seq in ipairs(tSeqID) do
-        local inst = (entity:BuffView()):GetBuffViewInstance(seq)
+      for _, seq in ipairs(tSeqID) do
+        local inst = entity:BuffView():GetBuffViewInstance(seq)
         if inst then
           playBuffSvc:PlayRemoveBuff(TT, inst, NTBuffUnload:New())
-          if (self._buffResult):GetBlack() == 1 then
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivatePassive, (entity:PetPstID()):GetPstID(), false)
+          if self._buffResult:GetBlack() == 1 then
+            GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivatePassive, entity:PetPstID():GetPstID(), false)
           end
         end
       end
     end
   end
 end
-
-

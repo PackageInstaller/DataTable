@@ -1,37 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/ui_cn6_n35_game/ui_cn6_n35_game_clothes_award.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UI_CN6_N35_GameClothesAward", UICustomWidget)
 UI_CN6_N35_GameClothesAward = UI_CN6_N35_GameClothesAward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UI_CN6_N35_GameClothesAward.OnShow = function(self)
-  -- function num : 0_0
+function UI_CN6_N35_GameClothesAward:OnShow()
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._count = self:GetUIComponent("UILocalizedTMP", "count")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UI_CN6_N35_GameClothesAward.SetData = function(self, icon, count, callback)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._icon):LoadImage(icon)
-  ;
-  (self._count):SetText(tostring(count))
+function UI_CN6_N35_GameClothesAward:SetData(icon, count, callback)
+  self._icon:LoadImage(icon)
+  self._count:SetText(tostring(count))
   self._callback = callback
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UI_CN6_N35_GameClothesAward.IconOnClick = function(self, go)
-  -- function num : 0_2
+function UI_CN6_N35_GameClothesAward:IconOnClick(go)
   if self._callback then
-    local pos = (go.transform).position
-    ;
-    (self._callback)(pos)
+    local pos = go.transform.position
+    self._callback(pos)
   end
 end
-
-

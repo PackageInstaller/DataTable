@@ -1,96 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/nav/season_nav_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonNavManager", Object)
 SeasonNavManager = SeasonNavManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonNavManager.Constructor = function(self)
-  -- function num : 0_0
+function SeasonNavManager:Constructor()
   self._allNavTransPoint = {}
   self._useLineValueWhenNonePass = false
   self._transCostBias = 0.02
   self._navAreaMask = 1
   self._player = nil
   self._offMeshLinksData = {}
-  self._moreIslandSeason = {[8006] = true}
+  self._moreIslandSeason = {
+    [8006] = true
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavManager.HasMoreAsland = function(self, seasonId)
-  -- function num : 0_1
-  return (self._moreIslandSeason)[seasonId]
+function SeasonNavManager:HasMoreAsland(seasonId)
+  return self._moreIslandSeason[seasonId]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavManager.SetPlayer = function(self, player)
-  -- function num : 0_2
+function SeasonNavManager:SetPlayer(player)
   self._player = player
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavManager.SetAreaMask = function(self, mask)
-  -- function num : 0_3
+function SeasonNavManager:SetAreaMask(mask)
   if mask ~= self._navAreaMask then
     self._navAreaMask = mask
     if self._player then
-      (self._player):SetNavAreaMask(mask)
+      self._player:SetNavAreaMask(mask)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavManager.GetAreaMask = function(self)
-  -- function num : 0_4
+function SeasonNavManager:GetAreaMask()
   return self._navAreaMask
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavManager.Clear = function(self)
-  -- function num : 0_5
+function SeasonNavManager:Clear()
   self._allNavTransPoint = {}
   self._navAreaMask = 1
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavManager.AddTransPoint = function(self, zoneId, eventPoint)
-  -- function num : 0_6 , upvalues : _ENV
+function SeasonNavManager:AddTransPoint(zoneId, eventPoint)
   local point = SeasonNavTransPoint:New(zoneId, eventPoint)
-  ;
-  (table.insert)(self._allNavTransPoint, point)
+  table.insert(self._allNavTransPoint, point)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavManager.FindOtherIslandPath = function(self, startZone, startPos, endZone, endPos, areaMask)
-  -- function num : 0_7
+function SeasonNavManager:FindOtherIslandPath(startZone, startPos, endZone, endPos, areaMask)
   self._areaMask = areaMask
   self.startTransPoint = self:FindBestTransPoint(startZone, startPos)
   self.endTransPoint = self:FindBestTransPoint(endZone, endPos)
   return self.startTransPoint, self.endTransPoint
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavManager.FindBestTransPoint = function(self, zoneId, pos)
-  -- function num : 0_8 , upvalues : _ENV
-  local point = nil
+function SeasonNavManager:FindBestTransPoint(zoneId, pos)
+  local point
   local minCost = 1000000
-  for k,subPoint in pairs(self._allNavTransPoint) do
+  for k, subPoint in pairs(self._allNavTransPoint) do
     if subPoint:GetZoneID() == zoneId then
       local cost = self:_CalCost(pos, subPoint:GetNavPosition())
-      if not cost then
-        cost = 1000
-      end
-      if cost < minCost then
+      cost = cost or 1000
+      if minCost > cost then
         minCost = cost
         point = subPoint
       end
@@ -99,32 +67,31 @@ SeasonNavManager.FindBestTransPoint = function(self, zoneId, pos)
   return point
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavManager.FindTrasnsPath = function(self, originPostion, targetPosition, areaMask)
-  -- function num : 0_9 , upvalues : _ENV
+function SeasonNavManager:FindTrasnsPath(originPostion, targetPosition, areaMask)
   self._areaMask = areaMask
   local len = #self._allNavTransPoint
   if len < 2 then
-    return 
+    return
   end
-  local hasMoreIsland = nil
-  local seasonId = ((GameGlobal.GetUIModule)(SeasonModule)):GetSeasonID()
+  local hasMoreIsland
+  local seasonId = GameGlobal.GetUIModule(SeasonModule):GetSeasonID()
   hasMoreIsland = self:HasMoreAsland(seasonId)
   self.minCost = self:_CalCost(originPostion, targetPosition)
   if not self.minCost then
-    return 
+    return
   end
   self.startTransPoint = nil
   self.endTransPoint = nil
   for i = 1, len - 1 do
-    local firstPoint = (self._allNavTransPoint)[i]
+    local firstPoint = self._allNavTransPoint[i]
     if firstPoint:IsUnLock() then
       for j = i + 1, len do
-        local secondPint = (self._allNavTransPoint)[j]
+        local secondPint = self._allNavTransPoint[j]
         if secondPint:IsUnLock() then
           local checkZone = true
-          checkZone = not hasMoreIsland or firstPoint:GetZoneID() == secondPint:GetZoneID()
+          if hasMoreIsland then
+            checkZone = firstPoint:GetZoneID() == secondPint:GetZoneID()
+          end
           if checkZone then
             self:CheckTransPath(originPostion, firstPoint, secondPint, targetPosition)
             self:CheckTransPath(originPostion, secondPint, firstPoint, targetPosition)
@@ -133,70 +100,60 @@ SeasonNavManager.FindTrasnsPath = function(self, originPostion, targetPosition, 
       end
     end
   end
-  do return self.startTransPoint, self.endTransPoint end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  return self.startTransPoint, self.endTransPoint
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavManager.CheckTransPath = function(self, originPos, startTransPoint, endTransPoint, targetPos)
-  -- function num : 0_10 , upvalues : _ENV
+function SeasonNavManager:CheckTransPath(originPos, startTransPoint, endTransPoint, targetPos)
   local pos = startTransPoint:GetPosition()
   pos.y = 0
   local c1 = self:_CalCost(originPos, pos)
   if not c1 then
-    return 
+    return
   end
   pos = endTransPoint:GetPosition()
   pos.y = 0
   local c2 = self:_CalCost(pos, targetPos)
   if not c2 then
-    return 
+    return
   end
   local sum = c1 + c2
   if sum < self.minCost then
-    (Log.info)("seaonNav SeasonNavManager cost replace old ", self.minCost, " new ", sum)
+    Log.info("seaonNav SeasonNavManager cost replace old ", self.minCost, " new ", sum)
     self.minCost = sum
     self.startTransPoint = startTransPoint
     self.endTransPoint = endTransPoint
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavManager._CalCost = function(self, originPostion, targetPosition)
-  -- function num : 0_11 , upvalues : _ENV
+function SeasonNavManager:_CalCost(originPostion, targetPosition)
   if not originPostion or not targetPosition then
-    (Log.error)("SeasonNavManager:_CalCost ")
-    return 
+    Log.error("SeasonNavManager:_CalCost ")
+    return
   end
-  local path1 = ((UnityEngine.AI).NavMeshPath):New()
+  local path1 = UnityEngine.AI.NavMeshPath:New()
   local mask = self._areaMask
-  local pass1 = (((UnityEngine.AI).NavMesh).CalculatePath)(originPostion, targetPosition, mask, path1)
-  local path2 = ((UnityEngine.AI).NavMeshPath):New()
-  local pass2 = (((UnityEngine.AI).NavMesh).CalculatePath)(targetPosition, originPostion, mask, path2)
-  do
-    if not pass1 and not pass2 and self._useLineValueWhenNonePass then
+  local pass1 = UnityEngine.AI.NavMesh.CalculatePath(originPostion, targetPosition, mask, path1)
+  local path2 = UnityEngine.AI.NavMeshPath:New()
+  local pass2 = UnityEngine.AI.NavMesh.CalculatePath(targetPosition, originPostion, mask, path2)
+  if not pass1 and not pass2 then
+    if self._useLineValueWhenNonePass then
       local approxCost = originPostion.x * originPostion.x + targetPosition.z * targetPosition.z
       return approxCost
     end
-    do return  end
-    local cost1 = 10000
-    local cost2 = 10000
-    if pass1 then
-      cost1 = self:_CalcCostByPath(path1)
-    end
-    if pass2 then
-      cost2 = self:_CalcCostByPath(path2)
-    end
-    return (math.min)(cost1, cost2)
+    return
   end
+  local cost1 = 10000
+  local cost2 = 10000
+  if pass1 then
+    cost1 = self:_CalcCostByPath(path1)
+  end
+  if pass2 then
+    cost2 = self:_CalcCostByPath(path2)
+  end
+  return math.min(cost1, cost2)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavManager._CalcCostByPath = function(self, path)
-  -- function num : 0_12 , upvalues : _ENV
+function SeasonNavManager:_CalcCostByPath(path)
   local corners = path.corners
   local len = corners.Length
   local cost = 0
@@ -205,33 +162,23 @@ SeasonNavManager._CalcCostByPath = function(self, path)
     local p2 = corners[i + 1]
     p1.y = 0
     p2.y = 0
-    cost = cost + (Vector3.Distance)(p1, p2)
+    cost = cost + Vector3.Distance(p1, p2)
   end
   return cost
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavManager.InitOffMeshLinkData = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function SeasonNavManager:InitOffMeshLinkData()
   self._offMeshLinksData = {}
-  local seasonId = ((GameGlobal.GetUIModule)(SeasonModule)):GetSeasonID()
-  local cfgs = (Cfg.cfg_season_map_nav_link)({SeasonID = seasonId})
+  local seasonId = GameGlobal.GetUIModule(SeasonModule):GetSeasonID()
+  local cfgs = Cfg.cfg_season_map_nav_link({SeasonID = seasonId})
   if not cfgs then
-    return 
+    return
   end
-  for _,cfg in pairs(cfgs) do
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self._offMeshLinksData)[cfg.Name] = cfg
+  for _, cfg in pairs(cfgs) do
+    self._offMeshLinksData[cfg.Name] = cfg
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavManager.GetOffMeshLinkData = function(self, name)
-  -- function num : 0_14
-  return (self._offMeshLinksData)[name]
+function SeasonNavManager:GetOffMeshLinkData(name)
+  return self._offMeshLinksData[name]
 end
-
-

@@ -1,129 +1,87 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn16_n45/main/ui_activity_cn16_n45_intro_type1_widget.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_intro_type1_widget")
 _class("UICNUIActivityCN16N45IntroType1Widget", UIIntroType1Widget)
 UICNUIActivityCN16N45IntroType1Widget = UICNUIActivityCN16N45IntroType1Widget
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UICNUIActivityCN16N45IntroType1Widget._PlayAnimation = function(self, animName, duration, callback)
-  -- function num : 0_0 , upvalues : _ENV
-  if not (string.isnullorempty)(animName) then
-    (UIWidgetHelper.PlayAnimation)(self, "_root", animName, duration, callback)
-  else
-    if callback then
-      callback()
-    end
+function UICNUIActivityCN16N45IntroType1Widget:_PlayAnimation(animName, duration, callback)
+  if not string.isnullorempty(animName) then
+    UIWidgetHelper.PlayAnimation(self, "_root", animName, duration, callback)
+  elseif callback then
+    callback()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICNUIActivityCN16N45IntroType1Widget.CloseDialog = function(self)
-  -- function num : 0_1
-  (self._uiView):CloseDialogWithAnimation()
+function UICNUIActivityCN16N45IntroType1Widget:CloseDialog()
+  self._uiView:CloseDialogWithAnimation()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICNUIActivityCN16N45IntroType1Widget.SetData = function(self, uiView, cfgId)
-  -- function num : 0_2 , upvalues : _ENV
+function UICNUIActivityCN16N45IntroType1Widget:SetData(uiView, cfgId)
   self._uiView = uiView
-  self._cfg = (Cfg.cfg_intro_loader_type_1)[cfgId]
+  self._cfg = Cfg.cfg_intro_loader_type_1[cfgId]
   if not self._cfg then
-    (Log.exception)("UICNUIActivityCN16N45IntroType1Widget:SetData() cfg_intro_loader_type_1[", cfgId, "] error")
+    Log.exception("UICNUIActivityCN16N45IntroType1Widget:SetData() cfg_intro_loader_type_1[", cfgId, "] error")
     self:CloseDialog()
-    return 
+    return
   end
   self:_SetTitle()
   self:_SetSubTitle()
   self:_SetIntro()
-  if self._cfg then
-    local animName = (self._cfg).ShowAnim
-  end
-  local duration = self._cfg and (self._cfg).ShowAnimTime or 0
+  local animName = self._cfg and self._cfg.ShowAnim
+  local duration = self._cfg and self._cfg.ShowAnimTime or 0
   self:_PlayAnimation(animName, duration, nil)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICNUIActivityCN16N45IntroType1Widget._SetTitle = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local id = (self._cfg).Title
-  if not (string.isnullorempty)(id) then
-    local txt = (StringTable.Get)(id)
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, "_title", txt)
+function UICNUIActivityCN16N45IntroType1Widget:_SetTitle()
+  local id = self._cfg.Title
+  if not string.isnullorempty(id) then
+    local txt = StringTable.Get(id)
+    UIWidgetHelper.SetLocalizationText(self, "_title", txt)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICNUIActivityCN16N45IntroType1Widget._SetSubTitle = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local id = (self._cfg).SubTitle
-  if not (string.isnullorempty)(id) then
-    local txt = (StringTable.Get)((self._cfg).SubTitle)
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, "_subTitle", txt)
+function UICNUIActivityCN16N45IntroType1Widget:_SetSubTitle()
+  local id = self._cfg.SubTitle
+  if not string.isnullorempty(id) then
+    local txt = StringTable.Get(self._cfg.SubTitle)
+    UIWidgetHelper.SetLocalizationText(self, "_subTitle", txt)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICNUIActivityCN16N45IntroType1Widget._SetIntro = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local id = (self._cfg).Intro
-  if not (string.isnullorempty)(id) then
+function UICNUIActivityCN16N45IntroType1Widget:_SetIntro()
+  local id = self._cfg.Intro
+  if not string.isnullorempty(id) then
     local keyHead = id .. "head_"
     local keyBody = id .. "body_"
     local len = self:_CalcLen(keyHead)
-    local uis = (UIWidgetHelper.SpawnObjects)(self, "_pool", "UIIntroType1Item", len)
-    for i,ui in ipairs(uis) do
-      local head = (StringTable.Get)(keyHead .. i)
-      local body = (StringTable.Get)(keyBody .. i)
+    local uis = UIWidgetHelper.SpawnObjects(self, "_pool", "UIIntroType1Item", len)
+    for i, ui in ipairs(uis) do
+      local head = StringTable.Get(keyHead .. i)
+      local body = StringTable.Get(keyBody .. i)
       ui:SetData(head, body)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICNUIActivityCN16N45IntroType1Widget._CalcLen = function(self, keyHead)
-  -- function num : 0_6 , upvalues : _ENV
+function UICNUIActivityCN16N45IntroType1Widget:_CalcLen(keyHead)
   local n = 0
-  while 1 do
+  while true do
     n = n + 1
-    local keyHead = (StringTable.Has)(keyHead .. n)
+    local keyHead = StringTable.Has(keyHead .. n)
     if not keyHead then
       n = n - 1
       break
     end
   end
-  do
-    if n <= 0 then
-      (Log.fatal)("UIIntroType1Widget:_CalcLen() no [", keyHead, n, "] in str_xxx.xlsx")
-      return 0
-    end
-    return n
+  if n <= 0 then
+    Log.fatal("UIIntroType1Widget:_CalcLen() no [", keyHead, n, "] in str_xxx.xlsx")
+    return 0
   end
+  return n
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICNUIActivityCN16N45IntroType1Widget.CloseBtnOnClick = function(self, go)
-  -- function num : 0_7
-  if self._cfg then
-    local animName = (self._cfg).HideAnim
-  end
-  local duration = self._cfg and (self._cfg).HideAnimTime or 0
+function UICNUIActivityCN16N45IntroType1Widget:CloseBtnOnClick(go)
+  local animName = self._cfg and self._cfg.HideAnim
+  local duration = self._cfg and self._cfg.HideAnimTime or 0
   self:_PlayAnimation(animName, duration, function()
-    -- function num : 0_7_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

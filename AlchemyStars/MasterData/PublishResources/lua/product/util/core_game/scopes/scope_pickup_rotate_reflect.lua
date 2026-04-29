@@ -1,54 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_pickup_rotate_reflect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_PickUpRotateReflect", SkillScopeCalculator_Base)
 SkillScopeCalculator_PickUpRotateReflect = SkillScopeCalculator_PickUpRotateReflect
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_PickUpRotateReflect.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local world = (self._gridFilter)._world
+function SkillScopeCalculator_PickUpRotateReflect:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local world = self._gridFilter._world
   local utilData = world:GetService("UtilData")
   local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
-  local renderPickUpComponent = (casterEntity:RenderPickUpComponent())
-  local reflectDir = nil
+  local renderPickUpComponent = casterEntity:RenderPickUpComponent()
+  local reflectDir
   if activeSkillPickUpComponent then
     reflectDir = activeSkillPickUpComponent:GetReflectDir()
-  else
-    if previewPickUpComponent then
-      reflectDir = previewPickUpComponent:GetReflectDir()
-    end
+  elseif previewPickUpComponent then
+    reflectDir = previewPickUpComponent:GetReflectDir()
   end
   local reflectPos = CalcReflectPos(casterPos, centerPos, reflectDir)
   local resultScope = {}
   local distance = {}
-  local isValidPos = function(pos)
-    -- function num : 0_0_0 , upvalues : utilData
+  
+  local function isValidPos(pos)
     return utilData:IsValidPiecePos(pos)
   end
-
+  
   local range1 = self:CalcLine(casterPos, centerPos, false, isValidPos)
-  ;
-  (table.appendArray)(resultScope, range1)
+  table.appendArray(resultScope, range1)
   local dmax = 0
-  for i,pos in ipairs(range1) do
-    local dx = (math.abs)(pos.x - casterPos.x)
-    local dy = (math.abs)(pos.y - casterPos.y)
-    local d = (math.max)(dx, dy)
+  for i, pos in ipairs(range1) do
+    local dx = math.abs(pos.x - casterPos.x)
+    local dy = math.abs(pos.y - casterPos.y)
+    local d = math.max(dx, dy)
     distance[#distance + 1] = d
     dmax = d
   end
   local range2 = self:CalcLine(centerPos, reflectPos, true, isValidPos)
-  ;
-  (table.appendArray)(resultScope, range2)
-  for i,pos in ipairs(range2) do
-    local dx = (math.abs)(pos.x - centerPos.x)
-    local dy = (math.abs)(pos.y - centerPos.y)
-    local d = (math.max)(dx, dy)
+  table.appendArray(resultScope, range2)
+  for i, pos in ipairs(range2) do
+    local dx = math.abs(pos.x - centerPos.x)
+    local dy = math.abs(pos.y - centerPos.y)
+    local d = math.max(dx, dy)
     distance[#distance + 1] = d + dmax
   end
   local result = SkillScopeResult:New(SkillScopeType.PickUpRotateReflect, centerPos, resultScope, resultScope)
@@ -58,22 +47,17 @@ SkillScopeCalculator_PickUpRotateReflect.CalcRange = function(self, scopeType, s
     if renderPickUpComponent then
       renderPickUpComponent:SetReflectPos(reflectPos)
     end
-  else
-    if previewPickUpComponent then
-      previewPickUpComponent:SetReflectPos(reflectPos)
-    end
+  elseif previewPickUpComponent then
+    previewPickUpComponent:SetReflectPos(reflectPos)
   end
   return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_PickUpRotateReflect.CalcLine = function(self, fromPos, toPos, extend, isValidPos)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeCalculator_PickUpRotateReflect:CalcLine(fromPos, toPos, extend, isValidPos)
   if fromPos == toPos then
     return {fromPos}
   end
-  local world = (self._gridFilter)._world
+  local world = self._gridFilter._world
   local boardServiceLogic = world:GetService("BoardLogic")
   local maxX = boardServiceLogic:GetCurBoardMaxX()
   local maxY = boardServiceLogic:GetCurBoardMaxY()
@@ -86,138 +70,114 @@ SkillScopeCalculator_PickUpRotateReflect.CalcLine = function(self, fromPos, toPo
     dirX = -1
     if extend then
       local y0 = calcY(0)
-      if y0 >= 0 and y0 <= 9 then
+      if 0 <= y0 and y0 <= 9 then
         extendToPos.x = 1
-        extendToPos.y = (math.ceil)(y0)
+        extendToPos.y = math.ceil(y0)
       end
     end
   end
-  do
-    if dirX >= 0 then
-      do
-        if extend and dirX > 0 then
-          local y9 = calcY(9)
-          if y9 >= 0 and y9 <= 9 then
-            extendToPos.x = 9
-            extendToPos.y = (math.ceil)(y9)
-          end
-        end
-        dirX = 1
-        if dirY < 0 then
-          dirY = -1
-          if extend then
-            local x0 = calcX(0)
-            if x0 >= 0 and x0 <= 9 then
-              extendToPos.x = (math.ceil)(x0)
-              extendToPos.y = 1
-            end
-          end
-        end
-        do
-          if dirY >= 0 then
-            do
-              if extend and dirY > 0 then
-                local x9 = calcX(9)
-                if x9 >= 0 and x9 <= 9 then
-                  extendToPos.x = (math.ceil)(x9)
-                  extendToPos.y = 9
-                end
-              end
-              dirY = 1
-              if extend then
-                toPos = extendToPos
-              end
-              local isLineAcrossGrid = function(x, y)
-    -- function num : 0_1_0 , upvalues : calcX, calcY, _ENV
+  if 0 <= dirX then
+    if extend and 0 < dirX then
+      local y9 = calcY(9)
+      if 0 <= y9 and y9 <= 9 then
+        extendToPos.x = 9
+        extendToPos.y = math.ceil(y9)
+      end
+    end
+    dirX = 1
+  end
+  if dirY < 0 then
+    dirY = -1
+    if extend then
+      local x0 = calcX(0)
+      if 0 <= x0 and x0 <= 9 then
+        extendToPos.x = math.ceil(x0)
+        extendToPos.y = 1
+      end
+    end
+  end
+  if 0 <= dirY then
+    if extend and 0 < dirY then
+      local x9 = calcX(9)
+      if 0 <= x9 and x9 <= 9 then
+        extendToPos.x = math.ceil(x9)
+        extendToPos.y = 9
+      end
+    end
+    dirY = 1
+  end
+  if extend then
+    toPos = extendToPos
+  end
+  
+  local function isLineAcrossGrid(x, y)
     local pts = {}
     local x0 = calcX(y - 1)
-    if x - 1 <= x0 and x0 <= x then
+    if x0 >= x - 1 and x >= x0 then
       pts[#pts + 1] = x0 * 100 + y - 1
     end
     local x1 = calcX(y)
-    if x - 1 <= x1 and x1 <= x then
+    if x1 >= x - 1 and x >= x1 then
       pts[#pts + 1] = x1 * 100 + y
     end
     local y0 = calcY(x - 1)
-    if y - 1 <= y0 and y0 <= y then
+    if y0 >= y - 1 and y >= y0 then
       pts[#pts + 1] = (x - 1) * 100 + y0
     end
     local y1 = calcY(x)
-    if y - 1 <= y1 and y1 <= y then
+    if y1 >= y - 1 and y >= y1 then
       pts[#pts + 1] = x * 100 + y1
     end
-    pts = (table.unique)(pts)
-    do return #pts > 1 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+    pts = table.unique(pts)
+    return 1 < #pts
   end
-
-              for x = fromPos.x, toPos.x, dirX do
-                for y = fromPos.y, toPos.y, dirY do
-                  if isLineAcrossGrid(x, y) then
-                    local pos = Vector2(x, y)
-                    if isValidPos(pos) then
-                      range[#range + 1] = pos
-                    end
-                  end
-                end
-              end
-              return range
-            end
-          end
+  
+  for x = fromPos.x, toPos.x, dirX do
+    for y = fromPos.y, toPos.y, dirY do
+      if isLineAcrossGrid(x, y) then
+        local pos = Vector2(x, y)
+        if isValidPos(pos) then
+          range[#range + 1] = pos
         end
       end
     end
   end
+  return range
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_PickUpRotateReflect.CalcLineFunction = function(self, fromPos, toPos)
-  -- function num : 0_2
+function SkillScopeCalculator_PickUpRotateReflect:CalcLineFunction(fromPos, toPos)
   local fx = fromPos.x - 0.5
   local tx = toPos.x - 0.5
   local fy = fromPos.y - 0.5
   local ty = toPos.y - 0.5
-  local k, b, calcX, calcY = nil, nil, nil, nil
+  local k, b, calcX, calcY
   if fx == tx then
-    calcX = function(y)
-    -- function num : 0_2_0 , upvalues : fx
-    return fx
-  end
-
-    calcY = function(x)
-    -- function num : 0_2_1 , upvalues : fy
-    return fy
-  end
-
+    function calcX(y)
+      return fx
+    end
+    
+    function calcY(x)
+      return fy
+    end
+  elseif fy == ty then
+    function calcX(y)
+      return fx
+    end
+    
+    function calcY(x)
+      return fy
+    end
   else
-    if fy == ty then
-      calcX = function(y)
-    -- function num : 0_2_2 , upvalues : fx
-    return fx
-  end
-
-      calcY = function(x)
-    -- function num : 0_2_3 , upvalues : fy
-    return fy
-  end
-
-    else
-      k = (ty - fy) / (tx - fx)
-      b = fy - k * fx
-      calcX = function(y)
-    -- function num : 0_2_4 , upvalues : b, k
-    return (y - b) / k
-  end
-
-      calcY = function(x)
-    -- function num : 0_2_5 , upvalues : k, b
-    return k * x + b
-  end
-
+    k = (ty - fy) / (tx - fx)
+    b = fy - k * fx
+    
+    function calcX(y)
+      return (y - b) / k
+    end
+    
+    function calcY(x)
+      return k * x + b
     end
   end
   return calcX, calcY
 end
-
-

@@ -1,46 +1,89 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/monster_refresh_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local MonsterRefreshPosType = {None = 0, Position = 1, Random = 2, PositionTable = 3, PositionHitBack = 4, PositionAndOffSet = 5, SelectFirstCanUse = 6, FarFormPlayerAndInterval = 7, PlayerCentered = 8, MonsterCentered = 9, PositionAndOffSetMultiBoard = 10, PositionOnExtraBoard = 11, MAX = 99}
+local MonsterRefreshPosType = {
+  None = 0,
+  Position = 1,
+  Random = 2,
+  PositionTable = 3,
+  PositionHitBack = 4,
+  PositionAndOffSet = 5,
+  SelectFirstCanUse = 6,
+  FarFormPlayerAndInterval = 7,
+  PlayerCentered = 8,
+  MonsterCentered = 9,
+  PositionAndOffSetMultiBoard = 10,
+  PositionOnExtraBoard = 11,
+  MAX = 99
+}
 _enum("MonsterRefreshPosType", MonsterRefreshPosType)
-local MonsterWaveInternalRefreshType = {None = 0, AfterMonsterDead = 1, EveryRoundCount = 2, WatchTarget = 3, AllMonsterDead = 4, TargetRound = 5, RoundResultWatchTarget = 6, RoundResultCheckMonsterCount = 7, CompareMonsterNumber = 8, OnlySpecifiedMonsterSurvival = 9, AssignRefreshTypeAndTime = 100}
+local MonsterWaveInternalRefreshType = {
+  None = 0,
+  AfterMonsterDead = 1,
+  EveryRoundCount = 2,
+  WatchTarget = 3,
+  AllMonsterDead = 4,
+  TargetRound = 5,
+  RoundResultWatchTarget = 6,
+  RoundResultCheckMonsterCount = 7,
+  CompareMonsterNumber = 8,
+  OnlySpecifiedMonsterSurvival = 9,
+  AssignRefreshTypeAndTime = 100
+}
 _enum("MonsterWaveInternalRefreshType", MonsterWaveInternalRefreshType)
-local MonsterWaveInternalTime = {None = 0, ActiveSkill = 1, MonsterTurn = 2, RoundResult = 3, ChainAttack = 4}
+local MonsterWaveInternalTime = {
+  None = 0,
+  ActiveSkill = 1,
+  MonsterTurn = 2,
+  RoundResult = 3,
+  ChainAttack = 4
+}
 _enum("MonsterWaveInternalTime", MonsterWaveInternalTime)
-local MonsterRefreshExceptionType = {None = 0, Random = 1, ValidRing = 2, BackupTable = 3, ValidRingNoRandom = 4}
+local MonsterRefreshExceptionType = {
+  None = 0,
+  Random = 1,
+  ValidRing = 2,
+  BackupTable = 3,
+  ValidRingNoRandom = 4
+}
 _enum("MonsterRefreshExceptionType", MonsterRefreshExceptionType)
-local MonsterPosType = {None = 0, Position = 1, OffSet = 2}
+local MonsterPosType = {
+  None = 0,
+  Position = 1,
+  OffSet = 2
+}
 _enum("MonsterPosType", MonsterPosType)
 local WaveRefreshModeType = {Cumulate = -1}
 _enum("WaveRefreshModeType", WaveRefreshModeType)
-local LevelCompleteAssignWaveParamExp = {AssignWaveEnd = 1, BaseRefreshProb = 2, RefreshUpProb = 3, RoundNum = 4, BaseLevelCompleteCond = 5, BaseCondParam = 6}
+local LevelCompleteAssignWaveParamExp = {
+  AssignWaveEnd = 1,
+  BaseRefreshProb = 2,
+  RefreshUpProb = 3,
+  RoundNum = 4,
+  BaseLevelCompleteCond = 5,
+  BaseCondParam = 6
+}
 _enum("LevelCompleteAssignWaveParamExp", LevelCompleteAssignWaveParamExp)
-local ConditionCompareType = {Equal = 1, NotEqual = 2, Greater = 3, NotLess = 4, Less = 5, NotGreater = 6}
+local ConditionCompareType = {
+  Equal = 1,
+  NotEqual = 2,
+  Greater = 3,
+  NotLess = 4,
+  Less = 5,
+  NotGreater = 6
+}
 _enum("ConditionCompareType", ConditionCompareType)
-CompareFunByType = function(type, a, b)
-  -- function num : 0_0 , upvalues : ConditionCompareType
-  if a ~= b then
-    do return type ~= ConditionCompareType.Equal end
-    if a == b then
-      do return type ~= ConditionCompareType.NotEqual end
-      if b >= a then
-        do return type ~= ConditionCompareType.Greater end
-        if b > a then
-          do return type ~= ConditionCompareType.NotLess end
-          if a >= b then
-            do return type ~= ConditionCompareType.Less end
-            if a > b then
-              do return type ~= ConditionCompareType.NotGreater end
-              do return false end
-              -- DECOMPILER ERROR: 12 unprocessed JMP targets
-            end
-          end
-        end
-      end
-    end
+
+function CompareFunByType(type, a, b)
+  if type == ConditionCompareType.Equal then
+    return a == b
+  elseif type == ConditionCompareType.NotEqual then
+    return a ~= b
+  elseif type == ConditionCompareType.Greater then
+    return b < a
+  elseif type == ConditionCompareType.NotLess then
+    return b <= a
+  elseif type == ConditionCompareType.Less then
+    return a < b
+  elseif type == ConditionCompareType.NotGreater then
+    return a <= b
   end
+  return false
 end
-
-

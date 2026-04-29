@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_gift/ui_discovery_gift_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiscoveryGiftItem", UICustomWidget)
 UIDiscoveryGiftItem = UIDiscoveryGiftItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiscoveryGiftItem.Constructor = function(self)
-  -- function num : 0_0
+function UIDiscoveryGiftItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryGiftItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDiscoveryGiftItem:OnShow()
   self._rect = self:GetUIComponent("RectTransform", "rect")
   self._timerTex = self:GetUIComponent("UILocalizationText", "timer")
   self._timerTex2 = self:GetUIComponent("UILocalizationText", "timer2")
@@ -22,96 +12,66 @@ UIDiscoveryGiftItem.OnShow = function(self)
   self:AttachEvent(GameEventType.OnDisGiftCheckRed, self.CheckRed)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryGiftItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDiscoveryGiftItem:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryGiftItem.SetData = function(self, good, cfgv, refreshCallback)
-  -- function num : 0_3 , upvalues : _ENV
+function UIDiscoveryGiftItem:SetData(good, cfgv, refreshCallback)
   self._good = good
   self._cfgv = cfgv
   self._refreshCallback = refreshCallback
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   self:CheckRed()
   self:CheckTimeTex()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryGiftItem.CheckRed = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIDiscoveryGiftItem:CheckRed()
   if self._good then
-    local gidtid = (self._good).gift_id
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
+    local gidtid = self._good.gift_id
+    local roleModule = GameGlobal.GetModule(RoleModule)
     local pstid = roleModule:GetPstId()
     local key = "UIDiscoveryGiftItem" .. pstid .. gidtid
-    local val = (LocalDB.GetInt)(key, 0)
+    local val = LocalDB.GetInt(key, 0)
     if val == 0 then
-      (self._redGo):SetActive(true)
+      self._redGo:SetActive(true)
     else
-      ;
-      (self._redGo):SetActive(false)
+      self._redGo:SetActive(false)
     end
   else
-    do
-      ;
-      (self._redGo):SetActive(false)
-    end
+    self._redGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryGiftItem.CheckTimeTex = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIDiscoveryGiftItem:CheckTimeTex()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
-  self._timer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_5_0 , upvalues : self
+  self._timer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:ShowTimeTex()
-  end
-)
+  end)
   self:ShowTimeTex()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryGiftItem.ShowTimeTex = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local endTime = (self._good).deadline_time
-  local nowTime = (self._svrTimeModule):GetServerTime() * 0.001
-  local gap = (math.floor)(endTime - nowTime)
-  if gap > 0 then
-    local timeStr = (HelperProxy:GetInstance()):Time2Tex(gap)
-    ;
-    (self._timerTex):SetText(timeStr)
-    ;
-    (self._timerTex2):SetText(timeStr)
+function UIDiscoveryGiftItem:ShowTimeTex()
+  local endTime = self._good.deadline_time
+  local nowTime = self._svrTimeModule:GetServerTime() * 0.001
+  local gap = math.floor(endTime - nowTime)
+  if 0 < gap then
+    local timeStr = HelperProxy:GetInstance():Time2Tex(gap)
+    self._timerTex:SetText(timeStr)
+    self._timerTex2:SetText(timeStr)
   else
-    do
-      if self._refreshCallback then
-        (self._refreshCallback)()
-      end
-      if self._timer then
-        ((GameGlobal.Timer)()):CancelEvent(self._timer)
-      end
+    if self._refreshCallback then
+      self._refreshCallback()
+    end
+    if self._timer then
+      GameGlobal.Timer():CancelEvent(self._timer)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryGiftItem.BgOnClick = function(self, go)
-  -- function num : 0_7
+function UIDiscoveryGiftItem:BgOnClick(go)
   self:ShowDialog("UIDiscoveryGiftController", self._good, self._cfgv)
 end
-
-

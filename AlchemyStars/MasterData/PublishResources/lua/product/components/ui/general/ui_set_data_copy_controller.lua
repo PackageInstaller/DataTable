@@ -1,57 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/general/ui_set_data_copy_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISetDataCopyController", UIController)
 UISetDataCopyController = UISetDataCopyController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISetDataCopyController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISetDataCopyController:OnShow(uiParams)
   self._nameLabel = self:GetUIComponent("UILocalizationText", "NameValue")
   self._levelLabel = self:GetUIComponent("UILocalizationText", "LevelValue")
   self._idLabel = self:GetUIComponent("UILocalizationText", "IdValue")
   self._zoneLabel = self:GetUIComponent("UILocalizationText", "ZoneValue")
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   self._name = roleModule:GetName()
   self._id = loginModule:GetRoleShowID()
   self._level = roleModule:GetLevel()
-  local zoneInfo = (LoginLuaHelper.GetZoneInfo)()
+  local zoneInfo = LoginLuaHelper.GetZoneInfo()
   self._zone = zoneInfo.zone_name
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._nameLabel).text = self._name
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._levelLabel).text = self._level
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._idLabel).text = self._id
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._zoneLabel).text = self._zone
-  self._info = (StringTable.Get)("str_set_data_copy_name_title") .. self._name .. "\n" .. (StringTable.Get)("str_set_data_copy_level_title") .. self._level .. "\n" .. (StringTable.Get)("str_set_data_copy_id_title") .. self._id .. "\n" .. (StringTable.Get)("str_set_data_copy_zone_title") .. self._zone
+  self._nameLabel.text = self._name
+  self._levelLabel.text = self._level
+  self._idLabel.text = self._id
+  self._zoneLabel.text = self._zone
+  self._info = StringTable.Get("str_set_data_copy_name_title") .. self._name .. "\n" .. StringTable.Get("str_set_data_copy_level_title") .. self._level .. "\n" .. StringTable.Get("str_set_data_copy_id_title") .. self._id .. "\n" .. StringTable.Get("str_set_data_copy_zone_title") .. self._zone
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetDataCopyController.CancelBtnOnClick = function(self)
-  -- function num : 0_1
+function UISetDataCopyController:CancelBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetDataCopyController.CopyBtnOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (HelperProxy:GetInstance()):CopyTextToClipboard(self._info)
+function UISetDataCopyController:CopyBtnOnClick()
+  HelperProxy:GetInstance():CopyTextToClipboard(self._info)
   self:CloseDialog()
 end
-
-

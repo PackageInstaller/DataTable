@@ -1,41 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/extension/condition_manager/bt_node_leaf.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ActionNode", BehaviourNode)
 ActionNode = ActionNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionNode.Constructor = function(self, action)
-  -- function num : 0_0 , upvalues : _ENV
-  ((ActionNode.super).Constructor)(self, nil)
+function ActionNode:Constructor(action)
+  ActionNode.super.Constructor(self, nil)
   self.action = action
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionNode.Visit = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ActionNode:Visit()
   self:action()
   self.status = BTState.SUCCESS
 end
 
 _class("ConditionNode", BehaviourNode)
 ConditionNode = ConditionNode
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-ConditionNode.Constructor = function(self, children, func)
-  -- function num : 0_2 , upvalues : _ENV
-  ((ConditionNode.super).Constructor)(self, children)
+function ConditionNode:Constructor(children, func)
+  ConditionNode.super.Constructor(self, children)
   self.fn = func
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ConditionNode.Visit = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self.fn)() then
+function ConditionNode:Visit()
+  if self.fn() then
     self.status = BTState.SUCCESS
   else
     self.status = BTState.FAILED
@@ -44,35 +29,42 @@ end
 
 _class("ComparisonOperationNode", BehaviourNode)
 ComparisonOperationNode = ComparisonOperationNode
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
 
-ComparisonOperationNode.Constructor = function(self, children, comparisonOperationType, lNumberCalcFunction, rNumberCalcFunction)
-  -- function num : 0_4 , upvalues : _ENV
-  ((ComparisonOperationNode.super).Constructor)(self, children)
+function ComparisonOperationNode:Constructor(children, comparisonOperationType, lNumberCalcFunction, rNumberCalcFunction)
+  ComparisonOperationNode.super.Constructor(self, children)
   self.comparisonOperationType = comparisonOperationType
   self.lNumberCalcFunction = lNumberCalcFunction
   self.rNumberCalcFunction = rNumberCalcFunction
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ComparisonOperationNode.Visit = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local lNumber = self.lNumberCalcFunction and (self.lNumberCalcFunction)() or 0
-  local rNumber = self.rNumberCalcFunction and (self.rNumberCalcFunction)() or 0
-  local map = {[ComparisonOperationType.EQ] = lNumber == rNumber, [ComparisonOperationType.NE] = lNumber ~= rNumber, [ComparisonOperationType.LT] = rNumber < lNumber, [ComparisonOperationType.LE] = rNumber <= lNumber, [ComparisonOperationType.ST] = lNumber < rNumber, [ComparisonOperationType.SE] = lNumber <= rNumber}
+function ComparisonOperationNode:Visit()
+  local lNumber = self.lNumberCalcFunction and self.lNumberCalcFunction() or 0
+  local rNumber = self.rNumberCalcFunction and self.rNumberCalcFunction() or 0
+  local map = {
+    [ComparisonOperationType.EQ] = lNumber == rNumber,
+    [ComparisonOperationType.NE] = lNumber ~= rNumber,
+    [ComparisonOperationType.LT] = lNumber > rNumber,
+    [ComparisonOperationType.LE] = lNumber >= rNumber,
+    [ComparisonOperationType.ST] = lNumber < rNumber,
+    [ComparisonOperationType.SE] = lNumber <= rNumber
+  }
   local b = map[self.comparisonOperationType]
   if b == nil then
-    (Log.warn)("### invalid ComparisonOperationType:", self.comparisonOperationType)
+    Log.warn("### invalid ComparisonOperationType:", self.comparisonOperationType)
   end
   if b then
     self.status = BTState.SUCCESS
   else
     self.status = BTState.FAILED
   end
-  -- DECOMPILER ERROR: 9 unprocessed JMP targets
 end
 
-ComparisonOperationType = {EQ = 1, NE = 2, LT = 3, LE = 4, ST = 5, SE = 6}
+ComparisonOperationType = {
+  EQ = 1,
+  NE = 2,
+  LT = 3,
+  LE = 4,
+  ST = 5,
+  SE = 6
+}
 _enum("ComparisonOperationType", ComparisonOperationType)
-

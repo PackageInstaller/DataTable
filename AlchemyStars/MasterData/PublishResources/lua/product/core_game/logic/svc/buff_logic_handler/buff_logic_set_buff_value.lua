@@ -1,34 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_buff_value.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetBuffValue", BuffLogicBase)
 BuffLogicSetBuffValue = BuffLogicSetBuffValue
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetBuffValue.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetBuffValue:Constructor(buffInstance, logicParam)
   self._key = logicParam.key or ""
   self._value = logicParam.value
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetBuffValue.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local buffComponent = (self._entity):BuffComponent()
+function BuffLogicSetBuffValue:DoLogic()
+  local buffComponent = self._entity:BuffComponent()
   if not buffComponent then
-    return 
+    return
   end
   if type(self._value) == "table" then
-    local tmp = (table.clone)(self._value)
+    local tmp = table.clone(self._value)
     buffComponent:SetBuffValue(self._key, tmp)
   else
-    do
-      buffComponent:SetBuffValue(self._key, self._value)
-    end
+    buffComponent:SetBuffValue(self._key, self._value)
   end
 end
-
-

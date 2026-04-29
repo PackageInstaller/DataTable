@@ -1,126 +1,86 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/svc/util_data_svc_s.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UtilDataServiceShare", BaseService)
 UtilDataServiceShare = UtilDataServiceShare
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UtilDataServiceShare.Constructor = function(self, world)
-  -- function num : 0_0
+function UtilDataServiceShare:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.Initialize = function(self)
-  -- function num : 0_1
-  self._boardLogicSvc = (self._world):GetService("BoardLogic")
+function UtilDataServiceShare:Initialize()
+  self._boardLogicSvc = self._world:GetService("BoardLogic")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetCurMainStateID = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UtilDataServiceShare:GetCurMainStateID()
   local gameFsmStateID = GameStateID.Invalid
-  local hasGameFsm = (self._world):HasGameFSM()
-  do
-    if hasGameFsm then
-      local gameFsmCmpt = (self._world):GameFSM()
-      gameFsmStateID = gameFsmCmpt:CurStateID()
-    end
-    return gameFsmStateID
+  local hasGameFsm = self._world:HasGameFSM()
+  if hasGameFsm then
+    local gameFsmCmpt = self._world:GameFSM()
+    gameFsmStateID = gameFsmCmpt:CurStateID()
   end
+  return gameFsmStateID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetMainStateInputEnable = function(self)
-  -- function num : 0_3
+function UtilDataServiceShare:GetMainStateInputEnable()
   local enable = false
-  local hasGameFsm = (self._world):HasGameFSM()
-  do
-    if hasGameFsm then
-      local gameFsmCmpt = (self._world):GameFSM()
-      enable = gameFsmCmpt:GetHandleInputEnable()
-    end
-    return enable
+  local hasGameFsm = self._world:HasGameFSM()
+  if hasGameFsm then
+    local gameFsmCmpt = self._world:GameFSM()
+    enable = gameFsmCmpt:GetHandleInputEnable()
   end
+  return enable
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetReplicaGridEntityData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:GetReplicaGridEntityData()
+  local boardEntity = self._world:GetBoardEntity()
   local boardComponent = boardEntity:Board()
   local gridEntityData = boardComponent:GetGridEntityData()
   if not gridEntityData then
-    return 
+    return
   end
   local extraBoardPosList = self:GetExtraBoardPosList()
   local replica = {}
-  for k,v in pairs(gridEntityData) do
+  for k, v in pairs(gridEntityData) do
     local posWork = Vector2(k.x, k.y)
-    if not (table.intable)(extraBoardPosList, posWork) then
+    if not table.intable(extraBoardPosList, posWork) then
       replica[k] = v
     end
   end
   return replica
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetReplicaBoardPieces = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:GetReplicaBoardPieces()
+  local boardEntity = self._world:GetBoardEntity()
   local boardComponent = boardEntity:Board()
   local replica = {}
-  for x,col in pairs(boardComponent.Pieces) do
+  for x, col in pairs(boardComponent.Pieces) do
     replica[x] = {}
-    for y,grid in pairs(col) do
-      -- DECOMPILER ERROR at PC17: Confused about usage of register: R14 in 'UnsetPending'
-
-      (replica[x])[y] = grid
+    for y, grid in pairs(col) do
+      replica[x][y] = grid
     end
   end
   return replica
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.IsPrismPiece = function(self, gridPos)
-  -- function num : 0_6
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:IsPrismPiece(gridPos)
+  local boardEntity = self._world:GetBoardEntity()
   local boardComponent = boardEntity:Board()
   return boardComponent:IsPrismPiece(gridPos)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetBoardPieceEffectType = function(self, gridPos)
-  -- function num : 0_7
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:GetBoardPieceEffectType(gridPos)
+  local boardEntity = self._world:GetBoardEntity()
   local boardComponent = boardEntity:Board()
   return boardComponent:GetBoardPieceEffectType(gridPos)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.PlayerIsDead = function(self, teamEntity)
-  -- function num : 0_8
-  local battlesvc = (self._world):GetService("Battle")
+function UtilDataServiceShare:PlayerIsDead(teamEntity)
+  local battlesvc = self._world:GetService("Battle")
   return battlesvc:PlayerIsDead(teamEntity)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetEntityIDByPstID = function(self, checkPstID)
-  -- function num : 0_9 , upvalues : _ENV
+function UtilDataServiceShare:GetEntityIDByPstID(checkPstID)
   local casterPetEntityID = -1
-  local petPstIDGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).PetPstID)
-  for _,e in ipairs(petPstIDGroup:GetEntities()) do
+  local petPstIDGroup = self._world:GetGroup(self._world.BW_WEMatchers.PetPstID)
+  for _, e in ipairs(petPstIDGroup:GetEntities()) do
     local petPstIDCmpt = e:PetPstID()
     local pstID = petPstIDCmpt:GetPstID()
     if pstID == checkPstID then
@@ -130,30 +90,21 @@ UtilDataServiceShare.GetEntityIDByPstID = function(self, checkPstID)
   return casterPetEntityID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetPlayerArea = function(self)
-  -- function num : 0_10
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilDataServiceShare:GetPlayerArea()
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   return boardServiceLogic:GetPlayerArea()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetGridTiles = function(self)
-  -- function num : 0_11
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilDataServiceShare:GetGridTiles()
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   return boardServiceLogic:GetGridTiles()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetEntityElementType = function(self, entity, checkFetters)
-  -- function num : 0_12 , upvalues : _ENV
+function UtilDataServiceShare:GetEntityElementType(entity, checkFetters)
   local elementCmpt = entity:Element()
   if elementCmpt == nil then
-    (Log.fatal)("GetEntityElementType failed,no element cmpt")
-    return 
+    Log.fatal("GetEntityElementType failed,no element cmpt")
+    return
   end
   local elementType = PieceType.None
   local useSecondary = elementCmpt:IsUseSecondaryType()
@@ -162,50 +113,36 @@ UtilDataServiceShare.GetEntityElementType = function(self, entity, checkFetters)
   else
     elementType = elementCmpt:GetPrimaryType()
   end
-  do
-    if checkFetters then
-      local fettersSvc = (self._world):GetService("Fetters")
-      if fettersSvc and fettersSvc:IsFettersActive(entity) then
-        elementType = fettersSvc:GetFettersPrimaryType(entity)
-      end
+  if checkFetters then
+    local fettersSvc = self._world:GetService("Fetters")
+    if fettersSvc and fettersSvc:IsFettersActive(entity) then
+      elementType = fettersSvc:GetFettersPrimaryType(entity)
     end
-    return elementType
   end
+  return elementType
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.FindEntityByPosAndType = function(self, pos, nEntityType, nTypeParam)
-  -- function num : 0_13
+function UtilDataServiceShare:FindEntityByPosAndType(pos, nEntityType, nTypeParam)
   local pieceBlockData = self:FindBlockByPos(pos)
-  if pieceBlockData == nil then
+  if nil == pieceBlockData then
     return {}
   end
   return pieceBlockData:FindEntity(self._world, nEntityType, nTypeParam)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.IsValidPiecePos = function(self, pos)
-  -- function num : 0_14
-  local eBoard = (self._world):GetBoardEntity()
+function UtilDataServiceShare:IsValidPiecePos(pos)
+  local eBoard = self._world:GetBoardEntity()
   local cBoard = eBoard:Board()
   return cBoard:GetPieceData(pos)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.FindBlockByPos = function(self, pos)
-  -- function num : 0_15
-  local eBoard = (self._world):GetBoardEntity()
+function UtilDataServiceShare:FindBlockByPos(pos)
+  local eBoard = self._world:GetBoardEntity()
   local cBoard = eBoard:Board()
   return cBoard:FindBlockByPos(pos)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.IsPosBlock = function(self, pos, blockFlag)
-  -- function num : 0_16
+function UtilDataServiceShare:IsPosBlock(pos, blockFlag)
   if not pos then
     return false
   end
@@ -216,16 +153,13 @@ UtilDataServiceShare.IsPosBlock = function(self, pos, blockFlag)
     return false
   end
   local pieceBlock = self:FindBlockByPos(pos)
-  if pieceBlock == nil then
+  if nil == pieceBlock then
     return true
   end
   return pieceBlock:CheckBlock(blockFlag)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.IsPosBlockLinkLineForChain = function(self, pos)
-  -- function num : 0_17 , upvalues : _ENV
+function UtilDataServiceShare:IsPosBlockLinkLineForChain(pos)
   if not pos then
     return false
   end
@@ -233,11 +167,11 @@ UtilDataServiceShare.IsPosBlockLinkLineForChain = function(self, pos)
     return true
   end
   local pieceBlock = self:FindBlockByPos(pos)
-  if pieceBlock == nil then
+  if nil == pieceBlock then
     return true
   end
-  local remoteTeamPos = nil
-  local remoteTeam = ((self._world):Player()):GetRemoteTeamEntity()
+  local remoteTeamPos
+  local remoteTeam = self._world:Player():GetRemoteTeamEntity()
   if remoteTeam then
     remoteTeamPos = remoteTeam:GetGridPosition()
   end
@@ -249,33 +183,26 @@ UtilDataServiceShare.IsPosBlockLinkLineForChain = function(self, pos)
       return false
     end
   end
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   local logicChainPathCmpt = teamEntity:LogicChainPath()
   local chainAcrossMonster = logicChainPathCmpt:GetChainAcrossMonster()
-  do
-    if chainAcrossMonster then
-      local isHaveMonster = self:IsPosListHaveMonster({pos})
-      if isHaveMonster then
-        return false
-      end
-    end
-    local chainAcrossMonsterIDList = logicChainPathCmpt:GetChainAcrossMonsterIDList()
-    do
-      if chainAcrossMonsterIDList and (table.count)(chainAcrossMonsterIDList) > 0 then
-        local monsterEntity = self:GetMonsterAtPos(pos)
-        if monsterEntity and (table.icontains)(chainAcrossMonsterIDList, monsterEntity:GetID()) then
-          return false
-        end
-      end
-      return isBlock
+  if chainAcrossMonster then
+    local isHaveMonster = self:IsPosListHaveMonster({pos})
+    if isHaveMonster then
+      return false
     end
   end
+  local chainAcrossMonsterIDList = logicChainPathCmpt:GetChainAcrossMonsterIDList()
+  if chainAcrossMonsterIDList and table.count(chainAcrossMonsterIDList) > 0 then
+    local monsterEntity = self:GetMonsterAtPos(pos)
+    if monsterEntity and table.icontains(chainAcrossMonsterIDList, monsterEntity:GetID()) then
+      return false
+    end
+  end
+  return isBlock
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.IsPosBlockForPreviewLinkLine = function(self, pos, canLinkMonster)
-  -- function num : 0_18 , upvalues : _ENV
+function UtilDataServiceShare:IsPosBlockForPreviewLinkLine(pos, canLinkMonster)
   if not pos then
     return false
   end
@@ -283,44 +210,36 @@ UtilDataServiceShare.IsPosBlockForPreviewLinkLine = function(self, pos, canLinkM
     return true
   end
   local pieceBlock = self:FindBlockByPos(pos)
-  if pieceBlock == nil then
+  if nil == pieceBlock then
     return true
   end
   local isBlock = pieceBlock:CheckBlock(BlockFlag.LinkLine)
   if isBlock == false then
     return false
   end
-  do
-    if canLinkMonster then
-      local isHaveMonster = self:GetMonsterAtPos(pos)
-      if isHaveMonster then
-        return false
-      end
+  if canLinkMonster then
+    local isHaveMonster = self:GetMonsterAtPos(pos)
+    if isHaveMonster then
+      return false
     end
-    return isBlock
   end
+  return isBlock
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.IsPosBlockLinkLineForChainChainEnd = function(self, pos)
-  -- function num : 0_19 , upvalues : _ENV
+function UtilDataServiceShare:IsPosBlockLinkLineForChainChainEnd(pos)
   local pieceBlock = self:FindBlockByPos(pos)
   local isBlock = pieceBlock:CheckBlock(BlockFlag.LinkLine)
   return isBlock
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.IsPosCanMapOtherPiece = function(self, pos, chainPieceType, previewPieceType)
-  -- function num : 0_20 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:IsPosCanMapOtherPiece(pos, chainPieceType, previewPieceType)
+  local boardEntity = self._world:GetBoardEntity()
   local boardComponent = boardEntity:Board()
   local mapByPieceType = boardComponent:GetMapByPieceType()
-  if not mapByPieceType or (table.count)(mapByPieceType) == 0 then
+  if not mapByPieceType or table.count(mapByPieceType) == 0 then
     return false
   end
-  for sourcePiece,targetPiece in pairs(mapByPieceType) do
+  for sourcePiece, targetPiece in pairs(mapByPieceType) do
     if previewPieceType == sourcePiece then
       if targetPiece == PieceType.Any then
         return true
@@ -331,30 +250,22 @@ UtilDataServiceShare.IsPosCanMapOtherPiece = function(self, pos, chainPieceType,
       break
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetMapForFirstChainPath = function(self)
-  -- function num : 0_21
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:GetMapForFirstChainPath()
+  local boardEntity = self._world:GetBoardEntity()
   local boardComponent = boardEntity:Board()
   local mapForFirstChainPath = boardComponent:GetMapForFirstChainPath()
   return mapForFirstChainPath
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.IsPosBlockWithEntityRace = function(self, pos, blockFlag, targetEntity)
-  -- function num : 0_22 , upvalues : _ENV
+function UtilDataServiceShare:IsPosBlockWithEntityRace(pos, blockFlag, targetEntity)
   if not self:IsValidPiecePos(pos) then
     return true
   end
   local listTrap = self:GetTrapsAtPos(pos)
-  for _,value in ipairs(listTrap) do
+  for _, value in ipairs(listTrap) do
     local entityTrap = value
     local trapCmp = entityTrap:Trap()
     local blockByRaceType = trapCmp:GetBlockByRaceType()
@@ -363,36 +274,22 @@ UtilDataServiceShare.IsPosBlockWithEntityRace = function(self, pos, blockFlag, t
       local curBlock = 0
       if targetEntity:HasTeam() then
         curRaceType = TrapRaceType.Team
-      else
-        if targetEntity:HasMonsterID() then
-          curRaceType = TrapRaceType.Monster
-        else
-          if targetEntity:HasChessPet() then
-            curRaceType = TrapRaceType.ChessPet
-          end
-        end
+      elseif targetEntity:HasMonsterID() then
+        curRaceType = TrapRaceType.Monster
+      elseif targetEntity:HasChessPet() then
+        curRaceType = TrapRaceType.ChessPet
       end
-      for _,blockRaceInfo in ipairs(blockByRaceType) do
+      for _, blockRaceInfo in ipairs(blockByRaceType) do
         if curRaceType == blockRaceInfo.RaceType then
           curBlock = blockRaceInfo.Block
           break
         end
       end
-      do
-        if curBlock > 0 then
-          local boardServiceL = (self._world):GetService("BoardLogic")
-          local curBlockFlag = boardServiceL:GetBlockFlagByBlockId(curBlock)
-          if blockFlag & curBlockFlag > 0 then
-            return true
-          end
-        end
-        do
-          -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out IF_STMT
-
+      if 0 < curBlock then
+        local boardServiceL = self._world:GetService("BoardLogic")
+        local curBlockFlag = boardServiceL:GetBlockFlagByBlockId(curBlock)
+        if 0 < blockFlag & curBlockFlag then
+          return true
         end
       end
     end
@@ -400,247 +297,167 @@ UtilDataServiceShare.IsPosBlockWithEntityRace = function(self, pos, blockFlag, t
   return false
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.FindPieceElement = function(self, pos)
-  -- function num : 0_23 , upvalues : _ENV
-  local board = ((self._world):GetBoardEntity()):Board()
-  if (board.Pieces)[pos.x] and ((board.Pieces)[pos.x])[pos.y] then
-    return ((board.Pieces)[pos.x])[pos.y]
+function UtilDataServiceShare:FindPieceElement(pos)
+  local board = self._world:GetBoardEntity():Board()
+  if board.Pieces[pos.x] and board.Pieces[pos.x][pos.y] then
+    return board.Pieces[pos.x][pos.y]
   else
     return PieceType.None
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetPieceType = function(self, pos)
-  -- function num : 0_24
-  local boardEntity = (self._world):GetBoardEntity()
-  return (boardEntity:Board()):GetPieceType(pos)
+function UtilDataServiceShare:GetPieceType(pos)
+  local boardEntity = self._world:GetBoardEntity()
+  return boardEntity:Board():GetPieceType(pos)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetPiecePosByType = function(self, pieceTypeList)
-  -- function num : 0_25
-  local boardEntity = (self._world):GetBoardEntity()
-  return (boardEntity:Board()):GetPiecePosByType(pieceTypeList)
+function UtilDataServiceShare:GetPiecePosByType(pieceTypeList)
+  local boardEntity = self._world:GetBoardEntity()
+  return boardEntity:Board():GetPiecePosByType(pieceTypeList)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.IsPosExistNegtiveBlock = function(self, pos)
-  -- function num : 0_26
+function UtilDataServiceShare:IsPosExistNegtiveBlock(pos)
   local block = self:FindBlockByPos(pos)
   return block:IsExistNegative()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.IgnoreElementMatchOnPos = function(self, pos)
-  -- function num : 0_27
+function UtilDataServiceShare:IgnoreElementMatchOnPos(pos)
   local isExit = self:IsPosExit(pos)
   return isExit
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.IsPosExit = function(self, pos)
-  -- function num : 0_28
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:IsPosExit(pos)
+  local boardEntity = self._world:GetBoardEntity()
   local cBoard = boardEntity:Board()
   return cBoard:IsPosExit(pos)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.IsPosDimensionDoor = function(self, pos)
-  -- function num : 0_29
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:IsPosDimensionDoor(pos)
+  local boardEntity = self._world:GetBoardEntity()
   local cBoard = boardEntity:Board()
   return cBoard:IsPosDimensionDoor(pos)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.HasDimensionDoor = function(self)
-  -- function num : 0_30
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:HasDimensionDoor()
+  local boardEntity = self._world:GetBoardEntity()
   local cBoard = boardEntity:Board()
   return cBoard:HasDimensionDoor()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.IsAdjacentPos = function(self, center, pos)
-  -- function num : 0_31 , upvalues : _ENV
-  if (math.abs)(center.x - pos.x) > 1 or (math.abs)(center.y - pos.y) > 1 or center == pos then
+function UtilDataServiceShare:IsAdjacentPos(center, pos)
+  if math.abs(center.x - pos.x) > 1 or 1 < math.abs(center.y - pos.y) or center == pos then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.IsPosListHaveMonster = function(self, posList)
-  -- function num : 0_32 , upvalues : _ENV
+function UtilDataServiceShare:IsPosListHaveMonster(posList)
   local monsterPosList = self:GetAllMonsterPos()
-  for k,v in pairs(posList) do
-    if (table.icontains)(monsterPosList, v) then
+  for k, v in pairs(posList) do
+    if table.icontains(monsterPosList, v) then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetAllMonsterPos = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function UtilDataServiceShare:GetAllMonsterPos()
   local monsterPosList = {}
-  if (self._world):GetRunningPosition() == WorldRunPostion.Performance then
+  if self._world:GetRunningPosition() == WorldRunPostion.Performance then
     return {}
   end
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,e in ipairs(monsterGroup:GetEntities()) do
-    local monsterGridPos = (e:GridLocation()).Position
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(monsterGroup:GetEntities()) do
+    local monsterGridPos = e:GridLocation().Position
     if not e:HasDeadMark() then
       if e:HasBodyArea() then
         local bodyAreaCmpt = e:BodyArea()
         local areaArray = bodyAreaCmpt:GetArea()
         for i = 1, #areaArray do
           local curAreaPos = areaArray[i]
-          ;
-          (table.insert)(monsterPosList, monsterGridPos + curAreaPos)
+          table.insert(monsterPosList, monsterGridPos + curAreaPos)
         end
       else
-        do
-          do
-            ;
-            (table.insert)(monsterPosList, monsterGridPos)
-            -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        table.insert(monsterPosList, monsterGridPos)
       end
     end
   end
   return monsterPosList
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetRoundGrid = function(self, grid, filter)
-  -- function num : 0_34
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilDataServiceShare:GetRoundGrid(grid, filter)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   return boardServiceLogic:GetRoundGrid(grid, filter)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.IsHaveEntity = function(self, pos, nEntityType, nTypeParam)
-  -- function num : 0_35 , upvalues : _ENV
+function UtilDataServiceShare:IsHaveEntity(pos, nEntityType, nTypeParam)
   local listFindEntity = self:FindEntityByPosAndType(pos, nEntityType, nTypeParam)
-  if listFindEntity and (table.count)(listFindEntity) > 0 then
+  if listFindEntity and table.count(listFindEntity) > 0 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetMonsterAtPos = function(self, pos)
-  -- function num : 0_36 , upvalues : _ENV
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
+function UtilDataServiceShare:GetMonsterAtPos(pos)
+  local boardCmpt = self._world:GetBoardEntity():Board()
   local es = boardCmpt:GetPieceEntities(pos, function(e)
-    -- function num : 0_36_0 , upvalues : self, _ENV
-    if (self._world):MatchType() == MatchType.MT_BlackFist then
+    if self._world:MatchType() == MatchType.MT_BlackFist then
       return e:HasTeam()
     else
       return e:HasMonsterID()
     end
-  end
-)
-  if #es > 0 then
+  end)
+  if 0 < #es then
     return es[1]
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetAllMonstersAtPos = function(self, pos)
-  -- function num : 0_37 , upvalues : _ENV
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
+function UtilDataServiceShare:GetAllMonstersAtPos(pos)
+  local boardCmpt = self._world:GetBoardEntity():Board()
   local es = boardCmpt:GetPieceEntities(pos, function(e)
-    -- function num : 0_37_0 , upvalues : self, _ENV
-    if (self._world):MatchType() == MatchType.MT_BlackFist then
+    if self._world:MatchType() == MatchType.MT_BlackFist then
       return e:HasTeam()
     else
       return e:HasMonsterID()
     end
-  end
-)
+  end)
   return es
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetBoardCenterPos = function(self)
-  -- function num : 0_38
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilDataServiceShare:GetBoardCenterPos()
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   return boardServiceLogic:GetBoardCenterPos()
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetAppearSkillId = function(self, e)
-  -- function num : 0_39
-  local configService = (self._world):GetService("Config")
+function UtilDataServiceShare:GetAppearSkillId(e)
+  local configService = self._world:GetService("Config")
   local monsterConfigData = configService:GetMonsterConfigData()
-  local monsterId = (e:MonsterID()):GetMonsterID()
+  local monsterId = e:MonsterID():GetMonsterID()
   local skillId = monsterConfigData:GetAppearSkillID(monsterId)
   return skillId
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetDropSkill = function(self, monsterEntity)
-  -- function num : 0_40
-  local monsterConfigData = (self._configService):GetMonsterConfigData()
-  local cMonsterID = (monsterEntity:MonsterID())
-  local skillId = nil
+function UtilDataServiceShare:GetDropSkill(monsterEntity)
+  local monsterConfigData = self._configService:GetMonsterConfigData()
+  local cMonsterID = monsterEntity:MonsterID()
+  local skillId
   if cMonsterID then
     skillId = monsterConfigData:GetDropSkillID(cMonsterID:GetMonsterID())
   end
   return skillId
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetMonsterBackSkill = function(self, monsterEntity)
-  -- function num : 0_41
-  local monsterConfigData = (self._configService):GetMonsterConfigData()
-  local cMonsterID = (monsterEntity:MonsterID())
-  local skillId = nil
+function UtilDataServiceShare:GetMonsterBackSkill(monsterEntity)
+  local monsterConfigData = self._configService:GetMonsterConfigData()
+  local cMonsterID = monsterEntity:MonsterID()
+  local skillId
   if cMonsterID then
     skillId = monsterConfigData:GetBackSkillID(cMonsterID:GetMonsterID())
   end
   return skillId
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetTrapPreviewSkillID = function(self, entityTrap)
-  -- function num : 0_42
+function UtilDataServiceShare:GetTrapPreviewSkillID(entityTrap)
   local skillID = 0
   local cAI = entityTrap:AI()
   if cAI then
@@ -649,15 +466,10 @@ UtilDataServiceShare.GetTrapPreviewSkillID = function(self, entityTrap)
     local cmptTrap = entityTrap:Trap()
     skillID = cmptTrap:GetTriggerSkillID()
   end
-  do
-    return skillID
-  end
+  return skillID
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetTrapFakeTriggerSkillID = function(self, trapEntity)
-  -- function num : 0_43
+function UtilDataServiceShare:GetTrapFakeTriggerSkillID(trapEntity)
   local skillID = 0
   local cTrap = trapEntity:Trap()
   if not cTrap then
@@ -666,10 +478,7 @@ UtilDataServiceShare.GetTrapFakeTriggerSkillID = function(self, trapEntity)
   return cTrap:GetFakeTriggerSkillID()
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetTrapTriggerSkillIDByTriggerEntity = function(self, trapEntity, triggerEntity)
-  -- function num : 0_44 , upvalues : _ENV
+function UtilDataServiceShare:GetTrapTriggerSkillIDByTriggerEntity(trapEntity, triggerEntity)
   local skillID = 0
   local cTrap = trapEntity:Trap()
   if not cTrap then
@@ -682,46 +491,38 @@ UtilDataServiceShare.GetTrapTriggerSkillIDByTriggerEntity = function(self, trapE
   end
   local triggerSkillByRaceType = cTrap:GetTriggerSkillByRaceType()
   if triggerEntity and triggerSkillByRaceType then
-    for _,triggerRaceInfo in ipairs(triggerSkillByRaceType) do
+    for _, triggerRaceInfo in ipairs(triggerSkillByRaceType) do
       if trapTargetSelector:CanSelectTargetByType(trapEntity, triggerEntity, triggerRaceInfo.RaceType) then
         skillID = triggerRaceInfo.SkillID
         return skillID
       end
     end
   end
-  do
-    skillID = cTrap:GetTriggerSkillID()
-    local isFakeSkill = false
-    if cTrap:GetFakeTriggerSkillID() then
-      isFakeSkill = true
-    end
-    return skillID, isFakeSkill
+  skillID = cTrap:GetTriggerSkillID()
+  local isFakeSkill = false
+  if cTrap:GetFakeTriggerSkillID() then
+    isFakeSkill = true
   end
+  return skillID, isFakeSkill
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetGroupTrap = function(self, eTrap)
-  -- function num : 0_45 , upvalues : _ENV
+function UtilDataServiceShare:GetGroupTrap(eTrap)
   local cTrap = eTrap:Trap()
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
   local traps = {}
   local triggerTargetTrapID = cTrap:GetGroupTriggerTrapID()
-  for _,trapEntity in ipairs(trapGroup:GetEntities()) do
+  for _, trapEntity in ipairs(trapGroup:GetEntities()) do
     local cTrapInGroup = trapEntity:Trap()
     if eTrap:GetID() ~= trapEntity:GetID() and cTrap:GetGroupID() ~= 0 and cTrapInGroup:GetGroupID() ~= 0 and cTrap:GetGroupID() == cTrapInGroup:GetGroupID() and (not triggerTargetTrapID or triggerTargetTrapID == cTrapInGroup:GetTrapID()) then
-      (table.insert)(traps, trapEntity)
+      table.insert(traps, trapEntity)
     end
   end
   return traps
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilDataServiceShare.GetProtectedTrap = function(self)
-  -- function num : 0_46 , upvalues : _ENV
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-  for _,trapEntity in ipairs(trapGroup:GetEntities()) do
+function UtilDataServiceShare:GetProtectedTrap()
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  for _, trapEntity in ipairs(trapGroup:GetEntities()) do
     local trapComponent = trapEntity:Trap()
     if trapComponent:GetTrapType() == TrapType.Protected then
       return trapEntity
@@ -730,105 +531,74 @@ UtilDataServiceShare.GetProtectedTrap = function(self)
   return nil
 end
 
-local Filter_GetTrapAndNoDeadMark = function(e)
-  -- function num : 0_47
-  if e:HasTrapID() then
-    return not e:HasDeadMark()
-  end
+local function Filter_GetTrapAndNoDeadMark(e)
+  return e:HasTrapID() and not e:HasDeadMark()
 end
 
--- DECOMPILER ERROR at PC150: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsHasTrapOnPos = function(self, pos, trapID)
-  -- function num : 0_48 , upvalues : Filter_GetTrapAndNoDeadMark, _ENV
-  local board = ((self._world):GetBoardEntity()):Board()
+function UtilDataServiceShare:IsHasTrapOnPos(pos, trapID)
+  local board = self._world:GetBoardEntity():Board()
   local entities = board:GetPieceEntities(pos, Filter_GetTrapAndNoDeadMark)
-  for i,entity in ipairs(entities) do
-    if entity:HasTrap() and (entity:Trap()):GetTrapID() == trapID then
+  for i, entity in ipairs(entities) do
+    if entity:HasTrap() and entity:Trap():GetTrapID() == trapID then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC153: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetTrapsAtPos = function(self, pos)
-  -- function num : 0_49 , upvalues : Filter_GetTrapAndNoDeadMark
-  local board = ((self._world):GetBoardEntity()):Board()
+function UtilDataServiceShare:GetTrapsAtPos(pos)
+  local board = self._world:GetBoardEntity():Board()
   local es = board:GetPieceEntities(pos, Filter_GetTrapAndNoDeadMark)
   return es
 end
 
--- DECOMPILER ERROR at PC156: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.FindTrapByTypeAndPos = function(self, nTrapType, pos)
-  -- function num : 0_50 , upvalues : _ENV
+function UtilDataServiceShare:FindTrapByTypeAndPos(nTrapType, pos)
   local listReturn = {}
   local listFindID = self:FindEntityByPosAndType(pos, EnumTargetEntity.Trap, nTrapType)
   for i = 1, #listFindID do
-    local trapEntity = (self._world):GetEntityByID(listFindID[i])
+    local trapEntity = self._world:GetEntityByID(listFindID[i])
     if not trapEntity:HasDeadMark() then
-      (table.insert)(listReturn, trapEntity)
+      table.insert(listReturn, trapEntity)
     end
   end
   return listReturn
 end
 
--- DECOMPILER ERROR at PC159: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsMaintainColorTrap = function(self, pos)
-  -- function num : 0_51
+function UtilDataServiceShare:IsMaintainColorTrap(pos)
   local listTrap = self:FindMaintainColorTrapByPos(pos)
-  do return #listTrap > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return 0 < #listTrap
 end
 
--- DECOMPILER ERROR at PC162: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.FindMaintainColorTrapByPos = function(self, pos)
-  -- function num : 0_52 , upvalues : _ENV
+function UtilDataServiceShare:FindMaintainColorTrapByPos(pos)
   local listReturn = {}
   local trapList = self:GetTrapsAtPos(pos)
-  for _,trapEntity in ipairs(trapList) do
+  for _, trapEntity in ipairs(trapList) do
     local trapComponent = trapEntity:Trap()
     if trapComponent:IsMaintainColorGrid() then
-      (table.insert)(listReturn, trapEntity)
+      table.insert(listReturn, trapEntity)
     end
   end
   return listReturn
 end
 
--- DECOMPILER ERROR at PC165: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsArchivedBattle = function(self)
-  -- function num : 0_53
-  local mazeService = (self._world):GetService("Maze")
+function UtilDataServiceShare:IsArchivedBattle()
+  local mazeService = self._world:GetService("Maze")
   return mazeService:IsArchivedBattle()
 end
 
--- DECOMPILER ERROR at PC168: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetArchivedBattle = function(self)
-  -- function num : 0_54
-  local mazeService = (self._world):GetService("Maze")
+function UtilDataServiceShare:GetArchivedBattle()
+  local mazeService = self._world:GetService("Maze")
   return mazeService:GetBattleArchive()
 end
 
--- DECOMPILER ERROR at PC171: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetLightCount = function(self)
-  -- function num : 0_55
-  local mazeService = (self._world):GetService("Maze")
+function UtilDataServiceShare:GetLightCount()
+  local mazeService = self._world:GetService("Maze")
   return mazeService:GetLightCount()
 end
 
--- DECOMPILER ERROR at PC174: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsGridElementMatch = function(self, checkPos, convertGridTypeArray)
-  -- function num : 0_56 , upvalues : _ENV
+function UtilDataServiceShare:IsGridElementMatch(checkPos, convertGridTypeArray)
   local checkPosType = self:FindPieceElement(checkPos)
-  for k,v in ipairs(convertGridTypeArray) do
+  for k, v in ipairs(convertGridTypeArray) do
     local curGridType = tonumber(v)
     if curGridType == checkPosType then
       return true
@@ -837,149 +607,101 @@ UtilDataServiceShare.IsGridElementMatch = function(self, checkPos, convertGridTy
   return false
 end
 
--- DECOMPILER ERROR at PC177: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetMonsterGridAreaList = function(self, monsterEntity)
-  -- function num : 0_57 , upvalues : _ENV
-  local bodyArea = (monsterEntity:BodyArea()):GetArea()
+function UtilDataServiceShare:GetMonsterGridAreaList(monsterEntity)
+  local bodyArea = monsterEntity:BodyArea():GetArea()
   local monsterRenderPos = monsterEntity:GetRenderGridPosition()
   local targetPos = monsterRenderPos
   local areaPosList = {}
   for i = 1, #bodyArea do
     local pos = targetPos + bodyArea[i]
-    ;
-    (table.insert)(areaPosList, pos)
+    table.insert(areaPosList, pos)
   end
   return areaPosList
 end
 
--- DECOMPILER ERROR at PC180: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetEntityElementPrimaryType = function(self, entity)
-  -- function num : 0_58
+function UtilDataServiceShare:GetEntityElementPrimaryType(entity)
   local elementCmpt = entity:Element()
   if elementCmpt then
     return elementCmpt:GetPrimaryType()
   end
 end
 
--- DECOMPILER ERROR at PC183: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetAIPreviewSkillID = function(self, aiEntity)
-  -- function num : 0_59
+function UtilDataServiceShare:GetAIPreviewSkillID(aiEntity)
   local aiCmpt = aiEntity:AI()
   return aiCmpt:GetPreviewSkillID()
 end
 
--- DECOMPILER ERROR at PC186: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetAIMobilityConfig = function(self, aiEntity)
-  -- function num : 0_60
+function UtilDataServiceShare:GetAIMobilityConfig(aiEntity)
   local aiCmpt = aiEntity:AI()
   return aiCmpt:GetMobilityConfig()
 end
 
--- DECOMPILER ERROR at PC189: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetAISkillScopeResult = function(self, aiEntity)
-  -- function num : 0_61
+function UtilDataServiceShare:GetAISkillScopeResult(aiEntity)
   local aiCmpt = aiEntity:AI()
   return aiCmpt:GetSkillScopeResult()
 end
 
--- DECOMPILER ERROR at PC192: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetBoardIsPosNil = function(self, pos)
-  -- function num : 0_62
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:GetBoardIsPosNil(pos)
+  local boardEntity = self._world:GetBoardEntity()
   local boardCmpt = boardEntity:Board()
   return boardCmpt:IsPosNil(pos)
 end
 
--- DECOMPILER ERROR at PC195: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetCloneBoardGridPos = function(self)
-  -- function num : 0_63
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:GetCloneBoardGridPos()
+  local boardEntity = self._world:GetBoardEntity()
   local boardCmpt = boardEntity:Board()
   return boardCmpt:CloneBoardPosList()
 end
 
--- DECOMPILER ERROR at PC198: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.Is2PosCanConnect = function(self, pos1, pos2, pieceType, chainPathIndex1, forMonster)
-  -- function num : 0_64 , upvalues : _ENV
+function UtilDataServiceShare:Is2PosCanConnect(pos1, pos2, pieceType, chainPathIndex1, forMonster)
   local bConnect = false
   local pieceType1 = 99
   local pieceType2 = 99
   local canLinkLine = false
   for i = -1, 1 do
     for j = -1, 1 do
-      if pos1.x + i == pos2.x and pos1.y + j == pos2.y and self:IsValidPiecePos(pos2) then
-        pieceType1 = (self._boardLogicSvc):GetPieceType(pos1)
-        do
+      if pos1.x + i == pos2.x and pos1.y + j == pos2.y then
+        if self:IsValidPiecePos(pos2) then
+          pieceType1 = self._boardLogicSvc:GetPieceType(pos1)
           if chainPathIndex1 and chainPathIndex1 == 2 then
             local mapForFirstChainPath = self:GetMapForFirstChainPath()
             if mapForFirstChainPath then
               pieceType1 = mapForFirstChainPath
             end
           end
-          pieceType2 = (self._boardLogicSvc):GetPieceType(pos2)
+          pieceType2 = self._boardLogicSvc:GetPieceType(pos2)
           canLinkLine = not self:IsPosBlockLinkLineForChain(pos2)
           local isPieceMatch = false
           if not forMonster then
             if self:IsNeedShowLinkageNumForCostStep() then
               isPieceMatch = true
             else
-              if CanMatchPieceType(pieceType, pieceType2) then
-                do
-                  isPieceMatch = CanMatchPieceType(pieceType1, pieceType2)
-                  if CanMatchPieceType(pieceType, pieceType2) then
-                    isPieceMatch = CanMatchPieceType(pieceType1, pieceType2)
-                  end
-                  if isPieceMatch and canLinkLine then
-                    bConnect = true
-                  end
-                  if bConnect == false then
-                    local gridPieceTypeMapList1 = (self._boardLogicSvc):GetPieceTypeMapList(pos1)
-                    local gridPieceTypeMapList2 = (self._boardLogicSvc):GetPieceTypeMapList(pos2)
-                    if (table.intable)(gridPieceTypeMapList1, PieceType.Any) or (table.intable)(gridPieceTypeMapList2, PieceType.Any) then
-                      bConnect = true
-                    end
-                    if (table.intable)(gridPieceTypeMapList1, pieceType2) or (table.intable)(gridPieceTypeMapList2, pieceType1) then
-                      bConnect = true
-                    end
-                    if pieceType1 ~= pieceType and self:IsPosCanMapOtherPiece(pos1, pieceType, pieceType1) then
-                      bConnect = true
-                    end
-                    if pieceType2 ~= pieceType and self:IsPosCanMapOtherPiece(pos2, pieceType, pieceType2) then
-                      bConnect = true
-                    end
-                  end
-                  do break end
-                  -- DECOMPILER ERROR at PC150: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC150: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC150: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC150: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC150: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC150: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC150: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC150: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC150: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
+              isPieceMatch = CanMatchPieceType(pieceType, pieceType2) and CanMatchPieceType(pieceType1, pieceType2)
+            end
+          else
+            isPieceMatch = CanMatchPieceType(pieceType, pieceType2) and CanMatchPieceType(pieceType1, pieceType2)
+          end
+          if isPieceMatch and canLinkLine then
+            bConnect = true
+          end
+          if bConnect == false then
+            local gridPieceTypeMapList1 = self._boardLogicSvc:GetPieceTypeMapList(pos1)
+            local gridPieceTypeMapList2 = self._boardLogicSvc:GetPieceTypeMapList(pos2)
+            if table.intable(gridPieceTypeMapList1, PieceType.Any) or table.intable(gridPieceTypeMapList2, PieceType.Any) then
+              bConnect = true
+            end
+            if table.intable(gridPieceTypeMapList1, pieceType2) or table.intable(gridPieceTypeMapList2, pieceType1) then
+              bConnect = true
+            end
+            if pieceType1 ~= pieceType and self:IsPosCanMapOtherPiece(pos1, pieceType, pieceType1) then
+              bConnect = true
+            end
+            if pieceType2 ~= pieceType and self:IsPosCanMapOtherPiece(pos2, pieceType, pieceType2) then
+              bConnect = true
             end
           end
         end
+        break
       end
     end
   end
@@ -987,10 +709,7 @@ UtilDataServiceShare.Is2PosCanConnect = function(self, pos1, pos2, pieceType, ch
   return bConnect, msg
 end
 
--- DECOMPILER ERROR at PC201: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.UpdateRenderHPLockInfoByLogic = function(self, defenderEntity)
-  -- function num : 0_65
+function UtilDataServiceShare:UpdateRenderHPLockInfoByLogic(defenderEntity)
   local buffComponent = defenderEntity:BuffComponent()
   local buffViewComponent = defenderEntity:BuffView()
   if buffComponent and buffViewComponent then
@@ -998,10 +717,7 @@ UtilDataServiceShare.UpdateRenderHPLockInfoByLogic = function(self, defenderEnti
   end
 end
 
--- DECOMPILER ERROR at PC204: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetAICanMove = function(self, aiEntity)
-  -- function num : 0_66
+function UtilDataServiceShare:GetAICanMove(aiEntity)
   local aiCmpt = aiEntity:AI()
   if aiCmpt == nil then
     return false
@@ -1009,53 +725,35 @@ UtilDataServiceShare.GetAICanMove = function(self, aiEntity)
   return aiCmpt:CanMove()
 end
 
--- DECOMPILER ERROR at PC207: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetStatCurWaveIndex = function(self)
-  -- function num : 0_67
-  local battleStatCmpt = (self._world):BattleStat()
+function UtilDataServiceShare:GetStatCurWaveIndex()
+  local battleStatCmpt = self._world:BattleStat()
   return battleStatCmpt:GetCurWaveIndex()
 end
 
--- DECOMPILER ERROR at PC210: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetStatCurWaveRoundNum = function(self)
-  -- function num : 0_68
-  local battleStatCmpt = (self._world):BattleStat()
+function UtilDataServiceShare:GetStatCurWaveRoundNum()
+  local battleStatCmpt = self._world:BattleStat()
   return battleStatCmpt:GetCurWaveRoundNum()
 end
 
--- DECOMPILER ERROR at PC213: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetStatCurWaveTotalRoundCount = function(self)
-  -- function num : 0_69
-  local battleStatCmpt = (self._world):BattleStat()
+function UtilDataServiceShare:GetStatCurWaveTotalRoundCount()
+  local battleStatCmpt = self._world:BattleStat()
   return battleStatCmpt:GetCurWaveTotalRoundCount()
 end
 
--- DECOMPILER ERROR at PC216: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetStatIsRoundAuroraTime = function(self)
-  -- function num : 0_70
-  local battleStatCmpt = (self._world):BattleStat()
+function UtilDataServiceShare:GetStatIsRoundAuroraTime()
+  local battleStatCmpt = self._world:BattleStat()
   return battleStatCmpt:IsRoundAuroraTime()
 end
 
--- DECOMPILER ERROR at PC219: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetStatIsReEnterAuroraTime = function(self)
-  -- function num : 0_71
-  local battleStatCmpt = (self._world):BattleStat()
+function UtilDataServiceShare:GetStatIsReEnterAuroraTime()
+  local battleStatCmpt = self._world:BattleStat()
   return battleStatCmpt:IsReEnterAuroraTime()
 end
 
--- DECOMPILER ERROR at PC222: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetStatBossWaveInfo = function(self)
-  -- function num : 0_72
-  local configService = (self._world):GetService("Config")
+function UtilDataServiceShare:GetStatBossWaveInfo()
+  local configService = self._world:GetService("Config")
   local levelConfigData = configService:GetLevelConfigData()
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local waveNum = battleStatCmpt:GetCurWaveIndex()
   local isBossWave = levelConfigData:GetIsBoss(waveNum)
   local bossIDs = {}
@@ -1065,19 +763,13 @@ UtilDataServiceShare.GetStatBossWaveInfo = function(self)
   return isBossWave, bossIDs
 end
 
--- DECOMPILER ERROR at PC225: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetStatAutoFight = function(self)
-  -- function num : 0_73
-  local battleStatCmpt = (self._world):BattleStat()
+function UtilDataServiceShare:GetStatAutoFight()
+  local battleStatCmpt = self._world:BattleStat()
   return battleStatCmpt:GetAutoFight()
 end
 
--- DECOMPILER ERROR at PC228: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetStatIsFirstWave = function(self)
-  -- function num : 0_74
-  local battleStatCmpt = (self._world):BattleStat()
+function UtilDataServiceShare:GetStatIsFirstWave()
+  local battleStatCmpt = self._world:BattleStat()
   local waveNum = battleStatCmpt:GetCurWaveIndex()
   if waveNum == 1 then
     return true
@@ -1085,61 +777,38 @@ UtilDataServiceShare.GetStatIsFirstWave = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC231: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetStatIsRealZeroRound = function(self)
-  -- function num : 0_75
-  local battleStatCmpt = (self._world):BattleStat()
+function UtilDataServiceShare:GetStatIsRealZeroRound()
+  local battleStatCmpt = self._world:BattleStat()
   return battleStatCmpt:IsRealZeroRound()
 end
 
--- DECOMPILER ERROR at PC234: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetStatIsZeroRound = function(self)
-  -- function num : 0_76
-  local battleStatCmpt = (self._world):BattleStat()
-  do return battleStatCmpt:GetCurWaveRound() == 0 and battleStatCmpt:GetCurWavePunishmentRoundCount() > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UtilDataServiceShare:GetStatIsZeroRound()
+  local battleStatCmpt = self._world:BattleStat()
+  return battleStatCmpt:GetCurWaveRound() == 0 and 0 < battleStatCmpt:GetCurWavePunishmentRoundCount()
 end
 
--- DECOMPILER ERROR at PC237: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetCurWavePunishmentRoundCount = function(self)
-  -- function num : 0_77
-  return ((self._world):BattleStat()):GetCurWavePunishmentRoundCount()
+function UtilDataServiceShare:GetCurWavePunishmentRoundCount()
+  return self._world:BattleStat():GetCurWavePunishmentRoundCount()
 end
 
--- DECOMPILER ERROR at PC240: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetStatLevelCompleteLimitAllRoundCount = function(self)
-  -- function num : 0_78
-  local battleStatCmpt = (self._world):BattleStat()
+function UtilDataServiceShare:GetStatLevelCompleteLimitAllRoundCount()
+  local battleStatCmpt = self._world:BattleStat()
   return battleStatCmpt:LevelCompleteLimitAllRoundCount()
 end
 
--- DECOMPILER ERROR at PC243: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetStatIsAssignWaveResult = function(self)
-  -- function num : 0_79
-  local battleStatCmpt = (self._world):BattleStat()
+function UtilDataServiceShare:GetStatIsAssignWaveResult()
+  local battleStatCmpt = self._world:BattleStat()
   return battleStatCmpt:AssignWaveResult()
 end
 
--- DECOMPILER ERROR at PC246: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.PosIsSingleMonster = function(self, pos)
-  -- function num : 0_80
+function UtilDataServiceShare:PosIsSingleMonster(pos)
   local e = self:GetMonsterAtPos(pos)
   local areaCmpt = e:BodyArea()
-  do return #areaCmpt:GetArea() == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return #areaCmpt:GetArea() == 1
 end
 
--- DECOMPILER ERROR at PC249: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsMonsterCanTel2TargetPos = function(self, monsterEntity, targetPos)
-  -- function num : 0_81 , upvalues : _ENV
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilDataServiceShare:IsMonsterCanTel2TargetPos(monsterEntity, targetPos)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local entity = monsterEntity
   if monsterEntity:HasSuperEntity() and monsterEntity:GetSuperEntity() then
     entity = monsterEntity:GetSuperEntity()
@@ -1147,92 +816,62 @@ UtilDataServiceShare.IsMonsterCanTel2TargetPos = function(self, monsterEntity, t
   if entity:HasTeam() or entity:HasPet() then
     return not boardServiceLogic:IsPosBlock(targetPos, BlockFlag.LinkLine)
   end
-  local monsterRaceType = ((entity:MonsterID()):GetMonsterRaceType())
-  local raceBlockFlag = nil
+  local monsterRaceType = entity:MonsterID():GetMonsterRaceType()
+  local raceBlockFlag
   local hitBackBlockFlag = BlockFlag.HitBack
   if monsterRaceType == MonsterRaceType.Land then
     raceBlockFlag = BlockFlag.MonsterLand
-  else
-    if monsterRaceType == MonsterRaceType.Fly then
-      raceBlockFlag = BlockFlag.MonsterFly
-      hitBackBlockFlag = BlockFlag.HitBackFly
-    end
+  elseif monsterRaceType == MonsterRaceType.Fly then
+    raceBlockFlag = BlockFlag.MonsterFly
+    hitBackBlockFlag = BlockFlag.HitBackFly
   end
-  do return (not boardServiceLogic:IsMonsterPosBlock(entity, targetPos, raceBlockFlag) and not boardServiceLogic:IsMonsterPosBlock(entity, targetPos, hitBackBlockFlag) and not self:IsPosBlockWithEntityRace(targetPos, hitBackBlockFlag, entity)) end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return not boardServiceLogic:IsMonsterPosBlock(entity, targetPos, raceBlockFlag) and not boardServiceLogic:IsMonsterPosBlock(entity, targetPos, hitBackBlockFlag) and not self:IsPosBlockWithEntityRace(targetPos, hitBackBlockFlag, entity)
 end
 
--- DECOMPILER ERROR at PC252: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsFinalAttack = function(self)
-  -- function num : 0_82
-  local battlesvc = (self._world):GetService("Battle")
+function UtilDataServiceShare:IsFinalAttack()
+  local battlesvc = self._world:GetService("Battle")
   return battlesvc:IsFinalAttack()
 end
 
--- DECOMPILER ERROR at PC255: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsTeamLeaderCanAttack = function(self, teamEntity, pieceType)
-  -- function num : 0_83
-  local affixService = (self._world):GetService("Affix")
+function UtilDataServiceShare:IsTeamLeaderCanAttack(teamEntity, pieceType)
+  local affixService = self._world:GetService("Affix")
   local canAttackByAffix = affixService:IsTeamLeaderCanAttack(teamEntity, pieceType)
-  local buffSvc = (self._world):GetService("BuffLogic")
+  local buffSvc = self._world:GetService("BuffLogic")
   local canAttackByBuff = buffSvc:IsTeamLeaderCanAttack(teamEntity, pieceType)
-  return not canAttackByAffix or canAttackByBuff
+  return canAttackByAffix and canAttackByBuff
 end
 
--- DECOMPILER ERROR at PC258: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetFirstWaveMonsterIDList = function(self)
-  -- function num : 0_84
-  return ((self._world):BattleStat()):GetFirstWaveMonsterIDList()
+function UtilDataServiceShare:GetFirstWaveMonsterIDList()
+  return self._world:BattleStat():GetFirstWaveMonsterIDList()
 end
 
--- DECOMPILER ERROR at PC261: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetFirstWaveTrapIDList = function(self)
-  -- function num : 0_85
-  return ((self._world):BattleStat()):GetFirstWaveTrapIDList()
+function UtilDataServiceShare:GetFirstWaveTrapIDList()
+  return self._world:BattleStat():GetFirstWaveTrapIDList()
 end
 
--- DECOMPILER ERROR at PC264: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsCloseAuroraTime = function(self)
-  -- function num : 0_86
-  local affixService = (self._world):GetService("Affix")
+function UtilDataServiceShare:IsCloseAuroraTime()
+  local affixService = self._world:GetService("Affix")
   return affixService:IsCloseAuroraTime()
 end
 
--- DECOMPILER ERROR at PC267: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsNoAuroraTimeLimit = function(self)
-  -- function num : 0_87
-  local affixService = (self._world):GetService("Affix")
+function UtilDataServiceShare:IsNoAuroraTimeLimit()
+  local affixService = self._world:GetService("Affix")
   return affixService:IsNoAuroraTimeLimit()
 end
 
--- DECOMPILER ERROR at PC270: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetWorldBossEntity = function(self)
-  -- function num : 0_88
-  local battleSvc = (self._world):GetService("Battle")
+function UtilDataServiceShare:GetWorldBossEntity()
+  local battleSvc = self._world:GetService("Battle")
   return battleSvc:GetWorldBossEntity()
 end
 
--- DECOMPILER ERROR at PC273: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetWorldBossEntityArray = function(self)
-  -- function num : 0_89
-  local battleSvc = (self._world):GetService("Battle")
+function UtilDataServiceShare:GetWorldBossEntityArray()
+  local battleSvc = self._world:GetService("Battle")
   return battleSvc:GetWorldBossEntityArray()
 end
 
--- DECOMPILER ERROR at PC276: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsFifthPetInTeamOrder = function(self, petPstID)
-  -- function num : 0_90
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-  local petPstIDArray = (teamEntity:Team()):GetTeamOrder()
+function UtilDataServiceShare:IsFifthPetInTeamOrder(petPstID)
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  local petPstIDArray = teamEntity:Team():GetTeamOrder()
   local lastPetPstID = petPstIDArray[5]
   if petPstID == lastPetPstID then
     return true
@@ -1240,12 +879,9 @@ UtilDataServiceShare.IsFifthPetInTeamOrder = function(self, petPstID)
   return false
 end
 
--- DECOMPILER ERROR at PC279: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsFourthPetInTeamOrder = function(self, petPstID)
-  -- function num : 0_91
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-  local petPstIDArray = (teamEntity:Team()):GetTeamOrder()
+function UtilDataServiceShare:IsFourthPetInTeamOrder(petPstID)
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  local petPstIDArray = teamEntity:Team():GetTeamOrder()
   local lastPetPstID = petPstIDArray[4]
   if petPstID == lastPetPstID then
     return true
@@ -1253,41 +889,31 @@ UtilDataServiceShare.IsFourthPetInTeamOrder = function(self, petPstID)
   return false
 end
 
--- DECOMPILER ERROR at PC282: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsFourthOrEightPetInTeamOrder = function(self, petPstID)
-  -- function num : 0_92
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-  local petPstIDArray = (teamEntity:Team()):GetTeamOrder()
+function UtilDataServiceShare:IsFourthOrEightPetInTeamOrder(petPstID)
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  local petPstIDArray = teamEntity:Team():GetTeamOrder()
   local lastPetPstID = petPstIDArray[4]
   if petPstID == lastPetPstID then
     return true
   end
-  if petPstID ~= petPstIDArray[8] then
-    do return #petPstIDArray ~= 8 end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if #petPstIDArray == 8 then
+    return petPstID == petPstIDArray[8]
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC285: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetLatestEffectParamArray = function(self, eid, skillId)
-  -- function num : 0_93
-  local svcCfgDeco = (self._world):GetService("ConfigDecoration")
+function UtilDataServiceShare:GetLatestEffectParamArray(eid, skillId)
+  local svcCfgDeco = self._world:GetService("ConfigDecoration")
   local skillEffectArray = svcCfgDeco:GetLatestEffectParamArray(eid, skillId)
   return skillEffectArray
 end
 
--- DECOMPILER ERROR at PC288: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsTrapPosCanMoveMonster = function(self, trapEntity, monsterEntity)
-  -- function num : 0_94 , upvalues : _ENV
+function UtilDataServiceShare:IsTrapPosCanMoveMonster(trapEntity, monsterEntity)
   local ownerPos = trapEntity:GetGridPosition()
   local areaCmpt = trapEntity:BodyArea()
   local areaList = areaCmpt:GetArea()
   local beValid = true
-  for i,area in ipairs(areaList) do
+  for i, area in ipairs(areaList) do
     local pos = Vector2(ownerPos.x + area.x, ownerPos.y + area.y)
     if not self:IsMonsterCanTel2TargetPos(monsterEntity, pos) then
       beValid = false
@@ -1296,23 +922,18 @@ UtilDataServiceShare.IsTrapPosCanMoveMonster = function(self, trapEntity, monste
   return beValid
 end
 
--- DECOMPILER ERROR at PC291: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetHPBarTypeByEntity = function(self, entity)
-  -- function num : 0_95 , upvalues : _ENV
+function UtilDataServiceShare:GetHPBarTypeByEntity(entity)
   if entity:HasMonsterID() then
     if entity:HasBoss() then
-      if (entity:MonsterID()):IsEliteMonster() then
+      if entity:MonsterID():IsEliteMonster() then
         return HPBarType.EliteBoss
       else
         return HPBarType.Boss
       end
+    elseif entity:MonsterID():IsEliteMonster() then
+      return HPBarType.EliteMonster
     else
-      if (entity:MonsterID()):IsEliteMonster() then
-        return HPBarType.EliteMonster
-      else
-        return HPBarType.NormalMonster
-      end
+      return HPBarType.NormalMonster
     end
   end
   if entity:HasTrapID() then
@@ -1320,65 +941,47 @@ UtilDataServiceShare.GetHPBarTypeByEntity = function(self, entity)
   end
 end
 
--- DECOMPILER ERROR at PC294: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsAIChangePreviewSkillID = function(self, aiEntity)
-  -- function num : 0_96
+function UtilDataServiceShare:IsAIChangePreviewSkillID(aiEntity)
   local aiCmpt = aiEntity:AI()
   return aiCmpt:IsReplacePreviewSkill()
 end
 
--- DECOMPILER ERROR at PC297: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.OnCheckPetForceChain = function(self, petEntity)
-  -- function num : 0_97
+function UtilDataServiceShare:OnCheckPetForceChain(petEntity)
   local buffComponent = petEntity:BuffComponent()
   local petForceChain = buffComponent:GetBuffValue("PetForceChain") or 0
-  do return petForceChain == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return petForceChain == 1
 end
 
--- DECOMPILER ERROR at PC300: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CreatePieceBlockBlackboard = function(self, tPawnEntityID)
-  -- function num : 0_98 , upvalues : _ENV
-  if not tPawnEntityID then
-    tPawnEntityID = {}
-  end
+function UtilDataServiceShare:CreatePieceBlockBlackboard(tPawnEntityID)
+  tPawnEntityID = tPawnEntityID or {}
   local isEntityPawn = {}
-  for _,id in ipairs(tPawnEntityID) do
+  for _, id in ipairs(tPawnEntityID) do
     isEntityPawn[id] = true
   end
-  local currentBlockFlags = (((self._world):GetBoardEntity()):Board()):GetBlockFlagArray()
+  local currentBlockFlags = self._world:GetBoardEntity():Board():GetBlockFlagArray()
   local blockDataByGridPos = {}
-  for x,ty in pairs(currentBlockFlags) do
+  for x, ty in pairs(currentBlockFlags) do
     if not blockDataByGridPos[x] then
       blockDataByGridPos[x] = {}
     end
-    for y,logicBlockData in pairs(ty) do
+    for y, logicBlockData in pairs(ty) do
       local blockData = PieceBlockData:New()
-      for eid,blockVal in pairs(logicBlockData.m_listBlock) do
+      for eid, blockVal in pairs(logicBlockData.m_listBlock) do
         if not isEntityPawn[eid] then
           blockData:AddBlock(eid, blockVal)
         else
           local pawnBlock = PieceBlockData:New()
-          local val = (((self._world):GetEntityByID(eid)):BlockFlag()):GetBlockFlag()
+          local val = self._world:GetEntityByID(eid):BlockFlag():GetBlockFlag()
           pawnBlock:AddBlock(eid, val)
         end
       end
-      -- DECOMPILER ERROR at PC66: Confused about usage of register: R16 in 'UnsetPending'
-
-      ;
-      (blockDataByGridPos[x])[y] = blockData
+      blockDataByGridPos[x][y] = blockData
     end
   end
   return blockDataByGridPos
 end
 
--- DECOMPILER ERROR at PC303: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.OnGetAITargetType = function(self, entity)
-  -- function num : 0_99 , upvalues : _ENV
+function UtilDataServiceShare:OnGetAITargetType(entity)
   local aiTargetType = AITargetType.Normal
   local aiCmpt = entity:AI()
   if aiCmpt then
@@ -1387,22 +990,15 @@ UtilDataServiceShare.OnGetAITargetType = function(self, entity)
   return aiTargetType
 end
 
--- DECOMPILER ERROR at PC306: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.EntityAITargetTypeIsNormal = function(self, entity)
-  -- function num : 0_100 , upvalues : _ENV
+function UtilDataServiceShare:EntityAITargetTypeIsNormal(entity)
   local aiTargetType = self:OnGetAITargetType(entity)
-  do return aiTargetType == AITargetType.Normal end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return aiTargetType == AITargetType.Normal
 end
 
--- DECOMPILER ERROR at PC309: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetEntityByPstID = function(self, checkPstID)
-  -- function num : 0_101 , upvalues : _ENV
-  local casterPetEntity = nil
-  local petPstIDGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).PetPstID)
-  for i,e in ipairs(petPstIDGroup:GetEntities()) do
+function UtilDataServiceShare:GetEntityByPstID(checkPstID)
+  local casterPetEntity
+  local petPstIDGroup = self._world:GetGroup(self._world.BW_WEMatchers.PetPstID)
+  for i, e in ipairs(petPstIDGroup:GetEntities()) do
     local petPstIDCmpt = e:PetPstID()
     local pstID = petPstIDCmpt:GetPstID()
     if pstID == checkPstID then
@@ -1412,154 +1008,148 @@ UtilDataServiceShare.GetEntityByPstID = function(self, checkPstID)
   return casterPetEntity
 end
 
--- DECOMPILER ERROR at PC312: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CheckActiveSkillCastCondition = function(self, petPstID, skillID)
-  -- function num : 0_102 , upvalues : _ENV
+function UtilDataServiceShare:CheckActiveSkillCastCondition(petPstID, skillID)
   local castPetEntity = self:GetEntityByPstID(petPstID)
-  -- DECOMPILER ERROR at PC99: Unhandled construct in 'MakeBoolean' P3
-
-  -- DECOMPILER ERROR at PC99: Unhandled construct in 'MakeBoolean' P3
-
-  -- DECOMPILER ERROR at PC99: Unhandled construct in 'MakeBoolean' P3
-
-  -- DECOMPILER ERROR at PC99: Unhandled construct in 'MakeBoolean' P3
-
-  if (((((not castPetEntity or not castPetEntity:HasSkillInfo() or castPetEntity) and not castPetEntity) or castPetEntity) and not castPetEntity) or castPetEntity) and castPetEntity:HasPetPstID() then
-    local log = {tostring(BattleConst.Kick), tostring(self:GetEntityByPstID(petPstID) ~= nil), tostring((castPetEntity:SkillInfo()):GetActiveSkillID()), tostring((castPetEntity:Attributes()):GetAttribute("Ready")), tostring((castPetEntity:Attributes()):GetAttribute("LegendPower")), tostring((castPetEntity:Attributes()):GetAttribute("Power")), tostring((castPetEntity:PetPstID()):GetPstID()), tostring((castPetEntity:PetPstID()):GetTemplateID()), tostring(petPstID), tostring(skillID)}
-    if not BattleConst.Kick then
-      return true, log
-    end
-    if not castPetEntity then
-      return false, log
-    end
-    local localSkillID = (castPetEntity:SkillInfo()):GetActiveSkillID()
-    local extraActiveSkillIDList = (castPetEntity:SkillInfo()):GetExtraActiveSkillIDList()
-    if extraActiveSkillIDList and (table.icontains)(extraActiveSkillIDList, skillID) then
-      localSkillID = skillID
-    else
-      local variantActiveSkillInfo = (castPetEntity:SkillInfo()):GetVariantActiveSkillInfo()
-      if variantActiveSkillInfo then
-        local variantList = variantActiveSkillInfo[localSkillID]
-        if variantList and (table.icontains)(variantList, skillID) then
-          localSkillID = skillID
-        end
-      end
-    end
-    local configService = (self._world):GetService("Config")
-    local skillConfigData = configService:GetSkillConfigData(localSkillID, castPetEntity)
-    local subSkillList = skillConfigData:GetSubSkillIDList()
-    local cfgExtraParam = skillConfigData:GetSkillTriggerExtraParam()
-    if cfgExtraParam then
-      if #subSkillList > 0 and (table.icontains)(subSkillList, skillID) then
-        localSkillID = skillID
-        skillConfigData = configService:GetSkillConfigData(localSkillID, castPetEntity)
-        local trapID = cfgExtraParam[SkillTriggerTypeExtraParam.TrapID]
-        if trapID then
-          local trapServiceLogic = (self._world):GetService("TrapLogic")
-          if trapServiceLogic:IsTrapCovered(trapID, petPstID) then
-            return false, log
-          end
-        end
-      end
-      local paramHPVal = cfgExtraParam[SkillTriggerTypeExtraParam.HPValPercent]
-      if paramHPVal then
-        local eTeam = (castPetEntity:Pet()):GetOwnerTeamEntity()
-        local maxHPPercent = paramHPVal[1]
-        local remainHPPercent = paramHPVal[2]
-        local casterCurrentHP = (eTeam:Attributes()):GetCurrentHP()
-        local casterMaxHP = (eTeam:Attributes()):CalcMaxHp()
-        local requiredMaxVal = (math.ceil)(casterMaxHP * maxHPPercent)
-        local remainHP = casterCurrentHP - requiredMaxVal
-        if remainHP <= 0 then
-          return false, log, BattleUIActiveSkillCannotCastReason.HPValPercent
-        end
-        local requiredRemainHP = (math.ceil)(remainHP * remainHPPercent)
-        if remainHP <= requiredRemainHP then
-          return false, log, BattleUIActiveSkillCannotCastReason.HPValPercent
-        end
-      end
-      local paramHPVal = cfgExtraParam[SkillTriggerTypeExtraParam.HPValPercent]
-      if paramHPVal then
-        local maxHPPercent = paramHPVal[1]
-        local remainHPPercent = paramHPVal[2]
-        local casterCurrentHP = (castPetEntity:Attributes()):GetCurrentHP()
-        local casterMaxHP = (castPetEntity:Attributes()):CalcMaxHp()
-        local requiredMaxVal = casterMaxHP * maxHPPercent
-        local remainHP = casterCurrentHP - requiredMaxVal
-        if remainHP <= 0 then
-          return false, log, BattleUIActiveSkillCannotCastReason.HPValPercent
-        end
-        local requiredRemainHP = remainHP * remainHPPercent
-        if remainHP <= requiredRemainHP then
-          return false, log, BattleUIActiveSkillCannotCastReason.HPValPercent
-        end
-      end
-      local param = cfgExtraParam[SkillTriggerTypeExtraParam.Pet1702361InTeam]
-      if param and not (castPetEntity:BuffComponent()):HasFlag(BuffFlags.Pet1702361NotLinkLine) then
-        return false, log, BattleUIActiveSkillCannotCastReason.Pet1702361InTeam
-      end
-    end
-    if localSkillID ~= skillID then
-      return false, log, BattleUIActiveSkillCannotCastReason.NotReady
-    end
-    local ready = self:GetPetSkillReadyAttr(castPetEntity, skillID)
-    local canOverdraw = castPetEntity:HasBuffFlag(BuffFlags.CanOverdraw)
-    if canOverdraw then
-      ready = 1
-    end
-    if ready == 0 then
-      return false, log, BattleUIActiveSkillCannotCastReason.NotReady
-    end
-    if skillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
-      local legendPower = (castPetEntity:Attributes()):GetAttribute("LegendPower")
-      local costLegendPower = skillConfigData:GetSkillTriggerParam()
-      costLegendPower = self:_GetLegendPowerConstByExtraParam(costLegendPower, skillConfigData, petPstID)
-      if legendPower < costLegendPower then
-        return false, log, BattleUIActiveSkillCannotCastReason.NotReady
-      end
-    elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.BuffLayer then
-      local extraParam = skillConfigData:GetSkillTriggerExtraParam()
-      local buffEffectType = extraParam.buffEffectType
-      local blsvc = (self._world):GetService("BuffLogic")
-      local currentVal = blsvc:GetBuffLayer(castPetEntity, buffEffectType)
-      local requiredVal = skillConfigData:GetSkillTriggerParam()
-      if currentVal < requiredVal then
-        return false, log, BattleUIActiveSkillCannotCastReason.NotReady
-      end
-    elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.AlchemyEnergy then
-      local alchemyPower = (castPetEntity:Attributes()):GetAttribute("AlchemyPower")
-      local costAlchemyPower = skillConfigData:GetSkillTriggerParam()
-      if alchemyPower < costAlchemyPower then
-        return false, log, BattleUIActiveSkillCannotCastReason.NotReady
-      end
-    elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.ColorPalette then
-      local colorPalette = castPetEntity:ColorPalette()
-      if colorPalette and not colorPalette:IsSatisfy() then
-        return false, log, BattleUIActiveSkillCannotCastReason.NotReady
-      end
-    else
-      local power = self:GetPetPowerAttr(castPetEntity, skillID)
-      if power ~= 0 and canOverdraw == false then
-        return false, log, BattleUIActiveSkillCannotCastReason.NotReady
-      end
-    end
-    do return true, log end
-    -- DECOMPILER ERROR: 25 unprocessed JMP targets
+  local log = {
+    tostring(BattleConst.Kick),
+    tostring(self:GetEntityByPstID(petPstID) ~= nil),
+    tostring(castPetEntity and castPetEntity:HasSkillInfo() and castPetEntity:SkillInfo():GetActiveSkillID()),
+    tostring(castPetEntity and castPetEntity:HasAttributes() and castPetEntity:Attributes():GetAttribute("Ready")),
+    tostring(castPetEntity and castPetEntity:HasAttributes() and castPetEntity:Attributes():GetAttribute("LegendPower")),
+    tostring(castPetEntity and castPetEntity:HasAttributes() and castPetEntity:Attributes():GetAttribute("Power")),
+    tostring(castPetEntity and castPetEntity:HasPetPstID() and castPetEntity:PetPstID():GetPstID()),
+    tostring(castPetEntity and castPetEntity:HasPetPstID() and castPetEntity:PetPstID():GetTemplateID()),
+    tostring(petPstID),
+    tostring(skillID)
+  }
+  if not BattleConst.Kick then
+    return true, log
   end
+  if not castPetEntity then
+    return false, log
+  end
+  local localSkillID = castPetEntity:SkillInfo():GetActiveSkillID()
+  local extraActiveSkillIDList = castPetEntity:SkillInfo():GetExtraActiveSkillIDList()
+  if extraActiveSkillIDList and table.icontains(extraActiveSkillIDList, skillID) then
+    localSkillID = skillID
+  else
+    local variantActiveSkillInfo = castPetEntity:SkillInfo():GetVariantActiveSkillInfo()
+    if variantActiveSkillInfo then
+      local variantList = variantActiveSkillInfo[localSkillID]
+      if variantList and table.icontains(variantList, skillID) then
+        localSkillID = skillID
+      end
+    end
+  end
+  local configService = self._world:GetService("Config")
+  local skillConfigData = configService:GetSkillConfigData(localSkillID, castPetEntity)
+  local subSkillList = skillConfigData:GetSubSkillIDList()
+  local cfgExtraParam = skillConfigData:GetSkillTriggerExtraParam()
+  if cfgExtraParam then
+    if 0 < #subSkillList and table.icontains(subSkillList, skillID) then
+      localSkillID = skillID
+      skillConfigData = configService:GetSkillConfigData(localSkillID, castPetEntity)
+      local trapID = cfgExtraParam[SkillTriggerTypeExtraParam.TrapID]
+      if trapID then
+        local trapServiceLogic = self._world:GetService("TrapLogic")
+        if trapServiceLogic:IsTrapCovered(trapID, petPstID) then
+          return false, log
+        end
+      end
+    end
+    local paramHPVal = cfgExtraParam[SkillTriggerTypeExtraParam.HPValPercent]
+    if paramHPVal then
+      local eTeam = castPetEntity:Pet():GetOwnerTeamEntity()
+      local maxHPPercent = paramHPVal[1]
+      local remainHPPercent = paramHPVal[2]
+      local casterCurrentHP = eTeam:Attributes():GetCurrentHP()
+      local casterMaxHP = eTeam:Attributes():CalcMaxHp()
+      local requiredMaxVal = math.ceil(casterMaxHP * maxHPPercent)
+      local remainHP = casterCurrentHP - requiredMaxVal
+      if remainHP <= 0 then
+        return false, log, BattleUIActiveSkillCannotCastReason.HPValPercent
+      end
+      local requiredRemainHP = math.ceil(remainHP * remainHPPercent)
+      if remainHP <= requiredRemainHP then
+        return false, log, BattleUIActiveSkillCannotCastReason.HPValPercent
+      end
+    end
+    local paramHPVal = cfgExtraParam[SkillTriggerTypeExtraParam.HPValPercent]
+    if paramHPVal then
+      local maxHPPercent = paramHPVal[1]
+      local remainHPPercent = paramHPVal[2]
+      local casterCurrentHP = castPetEntity:Attributes():GetCurrentHP()
+      local casterMaxHP = castPetEntity:Attributes():CalcMaxHp()
+      local requiredMaxVal = casterMaxHP * maxHPPercent
+      local remainHP = casterCurrentHP - requiredMaxVal
+      if remainHP <= 0 then
+        return false, log, BattleUIActiveSkillCannotCastReason.HPValPercent
+      end
+      local requiredRemainHP = remainHP * remainHPPercent
+      if remainHP <= requiredRemainHP then
+        return false, log, BattleUIActiveSkillCannotCastReason.HPValPercent
+      end
+    end
+    local param = cfgExtraParam[SkillTriggerTypeExtraParam.Pet1702361InTeam]
+    if param and not castPetEntity:BuffComponent():HasFlag(BuffFlags.Pet1702361NotLinkLine) then
+      return false, log, BattleUIActiveSkillCannotCastReason.Pet1702361InTeam
+    end
+  end
+  if localSkillID ~= skillID then
+    return false, log, BattleUIActiveSkillCannotCastReason.NotReady
+  end
+  local ready = self:GetPetSkillReadyAttr(castPetEntity, skillID)
+  local canOverdraw = castPetEntity:HasBuffFlag(BuffFlags.CanOverdraw)
+  if canOverdraw then
+    ready = 1
+  end
+  if ready == 0 then
+    return false, log, BattleUIActiveSkillCannotCastReason.NotReady
+  end
+  if skillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
+    local legendPower = castPetEntity:Attributes():GetAttribute("LegendPower")
+    local costLegendPower = skillConfigData:GetSkillTriggerParam()
+    costLegendPower = self:_GetLegendPowerConstByExtraParam(costLegendPower, skillConfigData, petPstID)
+    if legendPower < costLegendPower then
+      return false, log, BattleUIActiveSkillCannotCastReason.NotReady
+    end
+  elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.BuffLayer then
+    local extraParam = skillConfigData:GetSkillTriggerExtraParam()
+    local buffEffectType = extraParam.buffEffectType
+    local blsvc = self._world:GetService("BuffLogic")
+    local currentVal = blsvc:GetBuffLayer(castPetEntity, buffEffectType)
+    local requiredVal = skillConfigData:GetSkillTriggerParam()
+    if currentVal < requiredVal then
+      return false, log, BattleUIActiveSkillCannotCastReason.NotReady
+    end
+  elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.AlchemyEnergy then
+    local alchemyPower = castPetEntity:Attributes():GetAttribute("AlchemyPower")
+    local costAlchemyPower = skillConfigData:GetSkillTriggerParam()
+    if alchemyPower < costAlchemyPower then
+      return false, log, BattleUIActiveSkillCannotCastReason.NotReady
+    end
+  elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.ColorPalette then
+    local colorPalette = castPetEntity:ColorPalette()
+    if colorPalette and not colorPalette:IsSatisfy() then
+      return false, log, BattleUIActiveSkillCannotCastReason.NotReady
+    end
+  else
+    local power = self:GetPetPowerAttr(castPetEntity, skillID)
+    if power ~= 0 and canOverdraw == false then
+      return false, log, BattleUIActiveSkillCannotCastReason.NotReady
+    end
+  end
+  return true, log
 end
 
--- DECOMPILER ERROR at PC315: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsSkillDisabledWhenCasterIsTeamLeader = function(self, petPstID, skillID)
-  -- function num : 0_103 , upvalues : _ENV
+function UtilDataServiceShare:IsSkillDisabledWhenCasterIsTeamLeader(petPstID, skillID)
   local castPetEntity = self:GetEntityByPstID(petPstID)
   if not castPetEntity then
     return false
   end
-  local configDecoSvc = (self._world):GetService("ConfigDecoration")
+  local configDecoSvc = self._world:GetService("ConfigDecoration")
   local skillConfig = configDecoSvc:GetLatestEffectParamArray(castPetEntity:GetID(), skillID)
-  for index,config in ipairs(skillConfig) do
+  for index, config in ipairs(skillConfig) do
     if config:IsDisableTeamLeaderActiveSkill() then
       return true
     end
@@ -1567,460 +1157,341 @@ UtilDataServiceShare.IsSkillDisabledWhenCasterIsTeamLeader = function(self, petP
   return false
 end
 
--- DECOMPILER ERROR at PC318: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsPetCurrentTeamLeader = function(self, petPstID)
-  -- function num : 0_104
+function UtilDataServiceShare:IsPetCurrentTeamLeader(petPstID)
   local castPetEntity = self:GetEntityByPstID(petPstID)
   if not castPetEntity or not castPetEntity:HasPet() then
     return false
   end
-  local eTeam = (castPetEntity:Pet()):GetOwnerTeamEntity()
+  local eTeam = castPetEntity:Pet():GetOwnerTeamEntity()
   if not eTeam or not eTeam:HasTeam() then
     return false
   end
   local cTeam = eTeam:Team()
   local teamLeaderPstID = cTeam:GetTeamLeaderPetPstID()
-  do return petPstID == teamLeaderPstID end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return petPstID == teamLeaderPstID
 end
 
--- DECOMPILER ERROR at PC321: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CheckCanCastActiveSkillBySwapPetTeamOrder = function(self, petPstID, skillID)
-  -- function num : 0_105 , upvalues : _ENV
+function UtilDataServiceShare:CheckCanCastActiveSkillBySwapPetTeamOrder(petPstID, skillID)
   local castPetEntity = self:GetEntityByPstID(petPstID)
   if not castPetEntity then
     return false
   end
-  local configDecoSvc = (self._world):GetService("ConfigDecoration")
+  local configDecoSvc = self._world:GetService("ConfigDecoration")
   local skillConfig = configDecoSvc:GetLatestEffectParamArray(castPetEntity:GetID(), skillID)
-  for index,config in ipairs(skillConfig) do
+  for index, config in ipairs(skillConfig) do
     if config:GetEffectType() == SkillEffectType.SwapPetTeamOrder and config:GetTargetOrderType() == SwapPetTeamOrderType.CASTER_SELECT_TEAM_POS then
-      local validSelectPos, validSelectTarget = nil, nil
-      local cTeam = ((castPetEntity:Pet()):GetOwnerTeamEntity()):Team()
+      local validSelectPos, validSelectTarget
+      local cTeam = castPetEntity:Pet():GetOwnerTeamEntity():Team()
       local selected = cTeam:GetSelectedTeamOrderPosition()
-      local isSelfTeamLeader = (cTeam:GetTeamLeaderEntity()):GetID() == castPetEntity:GetID()
+      local isSelfTeamLeader = cTeam:GetTeamLeaderEntity():GetID() == castPetEntity:GetID()
       local GLOBALteamOrder = cTeam:GetTeamOrder()
-      validSelectPos = selected > 0 and selected <= #GLOBALteamOrder
+      validSelectPos = 0 < selected and selected <= #GLOBALteamOrder
       local pstID = GLOBALteamOrder[selected]
-      if pstID then
-        local selectedPetEntity = cTeam:GetPetEntityByPetPstID(pstID)
+      local selectedPetEntity = pstID and cTeam:GetPetEntityByPetPstID(pstID)
+      if selectedPetEntity and not selectedPetEntity:PetPstID():IsHelpPet() then
+        validSelectTarget = not isSelfTeamLeader or not selectedPetEntity:BuffComponent():HasFlag(BuffFlags.SealedCurse)
       end
-      if selectedPetEntity and not (selectedPetEntity:PetPstID()):IsHelpPet() and isSelfTeamLeader then
-        do
-          validSelectTarget = not (selectedPetEntity:BuffComponent()):HasFlag(BuffFlags.SealedCurse)
-          validSelectTarget = validSelectTarget
-          do return not validSelectPos or validSelectTarget end
-          -- DECOMPILER ERROR at PC90: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC90: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC90: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC90: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      return validSelectPos and validSelectTarget
     end
   end
-  do return true end
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
+  return true
 end
 
--- DECOMPILER ERROR at PC324: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsSilenceState = function(self, petPstID)
-  -- function num : 0_106 , upvalues : _ENV
+function UtilDataServiceShare:IsSilenceState(petPstID)
   local castPetEntity = self:GetEntityByPstID(petPstID)
   if not castPetEntity then
     return false
   end
-  local isSilence = (castPetEntity:BuffComponent()):HasFlag(BuffFlags.Silence)
+  local isSilence = castPetEntity:BuffComponent():HasFlag(BuffFlags.Silence)
   return isSilence
 end
 
--- DECOMPILER ERROR at PC327: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsPuzzleState = function(self)
-  -- function num : 0_107
-  local previewPuzzleSvc = (self._world):GetService("PreviewPuzzle")
+function UtilDataServiceShare:IsPuzzleState()
+  local previewPuzzleSvc = self._world:GetService("PreviewPuzzle")
   return previewPuzzleSvc:IsPuzzleState()
 end
 
--- DECOMPILER ERROR at PC330: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsBuffSetActiveSkillCanNotReady = function(self, petPstID)
-  -- function num : 0_108
+function UtilDataServiceShare:IsBuffSetActiveSkillCanNotReady(petPstID)
   local castPetEntity = self:GetEntityByPstID(petPstID)
   if not castPetEntity then
     return false
   end
-  local blsvc = (self._world):GetService("BuffLogic")
+  local blsvc = self._world:GetService("BuffLogic")
   local canNotReady, reason = blsvc:IsPetActiveSkillCanNotReadyByBuff(castPetEntity)
   return canNotReady, reason
 end
 
--- DECOMPILER ERROR at PC333: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsBuffSetExtraActiveSkillCanNotReady = function(self, petPstID, skillID)
-  -- function num : 0_109
+function UtilDataServiceShare:IsBuffSetExtraActiveSkillCanNotReady(petPstID, skillID)
   local castPetEntity = self:GetEntityByPstID(petPstID)
   if not castPetEntity then
     return false
   end
-  local blsvc = (self._world):GetService("BuffLogic")
+  local blsvc = self._world:GetService("BuffLogic")
   local canNotReady, reason = blsvc:IsPetExtraActiveSkillCanNotReadyByBuff(castPetEntity, skillID)
   return canNotReady, reason
 end
 
--- DECOMPILER ERROR at PC336: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsPosHasSpTrap = function(self, pos, trapType)
-  -- function num : 0_110 , upvalues : _ENV
+function UtilDataServiceShare:IsPosHasSpTrap(pos, trapType)
   local traps = self:GetTrapsAtPos(pos)
   if traps then
     local hasBadGrid = false
-    for index,e in ipairs(traps) do
-      if (e:Trap()):GetTrapType() == trapType then
+    for index, e in ipairs(traps) do
+      if e:Trap():GetTrapType() == trapType then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC339: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetCurBoardMaxX = function(self)
-  -- function num : 0_111
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilDataServiceShare:GetCurBoardMaxX()
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   return boardServiceLogic:GetCurBoardMaxX()
 end
 
--- DECOMPILER ERROR at PC342: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetCurBoardMaxY = function(self)
-  -- function num : 0_112
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilDataServiceShare:GetCurBoardMaxY()
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   return boardServiceLogic:GetCurBoardMaxY()
 end
 
--- DECOMPILER ERROR at PC345: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetCurBoardMaxLen = function(self)
-  -- function num : 0_113
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilDataServiceShare:GetCurBoardMaxLen()
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   return boardServiceLogic:GetCurBoardMaxLen()
 end
 
--- DECOMPILER ERROR at PC348: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetCurBoardGapTiles = function(self)
-  -- function num : 0_114
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilDataServiceShare:GetCurBoardGapTiles()
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   return boardServiceLogic:GetGapTiles()
 end
 
--- DECOMPILER ERROR at PC351: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetCurBoardCenterPos = function(self)
-  -- function num : 0_115
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilDataServiceShare:GetCurBoardCenterPos()
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   return boardServiceLogic:GetBoardCenterPos()
 end
 
--- DECOMPILER ERROR at PC354: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare._GetLegendPowerConstByExtraParam = function(self, defaultCost, skillConfigData, castSkillPetPstID)
-  -- function num : 0_116 , upvalues : _ENV
+function UtilDataServiceShare:_GetLegendPowerConstByExtraParam(defaultCost, skillConfigData, castSkillPetPstID)
   local cost = defaultCost
   local castPetEntity = self:GetEntityByPstID(castSkillPetPstID)
   if castPetEntity and skillConfigData then
     local cfgExtraParam = skillConfigData:GetSkillTriggerExtraParam()
     local pickCmpt = castPetEntity:ActiveSkillPickUpComponent()
-    if not pickCmpt then
-      pickCmpt = castPetEntity:PreviewPickUpComponent()
-    end
-    if cfgExtraParam and pickCmpt and cfgExtraParam[SkillTriggerTypeExtraParam.PickPosNoCfgTrap] and pickCmpt:HasPickExtraParam(SkillTriggerTypeExtraParam.PickPosNoCfgTrap) then
-      cost = cfgExtraParam[SkillTriggerTypeExtraParam.PickPosNoCfgTrap]
-    end
-  end
-  do
-    if cfgExtraParam[SkillTriggerTypeExtraParam.CostPickUpUIAndTrap] then
-      cost = self:GetCasterPickUpExtraChainPowerCount(castPetEntity, skillConfigData:GetID())
-    end
-    return cost
-  end
-end
-
--- DECOMPILER ERROR at PC357: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetFeatureUiInitData = function(self)
-  -- function num : 0_117 , upvalues : _ENV
-  local featureInitList = {}
-  local boardEntity = (self._world):GetBoardEntity()
-  local logicFeatureCmpt = boardEntity:LogicFeature()
-  if logicFeatureCmpt then
-    local typeList = logicFeatureCmpt:GetFeatureTypeList()
-    for i,featureType in ipairs(typeList) do
-      local featureData = logicFeatureCmpt:GetFeatureData(featureType)
-      if featureData then
-        (table.insert)(featureInitList, featureData)
+    pickCmpt = pickCmpt or castPetEntity:PreviewPickUpComponent()
+    if cfgExtraParam and pickCmpt then
+      if cfgExtraParam[SkillTriggerTypeExtraParam.PickPosNoCfgTrap] then
+        if pickCmpt:HasPickExtraParam(SkillTriggerTypeExtraParam.PickPosNoCfgTrap) then
+          cost = cfgExtraParam[SkillTriggerTypeExtraParam.PickPosNoCfgTrap]
+        end
+      elseif cfgExtraParam[SkillTriggerTypeExtraParam.CostPickUpUIAndTrap] then
+        cost = self:GetCasterPickUpExtraChainPowerCount(castPetEntity, skillConfigData:GetID())
       end
     end
   end
-  do
-    return featureInitList
-  end
+  return cost
 end
 
--- DECOMPILER ERROR at PC360: Confused about usage of register: R1 in 'UnsetPending'
+function UtilDataServiceShare:GetFeatureUiInitData()
+  local featureInitList = {}
+  local boardEntity = self._world:GetBoardEntity()
+  local logicFeatureCmpt = boardEntity:LogicFeature()
+  if logicFeatureCmpt then
+    local typeList = logicFeatureCmpt:GetFeatureTypeList()
+    for i, featureType in ipairs(typeList) do
+      local featureData = logicFeatureCmpt:GetFeatureData(featureType)
+      if featureData then
+        table.insert(featureInitList, featureData)
+      end
+    end
+  end
+  return featureInitList
+end
 
-UtilDataServiceShare.IsUseCurHPInitRedHP = function(self, entity)
-  -- function num : 0_118
-  local useCur = (entity:Attributes()):GetAttribute("InitRedHPUseCurHP")
+function UtilDataServiceShare:IsUseCurHPInitRedHP(entity)
+  local useCur = entity:Attributes():GetAttribute("InitRedHPUseCurHP")
   if useCur then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC363: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetCurrentLogicHP = function(self, entity)
-  -- function num : 0_119 , upvalues : _ENV
+function UtilDataServiceShare:GetCurrentLogicHP(entity)
   local v = 0
   if entity:HasPet() then
-    local matchType = (self._world):MatchType()
-    if matchType ~= MatchType.MT_Maze and (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze then
-      v = (((entity:Pet()):GetOwnerTeamEntity()):Attributes()):GetCurrentHP()
+    local matchType = self._world:MatchType()
+    if matchType ~= MatchType.MT_Maze and self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze then
+      v = entity:Pet():GetOwnerTeamEntity():Attributes():GetCurrentHP()
     else
-      v = (entity:Attributes()):GetCurrentHP()
+      v = entity:Attributes():GetCurrentHP()
     end
   else
-    do
-      v = (entity:Attributes()):GetCurrentHP()
-      return v
-    end
+    v = entity:Attributes():GetCurrentHP()
   end
+  return v
 end
 
--- DECOMPILER ERROR at PC366: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetCurrentLogicMaxHP = function(self, entity)
-  -- function num : 0_120 , upvalues : _ENV
+function UtilDataServiceShare:GetCurrentLogicMaxHP(entity)
   local v = 0
   if entity:HasPet() then
-    local matchType = (self._world):MatchType()
-    if matchType ~= MatchType.MT_Maze and (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze then
-      v = (((entity:Pet()):GetOwnerTeamEntity()):Attributes()):CalcMaxHp()
+    local matchType = self._world:MatchType()
+    if matchType ~= MatchType.MT_Maze and self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze then
+      v = entity:Pet():GetOwnerTeamEntity():Attributes():CalcMaxHp()
     else
-      v = (entity:Attributes()):CalcMaxHp()
+      v = entity:Attributes():CalcMaxHp()
     end
   else
-    do
-      v = (entity:Attributes()):CalcMaxHp()
-      return v
-    end
+    v = entity:Attributes():CalcMaxHp()
   end
+  return v
 end
 
--- DECOMPILER ERROR at PC369: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.OnCalcTargetPosMonsterBuffEffectMatch = function(self, targetPos, buffEffect, casterEntity)
-  -- function num : 0_121 , upvalues : _ENV
-  local targetMonster = nil
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
+function UtilDataServiceShare:OnCalcTargetPosMonsterBuffEffectMatch(targetPos, buffEffect, casterEntity)
+  local targetMonster
+  if self._world:MatchType() == MatchType.MT_BlackFist then
     if casterEntity:HasSuperEntity() then
-      casterEntity = (casterEntity:SuperEntityComponent()):GetSuperEntity()
+      casterEntity = casterEntity:SuperEntityComponent():GetSuperEntity()
     end
-    local teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-    local enemyEntity = (teamEntity:Team()):GetEnemyTeamEntity()
+    local teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
+    local enemyEntity = teamEntity:Team():GetEnemyTeamEntity()
     local enemyPos = enemyEntity:GetGridPosition()
     if targetPos == enemyPos then
       targetMonster = enemyEntity
     end
   else
-    do
-      local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-      for _,e in ipairs(monsterGroup:GetEntities()) do
-        if not e:HasDeadMark() then
-          local pos = e:GetGridPosition()
-          local bodyArea = e:BodyArea()
-          local bodyAreaList = bodyArea:GetArea()
-          for _,area in ipairs(bodyAreaList) do
-            if area.x + pos.x == targetPos.x and area.y + pos.y == targetPos.y then
-              targetMonster = e
-              break
-            end
+    local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+    for _, e in ipairs(monsterGroup:GetEntities()) do
+      if not e:HasDeadMark() then
+        local pos = e:GetGridPosition()
+        local bodyArea = e:BodyArea()
+        local bodyAreaList = bodyArea:GetArea()
+        for _, area in ipairs(bodyAreaList) do
+          if area.x + pos.x == targetPos.x and area.y + pos.y == targetPos.y then
+            targetMonster = e
+            break
           end
         end
       end
-      do
-        if targetMonster or not targetMonster then
-          return false
-        end
-        local buffCmp = targetMonster:BuffComponent()
-        if not buffCmp then
-          return false
-        end
-        if buffCmp:HasBuffEffect(buffEffect) then
-          return true
-        end
-        return false
+      if targetMonster then
+        break
       end
     end
   end
+  if not targetMonster then
+    return false
+  end
+  local buffCmp = targetMonster:BuffComponent()
+  if not buffCmp then
+    return false
+  end
+  if buffCmp:HasBuffEffect(buffEffect) then
+    return true
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC372: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsPosHasTrapByTrapID = function(self, pos, trapID)
-  -- function num : 0_122 , upvalues : _ENV
+function UtilDataServiceShare:IsPosHasTrapByTrapID(pos, trapID)
   local traps = self:GetTrapsAtPos(pos)
   if traps then
-    for _,trap in ipairs(traps) do
-      if (trap:TrapID()):GetTrapID() == trapID then
+    for _, trap in ipairs(traps) do
+      if trap:TrapID():GetTrapID() == trapID then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC375: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetTrapAtPosByTrapID = function(self, pos, trapID)
-  -- function num : 0_123 , upvalues : _ENV
+function UtilDataServiceShare:GetTrapAtPosByTrapID(pos, trapID)
   local traps = self:GetTrapsAtPos(pos)
   if traps then
-    for _,trap in ipairs(traps) do
-      if (trap:TrapID()):GetTrapID() == trapID then
+    for _, trap in ipairs(traps) do
+      if trap:TrapID():GetTrapID() == trapID then
         return trap:GetID()
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC378: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetAllTrapEntitiesAtPosByTrapID = function(self, pos, trapID)
-  -- function num : 0_124 , upvalues : _ENV
+function UtilDataServiceShare:GetAllTrapEntitiesAtPosByTrapID(pos, trapID)
   local t = {}
   local traps = self:GetTrapsAtPos(pos)
   if traps then
-    for _,trap in ipairs(traps) do
-      if (trap:TrapID()):GetTrapID() == trapID then
-        (table.insert)(t, trap)
+    for _, trap in ipairs(traps) do
+      if trap:TrapID():GetTrapID() == trapID then
+        table.insert(t, trap)
       end
     end
   end
-  do
-    return t
-  end
+  return t
 end
 
--- DECOMPILER ERROR at PC381: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetTrapByID = function(self, trapID)
-  -- function num : 0_125 , upvalues : _ENV
+function UtilDataServiceShare:GetTrapByID(trapID)
   local idList = {}
   if type(trapID) == "number" then
     idList[#idList + 1] = trapID
-  else
-    if type(trapID) == "table" then
-      idList = trapID
-    end
+  elseif type(trapID) == "table" then
+    idList = trapID
   end
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
   local entityList = {}
-  for _,trapEntity in ipairs(trapGroup:GetEntities()) do
+  for _, trapEntity in ipairs(trapGroup:GetEntities()) do
     local trapComponent = trapEntity:Trap()
     local tID = trapComponent:GetTrapID()
-    if (table.icontains)(idList, tID) then
-      (table.insert)(entityList, trapEntity)
+    if table.icontains(idList, tID) then
+      table.insert(entityList, trapEntity)
     end
   end
   return entityList
 end
 
--- DECOMPILER ERROR at PC384: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetReplicaBoardMultiGridEntityData = function(self)
-  -- function num : 0_126 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:GetReplicaBoardMultiGridEntityData()
+  local boardEntity = self._world:GetBoardEntity()
   local boardMultiComponent = boardEntity:BoardMulti()
   local gridEntityData = boardMultiComponent:GetGridEntityData()
   if not gridEntityData then
-    return 
+    return
   end
   local replica = {}
-  for k,v in pairs(gridEntityData) do
+  for k, v in pairs(gridEntityData) do
     replica[k] = v
   end
   return replica
 end
 
--- DECOMPILER ERROR at PC387: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetMultiBoardInfo = function(self, boardIndex)
-  -- function num : 0_127
-  local configService = (self._world):GetService("Config")
+function UtilDataServiceShare:GetMultiBoardInfo(boardIndex)
+  local configService = self._world:GetService("Config")
   local levelConfigData = configService:GetLevelConfigData()
   return levelConfigData:GetMultiBoardInfo(boardIndex)
 end
 
--- DECOMPILER ERROR at PC390: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsValidPiecePosMultiBoard = function(self, boardIndex, pos)
-  -- function num : 0_128
-  local eBoard = (self._world):GetBoardEntity()
+function UtilDataServiceShare:IsValidPiecePosMultiBoard(boardIndex, pos)
+  local eBoard = self._world:GetBoardEntity()
   local cBoard = eBoard:BoardMulti()
   return cBoard:GetPieceData(pos, boardIndex)
 end
 
--- DECOMPILER ERROR at PC393: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetCloneMultiBoardGridPos = function(self)
-  -- function num : 0_129
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:GetCloneMultiBoardGridPos()
+  local boardEntity = self._world:GetBoardEntity()
   local boardCmpt = boardEntity:BoardMulti()
   return boardCmpt:CloneBoardPosList()
 end
 
--- DECOMPILER ERROR at PC396: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetExtraBoardPosList = function(self)
-  -- function num : 0_130 , upvalues : _ENV
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilDataServiceShare:GetExtraBoardPosList()
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local posList = {}
   local extraBoard = boardServiceLogic:GetExtraBoardPosList()
-  for i = 1, (table.count)(extraBoard) do
-    local posWork = Vector2((extraBoard[i])[1], (extraBoard[i])[2])
-    ;
-    (table.insert)(posList, posWork)
+  for i = 1, table.count(extraBoard) do
+    local posWork = Vector2(extraBoard[i][1], extraBoard[i][2])
+    table.insert(posList, posWork)
   end
   return posList
 end
 
--- DECOMPILER ERROR at PC399: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsExtraBoardPos = function(self, pos)
-  -- function num : 0_131 , upvalues : _ENV
+function UtilDataServiceShare:IsExtraBoardPos(pos)
   local posList = self:GetExtraBoardPosList()
-  return (table.intable)(posList, pos)
+  return table.intable(posList, pos)
 end
 
--- DECOMPILER ERROR at PC402: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetSkillEffectTargetSelectionMode = function(self, skillID, skillEffectParam)
-  -- function num : 0_132
-  local skillConfigData = (self._configService):GetSkillConfigData(skillID)
+function UtilDataServiceShare:GetSkillEffectTargetSelectionMode(skillID, skillEffectParam)
+  local skillConfigData = self._configService:GetSkillConfigData(skillID)
   local scopeFilterParam = skillConfigData:GetScopeFilterParam()
   local skillEffectType = skillEffectParam:GetEffectType()
   local effectScopeFilterParam = skillEffectParam:GetScopeFilterParam()
@@ -2028,82 +1499,61 @@ UtilDataServiceShare.GetSkillEffectTargetSelectionMode = function(self, skillID,
   return finalScopeFilterParam:GetTargetSelectionMode()
 end
 
--- DECOMPILER ERROR at PC405: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsBadGridPos = function(self, pos)
-  -- function num : 0_133 , upvalues : _ENV
+function UtilDataServiceShare:IsBadGridPos(pos)
   local hasBadGrid = false
   local traps = self:GetTrapsAtPos(pos)
   if traps then
-    for index,e in ipairs(traps) do
-      if (e:Trap()):GetTrapType() == TrapType.BadGrid then
+    for index, e in ipairs(traps) do
+      if e:Trap():GetTrapType() == TrapType.BadGrid then
         hasBadGrid = true
         break
       end
     end
   end
-  do
-    return hasBadGrid
-  end
+  return hasBadGrid
 end
 
--- DECOMPILER ERROR at PC408: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsAIAttachState = function(self, entity, round, waveIndex)
-  -- function num : 0_134
+function UtilDataServiceShare:IsAIAttachState(entity, round, waveIndex)
   if not entity then
     return false
   end
   if not entity:HasAI() then
     return false
   end
-  return (entity:AI()):IsAttachState(round, waveIndex)
+  return entity:AI():IsAttachState(round, waveIndex)
 end
 
--- DECOMPILER ERROR at PC411: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsPetCastActiveSkill = function(self, teamEntity)
-  -- function num : 0_135 , upvalues : _ENV
+function UtilDataServiceShare:IsPetCastActiveSkill(teamEntity)
   local activeSkillCmpt = teamEntity:ActiveSkill()
   local activeSkillID = activeSkillCmpt:GetActiveSkillID()
   local activeSkillData = BattleSkillCfg(activeSkillID)
   local isPetActiveSkill = activeSkillData.Type == SkillType.Active
-  do return isPetActiveSkill end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return isPetActiveSkill
 end
 
--- DECOMPILER ERROR at PC414: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetEntityAttributeByName = function(self, entity, attributeName)
-  -- function num : 0_136 , upvalues : _ENV
+function UtilDataServiceShare:GetEntityAttributeByName(entity, attributeName)
   local attributeCmpt = entity:Attributes()
   if not attributeCmpt then
-    (Log.fatal)("can not find attr cmpt ")
+    Log.fatal("can not find attr cmpt ")
     return nil
   end
   local attributeVal = attributeCmpt:GetAttribute(attributeName)
   return attributeVal
 end
 
--- DECOMPILER ERROR at PC417: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetEntityAttack = function(self, entity)
-  -- function num : 0_137 , upvalues : _ENV
+function UtilDataServiceShare:GetEntityAttack(entity)
   local attributeCmpt = entity:Attributes()
   if not attributeCmpt then
-    (Log.fatal)("can not find attr cmpt ")
+    Log.fatal("can not find attr cmpt ")
     return nil
   end
   return attributeCmpt:GetAttack()
 end
 
--- DECOMPILER ERROR at PC420: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetEntityBuffValue = function(self, entity, key)
-  -- function num : 0_138 , upvalues : _ENV
+function UtilDataServiceShare:GetEntityBuffValue(entity, key)
   local buffCmpt = entity:BuffComponent()
   if not buffCmpt then
-    (Log.fatal)("entity not have buff cmpt")
+    Log.fatal("entity not have buff cmpt")
     return nil
   end
   local buffValue = buffCmpt:GetBuffValue(key)
@@ -2113,10 +1563,7 @@ UtilDataServiceShare.GetEntityBuffValue = function(self, entity, key)
   return buffValue
 end
 
--- DECOMPILER ERROR at PC423: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.OnCheckEntityHasBuffFlag = function(self, entity, BuffFlag)
-  -- function num : 0_139
+function UtilDataServiceShare:OnCheckEntityHasBuffFlag(entity, BuffFlag)
   local buffCmpt = entity:BuffComponent()
   if not buffCmpt then
     return nil
@@ -2128,10 +1575,7 @@ UtilDataServiceShare.OnCheckEntityHasBuffFlag = function(self, entity, BuffFlag)
   return false
 end
 
--- DECOMPILER ERROR at PC426: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetEntityAIRuntimeData = function(self, entity, key)
-  -- function num : 0_140
+function UtilDataServiceShare:GetEntityAIRuntimeData(entity, key)
   local aiCmpt = entity:AI()
   if not aiCmpt then
     return nil
@@ -2140,10 +1584,7 @@ UtilDataServiceShare.GetEntityAIRuntimeData = function(self, entity, key)
   return runTimeData
 end
 
--- DECOMPILER ERROR at PC429: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetTrapCurseTowerState = function(self, entity)
-  -- function num : 0_141
+function UtilDataServiceShare:GetTrapCurseTowerState(entity)
   local curseTowerCmpt = entity:CurseTower()
   if curseTowerCmpt == nil then
     return nil
@@ -2152,73 +1593,51 @@ UtilDataServiceShare.GetTrapCurseTowerState = function(self, entity)
   return state
 end
 
--- DECOMPILER ERROR at PC432: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetPieceType = function(self, pos)
-  -- function num : 0_142
-  local eBoard = (self._world):GetBoardEntity()
+function UtilDataServiceShare:GetPieceType(pos)
+  local eBoard = self._world:GetBoardEntity()
   local cBoard = eBoard:Board()
   return cBoard:GetPieceData(pos)
 end
 
--- DECOMPILER ERROR at PC435: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetBuffLayer = function(self, entity, buffEffectType)
-  -- function num : 0_143
-  local buffLogicService = (self._world):GetService("BuffLogic")
+function UtilDataServiceShare:GetBuffLayer(entity, buffEffectType)
+  local buffLogicService = self._world:GetService("BuffLogic")
   local buffLayer = buffLogicService:GetBuffLayer(entity, buffEffectType)
   return buffLayer
 end
 
--- DECOMPILER ERROR at PC438: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.HasBuffEffect = function(self, entity, buffEffectType)
-  -- function num : 0_144
+function UtilDataServiceShare:HasBuffEffect(entity, buffEffectType)
   local buffCmp = entity:BuffComponent()
-  if buffCmp then
-    return buffCmp:HasBuffEffect(buffEffectType)
-  end
+  return buffCmp and buffCmp:HasBuffEffect(buffEffectType)
 end
 
--- DECOMPILER ERROR at PC441: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsEntityLogicDead = function(self, entity)
-  -- function num : 0_145
+function UtilDataServiceShare:IsEntityLogicDead(entity)
   return entity:HasDeadMark()
 end
 
--- DECOMPILER ERROR at PC444: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsPetExtraActiveSkill = function(self, petEntity, skillID)
-  -- function num : 0_146 , upvalues : _ENV
+function UtilDataServiceShare:IsPetExtraActiveSkill(petEntity, skillID)
   if petEntity then
     local skillInfoCmpt = petEntity:SkillInfo()
     local extraSkillIDList = skillInfoCmpt:GetExtraActiveSkillIDList()
     if extraSkillIDList then
-      for extraSkillIndex,extraSkillID in ipairs(extraSkillIDList) do
+      for extraSkillIndex, extraSkillID in ipairs(extraSkillIDList) do
         if extraSkillID == skillID then
           return true, extraSkillIndex
         end
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC447: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsPetVariantActiveSkillUseBuffLayer = function(self, petEntity, skillID)
-  -- function num : 0_147 , upvalues : _ENV
+function UtilDataServiceShare:IsPetVariantActiveSkillUseBuffLayer(petEntity, skillID)
   if petEntity then
-    local localSkillID = (petEntity:SkillInfo()):GetActiveSkillID()
+    local localSkillID = petEntity:SkillInfo():GetActiveSkillID()
     local skillInfoCmpt = petEntity:SkillInfo()
     local variantActiveSkillInfo = skillInfoCmpt:GetVariantActiveSkillInfo()
     if variantActiveSkillInfo then
       local variantList = variantActiveSkillInfo[localSkillID]
-      if variantList and (table.icontains)(variantList, skillID) then
-        local configSvc = (self._world):GetService("Config")
+      if variantList and table.icontains(variantList, skillID) then
+        local configSvc = self._world:GetService("Config")
         local skillConfigData = configSvc:GetSkillConfigData(skillID, petEntity)
         if skillConfigData:GetSkillTriggerType() == SkillTriggerType.BuffLayer then
           return true, skillID
@@ -2226,15 +1645,10 @@ UtilDataServiceShare.IsPetVariantActiveSkillUseBuffLayer = function(self, petEnt
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC450: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.SetPetSkillReadyAttr = function(self, petEntity, ready, skillID)
-  -- function num : 0_148 , upvalues : _ENV
+function UtilDataServiceShare:SetPetSkillReadyAttr(petEntity, ready, skillID)
   if petEntity then
     local isExtraSkill, extraSkillIndex = self:IsPetExtraActiveSkill(petEntity, skillID)
     local isUseBuffLayerVariantSkill, variantIndex = self:IsPetVariantActiveSkillUseBuffLayer(petEntity, skillID)
@@ -2244,32 +1658,23 @@ UtilDataServiceShare.SetPetSkillReadyAttr = function(self, petEntity, ready, ski
         local extraKey = "Ready" .. tostring(extraSkillIndex)
         attr:SetSimpleAttribute(extraKey, ready)
       end
+    elseif isUseBuffLayerVariantSkill then
+      local attr = petEntity:Attributes()
+      if attr then
+        local extraKey = "Ready" .. tostring(variantIndex)
+        attr:SetSimpleAttribute(extraKey, ready)
+      end
     else
-      do
-        if isUseBuffLayerVariantSkill then
-          local attr = petEntity:Attributes()
-          if attr then
-            local extraKey = "Ready" .. tostring(variantIndex)
-            attr:SetSimpleAttribute(extraKey, ready)
-          end
-        else
-          do
-            local attr = petEntity:Attributes()
-            if attr then
-              attr:Modify("Ready", ready)
-            end
-          end
-        end
+      local attr = petEntity:Attributes()
+      if attr then
+        attr:Modify("Ready", ready)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC453: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetPetSkillReadyAttr = function(self, petEntity, skillID)
-  -- function num : 0_149 , upvalues : _ENV
-  (Log.fatal)("GetPetSkillReadyAttr SkillID:", skillID)
+function UtilDataServiceShare:GetPetSkillReadyAttr(petEntity, skillID)
+  Log.fatal("GetPetSkillReadyAttr SkillID:", skillID)
   if petEntity then
     local isExtraSkill, extraSkillIndex = self:IsPetExtraActiveSkill(petEntity, skillID)
     local isUseBuffLayerVariantSkill, variantIndex = self:IsPetVariantActiveSkillUseBuffLayer(petEntity, skillID)
@@ -2278,49 +1683,33 @@ UtilDataServiceShare.GetPetSkillReadyAttr = function(self, petEntity, skillID)
       if attr then
         local readyKey = "Ready" .. tostring(extraSkillIndex)
         local ready = attr:GetAttribute(readyKey)
-        if not ready then
-          ready = 0
-        end
+        ready = ready or 0
+        return ready
+      end
+    elseif isUseBuffLayerVariantSkill then
+      local attr = petEntity:Attributes()
+      if attr then
+        local readyKey = "Ready" .. tostring(variantIndex)
+        local ready = attr:GetAttribute(readyKey)
+        ready = ready or 0
         return ready
       end
     else
-      do
-        if isUseBuffLayerVariantSkill then
-          local attr = petEntity:Attributes()
-          if attr then
-            local readyKey = "Ready" .. tostring(variantIndex)
-            local ready = attr:GetAttribute(readyKey)
-            if not ready then
-              ready = 0
-            end
-            return ready
-          end
-        else
-          do
-            local attr = petEntity:Attributes()
-            if attr then
-              local ready = attr:GetAttribute("Ready")
-              return ready
-            end
-          end
-        end
+      local attr = petEntity:Attributes()
+      if attr then
+        local ready = attr:GetAttribute("Ready")
+        return ready
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC456: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.ChangePetActiveSkillReady = function(self, e, ready, skillID)
-  -- function num : 0_150
-  local buffSvc = (self._world):GetService("BuffLogic")
+function UtilDataServiceShare:ChangePetActiveSkillReady(e, ready, skillID)
+  local buffSvc = self._world:GetService("BuffLogic")
   buffSvc:ChangePetActiveSkillReady(e, ready, skillID)
 end
 
--- DECOMPILER ERROR at PC459: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetPetPowerAttr = function(self, petEntity, skillID)
-  -- function num : 0_151 , upvalues : _ENV
+function UtilDataServiceShare:GetPetPowerAttr(petEntity, skillID)
   if petEntity then
     local isExtraSkill, extraSkillIndex = self:IsPetExtraActiveSkill(petEntity, skillID)
     if isExtraSkill then
@@ -2328,27 +1717,20 @@ UtilDataServiceShare.GetPetPowerAttr = function(self, petEntity, skillID)
       if attr then
         local extraKey = "Power" .. tostring(extraSkillIndex)
         local power = attr:GetAttribute(extraKey)
-        if not power then
-          power = 0
-        end
+        power = power or 0
         return power
       end
     else
-      do
-        local attr = petEntity:Attributes()
-        if attr then
-          local power = attr:GetAttribute("Power")
-          return power
-        end
+      local attr = petEntity:Attributes()
+      if attr then
+        local power = attr:GetAttribute("Power")
+        return power
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC462: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.SetPetPowerAttr = function(self, petEntity, power, skillID)
-  -- function num : 0_152 , upvalues : _ENV
+function UtilDataServiceShare:SetPetPowerAttr(petEntity, power, skillID)
   if petEntity then
     local isExtraSkill, extraSkillIndex = self:IsPetExtraActiveSkill(petEntity, skillID)
     if isExtraSkill then
@@ -2358,20 +1740,15 @@ UtilDataServiceShare.SetPetPowerAttr = function(self, petEntity, power, skillID)
         attr:SetSimpleAttribute(extraKey, power)
       end
     else
-      do
-        local attr = petEntity:Attributes()
-        if attr then
-          attr:Modify("Power", power)
-        end
+      local attr = petEntity:Attributes()
+      if attr then
+        attr:Modify("Power", power)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC465: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetPetMaxPowerAttr = function(self, petEntity, skillID)
-  -- function num : 0_153 , upvalues : _ENV
+function UtilDataServiceShare:GetPetMaxPowerAttr(petEntity, skillID)
   if petEntity then
     local isExtraSkill, extraSkillIndex = self:IsPetExtraActiveSkill(petEntity, skillID)
     if isExtraSkill then
@@ -2379,27 +1756,20 @@ UtilDataServiceShare.GetPetMaxPowerAttr = function(self, petEntity, skillID)
       if attr then
         local extraKey = "MaxPower" .. tostring(extraSkillIndex)
         local maxPower = attr:GetAttribute(extraKey)
-        if not maxPower then
-          maxPower = 0
-        end
+        maxPower = maxPower or 0
         return maxPower
       end
     else
-      do
-        local attr = petEntity:Attributes()
-        if attr then
-          local maxPower = attr:GetAttribute("MaxPower")
-          return maxPower
-        end
+      local attr = petEntity:Attributes()
+      if attr then
+        local maxPower = attr:GetAttribute("MaxPower")
+        return maxPower
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC468: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.SetPetMaxPowerAttr = function(self, petEntity, maxPower, skillID)
-  -- function num : 0_154 , upvalues : _ENV
+function UtilDataServiceShare:SetPetMaxPowerAttr(petEntity, maxPower, skillID)
   if petEntity then
     local isExtraSkill, extraSkillIndex = self:IsPetExtraActiveSkill(petEntity, skillID)
     if isExtraSkill then
@@ -2409,20 +1779,15 @@ UtilDataServiceShare.SetPetMaxPowerAttr = function(self, petEntity, maxPower, sk
         attr:SetSimpleAttribute(extraKey, maxPower)
       end
     else
-      do
-        local attr = petEntity:Attributes()
-        if attr then
-          attr:Modify("MaxPower", maxPower)
-        end
+      local attr = petEntity:Attributes()
+      if attr then
+        attr:Modify("MaxPower", maxPower)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC471: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetPetLegendPowerAttr = function(self, petEntity, skillID)
-  -- function num : 0_155
+function UtilDataServiceShare:GetPetLegendPowerAttr(petEntity, skillID)
   if petEntity then
     local attr = petEntity:Attributes()
     if attr then
@@ -2430,204 +1795,160 @@ UtilDataServiceShare.GetPetLegendPowerAttr = function(self, petEntity, skillID)
       return legendPower
     end
   end
-  do
-    return 0
-  end
+  return 0
 end
 
--- DECOMPILER ERROR at PC474: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetPreviousReadyRoundCount = function(self, petPstID)
-  -- function num : 0_156
+function UtilDataServiceShare:GetPreviousReadyRoundCount(petPstID)
   local petEntity = self:GetEntityByPstID(petPstID)
   if petEntity then
-    local teamEntity = (petEntity:Pet()):GetOwnerTeamEntity()
+    local teamEntity = petEntity:Pet():GetOwnerTeamEntity()
     if teamEntity then
-      local readyCount = (teamEntity:ActiveSkill()):GetPreviousReadyRoundCount(petEntity:GetID())
+      local readyCount = teamEntity:ActiveSkill():GetPreviousReadyRoundCount(petEntity:GetID())
       return readyCount
     end
   end
-  do
-    return 0
-  end
+  return 0
 end
 
--- DECOMPILER ERROR at PC477: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.FindSyncMonsterTargetList = function(self, entity)
-  -- function num : 0_157 , upvalues : _ENV
+function UtilDataServiceShare:FindSyncMonsterTargetList(entity)
   if not entity:HasMonsterID() then
     return {}
   end
-  local syncType = (entity:MonsterID()):GetDamageSyncFindType()
-  local paramID = (entity:MonsterID()):GetDamageSyncMonsterID()
-  local monsterEntities = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).MonsterID)
+  local syncType = entity:MonsterID():GetDamageSyncFindType()
+  local paramID = entity:MonsterID():GetDamageSyncMonsterID()
+  local monsterEntities = self._world:GetGroupEntities(self._world.BW_WEMatchers.MonsterID)
   local retEntity = {}
-  for _,e in ipairs(monsterEntities) do
+  for _, e in ipairs(monsterEntities) do
     local monsterIDCmpt = e:MonsterID()
-    -- DECOMPILER ERROR at PC39: Unhandled construct in 'MakeBoolean' P1
-
-    if syncType == MonsterSyncFindType.MonsterID and monsterIDCmpt:GetMonsterID() == paramID then
-      (table.insert)(retEntity, e)
-    end
-    if syncType == MonsterSyncFindType.MonsterClassID and monsterIDCmpt:GetMonsterClassID() == paramID then
-      (table.insert)(retEntity, e)
+    if syncType == MonsterSyncFindType.MonsterID then
+      if monsterIDCmpt:GetMonsterID() == paramID then
+        table.insert(retEntity, e)
+      end
+    elseif syncType == MonsterSyncFindType.MonsterClassID and monsterIDCmpt:GetMonsterClassID() == paramID then
+      table.insert(retEntity, e)
     end
   end
   return retEntity
 end
 
--- DECOMPILER ERROR at PC480: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.FindMonsterByMonsterID = function(self, monsterID)
-  -- function num : 0_158 , upvalues : _ENV
-  local monsterEntities = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).MonsterID)
+function UtilDataServiceShare:FindMonsterByMonsterID(monsterID)
+  local monsterEntities = self._world:GetGroupEntities(self._world.BW_WEMatchers.MonsterID)
   local retEntity = {}
-  for _,e in ipairs(monsterEntities) do
+  for _, e in ipairs(monsterEntities) do
     local monsterIDCmpt = e:MonsterID()
     if monsterIDCmpt:GetMonsterClassID() == monsterID then
-      (table.insert)(retEntity, e)
+      table.insert(retEntity, e)
     end
   end
   return retEntity
 end
 
--- DECOMPILER ERROR at PC483: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetMapByPosition = function(self)
-  -- function num : 0_159
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:GetMapByPosition()
+  local boardEntity = self._world:GetBoardEntity()
   local boardComponent = boardEntity:Board()
   local mapByPosition = boardComponent:GetMapByPosition()
   return mapByPosition
 end
 
--- DECOMPILER ERROR at PC486: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CheckForceMoveImmunity = function(self, entity)
-  -- function num : 0_160
-  local buffSvc = (self._world):GetService("BuffLogic")
+function UtilDataServiceShare:CheckForceMoveImmunity(entity)
+  local buffSvc = self._world:GetService("BuffLogic")
   return buffSvc:CheckForceMoveImmunity(entity)
 end
 
--- DECOMPILER ERROR at PC489: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsEntityForceMovementTarget = function(self, e, includeMultiSize, includeTrap)
-  -- function num : 0_161 , upvalues : _ENV
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
+function UtilDataServiceShare:IsEntityForceMovementTarget(e, includeMultiSize, includeTrap)
+  if self._world:MatchType() == MatchType.MT_BlackFist then
     if includeTrap and e:HasTrapID() then
       return true
     end
-    if not e:HasTeam() then
-      do return e:HasPet() end
-      local isTrap = false
-      if not e:HasMonsterID() then
-        if includeTrap and e:HasTrapID() then
-          isTrap = true
-        else
-          return false
-        end
-      end
-      if not isTrap then
-        local cfgsvc = (self._world):GetService("Config")
-        local monsterConfigData = cfgsvc:GetMonsterConfigData()
-        local monsterID = (e:MonsterID()):GetMonsterID()
-        if monsterConfigData:IsBoss(monsterID) then
-          return false
-        end
-      end
-      do
-        if not includeMultiSize and (e:BodyArea()):GetAreaCount() ~= 1 then
-          return false
-        end
-        local buffComponent = e:BuffComponent()
-        if buffComponent and buffComponent:HasBuffEffect(BuffEffectType.NotBeSelectedAsSkillTarget) then
-          return false
-        end
-        local bufflsvc = (self._world):GetService("BuffLogic")
-        if bufflsvc:CheckForceMoveImmunity(e) then
-          return false
-        end
-        return true
-      end
+    return e:HasTeam() or e:HasPet()
+  end
+  local isTrap = false
+  if not e:HasMonsterID() then
+    if includeTrap and e:HasTrapID() then
+      isTrap = true
+    else
+      return false
     end
   end
+  if not isTrap then
+    local cfgsvc = self._world:GetService("Config")
+    local monsterConfigData = cfgsvc:GetMonsterConfigData()
+    local monsterID = e:MonsterID():GetMonsterID()
+    if monsterConfigData:IsBoss(monsterID) then
+      return false
+    end
+  end
+  if not includeMultiSize and e:BodyArea():GetAreaCount() ~= 1 then
+    return false
+  end
+  local buffComponent = e:BuffComponent()
+  if buffComponent and buffComponent:HasBuffEffect(BuffEffectType.NotBeSelectedAsSkillTarget) then
+    return false
+  end
+  local bufflsvc = self._world:GetService("BuffLogic")
+  if bufflsvc:CheckForceMoveImmunity(e) then
+    return false
+  end
+  return true
 end
 
--- DECOMPILER ERROR at PC492: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.ScanTrapOnBoard = function(self)
-  -- function num : 0_162 , upvalues : _ENV
+function UtilDataServiceShare:ScanTrapOnBoard()
   local trapTemplateID = {}
-  local globalTrapEntities = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).Trap)
-  for _,entity in ipairs(globalTrapEntities) do
-    local trapID = (entity:TrapID()):GetTrapID()
-    if not entity:HasDeadMark() and (Cfg.cfg_trap_scan)[trapID] then
-      (table.insert)(trapTemplateID, trapID)
+  local globalTrapEntities = self._world:GetGroupEntities(self._world.BW_WEMatchers.Trap)
+  for _, entity in ipairs(globalTrapEntities) do
+    local trapID = entity:TrapID():GetTrapID()
+    if not entity:HasDeadMark() and Cfg.cfg_trap_scan[trapID] then
+      table.insert(trapTemplateID, trapID)
     end
   end
   return trapTemplateID
 end
 
--- DECOMPILER ERROR at PC495: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.ScanTrapInMatch = function(self)
-  -- function num : 0_163 , upvalues : _ENV
+function UtilDataServiceShare:ScanTrapInMatch()
   local trapTemplateID = {}
-  local trapIDInMatch = ((self._world):BattleStat()):GetAllScanTrapIDInMatch()
-  for _,id in ipairs(trapIDInMatch) do
-    if (Cfg.cfg_trap_scan)[id] then
-      (table.insert)(trapTemplateID, id)
+  local trapIDInMatch = self._world:BattleStat():GetAllScanTrapIDInMatch()
+  for _, id in ipairs(trapIDInMatch) do
+    if Cfg.cfg_trap_scan[id] then
+      table.insert(trapTemplateID, id)
     end
   end
   return trapTemplateID
 end
 
--- DECOMPILER ERROR at PC498: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetScanSelection = function(self)
-  -- function num : 0_164
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:GetScanSelection()
+  local boardEntity = self._world:GetBoardEntity()
   local cLogicFeature = boardEntity:LogicFeature()
-  local info = {skillType = cLogicFeature:GetScanActiveSkillType(), trapID = cLogicFeature:GetScanTrapID()}
+  local info = {
+    skillType = cLogicFeature:GetScanActiveSkillType(),
+    trapID = cLogicFeature:GetScanTrapID()
+  }
   return info
 end
 
--- DECOMPILER ERROR at PC501: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetLocalMatchPetByTemplateID = function(self, tid)
-  -- function num : 0_165 , upvalues : _ENV
-  local eLocalTeam = ((self._world):Player()):GetLocalTeamEntity()
+function UtilDataServiceShare:GetLocalMatchPetByTemplateID(tid)
+  local eLocalTeam = self._world:Player():GetLocalTeamEntity()
   local cTeam = eLocalTeam:Team()
   local pets = cTeam:GetTeamPetEntities()
-  for _,e in ipairs(pets) do
-    local petPstID = (e:PetPstID()):GetTemplateID()
+  for _, e in ipairs(pets) do
+    local petPstID = e:PetPstID():GetTemplateID()
     if tid == petPstID then
-      return (e:MatchPet()):GetMatchPet()
+      return e:MatchPet():GetMatchPet()
     end
   end
 end
 
--- DECOMPILER ERROR at PC504: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsPosCanConvertGridElement = function(self, pos)
-  -- function num : 0_166
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilDataServiceShare:IsPosCanConvertGridElement(pos)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   return boardServiceLogic:GetCanConvertGridElement(pos)
 end
 
--- DECOMPILER ERROR at PC507: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CalcZhongxuForceMovementCostByPick = function(self, casterEntity, skillID)
-  -- function num : 0_167 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function UtilDataServiceShare:CalcZhongxuForceMovementCostByPick(casterEntity, skillID)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID, casterEntity)
   if skillConfigData then
     local cfgExtraParam = skillConfigData:GetSkillTriggerExtraParam()
     local pickCmpt = casterEntity:ActiveSkillPickUpComponent()
-    if not pickCmpt then
-      pickCmpt = casterEntity:PreviewPickUpComponent()
-    end
+    pickCmpt = pickCmpt or casterEntity:PreviewPickUpComponent()
     if cfgExtraParam and pickCmpt and cfgExtraParam[SkillTriggerTypeExtraParam.CostByForceMoveStep] then
       local costParamTb = cfgExtraParam[SkillTriggerTypeExtraParam.CostByForceMoveStep]
       local recordBuffCmpt = casterEntity:BuffComponent()
@@ -2636,87 +1957,75 @@ UtilDataServiceShare.CalcZhongxuForceMovementCostByPick = function(self, casterE
       local eachMoveCostParam = costParamTb[1]
       local trapMoveCostExtraParam = costParamTb[2]
       local specificTrapID = costParamTb[3]
-      local curLegendPower = (casterEntity:Attributes()):GetAttribute("LegendPower")
+      local curLegendPower = casterEntity:Attributes():GetAttribute("LegendPower")
       local allPickGrids = pickCmpt:GetAllValidPickUpGridPos()
       if allPickGrids and #allPickGrids == 2 then
         local firstPickGrid = allPickGrids[1]
         local secondPickGrid = allPickGrids[2]
-        local foundTrapEntity, foundMonsterEntity, foundEnemyTeamEntity = nil, nil, nil
+        local foundTrapEntity, foundMonsterEntity, foundEnemyTeamEntity
         local centerPos = firstPickGrid
         local traps = self:GetTrapsAtPos(centerPos)
         if traps then
-          for index,e in ipairs(traps) do
-            local trapId = (e:Trap()):GetTrapID()
+          for index, e in ipairs(traps) do
+            local trapId = e:Trap():GetTrapID()
             if specificTrapID == trapId then
               foundTrapEntity = e
               break
             end
           end
         end
-        do
-          local moveEntity = nil
-          local isTrap = false
-          if foundTrapEntity then
-            isTrap = true
-            moveEntity = foundTrapEntity
-          else
-            if (self._world):MatchType() == MatchType.MT_BlackFist and casterEntity:HasPet() then
-              local enemy = (((casterEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()
-              local enemyPos = enemy:GetGridPosition()
-              if enemyPos == centerPos then
-                foundEnemyTeamEntity = enemy
-                moveEntity = foundEnemyTeamEntity
-              end
+        local moveEntity
+        local isTrap = false
+        if foundTrapEntity then
+          isTrap = true
+          moveEntity = foundTrapEntity
+        elseif self._world:MatchType() == MatchType.MT_BlackFist then
+          if casterEntity:HasPet() then
+            local enemy = casterEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
+            local enemyPos = enemy:GetGridPosition()
+            if enemyPos == centerPos then
+              foundEnemyTeamEntity = enemy
+              moveEntity = foundEnemyTeamEntity
             end
           end
-          do
-            local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-            local isHasMonster, monsterID = utilScopeSvc:IsPosHasMonster(centerPos)
-            do
-              if isHasMonster then
-                local monsterEntity = (self._world):GetEntityByID(monsterID)
-                if monsterEntity then
-                  foundMonsterEntity = monsterEntity
-                  moveEntity = foundMonsterEntity
-                end
-              end
-              if moveEntity then
-                local moveDirAnti, moveStep = self:_CalcFroceMoveDirByTargetAndPick(moveEntity, firstPickGrid, secondPickGrid, 0, true)
-                local totalCost = 0
-                for i = 1, moveStep do
-                  local eachCost = eachMoveCostParam
-                  if isTrap then
-                    eachCost = trapMoveCostExtraParam
-                  end
-                  local curStep = curRoundForceMoveStep + i
-                  local curStepCost = eachCost * curStep
-                  totalCost = totalCost + curStepCost
-                end
-                return totalCost, moveStep
-              end
-              do
-                return -1
-              end
+        else
+          local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+          local isHasMonster, monsterID = utilScopeSvc:IsPosHasMonster(centerPos)
+          if isHasMonster then
+            local monsterEntity = self._world:GetEntityByID(monsterID)
+            if monsterEntity then
+              foundMonsterEntity = monsterEntity
+              moveEntity = foundMonsterEntity
             end
           end
+        end
+        if moveEntity then
+          local moveDirAnti, moveStep = self:_CalcFroceMoveDirByTargetAndPick(moveEntity, firstPickGrid, secondPickGrid, 0, true)
+          local totalCost = 0
+          for i = 1, moveStep do
+            local eachCost = eachMoveCostParam
+            if isTrap then
+              eachCost = trapMoveCostExtraParam
+            end
+            local curStep = curRoundForceMoveStep + i
+            local curStepCost = eachCost * curStep
+            totalCost = totalCost + curStepCost
+          end
+          return totalCost, moveStep
         end
       end
     end
   end
+  return -1
 end
 
--- DECOMPILER ERROR at PC510: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CalcZhongxuForceMovementMoveStepByPick = function(self, casterEntity, skillID)
-  -- function num : 0_168 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function UtilDataServiceShare:CalcZhongxuForceMovementMoveStepByPick(casterEntity, skillID)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID, casterEntity)
   if skillConfigData then
     local cfgExtraParam = skillConfigData:GetSkillTriggerExtraParam()
     local pickCmpt = casterEntity:ActiveSkillPickUpComponent()
-    if not pickCmpt then
-      pickCmpt = casterEntity:PreviewPickUpComponent()
-    end
+    pickCmpt = pickCmpt or casterEntity:PreviewPickUpComponent()
     if cfgExtraParam and pickCmpt and cfgExtraParam[SkillTriggerTypeExtraParam.CostByForceMoveStep] then
       local costParamTb = cfgExtraParam[SkillTriggerTypeExtraParam.CostByForceMoveStep]
       local recordBuffCmpt = casterEntity:BuffComponent()
@@ -2725,80 +2034,70 @@ UtilDataServiceShare.CalcZhongxuForceMovementMoveStepByPick = function(self, cas
       local eachMoveCostParam = costParamTb[1]
       local trapMoveCostExtraParam = costParamTb[2]
       local specificTrapID = costParamTb[3]
-      local curLegendPower = (casterEntity:Attributes()):GetAttribute("LegendPower")
+      local curLegendPower = casterEntity:Attributes():GetAttribute("LegendPower")
       local allPickGrids = pickCmpt:GetAllValidPickUpGridPos()
       if allPickGrids and #allPickGrids == 2 then
         local firstPickGrid = allPickGrids[1]
         local secondPickGrid = allPickGrids[2]
-        local foundTrapEntity, foundMonsterEntity, foundEnemyTeamEntity = nil, nil, nil
+        local foundTrapEntity, foundMonsterEntity, foundEnemyTeamEntity
         local centerPos = firstPickGrid
         local traps = self:GetTrapsAtPos(centerPos)
         if traps then
-          for index,e in ipairs(traps) do
-            local trapId = (e:Trap()):GetTrapID()
+          for index, e in ipairs(traps) do
+            local trapId = e:Trap():GetTrapID()
             if specificTrapID == trapId then
               foundTrapEntity = e
               break
             end
           end
         end
-        do
-          local moveEntity = nil
-          local isTrap = false
-          if foundTrapEntity then
-            isTrap = true
-            moveEntity = foundTrapEntity
-          else
-            if (self._world):MatchType() == MatchType.MT_BlackFist and casterEntity:HasPet() then
-              local enemy = (((casterEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()
-              local enemyPos = enemy:GetGridPosition()
-              if enemyPos == centerPos then
-                foundEnemyTeamEntity = enemy
-                moveEntity = foundEnemyTeamEntity
-              end
+        local moveEntity
+        local isTrap = false
+        if foundTrapEntity then
+          isTrap = true
+          moveEntity = foundTrapEntity
+        elseif self._world:MatchType() == MatchType.MT_BlackFist then
+          if casterEntity:HasPet() then
+            local enemy = casterEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
+            local enemyPos = enemy:GetGridPosition()
+            if enemyPos == centerPos then
+              foundEnemyTeamEntity = enemy
+              moveEntity = foundEnemyTeamEntity
             end
           end
-          do
-            local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-            local isHasMonster, monsterID = utilScopeSvc:IsPosHasMonster(centerPos)
-            do
-              if isHasMonster then
-                local monsterEntity = (self._world):GetEntityByID(monsterID)
-                if monsterEntity then
-                  foundMonsterEntity = monsterEntity
-                  moveEntity = foundMonsterEntity
-                end
-              end
-              if moveEntity then
-                local moveDirAnti, moveStep = self:_CalcFroceMoveDirByTargetAndPick(moveEntity, firstPickGrid, secondPickGrid, 0, true)
-                local totalCost = 0
-                for i = 1, moveStep do
-                  local eachCost = eachMoveCostParam
-                  if isTrap then
-                    eachCost = trapMoveCostExtraParam
-                  end
-                  local curStep = curRoundForceMoveStep + i
-                  local curStepCost = eachCost * curStep
-                  totalCost = totalCost + curStepCost
-                end
-                return totalCost
-              end
-              do
-                return -1
-              end
+        else
+          local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+          local isHasMonster, monsterID = utilScopeSvc:IsPosHasMonster(centerPos)
+          if isHasMonster then
+            local monsterEntity = self._world:GetEntityByID(monsterID)
+            if monsterEntity then
+              foundMonsterEntity = monsterEntity
+              moveEntity = foundMonsterEntity
             end
           end
+        end
+        if moveEntity then
+          local moveDirAnti, moveStep = self:_CalcFroceMoveDirByTargetAndPick(moveEntity, firstPickGrid, secondPickGrid, 0, true)
+          local totalCost = 0
+          for i = 1, moveStep do
+            local eachCost = eachMoveCostParam
+            if isTrap then
+              eachCost = trapMoveCostExtraParam
+            end
+            local curStep = curRoundForceMoveStep + i
+            local curStepCost = eachCost * curStep
+            totalCost = totalCost + curStepCost
+          end
+          return totalCost
         end
       end
     end
   end
+  return -1
 end
 
--- DECOMPILER ERROR at PC513: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CalcZhongxuForceMovementMinCost = function(self, casterEntity, skillID, moveStepNotRecoreded, forAutoFight)
-  -- function num : 0_169 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function UtilDataServiceShare:CalcZhongxuForceMovementMinCost(casterEntity, skillID, moveStepNotRecoreded, forAutoFight)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID, casterEntity)
   if skillConfigData then
     local cfgExtraParam = skillConfigData:GetSkillTriggerExtraParam()
@@ -2827,92 +2126,70 @@ UtilDataServiceShare.CalcZhongxuForceMovementMinCost = function(self, casterEnti
       return totalCost
     end
   end
-  do
-    return -1
-  end
+  return -1
 end
 
--- DECOMPILER ERROR at PC516: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CalcMinCostLegendPowerByExtraParam = function(self, entity, defaultCost, skillConfigData, zhongxuForceMoveStep, forAutoFight)
-  -- function num : 0_170 , upvalues : _ENV
+function UtilDataServiceShare:CalcMinCostLegendPowerByExtraParam(entity, defaultCost, skillConfigData, zhongxuForceMoveStep, forAutoFight)
   local cost = defaultCost
-  do
-    if skillConfigData then
-      local cfgExtraParam = skillConfigData:GetSkillTriggerExtraParam()
-      if cfgExtraParam then
-        if cfgExtraParam[SkillTriggerTypeExtraParam.CostByForceMoveStep] then
-          cost = self:CalcZhongxuForceMovementMinCost(entity, skillConfigData:GetID(), zhongxuForceMoveStep, forAutoFight)
-          if cost < 0 then
-            cost = defaultCost
-          end
-        end
-        if cfgExtraParam[SkillTriggerTypeExtraParam.CostPickUpUIAndTrap] then
-          cost = self:CalcYiSiTaWanCastActiveSkillMinimum(entity, skillConfigData:GetID(), forAutoFight)
+  if skillConfigData then
+    local cfgExtraParam = skillConfigData:GetSkillTriggerExtraParam()
+    if cfgExtraParam then
+      if cfgExtraParam[SkillTriggerTypeExtraParam.CostByForceMoveStep] then
+        cost = self:CalcZhongxuForceMovementMinCost(entity, skillConfigData:GetID(), zhongxuForceMoveStep, forAutoFight)
+        if cost < 0 then
+          cost = defaultCost
         end
       end
+      if cfgExtraParam[SkillTriggerTypeExtraParam.CostPickUpUIAndTrap] then
+        cost = self:CalcYiSiTaWanCastActiveSkillMinimum(entity, skillConfigData:GetID(), forAutoFight)
+      end
     end
-    return cost
   end
+  return cost
 end
 
--- DECOMPILER ERROR at PC519: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare._CalcFroceMoveDirByTargetAndPick = function(self, targetEntity, pickPos, dirPos, defaultStep, isCalcStepByPick)
-  -- function num : 0_171 , upvalues : _ENV
-  local dir = nil
+function UtilDataServiceShare:_CalcFroceMoveDirByTargetAndPick(targetEntity, pickPos, dirPos, defaultStep, isCalcStepByPick)
+  local dir
   local step = defaultStep
   local targetPos = targetEntity:GetGridPosition()
-  local bodyArea = (targetEntity:BodyArea()):GetArea()
+  local bodyArea = targetEntity:BodyArea():GetArea()
   if bodyArea then
     if #bodyArea == 1 then
       dir = dirPos - pickPos
-      step = (math.abs)(dir.x) + (math.abs)(dir.y)
+      step = math.abs(dir.x) + math.abs(dir.y)
       if dir.x > 0 then
         dir.x = 1
-      else
-        if dir.x < 0 then
-          dir.x = -1
-        end
+      elseif dir.x < 0 then
+        dir.x = -1
       end
       if dir.y > 0 then
         dir.y = 1
-      else
-        if dir.y < 0 then
-          dir.y = -1
-        end
+      elseif dir.y < 0 then
+        dir.y = -1
       end
     else
-      local upMaxY, downMinY, rightMaxX, leftMinX = nil, nil, nil, nil
-      for index,off in ipairs(bodyArea) do
+      local upMaxY, downMinY, rightMaxX, leftMinX
+      for index, off in ipairs(bodyArea) do
         local bodyPos = targetPos + off
         if not upMaxY then
           upMaxY = bodyPos.y
-        else
-          if upMaxY < bodyPos.y then
-            upMaxY = bodyPos.y
-          end
+        elseif upMaxY < bodyPos.y then
+          upMaxY = bodyPos.y
         end
         if not downMinY then
           downMinY = bodyPos.y
-        else
-          if bodyPos.y < downMinY then
-            downMinY = bodyPos.y
-          end
+        elseif downMinY > bodyPos.y then
+          downMinY = bodyPos.y
         end
         if not rightMaxX then
           rightMaxX = bodyPos.x
-        else
-          if rightMaxX < bodyPos.x then
-            rightMaxX = bodyPos.x
-          end
+        elseif rightMaxX < bodyPos.x then
+          rightMaxX = bodyPos.x
         end
         if not leftMinX then
           leftMinX = bodyPos.x
-        else
-          if bodyPos.x < leftMinX then
-            leftMinX = bodyPos.x
-          end
+        elseif leftMinX > bodyPos.x then
+          leftMinX = bodyPos.x
         end
       end
       if upMaxY < dirPos.y then
@@ -2920,73 +2197,55 @@ UtilDataServiceShare._CalcFroceMoveDirByTargetAndPick = function(self, targetEnt
         if isCalcStepByPick then
           step = dirPos.y - upMaxY
         end
-      else
-        if dirPos.y < downMinY then
-          dir = Vector2.down
-          if isCalcStepByPick then
-            step = downMinY - dirPos.y
-          end
-        else
-          if rightMaxX < dirPos.x then
-            dir = Vector2.right
-            if isCalcStepByPick then
-              step = dirPos.x - rightMaxX
-            end
-          else
-            if dirPos.x < leftMinX then
-              dir = Vector2.left
-              if isCalcStepByPick then
-                step = leftMinX - dirPos.x
-              end
-            end
-          end
+      elseif downMinY > dirPos.y then
+        dir = Vector2.down
+        if isCalcStepByPick then
+          step = downMinY - dirPos.y
+        end
+      elseif rightMaxX < dirPos.x then
+        dir = Vector2.right
+        if isCalcStepByPick then
+          step = dirPos.x - rightMaxX
+        end
+      elseif leftMinX > dirPos.x then
+        dir = Vector2.left
+        if isCalcStepByPick then
+          step = leftMinX - dirPos.x
         end
       end
     end
   end
-  do
-    if dir.x > 0 then
-      dir.x = 1
-    else
-      if dir.x < 0 then
-        dir.x = -1
-      end
-    end
-    if dir.y > 0 then
-      dir.y = 1
-    else
-      if dir.y < 0 then
-        dir.y = -1
-      end
-    end
-    dir = dir * -1
-    return dir, step
+  if dir.x > 0 then
+    dir.x = 1
+  elseif dir.x < 0 then
+    dir.x = -1
   end
+  if dir.y > 0 then
+    dir.y = 1
+  elseif dir.y < 0 then
+    dir.y = -1
+  end
+  dir = dir * -1
+  return dir, step
 end
 
--- DECOMPILER ERROR at PC522: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetPrismCustomScopeConfig = function(self, entityID)
-  -- function num : 0_172
-  local entity = (self._world):GetEntityByID(entityID)
+function UtilDataServiceShare:GetPrismCustomScopeConfig(entityID)
+  local entity = self._world:GetEntityByID(entityID)
   if not entity then
-    return 
+    return
   end
   if not entity:HasTrap() then
-    return 
+    return
   end
   local cTrap = entity:Trap()
   if not cTrap:IsPrismGrid() then
-    return 
+    return
   end
   return cTrap:GetCustomPrismGridScopeType(), cTrap:GetCustomPrismGridScopeParam()
 end
 
--- DECOMPILER ERROR at PC525: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CalcZhongxuForceMovementNextMinCostForUI = function(self, entity, skillID)
-  -- function num : 0_173
-  local configService = (self._world):GetService("Config")
+function UtilDataServiceShare:CalcZhongxuForceMovementNextMinCostForUI(entity, skillID)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID, entity)
   local minCost = skillConfigData:GetSkillTriggerParam()
   local cost, zhongxuForceMoveStep = self:CalcZhongxuForceMovementCostByPick(entity, skillID)
@@ -3000,20 +2259,14 @@ UtilDataServiceShare.CalcZhongxuForceMovementNextMinCostForUI = function(self, e
   return minCost
 end
 
--- DECOMPILER ERROR at PC528: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetSummonMeantimeLimitEntityID = function(self, trapID)
-  -- function num : 0_174
-  local battleFlags = (self._world):BattleFlags()
+function UtilDataServiceShare:GetSummonMeantimeLimitEntityID(trapID)
+  local battleFlags = self._world:BattleFlags()
   local entityIDList = battleFlags:GetSummonMeantimeLimitEntityID(trapID)
   return entityIDList
 end
 
--- DECOMPILER ERROR at PC531: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsPieceRefreshTypeDestroy = function(self)
-  -- function num : 0_175 , upvalues : _ENV
-  local affixService = (self._world):GetService("Affix")
+function UtilDataServiceShare:IsPieceRefreshTypeDestroy()
+  local affixService = self._world:GetService("Affix")
   local refreshType = affixService:ReplacePieceRefreshType()
   if refreshType == PieceRefreshType.Destroy then
     return true
@@ -3021,56 +2274,42 @@ UtilDataServiceShare.IsPieceRefreshTypeDestroy = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC534: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetReplicaSpliceGridEntityData = function(self)
-  -- function num : 0_176 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:GetReplicaSpliceGridEntityData()
+  local boardEntity = self._world:GetBoardEntity()
   local boardSpliceComponent = boardEntity:BoardSplice()
   local gridEntityData = boardSpliceComponent:GetGridEntityData()
   if not gridEntityData then
-    return 
+    return
   end
   local replica = {}
-  for k,v in pairs(gridEntityData) do
+  for k, v in pairs(gridEntityData) do
     replica[k] = v
   end
   return replica
 end
 
--- DECOMPILER ERROR at PC537: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetReplicaSpliceBoardPieces = function(self)
-  -- function num : 0_177 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:GetReplicaSpliceBoardPieces()
+  local boardEntity = self._world:GetBoardEntity()
   local boardSpliceComponent = boardEntity:BoardSplice()
   local replica = {}
-  for x,col in pairs(boardSpliceComponent.Pieces) do
+  for x, col in pairs(boardSpliceComponent.Pieces) do
     replica[x] = {}
-    for y,grid in pairs(col) do
-      -- DECOMPILER ERROR at PC17: Confused about usage of register: R14 in 'UnsetPending'
-
-      (replica[x])[y] = grid
+    for y, grid in pairs(col) do
+      replica[x][y] = grid
     end
   end
   return replica
 end
 
--- DECOMPILER ERROR at PC540: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetCloneBoardSpliceGridPos = function(self)
-  -- function num : 0_178
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:GetCloneBoardSpliceGridPos()
+  local boardEntity = self._world:GetBoardEntity()
   local boardSpliceComponent = boardEntity:BoardSplice()
   return boardSpliceComponent:CloneBoardPosList()
 end
 
--- DECOMPILER ERROR at PC543: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetCurrentTeamSuperChainCount = function(self)
-  -- function num : 0_179 , upvalues : _ENV
+function UtilDataServiceShare:GetCurrentTeamSuperChainCount()
   local count = BattleConst.SuperChainCount
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   if teamEntity then
     local teamAttr = teamEntity:Attributes()
     if teamAttr then
@@ -3080,60 +2319,43 @@ UtilDataServiceShare.GetCurrentTeamSuperChainCount = function(self)
       end
     end
   end
-  do
-    return count
-  end
+  return count
 end
 
--- DECOMPILER ERROR at PC546: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetRoundBeginPlayerPos = function(self)
-  -- function num : 0_180
-  return ((self._world):BattleStat()):GetRoundBeginPlayerPos()
+function UtilDataServiceShare:GetRoundBeginPlayerPos()
+  return self._world:BattleStat():GetRoundBeginPlayerPos()
 end
 
--- DECOMPILER ERROR at PC549: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetRenderPieceType = function(self, pos)
-  -- function num : 0_181
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function UtilDataServiceShare:GetRenderPieceType(pos)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderBoardCmpt = renderBoardEntity:RenderBoard()
   local gridEntity = renderBoardCmpt:GetGridRenderEntity(pos)
-  local pieceType = (gridEntity:Piece()):GetPieceType()
+  local pieceType = gridEntity:Piece():GetPieceType()
   return pieceType
 end
 
--- DECOMPILER ERROR at PC552: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetReplicaPushGridEntityData = function(self)
-  -- function num : 0_182 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:GetReplicaPushGridEntityData()
+  local boardEntity = self._world:GetBoardEntity()
   local boardPushComponent = boardEntity:BoardPush()
   local gridEntityData = boardPushComponent:GetGridEntityData()
   if not gridEntityData then
-    return 
+    return
   end
   local replica = {}
-  for k,v in pairs(gridEntityData) do
+  for k, v in pairs(gridEntityData) do
     replica[k] = v
   end
   return replica
 end
 
--- DECOMPILER ERROR at PC555: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetCloneBoardPushGridPos = function(self)
-  -- function num : 0_183
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:GetCloneBoardPushGridPos()
+  local boardEntity = self._world:GetBoardEntity()
   local boardPushComponent = boardEntity:BoardPush()
   return boardPushComponent:CloneBoardPosList()
 end
 
--- DECOMPILER ERROR at PC558: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetTrapHPPercentByTrapID = function(self, trapID)
-  -- function num : 0_184 , upvalues : _ENV
-  local trapSvc = (self._world):GetService("TrapLogic")
+function UtilDataServiceShare:GetTrapHPPercentByTrapID(trapID)
+  local trapSvc = self._world:GetService("TrapLogic")
   local trapGroup = trapSvc:GetTrapGroup()
   local listTraps = trapGroup:GetEntities()
   for i = 1, #listTraps do
@@ -3143,23 +2365,17 @@ UtilDataServiceShare.GetTrapHPPercentByTrapID = function(self, trapID)
       local attrCmpt = trap:Attributes()
       local curHP = attrCmpt:GetCurrentHP()
       local maxHP = attrCmpt:CalcMaxHp()
-      return (math.floor)(curHP / maxHP * 100 + 0.5)
+      return math.floor(curHP / maxHP * 100 + 0.5)
     end
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC561: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetMaxYOfColX = function(self, colX)
-  -- function num : 0_185
-  return (self._boardLogicSvc):GetMaxYOfColX(colX)
+function UtilDataServiceShare:GetMaxYOfColX(colX)
+  return self._boardLogicSvc:GetMaxYOfColX(colX)
 end
 
--- DECOMPILER ERROR at PC564: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.ProcessChianSkillConfig = function(self, oriSkillConfigData, entity)
-  -- function num : 0_186 , upvalues : _ENV
+function UtilDataServiceShare:ProcessChianSkillConfig(oriSkillConfigData, entity)
   if not oriSkillConfigData or not entity then
     return oriSkillConfigData
   end
@@ -3172,48 +2388,36 @@ UtilDataServiceShare.ProcessChianSkillConfig = function(self, oriSkillConfigData
   local buffChangeTargetCount = attr:GetAttribute("BuffChangeChainSkillTargetCount")
   if buffChangeTargetCount and buffChangeTargetCount ~= 0 then
     local chainSkillID = oriSkillConfigData:GetID()
-    local configService = (self._world):GetService("Config")
+    local configService = self._world:GetService("Config")
     if oriSkillConfigData:GetSkillScopeType() == SkillScopeType.Nearest then
       bChange = true
       skillConfigData = configService:GetSkillConfigData(chainSkillID, entity, true)
       skillConfigData._scopeParamData = skillConfigData._scopeParamData + buffChangeTargetCount
-    else
-      if oriSkillConfigData:GetSkillScopeType() == SkillScopeType.NearestInSquareRing then
-        bChange = true
-        skillConfigData = configService:GetSkillConfigData(chainSkillID, entity, true)
-        skillConfigData._scopeParamData = (table.cloneconf)(skillConfigData._scopeParamData)
-        -- DECOMPILER ERROR at PC64: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (skillConfigData._scopeParamData)[2] = (skillConfigData._scopeParamData)[2] + buffChangeTargetCount
-      end
-    end
-  end
-  do
-    local buffExpandSingleChainScope = (entity:BuffComponent()):GetBuffValue("ExpandSingleChainScope")
-    if not bChange and buffExpandSingleChainScope and buffExpandSingleChainScope ~= 0 then
-      local chainSkillID = oriSkillConfigData:GetID()
-      local configService = (self._world):GetService("Config")
+    elseif oriSkillConfigData:GetSkillScopeType() == SkillScopeType.NearestInSquareRing then
+      bChange = true
       skillConfigData = configService:GetSkillConfigData(chainSkillID, entity, true)
-      if oriSkillConfigData:GetSkillScopeType() == SkillScopeType.NearestInSquareRing then
-        skillConfigData._scopeParamData = (table.cloneconf)(skillConfigData._scopeParamData)
-      end
-    end
-    do
-      bChange = self:ExpandSingleChainScope(entity, oriSkillConfigData:GetSkillScopeType(), skillConfigData._scopeParamData)
-      return skillConfigData
+      skillConfigData._scopeParamData = table.cloneconf(skillConfigData._scopeParamData)
+      skillConfigData._scopeParamData[2] = skillConfigData._scopeParamData[2] + buffChangeTargetCount
     end
   end
+  local buffExpandSingleChainScope = entity:BuffComponent():GetBuffValue("ExpandSingleChainScope")
+  if not bChange and buffExpandSingleChainScope and buffExpandSingleChainScope ~= 0 then
+    local chainSkillID = oriSkillConfigData:GetID()
+    local configService = self._world:GetService("Config")
+    skillConfigData = configService:GetSkillConfigData(chainSkillID, entity, true)
+    if oriSkillConfigData:GetSkillScopeType() == SkillScopeType.NearestInSquareRing then
+      skillConfigData._scopeParamData = table.cloneconf(skillConfigData._scopeParamData)
+    end
+  end
+  bChange = self:ExpandSingleChainScope(entity, oriSkillConfigData:GetSkillScopeType(), skillConfigData._scopeParamData)
+  return skillConfigData
 end
 
--- DECOMPILER ERROR at PC567: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.ExpandSingleChainScope = function(self, entity, skillScopeType, scopeParamData)
-  -- function num : 0_187 , upvalues : _ENV
+function UtilDataServiceShare:ExpandSingleChainScope(entity, skillScopeType, scopeParamData)
   if not scopeParamData then
     return false
   end
-  local buffExpandSingleChainScope = (entity:BuffComponent()):GetBuffValue("ExpandSingleChainScope")
+  local buffExpandSingleChainScope = entity:BuffComponent():GetBuffValue("ExpandSingleChainScope")
   if buffExpandSingleChainScope and buffExpandSingleChainScope ~= 0 and skillScopeType == SkillScopeType.NearestInSquareRing then
     scopeParamData[1] = scopeParamData[1] + buffExpandSingleChainScope
     return true
@@ -3221,14 +2425,11 @@ UtilDataServiceShare.ExpandSingleChainScope = function(self, entity, skillScopeT
   return false
 end
 
--- DECOMPILER ERROR at PC570: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.ProcessAutoBeadSkillConfig = function(self, oriSkillConfigData, entity)
-  -- function num : 0_188 , upvalues : _ENV
+function UtilDataServiceShare:ProcessAutoBeadSkillConfig(oriSkillConfigData, entity)
   if not oriSkillConfigData or not entity then
     return oriSkillConfigData
   end
-  if not (entity:EntityType()):IsAutoBeadSkillHolder() then
+  if not entity:EntityType():IsAutoBeadSkillHolder() then
     return oriSkillConfigData
   end
   if oriSkillConfigData:GetSkillType() ~= SkillType.AutoBeadSkill then
@@ -3236,77 +2437,55 @@ UtilDataServiceShare.ProcessAutoBeadSkillConfig = function(self, oriSkillConfigD
   end
   local selectMode = oriSkillConfigData:GetTargetSelectionModeConfig()
   if selectMode and selectMode == SkillTargetSelectionMode.Entity then
-    do return oriSkillConfigData end
-    local attr = entity:Attributes()
-    if not attr then
-      return oriSkillConfigData
-    end
-    local buffChangeTargetCount = attr:GetAttribute("BuffChangeAutoBeadSkillTargetCount")
-    if buffChangeTargetCount and buffChangeTargetCount ~= 0 then
-      local skillConfigData = oriSkillConfigData
-      local skillID = oriSkillConfigData:GetID()
-      local configService = (self._world):GetService("Config")
-      if oriSkillConfigData:GetSkillScopeType() == SkillScopeType.Nearest then
-        skillConfigData = configService:GetSkillConfigData(skillID, entity, true)
-        skillConfigData._scopeParamData = skillConfigData._scopeParamData + buffChangeTargetCount
+  else
+    return oriSkillConfigData
+  end
+  local attr = entity:Attributes()
+  if not attr then
+    return oriSkillConfigData
+  end
+  local buffChangeTargetCount = attr:GetAttribute("BuffChangeAutoBeadSkillTargetCount")
+  if buffChangeTargetCount and buffChangeTargetCount ~= 0 then
+    local skillConfigData = oriSkillConfigData
+    local skillID = oriSkillConfigData:GetID()
+    local configService = self._world:GetService("Config")
+    if oriSkillConfigData:GetSkillScopeType() == SkillScopeType.Nearest then
+      skillConfigData = configService:GetSkillConfigData(skillID, entity, true)
+      skillConfigData._scopeParamData = skillConfigData._scopeParamData + buffChangeTargetCount
+    elseif oriSkillConfigData:GetSkillScopeType() == SkillScopeType.NearestInSquareRing then
+      skillConfigData = configService:GetSkillConfigData(skillID, entity, true)
+      skillConfigData._scopeParamData = table.cloneconf(skillConfigData._scopeParamData)
+      skillConfigData._scopeParamData[2] = skillConfigData._scopeParamData[2] + buffChangeTargetCount
+    elseif oriSkillConfigData:GetSkillTargetType() == SkillTargetType.HighestHPMonster then
+      skillConfigData = configService:GetSkillConfigData(skillID, entity, true)
+      if skillConfigData._targetTypeParam then
+        skillConfigData._targetTypeParam = table.cloneconf(skillConfigData._targetTypeParam)
       else
-        if oriSkillConfigData:GetSkillScopeType() == SkillScopeType.NearestInSquareRing then
-          skillConfigData = configService:GetSkillConfigData(skillID, entity, true)
-          skillConfigData._scopeParamData = (table.cloneconf)(skillConfigData._scopeParamData)
-          -- DECOMPILER ERROR at PC85: Confused about usage of register: R9 in 'UnsetPending'
-
-          ;
-          (skillConfigData._scopeParamData)[2] = (skillConfigData._scopeParamData)[2] + buffChangeTargetCount
-        else
-          if oriSkillConfigData:GetSkillTargetType() == SkillTargetType.HighestHPMonster then
-            skillConfigData = configService:GetSkillConfigData(skillID, entity, true)
-            if skillConfigData._targetTypeParam then
-              skillConfigData._targetTypeParam = (table.cloneconf)(skillConfigData._targetTypeParam)
-            else
-              skillConfigData._targetTypeParam = {}
-            end
-            local oriCount = (skillConfigData._targetTypeParam)[1] or 1
-            -- DECOMPILER ERROR at PC117: Confused about usage of register: R10 in 'UnsetPending'
-
-            ;
-            (skillConfigData._targetTypeParam)[1] = oriCount + buffChangeTargetCount
-          else
-            do
-              if oriSkillConfigData:GetSkillTargetType() == SkillTargetType.LowestHPPercentMonster then
-                skillConfigData = configService:GetSkillConfigData(skillID, entity, true)
-                if skillConfigData._targetTypeParam then
-                  skillConfigData._targetTypeParam = (table.cloneconf)(skillConfigData._targetTypeParam)
-                else
-                  skillConfigData._targetTypeParam = {}
-                end
-                local oriCount = (skillConfigData._targetTypeParam)[2] or 1
-                -- DECOMPILER ERROR at PC149: Confused about usage of register: R10 in 'UnsetPending'
-
-                ;
-                (skillConfigData._targetTypeParam)[2] = oriCount + buffChangeTargetCount
-              end
-              do
-                do
-                  do return skillConfigData end
-                  do return oriSkillConfigData end
-                end
-              end
-            end
-          end
-        end
+        skillConfigData._targetTypeParam = {}
       end
+      local oriCount = skillConfigData._targetTypeParam[1] or 1
+      skillConfigData._targetTypeParam[1] = oriCount + buffChangeTargetCount
+    elseif oriSkillConfigData:GetSkillTargetType() == SkillTargetType.LowestHPPercentMonster then
+      skillConfigData = configService:GetSkillConfigData(skillID, entity, true)
+      if skillConfigData._targetTypeParam then
+        skillConfigData._targetTypeParam = table.cloneconf(skillConfigData._targetTypeParam)
+      else
+        skillConfigData._targetTypeParam = {}
+      end
+      local oriCount = skillConfigData._targetTypeParam[2] or 1
+      skillConfigData._targetTypeParam[2] = oriCount + buffChangeTargetCount
     end
+    return skillConfigData
+  else
+    return oriSkillConfigData
   end
 end
 
--- DECOMPILER ERROR at PC573: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CheckPuzzlePickUpIsValid = function(self, pickUpGridPos, gapTilePos, puzzleRange)
-  -- function num : 0_189 , upvalues : _ENV
+function UtilDataServiceShare:CheckPuzzlePickUpIsValid(pickUpGridPos, gapTilePos, puzzleRange)
   if not self:IsValidPiecePos(pickUpGridPos) then
     return false
   end
-  if not (table.icontains)(puzzleRange, pickUpGridPos) then
+  if not table.icontains(puzzleRange, pickUpGridPos) then
     return false
   end
   if gapTilePos == pickUpGridPos then
@@ -3316,13 +2495,13 @@ UtilDataServiceShare.CheckPuzzlePickUpIsValid = function(self, pickUpGridPos, ga
     return false
   end
   local trapList = self:GetTrapsAtPos(pickUpGridPos)
-  for _,trapEntity in ipairs(trapList) do
+  for _, trapEntity in ipairs(trapList) do
     local trapComponent = trapEntity:Trap()
     if trapComponent:IsLockedGrid() then
       return false
     end
   end
-  for _,offset in ipairs(Offset4) do
+  for _, offset in ipairs(Offset4) do
     local pos = Vector2(gapTilePos.x + offset[1], gapTilePos.y + offset[2])
     if pos == pickUpGridPos then
       return true
@@ -3331,11 +2510,8 @@ UtilDataServiceShare.CheckPuzzlePickUpIsValid = function(self, pickUpGridPos, ga
   return false
 end
 
--- DECOMPILER ERROR at PC576: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetCurGlobalUnscaledCoundDownTime = function(self)
-  -- function num : 0_190
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function UtilDataServiceShare:GetCurGlobalUnscaledCoundDownTime()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   if renderBoardEntity then
     local cdCmpt = renderBoardEntity:UnscaledCountDownRender()
     if cdCmpt and cdCmpt:GetIsActive() then
@@ -3343,16 +2519,11 @@ UtilDataServiceShare.GetCurGlobalUnscaledCoundDownTime = function(self)
       return timeInfo
     end
   end
-  do
-    return 0
-  end
+  return 0
 end
 
--- DECOMPILER ERROR at PC579: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsPosBlockMoveForTrapWall = function(self, posCur, posTarget)
-  -- function num : 0_191 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:IsPosBlockMoveForTrapWall(posCur, posTarget)
+  local boardEntity = self._world:GetBoardEntity()
   local logicTrapWallComponent = boardEntity:LogicTrapWall()
   if not logicTrapWallComponent then
     return false
@@ -3368,48 +2539,38 @@ UtilDataServiceShare.IsPosBlockMoveForTrapWall = function(self, posCur, posTarge
       return true
     end
   else
-    do
-      local posBlock1 = posCur + Vector2(0, dir.y / 2)
-      local trapWall1 = logicTrapWallComponent:GetTrapWall(posBlock1)
-      local posBlock2 = posCur + Vector2(dir.x / 2, 0)
-      local trapWall2 = logicTrapWallComponent:GetTrapWall(posBlock2)
-      if trapWall1 and trapWall2 then
-        return true
-      end
-      local posBlock3 = posCur + Vector2(dir.x, dir.y / 2)
-      local trapWall3 = logicTrapWallComponent:GetTrapWall(posBlock3)
-      if trapWall1 and trapWall3 then
-        return true
-      end
-      local posBlock4 = posCur + Vector2(dir.x / 2, dir.y)
-      do
-        local trapWall4 = logicTrapWallComponent:GetTrapWall(posBlock4)
-        if trapWall2 and trapWall4 then
-          return true
-        end
-        if trapWall3 and trapWall4 then
-          return true
-        end
-        return false
-      end
+    local posBlock1 = posCur + Vector2(0, dir.y / 2)
+    local trapWall1 = logicTrapWallComponent:GetTrapWall(posBlock1)
+    local posBlock2 = posCur + Vector2(dir.x / 2, 0)
+    local trapWall2 = logicTrapWallComponent:GetTrapWall(posBlock2)
+    if trapWall1 and trapWall2 then
+      return true
+    end
+    local posBlock3 = posCur + Vector2(dir.x, dir.y / 2)
+    local trapWall3 = logicTrapWallComponent:GetTrapWall(posBlock3)
+    if trapWall1 and trapWall3 then
+      return true
+    end
+    local posBlock4 = posCur + Vector2(dir.x / 2, dir.y)
+    local trapWall4 = logicTrapWallComponent:GetTrapWall(posBlock4)
+    if trapWall2 and trapWall4 then
+      return true
+    end
+    if trapWall3 and trapWall4 then
+      return true
     end
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC582: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsPosBlockMoveForTrapWallPosIndex = function(self, startPosIndex, endPosIndex)
-  -- function num : 0_192 , upvalues : _ENV
-  local startPos = (Vector2.Index2Pos)(startPosIndex)
-  local endPos = (Vector2.Index2Pos)(endPosIndex)
+function UtilDataServiceShare:IsPosBlockMoveForTrapWallPosIndex(startPosIndex, endPosIndex)
+  local startPos = Vector2.Index2Pos(startPosIndex)
+  local endPos = Vector2.Index2Pos(endPosIndex)
   local isBlock = self:IsPosBlockMoveForTrapWall(startPos, endPos)
   return isBlock
 end
 
--- DECOMPILER ERROR at PC585: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CalcHitbackForTrapWallBlock = function(self, pos, targetPos, useCheckBlockFlag)
-  -- function num : 0_193 , upvalues : _ENV
+function UtilDataServiceShare:CalcHitbackForTrapWallBlock(pos, targetPos, useCheckBlockFlag)
   if useCheckBlockFlag == BlockFlag.HitBackFly then
     return false
   end
@@ -3419,42 +2580,37 @@ UtilDataServiceShare.CalcHitbackForTrapWallBlock = function(self, pos, targetPos
   return false
 end
 
--- DECOMPILER ERROR at PC588: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CalcHitbackForTrapWallBlockMultiBodyArea = function(self, centerPos, bodyArea)
-  -- function num : 0_194 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:CalcHitbackForTrapWallBlockMultiBodyArea(centerPos, bodyArea)
+  local boardEntity = self._world:GetBoardEntity()
   local logicTrapWallComponent = boardEntity:LogicTrapWall()
   if not logicTrapWallComponent then
     return false
   end
   local trapWallPosList = logicTrapWallComponent:GetWallList()
-  if not trapWallPosList or (table.count)(trapWallPosList) == 0 then
+  if not trapWallPosList or table.count(trapWallPosList) == 0 then
     return false
   end
   if #bodyArea == 1 then
     return false
-  else
-    if #bodyArea == 4 then
-      local checkPosList = {Vector2(0.5, 0), Vector2(0.5, 1), Vector2(0, 0.5), Vector2(1, 0.5)}
-      for _,pos in ipairs(checkPosList) do
-        local checkPos = centerPos + pos
-        local trapWall = logicTrapWallComponent:GetTrapWall(checkPos)
-        if trapWall then
-          return true
-        end
+  elseif #bodyArea == 4 then
+    local checkPosList = {
+      Vector2(0.5, 0),
+      Vector2(0.5, 1),
+      Vector2(0, 0.5),
+      Vector2(1, 0.5)
+    }
+    for _, pos in ipairs(checkPosList) do
+      local checkPos = centerPos + pos
+      local trapWall = logicTrapWallComponent:GetTrapWall(checkPos)
+      if trapWall then
+        return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC591: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsPosAccessibleMonsterMove = function(self, startPos, endPos, bodyArea, monsterBlockData)
-  -- function num : 0_195 , upvalues : _ENV
+function UtilDataServiceShare:IsPosAccessibleMonsterMove(startPos, endPos, bodyArea, monsterBlockData)
   if monsterBlockData == BlockFlag.MonsterFly then
     return true
   end
@@ -3462,14 +2618,14 @@ UtilDataServiceShare.IsPosAccessibleMonsterMove = function(self, startPos, endPo
     return true
   end
   local dir = endPos - startPos
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local utilDataSvc = self._world:GetService("UtilData")
   local coverList = utilDataSvc:GetCoverBodyAreaList(endPos, bodyArea)
   local coverListSelf = utilDataSvc:GetCoverBodyAreaList(startPos, bodyArea)
   for i = 1, #coverList do
     local posWork = coverList[i]
     local posWorkStart = posWork - dir
-    if not (table.icontains)(coverListSelf, posWork) then
+    if not table.icontains(coverListSelf, posWork) then
       if boardServiceLogic:IsPosBlock(posWork, monsterBlockData) then
         return false
       end
@@ -3482,331 +2638,245 @@ UtilDataServiceShare.IsPosAccessibleMonsterMove = function(self, startPos, endPo
   return true
 end
 
--- DECOMPILER ERROR at PC594: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetCoverBodyAreaList = function(self, pos, area)
-  -- function num : 0_196 , upvalues : _ENV
+function UtilDataServiceShare:GetCoverBodyAreaList(pos, area)
   local posList = {}
   if area then
-    if #area > 1 then
+    if 1 < #area then
       for i = 1, #area do
-        posList[#posList + 1] = Vector2(pos.x + (area[i]).x, pos.y + (area[i]).y)
+        posList[#posList + 1] = Vector2(pos.x + area[i].x, pos.y + area[i].y)
       end
     else
-      do
-        posList[#posList + 1] = Vector2(pos.x + (area[1]).x, pos.y + (area[1]).y)
-        posList[#posList + 1] = pos
-        return posList
-      end
+      posList[#posList + 1] = Vector2(pos.x + area[1].x, pos.y + area[1].y)
     end
+  else
+    posList[#posList + 1] = pos
   end
+  return posList
 end
 
--- DECOMPILER ERROR at PC597: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsBlockMoveWithTrapWall = function(self, startPos, endPos, entity)
-  -- function num : 0_197 , upvalues : _ENV
+function UtilDataServiceShare:IsBlockMoveWithTrapWall(startPos, endPos, entity)
   local isBlock = false
   local useCheckBlockFlag = BlockFlag.HitBack
-  do
-    if entity:HasMonsterID() then
-      local raceType = (entity:MonsterID()):GetMonsterRaceType()
-      if MonsterRaceType.Fly == raceType then
-        useCheckBlockFlag = BlockFlag.HitBackFly
-      end
+  if entity:HasMonsterID() then
+    local raceType = entity:MonsterID():GetMonsterRaceType()
+    if MonsterRaceType.Fly == raceType then
+      useCheckBlockFlag = BlockFlag.HitBackFly
     end
-    local bodyArea = (entity:BodyArea()):GetArea()
-    local movePath = {startPos, endPos}
-    local finalMovePath = self:CalcMovePathBlockForTrapWall(movePath, bodyArea, useCheckBlockFlag)
-    if (table.count)(finalMovePath) < (table.count)(movePath) then
-      isBlock = true
-    end
-    return isBlock
   end
+  local bodyArea = entity:BodyArea():GetArea()
+  local movePath = {startPos, endPos}
+  local finalMovePath = self:CalcMovePathBlockForTrapWall(movePath, bodyArea, useCheckBlockFlag)
+  if table.count(finalMovePath) < table.count(movePath) then
+    isBlock = true
+  end
+  return isBlock
 end
 
--- DECOMPILER ERROR at PC600: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CalcMovePathBlockForTrapWallWithEntity = function(self, movePath, entity)
-  -- function num : 0_198 , upvalues : _ENV
+function UtilDataServiceShare:CalcMovePathBlockForTrapWallWithEntity(movePath, entity)
   local useCheckBlockFlag = BlockFlag.HitBack
-  do
-    if entity:HasMonsterID() then
-      local raceType = (entity:MonsterID()):GetMonsterRaceType()
-      if MonsterRaceType.Fly == raceType then
-        useCheckBlockFlag = BlockFlag.HitBackFly
-      end
+  if entity:HasMonsterID() then
+    local raceType = entity:MonsterID():GetMonsterRaceType()
+    if MonsterRaceType.Fly == raceType then
+      useCheckBlockFlag = BlockFlag.HitBackFly
     end
-    local bodyArea = (entity:BodyArea()):GetArea()
-    local finalPathBlockForTrapWall = self:CalcMovePathBlockForTrapWall(movePath, bodyArea, useCheckBlockFlag)
-    return finalPathBlockForTrapWall
   end
+  local bodyArea = entity:BodyArea():GetArea()
+  local finalPathBlockForTrapWall = self:CalcMovePathBlockForTrapWall(movePath, bodyArea, useCheckBlockFlag)
+  return finalPathBlockForTrapWall
 end
 
--- DECOMPILER ERROR at PC603: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CalcMovePathBlockForTrapWall = function(self, movePath, bodyArea, useCheckBlockFlag)
-  -- function num : 0_199 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function UtilDataServiceShare:CalcMovePathBlockForTrapWall(movePath, bodyArea, useCheckBlockFlag)
+  local boardEntity = self._world:GetBoardEntity()
   local logicTrapWallComponent = boardEntity:LogicTrapWall()
   if not logicTrapWallComponent then
     return movePath
   end
   local trapWallPosList = logicTrapWallComponent:GetWallList()
-  if not trapWallPosList or (table.count)(trapWallPosList) == 0 then
+  if not trapWallPosList or table.count(trapWallPosList) == 0 then
     return movePath
   end
   local finalPathBlockForTrapWall = {}
-  ;
-  (table.insert)(finalPathBlockForTrapWall, movePath[1])
+  table.insert(finalPathBlockForTrapWall, movePath[1])
   for i = 2, #movePath do
     local posTarget = movePath[i]
     local posCur = movePath[i - 1]
     local trapWallBlock = self:CalcHitbackForTrapWallBlock(posCur, posTarget, useCheckBlockFlag)
-    if not trapWallBlock then
-      trapWallBlock = self:CalcHitbackForTrapWallBlockMultiBodyArea(posTarget, bodyArea)
-      if not trapWallBlock then
-        do
-          (table.insert)(finalPathBlockForTrapWall, movePath[i])
-          -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+    if trapWallBlock then
+      break
     end
+    trapWallBlock = self:CalcHitbackForTrapWallBlockMultiBodyArea(posTarget, bodyArea)
+    if trapWallBlock then
+      break
+    end
+    table.insert(finalPathBlockForTrapWall, movePath[i])
   end
   return finalPathBlockForTrapWall
 end
 
--- DECOMPILER ERROR at PC606: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CalcTrapWallPosEdgeAll = function(self, posList)
-  -- function num : 0_200 , upvalues : _ENV
-  local boardSvc = (self._world):GetService("BoardLogic")
+function UtilDataServiceShare:CalcTrapWallPosEdgeAll(posList)
+  local boardSvc = self._world:GetService("BoardLogic")
   local wallPosList = {}
-  for _,pos in ipairs(posList) do
+  for _, pos in ipairs(posList) do
     local up = Vector2(pos.x, pos.y + 1)
     local down = Vector2(pos.x, pos.y - 1)
     local left = Vector2(pos.x - 1, pos.y)
     local right = Vector2(pos.x + 1, pos.y)
-    do
-      if boardSvc:IsValidPiecePos(up) then
-        local wallPos = pos + Vector2(0, 0.5)
-        if not (table.icontains)(wallPosList, wallPos) then
-          (table.insert)(wallPosList, wallPos)
-        end
+    if boardSvc:IsValidPiecePos(up) then
+      local wallPos = pos + Vector2(0, 0.5)
+      if not table.icontains(wallPosList, wallPos) then
+        table.insert(wallPosList, wallPos)
       end
-      do
-        if boardSvc:IsValidPiecePos(down) then
-          local wallPos = pos + Vector2(0, -0.5)
-          if not (table.icontains)(wallPosList, wallPos) then
-            (table.insert)(wallPosList, wallPos)
-          end
-        end
-        do
-          if boardSvc:IsValidPiecePos(left) then
-            local wallPos = pos + Vector2(-0.5, 0)
-            if not (table.icontains)(wallPosList, wallPos) then
-              (table.insert)(wallPosList, wallPos)
-            end
-          end
-          do
-            if boardSvc:IsValidPiecePos(right) then
-              local wallPos = pos + Vector2(0.5, 0)
-              if not (table.icontains)(wallPosList, wallPos) then
-                (table.insert)(wallPosList, wallPos)
-              end
-            end
-            -- DECOMPILER ERROR at PC117: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC117: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC117: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
-        end
+    end
+    if boardSvc:IsValidPiecePos(down) then
+      local wallPos = pos + Vector2(0, -0.5)
+      if not table.icontains(wallPosList, wallPos) then
+        table.insert(wallPosList, wallPos)
+      end
+    end
+    if boardSvc:IsValidPiecePos(left) then
+      local wallPos = pos + Vector2(-0.5, 0)
+      if not table.icontains(wallPosList, wallPos) then
+        table.insert(wallPosList, wallPos)
+      end
+    end
+    if boardSvc:IsValidPiecePos(right) then
+      local wallPos = pos + Vector2(0.5, 0)
+      if not table.icontains(wallPosList, wallPos) then
+        table.insert(wallPosList, wallPos)
       end
     end
   end
   return wallPosList
 end
 
--- DECOMPILER ERROR at PC609: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CalcTrapWallPosEdgeOut = function(self, posList)
-  -- function num : 0_201 , upvalues : _ENV
-  local boardSvc = (self._world):GetService("BoardLogic")
+function UtilDataServiceShare:CalcTrapWallPosEdgeOut(posList)
+  local boardSvc = self._world:GetService("BoardLogic")
   local wallPosList = {}
-  for _,pos in ipairs(posList) do
+  for _, pos in ipairs(posList) do
     local up = Vector2(pos.x, pos.y + 1)
     local down = Vector2(pos.x, pos.y - 1)
     local left = Vector2(pos.x - 1, pos.y)
     local right = Vector2(pos.x + 1, pos.y)
-    do
-      if boardSvc:IsValidPiecePos(up) and not (table.Vector2Include)(posList, up) then
-        local wallPos = pos + Vector2(0, 0.5)
-        if not (table.icontains)(wallPosList, wallPos) then
-          (table.insert)(wallPosList, wallPos)
-        end
+    if boardSvc:IsValidPiecePos(up) and not table.Vector2Include(posList, up) then
+      local wallPos = pos + Vector2(0, 0.5)
+      if not table.icontains(wallPosList, wallPos) then
+        table.insert(wallPosList, wallPos)
       end
-      do
-        if boardSvc:IsValidPiecePos(down) and not (table.Vector2Include)(posList, down) then
-          local wallPos = pos + Vector2(0, -0.5)
-          if not (table.icontains)(wallPosList, wallPos) then
-            (table.insert)(wallPosList, wallPos)
-          end
-        end
-        do
-          if boardSvc:IsValidPiecePos(left) and not (table.Vector2Include)(posList, left) then
-            local wallPos = pos + Vector2(-0.5, 0)
-            if not (table.icontains)(wallPosList, wallPos) then
-              (table.insert)(wallPosList, wallPos)
-            end
-          end
-          do
-            if boardSvc:IsValidPiecePos(right) and not (table.Vector2Include)(posList, right) then
-              local wallPos = pos + Vector2(0.5, 0)
-              if not (table.icontains)(wallPosList, wallPos) then
-                (table.insert)(wallPosList, wallPos)
-              end
-            end
-            -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
-        end
+    end
+    if boardSvc:IsValidPiecePos(down) and not table.Vector2Include(posList, down) then
+      local wallPos = pos + Vector2(0, -0.5)
+      if not table.icontains(wallPosList, wallPos) then
+        table.insert(wallPosList, wallPos)
+      end
+    end
+    if boardSvc:IsValidPiecePos(left) and not table.Vector2Include(posList, left) then
+      local wallPos = pos + Vector2(-0.5, 0)
+      if not table.icontains(wallPosList, wallPos) then
+        table.insert(wallPosList, wallPos)
+      end
+    end
+    if boardSvc:IsValidPiecePos(right) and not table.Vector2Include(posList, right) then
+      local wallPos = pos + Vector2(0.5, 0)
+      if not table.icontains(wallPosList, wallPos) then
+        table.insert(wallPosList, wallPos)
       end
     end
   end
   return wallPosList
 end
 
--- DECOMPILER ERROR at PC612: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CalcTrapWallPosEdgeIn = function(self, posList)
-  -- function num : 0_202 , upvalues : _ENV
-  local boardSvc = (self._world):GetService("BoardLogic")
+function UtilDataServiceShare:CalcTrapWallPosEdgeIn(posList)
+  local boardSvc = self._world:GetService("BoardLogic")
   local wallPosList = {}
-  for _,pos in ipairs(posList) do
+  for _, pos in ipairs(posList) do
     local up = Vector2(pos.x, pos.y + 1)
     local down = Vector2(pos.x, pos.y - 1)
     local left = Vector2(pos.x - 1, pos.y)
     local right = Vector2(pos.x + 1, pos.y)
-    do
-      if boardSvc:IsValidPiecePos(up) and (table.Vector2Include)(posList, up) then
-        local wallPos = pos + Vector2(0, 0.5)
-        if not (table.icontains)(wallPosList, wallPos) then
-          (table.insert)(wallPosList, wallPos)
-        end
+    if boardSvc:IsValidPiecePos(up) and table.Vector2Include(posList, up) then
+      local wallPos = pos + Vector2(0, 0.5)
+      if not table.icontains(wallPosList, wallPos) then
+        table.insert(wallPosList, wallPos)
       end
-      do
-        if boardSvc:IsValidPiecePos(down) and (table.Vector2Include)(posList, down) then
-          local wallPos = pos + Vector2(0, -0.5)
-          if not (table.icontains)(wallPosList, wallPos) then
-            (table.insert)(wallPosList, wallPos)
-          end
-        end
-        do
-          if boardSvc:IsValidPiecePos(left) and (table.Vector2Include)(posList, left) then
-            local wallPos = pos + Vector2(-0.5, 0)
-            if not (table.icontains)(wallPosList, wallPos) then
-              (table.insert)(wallPosList, wallPos)
-            end
-          end
-          do
-            if boardSvc:IsValidPiecePos(right) and (table.Vector2Include)(posList, right) then
-              local wallPos = pos + Vector2(0.5, 0)
-              if not (table.icontains)(wallPosList, wallPos) then
-                (table.insert)(wallPosList, wallPos)
-              end
-            end
-            -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
-        end
+    end
+    if boardSvc:IsValidPiecePos(down) and table.Vector2Include(posList, down) then
+      local wallPos = pos + Vector2(0, -0.5)
+      if not table.icontains(wallPosList, wallPos) then
+        table.insert(wallPosList, wallPos)
+      end
+    end
+    if boardSvc:IsValidPiecePos(left) and table.Vector2Include(posList, left) then
+      local wallPos = pos + Vector2(-0.5, 0)
+      if not table.icontains(wallPosList, wallPos) then
+        table.insert(wallPosList, wallPos)
+      end
+    end
+    if boardSvc:IsValidPiecePos(right) and table.Vector2Include(posList, right) then
+      local wallPos = pos + Vector2(0.5, 0)
+      if not table.icontains(wallPosList, wallPos) then
+        table.insert(wallPosList, wallPos)
       end
     end
   end
   return wallPosList
 end
 
--- DECOMPILER ERROR at PC615: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.OnGetInvalidCreateTrapWallPosList = function(self)
-  -- function num : 0_203 , upvalues : _ENV
+function UtilDataServiceShare:OnGetInvalidCreateTrapWallPosList()
   local invalidPosList = {}
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,e in ipairs(monsterGroup:GetEntities()) do
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(monsterGroup:GetEntities()) do
     if not e:HasDeadMark() and e:HasBodyArea() then
       local bodyAreaCmpt = e:BodyArea()
       local areaArray = bodyAreaCmpt:GetArea()
-      if (table.count)(areaArray) > 1 then
+      if table.count(areaArray) > 1 then
         local monsterGridPos = e:GetGridPosition()
         local monsterPosList = {}
         for i = 1, #areaArray do
           local curAreaPos = areaArray[i]
-          ;
-          (table.insert)(monsterPosList, monsterGridPos + curAreaPos)
+          table.insert(monsterPosList, monsterGridPos + curAreaPos)
         end
         local invalidTrapWallPosPosList = self:CalcTrapWallPosEdgeIn(monsterPosList)
-        for _,pos in ipairs(invalidTrapWallPosPosList) do
-          if not (table.icontains)(invalidPosList, pos) then
-            (table.insert)(invalidPosList, pos)
+        for _, pos in ipairs(invalidTrapWallPosPosList) do
+          if not table.icontains(invalidPosList, pos) then
+            table.insert(invalidPosList, pos)
           end
         end
       end
     end
   end
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local logicTrapWallComponent = boardEntity:LogicTrapWall()
   if logicTrapWallComponent then
     local trapWallPosList = logicTrapWallComponent:GetTrapWallPosList()
-    if trapWallPosList and (table.count)(trapWallPosList) > 0 then
-      for _,pos in ipairs(trapWallPosList) do
-        if not (table.icontains)(invalidPosList, pos) then
-          (table.insert)(invalidPosList, pos)
+    if trapWallPosList and table.count(trapWallPosList) > 0 then
+      for _, pos in ipairs(trapWallPosList) do
+        if not table.icontains(invalidPosList, pos) then
+          table.insert(invalidPosList, pos)
         end
       end
     end
   end
-  do
-    return invalidPosList
-  end
+  return invalidPosList
 end
 
--- DECOMPILER ERROR at PC618: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsPosListBlockWithTrapWall = function(self, posList, monsterRaceType)
-  -- function num : 0_204 , upvalues : _ENV
+function UtilDataServiceShare:IsPosListBlockWithTrapWall(posList, monsterRaceType)
   if not monsterRaceType then
-    (Log.fatal)("function Param monsterRaceType is Nil ")
+    Log.fatal("function Param monsterRaceType is Nil ")
     return true
   end
   if monsterRaceType == MonsterRaceType.Fly then
     return false
   end
-  if (table.count)(posList) == 1 then
+  if table.count(posList) == 1 then
     return false
   end
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local logicTrapWallComponent = boardEntity:LogicTrapWall()
   if not logicTrapWallComponent then
     return false
   end
   local trapWallPosEdgeInPosList = self:CalcTrapWallPosEdgeIn(posList)
-  for _,pos in ipairs(trapWallPosEdgeInPosList) do
+  for _, pos in ipairs(trapWallPosEdgeInPosList) do
     local trapWall = logicTrapWallComponent:GetTrapWall(pos)
     if trapWall then
       return true
@@ -3815,35 +2885,29 @@ UtilDataServiceShare.IsPosListBlockWithTrapWall = function(self, posList, monste
   return false
 end
 
--- DECOMPILER ERROR at PC621: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.OnGetEntitySelectWeakEdgeDataList = function(self, entityID, selectKeyList)
-  -- function num : 0_205 , upvalues : _ENV
+function UtilDataServiceShare:OnGetEntitySelectWeakEdgeDataList(entityID, selectKeyList)
   local selectMonsterWeakDataList = {}
   local allMonsterWeakDataList = self:OnGetEntityWeakEdgeDataList(entityID)
-  if not allMonsterWeakDataList or (table.count)(allMonsterWeakDataList) == 0 then
+  if not allMonsterWeakDataList or table.count(allMonsterWeakDataList) == 0 then
     return {}
   end
-  for _,v in ipairs(allMonsterWeakDataList) do
+  for _, v in ipairs(allMonsterWeakDataList) do
     local monsterWeakData = v
     local key = monsterWeakData:GetKey()
-    if (table.icontains)(selectKeyList, key) then
-      (table.insert)(selectMonsterWeakDataList, v)
+    if table.icontains(selectKeyList, key) then
+      table.insert(selectMonsterWeakDataList, v)
     end
   end
   return selectMonsterWeakDataList
 end
 
--- DECOMPILER ERROR at PC624: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.OnGetEntityWeakEdgeDataList = function(self, entityID)
-  -- function num : 0_206
-  local targetEntity = (self._world):GetEntityByID(entityID)
+function UtilDataServiceShare:OnGetEntityWeakEdgeDataList(entityID)
+  local targetEntity = self._world:GetEntityByID(entityID)
   if not targetEntity then
-    return 
+    return
   end
   local weakEdgeDataList = {}
-  local bodyAreaCount = (targetEntity:BodyArea()):GetAreaCount()
+  local bodyAreaCount = targetEntity:BodyArea():GetAreaCount()
   if bodyAreaCount == 1 or bodyAreaCount == 2 or bodyAreaCount == 3 or bodyAreaCount == 4 or bodyAreaCount == 9 then
     weakEdgeDataList = self:OnEntityWeakEdgeDataOrderly(entityID)
   else
@@ -3852,125 +2916,132 @@ UtilDataServiceShare.OnGetEntityWeakEdgeDataList = function(self, entityID)
   return weakEdgeDataList
 end
 
--- DECOMPILER ERROR at PC627: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.OnEntityWeakEdgeDataMussy = function(self, entityID)
-  -- function num : 0_207 , upvalues : _ENV
-  local targetEntity = (self._world):GetEntityByID(entityID)
-  local configService = (self._world):GetService("Config")
+function UtilDataServiceShare:OnEntityWeakEdgeDataMussy(entityID)
+  local targetEntity = self._world:GetEntityByID(entityID)
+  local configService = self._world:GetService("Config")
   local monsterConfigData = configService:GetMonsterConfigData()
-  local monsterID = (targetEntity:MonsterID()):GetMonsterID()
+  local monsterID = targetEntity:MonsterID():GetMonsterID()
   local monsterResPath = monsterConfigData:GetMonsterResPath(monsterID)
-  local bodyAreaCount = (targetEntity:BodyArea()):GetAreaCount()
+  local bodyAreaCount = targetEntity:BodyArea():GetAreaCount()
   local weakEdgeDataList = {}
   if bodyAreaCount == 5 then
     if monsterResPath == "2905102.prefab" then
       weakEdgeDataList = self:OnEntityWeakEdgeDataOrderly(entityID)
-      local longestEdge = nil
-      for _,v in ipairs(weakEdgeDataList) do
+      local longestEdge
+      for _, v in ipairs(weakEdgeDataList) do
         local monsterWeakData = v
         local edgePosList = monsterWeakData:GetEdgePosList()
-        if (table.count)(edgePosList) == 3 then
+        if table.count(edgePosList) == 3 then
           longestEdge = v
           break
         end
       end
-      do
-        local edgeKey = (longestEdge:GetKey())
-        local targetEdgeKey = nil
-        if edgeKey == WeakEdgeType.WeakUp then
-          targetEdgeKey = WeakEdgeType.WeakDown
-        else
-          if edgeKey == WeakEdgeType.WeakDown then
-            targetEdgeKey = WeakEdgeType.WeakUp
-          else
-            if edgeKey == WeakEdgeType.WeakRight then
-              targetEdgeKey = WeakEdgeType.WeakLeft
-            else
-              if edgeKey == WeakEdgeType.WeakLeft then
-                targetEdgeKey = WeakEdgeType.WeakRight
-              end
-            end
-          end
-        end
-        local targetEdgeWeakData = nil
-        for _,v in ipairs(weakEdgeDataList) do
-          local monsterWeakData = v
-          local key = monsterWeakData:GetKey()
-          if key == targetEdgeKey then
-            targetEdgeWeakData = v
-            break
-          end
-        end
-        do
-          local targetEdgePosList = targetEdgeWeakData:GetEdgePosList()
-          local targetBodyPosList = targetEdgeWeakData:GetBodyPosList()
-          local extendWeakData1 = MonsterWeakData:New(targetEdgeKey + 10, {targetEdgePosList[1]}, {targetBodyPosList[1]}, entityID)
-          do
-            local extendWeakData2 = MonsterWeakData:New(targetEdgeKey + 20, {targetEdgePosList[1]}, {targetBodyPosList[1]}, entityID)
-            ;
-            (table.removev)(weakEdgeDataList, targetEdgeWeakData)
-            ;
-            (table.insert)(weakEdgeDataList, extendWeakData1)
-            ;
-            (table.insert)(weakEdgeDataList, extendWeakData2)
-            if monsterResPath == "2903601.prefab" and bodyAreaCount == 5 then
-              weakEdgeDataList = self:OnEntityWeakEdgeDataOrderly(entityID)
-              local monsterWeakDataUp1 = MonsterWeakData:New(WeakEdgeType.WeakUp_1, {Vector2(-1, 0.5)}, {Vector2(-1, 0)}, entityID)
-              local monsterWeakDataUp2 = MonsterWeakData:New(WeakEdgeType.WeakUp_2, {Vector2(1, 0.5)}, {Vector2(1, 0)}, entityID)
-              local monsterWeakDataDown1 = MonsterWeakData:New(WeakEdgeType.WeakDown_1, {Vector2(-1, -0.5)}, {Vector2(-1, 0)}, entityID)
-              local monsterWeakDataDown2 = MonsterWeakData:New(WeakEdgeType.WeakDown_2, {Vector2(1, -0.5)}, {Vector2(1, 0)}, entityID)
-              local monsterWeakDataLeft1 = MonsterWeakData:New(WeakEdgeType.WeakLeft_1, {Vector2(-0.5, -1)}, {Vector2(0, -1)}, entityID)
-              local monsterWeakDataLeft2 = MonsterWeakData:New(WeakEdgeType.WeakLeft_2, {Vector2(-0.5, 1)}, {Vector2(0, 1)}, entityID)
-              local monsterWeakDataRight1 = MonsterWeakData:New(WeakEdgeType.WeakRight_1, {Vector2(0.5, -1)}, {Vector2(0, -1)}, entityID)
-              local monsterWeakDataRight2 = MonsterWeakData:New(WeakEdgeType.WeakRight_2, {Vector2(0.5, 1)}, {Vector2(0, 1)}, entityID)
-              ;
-              (table.insert)(weakEdgeDataList, monsterWeakDataUp1)
-              ;
-              (table.insert)(weakEdgeDataList, monsterWeakDataUp2)
-              ;
-              (table.insert)(weakEdgeDataList, monsterWeakDataDown1)
-              ;
-              (table.insert)(weakEdgeDataList, monsterWeakDataDown2)
-              ;
-              (table.insert)(weakEdgeDataList, monsterWeakDataLeft1)
-              ;
-              (table.insert)(weakEdgeDataList, monsterWeakDataLeft2)
-              ;
-              (table.insert)(weakEdgeDataList, monsterWeakDataRight1)
-              ;
-              (table.insert)(weakEdgeDataList, monsterWeakDataRight2)
-            end
-            do
-              if bodyAreaCount == 12 then
-                weakEdgeDataList = self:OnEntityWeakEdgeDataOrderly(entityID)
-              end
-              return weakEdgeDataList
-            end
-          end
+      local edgeKey = longestEdge:GetKey()
+      local targetEdgeKey
+      if edgeKey == WeakEdgeType.WeakUp then
+        targetEdgeKey = WeakEdgeType.WeakDown
+      elseif edgeKey == WeakEdgeType.WeakDown then
+        targetEdgeKey = WeakEdgeType.WeakUp
+      elseif edgeKey == WeakEdgeType.WeakRight then
+        targetEdgeKey = WeakEdgeType.WeakLeft
+      elseif edgeKey == WeakEdgeType.WeakLeft then
+        targetEdgeKey = WeakEdgeType.WeakRight
+      end
+      local targetEdgeWeakData
+      for _, v in ipairs(weakEdgeDataList) do
+        local monsterWeakData = v
+        local key = monsterWeakData:GetKey()
+        if key == targetEdgeKey then
+          targetEdgeWeakData = v
+          break
         end
       end
+      local targetEdgePosList = targetEdgeWeakData:GetEdgePosList()
+      local targetBodyPosList = targetEdgeWeakData:GetBodyPosList()
+      local extendWeakData1 = MonsterWeakData:New(targetEdgeKey + 10, {
+        targetEdgePosList[1]
+      }, {
+        targetBodyPosList[1]
+      }, entityID)
+      local extendWeakData2 = MonsterWeakData:New(targetEdgeKey + 20, {
+        targetEdgePosList[1]
+      }, {
+        targetBodyPosList[1]
+      }, entityID)
+      table.removev(weakEdgeDataList, targetEdgeWeakData)
+      table.insert(weakEdgeDataList, extendWeakData1)
+      table.insert(weakEdgeDataList, extendWeakData2)
+    elseif monsterResPath == "2903601.prefab" and bodyAreaCount == 5 then
+      weakEdgeDataList = self:OnEntityWeakEdgeDataOrderly(entityID)
+      local monsterWeakDataUp1 = MonsterWeakData:New(WeakEdgeType.WeakUp_1, {
+        Vector2(-1, 0.5)
+      }, {
+        Vector2(-1, 0)
+      }, entityID)
+      local monsterWeakDataUp2 = MonsterWeakData:New(WeakEdgeType.WeakUp_2, {
+        Vector2(1, 0.5)
+      }, {
+        Vector2(1, 0)
+      }, entityID)
+      local monsterWeakDataDown1 = MonsterWeakData:New(WeakEdgeType.WeakDown_1, {
+        Vector2(-1, -0.5)
+      }, {
+        Vector2(-1, 0)
+      }, entityID)
+      local monsterWeakDataDown2 = MonsterWeakData:New(WeakEdgeType.WeakDown_2, {
+        Vector2(1, -0.5)
+      }, {
+        Vector2(1, 0)
+      }, entityID)
+      local monsterWeakDataLeft1 = MonsterWeakData:New(WeakEdgeType.WeakLeft_1, {
+        Vector2(-0.5, -1)
+      }, {
+        Vector2(0, -1)
+      }, entityID)
+      local monsterWeakDataLeft2 = MonsterWeakData:New(WeakEdgeType.WeakLeft_2, {
+        Vector2(-0.5, 1)
+      }, {
+        Vector2(0, 1)
+      }, entityID)
+      local monsterWeakDataRight1 = MonsterWeakData:New(WeakEdgeType.WeakRight_1, {
+        Vector2(0.5, -1)
+      }, {
+        Vector2(0, -1)
+      }, entityID)
+      local monsterWeakDataRight2 = MonsterWeakData:New(WeakEdgeType.WeakRight_2, {
+        Vector2(0.5, 1)
+      }, {
+        Vector2(0, 1)
+      }, entityID)
+      table.insert(weakEdgeDataList, monsterWeakDataUp1)
+      table.insert(weakEdgeDataList, monsterWeakDataUp2)
+      table.insert(weakEdgeDataList, monsterWeakDataDown1)
+      table.insert(weakEdgeDataList, monsterWeakDataDown2)
+      table.insert(weakEdgeDataList, monsterWeakDataLeft1)
+      table.insert(weakEdgeDataList, monsterWeakDataLeft2)
+      table.insert(weakEdgeDataList, monsterWeakDataRight1)
+      table.insert(weakEdgeDataList, monsterWeakDataRight2)
     end
+  elseif bodyAreaCount == 12 then
+    weakEdgeDataList = self:OnEntityWeakEdgeDataOrderly(entityID)
   end
+  return weakEdgeDataList
 end
 
--- DECOMPILER ERROR at PC630: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.OnEntityWeakEdgeDataOrderly = function(self, entityID)
-  -- function num : 0_208 , upvalues : _ENV
-  local targetEntity = (self._world):GetEntityByID(entityID)
+function UtilDataServiceShare:OnEntityWeakEdgeDataOrderly(entityID)
+  local targetEntity = self._world:GetEntityByID(entityID)
   local targetPos = targetEntity:GetGridPosition()
   local targetDir = targetEntity:GetGridDirection()
-  local bodyArea = (targetEntity:BodyArea()):GetArea()
-  local bodyAreaCount = (targetEntity:BodyArea()):GetAreaCount()
-  local gridOffset = (targetEntity:GridLocation()):GetGridOffset()
+  local bodyArea = targetEntity:BodyArea():GetArea()
+  local bodyAreaCount = targetEntity:BodyArea():GetAreaCount()
+  local gridOffset = targetEntity:GridLocation():GetGridOffset()
   local edgeCount = 4
   local xMin, xMax, yMin, yMax = 0, 0, 0, 0
-  for _,pos in ipairs(bodyArea) do
-    xMin = (math.min)(pos.x, xMin)
-    xMax = (math.max)(pos.x, xMax)
-    yMin = (math.min)(pos.y, yMin)
-    yMax = (math.max)(pos.y, yMax)
+  for _, pos in ipairs(bodyArea) do
+    xMin = math.min(pos.x, xMin)
+    xMax = math.max(pos.x, xMax)
+    yMin = math.min(pos.y, yMin)
+    yMax = math.max(pos.y, yMax)
   end
   local upEdgePosList = {}
   local downEdgePosList = {}
@@ -3980,62 +3051,42 @@ UtilDataServiceShare.OnEntityWeakEdgeDataOrderly = function(self, entityID)
   local downBodyPosList = {}
   local leftBodyPosList = {}
   local rightBodyPosList = {}
-  for _,pos in ipairs(bodyArea) do
-    do
-      if pos.x == xMin then
-        local left = pos + Vector2(-0.5, 0)
-        ;
-        (table.insert)(leftEdgePosList, left)
-        ;
-        (table.insert)(leftBodyPosList, pos)
-      end
-      do
-        if pos.x == xMax then
-          local right = pos + Vector2(0.5, 0)
-          ;
-          (table.insert)(rightEdgePosList, right)
-          ;
-          (table.insert)(rightBodyPosList, pos)
-        end
-        do
-          if pos.y == yMax then
-            local up = pos + Vector2(0, 0.5)
-            ;
-            (table.insert)(upEdgePosList, up)
-            ;
-            (table.insert)(upBodyPosList, pos)
-          end
-          do
-            if pos.y == yMin then
-              local down = pos + Vector2(0, -0.5)
-              ;
-              (table.insert)(downEdgePosList, down)
-              ;
-              (table.insert)(downBodyPosList, pos)
-            end
-            -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
-        end
-      end
+  for _, pos in ipairs(bodyArea) do
+    if pos.x == xMin then
+      local left = pos + Vector2(-0.5, 0)
+      table.insert(leftEdgePosList, left)
+      table.insert(leftBodyPosList, pos)
+    end
+    if pos.x == xMax then
+      local right = pos + Vector2(0.5, 0)
+      table.insert(rightEdgePosList, right)
+      table.insert(rightBodyPosList, pos)
+    end
+    if pos.y == yMax then
+      local up = pos + Vector2(0, 0.5)
+      table.insert(upEdgePosList, up)
+      table.insert(upBodyPosList, pos)
+    end
+    if pos.y == yMin then
+      local down = pos + Vector2(0, -0.5)
+      table.insert(downEdgePosList, down)
+      table.insert(downBodyPosList, pos)
     end
   end
   local monsterWeakDataUp = MonsterWeakData:New(WeakEdgeType.WeakUp, upEdgePosList, upBodyPosList, entityID)
   local monsterWeakDataDown = MonsterWeakData:New(WeakEdgeType.WeakDown, downEdgePosList, downBodyPosList, entityID)
   local monsterWeakDataRight = MonsterWeakData:New(WeakEdgeType.WeakRight, rightEdgePosList, rightBodyPosList, entityID)
   local monsterWeakDataLeft = MonsterWeakData:New(WeakEdgeType.WeakLeft, leftEdgePosList, leftBodyPosList, entityID)
-  return {monsterWeakDataUp, monsterWeakDataDown, monsterWeakDataRight, monsterWeakDataLeft}
+  return {
+    monsterWeakDataUp,
+    monsterWeakDataDown,
+    monsterWeakDataRight,
+    monsterWeakDataLeft
+  }
 end
 
--- DECOMPILER ERROR at PC633: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.OnCheckTargetCanAddWeak = function(self, entityID)
-  -- function num : 0_209 , upvalues : _ENV
-  local targetEntity = (self._world):GetEntityByID(entityID)
+function UtilDataServiceShare:OnCheckTargetCanAddWeak(entityID)
+  local targetEntity = self._world:GetEntityByID(entityID)
   if not targetEntity then
     return false
   end
@@ -4046,51 +3097,39 @@ UtilDataServiceShare.OnCheckTargetCanAddWeak = function(self, entityID)
   if buffComponent and buffComponent:HasBuffEffect(BuffEffectType.NotBeSelectedAsSkillTarget) then
     return false
   end
-  if targetEntity:HasRide() and (targetEntity:Ride()):GetRiderID() == entityID then
+  if targetEntity:HasRide() and targetEntity:Ride():GetRiderID() == entityID then
     return false
   end
   local monsterWeakComponent = targetEntity:MonsterWeak()
   if not monsterWeakComponent then
     return true
   end
-  local bodyArea = (targetEntity:BodyArea()):GetArea()
-  local bodyAreaCount = (targetEntity:BodyArea()):GetAreaCount()
+  local bodyArea = targetEntity:BodyArea():GetArea()
+  local bodyAreaCount = targetEntity:BodyArea():GetAreaCount()
   local edgeCount = 4
   if bodyAreaCount == 3 then
     edgeCount = 4
-  else
-    if bodyAreaCount == 5 then
-      local configService = (self._world):GetService("Config")
-      local monsterConfigData = configService:GetMonsterConfigData()
-      local monsterID = (targetEntity:MonsterID()):GetMonsterID()
-      local monsterResPath = monsterConfigData:GetMonsterResPath(monsterID)
-      if monsterResPath == "2905102.prefab" then
-        edgeCount = 5
-      else
-        if monsterResPath == "2903601.prefab" and bodyAreaCount == 5 then
-          edgeCount = 12
-        end
-      end
-    else
-      do
-        if bodyAreaCount == 12 then
-          edgeCount = 4
-        end
-        local hasWeakCount = monsterWeakComponent:GetMonsterWeakCount()
-        do return hasWeakCount < edgeCount end
-        -- DECOMPILER ERROR: 1 unprocessed JMP targets
-      end
+  elseif bodyAreaCount == 5 then
+    local configService = self._world:GetService("Config")
+    local monsterConfigData = configService:GetMonsterConfigData()
+    local monsterID = targetEntity:MonsterID():GetMonsterID()
+    local monsterResPath = monsterConfigData:GetMonsterResPath(monsterID)
+    if monsterResPath == "2905102.prefab" then
+      edgeCount = 5
+    elseif monsterResPath == "2903601.prefab" and bodyAreaCount == 5 then
+      edgeCount = 12
     end
+  elseif bodyAreaCount == 12 then
+    edgeCount = 4
   end
+  local hasWeakCount = monsterWeakComponent:GetMonsterWeakCount()
+  return edgeCount > hasWeakCount
 end
 
--- DECOMPILER ERROR at PC636: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.OnGetPetChainTimes = function(self, petEntity)
-  -- function num : 0_210
+function UtilDataServiceShare:OnGetPetChainTimes(petEntity)
   local buffComponent = petEntity:BuffComponent()
   local chainTimes = buffComponent:GetBuffValue("ChainSkillCount") or 1
-  local extraChainCount = nil
+  local extraChainCount
   if buffComponent:GetBuffValue("ExtraChainFlag") then
     chainTimes = chainTimes + 1
     extraChainCount = chainTimes
@@ -4098,13 +3137,10 @@ UtilDataServiceShare.OnGetPetChainTimes = function(self, petEntity)
   return chainTimes, extraChainCount
 end
 
--- DECOMPILER ERROR at PC639: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.OnGetPetChainTimesForRender = function(self, petEntity)
-  -- function num : 0_211
+function UtilDataServiceShare:OnGetPetChainTimesForRender(petEntity)
   local buffViewComponent = petEntity:BuffView()
   local chainTimes = buffViewComponent:GetBuffValue("ChainSkillCount") or 1
-  local extraChainCount = nil
+  local extraChainCount
   if buffViewComponent:GetBuffValue("ExtraChainFlag") then
     chainTimes = chainTimes + 1
     extraChainCount = chainTimes
@@ -4112,10 +3148,7 @@ UtilDataServiceShare.OnGetPetChainTimesForRender = function(self, petEntity)
   return chainTimes, extraChainCount
 end
 
--- DECOMPILER ERROR at PC642: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.OnCheckPetCanMultiStageChainSkill = function(self, petEntity)
-  -- function num : 0_212
+function UtilDataServiceShare:OnCheckPetCanMultiStageChainSkill(petEntity)
   local buffComponent = petEntity:BuffComponent()
   local multiStageChain = buffComponent:GetBuffValue("MultiStageChain")
   if multiStageChain == 1 then
@@ -4124,19 +3157,16 @@ UtilDataServiceShare.OnCheckPetCanMultiStageChainSkill = function(self, petEntit
   return false
 end
 
--- DECOMPILER ERROR at PC645: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.OnGetPetChainSkillConfigIDList = function(self, petEntity, roundIndex)
-  -- function num : 0_213 , upvalues : _ENV
-  local chainSkillStageInfoList = nil
-  local teamEntity = (petEntity:Pet()):GetOwnerTeamEntity()
+function UtilDataServiceShare:OnGetPetChainSkillConfigIDList(petEntity, roundIndex)
+  local chainSkillStageInfoList
+  local teamEntity = petEntity:Pet():GetOwnerTeamEntity()
   local logicChainPathCmpt = teamEntity:LogicChainPath()
   local chainPath = logicChainPathCmpt:GetLogicChainPath()
   local chain_rate = logicChainPathCmpt:GetChainRateAtIndex(#chainPath)
   local attributesComponent = petEntity:Attributes()
   local chainCountFix = attributesComponent:GetAttribute("ChainSkillReleaseFix")
   local chainCountMul = attributesComponent:GetAttribute("ChainSkillReleaseMul")
-  local realChainCount = (math.ceil)((chain_rate + chainCountFix) * (1 + chainCountMul))
+  local realChainCount = math.ceil((chain_rate + chainCountFix) * (1 + chainCountMul))
   local buffComponent = petEntity:BuffComponent()
   local chainExtraFix = buffComponent:GetBuffValue("ChangeExtraChainSkillReleaseFixForSkill")
   local skillInfoComponent = petEntity:SkillInfo()
@@ -4148,128 +3178,88 @@ UtilDataServiceShare.OnGetPetChainSkillConfigIDList = function(self, petEntity, 
     local chainInfo = ChainSkillStageInfo:New(chainSkillID, chainSkillStage)
     chainSkillStageInfoList = {chainInfo}
   end
-  do
-    return chainSkillStageInfoList
-  end
+  return chainSkillStageInfoList
 end
 
--- DECOMPILER ERROR at PC648: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetChainSkillByChainCount = function(self, petEntity, realChainCount, chainExtraFix)
-  -- function num : 0_214
+function UtilDataServiceShare:GetChainSkillByChainCount(petEntity, realChainCount, chainExtraFix)
   local skillInfoComponent = petEntity:SkillInfo()
   local chainSkillID, chainSkillStage = skillInfoComponent:GetChainSkillConfigID(realChainCount, chainExtraFix)
   return chainSkillID, chainSkillStage
 end
 
--- DECOMPILER ERROR at PC651: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.OnGetCurChainSkillID = function(self, petEntity, roundIndex, index)
-  -- function num : 0_215
+function UtilDataServiceShare:OnGetCurChainSkillID(petEntity, roundIndex, index)
   local chainSkillStageInfoList = self:OnGetPetChainSkillConfigIDList(petEntity, roundIndex)
   local chainSkillStageInfo = chainSkillStageInfoList[index]
   local chainSkillID = chainSkillStageInfo:GetChainSkillID()
   return chainSkillID
 end
 
--- DECOMPILER ERROR at PC654: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.OnGetPetBanSkillBuffValue = function(self, petEntityID)
-  -- function num : 0_216
-  local petEntity = (self._world):GetEntityByID(petEntityID)
+function UtilDataServiceShare:OnGetPetBanSkillBuffValue(petEntityID)
+  local petEntity = self._world:GetEntityByID(petEntityID)
   local buffCmpt = petEntity:BuffComponent()
-  if not buffCmpt:GetBuffValue("BanPetSkill") then
-    local banPetSkillList = {}
-  end
+  local banPetSkillList = buffCmpt:GetBuffValue("BanPetSkill") or {}
   return banPetSkillList
 end
 
--- DECOMPILER ERROR at PC657: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.OnCheckPetCanCastNormalSkill = function(self, petEntityID)
-  -- function num : 0_217 , upvalues : _ENV
+function UtilDataServiceShare:OnCheckPetCanCastNormalSkill(petEntityID)
   local banPetSkillList = self:OnGetPetBanSkillBuffValue(petEntityID)
-  if (table.icontains)(banPetSkillList, EnumBanPetSkill.Normal) then
+  if table.icontains(banPetSkillList, EnumBanPetSkill.Normal) then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC660: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.OnCheckPetCanCastChainSkill = function(self, petEntityID)
-  -- function num : 0_218 , upvalues : _ENV
+function UtilDataServiceShare:OnCheckPetCanCastChainSkill(petEntityID)
   local banPetSkillList = self:OnGetPetBanSkillBuffValue(petEntityID)
-  if (table.icontains)(banPetSkillList, EnumBanPetSkill.Chain) then
+  if table.icontains(banPetSkillList, EnumBanPetSkill.Chain) then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC663: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.OnCheckPetCanCastActiveSkill = function(self, petEntityID)
-  -- function num : 0_219 , upvalues : _ENV
+function UtilDataServiceShare:OnCheckPetCanCastActiveSkill(petEntityID)
   local banPetSkillList = self:OnGetPetBanSkillBuffValue(petEntityID)
-  if (table.icontains)(banPetSkillList, EnumBanPetSkill.Active) then
+  if table.icontains(banPetSkillList, EnumBanPetSkill.Active) then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC666: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsMatchPieceType = function(self, petEntityID, pieceType)
-  -- function num : 0_220 , upvalues : _ENV
-  local fettersSvc = (self._world):GetService("Fetters")
+function UtilDataServiceShare:IsMatchPieceType(petEntityID, pieceType)
+  local fettersSvc = self._world:GetService("Fetters")
   if not fettersSvc then
-    local petEntity = (self._world):GetEntityByID(petEntityID)
+    local petEntity = self._world:GetEntityByID(petEntityID)
     local elementCmpt = petEntity:Element()
     local primaryType = elementCmpt:GetPrimaryType()
     return CanMatchPieceType(primaryType, pieceType), false
   end
-  do
-    return fettersSvc:IsMatchPieceType(petEntityID, pieceType)
-  end
+  return fettersSvc:IsMatchPieceType(petEntityID, pieceType)
 end
 
--- DECOMPILER ERROR at PC669: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CanChangePieceToGray = function(self)
-  -- function num : 0_221 , upvalues : _ENV
-  do return (self._world):MatchType(GetMatchTypeType.NoLinkLine) ~= MatchType.MT_PopStarPro end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UtilDataServiceShare:CanChangePieceToGray()
+  return self._world:MatchType(GetMatchTypeType.NoLinkLine) ~= MatchType.MT_PopStarPro
 end
 
--- DECOMPILER ERROR at PC672: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CanCastChainSkill = function(self, teamEntity, gridPos, connectPieces)
-  -- function num : 0_222 , upvalues : _ENV
+function UtilDataServiceShare:CanCastChainSkill(teamEntity, gridPos, connectPieces)
   local canCast = true
   local chainPath = {gridPos}
-  ;
-  (table.appendArray)(chainPath, connectPieces)
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
+  table.appendArray(chainPath, connectPieces)
+  local utilCalcSvc = self._world:GetService("UtilCalc")
   local chainRate = utilCalcSvc:GetChainDamageRateAtIndex(chainPath, #chainPath)
   local buffComp = teamEntity:BuffComponent()
   local popLimitVal = buffComp:GetBuffValue(PopStarConst.ChainAttackMinPopNumKey)
-  do
-    if popLimitVal then
-      local limitNum = tonumber(popLimitVal)
-      if chainRate < limitNum then
-        canCast = false
-      end
+  if popLimitVal then
+    local limitNum = tonumber(popLimitVal)
+    if chainRate < limitNum then
+      canCast = false
     end
-    return canCast
   end
+  return canCast
 end
 
--- DECOMPILER ERROR at PC675: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetFettersPrimaryType = function(self, petEntity)
-  -- function num : 0_223 , upvalues : _ENV
-  local primaryType = nil
-  local fettersSvc = (self._world):GetService("Fetters")
+function UtilDataServiceShare:GetFettersPrimaryType(petEntity)
+  local primaryType
+  local fettersSvc = self._world:GetService("Fetters")
   if fettersSvc then
     primaryType = fettersSvc:GetFettersPrimaryType(petEntity)
   end
@@ -4279,77 +3269,52 @@ UtilDataServiceShare.GetFettersPrimaryType = function(self, petEntity)
   return PieceType.None
 end
 
--- DECOMPILER ERROR at PC678: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsHasExtraChainFlag = function(self, petPstID)
-  -- function num : 0_224
+function UtilDataServiceShare:IsHasExtraChainFlag(petPstID)
   local petEntityId = self:GetEntityIDByPstID(petPstID)
-  local petEntity = (self._world):GetEntityByID(petEntityId)
+  local petEntity = self._world:GetEntityByID(petEntityId)
   local buffViewComponent = petEntity:BuffView()
   local flag = buffViewComponent:GetBuffValue("ExtraChainFlag")
-  do return flag ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return flag ~= nil
 end
 
--- DECOMPILER ERROR at PC681: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetEntityIstavanActiveCountByPetPstID = function(self, petPstID)
-  -- function num : 0_225
+function UtilDataServiceShare:GetEntityIstavanActiveCountByPetPstID(petPstID)
   local petEntityId = self:GetEntityIDByPstID(petPstID)
-  local petEntity = (self._world):GetEntityByID(petEntityId)
+  local petEntity = self._world:GetEntityByID(petEntityId)
   return self:GetEntityIstavanActiveCount(petEntity)
 end
 
--- DECOMPILER ERROR at PC684: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetEntityIstavanActiveCount = function(self, entity)
-  -- function num : 0_226
+function UtilDataServiceShare:GetEntityIstavanActiveCount(entity)
   local buffCmpt = entity:BuffComponent()
   local value = buffCmpt:GetBuffValue("IstavanActiveCount")
-  if not value then
-    value = 0
-  end
+  value = value or 0
   return value
 end
 
--- DECOMPILER ERROR at PC687: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.AddEntityIstavanActiveCount = function(self, entity, count)
-  -- function num : 0_227
+function UtilDataServiceShare:AddEntityIstavanActiveCount(entity, count)
   local value = self:GetEntityIstavanActiveCount(entity)
   value = value + count
   local buffCmpt = entity:BuffComponent()
   buffCmpt:SetBuffValue("IstavanActiveCount", value)
 end
 
--- DECOMPILER ERROR at PC690: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetPetExtraChainCastCount = function(self, petPstID, baseValue, mulValue)
-  -- function num : 0_228
-  local retValue = nil
+function UtilDataServiceShare:GetPetExtraChainCastCount(petPstID, baseValue, mulValue)
+  local retValue
   if petPstID then
     local petEntityId = self:GetEntityIDByPstID(petPstID)
-    local petEntity = (self._world):GetEntityByID(petEntityId)
+    local petEntity = self._world:GetEntityByID(petEntityId)
     local buffCmpt = petEntity:BuffComponent()
     local value = self:GetEntityIstavanActiveCount(petEntity)
-    if not value then
-      value = 0
-    end
+    value = value or 0
     retValue = baseValue + mulValue * value
   end
-  do
-    return retValue
-  end
+  return retValue
 end
 
--- DECOMPILER ERROR at PC693: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetAllPetExtraChainCastCount = function(self, casterEntity, baseValue, mulValue)
-  -- function num : 0_229 , upvalues : _ENV
-  local teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-  local teamMembers = (teamEntity:Team()):GetTeamPetEntities()
+function UtilDataServiceShare:GetAllPetExtraChainCastCount(casterEntity, baseValue, mulValue)
+  local teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
+  local teamMembers = teamEntity:Team():GetTeamPetEntities()
   local ret = {}
-  for _,petEntity in ipairs(teamMembers) do
+  for _, petEntity in ipairs(teamMembers) do
     if petEntity:GetID() ~= casterEntity:GetID() then
       local cPstId = petEntity:PetPstID()
       local pstId = cPstId:GetPstID()
@@ -4359,15 +3324,12 @@ UtilDataServiceShare.GetAllPetExtraChainCastCount = function(self, casterEntity,
   return ret
 end
 
--- DECOMPILER ERROR at PC696: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetPetExtraChainCastCountBySkillID = function(self, entity, skillID, petPstID)
-  -- function num : 0_230 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function UtilDataServiceShare:GetPetExtraChainCastCountBySkillID(entity, skillID, petPstID)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID, entity)
-  local cfgEffectArray = (skillConfigData:GetSkillEffect())
-  local baseValue, mulValue = nil, nil
-  for index,cfgEffectParam in ipairs(cfgEffectArray) do
+  local cfgEffectArray = skillConfigData:GetSkillEffect()
+  local baseValue, mulValue
+  for index, cfgEffectParam in ipairs(cfgEffectArray) do
     if cfgEffectParam:GetEffectType() == SkillEffectType.AppointCastChain then
       local param = cfgEffectParam
       baseValue = param:GetBaseValue()
@@ -4378,51 +3340,37 @@ UtilDataServiceShare.GetPetExtraChainCastCountBySkillID = function(self, entity,
   return needPower
 end
 
--- DECOMPILER ERROR at PC699: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CheckPetCanCastSkill = function(self, entity, skillID, petPstID)
-  -- function num : 0_231
+function UtilDataServiceShare:CheckPetCanCastSkill(entity, skillID, petPstID)
   local needPower = self:GetPetExtraChainCastCountBySkillID(entity, skillID, petPstID)
-  local power = (entity:Attributes()):GetAttribute("LegendPower")
-  do return needPower <= power end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local power = entity:Attributes():GetAttribute("LegendPower")
+  return needPower <= power
 end
 
--- DECOMPILER ERROR at PC702: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetCasterPickUpExtraChainPowerCount = function(self, entity, skillID)
-  -- function num : 0_232
+function UtilDataServiceShare:GetCasterPickUpExtraChainPowerCount(entity, skillID)
   local activeSkillPickUpComponent = entity:ActiveSkillPickUpComponent()
   local pickGridPos = activeSkillPickUpComponent:GetAllValidPickUpGridPos()
-  local pickPetPstID = (activeSkillPickUpComponent:GetPickUpPetPstID())
-  local power = nil
+  local pickPetPstID = activeSkillPickUpComponent:GetPickUpPetPstID()
+  local power
   if pickGridPos and #pickGridPos ~= 0 then
-    local configService = (self._world):GetService("Config")
+    local configService = self._world:GetService("Config")
     local skillConfigData = configService:GetSkillConfigData(skillID, entity)
     power = skillConfigData:GetSkillTriggerParam()
   else
-    do
-      do
-        local utilDataSvc = (self._world):GetService("UtilData")
-        power = self:GetPetExtraChainCastCountBySkillID(entity, skillID, pickPetPstID)
-        return power
-      end
-    end
+    local utilDataSvc = self._world:GetService("UtilData")
+    power = self:GetPetExtraChainCastCountBySkillID(entity, skillID, pickPetPstID)
   end
+  return power
 end
 
--- DECOMPILER ERROR at PC705: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CalcYiSiTaWanCastActiveSkillMinimum = function(self, entity, skillID, forAutoFight)
-  -- function num : 0_233 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function UtilDataServiceShare:CalcYiSiTaWanCastActiveSkillMinimum(entity, skillID, forAutoFight)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID, entity)
   local ret = 99
   local pickUpType = skillConfigData:GetSkillPickType()
   if pickUpType == SkillPickUpType.PickUpUIAndTrap then
-    local cfgEffectArray = (skillConfigData:GetSkillEffect())
-    local baseValue, mulValue = nil, nil
-    for index,cfgEffectParam in ipairs(cfgEffectArray) do
+    local cfgEffectArray = skillConfigData:GetSkillEffect()
+    local baseValue, mulValue
+    for index, cfgEffectParam in ipairs(cfgEffectArray) do
       if cfgEffectParam:GetEffectType() == SkillEffectType.AppointCastChain then
         local param = cfgEffectParam
         baseValue = param:GetBaseValue()
@@ -4433,80 +3381,61 @@ UtilDataServiceShare.CalcYiSiTaWanCastActiveSkillMinimum = function(self, entity
     local pickNum = skillConfigData:GetSkillPickParam()
     if not pickNum or pickNum[1] == 0 then
       local allPetExtraChainCastCount = self:GetAllPetExtraChainCastCount(entity, baseValue, mulValue)
-      if (table.count)(allPetExtraChainCastCount) > 0 then
+      if 0 < table.count(allPetExtraChainCastCount) then
         return needPower
       else
-        for petPstID,count in pairs(allPetExtraChainCastCount) do
-          if count < ret then
+        for petPstID, count in pairs(allPetExtraChainCastCount) do
+          if ret > count then
             ret = count
           end
         end
       end
     else
-      do
-        do
-          ret = needPower
-          return ret
-        end
-      end
+      ret = needPower
     end
   end
+  return ret
 end
 
--- DECOMPILER ERROR at PC708: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CheckCanCastActiveSkillMinimumCondition = function(self, entity, skillID)
-  -- function num : 0_234 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function UtilDataServiceShare:CheckCanCastActiveSkillMinimumCondition(entity, skillID)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID, entity)
   local pickUpType = skillConfigData:GetSkillPickType()
   if pickUpType == SkillPickUpType.PickUpUIAndTrap then
-    local power = (entity:Attributes()):GetAttribute("LegendPower")
+    local power = entity:Attributes():GetAttribute("LegendPower")
     local minCostPower = self:CalcYiSiTaWanCastActiveSkillMinimum(entity, skillID)
-    return minCostPower <= power
+    return power >= minCostPower
   end
   local extraParam = skillConfigData:GetSkillTriggerExtraParam()
   if extraParam and extraParam[SkillTriggerTypeExtraParam.Pet1702361InTeam] then
-    local utilData = (self._world):GetService("UtilData")
+    local utilData = self._world:GetService("UtilData")
     local flag = utilData:OnCheckEntityHasBuffFlag(entity, BuffFlags.Pet1702361NotLinkLine)
     return flag
   end
-  do return true end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return true
 end
 
--- DECOMPILER ERROR at PC711: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.CheckSkillCanCastByExtraParam = function(self, entity, skillID)
-  -- function num : 0_235 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function UtilDataServiceShare:CheckSkillCanCastByExtraParam(entity, skillID)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID, entity)
   local extraParam = skillConfigData:GetSkillTriggerExtraParam()
   if extraParam and extraParam[SkillTriggerTypeExtraParam.Pet1702361InTeam] then
-    local utilData = (self._world):GetService("UtilData")
+    local utilData = self._world:GetService("UtilData")
     local flag = utilData:OnCheckEntityHasBuffFlag(entity, BuffFlags.Pet1702361NotLinkLine)
     return flag
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC714: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsNeedShowLinkageNumForCostStep = function(self)
-  -- function num : 0_236 , upvalues : _ENV
-  if (self._world):LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
+function UtilDataServiceShare:IsNeedShowLinkageNumForCostStep()
+  if self._world:LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
     return true
   end
   return self:IsPreviewNeedShowLinkageNumForCostStep()
 end
 
--- DECOMPILER ERROR at PC717: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsPreviewNeedShowLinkageNumForCostStep = function(self)
-  -- function num : 0_237 , upvalues : _ENV
-  local previewEntity = (self._world):GetPreviewEntity()
+function UtilDataServiceShare:IsPreviewNeedShowLinkageNumForCostStep()
+  local previewEntity = self._world:GetPreviewEntity()
   if not previewEntity then
     return false
   end
@@ -4517,51 +3446,40 @@ UtilDataServiceShare.IsPreviewNeedShowLinkageNumForCostStep = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC720: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetPreviewPetEntityID = function(self)
-  -- function num : 0_238
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function UtilDataServiceShare:GetPreviewPetEntityID()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   local activeSkillID = pickUpTargetCmpt:GetCurActiveSkillID()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local petPstID = pickUpTargetCmpt:GetPetPstid()
   local petEntityId = utilDataSvc:GetEntityIDByPstID(petPstID)
   return petEntityId
 end
 
--- DECOMPILER ERROR at PC723: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsEnoughStepToLinkMore = function(self, chainPath)
-  -- function num : 0_239
+function UtilDataServiceShare:IsEnoughStepToLinkMore(chainPath)
   if self:IsNeedShowLinkageNumForCostStep() then
     local pathCount = -1
     if chainPath then
       pathCount = #chainPath
     end
     local curStepPoint = self:GetCurLinkStepPoint()
-    if pathCount >= 0 and pathCount < curStepPoint + 1 then
+    if 0 <= pathCount and pathCount < curStepPoint + 1 then
       return true
     end
     return false
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC726: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetCurLinkStepPoint = function(self)
-  -- function num : 0_240 , upvalues : _ENV
+function UtilDataServiceShare:GetCurLinkStepPoint()
   local point = 0
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   if lsvcFeature and not self:IsPreviewNeedShowLinkageNumForCostStep() then
     if lsvcFeature:HasFeatureType(FeatureType.StepPoint) then
       point = lsvcFeature:GetCurStepPoint()
     else
       point = 15
-      local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+      local teamEntity = self._world:Player():GetCurrentTeamEntity()
       if teamEntity then
         local buffCmpt = teamEntity:BuffComponent()
         if buffCmpt then
@@ -4572,29 +3490,20 @@ UtilDataServiceShare.GetCurLinkStepPoint = function(self)
         end
       end
     end
-  else
-    do
-      if self:IsPreviewNeedShowLinkageNumForCostStep() then
-        local renderBoardEntity = (self._world):GetRenderBoardEntity()
-        local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
-        local activeSkillID = pickUpTargetCmpt:GetCurActiveSkillID()
-        local utilDataSvc = (self._world):GetService("UtilData")
-        local petPstID = pickUpTargetCmpt:GetPetPstid()
-        local petEntityId = utilDataSvc:GetEntityIDByPstID(petPstID)
-        local petEntity = (self._world):GetEntityByID(petEntityId)
-        point = self:GetPet1702361LinkLineStep(petEntity, activeSkillID)
-      end
-      do
-        return point
-      end
-    end
+  elseif self:IsPreviewNeedShowLinkageNumForCostStep() then
+    local renderBoardEntity = self._world:GetRenderBoardEntity()
+    local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
+    local activeSkillID = pickUpTargetCmpt:GetCurActiveSkillID()
+    local utilDataSvc = self._world:GetService("UtilData")
+    local petPstID = pickUpTargetCmpt:GetPetPstid()
+    local petEntityId = utilDataSvc:GetEntityIDByPstID(petPstID)
+    local petEntity = self._world:GetEntityByID(petEntityId)
+    point = self:GetPet1702361LinkLineStep(petEntity, activeSkillID)
   end
+  return point
 end
 
--- DECOMPILER ERROR at PC729: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsPetJoinChainSpecial = function(self, petPstID, chainPathLen, elementType, firstElementType)
-  -- function num : 0_241 , upvalues : _ENV
+function UtilDataServiceShare:IsPetJoinChainSpecial(petPstID, chainPathLen, elementType, firstElementType)
   local beAffected = false
   local castPetEntity = self:GetEntityByPstID(petPstID)
   if not castPetEntity then
@@ -4603,10 +3512,10 @@ UtilDataServiceShare.IsPetJoinChainSpecial = function(self, petPstID, chainPathL
   if not elementType then
     return false, beAffected
   end
-  local teamEntity = (castPetEntity:Pet()):GetOwnerTeamEntity()
+  local teamEntity = castPetEntity:Pet():GetOwnerTeamEntity()
   local cTeam = teamEntity:Team()
   local teamLeaderEntity = cTeam:GetTeamLeaderEntity()
-  if (self._world):LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
+  if self._world:LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
     local teamBuffCmpt = teamEntity:BuffComponent()
     if teamBuffCmpt then
       local onlyTeamLeaderColorPet = teamBuffCmpt:GetBuffValue("OnlyTeamLeaderColorPet")
@@ -4623,116 +3532,78 @@ UtilDataServiceShare.IsPetJoinChainSpecial = function(self, petPstID, chainPathL
           end
         end
       else
-        do
-          do
-            beAffected = true
-            do return true, beAffected end
-            return false, beAffected
-          end
-        end
+        beAffected = true
+        return true, beAffected
       end
     end
   end
+  return false, beAffected
 end
 
--- DECOMPILER ERROR at PC732: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetCurAutoBeadPowerInfo = function(self)
-  -- function num : 0_242
+function UtilDataServiceShare:GetCurAutoBeadPowerInfo()
   local point = 0
   local pointEachPower = 0
-  local autoBeadServiceLogic = (self._world):GetService("AutoBeadLogic")
+  local autoBeadServiceLogic = self._world:GetService("AutoBeadLogic")
   if autoBeadServiceLogic then
-    local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+    local teamEntity = self._world:Player():GetCurrentTeamEntity()
     local holderEntity = autoBeadServiceLogic:GetAutoBeadSkillHolder(teamEntity)
     if holderEntity then
       point = autoBeadServiceLogic:GetAutoBeadPoint(teamEntity)
       pointEachPower = autoBeadServiceLogic:GetAutoBeadPointEachPower(teamEntity)
     end
   end
-  do
-    return point, pointEachPower
-  end
+  return point, pointEachPower
 end
 
--- DECOMPILER ERROR at PC735: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetAutoBeadList = function(self)
-  -- function num : 0_243
-  local list = nil
-  local autoBeadServiceLogic = (self._world):GetService("AutoBeadLogic")
+function UtilDataServiceShare:GetAutoBeadList()
+  local list
+  local autoBeadServiceLogic = self._world:GetService("AutoBeadLogic")
   if autoBeadServiceLogic then
-    local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+    local teamEntity = self._world:Player():GetCurrentTeamEntity()
     local holderEntity = autoBeadServiceLogic:GetAutoBeadSkillHolder(teamEntity)
     if holderEntity then
       list = autoBeadServiceLogic:GetAutoBeadList(teamEntity)
     end
   end
-  do
-    return list
-  end
+  return list
 end
 
--- DECOMPILER ERROR at PC738: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetEntityHPShieldType = function(self, entityID)
-  -- function num : 0_244
-  local buffSvc = (self._world):GetService("BuffLogic")
+function UtilDataServiceShare:GetEntityHPShieldType(entityID)
+  local buffSvc = self._world:GetService("BuffLogic")
   local hpShieldType = buffSvc:GetEntityHPShieldType(entityID)
   return hpShieldType
 end
 
--- DECOMPILER ERROR at PC741: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetFeatureTetrisIndex = function(self)
-  -- function num : 0_245
-  local featureSvcL = (self._world):GetService("FeatureLogic")
+function UtilDataServiceShare:GetFeatureTetrisIndex()
+  local featureSvcL = self._world:GetService("FeatureLogic")
   return featureSvcL:GetTetrisIndex()
 end
 
--- DECOMPILER ERROR at PC744: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetFeatureTetrisDirIndex = function(self)
-  -- function num : 0_246
-  local featureSvcL = (self._world):GetService("FeatureLogic")
+function UtilDataServiceShare:GetFeatureTetrisDirIndex()
+  local featureSvcL = self._world:GetService("FeatureLogic")
   local index = featureSvcL:GetTetrisDirIndex()
   return index
 end
 
--- DECOMPILER ERROR at PC747: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.ParseFeatureTetrisDirTypeToVector2 = function(self, dirType)
-  -- function num : 0_247 , upvalues : _ENV
+function UtilDataServiceShare:ParseFeatureTetrisDirTypeToVector2(dirType)
   if dirType == HitBackDirectionType.Up then
     return Vector2.up, 0
-  else
-    if dirType == HitBackDirectionType.Left then
-      return Vector2.left, -90
-    else
-      if dirType == HitBackDirectionType.Down then
-        return Vector2.down, 180
-      else
-        if dirType == HitBackDirectionType.Right then
-          return Vector2.right, 90
-        end
-      end
-    end
+  elseif dirType == HitBackDirectionType.Left then
+    return Vector2.left, -90
+  elseif dirType == HitBackDirectionType.Down then
+    return Vector2.down, 180
+  elseif dirType == HitBackDirectionType.Right then
+    return Vector2.right, 90
   end
 end
 
--- DECOMPILER ERROR at PC750: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetFeatureTetrisDir = function(self)
-  -- function num : 0_248
-  local featureSvcL = (self._world):GetService("FeatureLogic")
+function UtilDataServiceShare:GetFeatureTetrisDir()
+  local featureSvcL = self._world:GetService("FeatureLogic")
   local dirType = featureSvcL:GetTetrisDir()
   return self:ParseFeatureTetrisDirTypeToVector2(dirType)
 end
 
--- DECOMPILER ERROR at PC753: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsPetAnySkillReady = function(self, petEntity)
-  -- function num : 0_249 , upvalues : _ENV
+function UtilDataServiceShare:IsPetAnySkillReady(petEntity)
   local anyReady = false
   if petEntity then
     local skillInfoCmpt = petEntity:SkillInfo()
@@ -4740,276 +3611,212 @@ UtilDataServiceShare.IsPetAnySkillReady = function(self, petEntity)
     local extraSkillIDList = skillInfoCmpt:GetExtraActiveSkillIDList()
     local allSkill = {}
     if activeSkillID then
-      (table.insert)(allSkill, activeSkillID)
+      table.insert(allSkill, activeSkillID)
     end
     if extraSkillIDList then
-      (table.appendArray)(allSkill, extraSkillIDList)
+      table.appendArray(allSkill, extraSkillIDList)
     end
-    for index,skillId in ipairs(allSkill) do
+    for index, skillId in ipairs(allSkill) do
       local readyAttr = self:GetPetSkillReadyAttr(petEntity, skillId)
-      local bReady = not readyAttr or readyAttr == 1
+      local bReady = readyAttr and readyAttr == 1
       if bReady then
         anyReady = true
         break
       end
     end
   end
-  do return anyReady end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  return anyReady
 end
 
--- DECOMPILER ERROR at PC756: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetReplacedBuffIdForPlayIns = function(self, entity, buffId)
-  -- function num : 0_250
-  local buffSvc = (self._world):GetService("BuffLogic")
+function UtilDataServiceShare:GetReplacedBuffIdForPlayIns(entity, buffId)
+  local buffSvc = self._world:GetService("BuffLogic")
   return buffSvc:GetReplacedBuffIdForPlayIns(entity, buffId)
 end
 
--- DECOMPILER ERROR at PC759: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetReplacedBuffEffectTypeForPlayIns = function(self, entity, buffEffectType)
-  -- function num : 0_251
-  local buffSvc = (self._world):GetService("BuffLogic")
+function UtilDataServiceShare:GetReplacedBuffEffectTypeForPlayIns(entity, buffEffectType)
+  local buffSvc = self._world:GetService("BuffLogic")
   return buffSvc:GetReplacedBuffEffectTypeForPlayIns(entity, buffEffectType)
 end
 
--- DECOMPILER ERROR at PC762: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsSkillInvalidated = function(self, casterEntity, activeSkillID)
-  -- function num : 0_252 , upvalues : _ENV
+function UtilDataServiceShare:IsSkillInvalidated(casterEntity, activeSkillID)
   local hasInvalidate = self:GetEntityBuffValue(casterEntity, "InvalidateActiveSkill")
   if hasInvalidate and hasInvalidate == 1 then
     local excludeTriggerType = self:GetEntityBuffValue(casterEntity, "InvalidateActiveSkillExcludeTriggerType")
     if excludeTriggerType and type(excludeTriggerType) == "table" and activeSkillID then
-      local configService = (self._world):GetService("Config")
+      local configService = self._world:GetService("Config")
       local skillConfigData = configService:GetSkillConfigData(activeSkillID)
       local skillTriggerType = skillConfigData:GetSkillTriggerType()
-      if (table.icontains)(excludeTriggerType, skillTriggerType) then
+      if table.icontains(excludeTriggerType, skillTriggerType) then
         return false
       end
     end
-    do
-      do
-        do return true end
-        return false
-      end
-    end
+    return true
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC765: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetPreviewLinkLineCount = function(self)
-  -- function num : 0_253
+function UtilDataServiceShare:GetPreviewLinkLineCount()
 end
 
--- DECOMPILER ERROR at PC769: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetPet1702361LinkLineStep = function(self, petEntity, skillID)
-  -- function num : 0_254 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function UtilDataServiceShare:GetPet1702361LinkLineStep(petEntity, skillID)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID, petEntity)
   local legendPower = self:GetPetLegendPowerAttr(petEntity)
   if legendPower == 0 then
     return 0
   end
   local pickUpPerPower = self:GetPet1702361LinkLinePerPower(petEntity, skillID)
-  local pickUpNum = (math.floor)(legendPower / pickUpPerPower)
+  local pickUpNum = math.floor(legendPower / pickUpPerPower)
   return pickUpNum
 end
 
--- DECOMPILER ERROR at PC773: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetPet1702361LinkLinePerPower = function(self, petEntity, skillID)
-  -- function num : 0_255 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function UtilDataServiceShare:GetPet1702361LinkLinePerPower(petEntity, skillID)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID, petEntity)
   local triggerExtraParam = skillConfigData:GetSkillTriggerExtraParam()
   local pickUpPerPower = tonumber(triggerExtraParam[SkillTriggerTypeExtraParam.Pet1702361LinkLinePerPower]) or 1
   return pickUpPerPower
 end
 
--- DECOMPILER ERROR at PC777: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetPet1702361LinkLineBeginPos = function(self, petEntityID, skillID)
-  -- function num : 0_256 , upvalues : _ENV
-  local petEntity = (self._world):GetEntityByID(petEntityID)
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function UtilDataServiceShare:GetPet1702361LinkLineBeginPos(petEntityID, skillID)
+  local petEntity = self._world:GetEntityByID(petEntityID)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local playerPos = teamEntity:GetGridPosition()
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID, petEntity)
   if skillConfigData:GetSkillPickType() ~= SkillPickUpType.LinkLineSP then
     return playerPos
   end
-  local trapID = (skillConfigData._pickUpParam)[2]
-  local trapLogicSvc = (self._world):GetService("TrapLogic")
+  local trapID = skillConfigData._pickUpParam[2]
+  local trapLogicSvc = self._world:GetService("TrapLogic")
   local trapEntityList = trapLogicSvc:FindTrapByTrapID(trapID)
   if not trapEntityList or #trapEntityList == 0 then
     return playerPos
   end
-  local trapEntity = (self._world):GetEntityByID(trapEntityList[1])
+  local trapEntity = self._world:GetEntityByID(trapEntityList[1])
   local pos = trapEntity:GetGridPosition()
   return pos
 end
 
--- DECOMPILER ERROR at PC781: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.Is2PosCanConnectNoPieceTypeCheck = function(self, pos1, pos2)
-  -- function num : 0_257 , upvalues : _ENV
+function UtilDataServiceShare:Is2PosCanConnectNoPieceTypeCheck(pos1, pos2)
   local bConnect = false
   local pieceType1 = 99
   local pieceType2 = 99
   local canLinkLine = false
   local posCanLinkList = self:GetRoundGrid(pos1)
-  for i,pos in ipairs(posCanLinkList) do
+  for i, pos in ipairs(posCanLinkList) do
     if pos.x == pos2.x and pos.y == pos2.y and not self:IsPosBlockLinkLineForChain(pos) then
       bConnect = true
       canLinkLine = true
       break
     end
   end
-  do
-    local msg = "pieceType1=" .. pieceType1 .. " pieceType2=" .. pieceType2 .. " canLinkLine=" .. tostring(canLinkLine)
-    return bConnect, msg
-  end
+  local msg = "pieceType1=" .. pieceType1 .. " pieceType2=" .. pieceType2 .. " canLinkLine=" .. tostring(canLinkLine)
+  return bConnect, msg
 end
 
--- DECOMPILER ERROR at PC785: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.SaveActiveSkillLinkLinePosAndDir = function(self, teamEntity)
-  -- function num : 0_258
+function UtilDataServiceShare:SaveActiveSkillLinkLinePosAndDir(teamEntity)
   local logicPos = teamEntity:GetGridPosition()
   local logicDir = teamEntity:GetGridDirection()
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   battleStatCmpt:SetLogicActiveSkillLinkLineTeamPos(logicPos, logicDir)
-  local teamLeader = (teamEntity:Team()):GetTeamLeaderEntity()
-  if (self._world):RunAtClient() then
-    local boardServiceRender = (self._world):GetService("BoardRender")
+  local teamLeader = teamEntity:Team():GetTeamLeaderEntity()
+  if self._world:RunAtClient() then
+    local boardServiceRender = self._world:GetService("BoardRender")
     local renderPos = boardServiceRender:GetRealEntityGridPos(teamLeader)
     local renderDir = teamLeader:GetDirection()
     battleStatCmpt:SetRenderActiveSkillLinkLineTeamPos(renderPos, renderDir)
   end
 end
 
--- DECOMPILER ERROR at PC789: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetLogicActiveSkillLinkLineTeamPos = function(self)
-  -- function num : 0_259
-  local battleStatCmpt = (self._world):BattleStat()
+function UtilDataServiceShare:GetLogicActiveSkillLinkLineTeamPos()
+  local battleStatCmpt = self._world:BattleStat()
   if battleStatCmpt:IsActiveSkillLinkLine() then
     return battleStatCmpt:GetLogicActiveSkillLinkLineTeamPos()
   end
 end
 
--- DECOMPILER ERROR at PC793: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetRenderActiveSkillLinkLineTeamPos = function(self)
-  -- function num : 0_260
-  local battleStatCmpt = (self._world):BattleStat()
+function UtilDataServiceShare:GetRenderActiveSkillLinkLineTeamPos()
+  local battleStatCmpt = self._world:BattleStat()
   if battleStatCmpt:IsActiveSkillLinkLine() then
     return battleStatCmpt:GetRenderActiveSkillLinkLineTeamPos()
   end
 end
 
--- DECOMPILER ERROR at PC797: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.FindTrapByTrapID = function(self, trapID)
-  -- function num : 0_261
-  local trapLogicSvc = (self._world):GetService("TrapLogic")
+function UtilDataServiceShare:FindTrapByTrapID(trapID)
+  local trapLogicSvc = self._world:GetService("TrapLogic")
   local trapEntityList = trapLogicSvc:FindTrapByTrapID(trapID)
   return trapEntityList
 end
 
--- DECOMPILER ERROR at PC801: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsPet1702361ActiveSkillPreview = function(self)
-  -- function num : 0_262
-  local renderBattleStatCmpt = (self._world):RenderBattleStat()
+function UtilDataServiceShare:IsPet1702361ActiveSkillPreview()
+  local renderBattleStatCmpt = self._world:RenderBattleStat()
   return renderBattleStatCmpt:IsPet1702361ActiveSkillPreview()
 end
 
--- DECOMPILER ERROR at PC805: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GetPet1702361Entity = function(self, casterEntity, skillID)
-  -- function num : 0_263
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function UtilDataServiceShare:GetPet1702361Entity(casterEntity, skillID)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local teamCmpt = teamEntity:Team()
   local teamLeaderEntity = teamCmpt:GetTeamLeaderEntity()
   local playerAnimEntity = casterEntity
   local isTeamLeader = teamLeaderEntity:GetID() == casterEntity:GetID()
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID, casterEntity)
-  local trapID = (skillConfigData._pickUpParam)[2]
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local trapID = skillConfigData._pickUpParam[2]
+  local utilDataSvc = self._world:GetService("UtilData")
   local trapEntityList = utilDataSvc:FindTrapByTrapID(trapID)
   local hasTrap = false
-  if trapEntityList and #trapEntityList > 0 then
-    playerAnimEntity = (self._world):GetEntityByID(trapEntityList[1])
+  if trapEntityList and 0 < #trapEntityList then
+    playerAnimEntity = self._world:GetEntityByID(trapEntityList[1])
     hasTrap = true
   end
-  do
-    if not hasTrap and not isTeamLeader then
-      local playSkillService = (self._world):GetService("PlaySkill")
-      playSkillService:ShowCasterEntity(casterEntity:GetID())
-    end
-    do return playerAnimEntity, isTeamLeader, hasTrap end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  if not hasTrap and not isTeamLeader then
+    local playSkillService = self._world:GetService("PlaySkill")
+    playSkillService:ShowCasterEntity(casterEntity:GetID())
   end
+  return playerAnimEntity, isTeamLeader, hasTrap
 end
 
--- DECOMPILER ERROR at PC809: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.GePetEntityByTemplateID = function(self, tid)
-  -- function num : 0_264 , upvalues : _ENV
-  local eLocalTeam = ((self._world):Player()):GetLocalTeamEntity()
+function UtilDataServiceShare:GePetEntityByTemplateID(tid)
+  local eLocalTeam = self._world:Player():GetLocalTeamEntity()
   local cTeam = eLocalTeam:Team()
   local pets = cTeam:GetTeamPetEntities()
-  for _,e in ipairs(pets) do
-    local petPstID = (e:PetPstID()):GetTemplateID()
+  for _, e in ipairs(pets) do
+    local petPstID = e:PetPstID():GetTemplateID()
     if tid == petPstID then
       return e
     end
   end
 end
 
--- DECOMPILER ERROR at PC813: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.IsActiveSkillLinkLine = function(self)
-  -- function num : 0_265
-  local battleStatCmpt = (self._world):BattleStat()
+function UtilDataServiceShare:IsActiveSkillLinkLine()
+  local battleStatCmpt = self._world:BattleStat()
   local isActiveSkillLinkLine = battleStatCmpt:IsActiveSkillLinkLine()
   return isActiveSkillLinkLine
 end
 
--- DECOMPILER ERROR at PC817: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.SetPet1702361TrapHide = function(self)
-  -- function num : 0_266 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function UtilDataServiceShare:SetPet1702361TrapHide()
+  local battleStatCmpt = self._world:BattleStat()
   local casterEntityID = battleStatCmpt:GetActiveSkillLinkLineCasterEntityID()
-  local petEntity = (self._world):GetEntityByID(casterEntityID)
+  local petEntity = self._world:GetEntityByID(casterEntityID)
   local skillID = battleStatCmpt:GetActiveSkillLinkLineSkillID()
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID, petEntity)
   if skillConfigData:GetSkillPickType() ~= SkillPickUpType.LinkLineSP then
-    return 
+    return
   end
-  local trapID = (skillConfigData._pickUpParam)[2]
-  local trapLogicSvc = (self._world):GetService("TrapLogic")
+  local trapID = skillConfigData._pickUpParam[2]
+  local trapLogicSvc = self._world:GetService("TrapLogic")
   local trapEntityList = trapLogicSvc:FindTrapByTrapID(trapID)
   if not trapEntityList or #trapEntityList == 0 then
-    return 
+    return
   end
-  local trapEntity = (self._world):GetEntityByID(trapEntityList[1])
+  local trapEntity = self._world:GetEntityByID(trapEntityList[1])
   trapEntity:SetViewVisible(false)
 end
 
--- DECOMPILER ERROR at PC821: Confused about usage of register: R1 in 'UnsetPending'
-
-UtilDataServiceShare.FindDontNeedAliveTrapByTrapID = function(self, trapID)
-  -- function num : 0_267 , upvalues : _ENV
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
+function UtilDataServiceShare:FindDontNeedAliveTrapByTrapID(trapID)
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
   local listRet = {}
   local listTraps = trapGroup:GetEntities()
   for i = 1, #listTraps do
@@ -5017,11 +3824,9 @@ UtilDataServiceShare.FindDontNeedAliveTrapByTrapID = function(self, trapID)
     if trap then
       local trapComponent = trap:Trap()
       if trapComponent and trapComponent:GetTrapID() == trapID then
-        (table.insert)(listRet, trap:GetID())
+        table.insert(listRet, trap:GetID())
       end
     end
   end
   return listRet
 end
-
-

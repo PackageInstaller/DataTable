@@ -1,31 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_scope_convert_gird_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayScopeConvertGridInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayScopeConvertGridInstruction = SkillPreviewPlayScopeConvertGridInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayScopeConvertGridInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayScopeConvertGridInstruction:Constructor(params)
   self.createConvertGrid = tonumber(params.createConvertGrid) == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayScopeConvertGridInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayScopeConvertGridInstruction:DoInstruction(TT, casterEntity, previewContext)
   self._world = previewContext:GetWorld()
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
   local scopeGridList = previewContext:GetScopeResult()
-  local previewEffectCalcService = (self._world):GetService("PreviewCalcEffect")
+  local previewEffectCalcService = self._world:GetService("PreviewCalcEffect")
   local effectList = previewContext:GetEffect(SkillEffectType.ConvertGridElement)
   local effectParam = previewEffectCalcService:CreateSkillEffectParam(SkillEffectType.ConvertGridElement, effectList)
   local result = previewEffectCalcService:CalcConvertGridElement(casterEntity, scopeGridList, effectParam)
   previewActiveSkillService:DoConvertElement(TT, result:GetTargetGridArray(), result:GetTargetElementType(), casterEntity, result:GetBlockGridArray(), self.createConvertGrid)
 end
-
-

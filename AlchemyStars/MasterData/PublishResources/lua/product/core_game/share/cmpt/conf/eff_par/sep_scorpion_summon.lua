@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_scorpion_summon.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ScorpionSummonType = {ObliqueBack = 1, FrontBack = 2, RandomInEight = 3, RoundSix = 4}
+local ScorpionSummonType = {
+  ObliqueBack = 1,
+  FrontBack = 2,
+  RandomInEight = 3,
+  RoundSix = 4
+}
 _enum("ScorpionSummonType", ScorpionSummonType)
 require("skill_effect_param_base")
 _class("SkillEffectParamScorpionSummon", SkillEffectParam_SummonEverything)
 SkillEffectParamScorpionSummon = SkillEffectParamScorpionSummon
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillEffectParamScorpionSummon.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamScorpionSummon:Constructor(t)
   self._scorpionSummonType = t.scorpionSummonType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamScorpionSummon.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamScorpionSummon:GetEffectType()
   return SkillEffectType.ScorpionSummon
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamScorpionSummon.GetScorpionSummonType = function(self)
-  -- function num : 0_2
+function SkillEffectParamScorpionSummon:GetScorpionSummonType()
   return self._scorpionSummonType
 end
-
-

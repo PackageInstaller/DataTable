@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_cn1/reward/ui_battlepass_cn1_reward_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattlePassCN1RewardCell", UICustomWidget)
 UIBattlePassCN1RewardCell = UIBattlePassCN1RewardCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattlePassCN1RewardCell.SetData = function(self, index, campaign, component, clickCallback, tipCallback, preview)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBattlePassCN1RewardCell:SetData(index, campaign, component, clickCallback, tipCallback, preview)
   self._index = index
   self._campaign = campaign
   self._component = component
@@ -16,67 +9,42 @@ UIBattlePassCN1RewardCell.SetData = function(self, index, campaign, component, c
   self._clickCallback = clickCallback
   self._tipCallback = tipCallback
   self._rewardObj = {}
-  ;
-  (UIBattlePassStyleHelper.FitStyle_Widget)(self._campaign, self)
+  UIBattlePassStyleHelper.FitStyle_Widget(self._campaign, self)
   self:_SetState()
   self:_SetLevel(self._index)
   self:_SetIconReward({adv = false})
   self:_SetIconReward({adv = true})
-  local isLast = index == (self._info).m_max_level
-  local showSplite = (not preview and not isLast)
-  ;
-  (self:GetGameObject("_splite")):SetActive(showSplite)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  local isLast = index == self._info.m_max_level
+  local showSplite = not preview and not isLast
+  self:GetGameObject("_splite"):SetActive(showSplite)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardCell._SetState = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local lvUnlock = self._index <= (self._info).m_current_level and 1 or 2
-  local goldReward = (self._component):IsPreviewLvFromConfig(self._index) and 1 or 2
-  local tb_reward = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"_bg_Gold"}
-, 
-{"_bg_Normal"}
-})
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(tb_reward, goldReward)
+function UIBattlePassCN1RewardCell:_SetState()
+  local lvUnlock = self._index <= self._info.m_current_level and 1 or 2
+  local goldReward = self._component:IsPreviewLvFromConfig(self._index) and 1 or 2
+  local tb_reward = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {"_bg_Gold"},
+    {"_bg_Normal"}
+  })
+  UIWidgetHelper.SetObjGroupShow(tb_reward, goldReward)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardCell._SetLevel = function(self, lv)
-  -- function num : 0_2 , upvalues : _ENV
-  if not (string.isnullorempty)(lv) or not "" then
-    lv = tostring(lv)
-  end
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_lv", lv)
+function UIBattlePassCN1RewardCell:_SetLevel(lv)
+  lv = string.isnullorempty(lv) and "" or tostring(lv)
+  UIWidgetHelper.SetLocalizationText(self, "_lv", lv)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardCell._SetIconReward = function(self, args)
-  -- function num : 0_3 , upvalues : _ENV
+function UIBattlePassCN1RewardCell:_SetIconReward(args)
   local widgetName = args.adv and "deluxePool" or "standardPool"
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIBattlePassCN1ItemIconReward")
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIBattlePassCN1ItemIconReward")
   obj:SetData(self._index, args.adv, self._campaign, self._component, self._clickCallback, self._tipCallback)
   local index = args.adv == true and 2 or 1
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rewardObj)[index] = obj
+  self._rewardObj[index] = obj
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardCell.FindClaimItemIcon = function(self, index)
-  -- function num : 0_4 , upvalues : _ENV
-  local obj = (self._rewardObj)[index]
+function UIBattlePassCN1RewardCell:FindClaimItemIcon(index)
+  local obj = self._rewardObj[index]
   if obj._state == UIBattlePassCN1ItemIconRewardState.EState_Claim then
     return obj
   end
 end
-
-

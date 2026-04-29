@@ -1,19 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/entrust/stage/ui_n22_entrust_stage_detail_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22EntrustStageDetailController", UIController)
 UIN22EntrustStageDetailController = UIN22EntrustStageDetailController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22EntrustStageDetailController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN22EntrustStageDetailController:OnShow(uiParams)
   self._campaign = uiParams[1]
   self._componentId = uiParams[2]
   self._levelId = uiParams[3]
   self._enterCallback = uiParams[4]
-  self._component = (self._campaign):GetComponent(self._componentId)
+  self._component = self._campaign:GetComponent(self._componentId)
   self:_SetTitleDesc()
   self:_SetClearReward()
   self:_SetExplorReward()
@@ -22,102 +15,66 @@ UIN22EntrustStageDetailController.OnShow = function(self, uiParams)
   self._isConfirm = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageDetailController.OnHide = function(self)
-  -- function num : 0_1
+function UIN22EntrustStageDetailController:OnHide()
   if self._isConfirm and self._enterCallback then
     self._isConfirm = nil
-    ;
-    (self._enterCallback)(self._levelId)
+    self._enterCallback(self._levelId)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageDetailController._SetTitleDesc = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local strTitle, strDesc = (self._component):GetStageTitleDesc(self._levelId)
+function UIN22EntrustStageDetailController:_SetTitleDesc()
+  local strTitle, strDesc = self._component:GetStageTitleDesc(self._levelId)
   local obj = self:GetUIComponent("UILocalizationText", "_txtTitle")
-  obj:SetText((StringTable.Get)(strTitle))
+  obj:SetText(StringTable.Get(strTitle))
   obj = self:GetUIComponent("UILocalizationText", "_txtDesc")
-  obj:SetText((StringTable.Get)(strDesc))
+  obj:SetText(StringTable.Get(strDesc))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageDetailController._SetClearReward = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local lst1, lst2 = (self._component):GetStagePassReward(self._levelId)
+function UIN22EntrustStageDetailController:_SetClearReward()
+  local lst1, lst2 = self._component:GetStagePassReward(self._levelId)
   local count = #lst1
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_clearRewardPool", "UIN22EntrustRewardItem", count)
+  local objs = UIWidgetHelper.SpawnObjects(self, "_clearRewardPool", "UIN22EntrustRewardItem", count)
   for i = 1, count do
-    (objs[i]):SetData(lst1[i], lst2[i], function(matid, pos)
-    -- function num : 0_3_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
-  end
-)
+    objs[i]:SetData(lst1[i], lst2[i], function(matid, pos)
+      UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageDetailController._SetExplorReward = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local lst1, lst2 = (self._component):GetStageBoxReward(self._levelId)
+function UIN22EntrustStageDetailController:_SetExplorReward()
+  local lst1, lst2 = self._component:GetStageBoxReward(self._levelId)
   local count = #lst1
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_explorRewardPool", "UIN22EntrustRewardItem", count)
+  local objs = UIWidgetHelper.SpawnObjects(self, "_explorRewardPool", "UIN22EntrustRewardItem", count)
   for i = 1, count do
-    (objs[i]):SetData(lst1[i], lst2[i], function(matid, pos)
-    -- function num : 0_4_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
-  end
-)
+    objs[i]:SetData(lst1[i], lst2[i], function(matid, pos)
+      UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageDetailController._SetExplorText = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local num = (self._component):GetExplorNum(self._levelId)
+function UIN22EntrustStageDetailController:_SetExplorText()
+  local num = self._component:GetExplorNum(self._levelId)
   local str = num .. "%"
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtExplor", str)
-  ;
-  (UIWidgetHelper.SetLocalizedTMPText)(self, "_txtExplorTmp", str)
+  UIWidgetHelper.SetLocalizationText(self, "_txtExplor", str)
+  UIWidgetHelper.SetLocalizedTMPText(self, "_txtExplorTmp", str)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageDetailController._SetPassIcon = function(self)
-  -- function num : 0_6
-  local show = (self._component):IsStagePass(self._levelId)
+function UIN22EntrustStageDetailController:_SetPassIcon()
+  local show = self._component:IsStagePass(self._levelId)
   local obj = self:GetGameObject("_pass")
   obj:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageDetailController.BtnOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (Log.info)("UIN22EntrustStageDetailController:BtnOnClick")
+function UIN22EntrustStageDetailController:BtnOnClick()
+  Log.info("UIN22EntrustStageDetailController:BtnOnClick")
   self._isConfirm = true
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageDetailController.CloseBtnOnClick = function(self)
-  -- function num : 0_8
+function UIN22EntrustStageDetailController:CloseBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageDetailController.EmptyBtnOnClick = function(self)
-  -- function num : 0_9
+function UIN22EntrustStageDetailController:EmptyBtnOnClick()
   self:CloseDialog()
 end
-
-

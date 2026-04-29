@@ -1,31 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/ride_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RideServiceRender", BaseService)
 RideServiceRender = RideServiceRender
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RideServiceRender.Constructor = function(self, world)
-  -- function num : 0_0
+function RideServiceRender:Constructor(world)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RideServiceRender.Initialize = function(self)
-  -- function num : 0_1
-  self._entityRenderSvc = (self._world):GetService("RenderEntity")
-  self._pieceRenderSvc = (self._world):GetService("Piece")
-  self._utilDataSvc = (self._world):GetService("UtilData")
+function RideServiceRender:Initialize()
+  self._entityRenderSvc = self._world:GetService("RenderEntity")
+  self._pieceRenderSvc = self._world:GetService("Piece")
+  self._utilDataSvc = self._world:GetService("UtilData")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RideServiceRender.RideTrap = function(self, rideID, mountID, gridLocRes)
-  -- function num : 0_2 , upvalues : _ENV
-  local rideEntity = (self._world):GetEntityByID(rideID)
-  local mountEntity = (self._world):GetEntityByID(mountID)
+function RideServiceRender:RideTrap(rideID, mountID, gridLocRes)
+  local rideEntity = self._world:GetEntityByID(rideID)
+  local mountEntity = self._world:GetEntityByID(mountID)
   local pos = rideEntity:GetGridPosition() + rideEntity:GetGridOffset()
   local dir = rideEntity:GetGridDirection()
   local targetPos = rideEntity:GetGridPosition()
@@ -36,41 +23,35 @@ RideServiceRender.RideTrap = function(self, rideID, mountID, gridLocRes)
     targetPos = gridLocRes:GetGridLocResultBornPos()
     hieght = gridLocRes:GetGridLocResultBornHeight()
   end
-  local bodyArea = (rideEntity:BodyArea()):GetArea()
+  local bodyArea = rideEntity:BodyArea():GetArea()
   for i = 1, #bodyArea do
     local posWork = targetPos + bodyArea[i]
-    if (self._utilDataSvc):IsValidPiecePos(posWork) then
-      (self._pieceRenderSvc):SetPieceAnimDown(posWork)
+    if self._utilDataSvc:IsValidPiecePos(posWork) then
+      self._pieceRenderSvc:SetPieceAnimDown(posWork)
     end
   end
   rideEntity:SetLocation(pos, dir)
   rideEntity:SetLocationHeight(hieght)
-  ;
-  (self._entityRenderSvc):CreateMonsterAreaOutlineEntity(rideEntity)
+  self._entityRenderSvc:CreateMonsterAreaOutlineEntity(rideEntity)
   rideEntity:ReplaceRideRender(rideID, mountID)
-  ;
-  ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTRideStateChange:New(rideEntity, true))
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, NTRideStateChange:New(rideEntity, true))
   mountEntity:ReplaceRideRender(rideID, mountID)
-  ;
-  (Log.debug)("[RideServiceRender:RideTrap] ride_id = ", rideID, ", trap_id = ", mountID)
+  Log.debug("[RideServiceRender:RideTrap] ride_id = ", rideID, ", trap_id = ", mountID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RideServiceRender.RideMonster = function(self, rideID, mountID, gridLocRes)
-  -- function num : 0_3 , upvalues : _ENV
-  local rideEntity = (self._world):GetEntityByID(rideID)
-  local mountEntity = (self._world):GetEntityByID(mountID)
+function RideServiceRender:RideMonster(rideID, mountID, gridLocRes)
+  local rideEntity = self._world:GetEntityByID(rideID)
+  local mountEntity = self._world:GetEntityByID(mountID)
   local pos = rideEntity:GetGridPosition() + rideEntity:GetGridOffset()
   local dir = rideEntity:GetGridDirection()
   local hieght = rideEntity:GetGridHeight()
-  local rideOffset = (Vector2.New)((rideEntity:GetGridOffset()).x, (rideEntity:GetGridOffset()).y)
-  local mountOffset = (Vector2.New)((mountEntity:GetGridOffset()).x, (mountEntity:GetGridOffset()).y)
+  local rideOffset = Vector2.New(rideEntity:GetGridOffset().x, rideEntity:GetGridOffset().y)
+  local mountOffset = Vector2.New(mountEntity:GetGridOffset().x, mountEntity:GetGridOffset().y)
   if gridLocRes then
     pos = gridLocRes:GetGridLocResultBornPos() + gridLocRes:GetGridLocResultBornOffset()
     dir = gridLocRes:GetGridLocResultBornDir()
     hieght = gridLocRes:GetGridLocResultBornHeight()
-    rideOffset = (Vector2.New)((gridLocRes:GetGridLocResultBornOffset()).x, (gridLocRes:GetGridLocResultBornOffset()).y)
+    rideOffset = Vector2.New(gridLocRes:GetGridLocResultBornOffset().x, gridLocRes:GetGridLocResultBornOffset().y)
   end
   local monsterIDCmpt = rideEntity:MonsterID()
   if monsterIDCmpt then
@@ -79,33 +60,23 @@ RideServiceRender.RideMonster = function(self, rideID, mountID, gridLocRes)
   rideEntity:SetLocation(pos, dir)
   rideEntity:SetLocationHeight(hieght)
   rideEntity:ReplaceRideRender(rideID, mountID)
-  ;
-  ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTRideStateChange:New(rideEntity, true))
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, NTRideStateChange:New(rideEntity, true))
   local ridLocationCmpt = rideEntity:Location()
   ridLocationCmpt:SetModifyLocationCallback(function(pos, dir)
-    -- function num : 0_3_0 , upvalues : self, mountEntity, rideOffset, mountOffset
     self:SetTargetLocation(pos, dir, mountEntity, rideOffset, mountOffset)
-  end
-)
+  end)
   mountEntity:ReplaceRideRender(rideID, mountID)
   local mountLocationCmpt = mountEntity:Location()
   mountLocationCmpt:SetModifyLocationCallback(function(pos, dir)
-    -- function num : 0_3_1 , upvalues : self, rideEntity, mountOffset, rideOffset
     self:SetTargetLocation(pos, dir, rideEntity, mountOffset, rideOffset)
-  end
-)
-  ;
-  (Log.debug)("[RideServiceRender:RideMonster] ride_id = ", rideID, ", monster_id = ", mountID)
+  end)
+  Log.debug("[RideServiceRender:RideMonster] ride_id = ", rideID, ", monster_id = ", mountID)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RideServiceRender.RemoveRideRender = function(self, rideID, mountID)
-  -- function num : 0_4 , upvalues : _ENV
-  local rideEntity = (self._world):GetEntityByID(rideID)
-  local mountEntity = (self._world):GetEntityByID(mountID)
-  ;
-  (Log.debug)("[RideServiceRender:RemoveRideRender] ride_id = ", rideID, ", mount_id = ", mountID)
+function RideServiceRender:RemoveRideRender(rideID, mountID)
+  local rideEntity = self._world:GetEntityByID(rideID)
+  local mountEntity = self._world:GetEntityByID(mountID)
+  Log.debug("[RideServiceRender:RemoveRideRender] ride_id = ", rideID, ", mount_id = ", mountID)
   rideEntity:RemoveRideRender()
   local ridLocationCmpt = rideEntity:Location()
   ridLocationCmpt:SetModifyLocationCallback(nil)
@@ -114,101 +85,77 @@ RideServiceRender.RemoveRideRender = function(self, rideID, mountID)
     local mountLocationCmpt = mountEntity:Location()
     mountLocationCmpt:SetModifyLocationCallback(nil)
     if mountEntity:HasTrapID() then
-      (self._entityRenderSvc):DestroyMonsterAreaOutLineEntity(rideEntity)
+      self._entityRenderSvc:DestroyMonsterAreaOutLineEntity(rideEntity)
       local targetPos = mountEntity:GetGridPosition()
-      local bodyArea = (mountEntity:BodyArea()):GetArea()
+      local bodyArea = mountEntity:BodyArea():GetArea()
       for i = 1, #bodyArea do
         local posWork = targetPos + bodyArea[i]
-        if (self._utilDataSvc):IsValidPiecePos(posWork) then
-          (self._pieceRenderSvc):SetPieceAnimUp(posWork)
+        if self._utilDataSvc:IsValidPiecePos(posWork) then
+          self._pieceRenderSvc:SetPieceAnimUp(posWork)
         end
       end
     end
-    do
-      do
-        if mountEntity:HasMonsterID() then
-          local monsterIDCmpt = rideEntity:MonsterID()
-          if monsterIDCmpt then
-            monsterIDCmpt:SetNeedOutLineEnable(true)
-          end
-        end
-        ;
-        ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTRideStateChange:New(rideEntity, false))
+    if mountEntity:HasMonsterID() then
+      local monsterIDCmpt = rideEntity:MonsterID()
+      if monsterIDCmpt then
+        monsterIDCmpt:SetNeedOutLineEnable(true)
       end
     end
   end
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, NTRideStateChange:New(rideEntity, false))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RideServiceRender.SetNoRidePos = function(self, rideID, targetPos, fromTrap)
-  -- function num : 0_5
-  local rideEntity = (self._world):GetEntityByID(rideID)
+function RideServiceRender:SetNoRidePos(rideID, targetPos, fromTrap)
+  local rideEntity = self._world:GetEntityByID(rideID)
   rideEntity:SetLocationHeight(0)
   rideEntity:SetPosition(targetPos)
-  ;
-  (self._entityRenderSvc):CreateMonsterAreaOutlineEntity(rideEntity)
-  local bodyArea = (rideEntity:BodyArea()):GetArea()
+  self._entityRenderSvc:CreateMonsterAreaOutlineEntity(rideEntity)
+  local bodyArea = rideEntity:BodyArea():GetArea()
   for i = 1, #bodyArea do
     local posWork = targetPos + bodyArea[i]
-    if (self._utilDataSvc):IsValidPiecePos(posWork) then
-      (self._pieceRenderSvc):SetPieceAnimDown(posWork)
+    if self._utilDataSvc:IsValidPiecePos(posWork) then
+      self._pieceRenderSvc:SetPieceAnimDown(posWork)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RideServiceRender.ReplaceRideRender = function(self, rideID, mountID, gridLocRes)
-  -- function num : 0_6
-  local rideEntity = ((self._world):GetEntityByID(rideID))
-  local oldMountID = nil
+function RideServiceRender:ReplaceRideRender(rideID, mountID, gridLocRes)
+  local rideEntity = self._world:GetEntityByID(rideID)
+  local oldMountID
   if rideEntity:HasRideRender() then
     local rideCmpt = rideEntity:RideRender()
     oldMountID = rideCmpt:GetMountID()
     if oldMountID == mountID then
-      return 
+      return
     end
     self:RemoveRideRender(rideID, oldMountID)
   else
-    do
-      ;
-      (self._entityRenderSvc):DestroyMonsterAreaOutLineEntity(rideEntity)
-      local targetPos = rideEntity:GetRenderGridPosition()
-      local bodyArea = (rideEntity:BodyArea()):GetArea()
-      for i = 1, #bodyArea do
-        local posWork = targetPos + bodyArea[i]
-        if (self._utilDataSvc):IsValidPiecePos(posWork) then
-          (self._pieceRenderSvc):SetPieceAnimUp(posWork)
-        end
-      end
-      do
-        local mountEntity = (self._world):GetEntityByID(mountID)
-        if mountEntity:HasTrapRender() then
-          self:RideTrap(rideID, mountID, gridLocRes)
-        else
-          if mountEntity:HasMonsterID() then
-            self:RideMonster(rideID, mountID, gridLocRes)
-          end
-        end
+    self._entityRenderSvc:DestroyMonsterAreaOutLineEntity(rideEntity)
+    local targetPos = rideEntity:GetRenderGridPosition()
+    local bodyArea = rideEntity:BodyArea():GetArea()
+    for i = 1, #bodyArea do
+      local posWork = targetPos + bodyArea[i]
+      if self._utilDataSvc:IsValidPiecePos(posWork) then
+        self._pieceRenderSvc:SetPieceAnimUp(posWork)
       end
     end
   end
+  local mountEntity = self._world:GetEntityByID(mountID)
+  if mountEntity:HasTrapRender() then
+    self:RideTrap(rideID, mountID, gridLocRes)
+  elseif mountEntity:HasMonsterID() then
+    self:RideMonster(rideID, mountID, gridLocRes)
+  end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RideServiceRender.SetTargetLocation = function(self, pos, dir, targetEntity, oriOffset, targetOffset)
-  -- function num : 0_7
+function RideServiceRender:SetTargetLocation(pos, dir, targetEntity, oriOffset, targetOffset)
   if not targetEntity:HasLocation() then
-    return 
+    return
   end
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   local targetGridPos = boardServiceRender:BoardRenderPos2FloatGridPos_New(pos)
   targetGridPos = targetGridPos - oriOffset + targetOffset
   local targetPos = boardServiceRender:GridPosition2LocationPos(targetGridPos, targetEntity)
   local locationCmpt = targetEntity:Location()
   locationCmpt:CallBackModifyLocation(targetPos, dir, targetEntity)
 end
-
-

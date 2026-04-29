@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_scope_push_or_pull_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseScopePushOrPullParam", SkillPhaseParamBase)
 SkillPhaseScopePushOrPullParam = SkillPhaseScopePushOrPullParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseScopePushOrPullParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseScopePushOrPullParam:Constructor(t)
   self._bornEffectID = t.bornEffectID
   self._moveEffectID = t.moveEffectID
   self._disappearEffectID = t.disappearEffectID
@@ -24,120 +17,82 @@ SkillPhaseScopePushOrPullParam.Constructor = function(self, t)
   self._gridEffectDirection = t.gridEffectDirection
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopePushOrPullParam.GetCacheTable = function(self, skillConfigData)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseScopePushOrPullParam:GetCacheTable(skillConfigData)
   local skillScopeType = skillConfigData:GetSkillScopeType()
   local skillScopeParam = skillConfigData:GetSkillScopeParam()
   local cacheNum = self:_CalcScopeRangeGridNum(skillScopeType, skillScopeParam)
   local t = {}
   if self._gridEffectID and self._gridEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._gridEffectID]).ResPath, cacheNum}
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._gridEffectID].ResPath,
+      cacheNum
+    }
   end
-  if self._hitEffectID and self._hitEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, cacheNum}
+  if self._hitEffectID and 0 < self._hitEffectID then
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      cacheNum
+    }
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopePushOrPullParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseScopePushOrPullParam:GetPhaseType()
   return SkillViewPhaseType.ScopePushOrPull
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopePushOrPullParam.GetBornEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseScopePushOrPullParam:GetBornEffectID()
   return self._bornEffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopePushOrPullParam.GetMoveEffectID = function(self)
-  -- function num : 0_4
+function SkillPhaseScopePushOrPullParam:GetMoveEffectID()
   return self._moveEffectID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopePushOrPullParam.GetDisappearEffectID = function(self)
-  -- function num : 0_5
+function SkillPhaseScopePushOrPullParam:GetDisappearEffectID()
   return self._disappearEffectID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopePushOrPullParam.GetDisappearEffectTime = function(self)
-  -- function num : 0_6
+function SkillPhaseScopePushOrPullParam:GetDisappearEffectTime()
   return self._disappearEffectTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopePushOrPullParam.GetBornEffectDelayTime = function(self)
-  -- function num : 0_7
+function SkillPhaseScopePushOrPullParam:GetBornEffectDelayTime()
   return self._bornEffectDelayTime
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopePushOrPullParam.GetMoveEffectDelayTime = function(self)
-  -- function num : 0_8
+function SkillPhaseScopePushOrPullParam:GetMoveEffectDelayTime()
   return self._moveEffectDelayTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopePushOrPullParam.GetEffectFlyOneGridMs = function(self)
-  -- function num : 0_9
+function SkillPhaseScopePushOrPullParam:GetEffectFlyOneGridMs()
   return self._moveEffectFlyOneGirdMs
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopePushOrPullParam.HasDamage = function(self)
-  -- function num : 0_10
-  if self._hasDamage ~= 1 then
-    do return not self._hasDamage end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function SkillPhaseScopePushOrPullParam:HasDamage()
+  if self._hasDamage then
+    return self._hasDamage == 1
+  else
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopePushOrPullParam.HasConvert = function(self)
-  -- function num : 0_11
-  if self._hasConvert ~= 1 then
-    do return not self._hasConvert end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function SkillPhaseScopePushOrPullParam:HasConvert()
+  if self._hasConvert then
+    return self._hasConvert == 1
+  else
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopePushOrPullParam.GetHitAnimationName = function(self)
-  -- function num : 0_12
+function SkillPhaseScopePushOrPullParam:GetHitAnimationName()
   return self._hitAnimationName
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopePushOrPullParam.GetHitEffectID = function(self)
-  -- function num : 0_13
+function SkillPhaseScopePushOrPullParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopePushOrPullParam.GetEffectDirection = function(self)
-  -- function num : 0_14
+function SkillPhaseScopePushOrPullParam:GetEffectDirection()
   return self._gridEffectDirection
 end
-
-

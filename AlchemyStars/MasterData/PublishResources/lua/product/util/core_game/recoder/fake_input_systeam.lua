@@ -1,116 +1,76 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/recoder/fake_input_systeam.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FakeInputSystem", Object)
 FakeInputSystem = FakeInputSystem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FakeInputSystem.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function FakeInputSystem:Constructor(world)
   self._world = world
   self._inputComponent = world:Input()
   self._pickUpCmpt = world:PickUp()
   self._progress = 1
-  local md = (GameGlobal.GetModule)(FakeMatchModule)
+  local md = GameGlobal.GetModule(FakeMatchModule)
   self._fakeMatchModule = md
   self._record = md:GetRecord()
   self._startTime = md:GetMatchStartTime()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FakeInputSystem.Execute = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if not (self._fakeMatchModule):IsRunning() then
-    return 
+function FakeInputSystem:Execute()
+  if not self._fakeMatchModule:IsRunning() then
+    return
   end
-  if #self._record < self._progress then
-    return 
+  if self._progress > #self._record then
+    return
   end
-  local curTime = (GameGlobal:GetInstance()):GetCurrentTime()
+  local curTime = GameGlobal:GetInstance():GetCurrentTime()
   local deltaTime = curTime - self._startTime
-  local t = (self._record)[self._progress]
+  local t = self._record[self._progress]
   if deltaTime < t.time then
-    return 
+    return
   end
   self._progress = self._progress + 1
   if t.action == GameRecordAction.TouchInput then
     self:FakeTouchInput(t)
-  else
-    if t.action == GameRecordAction.UIInput then
-      self:FakeUIInput(t)
-    else
-      if t.action == GameRecordAction.NetInput then
-        self:FakeCmdInput(t)
-      end
-    end
+  elseif t.action == GameRecordAction.UIInput then
+    self:FakeUIInput(t)
+  elseif t.action == GameRecordAction.NetInput then
+    self:FakeCmdInput(t)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FakeInputSystem.FakeTouchInput = function(self, t)
-  -- function num : 0_2
+function FakeInputSystem:FakeTouchInput(t)
   if t.input == "DoubleClick" then
-    (self._inputComponent):SetDoubleClickPos(t.hitPoint)
+    self._inputComponent:SetDoubleClickPos(t.hitPoint)
     self:InputDirty()
-  else
-    if t.input == "Dragging" then
-      (self._inputComponent):SetTouchMovePositionList({t.hitPoint})
-      self:InputDirty()
-    else
-      if t.input == "BeginDrag" then
-        (self._inputComponent):SetTouchBeginPosition(t.hitPoint)
-        self:InputDirty()
-      else
-        if t.input == "EndDrag" then
-          (self._inputComponent):SetTouchEndPosition()
-          self:InputDirty()
-        else
-          if t.input == "PickUp" then
-            (self._pickUpCmpt):SetClickPos(t.hitPoint)
-            self:_PickUpDirty()
-          end
-        end
-      end
-    end
+  elseif t.input == "Dragging" then
+    self._inputComponent:SetTouchMovePositionList({
+      t.hitPoint
+    })
+    self:InputDirty()
+  elseif t.input == "BeginDrag" then
+    self._inputComponent:SetTouchBeginPosition(t.hitPoint)
+    self:InputDirty()
+  elseif t.input == "EndDrag" then
+    self._inputComponent:SetTouchEndPosition()
+    self:InputDirty()
+  elseif t.input == "PickUp" then
+    self._pickUpCmpt:SetClickPos(t.hitPoint)
+    self:_PickUpDirty()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FakeInputSystem.FakeUIInput = function(self, t)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, t)
+function FakeInputSystem:FakeUIInput(t)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, t)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FakeInputSystem.FakeCmdInput = function(self, t)
-  -- function num : 0_4 , upvalues : _ENV
+function FakeInputSystem:FakeCmdInput(t)
   local cmd = table_to_class(t.cmd)
-  ;
-  ((self._world):Player()):SendCommand(cmd)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FakeInputSystem.InputDirty = function(self)
-  -- function num : 0_5
-  local component = (self._world):GetUniqueComponent(((self._world).BW_UniqueComponentsEnum).Input)
-  ;
-  (self._world):SetUniqueComponent(((self._world).BW_UniqueComponentsEnum).Input, component)
+function FakeInputSystem:InputDirty()
+  local component = self._world:GetUniqueComponent(self._world.BW_UniqueComponentsEnum.Input)
+  self._world:SetUniqueComponent(self._world.BW_UniqueComponentsEnum.Input, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FakeInputSystem._PickUpDirty = function(self)
-  -- function num : 0_6
-  local component = (self._world):GetUniqueComponent(((self._world).BW_UniqueComponentsEnum).PickUp)
-  ;
-  (self._world):SetUniqueComponent(((self._world).BW_UniqueComponentsEnum).PickUp, component)
+function FakeInputSystem:_PickUpDirty()
+  local component = self._world:GetUniqueComponent(self._world.BW_UniqueComponentsEnum.PickUp)
+  self._world:SetUniqueComponent(self._world.BW_UniqueComponentsEnum.PickUp, component)
 end
-
-

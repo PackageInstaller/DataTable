@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_up_level_interface_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIUpLevelInterfaceController", UIController)
 UIUpLevelInterfaceController = UIUpLevelInterfaceController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIUpLevelInterfaceController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIUpLevelInterfaceController:Constructor()
   self._listItemBaseCout = 20
   self._listItemTotalRow = 5
   self._itemCountPerRow = 4
@@ -23,15 +16,12 @@ UIUpLevelInterfaceController.Constructor = function(self)
   self._AsyncLoadFlagMap = {}
   self._TaskList = {}
   self.items = {}
-  self._waitTime = ((Cfg.cfg_global).shakeWaitTime).IntValue or 2000
-  self._shakeX = ((Cfg.cfg_global).shakeOffsetX).IntValue or 10
-  self._shakeY = ((Cfg.cfg_global).shakeOffsetY).IntValue or 10
+  self._waitTime = Cfg.cfg_global.shakeWaitTime.IntValue or 2000
+  self._shakeX = Cfg.cfg_global.shakeOffsetX.IntValue or 10
+  self._shakeY = Cfg.cfg_global.shakeOffsetY.IntValue or 10
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIUpLevelInterfaceController:GetComponents()
   self._needcoin = self:GetUIComponent("UILocalizationText", "needcoin")
   self._h3dScrollView = self:GetUIComponent("UIDynamicScrollView", "H3DScrollView")
   self._coinGo = self:GetUIComponent("RectTransform", "xiaohaobi")
@@ -44,21 +34,17 @@ UIUpLevelInterfaceController.GetComponents = function(self)
   self._rightLine = self:GetUIComponent("Image", "rightLine")
   local sop = self:GetUIComponent("UISelectObjectPath", "mainmenu")
   self.currencyMenu = sop:SpawnObject("UICurrencyMenu")
-  ;
-  (self.currencyMenu):SetData({RoleAssetID.RoleAssetGold})
+  self.currencyMenu:SetData({
+    RoleAssetID.RoleAssetGold
+  })
   local topButton = self:GetUIComponent("UISelectObjectPath", "TopButtons")
   self.topButtonWidget = topButton:SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_1_0 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PlayInOutAnimation, true)
+  self.topButtonWidget:SetData(function()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.PlayInOutAnimation, true)
     self:CloseDialog()
-  end
-, nil, function()
-    -- function num : 0_1_1 , upvalues : _ENV
-    (UICommonHelper:GetInstance()):SwitchToUIMain()
-  end
-)
+  end, nil, function()
+    UICommonHelper:GetInstance():SwitchToUIMain()
+  end)
   self._content = self:GetUIComponent("RectTransform", "PetContent")
   self._left = self:GetUIComponent("Transform", "left")
   self._right = self:GetUIComponent("Transform", "right")
@@ -69,71 +55,32 @@ UIUpLevelInterfaceController.GetComponents = function(self)
   self._leftLua = UIUpLevelInfoItem:New()
   self._centerLua = UIUpLevelInfoItem:New()
   self._rightLua = UIUpLevelInfoItem:New()
-  ;
-  (self._leftLua):SetView(self._leftView)
-  ;
-  (self._centerLua):SetView(self._centerView)
-  ;
-  (self._rightLua):SetView(self._rightView)
-  ;
-  (self._leftLua):OnShowItem()
-  ;
-  (self._centerLua):OnShowItem()
-  ;
-  (self._rightLua):OnShowItem()
+  self._leftLua:SetView(self._leftView)
+  self._centerLua:SetView(self._centerView)
+  self._rightLua:SetView(self._rightView)
+  self._leftLua:OnShowItem()
+  self._centerLua:OnShowItem()
+  self._rightLua:OnShowItem()
   self._rectLeft = self:GetUIComponent("RectTransform", "rectLeft")
-  -- DECOMPILER ERROR at PC157: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rectLeft).anchoredPosition = Vector2(-200, 0)
+  self._rectLeft.anchoredPosition = Vector2(-200, 0)
   self._rectCenter = self:GetUIComponent("RectTransform", "rectCenter")
-  -- DECOMPILER ERROR at PC168: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rectCenter).anchoredPosition = Vector2(0, 0)
+  self._rectCenter.anchoredPosition = Vector2(0, 0)
   self._rectRight = self:GetUIComponent("RectTransform", "rectRight")
-  -- DECOMPILER ERROR at PC179: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rectRight).anchoredPosition = Vector2(200, 0)
+  self._rectRight.anchoredPosition = Vector2(200, 0)
   self._alphaLeft = self:GetUIComponent("CanvasGroup", "rectLeft")
-  -- DECOMPILER ERROR at PC186: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._alphaLeft).alpha = 0
-  -- DECOMPILER ERROR at PC188: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._alphaLeft).blocksRaycasts = false
+  self._alphaLeft.alpha = 0
+  self._alphaLeft.blocksRaycasts = false
   self._alphaCenter = self:GetUIComponent("CanvasGroup", "rectCenter")
-  -- DECOMPILER ERROR at PC195: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._alphaCenter).alpha = 1
-  -- DECOMPILER ERROR at PC197: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._alphaCenter).blocksRaycasts = true
+  self._alphaCenter.alpha = 1
+  self._alphaCenter.blocksRaycasts = true
   self._alphaRight = self:GetUIComponent("CanvasGroup", "rectRight")
-  -- DECOMPILER ERROR at PC204: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._alphaRight).alpha = 0
-  -- DECOMPILER ERROR at PC206: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._alphaRight).blocksRaycasts = false
+  self._alphaRight.alpha = 0
+  self._alphaRight.blocksRaycasts = false
   self.effAnim = self:GetUIComponent("Animation", "Eff")
   self.effResReq = {}
   self.effGo = {}
-  -- DECOMPILER ERROR at PC218: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.effGo).items = {}
-  -- DECOMPILER ERROR at PC221: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.effGo).attibutes = {}
+  self.effGo.items = {}
+  self.effGo.attibutes = {}
   self.levelPanelObj = self:GetGameObject("LevelPanel")
   self.canWeakPanelObj = self:GetGameObject("CanWakePanel")
   self.levelPanelAnim = self:GetUIComponent("Animation", "LevelPanel")
@@ -144,24 +91,18 @@ UIUpLevelInterfaceController.GetComponents = function(self)
   self._upAddQuickBtnEff = self:GetGameObject("UpAddQuickBtn2")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  self._mulitOpen = (UnityEngine.Input).multiTouchEnabled
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (UnityEngine.Input).multiTouchEnabled = false
-  self._petModule = ((GameGlobal.GameLogic)()):GetModule(PetModule)
-  self._itemModule = ((GameGlobal.GameLogic)()):GetModule(ItemModule)
-  self._roleModule = ((GameGlobal.GameLogic)()):GetModule(RoleModule)
+function UIUpLevelInterfaceController:OnShow(uiParams)
+  self._mulitOpen = UnityEngine.Input.multiTouchEnabled
+  UnityEngine.Input.multiTouchEnabled = false
+  self._petModule = GameGlobal.GameLogic():GetModule(PetModule)
+  self._itemModule = GameGlobal.GameLogic():GetModule(ItemModule)
+  self._roleModule = GameGlobal.GameLogic():GetModule(RoleModule)
   local petid = uiParams[1]
   self:RequestAllPetInfos()
   self._currIndex = self:FindOpenPetIndex(petid)
   self._currIndexTemp = self._currIndex
-  self._petInfo = (self._petInfos)[self._currIndex]
-  self._petPstID = (self._petInfo):GetPstID()
+  self._petInfo = self._petInfos[self._currIndex]
+  self._petPstID = self._petInfo:GetPstID()
   self:GetComponents()
   self:OnShowInfos()
   self:InitPetScrollView()
@@ -169,49 +110,33 @@ UIUpLevelInterfaceController.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.CloseUIUpLevelAddQuickBox, self.CloseUIUpLevelAddQuickBox)
   self:SetLongPressGrade()
   self:RefreshLevelOrCanAWeak(false)
-  local etl = (UICustomUIEventListener.Get)(self._upAddQuickBtn)
+  local etl = UICustomUIEventListener.Get(self._upAddQuickBtn)
   self:AddUICustomEventListener(etl, UIEvent.Press, function(go)
-    -- function num : 0_2_0 , upvalues : self
     self:OnDown(go)
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Release, function(go)
-    -- function num : 0_2_1 , upvalues : self
     self:OnUp(go)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.SetLongPressGrade = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local grade = (self._petInfo):GetPetGrade()
-  ;
-  (HelperProxy:GetInstance()):SetLongEventGrade(grade)
+function UIUpLevelInterfaceController:SetLongPressGrade()
+  local grade = self._petInfo:GetPetGrade()
+  HelperProxy:GetInstance():SetLongEventGrade(grade)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.OnHide = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,v in pairs(self._TaskList) do
+function UIUpLevelInterfaceController:OnHide(go)
+  for _, v in pairs(self._TaskList) do
     if v then
-      ((GameGlobal.TaskManager)()):KillTask(v)
+      GameGlobal.TaskManager():KillTask(v)
       v = nil
     end
   end
-  ;
-  (HelperProxy:GetInstance()):SetLongEventGrade(nil)
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (UnityEngine.Input).multiTouchEnabled = self._mulitOpen
+  HelperProxy:GetInstance():SetLongEventGrade(nil)
+  UnityEngine.Input.multiTouchEnabled = self._mulitOpen
   self:Release()
   if self._unLockEvent then
     self:UnLock("UpLevelEffPlaying")
-    ;
-    ((GameGlobal.Timer)()):CancelEvent(self._unLockEvent)
+    GameGlobal.Timer():CancelEvent(self._unLockEvent)
     self._unLockEvent = nil
   end
   self:DetachEvent(GameEventType.PetUpLevelEvent, self.RefreshPetUpLevelEvent)
@@ -220,261 +145,154 @@ UIUpLevelInterfaceController.OnHide = function(self, go)
   self:DetachEvent(GameEventType.CloseUIUpLevelAddQuickBox, self.CloseUIUpLevelAddQuickBox)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.OnLevelUpAttValueChanged = function(self, rate)
-  -- function num : 0_5
-  (self._centerLua):OnLevelUpAttValueChanged(rate)
+function UIUpLevelInterfaceController:OnLevelUpAttValueChanged(rate)
+  self._centerLua:OnLevelUpAttValueChanged(rate)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.OnShowInfos = function(self)
-  -- function num : 0_6
-  if (self._petInfos)[self._currIndex - 1] then
-    (self._leftLua):SetData(self._currIndex - 1, (self._petInfos)[self._currIndex - 1])
+function UIUpLevelInterfaceController:OnShowInfos()
+  if self._petInfos[self._currIndex - 1] then
+    self._leftLua:SetData(self._currIndex - 1, self._petInfos[self._currIndex - 1])
   end
-  if (self._petInfos)[self._currIndex] then
-    (self._centerLua):SetData(self._currIndex, (self._petInfos)[self._currIndex])
+  if self._petInfos[self._currIndex] then
+    self._centerLua:SetData(self._currIndex, self._petInfos[self._currIndex])
   end
-  if (self._petInfos)[self._currIndex + 1] then
-    (self._rightLua):SetData(self._currIndex + 1, (self._petInfos)[self._currIndex + 1])
+  if self._petInfos[self._currIndex + 1] then
+    self._rightLua:SetData(self._currIndex + 1, self._petInfos[self._currIndex + 1])
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.RequestAllPetInfos = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._petInfos = ((self._petModule).uiModule):GetSortedPets()
-  self._listShowItemCount = (table.count)(self._petInfos)
+function UIUpLevelInterfaceController:RequestAllPetInfos()
+  self._petInfos = self._petModule.uiModule:GetSortedPets()
+  self._listShowItemCount = table.count(self._petInfos)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.FindOpenPetIndex = function(self, petid)
-  -- function num : 0_8
+function UIUpLevelInterfaceController:FindOpenPetIndex(petid)
   if self._petInfos then
     for index = 1, #self._petInfos do
-      if ((self._petInfos)[index]):GetTemplateID() == petid then
+      if self._petInfos[index]:GetTemplateID() == petid then
         return index
       end
     end
   end
-  do
-    return 1
-  end
+  return 1
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.InitPetScrollView = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIUpLevelInterfaceController:InitPetScrollView()
   self._itemTable = {}
   self._scrollViewHelper = H3DScrollViewHelper:New(self, "PetScrollView", "UIUpLevelPetDetailItem", function(index, uiwidget)
-    -- function num : 0_9_0 , upvalues : self
     return self:_OnShowItem(index, uiwidget)
-  end
-, function(index, uiwidget)
-    -- function num : 0_9_1 , upvalues : self
+  end, function(index, uiwidget)
     return self:_OnHideItem(index, uiwidget)
-  end
-)
+  end)
   local safeArea = self:GetUIComponent("RectTransform", "SafeArea")
-  ;
-  (self._scrollViewHelper):SetGroupChangedCallback(function(index, item)
-    -- function num : 0_9_2 , upvalues : self, _ENV
-    if self._listShowItemCount < index + 1 then
-      return 
+  self._scrollViewHelper:SetGroupChangedCallback(function(index, item)
+    if index + 1 > self._listShowItemCount then
+      return
     end
     self:_ShowCurrIndexInfo(index + 1)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPetListIndexChanged, (self._petInfo):GetTemplateID())
-  end
-)
-  ;
-  (self._scrollViewHelper):SetValueChangedCallback(function(group, value, contentSize, itemSize)
-    -- function num : 0_9_3 , upvalues : self
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPetListIndexChanged, self._petInfo:GetTemplateID())
+  end)
+  self._scrollViewHelper:SetValueChangedCallback(function(group, value, contentSize, itemSize)
     self:_OnValueChangedCallBack(group + 1, value, contentSize, itemSize)
+  end)
+  self._scrollRectWidth = self:GetUIComponent("RectTransform", "PetScrollView").sizeDelta.x
+  self._scrollViewHelper:Init(self._listShowItemCount, self._currIndex, safeArea.rect.size)
+  if self._listShowItemCount <= 1 then
+    local scrollRect = self:GetUIComponent("ScrollRect", "PetScrollView")
+    scrollRect.enabled = false
   end
-)
-  self._scrollRectWidth = ((self:GetUIComponent("RectTransform", "PetScrollView")).sizeDelta).x
-  ;
-  (self._scrollViewHelper):Init(self._listShowItemCount, self._currIndex, (safeArea.rect).size)
-  do
-    if self._listShowItemCount <= 1 then
-      local scrollRect = self:GetUIComponent("ScrollRect", "PetScrollView")
-      scrollRect.enabled = false
-    end
-    ;
-    (self._scrollViewHelper):SetNextPageOffset(0.1)
-  end
+  self._scrollViewHelper:SetNextPageOffset(0.1)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController._OnShowItem = function(self, index, uiwidget)
-  -- function num : 0_10 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self._itemTable)[index] == nil then
-    (self._itemTable)[index] = uiwidget
+function UIUpLevelInterfaceController:_OnShowItem(index, uiwidget)
+  if self._itemTable[index] == nil then
+    self._itemTable[index] = uiwidget
   end
-  local petData = (self._petInfos)[index]
+  local petData = self._petInfos[index]
   local matCgName = petData:GetPetStaticBody(PetSkinEffectPath.BODY_LEVLE_UP)
   uiwidget:SetData(index, petData, self._currIndex)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController._OnHideItem = function(self, index, uiwidget)
-  -- function num : 0_11
-  if (self._itemTable)[index] == nil then
-    return 
+function UIUpLevelInterfaceController:_OnHideItem(index, uiwidget)
+  if self._itemTable[index] == nil then
+    return
   end
   uiwidget:OnHideCallBack()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController._ShowCurrIndexInfo = function(self, index)
-  -- function num : 0_12 , upvalues : _ENV
+function UIUpLevelInterfaceController:_ShowCurrIndexInfo(index)
   self._currIndex = index
   if self._notFirst then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpLevelCheckIsCurrent, self._currIndex)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpLevelCheckIsCurrent, self._currIndex)
   end
-  self._petInfo = (self._petInfos)[index]
-  self._petPstID = (self._petInfo):GetPstID()
+  self._petInfo = self._petInfos[index]
+  self._petPstID = self._petInfo:GetPstID()
   self._tItemInfos = self:GetMaterialItemInfos()
   self:ChangeLeftCenterRight()
   self:Reset()
-  ;
-  (table.clear)(self._addItemInfos)
-  ;
-  (table.clear)(self.items)
+  table.clear(self._addItemInfos)
+  table.clear(self.items)
   self:InitItemListView()
   local imageLoader = self:GetUIComponent("RawImageLoader", "BgLoader")
-  ;
-  (UICommonHelper:GetInstance()):ChangePetTagBackground((self._petInfo):GetTemplateID(), imageLoader, true)
+  UICommonHelper:GetInstance():ChangePetTagBackground(self._petInfo:GetTemplateID(), imageLoader, true)
   self._currIndexTemp = self._currIndex
   self:RefreshLevelOrCanAWeak(false)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController._OnValueChangedCallBack = function(self, group, value, contentSize, itemSize)
-  -- function num : 0_13 , upvalues : _ENV
-  local leftRightDis = (math.abs)(((self._left).position).x - ((self._right).position).x)
-  local centerPosition = (self._center).position
+function UIUpLevelInterfaceController:_OnValueChangedCallBack(group, value, contentSize, itemSize)
+  local leftRightDis = math.abs(self._left.position.x - self._right.position.x)
+  local centerPosition = self._center.position
   for i = self._currIndex - 1, self._currIndex + 1 do
-    if (self._itemTable)[i] then
-      ((self._itemTable)[i]):ChangeCanvasGroupAlpha(leftRightDis, centerPosition.x)
+    if self._itemTable[i] then
+      self._itemTable[i]:ChangeCanvasGroupAlpha(leftRightDis, centerPosition.x)
     end
   end
-  do
-    if ((self._content).localPosition).x > 0 or ((self._content).localPosition).x < -((self._content).sizeDelta).x + self._scrollRectWidth then
-      return 
-    end
-    local c2c = ((self._itemTable)[self._currIndex]):GetC2C()
-    local nameRate = c2c / leftRightDis
-    local posx = nameRate * 200
-    -- DECOMPILER ERROR at PC58: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._rectCenter).anchoredPosition = Vector2(posx, 0)
-    -- DECOMPILER ERROR at PC64: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._rectLeft).anchoredPosition = Vector2(posx - 200, 0)
-    -- DECOMPILER ERROR at PC70: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._rectRight).anchoredPosition = Vector2(posx + 200, 0)
-    -- DECOMPILER ERROR at PC74: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._alphaCenter).alpha = 1 - nameRate * 2
-    -- DECOMPILER ERROR at PC78: Confused about usage of register: R10 in 'UnsetPending'
-
-    if c2c < 0 then
-      (self._alphaLeft).alpha = 0
-      -- DECOMPILER ERROR at PC81: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self._alphaRight).alpha = nameRate * 2
-    else
-      -- DECOMPILER ERROR at PC87: Confused about usage of register: R10 in 'UnsetPending'
-
-      if c2c > 0 then
-        (self._alphaLeft).alpha = nameRate * 2
-        -- DECOMPILER ERROR at PC89: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._alphaRight).alpha = 0
-      else
-        -- DECOMPILER ERROR at PC92: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._alphaLeft).alpha = 0
-        -- DECOMPILER ERROR at PC94: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._alphaRight).alpha = 0
-      end
-    end
+  if self._content.localPosition.x > 0 or self._content.localPosition.x < -self._content.sizeDelta.x + self._scrollRectWidth then
+    return
+  end
+  local c2c = self._itemTable[self._currIndex]:GetC2C()
+  local nameRate = c2c / leftRightDis
+  local posx = nameRate * 200
+  self._rectCenter.anchoredPosition = Vector2(posx, 0)
+  self._rectLeft.anchoredPosition = Vector2(posx - 200, 0)
+  self._rectRight.anchoredPosition = Vector2(posx + 200, 0)
+  self._alphaCenter.alpha = 1 - nameRate * 2
+  if c2c < 0 then
+    self._alphaLeft.alpha = 0
+    self._alphaRight.alpha = nameRate * 2
+  elseif 0 < c2c then
+    self._alphaLeft.alpha = nameRate * 2
+    self._alphaRight.alpha = 0
+  else
+    self._alphaLeft.alpha = 0
+    self._alphaRight.alpha = 0
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.OnItemCountChanged = function(self)
-  -- function num : 0_14
+function UIUpLevelInterfaceController:OnItemCountChanged()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.OnItemGraded = function(self)
-  -- function num : 0_15
+function UIUpLevelInterfaceController:OnItemGraded()
   self:_ShowCurrIndexInfo(self._currIndex)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.SetColor = function(self, isDefaultColor)
-  -- function num : 0_16 , upvalues : _ENV
-  local color = nil
+function UIUpLevelInterfaceController:SetColor(isDefaultColor)
+  local color
   if isDefaultColor then
     color = Color(0.96, 0.81, 0.14)
   else
     color = Color(1, 0.4, 0.32)
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
   if color ~= nil then
-    (self._leftLine).color = color
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._consumeName).color = color
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._coinBg).color = color
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._needcoin).color = color
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._rightLine).color = color
+    self._leftLine.color = color
+    self._consumeName.color = color
+    self._coinBg.color = color
+    self._needcoin.color = color
+    self._rightLine.color = color
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.Release = function(self)
-  -- function num : 0_17
+function UIUpLevelInterfaceController:Release()
   self:StopShakeTween()
   self._petInfo = nil
   self._addItemInfos = nil
@@ -483,72 +301,56 @@ UIUpLevelInterfaceController.Release = function(self)
   self._needcoin = nil
   self._h3dScrollView = nil
   self._coinGo = nil
-  ;
-  (self._scrollViewHelper):Dispose()
+  self._scrollViewHelper:Dispose()
   if self._centerLua then
-    (self._centerLua):Dispose()
+    self._centerLua:Dispose()
     self._centerLua = nil
   end
   if self._leftLua then
-    (self._leftLua):Dispose()
+    self._leftLua:Dispose()
     self._leftLua = nil
   end
   if self._rightLua then
-    (self._rightLua):Dispose()
+    self._rightLua:Dispose()
     self._rightLua = nil
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.InitItemListView = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIUpLevelInterfaceController:InitItemListView()
   if self._notFirst then
     self:CalculateCreatItemCout()
-    self._listItemTotalRow = (math.ceil)(self._listItemTotalCount / self._itemCountPerRow)
-    ;
-    (self._h3dScrollView):SetListItemCount(self._listItemTotalRow)
-    ;
-    (self._h3dScrollView):MovePanelToItemIndex(0, 0)
+    self._listItemTotalRow = math.ceil(self._listItemTotalCount / self._itemCountPerRow)
+    self._h3dScrollView:SetListItemCount(self._listItemTotalRow)
+    self._h3dScrollView:MovePanelToItemIndex(0, 0)
   else
     self._notFirst = true
     self:CalculateCreatItemCout()
-    self._listItemTotalRow = (math.ceil)(self._listItemTotalCount / self._itemCountPerRow)
+    self._listItemTotalRow = math.ceil(self._listItemTotalCount / self._itemCountPerRow)
     if self._h3dScrollView then
-      (self._h3dScrollView):InitListView(self._listItemTotalRow, function(scrollView, index)
-    -- function num : 0_18_0 , upvalues : self
-    return self:_InitListView(scrollView, index)
-  end
-)
+      self._h3dScrollView:InitListView(self._listItemTotalRow, function(scrollView, index)
+        return self:_InitListView(scrollView, index)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.CalculateCreatItemCout = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIUpLevelInterfaceController:CalculateCreatItemCout()
   if self._tItemInfos == nil then
     self._listItemTotalCount = self._listItemBaseCout
-    return 
+    return
   end
-  local itemCout = (table.count)(self._tItemInfos)
+  local itemCout = table.count(self._tItemInfos)
   if itemCout < self._listItemBaseCout then
     self._listItemTotalCount = self._listItemBaseCout
   else
-    local totalRowCount = (math.ceil)(itemCout / self._itemCountPerRow)
+    local totalRowCount = math.ceil(itemCout / self._itemCountPerRow)
     self._listItemTotalCount = totalRowCount * self._itemCountPerRow
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.ChangeLeftCenterRight = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  if self._currIndex < self._currIndexTemp then
-    (self._rectRight).anchoredPosition = (self._rectRight).anchoredPosition - Vector2(400, 0)
+function UIUpLevelInterfaceController:ChangeLeftCenterRight()
+  if self._currIndexTemp > self._currIndex then
+    self._rectRight.anchoredPosition = self._rectRight.anchoredPosition - Vector2(400, 0)
     local rightLuaTemp = self._rightLua
     self._rightLua = self._centerLua
     self._centerLua = self._leftLua
@@ -561,77 +363,52 @@ UIUpLevelInterfaceController.ChangeLeftCenterRight = function(self)
     self._alphaRight = self._alphaCenter
     self._alphaCenter = self._alphaLeft
     self._alphaLeft = alphaRightTemp
-    if (self._petInfos)[self._currIndex - 1] then
-      (self._leftLua):RefreshData(self._currIndex - 1, (self._petInfos)[self._currIndex - 1], false)
+    if self._petInfos[self._currIndex - 1] then
+      self._leftLua:RefreshData(self._currIndex - 1, self._petInfos[self._currIndex - 1], false)
     end
-  else
-    do
-      -- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-      if self._currIndexTemp < self._currIndex then
-        (self._rectLeft).anchoredPosition = (self._rectLeft).anchoredPosition + Vector2(400, 0)
-        local leftLuaTemp = self._leftLua
-        self._leftLua = self._centerLua
-        self._centerLua = self._rightLua
-        self._rightLua = leftLuaTemp
-        local leftRectTemp = self._rectLeft
-        self._rectLeft = self._rectCenter
-        self._rectCenter = self._rectRight
-        self._rectRight = leftRectTemp
-        local alphaLeftTemp = self._alphaLeft
-        self._alphaLeft = self._alphaCenter
-        self._alphaCenter = self._alphaRight
-        self._alphaRight = alphaLeftTemp
-        if (self._petInfos)[self._currIndex + 1] then
-          (self._rightLua):RefreshData(self._currIndex + 1, (self._petInfos)[self._currIndex + 1], false)
-        end
-      end
-      do
-        -- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._alphaCenter).blocksRaycasts = true
-        -- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._alphaRight).blocksRaycasts = false
-        -- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._alphaLeft).blocksRaycasts = false
-      end
+  elseif self._currIndexTemp < self._currIndex then
+    self._rectLeft.anchoredPosition = self._rectLeft.anchoredPosition + Vector2(400, 0)
+    local leftLuaTemp = self._leftLua
+    self._leftLua = self._centerLua
+    self._centerLua = self._rightLua
+    self._rightLua = leftLuaTemp
+    local leftRectTemp = self._rectLeft
+    self._rectLeft = self._rectCenter
+    self._rectCenter = self._rectRight
+    self._rectRight = leftRectTemp
+    local alphaLeftTemp = self._alphaLeft
+    self._alphaLeft = self._alphaCenter
+    self._alphaCenter = self._alphaRight
+    self._alphaRight = alphaLeftTemp
+    if self._petInfos[self._currIndex + 1] then
+      self._rightLua:RefreshData(self._currIndex + 1, self._petInfos[self._currIndex + 1], false)
     end
   end
+  self._alphaCenter.blocksRaycasts = true
+  self._alphaRight.blocksRaycasts = false
+  self._alphaLeft.blocksRaycasts = false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.Reset = function(self)
-  -- function num : 0_21
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._needcoin).text = "0"
-  local curPetLevel = (self._petInfo):GetPetLevel()
-  local curPetExp = (self._petInfo):GetPetExp()
+function UIUpLevelInterfaceController:Reset()
+  self._needcoin.text = "0"
+  local curPetLevel = self._petInfo:GetPetLevel()
+  local curPetExp = self._petInfo:GetPetExp()
   self._arriveLevel = curPetLevel
   self._arriveExp = curPetExp
   self._addExp = 0
-  if (self._petInfos)[self._currIndex - 1] then
-    (self._leftLua):RefreshData(self._currIndex - 1, (self._petInfos)[self._currIndex - 1])
+  if self._petInfos[self._currIndex - 1] then
+    self._leftLua:RefreshData(self._currIndex - 1, self._petInfos[self._currIndex - 1])
   end
-  if (self._petInfos)[self._currIndex] then
-    (self._centerLua):RefreshData(self._currIndex, (self._petInfos)[self._currIndex])
+  if self._petInfos[self._currIndex] then
+    self._centerLua:RefreshData(self._currIndex, self._petInfos[self._currIndex])
   end
-  if (self._petInfos)[self._currIndex + 1] then
-    (self._rightLua):RefreshData(self._currIndex + 1, (self._petInfos)[self._currIndex + 1])
+  if self._petInfos[self._currIndex + 1] then
+    self._rightLua:RefreshData(self._currIndex + 1, self._petInfos[self._currIndex + 1])
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.GetHasItemAsyncLoading = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  for _,v in pairs(self._AsyncLoadFlagMap) do
+function UIUpLevelInterfaceController:GetHasItemAsyncLoading()
+  for _, v in pairs(self._AsyncLoadFlagMap) do
     if v == 1 then
       return true
     end
@@ -639,162 +416,106 @@ UIUpLevelInterfaceController.GetHasItemAsyncLoading = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController._InitListView = function(self, scrollView, index)
-  -- function num : 0_23 , upvalues : _ENV
+function UIUpLevelInterfaceController:_InitListView(scrollView, index)
   if index < 0 then
     return nil
   end
   local item = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
-    if (self._TaskList)[item] then
+    if self._TaskList[item] then
       return item
     end
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._TaskList)[item] = self:StartTask(function(TT)
-    -- function num : 0_23_0 , upvalues : index, self, _ENV, item, rowPool
-    while index > 0 and self:GetHasItemAsyncLoading() do
-      YIELD(TT)
-    end
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._AsyncLoadFlagMap)[item] = 1
-    rowPool:AsyncSpawnObjects(TT, "UIConsumableMaterialItem", self._itemCountPerRow)
-    local rowList = rowPool:GetAllSpawnList()
-    for i = 1, self._itemCountPerRow do
-      local tMaterialItem = rowList[i]
-      tMaterialItem:PlayFadeAnimIn()
-      local itemIndex = index * self._itemCountPerRow + i
-      if self._listItemTotalCount < itemIndex then
-        (tMaterialItem:GetGameObject()):SetActive(false)
-      else
-        self:_ShowMaterialItem(tMaterialItem, itemIndex)
-        -- DECOMPILER ERROR at PC50: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self.items)[itemIndex] = tMaterialItem
+    self._TaskList[item] = self:StartTask(function(TT)
+      if 0 < index then
+        while self:GetHasItemAsyncLoading() do
+          YIELD(TT)
+        end
       end
-    end
-    YIELD(TT)
-    -- DECOMPILER ERROR at PC57: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._AsyncLoadFlagMap)[item] = 2
-    item.IsInitHandlerCalled = true
-  end
-)
+      self._AsyncLoadFlagMap[item] = 1
+      rowPool:AsyncSpawnObjects(TT, "UIConsumableMaterialItem", self._itemCountPerRow)
+      local rowList = rowPool:GetAllSpawnList()
+      for i = 1, self._itemCountPerRow do
+        local tMaterialItem = rowList[i]
+        tMaterialItem:PlayFadeAnimIn()
+        local itemIndex = index * self._itemCountPerRow + i
+        if itemIndex > self._listItemTotalCount then
+          tMaterialItem:GetGameObject():SetActive(false)
+        else
+          self:_ShowMaterialItem(tMaterialItem, itemIndex)
+          self.items[itemIndex] = tMaterialItem
+        end
+      end
+      YIELD(TT)
+      self._AsyncLoadFlagMap[item] = 2
+      item.IsInitHandlerCalled = true
+    end)
   else
     local rowList = rowPool:GetAllSpawnList()
     for i = 1, self._itemCountPerRow do
       local tMaterialItem = rowList[i]
       local itemIndex = index * self._itemCountPerRow + i
-      if self._listItemTotalCount < itemIndex then
-        (tMaterialItem:GetGameObject()):SetActive(false)
+      if itemIndex > self._listItemTotalCount then
+        tMaterialItem:GetGameObject():SetActive(false)
       else
         self:_ShowMaterialItem(tMaterialItem, itemIndex)
-        -- DECOMPILER ERROR at PC49: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (self.items)[itemIndex] = tMaterialItem
+        self.items[itemIndex] = tMaterialItem
       end
     end
   end
-  do
-    return item
-  end
+  return item
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController._ShowMaterialItem = function(self, tMaterialItem, itemIndex)
-  -- function num : 0_24
-  local itemInfo = (self._addItemInfos)[itemIndex]
-  local tInfo = (self._tItemInfos)[itemIndex]
-  ;
-  (tMaterialItem:GetGameObject()):SetActive(true)
-  tMaterialItem:SetData(tInfo, (self._petInfo):GetPetFirstElement(), itemInfo, itemIndex, function(tMaterialItem)
-    -- function num : 0_24_0 , upvalues : self
+function UIUpLevelInterfaceController:_ShowMaterialItem(tMaterialItem, itemIndex)
+  local itemInfo = self._addItemInfos[itemIndex]
+  local tInfo = self._tItemInfos[itemIndex]
+  tMaterialItem:GetGameObject():SetActive(true)
+  tMaterialItem:SetData(tInfo, self._petInfo:GetPetFirstElement(), itemInfo, itemIndex, function(tMaterialItem)
     local tInfo = self:AddMaterialItem(tMaterialItem)
     return tInfo
-  end
-, function(tMaterialItem)
-    -- function num : 0_24_1 , upvalues : self
+  end, function(tMaterialItem)
     local tInfo = self:ReduceMaterialItem(tMaterialItem)
     return tInfo
-  end
-, function(tMaterialItem)
-    -- function num : 0_24_2 , upvalues : self
+  end, function(tMaterialItem)
     local isReach = self:CheckAddOneMaterialLaterReachMaxLevel(tMaterialItem)
     return isReach
-  end
-, self._maxMatChooseCount)
+  end, self._maxMatChooseCount)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.AddMaterialItem = function(self, tMaterialItem)
-  -- function num : 0_25
+function UIUpLevelInterfaceController:AddMaterialItem(tMaterialItem)
   local isHave, index = self:CheckContainMaterialItem(tMaterialItem)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
   if isHave == true then
-    ((self._addItemInfos)[tMaterialItem.fromeIndex]).count = ((self._addItemInfos)[tMaterialItem.fromeIndex]).count + tMaterialItem.count
+    self._addItemInfos[tMaterialItem.fromeIndex].count = self._addItemInfos[tMaterialItem.fromeIndex].count + tMaterialItem.count
   else
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._addItemInfos)[tMaterialItem.fromeIndex] = tMaterialItem
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    ((self._addItemInfos)[tMaterialItem.fromeIndex]).assetid = tMaterialItem.assetid
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    ((self._addItemInfos)[tMaterialItem.fromeIndex]).m_templateid = tMaterialItem.m_templateid
+    self._addItemInfos[tMaterialItem.fromeIndex] = tMaterialItem
+    self._addItemInfos[tMaterialItem.fromeIndex].assetid = tMaterialItem.assetid
+    self._addItemInfos[tMaterialItem.fromeIndex].m_templateid = tMaterialItem.m_templateid
   end
   self:CalculateADD(tMaterialItem)
-  return (self._addItemInfos)[tMaterialItem.fromeIndex]
+  return self._addItemInfos[tMaterialItem.fromeIndex]
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.ReduceMaterialItem = function(self, tMaterialItem)
-  -- function num : 0_26
+function UIUpLevelInterfaceController:ReduceMaterialItem(tMaterialItem)
   local isHave, index = self:CheckContainMaterialItem(tMaterialItem)
   if isHave == false then
     return nil
   end
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
   if isHave == true then
-    ((self._addItemInfos)[tMaterialItem.fromeIndex]).count = ((self._addItemInfos)[tMaterialItem.fromeIndex]).count - 1
-    local count = ((self._addItemInfos)[tMaterialItem.fromeIndex]).count
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R5 in 'UnsetPending'
-
+    self._addItemInfos[tMaterialItem.fromeIndex].count = self._addItemInfos[tMaterialItem.fromeIndex].count - 1
+    local count = self._addItemInfos[tMaterialItem.fromeIndex].count
     if count <= 0 then
-      (self._addItemInfos)[tMaterialItem.fromeIndex] = nil
+      self._addItemInfos[tMaterialItem.fromeIndex] = nil
     end
   end
-  do
-    self:CalculateReduce(tMaterialItem)
-    return (self._addItemInfos)[tMaterialItem.fromeIndex]
-  end
+  self:CalculateReduce(tMaterialItem)
+  return self._addItemInfos[tMaterialItem.fromeIndex]
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.CheckContainMaterialItem = function(self, tMaterialItem)
-  -- function num : 0_27 , upvalues : _ENV
+function UIUpLevelInterfaceController:CheckContainMaterialItem(tMaterialItem)
   if self._addItemInfos == nil then
     return false, -1
   end
-  for index,tInfo in pairs(self._addItemInfos) do
+  for index, tInfo in pairs(self._addItemInfos) do
     if tInfo.assetid == tMaterialItem.assetid then
       return true, index
     end
@@ -802,282 +523,193 @@ UIUpLevelInterfaceController.CheckContainMaterialItem = function(self, tMaterial
   return false, -1
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.CalculateADD = function(self, tMaterialItem)
-  -- function num : 0_28
+function UIUpLevelInterfaceController:CalculateADD(tMaterialItem)
   if tMaterialItem == nil then
-    return 
+    return
   end
-  local perItemAddExp = (self._itemModule):GetItemToPetExp(tMaterialItem.m_templateid)
+  local perItemAddExp = self._itemModule:GetItemToPetExp(tMaterialItem.m_templateid)
   perItemAddExp = self:CalculateFinalExp(perItemAddExp, tMaterialItem.m_templateid)
   self._addExp = self._addExp + tMaterialItem.count * perItemAddExp
-  ;
-  (self._centerLua):StopTween()
+  self._centerLua:StopTween()
   local isUpLevel, isUpMaxLevel = self:CheckReachMaxLevelByAddExp()
   self:Refresh(isUpLevel, isUpMaxLevel)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.CalculateFinalExp = function(self, itemAddExp, m_templateid)
-  -- function num : 0_29 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item_pet_exp)[m_templateid]
+function UIUpLevelInterfaceController:CalculateFinalExp(itemAddExp, m_templateid)
+  local cfg = Cfg.cfg_item_pet_exp[m_templateid]
   local tItemAddExp = itemAddExp
-  local firstElement = (self._petInfo):GetPetFirstElement()
-  do
-    if cfg.Element == firstElement then
-      local add = ((Cfg.cfg_global).ElementAddExp).IntValue
-      tItemAddExp = itemAddExp * (add + 100) * 0.01
-    end
-    return (math.floor)(tItemAddExp)
+  local firstElement = self._petInfo:GetPetFirstElement()
+  if cfg.Element == firstElement then
+    local add = Cfg.cfg_global.ElementAddExp.IntValue
+    tItemAddExp = itemAddExp * (add + 100) * 0.01
   end
+  return math.floor(tItemAddExp)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.CalculateReduce = function(self, tMaterialItem)
-  -- function num : 0_30
+function UIUpLevelInterfaceController:CalculateReduce(tMaterialItem)
   if tMaterialItem == nil then
-    return 
+    return
   end
-  local perItemAddExp = (self._itemModule):GetItemToPetExp(tMaterialItem.m_templateid)
+  local perItemAddExp = self._itemModule:GetItemToPetExp(tMaterialItem.m_templateid)
   perItemAddExp = self:CalculateFinalExp(perItemAddExp, tMaterialItem.m_templateid)
   self._addExp = self._addExp - tMaterialItem.count * perItemAddExp
-  ;
-  (self._centerLua):StopTween()
+  self._centerLua:StopTween()
   local isUpLevel, isUpMaxLevel = self:CheckReachMaxLevelByAddExp()
   self:Refresh(isUpLevel, isUpMaxLevel)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.CheckAddOneMaterialLaterReachMaxLevel = function(self, iteminfo)
-  -- function num : 0_31
-  local petMaxLevel = (self._petInfo):GetMaxLevel()
+function UIUpLevelInterfaceController:CheckAddOneMaterialLaterReachMaxLevel(iteminfo)
+  local petMaxLevel = self._petInfo:GetMaxLevel()
   local isContinueADDItem = petMaxLevel <= self._arriveLevel
-  do return isContinueADDItem end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return isContinueADDItem
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.CheckReachMaxLevelByAddExp = function(self)
-  -- function num : 0_32
+function UIUpLevelInterfaceController:CheckReachMaxLevelByAddExp()
   local isUpLevel = false
   local isUpMaxLevel = false
-  local curGradeMaxLevel = (self._petInfo):GetMaxLevel()
-  self._arriveLevel = (self._petInfo):GetPetLevel()
-  self._arriveExp = (self._petInfo):GetPetExp()
+  local curGradeMaxLevel = self._petInfo:GetMaxLevel()
+  self._arriveLevel = self._petInfo:GetPetLevel()
+  self._arriveExp = self._petInfo:GetPetExp()
   local tAddExp = self._addExp
-  while 1 do
-    while 1 do
-      local levelConfig = (self._petInfo):GetLevelConfig(self._arriveLevel + 1)
-      if levelConfig ~= nil then
-        local lerpExp = levelConfig.NeedExp - self._arriveExp
-        if tAddExp - lerpExp >= 0 then
-          isUpLevel = true
-          tAddExp = tAddExp - lerpExp
-          self._arriveLevel = self._arriveLevel + 1
-          if curGradeMaxLevel <= self._arriveLevel then
-            isUpMaxLevel = true
-          else
-            self._arriveExp = 0
-            -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
+  while true do
+    local levelConfig = self._petInfo:GetLevelConfig(self._arriveLevel + 1)
+    if levelConfig == nil then
+      break
     end
-    self._arriveExp = self._arriveExp + (tAddExp)
-    break
+    local lerpExp = levelConfig.NeedExp - self._arriveExp
+    if 0 <= tAddExp - lerpExp then
+      isUpLevel = true
+      tAddExp = tAddExp - lerpExp
+      self._arriveLevel = self._arriveLevel + 1
+      if curGradeMaxLevel <= self._arriveLevel then
+        isUpMaxLevel = true
+        break
+      end
+      self._arriveExp = 0
+    else
+      self._arriveExp = self._arriveExp + tAddExp
+      break
+    end
   end
-  do
-    return isUpLevel, isUpMaxLevel
-  end
+  return isUpLevel, isUpMaxLevel
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.CalculateNeedMoney = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function UIUpLevelInterfaceController:CalculateNeedMoney()
   local neeUpLevelTotalMoney = 0
-  local curLevel = (self._petInfo):GetPetLevel()
-  local curExp = (self._petInfo):GetPetExp()
+  local curLevel = self._petInfo:GetPetLevel()
+  local curExp = self._petInfo:GetPetExp()
   if curLevel == self._arriveLevel and curExp == self._arriveExp then
     return 0
   end
   if curLevel == self._arriveLevel then
     local tAddExp = self._arriveExp - curExp
-    local levelConfig = (self._petInfo):GetLevelConfig(self._arriveLevel + 1)
+    local levelConfig = self._petInfo:GetLevelConfig(self._arriveLevel + 1)
     neeUpLevelTotalMoney = neeUpLevelTotalMoney + levelConfig.NeedGold * (tAddExp / levelConfig.NeedExp)
-    return (math.ceil)(neeUpLevelTotalMoney)
+    return math.ceil(neeUpLevelTotalMoney)
   end
-  do
-    local _lconf = (self._petInfo):GetLevelConfig(curLevel + 1)
-    local tAddExp = _lconf.NeedExp - curExp
-    neeUpLevelTotalMoney = neeUpLevelTotalMoney + _lconf.NeedGold * (tAddExp / _lconf.NeedExp)
-    curLevel = curLevel + 1
-    local curGradeMaxLevel = (self._petInfo):GetMaxLevel()
-    for level = curLevel, self._arriveLevel do
-      if level ~= curGradeMaxLevel then
-        if level == self._arriveLevel then
-          local levelConfig = (self._petInfo):GetLevelConfig(level + 1)
-          neeUpLevelTotalMoney = neeUpLevelTotalMoney + levelConfig.NeedGold * (self._arriveExp / levelConfig.NeedExp)
-        else
-          do
-            do
-              local levelConfig = (self._petInfo):GetLevelConfig(level + 1)
-              neeUpLevelTotalMoney = neeUpLevelTotalMoney + levelConfig.NeedGold
-              -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
-      end
+  local _lconf = self._petInfo:GetLevelConfig(curLevel + 1)
+  local tAddExp = _lconf.NeedExp - curExp
+  neeUpLevelTotalMoney = neeUpLevelTotalMoney + _lconf.NeedGold * (tAddExp / _lconf.NeedExp)
+  curLevel = curLevel + 1
+  local curGradeMaxLevel = self._petInfo:GetMaxLevel()
+  for level = curLevel, self._arriveLevel do
+    if level == curGradeMaxLevel then
+      break
     end
-    return (math.ceil)(neeUpLevelTotalMoney)
+    if level == self._arriveLevel then
+      local levelConfig = self._petInfo:GetLevelConfig(level + 1)
+      neeUpLevelTotalMoney = neeUpLevelTotalMoney + levelConfig.NeedGold * (self._arriveExp / levelConfig.NeedExp)
+    else
+      local levelConfig = self._petInfo:GetLevelConfig(level + 1)
+      neeUpLevelTotalMoney = neeUpLevelTotalMoney + levelConfig.NeedGold
+    end
   end
+  return math.ceil(neeUpLevelTotalMoney)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.RefreshPetUpLevelEvent = function(self)
-  -- function num : 0_34 , upvalues : _ENV
+function UIUpLevelInterfaceController:RefreshPetUpLevelEvent()
   self.items = {}
   self._addItemInfos = {}
   self._addExp = 0
   self._tItemInfos = self:GetMaterialItemInfos()
   self:CalculateCreatItemCout()
-  self._listItemTotalRow = (math.ceil)(self._listItemTotalCount / self._itemCountPerRow)
-  ;
-  (self._h3dScrollView):SetListItemCount(self._listItemTotalRow, false)
-  ;
-  (self._h3dScrollView):RefreshAllShownItem()
-  if self._listItemBaseCout < self._listItemTotalCount then
-    (self._h3dScrollView):MovePanelToItemIndex(0, 0)
+  self._listItemTotalRow = math.ceil(self._listItemTotalCount / self._itemCountPerRow)
+  self._h3dScrollView:SetListItemCount(self._listItemTotalRow, false)
+  self._h3dScrollView:RefreshAllShownItem()
+  if self._listItemTotalCount > self._listItemBaseCout then
+    self._h3dScrollView:MovePanelToItemIndex(0, 0)
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._needcoin).text = "0"
-  local curPetLevel = (self._petInfo):GetPetLevel()
-  local curPetExp = (self._petInfo):GetPetExp()
+  self._needcoin.text = "0"
+  local curPetLevel = self._petInfo:GetPetLevel()
+  local curPetExp = self._petInfo:GetPetExp()
   self._arriveLevel = curPetLevel
   self._arriveExp = curPetExp
   self._addExp = 0
-  if (self._petInfos)[self._currIndex] then
-    (self._centerLua):RefreshPetUpLevelEvent(self._currIndex, (self._petInfos)[self._currIndex])
+  if self._petInfos[self._currIndex] then
+    self._centerLua:RefreshPetUpLevelEvent(self._currIndex, self._petInfos[self._currIndex])
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.GetSliderTweenData = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  local curGradeMaxLevel = (self._petInfo):GetMaxLevel()
+function UIUpLevelInterfaceController:GetSliderTweenData()
+  local curGradeMaxLevel = self._petInfo:GetMaxLevel()
   local tAddExp = self._addExp
-  local _arriveLevel = (self._petInfo):GetPetLevel()
-  local _arriveExp = (self._petInfo):GetPetExp()
+  local _arriveLevel = self._petInfo:GetPetLevel()
+  local _arriveExp = self._petInfo:GetPetExp()
   local isInsert = false
   local _stepList = {}
-  while 1 do
-    while 1 do
-      local levelConfig = (self._petInfo):GetLevelConfig(_arriveLevel + 1)
-      if levelConfig ~= nil then
-        local _step = {}
-        local lerpExp = levelConfig.NeedExp - _arriveExp
-        if tAddExp - lerpExp >= 0 then
-          if isInsert == false then
-            _step.Start = _arriveExp / levelConfig.NeedExp
-          end
-          tAddExp = tAddExp - lerpExp
-          _arriveLevel = _arriveLevel + 1
-          if curGradeMaxLevel <= _arriveLevel then
-            _arriveLevel = curGradeMaxLevel
-            _arriveExp = levelConfig.NeedExp
-            _step.End = 1
-            if isInsert == false then
-              isInsert = true
-              _step.End = 1
-              ;
-              (table.insert)(_stepList, _step)
-            end
-          else
-            if isInsert == false then
-              isInsert = true
-              _step.End = 1
-              ;
-              (table.insert)(_stepList, _step)
-            end
-            _arriveExp = 0
-            -- DECOMPILER ERROR at PC56: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC56: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC56: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC56: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC56: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC56: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
+  while true do
+    local levelConfig = self._petInfo:GetLevelConfig(_arriveLevel + 1)
+    if levelConfig == nil then
+      break
     end
-    _step.Start = _arriveExp / levelConfig.NeedExp
-    _arriveExp = _arriveExp + (tAddExp)
-    _step.End = (_arriveExp) / levelConfig.NeedExp
-    ;
-    (table.insert)(_stepList, _step)
-    break
+    local _step = {}
+    local lerpExp = levelConfig.NeedExp - _arriveExp
+    if 0 <= tAddExp - lerpExp then
+      if isInsert == false then
+        _step.Start = _arriveExp / levelConfig.NeedExp
+      end
+      tAddExp = tAddExp - lerpExp
+      _arriveLevel = _arriveLevel + 1
+      if curGradeMaxLevel <= _arriveLevel then
+        _arriveLevel = curGradeMaxLevel
+        _arriveExp = levelConfig.NeedExp
+        _step.End = 1
+        if isInsert == false then
+          isInsert = true
+          _step.End = 1
+          table.insert(_stepList, _step)
+        end
+        break
+      end
+      if isInsert == false then
+        isInsert = true
+        _step.End = 1
+        table.insert(_stepList, _step)
+      end
+      _arriveExp = 0
+    else
+      _step.Start = _arriveExp / levelConfig.NeedExp
+      _arriveExp = _arriveExp + tAddExp
+      _step.End = _arriveExp / levelConfig.NeedExp
+      table.insert(_stepList, _step)
+      break
+    end
   end
-  do
-    return _stepList
-  end
+  return _stepList
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.Refresh = function(self, isUpLevel, isUpMaxLevel)
-  -- function num : 0_36 , upvalues : _ENV
-  (self._centerLua):Refresh(isUpLevel, isUpMaxLevel, self._arriveLevel, self._arriveExp, self._addExp)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._needcoin).text = (HelperProxy:GetInstance()):FormatGold(self:CalculateNeedMoney())
+function UIUpLevelInterfaceController:Refresh(isUpLevel, isUpMaxLevel)
+  self._centerLua:Refresh(isUpLevel, isUpMaxLevel, self._arriveLevel, self._arriveExp, self._addExp)
+  self._needcoin.text = HelperProxy:GetInstance():FormatGold(self:CalculateNeedMoney())
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.GetLevelLerpAttChangeData = function(self, tReachLevel)
-  -- function num : 0_37 , upvalues : _ENV
-  local curLevel = (self._petInfo):GetPetLevel()
-  local curLevelConfig = (self._petInfo):GetLevelConfig(curLevel)
-  local nextLevelConfig = (self._petInfo):GetLevelConfig(tReachLevel)
-  local attackValue = (self._petInfo):GetPetAttack()
-  local defenceValue = (self._petInfo):GetPetDefence()
-  local healthValue = (self._petInfo):GetPetHealth()
+function UIUpLevelInterfaceController:GetLevelLerpAttChangeData(tReachLevel)
+  local curLevel = self._petInfo:GetPetLevel()
+  local curLevelConfig = self._petInfo:GetLevelConfig(curLevel)
+  local nextLevelConfig = self._petInfo:GetLevelConfig(tReachLevel)
+  local attackValue = self._petInfo:GetPetAttack()
+  local defenceValue = self._petInfo:GetPetDefence()
+  local healthValue = self._petInfo:GetPetHealth()
   local attAttack = {}
   attAttack.attValue = attackValue
   local attDefence = {}
@@ -1085,300 +717,211 @@ UIUpLevelInterfaceController.GetLevelLerpAttChangeData = function(self, tReachLe
   local attHealth = {}
   attHealth.attValue = healthValue
   local curInfos = {}
-  ;
-  (table.insert)(curInfos, attAttack)
-  ;
-  (table.insert)(curInfos, attDefence)
-  ;
-  (table.insert)(curInfos, attHealth)
+  table.insert(curInfos, attAttack)
+  table.insert(curInfos, attDefence)
+  table.insert(curInfos, attHealth)
   local nextLevelAttackConfig = 0
   local nextLevelDefenceConfig = 0
   local nextLevelHealthConfig = 0
-  if curLevel < tReachLevel then
+  if tReachLevel > curLevel then
     nextLevelAttackConfig = nextLevelConfig.Attack - curLevelConfig.Attack
     nextLevelDefenceConfig = nextLevelConfig.Defence - curLevelConfig.Defence
     nextLevelHealthConfig = nextLevelConfig.Health - curLevelConfig.Health
+  elseif curLevel == tReachLevel then
   else
+    Log.fatal("[PetLevelUp] target level error: ", tReachLevel)
   end
-  if curLevel == tReachLevel then
-    (Log.fatal)("[PetLevelUp] target level error: ", tReachLevel)
-    local attNextAttack = {}
-    attNextAttack.attValue = attackValue + (nextLevelAttackConfig)
-    local attNextDefence = {}
-    attNextDefence.attValue = defenceValue + (nextLevelDefenceConfig)
-    local attNextHealth = {}
-    attNextHealth.attValue = healthValue + (nextLevelHealthConfig)
-    local nextInfos = {}
-    ;
-    (table.insert)(nextInfos, attNextAttack)
-    ;
-    (table.insert)(nextInfos, attNextDefence)
-    ;
-    (table.insert)(nextInfos, attNextHealth)
-    local attInfos = {}
-    for index = 1, 3 do
-      local info = {}
-      info.attType = index
-      info.CurAttValue = (curInfos[index]).attValue
-      info.NextAttValue = (nextInfos[index]).attValue
-      ;
-      (table.insert)(attInfos, info)
-    end
-    return attInfos
+  local attNextAttack = {}
+  attNextAttack.attValue = attackValue + nextLevelAttackConfig
+  local attNextDefence = {}
+  attNextDefence.attValue = defenceValue + nextLevelDefenceConfig
+  local attNextHealth = {}
+  attNextHealth.attValue = healthValue + nextLevelHealthConfig
+  local nextInfos = {}
+  table.insert(nextInfos, attNextAttack)
+  table.insert(nextInfos, attNextDefence)
+  table.insert(nextInfos, attNextHealth)
+  local attInfos = {}
+  for index = 1, 3 do
+    local info = {}
+    info.attType = index
+    info.CurAttValue = curInfos[index].attValue
+    info.NextAttValue = nextInfos[index].attValue
+    table.insert(attInfos, info)
   end
+  return attInfos
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController._ShowAttItem = function(self, tAttItem, attInfo, index)
-  -- function num : 0_38
-  (tAttItem:GetGameObject()):SetActive(true)
+function UIUpLevelInterfaceController:_ShowAttItem(tAttItem, attInfo, index)
+  tAttItem:GetGameObject():SetActive(true)
   tAttItem:SetData(attInfo)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.GetMaterialItemInfos = function(self)
-  -- function num : 0_39
+function UIUpLevelInterfaceController:GetMaterialItemInfos()
   local itemInfos = {}
-  itemInfos = (self._petModule):GetPetExpItems((self._petInfo):GetPstID())
+  itemInfos = self._petModule:GetPetExpItems(self._petInfo:GetPstID())
   return itemInfos
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.StopShakeTween = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function UIUpLevelInterfaceController:StopShakeTween()
   if self.tweer then
-    (self.tweer):Kill()
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._coinGo).anchoredPosition = Vector2(0, 0)
+    self.tweer:Kill()
+    self._coinGo.anchoredPosition = Vector2(0, 0)
   end
   if self.event then
-    ((GameGlobal.Timer)()):CancelEvent(self.event)
+    GameGlobal.Timer():CancelEvent(self.event)
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.StartTimer = function(self)
-  -- function num : 0_41 , upvalues : _ENV
-  self.event = ((GameGlobal.Timer)()):AddEvent(self._waitTime, function()
-    -- function num : 0_41_0 , upvalues : self
+function UIUpLevelInterfaceController:StartTimer()
+  self.event = GameGlobal.Timer():AddEvent(self._waitTime, function()
     self:SetColor(true)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.DOShakePosition = function(self)
-  -- function num : 0_42 , upvalues : _ENV
-  if self.tweer and (self.tweer):IsPlaying() then
-    return 
+function UIUpLevelInterfaceController:DOShakePosition()
+  if self.tweer and self.tweer:IsPlaying() then
+    return
   end
   self:StopShakeTween()
   self:SetColor(false)
-  self.tweer = ((self._coinGo):DOShakePosition(1, Vector3(self._shakeX, self._shakeY, 0))):OnComplete(function()
-    -- function num : 0_42_0 , upvalues : self
+  self.tweer = self._coinGo:DOShakePosition(1, Vector3(self._shakeX, self._shakeY, 0)):OnComplete(function()
     self:StartTimer()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.UpLevelBtnOnClick = function(self, go)
-  -- function num : 0_43 , upvalues : _ENV
-  local cionNum = (self._roleModule):GetGold()
+function UIUpLevelInterfaceController:UpLevelBtnOnClick(go)
+  local cionNum = self._roleModule:GetGold()
   if cionNum < self:CalculateNeedMoney() then
     self:DOShakePosition()
-    return 
+    return
   end
-  local petLevel = (self._petInfo):GetPetLevel()
-  local petMaxLevel = (self._petInfo):GetMaxLevel()
-  if petMaxLevel <= petLevel then
-    return 
+  local petLevel = self._petInfo:GetPetLevel()
+  local petMaxLevel = self._petInfo:GetMaxLevel()
+  if petLevel >= petMaxLevel then
+    return
   end
-  if (table.count)(self._addItemInfos) <= 0 then
-    return 
+  if table.count(self._addItemInfos) <= 0 then
+    return
   end
-  ;
-  (self._centerLua):StopTween()
+  self._centerLua:StopTween()
   self._stepListInfos = self:GetSliderTweenData()
-  local pstID = (self._petInfo):GetPstID()
+  local pstID = self._petInfo:GetPstID()
   local tSendItemsInfos = {}
-  for key,value in pairs(self._addItemInfos) do
+  for key, value in pairs(self._addItemInfos) do
     local sendInfo = ItemAsset:New()
     sendInfo.assetid = value.assetid
     sendInfo.count = value.count
-    ;
-    (table.insert)(tSendItemsInfos, sendInfo)
+    table.insert(tSendItemsInfos, sendInfo)
   end
   self:StartUpLevel(pstID, tSendItemsInfos)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.StartUpLevel = function(self, pstID, tSendItemsInfos)
-  -- function num : 0_44 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.UpLevelEvent, self, pstID, tSendItemsInfos)
+function UIUpLevelInterfaceController:StartUpLevel(pstID, tSendItemsInfos)
+  GameGlobal.TaskManager():StartTask(self.UpLevelEvent, self, pstID, tSendItemsInfos)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.UpLevelEvent = function(self, TT, pstID, tSendItemsInfos)
-  -- function num : 0_45 , upvalues : _ENV
+function UIUpLevelInterfaceController:UpLevelEvent(TT, pstID, tSendItemsInfos)
   self:Lock(self:GetName())
-  local fromLevel = (self._petInfo):GetPetLevel()
+  local fromLevel = self._petInfo:GetPetLevel()
   self._lastLevel = fromLevel
-  local fromAtk = (self._petInfo):GetPetAttack()
-  local fromDef = (self._petInfo):GetPetDefence()
-  local fromHp = (self._petInfo):GetPetHealth()
-  local res = (self._petModule):RequestPetAddExp(TT, pstID, tSendItemsInfos)
+  local fromAtk = self._petInfo:GetPetAttack()
+  local fromDef = self._petInfo:GetPetDefence()
+  local fromHp = self._petInfo:GetPetHealth()
+  local res = self._petModule:RequestPetAddExp(TT, pstID, tSendItemsInfos)
   local result = res:GetResult()
   if result == PET_RESULT_CODE.PET_SUCCEED or result == PET_RESULT_CODE.PET_ADD_EXP_ONLY then
-    local varyPetInfo = (self._petModule):GetPet(pstID)
+    local varyPetInfo = self._petModule:GetPet(pstID)
     self._petInfo = varyPetInfo
-    local toLevel = (self._petInfo):GetPetLevel()
-    local toAtk = (self._petInfo):GetPetAttack()
-    local toDef = (self._petInfo):GetPetDefence()
-    local toHp = (self._petInfo):GetPetHealth()
-    local pstID = (self._petInfo):GetPstID()
-    ;
-    ((self._petModule).uiModule):SetCurSelctPet(varyPetInfo)
-    self:ShowEff(fromLevel, toLevel, fromAtk, toAtk, fromDef, toDef, fromHp, toHp, ((self._stepListInfos)[#self._stepListInfos]).End)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetUpLevelEvent)
+    local toLevel = self._petInfo:GetPetLevel()
+    local toAtk = self._petInfo:GetPetAttack()
+    local toDef = self._petInfo:GetPetDefence()
+    local toHp = self._petInfo:GetPetHealth()
+    local pstID = self._petInfo:GetPstID()
+    self._petModule.uiModule:SetCurSelctPet(varyPetInfo)
+    self:ShowEff(fromLevel, toLevel, fromAtk, toAtk, fromDef, toDef, fromHp, toHp, self._stepListInfos[#self._stepListInfos].End)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.PetUpLevelEvent)
     local tplID = varyPetInfo:GetTemplateID()
-    local pm = (GameGlobal.GetModule)(PetAudioModule)
+    local pm = GameGlobal.GetModule(PetAudioModule)
     pm:PlayPetAudio("LevelUp", tplID)
     self:RefreshLevelOrCanAWeak(true)
   else
-    do
-      do
-        local errmsg = (self._petModule):GetErrorMsg(result)
-        ;
-        (ToastManager.ShowToast)(errmsg)
-        self:UnLock(self:GetName())
-      end
-    end
+    local errmsg = self._petModule:GetErrorMsg(result)
+    ToastManager.ShowToast(errmsg)
   end
+  self:UnLock(self:GetName())
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.UpLevelCanceRefresh = function(self)
-  -- function num : 0_46 , upvalues : _ENV
-  if (table.count)(self._addItemInfos) <= 0 then
-    return 
+function UIUpLevelInterfaceController:UpLevelCanceRefresh()
+  if table.count(self._addItemInfos) <= 0 then
+    return
   end
   self._addItemInfos = {}
   self:Reset()
   self:CalculateCreatItemCout()
-  self._listItemTotalRow = (math.ceil)(self._listItemTotalCount / self._itemCountPerRow)
-  ;
-  (self._h3dScrollView):SetListItemCount(self._listItemTotalRow, false)
-  ;
-  (self._h3dScrollView):RefreshAllShownItem()
-  if self._listItemBaseCout < self._listItemTotalCount then
-    (self._h3dScrollView):MovePanelToItemIndex(0, 0)
+  self._listItemTotalRow = math.ceil(self._listItemTotalCount / self._itemCountPerRow)
+  self._h3dScrollView:SetListItemCount(self._listItemTotalRow, false)
+  self._h3dScrollView:RefreshAllShownItem()
+  if self._listItemTotalCount > self._listItemBaseCout then
+    self._h3dScrollView:MovePanelToItemIndex(0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.CancelBtnOnClick = function(self, go)
-  -- function num : 0_47
+function UIUpLevelInterfaceController:CancelBtnOnClick(go)
   self:UpLevelCanceRefresh()
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.ShowEff = function(self, from, to, fromAtk, toAtk, fromDef, toDef, fromHp, toHp, endPercent)
-  -- function num : 0_48 , upvalues : _ENV
+function UIUpLevelInterfaceController:ShowEff(from, to, fromAtk, toAtk, fromDef, toDef, fromHp, toHp, endPercent)
   if from < to then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundLevelUp)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundLevelUp)
   end
-  for _,item in pairs(self._addItemInfos) do
+  for _, item in pairs(self._addItemInfos) do
     local idx = item.fromeIndex
     local childIdx = idx % self._itemCountPerRow
     if childIdx == 0 then
       childIdx = self._itemCountPerRow
     end
-    local rawIdx = (math.ceil)(idx / self._itemCountPerRow)
-    local rawGo = (self._h3dScrollView):GetShownItemByItemIndex(rawIdx - 1)
+    local rawIdx = math.ceil(idx / self._itemCountPerRow)
+    local rawGo = self._h3dScrollView:GetShownItemByItemIndex(rawIdx - 1)
     local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", rawGo.gameObject)
     local rowList = rowPool:GetAllSpawnList()
-    local pos = (((rowList[childIdx]):GetGameObject()).transform).position
-    local eff = ((self.effGo).items)[idx]
+    local pos = rowList[childIdx]:GetGameObject().transform.position
+    local eff = self.effGo.items[idx]
     if eff then
-      (((self.effGo).items)[idx]):SetActive(false)
+      self.effGo.items[idx]:SetActive(false)
     else
-      local resReq = (ResourceManager:GetInstance()):SyncLoadAsset("uieff_UIUpLevelInterfaceController_wupin.prefab", LoadType.GameObject)
-      -- DECOMPILER ERROR at PC61: Confused about usage of register: R24 in 'UnsetPending'
-
-      ;
-      (self.effResReq)[#self.effResReq + 1] = resReq
+      local resReq = ResourceManager:GetInstance():SyncLoadAsset("uieff_UIUpLevelInterfaceController_wupin.prefab", LoadType.GameObject)
+      self.effResReq[#self.effResReq + 1] = resReq
       eff = resReq.Obj
-      ;
-      (eff.transform):SetParent((self.effAnim).transform)
-      -- DECOMPILER ERROR at PC74: Confused about usage of register: R24 in 'UnsetPending'
-
-      ;
-      (eff.transform).localScale = Vector3(1, 1, 1)
-      -- DECOMPILER ERROR at PC77: Confused about usage of register: R24 in 'UnsetPending'
-
-      ;
-      ((self.effGo).items)[idx] = eff
+      eff.transform:SetParent(self.effAnim.transform)
+      eff.transform.localScale = Vector3(1, 1, 1)
+      self.effGo.items[idx] = eff
     end
-    do
-      do
-        -- DECOMPILER ERROR at PC79: Confused about usage of register: R23 in 'UnsetPending'
-
-        ;
-        (eff.transform).position = pos
-        eff:SetActive(true)
-        -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    eff.transform.position = pos
+    eff:SetActive(true)
   end
-  ;
-  (self._centerLua):OnAnimFinished()
+  self._centerLua:OnAnimFinished()
   if self:CheckIsUpLevel() then
-    (self._centerLua):PlayLevelUpEffect()
+    self._centerLua:PlayLevelUpEffect()
   end
   self:PlayAttributeAnim()
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.PlayAttributeAnim = function(self)
-  -- function num : 0_49 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self._AttributeAnimCoro, self)
+function UIUpLevelInterfaceController:PlayAttributeAnim()
+  GameGlobal.TaskManager():StartTask(self._AttributeAnimCoro, self)
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController._AttributeAnimCoro = function(self, TT)
-  -- function num : 0_50 , upvalues : _ENV
+function UIUpLevelInterfaceController:_AttributeAnimCoro(TT)
   self:Lock("UIUpLevelInterfaceController_AttributeAnimCoro")
-  ;
-  (self._centerLua):StartPlayAttributeAmin()
-  while not (self._centerLua):AttValueAnimUpdate((UnityEngine.Time).deltaTime) do
+  self._centerLua:StartPlayAttributeAmin()
+  while not self._centerLua:AttValueAnimUpdate(UnityEngine.Time.deltaTime) do
     YIELD(TT)
   end
   self:UnLock("UIUpLevelInterfaceController_AttributeAnimCoro")
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.CheckIsUpLevel = function(self)
-  -- function num : 0_51
-  local currentLevel = (self._petInfo):GetPetLevel()
+function UIUpLevelInterfaceController:CheckIsUpLevel()
+  local currentLevel = self._petInfo:GetPetLevel()
   if currentLevel == self._lastLevel then
     return false
   else
@@ -1386,169 +929,113 @@ UIUpLevelInterfaceController.CheckIsUpLevel = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.GetMaterialItem = function(self, index)
-  -- function num : 0_52
-  if (self.items)[index] then
-    return (((self.items)[index]).uiItem):GetBtn()
+function UIUpLevelInterfaceController:GetMaterialItem(index)
+  if self.items[index] then
+    return self.items[index].uiItem:GetBtn()
   else
     return nil
   end
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.ShowLevelInfo = function(self, level)
-  -- function num : 0_53
-  (self._centerLua):ShowLevelInfo(level)
+function UIUpLevelInterfaceController:ShowLevelInfo(level)
+  self._centerLua:ShowLevelInfo(level)
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.GetGuideScroll = function(self)
-  -- function num : 0_54
+function UIUpLevelInterfaceController:GetGuideScroll()
   return self:GetUIComponent("ScrollRect", "H3DScrollView")
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.UpAddQuickBtnOnClick = function(self, go)
-  -- function num : 0_55
+function UIUpLevelInterfaceController:UpAddQuickBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.CloseUIUpLevelAddQuickBox = function(self, useItems)
-  -- function num : 0_56 , upvalues : _ENV
+function UIUpLevelInterfaceController:CloseUIUpLevelAddQuickBox(useItems)
   if not useItems then
-    return 
+    return
   end
   if not self.items then
-    return 
+    return
   end
   self:UpLevelCanceRefresh()
-  local filterFun = function(templateid)
-    -- function num : 0_56_0 , upvalues : _ENV, self
-    for index,item in ipairs(self.items) do
-      if ((item._itemInfo).m_template_data).ID == templateid then
+  
+  local function filterFun(templateid)
+    for index, item in ipairs(self.items) do
+      if item._itemInfo.m_template_data.ID == templateid then
         return index, item
       end
     end
   end
-
-  for index,value in ipairs(useItems) do
+  
+  for index, value in ipairs(useItems) do
     local idx, item = filterFun(value[1])
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R10 in 'UnsetPending'
-
     if item then
-      (self._addItemInfos)[idx] = item
-      -- DECOMPILER ERROR at PC23: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      ((self._addItemInfos)[idx]).fromeIndex = idx
-      -- DECOMPILER ERROR at PC29: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      ((self._addItemInfos)[idx]).assetid = ((item._itemInfo).m_data).item_pstid
-      -- DECOMPILER ERROR at PC35: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      ((self._addItemInfos)[idx]).m_templateid = ((item._itemInfo).m_template_data).ID
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      ((self._addItemInfos)[idx]).count = value[2]
-      self:CalculateADD((self._addItemInfos)[idx])
-      self:_ShowMaterialItem((self._addItemInfos)[idx], idx)
+      self._addItemInfos[idx] = item
+      self._addItemInfos[idx].fromeIndex = idx
+      self._addItemInfos[idx].assetid = item._itemInfo.m_data.item_pstid
+      self._addItemInfos[idx].m_templateid = item._itemInfo.m_template_data.ID
+      self._addItemInfos[idx].count = value[2]
+      self:CalculateADD(self._addItemInfos[idx])
+      self:_ShowMaterialItem(self._addItemInfos[idx], idx)
     end
   end
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.RefreshLevelOrCanAWeak = function(self, needAnim)
-  -- function num : 0_57
-  local petLevel = (self._petInfo):GetPetLevel()
-  local petMaxLevel = (self._petInfo):GetMaxLevel()
-  local petGrade = (self._petInfo):GetPetGrade()
-  ;
-  (self.levelPanelObj):SetActive(false)
-  ;
-  (self.canWeakPanelObj):SetActive(false)
-  if petMaxLevel <= petLevel then
-    (self.canWeakPanelObj):SetActive(true)
+function UIUpLevelInterfaceController:RefreshLevelOrCanAWeak(needAnim)
+  local petLevel = self._petInfo:GetPetLevel()
+  local petMaxLevel = self._petInfo:GetMaxLevel()
+  local petGrade = self._petInfo:GetPetGrade()
+  self.levelPanelObj:SetActive(false)
+  self.canWeakPanelObj:SetActive(false)
+  if petLevel >= petMaxLevel then
+    self.canWeakPanelObj:SetActive(true)
     if needAnim then
-      (self.levelPanelAnim):Play("uieff_SpiritLevelUp_LevelPanel_out")
-      ;
-      (self.canWeakPanelAnim):Play("uieff_SpiritLevelUp_CanWakePanel_in")
+      self.levelPanelAnim:Play("uieff_SpiritLevelUp_LevelPanel_out")
+      self.canWeakPanelAnim:Play("uieff_SpiritLevelUp_CanWakePanel_in")
     end
-    if (self._petInfo):GetMaxGrade() <= petGrade then
-      (self.tips_can_weak_root):SetActive(false)
-      ;
-      (self.tips_weak_max_root):SetActive(true)
-      return 
+    if petGrade >= self._petInfo:GetMaxGrade() then
+      self.tips_can_weak_root:SetActive(false)
+      self.tips_weak_max_root:SetActive(true)
+      return
     else
-      ;
-      (self.tips_can_weak_root):SetActive(true)
-      ;
-      (self.tips_weak_max_root):SetActive(false)
+      self.tips_can_weak_root:SetActive(true)
+      self.tips_weak_max_root:SetActive(false)
     end
     self:_CheckGuide()
-    return 
+    return
   end
-  ;
-  (self.levelPanelObj):SetActive(true)
+  self.levelPanelObj:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController._CheckGuide = function(self)
-  -- function num : 0_58 , upvalues : _ENV
-  local oldGuideIsDone = ((GameGlobal.GetModule)(GuideModule)):IsGuideDone(1070)
+function UIUpLevelInterfaceController:_CheckGuide()
+  local oldGuideIsDone = GameGlobal.GetModule(GuideModule):IsGuideDone(1070)
   if not oldGuideIsDone then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIUpLevelInterfaceController)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIUpLevelInterfaceController)
   end
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.GradeButtonOnClick = function(self, go)
-  -- function num : 0_59
+function UIUpLevelInterfaceController:GradeButtonOnClick(go)
   local petInfo = self._petInfo
   local petId = petInfo:GetTemplateID()
   self.SkipTransitionAmin = true
   self:ShowDialog("UIGradeInterfaceController", petId, function()
-    -- function num : 0_59_0 , upvalues : self
     self.SkipTransitionAmin = true
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.OnDown = function(self, go)
-  -- function num : 0_60
-  (self._upAddQuickBtnEff):SetActive(true)
+function UIUpLevelInterfaceController:OnDown(go)
+  self._upAddQuickBtnEff:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInterfaceController.OnUp = function(self, go)
-  -- function num : 0_61 , upvalues : _ENV
-  local petLevel = (self._petInfo):GetPetLevel()
-  local petMaxLevel = (self._petInfo):GetMaxLevel()
-  if petMaxLevel <= petLevel then
-    (ToastManager.ShowToast)((StringTable.Get)("str_pet_config_levelup_max_tip"))
-    return 
+function UIUpLevelInterfaceController:OnUp(go)
+  local petLevel = self._petInfo:GetPetLevel()
+  local petMaxLevel = self._petInfo:GetMaxLevel()
+  if petLevel >= petMaxLevel then
+    ToastManager.ShowToast(StringTable.Get("str_pet_config_levelup_max_tip"))
+    return
   end
   if not self._petInfo then
-    return 
+    return
   end
   self:ShowDialog("UIUpLevelAddQuickBox", self._petInfo)
-  ;
-  (self._upAddQuickBtnEff):SetActive(false)
+  self._upAddQuickBtnEff:SetActive(false)
 end
-
-

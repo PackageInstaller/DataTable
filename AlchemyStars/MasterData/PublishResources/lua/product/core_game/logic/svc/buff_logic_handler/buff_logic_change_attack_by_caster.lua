@@ -1,38 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_attack_by_caster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeAttackByCaster", BuffLogicBase)
 BuffLogicChangeAttackByCaster = BuffLogicChangeAttackByCaster
 local ChangeAttackByCasterAttributeType = {Attack = 0}
 _enum("ChangeAttackByCasterAttributeType", ChangeAttackByCasterAttributeType)
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicChangeAttackByCaster.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : ChangeAttackByCasterAttributeType
+function BuffLogicChangeAttackByCaster:Constructor(buffInstance, logicParam)
   self._baseAttrType = ChangeAttackByCasterAttributeType.Attack
   self._mul = logicParam.mul or 0
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffInstance).BuffLogicChangeAttackByCaster_RunCount = 0
+  self._buffInstance.BuffLogicChangeAttackByCaster_RunCount = 0
   self._light = logicParam.light == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeAttackByCaster.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : ChangeAttackByCasterAttributeType, _ENV
-  local context = (self._buffInstance):Context()
+function BuffLogicChangeAttackByCaster:DoLogic()
+  local context = self._buffInstance:Context()
   if not context then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._buffInstance).BuffLogicChangeAttackByCaster_RunCount = (self._buffInstance).BuffLogicChangeAttackByCaster_RunCount + 1
+  self._buffInstance.BuffLogicChangeAttackByCaster_RunCount = self._buffInstance.BuffLogicChangeAttackByCaster_RunCount + 1
   local eCaster = context.casterEntity
   local cAttrCaster = eCaster:Attributes()
   local base = 0
@@ -40,77 +23,56 @@ BuffLogicChangeAttackByCaster.DoLogic = function(self)
     base = cAttrCaster:GetAttribute("Attack")
   end
   if not base then
-    return 
+    return
   end
-  local val = base * self._mul * (self._buffInstance).BuffLogicChangeAttackByCaster_RunCount
-  local eBeneficiary = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):ChangeBaseAttack(eBeneficiary, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, val)
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._buffInstance)._ChangeAttackType = ModifyBaseAttackType.AttackConstantFix
-  local owner = ((self._buffInstance):Entity())
-  local pstID = nil
+  local val = base * self._mul * self._buffInstance.BuffLogicChangeAttackByCaster_RunCount
+  local eBeneficiary = self._buffInstance:Entity()
+  self._buffLogicService:ChangeBaseAttack(eBeneficiary, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, val)
+  self._buffInstance._ChangeAttackType = ModifyBaseAttackType.AttackConstantFix
+  local owner = self._buffInstance:Entity()
+  local pstID
   if owner:HasPetPstID() then
-    pstID = (owner:PetPstID()):GetPstID()
+    pstID = owner:PetPstID():GetPstID()
   end
-  local casterPstID = nil
+  local casterPstID
   if eCaster:HasPetPstID() then
-    casterPstID = (eCaster:PetPstID()):GetPstID()
+    casterPstID = eCaster:PetPstID():GetPstID()
   end
   local result = BuffResultChangeAttackByCaster:New(eCaster:GetID(), val, self._light, pstID, casterPstID)
   return result
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeAttackByCaster.DoOverlap = function(self, logicParam)
-  -- function num : 0_2
+function BuffLogicChangeAttackByCaster:DoOverlap(logicParam)
   return self:DoLogic()
 end
 
 _class("BuffLogicUndoChangeAttackByCaster", BuffLogicBase)
 BuffLogicUndoChangeAttackByCaster = BuffLogicUndoChangeAttackByCaster
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicUndoChangeAttackByCaster.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicUndoChangeAttackByCaster:Constructor(buffInstance, logicParam)
   self._black = logicParam.black == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicUndoChangeAttackByCaster.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._buffInstance).BuffLogicChangeAttackByCaster_RunCount = 0
-  local eBeneficiary = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):RemoveBaseAttack(eBeneficiary, self:GetBuffSeq(), (self._buffInstance)._ChangeAttackType)
-  local context = (self._buffInstance):Context()
+function BuffLogicUndoChangeAttackByCaster:DoLogic()
+  self._buffInstance.BuffLogicChangeAttackByCaster_RunCount = 0
+  local eBeneficiary = self._buffInstance:Entity()
+  self._buffLogicService:RemoveBaseAttack(eBeneficiary, self:GetBuffSeq(), self._buffInstance._ChangeAttackType)
+  local context = self._buffInstance:Context()
   if not context then
-    return 
+    return
   end
-  local owner = ((self._buffInstance):Entity())
-  local pstID = nil
+  local owner = self._buffInstance:Entity()
+  local pstID
   if owner:HasPetPstID() then
-    local casterEntity = context.casterEntity
-    local casterPstID = 0
-    if casterEntity:HasPetPstID() then
-      casterPstID = (casterEntity:PetPstID()):GetPstID()
-    end
-    local result = BuffResultUndoChangeAttackByCaster:New(self._black, casterPstID)
-    return result
   end
+  local casterEntity = context.casterEntity
+  local casterPstID = 0
+  if casterEntity:HasPetPstID() then
+    casterPstID = casterEntity:PetPstID():GetPstID()
+  end
+  local result = BuffResultUndoChangeAttackByCaster:New(self._black, casterPstID)
+  return result
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicUndoChangeAttackByCaster.DoOverlap = function(self)
-  -- function num : 0_5
+function BuffLogicUndoChangeAttackByCaster:DoOverlap()
 end
-
-

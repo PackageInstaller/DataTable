@@ -1,40 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_pet_extra_active_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangePetExtraActiveSkill", BuffLogicBase)
 BuffLogicChangePetExtraActiveSkill = BuffLogicChangePetExtraActiveSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangePetExtraActiveSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangePetExtraActiveSkill:Constructor(buffInstance, logicParam)
   self._oriSkillID = logicParam.oriSkillID
   self._oriSkillIndex = logicParam.oriSkillIndex
   self._skillList = logicParam.skillList
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-  end
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangePetExtraActiveSkill.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillID = nil
-  local curMarkLayer = (self._buffLogicService):GetBuffLayer(self._entity, self._layerType) or 1
-  if (table.count)(self._skillList) == 1 then
-    skillID = (self._skillList)[1]
+function BuffLogicChangePetExtraActiveSkill:DoLogic()
+  local skillID
+  local curMarkLayer = self._buffLogicService:GetBuffLayer(self._entity, self._layerType) or 1
+  if table.count(self._skillList) == 1 then
+    skillID = self._skillList[1]
   else
-    if #self._skillList < curMarkLayer then
+    if curMarkLayer > #self._skillList then
       curMarkLayer = #self._skillList
     end
-    skillID = (self._skillList)[curMarkLayer]
+    skillID = self._skillList[curMarkLayer]
   end
   if not skillID then
-    return 
+    return
   end
-  local skillInfoComponent = (self._entity):SkillInfo()
+  local skillInfoComponent = self._entity:SkillInfo()
   local oriSkillList = skillInfoComponent:GetExtraActiveSkillIDList()
   local checkOriSkillId = self._oriSkillID
   if self._oriSkillIndex then
@@ -42,22 +30,18 @@ BuffLogicChangePetExtraActiveSkill.DoLogic = function(self)
   end
   local newSkillList = {}
   local hasOriSkill = false
-  for index,oriSkillID in ipairs(oriSkillList) do
+  for index, oriSkillID in ipairs(oriSkillList) do
     if oriSkillID == checkOriSkillId then
       hasOriSkill = true
-      ;
-      (table.insert)(newSkillList, skillID)
+      table.insert(newSkillList, skillID)
     else
-      ;
-      (table.insert)(newSkillList, oriSkillID)
+      table.insert(newSkillList, oriSkillID)
     end
   end
   if not hasOriSkill then
-    return 
+    return
   end
   skillInfoComponent:SetExtraActiveSkillIDList(newSkillList)
   local buffResult = BuffResultChangePetExtraActiveSkill:New(checkOriSkillId, skillID)
   return buffResult
 end
-
-

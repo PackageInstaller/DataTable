@@ -1,367 +1,263 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/furniture_modifier.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FurnitureModifier", Object)
 FurnitureModifier = FurnitureModifier
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FurnitureModifier.Constructor = function(self, area, sur, fur, newAdd)
-  -- function num : 0_0
+function FurnitureModifier:Constructor(area, sur, fur, newAdd)
   self._area = area
   self._surface = sur
   self._furniture = fur
-  self._furID = (self._furniture):InstanceID()
+  self._furID = self._furniture:InstanceID()
   self._isDirty = false
   self._firstPickup = true
   self._pickUp = false
-  self._gridPos = (self._furniture):GridPosition()
-  self._rotY = (self._furniture):GridRotY()
+  self._gridPos = self._furniture:GridPosition()
+  self._rotY = self._furniture:GridRotY()
   self._deleted = false
   self._newAdd = newAdd
   if newAdd then
     self._isDirty = true
   end
-  self._worldPosition = (self._furniture):WorldPosition()
-  self._worldRotation = (self._furniture):WorldRotation()
-  self._originGridPos = (self._gridPos):Clone()
+  self._worldPosition = self._furniture:WorldPosition()
+  self._worldRotation = self._furniture:WorldRotation()
+  self._originGridPos = self._gridPos:Clone()
   self._originRotY = self._rotY
   self._originSurface = sur
-  self._originWorldPos = (self._worldPosition):Clone()
-  self._originWorldRot = (self._worldRotation):Clone()
+  self._originWorldPos = self._worldPosition:Clone()
+  self._originWorldRot = self._worldRotation:Clone()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.Furniture = function(self)
-  -- function num : 0_1
+function FurnitureModifier:Furniture()
   return self._furniture
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.Surface = function(self)
-  -- function num : 0_2
+function FurnitureModifier:Surface()
   return self._surface
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.Area = function(self)
-  -- function num : 0_3
+function FurnitureModifier:Area()
   return self._area
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.ID = function(self)
-  -- function num : 0_4
+function FurnitureModifier:ID()
   return self._furID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.IsDirty = function(self)
-  -- function num : 0_5
+function FurnitureModifier:IsDirty()
   return self._isDirty
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.WorldPostion = function(self)
-  -- function num : 0_6
+function FurnitureModifier:WorldPostion()
   return self._worldPosition
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.WorldRotation = function(self)
-  -- function num : 0_7
+function FurnitureModifier:WorldRotation()
   return self._worldRotation
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.GridPosition = function(self)
-  -- function num : 0_8
+function FurnitureModifier:GridPosition()
   return self._gridPos
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.RotY = function(self)
-  -- function num : 0_9
+function FurnitureModifier:RotY()
   return self._rotY
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.GetSaveData = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function FurnitureModifier:GetSaveData()
   if self._isDirty then
     if self._deleted then
       return nil
     end
     local data = MobileFurnitureInfo:New()
-    data.asset_id = (self._furniture):CfgID()
+    data.asset_id = self._furniture:CfgID()
     data.area_id = self._area
-    data.surface = (self._surface):ID()
-    data.pos_x = (GridHelper.ToInt)((self._gridPos).x)
-    data.pos_z = (GridHelper.ToInt)((self._gridPos).y)
-    data.rot = (math.floor)(self._rotY)
+    data.surface = self._surface:ID()
+    data.pos_x = GridHelper.ToInt(self._gridPos.x)
+    data.pos_z = GridHelper.ToInt(self._gridPos.y)
+    data.rot = math.floor(self._rotY)
     return data
   else
-    do
-      do return (self._furniture):GetSvrData() end
-    end
+    return self._furniture:GetSvrData()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.GetGrids = function(self)
-  -- function num : 0_11
+function FurnitureModifier:GetGrids()
   return self._grids
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.ChangedAmbient = function(self)
-  -- function num : 0_12
+function FurnitureModifier:ChangedAmbient()
   if self._newAdd then
     if self._deleted then
       return 0
     end
-    return (self._furniture):Ambient()
+    return self._furniture:Ambient()
   end
   if self._deleted then
-    return -(self._furniture):Ambient()
+    return -self._furniture:Ambient()
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.PickUp = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function FurnitureModifier:PickUp()
   self._pickUp = true
-  self._pickUpOffset = ((self._furniture)._transform).up * GridHelper.PICKUPHEIGHT
-  ;
-  (self._furniture):SetPosition(self._worldPosition + self._pickUpOffset)
-  self._validPos = (self._gridPos):Clone()
+  self._pickUpOffset = self._furniture._transform.up * GridHelper.PICKUPHEIGHT
+  self._furniture:SetPosition(self._worldPosition + self._pickUpOffset)
+  self._validPos = self._gridPos:Clone()
   self._validRotY = self._rotY
   self._validSurface = self._surface
-  self._validWorldPos = (self._worldPosition):Clone()
-  self._validWorldRot = (self._worldRotation):Clone()
+  self._validWorldPos = self._worldPosition:Clone()
+  self._validWorldRot = self._worldRotation:Clone()
   if self._firstPickup then
     self._firstPickup = false
-    self._grids = (GridHelper.FurnitureOccupyGrids)(self._furniture, self._gridPos, self._rotY)
+    self._grids = GridHelper.FurnitureOccupyGrids(self._furniture, self._gridPos, self._rotY)
   end
-  ;
-  (self._furniture):OccupyTiles(false)
+  self._furniture:OccupyTiles(false)
   self._isValid = true
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.SetValidWhenPickup = function(self, valid)
-  -- function num : 0_14
+function FurnitureModifier:SetValidWhenPickup(valid)
   self._isValid = valid
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.DropDown = function(self, shake)
-  -- function num : 0_15 , upvalues : _ENV
+function FurnitureModifier:DropDown(shake)
   self._pickUp = false
   if self._isValid then
-    (self._furniture):SetPosition(self._worldPosition)
+    self._furniture:SetPosition(self._worldPosition)
   else
     self._gridPos = self._validPos
     self._rotY = self._validRotY
     self._surface = self._validSurface
     self._worldPosition = self._validWorldPos
     self._worldRotation = self._validWorldRot
-    self._grids = (GridHelper.FurnitureOccupyGrids)(self._furniture, self._gridPos, self._rotY)
+    self._grids = GridHelper.FurnitureOccupyGrids(self._furniture, self._gridPos, self._rotY)
     if shake then
-      (self._furniture):DoShake(function()
-    -- function num : 0_15_0 , upvalues : self
-    (self._furniture):SetPosition(self._worldPosition)
-    ;
-    (self._furniture):SetRotation(self._worldRotation)
-  end
-)
+      self._furniture:DoShake(function()
+        self._furniture:SetPosition(self._worldPosition)
+        self._furniture:SetRotation(self._worldRotation)
+      end)
     else
-      ;
-      (self._furniture):SetPosition(self._worldPosition)
-      ;
-      (self._furniture):SetRotation(self._worldRotation)
+      self._furniture:SetPosition(self._worldPosition)
+      self._furniture:SetRotation(self._worldRotation)
     end
   end
-  local tiles = (self._surface):Tiles()
-  local layer = (self._furniture):Layer()
+  local tiles = self._surface:Tiles()
+  local layer = self._furniture:Layer()
   local otiles = {}
-  for _,pos in ipairs(self._grids) do
-    local tile = nil
+  for _, pos in ipairs(self._grids) do
+    local tile
     if tiles[pos.x] then
-      tile = (tiles[pos.x])[pos.y]
+      tile = tiles[pos.x][pos.y]
     end
     if tile then
       otiles[#otiles + 1] = tile
     else
-      ;
-      (Log.exception)("找不到格子：", pos.x, ",", pos.y)
+      Log.exception("找不到格子：", pos.x, ",", pos.y)
     end
   end
-  ;
-  (self._furniture):SetTiles(otiles)
-  ;
-  (self._furniture):OccupyTiles(true)
+  self._furniture:SetTiles(otiles)
+  self._furniture:OccupyTiles(true)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.ChangePos = function(self, gridPos, worldPos, grids, valid)
-  -- function num : 0_16 , upvalues : _ENV
+function FurnitureModifier:ChangePos(gridPos, worldPos, grids, valid)
   self._isDirty = true
   if not self._pickUp then
-    (Log.exception)("没有抬起，不能移动")
+    Log.exception("没有抬起，不能移动")
   end
   self._gridPos = gridPos
   self._worldPosition = worldPos
   self._grids = grids
   if self._isValid ~= valid then
-    self._isValid = valid
-    ;
-    (self._furniture):SetPosition(worldPos + self._pickUpOffset)
   end
+  self._isValid = valid
+  self._furniture:SetPosition(worldPos + self._pickUpOffset)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.ChangeRotY = function(self, y, worldRot, grids, valid)
-  -- function num : 0_17 , upvalues : _ENV
+function FurnitureModifier:ChangeRotY(y, worldRot, grids, valid)
   self._isDirty = true
   if not self._pickUp then
-    (Log.exception)("没有抬起，不能移动")
+    Log.exception("没有抬起，不能移动")
   end
   self._rotY = y
   self._worldRotation = worldRot
   self._grids = grids
   if self._isValid ~= valid then
-    self._isValid = valid
-    ;
-    (self._furniture):SetRotation(worldRot)
   end
+  self._isValid = valid
+  self._furniture:SetRotation(worldRot)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.ChangeSurface = function(self, sur)
-  -- function num : 0_18 , upvalues : _ENV
+function FurnitureModifier:ChangeSurface(sur)
   self._isDirty = true
-  if (self._surface):ID() == sur:ID() then
-    (Log.exception)("面id未改变")
+  if self._surface:ID() == sur:ID() then
+    Log.exception("面id未改变")
   end
   self._surface = sur
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.IsDeleted = function(self)
-  -- function num : 0_19
+function FurnitureModifier:IsDeleted()
   return self._deleted
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.Delete = function(self)
-  -- function num : 0_20
+function FurnitureModifier:Delete()
   if self._deleted then
-    return 
+    return
   end
   self._isDirty = true
   self._deleted = true
-  ;
-  (self._furniture):SetActive(false)
-  ;
-  (self._furniture):OccupyTiles(false)
+  self._furniture:SetActive(false)
+  self._furniture:OccupyTiles(false)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.Revert = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function FurnitureModifier:Revert()
   if not self._isDirty then
-    return 
+    return
   end
   if self._pickUp then
     self:DropDown(false)
-  else
-    if not (self._originWorldPos):Equals(self._worldPosition) or not (self._originWorldRot):Equals(self._worldRotation) then
-      if not self._deleted then
-        (self._furniture):OccupyTiles(false)
+  elseif not self._originWorldPos:Equals(self._worldPosition) or not self._originWorldRot:Equals(self._worldRotation) then
+    if not self._deleted then
+      self._furniture:OccupyTiles(false)
+    end
+    local grids = GridHelper.FurnitureOccupyGrids(self._furniture, self._originGridPos, self._originRotY)
+    local tiles = self._originSurface:Tiles()
+    local otiles = {}
+    for _, pos in ipairs(grids) do
+      local tile
+      if tiles[pos.x] then
+        tile = tiles[pos.x][pos.y]
       end
-      local grids = (GridHelper.FurnitureOccupyGrids)(self._furniture, self._originGridPos, self._originRotY)
-      local tiles = (self._originSurface):Tiles()
-      local otiles = {}
-      for _,pos in ipairs(grids) do
-        local tile = nil
-        if tiles[pos.x] then
-          tile = (tiles[pos.x])[pos.y]
-        end
-        if tile then
-          otiles[#otiles + 1] = tile
-        else
-          ;
-          (Log.exception)("找不到格子：", pos.x, ",", pos.y)
-        end
+      if tile then
+        otiles[#otiles + 1] = tile
+      else
+        Log.exception("找不到格子：", pos.x, ",", pos.y)
       end
-      ;
-      (self._furniture):SetTiles(otiles)
-      ;
-      (self._furniture):OccupyTiles(true)
     end
+    self._furniture:SetTiles(otiles)
+    self._furniture:OccupyTiles(true)
   end
-  do
-    if self._newAdd then
-      (self._furniture):Dispose()
-      return 
-    end
-    if self._deleted then
-      (self._furniture):SetActive(true)
-      self._deleted = false
-      ;
-      (self._furniture):OccupyTiles(true)
-    end
-    self._worldPosition = self._originWorldPos
-    self._worldRotation = self._originWorldRot
-    self._rotY = self._originRotY
-    self._surface = self._originSurface
-    self._gridPos = self._originGridPos
-    ;
-    (self._furniture):SetPosition(self._worldPosition)
-    ;
-    (self._furniture):SetRotation(self._worldRotation)
-    self._isDirty = false
-  end
-end
-
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.Dispose = function(self)
-  -- function num : 0_22
   if self._newAdd then
-    (self._furniture):Dispose()
+    self._furniture:Dispose()
+    return
+  end
+  if self._deleted then
+    self._furniture:SetActive(true)
+    self._deleted = false
+    self._furniture:OccupyTiles(true)
+  end
+  self._worldPosition = self._originWorldPos
+  self._worldRotation = self._originWorldRot
+  self._rotY = self._originRotY
+  self._surface = self._originSurface
+  self._gridPos = self._originGridPos
+  self._furniture:SetPosition(self._worldPosition)
+  self._furniture:SetRotation(self._worldRotation)
+  self._isDirty = false
+end
+
+function FurnitureModifier:Dispose()
+  if self._newAdd then
+    self._furniture:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureModifier.IsNewAdd = function(self)
-  -- function num : 0_23
+function FurnitureModifier:IsNewAdd()
   return self._newAdd
 end
-
-

@@ -1,51 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_damage_can_repeat.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_DamageCanRepeat", SkillEffectCalc_Damage)
 SkillEffectCalc_DamageCanRepeat = SkillEffectCalc_DamageCanRepeat
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_DamageCanRepeat.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_DamageCanRepeat:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
-  self._configService = (self._world):GetService("Config")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
+  self._configService = self._world:GetService("Config")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DamageCanRepeat.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+function SkillEffectCalc_DamageCanRepeat:DoSkillEffectCalculator(skillEffectCalcParam)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local skillID = skillEffectCalcParam.skillID
   return self:CalculateEffect(casterEntity, skillEffectCalcParam.skillEffectParam, skillID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DamageCanRepeat.CalculateEffect = function(self, casterEntity, skillEffectCalcParam, skillID)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_DamageCanRepeat:CalculateEffect(casterEntity, skillEffectCalcParam, skillID)
   local results = {}
-  local skillResult = (casterEntity:SkillContext()):GetResultContainer()
+  local skillResult = casterEntity:SkillContext():GetResultContainer()
   local scopeResult = skillResult:GetScopeResult()
-  local skillConfigData = (self._configService):GetSkillConfigData(skillID, casterEntity)
+  local skillConfigData = self._configService:GetSkillConfigData(skillID, casterEntity)
   local targetType = skillConfigData:GetSkillTargetType()
-  self._buffLogicSvc = (self._world):GetService("BuffLogic")
+  self._buffLogicSvc = self._world:GetService("BuffLogic")
   self._effectParam = skillEffectCalcParam
   self._dampMap = {}
-  local targetEntityIDArray = ((self._world):GetSkillScopeTargetSelector()):DoSelectSkillTarget(casterEntity, targetType, scopeResult, skillID)
+  local targetEntityIDArray = self._world:GetSkillScopeTargetSelector():DoSelectSkillTarget(casterEntity, targetType, scopeResult, skillID)
   local skillRange = scopeResult:GetAttackRange()
   local wholeRange = scopeResult:GetWholeGridRange()
   local scopeCenter = scopeResult:GetCenterPos()
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
-  for _,targetGridPos in ipairs(skillRange) do
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
+  for _, targetGridPos in ipairs(skillRange) do
     if targetGridPos._className == "Vector2" then
       self:_CalcDamageResult(targetEntityIDArray, targetGridPos, casterEntity, skillEffectCalcParam, skillID, skillRange, scopeCenter, wholeRange, results, skillEffectResultContainer)
     else
-      for i,pos in ipairs(targetGridPos) do
+      for i, pos in ipairs(targetGridPos) do
         self:_CalcDamageResult(targetEntityIDArray, pos, casterEntity, skillEffectCalcParam, skillID, skillRange, scopeCenter, wholeRange, results, skillEffectResultContainer)
       end
     end
@@ -53,79 +40,51 @@ SkillEffectCalc_DamageCanRepeat.CalculateEffect = function(self, casterEntity, s
   return results
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DamageCanRepeat._CalcDamageResult = function(self, targetEntityIDArray, pos, casterEntity, skillEffectCalcParam, skillID, skillRange, scopeCenter, wholeRange, results, skillEffectResultContainer)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectCalc_DamageCanRepeat:_CalcDamageResult(targetEntityIDArray, pos, casterEntity, skillEffectCalcParam, skillID, skillRange, scopeCenter, wholeRange, results, skillEffectResultContainer)
   local targetID = self:GetTargetIDByPos(targetEntityIDArray, pos)
   if targetID then
-    local calcParam = SkillEffectCalcParam:New(casterEntity:GetID(), {targetID}, skillEffectCalcParam, skillID, skillRange, (casterEntity:GridLocation()):GetGridPos(), pos, scopeCenter, wholeRange)
-    local dampPer = (self._effectParam):GetDampPer()
-    local dampPerMax = (self._effectParam):GetDampMax()
-    local finalEffectType = (self._effectParam):GetFinalEffectType()
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R16 in 'UnsetPending'
-
+    local calcParam = SkillEffectCalcParam:New(casterEntity:GetID(), {targetID}, skillEffectCalcParam, skillID, skillRange, casterEntity:GridLocation():GetGridPos(), pos, scopeCenter, wholeRange)
+    local dampPer = self._effectParam:GetDampPer()
+    local dampPerMax = self._effectParam:GetDampMax()
+    local finalEffectType = self._effectParam:GetFinalEffectType()
     if finalEffectType then
-      if not (self._dampMap)[targetID] then
-        (self._dampMap)[targetID] = 0
+      if not self._dampMap[targetID] then
+        self._dampMap[targetID] = 0
       else
-        -- DECOMPILER ERROR at PC46: Confused about usage of register: R16 in 'UnsetPending'
-
-        ;
-        (self._dampMap)[targetID] = (self._dampMap)[targetID] + dampPer
+        self._dampMap[targetID] = self._dampMap[targetID] + dampPer
       end
-      -- DECOMPILER ERROR at PC52: Confused about usage of register: R16 in 'UnsetPending'
-
-      if (self._dampMap)[targetID] < dampPerMax then
-        (self._dampMap)[targetID] = dampPerMax
+      if dampPerMax > self._dampMap[targetID] then
+        self._dampMap[targetID] = dampPerMax
       end
-      ;
-      (self._buffLogicSvc):ChangeSkillFinalParam(casterEntity, SkillEffectType.DamageCanRepeat, finalEffectType, (self._dampMap)[targetID])
+      self._buffLogicSvc:ChangeSkillFinalParam(casterEntity, SkillEffectType.DamageCanRepeat, finalEffectType, self._dampMap[targetID])
     end
     local result = self:_CalculateSingleTarget(calcParam, targetID)
     if finalEffectType then
-      (self._buffLogicSvc):RemoveSkillFinalParam(casterEntity, SkillEffectType.DamageCanRepeat, finalEffectType)
+      self._buffLogicSvc:RemoveSkillFinalParam(casterEntity, SkillEffectType.DamageCanRepeat, finalEffectType)
     end
     if result and result[1] then
-      (table.appendArray)(results, result)
+      table.appendArray(results, result)
       skillEffectResultContainer:AddEffectResult(result[1])
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DamageCanRepeat.GetTargetIDByPos = function(self, targetIDList, pos)
-  -- function num : 0_4 , upvalues : _ENV
-  for i,targetID in ipairs(targetIDList) do
-    local targetEntity = (self._world):GetEntityByID(targetID)
+function SkillEffectCalc_DamageCanRepeat:GetTargetIDByPos(targetIDList, pos)
+  for i, targetID in ipairs(targetIDList) do
+    local targetEntity = self._world:GetEntityByID(targetID)
     local targetPos = targetEntity:GetGridPosition()
     local bodyAreaComponent = targetEntity:BodyArea()
     if bodyAreaComponent then
       local bodyAreaArray = bodyAreaComponent:GetArea()
-      for _,areaPos in ipairs(bodyAreaArray) do
+      for _, areaPos in ipairs(bodyAreaArray) do
         local gridPos = areaPos + targetPos
         if gridPos.x == pos.x and gridPos.y == pos.y then
           return targetID
         end
       end
-    else
-      do
-        do
-          if targetPos.x == pos.x and targetPos.y == pos.y then
-            return targetID
-          end
-          -- DECOMPILER ERROR at PC42: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC42: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC42: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+    elseif targetPos.x == pos.x and targetPos.y == pos.y then
+      return targetID
     end
   end
   return nil
 end
-
-

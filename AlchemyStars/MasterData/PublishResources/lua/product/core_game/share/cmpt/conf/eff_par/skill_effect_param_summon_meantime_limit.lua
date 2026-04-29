@@ -1,93 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_summon_meantime_limit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamSummonMeantimeLimit", SkillEffectParamBase)
 SkillEffectParamSummonMeantimeLimit = SkillEffectParamSummonMeantimeLimit
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamSummonMeantimeLimit.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamSummonMeantimeLimit:Constructor(t)
   self._trapID = t.trapID
   self._limitCount = t.limitCount
   self._trapDieSkillID = t.trapDieSkillID
   self._ignoreBlock = t.ignoreBlock or false
   self._overlapFlag = t.overlapFlag or 1
-  if not t.absPos then
-    self._absPosArray = {}
-    if not t.replaceAttr then
-      self._replaceAttr = {}
-      if not t.checkTrapID then
-        self._checkTrapID = {self._trapID}
-      end
-    end
-  end
+  self._absPosArray = t.absPos or {}
+  self._replaceAttr = t.replaceAttr or {}
+  self._checkTrapID = t.checkTrapID or {
+    self._trapID
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonMeantimeLimit.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamSummonMeantimeLimit:GetEffectType()
   return SkillEffectType.SummonMeantimeLimit
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonMeantimeLimit.GetTrapID = function(self)
-  -- function num : 0_2
+function SkillEffectParamSummonMeantimeLimit:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonMeantimeLimit.IgnoreBlock = function(self)
-  -- function num : 0_3
+function SkillEffectParamSummonMeantimeLimit:IgnoreBlock()
   return self._ignoreBlock
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonMeantimeLimit.GetCheckTrapID = function(self)
-  -- function num : 0_4
+function SkillEffectParamSummonMeantimeLimit:GetCheckTrapID()
   return self._checkTrapID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonMeantimeLimit.GetLimitCount = function(self)
-  -- function num : 0_5
+function SkillEffectParamSummonMeantimeLimit:GetLimitCount()
   return self._limitCount
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonMeantimeLimit.GetTrapDieSkillID = function(self)
-  -- function num : 0_6
+function SkillEffectParamSummonMeantimeLimit:GetTrapDieSkillID()
   return self._trapDieSkillID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonMeantimeLimit.IsTrapOverlap = function(self)
-  -- function num : 0_7
-  do return self._overlapFlag == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SkillEffectParamSummonMeantimeLimit:IsTrapOverlap()
+  return self._overlapFlag == 1
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonMeantimeLimit.GetAbsPosArray = function(self)
-  -- function num : 0_8
+function SkillEffectParamSummonMeantimeLimit:GetAbsPosArray()
   return self._absPosArray
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonMeantimeLimit.GetReplaceAttr = function(self)
-  -- function num : 0_9
+function SkillEffectParamSummonMeantimeLimit:GetReplaceAttr()
   return self._replaceAttr
 end
-
-

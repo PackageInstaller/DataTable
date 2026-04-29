@@ -1,66 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n14/shop/ui_n14_shop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN14Shop", UIActivityShopControllerBase)
 UIN14Shop = UIN14Shop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN14Shop.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((UIN14Shop.super).Constructor)(self)
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIN14Shop:Constructor()
+  UIN14Shop.super.Constructor(self)
   UIActivityShopControllerBase.ItemGroupHeight = 682
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14Shop.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  ((UIN14Shop.super).OnShow)(self, uiParams)
+function UIN14Shop:OnShow(uiParams)
+  UIN14Shop.super.OnShow(self, uiParams)
   self.txtShopName = self:GetUIComponent("UILocalizedTMP", "txtShopName")
-  ;
-  (self.txtShopName):SetText((StringTable.Get)("str_N14_shop_name"))
-  self.req = (ResourceManager:GetInstance()):SyncLoadAsset("ui_N14_shop_name.mat", LoadType.Mat)
-  if self.req and (self.req).Obj then
-    self.mat = (self.req).Obj
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.txtShopName).fontMaterial = self.mat
+  self.txtShopName:SetText(StringTable.Get("str_N14_shop_name"))
+  self.req = ResourceManager:GetInstance():SyncLoadAsset("ui_N14_shop_name.mat", LoadType.Mat)
+  if self.req and self.req.Obj then
+    self.mat = self.req.Obj
+    self.txtShopName.fontMaterial = self.mat
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14Shop.DefaultBackFunc = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN14Shop:DefaultBackFunc()
   self:SwitchState(UIStateType.UIN14Main)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14Shop._RefreshCurrency = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN14Shop:_RefreshCurrency()
   if not self._currencyId then
-    self._currencyId = (self._commonCfg).CurrencyId
+    self._currencyId = self._commonCfg.CurrencyId
   end
-  local count = (self:GetModule(ItemModule)):GetItemCount(self._currencyId) or 0
-  local preZero = (UIActivityHelper.GetZeroStrFrontNum)(7, count)
-  local fmtStr = (string.format)("<color=#545454>%s</color><color=#fff0ad>%s</color>", preZero, tostring(count))
-  ;
-  (self.itemCount):SetText(fmtStr)
+  local count = self:GetModule(ItemModule):GetItemCount(self._currencyId) or 0
+  local preZero = UIActivityHelper.GetZeroStrFrontNum(7, count)
+  local fmtStr = string.format("<color=#545454>%s</color><color=#fff0ad>%s</color>", preZero, tostring(count))
+  self.itemCount:SetText(fmtStr)
   if self.pointIcon then
     local currencyIcon = ""
-    local cfgItem = (Cfg.cfg_item)[self._currencyId]
+    local cfgItem = Cfg.cfg_item[self._currencyId]
     if cfgItem then
       currencyIcon = cfgItem.Icon
-      ;
-      (self.pointIcon):LoadImage(currencyIcon)
+      self.pointIcon:LoadImage(currencyIcon)
     end
   end
 end
-
-

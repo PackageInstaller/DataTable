@@ -1,67 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_skill_final_by_target_buff_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillFinalByTargetBuffLayer", BuffLogicBase)
 BuffLogicChangeSkillFinalByTargetBuffLayer = BuffLogicChangeSkillFinalByTargetBuffLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillFinalByTargetBuffLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._buffInstance)._effectList = logicParam.effectList
+function BuffLogicChangeSkillFinalByTargetBuffLayer:Constructor(buffInstance, logicParam)
+  self._buffInstance._effectList = logicParam.effectList
   self._buffID = logicParam.buffID
   self._minValue = logicParam.minValue or 0
   self._oneLayerValue = logicParam.oneLayerValue or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillFinalByTargetBuffLayer.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local casterEntity = (self._buffInstance):Entity()
+function BuffLogicChangeSkillFinalByTargetBuffLayer:DoLogic(notify)
+  local casterEntity = self._buffInstance:Entity()
   local defenderEntity = notify:GetDefenderEntity()
   if not defenderEntity then
-    return 
+    return
   end
   local buffComponent = defenderEntity:BuffComponent()
   if not buffComponent then
-    return 
+    return
   end
   local buffInstance = buffComponent:GetBuffById(self._buffID)
   if not buffInstance then
-    return 
+    return
   end
   local layer = buffInstance:GetLayerCount()
   local changeValue = 0
   changeValue = self._minValue + self._oneLayerValue * layer
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):ChangeSkillFinalParam(casterEntity, self:GetBuffSeq(), paramType, changeValue)
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:ChangeSkillFinalParam(casterEntity, self:GetBuffSeq(), paramType, changeValue)
   end
 end
 
 _class("BuffLogicRemoveSkillFinalByTargetBuffLayer", BuffLogicBase)
 BuffLogicRemoveSkillFinalByTargetBuffLayer = BuffLogicRemoveSkillFinalByTargetBuffLayer
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveSkillFinalByTargetBuffLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveSkillFinalByTargetBuffLayer:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveSkillFinalByTargetBuffLayer.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local casterEntity = (self._buffInstance):Entity()
+function BuffLogicRemoveSkillFinalByTargetBuffLayer:DoLogic()
+  local casterEntity = self._buffInstance:Entity()
   if not casterEntity then
-    return 
+    return
   end
-  for _,paramType in pairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillFinalParam(casterEntity, self:GetBuffSeq(), paramType)
+  for _, paramType in pairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillFinalParam(casterEntity, self:GetBuffSeq(), paramType)
   end
   return true
 end
-
-

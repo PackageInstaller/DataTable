@@ -1,48 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/manager/aircraft_interactive_pool_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftInteractivePoolManager", Object)
 AircraftInteractivePoolManager = AircraftInteractivePoolManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftInteractivePoolManager.Constructor = function(self, aircraftMain)
-  -- function num : 0_0
+function AircraftInteractivePoolManager:Constructor(aircraftMain)
   self._main = aircraftMain
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractivePoolManager.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local canvasRoot = ((UnityEngine.GameObject).Find)("LogicRoot")
-  local AircraftTalkCanvas = (canvasRoot.transform):Find("AircraftRoot/AircraftTalkCanvas")
-  local bubbleEffName = ((Cfg.cfg_aircraft_const).bubbleEffName).StrValue
+function AircraftInteractivePoolManager:Init()
+  local canvasRoot = UnityEngine.GameObject.Find("LogicRoot")
+  local AircraftTalkCanvas = canvasRoot.transform:Find("AircraftRoot/AircraftTalkCanvas")
+  local bubbleEffName = Cfg.cfg_aircraft_const.bubbleEffName.StrValue
   local texGos = {}
   local bubbleReqs = {}
   self._aircraftTexPool = AircraftInteractiveTexPool:New()
-  local maxCount = (self._aircraftTexPool):GetMaxCount()
+  local maxCount = self._aircraftTexPool:GetMaxCount()
   for i = 1, maxCount do
     local texTr = AircraftTalkCanvas:GetChild(i - 1)
     local texGo = texTr.gameObject
-    local bubbleReq = (ResourceManager:GetInstance()):SyncLoadAsset(bubbleEffName, LoadType.GameObject)
-    ;
-    (table.insert)(texGos, texGo)
-    ;
-    (table.insert)(bubbleReqs, bubbleReq)
+    local bubbleReq = ResourceManager:GetInstance():SyncLoadAsset(bubbleEffName, LoadType.GameObject)
+    table.insert(texGos, texGo)
+    table.insert(bubbleReqs, bubbleReq)
   end
-  ;
-  (self._aircraftTexPool):Init(texGos, bubbleReqs)
+  self._aircraftTexPool:Init(texGos, bubbleReqs)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractivePoolManager.SetClickTexActive = function(self, active)
-  -- function num : 0_2 , upvalues : _ENV
-  local showTable = (self._aircraftTexPool):GetAllShowItem()
-  if showTable and (table.count)(showTable) > 0 then
-    for key,value in pairs(showTable) do
+function AircraftInteractivePoolManager:SetClickTexActive(active)
+  local showTable = self._aircraftTexPool:GetAllShowItem()
+  if showTable and table.count(showTable) > 0 then
+    for key, value in pairs(showTable) do
       if not value._isClosing then
         value:SetTexActive(not active)
       end
@@ -50,45 +34,31 @@ AircraftInteractivePoolManager.SetClickTexActive = function(self, active)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractivePoolManager.DequeueTexItem = function(self)
-  -- function num : 0_3
-  local item = (self._aircraftTexPool):Dequeue()
+function AircraftInteractivePoolManager:DequeueTexItem()
+  local item = self._aircraftTexPool:Dequeue()
   return item
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractivePoolManager.EnqueueTexItem = function(self, item)
-  -- function num : 0_4
-  (self._aircraftTexPool):Enqueue(item)
+function AircraftInteractivePoolManager:EnqueueTexItem(item)
+  self._aircraftTexPool:Enqueue(item)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractivePoolManager.Update = function(self, dms)
-  -- function num : 0_5
+function AircraftInteractivePoolManager:Update(dms)
   if self._aircraftTexPool then
-    (self._aircraftTexPool):Update()
+    self._aircraftTexPool:Update()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractivePoolManager.Dispose = function(self)
-  -- function num : 0_6
+function AircraftInteractivePoolManager:Dispose()
   if self._aircraftTexPool then
-    (self._aircraftTexPool):Dispose()
+    self._aircraftTexPool:Dispose()
   end
 end
 
 _class("AircraftInteractiveTexPool", Object)
 AircraftInteractiveTexPool = AircraftInteractiveTexPool
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftInteractiveTexPool.Constructor = function(self)
-  -- function num : 0_7
+function AircraftInteractiveTexPool:Constructor()
   self._closeTable = {}
   self._showTable = {}
   self._animTable = {}
@@ -98,32 +68,23 @@ AircraftInteractiveTexPool.Constructor = function(self)
   self._running = true
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractiveTexPool.GetAllShowItem = function(self)
-  -- function num : 0_8
+function AircraftInteractiveTexPool:GetAllShowItem()
   return self._showTable
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractiveTexPool.GetMaxCount = function(self)
-  -- function num : 0_9
+function AircraftInteractiveTexPool:GetMaxCount()
   return self._maxCount
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractiveTexPool.Init = function(self, texGos, bubbleGos)
-  -- function num : 0_10 , upvalues : _ENV
+function AircraftInteractiveTexPool:Init(texGos, bubbleGos)
   for i = 1, self._maxCount do
     local texGo = texGos[i]
-    local scale = (texGo.transform):Find("anim/scale")
-    local layoutGo = ((texGo.transform):Find("anim/scale/layout")).gameObject
+    local scale = texGo.transform:Find("anim/scale")
+    local layoutGo = texGo.transform:Find("anim/scale/layout").gameObject
     local layout = layoutGo:GetComponent("VerticalLayoutGroup")
     local filter = layoutGo:GetComponent("ContentSizeFitter")
     local layoutRect = layoutGo:GetComponent("RectTransform")
-    local texUIGo = ((texGo.transform):Find("anim/scale/layout/AircraftTalkText")).gameObject
+    local texUIGo = texGo.transform:Find("anim/scale/layout/AircraftTalkText").gameObject
     local texRect = texUIGo:GetComponent("RectTransform")
     local texUI = texUIGo:GetComponent("UILocalizationText")
     local bubbleGo = bubbleGos[i]
@@ -133,153 +94,106 @@ AircraftInteractiveTexPool.Init = function(self, texGos, bubbleGos)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractiveTexPool.Dequeue = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  (Log.debug)("###[AircraftInteractiveTexPool] 借用一个文本")
+function AircraftInteractiveTexPool:Dequeue()
+  Log.debug("###[AircraftInteractiveTexPool] 借用一个文本")
   if self._showTable and self._closeTable then
-    local showCount = (table.count)(self._showTable)
-    local closeCount = (table.count)(self._closeTable)
-    ;
-    (Log.debug)("###[AircraftInteractiveTexPool] showCount:", showCount)
-    ;
-    (Log.debug)("###[AircraftInteractiveTexPool] closeCount:", closeCount)
-    if (table.count)(self._closeTable) > 0 then
-      local item = (self._closeTable)[1]
-      ;
-      (table.remove)(self._closeTable, 1)
-      ;
-      (table.insert)(self._showTable, item)
-      ;
-      (Log.debug)("###[AircraftInteractiveTexPool] Get a New Item ! index --> ", item._index)
+    local showCount = table.count(self._showTable)
+    local closeCount = table.count(self._closeTable)
+    Log.debug("###[AircraftInteractiveTexPool] showCount:", showCount)
+    Log.debug("###[AircraftInteractiveTexPool] closeCount:", closeCount)
+    if table.count(self._closeTable) > 0 then
+      local item = self._closeTable[1]
+      table.remove(self._closeTable, 1)
+      table.insert(self._showTable, item)
+      Log.debug("###[AircraftInteractiveTexPool] Get a New Item ! index --> ", item._index)
       return item
     else
-      do
-        ;
-        (Log.error)("###[AircraftInteractiveTexPool] Dequeue --> close table count <= 0 !")
-      end
+      Log.error("###[AircraftInteractiveTexPool] Dequeue --> close table count <= 0 !")
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractiveTexPool.Update = function(self, dms)
-  -- function num : 0_12 , upvalues : _ENV
+function AircraftInteractiveTexPool:Update(dms)
   if not self._running then
-    return 
+    return
   end
   if self._animTable and #self._animTable > 0 then
     for i = 1, #self._animTable do
-      local timeItem = (self._animTable)[i]
+      local timeItem = self._animTable[i]
       timeItem.time = timeItem.time + dms
-      if self._animTime <= timeItem.time then
-        (table.insert)(self._removeList, i)
+      if timeItem.time >= self._animTime then
+        table.insert(self._removeList, i)
       end
     end
   end
-  do
-    if self._removeList and #self._removeList > 0 then
-      for i = 1, #self._removeList do
-        local idx = (self._removeList)[i]
-        local timeItem = (self._animTable)[idx]
-        local item = timeItem.item
-        ;
-        (table.remove)(self._animTable, idx)
-        self:_EnqueueTable(item)
-      end
-      ;
-      (table.clear)(self._removeList)
+  if self._removeList and 0 < #self._removeList then
+    for i = 1, #self._removeList do
+      local idx = self._removeList[i]
+      local timeItem = self._animTable[idx]
+      local item = timeItem.item
+      table.remove(self._animTable, idx)
+      self:_EnqueueTable(item)
     end
+    table.clear(self._removeList)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractiveTexPool._EnqueueAnimTable = function(self, item)
-  -- function num : 0_13
+function AircraftInteractiveTexPool:_EnqueueAnimTable(item)
   local timeItem = {}
   timeItem.item = item
   timeItem.time = 0
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._animTable)[#self._animTable + 1] = timeItem
+  self._animTable[#self._animTable + 1] = timeItem
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractiveTexPool._EnqueueTable = function(self, item)
-  -- function num : 0_14 , upvalues : _ENV
-  (Log.debug)("###[AircraftInteractiveTexPool] 归还一个文本")
+function AircraftInteractiveTexPool:_EnqueueTable(item)
+  Log.debug("###[AircraftInteractiveTexPool] 归还一个文本")
   if self._showTable and self._closeTable then
-    local showCount = (table.count)(self._showTable)
-    local closeCount = (table.count)(self._closeTable)
-    ;
-    (Log.debug)("###[AircraftInteractiveTexPool] showCount:", showCount)
-    ;
-    (Log.debug)("###[AircraftInteractiveTexPool] closeCount:", closeCount)
-    if (table.count)(self._showTable) > 0 then
+    local showCount = table.count(self._showTable)
+    local closeCount = table.count(self._closeTable)
+    Log.debug("###[AircraftInteractiveTexPool] showCount:", showCount)
+    Log.debug("###[AircraftInteractiveTexPool] closeCount:", closeCount)
+    if table.count(self._showTable) > 0 then
       for i = 1, #self._showTable do
-        if ((self._showTable)[i])._index == item._index then
-          (Log.debug)("###[AircraftInteractiveTexPool] show 2 close ! index --> ", item._index)
+        if self._showTable[i]._index == item._index then
+          Log.debug("###[AircraftInteractiveTexPool] show 2 close ! index --> ", item._index)
           item:Reset()
-          ;
-          (table.insert)(self._closeTable, item)
-          ;
-          (table.remove)(self._showTable, i)
-          return 
+          table.insert(self._closeTable, item)
+          table.remove(self._showTable, i)
+          return
         end
       end
     else
-      do
-        ;
-        (Log.debug)("###[AircraftInteractiveTexPool] out 2 close ! index --> ", item._index)
-        ;
-        (table.insert)(self._closeTable, item)
-      end
+      Log.debug("###[AircraftInteractiveTexPool] out 2 close ! index --> ", item._index)
+      table.insert(self._closeTable, item)
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractiveTexPool.Enqueue = function(self, item, init)
-  -- function num : 0_15
+function AircraftInteractiveTexPool:Enqueue(item, init)
   self:_EnqueueTable(item)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractiveTexPool.Dispose = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function AircraftInteractiveTexPool:Dispose()
   self._running = false
-  if (table.count)(self._closeTable) > 0 then
-    for key,value in pairs(self._closeTable) do
+  if table.count(self._closeTable) > 0 then
+    for key, value in pairs(self._closeTable) do
       value:Dispose()
     end
   end
-  do
-    if (table.count)(self._showTable) > 0 then
-      for key,value in pairs(self._showTable) do
-        value:Dispose()
-      end
-    end
-    do
-      self._closeTable = nil
-      self._showTable = nil
-      self._maxCount = 0
+  if 0 < table.count(self._showTable) then
+    for key, value in pairs(self._showTable) do
+      value:Dispose()
     end
   end
+  self._closeTable = nil
+  self._showTable = nil
+  self._maxCount = 0
 end
 
 _class("AircraftInteractiveTexItem", Object)
 AircraftInteractiveTexItem = AircraftInteractiveTexItem
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftInteractiveTexItem.Constructor = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function AircraftInteractiveTexItem:Constructor()
   self._texGo = nil
   self._bubbleGo = nil
   self._texUI = nil
@@ -288,203 +202,117 @@ AircraftInteractiveTexItem.Constructor = function(self)
   self._layoutRect = nil
   self._texRect = nil
   self._index = 0
-  local posOffset = ((Cfg.cfg_aircraft_const).AircraftTalkTexPosOffset).ArrayValue
+  local posOffset = Cfg.cfg_aircraft_const.AircraftTalkTexPosOffset.ArrayValue
   if posOffset == nil then
-    (Log.error)("###cfg_aircraft_const[AircraftTalkTexPosOffset] is nil !")
+    Log.error("###cfg_aircraft_const[AircraftTalkTexPosOffset] is nil !")
   end
   self._talkTextPosOffset = Vector3(posOffset[1], posOffset[2], posOffset[3])
   self._talkBubblePosOffset = Vector3(posOffset[1] - 0.42, posOffset[2] - 0.87, posOffset[3])
   self._selfMsgWidth = 544
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractiveTexItem.Reset = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function AircraftInteractiveTexItem:Reset()
   if self._texGo then
-    (self._texGo):SetActive(false)
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    ((self._texGo).transform).position = Vector3(0, 0, 0)
+    self._texGo:SetActive(false)
+    self._texGo.transform.position = Vector3(0, 0, 0)
   end
   if self._bubbleGo then
-    (self._bubbleGo):SetActive(false)
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    ((self._bubbleGo).transform).position = Vector3(0, 0, 0)
+    self._bubbleGo:SetActive(false)
+    self._bubbleGo.transform.position = Vector3(0, 0, 0)
   end
   if self._texUI then
-    (self._texUI):SetText("")
+    self._texUI:SetText("")
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractiveTexItem.SetGo = function(self, idx, texGo, layout, filter, scale, layoutRect, texRect, texUI, bubbleReq)
-  -- function num : 0_19
+function AircraftInteractiveTexItem:SetGo(idx, texGo, layout, filter, scale, layoutRect, texRect, texUI, bubbleReq)
   self._index = idx
   self._texGo = texGo
   self._scale = scale
   self._layout = layout
   self._filter = filter
   self._layoutRect = layoutRect
-  self._bgImg = (((self._layoutRect):GetChild(0)).gameObject):GetComponent("Image")
+  self._bgImg = self._layoutRect:GetChild(0).gameObject:GetComponent("Image")
   self._texRect = texRect
   self._texGo = texGo
   self._texUI = texUI
   self._bubbleReq = bubbleReq
-  self._bubbleGo = (self._bubbleReq).Obj
-  ;
-  ((self._bubbleGo):GetComponent("Animation")).enabled = false
-  self._anim = (self._texGo):GetComponent("Animation")
+  self._bubbleGo = self._bubbleReq.Obj
+  self._bubbleGo:GetComponent("Animation").enabled = false
+  self._anim = self._texGo:GetComponent("Animation")
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractiveTexItem._SetText = function(self, tex)
-  -- function num : 0_20 , upvalues : _ENV
-  (self._texUI):SetText(tex)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._filter).horizontalFit = (((UnityEngine.UI).ContentSizeFitter).FitMode).PreferredSize
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._layout).childControlWidth = true
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._layoutRect)
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-  if self._selfMsgWidth < (self._texUI).preferredWidth then
-    (self._filter).horizontalFit = (((UnityEngine.UI).ContentSizeFitter).FitMode).Unconstrained
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._layout).childControlWidth = false
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._layoutRect).sizeDelta = Vector2(self._selfMsgWidth, ((self._layoutRect).sizeDelta).y)
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._texRect).sizeDelta = Vector2(self._selfMsgWidth, ((self._texRect).sizeDelta).y)
+function AircraftInteractiveTexItem:_SetText(tex)
+  self._texUI:SetText(tex)
+  self._filter.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.PreferredSize
+  self._layout.childControlWidth = true
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._layoutRect)
+  if self._texUI.preferredWidth > self._selfMsgWidth then
+    self._filter.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.Unconstrained
+    self._layout.childControlWidth = false
+    self._layoutRect.sizeDelta = Vector2(self._selfMsgWidth, self._layoutRect.sizeDelta.y)
+    self._texRect.sizeDelta = Vector2(self._selfMsgWidth, self._texRect.sizeDelta.y)
   else
-    -- DECOMPILER ERROR at PC56: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._filter).horizontalFit = (((UnityEngine.UI).ContentSizeFitter).FitMode).PreferredSize
-    -- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._layout).childControlWidth = true
+    self._filter.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.PreferredSize
+    self._layout.childControlWidth = true
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractiveTexItem.SetScale = function(self, scale)
-  -- function num : 0_21 , upvalues : _ENV
+function AircraftInteractiveTexItem:SetScale(scale)
   local layoutScale = scale
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._scale).transform).localScale = Vector3(layoutScale, layoutScale, layoutScale)
+  self._scale.transform.localScale = Vector3(layoutScale, layoutScale, layoutScale)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractiveTexItem.SetData = function(self, pos, tex, showBubble)
-  -- function num : 0_22
+function AircraftInteractiveTexItem:SetData(pos, tex, showBubble)
   if showBubble then
-    (self._bubbleGo):SetActive(true)
-    ;
-    (self._texGo):SetActive(false)
+    self._bubbleGo:SetActive(true)
+    self._texGo:SetActive(false)
   else
-    ;
-    (self._bubbleGo):SetActive(false)
-    ;
-    (self._texGo):SetActive(true)
+    self._bubbleGo:SetActive(false)
+    self._texGo:SetActive(true)
   end
   self:_SetText(tex)
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._bubbleGo).transform).position = pos + self._talkBubblePosOffset
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._texGo).transform).position = pos + self._talkTextPosOffset
+  self._bubbleGo.transform.position = pos + self._talkBubblePosOffset
+  self._texGo.transform.position = pos + self._talkTextPosOffset
   self._isClosing = false
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractiveTexItem.PlayOpenAnim = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local c = (self._texUI).color
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._texUI).color = Color(c.r, c.g, c.b, 1)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bgImg).color = Color(1, 1, 1, 1)
+function AircraftInteractiveTexItem:PlayOpenAnim()
+  local c = self._texUI.color
+  self._texUI.color = Color(c.r, c.g, c.b, 1)
+  self._bgImg.color = Color(1, 1, 1, 1)
   if self._anim then
-    (self._anim):Stop()
-    ;
-    (self._anim):Play("uieff_AircraftTalkRoot_chuxian")
+    self._anim:Stop()
+    self._anim:Play("uieff_AircraftTalkRoot_chuxian")
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractiveTexItem.PLayCloseAnim = function(self)
-  -- function num : 0_24
+function AircraftInteractiveTexItem:PLayCloseAnim()
   if self._anim then
-    (self._anim):Stop()
-    ;
-    (self._anim):Play("uieff_AircraftTalkRoot_xiaoshi")
+    self._anim:Stop()
+    self._anim:Play("uieff_AircraftTalkRoot_xiaoshi")
     self._isClosing = true
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractiveTexItem.UpDataPos = function(self, pos)
-  -- function num : 0_25
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._bubbleGo).transform).position = pos + self._talkBubblePosOffset
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._texGo).transform).position = pos + self._talkTextPosOffset
+function AircraftInteractiveTexItem:UpDataPos(pos)
+  self._bubbleGo.transform.position = pos + self._talkBubblePosOffset
+  self._texGo.transform.position = pos + self._talkTextPosOffset
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractiveTexItem.SetTexActive = function(self, active)
-  -- function num : 0_26
+function AircraftInteractiveTexItem:SetTexActive(active)
   if self._isClosing then
-    return 
+    return
   end
   if self._texGo then
-    (self._texGo):SetActive(active)
+    self._texGo:SetActive(active)
   end
   if self._bubbleGo then
-    (self._bubbleGo):SetActive(not active)
+    self._bubbleGo:SetActive(not active)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftInteractiveTexItem.Dispose = function(self)
-  -- function num : 0_27
+function AircraftInteractiveTexItem:Dispose()
   self._texGo = nil
   self._texUI = nil
   self._layout = nil
@@ -492,11 +320,9 @@ AircraftInteractiveTexItem.Dispose = function(self)
   self._layoutRect = nil
   self._texRect = nil
   if self._bubbleReq then
-    (self._bubbleReq):Dispose()
+    self._bubbleReq:Dispose()
   end
   self._bubbleReq = nil
   self._bubbleGo = nil
   self._index = 0
 end
-
-

@@ -1,76 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_help_pet/ui_help_pet_sort_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHelpPetSortBtn", UICustomWidget)
 UIHelpPetSortBtn = UIHelpPetSortBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHelpPetSortBtn.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.names = {[ElementType.ElementType_Blue] = (StringTable.Get)("str_help_pet_shui"), [ElementType.ElementType_Red] = (StringTable.Get)("str_help_pet_huo"), [ElementType.ElementType_Green] = (StringTable.Get)("str_help_pet_sen"), [ElementType.ElementType_Yellow] = (StringTable.Get)("str_help_pet_lei")}
+function UIHelpPetSortBtn:Constructor()
+  self.names = {
+    [ElementType.ElementType_Blue] = StringTable.Get("str_help_pet_shui"),
+    [ElementType.ElementType_Red] = StringTable.Get("str_help_pet_huo"),
+    [ElementType.ElementType_Green] = StringTable.Get("str_help_pet_sen"),
+    [ElementType.ElementType_Yellow] = StringTable.Get("str_help_pet_lei")
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSortBtn.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHelpPetSortBtn:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSortBtn.GetComponents = function(self)
-  -- function num : 0_2
+function UIHelpPetSortBtn:GetComponents()
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._selectImgGo = self:GetGameObject("selectImg")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSortBtn.SetData = function(self, cgType, curCgType, callback)
-  -- function num : 0_3
+function UIHelpPetSortBtn:SetData(cgType, curCgType, callback)
   self:GetComponents()
   self._cgType = cgType
   self._callback = callback
   self:OnValue(curCgType)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSortBtn.OnValue = function(self, curCgType)
-  -- function num : 0_4
-  (self._name):SetText((self.names)[self._cgType])
+function UIHelpPetSortBtn:OnValue(curCgType)
+  self._name:SetText(self.names[self._cgType])
   self:Flush(curCgType)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSortBtn.bgOnClick = function(self)
-  -- function num : 0_5
+function UIHelpPetSortBtn:bgOnClick()
   if self._callback then
-    (self._callback)(self._cgType)
+    self._callback(self._cgType)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSortBtn.Flush = function(self, cgType)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHelpPetSortBtn:Flush(cgType)
   if cgType == self._cgType then
-    (self._selectImgGo):SetActive(true)
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._name).color = Color(0.98823529411765, 0.90980392156863, 0.007843137254902, 1)
+    self._selectImgGo:SetActive(true)
+    self._name.color = Color(0.9882352941176471, 0.9098039215686274, 0.00784313725490196, 1)
   else
-    ;
-    (self._selectImgGo):SetActive(false)
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._name).color = Color(1, 1, 1, 1)
+    self._selectImgGo:SetActive(false)
+    self._name.color = Color(1, 1, 1, 1)
   end
 end
-
-

@@ -1,121 +1,88 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_simple_haute_couture/common/purchase/ui_simple_haute_couture_purchase_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISimpleHauteCouturePurchaseController", UIController)
 UISimpleHauteCouturePurchaseController = UISimpleHauteCouturePurchaseController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISimpleHauteCouturePurchaseController.Constructor = function(self)
-  -- function num : 0_0
+function UISimpleHauteCouturePurchaseController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCouturePurchaseController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISimpleHauteCouturePurchaseController:OnShow(uiParams)
   self:AttachEvent(GameEventType.ActivityCurrencyBuySuccess, self.OnBuySuccess)
   self:AttachEvent(GameEventType.PayGetLocalPriceFinished, self.RefreshPrice)
   self._campaign = uiParams[1]
   self.isHomeGameServer = uiParams[2]
-  self._randomLotteryComponent = (self._campaign):GetComponent(ECampaignPetSkinComponentID.RANDOMLOTTERY)
-  self._buyGiftComponent = (self._campaign):GetComponent(ECampaignPetSkinComponentID.BUYGIFT)
-  ;
-  (self._buyGiftComponent):GetAllGiftLocalPrice()
-  self._cfgMap = (self._randomLotteryComponent):GetFirstCfg()
-  self._cfgMain = (self._randomLotteryComponent):GetCfgMain()
+  self._randomLotteryComponent = self._campaign:GetComponent(ECampaignPetSkinComponentID.RANDOMLOTTERY)
+  self._buyGiftComponent = self._campaign:GetComponent(ECampaignPetSkinComponentID.BUYGIFT)
+  self._buyGiftComponent:GetAllGiftLocalPrice()
+  self._cfgMap = self._randomLotteryComponent:GetFirstCfg()
+  self._cfgMain = self._randomLotteryComponent:GetCfgMain()
   self:_GetComponents()
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCouturePurchaseController._GetComponents = function(self)
-  -- function num : 0_2
+function UISimpleHauteCouturePurchaseController:_GetComponents()
   local topBarPool = self:GetUIComponent("UISelectObjectPath", "topbtn")
   local topBtns = topBarPool:SpawnObject("UINewCommonTopButton")
   topBtns:SetData(function()
-    -- function num : 0_2_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._topContent = self:GetUIComponent("UISelectObjectPath", "topContent")
   self._topTips = self:GetUIComponent("UISelectObjectPath", "toptips")
-  self._topTipsInfo = (self._topTips):SpawnObject("UITopTipsContext")
+  self._topTipsInfo = self._topTips:SpawnObject("UITopTipsContext")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCouturePurchaseController._Init = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local ids = (self._buyGiftComponent):GetAllGiftIDByType(CampaignGiftType.ECGT_SENIOR_SKIN)
-  local onclick = function(id)
-    -- function num : 0_3_0 , upvalues : self, _ENV
+function UISimpleHauteCouturePurchaseController:_Init()
+  local ids = self._buyGiftComponent:GetAllGiftIDByType(CampaignGiftType.ECGT_SENIOR_SKIN)
+  
+  local function onclick(id)
     local giftNum = 1
     self:ShowDialog("UISimpleHauteCoutureGiftPackDetail", self._campaign, self._buyGiftComponent, id, giftNum, function(res)
-      -- function num : 0_3_0_0 , upvalues : self, id, _ENV
       if res:GetSucc() then
         self:OnBuySuccess(id)
       else
-        ;
-        (Log.fatal)("购买失败！：", res:GetResult())
+        Log.fatal("购买失败！：", res:GetResult())
       end
-    end
-)
+    end)
   end
-
+  
   local idGroup = {}
-  for _,id in pairs(ids) do
-    local cfg = (Cfg.cfg_shop_common_goods)[id]
+  for _, id in pairs(ids) do
+    local cfg = Cfg.cfg_shop_common_goods[id]
     if cfg.CurrencySkinID then
-      (table.insert)(idGroup, id)
+      table.insert(idGroup, id)
     end
   end
-  self._items = (self._content):SpawnObjects("UISimpleHauteCouturePurchaseItem", (table.count)(idGroup))
-  local closeTime = ((self._buyGiftComponent):GetComponentInfo()).m_close_time
-  for i,uiItem in ipairs(self._items) do
+  self._items = self._content:SpawnObjects("UISimpleHauteCouturePurchaseItem", table.count(idGroup))
+  local closeTime = self._buyGiftComponent:GetComponentInfo().m_close_time
+  for i, uiItem in ipairs(self._items) do
     uiItem:SetData(idGroup[i], self._buyGiftComponent, onclick, closeTime)
   end
-  local topMenu = (self._topContent):SpawnObject("UISimpleHauteCoutureTopMenu")
-  topMenu:SetData(self._topTipsInfo, (self._cfgMap).CostItemID, RoleAssetID.RoleAssetDiamond, (self._cfgMain).ScoreID, function()
-    -- function num : 0_3_1 , upvalues : self
+  local topMenu = self._topContent:SpawnObject("UISimpleHauteCoutureTopMenu")
+  topMenu:SetData(self._topTipsInfo, self._cfgMap.CostItemID, RoleAssetID.RoleAssetDiamond, self._cfgMain.ScoreID, function()
     self:ShowDialog("UISimpleHauteCouturePurchaseController", self._campaign, self.isHomeGameServer)
-  end
-)
+  end)
   topMenu:ShowHideTSFBtn(true)
   topMenu:HideTicketAddBtn()
   self:RefreshPrice()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCouturePurchaseController.RefreshPrice = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,uiItem in ipairs(self._items) do
+function UISimpleHauteCouturePurchaseController:RefreshPrice()
+  for _, uiItem in ipairs(self._items) do
     uiItem:RefreshPrice()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCouturePurchaseController.OnBuySuccess = function(self, buyID)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.debug)("购买礼包成功:", buyID)
-  local cfg = (Cfg.cfg_component_buy_gift)({GiftID = buyID})
+function UISimpleHauteCouturePurchaseController:OnBuySuccess(buyID)
+  Log.debug("购买礼包成功:", buyID)
+  local cfg = Cfg.cfg_component_buy_gift({GiftID = buyID})
   if not cfg then
-    return 
+    return
   end
   local awards = {}
-  for _,v in pairs((cfg[1]).ExtraAward) do
+  for _, v in pairs(cfg[1].ExtraAward) do
     local asset = RoleAsset:New()
     asset.assetid = v[1]
     asset.count = v[2]
-    ;
-    (table.insert)(awards, asset)
+    table.insert(awards, asset)
   end
   self:ShowDialog("UIGetItemController", awards, nil, true)
 end
-
-

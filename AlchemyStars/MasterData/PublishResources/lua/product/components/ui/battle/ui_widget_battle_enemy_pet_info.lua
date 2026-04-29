@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_battle_enemy_pet_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetBattleEnemyPetInfo", UICustomWidget)
 UIWidgetBattleEnemyPetInfo = UIWidgetBattleEnemyPetInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetBattleEnemyPetInfo.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetBattleEnemyPetInfo:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetBattleEnemyPetInfo.InitWidget = function(self)
-  -- function num : 0_1
+function UIWidgetBattleEnemyPetInfo:InitWidget()
   self._petpool = self:GetUIComponent("UISelectObjectPath", "petpool")
   self:RegisterEvent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetBattleEnemyPetInfo.RegisterEvent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetBattleEnemyPetInfo:RegisterEvent()
   self:AttachEvent(GameEventType.PetPowerChange, self.OnPetPowerChange)
   self:AttachEvent(GameEventType.PetLegendPowerChange, self.OnPetLegendPowerChange)
   self:AttachEvent(GameEventType.PetAlchemyPowerChange, self.OnPetAlchemyPowerChange)
@@ -33,170 +20,129 @@ UIWidgetBattleEnemyPetInfo.RegisterEvent = function(self)
   self:AttachEvent(GameEventType.UIExclusivePetHeadMaskAlpha, self.OnExclusivePetHeadMaskAlpha)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetBattleEnemyPetInfo.SetData = function(self, matchEnterData)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWidgetBattleEnemyPetInfo:SetData(matchEnterData)
   self.uiWidgetEnemyPets = {}
   local remotePetCount = 0
-  local dict, list = (InnerGameHelperRender.GetRemoteMatchPets)()
+  local dict, list = InnerGameHelperRender.GetRemoteMatchPets()
   self._remotePets = dict
   for i = 1, #list do
-    do
-      if (list[i]).pet_pstid ~= FormationPetPlaceType.FormationPetPlaceType_None then
-        do
-          remotePetCount = remotePetCount + 1
-          -- DECOMPILER ERROR at PC18: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC18: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+    if list[i].pet_pstid ~= FormationPetPlaceType.FormationPetPlaceType_None then
+      remotePetCount = remotePetCount + 1
     end
   end
-  ;
-  (self._petpool):SpawnObjects("UIWidgetEnemyPet", remotePetCount)
-  self.uiWidgetEnemyPets = (self._petpool):GetAllSpawnList()
+  self._petpool:SpawnObjects("UIWidgetEnemyPet", remotePetCount)
+  self.uiWidgetEnemyPets = self._petpool:GetAllSpawnList()
   for i = 1, #list do
     local petData = list[i]
     if petData.pet_pstid ~= FormationPetPlaceType.FormationPetPlaceType_None then
-      ((self.uiWidgetEnemyPets)[i]):SetData(i, dict[petData.pet_pstid], function()
-    -- function num : 0_3_0 , upvalues : self, list, i
-    self:ShowBlackFistEnemyTeam(list, i)
-  end
-)
+      self.uiWidgetEnemyPets[i]:SetData(i, dict[petData.pet_pstid], function()
+        self:ShowBlackFistEnemyTeam(list, i)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetBattleEnemyPetInfo.ShowBlackFistEnemyTeam = function(self, list, idx)
-  -- function num : 0_4 , upvalues : _ENV
+function UIWidgetBattleEnemyPetInfo:ShowBlackFistEnemyTeam(list, idx)
   local atlas = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   local t = {}
-  for i,v in ipairs(list) do
-    local pet = (Cfg.cfg_pet)({v.template_id})
-    local petskin = ((Cfg.cfg_pet_skin)({id = (pet[1]).SkinId}))
-    local elemt1, elemt2, battleMe = nil, nil, nil
-    battleMe = (petskin[1]).BattleMes
-    if (pet[1]).FirstElement == 0 then
+  for i, v in ipairs(list) do
+    local pet = Cfg.cfg_pet({
+      v.template_id
+    })
+    local petskin = Cfg.cfg_pet_skin({
+      id = pet[1].SkinId
+    })
+    local elemt1, elemt2, battleMe
+    battleMe = petskin[1].BattleMes
+    if pet[1].FirstElement == 0 then
       elemt1 = nil
     else
-      local icon = ((Cfg.cfg_pet_element)[(pet[1]).FirstElement]).Icon
-      elemt1 = atlas:GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(icon))
+      local icon = Cfg.cfg_pet_element[pet[1].FirstElement].Icon
+      elemt1 = atlas:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(icon))
     end
-    do
-      if (pet[1]).SecondElement == 0 then
-        elemt2 = nil
-      else
-        local icon = ((Cfg.cfg_pet_element)[(pet[1]).SecondElement]).Icon
-        elemt2 = atlas:GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(icon))
-      end
-      do
-        do
-          t[#t + 1] = {petid = v.template_id, elemt1 = elemt1, elemt2 = elemt2, battleMe = battleMe, lv = v.level, awakening = v.awakening, grade = v.grade, equip = v.equip_lv}
-          -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
-      end
+    if pet[1].SecondElement == 0 then
+      elemt2 = nil
+    else
+      local icon = Cfg.cfg_pet_element[pet[1].SecondElement].Icon
+      elemt2 = atlas:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(icon))
     end
+    t[#t + 1] = {
+      petid = v.template_id,
+      elemt1 = elemt1,
+      elemt2 = elemt2,
+      battleMe = battleMe,
+      lv = v.level,
+      awakening = v.awakening,
+      grade = v.grade,
+      equip = v.equip_lv
+    }
   end
   self:ShowDialog("UIN7EnemyDetailsController", t, idx)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetBattleEnemyPetInfo.OnPetPowerChange = function(self, petPstID, power, effect, logicReady)
-  -- function num : 0_5
+function UIWidgetBattleEnemyPetInfo:OnPetPowerChange(petPstID, power, effect, logicReady)
   for i = 1, #self.uiWidgetEnemyPets do
-    if ((self.uiWidgetEnemyPets)[i]):IsMyPet(petPstID) then
-      ((self.uiWidgetEnemyPets)[i]):OnChangePower(power, effect, logicReady)
+    if self.uiWidgetEnemyPets[i]:IsMyPet(petPstID) then
+      self.uiWidgetEnemyPets[i]:OnChangePower(power, effect, logicReady)
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetBattleEnemyPetInfo.OnPetLegendPowerChange = function(self, petPstID, power, effect, logicReady, maxValue)
-  -- function num : 0_6
+function UIWidgetBattleEnemyPetInfo:OnPetLegendPowerChange(petPstID, power, effect, logicReady, maxValue)
   for i = 1, #self.uiWidgetEnemyPets do
-    if ((self.uiWidgetEnemyPets)[i]):IsMyPet(petPstID) then
-      ((self.uiWidgetEnemyPets)[i]):OnChangeLegendPower(power, effect, logicReady, maxValue)
+    if self.uiWidgetEnemyPets[i]:IsMyPet(petPstID) then
+      self.uiWidgetEnemyPets[i]:OnChangeLegendPower(power, effect, logicReady, maxValue)
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetBattleEnemyPetInfo.OnPetAlchemyPowerChange = function(self, petPstID, power, effect, logicReady, maxValue)
-  -- function num : 0_7
+function UIWidgetBattleEnemyPetInfo:OnPetAlchemyPowerChange(petPstID, power, effect, logicReady, maxValue)
   for i = 1, #self.uiWidgetEnemyPets do
-    if ((self.uiWidgetEnemyPets)[i]):IsMyPet(petPstID) then
-      ((self.uiWidgetEnemyPets)[i]):OnChangeAlchemyPower(power, effect, logicReady, maxValue)
+    if self.uiWidgetEnemyPets[i]:IsMyPet(petPstID) then
+      self.uiWidgetEnemyPets[i]:OnChangeAlchemyPower(power, effect, logicReady, maxValue)
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetBattleEnemyPetInfo.OnPetActiveSkillGetReady = function(self, petPstID, playReminder, previousReady)
-  -- function num : 0_8
+function UIWidgetBattleEnemyPetInfo:OnPetActiveSkillGetReady(petPstID, playReminder, previousReady)
   for i = 1, #self.uiWidgetEnemyPets do
-    if ((self.uiWidgetEnemyPets)[i]):IsMyPet(petPstID) then
-      ((self.uiWidgetEnemyPets)[i]):OnPowerReady(playReminder, previousReady)
+    if self.uiWidgetEnemyPets[i]:IsMyPet(petPstID) then
+      self.uiWidgetEnemyPets[i]:OnPowerReady(playReminder, previousReady)
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetBattleEnemyPetInfo.OnPetActiveSkillCancelReady = function(self, petPstID, addCdAnimation)
-  -- function num : 0_9
+function UIWidgetBattleEnemyPetInfo:OnPetActiveSkillCancelReady(petPstID, addCdAnimation)
   for i = 1, #self.uiWidgetEnemyPets do
-    if ((self.uiWidgetEnemyPets)[i]):IsMyPet(petPstID) then
-      ((self.uiWidgetEnemyPets)[i]):OnPowerCancelReady(addCdAnimation)
+    if self.uiWidgetEnemyPets[i]:IsMyPet(petPstID) then
+      self.uiWidgetEnemyPets[i]:OnPowerCancelReady(addCdAnimation)
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetBattleEnemyPetInfo.OnShowPetInfoInish = function(self)
-  -- function num : 0_10
+function UIWidgetBattleEnemyPetInfo:OnShowPetInfoInish()
   for i = 1, #self.uiWidgetEnemyPets do
-    ((self.uiWidgetEnemyPets)[i]):OnShowPetInfoInish()
+    self.uiWidgetEnemyPets[i]:OnShowPetInfoInish()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetBattleEnemyPetInfo.OnPetHeadMaskAlpha = function(self, alpha)
-  -- function num : 0_11
+function UIWidgetBattleEnemyPetInfo:OnPetHeadMaskAlpha(alpha)
   for i = 1, #self.uiWidgetEnemyPets do
-    ((self.uiWidgetEnemyPets)[i]):OnChangeHeadAlpha(alpha)
+    self.uiWidgetEnemyPets[i]:OnChangeHeadAlpha(alpha)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetBattleEnemyPetInfo.OnExclusivePetHeadMaskAlpha = function(self, alpha, exclusivePetPstID)
-  -- function num : 0_12
+function UIWidgetBattleEnemyPetInfo:OnExclusivePetHeadMaskAlpha(alpha, exclusivePetPstID)
   for i = 1, #self.uiWidgetEnemyPets do
-    if not ((self.uiWidgetEnemyPets)[i]):IsMyPet(exclusivePetPstID) then
-      ((self.uiWidgetEnemyPets)[i]):OnChangeHeadAlpha(alpha)
+    if not self.uiWidgetEnemyPets[i]:IsMyPet(exclusivePetPstID) then
+      self.uiWidgetEnemyPets[i]:OnChangeHeadAlpha(alpha)
     else
-      ;
-      ((self.uiWidgetEnemyPets)[i]):OnChangeHeadAlpha(0)
+      self.uiWidgetEnemyPets[i]:OnChangeHeadAlpha(0)
     end
   end
 end
-
-

@@ -1,121 +1,80 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/season_map_zone.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapZone", Object)
 SeasonMapZone = SeasonMapZone
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapZone.Constructor = function(self, id, unlock, loader)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMapZone:Constructor(id, unlock, loader)
   self._zoneID = id
   self._isUnlock = unlock
   self._loader = loader
   self._eventPoints = {}
-  self._seasonManger = ((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()
-  self._navManager = (self._seasonManger):NavManager()
+  self._seasonManger = GameGlobal.GetUIModule(SeasonModule):SeasonManager()
+  self._navManager = self._seasonManger:NavManager()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapZone.ZoneID = function(self)
-  -- function num : 0_1
+function SeasonMapZone:ZoneID()
   return self._zoneID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapZone.OnAfterInit = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  for id,eventPoint in pairs(self._eventPoints) do
+function SeasonMapZone:OnAfterInit()
+  for id, eventPoint in pairs(self._eventPoints) do
     eventPoint:OnAfterInit()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapZone.Update = function(self, deltaTime)
-  -- function num : 0_3 , upvalues : _ENV
-  for id,eventPoint in pairs(self._eventPoints) do
+function SeasonMapZone:Update(deltaTime)
+  for id, eventPoint in pairs(self._eventPoints) do
     eventPoint:Update(deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapZone.Dispose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,eventPoint in pairs(self._eventPoints) do
+function SeasonMapZone:Dispose()
+  for _, eventPoint in pairs(self._eventPoints) do
     eventPoint:Dispose()
   end
-  ;
-  (table.clear)(self._eventPoints)
+  table.clear(self._eventPoints)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapZone.AddEventPoint = function(self, cfgMission)
-  -- function num : 0_5 , upvalues : _ENV
+function SeasonMapZone:AddEventPoint(cfgMission)
   if not cfgMission then
-    return 
+    return
   end
   local missionID = cfgMission.ID
-  if (self._eventPoints)[missionID] then
-    return 
+  if self._eventPoints[missionID] then
+    return
   end
-  local cfgEventPoint = (Cfg.cfg_season_map_eventpoint)[missionID]
+  local cfgEventPoint = Cfg.cfg_season_map_eventpoint[missionID]
   if cfgEventPoint then
     local eventPoint = SeasonMapEventPoint:New(self, cfgMission, cfgEventPoint)
     if eventPoint:GetResName() then
-      (self._loader):LoadResource(eventPoint)
+      self._loader:LoadResource(eventPoint)
     else
       eventPoint:CreateVirtualPoint()
     end
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._eventPoints)[missionID] = eventPoint
+    self._eventPoints[missionID] = eventPoint
     if cfgEventPoint.EventPointType == SeasonEventPointType.NavPoint then
-      (self._navManager):AddTransPoint(self._zoneID, eventPoint)
+      self._navManager:AddTransPoint(self._zoneID, eventPoint)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapZone.GetEventPoint = function(self, id)
-  -- function num : 0_6
-  return (self._eventPoints)[id]
+function SeasonMapZone:GetEventPoint(id)
+  return self._eventPoints[id]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapZone.GetEventPoints = function(self)
-  -- function num : 0_7
+function SeasonMapZone:GetEventPoints()
   return self._eventPoints
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapZone.IsUnlock = function(self)
-  -- function num : 0_8
+function SeasonMapZone:IsUnlock()
   return self._isUnlock
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapZone.SetUnlock = function(self, unlock)
-  -- function num : 0_9
+function SeasonMapZone:SetUnlock(unlock)
   self._isUnlock = unlock
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapZone.CheckEventPointCondition = function(self, map)
-  -- function num : 0_10 , upvalues : _ENV
+function SeasonMapZone:CheckEventPointCondition(map)
   if self._isUnlock then
-    for id,eventPoint in pairs(self._eventPoints) do
+    for id, eventPoint in pairs(self._eventPoints) do
       local result, progress = eventPoint:CheckCondition(map)
       if result then
         eventPoint:PlayExpress(progress, SeasonExpressTriggerType.Passive)
@@ -124,39 +83,27 @@ SeasonMapZone.CheckEventPointCondition = function(self, map)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapZone.GetEventPointsByType = function(self, eventPointType, force)
-  -- function num : 0_11 , upvalues : _ENV
-  local result = nil
-  for _,eventPoint in pairs(self._eventPoints) do
-    if (eventPoint:DiffAble() and eventPoint:ModeAble()) or force then
-      if not result then
-        result = {}
-      end
-      ;
-      (table.insert)(result, eventPoint)
+function SeasonMapZone:GetEventPointsByType(eventPointType, force)
+  local result
+  for _, eventPoint in pairs(self._eventPoints) do
+    if eventPoint:EventPointType() == eventPointType and (eventPoint:DiffAble() and eventPoint:ModeAble() or force) then
+      result = result or {}
+      table.insert(result, eventPoint)
     end
   end
   return result
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapZone.SwitchDiff = function(self, diff)
-  -- function num : 0_12 , upvalues : _ENV
-  for _,eventPoint in pairs(self._eventPoints) do
+function SeasonMapZone:SwitchDiff(diff)
+  for _, eventPoint in pairs(self._eventPoints) do
     if eventPoint:IsUnlock() then
       eventPoint:SwitchDiff(diff)
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapZone.EventPointPlaying = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  for _,eventPoint in pairs(self._eventPoints) do
+function SeasonMapZone:EventPointPlaying()
+  for _, eventPoint in pairs(self._eventPoints) do
     local isPlaying, id = eventPoint:IsPlaying()
     if isPlaying then
       return isPlaying, id
@@ -165,26 +112,18 @@ SeasonMapZone.EventPointPlaying = function(self)
   return false, nil
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapZone.SwitchMapMode = function(self, mapMode)
-  -- function num : 0_14 , upvalues : _ENV
-  for _,eventPoint in pairs(self._eventPoints) do
+function SeasonMapZone:SwitchMapMode(mapMode)
+  for _, eventPoint in pairs(self._eventPoints) do
     if eventPoint:IsUnlock() then
       eventPoint:SwitchMapMode(mapMode)
     end
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapZone.TryResumeExpress = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  for _,eventPoint in pairs(self._eventPoints) do
+function SeasonMapZone:TryResumeExpress()
+  for _, eventPoint in pairs(self._eventPoints) do
     if eventPoint:IsUnlock() then
       eventPoint:TryResumeExpress()
     end
   end
 end
-
-

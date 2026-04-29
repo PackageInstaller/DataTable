@@ -1,84 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/loading/homeland_enter_loading_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandEnterLoadingHandler", LoadingHandler)
 HomelandEnterLoadingHandler = HomelandEnterLoadingHandler
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandEnterLoadingHandler.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.notice)("[Homeland] 开始家园Loading")
-  ;
-  (Log.debug)("[HomelandProfile] (HomelandEnterLoadingHandler.Constructor) LoadingHandlerCtor")
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("HomelandEnterLoading")
+function HomelandEnterLoadingHandler:Constructor()
+  Log.notice("[Homeland] 开始家园Loading")
+  Log.debug("[HomelandProfile] (HomelandEnterLoadingHandler.Constructor) LoadingHandlerCtor")
+  GameGlobal.UIStateManager():Lock("HomelandEnterLoading")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEnterLoadingHandler.PreLoadBeforeLoadLevel = function(self, TT, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  if not self._reqStateTable then
-    self._reqStateTable = {}
-    ;
-    (Log.debug)("[homeland loading] HomelandEnterLoadingHandler:_module:EnterHomeLand start")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(function()
-    -- function num : 0_1_0 , upvalues : self, TT
-    self._ack = (self._homelandModule):EnterHomeLand(TT, self._reqStateTable)
-  end
-)
-  end
+function HomelandEnterLoadingHandler:PreLoadBeforeLoadLevel(TT, ...)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
+  self._reqStateTable = self._reqStateTable or {}
+  Log.debug("[homeland loading] HomelandEnterLoadingHandler:_module:EnterHomeLand start")
+  GameGlobal.TaskManager():StartTask(function()
+    self._ack = self._homelandModule:EnterHomeLand(TT, self._reqStateTable)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEnterLoadingHandler.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  (Log.debug)("[homeland loading] HomelandEnterLoadingHandler:PreLoadAfterLoadLevel start")
-  ;
-  (LoadingHandler.PreLoadAfterLoadLevel)(self, TT, ...)
-  ;
-  (Log.debug)("[homeland loading] HomelandEnterLoadingHandler:PreLoadAfterLoadLevel end")
-  local _uimodule = (GameGlobal.GetUIModule)(HomelandModule)
+function HomelandEnterLoadingHandler:PreLoadAfterLoadLevel(TT, ...)
+  Log.debug("[homeland loading] HomelandEnterLoadingHandler:PreLoadAfterLoadLevel start")
+  LoadingHandler.PreLoadAfterLoadLevel(self, TT, ...)
+  Log.debug("[homeland loading] HomelandEnterLoadingHandler:PreLoadAfterLoadLevel end")
+  local _uimodule = GameGlobal.GetUIModule(HomelandModule)
   if _uimodule:IsRunning() then
-    (Log.exception)("严重错误，当前家园正在运行！")
-    return 
+    Log.exception("严重错误，当前家园正在运行！")
+    return
   end
-  ;
-  (Log.debug)("[HomelandProfile] (HomelandEnterLoadingHandler:PreLoadAfterLoadLevel) BeginRequestHomelandData")
-  while not (self._reqStateTable).homelandDataFinish do
+  Log.debug("[HomelandProfile] (HomelandEnterLoadingHandler:PreLoadAfterLoadLevel) BeginRequestHomelandData")
+  while not self._reqStateTable.homelandDataFinish do
     YIELD(TT)
   end
-  if not (self._ack):GetSucc() then
-    (Log.fatal)("请求家园数据失败:", ack:GetResult())
-    return 
+  if not self._ack:GetSucc() then
+    Log.fatal("请求家园数据失败:", ack:GetResult())
+    return
   end
-  ;
-  (Log.debug)("[HomelandProfile] (HomelandEnterLoadingHandler:PreLoadAfterLoadLevel) FinishRequestHomelandData")
+  Log.debug("[HomelandProfile] (HomelandEnterLoadingHandler:PreLoadAfterLoadLevel) FinishRequestHomelandData")
   YIELD(TT)
   _uimodule:EnterHomeland(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEnterLoadingHandler.OnLoadingFinish = function(self, ...)
-  -- function num : 0_3 , upvalues : _ENV
-  local enterCallback = ((GameGlobal.GetUIModule)(HomelandModule)):GetEnterCallback()
+function HomelandEnterLoadingHandler:OnLoadingFinish(...)
+  local enterCallback = GameGlobal.GetUIModule(HomelandModule):GetEnterCallback()
   if enterCallback then
     enterCallback()
   else
-    local loadingParams = {...}
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIHomeland, self.sceneResReq, (table.unpack)(loadingParams))
+    local loadingParams = {
+      ...
+    }
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIHomeland, self.sceneResReq, table.unpack(loadingParams))
   end
-  do
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("HomelandEnterLoading")
-  end
+  GameGlobal.UIStateManager():UnLock("HomelandEnterLoading")
 end
-
-

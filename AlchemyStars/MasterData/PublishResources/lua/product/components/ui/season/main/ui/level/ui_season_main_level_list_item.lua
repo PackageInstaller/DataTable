@@ -1,59 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/level/ui_season_main_level_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMainLevelListItem", UICustomWidget)
 UISeasonMainLevelListItem = UISeasonMainLevelListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMainLevelListItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMainLevelListItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMainLevelListItem:InitWidget()
   self.levelName = self:GetUIComponent("UILocalizationText", "levelName")
   self.star = self:GetGameObject("star")
-  self._stars = {self:GetGameObject("star1"), self:GetGameObject("star2"), self:GetGameObject("star3")}
+  self._stars = {
+    self:GetGameObject("star1"),
+    self:GetGameObject("star2"),
+    self:GetGameObject("star3")
+  }
   self.item = self:GetUIComponent("UISelectObjectPath", "item")
   self._lockTip = self:GetGameObject("LockTip")
-  self._anim = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
+  self._anim = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
   self._root = self:GetGameObject("Root")
   self._atlas = self:GetAsset("UISeasonMain.spriteatlas", LoadType.SpriteAtlas)
   self._icon = self:GetUIComponent("Image", "Icon")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListItem.SetData = function(self, data, onClick)
-  -- function num : 0_2
+function UISeasonMainLevelListItem:SetData(data, onClick)
   self._data = data
   self._onClick = onClick
-  ;
-  (self._lockTip):SetActive(not (self._data):IsUnlock())
+  self._lockTip:SetActive(not self._data:IsUnlock())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListItem.RefreshByDiff = function(self, curDiff)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMainLevelListItem:RefreshByDiff(curDiff)
   self._curDiff = curDiff
-  local levelCfg = (self._data):GetMissionCfgByDiff(self._curDiff)
-  local star = (self._data):GetStarByDiff(self._curDiff)
+  local levelCfg = self._data:GetMissionCfgByDiff(self._curDiff)
+  local star = self._data:GetStarByDiff(self._curDiff)
   for i = 1, 3 do
-    ((self._stars)[i]):SetActive(i <= star)
+    self._stars[i]:SetActive(i <= star)
   end
-  local awards = (self._data):GetAwardsByDiff(self._curDiff)
+  local awards = self._data:GetAwardsByDiff(self._curDiff)
   local tmp = {}
   for i = 1, #awards do
     tmp[#awards - i + 1] = awards[i]
   end
   awards = tmp
-  local items = (self.item):SpawnObjects("UISeasonMainLevelListAsset", #awards)
+  local items = self.item:SpawnObjects("UISeasonMainLevelListAsset", #awards)
   for i = 1, #awards do
     local item = items[i]
     local award = awards[i]
@@ -61,65 +48,34 @@ UISeasonMainLevelListItem.RefreshByDiff = function(self, curDiff)
     local count = award.Count
     item:SetData(id, count)
   end
-  ;
-  (self.levelName):SetText((StringTable.Get)(levelCfg.Name))
-  -- DECOMPILER ERROR at PC74: Confused about usage of register: R7 in 'UnsetPending'
-
+  self.levelName:SetText(StringTable.Get(levelCfg.Name))
   if self._curDiff == UISeasonLevelDiff.Normal then
-    (self.levelName).color = Color(0.8078431372549, 0.61960784313725, 0.25490196078431)
-    -- DECOMPILER ERROR at PC80: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._icon).sprite = (self._atlas):GetSprite("exp_s1_map_icon13")
-  else
-    -- DECOMPILER ERROR at PC93: Confused about usage of register: R7 in 'UnsetPending'
-
-    if self._curDiff == UISeasonLevelDiff.Hard then
-      (self.levelName).color = Color(0.79607843137255, 0.31372549019608, 0.22352941176471)
-      -- DECOMPILER ERROR at PC99: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._icon).sprite = (self._atlas):GetSprite("exp_s1_map_icon14")
-    end
+    self.levelName.color = Color(0.807843137254902, 0.6196078431372549, 0.2549019607843137)
+    self._icon.sprite = self._atlas:GetSprite("exp_s1_map_icon13")
+  elseif self._curDiff == UISeasonLevelDiff.Hard then
+    self.levelName.color = Color(0.796078431372549, 0.3137254901960784, 0.2235294117647059)
+    self._icon.sprite = self._atlas:GetSprite("exp_s1_map_icon14")
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListItem.PrepareAnim = function(self)
-  -- function num : 0_4
-  (self._root):SetActive(false)
+function UISeasonMainLevelListItem:PrepareAnim()
+  self._root:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListItem.PlayEnterAnim = function(self)
-  -- function num : 0_5
-  (self._root):SetActive(true)
-  ;
-  (self._anim):Play("uianim_UISeasonMainLevelListItem_in")
+function UISeasonMainLevelListItem:PlayEnterAnim()
+  self._root:SetActive(true)
+  self._anim:Play("uianim_UISeasonMainLevelListItem_in")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListItem.PlaySwitchAnim = function(self)
-  -- function num : 0_6
-  (self._root):SetActive(true)
-  ;
-  (self._anim):Play("uianim_UISeasonMainLevelListItem_switch_in")
+function UISeasonMainLevelListItem:PlaySwitchAnim()
+  self._root:SetActive(true)
+  self._anim:Play("uianim_UISeasonMainLevelListItem_switch_in")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListItem.RootOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  local seasonManager = ((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()
+function UISeasonMainLevelListItem:RootOnClick(go)
+  local seasonManager = GameGlobal.GetUIModule(SeasonModule):SeasonManager()
   if seasonManager:LockUI() then
-    return 
+    return
   end
-  ;
-  (self._onClick)(self._data)
+  self._onClick(self._data)
 end
-
-

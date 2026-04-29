@@ -1,49 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_book/map/ui_book_role_map_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBookRoleMapController", UIController)
 UIBookRoleMapController = UIBookRoleMapController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBookRoleMapController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBookRoleMapController:Constructor()
   self._mapStatue = BookRoleMapStatue.Normal
-  self._mapList = {"n9_rsqb_big_map1", "n9_rsqb_big_map2", "n9_rsqb_big_map3", "n9_rsqb_big_map4", "n9_rsqb_big_map5", "n9_rsqb_big_map6", "n9_rsqb_big_map7", "n9_rsqb_big_map8"}
+  self._mapList = {
+    "n9_rsqb_big_map1",
+    "n9_rsqb_big_map2",
+    "n9_rsqb_big_map3",
+    "n9_rsqb_big_map4",
+    "n9_rsqb_big_map5",
+    "n9_rsqb_big_map6",
+    "n9_rsqb_big_map7",
+    "n9_rsqb_big_map8"
+  }
   self._classAPointGroup = {}
   self._classBPointGroup = {}
   self._curSelectMapPoint = nil
   self._forceMoveSpeed = 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIBookRoleMapController:OnShow(uiParams)
   self:_GetComponents()
   self:_InitComponents()
   self:_InitButtonClickAnim()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapController.OnHide = function(self)
-  -- function num : 0_2
+function UIBookRoleMapController:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapController._GetComponents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIBookRoleMapController:_GetComponents()
   local topButton = self:GetUIComponent("UISelectObjectPath", "topbtn")
   self.topButtonWidget = topButton:SpawnObject("UINewCommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_3_0 , upvalues : self
+  self.topButtonWidget:SetData(function()
     self:_Close()
-  end
-)
+  end)
   self._mapContent = self:GetUIComponent("UISelectObjectPath", "MapContent")
   self._scaleBtn = self:GetUIComponent("Image", "ScaleBtn")
   self._overviewContent = self:GetUIComponent("UISelectObjectPath", "OverviewContent")
@@ -71,275 +61,193 @@ UIBookRoleMapController._GetComponents = function(self)
   self._secondMapPointContentObj = self:GetGameObject("SecondMapPointContent")
   self._overviewBtnObj = self:GetGameObject("OverviewBtn")
   self.altas = self:GetAsset("UIBookMap.spriteatlas", LoadType.SpriteAtlas)
-  self._req = (ResourceManager:GetInstance()):SyncLoadAsset("ui_book_role_map_font.mat", LoadType.Mat)
-  if self._req and (self._req).Obj then
-    self.material = (self._req).Obj
+  self._req = ResourceManager:GetInstance():SyncLoadAsset("ui_book_role_map_font.mat", LoadType.Mat)
+  if self._req and self._req.Obj then
+    self.material = self._req.Obj
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapController._Close = function(self)
-  -- function num : 0_4
+function UIBookRoleMapController:_Close()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapController._InitComponents = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local mapItems = (self._mapContent):SpawnObjects("UIMapSubItem", #self._mapList)
-  for i,mapItem in pairs(mapItems) do
-    mapItem:Flush(i, (self._mapList)[i])
+function UIBookRoleMapController:_InitComponents()
+  local mapItems = self._mapContent:SpawnObjects("UIMapSubItem", #self._mapList)
+  for i, mapItem in pairs(mapItems) do
+    mapItem:Flush(i, self._mapList[i])
   end
-  ;
-  ((self._secondMapPointContentObj).transform):SetAsLastSibling()
-  local tempACfgs = (Cfg.cfg_force_book)({})
+  self._secondMapPointContentObj.transform:SetAsLastSibling()
+  local tempACfgs = Cfg.cfg_force_book({})
   local classACfgs = {}
-  local classBCfgs = (Cfg.cfg_force_book_second)({})
-  for _,v in pairs(tempACfgs) do
+  local classBCfgs = Cfg.cfg_force_book_second({})
+  for _, v in pairs(tempACfgs) do
     if v.Pos then
-      (table.insert)(classACfgs, v)
+      table.insert(classACfgs, v)
     end
   end
-  self._classAPointGroup = (self._mapPointContent):SpawnObjects("UIBookRoleMapPointItem", (table.count)(classACfgs))
-  self._classBPointGroup = (self._secondMapPointContent):SpawnObjects("UIBookRoleMapPointItem", (table.count)(classBCfgs))
-  for i,point in pairs(self._classAPointGroup) do
+  self._classAPointGroup = self._mapPointContent:SpawnObjects("UIBookRoleMapPointItem", table.count(classACfgs))
+  self._classBPointGroup = self._secondMapPointContent:SpawnObjects("UIBookRoleMapPointItem", table.count(classBCfgs))
+  for i, point in pairs(self._classAPointGroup) do
     local pointData = {}
-    pointData.id = (classACfgs[i]).ID
+    pointData.id = classACfgs[i].ID
     pointData.type = BookRoleMapPointType.ClassA
     point:SetData(pointData, function(cfg)
-    -- function num : 0_5_0 , upvalues : self, _ENV
-    if cfg.Tags then
-      self:ShowDialog("UIBookRoleRelationController", cfg.Tags)
-    else
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_book_force_noinfo"))
-      return 
-    end
-  end
-)
+      if cfg.Tags then
+        self:ShowDialog("UIBookRoleRelationController", cfg.Tags)
+      else
+        ToastManager.ShowToast(StringTable.Get("str_book_force_noinfo"))
+        return
+      end
+    end)
   end
   local index = 1
-  for _,cfg in pairs(classBCfgs) do
-    local point = (self._classBPointGroup)[index]
+  for _, cfg in pairs(classBCfgs) do
+    local point = self._classBPointGroup[index]
     local pointData = {}
     pointData.id = cfg.ID
     pointData.type = BookRoleMapPointType.ClassB
     point:SetData(pointData, function(cfg, item)
-    -- function num : 0_5_1 , upvalues : self
-    self:_InitDetailNodeInfo(cfg, item)
-  end
-)
+      self:_InitDetailNodeInfo(cfg, item)
+    end)
     index = index + 1
   end
-  local overViewCfgs = (Cfg.cfg_force_book)({IsActive = 1})
-  local forceCfgs = (Cfg.cfg_force_book)({IsActivePos = 1})
-  self._overviewItems = (self._overviewContent):SpawnObjects("UIBookRoleMapOverviewItem", (table.count)(overViewCfgs))
-  local forceItems = (self._forceContent):SpawnObjects("UIBookRoleMapForceItem", (table.count)(forceCfgs))
-  for i,item in pairs(self._overviewItems) do
-    item:SetData(overViewCfgs[i], R17_PC134, function(tagID)
-    -- function num : 0_5_2 , upvalues : self, _ENV
-    if tagID then
-      self:ShowDialog("UIBookRoleRelationController", tagID)
-    else
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_book_force_noinfo"))
-      return 
-    end
+  local overViewCfgs = Cfg.cfg_force_book({IsActive = 1})
+  local forceCfgs = Cfg.cfg_force_book({IsActivePos = 1})
+  self._overviewItems = self._overviewContent:SpawnObjects("UIBookRoleMapOverviewItem", table.count(overViewCfgs))
+  local forceItems = self._forceContent:SpawnObjects("UIBookRoleMapForceItem", table.count(forceCfgs))
+  for i, item in pairs(self._overviewItems) do
+    item:SetData(overViewCfgs[i], i, function(tagID)
+      if tagID then
+        self:ShowDialog("UIBookRoleRelationController", tagID)
+      else
+        ToastManager.ShowToast(StringTable.Get("str_book_force_noinfo"))
+        return
+      end
+    end)
   end
-)
-  end
-  for i,item in pairs(forceItems) do
-    item:SetData(forceCfgs[i], R17_PC134)
+  for i, item in pairs(forceItems) do
+    item:SetData(forceCfgs[i], function(cfg)
+      self:OnForceClicked(cfg)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapController._InitButtonClickAnim = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self:GetGameObject("ScaleBtn")), UIEvent.Press, function(go)
-    -- function num : 0_6_0 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIBookRoleMapController:_InitButtonClickAnim()
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self:GetGameObject("ScaleBtn")), UIEvent.Press, function(go)
     if self._mapStatue == BookRoleMapStatue.Normal then
-      (self._scaleBtn).sprite = (self.altas):GetSprite("n9_rsqb_icon04")
+      self._scaleBtn.sprite = self.altas:GetSprite("n9_rsqb_icon04")
     else
-      -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._scaleBtn).sprite = (self.altas):GetSprite("n9_rsqb_icon06")
+      self._scaleBtn.sprite = self.altas:GetSprite("n9_rsqb_icon06")
     end
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self:GetGameObject("ScaleBtn")), UIEvent.Release, function(go)
-    -- function num : 0_6_1 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self:GetGameObject("ScaleBtn")), UIEvent.Release, function(go)
     if self._mapStatue == BookRoleMapStatue.Normal then
-      (self._scaleBtn).sprite = (self.altas):GetSprite("n9_rsqb_icon03")
+      self._scaleBtn.sprite = self.altas:GetSprite("n9_rsqb_icon03")
     else
-      -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._scaleBtn).sprite = (self.altas):GetSprite("n9_rsqb_icon05")
+      self._scaleBtn.sprite = self.altas:GetSprite("n9_rsqb_icon05")
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapController.ChangeStatue = function(self, TT, statue)
-  -- function num : 0_7 , upvalues : _ENV
+function UIBookRoleMapController:ChangeStatue(TT, statue)
   if statue == self._mapStatue then
-    return 
+    return
   end
   self._mapStatue = statue
   self:Lock("UIBookRoleMapController_ChangeStatue")
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
   if self._mapStatue == BookRoleMapStatue.Normal then
-    (self._scaleBtn).sprite = (self.altas):GetSprite("n9_rsqb_icon03")
-    ;
-    (self._forceScrollObj):SetActive(false)
-    ;
-    (self._mainMapObj):SetActive(true)
-    ;
-    (self._overviewBtnObj):SetActive(true)
-    ;
-    (self._anim):Play("uianim_UIBookRoleMapController_big_out")
+    self._scaleBtn.sprite = self.altas:GetSprite("n9_rsqb_icon03")
+    self._forceScrollObj:SetActive(false)
+    self._mainMapObj:SetActive(true)
+    self._overviewBtnObj:SetActive(true)
+    self._anim:Play("uianim_UIBookRoleMapController_big_out")
     YIELD(TT, 1000)
-    ;
-    (self._mapScrollObj):SetActive(false)
+    self._mapScrollObj:SetActive(false)
   else
-    -- DECOMPILER ERROR at PC49: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._scaleBtn).sprite = (self.altas):GetSprite("n9_rsqb_icon05")
-    ;
-    (self._forceScrollObj):SetActive(true)
-    ;
-    (self._mapScrollObj):SetActive(true)
-    ;
-    (self._overviewBtnObj):SetActive(false)
-    ;
-    (self._mapScroll):DONormalizedPos(Vector2(0.5, 0.5), 0, false)
-    ;
-    (self._anim):Play("uianim_UIBookRoleMapController_big_in")
+    self._scaleBtn.sprite = self.altas:GetSprite("n9_rsqb_icon05")
+    self._forceScrollObj:SetActive(true)
+    self._mapScrollObj:SetActive(true)
+    self._overviewBtnObj:SetActive(false)
+    self._mapScroll:DONormalizedPos(Vector2(0.5, 0.5), 0, false)
+    self._anim:Play("uianim_UIBookRoleMapController_big_in")
     YIELD(TT, 500)
-    ;
-    (self._mainMapObj):SetActive(false)
+    self._mainMapObj:SetActive(false)
   end
-  ;
-  (self._detailArea):SetActive(false)
+  self._detailArea:SetActive(false)
   if self._curSelectMapPoint then
-    (self._curSelectMapPoint):SetSelect(false)
+    self._curSelectMapPoint:SetSelect(false)
     self._curSelectMapPoint = nil
   end
   self:UnLock("UIBookRoleMapController_ChangeStatue")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapController._InitDetailNodeInfo = function(self, cfg, item)
-  -- function num : 0_8 , upvalues : _ENV
-  (self._detailArea):SetActive(true)
+function UIBookRoleMapController:_InitDetailNodeInfo(cfg, item)
+  self._detailArea:SetActive(true)
   if self._curSelectMapPoint then
-    (self._curSelectMapPoint):SetSelect(false)
+    self._curSelectMapPoint:SetSelect(false)
   end
   self._curSelectMapPoint = item
-  ;
-  (self._curSelectMapPoint):SetSelect(true)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._detailIcon).sprite = (self.altas):GetSprite(cfg.ForceIcon)
-  ;
-  (self._detailName):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self._detailIntro):SetText((StringTable.Get)(cfg.SecondIntro))
-  local oldMaterial = (self._detailName).fontMaterial
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._detailName).fontMaterial = self.material
-  ;
-  ((self._detailName).fontMaterial):SetTexture("_MainTex", oldMaterial:GetTexture("_MainTex"))
+  self._curSelectMapPoint:SetSelect(true)
+  self._detailIcon.sprite = self.altas:GetSprite(cfg.ForceIcon)
+  self._detailName:SetText(StringTable.Get(cfg.Name))
+  self._detailIntro:SetText(StringTable.Get(cfg.SecondIntro))
+  local oldMaterial = self._detailName.fontMaterial
+  self._detailName.fontMaterial = self.material
+  self._detailName.fontMaterial:SetTexture("_MainTex", oldMaterial:GetTexture("_MainTex"))
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : cfg, self, _ENV
     if cfg.PetList then
-      (self._representObj):SetActive(true)
-      local representItems = (self._representContent):SpawnObjects("UIBookRoleMapRepresentItem", (table.count)(cfg.PetList))
-      for i,item in pairs(representItems) do
-        item:SetData((cfg.PetList)[i], (cfg.PetHeadList)[i], function(petID)
-      -- function num : 0_8_0_0 , upvalues : self, _ENV
-      local petModule = self:GetModule(PetModule)
-      if petModule:HasPet(petID) then
-        self:ShowDialog("UIPetIntimacyMainController", petID, PetIntimacyWindowType.FilesPanel)
-      else
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)("str_book_force_ungotten"))
-        return 
-      end
-    end
-)
+      self._representObj:SetActive(true)
+      local representItems = self._representContent:SpawnObjects("UIBookRoleMapRepresentItem", table.count(cfg.PetList))
+      for i, item in pairs(representItems) do
+        item:SetData(cfg.PetList[i], cfg.PetHeadList[i], function(petID)
+          local petModule = self:GetModule(PetModule)
+          if petModule:HasPet(petID) then
+            self:ShowDialog("UIPetIntimacyMainController", petID, PetIntimacyWindowType.FilesPanel)
+          else
+            ToastManager.ShowToast(StringTable.Get("str_book_force_ungotten"))
+            return
+          end
+        end)
       end
     else
-      do
-        ;
-        (self._representObj):SetActive(false)
-        self:Lock("uianim_UIBookRoleMapController_illustrate_in")
-        ;
-        (self._anim):Play("uianim_UIBookRoleMapController_illustrate_in")
-        YIELD(TT, 500)
-        self:UnLock("uianim_UIBookRoleMapController_illustrate_in")
-      end
+      self._representObj:SetActive(false)
     end
-  end
-)
+    self:Lock("uianim_UIBookRoleMapController_illustrate_in")
+    self._anim:Play("uianim_UIBookRoleMapController_illustrate_in")
+    YIELD(TT, 500)
+    self:UnLock("uianim_UIBookRoleMapController_illustrate_in")
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapController.OnForceClicked = function(self, cfg)
-  -- function num : 0_9 , upvalues : _ENV
-  local targetPos = Vector2((cfg.CenterPos)[1] / 100, (cfg.CenterPos)[2] / 100)
-  local mapContentSize = (self._mapContentRect).sizeDelta
+function UIBookRoleMapController:OnForceClicked(cfg)
+  local targetPos = Vector2(cfg.CenterPos[1] / 100, cfg.CenterPos[2] / 100)
+  local mapContentSize = self._mapContentRect.sizeDelta
   local constNumX = 300 * ((targetPos.x + mapContentSize.x / 2) / mapContentSize.x - 1)
   local constNumY = 300 * ((targetPos.y + mapContentSize.y / 2) / mapContentSize.y - 0.5)
-  local compensateWidth = constNumX * (ResolutionManager.ScreenHeight)() / (ResolutionManager.ScreenWidth)()
-  local compensateHeight = constNumY * (ResolutionManager.ScreenWidth)() / (ResolutionManager.ScreenHeight)()
+  local compensateWidth = constNumX * ResolutionManager.ScreenHeight() / ResolutionManager.ScreenWidth()
+  local compensateHeight = constNumY * ResolutionManager.ScreenWidth() / ResolutionManager.ScreenHeight()
   local horizontalPercent = (targetPos.x + mapContentSize.x / 2 + compensateWidth) / mapContentSize.x
   local verticalPercent = (targetPos.y + mapContentSize.y / 2 + compensateHeight) / mapContentSize.y
   local percent = Vector2(horizontalPercent, verticalPercent)
-  local verticalTime = (math.abs)((self._mapScroll).verticalNormalizedPosition - verticalPercent) / self._forceMoveSpeed
-  local horizontalTime = (math.abs)((self._mapScroll).horizontalNormalizedPosition - horizontalPercent) / self._forceMoveSpeed
-  local lockTime = horizontalTime < verticalTime and verticalTime or horizontalTime
-  ;
-  (self._mapScroll):DONormalizedPos(percent, lockTime, false)
+  local verticalTime = math.abs(self._mapScroll.verticalNormalizedPosition - verticalPercent) / self._forceMoveSpeed
+  local horizontalTime = math.abs(self._mapScroll.horizontalNormalizedPosition - horizontalPercent) / self._forceMoveSpeed
+  local lockTime = verticalTime > horizontalTime and verticalTime or horizontalTime
+  self._mapScroll:DONormalizedPos(percent, lockTime, false)
   if self._curSelectMapPoint then
-    (self._curSelectMapPoint):SetSelect(false)
+    self._curSelectMapPoint:SetSelect(false)
     self._curSelectMapPoint = nil
   end
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, lockTime, _ENV
-    (self._anim):Play("uianim_UIBookRoleMapController_illustrate_out")
+    self._anim:Play("uianim_UIBookRoleMapController_illustrate_out")
     self:Lock("UIBookRoleMapController:OnForceClicked")
-    lockTime = lockTime > 500 and lockTime or 500
+    lockTime = 500 < lockTime and lockTime or 500
     YIELD(TT, lockTime)
     self:UnLock("UIBookRoleMapController:OnForceClicked")
-    ;
-    (self._detailArea):SetActive(false)
-  end
-)
+    self._detailArea:SetActive(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapController.ScaleBtnOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIBookRoleMapController:ScaleBtnOnClick()
   if self._mapStatue == BookRoleMapStatue.Normal then
     self:StartTask(self.ChangeStatue, self, BookRoleMapStatue.Detail)
   else
@@ -347,78 +255,42 @@ UIBookRoleMapController.ScaleBtnOnClick = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapController.OverviewBtnOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  (self._fullBtnObj):SetActive(true)
-  ;
-  (self._overviewScrollObj):SetActive(true)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._overviewBtn).sprite = (self.altas):GetSprite("n9_rsqb_icon02")
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._overViewBg).sprite = (self.altas):GetSprite("n9_rsqb_di02")
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._overViewName).color = Color(0.14117647058824, 0.14509803921569, 0.17254901960784)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._overViewScroll).verticalNormalizedPosition = 1
+function UIBookRoleMapController:OverviewBtnOnClick()
+  self._fullBtnObj:SetActive(true)
+  self._overviewScrollObj:SetActive(true)
+  self._overviewBtn.sprite = self.altas:GetSprite("n9_rsqb_icon02")
+  self._overViewBg.sprite = self.altas:GetSprite("n9_rsqb_di02")
+  self._overViewName.color = Color(0.1411764705882353, 0.1450980392156863, 0.17254901960784313)
+  self._overViewScroll.verticalNormalizedPosition = 1
   self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : self, _ENV
     self:Lock("uianim_UIBookRoleMapController_list_in")
-    ;
-    (self._anim):Play("uianim_UIBookRoleMapController_list_in")
-    for _,item in pairs(self._overviewItems) do
+    self._anim:Play("uianim_UIBookRoleMapController_list_in")
+    for _, item in pairs(self._overviewItems) do
       item:PlayInAnimation()
     end
     YIELD(TT, 334)
     self:UnLock("uianim_UIBookRoleMapController_list_in")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapController.FullBtnOnClick = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._overviewBtn).sprite = (self.altas):GetSprite("n9_rsqb_icon01")
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._overViewBg).sprite = (self.altas):GetSprite("n9_rsqb_di01")
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._overViewName).color = Color(0.82745098039216, 0.82745098039216, 0.82745098039216)
+function UIBookRoleMapController:FullBtnOnClick()
+  self._overviewBtn.sprite = self.altas:GetSprite("n9_rsqb_icon01")
+  self._overViewBg.sprite = self.altas:GetSprite("n9_rsqb_di01")
+  self._overViewName.color = Color(0.8274509803921568, 0.8274509803921568, 0.8274509803921568)
   self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : self, _ENV
     self:Lock("uianim_UIBookRoleMapController_list_out")
-    ;
-    (self._anim):Play("uianim_UIBookRoleMapController_list_out")
+    self._anim:Play("uianim_UIBookRoleMapController_list_out")
     YIELD(TT, 334)
-    for _,item in pairs(self._overviewItems) do
+    for _, item in pairs(self._overviewItems) do
       item:ResetAnim()
     end
-    ;
-    (self._fullBtnObj):SetActive(false)
-    ;
-    (self._overviewScrollObj):SetActive(false)
+    self._fullBtnObj:SetActive(false)
+    self._overviewScrollObj:SetActive(false)
     self:UnLock("uianim_UIBookRoleMapController_list_out")
-  end
-)
+  end)
 end
 
 local BookRoleMapStatue = {Normal = 1, Detail = 2}
 _enum("BookRoleMapStatue", BookRoleMapStatue)
 local BookRoleMapPointType = {ClassA = 1, ClassB = 2}
 _enum("BookRoleMapPointType", BookRoleMapPointType)
-

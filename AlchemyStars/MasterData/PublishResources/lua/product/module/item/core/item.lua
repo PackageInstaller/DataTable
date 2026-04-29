@@ -1,155 +1,87 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/item/core/item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Item", Object)
 Item = Item
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Item.Constructor = function(self, fac, data)
-  -- function num : 0_0 , upvalues : _ENV
+function Item:Constructor(fac, data)
   self.m_data = data
-  self.m_template_data = (Cfg.cfg_item)[data.template_id]
-  ;
-  (Log.assert)(self.m_template_data ~= nil, "Item:Constructor error template_id", data.template_id)
-  self.m_new_max_level = ((Cfg.cfg_global).ui_backpack_new_max_level).IntValue
+  self.m_template_data = Cfg.cfg_item[data.template_id]
+  Log.assert(self.m_template_data ~= nil, "Item:Constructor error template_id", data.template_id)
+  self.m_new_max_level = Cfg.cfg_global.ui_backpack_new_max_level.IntValue
   if self.m_template_data == nil then
-    (Log.error)("Item:Constructor cant find tempate ", data.template_id)
+    Log.error("Item:Constructor cant find tempate ", data.template_id)
   end
-  self.m_ext = fac:Alloc((self.m_template_data).ItemSubType)
-  do
-    if self.m_ext ~= nil and data.custom_data then
-      local ret, msg = (lua_dc.LoadStream)((self.m_ext)._className, data.custom_data, self.m_ext)
-      if ret == nil then
-        (Log.error)("Item Constructor lua_dc.LoadStream error ", (self.m_ext)._className, msg)
-      end
+  self.m_ext = fac:Alloc(self.m_template_data.ItemSubType)
+  if self.m_ext ~= nil and data.custom_data then
+    local ret, msg = lua_dc.LoadStream(self.m_ext._className, data.custom_data, self.m_ext)
+    if ret == nil then
+      Log.error("Item Constructor lua_dc.LoadStream error ", self.m_ext._className, msg)
     end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Item.GetExt = function(self)
-  -- function num : 0_1
+function Item:GetExt()
   return self.m_ext
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Item.GetID = function(self)
-  -- function num : 0_2
-  return (self.m_data).item_pstid
+function Item:GetID()
+  return self.m_data.item_pstid
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Item.GetTemplate = function(self)
-  -- function num : 0_3
+function Item:GetTemplate()
   return self.m_template_data
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Item.GetTemplateID = function(self)
-  -- function num : 0_4
-  return (self.m_data).template_id
+function Item:GetTemplateID()
+  return self.m_data.template_id
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Item.GetData = function(self)
-  -- function num : 0_5
+function Item:GetData()
   return self.m_data
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Item.SetData = function(self, data)
-  -- function num : 0_6
+function Item:SetData(data)
   self.m_data = data
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Item.GetCount = function(self)
-  -- function num : 0_7
-  return (self.m_data).count
+function Item:GetCount()
+  return self.m_data.count
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Item.GetFlagStatus = function(self)
-  -- function num : 0_8
-  do return (self.m_data).flags == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function Item:GetFlagStatus()
+  return self.m_data.flags == 1
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Item.GetGainTime = function(self)
-  -- function num : 0_9
-  return (self.m_data).gain_time
+function Item:GetGainTime()
+  return self.m_data.gain_time
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Item.IsNew = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local flag = (self.m_data).flags & ItemDataFlags.Item_Flag_Is_New_Obtain > 0
-  do return flag end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function Item:IsNew()
+  local flag = self.m_data.flags & ItemDataFlags.Item_Flag_Is_New_Obtain > 0
+  return flag
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Item.IsNewFurniture = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  if (self.m_template_data).ItemSubType ~= ItemSubType.ItemSubType_Furniture then
+function Item:IsNewFurniture()
+  if self.m_template_data.ItemSubType ~= ItemSubType.ItemSubType_Furniture then
     return false
   end
-  do return (self.m_data).flags & ItemDataFlags.Item_Flag_Is_New_Furniture > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return self.m_data.flags & ItemDataFlags.Item_Flag_Is_New_Furniture > 0
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Item.IsNewOverlay = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  do return (self.m_data).flags & ItemDataFlags.Item_Flag_Is_New_Overlay > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function Item:IsNewOverlay()
+  return self.m_data.flags & ItemDataFlags.Item_Flag_Is_New_Overlay > 0
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Item.IsHomelandNew = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  do return (self.m_data).flags & ItemDataFlags.Item_Flag_Is_New_Obtain > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function Item:IsHomelandNew()
+  return self.m_data.flags & ItemDataFlags.Item_Flag_Is_New_Obtain > 0
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Item.SetOldFurniture = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  if (self.m_template_data).ItemSubType ~= ItemSubType.ItemSubType_Furniture then
-    return 
+function Item:SetOldFurniture()
+  if self.m_template_data.ItemSubType ~= ItemSubType.ItemSubType_Furniture then
+    return
   end
   local nMask = ~ItemDataFlags.Item_Flag_Is_New_Furniture
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_data).flags = (self.m_data).flags & nMask
+  self.m_data.flags = self.m_data.flags & nMask
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Item.IsAwakeDirectlyItem = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  if (self.m_template_data).UseEffect then
-    return (string.find)((self.m_template_data).UseEffect, "AwakeGift")
-  end
+function Item:IsAwakeDirectlyItem()
+  return self.m_template_data.UseEffect and string.find(self.m_template_data.UseEffect, "AwakeGift")
 end
-
-

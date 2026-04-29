@@ -1,80 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/logic_round_team_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LogicRoundTeamComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-LogicRoundTeamComponent.Constructor = function(self)
-  -- function num : 0_0
+function LogicRoundTeamComponent:Constructor()
   self._roundTeam = {}
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicRoundTeamComponent.GetPetRoundTeam = function(self)
-  -- function num : 0_1
+function LogicRoundTeamComponent:GetPetRoundTeam()
   return self._roundTeam
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicRoundTeamComponent.AddPetToRoundTeam = function(self, entityID)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (table.icontains)(self._roundTeam, entityID) then
-    (self._roundTeam)[#self._roundTeam + 1] = entityID
+function LogicRoundTeamComponent:AddPetToRoundTeam(entityID)
+  if not table.icontains(self._roundTeam, entityID) then
+    self._roundTeam[#self._roundTeam + 1] = entityID
   end
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicRoundTeamComponent.ClearLogicRoundTeam = function(self)
-  -- function num : 0_3
+function LogicRoundTeamComponent:ClearLogicRoundTeam()
   self._roundTeam = {}
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.LogicRoundTeam = function(self)
-  -- function num : 0_4
-  return self:GetComponent((self.WEComponentsEnum).LogicRoundTeam)
+function Entity:LogicRoundTeam()
+  return self:GetComponent(self.WEComponentsEnum.LogicRoundTeam)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasLogicRoundTeam = function(self)
-  -- function num : 0_5
-  return self:HasComponent((self.WEComponentsEnum).LogicRoundTeam)
+function Entity:HasLogicRoundTeam()
+  return self:HasComponent(self.WEComponentsEnum.LogicRoundTeam)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddLogicRoundTeam = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LogicRoundTeam
+function Entity:AddLogicRoundTeam()
+  local index = self.WEComponentsEnum.LogicRoundTeam
   local component = LogicRoundTeamComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceLogicRoundTeam = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LogicRoundTeam
+function Entity:ReplaceLogicRoundTeam()
+  local index = self.WEComponentsEnum.LogicRoundTeam
   local component = LogicRoundTeamComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveLogicRoundTeam = function(self)
-  -- function num : 0_8
+function Entity:RemoveLogicRoundTeam()
   if self:HasLogicRoundTeam() then
-    self:RemoveComponent((self.WEComponentsEnum).LogicRoundTeam)
+    self:RemoveComponent(self.WEComponentsEnum.LogicRoundTeam)
   end
 end
-
-

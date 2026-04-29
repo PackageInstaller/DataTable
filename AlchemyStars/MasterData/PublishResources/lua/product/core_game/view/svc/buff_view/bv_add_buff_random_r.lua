@@ -1,51 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_add_buff_random_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddBuffRandom", BuffViewAddBuff)
 BuffViewAddBuffRandom = BuffViewAddBuffRandom
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddBuffRandom.IsNotifyMatch = function(self, notify)
-  -- function num : 0_0 , upvalues : _ENV
-  if notify.GetRandHalfDamageIndex and (self._buffResult).GetRandHalfDamageIndex then
+function BuffViewAddBuffRandom:IsNotifyMatch(notify)
+  if notify.GetRandHalfDamageIndex and self._buffResult.GetRandHalfDamageIndex then
     local halfRandDamageIndex = notify:GetRandHalfDamageIndex()
     if halfRandDamageIndex then
-      local buffHalfRandDamageIndex = (self._buffResult):GetRandHalfDamageIndex()
+      local buffHalfRandDamageIndex = self._buffResult:GetRandHalfDamageIndex()
       if buffHalfRandDamageIndex and buffHalfRandDamageIndex ~= halfRandDamageIndex then
         return false
       end
     end
   end
-  do
-    local attackPos = (self._buffResult):GetAttackPos()
-    local targetPos = (self._buffResult):GetTargetPos()
-    if notify.GetAttackPos and attackPos and notify.GetTargetPos and targetPos then
-      if attackPos == notify:GetAttackPos() and targetPos == notify:GetTargetPos() then
-        return true
-      else
-        return false
-      end
-    end
-    do
-      if notify:GetNotifyType() == NotifyType.NotifyLayerChange then
-        local n = notify
-        if (self._buffResult).__oldFinalLayer ~= n.__oldFinalLayer then
-          return false
-        end
-        if n:GetNotifyEntity() and (self._buffResult):GetNotifyLayerChange_Entity() ~= n:GetNotifyEntity() then
-          return false
-        end
-        return true
-      end
-      if (self._buffResult):GetWalkPos() ~= notify:GetPosNew() then
-        do return not notify or notify:GetNotifyType() ~= NotifyType.EntityMoveEnd end
-        do return true end
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
-      end
+  local attackPos = self._buffResult:GetAttackPos()
+  local targetPos = self._buffResult:GetTargetPos()
+  if notify.GetAttackPos and attackPos and notify.GetTargetPos and targetPos then
+    if attackPos == notify:GetAttackPos() and targetPos == notify:GetTargetPos() then
+      return true
+    else
+      return false
     end
   end
+  if notify:GetNotifyType() == NotifyType.NotifyLayerChange then
+    local n = notify
+    if self._buffResult.__oldFinalLayer ~= n.__oldFinalLayer then
+      return false
+    end
+    if n:GetNotifyEntity() and self._buffResult:GetNotifyLayerChange_Entity() ~= n:GetNotifyEntity() then
+      return false
+    end
+    return true
+  end
+  if notify and notify:GetNotifyType() == NotifyType.EntityMoveEnd then
+    return self._buffResult:GetWalkPos() == notify:GetPosNew()
+  end
+  return true
 end
-
-

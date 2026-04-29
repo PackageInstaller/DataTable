@@ -1,146 +1,93 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/network/3.call/message/basic_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LuaAppEvent", Object)
 LuaAppEvent = LuaAppEvent
 LuaEventType = LuaEventType
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
 
-LuaAppEvent.EventType = function(self)
-  -- function num : 0_0
+function LuaAppEvent:EventType()
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-LuaAppEvent.Encrypt = function(self)
-  -- function num : 0_1
+function LuaAppEvent:Encrypt()
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-LuaAppEvent.Reliable = function(self)
-  -- function num : 0_2
+function LuaAppEvent:Reliable()
 end
 
 _class("CPushEvent", LuaAppEvent)
 CPushEvent = CPushEvent
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
 
-CPushEvent.EventType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CPushEvent:EventType()
   return LuaEventType.LMT_PushEvent
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-CPushEvent.Encrypt = function(self)
-  -- function num : 0_4
+function CPushEvent:Encrypt()
   return true
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-CPushEvent.Reliable = function(self)
-  -- function num : 0_5
+function CPushEvent:Reliable()
   return true
 end
 
 _class("CCallEvent", LuaAppEvent)
 CCallEvent = CCallEvent
--- DECOMPILER ERROR at PC40: Confused about usage of register: R0 in 'UnsetPending'
 
-CCallEvent.Encrypt = function(self)
-  -- function num : 0_6
+function CCallEvent:Encrypt()
   return true
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R0 in 'UnsetPending'
-
-CCallEvent.Reliable = function(self)
-  -- function num : 0_7
+function CCallEvent:Reliable()
   return true
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R0 in 'UnsetPending'
-
-CCallEvent.Constructor = function(self)
-  -- function num : 0_8
+function CCallEvent:Constructor()
   self.flag = 0
 end
 
 _class("CCallRequestEvent", CCallEvent)
 CCallRequestEvent = CCallRequestEvent
--- DECOMPILER ERROR at PC55: Confused about usage of register: R0 in 'UnsetPending'
 
-CCallRequestEvent.EventType = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function CCallRequestEvent:EventType()
   return LuaEventType.LMT_CallRequestEvent
 end
 
 _class("CCallReplyEvent", CCallEvent)
 CCallReplyEvent = CCallReplyEvent
--- DECOMPILER ERROR at PC64: Confused about usage of register: R0 in 'UnsetPending'
 
-CCallReplyEvent.EventType = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function CCallReplyEvent:EventType()
   return LuaEventType.LMT_CallReplyEvent
 end
 
 _class("CSvrPushEvent", CPushEvent)
 CSvrPushEvent = CSvrPushEvent
--- DECOMPILER ERROR at PC73: Confused about usage of register: R0 in 'UnsetPending'
 
-CSvrPushEvent.EventType = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function CSvrPushEvent:EventType()
   return LuaEventType.LMT_SvrPushEvent
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R0 in 'UnsetPending'
-
-CSvrPushEvent.Reliable = function(self)
-  -- function num : 0_12
+function CSvrPushEvent:Reliable()
   return true
 end
 
 _class("CCliPushEvent", CPushEvent)
 CCliPushEvent = CCliPushEvent
--- DECOMPILER ERROR at PC85: Confused about usage of register: R0 in 'UnsetPending'
 
-CCliPushEvent.EventType = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function CCliPushEvent:EventType()
   return LuaEventType.LMT_CliPushEvent
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R0 in 'UnsetPending'
-
-CCliPushEvent.Reliable = function(self)
-  -- function num : 0_14
+function CCliPushEvent:Reliable()
   return true
 end
 
 _class("CMatchPushEvent", CPushEvent)
 CMatchPushEvent = CMatchPushEvent
--- DECOMPILER ERROR at PC97: Confused about usage of register: R0 in 'UnsetPending'
 
-CMatchPushEvent.EventType = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function CMatchPushEvent:EventType()
   return LuaEventType.LMT_MatchPushEvent
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R0 in 'UnsetPending'
-
-CMatchPushEvent.Encrypt = function(self)
-  -- function num : 0_16
+function CMatchPushEvent:Encrypt()
   return true
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R0 in 'UnsetPending'
-
-CMatchPushEvent.Reliable = function(self)
-  -- function num : 0_17
+function CMatchPushEvent:Reliable()
   return true
 end
-
-

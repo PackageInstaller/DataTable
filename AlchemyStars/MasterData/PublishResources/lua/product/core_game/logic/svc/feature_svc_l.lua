@@ -1,308 +1,235 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/feature_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("battle_ui_active_skill_cannot_cast_reason")
 _class("FeatureServiceLogic", BaseService)
 FeatureServiceLogic = FeatureServiceLogic
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureServiceLogic.CanEnableFeature = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  if (self._world):MatchType() == MatchType.MT_Chess then
+function FeatureServiceLogic:CanEnableFeature()
+  if self._world:MatchType() == MatchType.MT_Chess then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.DoInitFeatureList = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function FeatureServiceLogic:DoInitFeatureList()
   local logicFeatureCmpt = self:GetLogicCmpt()
   local featureCfgDataDic = self:_FindFeatureListCfgDataDic()
-  local featureDataList = (self._configService):ParseCustomFeatureList(featureCfgDataDic)
+  local featureDataList = self._configService:ParseCustomFeatureList(featureCfgDataDic)
   local featureCount = #featureDataList
-  ;
-  (Log.info)("DoInitFeatureList,count:", featureCount)
-  for index,featureParam in ipairs(featureDataList) do
-    (Log.info)("DoInitFeatureList,featureType:", featureParam:GetFeatureType())
+  Log.info("DoInitFeatureList,count:", featureCount)
+  for index, featureParam in ipairs(featureDataList) do
+    Log.info("DoInitFeatureList,featureType:", featureParam:GetFeatureType())
     logicFeatureCmpt:AddFeatureData(featureParam:GetFeatureType(), featureParam)
   end
   self:_HandleInitFeatureList()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.OnPartnerPetJoinCheckFeature = function(self, partnerPetEntity)
-  -- function num : 0_2 , upvalues : _ENV
+function FeatureServiceLogic:OnPartnerPetJoinCheckFeature(partnerPetEntity)
   local logicFeatureCmpt = self:GetLogicCmpt()
   local petFeatureCfgDataDic = self:_FindFeatureListCfgDataDicOnPet(partnerPetEntity)
   local featureCfgDataDic = {}
-  for featureType,cfgData in pairs(petFeatureCfgDataDic) do
+  for featureType, cfgData in pairs(petFeatureCfgDataDic) do
     if not self:HasFeatureType(featureType) then
       featureCfgDataDic[featureType] = cfgData
     end
   end
-  local featureDataList = (self._configService):ParseCustomFeatureList(featureCfgDataDic)
+  local featureDataList = self._configService:ParseCustomFeatureList(featureCfgDataDic)
   local featureCount = #featureDataList
-  ;
-  (Log.info)("OnPartnerPetJoinCheckFeature,count:", featureCount)
-  for index,featureParam in ipairs(featureDataList) do
-    (Log.info)("OnPartnerPetJoinCheckFeature,featureType:", featureParam:GetFeatureType())
+  Log.info("OnPartnerPetJoinCheckFeature,count:", featureCount)
+  for index, featureParam in ipairs(featureDataList) do
+    Log.info("OnPartnerPetJoinCheckFeature,featureType:", featureParam:GetFeatureType())
     logicFeatureCmpt:AddFeatureData(featureParam:GetFeatureType(), featureParam)
     self:_HandleInitFeature(featureParam:GetFeatureType(), featureParam)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.OnBuffAddFeature = function(self, cfgFeatureList)
-  -- function num : 0_3 , upvalues : _ENV
+function FeatureServiceLogic:OnBuffAddFeature(cfgFeatureList)
   local findFeatureDic = {}
   local logicFeatureCmpt = self:GetLogicCmpt()
   if cfgFeatureList then
     local buffFeatures = cfgFeatureList.feature
     if buffFeatures then
-      for featureType,featureData in pairs(buffFeatures) do
+      for featureType, featureData in pairs(buffFeatures) do
         if not findFeatureDic[featureType] then
           findFeatureDic[featureType] = featureData
         end
       end
     end
   end
-  do
-    local finalFeatureDic = {}
-    for featureType,featureData in pairs(findFeatureDic) do
-      finalFeatureDic[featureType] = featureData
+  local finalFeatureDic = {}
+  for featureType, featureData in pairs(findFeatureDic) do
+    finalFeatureDic[featureType] = featureData
+  end
+  for k, v in pairs(finalFeatureDic) do
+    finalFeatureDic[k] = table.cloneconf(v)
+  end
+  local buffFeatureCfgDataDic = finalFeatureDic
+  local featureCfgDataDic = {}
+  for featureType, cfgData in pairs(buffFeatureCfgDataDic) do
+    if not self:HasFeatureType(featureType) then
+      featureCfgDataDic[featureType] = cfgData
     end
-    for k,v in pairs(finalFeatureDic) do
-      finalFeatureDic[k] = (table.cloneconf)(v)
-    end
-    local buffFeatureCfgDataDic = finalFeatureDic
-    local featureCfgDataDic = {}
-    for featureType,cfgData in pairs(buffFeatureCfgDataDic) do
-      if not self:HasFeatureType(featureType) then
-        featureCfgDataDic[featureType] = cfgData
-      end
-    end
-    local featureDataList = (self._configService):ParseCustomFeatureList(featureCfgDataDic)
-    local featureCount = #featureDataList
-    ;
-    (Log.info)("OnBuffAddFeature,count:", featureCount)
-    for index,featureParam in ipairs(featureDataList) do
-      (Log.info)("OnBuffAddFeature,featureType:", featureParam:GetFeatureType())
-      logicFeatureCmpt:AddFeatureData(featureParam:GetFeatureType(), featureParam)
-      self:_HandleInitFeature(featureParam:GetFeatureType(), featureParam)
-    end
+  end
+  local featureDataList = self._configService:ParseCustomFeatureList(featureCfgDataDic)
+  local featureCount = #featureDataList
+  Log.info("OnBuffAddFeature,count:", featureCount)
+  for index, featureParam in ipairs(featureDataList) do
+    Log.info("OnBuffAddFeature,featureType:", featureParam:GetFeatureType())
+    logicFeatureCmpt:AddFeatureData(featureParam:GetFeatureType(), featureParam)
+    self:_HandleInitFeature(featureParam:GetFeatureType(), featureParam)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._FindFeatureListCfgDataDic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function FeatureServiceLogic:_FindFeatureListCfgDataDic()
   local finalForceParamList = {}
   local finalFeatureDic = {}
-  local levelConfigData = (self._configService):GetLevelConfigData()
+  local levelConfigData = self._configService:GetLevelConfigData()
   local levelFeatureList = levelConfigData:GetFeatureList()
   if levelFeatureList then
     local levelFeatures = levelFeatureList.feature
     if levelFeatures then
-      for featureType,featureData in pairs(levelFeatures) do
+      for featureType, featureData in pairs(levelFeatures) do
         finalFeatureDic[featureType] = featureData
       end
     end
-    do
-      do
-        if levelFeatureList.forceParam then
+    if levelFeatureList.forceParam then
+      local forceParamDic = {}
+      for featureType, forceData in pairs(levelFeatureList.forceParam) do
+        forceParamDic[featureType] = forceData
+      end
+      table.insert(finalForceParamList, forceParamDic)
+    end
+  end
+  local petsFeatureDic = {}
+  local petsForceParamList = {}
+  local petSkinsForceParamList = {}
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  local teamCmpt = teamEntity:Team()
+  local teamOrder = teamCmpt:GetTeamOrder()
+  for order, petPstID in ipairs(teamOrder) do
+    local petEntity = teamCmpt:GetPetEntityByPetPstID(petPstID)
+    local matchPet = petEntity:MatchPet():GetMatchPet()
+    local petFeatureList = matchPet:GetFeatureList()
+    if petFeatureList then
+      local petFeatures = petFeatureList.feature
+      if petFeatures then
+        for featureType, featureData in pairs(petFeatures) do
+          if not petsFeatureDic[featureType] then
+            petsFeatureDic[featureType] = featureData
+          end
+        end
+      end
+      if petFeatureList.forceParam then
+        local forceParamDic = {}
+        for featureType, forceData in pairs(petFeatureList.forceParam) do
+          forceParamDic[featureType] = forceData
+        end
+        table.insert(petsForceParamList, 1, forceParamDic)
+      end
+      local skinId = matchPet:GetSkinId()
+      local skinCfg = Cfg.cfg_pet_skin[skinId]
+      if skinCfg then
+        local customParamCfg = skinCfg.InnerCustomParam
+        if customParamCfg and customParamCfg.featureCustomParam then
+          local featureCustomParamCfg = customParamCfg.featureCustomParam
           local forceParamDic = {}
-          for featureType,forceData in pairs(levelFeatureList.forceParam) do
+          for featureType, forceData in pairs(featureCustomParamCfg) do
             forceParamDic[featureType] = forceData
           end
-          ;
-          (table.insert)(finalForceParamList, forceParamDic)
+          table.insert(petSkinsForceParamList, 1, forceParamDic)
         end
-        local petsFeatureDic = {}
-        local petsForceParamList = {}
-        local petSkinsForceParamList = {}
-        local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-        local teamCmpt = teamEntity:Team()
-        local teamOrder = teamCmpt:GetTeamOrder()
-        for order,petPstID in ipairs(teamOrder) do
-          local petEntity = teamCmpt:GetPetEntityByPetPstID(petPstID)
-          local matchPet = (petEntity:MatchPet()):GetMatchPet()
-          local petFeatureList = matchPet:GetFeatureList()
-          if petFeatureList then
-            local petFeatures = petFeatureList.feature
-            if petFeatures then
-              for featureType,featureData in pairs(petFeatures) do
-                if not petsFeatureDic[featureType] then
-                  petsFeatureDic[featureType] = featureData
-                end
-              end
-            end
-            do
-              do
-                if petFeatureList.forceParam then
-                  local forceParamDic = {}
-                  for featureType,forceData in pairs(petFeatureList.forceParam) do
-                    forceParamDic[featureType] = forceData
-                  end
-                  ;
-                  (table.insert)(petsForceParamList, 1, forceParamDic)
-                end
-                local skinId = matchPet:GetSkinId()
-                local skinCfg = (Cfg.cfg_pet_skin)[skinId]
-                if skinCfg then
-                  local customParamCfg = skinCfg.InnerCustomParam
-                  if customParamCfg and customParamCfg.featureCustomParam then
-                    local featureCustomParamCfg = customParamCfg.featureCustomParam
-                    local forceParamDic = {}
-                    for featureType,forceData in pairs(featureCustomParamCfg) do
-                      forceParamDic[featureType] = forceData
-                    end
-                    ;
-                    (table.insert)(petSkinsForceParamList, 1, forceParamDic)
-                  end
-                end
-                do
-                  local equipRefineFeatureList = matchPet:GetEquipRefineFeatureList()
-                  if equipRefineFeatureList then
-                    local petFeatures = equipRefineFeatureList.feature
-                    if petFeatures then
-                      for featureType,featureData in pairs(petFeatures) do
-                        if not petsFeatureDic[featureType] then
-                          petsFeatureDic[featureType] = featureData
-                        end
-                      end
-                    end
-                    do
-                      do
-                        if equipRefineFeatureList.forceParam then
-                          local forceParamDic = {}
-                          for featureType,forceData in pairs(equipRefineFeatureList.forceParam) do
-                            forceParamDic[featureType] = forceData
-                          end
-                          ;
-                          (table.insert)(petsForceParamList, 1, forceParamDic)
-                        end
-                        -- DECOMPILER ERROR at PC154: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC154: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                        -- DECOMPILER ERROR at PC154: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC154: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC154: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC154: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC154: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                        -- DECOMPILER ERROR at PC154: LeaveBlock: unexpected jumping out IF_STMT
-
-                      end
-                    end
-                  end
-                end
-              end
-            end
+      end
+    end
+    local equipRefineFeatureList = matchPet:GetEquipRefineFeatureList()
+    if equipRefineFeatureList then
+      local petFeatures = equipRefineFeatureList.feature
+      if petFeatures then
+        for featureType, featureData in pairs(petFeatures) do
+          if not petsFeatureDic[featureType] then
+            petsFeatureDic[featureType] = featureData
           end
         end
-        for featureType,featureData in pairs(petsFeatureDic) do
-          finalFeatureDic[featureType] = featureData
+      end
+      if equipRefineFeatureList.forceParam then
+        local forceParamDic = {}
+        for featureType, forceData in pairs(equipRefineFeatureList.forceParam) do
+          forceParamDic[featureType] = forceData
         end
-        for _,petForceParamDic in ipairs(petsForceParamList) do
-          (table.insert)(finalForceParamList, petForceParamDic)
-        end
-        for _,petSkinForceParamDic in ipairs(petSkinsForceParamList) do
-          (table.insert)(finalForceParamList, petSkinForceParamDic)
-        end
-        for k,v in pairs(finalFeatureDic) do
-          finalFeatureDic[k] = (table.cloneconf)(v)
-        end
-        for _,forceParamDic in ipairs(finalForceParamList) do
-          for featureType,forceData in pairs(forceParamDic) do
-            if finalFeatureDic[featureType] then
-              for key,value in pairs(forceData) do
-                -- DECOMPILER ERROR at PC212: Confused about usage of register: R26 in 'UnsetPending'
-
-                (finalFeatureDic[featureType])[key] = value
-              end
-            end
-          end
-        end
-        local talentSvc = (self._world):GetService("Talent")
-        talentSvc:ChangeFeature(finalFeatureDic)
-        local initBead = false
-        if (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
-          local createInfo = ((self._world).BW_WorldInfo):GetSeasonMazeCreateInfo()
-          if createInfo then
-            local autoBeadList = createInfo.autobead_list
-            if #autoBeadList > 0 then
-              initBead = true
-            end
-          end
-        end
-        do
-          if initBead then
-            finalFeatureDic[FeatureType.AutoBeadPowerInfo] = {}
-          end
-          return finalFeatureDic
+        table.insert(petsForceParamList, 1, forceParamDic)
+      end
+    end
+  end
+  for featureType, featureData in pairs(petsFeatureDic) do
+    finalFeatureDic[featureType] = featureData
+  end
+  for _, petForceParamDic in ipairs(petsForceParamList) do
+    table.insert(finalForceParamList, petForceParamDic)
+  end
+  for _, petSkinForceParamDic in ipairs(petSkinsForceParamList) do
+    table.insert(finalForceParamList, petSkinForceParamDic)
+  end
+  for k, v in pairs(finalFeatureDic) do
+    finalFeatureDic[k] = table.cloneconf(v)
+  end
+  for _, forceParamDic in ipairs(finalForceParamList) do
+    for featureType, forceData in pairs(forceParamDic) do
+      if finalFeatureDic[featureType] then
+        for key, value in pairs(forceData) do
+          finalFeatureDic[featureType][key] = value
         end
       end
     end
   end
+  local talentSvc = self._world:GetService("Talent")
+  talentSvc:ChangeFeature(finalFeatureDic)
+  local initBead = false
+  if self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
+    local createInfo = self._world.BW_WorldInfo:GetSeasonMazeCreateInfo()
+    if createInfo then
+      local autoBeadList = createInfo.autobead_list
+      if 0 < #autoBeadList then
+        initBead = true
+      end
+    end
+  end
+  if initBead then
+    finalFeatureDic[FeatureType.AutoBeadPowerInfo] = {}
+  end
+  return finalFeatureDic
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._FindFeatureListCfgDataDicOnPet = function(self, petEntity)
-  -- function num : 0_5 , upvalues : _ENV
+function FeatureServiceLogic:_FindFeatureListCfgDataDicOnPet(petEntity)
   local finalFeatureDic = {}
   local petsFeatureDic = {}
-  local matchPet = (petEntity:MatchPet()):GetMatchPet()
+  local matchPet = petEntity:MatchPet():GetMatchPet()
   local petFeatureList = matchPet:GetFeatureList()
   if petFeatureList then
     local petFeatures = petFeatureList.feature
     if petFeatures then
-      for featureType,featureData in pairs(petFeatures) do
+      for featureType, featureData in pairs(petFeatures) do
         if not petsFeatureDic[featureType] then
           petsFeatureDic[featureType] = featureData
         end
       end
     end
   end
-  do
-    for featureType,featureData in pairs(petsFeatureDic) do
-      finalFeatureDic[featureType] = featureData
-    end
-    for k,v in pairs(finalFeatureDic) do
-      finalFeatureDic[k] = (table.cloneconf)(v)
-    end
-    return finalFeatureDic
+  for featureType, featureData in pairs(petsFeatureDic) do
+    finalFeatureDic[featureType] = featureData
   end
+  for k, v in pairs(finalFeatureDic) do
+    finalFeatureDic[k] = table.cloneconf(v)
+  end
+  return finalFeatureDic
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetLogicCmpt = function(self)
-  -- function num : 0_6
-  local boardEntity = (self._world):GetBoardEntity()
+function FeatureServiceLogic:GetLogicCmpt()
+  local boardEntity = self._world:GetBoardEntity()
   local logicFeatureCmpt = boardEntity:LogicFeature()
   return logicFeatureCmpt
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._HandleInitFeatureList = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function FeatureServiceLogic:_HandleInitFeatureList()
   local logicFeatureCmpt = self:GetLogicCmpt()
   local featureTypeList = logicFeatureCmpt:GetFeatureTypeList()
-  for i,featureType in ipairs(featureTypeList) do
+  for i, featureType in ipairs(featureTypeList) do
     local featureData = logicFeatureCmpt:GetFeatureData(featureType)
     if featureData then
       self:_HandleInitFeature(featureType, featureData)
@@ -310,111 +237,66 @@ FeatureServiceLogic._HandleInitFeatureList = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._HandleInitFeature = function(self, featureType, featureData)
-  -- function num : 0_8 , upvalues : _ENV
+function FeatureServiceLogic:_HandleInitFeature(featureType, featureData)
   if featureType == FeatureType.Sanity then
     self:_HandleInitFeature_Sanity(featureType, featureData)
-  else
-    if featureType == FeatureType.DayNight then
-      self:_HandleInitFeature_DayNight(featureType, featureData)
-    else
-      if featureType == FeatureType.PersonaSkill then
-        self:_HandleInitFeature_PersonaSkill(featureType, featureData)
-      else
-        if featureType == FeatureType.Card then
-          self:_HandleInitFeature_Card(featureType, featureData)
-        else
-          if featureType == FeatureType.MasterSkill or featureType == FeatureType.MasterSkillRecover or featureType == FeatureType.MasterSkillTeleport or self:IsTalentSkillFeature(featureType) then
-            self:_HandleInitFeature_MasterSkill(featureType, featureData)
-          else
-            if featureType == FeatureType.Scan then
-              self:_HandleInitFeature_Scan(featureData)
-            else
-              if featureType == FeatureType.TrapCount then
-                self:_HandleInitFeature_TrapCount(featureType, featureData)
-              else
-                if self:IsPopStarSkillFeature(featureType) then
-                  self:_HandleInitFeature_PopStar(featureType, featureData)
-                else
-                  if featureType == FeatureType.TrapDefence then
-                    self:_HandleInitFeature_TrapDefence(featureType, featureData)
-                  else
-                    if featureType == FeatureType.Shop then
-                      self:_HandleInitFeature_Shop(featureType, featureData)
-                    else
-                      if featureType == FeatureType.StepPoint then
-                        self:_HandleInitFeature_StepPoint(featureType, featureData)
-                      else
-                        if featureType == FeatureType.BanPetSkill then
-                          self:_HandleInitFeature_BanPetSkill(featureType, featureData)
-                        else
-                          if featureType == FeatureType.AlgorithmUpgrade then
-                            self:_HandleInitFeature_AlgorithmUpgrade(featureData)
-                          else
-                            if featureType == FeatureType.AutoBeadPowerInfo then
-                              self:_HandleInitFeature_AutoBeadPowerInfo(featureType, featureData)
-                            else
-                              if featureType == FeatureType.TetrisGame then
-                                self:_HandleInitFeature_TetrisGame(featureType, featureData)
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif featureType == FeatureType.DayNight then
+    self:_HandleInitFeature_DayNight(featureType, featureData)
+  elseif featureType == FeatureType.PersonaSkill then
+    self:_HandleInitFeature_PersonaSkill(featureType, featureData)
+  elseif featureType == FeatureType.Card then
+    self:_HandleInitFeature_Card(featureType, featureData)
+  elseif featureType == FeatureType.MasterSkill or featureType == FeatureType.MasterSkillRecover or featureType == FeatureType.MasterSkillTeleport or self:IsTalentSkillFeature(featureType) then
+    self:_HandleInitFeature_MasterSkill(featureType, featureData)
+  elseif featureType == FeatureType.Scan then
+    self:_HandleInitFeature_Scan(featureData)
+  elseif featureType == FeatureType.TrapCount then
+    self:_HandleInitFeature_TrapCount(featureType, featureData)
+  elseif self:IsPopStarSkillFeature(featureType) then
+    self:_HandleInitFeature_PopStar(featureType, featureData)
+  elseif featureType == FeatureType.TrapDefence then
+    self:_HandleInitFeature_TrapDefence(featureType, featureData)
+  elseif featureType == FeatureType.Shop then
+    self:_HandleInitFeature_Shop(featureType, featureData)
+  elseif featureType == FeatureType.StepPoint then
+    self:_HandleInitFeature_StepPoint(featureType, featureData)
+  elseif featureType == FeatureType.BanPetSkill then
+    self:_HandleInitFeature_BanPetSkill(featureType, featureData)
+  elseif featureType == FeatureType.AlgorithmUpgrade then
+    self:_HandleInitFeature_AlgorithmUpgrade(featureData)
+  elseif featureType == FeatureType.AutoBeadPowerInfo then
+    self:_HandleInitFeature_AutoBeadPowerInfo(featureType, featureData)
+  elseif featureType == FeatureType.TetrisGame then
+    self:_HandleInitFeature_TetrisGame(featureType, featureData)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.IsPopStarSkillFeature = function(self, featureType)
-  -- function num : 0_9 , upvalues : _ENV
+function FeatureServiceLogic:IsPopStarSkillFeature(featureType)
   if featureType == FeatureType.PopStar or featureType == FeatureType.PopStar1 or featureType == FeatureType.PopStar2 or featureType == FeatureType.PopStar3 or featureType == FeatureType.PopStar4 or featureType == FeatureType.PopStar5 or featureType == FeatureType.PopStar6 or featureType == FeatureType.PopStar7 or featureType == FeatureType.PopStar8 or featureType == FeatureType.PopStar9 or featureType == FeatureType.PopStar10 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.IsTalentSkillFeature = function(self, featureType)
-  -- function num : 0_10 , upvalues : _ENV
+function FeatureServiceLogic:IsTalentSkillFeature(featureType)
   if featureType == FeatureType.TalentSkill1 or featureType == FeatureType.TalentSkill2 or featureType == FeatureType.TalentSkill3 or featureType == FeatureType.TalentSkill4 or featureType == FeatureType.TalentSkill5 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.HasFeatureType = function(self, featureType)
-  -- function num : 0_11
+function FeatureServiceLogic:HasFeatureType(featureType)
   local logicFeatureCmpt = self:GetLogicCmpt()
-  do
-    if logicFeatureCmpt then
-      local featureData = logicFeatureCmpt:GetFeatureData(featureType)
-      if featureData then
-        return true
-      end
+  if logicFeatureCmpt then
+    local featureData = logicFeatureCmpt:GetFeatureData(featureType)
+    if featureData then
+      return true
     end
-    return false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetFeatureData = function(self, featureType)
-  -- function num : 0_12
+function FeatureServiceLogic:GetFeatureData(featureType)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local featureData = logicFeatureCmpt:GetFeatureData(featureType)
@@ -422,10 +304,7 @@ FeatureServiceLogic.GetFeatureData = function(self, featureType)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetFeatureTypeList = function(self)
-  -- function num : 0_13
+function FeatureServiceLogic:GetFeatureTypeList()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local featureTypeList = logicFeatureCmpt:GetFeatureTypeList()
@@ -433,39 +312,40 @@ FeatureServiceLogic.GetFeatureTypeList = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.DoFeatureOnRoundEnter = function(self, incRound)
-  -- function num : 0_14 , upvalues : _ENV
+function FeatureServiceLogic:DoFeatureOnRoundEnter(incRound)
   self:_CheckFeatureSanOnRoundEnter()
   self:_CheckFeatureDayNightOnRoundEnter()
-  local skillFeatureTypes = {FeatureType.PersonaSkill, FeatureType.MasterSkill, FeatureType.MasterSkillRecover, FeatureType.MasterSkillTeleport, FeatureType.TrapDefence, FeatureType.TalentSkill1, FeatureType.TalentSkill2, FeatureType.TalentSkill3, FeatureType.TalentSkill4, FeatureType.TalentSkill5}
-  for index,featureType in ipairs(skillFeatureTypes) do
+  local skillFeatureTypes = {
+    FeatureType.PersonaSkill,
+    FeatureType.MasterSkill,
+    FeatureType.MasterSkillRecover,
+    FeatureType.MasterSkillTeleport,
+    FeatureType.TrapDefence,
+    FeatureType.TalentSkill1,
+    FeatureType.TalentSkill2,
+    FeatureType.TalentSkill3,
+    FeatureType.TalentSkill4,
+    FeatureType.TalentSkill5
+  }
+  for index, featureType in ipairs(skillFeatureTypes) do
     self:_CheckFeatureSkillOnRoundEnter(featureType, incRound)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.DoFeatureOnRoundEnterEarly = function(self, incRound)
-  -- function num : 0_15
+function FeatureServiceLogic:DoFeatureOnRoundEnterEarly(incRound)
   self:_CheckFeatureStepPointOnRoundEnterEarly(incRound)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._HandleInitFeature_Sanity = function(self, featureType, featureData)
-  -- function num : 0_16 , upvalues : _ENV
+function FeatureServiceLogic:_HandleInitFeature_Sanity(featureType, featureData)
   local param = featureData
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local boardAttr = boardEntity:Attributes()
   if boardAttr then
     local enterValue = param:GetEnterSanValue()
     boardAttr:Modify("San", enterValue)
     local maxValue = param:GetMaxSanValue()
     boardAttr:Modify("SanMax", maxValue)
-    ;
-    (Log.info)("_HandleInitFeature_Sanity,enterValue:", enterValue)
+    Log.info("_HandleInitFeature_Sanity,enterValue:", enterValue)
     local sanityParam = param:GetSanityParam()
     local words = sanityParam.wordList
     local gameStartBuffs = {}
@@ -473,110 +353,90 @@ FeatureServiceLogic._HandleInitFeature_Sanity = function(self, featureType, feat
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._CheckFeatureSanOnRoundEnter = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function FeatureServiceLogic:_CheckFeatureSanOnRoundEnter()
+  local battleStatCmpt = self._world:BattleStat()
   if not battleStatCmpt:IsFirstRound() then
     local sanData = self:GetFeatureData(FeatureType.Sanity)
     if sanData then
       local delVal = sanData:GetRoundDelValue()
       if delVal then
         local curVal, oldVal, realModifyValue, debtVal, modifyTimes = self:DecreaseSanValue(delVal)
-        ;
-        ((self._world):GetService("Trigger")):Notify(NTSanValueChange:New(curVal, oldVal, debtVal, modifyTimes))
-        local l2rSvc = (self._world):GetService("L2R")
+        self._world:GetService("Trigger"):Notify(NTSanValueChange:New(curVal, oldVal, debtVal, modifyTimes))
+        local l2rSvc = self._world:GetService("L2R")
         l2rSvc:L2RSanRoundDecrease(curVal, oldVal, realModifyValue, debtVal, modifyTimes)
       end
     end
   else
-    do
-      local sanData = self:GetFeatureData(FeatureType.Sanity)
-      if sanData then
-        local curSan = self:GetSanValue()
-        local debtVal = 0
-        local modifyTimes = 0
-        ;
-        ((self._world):GetService("Trigger")):Notify(NTSanValueChange:New(curSan, curSan, debtVal, modifyTimes))
-        local l2rSvc = (self._world):GetService("L2R")
-        l2rSvc:L2RSanRoundDecrease(curSan, curSan, 0, debtVal, modifyTimes)
-      end
+    local sanData = self:GetFeatureData(FeatureType.Sanity)
+    if sanData then
+      local curSan = self:GetSanValue()
+      local debtVal = 0
+      local modifyTimes = 0
+      self._world:GetService("Trigger"):Notify(NTSanValueChange:New(curSan, curSan, debtVal, modifyTimes))
+      local l2rSvc = self._world:GetService("L2R")
+      l2rSvc:L2RSanRoundDecrease(curSan, curSan, 0, debtVal, modifyTimes)
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._SanityInitWords = function(self, words, gameStartBuffs)
-  -- function num : 0_18 , upvalues : _ENV
+function FeatureServiceLogic:_SanityInitWords(words, gameStartBuffs)
   if words == nil or #words == 0 then
-    return 
+    return
   end
-  local buffLogic = (self._world):GetService("BuffLogic")
-  for _,wordID in ipairs(words) do
-    local cfg = (Cfg.cfg_word_buff)[wordID]
+  local buffLogic = self._world:GetService("BuffLogic")
+  for _, wordID in ipairs(words) do
+    local cfg = Cfg.cfg_word_buff[wordID]
     if cfg == nil then
-      (Log.fatal)("word not found: ", wordID)
-      return 
+      Log.fatal("word not found: ", wordID)
+      return
     end
-    for _,id in ipairs(cfg.BuffID) do
-      (Log.notice)("[Sanity] 初始化词缀，", wordID, "挂buff: ", id)
+    for _, id in ipairs(cfg.BuffID) do
+      Log.notice("[Sanity] 初始化词缀，", wordID, "挂buff: ", id)
       local ret = buffLogic:AddBuffByTargetType(id, cfg.BuffTargetType, cfg.BuffTargetParam)
-      for _,inst in ipairs(ret) do
-        gameStartBuffs[#gameStartBuffs + 1] = {inst:Entity(), inst:BuffSeq()}
+      for _, inst in ipairs(ret) do
+        gameStartBuffs[#gameStartBuffs + 1] = {
+          inst:Entity(),
+          inst:BuffSeq()
+        }
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.SetSanValue = function(self, sanValue)
-  -- function num : 0_19 , upvalues : _ENV
+function FeatureServiceLogic:SetSanValue(sanValue)
   local finalSan = sanValue
   local maxSan = self:GetSanMaxValue()
   local minSan = self:GetSanMinValue()
-  if maxSan < finalSan then
+  if finalSan > maxSan then
     finalSan = maxSan
   end
-  if finalSan < minSan then
+  if minSan > finalSan then
     finalSan = minSan
   end
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local boardAttr = boardEntity:Attributes()
   if boardAttr then
     boardAttr:Modify("San", finalSan)
-    ;
-    (Log.info)("SetSanValue,sanValue:", finalSan)
+    Log.info("SetSanValue,sanValue:", finalSan)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._RecordModifySanTimes = function(self)
-  -- function num : 0_20
+function FeatureServiceLogic:_RecordModifySanTimes()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:RecordModifySanTimes()
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.ModifySanValue = function(self, modifyValue)
-  -- function num : 0_21
-  if modifyValue >= 0 then
+function FeatureServiceLogic:ModifySanValue(modifyValue)
+  if 0 <= modifyValue then
     return self:IncreaseSanValue(modifyValue)
   else
     return self:DecreaseSanValue(-modifyValue)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.IncreaseSanValue = function(self, increaseValue)
-  -- function num : 0_22
+function FeatureServiceLogic:IncreaseSanValue(increaseValue)
   local oldSan = self:GetSanValue()
   local maxSan = self:GetSanMaxValue()
   local minSan = self:GetSanMinValue()
@@ -585,7 +445,7 @@ FeatureServiceLogic.IncreaseSanValue = function(self, increaseValue)
   if maxSan < finalSan then
     finalSan = maxSan
   end
-  if finalSan < minSan then
+  if minSan > finalSan then
     finalSan = minSan
   end
   realModifyValue = finalSan - oldSan
@@ -595,16 +455,13 @@ FeatureServiceLogic.IncreaseSanValue = function(self, increaseValue)
   return finalSan, oldSan, realModifyValue, debtVal, modifyTimes
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.DecreaseSanValue = function(self, decreaseValue)
-  -- function num : 0_23
+function FeatureServiceLogic:DecreaseSanValue(decreaseValue)
   local oldSan = self:GetSanValue()
   local minSan = self:GetSanMinValue()
   local realModifyValue = decreaseValue
   local finalSan = oldSan - decreaseValue
   local debtVal = 0
-  if finalSan < minSan then
+  if minSan > finalSan then
     debtVal = minSan - finalSan
     finalSan = minSan
   end
@@ -614,11 +471,8 @@ FeatureServiceLogic.DecreaseSanValue = function(self, decreaseValue)
   return finalSan, oldSan, realModifyValue, debtVal, modifyTimes
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetSanValue = function(self)
-  -- function num : 0_24
-  local boardEntity = (self._world):GetBoardEntity()
+function FeatureServiceLogic:GetSanValue()
+  local boardEntity = self._world:GetBoardEntity()
   local boardAttr = boardEntity:Attributes()
   if boardAttr then
     local sanValue = boardAttr:GetAttribute("San")
@@ -626,54 +480,37 @@ FeatureServiceLogic.GetSanValue = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetSanMaxValue = function(self)
-  -- function num : 0_25
-  local boardEntity = (self._world):GetBoardEntity()
+function FeatureServiceLogic:GetSanMaxValue()
+  local boardEntity = self._world:GetBoardEntity()
   local boardAttr = boardEntity:Attributes()
-  do
-    if boardAttr then
-      local maxSanValue = boardAttr:GetAttribute("SanMax")
-      return maxSanValue
-    end
-    return 100
+  if boardAttr then
+    local maxSanValue = boardAttr:GetAttribute("SanMax")
+    return maxSanValue
   end
+  return 100
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.SetSanMaxValue = function(self, value)
-  -- function num : 0_26 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function FeatureServiceLogic:SetSanMaxValue(value)
+  local boardEntity = self._world:GetBoardEntity()
   local boardAttr = boardEntity:Attributes()
   if boardAttr then
     boardAttr:Modify("SanMax", value)
-    ;
-    (Log.info)("SetSanMaxValue,SanMaxValue:", value)
+    Log.info("SetSanMaxValue,SanMaxValue:", value)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetSanMinValue = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function FeatureServiceLogic:GetSanMinValue()
   local featureData = self:GetFeatureData(FeatureType.Sanity)
-  do
-    if featureData then
-      local minVal = featureData:GetMinSanValue()
-      return minVal
-    end
-    return 0
+  if featureData then
+    local minVal = featureData:GetMinSanValue()
+    return minVal
   end
+  return 0
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.CalcActiveSkillSanCost = function(self, casterEntity, skillID, context)
-  -- function num : 0_28 , upvalues : _ENV
+function FeatureServiceLogic:CalcActiveSkillSanCost(casterEntity, skillID, context)
   local triggerParamTypeBool = {}
-  local cfgsvc = (self._world):GetService("Config")
+  local cfgsvc = self._world:GetService("Config")
   local skillcfg = cfgsvc:GetSkillConfigData(skillID)
   local logicSanVal = self:GetSanValue()
   local requireVal = 0
@@ -690,132 +527,111 @@ FeatureServiceLogic.CalcActiveSkillSanCost = function(self, casterEntity, skillI
       triggerParamTypeBool[SkillTriggerTypeExtraParam.DecreaseHPPercentAsSan] = true
       local rate = triggerExtraParam[SkillTriggerTypeExtraParam.DecreaseHPPercentAsSan]
       hpConvertVal = requireVal - logicSanVal
-      requireHPVal = (hpConvertVal) / rate * 0.01
+      requireHPVal = hpConvertVal / rate * 0.01
       requireVal = logicSanVal
     end
   end
-  do
-    if triggerExtraParam[SkillTriggerTypeExtraParam.SanByScopeGridCounts] then
-      triggerParamTypeBool[SkillTriggerTypeExtraParam.SanByScopeGridCounts] = true
-      local valPerGrid = triggerExtraParam[SkillTriggerTypeExtraParam.SanByScopeGridCounts]
-      local scopeGridCount = context.scopeGridCount or 0
-      requireVal = scopeGridCount * valPerGrid
-      if logicSanVal < requireVal and triggerExtraParam[SkillTriggerTypeExtraParam.DecreaseHPPercentAsSan] then
-        triggerParamTypeBool[SkillTriggerTypeExtraParam.DecreaseHPPercentAsSan] = true
-        local rate = triggerExtraParam[SkillTriggerTypeExtraParam.DecreaseHPPercentAsSan]
-        hpConvertVal = requireVal - logicSanVal
-        requireHPVal = (hpConvertVal) / rate * 0.01
-        requireVal = logicSanVal
-      end
-    end
-    do
-      if triggerExtraParam[SkillTriggerTypeExtraParam.SanChangeByRoundCastTimes] then
-        triggerParamTypeBool[SkillTriggerTypeExtraParam.SanChangeByRoundCastTimes] = true
-        local baseVal = triggerExtraParam[SkillTriggerTypeExtraParam.SanValue]
-        local modVal = triggerExtraParam[SkillTriggerTypeExtraParam.SanChangeByRoundCastTimes]
-        local battleStatCmpt = (self._world):BattleStat()
-        local pstid = 0
-        if casterEntity and casterEntity:PetPstID() then
-          pstid = (casterEntity:PetPstID()):GetPstID()
-        end
-        local curRoundCastTimes = 0
-        if pstid > 0 then
-          curRoundCastTimes = battleStatCmpt:GetCurRoundDoActiveSkillTimes(pstid)
-        end
-        requireVal = baseVal + modVal * curRoundCastTimes
-        if logicSanVal < requireVal and triggerExtraParam[SkillTriggerTypeExtraParam.DecreaseHPPercentAsSan] then
-          triggerParamTypeBool[SkillTriggerTypeExtraParam.DecreaseHPPercentAsSan] = true
-          local rate = triggerExtraParam[SkillTriggerTypeExtraParam.DecreaseHPPercentAsSan]
-          hpConvertVal = requireVal - logicSanVal
-          requireHPVal = (hpConvertVal) / rate * 0.01
-          requireVal = logicSanVal
-        end
-      end
-      do
-        if triggerExtraParam[SkillTriggerTypeExtraParam.SanMinLimit] then
-          triggerParamTypeBool[SkillTriggerTypeExtraParam.SanMinLimit] = true
-          requireVal = triggerExtraParam[SkillTriggerTypeExtraParam.SanMinLimit]
-        end
-        return requireVal, requireHPVal, hpConvertVal, triggerParamTypeBool
-      end
+  if triggerExtraParam[SkillTriggerTypeExtraParam.SanByScopeGridCounts] then
+    triggerParamTypeBool[SkillTriggerTypeExtraParam.SanByScopeGridCounts] = true
+    local valPerGrid = triggerExtraParam[SkillTriggerTypeExtraParam.SanByScopeGridCounts]
+    local scopeGridCount = context.scopeGridCount or 0
+    requireVal = scopeGridCount * valPerGrid
+    if logicSanVal < requireVal and triggerExtraParam[SkillTriggerTypeExtraParam.DecreaseHPPercentAsSan] then
+      triggerParamTypeBool[SkillTriggerTypeExtraParam.DecreaseHPPercentAsSan] = true
+      local rate = triggerExtraParam[SkillTriggerTypeExtraParam.DecreaseHPPercentAsSan]
+      hpConvertVal = requireVal - logicSanVal
+      requireHPVal = hpConvertVal / rate * 0.01
+      requireVal = logicSanVal
     end
   end
+  if triggerExtraParam[SkillTriggerTypeExtraParam.SanChangeByRoundCastTimes] then
+    triggerParamTypeBool[SkillTriggerTypeExtraParam.SanChangeByRoundCastTimes] = true
+    local baseVal = triggerExtraParam[SkillTriggerTypeExtraParam.SanValue]
+    local modVal = triggerExtraParam[SkillTriggerTypeExtraParam.SanChangeByRoundCastTimes]
+    local battleStatCmpt = self._world:BattleStat()
+    local pstid = 0
+    if casterEntity and casterEntity:PetPstID() then
+      pstid = casterEntity:PetPstID():GetPstID()
+    end
+    local curRoundCastTimes = 0
+    if 0 < pstid then
+      curRoundCastTimes = battleStatCmpt:GetCurRoundDoActiveSkillTimes(pstid)
+    end
+    requireVal = baseVal + modVal * curRoundCastTimes
+    if logicSanVal < requireVal and triggerExtraParam[SkillTriggerTypeExtraParam.DecreaseHPPercentAsSan] then
+      triggerParamTypeBool[SkillTriggerTypeExtraParam.DecreaseHPPercentAsSan] = true
+      local rate = triggerExtraParam[SkillTriggerTypeExtraParam.DecreaseHPPercentAsSan]
+      hpConvertVal = requireVal - logicSanVal
+      requireHPVal = hpConvertVal / rate * 0.01
+      requireVal = logicSanVal
+    end
+  end
+  if triggerExtraParam[SkillTriggerTypeExtraParam.SanMinLimit] then
+    triggerParamTypeBool[SkillTriggerTypeExtraParam.SanMinLimit] = true
+    requireVal = triggerExtraParam[SkillTriggerTypeExtraParam.SanMinLimit]
+  end
+  return requireVal, requireHPVal, hpConvertVal, triggerParamTypeBool
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.IsActiveSkillCanCast = function(self, casterEntity, skillID, context)
-  -- function num : 0_29 , upvalues : _ENV
+function FeatureServiceLogic:IsActiveSkillCanCast(casterEntity, skillID, context)
   local logicSanVal = self:GetSanValue()
   if not logicSanVal then
     return false
   end
   local requireVal, requireHPPercent, _hpConvertVal, isTriggerParamUsed = self:CalcActiveSkillSanCost(casterEntity, skillID, context)
-  local result = requireVal <= logicSanVal
-  do
+  local result = logicSanVal >= requireVal
+  if not result then
+    local firstFailedReason = SkillTriggerTypeExtraParam.SanValue
+    if not isTriggerParamUsed[SkillTriggerTypeExtraParam.SanValue] and isTriggerParamUsed[SkillTriggerTypeExtraParam.SanByScopeGridCounts] then
+      firstFailedReason = BattleUIActiveSkillCannotCastReason.SanByScopeGridCounts
+    end
+    return result, firstFailedReason
+  end
+  if 0 < requireHPPercent then
+    local utilData = self._world:GetService("UtilData")
+    local hp = utilData:GetCurrentLogicHP(casterEntity)
+    local maxhp = utilData:GetCurrentLogicMaxHP(casterEntity)
+    local requireHPVal = maxhp * requireHPPercent
+    result = result and hp > requireHPVal
     if not result then
-      local firstFailedReason = SkillTriggerTypeExtraParam.SanValue
-      if not isTriggerParamUsed[SkillTriggerTypeExtraParam.SanValue] and isTriggerParamUsed[SkillTriggerTypeExtraParam.SanByScopeGridCounts] then
-        firstFailedReason = BattleUIActiveSkillCannotCastReason.SanByScopeGridCounts
-      end
-      return result, firstFailedReason
-    end
-    if requireHPPercent > 0 then
-      local utilData = (self._world):GetService("UtilData")
-      local hp = utilData:GetCurrentLogicHP(casterEntity)
-      local maxhp = utilData:GetCurrentLogicMaxHP(casterEntity)
-      local requireHPVal = maxhp * requireHPPercent
-      result = not result or requireHPVal < hp
-      if not result then
-        return result, BattleUIActiveSkillCannotCastReason.DecreaseHPPercentAsSan
-      end
-    end
-    local cfgsvc = (self._world):GetService("Config")
-    local skillcfg = cfgsvc:GetSkillConfigData(skillID)
-    local triggerExtraParam = skillcfg:GetSkillTriggerExtraParam()
-    do
-      if triggerExtraParam and triggerExtraParam[SkillTriggerTypeExtraParam.SanNotFull] then
-        local logicMaxSan = self:GetSanMaxValue()
-        result = not result or logicSanVal - requireVal < logicMaxSan
-        if not result then
-          return result, BattleUIActiveSkillCannotCastReason.SanNotFull
-        end
-      end
-      if triggerExtraParam and triggerExtraParam[SkillTriggerTypeExtraParam.CardNotFull] then
-        if result then
-          result = self:CanAddCard()
-        end
-        if not result then
-          return result, BattleUIActiveSkillCannotCastReason.CardNotFull
-        end
-      end
-      if triggerExtraParam and triggerExtraParam[SkillTriggerTypeExtraParam.SanMaxLimit] then
-        local logicMaxSan = self:GetSanMaxValue()
-        local limit = tonumber(triggerExtraParam[SkillTriggerTypeExtraParam.SanMaxLimit])
-        result = not result or limit < logicMaxSan
-        if not result then
-          return result, BattleUIActiveSkillCannotCastReason.SanMaxLimit
-        end
-      end
-      do
-        if triggerExtraParam and triggerExtraParam[SkillTriggerTypeExtraParam.SanMinLimit] then
-          local limit = tonumber(triggerExtraParam[SkillTriggerTypeExtraParam.SanMinLimit])
-          result = not result or limit < logicSanVal
-          if not result then
-            return result, BattleUIActiveSkillCannotCastReason.SanMinLimit
-          end
-        end
-        do return result end
-        -- DECOMPILER ERROR: 17 unprocessed JMP targets
-      end
+      return result, BattleUIActiveSkillCannotCastReason.DecreaseHPPercentAsSan
     end
   end
+  local cfgsvc = self._world:GetService("Config")
+  local skillcfg = cfgsvc:GetSkillConfigData(skillID)
+  local triggerExtraParam = skillcfg:GetSkillTriggerExtraParam()
+  if triggerExtraParam and triggerExtraParam[SkillTriggerTypeExtraParam.SanNotFull] then
+    local logicMaxSan = self:GetSanMaxValue()
+    result = result and logicMaxSan > logicSanVal - requireVal
+    if not result then
+      return result, BattleUIActiveSkillCannotCastReason.SanNotFull
+    end
+  end
+  if triggerExtraParam and triggerExtraParam[SkillTriggerTypeExtraParam.CardNotFull] then
+    result = result and self:CanAddCard()
+    if not result then
+      return result, BattleUIActiveSkillCannotCastReason.CardNotFull
+    end
+  end
+  if triggerExtraParam and triggerExtraParam[SkillTriggerTypeExtraParam.SanMaxLimit] then
+    local logicMaxSan = self:GetSanMaxValue()
+    local limit = tonumber(triggerExtraParam[SkillTriggerTypeExtraParam.SanMaxLimit])
+    result = result and logicMaxSan > limit
+    if not result then
+      return result, BattleUIActiveSkillCannotCastReason.SanMaxLimit
+    end
+  end
+  if triggerExtraParam and triggerExtraParam[SkillTriggerTypeExtraParam.SanMinLimit] then
+    local limit = tonumber(triggerExtraParam[SkillTriggerTypeExtraParam.SanMinLimit])
+    result = result and logicSanVal > limit
+    if not result then
+      return result, BattleUIActiveSkillCannotCastReason.SanMinLimit
+    end
+  end
+  return result
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._HandleInitFeature_DayNight = function(self, featureType, featureData)
-  -- function num : 0_30 , upvalues : _ENV
+function FeatureServiceLogic:_HandleInitFeature_DayNight(featureType, featureData)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local enterState = featureData:GetEnterState()
@@ -823,11 +639,8 @@ FeatureServiceLogic._HandleInitFeature_DayNight = function(self, featureType, fe
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._CheckFeatureDayNightOnRoundEnter = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function FeatureServiceLogic:_CheckFeatureDayNightOnRoundEnter()
+  local battleStatCmpt = self._world:BattleStat()
   local featureData = self:GetFeatureData(FeatureType.DayNight)
   if featureData then
     local logicFeatureCmpt = self:GetLogicCmpt()
@@ -836,49 +649,39 @@ FeatureServiceLogic._CheckFeatureDayNightOnRoundEnter = function(self)
       if ignoreFirstRoundCheck or not battleStatCmpt:IsFirstRound() then
         local curState, oldState, restRound = self:_DecreaseDayNightRound(1)
         if curState ~= oldState then
-          ((self._world):GetService("Trigger")):Notify(NTDayNightStateChange:New(curState, oldState))
+          self._world:GetService("Trigger"):Notify(NTDayNightStateChange:New(curState, oldState))
         end
-        local l2rSvc = (self._world):GetService("L2R")
+        local l2rSvc = self._world:GetService("L2R")
         l2rSvc:L2RDayNightRoundChange(curState, oldState, restRound)
       else
-        do
-          local enterState = featureData:GetEnterState()
-          local oldState, oldRestRound = logicFeatureCmpt:GetDayNightData()
-          if enterState ~= oldState then
-            local curState = enterState
-            local restRound = featureData:GetLastRound(curState)
-            logicFeatureCmpt:SetDayNightData(curState, restRound)
-            ;
-            ((self._world):GetService("Trigger")):Notify(NTDayNightStateChange:New(curState, oldState))
-            local l2rSvc = (self._world):GetService("L2R")
-            l2rSvc:L2RDayNightRoundChange(curState, oldState, restRound)
-          end
+        local enterState = featureData:GetEnterState()
+        local oldState, oldRestRound = logicFeatureCmpt:GetDayNightData()
+        if enterState ~= oldState then
+          local curState = enterState
+          local restRound = featureData:GetLastRound(curState)
+          logicFeatureCmpt:SetDayNightData(curState, restRound)
+          self._world:GetService("Trigger"):Notify(NTDayNightStateChange:New(curState, oldState))
+          local l2rSvc = self._world:GetService("L2R")
+          l2rSvc:L2RDayNightRoundChange(curState, oldState, restRound)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.ModifyDayNightData = function(self, newState, restRound)
-  -- function num : 0_32 , upvalues : _ENV
+function FeatureServiceLogic:ModifyDayNightData(newState, restRound)
   local logicFeatureCmpt = self:GetLogicCmpt()
   local oldState, oldRestRound = logicFeatureCmpt:GetDayNightData()
   logicFeatureCmpt:SetDayNightData(newState, restRound)
   logicFeatureCmpt:SetDayNightIgnoreFirstRoundCheck(true)
   if newState ~= oldState then
-    ((self._world):GetService("Trigger")):Notify(NTDayNightStateChange:New(newState, oldState))
+    self._world:GetService("Trigger"):Notify(NTDayNightStateChange:New(newState, oldState))
   end
-  ;
-  (Log.debug)("Feature logic,buff modify dayNight, oldState:", oldState, " newState:", newState, " restRound:", restRound)
+  Log.debug("Feature logic,buff modify dayNight, oldState:", oldState, " newState:", newState, " restRound:", restRound)
   return oldState, newState, restRound
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._DecreaseDayNightRound = function(self, decRound)
-  -- function num : 0_33 , upvalues : _ENV
+function FeatureServiceLogic:_DecreaseDayNightRound(decRound)
   local logicFeatureCmpt = self:GetLogicCmpt()
   local oldState, oldRestRound = logicFeatureCmpt:GetDayNightData()
   local restRound = oldRestRound - decRound
@@ -894,16 +697,11 @@ FeatureServiceLogic._DecreaseDayNightRound = function(self, decRound)
       restRound = featureData:GetLastRound(curState)
     end
   end
-  do
-    logicFeatureCmpt:SetDayNightData(curState, restRound)
-    return curState, oldState, restRound
-  end
+  logicFeatureCmpt:SetDayNightData(curState, restRound)
+  return curState, oldState, restRound
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetCurDayNightState = function(self)
-  -- function num : 0_34
+function FeatureServiceLogic:GetCurDayNightState()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local curState, restRound = logicFeatureCmpt:GetDayNightData()
@@ -911,15 +709,12 @@ FeatureServiceLogic.GetCurDayNightState = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._HandleInitFeature_PersonaSkill = function(self, featureType, featureData)
-  -- function num : 0_35 , upvalues : _ENV
+function FeatureServiceLogic:_HandleInitFeature_PersonaSkill(featureType, featureData)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local personaSkill = featureData:GetPersonaSkillID()
     logicFeatureCmpt:SetFeatureSkillID(FeatureType.PersonaSkill, personaSkill)
-    local entityService = (self._world):GetService("LogicEntity")
+    local entityService = self._world:GetService("LogicEntity")
     local skillHolder = entityService:CreateLogicEntity(EntityConfigIDConst.PersonaSkillHolder)
     if skillHolder then
       local holderID = skillHolder:GetID()
@@ -933,24 +728,19 @@ FeatureServiceLogic._HandleInitFeature_PersonaSkill = function(self, featureType
       skillHolder:ReplaceElement(firstElement, secondElement)
       logicFeatureCmpt:SetPersonaPetCount(p5PetCount)
     end
-    do
-      self:SetFeatureSkillCurPower(FeatureType.PersonaSkill, 0, 1)
-    end
+    self:SetFeatureSkillCurPower(FeatureType.PersonaSkill, 0, 1)
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._HandlePersonaPetsInfo = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+function FeatureServiceLogic:_HandlePersonaPetsInfo()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   local teamCmpt = teamEntity:Team()
   local teamOrder = teamCmpt:GetTeamOrder()
   local topAttack = 1
   local personPetCount = 0
-  for order,petPstID in ipairs(teamOrder) do
+  for order, petPstID in ipairs(teamOrder) do
     local petEntity = teamCmpt:GetPetEntityByPetPstID(petPstID)
-    local matchPet = (petEntity:MatchPet()):GetMatchPet()
+    local matchPet = petEntity:MatchPet():GetMatchPet()
     local petFeatureList = matchPet:GetFeatureList()
     if petFeatureList then
       local petFeatures = petFeatureList.feature
@@ -966,10 +756,7 @@ FeatureServiceLogic._HandlePersonaPetsInfo = function(self)
   return topAttack, personPetCount
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetPersonaPetCount = function(self)
-  -- function num : 0_37
+function FeatureServiceLogic:GetPersonaPetCount()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetPersonaPetCount()
@@ -977,17 +764,14 @@ FeatureServiceLogic.GetPersonaPetCount = function(self)
   return 1
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._HandleInitFeature_Card = function(self, featureType, featureData)
-  -- function num : 0_38 , upvalues : _ENV
+function FeatureServiceLogic:_HandleInitFeature_Card(featureType, featureData)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local cardSkillDic = featureData:GetCardSkillDic()
     logicFeatureCmpt:SetCardSkillDic(cardSkillDic)
     local cardMax = featureData:GetCardMax()
     logicFeatureCmpt:SetCardMax(cardMax)
-    local entityService = (self._world):GetService("LogicEntity")
+    local entityService = self._world:GetService("LogicEntity")
     local skillHolder = entityService:CreateLogicEntity(EntityConfigIDConst.PersonaSkillHolder)
     if skillHolder then
       local holderID = skillHolder:GetID()
@@ -1000,55 +784,41 @@ FeatureServiceLogic._HandleInitFeature_Card = function(self, featureType, featur
       attributeCmpt:Modify("Attack", attack)
       skillHolder:ReplaceElement(firstElement, secondElement)
     end
-    do
-      self:SetFeatureSkillCurPower(FeatureType.Card, 0, 1)
-      local initCardNum = featureData:GetInitCardNum()
-      if initCardNum and initCardNum > 0 then
-        local needNum = initCardNum
-        local initCardList = featureData:GetInitCardList()
-        if initCardList then
-          for _,cardType in ipairs(initCardList) do
-            if FeatureCardType.MIN <= cardType and cardType <= FeatureCardType.MAX then
-              needNum = needNum - 1
-              if needNum >= 0 then
-                do
-                  self:AddCard(cardType)
-                  -- DECOMPILER ERROR at PC86: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC86: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC86: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC86: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
+    self:SetFeatureSkillCurPower(FeatureType.Card, 0, 1)
+    local initCardNum = featureData:GetInitCardNum()
+    if initCardNum and 0 < initCardNum then
+      local needNum = initCardNum
+      local initCardList = featureData:GetInitCardList()
+      if initCardList then
+        for _, cardType in ipairs(initCardList) do
+          if cardType >= FeatureCardType.MIN and cardType <= FeatureCardType.MAX then
+            needNum = needNum - 1
+            if needNum < 0 then
+              break
             end
-          end
-        end
-        if needNum > 0 then
-          local randomSvc = (self._world):GetService("RandomLogic")
-          for i = 1, needNum do
-            local cardType = randomSvc:LogicRand(FeatureCardType.MIN, FeatureCardType.MAX)
             self:AddCard(cardType)
           end
+        end
+      end
+      if 0 < needNum then
+        local randomSvc = self._world:GetService("RandomLogic")
+        for i = 1, needNum do
+          local cardType = randomSvc:LogicRand(FeatureCardType.MIN, FeatureCardType.MAX)
+          self:AddCard(cardType)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._HandleCardPetsInfo = function(self)
-  -- function num : 0_39 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+function FeatureServiceLogic:_HandleCardPetsInfo()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   local teamCmpt = teamEntity:Team()
   local teamOrder = teamCmpt:GetTeamOrder()
   local topAttack = 1
-  for order,petPstID in ipairs(teamOrder) do
+  for order, petPstID in ipairs(teamOrder) do
     local petEntity = teamCmpt:GetPetEntityByPetPstID(petPstID)
-    local matchPet = (petEntity:MatchPet()):GetMatchPet()
+    local matchPet = petEntity:MatchPet():GetMatchPet()
     local petFeatureList = matchPet:GetFeatureList()
     if petFeatureList then
       local petFeatures = petFeatureList.feature
@@ -1063,20 +833,14 @@ FeatureServiceLogic._HandleCardPetsInfo = function(self)
   return topAttack
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.AddCard = function(self, cardType)
-  -- function num : 0_40
+function FeatureServiceLogic:AddCard(cardType)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt and logicFeatureCmpt:CanAddCard() then
     logicFeatureCmpt:AddCard(cardType)
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.CanAddCard = function(self)
-  -- function num : 0_41
+function FeatureServiceLogic:CanAddCard()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:CanAddCard()
@@ -1084,10 +848,7 @@ FeatureServiceLogic.CanAddCard = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetCards = function(self)
-  -- function num : 0_42
+function FeatureServiceLogic:GetCards()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetCards()
@@ -1095,10 +856,7 @@ FeatureServiceLogic.GetCards = function(self)
   return {}
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetCurCardCount = function(self)
-  -- function num : 0_43
+function FeatureServiceLogic:GetCurCardCount()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetCurCardCount()
@@ -1106,10 +864,7 @@ FeatureServiceLogic.GetCurCardCount = function(self)
   return 0
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.CostCard = function(self, cardList)
-  -- function num : 0_44
+function FeatureServiceLogic:CostCard(cardList)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:CostCard(cardList)
@@ -1117,52 +872,72 @@ FeatureServiceLogic.CostCard = function(self, cardList)
   return {}
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.CostCardByType = function(self, compositionType)
-  -- function num : 0_45
+function FeatureServiceLogic:CostCardByType(compositionType)
   local cardList = self:GetCostCardListByType(compositionType)
   self:CostCard(cardList)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetCostCardListByType = function(self, compositionType)
-  -- function num : 0_46 , upvalues : _ENV
+function FeatureServiceLogic:GetCostCardListByType(compositionType)
   local quickDic = {
-[FeatureCardCompositionType.ABC] = {1, 2, 3}
-, 
-[FeatureCardCompositionType.AAA] = {1, 1, 1}
-, 
-[FeatureCardCompositionType.BBB] = {2, 2, 2}
-, 
-[FeatureCardCompositionType.CCC] = {3, 3, 3}
-, 
-[FeatureCardCompositionType.AAB] = {1, 1, 2}
-, 
-[FeatureCardCompositionType.AAC] = {1, 1, 3}
-, 
-[FeatureCardCompositionType.BBA] = {1, 2, 2}
-, 
-[FeatureCardCompositionType.BBC] = {2, 2, 3}
-, 
-[FeatureCardCompositionType.CCA] = {1, 3, 3}
-, 
-[FeatureCardCompositionType.CCB] = {2, 3, 3}
-}
-  if not quickDic[compositionType] then
-    return {}
-  end
+    [FeatureCardCompositionType.ABC] = {
+      1,
+      2,
+      3
+    },
+    [FeatureCardCompositionType.AAA] = {
+      1,
+      1,
+      1
+    },
+    [FeatureCardCompositionType.BBB] = {
+      2,
+      2,
+      2
+    },
+    [FeatureCardCompositionType.CCC] = {
+      3,
+      3,
+      3
+    },
+    [FeatureCardCompositionType.AAB] = {
+      1,
+      1,
+      2
+    },
+    [FeatureCardCompositionType.AAC] = {
+      1,
+      1,
+      3
+    },
+    [FeatureCardCompositionType.BBA] = {
+      1,
+      2,
+      2
+    },
+    [FeatureCardCompositionType.BBC] = {
+      2,
+      2,
+      3
+    },
+    [FeatureCardCompositionType.CCA] = {
+      1,
+      3,
+      3
+    },
+    [FeatureCardCompositionType.CCB] = {
+      2,
+      3,
+      3
+    }
+  }
+  return quickDic[compositionType] or {}
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.IsCardEnoughToCost = function(self, compositionType)
-  -- function num : 0_47 , upvalues : _ENV
+function FeatureServiceLogic:IsCardEnoughToCost(compositionType)
   local cards = self:GetCards()
   local cost = self:GetCostCardListByType(compositionType)
   local costDic = {}
-  for _,cardType in ipairs(cost) do
+  for _, cardType in ipairs(cost) do
     if costDic[cardType] then
       costDic[cardType] = costDic[cardType] + 1
     else
@@ -1170,125 +945,103 @@ FeatureServiceLogic.IsCardEnoughToCost = function(self, compositionType)
     end
   end
   local enough = true
-  for cardType,count in pairs(costDic) do
+  for cardType, count in pairs(costDic) do
     if cards[cardType] and count <= cards[cardType] then
-      do
-        enough = false
-        do break end
-        -- DECOMPILER ERROR at PC34: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC34: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    else
+      enough = false
+      break
     end
   end
   return enough
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.CaclCardCompositionType = function(self, cardList)
-  -- function num : 0_48 , upvalues : _ENV
-  local quickDic = {[123] = FeatureCardCompositionType.ABC, [111] = FeatureCardCompositionType.AAA, [222] = FeatureCardCompositionType.BBB, [333] = FeatureCardCompositionType.CCC, [112] = FeatureCardCompositionType.AAB, [113] = FeatureCardCompositionType.AAC, [122] = FeatureCardCompositionType.BBA, [223] = FeatureCardCompositionType.BBC, [133] = FeatureCardCompositionType.CCA, [233] = FeatureCardCompositionType.CCB}
+function FeatureServiceLogic:CaclCardCompositionType(cardList)
+  local quickDic = {
+    [123] = FeatureCardCompositionType.ABC,
+    [111] = FeatureCardCompositionType.AAA,
+    [222] = FeatureCardCompositionType.BBB,
+    [333] = FeatureCardCompositionType.CCC,
+    [112] = FeatureCardCompositionType.AAB,
+    [113] = FeatureCardCompositionType.AAC,
+    [122] = FeatureCardCompositionType.BBA,
+    [223] = FeatureCardCompositionType.BBC,
+    [133] = FeatureCardCompositionType.CCA,
+    [233] = FeatureCardCompositionType.CCB
+  }
   local comType = FeatureCardCompositionType.NONE
-  if cardList and #cardList >= 3 then
+  if cardList and 3 <= #cardList then
     local sortedCard = {}
-    for i,cardType in ipairs(cardList) do
-      (table.insert)(sortedCard, cardType)
+    for i, cardType in ipairs(cardList) do
+      table.insert(sortedCard, cardType)
     end
-    ;
-    (table.sort)(sortedCard)
+    table.sort(sortedCard)
     local dicKey = sortedCard[1] * 100 + sortedCard[2] * 10 + sortedCard[3]
     local resType = quickDic[dicKey]
     if resType then
       comType = resType
     end
   end
-  do
-    return comType
-  end
+  return comType
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.RecordDrawCard = function(self, teamEntityID, curRound, cardType)
-  -- function num : 0_49
+function FeatureServiceLogic:RecordDrawCard(teamEntityID, curRound, cardType)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:RecordDrawCard(teamEntityID, curRound, cardType)
   end
-  return 
+  return
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetDrawCardTimes = function(self, teamEntityID, round)
-  -- function num : 0_50
+function FeatureServiceLogic:GetDrawCardTimes(teamEntityID, round)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetDrawCardTimes(teamEntityID, round)
   end
-  return 
+  return
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetNextDrawFixedCard = function(self)
-  -- function num : 0_51 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function FeatureServiceLogic:GetNextDrawFixedCard()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   if not teamEntity then
-    return 
+    return
   end
   local teamEntityID = teamEntity:GetID()
   local curTimes = self:GetDrawCardTimes(teamEntityID)
   if not curTimes then
-    return 
+    return
   end
   local nextTimes = curTimes + 1
   local featureData = self:GetFeatureData(FeatureType.Card)
-  do
-    if featureData then
-      local cardType = featureData:GetFixedDrawCard(nextTimes)
-      if cardType and FeatureCardType.MIN <= cardType and cardType <= FeatureCardType.MAX then
-        return cardType
-      end
+  if featureData then
+    local cardType = featureData:GetFixedDrawCard(nextTimes)
+    if cardType and cardType >= FeatureCardType.MIN and cardType <= FeatureCardType.MAX then
+      return cardType
     end
-    return 
   end
+  return
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.HasEnoughSameCard = function(self, count)
-  -- function num : 0_52 , upvalues : _ENV
+function FeatureServiceLogic:HasEnoughSameCard(count)
   local depot = self:GetCards()
   if depot then
-    for cardType,cardCount in pairs(depot) do
+    for cardType, cardCount in pairs(depot) do
       if count <= cardCount then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.SetAutoFightFirstRoundDrawCardEnough = function(self, teamEntityID, bEnough)
-  -- function num : 0_53
+function FeatureServiceLogic:SetAutoFightFirstRoundDrawCardEnough(teamEntityID, bEnough)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     logicFeatureCmpt:SetAutoFightFirstRoundDrawCardEnough(teamEntityID, bEnough)
   end
-  return 
+  return
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetAutoFightFirstRoundDrawCardEnough = function(self, teamEntityID)
-  -- function num : 0_54
+function FeatureServiceLogic:GetAutoFightFirstRoundDrawCardEnough(teamEntityID)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetAutoFightFirstRoundDrawCardEnough(teamEntityID)
@@ -1296,48 +1049,50 @@ FeatureServiceLogic.GetAutoFightFirstRoundDrawCardEnough = function(self, teamEn
   return true
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetAvailableCardSkillList = function(self)
-  -- function num : 0_55 , upvalues : _ENV
-  local skillCheckSeq = {FeatureCardCompositionType.AAA, FeatureCardCompositionType.BBB, FeatureCardCompositionType.CCC, FeatureCardCompositionType.ABC, FeatureCardCompositionType.AAB, FeatureCardCompositionType.AAC, FeatureCardCompositionType.BBA, FeatureCardCompositionType.BBC, FeatureCardCompositionType.CCA, FeatureCardCompositionType.CCB}
+function FeatureServiceLogic:GetAvailableCardSkillList()
+  local skillCheckSeq = {
+    FeatureCardCompositionType.AAA,
+    FeatureCardCompositionType.BBB,
+    FeatureCardCompositionType.CCC,
+    FeatureCardCompositionType.ABC,
+    FeatureCardCompositionType.AAB,
+    FeatureCardCompositionType.AAC,
+    FeatureCardCompositionType.BBA,
+    FeatureCardCompositionType.BBC,
+    FeatureCardCompositionType.CCA,
+    FeatureCardCompositionType.CCB
+  }
   local featureData = self:GetFeatureData(FeatureType.Card)
   if not featureData then
     return {}
   end
   local skillList = {}
   local cardSkillDic = featureData:GetCardSkillDic()
-  for _,comType in ipairs(skillCheckSeq) do
+  for _, comType in ipairs(skillCheckSeq) do
     local skillID = cardSkillDic[comType]
     if skillID then
       local canCast = self:_CheckFeatureSkillCastCondition_Card(skillID)
       if canCast then
-        (table.insert)(skillList, skillID)
+        table.insert(skillList, skillID)
       end
     end
   end
   return skillList
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetRandomDrawCardWeight = function(self, teamEntityID)
-  -- function num : 0_56
+function FeatureServiceLogic:GetRandomDrawCardWeight(teamEntityID)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetRandomDrawCardWeight(teamEntityID)
   end
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._HandleInitFeature_MasterSkill = function(self, featureType, featureData)
-  -- function num : 0_57 , upvalues : _ENV
+function FeatureServiceLogic:_HandleInitFeature_MasterSkill(featureType, featureData)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local masterSkill = featureData:GetMasterSkillID()
     logicFeatureCmpt:SetFeatureSkillID(featureType, masterSkill)
-    local entityService = (self._world):GetService("LogicEntity")
+    local entityService = self._world:GetService("LogicEntity")
     local skillHolder = entityService:CreateLogicEntity(EntityConfigIDConst.PersonaSkillHolder)
     if skillHolder then
       local holderID = skillHolder:GetID()
@@ -1350,22 +1105,17 @@ FeatureServiceLogic._HandleInitFeature_MasterSkill = function(self, featureType,
       attributeCmpt:Modify("Attack", attack)
       skillHolder:ReplaceElement(firstElement, secondElement)
     end
-    do
-      self:SetFeatureSkillCurPower(featureType, 0, 1)
-    end
+    self:SetFeatureSkillCurPower(featureType, 0, 1)
   end
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._HandleInitFeature_PopStar = function(self, featureType, featureData)
-  -- function num : 0_58 , upvalues : _ENV
+function FeatureServiceLogic:_HandleInitFeature_PopStar(featureType, featureData)
   local popStarProSvc = self:GetService("PopStarProLogic")
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local masterSkill = featureData:GetMasterSkillID()
     logicFeatureCmpt:SetFeatureSkillID(featureType, masterSkill)
-    local entityService = (self._world):GetService("LogicEntity")
+    local entityService = self._world:GetService("LogicEntity")
     local skillHolder = entityService:CreateLogicEntity(EntityConfigIDConst.PersonaSkillHolder)
     if skillHolder then
       local holderID = skillHolder:GetID()
@@ -1378,59 +1128,46 @@ FeatureServiceLogic._HandleInitFeature_PopStar = function(self, featureType, fea
       attributeCmpt:Modify("Attack", attack)
       skillHolder:ReplaceElement(firstElement, secondElement)
     end
-    do
-      local power = popStarProSvc:GetInitFeaturePower(featureType, featureData)
-      local isReady = self:IsPopStarProFeatureReady(power, masterSkill)
-      self:SetFeatureSkillCurPower(featureType, power, isReady)
-    end
+    local power = popStarProSvc:GetInitFeaturePower(featureType, featureData)
+    local isReady = self:IsPopStarProFeatureReady(power, masterSkill)
+    self:SetFeatureSkillCurPower(featureType, power, isReady)
   end
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.CanCastPopStarProFeature = function(self, skillConfigData)
-  -- function num : 0_59 , upvalues : _ENV
+function FeatureServiceLogic:CanCastPopStarProFeature(skillConfigData)
   local canCast = true
   if skillConfigData then
     local triggerExtraParam = skillConfigData:GetSkillTriggerExtraParam()
     if triggerExtraParam and triggerExtraParam[SkillTriggerTypeExtraParam.CostRoundCount] then
       local roundCount = triggerExtraParam[SkillTriggerTypeExtraParam.CostRoundCount]
       if roundCount then
-        local battleStatCmpt = (self._world):BattleStat()
-        if battleStatCmpt:GetLevelLeftRoundCount() < roundCount then
+        local battleStatCmpt = self._world:BattleStat()
+        if roundCount > battleStatCmpt:GetLevelLeftRoundCount() then
           canCast = false
         end
       end
     end
   end
-  do
-    return canCast
-  end
+  return canCast
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.IsPopStarProFeatureReady = function(self, curPower, skillID)
-  -- function num : 0_60
-  local skillConfigData = (self._configService):GetSkillConfigData(skillID)
+function FeatureServiceLogic:IsPopStarProFeatureReady(curPower, skillID)
+  local skillConfigData = self._configService:GetSkillConfigData(skillID)
   local costLegendPower = skillConfigData:GetSkillTriggerParam()
-  if costLegendPower <= curPower then
+  if curPower >= costLegendPower then
     return 1
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetPopStarProFeatureInfoList = function(self)
-  -- function num : 0_61 , upvalues : _ENV
+function FeatureServiceLogic:GetPopStarProFeatureInfoList()
   local featureDic = {}
   local featureComponent = self:GetLogicCmpt()
   if not featureComponent then
     return featureDic
   end
   local typeList = featureComponent:GetFeatureTypeList()
-  for _,type in ipairs(typeList) do
+  for _, type in ipairs(typeList) do
     if self:IsPopStarSkillFeature(type) then
       local power, ready = featureComponent:GetFeatureSkillCurPower(type)
       featureDic[type] = power
@@ -1439,27 +1176,20 @@ FeatureServiceLogic.GetPopStarProFeatureInfoList = function(self)
   return featureDic
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.OnBuffRemoveFeature = function(self, featureType)
-  -- function num : 0_62 , upvalues : _ENV
+function FeatureServiceLogic:OnBuffRemoveFeature(featureType)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if self:HasFeatureType(featureType) then
     logicFeatureCmpt:RemoveFeatureData(featureType)
   end
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.RemoveFeature, featureType)
+  self._world:EventDispatcher():Dispatch(GameEventType.RemoveFeature, featureType)
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._HandleInitFeature_TrapDefence = function(self, featureType, featureData)
-  -- function num : 0_63 , upvalues : _ENV
+function FeatureServiceLogic:_HandleInitFeature_TrapDefence(featureType, featureData)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local masterSkill = featureData:GetMasterSkillID()
     logicFeatureCmpt:SetFeatureSkillID(featureType, masterSkill)
-    local entityService = (self._world):GetService("LogicEntity")
+    local entityService = self._world:GetService("LogicEntity")
     local skillHolder = entityService:CreateLogicEntity(EntityConfigIDConst.PersonaSkillHolder)
     if skillHolder then
       local holderID = skillHolder:GetID()
@@ -1472,35 +1202,24 @@ FeatureServiceLogic._HandleInitFeature_TrapDefence = function(self, featureType,
       attributeCmpt:Modify("Attack", attack)
       skillHolder:ReplaceElement(firstElement, secondElement)
     end
-    do
-      self:SetFeatureSkillCurPower(featureType, 999, 0)
-    end
+    self:SetFeatureSkillCurPower(featureType, 999, 0)
   end
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._HandleInitFeature_Scan = function(self, featureData)
-  -- function num : 0_64 , upvalues : _ENV
+function FeatureServiceLogic:_HandleInitFeature_Scan(featureData)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if not logicFeatureCmpt then
-    (Log.error)("FeatureServiceLogic: no LogicFeatureComponent found")
-    return 
+    Log.error("FeatureServiceLogic: no LogicFeatureComponent found")
+    return
   end
   logicFeatureCmpt:InitScanFeature(featureData:GetSummonTrapSkillID(), featureData:GetForceMovementSkillID(), featureData:GetSummonScanTrapSkillID(), featureData:GetEmptySkillID())
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._HandleInitFeature_TrapCount = function(self, featureType, featureData)
-  -- function num : 0_65
+function FeatureServiceLogic:_HandleInitFeature_TrapCount(featureType, featureData)
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._CheckFeatureSkillOnRoundEnter = function(self, featureType, incRound)
-  -- function num : 0_66 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function FeatureServiceLogic:_CheckFeatureSkillOnRoundEnter(featureType, incRound)
+  local battleStatCmpt = self._world:BattleStat()
   if not battleStatCmpt:IsFirstRound() then
     local featureData = self:GetFeatureData(featureType)
     if featureData then
@@ -1515,45 +1234,35 @@ FeatureServiceLogic._CheckFeatureSkillOnRoundEnter = function(self, featureType,
           end
           local lastDoFeatureSkillRound = logicFeatureCmpt:GetLastDoFeatureSkillRound(featureType)
           local curRound = battleStatCmpt:GetLevelTotalRoundCount()
-          -- DECOMPILER ERROR at PC49: Unhandled construct in 'MakeBoolean' P1
-
-          if lastDoFeatureSkillRound and curRound - lastDoFeatureSkillRound > 1 then
+          if lastDoFeatureSkillRound then
+            if 1 < curRound - lastDoFeatureSkillRound then
+              curPower = curPower - 1
+            end
+          elseif incRound then
             curPower = curPower - 1
           end
         end
-        do
-          if incRound then
-            curPower = curPower - 1
-          end
-          if curPower < 0 then
-            curPower = 0
-          end
-          if curPower == 0 then
-            curReady = 1
-          end
-          self:SetFeatureSkillCurPower(featureType, curPower, curReady)
-          ;
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.PersonaPowerChange, featureType, curPower, curReady)
+        if curPower < 0 then
+          curPower = 0
         end
+        if curPower == 0 then
+          curReady = 1
+        end
+        self:SetFeatureSkillCurPower(featureType, curPower, curReady)
+        self._world:EventDispatcher():Dispatch(GameEventType.PersonaPowerChange, featureType, curPower, curReady)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.SetFeatureSkillCurPower = function(self, featureType, power, ready)
-  -- function num : 0_67
+function FeatureServiceLogic:SetFeatureSkillCurPower(featureType, power, ready)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     logicFeatureCmpt:SetFeatureSkillCurPower(featureType, power, ready)
   end
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetFeatureSkillCurPower = function(self, featureType)
-  -- function num : 0_68
+function FeatureServiceLogic:GetFeatureSkillCurPower(featureType)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetFeatureSkillCurPower(featureType)
@@ -1561,20 +1270,14 @@ FeatureServiceLogic.GetFeatureSkillCurPower = function(self, featureType)
   return nil
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.SetFeatureSkillDelayModifyPower = function(self, featureType, delayModifyPower)
-  -- function num : 0_69
+function FeatureServiceLogic:SetFeatureSkillDelayModifyPower(featureType, delayModifyPower)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     logicFeatureCmpt:SetFeatureSkillDelayModifyPower(featureType, delayModifyPower)
   end
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetFeatureSkillDelayModifyPower = function(self, featureType)
-  -- function num : 0_70
+function FeatureServiceLogic:GetFeatureSkillDelayModifyPower(featureType)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetFeatureSkillDelayModifyPower(featureType)
@@ -1582,55 +1285,45 @@ FeatureServiceLogic.GetFeatureSkillDelayModifyPower = function(self, featureType
   return 0
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.BuffChangeFeatureSkillPower = function(self, featureType, modifyValue)
-  -- function num : 0_71
+function FeatureServiceLogic:BuffChangeFeatureSkillPower(featureType, modifyValue)
   if self:IsPopStarSkillFeature(featureType) then
     return self:_BuffChangeFeatureSkillPowerForPopStar(featureType, modifyValue)
   end
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local featureData = self:GetFeatureData(featureType)
   if featureData then
     local curPower, curReady = self:GetFeatureSkillCurPower(featureType)
-    if curPower and curPower > 0 and modifyValue and modifyValue ~= 0 then
+    if curPower and 0 < curPower and modifyValue and modifyValue ~= 0 then
       local logicFeatureCmpt = self:GetLogicCmpt()
       if logicFeatureCmpt then
         local lastDoFeatureSkillRound = logicFeatureCmpt:GetLastDoFeatureSkillRound(featureType)
         local curRound = battleStatCmpt:GetLevelTotalRoundCount()
         if lastDoFeatureSkillRound then
-          if curRound - lastDoFeatureSkillRound > 0 then
+          if 0 < curRound - lastDoFeatureSkillRound then
             curPower = curPower + modifyValue
           else
             local oldDelayModifyPower = self:GetFeatureSkillDelayModifyPower(featureType)
             local curDelayModifyPower = oldDelayModifyPower + modifyValue
             self:SetFeatureSkillDelayModifyPower(featureType, curDelayModifyPower)
-            return 
+            return
           end
         else
-          do
-            do
-              curPower = curPower + modifyValue
-              if curPower < 0 then
-                curPower = 0
-              end
-              if curPower == 0 then
-                curReady = 1
-              end
-              self:SetFeatureSkillCurPower(featureType, curPower, curReady)
-              do return featureType, curPower, curReady end
-            end
-          end
+          curPower = curPower + modifyValue
         end
       end
+      if curPower < 0 then
+        curPower = 0
+      end
+      if curPower == 0 then
+        curReady = 1
+      end
+      self:SetFeatureSkillCurPower(featureType, curPower, curReady)
+      return featureType, curPower, curReady
     end
   end
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._BuffChangeFeatureSkillPowerForPopStar = function(self, featureType, modifyValue)
-  -- function num : 0_72
+function FeatureServiceLogic:_BuffChangeFeatureSkillPowerForPopStar(featureType, modifyValue)
   local featureData = self:GetFeatureData(featureType)
   if featureData then
     local curPower, curReady = self:GetFeatureSkillCurPower(featureType)
@@ -1643,7 +1336,7 @@ FeatureServiceLogic._BuffChangeFeatureSkillPowerForPopStar = function(self, feat
         curPower = 0
       end
       local maxPower = featureData:GetMaxPowerLimit()
-      if maxPower and maxPower < curPower then
+      if maxPower and curPower > maxPower then
         curPower = maxPower
       end
       local skillID = featureData:GetMasterSkillID()
@@ -1654,17 +1347,17 @@ FeatureServiceLogic._BuffChangeFeatureSkillPowerForPopStar = function(self, feat
   end
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.CheckFeatureSkillCastCondition = function(self, featureType, skillID, selectInfo)
-  -- function num : 0_73 , upvalues : _ENV
-  local log = {tostring(BattleConst.Kick), tostring(skillID)}
+function FeatureServiceLogic:CheckFeatureSkillCastCondition(featureType, skillID, selectInfo)
+  local log = {
+    tostring(BattleConst.Kick),
+    tostring(skillID)
+  }
   if not BattleConst.Kick then
     return true, log
   end
   if FeatureType.PersonaSkill == featureType or FeatureType.MasterSkill == featureType or FeatureType.MasterSkillRecover == featureType or FeatureType.MasterSkillTeleport == featureType or FeatureType.TrapDefence == featureType or self:IsTalentSkillFeature(featureType) then
     local localSkillID = self:GetFeatureSkillID(featureType)
-    local configService = (self._world):GetService("Config")
+    local configService = self._world:GetService("Config")
     local skillConfigData = configService:GetSkillConfigData(localSkillID)
     if localSkillID ~= skillID then
       return false, log, BattleUIActiveSkillCannotCastReason.NotReady
@@ -1673,69 +1366,59 @@ FeatureServiceLogic.CheckFeatureSkillCastCondition = function(self, featureType,
     if ready == 0 then
       return false, log, BattleUIActiveSkillCannotCastReason.NotReady
     end
-    if skillConfigData:GetSkillTriggerType() ~= SkillTriggerType.LegendEnergy or curPower ~= 0 then
-      return false, log, BattleUIActiveSkillCannotCastReason.NotReady
-    end
-    local triggerExtraParam = skillConfigData:GetSkillTriggerExtraParam()
-    if triggerExtraParam and triggerExtraParam[SkillTriggerTypeExtraParam.CostFeatureStepPoint] then
-      local paramStepPoint = triggerExtraParam[SkillTriggerTypeExtraParam.CostFeatureStepPoint]
-      if paramStepPoint then
-        if self:HasFeatureType(FeatureType.StepPoint) then
-          local curStepPoint = self:GetCurStepPoint()
-          if paramStepPoint <= curStepPoint then
-            do
-              do
-                do return false, log, BattleUIActiveSkillCannotCastReason.NotEnoughFeatureStepPoint end
-                do return false, log, BattleUIActiveSkillCannotCastReason.NotEnoughFeatureStepPoint end
-                if self:IsPopStarSkillFeature(featureType) then
-                  local localSkillID = self:GetFeatureSkillID(featureType)
-                  if localSkillID ~= skillID then
-                    return false, log, BattleUIActiveSkillCannotCastReason.NotReady
-                  end
-                  local configService = (self._world):GetService("Config")
-                  local skillConfigData = configService:GetSkillConfigData(localSkillID)
-                  local legendPower, ready = self:GetFeatureSkillCurPower(featureType)
-                  if ready == 0 then
-                    return false, log, BattleUIActiveSkillCannotCastReason.NotReady
-                  end
-                  if skillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
-                    local costLegendPower = skillConfigData:GetSkillTriggerParam()
-                    if legendPower < costLegendPower then
-                      return false, log, BattleUIActiveSkillCannotCastReason.NotReady
-                    end
-                    if not self:CanCastPopStarProFeature(skillConfigData) then
-                      return false, log, BattleUIActiveSkillCannotCastReason.NotEnoughRound
-                    end
-                  else
-                    do
-                      do
-                        do return false, log, BattleUIActiveSkillCannotCastReason.NotReady end
-                        if FeatureType.Card == featureType then
-                          return self:_CheckFeatureSkillCastCondition_Card(skillID, log)
-                        else
-                          if FeatureType.Shop == featureType then
-                            return self:_CheckFeatureSkillCastCondition_Shop(skillID, selectInfo, log)
-                          end
-                        end
-                        return true, log
-                      end
-                    end
-                  end
-                end
-              end
+    if skillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
+    else
+      if curPower ~= 0 then
+        return false, log, BattleUIActiveSkillCannotCastReason.NotReady
+      end
+      local triggerExtraParam = skillConfigData:GetSkillTriggerExtraParam()
+      if triggerExtraParam and triggerExtraParam[SkillTriggerTypeExtraParam.CostFeatureStepPoint] then
+        local paramStepPoint = triggerExtraParam[SkillTriggerTypeExtraParam.CostFeatureStepPoint]
+        if paramStepPoint then
+          if self:HasFeatureType(FeatureType.StepPoint) then
+            local curStepPoint = self:GetCurStepPoint()
+            if paramStepPoint <= curStepPoint then
+            else
+              return false, log, BattleUIActiveSkillCannotCastReason.NotEnoughFeatureStepPoint
             end
+          else
+            return false, log, BattleUIActiveSkillCannotCastReason.NotEnoughFeatureStepPoint
           end
         end
       end
     end
+  elseif self:IsPopStarSkillFeature(featureType) then
+    local localSkillID = self:GetFeatureSkillID(featureType)
+    if localSkillID ~= skillID then
+      return false, log, BattleUIActiveSkillCannotCastReason.NotReady
+    end
+    local configService = self._world:GetService("Config")
+    local skillConfigData = configService:GetSkillConfigData(localSkillID)
+    local legendPower, ready = self:GetFeatureSkillCurPower(featureType)
+    if ready == 0 then
+      return false, log, BattleUIActiveSkillCannotCastReason.NotReady
+    end
+    if skillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
+      local costLegendPower = skillConfigData:GetSkillTriggerParam()
+      if legendPower < costLegendPower then
+        return false, log, BattleUIActiveSkillCannotCastReason.NotReady
+      end
+      if not self:CanCastPopStarProFeature(skillConfigData) then
+        return false, log, BattleUIActiveSkillCannotCastReason.NotEnoughRound
+      end
+    else
+      return false, log, BattleUIActiveSkillCannotCastReason.NotReady
+    end
+  elseif FeatureType.Card == featureType then
+    return self:_CheckFeatureSkillCastCondition_Card(skillID, log)
+  elseif FeatureType.Shop == featureType then
+    return self:_CheckFeatureSkillCastCondition_Shop(skillID, selectInfo, log)
   end
+  return true, log
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._CheckFeatureSkillCastCondition_Card = function(self, skillID, log)
-  -- function num : 0_74 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function FeatureServiceLogic:_CheckFeatureSkillCastCondition_Card(skillID, log)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID)
   if skillConfigData then
     local triggerExtraParam = skillConfigData:GetSkillTriggerExtraParam()
@@ -1744,75 +1427,65 @@ FeatureServiceLogic._CheckFeatureSkillCastCondition_Card = function(self, skillI
       if cardCostType then
         if self:IsCardEnoughToCost(cardCostType) then
           local tarPetNotHasBuffParam = triggerExtraParam[SkillTriggerTypeExtraParam.CardTarPetNotHasBuff]
-          -- DECOMPILER ERROR at PC32: Unhandled construct in 'MakeBoolean' P1
-
-          if tarPetNotHasBuffParam and #tarPetNotHasBuffParam > 0 then
+          if tarPetNotHasBuffParam then
+            if not (0 < #tarPetNotHasBuffParam) then
+              goto lbl_116
+            end
             local tarPetType = tarPetNotHasBuffParam[1]
             local checkBuffList = {}
             local totalParam = #tarPetNotHasBuffParam
             for i = 2, totalParam do
               local buffEffect = tarPetNotHasBuffParam[i]
-              ;
-              (table.insert)(checkBuffList, buffEffect)
+              table.insert(checkBuffList, buffEffect)
             end
-            local tarPet = nil
+            local tarPet
             if tarPetType == FeatureTarPetSelectType.TeamLeader then
-              local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+              local teamEntity = self._world:Player():GetCurrentTeamEntity()
               if teamEntity then
-                local teamLeader = (teamEntity:Team()):GetTeamLeaderEntity()
+                local teamLeader = teamEntity:Team():GetTeamLeaderEntity()
                 tarPet = teamLeader
               end
-            else
-              do
-                if tarPetType == FeatureTarPetSelectType.TeamTail then
-                  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-                  if teamEntity then
-                    local cTeam = teamEntity:Team()
-                    local teamOrder = cTeam:GetTeamOrder()
-                    local finalIndex = #teamOrder
-                    local lastPetPstID = teamOrder[finalIndex]
-                    local lastPetEntity = cTeam:GetPetEntityByPetPstID(lastPetPstID)
-                    tarPet = lastPetEntity
-                  end
-                end
-                do
-                  if tarPet then
-                    local hasBuff = false
-                    local utilData = (self._world):GetService("UtilData")
-                    for i,buffEffect in ipairs(checkBuffList) do
-                      hasBuff = utilData:HasBuffEffect(tarPet, buffEffect)
-                    end
-                    do
-                      do
-                        do
-                          do
-                            if hasBuff or hasBuff then
-                              return false, log, BattleUIActiveSkillCannotCastReason.CardTarPetHasBuff
-                            end
-                            do return true, log end
-                            do return true, log end
-                            do return false, log, BattleUIActiveSkillCannotCastReason.CardNotEnough end
-                            return false, log, BattleUIActiveSkillCannotCastReason.NotReady
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
+            elseif tarPetType == FeatureTarPetSelectType.TeamTail then
+              local teamEntity = self._world:Player():GetCurrentTeamEntity()
+              if teamEntity then
+                local cTeam = teamEntity:Team()
+                local teamOrder = cTeam:GetTeamOrder()
+                local finalIndex = #teamOrder
+                local lastPetPstID = teamOrder[finalIndex]
+                local lastPetEntity = cTeam:GetPetEntityByPetPstID(lastPetPstID)
+                tarPet = lastPetEntity
               end
             end
+            if not tarPet then
+              goto lbl_116
+            end
+            local hasBuff = false
+            local utilData = self._world:GetService("UtilData")
+            for i, buffEffect in ipairs(checkBuffList) do
+              hasBuff = utilData:HasBuffEffect(tarPet, buffEffect)
+              if hasBuff then
+                break
+              end
+            end
+            if hasBuff then
+              return false, log, BattleUIActiveSkillCannotCastReason.CardTarPetHasBuff
+            end
+          else
+            return true, log
           end
+          ::lbl_116::
+          return true, log
+        else
+          return false, log, BattleUIActiveSkillCannotCastReason.CardNotEnough
         end
       end
     end
   end
+  return false, log, BattleUIActiveSkillCannotCastReason.NotReady
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.OnFeatureSkillCast = function(self, featureType, skillID)
-  -- function num : 0_75 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function FeatureServiceLogic:OnFeatureSkillCast(featureType, skillID)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID)
   if FeatureType.PersonaSkill == featureType or FeatureType.MasterSkill == featureType or FeatureType.MasterSkillRecover == featureType or FeatureType.MasterSkillTeleport == featureType or FeatureType.TrapDefence == featureType or self:IsTalentSkillFeature(featureType) then
     local MaxPower = skillConfigData:GetSkillTriggerParam()
@@ -1822,124 +1495,86 @@ FeatureServiceLogic.OnFeatureSkillCast = function(self, featureType, skillID)
     if MaxPower < 0 then
       MaxPower = 0
     end
-    local battleStatCmpt = (self._world):BattleStat()
+    local battleStatCmpt = self._world:BattleStat()
     local round = battleStatCmpt:GetLevelTotalRoundCount()
     self:SetLastDoFeatureSkillRound(featureType, round)
     self:SetFeatureSkillCurPower(featureType, MaxPower, 0)
-  else
-    do
-      if FeatureType.Card == featureType and skillConfigData then
-        local triggerExtraParam = skillConfigData:GetSkillTriggerExtraParam()
-        if triggerExtraParam then
-          local cardCostType = triggerExtraParam[SkillTriggerTypeExtraParam.CardCost]
-          if cardCostType then
-            self:CostCardByType(cardCostType)
-            ;
-            ((self._world):EventDispatcher()):Dispatch(GameEventType.FeatureUIRefreshCardNum)
-          end
-        end
-      end
-      do
-        if self:IsPopStarSkillFeature(featureType) then
-          local costLegendPower = skillConfigData:GetSkillTriggerParam()
-          local legendPower, isReady = self:GetFeatureSkillCurPower(featureType)
-          legendPower = legendPower - costLegendPower
-          if legendPower <= 0 then
-            legendPower = 0
-          end
-          isReady = self:IsPopStarProFeatureReady(legendPower, skillID)
-          self:SetFeatureSkillCurPower(featureType, legendPower, isReady)
-          ;
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.PersonaPowerChange, featureType, legendPower, isReady)
-        else
-        end
-        do
-          if FeatureType.Shop == featureType then
-          end
+  elseif FeatureType.Card == featureType then
+    if skillConfigData then
+      local triggerExtraParam = skillConfigData:GetSkillTriggerExtraParam()
+      if triggerExtraParam then
+        local cardCostType = triggerExtraParam[SkillTriggerTypeExtraParam.CardCost]
+        if cardCostType then
+          self:CostCardByType(cardCostType)
+          self._world:EventDispatcher():Dispatch(GameEventType.FeatureUIRefreshCardNum)
         end
       end
     end
+  elseif self:IsPopStarSkillFeature(featureType) then
+    local costLegendPower = skillConfigData:GetSkillTriggerParam()
+    local legendPower, isReady = self:GetFeatureSkillCurPower(featureType)
+    legendPower = legendPower - costLegendPower
+    if legendPower <= 0 then
+      legendPower = 0
+    end
+    isReady = self:IsPopStarProFeatureReady(legendPower, skillID)
+    self:SetFeatureSkillCurPower(featureType, legendPower, isReady)
+    self._world:EventDispatcher():Dispatch(GameEventType.PersonaPowerChange, featureType, legendPower, isReady)
+  elseif FeatureType.Shop == featureType then
   end
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.SetLastDoFeatureSkillRound = function(self, featureType, round)
-  -- function num : 0_76
+function FeatureServiceLogic:SetLastDoFeatureSkillRound(featureType, round)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     logicFeatureCmpt:SetLastDoFeatureSkillRound(featureType, round)
   end
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetLastDoFeatureSkillRound = function(self, featureType)
-  -- function num : 0_77
+function FeatureServiceLogic:GetLastDoFeatureSkillRound(featureType)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetLastDoFeatureSkillRound(featureType)
   end
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetFeatureSkillID = function(self, featureType)
-  -- function num : 0_78
+function FeatureServiceLogic:GetFeatureSkillID(featureType)
   local logicFeatureCmpt = self:GetLogicCmpt()
-  do
-    if logicFeatureCmpt then
-      local skillID = logicFeatureCmpt:GetFeatureSkillID(featureType)
-      return skillID
-    end
-    return nil
+  if logicFeatureCmpt then
+    local skillID = logicFeatureCmpt:GetFeatureSkillID(featureType)
+    return skillID
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetFeatureSkillHolderEntityID = function(self, featureType)
-  -- function num : 0_79
+function FeatureServiceLogic:GetFeatureSkillHolderEntityID(featureType)
   local logicFeatureCmpt = self:GetLogicCmpt()
-  do
-    if logicFeatureCmpt then
-      local holderID = logicFeatureCmpt:GetFeatureSkillHolderID(featureType)
-      if holderID then
-        return holderID
-      end
-    end
-    return nil
-  end
-end
-
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetFeatureSkillHolderEntity = function(self, featureType)
-  -- function num : 0_80
-  local holderID = self:GetFeatureSkillHolderEntityID(featureType)
-  do
+  if logicFeatureCmpt then
+    local holderID = logicFeatureCmpt:GetFeatureSkillHolderID(featureType)
     if holderID then
-      local skillHolder = (self._world):GetEntityByID(holderID)
-      return skillHolder
+      return holderID
     end
-    return nil
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
+function FeatureServiceLogic:GetFeatureSkillHolderEntity(featureType)
+  local holderID = self:GetFeatureSkillHolderEntityID(featureType)
+  if holderID then
+    local skillHolder = self._world:GetEntityByID(holderID)
+    return skillHolder
+  end
+  return nil
+end
 
-FeatureServiceLogic.SetAllFeatureSkillCdOff = function(self, cdOff)
-  -- function num : 0_81
+function FeatureServiceLogic:SetAllFeatureSkillCdOff(cdOff)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     logicFeatureCmpt:SetAllFeatureSkillCdOff(cdOff)
   end
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetAllFeatureSkillCdOff = function(self)
-  -- function num : 0_82
+function FeatureServiceLogic:GetAllFeatureSkillCdOff()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetAllFeatureSkillCdOff()
@@ -1947,20 +1582,14 @@ FeatureServiceLogic.GetAllFeatureSkillCdOff = function(self)
   return 0
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.SetSpecificFeatureSkillCdOff = function(self, featureType, cdOff)
-  -- function num : 0_83
+function FeatureServiceLogic:SetSpecificFeatureSkillCdOff(featureType, cdOff)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     logicFeatureCmpt:SetSpecificFeatureSkillCdOff(featureType, cdOff)
   end
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetSpecificFeatureSkillCdOff = function(self, featureType)
-  -- function num : 0_84
+function FeatureServiceLogic:GetSpecificFeatureSkillCdOff(featureType)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetSpecificFeatureSkillCdOff(featureType)
@@ -1968,10 +1597,7 @@ FeatureServiceLogic.GetSpecificFeatureSkillCdOff = function(self, featureType)
   return 0
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetShopSelectedCellList = function(self)
-  -- function num : 0_85
+function FeatureServiceLogic:GetShopSelectedCellList()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetShopSelectedCellList()
@@ -1979,10 +1605,7 @@ FeatureServiceLogic.GetShopSelectedCellList = function(self)
   return {}
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetShopCoinCount = function(self)
-  -- function num : 0_86
+function FeatureServiceLogic:GetShopCoinCount()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetShopCoinCount()
@@ -1990,20 +1613,14 @@ FeatureServiceLogic.GetShopCoinCount = function(self)
   return 0
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.AddShopCoinCount = function(self, addVal)
-  -- function num : 0_87
+function FeatureServiceLogic:AddShopCoinCount(addVal)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     logicFeatureCmpt:AddShopCoinCount(addVal)
   end
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetShopOverMaxCoinCount = function(self)
-  -- function num : 0_88 , upvalues : _ENV
+function FeatureServiceLogic:GetShopOverMaxCoinCount()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local curCount = logicFeatureCmpt:GetShopCoinCount()
@@ -2011,28 +1628,21 @@ FeatureServiceLogic.GetShopOverMaxCoinCount = function(self)
     local featureData = logicFeatureCmpt:GetFeatureData(FeatureType.Shop)
     if featureData then
       local unlockParam = featureData:GetUnlockParam()
-      if #unlockParam >= 2 then
+      if 2 <= #unlockParam then
         local lastUnlockBarParam = unlockParam[#unlockParam]
         maxUseCount = lastUnlockBarParam[#lastUnlockBarParam]
       end
     end
-    do
-      do
-        if maxUseCount > 0 then
-          local overCount = curCount - maxUseCount
-          overCount = (math.max)(0, overCount)
-          return overCount
-        end
-        return 0
-      end
+    if 0 < maxUseCount then
+      local overCount = curCount - maxUseCount
+      overCount = math.max(0, overCount)
+      return overCount
     end
   end
+  return 0
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetShopOverMaxCoinCountAddAttackParam = function(self)
-  -- function num : 0_89 , upvalues : _ENV
+function FeatureServiceLogic:GetShopOverMaxCoinCountAddAttackParam()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local featureData = logicFeatureCmpt:GetFeatureData(FeatureType.Shop)
@@ -2043,18 +1653,13 @@ FeatureServiceLogic.GetShopOverMaxCoinCountAddAttackParam = function(self)
       end
     end
   end
-  do
-    return 0
-  end
+  return 0
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._HandleInitFeature_Shop = function(self, featureType, featureData)
-  -- function num : 0_90 , upvalues : _ENV
+function FeatureServiceLogic:_HandleInitFeature_Shop(featureType, featureData)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
-    local entityService = (self._world):GetService("LogicEntity")
+    local entityService = self._world:GetService("LogicEntity")
     local skillHolder = entityService:CreateLogicEntity(EntityConfigIDConst.PersonaSkillHolder)
     if skillHolder then
       local holderID = skillHolder:GetID()
@@ -2067,42 +1672,29 @@ FeatureServiceLogic._HandleInitFeature_Shop = function(self, featureType, featur
       attributeCmpt:Modify("Attack", attack)
       skillHolder:ReplaceElement(firstElement, secondElement)
     end
-    do
-      local enterCoinCount = featureData:GetEnterCoinCount()
-      logicFeatureCmpt:AddShopCoinCount(enterCoinCount)
-    end
+    local enterCoinCount = featureData:GetEnterCoinCount()
+    logicFeatureCmpt:AddShopCoinCount(enterCoinCount)
   end
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._ShopGetCellGroupID = function(self, cellID, featureData)
-  -- function num : 0_91 , upvalues : _ENV
+function FeatureServiceLogic:_ShopGetCellGroupID(cellID, featureData)
   local groupDataList = featureData:GetGroupDataList()
   local groupID = 0
-  for groupIndex,groupData in ipairs(groupDataList) do
-    if groupID <= 0 then
-      for groupSubIndex,cellData in ipairs(groupData) do
-        if cellData.CellID == cellID then
-          groupID = groupIndex
-          break
-        end
-      end
-      do
-        -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out IF_STMT
-
+  for groupIndex, groupData in ipairs(groupDataList) do
+    if 0 < groupID then
+      break
+    end
+    for groupSubIndex, cellData in ipairs(groupData) do
+      if cellData.CellID == cellID then
+        groupID = groupIndex
+        break
       end
     end
   end
   return groupID
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._CheckFeatureSkillCastCondition_Shop = function(self, skillID, selectInfo, log)
-  -- function num : 0_92 , upvalues : _ENV
+function FeatureServiceLogic:_CheckFeatureSkillCastCondition_Shop(skillID, selectInfo, log)
   local isCheckPass = false
   local curCoinCount = self:GetShopCoinCount()
   local curSelectedList = self:GetShopSelectedCellList()
@@ -2116,7 +1708,7 @@ FeatureServiceLogic._CheckFeatureSkillCastCondition_Shop = function(self, skillI
         local hasSameCell = false
         local groupFinded = {}
         local cellFinded = {}
-        for index,cellID in ipairs(selectInfo) do
+        for index, cellID in ipairs(selectInfo) do
           local groupIndex = self:_ShopGetCellGroupID(cellID, featureData)
           if cellFinded[cellID] then
             hasSameCell = true
@@ -2131,40 +1723,33 @@ FeatureServiceLogic._CheckFeatureSkillCastCondition_Shop = function(self, skillI
         end
         if not hasSameCell and not hasSameCell then
           local hasCanNotSelectCell = false
-          for index,value in ipairs(selectInfo) do
+          for index, value in ipairs(selectInfo) do
             local canSelect = self:_FeatureShopCellCanSelect(value, featureData, curCoinCount, curSelectedList)
             if not canSelect then
               hasCanNotSelectCell = true
               break
             end
           end
-          do
-            do
-              if not hasCanNotSelectCell then
-                isCheckPass = true
-              end
-              if isCheckPass then
-                return true, log
-              else
-                return false, log, BattleUIActiveSkillCannotCastReason.NotReady
-              end
-            end
+          if not hasCanNotSelectCell then
+            isCheckPass = true
           end
         end
       end
     end
   end
+  if isCheckPass then
+    return true, log
+  else
+    return false, log, BattleUIActiveSkillCannotCastReason.NotReady
+  end
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._FeatureShopCellCanSelect = function(self, cellID, featureData, curCoinCount, curSelectedList)
-  -- function num : 0_93 , upvalues : _ENV
-  if (table.icontains)(curSelectedList, cellID) then
+function FeatureServiceLogic:_FeatureShopCellCanSelect(cellID, featureData, curCoinCount, curSelectedList)
+  if table.icontains(curSelectedList, cellID) then
     return false
   end
   local petTemplateID = 1602181
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local matchPet = utilData:GetLocalMatchPetByTemplateID(petTemplateID)
   local curEquipLv = 0
   if matchPet then
@@ -2176,23 +1761,18 @@ FeatureServiceLogic._FeatureShopCellCanSelect = function(self, cellID, featureDa
   local groupCellIndex = 0
   local otherCellInSameGroup = 0
   local needEquipLv = 0
-  for groupIndex,groupData in ipairs(groupDataList) do
-    if groupID <= 0 then
-      for groupSubIndex,cellData in ipairs(groupData) do
-        if cellData.CellID == cellID then
-          groupID = groupIndex
-          groupCellIndex = groupSubIndex
-          if cellData.NeedEquipLevel then
-            needEquipLv = cellData.NeedEquipLevel
-          end
-          break
+  for groupIndex, groupData in ipairs(groupDataList) do
+    if 0 < groupID then
+      break
+    end
+    for groupSubIndex, cellData in ipairs(groupData) do
+      if cellData.CellID == cellID then
+        groupID = groupIndex
+        groupCellIndex = groupSubIndex
+        if cellData.NeedEquipLevel then
+          needEquipLv = cellData.NeedEquipLevel
         end
-      end
-      do
-        -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out IF_STMT
-
+        break
       end
     end
   end
@@ -2201,22 +1781,17 @@ FeatureServiceLogic._FeatureShopCellCanSelect = function(self, cellID, featureDa
   end
   local groupData = groupDataList[groupID]
   if groupData then
-    for groupSubIndex,cellData in ipairs(groupData) do
+    for groupSubIndex, cellData in ipairs(groupData) do
       if cellData.CellID == cellID then
-        do
-          otherCellInSameGroup = cellData.CellID
-          -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      else
+        otherCellInSameGroup = cellData.CellID
       end
     end
   else
     return false
   end
   local stage = 1
-  if (table.icontains)(curSelectedList, otherCellInSameGroup) then
+  if table.icontains(curSelectedList, otherCellInSameGroup) then
     stage = 2
   end
   local curStageUnlockParam = unlockParam[stage]
@@ -2226,17 +1801,12 @@ FeatureServiceLogic._FeatureShopCellCanSelect = function(self, cellID, featureDa
       return false
     end
   else
-    do
-      do return false end
-      return true
-    end
+    return false
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.HandleCastSkillSelectInfo = function(self, featureType, skillID, selectInfo)
-  -- function num : 0_94 , upvalues : _ENV
+function FeatureServiceLogic:HandleCastSkillSelectInfo(featureType, skillID, selectInfo)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt and featureType == FeatureType.Shop then
     logicFeatureCmpt:SetShopRecentSelectedCellList(selectInfo)
@@ -2244,10 +1814,7 @@ FeatureServiceLogic.HandleCastSkillSelectInfo = function(self, featureType, skil
   end
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetShopRecentSelectedCellList = function(self)
-  -- function num : 0_95
+function FeatureServiceLogic:GetShopRecentSelectedCellList()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetShopRecentSelectedCellList()
@@ -2255,10 +1822,7 @@ FeatureServiceLogic.GetShopRecentSelectedCellList = function(self)
   return {}
 end
 
--- DECOMPILER ERROR at PC299: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetShopUIHadSeeUnlockCellList = function(self)
-  -- function num : 0_96
+function FeatureServiceLogic:GetShopUIHadSeeUnlockCellList()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetShopUIHadSeeUnlockCellList()
@@ -2266,35 +1830,26 @@ FeatureServiceLogic.GetShopUIHadSeeUnlockCellList = function(self)
   return {}
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.SetShopUIHadSeeUnlockCellList = function(self, unlockCellList)
-  -- function num : 0_97
+function FeatureServiceLogic:SetShopUIHadSeeUnlockCellList(unlockCellList)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     logicFeatureCmpt:SetShopUIHadSeeUnlockCellList(unlockCellList)
   end
 end
 
--- DECOMPILER ERROR at PC305: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetShopCellData = function(self, shopData, cellID)
-  -- function num : 0_98
+function FeatureServiceLogic:GetShopCellData(shopData, cellID)
   local groupDataList = shopData:GetGroupDataList()
   for i = 1, #groupDataList do
     local curGroupDataList = groupDataList[i]
     for j = 1, #curGroupDataList do
-      if (curGroupDataList[j]).CellID == cellID then
+      if curGroupDataList[j].CellID == cellID then
         return curGroupDataList[j]
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC308: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetAvailableShopSkill = function(self)
-  -- function num : 0_99 , upvalues : _ENV
+function FeatureServiceLogic:GetAvailableShopSkill()
   local shopData = self:GetFeatureData(FeatureType.Shop)
   if shopData then
     local petTemplateID = 1602181
@@ -2303,108 +1858,85 @@ FeatureServiceLogic.GetAvailableShopSkill = function(self)
     local selectedCellList = self:GetShopSelectedCellList()
     local curCoinCount = self:GetShopCoinCount()
     local unlockParam = shopData:GetUnlockParam()
-    local unlockParamCount = (table.count)(unlockParam)
+    local unlockParamCount = table.count(unlockParam)
     local showPageIndex = 1
-    do
-      if unlockParamCount > 1 then
-        local firstSelectCount = 0
-        if (table.icontains)(selectedCellList, 1) or (table.icontains)(selectedCellList, 2) then
-          firstSelectCount = firstSelectCount + 1
-        end
-        if (table.icontains)(selectedCellList, 3) or (table.icontains)(selectedCellList, 4) then
-          firstSelectCount = firstSelectCount + 1
-        end
-        if (table.icontains)(selectedCellList, 5) or (table.icontains)(selectedCellList, 6) then
-          firstSelectCount = firstSelectCount + 1
-        end
-        if firstSelectCount == 3 then
-          showPageIndex = 2
-        end
+    if 1 < unlockParamCount then
+      local firstSelectCount = 0
+      if table.icontains(selectedCellList, 1) or table.icontains(selectedCellList, 2) then
+        firstSelectCount = firstSelectCount + 1
       end
-      local curUnlockParam = unlockParam[showPageIndex]
-      local curStage = #curUnlockParam
-      for i = 1, #curUnlockParam do
-        if curCoinCount <= curUnlockParam[i] then
-          curStage = i
-          break
-        end
+      if table.icontains(selectedCellList, 3) or table.icontains(selectedCellList, 4) then
+        firstSelectCount = firstSelectCount + 1
       end
-      do
-        local petTemplateID = 1602181
-        local utilData = (self._world):GetService("UtilData")
-        local matchPet = utilData:GetLocalMatchPetByTemplateID(petTemplateID)
-        local curEquipLv = matchPet:GetEquipLv()
-        local canSelectInfo = {}
-        local selectedGroupList = {}
-        do
-          local eachGroupCellCount = 2
-          for i = 1, 6 do
-            local curCellData = self:GetShopCellData(shopData, i)
-            local equipLevelLimit = curCellData.NeedEquipLevel or 0
-            local groupIndex = (math.floor)((i - 1) / eachGroupCellCount) + 1
-            local unlockNeedCount = curUnlockParam[groupIndex]
-            local hadInvest = (table.icontains)(selectedCellList, i)
-            local isLock = not hadInvest and curEquipLv < equipLevelLimit or (curCoinCount < unlockNeedCount and curStage == 1)
-            local cantSelect = self:_ShopGetCurCellCantSelect(i, unlockParamCount, showPageIndex, selectedCellList) or curCoinCount < unlockNeedCount
-            if not hadInvest and not isLock and (not cantSelect or not (table.icontains)(selectedGroupList, groupIndex)) then
-              (table.insert)(canSelectInfo, i)
-              ;
-              (table.insert)(selectedGroupList, groupIndex)
-            end
-          end
-          if #canSelectInfo > 0 then
-            return skillID, canSelectInfo
-          end
-          do return  end
-          -- DECOMPILER ERROR: 6 unprocessed JMP targets
-        end
+      if table.icontains(selectedCellList, 5) or table.icontains(selectedCellList, 6) then
+        firstSelectCount = firstSelectCount + 1
+      end
+      if firstSelectCount == 3 then
+        showPageIndex = 2
       end
     end
+    local curUnlockParam = unlockParam[showPageIndex]
+    local curStage = #curUnlockParam
+    for i = 1, #curUnlockParam do
+      if curCoinCount <= curUnlockParam[i] then
+        curStage = i
+        break
+      end
+    end
+    local petTemplateID = 1602181
+    local utilData = self._world:GetService("UtilData")
+    local matchPet = utilData:GetLocalMatchPetByTemplateID(petTemplateID)
+    local curEquipLv = matchPet:GetEquipLv()
+    local canSelectInfo = {}
+    local selectedGroupList = {}
+    local eachGroupCellCount = 2
+    for i = 1, 6 do
+      local curCellData = self:GetShopCellData(shopData, i)
+      local equipLevelLimit = curCellData.NeedEquipLevel or 0
+      local groupIndex = math.floor((i - 1) / eachGroupCellCount) + 1
+      local unlockNeedCount = curUnlockParam[groupIndex]
+      local hadInvest = table.icontains(selectedCellList, i)
+      local isLock = not hadInvest and (curEquipLv < equipLevelLimit or curCoinCount < unlockNeedCount and curStage == 1)
+      local cantSelect = self:_ShopGetCurCellCantSelect(i, unlockParamCount, showPageIndex, selectedCellList) or curCoinCount < unlockNeedCount
+      if hadInvest or isLock or cantSelect then
+      elseif not table.icontains(selectedGroupList, groupIndex) then
+        table.insert(canSelectInfo, i)
+        table.insert(selectedGroupList, groupIndex)
+      end
+    end
+    if 0 < #canSelectInfo then
+      return skillID, canSelectInfo
+    end
   end
+  return
 end
 
--- DECOMPILER ERROR at PC311: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._ShopGetCurCellCantSelect = function(self, cellID, unlockParamCount, showPageIndex, selectedCellList)
-  -- function num : 0_100 , upvalues : _ENV
+function FeatureServiceLogic:_ShopGetCurCellCantSelect(cellID, unlockParamCount, showPageIndex, selectedCellList)
   if unlockParamCount == 2 and showPageIndex == 2 then
     return false
   end
   local targetCellID = 1
   if cellID == 1 then
     targetCellID = 2
-  else
-    if cellID == 2 then
-      targetCellID = 1
-    else
-      if cellID == 3 then
-        targetCellID = 4
-      else
-        if cellID == 4 then
-          targetCellID = 3
-        else
-          if cellID == 5 then
-            targetCellID = 6
-          else
-            if cellID == 6 then
-              targetCellID = 5
-            end
-          end
-        end
-      end
-    end
+  elseif cellID == 2 then
+    targetCellID = 1
+  elseif cellID == 3 then
+    targetCellID = 4
+  elseif cellID == 4 then
+    targetCellID = 3
+  elseif cellID == 5 then
+    targetCellID = 6
+  elseif cellID == 6 then
+    targetCellID = 5
   end
-  local targetCellHadInvest = (table.icontains)(selectedCellList, targetCellID)
+  local targetCellHadInvest = table.icontains(selectedCellList, targetCellID)
   if targetCellHadInvest then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC314: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._HandleInitFeature_StepPoint = function(self, featureType, featureData)
-  -- function num : 0_101
+function FeatureServiceLogic:_HandleInitFeature_StepPoint(featureType, featureData)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local initStepPoint = featureData:GetInitStepPoint()
@@ -2414,17 +1946,12 @@ FeatureServiceLogic._HandleInitFeature_StepPoint = function(self, featureType, f
   end
 end
 
--- DECOMPILER ERROR at PC317: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._CheckFeatureStepPointOnRoundEnterEarly = function(self, incRound)
-  -- function num : 0_102 , upvalues : _ENV
+function FeatureServiceLogic:_CheckFeatureStepPointOnRoundEnterEarly(incRound)
   if not self:HasFeatureType(FeatureType.StepPoint) then
-    return 
+    return
   end
-  local battleStatCmpt = (self._world):BattleStat()
-  if incRound then
-    local isGameBegin = battleStatCmpt:IsFirstRound()
-  end
+  local battleStatCmpt = self._world:BattleStat()
+  local isGameBegin = incRound and battleStatCmpt:IsFirstRound()
   if not isGameBegin then
     local recoverStepPoint = self:GetRecoverStepPoint()
     local delVal = recoverStepPoint
@@ -2432,37 +1959,29 @@ FeatureServiceLogic._CheckFeatureStepPointOnRoundEnterEarly = function(self, inc
       local oldVal = self:GetCurStepPoint()
       self:ChangeCurStepPoint(recoverStepPoint)
       local curVal = self:GetCurStepPoint()
-      local l2rSvc = (self._world):GetService("L2R")
+      local l2rSvc = self._world:GetService("L2R")
       l2rSvc:L2RStepPointRoundChange(curVal, oldVal)
     end
   else
-    do
-      local stepData = self:GetFeatureData(FeatureType.StepPoint)
-      if stepData then
-        local curVal = self:GetCurStepPoint()
-        local l2rSvc = (self._world):GetService("L2R")
-        l2rSvc:L2RStepPointRoundChange(curVal, curVal)
-      end
+    local stepData = self:GetFeatureData(FeatureType.StepPoint)
+    if stepData then
+      local curVal = self:GetCurStepPoint()
+      local l2rSvc = self._world:GetService("L2R")
+      l2rSvc:L2RStepPointRoundChange(curVal, curVal)
     end
   end
 end
 
--- DECOMPILER ERROR at PC320: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetCurStepPoint = function(self)
-  -- function num : 0_103
+function FeatureServiceLogic:GetCurStepPoint()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetCurStepPoint()
   end
 end
 
--- DECOMPILER ERROR at PC323: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.ChangeCurStepPoint = function(self, addVal)
-  -- function num : 0_104 , upvalues : _ENV
+function FeatureServiceLogic:ChangeCurStepPoint(addVal)
   if not self:HasFeatureType(FeatureType.StepPoint) then
-    return 
+    return
   end
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
@@ -2470,12 +1989,9 @@ FeatureServiceLogic.ChangeCurStepPoint = function(self, addVal)
   end
 end
 
--- DECOMPILER ERROR at PC326: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.ChangeMaxStepPoint = function(self, addVal)
-  -- function num : 0_105 , upvalues : _ENV
+function FeatureServiceLogic:ChangeMaxStepPoint(addVal)
   if not self:HasFeatureType(FeatureType.StepPoint) then
-    return 
+    return
   end
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
@@ -2483,22 +1999,16 @@ FeatureServiceLogic.ChangeMaxStepPoint = function(self, addVal)
   end
 end
 
--- DECOMPILER ERROR at PC329: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetMaxStepPoint = function(self)
-  -- function num : 0_106
+function FeatureServiceLogic:GetMaxStepPoint()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetMaxStepPoint()
   end
 end
 
--- DECOMPILER ERROR at PC332: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.ChangeRecoverStepPoint = function(self, addVal)
-  -- function num : 0_107 , upvalues : _ENV
+function FeatureServiceLogic:ChangeRecoverStepPoint(addVal)
   if not self:HasFeatureType(FeatureType.StepPoint) then
-    return 
+    return
   end
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
@@ -2506,73 +2016,55 @@ FeatureServiceLogic.ChangeRecoverStepPoint = function(self, addVal)
   end
 end
 
--- DECOMPILER ERROR at PC335: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetRecoverStepPoint = function(self)
-  -- function num : 0_108
+function FeatureServiceLogic:GetRecoverStepPoint()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetRecoverStepPoint()
   end
 end
 
--- DECOMPILER ERROR at PC338: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.OnMovePathDone = function(self, chainPath)
-  -- function num : 0_109 , upvalues : _ENV
-  if self:HasFeatureType(FeatureType.StepPoint) and (self._world):LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
+function FeatureServiceLogic:OnMovePathDone(chainPath)
+  if self:HasFeatureType(FeatureType.StepPoint) and self._world:LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
     local costPoint = #chainPath - 1
     costPoint = costPoint * -1
-    costPoint = (math.min)(0, costPoint)
+    costPoint = math.min(0, costPoint)
     local oldVal = self:GetCurStepPoint()
     self:ChangeCurStepPoint(costPoint)
     local curVal = self:GetCurStepPoint()
     local costVal = oldVal - curVal
     self:RecordRecentMoveCostStepPoint(costVal)
-    local l2RSvc = (self._world):GetService("L2R")
+    local l2RSvc = self._world:GetService("L2R")
     l2RSvc:L2RStepPointMoveCost(curVal, oldVal)
-    local triggerSvc = (self._world):GetService("Trigger")
-    local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+    local triggerSvc = self._world:GetService("Trigger")
+    local teamEntity = self._world:Player():GetCurrentTeamEntity()
     local ntFeatureStepPointMoveCost = NTFeatureStepPointMoveCost:New(teamEntity, curVal, oldVal, costVal)
     triggerSvc:Notify(ntFeatureStepPointMoveCost)
   end
 end
 
--- DECOMPILER ERROR at PC341: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.RecordRecentMoveCostStepPoint = function(self, costVal)
-  -- function num : 0_110
+function FeatureServiceLogic:RecordRecentMoveCostStepPoint(costVal)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     logicFeatureCmpt:RecordRecentMoveCostStepPoint(costVal)
   end
 end
 
--- DECOMPILER ERROR at PC344: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetRecentMoveCostStepPoint = function(self)
-  -- function num : 0_111
+function FeatureServiceLogic:GetRecentMoveCostStepPoint()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetRecentMoveCostStepPoint()
   end
 end
 
--- DECOMPILER ERROR at PC347: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.DoFeatureOnRoleMoveEnter = function(self)
-  -- function num : 0_112 , upvalues : _ENV
-  if not self:HasFeatureType(FeatureType.StepPoint) or (self._world):LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
+function FeatureServiceLogic:DoFeatureOnRoleMoveEnter()
+  if not self:HasFeatureType(FeatureType.StepPoint) or self._world:LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
   end
 end
 
--- DECOMPILER ERROR at PC350: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._HandleInitFeature_BanPetSkill = function(self, featureType, featureData)
-  -- function num : 0_113 , upvalues : _ENV
+function FeatureServiceLogic:_HandleInitFeature_BanPetSkill(featureType, featureData)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
-    local entityService = (self._world):GetService("LogicEntity")
+    local entityService = self._world:GetService("LogicEntity")
     local skillHolder = entityService:CreateLogicEntity(EntityConfigIDConst.PersonaSkillHolder)
     if skillHolder then
       local holderID = skillHolder:GetID()
@@ -2588,30 +2080,25 @@ FeatureServiceLogic._HandleInitFeature_BanPetSkill = function(self, featureType,
   end
 end
 
--- DECOMPILER ERROR at PC353: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.OnGetAutoFightCastBanPetSkillID = function(self)
-  -- function num : 0_114 , upvalues : _ENV
+function FeatureServiceLogic:OnGetAutoFightCastBanPetSkillID()
   local featureData = self:GetFeatureData(FeatureType.BanPetSkill)
   if not featureData then
-    return 
+    return
   end
   local skillCD = featureData:GetSkillCD()
   local logicFeatureCmpt = self:GetLogicCmpt()
   local castRoundList = logicFeatureCmpt:GetBanPetSkillCastRoundList()
   local castLastRound = logicFeatureCmpt:GetBanPetSkillCastLastRound()
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local levelRound = battleStatCmpt:GetLevelTotalRoundCount()
   if levelRound == castLastRound then
-    return 
+    return
   end
   local curRound = levelRound % 3
   local skillID = self:_OnGetAutoFightCastBanPetSkillIDByRound(featureData, curRound)
-  if not castRoundList[skillID] then
-    local curSkillRoundList = {}
-  end
+  local curSkillRoundList = castRoundList[skillID] or {}
   local lastCastRound = -1
-  if #curSkillRoundList > 0 then
+  if 0 < #curSkillRoundList then
     lastCastRound = curSkillRoundList[#curSkillRoundList]
   end
   local normalSkillEnable = skillCD < levelRound - lastCastRound
@@ -2622,51 +2109,34 @@ FeatureServiceLogic.OnGetAutoFightCastBanPetSkillID = function(self)
     end
     skillID = self:_OnGetAutoFightCastBanPetSkillIDByRound(featureData, curRound)
   end
-  do return skillID end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return skillID
 end
 
--- DECOMPILER ERROR at PC356: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._OnGetAutoFightCastBanPetSkillIDByRound = function(self, featureData, curRound)
-  -- function num : 0_115
+function FeatureServiceLogic:_OnGetAutoFightCastBanPetSkillIDByRound(featureData, curRound)
   local skillID = 0
   if curRound == 1 then
     skillID = featureData:GetBanNormalSkillID()
-  else
-    if curRound == 2 then
-      skillID = featureData:GetBanActiveSkillID()
-    else
-      if curRound == 0 then
-        skillID = featureData:GetBanChainSkillID()
-      end
-    end
+  elseif curRound == 2 then
+    skillID = featureData:GetBanActiveSkillID()
+  elseif curRound == 0 then
+    skillID = featureData:GetBanChainSkillID()
   end
   return skillID
 end
 
--- DECOMPILER ERROR at PC359: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._HandleInitFeature_AutoBeadPowerInfo = function(self, featureType, featureData)
-  -- function num : 0_116
+function FeatureServiceLogic:_HandleInitFeature_AutoBeadPowerInfo(featureType, featureData)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
   end
 end
 
--- DECOMPILER ERROR at PC362: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._HandleInitFeature_Alchemy = function(self, featureType, featureData)
-  -- function num : 0_117
+function FeatureServiceLogic:_HandleInitFeature_Alchemy(featureType, featureData)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
   end
 end
 
--- DECOMPILER ERROR at PC365: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.AddAlchemyAP = function(self, ap)
-  -- function num : 0_118
+function FeatureServiceLogic:AddAlchemyAP(ap)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     logicFeatureCmpt:AddAlchemyAP(ap)
@@ -2676,46 +2146,36 @@ FeatureServiceLogic.AddAlchemyAP = function(self, ap)
   end
 end
 
--- DECOMPILER ERROR at PC368: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetAlchemyLevel = function(self)
-  -- function num : 0_119
+function FeatureServiceLogic:GetAlchemyLevel()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetAlchemyLevel()
   end
 end
 
--- DECOMPILER ERROR at PC371: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetAlchemyAP = function(self)
-  -- function num : 0_120
+function FeatureServiceLogic:GetAlchemyAP()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetAlchemyAP()
   end
 end
 
--- DECOMPILER ERROR at PC374: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.DoAlchemyLevelUP = function(self)
-  -- function num : 0_121 , upvalues : _ENV
+function FeatureServiceLogic:DoAlchemyLevelUP()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt and self:IsAlchemyLevelUP() then
-    local buffSvcL = (self._world):GetService("BuffLogic")
+    local buffSvcL = self._world:GetService("BuffLogic")
     local featureData = logicFeatureCmpt:GetFeatureData(FeatureType.Alchemy)
     local dataList = featureData:GetAllData()
     local curAP = logicFeatureCmpt:GetAlchemyAP()
     local curLevel = logicFeatureCmpt:GetAlchemyLevel()
     local alchemyLevelMax = logicFeatureCmpt:GetAlchemyLevelMax()
     local retBuffInsList = {}
-    for _,data in ipairs(dataList) do
-      if data:GetAP() <= curAP and curLevel < data:GetLevel() and data:GetLevel() <= alchemyLevelMax then
+    for _, data in ipairs(dataList) do
+      if curAP >= data:GetAP() and curLevel < data:GetLevel() and alchemyLevelMax >= data:GetLevel() then
         local buffList = data:GetBuffList()
-        for _,buffData in ipairs(buffList) do
+        for _, buffData in ipairs(buffList) do
           local addBuffInsList = buffSvcL:AddBuffByTargetType(buffData.BuffID, buffData.BuffTargetType, buffData.BuffTargetParam)
-          ;
-          (table.appendArray)(retBuffInsList, addBuffInsList)
+          table.appendArray(retBuffInsList, addBuffInsList)
         end
         logicFeatureCmpt:SetAlchemyLevel(data:GetLevel())
       end
@@ -2724,10 +2184,7 @@ FeatureServiceLogic.DoAlchemyLevelUP = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC377: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.IsAlchemyLevelUP = function(self)
-  -- function num : 0_122 , upvalues : _ENV
+function FeatureServiceLogic:IsAlchemyLevelUP()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local featureData = logicFeatureCmpt:GetFeatureData(FeatureType.Alchemy)
@@ -2735,110 +2192,84 @@ FeatureServiceLogic.IsAlchemyLevelUP = function(self)
     local curAP = logicFeatureCmpt:GetAlchemyAP()
     local curLevel = logicFeatureCmpt:GetAlchemyLevel()
     local alchemyLevelMax = logicFeatureCmpt:GetAlchemyLevelMax()
-    for _,data in ipairs(dataList) do
-      if data:GetAP() <= curAP and curLevel < data:GetLevel() and data:GetLevel() <= alchemyLevelMax then
+    for _, data in ipairs(dataList) do
+      if curAP >= data:GetAP() and curLevel < data:GetLevel() and alchemyLevelMax >= data:GetLevel() then
         return true
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC380: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic._HandleInitFeature_TetrisGame = function(self, featureType, featureData)
-  -- function num : 0_123
+function FeatureServiceLogic:_HandleInitFeature_TetrisGame(featureType, featureData)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     logicFeatureCmpt:InitTetris(featureData:GetDefaultTetris(), featureData:GetDefaultTetris(), featureData:GetDefaultCostPower())
   end
 end
 
--- DECOMPILER ERROR at PC383: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.SetTetrisIndex = function(self, tetrisIndex)
-  -- function num : 0_124 , upvalues : _ENV
+function FeatureServiceLogic:SetTetrisIndex(tetrisIndex)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local tetrisData = self:GetFeatureData(FeatureType.TetrisGame)
     local allTetrisList = tetrisData:GetTetrisList()
     local tetrisType = allTetrisList[tetrisIndex]
     logicFeatureCmpt:SetTetrisType(tetrisIndex, tetrisType)
-    ;
-    (Log.fatal)("SetTetrisIndex Index:", tetrisIndex, "Type:", tetrisType)
+    Log.fatal("SetTetrisIndex Index:", tetrisIndex, "Type:", tetrisType)
     return tetrisType
   end
 end
 
--- DECOMPILER ERROR at PC386: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.RandomTetrisIndex = function(self, needPower, needMainColorCount)
-  -- function num : 0_125 , upvalues : _ENV
+function FeatureServiceLogic:RandomTetrisIndex(needPower, needMainColorCount)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local tetrisData = self:GetFeatureData(FeatureType.TetrisGame)
-    local allTetrisList = (tetrisData:GetTetrisList())
-    local tetrisIndex = nil
+    local allTetrisList = tetrisData:GetTetrisList()
+    local tetrisIndex
     local lockType = logicFeatureCmpt:GetTetrisLock()
     if needPower then
       if not self:SubTetrisPower() then
-        (Log.fatal)("RandomTetrisIndex power no enough")
-        return 
+        Log.fatal("RandomTetrisIndex power no enough")
+        return
       end
       local curCostPower = self:GetTetrisCostPower()
       curCostPower = curCostPower + tetrisData:GetClickCostPower()
       self:SetTetrisCostPower(curCostPower)
     end
-    do
-      if logicFeatureCmpt:GetTetrisLock() then
-        tetrisIndex = logicFeatureCmpt:GetTetrisIndex()
-        if needMainColorCount then
-          self:AddTetrisMainColorCount(1)
-        end
-      else
-        local randomSvcL = (self._world):GetService("RandomLogic")
-        tetrisIndex = randomSvcL:BoardLogicRand(1, #allTetrisList)
+    if logicFeatureCmpt:GetTetrisLock() then
+      tetrisIndex = logicFeatureCmpt:GetTetrisIndex()
+      if needMainColorCount then
+        self:AddTetrisMainColorCount(1)
       end
-      do
-        local tetrisType = self:SetTetrisIndex(tetrisIndex)
-        ;
-        (Log.fatal)("LockType:", lockType, " RandomTetrisIndex:", tetrisIndex, " TetrisType:", tetrisType)
-        if not logicFeatureCmpt:GetTetrisLock() then
-          local triggerSvc = (self._world):GetService("Trigger")
-          local nt = NTRandomTetrisEnd:New(nil, tetrisIndex, tetrisType)
-          triggerSvc:Notify(nt)
-        end
-        do
-          do return tetrisIndex, tetrisType end
-        end
-      end
+    else
+      local randomSvcL = self._world:GetService("RandomLogic")
+      tetrisIndex = randomSvcL:BoardLogicRand(1, #allTetrisList)
     end
+    local tetrisType = self:SetTetrisIndex(tetrisIndex)
+    Log.fatal("LockType:", lockType, " RandomTetrisIndex:", tetrisIndex, " TetrisType:", tetrisType)
+    if not logicFeatureCmpt:GetTetrisLock() then
+      local triggerSvc = self._world:GetService("Trigger")
+      local nt = NTRandomTetrisEnd:New(nil, tetrisIndex, tetrisType)
+      triggerSvc:Notify(nt)
+    end
+    return tetrisIndex, tetrisType
   end
 end
 
--- DECOMPILER ERROR at PC389: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetTetrisIndex = function(self)
-  -- function num : 0_126
+function FeatureServiceLogic:GetTetrisIndex()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetTetrisIndex()
   end
 end
 
--- DECOMPILER ERROR at PC392: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetTetrisType = function(self)
-  -- function num : 0_127
+function FeatureServiceLogic:GetTetrisType()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetTetrisType()
   end
 end
 
--- DECOMPILER ERROR at PC395: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.TurnTetrisDir = function(self)
-  -- function num : 0_128 , upvalues : _ENV
+function FeatureServiceLogic:TurnTetrisDir()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local tetrisData = self:GetFeatureData(FeatureType.TetrisGame)
@@ -2846,48 +2277,37 @@ FeatureServiceLogic.TurnTetrisDir = function(self)
     local tetrisDirIndex = logicFeatureCmpt:GetTetrisDirIndex()
     local nextDirIndex = tetrisDirIndex + 1
     local nextDir = self:SetTetrisDirIndex(nextDirIndex)
-    ;
-    (Log.info)("TurnTetrisDir NextDirIndex:", nextDirIndex, " TetrisDir:", nextDir)
+    Log.info("TurnTetrisDir NextDirIndex:", nextDirIndex, " TetrisDir:", nextDir)
     return allTetrisDir[nextDirIndex], nextDirIndex
   end
 end
 
--- DECOMPILER ERROR at PC398: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.SetTetrisDirIndex = function(self, newDirIndex)
-  -- function num : 0_129 , upvalues : _ENV
+function FeatureServiceLogic:SetTetrisDirIndex(newDirIndex)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     if not newDirIndex then
-      return 
+      return
     end
     local tetrisData = self:GetFeatureData(FeatureType.TetrisGame)
     local allTetrisDir = tetrisData:GetDirList()
-    if #allTetrisDir < newDirIndex then
+    if newDirIndex > #allTetrisDir then
       newDirIndex = 1
     end
     local nextDir = allTetrisDir[newDirIndex]
     logicFeatureCmpt:SetTetrisDir(newDirIndex, nextDir)
-    ;
-    (Log.info)("SetTetrisDirIndex NewDirIndex:", newDirIndex, " TetrisDir:", nextDir)
+    Log.info("SetTetrisDirIndex NewDirIndex:", newDirIndex, " TetrisDir:", nextDir)
     return nextDir
   end
 end
 
--- DECOMPILER ERROR at PC401: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetTetrisDirIndex = function(self)
-  -- function num : 0_130
+function FeatureServiceLogic:GetTetrisDirIndex()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetTetrisDirIndex()
   end
 end
 
--- DECOMPILER ERROR at PC404: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.AddTetrisMainColorCount = function(self, count)
-  -- function num : 0_131 , upvalues : _ENV
+function FeatureServiceLogic:AddTetrisMainColorCount(count)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local tetrisData = self:GetFeatureData(FeatureType.TetrisGame)
@@ -2901,50 +2321,35 @@ FeatureServiceLogic.AddTetrisMainColorCount = function(self, count)
   end
 end
 
--- DECOMPILER ERROR at PC407: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.SetTetrisMainColorCount = function(self, count)
-  -- function num : 0_132
+function FeatureServiceLogic:SetTetrisMainColorCount(count)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     logicFeatureCmpt:SetTetrisMainColorCount(count)
   end
 end
 
--- DECOMPILER ERROR at PC410: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetTetrisMainColorCount = function(self)
-  -- function num : 0_133
+function FeatureServiceLogic:GetTetrisMainColorCount()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetTetrisMainColorCount()
   end
 end
 
--- DECOMPILER ERROR at PC413: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.ClearTetrisMainColorCount = function(self)
-  -- function num : 0_134
+function FeatureServiceLogic:ClearTetrisMainColorCount()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     logicFeatureCmpt:SetTetrisMainColorCount(0)
   end
 end
 
--- DECOMPILER ERROR at PC416: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetTetrisDir = function(self)
-  -- function num : 0_135
+function FeatureServiceLogic:GetTetrisDir()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetTetrisDir()
   end
 end
 
--- DECOMPILER ERROR at PC419: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.SubTetrisPower = function(self)
-  -- function num : 0_136 , upvalues : _ENV
+function FeatureServiceLogic:SubTetrisPower()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local curPower = self:GetTetrisPower()
@@ -2953,17 +2358,13 @@ FeatureServiceLogic.SubTetrisPower = function(self)
     if newPower < 0 then
       return false
     end
-    ;
-    (Log.info)("Tetris SubTetrisPower CurPower:", curPower, " CostPower:", costPower, " NewPower:", newPower)
+    Log.info("Tetris SubTetrisPower CurPower:", curPower, " CostPower:", costPower, " NewPower:", newPower)
     self:SetTetrisPower(newPower)
     return true
   end
 end
 
--- DECOMPILER ERROR at PC422: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetTetrisCostPower = function(self)
-  -- function num : 0_137
+function FeatureServiceLogic:GetTetrisCostPower()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local costPower = logicFeatureCmpt:GetTetrisCostPower()
@@ -2971,34 +2372,25 @@ FeatureServiceLogic.GetTetrisCostPower = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC425: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.SetTetrisCostPower = function(self, costPower)
-  -- function num : 0_138
+function FeatureServiceLogic:SetTetrisCostPower(costPower)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     logicFeatureCmpt:SetTetrisCostPower(costPower)
   end
 end
 
--- DECOMPILER ERROR at PC428: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetTetrisPower = function(self)
-  -- function num : 0_139
+function FeatureServiceLogic:GetTetrisPower()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetTetrisPower()
   end
 end
 
--- DECOMPILER ERROR at PC431: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.SetTetrisPower = function(self, power)
-  -- function num : 0_140 , upvalues : _ENV
+function FeatureServiceLogic:SetTetrisPower(power)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     local tetrisData = self:GetFeatureData(FeatureType.TetrisGame)
-    if tetrisData:GetMaxShowPower() < power then
+    if power > tetrisData:GetMaxShowPower() then
       power = tetrisData:GetMaxShowPower()
     end
     logicFeatureCmpt:SetTetrisPower(power)
@@ -3006,24 +2398,16 @@ FeatureServiceLogic.SetTetrisPower = function(self, power)
   end
 end
 
--- DECOMPILER ERROR at PC434: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetTetrisLock = function(self)
-  -- function num : 0_141
+function FeatureServiceLogic:GetTetrisLock()
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     return logicFeatureCmpt:GetTetrisLock()
   end
 end
 
--- DECOMPILER ERROR at PC437: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.SetTetrisLock = function(self, state)
-  -- function num : 0_142
+function FeatureServiceLogic:SetTetrisLock(state)
   local logicFeatureCmpt = self:GetLogicCmpt()
   if logicFeatureCmpt then
     logicFeatureCmpt:SetTetrisLock(state)
   end
 end
-
-

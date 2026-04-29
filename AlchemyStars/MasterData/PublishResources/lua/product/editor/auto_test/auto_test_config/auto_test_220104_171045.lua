@@ -1,91 +1,214 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/auto_test_config/auto_test_220104_171045.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 AutoTest_220104_171045 = {
-cases = {
-[1] = {
-[1] = {action = "WaitGameFsm", 
-args = {id = 5}
+  cases = {
+    [1] = {
+      [1] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [2] = {
+        action = "SetTeamPosition",
+        args = {name = "team", pos = 502}
+      },
+      [3] = {
+        action = "SetEntityHP",
+        args = {hp = 999999, name = "team"}
+      },
+      [4] = {
+        action = "AddMonster",
+        args = {
+          dir = 5,
+          disableai = false,
+          id = 2100711,
+          name = "e1",
+          pos = 505
+        }
+      },
+      [5] = {
+        action = "CheckSkillRange",
+        args = {
+          range = {
+            [1] = 403.0,
+            [2] = 404.0,
+            [3] = 502.0,
+            [4] = 503.0,
+            [5] = 504.0,
+            [6] = 505.0,
+            [7] = 602.0,
+            [8] = 603.0,
+            [9] = 604.0,
+            [10] = 605.0,
+            [11] = 703.0,
+            [12] = 704.0
+          },
+          skillid = 1002111,
+          trigger = 102
+        }
+      },
+      [6] = {
+        action = "CheckEntityPos",
+        args = {
+          name = "p1",
+          pos = 501,
+          trigger = 88
+        }
+      },
+      [7] = {
+        action = "FakeInputDoubleClick",
+        args = {}
+      },
+      [8] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [9] = {
+        action = "CheckSkillRange",
+        args = {
+          range = {
+            [1] = 301.0,
+            [2] = 302.0,
+            [3] = 303.0,
+            [4] = 304.0,
+            [5] = 305.0,
+            [6] = 306.0,
+            [7] = 401.0,
+            [8] = 402.0,
+            [9] = 403.0,
+            [10] = 404.0,
+            [11] = 405.0,
+            [12] = 406.0,
+            [13] = 501.0,
+            [14] = 502.0,
+            [15] = 505.0,
+            [16] = 506.0,
+            [17] = 601.0,
+            [18] = 602.0,
+            [19] = 605.0,
+            [20] = 606.0,
+            [21] = 701.0,
+            [22] = 702.0,
+            [23] = 703.0,
+            [24] = 704.0,
+            [25] = 705.0,
+            [26] = 706.0,
+            [27] = 802.0,
+            [28] = 803.0,
+            [29] = 804.0,
+            [30] = 805.0,
+            [31] = 806.0
+          },
+          skillid = 1002121,
+          trigger = 102
+        }
+      },
+      [10] = {
+        action = "CheckGridTrap",
+        args = {
+          exist = true,
+          pos = 502,
+          trapIds = {
+            [1] = 60.0
+          },
+          trigger = 88
+        }
+      },
+      [11] = {
+        action = "FakeInputDoubleClick",
+        args = {}
+      },
+      [12] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [13] = {
+        action = "CheckSkillRange",
+        args = {
+          range = {
+            [1] = 103.0,
+            [2] = 104.0,
+            [3] = 105.0,
+            [4] = 202.0,
+            [5] = 203.0,
+            [6] = 204.0,
+            [7] = 205.0,
+            [8] = 302.0,
+            [9] = 303.0,
+            [10] = 304.0,
+            [11] = 305.0,
+            [12] = 401.0,
+            [13] = 402.0,
+            [14] = 403.0,
+            [15] = 404.0,
+            [16] = 405.0,
+            [17] = 406.0,
+            [18] = 407.0,
+            [19] = 408.0,
+            [20] = 409.0,
+            [21] = 501.0,
+            [22] = 502.0,
+            [23] = 503.0,
+            [24] = 504.0,
+            [25] = 505.0,
+            [26] = 506.0,
+            [27] = 507.0,
+            [28] = 508.0,
+            [29] = 509.0,
+            [30] = 601.0,
+            [31] = 602.0,
+            [32] = 603.0,
+            [33] = 604.0,
+            [34] = 605.0,
+            [35] = 606.0,
+            [36] = 607.0,
+            [37] = 608.0,
+            [38] = 609.0,
+            [39] = 701.0,
+            [40] = 702.0,
+            [41] = 703.0,
+            [42] = 704.0,
+            [43] = 705.0,
+            [44] = 706.0,
+            [45] = 707.0,
+            [46] = 708.0,
+            [47] = 709.0,
+            [48] = 802.0,
+            [49] = 803.0,
+            [50] = 804.0,
+            [51] = 805.0,
+            [52] = 903.0,
+            [53] = 904.0,
+            [54] = 905.0
+          },
+          skillid = 1002131,
+          trigger = 102
+        }
+      },
+      [14] = {
+        action = "FakeInputDoubleClick",
+        args = {}
+      },
+      [15] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      name = "新测试用例"
+    }
+  },
+  name = "10-7碎空",
+  petList = {
+    [1] = {
+      awakening = 6,
+      equiplv = 10,
+      grade = 3,
+      id = 1600191,
+      level = 80,
+      name = "p1"
+    }
+  },
+  remotePet = {},
+  setup = {
+    [1] = {
+      args = {levelID = 1, matchType = 1},
+      setup = "LevelBasic"
+    }
+  }
 }
-, 
-[2] = {action = "SetTeamPosition", 
-args = {name = "team", pos = 502}
-}
-, 
-[3] = {action = "SetEntityHP", 
-args = {hp = 999999, name = "team"}
-}
-, 
-[4] = {action = "AddMonster", 
-args = {dir = 5, disableai = false, id = 2100711, name = "e1", pos = 505}
-}
-, 
-[5] = {action = "CheckSkillRange", 
-args = {
-range = {[1] = 403, [2] = 404, [3] = 502, [4] = 503, [5] = 504, [6] = 505, [7] = 602, [8] = 603, [9] = 604, [10] = 605, [11] = 703, [12] = 704}
-, skillid = 1002111, trigger = 102}
-}
-, 
-[6] = {action = "CheckEntityPos", 
-args = {name = "p1", pos = 501, trigger = 88}
-}
-, 
-[7] = {action = "FakeInputDoubleClick", 
-args = {}
-}
-, 
-[8] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, 
-[9] = {action = "CheckSkillRange", 
-args = {
-range = {[1] = 301, [2] = 302, [3] = 303, [4] = 304, [5] = 305, [6] = 306, [7] = 401, [8] = 402, [9] = 403, [10] = 404, [11] = 405, [12] = 406, [13] = 501, [14] = 502, [15] = 505, [16] = 506, [17] = 601, [18] = 602, [19] = 605, [20] = 606, [21] = 701, [22] = 702, [23] = 703, [24] = 704, [25] = 705, [26] = 706, [27] = 802, [28] = 803, [29] = 804, [30] = 805, [31] = 806}
-, skillid = 1002121, trigger = 102}
-}
-, 
-[10] = {action = "CheckGridTrap", 
-args = {exist = true, pos = 502, 
-trapIds = {[1] = 60}
-, trigger = 88}
-}
-, 
-[11] = {action = "FakeInputDoubleClick", 
-args = {}
-}
-, 
-[12] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, 
-[13] = {action = "CheckSkillRange", 
-args = {
-range = {[1] = 103, [2] = 104, [3] = 105, [4] = 202, [5] = 203, [6] = 204, [7] = 205, [8] = 302, [9] = 303, [10] = 304, [11] = 305, [12] = 401, [13] = 402, [14] = 403, [15] = 404, [16] = 405, [17] = 406, [18] = 407, [19] = 408, [20] = 409, [21] = 501, [22] = 502, [23] = 503, [24] = 504, [25] = 505, [26] = 506, [27] = 507, [28] = 508, [29] = 509, [30] = 601, [31] = 602, [32] = 603, [33] = 604, [34] = 605, [35] = 606, [36] = 607, [37] = 608, [38] = 609, [39] = 701, [40] = 702, [41] = 703, [42] = 704, [43] = 705, [44] = 706, [45] = 707, [46] = 708, [47] = 709, [48] = 802, [49] = 803, [50] = 804, [51] = 805, [52] = 903, [53] = 904, [54] = 905}
-, skillid = 1002131, trigger = 102}
-}
-, 
-[14] = {action = "FakeInputDoubleClick", 
-args = {}
-}
-, 
-[15] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, name = "新测试用例"}
-}
-, name = "10-7碎空", 
-petList = {
-[1] = {awakening = 6, equiplv = 10, grade = 3, id = 1600191, level = 80, name = "p1"}
-}
-, 
-remotePet = {}
-, 
-setup = {
-[1] = {
-args = {levelID = 1, matchType = 1}
-, setup = "LevelBasic"}
-}
-}
-

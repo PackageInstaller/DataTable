@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/wishing/collect/ui_build_collect_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBuildCollectRewardItem", UICustomWidget)
 UIBuildCollectRewardItem = UIBuildCollectRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBuildCollectRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBuildCollectRewardItem:OnShow(uiParams)
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._countLabel = self:GetUIComponent("UILocalizationText", "Count")
   self._quatyImg = self:GetUIComponent("Image", "Quaty")
@@ -16,37 +9,21 @@ UIBuildCollectRewardItem.OnShow = function(self, uiParams)
   self.atlas = self:GetAsset("UIHomelandBackpack.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectRewardItem.OnHide = function(self)
-  -- function num : 0_1
+function UIBuildCollectRewardItem:OnHide()
   self.atlas = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectRewardItem.Refresh = function(self, reward, clickCallback)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[reward[1]]
-  ;
-  (self._iconLoader):LoadImage(cfg.Icon)
-  ;
-  (self._countLabel):SetText(reward[2])
+function UIBuildCollectRewardItem:Refresh(reward, clickCallback)
+  local cfg = Cfg.cfg_item[reward[1]]
+  self._iconLoader:LoadImage(cfg.Icon)
+  self._countLabel:SetText(reward[2])
   self._id = reward[1]
   self._clickCallback = clickCallback
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._quatyImg).sprite = (self.atlas):GetSprite("n17_shop_kuang0" .. cfg.Color)
+  self._quatyImg.sprite = self.atlas:GetSprite("n17_shop_kuang0" .. cfg.Color)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectRewardItem.BtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIBuildCollectRewardItem:BtnOnClick(go)
   if self._clickCallback then
-    (self._clickCallback)(self._id, go)
+    self._clickCallback(self._id, go)
   end
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/tactic/ui_aircraft_tactic_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftTacticAwardItem", UICustomWidget)
 UIAircraftTacticAwardItem = UIAircraftTacticAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftTacticAwardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIAircraftTacticAwardItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTacticAwardItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIAircraftTacticAwardItem:InitWidget()
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.count = self:GetUIComponent("UILocalizationText", "count")
   self.phase = self:GetUIComponent("UILocalizationText", "phase")
@@ -27,142 +17,72 @@ UIAircraftTacticAwardItem.InitWidget = function(self)
   self._atlas = self:GetAsset("UIAircraftTactic.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTacticAwardItem.SetData = function(self, idx, count, itemID, itemCount)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftTacticAwardItem:SetData(idx, count, itemID, itemCount)
   self._idx = idx
-  ;
-  (self.icon):LoadImage(((Cfg.cfg_item)[itemID]).Icon)
-  ;
-  (self.count):SetText(itemCount)
-  ;
-  (self.phase):SetText(count)
+  self.icon:LoadImage(Cfg.cfg_item[itemID].Icon)
+  self.count:SetText(itemCount)
+  self.phase:SetText(count)
   self._module = self:GetModule(AircraftModule)
-  self._tacticRoom = (self._module):GetRoomByRoomType(AirRoomType.TacticRoom)
+  self._tacticRoom = self._module:GetRoomByRoomType(AirRoomType.TacticRoom)
   self._awardCount = count
   self._state = {}
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._state).canCollect = 1
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._state).collected = 2
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._state).unCollect = 3
-  self._curState = (self._state).canCollect
+  self._state.canCollect = 1
+  self._state.collected = 2
+  self._state.unCollect = 3
+  self._curState = self._state.canCollect
   self:refreshState()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTacticAwardItem.refreshState = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local times = (self._tacticRoom):GetWeeklyPassTimes()
+function UIAircraftTacticAwardItem:refreshState()
+  local times = self._tacticRoom:GetWeeklyPassTimes()
   if times < self._awardCount then
-    (self._canCollect):SetActive(false)
-    ;
-    (self._collected):SetActive(false)
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._bg1).sprite = (self._atlas):GetSprite("n8_simulator_gift_bg3")
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._bg2).sprite = (self._atlas):GetSprite("n8_simulator_gift_bg4")
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.phase).color = Color.white
-    self._curState = (self._state).unCollect
+    self._canCollect:SetActive(false)
+    self._collected:SetActive(false)
+    self._bg1.sprite = self._atlas:GetSprite("n8_simulator_gift_bg3")
+    self._bg2.sprite = self._atlas:GetSprite("n8_simulator_gift_bg4")
+    self.phase.color = Color.white
+    self._curState = self._state.unCollect
+  elseif self._tacticRoom:IsReceived(self._awardCount) then
+    self._canCollect:SetActive(false)
+    self._collected:SetActive(true)
+    self._bg1.sprite = self._atlas:GetSprite("n8_simulator_gift_bg1")
+    self._bg2.sprite = self._atlas:GetSprite("n8_simulator_gift_bg2")
+    self.phase.color = Color.black
+    self._curState = self._state.collected
   else
-    if (self._tacticRoom):IsReceived(self._awardCount) then
-      (self._canCollect):SetActive(false)
-      ;
-      (self._collected):SetActive(true)
-      -- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._bg1).sprite = (self._atlas):GetSprite("n8_simulator_gift_bg1")
-      -- DECOMPILER ERROR at PC59: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._bg2).sprite = (self._atlas):GetSprite("n8_simulator_gift_bg2")
-      -- DECOMPILER ERROR at PC63: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.phase).color = Color.black
-      self._curState = (self._state).collected
-    else
-      ;
-      (self._canCollect):SetActive(true)
-      ;
-      (self._collected):SetActive(false)
-      -- DECOMPILER ERROR at PC81: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._bg1).sprite = (self._atlas):GetSprite("n8_simulator_gift_bg1")
-      -- DECOMPILER ERROR at PC87: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._bg2).sprite = (self._atlas):GetSprite("n8_simulator_gift_bg2")
-      -- DECOMPILER ERROR at PC91: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.phase).color = Color.black
-      self._curState = (self._state).canCollect
-    end
+    self._canCollect:SetActive(true)
+    self._collected:SetActive(false)
+    self._bg1.sprite = self._atlas:GetSprite("n8_simulator_gift_bg1")
+    self._bg2.sprite = self._atlas:GetSprite("n8_simulator_gift_bg2")
+    self.phase.color = Color.black
+    self._curState = self._state.canCollect
   end
   if self._idx == 1 then
-    ((self._dot).gameObject):SetActive(false)
+    self._dot.gameObject:SetActive(false)
+  elseif times >= self._awardCount then
+    self._dot.gameObject:SetActive(true)
+    self._dot.sprite = self._atlas:GetSprite("n8_simulator_gift_point2")
   else
-    if self._awardCount <= times then
-      ((self._dot).gameObject):SetActive(true)
-      -- DECOMPILER ERROR at PC117: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._dot).sprite = (self._atlas):GetSprite("n8_simulator_gift_point2")
-    else
-      ;
-      ((self._dot).gameObject):SetActive(true)
-      -- DECOMPILER ERROR at PC129: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._dot).sprite = (self._atlas):GetSprite("n8_simulator_gift_point1")
-    end
+    self._dot.gameObject:SetActive(true)
+    self._dot.sprite = self._atlas:GetSprite("n8_simulator_gift_point1")
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTacticAwardItem.iconOnClick = function(self, go)
-  -- function num : 0_4
-  if self._curState == (self._state).canCollect then
+function UIAircraftTacticAwardItem:iconOnClick(go)
+  if self._curState == self._state.canCollect then
     self:StartTask(self.reqCollectAward, self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTacticAwardItem.reqCollectAward = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
+function UIAircraftTacticAwardItem:reqCollectAward(TT)
   self:Lock(self:GetName())
-  local ack, awards = (self._module):RequestTakeWeeklyAward(TT, self._awardCount)
+  local ack, awards = self._module:RequestTakeWeeklyAward(TT, self._awardCount)
   self:UnLock(self:GetName())
   if ack:GetSucc() then
     self:ShowDialog("UIGetItemController", awards.award_list)
     self:refreshState()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshRoomUI, (self._tacticRoom):SpaceId())
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshRoomUI, self._tacticRoom:SpaceId())
   else
-    ;
-    (ToastManager.ShowToast)((self._module):GetErrorMsg(ack:GetResult()))
+    ToastManager.ShowToast(self._module:GetErrorMsg(ack:GetResult()))
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/world/unique_season_maze_logic_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeLogicComponent", Object)
 SeasonMazeLogicComponent = SeasonMazeLogicComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeLogicComponent.Constructor = function(self, world)
-  -- function num : 0_0
+function SeasonMazeLogicComponent:Constructor(world)
   self._world = world
   self._outside_attr = {}
   self._ms = 0
@@ -18,172 +11,110 @@ SeasonMazeLogicComponent.Constructor = function(self, world)
   self._waveRandoms = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.Initialize = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local createInfo = ((self._world).BW_WorldInfo):GetSeasonMazeCreateInfo()
+function SeasonMazeLogicComponent:Initialize()
+  local createInfo = self._world.BW_WorldInfo:GetSeasonMazeCreateInfo()
   if createInfo == nil then
     createInfo = SeasonMazeMissionCreateInfo:New()
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (createInfo.outside_attr)[SeasonMazeAttrType.SMAT_Ms] = 8
-    ;
-    (Log.fatal)("use for test season maze ---------------------")
+    createInfo.outside_attr[SeasonMazeAttrType.SMAT_Ms] = 8
+    Log.fatal("use for test season maze ---------------------")
   end
-  self._relicList = (table.clone)(createInfo.relic_list)
-  self._suitRelicList = (table.clone)(createInfo.suit_relic_list)
-  self._outside_attr = (table.clone)(createInfo.outside_attr)
-  self._ms = (self._outside_attr)[SeasonMazeAttrType.SMAT_Ms]
-  ;
-  (Log.info)("SeasonMaze RelicBegin")
-  for relic,counter in pairs(createInfo.relic_list) do
-    (Log.info)("Season RelicID:", relic, " Counter:", counter)
+  self._relicList = table.clone(createInfo.relic_list)
+  self._suitRelicList = table.clone(createInfo.suit_relic_list)
+  self._outside_attr = table.clone(createInfo.outside_attr)
+  self._ms = self._outside_attr[SeasonMazeAttrType.SMAT_Ms]
+  Log.info("SeasonMaze RelicBegin")
+  for relic, counter in pairs(createInfo.relic_list) do
+    Log.info("Season RelicID:", relic, " Counter:", counter)
   end
-  ;
-  (Log.info)("SeasonMaze RelicEnd")
-  ;
-  (Log.info)("SeasonMaze SuitBegin:")
-  for _,relic in pairs(createInfo.suit_relic_list) do
-    (Log.info)("Season SuitRelicID:", relic)
+  Log.info("SeasonMaze RelicEnd")
+  Log.info("SeasonMaze SuitBegin:")
+  for _, relic in pairs(createInfo.suit_relic_list) do
+    Log.info("Season SuitRelicID:", relic)
   end
-  ;
-  (Log.info)("SeasonMaze SuitEnd")
-  ;
-  (Log.info)("SeasonMaze OutSideAttrBegin")
-  for attrType,count in pairs(createInfo.outside_attr) do
-    (Log.info)("Season Attr:", attrType, " Count:", count)
+  Log.info("SeasonMaze SuitEnd")
+  Log.info("SeasonMaze OutSideAttrBegin")
+  for attrType, count in pairs(createInfo.outside_attr) do
+    Log.info("Season Attr:", attrType, " Count:", count)
   end
-  ;
-  (Log.info)("SeasonMaze OutSideAttrEnd")
-  self._waveRandoms = (table.clone)(createInfo.wave_randoms)
+  Log.info("SeasonMaze OutSideAttrEnd")
+  self._waveRandoms = table.clone(createInfo.wave_randoms)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.GetRoundCount = function(self)
-  -- function num : 0_2
-  local createInfo = ((self._world).BW_WorldInfo):GetSeasonMazeCreateInfo()
+function SeasonMazeLogicComponent:GetRoundCount()
+  local createInfo = self._world.BW_WorldInfo:GetSeasonMazeCreateInfo()
   return createInfo.world_boss_round_cnt
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.AddRelicCount = function(self, relicID)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._relicList)[relicID] then
-    (self._relicList)[relicID] = (self._relicList)[relicID] + 1
+function SeasonMazeLogicComponent:AddRelicCount(relicID)
+  if self._relicList[relicID] then
+    self._relicList[relicID] = self._relicList[relicID] + 1
   end
-  return (self._relicList)[relicID]
+  return self._relicList[relicID]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.GetRelicCounter = function(self, relicID)
-  -- function num : 0_4
-  return (self._relicList)[relicID]
+function SeasonMazeLogicComponent:GetRelicCounter(relicID)
+  return self._relicList[relicID]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.CheckRelicCounter = function(self, relicID)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item_relic)[relicID]
-  local cnt = (self._relicList)[relicID]
+function SeasonMazeLogicComponent:CheckRelicCounter(relicID)
+  local cfg = Cfg.cfg_item_relic[relicID]
+  local cnt = self._relicList[relicID]
   if not cnt or cfg.OutGameTriggerCount == 0 or cnt < cfg.OutGameTriggerCount then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.GetRelicAndCounter = function(self)
-  -- function num : 0_6
+function SeasonMazeLogicComponent:GetRelicAndCounter()
   return self._relicList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.GetRelicsCount = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local count = (table.count)(self._relicList)
+function SeasonMazeLogicComponent:GetRelicsCount()
+  local count = table.count(self._relicList)
   return count
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.GetAllRelic = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function SeasonMazeLogicComponent:GetAllRelic()
   local allRelic = {}
-  for relic,count in pairs(self._relicList) do
-    (table.insert)(allRelic, relic)
+  for relic, count in pairs(self._relicList) do
+    table.insert(allRelic, relic)
   end
-  for i,relic in ipairs(self._suitRelicList) do
-    (table.insert)(allRelic, relic)
+  for i, relic in ipairs(self._suitRelicList) do
+    table.insert(allRelic, relic)
   end
   return allRelic
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.GetSuitRelic = function(self)
-  -- function num : 0_9
+function SeasonMazeLogicComponent:GetSuitRelic()
   return self._suitRelicList
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.GetTotalGoldCoin = function(self)
-  -- function num : 0_10
+function SeasonMazeLogicComponent:GetTotalGoldCoin()
   return self:GetGoldCoin() + self:GetRewardGoldCoin()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.GetOutsideAttributeByType = function(self, type)
-  -- function num : 0_11
-  return (self._outside_attr)[type]
+function SeasonMazeLogicComponent:GetOutsideAttributeByType(type)
+  return self._outside_attr[type]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.GetOutsideAttribute = function(self)
-  -- function num : 0_12
+function SeasonMazeLogicComponent:GetOutsideAttribute()
   return self._outside_attr
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.AddOutsideAttribute = function(self, type, count)
-  -- function num : 0_13
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self._outside_attr)[type] then
-    (self._outside_attr)[type] = (self._outside_attr)[type] + count
+function SeasonMazeLogicComponent:AddOutsideAttribute(type, count)
+  if self._outside_attr[type] then
+    self._outside_attr[type] = self._outside_attr[type] + count
   else
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._outside_attr)[type] = count
+    self._outside_attr[type] = count
   end
-  return (self._outside_attr)[type]
+  return self._outside_attr[type]
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.GetGoldCoin = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function SeasonMazeLogicComponent:GetGoldCoin()
   return self:GetOutsideAttributeByType(SeasonMazeAttrType.SMAT_Gold)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.GetRewardGoldCoin = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function SeasonMazeLogicComponent:GetRewardGoldCoin()
   if self:GetOutsideAttributeByType(SeasonMazeAttrType.SMAT_Gold) then
     return self:GetOutsideAttributeByType(SeasonMazeAttrType.SMAT_Gold)
   else
@@ -191,102 +122,60 @@ SeasonMazeLogicComponent.GetRewardGoldCoin = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.AddRewardGoldCoin = function(self, count)
-  -- function num : 0_16 , upvalues : _ENV
+function SeasonMazeLogicComponent:AddRewardGoldCoin(count)
   self:AddOutsideAttribute(SeasonMazeAttrType.SMAT_Gold, count)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.GetMS = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function SeasonMazeLogicComponent:GetMS()
   return self:GetOutsideAttributeByType(SeasonMazeAttrType.SMAT_Ms)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.SubMS = function(self, count)
-  -- function num : 0_18 , upvalues : _ENV
+function SeasonMazeLogicComponent:SubMS(count)
   self:AddOutsideAttribute(SeasonMazeAttrType.SMAT_Ms, count * -1)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.AddMS = function(self, count)
-  -- function num : 0_19 , upvalues : _ENV
+function SeasonMazeLogicComponent:AddMS(count)
   self._rewardMS = self._rewardMS + count
   return self:AddOutsideAttribute(SeasonMazeAttrType.SMAT_Ms, count)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.SubAutoBeadEnergy = function(self, energy)
-  -- function num : 0_20 , upvalues : _ENV
+function SeasonMazeLogicComponent:SubAutoBeadEnergy(energy)
   return self:AddOutsideAttribute(SeasonMazeAttrType.SMAT_AutoBeadEnergy, energy * -1)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.AddAutoBeadEnergy = function(self, energy)
-  -- function num : 0_21 , upvalues : _ENV
+function SeasonMazeLogicComponent:AddAutoBeadEnergy(energy)
   return self:AddOutsideAttribute(SeasonMazeAttrType.SMAT_AutoBeadEnergy, energy)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.GetAutoBeadEnergy = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function SeasonMazeLogicComponent:GetAutoBeadEnergy()
   return self:GetOutsideAttributeByType(SeasonMazeAttrType.SMAT_AutoBeadEnergy)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.GetWaveRandoms = function(self)
-  -- function num : 0_23
+function SeasonMazeLogicComponent:GetWaveRandoms()
   return self._waveRandoms
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLogicComponent.GetInitAUOEValue = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function SeasonMazeLogicComponent:GetInitAUOEValue()
   return self:GetOutsideAttributeByType(SeasonMazeAttrType.SMAT_AlgorithmUpEnergy) or 0
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.SeasonMazeLogic = function(self)
-  -- function num : 0_25
-  return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).SeasonMazeLogic)
+function MainWorld:SeasonMazeLogic()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.SeasonMazeLogic)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.HasSeasonMazeLogic = function(self)
-  -- function num : 0_26
-  do return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).SeasonMazeLogic) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MainWorld:HasSeasonMazeLogic()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.SeasonMazeLogic) ~= nil
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.AddSeasonMazeLogic = function(self, world)
-  -- function num : 0_27 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).SeasonMazeLogic
+function MainWorld:AddSeasonMazeLogic(world)
+  local index = self.BW_UniqueComponentsEnum.SeasonMazeLogic
   local component = SeasonMazeLogicComponent:New(self)
   component:Initialize()
   self:SetUniqueComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.RemoveSeasonMazeLogic = function(self)
-  -- function num : 0_28
+function MainWorld:RemoveSeasonMazeLogic()
   if self:HasSeasonMazeLogic() then
-    self:SetUniqueComponent((self.BW_UniqueComponentsEnum).SeasonMazeLogic, nil)
+    self:SetUniqueComponent(self.BW_UniqueComponentsEnum.SeasonMazeLogic, nil)
   end
 end
-
-

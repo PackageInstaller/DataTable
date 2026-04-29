@@ -1,100 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/affix_data_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AffixDataComponent", Object)
 AffixDataComponent = AffixDataComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixDataComponent.Constructor = function(self)
-  -- function num : 0_0
+function AffixDataComponent:Constructor()
   self._affixDataList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixDataComponent.AddAffixData = function(self, affixType, param)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._affixDataList)[affixType] then
-    (self._affixDataList)[affixType] = {}
+function AffixDataComponent:AddAffixData(affixType, param)
+  if not self._affixDataList[affixType] then
+    self._affixDataList[affixType] = {}
   end
-  ;
-  (table.insert)((self._affixDataList)[affixType], param)
+  table.insert(self._affixDataList[affixType], param)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixDataComponent.HasAffixData = function(self, affixType)
-  -- function num : 0_2
-  do return (self._affixDataList)[affixType] ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AffixDataComponent:HasAffixData(affixType)
+  return self._affixDataList[affixType] ~= nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixDataComponent.GetAffixDataList = function(self, affixType)
-  -- function num : 0_3
-  return (self._affixDataList)[affixType]
+function AffixDataComponent:GetAffixDataList(affixType)
+  return self._affixDataList[affixType]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixDataComponent.Sort = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  for affixType,dataList in pairs(self._affixDataList) do
+function AffixDataComponent:Sort()
+  for affixType, dataList in pairs(self._affixDataList) do
     if affixType == AffixType.ReplaceMonsterSkill then
-      (table.sort)(dataList, function(param1, param2)
-    -- function num : 0_4_0
-    local typeID1 = param1:GetAffixConfigTypeID()
-    local typeID2 = param2:GetAffixConfigTypeID()
-    if typeID1 >= typeID2 then
-      do return typeID1 == typeID2 end
-      local index1 = param1:GetConfigIndex()
-      do
-        local index2 = param2:GetConfigIndex()
-        do return index1 < index2 end
-        -- DECOMPILER ERROR: 4 unprocessed JMP targets
-      end
-    end
-  end
-)
+      table.sort(dataList, function(param1, param2)
+        local typeID1 = param1:GetAffixConfigTypeID()
+        local typeID2 = param2:GetAffixConfigTypeID()
+        if typeID1 ~= typeID2 then
+          return typeID1 < typeID2
+        else
+          local index1 = param1:GetConfigIndex()
+          local index2 = param2:GetConfigIndex()
+          return index1 < index2
+        end
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AffixData = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).AffixData)
+function Entity:AffixData()
+  return self:GetComponent(self.WEComponentsEnum.AffixData)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasAffixData = function(self)
-  -- function num : 0_6
-  return self:HasComponent((self.WEComponentsEnum).AffixData)
+function Entity:HasAffixData()
+  return self:HasComponent(self.WEComponentsEnum.AffixData)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddAffixData = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).AffixData
+function Entity:AddAffixData()
+  local index = self.WEComponentsEnum.AffixData
   local component = AffixDataComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceAffixData = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).AffixData
+function Entity:ReplaceAffixData()
+  local index = self.WEComponentsEnum.AffixData
   local component = AffixDataComponent:New()
   self:ReplaceComponent(index, component)
 end
-
-

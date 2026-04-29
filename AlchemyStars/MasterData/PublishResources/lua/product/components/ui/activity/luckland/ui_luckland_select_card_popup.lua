@@ -1,37 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/ui_luckland_select_card_popup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandSelectCardPopUp", UIController)
 UILuckLandSelectCardPopUp = UILuckLandSelectCardPopUp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandSelectCardPopUp.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UILuckLandSelectCardPopUp:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSelectCardPopUp.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self.cardDataList = (LuckLandData:GetInstance()):CurCardDatas()
-  self.buildDataLevel = (LuckLandData:GetInstance()):CurBuildingDatas()
-  self.gameData = (LuckLandData:GetInstance()):CurGameData()
+function UILuckLandSelectCardPopUp:OnShow(uiParams)
+  self.cardDataList = LuckLandData:GetInstance():CurCardDatas()
+  self.buildDataLevel = LuckLandData:GetInstance():CurBuildingDatas()
+  self.gameData = LuckLandData:GetInstance():CurGameData()
   self.finishCB = uiParams[1]
   self._curIndex = nil
   self._extraDrawCardCount = 0
   self:InitWidget()
-  ;
-  (LuckLandInnerGameHelper.ResetReDrawCount)()
+  LuckLandInnerGameHelper.ResetReDrawCount()
   self:InitUI()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSelectCardPopUp.InitWidget = function(self)
-  -- function num : 0_2
+function UILuckLandSelectCardPopUp:InitWidget()
   self._anim = self:GetGameObject("_anim")
   self.cardPool = self:GetUIComponent("UISelectObjectPath", "CardPool")
   self.titleText = self:GetUIComponent("UILocalizationText", "TitleText")
@@ -44,208 +30,155 @@ UILuckLandSelectCardPopUp.InitWidget = function(self)
   self.reExtractBtnObj = self:GetGameObject("ReExtractBtn")
   self.skipBtnObj = self:GetGameObject("SkipBtn")
   self.quickPop = self:GetGameObject("QuickPop")
-  ;
-  (self.quickPop):SetActive(false)
+  self.quickPop:SetActive(false)
   self.tipsTextRootRect = self:GetUIComponent("RectTransform", "TipsTextRoot")
   self.tipsText1 = self:GetUIComponent("UILocalizationText", "TipsText1")
   self.tipsText2 = self:GetUIComponent("UILocalizationText", "TipsText2")
   self.tipsText3 = self:GetUIComponent("UILocalizationText", "TipsText3")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSelectCardPopUp.InitUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UILuckLandSelectCardPopUp:InitUI()
   self.curCost = 0
-  self.curMoney = (LuckLandInnerGameHelper.GetCurMoney)()
-  self.curCost = (LuckLandInnerGameHelper.GetReDrawCost)()
+  self.curMoney = LuckLandInnerGameHelper.GetCurMoney()
+  self.curCost = LuckLandInnerGameHelper.GetReDrawCost()
   if self.curCost then
     if self.curCost <= self.curMoney then
-      (self.reExtractBtnText):SetText("<color=#d5c5ff>" .. self.curCost .. "</color>/" .. self.curMoney)
+      self.reExtractBtnText:SetText("<color=#d5c5ff>" .. self.curCost .. "</color>/" .. self.curMoney)
     else
-      ;
-      (self.reExtractBtnText):SetText("<color=#ff5d5d>" .. self.curCost .. "</color>/" .. self.curMoney)
+      self.reExtractBtnText:SetText("<color=#ff5d5d>" .. self.curCost .. "</color>/" .. self.curMoney)
     end
   end
-  ;
-  (self.curMoneyText):SetText((StringTable.Get)("str_luckland_cardbag_cost", self.curMoney))
+  self.curMoneyText:SetText(StringTable.Get("str_luckland_cardbag_cost", self.curMoney))
   local getCardCount = 3
-  self.CardAreaList = (UIWidgetHelper.SpawnObjects)(self, "CardPool", "UILuckLandSingleSelectCardItem", getCardCount)
-  local module = (LuckLandInnerGameHelper.GetLuckLandGameModule)()
+  self.CardAreaList = UIWidgetHelper.SpawnObjects(self, "CardPool", "UILuckLandSingleSelectCardItem", getCardCount)
+  local module = LuckLandInnerGameHelper.GetLuckLandGameModule()
   local tempCardDatas = module:GetDrawCardResult()
   for i = 1, #self.CardAreaList do
-    local item = (self.CardAreaList)[i]
+    local item = self.CardAreaList[i]
     item:SetData(tempCardDatas[i], i, self.toggleGroup, function(index)
-    -- function num : 0_3_0 , upvalues : self
-    self:OnToggleChange(index)
-  end
-)
+      self:OnToggleChange(index)
+    end)
   end
   self:DrawCardShow()
-  if (LuckLandInnerGameHelper.CheckWord)(LuckLandWordType.LockRedrawCard) then
-    (self.reExtractBtnObj):SetActive(false)
+  if LuckLandInnerGameHelper.CheckWord(LuckLandWordType.LockRedrawCard) then
+    self.reExtractBtnObj:SetActive(false)
   end
-  if (LuckLandInnerGameHelper.CheckWord)(LuckLandWordType.LockSkip) then
-    (self.skipBtnObj):SetActive(false)
+  if LuckLandInnerGameHelper.CheckWord(LuckLandWordType.LockSkip) then
+    self.skipBtnObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSelectCardPopUp.DrawCardShow = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UILuckLandSelectCardPopUp:DrawCardShow()
   self:Lock("UILuckLandSelectCardPopUp:DrawCardShow")
   for i = 1, #self.CardAreaList do
-    do
-      local item = (self.CardAreaList)[i]
-      ;
-      ((item.view):GetGameObject()):SetActive(false)
-    end
+    local item = self.CardAreaList[i]
+    item.view:GetGameObject():SetActive(false)
   end
   for i = 1, #self.CardAreaList do
-    local item = (self.CardAreaList)[i]
-    ;
-    ((GameGlobal.Timer)()):AddEvent(50 * (i - 1), function()
-    -- function num : 0_4_0 , upvalues : item, i, self
-    ((item.view):GetGameObject()):SetActive(true)
-    if i == #self.CardAreaList - 1 then
-      self:UnLock("UILuckLandSelectCardPopUp:DrawCardShow")
-    end
-  end
-)
+    local item = self.CardAreaList[i]
+    GameGlobal.Timer():AddEvent(50 * (i - 1), function()
+      item.view:GetGameObject():SetActive(true)
+      if i == #self.CardAreaList - 1 then
+        self:UnLock("UILuckLandSelectCardPopUp:DrawCardShow")
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSelectCardPopUp.OnToggleChange = function(self, index)
-  -- function num : 0_5
+function UILuckLandSelectCardPopUp:OnToggleChange(index)
   self._curIndex = index
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSelectCardPopUp.BgOnClick = function(self, go)
-  -- function num : 0_6
+function UILuckLandSelectCardPopUp:BgOnClick(go)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSelectCardPopUp.CardBagBtnOnClick = function(self, go)
-  -- function num : 0_7
+function UILuckLandSelectCardPopUp:CardBagBtnOnClick(go)
   self:ShowDialog("UILuckLandCardBag", true, false)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSelectCardPopUp.SkipBtnOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  local module = (LuckLandInnerGameHelper.GetLuckLandGameModule)()
+function UILuckLandSelectCardPopUp:SkipBtnOnClick(go)
+  local module = LuckLandInnerGameHelper.GetLuckLandGameModule()
   if module:CheckHasExtraDrawCard() and self._extraDrawCardCount <= 0 then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LuckLandSkip)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.LuckLandSkip)
     self._extraDrawCardCount = 1
     self:InitUI()
   else
     self:CloseDialog()
     if self.finishCB then
-      (self.finishCB)()
+      self.finishCB()
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSelectCardPopUp.ReExtractBtnOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  self.curMoney = (LuckLandInnerGameHelper.GetCurMoney)()
-  self.curCost = (LuckLandInnerGameHelper.GetReDrawCost)()
+function UILuckLandSelectCardPopUp:ReExtractBtnOnClick(go)
+  self.curMoney = LuckLandInnerGameHelper.GetCurMoney()
+  self.curCost = LuckLandInnerGameHelper.GetReDrawCost()
   local moneyStr = "<color=#5e47e1>" .. self.curMoney .. "</color>"
   local costStr = "<color=#5e47e1>" .. self.curCost .. "</color>"
-  if self.curMoney < self.curCost then
-    (ToastManager.ShowToast)((StringTable.Get)("str_luckland_select_card_error"))
+  if self.curCost > self.curMoney then
+    ToastManager.ShowToast(StringTable.Get("str_luckland_select_card_error"))
   else
     self:Lock("UILuckLandSelectCardPopUp")
     self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV
-    (self.gameData):AddReDrawCount()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LuckLandReDraw)
-    self:InitUI()
-    YIELD(TT, 1100)
-    self:UnLock("UILuckLandSelectCardPopUp")
-  end
-)
+      self.gameData:AddReDrawCount()
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.LuckLandReDraw)
+      self:InitUI()
+      YIELD(TT, 1100)
+      self:UnLock("UILuckLandSelectCardPopUp")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSelectCardPopUp.CheckGetBtnOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
+function UILuckLandSelectCardPopUp:CheckGetBtnOnClick(go)
   if self._curIndex == nil then
-    (ToastManager.ShowToast)((StringTable.Get)("str_luckland_please_select_card"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_luckland_please_select_card"))
+    return
   end
-  local widget = (self.CardAreaList)[self._curIndex]
+  local widget = self.CardAreaList[self._curIndex]
   if widget then
     local data = widget:CardData()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LuckLandSelectCard, data:ID(), 1)
-    local mgr = (LuckLandInnerGameHelper.GetEntityMgr)()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.LuckLandSelectCard, data:ID(), 1)
+    local mgr = LuckLandInnerGameHelper.GetEntityMgr()
     if mgr then
       local pets = mgr:GetBackpackPets()
       if pets then
         local lastPet = pets[#pets]
         if lastPet then
-          (self.cardDataList):AddCardData(data:ID(), lastPet:ID(), 1)
+          self.cardDataList:AddCardData(data:ID(), lastPet:ID(), 1)
         end
       end
     end
   end
-  do
-    local module = (LuckLandInnerGameHelper.GetLuckLandGameModule)()
-    if module:CheckHasExtraDrawCard() and self._extraDrawCardCount <= 0 then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LuckLandSkip)
-      self._extraDrawCardCount = 1
-      ;
-      (LuckLandInnerGameHelper.ResetReDrawCount)()
-      self:InitUI()
-    else
-      self:CloseDialog()
-      if self.finishCB then
-        (self.finishCB)()
-      end
+  local module = LuckLandInnerGameHelper.GetLuckLandGameModule()
+  if module:CheckHasExtraDrawCard() and self._extraDrawCardCount <= 0 then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.LuckLandSkip)
+    self._extraDrawCardCount = 1
+    LuckLandInnerGameHelper.ResetReDrawCount()
+    self:InitUI()
+  else
+    self:CloseDialog()
+    if self.finishCB then
+      self.finishCB()
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSelectCardPopUp.CancleRedrawBtnOnClick = function(self, go)
-  -- function num : 0_11
-  (self.quickPop):SetActive(false)
+function UILuckLandSelectCardPopUp:CancleRedrawBtnOnClick(go)
+  self.quickPop:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSelectCardPopUp.QuickRedrawBtnOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  self.curMoney = (LuckLandInnerGameHelper.GetCurMoney)()
-  self.curCost = (LuckLandInnerGameHelper.GetReDrawCost)()
-  if self.curMoney < self.curCost then
-    (ToastManager.ShowToast)((StringTable.Get)("str_luckland_select_card_error"))
+function UILuckLandSelectCardPopUp:QuickRedrawBtnOnClick(go)
+  self.curMoney = LuckLandInnerGameHelper.GetCurMoney()
+  self.curCost = LuckLandInnerGameHelper.GetReDrawCost()
+  if self.curCost > self.curMoney then
+    ToastManager.ShowToast(StringTable.Get("str_luckland_select_card_error"))
   else
-    ;
-    (self.gameData):AddReDrawCount()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LuckLandReDraw)
-    ;
-    (self.quickPop):SetActive(false)
+    self.gameData:AddReDrawCount()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.LuckLandReDraw)
+    self.quickPop:SetActive(false)
     self:InitUI()
   end
   if self.finishCB then
-    (self.finishCB)()
+    self.finishCB()
   end
 end
-
-

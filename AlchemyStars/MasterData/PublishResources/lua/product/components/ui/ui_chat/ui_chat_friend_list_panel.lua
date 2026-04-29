@@ -1,177 +1,115 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chat/ui_chat_friend_list_panel.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChatFriendListPanel", UICustomWidget)
 UIChatFriendListPanel = UIChatFriendListPanel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChatFriendListPanel.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChatFriendListPanel:OnShow(uiParams)
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "FriendList")
   self._friendPanel = self:GetGameObject("LeftStretchAnchor")
   self._noFriendPanel = self:GetGameObject("CenterAnchor")
   self._tipsLabel = self:GetUIComponent("UILocalizationText", "TipsCH")
   self._friendCountLabel = self:GetUIComponent("UILocalizationText", "FriendCount")
   self._blackListBtnGo = self:GetGameObject("BlackListBtn")
-  ;
-  (self._blackListBtnGo):SetActive(false)
-  ;
-  (self._blackListBtnGo):SetActive(true)
+  self._blackListBtnGo:SetActive(false)
+  self._blackListBtnGo:SetActive(true)
   self._isInited = false
   self:AttachEvent(GameEventType.DeleteFriendUI, self._Refresh)
   self:AttachEvent(GameEventType.UpdateFriendInfo, self._Refresh)
   self:_HidePanel()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendListPanel.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIChatFriendListPanel:OnHide()
   self:DetachEvent(GameEventType.DeleteFriendUI, self._Refresh)
   self:DetachEvent(GameEventType.UpdateFriendInfo, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendListPanel.Init = function(self, uiChatController)
-  -- function num : 0_2
+function UIChatFriendListPanel:Init(uiChatController)
   if self._isInited == false then
     self._uiChatController = uiChatController
-    self._chatFriendManager = (self._uiChatController):GetChatFriendManager()
-    self._panelType = (self._uiChatController):GetCurrentPanelType()
+    self._chatFriendManager = self._uiChatController:GetChatFriendManager()
+    self._panelType = self._uiChatController:GetCurrentPanelType()
   end
   self:_HidePanel()
   self:_RefreshDatas(function()
-    -- function num : 0_2_0 , upvalues : self
     self:_RefreshPanelStatus()
     if self._isInited == false then
       self:_InitScrollView()
     else
-      ;
-      (self._scrollView):SetListItemCount(self._friendCount, false)
-      ;
-      (self._scrollView):RefreshAllShownItem()
+      self._scrollView:SetListItemCount(self._friendCount, false)
+      self._scrollView:RefreshAllShownItem()
     end
     self._isInited = true
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendListPanel.Exist = function(self)
-  -- function num : 0_3
+function UIChatFriendListPanel:Exist()
   if not self:_IsPanelActive() then
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendListPanel._HidePanel = function(self)
-  -- function num : 0_4
-  (self._friendPanel):SetActive(false)
-  ;
-  (self._noFriendPanel):SetActive(false)
+function UIChatFriendListPanel:_HidePanel()
+  self._friendPanel:SetActive(false)
+  self._noFriendPanel:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendListPanel._Refresh = function(self)
-  -- function num : 0_5
+function UIChatFriendListPanel:_Refresh()
   if not self:_IsPanelActive() then
-    return 
+    return
   end
   self:_RefreshDatas(function()
-    -- function num : 0_5_0 , upvalues : self
-    (self._scrollView):SetListItemCount(self._friendCount, false)
+    self._scrollView:SetListItemCount(self._friendCount, false)
     self:_RefreshPanelStatus()
-    ;
-    (self._scrollView):RefreshAllShownItem()
-  end
-)
+    self._scrollView:RefreshAllShownItem()
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendListPanel._RefreshPanelStatus = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIChatFriendListPanel:_RefreshPanelStatus()
   if self._friendCount <= 0 then
-    (self._friendPanel):SetActive(false)
-    ;
-    (self._noFriendPanel):SetActive(true)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._tipsLabel).text = (StringTable.Get)("str_chat_no_friend_tips_ch")
+    self._friendPanel:SetActive(false)
+    self._noFriendPanel:SetActive(true)
+    self._tipsLabel.text = StringTable.Get("str_chat_no_friend_tips_ch")
   else
-    ;
-    (self._friendPanel):SetActive(true)
-    ;
-    (self._noFriendPanel):SetActive(false)
+    self._friendPanel:SetActive(true)
+    self._noFriendPanel:SetActive(false)
   end
-  local str = self._friendCount .. "/" .. (self._chatFriendManager):GetMaxFriendCount()
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._friendCountLabel).text = str
+  local str = self._friendCount .. "/" .. self._chatFriendManager:GetMaxFriendCount()
+  self._friendCountLabel.text = str
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendListPanel._RefreshDatas = function(self, callback)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self._RequestDatas, self, callback)
+function UIChatFriendListPanel:_RefreshDatas(callback)
+  GameGlobal.TaskManager():StartTask(self._RequestDatas, self, callback)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendListPanel._RequestDatas = function(self, TT, callback)
-  -- function num : 0_8 , upvalues : _ENV
+function UIChatFriendListPanel:_RequestDatas(TT, callback)
   self:Lock("_RequestDatas")
-  ;
-  (self._chatFriendManager):RequestFriendList(TT)
-  self._friendList = (self._chatFriendManager):GetFriendList(true)
-  self._friendCount = (table.count)(self._friendList)
+  self._chatFriendManager:RequestFriendList(TT)
+  self._friendList = self._chatFriendManager:GetFriendList(true)
+  self._friendCount = table.count(self._friendList)
   if callback then
     callback()
   end
   self:UnLock("_RequestDatas")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendListPanel._IsPanelActive = function(self)
-  -- function num : 0_9
+function UIChatFriendListPanel:_IsPanelActive()
   if not self._isInited then
     return false
   end
   if not self._uiChatController then
     return false
   end
-  if self._panelType ~= (self._uiChatController):GetCurrentPanelType() then
+  if self._panelType ~= self._uiChatController:GetCurrentPanelType() then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendListPanel._InitScrollView = function(self)
-  -- function num : 0_10
-  (self._scrollView):InitListView(self._friendCount, function(scrollview, index)
-    -- function num : 0_10_0 , upvalues : self
+function UIChatFriendListPanel:_InitScrollView()
+  self._scrollView:InitListView(self._friendCount, function(scrollview, index)
     return self:_OnGetFriendItem(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendListPanel._OnGetFriendItem = function(self, scrollView, index)
-  -- function num : 0_11 , upvalues : _ENV
+function UIChatFriendListPanel:_OnGetFriendItem(scrollView, index)
   local item = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -180,33 +118,22 @@ UIChatFriendListPanel._OnGetFriendItem = function(self, scrollView, index)
   end
   local rowList = rowPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      if self._friendCount < itemIndex then
-        (itemWidget:GetGameObject()):SetActive(false)
-      else
-        self:_RefreshFriendItemInfo(itemWidget, itemIndex)
-      end
+  if itemWidget then
+    local itemIndex = index + 1
+    if itemIndex > self._friendCount then
+      itemWidget:GetGameObject():SetActive(false)
+    else
+      self:_RefreshFriendItemInfo(itemWidget, itemIndex)
     end
-    ;
-    (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
-    return item
   end
+  UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
+  return item
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendListPanel._RefreshFriendItemInfo = function(self, itemWidget, index)
-  -- function num : 0_12
-  itemWidget:Refresh((self._friendList)[index], self._panelType, self._chatFriendManager, self._uiChatController)
+function UIChatFriendListPanel:_RefreshFriendItemInfo(itemWidget, index)
+  itemWidget:Refresh(self._friendList[index], self._panelType, self._chatFriendManager, self._uiChatController)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendListPanel.BlackListBtnOnClick = function(self, go)
-  -- function num : 0_13
+function UIChatFriendListPanel:BlackListBtnOnClick(go)
   self:ShowDialog("UIChatBlackListController", self._chatFriendManager)
 end
-
-

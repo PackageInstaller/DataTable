@@ -1,132 +1,99 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_attack_by_team_order_change.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeAttackByTeamOrderChange", BuffLogicBase)
 BuffLogicChangeAttackByTeamOrderChange = BuffLogicChangeAttackByTeamOrderChange
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeAttackByTeamOrderChange.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeAttackByTeamOrderChange:Constructor(buffInstance, logicParam)
   self._mulValuePerPos = logicParam.mulValuePerPos or 0
   self._mulValueBase = logicParam.mulValueBase
   self._useCasterPosChange = logicParam.useCasterPosChange == 1
   self._changeCurrentTeamLeaderInstead = logicParam.changeCurrentTeamLeaderInstead == 1
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAttackByTeamOrderChange.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicChangeAttackByTeamOrderChange:DoLogic(notify)
+  local e = self._buffInstance:Entity()
   if e:HasSuperEntity() then
     e = e:GetSuperEntity()
   end
-  local context = (self._buffInstance):Context()
+  local context = self._buffInstance:Context()
   local eCaster = context.casterEntity
   local formerPosIndex = 0
   local newPosIndex = 0
-  local petPstID = (e:PetPstID()):GetPstID()
+  local petPstID = e:PetPstID():GetPstID()
   if self._useCasterPosChange then
-    petPstID = (eCaster:PetPstID()):GetPstID()
+    petPstID = eCaster:PetPstID():GetPstID()
   end
-  for index,pstID in ipairs(notify:GetOldTeamOrder()) do
+  for index, pstID in ipairs(notify:GetOldTeamOrder()) do
     if pstID == petPstID then
       formerPosIndex = index
       break
     end
   end
-  do
-    for index,pstID in ipairs(notify:GetNewTeamOrder()) do
-      if pstID == petPstID then
-        newPosIndex = index
-        break
-      end
-    end
-    do
-      if formerPosIndex == 0 or newPosIndex == 0 then
-        (Log.error)(self._className, "pstID not found in notify???", petPstID)
-        return 
-      end
-      local changedTeamPosCount = (math.abs)(formerPosIndex - newPosIndex) - 1
-      if changedTeamPosCount < 0 then
-        changedTeamPosCount = 0
-      end
-      local cAttrCaster = eCaster:Attributes()
-      local base = cAttrCaster:GetAttribute("Attack")
-      local val = base * (self._mulValueBase + self._mulValuePerPos * changedTeamPosCount)
-      local eBeneficiary = e
-      if self._changeCurrentTeamLeaderInstead then
-        eBeneficiary = (((e:Pet()):GetOwnerTeamEntity()):Team()):GetTeamLeaderEntity()
-      end
-      local cBuffBeneficiary = eBeneficiary:BuffComponent()
-      local lastEffectedInfo = cBuffBeneficiary:GetLastEffectedLogicInfo("ChangeAttackByTeamOrderChange")
-      if lastEffectedInfo then
-        local seqID = lastEffectedInfo.seq
-        local lastVal = lastEffectedInfo.val
-        if val <= lastVal then
-          return 
-        end
-        ;
-        (self._buffLogicService):RemoveBaseAttack(eBeneficiary, seqID, ModifyBaseAttackType.AttackConstantFix)
-      end
-      do
-        ;
-        (self._buffLogicService):ChangeBaseAttack(eBeneficiary, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, val)
-        cBuffBeneficiary:SetLastEffectedLogicInfo("ChangeAttackByTeamOrderChange", {seq = self:GetBuffSeq(), val = val})
-        return BuffResultChangeAttackByTeamOrderChange:New((eBeneficiary:PetPstID()):GetPstID(), val)
-      end
+  for index, pstID in ipairs(notify:GetNewTeamOrder()) do
+    if pstID == petPstID then
+      newPosIndex = index
+      break
     end
   end
+  if formerPosIndex == 0 or newPosIndex == 0 then
+    Log.error(self._className, "pstID not found in notify???", petPstID)
+    return
+  end
+  local changedTeamPosCount = math.abs(formerPosIndex - newPosIndex) - 1
+  if changedTeamPosCount < 0 then
+    changedTeamPosCount = 0
+  end
+  local cAttrCaster = eCaster:Attributes()
+  local base = cAttrCaster:GetAttribute("Attack")
+  local val = base * (self._mulValueBase + self._mulValuePerPos * changedTeamPosCount)
+  local eBeneficiary = e
+  if self._changeCurrentTeamLeaderInstead then
+    eBeneficiary = e:Pet():GetOwnerTeamEntity():Team():GetTeamLeaderEntity()
+  end
+  local cBuffBeneficiary = eBeneficiary:BuffComponent()
+  local lastEffectedInfo = cBuffBeneficiary:GetLastEffectedLogicInfo("ChangeAttackByTeamOrderChange")
+  if lastEffectedInfo then
+    local seqID = lastEffectedInfo.seq
+    local lastVal = lastEffectedInfo.val
+    if val <= lastVal then
+      return
+    end
+    self._buffLogicService:RemoveBaseAttack(eBeneficiary, seqID, ModifyBaseAttackType.AttackConstantFix)
+  end
+  self._buffLogicService:ChangeBaseAttack(eBeneficiary, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, val)
+  cBuffBeneficiary:SetLastEffectedLogicInfo("ChangeAttackByTeamOrderChange", {
+    seq = self:GetBuffSeq(),
+    val = val
+  })
+  return BuffResultChangeAttackByTeamOrderChange:New(eBeneficiary:PetPstID():GetPstID(), val)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAttackByTeamOrderChange.DoOverlap = function(self, logicParam)
-  -- function num : 0_2
+function BuffLogicChangeAttackByTeamOrderChange:DoOverlap(logicParam)
   return self:DoLogic()
 end
 
 _class("BuffLogicChangeAttackByTeamOrderChangeUndo", BuffLogicBase)
 BuffLogicChangeAttackByTeamOrderChangeUndo = BuffLogicChangeAttackByTeamOrderChangeUndo
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeAttackByTeamOrderChangeUndo.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicChangeAttackByTeamOrderChangeUndo:Constructor(buffInstance, logicParam)
   self._changeCurrentTeamLeaderInstead = logicParam.changeCurrentTeamLeaderInstead == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAttackByTeamOrderChangeUndo.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicChangeAttackByTeamOrderChangeUndo:DoLogic()
+  local e = self._buffInstance:Entity()
   if e:HasSuperEntity() then
     e = e:GetSuperEntity()
   end
   if self._changeCurrentTeamLeaderInstead then
-    e = (((e:Pet()):GetOwnerTeamEntity()):Team()):GetTeamLeaderEntity()
+    e = e:Pet():GetOwnerTeamEntity():Team():GetTeamLeaderEntity()
   end
   local cBuffBeneficiary = e:BuffComponent()
   local lastEffectedInfo = cBuffBeneficiary:GetLastEffectedLogicInfo("ChangeAttackByTeamOrderChange")
   if lastEffectedInfo then
     local seqID = lastEffectedInfo.seq
     local lastVal = lastEffectedInfo.val
-    ;
-    (self._buffLogicService):RemoveBaseAttack(e, seqID, ModifyBaseAttackType.AttackConstantFix)
+    self._buffLogicService:RemoveBaseAttack(e, seqID, ModifyBaseAttackType.AttackConstantFix)
   end
-  do
-    cBuffBeneficiary:RemoveLastEffectedLogicInfo("ChangeAttackByTeamOrderChange")
-  end
+  cBuffBeneficiary:RemoveLastEffectedLogicInfo("ChangeAttackByTeamOrderChange")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAttackByTeamOrderChangeUndo.DoOverlap = function(self, logicParam)
-  -- function num : 0_5
+function BuffLogicChangeAttackByTeamOrderChangeUndo:DoOverlap(logicParam)
 end
-
-

@@ -1,123 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_map_path_next_chapter_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMapPathNextChapterItem", UICustomWidget)
 UIMapPathNextChapterItem = UIMapPathNextChapterItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMapPathNextChapterItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMapPathNextChapterItem:Constructor()
   self._module = self:GetModule(MissionModule)
-  self._data = (self._module):GetDiscoveryData()
+  self._data = self._module:GetDiscoveryData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapPathNextChapterItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMapPathNextChapterItem:OnShow()
   self._go = self:GetGameObject()
-  self._rect = (self._go):GetComponent("RectTransform")
+  self._rect = self._go:GetComponent("RectTransform")
   local vec0_5 = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMax = vec0_5
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMin = vec0_5
-  self._rectRoot = (self:GetGameObject("shape")):GetComponent("RectTransform")
+  self._rect.anchorMax = vec0_5
+  self._rect.anchorMin = vec0_5
+  self._rectRoot = self:GetGameObject("shape"):GetComponent("RectTransform")
   self._line = self:GetGameObject("line")
   self._shadow = self:GetGameObject("shadow")
   self:AttachEvent(GameEventType.DiscoveryNodeStateChange, self.FlushState)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapPathNextChapterItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMapPathNextChapterItem:OnHide()
   self:DetachEvent(GameEventType.DiscoveryNodeStateChange, self.FlushState)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapPathNextChapterItem.Flush = function(self, sPos, ePos, nextChapterData, isShadow)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMapPathNextChapterItem:Flush(sPos, ePos, nextChapterData, isShadow)
   self._nextChapter = nextChapterData
   local posS, posE = sPos:Clone(), ePos:Clone()
   if isShadow then
     local offsetY = 30
     posS.y = posS.y - offsetY
     posE.y = posE.y - offsetY
-    ;
-    (self._shadow):SetActive(true)
+    self._shadow:SetActive(true)
   else
-    do
-      ;
-      (self._line):SetActive(true)
-      local dis = (Vector2.Distance)(posS, posE)
-      -- DECOMPILER ERROR at PC35: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._rectRoot).sizeDelta = Vector2(dis, ((self._rectRoot).sizeDelta).y)
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._rect).anchoredPosition = posS
-      local v = posE - posS
-      -- DECOMPILER ERROR at PC50: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._rect).localRotation = (Quaternion.FromToRotation)(Vector3.right, Vector3(v.x, v.y, 0))
-      self:FlushState()
-      self:Animation()
-    end
+    self._line:SetActive(true)
   end
+  local dis = Vector2.Distance(posS, posE)
+  self._rectRoot.sizeDelta = Vector2(dis, self._rectRoot.sizeDelta.y)
+  self._rect.anchoredPosition = posS
+  local v = posE - posS
+  self._rect.localRotation = Quaternion.FromToRotation(Vector3.right, Vector3(v.x, v.y, 0))
+  self:FlushState()
+  self:Animation()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapPathNextChapterItem.FlushState = function(self)
-  -- function num : 0_4
-  local curChapter = (self._data):GetCurPosChapter()
+function UIMapPathNextChapterItem:FlushState()
+  local curChapter = self._data:GetCurPosChapter()
   local isComplete = curChapter:IsComplete()
-  ;
-  (self._go):SetActive(isComplete)
+  self._go:SetActive(isComplete)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapPathNextChapterItem.Animation = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIMapPathNextChapterItem:Animation()
   if self:IsFirstShow() then
-    local targetWidth = ((self._rectRoot).sizeDelta).x
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._rectRoot).sizeDelta = Vector2(0, ((self._rectRoot).sizeDelta).y)
-    ;
-    (self._rectRoot):DOSizeDelta(Vector2(targetWidth, ((self._rectRoot).sizeDelta).y), 0.8)
+    local targetWidth = self._rectRoot.sizeDelta.x
+    self._rectRoot.sizeDelta = Vector2(0, self._rectRoot.sizeDelta.y)
+    self._rectRoot:DOSizeDelta(Vector2(targetWidth, self._rectRoot.sizeDelta.y), 0.8)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapPathNextChapterItem.IsFirstShow = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local playerPrefsKey = self:GetPstId() .. "DiscoveryNextChapterIsFirstShow" .. (self._nextChapter).chapterId
-  local isFirst = ((UnityEngine.PlayerPrefs).GetInt)(playerPrefsKey, 0)
-  do return isFirst == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIMapPathNextChapterItem:IsFirstShow()
+  local playerPrefsKey = self:GetPstId() .. "DiscoveryNextChapterIsFirstShow" .. self._nextChapter.chapterId
+  local isFirst = UnityEngine.PlayerPrefs.GetInt(playerPrefsKey, 0)
+  return isFirst == 0
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapPathNextChapterItem.GetPstId = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIMapPathNextChapterItem:GetPstId()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   return roleModule:GetPstId()
 end
-
-

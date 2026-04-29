@@ -1,15 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/build/home_build_adsorb_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeBuildAdsorbResult", Object)
 HomeBuildAdsorbResult = HomeBuildAdsorbResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeBuildAdsorbResult.Constructor = function(self, type, colliderIdx1, sideIndex1, colliderIdx2, sideIndex3)
-  -- function num : 0_0
+function HomeBuildAdsorbResult:Constructor(type, colliderIdx1, sideIndex1, colliderIdx2, sideIndex3)
   self._type = type
 end
-
-

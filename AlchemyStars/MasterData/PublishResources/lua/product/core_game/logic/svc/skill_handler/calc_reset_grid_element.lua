@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_reset_grid_element.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_ResetGridElement", Object)
 SkillEffectCalc_ResetGridElement = SkillEffectCalc_ResetGridElement
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ResetGridElement.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_ResetGridElement:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ResetGridElement.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_ResetGridElement:DoSkillEffectCalculator(skillEffectCalcParam)
   local resetGridElementParam = skillEffectCalcParam.skillEffectParam
   local resetTrapId = resetGridElementParam:GetResetTrapId()
   local trapCount = self:CalcResetTrapCount(resetTrapId)
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-  local effectResult = (self._skillEffectService):CalcSkill_ResetGridElement(skillEffectCalcParam.skillRange, casterEntity, resetGridElementParam)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local effectResult = self._skillEffectService:CalcSkill_ResetGridElement(skillEffectCalcParam.skillRange, casterEntity, resetGridElementParam)
   if not resetTrapId or trapCount <= 0 then
     return effectResult
   end
@@ -30,63 +20,52 @@ SkillEffectCalc_ResetGridElement.DoSkillEffectCalculator = function(self, skillE
   if targetElement and targetElementProb then
     local listPosHaveDown = {}
     local targetElementPosList = {}
-    for k,v in ipairs(skillEffectCalcParam.skillRange) do
-      if (table.icontains)(targetElement, effectResult:FindGridDataNew(v)) then
+    for k, v in ipairs(skillEffectCalcParam.skillRange) do
+      if table.icontains(targetElement, effectResult:FindGridDataNew(v)) then
         targetElementPosList[#targetElementPosList + 1] = v
       end
     end
-    local targetElementCount = (math.floor)(targetElementProb * trapCount + 0.5)
-    targetElementCount = (math.min)(targetElementCount, #targetElementPosList)
+    local targetElementCount = math.floor(targetElementProb * trapCount + 0.5)
+    targetElementCount = math.min(targetElementCount, #targetElementPosList)
     for i = 1, targetElementCount do
-      local posSummon = (self._skillEffectService):_FindSummonPos(SkillEffectEnum_SummonType.Trap, targetElementPosList, resetTrapId, listPosHaveDown)
+      local posSummon = self._skillEffectService:_FindSummonPos(SkillEffectEnum_SummonType.Trap, targetElementPosList, resetTrapId, listPosHaveDown)
       if posSummon then
         effectResult:AddSummonTrapData(posSummon, resetTrapId)
       end
     end
     for i = 1, trapCount - targetElementCount do
-      local posSummon = (self._skillEffectService):_FindSummonPos(SkillEffectEnum_SummonType.Trap, skillEffectCalcParam.skillRange, resetTrapId, listPosHaveDown)
+      local posSummon = self._skillEffectService:_FindSummonPos(SkillEffectEnum_SummonType.Trap, skillEffectCalcParam.skillRange, resetTrapId, listPosHaveDown)
       if posSummon then
         effectResult:AddSummonTrapData(posSummon, resetTrapId)
       end
     end
   else
-    do
-      local listPosHaveDown = {}
-      for i = 1, trapCount do
-        local posSummon = (self._skillEffectService):_FindSummonPos(SkillEffectEnum_SummonType.Trap, skillEffectCalcParam.skillRange, resetTrapId, listPosHaveDown)
-        if posSummon then
-          effectResult:AddSummonTrapData(posSummon, resetTrapId)
-        end
-      end
-      do
-        return effectResult
+    local listPosHaveDown = {}
+    for i = 1, trapCount do
+      local posSummon = self._skillEffectService:_FindSummonPos(SkillEffectEnum_SummonType.Trap, skillEffectCalcParam.skillRange, resetTrapId, listPosHaveDown)
+      if posSummon then
+        effectResult:AddSummonTrapData(posSummon, resetTrapId)
       end
     end
   end
+  return effectResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ResetGridElement.CalcResetTrapCount = function(self, resetTrapId)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_ResetGridElement:CalcResetTrapCount(resetTrapId)
   if not resetTrapId then
     return 0
   end
-  local traps = ((self._world):GetGroup(((self._world).BW_WEMatchers).Trap)):GetEntities()
+  local traps = self._world:GetGroup(self._world.BW_WEMatchers.Trap):GetEntities()
   local trapCount = 0
-  if traps and #traps > 0 then
-    for _,trap in ipairs(traps) do
+  if traps and 0 < #traps then
+    for _, trap in ipairs(traps) do
       if not trap:HasDeadMark() then
-        local trapID = (trap:Trap()):GetTrapID()
+        local trapID = trap:Trap():GetTrapID()
         if trapID == resetTrapId then
           trapCount = trapCount + 1
         end
       end
     end
   end
-  do
-    return trapCount
-  end
+  return trapCount
 end
-
-

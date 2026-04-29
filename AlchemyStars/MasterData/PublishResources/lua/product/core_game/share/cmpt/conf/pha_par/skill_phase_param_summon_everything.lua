@@ -1,72 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_param_summon_everything.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseParam_SummonEverything", SkillPhaseParamBase)
 SkillPhaseParam_SummonEverything = SkillPhaseParam_SummonEverything
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseParam_SummonEverything.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhaseParam_SummonEverything:Constructor(t)
   self._showTimeDelay = t.showTimeDelay or 0
   self._gridEffectID = t.gridEffectID or 0
   self._gridEffectDelayTime = t.gridEffectDelayTime or 0
   self._gridIntervalTime = t.gridIntervalTime or 0
   self._fxNoRotation = tonumber(t.fxNoRotation) == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_SummonEverything.GetCacheTable = function(self)
-  -- function num : 0_1
+function SkillPhaseParam_SummonEverything:GetCacheTable()
   local listID = {}
   self:AddEffectIDToListID(listID, self._gridEffectID)
   return self:GetCacheTableFromListID(listID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_SummonEverything.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseParam_SummonEverything:GetPhaseType()
   return SkillViewPhaseType.SummonEverything
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_SummonEverything.GetShowTimeDelay = function(self)
-  -- function num : 0_3
+function SkillPhaseParam_SummonEverything:GetShowTimeDelay()
   return self._showTimeDelay
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_SummonEverything.GetGridEffectID = function(self)
-  -- function num : 0_4
+function SkillPhaseParam_SummonEverything:GetGridEffectID()
   return self._gridEffectID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_SummonEverything.GetGridEffectDelayTime = function(self)
-  -- function num : 0_5
+function SkillPhaseParam_SummonEverything:GetGridEffectDelayTime()
   return self._gridEffectDelayTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_SummonEverything.GetGridIntervalTime = function(self)
-  -- function num : 0_6
+function SkillPhaseParam_SummonEverything:GetGridIntervalTime()
   return self._gridIntervalTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_SummonEverything.IsFxNoRotation = function(self)
-  -- function num : 0_7
+function SkillPhaseParam_SummonEverything:IsFxNoRotation()
   return self._fxNoRotation
 end
-
-

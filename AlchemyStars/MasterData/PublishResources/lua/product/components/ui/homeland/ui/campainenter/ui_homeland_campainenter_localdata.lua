@@ -1,124 +1,78 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/campainenter/ui_homeland_campainenter_localdata.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICampainEnterLocalData", CampaignDataBase)
 UICampainEnterLocalData = UICampainEnterLocalData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICampainEnterLocalData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._redDotModule = (GameGlobal.GetModule)(RedDotModule)
+function UICampainEnterLocalData:Constructor()
+  self._redDotModule = GameGlobal.GetModule(RedDotModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterLocalData.GetState = function(self, cInfo)
-  -- function num : 0_1 , upvalues : _ENV
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+function UICampainEnterLocalData:GetState(cInfo)
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   if nowTimestamp < cInfo.m_unlock_time then
     return UISummerOneEnterBtnState.NotOpen
+  elseif nowTimestamp > cInfo.m_close_time then
+    return UISummerOneEnterBtnState.Closed
+  elseif cInfo.m_b_unlock then
+    return UISummerOneEnterBtnState.Normal
   else
-    if cInfo.m_close_time < nowTimestamp then
-      return UISummerOneEnterBtnState.Closed
+    local cfgv = Cfg.cfg_campaign_mission[cInfo.m_need_mission_id]
+    if cfgv then
+      return UISummerOneEnterBtnState.Locked
     else
-      if cInfo.m_b_unlock then
-        return UISummerOneEnterBtnState.Normal
-      else
-        local cfgv = (Cfg.cfg_campaign_mission)[cInfo.m_need_mission_id]
-        if cfgv then
-          return UISummerOneEnterBtnState.Locked
-        else
-          return UISummerOneEnterBtnState.Normal
-        end
-      end
+      return UISummerOneEnterBtnState.Normal
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterLocalData.GetStateNormal = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICampainEnterLocalData:GetStateNormal()
   local cInfo = self:GetComponentInfoNormal()
   if not cInfo then
-    (Log.fatal)("### GetComponentHard failed.")
-    return 
+    Log.fatal("### GetComponentHard failed.")
+    return
   end
   return self:GetState(cInfo)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterLocalData.GetStateHard = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICampainEnterLocalData:GetStateHard()
   local cHardInfo = self:GetComponentInfoHard()
   if not cHardInfo then
-    (Log.fatal)("### GetComponentHard failed.")
-    return 
+    Log.fatal("### GetComponentHard failed.")
+    return
   end
   return self:GetState(cHardInfo)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterLocalData.GetPstId = function()
-  -- function num : 0_4 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function UICampainEnterLocalData.GetPstId()
+  local mRole = GameGlobal.GetModule(RoleModule)
   return mRole:GetPstId()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterLocalData.GetPrefsKey = function(str)
-  -- function num : 0_5 , upvalues : _ENV
-  local playerPrefsKey = (UICampainEnterLocalData.GetPstId)() .. str
+function UICampainEnterLocalData.GetPrefsKey(str)
+  local playerPrefsKey = UICampainEnterLocalData.GetPstId() .. str
   return playerPrefsKey
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterLocalData.GetPrefsKeyStr = function(keyword)
-  -- function num : 0_6 , upvalues : _ENV
-  return (UICampainEnterLocalData.GetPrefsKey)("UICampainEnterLocalData" .. keyword)
+function UICampainEnterLocalData.GetPrefsKeyStr(keyword)
+  return UICampainEnterLocalData.GetPrefsKey("UICampainEnterLocalData" .. keyword)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterLocalData.HasPrefsKeyStr = function(keyword)
-  -- function num : 0_7 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((UICampainEnterLocalData.GetPrefsKeyStr)(keyword))
+function UICampainEnterLocalData.HasPrefsKeyStr(keyword)
+  return UnityEngine.PlayerPrefs.HasKey(UICampainEnterLocalData.GetPrefsKeyStr(keyword))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterLocalData.SetPrefsKeyStr = function(keyword)
-  -- function num : 0_8 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((UICampainEnterLocalData.GetPrefsKeyStr)(keyword), 1)
+function UICampainEnterLocalData.SetPrefsKeyStr(keyword)
+  UnityEngine.PlayerPrefs.SetInt(UICampainEnterLocalData.GetPrefsKeyStr(keyword), 1)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterLocalData.GetRedPoint = function()
-  -- function num : 0_9
-  return 
+function UICampainEnterLocalData.GetRedPoint()
+  return
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterLocalData.GetNewPoint = function()
-  -- function num : 0_10 , upvalues : _ENV
-  return (UICampainEnterLocalData.GetPrefsKeyStr)("NewPoint")
+function UICampainEnterLocalData.GetNewPoint()
+  return UICampainEnterLocalData.GetPrefsKeyStr("NewPoint")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterLocalData.SetNewPoint = function()
-  -- function num : 0_11 , upvalues : _ENV
-  if not (UICampainEnterLocalData.HasPrefsKeyStr)("NewPoint") then
-    (UICampainEnterLocalData.SetPrefsKeyStr)("NewPoint")
+function UICampainEnterLocalData.SetNewPoint()
+  if not UICampainEnterLocalData.HasPrefsKeyStr("NewPoint") then
+    UICampainEnterLocalData.SetPrefsKeyStr("NewPoint")
   end
 end
-
-

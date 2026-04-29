@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/aircraft/aircraft_room/aircraft_dispatch_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("aircraft_room_base")
 _class("AircraftDispatchRoom", AircraftRoomBase)
 AircraftDispatchRoom = AircraftDispatchRoom
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftDispatchRoom.Constructor = function(self)
-  -- function num : 0_0
+function AircraftDispatchRoom:Constructor()
   self._do_count = 0
   self._team_count = 0
   self._start_time = 0
@@ -18,69 +11,39 @@ AircraftDispatchRoom.Constructor = function(self)
   self._sur_cur_time = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.SetClientData = function(self, client_data)
-  -- function num : 0_1 , upvalues : _ENV
+function AircraftDispatchRoom:SetClientData(client_data)
   self._cur_speed = client_data[1]
   self._sur_time = client_data[2]
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   self._sur_cur_time = timeModule:GetServerTime() / 1000
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.SetExtData = function(self, data)
-  -- function num : 0_2 , upvalues : _ENV
+function AircraftDispatchRoom:SetExtData(data)
   self._siteData = nil
   if data then
     local info = DispatchRoomExtData:New()
-    local ret, msg = (lua_dc.LoadStream)(info._className, data, info)
+    local ret, msg = lua_dc.LoadStream(info._className, data, info)
     if ret == nil then
-      (Log.fatal)("AircraftDispatchRoom:SetExtData lua_dc.LoadStream fail! ", msg)
+      Log.fatal("AircraftDispatchRoom:SetExtData lua_dc.LoadStream fail! ", msg)
     else
       self._do_count = info.do_count
       self._team_count = info.team_count
       self._start_time = info.start_time
       self._is_look = info.is_look
       self._siteData = {}
-      for index,value in pairs(info.site_list) do
-        -- DECOMPILER ERROR at PC35: Confused about usage of register: R10 in 'UnsetPending'
-
-        (self._siteData)[index] = nil
-        -- DECOMPILER ERROR at PC43: Confused about usage of register: R10 in 'UnsetPending'
-
+      for index, value in pairs(info.site_list) do
+        self._siteData[index] = nil
         if value.state ~= DispatchTaskStateType.DTST_Invalid then
-          (self._siteData)[index] = {}
-          -- DECOMPILER ERROR at PC47: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          ((self._siteData)[index]).state = value.state
-          -- DECOMPILER ERROR at PC51: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          ((self._siteData)[index]).endTime = value.end_time
-          -- DECOMPILER ERROR at PC55: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          ((self._siteData)[index]).teamMember = value.team_member
-          -- DECOMPILER ERROR at PC64: Confused about usage of register: R10 in 'UnsetPending'
-
+          self._siteData[index] = {}
+          self._siteData[index].state = value.state
+          self._siteData[index].endTime = value.end_time
+          self._siteData[index].teamMember = value.team_member
           if value.state == DispatchTaskStateType.DTST_New then
-            ((self._siteData)[index]).taskId = value.task_refresh_id
-            -- DECOMPILER ERROR at PC68: Confused about usage of register: R10 in 'UnsetPending'
-
-            ;
-            ((self._siteData)[index]).awardId = value.award_id
+            self._siteData[index].taskId = value.task_refresh_id
+            self._siteData[index].awardId = value.award_id
           else
-            -- DECOMPILER ERROR at PC73: Confused about usage of register: R10 in 'UnsetPending'
-
-            ;
-            ((self._siteData)[index]).taskId = value.task_doing_id
-            -- DECOMPILER ERROR at PC77: Confused about usage of register: R10 in 'UnsetPending'
-
-            ;
-            ((self._siteData)[index]).awardId = value.award_doing_id
+            self._siteData[index].taskId = value.task_doing_id
+            self._siteData[index].awardId = value.award_doing_id
           end
         end
       end
@@ -88,70 +51,43 @@ AircraftDispatchRoom.SetExtData = function(self, data)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.GetRoomConfig = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_dispatch_room)[self._roomid]
+function AircraftDispatchRoom:GetRoomConfig()
+  local cfg = Cfg.cfg_aircraft_dispatch_room[self._roomid]
   return cfg
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.GetSiteMaxNum = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function AircraftDispatchRoom:GetSiteMaxNum()
   return DispatchDBSize.DDBS_SiteMaxNum
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.GetDispatchCount = function(self)
-  -- function num : 0_5
+function AircraftDispatchRoom:GetDispatchCount()
   return self._do_count
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.GetDispatchTeamCount = function(self)
-  -- function num : 0_6
+function AircraftDispatchRoom:GetDispatchTeamCount()
   return self._team_count
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.GetTeamMemberMaxNum = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function AircraftDispatchRoom:GetTeamMemberMaxNum()
   return DispatchDBSize.DDBS_TeamMemberMaxNum
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.IsLook = function(self)
-  -- function num : 0_8
+function AircraftDispatchRoom:IsLook()
   return self._is_look
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.GetRestoreTime = function(self)
-  -- function num : 0_9
+function AircraftDispatchRoom:GetRestoreTime()
   return self._cur_speed
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.GetSpeedUpTime = function(self)
-  -- function num : 0_10
+function AircraftDispatchRoom:GetSpeedUpTime()
   local c = self:GetRoomConfig()
   return c.OneSpeed - self:GetRestoreTime()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.GetSurplusSecond = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function AircraftDispatchRoom:GetSurplusSecond()
   local roomCfg = self:GetRoomConfig()
-  if roomCfg.DispatchMax <= self:GetDispatchCount() then
+  if self:GetDispatchCount() >= roomCfg.DispatchMax then
     return -1
   end
   if self._start_time == 0 then
@@ -161,36 +97,28 @@ AircraftDispatchRoom.GetSurplusSecond = function(self)
   if ct == 0 then
     return 0
   end
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = timeModule:GetServerTime() / 1000
   local endTime = self._start_time + ct
-  do
-    if nowTime < endTime then
-      local seconds = endTime - nowTime
-      if seconds < 1 then
-        return 0
-      end
-      return seconds
+  if nowTime < endTime then
+    local seconds = endTime - nowTime
+    if seconds < 1 then
+      return 0
     end
-    return 0
+    return seconds
   end
+  return 0
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.GetStartTime = function(self)
-  -- function num : 0_12
+function AircraftDispatchRoom:GetStartTime()
   return self._start_time
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.GetDispatchPetList = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
+function AircraftDispatchRoom:GetDispatchPetList()
+  local petModule = GameGlobal.GetModule(PetModule)
   local allpets = petModule:GetPets()
   local plist = {}
-  for _i,pet in pairs(allpets) do
+  for _i, pet in pairs(allpets) do
     if pet:IsDispatch() == true then
       plist[#plist + 1] = pet
     end
@@ -198,214 +126,193 @@ AircraftDispatchRoom.GetDispatchPetList = function(self)
   return plist
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.GetScore = function(self, petList, taskCfgId)
-  -- function num : 0_14 , upvalues : _ENV
+function AircraftDispatchRoom:GetScore(petList, taskCfgId)
   if petList == nil then
     return 0
   end
-  local taskCfg = (Cfg.cfg_aircraft_dispatch_task)[taskCfgId]
+  local taskCfg = Cfg.cfg_aircraft_dispatch_task[taskCfgId]
   if taskCfg == nil then
     return 0
   end
-  local scoreCfg = (Cfg.cfg_aircraft_dispatch_referrals)[taskCfg.Star]
+  local scoreCfg = Cfg.cfg_aircraft_dispatch_referrals[taskCfg.Star]
   if scoreCfg == nil then
     return 0
   end
   local totalScore = 0
-  for key,pet in pairs(petList) do
+  for key, pet in pairs(petList) do
     if pet ~= nil then
-      do
-        if taskCfg.ExtraForce ~= 0 then
-          local tags = pet:GetPetTags()
-          if (table.icontains)(tags, taskCfg.ExtraForce) then
-            totalScore = totalScore + scoreCfg.ReferralsScore
-          end
-        end
-        if taskCfg.ExtraElement == pet:GetPetFirstElement() then
+      if taskCfg.ExtraForce ~= 0 then
+        local tags = pet:GetPetTags()
+        if table.icontains(tags, taskCfg.ExtraForce) then
           totalScore = totalScore + scoreCfg.ReferralsScore
         end
-        if taskCfg.ExtraJop == pet:GetJob() then
-          totalScore = totalScore + scoreCfg.ReferralsScore
-        end
-        local glv = pet:GetPetGrade()
-        do
-          local ggg = scoreCfg["GradeScore" .. glv]
-          if ggg ~= nil then
-            totalScore = totalScore + ggg
-          end
-          -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      end
+      if taskCfg.ExtraElement == pet:GetPetFirstElement() then
+        totalScore = totalScore + scoreCfg.ReferralsScore
+      end
+      if taskCfg.ExtraJop == pet:GetJob() then
+        totalScore = totalScore + scoreCfg.ReferralsScore
+      end
+      local glv = pet:GetPetGrade()
+      local ggg = scoreCfg["GradeScore" .. glv]
+      if ggg ~= nil then
+        totalScore = totalScore + ggg
       end
     end
   end
   return totalScore
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.GetSiteInfo = function(self, indexs)
-  -- function num : 0_15
+function AircraftDispatchRoom:GetSiteInfo(indexs)
   if self._siteData == nil then
     return nil
   end
-  if indexs < 0 or self:GetSiteMaxNum() <= indexs then
+  if indexs < 0 or indexs >= self:GetSiteMaxNum() then
     return nil
   end
-  return (self._siteData)[indexs]
+  return self._siteData[indexs]
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.GetUpgradeInfo = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function AircraftDispatchRoom:GetUpgradeInfo()
   local room_cfg = self:GetConfig()
-  local cur_cfg = (Cfg.cfg_aircraft_dispatch_room)[room_cfg.ID]
-  local next_cfg = (Cfg.cfg_aircraft_dispatch_room)[room_cfg.NextLevelID]
-  local cur_room_cfg = (Cfg.cfg_aircraft_room)[room_cfg.ID]
-  local next_room_cfg = (Cfg.cfg_aircraft_room)[room_cfg.NextLevelID]
+  local cur_cfg = Cfg.cfg_aircraft_dispatch_room[room_cfg.ID]
+  local next_cfg = Cfg.cfg_aircraft_dispatch_room[room_cfg.NextLevelID]
+  local cur_room_cfg = Cfg.cfg_aircraft_room[room_cfg.ID]
+  local next_room_cfg = Cfg.cfg_aircraft_room[room_cfg.NextLevelID]
   local infos = {
-{AirLevelInfoTitle.DispatchTeamChange, AirRoomChangeLevelDataType.NumberInt, cur_cfg.TeamMax, next_cfg.TeamMax}
-, 
-{AirLevelInfoTitle.DispatchPetCount, AirRoomChangeLevelDataType.NumberInt, cur_room_cfg.PetNum, next_room_cfg.PetNum}
-}
+    {
+      AirLevelInfoTitle.DispatchTeamChange,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_cfg.TeamMax,
+      next_cfg.TeamMax
+    },
+    {
+      AirLevelInfoTitle.DispatchPetCount,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_room_cfg.PetNum,
+      next_room_cfg.PetNum
+    }
+  }
   if cur_cfg.RefreshTaskId ~= next_cfg.RefreshTaskId then
-    infos[#infos + 1] = {next_cfg.UpgradeRefreshTaskDes, AirRoomChangeLevelDataType.TextData}
+    infos[#infos + 1] = {
+      next_cfg.UpgradeRefreshTaskDes,
+      AirRoomChangeLevelDataType.TextData
+    }
   end
   return infos
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.GetDegradeInfo = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function AircraftDispatchRoom:GetDegradeInfo()
   local room_cfg = self:GetConfig()
-  local cur_cfg = (Cfg.cfg_aircraft_dispatch_room)[room_cfg.ID]
-  local next_cfg = (Cfg.cfg_aircraft_dispatch_room)[room_cfg.PrevLevelID]
-  local cur_room_cfg = (Cfg.cfg_aircraft_room)[room_cfg.ID]
-  local next_room_cfg = (Cfg.cfg_aircraft_room)[room_cfg.PrevLevelID]
+  local cur_cfg = Cfg.cfg_aircraft_dispatch_room[room_cfg.ID]
+  local next_cfg = Cfg.cfg_aircraft_dispatch_room[room_cfg.PrevLevelID]
+  local cur_room_cfg = Cfg.cfg_aircraft_room[room_cfg.ID]
+  local next_room_cfg = Cfg.cfg_aircraft_room[room_cfg.PrevLevelID]
   local infos = {
-{AirLevelInfoTitle.DispatchTeamChange, AirRoomChangeLevelDataType.NumberInt, cur_cfg.TeamMax, next_cfg.TeamMax}
-, 
-{AirLevelInfoTitle.DispatchPetCount, AirRoomChangeLevelDataType.NumberInt, cur_room_cfg.PetNum, next_room_cfg.PetNum}
-}
+    {
+      AirLevelInfoTitle.DispatchTeamChange,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_cfg.TeamMax,
+      next_cfg.TeamMax
+    },
+    {
+      AirLevelInfoTitle.DispatchPetCount,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_room_cfg.PetNum,
+      next_room_cfg.PetNum
+    }
+  }
   if cur_cfg.RefreshTaskId ~= next_cfg.RefreshTaskId then
-    infos[#infos + 1] = {next_cfg.DegradeRefreshTaskDes, AirRoomChangeLevelDataType.TextData}
+    infos[#infos + 1] = {
+      next_cfg.DegradeRefreshTaskDes,
+      AirRoomChangeLevelDataType.TextData
+    }
   end
   return infos
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.GetAward = function(self, awardId, taskId)
-  -- function num : 0_18 , upvalues : _ENV
+function AircraftDispatchRoom:GetAward(awardId, taskId)
   local baseRewards = {}
   local extraRewards = {}
   local bookOrFuniture = {}
   if awardId then
-    local awardCfgs = (Cfg.cfg_aircraft_dispatch_award)({ID = awardId})
+    local awardCfgs = Cfg.cfg_aircraft_dispatch_award({ID = awardId})
     if awardCfgs then
       local awardCfg = awardCfgs[1]
       if awardCfg then
         local dropId = awardCfg.DropId
         if dropId then
-          local rewards = (Cfg.cfg_drop)({DropID = dropId})
+          local rewards = Cfg.cfg_drop({DropID = dropId})
           for i = 1, #rewards do
-            baseRewards[#baseRewards + 1] = {id = (rewards[i]).AssetID, count = (rewards[i]).MinCount}
+            baseRewards[#baseRewards + 1] = {
+              id = rewards[i].AssetID,
+              count = rewards[i].MinCount
+            }
           end
         end
-        do
-          do
-            if awardCfg.ExtraAward then
-              extraRewards[#extraRewards + 1] = {id = ((awardCfg.ExtraAward)[1])[1], count = ((awardCfg.ExtraAward)[1])[2]}
-            end
-            if taskId then
-              local taskCfg = (Cfg.cfg_aircraft_dispatch_task)({ID = taskId})
-              if taskCfg then
-                local itemCfg = (taskCfg[1]).ItemId
-                if itemCfg and itemCfg > 0 then
-                  bookOrFuniture[#bookOrFuniture + 1] = {id = itemCfg, count = 1}
-                end
-              end
-            end
-            do
-              return baseRewards, extraRewards, bookOrFuniture
-            end
-          end
+        if awardCfg.ExtraAward then
+          extraRewards[#extraRewards + 1] = {
+            id = awardCfg.ExtraAward[1][1],
+            count = awardCfg.ExtraAward[1][2]
+          }
         end
       end
     end
   end
+  if taskId then
+    local taskCfg = Cfg.cfg_aircraft_dispatch_task({ID = taskId})
+    if taskCfg then
+      local itemCfg = taskCfg[1].ItemId
+      if itemCfg and 0 < itemCfg then
+        bookOrFuniture[#bookOrFuniture + 1] = {id = itemCfg, count = 1}
+      end
+    end
+  end
+  return baseRewards, extraRewards, bookOrFuniture
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.HasNewTask = function(self)
-  -- function num : 0_19
+function AircraftDispatchRoom:HasNewTask()
   return self:IsLook()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.CanCollect = function(self)
-  -- function num : 0_20
-  if not self:HasCompleteTask() then
-    return self:HasNewTask()
-  end
+function AircraftDispatchRoom:CanCollect()
+  return self:HasCompleteTask() or self:HasNewTask()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.HasCompleteTask = function(self)
-  -- function num : 0_21
-  do return self:GetCompleteCount() > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftDispatchRoom:HasCompleteTask()
+  return self:GetCompleteCount() > 0
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.GetCompleteCount = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function AircraftDispatchRoom:GetCompleteCount()
   if not self._siteData then
     return 0
   end
   local completeCount = 0
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = timeModule:GetServerTime() / 1000
-  for _,siteData in pairs(self._siteData) do
+  for _, siteData in pairs(self._siteData) do
     if siteData.state == DispatchTaskStateType.DTST_Complete then
       completeCount = completeCount + 1
-    else
-      if siteData.state == DispatchTaskStateType.DTST_Doing and siteData.endTime <= nowTime then
-        completeCount = completeCount + 1
-      end
+    elseif siteData.state == DispatchTaskStateType.DTST_Doing and nowTime >= siteData.endTime then
+      completeCount = completeCount + 1
     end
   end
   return completeCount
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.IsPetDispatch = function(self, templateId)
-  -- function num : 0_23 , upvalues : _ENV
+function AircraftDispatchRoom:IsPetDispatch(templateId)
   if not self._siteData then
     return false
   end
   if not templateId then
     return false
   end
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  for _,siteInfo in pairs(self._siteData) do
+  local petModule = GameGlobal.GetModule(PetModule)
+  for _, siteInfo in pairs(self._siteData) do
     if siteInfo then
       local teamMembers = siteInfo.teamMember
       if teamMembers then
-        for _,pstId in pairs(teamMembers) do
+        for _, pstId in pairs(teamMembers) do
           local pet = petModule:GetPet(pstId)
           if pet:GetTemplateID() == templateId then
             return true
@@ -417,27 +324,21 @@ AircraftDispatchRoom.IsPetDispatch = function(self, templateId)
   return false
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.GetDispatchTaskRefreshRemainTime = function(self, pointIndex)
-  -- function num : 0_24 , upvalues : _ENV
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function AircraftDispatchRoom:GetDispatchTaskRefreshRemainTime(pointIndex)
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = timeModule:GetServerTime() / 1000
   local scr = self._sur_time - (nowTime - self._sur_cur_time)
   if scr <= 0 then
     return 0
   end
-  local tt = (math.modf)(scr / 1)
+  local tt = math.modf(scr / 1)
   return tt
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDispatchRoom.GetDispatchRecoverTotalTime = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function AircraftDispatchRoom:GetDispatchRecoverTotalTime()
   local roomCfg = self:GetRoomConfig()
   local curn = self:GetDispatchCount()
-  if roomCfg.DispatchMax <= curn then
+  if curn >= roomCfg.DispatchMax then
     return 0
   end
   if self._start_time == 0 then
@@ -447,15 +348,13 @@ AircraftDispatchRoom.GetDispatchRecoverTotalTime = function(self)
   if ct == 0 then
     return 0
   end
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = timeModule:GetServerTime() / 1000
   local surn = roomCfg.DispatchMax - curn
   local tt = self._start_time + ct * surn - nowTime
   if tt <= 0 then
     return 0
   end
-  tt = (math.modf)(tt / 1)
+  tt = math.modf(tt / 1)
   return tt
 end
-
-

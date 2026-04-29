@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/common/collages/ui_season_season_collage_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonSeasonCollageBtn", UICustomWidget)
 UISeasonSeasonCollageBtn = UISeasonSeasonCollageBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonSeasonCollageBtn.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonSeasonCollageBtn:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollageBtn.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonSeasonCollageBtn:InitWidget()
   self.icon = self:GetUIComponent("Image", "Icon")
   self.text = self:GetUIComponent("UILocalizationText", "Text")
   self.count = self:GetUIComponent("UILocalizationText", "Count")
@@ -25,87 +15,59 @@ UISeasonSeasonCollageBtn.InitWidget = function(self)
   self._selectObj = self:GetGameObject("Select")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollageBtn.SetData = function(self, type, onClick, data)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonSeasonCollageBtn:SetData(type, onClick, data)
   self._type = type
   self._onClick = onClick
   self._data = data
   self._select = false
-  local cfg = ((UISeasonHelper.GetCurCollectionCfg)())
-  local tabNames = nil
+  local cfg = UISeasonHelper.GetCurCollectionCfg()
+  local tabNames
   if cfg then
     tabNames = cfg.TabBtnNames
   else
-    ;
-    (Log.error)("UISeasonSeasonCollageBtn can\'f find collectionCfg ")
-    return 
+    Log.error("UISeasonSeasonCollageBtn can'f find collectionCfg ")
+    return
   end
   local format = "%s/%s"
-  if self._type ~= 1 or self._type == 2 then
-    (self.text):SetText((StringTable.Get)(tabNames[self._type]))
-    local cur, total = (self._data):GetCgProgress()
-    ;
-    (self.count):SetText((string.format)(format, cur, total))
-  else
-    do
-      if self._type == 3 then
-        (self.text):SetText((StringTable.Get)(tabNames[self._type]))
-        local cur, total = (self._data):GetMusicProgress()
-        ;
-        (self.count):SetText((string.format)(format, cur, total))
-      end
-      do
-        self:RefreshNew()
-      end
-    end
+  if self._type == 1 then
+  elseif self._type == 2 then
+    self.text:SetText(StringTable.Get(tabNames[self._type]))
+    local cur, total = self._data:GetCgProgress()
+    self.count:SetText(string.format(format, cur, total))
+  elseif self._type == 3 then
+    self.text:SetText(StringTable.Get(tabNames[self._type]))
+    local cur, total = self._data:GetMusicProgress()
+    self.count:SetText(string.format(format, cur, total))
   end
+  self:RefreshNew()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollageBtn.SetSelect = function(self, select)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonSeasonCollageBtn:SetSelect(select)
   self._select = select
   local atlas = self:GetAsset("UISeasonCollages.spriteatlas", LoadType.SpriteAtlas)
   if self._select then
-    (self._selectObj):SetActive(self._select)
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R3 in 'UnsetPending'
-
-    if self._type ~= 1 or self._type == 2 then
-      (self.icon).sprite = atlas:GetSprite("exp_tongyong_book_yeqian2")
-    else
-      -- DECOMPILER ERROR at PC34: Confused about usage of register: R3 in 'UnsetPending'
-
-      if self._type == 3 then
-        (self.icon).sprite = atlas:GetSprite("exp_tongyong_book_yeqian3")
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollageBtn.RefreshNew = function(self)
-  -- function num : 0_4
-  local new = false
-  if self._type ~= 1 or self._type == 2 then
-    new = (self._data):CGHasNew()
   else
-    if self._type == 3 then
-      new = (self._data):MusicHasNew()
-    end
   end
-  ;
-  (self.newGo):SetActive(new)
+  self._selectObj:SetActive(self._select)
+  if self._type == 1 then
+  elseif self._type == 2 then
+    self.icon.sprite = atlas:GetSprite("exp_tongyong_book_yeqian2")
+  elseif self._type == 3 then
+    self.icon.sprite = atlas:GetSprite("exp_tongyong_book_yeqian3")
+  end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollageBtn.RootOnClick = function(self, go)
-  -- function num : 0_5
-  (self._onClick)()
+function UISeasonSeasonCollageBtn:RefreshNew()
+  local new = false
+  if self._type == 1 then
+  elseif self._type == 2 then
+    new = self._data:CGHasNew()
+  elseif self._type == 3 then
+    new = self._data:MusicHasNew()
+  end
+  self.newGo:SetActive(new)
 end
 
-
+function UISeasonSeasonCollageBtn:RootOnClick(go)
+  self._onClick()
+end

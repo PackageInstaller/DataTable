@@ -1,72 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_trigger_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_TriggerTrap", SkillEffectCalc_Base)
 SkillEffectCalc_TriggerTrap = SkillEffectCalc_TriggerTrap
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_TriggerTrap.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_TriggerTrap:DoSkillEffectCalculator(skillEffectCalcParam)
   local effectParam = skillEffectCalcParam.skillEffectParam
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
-  local utilSvc = (self._world):GetService("UtilData")
-  local entity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local trapServiceLogic = self._world:GetService("TrapLogic")
+  local utilSvc = self._world:GetService("UtilData")
+  local entity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local triggerType = effectParam:GetTriggerType()
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
   local trapEntities = trapGroup:GetEntities()
   local resultArray = {}
   if triggerType == SkillEffectTriggerTrapType.Range then
-    if not skillEffectCalcParam.skillRange then
-      local range = {}
-    end
-    for _,pos in ipairs(range) do
+    local range = skillEffectCalcParam.skillRange or {}
+    for _, pos in ipairs(range) do
       local array = utilSvc:GetTrapsAtPos(pos)
-      for _,eTrap in ipairs(array) do
+      for _, eTrap in ipairs(array) do
         local cTrap = eTrap:Trap()
         local trapID = cTrap:GetTrapID()
         local trapType = cTrap:GetTrapType()
         if cTrap and not eTrap:HasDeadMark() and effectParam:IsTriggerTrap(trapID, trapType) then
           local entityID = eTrap:GetID()
-          ;
-          (table.insert)(resultArray, SkillEffectResultTriggerTrap:New(entityID, trapID))
+          table.insert(resultArray, SkillEffectResultTriggerTrap:New(entityID, trapID))
         end
       end
     end
-  else
-    do
-      if triggerType == SkillEffectTriggerTrapType.Self and entity:HasTrap() then
-        (table.insert)(resultArray, SkillEffectResultTriggerTrap:New(entity:GetID(), (entity:Trap()):GetTrapID()))
-      end
-      if triggerType == SkillEffectTriggerTrapType.ChainPath then
-        local casterEntityID = skillEffectCalcParam:GetCasterEntityID()
-        local casterEntity = (self._world):GetEntityByID(casterEntityID)
-        local activeSkillPickUpCmpt = casterEntity:ActiveSkillPickUpComponent()
-        if not activeSkillPickUpCmpt then
-          return 
+  elseif triggerType == SkillEffectTriggerTrapType.Self then
+    if entity:HasTrap() then
+      table.insert(resultArray, SkillEffectResultTriggerTrap:New(entity:GetID(), entity:Trap():GetTrapID()))
+    end
+  elseif triggerType == SkillEffectTriggerTrapType.ChainPath then
+    local casterEntityID = skillEffectCalcParam:GetCasterEntityID()
+    local casterEntity = self._world:GetEntityByID(casterEntityID)
+    local activeSkillPickUpCmpt = casterEntity:ActiveSkillPickUpComponent()
+    if not activeSkillPickUpCmpt then
+      return
+    end
+    local chainPath = activeSkillPickUpCmpt:GetAllValidPickUpGridPos()
+    for _, pos in ipairs(chainPath) do
+      local array = utilSvc:GetTrapsAtPos(pos)
+      for _, eTrap in ipairs(array) do
+        local cTrap = eTrap:Trap()
+        local trapID = cTrap:GetTrapID()
+        local trapType = cTrap:GetTrapType()
+        if cTrap and not eTrap:HasDeadMark() and effectParam:IsTriggerTrap(trapID, trapType) then
+          local entityID = eTrap:GetID()
+          table.insert(resultArray, SkillEffectResultTriggerTrap:New(entityID, trapID, pos))
         end
-        local chainPath = activeSkillPickUpCmpt:GetAllValidPickUpGridPos()
-        for _,pos in ipairs(chainPath) do
-          local array = utilSvc:GetTrapsAtPos(R21_PC122)
-          for _,eTrap in ipairs(R21_PC122) do
-            local cTrap = eTrap:Trap()
-            local trapID = cTrap:GetTrapID()
-            local trapType = cTrap:GetTrapType()
-            if cTrap and not eTrap:HasDeadMark() and effectParam:IsTriggerTrap(trapID, trapType) then
-              local entityID = eTrap:GetID()
-              ;
-              (table.insert)(resultArray, SkillEffectResultTriggerTrap:New(entityID, trapID, R35_PC155))
-            end
-          end
-        end
-      end
-      do
-        return resultArray
       end
     end
   end
+  return resultArray
 end
-
-

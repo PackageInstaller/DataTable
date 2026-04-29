@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/vampire/talent/ui_n25_vampire_talent_skill_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25VampireTalentSkillItem", UICustomWidget)
 UIN25VampireTalentSkillItem = UIN25VampireTalentSkillItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25VampireTalentSkillItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN25VampireTalentSkillItem:Constructor()
   self.mCampaign = self:GetModule(CampaignModule)
-  self.data = (self.mCampaign):GetN25Data()
+  self.data = self.mCampaign:GetN25Data()
   self.animName = "uieffanim_UIN25VampireTalentSkillItem_in"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentSkillItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25VampireTalentSkillItem:OnShow(uiParams)
   self.anim = self:GetUIComponent("Animation", "UIN25VampireTalentSkillItem")
   self.Icon = self:GetUIComponent("RawImageLoader", "Icon")
   self.select = self:GetGameObject("select")
@@ -26,110 +16,68 @@ UIN25VampireTalentSkillItem.OnShow = function(self, uiParams)
   self.txtTalentCount = self:GetUIComponent("UILocalizationText", "txtTalentCount")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentSkillItem.OnHide = function(self)
-  -- function num : 0_2
-  (self.Icon):DestoryLastImage()
+function UIN25VampireTalentSkillItem:OnHide()
+  self.Icon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentSkillItem.Flush = function(self, skill, callback)
-  -- function num : 0_3
+function UIN25VampireTalentSkillItem:Flush(skill, callback)
   self.skill = skill
   self.callback = callback
   local icon, name, desc = skill:IconNameDesc()
-  ;
-  (self.Icon):LoadImage(icon)
+  self.Icon:LoadImage(icon)
   local curLevel, maxLevel = skill:CurMaxLevel()
-  ;
-  (self.txtTalentCount):SetText(curLevel .. "/" .. maxLevel)
+  self.txtTalentCount:SetText(curLevel .. "/" .. maxLevel)
   self:FlushTier(skill)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentSkillItem.FlushTier = function(self)
-  -- function num : 0_4
-  local tier = (self.data):GetTierBySkillId((self.skill).skillId)
+function UIN25VampireTalentSkillItem:FlushTier()
+  local tier = self.data:GetTierBySkillId(self.skill.skillId)
   if tier:IsLock() then
     self:ShowHideLock(true)
+  elseif self.skill:IsActive() then
+    self:N25VampirePlayAnimTalentSkillActive()
   else
-    if (self.skill):IsActive() then
-      self:N25VampirePlayAnimTalentSkillActive()
-    else
-      self:ShowHideLock(true)
-    end
+    self:ShowHideLock(true)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentSkillItem.SkillId = function(self)
-  -- function num : 0_5
-  return (self.skill).skillId
+function UIN25VampireTalentSkillItem:SkillId()
+  return self.skill.skillId
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentSkillItem.Select = function(self, isSelect)
-  -- function num : 0_6
-  (self.select):SetActive(isSelect)
+function UIN25VampireTalentSkillItem:Select(isSelect)
+  self.select:SetActive(isSelect)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentSkillItem.IconOnClick = function(self, go)
-  -- function num : 0_7
+function UIN25VampireTalentSkillItem:IconOnClick(go)
   if self.callback then
-    (self.callback)()
+    self.callback()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentSkillItem.PlayAnimationActive = function(self)
-  -- function num : 0_8
-  (self.anim):Play(self.animName)
+function UIN25VampireTalentSkillItem:PlayAnimationActive()
+  self.anim:Play(self.animName)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentSkillItem.ShowHideLock = function(self, isShow)
-  -- function num : 0_9 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIN25VampireTalentSkillItem:ShowHideLock(isShow)
   if isShow then
-    (self.imgLock).color = Color.white
+    self.imgLock.color = Color.white
   else
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.imgLock).color = Color(1, 1, 1, 0)
+    self.imgLock.color = Color(1, 1, 1, 0)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentSkillItem.N25VampirePlayAnimTalentSkillActive = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  if (self.data).skillIdToUnlock == (self.skill).skillId then
-    (self.data).skillIdToUnlock = 0
+function UIN25VampireTalentSkillItem:N25VampirePlayAnimTalentSkillActive()
+  if self.data.skillIdToUnlock == self.skill.skillId then
+    self.data.skillIdToUnlock = 0
     self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self, _ENV
-    local key = "UIN25VampireTalentTreeItemN25VampirePlayAnimTalentSkillActive" .. (self.skill).skillId
-    self:Lock(key)
-    self:PlayAnimationActive()
-    YIELD(TT, 767)
-    self:UnLock(key)
-  end
-, self)
+      local key = "UIN25VampireTalentTreeItemN25VampirePlayAnimTalentSkillActive" .. self.skill.skillId
+      self:Lock(key)
+      self:PlayAnimationActive()
+      YIELD(TT, 767)
+      self:UnLock(key)
+    end, self)
   else
     self:ShowHideLock(false)
   end
 end
-
-

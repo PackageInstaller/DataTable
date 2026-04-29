@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n9/subject/main/ui_n9_subject_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN9SubjectRewardItem", UICustomWidget)
 UIN9SubjectRewardItem = UIN9SubjectRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN9SubjectRewardItem.OnShow = function(self)
-  -- function num : 0_0
+function UIN9SubjectRewardItem:OnShow()
   self._iconImgLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._iconImg = self:GetUIComponent("RawImage", "Icon")
   self._iconGo = self:GetGameObject("Icon")
@@ -18,75 +11,42 @@ UIN9SubjectRewardItem.OnShow = function(self)
   self._go = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectRewardItem.OnHide = function(self)
-  -- function num : 0_1
+function UIN9SubjectRewardItem:OnHide()
   self._EMIMat = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectRewardItem.Refresh = function(self, reward, hasComplete)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN9SubjectRewardItem:Refresh(reward, hasComplete)
   self._rewardId = reward[1]
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._countLabel).text = reward[2]
-  local ItemTempleate = (Cfg.cfg_item)[self._rewardId]
-  ;
-  (self._iconImgLoader):LoadImage(ItemTempleate.Icon)
+  self._countLabel.text = reward[2]
+  local ItemTempleate = Cfg.cfg_item[self._rewardId]
+  self._iconImgLoader:LoadImage(ItemTempleate.Icon)
   if hasComplete then
-    (self._countBg):SetActive(false)
-    ;
-    (self._hasGetCountBg):SetActive(true)
+    self._countBg:SetActive(false)
+    self._hasGetCountBg:SetActive(true)
     self:SetRawImageGray(true)
   else
-    ;
-    (self._countBg):SetActive(true)
-    ;
-    (self._hasGetCountBg):SetActive(false)
+    self._countBg:SetActive(true)
+    self._hasGetCountBg:SetActive(false)
     self:SetRawImageGray(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectRewardItem.SetRawImageGray = function(self, gray)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN9SubjectRewardItem:SetRawImageGray(gray)
   if not self._EMIMat then
-    self._EMIMat = (UnityEngine.Material):New((self._iconImg).material)
+    self._EMIMat = UnityEngine.Material:New(self._iconImg.material)
   end
   if gray then
-    local texture = ((self._iconImg).material).mainTexture
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._iconImg).material = self._EMIMat
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((self._iconImg).material).mainTexture = texture
-    ;
-    ((self._iconImg).material):SetFloat("_LuminosityAmount", 1)
+    local texture = self._iconImg.material.mainTexture
+    self._iconImg.material = self._EMIMat
+    self._iconImg.material.mainTexture = texture
+    self._iconImg.material:SetFloat("_LuminosityAmount", 1)
   else
-    do
-      ;
-      ((self._iconImg).material):SetFloat("_LuminosityAmount", 0)
-      ;
-      (self._iconGo):SetActive(false)
-      ;
-      (self._iconGo):SetActive(true)
-    end
+    self._iconImg.material:SetFloat("_LuminosityAmount", 0)
   end
+  self._iconGo:SetActive(false)
+  self._iconGo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectRewardItem.BtnOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN9SubjectRewardItemClicked, self._rewardId, ((self._go).transform).position)
+function UIN9SubjectRewardItem:BtnOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN9SubjectRewardItemClicked, self._rewardId, self._go.transform.position)
 end
-
-

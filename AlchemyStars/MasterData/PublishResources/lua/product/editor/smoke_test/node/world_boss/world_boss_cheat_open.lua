@@ -1,27 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/world_boss/world_boss_cheat_open.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("WorldBoss_CheatOpen", Common_AsyncBase)
 WorldBoss_CheatOpen = WorldBoss_CheatOpen
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-WorldBoss_CheatOpen.TaskFunc = function(self, TT, status)
-  -- function num : 0_0 , upvalues : _ENV
-  local gmproxy = (GameGlobal.GetModule)(GMProxyModule)
-  local strcmd = (string.format)("open_auto_test %s", (LocalDB.GetString)("OpenIdTest"))
+function WorldBoss_CheatOpen:TaskFunc(TT, status)
+  local gmproxy = GameGlobal.GetModule(GMProxyModule)
+  local strcmd = string.format("open_auto_test %s", LocalDB.GetString("OpenIdTest"))
   status:SetMessage(strcmd)
   local addResResult = gmproxy:SendCmdTask(TT, strcmd)
   if addResResult.m_call_err ~= CallResultType.Normal then
-    (Log.exception)(self._className, "GM command failed: ", strcmd)
+    Log.exception(self._className, "GM command failed: ", strcmd)
     status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
     status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
-    return 
+    return
   end
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
   status:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
 end
-
-

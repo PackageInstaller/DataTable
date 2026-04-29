@@ -1,23 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_check_curse_tower_index.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_is_base")
 _class("ActionCheckCurseTowerIndex", ActionIsBase)
 ActionCheckCurseTowerIndex = ActionCheckCurseTowerIndex
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckCurseTowerIndex.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local aiCmpt = (self.m_entityOwn):AI()
-  local curseTowerCmpt = (self.m_entityOwn):CurseTower()
+function ActionCheckCurseTowerIndex:OnUpdate()
+  local aiCmpt = self.m_entityOwn:AI()
+  local curseTowerCmpt = self.m_entityOwn:CurseTower()
   if not curseTowerCmpt then
     return AINewNodeStatus.Failure
   end
   local myTowerIndex = curseTowerCmpt:GetTowerIndex()
-  local levelRound = ((self._world):BattleStat()):GetLevelTotalRoundCount()
-  local battleFlagsCmpt = (self._world):BattleFlags()
+  local levelRound = self._world:BattleStat():GetLevelTotalRoundCount()
+  local battleFlagsCmpt = self._world:BattleFlags()
   local currentTowerIndex = battleFlagsCmpt:GetCurrentCurseTowerIndex()
   local canCurseRound = battleFlagsCmpt:GetCurrentCurseTowerRound()
   if canCurseRound ~= levelRound then
@@ -28,5 +21,3 @@ ActionCheckCurseTowerIndex.OnUpdate = function(self)
   end
   return AINewNodeStatus.Success
 end
-
-

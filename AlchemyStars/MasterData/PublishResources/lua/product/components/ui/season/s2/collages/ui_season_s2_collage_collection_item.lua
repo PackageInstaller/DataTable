@@ -1,111 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s2/collages/ui_season_s2_collage_collection_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonS2CollageCollectionItem", UICustomWidget)
 UISeasonS2CollageCollectionItem = UISeasonS2CollageCollectionItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonS2CollageCollectionItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonS2CollageCollectionItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS2CollageCollectionItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonS2CollageCollectionItem:InitWidget()
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.unlockIcon = self:GetGameObject("unlockIcon")
   self.new = self:GetGameObject("new")
   self.iconImage = self:GetUIComponent("RawImage", "icon")
   self.select = self:GetGameObject("select")
   self.bg = self:GetUIComponent("Image", "bg")
-  self._anim = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
+  self._anim = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
   self._atlas = self:GetAsset("UIS2Collages.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS2CollageCollectionItem.SetData = function(self, data, onClick)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonS2CollageCollectionItem:SetData(data, onClick)
   self._data = data
   self._onClick = onClick
   self:SetNew(data:IsNew())
-  local cfg = (Cfg.cfg_item_season_collection)[data:ID()]
-  ;
-  (self.icon):LoadImage(cfg.HdImage)
+  local cfg = Cfg.cfg_item_season_collection[data:ID()]
+  self.icon:LoadImage(cfg.HdImage)
   if data:IsGot() then
-    (self.icon):SetColor(Color.white)
-    ;
-    (self.unlockIcon):SetActive(false)
+    self.icon:SetColor(Color.white)
+    self.unlockIcon:SetActive(false)
     if data:IsComposeUsed() then
-      (self.icon):SetColor(Color(0.32941176470588, 0.2078431372549, 0.12549019607843, 0.7))
+      self.icon:SetColor(Color(0.32941176470588235, 0.20784313725490197, 0.12549019607843137, 0.7))
     end
   else
-    ;
-    (self.icon):SetColor(Color(0, 0, 0, 0.8))
-    ;
-    (self.unlockIcon):SetActive(true)
+    self.icon:SetColor(Color(0, 0, 0, 0.8))
+    self.unlockIcon:SetActive(true)
   end
   self:SetSelect(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS2CollageCollectionItem.RootOnClick = function(self, go)
-  -- function num : 0_3
-  (self._onClick)(self._data)
+function UISeasonS2CollageCollectionItem:RootOnClick(go)
+  self._onClick(self._data)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS2CollageCollectionItem.SetNew = function(self, new)
-  -- function num : 0_4
+function UISeasonS2CollageCollectionItem:SetNew(new)
   self._isNew = new
-  ;
-  (self.new):SetActive(new)
+  self.new:SetActive(new)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS2CollageCollectionItem.SetSelect = function(self, select)
-  -- function num : 0_5
-  (self._anim):Stop()
+function UISeasonS2CollageCollectionItem:SetSelect(select)
+  self._anim:Stop()
   if select then
-    (self.select):SetActive(true)
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-    if (self._data):IsGot() then
-      (self.bg).sprite = (self._atlas):GetSprite("exp_s2_book_daoju1")
+    self.select:SetActive(true)
+    if self._data:IsGot() then
+      self.bg.sprite = self._atlas:GetSprite("exp_s2_book_daoju1")
     else
-      -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.bg).sprite = (self._atlas):GetSprite("exp_s2_book_daoju3")
+      self.bg.sprite = self._atlas:GetSprite("exp_s2_book_daoju3")
     end
   else
-    ;
-    (self.select):SetActive(false)
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-    if (self._data):IsGot() then
-      (self.bg).sprite = (self._atlas):GetSprite("exp_s2_book_daoju2")
+    self.select:SetActive(false)
+    if self._data:IsGot() then
+      self.bg.sprite = self._atlas:GetSprite("exp_s2_book_daoju2")
     else
-      -- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.bg).sprite = (self._atlas):GetSprite("exp_s2_book_daoju3")
+      self.bg.sprite = self._atlas:GetSprite("exp_s2_book_daoju3")
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS2CollageCollectionItem.PlayExitAnim = function(self)
-  -- function num : 0_6
-  (self._anim):Play("uieffanim_UISeasonS1CollageCollectionItem_out")
+function UISeasonS2CollageCollectionItem:PlayExitAnim()
+  self._anim:Play("uieffanim_UISeasonS1CollageCollectionItem_out")
 end
-
-

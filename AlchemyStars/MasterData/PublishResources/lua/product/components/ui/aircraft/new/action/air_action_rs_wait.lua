@@ -1,23 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_rs_wait.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirAction_RS_Wait", AirActionBase)
 AirAction_RS_Wait = AirAction_RS_Wait
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirAction_RS_Wait.Constructor = function(self, pet, main, storyid, storyParam, floor, pointid, randomPointHolder, noMove)
-  -- function num : 0_0 , upvalues : _ENV
+function AirAction_RS_Wait:Constructor(pet, main, storyid, storyParam, floor, pointid, randomPointHolder, noMove)
   self._pet = pet
-  ;
-  (Log.debug)("###[AirAction_RS_Wait] 开启一个随机剧情-id-->", (self._pet):TemplateID())
+  Log.debug("###[AirAction_RS_Wait] 开启一个随机剧情-id-->", self._pet:TemplateID())
   self._main = main
   self._storyid = storyid
-  local cfg = (Cfg.cfg_aircraft_pet_stroy_refresh)[self._storyid]
+  local cfg = Cfg.cfg_aircraft_pet_stroy_refresh[self._storyid]
   if not cfg then
-    (Log.error)("###[AirAction_RS_Wait]cfg_aircraft_pet_stroy_refresh is nil ! id --> ", self._storyid)
-    return 
+    Log.error("###[AirAction_RS_Wait]cfg_aircraft_pet_stroy_refresh is nil ! id --> ", self._storyid)
+    return
   end
   self._lastTime = cfg.CancelWaitTime * 1000
   self._waitBubble = cfg.HeadBubbleID
@@ -27,7 +19,7 @@ AirAction_RS_Wait.Constructor = function(self, pet, main, storyid, storyParam, f
   self._pointID = pointid
   self._randomPointHolder = randomPointHolder
   if not noMove then
-    (self._pet):SetFloor(self._floor)
+    self._pet:SetFloor(self._floor)
   end
   self._startTime = 0
   self._waiting = true
@@ -35,82 +27,57 @@ AirAction_RS_Wait.Constructor = function(self, pet, main, storyid, storyParam, f
   self._setNavPos = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Wait.Update = function(self, deltaTimeMS)
-  -- function num : 0_1 , upvalues : _ENV
-  do
-    if not self._noMove and not self._setNavPos then
-      local found, hit = (((UnityEngine.AI).NavMesh).SamplePosition)(self._position, nil, 10, 1 << self._floor + 2)
-      if found then
-        (self._pet):SetPosition(hit.position)
-      end
-      ;
-      ((self._pet):NaviObstacle()).enabled = true
-      self._setNavPos = true
+function AirAction_RS_Wait:Update(deltaTimeMS)
+  if not self._noMove and not self._setNavPos then
+    local found, hit = UnityEngine.AI.NavMesh.SamplePosition(self._position, nil, 10, 1 << self._floor + 2)
+    if found then
+      self._pet:SetPosition(hit.position)
     end
-    if self._running then
-      self._startTime = self._startTime + deltaTimeMS
-      if self._waiting and self._lastTime < self._startTime then
-        self._waiting = false
-        self._startTime = 0
-        self:ReadyStop()
-      end
+    self._pet:NaviObstacle().enabled = true
+    self._setNavPos = true
+  end
+  if self._running then
+    self._startTime = self._startTime + deltaTimeMS
+    if self._waiting and self._startTime > self._lastTime then
+      self._waiting = false
+      self._startTime = 0
+      self:ReadyStop()
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Wait.ReadyStop = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function AirAction_RS_Wait:ReadyStop()
   local action_rs_cancel = AirAction_RS_Cancel:New(self._pet, self._main, self._storyid)
-  ;
-  (self._pet):StartViceAction(action_rs_cancel)
+  self._pet:StartViceAction(action_rs_cancel)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Wait.Start = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function AirAction_RS_Wait:Start()
   self._running = true
   self._isWaiting = true
   if not self._noMove then
     if self._randomStoryAreaType == 1 then
-      local pos = (self._storyParams).position
-      local rot = (self._storyParams).localRotation
-      ;
-      ((self._pet):NaviObstacle()).enabled = false
-      ;
-      (self._pet):SetPosition(pos)
-      ;
-      (self._pet):SetRotation(rot)
+      local pos = self._storyParams.position
+      local rot = self._storyParams.localRotation
+      self._pet:NaviObstacle().enabled = false
+      self._pet:SetPosition(pos)
+      self._pet:SetRotation(rot)
       self._position = pos
-      ;
-      (self._pet):Anim_Stand()
-    else
-      do
-        if self._storyParams then
-          (Log.exception)("星灵不能在家具上触发剧情", (self._pet):TemplateID())
-        end
-      end
+      self._pet:Anim_Stand()
+    elseif self._storyParams then
+      Log.exception("星灵不能在家具上触发剧情", self._pet:TemplateID())
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Wait.StartWaitBubble = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function AirAction_RS_Wait:StartWaitBubble()
   if self._waitBubble then
     local waitAction = AirActionFace:New(self._pet, self._waitBubble, nil, self._lastTime)
-    ;
-    (self._pet):StartViceAction(waitAction)
+    self._pet:StartViceAction(waitAction)
     local bubble = waitAction:GetBubbleGameObject()
     if bubble then
       local collider = bubble:GetComponentInChildren(typeof(UnityEngine.BoxCollider))
       if collider then
-        (self._pet):SetEffectCollider(collider)
+        self._pet:SetEffectCollider(collider)
       else
         AirError("剧情特效无法获取碰撞器:", self._waitBubble)
       end
@@ -118,107 +85,76 @@ AirAction_RS_Wait.StartWaitBubble = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Wait.IsOver = function(self)
-  -- function num : 0_5
+function AirAction_RS_Wait:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Wait.Stop = function(self)
-  -- function num : 0_6
+function AirAction_RS_Wait:Stop()
   self._running = false
   if self._randomPointHolder and self._pointID then
-    (self._randomPointHolder):ReleasePoint(self._pointID)
+    self._randomPointHolder:ReleasePoint(self._pointID)
     self._randomPointHolder = nil
     self._pointID = nil
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Wait.GetPointAndFloor = function(self, storyType, RandomStoryPosIDs, RandomStoryFurnitureType)
-  -- function num : 0_7 , upvalues : _ENV
+function AirAction_RS_Wait:GetPointAndFloor(storyType, RandomStoryPosIDs, RandomStoryFurnitureType)
   if storyType == 1 then
     return self:GetPointAndFloor_NoFurniture(RandomStoryPosIDs)
   else
-    local storyParam, floor = nil, nil
+    local storyParam, floor
     storyParam = RandomStoryFurnitureType
-    local furniture = (self._main):GetFurnitureByID(storyParam)
+    local furniture = self._main:GetFurnitureByID(storyParam)
     if furniture then
       local pets = furniture:GetPets()
-      for _,petid in pairs(pets) do
-        local pet = (self._main):GetPetByTmpID(petid)
-        ;
-        (self._main):RandomActionForPet(pet)
+      for _, petid in pairs(pets) do
+        local pet = self._main:GetPetByTmpID(petid)
+        self._main:RandomActionForPet(pet)
       end
       floor = furniture:Floor()
-      ;
-      (Log.debug)("###[AirAction_RS_Wait]设置了家具的楼层")
+      Log.debug("###[AirAction_RS_Wait]设置了家具的楼层")
       return storyParam, floor
     else
-      do
-        ;
-        (Log.debug)("###[AirAction_RS_Wait]没有该家具，去甲板触发")
-        storyType = 1
-        do return self:GetPointAndFloor_NoFurniture(RandomStoryPosIDs) end
-      end
+      Log.debug("###[AirAction_RS_Wait]没有该家具，去甲板触发")
+      storyType = 1
+      return self:GetPointAndFloor_NoFurniture(RandomStoryPosIDs)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Wait.GetPointAndFloor_NoFurniture = function(self, RandomStoryPosIDs)
-  -- function num : 0_8 , upvalues : _ENV
-  local storyParam, floor = nil, nil
+function AirAction_RS_Wait:GetPointAndFloor_NoFurniture(RandomStoryPosIDs)
+  local storyParam, floor
   local storyParams = RandomStoryPosIDs
-  ;
-  (Log.debug)("###[AirAction_RS_Wait]检查没用到的剧情点")
+  Log.debug("###[AirAction_RS_Wait]检查没用到的剧情点")
   for i = 1, #storyParams do
-    local area = (storyParams[i])[1]
-    local pointid = (storyParams[i])[2]
-    local randomPointHolder = nil
+    local area = storyParams[i][1]
+    local pointid = storyParams[i][2]
+    local randomPointHolder
     if area == AirRestAreaType.Board3 or area == AirRestAreaType.Board4 then
-      randomPointHolder = (self._main):GetRandomStoryPointHolder(area)
+      randomPointHolder = self._main:GetRandomStoryPointHolder(area)
     else
-      local room = (self._main):GetRoomByArea(area)
+      local room = self._main:GetRoomByArea(area)
       if room == nil then
-        (Log.exception)("找不到房间：", area)
+        Log.exception("找不到房间：", area)
       end
       randomPointHolder = room:GetRandomStoryPointHolder()
     end
-    do
-      do
-        self._pointID = pointid
-        self._randomPointHolder = randomPointHolder
-        if not randomPointHolder:CheckPointOccupy(pointid, self._storyid) then
-          storyParam = randomPointHolder:GetPoint(pointid, self._storyid)
-          floor = randomPointHolder:Floor(pointid)
-          ;
-          (Log.debug)("###[AirAction_RS_Wait]找到一个点,id", pointid)
-          ;
-          (Log.debug)("###[AirAction_RS_Wait]找到楼层，", floor)
-          break
-        end
-        -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    self._pointID = pointid
+    self._randomPointHolder = randomPointHolder
+    if not randomPointHolder:CheckPointOccupy(pointid, self._storyid) then
+      storyParam = randomPointHolder:GetPoint(pointid, self._storyid)
+      floor = randomPointHolder:Floor(pointid)
+      Log.debug("###[AirAction_RS_Wait]找到一个点,id", pointid)
+      Log.debug("###[AirAction_RS_Wait]找到楼层，", floor)
+      break
     end
   end
   if not storyParam or not floor then
-    (Log.debug)("###[AirAction_RS_Wait]检查完毕没找到")
-    return 
+    Log.debug("###[AirAction_RS_Wait]检查完毕没找到")
+    return
   end
   return storyParam, floor
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Wait.GetPointAndFloor_ByFurniture = function(self, RandomStoryFurnitureType)
-  -- function num : 0_9
+function AirAction_RS_Wait:GetPointAndFloor_ByFurniture(RandomStoryFurnitureType)
 end
-
-

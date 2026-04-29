@@ -1,29 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/pet/player_normal_attack_state_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayerNormalAttackStateSystem_Render", ReactiveSystem)
 PlayerNormalAttackStateSystem_Render = PlayerNormalAttackStateSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayerNormalAttackStateSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function PlayerNormalAttackStateSystem_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerNormalAttackStateSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local c = Collector:New({world:GetGroup((world.BW_WEMatchers).MoveFSM)}, {"Added"})
+function PlayerNormalAttackStateSystem_Render:GetTrigger(world)
+  local c = Collector:New({
+    world:GetGroup(world.BW_WEMatchers.MoveFSM)
+  }, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerNormalAttackStateSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayerNormalAttackStateSystem_Render:Filter(entity)
   if not entity:HasMoveFSM() then
     return false
   end
@@ -35,154 +24,123 @@ PlayerNormalAttackStateSystem_Render.Filter = function(self, entity)
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerNormalAttackStateSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function PlayerNormalAttackStateSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     self:HandleAttack(entities[i])
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerNormalAttackStateSystem_Render.HandleAttack = function(self, entity)
-  -- function num : 0_4 , upvalues : _ENV
+function PlayerNormalAttackStateSystem_Render:HandleAttack(entity)
   local normalAttackData = self:_GetPetNormalAttackData(entity)
   local pathPointAttackDic = normalAttackData:GetPathAttackData()
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   local curActorPos = boardServiceRender:GetRealEntityGridPos(entity)
   local lastDamagePoint = self:_CalcLastNormalDamagePathPoint(normalAttackData)
   local hasNormalAttackData = normalAttackData:HasPathPointNormalAttackData(curActorPos)
   if hasNormalAttackData then
-    for pathPointPos,pathPointAttackData in pairs(pathPointAttackDic) do
+    for pathPointPos, pathPointAttackData in pairs(pathPointAttackDic) do
       if pathPointPos == curActorPos then
-        (Log.debug)("[attack] _HandlePlayAttack pathPointPos ", pathPointPos.x, " ", pathPointPos.y)
-        ;
-        (TaskManager:GetInstance()):CoreGameStartTask(self._PlayAttackToTarget, self, entity, pathPointAttackData, pathPointPos, lastDamagePoint)
-        return 
+        Log.debug("[attack] _HandlePlayAttack pathPointPos ", pathPointPos.x, " ", pathPointPos.y)
+        TaskManager:GetInstance():CoreGameStartTask(self._PlayAttackToTarget, self, entity, pathPointAttackData, pathPointPos, lastDamagePoint)
+        return
       end
     end
   else
-    do
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.NormalAttackFinish, 1, entity:GetID())
-    end
+    self._world:EventDispatcher():Dispatch(GameEventType.NormalAttackFinish, 1, entity:GetID())
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerNormalAttackStateSystem_Render._GetPetNormalSkillID = function(self, entity)
-  -- function num : 0_5
-  local skillID = (entity:SkillInfo()):GetNormalSkillID()
+function PlayerNormalAttackStateSystem_Render:_GetPetNormalSkillID(entity)
+  local skillID = entity:SkillInfo():GetNormalSkillID()
   return skillID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerNormalAttackStateSystem_Render._GetPetNormalAttackData = function(self, entity)
-  -- function num : 0_6 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local normalAtkResCmpt = (renderBoardEntity:LogicResult()):GetLogicResult(LogicStepType.NormalAttack)
+function PlayerNormalAttackStateSystem_Render:_GetPetNormalAttackData(entity)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local normalAtkResCmpt = renderBoardEntity:LogicResult():GetLogicResult(LogicStepType.NormalAttack)
   local normalAttackData = normalAtkResCmpt:GetPetNormalAttackResult(entity:GetID())
   return normalAttackData
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerNormalAttackStateSystem_Render._PlayAttackToTarget = function(self, TT, casterEntity, pathPointAttackData, pathPointPos, lastDamagePoint)
-  -- function num : 0_7 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
-  local playSkillService = (self._world):GetService("PlaySkill")
+function PlayerNormalAttackStateSystem_Render:_PlayAttackToTarget(TT, casterEntity, pathPointAttackData, pathPointPos, lastDamagePoint)
+  local configService = self._world:GetService("Config")
+  local playSkillService = self._world:GetService("PlaySkill")
   casterEntity:SetViewVisible(true)
   local attackGridDic = pathPointAttackData:GetAttackGridDic()
   local attackGridDicAdditional = pathPointAttackData:GetAttackGridDicAdditional()
   local freezeTimeScale = false
   local isLastTeamMember = self:_IsLastTeamMember(casterEntity)
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local normalAtkRes = (renderBoardEntity:LogicResult()):GetLogicResult(LogicStepType.NormalAttack)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local normalAtkRes = renderBoardEntity:LogicResult():GetLogicResult(LogicStepType.NormalAttack)
   local isFinalAtk = normalAtkRes:GetPlayNormalAttackFinalAttack()
   if isLastTeamMember == true and isFinalAtk == true and lastDamagePoint == pathPointPos then
     freezeTimeScale = true
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local normalSkillBeforeMove = utilDataSvc:GetEntityBuffValue(casterEntity, "NormalSkillBeforeMove")
   local orderArray = pathPointAttackData:GetPetOrderGridArray(casterEntity, pathPointPos)
   local attackCount = #orderArray
-  do
-    if (casterEntity:BuffView()):GetBuffValue("ForcePetNormalAttackAfterMove") then
-      local cRenderChain = ((self._world):GetRenderBoardEntity()):RenderChainPath()
-      if (cRenderChain:GetRenderChainPath())[1] == pathPointPos then
-        orderArray = {}
-        attackCount = 0
-      else
-        orderArray = {pathPointPos}
-        attackCount = 1
-      end
+  if casterEntity:BuffView():GetBuffValue("ForcePetNormalAttackAfterMove") then
+    local cRenderChain = self._world:GetRenderBoardEntity():RenderChainPath()
+    if cRenderChain:GetRenderChainPath()[1] == pathPointPos then
+      orderArray = {}
+      attackCount = 0
+    else
+      orderArray = {pathPointPos}
+      attackCount = 1
     end
-    for k,beAttackPos in ipairs(orderArray) do
-      local attackGridData = self:_GetAttackGridPointData(attackGridDic, beAttackPos)
-      local attackGridDataAdditional = self:_GetAttackGridPointData(attackGridDicAdditional, beAttackPos)
-      do
-        if attackGridDataAdditional then
-          local lastIndex = k - 1
-          if orderArray[lastIndex] and orderArray[lastIndex] == beAttackPos then
-            attackGridData = attackGridDataAdditional
-          end
-        end
-        local effectResultDict = attackGridData:GetEffectResultDict()
-        if effectResultDict and (table.count)(effectResultDict) > 0 then
-          local skillId = attackGridData:GetAttackGridSkillId()
-          local skillEffectResultContainer = SkillEffectResultContainer:New()
-          skillEffectResultContainer:SetEffectResultDict(effectResultDict)
-          skillEffectResultContainer:SetSkillID(skillId)
-          skillEffectResultContainer:SetNormalAttack(true)
-          skillEffectResultContainer:SetNormalAttackBeAttackOriPos(beAttackPos)
-          if k == attackCount and freezeTimeScale == true then
-            skillEffectResultContainer:SetFinalAttack(true)
-          end
-          if k == attackCount then
-            skillEffectResultContainer:SetLastNormalAttackAtOnGrid(true)
-          else
-            skillEffectResultContainer:SetLastNormalAttackAtOnGrid(false)
-          end
-          ;
-          (casterEntity:SkillRoutine()):ClearSkillRoutine()
-          ;
-          (casterEntity:SkillRoutine()):SetResultContainer(skillEffectResultContainer)
-          local skinId = 1
-          if casterEntity:MatchPet() then
-            skinId = ((casterEntity:MatchPet()):GetMatchPet()):GetSkinId()
-          end
-          local skillConfigData = configService:GetSkillConfigData(skillId, casterEntity)
-          local skillPhaseArray = skillConfigData:GetSkillPhaseArray(skinId)
-          local waitTaskID = playSkillService:StartSkillRoutine(casterEntity, skillPhaseArray, skillId)
-          while not normalSkillBeforeMove and not self:_IsTaskFinished(waitTaskID) do
-            YIELD(TT)
-          end
-        end
-        do
-          -- DECOMPILER ERROR at PC185: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
-      end
-    end
-    local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
-    if skillEffectResultContainer ~= nil then
-      skillEffectResultContainer:SetNormalAttack(false)
-    end
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.NormalAttackFinish, 1, casterEntity:GetID())
   end
+  for k, beAttackPos in ipairs(orderArray) do
+    local attackGridData = self:_GetAttackGridPointData(attackGridDic, beAttackPos)
+    local attackGridDataAdditional = self:_GetAttackGridPointData(attackGridDicAdditional, beAttackPos)
+    if attackGridDataAdditional then
+      local lastIndex = k - 1
+      if orderArray[lastIndex] and orderArray[lastIndex] == beAttackPos then
+        attackGridData = attackGridDataAdditional
+      end
+    end
+    local effectResultDict = attackGridData:GetEffectResultDict()
+    if effectResultDict and 0 < table.count(effectResultDict) then
+      local skillId = attackGridData:GetAttackGridSkillId()
+      local skillEffectResultContainer = SkillEffectResultContainer:New()
+      skillEffectResultContainer:SetEffectResultDict(effectResultDict)
+      skillEffectResultContainer:SetSkillID(skillId)
+      skillEffectResultContainer:SetNormalAttack(true)
+      skillEffectResultContainer:SetNormalAttackBeAttackOriPos(beAttackPos)
+      if k == attackCount and freezeTimeScale == true then
+        skillEffectResultContainer:SetFinalAttack(true)
+      end
+      if k == attackCount then
+        skillEffectResultContainer:SetLastNormalAttackAtOnGrid(true)
+      else
+        skillEffectResultContainer:SetLastNormalAttackAtOnGrid(false)
+      end
+      casterEntity:SkillRoutine():ClearSkillRoutine()
+      casterEntity:SkillRoutine():SetResultContainer(skillEffectResultContainer)
+      local skinId = 1
+      if casterEntity:MatchPet() then
+        skinId = casterEntity:MatchPet():GetMatchPet():GetSkinId()
+      end
+      local skillConfigData = configService:GetSkillConfigData(skillId, casterEntity)
+      local skillPhaseArray = skillConfigData:GetSkillPhaseArray(skinId)
+      local waitTaskID = playSkillService:StartSkillRoutine(casterEntity, skillPhaseArray, skillId)
+      if not normalSkillBeforeMove then
+        while not self:_IsTaskFinished(waitTaskID) do
+          YIELD(TT)
+        end
+      end
+    end
+  end
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  if skillEffectResultContainer ~= nil then
+    skillEffectResultContainer:SetNormalAttack(false)
+  end
+  self._world:EventDispatcher():Dispatch(GameEventType.NormalAttackFinish, 1, casterEntity:GetID())
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerNormalAttackStateSystem_Render._GetAttackGridPointData = function(self, attackGridDic, checkPos)
-  -- function num : 0_8 , upvalues : _ENV
-  for beAttackPosIndex,attackGridData in pairs(attackGridDic) do
-    local beAttackPos = (Vector2.Index2Pos)(beAttackPosIndex)
+function PlayerNormalAttackStateSystem_Render:_GetAttackGridPointData(attackGridDic, checkPos)
+  for beAttackPosIndex, attackGridData in pairs(attackGridDic) do
+    local beAttackPos = Vector2.Index2Pos(beAttackPosIndex)
     if beAttackPos == checkPos then
       return attackGridData
     end
@@ -190,33 +148,24 @@ PlayerNormalAttackStateSystem_Render._GetAttackGridPointData = function(self, at
   return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerNormalAttackStateSystem_Render._IsTaskFinished = function(self, taskID)
-  -- function num : 0_9 , upvalues : _ENV
-  local task = (TaskManager:GetInstance()):FindTask(taskID)
+function PlayerNormalAttackStateSystem_Render:_IsTaskFinished(taskID)
+  local task = TaskManager:GetInstance():FindTask(taskID)
   if task ~= nil then
     return false
+  else
   end
   return true
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerNormalAttackStateSystem_Render._IsLastTeamMember = function(self, curPetEntity)
-  -- function num : 0_10
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function PlayerNormalAttackStateSystem_Render:_IsLastTeamMember(curPetEntity)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local rroundteam = renderBoardEntity:RenderRoundTeam()
   local roundTeam = rroundteam:GetRoundTeam()
-  do return roundTeam[#roundTeam] == curPetEntity:GetID() end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return roundTeam[#roundTeam] == curPetEntity:GetID()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerNormalAttackStateSystem_Render._CalcLastNormalDamagePathPoint = function(self, pathNormalAttackData)
-  -- function num : 0_11
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function PlayerNormalAttackStateSystem_Render:_CalcLastNormalDamagePathPoint(pathNormalAttackData)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local rchainpath = renderBoardEntity:RenderChainPath()
   local chainPath = rchainpath:GetRenderChainPath()
   if not chainPath then
@@ -232,5 +181,3 @@ PlayerNormalAttackStateSystem_Render._CalcLastNormalDamagePathPoint = function(s
   end
   return nil
 end
-
-

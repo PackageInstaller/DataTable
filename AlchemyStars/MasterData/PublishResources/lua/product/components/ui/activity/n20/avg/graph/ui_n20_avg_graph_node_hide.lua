@@ -1,43 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/graph/ui_n20_avg_graph_node_hide.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20AVGGraphNodeHide", UIN20AVGGraphNodeBase)
 UIN20AVGGraphNodeHide = UIN20AVGGraphNodeHide
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20AVGGraphNodeHide.InitComponent = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((UIN20AVGGraphNodeHide.super).InitComponent)(self)
+function UIN20AVGGraphNodeHide:InitComponent()
+  UIN20AVGGraphNodeHide.super.InitComponent(self)
   self.new = self:GetGameObject("new")
-  ;
-  (self.new):SetActive(false)
+  self.new:SetActive(false)
   self.lock = self:GetGameObject("lock")
-  ;
-  (self.lock):SetActive(false)
+  self.lock:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphNodeHide.FlushName = function(self)
-  -- function num : 0_1
-  (self.txtName):SetText((self.node).title)
+function UIN20AVGGraphNodeHide:FlushName()
+  self.txtName:SetText(self.node.title)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphNodeHide.FlushNew = function(self)
-  -- function num : 0_2
-  local isNew = (self.node):IsHideNew()
-  ;
-  (self.new):SetActive(isNew)
+function UIN20AVGGraphNodeHide:FlushNew()
+  local isNew = self.node:IsHideNew()
+  self.new:SetActive(isNew)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphNodeHide.PlayAnim = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN20AVGGraphNodeHide:PlayAnim(TT)
   local key = "UIN20AVGGraphNodeHidePlayAnim"
   self:Lock(key)
   local go = self:GetGameObject()
@@ -47,5 +28,3 @@ UIN20AVGGraphNodeHide.PlayAnim = function(self, TT)
   self:FlushNew()
   self:UnLock(key)
 end
-
-

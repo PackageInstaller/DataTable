@@ -1,51 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_weike_notify.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_WeikeNotify", SkillEffectCalc_Base)
 SkillEffectCalc_WeikeNotify = SkillEffectCalc_WeikeNotify
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_WeikeNotify.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_WeikeNotify:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillID = skillEffectCalcParam.skillID
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-  local configService = (self._world):GetService("Config")
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID, casterEntity)
   local param = skillEffectCalcParam.skillEffectParam
-  local companionType = (param:GetCompanionType())
-  local notifyType = nil
+  local companionType = param:GetCompanionType()
+  local notifyType
   if companionType == SkillEffect_WeikeNotify_CompanionType.TypeA then
     notifyType = 168
-  else
-    if companionType == SkillEffect_WeikeNotify_CompanionType.TypeB then
-      notifyType = 169
-    else
-      if companionType == SkillEffect_WeikeNotify_CompanionType.TypeC then
-        notifyType = 170
-      end
-    end
+  elseif companionType == SkillEffect_WeikeNotify_CompanionType.TypeB then
+    notifyType = 169
+  elseif companionType == SkillEffect_WeikeNotify_CompanionType.TypeC then
+    notifyType = 170
   end
-  local chainSkillTypes = {SkillEffect_WeikeNotify_SkillType.ChainSkill1, SkillEffect_WeikeNotify_SkillType.ChainSkill2, SkillEffect_WeikeNotify_SkillType.ChainSkill3}
+  local chainSkillTypes = {
+    SkillEffect_WeikeNotify_SkillType.ChainSkill1,
+    SkillEffect_WeikeNotify_SkillType.ChainSkill2,
+    SkillEffect_WeikeNotify_SkillType.ChainSkill3
+  }
   local skillType = param:GetSkillType()
-  ;
-  (Log.error)("CalcWeikeNotify: skillID: ", skillID, " skillType:", skillType)
-  local count = nil
-  if not casterEntity:HasSuperEntity() or not casterEntity:GetSuperEntity() then
-    local realEntity = not (table.icontains)(chainSkillTypes, skillType) or casterEntity
-  end
-  if not realEntity then
-    realEntity = casterEntity
-  end
-  do
+  Log.error("CalcWeikeNotify: skillID: ", skillID, " skillType:", skillType)
+  local count
+  if table.icontains(chainSkillTypes, skillType) then
+    local realEntity = casterEntity:HasSuperEntity() and casterEntity:GetSuperEntity() or casterEntity
+    realEntity = realEntity or casterEntity
     local cPetPstID = realEntity:PetPstID()
     if cPetPstID then
       count = cPetPstID:TickWeikeChainSkillNotifyCount(notifyType)
     end
-    local result = SkillEffectResult_WeikeNotify:New(notifyType, skillType, skillEffectCalcParam.attackPos, count)
-    return {result}
   end
+  local result = SkillEffectResult_WeikeNotify:New(notifyType, skillType, skillEffectCalcParam.attackPos, count)
+  return {result}
 end
-
-

@@ -1,72 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_add_grid_effect_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillAddGridEffectParam", SkillEffectParamBase)
 SkillAddGridEffectParam = SkillAddGridEffectParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillAddGridEffectParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillAddGridEffectParam:Constructor(t)
   self._targetGridEffectType = t.gridEffectType
   self._gridConvertType = t.gridConvertType
-  if not t.summonTrap then
-    self._summonTrap = BattleConst.PrismTrapID
-    self._ignoreConvertForAny = t.ignoreConvertForAny
-    self._ignoreConvertForBlock = t.ignoreConvertForBlock
-    self._count = t.count
-  end
+  self._summonTrap = t.summonTrap or BattleConst.PrismTrapID
+  self._ignoreConvertForAny = t.ignoreConvertForAny
+  self._ignoreConvertForBlock = t.ignoreConvertForBlock
+  self._count = t.count
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddGridEffectParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillAddGridEffectParam:GetEffectType()
   return SkillEffectType.AddGridEffect
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddGridEffectParam.GetTargetGridEffectType = function(self)
-  -- function num : 0_2
+function SkillAddGridEffectParam:GetTargetGridEffectType()
   return self._targetGridEffectType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddGridEffectParam.GetGridConvertType = function(self)
-  -- function num : 0_3
+function SkillAddGridEffectParam:GetGridConvertType()
   return self._gridConvertType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddGridEffectParam.GetSummonTrap = function(self)
-  -- function num : 0_4
+function SkillAddGridEffectParam:GetSummonTrap()
   return self._summonTrap
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddGridEffectParam.GetIgnoreConvertForAny = function(self)
-  -- function num : 0_5
+function SkillAddGridEffectParam:GetIgnoreConvertForAny()
   return self._ignoreConvertForAny
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddGridEffectParam.GetCount = function(self)
-  -- function num : 0_6
+function SkillAddGridEffectParam:GetCount()
   return self._count
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddGridEffectParam.GetIgnoreConvertForBlock = function(self)
-  -- function num : 0_7
+function SkillAddGridEffectParam:GetIgnoreConvertForBlock()
   return self._ignoreConvertForBlock
 end
-
-

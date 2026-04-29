@@ -1,156 +1,117 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/collage/cls/season_maze_collage_data_mgr.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local SeasonMazeCollageType = {Relic = 1, Card = 2, Bead = 3, Prop = 4}
+local SeasonMazeCollageType = {
+  Relic = 1,
+  Card = 2,
+  Bead = 3,
+  Prop = 4
+}
 _enum("SeasonMazeCollageType", SeasonMazeCollageType)
 _class("SeasonMazeCollageDataMgr", UICustomWidget)
 SeasonMazeCollageDataMgr = SeasonMazeCollageDataMgr
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
 
-SeasonMazeCollageDataMgr.Constructor = function(self)
-  -- function num : 0_0
+function SeasonMazeCollageDataMgr:Constructor()
   self._mazeComponentId = nil
   self._mazMoneyLv = -1
   self._collageData = {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-SeasonMazeCollageDataMgr.GetData = function(self, type)
-  -- function num : 0_1
-  return (self._collageData)[type]
+function SeasonMazeCollageDataMgr:GetData(type)
+  return self._collageData[type]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-SeasonMazeCollageDataMgr.Init = function(self, mazeComponentId)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonMazeCollageDataMgr:Init(mazeComponentId)
   if self._mazeComponentId == mazeComponentId then
-    return 
+    return
   end
   self._mazeComponentId = mazeComponentId
-  ;
-  (table.clear)(self._collageData)
+  table.clear(self._collageData)
   self:_InitRelic()
   self:_InitCard()
   self:_InitBead()
   self:_InitProp()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-SeasonMazeCollageDataMgr._InitRelic = function(self)
-  -- function num : 0_3 , upvalues : SeasonMazeCollageType, _ENV
+function SeasonMazeCollageDataMgr:_InitRelic()
   local list = {}
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._collageData)[SeasonMazeCollageType.Relic] = list
-  local cfgs = (Cfg.cfg_component_season_maze_relic_group)({ComponentID = self._mazeComponentId})
-  for k,subCfg in pairs(cfgs) do
-    local cfg = (Cfg.cfg_item_relic)[subCfg.RelicID]
+  self._collageData[SeasonMazeCollageType.Relic] = list
+  local cfgs = Cfg.cfg_component_season_maze_relic_group({
+    ComponentID = self._mazeComponentId
+  })
+  for k, subCfg in pairs(cfgs) do
+    local cfg = Cfg.cfg_item_relic[subCfg.RelicID]
     local d = SeasonMazeCollageData:New()
     d:SetData(subCfg.RelicID, SeasonMazeCollageType.Relic, cfg, subCfg.BookSaveLv or 0)
-    ;
-    (table.insert)(list, d)
+    table.insert(list, d)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-SeasonMazeCollageDataMgr._InitCard = function(self)
-  -- function num : 0_4 , upvalues : SeasonMazeCollageType, _ENV
+function SeasonMazeCollageDataMgr:_InitCard()
   local list = {}
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._collageData)[SeasonMazeCollageType.Card] = list
-  local cfgs = (Cfg.cfg_component_season_maze_hand)({ComponentID = self._mazeComponentId})
-  for k,subCfg in pairs(cfgs) do
+  self._collageData[SeasonMazeCollageType.Card] = list
+  local cfgs = Cfg.cfg_component_season_maze_hand({
+    ComponentID = self._mazeComponentId
+  })
+  for k, subCfg in pairs(cfgs) do
     local d = SeasonMazeCollageData:New()
     d:SetData(subCfg.ID, SeasonMazeCollageType.Card, subCfg, subCfg.BookSaveLv or 0)
-    ;
-    (table.insert)(list, d)
+    table.insert(list, d)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-SeasonMazeCollageDataMgr._InitBead = function(self)
-  -- function num : 0_5 , upvalues : SeasonMazeCollageType, _ENV
+function SeasonMazeCollageDataMgr:_InitBead()
   local list = {}
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._collageData)[SeasonMazeCollageType.Bead] = list
-  local cfgs = (Cfg.cfg_component_season_maze_autobead)({ComponentID = self._mazeComponentId})
-  for k,subCfg in pairs(cfgs) do
+  self._collageData[SeasonMazeCollageType.Bead] = list
+  local cfgs = Cfg.cfg_component_season_maze_autobead({
+    ComponentID = self._mazeComponentId
+  })
+  for k, subCfg in pairs(cfgs) do
     if subCfg.Quality == 1 then
       local d = SeasonMazeCollageData:New()
       d:SetData(subCfg.ID, SeasonMazeCollageType.Bead, subCfg, subCfg.BookSaveLv or 0)
-      ;
-      (table.insert)(list, d)
+      table.insert(list, d)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-SeasonMazeCollageDataMgr._InitProp = function(self)
-  -- function num : 0_6 , upvalues : SeasonMazeCollageType, _ENV
+function SeasonMazeCollageDataMgr:_InitProp()
   local list = {}
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._collageData)[SeasonMazeCollageType.Prop] = list
-  local cfgs = (Cfg.cfg_component_season_maze_once)({ComponentID = self._mazeComponentId})
-  for k,subCfg in pairs(cfgs) do
+  self._collageData[SeasonMazeCollageType.Prop] = list
+  local cfgs = Cfg.cfg_component_season_maze_once({
+    ComponentID = self._mazeComponentId
+  })
+  for k, subCfg in pairs(cfgs) do
     local d = SeasonMazeCollageData:New()
     d:SetData(subCfg.ID, SeasonMazeCollageType.Prop, subCfg, subCfg.BookSaveLv or 0)
-    ;
-    (table.insert)(list, d)
+    table.insert(list, d)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-SeasonMazeCollageDataMgr.Refresh = function(self, moneyLv)
-  -- function num : 0_7 , upvalues : _ENV
-  for type,listData in pairs(self._collageData) do
+function SeasonMazeCollageDataMgr:Refresh(moneyLv)
+  for type, listData in pairs(self._collageData) do
     local preCondition = self:_CheckPreUnlockCondition(type)
-    for _,subData in pairs(listData) do
+    for _, subData in pairs(listData) do
       subData:CheckState(moneyLv, preCondition)
     end
-    ;
-    (table.sort)(listData, function(a, b)
-    -- function num : 0_7_0
-    local lockA = a:GetUnlock() and 1 or 0
-    local lockB = b:GetUnlock() and 1 or 0
-    if lockB >= lockA then
-      do return lockA == lockB end
+    table.sort(listData, function(a, b)
+      local lockA = a:GetUnlock() and 1 or 0
+      local lockB = b:GetUnlock() and 1 or 0
+      if lockA ~= lockB then
+        return lockA > lockB
+      end
       local orderA = a:GetShowOrder() or 0
       local orderB = b:GetShowOrder() or 0
-      if orderB >= orderA then
-        do return orderA == orderB end
-        local idA = a:GetCfgId()
-        local idB = b:GetCfgId()
-        do return idB < idA end
-        -- DECOMPILER ERROR: 7 unprocessed JMP targets
+      if orderA ~= orderB then
+        return orderA > orderB
       end
-    end
-  end
-)
+      local idA = a:GetCfgId()
+      local idB = b:GetCfgId()
+      return idA > idB
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-SeasonMazeCollageDataMgr.HasNewCollage = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  for k,listData in pairs(self._collageData) do
-    for _,subData in pairs(listData) do
+function SeasonMazeCollageDataMgr:HasNewCollage()
+  for k, listData in pairs(self._collageData) do
+    for _, subData in pairs(listData) do
       if subData:GetNew() then
         return true
       end
@@ -159,12 +120,9 @@ SeasonMazeCollageDataMgr.HasNewCollage = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-SeasonMazeCollageDataMgr.HasNewCollageByType = function(self, type)
-  -- function num : 0_9 , upvalues : _ENV
-  local listData = (self._collageData)[type]
-  for _,subData in pairs(listData) do
+function SeasonMazeCollageDataMgr:HasNewCollageByType(type)
+  local listData = self._collageData[type]
+  for _, subData in pairs(listData) do
     if subData:GetNew() then
       return true
     end
@@ -172,54 +130,43 @@ SeasonMazeCollageDataMgr.HasNewCollageByType = function(self, type)
   return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-SeasonMazeCollageDataMgr._CheckPreUnlockCondition = function(self, type)
-  -- function num : 0_10 , upvalues : SeasonMazeCollageType, _ENV
+function SeasonMazeCollageDataMgr:_CheckPreUnlockCondition(type)
   local ret = {OK = true, UnlockLevel = 0}
   if type == SeasonMazeCollageType.Bead then
     local openHardNum = 0
-    local comp = ((GameGlobal.GetModule)(SeasonMazeModule)):GetSeasonMazeComponent()
-    do
-      if comp then
-        local compInfo = comp:GetComponentInfo()
-        openHardNum = (table.count)(compInfo.hard_num)
-      end
-      local componentId = ((GameGlobal.GetModule)(SeasonMazeModule)):GetSeasonMazeComponentId()
-      local cfgs = ((Cfg.cfg_component_season_maze)({ComponentID = componentId}))
-      local unlockCfg = nil
-      if cfgs then
-        for k,subCfg in pairs(cfgs) do
-          -- DECOMPILER ERROR at PC49: Unhandled construct in 'MakeBoolean' P1
-
-          if subCfg.BeadSlotCnt > 0 and unlockCfg and subCfg.Hard < unlockCfg.Hard then
-            unlockCfg = subCfg
-          end
-          unlockCfg = subCfg
-        end
-      end
-      do
-        if unlockCfg then
-          ret.UnlockLevel = unlockCfg.Hard
-          local curTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
-          local openTime = ((GameGlobal.GetModule)(LoginModule)):GetTimeStampByTimeStr(unlockCfg.LockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-          if curTime < openTime then
-            ret.OK = false
-          else
-            if openHardNum < unlockCfg.Hard then
-              ret.OK = false
+    local comp = GameGlobal.GetModule(SeasonMazeModule):GetSeasonMazeComponent()
+    if comp then
+      local compInfo = comp:GetComponentInfo()
+      openHardNum = table.count(compInfo.hard_num)
+    end
+    local componentId = GameGlobal.GetModule(SeasonMazeModule):GetSeasonMazeComponentId()
+    local cfgs = Cfg.cfg_component_season_maze({ComponentID = componentId})
+    local unlockCfg
+    if cfgs then
+      for k, subCfg in pairs(cfgs) do
+        if 0 < subCfg.BeadSlotCnt then
+          if unlockCfg then
+            if subCfg.Hard < unlockCfg.Hard then
+              unlockCfg = subCfg
             end
-          end
-        end
-        do
-          do
-            do return ret end
-            do return ret end
+          else
+            unlockCfg = subCfg
           end
         end
       end
     end
+    if unlockCfg then
+      ret.UnlockLevel = unlockCfg.Hard
+      local curTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
+      local openTime = GameGlobal.GetModule(LoginModule):GetTimeStampByTimeStr(unlockCfg.LockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+      if curTime < openTime then
+        ret.OK = false
+      elseif openHardNum < unlockCfg.Hard then
+        ret.OK = false
+      end
+    end
+    return ret
+  else
+    return ret
   end
 end
-
-

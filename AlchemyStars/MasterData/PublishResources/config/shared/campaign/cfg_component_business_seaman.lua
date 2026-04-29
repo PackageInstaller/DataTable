@@ -1,152 +1,455 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_business_seaman.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, Name = 3, Icon = 4, SortID = 5, CostItem = 6, ProValue = 7, ProValueMax = 8}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  Name = 3,
+  Icon = 4,
+  SortID = 5,
+  CostItem = 6,
+  ProValue = 7,
+  ProValueMax = 8
+}
 local common = {
-{
-{3001018, 300}
-}
-, 
-{
-{3001018, 100}
-}
-, 
-{
-{3001018, 500}
-}
-, 
-{
-{3001018, 1500}
-}
-, 
-{
-{3001018, 3000}
-}
-, 
-{500, 500, 500}
+  {
+    {3001018, 300}
+  },
+  {
+    {3001018, 100}
+  },
+  {
+    {3001018, 500}
+  },
+  {
+    {3001018, 1500}
+  },
+  {
+    {3001018, 3000}
+  },
+  {
+    500,
+    500,
+    500
+  }
 }
 local config = {
-{1, 800407708, "str_season_s4_trade_seaman_name1", "s4_trade_seaman_icon1", 6, common[1], 
-{20, 100, 60}
-, common[6]}
-, 
-{2, 800407708, "str_season_s4_trade_seaman_name2", "s4_trade_seaman_icon2", 5, common[1], 
-{60, 60, 60}
-, common[6]}
-, 
-{3, 800407708, "str_season_s4_trade_seaman_name3", "s4_trade_seaman_icon3", 4, common[1], 
-{40, 60, 100}
-, common[6]}
-, 
-{4, 800407708, "str_season_s4_trade_seaman_name4", "s4_trade_seaman_icon4", 3, common[2], 
-{45, 45, 45}
-, common[6]}
-, 
-{5, 800407708, "str_season_s4_trade_seaman_name5", "s4_trade_seaman_icon5", 2, common[2], 
-{30, 15, 105}
-, common[6]}
-, 
-{6, 800407708, "str_season_s4_trade_seaman_name6", "s4_trade_seaman_icon6", 1, common[2], 
-{30, 60, 60}
-, common[6]}
-, 
-{7, 800407708, "str_season_s4_trade_seaman_name7", "s4_trade_seaman_icon7", 7, common[3], 
-{50, 175, 25}
-, common[6]}
-, 
-{8, 800407708, "str_season_s4_trade_seaman_name8", "s4_trade_seaman_icon8", 8, common[3], 
-{50, 75, 125}
-, common[6]}
-, 
-{9, 800407708, "str_season_s4_trade_seaman_name9", "s4_trade_seaman_icon9", 9, common[3], 
-{75, 75, 75}
-, common[6]}
-, 
-{10, 800407708, "str_season_s4_trade_seaman_name10", "s4_trade_seaman_icon10", 13, common[4], 
-{75, 105, 120}
-, common[6]}
-, 
-{11, 800407708, "str_season_s4_trade_seaman_name11", "s4_trade_seaman_icon11", 14, common[4], 
-{150, 120, 30}
-, common[6]}
-, 
-{12, 800407708, "str_season_s4_trade_seaman_name12", "s4_trade_seaman_icon12", 21, common[5], 
-{120, 120, 120}
-, common[6]}
-, 
-{13, 800407708, "str_season_s4_trade_seaman_name13", "s4_trade_seaman_icon13", 10, common[3], 
-{100, 125, 25}
-, common[6]}
-, 
-{14, 800407708, "str_season_s4_trade_seaman_name14", "s4_trade_seaman_icon14", 11, common[3], 
-{100, 0, 150}
-, common[6]}
-, 
-{15, 800407708, "str_season_s4_trade_seaman_name15", "s4_trade_seaman_icon15", 15, common[4], 
-{75, 75, 150}
-, common[6]}
-, 
-{16, 800407708, "str_season_s4_trade_seaman_name16", "s4_trade_seaman_icon16", 12, common[3], 
-{175, 25, 50}
-, common[6]}
-, 
-{17, 800407708, "str_season_s4_trade_seaman_name17", "s4_trade_seaman_icon17", 16, common[4], 
-{300, 0, 0}
-, common[6]}
-, 
-{18, 800407708, "str_season_s4_trade_seaman_name18", "s4_trade_seaman_icon18", 22, common[5], 
-{120, 240, 40}
-, common[6]}
-, 
-{19, 800407708, "str_season_s4_trade_seaman_name19", "s4_trade_seaman_icon19", 17, common[4], 
-{0, 150, 180}
-, common[6]}
-, 
-{20, 800407708, "str_season_s4_trade_seaman_name20", "s4_trade_seaman_icon20", 26, common[5], 
-{240, 80, 160}
-, common[6]}
-, 
-{21, 800407708, "str_season_s4_trade_seaman_name21", "s4_trade_seaman_icon21", 27, common[5], 
-{80, 280, 120}
-, common[6]}
-, 
-{22, 800407708, "str_season_s4_trade_seaman_name22", "s4_trade_seaman_icon22", 18, common[4], 
-{240, 15, 45}
-, common[6]}
-, 
-{23, 800407708, "str_season_s4_trade_seaman_name23", "s4_trade_seaman_icon23", 19, common[4], 
-{210, 60, 30}
-, common[6]}
-, 
-{24, 800407708, "str_season_s4_trade_seaman_name24", "s4_trade_seaman_icon24", 23, common[5], 
-{0, 0, 400}
-, common[6]}
-, 
-{25, 800407708, "str_season_s4_trade_seaman_name25", "s4_trade_seaman_icon25", 20, common[4], 
-{30, 270, 30}
-, common[6]}
-, 
-{26, 800407708, "str_season_s4_trade_seaman_name26", "s4_trade_seaman_icon26", 24, common[5], 
-{300, 100, 40}
-, common[6]}
-, 
-{27, 800407708, "str_season_s4_trade_seaman_name27", "s4_trade_seaman_icon27", 25, common[5], 
-{200, 80, 160}
-, common[6]}
-, 
-{28, 800407708, "str_season_s4_trade_seaman_name28", "s4_trade_seaman_icon28", 28, common[5], 
-{160, 160, 160}
-, common[6]}
-, 
-{29, 800407708, "str_season_s4_trade_seaman_name29", "s4_trade_seaman_icon29", 29, common[5], 
-{40, 440, 40}
-, common[6]}
-, 
-{30, 800407708, "str_season_s4_trade_seaman_name30", "s4_trade_seaman_icon30", 30, common[5], 
-{160, 80, 280}
-, common[6]}
+  {
+    1,
+    800407708,
+    "str_season_s4_trade_seaman_name1",
+    "s4_trade_seaman_icon1",
+    6,
+    common[1],
+    {
+      20,
+      100,
+      60
+    },
+    common[6]
+  },
+  {
+    2,
+    800407708,
+    "str_season_s4_trade_seaman_name2",
+    "s4_trade_seaman_icon2",
+    5,
+    common[1],
+    {
+      60,
+      60,
+      60
+    },
+    common[6]
+  },
+  {
+    3,
+    800407708,
+    "str_season_s4_trade_seaman_name3",
+    "s4_trade_seaman_icon3",
+    4,
+    common[1],
+    {
+      40,
+      60,
+      100
+    },
+    common[6]
+  },
+  {
+    4,
+    800407708,
+    "str_season_s4_trade_seaman_name4",
+    "s4_trade_seaman_icon4",
+    3,
+    common[2],
+    {
+      45,
+      45,
+      45
+    },
+    common[6]
+  },
+  {
+    5,
+    800407708,
+    "str_season_s4_trade_seaman_name5",
+    "s4_trade_seaman_icon5",
+    2,
+    common[2],
+    {
+      30,
+      15,
+      105
+    },
+    common[6]
+  },
+  {
+    6,
+    800407708,
+    "str_season_s4_trade_seaman_name6",
+    "s4_trade_seaman_icon6",
+    1,
+    common[2],
+    {
+      30,
+      60,
+      60
+    },
+    common[6]
+  },
+  {
+    7,
+    800407708,
+    "str_season_s4_trade_seaman_name7",
+    "s4_trade_seaman_icon7",
+    7,
+    common[3],
+    {
+      50,
+      175,
+      25
+    },
+    common[6]
+  },
+  {
+    8,
+    800407708,
+    "str_season_s4_trade_seaman_name8",
+    "s4_trade_seaman_icon8",
+    8,
+    common[3],
+    {
+      50,
+      75,
+      125
+    },
+    common[6]
+  },
+  {
+    9,
+    800407708,
+    "str_season_s4_trade_seaman_name9",
+    "s4_trade_seaman_icon9",
+    9,
+    common[3],
+    {
+      75,
+      75,
+      75
+    },
+    common[6]
+  },
+  {
+    10,
+    800407708,
+    "str_season_s4_trade_seaman_name10",
+    "s4_trade_seaman_icon10",
+    13,
+    common[4],
+    {
+      75,
+      105,
+      120
+    },
+    common[6]
+  },
+  {
+    11,
+    800407708,
+    "str_season_s4_trade_seaman_name11",
+    "s4_trade_seaman_icon11",
+    14,
+    common[4],
+    {
+      150,
+      120,
+      30
+    },
+    common[6]
+  },
+  {
+    12,
+    800407708,
+    "str_season_s4_trade_seaman_name12",
+    "s4_trade_seaman_icon12",
+    21,
+    common[5],
+    {
+      120,
+      120,
+      120
+    },
+    common[6]
+  },
+  {
+    13,
+    800407708,
+    "str_season_s4_trade_seaman_name13",
+    "s4_trade_seaman_icon13",
+    10,
+    common[3],
+    {
+      100,
+      125,
+      25
+    },
+    common[6]
+  },
+  {
+    14,
+    800407708,
+    "str_season_s4_trade_seaman_name14",
+    "s4_trade_seaman_icon14",
+    11,
+    common[3],
+    {
+      100,
+      0,
+      150
+    },
+    common[6]
+  },
+  {
+    15,
+    800407708,
+    "str_season_s4_trade_seaman_name15",
+    "s4_trade_seaman_icon15",
+    15,
+    common[4],
+    {
+      75,
+      75,
+      150
+    },
+    common[6]
+  },
+  {
+    16,
+    800407708,
+    "str_season_s4_trade_seaman_name16",
+    "s4_trade_seaman_icon16",
+    12,
+    common[3],
+    {
+      175,
+      25,
+      50
+    },
+    common[6]
+  },
+  {
+    17,
+    800407708,
+    "str_season_s4_trade_seaman_name17",
+    "s4_trade_seaman_icon17",
+    16,
+    common[4],
+    {
+      300,
+      0,
+      0
+    },
+    common[6]
+  },
+  {
+    18,
+    800407708,
+    "str_season_s4_trade_seaman_name18",
+    "s4_trade_seaman_icon18",
+    22,
+    common[5],
+    {
+      120,
+      240,
+      40
+    },
+    common[6]
+  },
+  {
+    19,
+    800407708,
+    "str_season_s4_trade_seaman_name19",
+    "s4_trade_seaman_icon19",
+    17,
+    common[4],
+    {
+      0,
+      150,
+      180
+    },
+    common[6]
+  },
+  {
+    20,
+    800407708,
+    "str_season_s4_trade_seaman_name20",
+    "s4_trade_seaman_icon20",
+    26,
+    common[5],
+    {
+      240,
+      80,
+      160
+    },
+    common[6]
+  },
+  {
+    21,
+    800407708,
+    "str_season_s4_trade_seaman_name21",
+    "s4_trade_seaman_icon21",
+    27,
+    common[5],
+    {
+      80,
+      280,
+      120
+    },
+    common[6]
+  },
+  {
+    22,
+    800407708,
+    "str_season_s4_trade_seaman_name22",
+    "s4_trade_seaman_icon22",
+    18,
+    common[4],
+    {
+      240,
+      15,
+      45
+    },
+    common[6]
+  },
+  {
+    23,
+    800407708,
+    "str_season_s4_trade_seaman_name23",
+    "s4_trade_seaman_icon23",
+    19,
+    common[4],
+    {
+      210,
+      60,
+      30
+    },
+    common[6]
+  },
+  {
+    24,
+    800407708,
+    "str_season_s4_trade_seaman_name24",
+    "s4_trade_seaman_icon24",
+    23,
+    common[5],
+    {
+      0,
+      0,
+      400
+    },
+    common[6]
+  },
+  {
+    25,
+    800407708,
+    "str_season_s4_trade_seaman_name25",
+    "s4_trade_seaman_icon25",
+    20,
+    common[4],
+    {
+      30,
+      270,
+      30
+    },
+    common[6]
+  },
+  {
+    26,
+    800407708,
+    "str_season_s4_trade_seaman_name26",
+    "s4_trade_seaman_icon26",
+    24,
+    common[5],
+    {
+      300,
+      100,
+      40
+    },
+    common[6]
+  },
+  {
+    27,
+    800407708,
+    "str_season_s4_trade_seaman_name27",
+    "s4_trade_seaman_icon27",
+    25,
+    common[5],
+    {
+      200,
+      80,
+      160
+    },
+    common[6]
+  },
+  {
+    28,
+    800407708,
+    "str_season_s4_trade_seaman_name28",
+    "s4_trade_seaman_icon28",
+    28,
+    common[5],
+    {
+      160,
+      160,
+      160
+    },
+    common[6]
+  },
+  {
+    29,
+    800407708,
+    "str_season_s4_trade_seaman_name29",
+    "s4_trade_seaman_icon29",
+    29,
+    common[5],
+    {
+      40,
+      440,
+      40
+    },
+    common[6]
+  },
+  {
+    30,
+    800407708,
+    "str_season_s4_trade_seaman_name30",
+    "s4_trade_seaman_icon30",
+    30,
+    common[5],
+    {
+      160,
+      80,
+      280
+    },
+    common[6]
+  }
 }
 return config, "ID", key
-

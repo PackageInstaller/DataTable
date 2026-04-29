@@ -1,59 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/prepare/ui_homeland_movie_prepare_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMoviePrepareMainController", UIController)
 UIHomelandMoviePrepareMainController = UIHomelandMoviePrepareMainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMoviePrepareMainController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.mUIHomeland = (self.mHomeland):GetUIModule()
-  self.homelandClient = (self.mUIHomeland):GetClient()
-  self.homeBuildManager = (self.homelandClient):BuildManager()
+function UIHomelandMoviePrepareMainController:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.mUIHomeland = self.mHomeland:GetUIModule()
+  self.homelandClient = self.mUIHomeland:GetClient()
+  self.homeBuildManager = self.homelandClient:BuildManager()
   self.furnitureWidget = nil
   self.otherWidget = nil
   self.curPrepareType = nil
   self.curPrepareStageItem = nil
   self.stagesConfig = {
-{prepareType = MoviePrepareType.PT_Scene, name = "str_movie_scene"}
-, 
-{prepareType = MoviePrepareType.PT_Furniture, name = "str_movie_free"}
-, 
-{prepareType = MoviePrepareType.PT_Prop, name = "str_movie_prop"}
-, 
-{prepareType = MoviePrepareType.PT_Actor, name = "str_movie_actor"}
-}
+    {
+      prepareType = MoviePrepareType.PT_Scene,
+      name = "str_movie_scene"
+    },
+    {
+      prepareType = MoviePrepareType.PT_Furniture,
+      name = "str_movie_free"
+    },
+    {
+      prepareType = MoviePrepareType.PT_Prop,
+      name = "str_movie_prop"
+    },
+    {
+      prepareType = MoviePrepareType.PT_Actor,
+      name = "str_movie_actor"
+    }
+  }
   self.stageItems = {}
   self.fatherBuilding = nil
-  self.nextColorEnable = Color(0.13725490196078, 0.67843137254902, 0.95686274509804)
-  self.nextColorDisable = Color(0.41176470588235, 0.4078431372549, 0.4078431372549)
+  self.nextColorEnable = Color(0.13725490196078433, 0.6784313725490196, 0.9568627450980393)
+  self.nextColorDisable = Color(0.4117647058823529, 0.40784313725490196, 0.40784313725490196)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareMainController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandMoviePrepareMainController:OnShow(uiParams)
   self:InitWidget()
   self:_OnValue()
   self:AttachEvent(GameEventType.HomeBuildOnSelectBuilding, self.HomeBuildOnSelectBuilding)
   self:AttachEvent(GameEventType.UIHomelandMoviePrepareActorSelected, self.OnNextBtnStateChange)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareMainController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandMoviePrepareMainController:OnHide()
   self:DetachEvent(GameEventType.HomeBuildOnSelectBuilding, self.HomeBuildOnSelectBuilding)
   self:DetachEvent(GameEventType.UIHomelandMoviePrepareActorSelected, self.OnNextBtnStateChange)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareMainController.InitWidget = function(self)
-  -- function num : 0_3
+function UIHomelandMoviePrepareMainController:InitWidget()
   self.topBtn = self:GetGameObject("topBtn")
   self.stages = self:GetUIComponent("UISelectObjectPath", "stages")
   self.stageOperate = self:GetGameObject("stageOperate")
@@ -75,37 +68,25 @@ UIHomelandMoviePrepareMainController.InitWidget = function(self)
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareMainController._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self.furnitureWidget = (self.freeStagePool):SpawnObject("UIHomelandMoviePrepareFurniture")
-  self.otherWidget = (self.otherStagePool):SpawnObject("UIHomelandMoviePrepareSelectItem")
-  ;
-  (self.otherWidget):SetPhasePanel(self._phasePanel, self._phasePanelRect)
-  ;
-  (self.furnitureWidget):SetUIWidgetHomelandBuildController(self.mobileControl)
-  self.fatherBuilding = (MoviePrepareData:GetInstance()):GetFatherBuild()
-  local len = (table.count)(self.stagesConfig)
-  ;
-  (self.stages):SpawnObjects("PrepareStageItem", len)
-  local items = (self.stages):GetAllSpawnList()
-  for idx,subItem in pairs(items) do
-    local subConfig = (self.stagesConfig)[idx]
+function UIHomelandMoviePrepareMainController:_OnValue()
+  self.furnitureWidget = self.freeStagePool:SpawnObject("UIHomelandMoviePrepareFurniture")
+  self.otherWidget = self.otherStagePool:SpawnObject("UIHomelandMoviePrepareSelectItem")
+  self.otherWidget:SetPhasePanel(self._phasePanel, self._phasePanelRect)
+  self.furnitureWidget:SetUIWidgetHomelandBuildController(self.mobileControl)
+  self.fatherBuilding = MoviePrepareData:GetInstance():GetFatherBuild()
+  local len = table.count(self.stagesConfig)
+  self.stages:SpawnObjects("PrepareStageItem", len)
+  local items = self.stages:GetAllSpawnList()
+  for idx, subItem in pairs(items) do
+    local subConfig = self.stagesConfig[idx]
     subItem:SetData(subConfig.name, subConfig.prepareType, function(item)
-    -- function num : 0_4_0 , upvalues : self
-    self:OnStageItemClicked(item)
-  end
-)
-    -- DECOMPILER ERROR at PC50: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.stageItems)[subConfig.prepareType] = subItem
+      self:OnStageItemClicked(item)
+    end)
+    self.stageItems[subConfig.prepareType] = subItem
     if idx == 1 then
       self.curPrepareStageItem = subItem
-      self.curPrepareType = (self.curPrepareStageItem):GetPrepareType()
-      ;
-      (self.curPrepareStageItem):SetSelect(true)
+      self.curPrepareType = self.curPrepareStageItem:GetPrepareType()
+      self.curPrepareStageItem:SetSelect(true)
     else
       subItem:SetSelect(false)
     end
@@ -113,10 +94,7 @@ UIHomelandMoviePrepareMainController._OnValue = function(self)
   self:ChangeStageContent(nil, self.curPrepareType)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareMainController.GetPrepareWidget = function(self, prepareType)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandMoviePrepareMainController:GetPrepareWidget(prepareType)
   if prepareType == MoviePrepareType.PT_Furniture then
     return self.furnitureWidget
   else
@@ -124,15 +102,12 @@ UIHomelandMoviePrepareMainController.GetPrepareWidget = function(self, prepareTy
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareMainController.OnStageItemClicked = function(self, item)
-  -- function num : 0_6
+function UIHomelandMoviePrepareMainController:OnStageItemClicked(item)
   if item == self.curPrepareStageItem then
-    return 
+    return
   end
   if self.curPrepareStageItem then
-    (self.curPrepareStageItem):SetSelect(false)
+    self.curPrepareStageItem:SetSelect(false)
   end
   local lastType = self.curPrepareType
   local newType = item:GetPrepareType()
@@ -143,272 +118,181 @@ UIHomelandMoviePrepareMainController.OnStageItemClicked = function(self, item)
   self:RefreshNextBtnColor()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareMainController.ChangeStageContent = function(self, lastType, curType)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHomelandMoviePrepareMainController:ChangeStageContent(lastType, curType)
   if lastType then
     if lastType == MoviePrepareType.PT_Furniture then
-      (self.furnitureWidget):OnExit(lastType)
+      self.furnitureWidget:OnExit(lastType)
     else
-      ;
-      (self.otherWidget):OnExit(lastType)
+      self.otherWidget:OnExit(lastType)
     end
-    ;
-    (self._animation):Play("UIHomelandMoviePrepareMainController_up")
+    self._animation:Play("UIHomelandMoviePrepareMainController_up")
   end
-  ;
-  (self.mobileControlGo):SetActive(curType == MoviePrepareType.PT_Furniture)
+  self.mobileControlGo:SetActive(curType == MoviePrepareType.PT_Furniture)
   if curType == MoviePrepareType.PT_Furniture then
-    ((self.furnitureWidget):GetGameObject()):SetActive(true)
-    ;
-    ((self.otherWidget):GetGameObject()):SetActive(false)
-    ;
-    (self.furnitureWidget):OnEnter(curType)
-    ;
-    (self.homelandClient):SetLockGlobalCamera(nil)
-    ;
-    ((self.homelandClient):BuildManager()):SetBuildEditorMode(BuildEditorMode.MakeMovieFree)
-    ;
-    (self._phasePanelGo):SetActive(false)
+    self.furnitureWidget:GetGameObject():SetActive(true)
+    self.otherWidget:GetGameObject():SetActive(false)
+    self.furnitureWidget:OnEnter(curType)
+    self.homelandClient:SetLockGlobalCamera(nil)
+    self.homelandClient:BuildManager():SetBuildEditorMode(BuildEditorMode.MakeMovieFree)
+    self._phasePanelGo:SetActive(false)
   else
-    ((self.furnitureWidget):GetGameObject()):SetActive(false)
-    ;
-    ((self.otherWidget):GetGameObject()):SetActive(true)
-    ;
-    (self.otherWidget):OnEnter(curType)
-    ;
-    (self.homelandClient):SetLockGlobalCamera(true)
-    ;
-    ((self.homelandClient):BuildManager()):SetBuildEditorMode(BuildEditorMode.MakeMovieOther)
-    self._camera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
-    ;
-    (self.otherWidget):SetCamera(self._camera)
-    ;
-    (self._phasePanelGo):SetActive(true)
-    ;
-    (self.otherWidget):ClearSelectBtns()
+    self.furnitureWidget:GetGameObject():SetActive(false)
+    self.otherWidget:GetGameObject():SetActive(true)
+    self.otherWidget:OnEnter(curType)
+    self.homelandClient:SetLockGlobalCamera(true)
+    self.homelandClient:BuildManager():SetBuildEditorMode(BuildEditorMode.MakeMovieOther)
+    self._camera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
+    self.otherWidget:SetCamera(self._camera)
+    self._phasePanelGo:SetActive(true)
+    self.otherWidget:ClearSelectBtns()
   end
-  local callBack = function()
-    -- function num : 0_7_0 , upvalues : curType, _ENV, self
+  
+  local function callBack()
     if curType ~= MoviePrepareType.PT_Furniture then
-      (self.otherWidget):RefreshSelectBtns()
+      self.otherWidget:RefreshSelectBtns()
     end
   end
-
+  
   if self._hasEnter then
-    (self.mUIHomeland):FocusPreparePoint(self.fatherBuilding, curType, callBack)
+    self.mUIHomeland:FocusPreparePoint(self.fatherBuilding, curType, callBack)
   else
     self._hasEnter = true
-    ;
-    (self.mUIHomeland):FocusPreparePointDirect(self.fatherBuilding, curType, callBack)
+    self.mUIHomeland:FocusPreparePointDirect(self.fatherBuilding, curType, callBack)
   end
   self:RefreshArrowPos()
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareMainController.BackBtnOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  local Exit = function()
-    -- function num : 0_8_0 , upvalues : self
+function UIHomelandMoviePrepareMainController:BackBtnOnClick(go)
+  local function Exit()
     self:StartTask(self._Exit, self)
   end
-
-  local title = nil
-  local desc = (StringTable.Get)("str_movie_prepare_back_tips")
-  local leftBtn = {(StringTable.Get)("str_common_cancel"), function(param)
-    -- function num : 0_8_1
-  end
-}
-  local rightBtn = {(StringTable.Get)("str_common_ok"), function()
-    -- function num : 0_8_2 , upvalues : Exit
-    Exit()
-  end
-}
+  
+  local title
+  local desc = StringTable.Get("str_movie_prepare_back_tips")
+  local leftBtn = {
+    StringTable.Get("str_common_cancel"),
+    function(param)
+    end
+  }
+  local rightBtn = {
+    StringTable.Get("str_common_ok"),
+    function()
+      Exit()
+    end
+  }
   self:ShowDialog("UIHomelandMessageBox", title, desc, leftBtn, rightBtn, true)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareMainController._Exit = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHomelandMoviePrepareMainController:_Exit(TT)
   self:Lock("HomeExitBuildMode")
-  ;
-  (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIHomeMovieStoryController .. "DirectIn", function()
-    -- function num : 0_9_0 , upvalues : self, _ENV
+  CutsceneManager.ExcuteCutsceneIn(UIStateType.UIHomeMovieStoryController .. "DirectIn", function()
     self:SwitchState(UIStateType.UIHomeland)
-    ;
-    (CutsceneManager.ExcuteCutsceneOut)()
+    CutsceneManager.ExcuteCutsceneOut()
     self:UnLock("HomeExitBuildMode")
-  end
-)
-  ;
-  (self.mUIHomeland):RestoreFreeChildrenInScene((MoviePrepareData:GetInstance()):GetFatherBuild())
-  ;
-  (self.mUIHomeland):ShowHightLightFreeArea(self.fatherBuilding, false)
-  ;
-  (HomelandMoviePrepareManager:GetInstance()):ClearAll()
-  ;
-  (HomelandMoviePrepareManager:GetInstance()):Dispose()
-  ;
-  (self.homelandClient):SetLockGlobalCamera(nil)
-  ;
-  (self.homelandClient):FinishBuild(TT)
-  ;
-  (AudioHelperController.PlayBGM)(CriAudioIDConst.BGMEnterHomeland, AudioConstValue.BGMCrossFadeTime)
+  end)
+  self.mUIHomeland:RestoreFreeChildrenInScene(MoviePrepareData:GetInstance():GetFatherBuild())
+  self.mUIHomeland:ShowHightLightFreeArea(self.fatherBuilding, false)
+  HomelandMoviePrepareManager:GetInstance():ClearAll()
+  HomelandMoviePrepareManager:GetInstance():Dispose()
+  self.homelandClient:SetLockGlobalCamera(nil)
+  self.homelandClient:FinishBuild(TT)
+  AudioHelperController.PlayBGM(CriAudioIDConst.BGMEnterHomeland, AudioConstValue.BGMCrossFadeTime)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareMainController.IntroduceBtnOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
-  local movieId = (MoviePrepareData:GetInstance()):GetMovieId()
+function UIHomelandMoviePrepareMainController:IntroduceBtnOnClick(go)
+  local movieId = MoviePrepareData:GetInstance():GetMovieId()
   self:ShowDialog("UIHomelandMovieIntroduceController", movieId)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareMainController.ClearBtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  local title = nil
+function UIHomelandMoviePrepareMainController:ClearBtnOnClick(go)
+  local title
   local desc = self:GetClearTipsContent()
-  local leftBtn = {(StringTable.Get)("str_common_cancel"), function(param)
-    -- function num : 0_11_0
-  end
-}
-  local rightBtn = {(StringTable.Get)("str_common_ok"), function()
-    -- function num : 0_11_1 , upvalues : self, _ENV
-    if self.curPrepareType == MoviePrepareType.PT_Furniture then
-      (self.furnitureWidget):Clear(self.curPrepareType)
-    else
-      ;
-      (self.otherWidget):Clear(self.curPrepareType)
-      ;
-      (self.otherWidget):RefreshSelectBtns()
+  local leftBtn = {
+    StringTable.Get("str_common_cancel"),
+    function(param)
     end
-  end
-}
+  }
+  local rightBtn = {
+    StringTable.Get("str_common_ok"),
+    function()
+      if self.curPrepareType == MoviePrepareType.PT_Furniture then
+        self.furnitureWidget:Clear(self.curPrepareType)
+      else
+        self.otherWidget:Clear(self.curPrepareType)
+        self.otherWidget:RefreshSelectBtns()
+      end
+    end
+  }
   self:ShowDialog("UIHomelandMessageBox", title, desc, leftBtn, rightBtn, true)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareMainController.GetClearTipsContent = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHomelandMoviePrepareMainController:GetClearTipsContent()
   if self.curPrepareType == MoviePrepareType.PT_Scene then
-    return (StringTable.Get)("str_movie_prepare_clear_scene_tips")
+    return StringTable.Get("str_movie_prepare_clear_scene_tips")
+  elseif self.curPrepareType == MoviePrepareType.PT_Prop then
+    return StringTable.Get("str_movie_prepare_clear_prop_tips")
+  elseif self.curPrepareType == MoviePrepareType.PT_Furniture then
+    return StringTable.Get("str_movie_prepare_clear_furniture_tips")
+  elseif self.curPrepareType == MoviePrepareType.PT_Actor then
+    return StringTable.Get("str_movie_prepare_clear_actor_tips")
   else
-    if self.curPrepareType == MoviePrepareType.PT_Prop then
-      return (StringTable.Get)("str_movie_prepare_clear_prop_tips")
-    else
-      if self.curPrepareType == MoviePrepareType.PT_Furniture then
-        return (StringTable.Get)("str_movie_prepare_clear_furniture_tips")
-      else
-        if self.curPrepareType == MoviePrepareType.PT_Actor then
-          return (StringTable.Get)("str_movie_prepare_clear_actor_tips")
-        else
-          return nil
-        end
-      end
-    end
+    return nil
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareMainController.NextBtnOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
+function UIHomelandMoviePrepareMainController:NextBtnOnClick(go)
   if self.curPrepareType == MoviePrepareType.PT_Actor then
-    if (self.otherWidget):CheckExit(self.curPrepareType) then
+    if self.otherWidget:CheckExit(self.curPrepareType) then
       self:ShowDialog("UIHomelandMovieActionController")
     else
-      ;
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_movie_prepare_actor_noenough"))
+      ToastManager.ShowHomeToast(StringTable.Get("str_movie_prepare_actor_noenough"))
     end
-    return 
+    return
   end
   local nextType = self.curPrepareType + 1
-  local nextItem = (self.stageItems)[nextType]
+  local nextItem = self.stageItems[nextType]
   if nextItem then
     self:OnStageItemClicked(nextItem)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareMainController.RefreshNextBtnColor = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIHomelandMoviePrepareMainController:RefreshNextBtnColor()
   local enable = true
   if self.curPrepareType == MoviePrepareType.PT_Actor then
-    enable = (self.otherWidget):CheckExit(self.curPrepareType)
+    enable = self.otherWidget:CheckExit(self.curPrepareType)
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
   if enable then
-    (self.txtNext).color = self.nextColorEnable
+    self.txtNext.color = self.nextColorEnable
   else
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.txtNext).color = self.nextColorDisable
+    self.txtNext.color = self.nextColorDisable
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareMainController.OnNextBtnStateChange = function(self, state)
-  -- function num : 0_15
+function UIHomelandMoviePrepareMainController:OnNextBtnStateChange(state)
   self:RefreshNextBtnColor()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareMainController.ArrowBtnOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
-  if (self.stageContent).activeInHierarchy then
-    (self.stageContent):SetActive(false)
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.arrowBtn).anchoredPosition = Vector2(-57, 83)
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.arrowBtn).localScale = Vector3(1, -1, 1)
+function UIHomelandMoviePrepareMainController:ArrowBtnOnClick(go)
+  if self.stageContent.activeInHierarchy then
+    self.stageContent:SetActive(false)
+    self.arrowBtn.anchoredPosition = Vector2(-57, 83)
+    self.arrowBtn.localScale = Vector3(1, -1, 1)
   else
-    ;
-    (self.stageContent):SetActive(true)
+    self.stageContent:SetActive(true)
     local h = self:GetArrowTopHeight()
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.arrowBtn).anchoredPosition = Vector2(-57, h)
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.arrowBtn).localScale = Vector3.one
+    self.arrowBtn.anchoredPosition = Vector2(-57, h)
+    self.arrowBtn.localScale = Vector3.one
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareMainController.RefreshArrowPos = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  if (self.stageContent).activeInHierarchy then
+function UIHomelandMoviePrepareMainController:RefreshArrowPos()
+  if self.stageContent.activeInHierarchy then
     local h = self:GetArrowTopHeight()
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.arrowBtn).anchoredPosition = Vector2(-57, h)
+    self.arrowBtn.anchoredPosition = Vector2(-57, h)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareMainController.GetArrowTopHeight = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIHomelandMoviePrepareMainController:GetArrowTopHeight()
   if self.curPrepareType == MoviePrepareType.PT_Furniture then
     return 407
   else
@@ -416,25 +300,15 @@ UIHomelandMoviePrepareMainController.GetArrowTopHeight = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareMainController.HomeBuildOnSelectBuilding = function(self)
-  -- function num : 0_19
-  local homeBuilding = (self.homeBuildManager):GetCurrentBuilding()
+function UIHomelandMoviePrepareMainController:HomeBuildOnSelectBuilding()
+  local homeBuilding = self.homeBuildManager:GetCurrentBuilding()
   if homeBuilding then
-    (self.prepareGo):SetActive(false)
-    ;
-    (self.operateGo):SetActive(true)
-    ;
-    (self.operate):FlushOperate()
+    self.prepareGo:SetActive(false)
+    self.operateGo:SetActive(true)
+    self.operate:FlushOperate()
   else
-    ;
-    (self.prepareGo):SetActive(true)
-    ;
-    (self.operateGo):SetActive(false)
-    ;
-    (self.furnitureWidget):Refresh(self.curPrepareType)
+    self.prepareGo:SetActive(true)
+    self.operateGo:SetActive(false)
+    self.furnitureWidget:Refresh(self.curPrepareType)
   end
 end
-
-

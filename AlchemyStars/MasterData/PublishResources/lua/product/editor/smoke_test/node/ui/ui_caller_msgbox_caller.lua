@@ -1,17 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/ui/ui_caller_msgbox_caller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("stn_ui_caller_base")
 _class("CTestRobot_MsgBoxCaller", CTestRobot_UICaller)
 CTestRobot_MsgBoxCaller = CTestRobot_MsgBoxCaller
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CTestRobot_MsgBoxCaller._FindUI = function(self, stName)
-  -- function num : 0_0
-  local pUIManger = ((self.m_pGameCenter).UIStateManager)()
+function CTestRobot_MsgBoxCaller:_FindUI(stName)
+  local pUIManger = self.m_pGameCenter.UIStateManager()
   return pUIManger:GetUIMessageBox(nil, stName)
 end
-
-

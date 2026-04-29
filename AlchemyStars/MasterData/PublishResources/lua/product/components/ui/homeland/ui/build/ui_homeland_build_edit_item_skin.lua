@@ -1,72 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/build/ui_homeland_build_edit_item_skin.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBuildEditItemSkin", UICustomWidget)
 UIHomelandBuildEditItemSkin = UIHomelandBuildEditItemSkin
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBuildEditItemSkin.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.mUIHomeland = (self.mHomeland):GetUIModule()
-  self.homelandClient = (self.mUIHomeland):GetClient()
-  self.homeBuildManager = (self.homelandClient):BuildManager()
+function UIHomelandBuildEditItemSkin:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.mUIHomeland = self.mHomeland:GetUIModule()
+  self.homelandClient = self.mUIHomeland:GetClient()
+  self.homeBuildManager = self.homelandClient:BuildManager()
   self.beginPos = Vector2.zero
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditItemSkin.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandBuildEditItemSkin:OnShow()
   self.bg = self:GetGameObject("bg")
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.txtLiveable = self:GetUIComponent("UILocalizationText", "txtLiveable")
   self.using = self:GetGameObject("using")
-  ;
-  (self.using):SetActive(false)
-  local etl = (UICustomUIEventListener.Get)(self.bg)
+  self.using:SetActive(false)
+  local etl = UICustomUIEventListener.Get(self.bg)
   self:AddUICustomEventListener(etl, UIEvent.Click, function(go)
-    -- function num : 0_1_0 , upvalues : self, _ENV
-    if (self.using).activeSelf then
-      return 
+    if self.using.activeSelf then
+      return
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandBuildChangeSkin, self.id)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandBuildChangeSkin, self.id)
+  end)
   self:AttachEvent(GameEventType.HomelandBuildChangeSkin, self.OnChangeSkin)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditItemSkin.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.imgIcon):DestoryLastImage()
+function UIHomelandBuildEditItemSkin:OnHide()
+  self.imgIcon:DestoryLastImage()
   self:DetachEvent(GameEventType.HomelandBuildChangeSkin, self.OnChangeSkin)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditItemSkin.Flush = function(self, cfg, curSkinID)
-  -- function num : 0_3
+function UIHomelandBuildEditItemSkin:Flush(cfg, curSkinID)
   self.id = cfg.ID
-  ;
-  (self.using):SetActive(self.id == curSkinID)
-  ;
-  (self.imgIcon):LoadImage(cfg.SkinIcon)
-  ;
-  (self.txtLiveable):SetText("+" .. cfg.LivableValue)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self.using:SetActive(self.id == curSkinID)
+  self.imgIcon:LoadImage(cfg.SkinIcon)
+  self.txtLiveable:SetText("+" .. cfg.LivableValue)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditItemSkin.OnChangeSkin = function(self, id)
-  -- function num : 0_4
-  (self.using):SetActive(self.id == id)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIHomelandBuildEditItemSkin:OnChangeSkin(id)
+  self.using:SetActive(self.id == id)
 end
-
-

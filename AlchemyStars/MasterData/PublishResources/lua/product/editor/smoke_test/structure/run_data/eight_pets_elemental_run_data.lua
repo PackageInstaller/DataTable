@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/run_data/eight_pets_elemental_run_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ElementalEightPetsRunData", TestRobotElementalRunData)
 ElementalEightPetsRunData = ElementalEightPetsRunData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ElementalEightPetsRunData.ParseLevelData = function(self, rawargs)
-  -- function num : 0_0 , upvalues : _ENV
-  local args = (string.split)(rawargs, ",")
+function ElementalEightPetsRunData:ParseLevelData(rawargs)
+  local args = string.split(rawargs, ",")
   self._missionID = tonumber(args[1])
   self._componentID = tonumber(args[2])
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalEightPetsRunData.GetMissionID = function(self)
-  -- function num : 0_1
+function ElementalEightPetsRunData:GetMissionID()
   return self._missionID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalEightPetsRunData.GetComponentID = function(self)
-  -- function num : 0_2
+function ElementalEightPetsRunData:GetComponentID()
   return self._componentID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalEightPetsRunData.GetComponentConfigID = function(self)
-  -- function num : 0_3
+function ElementalEightPetsRunData:GetComponentConfigID()
   return self._componentID
 end
-
-

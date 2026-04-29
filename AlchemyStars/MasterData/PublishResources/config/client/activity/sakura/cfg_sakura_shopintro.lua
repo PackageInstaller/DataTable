@@ -1,11 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/sakura/cfg_sakura_shopintro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Title = 2, Intro = 3}
+local key = {
+  ID = 1,
+  Title = 2,
+  Intro = 3
+}
 local config = {
-ui_sakura_shopintro = {"ui_sakura_shopintro", "str_sakura_shopintro_title", "str_sakura_shopintro_intro"}
+  ui_sakura_shopintro = {
+    "ui_sakura_shopintro",
+    "str_sakura_shopintro_title",
+    "str_sakura_shopintro_intro"
+  }
 }
 return config, "ID", key
-

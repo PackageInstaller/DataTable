@@ -1,79 +1,106 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/auto_test_config/auto_test_133.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 AutoTest_133 = {
-cases = {
-[1] = {
-[1] = {action = "WaitGameFsm", 
-args = {id = 5}
+  cases = {
+    [1] = {
+      [1] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [2] = {
+        action = "SetTeamPosition",
+        args = {pos = 502}
+      },
+      [3] = {
+        action = "SetOnePieceType",
+        args = {pieceType = 2, pos = 203}
+      },
+      [4] = {
+        action = "SetOnePieceType",
+        args = {pieceType = 2, pos = 303}
+      },
+      [5] = {
+        action = "SetOnePieceType",
+        args = {pieceType = 2, pos = 405}
+      },
+      [6] = {
+        action = "SetOnePieceType",
+        args = {pieceType = 2, pos = 603}
+      },
+      [7] = {
+        action = "SetOnePieceType",
+        args = {pieceType = 2, pos = 806}
+      },
+      [8] = {
+        action = "CheckPieceType",
+        args = {
+          pieceType = 4,
+          pos = 203,
+          trigger = 88
+        }
+      },
+      [9] = {
+        action = "CheckPieceType",
+        args = {
+          pieceType = 4,
+          pos = 303,
+          trigger = 88
+        }
+      },
+      [10] = {
+        action = "CheckPieceType",
+        args = {
+          pieceType = 4,
+          pos = 405,
+          trigger = 88
+        }
+      },
+      [11] = {
+        action = "CheckPieceType",
+        args = {
+          pieceType = 4,
+          pos = 603,
+          trigger = 88
+        }
+      },
+      [12] = {
+        action = "CheckPieceType",
+        args = {
+          pieceType = 2,
+          pos = 806,
+          trigger = 88
+        }
+      },
+      [13] = {
+        action = "FakeCastSkill",
+        args = {
+          name = "p1",
+          pickUpPos = {
+            [1] = 502.0
+          }
+        }
+      },
+      [14] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      name = "将最近的4个火属性格子转为雷属性"
+    }
+  },
+  name = "贝芙丽主动技",
+  petList = {
+    [1] = {
+      affinity = 1,
+      awakening = 0,
+      equiplv = 1,
+      grade = 0,
+      id = 1500871,
+      level = 10,
+      name = "p1"
+    }
+  },
+  setup = {
+    [1] = {
+      args = {levelID = 1, matchType = 1},
+      setup = "LevelBasic"
+    }
+  }
 }
-, 
-[2] = {action = "SetTeamPosition", 
-args = {pos = 502}
-}
-, 
-[3] = {action = "SetOnePieceType", 
-args = {pieceType = 2, pos = 203}
-}
-, 
-[4] = {action = "SetOnePieceType", 
-args = {pieceType = 2, pos = 303}
-}
-, 
-[5] = {action = "SetOnePieceType", 
-args = {pieceType = 2, pos = 405}
-}
-, 
-[6] = {action = "SetOnePieceType", 
-args = {pieceType = 2, pos = 603}
-}
-, 
-[7] = {action = "SetOnePieceType", 
-args = {pieceType = 2, pos = 806}
-}
-, 
-[8] = {action = "CheckPieceType", 
-args = {pieceType = 4, pos = 203, trigger = 88}
-}
-, 
-[9] = {action = "CheckPieceType", 
-args = {pieceType = 4, pos = 303, trigger = 88}
-}
-, 
-[10] = {action = "CheckPieceType", 
-args = {pieceType = 4, pos = 405, trigger = 88}
-}
-, 
-[11] = {action = "CheckPieceType", 
-args = {pieceType = 4, pos = 603, trigger = 88}
-}
-, 
-[12] = {action = "CheckPieceType", 
-args = {pieceType = 2, pos = 806, trigger = 88}
-}
-, 
-[13] = {action = "FakeCastSkill", 
-args = {name = "p1", 
-pickUpPos = {[1] = 502}
-}
-}
-, 
-[14] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, name = "将最近的4个火属性格子转为雷属性"}
-}
-, name = "贝芙丽主动技", 
-petList = {
-[1] = {affinity = 1, awakening = 0, equiplv = 1, grade = 0, id = 1500871, level = 10, name = "p1"}
-}
-, 
-setup = {
-[1] = {
-args = {levelID = 1, matchType = 1}
-, setup = "LevelBasic"}
-}
-}
-

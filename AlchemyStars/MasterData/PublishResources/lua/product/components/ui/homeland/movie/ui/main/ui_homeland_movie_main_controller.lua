@@ -1,24 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/main/ui_homeland_movie_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMovieMainController", UIController)
 UIHomelandMovieMainController = UIHomelandMovieMainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMovieMainController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.mUIHomeland = (self.mHomeland):GetUIModule()
-  self.homelandClient = (self.mUIHomeland):GetClient()
+function UIHomelandMovieMainController:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.mUIHomeland = self.mHomeland:GetUIModule()
+  self.homelandClient = self.mUIHomeland:GetClient()
   self._movieList = nil
   self._movieData = nil
   self._movieWidgets = {}
   self._scoreWidgets = {}
   self._curMovieWidget = nil
   self._pstID = nil
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
   self._hasHistory = false
   self._build = nil
   self._atlas = self:GetAsset("UIHomelandMovie.spriteatlas", LoadType.SpriteAtlas)
@@ -27,27 +20,20 @@ UIHomelandMovieMainController.Constructor = function(self)
   self._fadeTime = 0.5
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController.OnShow = function(self, param)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandMovieMainController:OnShow(param)
   self._build = param[1]
-  ;
-  (AudioHelperController.PlayBGM)(CriAudioIDConst.BGMN17, AudioConstValue.BGMCrossFadeTime)
+  AudioHelperController.PlayBGM(CriAudioIDConst.BGMN17, AudioConstValue.BGMCrossFadeTime)
   self:InitWidget()
   self:ShowMovieTag()
   self:GetMovieTag()
   self._movieDataHelper = MovieDataHelper:New()
-  local type, AnonymousId = (self._movieDataHelper):ShowOrNot()
+  local type, AnonymousId = self._movieDataHelper:ShowOrNot()
   if type then
     self:ShowAnonymous(AnonymousId)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController.InitWidget = function(self)
-  -- function num : 0_2
+function UIHomelandMovieMainController:InitWidget()
   self._movieTitle = self:GetUIComponent("UILocalizationText", "movieTitle")
   self._movieContent = self:GetUIComponent("UILocalizationText", "movieContent")
   self._contentRect = self:GetUIComponent("RectTransform", "introContent")
@@ -65,303 +51,200 @@ UIHomelandMovieMainController.InitWidget = function(self)
   self._tagContent = self:GetUIComponent("UISelectObjectPath", "TagContent")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController.OnHide = function(self)
-  -- function num : 0_3
+function UIHomelandMovieMainController:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController.BtnBackOnClick = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandMovieMainController:BtnBackOnClick(TT)
   self:CloseDialog()
-  ;
-  (AudioHelperController.PlayBGM)(CriAudioIDConst.BGMEnterHomeland, AudioConstValue.BGMCrossFadeTime)
+  AudioHelperController.PlayBGM(CriAudioIDConst.BGMEnterHomeland, AudioConstValue.BGMCrossFadeTime)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController.ChooseMovieOnClick = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandMovieMainController:ChooseMovieOnClick(TT)
   if self._movieData then
-    ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self
-    self:MakingMovie(TT, self._movieData)
-  end
-)
+    GameGlobal.TaskManager():StartTask(function(TT)
+      self:MakingMovie(TT, self._movieData)
+    end)
   else
-    ;
-    (Log.fatal)("选择剧本失败 没有剧本信息")
+    Log.fatal("选择剧本失败 没有剧本信息")
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController.MakingMovie = function(self, TT, data)
-  -- function num : 0_6 , upvalues : _ENV
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
+function UIHomelandMovieMainController:MakingMovie(TT, data)
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
   local reply, psdId = homelandModule:HandleEnterMakingMovice(TT, data.ID)
   if reply:GetSucc() then
-    (MoviePrepareData:GetInstance()):SetMovieData(data.ID, psdId, self._build)
-    ;
-    (Log.fatal)(homelandModule.movice_pstid)
-    ;
-    (self.mUIHomeland):EnterMoviePrepare(TT)
+    MoviePrepareData:GetInstance():SetMovieData(data.ID, psdId, self._build)
+    Log.fatal(homelandModule.movice_pstid)
+    self.mUIHomeland:EnterMoviePrepare(TT)
   else
     if reply.m_result == HomeLandErrorType.E_MOVICE_NOT_UNLOCK then
-      (ToastManager.ShowHomeToast)((StringTable.Get)(((Cfg.cfg_homeland_movice)[data.ID]).Achieve))
+      ToastManager.ShowHomeToast(StringTable.Get(Cfg.cfg_homeland_movice[data.ID].Achieve))
     end
-    ;
-    (Log.fatal)("选择剧本请求异常")
+    Log.fatal("选择剧本请求异常")
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController.ShowAnonymous = function(self, AnonymousId)
-  -- function num : 0_7
+function UIHomelandMovieMainController:ShowAnonymous(AnonymousId)
   self:ShowDialog("UIHomelandAnonymousPopController", AnonymousId)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController.ChooseActorOnClick = function(self)
-  -- function num : 0_8
+function UIHomelandMovieMainController:ChooseActorOnClick()
   self:ShowDialog("UIHomelandMovieActorController", self._movieData)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController.PlayBackbtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHomelandMovieMainController:PlayBackbtnOnClick()
   if self._hasHistory then
     self:ShowDialog("UIHomelandMoviePlaybackController", self._movieData, self._build)
   else
-    ;
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_movie_toast_Nohistory"))
+    ToastManager.ShowHomeToast(StringTable.Get("str_movie_toast_Nohistory"))
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController.ShowMovieTag = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_movie_tag)({})
+function UIHomelandMovieMainController:ShowMovieTag()
+  local cfg = Cfg.cfg_homeland_movie_tag({})
   local tag = {}
-  for i,v in ipairs(cfg) do
-    (table.insert)(tag, v.ID)
+  for i, v in ipairs(cfg) do
+    table.insert(tag, v.ID)
   end
   local len = #tag
   local index = 1
-  self._movieWidgets = (self._tagContent):SpawnObjects("UIHomelandMovieTagItem", len)
-  for i,v in pairs(cfg) do
-    ((self._movieWidgets)[index]):SetData(v, index, function(item)
-    -- function num : 0_10_0 , upvalues : self
-    self:OnTagClicked(item)
-  end
-)
+  self._movieWidgets = self._tagContent:SpawnObjects("UIHomelandMovieTagItem", len)
+  for i, v in pairs(cfg) do
+    self._movieWidgets[index]:SetData(v, index, function(item)
+      self:OnTagClicked(item)
+    end)
     if index == 1 then
-      self:OnTagClicked((self._movieWidgets)[index])
+      self:OnTagClicked(self._movieWidgets[index])
     end
     index = index + 1
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController.OnTagClicked = function(self, item)
-  -- function num : 0_11
+function UIHomelandMovieMainController:OnTagClicked(item)
   if self._curTagWidget then
     if self._curTagWidget == item then
       self.sameClick = true
     else
       self.sameClick = false
     end
-    ;
-    (self._curTagWidget):SetSelected(false)
-    ;
-    (self._curTagWidget):SetRed()
+    self._curTagWidget:SetSelected(false)
+    self._curTagWidget:SetRed()
   end
   self._curTagWidget = item
-  ;
-  (self._curTagWidget):SetSelected(true)
+  self._curTagWidget:SetSelected(true)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController.GetMovieTag = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_movie_tag)({})
-  local tag = (cfg[1]).MovieId
+function UIHomelandMovieMainController:GetMovieTag()
+  local cfg = Cfg.cfg_homeland_movie_tag({})
+  local tag = cfg[1].MovieId
   self:InitDramaList(tag)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController.InitDramaList = function(self, tag)
-  -- function num : 0_13 , upvalues : _ENV
+function UIHomelandMovieMainController:InitDramaList(tag)
   if self.sameClick then
-    return 
+    return
   end
   self.refresh = false
-  do
-    if tag == nil then
-      local cfg = (Cfg.cfg_homeland_movie_tag)({})
-      tag = (cfg[1]).MovieId
-    end
-    self._movieList = (MovieDataManager:GetInstance()):GetSortMovieList(tag)
-    local len = (table.count)(self._movieList)
-    local index = 1
-    self._movieWidgets = (self._content):SpawnObjects("UIHomelandMovieMainItem", len)
-    for i,v in pairs(self._movieList) do
-      ((self._movieWidgets)[index]):SetData(v, index, function(item)
-    -- function num : 0_13_0 , upvalues : self
-    self:OnDramaItemClicked(item)
+  if tag == nil then
+    local cfg = Cfg.cfg_homeland_movie_tag({})
+    tag = cfg[1].MovieId
   end
-)
-      if index == 1 then
-        self.refresh = true
-        self:OnDramaItemClicked((self._movieWidgets)[index])
-      end
-      index = index + 1
+  self._movieList = MovieDataManager:GetInstance():GetSortMovieList(tag)
+  local len = table.count(self._movieList)
+  local index = 1
+  self._movieWidgets = self._content:SpawnObjects("UIHomelandMovieMainItem", len)
+  for i, v in pairs(self._movieList) do
+    self._movieWidgets[index]:SetData(v, index, function(item)
+      self:OnDramaItemClicked(item)
+    end)
+    if index == 1 then
+      self.refresh = true
+      self:OnDramaItemClicked(self._movieWidgets[index])
     end
-    self.refresh = false
+    index = index + 1
   end
+  self.refresh = false
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController.OnDramaItemClicked = function(self, item)
-  -- function num : 0_14 , upvalues : _ENV
+function UIHomelandMovieMainController:OnDramaItemClicked(item)
   local data = item:GetData()
   if self._movieData == data then
-    return 
+    return
   end
-  ;
-  (self._anim):Play("UIHomelandMovieMainController_scores")
+  self._anim:Play("UIHomelandMovieMainController_scores")
   self._movieData = data
   if self._curMovieWidget then
-    (self._curMovieWidget):SetSelected(false, self.refresh)
+    self._curMovieWidget:SetSelected(false, self.refresh)
   end
   self._curMovieWidget = item
-  ;
-  (self._curMovieWidget):SetSelected(true, self.refresh)
-  local history = (MovieDataManager:GetInstance()):GetMovieHistoryDataByID((self._movieData).ID)
-  self._hasHistory = (table.count)(history) > 0
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R4 in 'UnsetPending'
-
+  self._curMovieWidget:SetSelected(true, self.refresh)
+  local history = MovieDataManager:GetInstance():GetMovieHistoryDataByID(self._movieData.ID)
+  self._hasHistory = table.count(history) > 0
   if self._hasHistory then
-    (self._camera).sprite = (self._atlas):GetSprite("dy_xzjb_icon06")
-    -- DECOMPILER ERROR at PC55: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._playbackBtn).sprite = (self._atlas):GetSprite("dy_xzjb_di03")
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._chooseText).color = Color(0.50196078431373, 0.50196078431373, 0.50196078431373)
+    self._camera.sprite = self._atlas:GetSprite("dy_xzjb_icon06")
+    self._playbackBtn.sprite = self._atlas:GetSprite("dy_xzjb_di03")
+    self._chooseText.color = Color(0.5019607843137255, 0.5019607843137255, 0.5019607843137255)
   else
-    -- DECOMPILER ERROR at PC69: Confused about usage of register: R4 in 'UnsetPending'
-
-    (self._camera).sprite = (self._atlas):GetSprite("dy_xzjb_icon07")
-    -- DECOMPILER ERROR at PC75: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._playbackBtn).sprite = (self._atlas):GetSprite("dy_xzjb_di14")
-    -- DECOMPILER ERROR at PC82: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._chooseText).color = Color(0.89803921568627, 0.89803921568627, 0.89803921568627)
+    self._camera.sprite = self._atlas:GetSprite("dy_xzjb_icon07")
+    self._playbackBtn.sprite = self._atlas:GetSprite("dy_xzjb_di14")
+    self._chooseText.color = Color(0.8980392156862745, 0.8980392156862745, 0.8980392156862745)
   end
   self:InitDramaInfo(item)
-  ;
-  (self._curTagWidget):SetRed()
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self._curTagWidget:SetRed()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController._FadeBG = function(self, rawImage)
-  -- function num : 0_15
-  (self._movieRawBG):DOFade(1, 0)
+function UIHomelandMovieMainController:_FadeBG(rawImage)
+  self._movieRawBG:DOFade(1, 0)
   if self._preRawImageName then
-    (self._movieBG):LoadImage(self._preRawImageName)
+    self._movieBG:LoadImage(self._preRawImageName)
   else
-    ;
-    (self._movieRawBG):DOFade(0, 0)
+    self._movieRawBG:DOFade(0, 0)
   end
-  ;
-  (self._movieBGPre):LoadImage(rawImage)
-  ;
-  (self._movieRawBGPre):DOFade(0, 0)
-  ;
-  (self._movieRawBGPre):DOFade(1, self._fadeTime)
+  self._movieBGPre:LoadImage(rawImage)
+  self._movieRawBGPre:DOFade(0, 0)
+  self._movieRawBGPre:DOFade(1, self._fadeTime)
   self._preRawImageName = rawImage
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController.InitDramaInfo = function(self, item)
-  -- function num : 0_16 , upvalues : _ENV
+function UIHomelandMovieMainController:InitDramaInfo(item)
   local scoreList = item:GetScoreList()
   local len = self:_CountScoreLen(scoreList)
   local index = 1
   local curScore = 0
-  ;
-  (self._movieTitle):SetText((StringTable.Get)((self._movieData).Name))
-  ;
-  (self._movieContent):SetText((StringTable.Get)((self._movieData).Intro))
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._contentRect).anchoredPosition = Vector2(0, 0)
-  self:_FadeBG((self._movieData).Background)
-  self._scoreWidgets = (self._scores):SpawnObjects("UIHomelandMovieMainScoreItem", len)
-  for i,v in pairs(scoreList) do
+  self._movieTitle:SetText(StringTable.Get(self._movieData.Name))
+  self._movieContent:SetText(StringTable.Get(self._movieData.Intro))
+  self._contentRect.anchoredPosition = Vector2(0, 0)
+  self:_FadeBG(self._movieData.Background)
+  self._scoreWidgets = self._scores:SpawnObjects("UIHomelandMovieMainScoreItem", len)
+  for i, v in pairs(scoreList) do
     if curScore ~= v[1] then
       curScore = v[1]
-      ;
-      ((self._scoreWidgets)[index]):SetData(v, (self._movieData).ID)
+      self._scoreWidgets[index]:SetData(v, self._movieData.ID)
       index = index + 1
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController.ExplainBtnOnClick = function(self)
-  -- function num : 0_17
+function UIHomelandMovieMainController:ExplainBtnOnClick()
   self:ShowDialog("UIHomelandMovieExplainController", self._movieData)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController.EyeBtnOnClick = function(self)
-  -- function num : 0_18
+function UIHomelandMovieMainController:EyeBtnOnClick()
   self._isHide = true
-  ;
-  (self._root):SetActive(false)
+  self._root:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController.MovieBGOnClick = function(self)
-  -- function num : 0_19
+function UIHomelandMovieMainController:MovieBGOnClick()
   if self._isHide then
     self._isHide = false
-    ;
-    (self._root):SetActive(true)
+    self._root:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainController._CountScoreLen = function(self, list)
-  -- function num : 0_20 , upvalues : _ENV
+function UIHomelandMovieMainController:_CountScoreLen(list)
   local len = 0
   local curScore = 0
-  for i,v in pairs(list) do
+  for i, v in pairs(list) do
     if v[1] ~= curScore then
       curScore = v[1]
       len = len + 1
@@ -369,5 +252,3 @@ UIHomelandMovieMainController._CountScoreLen = function(self, list)
   end
   return len
 end
-
-

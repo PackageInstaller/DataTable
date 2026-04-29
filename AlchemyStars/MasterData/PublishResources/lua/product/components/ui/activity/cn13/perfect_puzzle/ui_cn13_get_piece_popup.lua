@@ -1,48 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn13/perfect_puzzle/ui_cn13_get_piece_popup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN13GetPiecePopUp", UIController)
 UICN13GetPiecePopUp = UICN13GetPiecePopUp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN13GetPiecePopUp.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN13GetPiecePopUp:LoadDataOnEnter(TT, res)
   self._campaignModule = self:GetModule(CampaignModule)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_INLAND_PERFECT_PUZZLE
   self._svrTimeModule = self:GetModule(SvrTimeModule)
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
+  self._questModule = GameGlobal.GetModule(QuestModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, self._campaignType, ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE, ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST, ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
+  self._campaign:LoadCampaignInfo(TT, res, self._campaignType, ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE, ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST, ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
   if res and res:GetSucc() then
-    self._localProcess = (self._campaignModule):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_INLAND_PERFECT_PUZZLE)
-    self._questComponent = (self._localProcess):GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST)
-    self.questcmptInfo = (self._localProcess):GetComponentInfo(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST)
+    self._localProcess = self._campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_INLAND_PERFECT_PUZZLE)
+    self._questComponent = self._localProcess:GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST)
+    self.questcmptInfo = self._localProcess:GetComponentInfo(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13GetPiecePopUp.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UICN13GetPiecePopUp:OnShow(uiParams)
   self:InitWidget()
   self:InitUI()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13GetPiecePopUp.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN13GetPiecePopUp:OnHide()
   self:DetachEvent(GameEventType.UIQuestDailyVigorous, self.UIQuestDailyVigorous)
   self:UnLock("UICN13PerfectPuzzle:UIQuestGet")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13GetPiecePopUp.InitWidget = function(self)
-  -- function num : 0_3
+function UICN13GetPiecePopUp:InitWidget()
   self._anim = self:GetGameObject("_anim")
   self.titleText = self:GetUIComponent("UILocalizedTMP", "TitleText")
   self.itemTips = self:GetUIComponent("UISelectObjectPath", "ItemTips")
@@ -50,109 +33,75 @@ UICN13GetPiecePopUp.InitWidget = function(self)
   self.questPool = self:GetUIComponent("UISelectObjectPath", "QuestPool")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13GetPiecePopUp.InitUI = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._questInfoList = (self._questComponent):GetQuestInfo()
-  ;
-  (self._questComponent):SortQuestInfoByCampaignQuestStatus(self._questInfoList)
-  self._dynamicListSize = (table.count)(self._questInfoList)
+function UICN13GetPiecePopUp:InitUI()
+  self._questInfoList = self._questComponent:GetQuestInfo()
+  self._questComponent:SortQuestInfoByCampaignQuestStatus(self._questInfoList)
+  self._dynamicListSize = table.count(self._questInfoList)
   self._itemCountPerRow = 1
-  self._dynamicListRowSize = (math.floor)((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
+  self._dynamicListRowSize = math.floor((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
   if not self._isDynamicInited then
     self._isDynamicInited = true
     self._taskList = self:GetUIComponent("UIDynamicScrollView", "taskList")
-    ;
-    (self._taskList):InitListView(self._dynamicListRowSize, function(scrollView, index)
-    -- function num : 0_4_0 , upvalues : self
-    return self:_SpawnListItem(scrollView, index)
-  end
-)
+    self._taskList:InitListView(self._dynamicListRowSize, function(scrollView, index)
+      return self:_SpawnListItem(scrollView, index)
+    end)
   else
     self:_RefreshList(self._dynamicListRowSize, self._taskList, nil)
   end
-  local svrTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  local resetTime = (self._questModule):GetQuestDailyRefreshTime(svrTime)
+  local svrTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  local resetTime = self._questModule:GetQuestDailyRefreshTime(svrTime)
   local timeStamp = resetTime - svrTime
-  if timeStamp > 0 then
+  if 0 < timeStamp then
     local timeStr = self:Second2TimeStr(timeStamp)
-    ;
-    (self.titleText):SetText((StringTable.Get)("str_cn13_PerfectPuzzle_quest_refresh_countdown") .. timeStr)
+    self.titleText:SetText(StringTable.Get("str_cn13_PerfectPuzzle_quest_refresh_countdown") .. timeStr)
   else
-    do
-      do
-        local timeStr = self:Second2TimeStr(timeStamp)
-        ;
-        (self.titleText):SetText((StringTable.Get)("str_cn13_PerfectPuzzle_quest_refresh_countdown") .. timeStr)
-        self.taskId = self:StartTask(function(TT)
-    -- function num : 0_4_1 , upvalues : self, _ENV
-    while 1 do
+    local timeStr = self:Second2TimeStr(timeStamp)
+    self.titleText:SetText(StringTable.Get("str_cn13_PerfectPuzzle_quest_refresh_countdown") .. timeStr)
+  end
+  self.taskId = self:StartTask(function(TT)
+    while true do
       self:_OnValue()
       YIELD(TT, 1000)
     end
-  end
-)
-        self:AttachEvent(GameEventType.UIQuestDailyVigorous, self.UIQuestDailyVigorous)
-      end
-    end
-  end
+  end)
+  self:AttachEvent(GameEventType.UIQuestDailyVigorous, self.UIQuestDailyVigorous)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13GetPiecePopUp.UIQuestDailyVigorous = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UICN13GetPiecePopUp:UIQuestDailyVigorous()
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
-    ;
-    (self._questComponent):HandleCamQuestDailyReset(TT, res)
+    self._questComponent:HandleCamQuestDailyReset(TT, res)
     if res:GetSucc() then
       self:_RefreshList(self._dynamicListRowSize, self._taskList, nil)
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13GetPiecePopUp._OnValue = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local svrTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  local resetTime = (self._questModule):GetQuestDailyRefreshTime(svrTime)
+function UICN13GetPiecePopUp:_OnValue()
+  local svrTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  local resetTime = self._questModule:GetQuestDailyRefreshTime(svrTime)
   local timeStamp = resetTime - svrTime
-  if timeStamp > 0 then
-    local timeStr = (UIActivityHelper.GetFormatTimerStr)(timeStamp)
-    ;
-    (self.titleText):SetText((StringTable.Get)("str_cn13_PerfectPuzzle_quest_refresh_countdown") .. timeStr)
+  if 0 < timeStamp then
+    local timeStr = UIActivityHelper.GetFormatTimerStr(timeStamp)
+    self.titleText:SetText(StringTable.Get("str_cn13_PerfectPuzzle_quest_refresh_countdown") .. timeStr)
     if self.reset then
       self.reset = false
     end
   else
-    do
-      self.reset = true
-    end
+    self.reset = true
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13GetPiecePopUp._RefreshList = function(self, count, list, resetPos)
-  -- function num : 0_7
-  self._questInfoList = (self._questComponent):GetQuestInfo()
-  ;
-  (self._questComponent):SortQuestInfoByCampaignQuestStatus(self._questInfoList)
+function UICN13GetPiecePopUp:_RefreshList(count, list, resetPos)
+  self._questInfoList = self._questComponent:GetQuestInfo()
+  self._questComponent:SortQuestInfoByCampaignQuestStatus(self._questInfoList)
   list:SetListItemCount(count)
   list:MovePanelToItemIndex(0, 0)
   if not resetPos then
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13GetPiecePopUp._SpawnListItem = function(self, scrollView, index)
-  -- function num : 0_8
+function UICN13GetPiecePopUp:_SpawnListItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -166,76 +115,57 @@ UICN13GetPiecePopUp._SpawnListItem = function(self, scrollView, index)
   for i = 1, self._itemCountPerRow do
     local listItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._dynamicListSize < itemIndex then
-      (listItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._dynamicListSize then
+      listItem:GetGameObject():SetActive(false)
     else
-      ;
-      (listItem:GetGameObject()):SetActive(true)
+      listItem:GetGameObject():SetActive(true)
       self:_SetListItemData(listItem, itemIndex)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13GetPiecePopUp._SetListItemData = function(self, listItem, index)
-  -- function num : 0_9 , upvalues : _ENV
-  local quest = (self._questInfoList)[index]
+function UICN13GetPiecePopUp:_SetListItemData(listItem, index)
+  local quest = self._questInfoList[index]
   listItem:SetData(self._campaign, quest, function(v)
-    -- function num : 0_9_0 , upvalues : self
     self:ListItemOnClick(v)
-  end
-, function(matid, pos)
-    -- function num : 0_9_1 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "ItemTips", matid, pos)
-  end
-, self._questComponent)
+  end, function(matid, pos)
+    UIWidgetHelper.SetAwardItemTips(self, "ItemTips", matid, pos)
+  end, self._questComponent)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13GetPiecePopUp.ListItemOnClick = function(self, questID)
-  -- function num : 0_10 , upvalues : _ENV
-  if not (self._campaign):CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._campaign)._id)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
+function UICN13GetPiecePopUp:ListItemOnClick(questID)
+  if not self._campaign:CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaign._id)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
     self:CloseDialog()
-    return 
+    return
   end
-  ;
-  (self._questComponent):Start_HandleQuestTake(questID, function(res, rewards)
-    -- function num : 0_10_0 , upvalues : self, _ENV
+  self._questComponent:Start_HandleQuestTake(questID, function(res, rewards)
     self:_OnReceiveRewards(res, rewards)
     self:UnLock("UICN13PerfectPuzzle:UIQuestGet")
     self:_RefreshList(self._dynamicListRowSize, self._taskList, nil)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PerfectPuzzleEntryRefresh)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.PerfectPuzzleEntryRefresh)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13GetPiecePopUp.Second2TimeStr = function(self, second)
-  -- function num : 0_11 , upvalues : _ENV
-  local sec = (math.floor)(second % 60)
-  local min = (math.floor)(second / 60 % 60)
-  local hour = ((math.floor)(second / 60 / 60))
-  local secStr = nil
+function UICN13GetPiecePopUp:Second2TimeStr(second)
+  local sec = math.floor(second % 60)
+  local min = math.floor(second / 60 % 60)
+  local hour = math.floor(second / 60 / 60)
+  local secStr
   if sec < 10 then
     secStr = "0" .. sec
   else
     secStr = sec
   end
-  local minStr = nil
+  local minStr
   if min < 10 then
     minStr = "0" .. min
   else
     minStr = min
   end
-  local hourStr = nil
+  local hourStr
   if hour < 10 then
     hourStr = "0" .. hour
   else
@@ -245,51 +175,33 @@ UICN13GetPiecePopUp.Second2TimeStr = function(self, second)
   return str
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13GetPiecePopUp._OnReceiveRewards = function(self, res, rewards)
-  -- function num : 0_12 , upvalues : _ENV
+function UICN13GetPiecePopUp:_OnReceiveRewards(res, rewards)
   if self.view == nil then
-    return 
+    return
   end
   if res:GetSucc() then
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
+    UIActivityHelper.ShowUIGetRewards(rewards)
   else
-    ;
-    (self._campaign):CheckErrorCode(res.m_result, function()
-    -- function num : 0_12_0 , upvalues : self
-    self:_RefreshList(self._dynamicListRowSize, self._taskList, nil)
-  end
-, function()
-    -- function num : 0_12_1 , upvalues : self
-    self:CloseDialog()
-  end
-)
+    self._campaign:CheckErrorCode(res.m_result, function()
+      self:_RefreshList(self._dynamicListRowSize, self._taskList, nil)
+    end, function()
+      self:CloseDialog()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13GetPiecePopUp.BgOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  if not (self._campaign):CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._campaign)._id)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
+function UICN13GetPiecePopUp:BgOnClick(go)
+  if not self._campaign:CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaign._id)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
   end
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13GetPiecePopUp.CloseBtnOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
-  if not (self._campaign):CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._campaign)._id)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
+function UICN13GetPiecePopUp:CloseBtnOnClick(go)
+  if not self._campaign:CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaign._id)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
   end
   self:CloseDialog()
 end
-
-

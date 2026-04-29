@@ -1,300 +1,182 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/fishing/data/homeland_fishing_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandFishingConst", Object)
 HomelandFishingConst = HomelandFishingConst
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandFishingConst.Constructor = function(self)
-  -- function num : 0_0
+function HomelandFishingConst:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingConst.GetThrowPowerSpeed = function()
-  -- function num : 0_1 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_fishing).ThrowPowerSpeed
+function HomelandFishingConst.GetThrowPowerSpeed()
+  local cfg = Cfg.cfg_homeland_fishing.ThrowPowerSpeed
   return cfg.Value / 1000
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingConst.GetThrowMinDistance = function()
-  -- function num : 0_2 , upvalues : _ENV
-  return ((Cfg.cfg_homeland_fishing).ThrowMinDistance).Value / 1000
+function HomelandFishingConst.GetThrowMinDistance()
+  return Cfg.cfg_homeland_fishing.ThrowMinDistance.Value / 1000
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingConst.GetThrowMaxDistance = function()
-  -- function num : 0_3 , upvalues : _ENV
-  return ((Cfg.cfg_homeland_fishing).ThrowMaxDistance).Value / 1000
+function HomelandFishingConst.GetThrowMaxDistance()
+  return Cfg.cfg_homeland_fishing.ThrowMaxDistance.Value / 1000
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingConst.GetCurrentFishRod = function()
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandFishingConst.GetCurrentFishRod()
   return HomelandFishRod:New()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingConst.GetBiteFish = function()
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandFishingConst.GetBiteFish()
   return HomelandFishingConst.BitFish
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingConst.SetBitFishId = function(fishId)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
+function HomelandFishingConst.SetBitFishId(fishId)
   HomelandFishingConst.BitFish = HomelandFish:New(fishId)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingConst.GetWishingFishInfo = function()
-  -- function num : 0_7 , upvalues : _ENV
+function HomelandFishingConst.GetWishingFishInfo()
   return HomelandFishingConst.WishingFishInfo
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingConst.SettWishingFishInfo = function(info)
-  -- function num : 0_8 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function HomelandFishingConst.SettWishingFishInfo(info)
   HomelandFishingConst.WishingFishInfo = info
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingConst._GetFishingType = function()
-  -- function num : 0_9 , upvalues : _ENV
-  local fishingtype = nil
-  local match = (HomelandFishMatchManager:GetInstance()):GetCurFishMatch()
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  local homelandClient = (homelandModule:GetUIModule()):GetClient()
-  local character = (homelandClient:CharacterManager()):MainCharacterController()
+function HomelandFishingConst._GetFishingType()
+  local fishingtype
+  local match = HomelandFishMatchManager:GetInstance():GetCurFishMatch()
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
+  local homelandClient = homelandModule:GetUIModule():GetClient()
+  local character = homelandClient:CharacterManager():MainCharacterController()
   local isMatch = character:GetIsFishMach()
   if match and isMatch then
-    local cfg = (Cfg.cfg_homeland_fishmatch_main)[match:GetMainID()]
+    local cfg = Cfg.cfg_homeland_fishmatch_main[match:GetMainID()]
     fishingtype = cfg.Type
   else
-    do
-      fishingtype = FishingEntryType.FET_Normal
-      return fishingtype
-    end
+    fishingtype = FishingEntryType.FET_Normal
   end
+  return fishingtype
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingConst.GetPlayerPowerNormalSpeed = function()
-  -- function num : 0_10 , upvalues : _ENV
-  local type = (HomelandFishingConst._GetFishingType)()
+function HomelandFishingConst.GetPlayerPowerNormalSpeed()
+  local type = HomelandFishingConst._GetFishingType()
   if type == FishingEntryType.FET_FishingCampaignChallenge then
-    return ((Cfg.cfg_homeland_fishing).CampaignPlayerPowerNormalSpeed).Value / 1000
+    return Cfg.cfg_homeland_fishing.CampaignPlayerPowerNormalSpeed.Value / 1000
+  elseif type == FishingEntryType.FET_FishingPetChallenge then
+    return Cfg.cfg_homeland_fishing.PetPlayerPowerNormalSpeed.Value / 1000
   else
-    if type == FishingEntryType.FET_FishingPetChallenge then
-      return ((Cfg.cfg_homeland_fishing).PetPlayerPowerNormalSpeed).Value / 1000
-    else
-      return ((Cfg.cfg_homeland_fishing).PlayerPowerNormalSpeed).Value / 1000
-    end
+    return Cfg.cfg_homeland_fishing.PlayerPowerNormalSpeed.Value / 1000
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingConst.GetPlayerPowerHighSpeed = function()
-  -- function num : 0_11 , upvalues : _ENV
-  local type = (HomelandFishingConst._GetFishingType)()
+function HomelandFishingConst.GetPlayerPowerHighSpeed()
+  local type = HomelandFishingConst._GetFishingType()
   if type == FishingEntryType.FET_FishingCampaignChallenge then
-    return ((Cfg.cfg_homeland_fishing).CampaignPlayerPowerHighSpeed).Value / 1000
+    return Cfg.cfg_homeland_fishing.CampaignPlayerPowerHighSpeed.Value / 1000
+  elseif type == FishingEntryType.FET_FishingPetChallenge then
+    return Cfg.cfg_homeland_fishing.PetPlayerPowerHighSpeed.Value / 1000
   else
-    if type == FishingEntryType.FET_FishingPetChallenge then
-      return ((Cfg.cfg_homeland_fishing).PetPlayerPowerHighSpeed).Value / 1000
-    else
-      return ((Cfg.cfg_homeland_fishing).PlayerPowerHighSpeed).Value / 1000
-    end
+    return Cfg.cfg_homeland_fishing.PlayerPowerHighSpeed.Value / 1000
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingConst.GetFishBiteTime = function()
-  -- function num : 0_12 , upvalues : _ENV
-  local min, max = nil, nil
-  local type = (HomelandFishingConst._GetFishingType)()
+function HomelandFishingConst.GetFishBiteTime()
+  local min, max
+  local type = HomelandFishingConst._GetFishingType()
   if type == FishingEntryType.FET_FishingCampaignChallenge then
-    min = ((Cfg.cfg_homeland_fishing).CampaignFishBiteMinTime).Value / 1000
-    max = ((Cfg.cfg_homeland_fishing).CampaignFishBiteMaxTime).Value / 1000
+    min = Cfg.cfg_homeland_fishing.CampaignFishBiteMinTime.Value / 1000
+    max = Cfg.cfg_homeland_fishing.CampaignFishBiteMaxTime.Value / 1000
+  elseif type == FishingEntryType.FET_FishingPetChallenge then
+    min = Cfg.cfg_homeland_fishing.PetFishBiteMinTime.Value / 1000
+    max = Cfg.cfg_homeland_fishing.PetFishBiteMaxTime.Value / 1000
   else
-    if type == FishingEntryType.FET_FishingPetChallenge then
-      min = ((Cfg.cfg_homeland_fishing).PetFishBiteMinTime).Value / 1000
-      max = ((Cfg.cfg_homeland_fishing).PetFishBiteMaxTime).Value / 1000
-    else
-      min = ((Cfg.cfg_homeland_fishing).FishBiteMinTime).Value / 1000
-      max = ((Cfg.cfg_homeland_fishing).FishBiteMaxTime).Value / 1000
-    end
+    min = Cfg.cfg_homeland_fishing.FishBiteMinTime.Value / 1000
+    max = Cfg.cfg_homeland_fishing.FishBiteMaxTime.Value / 1000
   end
-  return (math.random)(min, max)
+  return math.random(min, max)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingConst.GetAnimationCfg = function(animName)
-  -- function num : 0_13 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
+function HomelandFishingConst.GetAnimationCfg(animName)
   if not HomelandFishingConst.Animations then
     HomelandFishingConst.Animations = {}
     local t = {}
     t.name = "FishThrowSuccess"
     t.rodname = "toast_success"
     t.length = 1533
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (HomelandFishingConst.Animations)[FishgingAnimation.FishThrowSuccess] = t
+    HomelandFishingConst.Animations[FishgingAnimation.FishThrowSuccess] = t
     t = {}
     t.name = "FishThrowFailure"
     t.rodname = "toss_failure"
     t.length = 1000
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (HomelandFishingConst.Animations)[FishgingAnimation.FishThrowFailure] = t
+    HomelandFishingConst.Animations[FishgingAnimation.FishThrowFailure] = t
     t = {}
     t.name = "CancelFish"
     t.rodname = "collect"
     t.length = 1667
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (HomelandFishingConst.Animations)[FishgingAnimation.FishCancel] = t
+    HomelandFishingConst.Animations[FishgingAnimation.FishCancel] = t
     t = {}
     t.name = "FishBite"
     t.rodname = "fish_bite"
     t.length = 2667
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (HomelandFishingConst.Animations)[FishgingAnimation.FishPowerChange] = t
+    HomelandFishingConst.Animations[FishgingAnimation.FishPowerChange] = t
     t = {}
     t.name = "FishingPowerGreat"
     t.rodname = "fish_power_greater"
     t.length = 1000
-    -- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (HomelandFishingConst.Animations)[FishgingAnimation.FishPowerGreate] = t
+    HomelandFishingConst.Animations[FishgingAnimation.FishPowerGreate] = t
     t = {}
     t.name = "PersonPowerGreat"
     t.rodname = "person_power_greater"
     t.length = 933
-    -- DECOMPILER ERROR at PC65: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (HomelandFishingConst.Animations)[FishgingAnimation.PersonPowerGreat] = t
+    HomelandFishingConst.Animations[FishgingAnimation.PersonPowerGreat] = t
     t = {}
     t.name = "FishSuccess"
     t.rodname = "fish_success"
     t.length = 2600
-    -- DECOMPILER ERROR at PC75: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (HomelandFishingConst.Animations)[FishgingAnimation.FishSuccess] = t
+    HomelandFishingConst.Animations[FishgingAnimation.FishSuccess] = t
     t = {}
     t.name = "DecouplingFishPowerGreat"
     t.rodname = "fish_power_greater_failure"
     t.length = 1133
-    -- DECOMPILER ERROR at PC85: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (HomelandFishingConst.Animations)[FishgingAnimation.DecouplingFishPowerGreat] = t
+    HomelandFishingConst.Animations[FishgingAnimation.DecouplingFishPowerGreat] = t
     t = {}
     t.name = "DecouplingPersonPowerGreat"
     t.rodname = "person_power_greater_failure"
     t.length = 1500
-    -- DECOMPILER ERROR at PC95: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (HomelandFishingConst.Animations)[FishgingAnimation.DecouplingPersonPowerGreat] = t
+    HomelandFishingConst.Animations[FishgingAnimation.DecouplingPersonPowerGreat] = t
     t = {}
     t.name = "FishFailure"
     t.rodname = "fish_failure"
     t.length = 1500
-    -- DECOMPILER ERROR at PC105: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (HomelandFishingConst.Animations)[FishgingAnimation.FishFailure] = t
+    HomelandFishingConst.Animations[FishgingAnimation.FishFailure] = t
     t = {}
     t.name = "CancelFishing"
     t.rodname = "collect"
     t.length = 0
-    -- DECOMPILER ERROR at PC115: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (HomelandFishingConst.Animations)[FishgingAnimation.CancelFishing] = t
+    HomelandFishingConst.Animations[FishgingAnimation.CancelFishing] = t
   end
-  do
-    return (HomelandFishingConst.Animations)[animName]
-  end
+  return HomelandFishingConst.Animations[animName]
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingConst.GetFishingPositionCfg = function(positionId)
-  -- function num : 0_14 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_fishing_postion)[positionId]
-  if not cfg then
-    cfg = (Cfg.cfg_homeland_wishingcoin_fishing_postion)[positionId]
-  end
-  if not cfg then
-    cfg = (Cfg.cfg_homeland_rare_fishing_postion)[positionId]
-  end
+function HomelandFishingConst.GetFishingPositionCfg(positionId)
+  local cfg = Cfg.cfg_homeland_fishing_postion[positionId]
+  cfg = cfg or Cfg.cfg_homeland_wishingcoin_fishing_postion[positionId]
+  cfg = cfg or Cfg.cfg_homeland_rare_fishing_postion[positionId]
   return cfg
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingConst.GetDefaultFishingPosition = function()
-  -- function num : 0_15 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_fishing_postion)({Type = HomelandFishingPointType.River})
-  for k,v in pairs(cfg) do
-    do return v.ID end
+function HomelandFishingConst.GetDefaultFishingPosition()
+  local cfg = Cfg.cfg_homeland_fishing_postion({
+    Type = HomelandFishingPointType.River
+  })
+  for k, v in pairs(cfg) do
+    return v.ID
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingConst.GetWishingCoinPositionId = function()
-  -- function num : 0_16 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
-
+function HomelandFishingConst.GetWishingCoinPositionId()
   if not HomelandFishingConst._testId then
     HomelandFishingConst._testId = {}
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (HomelandFishingConst._testId)[#HomelandFishingConst._testId + 1] = 5609301
+    HomelandFishingConst._testId[#HomelandFishingConst._testId + 1] = 5609301
   end
   return HomelandFishingConst._testId
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingConst.SetWishingCoinPositionId = function()
-  -- function num : 0_17 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R0 in 'UnsetPending'
-
+function HomelandFishingConst.SetWishingCoinPositionId()
   HomelandFishingConst._testId = {}
 end
-
-

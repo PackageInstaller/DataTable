@@ -1,152 +1,103 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n17/daily_plan/ui_n17_daily_plan_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN17DailyPlanController", UIController)
 UIN17DailyPlanController = UIN17DailyPlanController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN17DailyPlanController._SetRawImageBtn = function(self, widgetName, size, urlNormal, urlClick, callback)
-  -- function num : 0_0 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRawImageBtn")
+function UIN17DailyPlanController:_SetRawImageBtn(widgetName, size, urlNormal, urlClick, callback)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRawImageBtn")
   obj:SetData(size, urlNormal, urlClick, callback)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN17DailyPlanController:LoadDataOnEnter(TT, res, uiParams)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_N17
   self._componentCycleQuestId = ECampaignN17ComponentID.ECAMPAIGN_N17_CYCLE_QUEST
   self._componentStoryId = ECampaignN17ComponentID.ECAMPAIGN_N17_STORY
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, self._campaignType, self._componentCycleQuestId, self._componentStoryId)
+  self._campaign:LoadCampaignInfo(TT, res, self._campaignType, self._componentCycleQuestId, self._componentStoryId)
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, nil, nil)
-    return 
+    self._campaign:CheckErrorCode(res.m_result, nil, nil)
+    return
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanController.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN17DailyPlanController:OnShow(uiParams)
   self._inHome = uiParams[1]
   self:_SetTabBtns()
   self:_SetTabPages()
   self:_SetTabSelect(self._inHome and 2 or 1)
   self:_SetInHomeMode()
-  ;
-  ((self._campaign):GetLocalProcess()):OnOpenPlanList()
+  self._campaign:GetLocalProcess():OnOpenPlanList()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanController.OnHide = function(self)
-  -- function num : 0_3
+function UIN17DailyPlanController:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanController._Refresh = function(self)
-  -- function num : 0_4
+function UIN17DailyPlanController:_Refresh()
   local index = self._tabIndex
-  local components = {(self._campaign):GetComponent(self._componentStoryId), (self._campaign):GetComponent(self._componentCycleQuestId)}
-  ;
-  ((self._tabPages)[index]):SetData(components[index], self._inHome, function()
-    -- function num : 0_4_0 , upvalues : self
+  local components = {
+    self._campaign:GetComponent(self._componentStoryId),
+    self._campaign:GetComponent(self._componentCycleQuestId)
+  }
+  self._tabPages[index]:SetData(components[index], self._inHome, function()
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanController._SetInHomeMode = function(self)
-  -- function num : 0_5
+function UIN17DailyPlanController:_SetInHomeMode()
   if self._inHome then
-    (((self._tabBtns)[1]):GetGameObject()):SetActive(false)
+    self._tabBtns[1]:GetGameObject():SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanController._SetTabBtns = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local title = {"str_n17_daily_plan_tab_btn_explore", "str_n17_daily_plan_tab_btn_home"}
-  self._tabBtns = (UIWidgetHelper.SpawnObjects)(self, "_tabBtns", "UIActivityCommonTextTabBtn", #title)
-  for i,v in ipairs(self._tabBtns) do
+function UIN17DailyPlanController:_SetTabBtns()
+  local title = {
+    "str_n17_daily_plan_tab_btn_explore",
+    "str_n17_daily_plan_tab_btn_home"
+  }
+  self._tabBtns = UIWidgetHelper.SpawnObjects(self, "_tabBtns", "UIActivityCommonTextTabBtn", #title)
+  for i, v in ipairs(self._tabBtns) do
     v:SetData(i, {
-indexWidgets = {}
-, 
-onoffWidgets = {
-{"OnBtn"}
-, 
-{"OffBtn"}
-}
-, 
-lockWidgets = {}
-, 
-titleWidgets = {"txtTitle_off", "txtTitle_on"}
-, titleText = (StringTable.Get)(title[i]), callback = function(index, isOffBtnClick)
-    -- function num : 0_6_0 , upvalues : self
-    if isOffBtnClick then
-      self:_SetTabSelect(index)
-    end
-  end
-})
+      indexWidgets = {},
+      onoffWidgets = {
+        {"OnBtn"},
+        {"OffBtn"}
+      },
+      lockWidgets = {},
+      titleWidgets = {
+        "txtTitle_off",
+        "txtTitle_on"
+      },
+      titleText = StringTable.Get(title[i]),
+      callback = function(index, isOffBtnClick)
+        if isOffBtnClick then
+          self:_SetTabSelect(index)
+        end
+      end
+    })
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanController._SetTabSelect = function(self, index)
-  -- function num : 0_7
+function UIN17DailyPlanController:_SetTabSelect(index)
   if self._tabIndex == index then
-    return 
+    return
   end
   self._tabIndex = index
   for i = 1, #self._tabBtns do
-    ((self._tabBtns)[i]):SetSelected(i == index)
-    ;
-    (((self._tabPages)[i]):GetGameObject()):SetActive(i == index)
+    self._tabBtns[i]:SetSelected(i == index)
+    self._tabPages[i]:GetGameObject():SetActive(i == index)
   end
   self:_Refresh()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanController._SetTabPages = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN17DailyPlanController:_SetTabPages()
   self._tabPages = {}
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._tabPages)[1] = (UIWidgetHelper.SpawnObject)(self, "_tab_Explore", "UIN17DailyPlanTabExplore")
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._tabPages)[2] = (UIWidgetHelper.SpawnObject)(self, "_tab_Home", "UIN17DailyPlanTabHome")
+  self._tabPages[1] = UIWidgetHelper.SpawnObject(self, "_tab_Explore", "UIN17DailyPlanTabExplore")
+  self._tabPages[2] = UIWidgetHelper.SpawnObject(self, "_tab_Home", "UIN17DailyPlanTabHome")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanController.CloseBtnOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", "UIN17DailyPlanController_anim2", 500, function()
-    -- function num : 0_9_0 , upvalues : self
+function UIN17DailyPlanController:CloseBtnOnClick(go)
+  UIWidgetHelper.PlayAnimation(self, "_anim", "UIN17DailyPlanController_anim2", 500, function()
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanController.AssistantOnClick = function(self, go)
-  -- function num : 0_10
+function UIN17DailyPlanController:AssistantOnClick(go)
 end
-
-

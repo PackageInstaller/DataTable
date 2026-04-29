@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/first_wave_enter_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("FirstWaveEnterSystem", MainStateSystem)
 FirstWaveEnterSystem = FirstWaveEnterSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-FirstWaveEnterSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function FirstWaveEnterSystem:_GetMainStateID()
   return GameStateID.FirstWaveEnter
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FirstWaveEnterSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function FirstWaveEnterSystem:_OnMainStateEnter(TT)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   self:_DoRenderShowUIBattleStart(TT, teamEntity)
   local buffseqs = self:_DoLogicGameStart()
   self:_DoRenderAutoAddBuff(TT, buffseqs)
@@ -27,52 +17,29 @@ FirstWaveEnterSystem._OnMainStateEnter = function(self, TT)
   self:_DologicGotoNextState()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FirstWaveEnterSystem._DoLogicGameStart = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function FirstWaveEnterSystem:_DoLogicGameStart()
   if not self._isGameStart then
     self._isGameStart = true
     local GameStartBuffs = {}
-    ;
-    ((self._world):GetService("Battle")):InitWordBuff(GameStartBuffs)
-    ;
-    ((self._world):GetService("Battle")):InitTalePetBuff(GameStartBuffs)
-    ;
-    ((self._world):GetService("Affix")):InitAffixBuff(GameStartBuffs)
-    ;
-    ((self._world):GetService("Talent")):InitTalentBuff(GameStartBuffs)
-    ;
-    ((self._world):GetService("AutoBeadLogic")):InitAutoBeadBuff(GameStartBuffs)
-    ;
-    ((self._world):GetService("Trigger")):Notify(NTGameStart:New())
+    self._world:GetService("Battle"):InitWordBuff(GameStartBuffs)
+    self._world:GetService("Battle"):InitTalePetBuff(GameStartBuffs)
+    self._world:GetService("Affix"):InitAffixBuff(GameStartBuffs)
+    self._world:GetService("Talent"):InitTalentBuff(GameStartBuffs)
+    self._world:GetService("AutoBeadLogic"):InitAutoBeadBuff(GameStartBuffs)
+    self._world:GetService("Trigger"):Notify(NTGameStart:New())
     return GameStartBuffs
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FirstWaveEnterSystem._DologicGotoNextState = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.FirstWaveEnterFinish, 1)
+function FirstWaveEnterSystem:_DologicGotoNextState()
+  self._world:EventDispatcher():Dispatch(GameEventType.FirstWaveEnterFinish, 1)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FirstWaveEnterSystem._DoRenderShowUIBattleStart = function(self, TT, teamEntity)
-  -- function num : 0_4
+function FirstWaveEnterSystem:_DoRenderShowUIBattleStart(TT, teamEntity)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FirstWaveEnterSystem._DoRenderAutoAddBuff = function(self, TT, buffseqs)
-  -- function num : 0_5
+function FirstWaveEnterSystem:_DoRenderAutoAddBuff(TT, buffseqs)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FirstWaveEnterSystem._DoRendeDestroyBattleEnterResource = function(self, TT)
-  -- function num : 0_6
+function FirstWaveEnterSystem:_DoRendeDestroyBattleEnterResource(TT)
 end
-
-

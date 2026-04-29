@@ -1,18 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/loading_manager/loading_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-LoadingType = {STATICPIC = 0, PROGRESS = 1, BOTTOM = 2}
-LoadingHandlerName = {Battle_Loading = "BattleLoadingHandler", Battle_Exit = "BattleExitLoadingHandler", Exit_Core_Game = "ExitCoreGameHandler", ReStart_Core_Game = "ReStartCoreGameHandler", Aircraft_Exit = "AircraftExitLoadingHandler", Aircraft_Room_Exit = "AircraftRoomExitLoadingHandler", Aircraft_Enter = "AircraftEnterLoadingHandler", Maze_Enter = "MazeEnterLoadingHandler", Maze_Exit = "MazeExitLoadingHandler", Res_Exit = "ResExitLoadingHandler", Shop_Enter = "ShopEnterLoadingHandler", DrawCard_Enter = "UIDrawCardLoadingEnter", DrawCard_Enter_UL = "UIDrawCardLoadingEnterUL", DrawCard_Exit = "UIDrawCardLoadingExit", Discovery_Enter = "UIDiscoveryLoadingEnterHandler", Cutscene_Enter = "CutsceneLoadingHandler", Cutscene_Exit = "CutsceneExitLoadingHandler", Aircraft2Drawcard = "AircraftToDrawcardLoading", Homeland_Enter = "HomelandEnterLoadingHandler", Homeland_Exit = "HomelandExitLoadingHandler", Season_Enter = "SeasonEnterLoadingHandler", Season_Exit = "SeasonExitLoadingHandler", CorGamePerformanceTest_Enter = "CoreGamePerformanceTestLoadingHandler", CorGamePerformanceTest_Exit = "CutsceneExitLoadingHandler", SeasonMaze_Enter = "SeasonMazeLoadingEnter", SeasonMaze_Exit = "SeasonMazeLoadingExit", SeasonMain_OnceMission_Enter = "SeasonMainOnceMissionEnter"}
-local EnterUILoadingHandler = {[LoadingHandlerName.Aircraft_Enter] = true, [LoadingHandlerName.Aircraft_Room_Exit] = true, [LoadingHandlerName.Aircraft_Exit] = true, [LoadingHandlerName.Maze_Enter] = true, [LoadingHandlerName.Maze_Exit] = true, [LoadingHandlerName.DrawCard_Enter] = true, [LoadingHandlerName.DrawCard_Exit] = true}
+LoadingType = {
+  STATICPIC = 0,
+  PROGRESS = 1,
+  BOTTOM = 2
+}
+LoadingHandlerName = {
+  Battle_Loading = "BattleLoadingHandler",
+  Battle_Exit = "BattleExitLoadingHandler",
+  Exit_Core_Game = "ExitCoreGameHandler",
+  ReStart_Core_Game = "ReStartCoreGameHandler",
+  Aircraft_Exit = "AircraftExitLoadingHandler",
+  Aircraft_Room_Exit = "AircraftRoomExitLoadingHandler",
+  Aircraft_Enter = "AircraftEnterLoadingHandler",
+  Maze_Enter = "MazeEnterLoadingHandler",
+  Maze_Exit = "MazeExitLoadingHandler",
+  Res_Exit = "ResExitLoadingHandler",
+  Shop_Enter = "ShopEnterLoadingHandler",
+  DrawCard_Enter = "UIDrawCardLoadingEnter",
+  DrawCard_Enter_UL = "UIDrawCardLoadingEnterUL",
+  DrawCard_Exit = "UIDrawCardLoadingExit",
+  Discovery_Enter = "UIDiscoveryLoadingEnterHandler",
+  Cutscene_Enter = "CutsceneLoadingHandler",
+  Cutscene_Exit = "CutsceneExitLoadingHandler",
+  Aircraft2Drawcard = "AircraftToDrawcardLoading",
+  Homeland_Enter = "HomelandEnterLoadingHandler",
+  Homeland_Exit = "HomelandExitLoadingHandler",
+  Season_Enter = "SeasonEnterLoadingHandler",
+  Season_Exit = "SeasonExitLoadingHandler",
+  CorGamePerformanceTest_Enter = "CoreGamePerformanceTestLoadingHandler",
+  CorGamePerformanceTest_Exit = "CutsceneExitLoadingHandler",
+  SeasonMaze_Enter = "SeasonMazeLoadingEnter",
+  SeasonMaze_Exit = "SeasonMazeLoadingExit",
+  SeasonMain_OnceMission_Enter = "SeasonMainOnceMissionEnter"
+}
+local EnterUILoadingHandler = {
+  [LoadingHandlerName.Aircraft_Enter] = true,
+  [LoadingHandlerName.Aircraft_Room_Exit] = true,
+  [LoadingHandlerName.Aircraft_Exit] = true,
+  [LoadingHandlerName.Maze_Enter] = true,
+  [LoadingHandlerName.Maze_Exit] = true,
+  [LoadingHandlerName.DrawCard_Enter] = true,
+  [LoadingHandlerName.DrawCard_Exit] = true
+}
 _class("LoadingManager", Object)
 local unpack = table.unpack
 local LOADING_SCENE_NAME = "Loading.unity"
--- DECOMPILER ERROR at PC65: Confused about usage of register: R3 in 'UnsetPending'
 
-LoadingManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function LoadingManager:Constructor()
   self.loadingHandler = nil
   self.loadingHandlerName = nil
   self.targetLevelName = nil
@@ -23,232 +56,164 @@ LoadingManager.Constructor = function(self)
   self._interruptCallback = nil
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R3 in 'UnsetPending'
-
-LoadingManager.StartLoading = function(self, loadingHandlerName, targetLevelName, ...)
-  -- function num : 0_1 , upvalues : _ENV
+function LoadingManager:StartLoading(loadingHandlerName, targetLevelName, ...)
   self._isLoading = true
   self._interruptCallback = nil
-  ;
-  (ResourceManager:GetInstance()):SetSyncLoadNum(3)
+  ResourceManager:GetInstance():SetSyncLoadNum(3)
   self.loadingHandlerName = loadingHandlerName
   if not self.loadingHandlerName then
-    return 
+    return
   end
   local loadingHandler = _createInstance(self.loadingHandlerName)
   if not loadingHandler then
-    return 
+    return
   end
   if not loadingHandler:IsChildOf("LoadingHandler") then
-    (Log.fatal)("LoadingManager:StartLoading Fail,", self.loadingHandlerName, " is not inherited from LoadingHandler!")
-    return 
+    Log.fatal("LoadingManager:StartLoading Fail,", self.loadingHandlerName, " is not inherited from LoadingHandler!")
+    return
   end
   loadingHandler:SetProgressBar(self._progressBar)
   self.loadingHandler = loadingHandler
   self.targetLevelName = targetLevelName
-  self.loadingParams = {...}
+  self.loadingParams = {
+    ...
+  }
   self._latestHandler = loadingHandlerName
   self:StartTask(LoadingManager.Load, self)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R3 in 'UnsetPending'
-
-LoadingManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_2
+function LoadingManager:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R3 in 'UnsetPending'
-
-LoadingManager.Load = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV, LOADING_SCENE_NAME, unpack
-  (Log.debug)("[HomelandProfile] (LoadingManager:Load) StartLoadTask")
-  local tik = (os.clock)()
-  local pm = (GameGlobal.GetModule)(PetAudioModule)
+function LoadingManager:Load(TT)
+  Log.debug("[HomelandProfile] (LoadingManager:Load) StartLoadTask")
+  local tik = os.clock()
+  local pm = GameGlobal.GetModule(PetAudioModule)
   pm:StopAll()
-  ;
-  (AudioHelperController.StopAllUIVoice)()
-  if ((GameGlobal.UIStateManager)()):CurUIStateType() == UIStateType.Invalid or (self.loadingHandler):NeedSwitchState() then
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UICommonLoading, (self.loadingHandler):LoadingType(), (self.loadingHandler):LoadingID())
-    while ((GameGlobal.UIStateManager)()):CurUIStateType() ~= UIStateType.UICommonLoading do
+  AudioHelperController.StopAllUIVoice()
+  if GameGlobal.UIStateManager():CurUIStateType() == UIStateType.Invalid or self.loadingHandler:NeedSwitchState() then
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UICommonLoading, self.loadingHandler:LoadingType(), self.loadingHandler:LoadingID())
+    while GameGlobal.UIStateManager():CurUIStateType() ~= UIStateType.UICommonLoading do
       YIELD(TT)
     end
   else
-    local showTaskid = ((GameGlobal.UIStateManager)()):ShowDialog("UICommonLoading", (self.loadingHandler):LoadingType(), (self.loadingHandler):LoadingID())
+    local showTaskid = GameGlobal.UIStateManager():ShowDialog("UICommonLoading", self.loadingHandler:LoadingType(), self.loadingHandler:LoadingID())
     JOIN(TT, showTaskid)
   end
-  do
-    ;
-    (Log.debug)("[HomelandProfile] (LoadingManager:Load) ShowLoadingUI")
-    ;
-    (self._progressBar):Reset()
-    if self.targetLevelName then
-      (Log.debug)("[HomelandProfile] (LoadingManager:Load) StartLoadLoadingScene -> " .. LOADING_SCENE_NAME)
-      local req = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, LOADING_SCENE_NAME, LoadType.Unity)
-      req:Dispose()
-      ;
-      (Log.debug)("[HomelandProfile] (LoadingManager:Load) FinishLoadLoadingScene ->" .. LOADING_SCENE_NAME)
-    end
-    do
-      ;
-      (self.loadingHandler):PreLoadBeforeLoadLevel(TT, unpack(self.loadingParams, 1, (table.maxn)(self.loadingParams)))
-      local sceneReq = nil
-      if self.targetLevelName then
-        (Log.debug)("[HomelandProfile] (LoadingManager:Load) StartLoadHomelandScene -> ", self.targetLevelName)
-        YIELD(TT)
-        sceneReq = (self.loadingHandler):LoadLevel(TT, self.targetLevelName)
-        ;
-        (Log.debug)("[HomelandProfile] (LoadingManager:Load) FinishLoadLoadingScene ->", self.targetLevelName)
-      end
-      ;
-      (Log.debug)("[HomelandProfile] (LoadingManager:Load) StartPreLoadAfterLoadLevel")
-      ;
-      (self.loadingHandler):PreLoadAfterLoadLevel(TT, unpack(self.loadingParams, 1, (table.maxn)(self.loadingParams)))
-      ;
-      (Log.debug)("[HomelandProfile] (LoadingManager:Load) FinishPreLoadAfterLoadLevel")
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LoadLevelEnd, true)
-      if self:IsEnterUI() then
-        (self._progressBar):Complete()
-      end
-      local tok = (os.clock)() - tik
-      ;
-      (Log.prof)("LoadingManager:Load(TT) use time=", tok * 1000)
-      ;
-      (Log.debug)("[HomelandProfile] (LoadingManager:Load) FinishLoad ->" .. tok * 1000)
-    end
+  Log.debug("[HomelandProfile] (LoadingManager:Load) ShowLoadingUI")
+  self._progressBar:Reset()
+  if self.targetLevelName then
+    Log.debug("[HomelandProfile] (LoadingManager:Load) StartLoadLoadingScene -> " .. LOADING_SCENE_NAME)
+    local req = ResourceManager:GetInstance():AsyncLoadAsset(TT, LOADING_SCENE_NAME, LoadType.Unity)
+    req:Dispose()
+    Log.debug("[HomelandProfile] (LoadingManager:Load) FinishLoadLoadingScene ->" .. LOADING_SCENE_NAME)
   end
+  self.loadingHandler:PreLoadBeforeLoadLevel(TT, unpack(self.loadingParams, 1, table.maxn(self.loadingParams)))
+  local sceneReq
+  if self.targetLevelName then
+    Log.debug("[HomelandProfile] (LoadingManager:Load) StartLoadHomelandScene -> ", self.targetLevelName)
+    YIELD(TT)
+    sceneReq = self.loadingHandler:LoadLevel(TT, self.targetLevelName)
+    Log.debug("[HomelandProfile] (LoadingManager:Load) FinishLoadLoadingScene ->", self.targetLevelName)
+  end
+  Log.debug("[HomelandProfile] (LoadingManager:Load) StartPreLoadAfterLoadLevel")
+  self.loadingHandler:PreLoadAfterLoadLevel(TT, unpack(self.loadingParams, 1, table.maxn(self.loadingParams)))
+  Log.debug("[HomelandProfile] (LoadingManager:Load) FinishPreLoadAfterLoadLevel")
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.LoadLevelEnd, true)
+  if self:IsEnterUI() then
+    self._progressBar:Complete()
+  end
+  local tok = os.clock() - tik
+  Log.prof("LoadingManager:Load(TT) use time=", tok * 1000)
+  Log.debug("[HomelandProfile] (LoadingManager:Load) FinishLoad ->" .. tok * 1000)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R3 in 'UnsetPending'
-
-LoadingManager.Excute = function(self, value)
-  -- function num : 0_4 , upvalues : _ENV
-  (ResourceManager:GetInstance()):SetSyncLoadNum(0)
+function LoadingManager:Excute(value)
+  ResourceManager:GetInstance():SetSyncLoadNum(0)
   self:onLoadingFinish()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R3 in 'UnsetPending'
-
-LoadingManager.StartTask = function(self, func, ...)
-  -- function num : 0_5 , upvalues : _ENV
-  (TaskManager:GetInstance()):StartTask(func, ...)
+function LoadingManager:StartTask(func, ...)
+  TaskManager:GetInstance():StartTask(func, ...)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R3 in 'UnsetPending'
-
-LoadingManager.IsEnterUI = function(self)
-  -- function num : 0_6 , upvalues : EnterUILoadingHandler
+function LoadingManager:IsEnterUI()
   return EnterUILoadingHandler[self.loadingHandlerName]
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R3 in 'UnsetPending'
-
-LoadingManager.IsLoading = function(self)
-  -- function num : 0_7
-  if not self._isLoading then
-    return self._isCoreGameLoading
-  end
+function LoadingManager:IsLoading()
+  return self._isLoading or self._isCoreGameLoading
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R3 in 'UnsetPending'
-
-LoadingManager.Interrupt = function(self, cb)
-  -- function num : 0_8 , upvalues : _ENV
+function LoadingManager:Interrupt(cb)
   if not self:IsLoading() then
-    (Log.warn)("not loading now,cant interrupt")
-    return 
+    Log.warn("not loading now,cant interrupt")
+    return
   end
   if self._interruptCallback and not cb then
-    (Log.warn)("cant set interrupt callback nil")
-    return 
+    Log.warn("cant set interrupt callback nil")
+    return
   end
   if self._isCoreGameLoading then
-    (Log.debug)("[Loading] 尝试打断局内loading")
+    Log.debug("[Loading] 尝试打断局内loading")
   end
   if cb then
-    ((GameGlobal.UIStateManager)()):Lock("WaitToInterruptLoading")
-    ;
-    ((GameGlobal.UIStateManager)()):ShowBusy(true)
+    GameGlobal.UIStateManager():Lock("WaitToInterruptLoading")
+    GameGlobal.UIStateManager():ShowBusy(true)
     self._interruptCallback = cb
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R3 in 'UnsetPending'
-
-LoadingManager.CoreGameLoadingStart = function(self)
-  -- function num : 0_9
+function LoadingManager:CoreGameLoadingStart()
   self._isCoreGameLoading = true
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R3 in 'UnsetPending'
-
-LoadingManager.CoreGameLoadingFinish = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.debug)("[Loading] 局内loading结束")
+function LoadingManager:CoreGameLoadingFinish()
+  Log.debug("[Loading] 局内loading结束")
   self:onLoadingFinish()
   self._isCoreGameLoading = false
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R3 in 'UnsetPending'
-
-LoadingManager.onLoadingFinish = function(self)
-  -- function num : 0_11 , upvalues : _ENV, unpack
+function LoadingManager:onLoadingFinish()
   self._isLoading = false
-  do
-    if self._interruptCallback then
-      local cb = self._interruptCallback
-      self._interruptCallback = nil
-      ;
-      ((GameGlobal.UIStateManager)()):UnLock("WaitToInterruptLoading")
-      ;
-      ((GameGlobal.UIStateManager)()):ShowBusy(false)
-      if self._isCoreGameLoading then
-        (Log.debug)("[Loading] 执行局内打断回调")
-      else
-        ;
-        (Log.debug)("[Loading] 执行普通打断回调")
-      end
-      cb()
-      return 
+  if self._interruptCallback then
+    local cb = self._interruptCallback
+    self._interruptCallback = nil
+    GameGlobal.UIStateManager():UnLock("WaitToInterruptLoading")
+    GameGlobal.UIStateManager():ShowBusy(false)
+    if self._isCoreGameLoading then
+      Log.debug("[Loading] 执行局内打断回调")
+    else
+      Log.debug("[Loading] 执行普通打断回调")
     end
-    if self.loadingHandler then
-      (self.loadingHandler):LoadingFinish(unpack(self.loadingParams, 1, (table.maxn)(self.loadingParams)))
-    end
-    self.loadingHandler = nil
-    self.loadingHandlerName = nil
-    self.targetLevelName = nil
-    self.loadingParams = nil
+    cb()
+    return
   end
+  if self.loadingHandler then
+    self.loadingHandler:LoadingFinish(unpack(self.loadingParams, 1, table.maxn(self.loadingParams)))
+  end
+  self.loadingHandler = nil
+  self.loadingHandlerName = nil
+  self.targetLevelName = nil
+  self.loadingParams = nil
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R3 in 'UnsetPending'
-
-LoadingManager.CacheRT = function(self, rt)
-  -- function num : 0_12
+function LoadingManager:CacheRT(rt)
   self._rt = rt
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R3 in 'UnsetPending'
-
-LoadingManager.GetRT = function(self)
-  -- function num : 0_13
+function LoadingManager:GetRT()
   return self._rt
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R3 in 'UnsetPending'
-
-LoadingManager.ReleaseRT = function(self)
-  -- function num : 0_14
+function LoadingManager:ReleaseRT()
   if self._rt then
-    (self._rt):Release()
+    self._rt:Release()
     self._rt = nil
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R3 in 'UnsetPending'
-
-LoadingManager.FilterAndRandomLoadingID = function(self, ids)
-  -- function num : 0_15 , upvalues : _ENV
+function LoadingManager:FilterAndRandomLoadingID(ids)
   if not ids or not next(ids) then
     return nil
   end
@@ -257,11 +222,11 @@ LoadingManager.FilterAndRandomLoadingID = function(self, ids)
   end
   local now = GetSvrTimeNow()
   local results = {}
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  for _,id in ipairs(ids) do
-    local cfg = (Cfg.cfg_loading)[id]
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  for _, id in ipairs(ids) do
+    local cfg = Cfg.cfg_loading[id]
     if not cfg then
-      (Log.exception)("cfg_loading 中找不到配置:", id)
+      Log.exception("cfg_loading 中找不到配置:", id)
     end
     local startTime = math.mininteger
     local endTime = math.maxinteger
@@ -271,69 +236,48 @@ LoadingManager.FilterAndRandomLoadingID = function(self, ids)
     if cfg.EndTime then
       endTime = loginModule:GetTimeStampByTimeStr(cfg.EndTime, cfg.TimeType)
     end
-    if startTime <= now and now <= endTime then
-      (table.insert)(results, id)
+    if now >= startTime and now <= endTime then
+      table.insert(results, id)
     end
   end
   if #results == 0 then
-    (Log.exception)("没有符合条件的loading图 返回第一个")
+    Log.exception("没有符合条件的loading图 返回第一个")
     return ids[1]
+  elseif #results == 1 then
+    return results[1]
   else
-    if #results == 1 then
-      return results[1]
-    else
-      return results[(math.random)(1, #results)]
-    end
+    return results[math.random(1, #results)]
   end
 end
 
 _class("LoadingProgressBar", Object)
 LoadingProgressBar = LoadingProgressBar
--- DECOMPILER ERROR at PC119: Confused about usage of register: R3 in 'UnsetPending'
 
-LoadingProgressBar.Constructor = function(self)
-  -- function num : 0_16
+function LoadingProgressBar:Constructor()
   self._percent = 0
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R3 in 'UnsetPending'
-
-LoadingProgressBar.SetProgress = function(self, progress)
-  -- function num : 0_17 , upvalues : _ENV
-  progress = (Mathf.Clamp)(progress, 0, 100)
+function LoadingProgressBar:SetProgress(progress)
+  progress = Mathf.Clamp(progress, 0, 100)
   if progress < self._percent then
-    (Log.fatal)("Loading progress error:", progress, "，current is ", self._percent)
-    return 
-  else
-    if self._percent == progress then
-      return 
-    end
+    Log.fatal("Loading progress error:", progress, "，current is ", self._percent)
+    return
+  elseif self._percent == progress then
+    return
   end
   self._percent = progress
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LoadingProgressChanged, self._percent)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.LoadingProgressChanged, self._percent)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R3 in 'UnsetPending'
-
-LoadingProgressBar.GetProgress = function(self)
-  -- function num : 0_18
+function LoadingProgressBar:GetProgress()
   return self._percent
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R3 in 'UnsetPending'
-
-LoadingProgressBar.Reset = function(self)
-  -- function num : 0_19
+function LoadingProgressBar:Reset()
   self._percent = -1
   self:SetProgress(0)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R3 in 'UnsetPending'
-
-LoadingProgressBar.Complete = function(self)
-  -- function num : 0_20
+function LoadingProgressBar:Complete()
   self:SetProgress(100)
 end
-
-

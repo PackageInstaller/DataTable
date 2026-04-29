@@ -1,100 +1,69 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/side_enter/ui_side_enter_loader.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISideEnterLoader", UICustomWidget)
 UISideEnterLoader = UISideEnterLoader
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISideEnterLoader.SetData = function(self, TT, cfg, hideCallback, redCallback)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.info)("UISideEnterLoader:SetData() ID = ", cfg.ID)
+function UISideEnterLoader:SetData(TT, cfg, hideCallback, redCallback)
+  Log.info("UISideEnterLoader:SetData() ID = ", cfg.ID)
   self._mainCfg = cfg
   local btnKey = cfg.BtnKey
-  local btnCfg = (UISideEnterConst.GetCfg_SideEnterBtn)(btnKey)
+  local btnCfg = UISideEnterConst.GetCfg_SideEnterBtn(btnKey)
   self._hideCallback = hideCallback
   self._redCallback = redCallback
   self:SetShow(false, true)
-  self._new = 0
-  local class, prefab = (UISideEnterConst.GetCfg_SideEnterBtn_Info)(btnKey)
-  ;
-  (UIWidgetHelper.ClearWidgets)(self, "_sop")
-  self._obj = (UIWidgetHelper.SpawnObject)(self, "_sop", class, prefab)
+  self._new, self._red = 0, 0
+  local class, prefab = UISideEnterConst.GetCfg_SideEnterBtn_Info(btnKey)
+  UIWidgetHelper.ClearWidgets(self, "_sop")
+  self._obj = UIWidgetHelper.SpawnObject(self, "_sop", class, prefab)
   if not self._obj then
-    return 
+    return
   end
-  local clickCallback = (UISideEnterBtnConst.ForceOpenUI)(btnCfg)
-  ;
-  (self._obj):SetMainInfo(self._mainCfg, btnCfg, clickCallback, function(show)
-    -- function num : 0_0_0 , upvalues : self
+  local clickCallback = UISideEnterBtnConst.ForceOpenUI(btnCfg)
+  self._obj:SetMainInfo(self._mainCfg, btnCfg, clickCallback, function(show)
     self:SetShow(show)
-  end
-, function(new, red)
-    -- function num : 0_0_1 , upvalues : self
+  end, function(new, red)
     self:SetNewRed(new, red)
-  end
-)
-  ;
-  (self._obj):OnSideEnterLoad(TT)
-  self._rawImage = (self._obj):GetSideEnterRawImage()
+  end)
+  self._obj:OnSideEnterLoad(TT)
+  self._rawImage = self._obj:GetSideEnterRawImage()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterLoader.SetShow = function(self, show, init)
-  -- function num : 0_1
+function UISideEnterLoader:SetShow(show, init)
   local pre = self._show
   self._show = show
-  ;
-  (self:GetGameObject()):SetActive(show)
+  self:GetGameObject():SetActive(show)
   if not init and pre == true and show == false and self._hideCallback then
-    (self._hideCallback)()
+    self._hideCallback()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterLoader.GetShow = function(self)
-  -- function num : 0_2
+function UISideEnterLoader:GetShow()
   return self._show
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterLoader.SetNewRed = function(self, new, red)
-  -- function num : 0_3 , upvalues : _ENV
-  if type(new) == "boolean" and (not new or not 1) then
-    new = self._new == new and self._red == red or 0
-  end
-  red = type(red) ~= "boolean" or (red and 1) or 0
-  self._new = new
-  if self._redCallback then
-    (self._redCallback)()
+function UISideEnterLoader:SetNewRed(new, red)
+  if self._new ~= new or self._red ~= red then
+    if type(new) == "boolean" then
+      new = new and 1 or 0
+    end
+    if type(red) == "boolean" then
+      red = red and 1 or 0
+    end
+    self._new, self._red = new, red
+    if self._redCallback then
+      self._redCallback()
+    end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterLoader.GetNewRed = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.info)("UISideEnterLoader:GetNewRed() ID = ", (self._mainCfg).ID, " new = ", self._new, " red = ", self._red)
+function UISideEnterLoader:GetNewRed()
+  Log.info("UISideEnterLoader:GetNewRed() ID = ", self._mainCfg.ID, " new = ", self._new, " red = ", self._red)
   return self._new, self._red
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterLoader.GetSideEnterRawImage = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.info)("UISideEnterLoader:GetSideEnterRawImage() ID = ", (self._mainCfg).ID, " rawImage = ", self._rawImage)
+function UISideEnterLoader:GetSideEnterRawImage()
+  Log.info("UISideEnterLoader:GetSideEnterRawImage() ID = ", self._mainCfg.ID, " rawImage = ", self._rawImage)
   return self._rawImage
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterLoader.GetCfg = function(self)
-  -- function num : 0_6
+function UISideEnterLoader:GetCfg()
   return self._mainCfg
 end
-
-

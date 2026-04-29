@@ -1,56 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_shield_to_atk.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_type")
 require("buff_logic_base")
 _class("BuffLogicShieldToAtk", BuffLogicBase)
 BuffLogicShieldToAtk = BuffLogicShieldToAtk
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicShieldToAtk.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicShieldToAtk:Constructor(buffInstance, logicParam)
   self._atkMul = logicParam.atkMul or 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicShieldToAtk.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicShieldToAtk:DoLogic()
   local e = self._entity
   local recoverEntity = e
-  do
-    if e:PetPstID() then
-      local matchType = (self._world):MatchType()
-      if matchType ~= MatchType.MT_Maze and (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze then
-        recoverEntity = (e:Pet()):GetOwnerTeamEntity()
-      end
+  if e:PetPstID() then
+    local matchType = self._world:MatchType()
+    if matchType ~= MatchType.MT_Maze and self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze then
+      recoverEntity = e:Pet():GetOwnerTeamEntity()
     end
-    local buffCmpt = recoverEntity:BuffComponent()
-    if buffCmpt == nil then
-      return 
-    end
-    local buffLogicService = (self._world):GetService("BuffLogic")
-    local curShieldValue = buffLogicService:GetHPShield(e)
-    local buffSeqID = self:GetBuffSeq()
-    local atkAdded = self._atkMul * curShieldValue
-    buffLogicService:RemoveBaseAttack(self._entity, buffSeqID, ModifyBaseAttackType.AttackPercentage)
-    buffLogicService:ChangeBaseAttack(e, buffSeqID, ModifyBaseAttackType.AttackPercentage, atkAdded)
-    local result = BuffResultShieldToAtk:New(atkAdded)
-    return result
   end
+  local buffCmpt = recoverEntity:BuffComponent()
+  if buffCmpt == nil then
+    return
+  end
+  local buffLogicService = self._world:GetService("BuffLogic")
+  local curShieldValue = buffLogicService:GetHPShield(e)
+  local buffSeqID = self:GetBuffSeq()
+  local atkAdded = self._atkMul * curShieldValue
+  buffLogicService:RemoveBaseAttack(self._entity, buffSeqID, ModifyBaseAttackType.AttackPercentage)
+  buffLogicService:ChangeBaseAttack(e, buffSeqID, ModifyBaseAttackType.AttackPercentage, atkAdded)
+  local result = BuffResultShieldToAtk:New(atkAdded)
+  return result
 end
 
 _class("BuffLogicUndoShieldToAtk", BuffLogicBase)
 BuffLogicUndoShieldToAtk = BuffLogicUndoShieldToAtk
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUndoShieldToAtk.DoLogic = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local buffLogicService = (self._world):GetService("BuffLogic")
+function BuffLogicUndoShieldToAtk:DoLogic()
+  local buffLogicService = self._world:GetService("BuffLogic")
   local buffSeqID = self:GetBuffSeq()
   buffLogicService:RemoveBaseAttack(self._entity, buffSeqID, ModifyBaseAttackType.AttackPercentage)
 end
-
-

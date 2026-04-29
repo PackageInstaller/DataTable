@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/logic_auto_bead_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LogicAutoBeadComponent", Object)
 LogicAutoBeadComponent = LogicAutoBeadComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LogicAutoBeadComponent.Constructor = function(self)
-  -- function num : 0_0
+function LogicAutoBeadComponent:Constructor()
   self._attachTeamEntityID = 0
   self._autoBeadList = {}
   self._autoBeadPoint = 0
@@ -16,54 +9,33 @@ LogicAutoBeadComponent.Constructor = function(self)
   self._autoBeadInnerDataList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicAutoBeadComponent.SetAttachTeamEntityID = function(self, entityID)
-  -- function num : 0_1
+function LogicAutoBeadComponent:SetAttachTeamEntityID(entityID)
   self._attachTeamEntityID = entityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicAutoBeadComponent.GetAttachTeamEntityID = function(self)
-  -- function num : 0_2
+function LogicAutoBeadComponent:GetAttachTeamEntityID()
   return self._attachTeamEntityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicAutoBeadComponent.SetAutoBeadList = function(self, autoBeadList)
-  -- function num : 0_3
+function LogicAutoBeadComponent:SetAutoBeadList(autoBeadList)
   self._autoBeadList = autoBeadList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicAutoBeadComponent.GetAutoBeadList = function(self)
-  -- function num : 0_4
+function LogicAutoBeadComponent:GetAutoBeadList()
   return self._autoBeadList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicAutoBeadComponent.SetAutoBeadInnerDataList = function(self, dataList)
-  -- function num : 0_5
+function LogicAutoBeadComponent:SetAutoBeadInnerDataList(dataList)
   self._autoBeadInnerDataList = dataList
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicAutoBeadComponent.GetAutoBeadInnerDataList = function(self)
-  -- function num : 0_6
+function LogicAutoBeadComponent:GetAutoBeadInnerDataList()
   return self._autoBeadInnerDataList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicAutoBeadComponent.GetAutoBeadInnerDataByID = function(self, autoBeadID)
-  -- function num : 0_7 , upvalues : _ENV
+function LogicAutoBeadComponent:GetAutoBeadInnerDataByID(autoBeadID)
   if self._autoBeadInnerDataList then
-    for index,data in ipairs(self._autoBeadInnerDataList) do
+    for index, data in ipairs(self._autoBeadInnerDataList) do
       if data:GetAutoBeadID() == autoBeadID then
         return data
       end
@@ -71,50 +43,32 @@ LogicAutoBeadComponent.GetAutoBeadInnerDataByID = function(self, autoBeadID)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicAutoBeadComponent.GetAutoBeadPower = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function LogicAutoBeadComponent:GetAutoBeadPower()
   if self._autoBeadPointEachPower <= 0 then
     return 0, self._autoBeadPoint
   end
-  local power = (math.floor)(self._autoBeadPoint / self._autoBeadPointEachPower)
+  local power = math.floor(self._autoBeadPoint / self._autoBeadPointEachPower)
   local restPoint = self._autoBeadPoint - power * self._autoBeadPointEachPower
   return power, restPoint
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicAutoBeadComponent.SetAutoBeadPoint = function(self, point)
-  -- function num : 0_9
+function LogicAutoBeadComponent:SetAutoBeadPoint(point)
   self._autoBeadPoint = point
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicAutoBeadComponent.GetAutoBeadPoint = function(self)
-  -- function num : 0_10
+function LogicAutoBeadComponent:GetAutoBeadPoint()
   return self._autoBeadPoint
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicAutoBeadComponent.SetAutoBeadPointEachPower = function(self, point)
-  -- function num : 0_11
+function LogicAutoBeadComponent:SetAutoBeadPointEachPower(point)
   self._autoBeadPointEachPower = point
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicAutoBeadComponent.GetAutoBeadPointEachPower = function(self)
-  -- function num : 0_12
+function LogicAutoBeadComponent:GetAutoBeadPointEachPower()
   return self._autoBeadPointEachPower
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicAutoBeadComponent.GetAutoBeadInnerDataListByTag = function(self, tagList)
-  -- function num : 0_13 , upvalues : _ENV
+function LogicAutoBeadComponent:GetAutoBeadInnerDataListByTag(tagList)
   if not tagList then
     return self._autoBeadInnerDataList
   end
@@ -122,69 +76,49 @@ LogicAutoBeadComponent.GetAutoBeadInnerDataListByTag = function(self, tagList)
     tagList = {tagList}
   end
   local filterArray = {}
-  for index,value in ipairs(self._autoBeadInnerDataList) do
+  for index, value in ipairs(self._autoBeadInnerDataList) do
     local data = value
     local autoBeadTagList = data:GetAutoBeadTag()
     local bTagMatch = false
-    for index,tag in ipairs(tagList) do
-      if (table.icontains)(autoBeadTagList, tag) then
+    for index, tag in ipairs(tagList) do
+      if table.icontains(autoBeadTagList, tag) then
         bTagMatch = true
         break
       end
     end
-    do
-      do
-        if bTagMatch then
-          (table.insert)(filterArray, data)
-        end
-        -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if bTagMatch then
+      table.insert(filterArray, data)
     end
   end
   return filterArray
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicAutoBeadComponent.SetExtraRateByTag = function(self, tagList, rate)
-  -- function num : 0_14 , upvalues : _ENV
+function LogicAutoBeadComponent:SetExtraRateByTag(tagList, rate)
   local filterArray = self:GetAutoBeadInnerDataListByTag(tagList)
-  for index,value in ipairs(filterArray) do
+  for index, value in ipairs(filterArray) do
     local data = value
     data:SetAutoBeadExtraRate(rate)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicAutoBeadComponent.AddAttrByTag = function(self, tagList, attrKey, addVal)
-  -- function num : 0_15 , upvalues : _ENV
+function LogicAutoBeadComponent:AddAttrByTag(tagList, attrKey, addVal)
   local filterArray = self:GetAutoBeadInnerDataListByTag(tagList)
-  for index,value in ipairs(filterArray) do
+  for index, value in ipairs(filterArray) do
     local data = value
     data:AddAutoBeadAttr(attrKey, addVal)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicAutoBeadComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_16
+function LogicAutoBeadComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicAutoBeadComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_17
+function LogicAutoBeadComponent:WEC_PostRemoved()
 end
 
 _class("AutoBeadInnerData", Object)
 AutoBeadInnerData = AutoBeadInnerData
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
 
-AutoBeadInnerData.Constructor = function(self)
-  -- function num : 0_18
+function AutoBeadInnerData:Constructor()
   self.ID = 0
   self.AutoBeadAttrMap = {}
   self.SkillID = 0
@@ -195,152 +129,94 @@ AutoBeadInnerData.Constructor = function(self)
   self.ExtraRate = 0
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadInnerData.InitByDataAndCfg = function(self, data, cfg)
-  -- function num : 0_19 , upvalues : _ENV
+function AutoBeadInnerData:InitByDataAndCfg(data, cfg)
   self.ID = data.bead_id
-  self.AutoBeadAttrMap = (table.clone)(data.att_info)
+  self.AutoBeadAttrMap = table.clone(data.att_info)
   if cfg then
     self.Tag = cfg.Tag
     self.SkillID = cfg.SkillID
     self.BuffID = cfg.BuffID
     if type(self.BuffID) ~= "table" then
-      self.BuffID = {self.BuffID}
+      self.BuffID = {
+        self.BuffID
+      }
     end
-    if not cfg.BuffTargetType then
-      self.BuffTargetType = BuffTargetType.Team
-      if not cfg.BuffTargetParam then
-        self.BuffTargetParam = {}
-      end
-    end
+    self.BuffTargetType = cfg.BuffTargetType or BuffTargetType.Team
+    self.BuffTargetParam = cfg.BuffTargetParam or {}
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadInnerData.IsEmptySlot = function(self)
-  -- function num : 0_20
-  do return self:GetAutoBeadID() == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AutoBeadInnerData:IsEmptySlot()
+  return self:GetAutoBeadID() == 0
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadInnerData.GetAutoBeadID = function(self)
-  -- function num : 0_21
+function AutoBeadInnerData:GetAutoBeadID()
   return self.ID
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadInnerData.GetAutoBeadTag = function(self)
-  -- function num : 0_22
+function AutoBeadInnerData:GetAutoBeadTag()
   return self.Tag
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadInnerData.GetAutoBeadSkillID = function(self)
-  -- function num : 0_23
+function AutoBeadInnerData:GetAutoBeadSkillID()
   return self.SkillID
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadInnerData.GetAutoBeadBuff = function(self)
-  -- function num : 0_24
+function AutoBeadInnerData:GetAutoBeadBuff()
   return self.BuffID, self.BuffTargetType, self.BuffTargetParam
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadInnerData.GetAutoBeadAttr = function(self, key)
-  -- function num : 0_25
-  local attr = (self.AutoBeadAttrMap)[key] or 0
+function AutoBeadInnerData:GetAutoBeadAttr(key)
+  local attr = self.AutoBeadAttrMap[key] or 0
   return attr
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadInnerData.SetAutoBeadAttr = function(self, key, setVal)
-  -- function num : 0_26
-  local attr = (self.AutoBeadAttrMap)[key]
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R4 in 'UnsetPending'
-
+function AutoBeadInnerData:SetAutoBeadAttr(key, setVal)
+  local attr = self.AutoBeadAttrMap[key]
   if attr then
-    (self.AutoBeadAttrMap)[key] = setVal
+    self.AutoBeadAttrMap[key] = setVal
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadInnerData.AddAutoBeadAttr = function(self, key, addVal)
-  -- function num : 0_27
-  local attr = (self.AutoBeadAttrMap)[key]
+function AutoBeadInnerData:AddAutoBeadAttr(key, addVal)
+  local attr = self.AutoBeadAttrMap[key]
   if attr then
     local curAttr = attr + addVal
-    -- DECOMPILER ERROR at PC6: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.AutoBeadAttrMap)[key] = curAttr
+    self.AutoBeadAttrMap[key] = curAttr
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadInnerData.GetAutoBeadExtraRate = function(self)
-  -- function num : 0_28
+function AutoBeadInnerData:GetAutoBeadExtraRate()
   return self.ExtraRate
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadInnerData.SetAutoBeadExtraRate = function(self, extraRate)
-  -- function num : 0_29
+function AutoBeadInnerData:SetAutoBeadExtraRate(extraRate)
   self.ExtraRate = extraRate
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.LogicAutoBead = function(self)
-  -- function num : 0_30
-  return self:GetComponent((self.WEComponentsEnum).LogicAutoBead)
+function Entity:LogicAutoBead()
+  return self:GetComponent(self.WEComponentsEnum.LogicAutoBead)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasLogicAutoBead = function(self)
-  -- function num : 0_31
-  return self:HasComponent((self.WEComponentsEnum).LogicAutoBead)
+function Entity:HasLogicAutoBead()
+  return self:HasComponent(self.WEComponentsEnum.LogicAutoBead)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddLogicAutoBead = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LogicAutoBead
+function Entity:AddLogicAutoBead()
+  local index = self.WEComponentsEnum.LogicAutoBead
   local component = LogicAutoBeadComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceLogicAutoBead = function(self, autoBeadList)
-  -- function num : 0_33 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LogicAutoBead
+function Entity:ReplaceLogicAutoBead(autoBeadList)
+  local index = self.WEComponentsEnum.LogicAutoBead
   local component = LogicAutoBeadComponent:New()
   component:SetAutoBeadList(autoBeadList)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveLogicAutoBead = function(self)
-  -- function num : 0_34
+function Entity:RemoveLogicAutoBead()
   if self:HasLogicAutoBead() then
-    self:RemoveComponent((self.WEComponentsEnum).LogicAutoBead)
+    self:RemoveComponent(self.WEComponentsEnum.LogicAutoBead)
   end
 end
-
-

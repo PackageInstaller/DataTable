@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_grid_spread_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseGridSpreadParam", SkillPhaseParamBase)
 SkillPhaseGridSpreadParam = SkillPhaseGridSpreadParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseGridSpreadParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseGridSpreadParam:Constructor(t)
   self._gridEffectID = t.gridEffectID
   self._hitEffectID = t.hitEffectID
   self._hitAnimationName = t.hitAnimationName
@@ -18,67 +11,47 @@ SkillPhaseGridSpreadParam.Constructor = function(self, t)
   self._spreadShape = t.spreadShape
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGridSpreadParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseGridSpreadParam:GetCacheTable()
   local t = {}
   if self._gridEffectID and self._gridEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._gridEffectID]).ResPath, 1}
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._gridEffectID].ResPath,
+      1
+    }
   end
-  if self._hitEffectID and self._hitEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1}
+  if self._hitEffectID and 0 < self._hitEffectID then
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    }
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGridSpreadParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseGridSpreadParam:GetPhaseType()
   return SkillViewPhaseType.GridSpread
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGridSpreadParam.GetGridEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseGridSpreadParam:GetGridEffectID()
   return self._gridEffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGridSpreadParam.GetHitAnimationName = function(self)
-  -- function num : 0_4
+function SkillPhaseGridSpreadParam:GetHitAnimationName()
   return self._hitAnimationName
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGridSpreadParam.GetHitEffectID = function(self)
-  -- function num : 0_5
+function SkillPhaseGridSpreadParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGridSpreadParam.GetSpreadIntervalTime = function(self)
-  -- function num : 0_6
+function SkillPhaseGridSpreadParam:GetSpreadIntervalTime()
   return self._spreadIntervalTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGridSpreadParam.GetSpreadLayerCount = function(self)
-  -- function num : 0_7
+function SkillPhaseGridSpreadParam:GetSpreadLayerCount()
   return self._spreadLayerCount
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGridSpreadParam.GetSpreadShape = function(self)
-  -- function num : 0_8
+function SkillPhaseGridSpreadParam:GetSpreadShape()
   return self._spreadShape
 end
-
-

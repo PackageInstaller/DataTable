@@ -1,74 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s5/help/ui_s5_helper_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS5HelperTab", UICustomWidget)
 UIS5HelperTab = UIS5HelperTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS5HelperTab.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIS5HelperTab:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5HelperTab.InitWidget = function(self)
-  -- function num : 0_1
+function UIS5HelperTab:InitWidget()
   self._tabNameText = self:GetUIComponent("UILocalizationText", "TabName")
   self._tabName2Text = self:GetUIComponent("UILocalizationText", "TabName2")
   self._selectedGo = self:GetGameObject("SelectedImg")
   self._unselectedGo = self:GetGameObject("UnselectedImg")
   if self._selectedGo then
-    (self._selectedGo):SetActive(false)
+    self._selectedGo:SetActive(false)
   end
   if self._unselectedGo then
-    (self._unselectedGo):SetActive(false)
+    self._unselectedGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5HelperTab.OnHide = function(self)
-  -- function num : 0_2
+function UIS5HelperTab:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5HelperTab.TabBtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+function UIS5HelperTab:TabBtnOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   if self._callback then
-    (self._callback)(self._tabId)
+    self._callback(self._tabId)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5HelperTab.SetData = function(self, tabCfg, callback)
-  -- function num : 0_4 , upvalues : _ENV
+function UIS5HelperTab:SetData(tabCfg, callback)
   self._tabCfg = tabCfg
-  self._tabId = (self._tabCfg).TabEnum
+  self._tabId = self._tabCfg.TabEnum
   self._callback = callback
-  local str = (StringTable.Get)((self._tabCfg).Title)
-  ;
-  (self._tabNameText):SetText(str)
-  ;
-  (self._tabName2Text):SetText(str)
+  local str = StringTable.Get(self._tabCfg.Title)
+  self._tabNameText:SetText(str)
+  self._tabName2Text:SetText(str)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5HelperTab.OnSelectIndex = function(self, tabId)
-  -- function num : 0_5
-  if self._tabId ~= tabId then
-    (self._selectedGo):SetActive(not self._selectedGo)
-    if self._tabId == tabId then
-      (self._unselectedGo):SetActive(not self._unselectedGo)
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
-    end
+function UIS5HelperTab:OnSelectIndex(tabId)
+  if self._selectedGo then
+    self._selectedGo:SetActive(self._tabId == tabId)
+  end
+  if self._unselectedGo then
+    self._unselectedGo:SetActive(self._tabId ~= tabId)
   end
 end
-
-

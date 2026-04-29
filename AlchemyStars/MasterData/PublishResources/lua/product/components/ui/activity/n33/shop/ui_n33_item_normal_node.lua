@@ -1,46 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/shop/ui_n33_item_normal_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_item_node")
 _class("UIN33ItemNormalNode", UIItemNodeBase)
 UIN33ItemNormalNode = UIN33ItemNormalNode
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN33ItemNormalNode.OnInit = function(self)
-  -- function num : 0_0
-  self._num = (self._uiView):GetUIComponent("UILocalizationText", "Text")
-  self._icon = (self._uiView):GetUIComponent("RawImageLoader", "RawImageItem")
+function UIN33ItemNormalNode:OnInit()
+  self._num = self._uiView:GetUIComponent("UILocalizationText", "Text")
+  self._icon = self._uiView:GetUIComponent("RawImageLoader", "RawImageItem")
   self._imgType = {}
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._imgType)[0] = (self._uiView):GetGameObject("ImageType1")
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._imgType)[1] = (self._uiView):GetGameObject("ImageType2")
+  self._imgType[0] = self._uiView:GetGameObject("ImageType1")
+  self._imgType[1] = self._uiView:GetGameObject("ImageType2")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33ItemNormalNode.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._num):SetText("X" .. (self._uiItemData).count)
-  ;
-  (self._icon):LoadImage((self._uiItemData).icon)
-  ;
-  ((self._imgType)[0]):SetActive((self._uiItemData).awardType == ECampaignLRType.E_CLRT_big)
-  ;
-  ((self._imgType)[1]):SetActive((self._uiItemData).awardType == ECampaignLRType.E_CLRT_rare)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIN33ItemNormalNode:OnShow()
+  self._num:SetText("X" .. self._uiItemData.count)
+  self._icon:LoadImage(self._uiItemData.icon)
+  self._imgType[0]:SetActive(self._uiItemData.awardType == ECampaignLRType.E_CLRT_big)
+  self._imgType[1]:SetActive(self._uiItemData.awardType == ECampaignLRType.E_CLRT_rare)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33ItemNormalNode.OnHide = function(self)
-  -- function num : 0_2
+function UIN33ItemNormalNode:OnHide()
 end
-
-

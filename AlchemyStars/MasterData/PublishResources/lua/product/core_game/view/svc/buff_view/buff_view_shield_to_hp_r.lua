@@ -1,27 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_shield_to_hp_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewShieldToHP", BuffViewBase)
 BuffViewShieldToHP = BuffViewShieldToHP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewShieldToHP.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local e = (self._viewInstance):Entity()
-  local absorbHP = (self._buffResult):GetAddHP()
-  local damageInfo = (self._buffResult):GetDamageInfo()
-  local curShield = (self._buffResult):GetShieldToHp_CurShield()
-  local effectService = (self._world):GetService("Effect")
+function BuffViewShieldToHP:PlayView(TT)
+  local e = self._viewInstance:Entity()
+  local absorbHP = self._buffResult:GetAddHP()
+  local damageInfo = self._buffResult:GetDamageInfo()
+  local curShield = self._buffResult:GetShieldToHp_CurShield()
+  local effectService = self._world:GetService("Effect")
   effectService:CreateEffect(BattleConst.AddHealthEffect, e)
   local gridPos = e:GetGridPosition()
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   local renderPos = boardServiceRender:GridPos2RenderPos(gridPos)
   renderPos.y = renderPos.y + BattleConst.SingleDamageNumberShowHeight
   local petPstId = 0
   if e:PetPstID() then
-    petPstId = (e:PetPstID()):GetPstID()
+    petPstId = e:PetPstID():GetPstID()
   end
   local materialEntity = e
   if e:HasTeam() then
@@ -30,22 +23,18 @@ BuffViewShieldToHP.PlayView = function(self, TT)
   if e:HasHP() then
     local recoverEntity = e
     if e:PetPstID() then
-      recoverEntity = (e:Pet()):GetOwnerTeamEntity()
+      recoverEntity = e:Pet():GetOwnerTeamEntity()
     end
     local hpCmpt = recoverEntity:HP()
     hpCmpt:SetShieldValue(curShield)
   end
-  do
-    local playDamageService = (self._world):GetService("PlayDamage")
-    playDamageService:AsyncUpdateHPAndDisplayDamage(materialEntity, damageInfo)
-    if petPstId ~= 0 then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.InOutQueue, petPstId, true)
-    end
-    YIELD(TT, 1000)
-    if petPstId ~= 0 then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.InOutQueue, petPstId, false)
-    end
+  local playDamageService = self._world:GetService("PlayDamage")
+  playDamageService:AsyncUpdateHPAndDisplayDamage(materialEntity, damageInfo)
+  if petPstId ~= 0 then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.InOutQueue, petPstId, true)
+  end
+  YIELD(TT, 1000)
+  if petPstId ~= 0 then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.InOutQueue, petPstId, false)
   end
 end
-
-

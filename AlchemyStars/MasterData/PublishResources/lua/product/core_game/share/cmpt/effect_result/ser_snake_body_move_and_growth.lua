@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_snake_body_move_and_growth.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectSnakeBodyMoveAndGrowthResult", SkillEffectResultBase)
 SkillEffectSnakeBodyMoveAndGrowthResult = SkillEffectSnakeBodyMoveAndGrowthResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectSnakeBodyMoveAndGrowthResult.Constructor = function(self, bodyOldPos, bodyNewPos, oldBodyArea, newBodyArea, newBodyPos)
-  -- function num : 0_0
+function SkillEffectSnakeBodyMoveAndGrowthResult:Constructor(bodyOldPos, bodyNewPos, oldBodyArea, newBodyArea, newBodyPos)
   self._bodyNewPos = bodyNewPos
   self._bodyOldPos = bodyOldPos
   self._oldBodyArea = oldBodyArea
@@ -19,83 +12,48 @@ SkillEffectSnakeBodyMoveAndGrowthResult.Constructor = function(self, bodyOldPos,
   self._headNewPos = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSnakeBodyMoveAndGrowthResult.Clone = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectSnakeBodyMoveAndGrowthResult:Clone()
   local result = SkillEffectSnakeBodyMoveAndGrowthResult:New(self._bodyOldPos, self._bodyNewPos, self._oldBodyArea, self._newBodyArea, self._newBodyPos)
   result._casterIsDead = self._casterIsDead
   return result
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSnakeBodyMoveAndGrowthResult.IsCasterDead = function(self)
-  -- function num : 0_2
+function SkillEffectSnakeBodyMoveAndGrowthResult:IsCasterDead()
   return self._casterIsDead
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSnakeBodyMoveAndGrowthResult.SetCasterDeadState = function(self, state)
-  -- function num : 0_3
+function SkillEffectSnakeBodyMoveAndGrowthResult:SetCasterDeadState(state)
   self._casterIsDead = state
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSnakeBodyMoveAndGrowthResult.GetEffectType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillEffectSnakeBodyMoveAndGrowthResult:GetEffectType()
   return SkillEffectType.SnakeBodyMoveAndGrowth
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSnakeBodyMoveAndGrowthResult.GetBodyNewPos = function(self)
-  -- function num : 0_5
+function SkillEffectSnakeBodyMoveAndGrowthResult:GetBodyNewPos()
   return self._bodyNewPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSnakeBodyMoveAndGrowthResult.GetBodyOldPos = function(self)
-  -- function num : 0_6
+function SkillEffectSnakeBodyMoveAndGrowthResult:GetBodyOldPos()
   return self._bodyOldPos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSnakeBodyMoveAndGrowthResult.GetOldBodyArea = function(self)
-  -- function num : 0_7
+function SkillEffectSnakeBodyMoveAndGrowthResult:GetOldBodyArea()
   return self._oldBodyArea
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSnakeBodyMoveAndGrowthResult.GetNewBodyArea = function(self)
-  -- function num : 0_8
+function SkillEffectSnakeBodyMoveAndGrowthResult:GetNewBodyArea()
   return self._newBodyArea
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSnakeBodyMoveAndGrowthResult.GetNewBodyPos = function(self)
-  -- function num : 0_9
+function SkillEffectSnakeBodyMoveAndGrowthResult:GetNewBodyPos()
   return self._newBodyPos
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSnakeBodyMoveAndGrowthResult.SetHeadNewPos = function(self, pos)
-  -- function num : 0_10
+function SkillEffectSnakeBodyMoveAndGrowthResult:SetHeadNewPos(pos)
   self._headNewPos = pos
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSnakeBodyMoveAndGrowthResult.GetHeadNewPos = function(self)
-  -- function num : 0_11
+function SkillEffectSnakeBodyMoveAndGrowthResult:GetHeadNewPos()
   return self._headNewPos
 end
-
-

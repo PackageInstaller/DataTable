@@ -1,104 +1,78 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_shield_to_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicShieldToHP", BuffLogicBase)
 BuffLogicShieldToHP = BuffLogicShieldToHP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicShieldToHP.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicShieldToHP:Constructor(buffInstance, logicParam)
   self._recoverPersent = logicParam.recoverPersent
   self._clearShield = logicParam.clearShield
   self._lessThanLostHp = logicParam.lessThanLostHp or false
   self._lessThanPetMaxHp = logicParam.lessThanPetMaxHp or false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicShieldToHP.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicShieldToHP:DoLogic()
+  local e = self._buffInstance:Entity()
   local recoverEntity = e
   if e:PetPstID() then
-    recoverEntity = (e:Pet()):GetOwnerTeamEntity()
+    recoverEntity = e:Pet():GetOwnerTeamEntity()
   end
   local buffCmpt = recoverEntity:BuffComponent()
   if buffCmpt == nil then
-    return 
+    return
   end
   local curShieldValue = buffCmpt:GetBuffValue("HPShield") or 0
   if curShieldValue == 0 then
-    return 
+    return
   end
   local addHp = curShieldValue * self._recoverPersent
-  local rate = (e:Attributes()):GetAttribute("AddBloodRate") or 0
-  addHp = (math.floor)(addHp * (1 + rate))
+  local rate = e:Attributes():GetAttribute("AddBloodRate") or 0
+  addHp = math.floor(addHp * (1 + rate))
   local shieldToHpVal = addHp
   if self._lessThanPetMaxHp and self._lessThanLostHp then
     local lostHp = self:CalcLostHp(recoverEntity)
     local ownerMaxHp = self:GetBuffOwnerMaxHp(e)
-    local maxShieldToHp = (math.min)(ownerMaxHp, lostHp)
-    shieldToHpVal = (math.min)(addHp, maxShieldToHp)
+    local maxShieldToHp = math.min(ownerMaxHp, lostHp)
+    shieldToHpVal = math.min(addHp, maxShieldToHp)
   end
-  do
-    local curShield = 0
-    if self._clearShield then
-      buffCmpt:SetBuffValue("HPShield", curShield)
-    else
-      curShield = curShieldValue - shieldToHpVal
-      if curShield < 0 then
-        curShield = 0
-      end
-      buffCmpt:SetBuffValue("HPShield", curShield)
+  local curShield = 0
+  if self._clearShield then
+    buffCmpt:SetBuffValue("HPShield", curShield)
+  else
+    curShield = curShieldValue - shieldToHpVal
+    if curShield < 0 then
+      curShield = 0
     end
-    if (recoverEntity:Attributes()):GetAttribute("BuffForbidCure") then
-      (Log.notice)("BuffForbidCure , 諾爾無法回血")
-      return 
-    end
-    local calcDamageSvc = (self._world):GetService("CalcDamage")
-    local damageInfo = DamageInfo:New(shieldToHpVal, DamageType.Recover)
-    calcDamageSvc:AddTargetHP(recoverEntity:GetID(), damageInfo)
-    addHp = damageInfo:GetDamageValue()
-    local result = BuffResultShieldToHP:New(addHp, damageInfo, curShield)
-    return result
+    buffCmpt:SetBuffValue("HPShield", curShield)
   end
+  if recoverEntity:Attributes():GetAttribute("BuffForbidCure") then
+    Log.notice("BuffForbidCure , 諾爾無法回血")
+    return
+  end
+  local calcDamageSvc = self._world:GetService("CalcDamage")
+  local damageInfo = DamageInfo:New(shieldToHpVal, DamageType.Recover)
+  calcDamageSvc:AddTargetHP(recoverEntity:GetID(), damageInfo)
+  addHp = damageInfo:GetDamageValue()
+  local result = BuffResultShieldToHP:New(addHp, damageInfo, curShield)
+  return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicShieldToHP.CalcLostHp = function(self, recoverEntity)
-  -- function num : 0_2
-  local currentHp = (recoverEntity:Attributes()):GetCurrentHP()
-  local maxHp = (recoverEntity:Attributes()):CalcMaxHp()
+function BuffLogicShieldToHP:CalcLostHp(recoverEntity)
+  local currentHp = recoverEntity:Attributes():GetCurrentHP()
+  local maxHp = recoverEntity:Attributes():CalcMaxHp()
   local lostHp = maxHp - currentHp
   return lostHp
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicShieldToHP.GetBuffOwnerMaxHp = function(self, e)
-  -- function num : 0_3
+function BuffLogicShieldToHP:GetBuffOwnerMaxHp(e)
   local ownerMaxHp = 0
   if e:HasPetPstID() then
-    local pstid = (e:PetPstID()):GetPstID()
-    local petData = (self._world):GetPetData(pstid)
+    local pstid = e:PetPstID():GetPstID()
+    local petData = self._world:GetPetData(pstid)
     ownerMaxHp = petData:GetPetHealth()
-  else
-    do
-      if e:HasMonsterID() then
-        local configService = (self._world):GetService("Config")
-        local monsterConfigData = configService:GetMonsterConfigData()
-        local monsterid = (e:MonsterID()):GetMonsterID()
-        local maxhp = configService:GetMonsterHealth(e)
-        ownerMaxHp = maxhp
-      end
-      do
-        return ownerMaxHp
-      end
-    end
+  elseif e:HasMonsterID() then
+    local configService = self._world:GetService("Config")
+    local monsterConfigData = configService:GetMonsterConfigData()
+    local monsterid = e:MonsterID():GetMonsterID()
+    local maxhp = configService:GetMonsterHealth(e)
+    ownerMaxHp = maxhp
   end
+  return ownerMaxHp
 end
-
-

@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_change_body_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultChangeBodyArea", SkillEffectResultBase)
 SkillEffectResultChangeBodyArea = SkillEffectResultChangeBodyArea
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultChangeBodyArea.Constructor = function(self, entityID, newBodyArea)
-  -- function num : 0_0
+function SkillEffectResultChangeBodyArea:Constructor(entityID, newBodyArea)
   self._entityID = entityID
   self._newBodyArea = newBodyArea
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeBodyArea.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultChangeBodyArea:GetEffectType()
   return SkillEffectType.ChangeBodyArea
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeBodyArea.GetNewBodyArea = function(self)
-  -- function num : 0_2
+function SkillEffectResultChangeBodyArea:GetNewBodyArea()
   return self._newBodyArea
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeBodyArea.GetChangeBodyAreaEntityID = function(self)
-  -- function num : 0_3
+function SkillEffectResultChangeBodyArea:GetChangeBodyAreaEntityID()
   return self._entityID
 end
-
-

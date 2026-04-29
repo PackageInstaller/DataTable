@@ -1,8 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/kr/str_extra_mission_public.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_extra_mission_public_close = "미개방", str_extra_mission_public_close_en = "UNLOCKED", str_extra_mission_public_finish = "완결", str_extra_mission_public_award = "보상", str_extra_mission_public_sharp = "#", str_extra_mission_public_over = "FINISH", str_extra_mission_public_current_star = "현재 별 수:", str_extra_mission_public_depend_mission_task = "메인 클리어 필요", str_extra_mission_public_depend_extra_mission_task = "엑스트라 클리어 필요", str_extra_mission_public_depend_level = "레벨에 잠금 해제 가능", str_extra_mission_public_depend_behind = "후 잠금 해제", str_extra_mission_public_get = "수령", str_extra_mission_public_got = "수령 완료", str_extra_mission_public_get_success = "수령 성공", str_extra_mission_public_colon = ":", str_extra_mission_public_pass_level = "클리어", str_extra_mission_public_3star_condition = "3성 조건", str_extra_mission_public_level_award = "스테이지 보상", str_extra_mission_public_enemy_info = "적 정보", str_extra_mission_public_enemy_info_en = "ENEMY INFOR", str_extra_mission_public_challenge = "도전", str_extra_mission_public_challenge_en = "CHALLENGE", str_extra_mission_public_no_3star_condition = "3성 조건 없음", str_extra_mission_public_no_3star_condition_en = "NO THREE STARS CONDITIONS", str_extra_mission_public_new = "NEW", str_extra_mission_public_chapter_awards = "챕터 보상", str_extra_mission_public_story_review = "스토리 회상", str_extra_mission_public_stage_unlocked = "이전 스테이지 클리어 시 개방", str_extra_mission_public_no_story_review = "회상할 스토리가 없습니다.", str_extra_mission_public_chapter_plot = "엑스트라 스토리 챕터", str_extra_mission_public_click_and_enter = "터치해 스테이지 입장", str_extra_mission_public_al_finish = "완결", str_extra_mission_public_chapter_is_lock = "잠긴 챕터입니다."}
+local config = {
+  str_extra_mission_public_close = "미개방",
+  str_extra_mission_public_close_en = "UNLOCKED",
+  str_extra_mission_public_finish = "완결",
+  str_extra_mission_public_award = "보상",
+  str_extra_mission_public_sharp = "#",
+  str_extra_mission_public_over = "FINISH",
+  str_extra_mission_public_current_star = "현재 별 수:",
+  str_extra_mission_public_depend_mission_task = "메인 클리어 필요",
+  str_extra_mission_public_depend_extra_mission_task = "엑스트라 클리어 필요",
+  str_extra_mission_public_depend_level = "레벨에 잠금 해제 가능",
+  str_extra_mission_public_depend_behind = "후 잠금 해제",
+  str_extra_mission_public_get = "수령",
+  str_extra_mission_public_got = "수령 완료",
+  str_extra_mission_public_get_success = "수령 성공",
+  str_extra_mission_public_colon = ":",
+  str_extra_mission_public_pass_level = "클리어",
+  str_extra_mission_public_3star_condition = "3성 조건",
+  str_extra_mission_public_level_award = "스테이지 보상",
+  str_extra_mission_public_enemy_info = "적 정보",
+  str_extra_mission_public_enemy_info_en = "ENEMY INFOR",
+  str_extra_mission_public_challenge = "도전",
+  str_extra_mission_public_challenge_en = "CHALLENGE",
+  str_extra_mission_public_no_3star_condition = "3성 조건 없음",
+  str_extra_mission_public_no_3star_condition_en = "NO THREE STARS CONDITIONS",
+  str_extra_mission_public_new = "NEW",
+  str_extra_mission_public_chapter_awards = "챕터 보상",
+  str_extra_mission_public_story_review = "스토리 회상",
+  str_extra_mission_public_stage_unlocked = "이전 스테이지 클리어 시 개방",
+  str_extra_mission_public_no_story_review = "회상할 스토리가 없습니다.",
+  str_extra_mission_public_chapter_plot = "엑스트라 스토리 챕터",
+  str_extra_mission_public_click_and_enter = "터치해 스테이지 입장",
+  str_extra_mission_public_al_finish = "완결",
+  str_extra_mission_public_chapter_is_lock = "잠긴 챕터입니다."
+}
 return config
-

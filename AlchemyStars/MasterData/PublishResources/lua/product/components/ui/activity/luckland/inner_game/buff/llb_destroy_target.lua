@@ -1,62 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/buff/llb_destroy_target.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("llb_logic_base")
 _class("LLBuffLogicDestroyTarget", LLBuffLogicBase)
 LLBuffLogicDestroyTarget = LLBuffLogicDestroyTarget
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuffLogicDestroyTarget.Constructor = function(self, buffObj, logicParam)
-  -- function num : 0_0
+function LLBuffLogicDestroyTarget:Constructor(buffObj, logicParam)
   self._incType = logicParam.incType
   self._fixVal = logicParam.fixVal
   self._perVal = logicParam.perVal
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicDestroyTarget.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function LLBuffLogicDestroyTarget:DoLogic(notify)
   self._notifyEntity = notify:GetNotifyEntity()
-  local targets = (self._buffObj):GetTargets()
+  local targets = self._buffObj:GetTargets()
   local count = #targets
-  for _,target in ipairs(targets) do
+  for _, target in ipairs(targets) do
     self:DoLogicSingle(target, self._notifyEntity)
   end
-  if self._incType and not (self._notifyEntity):HasDeleteFlag() then
+  if self._incType and not self._notifyEntity:HasDeleteFlag() then
     if self._incType == LuckLandIncType.Accumulate then
       if self._fixVal then
-        (self._notifyEntity):AddAccFixValue(self._fixVal * count)
+        self._notifyEntity:AddAccFixValue(self._fixVal * count)
       end
       if self._perVal then
-        (self._notifyEntity):AddAccPerValue(self._perVal * count)
+        self._notifyEntity:AddAccPerValue(self._perVal * count)
       end
-    else
-      if self._incType == LuckLandIncType.Temp then
-        if self._fixVal then
-          (self._notifyEntity):AddTempFixValue(self._fixVal * count)
-        end
-        if self._perVal then
-          (self._notifyEntity):AddTempPerValue(self._perVal * count)
-        end
+    elseif self._incType == LuckLandIncType.Temp then
+      if self._fixVal then
+        self._notifyEntity:AddTempFixValue(self._fixVal * count)
+      end
+      if self._perVal then
+        self._notifyEntity:AddTempPerValue(self._perVal * count)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicDestroyTarget.DoLogicSingle = function(self, target)
-  -- function num : 0_2 , upvalues : _ENV
+function LLBuffLogicDestroyTarget:DoLogicSingle(target)
   if target:GetEntityType() ~= LuckLandEntityType.Pet then
-    (Log.error)("[LuckLand] Destroy entity is not pet, buff ID = ", (self._buffObj):BuffID())
-    return 
+    Log.error("[LuckLand] Destroy entity is not pet, buff ID = ", self._buffObj:BuffID())
+    return
   end
-  ;
-  ((target:GetLuckLandModule()):GetEntityMng()):DeleteCard(target:ID(), self._notifyEntity)
+  target:GetLuckLandModule():GetEntityMng():DeleteCard(target:ID(), self._notifyEntity)
   target:SetDeleteFlag()
 end
-
-

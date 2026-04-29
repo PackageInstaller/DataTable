@@ -1,16 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/difficulty_mission/stn_difficulty_mission_pass_all.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("DifficultyMission_GM_PassAll", Common_AsyncBase)
 DifficultyMission_GM_PassAll = DifficultyMission_GM_PassAll
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DifficultyMission_GM_PassAll.TaskFunc = function(self, TT, status)
-  -- function num : 0_0
-  (self._manager):AsyncGM_PassAllDifficultyMission(TT, status)
+function DifficultyMission_GM_PassAll:TaskFunc(TT, status)
+  self._manager:AsyncGM_PassAllDifficultyMission(TT, status)
 end
-
-

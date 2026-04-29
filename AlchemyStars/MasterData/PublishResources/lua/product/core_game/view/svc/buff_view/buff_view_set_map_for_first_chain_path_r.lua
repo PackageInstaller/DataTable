@@ -1,28 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_set_map_for_first_chain_path_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewSetMapForFirstChainPath", BuffViewBase)
 BuffViewSetMapForFirstChainPath = BuffViewSetMapForFirstChainPath
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewSetMapForFirstChainPath.PlayView = function(self, TT)
-  -- function num : 0_0
+function BuffViewSetMapForFirstChainPath:PlayView(TT)
   local result = self._buffResult
   local effectID = result:GetEffectID()
   local effectOutAnim = result:GetEffectOutAnim()
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderBoardCmpt = renderBoardEntity:RenderBoard()
   renderBoardCmpt:SetMapPieceFirstChainPathEffectID(effectID)
   renderBoardCmpt:SetMapPieceFirstChainPathEffectOutAnim(effectOutAnim)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewSetMapForFirstChainPath.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewSetMapForFirstChainPath:IsNotifyMatch(notify)
   return true
 end
-
-

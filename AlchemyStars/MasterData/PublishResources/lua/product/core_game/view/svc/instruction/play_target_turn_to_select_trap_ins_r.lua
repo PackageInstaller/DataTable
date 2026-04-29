@@ -1,53 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_target_turn_to_select_trap_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTargetTurnToSelectTrapInstruction", BaseInstruction)
 PlayTargetTurnToSelectTrapInstruction = PlayTargetTurnToSelectTrapInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTargetTurnToSelectTrapInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTargetTurnToSelectTrapInstruction:Constructor(paramList)
   local trapIDList = paramList.trapIDList
   self._trapIDList = {}
   if trapIDList then
-    local arr = (string.split)(trapIDList, "|")
-    for k,idStr in ipairs(arr) do
+    local arr = string.split(trapIDList, "|")
+    for k, idStr in ipairs(arr) do
       local trapID = tonumber(idStr)
-      ;
-      (table.insert)(self._trapIDList, trapID)
+      table.insert(self._trapIDList, trapID)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTargetTurnToSelectTrapInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTargetTurnToSelectTrapInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   local world = casterEntity:GetOwnerWorld()
-  local targetEntity = (world:GetEntityByID(targetEntityID))
-  local tarpEntity = nil
+  local targetEntity = world:GetEntityByID(targetEntityID)
+  local tarpEntity
   local utilDataSvc = world:GetService("UtilData")
   local posList = utilDataSvc:GetCloneBoardGridPos()
-  local trapGroup = world:GetGroup((world.BW_WEMatchers).Trap)
-  for _,e in ipairs(trapGroup:GetEntities()) do
+  local trapGroup = world:GetGroup(world.BW_WEMatchers.Trap)
+  for _, e in ipairs(trapGroup:GetEntities()) do
     local trapRenderCmpt = e:TrapRender()
     local trapPos = e:GetRenderGridPosition()
-    if trapRenderCmpt and (table.icontains)(self._trapIDList, trapRenderCmpt:GetTrapID()) and (table.icontains)(posList, trapPos) then
+    if trapRenderCmpt and table.icontains(self._trapIDList, trapRenderCmpt:GetTrapID()) and table.icontains(posList, trapPos) then
       tarpEntity = e
       break
     end
   end
-  do
-    if tarpEntity then
-      casterEntity = tarpEntity
-    end
-    local renderEntityService = world:GetService("RenderEntity")
-    renderEntityService:TurnToTarget(targetEntity, casterEntity)
+  if tarpEntity then
+    casterEntity = tarpEntity
   end
+  local renderEntityService = world:GetService("RenderEntity")
+  renderEntityService:TurnToTarget(targetEntity, casterEntity)
 end
-
-

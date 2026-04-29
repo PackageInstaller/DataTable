@@ -1,36 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_boss_speak_dialog.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleBossSpeakDialog", UIController)
 UIBattleBossSpeakDialog = UIBattleBossSpeakDialog
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleBossSpeakDialog.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIBattleBossSpeakDialog:OnShow(uiParams)
   self._bossSpeakGen = self:GetUIComponent("UISelectObjectPath", "UIBattleBossSpeak")
-  self._uiBattleBossSpeak = (self._bossSpeakGen):SpawnObject("UIBattleBossSpeak")
+  self._uiBattleBossSpeak = self._bossSpeakGen:SpawnObject("UIBattleBossSpeak")
   self:StartTask(self._HandleBossSpeakShow, self, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleBossSpeakDialog._HandleBossSpeakShow = function(self, TT, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBattleBossSpeakDialog:_HandleBossSpeakShow(TT, uiParams)
   local animNames = uiParams[1]
   local bossImage = uiParams[2]
   local bossName = uiParams[3]
   local bossSpeak = uiParams[4]
-  ;
-  (self._uiBattleBossSpeak):UIShowBossSpeak(animNames, bossImage, bossName, bossSpeak)
+  self._uiBattleBossSpeak:UIShowBossSpeak(animNames, bossImage, bossName, bossSpeak)
   local intervalTime = uiParams[5]
   YIELD(TT, intervalTime)
   local outAnimName = uiParams[6]
-  ;
-  (self._uiBattleBossSpeak):PlayOutAnimation(outAnimName)
+  self._uiBattleBossSpeak:PlayOutAnimation(outAnimName)
   YIELD(TT, 300)
   self:CloseDialog()
 end
-
-

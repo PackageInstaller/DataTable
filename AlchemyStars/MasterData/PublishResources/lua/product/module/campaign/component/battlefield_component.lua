@@ -1,104 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/battlefield_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("BattlefieldComponent", ICampaignComponent)
 BattlefieldComponent = BattlefieldComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BattlefieldComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function BattlefieldComponent:Constructor()
   self.m_component_info = BattlefieldComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BattlefieldComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BattlefieldComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = BattlefieldComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BattlefieldComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function BattlefieldComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BattlefieldComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function BattlefieldComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_BATTLEFIELD
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BattlefieldComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function BattlefieldComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BattlefieldComponent.HandleBattlefieldDailyReset = function(self, TT, asyncRes)
-  -- function num : 0_5 , upvalues : _ENV
+function BattlefieldComponent:HandleBattlefieldDailyReset(TT, asyncRes)
   local request = BattlefieldComponentDailyResetReq:New()
   local response = BattlefieldComponentDailyResetRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][BattlefieldComponent] HandleBattlefieldDailyReset ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][BattlefieldComponent] HandleBattlefieldDailyReset ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).m_battlefield_info = response.m_battlefield_info
+  self.m_component_info.m_battlefield_info = response.m_battlefield_info
   asyncRes:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BattlefieldComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_6 , upvalues : _ENV
+function BattlefieldComponent:CampaignComponentPushNotify(notify_data)
   if BattlefieldComponentNotifyType.BattlefieldComponentNotify_MilitaryExploitChanged == notify_data.m_notify_type then
     local ev = NotifyBattlefieldComponentMilitaryExploitChanged:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
       self:OnMilitaryExploitChanged(ev)
     else
-      ;
-      (Log.error)("[CampaignCom][BattlefieldComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][BattlefieldComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BattlefieldComponent.OnMilitaryExploitChanged = function(self, ev)
-  -- function num : 0_7 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self.m_component_info).m_battlefield_info).m_cur_max_military_exploit = ev.m_cur_max_military_exploit
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self.m_component_info).m_battlefield_info).m_accumulated_military_exploit = ev.m_accumulated_military_exploit
-  for key,value in pairs(((self.m_component_info).m_battlefield_info).m_challenge_mission_info) do
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R7 in 'UnsetPending'
-
-    if key == (ev.m_challenge_mission_info).mission_id then
-      (((self.m_component_info).m_battlefield_info).m_challenge_mission_info)[key] = ev.m_challenge_mission_info
+function BattlefieldComponent:OnMilitaryExploitChanged(ev)
+  self.m_component_info.m_battlefield_info.m_cur_max_military_exploit = ev.m_cur_max_military_exploit
+  self.m_component_info.m_battlefield_info.m_accumulated_military_exploit = ev.m_accumulated_military_exploit
+  for key, value in pairs(self.m_component_info.m_battlefield_info.m_challenge_mission_info) do
+    if key == ev.m_challenge_mission_info.mission_id then
+      self.m_component_info.m_battlefield_info.m_challenge_mission_info[key] = ev.m_challenge_mission_info
     end
   end
 end
-
-

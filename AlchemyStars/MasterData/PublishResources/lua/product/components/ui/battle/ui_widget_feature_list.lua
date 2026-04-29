@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_feature_list.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetFeatureList", UICustomWidget)
 UIWidgetFeatureList = UIWidgetFeatureList
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetFeatureList.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetFeatureList:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureList.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWidgetFeatureList:InitWidget()
   self._defaultShowCount = 2
   self._inited = false
   self._grd = self:GetGameObject("grd")
@@ -29,198 +19,60 @@ UIWidgetFeatureList.InitWidget = function(self)
   self._featureGoDic = {}
   self._featureWidgetNameDic = {}
   self._featureWidgetDic = {}
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGenDic)[FeatureType.Sanity] = self:GetUIComponent("UISelectObjectPath", "FeatureSan")
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGoDic)[FeatureType.Sanity] = self:GetGameObject("FeatureSan")
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureWidgetNameDic)[FeatureType.Sanity] = "UIWidgetFeatureSan"
-  -- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGenDic)[FeatureType.PersonaSkill] = self:GetUIComponent("UISelectObjectPath", "FeaturePersonaSkill")
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGoDic)[FeatureType.PersonaSkill] = self:GetGameObject("FeaturePersonaSkill")
-  -- DECOMPILER ERROR at PC75: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureWidgetNameDic)[FeatureType.PersonaSkill] = "UIWidgetFeaturePersonaSkill"
-  -- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGenDic)[FeatureType.Card] = self:GetUIComponent("UISelectObjectPath", "FeatureCard")
-  -- DECOMPILER ERROR at PC90: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGoDic)[FeatureType.Card] = self:GetGameObject("FeatureCard")
-  -- DECOMPILER ERROR at PC94: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureWidgetNameDic)[FeatureType.Card] = "UIWidgetFeatureCard"
-  -- DECOMPILER ERROR at PC102: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGenDic)[FeatureType.MasterSkill] = self:GetUIComponent("UISelectObjectPath", "FeatureMasterSkill")
-  -- DECOMPILER ERROR at PC109: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGoDic)[FeatureType.MasterSkill] = self:GetGameObject("FeatureMasterSkill")
-  -- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureWidgetNameDic)[FeatureType.MasterSkill] = "UIWidgetFeatureMasterSkill"
-  -- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGenDic)[FeatureType.Scan] = self:GetUIComponent("UISelectObjectPath", "FeatureScan")
-  -- DECOMPILER ERROR at PC128: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGoDic)[FeatureType.Scan] = self:GetGameObject("FeatureScan")
-  -- DECOMPILER ERROR at PC132: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureWidgetNameDic)[FeatureType.Scan] = "UIWidgetFeatureScan"
-  -- DECOMPILER ERROR at PC140: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGenDic)[FeatureType.MasterSkillRecover] = self:GetUIComponent("UISelectObjectPath", "FeatureMasterSkillRecover")
-  -- DECOMPILER ERROR at PC147: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGoDic)[FeatureType.MasterSkillRecover] = self:GetGameObject("FeatureMasterSkillRecover")
-  -- DECOMPILER ERROR at PC151: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureWidgetNameDic)[FeatureType.MasterSkillRecover] = "UIWidgetFeatureMasterSkillRecover"
-  -- DECOMPILER ERROR at PC159: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGenDic)[FeatureType.MasterSkillTeleport] = self:GetUIComponent("UISelectObjectPath", "FeatureMasterSkillTeleport")
-  -- DECOMPILER ERROR at PC166: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGoDic)[FeatureType.MasterSkillTeleport] = self:GetGameObject("FeatureMasterSkillTeleport")
-  -- DECOMPILER ERROR at PC170: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureWidgetNameDic)[FeatureType.MasterSkillTeleport] = "UIWidgetFeatureMasterSkillTeleport"
-  -- DECOMPILER ERROR at PC178: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGenDic)[FeatureType.PopStar] = self:GetUIComponent("UISelectObjectPath", "FeaturePopStar")
-  -- DECOMPILER ERROR at PC185: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGoDic)[FeatureType.PopStar] = self:GetGameObject("FeaturePopStar")
-  -- DECOMPILER ERROR at PC189: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureWidgetNameDic)[FeatureType.PopStar] = "UIWidgetFeaturePopStar"
-  -- DECOMPILER ERROR at PC197: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGenDic)[FeatureType.TrapDefence] = self:GetUIComponent("UISelectObjectPath", "FeatureTrapDefence")
-  -- DECOMPILER ERROR at PC204: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGoDic)[FeatureType.TrapDefence] = self:GetGameObject("FeatureTrapDefence")
-  -- DECOMPILER ERROR at PC208: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureWidgetNameDic)[FeatureType.TrapDefence] = "UIWidgetFeatureTrapDefence"
+  self._featureGenDic[FeatureType.Sanity] = self:GetUIComponent("UISelectObjectPath", "FeatureSan")
+  self._featureGoDic[FeatureType.Sanity] = self:GetGameObject("FeatureSan")
+  self._featureWidgetNameDic[FeatureType.Sanity] = "UIWidgetFeatureSan"
+  self._featureGenDic[FeatureType.PersonaSkill] = self:GetUIComponent("UISelectObjectPath", "FeaturePersonaSkill")
+  self._featureGoDic[FeatureType.PersonaSkill] = self:GetGameObject("FeaturePersonaSkill")
+  self._featureWidgetNameDic[FeatureType.PersonaSkill] = "UIWidgetFeaturePersonaSkill"
+  self._featureGenDic[FeatureType.Card] = self:GetUIComponent("UISelectObjectPath", "FeatureCard")
+  self._featureGoDic[FeatureType.Card] = self:GetGameObject("FeatureCard")
+  self._featureWidgetNameDic[FeatureType.Card] = "UIWidgetFeatureCard"
+  self._featureGenDic[FeatureType.MasterSkill] = self:GetUIComponent("UISelectObjectPath", "FeatureMasterSkill")
+  self._featureGoDic[FeatureType.MasterSkill] = self:GetGameObject("FeatureMasterSkill")
+  self._featureWidgetNameDic[FeatureType.MasterSkill] = "UIWidgetFeatureMasterSkill"
+  self._featureGenDic[FeatureType.Scan] = self:GetUIComponent("UISelectObjectPath", "FeatureScan")
+  self._featureGoDic[FeatureType.Scan] = self:GetGameObject("FeatureScan")
+  self._featureWidgetNameDic[FeatureType.Scan] = "UIWidgetFeatureScan"
+  self._featureGenDic[FeatureType.MasterSkillRecover] = self:GetUIComponent("UISelectObjectPath", "FeatureMasterSkillRecover")
+  self._featureGoDic[FeatureType.MasterSkillRecover] = self:GetGameObject("FeatureMasterSkillRecover")
+  self._featureWidgetNameDic[FeatureType.MasterSkillRecover] = "UIWidgetFeatureMasterSkillRecover"
+  self._featureGenDic[FeatureType.MasterSkillTeleport] = self:GetUIComponent("UISelectObjectPath", "FeatureMasterSkillTeleport")
+  self._featureGoDic[FeatureType.MasterSkillTeleport] = self:GetGameObject("FeatureMasterSkillTeleport")
+  self._featureWidgetNameDic[FeatureType.MasterSkillTeleport] = "UIWidgetFeatureMasterSkillTeleport"
+  self._featureGenDic[FeatureType.PopStar] = self:GetUIComponent("UISelectObjectPath", "FeaturePopStar")
+  self._featureGoDic[FeatureType.PopStar] = self:GetGameObject("FeaturePopStar")
+  self._featureWidgetNameDic[FeatureType.PopStar] = "UIWidgetFeaturePopStar"
+  self._featureGenDic[FeatureType.TrapDefence] = self:GetUIComponent("UISelectObjectPath", "FeatureTrapDefence")
+  self._featureGoDic[FeatureType.TrapDefence] = self:GetGameObject("FeatureTrapDefence")
+  self._featureWidgetNameDic[FeatureType.TrapDefence] = "UIWidgetFeatureTrapDefence"
   self:_InitDicForPopStarSkills()
   self:_InitDicForTalentSkills()
-  -- DECOMPILER ERROR at PC220: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGenDic)[FeatureType.AlgorithmUpgrade] = self:GetUIComponent("UISelectObjectPath", "FeatureAlgorithmUpgrade")
-  -- DECOMPILER ERROR at PC227: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGoDic)[FeatureType.AlgorithmUpgrade] = self:GetGameObject("FeatureAlgorithmUpgrade")
-  -- DECOMPILER ERROR at PC231: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureWidgetNameDic)[FeatureType.AlgorithmUpgrade] = "UIWidgetFeatureAlgorithmUpgrade"
-  -- DECOMPILER ERROR at PC239: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGenDic)[FeatureType.Shop] = self:GetUIComponent("UISelectObjectPath", "FeatureShop")
-  -- DECOMPILER ERROR at PC246: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGoDic)[FeatureType.Shop] = self:GetGameObject("FeatureShop")
-  -- DECOMPILER ERROR at PC250: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureWidgetNameDic)[FeatureType.Shop] = "UIWidgetFeatureShop"
-  -- DECOMPILER ERROR at PC258: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGenDic)[FeatureType.BanPetSkill] = self:GetUIComponent("UISelectObjectPath", "FeatureBanPetSkill")
-  -- DECOMPILER ERROR at PC265: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGoDic)[FeatureType.BanPetSkill] = self:GetGameObject("FeatureBanPetSkill")
-  -- DECOMPILER ERROR at PC269: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureWidgetNameDic)[FeatureType.BanPetSkill] = "UIWidgetFeatureBanPetSkill"
+  self._featureGenDic[FeatureType.AlgorithmUpgrade] = self:GetUIComponent("UISelectObjectPath", "FeatureAlgorithmUpgrade")
+  self._featureGoDic[FeatureType.AlgorithmUpgrade] = self:GetGameObject("FeatureAlgorithmUpgrade")
+  self._featureWidgetNameDic[FeatureType.AlgorithmUpgrade] = "UIWidgetFeatureAlgorithmUpgrade"
+  self._featureGenDic[FeatureType.Shop] = self:GetUIComponent("UISelectObjectPath", "FeatureShop")
+  self._featureGoDic[FeatureType.Shop] = self:GetGameObject("FeatureShop")
+  self._featureWidgetNameDic[FeatureType.Shop] = "UIWidgetFeatureShop"
+  self._featureGenDic[FeatureType.BanPetSkill] = self:GetUIComponent("UISelectObjectPath", "FeatureBanPetSkill")
+  self._featureGoDic[FeatureType.BanPetSkill] = self:GetGameObject("FeatureBanPetSkill")
+  self._featureWidgetNameDic[FeatureType.BanPetSkill] = "UIWidgetFeatureBanPetSkill"
   self._featureBanPetSkillLayout = self:GetGameObject("FeatureBanPetSkillLayout")
   if self._featureBanPetSkillLayout then
-    (self._featureBanPetSkillLayout):SetActive(false)
+    self._featureBanPetSkillLayout:SetActive(false)
   end
-  -- DECOMPILER ERROR at PC288: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGenDic)[FeatureType.AutoBeadPowerInfo] = self:GetUIComponent("UISelectObjectPath", "FeatureAutoBeadPowerInfo")
-  -- DECOMPILER ERROR at PC295: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGoDic)[FeatureType.AutoBeadPowerInfo] = self:GetGameObject("FeatureAutoBeadPowerInfo")
-  -- DECOMPILER ERROR at PC299: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureWidgetNameDic)[FeatureType.AutoBeadPowerInfo] = "UIWidgetFeatureAutoBeadPowerInfo"
-  -- DECOMPILER ERROR at PC307: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGenDic)[FeatureType.Alchemy] = self:GetUIComponent("UISelectObjectPath", "FeatureAlchemyInfo")
-  -- DECOMPILER ERROR at PC314: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGoDic)[FeatureType.Alchemy] = self:GetGameObject("FeatureAlchemyInfo")
-  -- DECOMPILER ERROR at PC318: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureWidgetNameDic)[FeatureType.Alchemy] = "UIWidgetFeatureAlchemyInfo"
-  -- DECOMPILER ERROR at PC326: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGenDic)[FeatureType.TetrisGame] = self:GetUIComponent("UISelectObjectPath", "FeatureTetrisInfo")
-  -- DECOMPILER ERROR at PC333: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureGoDic)[FeatureType.TetrisGame] = self:GetGameObject("FeatureTetrisInfo")
-  -- DECOMPILER ERROR at PC337: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._featureWidgetNameDic)[FeatureType.TetrisGame] = "UIWidgetFeatureTetris"
+  self._featureGenDic[FeatureType.AutoBeadPowerInfo] = self:GetUIComponent("UISelectObjectPath", "FeatureAutoBeadPowerInfo")
+  self._featureGoDic[FeatureType.AutoBeadPowerInfo] = self:GetGameObject("FeatureAutoBeadPowerInfo")
+  self._featureWidgetNameDic[FeatureType.AutoBeadPowerInfo] = "UIWidgetFeatureAutoBeadPowerInfo"
+  self._featureGenDic[FeatureType.Alchemy] = self:GetUIComponent("UISelectObjectPath", "FeatureAlchemyInfo")
+  self._featureGoDic[FeatureType.Alchemy] = self:GetGameObject("FeatureAlchemyInfo")
+  self._featureWidgetNameDic[FeatureType.Alchemy] = "UIWidgetFeatureAlchemyInfo"
+  self._featureGenDic[FeatureType.TetrisGame] = self:GetUIComponent("UISelectObjectPath", "FeatureTetrisInfo")
+  self._featureGoDic[FeatureType.TetrisGame] = self:GetGameObject("FeatureTetrisInfo")
+  self._featureWidgetNameDic[FeatureType.TetrisGame] = "UIWidgetFeatureTetris"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureList.RegisterEvent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetFeatureList:RegisterEvent()
   self:AttachEvent(GameEventType.FeatureListInit, self._OnFeatureListInit)
   self:AttachEvent(GameEventType.UIFeatureSkillInfoShow, self._OnUIFeatureSkillInfoShow)
   self:AttachEvent(GameEventType.UISwitchActiveSkillUI, self.OnSwitchActiveSkillUI)
@@ -229,162 +81,126 @@ UIWidgetFeatureList.RegisterEvent = function(self)
   self:AttachEvent(GameEventType.FeatureShowBanPetSkill, self._OnFeatureShowBanPetSkill)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureList._InitDicForPopStarSkills = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local popStarFeatureTypes = {FeatureType.PopStar1, FeatureType.PopStar2, FeatureType.PopStar3, FeatureType.PopStar4, FeatureType.PopStar5, FeatureType.PopStar6, FeatureType.PopStar7, FeatureType.PopStar8, FeatureType.PopStar9, FeatureType.PopStar10}
-  for index,featureType in ipairs(popStarFeatureTypes) do
+function UIWidgetFeatureList:_InitDicForPopStarSkills()
+  local popStarFeatureTypes = {
+    FeatureType.PopStar1,
+    FeatureType.PopStar2,
+    FeatureType.PopStar3,
+    FeatureType.PopStar4,
+    FeatureType.PopStar5,
+    FeatureType.PopStar6,
+    FeatureType.PopStar7,
+    FeatureType.PopStar8,
+    FeatureType.PopStar9,
+    FeatureType.PopStar10
+  }
+  for index, featureType in ipairs(popStarFeatureTypes) do
     local goName = "FeaturePopStar" .. tostring(index)
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._featureGenDic)[featureType] = self:GetUIComponent("UISelectObjectPath", goName)
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._featureGoDic)[featureType] = self:GetGameObject(goName)
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._featureWidgetNameDic)[featureType] = "UIWidgetFeaturePopStar"
+    self._featureGenDic[featureType] = self:GetUIComponent("UISelectObjectPath", goName)
+    self._featureGoDic[featureType] = self:GetGameObject(goName)
+    self._featureWidgetNameDic[featureType] = "UIWidgetFeaturePopStar"
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureList._InitDicForTalentSkills = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local talentSkillFeatureTypes = {FeatureType.TalentSkill1, FeatureType.TalentSkill2, FeatureType.TalentSkill3, FeatureType.TalentSkill4, FeatureType.TalentSkill5}
-  for index,featureType in ipairs(talentSkillFeatureTypes) do
+function UIWidgetFeatureList:_InitDicForTalentSkills()
+  local talentSkillFeatureTypes = {
+    FeatureType.TalentSkill1,
+    FeatureType.TalentSkill2,
+    FeatureType.TalentSkill3,
+    FeatureType.TalentSkill4,
+    FeatureType.TalentSkill5
+  }
+  for index, featureType in ipairs(talentSkillFeatureTypes) do
     local goName = "FeatureMasterSkillTalent" .. tostring(index)
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._featureGenDic)[featureType] = self:GetUIComponent("UISelectObjectPath", goName)
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._featureGoDic)[featureType] = self:GetGameObject(goName)
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._featureWidgetNameDic)[featureType] = "UIWidgetFeatureMasterSkill"
+    self._featureGenDic[featureType] = self:GetUIComponent("UISelectObjectPath", goName)
+    self._featureGoDic[featureType] = self:GetGameObject(goName)
+    self._featureWidgetNameDic[featureType] = "UIWidgetFeatureMasterSkill"
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureList._OnFeatureListInit = function(self, featureListInfo)
-  -- function num : 0_5
+function UIWidgetFeatureList:_OnFeatureListInit(featureListInfo)
   if featureListInfo then
     self:SetData(featureListInfo)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureList._OnUIFeatureSkillInfoShow = function(self, show, featureType)
-  -- function num : 0_6 , upvalues : _ENV
+function UIWidgetFeatureList:_OnUIFeatureSkillInfoShow(show, featureType)
   local needShowToFirst = true
   if featureType == FeatureType.Card or featureType == FeatureType.Shop then
     needShowToFirst = false
   end
-  if show and needShowToFirst then
-    (self._imgShowGo):SetActive(false)
-    ;
-    (self._imgHideGo):SetActive(false)
-    for key,featureGo in pairs(self._featureGoDic) do
-      if key ~= featureType then
-        featureGo:SetActive(false)
+  if show then
+    if needShowToFirst then
+      self._imgShowGo:SetActive(false)
+      self._imgHideGo:SetActive(false)
+      for key, featureGo in pairs(self._featureGoDic) do
+        if key ~= featureType then
+          featureGo:SetActive(false)
+        end
       end
     end
-  end
-  do
+  else
     self:_RefreshArrowState()
     self:_RefreshFeatureGoState()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureList.SetUIBattle = function(self, uiBattle)
-  -- function num : 0_7
+function UIWidgetFeatureList:SetUIBattle(uiBattle)
   self._uiBattle = uiBattle
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureList.GetUIBattle = function(self)
-  -- function num : 0_8
+function UIWidgetFeatureList:GetUIBattle()
   return self._uiBattle
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureList.GetFeatureEnterCustomPrefab = function(self, featureType, featureData)
-  -- function num : 0_9 , upvalues : _ENV
-  do
-    if featureType == FeatureType.Card and featureData then
+function UIWidgetFeatureList:GetFeatureEnterCustomPrefab(featureType, featureData)
+  if featureType == FeatureType.Card then
+    if featureData then
       local uiType = featureData:GetUiType()
       if uiType and uiType == FeatureCardUiType.Skin1 then
         return "UIWidgetFeatureCard_l.prefab"
       end
     end
-    do
-      if featureType == FeatureType.MasterSkill and featureData then
-        local uiType = featureData:GetUiType()
-        if uiType and uiType == FeatureMasterSkillUiType.TypeSeason then
-          return "UIWidgetFeatureMasterSkillSeason.prefab"
-        end
-      end
-      return 
+  elseif featureType == FeatureType.MasterSkill and featureData then
+    local uiType = featureData:GetUiType()
+    if uiType and uiType == FeatureMasterSkillUiType.TypeSeason then
+      return "UIWidgetFeatureMasterSkillSeason.prefab"
     end
   end
+  return
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureList.GetFeatureEnterCustomWidgetName = function(self, featureType, featureData)
-  -- function num : 0_10 , upvalues : _ENV
-  do
-    if featureType == FeatureType.Card and featureData then
-      local uiType = featureData:GetUiType()
-      if uiType and uiType == FeatureCardUiType.Skin1 then
-        return "UIWidgetFeatureCard_L"
-      end
+function UIWidgetFeatureList:GetFeatureEnterCustomWidgetName(featureType, featureData)
+  if featureType == FeatureType.Card and featureData then
+    local uiType = featureData:GetUiType()
+    if uiType and uiType == FeatureCardUiType.Skin1 then
+      return "UIWidgetFeatureCard_L"
     end
-    return 
   end
+  return
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureList.SetData = function(self, featureListInfo)
-  -- function num : 0_11 , upvalues : _ENV
+function UIWidgetFeatureList:SetData(featureListInfo)
   if featureListInfo then
     local featureCount = 0
     local featureGoList = {}
     local layoutList = {}
-    for i,v in ipairs(featureListInfo) do
+    for i, v in ipairs(featureListInfo) do
       local featureType = v:GetFeatureType()
-      if (self._featureGoDic)[featureType] and (self._featureGenDic)[featureType] then
-        if not (self._featureWidgetDic)[featureType] then
-          local sop = (self._featureGenDic)[featureType]
+      if self._featureGoDic[featureType] and self._featureGenDic[featureType] then
+        if not self._featureWidgetDic[featureType] then
+          local sop = self._featureGenDic[featureType]
           local customPrefabPath = self:GetFeatureEnterCustomPrefab(featureType, v)
           if customPrefabPath then
-            (sop:Engine()):SetObjectName(customPrefabPath)
+            sop:Engine():SetObjectName(customPrefabPath)
           end
-          local widgetName = (self._featureWidgetNameDic)[featureType]
+          local widgetName = self._featureWidgetNameDic[featureType]
           local customWidgetName = self:GetFeatureEnterCustomWidgetName(featureType, v)
           if customWidgetName then
             widgetName = customWidgetName
           end
           local widget = sop:SpawnObject(widgetName)
-          -- DECOMPILER ERROR at PC49: Confused about usage of register: R16 in 'UnsetPending'
-
-          ;
-          (self._featureWidgetDic)[featureType] = widget
+          self._featureWidgetDic[featureType] = widget
           if widget.SetUIBattle then
             widget:SetUIBattle(self:GetUIBattle())
           end
@@ -393,121 +209,85 @@ UIWidgetFeatureList.SetData = function(self, featureListInfo)
           end
           widget:SetData(v)
         end
-        do
-          if featureType ~= FeatureType.DayNight and featureType ~= FeatureType.TrapCount and featureType ~= FeatureType.StepPoint and featureType ~= FeatureType.BanPetSkill then
-            featureCount = featureCount + 1
-          end
-          local featureConfigGroup = (Cfg.cfg_feature)({FeatureType = featureType})
-          if featureConfigGroup and #featureConfigGroup > 0 then
-            local featureCfg = featureConfigGroup[1]
-            local layoutOrder = featureCfg.LayoutOrder
-            if layoutOrder then
-              (table.insert)(layoutList, {type = featureType, order = layoutOrder})
-            end
-          end
-          do
-            -- DECOMPILER ERROR at PC104: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC104: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC104: LeaveBlock: unexpected jumping out IF_STMT
-
+        if featureType ~= FeatureType.DayNight and featureType ~= FeatureType.TrapCount and featureType ~= FeatureType.StepPoint and featureType ~= FeatureType.BanPetSkill then
+          featureCount = featureCount + 1
+        end
+        local featureConfigGroup = Cfg.cfg_feature({FeatureType = featureType})
+        if featureConfigGroup and 0 < #featureConfigGroup then
+          local featureCfg = featureConfigGroup[1]
+          local layoutOrder = featureCfg.LayoutOrder
+          if layoutOrder then
+            table.insert(layoutList, {type = featureType, order = layoutOrder})
           end
         end
       end
     end
-    local cmptFunc = function(a, b)
-    -- function num : 0_11_0
-    do return a.order < b.order end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-    ;
-    (table.sort)(layoutList, cmptFunc)
+    
+    local function cmptFunc(a, b)
+      return a.order < b.order
+    end
+    
+    table.sort(layoutList, cmptFunc)
     local siblingIndex = 1
-    for i,v in ipairs(layoutList) do
-      (((self._featureGoDic)[v.type]).transform):SetSiblingIndex(siblingIndex)
+    for i, v in ipairs(layoutList) do
+      self._featureGoDic[v.type].transform:SetSiblingIndex(siblingIndex)
       siblingIndex = siblingIndex + 1
       if v.type ~= FeatureType.BanPetSkill then
-        (table.insert)(featureGoList, (self._featureGoDic)[v.type])
+        table.insert(featureGoList, self._featureGoDic[v.type])
       end
     end
-    for index,featureGo in ipairs(featureGoList) do
+    for index, featureGo in ipairs(featureGoList) do
       if self._bOpenList or index <= self._defaultShowCount then
         featureGo:SetActive(true)
       end
     end
     self._featureGoList = featureGoList
-    if self._defaultShowCount >= featureCount then
-      do
-        do
-          local bShowArrow = self._inited and self._bOpenList
-          ;
-          (self._showHideArea):SetActive(bShowArrow)
-          self._bOpenList = false
-          if bShowArrow then
-            self:_RefreshArrowState()
-          end
-          self._inited = true
-          -- DECOMPILER ERROR: 3 unprocessed JMP targets
-        end
+    if not self._inited or not self._bOpenList then
+      local bShowArrow = featureCount > self._defaultShowCount
+      self._showHideArea:SetActive(bShowArrow)
+      self._bOpenList = false
+      if bShowArrow then
+        self:_RefreshArrowState()
       end
     end
+    self._inited = true
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureList._RefreshArrowState = function(self)
-  -- function num : 0_12
-  (self._imgShowGo):SetActive(not self._bOpenList)
-  ;
-  (self._imgHideGo):SetActive(self._bOpenList)
+function UIWidgetFeatureList:_RefreshArrowState()
+  self._imgShowGo:SetActive(not self._bOpenList)
+  self._imgHideGo:SetActive(self._bOpenList)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureList.ImgHideOnClick = function(self, go)
-  -- function num : 0_13
+function UIWidgetFeatureList:ImgHideOnClick(go)
   self._bOpenList = false
   self:_RefreshArrowState()
   self:_RefreshFeatureGoState()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureList.ImgShowOnClick = function(self, go)
-  -- function num : 0_14
+function UIWidgetFeatureList:ImgShowOnClick(go)
   self._bOpenList = true
   self:_RefreshArrowState()
   self:_RefreshFeatureGoState()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureList._RefreshFeatureGoState = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIWidgetFeatureList:_RefreshFeatureGoState()
   if self._featureGoList then
-    for i,go in ipairs(self._featureGoList) do
+    for i, go in ipairs(self._featureGoList) do
       if self._bOpenList then
         go:SetActive(true)
+      elseif i <= self._defaultShowCount then
+        go:SetActive(true)
       else
-        if i <= self._defaultShowCount then
-          go:SetActive(true)
-        else
-          go:SetActive(false)
-        end
+        go:SetActive(false)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureList.OnSwitchActiveSkillUI = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIWidgetFeatureList:OnSwitchActiveSkillUI()
   if self._featureWidgetDic then
-    for k,widget in pairs(self._featureWidgetDic) do
+    for k, widget in pairs(self._featureWidgetDic) do
       if widget.OnSwitchActiveSkillUI then
         widget:OnSwitchActiveSkillUI()
       end
@@ -515,12 +295,9 @@ UIWidgetFeatureList.OnSwitchActiveSkillUI = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureList.OnChooseTargetConfirm = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIWidgetFeatureList:OnChooseTargetConfirm()
   if self._featureWidgetDic then
-    for k,widget in pairs(self._featureWidgetDic) do
+    for k, widget in pairs(self._featureWidgetDic) do
       if widget.OnChooseTargetConfirm then
         widget:OnChooseTargetConfirm()
       end
@@ -528,70 +305,51 @@ UIWidgetFeatureList.OnChooseTargetConfirm = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureList.OnRemoveFeature = function(self, featureType)
-  -- function num : 0_18 , upvalues : _ENV
-  local widget = (self._featureWidgetDic)[featureType]
+function UIWidgetFeatureList:OnRemoveFeature(featureType)
+  local widget = self._featureWidgetDic[featureType]
   if widget and widget.RemoveFeature then
     widget:RemoveFeature(featureType)
-    for k,v in pairs(self._featureWidgetDic) do
-      -- DECOMPILER ERROR at PC17: Confused about usage of register: R8 in 'UnsetPending'
-
+    for k, v in pairs(self._featureWidgetDic) do
       if k == featureType then
-        (self._featureWidgetDic)[featureType] = nil
+        self._featureWidgetDic[featureType] = nil
       end
     end
   end
-  do
-    local featureGo = (self._featureGoDic)[featureType]
-    if featureGo then
-      featureGo:SetActive(false)
-      ;
-      (table.removev)(self._featureGoList, featureGo)
-    end
-    self:_RefreshArrowState()
-    self:_RefreshFeatureGoState()
+  local featureGo = self._featureGoDic[featureType]
+  if featureGo then
+    featureGo:SetActive(false)
+    table.removev(self._featureGoList, featureGo)
   end
+  self:_RefreshArrowState()
+  self:_RefreshFeatureGoState()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureList._OnFeatureShowBanPetSkill = function(self, show)
-  -- function num : 0_19 , upvalues : _ENV
-  local uiWidgetFeatureBanPetSkill = (self._featureWidgetDic)[FeatureType.BanPetSkill]
+function UIWidgetFeatureList:_OnFeatureShowBanPetSkill(show)
+  local uiWidgetFeatureBanPetSkill = self._featureWidgetDic[FeatureType.BanPetSkill]
   if not uiWidgetFeatureBanPetSkill then
-    return 
+    return
   end
-  local featureBanPetSkillGo = (self._featureGoDic)[FeatureType.BanPetSkill]
+  local featureBanPetSkillGo = self._featureGoDic[FeatureType.BanPetSkill]
   if not featureBanPetSkillGo then
-    return 
+    return
   end
   if not self._featureBanPetSkillLayout then
-    return 
+    return
   end
   featureBanPetSkillGo:SetActive(show)
-  for i,go in ipairs(self._featureGoList) do
+  for i, go in ipairs(self._featureGoList) do
     go:SetActive(show == false)
   end
   local uiBattle = self:GetUIBattle()
   local featureBanPetSkillPartent = uiBattle._featureBanPetSkillPartent
   featureBanPetSkillPartent:SetActive(show)
-  ;
-  (self._featureBanPetSkillLayout):SetActive(show)
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R6 in 'UnsetPending'
-
+  self._featureBanPetSkillLayout:SetActive(show)
   if show then
-    (featureBanPetSkillGo.transform).parent = featureBanPetSkillPartent.transform
+    featureBanPetSkillGo.transform.parent = featureBanPetSkillPartent.transform
     uiWidgetFeatureBanPetSkill:OnRefreshUI()
   else
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R6 in 'UnsetPending'
-
-    (featureBanPetSkillGo.transform).parent = (self._grd).transform
+    featureBanPetSkillGo.transform.parent = self._grd.transform
     self:_RefreshArrowState()
     self:_RefreshFeatureGoState()
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
-
-

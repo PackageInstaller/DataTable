@@ -1,35 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_is_direction.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionIsDirection", AINewNode)
 ActionIsDirection = ActionIsDirection
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionIsDirection.OnBegin = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionIsDirection:OnBegin()
   self._dir = Vector2.up
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.dir).x = self:GetLogicData(-1)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.dir).y = self:GetLogicData(-2)
+  self.dir.x = self:GetLogicData(-1)
+  self.dir.y = self:GetLogicData(-2)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionIsDirection.OnUpdate = function(self, dt)
-  -- function num : 0_1 , upvalues : _ENV
-  if ((self.m_entityOwn):GridLocation()).Direction == self.dir then
+function ActionIsDirection:OnUpdate(dt)
+  if self.m_entityOwn:GridLocation().Direction == self.dir then
     return AINewNodeStatus.Success
   else
     return AINewNodeStatus.Failure
   end
 end
-
-

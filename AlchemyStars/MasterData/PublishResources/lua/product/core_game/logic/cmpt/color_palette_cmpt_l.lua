@@ -1,113 +1,75 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/color_palette_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ColorPaletteComponent", Object)
 ColorPaletteComponent = ColorPaletteComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ColorPaletteComponent.Constructor = function(self)
-  -- function num : 0_0
+function ColorPaletteComponent:Constructor()
   self._pieceTypes = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ColorPaletteComponent.GetPieceTypes = function(self)
-  -- function num : 0_1
+function ColorPaletteComponent:GetPieceTypes()
   return self._pieceTypes
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ColorPaletteComponent.Clear = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (table.clear)(self._pieceTypes)
+function ColorPaletteComponent:Clear()
+  table.clear(self._pieceTypes)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ColorPaletteComponent.GetPieceTypesCount = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  return (table.count)(self._pieceTypes)
+function ColorPaletteComponent:GetPieceTypesCount()
+  return table.count(self._pieceTypes)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ColorPaletteComponent.IsSatisfy = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  do return PieceType.Yellow <= self:GetPieceTypesCount() end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function ColorPaletteComponent:IsSatisfy()
+  return self:GetPieceTypesCount() >= PieceType.Yellow
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ColorPaletteComponent.AddPieceTypes = function(self, pieceTypes)
-  -- function num : 0_5 , upvalues : _ENV
+function ColorPaletteComponent:AddPieceTypes(pieceTypes)
   if pieceTypes then
     local anyPieces = {}
-    for _,pieceType in ipairs(pieceTypes) do
+    for _, pieceType in ipairs(pieceTypes) do
       if pieceType == PieceType.Any then
-        (table.insert)(anyPieces, pieceType)
-      else
-        if not (table.icontains)(self._pieceTypes, pieceType) then
-          (table.insert)(self._pieceTypes, pieceType)
-        end
+        table.insert(anyPieces, pieceType)
+      elseif not table.icontains(self._pieceTypes, pieceType) then
+        table.insert(self._pieceTypes, pieceType)
       end
     end
     local anyCount = #anyPieces
-    if anyCount > 0 then
-      local tempPieceTypes = {PieceType.Blue, PieceType.Red, PieceType.Green, PieceType.Yellow}
-      for _,pieceType in ipairs(tempPieceTypes) do
-        if not (table.icontains)(self._pieceTypes, pieceType) then
-          (table.insert)(self._pieceTypes, pieceType)
+    if 0 < anyCount then
+      local tempPieceTypes = {
+        PieceType.Blue,
+        PieceType.Red,
+        PieceType.Green,
+        PieceType.Yellow
+      }
+      for _, pieceType in ipairs(tempPieceTypes) do
+        if not table.icontains(self._pieceTypes, pieceType) then
+          table.insert(self._pieceTypes, pieceType)
           anyCount = anyCount - 1
+        end
+        if anyCount <= 0 then
+          break
         end
       end
     end
   end
-  do
-    if anyCount > 0 then
-    end
-  end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ColorPalette = function(self)
-  -- function num : 0_6
-  return self:GetComponent((self.WEComponentsEnum).ColorPalette)
+function Entity:ColorPalette()
+  return self:GetComponent(self.WEComponentsEnum.ColorPalette)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasColorPalette = function(self)
-  -- function num : 0_7
-  return self:HasComponent((self.WEComponentsEnum).ColorPalette)
+function Entity:HasColorPalette()
+  return self:HasComponent(self.WEComponentsEnum.ColorPalette)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddColorPalette = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self:AddComponent((self.WEComponentsEnum).ColorPalette, ColorPaletteComponent:New())
+function Entity:AddColorPalette()
+  self:AddComponent(self.WEComponentsEnum.ColorPalette, ColorPaletteComponent:New())
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceColorPalette = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  self:ReplaceComponent((self.WEComponentsEnum).ColorPalette, ColorPaletteComponent:New())
+function Entity:ReplaceColorPalette()
+  self:ReplaceComponent(self.WEComponentsEnum.ColorPalette, ColorPaletteComponent:New())
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveColorPalette = function(self)
-  -- function num : 0_10
+function Entity:RemoveColorPalette()
   if self:HasColorPalette() then
-    self:RemoveComponent((self.WEComponentsEnum).ColorPalette)
+    self:RemoveComponent(self.WEComponentsEnum.ColorPalette)
   end
 end
-
-

@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/ui_medal_list/ui_medal_list_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalListTab", UICustomWidget)
 UIMedalListTab = UIMedalListTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalListTab.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMedalListTab:Constructor()
   self._atlas = self:GetAsset("UIMedal.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListTab.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIMedalListTab:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListTab.InitWidget = function(self)
-  -- function num : 0_2
+function UIMedalListTab:InitWidget()
   self.imgIcon = self:GetUIComponent("Image", "imgIcon")
   self.txtFilter = self:GetUIComponent("UILocalizationText", "txtFilter")
   self.red = self:GetGameObject("red")
@@ -31,87 +18,46 @@ UIMedalListTab.InitWidget = function(self)
   self._ani = self:GetUIComponent("Animation", "_ani")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListTab.SetData = function(self, filterInfo, bSelect, callback)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMedalListTab:SetData(filterInfo, bSelect, callback)
   self.filterInfo = filterInfo
   self.callback = callback
   self:SetSelect(bSelect)
-  ;
-  (self.txtFilter):SetText((StringTable.Get)((self.filterInfo).Name))
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.imgIcon).sprite = (self._atlas):GetSprite((self.filterInfo).Icon)
-  ;
-  (self.imgIcon):SetNativeSize()
+  self.txtFilter:SetText(StringTable.Get(self.filterInfo.Name))
+  self.imgIcon.sprite = self._atlas:GetSprite(self.filterInfo.Icon)
+  self.imgIcon:SetNativeSize()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListTab.SetSelect = function(self, bSelect, withAni)
-  -- function num : 0_4
-  (self.select):SetActive(bSelect)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
+function UIMedalListTab:SetSelect(bSelect, withAni)
+  self.select:SetActive(bSelect)
   if bSelect then
-    (self.imgTabBg).sprite = (self._atlas):GetSprite("N22_xzzl_di03")
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.txtFilter).fontSize = 36
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.txtFilter).resizeTextMaxSize = 36
+    self.imgTabBg.sprite = self._atlas:GetSprite("N22_xzzl_di03")
+    self.txtFilter.fontSize = 36
+    self.txtFilter.resizeTextMaxSize = 36
   else
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.imgTabBg).sprite = (self._atlas):GetSprite("N22_xzzl_di04")
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.txtFilter).fontSize = 30
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.txtFilter).resizeTextMaxSize = 30
+    self.imgTabBg.sprite = self._atlas:GetSprite("N22_xzzl_di04")
+    self.txtFilter.fontSize = 30
+    self.txtFilter.resizeTextMaxSize = 30
   end
-  ;
-  (self.imgTabBg):SetNativeSize()
+  self.imgTabBg:SetNativeSize()
   if withAni then
     if bSelect then
-      (self._ani):Play("uieff_UIMedalListTab_dianjiBig")
+      self._ani:Play("uieff_UIMedalListTab_dianjiBig")
     else
-      ;
-      (self._ani):Play("uieff_UIMedalListTab_dianjiSmall")
+      self._ani:Play("uieff_UIMedalListTab_dianjiSmall")
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListTab.SetNew = function(self, bNew)
-  -- function num : 0_5
-  (self.red):SetActive(bNew)
+function UIMedalListTab:SetNew(bNew)
+  self.red:SetActive(bNew)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListTab.ImgTabOnClick = function(self, go)
-  -- function num : 0_6
+function UIMedalListTab:ImgTabOnClick(go)
   if self.callback then
-    (self.callback)(self)
+    self.callback(self)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListTab.GetFilterID = function(self)
-  -- function num : 0_7
-  return (self.filterInfo).ID
+function UIMedalListTab:GetFilterID()
+  return self.filterInfo.ID
 end
-
-

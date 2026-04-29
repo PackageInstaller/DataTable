@@ -1,84 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_back_escape.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_move_base")
 _class("ActionMoveBackEscape", ActionMoveBase)
 ActionMoveBackEscape = ActionMoveBackEscape
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMoveBackEscape.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionMoveBackEscape:Constructor()
   self.m_posFirst = nil
   self.m_nextPosList = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByFar)
-  ;
-  (self.m_nextPosList):AllowDuplicate()
+  self.m_nextPosList:AllowDuplicate()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBackEscape.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionMoveBackEscape.super).Reset)(self)
-  ;
-  (self.m_nextPosList):Clear()
+function ActionMoveBackEscape:Reset()
+  ActionMoveBackEscape.super.Reset(self)
+  self.m_nextPosList:Clear()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBackEscape.InitTargetPosList = function(self, listPosTarget)
-  -- function num : 0_2 , upvalues : _ENV
-  local posSelf = ((self.m_entityOwn):GridLocation()).Position
+function ActionMoveBackEscape:InitTargetPosList(listPosTarget)
+  local posSelf = self.m_entityOwn:GridLocation().Position
   local nSkillID = self:GetLogicData(1)
-  local nBodyAreaCount = ((self.m_entityOwn):BodyArea()):GetAreaCount()
-  local aiComponent = (self.m_entityOwn):AI()
+  local nBodyAreaCount = self.m_entityOwn:BodyArea():GetAreaCount()
+  local aiComponent = self.m_entityOwn:AI()
   local nWalkTotal = aiComponent:GetMobilityValid()
   if nWalkTotal == aiComponent:GetMobilityConfig() then
     self.m_posFirst = nil
   end
   local walkRange = self:ComputeWalkRange(posSelf, nWalkTotal, true)
   local bExcludeSelf = self:GetLogicData(-1) or 0
-  ;
-  (self.m_nextPosList):Clear()
-  for _,targetPos in ipairs(listPosTarget) do
+  self.m_nextPosList:Clear()
+  for _, targetPos in ipairs(listPosTarget) do
     if bExcludeSelf <= 0 then
-      (AINewNode.InsertSortedArray)(self.m_nextPosList, targetPos, posSelf, 0)
+      AINewNode.InsertSortedArray(self.m_nextPosList, targetPos, posSelf, 0)
     end
     for i = 1, #walkRange do
       local posData = walkRange[i]
       local posWalk = posData:GetPos()
-      if self:IsPosAccessible(posWalk) and (bExcludeSelf == 0 or bExcludeSelf <= 0 or posWalk ~= posSelf) then
-        (AINewNode.InsertSortedArray)(self.m_nextPosList, targetPos, posWalk, i)
+      if self:IsPosAccessible(posWalk) and (0 == bExcludeSelf or 0 < bExcludeSelf and posWalk ~= posSelf) then
+        AINewNode.InsertSortedArray(self.m_nextPosList, targetPos, posWalk, i)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBackEscape.FindNewTargetPos = function(self)
-  -- function num : 0_3
-  local posFind = nil
+function ActionMoveBackEscape:FindNewTargetPos()
+  local posFind
   local bForgetFirstPos = self:GetLogicData(-2) or 0
-  if bForgetFirstPos > 0 then
-    local posDefault = (self.m_entityOwn):GetGridPosition()
+  if 0 < bForgetFirstPos then
+    local posDefault = self.m_entityOwn:GetGridPosition()
     posFind = self:FindPosValid(self.m_nextPosList, posDefault)
   else
-    do
-      if self.m_posFirst and self:IsPosAccessible(self.m_posFirst) then
-        posFind = self.m_posFirst
-      end
-      do
-        if posFind == nil then
-          local posDefault = (self.m_entityOwn):GetGridPosition()
-          posFind = self:FindPosValid(self.m_nextPosList, posDefault)
-          self.m_posFirst = posFind
-        end
-        return posFind
-      end
+    if self.m_posFirst and self:IsPosAccessible(self.m_posFirst) then
+      posFind = self.m_posFirst
+    end
+    if nil == posFind then
+      local posDefault = self.m_entityOwn:GetGridPosition()
+      posFind = self:FindPosValid(self.m_nextPosList, posDefault)
+      self.m_posFirst = posFind
     end
   end
+  return posFind
 end
-
-

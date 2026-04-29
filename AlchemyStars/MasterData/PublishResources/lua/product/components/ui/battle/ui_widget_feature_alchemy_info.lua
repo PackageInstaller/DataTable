@@ -1,61 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_feature_alchemy_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetFeatureAlchemyInfo", UICustomWidget)
 UIWidgetFeatureAlchemyInfo = UIWidgetFeatureAlchemyInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetFeatureAlchemyInfo.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetFeatureAlchemyInfo:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAlchemyInfo.InitWidget = function(self)
-  -- function num : 0_1
+function UIWidgetFeatureAlchemyInfo:InitWidget()
   self._sliderAP = self:GetUIComponent("Slider", "APSlider")
   self._txtLevel = self:GetUIComponent("UILocalizationText", "Level")
   self:RegisterEvent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAlchemyInfo.RegisterEvent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetFeatureAlchemyInfo:RegisterEvent()
   self:AttachEvent(GameEventType.FeatureAddAlchemyAP, self.AddAlchemyAP)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAlchemyInfo.AddAlchemyAP = function(self, ap, level, addAP)
-  -- function num : 0_3
+function UIWidgetFeatureAlchemyInfo:AddAlchemyAP(ap, level, addAP)
   self._curAP = ap
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._txtLevel).text = level
+  self._txtLevel.text = level
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAlchemyInfo.SetData = function(self, initData)
-  -- function num : 0_4
+function UIWidgetFeatureAlchemyInfo:SetData(initData)
   self._alchemyParam = initData
   self._curAP = 0
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._txtLevel).text = 0
+  self._txtLevel.text = 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAlchemyInfo.UIWidgetFeatureAlchemyInfoOnClick = function(self, go)
-  -- function num : 0_5
+function UIWidgetFeatureAlchemyInfo:UIWidgetFeatureAlchemyInfoOnClick(go)
   self:ShowDialog("UIFeatureAlchemyInfo", self._alchemyParam, self._curAP)
 end
-
-

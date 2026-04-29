@@ -1,243 +1,197 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_obtain/pet_obtain_anim/pet_obtain_anim_simple.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PetObtainAnimSimple", PetObtainAnimBase)
 PetObtainAnimSimple = PetObtainAnimSimple
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PetObtainAnimSimple.Constructor = function(self, pet, anim, starParent, uiStarParent, matAnim)
-  -- function num : 0_0 , upvalues : _ENV
+function PetObtainAnimSimple:Constructor(pet, anim, starParent, uiStarParent, matAnim)
   self._pet = pet
-  self._petID = (self._pet):PetID()
+  self._petID = self._pet:PetID()
   self._anim = anim
   self._animName = "uieff_uipetobtain_eff"
   self._effStars = starParent
   self._uiStars = uiStarParent
   self._matAnim = matAnim
-  self._petAudioModule = (GameGlobal.GetModule)(PetAudioModule)
-  local cfgv = (Cfg.cfg_pet)[self._petID]
+  self._petAudioModule = GameGlobal.GetModule(PetAudioModule)
+  local cfgv = Cfg.cfg_pet[self._petID]
   if cfgv == nil then
-    (Log.exception)("找不到星灵：", self._petID)
+    Log.exception("找不到星灵：", self._petID)
   end
   self._star = cfgv.Star
   self._starTweenTimeTable = {
-[1] = {[1] = 0}
-, 
-[2] = {[1] = 0, [2] = 150}
-, 
-[3] = {[1] = 0, [2] = 150, [3] = 375}
-, 
-[4] = {[1] = 0, [2] = 150, [3] = 130, [4] = 375}
-, 
-[5] = {[1] = 0, [2] = 120, [3] = 95, [4] = 90, [5] = 350}
-, 
-[6] = {[1] = 0, [2] = 100, [3] = 85, [4] = 75, [5] = 70, [6] = 325}
-}
-  self._tweenType2tweenName = {[1] = "uieff_uipetobtain_stars_left", [2] = "uieff_uipetobtain_stars_mid", [3] = "uieff_uipetobtain_stars_right", [4] = "uieff_uipetobtain_stars_final"}
+    [1] = {
+      [1] = 0
+    },
+    [2] = {
+      [1] = 0,
+      [2] = 150
+    },
+    [3] = {
+      [1] = 0,
+      [2] = 150,
+      [3] = 375
+    },
+    [4] = {
+      [1] = 0,
+      [2] = 150,
+      [3] = 130,
+      [4] = 375
+    },
+    [5] = {
+      [1] = 0,
+      [2] = 120,
+      [3] = 95,
+      [4] = 90,
+      [5] = 350
+    },
+    [6] = {
+      [1] = 0,
+      [2] = 100,
+      [3] = 85,
+      [4] = 75,
+      [5] = 70,
+      [6] = 325
+    }
+  }
+  self._tweenType2tweenName = {
+    [1] = "uieff_uipetobtain_stars_left",
+    [2] = "uieff_uipetobtain_stars_mid",
+    [3] = "uieff_uipetobtain_stars_right",
+    [4] = "uieff_uipetobtain_stars_final"
+  }
   self._starTweenNameTable = {
-[1] = {[1] = (self._tweenType2tweenName)[2]}
-, 
-[2] = {[1] = (self._tweenType2tweenName)[1], [2] = (self._tweenType2tweenName)[3]}
-, 
-[3] = {[1] = (self._tweenType2tweenName)[1], [2] = (self._tweenType2tweenName)[2], [3] = (self._tweenType2tweenName)[3]}
-, 
-[4] = {[1] = (self._tweenType2tweenName)[1], [2] = (self._tweenType2tweenName)[2], [3] = (self._tweenType2tweenName)[3], [4] = (self._tweenType2tweenName)[4]}
-, 
-[5] = {[1] = (self._tweenType2tweenName)[1], [2] = (self._tweenType2tweenName)[2], [3] = (self._tweenType2tweenName)[2], [4] = (self._tweenType2tweenName)[3], [5] = (self._tweenType2tweenName)[4]}
-, 
-[6] = {[1] = (self._tweenType2tweenName)[1], [2] = (self._tweenType2tweenName)[1], [3] = (self._tweenType2tweenName)[2], [4] = (self._tweenType2tweenName)[2], [5] = (self._tweenType2tweenName)[3], [6] = (self._tweenType2tweenName)[4]}
-}
-  self._audios = {[1] = CriAudioIDConst.Drawcard_pet_obtain_3, [2] = CriAudioIDConst.Drawcard_pet_obtain_3, [3] = CriAudioIDConst.Drawcard_pet_obtain_3, [4] = CriAudioIDConst.Drawcard_pet_obtain_4}
+    [1] = {
+      [1] = self._tweenType2tweenName[2]
+    },
+    [2] = {
+      [1] = self._tweenType2tweenName[1],
+      [2] = self._tweenType2tweenName[3]
+    },
+    [3] = {
+      [1] = self._tweenType2tweenName[1],
+      [2] = self._tweenType2tweenName[2],
+      [3] = self._tweenType2tweenName[3]
+    },
+    [4] = {
+      [1] = self._tweenType2tweenName[1],
+      [2] = self._tweenType2tweenName[2],
+      [3] = self._tweenType2tweenName[3],
+      [4] = self._tweenType2tweenName[4]
+    },
+    [5] = {
+      [1] = self._tweenType2tweenName[1],
+      [2] = self._tweenType2tweenName[2],
+      [3] = self._tweenType2tweenName[2],
+      [4] = self._tweenType2tweenName[3],
+      [5] = self._tweenType2tweenName[4]
+    },
+    [6] = {
+      [1] = self._tweenType2tweenName[1],
+      [2] = self._tweenType2tweenName[1],
+      [3] = self._tweenType2tweenName[2],
+      [4] = self._tweenType2tweenName[2],
+      [5] = self._tweenType2tweenName[3],
+      [6] = self._tweenType2tweenName[4]
+    }
+  }
+  self._audios = {
+    [1] = CriAudioIDConst.Drawcard_pet_obtain_3,
+    [2] = CriAudioIDConst.Drawcard_pet_obtain_3,
+    [3] = CriAudioIDConst.Drawcard_pet_obtain_3,
+    [4] = CriAudioIDConst.Drawcard_pet_obtain_4
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PetObtainAnimSimple.Start = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  for i = 1, (self._effStars).childCount do
-    local tr = (self._effStars):GetChild(i - 1)
-    ;
-    (tr.gameObject):SetActive(false)
+function PetObtainAnimSimple:Start()
+  for i = 1, self._effStars.childCount do
+    local tr = self._effStars:GetChild(i - 1)
+    tr.gameObject:SetActive(false)
   end
-  local state = (self._anim):get_Item(self._animName)
+  local state = self._anim:get_Item(self._animName)
   state.normalizedTime = 0
-  ;
-  (self._anim):Play()
+  self._anim:Play()
   self._tl = self:InitTimeLine()
-  ;
-  (self._tl):Start()
-  self._audio = (AudioHelperController.RequestAndPlayUIVoiceAutoRelease)((self._audios)[self._star])
+  self._tl:Start()
+  self._audio = AudioHelperController.RequestAndPlayUIVoiceAutoRelease(self._audios[self._star])
   self._running = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PetObtainAnimSimple.Update = function(self, dtMS)
-  -- function num : 0_2
+function PetObtainAnimSimple:Update(dtMS)
   if not self._running then
-    return 
+    return
   end
-  ;
-  (self._tl):Update(dtMS)
-  if (self._tl):Over() then
+  self._tl:Update(dtMS)
+  if self._tl:Over() then
     self._running = false
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PetObtainAnimSimple.IsOver = function(self)
-  -- function num : 0_3
+function PetObtainAnimSimple:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PetObtainAnimSimple.Dispose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function PetObtainAnimSimple:Dispose()
   if self._running then
     self._running = false
-    ;
-    (self._tl):Stop()
-    ;
-    (self._anim):Stop()
+    self._tl:Stop()
+    self._anim:Stop()
   end
-  ;
-  (self._petAudioModule):StopAll()
+  self._petAudioModule:StopAll()
   if self._audio then
-    (AudioHelperController.StopUISound)(self._audio)
+    AudioHelperController.StopUISound(self._audio)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PetObtainAnimSimple.InitTimeLine = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local timeline1 = EZTL_Sequence:New({EZTL_Wait:New(2100, "等2.1秒"), EZTL_Callback:New(function()
-    -- function num : 0_5_0 , upvalues : self
-    (self._petAudioModule):PlayPetAudio("Obtain", self._petID)
-  end
-, "播星灵语音")}, "时间线1，延迟播星灵语音")
-  local tls = {EZTL_Wait:New(1233, "等1.233秒"), EZTL_Callback:New(function()
-    -- function num : 0_5_1 , upvalues : self
-    ((self._effStars).gameObject):SetActive(true)
-  end
-, "打开星星动效父节点")}
-  for i = 1, (self._effStars).childCount do
-    do
-      do
-        local tr = (self._effStars):GetChild(i - 1)
-        local go = tr.gameObject
-        ;
-        ((((tr:GetChild(0)):GetChild(0)).gameObject):GetComponent("CanvasGroup")).alpha = 0
-        if i <= self._star then
-          go:SetActive(true)
-          local yieldTime = ((self._starTweenTimeTable)[self._star])[i]
-          do
-            tls[#tls + 1] = EZTL_Wait:New(yieldTime, "星星动效播完等" .. yieldTime .. "毫秒")
-            tls[#tls + 1] = EZTL_Callback:New(function()
-    -- function num : 0_5_2 , upvalues : tr, self, i
-    (((tr:GetChild(0)).gameObject):GetComponent("Animation")):Play(((self._starTweenNameTable)[self._star])[i])
-  end
-, "星星动效" .. i)
-          end
-        else
-          do
-            go:SetActive(false)
-            tls[#tls + 1] = EZTL_Callback:New(function()
-    -- function num : 0_5_3
-  end
-, "超过星等，关闭动效" .. i)
-          end
-        end
-        -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+function PetObtainAnimSimple:InitTimeLine()
+  local timeline1 = EZTL_Sequence:New({
+    EZTL_Wait:New(2100, "等2.1秒"),
+    EZTL_Callback:New(function()
+      self._petAudioModule:PlayPetAudio("Obtain", self._petID)
+    end, "播星灵语音")
+  }, "时间线1，延迟播星灵语音")
+  local tls = {
+    EZTL_Wait:New(1233, "等1.233秒"),
+    EZTL_Callback:New(function()
+      self._effStars.gameObject:SetActive(true)
+    end, "打开星星动效父节点")
+  }
+  for i = 1, self._effStars.childCount do
+    local tr = self._effStars:GetChild(i - 1)
+    local go = tr.gameObject
+    tr:GetChild(0):GetChild(0).gameObject:GetComponent("CanvasGroup").alpha = 0
+    if i <= self._star then
+      go:SetActive(true)
+      local yieldTime = self._starTweenTimeTable[self._star][i]
+      tls[#tls + 1] = EZTL_Wait:New(yieldTime, "星星动效播完等" .. yieldTime .. "毫秒")
+      tls[#tls + 1] = EZTL_Callback:New(function()
+        tr:GetChild(0).gameObject:GetComponent("Animation"):Play(self._starTweenNameTable[self._star][i])
+      end, "星星动效" .. i)
+    else
+      go:SetActive(false)
+      tls[#tls + 1] = EZTL_Callback:New(function()
+      end, "超过星等，关闭动效" .. i)
     end
   end
-  local timeline2 = nil
-  local starTls = nil
-  -- DECOMPILER ERROR at PC104: Overwrote pending register: R5 in 'AssignReg'
-
-  -- DECOMPILER ERROR at PC106: Overwrote pending register: R6 in 'AssignReg'
-
-  -- DECOMPILER ERROR at PC110: Confused about usage of register: R4 in 'UnsetPending'
-
-  -- DECOMPILER ERROR at PC110: Confused about usage of register: R4 in 'UnsetPending'
-
-  -- DECOMPILER ERROR at PC111: Overwrote pending register: R5 in 'AssignReg'
-
-  -- DECOMPILER ERROR at PC112: Overwrote pending register: R6 in 'AssignReg'
-
-  for i = timeline2, starTls do
-    local l_0_5_14, i = nil
-    -- DECOMPILER ERROR at PC116: Overwrote pending register: R9 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC119: Overwrote pending register: R9 in 'AssignReg'
-
-    local star = nil
-    -- DECOMPILER ERROR at PC120: Overwrote pending register: R10 in 'AssignReg'
-
-    i(star, false)
-    -- DECOMPILER ERROR at PC123: Confused about usage of register: R4 in 'UnsetPending'
-
-    -- DECOMPILER ERROR at PC123: Overwrote pending register: R10 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC124: Overwrote pending register: R10 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC125: Overwrote pending register: R11 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC126: Overwrote pending register: R11 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC133: Confused about usage of register: R4 in 'UnsetPending'
-
-    -- DECOMPILER ERROR at PC133: Confused about usage of register: R4 in 'UnsetPending'
-
-    -- DECOMPILER ERROR at PC134: Confused about usage of register: R4 in 'UnsetPending'
-
-    -- DECOMPILER ERROR at PC134: Overwrote pending register: R10 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC135: Overwrote pending register: R10 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC136: Overwrote pending register: R11 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC137: Overwrote pending register: R11 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC141: Confused about usage of register: R4 in 'UnsetPending'
-
-    -- DECOMPILER ERROR at PC141: Confused about usage of register: R4 in 'UnsetPending'
-
+  local timeline2 = EZTL_Sequence:New(tls, "动画2，串行")
+  local starTls = {}
+  starTls[#starTls + 1] = EZTL_Wait:New(3200, "先等3.2s")
+  for i = 1, self._star do
+    local star = self._uiStars:GetChild(i - 1).gameObject
+    star:SetActive(false)
+    starTls[#starTls + 1] = EZTL_Callback:New(function()
+      star:SetActive(true)
+    end, "显示第" .. i .. "个星星")
+    starTls[#starTls + 1] = EZTL_Wait:New(33, "等33ms")
   end
-  -- DECOMPILER ERROR at PC144: Overwrote pending register: R5 in 'AssignReg'
-
-  -- DECOMPILER ERROR at PC145: Overwrote pending register: R6 in 'AssignReg'
-
-  timeline2:SetActive(false)
-  -- DECOMPILER ERROR at PC153: Confused about usage of register: R4 in 'UnsetPending'
-
-  -- DECOMPILER ERROR at PC158: Overwrote pending register: R9 in 'AssignReg'
-
-  -- DECOMPILER ERROR at PC160: Confused about usage of register: R4 in 'UnsetPending'
-
-  -- DECOMPILER ERROR at PC160: Confused about usage of register: R4 in 'UnsetPending'
-
-  -- DECOMPILER ERROR at PC163: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not (self._pet):IsNew() then
-    local timeline3 = nil
-    local waitTime = nil
-    -- DECOMPILER ERROR at PC171: Overwrote pending register: R7 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC172: Overwrote pending register: R7 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC174: Overwrote pending register: R10 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC175: Overwrote pending register: R11 in 'AssignReg'
-
-    return timeline3(waitTime, {i, star, EZTL_Sequence:New({}, "星星依次显示"), EZTL_Wait:New(4100, "等4秒")}, EZTL_EndTag.All, nil, "获取星灵总时间线，并行")
+  self._matAnim:SetActive(false)
+  if not self._pet:IsNew() then
+    starTls[#starTls + 1] = EZTL_Callback:New(function()
+      self._matAnim:SetActive(true)
+    end, "播放重复获得材料动画")
   end
+  local timeline3 = EZTL_Sequence:New(starTls, "星星依次显示")
+  local waitTime = EZTL_Wait:New(4100, "等4秒")
+  return EZTL_Parallel:New({
+    timeline1,
+    timeline2,
+    timeline3,
+    waitTime
+  }, EZTL_EndTag.All, nil, "获取星灵总时间线，并行")
 end
-
-

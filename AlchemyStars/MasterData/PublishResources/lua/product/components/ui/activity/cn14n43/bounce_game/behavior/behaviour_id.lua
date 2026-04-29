@@ -1,8 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/behavior/behaviour_id.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local BehaviourId = {Position = 1, Move = 2, Animation = 3, View = 4, Attack = 5, DestroyAfterAttack = 6, Hurt = 7, ChangeCampWhenAttacked = 8, ChangeDirectionWhenAttacked = 9, Generator = 10, ShowHpProgress = 11, TransformationWithHp = 12}
+local BehaviourId = {
+  Position = 1,
+  Move = 2,
+  Animation = 3,
+  View = 4,
+  Attack = 5,
+  DestroyAfterAttack = 6,
+  Hurt = 7,
+  ChangeCampWhenAttacked = 8,
+  ChangeDirectionWhenAttacked = 9,
+  Generator = 10,
+  ShowHpProgress = 11,
+  TransformationWithHp = 12
+}
 _enum("BehaviourId", BehaviourId)
-

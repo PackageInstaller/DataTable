@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_award/cls/ui_award_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Award", Object)
 Award = Award
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Award.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function Award:Constructor()
   self.id = 0
   self.name = ""
   self.icon = ""
@@ -20,42 +13,35 @@ Award.Constructor = function(self)
   self.randomType = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Award.Init = function(self, id)
-  -- function num : 0_1 , upvalues : _ENV
+function Award:Init(id)
   self.id = id
-  local cfg = (self._cfg)[id]
+  local cfg = self._cfg[id]
   if cfg then
-    self.name = (StringTable.Get)(cfg.Name)
+    self.name = StringTable.Get(cfg.Name)
     self.icon = cfg.Icon
     self.color = cfg.Color
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Award.InitWithCount = function(self, id, count, randomType)
-  -- function num : 0_2
+function Award:InitWithCount(id, count, randomType)
   self:Init(id)
   self.count = count
   self.randomType = randomType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Award.Flush3Star = function(self, is3Star)
-  -- function num : 0_3
+function Award:Flush3Star(is3Star)
   self.is3Star = is3Star
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Award.FlushType = function(self, type)
-  -- function num : 0_4
+function Award:FlushType(type)
   self.type = type
 end
 
-local StageAwardType = {First = 1, Star = 2, Normal = 3, Activity = 4, HasGen = 5}
+local StageAwardType = {
+  First = 1,
+  Star = 2,
+  Normal = 3,
+  Activity = 4,
+  HasGen = 5
+}
 _enum("StageAwardType", StageAwardType)
-

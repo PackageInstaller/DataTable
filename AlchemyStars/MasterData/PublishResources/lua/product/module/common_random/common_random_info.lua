@@ -1,13 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/common_random/common_random_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local RandomType = {RANDOM_NO_TYPE = 0, RANDOM_FIXED = 1, RANDOM_REAL = 2, RANDOM_ARRAYS = 3, RANDOM_SEED = 4, RANDOM_TIMES = 5, RANDOM_BYLEVEL = 6, RANDOM_BYSIGN = 7, RANDOM_BYDATE = 8, RANDOM_COARRAY = 9, RANDOM_CUMULATE = 10, RANDOM_ONCE = 11, RANDOM_NOTINCLUDEPET = 12, RANDOM_DELAY_REFRESH_ARRAYS = 51, RANDOM_DELAY_REFRESH_CORARRAY = 52}
+local RandomType = {
+  RANDOM_NO_TYPE = 0,
+  RANDOM_FIXED = 1,
+  RANDOM_REAL = 2,
+  RANDOM_ARRAYS = 3,
+  RANDOM_SEED = 4,
+  RANDOM_TIMES = 5,
+  RANDOM_BYLEVEL = 6,
+  RANDOM_BYSIGN = 7,
+  RANDOM_BYDATE = 8,
+  RANDOM_COARRAY = 9,
+  RANDOM_CUMULATE = 10,
+  RANDOM_ONCE = 11,
+  RANDOM_NOTINCLUDEPET = 12,
+  RANDOM_DELAY_REFRESH_ARRAYS = 51,
+  RANDOM_DELAY_REFRESH_CORARRAY = 52
+}
 _enum("RandomType", RandomType)
-local OverdueType = {OVERDUE_DAY = 1, OVERDUE_SECOND = 2, OVERDUE_UNTIL = 3, OVERDUE_AFTER_ZERO_SECOND = 4}
+local OverdueType = {
+  OVERDUE_DAY = 1,
+  OVERDUE_SECOND = 2,
+  OVERDUE_UNTIL = 3,
+  OVERDUE_AFTER_ZERO_SECOND = 4
+}
 _enum("OverdueType", OverdueType)
-local FishForStateType = {FFST_Inirate = 1001, FFST_AddRate = 1002, FFST_Active = 1003, FFST_Step = 1004, FFST_Maxtime = 1005, FFST_NormalCounter = 1006, FFST_ArrayAllCcounterNum = 2000, FFST_NextRefreshTime = 2001}
+local FishForStateType = {
+  FFST_Inirate = 1001,
+  FFST_AddRate = 1002,
+  FFST_Active = 1003,
+  FFST_Step = 1004,
+  FFST_Maxtime = 1005,
+  FFST_NormalCounter = 1006,
+  FFST_ArrayAllCcounterNum = 2000,
+  FFST_NextRefreshTime = 2001
+}
 _enum("FishForStateType", FishForStateType)
 local UninitializedParam = {PARAM_UNINITIALIZED = -1}
 _enum("UninitializedParam", UninitializedParam)
@@ -15,32 +40,31 @@ local JumpTimeMax = {MAX_JUMP_TIME = 100}
 _enum("JumpTimeMax", JumpTimeMax)
 _class("CommonOutput", Object)
 CommonOutput = CommonOutput
--- DECOMPILER ERROR at PC62: Confused about usage of register: R5 in 'UnsetPending'
 
-CommonOutput.Constructor = function(self)
-  -- function num : 0_0
+function CommonOutput:Constructor()
   self.id = -1
   self.count = -1
   self.source_rule_id = -1
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R5 in 'UnsetPending'
-
 CommonOutput._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"count", "int"}
-, 
-[3] = {"source_rule_id", "int"}
+  [1] = {"id", "int"},
+  [2] = {"count", "int"},
+  [3] = {
+    "source_rule_id",
+    "int"
+  }
 }
-local EJumpPick = {EJumpPick_Invalid = 0, EJumpPick_Random = 1, EJumpPick_End = 2}
+local EJumpPick = {
+  EJumpPick_Invalid = 0,
+  EJumpPick_Random = 1,
+  EJumpPick_End = 2
+}
 _enum("EJumpPick", EJumpPick)
 _class("FixedRuleParam", Object)
 FixedRuleParam = FixedRuleParam
--- DECOMPILER ERROR at PC97: Confused about usage of register: R6 in 'UnsetPending'
 
-FixedRuleParam.Constructor = function(self)
-  -- function num : 0_1
+function FixedRuleParam:Constructor()
   self.output = -1
   self.amount = {}
   self.density = -1
@@ -52,84 +76,63 @@ FixedRuleParam.Constructor = function(self)
   self.jpejmp = -1
 end
 
--- DECOMPILER ERROR at PC145: Confused about usage of register: R6 in 'UnsetPending'
-
 FixedRuleParam._proto = {
-[1] = {"output", "int"}
-, 
-[2] = {"amount", "list<int>"}
-, 
-[3] = {"density", "int"}
-, 
-[4] = {"jump", "int"}
-, 
-[5] = {"redouble", "int"}
-, 
-[6] = {"redo", "int"}
-, 
-[7] = {"uniq", "int"}
-, 
-[8] = {"jumppick", "int"}
-, 
-[9] = {"jpejmp", "int"}
+  [1] = {"output", "int"},
+  [2] = {"amount", "list<int>"},
+  [3] = {"density", "int"},
+  [4] = {"jump", "int"},
+  [5] = {"redouble", "int"},
+  [6] = {"redo", "int"},
+  [7] = {"uniq", "int"},
+  [8] = {"jumppick", "int"},
+  [9] = {"jpejmp", "int"}
 }
 _class("RealRandomRuleParam", Object)
 RealRandomRuleParam = RealRandomRuleParam
--- DECOMPILER ERROR at PC154: Confused about usage of register: R6 in 'UnsetPending'
 
-RealRandomRuleParam.Constructor = function(self)
-  -- function num : 0_2
+function RealRandomRuleParam:Constructor()
   self.context = {}
   self.weight = -1
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R6 in 'UnsetPending'
-
 RealRandomRuleParam._proto = {
-[1] = {"context", "list<FixedRuleParam>"}
-, 
-[2] = {"weight", "int"}
+  [1] = {
+    "context",
+    "list<FixedRuleParam>"
+  },
+  [2] = {"weight", "int"}
 }
 _class("ArrayRandomRuleParam", Object)
 ArrayRandomRuleParam = ArrayRandomRuleParam
--- DECOMPILER ERROR at PC176: Confused about usage of register: R6 in 'UnsetPending'
 
-ArrayRandomRuleParam.Constructor = function(self)
-  -- function num : 0_3
+function ArrayRandomRuleParam:Constructor()
   self.copy = -1
   self.weight = -1
   self.context = {}
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R6 in 'UnsetPending'
-
 ArrayRandomRuleParam._proto = {
-[1] = {"copy", "int"}
-, 
-[2] = {"weight", "int"}
-, 
-[3] = {"context", "list<FixedRuleParam>"}
+  [1] = {"copy", "int"},
+  [2] = {"weight", "int"},
+  [3] = {
+    "context",
+    "list<FixedRuleParam>"
+  }
 }
 _class("CoarrayRandomRuleParam", Object)
 CoarrayRandomRuleParam = CoarrayRandomRuleParam
--- DECOMPILER ERROR at PC203: Confused about usage of register: R6 in 'UnsetPending'
 
-CoarrayRandomRuleParam.Constructor = function(self)
-  -- function num : 0_4
+function CoarrayRandomRuleParam:Constructor()
   self.include = -1
 end
 
--- DECOMPILER ERROR at PC211: Confused about usage of register: R6 in 'UnsetPending'
-
 CoarrayRandomRuleParam._proto = {
-[1] = {"include", "int"}
+  [1] = {"include", "int"}
 }
 _class("SeedRandomRuleParam", Object)
 SeedRandomRuleParam = SeedRandomRuleParam
--- DECOMPILER ERROR at PC220: Confused about usage of register: R6 in 'UnsetPending'
 
-SeedRandomRuleParam.Constructor = function(self)
-  -- function num : 0_5
+function SeedRandomRuleParam:Constructor()
   self.pot = {}
   self.densp = -1
   self.copy = {}
@@ -138,67 +141,58 @@ SeedRandomRuleParam.Constructor = function(self)
   self.miss = {}
 end
 
--- DECOMPILER ERROR at PC253: Confused about usage of register: R6 in 'UnsetPending'
-
 SeedRandomRuleParam._proto = {
-[1] = {"pot", "list<int>"}
-, 
-[2] = {"densp", "int"}
-, 
-[3] = {"copy", "list<int>"}
-, 
-[4] = {"densc", "int"}
-, 
-[5] = {"hit", "list<FixedRuleParam>"}
-, 
-[6] = {"miss", "list<FixedRuleParam>"}
+  [1] = {"pot", "list<int>"},
+  [2] = {"densp", "int"},
+  [3] = {"copy", "list<int>"},
+  [4] = {"densc", "int"},
+  [5] = {
+    "hit",
+    "list<FixedRuleParam>"
+  },
+  [6] = {
+    "miss",
+    "list<FixedRuleParam>"
+  }
 }
 _class("OnceRandomRuleParam", Object)
 OnceRandomRuleParam = OnceRandomRuleParam
--- DECOMPILER ERROR at PC262: Confused about usage of register: R6 in 'UnsetPending'
 
-OnceRandomRuleParam.Constructor = function(self)
-  -- function num : 0_6
+function OnceRandomRuleParam:Constructor()
   self.weight = -1
   self.context = {}
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R6 in 'UnsetPending'
-
 OnceRandomRuleParam._proto = {
-[1] = {"weight", "int"}
-, 
-[2] = {"context", "list<FixedRuleParam>"}
+  [1] = {"weight", "int"},
+  [2] = {
+    "context",
+    "list<FixedRuleParam>"
+  }
 }
 _class("ExtendParam", Object)
 ExtendParam = ExtendParam
--- DECOMPILER ERROR at PC284: Confused about usage of register: R6 in 'UnsetPending'
 
-ExtendParam.Constructor = function(self)
-  -- function num : 0_7
+function ExtendParam:Constructor()
   self.day = -1
   self.second = -1
   self.until_ = -1
   self.afterzerosecond = -1
 end
 
--- DECOMPILER ERROR at PC307: Confused about usage of register: R6 in 'UnsetPending'
-
 ExtendParam._proto = {
-[1] = {"day", "int"}
-, 
-[2] = {"second", "int"}
-, 
-[3] = {"until_", "int"}
-, 
-[4] = {"afterzerosecond", "int"}
+  [1] = {"day", "int"},
+  [2] = {"second", "int"},
+  [3] = {"until_", "int"},
+  [4] = {
+    "afterzerosecond",
+    "int"
+  }
 }
 _class("CumulateRandomParam", Object)
 CumulateRandomParam = CumulateRandomParam
--- DECOMPILER ERROR at PC316: Confused about usage of register: R6 in 'UnsetPending'
 
-CumulateRandomParam.Constructor = function(self)
-  -- function num : 0_8
+function CumulateRandomParam:Constructor()
   self.accumulator = ""
   self.inirate = 0
   self.hit = {}
@@ -212,239 +206,236 @@ CumulateRandomParam.Constructor = function(self)
   self.nippid = 0
 end
 
--- DECOMPILER ERROR at PC374: Confused about usage of register: R6 in 'UnsetPending'
-
 CumulateRandomParam._proto = {
-[1] = {"accumulator", "string"}
-, 
-[2] = {"inirate", "int"}
-, 
-[3] = {"hit", "list<FixedRuleParam>"}
-, 
-[4] = {"miss", "list<FixedRuleParam>"}
-, 
-[5] = {"active", "int"}
-, 
-[6] = {"step", "int"}
-, 
-[7] = {"addrate", "int"}
-, 
-[8] = {"maxtime", "int"}
-, 
-[9] = {"uplimit", "int"}
-, 
-[10] = {"downlimit", "int"}
-, 
-[11] = {"nippid", "int"}
+  [1] = {
+    "accumulator",
+    "string"
+  },
+  [2] = {"inirate", "int"},
+  [3] = {
+    "hit",
+    "list<FixedRuleParam>"
+  },
+  [4] = {
+    "miss",
+    "list<FixedRuleParam>"
+  },
+  [5] = {"active", "int"},
+  [6] = {"step", "int"},
+  [7] = {"addrate", "int"},
+  [8] = {"maxtime", "int"},
+  [9] = {"uplimit", "int"},
+  [10] = {"downlimit", "int"},
+  [11] = {"nippid", "int"}
 }
 _class("NotIncludePetRandomParam", Object)
 NotIncludePetRandomParam = NotIncludePetRandomParam
--- DECOMPILER ERROR at PC383: Confused about usage of register: R6 in 'UnsetPending'
 
-NotIncludePetRandomParam.Constructor = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function NotIncludePetRandomParam:Constructor()
   self.empty = FixedRuleParam:New()
   self.pool = {}
 end
 
--- DECOMPILER ERROR at PC396: Confused about usage of register: R6 in 'UnsetPending'
-
 NotIncludePetRandomParam._proto = {
-[1] = {"empty", "FixedRuleParam"}
-, 
-[2] = {"pool", "list<int>"}
+  [1] = {
+    "empty",
+    "FixedRuleParam"
+  },
+  [2] = {"pool", "list<int>"}
 }
 _class("ArraysRandomCounter", Object)
 ArraysRandomCounter = ArraysRandomCounter
--- DECOMPILER ERROR at PC405: Confused about usage of register: R6 in 'UnsetPending'
 
-ArraysRandomCounter.Constructor = function(self)
-  -- function num : 0_10
+function ArraysRandomCounter:Constructor()
   self.generate_time = 0
   self.copy = {}
 end
 
--- DECOMPILER ERROR at PC418: Confused about usage of register: R6 in 'UnsetPending'
-
 ArraysRandomCounter._proto = {
-[1] = {"generate_time", "time"}
-, 
-[2] = {"copy", "list<int>"}
+  [1] = {
+    "generate_time",
+    "time"
+  },
+  [2] = {"copy", "list<int>"}
 }
 _class("ActiveRefreshArraysRandomCounter", Object)
 ActiveRefreshArraysRandomCounter = ActiveRefreshArraysRandomCounter
--- DECOMPILER ERROR at PC427: Confused about usage of register: R6 in 'UnsetPending'
 
-ActiveRefreshArraysRandomCounter.Constructor = function(self)
-  -- function num : 0_11
+function ActiveRefreshArraysRandomCounter:Constructor()
   self.generate_time = 0
   self.copy = {}
   self.counter_zero_time = 0
 end
 
--- DECOMPILER ERROR at PC445: Confused about usage of register: R6 in 'UnsetPending'
-
 ActiveRefreshArraysRandomCounter._proto = {
-[1] = {"generate_time", "time"}
-, 
-[2] = {"copy", "list<int>"}
-, 
-[3] = {"counter_zero_time", "time"}
+  [1] = {
+    "generate_time",
+    "time"
+  },
+  [2] = {"copy", "list<int>"},
+  [3] = {
+    "counter_zero_time",
+    "time"
+  }
 }
 _class("SeedRandomCounter", Object)
 SeedRandomCounter = SeedRandomCounter
--- DECOMPILER ERROR at PC454: Confused about usage of register: R6 in 'UnsetPending'
 
-SeedRandomCounter.Constructor = function(self)
-  -- function num : 0_12
+function SeedRandomCounter:Constructor()
   self.generate_time = 0
   self.award_ball_count = 0
   self.pool_ball_count = 0
 end
 
--- DECOMPILER ERROR at PC472: Confused about usage of register: R6 in 'UnsetPending'
-
 SeedRandomCounter._proto = {
-[1] = {"generate_time", "time"}
-, 
-[2] = {"award_ball_count", "int"}
-, 
-[3] = {"pool_ball_count", "int"}
+  [1] = {
+    "generate_time",
+    "time"
+  },
+  [2] = {
+    "award_ball_count",
+    "int"
+  },
+  [3] = {
+    "pool_ball_count",
+    "int"
+  }
 }
 _class("TimesRandomCounter", Object)
 TimesRandomCounter = TimesRandomCounter
--- DECOMPILER ERROR at PC481: Confused about usage of register: R6 in 'UnsetPending'
 
-TimesRandomCounter.Constructor = function(self)
-  -- function num : 0_13
+function TimesRandomCounter:Constructor()
   self.generate_time = 0
   self.played_times = 0
 end
 
--- DECOMPILER ERROR at PC494: Confused about usage of register: R6 in 'UnsetPending'
-
 TimesRandomCounter._proto = {
-[1] = {"generate_time", "time"}
-, 
-[2] = {"played_times", "int"}
+  [1] = {
+    "generate_time",
+    "time"
+  },
+  [2] = {
+    "played_times",
+    "int"
+  }
 }
 _class("NIPPRandomCounter", Object)
 NIPPRandomCounter = NIPPRandomCounter
--- DECOMPILER ERROR at PC503: Confused about usage of register: R6 in 'UnsetPending'
 
-NIPPRandomCounter.Constructor = function(self)
-  -- function num : 0_14
+function NIPPRandomCounter:Constructor()
   self.generate_time = 0
   self.played_times = 0
 end
 
--- DECOMPILER ERROR at PC516: Confused about usage of register: R6 in 'UnsetPending'
-
 NIPPRandomCounter._proto = {
-[1] = {"generate_time", "time"}
-, 
-[2] = {"played_times", "int"}
+  [1] = {
+    "generate_time",
+    "time"
+  },
+  [2] = {
+    "played_times",
+    "int"
+  }
 }
 _class("CumulateParam", Object)
 CumulateParam = CumulateParam
--- DECOMPILER ERROR at PC525: Confused about usage of register: R6 in 'UnsetPending'
 
-CumulateParam.Constructor = function(self)
-  -- function num : 0_15
+function CumulateParam:Constructor()
   self.normal_counter = 0
   self.downlimit_counter = 0
 end
 
--- DECOMPILER ERROR at PC538: Confused about usage of register: R6 in 'UnsetPending'
-
 CumulateParam._proto = {
-[1] = {"normal_counter", "int"}
-, 
-[2] = {"downlimit_counter", "int"}
+  [1] = {
+    "normal_counter",
+    "int"
+  },
+  [2] = {
+    "downlimit_counter",
+    "int"
+  }
 }
 _class("OnceRandomCounter", Object)
 OnceRandomCounter = OnceRandomCounter
--- DECOMPILER ERROR at PC547: Confused about usage of register: R6 in 'UnsetPending'
 
-OnceRandomCounter.Constructor = function(self)
-  -- function num : 0_16
+function OnceRandomCounter:Constructor()
   self.generate_time = 0
   self.comfirm_index = -1
 end
 
--- DECOMPILER ERROR at PC560: Confused about usage of register: R6 in 'UnsetPending'
-
 OnceRandomCounter._proto = {
-[1] = {"generate_time", "time"}
-, 
-[2] = {"comfirm_index", "int"}
+  [1] = {
+    "generate_time",
+    "time"
+  },
+  [2] = {
+    "comfirm_index",
+    "int"
+  }
 }
 _class("CommonCounter", Object)
 CommonCounter = CommonCounter
--- DECOMPILER ERROR at PC569: Confused about usage of register: R6 in 'UnsetPending'
 
-CommonCounter.Constructor = function(self)
-  -- function num : 0_17
+function CommonCounter:Constructor()
   self.random_type = 0
   self.counter_data = ""
 end
 
--- DECOMPILER ERROR at PC582: Confused about usage of register: R6 in 'UnsetPending'
-
 CommonCounter._proto = {
-[1] = {"random_type", "int"}
-, 
-[2] = {"counter_data", "buffer"}
+  [1] = {
+    "random_type",
+    "int"
+  },
+  [2] = {
+    "counter_data",
+    "buffer"
+  }
 }
 _class("all_counter_data", Object)
 all_counter_data = all_counter_data
--- DECOMPILER ERROR at PC591: Confused about usage of register: R6 in 'UnsetPending'
 
-all_counter_data.Constructor = function(self)
-  -- function num : 0_18
+function all_counter_data:Constructor()
   self.pstid = 0
   self.all_random_counter = {}
   self.name2counter = {}
 end
 
--- DECOMPILER ERROR at PC609: Confused about usage of register: R6 in 'UnsetPending'
-
 all_counter_data._proto = {
-[1] = {"pstid", "int64"}
-, 
-[2] = {"all_random_counter", "map<int,CommonCounter>"}
-, 
-[3] = {"name2counter", "map<string,CumulateParam>"}
+  [1] = {"pstid", "int64"},
+  [2] = {
+    "all_random_counter",
+    "map<int,CommonCounter>"
+  },
+  [3] = {
+    "name2counter",
+    "map<string,CumulateParam>"
+  }
 }
 _class("OptionDataInfo", Object)
 OptionDataInfo = OptionDataInfo
--- DECOMPILER ERROR at PC618: Confused about usage of register: R6 in 'UnsetPending'
 
-OptionDataInfo.Constructor = function(self)
-  -- function num : 0_19
+function OptionDataInfo:Constructor()
   self.param_infos = {}
 end
 
--- DECOMPILER ERROR at PC626: Confused about usage of register: R6 in 'UnsetPending'
-
 OptionDataInfo._proto = {
-[1] = {"param_infos", "list<int>"}
+  [1] = {
+    "param_infos",
+    "list<int>"
+  }
 }
 _class("OptionalData", Object)
 OptionalData = OptionalData
--- DECOMPILER ERROR at PC635: Confused about usage of register: R6 in 'UnsetPending'
 
-OptionalData.Constructor = function(self)
-  -- function num : 0_20
+function OptionalData:Constructor()
   self.param_pool = {}
   self.times = 0
 end
 
--- DECOMPILER ERROR at PC648: Confused about usage of register: R6 in 'UnsetPending'
-
 OptionalData._proto = {
-[1] = {"param_pool", "map<int,OptionDataInfo>"}
-, 
-[2] = {"times", "int"}
+  [1] = {
+    "param_pool",
+    "map<int,OptionDataInfo>"
+  },
+  [2] = {"times", "int"}
 }
-

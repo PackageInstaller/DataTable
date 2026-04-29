@@ -1,131 +1,83 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_match_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMatchModule", UIModule)
 UIMatchModule = UIMatchModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMatchModule.Init = function(self)
-  -- function num : 0_0
+function UIMatchModule:Init()
   self._isAutoFighting = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMatchModule.Dispose = function(self)
-  -- function num : 0_1
+function UIMatchModule:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMatchModule.Constructor = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMatchModule:Constructor()
   self:AttachEvent(GameEventType.MatchError, self.OnGameError)
   self:AttachEvent(GameEventType.OnGameOver, self.OnGameOver)
   self:Init()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMatchModule.LeaveCoreGameOnError = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (GameGlobal:GetInstance()):ExitCoreGame()
-  ;
-  (Log.debug)("[match] UIMatchModule:OnGameError:", ((GameGlobal.UIStateManager)()):CurUIStateType())
-  local us = ((GameGlobal.UIStateManager)()):CurUIStateType()
+function UIMatchModule:LeaveCoreGameOnError()
+  GameGlobal:GetInstance():ExitCoreGame()
+  Log.debug("[match] UIMatchModule:OnGameError:", GameGlobal.UIStateManager():CurUIStateType())
+  local us = GameGlobal.UIStateManager():CurUIStateType()
   if us == UIStateType.Login or us == UIStateType.LoginEmpty then
-    if ((GameGlobal.UIStateManager)()):IsShow("UIStoryController") then
-      ((GameGlobal.UIStateManager)()):CloseDialog("UIStoryController")
+    if GameGlobal.UIStateManager():IsShow("UIStoryController") then
+      GameGlobal.UIStateManager():CloseDialog("UIStoryController")
     end
-    if ((GameGlobal.UIStateManager)()):IsShow("UICommonLoading") then
-      ((GameGlobal.UIStateManager)()):CloseDialog("UICommonLoading")
+    if GameGlobal.UIStateManager():IsShow("UICommonLoading") then
+      GameGlobal.UIStateManager():CloseDialog("UICommonLoading")
     end
-    ;
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_match_net_error"), function(param)
-    -- function num : 0_3_0 , upvalues : _ENV
-    ((GameGlobal.GetModule)(LoginModule)):Logout("UIMatchModule LeaveCoreGame *at login state* logout")
-    ;
-    ((GameGlobal.GameLogic)()):BackToLogin(false, LoginModule, "player logout", false)
-  end
-)
-  else
-    if ((GameGlobal.UIStateManager)()):CurUIStateType() ~= UIStateType.Login and ((GameGlobal.UIStateManager)()):CurUIStateType() ~= UIStateType.UIMain then
-      (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_match_net_error"), function(param)
-    -- function num : 0_3_1 , upvalues : _ENV
-    ((GameGlobal.GetModule)(LoginModule)):Logout("UIMatchModule LeaveCoreGame *not at login or main state* logout")
-    ;
-    ((GameGlobal.GameLogic)()):BackToLogin(false, LoginModule, "player logout", false)
-  end
-)
-    end
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_match_net_error"), function(param)
+      GameGlobal.GetModule(LoginModule):Logout("UIMatchModule LeaveCoreGame *at login state* logout")
+      GameGlobal.GameLogic():BackToLogin(false, LoginModule, "player logout", false)
+    end)
+  elseif GameGlobal.UIStateManager():CurUIStateType() ~= UIStateType.Login and GameGlobal.UIStateManager():CurUIStateType() ~= UIStateType.UIMain then
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_match_net_error"), function(param)
+      GameGlobal.GetModule(LoginModule):Logout("UIMatchModule LeaveCoreGame *not at login or main state* logout")
+      GameGlobal.GameLogic():BackToLogin(false, LoginModule, "player logout", false)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMatchModule.OnGameError = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self:GetModule(MatchModule)):StopFastCheck()
-  ;
-  (GameGlobal:GetInstance()):StopCoreGame()
-  ;
-  ((GameGlobal.TaskManager)()):KillCoreGameTasks()
-  if not ((GameGlobal.TaskManager)()):IsAnyCoreGameTask() then
+function UIMatchModule:OnGameError()
+  self:GetModule(MatchModule):StopFastCheck()
+  GameGlobal:GetInstance():StopCoreGame()
+  GameGlobal.TaskManager():KillCoreGameTasks()
+  if not GameGlobal.TaskManager():IsAnyCoreGameTask() then
     self:LeaveCoreGameOnError()
-    return 
+    return
   end
-  ;
-  ((GameGlobal.TaskManager)()):WaitCoreGameTaskFinish(self.LeaveCoreGameOnError, self)
+  GameGlobal.TaskManager():WaitCoreGameTaskFinish(self.LeaveCoreGameOnError, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMatchModule.OnGameOver = function(self, result)
-  -- function num : 0_5 , upvalues : _ENV
-  local funcModule = (self:GetModule(RoleModule)).uiModule
+function UIMatchModule:OnGameOver(result)
+  local funcModule = self:GetModule(RoleModule).uiModule
   funcModule:LockAchievementFinishPanel(true)
   local md = self:GetModule(MatchModule)
   local matchEnterData = md:GetMatchEnterData()
   md:SetMatchResult(result)
-  local show_save = not (table.icontains)(BattleConst.MazeNoSaveArchiveLevelID, matchEnterData:GetLevelID())
+  local show_save = not table.icontains(BattleConst.MazeNoSaveArchiveLevelID, matchEnterData:GetLevelID())
   if not result.victory and matchEnterData:GetMatchType() == MatchType.MT_Maze then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIRugueLikeDefeatedController", show_save)
+    GameGlobal.UIStateManager():ShowDialog("UIRugueLikeDefeatedController", show_save)
   else
     md:GameOver(result)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMatchModule.IsAutoFighting = function(self)
-  -- function num : 0_6
+function UIMatchModule:IsAutoFighting()
   return self._isAutoFighting
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMatchModule.ShowAutoFightForbiddenMsg = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._autoFightForbiddenStr = (StringTable.Get)("str_battle_forbidden_operation_in_autofight")
-  ;
-  (ToastManager.ShowToast)(self._autoFightForbiddenStr)
+function UIMatchModule:ShowAutoFightForbiddenMsg()
+  self._autoFightForbiddenStr = StringTable.Get("str_battle_forbidden_operation_in_autofight")
+  ToastManager.ShowToast(self._autoFightForbiddenStr)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMatchModule.SetIsAutoFighting = function(self, isAutoFighting)
-  -- function num : 0_8
+function UIMatchModule:SetIsAutoFighting(isAutoFighting)
   self._isAutoFighting = isAutoFighting
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMatchModule.CheckAutoEnable = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local match = ((GameGlobal.GetModule)(MatchModule))
-  local show, enable, value, msg = nil, nil, nil, nil
+function UIMatchModule:CheckAutoEnable()
+  local match = GameGlobal.GetModule(MatchModule)
+  local show, enable, value, msg
   local enterData = match:GetMatchEnterData()
   local matchType = enterData._match_type
   if MatchType.MT_Mission == matchType or MatchType.MT_ExtMission == matchType then
@@ -133,199 +85,142 @@ UIMatchModule.CheckAutoEnable = function(self)
     local data = enterData:GetMissionCreateInfo()
     local cfgId = {}
     if matchType == MatchType.MT_Mission then
-      cfgId = {data.mission_id}
-    else
-      if matchType == MatchType.MT_ExtMission then
-        cfgId = {data.m_nExtMissionID, data.m_nExtTaskID}
-      end
+      cfgId = {
+        data.mission_id
+      }
+    elseif matchType == MatchType.MT_ExtMission then
+      cfgId = {
+        data.m_nExtMissionID,
+        data.m_nExtTaskID
+      }
     end
-    enable = ((GameGlobal.GetModule)(RoleModule)):GetAutoFightStatusUI(cfgId, matchType)
+    enable, msg = GameGlobal.GetModule(RoleModule):GetAutoFightStatusUI(cfgId, matchType)
+  elseif MatchType.MT_ResDungeon == matchType then
+    show = true
+    local data = enterData:GetResDungeonInfo()
+    local ids = {
+      data.res_dungeon_id
+    }
+    enable, msg = GameGlobal.GetModule(RoleModule):GetAutoFightStatusUI(ids, matchType)
+  elseif MatchType.MT_Campaign == matchType then
+    local campaignMissionInfo = enterData:GetCampaignMissionInfo()
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    show = true
+    enable, msg = campaignModule:CheckMissionCanAutoFight(campaignMissionInfo)
+  elseif MatchType.MT_SailingMission == matchType then
+    show = false
+    enable = false
+  elseif MatchType.MT_Season == matchType then
+    local seasonMissionInfo = enterData:GetSeasonMissionInfo()
+    local seasonModule = GameGlobal.GetModule(SeasonModule)
+    show = true
+    enable, msg = seasonModule:CheckMissionCanAutoFight(seasonMissionInfo)
+  elseif MatchType.MT_PopStarPro == matchType then
+    show = true
+    enable = true
+  elseif MatchType.MT_EightPets == matchType then
+    local eightPetsMissionInfo = enterData:GetEightPetsMissionInfo()
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    show = true
+    enable, msg = campaignModule:CheckEightPetsMissionCanAutoFight(eightPetsMissionInfo)
+  elseif MatchType.MT_SeasonMaze == matchType then
+    local seasonMissionInfo = enterData:GetSeasonMissionInfo()
+    local module = GameGlobal.GetModule(SeasonMazeModule)
+    show = true
+    enable, msg = module:CheckCanAutoFight(seasonMissionInfo)
+  elseif MatchType.MT_Chess == matchType then
+    show = false
+    enable = false
   else
-    do
-      if MatchType.MT_ResDungeon == matchType then
-        show = true
-        local data = enterData:GetResDungeonInfo()
-        local ids = {data.res_dungeon_id}
-        -- DECOMPILER ERROR at PC67: Overwrote pending register: R5 in 'AssignReg'
-
-        enable = ((GameGlobal.GetModule)(RoleModule)):GetAutoFightStatusUI(ids, matchType)
-      else
-        do
-          if MatchType.MT_Campaign == matchType then
-            local campaignMissionInfo = enterData:GetCampaignMissionInfo()
-            local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-            show = true
-            -- DECOMPILER ERROR at PC84: Overwrote pending register: R5 in 'AssignReg'
-
-            enable = campaignModule:CheckMissionCanAutoFight(campaignMissionInfo)
-          else
-            do
-              if MatchType.MT_SailingMission == matchType then
-                show = false
-                enable = false
-              else
-                if MatchType.MT_Season == matchType then
-                  local seasonMissionInfo = enterData:GetSeasonMissionInfo()
-                  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
-                  show = true
-                  -- DECOMPILER ERROR at PC108: Overwrote pending register: R5 in 'AssignReg'
-
-                  enable = seasonModule:CheckMissionCanAutoFight(seasonMissionInfo)
-                else
-                  do
-                    if MatchType.MT_PopStarPro == matchType then
-                      show = true
-                      enable = true
-                    else
-                      if MatchType.MT_EightPets == matchType then
-                        local eightPetsMissionInfo = enterData:GetEightPetsMissionInfo()
-                        local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-                        show = true
-                        -- DECOMPILER ERROR at PC132: Overwrote pending register: R5 in 'AssignReg'
-
-                        enable = campaignModule:CheckEightPetsMissionCanAutoFight(eightPetsMissionInfo)
-                      else
-                        do
-                          if MatchType.MT_SeasonMaze == matchType then
-                            local seasonMissionInfo = enterData:GetSeasonMissionInfo()
-                            local module = (GameGlobal.GetModule)(SeasonMazeModule)
-                            show = true
-                            -- DECOMPILER ERROR at PC149: Overwrote pending register: R5 in 'AssignReg'
-
-                            enable = module:CheckCanAutoFight(seasonMissionInfo)
-                          else
-                            do
-                              if MatchType.MT_Chess == matchType then
-                                show = false
-                                enable = false
-                              else
-                                show = true
-                                enable = true
-                              end
-                              local triggerGuideBattle = false
-                              if enable == true then
-                                local pstId = ((GameGlobal.GetModule)(RoleModule)):GetPstId()
-                                local key = pstId .. "GuideAutoBattle"
-                                local isGuideAutoBattle = (LocalDB.GetInt)(key)
-                                if isGuideAutoBattle <= 0 then
-                                  triggerGuideBattle = true
-                                  ;
-                                  (LocalDB.SetInt)(key, 1)
-                                end
-                              end
-                              do
-                                value = ((GameGlobal.GetModule)(SerialAutoFightModule)):IsRunning()
-                                return {bShow = show, bEnable = enable, bSerialRunning = value, disableMsg = msg, bTriggerGuideBattle = triggerGuideBattle}
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+    show = true
+    enable = true
+  end
+  local triggerGuideBattle = false
+  if enable == true then
+    local pstId = GameGlobal.GetModule(RoleModule):GetPstId()
+    local key = pstId .. "GuideAutoBattle"
+    local isGuideAutoBattle = LocalDB.GetInt(key)
+    if isGuideAutoBattle <= 0 then
+      triggerGuideBattle = true
+      LocalDB.SetInt(key, 1)
     end
   end
+  value = GameGlobal.GetModule(SerialAutoFightModule):IsRunning()
+  return {
+    bShow = show,
+    bEnable = enable,
+    bSerialRunning = value,
+    disableMsg = msg,
+    bTriggerGuideBattle = triggerGuideBattle
+  }
 end
 
-local FastFightEnableType = {Enable = 0, EqualAutoFight = 1, Disable = 2}
+local FastFightEnableType = {
+  Enable = 0,
+  EqualAutoFight = 1,
+  Disable = 2
+}
 _enum("FastFightEnableType", FastFightEnableType)
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
 
-UIMatchModule.CheckExSpeedEnable = function(self)
-  -- function num : 0_10 , upvalues : _ENV, FastFightEnableType
-  local match = (GameGlobal.GetModule)(MatchModule)
+function UIMatchModule:CheckExSpeedEnable()
+  local match = GameGlobal.GetModule(MatchModule)
   local enterData = match:GetMatchEnterData()
   local matchType = enterData._match_type
   local enableType = FastFightEnableType.Enable
   if MatchType.MT_Mission == matchType then
     local data = enterData:GetMissionCreateInfo()
-    local cfg = (Cfg.cfg_mission)[data.mission_id]
-    if not cfg.FastFightEnable then
-      do
-        enableType = not cfg or FastFightEnableType.Enable
-        if MatchType.MT_Campaign == matchType then
-          local campaignMissionInfo = enterData:GetCampaignMissionInfo()
-          local missionCfg = (Cfg.cfg_campaign_mission)[campaignMissionInfo.nCampaignMissionId]
-          if not missionCfg.FastFightEnable then
-            do
-              enableType = not missionCfg or FastFightEnableType.Enable
-              if MatchType.MT_Season == matchType then
-                local missionID = (enterData:GetSeasonMissionInfo()).mission_id
-                local useMissionCfg = (Cfg.cfg_season_mission)[missionID]
-                if not useMissionCfg.FastFightEnable then
-                  do
-                    enableType = not useMissionCfg or FastFightEnableType.Enable
-                    if MatchType.MT_SailingMission == matchType then
-                      local missionID = (enterData:GetSailingMissionInfo()).mission_id
-                      local cfgSailingMission = (Cfg.cfg_sailing_mission)[missionID]
-                      if not cfgSailingMission.FastFightEnable then
-                        do
-                          enableType = not cfgSailingMission or FastFightEnableType.Enable
-                          if MatchType.MT_ExtMission == matchType then
-                            local data = enterData:GetMissionCreateInfo()
-                            local cfg = (Cfg.cfg_extra_mission_task)[data.m_nExtTaskID]
-                            if not cfg.FastFightEnable then
-                              do
-                                enableType = not cfg or FastFightEnableType.Enable
-                                if MatchType.MT_EightPets == matchType then
-                                  local data = enterData:GetEightPetsMissionInfo()
-                                  local cfg = (Cfg.cfg_eight_pets_mission)[data.mission_id]
-                                  if not cfg.FastFightEnable then
-                                    do
-                                      enableType = not cfg or FastFightEnableType.Enable
-                                      enableType = FastFightEnableType.EqualAutoFight
-                                      if enableType == FastFightEnableType.Enable then
-                                        return true
-                                      else
-                                        if enableType == FastFightEnableType.EqualAutoFight then
-                                          local data = self:CheckAutoEnable()
-                                          return data.bEnable
-                                        else
-                                          do
-                                            if enableType == FastFightEnableType.Disable then
-                                              return false
-                                            else
-                                              if MatchType.MT_SeasonMaze == matchType then
-                                                local missionID = (enterData:GetSeasonMazeMissionInfo()).mission_id
-                                                local useMissionCfg = (Cfg.cfg_season_maze_mission)[missionID]
-                                                if useMissionCfg then
-                                                  enableType = useMissionCfg.FastFightEnable
-                                                end
-                                              else
-                                                do
-                                                  ;
-                                                  (Log.fatal)("Invalid FastFightEnableType")
-                                                  do return true end
-                                                end
-                                              end
-                                            end
-                                          end
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+    local cfg = Cfg.cfg_mission[data.mission_id]
+    if cfg then
+      enableType = cfg.FastFightEnable or FastFightEnableType.Enable
     end
+  elseif MatchType.MT_Campaign == matchType then
+    local campaignMissionInfo = enterData:GetCampaignMissionInfo()
+    local missionCfg = Cfg.cfg_campaign_mission[campaignMissionInfo.nCampaignMissionId]
+    if missionCfg then
+      enableType = missionCfg.FastFightEnable or FastFightEnableType.Enable
+    end
+  elseif MatchType.MT_Season == matchType then
+    local missionID = enterData:GetSeasonMissionInfo().mission_id
+    local useMissionCfg = Cfg.cfg_season_mission[missionID]
+    if useMissionCfg then
+      enableType = useMissionCfg.FastFightEnable or FastFightEnableType.Enable
+    end
+  elseif MatchType.MT_SailingMission == matchType then
+    local missionID = enterData:GetSailingMissionInfo().mission_id
+    local cfgSailingMission = Cfg.cfg_sailing_mission[missionID]
+    if cfgSailingMission then
+      enableType = cfgSailingMission.FastFightEnable or FastFightEnableType.Enable
+    end
+  elseif MatchType.MT_ExtMission == matchType then
+    local data = enterData:GetMissionCreateInfo()
+    local cfg = Cfg.cfg_extra_mission_task[data.m_nExtTaskID]
+    if cfg then
+      enableType = cfg.FastFightEnable or FastFightEnableType.Enable
+    end
+  elseif MatchType.MT_EightPets == matchType then
+    local data = enterData:GetEightPetsMissionInfo()
+    local cfg = Cfg.cfg_eight_pets_mission[data.mission_id]
+    if cfg then
+      enableType = cfg.FastFightEnable or FastFightEnableType.Enable
+    end
+  else
+    enableType = FastFightEnableType.EqualAutoFight
+  end
+  if enableType == FastFightEnableType.Enable then
+    return true
+  elseif enableType == FastFightEnableType.EqualAutoFight then
+    local data = self:CheckAutoEnable()
+    return data.bEnable
+  elseif enableType == FastFightEnableType.Disable then
+    return false
+  elseif MatchType.MT_SeasonMaze == matchType then
+    local missionID = enterData:GetSeasonMazeMissionInfo().mission_id
+    local useMissionCfg = Cfg.cfg_season_maze_mission[missionID]
+    if useMissionCfg then
+      enableType = useMissionCfg.FastFightEnable
+    end
+  else
+    Log.fatal("Invalid FastFightEnableType")
+    return true
   end
 end
-
-

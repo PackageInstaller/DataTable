@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/helper/update_timer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UpdatTimer", Object)
 UpdatTimer = UpdatTimer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UpdatTimer.Constructor = function(self, endTime, updateDetla, interCallback)
-  -- function num : 0_0 , upvalues : _ENV
+function UpdatTimer:Constructor(endTime, updateDetla, interCallback)
   self._endTime = endTime
   self._updateDetla = updateDetla
   self._interEvent = Callback:New(0, interCallback)
@@ -20,83 +13,54 @@ UpdatTimer.Constructor = function(self, endTime, updateDetla, interCallback)
   self._isEnd = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UpdatTimer.SetBeginEvent = function(self, callback, ...)
-  -- function num : 0_1 , upvalues : _ENV
+function UpdatTimer:SetBeginEvent(callback, ...)
   self._beginEvent = Callback:New(0, callback, ...)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UpdatTimer.SetInterEvent = function(self, callback, ...)
-  -- function num : 0_2 , upvalues : _ENV
+function UpdatTimer:SetInterEvent(callback, ...)
   self._interEvent = Callback:New(0, callback, ...)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UpdatTimer.SetEndEvent = function(self, callback, ...)
-  -- function num : 0_3 , upvalues : _ENV
+function UpdatTimer:SetEndEvent(callback, ...)
   self._endEvent = Callback:New(0, callback, ...)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UpdatTimer.SetPause = function(self, pause)
-  -- function num : 0_4
+function UpdatTimer:SetPause(pause)
   self._pause = pause
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UpdatTimer.IsPauseing = function(self)
-  -- function num : 0_5
+function UpdatTimer:IsPauseing()
   return self._pause
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UpdatTimer.OnUpdateEvent = function(self, deltaTime)
-  -- function num : 0_6
+function UpdatTimer:OnUpdateEvent(deltaTime)
   if self._pause then
-    return 
+    return
   end
   self._interTime = self._interTime + deltaTime
-  if self._updateDetla <= self._interTime then
+  if self._interTime >= self._updateDetla then
     self._interTime = 0
-    ;
-    (self._interEvent):Call()
+    self._interEvent:Call()
   end
   if self._endTime and not self._isEnd then
     self._endTime = self._endTime - deltaTime
-    if self._endTime <= 0 then
-      (self._endEvent):Call()
+    if 0 >= self._endTime then
+      self._endEvent:Call()
       self._endEvent = nil
       self._isEnd = true
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UpdatTimer._GetCurrentTime = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UpdatTimer:_GetCurrentTime()
   if self._world then
-    local timeService = (self._world):GetService("Time")
+    local timeService = self._world:GetService("Time")
     return timeService:GetCurrentTimeMs()
   else
-    do
-      do return (GameGlobal:GetInstance()):GetCurrentTime() end
-    end
+    return GameGlobal:GetInstance():GetCurrentTime()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UpdatTimer.GetLastTime = function(self)
-  -- function num : 0_8
+function UpdatTimer:GetLastTime()
   return self._endTime > 0 and self._endTime or 0
 end
-
-

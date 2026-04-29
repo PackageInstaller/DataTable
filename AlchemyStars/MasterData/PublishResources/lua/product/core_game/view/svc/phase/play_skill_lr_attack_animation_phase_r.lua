@@ -1,34 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_lr_attack_animation_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillLRAttackAnimationPhase", PlaySkillPhaseBase)
 PlaySkillLRAttackAnimationPhase = PlaySkillLRAttackAnimationPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillLRAttackAnimationPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlaySkillLRAttackAnimationPhase:PlayFlight(TT, casterEntity, phaseParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local res = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Damage)
   local beAttackEntityID = res:GetTargetID()
-  local targetEntity = (self._world):GetEntityByID(beAttackEntityID)
+  local targetEntity = self._world:GetEntityByID(beAttackEntityID)
   if not targetEntity then
-    return 
+    return
   end
-  local resvc = (self._world):GetService("RenderEntity")
+  local resvc = self._world:GetService("RenderEntity")
   resvc:TurnToTarget(casterEntity, targetEntity)
-  local effectService = (self._world):GetService("Effect")
-  local playDamageSvc = ((self._world):GetService("PlayDamage"))
-  local attackAnimName = nil
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local casterGridLocation, targetGridLocation = casterEntity:GridLocation(), (targetEntity:GridLocation())
-  local attEffPos = nil
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
+  local effectService = self._world:GetService("Effect")
+  local playDamageSvc = self._world:GetService("PlayDamage")
+  local attackAnimName
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local casterGridLocation, targetGridLocation = casterEntity:GridLocation(), targetEntity:GridLocation()
+  local attEffPos
+  local utilCalcSvc = self._world:GetService("UtilCalc")
   local frontPos = utilCalcSvc:GetFrontPieces(casterEntity)
   local armBlurEffId = 0
-  if boardServiceRender:IsLeftOrRight(casterEntity, targetEntity) < 0 then
+  if 0 > boardServiceRender:IsLeftOrRight(casterEntity, targetEntity) then
     attackAnimName = phaseParam:GetLAnimationName()
     attEffPos = frontPos[1]
     armBlurEffId = phaseParam:GetLBlurEffectID()
@@ -45,31 +38,31 @@ PlaySkillLRAttackAnimationPhase.PlayFlight = function(self, TT, casterEntity, ph
   if armBlurEffId then
     effectService:CreateEffect(armBlurEffId, casterEntity)
   end
-  local deltaTimeMS = (self._timeService):GetCurrentTimeMs()
+  local deltaTimeMS = self._timeService:GetCurrentTimeMs()
   local hitPointDelay = phaseParam:GetHitPointDelay()
-  if hitPointDelay > 0 then
+  if 0 < hitPointDelay then
     YIELD(TT, hitPointDelay)
   end
   local attackEffectID = phaseParam:GetCastEffectID()
   local renderDir = casterEntity:GetDirection()
   effectService:CreateWorldPositionDirectionEffect(attackEffectID, attEffPos, Vector2(renderDir.x, renderDir.z))
-  local resvc = (self._world):GetService("RenderEntity")
+  local resvc = self._world:GetService("RenderEntity")
   resvc:TurnToTarget(targetEntity, casterEntity)
   local hitAnimName = phaseParam:GetHitAnimation()
   targetEntity:SetAnimatorControllerTriggers({hitAnimName})
   local hitEffectID = phaseParam:GetHitEffectID()
   effectService:CreateEffect(hitEffectID, targetEntity)
   local hitBackData = skillEffectResultContainer:GetEffectResultByTargetID(SkillEffectType.HitBack, beAttackEntityID)
-  local processHitTaskID = (self:SkillService()):ProcessHit(casterEntity, targetEntity, hitBackData)
+  local processHitTaskID = self:SkillService():ProcessHit(casterEntity, targetEntity, hitBackData)
   local castDamage = res:GetDamageInfo(1)
   playDamageSvc:AsyncUpdateHPAndDisplayDamage(targetEntity, castDamage)
   local overDelay = phaseParam:GetOverDelay()
-  if overDelay > 0 then
+  if 0 < overDelay then
     YIELD(TT, overDelay)
   end
-  while processHitTaskID and not (TaskHelper:GetInstance()):IsTaskFinished(processHitTaskID) do
-    YIELD(TT)
+  if processHitTaskID then
+    while not TaskHelper:GetInstance():IsTaskFinished(processHitTaskID) do
+      YIELD(TT)
+    end
   end
 end
-
-

@@ -1,40 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_begin_ui_preview.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewBeginUIPreviewInstruction", SkillPreviewBaseInstruction)
 SkillPreviewBeginUIPreviewInstruction = SkillPreviewBeginUIPreviewInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewBeginUIPreviewInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewBeginUIPreviewInstruction:Constructor(params)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewBeginUIPreviewInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewBeginUIPreviewInstruction:DoInstruction(TT, casterEntity, previewContext)
   self._world = previewContext:GetWorld()
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-  local teamMembers = (teamEntity:Team()):GetTeamPetEntities()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  local teamMembers = teamEntity:Team():GetTeamPetEntities()
   local petListInfo = {}
   local effectList = previewContext:GetEffect(SkillEffectType.AppointCastChain)
-  local previewEffectCalcService = (self._world):GetService("PreviewCalcEffect")
+  local previewEffectCalcService = self._world:GetService("PreviewCalcEffect")
   local effectParam = previewEffectCalcService:CreateSkillEffectParam(SkillEffectType.AppointCastChain, effectList)
   local baseValue = effectParam:GetBaseValue()
   local mulValue = effectParam:GetMulValue()
-  local utilDataSvc = (self._world):GetService("UtilData")
-  for _,petEntity in ipairs(teamMembers) do
+  local utilDataSvc = self._world:GetService("UtilData")
+  for _, petEntity in ipairs(teamMembers) do
     if petEntity:GetID() ~= casterEntity:GetID() and not petEntity:HasDeadMark() then
       local cPstId = petEntity:PetPstID()
       local pstId = cPstId:GetPstID()
       petListInfo[pstId] = utilDataSvc:GetPetExtraChainCastCount(pstId, baseValue, mulValue)
     end
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.IstavanShowPetHeadPreviewUI, petListInfo)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.IstavanShowPetHeadPreviewUI, petListInfo)
 end
-
-

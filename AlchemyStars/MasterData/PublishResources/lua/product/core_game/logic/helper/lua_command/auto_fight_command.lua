@@ -1,65 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/auto_fight_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("entity_commands")
 _class("AutoFightCommand", IEntityCommand)
 AutoFightCommand = AutoFightCommand
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AutoFightCommand.Constructor = function(self)
-  -- function num : 0_0
+function AutoFightCommand:Constructor()
   self._commandType = "AutoFight"
   self._enableAutoFight = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightCommand.GetCommandType = function(self)
-  -- function num : 0_1
+function AutoFightCommand:GetCommandType()
   return self._commandType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightCommand.GetExecStateID = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  return {GameStateID.WaitInput, GameStateID.WaitInputChain, GameStateID.PickUpChainSkillTarget, GameStateID.WaveResultAward, GameStateID.MirageWaitInput}
+function AutoFightCommand:GetExecStateID()
+  return {
+    GameStateID.WaitInput,
+    GameStateID.WaitInputChain,
+    GameStateID.PickUpChainSkillTarget,
+    GameStateID.WaveResultAward,
+    GameStateID.MirageWaitInput
+  }
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightCommand.IsExecExcluded = function(self)
-  -- function num : 0_3
+function AutoFightCommand:IsExecExcluded()
   return 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightCommand.DependRoundCount = function(self)
-  -- function num : 0_4
+function AutoFightCommand:DependRoundCount()
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightCommand.GetCmdAutoFight = function(self)
-  -- function num : 0_5
+function AutoFightCommand:GetCmdAutoFight()
   return self._enableAutoFight
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightCommand.SetCmdAutoFight = function(self, enableAutoFight)
-  -- function num : 0_6
+function AutoFightCommand:SetCmdAutoFight(enableAutoFight)
   self._enableAutoFight = enableAutoFight
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightCommand.ToNetMessage = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function AutoFightCommand:ToNetMessage()
   local msg = CEventAutoFightCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
@@ -70,10 +48,7 @@ AutoFightCommand.ToNetMessage = function(self)
   return msg
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_8
+function AutoFightCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
@@ -81,5 +56,3 @@ AutoFightCommand.FromNetMessage = function(self, msg)
   self.IsAutoFight = msg.IsAutoFight
   self._enableAutoFight = msg.EnableAutoFight
 end
-
-

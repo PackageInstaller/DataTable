@@ -1,27 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/tale_pet/ui_tale_pet/ui_convene_desc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIConveneDesc", UIController)
 UIConveneDesc = UIConveneDesc
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIConveneDesc.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIConveneDesc:OnShow(uiParams)
   self.txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
   self.txtInfo = self:GetUIComponent("UILocalizationText", "txtInfo")
-  ;
-  (self.txtTitle):SetText((StringTable.Get)("str_tale_pet_convene_desc_title"))
-  ;
-  (self.txtInfo):SetText((StringTable.Get)("str_tale_pet_convene_desc_info"))
+  self.txtTitle:SetText(StringTable.Get("str_tale_pet_convene_desc_title"))
+  self.txtInfo:SetText(StringTable.Get("str_tale_pet_convene_desc_info"))
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIConveneDesc.bgOnClick = function(self)
-  -- function num : 0_1
+function UIConveneDesc:bgOnClick()
   self:CloseDialog()
 end
-
-

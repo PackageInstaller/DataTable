@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_multi_random_trajectory_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseMultiRandomTrajectoryParam", SkillPhaseParamBase)
 SkillPhaseMultiRandomTrajectoryParam = SkillPhaseMultiRandomTrajectoryParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseMultiRandomTrajectoryParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhaseMultiRandomTrajectoryParam:Constructor(t)
   self._startPosEffectID = t.startPosEffectID
   self._bulletEffectID = t.bulletEffectID
   self._spawnIntervalTime = t.spawnIntervalTime
@@ -22,119 +15,84 @@ SkillPhaseMultiRandomTrajectoryParam.Constructor = function(self, t)
   local startPosListData = t.startPosList
   if startPosListData then
     self._startPosList = {}
-    for index,v in ipairs(startPosListData) do
+    for index, v in ipairs(startPosListData) do
       local v2Pos = Vector2(v[1], v[2])
-      ;
-      (table.insert)(self._startPosList, v2Pos)
+      table.insert(self._startPosList, v2Pos)
     end
   end
-  do
-    self._targetHit = t.targetHit
-    self._hitAnimName = t.hitAnimName
-    self._hitEffectID = t.hitEffectID
-    self._hitSoundID = t.hitSoundID or 0
-  end
+  self._targetHit = t.targetHit
+  self._hitAnimName = t.hitAnimName
+  self._hitEffectID = t.hitEffectID
+  self._hitSoundID = t.hitSoundID or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiRandomTrajectoryParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseMultiRandomTrajectoryParam:GetCacheTable()
   local t = {}
   if self._startPosEffectID and self._startPosEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._startPosEffectID]).ResPath, 4})
+    table.insert(t, {
+      Cfg.cfg_effect[self._startPosEffectID].ResPath,
+      4
+    })
   end
-  if self._bulletEffectID and self._bulletEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._bulletEffectID]).ResPath, 4})
+  if self._bulletEffectID and 0 < self._bulletEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._bulletEffectID].ResPath,
+      4
+    })
   end
-  if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 4})
+  if self._hitEffectID and 0 < self._hitEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      4
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiRandomTrajectoryParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseMultiRandomTrajectoryParam:GetPhaseType()
   return SkillViewPhaseType.MultiRandomTrajectory
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiRandomTrajectoryParam.GetStartPosEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseMultiRandomTrajectoryParam:GetStartPosEffectID()
   return self._startPosEffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiRandomTrajectoryParam.GetBulletEffectID = function(self)
-  -- function num : 0_4
+function SkillPhaseMultiRandomTrajectoryParam:GetBulletEffectID()
   return self._bulletEffectID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiRandomTrajectoryParam.GetSpawnIntervalTime = function(self)
-  -- function num : 0_5
+function SkillPhaseMultiRandomTrajectoryParam:GetSpawnIntervalTime()
   return self._spawnIntervalTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiRandomTrajectoryParam.GetFlyDelayTime = function(self)
-  -- function num : 0_6
+function SkillPhaseMultiRandomTrajectoryParam:GetFlyDelayTime()
   return self._flyDelayTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiRandomTrajectoryParam.GetBulletOffSetV3 = function(self)
-  -- function num : 0_7
+function SkillPhaseMultiRandomTrajectoryParam:GetBulletOffSetV3()
   return self._bulletOffSetV3
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiRandomTrajectoryParam.GetStartPosList = function(self)
-  -- function num : 0_8
+function SkillPhaseMultiRandomTrajectoryParam:GetStartPosList()
   return self._startPosList
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiRandomTrajectoryParam.GetFlyTime = function(self)
-  -- function num : 0_9
+function SkillPhaseMultiRandomTrajectoryParam:GetFlyTime()
   return self._flyTime
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiRandomTrajectoryParam.GetTargetHit = function(self)
-  -- function num : 0_10
+function SkillPhaseMultiRandomTrajectoryParam:GetTargetHit()
   return self._targetHit
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiRandomTrajectoryParam.GetHitAnimName = function(self)
-  -- function num : 0_11
+function SkillPhaseMultiRandomTrajectoryParam:GetHitAnimName()
   return self._hitAnimName
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiRandomTrajectoryParam.GetHitEffectID = function(self)
-  -- function num : 0_12
+function SkillPhaseMultiRandomTrajectoryParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiRandomTrajectoryParam.GetHitSoundID = function(self)
-  -- function num : 0_13
+function SkillPhaseMultiRandomTrajectoryParam:GetHitSoundID()
   return self._hitSoundID
 end
-
-

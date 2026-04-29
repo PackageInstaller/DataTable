@@ -1,19 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/role/1400671/cfg_skill_view_200671.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterAnimation,animName = AtkChain; PlayCasterBindEffect,effectID =2421; PlayCasterBindEffect,effectID =2426; PlayCasterBindEffect,effectID =2427; PlayAudio,audioID = 2291,audioType=1; Wait,waitTime=1130; PlayAddHpText; Wait,waitTime=1870; "}
-}
-, 
-{2, 2, 38, 2, 1, 0, 
-{
-effectIDList = {2426, 2427}
-}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName = AtkChain; PlayCasterBindEffect,effectID =2421; PlayCasterBindEffect,effectID =2426; PlayCasterBindEffect,effectID =2427; PlayAudio,audioID = 2291,audioType=1; Wait,waitTime=1130; PlayAddHpText; Wait,waitTime=1870; "
+    }
+  },
+  {
+    2,
+    2,
+    38,
+    2,
+    1,
+    0,
+    {
+      effectIDList = {2426, 2427}
+    }
+  }
 }
 return config, "ID", key
-

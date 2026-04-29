@@ -1,102 +1,347 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/season/balance/cfg_season_balance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, StageID = 2, BalanceType = 3, EvidenceList = 4, QAList = 5, WeightList = 6, CanBeginTitleStr = 7, UnCanTitleStr = 8}
+local key = {
+  ID = 1,
+  StageID = 2,
+  BalanceType = 3,
+  EvidenceList = 4,
+  QAList = 5,
+  WeightList = 6,
+  CanBeginTitleStr = 7,
+  UnCanTitleStr = 8
+}
 local common = {
-{31, 32, 33}
-, 
-{10, 11, 17}
-, 
-{21, 7, 16}
-, 
-{23, 12, 33}
-, 
-{14, 8, 6}
-, 
-{19, 24, 13}
-, 
-{5, 3, 18}
-, "str_season_s2_evidenough_1", "str_season_s2_evidlost_1", "str_season_s2_evidenough_2"}
+  {
+    31,
+    32,
+    33
+  },
+  {
+    10,
+    11,
+    17
+  },
+  {
+    21,
+    7,
+    16
+  },
+  {
+    23,
+    12,
+    33
+  },
+  {
+    14,
+    8,
+    6
+  },
+  {
+    19,
+    24,
+    13
+  },
+  {
+    5,
+    3,
+    18
+  },
+  "str_season_s2_evidenough_1",
+  "str_season_s2_evidlost_1",
+  "str_season_s2_evidenough_2"
+}
 local config = {
-{1, 8002403, 1, 
-{1, 2, 3, 4, 5, 6}
-, 
-{1, 2, 3}
-, nil, common[8], common[9]}
-, 
-{2, 8002404, 1, 
-{7, 8, 9, 10, 11, 12}
-, 
-{4, 5, 6}
-, nil, common[8], common[9]}
-, 
-{3, 8002405, 1, 
-{13, 14, 15, 16, 17, 18}
-, 
-{7, 8, 9}
-, nil, common[8], common[9]}
-, 
-{4, 8002402, 2, nil, nil, 
-{7000318, 7000319, 7000320}
-, common[8], common[9]}
-, 
-{5, 8500208, 1, nil, 
-{10, 11, 12}
-, nil, common[10]}
-, 
-{6, 8500210, 1, nil, 
-{13, 14, 15}
-, nil, common[10]}
-, 
-{7, 8500212, 1, nil, 
-{16, 17, 18}
-, nil, common[10]}
-, 
-{8, 8500248, 1, nil, 
-{19, 20, 21}
-, nil, common[10]}
-, 
-{9, 8500249, 1, nil, 
-{22, 23, 24}
-, nil, common[10]}
-, 
-{10, 8500250, 1, nil, 
-{25, 26, 27}
-, nil, common[10]}
-, 
-{11, 8500265, 1, nil, 
-{28, 29, 30}
-, nil, common[10]}
-, 
-{12, 8500281, 1, nil, common[1], nil, common[10]}
-, 
-{13, 8500282, 1, nil, common[2], nil, common[10]}
-, 
-{14, 8500283, 1, nil, common[3], nil, common[10]}
-, 
-{15, 8500302, 1, nil, common[4], nil, common[10]}
-, 
-{16, 8500303, 1, nil, common[5], nil, common[10]}
-, 
-{17, 8500304, 1, nil, common[6], nil, common[10]}
-, 
-{18, 8500307, 1, nil, common[7], nil, common[10]}
-, 
-{19, 8500343, 1, nil, common[1], nil, common[10]}
-, 
-{20, 8500344, 1, nil, common[2], nil, common[10]}
-, 
-{21, 8500345, 1, nil, common[3], nil, common[10]}
-, 
-{22, 8500364, 1, nil, common[4], nil, common[10]}
-, 
-{23, 8500365, 1, nil, common[5], nil, common[10]}
-, 
-{24, 8500366, 1, nil, common[6], nil, common[10]}
-, 
-{25, 8500369, 1, nil, common[7], nil, common[10]}
+  {
+    1,
+    8002403,
+    1,
+    {
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    },
+    {
+      1,
+      2,
+      3
+    },
+    nil,
+    common[8],
+    common[9]
+  },
+  {
+    2,
+    8002404,
+    1,
+    {
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    },
+    {
+      4,
+      5,
+      6
+    },
+    nil,
+    common[8],
+    common[9]
+  },
+  {
+    3,
+    8002405,
+    1,
+    {
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    },
+    {
+      7,
+      8,
+      9
+    },
+    nil,
+    common[8],
+    common[9]
+  },
+  {
+    4,
+    8002402,
+    2,
+    nil,
+    nil,
+    {
+      7000318,
+      7000319,
+      7000320
+    },
+    common[8],
+    common[9]
+  },
+  {
+    5,
+    8500208,
+    1,
+    nil,
+    {
+      10,
+      11,
+      12
+    },
+    nil,
+    common[10]
+  },
+  {
+    6,
+    8500210,
+    1,
+    nil,
+    {
+      13,
+      14,
+      15
+    },
+    nil,
+    common[10]
+  },
+  {
+    7,
+    8500212,
+    1,
+    nil,
+    {
+      16,
+      17,
+      18
+    },
+    nil,
+    common[10]
+  },
+  {
+    8,
+    8500248,
+    1,
+    nil,
+    {
+      19,
+      20,
+      21
+    },
+    nil,
+    common[10]
+  },
+  {
+    9,
+    8500249,
+    1,
+    nil,
+    {
+      22,
+      23,
+      24
+    },
+    nil,
+    common[10]
+  },
+  {
+    10,
+    8500250,
+    1,
+    nil,
+    {
+      25,
+      26,
+      27
+    },
+    nil,
+    common[10]
+  },
+  {
+    11,
+    8500265,
+    1,
+    nil,
+    {
+      28,
+      29,
+      30
+    },
+    nil,
+    common[10]
+  },
+  {
+    12,
+    8500281,
+    1,
+    nil,
+    common[1],
+    nil,
+    common[10]
+  },
+  {
+    13,
+    8500282,
+    1,
+    nil,
+    common[2],
+    nil,
+    common[10]
+  },
+  {
+    14,
+    8500283,
+    1,
+    nil,
+    common[3],
+    nil,
+    common[10]
+  },
+  {
+    15,
+    8500302,
+    1,
+    nil,
+    common[4],
+    nil,
+    common[10]
+  },
+  {
+    16,
+    8500303,
+    1,
+    nil,
+    common[5],
+    nil,
+    common[10]
+  },
+  {
+    17,
+    8500304,
+    1,
+    nil,
+    common[6],
+    nil,
+    common[10]
+  },
+  {
+    18,
+    8500307,
+    1,
+    nil,
+    common[7],
+    nil,
+    common[10]
+  },
+  {
+    19,
+    8500343,
+    1,
+    nil,
+    common[1],
+    nil,
+    common[10]
+  },
+  {
+    20,
+    8500344,
+    1,
+    nil,
+    common[2],
+    nil,
+    common[10]
+  },
+  {
+    21,
+    8500345,
+    1,
+    nil,
+    common[3],
+    nil,
+    common[10]
+  },
+  {
+    22,
+    8500364,
+    1,
+    nil,
+    common[4],
+    nil,
+    common[10]
+  },
+  {
+    23,
+    8500365,
+    1,
+    nil,
+    common[5],
+    nil,
+    common[10]
+  },
+  {
+    24,
+    8500366,
+    1,
+    nil,
+    common[6],
+    nil,
+    common[10]
+  },
+  {
+    25,
+    8500369,
+    1,
+    nil,
+    common[7],
+    nil,
+    common[10]
+  }
 }
 return config, "ID", key
-

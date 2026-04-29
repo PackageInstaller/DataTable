@@ -1,80 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_up_lv_info_att_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipUpLvInfoAttItem", UICustomWidget)
 UIPetEquipUpLvInfoAttItem = UIPetEquipUpLvInfoAttItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipUpLvInfoAttItem.Constructor = function(self)
-  -- function num : 0_0
-  self._elem2str = {[1] = "str_pet_filter_water_element", [2] = "str_pet_filter_fire_element", [3] = "str_pet_filter_sen_element", [4] = "str_pet_filter_electricity_element", [6] = "str_tale_pet_att_none"}
+function UIPetEquipUpLvInfoAttItem:Constructor()
+  self._elem2str = {
+    [1] = "str_pet_filter_water_element",
+    [2] = "str_pet_filter_fire_element",
+    [3] = "str_pet_filter_sen_element",
+    [4] = "str_pet_filter_electricity_element",
+    [6] = "str_tale_pet_att_none"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoAttItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIPetEquipUpLvInfoAttItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoAttItem.OnHide = function(self)
-  -- function num : 0_2
+function UIPetEquipUpLvInfoAttItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoAttItem.SetData = function(self, data, element)
-  -- function num : 0_3
+function UIPetEquipUpLvInfoAttItem:SetData(data, element)
   self._element = element
-  self._lv = data:GetData()
+  self._lv, self._elem, self._atk, self._def, self._hp = data:GetData()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoAttItem._GetComponents = function(self)
-  -- function num : 0_4
+function UIPetEquipUpLvInfoAttItem:_GetComponents()
   self._desc = self:GetUIComponent("UILocalizationText", "desc")
   self._lvTex = self:GetUIComponent("UILocalizationText", "lv")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoAttItem._OnValue = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._lvTex):SetText("Lv." .. self._lv)
+function UIPetEquipUpLvInfoAttItem:_OnValue()
+  self._lvTex:SetText("Lv." .. self._lv)
   local desc = ""
-  do
-    if self._elem ~= 0 then
-      local elementTex = (self._elem2str)[self._element]
-      desc = desc .. (StringTable.Get)("str_pet_equip_property_restraint_value", (StringTable.Get)(elementTex)) .. "+" .. self._elem * 100 .. "%"
-    end
-    if self._atk ~= 0 then
-      if self._elem ~= 0 then
-        desc = desc .. (StringTable.Get)("str_common_comma")
-      end
-      desc = desc .. (StringTable.Get)("str_pet_equip_attack") .. "+" .. self._atk
-    end
-    if self._def ~= 0 then
-      if self._elem ~= 0 or self._atk ~= 0 then
-        desc = desc .. (StringTable.Get)("str_common_comma")
-      end
-      desc = desc .. (StringTable.Get)("str_pet_equip_defence") .. "+" .. self._def
-    end
-    if self._hp ~= 0 then
-      if self._elem ~= 0 or self._atk ~= 0 or self._def ~= 0 then
-        desc = desc .. (StringTable.Get)("str_common_comma")
-      end
-      desc = desc .. (StringTable.Get)("str_pet_equip_hp") .. "+" .. self._hp
-    end
-    desc = desc .. (StringTable.Get)("str_common_full_stop")
-    ;
-    (self._desc):SetText(desc)
+  if self._elem ~= 0 then
+    local elementTex = self._elem2str[self._element]
+    desc = desc .. StringTable.Get("str_pet_equip_property_restraint_value", StringTable.Get(elementTex)) .. "+" .. self._elem * 100 .. "%"
   end
+  if self._atk ~= 0 then
+    if self._elem ~= 0 then
+      desc = desc .. StringTable.Get("str_common_comma")
+    end
+    desc = desc .. StringTable.Get("str_pet_equip_attack") .. "+" .. self._atk
+  end
+  if self._def ~= 0 then
+    if self._elem ~= 0 or self._atk ~= 0 then
+      desc = desc .. StringTable.Get("str_common_comma")
+    end
+    desc = desc .. StringTable.Get("str_pet_equip_defence") .. "+" .. self._def
+  end
+  if self._hp ~= 0 then
+    if self._elem ~= 0 or self._atk ~= 0 or self._def ~= 0 then
+      desc = desc .. StringTable.Get("str_common_comma")
+    end
+    desc = desc .. StringTable.Get("str_pet_equip_hp") .. "+" .. self._hp
+  end
+  desc = desc .. StringTable.Get("str_common_full_stop")
+  self._desc:SetText(desc)
 end
-
-

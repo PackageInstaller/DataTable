@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_lost_land/ui_lost_land_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILostLandModule", UIModule)
 UILostLandModule = UILostLandModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILostLandModule.Dispose = function(self)
-  -- function num : 0_0
+function UILostLandModule:Dispose()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._module = (GameGlobal.GetModule)(LostAreaModule)
+function UILostLandModule:Constructor()
+  self._module = GameGlobal.GetModule(LostAreaModule)
   self._nextTime = 0
   self._pet_award_count = 5
   self._filterType = UILostLandFilterType.OR
@@ -23,66 +13,43 @@ UILostLandModule.Constructor = function(self)
   self:CreateConditionFunc()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.GetPetAwardCount = function(self)
-  -- function num : 0_2
+function UILostLandModule:GetPetAwardCount()
   return self._pet_award_count
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.GetPetAwardInfo = function(self)
-  -- function num : 0_3
+function UILostLandModule:GetPetAwardInfo()
   return self._recommend_reward
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.GetCurrentEnterData = function(self)
-  -- function num : 0_4
+function UILostLandModule:GetCurrentEnterData()
   return self._currentEnterData
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.InitEnterData = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UILostLandModule:InitEnterData()
   self._enterList = {}
-  self._enter_cfg_map = (self._module):GetLostAreaDesignConfig()
-  self._level_cfg_map = (self._module):GetLostAreaLevelGroupConfig()
-  self._nextTime = (self._module):GetDifficultyStatusData()
+  self._enter_cfg_map = self._module:GetLostAreaDesignConfig()
+  self._level_cfg_map = self._module:GetLostAreaLevelGroupConfig()
+  self._nextTime, self._enterStatusMap = self._module:GetDifficultyStatusData()
   self:CreateEnterData()
-  for key,value in pairs(self._enter_cfg_map) do
+  for key, value in pairs(self._enter_cfg_map) do
     self._recommend_reward = value.recommend_reward
     self._recommendList = value.recommend_cond
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.CreateEnterData = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  for id,status in pairs(self._enterStatusMap) do
-    local cfg = (self._enter_cfg_map)[id]
+function UILostLandModule:CreateEnterData()
+  for id, status in pairs(self._enterStatusMap) do
+    local cfg = self._enter_cfg_map[id]
     local enterData = UILostLandEnterData:New(id, status, cfg, self._level_cfg_map)
-    ;
-    (table.insert)(self._enterList, enterData)
+    table.insert(self._enterList, enterData)
   end
-  ;
-  (table.sort)(self._enterList, function(a, b)
-    -- function num : 0_6_0
-    do return a:GetType() < b:GetType() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._enterList, function(a, b)
+    return a:GetType() < b:GetType()
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.CreateMissionMap = function(self, missionStatusMap)
-  -- function num : 0_7 , upvalues : _ENV
-  (Log.debug)("###[UILostLandModule] 创建关卡数据")
+function UILostLandModule:CreateMissionMap(missionStatusMap)
+  Log.debug("###[UILostLandModule] 创建关卡数据")
   self._missionMap = {}
   self._currentStageID = nil
   local enterData = self:GetCurrentEnterData()
@@ -96,10 +63,7 @@ UILostLandModule.CreateMissionMap = function(self, missionStatusMap)
         self._currentStageID = missionid
       end
       local missionData = self:CreateMissionDataByMissionID(missionid, info, self._currentStageID)
-      -- DECOMPILER ERROR at PC35: Confused about usage of register: R16 in 'UnsetPending'
-
-      ;
-      (self._missionMap)[missionid] = missionData
+      self._missionMap[missionid] = missionData
     end
   end
   if not self._currentStageID then
@@ -109,205 +73,138 @@ UILostLandModule.CreateMissionMap = function(self, missionStatusMap)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.CreateMissionDataByMissionID = function(self, missionid, missionInfo, currentid)
-  -- function num : 0_8 , upvalues : _ENV
+function UILostLandModule:CreateMissionDataByMissionID(missionid, missionInfo, currentid)
   local cfg = self:GetLevelCfgByID(missionid)
   local missionData = UILostLandMissionData:New(missionid, cfg, missionInfo, currentid)
   return missionData
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.GetCurrentStageID = function(self)
-  -- function num : 0_9
+function UILostLandModule:GetCurrentStageID()
   return self._currentStageID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.ChooseEnter = function(self, enterData)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("UILostLandModule:ChooseEnter")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._OnChooseEnter, self, enterData)
+function UILostLandModule:ChooseEnter(enterData)
+  GameGlobal.UIStateManager():Lock("UILostLandModule:ChooseEnter")
+  GameGlobal.TaskManager():StartTask(self._OnChooseEnter, self, enterData)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule._OnChooseEnter = function(self, TT, enterData)
-  -- function num : 0_11 , upvalues : _ENV
+function UILostLandModule:_OnChooseEnter(TT, enterData)
   local enterid = enterData:GetEnterID()
-  local res = (self._module):RequestLostAreaChooseWeekDifficulty(TT, enterid)
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("UILostLandModule:ChooseEnter")
+  local res = self._module:RequestLostAreaChooseWeekDifficulty(TT, enterid)
+  GameGlobal.UIStateManager():UnLock("UILostLandModule:ChooseEnter")
   if res:GetSucc() then
-    local missionStatusMap = (self._module):GetLostAreadifficultyMission()
+    local missionStatusMap = self._module:GetLostAreadifficultyMission()
     self._currentEnterData = enterData
     self:CreateMissionMap(missionStatusMap)
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UILostLandStage)
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UILostLandStage)
   else
-    do
-      ;
-      (Log.error)("###[UILostLandModule] UILostLandModule:_OnChooseEnter fail ! result --> ", res:GetResult())
-    end
+    Log.error("###[UILostLandModule] UILostLandModule:_OnChooseEnter fail ! result --> ", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.ResetTime = function(self, resetDialog)
-  -- function num : 0_12 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("UILostLandModule:ResetTime")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._OnResetTime, self, resetDialog)
+function UILostLandModule:ResetTime(resetDialog)
+  GameGlobal.UIStateManager():Lock("UILostLandModule:ResetTime")
+  GameGlobal.TaskManager():StartTask(self._OnResetTime, self, resetDialog)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule._OnResetTime = function(self, TT, resetDialog)
-  -- function num : 0_13 , upvalues : _ENV
-  local res = (self._module):RequestLostAreadifficultyStatus(TT)
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("UILostLandModule:ResetTime")
+function UILostLandModule:_OnResetTime(TT, resetDialog)
+  local res = self._module:RequestLostAreadifficultyStatus(TT)
+  GameGlobal.UIStateManager():UnLock("UILostLandModule:ResetTime")
   if res:GetSucc() then
     self:InitEnterData()
     self:ResetTimeEvent(resetDialog)
   else
-    ;
-    (Log.error)("###[UILostLandModule] RequestLostAreadifficultyStatus fail ! result --> ", res:GetResult())
+    Log.error("###[UILostLandModule] RequestLostAreadifficultyStatus fail ! result --> ", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.ResetTimeEvent = function(self, resetDialog)
-  -- function num : 0_14 , upvalues : _ENV
+function UILostLandModule:ResetTimeEvent(resetDialog)
   if resetDialog == UILostLandResetTimeDialog.Main then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnLostLandTimeReset)
-  else
-    if resetDialog == UILostLandResetTimeDialog.Stage then
-      ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UILostLandMain, true)
-    else
-      if resetDialog == UILostLandResetTimeDialog.BattleEnd then
-        ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UILostLandMain, true)
-      end
-    end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnLostLandTimeReset)
+  elseif resetDialog == UILostLandResetTimeDialog.Stage then
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UILostLandMain, true)
+  elseif resetDialog == UILostLandResetTimeDialog.BattleEnd then
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UILostLandMain, true)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.GetResetTime = function(self)
-  -- function num : 0_15
+function UILostLandModule:GetResetTime()
   return self._nextTime
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.Time2Tex = function(self, sec)
-  -- function num : 0_16 , upvalues : _ENV
+function UILostLandModule:Time2Tex(sec)
   local timeStr = ""
   local minAll = sec // 60
   local min = minAll % 60
   local hourAll = minAll // 60
   local hour = hourAll % 24
   local day = hourAll // 24
-  if day and day > 0 then
-    timeStr = (StringTable.Get)("str_lost_land_reset_time_day_and_hour", day, hour)
+  if day and 0 < day then
+    timeStr = StringTable.Get("str_lost_land_reset_time_day_and_hour", day, hour)
     return timeStr
   end
-  if hour and hour > 0 then
-    timeStr = (StringTable.Get)("str_lost_land_reset_time_hour_and_min", hour, min)
+  if hour and 0 < hour then
+    timeStr = StringTable.Get("str_lost_land_reset_time_hour_and_min", hour, min)
     return timeStr
   end
-  if min and min > 0 then
-    timeStr = (StringTable.Get)("str_lost_land_reset_time_only_min", min)
+  if min and 0 < min then
+    timeStr = StringTable.Get("str_lost_land_reset_time_only_min", min)
     return timeStr
   end
-  timeStr = (StringTable.Get)("str_lost_land_reset_time_only_sec")
+  timeStr = StringTable.Get("str_lost_land_reset_time_only_sec")
   return timeStr
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.SwitchState = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("UILostLandModule:SwitchState")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._OnSwitchState, self)
+function UILostLandModule:SwitchState()
+  GameGlobal.UIStateManager():Lock("UILostLandModule:SwitchState")
+  GameGlobal.TaskManager():StartTask(self._OnSwitchState, self)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule._OnSwitchState = function(self, TT)
-  -- function num : 0_18 , upvalues : _ENV
-  local res = (self._module):RequestLostAreadifficultyStatus(TT)
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("UILostLandModule:SwitchState")
+function UILostLandModule:_OnSwitchState(TT)
+  local res = self._module:RequestLostAreadifficultyStatus(TT)
+  GameGlobal.UIStateManager():UnLock("UILostLandModule:SwitchState")
   if res:GetSucc() then
     self:InitEnterData()
     self:_ShowDialog()
   else
-    ;
-    (Log.error)("###[UILostLandModule] self._module:RequestLostAreadifficultyStatus fail ! result --> ", res:GetResult())
+    Log.error("###[UILostLandModule] self._module:RequestLostAreadifficultyStatus fail ! result --> ", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule._ShowDialog = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UILostLandModule:_ShowDialog()
   local choose = false
-  for key,value in pairs(self._enterStatusMap) do
+  for key, value in pairs(self._enterStatusMap) do
     if value == DifficultyStatus.DS_ThisWeekChoosed then
       self._currentEnterData = self:GetEnterDataByID(key)
       choose = true
       break
     end
   end
-  do
-    if choose then
-      ((GameGlobal.UIStateManager)()):Lock("UILostLandModule:_ShowDialog")
-      ;
-      ((GameGlobal.TaskManager)()):StartTask(self._OnShowDialog, self)
-    else
-      ;
-      ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UILostLandMain)
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule._OnShowDialog = function(self, TT)
-  -- function num : 0_20 , upvalues : _ENV
-  local currentid = (self._currentEnterData):GetEnterID()
-  local res = (self._module):RequestLostAreadifficultyMission(TT, currentid)
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("UILostLandModule:_ShowDialog")
-  if res:GetSucc() then
-    local missionStatusMap = (self._module):GetLostAreadifficultyMission()
-    self:CreateMissionMap(missionStatusMap)
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UILostLandStage)
+  if choose then
+    GameGlobal.UIStateManager():Lock("UILostLandModule:_ShowDialog")
+    GameGlobal.TaskManager():StartTask(self._OnShowDialog, self)
   else
-    do
-      ;
-      (Log.error)("###[UILostLandModule] self._module:RequestLostAreadifficultyStatus fail ! result --> ", res:GetResult())
-    end
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UILostLandMain)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
+function UILostLandModule:_OnShowDialog(TT)
+  local currentid = self._currentEnterData:GetEnterID()
+  local res = self._module:RequestLostAreadifficultyMission(TT, currentid)
+  GameGlobal.UIStateManager():UnLock("UILostLandModule:_ShowDialog")
+  if res:GetSucc() then
+    local missionStatusMap = self._module:GetLostAreadifficultyMission()
+    self:CreateMissionMap(missionStatusMap)
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UILostLandStage)
+  else
+    Log.error("###[UILostLandModule] self._module:RequestLostAreadifficultyStatus fail ! result --> ", res:GetResult())
+  end
+end
 
-UILostLandModule.GetEnterDataByID = function(self, id)
-  -- function num : 0_21
+function UILostLandModule:GetEnterDataByID(id)
   if self._enterList and #self._enterList then
     for i = 1, #self._enterList do
-      local enterData = (self._enterList)[i]
+      local enterData = self._enterList[i]
       local enterid = enterData:GetEnterID()
       if enterid == id then
         return enterData
@@ -316,95 +213,63 @@ UILostLandModule.GetEnterDataByID = function(self, id)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.GetEnterCfgByID = function(self, id)
-  -- function num : 0_22
-  local enterCfg = (self._enter_cfg_map)[id]
+function UILostLandModule:GetEnterCfgByID(id)
+  local enterCfg = self._enter_cfg_map[id]
   return enterCfg
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.GetEnterData = function(self)
-  -- function num : 0_23
+function UILostLandModule:GetEnterData()
   return self._enterList
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.GetMissionDataByMissionID = function(self, missionid)
-  -- function num : 0_24
-  return (self._missionMap)[missionid]
+function UILostLandModule:GetMissionDataByMissionID(missionid)
+  return self._missionMap[missionid]
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.GetLevelCfgByID = function(self, stageid)
-  -- function num : 0_25
-  return (self._level_cfg_map)[stageid]
+function UILostLandModule:GetLevelCfgByID(stageid)
+  return self._level_cfg_map[stageid]
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.DeleteData = function(self)
-  -- function num : 0_26
+function UILostLandModule:DeleteData()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.CheckPetRecommend = function(self, pstid)
-  -- function num : 0_27 , upvalues : _ENV
-  if self._recommendList and (table.count)(self._recommendList) > 0 then
+function UILostLandModule:CheckPetRecommend(pstid)
+  if self._recommendList and table.count(self._recommendList) > 0 then
     if not self._petModule then
-      self._petModule = (GameGlobal.GetModule)(PetModule)
+      self._petModule = GameGlobal.GetModule(PetModule)
     end
-    local pet = (self._petModule):GetPet(pstid)
+    local pet = self._petModule:GetPet(pstid)
     for i = 1, #self._recommendList do
       local innerOne = false
-      local recommend = (self._recommendList)[i]
+      local recommend = self._recommendList[i]
       local condition = recommend.cond1
       local filter = recommend.cond2
-      innerOne = ((self._conditionFunc)[condition])(filter, pet)
-      if self._filterType == UILostLandFilterType.OR and innerOne then
-        return true
-      end
-      if self._filterType == UILostLandFilterType.AND and not innerOne then
+      innerOne = self._conditionFunc[condition](filter, pet)
+      if self._filterType == UILostLandFilterType.OR then
+        if innerOne then
+          return true
+        end
+      elseif self._filterType == UILostLandFilterType.AND and not innerOne then
         return false
       end
     end
     if self._filterType == UILostLandFilterType.OR then
       return false
-    else
-      if self._filterType == UILostLandFilterType.AND then
-        return true
-      end
+    elseif self._filterType == UILostLandFilterType.AND then
+      return true
     end
   else
-    do
-      ;
-      (Log.error)("###[UILostLandModule] self._recommendList is nil or empty !")
-    end
+    Log.error("###[UILostLandModule] self._recommendList is nil or empty !")
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.GetRecommendConditionList = function(self)
-  -- function num : 0_28
+function UILostLandModule:GetRecommendConditionList()
   return self._recommendList
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandModule.CreateConditionFunc = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UILostLandModule:CreateConditionFunc()
   self._conditionFunc = {}
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionFunc)[PetFilterCondType.RFCT_Color] = function(filterColor, pet)
-    -- function num : 0_29_0
+  self._conditionFunc[PetFilterCondType.RFCT_Color] = function(filterColor, pet)
     if not pet then
       return false
     end
@@ -414,12 +279,7 @@ UILostLandModule.CreateConditionFunc = function(self)
     end
     return false
   end
-
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionFunc)[PetFilterCondType.RFCT_Force] = function(filterForce, pet)
-    -- function num : 0_29_1
+  self._conditionFunc[PetFilterCondType.RFCT_Force] = function(filterForce, pet)
     if not pet then
       return false
     end
@@ -432,12 +292,7 @@ UILostLandModule.CreateConditionFunc = function(self)
     end
     return false
   end
-
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionFunc)[PetFilterCondType.RFCT_Prof] = function(filterProf, pet)
-    -- function num : 0_29_2
+  self._conditionFunc[PetFilterCondType.RFCT_Prof] = function(filterProf, pet)
     if not pet then
       return false
     end
@@ -447,9 +302,11 @@ UILostLandModule.CreateConditionFunc = function(self)
     end
     return false
   end
-
 end
 
-local UILostLandResetTimeDialog = {Main = 1, Stage = 2, BattleEnd = 3}
+local UILostLandResetTimeDialog = {
+  Main = 1,
+  Stage = 2,
+  BattleEnd = 3
+}
 _enum("UILostLandResetTimeDialog", UILostLandResetTimeDialog)
-

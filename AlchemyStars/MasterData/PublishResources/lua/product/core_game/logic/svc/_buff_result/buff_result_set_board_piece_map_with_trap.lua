@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_set_board_piece_map_with_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultSetBoardPieceMapWithTrap", BuffResultBase)
 BuffResultSetBoardPieceMapWithTrap = BuffResultSetBoardPieceMapWithTrap
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultSetBoardPieceMapWithTrap.Constructor = function(self, mapByPosition)
-  -- function num : 0_0
+function BuffResultSetBoardPieceMapWithTrap:Constructor(mapByPosition)
   self._mapByPosition = mapByPosition
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetBoardPieceMapWithTrap.GetMapByPosition = function(self)
-  -- function num : 0_1
+function BuffResultSetBoardPieceMapWithTrap:GetMapByPosition()
   return self._mapByPosition
 end
-
-

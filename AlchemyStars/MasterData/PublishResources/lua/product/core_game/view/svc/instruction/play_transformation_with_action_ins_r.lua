@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_transformation_with_action_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayTransformationWithActionInstruction", BaseInstruction)
 PlayTransformationWithActionInstruction = PlayTransformationWithActionInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTransformationWithActionInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTransformationWithActionInstruction:Constructor(paramList)
   self._oriAction = paramList.OriAction
   self._oriEffect = paramList.OriEffect
   self._oriActionTime = tonumber(paramList.OriActionTime)
@@ -17,24 +10,23 @@ PlayTransformationWithActionInstruction.Constructor = function(self, paramList)
   self._newActionTime = tonumber(paramList.NewActionTime)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTransformationWithActionInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTransformationWithActionInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local effectSvc = world:GetService("Effect")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Transformation)
   for i = 1, #resultArray do
     local result = resultArray[i]
     local caster = world:GetEntityByID(result:GetCaster())
     local elementType = result:GetElementType()
     if not caster then
-      (Log.fatal)("没有施法者，变身失败")
-      return 
+      Log.fatal("没有施法者，变身失败")
+      return
     end
     if self._oriAction then
-      caster:SetAnimatorControllerTriggers({self._oriAction})
+      caster:SetAnimatorControllerTriggers({
+        self._oriAction
+      })
       effectSvc:CreateEffect(self._oriEffect, caster)
       YIELD(TT, self._oriActionTime)
     end
@@ -47,32 +39,24 @@ PlayTransformationWithActionInstruction.DoInstruction = function(self, TT, caste
     end
     caster:ReplaceAsset(NativeUnityPrefabAsset:New(monsterResPath, true))
     if self._newAction then
-      caster:SetAnimatorControllerTriggers({self._newAction})
+      caster:SetAnimatorControllerTriggers({
+        self._newAction
+      })
       effectSvc:CreateEffect(self._newEffect, caster)
       YIELD(TT, self._newActionTime)
     end
     local sMonsterShowRender = world:GetService("MonsterShowRender")
     sMonsterShowRender:CreateMonsterEffect(casterEntity, result:GetMonsterID())
     local transformationHp = result:GetTransformationHp()
-    do
-      if transformationHp ~= 0 then
-        local transformationHpMax = result:GetTransformationHpMax()
-        caster:ReplaceRedAndMaxHP(transformationHp, transformationHpMax)
-      end
-      local sliderEntityID = (caster:HP()):GetHPSliderEntityID()
-      local sliderEntity = world:GetEntityByID(sliderEntityID)
-      ;
-      (TaskManager:GetInstance()):CoreGameStartTask((InnerGameHelperRender:GetInstance()).SetHpSliderElementIcon, InnerGameHelperRender:GetInstance(), sliderEntity, elementType)
-      local utilDataSvc = world:GetService("UtilData")
-      do
-        local hpBarType = utilDataSvc:GetHPBarTypeByEntity(caster)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossNameAndElement, result:GetMonsterID(), hpBarType, caster:GetID())
-        -- DECOMPILER ERROR at PC143: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if transformationHp ~= 0 then
+      local transformationHpMax = result:GetTransformationHpMax()
+      caster:ReplaceRedAndMaxHP(transformationHp, transformationHpMax)
     end
+    local sliderEntityID = caster:HP():GetHPSliderEntityID()
+    local sliderEntity = world:GetEntityByID(sliderEntityID)
+    TaskManager:GetInstance():CoreGameStartTask(InnerGameHelperRender:GetInstance().SetHpSliderElementIcon, InnerGameHelperRender:GetInstance(), sliderEntity, elementType)
+    local utilDataSvc = world:GetService("UtilData")
+    local hpBarType = utilDataSvc:GetHPBarTypeByEntity(caster)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossNameAndElement, result:GetMonsterID(), hpBarType, caster:GetID())
   end
 end
-
-

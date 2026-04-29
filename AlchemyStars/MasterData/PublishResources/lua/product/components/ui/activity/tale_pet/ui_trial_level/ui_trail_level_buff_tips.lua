@@ -1,65 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/tale_pet/ui_trial_level/ui_trail_level_buff_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITrailLevelBuffTips", UIController)
 UITrailLevelBuffTips = UITrailLevelBuffTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITrailLevelBuffTips.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._talePetModule = (GameGlobal.GetModule)(TalePetModule)
-  ;
-  (self._talePetModule):ApplyBuffInfo(TT)
+function UITrailLevelBuffTips:LoadDataOnEnter(TT, res, uiParams)
+  self._talePetModule = GameGlobal.GetModule(TalePetModule)
+  self._talePetModule:ApplyBuffInfo(TT)
   local maxLevel = 1
-  self._buffLevel = (self._talePetModule):GetBuffLevel()
-  ;
-  (self._talePetModule):ShowBuffTips(TT)
+  self._buffLevel, maxLevel = self._talePetModule:GetBuffLevel()
+  self._talePetModule:ShowBuffTips(TT)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffTips.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UITrailLevelBuffTips:OnShow(uiParams)
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._buffLevelLabel = self:GetUIComponent("UILocalizationText", "Level")
-  local cfg = (Cfg.cfg_trail_level_buff_level)[self._buffLevel]
+  local cfg = Cfg.cfg_trail_level_buff_level[self._buffLevel]
   if not cfg then
-    return 
+    return
   end
   self._buffId = cfg.BuffId
-  ;
-  (self._name):SetText((StringTable.Get)(cfg.BuffName))
-  ;
-  (self._icon):LoadImage(cfg.BuffIcon)
-  ;
-  (self._buffLevelLabel):SetText((StringTable.Get)("str_tale_pet_trail_level_buff_level", self._buffLevel))
+  self._name:SetText(StringTable.Get(cfg.BuffName))
+  self._icon:LoadImage(cfg.BuffIcon)
+  self._buffLevelLabel:SetText(StringTable.Get("str_tale_pet_trail_level_buff_level", self._buffLevel))
   self._callback = uiParams[1]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffTips.MaskOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UITrailLevelBuffTips:MaskOnClick()
   self:Lock("UITrailLevelBuffTips_MaskOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.Close, self)
+  GameGlobal.TaskManager():StartTask(self.Close, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffTips.Close = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function UITrailLevelBuffTips:Close(TT)
   local anim = self:GetUIComponent("Animation", "Anim")
   anim:Play("uieff_uiTrailLevelBuffTips_out")
   YIELD(TT, 500)
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
   self:CloseDialog()
   self:UnLock("UITrailLevelBuffTips_MaskOnClick")
 end
-
-

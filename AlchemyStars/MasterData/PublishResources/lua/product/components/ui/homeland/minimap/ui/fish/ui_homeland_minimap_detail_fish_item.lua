@@ -1,41 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/fish/ui_homeland_minimap_detail_fish_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapDetailFishItem", UICustomWidget)
 UIHomelandMinimapDetailFishItem = UIHomelandMinimapDetailFishItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapDetailFishItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandMinimapDetailFishItem:OnShow()
   self.bg = self:GetUIComponent("Image", "bg")
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.probText = self:GetUIComponent("UILocalizationText", "probText")
   self.atlas = self:GetAsset("UIHomelandMap.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailFishItem.SetData = function(self, itemID, prob)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandMinimapDetailFishItem:SetData(itemID, prob)
   self.itemID = itemID
-  local cfg = (Cfg.cfg_item)[itemID]
-  ;
-  (self.imgIcon):LoadImage(cfg.Icon)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.bg).sprite = (self.atlas):GetSprite("n17_dt_dykuang0" .. cfg.Color)
-  ;
-  (self.probText):SetText((StringTable.Get)("str_homeland_minimap_detail_drop_prob_" .. prob))
+  local cfg = Cfg.cfg_item[itemID]
+  self.imgIcon:LoadImage(cfg.Icon)
+  self.bg.sprite = self.atlas:GetSprite("n17_dt_dykuang0" .. cfg.Color)
+  self.probText:SetText(StringTable.Get("str_homeland_minimap_detail_drop_prob_" .. prob))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailFishItem.bgOnClick = function(self, go)
-  -- function num : 0_2
+function UIHomelandMinimapDetailFishItem:bgOnClick(go)
   self:ShowDialog("UIItemTipsHomeland", self.itemID, go)
 end
-
-

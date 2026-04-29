@@ -1,36 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/expressions/season_map_express_animation.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("season_map_express_base")
 _class("SeasonMapExpressAnimation", SeasonMapExpressBase)
 SeasonMapExpressAnimation = SeasonMapExpressAnimation
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapExpressAnimation.Constructor = function(self, cfg, eventPoint)
-  -- function num : 0_0 , upvalues : _ENV
-  self._content = (self._cfg).Animation
-  self._seasonManager = ((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()
+function SeasonMapExpressAnimation:Constructor(cfg, eventPoint)
+  self._content = self._cfg.Animation
+  self._seasonManager = GameGlobal.GetUIModule(SeasonModule):SeasonManager()
   self._time = 0
   self._effectReqs = {}
-  self._player = ((self._seasonManager):SeasonPlayerManager()):GetPlayer()
+  self._player = self._seasonManager:SeasonPlayerManager():GetPlayer()
   self._playerAnimationState = nil
   self._executing = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressAnimation.Update = function(self, deltaTime)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonMapExpressAnimation:Update(deltaTime)
   if self._state == SeasonExpressState.Playing and self._executing then
     self._time = self._time - deltaTime
     if self._time <= 0 then
       self._executing = false
       if self._playerAnimationState then
-        (self._player):PlayAnimation(SeasonPlayerAnimation.Stand, 0)
+        self._player:PlayAnimation(SeasonPlayerAnimation.Stand, 0)
       end
-      for _,_req in pairs(self._effectReqs) do
+      for _, _req in pairs(self._effectReqs) do
         _req:Dispose()
       end
       self:Next()
@@ -38,103 +28,73 @@ SeasonMapExpressAnimation.Update = function(self, deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressAnimation.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((self.super).Dispose)(self)
-  for _,_req in pairs(self._effectReqs) do
+function SeasonMapExpressAnimation:Dispose()
+  self.super.Dispose(self)
+  for _, _req in pairs(self._effectReqs) do
     _req:Dispose()
   end
-  ;
-  (table.clear)(self._effectReqs)
+  table.clear(self._effectReqs)
   self._playerAnimationState = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressAnimation.OnPlay = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (table.clear)(self._effectReqs)
+function SeasonMapExpressAnimation:OnPlay()
+  table.clear(self._effectReqs)
   self._time = 0
   self._playerAnimationState = nil
   self._executing = true
-  local eventPoint = nil
-  if (self._content).id then
-    eventPoint = ((self._seasonManager):SeasonMapManager()):GetEventPoint((self._content).id)
+  local eventPoint
+  if self._content.id then
+    eventPoint = self._seasonManager:SeasonMapManager():GetEventPoint(self._content.id)
   else
     eventPoint = self._eventPoint
   end
   if eventPoint then
-    local eventanim = (self._content).eventanim
-    local eventLoop = (self._content).eventloop
-    local playeranim = (self._content).playeranim
-    local playerLoop = (self._content).playerloop
+    local eventanim = self._content.eventanim
+    local eventLoop = self._content.eventloop
+    local playeranim = self._content.playeranim
+    local playerLoop = self._content.playerloop
     local eventAnimationState = eventPoint:PlayAnimation(eventanim)
     if eventAnimationState then
-      if not eventLoop then
-        eventLoop = 1
-      end
+      eventLoop = eventLoop or 1
       self._time = eventAnimationState.length * eventLoop
     end
-    self._playerAnimationState = (self._player):PlayAnimation(playeranim)
+    self._playerAnimationState = self._player:PlayAnimation(playeranim)
     if self._playerAnimationState then
-      if not playerLoop then
-        playerLoop = 1
-      end
-      local time = (self._playerAnimationState).length * playerLoop
-      if self._time < time then
+      playerLoop = playerLoop or 1
+      local time = self._playerAnimationState.length * playerLoop
+      if time > self._time then
         self._time = time
       end
     end
-    do
-      self._time = self._time * 1000
-      ;
-      (Log.debug)("SeasonMapExpressAnimation time ", self._time)
-      local eventEffect = (self._content).eventeffect
-      local eventHolder = (self._content).eventholder
-      local playerEffect = (self._content).playereffect
-      local playerHolder = (self._content).playerholder
-      self:_PlayEffect(eventPoint, eventHolder, eventEffect)
-      self:_PlayEffect(self._player, playerHolder, playerEffect)
-      do
-        local audioID = (self._content).audio
-        if audioID then
-          (AudioHelperController.PlayUISoundAutoRelease)(tonumber(audioID))
-        end
-        self._state = SeasonExpressState.Playing
-        self:Next()
-      end
+    self._time = self._time * 1000
+    Log.debug("SeasonMapExpressAnimation time ", self._time)
+    local eventEffect = self._content.eventeffect
+    local eventHolder = self._content.eventholder
+    local playerEffect = self._content.playereffect
+    local playerHolder = self._content.playerholder
+    self:_PlayEffect(eventPoint, eventHolder, eventEffect)
+    self:_PlayEffect(self._player, playerHolder, playerEffect)
+    local audioID = self._content.audio
+    if audioID then
+      AudioHelperController.PlayUISoundAutoRelease(tonumber(audioID))
     end
+    self._state = SeasonExpressState.Playing
+  else
+    self:Next()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressAnimation._PlayEffect = function(self, holder, boneName, effectName)
-  -- function num : 0_4 , upvalues : _ENV
+function SeasonMapExpressAnimation:_PlayEffect(holder, boneName, effectName)
   if effectName then
-    local effectReq = (ResourceManager:GetInstance()):SyncLoadAsset(effectName .. ".prefab", LoadType.GameObject)
+    local effectReq = ResourceManager:GetInstance():SyncLoadAsset(effectName .. ".prefab", LoadType.GameObject)
     if effectReq and effectReq.Obj then
       local bone = holder:GetBoneNode(boneName)
       local effect = effectReq.Obj
       effect:SetActive(true)
-      ;
-      (effect.transform):SetParent(bone)
-      -- DECOMPILER ERROR at PC31: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (effect.transform).localPosition = Vector3.zero
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (effect.transform).localRotation = (Quaternion.Euler)(0, 0, 0)
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._effectReqs)[effectReq] = effectReq
+      effect.transform:SetParent(bone)
+      effect.transform.localPosition = Vector3.zero
+      effect.transform.localRotation = Quaternion.Euler(0, 0, 0)
+      self._effectReqs[effectReq] = effectReq
     end
   end
 end
-
-

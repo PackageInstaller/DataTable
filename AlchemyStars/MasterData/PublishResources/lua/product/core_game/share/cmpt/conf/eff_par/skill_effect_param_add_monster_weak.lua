@@ -1,49 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_add_monster_weak.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 require("skill_damage_effect_param")
 _class("SkillEffectParamAddMonsterWeak", SkillDamageEffectParam)
 SkillEffectParamAddMonsterWeak = SkillEffectParamAddMonsterWeak
-local AddMonsterWeakType = {SelectMonster = 1, AllMonster = 2, MAX = 9}
+local AddMonsterWeakType = {
+  SelectMonster = 1,
+  AllMonster = 2,
+  MAX = 9
+}
 _enum("AddMonsterWeakType", AddMonsterWeakType)
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillEffectParamAddMonsterWeak.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : AddMonsterWeakType
+function SkillEffectParamAddMonsterWeak:Constructor(t)
   self._count = t.count
   self._type = t.type or AddMonsterWeakType.SelectMonster
   self._extraProb = t.extraProb or 0
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamAddMonsterWeak.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamAddMonsterWeak:GetEffectType()
   return SkillEffectType.AddMonsterWeak
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamAddMonsterWeak.GetAddMonsterWeakType = function(self)
-  -- function num : 0_2
+function SkillEffectParamAddMonsterWeak:GetAddMonsterWeakType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamAddMonsterWeak.GetAddMonsterWeakCount = function(self)
-  -- function num : 0_3
+function SkillEffectParamAddMonsterWeak:GetAddMonsterWeakCount()
   return self._count
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamAddMonsterWeak.GetExtraProb = function(self)
-  -- function num : 0_4
+function SkillEffectParamAddMonsterWeak:GetExtraProb()
   return self._extraProb
 end
-
-

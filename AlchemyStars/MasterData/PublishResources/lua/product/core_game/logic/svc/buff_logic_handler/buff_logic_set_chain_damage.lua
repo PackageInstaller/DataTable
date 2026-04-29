@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_chain_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetChainDamage", BuffLogicBase)
 BuffLogicSetChainDamage = BuffLogicSetChainDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetChainDamage.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetChainDamage:Constructor(buffInstance, logicParam)
   self._damage = logicParam.damage
   self._recover = logicParam.recover
   self._enable = logicParam.enable or 1
@@ -16,72 +9,62 @@ BuffLogicSetChainDamage.Constructor = function(self, buffInstance, logicParam)
   self._lineEffectID = logicParam.lineEffectID
   self._removeAnim = logicParam.removeAnim
   self._removeEffectID = logicParam.removeEffectID
-  if not logicParam.removeTargetBuffEffectTypeList then
-    self._removeTargetBuffEffectTypeList = {}
-    self._onlyView = logicParam.onlyView or 0
-  end
+  self._removeTargetBuffEffectTypeList = logicParam.removeTargetBuffEffectTypeList or {}
+  self._onlyView = logicParam.onlyView or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetChainDamage.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local entity = (self._buffInstance):Entity()
-  local context = (self._buffInstance):Context()
+function BuffLogicSetChainDamage:DoLogic(notify)
+  local entity = self._buffInstance:Entity()
+  local context = self._buffInstance:Context()
   if not context then
-    return 
+    return
   end
   local casterEntity = context.casterEntity
   if not casterEntity then
-    return 
+    return
   end
   local effectCasterEntity = casterEntity
   if casterEntity:HasSuperEntity() then
     effectCasterEntity = casterEntity:GetSuperEntity()
   end
   if effectCasterEntity:GetID() == entity:GetID() and self._remove == 0 then
-    return 
+    return
   end
-  local isAdd = notify and notify:GetNotifyType() == NotifyType.ChangeTeamLeader and self._remove ~= 1
-  if isAdd then
-    self:_SetLogicChainValue(entity:GetID(), effectCasterEntity:GetID())
-    self:_SetLogicChainValue(effectCasterEntity:GetID(), entity:GetID())
-  elseif self._onlyView == 0 then
-    self:_ClearChainEntity(entity:GetID())
+  if notify and notify:GetNotifyType() == NotifyType.ChangeTeamLeader then
   else
-    self._removeLineEntityList = {}
-    local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-    local teamLeader = (teamEntity:Team()):GetTeamLeaderEntity()
-    ;
-    (table.insert)(self._removeLineEntityList, teamEntity:GetID())
+    local isAdd = self._remove ~= 1
+    if isAdd then
+      self:_SetLogicChainValue(entity:GetID(), effectCasterEntity:GetID())
+      self:_SetLogicChainValue(effectCasterEntity:GetID(), entity:GetID())
+    elseif self._onlyView == 0 then
+      self:_ClearChainEntity(entity:GetID())
+    else
+      self._removeLineEntityList = {}
+      local teamEntity = self._world:Player():GetCurrentTeamEntity()
+      local teamLeader = teamEntity:Team():GetTeamLeaderEntity()
+      table.insert(self._removeLineEntityList, teamEntity:GetID())
+    end
   end
   local buffResult = BuffResultSetChainDamage:New(casterEntity:GetID(), entity:GetID(), self._lineEffectID, self._remove)
   buffResult:SetRemoveAnim(self._removeAnim)
   buffResult:SetRemoveEffectID(self._removeEffectID)
   buffResult:SetRemoveLineEntityList(self._removeLineEntityList)
   if notify and notify:GetNotifyType() == NotifyType.MonsterMoveOneFinish then
-    buffResult:SetMonsterMoveOneFinish((notify:GetNotifyEntity()):GetID(), notify:GetWalkPos())
+    buffResult:SetMonsterMoveOneFinish(notify:GetNotifyEntity():GetID(), notify:GetWalkPos())
   end
   if notify and notify:GetNotifyType() == NotifyType.TeamLeaderEachMoveEnd then
     buffResult:SetTeamLeaderEachMoveEnd(notify:GetPos())
   end
-  do return buffResult end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  return buffResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetChainDamage.DoOverlap = function(self, logicParam, context)
-  -- function num : 0_2
-  (self._buffInstance):SetContext(context)
+function BuffLogicSetChainDamage:DoOverlap(logicParam, context)
+  self._buffInstance:SetContext(context)
   return self:DoLogic()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetChainDamage._SetLogicChainValue = function(self, defenderID, chainEntityID, isAdd)
-  -- function num : 0_3
-  local entity = (self._world):GetEntityByID(defenderID)
+function BuffLogicSetChainDamage:_SetLogicChainValue(defenderID, chainEntityID, isAdd)
+  local entity = self._world:GetEntityByID(defenderID)
   if not entity:HasLogicChainDamage() then
     entity:AddLogicChainDamage()
   end
@@ -92,58 +75,51 @@ BuffLogicSetChainDamage._SetLogicChainValue = function(self, defenderID, chainEn
   if self._recover then
     logicChainDamage:SetChainRecoverList(chainEntityID, self._recover)
   end
-  if self._enable ~= 1 then
-    logicChainDamage:SetChainDamageEnable(not self._enable)
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if self._enable then
+    logicChainDamage:SetChainDamageEnable(self._enable == 1)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetChainDamage._ClearChainEntity = function(self, castererID)
-  -- function num : 0_4 , upvalues : _ENV
-  local entity = (self._world):GetEntityByID(castererID)
+function BuffLogicSetChainDamage:_ClearChainEntity(castererID)
+  local entity = self._world:GetEntityByID(castererID)
   if not entity:HasLogicChainDamage() then
     entity:AddLogicChainDamage()
   end
   local logicChainDamage = entity:LogicChainDamage()
   self._removeLineEntityList = {}
   local damageList = logicChainDamage:GetChainDamageList()
-  for chainEntityID,percent in pairs(damageList) do
-    local chainEntity = (self._world):GetEntityByID(chainEntityID)
+  for chainEntityID, percent in pairs(damageList) do
+    local chainEntity = self._world:GetEntityByID(chainEntityID)
     local chainEntityComponent = chainEntity:LogicChainDamage()
     chainEntityComponent:SetChainDamageList(castererID, nil)
-    if not (table.intable)(self._removeLineEntityList, chainEntityID) then
-      (table.insert)(self._removeLineEntityList, chainEntityID)
+    if not table.intable(self._removeLineEntityList, chainEntityID) then
+      table.insert(self._removeLineEntityList, chainEntityID)
     end
   end
   local recoverList = logicChainDamage:GetChainRecoverList()
-  for chainEntityID,percent in pairs(recoverList) do
-    local chainEntity = (self._world):GetEntityByID(chainEntityID)
+  for chainEntityID, percent in pairs(recoverList) do
+    local chainEntity = self._world:GetEntityByID(chainEntityID)
     local chainEntityComponent = chainEntity:LogicChainDamage()
     chainEntityComponent:SetChainRecoverList(castererID, nil)
-    if not (table.intable)(self._removeLineEntityList, chainEntityID) then
-      (table.insert)(self._removeLineEntityList, chainEntityID)
+    if not table.intable(self._removeLineEntityList, chainEntityID) then
+      table.insert(self._removeLineEntityList, chainEntityID)
     end
   end
   logicChainDamage:Clear()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetChainDamage._RemoveTargetBuff = function(self, defenderID)
-  -- function num : 0_5 , upvalues : _ENV
-  if not self._removeTargetBuffEffectTypeList or (table.count)(self._removeTargetBuffEffectTypeList) == 0 then
-    return 
+function BuffLogicSetChainDamage:_RemoveTargetBuff(defenderID)
+  if not self._removeTargetBuffEffectTypeList or table.count(self._removeTargetBuffEffectTypeList) == 0 then
+    return
   end
-  local entity = (self._buffInstance):Entity()
-  local defender = (self._world):GetEntityByID(defenderID)
+  local entity = self._buffInstance:Entity()
+  local defender = self._world:GetEntityByID(defenderID)
   local buffCmpt = defender:BuffComponent()
   local buffArray = buffCmpt:GetBuffArray()
-  local buffCopy = (table.shallowcopy)(buffArray)
-  for _,buffInstance in ipairs(buffCopy) do
-    local target = nil
-    if (table.intable)(self._removeTargetBuffEffectTypeList, buffInstance:GetBuffEffectType()) then
+  local buffCopy = table.shallowcopy(buffArray)
+  for _, buffInstance in ipairs(buffCopy) do
+    local target
+    if table.intable(self._removeTargetBuffEffectTypeList, buffInstance:GetBuffEffectType()) then
       local context = buffInstance:Context()
       if context and context.casterEntity then
         local casterEntity = context.casterEntity
@@ -158,5 +134,3 @@ BuffLogicSetChainDamage._RemoveTargetBuff = function(self, defenderID)
     end
   end
 end
-
-

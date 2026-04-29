@@ -1,199 +1,122 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/exchange_item_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ExchangeItemComponent", ICampaignComponent)
 ExchangeItemComponent = ExchangeItemComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ExchangeItemComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ExchangeItemComponent:Constructor()
   self.m_component_info = ExchangeItemComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeItemComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ExchangeItemComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = ExchangeItemComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeItemComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function ExchangeItemComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeItemComponent.GetItemList = function(self)
-  -- function num : 0_3
-  return (self:ComponentInfo()).m_exchange_item_list
+function ExchangeItemComponent:GetItemList()
+  return self:ComponentInfo().m_exchange_item_list
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeItemComponent.GetComponentType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function ExchangeItemComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_EXCHANGE_ITEM
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeItemComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_5 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function ExchangeItemComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeItemComponent.HandleExchangeItem = function(self, TT, asyncRes, a_reward_id, a_exchange_count)
-  -- function num : 0_6 , upvalues : _ENV
+function ExchangeItemComponent:HandleExchangeItem(TT, asyncRes, a_reward_id, a_exchange_count)
   local request = ExchangeItemComponentExchangeReq:New()
   request.m_exchange_item_id = a_reward_id
   request.m_exchange_count = a_exchange_count
   local response = ExchangeItemComponentExchangeRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][ExchangeItem] HandleExchangeItem ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][ExchangeItem] HandleExchangeItem ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).m_exchange_item_list = (table.cloneconf)((response.m_exchange_info).m_exchange_item_list)
+  self.m_component_info.m_exchange_item_list = table.cloneconf(response.m_exchange_info.m_exchange_item_list)
   self:UpdateComponentStep(response.m_step)
   return response.m_rewards
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeItemComponent.Start_HandleExchangeItem = function(self, a_reward_id, a_exchange_count, callback)
-  -- function num : 0_7 , upvalues : _ENV
+function ExchangeItemComponent:Start_HandleExchangeItem(a_reward_id, a_exchange_count, callback)
   local lockName = "ExchangeItemComponent:Start_HandleExchangeItem"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : _ENV, self, a_reward_id, a_exchange_count, callback, lockName
+  GameGlobal.UIStateManager():Lock(lockName)
+  GameGlobal.TaskManager():StartTask(function(TT)
     local res = AsyncRequestRes:New()
     local rewards = self:HandleExchangeItem(TT, res, a_reward_id, a_exchange_count)
     if callback then
       callback(res, rewards)
     end
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockName)
-  end
-)
+    GameGlobal.UIStateManager():UnLock(lockName)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeItemComponent.GetCostItemIconText = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function ExchangeItemComponent:GetCostItemIconText()
   local item_id = self:GetCostItemId()
-  local cfgItem = (Cfg.cfg_item)[item_id]
-  if cfgItem then
-    local icon = cfgItem.Icon
-  end
-  local count = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(item_id)
+  local cfgItem = Cfg.cfg_item[item_id]
+  local icon = cfgItem and cfgItem.Icon
+  local count = GameGlobal.GetModule(ItemModule):GetItemCount(item_id)
   return icon, count
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeItemComponent.GetCostItemId = function(self, isSpecial)
-  -- function num : 0_9 , upvalues : _ENV
+function ExchangeItemComponent:GetCostItemId(isSpecial)
   local info = self:GetComponentInfo()
   local items = info.m_exchange_item_list
-  for _,v in ipairs(items) do
+  for _, v in ipairs(items) do
     if isSpecial and v.m_is_special then
       return v.m_cost_item_id
-    else
-      if not isSpecial and not v.m_is_special then
-        return v.m_cost_item_id
-      end
+    elseif not isSpecial and not v.m_is_special then
+      return v.m_cost_item_id
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeItemComponent.GetExchangeItemList = function(self)
-  -- function num : 0_10
+function ExchangeItemComponent:GetExchangeItemList()
   local info = self:GetComponentInfo()
   return info.m_exchange_item_list
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeItemComponent.GetExchangeItem = function(self, id)
-  -- function num : 0_11 , upvalues : _ENV
+function ExchangeItemComponent:GetExchangeItem(id)
   local list = self:GetExchangeItemList()
-  for i,v in ipairs(list) do
+  for i, v in ipairs(list) do
     if v.m_id == id then
       return v
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeItemComponent.GetExchangeItemSpecial = function(self, index)
-  -- function num : 0_12 , upvalues : _ENV
-  if not index then
-    index = 1
-  end
+function ExchangeItemComponent:GetExchangeItemSpecial(index)
+  index = index or 1
   local tb = {}
   local list = self:GetExchangeItemList()
-  for i,v in ipairs(list) do
+  for i, v in ipairs(list) do
     if v.m_is_special then
-      (table.insert)(tb, v)
+      table.insert(tb, v)
     end
   end
-  ;
-  (table.sort)(tb, function(a, b)
-    -- function num : 0_12_0
-    do return a.m_id < b.m_id end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(tb, function(a, b)
+    return a.m_id < b.m_id
+  end)
   return tb[index]
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeItemComponent.IsExchangeItemInfinity = function(self, itemInfo)
-  -- function num : 0_13 , upvalues : _ENV
-  do return itemInfo.m_exchange_limit_count == ExchangeItemCountType.ExchangeItemComponent_Infinity end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function ExchangeItemComponent:IsExchangeItemInfinity(itemInfo)
+  return itemInfo.m_exchange_limit_count == ExchangeItemCountType.ExchangeItemComponent_Infinity
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeItemComponent.GetCanExchangeCount = function(self, itemInfo, noLimitCount)
-  -- function num : 0_14
+function ExchangeItemComponent:GetCanExchangeCount(itemInfo, noLimitCount)
   local Infinity = self:IsExchangeItemInfinity(itemInfo)
-  if not Infinity or not noLimitCount then
-    return itemInfo.m_can_exchange_count
-  end
+  return Infinity and noLimitCount or itemInfo.m_can_exchange_count
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeItemComponent.IsExchangeItemSoldout = function(self, itemInfo)
-  -- function num : 0_15
+function ExchangeItemComponent:IsExchangeItemSoldout(itemInfo)
   local Infinity = self:IsExchangeItemInfinity(itemInfo)
-  do return not Infinity and itemInfo.m_can_exchange_count == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return not Infinity and itemInfo.m_can_exchange_count == 0
 end
-
-

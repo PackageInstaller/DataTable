@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_force_show_passive_accumulate_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewForceShowPassiveAccumulate", BuffViewBase)
 BuffViewForceShowPassiveAccumulate = BuffViewForceShowPassiveAccumulate
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewForceShowPassiveAccumulate.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewForceShowPassiveAccumulate:PlayView(TT)
   local buffResult = self._buffResult
   local buffLayerList = buffResult:GetBuffLayerList()
   local forceInitType = buffResult:GetForceInitType()
   local maxCount = buffResult:GetMaxLayerCount()
-  local petPstID = ((self._entity):PetPstID()):GetPstID()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ForceInitPassiveAccumulate, petPstID, buffLayerList, forceInitType, maxCount)
+  local petPstID = self._entity:PetPstID():GetPstID()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ForceInitPassiveAccumulate, petPstID, buffLayerList, forceInitType, maxCount)
 end
-
-

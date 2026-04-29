@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/general/ui_set_autofight_enhance_warning.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISetAutoFightEnhanceWarning", UIController)
 UISetAutoFightEnhanceWarning = UISetAutoFightEnhanceWarning
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISetAutoFightEnhanceWarning.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISetAutoFightEnhanceWarning:OnShow(uiParams)
   local callback = uiParams[1]
   self._cancelBtn = self:GetGameObject("CancelBtn")
   self._cancelBtnNormal = self:GetGameObject("CancelBtnNormal")
@@ -16,54 +9,38 @@ UISetAutoFightEnhanceWarning.OnShow = function(self, uiParams)
   self._confirmBtn = self:GetGameObject("ConfirmBtn")
   self._confirmBtnNormal = self:GetGameObject("ConfirmBtnNormal")
   self._confirmBtnClick = self:GetGameObject("ConfirmBtnClick")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._cancelBtn), UIEvent.Press, function(go)
-    -- function num : 0_0_0 , upvalues : self
-    (self._cancelBtnNormal):SetActive(false)
-    ;
-    (self._cancelBtnClick):SetActive(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._cancelBtn), UIEvent.Release, function(go)
-    -- function num : 0_0_1 , upvalues : self
-    (self._cancelBtnNormal):SetActive(true)
-    ;
-    (self._cancelBtnClick):SetActive(false)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._confirmBtn), UIEvent.Press, function(go)
-    -- function num : 0_0_2 , upvalues : self
-    (self._confirmBtnNormal):SetActive(false)
-    ;
-    (self._confirmBtnClick):SetActive(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._confirmBtn), UIEvent.Release, function(go)
-    -- function num : 0_0_3 , upvalues : self
-    (self._confirmBtnNormal):SetActive(true)
-    ;
-    (self._confirmBtnClick):SetActive(false)
-  end
-)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._cancelBtn), UIEvent.Press, function(go)
+    self._cancelBtnNormal:SetActive(false)
+    self._cancelBtnClick:SetActive(true)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._cancelBtn), UIEvent.Release, function(go)
+    self._cancelBtnNormal:SetActive(true)
+    self._cancelBtnClick:SetActive(false)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._confirmBtn), UIEvent.Press, function(go)
+    self._confirmBtnNormal:SetActive(false)
+    self._confirmBtnClick:SetActive(true)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._confirmBtn), UIEvent.Release, function(go)
+    self._confirmBtnNormal:SetActive(true)
+    self._confirmBtnClick:SetActive(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetAutoFightEnhanceWarning.CancelBtnOnClick = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal:GetInstance()):EventDispatcher()):Dispatch(GameEventType.FakeInput, {ui = "UISetController", input = "SetAutoFight", 
-args = {1}
-})
+function UISetAutoFightEnhanceWarning:CancelBtnOnClick()
+  GameGlobal:GetInstance():EventDispatcher():Dispatch(GameEventType.FakeInput, {
+    ui = "UISetController",
+    input = "SetAutoFight",
+    args = {1}
+  })
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetAutoFightEnhanceWarning.ConfirmBtnOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal:GetInstance()):EventDispatcher()):Dispatch(GameEventType.FakeInput, {ui = "UISetController", input = "SetAutoFight", 
-args = {2}
-})
+function UISetAutoFightEnhanceWarning:ConfirmBtnOnClick()
+  GameGlobal:GetInstance():EventDispatcher():Dispatch(GameEventType.FakeInput, {
+    ui = "UISetController",
+    input = "SetAutoFight",
+    args = {2}
+  })
   self:CloseDialog()
 end
-
-

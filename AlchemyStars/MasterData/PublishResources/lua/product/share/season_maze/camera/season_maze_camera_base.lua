@@ -1,24 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/camera/season_maze_camera_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeCameraBase", Object)
 SeasonMazeCameraBase = SeasonMazeCameraBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeCameraBase.Constructor = function(self, seasonMazeID)
-  -- function num : 0_0 , upvalues : _ENV
-  self._uiSeasonMazeModule = (GameGlobal.GetUIModule)(SeasonMazeModule)
-  self._seasonID = (self._uiSeasonMazeModule):GetSeasonID()
-  self._cameraSeasonCfg = (Cfg.cfg_season_maze_camera)[seasonMazeID]
-  self._seasonMapCfg = (Cfg.cfg_season_map)[self._seasonID]
-  self._cameraSizeMin = (self._cameraSeasonCfg).CameraSizeMin
-  self._cameraSizeMax = (self._cameraSeasonCfg).CameraSizeMax
-  self._mapLeft = ((self._seasonMapCfg).MapDragRange)[1]
-  self._mapTop = ((self._seasonMapCfg).MapDragRange)[2]
-  self._mapRight = ((self._seasonMapCfg).MapDragRange)[3]
-  self._mapBottom = ((self._seasonMapCfg).MapDragRange)[4]
+function SeasonMazeCameraBase:Constructor(seasonMazeID)
+  self._uiSeasonMazeModule = GameGlobal.GetUIModule(SeasonMazeModule)
+  self._seasonID = self._uiSeasonMazeModule:GetSeasonID()
+  self._cameraSeasonCfg = Cfg.cfg_season_maze_camera[seasonMazeID]
+  self._seasonMapCfg = Cfg.cfg_season_map[self._seasonID]
+  self._cameraSizeMin = self._cameraSeasonCfg.CameraSizeMin
+  self._cameraSizeMax = self._cameraSeasonCfg.CameraSizeMax
+  self._mapLeft = self._seasonMapCfg.MapDragRange[1]
+  self._mapTop = self._seasonMapCfg.MapDragRange[2]
+  self._mapRight = self._seasonMapCfg.MapDragRange[3]
+  self._mapBottom = self._seasonMapCfg.MapDragRange[4]
   self._cameraSpeed = 0.005
   self._cameraSizeSpeed = 0.005
   self._dragValue = 50
@@ -31,126 +24,83 @@ SeasonMazeCameraBase.Constructor = function(self, seasonMazeID)
   self._deltaPosition = nil
   self._recordSize = nil
   self._sizeTweenTime = 1
-  self._cameraSize = (SeasonMazeTool:GetInstance()):GetLocalDBFloat("SeasonMazeCameraSize", (self._cameraSeasonCfg).DefaultSize)
-  self._input = (GameGlobal.EngineInput)()
+  self._cameraSize = SeasonMazeTool:GetInstance():GetLocalDBFloat("SeasonMazeCameraSize", self._cameraSeasonCfg.DefaultSize)
+  self._input = GameGlobal.EngineInput()
   self._mode = SeasonCameraMode.Drag
-  self._cameraGO = ((UnityEngine.GameObject).Find)("Main Camera")
+  self._cameraGO = UnityEngine.GameObject.Find("Main Camera")
   if not self._cameraGO then
-    (Log.fatal)("SeasonMazeCameraBase can not found MainCamera!")
+    Log.fatal("SeasonMazeCameraBase can not found MainCamera!")
   end
-  self._camera = (self._cameraGO):GetComponent("Camera")
-  self._cameraTransform = (self._cameraGO).transform
-  self._effectTransform = (self._cameraTransform):Find("Effect")
-  -- DECOMPILER ERROR at PC109: Confused about usage of register: R2 in 'UnsetPending'
-
+  self._camera = self._cameraGO:GetComponent("Camera")
+  self._cameraTransform = self._cameraGO.transform
+  self._effectTransform = self._cameraTransform:Find("Effect")
   if self._effectTransform then
-    (self._effectTransform).localScale = Vector3(self._cameraSize, self._cameraSize, self._cameraSize)
-    ;
-    ((self._effectTransform).gameObject):SetActive(true)
+    self._effectTransform.localScale = Vector3(self._cameraSize, self._cameraSize, self._cameraSize)
+    self._effectTransform.gameObject:SetActive(true)
   end
   self._unlockTweenTime = 1
   self._renderers = {}
   self:_CacheEffectRender()
-  self._seasonManager = (self._uiSeasonMazeModule):SeasonMazeManager()
-  self._player = (self._seasonManager):Player()
-  self._rtCameraGO = (self._cameraTransform):Find("RTCamera")
-  self._rtCamera = (self._rtCameraGO):GetComponent("Camera")
-  local rt = (self._rtCamera).targetTexture
-  self._cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width * 0.25, (UnityEngine.Screen).height * 0.25, 16)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : _ENV, rt, self
+  self._seasonManager = self._uiSeasonMazeModule:SeasonMazeManager()
+  self._player = self._seasonManager:Player()
+  self._rtCameraGO = self._cameraTransform:Find("RTCamera")
+  self._rtCamera = self._rtCameraGO:GetComponent("Camera")
+  local rt = self._rtCamera.targetTexture
+  self._cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width * 0.25, UnityEngine.Screen.height * 0.25, 16)
+  GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, self._cache_rt)
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._rtCamera).targetTexture = self._cache_rt
-    ;
-    ((UnityEngine.Shader).SetGlobalTexture)("_RTMask", (self._rtCamera).targetTexture)
-    ;
-    ((UnityEngine.Shader).SetGlobalTexture)("_RTMask1", (self._rtCamera).targetTexture)
-  end
-)
+    UnityEngine.Graphics.Blit(rt, self._cache_rt)
+    self._rtCamera.targetTexture = self._cache_rt
+    UnityEngine.Shader.SetGlobalTexture("_RTMask", self._rtCamera.targetTexture)
+    UnityEngine.Shader.SetGlobalTexture("_RTMask1", self._rtCamera.targetTexture)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.DoCameraSizeScaleAni = function(self, TT, scale)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonMazeCameraBase:DoCameraSizeScaleAni(TT, scale)
   if not self._camera then
-    return 
+    return
   end
   self._cameraAniPlaying = true
-  local oldSize = (self._camera).orthographicSize
+  local oldSize = self._camera.orthographicSize
   local targetSize = oldSize * scale
-  ;
-  (DoTweenHelper.DoUpdateFloat)(-1, 1, 0.9, function(val)
-    -- function num : 0_1_0 , upvalues : _ENV, targetSize, oldSize, self
-    local t = (math.abs)(val)
-    local size = (Mathf.Lerp)(targetSize, oldSize, t)
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._camera).orthographicSize = size
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._rtCamera).orthographicSize = size
-  end
-)
+  DoTweenHelper.DoUpdateFloat(-1, 1, 0.9, function(val)
+    local t = math.abs(val)
+    local size = Mathf.Lerp(targetSize, oldSize, t)
+    self._camera.orthographicSize = size
+    self._rtCamera.orthographicSize = size
+  end)
   YIELD(TT, 1000)
   self._cameraAniPlaying = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.Update = function(self, deltaTime)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonMazeCameraBase:Update(deltaTime)
   if self._cameraAniPlaying then
     return false
   end
-  do
-    if self._camera then
-      local size = (Mathf.Lerp)((self._camera).orthographicSize, self._cameraSize, deltaTime * self._cameraSizeSpeed)
-      -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._camera).orthographicSize = size
-      -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._rtCamera).orthographicSize = size
-    end
-    if self._cameraTransform then
-      local position = (self._cameraTransform).position
-      if self._mode == SeasonCameraMode.Follow and self._player then
-        position = Vector3(((self._player):Position()).x, ((self._cameraTransform).position).y, ((self._player):Position()).z)
-        position = (Vector3.Lerp)((self._cameraTransform).position, position, deltaTime * self._cameraSpeed)
+  if self._camera then
+    local size = Mathf.Lerp(self._camera.orthographicSize, self._cameraSize, deltaTime * self._cameraSizeSpeed)
+    self._camera.orthographicSize = size
+    self._rtCamera.orthographicSize = size
+  end
+  if self._cameraTransform then
+    local position = self._cameraTransform.position
+    if self._mode == SeasonCameraMode.Follow then
+      if self._player then
+        position = Vector3(self._player:Position().x, self._cameraTransform.position.y, self._player:Position().z)
+        position = Vector3.Lerp(self._cameraTransform.position, position, deltaTime * self._cameraSpeed)
       end
-      if self._mode == SeasonCameraMode.Drag and self._targetPosition then
-        position = (Vector3.Lerp)((self._cameraTransform).position, self._targetPosition, deltaTime * self._cameraSpeed)
-      end
-      -- DECOMPILER ERROR at PC78: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._cameraTransform).position = self:ConstraintPosition(position)
+    elseif self._mode == SeasonCameraMode.Drag and self._targetPosition then
+      position = Vector3.Lerp(self._cameraTransform.position, self._targetPosition, deltaTime * self._cameraSpeed)
     end
+    self._cameraTransform.position = self:ConstraintPosition(position)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.Dispose = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonMazeCameraBase:Dispose()
   if not self._recordSize then
-    (SeasonMazeTool:GetInstance()):SetLocalDBFloat("SeasonMazeCameraSize", (self._camera).orthographicSize)
+    SeasonMazeTool:GetInstance():SetLocalDBFloat("SeasonMazeCameraSize", self._camera.orthographicSize)
   end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._input).multiTouchEnabled = false
+  self._input.multiTouchEnabled = false
   self._camera = nil
   self._cameraTransform = nil
   self._player = nil
@@ -158,108 +108,70 @@ SeasonMazeCameraBase.Dispose = function(self)
   self._deltaPosition = nil
   self._recordSize = nil
   if self._tweenTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._tweenTask)
+    GameGlobal.TaskManager():KillTask(self._tweenTask)
     self._tweenTask = nil
   end
-  ;
-  (table.clear)(self._renderers)
+  table.clear(self._renderers)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.SwitchMode = function(self, mode)
-  -- function num : 0_4
+function SeasonMazeCameraBase:SwitchMode(mode)
   self._mode = mode
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.Camera = function(self)
-  -- function num : 0_5
+function SeasonMazeCameraBase:Camera()
   return self._camera
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.IsDraging = function(self)
-  -- function num : 0_6
+function SeasonMazeCameraBase:IsDraging()
   return self._draging
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.Focus = function(self, position)
-  -- function num : 0_7 , upvalues : _ENV
+function SeasonMazeCameraBase:Focus(position)
   self:SwitchMode(SeasonCameraMode.Drag)
   self:SetPosition(position)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.ChangePos = function(self, pos)
-  -- function num : 0_8 , upvalues : _ENV
-  local position = Vector3(pos.x, ((self._cameraTransform).position).y, pos.z)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._cameraTransform).position = self:ConstraintPosition(position)
+function SeasonMazeCameraBase:ChangePos(pos)
+  local position = Vector3(pos.x, self._cameraTransform.position.y, pos.z)
+  self._cameraTransform.position = self:ConstraintPosition(position)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.Transform = function(self)
-  -- function num : 0_9
+function SeasonMazeCameraBase:Transform()
   return self._cameraTransform
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.Position = function(self)
-  -- function num : 0_10
-  return (self._cameraTransform).position
+function SeasonMazeCameraBase:Position()
+  return self._cameraTransform.position
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.SetPosition = function(self, position)
-  -- function num : 0_11 , upvalues : _ENV
-  self._targetPosition = Vector3(position.x, ((self._cameraTransform).position).y, position.z)
+function SeasonMazeCameraBase:SetPosition(position)
+  self._targetPosition = Vector3(position.x, self._cameraTransform.position.y, position.z)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.SetPositionForce = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_season_map_player)({SeasonID = self._seasonID})
+function SeasonMazeCameraBase:SetPositionForce()
+  local cfgs = Cfg.cfg_season_map_player({
+    SeasonID = self._seasonID
+  })
   if cfgs and cfgs[1] then
-    local position = Vector3(((cfgs[1]).Position)[1], ((self._cameraTransform).position).y, ((cfgs[1]).Position)[3])
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._cameraTransform).position = self:ConstraintPosition(position)
+    local position = Vector3(cfgs[1].Position[1], self._cameraTransform.position.y, cfgs[1].Position[3])
+    self._cameraTransform.position = self:ConstraintPosition(position)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.RenderTexture = function(self)
-  -- function num : 0_13
-  return (self._rtCamera).targetTexture
+function SeasonMazeCameraBase:RenderTexture()
+  return self._rtCamera.targetTexture
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.ConstraintPosition = function(self, position)
-  -- function num : 0_14 , upvalues : _ENV
-  local aspect = (self._camera).aspect
-  local size = (self._camera).orthographicSize
+function SeasonMazeCameraBase:ConstraintPosition(position)
+  local aspect = self._camera.aspect
+  local size = self._camera.orthographicSize
   local width = size * aspect
   local height = size
   local topLeft = Vector3(width, 0, -height)
   local bottomRight = Vector3(-width, 0, height)
   local expectTopLeft = topLeft + position
   local expectBottomRight = bottomRight + position
-  if self._mapLeft <= expectTopLeft.x then
+  if expectTopLeft.x >= self._mapLeft then
     position.x = self._mapLeft - width
   end
   if expectTopLeft.z <= self._mapTop then
@@ -268,118 +180,80 @@ SeasonMazeCameraBase.ConstraintPosition = function(self, position)
   if expectBottomRight.x <= self._mapRight then
     position.x = self._mapRight + width
   end
-  if self._mapBottom <= expectBottomRight.z then
+  if expectBottomRight.z >= self._mapBottom then
     position.z = self._mapBottom - height
   end
   return position
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.Size = function(self)
-  -- function num : 0_15
-  return (self._camera).orthographicSize
+function SeasonMazeCameraBase:Size()
+  return self._camera.orthographicSize
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.MinSize = function(self)
-  -- function num : 0_16
+function SeasonMazeCameraBase:MinSize()
   return self._cameraSizeMin
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.MaxSize = function(self)
-  -- function num : 0_17
+function SeasonMazeCameraBase:MaxSize()
   return self._cameraSizeMax
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.SetSize = function(self, size)
-  -- function num : 0_18
+function SeasonMazeCameraBase:SetSize(size)
   self._cameraSize = size
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.GetSize = function(self)
-  -- function num : 0_19
+function SeasonMazeCameraBase:GetSize()
   return self._cameraSize
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.SetRecordSize = function(self, size)
-  -- function num : 0_20
+function SeasonMazeCameraBase:SetRecordSize(size)
   self._recordSize = size
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.GetRecordSize = function(self)
-  -- function num : 0_21
+function SeasonMazeCameraBase:GetRecordSize()
   return self._recordSize
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.TryResumeSize = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function SeasonMazeCameraBase:TryResumeSize()
   if self._recordSize then
     self:SetSize(self._recordSize)
     self:SetRecordSize(nil)
-    self:Focus(Vector3(((self._player):Position()).x, 0, ((self._player):Position()).z))
+    self:Focus(Vector3(self._player:Position().x, 0, self._player:Position().z))
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.FocusDone = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function SeasonMazeCameraBase:FocusDone()
   local p1 = self:ConstraintPosition(self._targetPosition)
-  local p2 = Vector3(((self._cameraTransform).position).x, (self._targetPosition).y, ((self._cameraTransform).position).z)
-  do return (Vector3.Distance)(p1, p2) <= 0.2 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local p2 = Vector3(self._cameraTransform.position.x, self._targetPosition.y, self._cameraTransform.position.z)
+  return Vector3.Distance(p1, p2) <= 0.2
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.SizeDone = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  do return (math.abs)((self._camera).orthographicSize - self._cameraSize) <= 0.3 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SeasonMazeCameraBase:SizeDone()
+  return math.abs(self._camera.orthographicSize - self._cameraSize) <= 0.3
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase._CacheEffectRender = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  local effect = (self._cameraTransform):Find("Effect1")
+function SeasonMazeCameraBase:_CacheEffectRender()
+  local effect = self._cameraTransform:Find("Effect1")
   if effect then
-    (table.clear)(self._renderers)
-    local renderers = (effect.gameObject):GetComponentsInChildren(typeof(UnityEngine.Renderer))
+    table.clear(self._renderers)
+    local renderers = effect.gameObject:GetComponentsInChildren(typeof(UnityEngine.Renderer))
     if renderers.Length > 0 then
       for i = 0, renderers.Length - 1 do
-        (table.insert)(self._renderers, renderers[i])
+        table.insert(self._renderers, renderers[i])
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.UnLock = function(self, zoneMask, zoneID2Animation)
-  -- function num : 0_26 , upvalues : _ENV
-  local v4 = (SeasonMazeTool:GetInstance()):GetV4ByZoneMask(zoneMask, zoneID2Animation)
-  for _,renderer in pairs(self._renderers) do
+function SeasonMazeCameraBase:UnLock(zoneMask, zoneID2Animation)
+  local v4 = SeasonMazeTool:GetInstance():GetV4ByZoneMask(zoneMask, zoneID2Animation)
+  for _, renderer in pairs(self._renderers) do
     if renderer and renderer.material then
-      if (renderer.material):HasProperty("_AreaUnlockMask") then
-        (renderer.material):SetVector("_AreaUnlockMask", v4)
+      if renderer.material:HasProperty("_AreaUnlockMask") then
+        renderer.material:SetVector("_AreaUnlockMask", v4)
       end
-      if (renderer.material):HasProperty("_AreaUnlockMask1") then
-        (renderer.material):SetVector("_AreaUnlockMask1", v4)
+      if renderer.material:HasProperty("_AreaUnlockMask1") then
+        renderer.material:SetVector("_AreaUnlockMask1", v4)
       end
     end
   end
@@ -387,26 +261,19 @@ SeasonMazeCameraBase.UnLock = function(self, zoneMask, zoneID2Animation)
   self:TweenV4()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraBase.TweenV4 = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  self._tweenTask = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_27_0 , upvalues : _ENV, self
+function SeasonMazeCameraBase:TweenV4()
+  self._tweenTask = GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT)
-    local v4 = (SeasonMazeTool:GetInstance()):GetV4ByZoneMask(self._zoneMask)
-    for _,renderer in pairs(self._renderers) do
+    local v4 = SeasonMazeTool:GetInstance():GetV4ByZoneMask(self._zoneMask)
+    for _, renderer in pairs(self._renderers) do
       if renderer and renderer.material then
-        if (renderer.material):HasProperty("_AreaUnlockMask") then
-          (renderer.material):DOVector(v4, "_AreaUnlockMask", self._unlockTweenTime)
+        if renderer.material:HasProperty("_AreaUnlockMask") then
+          renderer.material:DOVector(v4, "_AreaUnlockMask", self._unlockTweenTime)
         end
-        if (renderer.material):HasProperty("_AreaUnlockMask1") then
-          (renderer.material):DOVector(v4, "_AreaUnlockMask1", self._unlockTweenTime)
+        if renderer.material:HasProperty("_AreaUnlockMask1") then
+          renderer.material:DOVector(v4, "_AreaUnlockMask1", self._unlockTweenTime)
         end
       end
     end
-  end
-)
+  end)
 end
-
-

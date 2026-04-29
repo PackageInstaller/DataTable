@@ -1,264 +1,1198 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_mini_game_mission.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, Score = 3, ScoreBReward = 4, ScoreAReward = 5, ScoreSReward = 6, Bg = 7, Time = 8, OrderFormID = 9, BaseScore = 10, Ingredient = 11, Jam = 12, RefreshTimeZone = 13, RefreshTimeZoneFever = 14, NeedMissionID = 15, StoryID = 16, StoryActiveType = 17, Title = 18, Description = 19}
-local common = {"B", "str_summer_minigame_stage_title1", "str_summer_minigame_stage_desc1", "S", "str_summer_minigame_stage_title2", "str_summer_minigame_stage_desc2", "A", "str_summer_minigame_stage_title3", "str_summer_minigame_stage_desc3", "str_summer_minigame_stage_title4", "str_summer_minigame_stage_desc4", "str_summer_minigame_stage_title5", "str_summer_minigame_stage_desc5", "str_summer_minigame_stage_title6", "str_summer_minigame_stage_desc6", "str_n14_minigame_stage_title1", "str_n14_minigame_stage_desc1", "str_n14_minigame_stage_title2", "str_n14_minigame_stage_desc2", "str_n14_minigame_stage_title3", "str_n14_minigame_stage_desc3", "str_n14_minigame_stage_title4", "str_n14_minigame_stage_desc4", "str_n14_minigame_stage_title5", "str_n14_minigame_stage_desc5", "str_n14_minigame_stage_title6", "str_n14_minigame_stage_desc6", "2024-05-24 09:00:00", "n14_fish_icon_fish_1", "n14_fish_icon_fish_2", "2024-05-25 09:00:00", "n14_fish_icon_fish_3", "n14_fish_icon_fish_4", "2024-05-26 09:00:00", "n14_fish_icon_fish_5", "2024-05-27 09:00:00", "str_fishing_game_desc", "2024-05-28 09:00:00", "2024-07-12 09:00:00", "2024-07-13 09:00:00", "2024-07-14 09:00:00", "2024-07-15 09:00:00", "2024-07-16 09:00:00", 
-{50210102}
-, 
-{2}
-, 
-{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
-, 
-{1, 2, 3}
-, 
-{1, 2}
-, 
-{50210201}
-, 
-{1}
-, 
-{15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32}
-, 
-{1, 3, 4}
-, 
-{50210301}
-, 
-{33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48}
-, 
-{2, 3, 4}
-, 
-{1, 2, 4}
-, 
-{50210401}
-, 
-{49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72}
-, 
-{1, 2, 3, 4}
-, 
-{50210501, 50210502}
-, 
-{1, 2}
-, 
-{73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91}
-, 
-{50210602}
-, 
-{92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121}
-, 
-{2000, 3000, 4500}
-, 
-{2000, 3500, 4500}
-, 
-{2500, 3500, 5000}
-, 
-{2500, 4000, 5000}
-, 
-{3000, 4000, 5500}
-, 
-{3000, 4500, 6000}
-, 
-{300, 500, 750}
-, 
-{400, 600, 800}
-, 
-{300, 450, 600}
-, 
-{
-{3000003, 30}
-, 
-{3100013, 10}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  Score = 3,
+  ScoreBReward = 4,
+  ScoreAReward = 5,
+  ScoreSReward = 6,
+  Bg = 7,
+  Time = 8,
+  OrderFormID = 9,
+  BaseScore = 10,
+  Ingredient = 11,
+  Jam = 12,
+  RefreshTimeZone = 13,
+  RefreshTimeZoneFever = 14,
+  NeedMissionID = 15,
+  StoryID = 16,
+  StoryActiveType = 17,
+  Title = 18,
+  Description = 19
 }
-, 
-{
-{3000003, 30}
-, 
-{3000002, 10000}
-}
-, 
-{
-{3000003, 30}
-, 
-{3500001, 100}
-}
-, 
-{
-{3000003, 30}
-, 
-{3400043, 1}
-}
-, 
-{
-{3000003, 20}
-, 
-{3100013, 10}
-}
-, 
-{
-{3000003, 20}
-, 
-{3000002, 10000}
-}
-, 
-{
-{3000003, 20}
-, 
-{3500001, 100}
-}
-, 
-{
-{3000003, 20}
-, 
-{3400043, 1}
-}
-, 
-{2, 2.5}
-, 
-{1, 1}
-, 
-{1.8, 2.3}
-, 
-{1.5, 2}
+local common = {
+  "B",
+  "str_summer_minigame_stage_title1",
+  "str_summer_minigame_stage_desc1",
+  "S",
+  "str_summer_minigame_stage_title2",
+  "str_summer_minigame_stage_desc2",
+  "A",
+  "str_summer_minigame_stage_title3",
+  "str_summer_minigame_stage_desc3",
+  "str_summer_minigame_stage_title4",
+  "str_summer_minigame_stage_desc4",
+  "str_summer_minigame_stage_title5",
+  "str_summer_minigame_stage_desc5",
+  "str_summer_minigame_stage_title6",
+  "str_summer_minigame_stage_desc6",
+  "str_n14_minigame_stage_title1",
+  "str_n14_minigame_stage_desc1",
+  "str_n14_minigame_stage_title2",
+  "str_n14_minigame_stage_desc2",
+  "str_n14_minigame_stage_title3",
+  "str_n14_minigame_stage_desc3",
+  "str_n14_minigame_stage_title4",
+  "str_n14_minigame_stage_desc4",
+  "str_n14_minigame_stage_title5",
+  "str_n14_minigame_stage_desc5",
+  "str_n14_minigame_stage_title6",
+  "str_n14_minigame_stage_desc6",
+  "2024-05-24 09:00:00",
+  "n14_fish_icon_fish_1",
+  "n14_fish_icon_fish_2",
+  "2024-05-25 09:00:00",
+  "n14_fish_icon_fish_3",
+  "n14_fish_icon_fish_4",
+  "2024-05-26 09:00:00",
+  "n14_fish_icon_fish_5",
+  "2024-05-27 09:00:00",
+  "str_fishing_game_desc",
+  "2024-05-28 09:00:00",
+  "2024-07-12 09:00:00",
+  "2024-07-13 09:00:00",
+  "2024-07-14 09:00:00",
+  "2024-07-15 09:00:00",
+  "2024-07-16 09:00:00",
+  {50210102},
+  {2},
+  {
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  },
+  {
+    1,
+    2,
+    3
+  },
+  {1, 2},
+  {50210201},
+  {1},
+  {
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32
+  },
+  {
+    1,
+    3,
+    4
+  },
+  {50210301},
+  {
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48
+  },
+  {
+    2,
+    3,
+    4
+  },
+  {
+    1,
+    2,
+    4
+  },
+  {50210401},
+  {
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72
+  },
+  {
+    1,
+    2,
+    3,
+    4
+  },
+  {50210501, 50210502},
+  {1, 2},
+  {
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91
+  },
+  {50210602},
+  {
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121
+  },
+  {
+    2000,
+    3000,
+    4500
+  },
+  {
+    2000,
+    3500,
+    4500
+  },
+  {
+    2500,
+    3500,
+    5000
+  },
+  {
+    2500,
+    4000,
+    5000
+  },
+  {
+    3000,
+    4000,
+    5500
+  },
+  {
+    3000,
+    4500,
+    6000
+  },
+  {
+    300,
+    500,
+    750
+  },
+  {
+    400,
+    600,
+    800
+  },
+  {
+    300,
+    450,
+    600
+  },
+  {
+    {3000003, 30},
+    {3100013, 10}
+  },
+  {
+    {3000003, 30},
+    {3000002, 10000}
+  },
+  {
+    {3000003, 30},
+    {3500001, 100}
+  },
+  {
+    {3000003, 30},
+    {3400043, 1}
+  },
+  {
+    {3000003, 20},
+    {3100013, 10}
+  },
+  {
+    {3000003, 20},
+    {3000002, 10000}
+  },
+  {
+    {3000003, 20},
+    {3500001, 100}
+  },
+  {
+    {3000003, 20},
+    {3400043, 1}
+  },
+  {2, 2.5},
+  {1, 1},
+  {1.8, 2.3},
+  {1.5, 2}
 }
 local config = {
-{1, 100310005, 
-{200, 400, 900}
-, common[74], common[75], common[76], common[1], 90, common[46], 10, common[47], common[48], common[82], common[83], nil, common[44], common[45], common[2], common[3]}
-, 
-{2, 100310005, 
-{300, 500, 1000}
-, common[74], common[75], common[77], common[4], 90, common[51], 10, common[52], common[47], common[82], common[83], nil, common[49], common[50], common[5], common[6]}
-, 
-{3, 100310005, 
-{400, 600, 1100}
-, common[74], common[75], common[76], common[7], 90, common[54], 10, common[55], common[56], common[84], common[83], nil, common[53], common[50], common[8], common[9]}
-, 
-{4, 100310005, 
-{400, 600, 1200}
-, common[74], common[75], common[77], common[1], 90, common[58], 10, common[59], common[56], common[84], common[83], nil, common[57], common[50], common[10], common[11]}
-, 
-{5, 100310005, 
-{400, 600, 1300}
-, common[74], common[75], common[76], common[4], 90, common[62], 10, common[59], common[52], common[85], common[83], nil, common[60], common[61], common[12], common[13]}
-, 
-{6, 100310005, 
-{400, 600, 1500}
-, 
-{
-{3000003, 50}
-, 
-{3100013, 10}
-}
-, 
-{
-{3000003, 50}
-, 
-{3000002, 10000}
-}
-, 
-{
-{3000003, 50}
-, 
-{3400043, 1}
-}
-, common[7], 90, common[64], 10, common[59], common[59], common[85], common[83], nil, common[63], common[45], common[14], common[15]}
-; 
-[101] = {101, 102210008, common[65], common[74], common[75], common[76], common[1], 90, common[46], 10, common[47], common[48], common[82], common[83], nil, common[44], common[45], common[16], common[17]}
-, 
-[102] = {102, 102210008, common[66], common[74], common[75], common[77], common[4], 90, common[51], 10, common[52], common[47], common[82], common[83], 101, common[49], common[50], common[18], common[19]}
-, 
-[103] = {103, 102210008, common[67], common[74], common[75], common[76], common[7], 90, common[54], 10, common[55], common[56], common[84], common[83], 102, common[53], common[50], common[20], common[21]}
-, 
-[104] = {104, 102210008, common[68], common[74], common[75], common[77], common[1], 90, common[58], 10, common[59], common[56], common[84], common[83], 103, common[57], common[50], common[22], common[23]}
-, 
-[105] = {105, 102210008, common[69], common[74], common[75], common[76], common[4], 90, common[62], 10, common[59], common[52], common[85], common[83], 104, common[60], common[61], common[24], common[25]}
-, 
-[106] = {106, 102210008, common[70], common[74], common[75], common[77], common[7], 90, common[64], 10, common[59], common[59], common[85], common[83], 105, common[63], common[45], common[26], common[27]}
-, 
-[107] = {107, 106310008, common[71], common[74], common[75], common[76], common[1], 90, common[46], 10, common[47], common[48], common[82], common[83], nil, 
-{50300002}
-, common[45], "str_n20_minigame_stage_title1", "str_n20_minigame_stage_desc1"}
-, 
-[108] = {108, 106310008, common[71], common[74], common[75], common[77], common[4], 90, common[51], 10, common[52], common[47], common[82], common[83], 107, 
-{50300003}
-, common[45], "str_n20_minigame_stage_title2", "str_n20_minigame_stage_desc2"}
-, 
-[109] = {109, 106310008, common[71], common[74], common[75], common[76], common[7], 90, common[54], 10, common[55], common[56], common[84], common[83], 108, 
-{50300004}
-, common[45], "str_n20_minigame_stage_title3", "str_n20_minigame_stage_desc3"}
-, 
-[110] = {110, 106310008, common[72], common[74], common[75], common[77], common[1], 90, common[58], 10, common[59], common[56], common[84], common[83], 109, 
-{50300005}
-, common[45], "str_n20_minigame_stage_title4", "str_n20_minigame_stage_desc4"}
-, 
-[111] = {111, 106310008, common[72], common[74], common[75], common[76], common[4], 90, common[62], 10, common[59], common[52], common[85], common[83], 110, 
-{50300006}
-, common[45], "str_n20_minigame_stage_title5", "str_n20_minigame_stage_desc5"}
-, 
-[112] = {112, 106310008, 
-{500, 700, 900}
-, common[74], common[75], common[77], common[7], 90, common[64], 10, common[59], common[59], common[85], common[83], 111, 
-{50300007}
-, common[45], "str_n20_minigame_stage_title6", "str_n20_minigame_stage_desc6"}
-, 
-[113] = {113, 701210001, common[65], common[78], common[79], common[80], common[29], 90, common[46], 10, common[47], common[48], common[82], common[83], nil, nil, nil, common[16], common[17]}
-, 
-[114] = {114, 701210001, common[66], common[78], common[79], common[81], common[30], 90, common[51], 10, common[52], common[47], common[82], common[83], 113, nil, nil, common[18], common[19]}
-, 
-[115] = {115, 701210001, common[67], common[78], common[79], common[80], common[32], 90, common[54], 10, common[55], common[56], common[84], common[83], 114, nil, nil, common[20], common[21]}
-, 
-[116] = {116, 701210001, common[68], common[78], common[79], common[81], common[33], 90, common[58], 10, common[59], common[56], common[84], common[83], 115, nil, nil, common[22], common[23]}
-, 
-[117] = {117, 701210001, common[69], common[78], common[79], common[80], common[35], 90, common[62], 10, common[59], common[52], common[85], common[83], 116, nil, nil, common[24], common[25]}
-, 
-[118] = {118, 701210001, common[70], common[78], common[79], common[81], common[29], 90, common[64], 10, common[59], common[59], common[85], common[83], 117, nil, nil, common[26], common[27]}
-, 
-[119] = {119, 701210001, common[70], common[78], common[79], common[80], common[30], 90, common[64], 10, common[59], common[59], common[85], common[83], 118, nil, nil, "str_fishing_game_title1", common[37]}
-, 
-[120] = {120, 701210001, common[70], common[78], common[79], common[81], common[32], 90, common[64], 10, common[59], common[59], common[85], common[83], 119, nil, nil, "str_fishing_game_title2", common[37]}
-, 
-[121] = {121, 701210001, common[70], common[78], common[79], common[80], common[33], 90, common[64], 10, common[59], common[59], common[85], common[83], 120, nil, nil, "str_fishing_game_title3", common[37]}
-, 
-[122] = {122, 701210001, common[70], common[78], common[79], common[81], common[35], 90, common[64], 10, common[59], common[59], common[85], common[83], 121, nil, nil, "str_fishing_game_title4", common[37]}
-, 
-[123] = {123, 701210001, common[70], common[78], common[79], common[80], "n14_fish_icon_fish_6", 90, common[64], 10, common[59], common[59], common[85], common[83], 114, nil, nil, "str_fishing_game_paihang", common[37]}
-, 
-[124] = {124, 122110007, 
-{100, 200, 350}
-, common[78], common[79], common[80], common[1], 90, common[46], 10, common[47], common[48], common[82], common[83], 124, nil, nil, common[2], common[3]}
-, 
-[125] = {125, 122110007, 
-{150, 300, 400}
-, common[78], common[79], common[81], common[4], 90, common[51], 10, common[52], common[47], common[82], common[83], 125, nil, nil, common[5], common[6]}
-, 
-[126] = {126, 122110007, 
-{200, 350, 450}
-, common[78], common[79], common[80], common[7], 90, common[54], 10, common[55], common[56], common[84], common[83], 126, nil, nil, common[8], common[9]}
-, 
-[127] = {127, 122110007, 
-{250, 400, 500}
-, common[78], common[79], common[81], common[1], 90, common[58], 10, common[59], common[56], common[84], common[83], 127, nil, nil, common[10], common[11]}
-, 
-[128] = {128, 122110007, 
-{300, 400, 500}
-, common[78], common[79], common[80], common[4], 90, common[62], 10, common[59], common[52], common[85], common[83], 128, nil, nil, common[12], common[13]}
-, 
-[129] = {129, 122110007, common[73], common[78], common[79], common[81], common[7], 90, common[64], 10, common[59], common[59], common[85], common[83], 129, nil, nil, common[14], common[15]}
-, 
-[130] = {130, 122110007, common[73], common[78], common[79], common[80], common[1], 90, common[64], 10, common[59], common[59], common[85], common[83], 130, nil, nil, "str_summer_minigame_stage_title7", "str_summer_minigame_stage_desc7"}
-, 
-[131] = {131, 122110007, common[73], common[78], common[79], common[81], common[4], 90, common[64], 10, common[59], common[59], common[85], common[83], 131, nil, nil, "str_summer_minigame_stage_title8", "str_summer_minigame_stage_desc8"}
-, 
-[132] = {132, 122110007, common[73], common[78], common[79], common[80], common[7], 90, common[64], 10, common[59], common[59], common[85], common[83], 132, nil, nil, "str_summer_minigame_stage_title9", "str_summer_minigame_stage_desc9"}
-, 
-[133] = {133, 122110007, common[73], 
-{
-{3000003, 20}
-, 
-{3751578, 1}
-}
-, common[79], common[81], common[1], 90, common[64], 10, common[59], common[59], common[85], common[83], 133, nil, nil, "str_summer_minigame_stage_title10", "str_summer_minigame_stage_desc10"}
+  {
+    1,
+    100310005,
+    {
+      200,
+      400,
+      900
+    },
+    common[74],
+    common[75],
+    common[76],
+    common[1],
+    90,
+    common[46],
+    10,
+    common[47],
+    common[48],
+    common[82],
+    common[83],
+    nil,
+    common[44],
+    common[45],
+    common[2],
+    common[3]
+  },
+  {
+    2,
+    100310005,
+    {
+      300,
+      500,
+      1000
+    },
+    common[74],
+    common[75],
+    common[77],
+    common[4],
+    90,
+    common[51],
+    10,
+    common[52],
+    common[47],
+    common[82],
+    common[83],
+    nil,
+    common[49],
+    common[50],
+    common[5],
+    common[6]
+  },
+  {
+    3,
+    100310005,
+    {
+      400,
+      600,
+      1100
+    },
+    common[74],
+    common[75],
+    common[76],
+    common[7],
+    90,
+    common[54],
+    10,
+    common[55],
+    common[56],
+    common[84],
+    common[83],
+    nil,
+    common[53],
+    common[50],
+    common[8],
+    common[9]
+  },
+  {
+    4,
+    100310005,
+    {
+      400,
+      600,
+      1200
+    },
+    common[74],
+    common[75],
+    common[77],
+    common[1],
+    90,
+    common[58],
+    10,
+    common[59],
+    common[56],
+    common[84],
+    common[83],
+    nil,
+    common[57],
+    common[50],
+    common[10],
+    common[11]
+  },
+  {
+    5,
+    100310005,
+    {
+      400,
+      600,
+      1300
+    },
+    common[74],
+    common[75],
+    common[76],
+    common[4],
+    90,
+    common[62],
+    10,
+    common[59],
+    common[52],
+    common[85],
+    common[83],
+    nil,
+    common[60],
+    common[61],
+    common[12],
+    common[13]
+  },
+  {
+    6,
+    100310005,
+    {
+      400,
+      600,
+      1500
+    },
+    {
+      {3000003, 50},
+      {3100013, 10}
+    },
+    {
+      {3000003, 50},
+      {3000002, 10000}
+    },
+    {
+      {3000003, 50},
+      {3400043, 1}
+    },
+    common[7],
+    90,
+    common[64],
+    10,
+    common[59],
+    common[59],
+    common[85],
+    common[83],
+    nil,
+    common[63],
+    common[45],
+    common[14],
+    common[15]
+  },
+  [101] = {
+    101,
+    102210008,
+    common[65],
+    common[74],
+    common[75],
+    common[76],
+    common[1],
+    90,
+    common[46],
+    10,
+    common[47],
+    common[48],
+    common[82],
+    common[83],
+    nil,
+    common[44],
+    common[45],
+    common[16],
+    common[17]
+  },
+  [102] = {
+    102,
+    102210008,
+    common[66],
+    common[74],
+    common[75],
+    common[77],
+    common[4],
+    90,
+    common[51],
+    10,
+    common[52],
+    common[47],
+    common[82],
+    common[83],
+    101,
+    common[49],
+    common[50],
+    common[18],
+    common[19]
+  },
+  [103] = {
+    103,
+    102210008,
+    common[67],
+    common[74],
+    common[75],
+    common[76],
+    common[7],
+    90,
+    common[54],
+    10,
+    common[55],
+    common[56],
+    common[84],
+    common[83],
+    102,
+    common[53],
+    common[50],
+    common[20],
+    common[21]
+  },
+  [104] = {
+    104,
+    102210008,
+    common[68],
+    common[74],
+    common[75],
+    common[77],
+    common[1],
+    90,
+    common[58],
+    10,
+    common[59],
+    common[56],
+    common[84],
+    common[83],
+    103,
+    common[57],
+    common[50],
+    common[22],
+    common[23]
+  },
+  [105] = {
+    105,
+    102210008,
+    common[69],
+    common[74],
+    common[75],
+    common[76],
+    common[4],
+    90,
+    common[62],
+    10,
+    common[59],
+    common[52],
+    common[85],
+    common[83],
+    104,
+    common[60],
+    common[61],
+    common[24],
+    common[25]
+  },
+  [106] = {
+    106,
+    102210008,
+    common[70],
+    common[74],
+    common[75],
+    common[77],
+    common[7],
+    90,
+    common[64],
+    10,
+    common[59],
+    common[59],
+    common[85],
+    common[83],
+    105,
+    common[63],
+    common[45],
+    common[26],
+    common[27]
+  },
+  [107] = {
+    107,
+    106310008,
+    common[71],
+    common[74],
+    common[75],
+    common[76],
+    common[1],
+    90,
+    common[46],
+    10,
+    common[47],
+    common[48],
+    common[82],
+    common[83],
+    nil,
+    {50300002},
+    common[45],
+    "str_n20_minigame_stage_title1",
+    "str_n20_minigame_stage_desc1"
+  },
+  [108] = {
+    108,
+    106310008,
+    common[71],
+    common[74],
+    common[75],
+    common[77],
+    common[4],
+    90,
+    common[51],
+    10,
+    common[52],
+    common[47],
+    common[82],
+    common[83],
+    107,
+    {50300003},
+    common[45],
+    "str_n20_minigame_stage_title2",
+    "str_n20_minigame_stage_desc2"
+  },
+  [109] = {
+    109,
+    106310008,
+    common[71],
+    common[74],
+    common[75],
+    common[76],
+    common[7],
+    90,
+    common[54],
+    10,
+    common[55],
+    common[56],
+    common[84],
+    common[83],
+    108,
+    {50300004},
+    common[45],
+    "str_n20_minigame_stage_title3",
+    "str_n20_minigame_stage_desc3"
+  },
+  [110] = {
+    110,
+    106310008,
+    common[72],
+    common[74],
+    common[75],
+    common[77],
+    common[1],
+    90,
+    common[58],
+    10,
+    common[59],
+    common[56],
+    common[84],
+    common[83],
+    109,
+    {50300005},
+    common[45],
+    "str_n20_minigame_stage_title4",
+    "str_n20_minigame_stage_desc4"
+  },
+  [111] = {
+    111,
+    106310008,
+    common[72],
+    common[74],
+    common[75],
+    common[76],
+    common[4],
+    90,
+    common[62],
+    10,
+    common[59],
+    common[52],
+    common[85],
+    common[83],
+    110,
+    {50300006},
+    common[45],
+    "str_n20_minigame_stage_title5",
+    "str_n20_minigame_stage_desc5"
+  },
+  [112] = {
+    112,
+    106310008,
+    {
+      500,
+      700,
+      900
+    },
+    common[74],
+    common[75],
+    common[77],
+    common[7],
+    90,
+    common[64],
+    10,
+    common[59],
+    common[59],
+    common[85],
+    common[83],
+    111,
+    {50300007},
+    common[45],
+    "str_n20_minigame_stage_title6",
+    "str_n20_minigame_stage_desc6"
+  },
+  [113] = {
+    113,
+    701210001,
+    common[65],
+    common[78],
+    common[79],
+    common[80],
+    common[29],
+    90,
+    common[46],
+    10,
+    common[47],
+    common[48],
+    common[82],
+    common[83],
+    nil,
+    nil,
+    nil,
+    common[16],
+    common[17]
+  },
+  [114] = {
+    114,
+    701210001,
+    common[66],
+    common[78],
+    common[79],
+    common[81],
+    common[30],
+    90,
+    common[51],
+    10,
+    common[52],
+    common[47],
+    common[82],
+    common[83],
+    113,
+    nil,
+    nil,
+    common[18],
+    common[19]
+  },
+  [115] = {
+    115,
+    701210001,
+    common[67],
+    common[78],
+    common[79],
+    common[80],
+    common[32],
+    90,
+    common[54],
+    10,
+    common[55],
+    common[56],
+    common[84],
+    common[83],
+    114,
+    nil,
+    nil,
+    common[20],
+    common[21]
+  },
+  [116] = {
+    116,
+    701210001,
+    common[68],
+    common[78],
+    common[79],
+    common[81],
+    common[33],
+    90,
+    common[58],
+    10,
+    common[59],
+    common[56],
+    common[84],
+    common[83],
+    115,
+    nil,
+    nil,
+    common[22],
+    common[23]
+  },
+  [117] = {
+    117,
+    701210001,
+    common[69],
+    common[78],
+    common[79],
+    common[80],
+    common[35],
+    90,
+    common[62],
+    10,
+    common[59],
+    common[52],
+    common[85],
+    common[83],
+    116,
+    nil,
+    nil,
+    common[24],
+    common[25]
+  },
+  [118] = {
+    118,
+    701210001,
+    common[70],
+    common[78],
+    common[79],
+    common[81],
+    common[29],
+    90,
+    common[64],
+    10,
+    common[59],
+    common[59],
+    common[85],
+    common[83],
+    117,
+    nil,
+    nil,
+    common[26],
+    common[27]
+  },
+  [119] = {
+    119,
+    701210001,
+    common[70],
+    common[78],
+    common[79],
+    common[80],
+    common[30],
+    90,
+    common[64],
+    10,
+    common[59],
+    common[59],
+    common[85],
+    common[83],
+    118,
+    nil,
+    nil,
+    "str_fishing_game_title1",
+    common[37]
+  },
+  [120] = {
+    120,
+    701210001,
+    common[70],
+    common[78],
+    common[79],
+    common[81],
+    common[32],
+    90,
+    common[64],
+    10,
+    common[59],
+    common[59],
+    common[85],
+    common[83],
+    119,
+    nil,
+    nil,
+    "str_fishing_game_title2",
+    common[37]
+  },
+  [121] = {
+    121,
+    701210001,
+    common[70],
+    common[78],
+    common[79],
+    common[80],
+    common[33],
+    90,
+    common[64],
+    10,
+    common[59],
+    common[59],
+    common[85],
+    common[83],
+    120,
+    nil,
+    nil,
+    "str_fishing_game_title3",
+    common[37]
+  },
+  [122] = {
+    122,
+    701210001,
+    common[70],
+    common[78],
+    common[79],
+    common[81],
+    common[35],
+    90,
+    common[64],
+    10,
+    common[59],
+    common[59],
+    common[85],
+    common[83],
+    121,
+    nil,
+    nil,
+    "str_fishing_game_title4",
+    common[37]
+  },
+  [123] = {
+    123,
+    701210001,
+    common[70],
+    common[78],
+    common[79],
+    common[80],
+    "n14_fish_icon_fish_6",
+    90,
+    common[64],
+    10,
+    common[59],
+    common[59],
+    common[85],
+    common[83],
+    114,
+    nil,
+    nil,
+    "str_fishing_game_paihang",
+    common[37]
+  },
+  [124] = {
+    124,
+    122110007,
+    {
+      100,
+      200,
+      350
+    },
+    common[78],
+    common[79],
+    common[80],
+    common[1],
+    90,
+    common[46],
+    10,
+    common[47],
+    common[48],
+    common[82],
+    common[83],
+    124,
+    nil,
+    nil,
+    common[2],
+    common[3]
+  },
+  [125] = {
+    125,
+    122110007,
+    {
+      150,
+      300,
+      400
+    },
+    common[78],
+    common[79],
+    common[81],
+    common[4],
+    90,
+    common[51],
+    10,
+    common[52],
+    common[47],
+    common[82],
+    common[83],
+    125,
+    nil,
+    nil,
+    common[5],
+    common[6]
+  },
+  [126] = {
+    126,
+    122110007,
+    {
+      200,
+      350,
+      450
+    },
+    common[78],
+    common[79],
+    common[80],
+    common[7],
+    90,
+    common[54],
+    10,
+    common[55],
+    common[56],
+    common[84],
+    common[83],
+    126,
+    nil,
+    nil,
+    common[8],
+    common[9]
+  },
+  [127] = {
+    127,
+    122110007,
+    {
+      250,
+      400,
+      500
+    },
+    common[78],
+    common[79],
+    common[81],
+    common[1],
+    90,
+    common[58],
+    10,
+    common[59],
+    common[56],
+    common[84],
+    common[83],
+    127,
+    nil,
+    nil,
+    common[10],
+    common[11]
+  },
+  [128] = {
+    128,
+    122110007,
+    {
+      300,
+      400,
+      500
+    },
+    common[78],
+    common[79],
+    common[80],
+    common[4],
+    90,
+    common[62],
+    10,
+    common[59],
+    common[52],
+    common[85],
+    common[83],
+    128,
+    nil,
+    nil,
+    common[12],
+    common[13]
+  },
+  [129] = {
+    129,
+    122110007,
+    common[73],
+    common[78],
+    common[79],
+    common[81],
+    common[7],
+    90,
+    common[64],
+    10,
+    common[59],
+    common[59],
+    common[85],
+    common[83],
+    129,
+    nil,
+    nil,
+    common[14],
+    common[15]
+  },
+  [130] = {
+    130,
+    122110007,
+    common[73],
+    common[78],
+    common[79],
+    common[80],
+    common[1],
+    90,
+    common[64],
+    10,
+    common[59],
+    common[59],
+    common[85],
+    common[83],
+    130,
+    nil,
+    nil,
+    "str_summer_minigame_stage_title7",
+    "str_summer_minigame_stage_desc7"
+  },
+  [131] = {
+    131,
+    122110007,
+    common[73],
+    common[78],
+    common[79],
+    common[81],
+    common[4],
+    90,
+    common[64],
+    10,
+    common[59],
+    common[59],
+    common[85],
+    common[83],
+    131,
+    nil,
+    nil,
+    "str_summer_minigame_stage_title8",
+    "str_summer_minigame_stage_desc8"
+  },
+  [132] = {
+    132,
+    122110007,
+    common[73],
+    common[78],
+    common[79],
+    common[80],
+    common[7],
+    90,
+    common[64],
+    10,
+    common[59],
+    common[59],
+    common[85],
+    common[83],
+    132,
+    nil,
+    nil,
+    "str_summer_minigame_stage_title9",
+    "str_summer_minigame_stage_desc9"
+  },
+  [133] = {
+    133,
+    122110007,
+    common[73],
+    {
+      {3000003, 20},
+      {3751578, 1}
+    },
+    common[79],
+    common[81],
+    common[1],
+    90,
+    common[64],
+    10,
+    common[59],
+    common[59],
+    common[85],
+    common[83],
+    133,
+    nil,
+    nil,
+    "str_summer_minigame_stage_title10",
+    "str_summer_minigame_stage_desc10"
+  }
 }
 return config, "ID", key
-

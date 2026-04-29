@@ -1,197 +1,127 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/gronru_game/ui_n28_gronru_side_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28GronruSideEnter", UICustomWidget)
 UIN28GronruSideEnter = UIN28GronruSideEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28GronruSideEnter.Constructor = function(self)
-  -- function num : 0_0
+function UIN28GronruSideEnter:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruSideEnter.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN28GronruSideEnter:OnShow(uiParams)
   self:_GetComponents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self.OnCampaignClose)
-  self._newTimeEvent = ((GameGlobal.Timer)()):AddEventTimes(500, TimerTriggerCount.Infinite, function()
-    -- function num : 0_1_0 , upvalues : self
+  self._newTimeEvent = GameGlobal.Timer():AddEventTimes(500, TimerTriggerCount.Infinite, function()
     self:CheckNew()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruSideEnter.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN28GronruSideEnter:OnHide()
   if self._newTimeEvent ~= nil then
-    ((GameGlobal.Timer)()):CancelEvent(self._newTimeEvent)
+    GameGlobal.Timer():CancelEvent(self._newTimeEvent)
     self._newTimeEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruSideEnter._GetComponents = function(self)
-  -- function num : 0_3
+function UIN28GronruSideEnter:_GetComponents()
   self._txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
   self._bg = self:GetUIComponent("RawImageLoader", "bg")
   self._red = self:GetGameObject("red")
   self._new = self:GetGameObject("new")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruSideEnter.SetData = function(self, info, campaign, callback)
-  -- function num : 0_4
+function UIN28GronruSideEnter:SetData(info, campaign, callback)
   self._info = info
   self._campaign = campaign
   self:SetTitle()
   self:SetBg()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruSideEnter.SetTitle = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local widgetName = (self._info).CampaignTitle
+function UIN28GronruSideEnter:SetTitle()
+  local widgetName = self._info.CampaignTitle
   if widgetName then
-    local cfg = (Cfg.cfg_campaign)[(self._campaign)._id]
-    if cfg then
-      local strId = cfg.CampaignName
-    end
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, widgetName, (StringTable.Get)(strId))
+    local cfg = Cfg.cfg_campaign[self._campaign._id]
+    local strId = cfg and cfg.CampaignName
+    UIWidgetHelper.SetLocalizationText(self, widgetName, StringTable.Get(strId))
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruSideEnter.SetBg = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN28GronruSideEnter:SetBg()
   local sideEnterIcon = self:GetSideEnterRawImage()
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "bg", sideEnterIcon)
+  UIWidgetHelper.SetRawImage(self, "bg", sideEnterIcon)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruSideEnter.BtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  local open = (self._campaign):CheckCampaignOpen()
+function UIN28GronruSideEnter:BtnOnClick(go)
+  local open = self._campaign:CheckCampaignOpen()
   if not open then
-    (self.root):SetActive(open)
-    ;
-    (self._setShowCallback)(open)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
-    return 
+    self.root:SetActive(open)
+    self._setShowCallback(open)
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
+    return
   end
-  local isViewed = ((self._db):IsViewedPlot())
-  local storyID = nil
-  local cfg = (Cfg.cfg_campaign)[(self._campaign)._id]
+  local isViewed = self._db:IsViewedPlot()
+  local storyID
+  local cfg = Cfg.cfg_campaign[self._campaign._id]
   if cfg.FirstEnterStoryID ~= nil then
-    storyID = (cfg.FirstEnterStoryID)[1]
+    storyID = cfg.FirstEnterStoryID[1]
   end
   if isViewed then
     self:ShowDialog(UIStateType.UIN28GronruPlatform)
+  elseif storyID ~= nil then
+    self:ShowDialog("UIStoryController", storyID, function()
+      self:ShowDialog(UIStateType.UIN28GronruPlatform)
+    end)
   else
-    if storyID ~= nil then
-      self:ShowDialog("UIStoryController", storyID, function()
-    -- function num : 0_7_0 , upvalues : self, _ENV
     self:ShowDialog(UIStateType.UIN28GronruPlatform)
   end
-)
-    else
-      self:ShowDialog(UIStateType.UIN28GronruPlatform)
-    end
-  end
-  ;
-  (self._db):ViewedPlatform()
-  ;
-  (self._db):ViewedPlot()
+  self._db:ViewedPlatform()
+  self._db:ViewedPlot()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruSideEnter.BtnOnClick_TestCase = function(self, go)
-  -- function num : 0_8
-  self._dbNew = (self._db):PrivateNewLoadDB()
-  self._dbPlot = (self._db):PrivatePlotLoadDB()
-  ;
-  (self._db):ClearDB()
+function UIN28GronruSideEnter:BtnOnClick_TestCase(go)
+  self._dbNew = self._db:PrivateNewLoadDB()
+  self._dbPlot = self._db:PrivatePlotLoadDB()
+  self._db:ClearDB()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruSideEnter.OnSideEnterLoad = function(self, TT, setShowCallback, setNewRedCallback)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN28GronruSideEnter:OnSideEnterLoad(TT, setShowCallback, setNewRedCallback)
   self._setShowCallback = setShowCallback
   self._setNewRedCallback = setNewRedCallback
   self.root = self:GetGameObject()
   local res = AsyncRequestRes:New()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, (self._info).CampaignType, ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, self._info.CampaignType, ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   self._localProcess = nil
   if res and res:GetSucc() then
-    self._localProcess = (self._campaign):GetLocalProcess()
+    self._localProcess = self._campaign:GetLocalProcess()
   end
   if self._localProcess == nil then
-    (self.root):SetActive(false)
-    ;
-    (self._setShowCallback)(false)
-    return 
+    self.root:SetActive(false)
+    self._setShowCallback(false)
+    return
   end
-  self._missionComponent = (self._localProcess):GetComponent(ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
+  self._missionComponent = self._localProcess:GetComponent(ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
   self._db = UIN28GronruGameLocalDb:New()
-  ;
-  (self.root):SetActive(true)
-  ;
-  (self._setShowCallback)(true)
+  self.root:SetActive(true)
+  self._setShowCallback(true)
   self:CheckNew()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
+function UIN28GronruSideEnter:GetSideEnterRawImage()
+  local cfg = Cfg.cfg_campaign[self._campaign._id]
+  return cfg and cfg.SideEnterIcon
+end
 
-UIN28GronruSideEnter.GetSideEnterRawImage = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local cfg = (Cfg.cfg_campaign)[(self._campaign)._id]
-  if cfg then
-    return cfg.SideEnterIcon
+function UIN28GronruSideEnter:OnCampaignClose(id)
+  if self._campaign._id == id then
+    self._setShowCallback(false)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruSideEnter.OnCampaignClose = function(self, id)
-  -- function num : 0_11
-  if (self._campaign)._id == id then
-    (self._setShowCallback)(false)
-  end
-end
-
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruSideEnter.CheckNew = function(self)
-  -- function num : 0_12
+function UIN28GronruSideEnter:CheckNew()
   if self._db == nil then
-    return 
+    return
   end
-  local showRed = (self._db):CheckReddot()
-  local showNew = (self._db):CheckNew()
-  ;
-  (self._red):SetActive(showRed)
-  ;
-  (self._new):SetActive(showNew)
-  ;
-  (self._setNewRedCallback)(showNew, showRed)
+  local showRed = self._db:CheckReddot()
+  local showNew = self._db:CheckNew()
+  self._red:SetActive(showRed)
+  self._new:SetActive(showNew)
+  self._setNewRedCallback(showNew, showRed)
 end
-
-

@@ -1,176 +1,139 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_battle_enter_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("battle_enter_system")
 _class("ClientBattleEnterSystem_Render", BattleEnterSystem)
 ClientBattleEnterSystem_Render = ClientBattleEnterSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientBattleEnterSystem_Render._DoRenderShowBattleEnter = function(self, TT, teamEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local battleSvcR = (self._world):GetService("RenderBattle")
+function ClientBattleEnterSystem_Render:_DoRenderShowBattleEnter(TT, teamEntity)
+  local battleSvcR = self._world:GetService("RenderBattle")
   battleSvcR:SetGlobalOutLine(false)
-  local goEffRuchangActorpoint = ((UnityEngine.GameObject).Find)(GameResourceConst.EffRuchangActorpoint)
+  local goEffRuchangActorpoint = UnityEngine.GameObject.Find(GameResourceConst.EffRuchangActorpoint)
   if goEffRuchangActorpoint then
-    ((self.world):MainCamera()):SetGoEffRuchangActorpoint(goEffRuchangActorpoint)
+    self.world:MainCamera():SetGoEffRuchangActorpoint(goEffRuchangActorpoint)
     goEffRuchangActorpoint:SetActive(false)
     local camera = goEffRuchangActorpoint:GetComponentInChildren(typeof(UnityEngine.Camera), true)
     if camera then
       local fov = camera.fieldOfView
       local defaultAspect = BattleConst.CameraDefaultAspect
-      local aspect = (UnityEngine.Screen).width / (UnityEngine.Screen).height
-      if aspect < defaultAspect then
+      local aspect = UnityEngine.Screen.width / UnityEngine.Screen.height
+      if defaultAspect > aspect then
         fov = fov + (defaultAspect - aspect) * BattleConst.BattleEnterIntroPresentation_CameraFovMultiplier
       end
       camera.fieldOfView = fov
     end
-  else
-    do
-      do
-        if (self._world):IsDevelopEnv() then
-          local testRobot = (GameGlobal.GetModule)(TestRobotModule)
-          if testRobot and testRobot.m_bEnableRobot then
-            YIELD(TT, 1000)
-            goEffRuchangActorpoint = ((UnityEngine.GameObject).Find)(GameResourceConst.EffRuchangActorpoint)
-            if not goEffRuchangActorpoint then
-              (Log.exception)("没有找到入场运镜动画节点：eff_ruchang_actorpoint，需要美术检查对应的场景资源")
-            end
-          else
-            ;
-            (Log.exception)("没有找到入场运镜动画节点：eff_ruchang_actorpoint，需要美术检查对应的场景资源")
-          end
-        end
-        local cRenderBoard = ((self._world):GetRenderBoardEntity()):RenderBoard()
-        local sceneRoot = (GameObjectHelper.Find)("SceneRoot")
-        cRenderBoard:SetSceneGO(sceneRoot)
-        if teamEntity then
-          self:BlinkMainCamera(false)
-        end
-        do
-          if (self._world):MatchType() ~= MatchType.MT_Chess then
-            local cHP = teamEntity:HP()
-            cHP:SetHPPosDirty(true)
-            cHP:SetHPBarTempHide(true)
-          end
-          do
-            if (self._world):MatchType() == MatchType.MT_BlackFist then
-              local team = ((self._world):Player()):GetRemoteTeamEntity()
-              ;
-              (team:HP()):SetHPPosDirty(true)
-              ;
-              (team:HP()):SetHPBarTempHide(true)
-            end
-            local darkParamName = "H3DDarkLevel"
-            ;
-            ((UnityEngine.Shader).SetGlobalFloat)(darkParamName, 0)
-            local pieceService = (self._world):GetService("Piece")
-            pieceService:Initialize()
-            local configService = (self._world):GetService("Config")
-            local levelConfigData = configService:GetLevelConfigData()
-            self:_InitRoundCountUI(levelConfigData:GetLevelRoundCount())
-            self._isStoryEnd = false
-            local gameStartType = (UIHelper.GameStartType)()
-            if gameStartType == EGameStartType.SkillEditor then
-              self._isStoryEnd = true
-              self:_DoPostStory(TT)
-              return 
-            end
-            local match = (GameGlobal.GetModule)(MatchModule)
-            local story, isActive, isStage1, isStage1Fail = self:_GetStoryByEnterData(match:GetMatchEnterData())
-            if story and not isStage1 and not isActive then
-              ((GameGlobal.UIStateManager)()):ShowDialog("UIStoryController", story.id, function()
-    -- function num : 0_0_0 , upvalues : _ENV, self
-    local login_module = (GameGlobal.GetModule)(LoginModule)
-    if login_module:IsInFirstStory() then
-      (GameGlobal.ReportCustomEvent)("CreateRole", "ContinueEnterGame")
-    end
-    self._isStoryEnd = true
-    self:ActiveStory()
-    self:_PlayEnterBgm()
-    ;
-    ((GameGlobal.UIStateManager)()):SetBlackSideVisible(false)
-  end
-, false, false)
-            else
-              self:_PlayEnterBgm()
-              self._isStoryEnd = true
-            end
-            self:_DoPostStory(TT)
-          end
-        end
+  elseif self._world:IsDevelopEnv() then
+    local testRobot = GameGlobal.GetModule(TestRobotModule)
+    if testRobot and testRobot.m_bEnableRobot then
+      YIELD(TT, 1000)
+      goEffRuchangActorpoint = UnityEngine.GameObject.Find(GameResourceConst.EffRuchangActorpoint)
+      if not goEffRuchangActorpoint then
+        Log.exception("没有找到入场运镜动画节点：eff_ruchang_actorpoint，需要美术检查对应的场景资源")
       end
+    else
+      Log.exception("没有找到入场运镜动画节点：eff_ruchang_actorpoint，需要美术检查对应的场景资源")
     end
   end
+  local cRenderBoard = self._world:GetRenderBoardEntity():RenderBoard()
+  local sceneRoot = GameObjectHelper.Find("SceneRoot")
+  cRenderBoard:SetSceneGO(sceneRoot)
+  if teamEntity then
+    self:BlinkMainCamera(false)
+  end
+  if self._world:MatchType() ~= MatchType.MT_Chess then
+    local cHP = teamEntity:HP()
+    cHP:SetHPPosDirty(true)
+    cHP:SetHPBarTempHide(true)
+  end
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    local team = self._world:Player():GetRemoteTeamEntity()
+    team:HP():SetHPPosDirty(true)
+    team:HP():SetHPBarTempHide(true)
+  end
+  local darkParamName = "H3DDarkLevel"
+  UnityEngine.Shader.SetGlobalFloat(darkParamName, 0)
+  local pieceService = self._world:GetService("Piece")
+  pieceService:Initialize()
+  local configService = self._world:GetService("Config")
+  local levelConfigData = configService:GetLevelConfigData()
+  self:_InitRoundCountUI(levelConfigData:GetLevelRoundCount())
+  self._isStoryEnd = false
+  local gameStartType = UIHelper.GameStartType()
+  if gameStartType == EGameStartType.SkillEditor then
+    self._isStoryEnd = true
+    self:_DoPostStory(TT)
+    return
+  end
+  local match = GameGlobal.GetModule(MatchModule)
+  local story, isActive, isStage1, isStage1Fail = self:_GetStoryByEnterData(match:GetMatchEnterData())
+  if story and not isStage1 and not isActive then
+    GameGlobal.UIStateManager():ShowDialog("UIStoryController", story.id, function()
+      local login_module = GameGlobal.GetModule(LoginModule)
+      if login_module:IsInFirstStory() then
+        GameGlobal.ReportCustomEvent("CreateRole", "ContinueEnterGame")
+      end
+      self._isStoryEnd = true
+      self:ActiveStory()
+      self:_PlayEnterBgm()
+      GameGlobal.UIStateManager():SetBlackSideVisible(false)
+    end, false, false)
+  else
+    self:_PlayEnterBgm()
+    self._isStoryEnd = true
+  end
+  self:_DoPostStory(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render._PlayTerrainAbyssAppearSkill = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = (self.world):GetGroup(((self.world).BW_WEMatchers).Trap)
+function ClientBattleEnterSystem_Render:_PlayTerrainAbyssAppearSkill(TT)
+  local group = self.world:GetGroup(self.world.BW_WEMatchers.Trap)
   local eTraps = group:GetEntities()
   local terrainAbyssEntityList = {}
-  for k,entity in pairs(eTraps) do
+  for k, entity in pairs(eTraps) do
     local trapRenderComponent = entity:TrapRender()
     if trapRenderComponent:GetTrapType() == TrapType.TerrainAbyss then
-      (table.insert)(terrainAbyssEntityList, entity)
+      table.insert(terrainAbyssEntityList, entity)
     end
   end
-  local trapServiceRender = (self._world):GetService("TrapRender")
-  local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(trapServiceRender.ShowTraps, trapServiceRender, terrainAbyssEntityList)
+  local trapServiceRender = self._world:GetService("TrapRender")
+  local taskID = GameGlobal.TaskManager():CoreGameStartTask(trapServiceRender.ShowTraps, trapServiceRender, terrainAbyssEntityList)
   return taskID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render._PlayEnterBgm = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function ClientBattleEnterSystem_Render:_PlayEnterBgm()
+  local configService = self._world:GetService("Config")
   local levelConfigData = configService:GetLevelConfigData()
   local bgmID = levelConfigData:GetBgmID()
   if bgmID == 0 then
-    (Log.fatal)("关卡 id:" .. levelConfigData:GetLevelID() .. " 未配置BGM!")
-    return 
+    Log.fatal("关卡 id:" .. levelConfigData:GetLevelID() .. " 未配置BGM!")
+    return
   end
-  ;
-  (AudioHelperController.PlayBGMById)(bgmID)
+  AudioHelperController.PlayBGMById(bgmID)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render._InitializeGuide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local sEntity = (self._world):GetService("RenderEntity")
+function ClientBattleEnterSystem_Render:_InitializeGuide()
+  local sEntity = self._world:GetService("RenderEntity")
   sEntity:CreateRenderEntity(EntityConfigIDRender.GuideFinger)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render._GetStoryByEnterData = function(self, enterData)
-  -- function num : 0_4 , upvalues : _ENV
-  local story = nil
+function ClientBattleEnterSystem_Render:_GetStoryByEnterData(enterData)
+  local story
   local isActive = false
   local isStage1 = false
   local isStage1Fail = false
   if MatchType.MT_Mission == enterData._match_type then
-    local mission = (GameGlobal.GetModule)(MissionModule)
-    local missionID = (enterData:GetMissionCreateInfo()).mission_id
-    isStage1 = ((Cfg.cfg_global).stage_1_id).IntValue == missionID
+    local mission = GameGlobal.GetModule(MissionModule)
+    local missionID = enterData:GetMissionCreateInfo().mission_id
+    isStage1 = Cfg.cfg_global.stage_1_id.IntValue == missionID
     isStage1Fail = mission:GetCurMissionID() == 0
     local discoveryData = mission:GetDiscoveryData()
     story = discoveryData:GetStoryByStageIdStoryType(missionID, StoryTriggerType.BeforeFight)
     isActive = mission:IsMissionStoryActive(missionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
   elseif MatchType.MT_ExtMission == enterData._match_type then
-    local extTaskID = (enterData:GetMissionCreateInfo()).m_nExtTaskID
-    local cfg_extra_mission_story = ((Cfg.cfg_extra_mission_story)({ExtMissionTaskID = extTaskID}))[1]
+    local extTaskID = enterData:GetMissionCreateInfo().m_nExtTaskID
+    local cfg_extra_mission_story = Cfg.cfg_extra_mission_story({ExtMissionTaskID = extTaskID})[1]
     if cfg_extra_mission_story then
-      for i = 1, (table.count)(cfg_extra_mission_story.StoryID) do
-        if (cfg_extra_mission_story.StoryActiveType)[i] == StoryTriggerType.BeforeFight then
+      for i = 1, table.count(cfg_extra_mission_story.StoryID) do
+        if cfg_extra_mission_story.StoryActiveType[i] == StoryTriggerType.BeforeFight then
           local extMissionStory = DiscoveryStory:New()
-          extMissionStory:Init((cfg_extra_mission_story.StoryID)[i], (cfg_extra_mission_story.StoryActiveType)[i])
-          local extMissionModule = (GameGlobal.GetModule)(ExtMissionModule)
+          extMissionStory:Init(cfg_extra_mission_story.StoryID[i], cfg_extra_mission_story.StoryActiveType[i])
+          local extMissionModule = GameGlobal.GetModule(ExtMissionModule)
           isActive = extMissionModule:IsMissionStoryActive(extTaskID, ActiveStoryType.ActiveStoryType_BeforeBattle)
           story = extMissionStory
           break
@@ -178,8 +141,8 @@ ClientBattleEnterSystem_Render._GetStoryByEnterData = function(self, enterData)
       end
     end
   elseif MatchType.MT_Campaign == enterData._match_type then
-    local mission = (GameGlobal.GetModule)(MissionModule)
-    local missionID = (enterData:GetCampaignMissionInfo()).nCampaignMissionId
+    local mission = GameGlobal.GetModule(MissionModule)
+    local missionID = enterData:GetCampaignMissionInfo().nCampaignMissionId
     story = {}
     story.id = mission:GetStoryByStageIdStoryType(missionID, StoryTriggerType.BeforeFight)
     if not story.id then
@@ -187,7 +150,7 @@ ClientBattleEnterSystem_Render._GetStoryByEnterData = function(self, enterData)
     end
     isActive = mission:IsMissionStoryActive(missionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
   elseif MatchType.MT_TalePet == enterData._match_type then
-    local mission = (GameGlobal.GetModule)(MissionModule)
+    local mission = GameGlobal.GetModule(MissionModule)
     local info = enterData:GetTalePetMissionInfo()
     local missionID = info.nId
     story = {}
@@ -197,8 +160,8 @@ ClientBattleEnterSystem_Render._GetStoryByEnterData = function(self, enterData)
     end
     isActive = mission:IsMissionStoryActive(missionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
   elseif MatchType.MT_Season == enterData._match_type then
-    local mission = (GameGlobal.GetModule)(MissionModule)
-    local missionID = (enterData:GetSeasonMissionInfo()).mission_id
+    local mission = GameGlobal.GetModule(MissionModule)
+    local missionID = enterData:GetSeasonMissionInfo().mission_id
     story = {}
     story.id = mission:GetStoryByStageIdStoryType(missionID, StoryTriggerType.BeforeFight)
     if not story.id then
@@ -206,361 +169,284 @@ ClientBattleEnterSystem_Render._GetStoryByEnterData = function(self, enterData)
     end
     isActive = mission:IsMissionStoryActive(missionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
   end
-  do return story, isActive, isStage1, isStage1Fail end
-  -- DECOMPILER ERROR: 11 unprocessed JMP targets
+  return story, isActive, isStage1, isStage1Fail
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render.ActiveStory = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local match = (GameGlobal.GetModule)(MatchModule)
+function ClientBattleEnterSystem_Render:ActiveStory()
+  local match = GameGlobal.GetModule(MatchModule)
   local enterData = match:GetMatchEnterData()
   if enterData._match_type == MatchType.MT_Mission then
-    local mission = (GameGlobal.GetModule)(MissionModule)
-    do
-      local missionID = (enterData:GetMissionCreateInfo()).mission_id
-      ;
-      ((GameGlobal.TaskManager)()):CoreGameStartTask(function()
-    -- function num : 0_5_0 , upvalues : mission, self, missionID, _ENV
-    mission:SetMissionStoryActive(self, missionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
-  end
-)
-    end
-  else
-    do
-      if enterData._match_type == MatchType.MT_ExtMission then
-        local exrMissionModule = (GameGlobal.GetModule)(ExtMissionModule)
-        local extTaskID = (enterData:GetMissionCreateInfo()).m_nExtTaskID
-        ;
-        ((GameGlobal.TaskManager)()):CoreGameStartTask(function()
-    -- function num : 0_5_1 , upvalues : exrMissionModule, self, extTaskID, _ENV
-    exrMissionModule:SetMissionStoryActive(self, extTaskID, ActiveStoryType.ActiveStoryType_BeforeBattle)
-  end
-)
-      else
-        do
-          if enterData._match_type == MatchType.MT_Campaign then
-            local mission = (GameGlobal.GetModule)(MissionModule)
-            local missionID = (enterData:GetCampaignMissionInfo()).nCampaignMissionId
-            ;
-            ((GameGlobal.TaskManager)()):CoreGameStartTask(function()
-    -- function num : 0_5_2 , upvalues : mission, self, missionID, _ENV
-    mission:SetMissionStoryActive(self, missionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
-  end
-)
-          else
-            do
-              if enterData._match_type == MatchType.MT_TalePet then
-                local mission = (GameGlobal.GetModule)(MissionModule)
-                local info = enterData:GetTalePetMissionInfo()
-                local missionID = info.nId
-                ;
-                ((GameGlobal.TaskManager)()):CoreGameStartTask(function()
-    -- function num : 0_5_3 , upvalues : mission, self, missionID, _ENV
-    mission:SetMissionStoryActive(self, missionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
-  end
-)
-              else
-                do
-                  if enterData._match_type == MatchType.MT_Season then
-                    local mission = (GameGlobal.GetModule)(MissionModule)
-                    local missionID = (enterData:GetSeasonMissionInfo()).mission_id
-                    local useMissionCfg = (Cfg.cfg_season_mission)[missionID]
-                    local secondMissionId = nil
-                    if useMissionCfg then
-                      local secondMissionCfg = nil
-                      local missionGroupId = useMissionCfg.GroupID
-                      local missionGroupCfgs = (Cfg.cfg_season_mission)({GroupID = missionGroupId})
-                      if #missionGroupCfgs > 0 then
-                        for index,value in ipairs(missionGroupCfgs) do
-                          if value.OrderID ~= useMissionCfg.OrderID then
-                            secondMissionCfg = value
-                            secondMissionId = value.ID
-                            break
-                          end
-                        end
-                      end
-                    end
-                    do
-                      ;
-                      ((GameGlobal.TaskManager)()):CoreGameStartTask(function()
-    -- function num : 0_5_4 , upvalues : mission, self, missionID, _ENV, secondMissionId
-    mission:SetMissionStoryActive(self, missionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
-    if secondMissionId then
-      mission:SetMissionStoryActive(self, secondMissionId, ActiveStoryType.ActiveStoryType_BeforeBattle)
-    end
-  end
-)
-                    end
-                  end
-                end
-              end
-            end
+    local mission = GameGlobal.GetModule(MissionModule)
+    local missionID = enterData:GetMissionCreateInfo().mission_id
+    GameGlobal.TaskManager():CoreGameStartTask(function()
+      mission:SetMissionStoryActive(self, missionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
+    end)
+  elseif enterData._match_type == MatchType.MT_ExtMission then
+    local exrMissionModule = GameGlobal.GetModule(ExtMissionModule)
+    local extTaskID = enterData:GetMissionCreateInfo().m_nExtTaskID
+    GameGlobal.TaskManager():CoreGameStartTask(function()
+      exrMissionModule:SetMissionStoryActive(self, extTaskID, ActiveStoryType.ActiveStoryType_BeforeBattle)
+    end)
+  elseif enterData._match_type == MatchType.MT_Campaign then
+    local mission = GameGlobal.GetModule(MissionModule)
+    local missionID = enterData:GetCampaignMissionInfo().nCampaignMissionId
+    GameGlobal.TaskManager():CoreGameStartTask(function()
+      mission:SetMissionStoryActive(self, missionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
+    end)
+  elseif enterData._match_type == MatchType.MT_TalePet then
+    local mission = GameGlobal.GetModule(MissionModule)
+    local info = enterData:GetTalePetMissionInfo()
+    local missionID = info.nId
+    GameGlobal.TaskManager():CoreGameStartTask(function()
+      mission:SetMissionStoryActive(self, missionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
+    end)
+  elseif enterData._match_type == MatchType.MT_Season then
+    local mission = GameGlobal.GetModule(MissionModule)
+    local missionID = enterData:GetSeasonMissionInfo().mission_id
+    local useMissionCfg = Cfg.cfg_season_mission[missionID]
+    local secondMissionId
+    if useMissionCfg then
+      local secondMissionCfg
+      local missionGroupId = useMissionCfg.GroupID
+      local missionGroupCfgs = Cfg.cfg_season_mission({GroupID = missionGroupId})
+      if 0 < #missionGroupCfgs then
+        for index, value in ipairs(missionGroupCfgs) do
+          if value.OrderID ~= useMissionCfg.OrderID then
+            secondMissionCfg = value
+            secondMissionId = value.ID
+            break
           end
         end
       end
     end
+    GameGlobal.TaskManager():CoreGameStartTask(function()
+      mission:SetMissionStoryActive(self, missionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
+      if secondMissionId then
+        mission:SetMissionStoryActive(self, secondMissionId, ActiveStoryType.ActiveStoryType_BeforeBattle)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render._DoPostStory = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  local collector = (GameGlobal:GetInstance()):GetCollector("CoreGameLoading")
+function ClientBattleEnterSystem_Render:_DoPostStory(TT)
+  local collector = GameGlobal:GetInstance():GetCollector("CoreGameLoading")
   while self._isStoryEnd == false do
     YIELD(TT)
   end
-  local role = (GameGlobal.GetModule)(RoleModule)
+  local role = GameGlobal.GetModule(RoleModule)
   local success = role:OnEndStory(TT, 0, 0, 0, 0, 0, 1)
   if not GameSingle and not success then
-    return 
+    return
   end
   collector:Sample("ClientBattleEnterSystem_Render:_DoPostStory() begin")
-  local match = (GameGlobal.GetModule)(MatchModule)
-  do
-    if ((GameGlobal.UIStateManager)()):IsShow("UIBattle") then
-      local uiBattle = ((GameGlobal.UIStateManager)()):GetController("UIBattle")
-      if uiBattle then
-        uiBattle:ResetLayout(TT)
-      end
+  local match = GameGlobal.GetModule(MatchModule)
+  if GameGlobal.UIStateManager():IsShow("UIBattle") then
+    local uiBattle = GameGlobal.UIStateManager():GetController("UIBattle")
+    if uiBattle then
+      uiBattle:ResetLayout(TT)
     end
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIBattle)
-    while ((GameGlobal.UIStateManager)()):IsShow("UIBattle") == false do
-      YIELD(TT)
-    end
-    ;
-    ((GameGlobal.UIStateManager)()):SetBlackSideVisible(true)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BattleTimeSpeed, false)
-    collector:Sample("ClientBattleEnterSystem_Render:ShowUIBattle()")
-    collector:Dump()
-    local guideService = (self._world):GetService("Guide")
-    local guideTaskId = guideService:Trigger(GameEventType.GuideBattleStart)
-    while not (TaskHelper:GetInstance()):IsTaskFinished(guideTaskId, true) do
-      YIELD(TT)
-    end
-    local innerStoryService = (self._world):GetService("InnerStory")
-    if innerStoryService:CheckStoryBanner(StoryShowType.BeginAfterCreateScene) then
-      self:BlinkMainCamera(true)
-      ;
-      (InnerGameHelperRender:GetInstance()):IsUIBannerComplete(TT)
-    end
+  end
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIBattle)
+  while GameGlobal.UIStateManager():IsShow("UIBattle") == false do
+    YIELD(TT)
+  end
+  GameGlobal.UIStateManager():SetBlackSideVisible(true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.BattleTimeSpeed, false)
+  collector:Sample("ClientBattleEnterSystem_Render:ShowUIBattle()")
+  collector:Dump()
+  local guideService = self._world:GetService("Guide")
+  local guideTaskId = guideService:Trigger(GameEventType.GuideBattleStart)
+  while not TaskHelper:GetInstance():IsTaskFinished(guideTaskId, true) do
+    YIELD(TT)
+  end
+  local innerStoryService = self._world:GetService("InnerStory")
+  if innerStoryService:CheckStoryBanner(StoryShowType.BeginAfterCreateScene) then
+    self:BlinkMainCamera(true)
+    InnerGameHelperRender:GetInstance():IsUIBannerComplete(TT)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render._CreateFinalAttackEffect = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local sEntity = (self._world):GetService("RenderEntity")
+function ClientBattleEnterSystem_Render:_CreateFinalAttackEffect()
+  local sEntity = self._world:GetService("RenderEntity")
   local effectEntity = sEntity:CreateRenderEntity(EntityConfigIDRender.FinalAttackEffect)
   local resPath = "eff_finalatk.prefab"
   effectEntity:ReplaceAsset(NativeUnityPrefabAsset:New(resPath, false))
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render._InitRoundCountUI = function(self, waveRoundCount)
-  -- function num : 0_8 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.InitRoundCount, waveRoundCount)
+function ClientBattleEnterSystem_Render:_InitRoundCountUI(waveRoundCount)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.InitRoundCount, waveRoundCount)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render._DoRenderShowBoard = function(self, TT, pieceRefreshType, fallingDir)
-  -- function num : 0_9 , upvalues : _ENV
+function ClientBattleEnterSystem_Render:_DoRenderShowBoard(TT, pieceRefreshType, fallingDir)
   self:_BoardShow(TT)
   YIELD(TT)
   if pieceRefreshType == PieceRefreshType.FallingDown then
-    local utilDataSvc = (self._world):GetService("UtilData")
+    local utilDataSvc = self._world:GetService("UtilData")
     local curMaxX = utilDataSvc:GetCurBoardMaxX()
     local curMaxY = utilDataSvc:GetCurBoardMaxY()
     local curCenterPos = utilDataSvc:GetBoardCenterPos()
     local effPosGroup = {
-[1] = {curMaxX + 1, curCenterPos.y}
-, 
-[2] = {curCenterPos.x, 0}
-, 
-[3] = {curMaxX + 1, curCenterPos.y}
-, 
-[4] = {curCenterPos.x, 0}
-}
-    local sEffect = (self._world):GetService("Effect")
+      [1] = {
+        curMaxX + 1,
+        curCenterPos.y
+      },
+      [2] = {
+        curCenterPos.x,
+        0
+      },
+      [3] = {
+        curMaxX + 1,
+        curCenterPos.y
+      },
+      [4] = {
+        curCenterPos.x,
+        0
+      }
+    }
+    local sEffect = self._world:GetService("Effect")
     local effId = BattleConst.FallGridDirDefaultEffectId
     local effPos = Vector2(0, 0)
     local dir = Vector2(fallingDir.x, fallingDir.y)
     if dir.x == 0 and dir.y == 1 then
       local cfgPos = effPosGroup[1]
       effPos = Vector2(cfgPos[1], cfgPos[2])
-    else
-      do
-        if dir.x == 1 and dir.y == 0 then
-          local cfgPos = effPosGroup[2]
-          effPos = Vector2(cfgPos[1], cfgPos[2])
-        else
-          do
-            if dir.x == 0 and dir.y == -1 then
-              local cfgPos = effPosGroup[3]
-              effPos = Vector2(cfgPos[1], cfgPos[2])
-            else
-              do
-                do
-                  if dir.x == -1 and dir.y == 0 then
-                    local cfgPos = effPosGroup[4]
-                    effPos = Vector2(cfgPos[1], cfgPos[2])
-                  end
-                  sEffect:CreateWorldPositionDirectionEffect(effId, effPos, dir)
-                end
-              end
-            end
-          end
-        end
-      end
+    elseif dir.x == 1 and dir.y == 0 then
+      local cfgPos = effPosGroup[2]
+      effPos = Vector2(cfgPos[1], cfgPos[2])
+    elseif dir.x == 0 and dir.y == -1 then
+      local cfgPos = effPosGroup[3]
+      effPos = Vector2(cfgPos[1], cfgPos[2])
+    elseif dir.x == -1 and dir.y == 0 then
+      local cfgPos = effPosGroup[4]
+      effPos = Vector2(cfgPos[1], cfgPos[2])
     end
+    sEffect:CreateWorldPositionDirectionEffect(effId, effPos, dir)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render._BoardShow = function(self, TT)
-  -- function num : 0_10 , upvalues : _ENV
-  local innerStoryService = (self._world):GetService("InnerStory")
+function ClientBattleEnterSystem_Render:_BoardShow(TT)
+  local innerStoryService = self._world:GetService("InnerStory")
   if innerStoryService:CheckStoryBanner(StoryShowType.BeginAfterBoardShow) then
     self:BlinkMainCamera(true)
-    ;
-    (InnerGameHelperRender:GetInstance()):IsUIBannerComplete(TT)
+    InnerGameHelperRender:GetInstance():IsUIBannerComplete(TT)
     self:BlinkMainCamera(false)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render.UnloadEffect = function(self, poolSvc, effSvc, effectid)
-  -- function num : 0_11
+function ClientBattleEnterSystem_Render:UnloadEffect(poolSvc, effSvc, effectid)
   local effResPath = effSvc:GetEffectResPath(effectid)
   if effResPath then
     poolSvc:DestroyCache(effResPath)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render._DoRenderShowPet = function(self, TT, teamEntity)
-  -- function num : 0_12 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local sCamera = (self._world):GetService("Camera")
-  local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
+function ClientBattleEnterSystem_Render:_DoRenderShowPet(TT, teamEntity)
+  local utilDataSvc = self._world:GetService("UtilData")
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local sCamera = self._world:GetService("Camera")
+  local sMonsterShowRender = self._world:GetService("MonsterShowRender")
   if teamEntity then
     self._teamLeader = teamEntity:GetTeamLeaderPetEntity()
-    self._petEntities = (teamEntity:Team()):GetTeamPetEntities()
+    self._petEntities = teamEntity:Team():GetTeamPetEntities()
     self._posLeader = boardServiceRender:GetRealEntityGridPos(self._teamLeader)
-    self._dirLeader = (((self._teamLeader):Location()):GetDirection()):Clone()
-    local matchType = (self._world):MatchType()
-    if matchType == MatchType.MT_EightPets or (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
-      self._arrPos = {Vector2(2, 1), Vector2(3, 1), Vector2(4, 1), Vector2(5, 1), Vector2(6, 1), Vector2(7, 1), Vector2(8, 1)}
+    self._dirLeader = self._teamLeader:Location():GetDirection():Clone()
+    local matchType = self._world:MatchType()
+    if matchType == MatchType.MT_EightPets or self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
+      self._arrPos = {
+        Vector2(2, 1),
+        Vector2(3, 1),
+        Vector2(4, 1),
+        Vector2(5, 1),
+        Vector2(6, 1),
+        Vector2(7, 1),
+        Vector2(8, 1)
+      }
     else
-      self._arrPos = {Vector2(6, 1), Vector2(4, 1), Vector2(7, 1), Vector2(3, 1)}
+      self._arrPos = {
+        Vector2(6, 1),
+        Vector2(4, 1),
+        Vector2(7, 1),
+        Vector2(3, 1)
+      }
     end
-    for index,arrPos in ipairs(self._arrPos) do
-      -- DECOMPILER ERROR at PC117: Confused about usage of register: R13 in 'UnsetPending'
-
+    for index, arrPos in ipairs(self._arrPos) do
       if arrPos == self._posLeader then
-        (self._arrPos)[index] = Vector2(5, 1)
+        self._arrPos[index] = Vector2(5, 1)
         break
       end
     end
-    do
-      self._ePets = self:GetTeamMember(teamEntity)
-      local tplID = self:GetPetEntityTemplateID(self._teamLeader)
-      local pm = (GameGlobal.GetModule)(PetAudioModule)
-      ;
-      (InnerGameHelperRender.InnerGamePlayPetUIVoice)("TeamLeaderAppear", tplID)
-      local matchModule = (GameGlobal.GetModule)(MatchModule)
-      if matchType == MatchType.MT_EightPets or (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze or matchModule:IsQuickReStartMatch() then
-        (self._teamLeader):SetViewVisible(true)
-        for i,entity in ipairs(self._ePets) do
-          entity:SetViewVisible(true)
-        end
-      else
-        do
-          do
-            self:PlayBattleEnterSkillView(TT)
-            self:PlayPetFaceAnim(teamEntity)
-            self:PlayFocus(TT)
-            self:HideStageEffect(TT)
-            sMonsterShowRender:PullDownNotLoadHighMonsters()
-            self:_PlayTerrainAbyssAppearSkill(TT)
-            if teamEntity then
-              self:PetsStandBy()
-              sCamera:BlinkMainCamera(true)
-              self:PlayDarkEffect()
-              self:PlayCameraAnimation(TT)
-            end
-            local spawnPieceServiceRender = (self._world):GetService("SpawnPieceRender")
-            spawnPieceServiceRender:PlayBoardShow(TT)
-            if teamEntity then
-              local gridLocCmpt = (self._teamLeader):GridLocation()
-              local playerPos = gridLocCmpt:GetGridPos()
-              local utilDataSvc = (self._world):GetService("UtilData")
-              if utilDataSvc:CanChangePieceToGray() then
-                boardServiceRender:ReCreateGridEntity(PieceType.None, playerPos)
-              end
-            end
-            do
-              self:CheckStoryTips(TT)
-              do
-                if teamEntity then
-                  local isArchived = utilDataSvc:IsArchivedBattle()
-                  if not isArchived or (table.count)(self._ePets) > 0 then
-                    self:PlayLightBallFly(TT)
-                    self:ResetPetsPos(TT)
-                  end
-                end
-                local cameraCmpt = (self._world):MainCamera()
-                cameraCmpt:_MoveCameraToNormal()
-                if teamEntity then
-                  self:ShowHPSlider(TT, teamEntity)
-                end
-                if (self._world):MatchType() == MatchType.MT_BlackFist then
-                  self:ShowRemotePlayer(TT)
-                else
-                  if (self._world):MatchType() == MatchType.MT_Chess then
-                    self:ShowChessPet(TT)
-                  end
-                end
-                local playBuffSvc = (self._world):GetService("PlayBuff")
-                playBuffSvc:PlayAutoAddBuff()
-              end
-            end
-          end
-        end
+    self._ePets = self:GetTeamMember(teamEntity)
+    local tplID = self:GetPetEntityTemplateID(self._teamLeader)
+    local pm = GameGlobal.GetModule(PetAudioModule)
+    InnerGameHelperRender.InnerGamePlayPetUIVoice("TeamLeaderAppear", tplID)
+    local matchModule = GameGlobal.GetModule(MatchModule)
+    if matchType == MatchType.MT_EightPets or self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze or matchModule:IsQuickReStartMatch() then
+      self._teamLeader:SetViewVisible(true)
+      for i, entity in ipairs(self._ePets) do
+        entity:SetViewVisible(true)
       end
+    else
+      self:PlayBattleEnterSkillView(TT)
+      self:PlayPetFaceAnim(teamEntity)
+      self:PlayFocus(TT)
+      self:HideStageEffect(TT)
     end
   end
+  sMonsterShowRender:PullDownNotLoadHighMonsters()
+  self:_PlayTerrainAbyssAppearSkill(TT)
+  if teamEntity then
+    self:PetsStandBy()
+    sCamera:BlinkMainCamera(true)
+    self:PlayDarkEffect()
+    self:PlayCameraAnimation(TT)
+  end
+  local spawnPieceServiceRender = self._world:GetService("SpawnPieceRender")
+  spawnPieceServiceRender:PlayBoardShow(TT)
+  if teamEntity then
+    local gridLocCmpt = self._teamLeader:GridLocation()
+    local playerPos = gridLocCmpt:GetGridPos()
+    local utilDataSvc = self._world:GetService("UtilData")
+    if utilDataSvc:CanChangePieceToGray() then
+      boardServiceRender:ReCreateGridEntity(PieceType.None, playerPos)
+    end
+  end
+  self:CheckStoryTips(TT)
+  if teamEntity then
+    local isArchived = utilDataSvc:IsArchivedBattle()
+    if not isArchived or table.count(self._ePets) > 0 then
+      self:PlayLightBallFly(TT)
+      self:ResetPetsPos(TT)
+    end
+  end
+  local cameraCmpt = self._world:MainCamera()
+  cameraCmpt:_MoveCameraToNormal()
+  if teamEntity then
+    self:ShowHPSlider(TT, teamEntity)
+  end
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    self:ShowRemotePlayer(TT)
+  elseif self._world:MatchType() == MatchType.MT_Chess then
+    self:ShowChessPet(TT)
+  end
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  playBuffSvc:PlayAutoAddBuff()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render.ShowRemotePlayer = function(self, TT)
-  -- function num : 0_13 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local remoteTeamEntity = ((self._world):Player()):GetRemoteTeamEntity()
+function ClientBattleEnterSystem_Render:ShowRemotePlayer(TT)
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local remoteTeamEntity = self._world:Player():GetRemoteTeamEntity()
   local gridLocCmpt = remoteTeamEntity:GridLocation()
   local playerPos = gridLocCmpt:GetGridPos()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   if utilDataSvc:CanChangePieceToGray() then
     boardServiceRender:ReCreateGridEntity(PieceType.None, playerPos)
   end
   self:ShowHPSlider(TT, remoteTeamEntity)
-  local pets = (remoteTeamEntity:Team()):GetTeamPetEntities()
-  local leader = (remoteTeamEntity:Team()):GetTeamLeaderEntity()
+  local pets = remoteTeamEntity:Team():GetTeamPetEntities()
+  local leader = remoteTeamEntity:Team():GetTeamLeaderEntity()
   local posLeader = boardServiceRender:GetRealEntityGridPos(leader)
-  local dirLeader = ((leader:Location()):GetDirection()):Clone()
-  for i,v in ipairs(pets) do
+  local dirLeader = leader:Location():GetDirection():Clone()
+  for i, v in ipairs(pets) do
     v:SetLocation(posLeader, dirLeader)
     if v == leader then
       v:SetViewVisible(true)
@@ -568,67 +454,58 @@ ClientBattleEnterSystem_Render.ShowRemotePlayer = function(self, TT)
       v:SetViewVisible(false)
     end
   end
-  local matchPet = (leader:MatchPet()):GetMatchPet()
+  local matchPet = leader:MatchPet():GetMatchPet()
   local bossIds = SortedArray:New()
-  bossIds:Insert({HPBarType = HPBarType.BlackFist, pstId = remoteTeamEntity:GetID(), tplId = matchPet:GetTemplateID(), isVice = false, matchPet = matchPet, hpEnergyVal = 0, maxHPEnergyVal = 0})
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowBossHp, bossIds)
+  bossIds:Insert({
+    HPBarType = HPBarType.BlackFist,
+    pstId = remoteTeamEntity:GetID(),
+    tplId = matchPet:GetTemplateID(),
+    isVice = false,
+    matchPet = matchPet,
+    hpEnergyVal = 0,
+    maxHPEnergyVal = 0
+  })
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowBossHp, bossIds)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render.ShowChessPet = function(self, TT)
-  -- function num : 0_14 , upvalues : _ENV
-  local group = (self.world):GetGroup(((self.world).BW_WEMatchers).ChessPetRender)
+function ClientBattleEnterSystem_Render:ShowChessPet(TT)
+  local group = self.world:GetGroup(self.world.BW_WEMatchers.ChessPetRender)
   local chessPetEntitys = group:GetEntities()
-  for i,v in ipairs(chessPetEntitys) do
+  for i, v in ipairs(chessPetEntitys) do
     v:SetViewVisible(true)
     self:ShowHPSlider(TT, v)
     v:ReplaceHPComponent()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render.PlayBattleEnterSkillView = function(self, TT)
-  -- function num : 0_15 , upvalues : _ENV
-  local sPlaySkill = (self._world):GetService("PlaySkill")
-  for id,entity in ipairs(self._petEntities) do
+function ClientBattleEnterSystem_Render:PlayBattleEnterSkillView(TT)
+  local sPlaySkill = self._world:GetService("PlaySkill")
+  for id, entity in ipairs(self._petEntities) do
     local viewCmpt = entity:View()
     if viewCmpt == nil or viewCmpt:GetGameObject() == nil then
       local assetCmpt = entity:Asset()
       local resPath = assetCmpt:GetResPath()
-      ;
-      (Log.exception)("Pet resource load failed:", resPath)
+      Log.exception("Pet resource load failed:", resPath)
     end
-    do
-      local goName = ((entity:View()):GetGameObject()).name
-      local cfgBattleEnterSkillId = (Cfg.cfg_pet_battle_enter_skill)[goName]
-      do
-        local battleEnterSkillId = nil
-        if entity:GetID() == (self._teamLeader):GetID() then
-          if cfgBattleEnterSkillId then
-            battleEnterSkillId = cfgBattleEnterSkillId.TeamLeaderSkillID
-          else
-            battleEnterSkillId = ((Cfg.cfg_pet_battle_enter_skill)["0"]).TeamLeaderSkillID
-          end
-        else
-          if cfgBattleEnterSkillId then
-            battleEnterSkillId = cfgBattleEnterSkillId.TeamMemberSkillID
-          end
-        end
-        if battleEnterSkillId then
-          sPlaySkill:PlaySkillView(entity, battleEnterSkillId)
-        end
-        -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out DO_STMT
-
+    local goName = entity:View():GetGameObject().name
+    local cfgBattleEnterSkillId = Cfg.cfg_pet_battle_enter_skill[goName]
+    local battleEnterSkillId
+    if entity:GetID() == self._teamLeader:GetID() then
+      if cfgBattleEnterSkillId then
+        battleEnterSkillId = cfgBattleEnterSkillId.TeamLeaderSkillID
+      else
+        battleEnterSkillId = Cfg.cfg_pet_battle_enter_skill["0"].TeamLeaderSkillID
       end
+    elseif cfgBattleEnterSkillId then
+      battleEnterSkillId = cfgBattleEnterSkillId.TeamMemberSkillID
+    end
+    if battleEnterSkillId then
+      sPlaySkill:PlaySkillView(entity, battleEnterSkillId)
     end
   end
 end
 
-local _createV4FromV3 = function(v3)
-  -- function num : 0_16 , upvalues : _ENV
+local function _createV4FromV3(v3)
   local v4 = Vector4.zero
   v4.x = v3.x
   v4.y = v3.y
@@ -637,163 +514,122 @@ local _createV4FromV3 = function(v3)
   return v4
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render.PlayFocus = function(self, TT)
-  -- function num : 0_17 , upvalues : _ENV, _createV4FromV3
-  local match = (GameGlobal.GetModule)(MatchModule)
+function ClientBattleEnterSystem_Render:PlayFocus(TT)
+  local match = GameGlobal.GetModule(MatchModule)
   local enterData = match:GetMatchEnterData()
   if enterData._match_type == MatchType.MT_Mission then
-    local missionID = (enterData:GetMissionCreateInfo()).mission_id
+    local missionID = enterData:GetMissionCreateInfo().mission_id
     if missionID and self._ePets then
-      local l_pet_array = "" .. ((self._teamLeader):PetPstID()):GetTemplateID()
-      for key,value in pairs(self._ePets) do
-        l_pet_array = l_pet_array .. "," .. (value:PetPstID()):GetTemplateID()
+      local l_pet_array = "" .. self._teamLeader:PetPstID():GetTemplateID()
+      for key, value in pairs(self._ePets) do
+        l_pet_array = l_pet_array .. "," .. value:PetPstID():GetTemplateID()
       end
-      ;
-      (GameGlobal.UAReportForceGuideEvent)("MissionShowPet", {missionID, l_pet_array})
+      GameGlobal.UAReportForceGuideEvent("MissionShowPet", {missionID, l_pet_array})
     end
   end
-  do
-    local goEffRuchangActorpoint = ((self.world):MainCamera()):GetGoEffRuchangActorpoint()
-    if not goEffRuchangActorpoint then
-      (Log.fatal)("Can not find actor point.")
-      return 
+  local goEffRuchangActorpoint = self.world:MainCamera():GetGoEffRuchangActorpoint()
+  if not goEffRuchangActorpoint then
+    Log.fatal("Can not find actor point.")
+    return
+  end
+  local goRenderSetting = UnityEngine.GameObject.Find("[H3DRenderSetting]")
+  local csRenderSetting = goRenderSetting:GetComponent("H3DRenderSetting")
+  if csRenderSetting.CustomLight and csRenderSetting.CustomShadow then
+    csRenderSetting.CustomLight.forward = csRenderSetting.CustomLightForwardIntro
+    csRenderSetting.CustomShadow.forward = csRenderSetting.CustomShadowForwardIntro
+    UnityEngine.Shader.SetGlobalVector("_H3D_CustomLightDir", _createV4FromV3(csRenderSetting.CustomLightForwardIntro))
+    UnityEngine.Shader.SetGlobalVector("_H3D_CustomShadowDir", _createV4FromV3(csRenderSetting.CustomShadowForwardIntro))
+  end
+  goEffRuchangActorpoint:SetActive(true)
+  local anim = goEffRuchangActorpoint:GetComponent("Animation")
+  anim:Play()
+  local trans = {}
+  local tranLeader = self._teamLeader:View():GetGameObject().transform
+  table.insert(trans, tranLeader)
+  for i, e in ipairs(self._ePets) do
+    if e then
+      local tranPet = e:View():GetGameObject().transform
+      table.insert(trans, tranPet)
     end
-    local goRenderSetting = ((UnityEngine.GameObject).Find)("[H3DRenderSetting]")
-    local csRenderSetting = goRenderSetting:GetComponent("H3DRenderSetting")
-    -- DECOMPILER ERROR at PC75: Confused about usage of register: R7 in 'UnsetPending'
-
-    if csRenderSetting.CustomLight and csRenderSetting.CustomShadow then
-      (csRenderSetting.CustomLight).forward = csRenderSetting.CustomLightForwardIntro
-      -- DECOMPILER ERROR at PC78: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (csRenderSetting.CustomShadow).forward = csRenderSetting.CustomShadowForwardIntro
-      ;
-      ((UnityEngine.Shader).SetGlobalVector)("_H3D_CustomLightDir", _createV4FromV3(csRenderSetting.CustomLightForwardIntro))
-      ;
-      ((UnityEngine.Shader).SetGlobalVector)("_H3D_CustomShadowDir", _createV4FromV3(csRenderSetting.CustomShadowForwardIntro))
-    end
-    goEffRuchangActorpoint:SetActive(true)
-    local anim = goEffRuchangActorpoint:GetComponent("Animation")
-    anim:Play()
-    local trans = {}
-    local tranLeader = (((self._teamLeader):View()):GetGameObject()).transform
-    ;
-    (table.insert)(trans, tranLeader)
-    for i,e in ipairs(self._ePets) do
-      if e then
-        local tranPet = ((e:View()):GetGameObject()).transform
-        ;
-        (table.insert)(trans, tranPet)
-      end
-    end
-    for index,tran in ipairs(trans) do
-      local tranChild = (GameObjectHelper.FindChild)(goEffRuchangActorpoint.transform, tostring(index))
-      tran:SetParent(tranChild)
-      tran.localPosition = Vector3.zero
-      tran.localRotation = Quaternion.identity
-    end
-    YIELD(TT, GameResourceConst.AnimRuchangCameratempLen)
-    for index,tran in ipairs(trans) do
-      tran:SetParent((goEffRuchangActorpoint.transform).parent)
-      tran.localPosition = Vector3.zero
-      tran.localRotation = Quaternion.identity
-    end
-    goEffRuchangActorpoint:SetActive(false)
-    -- DECOMPILER ERROR at PC187: Confused about usage of register: R10 in 'UnsetPending'
-
-    if csRenderSetting.CustomLight and csRenderSetting.CustomShadow then
-      (csRenderSetting.CustomLight).forward = csRenderSetting.CustomLightForwardBattle
-      -- DECOMPILER ERROR at PC190: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (csRenderSetting.CustomShadow).forward = csRenderSetting.CustomShadowForwardBattle
-      ;
-      ((UnityEngine.Shader).SetGlobalVector)("_H3D_CustomLightDir", _createV4FromV3(csRenderSetting.CustomLightForwardBattle))
-      ;
-      ((UnityEngine.Shader).SetGlobalVector)("_H3D_CustomShadowDir", _createV4FromV3(csRenderSetting.CustomShadowForwardBattle))
-    end
+  end
+  for index, tran in ipairs(trans) do
+    local tranChild = GameObjectHelper.FindChild(goEffRuchangActorpoint.transform, tostring(index))
+    tran:SetParent(tranChild)
+    tran.localPosition = Vector3.zero
+    tran.localRotation = Quaternion.identity
+  end
+  YIELD(TT, GameResourceConst.AnimRuchangCameratempLen)
+  for index, tran in ipairs(trans) do
+    tran:SetParent(goEffRuchangActorpoint.transform.parent)
+    tran.localPosition = Vector3.zero
+    tran.localRotation = Quaternion.identity
+  end
+  goEffRuchangActorpoint:SetActive(false)
+  if csRenderSetting.CustomLight and csRenderSetting.CustomShadow then
+    csRenderSetting.CustomLight.forward = csRenderSetting.CustomLightForwardBattle
+    csRenderSetting.CustomShadow.forward = csRenderSetting.CustomShadowForwardBattle
+    UnityEngine.Shader.SetGlobalVector("_H3D_CustomLightDir", _createV4FromV3(csRenderSetting.CustomLightForwardBattle))
+    UnityEngine.Shader.SetGlobalVector("_H3D_CustomShadowDir", _createV4FromV3(csRenderSetting.CustomShadowForwardBattle))
   end
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render.PlayDarkEffect = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local sEffect = (self._world):GetService("Effect")
+function ClientBattleEnterSystem_Render:PlayDarkEffect()
+  local sEffect = self._world:GetService("Effect")
   sEffect:CreateScreenEffPointEffect(GameResourceConst.EffRuchangBlackboard)
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render.PetsStandBy = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  (self._teamLeader):SetLocation(self._posLeader, self._dirLeader)
-  local arrDir = {Vector2(0, 1), Vector2(0, 1), Vector2(0, 1), Vector2(0, 1)}
-  for i,e in ipairs(self._ePets) do
+function ClientBattleEnterSystem_Render:PetsStandBy()
+  self._teamLeader:SetLocation(self._posLeader, self._dirLeader)
+  local arrDir = {
+    Vector2(0, 1),
+    Vector2(0, 1),
+    Vector2(0, 1),
+    Vector2(0, 1)
+  }
+  for i, e in ipairs(self._ePets) do
     if e then
-      e:SetLocation((self._arrPos)[i], arrDir[i])
+      e:SetLocation(self._arrPos[i], arrDir[i])
     end
   end
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render.CheckStoryTips = function(self, TT)
-  -- function num : 0_20 , upvalues : _ENV
-  local innerStoryService = (self._world):GetService("InnerStory")
+function ClientBattleEnterSystem_Render:CheckStoryTips(TT)
+  local innerStoryService = self._world:GetService("InnerStory")
   innerStoryService:CheckStoryTips(StoryShowType.BeginAfterMasterShowBeginTeamShow)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuidePlayerShow)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuidePlayerShow)
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render.HideStageEffect = function(self, TT)
-  -- function num : 0_21 , upvalues : _ENV
-  local goStageEffect = (GameObjectHelper.Find)("StageEffect")
+function ClientBattleEnterSystem_Render:HideStageEffect(TT)
+  local goStageEffect = GameObjectHelper.Find("StageEffect")
   if goStageEffect then
-    local tran = (GameObjectHelper.FindChild)(goStageEffect.transform, "ruchang_eff")
+    local tran = GameObjectHelper.FindChild(goStageEffect.transform, "ruchang_eff")
     if tran then
-      (tran.gameObject):SetActive(false)
+      tran.gameObject:SetActive(false)
     else
-      ;
-      (Log.fatal)("### ruchang_eff is not under StageEffect.")
+      Log.fatal("### ruchang_eff is not under StageEffect.")
     end
   else
-    do
-      ;
-      (Log.warn)("### no GameObject named [StageEffect] in scene.")
-      ;
-      ((self._world):RenderBattleStat()):SetActorOutLineState(true)
-      local battleSvcR = (self._world):GetService("RenderBattle")
-      battleSvcR:SetGlobalOutLine(true)
-      battleSvcR:SetAllViewOutLine()
-    end
+    Log.warn("### no GameObject named [StageEffect] in scene.")
   end
+  self._world:RenderBattleStat():SetActorOutLineState(true)
+  local battleSvcR = self._world:GetService("RenderBattle")
+  battleSvcR:SetGlobalOutLine(true)
+  battleSvcR:SetAllViewOutLine()
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R1 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render.ResetPetsPos = function(self, TT)
-  -- function num : 0_22 , upvalues : _ENV
-  for i,v in ipairs(self._ePets) do
+function ClientBattleEnterSystem_Render:ResetPetsPos(TT)
+  for i, v in ipairs(self._ePets) do
     if v then
       v:SetPosition(self._posLeader)
     end
   end
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R1 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render.GetTeamMember = function(self, teamEntity)
-  -- function num : 0_23 , upvalues : _ENV
+function ClientBattleEnterSystem_Render:GetTeamMember(teamEntity)
   local teamMember = {}
-  local teamLeaderPetPstID = (teamEntity:Team()):GetTeamLeaderPetPstID()
-  local pets = (teamEntity:Team()):GetTeamPetEntities()
-  for _,e in ipairs(pets) do
+  local teamLeaderPetPstID = teamEntity:Team():GetTeamLeaderPetPstID()
+  local pets = teamEntity:Team():GetTeamPetEntities()
+  for _, e in ipairs(pets) do
     local petPstIDCmpt = e:PetPstID()
     if petPstIDCmpt:GetPstID() ~= teamLeaderPetPstID then
       teamMember[#teamMember + 1] = e
@@ -802,203 +638,166 @@ ClientBattleEnterSystem_Render.GetTeamMember = function(self, teamEntity)
   return teamMember
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render.PlayLightBallFly = function(self, TT)
-  -- function num : 0_24 , upvalues : _ENV
-  local entityService = (self._world):GetService("RenderEntity")
-  local effectService = (self._world):GetService("Effect")
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  for i,v in ipairs(self._ePets) do
-    effectService:CreateWorldPositionEffect(GameResourceConst.EffRuchuangPetBao, (self._arrPos)[i])
+function ClientBattleEnterSystem_Render:PlayLightBallFly(TT)
+  local entityService = self._world:GetService("RenderEntity")
+  local effectService = self._world:GetService("Effect")
+  local boardServiceRender = self._world:GetService("BoardRender")
+  for i, v in ipairs(self._ePets) do
+    effectService:CreateWorldPositionEffect(GameResourceConst.EffRuchuangPetBao, self._arrPos[i])
   end
   YIELD(TT, 50)
-  for i,v in ipairs(self._ePets) do
-    do
-      if v then
-        do
-          v:SetViewVisible(false)
-          -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  for i, v in ipairs(self._ePets) do
+    if v then
+      v:SetViewVisible(false)
     end
   end
   local eBalls = {}
-  for i,v in ipairs(self._ePets) do
+  for i, v in ipairs(self._ePets) do
     if not v then
-      return 
+      return
     end
     local gridLoc = v:GridLocation()
     if not gridLoc then
-      return 
+      return
     end
     local position = boardServiceRender:GetRealEntityGridPos(v)
     local eBall = entityService:CreateRenderEntity(EntityConfigIDRender.Projectile)
     eBall:ReplaceAsset(NativeUnityPrefabAsset:New("eff_ruchuang_guiji.prefab", false))
     eBall:SetPosition(position)
-    ;
-    (table.insert)(eBalls, eBall)
+    table.insert(eBalls, eBall)
   end
-  local tranLeader = (((self._teamLeader):View()):GetGameObject()).transform
+  local tranLeader = self._teamLeader:View():GetGameObject().transform
   local flyDuration = 400
   local arrCtrlNode = {
-[1] = {Vector3(0.1, 0.3, 0.2)}
-, 
-[2] = {Vector3(0, 0.1, 0)}
-, 
-[3] = {Vector3(0, 0.1, 0)}
-, 
-[4] = {Vector3(-0.1, 0.1, -0.1), Vector3(0.2, 0.2, 0.2)}
-}
+    [1] = {
+      Vector3(0.1, 0.3, 0.2)
+    },
+    [2] = {
+      Vector3(0, 0.1, 0)
+    },
+    [3] = {
+      Vector3(0, 0.1, 0)
+    },
+    [4] = {
+      Vector3(-0.1, 0.1, -0.1),
+      Vector3(0.2, 0.2, 0.2)
+    }
+  }
   local height = Vector3(0, 0.6, 0)
-  for i,v in ipairs(eBalls) do
+  for i, v in ipairs(eBalls) do
     v:SetViewVisible(true)
     local view = v:View()
     if not view then
-      return 
+      return
     end
-    local tranBall = ((view.ViewWrapper).GameObject).transform
+    local tranBall = view.ViewWrapper.GameObject.transform
     tranBall.position = tranBall.position + height
-    local path = {tranBall.position}
+    local path = {
+      tranBall.position
+    }
     if arrCtrlNode[i] then
-      for j,vj in ipairs(arrCtrlNode[i]) do
-        (table.insert)(path, tranBall.position + height + vj)
+      for j, vj in ipairs(arrCtrlNode[i]) do
+        table.insert(path, tranBall.position + height + vj)
       end
     end
-    do
-      do
-        ;
-        (table.insert)(path, tranLeader.position + height)
-        ;
-        ((tranBall:DOPath(path, flyDuration * 0.001, ((DG.Tweening).PathType).CatmullRom, ((DG.Tweening).PathMode).Full3D, 10, Color.red)):SetEase(((DG.Tweening).Ease).InCubic)):OnComplete(function()
-    -- function num : 0_24_0 , upvalues : self, v
-    (self._world):DestroyEntity(v)
-  end
-)
-        -- DECOMPILER ERROR at PC194: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    table.insert(path, tranLeader.position + height)
+    tranBall:DOPath(path, flyDuration * 0.001, DG.Tweening.PathType.CatmullRom, DG.Tweening.PathMode.Full3D, 10, Color.red):SetEase(DG.Tweening.Ease.InCubic):OnComplete(function()
+      self._world:DestroyEntity(v)
+    end)
   end
   YIELD(TT, flyDuration)
   effectService:CreateWorldPositionEffect(GameResourceConst.EffRuchuangHeti, self._posLeader)
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R1 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render.ShowHPSlider = function(self, TT, teamEntity)
-  -- function num : 0_25 , upvalues : _ENV
+function ClientBattleEnterSystem_Render:ShowHPSlider(TT, teamEntity)
   local cHP = teamEntity:HP()
   local hpSliderEntityID = cHP:GetHPSliderEntityID()
-  local eHPBar = (self._world):GetEntityByID(hpSliderEntityID)
+  local eHPBar = self._world:GetEntityByID(hpSliderEntityID)
   if not eHPBar then
-    return 
+    return
   end
   cHP:SetHPPosDirty(true)
   cHP:SetHPBarTempHide(false)
-  local go = (eHPBar:View()):GetGameObject()
+  local go = eHPBar:View():GetGameObject()
   local uiview = go:GetComponent("UIView")
   local buffRootPath = uiview:GetUIComponent("UISelectObjectPath", "buffRoot")
   if buffRootPath then
     local buffRoot = UICustomWidgetPool:New(self, buffRootPath)
     buffRoot:SpawnObjects("UIHPBuffInfo", 1)
-    local uiHPBuffInfo = (buffRoot:GetAllSpawnList())[1]
+    local uiHPBuffInfo = buffRoot:GetAllSpawnList()[1]
     uiHPBuffInfo:SetData(teamEntity:GetID())
     cHP:SetUIHpBuffInfoWidget(buffRoot)
   end
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R1 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render.PlayCameraAnimation = function(self, TT)
-  -- function num : 0_26 , upvalues : _ENV
-  local match = (GameGlobal.GetModule)(MatchModule)
+function ClientBattleEnterSystem_Render:PlayCameraAnimation(TT)
+  local match = GameGlobal.GetModule(MatchModule)
   local enterData = match:GetMatchEnterData()
-  do
-    if enterData._match_type == MatchType.MT_Mission then
-      local missionID = (enterData:GetMissionCreateInfo()).mission_id
-      ;
-      (GameGlobal.UAReportForceGuideEvent)("MissionRefreshRoad", {missionID})
-    end
-    local levelID = ((self._world).BW_WorldInfo).level_id
-    local levelConfig = (Cfg.cfg_level)[levelID]
-    local themeID = levelConfig.Theme
-    local cfgThemeData = (Cfg.cfg_theme)[themeID]
-    if not cfgThemeData then
-      (Log.error)("关卡theme配置无效: ", tostring(themeID))
-      return 
-    end
-    local camera = ((self._world):MainCamera()):Camera()
-    if cfgThemeData.BoardShowCameraAnimationMode and cfgThemeData.BoardShowCameraAnimationMode == 1 then
-      local configService = (self._world):GetService("Config")
-      local levelConfigData = configService:GetLevelConfigData()
-      local cameraParam = levelConfigData:GetCameraParam()
-      local originalCameraPos = cameraParam:GetCameraPosition()
-      local tweener = (((camera.gameObject).transform):DOMove(originalCameraPos, BattleConst.BoardShowCameraAnimationByScript_TweenTime)):SetEase(((DG.Tweening).Ease).OutExpo)
-      YIELD(TT, BattleConst.BoardShowCameraAnimationByScript_TweenTime * 1000)
+  if enterData._match_type == MatchType.MT_Mission then
+    local missionID = enterData:GetMissionCreateInfo().mission_id
+    GameGlobal.UAReportForceGuideEvent("MissionRefreshRoad", {missionID})
+  end
+  local levelID = self._world.BW_WorldInfo.level_id
+  local levelConfig = Cfg.cfg_level[levelID]
+  local themeID = levelConfig.Theme
+  local cfgThemeData = Cfg.cfg_theme[themeID]
+  if not cfgThemeData then
+    Log.error("关卡theme配置无效: ", tostring(themeID))
+    return
+  end
+  local camera = self._world:MainCamera():Camera()
+  if cfgThemeData.BoardShowCameraAnimationMode and cfgThemeData.BoardShowCameraAnimationMode == 1 then
+    local configService = self._world:GetService("Config")
+    local levelConfigData = configService:GetLevelConfigData()
+    local cameraParam = levelConfigData:GetCameraParam()
+    local originalCameraPos = cameraParam:GetCameraPosition()
+    local tweener = camera.gameObject.transform:DOMove(originalCameraPos, BattleConst.BoardShowCameraAnimationByScript_TweenTime):SetEase(DG.Tweening.Ease.OutExpo)
+    YIELD(TT, BattleConst.BoardShowCameraAnimationByScript_TweenTime * 1000)
+  else
+    local animation = camera.gameObject:GetComponent(typeof(UnityEngine.Animation))
+    if animation and animation.clip then
+      animation:Play()
+      YIELD(TT, animation.clip.length * 1000)
     else
-      do
-        local animation = (camera.gameObject):GetComponent(typeof(UnityEngine.Animation))
-        if animation and animation.clip then
-          animation:Play()
-          YIELD(TT, (animation.clip).length * 1000)
-        else
-          ;
-          (Log.fatal)("### no animation on camera.")
-        end
-      end
+      Log.fatal("### no animation on camera.")
     end
   end
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R1 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render.GetPetEntityTemplateID = function(self, petEntity)
-  -- function num : 0_27
-  return (petEntity:PetPstID()):GetTemplateID()
+function ClientBattleEnterSystem_Render:GetPetEntityTemplateID(petEntity)
+  return petEntity:PetPstID():GetTemplateID()
 end
 
 local DirType = {Row = 1, Col = 2}
--- DECOMPILER ERROR at PC96: Confused about usage of register: R2 in 'UnsetPending'
 
-ClientBattleEnterSystem_Render.SortGridList = function(self, gridList, dir)
-  -- function num : 0_28 , upvalues : _ENV, DirType
+function ClientBattleEnterSystem_Render:SortGridList(gridList, dir)
   local tmp = {}
-  for k,v in pairs(gridList) do
-    tmp[#tmp + 1] = (v:GetGridPosition()):Clone()
+  for k, v in pairs(gridList) do
+    tmp[#tmp + 1] = v:GetGridPosition():Clone()
   end
-  local CmpRow = function(a, b)
-    -- function num : 0_28_0
-    do return b.y < a.y end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  
+  local function CmpRow(a, b)
+    return a.y > b.y
   end
-
-  local CmpCol = function(a, b)
-    -- function num : 0_28_1
-    do return b.x < a.x end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  
+  local function CmpCol(a, b)
+    return a.x > b.x
   end
-
+  
   if dir == DirType.Row then
-    (table.sort)(tmp, CmpCol)
+    table.sort(tmp, CmpCol)
   end
   if dir == DirType.Col then
-    (table.sort)(tmp, CmpRow)
+    table.sort(tmp, CmpRow)
   end
   return tmp
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R2 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render.GetGridSizeAndCenterPos = function(self, gridEntityList, dir)
-  -- function num : 0_29 , upvalues : _ENV, DirType
-  local gridCount = (table.count)(gridEntityList)
+function ClientBattleEnterSystem_Render:GetGridSizeAndCenterPos(gridEntityList, dir)
+  local gridCount = table.count(gridEntityList)
   local numberType = gridCount % 2
   local gridList = self:SortGridList(gridEntityList, dir)
-  local centerIndex = (math.floor)(gridCount / 2)
+  local centerIndex = math.floor(gridCount / 2)
   if numberType == 1 then
     centerIndex = centerIndex + 1
   end
@@ -1006,159 +805,118 @@ ClientBattleEnterSystem_Render.GetGridSizeAndCenterPos = function(self, gridEnti
   if numberType == 0 then
     if dir == DirType.Col then
       centerPos = Vector2(centerPos.x, centerPos.y - 0.5)
-    else
-      if dir == DirType.Row then
-        centerPos = Vector2(centerPos.x - 0.5, centerPos.y)
-      end
+    elseif dir == DirType.Row then
+      centerPos = Vector2(centerPos.x - 0.5, centerPos.y)
     end
   end
   return gridCount, centerPos
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R2 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render.PlayPetFaceAnim = function(self, teamEntity)
-  -- function num : 0_30 , upvalues : _ENV
-  local petEntityList = (teamEntity:Team()):GetTeamPetEntities()
-  for i,petEntity in ipairs(petEntityList) do
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(self._PlayFace, self, petEntity)
+function ClientBattleEnterSystem_Render:PlayPetFaceAnim(teamEntity)
+  local petEntityList = teamEntity:Team():GetTeamPetEntities()
+  for i, petEntity in ipairs(petEntityList) do
+    GameGlobal.TaskManager():CoreGameStartTask(self._PlayFace, self, petEntity)
   end
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R2 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render._PlayFace = function(self, TT, petEntity)
-  -- function num : 0_31 , upvalues : _ENV
+function ClientBattleEnterSystem_Render:_PlayFace(TT, petEntity)
   local duration = 0
   local faceSeq = {}
   local waitTime = 0
   local faceId = GameResourceConst.EnterFaceAnimCfgID
   local isAutoTest = false
-  do
-    if EDITOR then
-      local autoTestMd = (GameGlobal.GetModule)(AutoTestModule)
-      if autoTestMd:IsAutoTest() then
-        isAutoTest = true
-      end
+  if EDITOR then
+    local autoTestMd = GameGlobal.GetModule(AutoTestModule)
+    if autoTestMd:IsAutoTest() then
+      isAutoTest = true
     end
-    if not isAutoTest then
-      local teamEntity = (petEntity:Pet()):GetOwnerTeamEntity()
-      local isTeamLeader = false
-      if teamEntity then
-        isTeamLeader = (teamEntity:Team()):IsTeamLeaderByEntityId(petEntity:GetID())
-      end
-      if isTeamLeader then
-        local petPstID = (petEntity:PetPstID()):GetPstID()
-        local pet = ((GameGlobal.GetModule)(PetModule)):GetPet(petPstID)
-        if pet then
-          local skin_id = pet:GetSkinId()
-          local cfg_pet_skin = (Cfg.cfg_pet_skin)[skin_id]
-          if not cfg_pet_skin then
-            (Log.error)("###[ClientBattleEnterSystem_Render] cfg_pet_skin is nil ! id --> ", skin_id)
-          else
-            if cfg_pet_skin.EnterBattleFaceCfgID then
-              faceId = cfg_pet_skin.EnterBattleFaceCfgID
-            end
-          end
-        end
-      end
+  end
+  if not isAutoTest then
+    local teamEntity = petEntity:Pet():GetOwnerTeamEntity()
+    local isTeamLeader = false
+    if teamEntity then
+      isTeamLeader = teamEntity:Team():IsTeamLeaderByEntityId(petEntity:GetID())
     end
-    do
-      local cfg = (Cfg.cfg_aircraft_pet_face)[faceId]
-      if not cfg then
-        (Log.fatal)("###找不到配置表情配置：", faceId)
-        return 
-      end
-      local preTime = 0
-      preTime = preTime + waitTime
-      if cfg.FaceSeq then
-        for i,value in ipairs(cfg.FaceSeq) do
-          local face = {}
-          face.frame = value[1]
-          local time = value[2]
-          face.time = preTime + time
-          preTime = preTime + time
-          duration = duration + time
-          faceSeq[#faceSeq + 1] = face
-        end
-      end
-      do
-        local timeService = (self._world):GetService("Time")
-        waitTime = duration + (duration)
-        local runTime = 0
-        local faceIdx = 1
-        local mat = self:GetPetFaceMat(petEntity)
-        while 1 do
-          if runTime < duration then
-            do
-              if faceIdx <= #faceSeq then
-                local nowFace = faceSeq[faceIdx]
-                if nowFace.time < runTime then
-                  faceIdx = faceIdx + 1
-                  if mat and faceIdx <= #faceSeq then
-                    nowFace = faceSeq[faceIdx]
-                    mat:SetInt("_Frame", nowFace.frame)
-                  end
-                end
-              end
-              do
-                local deltaTimeMS = timeService:GetDeltaTimeMs()
-                runTime = deltaTimeMS + runTime
-                YIELD(TT)
-                -- DECOMPILER ERROR at PC135: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC135: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC135: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
-          end
+    if isTeamLeader then
+      local petPstID = petEntity:PetPstID():GetPstID()
+      local pet = GameGlobal.GetModule(PetModule):GetPet(petPstID)
+      if pet then
+        local skin_id = pet:GetSkinId()
+        local cfg_pet_skin = Cfg.cfg_pet_skin[skin_id]
+        if not cfg_pet_skin then
+          Log.error("###[ClientBattleEnterSystem_Render] cfg_pet_skin is nil ! id --> ", skin_id)
+        elseif cfg_pet_skin.EnterBattleFaceCfgID then
+          faceId = cfg_pet_skin.EnterBattleFaceCfgID
         end
       end
     end
   end
+  local cfg = Cfg.cfg_aircraft_pet_face[faceId]
+  if not cfg then
+    Log.fatal("###找不到配置表情配置：", faceId)
+    return
+  end
+  local preTime = 0
+  preTime = preTime + waitTime
+  if cfg.FaceSeq then
+    for i, value in ipairs(cfg.FaceSeq) do
+      local face = {}
+      face.frame = value[1]
+      local time = value[2]
+      face.time = preTime + time
+      preTime = preTime + time
+      duration = duration + time
+      faceSeq[#faceSeq + 1] = face
+    end
+  end
+  local timeService = self._world:GetService("Time")
+  waitTime = duration + duration
+  local runTime = 0
+  local faceIdx = 1
+  local mat = self:GetPetFaceMat(petEntity)
+  while duration > runTime do
+    if faceIdx <= #faceSeq then
+      local nowFace = faceSeq[faceIdx]
+      if runTime > nowFace.time then
+        faceIdx = faceIdx + 1
+        if mat and faceIdx <= #faceSeq then
+          nowFace = faceSeq[faceIdx]
+          mat:SetInt("_Frame", nowFace.frame)
+        end
+      end
+    end
+    local deltaTimeMS = timeService:GetDeltaTimeMs()
+    runTime = deltaTimeMS + runTime
+    YIELD(TT)
+  end
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R2 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render.GetPetFaceMat = function(self, petEntity)
-  -- function num : 0_32 , upvalues : _ENV
+function ClientBattleEnterSystem_Render:GetPetFaceMat(petEntity)
   local viewComponent = petEntity:View()
   local petGo = viewComponent:GetGameObject()
-  local resID = ((petEntity:PetPstID()):GetResID())
-  local faceMat = nil
+  local resID = petEntity:PetPstID():GetResID()
+  local faceMat
   local face_name = resID .. "_face"
-  local face = (GameObjectHelper.FindChild)(petGo.transform, face_name)
-  do
-    if face then
-      local render = (face.gameObject):GetComponent(typeof(UnityEngine.SkinnedMeshRenderer))
-      if not render then
-        (Log.fatal)("面部表情节点上找不到SkinnedMeshRenderer：", face_name)
-      else
-        faceMat = render.material
-      end
+  local face = GameObjectHelper.FindChild(petGo.transform, face_name)
+  if face then
+    local render = face.gameObject:GetComponent(typeof(UnityEngine.SkinnedMeshRenderer))
+    if not render then
+      Log.fatal("面部表情节点上找不到SkinnedMeshRenderer：", face_name)
+    else
+      faceMat = render.material
     end
-    return faceMat
   end
+  return faceMat
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R2 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render._DoRenderAssembleFeature = function(self, TT)
-  -- function num : 0_33
-  local featureRender = (self._world):GetService("FeatureRender")
+function ClientBattleEnterSystem_Render:_DoRenderAssembleFeature(TT)
+  local featureRender = self._world:GetService("FeatureRender")
   if featureRender then
     featureRender:OnBattleEnter(TT)
   end
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R2 in 'UnsetPending'
-
-ClientBattleEnterSystem_Render._DoRenderInitAutoBead = function(self, TT)
-  -- function num : 0_34
-  local autoBeadServiceRender = (self._world):GetService("AutoBeadRender")
+function ClientBattleEnterSystem_Render:_DoRenderInitAutoBead(TT)
+  local autoBeadServiceRender = self._world:GetService("AutoBeadRender")
   autoBeadServiceRender:InitAutoBead()
 end
-
-

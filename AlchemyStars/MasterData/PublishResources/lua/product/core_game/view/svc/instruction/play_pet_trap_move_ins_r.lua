@@ -1,31 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_pet_trap_move_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayPetTrapMoveInstruction", BaseInstruction)
 PlayPetTrapMoveInstruction = PlayPetTrapMoveInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayPetTrapMoveInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayPetTrapMoveInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPetTrapMoveInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayPetTrapMoveInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.PetTrapMove)
-  if not resultArray or (table.count)(resultArray) == 0 then
-    return 
+  if not resultArray or table.count(resultArray) == 0 then
+    return
   end
   local trapServiceRender = world:GetService("TrapRender")
   local playBuffService = world:GetService("PlayBuff")
   local sPlaySkillInstruction = world:GetService("PlaySkillInstruction")
-  for _,result in ipairs(resultArray) do
+  for _, result in ipairs(resultArray) do
     local posOld = result:GetPosOld()
     local posNew = result:GetPosNew()
     local dirNew = result:GetDirNew()
@@ -39,7 +29,7 @@ PlayPetTrapMoveInstruction.DoInstruction = function(self, TT, casterEntity, phas
     casterEntity:SetLocation(posNew, dirNew)
     local trapIDList = result:GetTriggerTrapIDList()
     local trapEntityList = {}
-    for _,trapID in ipairs(trapIDList) do
+    for _, trapID in ipairs(trapIDList) do
       local trapEntity = world:GetEntityByID(trapID)
       trapEntityList[#trapEntityList + 1] = trapEntity
     end
@@ -47,5 +37,3 @@ PlayPetTrapMoveInstruction.DoInstruction = function(self, TT, casterEntity, phas
     playBuffService:PlayBuffView(TT, NTTeleport:New(casterEntity, posOld, posNew))
   end
 end
-
-

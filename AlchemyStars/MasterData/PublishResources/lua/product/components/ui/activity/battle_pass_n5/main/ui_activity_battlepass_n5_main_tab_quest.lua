@@ -1,207 +1,148 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_n5/main/ui_activity_battlepass_n5_main_tab_quest.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBattlePassN5MainTabQuest", UICustomWidget)
 UIActivityBattlePassN5MainTabQuest = UIActivityBattlePassN5MainTabQuest
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBattlePassN5MainTabQuest._GetLVRewardComponent = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityBattlePassN5MainTabQuest:_GetLVRewardComponent()
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD
-  return (self._campaign):GetComponent(cmptId)
+  return self._campaign:GetComponent(cmptId)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._GetLVRewardComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityBattlePassN5MainTabQuest:_GetLVRewardComponentInfo()
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD
-  return (self._campaign):GetComponentInfo(cmptId)
+  return self._campaign:GetComponentInfo(cmptId)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._GetQuestComponentId = function(self, id)
-  -- function num : 0_2 , upvalues : _ENV
-  local id2cmptId = {ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3}
+function UIActivityBattlePassN5MainTabQuest:_GetQuestComponentId(id)
+  local id2cmptId = {
+    ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1,
+    ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2,
+    ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3
+  }
   return id2cmptId[id]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._GetQuestComponent = function(self, id)
-  -- function num : 0_3
+function UIActivityBattlePassN5MainTabQuest:_GetQuestComponent(id)
   local cmptId = self:_GetQuestComponentId(id)
-  return (self._campaign):GetComponent(cmptId)
+  return self._campaign:GetComponent(cmptId)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._GetQuestComponentInfo = function(self, id)
-  -- function num : 0_4
+function UIActivityBattlePassN5MainTabQuest:_GetQuestComponentInfo(id)
   local cmptId = self:_GetQuestComponentId(id)
-  return (self._campaign):GetComponentInfo(cmptId)
+  return self._campaign:GetComponentInfo(cmptId)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._GetComponents = function(self)
-  -- function num : 0_5
+function UIActivityBattlePassN5MainTabQuest:_GetComponents()
   self._bottomObj = self:GetGameObject("bottom")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest.SetData = function(self, campaign)
-  -- function num : 0_6
+function UIActivityBattlePassN5MainTabQuest:SetData(campaign)
   self._campaign = campaign
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest.OnShow = function(self, uiParams)
-  -- function num : 0_7
+function UIActivityBattlePassN5MainTabQuest:OnShow(uiParams)
   self._isFirst = true
   self._isOpen = true
   self._canGetTb = {}
   self._index = 1
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest.OnHide = function(self)
-  -- function num : 0_8
+function UIActivityBattlePassN5MainTabQuest:OnHide()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._ReLoadData = function(self, TT, res)
-  -- function num : 0_9
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+function UIActivityBattlePassN5MainTabQuest:_ReLoadData(TT, res)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   self:_SetQuestGroup()
   self:_SetDynamicList(false, false)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._Refresh = function(self, resetPos, upgrade, anim_PlayIn, anim_ListItem)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityBattlePassN5MainTabQuest:_Refresh(resetPos, upgrade, anim_PlayIn, anim_ListItem)
   if self._isOpen then
-    (table.clear)(self._canGetTb)
+    table.clear(self._canGetTb)
     self:_CheckQuestDailyReset()
-    if upgrade ~= 2 then
-      self:_SetExpInfo(not upgrade or upgrade == 0)
-      self:_SetQuestGroup()
-      self:_SetDynamicList(resetPos, anim_ListItem)
-      if #self._canGetTb <= 0 then
-        (self._bottomObj):SetActive(false)
-      else
-        (self._bottomObj):SetActive(true)
-      end
-      if anim_PlayIn then
-        self:_PlayAnimIn()
-      end
-      -- DECOMPILER ERROR: 5 unprocessed JMP targets
+    if upgrade and upgrade ~= 0 then
+      self:_SetExpInfo(upgrade == 2)
+    end
+    self:_SetQuestGroup()
+    self:_SetDynamicList(resetPos, anim_ListItem)
+    if #self._canGetTb <= 0 then
+      self._bottomObj:SetActive(false)
+    else
+      self._bottomObj:SetActive(true)
+    end
+    if anim_PlayIn then
+      self:_PlayAnimIn()
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._SetExpInfo = function(self, upgrade)
-  -- function num : 0_11
+function UIActivityBattlePassN5MainTabQuest:_SetExpInfo(upgrade)
   local componentInfo = self:_GetLVRewardComponentInfo()
   local expInfoPool = self:GetUIComponent("UISelectObjectPath", "expInfoPool")
   self._expInfoPool = expInfoPool:SpawnObject("UIActivityBattlePassN5ExpInfo")
-  ;
-  (self._expInfoPool):SetData(self._campaign, componentInfo, upgrade)
+  self._expInfoPool:SetData(self._campaign, componentInfo, upgrade)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._CheckLvMax = function(self)
-  -- function num : 0_12
+function UIActivityBattlePassN5MainTabQuest:_CheckLvMax()
   local component = self:_GetLVRewardComponent()
   return component:CheckIsLevelMax()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._CheckQuestDailyReset = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+function UIActivityBattlePassN5MainTabQuest:_CheckQuestDailyReset()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local component = self:_GetQuestComponent(1)
   if not component then
-    (Log.inof)("UIActivityBattlePassN5MainTabQuest:_CheckQuestDailyReset() component == nil")
-    return 
+    Log.inof("UIActivityBattlePassN5MainTabQuest:_CheckQuestDailyReset() component == nil")
+    return
   end
   local nextTime = component:GetEarliestEndTimeInDailyQuest()
   local stamp = nextTime - curTime
-  if stamp >= 0 then
-    return 
+  if 0 <= stamp then
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_13_0 , upvalues : _ENV, component, self
     local res = AsyncRequestRes:New()
     component:HandleCamQuestDailyReset(TT, res)
     if res:GetSucc() then
       self:_ReLoadData(TT, res)
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._SetQuestGroup = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityBattlePassN5MainTabQuest:_SetQuestGroup()
   self._groupBtnInfoList = {}
   for i = 1, 3 do
     local component = self:_GetQuestComponent(i)
     local info = self:_GetQuestComponentInfo(i)
     if component and info then
-      (table.insert)(self._groupBtnInfoList, self:_GetQuestComponentId(i))
+      table.insert(self._groupBtnInfoList, self:_GetQuestComponentId(i))
     end
   end
-  self._QuestCount = (table.count)(self._groupBtnInfoList)
+  self._QuestCount = table.count(self._groupBtnInfoList)
   local sop = self:GetUIComponent("UISelectObjectPath", "questGroup")
   sop:SpawnObjects("UIActivityBattlePassN5QuestGroupBtn", self._QuestCount)
   self._groupBtnList = sop:GetAllSpawnList()
-  for i,v in ipairs(self._groupBtnList) do
-    v:SetData(i, self._QuestCount, self._campaign, (self._groupBtnInfoList)[i], function(index)
-    -- function num : 0_14_0 , upvalues : self
-    self:OnGroupBtnClick(index)
-  end
-)
+  for i, v in ipairs(self._groupBtnList) do
+    v:SetData(i, self._QuestCount, self._campaign, self._groupBtnInfoList[i], function(index)
+      self:OnGroupBtnClick(index)
+    end)
     v:SetSelected(i == self._index)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest.OnGroupBtnClick = function(self, index)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityBattlePassN5MainTabQuest:OnGroupBtnClick(index)
   self._index = index
   self:_Refresh(true, 0, false, true)
-  for i,v in ipairs(self._groupBtnList) do
+  for i, v in ipairs(self._groupBtnList) do
     v:SetSelected(index == i)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._FlushQuestItems = function(self, anim)
-  -- function num : 0_16 , upvalues : _ENV
-  local showTab = (self._dynamicList):GetVisibleItemIDsInScrollView()
+function UIActivityBattlePassN5MainTabQuest:_FlushQuestItems(anim)
+  local showTab = self._dynamicList:GetVisibleItemIDsInScrollView()
   for index = 0, showTab.Count - 1 do
-    local id = (math.floor)(showTab[index])
-    local item = (self._dynamicList):GetShownItemByItemIndex(id)
+    local id = math.floor(showTab[index])
+    local item = self._dynamicList:GetShownItemByItemIndex(id)
     local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
     local rowList = rowPool:GetAllSpawnList()
     for i = 1, self._itemCountPerRow do
@@ -214,57 +155,40 @@ UIActivityBattlePassN5MainTabQuest._FlushQuestItems = function(self, anim)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._SetDynamicListData = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local component = (self._campaign):GetComponent((self._groupBtnInfoList)[self._index])
+function UIActivityBattlePassN5MainTabQuest:_SetDynamicListData()
+  local component = self._campaign:GetComponent(self._groupBtnInfoList[self._index])
   self._dynamicListInfo = component:GetQuestInfo()
   self._questStatus = component:GetCampaignQuestStatus(self._dynamicListInfo)
   component:SortQuestInfoByCampaignQuestStatus(self._dynamicListInfo)
-  self._dynamicListSize = (table.count)(self._dynamicListInfo)
+  self._dynamicListSize = table.count(self._dynamicListInfo)
   self._itemCountPerRow = 1
-  self._dynamicListRowSize = (math.floor)((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
+  self._dynamicListRowSize = math.floor((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._SetDynamicList = function(self, resetPos, anim_ListItem)
-  -- function num : 0_18
+function UIActivityBattlePassN5MainTabQuest:_SetDynamicList(resetPos, anim_ListItem)
   self:_SetDynamicListData()
   if not self._isDynamicInited then
     self._isDynamicInited = true
     self._dynamicList = self:GetUIComponent("UIDynamicScrollView", "dynamicList")
-    ;
-    (self._dynamicList):InitListView(self._dynamicListRowSize, function(scrollView, index)
-    -- function num : 0_18_0 , upvalues : self
-    return self:_SpawnListItem(scrollView, index)
-  end
-)
+    self._dynamicList:InitListView(self._dynamicListRowSize, function(scrollView, index)
+      return self:_SpawnListItem(scrollView, index)
+    end)
   else
     self:_RefreshList(self._dynamicListRowSize, self._dynamicList, resetPos)
   end
   self:_FlushQuestItems(anim_ListItem)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._RefreshList = function(self, count, list, resetPos)
-  -- function num : 0_19
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UIActivityBattlePassN5MainTabQuest:_RefreshList(count, list, resetPos)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(count)
   list:MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R5 in 'UnsetPending'
-
   if not resetPos then
-    ((list.ScrollRect).content).localPosition = contentPos
+    list.ScrollRect.content.localPosition = contentPos
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._SpawnListItem = function(self, scrollView, index)
-  -- function num : 0_20
+function UIActivityBattlePassN5MainTabQuest:_SpawnListItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -278,169 +202,124 @@ UIActivityBattlePassN5MainTabQuest._SpawnListItem = function(self, scrollView, i
   for i = 1, self._itemCountPerRow do
     local listItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._dynamicListSize < itemIndex then
-      (listItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._dynamicListSize then
+      listItem:GetGameObject():SetActive(false)
     else
-      ;
-      (listItem:GetGameObject()):SetActive(true)
+      listItem:GetGameObject():SetActive(true)
       self:_SetListItemData(listItem, itemIndex)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._SetListItemData = function(self, listItem, index)
-  -- function num : 0_21 , upvalues : _ENV
-  local componentInfo = (self._campaign):GetComponentInfo((self._groupBtnInfoList)[self._index])
-  local quest = (self._dynamicListInfo)[index]
-  local status = (self._questStatus)[quest]
+function UIActivityBattlePassN5MainTabQuest:_SetListItemData(listItem, index)
+  local componentInfo = self._campaign:GetComponentInfo(self._groupBtnInfoList[self._index])
+  local quest = self._dynamicListInfo[index]
+  local status = self._questStatus[quest]
   local questInfo = quest:QuestInfo()
   if questInfo.status == QuestStatus.QUEST_Completed then
-    (table.insert)(self._canGetTb, questInfo)
+    table.insert(self._canGetTb, questInfo)
   end
-  ;
-  (listItem:GetGameObject()):SetActive(true)
+  listItem:GetGameObject():SetActive(true)
   if quest ~= nil then
     listItem:SetData(index, self._campaign, quest, status, componentInfo, function(questInfo)
-    -- function num : 0_21_0 , upvalues : self
-    self:ListItemOnClick(questInfo)
-  end
-, function(matid, pos)
-    -- function num : 0_21_1 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityQuestAwardItemClick, matid, pos)
-  end
-)
+      self:ListItemOnClick(questInfo)
+    end, function(matid, pos)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityQuestAwardItemClick, matid, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest.ListItemOnClick = function(self, questInfo)
-  -- function num : 0_22 , upvalues : _ENV
+function UIActivityBattlePassN5MainTabQuest:ListItemOnClick(questInfo)
   if questInfo.status <= QuestStatus.QUEST_Accepted then
-    local jumpModule = (self._questModule).uiModule
+    local jumpModule = self._questModule.uiModule
     if jumpModule == nil then
-      (Log.fatal)("[quest] error --> uiModule is nil ! --> jumpModule")
-      return 
+      Log.fatal("[quest] error --> uiModule is nil ! --> jumpModule")
+      return
     end
     local fromParam = {}
-    ;
-    (table.insert)(fromParam, QuestType.QT_Daily)
+    table.insert(fromParam, QuestType.QT_Daily)
     jumpModule:SetFromUIData(FromUIType.NormalUI, "UIQuestController", UIStateType.UIMain, fromParam)
     local jumpType = questInfo.JumpID
     local jumpParams = questInfo.JumpParam
     jumpModule:SetJumpUIData(jumpType, jumpParams)
     jumpModule:Jump()
-  else
-    do
-      if questInfo.status == QuestStatus.QUEST_Completed then
-        self:_GetListItemReward(questInfo.quest_id)
-      end
-    end
+  elseif questInfo.status == QuestStatus.QUEST_Completed then
+    self:_GetListItemReward(questInfo.quest_id)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._GetListItemReward = function(self, id)
-  -- function num : 0_23 , upvalues : _ENV
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
+function UIActivityBattlePassN5MainTabQuest:_GetListItemReward(id)
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
   self:Lock("UIActivityBattlePassN5MainTabQuest:_GetListItemRewardReq")
   self:StartTask(self._GetListItemRewardReq, self, id)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._GetListItemRewardReq = function(self, TT, id)
-  -- function num : 0_24 , upvalues : _ENV
-  local component = (self._campaign):GetComponent((self._groupBtnInfoList)[self._index])
+function UIActivityBattlePassN5MainTabQuest:_GetListItemRewardReq(TT, id)
+  local component = self._campaign:GetComponent(self._groupBtnInfoList[self._index])
   if component then
     local res = AsyncRequestRes:New()
     local ret, rewards = component:HandleQuestTake(TT, res, id)
     self:UnLock("UIActivityBattlePassN5MainTabQuest:_GetListItemRewardReq")
     if self.view == nil then
-      return 
+      return
     end
     if res:GetSucc() then
       if self:_CheckLvMax() then
-        (ToastManager.ShowToast)((StringTable.Get)("str_activity_battlepass_buy_deluxe_notify_maxlv"))
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
+        ToastManager.ShowToast(StringTable.Get("str_activity_battlepass_buy_deluxe_notify_maxlv"))
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
       else
-        ;
-        (UIActivityHelper.ShowUIGetRewards)(rewards)
+        UIActivityHelper.ShowUIGetRewards(rewards)
       end
     else
-      local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-      campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, function()
-    -- function num : 0_24_0 , upvalues : self
-    self:_Refresh(true, 0, true)
-  end
-, function()
-    -- function num : 0_24_1 , upvalues : self, _ENV
-    self:SwitchState(UIStateType.UIMain)
-  end
-)
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      campaignModule:CheckErrorCode(res.m_result, self._campaign._id, function()
+        self:_Refresh(true, 0, true)
+      end, function()
+        self:SwitchState(UIStateType.UIMain)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._PlayAnimIn = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIActivityBattlePassN5MainTabQuest:_PlayAnimIn()
   self.anim = self:GetUIComponent("Animation", "animation")
   self:StartTask(function(TT)
-    -- function num : 0_25_0 , upvalues : self, _ENV
     local lockName = self:GetName() .. "_PlayAnimIn()"
     self:Lock(lockName)
-    ;
-    (self.anim):Play("UIeff_UIActivityBattlePassN5MainTabQuest_in")
+    self.anim:Play("UIeff_UIActivityBattlePassN5MainTabQuest_in")
     YIELD(TT, 500)
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._PlayAnimOut = function(self, callback)
-  -- function num : 0_26
+function UIActivityBattlePassN5MainTabQuest:_PlayAnimOut(callback)
   if callback then
     callback()
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest.AllGetBtnOnClick = function(self)
-  -- function num : 0_27
+function UIActivityBattlePassN5MainTabQuest:AllGetBtnOnClick()
   self:Lock("UIActivityBattlePassN5MainTabQuest:_GetListItemRewardReq")
   self:StartTask(self._CheckGetAllReward, self)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainTabQuest._CheckGetAllReward = function(self, TT)
-  -- function num : 0_28 , upvalues : _ENV
-  local component = (self._campaign):GetComponent((self._groupBtnInfoList)[self._index])
+function UIActivityBattlePassN5MainTabQuest:_CheckGetAllReward(TT)
+  local component = self._campaign:GetComponent(self._groupBtnInfoList[self._index])
   if component then
     local res = AsyncRequestRes:New()
     local ret, rewards = component:HandleOneKeyTakeQuest(TT, res)
     if self.view == nil then
-      return 
+      return
     end
     if res:GetSucc() then
       if self:_CheckLvMax() then
-        (ToastManager.ShowToast)((StringTable.Get)("str_activity_battlepass_buy_deluxe_notify_maxlv"))
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
+        ToastManager.ShowToast(StringTable.Get("str_activity_battlepass_buy_deluxe_notify_maxlv"))
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
       else
         local tmpRewards = {}
         local tmpTb = {}
-        for i,reward in pairs(rewards) do
+        for i, reward in pairs(rewards) do
           local id = reward.assetid
           if tmpTb[id] then
             tmpTb[id] = tmpTb[id] + reward.count
@@ -448,36 +327,23 @@ UIActivityBattlePassN5MainTabQuest._CheckGetAllReward = function(self, TT)
             tmpTb[id] = reward.count
           end
         end
-        for i,v in pairs(tmpTb) do
+        for i, v in pairs(tmpTb) do
           local roleAsset = RoleAsset:New()
           roleAsset.assetid = i
           roleAsset.count = v
-          ;
-          (table.insert)(tmpRewards, roleAsset)
+          table.insert(tmpRewards, roleAsset)
         end
-        ;
-        (UIActivityHelper.ShowUIGetRewards)(tmpRewards)
+        UIActivityHelper.ShowUIGetRewards(tmpRewards)
       end
     else
-      do
-        do
-          local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-          campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, function()
-    -- function num : 0_28_0 , upvalues : self
-    self:_Refresh(true, 0, true)
-  end
-, function()
-    -- function num : 0_28_1 , upvalues : self, _ENV
-    self:SwitchState(UIStateType.UIMain)
-  end
-)
-          ;
-          (table.clear)(self._canGetTb)
-          self:UnLock("UIActivityBattlePassN5MainTabQuest:_GetListItemRewardReq")
-        end
-      end
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      campaignModule:CheckErrorCode(res.m_result, self._campaign._id, function()
+        self:_Refresh(true, 0, true)
+      end, function()
+        self:SwitchState(UIStateType.UIMain)
+      end)
     end
+    table.clear(self._canGetTb)
+    self:UnLock("UIActivityBattlePassN5MainTabQuest:_GetListItemRewardReq")
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/effect/effect_holder_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("EffectHolderComponent", Object)
 EffectHolderComponent = EffectHolderComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-EffectHolderComponent.Constructor = function(self)
-  -- function num : 0_0
+function EffectHolderComponent:Constructor()
   self._permanentEffectIDList = {}
   self._idleEffectIDList = {}
   self._weakEffectIDList = {}
@@ -21,338 +14,198 @@ EffectHolderComponent.Constructor = function(self)
   self._eliteEffIDDic = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.AddReplacedHolderEffectIDs = function(self, effectID, entityID)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._replacedHolderEffectIDs)[effectID] then
-    (self._replacedHolderEffectIDs)[effectID] = {}
+function EffectHolderComponent:AddReplacedHolderEffectIDs(effectID, entityID)
+  if not self._replacedHolderEffectIDs[effectID] then
+    self._replacedHolderEffectIDs[effectID] = {}
   end
-  ;
-  (table.insert)((self._replacedHolderEffectIDs)[effectID], entityID)
+  table.insert(self._replacedHolderEffectIDs[effectID], entityID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.GetReplacedHolderEffectIDs = function(self, effectID)
-  -- function num : 0_2
-  return (self._replacedHolderEffectIDs)[effectID]
+function EffectHolderComponent:GetReplacedHolderEffectIDs(effectID)
+  return self._replacedHolderEffectIDs[effectID]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.ClearReplacedHolderEffectIDs = function(self, effectID)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._replacedHolderEffectIDs)[effectID] = nil
+function EffectHolderComponent:ClearReplacedHolderEffectIDs(effectID)
+  self._replacedHolderEffectIDs[effectID] = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.AttachPermanentEffect = function(self, effectEntityID)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._permanentEffectIDList)[#self._permanentEffectIDList + 1] = effectEntityID
+function EffectHolderComponent:AttachPermanentEffect(effectEntityID)
+  self._permanentEffectIDList[#self._permanentEffectIDList + 1] = effectEntityID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.AttachChainMovePermanentEffect = function(self, effectEntityID)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._chainMovePermanentEffectIDList)[#self._chainMovePermanentEffectIDList + 1] = effectEntityID
+function EffectHolderComponent:AttachChainMovePermanentEffect(effectEntityID)
+  self._chainMovePermanentEffectIDList[#self._chainMovePermanentEffectIDList + 1] = effectEntityID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.AttachIdleEffect = function(self, effectEntityID)
-  -- function num : 0_6
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._idleEffectIDList)[#self._idleEffectIDList + 1] = effectEntityID
+function EffectHolderComponent:AttachIdleEffect(effectEntityID)
+  self._idleEffectIDList[#self._idleEffectIDList + 1] = effectEntityID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.AttachEffect = function(self, key, effectEntityID)
-  -- function num : 0_7 , upvalues : _ENV
+function EffectHolderComponent:AttachEffect(key, effectEntityID)
   if not self._dictEffectId then
     self._dictEffectId = {}
   end
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._dictEffectId)[key] then
-    (self._dictEffectId)[key] = {}
+  if not self._dictEffectId[key] then
+    self._dictEffectId[key] = {}
   end
-  ;
-  (table.insert)((self._dictEffectId)[key], effectEntityID)
+  table.insert(self._dictEffectId[key], effectEntityID)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.AttachWeakEffect = function(self, effectEntityID)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._weakEffectIDList)[#self._weakEffectIDList + 1] = effectEntityID
+function EffectHolderComponent:AttachWeakEffect(effectEntityID)
+  self._weakEffectIDList[#self._weakEffectIDList + 1] = effectEntityID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.AttachEffectByEffectID = function(self, effectID, effectEntityID)
-  -- function num : 0_9 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._effectIDEntityDic)[effectID] then
-    (self._effectIDEntityDic)[effectID] = {}
+function EffectHolderComponent:AttachEffectByEffectID(effectID, effectEntityID)
+  if not self._effectIDEntityDic[effectID] then
+    self._effectIDEntityDic[effectID] = {}
   end
-  ;
-  (table.insert)((self._effectIDEntityDic)[effectID], effectEntityID)
-  if (table.icontains)(BattleConst.MazeArchivedEffectID, effectID) then
+  table.insert(self._effectIDEntityDic[effectID], effectEntityID)
+  if table.icontains(BattleConst.MazeArchivedEffectID, effectID) then
     self:BindEffectID(effectID, effectEntityID)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.GetIdleEffect = function(self)
-  -- function num : 0_10
+function EffectHolderComponent:GetIdleEffect()
   return self._idleEffectIDList
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.GetEffectList = function(self, key)
-  -- function num : 0_11
+function EffectHolderComponent:GetEffectList(key)
   if self._dictEffectId then
-    return (self._dictEffectId)[key]
+    return self._dictEffectId[key]
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.ClearEffectList = function(self, key)
-  -- function num : 0_12
-  if not self._dictEffectId or not (self._dictEffectId)[key] then
-    return 
+function EffectHolderComponent:ClearEffectList(key)
+  if not self._dictEffectId or not self._dictEffectId[key] then
+    return
   end
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._dictEffectId)[key] = nil
+  self._dictEffectId[key] = nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.GetDictEffectId = function(self)
-  -- function num : 0_13
+function EffectHolderComponent:GetDictEffectId()
   return self._dictEffectId
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.GetWeakEffect = function(self)
-  -- function num : 0_14
+function EffectHolderComponent:GetWeakEffect()
   return self._weakEffectIDList
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.GetPermanentEffect = function(self)
-  -- function num : 0_15
+function EffectHolderComponent:GetPermanentEffect()
   return self._permanentEffectIDList
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.GetChainMovePermanentEffect = function(self)
-  -- function num : 0_16
+function EffectHolderComponent:GetChainMovePermanentEffect()
   return self._chainMovePermanentEffectIDList
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.GetEffectIDEntityDic = function(self)
-  -- function num : 0_17
+function EffectHolderComponent:GetEffectIDEntityDic()
   return self._effectIDEntityDic
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.GetEffectEntityIDByEffectID = function(self, effectID)
-  -- function num : 0_18
-  return (self._effectIDEntityDic)[effectID]
+function EffectHolderComponent:GetEffectEntityIDByEffectID(effectID)
+  return self._effectIDEntityDic[effectID]
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.PostRemoved = function(self)
-  -- function num : 0_19
+function EffectHolderComponent:PostRemoved()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.BindEffectID = function(self, effectID, effectEntityID)
-  -- function num : 0_20 , upvalues : _ENV
-  (table.insert)(self._bindEffectId, {effectID, effectEntityID})
+function EffectHolderComponent:BindEffectID(effectID, effectEntityID)
+  table.insert(self._bindEffectId, {effectID, effectEntityID})
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.GetBindEffectID = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function EffectHolderComponent:GetBindEffectID()
   local ret = {}
-  for i,v in ipairs(self._bindEffectId) do
-    if ((self._entity)._world):GetEntityByID(v[2]) and not (table.icontains)(ret, v[1]) then
+  for i, v in ipairs(self._bindEffectId) do
+    if self._entity._world:GetEntityByID(v[2]) and not table.icontains(ret, v[1]) then
       ret[#ret + 1] = v[1]
     end
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.GetBindEffectIDArray = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function EffectHolderComponent:GetBindEffectIDArray()
   local ret = {}
-  for _,v in ipairs(self._bindEffectId) do
-    (table.insert)(ret, v[2])
+  for _, v in ipairs(self._bindEffectId) do
+    table.insert(ret, v[2])
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.AttachAudioID = function(self, audioID, playingID)
-  -- function num : 0_23 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._audio2PlayID)[audioID] then
-    (self._audio2PlayID)[audioID] = {}
+function EffectHolderComponent:AttachAudioID(audioID, playingID)
+  if not self._audio2PlayID[audioID] then
+    self._audio2PlayID[audioID] = {}
   end
-  ;
-  (table.insert)((self._audio2PlayID)[audioID], playingID)
+  table.insert(self._audio2PlayID[audioID], playingID)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.GetAudioPlayingID = function(self, audioID)
-  -- function num : 0_24
-  if not (self._audio2PlayID)[audioID] then
+function EffectHolderComponent:GetAudioPlayingID(audioID)
+  if not self._audio2PlayID[audioID] then
     return {}
   end
-  return (self._audio2PlayID)[audioID]
+  return self._audio2PlayID[audioID]
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.ClearAudioID = function(self, audioID)
-  -- function num : 0_25
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._audio2PlayID)[audioID] = {}
+function EffectHolderComponent:ClearAudioID(audioID)
+  self._audio2PlayID[audioID] = {}
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.ClearEffectByEffectID = function(self, effectID)
-  -- function num : 0_26
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._effectIDEntityDic)[effectID] then
-    (self._effectIDEntityDic)[effectID] = {}
+function EffectHolderComponent:ClearEffectByEffectID(effectID)
+  if self._effectIDEntityDic[effectID] then
+    self._effectIDEntityDic[effectID] = {}
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.ClearIdleEffectList = function(self)
-  -- function num : 0_27
+function EffectHolderComponent:ClearIdleEffectList()
   self._idleEffectIDList = {}
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.ClearWeakEffectList = function(self)
-  -- function num : 0_28
+function EffectHolderComponent:ClearWeakEffectList()
   self._weakEffectIDList = {}
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.ClearEffectIDEntityDic = function(self)
-  -- function num : 0_29
+function EffectHolderComponent:ClearEffectIDEntityDic()
   self._effectIDEntityDic = {}
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.ClearDictEffectID = function(self)
-  -- function num : 0_30
+function EffectHolderComponent:ClearDictEffectID()
   self._dictEffectId = {}
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.ClearBindEffectID = function(self)
-  -- function num : 0_31
+function EffectHolderComponent:ClearBindEffectID()
   self._bindEffectId = {}
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.ClearChainMovePermanentEffectIDListAfterDestroy = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function EffectHolderComponent:ClearChainMovePermanentEffectIDListAfterDestroy()
   local permentList = {}
-  for _,effID in ipairs(self._permanentEffectIDList) do
-    if not (table.icontains)(self._chainMovePermanentEffectIDList, effID) then
-      (table.insert)(permentList, effID)
+  for _, effID in ipairs(self._permanentEffectIDList) do
+    if not table.icontains(self._chainMovePermanentEffectIDList, effID) then
+      table.insert(permentList, effID)
     end
   end
   self._permanentEffectIDList = permentList
   self._chainMovePermanentEffectIDList = {}
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.AddEliteEffID = function(self, effectID, entityID)
-  -- function num : 0_33
-  if (self._eliteEffIDDic)[effectID] then
-    return 
+function EffectHolderComponent:AddEliteEffID(effectID, entityID)
+  if self._eliteEffIDDic[effectID] then
+    return
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._eliteEffIDDic)[effectID] = entityID
+  self._eliteEffIDDic[effectID] = entityID
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.GetEliteEffEntityID = function(self, effectID)
-  -- function num : 0_34
-  return (self._eliteEffIDDic)[effectID]
+function EffectHolderComponent:GetEliteEffEntityID(effectID)
+  return self._eliteEffIDDic[effectID]
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.GetEliteEffIDDic = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  return (table.cloneconf)(self._eliteEffIDDic)
+function EffectHolderComponent:GetEliteEffIDDic()
+  return table.cloneconf(self._eliteEffIDDic)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectHolderComponent.DeleteEliteEffIDDic = function(self, needDelEffIDList)
-  -- function num : 0_36 , upvalues : _ENV
+function EffectHolderComponent:DeleteEliteEffIDDic(needDelEffIDList)
   local eliteDic = {}
-  for effID,entityID in pairs(self._eliteEffIDDic) do
-    if (table.icontains)(needDelEffIDList, effID) then
-      (table.removev)(self._permanentEffectIDList, entityID)
+  for effID, entityID in pairs(self._eliteEffIDDic) do
+    if table.icontains(needDelEffIDList, effID) then
+      table.removev(self._permanentEffectIDList, entityID)
     else
       eliteDic[effID] = entityID
     end
@@ -360,51 +213,31 @@ EffectHolderComponent.DeleteEliteEffIDDic = function(self, needDelEffIDList)
   self._eliteEffIDDic = eliteDic
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.EffectHolder = function(self)
-  -- function num : 0_37
-  return self:GetComponent((self.WEComponentsEnum).EffectHolder)
+function Entity:EffectHolder()
+  return self:GetComponent(self.WEComponentsEnum.EffectHolder)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasEffectHolder = function(self)
-  -- function num : 0_38
-  return self:HasComponent((self.WEComponentsEnum).EffectHolder)
+function Entity:HasEffectHolder()
+  return self:HasComponent(self.WEComponentsEnum.EffectHolder)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddEffectHolder = function(self)
-  -- function num : 0_39 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).EffectHolder
+function Entity:AddEffectHolder()
+  local index = self.WEComponentsEnum.EffectHolder
   local component = EffectHolderComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.DetachEffect = function(self, effectEntity)
-  -- function num : 0_40
+function Entity:DetachEffect(effectEntity)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceEffectHolder = function(self)
-  -- function num : 0_41 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).EffectHolder
+function Entity:ReplaceEffectHolder()
+  local index = self.WEComponentsEnum.EffectHolder
   local component = EffectHolderComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveEffectHolder = function(self)
-  -- function num : 0_42
+function Entity:RemoveEffectHolder()
   if self:HasEffectHolder() then
-    self:RemoveComponent((self.WEComponentsEnum).EffectHolder)
+    self:RemoveComponent(self.WEComponentsEnum.EffectHolder)
   end
 end
-
-

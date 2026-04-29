@@ -1,67 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/logic_partner_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LogicPartnerComponent", Object)
 LogicPartnerComponent = LogicPartnerComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LogicPartnerComponent.Constructor = function(self)
-  -- function num : 0_0
+function LogicPartnerComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicPartnerComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_1
+function LogicPartnerComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicPartnerComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_2
+function LogicPartnerComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.LogicPartner = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).LogicPartner)
+function Entity:LogicPartner()
+  return self:GetComponent(self.WEComponentsEnum.LogicPartner)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasLogicPartner = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).LogicPartner)
+function Entity:HasLogicPartner()
+  return self:HasComponent(self.WEComponentsEnum.LogicPartner)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddLogicPartner = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LogicPartner
+function Entity:AddLogicPartner()
+  local index = self.WEComponentsEnum.LogicPartner
   local component = LogicPartnerComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceLogicPartner = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LogicPartner
+function Entity:ReplaceLogicPartner()
+  local index = self.WEComponentsEnum.LogicPartner
   local component = LogicPartnerComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveLogicPartner = function(self)
-  -- function num : 0_7
+function Entity:RemoveLogicPartner()
   if self:HasLogicPartner() then
-    self:RemoveComponent((self.WEComponentsEnum).LogicPartner)
+    self:RemoveComponent(self.WEComponentsEnum.LogicPartner)
   end
 end
-
-

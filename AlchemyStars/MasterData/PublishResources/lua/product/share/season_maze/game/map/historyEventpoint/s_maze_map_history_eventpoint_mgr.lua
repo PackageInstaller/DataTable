@@ -1,34 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/map/historyEventpoint/s_maze_map_history_eventpoint_mgr.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SMazeMapHistoryEventpointMgr", Object)
 SMazeMapHistoryEventpointMgr = SMazeMapHistoryEventpointMgr
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeMapHistoryEventpointMgr.Init = function(self, seasonId, root)
-  -- function num : 0_0 , upvalues : _ENV
+function SMazeMapHistoryEventpointMgr:Init(seasonId, root)
   self._historyEventpoints = {}
-  local cfgs = (Cfg.cfg_season_maze_eventpoint_history)({SeasonID = seasonId})
+  local cfgs = Cfg.cfg_season_maze_eventpoint_history({SeasonID = seasonId})
   if cfgs then
-    for k,cfg in pairs(cfgs) do
+    for k, cfg in pairs(cfgs) do
       local p = SMazeMapHistoryEventpoint:New(cfg, root)
-      ;
-      (table.insert)(self._historyEventpoints, p)
+      table.insert(self._historyEventpoints, p)
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapHistoryEventpointMgr.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  for k,p in pairs(self._historyEventpoints) do
+function SMazeMapHistoryEventpointMgr:Dispose()
+  for k, p in pairs(self._historyEventpoints) do
     p:Dispose()
   end
-  ;
-  (table.clear)(self._historyEventpoints)
+  table.clear(self._historyEventpoints)
 end
-
-

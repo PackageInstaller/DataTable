@@ -1,110 +1,77 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/activity_n_plus_six/rebuilding/ui_activity_n_plus_six_building_item_name.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityNPlusSixBuildingItemName", UICustomWidget)
 UIActivityNPlusSixBuildingItemName = UIActivityNPlusSixBuildingItemName
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityNPlusSixBuildingItemName.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityNPlusSixBuildingItemName:OnShow()
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._maskPanel = self:GetUIComponent("RectTransform", "Mask")
   self._go = self:GetGameObject("Go")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingItemName.Refresh = function(self, buildingData)
-  -- function num : 0_1 , upvalues : _ENV
-  local operatorName = {[UIActivityNPlusSixBuildingStatus.CleanUp] = "str_n_plus_six_building_tips_cleanup_operator_name", [UIActivityNPlusSixBuildingStatus.CleanUpComplete] = "str_n_plus_six_building_tips_repair_operator_name", [UIActivityNPlusSixBuildingStatus.RepairComplete] = "str_n_plus_six_building_tips_decorate_operator_name"}
+function UIActivityNPlusSixBuildingItemName:Refresh(buildingData)
+  local operatorName = {
+    [UIActivityNPlusSixBuildingStatus.CleanUp] = "str_n_plus_six_building_tips_cleanup_operator_name",
+    [UIActivityNPlusSixBuildingStatus.CleanUpComplete] = "str_n_plus_six_building_tips_repair_operator_name",
+    [UIActivityNPlusSixBuildingStatus.RepairComplete] = "str_n_plus_six_building_tips_decorate_operator_name"
+  }
   self._buildingData = buildingData
   if not self._buildingData then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
-  if not (self._buildingData):IsShow() then
-    (self._go):SetActive(false)
-    return 
+  if not self._buildingData:IsShow() then
+    self._go:SetActive(false)
+    return
   end
-  ;
-  (self._go):SetActive(true)
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._go).transform).anchoredPosition = (self._buildingData):GetWidgetPos()
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._maskPanel).anchoredPosition = (self._buildingData):GetWidgetDesPos()
-  local status = (self._buildingData):GetStatusType()
-  if (self._buildingData):CanBuild() == false or (self._buildingData):IsUnLock() == false or (self._buildingData):IsNextStatusUnLock() == false then
-    (self._go):SetActive(false)
+  self._go:SetActive(true)
+  self._go.transform.anchoredPosition = self._buildingData:GetWidgetPos()
+  self._maskPanel.anchoredPosition = self._buildingData:GetWidgetDesPos()
+  local status = self._buildingData:GetStatusType()
+  if self._buildingData:CanBuild() == false or self._buildingData:IsUnLock() == false or self._buildingData:IsNextStatusUnLock() == false then
+    self._go:SetActive(false)
   else
-    ;
-    (self._go):SetActive(true)
+    self._go:SetActive(true)
     local str = operatorName[status]
-    -- DECOMPILER ERROR at PC82: Confused about usage of register: R5 in 'UnsetPending'
-
     if str then
-      (self._name).text = (StringTable.Get)(str, (self._buildingData):GetName())
+      self._name.text = StringTable.Get(str, self._buildingData:GetName())
     else
-      ;
-      (self._go):SetActive(false)
+      self._go:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingItemName.UIAreaLimit = function(self, target, area, root)
-  -- function num : 0_2 , upvalues : _ENV
-  local bounds = ((UnityEngine.RectTransformUtility).CalculateRelativeRectTransformBounds)(root, target)
+function UIActivityNPlusSixBuildingItemName:UIAreaLimit(target, area, root)
+  local bounds = UnityEngine.RectTransformUtility.CalculateRelativeRectTransformBounds(root, target)
   local delta = Vector2.zero
-  if (bounds.center).x - (bounds.extents).x < area.x then
-    delta.x = delta.x + (math.abs)((bounds.center).x - (bounds.extents).x - area.x)
-  else
-    if area.width / 2 < (bounds.center).x + (bounds.extents).x then
-      delta.x = delta.x - (math.abs)((bounds.center).x + (bounds.extents).x - area.width / 2)
-    end
+  if bounds.center.x - bounds.extents.x < area.x then
+    delta.x = delta.x + math.abs(bounds.center.x - bounds.extents.x - area.x)
+  elseif bounds.center.x + bounds.extents.x > area.width / 2 then
+    delta.x = delta.x - math.abs(bounds.center.x + bounds.extents.x - area.width / 2)
   end
-  if (bounds.center).y - (bounds.extents).y < area.y then
-    delta.y = delta.y + (math.abs)((bounds.center).y - (bounds.extents).y - area.y)
-  else
-    if area.height / 2 < (bounds.center).y + (bounds.extents).y then
-      delta.y = delta.y - (math.abs)((bounds.center).y + (bounds.extents).y - area.height / 2)
-    end
+  if bounds.center.y - bounds.extents.y < area.y then
+    delta.y = delta.y + math.abs(bounds.center.y - bounds.extents.y - area.y)
+  elseif bounds.center.y + bounds.extents.y > area.height / 2 then
+    delta.y = delta.y - math.abs(bounds.center.y + bounds.extents.y - area.height / 2)
   end
   target.anchoredPosition = target.anchoredPosition + delta
-  do return delta ~= Vector2.zero end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return delta ~= Vector2.zero
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingItemName.NamePanelOnClick = function(self)
-  -- function num : 0_3
+function UIActivityNPlusSixBuildingItemName:NamePanelOnClick()
   self:Click()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingItemName.Click = function(self)
-  -- function num : 0_4
+function UIActivityNPlusSixBuildingItemName:Click()
   if not self._buildingData then
-    return 
+    return
   end
-  if not (self._buildingData):CanBuild() then
-    return 
+  if not self._buildingData:CanBuild() then
+    return
   end
-  if not (self._buildingData):IsUnLock() then
-    return 
+  if not self._buildingData:IsUnLock() then
+    return
   end
-  if not (self._buildingData):IsNextStatusUnLock() then
-    return 
+  if not self._buildingData:IsNextStatusUnLock() then
+    return
   end
   self:ShowDialog("UIActivityNPlusSixBuildingTipsController", self._buildingData)
 end
-
-

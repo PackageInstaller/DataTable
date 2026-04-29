@@ -1,39 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_ban_pet_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultBanPetSkill", BuffResultBase)
 BuffResultBanPetSkill = BuffResultBanPetSkill
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultBanPetSkill.Constructor = function(self, banPetSkillList)
-  -- function num : 0_0
+function BuffResultBanPetSkill:Constructor(banPetSkillList)
   self._banPetSkillList = banPetSkillList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultBanPetSkill.GetBanPetSkillList = function(self)
-  -- function num : 0_1
+function BuffResultBanPetSkill:GetBanPetSkillList()
   return self._banPetSkillList
 end
 
 _class("BuffResultRemoveBanPetSkill", BuffResultBase)
 BuffResultRemoveBanPetSkill = BuffResultRemoveBanPetSkill
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultRemoveBanPetSkill.Constructor = function(self, banPetSkillList)
-  -- function num : 0_2
+function BuffResultRemoveBanPetSkill:Constructor(banPetSkillList)
   self._banPetSkillList = banPetSkillList
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveBanPetSkill.GetBanPetSkillList = function(self)
-  -- function num : 0_3
+function BuffResultRemoveBanPetSkill:GetBanPetSkillList()
   return self._banPetSkillList
 end
-
-

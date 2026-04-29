@@ -1,78 +1,259 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/homeland/cfg_homeland_goods.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Type = 2, Num = 3, Odds = 4, TypeIcon = 5, Title = 6, Desc = 7, Item1 = 8, Item2 = 9, Item3 = 10, Extra = 11}
+local key = {
+  ID = 1,
+  Type = 2,
+  Num = 3,
+  Odds = 4,
+  TypeIcon = 5,
+  Title = 6,
+  Desc = 7,
+  Item1 = 8,
+  Item2 = 9,
+  Item3 = 10,
+  Extra = 11
+}
 local common = {
-{5510001}
-, 
-{5510002}
-, 
-{5510003}
-, 
-{5510004}
-, 
-{5510005}
-, 
-{5510006}
-, 
-{5510007}
-, 
-{5510008}
-, 
-{
-{3, 0, 0, 10}
-, 
-{3, 0, 0, 10}
-, 
-{3, 0, 0, 10}
+  {5510001},
+  {5510002},
+  {5510003},
+  {5510004},
+  {5510005},
+  {5510006},
+  {5510007},
+  {5510008},
+  {
+    {
+      3,
+      0,
+      0,
+      10
+    },
+    {
+      3,
+      0,
+      0,
+      10
+    },
+    {
+      3,
+      0,
+      0,
+      10
+    }
+  },
+  {
+    {
+      3,
+      1,
+      1,
+      10
+    },
+    {
+      3,
+      1,
+      1,
+      10
+    },
+    {
+      3,
+      1,
+      1,
+      10
+    }
+  },
+  "n17_shop_icon07",
+  "str_homeland_shop_order_title_1",
+  "str_homeland_shop_order_desc_1",
+  "str_homeland_shop_order_title_7",
+  "str_homeland_shop_order_desc_7"
 }
-, 
-{
-{3, 1, 1, 10}
-, 
-{3, 1, 1, 10}
-, 
-{3, 1, 1, 10}
-}
-, "n17_shop_icon07", "str_homeland_shop_order_title_1", "str_homeland_shop_order_desc_1", "str_homeland_shop_order_title_7", "str_homeland_shop_order_desc_7"}
 local config = {
-{1, 0, common[9], 100, common[11], common[12], common[13], common[1]}
-, 
-{2, 0, common[9], 100, common[11], common[12], common[13], common[2]}
-, 
-{3, 0, common[9], 100, common[11], common[12], common[13], common[3]}
-, 
-{4, 0, common[9], 100, common[11], common[12], common[13], common[4]}
-, 
-{5, 0, common[9], 100, common[11], common[12], common[13], common[5]}
-, 
-{6, 0, common[9], 100, common[11], common[12], common[13], common[6]}
-, 
-{7, 0, common[9], 100, common[11], common[12], common[13], common[7]}
-, 
-{8, 0, common[9], 100, common[11], common[12], common[13], common[8]}
-, 
-{9, 1, common[10], 25, common[11], common[14], common[15], common[1], common[3], common[5], 0.5}
-, 
-{10, 1, common[10], 25, common[11], common[14], common[15], common[2], common[1], common[4], 0.5}
-, 
-{11, 1, common[10], 25, common[11], common[14], common[15], common[3], common[5], common[8], 0.5}
-, 
-{12, 1, common[10], 25, common[11], common[14], common[15], common[4], common[3], common[2], 0.5}
-, 
-{13, 1, common[10], 25, common[11], common[14], common[15], common[5], common[7], common[1], 0.5}
-, 
-{14, 1, common[10], 25, common[11], common[14], common[15], common[6], common[2], common[7], 0.5}
-, 
-{15, 1, common[10], 25, common[11], common[14], common[15], common[8], common[6], common[3], 0.5}
-, 
-{16, 2, 
-{
-{1, 0, 0, 1}
-}
-, 100, common[11], common[12], common[13], common[8]}
+  {
+    1,
+    0,
+    common[9],
+    100,
+    common[11],
+    common[12],
+    common[13],
+    common[1]
+  },
+  {
+    2,
+    0,
+    common[9],
+    100,
+    common[11],
+    common[12],
+    common[13],
+    common[2]
+  },
+  {
+    3,
+    0,
+    common[9],
+    100,
+    common[11],
+    common[12],
+    common[13],
+    common[3]
+  },
+  {
+    4,
+    0,
+    common[9],
+    100,
+    common[11],
+    common[12],
+    common[13],
+    common[4]
+  },
+  {
+    5,
+    0,
+    common[9],
+    100,
+    common[11],
+    common[12],
+    common[13],
+    common[5]
+  },
+  {
+    6,
+    0,
+    common[9],
+    100,
+    common[11],
+    common[12],
+    common[13],
+    common[6]
+  },
+  {
+    7,
+    0,
+    common[9],
+    100,
+    common[11],
+    common[12],
+    common[13],
+    common[7]
+  },
+  {
+    8,
+    0,
+    common[9],
+    100,
+    common[11],
+    common[12],
+    common[13],
+    common[8]
+  },
+  {
+    9,
+    1,
+    common[10],
+    25,
+    common[11],
+    common[14],
+    common[15],
+    common[1],
+    common[3],
+    common[5],
+    0.5
+  },
+  {
+    10,
+    1,
+    common[10],
+    25,
+    common[11],
+    common[14],
+    common[15],
+    common[2],
+    common[1],
+    common[4],
+    0.5
+  },
+  {
+    11,
+    1,
+    common[10],
+    25,
+    common[11],
+    common[14],
+    common[15],
+    common[3],
+    common[5],
+    common[8],
+    0.5
+  },
+  {
+    12,
+    1,
+    common[10],
+    25,
+    common[11],
+    common[14],
+    common[15],
+    common[4],
+    common[3],
+    common[2],
+    0.5
+  },
+  {
+    13,
+    1,
+    common[10],
+    25,
+    common[11],
+    common[14],
+    common[15],
+    common[5],
+    common[7],
+    common[1],
+    0.5
+  },
+  {
+    14,
+    1,
+    common[10],
+    25,
+    common[11],
+    common[14],
+    common[15],
+    common[6],
+    common[2],
+    common[7],
+    0.5
+  },
+  {
+    15,
+    1,
+    common[10],
+    25,
+    common[11],
+    common[14],
+    common[15],
+    common[8],
+    common[6],
+    common[3],
+    0.5
+  },
+  {
+    16,
+    2,
+    {
+      {
+        1,
+        0,
+        0,
+        1
+      }
+    },
+    100,
+    common[11],
+    common[12],
+    common[13],
+    common[8]
+  }
 }
 return config, "ID", key
-

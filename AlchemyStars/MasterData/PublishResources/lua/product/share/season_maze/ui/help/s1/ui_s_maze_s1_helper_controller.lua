@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/help/s1/ui_s_maze_s1_helper_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISMazeS1HelperController", UIController)
 UISMazeS1HelperController = UISMazeS1HelperController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISMazeS1HelperController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISMazeS1HelperController:OnShow(uiParams)
   local tabIndex = 1
-  local pageIdx = nil
+  local pageIdx
   if uiParams then
     if uiParams[1] then
       tabIndex = tonumber(uiParams[1])
@@ -23,24 +16,15 @@ UISMazeS1HelperController.OnShow = function(self, uiParams)
   self:AddListener()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeS1HelperController.OnHide = function(self)
-  -- function num : 0_1
+function UISMazeS1HelperController:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeS1HelperController.InitWidget = function(self, tabIndex, pageIdx)
-  -- function num : 0_2
+function UISMazeS1HelperController:InitWidget(tabIndex, pageIdx)
   local backBtns = self:GetUIComponent("UISelectObjectPath", "_backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, nil, nil, true)
+  end, nil, nil, true)
   self._tabPool = self:GetUIComponent("UISelectObjectPath", "Content")
   self:_InitTabList(tabIndex)
   self:_InitBanner(tabIndex, pageIdx)
@@ -50,95 +34,61 @@ UISMazeS1HelperController.InitWidget = function(self, tabIndex, pageIdx)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeS1HelperController.AddListener = function(self)
-  -- function num : 0_3
+function UISMazeS1HelperController:AddListener()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeS1HelperController._InitBanner = function(self, tabIndex, pageIdx)
-  -- function num : 0_4
+function UISMazeS1HelperController:_InitBanner(tabIndex, pageIdx)
   local bannerGen = self:GetUIComponent("UISelectObjectPath", "BannerRoot")
   self._bannerWidget = bannerGen:SpawnObject("UISMazeS1HelperBanner")
-  ;
-  (self._bannerWidget):SetData(tabIndex, pageIdx)
+  self._bannerWidget:SetData(tabIndex, pageIdx)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeS1HelperController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_5
+function UISMazeS1HelperController:OnUpdate(deltaTimeMS)
   if self._bannerWidget then
-    (self._bannerWidget):OnUpdate(deltaTimeMS)
+    self._bannerWidget:OnUpdate(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeS1HelperController._InitTabList = function(self, tabIndex)
-  -- function num : 0_6 , upvalues : _ENV
-  self._cfgTab = (Cfg.cfg_season_maze_helper_tab)({SeasonID = ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonMazeID()})
+function UISMazeS1HelperController:_InitTabList(tabIndex)
+  self._cfgTab = Cfg.cfg_season_maze_helper_tab({
+    SeasonID = GameGlobal.GetModule(SeasonMazeModule):CurSeasonMazeID()
+  })
   local validCfg = {}
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local now = GetSvrTimeNow()
-  for _,cfg in ipairs(self._cfgTab) do
+  for _, cfg in ipairs(self._cfgTab) do
     if cfg.OpenTime then
       local t = loginModule:GetTimeStampByTimeStr(cfg.OpenTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-      if t <= now then
+      if now >= t then
         validCfg[#validCfg + 1] = cfg
       end
     else
-      do
-        do
-          validCfg[#validCfg + 1] = cfg
-          -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      validCfg[#validCfg + 1] = cfg
     end
   end
   self._cfgTab = validCfg
-  ;
-  (table.sort)(self._cfgTab, function(a, b)
-    -- function num : 0_6_0
-    do return a.TabEnum < b.TabEnum end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._cfgTab, function(a, b)
+    return a.TabEnum < b.TabEnum
+  end)
   local tabCount = #self._cfgTab
-  ;
-  (self._tabPool):SpawnObjects("UISMazeS1HelperTab", tabCount)
-  self._tabs = (self._tabPool):GetAllSpawnList()
-  for i,v in ipairs(self._cfgTab) do
-    ((self._tabs)[i]):SetData(v, function(tabId)
-    -- function num : 0_6_1 , upvalues : self
-    self:OnTabClick(tabId)
+  self._tabPool:SpawnObjects("UISMazeS1HelperTab", tabCount)
+  self._tabs = self._tabPool:GetAllSpawnList()
+  for i, v in ipairs(self._cfgTab) do
+    self._tabs[i]:SetData(v, function(tabId)
+      self:OnTabClick(tabId)
+    end)
   end
-)
-  end
-  for index,tab in ipairs(self._tabs) do
+  for index, tab in ipairs(self._tabs) do
     tab:OnSelectIndex(tabIndex)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeS1HelperController.OnTabClick = function(self, tabId)
-  -- function num : 0_7 , upvalues : _ENV
+function UISMazeS1HelperController:OnTabClick(tabId)
   if self._curTab ~= tabId then
     self._curTab = tabId
-    ;
-    (self._bannerWidget):SetData(tabId)
-    for index,tab in ipairs(self._tabs) do
+    self._bannerWidget:SetData(tabId)
+    for index, tab in ipairs(self._tabs) do
       tab:OnSelectIndex(tabId)
     end
   end
 end
-
-

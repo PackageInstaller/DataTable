@@ -1,53 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_stage/ui_widget_serial_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetSerialButton", UICustomWidget)
 UIWidgetSerialButton = UIWidgetSerialButton
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetSerialButton.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWidgetSerialButton:Constructor()
   self._state = OpenUISerialFightInfoState.OutGame
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSerialButton.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local mdSerialFight = (GameGlobal.GetModule)(SerialAutoFightModule)
+function UIWidgetSerialButton:OnShow()
+  local mdSerialFight = GameGlobal.GetModule(SerialAutoFightModule)
   local matchType = mdSerialFight:GetMatchType()
   local isTower = matchType == MatchType.MT_Tower
-  ;
-  (self:GetGameObject("_normal")):SetActive(not isTower)
-  ;
-  (self:GetGameObject("_tower")):SetActive(isTower)
+  self:GetGameObject("_normal"):SetActive(not isTower)
+  self:GetGameObject("_tower"):SetActive(isTower)
   if not isTower then
     local fightCnt = mdSerialFight:GetFightCount() + 1
     local totalCnt = mdSerialFight:GetTotalCount()
-    if totalCnt < fightCnt then
+    if fightCnt > totalCnt then
       fightCnt = totalCnt
     end
-    local str = (string.format)("%d<color=#deb681>/%d</color>", fightCnt, totalCnt)
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, "num", str)
+    local str = string.format("%d<color=#deb681>/%d</color>", fightCnt, totalCnt)
+    UIWidgetHelper.SetLocalizationText(self, "num", str)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSerialButton.SetData = function(self, state)
-  -- function num : 0_2
+function UIWidgetSerialButton:SetData(state)
   self._state = state
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSerialButton.btnSerialAutoFightOnClick = function(self)
-  -- function num : 0_3
+function UIWidgetSerialButton:btnSerialAutoFightOnClick()
   self:ShowDialog("UISerialAutoFightInfo", self._state)
 end
-
-

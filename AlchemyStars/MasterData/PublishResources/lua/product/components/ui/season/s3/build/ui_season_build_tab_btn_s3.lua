@@ -1,55 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/build/ui_season_build_tab_btn_s3.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBuildTabBtnS3", UICustomWidget)
 UISeasonBuildTabBtnS3 = UISeasonBuildTabBtnS3
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBuildTabBtnS3.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonBuildTabBtnS3:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildTabBtnS3.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonBuildTabBtnS3:InitWidget()
   self.txtName1 = self:GetUIComponent("UILocalizationText", "txtName1")
   self.txtName2 = self:GetUIComponent("UILocalizationText", "txtName2")
   self.selectGo = self:GetGameObject("select")
   self.unSelectGo = self:GetGameObject("unSelect")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildTabBtnS3.SetData = function(self, cfg, clickCb)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonBuildTabBtnS3:SetData(cfg, clickCb)
   self.clickCb = clickCb
   self.index = cfg.index
-  ;
-  (self.txtName1):SetText((StringTable.Get)(cfg.name))
-  ;
-  (self.txtName2):SetText((StringTable.Get)(cfg.name))
+  self.txtName1:SetText(StringTable.Get(cfg.name))
+  self.txtName2:SetText(StringTable.Get(cfg.name))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildTabBtnS3.SetSelect = function(self, bSelect)
-  -- function num : 0_3
-  (self.selectGo):SetActive(bSelect)
-  ;
-  (self.unSelectGo):SetActive(not bSelect)
+function UISeasonBuildTabBtnS3:SetSelect(bSelect)
+  self.selectGo:SetActive(bSelect)
+  self.unSelectGo:SetActive(not bSelect)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildTabBtnS3.BtnOnClick = function(self, go)
-  -- function num : 0_4
+function UISeasonBuildTabBtnS3:BtnOnClick(go)
   if self.clickCb then
-    (self.clickCb)(self.index)
+    self.clickCb(self.index)
   end
 end
-
-

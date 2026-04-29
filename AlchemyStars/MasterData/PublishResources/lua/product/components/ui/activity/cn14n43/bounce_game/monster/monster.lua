@@ -1,44 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/monster/monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Monster", BehaviorMgr)
 Monster = Monster
--- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
 Monster.AutoAppendPstID = 1
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
 
-Monster.Constructor = function(self, monsterId)
-  -- function num : 0_0 , upvalues : _ENV
+function Monster:Constructor(monsterId)
   self._monsterId = monsterId
   self.monsterData = MonsterData:New(monsterId)
   self.state = BounceObjState.Alive
   self.pstID = Monster.AutoAppendPstID
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
   Monster.AutoAppendPstID = Monster.AutoAppendPstID + 1
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-Monster.GetPstId = function(self)
-  -- function num : 0_1
+function Monster:GetPstId()
   return self.pstID
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-Monster.GetMonsterId = function(self)
-  -- function num : 0_2
+function Monster:GetMonsterId()
   return self._monsterId
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-Monster.SetCoreController = function(self, coreController)
-  -- function num : 0_3
+function Monster:SetCoreController(coreController)
   self.coreController = coreController
   local generator = self:GetBehavior("MonsterBeHaviorGenerator")
   if generator then
@@ -46,127 +26,86 @@ Monster.SetCoreController = function(self, coreController)
   end
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-Monster.GetCoreController = function(self)
-  -- function num : 0_4
+function Monster:GetCoreController()
   return self.coreController
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-Monster.AddBehavior = function(self, behavior)
-  -- function num : 0_5
-  ((self.super).AddBehavior)(self, behavior)
+function Monster:AddBehavior(behavior)
+  self.super.AddBehavior(self, behavior)
   behavior:SetMonster(self)
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-Monster.GetMonsterData = function(self)
-  -- function num : 0_6
+function Monster:GetMonsterData()
   return self.monsterData
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-Monster.OnUpdate = function(self, deltaMS)
-  -- function num : 0_7 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.monsterData).durationMS = (self.monsterData).durationMS + deltaMS
+function Monster:OnUpdate(deltaMS)
+  self.monsterData.durationMS = self.monsterData.durationMS + deltaMS
   if self.state == BounceObjState.Dead then
     return true
-  else
-    if self.state == BounceObjState.Transformation then
-      if self.endTransformTime <= (self.monsterData).durationMS then
-        if self.transmationEndCall then
-          (self.transmationEndCall)()
-        end
-        self.state = BounceObjState.Alive
+  elseif self.state == BounceObjState.Transformation then
+    if self.monsterData.durationMS >= self.endTransformTime then
+      if self.transmationEndCall then
+        self.transmationEndCall()
       end
-      return false
-    else
-      if self.state == BounceObjState.Deading then
-        if self.deadTime <= (self.monsterData).durationMS then
-          self.state = BounceObjState.Dead
-          return true
-        end
-        return false
-      end
+      self.state = BounceObjState.Alive
     end
-  end
-  local moveBehavior = self:GetBehavior(MonsterBeHaviorMove:Name())
-  do
-    if moveBehavior then
-      local newPos = moveBehavior:Exec(deltaMS)
-      if newPos.x < BounceConst.CanvasMinX or BounceConst.CanvasMaxX < newPos.x then
-        return true
-      end
-    end
-    local generatorBehavior = self:GetBehavior(MonsterBeHaviorGenerator:Name())
-    if generatorBehavior then
-      generatorBehavior:Exec(deltaMS)
+    return false
+  elseif self.state == BounceObjState.Deading then
+    if self.monsterData.durationMS >= self.deadTime then
+      self.state = BounceObjState.Dead
+      return true
     end
     return false
   end
+  local moveBehavior = self:GetBehavior(MonsterBeHaviorMove:Name())
+  if moveBehavior then
+    local newPos = moveBehavior:Exec(deltaMS)
+    if newPos.x < BounceConst.CanvasMinX or newPos.x > BounceConst.CanvasMaxX then
+      return true
+    end
+  end
+  local generatorBehavior = self:GetBehavior(MonsterBeHaviorGenerator:Name())
+  if generatorBehavior then
+    generatorBehavior:Exec(deltaMS)
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-Monster.Clear = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function Monster:Clear()
   self:Reset()
   self.state = BounceObjState.Alive
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
-
-Monster.Destroy = function(self)
-  -- function num : 0_9
+function Monster:Destroy()
   self:Release()
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R0 in 'UnsetPending'
-
-Monster.GetRect = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function Monster:GetRect()
   local viewBeHavior = self:GetBehavior(MonsterBeHaviorView:Name())
   return viewBeHavior:GetRect()
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R0 in 'UnsetPending'
-
-Monster.SetState = function(self, state)
-  -- function num : 0_11
+function Monster:SetState(state)
   self.state = state
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R0 in 'UnsetPending'
-
-Monster.SetDeadWithDuration = function(self, duration)
-  -- function num : 0_12 , upvalues : _ENV
-  if duration > 0 then
+function Monster:SetDeadWithDuration(duration)
+  if 0 < duration then
     self.state = BounceObjState.Deading
-    self.deadTime = (self.monsterData).durationMS + duration
+    self.deadTime = self.monsterData.durationMS + duration
   else
     self.state = BounceObjState.Dead
   end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R0 in 'UnsetPending'
-
-Monster.SetTransformation = function(self, duration, callback)
-  -- function num : 0_13 , upvalues : _ENV
+function Monster:SetTransformation(duration, callback)
   self.state = BounceObjState.Transformation
   self.transmationEndCall = callback
-  self.endTransformTime = (self.monsterData).durationMS + duration
+  self.endTransformTime = self.monsterData.durationMS + duration
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R0 in 'UnsetPending'
-
-Monster.GetBounceRect = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function Monster:GetBounceRect()
   local behaviorView = self:GetBehavior(MonsterBeHaviorView:Name())
   if behaviorView then
     return behaviorView:GetBounceRect()
@@ -174,14 +113,9 @@ Monster.GetBounceRect = function(self)
   return nil
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R0 in 'UnsetPending'
-
-Monster.GetPosition = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function Monster:GetPosition()
   local behaviorView = self:GetBehavior(MonsterBeHaviorView:Name())
   if behaviorView then
     return behaviorView:GetPosition()
   end
 end
-
-

@@ -1,35 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/player/player_behaviors/bounce_player_behavior_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BouncePlayerBeHaviorBase", BeHaviorBase)
 BouncePlayerBeHaviorBase = BouncePlayerBeHaviorBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BouncePlayerBeHaviorBase.SetPlayer = function(self, player)
-  -- function num : 0_0
+function BouncePlayerBeHaviorBase:SetPlayer(player)
   self.player = player
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerBeHaviorBase.GetBehavior = function(self, behaviorName)
-  -- function num : 0_1
-  return (self.player):GetBehavior(behaviorName)
+function BouncePlayerBeHaviorBase:GetBehavior(behaviorName)
+  return self.player:GetBehavior(behaviorName)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerBeHaviorBase.Release = function(self)
-  -- function num : 0_2
+function BouncePlayerBeHaviorBase:Release()
   self:OnRelease()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerBeHaviorBase.OnRelease = function(self)
-  -- function num : 0_3
+function BouncePlayerBeHaviorBase:OnRelease()
 end
-
-

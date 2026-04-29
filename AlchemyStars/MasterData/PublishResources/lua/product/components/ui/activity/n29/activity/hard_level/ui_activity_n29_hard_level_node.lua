@@ -1,42 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/activity/hard_level/ui_activity_n29_hard_level_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN29NHardLevelNode", UIActivityNHardLevelNode)
 UIActivityN29NHardLevelNode = UIActivityN29NHardLevelNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN29NHardLevelNode.OnInit = function(self)
-  -- function num : 0_0
+function UIActivityN29NHardLevelNode:OnInit()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29NHardLevelNode.GetLockTipsString = function(self)
-  -- function num : 0_1
+function UIActivityN29NHardLevelNode:GetLockTipsString()
   return "str_n27_hard_level_lock_tips"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29NHardLevelNode.PlayAnimation = function(self)
-  -- function num : 0_2
+function UIActivityN29NHardLevelNode:PlayAnimation()
   if self._isOpen and self._hasPass then
     self:StartTask(self.PlayAnimCoro, self)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29NHardLevelNode.PlayAnimCoro = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._complete):SetActive(false)
+function UIActivityN29NHardLevelNode:PlayAnimCoro(TT)
+  self._complete:SetActive(false)
   self:Lock("UIActivityN29NHardLevelNode_PlayAnimCoro")
   YIELD(TT, 120)
-  ;
-  (self._complete):SetActive(true)
+  self._complete:SetActive(true)
   self:UnLock("UIActivityN29NHardLevelNode_PlayAnimCoro")
 end
-
-

@@ -1,39 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_add_count_down.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultAddCountDown", BuffResultBase)
 BuffResultAddCountDown = BuffResultAddCountDown
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddCountDown.Constructor = function(self, countDown, buffseq, layerType)
-  -- function num : 0_0
+function BuffResultAddCountDown:Constructor(countDown, buffseq, layerType)
   self._countDown = countDown
   self._buffseq = buffseq
   self._layerType = layerType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddCountDown.GetLayerType = function(self)
-  -- function num : 0_1
+function BuffResultAddCountDown:GetLayerType()
   return self._layerType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddCountDown.GetCountDown = function(self)
-  -- function num : 0_2
+function BuffResultAddCountDown:GetCountDown()
   return self._countDown
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddCountDown.GetBuffSeq = function(self)
-  -- function num : 0_3
+function BuffResultAddCountDown:GetBuffSeq()
   return self._buffseq
 end
-
-

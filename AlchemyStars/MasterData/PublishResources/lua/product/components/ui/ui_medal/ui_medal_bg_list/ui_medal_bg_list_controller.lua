@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/ui_medal_bg_list/ui_medal_bg_list_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalBgListController", UIController)
 UIMedalBgListController = UIMedalBgListController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalBgListController.Constructor = function(self)
-  -- function num : 0_0
+function UIMedalBgListController:Constructor()
   self.data = nil
   self._timeEvents = nil
   self.medalList = nil
@@ -20,10 +13,7 @@ UIMedalBgListController.Constructor = function(self)
   self.isFirst = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIMedalBgListController:OnShow(uiParams)
   self.isFirst = true
   self.fadeTime = 0.5
   self.contentWidgets = {}
@@ -31,30 +21,21 @@ UIMedalBgListController.OnShow = function(self, uiParams)
   self._timeEvents = {}
   self:InitWidget()
   self:GetMedalBoardVal()
-  self:InitScrollView((self.data):GetSortMedals())
+  self:InitScrollView(self.data:GetSortMedals())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListController.GetMedalBoardVal = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local medalModule = (GameGlobal.GetModule)(MedalModule)
+function UIMedalBgListController:GetMedalBoardVal()
+  local medalModule = GameGlobal.GetModule(MedalModule)
   medalModule:Init()
   self.medalList = medalModule:GetMedalBoardVec()
   self.data = UIMedalBgListData:New()
-  ;
-  (self.data):Init(self.medalList)
-  ;
-  (self.topInfo1):SetText((self.data):GetUnLockNum())
-  local totalText = "/" .. (self.data):GetTotalNum()
-  ;
-  (self.topInfo2):SetText(totalText)
+  self.data:Init(self.medalList)
+  self.topInfo1:SetText(self.data:GetUnLockNum())
+  local totalText = "/" .. self.data:GetTotalNum()
+  self.topInfo2:SetText(totalText)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListController.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMedalBgListController:InitWidget()
   self.topTitle = self:GetUIComponent("UILocalizationText", "topTitle")
   self.topInfo1 = self:GetUIComponent("UILocalizationText", "topInfo1")
   self.topInfo2 = self:GetUIComponent("UILocalizationText", "topInfo2")
@@ -69,124 +50,84 @@ UIMedalBgListController.InitWidget = function(self)
   self._anim = self:GetUIComponent("Animation", "safeArea")
   local topButton = self:GetUIComponent("UISelectObjectPath", "topbtn")
   self.topButtonWidget = topButton:SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    (self._anim):Play("uieff_UIMedalBgListController_out")
+  self.topButtonWidget:SetData(function()
+    self._anim:Play("uieff_UIMedalBgListController_out")
     self:_LockAnim(167)
-    ;
-    ((GameGlobal.Timer)()):AddEvent(167, function()
-      -- function num : 0_3_0_0 , upvalues : self
+    GameGlobal.Timer():AddEvent(167, function()
       self:CloseDialog()
-    end
-)
-  end
-)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListController.InitScrollView = function(self, medalList)
-  -- function num : 0_4 , upvalues : _ENV
-  self.contentWidgets = (self.scrollViewContent):SpawnObjects("UIMedalBgListItem", (self.data):GetTotalNum())
+function UIMedalBgListController:InitScrollView(medalList)
+  self.contentWidgets = self.scrollViewContent:SpawnObjects("UIMedalBgListItem", self.data:GetTotalNum())
   local index = 1
-  for i,v in pairs(medalList) do
-    ((self.contentWidgets)[index]):SetData(v, function(item)
-    -- function num : 0_4_0 , upvalues : self
-    self:OnMedalBgItemClicked(item)
-  end
-)
-    if v.medal_id == (self.data):GetDefMedalID() then
-      ((self.contentWidgets)[index]):MedalBtnOnClick()
+  for i, v in pairs(medalList) do
+    self.contentWidgets[index]:SetData(v, function(item)
+      self:OnMedalBgItemClicked(item)
+    end)
+    if v.medal_id == self.data:GetDefMedalID() then
+      self.contentWidgets[index]:MedalBtnOnClick()
     end
     index = index + 1
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListController.OnMedalBgItemClicked = function(self, item)
-  -- function num : 0_5
+function UIMedalBgListController:OnMedalBgItemClicked(item)
   self:_ReflashMedalList()
   local itemData = item:GetData()
-  if self.curSelectMedalItem and (self.curSelectMedalItem):GetID() == itemData.medal_id then
-    return 
+  if self.curSelectMedalItem and self.curSelectMedalItem:GetID() == itemData.medal_id then
+    return
   end
   if self.curSelectMedalItem then
-    (self.curSelectMedalItem):SetSelect(false)
+    self.curSelectMedalItem:SetSelect(false)
   end
   self.curSelectMedalItem = item
-  ;
-  (self.curSelectMedalItem):SetSelect(true)
+  self.curSelectMedalItem:SetSelect(true)
   self:_ReflashRight(item)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListController._ReflashMedalList = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  for i,v in pairs(self.contentWidgets) do
+function UIMedalBgListController:_ReflashMedalList()
+  for i, v in pairs(self.contentWidgets) do
     v:SetSelect(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListController._ReflashRight = function(self, item)
-  -- function num : 0_7 , upvalues : _ENV
-  local medalData = (self.data):GetMedalDataByID(item:GetID())
+function UIMedalBgListController:_ReflashRight(item)
+  local medalData = self.data:GetMedalDataByID(item:GetID())
   if not medalData then
-    (Log.fatal)("没找到该勋章板")
-    return 
+    Log.fatal("没找到该勋章板")
+    return
   end
   if self.isFirst then
     self.isFirst = false
   else
-    ;
-    (self._anim):Play("uieff_UIMedalBgListController_in2")
+    self._anim:Play("uieff_UIMedalBgListController_in2")
   end
   self:_FadeBoard(medalData.IconHD)
-  local cfg = (Cfg.cfg_item)[medalData.ID]
-  ;
-  (self.contentTitle):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self.contentInfo):SetText((StringTable.Get)(cfg.RpIntro))
-  ;
-  (self.contentGet):RefreshText((StringTable.Get)(medalData.GetPathDesc))
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.contentGetParent)
+  local cfg = Cfg.cfg_item[medalData.ID]
+  self.contentTitle:SetText(StringTable.Get(cfg.Name))
+  self.contentInfo:SetText(StringTable.Get(cfg.RpIntro))
+  self.contentGet:RefreshText(StringTable.Get(medalData.GetPathDesc))
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.contentGetParent)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListController._FadeBoard = function(self, IconHD)
-  -- function num : 0_8
-  (self.mainRawImg):DOFade(1, 0)
+function UIMedalBgListController:_FadeBoard(IconHD)
+  self.mainRawImg:DOFade(1, 0)
   if self.preRawImgName then
-    (self.mainImg):LoadImage(self.preRawImgName)
-    ;
-    (self.mainRawImg):DOFade(0, self.fadeTime)
+    self.mainImg:LoadImage(self.preRawImgName)
+    self.mainRawImg:DOFade(0, self.fadeTime)
   else
-    ;
-    (self.mainRawImg):DOFade(0, 0)
+    self.mainRawImg:DOFade(0, 0)
   end
-  ;
-  (self.preImg):LoadImage(IconHD)
+  self.preImg:LoadImage(IconHD)
   self.preRawImgName = IconHD
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListController._LockAnim = function(self, timeLen)
-  -- function num : 0_9 , upvalues : _ENV
+function UIMedalBgListController:_LockAnim(timeLen)
   self:Lock("UIMedalBgListController_LockAnim")
-  local te = ((GameGlobal.Timer)()):AddEvent(timeLen, function()
-    -- function num : 0_9_0 , upvalues : self
+  local te = GameGlobal.Timer():AddEvent(timeLen, function()
     self:UnLock("UIMedalBgListController_LockAnim")
-  end
-)
-  ;
-  (table.insert)(self._timeEvents, te)
+  end)
+  table.insert(self._timeEvents, te)
 end
-
-

@@ -1,44 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s2/buff/ui_season_buff_stage_area_s2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBuffStageAreaS2", UICustomWidget)
 UISeasonBuffStageAreaS2 = UISeasonBuffStageAreaS2
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBuffStageAreaS2.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonBuffStageAreaS2:OnShow(uiParams)
   self.levelText = self:GetUIComponent("UILocalizationText", "Lv")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffStageAreaS2.DetailBtnOnClick = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UISeasonBuffMainInfoS2", self.componentID, self._curLevel, self._curProgress, self._isMaxLevel, self._curMaxProgress)
+function UISeasonBuffStageAreaS2:DetailBtnOnClick()
+  GameGlobal.UIStateManager():ShowDialog("UISeasonBuffMainInfoS2", self.componentID, self._curLevel, self._curProgress, self._isMaxLevel, self._curMaxProgress)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffStageAreaS2.SetData = function(self, obj)
-  -- function num : 0_2
+function UISeasonBuffStageAreaS2:SetData(obj)
   self._seasonObj = obj
-  self.componentID = (self._seasonObj):GetSeasonMissionComponentCfgID()
+  self.componentID = self._seasonObj:GetSeasonMissionComponentCfgID()
   self:RefreshInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffStageAreaS2.RefreshInfo = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local curLevel, curProgress, maxLevel, isMaxLevel, curMaxProgress = (UISeasonHelper.CalcBuffLevel)(self.componentID)
+function UISeasonBuffStageAreaS2:RefreshInfo()
+  local curLevel, curProgress, maxLevel, isMaxLevel, curMaxProgress = UISeasonHelper.CalcBuffLevel(self.componentID)
   self._curLevel = curLevel
   self._curProgress = curProgress
   self._isMaxLevel = isMaxLevel
   self._curMaxProgress = curMaxProgress
-  ;
-  (self.levelText):SetText((StringTable.Get)("str_season_buff_level", tostring(curLevel)))
+  self.levelText:SetText(StringTable.Get("str_season_buff_level", tostring(curLevel)))
 end
-
-

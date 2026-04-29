@@ -1,34 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_sailing_plan/ui_shop_sailing_plan_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopSailingPlanTab", UICustomWidget)
 UIShopSailingPlanTab = UIShopSailingPlanTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopSailingPlanTab.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
+function UIShopSailingPlanTab:Constructor()
+  self._questModule = GameGlobal.GetModule(QuestModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIShopSailingPlanTab:OnShow(uiParams)
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.Update = function(self, dms)
-  -- function num : 0_2
+function UIShopSailingPlanTab:Update(dms)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.GetComponents = function(self)
-  -- function num : 0_3
+function UIShopSailingPlanTab:GetComponents()
   self._normalQuestPool = self:GetUIComponent("UISelectObjectPath", "normalPool")
   self._specialQuestPool = self:GetUIComponent("UISelectObjectPath", "specialPool")
   self._contentRt = self:GetUIComponent("RectTransform", "Content")
@@ -41,25 +25,17 @@ UIShopSailingPlanTab.GetComponents = function(self)
   self._anim = self:GetUIComponent("Animation", "UIShopSailingPlanTab")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.ItemOnClick = function(self, id, pos)
-  -- function num : 0_4
-  do
-    if not self._tips then
-      local s = self:GetUIComponent("UISelectObjectPath", "itemTips")
-      self._tips = s:SpawnObject("UISelectInfo")
-    end
-    if self._tips then
-      (self._tips):SetData(id, pos)
-    end
+function UIShopSailingPlanTab:ItemOnClick(id, pos)
+  if not self._tips then
+    local s = self:GetUIComponent("UISelectObjectPath", "itemTips")
+    self._tips = s:SpawnObject("UISelectInfo")
+  end
+  if self._tips then
+    self._tips:SetData(id, pos)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.ExcuteHideLogic = function(self, cb)
-  -- function num : 0_5 , upvalues : _ENV
+function UIShopSailingPlanTab:ExcuteHideLogic(cb)
   if cb then
     cb(self)
   end
@@ -68,35 +44,26 @@ UIShopSailingPlanTab.ExcuteHideLogic = function(self, cb)
   self:DetachEvent(GameEventType.QuestUpdate, self.QuestUpdate)
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnGetRewards)
   if self._tips then
-    (self._tips):closeOnClick()
+    self._tips:closeOnClick()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.ViewBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIShopSailingPlanTab:ViewBtnOnClick(go)
   local normalAwards = self:GetNormalAwards()
   local allAwards = self:GetAllAwards()
   self:ShowDialog("UIShopSailingAwardsView", normalAwards, allAwards)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.ViewBtn2OnClick = function(self, go)
-  -- function num : 0_7
+function UIShopSailingPlanTab:ViewBtn2OnClick(go)
   local normalAwards = self:GetNormalAwards()
   local allAwards = self:GetAllAwards()
   self:ShowDialog("UIShopSailingAwardsView", normalAwards, allAwards)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.CheckNormalQuestCount = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIShopSailingPlanTab:CheckNormalQuestCount()
   if self._saveFinishQuestID and next(self._saveFinishQuestID) then
-    for index,value in ipairs(self._saveFinishQuestID) do
-      if self._popTips and (table.icontains)(self._popTips, value) then
+    for index, value in ipairs(self._saveFinishQuestID) do
+      if self._popTips and table.icontains(self._popTips, value) then
         self:PopBuyTips()
         break
       end
@@ -104,30 +71,22 @@ UIShopSailingPlanTab.CheckNormalQuestCount = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.PopBuyTips = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIShopSailingPlanTab:PopBuyTips()
   if self._buyState ~= BuyGiftStateType.EBGST_INIT then
-    (Log.debug)("###[UIShopSailingPlanTab] 已经购买不弹出")
-    return 
+    Log.debug("###[UIShopSailingPlanTab] 已经购买不弹出")
+    return
   end
   local priceTex = self:GetPrice()
   local specialCompleteAwards = self:GetSpecialCompleteAwards()
   self:ShowDialog("UIShopSailingBuyTips", function()
-    -- function num : 0_9_0 , upvalues : self
     self:BuyBtnOnClick()
-  end
-, priceTex, specialCompleteAwards)
+  end, priceTex, specialCompleteAwards)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.GetNormalAwards = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIShopSailingPlanTab:GetNormalAwards()
   local rewardsMap = {}
-  for index,value in ipairs(self._normalList) do
-    local quest = (self._questModule):GetQuest(value)
+  for index, value in ipairs(self._normalList) do
+    local quest = self._questModule:GetQuest(value)
     local questInfo = quest:QuestInfo()
     local rewards = questInfo.rewards
     for i = 1, #rewards do
@@ -145,13 +104,10 @@ UIShopSailingPlanTab.GetNormalAwards = function(self)
   return awards
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.GetSpecialAwards = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIShopSailingPlanTab:GetSpecialAwards()
   local rewardsMap = {}
-  for index,value in ipairs(self._specialList) do
-    local quest = (self._questModule):GetQuest(value)
+  for index, value in ipairs(self._specialList) do
+    local quest = self._questModule:GetQuest(value)
     local questInfo = quest:QuestInfo()
     local rewards = questInfo.rewards
     for i = 1, #rewards do
@@ -169,18 +125,15 @@ UIShopSailingPlanTab.GetSpecialAwards = function(self)
   return awards
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.GetAllAwards = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIShopSailingPlanTab:GetAllAwards()
   local rewardsMap = {}
   local diamondCount = self:GetDiamondCfg()
   if diamondCount then
     rewardsMap[RoleAssetID.RoleAssetDiamond] = diamondCount
   end
-  local allList = (self._questInfo).m_accept_cam_quest_list
-  for index,value in ipairs(allList) do
-    local quest = (self._questModule):GetQuest(value)
+  local allList = self._questInfo.m_accept_cam_quest_list
+  for index, value in ipairs(allList) do
+    local quest = self._questModule:GetQuest(value)
     local questInfo = quest:QuestInfo()
     local rewards = questInfo.rewards
     for i = 1, #rewards do
@@ -198,13 +151,10 @@ UIShopSailingPlanTab.GetAllAwards = function(self)
   return awards
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.GetDiamondCfg = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local com = (self._sailingPlanLocalProcess):GetComponent(ECCampaignInlandSailingComponentID.BUY_GIFT)
+function UIShopSailingPlanTab:GetDiamondCfg()
+  local com = self._sailingPlanLocalProcess:GetComponent(ECCampaignInlandSailingComponentID.BUY_GIFT)
   local cfgComID = com:GetComponentCfgId()
-  local cfgs = (Cfg.cfg_component_buy_gift)({ComponentID = cfgComID})
+  local cfgs = Cfg.cfg_component_buy_gift({ComponentID = cfgComID})
   if cfgs and next(cfgs) then
     local cfg = cfgs[1]
     local extraAward = cfg.ExtraAward
@@ -212,17 +162,17 @@ UIShopSailingPlanTab.GetDiamondCfg = function(self)
       local asset = extraAward[1]
       local id = asset[1]
       local count = asset[2]
-      local cfg_item = (Cfg.cfg_item)[id]
+      local cfg_item = Cfg.cfg_item[id]
       if not cfg_item then
-        (Log.error)("###[UIShopSailingPlanTab] cfg _item is nil ! id --> ", id)
-        return 
+        Log.error("###[UIShopSailingPlanTab] cfg _item is nil ! id --> ", id)
+        return
       end
       local converId = cfg_item.ConverId
       if converId then
-        local cfg_conver_item = (Cfg.cfg_conver_item)[converId]
+        local cfg_conver_item = Cfg.cfg_conver_item[converId]
         if not cfg_conver_item then
-          (Log.error)("###[UIShopSailingPlanTab] cfg_conver_item is nil ! id --> ", converId)
-          return 
+          Log.error("###[UIShopSailingPlanTab] cfg_conver_item is nil ! id --> ", converId)
+          return
         end
         local diamond = cfg_conver_item.Diamond
         local allCount = count * diamond
@@ -232,14 +182,11 @@ UIShopSailingPlanTab.GetDiamondCfg = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.GetSpecialCompleteAwards = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIShopSailingPlanTab:GetSpecialCompleteAwards()
   local rewardsMap = {}
   local completeIdxMap = {}
-  for index,questid in ipairs(self._normalList) do
-    local quest = (self._questModule):GetQuest(questid)
+  for index, questid in ipairs(self._normalList) do
+    local quest = self._questModule:GetQuest(questid)
     local questinfo = quest:QuestInfo()
     local status = questinfo.status
     if status == QuestStatus.QUEST_Completed or status == QuestStatus.QUEST_Taken then
@@ -249,13 +196,13 @@ UIShopSailingPlanTab.GetSpecialCompleteAwards = function(self)
     end
   end
   local specialCompleteList = {}
-  for index,questid in ipairs(self._specialList) do
+  for index, questid in ipairs(self._specialList) do
     if completeIdxMap[index] then
-      (table.insert)(specialCompleteList, questid)
+      table.insert(specialCompleteList, questid)
     end
   end
-  for index,value in ipairs(specialCompleteList) do
-    local quest = (self._questModule):GetQuest(value)
+  for index, value in ipairs(specialCompleteList) do
+    local quest = self._questModule:GetQuest(value)
     local questInfo = quest:QuestInfo()
     local rewards = questInfo.rewards
     for i = 1, #rewards do
@@ -273,48 +220,34 @@ UIShopSailingPlanTab.GetSpecialCompleteAwards = function(self)
   return awards
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.SortAwards = function(self, tab)
-  -- function num : 0_15 , upvalues : _ENV
+function UIShopSailingPlanTab:SortAwards(tab)
   local list = {}
-  do
-    for id,count in pairs(tab) do
-      local roleAsset = RoleAsset:New()
-      roleAsset.assetid = id
-      roleAsset.count = count
-      list[#list + 1] = roleAsset
+  for id, count in pairs(tab) do
+    local roleAsset = RoleAsset:New()
+    roleAsset.assetid = id
+    roleAsset.count = count
+    list[#list + 1] = roleAsset
+  end
+  if self._awardSort then
+    local sortMap = {}
+    for i = 1, #self._awardSort do
+      local sortitem = self._awardSort[i]
+      local itemid = sortitem[1]
+      local itemidx = sortitem[2]
+      sortMap[itemid] = itemidx
     end
+    table.sort(list, function(a, b)
+      local a_id = a.assetid
+      local a_idx = sortMap[a_id] or 0
+      local b_id = b.assetid
+      local b_idx = sortMap[b_id] or 0
+      return a_idx < b_idx
+    end)
   end
-  do
-    if self._awardSort then
-      local sortMap = {}
-      for i = 1, #self._awardSort do
-        local sortitem = (self._awardSort)[i]
-        local itemid = sortitem[1]
-        local itemidx = sortitem[2]
-        sortMap[itemid] = itemidx
-      end
-      ;
-      (table.sort)(list, function(a, b)
-    -- function num : 0_15_0 , upvalues : sortMap
-    local a_id = a.assetid
-    local a_idx = sortMap[a_id] or 0
-    local b_id = b.assetid
-    local b_idx = sortMap[b_id] or 0
-    do return a_idx < b_idx end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-    end
-    return list
-  end
+  return list
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.OnValue = function(self)
-  -- function num : 0_16
+function UIShopSailingPlanTab:OnValue()
   self._playAnim = true
   self:GetData()
   self:SetQuestList()
@@ -322,46 +255,29 @@ UIShopSailingPlanTab.OnValue = function(self)
   self:SetNew()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.SetNew = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIShopSailingPlanTab:SetNew()
   local helper = UIShopSailingPlanHelper:New()
   helper:SetNew()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CampaignComponentStepChange)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopNew)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CampaignComponentStepChange)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopNew)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.SetBuyBtnState = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  (Log.debug)("###[UIShopSailingPlanTab] _buyState:", self._buyState)
-  ;
-  (self._viewBtn):SetActive(self._buyState == BuyGiftStateType.EBGST_INIT)
-  ;
-  (self._viewBtn2):SetActive(self._buyState ~= BuyGiftStateType.EBGST_INIT)
-  ;
-  (self._buyBtn):SetActive(self._buyState == BuyGiftStateType.EBGST_INIT)
+function UIShopSailingPlanTab:SetBuyBtnState()
+  Log.debug("###[UIShopSailingPlanTab] _buyState:", self._buyState)
+  self._viewBtn:SetActive(self._buyState == BuyGiftStateType.EBGST_INIT)
+  self._viewBtn2:SetActive(self._buyState ~= BuyGiftStateType.EBGST_INIT)
+  self._buyBtn:SetActive(self._buyState == BuyGiftStateType.EBGST_INIT)
   local getList = self:GetAllCompleteQuest()
-  ;
-  (self._allBtn):SetActive(#getList > 0)
+  self._allBtn:SetActive(0 < #getList)
   local priceTex = self:GetPrice()
   local showTex = GiftPackShopItem:GetPriceWithSymbolSize(priceTex, 51)
-  ;
-  (self._priceTex):SetText((RechargeShopItem.RemoveDot00)(showTex))
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  self._priceTex:SetText(RechargeShopItem.RemoveDot00(showTex))
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.GetPrice = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local gift = ((self._buyInfo).m_campaign_gift_list)[1]
+function UIShopSailingPlanTab:GetPrice()
+  local gift = self._buyInfo.m_campaign_gift_list[1]
   local mdsid = gift.m_midas_id
-  local mPay = (GameGlobal.GetModule)(PayModule)
+  local mPay = GameGlobal.GetModule(PayModule)
   local goodPriceList = mPay:GetGoodPriceList()
   local giftInfo = goodPriceList[mdsid]
   if giftInfo then
@@ -370,10 +286,7 @@ UIShopSailingPlanTab.GetPrice = function(self)
   return ""
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.SetData = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIShopSailingPlanTab:SetData()
   self:AttachEvent(GameEventType.ActivityCurrencyBuySuccess, self.OnCurrencyBuySuccess)
   self:AttachEvent(GameEventType.BuyGift_DirectAMidas_ERROR, self.OnCurrencyBuyError)
   self:AttachEvent(GameEventType.MidasPayError, self.OnCurrencyBuyError)
@@ -381,108 +294,87 @@ UIShopSailingPlanTab.SetData = function(self)
   self:AttachEvent(GameEventType.QuestUpdate, self.QuestUpdate)
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnGetRewards)
   self._buying = false
-  self._sailingPlanLocalProcess = (self.uiOwner):GetSailingPlanLocalProgress()
-  self._sailingPlanID = (self.uiOwner):GetSailingPlanID()
-  self._buyInfo = (self._sailingPlanLocalProcess):GetComponentInfo(ECCampaignInlandSailingComponentID.BUY_GIFT)
-  self._questInfo = (self._sailingPlanLocalProcess):GetComponentInfo(ECCampaignInlandSailingComponentID.QUEST)
+  self._sailingPlanLocalProcess = self.uiOwner:GetSailingPlanLocalProgress()
+  self._sailingPlanID = self.uiOwner:GetSailingPlanID()
+  self._buyInfo = self._sailingPlanLocalProcess:GetComponentInfo(ECCampaignInlandSailingComponentID.BUY_GIFT)
+  self._questInfo = self._sailingPlanLocalProcess:GetComponentInfo(ECCampaignInlandSailingComponentID.QUEST)
   self:OnValue()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopTabChange, ShopMainTabType.SailingPlan)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopTabChange, ShopMainTabType.SailingPlan)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.SkinViewBtnOnClick = function(self, go)
-  -- function num : 0_21 , upvalues : _ENV
+function UIShopSailingPlanTab:SkinViewBtnOnClick(go)
   self:ShowDialog("UIPetSkinsMainController", PetSkinUiOpenType.PSUOT_TIPS, self._skinID)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.SetQuestList = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  (self._normalQuestPool):SpawnObjects("UIShopSailingPlanNormalQuest", #self._normalList)
-  ;
-  (self._specialQuestPool):SpawnObjects("UIShopSailingPlanSpecialQuest", #self._specialList)
-  local normalPools = (self._normalQuestPool):GetAllSpawnList()
-  local specialPools = (self._specialQuestPool):GetAllSpawnList()
+function UIShopSailingPlanTab:SetQuestList()
+  self._normalQuestPool:SpawnObjects("UIShopSailingPlanNormalQuest", #self._normalList)
+  self._specialQuestPool:SpawnObjects("UIShopSailingPlanSpecialQuest", #self._specialList)
+  local normalPools = self._normalQuestPool:GetAllSpawnList()
+  local specialPools = self._specialQuestPool:GetAllSpawnList()
   local spIdx = 0
   local normalIdx = 0
   for i = 1, #self._normalList do
     local item = normalPools[i]
-    local questid = (self._normalList)[i]
-    local quest = (self._questModule):GetQuest(questid)
-    local questState = (quest:QuestInfo()).status
+    local questid = self._normalList[i]
+    local quest = self._questModule:GetQuest(questid)
+    local questState = quest:QuestInfo().status
     if questState < QuestStatus.QUEST_Taken then
       if normalIdx == 0 then
         normalIdx = i
       else
-        normalIdx = (math.min)(normalIdx, i)
+        normalIdx = math.min(normalIdx, i)
       end
     end
     local allTaken = false
-    local s_questid = (self._specialList)[i]
-    local s_quest = (self._questModule):GetQuest(s_questid)
-    local s_questState = (s_quest:QuestInfo()).status
+    local s_questid = self._specialList[i]
+    local s_quest = self._questModule:GetQuest(s_questid)
+    local s_questState = s_quest:QuestInfo().status
     if questState == QuestStatus.QUEST_Taken and s_questState == QuestStatus.QUEST_Taken then
       allTaken = true
     end
-    local yieldTime = nil
+    local yieldTime
     if self._playAnim then
       yieldTime = (i - 1) * 50
     end
     item:SetData(i, quest, function(questid, itemid, pos)
-    -- function num : 0_22_0 , upvalues : self
-    self:NormalQuestClick(questid, itemid, pos)
-  end
-, yieldTime, allTaken)
+      self:NormalQuestClick(questid, itemid, pos)
+    end, yieldTime, allTaken)
   end
   for i = 1, #self._specialList do
     local item = specialPools[i]
-    local questid = (self._specialList)[i]
-    local quest = (self._questModule):GetQuest(questid)
-    local questState = (quest:QuestInfo()).status
+    local questid = self._specialList[i]
+    local quest = self._questModule:GetQuest(questid)
+    local questState = quest:QuestInfo().status
     if questState < QuestStatus.QUEST_Taken then
       if spIdx == 0 then
         spIdx = i
       else
-        spIdx = (math.min)(spIdx, i)
+        spIdx = math.min(spIdx, i)
       end
     end
-    local yieldTime = nil
+    local yieldTime
     if self._playAnim then
       yieldTime = (i - 1) * 50
     end
     item:SetData(i, quest, function(questid, itemid, pos)
-    -- function num : 0_22_1 , upvalues : self
-    self:SpecialQuestClick(questid, itemid, pos)
-  end
-, self._buyState, yieldTime)
+      self:SpecialQuestClick(questid, itemid, pos)
+    end, self._buyState, yieldTime)
   end
   self._playAnim = false
-  local showIdx = (math.min)(spIdx, normalIdx)
+  local showIdx = math.min(spIdx, normalIdx)
   if showIdx == 0 then
     showIdx = 1
   end
   self:MoveContent(showIdx)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.MoveContent = function(self, showIdx)
-  -- function num : 0_23 , upvalues : _ENV
+function UIShopSailingPlanTab:MoveContent(showIdx)
   local contentPos = 161 * (showIdx - 1)
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._contentRt).anchoredPosition = Vector2(0, contentPos)
+  self._contentRt.anchoredPosition = Vector2(0, contentPos)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.NormalQuestClick = function(self, questid, itemid, pos)
-  -- function num : 0_24 , upvalues : _ENV
-  local quest = (self._questModule):GetQuest(questid)
+function UIShopSailingPlanTab:NormalQuestClick(questid, itemid, pos)
+  local quest = self._questModule:GetQuest(questid)
   local questinfo = quest:QuestInfo()
   local status = questinfo.status
   if status == QuestStatus.QUEST_Completed then
@@ -492,16 +384,13 @@ UIShopSailingPlanTab.NormalQuestClick = function(self, questid, itemid, pos)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.SpecialQuestClick = function(self, questid, itemid, pos)
-  -- function num : 0_25 , upvalues : _ENV
+function UIShopSailingPlanTab:SpecialQuestClick(questid, itemid, pos)
   if self._buyState == BuyGiftStateType.EBGST_INIT then
-    (Log.debug)("###[UIShopSailingPlanTab] SpecialQuestClick 未购买")
+    Log.debug("###[UIShopSailingPlanTab] SpecialQuestClick 未购买")
     self:ItemOnClick(itemid, pos)
-    return 
+    return
   end
-  local quest = (self._questModule):GetQuest(questid)
+  local quest = self._questModule:GetQuest(questid)
   local questinfo = quest:QuestInfo()
   local status = questinfo.status
   if status == QuestStatus.QUEST_Completed then
@@ -511,248 +400,176 @@ UIShopSailingPlanTab.SpecialQuestClick = function(self, questid, itemid, pos)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.FinishAQuest = function(self, questid)
-  -- function num : 0_26 , upvalues : _ENV
+function UIShopSailingPlanTab:FinishAQuest(questid)
   self:Lock("UIShopSailingPlanTab:OnFinishQuest")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnFinishQuest, self, false, questid)
+  GameGlobal.TaskManager():StartTask(self.OnFinishQuest, self, false, questid)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.FinishAllQuest = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UIShopSailingPlanTab:FinishAllQuest()
   self:Lock("UIShopSailingPlanTab:OnFinishQuest")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnFinishQuest, self, true, -1)
+  GameGlobal.TaskManager():StartTask(self.OnFinishQuest, self, true, -1)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.OnGetRewards = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UIShopSailingPlanTab:OnGetRewards()
   self:SetQuestList()
   self:CheckNormalQuestCount()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CheckMonthCardRedpoint)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CampaignComponentStepChange)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CheckMonthCardRedpoint)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CampaignComponentStepChange)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.OnFinishQuest = function(self, TT, all, questid)
-  -- function num : 0_29 , upvalues : _ENV
+function UIShopSailingPlanTab:OnFinishQuest(TT, all, questid)
   self:SaveFinishQuestID(all, questid)
   local res = AsyncRequestRes:New()
-  local questCom = ((self._sailingPlanLocalProcess):GetComponent(ECCampaignInlandSailingComponentID.QUEST))
-  local ret, rewards = nil, nil
+  local questCom = self._sailingPlanLocalProcess:GetComponent(ECCampaignInlandSailingComponentID.QUEST)
+  local ret, rewards
   if all then
-    ret = questCom:HandleOneKeyTakeQuest(TT, res)
+    ret, rewards = questCom:HandleOneKeyTakeQuest(TT, res)
   else
-    -- DECOMPILER ERROR at PC27: Overwrote pending register: R7 in 'AssignReg'
-
-    ret = questCom:HandleQuestTake(TT, res, questid)
+    ret, rewards = questCom:HandleQuestTake(TT, res, questid)
   end
   self:UnLock("UIShopSailingPlanTab:OnFinishQuest")
   if res:GetSucc() then
     if self.view == nil then
-      return 
+      return
     end
-    ;
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
+    UIActivityHelper.ShowUIGetRewards(rewards)
   else
-    ;
-    (Log.error)("###[UIShopSailingPlanTab] OnFinishQuest fail,type:", all, " result:", res:GetResult(), " questid:", questid)
+    Log.error("###[UIShopSailingPlanTab] OnFinishQuest fail,type:", all, " result:", res:GetResult(), " questid:", questid)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.SaveFinishQuestID = function(self, all, id)
-  -- function num : 0_30 , upvalues : _ENV
+function UIShopSailingPlanTab:SaveFinishQuestID(all, id)
   self._saveFinishQuestID = {}
   if all then
-    for index,value in ipairs(self._normalList) do
-      local quest = (self._questModule):GetQuest(value)
+    for index, value in ipairs(self._normalList) do
+      local quest = self._questModule:GetQuest(value)
       local questInfo = quest:QuestInfo()
       local status = questInfo.status
       if status == QuestStatus.QUEST_Completed then
-        (table.insert)(self._saveFinishQuestID, value)
+        table.insert(self._saveFinishQuestID, value)
       end
     end
   else
-    do
-      ;
-      (table.insert)(self._saveFinishQuestID, id)
-    end
+    table.insert(self._saveFinishQuestID, id)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.AllBtnOnClick = function(self, go)
-  -- function num : 0_31
+function UIShopSailingPlanTab:AllBtnOnClick(go)
   local getList = self:GetAllCompleteQuest()
-  if #getList > 0 then
+  if 0 < #getList then
     self:FinishAllQuest()
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.GetAllCompleteQuest = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function UIShopSailingPlanTab:GetAllCompleteQuest()
   local getList = {}
-  for index,value in ipairs(self._normalList) do
-    local quest = (self._questModule):GetQuest(value)
+  for index, value in ipairs(self._normalList) do
+    local quest = self._questModule:GetQuest(value)
     local questInfo = quest:QuestInfo()
     local status = questInfo.status
     if status == QuestStatus.QUEST_Completed then
-      (table.insert)(getList, value)
+      table.insert(getList, value)
     end
   end
   if self._buyState ~= BuyGiftStateType.EBGST_INIT then
-    for index,value in ipairs(self._specialList) do
-      local quest = (self._questModule):GetQuest(value)
+    for index, value in ipairs(self._specialList) do
+      local quest = self._questModule:GetQuest(value)
       local questInfo = quest:QuestInfo()
       local status = questInfo.status
       if status == QuestStatus.QUEST_Completed then
-        (table.insert)(getList, value)
+        table.insert(getList, value)
       end
     end
   end
-  do
-    return getList
-  end
+  return getList
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.BuyBtnOnClick = function(self, go)
-  -- function num : 0_33 , upvalues : _ENV
+function UIShopSailingPlanTab:BuyBtnOnClick(go)
   if self._buyState ~= BuyGiftStateType.EBGST_INIT then
-    (Log.debug)("###[UIShopSailingPlanTab] 已经购买")
-    return 
+    Log.debug("###[UIShopSailingPlanTab] 已经购买")
+    return
   end
   if self._buying then
-    (Log.debug)("###[UIShopSailingPlanTab] 已经开始购买，不可连续点击")
-    return 
+    Log.debug("###[UIShopSailingPlanTab] 已经开始购买，不可连续点击")
+    return
   end
   self._buying = true
-  local buyCom = (self._sailingPlanLocalProcess):GetComponent(ECCampaignInlandSailingComponentID.BUY_GIFT)
-  local gift = ((self._buyInfo).m_campaign_gift_list)[1]
+  local buyCom = self._sailingPlanLocalProcess:GetComponent(ECCampaignInlandSailingComponentID.BUY_GIFT)
+  local gift = self._buyInfo.m_campaign_gift_list[1]
   local giftid = gift.m_gift_id
   local cfg = buyCom:GetGiftCfgById(giftid)
   local giftType = cfg.GiftType
   local giftNum = 1
   buyCom:BuyGift(giftid, giftNum, giftType)
-  ;
-  (Log.debug)("###[UIShopSailingPlanTab] start buy gift !")
+  Log.debug("###[UIShopSailingPlanTab] start buy gift !")
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.OnCurrencyBuySuccess = function(self, goodsId)
-  -- function num : 0_34 , upvalues : _ENV
-  (Log.debug)("###[UIShopSailingPlanTab] 购买成功,id:", goodsId)
+function UIShopSailingPlanTab:OnCurrencyBuySuccess(goodsId)
+  Log.debug("###[UIShopSailingPlanTab] 购买成功,id:", goodsId)
   self._buying = false
-  local gift = ((self._buyInfo).m_campaign_gift_list)[1]
+  local gift = self._buyInfo.m_campaign_gift_list[1]
   local giftid = gift.m_gift_id
   if giftid == goodsId then
-    (Log.debug)("###[UIShopSailingPlanTab] 购买成功,刷新!")
+    Log.debug("###[UIShopSailingPlanTab] 购买成功,刷新!")
     self:RefreshSpecialAwards()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSailingPlanBuySucc)
-    ;
-    ((GameGlobal.GetModule)(PayModule)):RequestGetBalanceForCharge()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSailingPlanBuySucc)
+    GameGlobal.GetModule(PayModule):RequestGetBalanceForCharge()
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.OnCurrencyBuyError = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  (Log.debug)("###[UIShopSailingPlanTab] 购买失败")
+function UIShopSailingPlanTab:OnCurrencyBuyError()
+  Log.debug("###[UIShopSailingPlanTab] 购买失败")
   self._buying = false
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.OnGiftBuySucc = function(self)
-  -- function num : 0_36 , upvalues : _ENV
+function UIShopSailingPlanTab:OnGiftBuySucc()
   self:RefreshSpecialAwards()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSailingPlanBuySucc)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSailingPlanBuySucc)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.QuestUpdate = function(self)
-  -- function num : 0_37
+function UIShopSailingPlanTab:QuestUpdate()
   self:RefreshSpecialAwards()
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.RefreshSpecialAwards = function(self)
-  -- function num : 0_38 , upvalues : _ENV
-  self._sailingPlanLocalProcess = (self.uiOwner):GetSailingPlanLocalProgress()
-  self._buyInfo = (self._sailingPlanLocalProcess):GetComponentInfo(ECCampaignInlandSailingComponentID.BUY_GIFT)
-  self._buyState = (self._buyInfo).m_buy_state
+function UIShopSailingPlanTab:RefreshSpecialAwards()
+  self._sailingPlanLocalProcess = self.uiOwner:GetSailingPlanLocalProgress()
+  self._buyInfo = self._sailingPlanLocalProcess:GetComponentInfo(ECCampaignInlandSailingComponentID.BUY_GIFT)
+  self._buyState = self._buyInfo.m_buy_state
   self:GetData()
   self:SetQuestList()
   self:SetBuyBtnState()
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.GetData = function(self)
-  -- function num : 0_39 , upvalues : _ENV
-  local list = (self._questInfo).m_accept_cam_quest_list
+function UIShopSailingPlanTab:GetData()
+  local list = self._questInfo.m_accept_cam_quest_list
   self._normalList = {}
   self._specialList = {}
-  self._clientCfg = (Cfg.cfg_shop_sailing_plan_client)[self._sailingPlanID]
+  self._clientCfg = Cfg.cfg_shop_sailing_plan_client[self._sailingPlanID]
   if not self._clientCfg then
-    (Log.error)("###[UIShopSailingPlanTab] 缺少客户端配置，活动id:", self._sailingPlanID, "!")
+    Log.error("###[UIShopSailingPlanTab] 缺少客户端配置，活动id:", self._sailingPlanID, "!")
   end
-  self._awardSort = (self._clientCfg).Sort
-  self._popTips = (self._clientCfg).PopBuyTips
-  self._questPos = (self._clientCfg).QuestPos
-  self._skinID = (self._clientCfg).SkinID
-  self._buyState = (self._buyInfo).m_buy_state
-  local normalQuestPos = (self._questPos)[1]
-  for index,value in ipairs(list) do
-    if (table.icontains)(normalQuestPos, value) then
-      (table.insert)(self._normalList, value)
+  self._awardSort = self._clientCfg.Sort
+  self._popTips = self._clientCfg.PopBuyTips
+  self._questPos = self._clientCfg.QuestPos
+  self._skinID = self._clientCfg.SkinID
+  self._buyState = self._buyInfo.m_buy_state
+  local normalQuestPos = self._questPos[1]
+  for index, value in ipairs(list) do
+    if table.icontains(normalQuestPos, value) then
+      table.insert(self._normalList, value)
     else
-      ;
-      (table.insert)(self._specialList, value)
+      table.insert(self._specialList, value)
     end
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.OnHide = function(self)
-  -- function num : 0_40
+function UIShopSailingPlanTab:OnHide()
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.ShowSelf = function(self)
-  -- function num : 0_41
-  (self._anim):Stop()
-  ;
-  (self._anim):Play()
+function UIShopSailingPlanTab:ShowSelf()
+  self._anim:Stop()
+  self._anim:Play()
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanTab.HideSelf = function(self)
-  -- function num : 0_42
+function UIShopSailingPlanTab:HideSelf()
 end
-
-

@@ -1,211 +1,136 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chat/chat_friend_detail_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChatFriendDetailData", Object)
 ChatFriendDetailData = ChatFriendDetailData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChatFriendDetailData.Constructor = function(self, friendData, playerDetailInfo)
-  -- function num : 0_0 , upvalues : _ENV
+function ChatFriendDetailData:Constructor(friendData, playerDetailInfo)
   local fightInfo = playerDetailInfo.fight_info
   self._friendData = friendData
   self._des = playerDetailInfo.role_sign_text
   local missionid = fightInfo.mission_id
   local chapterid = 1
-  local cfg_chapter = (Cfg.cfg_mission_chapter)({MissionID = missionid})
-  if cfg_chapter and (table.count)(cfg_chapter) > 0 then
-    chapterid = (cfg_chapter[1]).MainChapterID
+  local cfg_chapter = Cfg.cfg_mission_chapter({MissionID = missionid})
+  if cfg_chapter and table.count(cfg_chapter) > 0 then
+    chapterid = cfg_chapter[1].MainChapterID
   end
   if not self:IsChapterReachUnlockTime(chapterid) then
     chapterid = chapterid - 1
-    local cfg_chapter_2 = (Cfg.cfg_mission_chapter)({MainChapterID = chapterid})
-    if cfg_chapter_2 and (table.count)(cfg_chapter_2) > 0 then
-      missionid = (cfg_chapter_2[#cfg_chapter_2]).MissionID
+    local cfg_chapter_2 = Cfg.cfg_mission_chapter({MainChapterID = chapterid})
+    if cfg_chapter_2 and table.count(cfg_chapter_2) > 0 then
+      missionid = cfg_chapter_2[#cfg_chapter_2].MissionID
     end
   end
-  do
-    self._currentMissionId = missionid
-    self._difficultyMission = (playerDetailInfo.simple_info).difficulty_mission
-    self._sailingMission = (playerDetailInfo.simple_info).sailing_mission
-    self._titleUsed = (playerDetailInfo.simple_info).title_used
-    self._fifureUsed = (playerDetailInfo.simple_info).fifure_used
-    self._worldBossInfo = (playerDetailInfo.simple_info).world_boss_info
-    self._medalPlacementInfo = (playerDetailInfo.simple_info).medal_placement
-    self._star = fightInfo.pass_star_num
-    self._petCount = fightInfo.pet_num
-    self._achievementPoint = fightInfo.achievement_num
-    self._towerWater = fightInfo.tower_water
-    self._towerFire = fightInfo.tower_fire
-    self._towerWood = fightInfo.tower_wood
-    self._towerThunder = fightInfo.tower_thunder
-    local questModule = (GameGlobal.GetModule)(QuestModule)
-    local achievementPoint = 0
-    local achievementPointAll = 0
-    achievementPoint = questModule:GetAchieveCount(AchieveType.AT_All)
-    self._allAchievementPoint = achievementPointAll
-    local rankScore = (playerDetailInfo.simple_info).peak_score
-    self:SetRankValue(rankScore)
-  end
+  self._currentMissionId = missionid
+  self._difficultyMission = playerDetailInfo.simple_info.difficulty_mission
+  self._sailingMission = playerDetailInfo.simple_info.sailing_mission
+  self._titleUsed = playerDetailInfo.simple_info.title_used
+  self._fifureUsed = playerDetailInfo.simple_info.fifure_used
+  self._worldBossInfo = playerDetailInfo.simple_info.world_boss_info
+  self._medalPlacementInfo = playerDetailInfo.simple_info.medal_placement
+  self._star = fightInfo.pass_star_num
+  self._petCount = fightInfo.pet_num
+  self._achievementPoint = fightInfo.achievement_num
+  self._towerWater = fightInfo.tower_water
+  self._towerFire = fightInfo.tower_fire
+  self._towerWood = fightInfo.tower_wood
+  self._towerThunder = fightInfo.tower_thunder
+  local questModule = GameGlobal.GetModule(QuestModule)
+  local achievementPoint = 0
+  local achievementPointAll = 0
+  achievementPoint, achievementPointAll = questModule:GetAchieveCount(AchieveType.AT_All)
+  self._allAchievementPoint = achievementPointAll
+  local rankScore = playerDetailInfo.simple_info.peak_score
+  self:SetRankValue(rankScore)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.IsChapterReachUnlockTime = function(self, chapterId)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfg = ((Cfg.cfg_global).ui_chapter_unlock_time).TableValue
+function ChatFriendDetailData:IsChapterReachUnlockTime(chapterId)
+  local cfg = Cfg.cfg_global.ui_chapter_unlock_time.TableValue
   if not cfg then
     return false
   end
   local unlockTimestamp = cfg[chapterId] or 0
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   local isUnlock = unlockTimestamp < nowTimestamp
-  do return isUnlock end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return isUnlock
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.SetRankValue = function(self, expValue)
-  -- function num : 0_2 , upvalues : _ENV
+function ChatFriendDetailData:SetRankValue(expValue)
   local exp = expValue
-  local airModule = (GameGlobal.GetModule)(AircraftModule)
+  local airModule = GameGlobal.GetModule(AircraftModule)
   local lv = airModule:GetLvByExp(exp)
   self._rankValue = lv
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.GetFriendData = function(self)
-  -- function num : 0_3
+function ChatFriendDetailData:GetFriendData()
   return self._friendData
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.GetDes = function(self)
-  -- function num : 0_4
+function ChatFriendDetailData:GetDes()
   return self._des
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.GetCurrentMissionId = function(self)
-  -- function num : 0_5
+function ChatFriendDetailData:GetCurrentMissionId()
   return self._currentMissionId
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.GetStar = function(self)
-  -- function num : 0_6
+function ChatFriendDetailData:GetStar()
   return self._star
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.GetPetCount = function(self)
-  -- function num : 0_7
+function ChatFriendDetailData:GetPetCount()
   return self._petCount
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.GetAchievementPoint = function(self)
-  -- function num : 0_8
+function ChatFriendDetailData:GetAchievementPoint()
   return self._achievementPoint
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.GetAllAchievementPoint = function(self)
-  -- function num : 0_9
+function ChatFriendDetailData:GetAllAchievementPoint()
   return self._allAchievementPoint
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.GetTowerWater = function(self)
-  -- function num : 0_10
+function ChatFriendDetailData:GetTowerWater()
   return self._towerWater
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.GetTowerFire = function(self)
-  -- function num : 0_11
+function ChatFriendDetailData:GetTowerFire()
   return self._towerFire
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.GetTowerWood = function(self)
-  -- function num : 0_12
+function ChatFriendDetailData:GetTowerWood()
   return self._towerWood
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.GetTowerThunder = function(self)
-  -- function num : 0_13
+function ChatFriendDetailData:GetTowerThunder()
   return self._towerThunder
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.GetDifficultyMission = function(self)
-  -- function num : 0_14
+function ChatFriendDetailData:GetDifficultyMission()
   return self._difficultyMission
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.GetSailingMission = function(self)
-  -- function num : 0_15
+function ChatFriendDetailData:GetSailingMission()
   return self._sailingMission
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.GetTitleUsed = function(self)
-  -- function num : 0_16
+function ChatFriendDetailData:GetTitleUsed()
   return self._titleUsed
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.GetFifureUsed = function(self)
-  -- function num : 0_17
+function ChatFriendDetailData:GetFifureUsed()
   return self._fifureUsed
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.GetRankValue = function(self)
-  -- function num : 0_18
+function ChatFriendDetailData:GetRankValue()
   return self._rankValue
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.GetWorldBossRecordDan = function(self)
-  -- function num : 0_19
-  return (self._worldBossInfo).dan
+function ChatFriendDetailData:GetWorldBossRecordDan()
+  return self._worldBossInfo.dan
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.GetWorldBossRecordRank = function(self)
-  -- function num : 0_20
-  return (self._worldBossInfo).grading
+function ChatFriendDetailData:GetWorldBossRecordRank()
+  return self._worldBossInfo.grading
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendDetailData.GetMedalPlacementInfo = function(self)
-  -- function num : 0_21
+function ChatFriendDetailData:GetMedalPlacementInfo()
   return self._medalPlacementInfo
 end
-
-

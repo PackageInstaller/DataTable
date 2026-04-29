@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_turn_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleTurnInfo", UICustomWidget)
 UIBattleTurnInfo = UIBattleTurnInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleTurnInfo.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBattleTurnInfo:OnShow()
   self._leftTurnNormalGO = self:GetGameObject("Normal")
   self._leftTurnNum = self:GetUIComponent("UILocalizationText", "txtTurnCount")
   self._leftTurnLittleNum = self:GetUIComponent("UILocalizationText", "txtLittleTurnCount")
@@ -20,25 +13,22 @@ UIBattleTurnInfo.OnShow = function(self)
   self._roundDescText = self:GetUIComponent("UILocalizationText", "text")
   self._outOfOrderGO = self:GetGameObject("OutOfOrder")
   self._damagePercentText = self:GetUIComponent("UILocalizationText", "damagePercent")
-  self._warningRoundCount = ((Cfg.cfg_global).inner_game_warning_round_count).IntValue
+  self._warningRoundCount = Cfg.cfg_global.inner_game_warning_round_count.IntValue
   self._warningRoundState = false
   self._doTweenSequence = nil
   self._roundWarningTaskID = nil
-  local tranUpEff = (self:GetGameObject("UP_Eff")).transform
+  local tranUpEff = self:GetGameObject("UP_Eff").transform
   self._arrAnimEffUp = {}
   self._arrTextEffUp = {}
   self._effArrLen = 5
   for i = 1, self._effArrLen do
-    local goAnimEffUp = (UIHelper.GetGameObject)("UIEff_TurnInfo_tiaodong.prefab")
-    ;
-    (goAnimEffUp.transform):SetParent(tranUpEff, false)
+    local goAnimEffUp = UIHelper.GetGameObject("UIEff_TurnInfo_tiaodong.prefab")
+    goAnimEffUp.transform:SetParent(tranUpEff, false)
     goAnimEffUp:SetActive(false)
     local anim = goAnimEffUp:GetComponent("Animation")
-    local txt = ((goAnimEffUp.transform):Find("number")):GetComponent("UILocalizationText")
-    ;
-    (table.insert)(self._arrAnimEffUp, anim)
-    ;
-    (table.insert)(self._arrTextEffUp, txt)
+    local txt = goAnimEffUp.transform:Find("number"):GetComponent("UILocalizationText")
+    table.insert(self._arrAnimEffUp, anim)
+    table.insert(self._arrTextEffUp, txt)
   end
   self:Init()
   self:AttachEvent(GameEventType.InitRoundCount, self.InitRoundCount)
@@ -48,10 +38,7 @@ UIBattleTurnInfo.OnShow = function(self)
   self:AttachEvent(GameEventType.RemainRoundCount2Power, self.PlayRemainRoundCount2Power)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTurnInfo.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBattleTurnInfo:OnHide()
   self._arrAnimEffUp = nil
   self._arrTextEffUp = nil
   self:DetachEvent(GameEventType.InitRoundCount, self.InitRoundCount)
@@ -61,191 +48,127 @@ UIBattleTurnInfo.OnHide = function(self)
   self:DetachEvent(GameEventType.RemainRoundCount2Power, self.PlayRemainRoundCount2Power)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTurnInfo.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBattleTurnInfo:Dispose()
   if self._roundWarningTaskID then
-    ((GameGlobal.TaskManager)()):KillTask(self._roundWarningTaskID)
+    GameGlobal.TaskManager():KillTask(self._roundWarningTaskID)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTurnInfo.Init = function(self)
-  -- function num : 0_3
-  (self._leftTurnWarningGO):SetActive(false)
+function UIBattleTurnInfo:Init()
+  self._leftTurnWarningGO:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTurnInfo.InitRoundCount = function(self, turnCount)
-  -- function num : 0_4 , upvalues : _ENV
-  self._outOfRoundType = (BattleStatHelper.GetLevelOutOfRoundType)()
+function UIBattleTurnInfo:InitRoundCount(turnCount)
+  self._outOfRoundType = BattleStatHelper.GetLevelOutOfRoundType()
   self:CancelRoundWarningState()
   self:SetRoundCount(turnCount)
   self:UpdateLeftTurnNum(turnCount)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTurnInfo.SetRoundCount = function(self, turnCount)
-  -- function num : 0_5 , upvalues : _ENV
+function UIBattleTurnInfo:SetRoundCount(turnCount)
   self._recordLeftTurnCount = turnCount
-  ;
-  (self._leftTurnNum):SetText(tostring(turnCount))
-  ;
-  (self._leftTurnLittleNum):SetText(tostring(turnCount))
-  ;
-  (self._leftTurnWarningNum):SetText(tostring(turnCount))
-  ;
-  (self._leftTurnWarningLittleNum):SetText(tostring(turnCount))
-  ;
-  (self._leftTurnWarningNumBG):SetText(tostring(turnCount))
+  self._leftTurnNum:SetText(tostring(turnCount))
+  self._leftTurnLittleNum:SetText(tostring(turnCount))
+  self._leftTurnWarningNum:SetText(tostring(turnCount))
+  self._leftTurnWarningLittleNum:SetText(tostring(turnCount))
+  self._leftTurnWarningNumBG:SetText(tostring(turnCount))
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTurnInfo.UpdateLeftTurnNum = function(self, leftTurnNum)
-  -- function num : 0_6
-  if self._warningRoundCount < leftTurnNum and self._warningRoundState then
+function UIBattleTurnInfo:UpdateLeftTurnNum(leftTurnNum)
+  if leftTurnNum > self._warningRoundCount and self._warningRoundState then
     self:CancelRoundWarningState()
-  else
-    if leftTurnNum <= self._warningRoundCount and not self._warningRoundState then
-      self:_DoRoundWarning()
-    end
+  elseif leftTurnNum <= self._warningRoundCount and not self._warningRoundState then
+    self:_DoRoundWarning()
   end
   if self._outOfRoundType == 0 then
     self:SetRoundCount(leftTurnNum)
-  else
-    if leftTurnNum > 0 then
-      self:SetRoundCount(leftTurnNum)
-    end
+  elseif 0 < leftTurnNum then
+    self:SetRoundCount(leftTurnNum)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTurnInfo.UpdateLeftTurnNumByDiff = function(self, leftTurnNumDiff)
-  -- function num : 0_7
+function UIBattleTurnInfo:UpdateLeftTurnNumByDiff(leftTurnNumDiff)
   local curUiRecordTurn = self._recordLeftTurnCount
   if not curUiRecordTurn then
-    return 
+    return
   end
   local leftTurnNum = curUiRecordTurn + leftTurnNumDiff
   self:UpdateLeftTurnNum(leftTurnNum)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTurnInfo.UpdateOutOfRoundPunish = function(self, isPreview)
-  -- function num : 0_8 , upvalues : _ENV
+function UIBattleTurnInfo:UpdateOutOfRoundPunish(isPreview)
   if self._outOfRoundType == 0 then
-    return 
+    return
   end
-  ;
-  ((self._roundDescText).gameObject):SetActive(false)
-  ;
-  (self._leftTurnNormalGO):SetActive(false)
-  ;
-  (self._leftTurnWarningGO):SetActive(false)
-  ;
-  (self._outOfOrderGO):SetActive(true)
-  local percent = (BattleStatHelper.GetOutOfRoundPunishHPPercent)(isPreview)
-  ;
-  (self._damagePercentText):SetText((table.concat)({(math.floor)(percent * 100), "%"}))
+  self._roundDescText.gameObject:SetActive(false)
+  self._leftTurnNormalGO:SetActive(false)
+  self._leftTurnWarningGO:SetActive(false)
+  self._outOfOrderGO:SetActive(true)
+  local percent = BattleStatHelper.GetOutOfRoundPunishHPPercent(isPreview)
+  self._damagePercentText:SetText(table.concat({
+    math.floor(percent * 100),
+    "%"
+  }))
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTurnInfo.CancelRoundWarningState = function(self)
-  -- function num : 0_9
+function UIBattleTurnInfo:CancelRoundWarningState()
   self._warningRoundState = false
-  ;
-  (self._leftTurnNormalGO):SetActive(true)
-  ;
-  (self._leftTurnWarningGO):SetActive(false)
+  self._leftTurnNormalGO:SetActive(true)
+  self._leftTurnWarningGO:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTurnInfo._DoRoundWarning = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIBattleTurnInfo:_DoRoundWarning()
   self._warningRoundState = true
-  ;
-  (self._leftTurnNormalGO):SetActive(false)
-  ;
-  (self._leftTurnWarningGO):SetActive(true)
-  self._roundWarningTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoLeftTurnWarningAnimation, self)
+  self._leftTurnNormalGO:SetActive(false)
+  self._leftTurnWarningGO:SetActive(true)
+  self._roundWarningTaskID = GameGlobal.TaskManager():CoreGameStartTask(self._DoLeftTurnWarningAnimation, self)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTurnInfo._DoLeftTurnWarningAnimation = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
-  self._DoTweenSequence = (((DG.Tweening).DOTween).Sequence)()
+function UIBattleTurnInfo:_DoLeftTurnWarningAnimation(TT)
+  self._DoTweenSequence = DG.Tweening.DOTween.Sequence()
   local sss = self:GetGameObject("warningtxtTurnCountBG")
   while self._warningRoundState do
-    (sss.transform):DOScale(Vector3(1.3, 1.3, 1), 0.2)
-    ;
-    (self._leftTurnWarningNumBG):DOFade(0, 0.1)
+    sss.transform:DOScale(Vector3(1.3, 1.3, 1), 0.2)
+    self._leftTurnWarningNumBG:DOFade(0, 0.1)
     if not self._warningRoundState then
-      return 
+      return
     end
     YIELD(TT, 200)
-    local coreGameStateID = (GameGlobal:GetInstance()):CoreGameStateID()
+    local coreGameStateID = GameGlobal:GetInstance():CoreGameStateID()
     if coreGameStateID == GameStateID.Invalid then
-      (Log.notice)("quit game already")
+      Log.notice("quit game already")
       break
     end
     if not self._warningRoundState then
-      return 
+      return
     end
-    ;
-    (self._leftTurnWarningNumBG):DOFade(255, 0)
-    -- DECOMPILER ERROR at PC63: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (sss.transform).localScale = Vector3(1, 1, 1)
+    self._leftTurnWarningNumBG:DOFade(255, 0)
+    sss.transform.localScale = Vector3(1, 1, 1)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTurnInfo.PlayRemainRoundCount2Power = function(self, energyNum, curRemainRound)
-  -- function num : 0_12 , upvalues : _ENV
+function UIBattleTurnInfo:PlayRemainRoundCount2Power(energyNum, curRemainRound)
   if curRemainRound <= 0 then
-    return 
+    return
   end
-  local matchType = (((GameGlobal:GetInstance()).GetModule)(MatchModule)):GetMatchType()
+  local matchType = GameGlobal:GetInstance().GetModule(MatchModule):GetMatchType()
   if matchType == MatchType.MT_Maze or matchType == MatchType.MT_SeasonMaze then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : energyNum, curRemainRound, self, _ENV
     local perEnergy = energyNum / curRemainRound
     for i = curRemainRound, 1, -1 do
       local idx = i % self._effArrLen + 1
-      ;
-      (((self._arrAnimEffUp)[idx]).gameObject):SetActive(true)
-      ;
-      ((self._arrAnimEffUp)[idx]):Play()
-      -- DECOMPILER ERROR at PC25: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      ((self._arrTextEffUp)[idx]).text = tostring(i)
+      self._arrAnimEffUp[idx].gameObject:SetActive(true)
+      self._arrAnimEffUp[idx]:Play()
+      self._arrTextEffUp[idx].text = tostring(i)
       self:SetRoundCount(i - 1)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RemainRoundCount2PowerPet, perEnergy)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.RemainRoundCount2PowerPet, perEnergy)
       YIELD(TT, 100)
       if not self._arrAnimEffUp then
-        return 
+        return
       end
-      ;
-      (((self._arrAnimEffUp)[idx]).gameObject):SetActive(false)
+      self._arrAnimEffUp[idx].gameObject:SetActive(false)
     end
-  end
-, self)
+  end, self)
 end
-
-

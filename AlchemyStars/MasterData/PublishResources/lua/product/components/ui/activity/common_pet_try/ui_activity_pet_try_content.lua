@@ -1,86 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_pet_try/ui_activity_pet_try_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UIActivityPetTryContent", UISideEnterCenterContentBase)
 UIActivityPetTryContent = UIActivityPetTryContent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityPetTryContent.DoInit = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
-  if params then
-    self._campaignType = params.campaign_type
-    if not params or not params.component_ids then
-      self._componentIds = {}
-      if params then
-        self._campaignId = params.campaign_id
-        self._campaignType = ECampaignType.CAMPAIGN_TYPE_INLAND_FIRSTPET
-        self._componentId = ECCampaignInlandFirstPetComponentID.Line_MISSION
-        self._campaign = self._data
-      end
-    end
-  end
+function UIActivityPetTryContent:DoInit(params)
+  self._campaignType = params and params.campaign_type
+  self._componentIds = params and params.component_ids or {}
+  self._campaignId = params and params.campaign_id
+  self._campaignType = ECampaignType.CAMPAIGN_TYPE_INLAND_FIRSTPET
+  self._componentId = ECCampaignInlandFirstPetComponentID.Line_MISSION
+  self._campaign = self._data
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent.DoShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityPetTryContent:DoShow()
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
-  self._component = (self._campaign):GetComponent(self._componentId)
+    self._campaign:ClearCampaignNew(TT)
+  end)
+  self._component = self._campaign:GetComponent(self._componentId)
   self._uicgName = "UIPetDetailItem"
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   self._currIdx = 1
   self:_Refresh()
   self._petCanClick = nil
   self:StartTask(function(TT)
-    -- function num : 0_1_1 , upvalues : _ENV, self
     YIELD(TT, 400)
     if self.view then
       self._petCanClick = true
     end
-  end
-)
+  end)
   self:AddListener()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent.DoHide = function(self)
-  -- function num : 0_2
-  (self._petPool):ClearWidgets()
+function UIActivityPetTryContent:DoHide()
+  self._petPool:ClearWidgets()
   self:DetachListener()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent.DoDestroy = function(self)
-  -- function num : 0_3
+function UIActivityPetTryContent:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent._Refresh = function(self)
-  -- function num : 0_4
+function UIActivityPetTryContent:_Refresh()
   self:InitWidget()
   self:CreateData()
   self:InitList()
   self:ShowTips()
   self:SetPetInfo()
-  local endTime = ((self._component):GetComponentInfo()).m_close_time
+  local endTime = self._component:GetComponentInfo().m_close_time
   self:_SetRemainingTime("_timePool", "str_activity_common_remainingtime_3", endTime, true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent.InitWidget = function(self)
-  -- function num : 0_5
+function UIActivityPetTryContent:InitWidget()
   self._petPool = self:GetUIComponent("UISelectObjectPath", "petPool")
   self._tips = self:GetUIComponent("UILocalizationText", "tips")
   self._awardCount = self:GetUIComponent("UILocalizationText", "awardCount")
@@ -99,88 +67,59 @@ UIActivityPetTryContent.InitWidget = function(self)
   local star4 = self:GetGameObject("star4")
   local star5 = self:GetGameObject("star5")
   local star6 = self:GetGameObject("star6")
-  -- DECOMPILER ERROR at PC73: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._starTab)[1] = star1
-  -- DECOMPILER ERROR at PC75: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._starTab)[2] = star2
-  -- DECOMPILER ERROR at PC77: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._starTab)[3] = star3
-  -- DECOMPILER ERROR at PC79: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._starTab)[4] = star4
-  -- DECOMPILER ERROR at PC81: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._starTab)[5] = star5
-  -- DECOMPILER ERROR at PC83: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._starTab)[6] = star6
+  self._starTab[1] = star1
+  self._starTab[2] = star2
+  self._starTab[3] = star3
+  self._starTab[4] = star4
+  self._starTab[5] = star5
+  self._starTab[6] = star6
   self._element = self:GetUIComponent("Image", "element")
   self._sign = self:GetUIComponent("RawImageLoader", "sign")
   self._anim = self:GetUIComponent("Animation", "_anim")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent.CreateData = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityPetTryContent:CreateData()
   self._cfgDatas = {}
-  local componentCfgId = (self._component):GetComponentCfgId()
-  local cfgData = (Cfg.cfg_activity_pet_try_content)({ComponetntID = componentCfgId})
+  local componentCfgId = self._component:GetComponentCfgId()
+  local cfgData = Cfg.cfg_activity_pet_try_content({ComponetntID = componentCfgId})
   if not cfgData then
-    (Log.error)("UIActivityPetTryContent:CreateData() cfg_activity_pet_try_content[", componentCfgId, "] is nil !")
-    return 
+    Log.error("UIActivityPetTryContent:CreateData() cfg_activity_pet_try_content[", componentCfgId, "] is nil !")
+    return
   end
-  local cfg_pet = (Cfg.cfg_pet)({})
-  local cfg_pet_element = (Cfg.cfg_pet_element)({})
+  local cfg_pet = Cfg.cfg_pet({})
+  local cfg_pet_element = Cfg.cfg_pet_element({})
   for i = 1, #cfgData do
     local data = {}
-    data.head = (cfgData[i]).PetHeadIcon
-    data.petid = ((cfgData[i]).PetID)[1]
-    data.cg = ((cfgData[i]).PetCG)[1]
-    data.missionid = (cfgData[i]).CampaignMissionId
-    data.sortid = ((cfgData[i]).SortId)[1]
-    data.talk = (cfgData[i]).PetTalk
-    data.sign = (cfgData[i]).SignImg
-    data.pass = (self._component):IsPassCamMissionID(data.missionid)
-    data.prizePoolId = (cfgData[i]).PrizePoolId
+    data.head = cfgData[i].PetHeadIcon
+    data.petid = cfgData[i].PetID[1]
+    data.cg = cfgData[i].PetCG[1]
+    data.missionid = cfgData[i].CampaignMissionId
+    data.sortid = cfgData[i].SortId[1]
+    data.talk = cfgData[i].PetTalk
+    data.sign = cfgData[i].SignImg
+    data.pass = self._component:IsPassCamMissionID(data.missionid)
+    data.prizePoolId = cfgData[i].PrizePoolId
     local cfgPet = cfg_pet[data.petid]
     if not cfgPet then
-      (Log.error)("###[UIActivityPetTryContent] cfgPet is nil ! id --> ", data.petid)
-      return 
+      Log.error("###[UIActivityPetTryContent] cfgPet is nil ! id --> ", data.petid)
+      return
     end
     local f = cfgPet.FirstElement
-    data.element = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[f]).Icon))
-    data.name = (StringTable.Get)(cfgPet.Name)
+    data.element = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[f].Icon))
+    data.name = StringTable.Get(cfgPet.Name)
     data.star = cfgPet.Star
     data.logo = cfgPet.Logo
-    ;
-    (table.insert)(self._cfgDatas, data)
+    table.insert(self._cfgDatas, data)
   end
-  ;
-  (table.sort)(self._cfgDatas, function(a, b)
-    -- function num : 0_6_0
+  table.sort(self._cfgDatas, function(a, b)
     local SortId_a = a.sortid
     local SortId_b = b.sortid
-    do return SortId_a < SortId_b end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    return SortId_a < SortId_b
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent._SetRemainingTime = function(self, widgetName, descId, endTime, customTimeStr)
-  -- function num : 0_7 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UIActivityPetTryContent:_SetRemainingTime(widgetName, descId, endTime, customTimeStr)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   if customTimeStr then
     obj:SetCustomTimeStr_Common_1()
   end
@@ -188,23 +127,17 @@ UIActivityPetTryContent._SetRemainingTime = function(self, widgetName, descId, e
   obj:SetData(endTime, nil, nil)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent.InitList = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local count = (table.count)(self._cfgDatas)
-  ;
-  (self._petPool):SpawnObjects("UIActivityPetTryItem", count)
-  self._pools = (self._petPool):GetAllSpawnList()
+function UIActivityPetTryContent:InitList()
+  local count = table.count(self._cfgDatas)
+  self._petPool:SpawnObjects("UIActivityPetTryItem", count)
+  self._pools = self._petPool:GetAllSpawnList()
   for i = 1, #self._pools do
-    local item = (self._pools)[i]
-    if i <= count then
+    local item = self._pools[i]
+    if count >= i then
       item:Active(true)
-      item:SetData(i, self._currIdx, (self._cfgDatas)[i], function(idx)
-    -- function num : 0_8_0 , upvalues : self
-    self:OnItemClick(idx)
-  end
-)
+      item:SetData(i, self._currIdx, self._cfgDatas[i], function(idx)
+        self:OnItemClick(idx)
+      end)
     else
       item:Active(false)
     end
@@ -212,191 +145,135 @@ UIActivityPetTryContent.InitList = function(self)
   self:SetGotoBtnActive()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent.SetElement = function(self)
-  -- function num : 0_9
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._element).sprite = ((self._cfgDatas)[self._currIdx]).element
+function UIActivityPetTryContent:SetElement()
+  self._element.sprite = self._cfgDatas[self._currIdx].element
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent.SetState = function(self)
-  -- function num : 0_10
-  local pass = ((self._cfgDatas)[self._currIdx]).pass
-  ;
-  (self._passGo):SetActive(pass)
-  ;
-  (self._notPassGo):SetActive(not pass)
+function UIActivityPetTryContent:SetState()
+  local pass = self._cfgDatas[self._currIdx].pass
+  self._passGo:SetActive(pass)
+  self._notPassGo:SetActive(not pass)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent.SetPetInfo = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local name = ((self._cfgDatas)[self._currIdx]).name
-  ;
-  (self._petName):SetText(name)
-  local logo = ((self._cfgDatas)[self._currIdx]).logo
-  ;
-  (self._petLogo):LoadImage(logo)
-  local talk = ((self._cfgDatas)[self._currIdx]).talk
-  ;
-  ((self._petTalk).gameObject):SetActive(talk ~= nil)
+function UIActivityPetTryContent:SetPetInfo()
+  local name = self._cfgDatas[self._currIdx].name
+  self._petName:SetText(name)
+  local logo = self._cfgDatas[self._currIdx].logo
+  self._petLogo:LoadImage(logo)
+  local talk = self._cfgDatas[self._currIdx].talk
+  self._petTalk.gameObject:SetActive(talk ~= nil)
   if talk then
-    (self._petTalk):SetText((StringTable.Get)(talk))
+    self._petTalk:SetText(StringTable.Get(talk))
   end
-  local cg = ((self._cfgDatas)[self._currIdx]).cg
-  ;
-  (self._cg):LoadImage(cg)
-  ;
-  (UICG.SetTransform)(((self._cg).gameObject).transform, self._uicgName, cg)
-  local starCount = ((self._cfgDatas)[self._currIdx]).star
+  local cg = self._cfgDatas[self._currIdx].cg
+  self._cg:LoadImage(cg)
+  UICG.SetTransform(self._cg.gameObject.transform, self._uicgName, cg)
+  local starCount = self._cfgDatas[self._currIdx].star
   for i = 1, #self._starTab do
-    ((self._starTab)[i]):SetActive(i <= starCount)
+    self._starTab[i]:SetActive(i <= starCount)
   end
-  local petSignImg = ((self._cfgDatas)[self._currIdx]).sign
-  ;
-  (self._sign):LoadImage(petSignImg)
+  local petSignImg = self._cfgDatas[self._currIdx].sign
+  self._sign:LoadImage(petSignImg)
   self:SetElement()
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent.SetStars = function(self)
-  -- function num : 0_12
+function UIActivityPetTryContent:SetStars()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent.ShowTips = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local missionid = ((self._cfgDatas)[self._currIdx]).missionid
-  local cfg_camp_misison = (Cfg.cfg_campaign_mission)[missionid]
+function UIActivityPetTryContent:ShowTips()
+  local missionid = self._cfgDatas[self._currIdx].missionid
+  local cfg_camp_misison = Cfg.cfg_campaign_mission[missionid]
   if not cfg_camp_misison then
-    (Log.error)("###[UIActivityPetTryContent] cfg_camp_misison is nil ! id --> ", missionid)
-    return 
+    Log.error("###[UIActivityPetTryContent] cfg_camp_misison is nil ! id --> ", missionid)
+    return
   end
   local clientShowAward = cfg_camp_misison.ClientShowAward
   local itemcount = 0
   local itemicon = 0
   if clientShowAward and clientShowAward[1] then
-    local itemid = (clientShowAward[1])[1]
-    itemcount = (clientShowAward[1])[2]
-    local cfg_item = (Cfg.cfg_item)[itemid]
+    local itemid = clientShowAward[1][1]
+    itemcount = clientShowAward[1][2]
+    local cfg_item = Cfg.cfg_item[itemid]
     if not cfg_item then
-      (Log.error)("###[UIActivityPetTryContent] cfg_item is nil ! id --> ", itemid)
-      return 
+      Log.error("###[UIActivityPetTryContent] cfg_item is nil ! id --> ", itemid)
+      return
     end
     itemicon = cfg_item.Icon
-    local name = (StringTable.Get)(cfg_item.Name)
-    local tipsTex = (StringTable.Get)("str_activity_common_pet_try_down_tips", itemcount, name)
-    ;
-    (self._tips):SetText(tipsTex)
+    local name = StringTable.Get(cfg_item.Name)
+    local tipsTex = StringTable.Get("str_activity_common_pet_try_down_tips", itemcount, name)
+    self._tips:SetText(tipsTex)
   end
-  do
-    ;
-    (self._awardCount):SetText(itemcount)
-    ;
-    (self._itemIcon):LoadImage(itemicon)
-    self:SetState()
-  end
+  self._awardCount:SetText(itemcount)
+  self._itemIcon:LoadImage(itemicon)
+  self:SetState()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent.OnItemClick = function(self, idx)
-  -- function num : 0_14 , upvalues : _ENV
-  if (self._campaign):CheckCampaignClose_ShowClientError() then
-    return 
+function UIActivityPetTryContent:OnItemClick(idx)
+  if self._campaign:CheckCampaignClose_ShowClientError() then
+    return
   end
   if not self._petCanClick then
-    return 
+    return
   end
   if self._currIdx == idx then
-    return 
+    return
   end
   self._currIdx = idx
-  for i,v in ipairs(self._pools) do
+  for i, v in ipairs(self._pools) do
     v:OnSelected(idx)
   end
   self:ShowTips()
   self:SetPetInfo()
   self:SetGotoBtnActive()
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", "uieff_Activity_PetTry_Switch_new", 400)
+  UIWidgetHelper.PlayAnimation(self, "_anim", "uieff_Activity_PetTry_Switch_new", 400)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent.CloseOnClick = function(self, go)
-  -- function num : 0_15
+function UIActivityPetTryContent:CloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent.TryBtnOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
-  if (self._campaign):CheckCampaignClose_ShowClientError() then
-    return 
+function UIActivityPetTryContent:TryBtnOnClick(go)
+  if self._campaign:CheckCampaignClose_ShowClientError() then
+    return
   end
   local idx = self._currIdx
-  local missionid = ((self._cfgDatas)[idx]).missionid
+  local missionid = self._cfgDatas[idx].missionid
   local missionModule = self:GetModule(MissionModule)
   local ctx = missionModule:TeamCtx()
-  local param = {missionid, (self._component):GetCampaignMissionComponentId(), (self._component):GetCampaignMissionParamKeyMap()}
+  local param = {
+    missionid,
+    self._component:GetCampaignMissionComponentId(),
+    self._component:GetCampaignMissionParamKeyMap()
+  }
   ctx:Init(TeamOpenerType.Campaign, param)
   ctx:ShowDialogUITeams(false)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent.GotoBtnOnClick = function(self, go)
-  -- function num : 0_17 , upvalues : _ENV
-  if (self._campaign):CheckCampaignClose_ShowClientError() then
-    return 
+function UIActivityPetTryContent:GotoBtnOnClick(go)
+  if self._campaign:CheckCampaignClose_ShowClientError() then
+    return
   end
-  local jumpModule = ((GameGlobal.GetModule)(QuestModule)).uiModule
-  local jumpParams = ((self._cfgDatas)[self._currIdx]).prizePoolId
+  local jumpModule = GameGlobal.GetModule(QuestModule).uiModule
+  local jumpParams = self._cfgDatas[self._currIdx].prizePoolId
   jumpModule:SetJumpUIData(UIJumpType.UI_JumpDraw, {jumpParams})
   jumpModule:Jump()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent.DetailBtnOnClick = function(self, go)
-  -- function num : 0_18
-  if (self._campaign):CheckCampaignClose_ShowClientError() then
-    return 
+function UIActivityPetTryContent:DetailBtnOnClick(go)
+  if self._campaign:CheckCampaignClose_ShowClientError() then
+    return
   end
-  local id = ((self._cfgDatas)[self._currIdx]).petid
+  local id = self._cfgDatas[self._currIdx].petid
   self:ShowDialog("UIShopPetDetailController", id)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent.SetGotoBtnActive = function(self)
-  -- function num : 0_19
-  local data = (self._cfgDatas)[self._currIdx]
-  ;
-  (self._gotoGo):SetActive(not data or data.prizePoolId > 0)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIActivityPetTryContent:SetGotoBtnActive()
+  local data = self._cfgDatas[self._currIdx]
+  self._gotoGo:SetActive(data and data.prizePoolId > 0)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent.AddListener = function(self)
-  -- function num : 0_20
+function UIActivityPetTryContent:AddListener()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryContent.DetachListener = function(self)
-  -- function num : 0_21
+function UIActivityPetTryContent:DetachListener()
 end
-
-

@@ -1,95 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/chain_preview_monster_behavior_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChainPreviewMonsterBehaviorSystem_Render", Object)
 ChainPreviewMonsterBehaviorSystem_Render = ChainPreviewMonsterBehaviorSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChainPreviewMonsterBehaviorSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function ChainPreviewMonsterBehaviorSystem_Render:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  self._configService = self._world:GetService("Config")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   self._skillCalculater = SkillScopeCalculator:New(utilScopeSvc)
   self._renderEntityService = world:GetService("RenderEntity")
   self._entityPoolServiceRender = world:GetService("EntityPool")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainPreviewMonsterBehaviorSystem_Render.Execute = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local reBoard = (self._world):GetRenderBoardEntity()
+function ChainPreviewMonsterBehaviorSystem_Render:Execute()
+  local reBoard = self._world:GetRenderBoardEntity()
   if reBoard == nil then
-    return 
+    return
   end
   local chainPreviewMonsterBehaviorCmpt = reBoard:ChainPreviewMonsterBehavior()
   if not chainPreviewMonsterBehaviorCmpt then
-    return 
+    return
   end
   local previewMonsterRange = chainPreviewMonsterBehaviorCmpt:GetPreviewMonsterRange()
-  if (table.count)(previewMonsterRange) == 0 then
-    return 
+  if table.count(previewMonsterRange) == 0 then
+    return
   end
   local needRefresh = chainPreviewMonsterBehaviorCmpt:GetNeedRefresh()
   if not needRefresh then
-    return 
+    return
   end
   local chainPath = chainPreviewMonsterBehaviorCmpt:GetChainPath()
-  for entityID,skillID in pairs(previewMonsterRange) do
-    local entity = (self._world):GetEntityByID(entityID)
+  for entityID, skillID in pairs(previewMonsterRange) do
+    local entity = self._world:GetEntityByID(entityID)
     if entity then
       local posSelf = entity:GetGridPosition()
-      local bodyArea = (entity:BodyArea()):GetArea()
-      local skillConfigData = (self._configService):GetSkillConfigData(skillID)
-      local skillResult = (self._skillCalculater):CalcSkillScope(skillConfigData, posSelf, Vector2(0, 1), bodyArea)
+      local bodyArea = entity:BodyArea():GetArea()
+      local skillConfigData = self._configService:GetSkillConfigData(skillID)
+      local skillResult = self._skillCalculater:CalcSkillScope(skillConfigData, posSelf, Vector2(0, 1), bodyArea)
       local posList = skillResult:GetAttackRange()
       local showArea = true
-      if (table.count)(chainPath) == 0 then
+      if table.count(chainPath) == 0 then
         showArea = false
       end
-      for _,grid in ipairs(chainPath) do
-        if not (table.intable)(posList, grid) then
+      for _, grid in ipairs(chainPath) do
+        if not table.intable(posList, grid) then
           showArea = false
           break
         end
       end
-      do
-        local outlineEntityList = chainPreviewMonsterBehaviorCmpt:GetOutlineEntityList(entityID)
-        if showArea and not outlineEntityList then
-          outlineEntityList = (self._renderEntityService):CreateAreaOutlineEntity(posList, EntityConfigIDRender.WarningArea)
-          for i,outlineEntity in ipairs(outlineEntityList) do
+      local outlineEntityList = chainPreviewMonsterBehaviorCmpt:GetOutlineEntityList(entityID)
+      if showArea then
+        if not outlineEntityList then
+          outlineEntityList = self._renderEntityService:CreateAreaOutlineEntity(posList, EntityConfigIDRender.WarningArea)
+          for i, outlineEntity in ipairs(outlineEntityList) do
             outlineEntity:ReplaceDamageWarningAreaElement(entityID, EntityConfigIDRender.WarningArea)
           end
           chainPreviewMonsterBehaviorCmpt:SetOutlineEntityList(entityID, outlineEntityList)
         end
-        if outlineEntityList and (table.count)(outlineEntityList) > 0 then
-          for i,outlineEntity in ipairs(outlineEntityList) do
+      else
+        if outlineEntityList and table.count(outlineEntityList) > 0 then
+          for i, outlineEntity in ipairs(outlineEntityList) do
             local cmpt = outlineEntity:DamageWarningAreaElement()
             cmpt:ClearOwnerEntityID()
-            ;
-            (self._entityPoolServiceRender):DestroyCacheEntity(outlineEntity, EntityConfigIDRender.WarningArea)
+            self._entityPoolServiceRender:DestroyCacheEntity(outlineEntity, EntityConfigIDRender.WarningArea)
           end
         end
-        do
-          do
-            chainPreviewMonsterBehaviorCmpt:SetOutlineEntityList(entityID, nil)
-            -- DECOMPILER ERROR at PC140: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC140: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC140: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC140: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        chainPreviewMonsterBehaviorCmpt:SetOutlineEntityList(entityID, nil)
       end
     end
   end
   chainPreviewMonsterBehaviorCmpt:SetNeedRefresh(false)
 end
-
-

@@ -1,16 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/match/serial_auto_pick_stuff_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SerialAutoPickStuffData", Object)
 SerialAutoPickStuffData = SerialAutoPickStuffData
-local SerialAutoPickStuffEnum = {Dungeon_MainLine = 1, Dungeon_Resource = 2, Jump_Equip = 10, Jump_Awaken = 11, Track_Begin = 100, Track_Jump = 101, Track_Enable = 102}
+local SerialAutoPickStuffEnum = {
+  Dungeon_MainLine = 1,
+  Dungeon_Resource = 2,
+  Jump_Equip = 10,
+  Jump_Awaken = 11,
+  Track_Begin = 100,
+  Track_Jump = 101,
+  Track_Enable = 102
+}
 _enum("SerialAutoPickStuffEnum", SerialAutoPickStuffEnum)
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
 
-SerialAutoPickStuffData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SerialAutoPickStuffData:Constructor()
   self._typeDungeon = 0
   self._typeJump = 0
   self._petTid = 0
@@ -18,409 +19,267 @@ SerialAutoPickStuffData.Constructor = function(self)
   self._itemCondition = 0
   self._track = false
   self._enable = false
-  self._uiState = {nodeId = nil, chapterId = nil, reach = nil, again = nil}
+  self._uiState = {
+    nodeId = nil,
+    chapterId = nil,
+    reach = nil,
+    again = nil
+  }
   self._uiResource = {mainType = nil, gotoSubType = nil}
-  self._uiCount = {matchType = nil, needPower = nil, doubleTicket = nil, uuid = nil}
-  self._autoFight = {nodeId = nil, chapterId = nil, mainType = nil, gotoSubType = nil}
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
+  self._uiCount = {
+    matchType = nil,
+    needPower = nil,
+    doubleTicket = nil,
+    uuid = nil
+  }
+  self._autoFight = {
+    nodeId = nil,
+    chapterId = nil,
+    mainType = nil,
+    gotoSubType = nil
+  }
   SerialAutoPickStuffData.theInstance = self
   self:AttachEventListener(true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SerialAutoPickStuffData:Dispose()
   self:AttachEventListener(false)
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
   SerialAutoPickStuffData.theInstance = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.AttachEventListener = function(self, isAttach)
-  -- function num : 0_2 , upvalues : _ENV
+function SerialAutoPickStuffData:AttachEventListener(isAttach)
   if isAttach then
-    self._eventUIOpen = (GameHelper:GetInstance()):CreateCallback(self.OnUIOpenHandle, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.UIOpen, self._eventUIOpen)
-    self._eventUIClose = (GameHelper:GetInstance()):CreateCallback(self.OnUICloseHandle, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.UIClose, self._eventUIClose)
+    self._eventUIOpen = GameHelper:GetInstance():CreateCallback(self.OnUIOpenHandle, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.UIOpen, self._eventUIOpen)
+    self._eventUIClose = GameHelper:GetInstance():CreateCallback(self.OnUICloseHandle, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.UIClose, self._eventUIClose)
   else
-    ;
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.UIOpen, self._eventUIOpen)
-    ;
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.UIClose, self._eventUIClose)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.UIOpen, self._eventUIOpen)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.UIClose, self._eventUIClose)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.GetModule = function(self, gameModuleProto)
-  -- function num : 0_3 , upvalues : _ENV
-  return (GameGlobal.GetModule)(gameModuleProto)
+function SerialAutoPickStuffData:GetModule(gameModuleProto)
+  return GameGlobal.GetModule(gameModuleProto)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.StartTask = function(self, func, ...)
-  -- function num : 0_4 , upvalues : _ENV
-  return ((GameGlobal.TaskManager)()):StartTask(func, ...)
+function SerialAutoPickStuffData:StartTask(func, ...)
+  return GameGlobal.TaskManager():StartTask(func, ...)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.Lock = function(self, name)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock(name)
+function SerialAutoPickStuffData:Lock(name)
+  GameGlobal.UIStateManager():Lock(name)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.UnLock = function(self, name)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):UnLock(name)
+function SerialAutoPickStuffData:UnLock(name)
+  GameGlobal.UIStateManager():UnLock(name)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.ShowDialog = function(self, uiName, ...)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog(uiName, ...)
+function SerialAutoPickStuffData:ShowDialog(uiName, ...)
+  GameGlobal.UIStateManager():ShowDialog(uiName, ...)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.IsEnable = function(self, outOfFight)
-  -- function num : 0_8 , upvalues : SerialAutoPickStuffEnum, _ENV
+function SerialAutoPickStuffData:IsEnable(outOfFight)
   if not self._enable then
     return false
-  else
-    if outOfFight then
-      if self._typeDungeon == SerialAutoPickStuffEnum.Dungeon_MainLine then
-        local uiStateManager = (GameGlobal.UIStateManager)()
-        local uiController = (uiStateManager:GetController("UIStage"))
-        -- DECOMPILER ERROR at PC18: Overwrote pending register: R4 in 'AssignReg'
-
-        local nodeId, chapterId = .end, nil
-        if uiController ~= nil then
-          nodeId = uiController:GetNodeId()
-          chapterId = uiController:GetChapterID()
-        end
-        return nodeId == (self._uiState).nodeId and chapterId == (self._uiState).chapterId
-      elseif self._typeDungeon == SerialAutoPickStuffEnum.Dungeon_Resource then
-        local uiStateManager = (GameGlobal.UIStateManager)()
-        local uiController = (uiStateManager:GetController("UIResDetailController"))
-        -- DECOMPILER ERROR at PC49: Overwrote pending register: R4 in 'AssignReg'
-
-        local mainType, gotoSubType = .end, nil
-        if uiController ~= nil then
-          mainType = uiController:GetMainType()
-          gotoSubType = uiController:GetGotoSubType()
-        end
-        return mainType == (self._uiResource).mainType and gotoSubType == (self._uiResource).gotoSubType
+  elseif outOfFight then
+    if self._typeDungeon == SerialAutoPickStuffEnum.Dungeon_MainLine then
+      local uiStateManager = GameGlobal.UIStateManager()
+      local uiController = uiStateManager:GetController("UIStage")
+      local nodeId, chapterId
+      if uiController ~= nil then
+        nodeId = uiController:GetNodeId()
+        chapterId = uiController:GetChapterID()
       end
-    elseif (self._autoFight).nodeId ~= (self._uiState).nodeId or (self._autoFight).chapterId ~= (self._uiState).chapterId then
-      do return self._typeDungeon ~= SerialAutoPickStuffEnum.Dungeon_MainLine end
-      if (self._autoFight).mainType ~= (self._uiResource).mainType or (self._autoFight).gotoSubType ~= (self._uiResource).gotoSubType then
-        do return self._typeDungeon ~= SerialAutoPickStuffEnum.Dungeon_Resource end
-        do return false end
-        -- DECOMPILER ERROR: 12 unprocessed JMP targets
+      return nodeId == self._uiState.nodeId and chapterId == self._uiState.chapterId
+    elseif self._typeDungeon == SerialAutoPickStuffEnum.Dungeon_Resource then
+      local uiStateManager = GameGlobal.UIStateManager()
+      local uiController = uiStateManager:GetController("UIResDetailController")
+      local mainType, gotoSubType
+      if uiController ~= nil then
+        mainType = uiController:GetMainType()
+        gotoSubType = uiController:GetGotoSubType()
       end
+      return mainType == self._uiResource.mainType and gotoSubType == self._uiResource.gotoSubType
     end
+  elseif self._typeDungeon == SerialAutoPickStuffEnum.Dungeon_MainLine then
+    return self._autoFight.nodeId == self._uiState.nodeId and self._autoFight.chapterId == self._uiState.chapterId
+  elseif self._typeDungeon == SerialAutoPickStuffEnum.Dungeon_Resource then
+    return self._autoFight.mainType == self._uiResource.mainType and self._autoFight.gotoSubType == self._uiResource.gotoSubType
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.GetItemID = function(self)
-  -- function num : 0_9
+function SerialAutoPickStuffData:GetItemID()
   return self._itemId
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.GetItemCondition = function(self)
-  -- function num : 0_10
+function SerialAutoPickStuffData:GetItemCondition()
   return self._itemCondition
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.IsPowerEnough = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function SerialAutoPickStuffData:IsPowerEnough()
   if not self._enable then
     return false
   end
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local currentPhysicalPower = roleModule:GetAssetCount(RoleAssetID.RoleAssetPhyPoint)
-  do return (self._uiCount).needPower <= currentPhysicalPower end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return currentPhysicalPower >= self._uiCount.needPower
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.SetDungeon = function(self, inDungeon)
-  -- function num : 0_12
+function SerialAutoPickStuffData:SetDungeon(inDungeon)
   self._typeDungeon = inDungeon
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.SetJump = function(self, inJump)
-  -- function num : 0_13
+function SerialAutoPickStuffData:SetJump(inJump)
   self._typeJump = inJump
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.SetPetId = function(self, inPetTid)
-  -- function num : 0_14
+function SerialAutoPickStuffData:SetPetId(inPetTid)
   self._petTid = inPetTid
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.SetAutoFight = function(self)
-  -- function num : 0_15 , upvalues : SerialAutoPickStuffEnum, _ENV
+function SerialAutoPickStuffData:SetAutoFight()
   if not self._enable then
-    return 
+    return
   end
   if self._typeDungeon == SerialAutoPickStuffEnum.Dungeon_MainLine then
-    local uiStateManager = (GameGlobal.UIStateManager)()
+    local uiStateManager = GameGlobal.UIStateManager()
     local uiController = uiStateManager:GetController("UIStage")
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._autoFight).nodeId = nil
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._autoFight).chapterId = nil
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
+    self._autoFight.nodeId = nil
+    self._autoFight.chapterId = nil
     if uiController ~= nil then
-      (self._autoFight).nodeId = uiController:GetNodeId()
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._autoFight).chapterId = uiController:GetChapterID()
+      self._autoFight.nodeId = uiController:GetNodeId()
+      self._autoFight.chapterId = uiController:GetChapterID()
     end
-  else
-    do
-      if self._typeDungeon == SerialAutoPickStuffEnum.Dungeon_Resource then
-        local uiStateManager = (GameGlobal.UIStateManager)()
-        local uiController = uiStateManager:GetController("UIResDetailController")
-        -- DECOMPILER ERROR at PC40: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._autoFight).mainType = nil
-        -- DECOMPILER ERROR at PC42: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._autoFight).gotoSubType = nil
-        -- DECOMPILER ERROR at PC48: Confused about usage of register: R3 in 'UnsetPending'
-
-        if uiController ~= nil then
-          (self._autoFight).mainType = uiController:GetMainType()
-          -- DECOMPILER ERROR at PC52: Confused about usage of register: R3 in 'UnsetPending'
-
-          ;
-          (self._autoFight).gotoSubType = uiController:GetGotoSubType()
-        end
-      end
+  elseif self._typeDungeon == SerialAutoPickStuffEnum.Dungeon_Resource then
+    local uiStateManager = GameGlobal.UIStateManager()
+    local uiController = uiStateManager:GetController("UIResDetailController")
+    self._autoFight.mainType = nil
+    self._autoFight.gotoSubType = nil
+    if uiController ~= nil then
+      self._autoFight.mainType = uiController:GetMainType()
+      self._autoFight.gotoSubType = uiController:GetGotoSubType()
     end
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.TrackStuff = function(self, itemId, itemCondition)
-  -- function num : 0_16
+function SerialAutoPickStuffData:TrackStuff(itemId, itemCondition)
   self._itemId = itemId
   self._itemCondition = itemCondition
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.SetEnable = function(self, active)
-  -- function num : 0_17
+function SerialAutoPickStuffData:SetEnable(active)
   self._enable = active
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.SetTrack = function(self, track)
-  -- function num : 0_18 , upvalues : SerialAutoPickStuffEnum
+function SerialAutoPickStuffData:SetTrack(track)
   if track then
     self._track = SerialAutoPickStuffEnum.Track_Begin
     self._enable = false
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.GotoWithItemGetPath = function(self, idJump, idItem)
-  -- function num : 0_19 , upvalues : _ENV, SerialAutoPickStuffEnum
-  local cfg = (Cfg.cfg_jump)[idJump]
+function SerialAutoPickStuffData:GotoWithItemGetPath(idJump, idItem)
+  local cfg = Cfg.cfg_jump[idJump]
   if cfg == nil then
-    return 
+    return
   end
   if self._track == SerialAutoPickStuffEnum.Track_Jump then
     if cfg.JumpID == UIJumpType.UI_JumpMission then
       self._typeDungeon = SerialAutoPickStuffEnum.Dungeon_MainLine
       self._itemId = idItem
       self._track = SerialAutoPickStuffEnum.Track_Enable
-    else
-      if cfg.JumpID == UIJumpType.UI_JumpResDungeon then
-        self._typeDungeon = SerialAutoPickStuffEnum.Dungeon_Resource
-        self._itemId = idItem
-        self._track = SerialAutoPickStuffEnum.Track_Enable
-      else
-        if cfg.JumpID == UIJumpType.UI_JumpAircraft then
-          self._track = false
-        end
-      end
+    elseif cfg.JumpID == UIJumpType.UI_JumpResDungeon then
+      self._typeDungeon = SerialAutoPickStuffEnum.Dungeon_Resource
+      self._itemId = idItem
+      self._track = SerialAutoPickStuffEnum.Track_Enable
+    elseif cfg.JumpID == UIJumpType.UI_JumpAircraft then
+      self._track = false
     end
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.OnUIOpenHandle = function(self, uiName)
-  -- function num : 0_20 , upvalues : _ENV, SerialAutoPickStuffEnum
-  local uiStateManager = (GameGlobal.UIStateManager)()
+function SerialAutoPickStuffData:OnUIOpenHandle(uiName)
+  local uiStateManager = GameGlobal.UIStateManager()
   local uiController = uiStateManager:GetController(uiName)
-  -- DECOMPILER ERROR at PC13: Unhandled construct in 'MakeBoolean' P1
-
-  if self._enable and uiName == "UISerialAutoFightOption" then
-    self._uiCount = uiController:GetParams()
-  end
-  if self._track == SerialAutoPickStuffEnum.Track_Begin then
+  if self._enable then
+    if uiName == "UISerialAutoFightOption" then
+      self._uiCount = uiController:GetParams()
+    end
+  elseif self._track == SerialAutoPickStuffEnum.Track_Begin then
     if uiName == "UIPetEquipUpLevelController" then
       self._typeJump = SerialAutoPickStuffEnum.Jump_Equip
       self._track = SerialAutoPickStuffEnum.Track_Jump
-    else
-      if uiName == "UIGradeInterfaceController" then
-        self._typeJump = SerialAutoPickStuffEnum.Jump_Awaken
-        self._track = SerialAutoPickStuffEnum.Track_Jump
-      end
+    elseif uiName == "UIGradeInterfaceController" then
+      self._typeJump = SerialAutoPickStuffEnum.Jump_Awaken
+      self._track = SerialAutoPickStuffEnum.Track_Jump
     end
-  else
-    -- DECOMPILER ERROR at PC42: Unhandled construct in 'MakeBoolean' P1
-
-    if self._track == SerialAutoPickStuffEnum.Track_Jump and uiName == "UIItemGetPathController" then
+  elseif self._track == SerialAutoPickStuffEnum.Track_Jump then
+    if uiName == "UIItemGetPathController" then
       local uiController = uiStateManager:GetController("UIItemGetPathController")
       self._itemCondition = uiController:GetItemCondition()
       local uiController = uiStateManager:GetController("UISpiritDetailGroupController")
       local petInfo = uiController:GetCurrentPetInfos()
       self._petTid = petInfo:GetTemplateID()
     end
-  end
-  do
-    if self._track == SerialAutoPickStuffEnum.Track_Enable then
-      if uiName == "UIStage" then
-        self._track = false
-        self._enable = true
-        -- DECOMPILER ERROR at PC65: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._uiState).nodeId = uiController:GetNodeId()
-        -- DECOMPILER ERROR at PC69: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._uiState).chapterId = uiController:GetChapterID()
-        -- DECOMPILER ERROR at PC73: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._uiState).reach = uiController:GetReach()
-        -- DECOMPILER ERROR at PC77: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._uiState).again = uiController:GetFightAgain()
-      else
-        if uiName == "UIResDetailController" then
-          self._track = false
-          self._enable = true
-          -- DECOMPILER ERROR at PC86: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (self._uiResource).mainType = uiController:GetMainType()
-          -- DECOMPILER ERROR at PC90: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (self._uiResource).gotoSubType = uiController:GetGotoSubType()
-        end
-      end
+  elseif self._track == SerialAutoPickStuffEnum.Track_Enable then
+    if uiName == "UIStage" then
+      self._track = false
+      self._enable = true
+      self._uiState.nodeId = uiController:GetNodeId()
+      self._uiState.chapterId = uiController:GetChapterID()
+      self._uiState.reach = uiController:GetReach()
+      self._uiState.again = uiController:GetFightAgain()
+    elseif uiName == "UIResDetailController" then
+      self._track = false
+      self._enable = true
+      self._uiResource.mainType = uiController:GetMainType()
+      self._uiResource.gotoSubType = uiController:GetGotoSubType()
     end
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.OnUICloseHandle = function(self, uiName)
-  -- function num : 0_21 , upvalues : _ENV, SerialAutoPickStuffEnum
-  local inBattle = (self:GetModule(SerialAutoFightModule)):IsRunning()
+function SerialAutoPickStuffData:OnUICloseHandle(uiName)
+  local inBattle = self:GetModule(SerialAutoFightModule):IsRunning()
   if self._enable and inBattle then
-    return 
-  else
-    if self._enable then
-      if self._typeDungeon == SerialAutoPickStuffEnum.Dungeon_MainLine and uiName == "UIDiscovery" then
-        self._track = false
-        self._enable = false
-      else
-        if self._typeDungeon == SerialAutoPickStuffEnum.Dungeon_Resource and uiName == "UIResEntryController" then
-          self._track = false
-          self._enable = false
-        end
-      end
-    else
-      if self._track == SerialAutoPickStuffEnum.Track_Jump then
-        if uiName == "UIPetEquipUpLevelController" then
-          self._track = false
-        else
-          if uiName == "UIGradeInterfaceController" then
-            self._track = false
-          end
-        end
-      end
+    return
+  elseif self._enable then
+    if self._typeDungeon == SerialAutoPickStuffEnum.Dungeon_MainLine and uiName == "UIDiscovery" then
+      self._track = false
+      self._enable = false
+    elseif self._typeDungeon == SerialAutoPickStuffEnum.Dungeon_Resource and uiName == "UIResEntryController" then
+      self._track = false
+      self._enable = false
+    end
+  elseif self._track == SerialAutoPickStuffEnum.Track_Jump then
+    if uiName == "UIPetEquipUpLevelController" then
+      self._track = false
+    elseif uiName == "UIGradeInterfaceController" then
+      self._track = false
     end
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.EnsureVisibleTT = function(self, TT, uiName)
-  -- function num : 0_22 , upvalues : _ENV
-  local uiStateManager = (GameGlobal.UIStateManager)()
+function SerialAutoPickStuffData:EnsureVisibleTT(TT, uiName)
+  local uiStateManager = GameGlobal.UIStateManager()
   while not uiStateManager:IsShow(uiName) do
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.ContinueBattle = function(self)
-  -- function num : 0_23 , upvalues : SerialAutoPickStuffEnum
+function SerialAutoPickStuffData:ContinueBattle()
   if not self._enable then
-    return 
+    return
   end
   if self._typeDungeon == SerialAutoPickStuffEnum.Dungeon_MainLine then
     self:StartTask(self.ContinueBattleMainLine, self)
-  else
-    if self._typeDungeon == SerialAutoPickStuffEnum.Dungeon_Resource then
-      self:StartTask(self.ContinueBattleResource, self)
-    end
+  elseif self._typeDungeon == SerialAutoPickStuffEnum.Dungeon_Resource then
+    self:StartTask(self.ContinueBattleResource, self)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.ContinueBattleMainLine = function(self, TT)
-  -- function num : 0_24 , upvalues : _ENV
+function SerialAutoPickStuffData:ContinueBattleMainLine(TT)
   self:Lock("SerialAutoPickStuffData:ContinueBattleMainLine")
   local p = self._uiState
   self:ShowDialog("UIStage", p.nodeId, p.chapterId, p.reach, p.again)
@@ -431,10 +290,7 @@ SerialAutoPickStuffData.ContinueBattleMainLine = function(self, TT)
   self:UnLock("SerialAutoPickStuffData:ContinueBattleMainLine")
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.ContinueBattleResource = function(self, TT)
-  -- function num : 0_25 , upvalues : _ENV
+function SerialAutoPickStuffData:ContinueBattleResource(TT)
   self:Lock("SerialAutoPickStuffData:ContinueBattleResource")
   YIELD(TT, 33)
   local p = self._uiCount
@@ -442,43 +298,30 @@ SerialAutoPickStuffData.ContinueBattleResource = function(self, TT)
   self:UnLock("SerialAutoPickStuffData:ContinueBattleResource")
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.ReturnSpirit = function(self)
-  -- function num : 0_26 , upvalues : SerialAutoPickStuffEnum
+function SerialAutoPickStuffData:ReturnSpirit()
   if not self._enable then
-    return 
+    return
   end
   if self._typeJump == SerialAutoPickStuffEnum.Jump_Equip then
     self:StartTask(self.ReturnSpiritTask, self)
-  else
-    if self._typeJump == SerialAutoPickStuffEnum.Jump_Awaken then
-      self:StartTask(self.ReturnSpiritTask, self)
-    end
+  elseif self._typeJump == SerialAutoPickStuffEnum.Jump_Awaken then
+    self:StartTask(self.ReturnSpiritTask, self)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.ReturnSpirit_TestCase = function(self)
-  -- function num : 0_27 , upvalues : SerialAutoPickStuffEnum
+function SerialAutoPickStuffData:ReturnSpirit_TestCase()
   self._petTid = 1600061
   self._typeJump = SerialAutoPickStuffEnum.Jump_Awaken
   if self._typeJump == SerialAutoPickStuffEnum.Jump_Equip then
     self:StartTask(self.ReturnSpiritTask, self)
-  else
-    if self._typeJump == SerialAutoPickStuffEnum.Jump_Awaken then
-      self:StartTask(self.ReturnSpiritTask, self)
-    end
+  elseif self._typeJump == SerialAutoPickStuffEnum.Jump_Awaken then
+    self:StartTask(self.ReturnSpiritTask, self)
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-SerialAutoPickStuffData.ReturnSpiritTask = function(self, TT)
-  -- function num : 0_28 , upvalues : _ENV, SerialAutoPickStuffEnum
+function SerialAutoPickStuffData:ReturnSpiritTask(TT)
   self:Lock("SerialAutoPickStuffData:ReturnSpiritTask")
-  local uiStateManager = (GameGlobal.UIStateManager)()
+  local uiStateManager = GameGlobal.UIStateManager()
   uiStateManager:SwitchState(UIStateType.UIMain)
   self:EnsureVisibleTT(TT, "UIMainLobbyController")
   YIELD(TT, 50)
@@ -490,9 +333,10 @@ SerialAutoPickStuffData.ReturnSpiritTask = function(self, TT)
   self:ShowDialog("UISpiritDetailGroupController", self._petTid, nil, nil, heartItem)
   self:EnsureVisibleTT(TT, "UISpiritDetailGroupController")
   YIELD(TT, 50)
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+  local guideModule = GameGlobal.GetModule(GuideModule)
   local inGuideProcess = guideModule:IsGuideProcessKey("guide_pet_awaken")
-  if not inGuideProcess or self._typeJump == SerialAutoPickStuffEnum.Jump_Equip then
+  if inGuideProcess then
+  elseif self._typeJump == SerialAutoPickStuffEnum.Jump_Equip then
     local uiController = uiStateManager:GetController("UISpiritDetailGroupController")
     local petInfo = uiController:GetCurrentPetInfos()
     self:ShowDialog("UIPetEquipController", petInfo)
@@ -501,32 +345,24 @@ SerialAutoPickStuffData.ReturnSpiritTask = function(self, TT)
     local petId = petInfo:GetTemplateID()
     local currentEquipLv = petInfo:GetEquipLv()
     local equipMaxLv = 0
-    local cfg_equip = (Cfg.cfg_pet_equip)({PetID = petId})
-    if cfg_equip and #cfg_equip > 0 then
-      equipMaxLv = (cfg_equip[#cfg_equip]).Level
+    local cfg_equip = Cfg.cfg_pet_equip({PetID = petId})
+    if cfg_equip and 0 < #cfg_equip then
+      equipMaxLv = cfg_equip[#cfg_equip].Level
     end
-    if equipMaxLv <= currentEquipLv then
+    if currentEquipLv >= equipMaxLv then
       petInfo = nil
     else
       self:SetTrack(true)
       self:ShowDialog("UIPetEquipUpLevelController", petInfo)
     end
-  else
-    do
-      do
-        if self._typeJump == SerialAutoPickStuffEnum.Jump_Awaken then
-          local uiController = uiStateManager:GetController("UISpiritDetailGroupController")
-          if uiController ~= nil then
-            uiController:awakenBtnOnClick(nil)
-          else
-            self:SetTrack(true)
-            self:ShowDialog("UIGradeInterfaceController", self._petTid)
-          end
-        end
-        self:UnLock("SerialAutoPickStuffData:ReturnSpiritTask")
-      end
+  elseif self._typeJump == SerialAutoPickStuffEnum.Jump_Awaken then
+    local uiController = uiStateManager:GetController("UISpiritDetailGroupController")
+    if uiController ~= nil then
+      uiController:awakenBtnOnClick(nil)
+    else
+      self:SetTrack(true)
+      self:ShowDialog("UIGradeInterfaceController", self._petTid)
     end
   end
+  self:UnLock("SerialAutoPickStuffData:ReturnSpiritTask")
 end
-
-

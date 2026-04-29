@@ -1,52 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n15/Raffle/ui_n15_raffle_pop_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN15RafflePopController", UIController)
 UIN15RafflePopController = UIN15RafflePopController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN15RafflePopController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN15RafflePopController:OnShow(uiParams)
   self:_InitWidget()
   self._cb = uiParams[1]
   self:_RefView()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15RafflePopController._InitWidget = function(self)
-  -- function num : 0_1
+function UIN15RafflePopController:_InitWidget()
   self._tmp = self:GetUIComponent("UILocalizedTMP", "TMP")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15RafflePopController._RefView = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._materialReq = (ResourceManager:GetInstance()):SyncLoadAsset("N15Material_02.mat", LoadType.Mat)
-  if self._materialReq and (self._materialReq).Obj then
-    self._material = (self._materialReq).Obj
-    local oldMaterial = (self._tmp).fontMaterial
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._tmp).fontMaterial = self._material
-    ;
-    ((self._tmp).fontMaterial):SetTexture("_MainTex", oldMaterial:GetTexture("_MainTex"))
+function UIN15RafflePopController:_RefView()
+  self._materialReq = ResourceManager:GetInstance():SyncLoadAsset("N15Material_02.mat", LoadType.Mat)
+  if self._materialReq and self._materialReq.Obj then
+    self._material = self._materialReq.Obj
+    local oldMaterial = self._tmp.fontMaterial
+    self._tmp.fontMaterial = self._material
+    self._tmp.fontMaterial:SetTexture("_MainTex", oldMaterial:GetTexture("_MainTex"))
   end
-  do
-    self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, self
+  self:StartTask(function(TT)
     YIELD(TT, 2000)
     self:CloseDialog()
     YIELD(TT, 100)
-    ;
-    (self._cb)()
-  end
-)
-  end
+    self._cb()
+  end)
 end
-
-

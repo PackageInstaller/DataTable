@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/unscaled_count_down_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UnscaledCountDownRenderComponent", Object)
 UnscaledCountDownRenderComponent = UnscaledCountDownRenderComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UnscaledCountDownRenderComponent.Constructor = function(self)
-  -- function num : 0_0
+function UnscaledCountDownRenderComponent:Constructor()
   self:Reset()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownRenderComponent.Reset = function(self)
-  -- function num : 0_1
+function UnscaledCountDownRenderComponent:Reset()
   self._flagID = 0
   self._curRestTimeMs = 0
   self._isActive = false
@@ -25,66 +15,39 @@ UnscaledCountDownRenderComponent.Reset = function(self)
   self._waitPlayNotify = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownRenderComponent.GetFlagID = function(self)
-  -- function num : 0_2
+function UnscaledCountDownRenderComponent:GetFlagID()
   return self._flagID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownRenderComponent.GetIsActive = function(self)
-  -- function num : 0_3
+function UnscaledCountDownRenderComponent:GetIsActive()
   return self._isActive
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownRenderComponent.GetIsRunning = function(self)
-  -- function num : 0_4
+function UnscaledCountDownRenderComponent:GetIsRunning()
   return self._isRunning
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownRenderComponent.SetIsRunning = function(self, isRunning)
-  -- function num : 0_5
+function UnscaledCountDownRenderComponent:SetIsRunning(isRunning)
   self._isRunning = isRunning
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownRenderComponent.GetIsWaitTrigger = function(self)
-  -- function num : 0_6
+function UnscaledCountDownRenderComponent:GetIsWaitTrigger()
   return self._isWaitTrigger
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownRenderComponent.SetIsWaitTrigger = function(self, isWaitTrigger)
-  -- function num : 0_7
+function UnscaledCountDownRenderComponent:SetIsWaitTrigger(isWaitTrigger)
   self._isWaitTrigger = isWaitTrigger
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownRenderComponent.GetCurRestTimeMs = function(self)
-  -- function num : 0_8
+function UnscaledCountDownRenderComponent:GetCurRestTimeMs()
   return self._curRestTimeMs
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownRenderComponent.SetCurRestTimeMs = function(self, restTimeMs)
-  -- function num : 0_9
+function UnscaledCountDownRenderComponent:SetCurRestTimeMs(restTimeMs)
   self._curRestTimeMs = restTimeMs
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownRenderComponent.StartCoundDown = function(self, flagID, countDownValueMs)
-  -- function num : 0_10
+function UnscaledCountDownRenderComponent:StartCoundDown(flagID, countDownValueMs)
   self._flagID = flagID
   self._countDownValue = countDownValueMs
   self._curRestTimeMs = self._countDownValue
@@ -94,50 +57,30 @@ UnscaledCountDownRenderComponent.StartCoundDown = function(self, flagID, countDo
   self._waitPlayNotify = false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownRenderComponent.GetWaitPlayNotify = function(self)
-  -- function num : 0_11
+function UnscaledCountDownRenderComponent:GetWaitPlayNotify()
   return self._waitPlayNotify
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownRenderComponent.SetWaitPlayNotify = function(self, bWaitPlay)
-  -- function num : 0_12
+function UnscaledCountDownRenderComponent:SetWaitPlayNotify(bWaitPlay)
   self._waitPlayNotify = bWaitPlay
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.UnscaledCountDownRender = function(self)
-  -- function num : 0_13
-  return self:GetComponent((self.WEComponentsEnum).UnscaledCountDownRender)
+function Entity:UnscaledCountDownRender()
+  return self:GetComponent(self.WEComponentsEnum.UnscaledCountDownRender)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasUnscaledCountDownRender = function(self)
-  -- function num : 0_14
-  return self:HasComponent((self.WEComponentsEnum).UnscaledCountDownRender)
+function Entity:HasUnscaledCountDownRender()
+  return self:HasComponent(self.WEComponentsEnum.UnscaledCountDownRender)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddUnscaledCountDownRender = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).UnscaledCountDownRender
+function Entity:AddUnscaledCountDownRender()
+  local index = self.WEComponentsEnum.UnscaledCountDownRender
   local component = UnscaledCountDownRenderComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceUnscaledCountDownRender = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).UnscaledCountDownRender
+function Entity:ReplaceUnscaledCountDownRender()
+  local index = self.WEComponentsEnum.UnscaledCountDownRender
   local component = UnscaledCountDownRenderComponent:New()
   self:ReplaceComponent(index, component)
 end
-
-

@@ -1,39 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/test/ui_season_test_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTestBtn", UICustomWidget)
 UISeasonTestBtn = UISeasonTestBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTestBtn.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonTestBtn:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTestBtn.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonTestBtn:InitWidget()
   self.txt = self:GetUIComponent("UILocalizationText", "txt")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTestBtn.SetData = function(self, title, cb)
-  -- function num : 0_2
-  (self.txt):SetText(title)
+function UISeasonTestBtn:SetData(title, cb)
+  self.txt:SetText(title)
   self._cb = cb
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTestBtn.UISeasonTestBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UISeasonTestBtn:UISeasonTestBtnOnClick(go)
   if self._cb then
-    (self._cb)()
+    self._cb()
   end
 end
-
-

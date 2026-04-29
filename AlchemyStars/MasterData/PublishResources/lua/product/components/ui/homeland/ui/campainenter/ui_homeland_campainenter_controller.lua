@@ -1,83 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/campainenter/ui_homeland_campainenter_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICampainEnterController", UIController)
 UICampainEnterController = UICampainEnterController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICampainEnterController.Constructor = function(self, Params)
-  -- function num : 0_0 , upvalues : _ENV
+function UICampainEnterController:Constructor(Params)
   self._localData = UICampainEnterLocalData:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UICampainEnterController:LoadDataOnEnter(TT, res, uiParams)
   self:GetCampaignData(TT, res)
-  self.strsLeftTime = {"str_homeland_campainenter_time_d_h", "str_homeland_campainenter_time_h_m", "str_homeland_campainenter_time_m"}
+  self.strsLeftTime = {
+    "str_homeland_campainenter_time_d_h",
+    "str_homeland_campainenter_time_h_m",
+    "str_homeland_campainenter_time_m"
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController.GetCampaignData = function(self, TT, res)
-  -- function num : 0_2 , upvalues : _ENV
+function UICampainEnterController:GetCampaignData(TT, res)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_N19_COMMON
   local componentId = ECampaignN19CommonComponentID.PANGOLIN
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, self._campaignType, componentId)
+  self._campaign:LoadCampaignInfo(TT, res, self._campaignType, componentId)
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, nil, nil)
-    return 
+    self._campaign:CheckErrorCode(res.m_result, nil, nil)
+    return
   end
-  if not (self._campaign):CheckComponentOpen(componentId) then
-    if not (self._campaign):CheckComponentOpenClientError(componentId) then
-      res.m_result = res.m_result
-      ;
-      (self._campaign):ShowErrorToast(res.m_result, true)
-      do return  end
-      self._component = (self._campaign):GetComponent(componentId)
-      ;
-      (self._component):SetPrefsComponentNew("N19TaskComp")
-      ;
-      (Log.fatal)("")
-    end
+  if not self._campaign:CheckComponentOpen(componentId) then
+    res.m_result = self._campaign:CheckComponentOpenClientError(componentId) or res.m_result
+    self._campaign:ShowErrorToast(res.m_result, true)
+    return
   end
+  self._component = self._campaign:GetComponent(componentId)
+  self._component:SetPrefsComponentNew("N19TaskComp")
+  Log.fatal("")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UICampainEnterController:OnShow(uiParams)
   self._enterType = uiParams[1]
   self._componentId = uiParams[2]
   self:_GetComponents()
   self:Refresh()
-  self.teActivity = (UIActivityHelper.StartTimerEvent)(self.teActivity, function()
-    -- function num : 0_3_0 , upvalues : self
+  self.teActivity = UIActivityHelper.StartTimerEvent(self.teActivity, function()
     self:FlushCDActivity()
-  end
-, 5000)
+  end, 5000)
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController.OnHide = function(self, uiParams)
-  -- function num : 0_4 , upvalues : _ENV
+function UICampainEnterController:OnHide(uiParams)
   if self.teActivity then
-    self.teActivity = (UIActivityHelper.CancelTimerEvent)(self.teActivity)
+    self.teActivity = UIActivityHelper.CancelTimerEvent(self.teActivity)
   end
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController._GetComponents = function(self)
-  -- function num : 0_5
+function UICampainEnterController:_GetComponents()
   self._content = self:GetUIComponent("UISelectObjectPath", "content")
   self._spine = self:GetUIComponent("SpineLoader", "spine")
   self._timeText = self:GetUIComponent("RollingText", "timeText")
@@ -86,203 +60,137 @@ UICampainEnterController._GetComponents = function(self)
   self._bgImg = self:GetUIComponent("RawImageLoader", "bgImage")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController.Refresh = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._titleText):SetText((StringTable.Get)("str_homeland_campainenter_title"))
+function UICampainEnterController:Refresh()
+  self._titleText:SetText(StringTable.Get("str_homeland_campainenter_title"))
   if self._enterType == 1 then
-    (self._goText):SetText((StringTable.Get)("str_homeland_campainenter_goto"))
+    self._goText:SetText(StringTable.Get("str_homeland_campainenter_goto"))
   else
-    ;
-    (self._goText):SetText((StringTable.Get)("str_homeland_campainenter_open"))
+    self._goText:SetText(StringTable.Get("str_homeland_campainenter_open"))
   end
   self:GetCfgData()
-  self._container = (self._content):SpawnObject("UICampainEnterContainer")
-  ;
-  (self._container):SetData(self._cfg, self)
+  self._container = self._content:SpawnObject("UICampainEnterContainer")
+  self._container:SetData(self._cfg, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController.GetCfgData = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._taskLibrary = (Cfg.cfg_homeland_task)({})
-  self._cfg = (Cfg.cfg_component_homeland_task)({ComponentID = self._componentId})
+function UICampainEnterController:GetCfgData()
+  self._taskLibrary = Cfg.cfg_homeland_task({})
+  self._cfg = Cfg.cfg_component_homeland_task({
+    ComponentID = self._componentId
+  })
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController.GetItemInfo = function(self, Id)
-  -- function num : 0_8
-  return (self._cfg)[Id]
+function UICampainEnterController:GetItemInfo(Id)
+  return self._cfg[Id]
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController.GetTaskItemCfg = function(self, taskId)
-  -- function num : 0_9
-  return (self._taskLibrary)[taskId]
+function UICampainEnterController:GetTaskItemCfg(taskId)
+  return self._taskLibrary[taskId]
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController.GetTaskState = function(self, taskId)
-  -- function num : 0_10
-  return (self._component):GetTaskState(taskId)
+function UICampainEnterController:GetTaskState(taskId)
+  return self._component:GetTaskState(taskId)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController.GetReward = function(self, cfgId)
-  -- function num : 0_11 , upvalues : _ENV
+function UICampainEnterController:GetReward(cfgId)
   self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : _ENV, self, cfgId
     local res = AsyncRequestRes:New()
-    ;
-    (self._component):HandlePangolinGet(TT, res, cfgId)
+    self._component:HandlePangolinGet(TT, res, cfgId)
     if res:GetSucc() then
-      (self._container):Refresh()
+      self._container:Refresh()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController._AttachEvents = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UICampainEnterController:_AttachEvents()
   self:AttachEvent(GameEventType.QuestUpdate, self.DataUpdate)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController._DetachEvents = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UICampainEnterController:_DetachEvents()
   self:DetachEvent(GameEventType.QuestUpdate, self.DataUpdate)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController.FlushCDActivity = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
-  local cs = (self._component):GetComponentInfo()
+function UICampainEnterController:FlushCDActivity()
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
+  local cs = self._component:GetComponentInfo()
   if nowTimestamp < cs.m_close_time then
     self:FlushCDText(self._timeText, cs.m_close_time, self.strsLeftTime)
   else
-    ;
-    (self._timeText):RefreshText("")
-    self.teActivity = (UIActivityHelper.CancelTimerEvent)(self.teActivity)
+    self._timeText:RefreshText("")
+    self.teActivity = UIActivityHelper.CancelTimerEvent(self.teActivity)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController.FlushCDText = function(self, uiText, time, strs)
-  -- function num : 0_15 , upvalues : _ENV
-  local leftSeconds = (UICommonHelper.CalcLeftSeconds)(time)
-  local d, h, m, s = (UICommonHelper.S2DHMS)(leftSeconds)
-  if d >= 1 then
-    uiText:RefreshText((StringTable.Get)(strs[1], (math.floor)(d), (math.floor)(h)))
+function UICampainEnterController:FlushCDText(uiText, time, strs)
+  local leftSeconds = UICommonHelper.CalcLeftSeconds(time)
+  local d, h, m, s = UICommonHelper.S2DHMS(leftSeconds)
+  if 1 <= d then
+    uiText:RefreshText(StringTable.Get(strs[1], math.floor(d), math.floor(h)))
+  elseif 1 <= h then
+    uiText:RefreshText(StringTable.Get(strs[2], math.floor(h), math.floor(m)))
+  elseif 1 <= m then
+    uiText:RefreshText(StringTable.Get(strs[3], math.floor(m)))
   else
-    if h >= 1 then
-      uiText:RefreshText((StringTable.Get)(strs[2], (math.floor)(h), (math.floor)(m)))
-    else
-      if m >= 1 then
-        uiText:RefreshText((StringTable.Get)(strs[3], (math.floor)(m)))
-      else
-        uiText:RefreshText((StringTable.Get)(strs[3], "<1"))
-      end
-    end
+    uiText:RefreshText(StringTable.Get(strs[3], "<1"))
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController.GoBtnOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
+function UICampainEnterController:GoBtnOnClick(go)
   if self._enterType == 1 then
     self._functionId = 34
-    local functionLockCfg = (Cfg.cfg_module_unlock)[self._functionId]
+    local functionLockCfg = Cfg.cfg_module_unlock[self._functionId]
     if not functionLockCfg then
-      (Log.debug)("don\'t have function config")
-      return 
+      Log.debug("don't have function config")
+      return
     end
-    local module = (GameGlobal.GetModule)(RoleModule)
-    do
-      do
-        if module:CheckModuleUnlock(self._functionId) == false then
-          local cfg = (Cfg.cfg_module_unlock)[self._functionId]
-          if cfg then
-            (ToastManager.ShowToast)((StringTable.Get)(cfg.Tips))
-          end
-          return 
-        end
-        ;
-        ((GameGlobal.GetModule)(HomelandModule)):SetCampainEnter(true, ((self._cfg)[1]).StoryTaskID)
-        ;
-        (((GameGlobal.GetModule)(HomelandModule)):GetUIModule()):LoadHomeland()
-        self:ShowDialog("UIHomelandStoryTaskController")
-        self:CloseDialog()
+    local module = GameGlobal.GetModule(RoleModule)
+    if module:CheckModuleUnlock(self._functionId) == false then
+      local cfg = Cfg.cfg_module_unlock[self._functionId]
+      if cfg then
+        ToastManager.ShowToast(StringTable.Get(cfg.Tips))
       end
+      return
     end
+    GameGlobal.GetModule(HomelandModule):SetCampainEnter(true, self._cfg[1].StoryTaskID)
+    GameGlobal.GetModule(HomelandModule):GetUIModule():LoadHomeland()
+  else
+    self:ShowDialog("UIHomelandStoryTaskController")
+    self:CloseDialog()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController.BackBtnOnClick = function(self, go)
-  -- function num : 0_17
+function UICampainEnterController:BackBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController.DataUpdate = function(self, go)
-  -- function num : 0_18
+function UICampainEnterController:DataUpdate(go)
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController.SetLocalDb = function(self, taskIndex)
-  -- function num : 0_19
+function UICampainEnterController:SetLocalDb(taskIndex)
   if self._component then
-    (self._component):SetDB(taskIndex, "N19TaskComp", "red")
+    self._component:SetDB(taskIndex, "N19TaskComp", "red")
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController.GetLocalDb = function(self, taskIndex)
-  -- function num : 0_20
+function UICampainEnterController:GetLocalDb(taskIndex)
   if self._component then
-    return (self._component):GetDB(taskIndex, "N19TaskComp", "red")
+    return self._component:GetDB(taskIndex, "N19TaskComp", "red")
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController.GetLocalDbIsNew = function(self, campId, taskId)
-  -- function num : 0_21
+function UICampainEnterController:GetLocalDbIsNew(campId, taskId)
   if self._component then
-    local data = (self._component):HasPrefsNew(campId, taskId)
+    local data = self._component:HasPrefsNew(campId, taskId)
     if not data then
-      (self._component):SetPrefsNew(campId, taskId)
+      self._component:SetPrefsNew(campId, taskId)
     end
-    data = (self._component):GetPrefsNew(campId, taskId)
+    data = self._component:GetPrefsNew(campId, taskId)
     return data
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterController.SetLocalDbIsNew = function(self, campId, taskId)
-  -- function num : 0_22
+function UICampainEnterController:SetLocalDbIsNew(campId, taskId)
   if self._component then
-    (self._component):SetPrefsNew(campId, taskId, 1)
+    self._component:SetPrefsNew(campId, taskId, 1)
   end
 end
-
-

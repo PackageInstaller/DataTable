@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_up_level_addquick_box.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIUpLevelAddQuickBox", UIController)
 UIUpLevelAddQuickBox = UIUpLevelAddQuickBox
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIUpLevelAddQuickBox.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._pressTime = ((Cfg.cfg_global).sale_and_use_press_long_deltaTime).IntValue
+function UIUpLevelAddQuickBox:Constructor()
+  self._pressTime = Cfg.cfg_global.sale_and_use_press_long_deltaTime.IntValue
   self._maxMatChooseCount = 9999
-  self._petModule = ((GameGlobal.GameLogic)()):GetModule(PetModule)
-  self._itemModule = ((GameGlobal.GameLogic)()):GetModule(ItemModule)
-  self._roleModule = ((GameGlobal.GameLogic)()):GetModule(RoleModule)
+  self._petModule = GameGlobal.GameLogic():GetModule(PetModule)
+  self._itemModule = GameGlobal.GameLogic():GetModule(ItemModule)
+  self._roleModule = GameGlobal.GameLogic():GetModule(RoleModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIUpLevelAddQuickBox:OnShow(uiParams)
   self._petInfo = uiParams[1]
-  self._petid = (self._petInfo):GetTemplateID()
+  self._petid = self._petInfo:GetTemplateID()
   self._curPetLevel = 0
   self._nextPetLevel = 0
   self._isAdd = true
@@ -39,57 +29,43 @@ UIUpLevelAddQuickBox.OnShow = function(self, uiParams)
   self:FlushItemPanel()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.RequestPetInfo = function(self)
-  -- function num : 0_2
-  self._petPstID = (self._petInfo):GetPstID()
-  self._expItemList = self:GetFilterExpItems()
-  self._curPetLevel = (self._petInfo):GetPetLevel()
-  self._curPetExp = (self._petInfo):GetPetExp()
+function UIUpLevelAddQuickBox:RequestPetInfo()
+  self._petPstID = self._petInfo:GetPstID()
+  self._expItemList, self._colorItems, self._normalItems = self:GetFilterExpItems()
+  self._curPetLevel = self._petInfo:GetPetLevel()
+  self._curPetExp = self._petInfo:GetPetExp()
   self._nextPetLevel = self._curPetLevel
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.GetCanReachLevels = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function UIUpLevelAddQuickBox:GetCanReachLevels(TT)
   self._canAdd = false
   local petMaxLevel = self:GetEnableMaxLevel()
-  local checkContent = function(tab, num)
-    -- function num : 0_3_0 , upvalues : _ENV
-    for index,value in ipairs(tab) do
+  
+  local function checkContent(tab, num)
+    for index, value in ipairs(tab) do
       if value == num then
         return true
       end
     end
     return false
   end
-
+  
   for i = self._curPetLevel, petMaxLevel do
     local useItems = self:CalculateItemUse(i)
     local endLevel = self:CheckPreview(useItems)
     if not checkContent(self._canReachLevels, endLevel) then
-      (table.insert)(self._canReachLevels, endLevel)
+      table.insert(self._canReachLevels, endLevel)
     end
     YIELD(TT)
   end
-  ;
-  (table.sort)(self._canReachLevels, function(a, b)
-    -- function num : 0_3_1
-    do return a < b end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._canReachLevels, function(a, b)
+    return a < b
+  end)
   self._canAdd = true
-  ;
-  (Log.fatal)("")
+  Log.fatal("")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.InitWidget = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIUpLevelAddQuickBox:InitWidget()
   self._curlevel = self:GetUIComponent("UILocalizationText", "curlevel")
   self._nextlevel = self:GetUIComponent("UILocalizationText", "nextlevel")
   self._addExp = self:GetUIComponent("UILocalizationText", "addExp")
@@ -114,132 +90,108 @@ UIUpLevelAddQuickBox.InitWidget = function(self)
   self._safeArea = self:GetGameObject("safeArea")
   local sop = self:GetUIComponent("UISelectObjectPath", "mainmenu")
   self.currencyMenu = sop:SpawnObject("UICurrencyMenu")
-  ;
-  (self.currencyMenu):SetData({RoleAssetID.RoleAssetGold})
+  self.currencyMenu:SetData({
+    RoleAssetID.RoleAssetGold
+  })
   self._isAddMouseDown = false
   self._isSubMouseDown = false
   self._isTenStep = false
-  local etlAdd = (UILongPressTriggerListener.Get)(self._addBtn)
-  etlAdd.onLongPress = function(go)
-    -- function num : 0_4_0 , upvalues : self
+  local etlAdd = UILongPressTriggerListener.Get(self._addBtn)
+  
+  function etlAdd.onLongPress(go)
     self._isTenStep = false
     if self._isAddMouseDown == false then
       self._isAddMouseDown = true
     end
   end
-
-  etlAdd.onLongPressEnd = function(go)
-    -- function num : 0_4_1 , upvalues : self
+  
+  function etlAdd.onLongPressEnd(go)
     if self._isAddMouseDown == true then
       self._isAddMouseDown = false
     end
   end
-
-  local etlSub = (UILongPressTriggerListener.Get)(self._subBtn)
-  etlSub.onLongPress = function(go)
-    -- function num : 0_4_2 , upvalues : self
+  
+  local etlSub = UILongPressTriggerListener.Get(self._subBtn)
+  
+  function etlSub.onLongPress(go)
     self._isTenStep = false
     if self._isSubMouseDown == false then
       self._isSubMouseDown = true
     end
   end
-
-  etlSub.onLongPressEnd = function(go)
-    -- function num : 0_4_3 , upvalues : self
+  
+  function etlSub.onLongPressEnd(go)
     if self._isSubMouseDown == true then
       self._isSubMouseDown = false
     end
   end
-
-  local etlAdd = (UILongPressTriggerListener.Get)(self._addBtnMult)
-  etlAdd.onLongPress = function(go)
-    -- function num : 0_4_4 , upvalues : self
+  
+  local etlAdd = UILongPressTriggerListener.Get(self._addBtnMult)
+  
+  function etlAdd.onLongPress(go)
     self._isTenStep = true
     if self._isAddMouseDown == false then
       self._isAddMouseDown = true
     end
   end
-
-  etlAdd.onLongPressEnd = function(go)
-    -- function num : 0_4_5 , upvalues : self
+  
+  function etlAdd.onLongPressEnd(go)
     if self._isAddMouseDown == true then
       self._isAddMouseDown = false
     end
     self._isTenStep = false
   end
-
-  local etlSub = (UILongPressTriggerListener.Get)(self._subBtnMult)
-  etlSub.onLongPress = function(go)
-    -- function num : 0_4_6 , upvalues : self
+  
+  local etlSub = UILongPressTriggerListener.Get(self._subBtnMult)
+  
+  function etlSub.onLongPress(go)
     self._isTenStep = true
     if self._isSubMouseDown == false then
       self._isSubMouseDown = true
     end
   end
-
-  etlSub.onLongPressEnd = function(go)
-    -- function num : 0_4_7 , upvalues : self
+  
+  function etlSub.onLongPressEnd(go)
     if self._isSubMouseDown == true then
       self._isSubMouseDown = false
     end
     self._isTenStep = false
   end
-
-  self._lastNum = (self._addSlider).value
-  ;
-  ((UIEventTriggerListener.Get)((self._addSlider).gameObject)).onDrag = function(go)
-    -- function num : 0_4_8 , upvalues : self
-    self._realValue = (self._addSlider).value
+  
+  self._lastNum = self._addSlider.value
+  UIEventTriggerListener.Get(self._addSlider.gameObject).onDrag = function(go)
+    self._realValue = self._addSlider.value
     self._realValue = self._nextPetLevel
     self._lastNum = self._realValue
-    ;
-    ((self._expText).gameObject):SetActive(false)
-    ;
-    ((self._addExp).gameObject):SetActive(false)
-    ;
-    ((self._expCalCulate).gameObject):SetActive(true)
-    ;
-    ((self._addCalCulate).gameObject):SetActive(true)
+    self._expText.gameObject:SetActive(false)
+    self._addExp.gameObject:SetActive(false)
+    self._expCalCulate.gameObject:SetActive(true)
+    self._addCalCulate.gameObject:SetActive(true)
     self:OnChangeViewDrag()
   end
-
-  ;
-  ((UIEventTriggerListener.Get)((self._addSlider).gameObject)).onEndDrag = function(go)
-    -- function num : 0_4_9 , upvalues : self
-    ((self._expText).gameObject):SetActive(true)
-    ;
-    ((self._addExp).gameObject):SetActive(true)
-    ;
-    ((self._expCalCulate).gameObject):SetActive(false)
-    ;
-    ((self._addCalCulate).gameObject):SetActive(false)
+  UIEventTriggerListener.Get(self._addSlider.gameObject).onEndDrag = function(go)
+    self._expText.gameObject:SetActive(true)
+    self._addExp.gameObject:SetActive(true)
+    self._expCalCulate.gameObject:SetActive(false)
+    self._addCalCulate.gameObject:SetActive(false)
     self:OnChangeView()
   end
-
-  ;
-  ((self._addSlider).onValueChanged):AddListener(function()
-    -- function num : 0_4_10 , upvalues : self, _ENV
-    self._isAdd = self._lastNum < (self._addSlider).value
-    self._lastNum = (self._addSlider).value
-    self._realValue = (self._addSlider).value
+  self._addSlider.onValueChanged:AddListener(function()
+    self._isAdd = self._addSlider.value > self._lastNum
+    self._lastNum = self._addSlider.value
+    self._realValue = self._addSlider.value
     if self._isAdd then
       self._levelOffset = 0
-      self._nextPetLevel = (math.ceil)(self._realValue)
+      self._nextPetLevel = math.ceil(self._realValue)
     else
       self._levelOffset = -1
-      self._nextPetLevel = (math.floor)(self._realValue)
+      self._nextPetLevel = math.floor(self._realValue)
     end
-    ;
-    (Log.fatal)(self._nextPetLevel)
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
-  end
-)
+    Log.fatal(self._nextPetLevel)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.OnChangeViewDrag = function(self)
-  -- function num : 0_5
+function UIUpLevelAddQuickBox:OnChangeViewDrag()
   local endLevel = self._nextPetLevel
   if self._isAdd then
     endLevel = self:CheckPrevieAdd(self._nextPetLevel)
@@ -247,15 +199,12 @@ UIUpLevelAddQuickBox.OnChangeViewDrag = function(self)
     endLevel = self:CheckPrevieReduce(self._nextPetLevel)
   end
   self._nextPetLevel = endLevel
-  self._useItems = self:CalculateItemUse(self._nextPetLevel)
+  self._useItems, self._useCoin = self:CalculateItemUse(self._nextPetLevel)
   self:FlushUIDrag()
   self:FlushItemPanel()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.OnChangeView = function(self)
-  -- function num : 0_6
+function UIUpLevelAddQuickBox:OnChangeView()
   local endLevel = self._nextPetLevel
   if self._isAdd then
     endLevel = self:CheckPrevieAdd(self._nextPetLevel)
@@ -263,352 +212,248 @@ UIUpLevelAddQuickBox.OnChangeView = function(self)
     endLevel = self:CheckPrevieReduce(self._nextPetLevel)
   end
   self._nextPetLevel = endLevel
-  self._useItems = self:CalculateItemUse(self._nextPetLevel)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._addSlider).value = self._nextPetLevel
+  self._useItems, self._useCoin = self:CalculateItemUse(self._nextPetLevel)
+  self._addSlider.value = self._nextPetLevel
   self:FlushUI()
   self:FlushItemPanel()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.OnHide = function(self)
-  -- function num : 0_7
+function UIUpLevelAddQuickBox:OnHide()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.Clear = function(self)
-  -- function num : 0_8
+function UIUpLevelAddQuickBox:Clear()
   self:InitUI()
-  self._curPetLevel = (self._petInfo):GetPetLevel()
+  self._curPetLevel = self._petInfo:GetPetLevel()
   self._nextPetLevel = 0
   self._addItemInfos = nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.InitUI = function(self)
-  -- function num : 0_9
-  local level = (self._petInfo):GetPetLevel()
-  ;
-  (self._curlevel):SetText(level)
-  ;
-  (self._nextlevel):SetText("")
-  ;
-  (self._costCount):SetText(self._useCoin)
-  ;
-  (self._nextObj):SetActive(false)
+function UIUpLevelAddQuickBox:InitUI()
+  local level = self._petInfo:GetPetLevel()
+  self._curlevel:SetText(level)
+  self._nextlevel:SetText("")
+  self._costCount:SetText(self._useCoin)
+  self._nextObj:SetActive(false)
   local info = self:GetPetInfo()
   local text = "<color=#ffe71c>" .. info.curExp .. "</color>"
   text = text .. "/" .. info.maxExp
-  ;
-  (self._expText):SetText(text)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._expSlider).value = info.curExp / info.maxExp
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._addSlider).minValue = self._curPetLevel
+  self._expText:SetText(text)
+  self._expSlider.value = info.curExp / info.maxExp
+  self._addSlider.minValue = self._curPetLevel
   local useItems = self:CalculateItemUse(self:GetEnableMaxLevel())
   self._maxEndLevel = self:CheckPreview(useItems)
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._addSlider).maxValue = self._maxEndLevel
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._addSlider).value = self._curPetLevel
-  ;
-  (self._addExp):SetText("")
-  local lvConfig = (self._petInfo):GetLevelConfig(self._curPetLevel + 1)
-  ;
-  (self._maxObj):SetActive(lvConfig == nil)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._addSlider.maxValue = self._maxEndLevel
+  self._addSlider.value = self._curPetLevel
+  self._addExp:SetText("")
+  local lvConfig = self._petInfo:GetLevelConfig(self._curPetLevel + 1)
+  self._maxObj:SetActive(lvConfig == nil)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.FlushUI = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local level = (self._petInfo):GetPetLevel()
-  ;
-  (self._curlevel):SetText(level)
-  local next = (math.modf)(self._nextPetLevel)
-  ;
-  (self._nextlevel):SetText(next)
-  ;
-  (self._costCount):SetText(self._useCoin)
-  ;
-  (self._nextObj):SetActive(self._curPetLevel < self._nextPetLevel)
+function UIUpLevelAddQuickBox:FlushUI()
+  local level = self._petInfo:GetPetLevel()
+  self._curlevel:SetText(level)
+  local next = math.modf(self._nextPetLevel)
+  self._nextlevel:SetText(next)
+  self._costCount:SetText(self._useCoin)
+  self._nextObj:SetActive(self._nextPetLevel > self._curPetLevel)
   local info = self:GetPetInfo()
   local nextMaxExp = info.maxExp
-  local lvConfig = (self._petInfo):GetLevelConfig(self._nextPetLevel + 1)
+  local lvConfig = self._petInfo:GetLevelConfig(self._nextPetLevel + 1)
   local isMax = false
   if lvConfig then
-    (self._maxObj):SetActive(false)
+    self._maxObj:SetActive(false)
     nextMaxExp = lvConfig.NeedExp
-    if (self._addSlider).value == (self._addSlider).maxValue then
+    if self._addSlider.value == self._addSlider.maxValue then
       local expLevel = self:CalculateExpEnableMaxLevel()
       local coinLevel = self:CalculateCoinEnableMaxLevel()
-      local expLevelConfig = (self._petInfo):GetLevelConfig(expLevel + 1)
-      local coinLevelConfig = (self._petInfo):GetLevelConfig(coinLevel + 1)
+      local expLevelConfig = self._petInfo:GetLevelConfig(expLevel + 1)
+      local coinLevelConfig = self._petInfo:GetLevelConfig(coinLevel + 1)
       if expLevel < coinLevel then
-        (ToastManager.ShowToast)((StringTable.Get)("str_pet_config_up_jasper_not_enough"))
-      elseif coinLevel < expLevel then
-        (ToastManager.ShowToast)((StringTable.Get)("str_pet_config_up_money_not_enough"))
+        ToastManager.ShowToast(StringTable.Get("str_pet_config_up_jasper_not_enough"))
+      elseif expLevel > coinLevel then
+        ToastManager.ShowToast(StringTable.Get("str_pet_config_up_money_not_enough"))
       elseif expLevelConfig or coinLevelConfig then
-        (ToastManager.ShowToast)((StringTable.Get)("str_pet_config_up_both_not_enough"))
+        ToastManager.ShowToast(StringTable.Get("str_pet_config_up_both_not_enough"))
       end
     end
   else
-    (self._maxObj):SetActive(true)
+    self._maxObj:SetActive(true)
     isMax = true
-    lvConfig = (self._petInfo):GetLevelConfig(self._nextPetLevel)
+    lvConfig = self._petInfo:GetLevelConfig(self._nextPetLevel)
     nextMaxExp = lvConfig.NeedExp
   end
-  if not isMax or not nextMaxExp then
-    local liftNum = self:GetOverLevelInfo()
-  end
+  local liftNum = isMax and nextMaxExp or self:GetOverLevelInfo()
   if self._nextPetLevel == self._curPetLevel then
-    liftNum = (self._petInfo):GetPetExp()
+    liftNum = self._petInfo:GetPetExp()
   end
   local text = "<color=#ffe71c>" .. liftNum .. "</color>"
   text = text .. "/" .. nextMaxExp
-  ;
-  (self._expText):SetText(text)
-  -- DECOMPILER ERROR at PC133: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self._expSlider).value = liftNum / nextMaxExp
+  self._expText:SetText(text)
+  self._expSlider.value = liftNum / nextMaxExp
   local str = self._totleExp > 0 and "+" .. self._totleExp or ""
-  ;
-  (self._addExp):SetText(str)
-  -- DECOMPILER ERROR: 11 unprocessed JMP targets
+  self._addExp:SetText(str)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.FlushUIDrag = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local level = (self._petInfo):GetPetLevel()
-  ;
-  (self._curlevel):SetText(level)
-  local next = (math.modf)((self._addSlider).value)
-  ;
-  (self._nextlevel):SetText(next)
-  ;
-  (self._costCount):SetText(self._useCoin)
-  ;
-  (self._nextObj):SetActive(self._curPetLevel < self._nextPetLevel)
+function UIUpLevelAddQuickBox:FlushUIDrag()
+  local level = self._petInfo:GetPetLevel()
+  self._curlevel:SetText(level)
+  local next = math.modf(self._addSlider.value)
+  self._nextlevel:SetText(next)
+  self._costCount:SetText(self._useCoin)
+  self._nextObj:SetActive(self._nextPetLevel > self._curPetLevel)
   local info = self:GetPetInfo()
   local nextMaxExp = info.maxExp
-  local lvConfig = (self._petInfo):GetLevelConfig(self._nextPetLevel + 1)
+  local lvConfig = self._petInfo:GetLevelConfig(self._nextPetLevel + 1)
   local isMax = false
   if lvConfig then
-    (self._maxObj):SetActive(false)
+    self._maxObj:SetActive(false)
     nextMaxExp = lvConfig.NeedExp
-    if (self._addSlider).value == (self._addSlider).maxValue then
+    if self._addSlider.value == self._addSlider.maxValue then
       local expLevel = self:CalculateExpEnableMaxLevel()
       local coinLevel = self:CalculateCoinEnableMaxLevel()
-      local expLevelConfig = (self._petInfo):GetLevelConfig(expLevel + 1)
-      local coinLevelConfig = (self._petInfo):GetLevelConfig(coinLevel + 1)
+      local expLevelConfig = self._petInfo:GetLevelConfig(expLevel + 1)
+      local coinLevelConfig = self._petInfo:GetLevelConfig(coinLevel + 1)
       if expLevel < coinLevel then
-        (ToastManager.ShowToast)((StringTable.Get)("str_pet_config_up_jasper_not_enough"))
-      elseif coinLevel < expLevel then
-        (ToastManager.ShowToast)((StringTable.Get)("str_pet_config_up_money_not_enough"))
+        ToastManager.ShowToast(StringTable.Get("str_pet_config_up_jasper_not_enough"))
+      elseif expLevel > coinLevel then
+        ToastManager.ShowToast(StringTable.Get("str_pet_config_up_money_not_enough"))
       elseif expLevelConfig or coinLevelConfig then
-        (ToastManager.ShowToast)((StringTable.Get)("str_pet_config_up_both_not_enough"))
+        ToastManager.ShowToast(StringTable.Get("str_pet_config_up_both_not_enough"))
       end
     end
   else
-    (self._maxObj):SetActive(true)
+    self._maxObj:SetActive(true)
     isMax = true
-    lvConfig = (self._petInfo):GetLevelConfig(self._nextPetLevel)
+    lvConfig = self._petInfo:GetLevelConfig(self._nextPetLevel)
     nextMaxExp = lvConfig.NeedExp
   end
-  if not isMax or not nextMaxExp then
-    local liftNum = self:GetOverLevelInfo()
-  end
+  local liftNum = isMax and nextMaxExp or self:GetOverLevelInfo()
   if self._nextPetLevel == self._curPetLevel then
-    liftNum = (self._petInfo):GetPetExp()
+    liftNum = self._petInfo:GetPetExp()
   end
   local text = "<color=#ffe71c>" .. liftNum .. "</color>"
   text = text .. "/" .. nextMaxExp
-  ;
-  (self._expText):SetText(text)
-  -- DECOMPILER ERROR at PC134: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self._expSlider).value = liftNum / nextMaxExp
+  self._expText:SetText(text)
+  self._expSlider.value = liftNum / nextMaxExp
   local str = self._totleExp > 0 and "+" .. self._totleExp or ""
-  ;
-  (self._addExp):SetText(str)
-  -- DECOMPILER ERROR: 11 unprocessed JMP targets
+  self._addExp:SetText(str)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.FlushItemPanel = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIUpLevelAddQuickBox:FlushItemPanel()
   local len = #self._expItemList
   if len < 6 then
-    (self._content):SpawnObjects("UIUpLevelMaterialItem", 6)
+    self._content:SpawnObjects("UIUpLevelMaterialItem", 6)
   else
-    ;
-    (self._content):SpawnObjects("UIUpLevelMaterialItem", len)
+    self._content:SpawnObjects("UIUpLevelMaterialItem", len)
   end
-  self._uiItems = (self._content):GetAllSpawnList()
-  local filterFun = function(index)
-    -- function num : 0_12_0 , upvalues : _ENV, self
-    for i,value in ipairs(self._useItems) do
-      if value and value[1] == ((self._expItemList)[index]):GetTemplateID() then
+  self._uiItems = self._content:GetAllSpawnList()
+  
+  local function filterFun(index)
+    for i, value in ipairs(self._useItems) do
+      if value and value[1] == self._expItemList[index]:GetTemplateID() then
         return value
       end
     end
   end
-
-  for i,uiItem in ipairs(self._uiItems) do
-    if len < i then
+  
+  for i, uiItem in ipairs(self._uiItems) do
+    if i > len then
       uiItem:SetData(nil)
     else
       local value = filterFun(i)
-      uiItem:SetData((self._expItemList)[i], (self._petInfo):GetPetFirstElement(), value, i, self._maxMatChooseCount, self._safeArea)
+      uiItem:SetData(self._expItemList[i], self._petInfo:GetPetFirstElement(), value, i, self._maxMatChooseCount, self._safeArea)
       uiItem:ShowUpAnim(true, value == nil)
     end
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.BgOnClick = function(self)
-  -- function num : 0_13
+function UIUpLevelAddQuickBox:BgOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_14 , upvalues : _ENV
+function UIUpLevelAddQuickBox:OnUpdate(deltaTimeMS)
   self._updateTime = self._updateTime + deltaTimeMS
-  if self._pressTime < self._updateTime then
+  if self._updateTime > self._pressTime then
     self._updateTime = self._updateTime - self._pressTime
     if self._isAddMouseDown then
       if self._isTenStep then
         self._levelOffset = 10
-        self._nextPetLevel = self:CheckPrevieAdd((math.min)(self._nextPetLevel + self._levelOffset, self._maxEndLevel))
+        self._nextPetLevel = self:CheckPrevieAdd(math.min(self._nextPetLevel + self._levelOffset, self._maxEndLevel))
         self:ShowLongPressInfo()
       else
         self._levelOffset = 1
-        self._nextPetLevel = self:CheckPrevieAdd((math.min)(self._nextPetLevel + self._levelOffset, self._maxEndLevel))
+        self._nextPetLevel = self:CheckPrevieAdd(math.min(self._nextPetLevel + self._levelOffset, self._maxEndLevel))
         self:ShowLongPressInfo()
       end
     end
     if self._isSubMouseDown then
       if self._isTenStep then
         self._levelOffset = -10
-        self._nextPetLevel = self:CheckPrevieReduce((math.max)(self._nextPetLevel + self._levelOffset, self._curPetLevel))
+        self._nextPetLevel = self:CheckPrevieReduce(math.max(self._nextPetLevel + self._levelOffset, self._curPetLevel))
         self:ShowLongPressInfo()
       else
         self._levelOffset = -1
-        self._nextPetLevel = self:CheckPrevieReduce((math.max)(self._nextPetLevel + self._levelOffset, self._curPetLevel))
+        self._nextPetLevel = self:CheckPrevieReduce(math.max(self._nextPetLevel + self._levelOffset, self._curPetLevel))
         self:ShowLongPressInfo()
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.ShowLongPressInfo = function(self)
-  -- function num : 0_15
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._addSlider).value = self._nextPetLevel
-  ;
-  (self._nextlevel):SetText(self._nextPetLevel)
-  ;
-  (self._nextObj):SetActive(self._curPetLevel < self._nextPetLevel)
-  self._useItems = self:CalculateItemUse(self._nextPetLevel)
+function UIUpLevelAddQuickBox:ShowLongPressInfo()
+  self._addSlider.value = self._nextPetLevel
+  self._nextlevel:SetText(self._nextPetLevel)
+  self._nextObj:SetActive(self._nextPetLevel > self._curPetLevel)
+  self._useItems, self._useCoin = self:CalculateItemUse(self._nextPetLevel)
   self:FlushUIDrag()
   self:FlushItemPanel()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.AddBtnOnClick = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIUpLevelAddQuickBox:AddBtnOnClick()
   self._levelOffset = 1
   self._isAdd = true
-  self._nextPetLevel = (math.min)(self._nextPetLevel + self._levelOffset, self._maxEndLevel)
+  self._nextPetLevel = math.min(self._nextPetLevel + self._levelOffset, self._maxEndLevel)
   self:OnChangeView()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.SubBtnOnClick = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIUpLevelAddQuickBox:SubBtnOnClick()
   self._levelOffset = -1
-  self._nextPetLevel = (math.max)(self._nextPetLevel + self._levelOffset, self._curPetLevel)
+  self._nextPetLevel = math.max(self._nextPetLevel + self._levelOffset, self._curPetLevel)
   self._isAdd = false
   self:OnChangeView()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.AddMultBtnOnClick = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIUpLevelAddQuickBox:AddMultBtnOnClick()
   self._levelOffset = 10
-  self._nextPetLevel = (math.min)(self._nextPetLevel + self._levelOffset, self._maxEndLevel)
+  self._nextPetLevel = math.min(self._nextPetLevel + self._levelOffset, self._maxEndLevel)
   self._isAdd = true
   self:OnChangeView()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.SubMultBtnOnClick = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIUpLevelAddQuickBox:SubMultBtnOnClick()
   self._levelOffset = -10
-  self._nextPetLevel = (math.max)(self._nextPetLevel + self._levelOffset, self._curPetLevel)
+  self._nextPetLevel = math.max(self._nextPetLevel + self._levelOffset, self._curPetLevel)
   self._isAdd = false
   self:OnChangeView()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.QuickAddOnClick = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CloseUIUpLevelAddQuickBox, self._useItems)
+function UIUpLevelAddQuickBox:QuickAddOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CloseUIUpLevelAddQuickBox, self._useItems)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.CancalOnClick = function(self)
-  -- function num : 0_21
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._addSlider).value = 0
-  self._curPetLevel = (self._petInfo):GetPetLevel()
+function UIUpLevelAddQuickBox:CancalOnClick()
+  self._addSlider.value = 0
+  self._curPetLevel = self._petInfo:GetPetLevel()
   self._nextPetLevel = 0
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.CheckCanUseWithCoin = function(self, exp)
-  -- function num : 0_22 , upvalues : _ENV
-  local totleCoin = (self._roleModule):GetGold()
+function UIUpLevelAddQuickBox:CheckCanUseWithCoin(exp)
+  local totleCoin = self._roleModule:GetGold()
   local endLevel = self._curPetLevel
   local curLevel = self._curPetLevel + 1
-  local lvConfig = (self._petInfo):GetLevelConfig(curLevel)
+  local lvConfig = self._petInfo:GetLevelConfig(curLevel)
   if not lvConfig then
     return false, self._curPetLevel
   end
@@ -616,49 +461,44 @@ UIUpLevelAddQuickBox.CheckCanUseWithCoin = function(self, exp)
   local upLeveMoney = 0
   upLeveMoney = upLeveMoney + lvConfig.NeedGold * (curLevelNeedExp / lvConfig.NeedExp)
   exp = exp - curLevelNeedExp
-  while exp >= 0 do
+  while 0 <= exp do
     curLevel = curLevel + 1
-    lvConfig = (self._petInfo):GetLevelConfig(curLevel)
+    lvConfig = self._petInfo:GetLevelConfig(curLevel)
     if not lvConfig then
       endLevel = curLevel - 1
       break
     end
-    if lvConfig.NeedExp <= exp then
+    if exp >= lvConfig.NeedExp then
       upLeveMoney = upLeveMoney + lvConfig.NeedGold
     else
-      upLeveMoney = upLeveMoney + lvConfig.NeedGold * ((exp) / lvConfig.NeedExp)
+      upLeveMoney = upLeveMoney + lvConfig.NeedGold * (exp / lvConfig.NeedExp)
       curLevel = curLevel - 1
     end
     endLevel = curLevel
     exp = exp - lvConfig.NeedExp
   end
-  ;
-  (Log.fatal)("")
-  do return (math.ceil)(upLeveMoney) <= totleCoin, endLevel end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  Log.fatal("")
+  return totleCoin >= math.ceil(upLeveMoney), endLevel
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.CheckPreview = function(self, useItems)
-  -- function num : 0_23 , upvalues : _ENV
+function UIUpLevelAddQuickBox:CheckPreview(useItems)
   local totleExp = 0
   if not useItems or #useItems == 0 then
     return self._curPetLevel
   end
-  for k,value in ipairs(useItems) do
+  for k, value in ipairs(useItems) do
     local finalExp = self:CalculateItemFinalExp(value[1])
     for i = 1, value[2] do
       totleExp = totleExp + finalExp
     end
   end
   local endLevel = self._curPetLevel
-  if totleExp > 0 then
+  if 0 < totleExp then
     local curLevel = self._curPetLevel + 1
-    local lvConfig = (self._petInfo):GetLevelConfig(curLevel)
+    local lvConfig = self._petInfo:GetLevelConfig(curLevel)
     if not lvConfig then
       endLevel = self._curPetLevel
-      return 
+      return
     end
     local curLevelNeedExp = lvConfig.NeedExp - self._curPetExp
     totleExp = totleExp - curLevelNeedExp
@@ -666,50 +506,30 @@ UIUpLevelAddQuickBox.CheckPreview = function(self, useItems)
       return endLevel
     end
     endLevel = curLevel
-    while 1 do
-      if totleExp >= 0 then
-        curLevel = curLevel + 1
-        lvConfig = (self._petInfo):GetLevelConfig(curLevel)
-        if lvConfig then
-          totleExp = totleExp - lvConfig.NeedExp
-          if totleExp >= 0 then
-            endLevel = curLevel
-            -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+    while 0 <= totleExp do
+      curLevel = curLevel + 1
+      lvConfig = self._petInfo:GetLevelConfig(curLevel)
+      if not lvConfig then
+        break
       end
+      totleExp = totleExp - lvConfig.NeedExp
+      if totleExp < 0 then
+        break
+      end
+      endLevel = curLevel
     end
   end
-  do
-    local coinMaxLevel = self:CalculateCoinEnableMaxLevel()
-    return (math.min)(endLevel, coinMaxLevel)
-  end
+  local coinMaxLevel = self:CalculateCoinEnableMaxLevel()
+  return math.min(endLevel, coinMaxLevel)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.CheckPrevieAdd = function(self, level)
-  -- function num : 0_24
+function UIUpLevelAddQuickBox:CheckPrevieAdd(level)
   local useItems = self:CalculateItemUse(level)
   local endLevel = self:CheckPreview(useItems)
   return endLevel
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.IsEqualItems = function(self, itemA, itemB)
-  -- function num : 0_25
+function UIUpLevelAddQuickBox:IsEqualItems(itemA, itemB)
   if not itemA or not itemB then
     return false
   end
@@ -719,24 +539,20 @@ UIUpLevelAddQuickBox.IsEqualItems = function(self, itemA, itemB)
   local sameCount = 0
   for i = 1, #itemA do
     for k = 1, #itemB do
-      if (itemA[i])[1] == (itemB[k])[1] and (itemA[i])[2] == (itemB[k])[2] then
+      if itemA[i][1] == itemB[k][1] and itemA[i][2] == itemB[k][2] then
         sameCount = sameCount + 1
       end
     end
   end
-  do return sameCount == #itemA end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return sameCount == #itemA
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.CheckPrevieReduce = function(self, level)
-  -- function num : 0_26
+function UIUpLevelAddQuickBox:CheckPrevieReduce(level)
   if level <= self._curPetLevel then
     return self._curPetLevel
   end
   local lastLevel = level + 1
-  local lastItem, useItems = {}, nil
+  local lastItem, useItems = {}
   local endLevel = level
   lastItem = self:CalculateItemUse(lastLevel)
   endLevel = self:CheckPreview(lastItem)
@@ -750,294 +566,226 @@ UIUpLevelAddQuickBox.CheckPrevieReduce = function(self, level)
   return endLevel
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.GetPetInfo = function(self)
-  -- function num : 0_27
+function UIUpLevelAddQuickBox:GetPetInfo()
   local petInfo = {}
-  if self._curPetLevel ~= (self._petInfo):GetMaxLevel() or not (self._petInfo):GetMaxLevel() then
-    local nextLv = self._curPetLevel + 1
-  end
-  local levelConfig = (self._petInfo):GetLevelConfig(nextLv)
-  petInfo.curLevel = (self._petInfo):GetPetLevel()
+  local nextLv = self._curPetLevel == self._petInfo:GetMaxLevel() and self._petInfo:GetMaxLevel() or self._curPetLevel + 1
+  local levelConfig = self._petInfo:GetLevelConfig(nextLv)
+  petInfo.curLevel = self._petInfo:GetPetLevel()
   petInfo.nextlevel = self._nextPetLevel
-  petInfo.curExp = (self._petInfo):GetPetExp()
+  petInfo.curExp = self._petInfo:GetPetExp()
   petInfo.maxExp = levelConfig.NeedExp
   return petInfo
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.CheckMaxLevel = function(self, nextLevel)
-  -- function num : 0_28
-  local maxLevel = (self._petInfo):GetMaxLevel()
-  if maxLevel <= nextLevel then
+function UIUpLevelAddQuickBox:CheckMaxLevel(nextLevel)
+  local maxLevel = self._petInfo:GetMaxLevel()
+  if nextLevel >= maxLevel then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.GetEnableMaxLevel = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UIUpLevelAddQuickBox:GetEnableMaxLevel()
   local expLevel = self:CalculateExpEnableMaxLevel()
   local coinLevel = self:CalculateCoinEnableMaxLevel()
-  return (math.min)(expLevel, coinLevel)
+  return math.min(expLevel, coinLevel)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.CalculateExpEnableMaxLevel = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UIUpLevelAddQuickBox:CalculateExpEnableMaxLevel()
   local maxLevel = self._curPetLevel
   local maxExp = 0
-  for index,value in ipairs(self._expItemList) do
+  for index, value in ipairs(self._expItemList) do
     maxExp = maxExp + value:GetCount() * self:CalculateItemFinalExp(value:GetTemplateID())
   end
   local curLevel = self._curPetLevel + 1
-  local lvConfig = (self._petInfo):GetLevelConfig(curLevel)
+  local lvConfig = self._petInfo:GetLevelConfig(curLevel)
   if not lvConfig then
     return self._curPetLevel
   end
   local curLevelNeedExp = lvConfig.NeedExp - self._curPetExp
   maxExp = maxExp - curLevelNeedExp
-  if maxExp > 0 then
+  if 0 < maxExp then
     maxLevel = curLevel
   end
-  while 1 do
-    if maxExp > 0 then
-      curLevel = curLevel + 1
-      lvConfig = (self._petInfo):GetLevelConfig(curLevel)
-      if lvConfig then
-        maxExp = maxExp - lvConfig.NeedExp
-        if maxExp >= 0 then
-          maxLevel = curLevel
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  while 0 < maxExp do
+    curLevel = curLevel + 1
+    lvConfig = self._petInfo:GetLevelConfig(curLevel)
+    if not lvConfig then
+      break
     end
+    maxExp = maxExp - lvConfig.NeedExp
+    if maxExp < 0 then
+      break
+    end
+    maxLevel = curLevel
   end
   return maxLevel
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.CalculateCoinEnableMaxLevel = function(self)
-  -- function num : 0_31
-  local cionNum = (self._roleModule):GetGold()
+function UIUpLevelAddQuickBox:CalculateCoinEnableMaxLevel()
+  local cionNum = self._roleModule:GetGold()
   local maxLevel = self._curPetLevel
   local upLeveMoney = 0
   local curLevel = self._curPetLevel + 1
-  local lvConfig = (self._petInfo):GetLevelConfig(curLevel)
+  local lvConfig = self._petInfo:GetLevelConfig(curLevel)
   if not lvConfig then
     return self._curPetLevel
   end
   local curLevelNeedExp = lvConfig.NeedExp - self._curPetExp
   upLeveMoney = upLeveMoney + lvConfig.NeedGold * (curLevelNeedExp / lvConfig.NeedExp)
-  cionNum = cionNum - (upLeveMoney)
+  cionNum = cionNum - upLeveMoney
   if cionNum < 0 then
     return self._curPetLevel
   end
   maxLevel = curLevel
-  while 1 do
-    if cionNum > 0 then
-      curLevel = curLevel + 1
-      lvConfig = (self._petInfo):GetLevelConfig(curLevel)
-      if lvConfig then
-        cionNum = cionNum - lvConfig.NeedGold
-        if cionNum >= 0 then
-          maxLevel = curLevel
-          -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  while 0 < cionNum do
+    curLevel = curLevel + 1
+    lvConfig = self._petInfo:GetLevelConfig(curLevel)
+    if not lvConfig then
+      break
     end
+    cionNum = cionNum - lvConfig.NeedGold
+    if cionNum < 0 then
+      break
+    end
+    maxLevel = curLevel
   end
   return maxLevel
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.CalculateItemFinalExp = function(self, templateid)
-  -- function num : 0_32 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item_pet_exp)[templateid]
-  local tItemAddExp = (self._itemModule):GetItemToPetExp(templateid)
-  local firstElement = (self._petInfo):GetPetFirstElement()
-  do
-    if cfg.Element == firstElement then
-      local add = ((Cfg.cfg_global).ElementAddExp).IntValue
-      tItemAddExp = tItemAddExp * (add + 100) * 0.01
-    end
-    return (math.floor)(tItemAddExp)
+function UIUpLevelAddQuickBox:CalculateItemFinalExp(templateid)
+  local cfg = Cfg.cfg_item_pet_exp[templateid]
+  local tItemAddExp = self._itemModule:GetItemToPetExp(templateid)
+  local firstElement = self._petInfo:GetPetFirstElement()
+  if cfg.Element == firstElement then
+    local add = Cfg.cfg_global.ElementAddExp.IntValue
+    tItemAddExp = tItemAddExp * (add + 100) * 0.01
   end
+  return math.floor(tItemAddExp)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.CalculateItemUse = function(self, level)
-  -- function num : 0_33 , upvalues : _ENV
-  (Log.debug)("CalculateItemUse")
+function UIUpLevelAddQuickBox:CalculateItemUse(level)
+  Log.debug("CalculateItemUse")
   local exp, coin = self:CalculateWithTargetLevel(level)
-  local colorItems, normalItems = {}, {}
+  local colorItems, normalItems = {}, {}, {}
   colorItems = self._colorItems
   normalItems = self._normalItems
   self._overExp = 0
   self._totleExp = exp
-  -- DECOMPILER ERROR at PC14: Overwrote pending register: R6 in 'AssignReg'
-
-  local addUseItemCount = {}
+  
+  local function addUseItemCount(tb, templateID, count)
+    local addPer = count ~= nil and count or 1
+    local checked = false
+    for index, value in ipairs(tb) do
+      if value[1] == templateID then
+        value[2] = value[2] + addPer
+        value.count = value[2]
+        checked = true
+        break
+      end
+    end
+    if not checked then
+      local temp = {templateID, addPer}
+      temp.count = addPer
+      table.insert(tb, temp)
+    end
+  end
+  
   local useItems = {}
-  local colculateExpInfo = function(checkItems, needExp)
-    -- function num : 0_33_1 , upvalues : useItems, self, _ENV, addUseItemCount
+  
+  local function colculateExpInfo(checkItems, needExp)
     if not checkItems or #checkItems == 0 then
       return useItems, needExp
     end
-    local lastItemExp = self:CalculateItemFinalExp((checkItems[#checkItems]):GetTemplateID())
-    local useCount = (math.ceil)(needExp / lastItemExp)
-    for index,value in ipairs(checkItems) do
+    local lastItemExp = self:CalculateItemFinalExp(checkItems[#checkItems]:GetTemplateID())
+    local useCount = math.ceil(needExp / lastItemExp)
+    for index, value in ipairs(checkItems) do
       local id = value:GetTemplateID()
       local item = {}
       item.id = id
       item.rate = self:CalculateItemFinalExp(value:GetTemplateID()) / lastItemExp
-      if value:GetCount() < 0 or value:GetCount() >= (math.floor)(useCount / item.rate) or not value:GetCount() then
-        do
-          item.useCount = (math.floor)(useCount / item.rate)
-          if item.useCount > 0 then
-            addUseItemCount(useItems, value:GetTemplateID(), item.useCount)
-          end
-          needExp = needExp - item.useCount * self:CalculateItemFinalExp(value:GetTemplateID())
-          useCount = useCount - item.useCount * item.rate
-          -- DECOMPILER ERROR at PC80: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC80: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      item.useCount = 0 <= value:GetCount() and math.floor(useCount / item.rate) > value:GetCount() and value:GetCount() or math.floor(useCount / item.rate)
+      if 0 < item.useCount then
+        addUseItemCount(useItems, value:GetTemplateID(), item.useCount)
+      end
+      needExp = needExp - item.useCount * self:CalculateItemFinalExp(value:GetTemplateID())
+      useCount = useCount - item.useCount * item.rate
+      if needExp <= 0 then
+        break
       end
     end
-    if needExp > 0 then
-      return useItems, needExp
-    end
+    return useItems, needExp
   end
-
-  local lvConfig = (self._petInfo):GetLevelConfig(self._nextPetLevel + 1)
-  useItems = colculateExpInfo(colorItems, exp)
+  
+  local lvConfig = self._petInfo:GetLevelConfig(self._nextPetLevel + 1)
+  useItems, exp = colculateExpInfo(colorItems, exp)
   if exp <= 0 then
     self._overExp = -exp
     self._totleExp = self._totleExp + self._overExp
     if lvConfig then
       coin = coin + lvConfig.NeedGold * (self._overExp / lvConfig.NeedExp)
     end
-    return useItems, (math.ceil)(coin)
+    return useItems, math.ceil(coin)
   end
-  -- DECOMPILER ERROR at PC54: Overwrote pending register: R2 in 'AssignReg'
-
-  useItems = colculateExpInfo(normalItems, exp)
+  useItems, exp = colculateExpInfo(normalItems, exp)
   self._overExp = -exp
   self._totleExp = self._totleExp + self._overExp
   if lvConfig then
     coin = coin + lvConfig.NeedGold * (self._overExp / lvConfig.NeedExp)
   end
-  return useItems, (math.ceil)(coin)
+  return useItems, math.ceil(coin)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.GetUseItemCount = function(self, templateID)
-  -- function num : 0_34 , upvalues : _ENV
-  for index,value in ipairs(self._expItemList) do
+function UIUpLevelAddQuickBox:GetUseItemCount(templateID)
+  for index, value in ipairs(self._expItemList) do
     if value:GetTemplateID() == templateID then
       return value:GetCount()
     end
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.CalculateWithTargetLevel = function(self, nextLevel)
-  -- function num : 0_35
-  if not nextLevel then
-    nextLevel = self._nextPetLevel
-  end
+function UIUpLevelAddQuickBox:CalculateWithTargetLevel(nextLevel)
+  nextLevel = nextLevel or self._nextPetLevel
   if self._curPetLevel == nextLevel then
     return 0, 0
   end
   local totleExp = 0
   local totleCoin = 0
   local curLevel = self._curPetLevel + 1
-  local lvConfig = (self._petInfo):GetLevelConfig(curLevel)
+  local lvConfig = self._petInfo:GetLevelConfig(curLevel)
   if not lvConfig then
     return totleExp, totleCoin
   end
   local curLevelNeedExp = lvConfig.NeedExp - self._curPetExp
   totleExp = totleExp + curLevelNeedExp
   totleCoin = totleCoin + lvConfig.NeedGold * (curLevelNeedExp / lvConfig.NeedExp)
-  while 1 do
-    if curLevel < nextLevel then
-      curLevel = curLevel + 1
-      lvConfig = (self._petInfo):GetLevelConfig(curLevel)
-      if lvConfig then
-        totleExp = totleExp + lvConfig.NeedExp
-        totleCoin = totleCoin + lvConfig.NeedGold
-        -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out IF_STMT
-
-        -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  while nextLevel > curLevel do
+    curLevel = curLevel + 1
+    lvConfig = self._petInfo:GetLevelConfig(curLevel)
+    if not lvConfig then
+      break
     end
+    totleExp = totleExp + lvConfig.NeedExp
+    totleCoin = totleCoin + lvConfig.NeedGold
   end
   return totleExp, totleCoin
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.GetFilterExpItems = function(self)
-  -- function num : 0_36 , upvalues : _ENV
+function UIUpLevelAddQuickBox:GetFilterExpItems()
   local itemInfos = {}
-  itemInfos = (self._petModule):GetPetExpItems((self._petInfo):GetPstID(), true)
+  itemInfos = self._petModule:GetPetExpItems(self._petInfo:GetPstID(), true)
   local cfg = Cfg.cfg_item_pet_exp
   local colorItems, normalItems = {}, {}
-  for index,value in ipairs(itemInfos) do
-    if (cfg[value:GetTemplateID()]).Element > 0 then
-      (table.insert)(colorItems, value)
+  for index, value in ipairs(itemInfos) do
+    if cfg[value:GetTemplateID()].Element > 0 then
+      table.insert(colorItems, value)
     else
-      ;
-      (table.insert)(normalItems, value)
+      table.insert(normalItems, value)
     end
   end
   return itemInfos, colorItems, normalItems
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelAddQuickBox.GetOverLevelInfo = function(self)
-  -- function num : 0_37
+function UIUpLevelAddQuickBox:GetOverLevelInfo()
   return self._overExp
 end
-
-

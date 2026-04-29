@@ -1,8 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/type_define/luckland_notify_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-LuckLandNotifyType = {None = 0, PetEnter = 1, PetTurnStart = 2, PetTurn = 3, PetTurnEnd = 4, BackpackTurn = 5, BuildingTurn = 6, CountDown = 7, DefeatMonster = 8, MonsterTurnStart = 9, MonsterTurn = 10, MonsterAttackEnd = 11, MonsterEnter = 12, SelectPet = 13, DeletePet = 14, GetPet = 15, BuildingUpgrade = 16}
+LuckLandNotifyType = {
+  None = 0,
+  PetEnter = 1,
+  PetTurnStart = 2,
+  PetTurn = 3,
+  PetTurnEnd = 4,
+  BackpackTurn = 5,
+  BuildingTurn = 6,
+  CountDown = 7,
+  DefeatMonster = 8,
+  MonsterTurnStart = 9,
+  MonsterTurn = 10,
+  MonsterAttackEnd = 11,
+  MonsterEnter = 12,
+  SelectPet = 13,
+  DeletePet = 14,
+  GetPet = 15,
+  BuildingUpgrade = 16
+}
 _enum("LuckLandNotifyType", LuckLandNotifyType)
-

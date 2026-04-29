@@ -1,35 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_cost_caster_hp_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCostCasterHPInstruction", BaseInstruction)
 PlayCostCasterHPInstruction = PlayCostCasterHPInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCostCasterHPInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayCostCasterHPInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCostCasterHPInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCostCasterHPInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local playSkillService = world:GetService("PlaySkill")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local curDamageIndex = phaseContext:GetCurDamageResultIndex()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.CostCasterHP)
   local damageResult = damageResultArray[curDamageIndex]
   local damageInfo = damageResult:GetDamageInfo()
   if not damageInfo then
-    (Log.fatal)("### damageInfo is nil. curDamageIndex, ", curDamageIndex)
-    return 
+    Log.fatal("### damageInfo is nil. curDamageIndex, ", curDamageIndex)
+    return
   end
   local playDamageService = world:GetService("PlayDamage")
   playDamageService:AsyncUpdateHPAndDisplayDamage(casterEntity, damageInfo)
 end
-
-

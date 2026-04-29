@@ -1,30 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_under_foot.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_UnderFoot", SkillScopeCalculator_Base)
 SkillScopeCalculator_UnderFoot = SkillScopeCalculator_UnderFoot
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_UnderFoot.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_UnderFoot:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local force = 0
-  if scopeParam and type(scopeParam) == "table" and (table.count)(scopeParam) > 0 then
+  if scopeParam and type(scopeParam) == "table" and 0 < table.count(scopeParam) then
     force = scopeParam[1]
   end
   local targetArea = {}
   local wholeArea = {}
-  for i,v in ipairs(bodyArea) do
-    local workPos = centerPos + (Vector2.New)(v.x, v.y)
+  for i, v in ipairs(bodyArea) do
+    local workPos = centerPos + Vector2.New(v.x, v.y)
     self:_InsertTargetGrid(targetArea, workPos, wholeArea)
-    if force == 1 and not (table.intable)(targetArea, workPos) then
-      (table.insert)(targetArea, workPos)
+    if force == 1 and not table.intable(targetArea, workPos) then
+      table.insert(targetArea, workPos)
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.UnderFoot, centerPos, targetArea, wholeArea)
   return result
 end
-
-

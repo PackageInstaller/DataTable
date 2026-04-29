@@ -1,57 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/chain/link_line_grid_effect_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LinkLineGridEffectSystem_Render", ReactiveSystem)
 LinkLineGridEffectSystem_Render = LinkLineGridEffectSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LinkLineGridEffectSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function LinkLineGridEffectSystem_Render:Constructor(world)
   self.world = world
-  self._lineMpb = (UnityEngine.MaterialPropertyBlock):New()
+  self._lineMpb = UnityEngine.MaterialPropertyBlock:New()
   self._lineColorIntensityStart = 1
   self._lineColorIntensityEnd = 2
   self._baseColorDicLine = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkLineGridEffectSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local eGroup = world:GetGroup((world.BW_WEMatchers).GridEffect)
-  local vGroup = world:GetGroup((world.BW_WEMatchers).View)
+function LinkLineGridEffectSystem_Render:GetTrigger(world)
+  local eGroup = world:GetGroup(world.BW_WEMatchers.GridEffect)
+  local vGroup = world:GetGroup(world.BW_WEMatchers.View)
   local c = Collector:New({eGroup, vGroup}, {"Added", "Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkLineGridEffectSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2
-  if entity:HasGridEffect() then
-    return entity:HasView()
-  end
+function LinkLineGridEffectSystem_Render:Filter(entity)
+  return entity:HasGridEffect() and entity:HasView()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkLineGridEffectSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function LinkLineGridEffectSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     local e = entities[i]
     self:HandleEntity(e)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkLineGridEffectSystem_Render.HandleEntity = function(self, e)
-  -- function num : 0_4 , upvalues : _ENV
-  ((e:GridEffect()):GetGridEffectType())
-  local linkLineGridType = nil
-  local baseColorDic, mbp = nil, nil
+function LinkLineGridEffectSystem_Render:HandleEntity(e)
+  local linkLineGridType = e:GridEffect():GetGridEffectType()
+  local baseColorDic, mbp
   local colorIntensityStart = 0
   local colorIntensityEnd = 0
   if linkLineGridType == "LinkLine" then
@@ -60,35 +38,33 @@ LinkLineGridEffectSystem_Render.HandleEntity = function(self, e)
     colorIntensityStart = self._lineColorIntensityStart
     colorIntensityEnd = self._lineColorIntensityEnd
   else
-    return 
+    return
   end
-  local renderer = ((e:View()):GetGameObject()):GetComponentInChildren(typeof(UnityEngine.Renderer))
+  local renderer = e:View():GetGameObject():GetComponentInChildren(typeof(UnityEngine.Renderer))
   if not renderer then
-    return 
+    return
   end
-  local pieceType = (e:GridEffect()):GetPieceType()
+  local pieceType = e:GridEffect():GetPieceType()
   if not pieceType then
-    return 
+    return
   end
   local baseColor = baseColorDic[pieceType]
   if not baseColor then
-    baseColor = (renderer.sharedMaterial):GetVector("_MainColor")
+    baseColor = renderer.sharedMaterial:GetVector("_MainColor")
     baseColorDic[pieceType] = baseColor
   end
-  local utilData = (self.world):GetService("UtilData")
+  local utilData = self.world:GetService("UtilData")
   local superChainCount = utilData:GetCurrentTeamSuperChainCount()
-  local t = (e:GridEffect()):GetPathIndex() - 2
+  local t = e:GridEffect():GetPathIndex() - 2
   local max = superChainCount - 1
-  if max < t then
+  if t > max then
     t = max
   end
-  if t > 0 then
-    local res = (Mathf.Lerp)(colorIntensityStart, colorIntensityEnd, t / max)
+  if 0 < t then
+    local res = Mathf.Lerp(colorIntensityStart, colorIntensityEnd, t / max)
     local resColor = baseColor * (1 + res)
     resColor.w = baseColor.w
     mbp:SetVector("_MainColor", resColor)
     renderer:SetPropertyBlock(mbp)
   end
 end
-
-

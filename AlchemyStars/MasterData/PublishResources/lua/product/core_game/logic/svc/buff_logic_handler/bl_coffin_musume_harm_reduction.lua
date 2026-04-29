@@ -1,74 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_coffin_musume_harm_reduction.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicCoffinMusumeHarmReduction", BuffLogicBase)
 BuffLogicCoffinMusumeHarmReduction = BuffLogicCoffinMusumeHarmReduction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicCoffinMusumeHarmReduction.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicCoffinMusumeHarmReduction:Constructor(buffInstance, logicParam)
   self._trapID = tonumber(logicParam.trapID)
   self._harmReduction = logicParam.harmReduction
   self._stage = logicParam.stage
   self._uiText = logicParam.uiText
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicCoffinMusumeHarmReduction.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicCoffinMusumeHarmReduction:DoLogic()
   local candleCount = 0
   local tLightCandleID = {}
-  local globalTrapEntities = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).Trap)
-  for _,eTrap in ipairs(globalTrapEntities) do
-    if not (eTrap:Trap()):GetTrapID() ~= self._trapID and eTrap:HasBuff() and (eTrap:BuffComponent()):GetBuffValue(BattleConst.CandleLightKey) == 1 then
+  local globalTrapEntities = self._world:GetGroupEntities(self._world.BW_WEMatchers.Trap)
+  for _, eTrap in ipairs(globalTrapEntities) do
+    if not eTrap:Trap():GetTrapID() ~= self._trapID and eTrap:HasBuff() and eTrap:BuffComponent():GetBuffValue(BattleConst.CandleLightKey) == 1 then
       candleCount = candleCount + 1
-      ;
-      (table.insert)(tLightCandleID, eTrap:GetID())
+      table.insert(tLightCandleID, eTrap:GetID())
     end
   end
-  ;
-  (self._buffLogicService):RemoveFinalBeHitDamageParam(self._entity, self:GetBuffSeq())
-  local val = (self._harmReduction)[candleCount + 1]
+  self._buffLogicService:RemoveFinalBeHitDamageParam(self._entity, self:GetBuffSeq())
+  local val = self._harmReduction[candleCount + 1]
   if not val then
-    (Log.exception)("CoffinMusumeHarmReduction: 亮灯数量与减伤参数不匹配，亮灯数=", candleCount, "参数连续最大个数=", #self._harmReduction)
-    return 
+    Log.exception("CoffinMusumeHarmReduction: 亮灯数量与减伤参数不匹配，亮灯数=", candleCount, "参数连续最大个数=", #self._harmReduction)
+    return
   end
-  ;
-  (self._buffLogicService):ChangeFinalBeHitDamageParam(self._entity, self:GetBuffSeq(), val * -0.01)
+  self._buffLogicService:ChangeFinalBeHitDamageParam(self._entity, self:GetBuffSeq(), val * -0.01)
   local lineList = {}
   local curStage = 1
-  if candleCount > 0 and candleCount <= #self._stage then
+  if 0 < candleCount and candleCount <= #self._stage then
     for i = 1, candleCount do
-      if curStage < (self._stage)[i] then
-        curStage = (self._stage)[i]
+      if curStage < self._stage[i] then
+        curStage = self._stage[i]
         local lineIndex = i + #lineList
-        ;
-        (table.insert)(lineList, lineIndex)
+        table.insert(lineList, lineIndex)
       end
     end
   end
-  do
-    return BuffResultCoffinMusumeHarmReduction:New(tLightCandleID, self._uiText, val, lineList)
-  end
+  return BuffResultCoffinMusumeHarmReduction:New(tLightCandleID, self._uiText, val, lineList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicCoffinMusumeHarmReduction.DoOverlap = function(self)
-  -- function num : 0_2
+function BuffLogicCoffinMusumeHarmReduction:DoOverlap()
   return self:DoLogic()
 end
 
 _class("BuffLogicResetCoffinMusumeHarmReduction", BuffLogicBase)
 BuffLogicResetCoffinMusumeHarmReduction = BuffLogicResetCoffinMusumeHarmReduction
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetCoffinMusumeHarmReduction.DoLogic = function(self)
-  -- function num : 0_3
-  (self._buffLogicService):RemoveFinalBeHitDamageParam(self._entity, self:GetBuffSeq())
+function BuffLogicResetCoffinMusumeHarmReduction:DoLogic()
+  self._buffLogicService:RemoveFinalBeHitDamageParam(self._entity, self:GetBuffSeq())
 end
-
-

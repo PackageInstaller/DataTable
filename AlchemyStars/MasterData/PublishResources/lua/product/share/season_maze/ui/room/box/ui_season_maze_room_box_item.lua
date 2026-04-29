@@ -1,108 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/room/box/ui_season_maze_room_box_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRoomBoxItem", UICustomWidget)
 UISeasonMazeRoomBoxItem = UISeasonMazeRoomBoxItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoomBoxItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMazeRoomBoxItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBoxItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMazeRoomBoxItem:InitWidget()
   self._item = self:GetUIComponent("UISelectObjectPath", "Item")
   self._bead = self:GetUIComponent("UISelectObjectPath", "Bead")
   self._markGO = self:GetGameObject("Mark")
-  ;
-  (self._markGO):SetActive(false)
+  self._markGO:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBoxItem.SetData = function(self, index, data, onClickCallBack, onShowTipsCallBack)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeRoomBoxItem:SetData(index, data, onClickCallBack, onShowTipsCallBack)
   self._index = index
   self._data = data
   self._onClickCallBack = onClickCallBack
   self._onShowTipsCallBack = onShowTipsCallBack
-  if (self._data).type == SeasonMazeEffectType.SMET_Bead_LV then
-    local beadItem = (self._bead):SpawnObject("UISeasonMazeBeadItem")
-    beadItem:ShowUnknown((self._data).id, function(go)
-    -- function num : 0_2_0 , upvalues : self
-    self:ShowTips(go)
-  end
-)
+  if self._data.type == SeasonMazeEffectType.SMET_Bead_LV then
+    local beadItem = self._bead:SpawnObject("UISeasonMazeBeadItem")
+    beadItem:ShowUnknown(self._data.id, function(go)
+      self:ShowTips(go)
+    end)
   else
-    do
-      local itemWidget = (self._item):SpawnObject("UIItem")
-      itemWidget:SetForm(UIItemForm.Base)
-      itemWidget:SetClickCallBack(function(go)
-    -- function num : 0_2_1 , upvalues : self
-    self:ShowTips(go)
-  end
-)
-      local icon, quality, count = self:GetItemInfo()
-      itemWidget:SetData({icon = icon, quality = quality, text1 = count})
-    end
+    local itemWidget = self._item:SpawnObject("UIItem")
+    itemWidget:SetForm(UIItemForm.Base)
+    itemWidget:SetClickCallBack(function(go)
+      self:ShowTips(go)
+    end)
+    local icon, quality, count = self:GetItemInfo()
+    itemWidget:SetData({
+      icon = icon,
+      quality = quality,
+      text1 = count
+    })
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBoxItem.BgOnClick = function(self, go)
-  -- function num : 0_3
+function UISeasonMazeRoomBoxItem:BgOnClick(go)
   if self._onClickCallBack then
-    (self._onClickCallBack)(self._index)
+    self._onClickCallBack(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBoxItem.ShowTips = function(self, go)
-  -- function num : 0_4
+function UISeasonMazeRoomBoxItem:ShowTips(go)
   if self._onShowTipsCallBack then
-    (self._onShowTipsCallBack)(self._index, (go.transform).position)
+    self._onShowTipsCallBack(self._index, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBoxItem.GetItemInfo = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local icon, quality, count = nil, nil, nil
-  if (self._data).type == SeasonMazeEffectType.SMET_Pro then
-    local cfg = (Cfg.cfg_season_maze_attribute)[(self._data).id]
+function UISeasonMazeRoomBoxItem:GetItemInfo()
+  local icon, quality, count
+  if self._data.type == SeasonMazeEffectType.SMET_Pro then
+    local cfg = Cfg.cfg_season_maze_attribute[self._data.id]
     if cfg then
       icon = cfg.ItemIcon
       quality = cfg.Quality
-      count = (self._data).value_min
+      count = self._data.value_min
     end
   else
-    do
-      do
-        local cfg = (Cfg.cfg_item)[(self._data).id]
-        if cfg then
-          icon = cfg.Icon
-          quality = cfg.Color
-          count = (self._data).value_min
-        end
-        return icon, quality, count
-      end
+    local cfg = Cfg.cfg_item[self._data.id]
+    if cfg then
+      icon = cfg.Icon
+      quality = cfg.Color
+      count = self._data.value_min
     end
   end
+  return icon, quality, count
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBoxItem.OnSelected = function(self, isSelected)
-  -- function num : 0_6
-  (self._markGO):SetActive(isSelected)
+function UISeasonMazeRoomBoxItem:OnSelected(isSelected)
+  self._markGO:SetActive(isSelected)
 end
-
-

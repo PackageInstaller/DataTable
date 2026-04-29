@@ -1,80 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_combat/components/logic_extensions/entity_ability.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("abilities_component")
 _enum("EntityAbilitysLookup", {Invalid = 0})
 _class("EntityAbility", IEntityAbility)
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-EntityAbility.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function EntityAbility:Constructor()
   self.m_abilityType = EntityAbilitysLookup.Invalid
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAbility.Initialize = function(self, owner)
-  -- function num : 0_1
+function EntityAbility:Initialize(owner)
   self.m_owner = owner
   self.m_is_enable = true
   self:OnEnable()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAbility.GetAbilityType = function(self)
-  -- function num : 0_2
+function EntityAbility:GetAbilityType()
   return self.m_abilityType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAbility.IsEnable = function(self)
-  -- function num : 0_3
+function EntityAbility:IsEnable()
   return self.m_is_enable
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAbility.SetEnable = function(self)
-  -- function num : 0_4
+function EntityAbility:SetEnable()
   if self.m_is_enable == true then
-    return 
+    return
   end
   self.m_is_enable = true
   self:OnEnable()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAbility.SetDisable = function(self)
-  -- function num : 0_5
+function EntityAbility:SetDisable()
   if self.m_is_enable == false then
-    return 
+    return
   end
   self.m_is_enable = false
   self:OnDisable()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAbility.Reset = function(self)
-  -- function num : 0_6
+function EntityAbility:Reset()
   self.m_is_enable = true
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAbility.OnEnable = function(self)
-  -- function num : 0_7
+function EntityAbility:OnEnable()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityAbility.OnDisable = function(self)
-  -- function num : 0_8
+function EntityAbility:OnDisable()
 end
-
-

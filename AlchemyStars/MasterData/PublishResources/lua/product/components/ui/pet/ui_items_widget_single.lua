@@ -1,50 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_items_widget_single.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIItemsWidgetSingle", UICustomWidget)
 UIItemsWidgetSingle = UIItemsWidgetSingle
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIItemsWidgetSingle.OnShow = function(self)
-  -- function num : 0_0
+function UIItemsWidgetSingle:OnShow()
   self.clickCallBack = nil
   self.matID = -1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemsWidgetSingle.OnShowItem = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIItemsWidgetSingle:OnShowItem()
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIAsset")
   if not self.eventComponent then
-    (self.uiItem):SetData(self.matID)
-    self.eventComponent = (self.uiItem):AddComponent(UIAssetComponentEvent)
-    ;
-    (self.eventComponent):SetClickCallBack(function(go)
-    -- function num : 0_1_0 , upvalues : self
-    self:UIItemsWidgetOnClick(go)
-  end
-)
+    self.uiItem:SetData(self.matID)
+    self.eventComponent = self.uiItem:AddComponent(UIAssetComponentEvent)
+    self.eventComponent:SetClickCallBack(function(go)
+      self:UIItemsWidgetOnClick(go)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemsWidgetSingle.OnHide = function(self)
-  -- function num : 0_2
+function UIItemsWidgetSingle:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemsWidgetSingle.SetData = function(self, _id, _needCount, _clickCallback, scale)
-  -- function num : 0_3 , upvalues : _ENV
+function UIItemsWidgetSingle:SetData(_id, _needCount, _clickCallback, scale)
   self.matID = _id
-  local cfgData = (Cfg.cfg_item)[_id]
+  local cfgData = Cfg.cfg_item[_id]
   if cfgData == nil then
-    (Log.fatal)("item id not found", _id)
+    Log.fatal("item id not found", _id)
   end
   local text1 = _needCount
   local icon = cfgData.Icon
@@ -52,19 +33,17 @@ UIItemsWidgetSingle.SetData = function(self, _id, _needCount, _clickCallback, sc
   self._scale = scale
   self.clickCallBack = _clickCallback
   self:OnShowItem()
-  ;
-  (self.uiItem):SetItemData({showBG = true, icon = icon, text = text1, quality = quality})
-  ;
-  (self.uiItem):SetScale(scale)
+  self.uiItem:SetItemData({
+    showBG = true,
+    icon = icon,
+    text = text1,
+    quality = quality
+  })
+  self.uiItem:SetScale(scale)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemsWidgetSingle.UIItemsWidgetOnClick = function(self, go)
-  -- function num : 0_4
+function UIItemsWidgetSingle:UIItemsWidgetOnClick(go)
   if self.clickCallBack then
-    (self.clickCallBack)(self.matID, (go.transform).position)
+    self.clickCallBack(self.matID, go.transform.position)
   end
 end
-
-

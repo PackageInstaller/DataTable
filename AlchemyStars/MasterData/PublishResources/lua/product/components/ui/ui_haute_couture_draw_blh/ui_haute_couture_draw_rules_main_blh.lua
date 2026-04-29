@@ -1,50 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_blh/ui_haute_couture_draw_rules_main_blh.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawRulesMainBLH", UIHauteCoutureDrawRulesBase)
 UIHauteCoutureDrawRulesMainBLH = UIHauteCoutureDrawRulesMainBLH
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawRulesMainBLH.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawRulesMainBLH:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesMainBLH.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHauteCoutureDrawRulesMainBLH:OnShow(uiParams)
   self:InitWidgets()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesMainBLH.InitWidgets = function(self)
-  -- function num : 0_2
+function UIHauteCoutureDrawRulesMainBLH:InitWidgets()
   self:InitWidgetsBase()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesMainBLH.GetRuleItemPrefab = function(self)
-  -- function num : 0_3
+function UIHauteCoutureDrawRulesMainBLH:GetRuleItemPrefab()
   return "UISeniorSKinProItemsBLH.prefab"
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesMainBLH.GetRuleItemScript = function(self)
-  -- function num : 0_4
+function UIHauteCoutureDrawRulesMainBLH:GetRuleItemScript()
   return "UISeniorSKinProItems"
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesMainBLH.CloseBtnOnClick = function(self)
-  -- function num : 0_5
-  (self.controller):CloseDialog()
+function UIHauteCoutureDrawRulesMainBLH:CloseBtnOnClick()
+  self.controller:CloseDialog()
 end
-
-

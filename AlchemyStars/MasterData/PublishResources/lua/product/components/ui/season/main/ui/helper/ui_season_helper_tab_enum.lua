@@ -1,8 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/helper/ui_season_helper_tab_enum.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UISeasonHelperTabIndex = {S1Main = 1, Main = 2, S1Exchange = 3, Quest = 4, Collage = 5, Business = 6, TalentTree = 7}
+local UISeasonHelperTabIndex = {
+  S1Main = 1,
+  Main = 2,
+  S1Exchange = 3,
+  Quest = 4,
+  Collage = 5,
+  Business = 6,
+  TalentTree = 7
+}
 _enum("UISeasonHelperTabIndex", UISeasonHelperTabIndex)
-

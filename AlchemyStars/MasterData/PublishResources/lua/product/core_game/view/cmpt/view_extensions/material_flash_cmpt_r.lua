@@ -1,58 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/view_extensions/material_flash_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MaterialFlashComponent", Object)
 MaterialFlashComponent = MaterialFlashComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MaterialFlashComponent.Constructor = function(self)
-  -- function num : 0_0
+function MaterialFlashComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialFlashComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_1
+function MaterialFlashComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialFlashComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_2
+function MaterialFlashComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.MaterialFlash = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).MaterialFlash)
+function Entity:MaterialFlash()
+  return self:GetComponent(self.WEComponentsEnum.MaterialFlash)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasMaterialFlash = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).MaterialFlash)
+function Entity:HasMaterialFlash()
+  return self:HasComponent(self.WEComponentsEnum.MaterialFlash)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddMaterialFlash = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MaterialFlash
+function Entity:AddMaterialFlash()
+  local index = self.WEComponentsEnum.MaterialFlash
   local component = MaterialFlashComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveMaterialFlash = function(self)
-  -- function num : 0_6
+function Entity:RemoveMaterialFlash()
   if self:HasMaterialFlash() then
-    self:RemoveComponent((self.WEComponentsEnum).MaterialFlash)
+    self:RemoveComponent(self.WEComponentsEnum.MaterialFlash)
   end
 end
-
-

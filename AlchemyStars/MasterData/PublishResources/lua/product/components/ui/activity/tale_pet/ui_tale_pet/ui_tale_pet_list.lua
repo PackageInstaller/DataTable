@@ -1,45 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/tale_pet/ui_tale_pet/ui_tale_pet_list.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITalePetList", UIController)
 UITalePetList = UITalePetList
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITalePetList.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self.talePetModule = (GameGlobal.GetModule)(TalePetModule)
-  self._itemOffsetX = {[1] = -780, [2] = -457, [3] = -139, [4] = 184, [5] = 578}
+function UITalePetList:LoadDataOnEnter(TT, res, uiParams)
+  self.talePetModule = GameGlobal.GetModule(TalePetModule)
+  self._itemOffsetX = {
+    [1] = -780,
+    [2] = -457,
+    [3] = -139,
+    [4] = 184,
+    [5] = 578
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetList.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UITalePetList)
-  self.isSwitchState = not uiParams[1] or true
+function UITalePetList:OnShow(uiParams)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UITalePetList)
+  self.isSwitchState = uiParams[1] and true
   local topButton = self:GetUIComponent("UISelectObjectPath", "TopButtons")
   self.topButtonWidget = topButton:SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_1_0 , upvalues : self, _ENV
+  self.topButtonWidget:SetData(function()
     if self.isSwitchState then
       self:SwitchState(UIStateType.UIMain)
     else
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TalePetInfoDataChange)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.TalePetInfoDataChange)
       self:CloseDialog()
     end
-  end
-)
+  end)
   self.talePetInfo = self:GetUIComponent("UISelectObjectPath", "talePetInfo")
   self.txtStoryEnter = self:GetUIComponent("UILocalizationText", "txtStoryEnter")
   self.txtTrail = self:GetUIComponent("UILocalizationText", "txtTrail")
-  ;
-  (self.txtStoryEnter):SetText((StringTable.Get)("str_tale_pet_replay_story"))
-  ;
-  (self.txtTrail):SetText((StringTable.Get)("str_tale_pet_start_trail_level"))
+  self.txtStoryEnter:SetText(StringTable.Get("str_tale_pet_replay_story"))
+  self.txtTrail:SetText(StringTable.Get("str_tale_pet_start_trail_level"))
   self.btnTrail = self:GetUIComponent("Button", "btnTrail")
   self.imgTrail = self:GetUIComponent("Image", "imgTrail")
   self.imgTrailLock = self:GetGameObject("imgTrailLock")
@@ -66,292 +56,201 @@ UITalePetList.OnShow = function(self, uiParams)
   self:InitTalePet()
   self:RefreshUI()
   self:AttachEvents()
-  ;
-  (UIBgmHelper.PlayMainBgm)()
+  UIBgmHelper.PlayMainBgm()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetList.RefreshUI = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UITalePetList:RefreshUI()
   local state = false
-  local talePetList = (self.talePetModule):GetTalePetList()
+  local talePetList = self.talePetModule:GetTalePetList()
   for i = 1, #talePetList do
-    if (self.talePetModule):IsGetTalePet(talePetList[i]) == true then
+    if self.talePetModule:IsGetTalePet(talePetList[i]) == true then
       state = true
     end
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
   if state then
-    (self.btnTrail).interactable = true
+    self.btnTrail.interactable = true
   else
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.btnTrail).interactable = false
+    self.btnTrail.interactable = false
   end
-  local isGetAll = (self.talePetModule):IsDoPet()
-  ;
-  (self.clickTips):SetActive(not isGetAll)
+  local isGetAll = self.talePetModule:IsDoPet()
+  self.clickTips:SetActive(not isGetAll)
   if isGetAll == true then
     if self.tipsTask then
-      ((GameGlobal.TaskManager)()):KillTask(self.tipsTask)
+      GameGlobal.TaskManager():KillTask(self.tipsTask)
       self.tipsTask = nil
     end
     self.tipsTask = self:StartTask(self.TipsTask, self)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetList.TipsTask = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function UITalePetList:TipsTask(TT)
   local initValue = 1
   local speed = 0.6
-  while 1 do
-    local dt = (UnityEngine.Time).deltaTime
+  while true do
+    local dt = UnityEngine.Time.deltaTime
     initValue = initValue + dt * speed
-    if initValue >= 1 or initValue <= 0.2 then
+    if 1 <= initValue or initValue <= 0.2 then
       speed = speed * -1
-      initValue = initValue >= 1 and 1 or 0.2
+      initValue = 1 <= initValue and 1 or 0.2
     end
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.tipsCanvas).alpha = initValue
+    self.tipsCanvas.alpha = initValue
     YIELD(TT)
   end
   self.tipsTask = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetList.InitTalePet = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self.talePets = (self.talePetModule):GetActivityTalePet()
+function UITalePetList:InitTalePet()
+  self.talePets = self.talePetModule:GetActivityTalePet()
   for i = 1, #self.talePets do
-    local cfg = (Cfg.cfg_tale_pet)[((self.talePets)[i]).ID]
+    local cfg = Cfg.cfg_tale_pet[self.talePets[i].ID]
     local str = "pet" .. tostring(i)
-    ;
-    (self[str .. "_1"]):LoadImage(cfg.PetRawImg1)
-    ;
-    (self[str .. "_2"]):LoadImage(cfg.PetRawImg2)
-    ;
-    (self[str .. "_3"]):LoadImage(cfg.PetRawImg3)
-    local rawMat = (self:GetUIComponent("RawImage", str .. "_3")).material
+    self[str .. "_1"]:LoadImage(cfg.PetRawImg1)
+    self[str .. "_2"]:LoadImage(cfg.PetRawImg2)
+    self[str .. "_3"]:LoadImage(cfg.PetRawImg3)
+    local rawMat = self:GetUIComponent("RawImage", str .. "_3").material
     local state = true
-    if (self.talePetModule):SelectPetCfgId() == ((self.talePets)[i]).ID then
+    if self.talePetModule:SelectPetCfgId() == self.talePets[i].ID then
       state = false
-      local haveRestriction = (self.talePetModule):HaveCallRestriction((self.talePetModule):SelectPetCfgId())
+      local haveRestriction = self.talePetModule:HaveCallRestriction(self.talePetModule:SelectPetCfgId())
       if haveRestriction then
-        (self._btnExercise):SetActive(false)
+        self._btnExercise:SetActive(false)
       else
-        ;
-        (self._btnExercise):SetActive(true)
+        self._btnExercise:SetActive(true)
       end
     end
-    do
-      do
-        self:_RefreshLayerState()
-        -- DECOMPILER ERROR at PC77: LeaveBlock: unexpected jumping out DO_STMT
-
+    self:_RefreshLayerState()
+  end
+  self.talePetInfo:SpawnObjects("UITalePetInfoItem", table.count(self.talePets))
+  local items = self.talePetInfo:GetAllSpawnList()
+  for index, value in ipairs(items) do
+    local cfg_pet = Cfg.cfg_pet({
+      ID = self.talePets[index].ID
+    })[1]
+    value:SetData(self.talePets[index].ID, cfg_pet.Name, function(id)
+      if self.itemClickTask then
+        GameGlobal.TaskManager():KillTask(self.itemClickTask)
+        self.itemClickTask = nil
       end
-    end
-  end
-  ;
-  (self.talePetInfo):SpawnObjects("UITalePetInfoItem", (table.count)(self.talePets))
-  local items = (self.talePetInfo):GetAllSpawnList()
-  for index,value in ipairs(items) do
-    local cfg_pet = ((Cfg.cfg_pet)({ID = ((self.talePets)[index]).ID}))[1]
-    value:SetData(((self.talePets)[index]).ID, cfg_pet.Name, function(id)
-    -- function num : 0_4_0 , upvalues : self, _ENV
-    if self.itemClickTask then
-      ((GameGlobal.TaskManager)()):KillTask(self.itemClickTask)
-      self.itemClickTask = nil
-    end
-    self.itemClickTask = self:StartTask(self.ItemClick, self, id)
-  end
-, (self._itemOffsetX)[index])
+      self.itemClickTask = self:StartTask(self.ItemClick, self, id)
+    end, self._itemOffsetX[index])
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetList.SelectPetEff = function(self, id, str, bg, click)
-  -- function num : 0_5 , upvalues : _ENV
+function UITalePetList:SelectPetEff(id, str, bg, click)
   self.lay1 = self:GetGameObject(str .. "_1")
   self.lay2 = self:GetGameObject(str .. "_2")
   self.lay3 = self:GetGameObject(str .. "_3")
-  ;
-  (self.lay1):SetActive(true)
-  ;
-  (self.lay3):SetActive(true)
-  local haveRestriction = (self.talePetModule):HaveCallRestriction(id)
+  self.lay1:SetActive(true)
+  self.lay3:SetActive(true)
+  local haveRestriction = self.talePetModule:HaveCallRestriction(id)
   if haveRestriction then
     self.bgEff = self:GetGameObject("bgEff1")
     self.clcikEff = self:GetGameObject("clickEff1")
-    ;
-    (self:GetGameObject("bgEff")):SetActive(false)
-    ;
-    (self:GetGameObject("clickEff")):SetActive(false)
+    self:GetGameObject("bgEff"):SetActive(false)
+    self:GetGameObject("clickEff"):SetActive(false)
   else
     self.bgEff = self:GetGameObject("bgEff")
     self.clcikEff = self:GetGameObject("clickEff")
-    ;
-    (self:GetGameObject("bgEff1")):SetActive(false)
-    ;
-    (self:GetGameObject("clickEff1")):SetActive(false)
+    self:GetGameObject("bgEff1"):SetActive(false)
+    self:GetGameObject("clickEff1"):SetActive(false)
   end
   self.clcikEffAni = self:GetUIComponent("Animation", "clickEff")
-  if id == (self.talePetModule):SelectPetCfgId() and bg then
-    (self.bgEff):SetActive(true)
-    ;
-    ((self.bgEff).transform):SetParent((self.lay1).transform)
-    -- DECOMPILER ERROR at PC99: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self.bgEff).transform).localPosition = Vector3.zero
-    ;
-    (self.bgEff):SetActive(true)
+  if id == self.talePetModule:SelectPetCfgId() and bg then
+    self.bgEff:SetActive(true)
+    self.bgEff.transform:SetParent(self.lay1.transform)
+    self.bgEff.transform.localPosition = Vector3.zero
+    self.bgEff:SetActive(true)
   end
   if click then
-    (self.clcikEff):SetActive(false)
-    ;
-    ((self.clcikEff).transform):SetParent((self.lay3).transform)
-    -- DECOMPILER ERROR at PC120: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self.clcikEff).transform).localPosition = Vector3.zero
-    ;
-    (self.clcikEff):SetActive(true)
+    self.clcikEff:SetActive(false)
+    self.clcikEff.transform:SetParent(self.lay3.transform)
+    self.clcikEff.transform.localPosition = Vector3.zero
+    self.clcikEff:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetList.PetStaticBodyTask = function(self, TT, rawMat, state, idx)
-  -- function num : 0_6 , upvalues : _ENV
+function UITalePetList:PetStaticBodyTask(TT, rawMat, state, idx)
   YIELD(TT, (idx - 1) * 100)
   local initValue = 0
   local speed = 0.6
   while state do
     if rawMat == nil then
-      return 
+      return
     end
-    local dt = (UnityEngine.Time).deltaTime
+    local dt = UnityEngine.Time.deltaTime
     initValue = initValue + dt * speed
-    if initValue >= 1 or initValue <= 0 then
+    if 1 <= initValue or initValue <= 0 then
       speed = speed * -1
-      initValue = initValue >= 1 and 1 or 0
+      initValue = 1 <= initValue and 1 or 0
     end
     rawMat:SetFloat("_LuminosityAmount", initValue)
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetList.btnStoryRePlayOnClick = function(self)
-  -- function num : 0_7
-  local storyId = (self.talePetModule):GetEnterTalePetStoryIds()
+function UITalePetList:btnStoryRePlayOnClick()
+  local storyId = self.talePetModule:GetEnterTalePetStoryIds()
   self:ShowDialog("UIStoryController", storyId, function()
-    -- function num : 0_7_0 , upvalues : self
     self:ShowDialog("UITalePetList")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetList.btnTrailOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  if (self.btnTrail).interactable == false then
-    (ToastManager.ShowToast)((StringTable.Get)("str_tale_pet_trail_level_un_open"))
-    return 
+function UITalePetList:btnTrailOnClick()
+  if self.btnTrail.interactable == false then
+    ToastManager.ShowToast(StringTable.Get("str_tale_pet_trail_level_un_open"))
+    return
   end
-  ;
-  (self:GetUIModule(TalePetModule)):OpenTrailLevel()
+  self:GetUIModule(TalePetModule):OpenTrailLevel()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetList.ExerciseBtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  if self.talePets and (self.talePets)[1] then
-    local petId = ((self.talePets)[1]).ID
-  end
-  ;
-  (self:GetUIModule(TalePetModule)):OpenPracticeLevel(petId)
+function UITalePetList:ExerciseBtnOnClick()
+  local petId = self.talePets and self.talePets[1] and self.talePets[1].ID
+  self:GetUIModule(TalePetModule):OpenPracticeLevel(petId)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetList.ItemClick = function(self, TT, id)
-  -- function num : 0_10 , upvalues : _ENV
+function UITalePetList:ItemClick(TT, id)
   YIELD(TT)
   self:ShowDialog("UIShopPetDetailController", id, 0, 1, nil)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetList.AttachEvents = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UITalePetList:AttachEvents()
   self:AttachEvent(GameEventType.TalePetDetailReturnList, self._TalePetDetailReturnList)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetList.DetachEvents = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UITalePetList:DetachEvents()
   self:DetachEvent(GameEventType.TalePetDetailReturnList)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetList._TalePetDetailReturnList = function(self)
-  -- function num : 0_13
+function UITalePetList:_TalePetDetailReturnList()
   self:InitTalePet()
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetList.OnHide = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UITalePetList:OnHide()
   self:DetachEvents()
   if self.itemClickTask then
-    ((GameGlobal.TaskManager)()):KillTask(self.itemClickTask)
+    GameGlobal.TaskManager():KillTask(self.itemClickTask)
     self.itemClickTask = nil
   end
   if self.tipsTask then
-    ((GameGlobal.TaskManager)()):KillTask(self.tipsTask)
+    GameGlobal.TaskManager():KillTask(self.tipsTask)
     self.tipsTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetList.LockTalePet = function(self, lock)
-  -- function num : 0_15
-  (self.pet5_4):SetActive(lock)
+function UITalePetList:LockTalePet(lock)
+  self.pet5_4:SetActive(lock)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetList._RefreshLayerState = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UITalePetList:_RefreshLayerState()
   for i = 1, #self.talePets do
     local str = "pet" .. tostring(i)
     local layer1 = self:GetGameObject(str .. "_1")
     local layer2 = self:GetGameObject(str .. "_2")
     local layer3 = self:GetGameObject(str .. "_3")
-    local info = (self.talePetModule):GetPetInfo(((self.talePets)[i]).ID)
-    layer1:SetActive(not info or info.pet_status == TalePetCallType.TPCT_Done)
-    layer2:SetActive(not info or (info.pet_status ~= TalePetCallType.TPCT_Invalid and info.pet_status ~= TalePetCallType.TPCT_Done))
+    local info = self.talePetModule:GetPetInfo(self.talePets[i].ID)
+    layer1:SetActive(info and info.pet_status == TalePetCallType.TPCT_Done)
+    layer2:SetActive(info and info.pet_status ~= TalePetCallType.TPCT_Invalid and info.pet_status ~= TalePetCallType.TPCT_Done)
     layer3:SetActive(not info or info.pet_status == TalePetCallType.TPCT_Invalid)
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
-
-

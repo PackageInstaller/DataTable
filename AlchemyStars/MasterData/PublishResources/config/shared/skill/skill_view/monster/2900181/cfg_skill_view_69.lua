@@ -1,13 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2900181/cfg_skill_view_69.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" DataSelectDamage,damageIndex = 1; PlayCasterAnimation,animName = Atk; PlayCasterBindEffect,effectID=851; PlayCasterBindEffect,effectID=852; PlayCasterTurnToTarget; PlayAudio,audioID=5051; Wait,waitTime=500; PlayFlyEffectCasterToTarget,flyEffectID = 853,flySpeed = 100,flyTrace = 1,offsety=0.8; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=854,turnToTarget=1,deathClear=true; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " DataSelectDamage,damageIndex = 1; PlayCasterAnimation,animName = Atk; PlayCasterBindEffect,effectID=851; PlayCasterBindEffect,effectID=852; PlayCasterTurnToTarget; PlayAudio,audioID=5051; Wait,waitTime=500; PlayFlyEffectCasterToTarget,flyEffectID = 853,flySpeed = 100,flyTrace = 1,offsety=0.8; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=854,turnToTarget=1,deathClear=true; "
+    }
+  }
 }
 return config, "ID", key
-

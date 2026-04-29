@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_grade_pet_detail_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIGradePetDetailItem", UICustomWidget)
 UIGradePetDetailItem = UIGradePetDetailItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGradePetDetailItem.Constructor = function(self)
-  -- function num : 0_0
+function UIGradePetDetailItem:Constructor()
   self._index = 0
   self._isCurrent = false
   self._controllerName = "UIGradeInterfaceController"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradePetDetailItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIGradePetDetailItem:OnShow(uiParams)
   self._cg = self:GetUIComponent("RawImageLoader", "cg")
   self._rawImage = self:GetUIComponent("RawImage", "cg")
   self._cgGo = self:GetGameObject("cg")
@@ -28,175 +18,120 @@ UIGradePetDetailItem.OnShow = function(self, uiParams)
   self:AttachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradePetDetailItem.GetC2C = function(self)
-  -- function num : 0_2
+function UIGradePetDetailItem:GetC2C()
   return self._off
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradePetDetailItem.GetCgName = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIGradePetDetailItem:GetCgName()
   local isHaveNewDraw = false
   if self._bodyDiff ~= nil then
     isHaveNewDraw = true
   end
-  local cgName = nil
+  local cgName
   if isHaveNewDraw then
-    local next_grade = (self._petInfo):GetPetGrade() + 1
-    if (self._petInfo):GetMaxGrade() < next_grade then
-      next_grade = (self._petInfo):GetMaxGrade()
-      ;
-      (Log.fatal)("[PetGrade] cant get new body", (self._petInfo):GetTemplateID())
+    local next_grade = self._petInfo:GetPetGrade() + 1
+    if next_grade > self._petInfo:GetMaxGrade() then
+      next_grade = self._petInfo:GetMaxGrade()
+      Log.fatal("[PetGrade] cant get new body", self._petInfo:GetTemplateID())
     end
-    local _cfg_grade_cur = (Cfg.cfg_pet_grade)({PetID = (self._petInfo):GetTemplateID(), Grade = (self._petInfo):GetPetGrade()})
-    local _cfg_grade_next = (Cfg.cfg_pet_grade)({PetID = (self._petInfo):GetTemplateID(), Grade = next_grade})
-    if (_cfg_grade_next[1]).SkinId ~= (_cfg_grade_cur[1]).SkinId then
-      cgName = (HelperProxy:GetInstance()):GetPetStaticBody((self._petInfo):GetTemplateID(), next_grade, 0, PetSkinEffectPath.NO_EFFECT)
+    local _cfg_grade_cur = Cfg.cfg_pet_grade({
+      PetID = self._petInfo:GetTemplateID(),
+      Grade = self._petInfo:GetPetGrade()
+    })
+    local _cfg_grade_next = Cfg.cfg_pet_grade({
+      PetID = self._petInfo:GetTemplateID(),
+      Grade = next_grade
+    })
+    if _cfg_grade_next[1].SkinId ~= _cfg_grade_cur[1].SkinId then
+      cgName = HelperProxy:GetInstance():GetPetStaticBody(self._petInfo:GetTemplateID(), next_grade, 0, PetSkinEffectPath.NO_EFFECT)
     else
-      cgName = (HelperProxy:GetInstance()):GetPetStaticBody((self._petInfo):GetTemplateID(), next_grade, (self._petInfo):GetSkinId(), PetSkinEffectPath.BODY_GRADE)
+      cgName = HelperProxy:GetInstance():GetPetStaticBody(self._petInfo:GetTemplateID(), next_grade, self._petInfo:GetSkinId(), PetSkinEffectPath.BODY_GRADE)
     end
   else
-    do
-      cgName = (self._petInfo):GetPetStaticBody(PetSkinEffectPath.BODY_GRADE)
-      return cgName
-    end
+    cgName = self._petInfo:GetPetStaticBody(PetSkinEffectPath.BODY_GRADE)
   end
+  return cgName
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradePetDetailItem.AttachEvents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIGradePetDetailItem:AttachEvents()
   self:AttachEvent(GameEventType.GradeCheckIsCurrent, self.GradeCheckIsCurrent)
   self:AttachEvent(GameEventType.PetUpGradeEvent, self.PetUpGradeEvent)
   self:AttachEvent(GameEventType.PlayAnimation_UIGradePetDetailItem, self.PlayAnimation_UIGradePetDetailItem)
   self:AttachEvent(GameEventType.PetUpGradeChangeCgEvent, self.PetUpGradeChangeCgEvent)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradePetDetailItem.RemoveEvents = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIGradePetDetailItem:RemoveEvents()
   self:DetachEvent(GameEventType.GradeCheckIsCurrent, self.GradeCheckIsCurrent)
   self:DetachEvent(GameEventType.PetUpGradeEvent, self.PetUpGradeEvent)
   self:DetachEvent(GameEventType.PlayAnimation_UIGradePetDetailItem, self.PlayAnimation_UIGradePetDetailItem)
   self:DetachEvent(GameEventType.PetUpGradeChangeCgEvent, self.PetUpGradeChangeCgEvent)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradePetDetailItem.PetUpGradeEvent = function(self, pstid)
-  -- function num : 0_6
+function UIGradePetDetailItem:PetUpGradeEvent(pstid)
   if pstid == self._pstid then
     local anim = self:GetUIComponent("Animation", "anim")
     anim:Play("UIGradePetDetailItem")
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradePetDetailItem.PlayAnimation_UIGradePetDetailItem = function(self, pstid)
-  -- function num : 0_7
-  do
-    if pstid == self._pstid then
-      local anim = self:GetUIComponent("Animation", "anim")
-      anim:Play("UIGradePetDetailItem_1")
-    end
-    ;
-    (self._fx):SetActive(false)
+function UIGradePetDetailItem:PlayAnimation_UIGradePetDetailItem(pstid)
+  if pstid == self._pstid then
+    local anim = self:GetUIComponent("Animation", "anim")
+    anim:Play("UIGradePetDetailItem_1")
   end
+  self._fx:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradePetDetailItem.PetUpGradeChangeCgEvent = function(self, pstid)
-  -- function num : 0_8 , upvalues : _ENV
+function UIGradePetDetailItem:PetUpGradeChangeCgEvent(pstid)
   if pstid == self._pstid then
     local petModule = self:GetModule(PetModule)
     self._petInfo = petModule:GetPet(self._pstid)
-    self:LoadCgSync((self._petInfo):GetPetStaticBody(PetSkinEffectPath.BODY_GRADE))
+    self:LoadCgSync(self._petInfo:GetPetStaticBody(PetSkinEffectPath.BODY_GRADE))
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradePetDetailItem.GradeCheckIsCurrent = function(self, idx)
-  -- function num : 0_9
+function UIGradePetDetailItem:GradeCheckIsCurrent(idx)
   self._isCurrent = self._index == idx
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradePetDetailItem.OnHide = function(self)
-  -- function num : 0_10
+function UIGradePetDetailItem:OnHide()
   self._index = 0
   self:RemoveEvents()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradePetDetailItem.OnHideCallBack = function(self)
-  -- function num : 0_11
+function UIGradePetDetailItem:OnHideCallBack()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradePetDetailItem.SetData = function(self, index, pet, curridx)
-  -- function num : 0_12 , upvalues : _ENV
+function UIGradePetDetailItem:SetData(index, pet, curridx)
   self._index = index
   self:GradeCheckIsCurrent(curridx)
   self._petInfo = pet
-  self._pstid = (self._petInfo):GetPstID()
-  local size = ((Cfg.cfg_global).ui_interface_common_size).ArrayValue
-  ;
-  ((self._cgGo):GetComponent("RectTransform")).sizeDelta = Vector2(size[1], size[2])
-  self:LoadCgSync((self._petInfo):GetPetStaticBody(PetSkinEffectPath.BODY_GRADE))
+  self._pstid = self._petInfo:GetPstID()
+  local size = Cfg.cfg_global.ui_interface_common_size.ArrayValue
+  self._cgGo:GetComponent("RectTransform").sizeDelta = Vector2(size[1], size[2])
+  self:LoadCgSync(self._petInfo:GetPetStaticBody(PetSkinEffectPath.BODY_GRADE))
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradePetDetailItem.LoadCgSync = function(self, matName)
-  -- function num : 0_13 , upvalues : _ENV
-  (self._cg):LoadImage(matName)
-  ;
-  (UICG.SetTransform)((self._cgGo).transform, self._controllerName, matName)
+function UIGradePetDetailItem:LoadCgSync(matName)
+  self._cg:LoadImage(matName)
+  UICG.SetTransform(self._cgGo.transform, self._controllerName, matName)
   local alpha = 1
   if not self._isCurrent then
     alpha = 0
   end
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._group2).alpha = alpha
+  self._group2.alpha = alpha
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradePetDetailItem.ChangeCanvasGroupAlpha = function(self, all, centerX)
-  -- function num : 0_14 , upvalues : _ENV
-  self._off = ((self._center).position).x - centerX
+function UIGradePetDetailItem:ChangeCanvasGroupAlpha(all, centerX)
+  self._off = self._center.position.x - centerX
   local rate = self._off / all
-  rate = tonumber((string.format)("%.3f", rate))
-  if rate > 1 then
+  rate = tonumber(string.format("%.3f", rate))
+  if 1 < rate then
     rate = 1
-  else
-    if rate < -1 then
-      rate = -1
-    end
+  elseif rate < -1 then
+    rate = -1
   end
-  local alpha = 1 - (math.abs)(rate)
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rect2).anchoredPosition = Vector2(-500 * rate, 0)
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._group2).alpha = alpha * 1.2
+  local alpha = 1 - math.abs(rate)
+  self._rect2.anchoredPosition = Vector2(-500 * rate, 0)
+  self._group2.alpha = alpha * 1.2
 end
-
-

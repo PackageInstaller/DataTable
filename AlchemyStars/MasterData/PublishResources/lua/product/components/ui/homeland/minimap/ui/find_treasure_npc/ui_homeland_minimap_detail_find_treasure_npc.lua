@@ -1,62 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/find_treasure_npc/ui_homeland_minimap_detail_find_treasure_npc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapDetailPetFindTreasureNPC", UIHomelandMinimapDetailBase)
 UIHomelandMinimapDetailPetFindTreasureNPC = UIHomelandMinimapDetailPetFindTreasureNPC
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapDetailPetFindTreasureNPC.OnShow = function(self)
-  -- function num : 0_0
+function UIHomelandMinimapDetailPetFindTreasureNPC:OnShow()
   self._iconLoader = self:GetUIComponent("RawImageLoader", "HeadIcon")
   self._nameTxt = self:GetUIComponent("UILocalizationText", "NameTxt")
   self._contentTxt = self:GetUIComponent("UILocalizationText", "ContentTxt")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailPetFindTreasureNPC.OnInitDone = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._iconLoader):LoadImage((HomelandFindTreasureConst.GetNPCIcon)())
-  ;
-  (self._nameTxt):SetText((StringTable.Get)((HomelandFindTreasureConst.GetNPCName)()))
-  ;
-  (self._contentTxt):SetText((StringTable.Get)((HomelandFindTreasureConst.GetNPCDes)()))
+function UIHomelandMinimapDetailPetFindTreasureNPC:OnInitDone()
+  self._iconLoader:LoadImage(HomelandFindTreasureConst.GetNPCIcon())
+  self._nameTxt:SetText(StringTable.Get(HomelandFindTreasureConst.GetNPCName()))
+  self._contentTxt:SetText(StringTable.Get(HomelandFindTreasureConst.GetNPCDes()))
   self._titleRect = self:GetUIComponent("RectTransform", "Title")
   if self._titleRect then
-    local titleWidth = (self._nameTxt).preferredWidth
-    if titleWidth > 350 then
+    local titleWidth = self._nameTxt.preferredWidth
+    if 350 < titleWidth then
       titleWidth = 350
     end
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._titleRect).sizeDelta = Vector2(titleWidth, ((self._titleRect).sizeDelta).y)
+    self._titleRect.sizeDelta = Vector2(titleWidth, self._titleRect.sizeDelta.y)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailPetFindTreasureNPC.ExitOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapCloseDetailUI)
+function UIHomelandMinimapDetailPetFindTreasureNPC:ExitOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapCloseDetailUI)
   self:OnClose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailPetFindTreasureNPC.BtnBGOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapCloseDetailUI)
+function UIHomelandMinimapDetailPetFindTreasureNPC:BtnBGOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapCloseDetailUI)
   self:OnClose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailPetFindTreasureNPC.GetCloseAnimtionName = function(self)
-  -- function num : 0_4
+function UIHomelandMinimapDetailPetFindTreasureNPC:GetCloseAnimtionName()
   return "UIHomelandMinimapDetailPet_out"
 end
-
-

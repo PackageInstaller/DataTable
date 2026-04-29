@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sailing_mission/reward/data/d_sailing_progress_rewards_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DSailingProgressRewardsCell", Object)
 DSailingProgressRewardsCell = DSailingProgressRewardsCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DSailingProgressRewardsCell.Constructor = function(self)
-  -- function num : 0_0
+function DSailingProgressRewardsCell:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DSailingProgressRewardsCell.Refresh = function(self, data)
-  -- function num : 0_1
+function DSailingProgressRewardsCell:Refresh(data)
   self._progressNum = 0
   self._cfgID = 0
   self._items = {}
@@ -22,30 +12,17 @@ DSailingProgressRewardsCell.Refresh = function(self, data)
   self._isSpecial = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DSailingProgressRewardsCell.CanReceive = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  do return self._state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function DSailingProgressRewardsCell:CanReceive()
+  return self._state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DSailingProgressRewardsCell.Unlocked = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function DSailingProgressRewardsCell:Unlocked()
   if self._state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV or self._state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DSailingProgressRewardsCell.IsReceived = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  do return self._state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function DSailingProgressRewardsCell:IsReceived()
+  return self._state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED
 end
-
-

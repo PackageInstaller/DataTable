@@ -1,49 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_empty.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionEmpty", AirActionBase)
 AirActionEmpty = AirActionEmpty
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionEmpty.Constructor = function(self, pet)
-  -- function num : 0_0
+function AirActionEmpty:Constructor(pet)
   self._pet = pet
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionEmpty.Start = function(self)
-  -- function num : 0_1
+function AirActionEmpty:Start()
   self._running = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionEmpty.Update = function(self, deltaTimeMS)
-  -- function num : 0_2
+function AirActionEmpty:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionEmpty.IsOver = function(self)
-  -- function num : 0_3
+function AirActionEmpty:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionEmpty.Stop = function(self)
-  -- function num : 0_4
+function AirActionEmpty:Stop()
   self._running = false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionEmpty.GetPets = function(self)
-  -- function num : 0_5
-  return {self._pet}
+function AirActionEmpty:GetPets()
+  return {
+    self._pet
+  }
 end
-
-

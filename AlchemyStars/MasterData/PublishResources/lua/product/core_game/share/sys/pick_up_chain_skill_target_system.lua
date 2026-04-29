@@ -1,19 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/pick_up_chain_skill_target_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PickUpChainSkillTargetSystem", UniqueReactiveSystem)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpChainSkillTargetSystem.Constructor = function(self, world)
-  -- function num : 0_0
+function PickUpChainSkillTargetSystem:Constructor(world)
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChainSkillTargetSystem.IsInterested = function(self, index, previousComponent, component)
-  -- function num : 0_1 , upvalues : _ENV
+function PickUpChainSkillTargetSystem:IsInterested(index, previousComponent, component)
   if component == nil then
     return false
   end
@@ -26,18 +16,10 @@ PickUpChainSkillTargetSystem.IsInterested = function(self, index, previousCompon
   return false
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChainSkillTargetSystem.Filter = function(self, world)
-  -- function num : 0_2
+function PickUpChainSkillTargetSystem:Filter(world)
   return true
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChainSkillTargetSystem.ExecuteWorld = function(self, world)
-  -- function num : 0_3
+function PickUpChainSkillTargetSystem:ExecuteWorld(world)
   self._world = world
 end
-
-

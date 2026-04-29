@@ -1,74 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/trap_transform_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TrapTransformParam", Object)
 TrapTransformParam = TrapTransformParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TrapTransformParam.Constructor = function(self, trapID)
-  -- function num : 0_0 , upvalues : _ENV
+function TrapTransformParam:Constructor(trapID)
   self._trapID = trapID
-  self._trapPositionList = {Vector2(0, 0)}
-  self._trapRotationList = {Vector2(0, 1)}
+  self._trapPositionList = {
+    Vector2(0, 0)
+  }
+  self._trapRotationList = {
+    Vector2(0, 1)
+  }
   self._trapCheckBlock = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapTransformParam.GetTrapID = function(self)
-  -- function num : 0_1
+function TrapTransformParam:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapTransformParam.SetTrapID = function(self, trapID)
-  -- function num : 0_2
+function TrapTransformParam:SetTrapID(trapID)
   self._trapID = trapID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapTransformParam.SetPositionList = function(self, positionList)
-  -- function num : 0_3
+function TrapTransformParam:SetPositionList(positionList)
   self._trapPositionList = positionList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapTransformParam.GetPositionList = function(self)
-  -- function num : 0_4
+function TrapTransformParam:GetPositionList()
   return self._trapPositionList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapTransformParam.SetRotationList = function(self, rotationList)
-  -- function num : 0_5
+function TrapTransformParam:SetRotationList(rotationList)
   self._trapRotationList = rotationList
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapTransformParam.GetRotationList = function(self)
-  -- function num : 0_6
+function TrapTransformParam:GetRotationList()
   return self._trapRotationList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapTransformParam.SetTrapCheckBlock = function(self, check)
-  -- function num : 0_7
+function TrapTransformParam:SetTrapCheckBlock(check)
   self._trapCheckBlock = check
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapTransformParam.IsTrapCheckBlock = function(self)
-  -- function num : 0_8
+function TrapTransformParam:IsTrapCheckBlock()
   return self._trapCheckBlock
 end
-
-

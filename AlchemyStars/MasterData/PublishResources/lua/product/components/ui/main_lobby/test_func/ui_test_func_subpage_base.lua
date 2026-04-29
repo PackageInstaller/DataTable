@@ -1,38 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/test_func/ui_test_func_subpage_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITestFuncSubpageBase", UICustomWidget)
 UITestFuncSubpageBase = UITestFuncSubpageBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITestFuncSubpageBase.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UITestFuncSubpageBase:OnShow(uiParams)
   self._btnManager = UITestFuncBtnManager:New(self)
   self:_FillData(self._btnManager)
   local pool = self:GetUIComponent("UISelectObjectPath", "_pool")
-  ;
-  (self._btnManager):SpawnBtns(pool)
+  self._btnManager:SpawnBtns(pool)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncSubpageBase.OnHide = function(self)
-  -- function num : 0_1
+function UITestFuncSubpageBase:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncSubpageBase.ExitBtnOnClick = function(self)
-  -- function num : 0_2
-  (self:GetGameObject()):SetActive(false)
+function UITestFuncSubpageBase:ExitBtnOnClick()
+  self:GetGameObject():SetActive(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncSubpageBase._FillData = function(self, btnManager)
-  -- function num : 0_3
+function UITestFuncSubpageBase:_FillData(btnManager)
 end
-
-

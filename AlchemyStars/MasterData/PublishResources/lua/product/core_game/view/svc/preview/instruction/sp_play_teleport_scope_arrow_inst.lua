@@ -1,38 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_teleport_scope_arrow_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
-local getSimplifiedV2Direction = function(v2)
-  -- function num : 0_0
+
+local function getSimplifiedV2Direction(v2)
   local v = v2:Clone()
   if v.x > 0 then
     v.x = 1
-  else
-    if v.x < 0 then
-      v.x = -1
-    end
+  elseif v.x < 0 then
+    v.x = -1
   end
-  if v.y > 0 then
+  if 0 < v.y then
     v.y = 1
-  else
-    if v.y < 0 then
-      v.y = -1
-    end
+  elseif 0 > v.y then
+    v.y = -1
   end
   return v
 end
 
 _class("SkillPreviewPlayTeleportScopeArrowInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayTeleportScopeArrowInstruction = SkillPreviewPlayTeleportScopeArrowInstruction
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillPreviewPlayTeleportScopeArrowInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV, getSimplifiedV2Direction
+function SkillPreviewPlayTeleportScopeArrowInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = casterEntity:GetOwnerWorld()
-  local arrowEntities = (world:GetGroup((world.BW_WEMatchers).PickUpArrow)):GetEntities()
-  for _,e in ipairs(arrowEntities) do
+  local arrowEntities = world:GetGroup(world.BW_WEMatchers.PickUpArrow):GetEntities()
+  for _, e in ipairs(arrowEntities) do
     world:DestroyEntity(e)
   end
   world = previewContext:GetWorld()
@@ -40,7 +29,7 @@ SkillPreviewPlayTeleportScopeArrowInstruction.DoInstruction = function(self, TT,
   local pieceService = world:GetService("Piece")
   local scopeGridList = previewContext:GetScopeResult()
   local v2CasterPos = casterEntity:GetGridPosition()
-  for _,v2Scope in ipairs(scopeGridList) do
+  for _, v2Scope in ipairs(scopeGridList) do
     local dir = getSimplifiedV2Direction(v2Scope - v2CasterPos)
     local eArrow = renderEntityService:CreateRenderEntity(EntityConfigIDRender.PickUpArrow)
     eArrow:SetLocation(v2Scope, dir)
@@ -50,14 +39,10 @@ end
 
 _class("SkillPreviewRemoveTeleportScopeArrowInstruction", SkillPreviewBaseInstruction)
 SkillPreviewRemoveTeleportScopeArrowInstruction = SkillPreviewRemoveTeleportScopeArrowInstruction
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillPreviewRemoveTeleportScopeArrowInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_2 , upvalues : _ENV
-  local arrowEntities = ((self._world):GetGroup(((self._world).BW_WEMatchers).PickUpArrow)):GetEntities()
-  for _,e in ipairs(arrowEntities) do
-    (self._world):DestroyEntity(e)
+function SkillPreviewRemoveTeleportScopeArrowInstruction:DoInstruction(TT, casterEntity, previewContext)
+  local arrowEntities = self._world:GetGroup(self._world.BW_WEMatchers.PickUpArrow):GetEntities()
+  for _, e in ipairs(arrowEntities) do
+    self._world:DestroyEntity(e)
   end
 end
-
-

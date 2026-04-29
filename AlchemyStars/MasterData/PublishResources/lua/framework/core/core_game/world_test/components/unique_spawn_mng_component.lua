@@ -1,31 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_test/components/unique_spawn_mng_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SpawnMngComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-SpawnMngComponent.Constructor = function(self, world, mng)
-  -- function num : 0_0
+function SpawnMngComponent:Constructor(world, mng)
   self.Manager = mng
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.SpawnMng = function(self)
-  -- function num : 0_1
-  return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).SpawnMng)
+function BaseWorld:SpawnMng()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.SpawnMng)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.AddSpawnMng = function(self, mng)
-  -- function num : 0_2 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).SpawnMng
+function BaseWorld:AddSpawnMng(mng)
+  local index = self.BW_UniqueComponentsEnum.SpawnMng
   local component = SpawnMngComponent:New(self, mng)
   self:SetUniqueComponent(index, component)
   return component
 end
-
-

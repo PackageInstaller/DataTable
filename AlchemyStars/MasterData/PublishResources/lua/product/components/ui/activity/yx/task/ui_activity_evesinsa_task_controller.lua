@@ -1,38 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/yx/task/ui_activity_evesinsa_task_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityEveSinsaTaskController", UIController)
 UIActivityEveSinsaTaskController = UIActivityEveSinsaTaskController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityEveSinsaTaskController._GenActivityTypeSpecificData = function(self, activityType)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityEveSinsaTaskController:_GenActivityTypeSpecificData(activityType)
   if activityType == ECampaignType.CAMPAIGN_TYPE_EVERESCUEPLAN then
     return DActivityTaskSpecificData_EveSinsa:New()
-  else
-    if activityType == ECampaignType.CAMPAIGN_TYPE_HIIRO then
-      return DActivityTaskSpecificData_Sakura:New()
-    end
+  elseif activityType == ECampaignType.CAMPAIGN_TYPE_HIIRO then
+    return DActivityTaskSpecificData_Sakura:New()
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._GetComponents = function(self)
-  -- function num : 0_1
+function UIActivityEveSinsaTaskController:_GetComponents()
   self._questList = self:GetUIComponent("UIDynamicScrollView", "_taskList")
   self._progressList = self:GetUIComponent("UIDynamicScrollView", "_progressList")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "_backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_1_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialogWithAnim()
-  end
-, nil)
+  end, nil)
   self._progressItemIcon = self:GetUIComponent("RawImageLoader", "_progressItemIcon")
   self._progressItemNumText = self:GetUIComponent("UILocalizationText", "_progressItemNumText")
   local s = self:GetUIComponent("UISelectObjectPath", "_itemInfo")
@@ -42,101 +27,76 @@ UIActivityEveSinsaTaskController._GetComponents = function(self)
   self._uiAnim = self:GetUIComponent("Animation", "_uianim")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  do
-    if not self._specificData and uiParams and uiParams[1] then
-      local campaignType = uiParams[1]
-      self._specificData = self:_GenActivityTypeSpecificData(campaignType)
+function UIActivityEveSinsaTaskController:LoadDataOnEnter(TT, res, uiParams)
+  if not self._specificData and uiParams and uiParams[1] then
+    local campaignType = uiParams[1]
+    self._specificData = self:_GenActivityTypeSpecificData(campaignType)
+  end
+  if not self._specificData then
+    res:SetSucc(false)
+    return
+  end
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
+  self._campaign = UIActivityCampaign:New()
+  self._campaign:LoadCampaignInfo(TT, res, self._specificData:GetCampaignType(), self._specificData:GetProgressCmptId(), self._specificData:GetQuestCmptId())
+  if res and res:GetSucc() then
+    self._phase = UIActivityEveSinsaHelper.CheckTimePhase(self._campaign)
+    if self._phase ~= EActivityEveSinsaTimePhase.EPhase_Over and not self._campaign:CheckComponentOpen(self._specificData:GetProgressCmptId(), self._specificData:GetQuestCmptId()) then
+      res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_UNLOCK
+      campaignModule:ShowErrorToast(res.m_result, true)
+      return
     end
-    if not self._specificData then
-      res:SetSucc(false)
-      return 
-    end
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-    self._campaign = UIActivityCampaign:New()
-    ;
-    (self._campaign):LoadCampaignInfo(TT, res, (self._specificData):GetCampaignType(), (self._specificData):GetProgressCmptId(), (self._specificData):GetQuestCmptId())
-    if res and res:GetSucc() then
-      self._phase = (UIActivityEveSinsaHelper.CheckTimePhase)(self._campaign)
-      if self._phase ~= EActivityEveSinsaTimePhase.EPhase_Over and not (self._campaign):CheckComponentOpen((self._specificData):GetProgressCmptId(), (self._specificData):GetQuestCmptId()) then
-        res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_UNLOCK
-        campaignModule:ShowErrorToast(res.m_result, true)
-        return 
-      end
-    end
-    if res and not res:GetSucc() then
-      campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    end
+  end
+  if res and not res:GetSucc() then
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityEveSinsaTaskController:OnShow(uiParams)
   self._itemCountPerRow = 1
   self._isFirst = true
   self._isOpen = true
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
+  self._questModule = GameGlobal.GetModule(QuestModule)
   self:AttachEvents()
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController.CloseDialogWithAnim = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self._specificData):IsCloseWithAnim() then
+function UIActivityEveSinsaTaskController:CloseDialogWithAnim()
+  if self._specificData:IsCloseWithAnim() then
     self:Lock("UIActivityEveSinsaTaskController:CloseDialogWithAnim")
-    local animTb = (self._specificData):GetCloseAnimTb()
+    local animTb = self._specificData:GetCloseAnimTb()
     if animTb then
       if self._bgAnim and animTb.bgCloseAnim then
-        (self._bgAnim):Play(animTb.bgCloseAnim)
+        self._bgAnim:Play(animTb.bgCloseAnim)
       end
       if self._uiAnim and animTb.uiCloseAnim then
-        (self._uiAnim):Play(animTb.uiCloseAnim)
+        self._uiAnim:Play(animTb.uiCloseAnim)
       end
     end
     self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self
-    YIELD(TT, 700)
-    self:UnLock("UIActivityEveSinsaTaskController:CloseDialogWithAnim")
-    self:CloseDialog()
-  end
-, self)
-  else
-    do
+      YIELD(TT, 700)
+      self:UnLock("UIActivityEveSinsaTaskController:CloseDialogWithAnim")
       self:CloseDialog()
-    end
+    end, self)
+  else
+    self:CloseDialog()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController.OnClose = function(self)
-  -- function num : 0_5
+function UIActivityEveSinsaTaskController:OnClose()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController.OnHide = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityEveSinsaTaskController:OnHide()
   if self._surTimeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._surTimeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._surTimeEvent)
     self._surTimeEvent = nil
   end
   self:RemoveEvents()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._OnValue = function(self)
-  -- function num : 0_7
+function UIActivityEveSinsaTaskController:_OnValue()
   if self._isFirst then
     self:_InitProgressItemId()
     self:_FillUIData_Quest()
@@ -150,20 +110,14 @@ UIActivityEveSinsaTaskController._OnValue = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._InitProgressItemId = function(self)
-  -- function num : 0_8
-  local cmptId = (self._specificData):GetProgressCmptId()
-  local component = (self._campaign):GetComponent(cmptId)
+function UIActivityEveSinsaTaskController:_InitProgressItemId()
+  local cmptId = self._specificData:GetProgressCmptId()
+  local component = self._campaign:GetComponent(cmptId)
   local componentInfo = component:GetComponentInfo()
   self._progressItemId = componentInfo.m_item_id
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._Refresh = function(self)
-  -- function num : 0_9
+function UIActivityEveSinsaTaskController:_Refresh()
   if self._isOpen then
     self:_FillUIData_Quest()
     self:_FillUIData_Progress()
@@ -173,35 +127,22 @@ UIActivityEveSinsaTaskController._Refresh = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._RefreshList = function(self, info, list)
-  -- function num : 0_10 , upvalues : _ENV
-  local count = (table.count)(info)
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UIActivityEveSinsaTaskController:_RefreshList(info, list)
+  local count = table.count(info)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(count)
   list:MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((list.ScrollRect).content).localPosition = contentPos
+  list.ScrollRect.content.localPosition = contentPos
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._FillUIData_Quest = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local cmptId = (self._specificData):GetQuestCmptId()
-  local component = (self._campaign):GetComponent(cmptId)
+function UIActivityEveSinsaTaskController:_FillUIData_Quest()
+  local cmptId = self._specificData:GetQuestCmptId()
+  local component = self._campaign:GetComponent(cmptId)
   self._questListInfo = component:GetQuestInfo()
   for i = 1, #self._questListInfo do
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R7 in 'UnsetPending'
-
-    ((self._questListInfo)[i])._defaultIndex = i
+    self._questListInfo[i]._defaultIndex = i
   end
-  ;
-  (table.sort)(self._questListInfo, function(a, b)
-    -- function num : 0_11_0 , upvalues : _ENV
+  table.sort(self._questListInfo, function(a, b)
     local val = {}
     val[QuestStatus.QUEST_Completed] = 0
     val[QuestStatus.QUEST_Accepted] = 1
@@ -209,57 +150,43 @@ UIActivityEveSinsaTaskController._FillUIData_Quest = function(self)
     val[QuestStatus.QUEST_Taken] = 2
     local qa = a:QuestInfo()
     local qb = b:QuestInfo()
-    if a._defaultIndex >= b._defaultIndex then
-      do return val[qa.status] ~= val[qb.status] end
-      do return val[qa.status] < val[qb.status] end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    if val[qa.status] == val[qb.status] then
+      return a._defaultIndex < b._defaultIndex
     end
-  end
-)
-  self._questCount = (table.count)(self._questListInfo)
+    return val[qa.status] < val[qb.status]
+  end)
+  self._questCount = table.count(self._questListInfo)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._FillUIData_Progress = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local cmptId = (self._specificData):GetProgressCmptId()
-  local component = (self._campaign):GetComponent(cmptId)
+function UIActivityEveSinsaTaskController:_FillUIData_Progress()
+  local cmptId = self._specificData:GetProgressCmptId()
+  local component = self._campaign:GetComponent(cmptId)
   local componentInfo = component:GetComponentInfo()
   local listInfo = {}
   local lst = componentInfo.m_progress_rewards
-  local count = (table.count)(lst)
+  local count = table.count(lst)
   local index = 1
   local prev = 0
   local it = UIActivityEveSinsaTaskController:_SortPairsByKeys(lst)
-  for k,v in it do
+  for k, v in it, nil, nil do
     local info = {}
     info.prev = prev
     info.target = k
     info.count = count
-    ;
-    (table.insert)(listInfo, info)
+    table.insert(listInfo, info)
     index = index + 1
     prev = k
   end
   self._progressListInfo = listInfo
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._InitDynamicList_Quest = function(self)
-  -- function num : 0_13
-  (self._questList):InitListView(self._questCount, function(scrollView, index)
-    -- function num : 0_13_0 , upvalues : self
+function UIActivityEveSinsaTaskController:_InitDynamicList_Quest()
+  self._questList:InitListView(self._questCount, function(scrollView, index)
     return self:_SpawnListItem_Task(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._SpawnListItem_Task = function(self, scrollView, index)
-  -- function num : 0_14
+function UIActivityEveSinsaTaskController:_SpawnListItem_Task(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -278,145 +205,104 @@ UIActivityEveSinsaTaskController._SpawnListItem_Task = function(self, scrollView
   return item
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._SetListItemData_Task = function(self, listItem, index)
-  -- function num : 0_15 , upvalues : _ENV
-  local quest = (self._questListInfo)[index]
+function UIActivityEveSinsaTaskController:_SetListItemData_Task(listItem, index)
+  local quest = self._questListInfo[index]
   self:_RemoveProgressItemInQuestInfo(quest)
-  ;
-  (listItem:GetGameObject()):SetActive(true)
+  listItem:GetGameObject():SetActive(true)
   if quest ~= nil then
     listItem:SetData(index, quest, function(questInfo)
-    -- function num : 0_15_0 , upvalues : self
-    self:ListItemClick_Task(questInfo)
-  end
-, function(matid, pos)
-    -- function num : 0_15_1 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityQuestAwardItemClick, matid, pos)
-  end
-, (self._specificData):GetQuestGotStr(), (self._specificData):GetQuestCanGetStr(), (self._specificData):GetQuestBgNotFinish(), (self._specificData):GetQuestBgFinish())
+      self:ListItemClick_Task(questInfo)
+    end, function(matid, pos)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityQuestAwardItemClick, matid, pos)
+    end, self._specificData:GetQuestGotStr(), self._specificData:GetQuestCanGetStr(), self._specificData:GetQuestBgNotFinish(), self._specificData:GetQuestBgFinish())
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._RemoveProgressItemInQuestInfo = function(self, quest)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityEveSinsaTaskController:_RemoveProgressItemInQuestInfo(quest)
   if not self._progressItemId then
     self:_InitProgressItemId()
   end
   local questInfo = quest:QuestInfo()
   local newRewards = {}
   local rewards = questInfo.rewards
-  for index,value in ipairs(rewards) do
+  for index, value in ipairs(rewards) do
     if value.assetid ~= self._progressItemId then
-      (table.insert)(newRewards, value)
+      table.insert(newRewards, value)
     end
   end
   questInfo.rewards = newRewards
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._RemoveProgressItemInGetItems = function(self, getRewards)
-  -- function num : 0_17 , upvalues : _ENV
+function UIActivityEveSinsaTaskController:_RemoveProgressItemInGetItems(getRewards)
   if not self._progressItemId then
     self:_InitProgressItemId()
   end
   local newRewards = {}
-  for index,value in ipairs(getRewards) do
+  for index, value in ipairs(getRewards) do
     if value.assetid ~= self._progressItemId then
-      (table.insert)(newRewards, value)
+      table.insert(newRewards, value)
     end
   end
   return newRewards
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController.ListItemClick_Task = function(self, questInfo)
-  -- function num : 0_18 , upvalues : _ENV
+function UIActivityEveSinsaTaskController:ListItemClick_Task(questInfo)
   if questInfo.status <= QuestStatus.QUEST_Accepted then
-    local jumpModule = (self._questModule).uiModule
+    local jumpModule = self._questModule.uiModule
     if jumpModule == nil then
-      (Log.fatal)("[quest] error --> uiModule is nil ! --> jumpModule")
-      return 
+      Log.fatal("[quest] error --> uiModule is nil ! --> jumpModule")
+      return
     end
     local fromParam = {}
-    ;
-    (table.insert)(fromParam, QuestType.QT_Daily)
+    table.insert(fromParam, QuestType.QT_Daily)
     jumpModule:SetFromUIData(FromUIType.NormalUI, "UIQuestController", UIStateType.UIMain, fromParam)
     local jumpType = questInfo.JumpID
     local jumpParams = questInfo.JumpParam
     jumpModule:SetJumpUIData(jumpType, jumpParams)
     jumpModule:Jump()
-  else
-    do
-      if questInfo.status == QuestStatus.QUEST_Completed then
-        self:_GetListItemReward_Task(questInfo.quest_id)
-      end
-    end
+  elseif questInfo.status == QuestStatus.QUEST_Completed then
+    self:_GetListItemReward_Task(questInfo.quest_id)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._GetListItemReward_Task = function(self, id)
-  -- function num : 0_19 , upvalues : _ENV
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
+function UIActivityEveSinsaTaskController:_GetListItemReward_Task(id)
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
   self:Lock("UIActivityEveSinsaTaskController:_GetListItemRewardReq_Task")
   self:StartTask(self._GetListItemRewardReq_Task, self, id)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._GetListItemRewardReq_Task = function(self, TT, id)
-  -- function num : 0_20 , upvalues : _ENV
-  local cmptId = (self._specificData):GetQuestCmptId()
-  local component = (self._campaign):GetComponent(cmptId)
+function UIActivityEveSinsaTaskController:_GetListItemRewardReq_Task(TT, id)
+  local cmptId = self._specificData:GetQuestCmptId()
+  local component = self._campaign:GetComponent(cmptId)
   if component then
     local res = AsyncRequestRes:New()
     local ret, rewards = component:HandleQuestTake(TT, res, id)
     self:UnLock("UIActivityEveSinsaTaskController:_GetListItemRewardReq_Task")
     if self.view == nil then
-      return 
+      return
     end
     if res:GetSucc() then
       rewards = self:_RemoveProgressItemInGetItems(rewards)
       self:_ShowUIGetItemController(rewards)
     else
-      local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-      campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, function()
-    -- function num : 0_20_0 , upvalues : self
-    self:_Refresh()
-  end
-, function()
-    -- function num : 0_20_1 , upvalues : self
-    self:CloseDialog()
-  end
-)
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      campaignModule:CheckErrorCode(res.m_result, self._campaign._id, function()
+        self:_Refresh()
+      end, function()
+        self:CloseDialog()
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._InitDynamicList_Progress = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local count = (table.count)(self._progressListInfo)
-  ;
-  (self._progressList):InitListView(count, function(scrollView, index)
-    -- function num : 0_21_0 , upvalues : self
+function UIActivityEveSinsaTaskController:_InitDynamicList_Progress()
+  local count = table.count(self._progressListInfo)
+  self._progressList:InitListView(count, function(scrollView, index)
     return self:_SpawnListItem_Progress(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._SpawnListItem_Progress = function(self, scrollView, index)
-  -- function num : 0_22
+function UIActivityEveSinsaTaskController:_SpawnListItem_Progress(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -435,180 +321,121 @@ UIActivityEveSinsaTaskController._SpawnListItem_Progress = function(self, scroll
   return item
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._SetListItemData_Progress = function(self, listItem, index)
-  -- function num : 0_23 , upvalues : _ENV
-  (listItem:GetGameObject()):SetActive(true)
-  local cmptId = (self._specificData):GetProgressCmptId()
-  local component = (self._campaign):GetComponent(cmptId)
+function UIActivityEveSinsaTaskController:_SetListItemData_Progress(listItem, index)
+  listItem:GetGameObject():SetActive(true)
+  local cmptId = self._specificData:GetProgressCmptId()
+  local component = self._campaign:GetComponent(cmptId)
   local componentInfo = component:GetComponentInfo()
-  local count = (table.count)(self._progressListInfo)
-  listItem:SetData(index, count, (self._progressListInfo)[index], componentInfo, function(idx)
-    -- function num : 0_23_0 , upvalues : self
+  local count = table.count(self._progressListInfo)
+  listItem:SetData(index, count, self._progressListInfo[index], componentInfo, function(idx)
     self:_ListItemClick_Progress(idx)
-  end
-, function(matid, pos)
-    -- function num : 0_23_1 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityQuestAwardItemClick, matid, pos)
-  end
-, self._specificData)
+  end, function(matid, pos)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityQuestAwardItemClick, matid, pos)
+  end, self._specificData)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._ListItemClick_Progress = function(self, idx)
-  -- function num : 0_24
-  self:_GetListItemReward_Progress(((self._progressListInfo)[idx]).target)
+function UIActivityEveSinsaTaskController:_ListItemClick_Progress(idx)
+  self:_GetListItemReward_Progress(self._progressListInfo[idx].target)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._GetListItemReward_Progress = function(self, param)
-  -- function num : 0_25 , upvalues : _ENV
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
+function UIActivityEveSinsaTaskController:_GetListItemReward_Progress(param)
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
   self:Lock("UIActivityEveSinsaTaskController:_GetListItemReward_Progress")
   self:StartTask(self._GetListItemRewardReq_Progress, self, param)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._GetListItemRewardReq_Progress = function(self, TT, param)
-  -- function num : 0_26 , upvalues : _ENV
+function UIActivityEveSinsaTaskController:_GetListItemRewardReq_Progress(TT, param)
   local progress = param
-  local cmptId = (self._specificData):GetProgressCmptId()
-  local component = (self._campaign):GetComponent(cmptId)
+  local cmptId = self._specificData:GetProgressCmptId()
+  local component = self._campaign:GetComponent(cmptId)
   if component then
     local res = AsyncRequestRes:New()
     local rewards = component:HandleReceiveReward(TT, res, progress)
     self:UnLock("UIActivityEveSinsaTaskController:_GetListItemReward_Progress")
     if self.view == nil then
-      return 
+      return
     end
     if res:GetSucc() then
       self:_ShowUIGetItemController(rewards)
     else
-      local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-      campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, function()
-    -- function num : 0_26_0 , upvalues : self
-    self:_Refresh()
-  end
-, function()
-    -- function num : 0_26_1 , upvalues : self
-    self:CloseDialog()
-  end
-)
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      campaignModule:CheckErrorCode(res.m_result, self._campaign._id, function()
+        self:_Refresh()
+      end, function()
+        self:CloseDialog()
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController.AttachEvents = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UIActivityEveSinsaTaskController:AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:AttachEvent(GameEventType.ActivityQuestAwardItemClick, self._OnActivityQuestAwardItemClick)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController.RemoveEvents = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UIActivityEveSinsaTaskController:RemoveEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:DetachEvent(GameEventType.ActivityQuestAwardItemClick, self._OnActivityQuestAwardItemClick)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._CheckActivityClose = function(self, id)
-  -- function num : 0_29 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIActivityEveSinsaTaskController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController.OnUIGetItemCloseInQuest = function(self, type)
-  -- function num : 0_30
+function UIActivityEveSinsaTaskController:OnUIGetItemCloseInQuest(type)
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._OnActivityQuestAwardItemClick = function(self, matid, pos)
-  -- function num : 0_31
+function UIActivityEveSinsaTaskController:_OnActivityQuestAwardItemClick(matid, pos)
   self:ShowItemInfo(matid, pos)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController.ShowItemInfo = function(self, matid, pos)
-  -- function num : 0_32
-  (self._tips):SetData(matid, pos)
+function UIActivityEveSinsaTaskController:ShowItemInfo(matid, pos)
+  self._tips:SetData(matid, pos)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._ShowUIGetItemController = function(self, rewards)
-  -- function num : 0_33 , upvalues : _ENV
+function UIActivityEveSinsaTaskController:_ShowUIGetItemController(rewards)
   self:ShowDialog("UIGetItemController", rewards, function()
-    -- function num : 0_33_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
+  end)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._RefreshProgressCurNumText = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  local cmptId = (self._specificData):GetProgressCmptId()
-  local component = (self._campaign):GetComponent(cmptId)
+function UIActivityEveSinsaTaskController:_RefreshProgressCurNumText()
+  local cmptId = self._specificData:GetProgressCmptId()
+  local component = self._campaign:GetComponent(cmptId)
   local componentInfo = component:GetComponentInfo()
   if not componentInfo then
-    return 
+    return
   end
-  do
-    if self._progressNumText then
-      local curNum = componentInfo.m_current_progress
-      ;
-      (self._progressNumText):SetText((StringTable.Get)("str_sakura_task_finish_num") .. curNum)
+  if self._progressNumText then
+    local curNum = componentInfo.m_current_progress
+    self._progressNumText:SetText(StringTable.Get("str_sakura_task_finish_num") .. curNum)
+  end
+  if self._progressItemIcon then
+    local itemId = componentInfo.m_item_id
+    local cfgItem = Cfg.cfg_item[itemId]
+    if cfgItem then
+      self._progressItemIcon:LoadImage(cfgItem.Icon)
     end
-    if self._progressItemIcon then
-      local itemId = componentInfo.m_item_id
-      local cfgItem = (Cfg.cfg_item)[itemId]
-      if cfgItem then
-        (self._progressItemIcon):LoadImage(cfgItem.Icon)
-      end
-    end
-    do
-      if self._progressItemNumText then
-        (self._progressItemNumText):SetText(componentInfo.m_current_progress)
-      end
-    end
+  end
+  if self._progressItemNumText then
+    self._progressItemNumText:SetText(componentInfo.m_current_progress)
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskController._SortPairsByKeys = function(self, t)
-  -- function num : 0_35 , upvalues : _ENV
+function UIActivityEveSinsaTaskController:_SortPairsByKeys(t)
   local a = {}
   for n in pairs(t) do
     a[#a + 1] = n
   end
-  ;
-  (table.sort)(a)
+  table.sort(a)
   local i = 0
   return function()
-    -- function num : 0_35_0 , upvalues : i, a, t
     i = i + 1
     return a[i], t[a[i]]
   end
-
 end
-
-

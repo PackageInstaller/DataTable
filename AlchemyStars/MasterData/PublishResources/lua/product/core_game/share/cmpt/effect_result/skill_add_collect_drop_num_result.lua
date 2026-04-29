@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_add_collect_drop_num_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillAddCollectDropNumResult", SkillEffectResultBase)
 SkillAddCollectDropNumResult = SkillAddCollectDropNumResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillAddCollectDropNumResult.Constructor = function(self, delta)
-  -- function num : 0_0
+function SkillAddCollectDropNumResult:Constructor(delta)
   self._delta = delta
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddCollectDropNumResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillAddCollectDropNumResult:GetEffectType()
   return SkillEffectType.AddCollectDropNum
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddCollectDropNumResult.GetDelta = function(self)
-  -- function num : 0_2
+function SkillAddCollectDropNumResult:GetDelta()
   return self._delta
 end
-
-

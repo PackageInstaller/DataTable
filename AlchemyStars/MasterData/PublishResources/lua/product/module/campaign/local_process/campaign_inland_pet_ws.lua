@@ -1,70 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_inland_pet_ws.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignInlandPetWS", ICampaignComponentLocalProcessBase)
 CCampaignInlandPetWS = CCampaignInlandPetWS
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignInlandPetWS.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignInlandPetWS:Constructor()
   self._questComponent = nil
   self._questComponentInfo = nil
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandPetWS.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignInlandPetWS:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_INLAND_PET_WS
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandPetWS.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignInlandPetWS:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandPetWS.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignInlandPetWS:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetQuestComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandPetWS._GetQuestComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._questComponent = (self._campaignObj):GetComponent(ECCampaignInlandPetWSComponentID.QUEST)
+function CCampaignInlandPetWS:_GetQuestComponent()
+  self._questComponent = self._campaignObj:GetComponent(ECCampaignInlandPetWSComponentID.QUEST)
   if not self._questComponent then
-    return 
+    return
   end
-  self._questComponentInfo = (self._questComponent):ComponentInfo()
+  self._questComponentInfo = self._questComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandPetWS.GetComponent = function(self, componentID)
-  -- function num : 0_5 , upvalues : _ENV
+function CCampaignInlandPetWS:GetComponent(componentID)
   if ECCampaignInlandPetWSComponentID.QUEST == componentID then
     return self._questComponent
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandPetWS.GetComponentInfo = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignInlandPetWS:GetComponentInfo(componentID)
   if ECCampaignInlandPetWSComponentID.QUEST == componentID then
     return self._questComponentInfo
   end
   return nil
 end
-
-

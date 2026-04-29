@@ -1,107 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sailing_mission/ui_sailing_mission_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISailingPetItem", UICustomWidget)
 UISailingPetItem = UISailingPetItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISailingPetItem.Constructor = function(self)
-  -- function num : 0_0
+function UISailingPetItem:Constructor()
   self._parent = nil
   self._pet_pstid = 0
   self._petGuide = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingPetItem.OnShow = function(self)
-  -- function num : 0_1
+function UISailingPetItem:OnShow()
   self._headImage = self:GetUIComponent("RawImageLoader", "headImage")
   self._attribute1 = self:GetUIComponent("Image", "attribute1")
   self._attribute2 = self:GetUIComponent("Image", "attribute2")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingPetItem.OnHide = function(self)
-  -- function num : 0_2
+function UISailingPetItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingPetItem.Init = function(self, parent, pet_pstid)
-  -- function num : 0_3 , upvalues : _ENV
+function UISailingPetItem:Init(parent, pet_pstid)
   self._parent = parent
   self._pet_pstid = pet_pstid
-  local petData = nil
-  do
-    if self._pet_pstid ~= nil then
-      local petModule = (GameGlobal.GetModule)(PetModule)
-      petData = petModule:GetPet(self._pet_pstid)
-    end
-    self:UpdatePetItem(petData)
+  local petData
+  if self._pet_pstid ~= nil then
+    local petModule = GameGlobal.GetModule(PetModule)
+    petData = petModule:GetPet(self._pet_pstid)
   end
+  self:UpdatePetItem(petData)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingPetItem.InitGuide = function(self, parent, cfgGuide)
-  -- function num : 0_4 , upvalues : _ENV
+function UISailingPetItem:InitGuide(parent, cfgGuide)
   self._parent = parent
   self._petGuide = cfgGuide
-  local petData = nil
-  do
-    if self._petGuide ~= nil then
-      local petIndo = pet_data:New()
-      petIndo.template_id = (self._petGuide)[1]
-      petIndo.level = (self._petGuide)[2]
-      petIndo.grade = (self._petGuide)[3]
-      petIndo.awakening = (self._petGuide)[4]
-      petIndo.affinity_level = 1
-      petIndo.current_skin = 0
-      petData = Pet:New(petIndo)
-    end
-    self:UpdatePetItem(petData)
+  local petData
+  if self._petGuide ~= nil then
+    local petIndo = pet_data:New()
+    petIndo.template_id = self._petGuide[1]
+    petIndo.level = self._petGuide[2]
+    petIndo.grade = self._petGuide[3]
+    petIndo.awakening = self._petGuide[4]
+    petIndo.affinity_level = 1
+    petIndo.current_skin = 0
+    petData = Pet:New(petIndo)
   end
+  self:UpdatePetItem(petData)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingPetItem.UpdatePetItem = function(self, petData)
-  -- function num : 0_5 , upvalues : _ENV
-  ((self._headImage).gameObject):SetActive(petData ~= nil)
-  ;
-  ((self._attribute1).gameObject):SetActive(petData ~= nil)
-  ;
-  ((self._attribute2).gameObject):SetActive(petData ~= nil)
+function UISailingPetItem:UpdatePetItem(petData)
+  self._headImage.gameObject:SetActive(petData ~= nil)
+  self._attribute1.gameObject:SetActive(petData ~= nil)
+  self._attribute2.gameObject:SetActive(petData ~= nil)
   if petData ~= nil then
-    (self._headImage):LoadImage(petData:GetPetHead(PetSkinEffectPath.HEAD_ICON_CHAIN_SKILL_PREVIEW))
-    ;
-    (self._parent):SetAtlasProperty(self._attribute1, petData:GetPetFirstElement())
-    ;
-    (self._parent):SetAtlasProperty(self._attribute2, petData:GetPetSecondElement())
+    self._headImage:LoadImage(petData:GetPetHead(PetSkinEffectPath.HEAD_ICON_CHAIN_SKILL_PREVIEW))
+    self._parent:SetAtlasProperty(self._attribute1, petData:GetPetFirstElement())
+    self._parent:SetAtlasProperty(self._attribute2, petData:GetPetSecondElement())
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
 _class("UISailingMissionItem", UICustomWidget)
 UISailingMissionItem = UISailingMissionItem
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
 
-UISailingMissionItem.Constructor = function(self)
-  -- function num : 0_6
+function UISailingMissionItem:Constructor()
   self._inDraging = false
   self._luaIndex = 1
   self._cfgMission = nil
   self._infoMission = nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingMissionItem.OnShow = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISailingMissionItem:OnShow()
   self._clearImage = self:GetUIComponent("Image", "clearImage")
   self._unclearImage = self:GetUIComponent("Image", "unclearImage")
   self._txtMissionValue = self:GetUIComponent("UILocalizationText", "txtMissionValue")
@@ -113,60 +77,31 @@ UISailingMissionItem.OnShow = function(self)
   self._bossAttribute1 = self:GetUIComponent("Image", "bossAttribute1")
   self._bossAttribute2 = self:GetUIComponent("Image", "bossAttribute2")
   self._memLoaders = {}
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._memLoaders)[1] = self:GetUIComponent("UISelectObjectPath", "mem1Loader")
-  -- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._memLoaders)[2] = self:GetUIComponent("UISelectObjectPath", "mem2Loader")
-  -- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._memLoaders)[3] = self:GetUIComponent("UISelectObjectPath", "mem3Loader")
-  -- DECOMPILER ERROR at PC75: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._memLoaders)[4] = self:GetUIComponent("UISelectObjectPath", "mem4Loader")
-  -- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._memLoaders)[5] = self:GetUIComponent("UISelectObjectPath", "mem5Loader")
+  self._memLoaders[1] = self:GetUIComponent("UISelectObjectPath", "mem1Loader")
+  self._memLoaders[2] = self:GetUIComponent("UISelectObjectPath", "mem2Loader")
+  self._memLoaders[3] = self:GetUIComponent("UISelectObjectPath", "mem3Loader")
+  self._memLoaders[4] = self:GetUIComponent("UISelectObjectPath", "mem4Loader")
+  self._memLoaders[5] = self:GetUIComponent("UISelectObjectPath", "mem5Loader")
   self._btnMission = self:GetUIComponent("Button", "btnMission")
-  local btnMissionEvent = (UICustomUIEventListener.Get)((self._btnMission).gameObject)
+  local btnMissionEvent = UICustomUIEventListener.Get(self._btnMission.gameObject)
   self:AddUICustomEventListener(btnMissionEvent, UIEvent.Press, function(a)
-    -- function num : 0_7_0 , upvalues : self
     self:BtnMissionOnPress(a)
-  end
-)
+  end)
   self:AddUICustomEventListener(btnMissionEvent, UIEvent.BeginDrag, function(a)
-    -- function num : 0_7_1 , upvalues : self
     self:BtnMissionOnBeginDrag(a)
-  end
-)
+  end)
   self:AddUICustomEventListener(btnMissionEvent, UIEvent.Drag, function(a)
-    -- function num : 0_7_2 , upvalues : self
     self:BtnMissionOnDrag(a)
-  end
-)
+  end)
   self:AddUICustomEventListener(btnMissionEvent, UIEvent.EndDrag, function(a)
-    -- function num : 0_7_3 , upvalues : self
     self:BtnMissionOnEndDrag(a)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingMissionItem.OnHide = function(self)
-  -- function num : 0_8
+function UISailingMissionItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingMissionItem.Init = function(self, luaIndex, cfg, infoMission)
-  -- function num : 0_9
+function UISailingMissionItem:Init(luaIndex, cfg, infoMission)
   self._luaIndex = luaIndex
   self._cfgMission = cfg
   self._infoMission = infoMission
@@ -176,189 +111,132 @@ UISailingMissionItem.Init = function(self, luaIndex, cfg, infoMission)
   self:UpdateTeamPetList()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingMissionItem.HandleBtnMissionOnClick = function(self, TT, callback)
-  -- function num : 0_10 , upvalues : _ENV
+function UISailingMissionItem:HandleBtnMissionOnClick(TT, callback)
   self:Lock("UISailing_BtnMissionOnClick")
   YIELD(TT, 500)
   local uiOwner = self:RootUIOwner()
-  local chapterID = (uiOwner:GetChapterCfg()).ID
-  self:ShowDialog("UISailingLevelDetail", chapterID, (self._cfgMission).ID)
+  local chapterID = uiOwner:GetChapterCfg().ID
+  self:ShowDialog("UISailingLevelDetail", chapterID, self._cfgMission.ID)
   local challengeKey = UISailing:ChapterIDKey(chapterID)
-  ;
-  (LocalDB.SetInt)(challengeKey, 1)
+  LocalDB.SetInt(challengeKey, 1)
   self:UnLock("UISailing_BtnMissionOnClick")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingMissionItem.BtnMissionOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.HandleBtnMissionOnClick, self)
+function UISailingMissionItem:BtnMissionOnClick(go)
+  GameGlobal.TaskManager():StartTask(self.HandleBtnMissionOnClick, self)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingMissionItem.BtnMissionOnPress = function(self, eventData)
-  -- function num : 0_12
-  (self:RootUIOwner()):MissionItemOnPress(self, eventData)
+function UISailingMissionItem:BtnMissionOnPress(eventData)
+  self:RootUIOwner():MissionItemOnPress(self, eventData)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingMissionItem.BtnMissionOnBeginDrag = function(self, eventData)
-  -- function num : 0_13
+function UISailingMissionItem:BtnMissionOnBeginDrag(eventData)
   self._inDraging = true
-  ;
-  (self:RootUIOwner()):MissionItemOnBeginDrag(self, eventData)
+  self:RootUIOwner():MissionItemOnBeginDrag(self, eventData)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingMissionItem.BtnMissionOnDrag = function(self, eventData)
-  -- function num : 0_14
+function UISailingMissionItem:BtnMissionOnDrag(eventData)
   self._inDraging = true
-  ;
-  (self:RootUIOwner()):MissionItemOnDrag(self, eventData)
+  self:RootUIOwner():MissionItemOnDrag(self, eventData)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingMissionItem.BtnMissionOnEndDrag = function(self, eventData)
-  -- function num : 0_15
+function UISailingMissionItem:BtnMissionOnEndDrag(eventData)
   self._inDraging = false
-  ;
-  (self:RootUIOwner()):MissionItemOnEndDrag(self, eventData)
+  self:RootUIOwner():MissionItemOnEndDrag(self, eventData)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingMissionItem.SetAtlasProperty = function(self, img, idProperty)
-  -- function num : 0_16 , upvalues : _ENV
-  local cfgSingle = nil
-  local cfg_pet_element = (Cfg.cfg_pet_element)({})
+function UISailingMissionItem:SetAtlasProperty(img, idProperty)
+  local cfgSingle
+  local cfg_pet_element = Cfg.cfg_pet_element({})
   if cfg_pet_element then
     cfgSingle = cfg_pet_element[idProperty]
   end
   if cfgSingle then
-    (img.gameObject):SetActive(true)
-    local atlasProperty = (self:RootUIOwner()):GetAtlasProperty()
-    img.sprite = atlasProperty:GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(cfgSingle.Icon))
+    img.gameObject:SetActive(true)
+    local atlasProperty = self:RootUIOwner():GetAtlasProperty()
+    img.sprite = atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfgSingle.Icon))
   else
-    do
-      ;
-      (img.gameObject):SetActive(false)
-    end
+    img.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingMissionItem.UpdateMissionTitle = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local missionTitle = (StringTable.Get)((self._cfgMission).MissionName)
-  ;
-  (self._txtMissionValue):SetText(missionTitle)
+function UISailingMissionItem:UpdateMissionTitle()
+  local missionTitle = StringTable.Get(self._cfgMission.MissionName)
+  self._txtMissionValue:SetText(missionTitle)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingMissionItem.UpdateMissionStatus = function(self)
-  -- function num : 0_18
+function UISailingMissionItem:UpdateMissionStatus()
   local countPet = 0
-  if self._infoMission ~= nil and (self._infoMission).pet_list ~= nil then
-    countPet = #(self._infoMission).pet_list
+  if self._infoMission ~= nil and self._infoMission.pet_list ~= nil then
+    countPet = #self._infoMission.pet_list
   end
   local showClear = countPet == 5
   local showUnclear = countPet ~= 5
-  ;
-  ((self._clearImage).gameObject):SetActive(showClear)
-  ;
-  ((self._unclearImage).gameObject):SetActive(showUnclear)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._clearImage.gameObject:SetActive(showClear)
+  self._unclearImage.gameObject:SetActive(showUnclear)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingMissionItem.UpdateBossAttribute = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  (self._bossImageLoader):LoadImage((self._cfgMission).BossDrawing)
+function UISailingMissionItem:UpdateBossAttribute()
+  self._bossImageLoader:LoadImage(self._cfgMission.BossDrawing)
   local localPosition = Vector2.zero
   local localScale = Vector3.one
-  local transform = (self._bossImage).transform
+  local transform = self._bossImage.transform
   local sizeDelta = transform.sizeDelta
-  local bossDrawingSize = (self._cfgMission).BossDrawingSize
-  if bossDrawingSize ~= nil and #bossDrawingSize >= 2 then
+  local bossDrawingSize = self._cfgMission.BossDrawingSize
+  if bossDrawingSize ~= nil and 2 <= #bossDrawingSize then
     sizeDelta = Vector2(bossDrawingSize[1], bossDrawingSize[2])
   end
-  local cfgBossTransform = (self._cfgMission).BossTransform
-  if cfgBossTransform ~= nil and #cfgBossTransform >= 3 then
+  local cfgBossTransform = self._cfgMission.BossTransform
+  if cfgBossTransform ~= nil and 3 <= #cfgBossTransform then
     localPosition = Vector3(cfgBossTransform[1], cfgBossTransform[2], 0)
     localScale = Vector3(cfgBossTransform[3], cfgBossTransform[3], 1)
   end
   transform.sizeDelta = sizeDelta
   transform.localPosition = localPosition
   transform.localScale = localScale
-  if (self._cfgMission).BossAttribute2 == nil then
-    ((self._bossAttributeBg1).gameObject):SetActive(true)
-    ;
-    ((self._bossAttributeBg2).gameObject):SetActive(false)
-    self:SetAtlasProperty(self._bossAttribute, (self._cfgMission).BossAttribute1)
+  if self._cfgMission.BossAttribute2 == nil then
+    self._bossAttributeBg1.gameObject:SetActive(true)
+    self._bossAttributeBg2.gameObject:SetActive(false)
+    self:SetAtlasProperty(self._bossAttribute, self._cfgMission.BossAttribute1)
   else
-    ;
-    ((self._bossAttributeBg1).gameObject):SetActive(false)
-    ;
-    ((self._bossAttributeBg2).gameObject):SetActive(true)
-    self:SetAtlasProperty(self._bossAttribute1, (self._cfgMission).BossAttribute1)
-    self:SetAtlasProperty(self._bossAttribute2, (self._cfgMission).BossAttribute2)
+    self._bossAttributeBg1.gameObject:SetActive(false)
+    self._bossAttributeBg2.gameObject:SetActive(true)
+    self:SetAtlasProperty(self._bossAttribute1, self._cfgMission.BossAttribute1)
+    self:SetAtlasProperty(self._bossAttribute2, self._cfgMission.BossAttribute2)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingMissionItem.UpdateTeamPetList = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UISailingMissionItem:UpdateTeamPetList()
   local missionID = -1
   if self._infoMission ~= nil then
-    missionID = (self._infoMission).mission_id
+    missionID = self._infoMission.mission_id
   end
-  local cfgBattlePetList = nil
-  local cfg_guide = ((Cfg.cfg_mission_guide)({}))[missionID]
+  local cfgBattlePetList
+  local cfg_guide = Cfg.cfg_mission_guide({})[missionID]
   if cfg_guide ~= nil then
     cfgBattlePetList = cfg_guide.BattlePetList
   end
   if cfgBattlePetList ~= nil and #cfgBattlePetList == 5 then
     for i = 1, 5 do
-      local uiPetItem = ((self._memLoaders)[i]):SpawnObject("UISailingPetItem")
+      local uiPetItem = self._memLoaders[i]:SpawnObject("UISailingPetItem")
       uiPetItem:InitGuide(self, cfgBattlePetList[i])
     end
   else
-    do
-      for i = 1, 5 do
-        local uiPetItem = (((self._memLoaders)[i]):SpawnObject("UISailingPetItem"))
-        local petId = nil
-        if self._infoMission ~= nil then
-          petId = ((self._infoMission).pet_list)[i]
-        end
-        uiPetItem:Init(self, petId)
+    for i = 1, 5 do
+      local uiPetItem = self._memLoaders[i]:SpawnObject("UISailingPetItem")
+      local petId
+      if self._infoMission ~= nil then
+        petId = self._infoMission.pet_list[i]
       end
+      uiPetItem:Init(self, petId)
     end
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingMissionItem.GetMissionCfg = function(self)
-  -- function num : 0_21
+function UISailingMissionItem:GetMissionCfg()
   return self._cfgMission
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingMissionItem.GetGuideArea = function(self)
-  -- function num : 0_22
+function UISailingMissionItem:GetGuideArea()
   return self:GetGameObject("team")
 end
-
-

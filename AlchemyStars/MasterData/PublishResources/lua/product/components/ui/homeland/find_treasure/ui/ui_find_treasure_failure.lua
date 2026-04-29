@@ -1,101 +1,69 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/find_treasure/ui/ui_find_treasure_failure.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFindTreasureFailure", UIController)
 UIFindTreasureFailure = UIFindTreasureFailure
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFindTreasureFailure.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIFindTreasureFailure:LoadDataOnEnter(TT, res, uiParams)
   self:RequestSingleData(TT)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureFailure.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIFindTreasureFailure:OnShow(uiParams)
   self._gameData = uiParams[1]
   self:SetForbiddenMove(true)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PlayerControllerUIStatus, false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetMinimapStatus, false)
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PlayerControllerUIStatus, false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetMinimapStatus, false)
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
   self._findTreasureManager = homelandClient:FindTreasureManager()
   self._specialSingleLabel = self:GetUIComponent("UILocalizationText", "SpecialSingleCount")
   self._normalSingleLabel = self:GetUIComponent("UILocalizationText", "NormalSingleCount")
   self._anim = self:GetUIComponent("Animation", "Anim")
   self:RefreshUI()
-  self._title1MatRequest = self:ChangeFontMat("Title1", "uieff_n17_find_treasure_failure_tips1.mat")
-  self._title2MatRequest = self:ChangeFontMat("Title2", "uieff_n17_find_treasure_failure_tips.mat")
+  self._title1MatRequest, self._title1Mat = self:ChangeFontMat("Title1", "uieff_n17_find_treasure_failure_tips1.mat")
+  self._title2MatRequest, self._title2Mat = self:ChangeFontMat("Title2", "uieff_n17_find_treasure_failure_tips.mat")
   self:StartTask(self.PlayAnim, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureFailure.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIFindTreasureFailure:OnHide()
   self._title1MatRequest = nil
   self._title1Mat = nil
   self._title2MatRequest = nil
   self._title2Mat = nil
-  ;
-  (((GameGlobal.GetUIModule)(HomelandModule)):GetClient()):PlayHomelandBgm()
+  GameGlobal.GetUIModule(HomelandModule):GetClient():PlayHomelandBgm()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureFailure.RefreshUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIFindTreasureFailure:RefreshUI()
   if self._isActiveEnd then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_find_treasure_game_active_end"))
-    ;
-    (self._specialSingleLabel):SetText("-")
-    ;
-    (self._normalSingleLabel):SetText("-")
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_find_treasure_game_active_end"))
+    self._specialSingleLabel:SetText("-")
+    self._normalSingleLabel:SetText("-")
   else
-    ;
-    (self._specialSingleLabel):SetText((self._singleDatas):GetSpecialSingleCount())
-    ;
-    (self._normalSingleLabel):SetText((self._singleDatas):GetNormalSingleCount())
+    self._specialSingleLabel:SetText(self._singleDatas:GetSpecialSingleCount())
+    self._normalSingleLabel:SetText(self._singleDatas:GetNormalSingleCount())
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureFailure.SetForbiddenMove = function(self, status)
-  -- function num : 0_4 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+function UIFindTreasureFailure:SetForbiddenMove(status)
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
-  local characterController = (homelandClient:CharacterManager()):MainCharacterController()
+  local characterController = homelandClient:CharacterManager():MainCharacterController()
   characterController:SetForbiddenMove(status)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureFailure.SetAnimatorBool = function(self, triggerName, triggerValue)
-  -- function num : 0_5 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+function UIFindTreasureFailure:SetAnimatorBool(triggerName, triggerValue)
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
-  local characterController = (homelandClient:CharacterManager()):MainCharacterController()
+  local characterController = homelandClient:CharacterManager():MainCharacterController()
   characterController:SetAnimatorBool(triggerName, triggerValue)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureFailure.Forcus = function(self, focus, time)
-  -- function num : 0_6 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+function UIFindTreasureFailure:Forcus(focus, time)
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
   local cameraMgr = homelandClient:CameraManager()
   local followCameraController = cameraMgr:FollowCameraController()
   if not focus then
     followCameraController:LeaveFocus(0)
   else
-    local characterController = (homelandClient:CharacterManager()):MainCharacterController()
+    local characterController = homelandClient:CharacterManager():MainCharacterController()
     local tran = characterController:Transform()
     local cameraTran = tran:Find("FindTreasureSuccess")
     if cameraTran then
@@ -104,132 +72,92 @@ UIFindTreasureFailure.Forcus = function(self, focus, time)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureFailure.ChangeFontMat = function(self, fontName, matName)
-  -- function num : 0_7 , upvalues : _ENV
+function UIFindTreasureFailure:ChangeFontMat(fontName, matName)
   local label = self:GetUIComponent("UILocalizedTMP", fontName)
-  local matResRequest = (ResourceManager:GetInstance()):SyncLoadAsset(matName, LoadType.Mat)
+  local matResRequest = ResourceManager:GetInstance():SyncLoadAsset(matName, LoadType.Mat)
   local matObj = matResRequest.Obj
   local mat = label.fontMaterial
   label.fontMaterial = matObj
-  ;
-  (label.fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  label.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
   return matResRequest, matObj
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureFailure.PlayAnim = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
+function UIFindTreasureFailure:PlayAnim(TT)
   self:Lock("UIFindTreasureFailure_PlayAnim")
   self:SetAnimatorBool("FindTreasureFailure", true)
   YIELD(TT, 2000)
-  ;
-  (self._anim):Play("uieffanim_n17_UIFindTreasureFailure")
+  self._anim:Play("uieffanim_n17_UIFindTreasureFailure")
   YIELD(TT, 667)
-  ;
-  ((GameGlobal.UIStateManager)()):CloseDialog("UIFindTreasureMain")
+  GameGlobal.UIStateManager():CloseDialog("UIFindTreasureMain")
   self:Forcus(true, 0)
   self._isActiveEnd = true
   local campaign = UIActivityCampaign:New()
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  campaign:LoadCampaignInfo(TT, res, (HomelandFindTreasureConst.GetCampaignType)(), (HomelandFindTreasureConst.GetComponentType)())
+  campaign:LoadCampaignInfo(TT, res, HomelandFindTreasureConst.GetCampaignType(), HomelandFindTreasureConst.GetComponentType())
   if res:GetSucc() then
     local localProcess = campaign:GetLocalProcess()
     if localProcess then
-      local exploreMinigameComponent = localProcess:GetComponent((HomelandFindTreasureConst.GetComponentType)())
+      local exploreMinigameComponent = localProcess:GetComponent(HomelandFindTreasureConst.GetComponentType())
       if exploreMinigameComponent and exploreMinigameComponent:ComponentIsOpen() then
         self._isActiveEnd = false
       end
     end
   end
-  do
-    if not self._isActiveEnd then
-      self:RequestSingleData(TT)
-    end
-    self:RefreshUI()
-    self:UnLock("UIFindTreasureFailure_PlayAnim")
+  if not self._isActiveEnd then
+    self:RequestSingleData(TT)
   end
+  self:RefreshUI()
+  self:UnLock("UIFindTreasureFailure_PlayAnim")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureFailure.RequestSingleData = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
-  self._singleDatas = (HomelandFindTreasureConst.GetFindTreasureSingleDatas)(TT)
+function UIFindTreasureFailure:RequestSingleData(TT)
+  self._singleDatas = HomelandFindTreasureConst.GetFindTreasureSingleDatas(TT)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureFailure.BtnRestartOnClick = function(self)
-  -- function num : 0_10
+function UIFindTreasureFailure:BtnRestartOnClick()
   self:StartTask(self.RequestData, self)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureFailure.RequestData = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
+function UIFindTreasureFailure:RequestData(TT)
   self:Lock("UIFindTreasureFailure_RequestData")
-  local singleDatas = (HomelandFindTreasureConst.GetFindTreasureSingleDatas)(TT)
-  ;
-  (HomelandFindTreasureConst.StartGame)(TT, singleDatas, function()
-    -- function num : 0_11_0 , upvalues : self
+  local singleDatas = HomelandFindTreasureConst.GetFindTreasureSingleDatas(TT)
+  HomelandFindTreasureConst.StartGame(TT, singleDatas, function()
     self:Close(false)
     return 800
-  end
-, true)
+  end, true)
   self:UnLock("UIFindTreasureFailure_RequestData")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureFailure.BtnReturnOnClick = function(self)
-  -- function num : 0_12
+function UIFindTreasureFailure:BtnReturnOnClick()
   self:Close(true)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureFailure.Close = function(self, isReturn)
-  -- function num : 0_13
+function UIFindTreasureFailure:Close(isReturn)
   self:StartTask(self.CloseCoro, self, isReturn)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureFailure.CloseCoro = function(self, TT, isReturn)
-  -- function num : 0_14 , upvalues : _ENV
+function UIFindTreasureFailure:CloseCoro(TT, isReturn)
   self:Lock("UIFindTreasureFailure_CloseCoro")
-  ;
-  (self._anim):Play("uieffanim_n17_UIFindTreasureFailure_out")
+  self._anim:Play("uieffanim_n17_UIFindTreasureFailure_out")
   YIELD(TT, 667)
   if isReturn then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PlayerControllerUIStatus, true)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetMinimapStatus, true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.PlayerControllerUIStatus, true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.SetMinimapStatus, true)
   end
   self:SetForbiddenMove(false)
   self:SetAnimatorBool("FindTreasureFailure", false)
   self:Forcus(false)
-  ;
-  (self._findTreasureManager):ExitFindTreasure()
+  self._findTreasureManager:ExitFindTreasure()
   if isReturn then
     YIELD(TT, 1000)
     self:CloseDialog()
   else
-    local state = (self._anim):get_Item("uieffanim_n17_UIFindTreasureFailure_out")
+    local state = self._anim:get_Item("uieffanim_n17_UIFindTreasureFailure_out")
     state.speed = 0
     YIELD(TT, 300)
     self:CloseDialog()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetMinimapStatus, true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.SetMinimapStatus, true)
   end
-  do
-    self:UnLock("UIFindTreasureFailure_CloseCoro")
-  end
+  self:UnLock("UIFindTreasureFailure_CloseCoro")
 end
-
-

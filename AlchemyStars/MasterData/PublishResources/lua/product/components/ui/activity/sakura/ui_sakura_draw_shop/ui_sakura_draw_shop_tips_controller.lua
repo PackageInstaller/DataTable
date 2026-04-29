@@ -1,31 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/sakura/ui_sakura_draw_shop/ui_sakura_draw_shop_tips_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISakuraDrawShopTipsController", UIController)
 UISakuraDrawShopTipsController = UISakuraDrawShopTipsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISakuraDrawShopTipsController.Constructor = function(self)
-  -- function num : 0_0
+function UISakuraDrawShopTipsController:Constructor()
   self._outAnimName = "uieff_UISakuraDrawShopTipsController_out"
   self._outAnimTime = 433
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopTipsController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISakuraDrawShopTipsController:OnShow(uiParams)
   self._data = uiParams[1]
   self:_GetComponent()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopTipsController._GetComponent = function(self)
-  -- function num : 0_2
+function UISakuraDrawShopTipsController:_GetComponent()
   self._descripution = self:GetUIComponent("UILocalizationText", "Descripution")
   self._item = self:GetUIComponent("UISelectObjectPath", "Item")
   self._contentAnim = self:GetUIComponent("Animation", "Content")
@@ -33,59 +20,40 @@ UISakuraDrawShopTipsController._GetComponent = function(self)
   self._itemInfoCount = self:GetUIComponent("UILocalizationText", "OwnCount")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopTipsController._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISakuraDrawShopTipsController:_OnValue()
   if self._data ~= nil then
-    local itemId = (self._data):GetItemId()
-    local config = (Cfg.cfg_item)[itemId]
+    local itemId = self._data:GetItemId()
+    local config = Cfg.cfg_item[itemId]
     if config ~= nil then
-      (self._itemInfoName):SetText((StringTable.Get)(config.Name))
-      ;
-      (self._descripution):SetText((StringTable.Get)(config.Intro))
+      self._itemInfoName:SetText(StringTable.Get(config.Name))
+      self._descripution:SetText(StringTable.Get(config.Intro))
     end
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
+    local roleModule = GameGlobal.GetModule(RoleModule)
     local c = roleModule:GetAssetCount(itemId)
-    ;
-    (self._itemInfoCount):SetText((StringTable.Get)("str_item_public_owned") .. self:_FormatItemCount(c))
-    self._itemWidget = (self._item):SpawnObject("UISakuraDrawShopAwardCell")
-    ;
-    (self._itemWidget):InitData(self._data, nil)
+    self._itemInfoCount:SetText(StringTable.Get("str_item_public_owned") .. self:_FormatItemCount(c))
+    self._itemWidget = self._item:SpawnObject("UISakuraDrawShopAwardCell")
+    self._itemWidget:InitData(self._data, nil)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopTipsController.bgOnClick = function(self)
-  -- function num : 0_4
+function UISakuraDrawShopTipsController:bgOnClick()
   self:CloseDialogWithAnim()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopTipsController.CloseDialogWithAnim = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISakuraDrawShopTipsController:CloseDialogWithAnim()
   if self._contentAnim then
     self:Lock("UISakuraDrawShopTipsController:CloseDialogWithAnim")
     if self._contentAnim then
-      (self._contentAnim):Play(self._outAnimName)
+      self._contentAnim:Play(self._outAnimName)
     end
     self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self
-    YIELD(TT, self._outAnimTime)
-    self:UnLock("UISakuraDrawShopTipsController:CloseDialogWithAnim")
-    self:CloseDialog()
-  end
-, self)
+      YIELD(TT, self._outAnimTime)
+      self:UnLock("UISakuraDrawShopTipsController:CloseDialogWithAnim")
+      self:CloseDialog()
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopTipsController._FormatItemCount = function(self, itemCount)
-  -- function num : 0_6 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):FormatItemCount(itemCount)
+function UISakuraDrawShopTipsController:_FormatItemCount(itemCount)
+  return HelperProxy:GetInstance():FormatItemCount(itemCount)
 end
-
-

@@ -1,130 +1,88 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n17/intro/ui_n17_intro_2_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN17Intro2Controller", UIController)
 UIN17Intro2Controller = UIN17Intro2Controller
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN17Intro2Controller.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN17Intro2Controller:LoadDataOnEnter(TT, res, uiParams)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_N17
   self._componentId = ECampaignN17ComponentID.ECAMPAIGN_N17_STORY
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, self._campaignType, self._componentId)
+  self._campaign:LoadCampaignInfo(TT, res, self._campaignType, self._componentId)
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, nil, nil)
-    return 
+    self._campaign:CheckErrorCode(res.m_result, nil, nil)
+    return
   end
-  self._component = (self._campaign):GetComponent(self._componentId)
+  self._component = self._campaign:GetComponent(self._componentId)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17Intro2Controller.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN17Intro2Controller:OnShow(uiParams)
   self._param = uiParams[1]
-  self._cfg = (Cfg.cfg_activityintro)[self._param]
+  self._cfg = Cfg.cfg_activityintro[self._param]
   if not self._cfg then
     self:CloseDialog()
-    return 
+    return
   end
   local hideIcon = uiParams[2]
-  ;
-  (self:GetGameObject("IconBg")):SetActive(not hideIcon)
+  self:GetGameObject("IconBg"):SetActive(not hideIcon)
   if not hideIcon and self._component then
-    local component_cfg_id = (self._component):GetComponentCfgId()
-    local cfg = (Cfg.cfg_component_power2item)[component_cfg_id]
+    local component_cfg_id = self._component:GetComponentCfgId()
+    local cfg = Cfg.cfg_component_power2item[component_cfg_id]
     if cfg then
-      (UIWidgetHelper.SetItemIcon)(self, cfg.ItemID, "Icon")
+      UIWidgetHelper.SetItemIcon(self, cfg.ItemID, "Icon")
     end
   end
-  do
-    self:_GetComponent()
-    self:_OnValue()
-    self:_Flush()
-  end
+  self:_GetComponent()
+  self:_OnValue()
+  self:_Flush()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17Intro2Controller._GetComponent = function(self)
-  -- function num : 0_2
+function UIN17Intro2Controller:_GetComponent()
   self._animation = self:GetUIComponent("Animation", "uianim")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17Intro2Controller._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local title_txt = (StringTable.Get)((self._cfg).Title .. "title")
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "Title", title_txt)
+function UIN17Intro2Controller:_OnValue()
+  local title_txt = StringTable.Get(self._cfg.Title .. "title")
+  UIWidgetHelper.SetLocalizationText(self, "Title", title_txt)
   self:_Flush()
-  if self._cfg then
-    local animName = (self._cfg).ShowAnim
-  end
+  local animName = self._cfg and self._cfg.ShowAnim
   self:_PlayAnimation(animName, 600, nil)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17Intro2Controller._Flush = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN17Intro2Controller:_Flush()
   if not self._cfg then
-    return 
+    return
   end
-  local key = (self._cfg).Title
+  local key = self._cfg.Title
   local n = 0
-  while 1 do
+  while true do
     n = n + 1
-    local keyHead = (StringTable.Has)(key .. "head_" .. n)
+    local keyHead = StringTable.Has(key .. "head_" .. n)
     if not keyHead then
       n = n - 1
       break
     end
   end
-  do
-    if n <= 0 then
-      (Log.fatal)("### no [" .. key .. "head_n] in str_n17.xlsx")
-      return 
-    end
-    local uis = (UIWidgetHelper.SpawnObjects)(self, "Content", "UIN17IntroItem", n)
-    for i,ui in ipairs(uis) do
-      local head = (StringTable.Get)(key .. "head_" .. i)
-      local body = (StringTable.Get)(key .. "body_" .. i)
-      ui:Flush(head, body)
-    end
+  if n <= 0 then
+    Log.fatal("### no [" .. key .. "head_n] in str_n17.xlsx")
+    return
+  end
+  local uis = UIWidgetHelper.SpawnObjects(self, "Content", "UIN17IntroItem", n)
+  for i, ui in ipairs(uis) do
+    local head = StringTable.Get(key .. "head_" .. i)
+    local body = StringTable.Get(key .. "body_" .. i)
+    ui:Flush(head, body)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17Intro2Controller.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_5
-  if self._cfg then
-    local animName = (self._cfg).HideAnim
-  end
+function UIN17Intro2Controller:ConfirmBtnOnClick(go)
+  local animName = self._cfg and self._cfg.HideAnim
   self:_PlayAnimation(animName, 600, function()
-    -- function num : 0_5_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17Intro2Controller._PlayAnimation = function(self, animName, duration, callback)
-  -- function num : 0_6 , upvalues : _ENV
-  if not (string.isnullorempty)(animName) then
-    (UIWidgetHelper.PlayAnimation)(self, "uianim", animName, duration, callback)
-  else
-    if callback then
-      callback()
-    end
+function UIN17Intro2Controller:_PlayAnimation(animName, duration, callback)
+  if not string.isnullorempty(animName) then
+    UIWidgetHelper.PlayAnimation(self, "uianim", animName, duration, callback)
+  elseif callback then
+    callback()
   end
 end
-
-

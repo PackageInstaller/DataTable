@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n9/subject/main/ui_n9_subject_level_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN9SubjectLevelItem", UICustomWidget)
 UIN9SubjectLevelItem = UIN9SubjectLevelItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN9SubjectLevelItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN9SubjectLevelItem:OnShow()
   self._go = self:GetGameObject()
   self._normalLevel = self:GetGameObject("NormalLevel")
   self._testLevel = self:GetGameObject("TestLevel")
@@ -19,157 +12,107 @@ UIN9SubjectLevelItem.OnShow = function(self)
   self._testLevelNameLabel = self:GetUIComponent("UILocalizedTMP", "TestLevelName")
   self._testGradeLabel = self:GetUIComponent("UILocalizedTMP", "TestGrade")
   self._testGradeGo = self:GetGameObject("TestGrade")
-  self._EMIMatResRequest = (ResourceManager:GetInstance()):SyncLoadAsset("uieff_n9_subject_grade_name.mat", LoadType.Mat)
-  self._EMIMat = (self._EMIMatResRequest).Obj
-  local mat = (self._testGradeLabel).fontMaterial
-  -- DECOMPILER ERROR at PC59: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._testGradeLabel).fontMaterial = self._EMIMat
-  ;
-  ((self._testGradeLabel).fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
-  self._EMIMatResRequest1 = (ResourceManager:GetInstance()):SyncLoadAsset("uieff_n9_subject_level_name.mat", LoadType.Mat)
-  self._EMIMat1 = (self._EMIMatResRequest1).Obj
-  local mat = (self._testLevelNameLabel).fontMaterial
-  -- DECOMPILER ERROR at PC84: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._testLevelNameLabel).fontMaterial = self._EMIMat1
-  ;
-  ((self._testLevelNameLabel).fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
-  local mat = (self._nameLabel).fontMaterial
-  -- DECOMPILER ERROR at PC97: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._nameLabel).fontMaterial = self._EMIMat1
-  ;
-  ((self._nameLabel).fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  self._EMIMatResRequest = ResourceManager:GetInstance():SyncLoadAsset("uieff_n9_subject_grade_name.mat", LoadType.Mat)
+  self._EMIMat = self._EMIMatResRequest.Obj
+  local mat = self._testGradeLabel.fontMaterial
+  self._testGradeLabel.fontMaterial = self._EMIMat
+  self._testGradeLabel.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  self._EMIMatResRequest1 = ResourceManager:GetInstance():SyncLoadAsset("uieff_n9_subject_level_name.mat", LoadType.Mat)
+  self._EMIMat1 = self._EMIMatResRequest1.Obj
+  local mat = self._testLevelNameLabel.fontMaterial
+  self._testLevelNameLabel.fontMaterial = self._EMIMat1
+  self._testLevelNameLabel.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  local mat = self._nameLabel.fontMaterial
+  self._nameLabel.fontMaterial = self._EMIMat1
+  self._nameLabel.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN9SubjectLevelItem:OnHide()
   self._EMIMatResRequest = nil
   self._EMIMat = nil
   self._EMIMatResRequest1 = nil
   self._EMIMat1 = nil
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelItem.Refresh = function(self, levelData)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN9SubjectLevelItem:Refresh(levelData)
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   self._levelData = levelData
   if self._levelData == nil then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
-  ;
-  (self._go):SetActive(true)
-  local levelType = (self._levelData):GetLevelType()
+  self._go:SetActive(true)
+  local levelType = self._levelData:GetLevelType()
   if levelType == 1 then
-    (self._normalLevel):SetActive(true)
-    ;
-    (self._testLevel):SetActive(false)
-    if (self._levelData):IsOpen() then
+    self._normalLevel:SetActive(true)
+    self._testLevel:SetActive(false)
+    if self._levelData:IsOpen() then
       self:RefreshNormalLevelStatus()
     else
       self:RefreshNormalLevelStatus()
-      self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_2_0 , upvalues : self
-    self:RefreshNormalLevelStatus()
-  end
-)
+      self._timerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+        self:RefreshNormalLevelStatus()
+      end)
+    end
+  elseif levelType == 2 then
+    self._normalLevel:SetActive(false)
+    self._testLevel:SetActive(true)
+    self._testLevelNameLabel:SetText(self._levelData:GetLevelName())
+    local levelStr = self._levelData:GetGradeLevelStr()
+    if levelStr and levelStr ~= "" then
+      self._testGradeGo:SetActive(true)
+      self._testGradeLabel:SetText(levelStr)
+    else
+      self._testGradeLabel:SetText("--")
     end
   else
-    if levelType == 2 then
-      (self._normalLevel):SetActive(false)
-      ;
-      (self._testLevel):SetActive(true)
-      ;
-      (self._testLevelNameLabel):SetText((self._levelData):GetLevelName())
-      local levelStr = (self._levelData):GetGradeLevelStr()
-      if levelStr and levelStr ~= "" then
-        (self._testGradeGo):SetActive(true)
-        ;
-        (self._testGradeLabel):SetText(levelStr)
-      else
-        ;
-        (self._testGradeLabel):SetText("--")
-      end
-    else
-      do
-        ;
-        (self._testGradeLabel):SetText("")
-      end
-    end
+    self._testGradeLabel:SetText("")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelItem.RefreshNormalLevelStatus = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self._levelData):IsOpen() then
+function UIN9SubjectLevelItem:RefreshNormalLevelStatus()
+  if self._levelData:IsOpen() then
     if self._timerHandler then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+      GameGlobal.Timer():CancelEvent(self._timerHandler)
       self._timerHandler = nil
     end
-    ;
-    (self._openPanel):SetActive(true)
-    ;
-    (self._unOpenPanel):SetActive(false)
-    ;
-    (self._nameLabel):SetText((self._levelData):GetLevelName())
+    self._openPanel:SetActive(true)
+    self._unOpenPanel:SetActive(false)
+    self._nameLabel:SetText(self._levelData:GetLevelName())
   else
-    ;
-    (self._openPanel):SetActive(false)
-    ;
-    (self._unOpenPanel):SetActive(true)
-    ;
-    (self._nameLabel):SetText((self._levelData):GetLevelName())
-    ;
-    (self._remainTimeLabel):SetText((self._levelData):GetOpenTimeStr())
+    self._openPanel:SetActive(false)
+    self._unOpenPanel:SetActive(true)
+    self._nameLabel:SetText(self._levelData:GetLevelName())
+    self._remainTimeLabel:SetText(self._levelData:GetOpenTimeStr())
   end
   self._processLoader = self:GetUIComponent("UISelectObjectPath", "Process")
-  ;
-  (self._processLoader):SpawnObjects("UIN9SubjectLevelProcess", (self._levelData):GetLevelGradCount())
-  local items = (self._processLoader):GetAllSpawnList()
+  self._processLoader:SpawnObjects("UIN9SubjectLevelProcess", self._levelData:GetLevelGradCount())
+  local items = self._processLoader:GetAllSpawnList()
   for i = 1, #items do
-    if i <= (self._levelData):GetCompleteGradeCount() then
-      (items[i]):Refresh(true)
+    if i <= self._levelData:GetCompleteGradeCount() then
+      items[i]:Refresh(true)
     else
-      ;
-      (items[i]):Refresh(false)
+      items[i]:Refresh(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelItem.BtnOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  if not (self._levelData):IsOpen() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_n9_level_unopen_tips", (self._levelData):GetOpenTimeStr()))
-    return 
+function UIN9SubjectLevelItem:BtnOnClick()
+  if not self._levelData:IsOpen() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_n9_level_unopen_tips", self._levelData:GetOpenTimeStr()))
+    return
   end
-  local levelType = (self._levelData):GetLevelType()
+  local levelType = self._levelData:GetLevelType()
   if levelType == 1 then
     self:ShowDialog("UIN9SubjectNormalDetailController", self._levelData)
-  else
-    if levelType == 2 then
-      self:ShowDialog("UIN9SubjectTestDetailController", self._levelData)
-    end
+  elseif levelType == 2 then
+    self:ShowDialog("UIN9SubjectTestDetailController", self._levelData)
   end
 end
-
-

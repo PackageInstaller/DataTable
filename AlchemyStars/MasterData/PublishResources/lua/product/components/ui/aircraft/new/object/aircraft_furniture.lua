@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_furniture.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftFurniture", Object)
 AircraftFurniture = AircraftFurniture
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftFurniture.Constructor = function(self, req, go, floor, area)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftFurniture:Constructor(req, go, floor, area)
   self._area = area
-  self._instanceID = (GridHelper.CreateFurnitureInstanceID)()
+  self._instanceID = GridHelper.CreateFurnitureInstanceID()
   self._pets = {}
   self._points = {}
   if req then
@@ -21,60 +14,47 @@ AircraftFurniture.Constructor = function(self, req, go, floor, area)
   go:SetActive(true)
   go.layer = AircraftLayer.Furniture
   self._transform = go.transform
-  local obs = (self._go):GetComponent(typeof((UnityEngine.AI).NavMeshObstacle))
+  local obs = self._go:GetComponent(typeof(UnityEngine.AI.NavMeshObstacle))
   if obs == nil then
-    AirLog("家具没有NavMeshObstacle组件：", (self._go).name)
+    AirLog("家具没有NavMeshObstacle组件：", self._go.name)
   else
     obs.carving = true
   end
   self._floor = floor
-  local grids = nil
-  for i = (self._transform).childCount - 1, 0, -1 do
-    local child = (self._transform):GetChild(i)
-    if (string.find)(child.name, "F_Grid=") then
+  local grids
+  for i = self._transform.childCount - 1, 0, -1 do
+    local child = self._transform:GetChild(i)
+    if string.find(child.name, "F_Grid=") then
       grids = child
       break
     end
   end
-  do
-    do
-      if grids then
-        local localPos = (grids.localPosition):Clone()
-        self._offset = Vector2(localPos.x / GridHelper.SIZE, localPos.z / GridHelper.SIZE)
-        -- DECOMPILER ERROR at PC86: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._offset).x = (GridHelper.ToFloat)((GridHelper.ToInt)((self._offset).x))
-        -- DECOMPILER ERROR at PC96: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._offset).y = (GridHelper.ToFloat)((GridHelper.ToInt)((self._offset).y))
-        self._gridAreaParent = grids
-      end
-      self:Init()
-      self._tileReleased = false
-    end
+  if grids then
+    local localPos = grids.localPosition:Clone()
+    self._offset = Vector2(localPos.x / GridHelper.SIZE, localPos.z / GridHelper.SIZE)
+    self._offset.x = GridHelper.ToFloat(GridHelper.ToInt(self._offset.x))
+    self._offset.y = GridHelper.ToFloat(GridHelper.ToInt(self._offset.y))
+    self._gridAreaParent = grids
   end
+  self:Init()
+  self._tileReleased = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._cfgID = tonumber((self._go).name)
-  local cfg = (Cfg.cfg_item_furniture)[self._cfgID]
+function AircraftFurniture:Init()
+  self._cfgID = tonumber(self._go.name)
+  local cfg = Cfg.cfg_item_furniture[self._cfgID]
   if cfg == nil then
-    (Log.exception)("[AircraftFurniture] 找不到家具配置：", self._cfgID)
+    Log.exception("[AircraftFurniture] 找不到家具配置：", self._cfgID)
   end
   self._type = cfg.AirFurnitureType
-  local model = ((self._go).transform):Find("model")
+  local model = self._go.transform:Find("model")
   self._hasModel = model.childCount > 0
-  self._effectSlot = ((self._go).transform):Find("EffectSlot")
+  self._effectSlot = self._go.transform:Find("EffectSlot")
   if self._hasModel then
-    self._furEffect = (model:GetChild(0)):Find("effect")
+    self._furEffect = model:GetChild(0):Find("effect")
     self._modelT = model
   end
-  self._animation = (model.gameObject):GetComponentInChildren(typeof(UnityEngine.Animation))
+  self._animation = model.gameObject:GetComponentInChildren(typeof(UnityEngine.Animation))
   if cfg.FurIdleAction then
     self._idleAnimName = cfg.FurIdleAction
     self:Anim_Play(cfg.FurIdleAction)
@@ -82,16 +62,13 @@ AircraftFurniture.Init = function(self)
   self._petDefaultActionCfg = cfg.DefaultAction
   if cfg.SpecialAction then
     self._petSpecialActionCfg = {}
-    for _,value in ipairs(cfg.SpecialAction) do
+    for _, value in ipairs(cfg.SpecialAction) do
       local petSkinID = value[1]
       local cfgID = value[2]
-      -- DECOMPILER ERROR at PC76: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self._petSpecialActionCfg)[petSkinID] = cfgID
+      self._petSpecialActionCfg[petSkinID] = cfgID
     end
   end
-  local pointsRootGo = (((self._go).transform):Find("pointsRoot")).gameObject
+  local pointsRootGo = self._go.transform:Find("pointsRoot").gameObject
   if pointsRootGo then
     local pointsRoot = pointsRootGo.transform
     local count = pointsRoot.childCount
@@ -102,10 +79,7 @@ AircraftFurniture.Init = function(self)
         local actionPoint = pointsRoot:GetChild(i)
         local idx = i + 1
         local aircraftFurniturePoint = AircraftFurniturePoint:New(idx, actionPoint)
-        -- DECOMPILER ERROR at PC110: Confused about usage of register: R13 in 'UnsetPending'
-
-        ;
-        (self._points)[idx] = aircraftFurniturePoint
+        self._points[idx] = aircraftFurniturePoint
       end
     end
   else
@@ -114,112 +88,85 @@ AircraftFurniture.Init = function(self)
   self._available = #self._points
   self._petOnCount = 0
   self._hasExtraAnim = cfg.HasExtraAnim
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function AircraftFurniture:Dispose()
   if self._req then
-    (self._req):Dispose()
+    self._req:Dispose()
   end
   if self._footReqs then
-    for _,req in ipairs(self._footReqs) do
+    for _, req in ipairs(self._footReqs) do
       req:Dispose()
     end
   end
-  do
-    if self._gridAreaReq then
-      (self._gridAreaReq):Dispose()
-    end
-    if not self._tileReleased then
-      self:OccupyTiles(false)
-    end
-    self._occupiedTiles = nil
-    if self._shaker then
-      (self._shaker):Kill()
-      self._shaker = nil
-    end
+  if self._gridAreaReq then
+    self._gridAreaReq:Dispose()
+  end
+  if not self._tileReleased then
+    self:OccupyTiles(false)
+  end
+  self._occupiedTiles = nil
+  if self._shaker then
+    self._shaker:Kill()
+    self._shaker = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.GetPets = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function AircraftFurniture:GetPets()
   local ids = {}
-  for id,_ in pairs(self._pets) do
+  for id, _ in pairs(self._pets) do
     ids[#ids + 1] = id
   end
   return ids
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.PopPoint = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function AircraftFurniture:PopPoint()
   if self._available <= 0 then
-    (Log.fatal)("[AircraftFurniture] no point")
-    return 
+    Log.fatal("[AircraftFurniture] no point")
+    return
   end
-  local target = (math.random)(1, self._available)
+  local target = math.random(1, self._available)
   local i = 1
-  for idx,point in ipairs(self._points) do
-    -- DECOMPILER ERROR at PC26: Unhandled construct in 'MakeBoolean' P1
-
-    if not point:IsOccupied() and i == target then
-      self._available = self._available - 1
-      point:Occupy()
-      return point
+  for idx, point in ipairs(self._points) do
+    if not point:IsOccupied() then
+      if i == target then
+        self._available = self._available - 1
+        point:Occupy()
+        return point
+      end
+      i = i + 1
     end
-    i = i + 1
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.ReleasePoint = function(self, point)
-  -- function num : 0_5 , upvalues : _ENV
-  if not (table.icontains)(self._points, point) then
-    (Log.fatal)("[AircraftFurniture] 当前家具不包含该点")
+function AircraftFurniture:ReleasePoint(point)
+  if not table.icontains(self._points, point) then
+    Log.fatal("[AircraftFurniture] 当前家具不包含该点")
   end
   point:Release()
   self._available = self._available + 1
-  if #self._points < self._available then
-    (Log.exception)("家具点数量错误，", self._cfgID, "数量：", self._available)
+  if self._available > #self._points then
+    Log.exception("家具点数量错误，", self._cfgID, "数量：", self._available)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.OccupyPointByIndex = function(self, idx)
-  -- function num : 0_6
-  local point = (self._points)[idx]
+function AircraftFurniture:OccupyPointByIndex(idx)
+  local point = self._points[idx]
   self._available = self._available - 1
   point:Occupy()
   return point
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.IsPointOccupied = function(self, idx)
-  -- function num : 0_7
-  return ((self._points)[idx]):IsOccupied()
+function AircraftFurniture:IsPointOccupied(idx)
+  return self._points[idx]:IsOccupied()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.AvailableCount = function(self)
-  -- function num : 0_8
+function AircraftFurniture:AvailableCount()
   return self._available
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.PopPointByName = function(self, name)
-  -- function num : 0_9 , upvalues : _ENV
-  for _,point in ipairs(self._points) do
+function AircraftFurniture:PopPointByName(name)
+  for _, point in ipairs(self._points) do
     if point:Name() == name and not point:IsOccupied() then
       self._available = self._available - 1
       point:Occupy()
@@ -228,33 +175,24 @@ AircraftFurniture.PopPointByName = function(self, name)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.GetPointByName = function(self, name)
-  -- function num : 0_10 , upvalues : _ENV
-  for _,point in ipairs(self._points) do
+function AircraftFurniture:GetPointByName(name)
+  for _, point in ipairs(self._points) do
     if point:Name() == name and not point:IsOccupied() then
       return point
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.HasAvailablePoint = function(self, name)
-  -- function num : 0_11 , upvalues : _ENV
-  for _,point in ipairs(self._points) do
+function AircraftFurniture:HasAvailablePoint(name)
+  for _, point in ipairs(self._points) do
     if point:Name() == name and not point:IsOccupied() then
       return true
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.OccupyAllPoint = function(self, occupy)
-  -- function num : 0_12 , upvalues : _ENV
-  for _,point in ipairs(self._points) do
+function AircraftFurniture:OccupyAllPoint(occupy)
+  for _, point in ipairs(self._points) do
     if occupy then
       point:Occupy()
     else
@@ -268,97 +206,58 @@ AircraftFurniture.OccupyAllPoint = function(self, occupy)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.HasPoint = function(self, idx)
-  -- function num : 0_13
-  do return (self._points)[idx] ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftFurniture:HasPoint(idx)
+  return self._points[idx] ~= nil
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.Floor = function(self)
-  -- function num : 0_14
+function AircraftFurniture:Floor()
   return self._floor
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.Type = function(self)
-  -- function num : 0_15
+function AircraftFurniture:Type()
   return self._type
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.Area = function(self)
-  -- function num : 0_16
+function AircraftFurniture:Area()
   return self._area
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.CfgID = function(self)
-  -- function num : 0_17
+function AircraftFurniture:CfgID()
   return self._cfgID
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.ID = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  (Log.exception)("家具的ID接口已删除，请使用CfgID()获取家具的配置ID。", (debug.traceback)())
+function AircraftFurniture:ID()
+  Log.exception("家具的ID接口已删除，请使用CfgID()获取家具的配置ID。", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.InstanceID = function(self)
-  -- function num : 0_19
+function AircraftFurniture:InstanceID()
   return self._instanceID
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.MatchKey = function(self, key)
-  -- function num : 0_20
-  do return key == self:GetPstKey() end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftFurniture:MatchKey(key)
+  return key == self:GetPstKey()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.GetPstKey = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function AircraftFurniture:GetPstKey()
   if self._svrData then
-    return (string.format)("%s|%s|%s|%s|%s", (self._svrData).asset_id, (self._svrData).area_id, (self._svrData).surface, (self._svrData).pos_x, (self._svrData).pos_z)
+    return string.format("%s|%s|%s|%s|%s", self._svrData.asset_id, self._svrData.area_id, self._svrData.surface, self._svrData.pos_x, self._svrData.pos_z)
   else
-    return (string.format)("%s|%s", self._cfgID, self._area)
+    return string.format("%s|%s", self._cfgID, self._area)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.EffectSlot = function(self)
-  -- function num : 0_22
+function AircraftFurniture:EffectSlot()
   return self._effectSlot
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.IsEmpty = function(self)
-  -- function num : 0_23
-  do return #self._points <= self._available end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftFurniture:IsEmpty()
+  return self._available >= #self._points
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.GetPetActionCfg = function(self, skinID)
-  -- function num : 0_24
-  local cfg = nil
+function AircraftFurniture:GetPetActionCfg(skinID)
+  local cfg
   if self._petSpecialActionCfg then
-    cfg = (self._petSpecialActionCfg)[skinID]
+    cfg = self._petSpecialActionCfg[skinID]
   end
   if cfg == nil then
     cfg = self._petDefaultActionCfg
@@ -366,303 +265,193 @@ AircraftFurniture.GetPetActionCfg = function(self, skinID)
   return cfg
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.OnPetArrive = function(self, pet)
-  -- function num : 0_25
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._pets)[pet:TemplateID()] = true
+function AircraftFurniture:OnPetArrive(pet)
+  self._pets[pet:TemplateID()] = true
   self._petOnCount = self._petOnCount + 1
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.OnPetLeave = function(self, pet)
-  -- function num : 0_26 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._pets)[pet:TemplateID()] then
-    (self._pets)[pet:TemplateID()] = nil
+function AircraftFurniture:OnPetLeave(pet)
+  if self._pets[pet:TemplateID()] then
+    self._pets[pet:TemplateID()] = nil
     self._petOnCount = self._petOnCount - 1
   else
-    ;
-    (Log.exception)("[AircraftFurniture] 星灵不在家具上，无法离开。星灵id：", pet:TemplateID(), ", 家具id：", self._cfgID, (debug.traceback)())
+    Log.exception("[AircraftFurniture] 星灵不在家具上，无法离开。星灵id：", pet:TemplateID(), ", 家具id：", self._cfgID, debug.traceback())
   end
-  if self._petOnCount <= 0 or self._idleAnimName then
+  if self._petOnCount > 0 then
+  elseif self._idleAnimName then
     self:Anim_Play(self._idleAnimName)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.Anim_Play = function(self, name)
-  -- function num : 0_27 , upvalues : _ENV
+function AircraftFurniture:Anim_Play(name)
   if not self._animation then
-    (Log.exception)("[AircraftFurniture] 找不到Animation不能播放，家具id：", self._cfgID, (debug.traceback)())
+    Log.exception("[AircraftFurniture] 找不到Animation不能播放，家具id：", self._cfgID, debug.traceback())
   end
-  ;
-  (self._animation):Play(name)
+  self._animation:Play(name)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.Anim_Stop = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function AircraftFurniture:Anim_Stop()
   if self._animation then
-    if (self._animation).isPlaying then
-      local clips = (HelperProxy:GetInstance()):GetAllAnimationClip(self._animation)
+    if self._animation.isPlaying then
+      local clips = HelperProxy:GetInstance():GetAllAnimationClip(self._animation)
       for i = 0, clips.Length - 1 do
         local clip = clips[i]
-        if (self._animation):IsPlaying(clip.name) then
-          local state = (self._animation):get_Item(clip.name)
+        if self._animation:IsPlaying(clip.name) then
+          local state = self._animation:get_Item(clip.name)
           state.time = 0
           state.enabled = true
           state.weight = 1
-          ;
-          (self._animation):Sample()
+          self._animation:Sample()
           state.enabled = false
           break
         end
       end
     end
-    do
-      ;
-      (self._animation):Stop()
-    end
+    self._animation:Stop()
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.Animation = function(self)
-  -- function num : 0_29
+function AircraftFurniture:Animation()
   return self._animation
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.Transform = function(self)
-  -- function num : 0_30
+function AircraftFurniture:Transform()
   return self._transform
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.HasModel = function(self)
-  -- function num : 0_31
+function AircraftFurniture:HasModel()
   return self._hasModel
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.SetEffectActive = function(self, active)
-  -- function num : 0_32
+function AircraftFurniture:SetEffectActive(active)
   if self._effectSlot then
-    ((self._effectSlot).gameObject):SetActive(active)
+    self._effectSlot.gameObject:SetActive(active)
   end
   if self._furEffect then
-    ((self._furEffect).gameObject):SetActive(active)
+    self._furEffect.gameObject:SetActive(active)
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.SetDecorateData = function(self, data, newAdder, worldPos, worldRot)
-  -- function num : 0_33 , upvalues : _ENV
+function AircraftFurniture:SetDecorateData(data, newAdder, worldPos, worldRot)
   self._svrData = data
-  self._gridPosition = Vector2((GridHelper.ToFloat)(data.pos_x), (GridHelper.ToFloat)(data.pos_z))
+  self._gridPosition = Vector2(GridHelper.ToFloat(data.pos_x), GridHelper.ToFloat(data.pos_z))
   self._rotY = data.rot
   self._surfaceID = data.surface
-  local cfg = (Cfg.cfg_item_furniture)[self._cfgID]
+  local cfg = Cfg.cfg_item_furniture[self._cfgID]
   if cfg == nil then
-    (Log.exception)("找不到家具配置：", self._cfgID)
+    Log.exception("找不到家具配置：", self._cfgID)
   end
   self._layer = cfg.Layer
   self._locationType = cfg.LocateType
   self._oprateType = cfg.OprateType
-  self._size = Vector2((cfg.Size)[1], (cfg.Size)[2])
+  self._size = Vector2(cfg.Size[1], cfg.Size[2])
   self._ambient = cfg.Atmosphere
   self:SetPosition(worldPos)
   self:SetRotation(worldRot)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.SurfaceID = function(self)
-  -- function num : 0_34
+function AircraftFurniture:SurfaceID()
   return self._surfaceID
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.GridPosition = function(self)
-  -- function num : 0_35
+function AircraftFurniture:GridPosition()
   return self._gridPosition
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.GridRotY = function(self)
-  -- function num : 0_36
+function AircraftFurniture:GridRotY()
   return self._rotY
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.Size = function(self)
-  -- function num : 0_37
+function AircraftFurniture:Size()
   return self._size
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.Ambient = function(self)
-  -- function num : 0_38
+function AircraftFurniture:Ambient()
   return self._ambient
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.Offset = function(self)
-  -- function num : 0_39
+function AircraftFurniture:Offset()
   return self._offset
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.WorldPosition = function(self)
-  -- function num : 0_40
+function AircraftFurniture:WorldPosition()
   return self._worldPosition
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.WorldRotation = function(self)
-  -- function num : 0_41
+function AircraftFurniture:WorldRotation()
   return self._worldRotation
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.SetPosition = function(self, p)
-  -- function num : 0_42
+function AircraftFurniture:SetPosition(p)
   self._worldPosition = p
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._transform).position = p:Clone()
+  self._transform.position = p:Clone()
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.SetRotation = function(self, r)
-  -- function num : 0_43
+function AircraftFurniture:SetRotation(r)
   self._worldRotation = r
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._transform).rotation = r:Clone()
+  self._transform.rotation = r:Clone()
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.Layer = function(self)
-  -- function num : 0_44
+function AircraftFurniture:Layer()
   return self._layer
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.LocationType = function(self)
-  -- function num : 0_45
+function AircraftFurniture:LocationType()
   return self._locationType
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.OprateType = function(self)
-  -- function num : 0_46
+function AircraftFurniture:OprateType()
   return self._oprateType
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.IsThisGO = function(self, go)
-  -- function num : 0_47
-  do return self._go == go end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftFurniture:IsThisGO(go)
+  return self._go == go
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.SetActive = function(self, active)
-  -- function num : 0_48
-  (self._go):SetActive(active)
+function AircraftFurniture:SetActive(active)
+  self._go:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.GetSvrData = function(self)
-  -- function num : 0_49
+function AircraftFurniture:GetSvrData()
   return self._svrData
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture._showFootprint = function(self, show)
-  -- function num : 0_50 , upvalues : _ENV
+function AircraftFurniture:_showFootprint(show)
   if show then
     if self._footprints then
-      for _,go in ipairs(self._footprints) do
+      for _, go in ipairs(self._footprints) do
         go:SetActive(true)
       end
-    else
-      do
-        if self._points and #self._points > 0 then
-          self._footReqs = {}
-          self._footprints = {}
-          for i,point in ipairs(self._points) do
-            local target = point:Target()
-            local req = (ResourceManager:GetInstance()):SyncLoadAsset("AircraftFootprint.prefab", LoadType.GameObject)
-            -- DECOMPILER ERROR at PC41: Confused about usage of register: R9 in 'UnsetPending'
-
-            ;
-            (self._footReqs)[i] = req
-            local t = (req.Obj).transform
-            t:SetParent(target)
-            t.localPosition = Vector3.zero
-            t.localRotation = Quaternion.identity
-            local go = req.Obj
-            go:SetActive(true)
-            -- DECOMPILER ERROR at PC58: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            (self._footprints)[i] = go
-          end
-        end
-        do
-          if self._footprints then
-            for _,go in ipairs(self._footprints) do
-              go:SetActive(false)
-            end
-          end
-        end
+    elseif self._points and #self._points > 0 then
+      self._footReqs = {}
+      self._footprints = {}
+      for i, point in ipairs(self._points) do
+        local target = point:Target()
+        local req = ResourceManager:GetInstance():SyncLoadAsset("AircraftFootprint.prefab", LoadType.GameObject)
+        self._footReqs[i] = req
+        local t = req.Obj.transform
+        t:SetParent(target)
+        t.localPosition = Vector3.zero
+        t.localRotation = Quaternion.identity
+        local go = req.Obj
+        go:SetActive(true)
+        self._footprints[i] = go
       end
+    end
+  elseif self._footprints then
+    for _, go in ipairs(self._footprints) do
+      go:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture._showGridArea = function(self, show, pickUp)
-  -- function num : 0_51 , upvalues : _ENV
+function AircraftFurniture:_showGridArea(show, pickUp)
   if show then
     if self._gridAreaParent == nil then
-      (Log.exception)("家具没有FGrid节点:", self._cfgID)
+      Log.exception("家具没有FGrid节点:", self._cfgID)
     end
     if not self._areaGridImage then
-      local req = (ResourceManager:GetInstance()):SyncLoadAsset("AircraftFurnitureArea.prefab", LoadType.GameObject)
+      local req = ResourceManager:GetInstance():SyncLoadAsset("AircraftFurnitureArea.prefab", LoadType.GameObject)
       self._gridAreaReq = req
       local go = req.Obj
       local t = go.transform
@@ -674,102 +463,60 @@ AircraftFurniture._showGridArea = function(self, show, pickUp)
       local uiview = go:GetComponent(typeof(UIView))
       local image = uiview:GetUIComponent("Image", "Image")
       local rect = uiview:GetUIComponent("RectTransform", "Image")
-      rect.sizeDelta = Vector2((self._size).x / 0.006 * GridHelper.SIZE, (self._size).y / 0.006 * GridHelper.SIZE)
+      rect.sizeDelta = Vector2(self._size.x / 0.006 * GridHelper.SIZE, self._size.y / 0.006 * GridHelper.SIZE)
       self._areaGridImage = image
       trans = t
     end
-    do
-      ;
-      (self._areaGridCanvas):SetActive(true)
-      -- DECOMPILER ERROR at PC89: Confused about usage of register: R3 in 'UnsetPending'
-
-      if pickUp then
-        ((self._areaGridCanvas).transform).localPosition = Vector3(0, -GridHelper.PICKUPHEIGHT + 0.05, 0)
-      else
-        -- DECOMPILER ERROR at PC98: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        ((self._areaGridCanvas).transform).localPosition = Vector3(0, 0.05, 0)
-      end
-      if self._areaGridCanvas then
-        (self._areaGridCanvas):SetActive(false)
-      end
+    self._areaGridCanvas:SetActive(true)
+    if pickUp then
+      self._areaGridCanvas.transform.localPosition = Vector3(0, -GridHelper.PICKUPHEIGHT + 0.05, 0)
+    else
+      self._areaGridCanvas.transform.localPosition = Vector3(0, 0.05, 0)
     end
+  elseif self._areaGridCanvas then
+    self._areaGridCanvas:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.ShowAreaAndFootprint = function(self, show, isPickUp)
-  -- function num : 0_52
+function AircraftFurniture:ShowAreaAndFootprint(show, isPickUp)
   self:_showGridArea(show, isPickUp)
   self:_showFootprint(show)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.ShowOutline = function(self)
-  -- function num : 0_53 , upvalues : _ENV
+function AircraftFurniture:ShowOutline()
   if self._outline == nil then
-    self._outline = ((self._modelT).gameObject):AddComponent(typeof(OutlineComponent))
+    self._outline = self._modelT.gameObject:AddComponent(typeof(OutlineComponent))
   end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._outline).enabled = true
+  self._outline.enabled = true
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.SetOutlineColor = function(self, color)
-  -- function num : 0_54
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
+function AircraftFurniture:SetOutlineColor(color)
   if self._outline then
-    (self._outline).outlinColor = color
+    self._outline.outlinColor = color
   end
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.HideOutline = function(self)
-  -- function num : 0_55
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
+function AircraftFurniture:HideOutline()
   if self._outline then
-    (self._outline).enabled = false
+    self._outline.enabled = false
   end
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.SetAreaGridValid = function(self, valid)
-  -- function num : 0_56 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
+function AircraftFurniture:SetAreaGridValid(valid)
   if valid then
-    (self._areaGridImage).color = Color(0.019607843137255, 0.93725490196078, 0.94117647058824)
+    self._areaGridImage.color = Color(0.0196078431372549, 0.9372549019607843, 0.9411764705882353)
   else
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._areaGridImage).color = Color(0.99607843137255, 0.21960784313725, 0.21960784313725)
+    self._areaGridImage.color = Color(0.996078431372549, 0.2196078431372549, 0.2196078431372549)
   end
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.SetTiles = function(self, tiles)
-  -- function num : 0_57
+function AircraftFurniture:SetTiles(tiles)
   self._occupiedTiles = tiles
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.OccupyTiles = function(self, occupy)
-  -- function num : 0_58 , upvalues : _ENV
+function AircraftFurniture:OccupyTiles(occupy)
   if self._occupiedTiles then
-    for _,tile in ipairs(self._occupiedTiles) do
+    for _, tile in ipairs(self._occupiedTiles) do
       if occupy then
         tile:Occupy(self._layer, self._instanceID)
       else
@@ -780,64 +527,48 @@ AircraftFurniture.OccupyTiles = function(self, occupy)
   end
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.DoShake = function(self, onFinish)
-  -- function num : 0_59
-  local offset = (self._transform).right * 0.5
+function AircraftFurniture:DoShake(onFinish)
+  local offset = self._transform.right * 0.5
   if self._hasModel then
-    self._shaker = ((self._modelT):DOShakePosition(0.3, offset, 50, 90, false)):OnComplete(function()
-    -- function num : 0_59_0 , upvalues : self, onFinish
-    self._shaker = nil
-    if onFinish then
-      onFinish()
-    end
-  end
-)
+    self._shaker = self._modelT:DOShakePosition(0.3, offset, 50, 90, false):OnComplete(function()
+      self._shaker = nil
+      if onFinish then
+        onFinish()
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.HasExtraAnim = function(self)
-  -- function num : 0_60
+function AircraftFurniture:HasExtraAnim()
   return self._hasExtraAnim
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniture.Default = function()
-  -- function num : 0_61 , upvalues : _ENV
+function AircraftFurniture.Default()
   local f = {}
-  f.GridPosition = function()
-    -- function num : 0_61_0 , upvalues : _ENV
+  
+  function f.GridPosition()
     return Vector2(2, 2)
   end
-
-  f.GridRotation = function()
-    -- function num : 0_61_1
+  
+  function f.GridRotation()
     return 30
   end
-
-  f.Size = function()
-    -- function num : 0_61_2 , upvalues : _ENV
+  
+  function f.Size()
     return Vector2(2, 2)
   end
-
-  f.Offset = function()
-    -- function num : 0_61_3 , upvalues : _ENV
+  
+  function f.Offset()
     return Vector3(-1, -1)
   end
-
+  
   return f
 end
 
 _class("AircraftFurniturePoint", Object)
 AircraftFurniturePoint = AircraftFurniturePoint
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftFurniturePoint.Constructor = function(self, idx, point)
-  -- function num : 0_62
+function AircraftFurniturePoint:Constructor(idx, point)
   self._idx = idx
   self._occupied = false
   self._name = point.name
@@ -845,66 +576,40 @@ AircraftFurniturePoint.Constructor = function(self, idx, point)
   self._targetPoint = point:GetChild(0)
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniturePoint.MovePoint = function(self)
-  -- function num : 0_63
-  return (self._targetPoint).position
+function AircraftFurniturePoint:MovePoint()
+  return self._targetPoint.position
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniturePoint.Target = function(self)
-  -- function num : 0_64
+function AircraftFurniturePoint:Target()
   return self._targetPoint
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniturePoint.InteractionPoint = function(self)
-  -- function num : 0_65
-  return (self._actionPoint).position, (self._actionPoint).rotation
+function AircraftFurniturePoint:InteractionPoint()
+  return self._actionPoint.position, self._actionPoint.rotation
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniturePoint.IsOccupied = function(self)
-  -- function num : 0_66
+function AircraftFurniturePoint:IsOccupied()
   return self._occupied
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniturePoint.Occupy = function(self)
-  -- function num : 0_67 , upvalues : _ENV
+function AircraftFurniturePoint:Occupy()
   if self._occupied then
-    (Log.exception)("[AircraftFurniture] 当前点已被占据")
+    Log.exception("[AircraftFurniture] 当前点已被占据")
   end
   self._occupied = true
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniturePoint.Release = function(self)
-  -- function num : 0_68 , upvalues : _ENV
+function AircraftFurniturePoint:Release()
   if not self._occupied then
-    (Log.exception)("[AircraftFurniture] 当前点未被占据，不用释放", (debug.traceback)())
+    Log.exception("[AircraftFurniture] 当前点未被占据，不用释放", debug.traceback())
   end
   self._occupied = false
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniturePoint.Index = function(self)
-  -- function num : 0_69
+function AircraftFurniturePoint:Index()
   return self._idx
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurniturePoint.Name = function(self)
-  -- function num : 0_70
+function AircraftFurniturePoint:Name()
   return self._name
 end
-
-

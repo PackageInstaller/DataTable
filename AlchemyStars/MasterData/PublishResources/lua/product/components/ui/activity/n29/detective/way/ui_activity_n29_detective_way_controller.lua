@@ -1,38 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/way/ui_activity_n29_detective_way_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN29DetectiveWayController", UIController)
 UIActivityN29DetectiveWayController = UIActivityN29DetectiveWayController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN29DetectiveWayController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIActivityN29DetectiveWayController:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveWayController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityN29DetectiveWayController:OnShow(uiParams)
   self._point = uiParams[1]
-  self._cfg = (self._point):GetCfg()
+  self._cfg = self._point:GetCfg()
   self._curStage = uiParams[2]
   self._psdId = uiParams[3]
   self:_GetComponent()
   self:InitInfo()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveWayController.OnHide = function(self)
-  -- function num : 0_2
+function UIActivityN29DetectiveWayController:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveWayController._GetComponent = function(self)
-  -- function num : 0_3
+function UIActivityN29DetectiveWayController:_GetComponent()
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._info = self:GetUIComponent("UILocalizationText", "info")
@@ -40,88 +24,59 @@ UIActivityN29DetectiveWayController._GetComponent = function(self)
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveWayController.InitInfo = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self._point):GetIsLockStatue() then
-    (self._icon):LoadImage("n29_dt_dd01")
-    ;
-    (self._name):SetText((StringTable.Get)((self._cfg).HideName))
-    ;
-    (self._info):SetText((StringTable.Get)((self._cfg).LockInfo))
-    if (self._cfg).Type == 1 then
-      (self._enterBtnTxt):SetText((StringTable.Get)("str_n29_detective_way_btn_noenter"))
+function UIActivityN29DetectiveWayController:InitInfo()
+  if self._point:GetIsLockStatue() then
+    self._icon:LoadImage("n29_dt_dd01")
+    self._name:SetText(StringTable.Get(self._cfg.HideName))
+    self._info:SetText(StringTable.Get(self._cfg.LockInfo))
+    if self._cfg.Type == 1 then
+      self._enterBtnTxt:SetText(StringTable.Get("str_n29_detective_way_btn_noenter"))
     else
-      ;
-      (self._enterBtnTxt):SetText((StringTable.Get)("str_n29_detective_role_btn_noenter"))
+      self._enterBtnTxt:SetText(StringTable.Get("str_n29_detective_role_btn_noenter"))
     end
   else
-    ;
-    (self._icon):LoadImage((self._cfg).Pic)
-    ;
-    (self._name):SetText((StringTable.Get)((self._cfg).ShowName))
-    ;
-    (self._info):SetText((StringTable.Get)((self._cfg).Info))
-    if (self._cfg).Type == 1 then
-      (self._enterBtnTxt):SetText((StringTable.Get)("str_n29_detective_way_btn_enter"))
+    self._icon:LoadImage(self._cfg.Pic)
+    self._name:SetText(StringTable.Get(self._cfg.ShowName))
+    self._info:SetText(StringTable.Get(self._cfg.Info))
+    if self._cfg.Type == 1 then
+      self._enterBtnTxt:SetText(StringTable.Get("str_n29_detective_way_btn_enter"))
     else
-      ;
-      (self._enterBtnTxt):SetText((StringTable.Get)("str_n29_detective_role_btn_enter"))
+      self._enterBtnTxt:SetText(StringTable.Get("str_n29_detective_role_btn_enter"))
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveWayController.MaskOnClick = function(self)
-  -- function num : 0_5
+function UIActivityN29DetectiveWayController:MaskOnClick()
   self:StartTask(self._Close, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveWayController._Close = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._anim):Play("uieff_UIN29DetectiveWayController_out")
+function UIActivityN29DetectiveWayController:_Close(TT)
+  self._anim:Play("uieff_UIN29DetectiveWayController_out")
   YIELD(TT, 300)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveWayController.EnterBtnOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  if (self._point):GetIsLockStatue() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n29_detective_spot_lock"))
-    return 
+function UIActivityN29DetectiveWayController:EnterBtnOnClick()
+  if self._point:GetIsLockStatue() then
+    ToastManager.ShowToast(StringTable.Get("str_n29_detective_spot_lock"))
+    return
   end
-  local cfg_waypoint = (Cfg.cfg_component_detective_waypoint)[(self._cfg).ID]
+  local cfg_waypoint = Cfg.cfg_component_detective_waypoint[self._cfg.ID]
   local firstStory = cfg_waypoint.FirstStory
-  if (UIN29DetectiveHelper.CheckOpenIdKey)(self._psdId, "UIN29DetectivePlayFirstStory" .. (self._cfg).ID) then
+  if UIN29DetectiveHelper.CheckOpenIdKey(self._psdId, "UIN29DetectivePlayFirstStory" .. self._cfg.ID) then
     self:_StoryEnd()
   else
-    ;
-    (UIN29DetectiveHelper.SetOpenIdKey)(self._psdId, "UIN29DetectivePlayFirstStory" .. (self._cfg).ID)
+    UIN29DetectiveHelper.SetOpenIdKey(self._psdId, "UIN29DetectivePlayFirstStory" .. self._cfg.ID)
     UIActivityN29DetectiveWayController:ShowDialog("UIStoryController", firstStory, function()
-    -- function num : 0_7_0 , upvalues : self
-    self:_StoryEnd()
-  end
-, self)
+      self:_StoryEnd()
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveWayController._StoryEnd = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  if (self._cfg).Type == 1 then
-    self:SwitchState(UIStateType.UIN29DetectiveSuspectController, (self._cfg).ID, self._curStage)
-  else
-    if (self._cfg).Type == 2 then
-      self:SwitchState(UIStateType.UIN29DetectivePersonController, (self._cfg).ID, self._curStage)
-    end
+function UIActivityN29DetectiveWayController:_StoryEnd()
+  if self._cfg.Type == 1 then
+    self:SwitchState(UIStateType.UIN29DetectiveSuspectController, self._cfg.ID, self._curStage)
+  elseif self._cfg.Type == 2 then
+    self:SwitchState(UIStateType.UIN29DetectivePersonController, self._cfg.ID, self._curStage)
   end
 end
-
-

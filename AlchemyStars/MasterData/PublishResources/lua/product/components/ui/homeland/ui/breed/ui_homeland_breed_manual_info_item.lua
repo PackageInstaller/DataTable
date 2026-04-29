@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/breed/ui_homeland_breed_manual_info_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBreedManualInfoItem", UICustomWidget)
 UIHomelandBreedManualInfoItem = UIHomelandBreedManualInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBreedManualInfoItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIHomelandBreedManualInfoItem:Constructor()
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
+  self._itemModule = GameGlobal.GetModule(ItemModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManualInfoItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandBreedManualInfoItem:OnShow(uiParams)
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManualInfoItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandBreedManualInfoItem:_GetComponents()
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._item = self:GetUIComponent("UISelectObjectPath", "Item")
   self._possess = self:GetUIComponent("UILocalizationText", "Possess")
@@ -33,67 +20,48 @@ UIHomelandBreedManualInfoItem._GetComponents = function(self)
   self._line = self:GetGameObject("Line")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManualInfoItem._OnValue = function(self)
-  -- function num : 0_3
-  self._itemWidget = (self._item):SpawnObject("UIHomelandBreedItem")
+function UIHomelandBreedManualInfoItem:_OnValue()
+  self._itemWidget = self._item:SpawnObject("UIHomelandBreedItem")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManualInfoItem.SetData = function(self, data)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandBreedManualInfoItem:SetData(data)
   self._data = data
-  local cfg = (Cfg.cfg_item)[(self._data).ID]
-  local cfgTree = (Cfg.cfg_item_tree_attribute)[(self._data).ID]
-  ;
-  (self._name):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self._itemWidget):SetData(cfg, Vector2(345, 345), Vector2(325, 325))
-  local count = (self._itemModule):GetItemCount((self._data).ID)
+  local cfg = Cfg.cfg_item[self._data.ID]
+  local cfgTree = Cfg.cfg_item_tree_attribute[self._data.ID]
+  self._name:SetText(StringTable.Get(cfg.Name))
+  self._itemWidget:SetData(cfg, Vector2(345, 345), Vector2(325, 325))
+  local count = self._itemModule:GetItemCount(self._data.ID)
   local str = ""
-  if count > 0 then
-    str = (StringTable.Get)("str_homeland_breed_tree_count", count)
+  if 0 < count then
+    str = StringTable.Get("str_homeland_breed_tree_count", count)
   else
-    str = (StringTable.Get)("str_homeland_not_got")
+    str = StringTable.Get("str_homeland_not_got")
   end
-  ;
-  (self._possess):SetText(str)
-  ;
-  (self._description):SetText((StringTable.Get)(cfgTree.Description))
-  local settings = (self._description):GetGenerationSettings((((self._description).rectTransform).rect).size)
-  local textGenerator = (self._description).cachedTextGenerator
+  self._possess:SetText(str)
+  self._description:SetText(StringTable.Get(cfgTree.Description))
+  local settings = self._description:GetGenerationSettings(self._description.rectTransform.rect.size)
+  local textGenerator = self._description.cachedTextGenerator
   textGenerator:Invalidate()
-  textGenerator:Populate((self._description).text, settings)
-  ;
-  ((UnityEngine.Canvas).ForceUpdateCanvases)()
+  textGenerator:Populate(self._description.text, settings)
+  UnityEngine.Canvas.ForceUpdateCanvases()
   if textGenerator.lineCount > 1 then
     for i = 1, textGenerator.lineCount - 1 do
-      local line = ((UnityEngine.GameObject).Instantiate)(self._line, (self._descriptionObj).transform)
+      local line = UnityEngine.GameObject.Instantiate(self._line, self._descriptionObj.transform)
       line:SetActive(true)
-      -- DECOMPILER ERROR at PC106: Confused about usage of register: R13 in 'UnsetPending'
-
-      ;
-      (line.transform).localPosition = Vector3(0, -45 - 52 * i, 0)
+      line.transform.localPosition = Vector3(0, -45 - 52 * i, 0)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManualInfoItem._Got = function(self, id)
-  -- function num : 0_5 , upvalues : _ENV
-  local ids = (((self._homelandModule):GetHomelandInfo()).cultivation_info).already_cultivation_list
-  if not ids or (table.count)(ids) <= 0 then
+function UIHomelandBreedManualInfoItem:_Got(id)
+  local ids = self._homelandModule:GetHomelandInfo().cultivation_info.already_cultivation_list
+  if not ids or table.count(ids) <= 0 then
     return false
   end
-  for _,_id in pairs(ids) do
+  for _, _id in pairs(ids) do
     if _id == id then
       return true
     end
   end
   return false
 end
-
-

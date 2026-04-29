@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_check_can_across_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCheckCanAcrossTeam", AINewNode)
 ActionCheckCanAcrossTeam = ActionCheckCanAcrossTeam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckCanAcrossTeam.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionCheckCanAcrossTeam:OnUpdate()
   local entityCaster = self.m_entityOwn
   local aiComponent = entityCaster:AI()
-  if aiComponent == nil then
+  if nil == aiComponent then
     return false
   end
   local selfPos = entityCaster:GetGridPosition()
@@ -20,12 +13,10 @@ ActionCheckCanAcrossTeam.OnUpdate = function(self)
   local targetPos = entityPlayer:GetGridPosition()
   local dir = targetPos - selfPos
   local checkPos = targetPos + dir
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   if not boardServiceLogic:IsPosBlock(checkPos, BlockFlag.MonsterLand) then
     return AINewNodeStatus.Success
   else
     return AINewNodeStatus.Failure
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/luckland_entity_mng.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LLEntityMng", Object)
 LLEntityMng = LLEntityMng
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LLEntityMng.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function LLEntityMng:Constructor()
   self._fightPetList = {}
   self._fightPetEnterList = {}
   self._fightMonsterList = {}
@@ -17,24 +10,12 @@ LLEntityMng.Constructor = function(self)
   self._monsterList = {}
   self._entityCreationIndex = 1
   self._entityCreationDic = {}
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._entityCreationDic)[LuckLandEntityType.Pet] = LLEntityPet
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._entityCreationDic)[LuckLandEntityType.Monster] = LLEntityMonster
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._entityCreationDic)[LuckLandEntityType.Building] = LLEntityBuilding
+  self._entityCreationDic[LuckLandEntityType.Pet] = LLEntityPet
+  self._entityCreationDic[LuckLandEntityType.Monster] = LLEntityMonster
+  self._entityCreationDic[LuckLandEntityType.Building] = LLEntityBuilding
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.Dispose = function(self)
-  -- function num : 0_1
+function LLEntityMng:Dispose()
   self._fightPetList = {}
   self._fightPetEnterList = {}
   self._fightMonsterList = {}
@@ -45,30 +26,25 @@ LLEntityMng.Dispose = function(self)
   self._entityCreationDic = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.Init = function(self, gameModule)
-  -- function num : 0_2 , upvalues : _ENV
+function LLEntityMng:Init(gameModule)
   self._gameModule = gameModule
-  self._triggerMng = (self._gameModule):GetTriggerMng()
+  self._triggerMng = self._gameModule:GetTriggerMng()
   self:_InitBackpackPets()
   self:_InitBuildings()
   self:_InitMonsterPool()
-  self._fightMonsterList = {(self._monsterList)[1]}
-  ;
-  (table.remove)(self._monsterList, 1)
-  for _,monster in ipairs(self._fightMonsterList) do
-    (self._triggerMng):Notify(LLNTMonsterEnter:New(monster))
+  self._fightMonsterList = {
+    self._monsterList[1]
+  }
+  table.remove(self._monsterList, 1)
+  for _, monster in ipairs(self._fightMonsterList) do
+    self._triggerMng:Notify(LLNTMonsterEnter:New(monster))
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.CreateEntity = function(self, entityType, templateID, roundCount)
-  -- function num : 0_3 , upvalues : _ENV
-  local classType = (self._entityCreationDic)[entityType]
+function LLEntityMng:CreateEntity(entityType, templateID, roundCount)
+  local classType = self._entityCreationDic[entityType]
   if classType == nil then
-    (Log.exception)("[LuckLand] CreateEntity cant find entity type ", entityType)
+    Log.exception("[LuckLand] CreateEntity cant find entity type ", entityType)
   end
   local entity = classType:New(self._gameModule)
   local creationIndex = self._entityCreationIndex
@@ -80,312 +56,198 @@ LLEntityMng.CreateEntity = function(self, entityType, templateID, roundCount)
   return entity
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng._InitBackpackPets = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfgMng = (self._gameModule):GetConfigMng()
+function LLEntityMng:_InitBackpackPets()
+  local cfgMng = self._gameModule:GetConfigMng()
   local levelCfgData = cfgMng:GetLevelConfigData()
   local backpackPets = levelCfgData:GetBackpackPetList()
-  for _,petTmpID in ipairs(backpackPets) do
+  for _, petTmpID in ipairs(backpackPets) do
     local entity = self:CreateEntity(LuckLandEntityType.Pet, petTmpID)
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._backpackPetList)[#self._backpackPetList + 1] = entity
+    self._backpackPetList[#self._backpackPetList + 1] = entity
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng._InitBuildings = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfgMng = (self._gameModule):GetConfigMng()
+function LLEntityMng:_InitBuildings()
+  local cfgMng = self._gameModule:GetConfigMng()
   local levelCfgData = cfgMng:GetLevelConfigData()
   local buildings = levelCfgData:GetBuildingList()
-  for _,tmpID in ipairs(buildings) do
+  for _, tmpID in ipairs(buildings) do
     local entity = self:CreateEntity(LuckLandEntityType.Building, tmpID)
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._buildingList)[#self._buildingList + 1] = entity
+    self._buildingList[#self._buildingList + 1] = entity
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng._InitMonsterPool = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function LLEntityMng:_InitMonsterPool()
   self._monsterList = {}
-  local cfgMng = (self._gameModule):GetConfigMng()
+  local cfgMng = self._gameModule:GetConfigMng()
   local levelCfgData = cfgMng:GetLevelConfigData()
   local monsterDataList = levelCfgData:GetMonsterList()
-  for _,monsterData in ipairs(monsterDataList) do
+  for _, monsterData in ipairs(monsterDataList) do
     local entity = self:CreateEntity(LuckLandEntityType.Monster, monsterData.id)
     entity:SetDemandRound(monsterData.round)
     entity:SetDemandMoney(monsterData.money)
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._monsterList)[#self._monsterList + 1] = entity
+    self._monsterList[#self._monsterList + 1] = entity
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetFightPetData = function(self)
-  -- function num : 0_7
+function LLEntityMng:GetFightPetData()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetBackpackPets = function(self)
-  -- function num : 0_8
+function LLEntityMng:GetBackpackPets()
   return self._backpackPetList
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetPetByID = function(self, ID)
-  -- function num : 0_9 , upvalues : _ENV
-  for _,pet in ipairs(self._backpackPetList) do
+function LLEntityMng:GetPetByID(ID)
+  for _, pet in ipairs(self._backpackPetList) do
     if ID == pet:ID() then
       return pet
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetPetsByTemplateID = function(self, templateID)
-  -- function num : 0_10 , upvalues : _ENV
-  local result = nil
-  for _,pet in ipairs(self._backpackPetList) do
+function LLEntityMng:GetPetsByTemplateID(templateID)
+  local result
+  for _, pet in ipairs(self._backpackPetList) do
     if templateID == pet:GetTemplateID() then
-      if not result then
-        result = {}
-      end
-      ;
-      (table.insert)(result, pet)
+      result = result or {}
+      table.insert(result, pet)
     end
   end
   return result
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetFightPetsByTemplateID = function(self, templateID)
-  -- function num : 0_11 , upvalues : _ENV
-  local result = nil
+function LLEntityMng:GetFightPetsByTemplateID(templateID)
+  local result
   if self._fightPetList then
-    for _,pet in ipairs(self._fightPetList) do
+    for _, pet in ipairs(self._fightPetList) do
       if templateID == pet:GetTemplateID() then
-        if not result then
-          result = {}
-        end
-        ;
-        (table.insert)(result, pet)
+        result = result or {}
+        table.insert(result, pet)
       end
-    end
-  end
-  do
-    return result
-  end
-end
-
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetPetsByElement = function(self, elementType)
-  -- function num : 0_12 , upvalues : _ENV
-  local result = nil
-  for _,pet in ipairs(self._backpackPetList) do
-    if elementType == pet:Element() then
-      if not result then
-        result = {}
-      end
-      ;
-      (table.insert)(result, pet)
     end
   end
   return result
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
+function LLEntityMng:GetPetsByElement(elementType)
+  local result
+  for _, pet in ipairs(self._backpackPetList) do
+    if elementType == pet:Element() then
+      result = result or {}
+      table.insert(result, pet)
+    end
+  end
+  return result
+end
 
-LLEntityMng.GetFightPetsByElement = function(self, elementType)
-  -- function num : 0_13 , upvalues : _ENV
-  local result = nil
+function LLEntityMng:GetFightPetsByElement(elementType)
+  local result
   if self._fightPetList then
-    for _,pet in ipairs(self._fightPetList) do
+    for _, pet in ipairs(self._fightPetList) do
       if elementType == pet:Element() then
-        if not result then
-          result = {}
-        end
-        ;
-        (table.insert)(result, pet)
+        result = result or {}
+        table.insert(result, pet)
       end
     end
   end
-  do
-    return result
-  end
+  return result
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetFightPetsByCamp = function(self, campType)
-  -- function num : 0_14 , upvalues : _ENV
-  local result = nil
+function LLEntityMng:GetFightPetsByCamp(campType)
+  local result
   if self._fightPetList then
-    for _,pet in ipairs(self._fightPetList) do
+    for _, pet in ipairs(self._fightPetList) do
       if campType == pet:Camp() then
-        if not result then
-          result = {}
-        end
-        ;
-        (table.insert)(result, pet)
+        result = result or {}
+        table.insert(result, pet)
       end
     end
   end
-  do
-    return result
-  end
+  return result
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetFightPetsByLevel = function(self, level)
-  -- function num : 0_15 , upvalues : _ENV
-  local result = nil
+function LLEntityMng:GetFightPetsByLevel(level)
+  local result
   if self._fightPetList then
-    for _,pet in ipairs(self._fightPetList) do
+    for _, pet in ipairs(self._fightPetList) do
       if level == pet:Level() then
-        if not result then
-          result = {}
-        end
-        ;
-        (table.insert)(result, pet)
+        result = result or {}
+        table.insert(result, pet)
       end
     end
   end
-  do
-    return result
-  end
+  return result
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetFightPetsByResType = function(self, resType)
-  -- function num : 0_16 , upvalues : _ENV
-  local result = nil
+function LLEntityMng:GetFightPetsByResType(resType)
+  local result
   if self._fightPetList then
-    for _,pet in ipairs(self._fightPetList) do
+    for _, pet in ipairs(self._fightPetList) do
       if resType == pet:ResType() then
-        if not result then
-          result = {}
-        end
-        ;
-        (table.insert)(result, pet)
+        result = result or {}
+        table.insert(result, pet)
       end
     end
   end
-  do
-    return result
-  end
+  return result
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.AddFightPet = function(self, fightPet)
-  -- function num : 0_17
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._fightPetList)[#self._fightPetList + 1] = fightPet
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._fightPetEnterList)[#self._fightPetEnterList + 1] = fightPet
+function LLEntityMng:AddFightPet(fightPet)
+  self._fightPetList[#self._fightPetList + 1] = fightPet
+  self._fightPetEnterList[#self._fightPetEnterList + 1] = fightPet
   fightPet:SetFightState(true)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetFightPets = function(self)
-  -- function num : 0_18
+function LLEntityMng:GetFightPets()
   return self._fightPetList
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetFightPetEnterList = function(self)
-  -- function num : 0_19
+function LLEntityMng:GetFightPetEnterList()
   return self._fightPetEnterList
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetFightPetPos = function(self, pet)
-  -- function num : 0_20 , upvalues : _ENV
-  for index,value in ipairs(self._fightPetList) do
+function LLEntityMng:GetFightPetPos(pet)
+  for index, value in ipairs(self._fightPetList) do
     if pet == value then
       return index
     end
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.ClearFightPets = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function LLEntityMng:ClearFightPets()
   self._fightPetList = {}
   self._fightPetEnterList = {}
-  for _,pet in ipairs(self._backpackPetList) do
+  for _, pet in ipairs(self._backpackPetList) do
     pet:SetFightState(false)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.MovePetToFirst = function(self, pet)
-  -- function num : 0_22 , upvalues : _ENV
-  local pos = (table.ikey)(self._fightPetList, pet)
+function LLEntityMng:MovePetToFirst(pet)
+  local pos = table.ikey(self._fightPetList, pet)
   if pos then
-    (table.removev)(self._fightPetList, pet)
-    ;
-    (table.insert)(self._fightPetList, 1, pet)
+    table.removev(self._fightPetList, pet)
+    table.insert(self._fightPetList, 1, pet)
     pet:SetTempMove(LuckLandConst.BVK_MoveToFirst)
     return pos - 1
   else
-    ;
-    (Log.error)("[LuckLand] LLEntityMng MovePetToFirst pet not exist,", pet:GetTemplateID())
+    Log.error("[LuckLand] LLEntityMng MovePetToFirst pet not exist,", pet:GetTemplateID())
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.MovePetToLast = function(self, pet)
-  -- function num : 0_23 , upvalues : _ENV
-  local pos = (table.ikey)(self._fightPetList, pet)
+function LLEntityMng:MovePetToLast(pet)
+  local pos = table.ikey(self._fightPetList, pet)
   if pos then
-    (table.removev)(self._fightPetList, pet)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._fightPetList)[#self._fightPetList + 1] = pet
+    table.removev(self._fightPetList, pet)
+    self._fightPetList[#self._fightPetList + 1] = pet
     pet:SetTempMove(LuckLandConst.BVK_MoveToLast)
     return #self._fightPetList - pos
   else
-    ;
-    (Log.error)("[LuckLand] LLEntityMng MovePetToLast pet not exist,", pet:GetTemplateID())
+    Log.error("[LuckLand] LLEntityMng MovePetToLast pet not exist,", pet:GetTemplateID())
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.CheckPetTagMatch = function(self, pet, tagList, isAnd)
-  -- function num : 0_24 , upvalues : _ENV
+function LLEntityMng:CheckPetTagMatch(pet, tagList, isAnd)
   local isMatch = false
-  for _,tag in pairs(tagList) do
+  for _, tag in pairs(tagList) do
     local tagType = tag.type
     local tagParam = tag.param
     local tmpParam = pet:GetParamByTag(tagType)
@@ -404,148 +266,91 @@ LLEntityMng.CheckPetTagMatch = function(self, pet, tagList, isAnd)
   return isMatch
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.SelectCard = function(self, petTemplateID, pos)
-  -- function num : 0_25 , upvalues : _ENV
+function LLEntityMng:SelectCard(petTemplateID, pos)
   local entity = self:CreateEntity(LuckLandEntityType.Pet, petTemplateID)
-  ;
-  (self._triggerMng):Notify(LLNTSelectPet:New(entity))
+  self._triggerMng:Notify(LLNTSelectPet:New(entity))
   self:PetEnterBackpack(entity, pos)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.PetEnterBackpack = function(self, entity, pos)
-  -- function num : 0_26 , upvalues : _ENV
+function LLEntityMng:PetEnterBackpack(entity, pos)
   if pos then
-    (table.insert)(self._backpackPetList, pos, entity)
+    table.insert(self._backpackPetList, pos, entity)
   else
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._backpackPetList)[#self._backpackPetList + 1] = entity
+    self._backpackPetList[#self._backpackPetList + 1] = entity
   end
-  ;
-  (self._triggerMng):Notify(LLNTGetPet:New(entity))
+  self._triggerMng:Notify(LLNTGetPet:New(entity))
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.DeleteCard = function(self, petID, sourceEntity)
-  -- function num : 0_27 , upvalues : _ENV
+function LLEntityMng:DeleteCard(petID, sourceEntity)
   local entity = self:GetPetByID(petID)
   if sourceEntity then
-    for _,pet in ipairs(self._fightPetList) do
-      (self._triggerMng):Notify(LLNTDeletePet:New(pet, entity, sourceEntity))
+    for _, pet in ipairs(self._fightPetList) do
+      self._triggerMng:Notify(LLNTDeletePet:New(pet, entity, sourceEntity))
     end
   end
-  do
-    ;
-    (table.removev)(self._backpackPetList, entity)
-  end
+  table.removev(self._backpackPetList, entity)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetFightMonsters = function(self)
-  -- function num : 0_28
+function LLEntityMng:GetFightMonsters()
   return self._fightMonsterList
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.SetFightMonsters = function(self, monsters, roundCount)
-  -- function num : 0_29 , upvalues : _ENV
+function LLEntityMng:SetFightMonsters(monsters, roundCount)
   self._fightMonsterList = monsters
-  do
-    if LuckLandConst.MaxMonsterCount < #self._fightMonsterList then
-      local pos = #self._fightMonsterList - LuckLandConst.MaxMonsterCount + 1
-      ;
-      (table.sub)(self._fightMonsterList, pos, #self._fightMonsterList)
-    end
-    if roundCount then
-      (table.remove)(self._monsterList, 1)
-    end
+  if #self._fightMonsterList > LuckLandConst.MaxMonsterCount then
+    local pos = #self._fightMonsterList - LuckLandConst.MaxMonsterCount + 1
+    table.sub(self._fightMonsterList, pos, #self._fightMonsterList)
+  end
+  if roundCount then
+    table.remove(self._monsterList, 1)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.IsFightMonstersFull = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  do return LuckLandConst.MaxMonsterCount <= #self._fightMonsterList end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function LLEntityMng:IsFightMonstersFull()
+  return #self._fightMonsterList >= LuckLandConst.MaxMonsterCount
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.AppendMonster = function(self, monster)
-  -- function num : 0_31 , upvalues : _ENV
-  (Log.exception)("不支持buff增加怪物")
+function LLEntityMng:AppendMonster(monster)
+  Log.exception("不支持buff增加怪物")
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetNextMonsters = function(self)
-  -- function num : 0_32
-  return (self._monsterList)[1]
+function LLEntityMng:GetNextMonsters()
+  return self._monsterList[1]
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetLeftMonstersCount = function(self)
-  -- function num : 0_33
+function LLEntityMng:GetLeftMonstersCount()
   return #self._monsterList
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.MoveMonsterToFirst = function(self, monster)
-  -- function num : 0_34 , upvalues : _ENV
-  local pos = (table.ikey)(self._fightMonsterList, monster)
+function LLEntityMng:MoveMonsterToFirst(monster)
+  local pos = table.ikey(self._fightMonsterList, monster)
   if pos then
-    (table.removev)(self._fightMonsterList, monster)
-    ;
-    (table.insert)(self._fightMonsterList, 1, monster)
+    table.removev(self._fightMonsterList, monster)
+    table.insert(self._fightMonsterList, 1, monster)
     return pos - 1
   else
-    ;
-    (Log.error)("[LuckLand] LLEntityMng MovePetToFirst monster not exist,", monster:GetTemplateID())
+    Log.error("[LuckLand] LLEntityMng MovePetToFirst monster not exist,", monster:GetTemplateID())
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.MoveMonsterToLast = function(self, monster)
-  -- function num : 0_35 , upvalues : _ENV
-  local pos = (table.ikey)(self._fightMonsterList, monster)
+function LLEntityMng:MoveMonsterToLast(monster)
+  local pos = table.ikey(self._fightMonsterList, monster)
   if pos then
-    (table.removev)(self._fightMonsterList, monster)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._fightMonsterList)[#self._fightMonsterList + 1] = monster
+    table.removev(self._fightMonsterList, monster)
+    self._fightMonsterList[#self._fightMonsterList + 1] = monster
     return #self._fightMonsterList - pos
   else
-    ;
-    (Log.error)("[LuckLand] LLEntityMng MovePetToLast monster not exist,", monster:GetTemplateID())
+    Log.error("[LuckLand] LLEntityMng MovePetToLast monster not exist,", monster:GetTemplateID())
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetBuildings = function(self)
-  -- function num : 0_36
+function LLEntityMng:GetBuildings()
   return self._buildingList
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetBuildingMaxHPIncrease = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function LLEntityMng:GetBuildingMaxHPIncrease()
   local maxHPIncr = 0
-  for _,building in ipairs(self._buildingList) do
+  for _, building in ipairs(self._buildingList) do
     local tmpInc = building:GetMaxHPIncreaseParam()
     if tmpInc then
       maxHPIncr = maxHPIncr + tmpInc
@@ -554,12 +359,9 @@ LLEntityMng.GetBuildingMaxHPIncrease = function(self)
   return maxHPIncr
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetPosCount = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function LLEntityMng:GetPosCount()
   local posCount = 0
-  for _,building in ipairs(self._buildingList) do
+  for _, building in ipairs(self._buildingList) do
     local tmp = building:GetPosCount()
     if tmp then
       posCount = posCount + tmp
@@ -568,12 +370,9 @@ LLEntityMng.GetPosCount = function(self)
   return posCount
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetPosList = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function LLEntityMng:GetPosList()
   local posList = {}
-  for _,building in ipairs(self._buildingList) do
+  for _, building in ipairs(self._buildingList) do
     if building:GetBuildingType() == LuckLandBuildingType.CampFire then
       return building:GetPosList()
     end
@@ -581,84 +380,61 @@ LLEntityMng.GetPosList = function(self)
   return posList
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetCardPool = function(self)
-  -- function num : 0_40 , upvalues : _ENV
-  for _,building in ipairs(self._buildingList) do
+function LLEntityMng:GetCardPool()
+  for _, building in ipairs(self._buildingList) do
     if building:GetBuildingType() == LuckLandBuildingType.Main then
       return building:GetCardPool()
     end
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetBuildingByID = function(self, buildingID)
-  -- function num : 0_41 , upvalues : _ENV
-  for _,building in ipairs(self._buildingList) do
+function LLEntityMng:GetBuildingByID(buildingID)
+  for _, building in ipairs(self._buildingList) do
     if buildingID == building:ID() then
       return building
     end
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.GetBuildingByTemplateID = function(self, templateID)
-  -- function num : 0_42 , upvalues : _ENV
-  for _,building in ipairs(self._buildingList) do
+function LLEntityMng:GetBuildingByTemplateID(templateID)
+  for _, building in ipairs(self._buildingList) do
     if templateID == building:GetTemplateID() then
       return building
     end
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.BuildingUpgrade = function(self, building)
-  -- function num : 0_43
+function LLEntityMng:BuildingUpgrade(building)
   building:Upgrade()
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.DestroyEntity = function(self)
-  -- function num : 0_44 , upvalues : _ENV
+function LLEntityMng:DestroyEntity()
   local deleteEntityList = {}
-  for _,pet in ipairs(self._backpackPetList) do
+  for _, pet in ipairs(self._backpackPetList) do
     if pet:HasDeleteFlag() then
       deleteEntityList[#deleteEntityList + 1] = pet
     end
   end
-  for _,delPet in ipairs(deleteEntityList) do
-    (table.removev)(self._backpackPetList, delPet)
+  for _, delPet in ipairs(deleteEntityList) do
+    table.removev(self._backpackPetList, delPet)
   end
   deleteEntityList = {}
-  for _,monster in ipairs(self._fightMonsterList) do
+  for _, monster in ipairs(self._fightMonsterList) do
     if monster:IsDead() then
       deleteEntityList[#deleteEntityList + 1] = monster
     end
   end
-  for _,delMonster in ipairs(deleteEntityList) do
-    (table.removev)(self._fightMonsterList, delMonster)
+  for _, delMonster in ipairs(deleteEntityList) do
+    table.removev(self._fightMonsterList, delMonster)
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMng.ClearEntityTmpData = function(self)
-  -- function num : 0_45 , upvalues : _ENV
+function LLEntityMng:ClearEntityTmpData()
   local entityList = {}
-  ;
-  (table.appendArray)(entityList, self._backpackPetList)
-  ;
-  (table.appendArray)(entityList, self._fightMonsterList)
-  ;
-  (table.appendArray)(entityList, self._buildingList)
-  for _,pet in ipairs(entityList) do
+  table.appendArray(entityList, self._backpackPetList)
+  table.appendArray(entityList, self._fightMonsterList)
+  table.appendArray(entityList, self._buildingList)
+  for _, pet in ipairs(entityList) do
     pet:ResetTempParam()
   end
 end
-
-

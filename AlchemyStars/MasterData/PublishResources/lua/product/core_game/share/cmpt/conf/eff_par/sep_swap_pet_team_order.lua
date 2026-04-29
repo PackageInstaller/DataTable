@@ -1,40 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_swap_pet_team_order.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
-local SwapPetTeamOrderType = {TARGET_INDEX = 1, TEAM_LEADER = 2, TEAM_TAIL = 3, CASTER_SELECT_TEAM_POS = 4, OFFSET = 5, MAX = 99}
+local SwapPetTeamOrderType = {
+  TARGET_INDEX = 1,
+  TEAM_LEADER = 2,
+  TEAM_TAIL = 3,
+  CASTER_SELECT_TEAM_POS = 4,
+  OFFSET = 5,
+  MAX = 99
+}
 _enum("SwapPetTeamOrderType", SwapPetTeamOrderType)
 _class("SkillEffectParam_SwapPetTeamOrder", SkillEffectParamBase)
 SkillEffectParam_SwapPetTeamOrder = SkillEffectParam_SwapPetTeamOrder
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillEffectParam_SwapPetTeamOrder.Constructor = function(self, paramList)
-  -- function num : 0_0
+function SkillEffectParam_SwapPetTeamOrder:Constructor(paramList)
   self._targetOrderIndex = paramList.targetOrderIndex
   self._targetOrderType = paramList.targetOrderType
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_SwapPetTeamOrder.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_SwapPetTeamOrder:GetEffectType()
   return SkillEffectType.SwapPetTeamOrder
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_SwapPetTeamOrder.GetTargetOrderIndex = function(self)
-  -- function num : 0_2
+function SkillEffectParam_SwapPetTeamOrder:GetTargetOrderIndex()
   return self._targetOrderIndex
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_SwapPetTeamOrder.GetTargetOrderType = function(self)
-  -- function num : 0_3
+function SkillEffectParam_SwapPetTeamOrder:GetTargetOrderType()
   return self._targetOrderType
 end
-
-

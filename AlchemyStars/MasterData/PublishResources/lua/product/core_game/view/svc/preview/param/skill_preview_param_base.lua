@@ -1,36 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/param/skill_preview_param_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPreviewParamBase", Object)
 SkillPreviewParamBase = SkillPreviewParamBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewParamBase.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPreviewParamBase:Constructor(t)
   self._previewType = t.PreviewType
   self._param = t.Param
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewParamBase.GetPreviewType = function(self)
-  -- function num : 0_1
+function SkillPreviewParamBase:GetPreviewType()
   return self._previewType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewParamBase.GetPreviewParam = function(self)
-  -- function num : 0_2
+function SkillPreviewParamBase:GetPreviewParam()
   return self._param
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewParamBase.ParseParam = function(self)
-  -- function num : 0_3
+function SkillPreviewParamBase:ParseParam()
 end
-
-

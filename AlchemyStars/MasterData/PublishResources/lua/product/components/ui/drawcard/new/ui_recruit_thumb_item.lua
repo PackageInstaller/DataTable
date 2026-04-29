@@ -1,89 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/new/ui_recruit_thumb_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIRecruitThumbItem", Object)
 UIRecruitThumbItem = UIRecruitThumbItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIRecruitThumbItem.Constructor = function(self, go, idx, poolInfo, onClick, questComp)
-  -- function num : 0_0 , upvalues : _ENV
+function UIRecruitThumbItem:Constructor(go, idx, poolInfo, onClick, questComp)
   go.name = go.name .. idx
   self._gameObject = go
-  self._uiView = (self._gameObject):GetComponent(typeof(UIView))
-  ;
-  (self._uiView):SetShow(true, self)
+  self._uiView = self._gameObject:GetComponent(typeof(UIView))
+  self._uiView:SetShow(true, self)
   self._idx = idx
   self._poolInfo = poolInfo
   self._onClick = onClick
   self._questComponent = questComp
-  self._anim = (self._gameObject):GetComponent(typeof(UnityEngine.Animation))
-  local cfg = (Cfg.cfg_recruit_pool_view)[(poolInfo.poolData).performance_id]
-  local title = (self._uiView):GetUIComponent("RollingText", "title")
-  local maskRect = (self._uiView):GetUIComponent("RectTransform", "mask")
+  self._anim = self._gameObject:GetComponent(typeof(UnityEngine.Animation))
+  local cfg = Cfg.cfg_recruit_pool_view[poolInfo.poolData.performance_id]
+  local title = self._uiView:GetUIComponent("RollingText", "title")
+  local maskRect = self._uiView:GetUIComponent("RectTransform", "mask")
   if poolInfo:IsNovicePool() then
     maskRect.sizeDelta = Vector2(241, 39)
   else
     maskRect.sizeDelta = Vector2(212, 39)
   end
-  title:RefreshText((StringTable.Get)(cfg.ThumbTitle))
-  local bg = (self._uiView):GetUIComponent("RawImageLoader", "bg")
+  title:RefreshText(StringTable.Get(cfg.ThumbTitle))
+  local bg = self._uiView:GetUIComponent("RawImageLoader", "bg")
   bg:LoadImage(cfg.ThumbBG)
-  self._selectBox = (self._uiView):GetGameObject("Box")
-  self._selectBoxImage = (self._uiView):GetUIComponent("Image", "Box")
-  self._back = (self._uiView):GetGameObject("Back")
-  self._new = (self._uiView):GetGameObject("new")
-  self._free = (self._uiView):GetGameObject("free")
-  self._selectIcon = (self._uiView):GetGameObject("selectIcon")
-  self._time = (self._uiView):GetUIComponent("UILocalizationText", "time")
-  self._offset = (self._uiView):GetUIComponent("RectTransform", "Offset")
-  self._root = (self._uiView):GetUIComponent("RectTransform", "Root")
-  self._red = (self._uiView):GetGameObject("red")
-  self._free_draw = (self._poolInfo):HasFreeDraw()
+  self._selectBox = self._uiView:GetGameObject("Box")
+  self._selectBoxImage = self._uiView:GetUIComponent("Image", "Box")
+  self._back = self._uiView:GetGameObject("Back")
+  self._new = self._uiView:GetGameObject("new")
+  self._free = self._uiView:GetGameObject("free")
+  self._selectIcon = self._uiView:GetGameObject("selectIcon")
+  self._time = self._uiView:GetUIComponent("UILocalizationText", "time")
+  self._offset = self._uiView:GetUIComponent("RectTransform", "Offset")
+  self._root = self._uiView:GetUIComponent("RectTransform", "Root")
+  self._red = self._uiView:GetGameObject("red")
+  self._free_draw = self._poolInfo:HasFreeDraw()
   self:_CheckRed()
   self:DeSelect()
-  self._CheckRedCB = (GameHelper:GetInstance()):CreateCallback(self._CheckRed, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnDrawCardGetAward, self._CheckRedCB)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.ItemCountChanged, self._CheckRedCB)
+  self._CheckRedCB = GameHelper:GetInstance():CreateCallback(self._CheckRed, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnDrawCardGetAward, self._CheckRedCB)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.ItemCountChanged, self._CheckRedCB)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitThumbItem.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnDrawCardGetAward, self._CheckRedCB)
-  ;
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.ItemCountChanged, self._CheckRedCB)
+function UIRecruitThumbItem:Dispose()
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnDrawCardGetAward, self._CheckRedCB)
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.ItemCountChanged, self._CheckRedCB)
   self._CheckRedCB = nil
   self._onClick = nil
   self._poolInfo = nil
   if self._uiView then
-    (self._uiView):SetShow(false, self)
+    self._uiView:SetShow(false, self)
     self._uiView = nil
   end
   self._gameObject = nil
   self:_CancelTimer()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitThumbItem.RootOnClick = function(self)
-  -- function num : 0_2
-  (self._onClick)(self._idx)
+function UIRecruitThumbItem:RootOnClick()
+  self._onClick(self._idx)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitThumbItem.OnSelect = function(self, isFirstShow)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._selectBox):SetActive(true)
-  ;
-  (self._back):SetActive(true)
+function UIRecruitThumbItem:OnSelect(isFirstShow)
+  self._selectBox:SetActive(true)
+  self._back:SetActive(true)
   if self._isNew then
-    ((GameGlobal.GetModule)(GambleModule)):CancelPoolNew((self._poolInfo).poolData)
+    GameGlobal.GetModule(GambleModule):CancelPoolNew(self._poolInfo.poolData)
   end
   if isFirstShow then
     self:PlayFadeInAnim()
@@ -91,217 +70,140 @@ UIRecruitThumbItem.OnSelect = function(self, isFirstShow)
   self:_CheckRed()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitThumbItem.DeSelect = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._selectBox):SetActive(false)
-  ;
-  (self._back):SetActive(true)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._selectBoxImage).color = Color.clear
+function UIRecruitThumbItem:DeSelect()
+  self._selectBox:SetActive(false)
+  self._back:SetActive(true)
+  self._selectBoxImage.color = Color.clear
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitThumbItem.SetOffset = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._selectBoxImage).color = Color.white
+function UIRecruitThumbItem:SetOffset()
+  self._selectBoxImage.color = Color.white
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitThumbItem.GameObject = function(self)
-  -- function num : 0_6
+function UIRecruitThumbItem:GameObject()
   return self._gameObject
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitThumbItem._CountDown = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local closeTime = (self._poolInfo):GetPoolCloseTime()
+function UIRecruitThumbItem:_CountDown()
+  local closeTime = self._poolInfo:GetPoolCloseTime()
   if closeTime == nil or closeTime <= 0 then
     self:_CancelTimer()
-    return 
+    return
   end
   local now = GetSvrTimeNow()
   local seconds = closeTime - now
   if seconds <= 0 then
     self:_CancelTimer()
-    return 
+    return
   end
-  local days = ((math.floor)(seconds / 86400))
-  local str = nil
+  local days = math.floor(seconds / 86400)
+  local str
   if days < 1 then
-    str = (StringTable.Get)("str_draw_card_less_one_day")
+    str = StringTable.Get("str_draw_card_less_one_day")
   else
-    str = (StringTable.Get)("str_common_days", days)
+    str = StringTable.Get("str_common_days", days)
   end
   if self._timerStr ~= str then
     self._timeStr = str
-    ;
-    (self._time):SetText(str)
+    self._time:SetText(str)
   end
   if not self._timer then
-    self._timer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_7_0 , upvalues : self
-    self:_CountDown()
-  end
-)
+    self._timer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+      self:_CountDown()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitThumbItem._CancelTimer = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIRecruitThumbItem:_CancelTimer()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
   self._timeStr = nil
-  ;
-  ((self._time).gameObject):SetActive(false)
+  self._time.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitThumbItem.PlayEnterAnim = function(self)
-  -- function num : 0_9
-  (self._anim):Play("uieff_RecruitThunbItem_in")
+function UIRecruitThumbItem:PlayEnterAnim()
+  self._anim:Play("uieff_RecruitThunbItem_in")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitThumbItem.PlayFadeInAnim = function(self)
-  -- function num : 0_10
-  (self._anim):Play("uieff_RecruitThunbItem_switch_in")
+function UIRecruitThumbItem:PlayFadeInAnim()
+  self._anim:Play("uieff_RecruitThunbItem_switch_in")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitThumbItem.PlayFadeOutAnim = function(self)
-  -- function num : 0_11
-  (self._anim):Play("uieff_RecruitThunbItem_switch_out")
+function UIRecruitThumbItem:PlayFadeOutAnim()
+  self._anim:Play("uieff_RecruitThunbItem_switch_out")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitThumbItem._CheckRed = function(self)
-  -- function num : 0_12
+function UIRecruitThumbItem:_CheckRed()
   if self:_IsNew() then
-    (self._new):SetActive(true)
-    ;
-    (self._red):SetActive(false)
-    ;
-    (self._free):SetActive(false)
+    self._new:SetActive(true)
+    self._red:SetActive(false)
+    self._free:SetActive(false)
+  elseif self._free_draw then
+    self._free:SetActive(true)
+    self._red:SetActive(false)
+    self._new:SetActive(false)
+  elseif self._selWishRed then
+    self._free:SetActive(false)
+    self._red:SetActive(true)
+    self._new:SetActive(false)
+  elseif self:CheckQuestRed() then
+    self._free:SetActive(false)
+    self._red:SetActive(true)
+    self._new:SetActive(false)
   else
-    if self._free_draw then
-      (self._free):SetActive(true)
-      ;
-      (self._red):SetActive(false)
-      ;
-      (self._new):SetActive(false)
-    else
-      if self._selWishRed then
-        (self._free):SetActive(false)
-        ;
-        (self._red):SetActive(true)
-        ;
-        (self._new):SetActive(false)
-      else
-        if self:CheckQuestRed() then
-          (self._free):SetActive(false)
-          ;
-          (self._red):SetActive(true)
-          ;
-          (self._new):SetActive(false)
-        else
-          ;
-          (self._new):SetActive(false)
-          ;
-          (self._red):SetActive(false)
-          ;
-          (self._free):SetActive(false)
-        end
-      end
-    end
+    self._new:SetActive(false)
+    self._red:SetActive(false)
+    self._free:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitThumbItem._IsNew = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIRecruitThumbItem:_IsNew()
   if self._isNew == true or self._isNew == nil then
-    self._isNew = ((GameGlobal.GetModule)(GambleModule)):IsNewPool((self._poolInfo).poolData)
+    self._isNew = GameGlobal.GetModule(GambleModule):IsNewPool(self._poolInfo.poolData)
   end
   return self._isNew
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitThumbItem.PublicCheckWishRed = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(GambleModule)
+function UIRecruitThumbItem:PublicCheckWishRed()
+  local module = GameGlobal.GetModule(GambleModule)
   self._selWishRed = module:CheckOptionalRed(self._idx)
   self:_CheckRed()
   return self._selWishRed
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitThumbItem.CheckQuestRed = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIRecruitThumbItem:CheckQuestRed()
   if not self._questComponent then
     return false
   end
-  local poolData = (self._poolInfo).poolData
-  do
-    if poolData.prize_group_id and poolData.prize_group_id > 0 then
-      local curQuest = self:GetCurQuest()
-      if not curQuest then
-        return false
-      else
-        return (curQuest._questInfo).status == QuestStatus.QUEST_Completed
-      end
+  local poolData = self._poolInfo.poolData
+  if poolData.prize_group_id and poolData.prize_group_id > 0 then
+    local curQuest = self:GetCurQuest()
+    if not curQuest then
+      return false
+    else
+      return curQuest._questInfo.status == QuestStatus.QUEST_Completed
     end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitThumbItem.GetCurQuest = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local curQuest = nil
-  local questList = (self._questComponent):GetQuestInfo()
-  for _,quest in pairs(questList) do
-    if (quest._questInfo).status < QuestStatus.QUEST_Completed then
+function UIRecruitThumbItem:GetCurQuest()
+  local curQuest
+  local questList = self._questComponent:GetQuestInfo()
+  for _, quest in pairs(questList) do
+    if quest._questInfo.status < QuestStatus.QUEST_Completed then
       curQuest = quest
       break
-    else
-      if (quest._questInfo).status == QuestStatus.QUEST_Completed then
-        curQuest = quest
-        break
-      end
+    elseif quest._questInfo.status == QuestStatus.QUEST_Completed then
+      curQuest = quest
+      break
     end
   end
-  do
-    do
-      if not curQuest then
-        local len = (table.count)(questList)
-        curQuest = questList[len]
-      end
-      return curQuest
-    end
+  if not curQuest then
+    local len = table.count(questList)
+    curQuest = questList[len]
   end
+  return curQuest
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_board_logic_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataBoardLogicResult", Object)
 DataBoardLogicResult = DataBoardLogicResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataBoardLogicResult.Constructor = function(self)
-  -- function num : 0_0
+function DataBoardLogicResult:Constructor()
   self._piecesEffectTypeList = nil
   self._prismEntityIDs = nil
   self._pieceTypes = nil
@@ -18,102 +11,58 @@ DataBoardLogicResult.Constructor = function(self)
   self._previewTeamEntityID = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBoardLogicResult.SetPiecesEffectTypeList = function(self, t)
-  -- function num : 0_1
+function DataBoardLogicResult:SetPiecesEffectTypeList(t)
   self._piecesEffectTypeList = t
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBoardLogicResult.GetPiecesEffectTypeList = function(self)
-  -- function num : 0_2
+function DataBoardLogicResult:GetPiecesEffectTypeList()
   return self._piecesEffectTypeList
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBoardLogicResult.SetPrismEntityIDs = function(self, t)
-  -- function num : 0_3
+function DataBoardLogicResult:SetPrismEntityIDs(t)
   self._prismEntityIDs = t
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBoardLogicResult.GetPrismEntityIDs = function(self)
-  -- function num : 0_4
+function DataBoardLogicResult:GetPrismEntityIDs()
   return self._prismEntityIDs
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBoardLogicResult.SetPieceTypes = function(self, t)
-  -- function num : 0_5
+function DataBoardLogicResult:SetPieceTypes(t)
   self._pieceTypes = t
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBoardLogicResult.GetPieceTypes = function(self)
-  -- function num : 0_6
+function DataBoardLogicResult:GetPieceTypes()
   return self._pieceTypes
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBoardLogicResult.SetBlockFlags = function(self, t)
-  -- function num : 0_7
+function DataBoardLogicResult:SetBlockFlags(t)
   self._blockFlags = t
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBoardLogicResult.GetBlockFlags = function(self)
-  -- function num : 0_8
+function DataBoardLogicResult:GetBlockFlags()
   return self._blockFlags
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBoardLogicResult.SetPieceTable = function(self, t)
-  -- function num : 0_9
+function DataBoardLogicResult:SetPieceTable(t)
   self._pieceTable = t
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBoardLogicResult.GetPieceTable = function(self)
-  -- function num : 0_10
+function DataBoardLogicResult:GetPieceTable()
   return self._pieceTable
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBoardLogicResult.SetImmuneHitbacks = function(self, ids)
-  -- function num : 0_11
+function DataBoardLogicResult:SetImmuneHitbacks(ids)
   self._immuneHitbacks = ids
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBoardLogicResult.GetImmuneHitbacks = function(self)
-  -- function num : 0_12
+function DataBoardLogicResult:GetImmuneHitbacks()
   return self._immuneHitbacks
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBoardLogicResult.SetPieceEntities = function(self, t)
-  -- function num : 0_13
+function DataBoardLogicResult:SetPieceEntities(t)
   self._pieceEntities = t
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBoardLogicResult.GetPieceEntities = function(self)
-  -- function num : 0_14
+function DataBoardLogicResult:GetPieceEntities()
   return self._pieceEntities
 end
-
-

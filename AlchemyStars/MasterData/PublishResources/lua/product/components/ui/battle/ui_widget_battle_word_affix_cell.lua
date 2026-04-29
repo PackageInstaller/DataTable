@@ -1,138 +1,85 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_battle_word_affix_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleWordAffixCell", UICustomWidget)
 UIBattleWordAffixCell = UIBattleWordAffixCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleWordAffixCell.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIBattleWordAffixCell:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleWordAffixCell.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBattleWordAffixCell:InitWidget()
   self._atlas = self:GetAsset("UIBattle.spriteatlas", LoadType.SpriteAtlas)
   self._mazeAffixName = self:GetUIComponent("UILocalizationText", "mazeAffixName")
   self._mazeAffixDesc = self:GetUIComponent("UILocalizationText", "mazeAffixDesc")
   self._mazeAffixDescLayout = self:GetUIComponent("LayoutElement", "mazeAffixDesc")
   self._mazeAffixBg = self:GetUIComponent("Image", "mazeAffixShowBtn")
   self._arrowGo = self:GetGameObject("mazeRollArrowDown")
-  ;
-  (self._arrowGo):SetActive(false)
+  self._arrowGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleWordAffixCell.SetData = function(self, index, clickCb, name, desc, isRollCell, showArrow)
-  -- function num : 0_2
-  (self._mazeAffixName):SetText(name)
-  ;
-  (self._mazeAffixDesc):SetText(desc)
-  ;
-  ((self._mazeAffixDesc).gameObject):SetActive(false)
+function UIBattleWordAffixCell:SetData(index, clickCb, name, desc, isRollCell, showArrow)
+  self._mazeAffixName:SetText(name)
+  self._mazeAffixDesc:SetText(desc)
+  self._mazeAffixDesc.gameObject:SetActive(false)
   self._clickCb = clickCb
   self._index = index
   if showArrow then
-    (self._arrowGo):SetActive(showArrow)
+    self._arrowGo:SetActive(showArrow)
   end
   self._isRoolCell = isRollCell or false
   self:_FillBg()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleWordAffixCell.ShowDesc = function(self, bShow)
-  -- function num : 0_3 , upvalues : _ENV
-  ((self._mazeAffixDesc).gameObject):SetActive(bShow)
+function UIBattleWordAffixCell:ShowDesc(bShow)
+  self._mazeAffixDesc.gameObject:SetActive(bShow)
   if bShow then
     self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, self
-    YIELD(TT)
-    local textWidth = (self._mazeAffixDesc).preferredWidth
-    local maxWidth = 1000
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-    if maxWidth < textWidth then
-      (self._mazeAffixDescLayout).preferredWidth = maxWidth
-    else
-      -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._mazeAffixDescLayout).preferredWidth = -1
-    end
-  end
-, self)
+      YIELD(TT)
+      local textWidth = self._mazeAffixDesc.preferredWidth
+      local maxWidth = 1000
+      if textWidth > maxWidth then
+        self._mazeAffixDescLayout.preferredWidth = maxWidth
+      else
+        self._mazeAffixDescLayout.preferredWidth = -1
+      end
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleWordAffixCell.mazeAffixShowBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIBattleWordAffixCell:mazeAffixShowBtnOnClick(go)
   if self._clickCb then
-    (self._clickCb)()
+    self._clickCb()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleWordAffixCell._FillBg = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIBattleWordAffixCell:_FillBg()
   if self._isRoolCell then
     if self._index == 1 then
       self._rollBgIndex = 1
-      -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._mazeAffixBg).sprite = (self._atlas):GetSprite("thread_cizhui_frame")
+      self._mazeAffixBg.sprite = self._atlas:GetSprite("thread_cizhui_frame")
     else
-      -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._mazeAffixBg).sprite = (self._atlas):GetSprite("thread_cizhui_frame02")
+      self._mazeAffixBg.sprite = self._atlas:GetSprite("thread_cizhui_frame02")
     end
   else
     local tmpIdx = self._index
-    local md = (math.fmod)(tmpIdx, 2)
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R3 in 'UnsetPending'
-
+    local md = math.fmod(tmpIdx, 2)
     if md == 1 then
-      (self._mazeAffixBg).sprite = (self._atlas):GetSprite("thread_cizhui_frame")
+      self._mazeAffixBg.sprite = self._atlas:GetSprite("thread_cizhui_frame")
     else
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._mazeAffixBg).sprite = (self._atlas):GetSprite("thread_cizhui_frame01")
+      self._mazeAffixBg.sprite = self._atlas:GetSprite("thread_cizhui_frame01")
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleWordAffixCell.SetDataForRoll = function(self, name, switchBg)
-  -- function num : 0_6
-  (self._mazeAffixName):SetText(name)
+function UIBattleWordAffixCell:SetDataForRoll(name, switchBg)
+  self._mazeAffixName:SetText(name)
   if switchBg and self._rollBgIndex then
     self._rollBgIndex = self._rollBgIndex + 1
     if self._rollBgIndex > 2 then
       self._rollBgIndex = 1
     end
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
     if self._rollBgIndex == 1 then
-      (self._mazeAffixBg).sprite = (self._atlas):GetSprite("thread_cizhui_frame")
+      self._mazeAffixBg.sprite = self._atlas:GetSprite("thread_cizhui_frame")
     else
-      -- DECOMPILER ERROR at PC31: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._mazeAffixBg).sprite = (self._atlas):GetSprite("thread_cizhui_frame01")
+      self._mazeAffixBg.sprite = self._atlas:GetSprite("thread_cizhui_frame01")
     end
   end
 end
-
-

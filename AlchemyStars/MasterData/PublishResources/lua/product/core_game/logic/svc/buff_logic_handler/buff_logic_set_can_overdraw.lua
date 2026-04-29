@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_can_overdraw.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSetCanOverdraw", BuffLogicBase)
 BuffLogicSetCanOverdraw = BuffLogicSetCanOverdraw
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetCanOverdraw.DoLogic = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetFlag(BuffFlags.CanOverdraw)
+function BuffLogicSetCanOverdraw:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetFlag(BuffFlags.CanOverdraw)
 end
 
 _class("BuffLogicResetCanOverdraw", BuffLogicBase)
 BuffLogicResetCanOverdraw = BuffLogicResetCanOverdraw
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetCanOverdraw.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):ResetFlag(BuffFlags.CanOverdraw)
+function BuffLogicResetCanOverdraw:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():ResetFlag(BuffFlags.CanOverdraw)
 end
-
-

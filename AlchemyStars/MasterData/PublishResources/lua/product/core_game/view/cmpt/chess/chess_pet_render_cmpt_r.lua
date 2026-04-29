@@ -1,96 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/chess/chess_pet_render_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChessPetRenderComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-ChessPetRenderComponent.Constructor = function(self)
-  -- function num : 0_0
+function ChessPetRenderComponent:Constructor()
   self._canMoveEffectEntityID = nil
   self._selectEffectEntityID = nil
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetRenderComponent.GetCanMoveEffectEntityID = function(self)
-  -- function num : 0_1
+function ChessPetRenderComponent:GetCanMoveEffectEntityID()
   return self._canMoveEffectEntityID
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetRenderComponent.SetCanMoveEffectEntityID = function(self, entityID)
-  -- function num : 0_2
+function ChessPetRenderComponent:SetCanMoveEffectEntityID(entityID)
   self._canMoveEffectEntityID = entityID
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetRenderComponent.GetSelectEffectEntityID = function(self)
-  -- function num : 0_3
+function ChessPetRenderComponent:GetSelectEffectEntityID()
   return self._selectEffectEntityID
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetRenderComponent.SetSelectEffectEntityID = function(self, entityID)
-  -- function num : 0_4
+function ChessPetRenderComponent:SetSelectEffectEntityID(entityID)
   self._selectEffectEntityID = entityID
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetRenderComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_5
+function ChessPetRenderComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetRenderComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_6
+function ChessPetRenderComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ChessPetRender = function(self)
-  -- function num : 0_7
-  return self:GetComponent((self.WEComponentsEnum).ChessPetRender)
+function Entity:ChessPetRender()
+  return self:GetComponent(self.WEComponentsEnum.ChessPetRender)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasChessPetRender = function(self)
-  -- function num : 0_8
-  return self:HasComponent((self.WEComponentsEnum).ChessPetRender)
+function Entity:HasChessPetRender()
+  return self:HasComponent(self.WEComponentsEnum.ChessPetRender)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddChessPetRender = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ChessPetRender
+function Entity:AddChessPetRender()
+  local index = self.WEComponentsEnum.ChessPetRender
   local component = ChessPetRenderComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceChessPetRender = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ChessPetRender
+function Entity:ReplaceChessPetRender()
+  local index = self.WEComponentsEnum.ChessPetRender
   local component = ChessPetRenderComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveChessPetRender = function(self)
-  -- function num : 0_11
+function Entity:RemoveChessPetRender()
   if self:HasChessPetRender() then
-    self:RemoveComponent((self.WEComponentsEnum).ChessPetRender)
+    self:RemoveComponent(self.WEComponentsEnum.ChessPetRender)
   end
 end
-
-

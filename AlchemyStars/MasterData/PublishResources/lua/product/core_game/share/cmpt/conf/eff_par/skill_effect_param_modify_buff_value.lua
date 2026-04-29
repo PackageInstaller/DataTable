@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_modify_buff_value.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectParam_ModifyBuffValue", SkillEffectParamBase)
 SkillEffectParam_ModifyBuffValue = SkillEffectParam_ModifyBuffValue
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_ModifyBuffValue.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_ModifyBuffValue:Constructor(t)
   self._buffID = t.buffID
   self._valueName = t.valueName
   self._addValue = t.addValue
@@ -17,53 +10,30 @@ SkillEffectParam_ModifyBuffValue.Constructor = function(self, t)
   self._needKill = t.needKill
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ModifyBuffValue.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_ModifyBuffValue:GetEffectType()
   return SkillEffectType.ModifyBuffValue
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ModifyBuffValue.GetBuffID = function(self)
-  -- function num : 0_2
+function SkillEffectParam_ModifyBuffValue:GetBuffID()
   return self._buffID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ModifyBuffValue.GetValueName = function(self)
-  -- function num : 0_3
+function SkillEffectParam_ModifyBuffValue:GetValueName()
   return self._valueName
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ModifyBuffValue.GetAddValue = function(self)
-  -- function num : 0_4
+function SkillEffectParam_ModifyBuffValue:GetAddValue()
   return self._addValue
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ModifyBuffValue.GetCertainValue = function(self)
-  -- function num : 0_5
+function SkillEffectParam_ModifyBuffValue:GetCertainValue()
   return self._certainValue
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ModifyBuffValue.GetMaxValue = function(self)
-  -- function num : 0_6
+function SkillEffectParam_ModifyBuffValue:GetMaxValue()
   return self._maxValue
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ModifyBuffValue.NeedKill = function(self)
-  -- function num : 0_7
+function SkillEffectParam_ModifyBuffValue:NeedKill()
   return self._needKill
 end
-
-

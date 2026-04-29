@@ -1,21 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_weike_notify_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("notify_extends")
 require("base_ins_r")
 _class("PlayWeikeNotifyInstruction", BaseInstruction)
 PlayWeikeNotifyInstruction = PlayWeikeNotifyInstruction
-local notifyClsDic = {[NotifyType.Pet1601781SkillHolder1] = NTPet1601781SkillHolder1, [NotifyType.Pet1601781SkillHolder2] = NTPet1601781SkillHolder2, [NotifyType.Pet1601781SkillHolder3] = NTPet1601781SkillHolder3}
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
+local notifyClsDic = {
+  [NotifyType.Pet1601781SkillHolder1] = NTPet1601781SkillHolder1,
+  [NotifyType.Pet1601781SkillHolder2] = NTPet1601781SkillHolder2,
+  [NotifyType.Pet1601781SkillHolder3] = NTPet1601781SkillHolder3
+}
 
-PlayWeikeNotifyInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_0 , upvalues : _ENV, notifyClsDic
+function PlayWeikeNotifyInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local results = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.WeikeNotify)
-  for _,result in ipairs(results) do
+  for _, result in ipairs(results) do
     local notifyType = result:GetNotifyType()
     local skillType = result:GetSkillType()
     local casterPos = result:GetCasterPos()
@@ -23,10 +20,7 @@ PlayWeikeNotifyInstruction.DoInstruction = function(self, TT, casterEntity, phas
     local notifyCls = notifyClsDic[notifyType]
     if notifyCls then
       local notify = notifyCls:New(skillType, casterPos, multiCastCount)
-      ;
-      (world:GetService("PlayBuff")):PlayBuffView(TT, notify)
+      world:GetService("PlayBuff"):PlayBuffView(TT, notify)
     end
   end
 end
-
-

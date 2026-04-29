@@ -1,59 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n31/SecondAnniversary/ui_n31_second_anniversary_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN31SecondAnniversaryAwardItem", UICustomWidget)
 UIN31SecondAnniversaryAwardItem = UIN31SecondAnniversaryAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN31SecondAnniversaryAwardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN31SecondAnniversaryAwardItem:OnShow(uiParams)
   self._atlas = self:GetAsset("N31Anniversary.spriteatlas", LoadType.SpriteAtlas)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31SecondAnniversaryAwardItem._GetComponents = function(self)
-  -- function num : 0_1
+function UIN31SecondAnniversaryAwardItem:_GetComponents()
   self._background = self:GetUIComponent("Image", "Background")
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._count = self:GetUIComponent("UILocalizationText", "Count")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31SecondAnniversaryAwardItem.SetData = function(self, data, callBack, bigAwardItem)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN31SecondAnniversaryAwardItem:SetData(data, callBack, bigAwardItem)
   self._data = data
   self._callback = callBack
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
   if bigAwardItem then
-    (self._background).sprite = (self._atlas):GetSprite("hdzx_2znqd_icondi")
+    self._background.sprite = self._atlas:GetSprite("hdzx_2znqd_icondi")
   else
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._background).sprite = (self._atlas):GetSprite("hdzx_2znqd_icondi")
+    self._background.sprite = self._atlas:GetSprite("hdzx_2znqd_icondi")
   end
-  local cfg = (Cfg.cfg_item)[(self._data).assetid]
+  local cfg = Cfg.cfg_item[self._data.assetid]
   if cfg == nil then
-    (Log.fatal)("cfg_item is nil." .. (self._data).assetid)
-    return 
+    Log.fatal("cfg_item is nil." .. self._data.assetid)
+    return
   end
-  ;
-  (self._icon):LoadImage(cfg.Icon)
-  ;
-  (self._count):SetText((self._data).count)
+  self._icon:LoadImage(cfg.Icon)
+  self._count:SetText(self._data.count)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31SecondAnniversaryAwardItem.IconOnClick = function(self, go)
-  -- function num : 0_3
-  (self._callback)((self._data).assetid, (go.transform).position)
+function UIN31SecondAnniversaryAwardItem:IconOnClick(go)
+  self._callback(self._data.assetid, go.transform.position)
 end
-
-

@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_modify_rest_round.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultModifyRestRound", BuffResultBase)
 BuffResultModifyRestRound = BuffResultModifyRestRound
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultModifyRestRound.Constructor = function(self, curWaveRound, curWaveRoundDiff)
-  -- function num : 0_0
+function BuffResultModifyRestRound:Constructor(curWaveRound, curWaveRoundDiff)
   self._curWaveRound = curWaveRound
   self._curWaveRoundDiff = curWaveRoundDiff
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultModifyRestRound.GetCurWaveRound = function(self)
-  -- function num : 0_1
+function BuffResultModifyRestRound:GetCurWaveRound()
   return self._curWaveRound
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultModifyRestRound.GetCurWaveRoundDiff = function(self)
-  -- function num : 0_2
+function BuffResultModifyRestRound:GetCurWaveRoundDiff()
   return self._curWaveRoundDiff
 end
-
-

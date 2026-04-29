@@ -1,114 +1,80 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_plot_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPlotEnter", UIController)
 UIPlotEnter = UIPlotEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPlotEnter.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPlotEnter:OnShow(uiParam)
   local node = uiParam[1]
   self._stage = uiParam[2]
   local chapterid = uiParam[3]
   self._module = self:GetModule(MissionModule)
-  self._data = (self._module):GetDiscoveryData()
+  self._data = self._module:GetDiscoveryData()
   local txtStageIdx = self:GetUIComponent("UILocalizationText", "txtStageIdx")
   local txtStageNameTex = self:GetUIComponent("UILocalizationText", "txtStageName")
   local txtStageName = self:GetUIComponent("RollingText", "txtStageName")
   txtStageIdx.text = node.name or ""
-  txtStageName:RefreshText((self._stage).name or "")
+  txtStageName:RefreshText(self._stage.name or "")
   local img = self:GetUIComponent("Image", "imgBG")
   self._atlas = self:GetAsset("UIDiscovery.spriteatlas", LoadType.SpriteAtlas)
-  local sprite, texColor, descColor = nil, nil, nil
-  local discoverySection = (self._data):GetDiscoverySectionByChapterId(chapterid)
+  local sprite, texColor, descColor
+  local discoverySection = self._data:GetDiscoverySectionByChapterId(chapterid)
   self._isBetween = discoverySection.isBetween
   if not self._isBetween then
     sprite = "map_juqing_di1"
-    texColor = Color(0.17254901960784, 0.17254901960784, 0.17254901960784, 1)
-    descColor = Color(0.3843137254902, 0.3843137254902, 0.3843137254902, 1)
+    texColor = Color(0.17254901960784313, 0.17254901960784313, 0.17254901960784313, 1)
+    descColor = Color(0.3843137254901961, 0.3843137254901961, 0.3843137254901961, 1)
   else
     sprite = "map_juqing_icon1"
-    texColor = Color(0.61176470588235, 0.45098039215686, 0.72549019607843, 1)
-    descColor = Color(0.63921568627451, 0.61960784313725, 0.66666666666667, 1)
+    texColor = Color(0.611764705882353, 0.45098039215686275, 0.7254901960784313, 1)
+    descColor = Color(0.6392156862745098, 0.6196078431372549, 0.6666666666666666, 1)
   end
   txtStageIdx.color = texColor
   txtStageNameTex.color = descColor
-  img.sprite = (self._atlas):GetSprite(sprite)
+  img.sprite = self._atlas:GetSprite(sprite)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPlotEnter.OnHide = function(self)
-  -- function num : 0_1
+function UIPlotEnter:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPlotEnter.EnterPlot = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local story = (self._data):GetStoryByStageIdStoryType((self._stage).id, StoryTriggerType.Node)
+function UIPlotEnter:EnterPlot()
+  local story = self._data:GetStoryByStageIdStoryType(self._stage.id, StoryTriggerType.Node)
   if not story then
-    (Log.error)("### [UIPlotEnter] no story in stage:", (self._stage).id)
-    return 
+    Log.error("### [UIPlotEnter] no story in stage:", self._stage.id)
+    return
   end
   self:ShowDialog("UIStoryController", story.id, function()
-    -- function num : 0_2_0 , upvalues : self, _ENV
-    local isActive = (self._module):IsPassMissionID((self._stage).id)
+    local isActive = self._module:IsPassMissionID(self._stage.id)
     if isActive then
-      return 
+      return
     end
     self:StartTask(function(TT)
-      -- function num : 0_2_0_0 , upvalues : self, _ENV
-      (self._module):SetMissionStoryActive(TT, (self._stage).id, ActiveStoryType.ActiveStoryType_BeforeBattle)
-      local ret, award = (self._module):CompleteStoryMission(TT, (self._stage).id)
+      self._module:SetMissionStoryActive(TT, self._stage.id, ActiveStoryType.ActiveStoryType_BeforeBattle)
+      local ret, award = self._module:CompleteStoryMission(TT, self._stage.id)
       if ret == MISSION_RESULT_CODE.MISSION_SUCCEED then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryFlushLines)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryFlushLines)
         self:ShowDialog("UIGetItemController", award, function()
-        -- function num : 0_2_0_0_0 , upvalues : _ENV, self
-        local trigger = false
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuidePlotEnterFinish, (self._stage).id, function(_trigger)
-          -- function num : 0_2_0_0_0_0 , upvalues : trigger
-          trigger = _trigger
-        end
-)
-        if not trigger then
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CheckPartUnlock)
-        end
-      end
-)
+          local trigger = false
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.GuidePlotEnterFinish, self._stage.id, function(_trigger)
+            trigger = _trigger
+          end)
+          if not trigger then
+          end
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.CheckPartUnlock)
+        end)
       else
-        ;
-        (ToastManager.ShowToast)((self._module):GetErrorMsg(ret))
+        ToastManager.ShowToast(self._module:GetErrorMsg(ret))
       end
-    end
-, self)
-  end
-)
+    end, self)
+  end)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPlotEnter.imgBGOnClick = function(self, go)
-  -- function num : 0_3
+function UIPlotEnter:imgBGOnClick(go)
   self:EnterPlot()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPlotEnter.btnEnterOnClick = function(self, go)
-  -- function num : 0_4
+function UIPlotEnter:btnEnterOnClick(go)
   self:EnterPlot()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPlotEnter.bgOnClick = function(self, go)
-  -- function num : 0_5
+function UIPlotEnter:bgOnClick(go)
   self:CloseDialog()
 end
-
-

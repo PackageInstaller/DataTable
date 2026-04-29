@@ -1,88 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/collage/ui_season_maze_collage_content_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeCollageContentBase", UICustomWidget)
 UISeasonMazeCollageContentBase = UISeasonMazeCollageContentBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeCollageContentBase.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazeCollageContentBase:Constructor()
   self._bVisible = false
-  self._collageDagaMgr = ((GameGlobal.GetModule)(SeasonMazeModule)):GetSeasonMazeCollageDataMgr()
+  self._collageDagaMgr = GameGlobal.GetModule(SeasonMazeModule):GetSeasonMazeCollageDataMgr()
   self._itemCountPerRow = 4
   self._listShowItemCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentBase.InitCommonWidget = function(self)
-  -- function num : 0_1
+function UISeasonMazeCollageContentBase:InitCommonWidget()
   self._rootGo = self:GetGameObject("Root")
   self.contentScrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentBase.SetVisible = function(self, bVisible)
-  -- function num : 0_2
-  (self._rootGo):SetActive(bVisible)
+function UISeasonMazeCollageContentBase:SetVisible(bVisible)
+  self._rootGo:SetActive(bVisible)
   self._bVisible = bVisible
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentBase.OnInit = function(self, itemClickCb)
-  -- function num : 0_3
+function UISeasonMazeCollageContentBase:OnInit(itemClickCb)
   self:SetVisible(false)
   self._itemClickCb = itemClickCb
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentBase.OnItemClick = function(self, itemID, pos)
-  -- function num : 0_4
-  if (self.contentScrollView).IsDraging then
-    return 
+function UISeasonMazeCollageContentBase:OnItemClick(itemID, pos)
+  if self.contentScrollView.IsDraging then
+    return
   end
   if self._itemClickCb then
-    (self._itemClickCb)(itemID, pos, self:GetCollageType())
+    self._itemClickCb(itemID, pos, self:GetCollageType())
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentBase.OnEnter = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonMazeCollageContentBase:OnEnter()
   if self._bVisible then
-    return 
+    return
   end
   self:SetVisible(true)
-  self._dataList = (self._collageDagaMgr):GetData(self:GetCollageType())
-  self._listShowItemCount = (math.ceil)(#self._dataList / self._itemCountPerRow)
+  self._dataList = self._collageDagaMgr:GetData(self:GetCollageType())
+  self._listShowItemCount = math.ceil(#self._dataList / self._itemCountPerRow)
   self:RefreshScrollView()
-  ;
-  (self.contentScrollView):MovePanelToItemIndex(0, 0)
+  self.contentScrollView:MovePanelToItemIndex(0, 0)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentBase.OnExit = function(self)
-  -- function num : 0_6
+function UISeasonMazeCollageContentBase:OnExit()
   if not self._bVisible then
-    return 
+    return
   end
   self:SetVisible(false)
   self:ClearNew()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentBase.ClearNew = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonMazeCollageContentBase:ClearNew()
   if self._dataList then
-    for k,subData in pairs(self._dataList) do
+    for k, subData in pairs(self._dataList) do
       if subData:GetNew() then
         subData:SetNewAsRead()
       end
@@ -90,41 +61,24 @@ UISeasonMazeCollageContentBase.ClearNew = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentBase.RefreshScrollView = function(self)
-  -- function num : 0_8
+function UISeasonMazeCollageContentBase:RefreshScrollView()
   if not self.isDynamicSvInited then
     self.isDynamicSvInited = true
-    ;
-    (self.contentScrollView):InitListView(self._listShowItemCount, function(scrollView, index)
-    -- function num : 0_8_0 , upvalues : self
-    return self:SpawnListItem(scrollView, index)
-  end
-)
+    self.contentScrollView:InitListView(self._listShowItemCount, function(scrollView, index)
+      return self:SpawnListItem(scrollView, index)
+    end)
   else
     self:_RefreshItemScroll(self._listShowItemCount, self.contentScrollView)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentBase._RefreshItemScroll = function(self, count, list)
-  -- function num : 0_9
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UISeasonMazeCollageContentBase:_RefreshItemScroll(count, list)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(count)
   list:MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((list.ScrollRect).content).localPosition = contentPos
+  list.ScrollRect.content.localPosition = contentPos
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentBase.SpawnListItem = function(self, scrollView, rowIndex)
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.exception)("UISeasonMazeCollageContentBase:SpawnListItem 需要子类实现该方法")
+function UISeasonMazeCollageContentBase:SpawnListItem(scrollView, rowIndex)
+  Log.exception("UISeasonMazeCollageContentBase:SpawnListItem 需要子类实现该方法")
 end
-
-

@@ -1,37 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_expand_single_chain_scope.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicExpandSingleChainScope", BuffLogicBase)
 BuffLogicExpandSingleChainScope = BuffLogicExpandSingleChainScope
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicExpandSingleChainScope.Constructor = function(self, _buffIns, logicParam)
-  -- function num : 0_0
+function BuffLogicExpandSingleChainScope:Constructor(_buffIns, logicParam)
   self._addCount = logicParam.addCount
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicExpandSingleChainScope.DoLogic = function(self)
-  -- function num : 0_1
-  ((self._entity):BuffComponent()):SetBuffValue("ExpandSingleChainScope", self._addCount)
+function BuffLogicExpandSingleChainScope:DoLogic()
+  self._entity:BuffComponent():SetBuffValue("ExpandSingleChainScope", self._addCount)
 end
 
 _class("BuffLogicRevertExpandSingleChainScope", BuffLogicBase)
 BuffLogicRevertExpandSingleChainScope = BuffLogicRevertExpandSingleChainScope
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRevertExpandSingleChainScope.Constructor = function(self, _buffIns, logicParam)
-  -- function num : 0_2
+function BuffLogicRevertExpandSingleChainScope:Constructor(_buffIns, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRevertExpandSingleChainScope.DoLogic = function(self)
-  -- function num : 0_3
-  ((self._entity):BuffComponent()):SetBuffValue("ExpandSingleChainScope", nil)
+function BuffLogicRevertExpandSingleChainScope:DoLogic()
+  self._entity:BuffComponent():SetBuffValue("ExpandSingleChainScope", nil)
 end
-
-

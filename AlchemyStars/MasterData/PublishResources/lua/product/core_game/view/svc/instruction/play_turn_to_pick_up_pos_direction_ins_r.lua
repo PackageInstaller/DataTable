@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_turn_to_pick_up_pos_direction_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTurnToPickUpPosDirectionInstruction", BaseInstruction)
 PlayTurnToPickUpPosDirectionInstruction = PlayTurnToPickUpPosDirectionInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTurnToPickUpPosDirectionInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTurnToPickUpPosDirectionInstruction:Constructor(paramList)
   self._pickUpIndex = tonumber(paramList.pickUpIndex)
   self._waitTime = tonumber(paramList.waitTime) or 0
   self._directDir = tonumber(paramList.directDir) or 1
@@ -17,26 +10,23 @@ PlayTurnToPickUpPosDirectionInstruction.Constructor = function(self, paramList)
   assert(self._pickUpIndex, "PlayTurnToPickUpDirection需要pickUpIndex参数")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTurnToPickUpPosDirectionInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTurnToPickUpPosDirectionInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local selectComponent = casterEntity:RenderPickUpComponent()
   local selectedPosArray = selectComponent:GetAllValidPickUpGridPos()
   if #selectedPosArray == 0 or not selectedPosArray[self._pickUpIndex] then
-    (Log.warn)(self._className, "没有找到索引的拾取点: ", self._pickUpIndex)
-    return 
+    Log.warn(self._className, "没有找到索引的拾取点: ", self._pickUpIndex)
+    return
   end
   local targetPickupPos = selectedPosArray[self._pickUpIndex]
   local boardServiceRender = world:GetService("BoardRender")
   local targetPickupRenderPos = boardServiceRender:GridPos2RenderPos(targetPickupPos)
-  local startDirection = (casterEntity:Location()):GetDirection()
+  local startDirection = casterEntity:Location():GetDirection()
   self:_CompressV3(startDirection)
-  local casterRenderPos = (casterEntity:Location()):GetPosition()
+  local casterRenderPos = casterEntity:Location():GetPosition()
   local newDirection = targetPickupRenderPos - casterRenderPos
   if self._useResultPosCalcDir == 1 then
-    local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+    local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
     local teleportResult = routineComponent:GetEffectResultByArray(SkillEffectType.Teleport)
     if teleportResult then
       local posOld = teleportResult:GetPosOld()
@@ -46,63 +36,48 @@ PlayTurnToPickUpPosDirectionInstruction.DoInstruction = function(self, TT, caste
       newDirection = posNewRender - posOldRender
     end
   end
-  do
-    if self._directDir == 1 then
-      newDirection = (Vector3.Normalize)(newDirection)
-    else
-      self:_CompressV3(newDirection)
+  if self._directDir == 1 then
+    newDirection = Vector3.Normalize(newDirection)
+  else
+    self:_CompressV3(newDirection)
+  end
+  local viewComponent = casterEntity:View()
+  local go = viewComponent:GetGameObject()
+  local transform = go.transform
+  local quaternionBegin = transform.rotation
+  if 0 < Vector3.Distance(newDirection, Vector3.zero) then
+    local quaternionFinal = Quaternion.LookRotation(newDirection, Vector3.up)
+    if 0 >= self._waitTime then
+      casterEntity:SetDirection(newDirection)
+      return
     end
-    local viewComponent = casterEntity:View()
-    local go = viewComponent:GetGameObject()
-    local transform = go.transform
-    local quaternionBegin = transform.rotation
-    if (Vector3.Distance)(newDirection, Vector3.zero) > 0 then
-      local quaternionFinal = (Quaternion.LookRotation)(newDirection, Vector3.up)
-      if self._waitTime <= 0 then
-        casterEntity:SetDirection(newDirection)
-        return 
-      end
-      local startTime = (GameGlobal:GetInstance()):GetCurrentTime()
-      local finalTime = (GameGlobal:GetInstance()):GetCurrentTime() + self._waitTime
-      local t = 0
-      do
-        while t <= self._waitTime do
-          local deltaTime = (GameGlobal:GetInstance()):GetCurrentTime() - startTime
-          t = t + deltaTime
-          transform.rotation = (Quaternion.Lerp)(quaternionBegin, quaternionFinal, (t) / self._waitTime)
-          YIELD(TT)
-        end
-        casterEntity:SetDirection(newDirection)
-      end
+    local startTime = GameGlobal:GetInstance():GetCurrentTime()
+    local finalTime = GameGlobal:GetInstance():GetCurrentTime() + self._waitTime
+    local t = 0
+    while t <= self._waitTime do
+      local deltaTime = GameGlobal:GetInstance():GetCurrentTime() - startTime
+      t = t + deltaTime
+      transform.rotation = Quaternion.Lerp(quaternionBegin, quaternionFinal, t / self._waitTime)
+      YIELD(TT)
     end
+    casterEntity:SetDirection(newDirection)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTurnToPickUpPosDirectionInstruction._CompressV3 = function(self, v3)
-  -- function num : 0_2
+function PlayTurnToPickUpPosDirectionInstruction:_CompressV3(v3)
   if v3.x > 1 then
     v3.x = 1
-  else
-    if v3.x < -1 then
-      v3.x = -1
-    end
+  elseif v3.x < -1 then
+    v3.x = -1
   end
-  if v3.y > 1 then
+  if 1 < v3.y then
     v3.y = 1
-  else
-    if v3.y < -1 then
-      v3.y = -1
-    end
+  elseif -1 > v3.y then
+    v3.y = -1
   end
-  if v3.z > 1 then
+  if 1 < v3.z then
     v3.z = 1
-  else
-    if v3.z < -1 then
-      v3.z = -1
-    end
+  elseif -1 > v3.z then
+    v3.z = -1
   end
 end
-
-

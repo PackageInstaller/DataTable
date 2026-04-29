@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/main/ui_homeland_movie_actor_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMovieActorListItem", UICustomWidget)
 UIHomelandMovieActorListItem = UIHomelandMovieActorListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMovieActorListItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandMovieActorListItem:Constructor()
   self._data = nil
   self._movieData = nil
   self._atlas = nil
@@ -19,24 +12,15 @@ UIHomelandMovieActorListItem.Constructor = function(self)
   self._itemPos = Vector2(0, -3)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActorListItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandMovieActorListItem:OnShow(uiParams)
   self._atlas = self:GetAsset("UIHomelandMovie.spriteatlas", LoadType.SpriteAtlas)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActorListItem.Dispose = function(self)
-  -- function num : 0_2
+function UIHomelandMovieActorListItem:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActorListItem.InitWidget = function(self)
-  -- function num : 0_3
+function UIHomelandMovieActorListItem:InitWidget()
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._bg = self:GetUIComponent("Image", "bg")
   self._mask = self:GetUIComponent("Image", "mask")
@@ -45,97 +29,47 @@ UIHomelandMovieActorListItem.InitWidget = function(self)
   self._iconRect = self:GetUIComponent("RectTransform", "icon")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActorListItem.SetData = function(self, data, movieData, isActor)
-  -- function num : 0_4
+function UIHomelandMovieActorListItem:SetData(data, movieData, isActor)
   self._data = data
   self._movieData = movieData
   self._isActor = isActor
   self:InitData(isActor)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActorListItem.InitData = function(self, isActor)
-  -- function num : 0_5 , upvalues : _ENV
-  local id = (self._data)[1]
-  local actor = (Cfg.cfg_item)[id]
+function UIHomelandMovieActorListItem:InitData(isActor)
+  local id = self._data[1]
+  local actor = Cfg.cfg_item[id]
   if isActor then
-    (self._icon):LoadImage("head1_" .. id)
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._bg).sprite = (self._atlas):GetSprite("dy_kxyy_di08")
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._mask).sprite = (self._atlas):GetSprite("dy_kxyy_di08")
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._iconRect).sizeDelta = self._actorRect
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._iconRect).anchoredPosition = self._actorPos
+    self._icon:LoadImage("head1_" .. id)
+    self._bg.sprite = self._atlas:GetSprite("dy_kxyy_di08")
+    self._mask.sprite = self._atlas:GetSprite("dy_kxyy_di08")
+    self._iconRect.sizeDelta = self._actorRect
+    self._iconRect.anchoredPosition = self._actorPos
   else
-    ;
-    (self._icon):LoadImage(actor.Icon)
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._bg).sprite = (self._atlas):GetSprite("dy_kxyy_di10")
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._mask).sprite = (self._atlas):GetSprite("dy_kxyy_di10")
-    -- DECOMPILER ERROR at PC50: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._iconRect).sizeDelta = self._itemRect
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._iconRect).anchoredPosition = self._itemPos
+    self._icon:LoadImage(actor.Icon)
+    self._bg.sprite = self._atlas:GetSprite("dy_kxyy_di10")
+    self._mask.sprite = self._atlas:GetSprite("dy_kxyy_di10")
+    self._iconRect.sizeDelta = self._itemRect
+    self._iconRect.anchoredPosition = self._itemPos
   end
-  -- DECOMPILER ERROR at PC63: Confused about usage of register: R4 in 'UnsetPending'
-
-  if (self._data)[2] == 0 then
-    (self._gradeImg).sprite = (self._atlas):GetSprite("dy_kxyy_bq03")
-  else
-    -- DECOMPILER ERROR at PC74: Confused about usage of register: R4 in 'UnsetPending'
-
-    if (self._data)[2] == 1 then
-      (self._gradeImg).sprite = (self._atlas):GetSprite("dy_kxyy_bq01")
-    else
-      -- DECOMPILER ERROR at PC85: Confused about usage of register: R4 in 'UnsetPending'
-
-      if (self._data)[2] == 2 then
-        (self._gradeImg).sprite = (self._atlas):GetSprite("dy_kxyy_bq02")
-      end
-    end
+  if self._data[2] == 0 then
+    self._gradeImg.sprite = self._atlas:GetSprite("dy_kxyy_bq03")
+  elseif self._data[2] == 1 then
+    self._gradeImg.sprite = self._atlas:GetSprite("dy_kxyy_bq01")
+  elseif self._data[2] == 2 then
+    self._gradeImg.sprite = self._atlas:GetSprite("dy_kxyy_bq02")
   end
-  local used = (MovieDataManager:GetInstance()):GetMovieHistoryUsedByID((self._movieData).ID, id)
-  ;
-  (self._gradeImgObj):SetActive(used)
+  local used = MovieDataManager:GetInstance():GetMovieHistoryUsedByID(self._movieData.ID, id)
+  self._gradeImgObj:SetActive(used)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActorListItem.BtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIHomelandMovieActorListItem:BtnOnClick(go)
   if not self._isActor then
-    local id = (self._data)[1]
+    local id = self._data[1]
     self:ShowDialog("UIItemTipsHomeland", id, go)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActorListItem.GetData = function(self)
-  -- function num : 0_7
+function UIHomelandMovieActorListItem:GetData()
   return self._data
 end
-
-

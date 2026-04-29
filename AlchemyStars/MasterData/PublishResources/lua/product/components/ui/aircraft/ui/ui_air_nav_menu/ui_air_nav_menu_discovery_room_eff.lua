@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_air_nav_menu/ui_air_nav_menu_discovery_room_eff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAirNavMenuDiscoveryRoomEff", UICustomWidget)
 UIAirNavMenuDiscoveryRoomEff = UIAirNavMenuDiscoveryRoomEff
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAirNavMenuDiscoveryRoomEff.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIAirNavMenuDiscoveryRoomEff:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuDiscoveryRoomEff.OnHide = function(self)
-  -- function num : 0_1
+function UIAirNavMenuDiscoveryRoomEff:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuDiscoveryRoomEff.SetData = function(self, pos, size, data, callback)
-  -- function num : 0_2
+function UIAirNavMenuDiscoveryRoomEff:SetData(pos, size, data, callback)
   self:GetComponents()
   self._size = size
   self._data = data
@@ -29,42 +16,25 @@ UIAirNavMenuDiscoveryRoomEff.SetData = function(self, pos, size, data, callback)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuDiscoveryRoomEff.OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._rect).anchoredPosition = self._pos
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).sizeDelta = self._size
-  local tex = nil
-  if (self._data).finish then
+function UIAirNavMenuDiscoveryRoomEff:OnValue()
+  self._rect.anchoredPosition = self._pos
+  self._rect.sizeDelta = self._size
+  local tex
+  if self._data.finish then
     tex = "str_aircraft_quality_menu_can_dispatch_finish"
   else
     tex = "str_aircraft_quality_menu_can_dispatch"
   end
-  ;
-  (self._tex):SetText((StringTable.Get)(tex))
+  self._tex:SetText(StringTable.Get(tex))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuDiscoveryRoomEff.GetComponents = function(self)
-  -- function num : 0_4
+function UIAirNavMenuDiscoveryRoomEff:GetComponents()
   self._rect = self:GetUIComponent("RectTransform", "pos")
   self._tex = self:GetUIComponent("UILocalizationText", "tex")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuDiscoveryRoomEff.btnOnClick = function(self, go)
-  -- function num : 0_5
+function UIAirNavMenuDiscoveryRoomEff:btnOnClick(go)
   if self._callback then
-    (self._callback)((self._data).room)
+    self._callback(self._data.room)
   end
 end
-
-

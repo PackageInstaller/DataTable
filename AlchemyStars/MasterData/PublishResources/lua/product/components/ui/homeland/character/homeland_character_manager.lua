@@ -1,123 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/character/homeland_character_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandCharacterManager", Object)
 HomelandCharacterManager = HomelandCharacterManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandCharacterManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandCharacterManager:Constructor()
   self._mainCharacterController = HomelandMainCharacterController:New()
   self._npcVisDic = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCharacterManager.Init = function(self, homelandClient)
-  -- function num : 0_1
-  (self._mainCharacterController):Init(homelandClient)
+function HomelandCharacterManager:Init(homelandClient)
+  self._mainCharacterController:Init(homelandClient)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCharacterManager.Dispose = function(self)
-  -- function num : 0_2
-  (self._mainCharacterController):Dispose()
+function HomelandCharacterManager:Dispose()
+  self._mainCharacterController:Dispose()
   self._npcVisDic = {}
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCharacterManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_3
-  (self._mainCharacterController):Update(deltaTimeMS)
+function HomelandCharacterManager:Update(deltaTimeMS)
+  self._mainCharacterController:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCharacterManager.MainCharacterController = function(self)
-  -- function num : 0_4
+function HomelandCharacterManager:MainCharacterController()
   return self._mainCharacterController
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCharacterManager.GetCharacterTransform = function(self)
-  -- function num : 0_5
-  return (self._mainCharacterController):Transform()
+function HomelandCharacterManager:GetCharacterTransform()
+  return self._mainCharacterController:Transform()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCharacterManager.OnModeChanged = function(self, TT, mode)
-  -- function num : 0_6
-  (self._mainCharacterController):OnModeChanged(TT, mode)
+function HomelandCharacterManager:OnModeChanged(TT, mode)
+  self._mainCharacterController:OnModeChanged(TT, mode)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCharacterManager.CharacterInteractable = function(self, interactPointType)
-  -- function num : 0_7 , upvalues : _ENV
-  local state = (self._mainCharacterController):State()
+function HomelandCharacterManager:CharacterInteractable(interactPointType)
+  local state = self._mainCharacterController:State()
   if state == HomelandActorStateType.Axe and interactPointType == InteractPointType.CutTree then
     return true
+  elseif state == HomelandActorStateType.Pick and interactPointType == InteractPointType.Mining then
+    return true
+  elseif interactPointType == InteractPointType.TracePoint then
+    return true
   else
-    if state == HomelandActorStateType.Pick and interactPointType == InteractPointType.Mining then
-      return true
-    else
-      if interactPointType == InteractPointType.TracePoint then
-        return true
-      else
-        return state == HomelandActorStateType.Idle or state == HomelandActorStateType.Run or state == HomelandActorStateType.Swim or state == HomelandActorStateType.Navigate
-      end
-    end
+    return state == HomelandActorStateType.Idle or state == HomelandActorStateType.Run or state == HomelandActorStateType.Swim or state == HomelandActorStateType.Navigate
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCharacterManager.RegisterNpc = function(self, npcGO)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
+function HomelandCharacterManager:RegisterNpc(npcGO)
   if npcGO then
-    (self._npcVisDic)[npcGO] = npcGO.activeSelf
+    self._npcVisDic[npcGO] = npcGO.activeSelf
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCharacterManager.UnRegisterNpc = function(self, npcGO)
-  -- function num : 0_9
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
+function HomelandCharacterManager:UnRegisterNpc(npcGO)
   if npcGO then
-    (self._npcVisDic)[npcGO] = nil
+    self._npcVisDic[npcGO] = nil
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCharacterManager.HideNpcs = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  for npc,_ in pairs(self._npcVisDic) do
-    -- DECOMPILER ERROR at PC6: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._npcVisDic)[npc] = npc.activeSelf
+function HomelandCharacterManager:HideNpcs()
+  for npc, _ in pairs(self._npcVisDic) do
+    self._npcVisDic[npc] = npc.activeSelf
     npc:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCharacterManager.RevertNpcs = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  for npc,vis in pairs(self._npcVisDic) do
+function HomelandCharacterManager:RevertNpcs()
+  for npc, vis in pairs(self._npcVisDic) do
     npc:SetActive(vis)
   end
 end
-
-

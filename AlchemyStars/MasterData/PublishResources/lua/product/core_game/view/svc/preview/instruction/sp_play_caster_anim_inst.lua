@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_caster_anim_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayCasterAnimInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayCasterAnimInstruction = SkillPreviewPlayCasterAnimInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayCasterAnimInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewPlayCasterAnimInstruction:Constructor(params)
   self._anim = params.Anim
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayCasterAnimInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1
-  casterEntity:SetAnimatorControllerTriggers({self._anim})
+function SkillPreviewPlayCasterAnimInstruction:DoInstruction(TT, casterEntity, previewContext)
+  casterEntity:SetAnimatorControllerTriggers({
+    self._anim
+  })
 end
-
-

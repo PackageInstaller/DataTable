@@ -1,43 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_turn_to_target_normalize.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionTurnToTargetNormalize", ActionTurnToTarget)
 ActionTurnToTargetNormalize = ActionTurnToTargetNormalize
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionTurnToTargetNormalize.TurnToTarget = function(self, world, entityWork, nTargetType)
-  -- function num : 0_0
+function ActionTurnToTargetNormalize:TurnToTarget(world, entityWork, nTargetType)
   local aiComponent = entityWork:AI()
-  if aiComponent:CanTurn() == false then
+  if false == aiComponent:CanTurn() then
     self:PrintLog("转向: 转向玩家方向<不允许>")
-    return 
+    return
   end
-  local targetEntity = nil
-  if nTargetType and nTargetType > 0 then
+  local targetEntity
+  if nTargetType and 0 < nTargetType then
     local nSkillID = self:GetLogicData(1)
     if nSkillID == 0 then
       self:PrintLog("转向: 转向使用的技能ID为0<不允许>")
-      return 
+      return
     end
     targetEntity = self:_GetTargetPosBySkillID(world, entityWork, nSkillID)
   else
-    do
-      targetEntity = aiComponent:GetTargetEntity()
-      if not targetEntity or not entityWork:HasBodyArea() then
-        self:PrintLog("转向: 转向玩家方向<允许>，目标没有BodyArea")
-        return 
-      end
-      self:PrintLog("转向: 转向玩家方向<允许>")
-      local posTarget = targetEntity:GetGridPosition()
-      local posDir = self:GetDir(posTarget, entityWork)
-      local posSelf = entityWork:GetGridPosition()
-      self:PrintDebugLog("转向: <允许>，我的位置 = ", posSelf, " 目标ID = ", targetEntity:GetID(), " 目标位置=", posTarget, " 转向方向：", posDir)
-      entityWork:SetGridDirection(posDir)
-    end
+    targetEntity = aiComponent:GetTargetEntity()
   end
+  if not targetEntity or not entityWork:HasBodyArea() then
+    self:PrintLog("转向: 转向玩家方向<允许>，目标没有BodyArea")
+    return
+  end
+  self:PrintLog("转向: 转向玩家方向<允许>")
+  local posTarget = targetEntity:GetGridPosition()
+  local posDir = self:GetDir(posTarget, entityWork)
+  local posSelf = entityWork:GetGridPosition()
+  self:PrintDebugLog("转向: <允许>，我的位置 = ", posSelf, " 目标ID = ", targetEntity:GetID(), " 目标位置=", posTarget, " 转向方向：", posDir)
+  entityWork:SetGridDirection(posDir)
 end
-
-

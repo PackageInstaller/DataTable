@@ -1,215 +1,142 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/avg_minigame_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("AvgMinigameComponent", ICampaignComponent)
 AvgMinigameComponent = AvgMinigameComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AvgMinigameComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function AvgMinigameComponent:Constructor()
   self.m_component_info = AVGStoryComponentClientInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AvgMinigameComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function AvgMinigameComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = AVGStoryComponentClientInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AvgMinigameComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function AvgMinigameComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AvgMinigameComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function AvgMinigameComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_AVG_STORY
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AvgMinigameComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function AvgMinigameComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AvgMinigameComponent.HandleSetCurrentLocation = function(self, TT, asyncRes, nodeID)
-  -- function num : 0_5 , upvalues : _ENV
+function AvgMinigameComponent:HandleSetCurrentLocation(TT, asyncRes, nodeID)
   local request = AvgSetCurrentLocationReq:New()
   local response = AvgSetCurrentLocationRsp:New()
   request.Node_id = nodeID
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][AvgComponent] HandleSetCurrentLocation ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][AvgComponent] HandleSetCurrentLocation ret:", asyncRes.m_result)
     return -1
   end
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).cur_node_id = nodeID
+  self.m_component_info.cur_node_id = nodeID
   return response.ret
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AvgMinigameComponent.HandleUpdateNodeData = function(self, TT, asyncRes, data, complate_node_id)
-  -- function num : 0_6 , upvalues : _ENV
+function AvgMinigameComponent:HandleUpdateNodeData(TT, asyncRes, data, complate_node_id)
   local request = AvgUpdateNodeDataReq:New()
   local response = AvgUpdateNodeDataRsp:New()
   request.data = data
   request.complate_mission_id = complate_node_id
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][DemoComponent] HandleDemo ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][DemoComponent] HandleDemo ret:", asyncRes.m_result)
     return -1
   end
-  local timeMd = (GameGlobal.GetModule)(SvrTimeModule)
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  ((self.m_component_info).mission_datas)[data.mission_id] = data
-  ;
-  (table.insert)((self.m_component_info).conplated_node_ids, complate_node_id)
-  ;
-  (table.unique)((self.m_component_info).conplated_node_ids)
-  -- DECOMPILER ERROR at PC60: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (((self.m_component_info).mission_datas)[data.mission_id]).update_time = (math.floor)(timeMd:GetServerTime() / 1000)
+  local timeMd = GameGlobal.GetModule(SvrTimeModule)
+  self.m_component_info.mission_datas[data.mission_id] = data
+  table.insert(self.m_component_info.conplated_node_ids, complate_node_id)
+  table.unique(self.m_component_info.conplated_node_ids)
+  self.m_component_info.mission_datas[data.mission_id].update_time = math.floor(timeMd:GetServerTime() / 1000)
   return response.ret
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AvgMinigameComponent.HandleManualChoose = function(self, TT, asyncRes, manual_id)
-  -- function num : 0_7 , upvalues : _ENV
+function AvgMinigameComponent:HandleManualChoose(TT, asyncRes, manual_id)
   local request = AvgManualChooseReq:New()
   local response = AvgManualChooseRsp:New()
   request.manual_id = manual_id
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][DemoComponent] HandleDemo ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][DemoComponent] HandleDemo ret:", asyncRes.m_result)
     return -1
   end
-  ;
-  (table.insert)((self.m_component_info).choosed_manual_ids, manual_id)
-  ;
-  (table.unique)((self.m_component_info).choosed_manual_ids)
+  table.insert(self.m_component_info.choosed_manual_ids, manual_id)
+  table.unique(self.m_component_info.choosed_manual_ids)
   return response.ret
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AvgMinigameComponent.HandleComplateEnding = function(self, TT, asyncRes, ending_id)
-  -- function num : 0_8 , upvalues : _ENV
+function AvgMinigameComponent:HandleComplateEnding(TT, asyncRes, ending_id)
   local request = AvgComplateEndingReq:New()
   local response = AvgComplateEndingRsp:New()
   request.ending_id = ending_id
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][DemoComponent] HandleDemo ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][DemoComponent] HandleDemo ret:", asyncRes.m_result)
     return -1
   end
-  ;
-  (table.insert)((self.m_component_info).conplated_ending_ids, ending_id)
-  ;
-  (table.unique)((self.m_component_info).conplated_ending_ids)
+  table.insert(self.m_component_info.conplated_ending_ids, ending_id)
+  table.unique(self.m_component_info.conplated_ending_ids)
   return response.ret
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AvgMinigameComponent.HandleShowEvidence = function(self, TT, asyncRes, evidence_manual_id, evidence_id)
-  -- function num : 0_9 , upvalues : _ENV
+function AvgMinigameComponent:HandleShowEvidence(TT, asyncRes, evidence_manual_id, evidence_id)
   local request = AvgShowEvidenceReq:New()
   local response = AvgShowEvidenceRsp:New()
   request.evidence_manual_id = evidence_manual_id
   request.evidence_id = evidence_id
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][DemoComponent] HandleDemo ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][DemoComponent] HandleDemo ret:", asyncRes.m_result)
     return -1
   end
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R8 in 'UnsetPending'
-
-  if ((self.m_component_info).showed_evidence)[evidence_manual_id] == nil then
-    ((self.m_component_info).showed_evidence)[evidence_manual_id] = {}
+  if self.m_component_info.showed_evidence[evidence_manual_id] == nil then
+    self.m_component_info.showed_evidence[evidence_manual_id] = {}
   end
-  ;
-  (table.insert)(((self.m_component_info).showed_evidence)[evidence_manual_id], evidence_id)
+  table.insert(self.m_component_info.showed_evidence[evidence_manual_id], evidence_id)
   return response.ret
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AvgMinigameComponent.HandleGainEvidence = function(self, TT, asyncRes, evidence_id)
-  -- function num : 0_10 , upvalues : _ENV
+function AvgMinigameComponent:HandleGainEvidence(TT, asyncRes, evidence_id)
   local request = AvgGainEvidenceReq:New()
   local response = AvgGainEvidenceRsp:New()
   request.evidence_id = evidence_id
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][DemoComponent] HandleDemo ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][DemoComponent] HandleDemo ret:", asyncRes.m_result)
     return -1
   end
-  ;
-  (table.insert)((self.m_component_info).gained_evidence, evidence_id)
+  table.insert(self.m_component_info.gained_evidence, evidence_id)
   return response.ret
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AvgMinigameComponent.HandleAcceptCgReward = function(self, TT, CgItemTemplateid)
-  -- function num : 0_11 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function AvgMinigameComponent:HandleAcceptCgReward(TT, CgItemTemplateid)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   return itemModule:RequestUseItemByTemplateID(TT, CgItemTemplateid, 1)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AvgMinigameComponent.HandleGetBadgeReward = function(self, TT, asyncRes, badge_reward_id)
-  -- function num : 0_12 , upvalues : _ENV
+function AvgMinigameComponent:HandleGetBadgeReward(TT, asyncRes, badge_reward_id)
   local request = AvgAcceptBadgeRewardReq:New()
   local response = AvgAcceptBadgeRewardRsp:New()
   request.badge_reward_id = badge_reward_id
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][DemoComponent] HandleDemo ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][DemoComponent] HandleDemo ret:", asyncRes.m_result)
     return -1
   end
-  ;
-  (table.insert)((self.m_component_info).accepted_badge_rewards, badge_reward_id)
-  ;
-  (table.unique)((self.m_component_info).accepted_badge_rewards)
+  table.insert(self.m_component_info.accepted_badge_rewards, badge_reward_id)
+  table.unique(self.m_component_info.accepted_badge_rewards)
   return response.ret
 end
-
-

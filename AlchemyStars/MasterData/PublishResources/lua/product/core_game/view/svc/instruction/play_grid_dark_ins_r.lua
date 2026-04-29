@@ -1,39 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_grid_dark_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayGridDarkInstruction", BaseInstruction)
 PlayGridDarkInstruction = PlayGridDarkInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayGridDarkInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayGridDarkInstruction:Constructor(paramList)
   self._type = tonumber(paramList.darkType)
   self._duration = tonumber(paramList.duration)
   self._endValue = tonumber(paramList.endValue)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridDarkInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayGridDarkInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local pieceService = world:GetService("Piece")
   if PlayGridDarkType.Dark == self._type then
     pieceService:SetAllPieceDark()
-  else
-    if PlayGridDarkType.Resume == self._type then
-      pieceService:RefreshPieceAnim()
-    else
-      if PlayGridDarkType.DarkParam == self._type then
-        pieceService:SetAllPieceDarkParam(self._duration, self._endValue)
-      end
-    end
+  elseif PlayGridDarkType.Resume == self._type then
+    pieceService:RefreshPieceAnim()
+  elseif PlayGridDarkType.DarkParam == self._type then
+    pieceService:SetAllPieceDarkParam(self._duration, self._endValue)
   end
 end
 
-local PlayGridDarkType = {Dark = 0, Resume = 1, DarkParam = 2}
+local PlayGridDarkType = {
+  Dark = 0,
+  Resume = 1,
+  DarkParam = 2
+}
 _enum("PlayGridDarkType", PlayGridDarkType)
-

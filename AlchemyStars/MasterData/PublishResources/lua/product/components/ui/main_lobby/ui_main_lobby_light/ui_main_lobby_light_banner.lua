@@ -1,49 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_light/ui_main_lobby_light_banner.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyLightBanner", UICustomWidget)
 UIMainLobbyLightBanner = UIMainLobbyLightBanner
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyLightBanner.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMainLobbyLightBanner:OnShow()
   self._anim_in = "uieff_MainLight_2_On"
   self._anim_loop = "uieff_MainLight_2_Loop"
   self._anim = self:GetUIComponent("Animation", "anim")
   if self._anim then
-    (self._anim):Play(self._anim_in)
+    self._anim:Play(self._anim_in)
     if self._event then
-      ((GameGlobal.Timer)()):CancelEvent(self._event)
+      GameGlobal.Timer():CancelEvent(self._event)
       self._event = nil
     end
-    self._event = ((GameGlobal.Timer)()):AddEvent(2100, function()
-    -- function num : 0_0_0 , upvalues : self
-    self:PlayLoopAnim()
-  end
-)
+    self._event = GameGlobal.Timer():AddEvent(2100, function()
+      self:PlayLoopAnim()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyLightBanner.PlayLoopAnim = function(self)
-  -- function num : 0_1
+function UIMainLobbyLightBanner:PlayLoopAnim()
   if self._anim then
-    (self._anim):Play(self._anim_loop)
+    self._anim:Play(self._anim_loop)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyLightBanner.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMainLobbyLightBanner:OnHide()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
   self._anim = nil
 end
-
-

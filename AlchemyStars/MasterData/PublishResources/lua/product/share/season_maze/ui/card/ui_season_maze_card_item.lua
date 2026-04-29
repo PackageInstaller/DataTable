@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/card/ui_season_maze_card_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeCardItem", UICustomWidget)
 UISeasonMazeCardItem = UISeasonMazeCardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeCardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazeCardItem:OnShow(uiParams)
   self._offsetY = 25
   self._atlas = self:GetAsset("SeasonMaze.spriteatlas", LoadType.SpriteAtlas)
-  self._seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self._seasonMazeObj = (self._seasonMazeModule):CurSeasonObj()
-  self._component = (self._seasonMazeObj):GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
-  self._componentInfo = (self._component):GetComponentInfo()
+  self._seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self._seasonMazeObj = self._seasonMazeModule:CurSeasonObj()
+  self._component = self._seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+  self._componentInfo = self._component:GetComponentInfo()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.InitWidget = function(self)
-  -- function num : 0_1
-  self._gameObject = (self.view):GetGameObject()
+function UISeasonMazeCardItem:InitWidget()
+  self._gameObject = self.view:GetGameObject()
   self._quality = self:GetUIComponent("Image", "Quality")
   self._qualityGO = self:GetGameObject("Quality")
   self._qualityTransform = self:GetUIComponent("RectTransform", "Quality")
@@ -34,10 +24,8 @@ UISeasonMazeCardItem.InitWidget = function(self)
   self._flagGO = self:GetGameObject("Flag")
   self._playBtnGO = self:GetGameObject("PlayBtn")
   self._mark = self:GetGameObject("Mark")
-  ;
-  (self._qualityGO):SetActive(false)
-  ;
-  (self._mark):SetActive(false)
+  self._qualityGO:SetActive(false)
+  self._mark:SetActive(false)
   self._animation = self:GetUIComponent("Animation", "Anim")
   self._diceAnimation = self:GetUIComponent("Animation", "DiceValue")
   self._shuaguangAnimation = self:GetUIComponent("Animation", "shuaguang")
@@ -48,10 +36,7 @@ UISeasonMazeCardItem.InitWidget = function(self)
   self._rectTransform = self:GetUIComponent("RectTransform", "Root")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.SetData = function(self, index, id, clickCallBack, playCallBack, canDrag, mgr, fromHandCard)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeCardItem:SetData(index, id, clickCallBack, playCallBack, canDrag, mgr, fromHandCard)
   self._rawPosition = Vector2(0, 0)
   self._index = index
   self._id = id
@@ -60,207 +45,125 @@ UISeasonMazeCardItem.SetData = function(self, index, id, clickCallBack, playCall
   self._canCard = canDrag
   self._mgr = mgr
   self._formHandCard = fromHandCard
-  self._cfg = (Cfg.cfg_component_season_maze_hand)[self._id]
+  self._cfg = Cfg.cfg_component_season_maze_hand[self._id]
   self:_SetUIInfo()
   self:_RegisterUIEventListener()
   self:EnableRaycast(clickCallBack ~= nil)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.EnableRaycast = function(self, enabled)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._quality).raycastTarget = enabled
+function UISeasonMazeCardItem:EnableRaycast(enabled)
+  self._quality.raycastTarget = enabled
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.PlayAnim = function(self, name)
-  -- function num : 0_4
-  (self._animation):Play(name)
+function UISeasonMazeCardItem:PlayAnim(name)
+  self._animation:Play(name)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.PlayDelaBagAnim = function(self, index)
-  -- function num : 0_5 , upvalues : _ENV
-  local delta = (math.ceil)(index / 4)
+function UISeasonMazeCardItem:PlayDelaBagAnim(index)
+  local delta = math.ceil(index / 4)
   delta = delta * 70
   if delta == 0 then
-    ((self._animation).gameObject):SetActive(true)
-    ;
-    (self._animation):Play("uianim_UISeasonMazeCardItem_bag_in")
+    self._animation.gameObject:SetActive(true)
+    self._animation:Play("uianim_UISeasonMazeCardItem_bag_in")
   else
-    local timerEvent = ((GameGlobal.Timer)()):AddEventTimes(delta, TimerTriggerCount.Once, function()
-    -- function num : 0_5_0 , upvalues : self
-    ((self._animation).gameObject):SetActive(true)
-    ;
-    (self._animation):Play("uianim_UISeasonMazeCardItem_bag_in")
-  end
-)
+    local timerEvent = GameGlobal.Timer():AddEventTimes(delta, TimerTriggerCount.Once, function()
+      self._animation.gameObject:SetActive(true)
+      self._animation:Play("uianim_UISeasonMazeCardItem_bag_in")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.StopAnim = function(self)
-  -- function num : 0_6
-  (self._animation):Stop()
-  ;
-  (self._shuaguangAnimation):Stop()
-  ;
-  (self._diceAnimation):Stop()
-  ;
-  (self._resValueAnimation):Stop()
+function UISeasonMazeCardItem:StopAnim()
+  self._animation:Stop()
+  self._shuaguangAnimation:Stop()
+  self._diceAnimation:Stop()
+  self._resValueAnimation:Stop()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.PlayShuaguang = function(self)
-  -- function num : 0_7
-  (self._shuaguangAnimation):Play("uianim_UISeasonMazeCardItem_shuaguang")
+function UISeasonMazeCardItem:PlayShuaguang()
+  self._shuaguangAnimation:Play("uianim_UISeasonMazeCardItem_shuaguang")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.PlayDiceAnimation = function(self)
-  -- function num : 0_8
-  (self._diceAnimation):Play("uianim_UISeasonMazeCardItem_DiceValue")
+function UISeasonMazeCardItem:PlayDiceAnimation()
+  self._diceAnimation:Play("uianim_UISeasonMazeCardItem_DiceValue")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.PlayBtnAnimation = function(self)
-  -- function num : 0_9
-  (self._playBtnAnimation):Play("uieff_UISeasonMazeCardItem_PlayBtn_touch")
+function UISeasonMazeCardItem:PlayBtnAnimation()
+  self._playBtnAnimation:Play("uieff_UISeasonMazeCardItem_PlayBtn_touch")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem._SetUIInfo = function(self)
-  -- function num : 0_10
-  (self._qualityGO):SetActive(true)
+function UISeasonMazeCardItem:_SetUIInfo()
+  self._qualityGO:SetActive(true)
   self:ReSet()
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._quality).sprite = (self._atlas):GetSprite(self:_GetCardSprite((self._cfg).Quality))
+  self._quality.sprite = self._atlas:GetSprite(self:_GetCardSprite(self._cfg.Quality))
   self:RefreshDiceValue()
   self:RefreshResValue()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.QualityOnClick = function(self, go)
-  -- function num : 0_11
+function UISeasonMazeCardItem:QualityOnClick(go)
   if self._clickCallBack then
-    (self._clickCallBack)(self._index)
+    self._clickCallBack(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.PlayBtnOnClick = function(self, go)
-  -- function num : 0_12
+function UISeasonMazeCardItem:PlayBtnOnClick(go)
   if self._playCallBack then
-    (self._playCallBack)()
+    self._playCallBack()
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.ReSet = function(self)
-  -- function num : 0_13
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._qualityTransform).anchoredPosition = self._rawPosition
-  ;
-  (self._playBtnGO):SetActive(false)
-  ;
-  (self._mark):SetActive(false)
+function UISeasonMazeCardItem:ReSet()
+  self._qualityTransform.anchoredPosition = self._rawPosition
+  self._playBtnGO:SetActive(false)
+  self._mark:SetActive(false)
   self:RootAlpha(1)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.SetOffect = function(self, index)
-  -- function num : 0_14 , upvalues : _ENV
-  (self._playBtnGO):SetActive(self._index == index)
-  ;
-  (self._mark):SetActive(self._index == index)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
+function UISeasonMazeCardItem:SetOffect(index)
+  self._playBtnGO:SetActive(self._index == index)
+  self._mark:SetActive(self._index == index)
   if self._index == index then
-    (self._qualityTransform).anchoredPosition = Vector2((self._rawPosition).x, (self._rawPosition).y + self._offsetY)
+    self._qualityTransform.anchoredPosition = Vector2(self._rawPosition.x, self._rawPosition.y + self._offsetY)
     self:_PlayClickAnimation()
   else
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-    (self._qualityTransform).anchoredPosition = self._rawPosition
+    self._qualityTransform.anchoredPosition = self._rawPosition
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem._PlayClickAnimation = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UISeasonMazeCardItem:_PlayClickAnimation()
   self:Lock("UISeasonMazeCardItemPlayClickAnimation")
   self:StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : self, _ENV
-    (self._animation):Play("uieff_UISeasonMazeCardItem_touch")
-    ;
-    (self._playBtnAnimation):Play("uieff_UISeasonMazeCardItem_PlayBtn_in")
+    self._animation:Play("uieff_UISeasonMazeCardItem_touch")
+    self._playBtnAnimation:Play("uieff_UISeasonMazeCardItem_PlayBtn_in")
     YIELD(TT, 333)
     self:UnLock("UISeasonMazeCardItemPlayClickAnimation")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem._GetCardSprite = function(self, qualityType)
-  -- function num : 0_16 , upvalues : _ENV
+function UISeasonMazeCardItem:_GetCardSprite(qualityType)
   if qualityType == SMazeCardQualityType.Blue then
     return "cn14_sjmj_xdp_di01"
-  else
-    if qualityType == SMazeCardQualityType.Purple then
-      return "cn14_sjmj_xdp_di02"
-    else
-      if qualityType == SMazeCardQualityType.Orange then
-        return "cn14_sjmj_xdp_di03"
-      end
-    end
+  elseif qualityType == SMazeCardQualityType.Purple then
+    return "cn14_sjmj_xdp_di02"
+  elseif qualityType == SMazeCardQualityType.Orange then
+    return "cn14_sjmj_xdp_di03"
   end
   return "cn14_sjmj_xdp_di03"
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem._GetTextColor = function(self, qualityType)
-  -- function num : 0_17 , upvalues : _ENV
+function UISeasonMazeCardItem:_GetTextColor(qualityType)
   if qualityType == SMazeCardQualityType.Blue then
-    return Color(0.37647058823529, 0.44705882352941, 0.64313725490196)
-  else
-    if qualityType == SMazeCardQualityType.Purple then
-      return Color(0.58823529411765, 0.34901960784314, 0.8)
-    else
-      if qualityType == SMazeCardQualityType.Orange then
-        return Color(0.61176470588235, 0.4156862745098, 0.18823529411765)
-      end
-    end
+    return Color(0.3764705882352941, 0.4470588235294118, 0.6431372549019608)
+  elseif qualityType == SMazeCardQualityType.Purple then
+    return Color(0.5882352941176471, 0.34901960784313724, 0.8)
+  elseif qualityType == SMazeCardQualityType.Orange then
+    return Color(0.611764705882353, 0.41568627450980394, 0.18823529411764706)
   end
   return Color(1, 1, 1)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem._GetResByType = function(self, effectList, cfg)
-  -- function num : 0_18 , upvalues : _ENV
-  local spriteName = nil
+function UISeasonMazeCardItem:_GetResByType(effectList, cfg)
+  local spriteName
   local valueStr = ""
   local resType = effectList[1]
   local attType = effectList[2]
@@ -272,294 +175,190 @@ UISeasonMazeCardItem._GetResByType = function(self, effectList, cfg)
     else
       valueStr = tostring(valueMin)
     end
+  elseif attType == SeasonMazeAttrType.SMAT_Next_Hand_Add then
+    valueStr = "+" .. valueMin .. "~" .. valueMax
   else
-    if attType == SeasonMazeAttrType.SMAT_Next_Hand_Add then
-      valueStr = "+" .. valueMin .. "~" .. valueMax
-    else
-      valueStr = valueMin .. "~" .. valueMax
-    end
+    valueStr = valueMin .. "~" .. valueMax
   end
   if resType == SeasonMazeEffectType.SMET_HandStepRaiseReward then
-    valueStr = (self._diceValue).text
+    valueStr = self._diceValue.text
   end
   if resType == SeasonMazeEffectType.SMET_Pro then
-    local cfg = (Cfg.cfg_season_maze_attribute)[attType]
+    local cfg = Cfg.cfg_season_maze_attribute[attType]
     if cfg then
       spriteName = cfg.CardIcon
     end
-  else
-    do
-      if cfg then
-        spriteName = cfg.CardIcon
-      end
-      return spriteName, valueStr
-    end
+  elseif cfg then
+    spriteName = cfg.CardIcon
   end
+  return spriteName, valueStr
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.OnPlayCard = function(self, diceValue, resValue)
-  -- function num : 0_19
-  (self._diceValue):SetText(diceValue)
-  ;
-  (self._resValue):SetText(resValue)
+function UISeasonMazeCardItem:OnPlayCard(diceValue, resValue)
+  self._diceValue:SetText(diceValue)
+  self._resValue:SetText(resValue)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.RefreshDiceValue = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UISeasonMazeCardItem:RefreshDiceValue()
   local shoeStep = 0
   local preStep = 0
   if self._formHandCard then
-    shoeStep = (self._component):GetAttrValue(SeasonMazeAttrType.SMAT_OnceShoesCnt)
-    if (self._componentInfo).past_hand then
-      local last = ((self._componentInfo).past_hand)[#(self._componentInfo).past_hand]
+    shoeStep = self._component:GetAttrValue(SeasonMazeAttrType.SMAT_OnceShoesCnt)
+    if self._componentInfo.past_hand then
+      local last = self._componentInfo.past_hand[#self._componentInfo.past_hand]
       if last then
         preStep = last.steps
       end
     end
   end
-  do
-    local min = shoeStep
-    local max = shoeStep
-    if (self._cfg).CopyLast > 0 then
-      if preStep == 0 then
-        preStep = 1
-      end
-      min = preStep + shoeStep
-      max = preStep + shoeStep
-    else
-      if (self._cfg).Steps then
-        min = ((self._cfg).Steps)[1] + shoeStep
-        max = ((self._cfg).Steps)[2] + shoeStep
-      end
+  local min = shoeStep
+  local max = shoeStep
+  if 0 < self._cfg.CopyLast then
+    if preStep == 0 then
+      preStep = 1
     end
-    if min ~= max then
-      (self._diceValue):SetText(min .. "~" .. max)
-    else
-      ;
-      (self._diceValue):SetText(tostring(min))
-    end
-    -- DECOMPILER ERROR at PC69: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._diceValue).color = self:_GetTextColor((self._cfg).Quality)
-    local showDice = min + (max) > 0
-    if (self._cfg).CopyLast > 0 and not self._formHandCard then
-      showDice = false
-    end
-    ;
-    (self._diceGO):SetActive(showDice)
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+    min = preStep + shoeStep
+    max = preStep + shoeStep
+  elseif self._cfg.Steps then
+    min = self._cfg.Steps[1] + shoeStep
+    max = self._cfg.Steps[2] + shoeStep
   end
+  if min ~= max then
+    self._diceValue:SetText(min .. "~" .. max)
+  else
+    self._diceValue:SetText(tostring(min))
+  end
+  self._diceValue.color = self:_GetTextColor(self._cfg.Quality)
+  local showDice = 0 < min + max
+  if 0 < self._cfg.CopyLast and not self._formHandCard then
+    showDice = false
+  end
+  self._diceGO:SetActive(showDice)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.RefreshResValue = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local spriteName = nil
+function UISeasonMazeCardItem:RefreshResValue()
+  local spriteName
   local valueStr = ""
-  if (self._cfg).EffectIDs then
-    local id = ((self._cfg).EffectIDs)[1]
+  if self._cfg.EffectIDs then
+    local id = self._cfg.EffectIDs[1]
     if id then
-      local effectCfg = (Cfg.cfg_component_season_maze_effect)[id]
+      local effectCfg = Cfg.cfg_component_season_maze_effect[id]
       if effectCfg and effectCfg.EffectList then
-        spriteName = self:_GetResByType((effectCfg.EffectList)[1], self._cfg)
+        spriteName, valueStr = self:_GetResByType(effectCfg.EffectList[1], self._cfg)
       end
     end
   end
-  do
-    if (self._cfg).CopyLast > 0 and (self._componentInfo).past_hand then
-      local last = ((self._componentInfo).past_hand)[#(self._componentInfo).past_hand]
-      if last then
-        local copyID = last.id
-        if last.ori_id > 0 then
-          copyID = last.ori_id
-        end
-        local copyCfg = (Cfg.cfg_component_season_maze_hand)[copyID]
-        if copyCfg and copyCfg.EffectIDs then
-          local copyEffctID = (copyCfg.EffectIDs)[1]
-          if copyEffctID then
-            local copyEffectCfg = (Cfg.cfg_component_season_maze_effect)[copyEffctID]
-            -- DECOMPILER ERROR at PC72: Overwrote pending register: R2 in 'AssignReg'
-
-            if copyEffectCfg and copyEffectCfg.EffectList then
-              spriteName = self:_GetResByType((copyEffectCfg.EffectList)[1], copyCfg)
-            end
+  if self._cfg.CopyLast > 0 and self._componentInfo.past_hand then
+    local last = self._componentInfo.past_hand[#self._componentInfo.past_hand]
+    if last then
+      local copyID = last.id
+      if 0 < last.ori_id then
+        copyID = last.ori_id
+      end
+      local copyCfg = Cfg.cfg_component_season_maze_hand[copyID]
+      if copyCfg and copyCfg.EffectIDs then
+        local copyEffctID = copyCfg.EffectIDs[1]
+        if copyEffctID then
+          local copyEffectCfg = Cfg.cfg_component_season_maze_effect[copyEffctID]
+          if copyEffectCfg and copyEffectCfg.EffectList then
+            spriteName, valueStr = self:_GetResByType(copyEffectCfg.EffectList[1], copyCfg)
           end
         end
       end
     end
-    do
-      if (string.isnullorempty)(valueStr) then
-        ((self._resImg).gameObject):SetActive(false)
-        ;
-        ((self._resValue).gameObject):SetActive(false)
-      else
-        -- DECOMPILER ERROR at PC98: Confused about usage of register: R3 in 'UnsetPending'
-
-        if spriteName then
-          (self._resImg).sprite = (self._atlas):GetSprite(spriteName)
-          ;
-          ((self._resImg).gameObject):SetActive(true)
-        else
-          ;
-          ((self._resImg).gameObject):SetActive(false)
-        end
-        ;
-        (self._resValue):SetText(valueStr)
-        -- DECOMPILER ERROR at PC119: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._resValue).color = self:_GetTextColor((self._cfg).Quality)
-        ;
-        ((self._resValue).gameObject):SetActive(true)
-      end
-      ;
-      (self._flagGO):SetActive((self._cfg).CopyLast > 0)
-      local showRes = true
-      if (self._cfg).CopyLast > 0 and not self._formHandCard then
-        showRes = false
-      end
-      ;
-      (self._resGO):SetActive(showRes)
-      -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  end
+  if string.isnullorempty(valueStr) then
+    self._resImg.gameObject:SetActive(false)
+    self._resValue.gameObject:SetActive(false)
+  else
+    if spriteName then
+      self._resImg.sprite = self._atlas:GetSprite(spriteName)
+      self._resImg.gameObject:SetActive(true)
+    else
+      self._resImg.gameObject:SetActive(false)
     end
+    self._resValue:SetText(valueStr)
+    self._resValue.color = self:_GetTextColor(self._cfg.Quality)
+    self._resValue.gameObject:SetActive(true)
   end
+  self._flagGO:SetActive(self._cfg.CopyLast > 0)
+  local showRes = true
+  if self._cfg.CopyLast > 0 and not self._formHandCard then
+    showRes = false
+  end
+  self._resGO:SetActive(showRes)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem._RegisterUIEventListener = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UISeasonMazeCardItem:_RegisterUIEventListener()
   if self._canCard then
-    self._eventListener = (UICustomUIEventListener.Get)(self._qualityGO)
+    self._eventListener = UICustomUIEventListener.Get(self._qualityGO)
     self:AddUICustomEventListener(self._eventListener, UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_22_0 , upvalues : self
-    self:_OnBeginDrag(eventData)
-  end
-)
+      self:_OnBeginDrag(eventData)
+    end)
     self:AddUICustomEventListener(self._eventListener, UIEvent.Drag, function(eventData)
-    -- function num : 0_22_1 , upvalues : self
-    self:_OnDrag(eventData)
-  end
-)
+      self:_OnDrag(eventData)
+    end)
     self:AddUICustomEventListener(self._eventListener, UIEvent.EndDrag, function(eventData)
-    -- function num : 0_22_2 , upvalues : self
-    self:_OnEndDrag(eventData)
-  end
-)
+      self:_OnEndDrag(eventData)
+    end)
     self:AddUICustomEventListener(self._eventListener, UIEvent.Release, function(eventData)
-    -- function num : 0_22_3 , upvalues : self
-    self:_OnRelease(eventData)
-  end
-)
+      self:_OnRelease(eventData)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem._OnBeginDrag = function(self, eventData)
-  -- function num : 0_23
-  (self._mgr):OnBeginDrag(eventData, self)
+function UISeasonMazeCardItem:_OnBeginDrag(eventData)
+  self._mgr:OnBeginDrag(eventData, self)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem._OnDrag = function(self, eventData)
-  -- function num : 0_24
-  (self._mgr):OnDrag(eventData)
+function UISeasonMazeCardItem:_OnDrag(eventData)
+  self._mgr:OnDrag(eventData)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem._OnEndDrag = function(self, eventData)
-  -- function num : 0_25
-  (self._mgr):OnDragEnd(eventData)
+function UISeasonMazeCardItem:_OnEndDrag(eventData)
+  self._mgr:OnDragEnd(eventData)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem._OnRelease = function(self)
-  -- function num : 0_26
-  (self._mgr):OnReleased()
+function UISeasonMazeCardItem:_OnRelease()
+  self._mgr:OnReleased()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.Index = function(self)
-  -- function num : 0_27
+function UISeasonMazeCardItem:Index()
   return self._index
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.ID = function(self)
-  -- function num : 0_28
+function UISeasonMazeCardItem:ID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.GameObject = function(self)
-  -- function num : 0_29
+function UISeasonMazeCardItem:GameObject()
   return self._gameObject
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.RectTransform = function(self)
-  -- function num : 0_30
+function UISeasonMazeCardItem:RectTransform()
   return self._rectTransform
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.Position = function(self)
-  -- function num : 0_31
-  return ((self._gameObject).transform).position
+function UISeasonMazeCardItem:Position()
+  return self._gameObject.transform.position
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.LocalPosition = function(self)
-  -- function num : 0_32
-  return ((self._gameObject).transform).localPosition
+function UISeasonMazeCardItem:LocalPosition()
+  return self._gameObject.transform.localPosition
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.RootAlpha = function(self, alpha)
-  -- function num : 0_33
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._rootAlpha).alpha = alpha
+function UISeasonMazeCardItem:RootAlpha(alpha)
+  self._rootAlpha.alpha = alpha
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.QualityAlpha = function(self, alpha)
-  -- function num : 0_34
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._qualityCanvasGroup).alpha = alpha
+function UISeasonMazeCardItem:QualityAlpha(alpha)
+  self._qualityCanvasGroup.alpha = alpha
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.GetMiddleCardBtnGo = function(self)
-  -- function num : 0_35
+function UISeasonMazeCardItem:GetMiddleCardBtnGo()
   return self._qualityGO
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardItem.Mark = function(self, active)
-  -- function num : 0_36
-  (self._mark):SetActive(active)
+function UISeasonMazeCardItem:Mark(active)
+  self._mark:SetActive(active)
 end
-
-

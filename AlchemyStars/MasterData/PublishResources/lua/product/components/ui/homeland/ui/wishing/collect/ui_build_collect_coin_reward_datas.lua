@@ -1,53 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/wishing/collect/ui_build_collect_coin_reward_datas.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBuildCollectCoinRewardData", Object)
 UIBuildCollectCoinRewardData = UIBuildCollectCoinRewardData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBuildCollectCoinRewardData.Constructor = function(self, cfg)
-  -- function num : 0_0
+function UIBuildCollectCoinRewardData:Constructor(cfg)
   self._wishingCointCount = cfg.WishingCoinCount
   self._rewards = cfg.Reward
   self:RefreshStatus()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinRewardData.RefreshStatus = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local collectCount = (HomelandWishingConst.GetCollectCoinCounts)()
-  self._isComplete = self._wishingCointCount <= collectCount
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIBuildCollectCoinRewardData:RefreshStatus()
+  local collectCount = HomelandWishingConst.GetCollectCoinCounts()
+  self._isComplete = collectCount >= self._wishingCointCount
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinRewardData.GetRewards = function(self)
-  -- function num : 0_2
+function UIBuildCollectCoinRewardData:GetRewards()
   return self._rewards
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinRewardData.GetWishingCoinCount = function(self)
-  -- function num : 0_3
+function UIBuildCollectCoinRewardData:GetWishingCoinCount()
   return self._wishingCointCount
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinRewardData.IsComplete = function(self)
-  -- function num : 0_4
+function UIBuildCollectCoinRewardData:IsComplete()
   return self._isComplete
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinRewardData.GetSortPriority = function(self)
-  -- function num : 0_5
+function UIBuildCollectCoinRewardData:GetSortPriority()
   local priority = 0
   if self._isComplete then
     priority = priority + 1000000
@@ -57,60 +34,39 @@ end
 
 _class("UIBuildCollectCoinRewardDatas", Object)
 UIBuildCollectCoinRewardDatas = UIBuildCollectCoinRewardDatas
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBuildCollectCoinRewardDatas.Constructor = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIBuildCollectCoinRewardDatas:Constructor()
   self._datas = {}
-  local cfgs = (Cfg.cfg_homeland_wishing_reward)({})
-  for _,v in pairs(cfgs) do
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._datas)[#self._datas + 1] = UIBuildCollectCoinRewardData:New(v)
+  local cfgs = Cfg.cfg_homeland_wishing_reward({})
+  for _, v in pairs(cfgs) do
+    self._datas[#self._datas + 1] = UIBuildCollectCoinRewardData:New(v)
   end
   self:Sort()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinRewardDatas.GetCollectCoinRewardDatas = function(self)
-  -- function num : 0_7
+function UIBuildCollectCoinRewardDatas:GetCollectCoinRewardDatas()
   return self._datas
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinRewardDatas.Sort = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (table.sort)(self._datas, function(a, b)
-    -- function num : 0_8_0
-    do return a:GetSortPriority() < b:GetSortPriority() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+function UIBuildCollectCoinRewardDatas:Sort()
+  table.sort(self._datas, function(a, b)
+    return a:GetSortPriority() < b:GetSortPriority()
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinRewardDatas.GetCurrentTask = function(self)
-  -- function num : 0_9
+function UIBuildCollectCoinRewardDatas:GetCurrentTask()
   if #self._datas <= 0 then
     return nil
   end
-  if ((self._datas)[1]):IsComplete() then
+  if self._datas[1]:IsComplete() then
     return nil
   end
-  return (self._datas)[1]
+  return self._datas[1]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinRewardDatas.Refresh = function(self)
-  -- function num : 0_10
+function UIBuildCollectCoinRewardDatas:Refresh()
   for i = 1, #self._datas do
-    ((self._datas)[i]):RefreshStatus()
+    self._datas[i]:RefreshStatus()
   end
   self:Sort()
 end
-
-

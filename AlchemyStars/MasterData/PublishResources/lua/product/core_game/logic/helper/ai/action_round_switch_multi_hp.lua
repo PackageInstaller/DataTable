@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_round_switch_multi_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionRoundSwitchMultiHP", AINewNode)
 ActionRoundSwitchMultiHP = ActionRoundSwitchMultiHP
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionRoundSwitchMultiHP.Constructor = function(self)
-  -- function num : 0_0
+function ActionRoundSwitchMultiHP:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionRoundSwitchMultiHP.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local monsterIDComponent = (self.m_entityOwn):MonsterID()
-  local battleCmpt = (self._world):BattleStat()
+function ActionRoundSwitchMultiHP:OnUpdate()
+  local monsterIDComponent = self.m_entityOwn:MonsterID()
+  local battleCmpt = self._world:BattleStat()
   local curRound = battleCmpt:GetLevelTotalRoundCount()
   if monsterIDComponent:IsRoundSwitchMultiHP(curRound) then
     return AINewNodeStatus.Success
@@ -25,5 +15,3 @@ ActionRoundSwitchMultiHP.OnUpdate = function(self)
     return AINewNodeStatus.Failure
   end
 end
-
-

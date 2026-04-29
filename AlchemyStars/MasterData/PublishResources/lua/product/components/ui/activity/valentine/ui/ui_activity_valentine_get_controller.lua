@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/valentine/ui/ui_activity_valentine_get_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityValentineGetController", UIController)
 UIActivityValentineGetController = UIActivityValentineGetController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityValentineGetController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityValentineGetController:OnShow(uiParams)
   self._closeCallback = uiParams[2]
   self._listPerPageCount = 5
   self._curItemPage = 1
@@ -17,15 +10,11 @@ UIActivityValentineGetController.OnShow = function(self, uiParams)
   self._listItemTotalCount = 0
   self._mainBgIcon = self:GetUIComponent("RawImageLoader", "mainBgIcon")
   self._mainBgPanel = self:GetGameObject("mainBgPanel")
-  ;
-  (self._mainBgPanel):SetActive(false)
+  self._mainBgPanel:SetActive(false)
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ItemList")
   self.selectInfoPool = self:GetUIComponent("UISelectObjectPath", "selectInfoPool")
   self._bg = self:GetUIComponent("RectTransform", "canvasGroup")
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bg).localScale = Vector3(1, 1, 1)
+  self._bg.localScale = Vector3(1, 1, 1)
   self._actTipsText = self:GetUIComponent("RollingText", "txt_activity_tips")
   self._actTipsGo = self:GetGameObject("ActivityTipsArea")
   self._anim = self:GetUIComponent("Animation", "anim")
@@ -33,188 +22,141 @@ UIActivityValentineGetController.OnShow = function(self, uiParams)
     if uiParams[4] then
       local txt = uiParams[4]
       if txt == "" then
-        (self._actTipsGo):SetActive(false)
+        self._actTipsGo:SetActive(false)
       else
-        ;
-        (self._actTipsGo):SetActive(true)
-        ;
-        (self._actTipsText):RefreshText(txt)
+        self._actTipsGo:SetActive(true)
+        self._actTipsText:RefreshText(txt)
       end
     else
-      do
-        ;
-        (self._actTipsGo):SetActive(false)
-        self._titleText = self:GetUIComponent("UILocalizationText", "txt_title")
-        self._titleTextGo = self:GetGameObject("txt_title")
-        do
-          if self._titleText and uiParams[5] then
-            local txt = uiParams[5]
-            if txt == "" then
-              (self._titleTextGo):SetActive(false)
-            else
-              ;
-              (self._titleTextGo):SetActive(true)
-              ;
-              (self._titleText):SetText(txt)
-            end
-          end
-          self._itemList = {}
-          self._beforeTime = 200
-          self._inited = false
-          local item_module = ((GameGlobal.GetModule)(ItemModule))
-          -- DECOMPILER ERROR at PC122: Overwrote pending register: R3 in 'AssignReg'
-
-          local itemlist = .end
-          -- DECOMPILER ERROR at PC135: Unhandled construct in 'MakeBoolean' P1
-
-          if uiParams[1] and (table.count)(uiParams[1]) == 0 then
-            (Log.fatal)("###[UIActivityValentineGetController] table.count(uiParams[1]) == 0 !")
-          end
-          ;
-          (Log.fatal)("###[UIActivityValentineGetController] uiParams[1] is nil !")
-          if uiParams[3] then
-            itemlist = uiParams[1]
-          else
-            itemlist = item_module:SortRoleAsset(uiParams[1])
-          end
-          self._getMainBgList = {}
-          for i = 1, (table.count)(itemlist) do
-            local ItemTempleate = (Cfg.cfg_item)[(itemlist[i]).assetid]
-            -- DECOMPILER ERROR at PC188: Confused about usage of register: R9 in 'UnsetPending'
-
-            if ItemTempleate then
-              (self._itemList)[i] = {item_id = (itemlist[i]).assetid, item_count = (itemlist[i]).count, item_des = (itemlist[i]).des, award_type = (itemlist[i]).type, icon = ItemTempleate.Icon, item_name = ItemTempleate.Name, simple_desc = ItemTempleate.RpIntro, color = ItemTempleate.Color}
-              if ItemTempleate.ItemSubType == ItemSubType.ItemSubType_BackGroudPicture then
-                (table.insert)(self._getMainBgList, (itemlist[i]).assetid)
-              end
-            end
-          end
-          self._listItemTotalCount = (table.count)(self._itemList)
-          self:CalcPage()
-          self._selectItemIndex = -1
-          if self._scrollView then
-            (self._scrollView):InitListView(1, function(scrollView, index)
-    -- function num : 0_0_0 , upvalues : self
-    return self:_InitListView(scrollView, index)
+      self._actTipsGo:SetActive(false)
+    end
   end
-)
-            self._inited = true
-          end
-          local bgCanvas = self:GetUIComponent("Canvas", "BGCanvas")
-          self._blur = self:GetUIComponent("H3DUIBlurHelper", "Blur")
-          -- DECOMPILER ERROR at PC229: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._blur).OwnerCamera = bgCanvas.worldCamera
-          ;
-          (self._blur):RefreshBlurTexture()
-          ;
-          (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundGetItem)
-        end
+  self._titleText = self:GetUIComponent("UILocalizationText", "txt_title")
+  self._titleTextGo = self:GetGameObject("txt_title")
+  if self._titleText and uiParams[5] then
+    local txt = uiParams[5]
+    if txt == "" then
+      self._titleTextGo:SetActive(false)
+    else
+      self._titleTextGo:SetActive(true)
+      self._titleText:SetText(txt)
+    end
+  end
+  self._itemList = {}
+  self._beforeTime = 200
+  self._inited = false
+  local item_module = GameGlobal.GetModule(ItemModule)
+  local itemlist
+  if uiParams[1] then
+    if table.count(uiParams[1]) == 0 then
+      Log.fatal("###[UIActivityValentineGetController] table.count(uiParams[1]) == 0 !")
+    end
+  else
+    Log.fatal("###[UIActivityValentineGetController] uiParams[1] is nil !")
+  end
+  if uiParams[3] then
+    itemlist = uiParams[1]
+  else
+    itemlist = item_module:SortRoleAsset(uiParams[1])
+  end
+  self._getMainBgList = {}
+  for i = 1, table.count(itemlist) do
+    local ItemTempleate = Cfg.cfg_item[itemlist[i].assetid]
+    if ItemTempleate then
+      self._itemList[i] = {
+        item_id = itemlist[i].assetid,
+        item_count = itemlist[i].count,
+        item_des = itemlist[i].des,
+        award_type = itemlist[i].type,
+        icon = ItemTempleate.Icon,
+        item_name = ItemTempleate.Name,
+        simple_desc = ItemTempleate.RpIntro,
+        color = ItemTempleate.Color
+      }
+      if ItemTempleate.ItemSubType == ItemSubType.ItemSubType_BackGroudPicture then
+        table.insert(self._getMainBgList, itemlist[i].assetid)
       end
     end
   end
+  self._listItemTotalCount = table.count(self._itemList)
+  self:CalcPage()
+  self._selectItemIndex = -1
+  if self._scrollView then
+    self._scrollView:InitListView(1, function(scrollView, index)
+      return self:_InitListView(scrollView, index)
+    end)
+    self._inited = true
+  end
+  local bgCanvas = self:GetUIComponent("Canvas", "BGCanvas")
+  self._blur = self:GetUIComponent("H3DUIBlurHelper", "Blur")
+  self._blur.OwnerCamera = bgCanvas.worldCamera
+  self._blur:RefreshBlurTexture()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundGetItem)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineGetController.DoAnimation = function(self)
-  -- function num : 0_1
+function UIActivityValentineGetController:DoAnimation()
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "canvasGroup")
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).alpha = 0
-  self._tweener = (self._canvasGroup):DOFade(1, 0.02)
+  self._canvasGroup.alpha = 0
+  self._tweener = self._canvasGroup:DOFade(1, 0.02)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineGetController.ClosePanel = function(self)
-  -- function num : 0_2
+function UIActivityValentineGetController:ClosePanel()
   if #self._getMainBgList > 0 then
-    (self._mainBgPanel):SetActive(true)
+    self._mainBgPanel:SetActive(true)
     self:ShowMainBgList()
   else
     self:StartTask(self._Close, self)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineGetController.ShowMainBgList = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityValentineGetController:ShowMainBgList()
   if #self._getMainBgList > 0 then
-    local mainBgID = (self._getMainBgList)[1]
-    ;
-    (table.remove)(self._getMainBgList, 1)
+    local mainBgID = self._getMainBgList[1]
+    table.remove(self._getMainBgList, 1)
     self:ShowMainBgUnit(mainBgID)
   else
-    do
-      self:StartTask(self._Close, self)
-    end
+    self:StartTask(self._Close, self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineGetController.ShowMainBgUnit = function(self, id)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg_main_bg = (Cfg.cfg_main_bg)({ItemID = id})
-  if cfg_main_bg and (table.count)(cfg_main_bg) > 0 then
-    local cg = (cfg_main_bg[1]).BG
-    ;
-    (self._mainBgIcon):LoadImage(cg)
+function UIActivityValentineGetController:ShowMainBgUnit(id)
+  local cfg_main_bg = Cfg.cfg_main_bg({ItemID = id})
+  if cfg_main_bg and table.count(cfg_main_bg) > 0 then
+    local cg = cfg_main_bg[1].BG
+    self._mainBgIcon:LoadImage(cg)
   else
-    do
-      ;
-      (Log.fatal)("###[UIActivityValentineGetController] cfg_main_bg is nil ! itemid --> " .. id)
-    end
+    Log.fatal("###[UIActivityValentineGetController] cfg_main_bg is nil ! itemid --> " .. id)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineGetController.MainBgPanelOnClick = function(self, go)
-  -- function num : 0_5
+function UIActivityValentineGetController:MainBgPanelOnClick(go)
   self:ShowMainBgList()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineGetController.OnHide = function(self)
-  -- function num : 0_6
+function UIActivityValentineGetController:OnHide()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineGetController._Close = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityValentineGetController:_Close(TT)
   self:Lock("UIActivityValentineGetController_Close")
-  ;
-  (self._anim):Play("uieff_UIActivityValentineGetController_SafeArea_out")
+  self._anim:Play("uieff_UIActivityValentineGetController_SafeArea_out")
   YIELD(TT, 500)
   if self._closeCallback then
-    (Log.debug)("关闭回调调用")
-    ;
-    (self._closeCallback)()
+    Log.debug("关闭回调调用")
+    self._closeCallback()
   end
   self:UnLock("UIActivityValentineGetController_Close")
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineGetController._InitListView = function(self, scrollView, index)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityValentineGetController:_InitListView(scrollView, index)
   if index < 0 then
     return nil
   end
-  local count = nil
-  if (table.count)(self._itemList) > 5 then
+  local count
+  if table.count(self._itemList) > 5 then
     count = 5
   else
-    count = (table.count)(self._itemList)
+    count = table.count(self._itemList)
   end
   local item = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
@@ -226,8 +168,8 @@ UIActivityValentineGetController._InitListView = function(self, scrollView, inde
   for i = 1, count do
     local giftItem = rowList[i]
     local itemIndex = self:_GetCurPageFirstIndex() + i - 1
-    if self._listItemTotalCount < itemIndex then
-      (giftItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._listItemTotalCount then
+      giftItem:GetGameObject():SetActive(false)
     else
       self:_ShowItem(giftItem, itemIndex, i)
     end
@@ -235,10 +177,7 @@ UIActivityValentineGetController._InitListView = function(self, scrollView, inde
   return item
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineGetController._ShowItem = function(self, giftItem, index, tweenIdx)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityValentineGetController:_ShowItem(giftItem, index, tweenIdx)
   local beforeTime = 0
   if not self._inited then
     beforeTime = self._beforeTime
@@ -246,50 +185,35 @@ UIActivityValentineGetController._ShowItem = function(self, giftItem, index, twe
   local item_data = self:_GetItemDataByIndex(index)
   if item_data then
     giftItem:SetData(item_data, index, function(id, pos)
-    -- function num : 0_9_0 , upvalues : self
-    self:OnItemSelect(id, pos)
-  end
-, Color(1, 1, 1, 1), tweenIdx, beforeTime)
-    ;
-    (giftItem:GetGameObject()):SetActive(true)
+      self:OnItemSelect(id, pos)
+    end, Color(1, 1, 1, 1), tweenIdx, beforeTime)
+    giftItem:GetGameObject():SetActive(true)
   else
-    ;
-    (giftItem:GetGameObject()):SetActive(false)
+    giftItem:GetGameObject():SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineGetController.OnItemSelect = function(self, id, pos)
-  -- function num : 0_10
+function UIActivityValentineGetController:OnItemSelect(id, pos)
   if not self._selectInfo then
-    self._selectInfo = (self.selectInfoPool):SpawnObject("UISelectInfo")
+    self._selectInfo = self.selectInfoPool:SpawnObject("UISelectInfo")
   end
-  ;
-  (self._selectInfo):SetData(id, pos)
+  self._selectInfo:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineGetController.NextOnClick = function(self, go)
-  -- function num : 0_11
+function UIActivityValentineGetController:NextOnClick(go)
   if self._selectItemIndex ~= -1 then
     self._selectItemIndex = -1
+  elseif self:_GetNextPageIndex() ~= -1 then
+    self._scrollView:RefreshAllShownItem()
+    self._selectItemIndex = -1
   else
-    if self:_GetNextPageIndex() ~= -1 then
-      (self._scrollView):RefreshAllShownItem()
-      self._selectItemIndex = -1
-    else
-      self:ClosePanel()
-    end
+    self:ClosePanel()
   end
 end
 
 local modf = math.modf
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityValentineGetController.CalcPage = function(self)
-  -- function num : 0_12 , upvalues : modf
+function UIActivityValentineGetController:CalcPage()
   local pageCount, mod = modf(self._listItemTotalCount / self._listPerPageCount)
   if mod ~= 0 then
     pageCount = pageCount + 1
@@ -297,10 +221,7 @@ UIActivityValentineGetController.CalcPage = function(self)
   self._listPageCount = pageCount
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetController._GetNextPageIndex = function(self)
-  -- function num : 0_13
+function UIActivityValentineGetController:_GetNextPageIndex()
   local index = self._curItemPage * self._listPerPageCount + 1
   if index <= self._listItemTotalCount then
     self._curItemPage = self._curItemPage + 1
@@ -310,28 +231,17 @@ UIActivityValentineGetController._GetNextPageIndex = function(self)
   return -1
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetController._GetCurPageFirstIndex = function(self)
-  -- function num : 0_14
+function UIActivityValentineGetController:_GetCurPageFirstIndex()
   return self._curPageFirstIndex
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetController._GetItemDataByIndex = function(self, index)
-  -- function num : 0_15
-  if #self._itemList < index then
+function UIActivityValentineGetController:_GetItemDataByIndex(index)
+  if index > #self._itemList then
     return nil
   end
-  return (self._itemList)[index]
+  return self._itemList[index]
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetController._FormatItemCount = function(self, itemCount)
-  -- function num : 0_16 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):FormatItemCount(itemCount)
+function UIActivityValentineGetController:_FormatItemCount(itemCount)
+  return HelperProxy:GetInstance():FormatItemCount(itemCount)
 end
-
-

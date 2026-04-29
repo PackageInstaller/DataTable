@@ -1,48 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/task/ui_activity_n34_task_infomation_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN34TaskInfomationAwardItem", UICustomWidget)
 UIActivityN34TaskInfomationAwardItem = UIActivityN34TaskInfomationAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN34TaskInfomationAwardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityN34TaskInfomationAwardItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationAwardItem._GetComponents = function(self)
-  -- function num : 0_1
+function UIActivityN34TaskInfomationAwardItem:_GetComponents()
   self._background = self:GetUIComponent("Image", "Background")
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._count = self:GetUIComponent("UILocalizationText", "Count")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationAwardItem.SetData = function(self, data, callBack, bigAwardItem)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN34TaskInfomationAwardItem:SetData(data, callBack, bigAwardItem)
   self._data = data
   self._callback = callBack
-  local cfg = (Cfg.cfg_item)[(self._data).assetid]
+  local cfg = Cfg.cfg_item[self._data.assetid]
   if cfg == nil then
-    (Log.fatal)("cfg_item is nil." .. (self._data).assetid)
-    return 
+    Log.fatal("cfg_item is nil." .. self._data.assetid)
+    return
   end
-  ;
-  (self._icon):LoadImage(cfg.Icon)
-  ;
-  (self._count):SetText((self._data).count)
+  self._icon:LoadImage(cfg.Icon)
+  self._count:SetText(self._data.count)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationAwardItem.IconOnClick = function(self, go)
-  -- function num : 0_3
-  (self._callback)((self._data).assetid, (go.transform).position)
+function UIActivityN34TaskInfomationAwardItem:IconOnClick(go)
+  self._callback(self._data.assetid, go.transform.position)
 end
-
-

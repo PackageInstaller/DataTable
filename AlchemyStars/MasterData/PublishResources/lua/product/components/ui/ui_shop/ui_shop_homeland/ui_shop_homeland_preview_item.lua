@@ -1,88 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_homeland/ui_shop_homeland_preview_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UUIShopHomelandPreviewItem", UICustomWidget)
 UUIShopHomelandPreviewItem = UUIShopHomelandPreviewItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UUIShopHomelandPreviewItem.Constructor = function(self)
-  -- function num : 0_0
+function UUIShopHomelandPreviewItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UUIShopHomelandPreviewItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UUIShopHomelandPreviewItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UUIShopHomelandPreviewItem._GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UUIShopHomelandPreviewItem:_GetComponents()
   self._picture = self:GetUIComponent("RawImageLoader", "Picture")
   self._pictureObj = self:GetGameObject("Picture")
   self._uiDrag = self:GetUIComponent("UIDrag", "Picture")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._pictureObj), UIEvent.BeginDrag, function(pointData)
-    -- function num : 0_2_0 , upvalues : self
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._pictureObj), UIEvent.BeginDrag, function(pointData)
     self:OnBeginDrag(pointData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._pictureObj), UIEvent.Drag, function(pointData)
-    -- function num : 0_2_1 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._pictureObj), UIEvent.Drag, function(pointData)
     self:OnDragEvent(pointData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._pictureObj), UIEvent.EndDrag, function(pointData)
-    -- function num : 0_2_2 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._pictureObj), UIEvent.EndDrag, function(pointData)
     self:OnEndDrag(pointData)
-  end
-)
+  end)
   self._dragState = 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UUIShopHomelandPreviewItem.SetData = function(self, picture)
-  -- function num : 0_3
-  (self._picture):LoadImage(picture)
+function UUIShopHomelandPreviewItem:SetData(picture)
+  self._picture:LoadImage(picture)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UUIShopHomelandPreviewItem.OnBeginDrag = function(self, pointData)
-  -- function num : 0_4 , upvalues : _ENV
+function UUIShopHomelandPreviewItem:OnBeginDrag(pointData)
   local delta = pointData.delta
   local d_x = delta.x
   local d_y = delta.y
-  if (math.abs)(d_y) < (math.abs)(d_x) then
+  if math.abs(d_x) > math.abs(d_y) then
     self._dragState = 2
-    ;
-    (self._uiDrag):OnBeginDrag(pointData)
+    self._uiDrag:OnBeginDrag(pointData)
   else
     self._dragState = 1
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UUIShopHomelandPreviewItem.OnDragEvent = function(self, pointData)
-  -- function num : 0_5
+function UUIShopHomelandPreviewItem:OnDragEvent(pointData)
   if self._dragState == 2 and self._uiDrag then
-    (self._uiDrag):OnDrag(pointData)
+    self._uiDrag:OnDrag(pointData)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UUIShopHomelandPreviewItem.OnEndDrag = function(self, pointData)
-  -- function num : 0_6
+function UUIShopHomelandPreviewItem:OnEndDrag(pointData)
   if self._dragState == 2 and self._uiDrag then
-    (self._uiDrag):OnEndDrag(pointData)
+    self._uiDrag:OnEndDrag(pointData)
   end
   self._dragState = 0
 end
-
-

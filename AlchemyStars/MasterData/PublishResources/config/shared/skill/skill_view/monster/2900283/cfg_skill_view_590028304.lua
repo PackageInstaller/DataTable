@@ -1,25 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2900283/cfg_skill_view_590028304.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterAnimation,animName=Skill02; PlayAudio,audioID = 5006,audioType=1; PlayCasterBindEffect,effectID=913; PlayCasterBindEffect,effectID=914; "}
-}
-, 
-{2, 2, 34, 1, 1, 700, 
-{gridEffectID = 909, gridEffectDelayTime = 0, gridIntervalTime = 100, showTimeDelay = 1000}
-}
-, 
-{3, 3, 0, 1, 1, 1900, 
-{" PlayCasterLineRenderer,group=Monster|Trap,targerEffectType=3026,lineEffectID=924,lineTarget=Hit,lineCurrent=Hit; "}
-}
-, 
-{4, 4, 36, 1, 1, 4000, 
-{gridEffectID = 917, gridEffectDelayTime = 0, gridIntervalTime = 0, showTimeDelay = 0}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName=Skill02; PlayAudio,audioID = 5006,audioType=1; PlayCasterBindEffect,effectID=913; PlayCasterBindEffect,effectID=914; "
+    }
+  },
+  {
+    2,
+    2,
+    34,
+    1,
+    1,
+    700,
+    {
+      gridEffectID = 909,
+      gridEffectDelayTime = 0,
+      gridIntervalTime = 100,
+      showTimeDelay = 1000
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    1,
+    1,
+    1900,
+    {
+      " PlayCasterLineRenderer,group=Monster|Trap,targerEffectType=3026,lineEffectID=924,lineTarget=Hit,lineCurrent=Hit; "
+    }
+  },
+  {
+    4,
+    4,
+    36,
+    1,
+    1,
+    4000,
+    {
+      gridEffectID = 917,
+      gridEffectDelayTime = 0,
+      gridIntervalTime = 0,
+      showTimeDelay = 0
+    }
+  }
 }
 return config, "ID", key
-

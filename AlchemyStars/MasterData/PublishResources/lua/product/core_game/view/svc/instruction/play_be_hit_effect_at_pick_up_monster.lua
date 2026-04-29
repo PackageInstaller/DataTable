@@ -1,93 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_be_hit_effect_at_pick_up_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayBeHitEffectAtPickUpMonsterInstruction", BaseInstruction)
 PlayBeHitEffectAtPickUpMonsterInstruction = PlayBeHitEffectAtPickUpMonsterInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayBeHitEffectAtPickUpMonsterInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayBeHitEffectAtPickUpMonsterInstruction:Constructor(paramList)
   self._hitEffectID = tonumber(paramList.hitEffectID)
   self._pickUpIndex = tonumber(paramList.pickUpIndex) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayBeHitEffectAtPickUpMonsterInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayBeHitEffectAtPickUpMonsterInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local oriEntity = casterEntity
-  do
-    if casterEntity:HasSuperEntity() and (casterEntity:EntityType()):IsSkillHolder() then
-      local cSuperEntity = casterEntity:SuperEntityComponent()
-      oriEntity = cSuperEntity:GetSuperEntity()
-    end
-    local world = oriEntity:GetOwnerWorld()
-    local effectService = world:GetService("Effect")
-    local renderPickUpComponent = oriEntity:RenderPickUpComponent()
-    if not renderPickUpComponent then
-      return 
-    end
-    local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
-    local skillID = skillEffectResultContainer:GetSkillID()
-    local pickUpGridArray = renderPickUpComponent:GetAllValidPickUpGridPos()
-    local v2PickupPos = pickUpGridArray[self._pickUpIndex]
-    local targetEntity = self:_FindTargetEntityOnPos(v2PickupPos, world)
-    if not targetEntity then
-      return 
-    end
-    local playDamageService = world:GetService("PlayDamage")
-    local damageGridPos = v2PickupPos
-    local damageShowType = playDamageService:SingleOrGrid(skillID)
-    if self._hitEffectID and self._hitEffectID > 0 then
-      local beHitEffectEntity = effectService:CreateBeHitEffect(self._hitEffectID, targetEntity, damageShowType, damageGridPos)
-      if beHitEffectEntity ~= nil then
-        local effectCtrl = beHitEffectEntity:EffectController()
-        if effectCtrl ~= nil and casterEntity ~= nil then
-          effectCtrl:SetEffectCasterID(casterEntity:GetID())
-        end
+  if casterEntity:HasSuperEntity() and casterEntity:EntityType():IsSkillHolder() then
+    local cSuperEntity = casterEntity:SuperEntityComponent()
+    oriEntity = cSuperEntity:GetSuperEntity()
+  end
+  local world = oriEntity:GetOwnerWorld()
+  local effectService = world:GetService("Effect")
+  local renderPickUpComponent = oriEntity:RenderPickUpComponent()
+  if not renderPickUpComponent then
+    return
+  end
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  local skillID = skillEffectResultContainer:GetSkillID()
+  local pickUpGridArray = renderPickUpComponent:GetAllValidPickUpGridPos()
+  local v2PickupPos = pickUpGridArray[self._pickUpIndex]
+  local targetEntity = self:_FindTargetEntityOnPos(v2PickupPos, world)
+  if not targetEntity then
+    return
+  end
+  local playDamageService = world:GetService("PlayDamage")
+  local damageGridPos = v2PickupPos
+  local damageShowType = playDamageService:SingleOrGrid(skillID)
+  if self._hitEffectID and self._hitEffectID > 0 then
+    local beHitEffectEntity = effectService:CreateBeHitEffect(self._hitEffectID, targetEntity, damageShowType, damageGridPos)
+    if beHitEffectEntity ~= nil then
+      local effectCtrl = beHitEffectEntity:EffectController()
+      if effectCtrl ~= nil and casterEntity ~= nil then
+        effectCtrl:SetEffectCasterID(casterEntity:GetID())
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayBeHitEffectAtPickUpMonsterInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayBeHitEffectAtPickUpMonsterInstruction:GetCacheResource()
   local t = {}
   if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayBeHitEffectAtPickUpMonsterInstruction._FindTargetEntityOnPos = function(self, v2Pos, world)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayBeHitEffectAtPickUpMonsterInstruction:_FindTargetEntityOnPos(v2Pos, world)
   if world:MatchType() == MatchType.MT_BlackFist then
-    local enemyTeamEntity = (world:Player()):GetCurrentEnemyTeamEntity()
+    local enemyTeamEntity = world:Player():GetCurrentEnemyTeamEntity()
     if enemyTeamEntity and enemyTeamEntity:GetRenderGridPosition() == v2Pos then
       return enemyTeamEntity
     end
   else
-    do
-      local monster_group = world:GetGroup((world.BW_WEMatchers).MonsterID)
-      for _,e in ipairs(monster_group:GetEntities()) do
-        local monsterPos = e:GetRenderGridPosition()
-        local bodyAreaList = (e:BodyArea()):GetArea()
-        for _,bodyArea in ipairs(bodyAreaList) do
-          local pos = monsterPos + bodyArea
-          if pos == v2Pos then
-            return e
-          end
+    local monster_group = world:GetGroup(world.BW_WEMatchers.MonsterID)
+    for _, e in ipairs(monster_group:GetEntities()) do
+      local monsterPos = e:GetRenderGridPosition()
+      local bodyAreaList = e:BodyArea():GetArea()
+      for _, bodyArea in ipairs(bodyAreaList) do
+        local pos = monsterPos + bodyArea
+        if pos == v2Pos then
+          return e
         end
       end
     end
   end
 end
-
-

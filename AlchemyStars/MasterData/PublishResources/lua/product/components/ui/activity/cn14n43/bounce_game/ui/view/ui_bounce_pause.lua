@@ -1,55 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/ui/view/ui_bounce_pause.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBouncePause", UICustomWidget)
 UIBouncePause = UIBouncePause
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBouncePause.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIBouncePause:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBouncePause.InitWidget = function(self)
-  -- function num : 0_1
+function UIBouncePause:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBouncePause.Init = function(self, exitCall, continueCall)
-  -- function num : 0_2
+function UIBouncePause:Init(exitCall, continueCall)
   self.exitCall = exitCall
   self.continueCall = continueCall
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBouncePause.Start = function(self)
-  -- function num : 0_3
+function UIBouncePause:Start()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBouncePause.ExitBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BoucneInfo)
+function UIBouncePause:ExitBtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BoucneInfo)
   if self.continueCall then
-    (self.continueCall)()
+    self.continueCall()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBouncePause.ContinueOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BoucneInfo)
+function UIBouncePause:ContinueOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BoucneInfo)
   if self.exitCall then
-    (self.exitCall)()
+    self.exitCall()
   end
 end
-
-

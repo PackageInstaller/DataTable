@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_mission_node/cls/ui_activity_mission_node_info_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityMissionNodeInfo", Object)
 UIActivityMissionNodeInfo = UIActivityMissionNodeInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityMissionNodeInfo.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityMissionNodeInfo:Constructor()
   self.campaignMissionId = 0
   self.pos = Vector2.zero
   self.name = ""
@@ -17,22 +10,13 @@ UIActivityMissionNodeInfo.Constructor = function(self)
   self.isSLevel = false
   self.state = nil
   self.starCount = 0
-  self._missionModule = (GameGlobal.GetModule)(MissionModule)
+  self._missionModule = GameGlobal.GetModule(MissionModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNodeInfo.Init = function(self, id, posX, posY, name, title, type, isSLevel, state, starCount)
-  -- function num : 0_1
+function UIActivityMissionNodeInfo:Init(id, posX, posY, name, title, type, isSLevel, state, starCount)
   self.campaignMissionId = id
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self.pos).x = posX
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self.pos).y = posY
+  self.pos.x = posX
+  self.pos.y = posY
   self.name = name
   self.title = title
   self.type = type
@@ -41,67 +25,44 @@ UIActivityMissionNodeInfo.Init = function(self, id, posX, posY, name, title, typ
   self.starCount = starCount
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNodeInfo.State = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityMissionNodeInfo:State()
   if self.stages then
     local passCount = 0
     local canActiveCount = 0
-    for i,v in ipairs(self.stages) do
+    for i, v in ipairs(self.stages) do
       if v.state == DiscoveryStageState.Nomal then
         passCount = passCount + 1
-      else
-        if v.state == DiscoveryStageState.CanPlay then
-          canActiveCount = canActiveCount + 1
-        end
+      elseif v.state == DiscoveryStageState.CanPlay then
+        canActiveCount = canActiveCount + 1
       end
     end
-    if passCount > 0 then
+    if 0 < passCount then
       return DiscoveryStageState.Nomal
     end
-    if canActiveCount > 0 then
+    if 0 < canActiveCount then
       return DiscoveryStageState.CanPlay
     end
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNodeInfo.IsFirstShow = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityMissionNodeInfo:IsFirstShow()
   local playerPrefsKey = self:GetFirstShowKey()
-  local isFirst = ((UnityEngine.PlayerPrefs).GetInt)(playerPrefsKey, 0)
-  do return isFirst == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local isFirst = UnityEngine.PlayerPrefs.GetInt(playerPrefsKey, 0)
+  return isFirst == 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNodeInfo.SaveIsFirstShow = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityMissionNodeInfo:SaveIsFirstShow()
   local playerPrefsKey = self:GetFirstShowKey()
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(playerPrefsKey, 1)
+  UnityEngine.PlayerPrefs.SetInt(playerPrefsKey, 1)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNodeInfo.GetFirstShowKey = function(self)
-  -- function num : 0_5
+function UIActivityMissionNodeInfo:GetFirstShowKey()
   local playerPrefsKey = self:GetPstId() .. "UIActivityMissionNodeInfoIsFirstShow" .. self.id
   return playerPrefsKey
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNodeInfo.GetPstId = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityMissionNodeInfo:GetPstId()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   return roleModule:GetPstId()
 end
-
-

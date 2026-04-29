@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n17/daily_plan/ui_n17_daily_plan_tab_home_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN17DailyPlanTabHomeListItem", UICustomWidget)
 UIN17DailyPlanTabHomeListItem = UIN17DailyPlanTabHomeListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN17DailyPlanTabHomeListItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN17DailyPlanTabHomeListItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanTabHomeListItem.OnHide = function(self)
-  -- function num : 0_1
+function UIN17DailyPlanTabHomeListItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanTabHomeListItem.SetData = function(self, index, desc, count, icon)
-  -- function num : 0_2
+function UIN17DailyPlanTabHomeListItem:SetData(index, desc, count, icon)
   self._index = index
   self:_SetTitle(desc)
   self:_SetRewardIcon(icon)
@@ -28,36 +15,20 @@ UIN17DailyPlanTabHomeListItem.SetData = function(self, index, desc, count, icon)
   self:_SetAnimation((index - 1) * 50)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanTabHomeListItem._SetTitle = function(self, desc)
-  -- function num : 0_3 , upvalues : _ENV
-  local text = (StringTable.Get)(desc)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtTitle", text)
+function UIN17DailyPlanTabHomeListItem:_SetTitle(desc)
+  local text = StringTable.Get(desc)
+  UIWidgetHelper.SetLocalizationText(self, "_txtTitle", text)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanTabHomeListItem._SetRewardIcon = function(self, url)
-  -- function num : 0_4 , upvalues : _ENV
-  (UIWidgetHelper.SetRawImage)(self, "_rewardIcon", url)
+function UIN17DailyPlanTabHomeListItem:_SetRewardIcon(url)
+  UIWidgetHelper.SetRawImage(self, "_rewardIcon", url)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanTabHomeListItem._SetRewardIconCount = function(self, reward)
-  -- function num : 0_5 , upvalues : _ENV
-  local text = (StringTable.Get)("str_n17_daily_plan_home_desc_count", reward)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_rewardCount", text)
+function UIN17DailyPlanTabHomeListItem:_SetRewardIconCount(reward)
+  local text = StringTable.Get("str_n17_daily_plan_home_desc_count", reward)
+  UIWidgetHelper.SetLocalizationText(self, "_rewardCount", text)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanTabHomeListItem._SetAnimation = function(self, delay)
-  -- function num : 0_6 , upvalues : _ENV
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", "_anim", "UIN17DailyPlan_TabHome_ListItem_anim", delay, 500, nil)
+function UIN17DailyPlanTabHomeListItem:_SetAnimation(delay)
+  UIWidgetHelper.PlayAnimationInSequence(self, "_anim", "_anim", "UIN17DailyPlan_TabHome_ListItem_anim", delay, 500, nil)
 end
-
-

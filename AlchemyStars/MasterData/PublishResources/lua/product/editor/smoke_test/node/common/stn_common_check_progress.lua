@@ -1,22 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/common/stn_common_check_progress.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("Common_CheckProgress", CTestRobot_Base)
 Common_CheckProgress = Common_CheckProgress
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Common_CheckProgress.OnWorking = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function Common_CheckProgress:OnWorking()
+  local runData = self.m_pManager:GetMissionRunData()
   if runData:IsRandomTeam() then
     self.m_nLogicResult = 0
   else
     self.m_nLogicResult = 1
   end
-  return ((Common_CheckProgress.super).OnWorking)(self)
+  return Common_CheckProgress.super.OnWorking(self)
 end
-
-

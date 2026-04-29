@@ -1,21 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n16/subject/main/ui_n16_subject_introduce.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN16SubjecIntroduce", UIController)
 UIN16SubjecIntroduce = UIN16SubjecIntroduce
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN16SubjecIntroduce.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN16SubjecIntroduce:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16SubjecIntroduce.MaskOnClick = function(self)
-  -- function num : 0_1
+function UIN16SubjecIntroduce:MaskOnClick()
   self:CloseDialog()
 end
-
-

@@ -1,104 +1,84 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/login_authority/auth_inland/login_authority_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local AuthorityRetCode = {ARC_UNKNOWN = -1, ARC_SUCCESS = 0, ARC_FAILED = 1, ARC_FAILED_QQ_NOT_INSTALL = 2, ARC_FAILED_WX_NOT_INSTALL = 3, ARC_FAILED_USER_CANCLE = 4, ARC_FAILED_GUEST_PLATFORM_NOT_IOS = 5, ARC_FAILED_NOT_REAL_NAME = 6}
+local AuthorityRetCode = {
+  ARC_UNKNOWN = -1,
+  ARC_SUCCESS = 0,
+  ARC_FAILED = 1,
+  ARC_FAILED_QQ_NOT_INSTALL = 2,
+  ARC_FAILED_WX_NOT_INSTALL = 3,
+  ARC_FAILED_USER_CANCLE = 4,
+  ARC_FAILED_GUEST_PLATFORM_NOT_IOS = 5,
+  ARC_FAILED_NOT_REAL_NAME = 6
+}
 _enum("AuthorityRetCode", AuthorityRetCode)
 _class("LoginAuthorityResult", Object)
 LoginAuthorityResult = LoginAuthorityResult
-local MSDKChannel, MSDKError = nil, nil
+local MSDKChannel, MSDKError
 if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
-  MSDKChannel = (GCloud.MSDK).MSDKChannel
-  MSDKError = (GCloud.MSDK).MSDKError
+  MSDKChannel = GCloud.MSDK.MSDKChannel
+  MSDKError = GCloud.MSDK.MSDKError
 end
--- DECOMPILER ERROR at PC34: Confused about usage of register: R3 in 'UnsetPending'
 
-LoginAuthorityResult.Constructor = function(self)
-  -- function num : 0_0 , upvalues : AuthorityRetCode, _ENV
+function LoginAuthorityResult:Constructor()
   self.retCode = AuthorityRetCode.ARC_UNKNOWN
   self.loginChannelID = MobileClientLoginChannel.MCLC_NONE
   self.openId = nil
   self.token = nil
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R3 in 'UnsetPending'
-
-LoginAuthorityResult.Reset = function(self)
-  -- function num : 0_1 , upvalues : AuthorityRetCode, _ENV
+function LoginAuthorityResult:Reset()
   self.retCode = AuthorityRetCode.ARC_UNKNOWN
   self.loginChannelID = MobileClientLoginChannel.MCLC_NONE
   self.openId = nil
   self.token = nil
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R3 in 'UnsetPending'
-
-LoginAuthorityResult.Copy = function(self, src)
-  -- function num : 0_2
+function LoginAuthorityResult:Copy(src)
   self.retCode = src.retCode
   self.loginChannelID = src.loginChannelID
   self.openId = src.openId
   self.token = src.token
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R3 in 'UnsetPending'
-
-LoginAuthorityResult.IsAuth = function(self)
-  -- function num : 0_3 , upvalues : AuthorityRetCode
-  do return self.retCode == AuthorityRetCode.ARC_SUCCESS end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function LoginAuthorityResult:IsAuth()
+  return self.retCode == AuthorityRetCode.ARC_SUCCESS
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R3 in 'UnsetPending'
-
-LoginAuthorityResult.SetRetCode = function(self, loginRet)
-  -- function num : 0_4 , upvalues : MSDKError, _ENV, AuthorityRetCode
+function LoginAuthorityResult:SetRetCode(loginRet)
   self.openId = ""
   self.token = ""
   local res = loginRet.RetCode
   if res == MSDKError.SUCCESS then
-    (Log.debug)("[MSDK]LoginAuthorityResult:SetRetCode Success , channel=", loginRet.Channel, ",openid=", loginRet.OpenId)
+    Log.debug("[MSDK]LoginAuthorityResult:SetRetCode Success , channel=", loginRet.Channel, ",openid=", loginRet.OpenId)
     self.loginChannelID = loginRet.ChannelId
     self.retCode = AuthorityRetCode.ARC_SUCCESS
     self.openId = loginRet.OpenId
     self.token = loginRet.Token
-    ;
-    (H3DGCloudLuaHelper.ReportEvent)("login_auth_success", {retCode = self.retCode, retMsg = loginRet.RetMsg})
-    return 
-  else
-    if res == MSDKError.NEED_REALNAME then
-      self.loginChannelID = loginRet.ChannelId
-      self.retCode = AuthorityRetCode.ARC_FAILED_NOT_REAL_NAME
-    else
-      if res == MSDKError.CANCEL then
-        self.loginChannelID = loginRet.ChannelId
-        self.retCode = AuthorityRetCode.ARC_FAILED_USER_CANCLE
-      else
-        if res == MSDKError.INITIALIZE_FAILED then
-          self.loginChannelID = loginRet.ChannelId
-          self.retCode = AuthorityRetCode.ARC_FAILED
-        else
-          if res == MSDKError.NEED_INSTALL_APP then
-            if self.loginChannelID == MobileClientLoginChannel.MCLC_WX then
-              self.retCode = AuthorityRetCode.ARC_FAILED_WX_NOT_INSTALL
-            else
-              if self.loginChannelID == MobileClientLoginChannel.MCLC_QQ then
-                self.retCode = AuthorityRetCode.ARC_FAILED_QQ_NOT_INSTALL
-              end
-            end
-          else
-            self.loginChannelID = loginRet.ChannelId
-            self.retCode = AuthorityRetCode.ARC_FAILED
-          end
-        end
-      end
+    H3DGCloudLuaHelper.ReportEvent("login_auth_success", {
+      retCode = self.retCode,
+      retMsg = loginRet.RetMsg
+    })
+    return
+  elseif res == MSDKError.NEED_REALNAME then
+    self.loginChannelID = loginRet.ChannelId
+    self.retCode = AuthorityRetCode.ARC_FAILED_NOT_REAL_NAME
+  elseif res == MSDKError.CANCEL then
+    self.loginChannelID = loginRet.ChannelId
+    self.retCode = AuthorityRetCode.ARC_FAILED_USER_CANCLE
+  elseif res == MSDKError.INITIALIZE_FAILED then
+    self.loginChannelID = loginRet.ChannelId
+    self.retCode = AuthorityRetCode.ARC_FAILED
+  elseif res == MSDKError.NEED_INSTALL_APP then
+    if self.loginChannelID == MobileClientLoginChannel.MCLC_WX then
+      self.retCode = AuthorityRetCode.ARC_FAILED_WX_NOT_INSTALL
+    elseif self.loginChannelID == MobileClientLoginChannel.MCLC_QQ then
+      self.retCode = AuthorityRetCode.ARC_FAILED_QQ_NOT_INSTALL
     end
+  else
+    self.loginChannelID = loginRet.ChannelId
+    self.retCode = AuthorityRetCode.ARC_FAILED
   end
-  ;
-  (Log.error)("[MSDK]LoginAuthorityResult:SetRetCode Fail, msdkRetCode=", res, ",self.retCode=", self.retCode, ",RetMsg=", loginRet.RetMsg)
-  ;
-  (H3DGCloudLuaHelper.ReportEvent)("login_auth_failed", {retCode = self.retCode, retMsg = loginRet.RetMsg})
+  Log.error("[MSDK]LoginAuthorityResult:SetRetCode Fail, msdkRetCode=", res, ",self.retCode=", self.retCode, ",RetMsg=", loginRet.RetMsg)
+  H3DGCloudLuaHelper.ReportEvent("login_auth_failed", {
+    retCode = self.retCode,
+    retMsg = loginRet.RetMsg
+  })
 end
-
-

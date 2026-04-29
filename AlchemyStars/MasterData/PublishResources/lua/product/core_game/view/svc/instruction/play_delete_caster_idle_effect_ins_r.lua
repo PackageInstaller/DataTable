@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_delete_caster_idle_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayDeleteCasterIdleEffectInstruction", BaseInstruction)
 PlayDeleteCasterIdleEffectInstruction = PlayDeleteCasterIdleEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayDeleteCasterIdleEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayDeleteCasterIdleEffectInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDeleteCasterIdleEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayDeleteCasterIdleEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
   if casterEntity:HasSuperEntity() then
     casterEntity = casterEntity:GetSuperEntity()
@@ -27,16 +17,11 @@ PlayDeleteCasterIdleEffectInstruction.DoInstruction = function(self, TT, casterE
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDeleteCasterIdleEffectInstruction.DeleteEffect = function(self, effectList)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,entityID in pairs(effectList) do
-    local entity = (self._world):GetEntityByID(entityID)
+function PlayDeleteCasterIdleEffectInstruction:DeleteEffect(effectList)
+  for _, entityID in pairs(effectList) do
+    local entity = self._world:GetEntityByID(entityID)
     if entity then
-      (self._world):DestroyEntity(entity)
+      self._world:DestroyEntity(entity)
     end
   end
 end
-
-

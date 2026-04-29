@@ -1,27 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/pop_star/ui_widget_pop_star_progress_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetPopStarProgressInfo", UICustomWidget)
 UIWidgetPopStarProgressInfo = UIWidgetPopStarProgressInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetPopStarProgressInfo.Constructor = function(self)
-  -- function num : 0_0
+function UIWidgetPopStarProgressInfo:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarProgressInfo.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWidgetPopStarProgressInfo:OnShow()
   self._go = self:GetGameObject()
   self._goStageGroup = self:GetGameObject("StageGroup")
   self._txtStage = self:GetUIComponent("UILocalizationText", "txtStage")
   self._stageInfoRootPath = self:GetUIComponent("UISelectObjectPath", "stageInfoRoot")
-  self._stageInfo = (self._stageInfoRootPath):SpawnObject("UIWidgetPopStarStageInfo")
-  ;
-  (self._goStageGroup):SetActive(false)
+  self._stageInfo = self._stageInfoRootPath:SpawnObject("UIWidgetPopStarStageInfo")
+  self._goStageGroup:SetActive(false)
   self._rtImgBK = self:GetUIComponent("RectTransform", "imgBK")
   self._rtProgressBtm = self:GetUIComponent("RectTransform", "maskProgressBtm")
   self._rtProgressUp = self:GetUIComponent("RectTransform", "maskProgressUp")
@@ -33,55 +22,33 @@ UIWidgetPopStarProgressInfo.OnShow = function(self)
   self._minNum = 0
   self._maxNum = 0
   self._txtScoreNum = self:GetUIComponent("UILocalizationText", "txtScoreNum")
-  ;
-  (self._txtScoreNum):SetText("0")
+  self._txtScoreNum:SetText("0")
   self:Init()
   self:AttachEvent(GameEventType.PopStarRefreshProgressInfo, self.OnRefreshProgressInfo)
   self:AttachEvent(GameEventType.PopStarRefreshStageInfo, self.OnRefreshStageInfo)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarProgressInfo.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetPopStarProgressInfo:OnHide()
   self:DetachEvent(GameEventType.PopStarRefreshProgressInfo, self.OnRefreshProgressInfo)
   self:DetachEvent(GameEventType.PopStarRefreshStageInfo, self.OnRefreshStageInfo)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarProgressInfo.SetActive = function(self, state)
-  -- function num : 0_3
-  (self._go):SetActive(state)
+function UIWidgetPopStarProgressInfo:SetActive(state)
+  self._go:SetActive(state)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarProgressInfo._InitProgress = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIWidgetPopStarProgressInfo:_InitProgress()
   local baseWidth = BattleConst.PopStarMaskBaseWidth
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rtProgressUp).sizeDelta = Vector2(baseWidth, ((self._rtProgressUp).sizeDelta).y)
-  local btmWidth = ((self._rtProgressUp).sizeDelta).x + BattleConst.PopStarPointWidth
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rtProgressBtm).sizeDelta = Vector2(btmWidth, ((self._rtProgressBtm).sizeDelta).y)
-  local tmpPos = (self._rtEffPointer).anchoredPosition3D
+  self._rtProgressUp.sizeDelta = Vector2(baseWidth, self._rtProgressUp.sizeDelta.y)
+  local btmWidth = self._rtProgressUp.sizeDelta.x + BattleConst.PopStarPointWidth
+  self._rtProgressBtm.sizeDelta = Vector2(btmWidth, self._rtProgressBtm.sizeDelta.y)
+  local tmpPos = self._rtEffPointer.anchoredPosition3D
   tmpPos.x = 0
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rtEffPointer).anchoredPosition3D = tmpPos
+  self._rtEffPointer.anchoredPosition3D = tmpPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarProgressInfo.Init = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local matchModule = (GameGlobal.GetModule)(MatchModule)
+function UIWidgetPopStarProgressInfo:Init()
+  local matchModule = GameGlobal.GetModule(MatchModule)
   local enterData = matchModule:GetMatchEnterData()
   local createInfo = enterData:GetMissionCreateInfo()
   if not createInfo.is_challenge then
@@ -91,10 +58,7 @@ UIWidgetPopStarProgressInfo.Init = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarProgressInfo._CalculatePos = function(self, curNum)
-  -- function num : 0_6 , upvalues : _ENV
+function UIWidgetPopStarProgressInfo:_CalculatePos(curNum)
   if not self._maxNum or self._maxNum == 0 then
     return 0
   end
@@ -104,197 +68,146 @@ UIWidgetPopStarProgressInfo._CalculatePos = function(self, curNum)
   return curPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarProgressInfo._CalculateMarkPosX = function(self, curNum)
-  -- function num : 0_7
-  local basePos = -1 * ((self._rtImgBK).rect).width / 2
+function UIWidgetPopStarProgressInfo:_CalculateMarkPosX(curNum)
+  local basePos = -1 * self._rtImgBK.rect.width / 2
   local curPos = self:_CalculatePos(curNum)
   return curPos + basePos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarProgressInfo.BtnStageOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local buffIDList = (InnerGameHelperRender.GetPopStarStageBuffIDList)()
-  ;
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIWidgetPopStarProgressInfo", input = "BtnStageOnClick", 
-args = {}
-})
-  ;
-  (self._stageInfo):Init(buffIDList)
+function UIWidgetPopStarProgressInfo:BtnStageOnClick()
+  local buffIDList = InnerGameHelperRender.GetPopStarStageBuffIDList()
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIWidgetPopStarProgressInfo",
+    input = "BtnStageOnClick",
+    args = {}
+  })
+  self._stageInfo:Init(buffIDList)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarProgressInfo.SetStageInfo = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local index, score, preScore = (InnerGameHelperRender.GetPopStarStageInfo)()
+function UIWidgetPopStarProgressInfo:SetStageInfo()
+  local index, score, preScore = InnerGameHelperRender.GetPopStarStageInfo()
   if not index then
-    return 
+    return
   end
   if score == 0 then
-    return 
+    return
   end
-  ;
-  (self._goStageGroup):SetActive(true)
+  self._goStageGroup:SetActive(true)
   local strIndex = "str_n31_popstar_battle_stage" .. index
-  ;
-  (self._txtStage):SetText((StringTable.Get)(strIndex))
+  self._txtStage:SetText(StringTable.Get(strIndex))
   self._maxNum = score
   self._minNum = preScore
-  ;
-  (self._markList):SpawnObject("UIWidgetPopStarMarkInfo")
-  local markGOList = (self._markList):GetAllSpawnList()
+  self._markList:SpawnObject("UIWidgetPopStarMarkInfo")
+  local markGOList = self._markList:GetAllSpawnList()
   local posX = self:_CalculateMarkPosX(score)
-  ;
-  (markGOList[1]):Init(posX, score)
+  markGOList[1]:Init(posX, score)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarProgressInfo.OnRefreshStageInfo = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local callback = function()
-    -- function num : 0_10_0 , upvalues : self, _ENV
+function UIWidgetPopStarProgressInfo:OnRefreshStageInfo()
+  local function callback()
     self:_InitProgress()
-    local index, score, preScore = (InnerGameHelperRender.GetPopStarStageInfo)()
+    
+    local index, score, preScore = InnerGameHelperRender.GetPopStarStageInfo()
     if not index then
-      return 
+      return
     end
     if score == 0 then
-      return 
+      return
     end
     local strIndex = "str_n31_popstar_battle_stage" .. index
-    ;
-    (self._txtStage):SetText((StringTable.Get)(strIndex))
+    self._txtStage:SetText(StringTable.Get(strIndex))
     self._maxNum = score
     self._minNum = preScore
     self._curScore = self._minNum
-    local markGOList = (self._markList):GetAllSpawnList()
-    ;
-    (markGOList[1]):ResetNum(score)
-    local addScore = (InnerGameHelperRender.GetPopStarCurScore)() - self._minNum
+    local markGOList = self._markList:GetAllSpawnList()
+    markGOList[1]:ResetNum(score)
+    local addScore = InnerGameHelperRender.GetPopStarCurScore() - self._minNum
     self:OnRefreshProgressInfo(addScore)
   end
-
+  
   local addScore = self._maxNum - self._curScore
   self:OnRefreshProgressInfo(addScore, callback)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarProgressInfo.InitNormal3StarInfo = function(self, missionID)
-  -- function num : 0_11 , upvalues : _ENV
-  local allStarConditions = (ConfigServiceHelper.GetPopStar3StarCondition)(missionID)
-  if allStarConditions and #allStarConditions > 0 then
-    (self._markList):SpawnObjects("UIWidgetPopStarMarkInfo", #allStarConditions)
-    local markGOList = (self._markList):GetAllSpawnList()
+function UIWidgetPopStarProgressInfo:InitNormal3StarInfo(missionID)
+  local allStarConditions = ConfigServiceHelper.GetPopStar3StarCondition(missionID)
+  if allStarConditions and 0 < #allStarConditions then
+    self._markList:SpawnObjects("UIWidgetPopStarMarkInfo", #allStarConditions)
+    local markGOList = self._markList:GetAllSpawnList()
     local markNumList = {}
     for i = 1, #allStarConditions do
       local conID = allStarConditions[i]
-      local paramStrArray = ((Cfg.cfg_threestarcondition)[conID]).ConditionNumber
+      local paramStrArray = Cfg.cfg_threestarcondition[conID].ConditionNumber
       if #paramStrArray == 1 then
         markNumList[#markNumList + 1] = tonumber(paramStrArray[1])
       end
     end
     if #markNumList ~= #markGOList then
-      (Log.error)("UIWidgetPopStarProgressInfo PopStar missionID:", missionID, " 3 star cfg error!")
-      return 
+      Log.error("UIWidgetPopStarProgressInfo PopStar missionID:", missionID, " 3 star cfg error!")
+      return
     end
     self._maxNum = markNumList[#markNumList]
     for i = 1, #markNumList do
       local curNum = markNumList[i]
       local posX = self:_CalculateMarkPosX(curNum)
-      ;
-      (markGOList[i]):Init(posX, curNum)
+      markGOList[i]:Init(posX, curNum)
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarProgressInfo.OnRefreshProgressInfo = function(self, addScore, callback)
-  -- function num : 0_12
+function UIWidgetPopStarProgressInfo:OnRefreshProgressInfo(addScore, callback)
   self:StartTask(self.PlayAnimation, self, addScore, callback)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarProgressInfo.PlayAnimation = function(self, TT, addScore, callback)
-  -- function num : 0_13 , upvalues : _ENV
+function UIWidgetPopStarProgressInfo:PlayAnimation(TT, addScore, callback)
   local durationTime = addScore * BattleConst.PopStarOneScoreTime / 1000
   local startValue = self._curScore
   local endValue = startValue + addScore
-  ;
-  (DoTweenHelper.DoUpdateInt)(startValue, endValue, durationTime, function(val)
-    -- function num : 0_13_0 , upvalues : _ENV, self
-    local num = (math.floor)(val)
-    ;
-    (self._txtScoreNum):SetText(tostring(num))
-  end
-)
+  DoTweenHelper.DoUpdateInt(startValue, endValue, durationTime, function(val)
+    local num = math.floor(val)
+    self._txtScoreNum:SetText(tostring(num))
+  end)
   self._curScore = self._curScore + addScore
   if startValue < self._maxNum then
-    (self._anim):Play("uieff_UIWidgetPopStarProgressInfo_in")
+    self._anim:Play("uieff_UIWidgetPopStarProgressInfo_in")
     local baseWidth = BattleConst.PopStarMaskBaseWidth + BattleConst.PopStarProgressStart
     local tmpPercent = (self._curScore - self._minNum) / (self._maxNum - self._minNum)
-    if tmpPercent > 1 then
+    if 1 < tmpPercent then
       tmpPercent = 1
     end
     local addWidth = BattleConst.PopStarProgressLength * tmpPercent
     local upWidth = baseWidth + addWidth
-    local tweenUp = (self._rtProgressUp):DOSizeDelta(Vector2(upWidth, ((self._rtProgressUp).sizeDelta).y), durationTime)
+    local tweenUp = self._rtProgressUp:DOSizeDelta(Vector2(upWidth, self._rtProgressUp.sizeDelta.y), durationTime)
     local btmWidth = upWidth + BattleConst.PopStarPointWidth
-    local tweenBtm = (self._rtProgressBtm):DOSizeDelta(Vector2(btmWidth, ((self._rtProgressBtm).sizeDelta).y), durationTime)
+    local tweenBtm = self._rtProgressBtm:DOSizeDelta(Vector2(btmWidth, self._rtProgressBtm.sizeDelta.y), durationTime)
     local effPosX = addWidth + BattleConst.PopStarProgressStart
-    local tweenEff = (self._rtEffPointer):DOAnchorPos3DX(effPosX, durationTime)
-    local markGOList = (self._markList):GetAllSpawnList()
+    local tweenEff = self._rtEffPointer:DOAnchorPos3DX(effPosX, durationTime)
+    local markGOList = self._markList:GetAllSpawnList()
     for i = 1, #markGOList do
-      (markGOList[i]):RefreshPassState(self._curScore)
+      markGOList[i]:RefreshPassState(self._curScore)
     end
     YIELD(TT, durationTime * 1000)
-    while 1 do
-      if tweenUp:IsPlaying() or tweenBtm:IsPlaying() or tweenEff:IsPlaying() then
-        YIELD(TT)
-        -- DECOMPILER ERROR at PC104: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC104: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    while tweenUp:IsPlaying() or tweenBtm:IsPlaying() or tweenEff:IsPlaying() do
+      YIELD(TT)
     end
     local strName = "uieff_UIWidgetPopStarProgressInfo_out"
-    ;
-    (self._anim):Play(strName)
-    if self._maxNum <= self._curScore then
+    self._anim:Play(strName)
+    if self._curScore >= self._maxNum then
       addWidth = addWidth + BattleConst.PopStarMaskEndAdd
       local endPercent = BattleConst.PopStarMaskEndAdd / BattleConst.PopStarProgressLength
       local endNum = endPercent * (self._maxNum - self._minNum)
       local endTime = endNum * BattleConst.PopStarOneScoreTime / 1000
-      local upWidth = baseWidth + (addWidth)
-      tweenUp = (self._rtProgressUp):DOSizeDelta(Vector2(upWidth, ((self._rtProgressUp).sizeDelta).y), endTime)
+      local upWidth = baseWidth + addWidth
+      tweenUp = self._rtProgressUp:DOSizeDelta(Vector2(upWidth, self._rtProgressUp.sizeDelta.y), endTime)
       local btmWidth = upWidth + BattleConst.PopStarPointWidth
-      tweenBtm = (self._rtProgressBtm):DOSizeDelta(Vector2(btmWidth, ((self._rtProgressBtm).sizeDelta).y), endTime)
+      tweenBtm = self._rtProgressBtm:DOSizeDelta(Vector2(btmWidth, self._rtProgressBtm.sizeDelta.y), endTime)
     end
-    do
-      do
-        YIELD(TT, 200)
-        while 1 do
-          if (self._anim):IsPlaying(strName) or tweenUp:IsPlaying() or tweenBtm:IsPlaying() then
-            YIELD(TT)
-            -- DECOMPILER ERROR at PC177: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC177: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-        if callback then
-          callback()
-        end
-      end
+    YIELD(TT, 200)
+    while self._anim:IsPlaying(strName) or tweenUp:IsPlaying() or tweenBtm:IsPlaying() do
+      YIELD(TT)
     end
   end
+  if callback then
+    callback()
+  end
 end
-
-

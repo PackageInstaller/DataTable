@@ -1,30 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_book/ui_book_cg_preview_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBookCGPreviewController", UIController)
 UIBookCGPreviewController = UIBookCGPreviewController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBookCGPreviewController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBookCGPreviewController:Constructor()
   self._itemCountPerRow = 1
   self._listShowItemCount = 0
   self._bookCGType = BookCGType.Main
   self.showBtns = true
   self._moveTime = 0.5
-  self._topBtnTab = {[1] = BookCGType.Main, [2] = BookCGType.Ext, [3] = BookCGType.Pet}
-  self._btnCount = (table.count)(self._topBtnTab)
-  self._type2tips = {[BookCGType.Main] = "str_book_main_cg_active", [BookCGType.Ext] = "str_book_ext_cg_active", [BookCGType.Season] = "str_book_season_cg_active", [BookCGType.Pet] = "str_book_pet_skin_cg_active"}
+  self._topBtnTab = {
+    [1] = BookCGType.Main,
+    [2] = BookCGType.Ext,
+    [3] = BookCGType.Pet
+  }
+  self._btnCount = table.count(self._topBtnTab)
+  self._type2tips = {
+    [BookCGType.Main] = "str_book_main_cg_active",
+    [BookCGType.Ext] = "str_book_ext_cg_active",
+    [BookCGType.Season] = "str_book_season_cg_active",
+    [BookCGType.Pet] = "str_book_pet_skin_cg_active"
+  }
   self._itemWidth = 380
   self._padding = 5
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBookCGPreviewController:GetComponents()
   self._spine1 = self:GetUIComponent("SpineLoader", "spine1")
   self._spine1Go = self:GetGameObject("spine1")
   self._spine2 = self:GetUIComponent("SpineLoader", "spine2")
@@ -39,21 +38,17 @@ UIBookCGPreviewController.GetComponents = function(self)
   self.nameTxt = self:GetUIComponent("UILocalizationText", "name")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_1_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, nil)
+  end, nil)
   self._sortBtns = self:GetUIComponent("UISelectObjectPath", "sortBtns")
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self._scrollRt = self:GetUIComponent("RectTransform", "ScrollView")
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
   self._scrollRect = self:GetUIComponent("ScrollRect", "ScrollView")
   self._emptyDataTip = self:GetGameObject("EmptyTip")
-  ;
-  (self._emptyDataTip):SetActive(false)
-  self._animation = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
+  self._emptyDataTip:SetActive(false)
+  self._animation = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
   self:StartAnim("uieff_BookCG_In", 500)
   self._topBlackSide = self:GetGameObject("Top")
   self._bottomBlackSide = self:GetGameObject("Bottom")
@@ -62,17 +57,14 @@ UIBookCGPreviewController.GetComponents = function(self)
   self._uiCanvasRect = self:GetUIComponent("RectTransform", "UICanvas")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBookCGPreviewController:OnValue()
   self:InitTopBtns()
   self:CalcPetScrollViewCount()
   self:_InitSrollView()
   local cgs = self:SetDataList(self._bookCGType)
   local active = false
-  local id = nil
-  for index,value in ipairs(cgs) do
+  local id
+  for index, value in ipairs(cgs) do
     if value.active then
       active = true
       id = value.id
@@ -80,19 +72,13 @@ UIBookCGPreviewController.OnValue = function(self)
       break
     end
   end
-  do
-    if id then
-      self:OnClickCell(id)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCgBookListItemClick, id)
-    end
+  if id then
+    self:OnClickCell(id)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCgBookListItemClick, id)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIBookCGPreviewController:OnShow(uiParams)
   self:GetComponents()
   self._bookModule = self:GetModule(BookModule)
   self._cgs = self:SetDataList(self._bookCGType)
@@ -100,48 +86,36 @@ UIBookCGPreviewController.OnShow = function(self, uiParams)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.SetDataList = function(self, type)
-  -- function num : 0_4 , upvalues : _ENV
-  local storyData = (self._bookModule):GetCGStoryData()
+function UIBookCGPreviewController:SetDataList(type)
+  local storyData = self._bookModule:GetCGStoryData()
   local _cgs = {}
-  for cgId,active in (HelperProxy:GetInstance()):pairsByKeys((storyData.TypeList)[type]) do
+  for cgId, active in HelperProxy:GetInstance():pairsByKeys(storyData.TypeList[type]) do
     local data = {}
     data.id = cgId
     data.active = active
-    ;
-    (table.insert)(_cgs, data)
+    table.insert(_cgs, data)
   end
   return _cgs
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.InitTopBtns = function(self)
-  -- function num : 0_5
-  (self._sortBtns):SpawnObjects("UIBookCGSortBtn", self._btnCount)
-  self._sortBtnsPool = (self._sortBtns):GetAllSpawnList()
+function UIBookCGPreviewController:InitTopBtns()
+  self._sortBtns:SpawnObjects("UIBookCGSortBtn", self._btnCount)
+  self._sortBtnsPool = self._sortBtns:GetAllSpawnList()
   for i = 1, self._btnCount do
-    ((self._sortBtnsPool)[i]):SetData((self._topBtnTab)[i], self._bookCGType, function(cgType)
-    -- function num : 0_5_0 , upvalues : self
-    self:ChangeSortParams(cgType)
-  end
-)
+    self._sortBtnsPool[i]:SetData(self._topBtnTab[i], self._bookCGType, function(cgType)
+      self:ChangeSortParams(cgType)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.ChangeSortParams = function(self, cgType)
-  -- function num : 0_6 , upvalues : _ENV
+function UIBookCGPreviewController:ChangeSortParams(cgType)
   if cgType == self._bookCGType then
-    return 
+    return
   end
   local cgs = self:SetDataList(cgType)
   local active = false
-  local id = nil
-  for index,value in ipairs(cgs) do
+  local id
+  for index, value in ipairs(cgs) do
     if value.active then
       active = true
       id = value.id
@@ -149,90 +123,60 @@ UIBookCGPreviewController.ChangeSortParams = function(self, cgType)
       break
     end
   end
-  do
-    do
-      if not active then
-        local tipsStr = (StringTable.Get)((self._type2tips)[cgType])
-        ;
-        (ToastManager.ShowToast)(tipsStr)
-        return 
-      end
-      self._bookCGType = cgType
-      self._cgs = cgs
-      self:RefrenshCGList()
-      self:FlushTopBtnState()
-      if id then
-        self:OnClickCell(id)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCgBookListItemClick, id)
-      end
-    end
+  if not active then
+    local tipsStr = StringTable.Get(self._type2tips[cgType])
+    ToastManager.ShowToast(tipsStr)
+    return
+  end
+  self._bookCGType = cgType
+  self._cgs = cgs
+  self:RefrenshCGList()
+  self:FlushTopBtnState()
+  if id then
+    self:OnClickCell(id)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCgBookListItemClick, id)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.FlushTopBtnState = function(self)
-  -- function num : 0_7
+function UIBookCGPreviewController:FlushTopBtnState()
   for i = 1, self._btnCount do
-    ((self._sortBtnsPool)[i]):Flush(self._bookCGType)
+    self._sortBtnsPool[i]:Flush(self._bookCGType)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.AttacEvents = function(self)
-  -- function num : 0_8
+function UIBookCGPreviewController:AttacEvents()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.DetachEvents = function(self)
-  -- function num : 0_9
+function UIBookCGPreviewController:DetachEvents()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.OnHide = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIBookCGPreviewController:OnHide()
   if self._tweener then
-    (self._tweener):Kill()
+    self._tweener:Kill()
     self._tweener = nil
   end
   self:DetachEvents()
   self:DestroyAllSpine()
-  ;
-  ((GameGlobal.UIStateManager)()):SetBlackSideVisible(true)
+  GameGlobal.UIStateManager():SetBlackSideVisible(true)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.DestroyAllSpine = function(self)
-  -- function num : 0_11
+function UIBookCGPreviewController:DestroyAllSpine()
   if self._spine1 then
-    (self._spine1):DestroyCurrentSpine()
+    self._spine1:DestroyCurrentSpine()
   end
   if self._spine2 then
-    (self._spine2):DestroyCurrentSpine()
+    self._spine2:DestroyCurrentSpine()
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController._InitSrollView = function(self)
-  -- function num : 0_12
-  (self._scrollView):InitListView(self._listShowItemCount, function(scrollView, index)
-    -- function num : 0_12_0 , upvalues : self
+function UIBookCGPreviewController:_InitSrollView()
+  self._scrollView:InitListView(self._listShowItemCount, function(scrollView, index)
     return self:InitSpritListInfo(scrollView, index)
-  end
-)
+  end)
   self._inited = true
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.InitSpritListInfo = function(self, scrollView, index)
-  -- function num : 0_13
+function UIBookCGPreviewController:InitSpritListInfo(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -246,8 +190,8 @@ UIBookCGPreviewController.InitSpritListInfo = function(self, scrollView, index)
   for i = 1, self._itemCountPerRow do
     local cgItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._petCount < itemIndex then
-      (cgItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._petCount then
+      cgItem:GetGameObject():SetActive(false)
     else
       self:ShowCGItem(cgItem, itemIndex)
     end
@@ -255,154 +199,109 @@ UIBookCGPreviewController.InitSpritListInfo = function(self, scrollView, index)
   return item
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.ShowCGItem = function(self, cgItem, index)
-  -- function num : 0_14 , upvalues : _ENV
-  local config = (self._cgs)[index]
-  ;
-  (cgItem:GetGameObject()):SetActive(true)
-  if self.selectIndex ~= index then
+function UIBookCGPreviewController:ShowCGItem(cgItem, index)
+  local config = self._cgs[index]
+  cgItem:GetGameObject():SetActive(true)
+  if config ~= nil then
     cgItem:SetData(config, index, function(id, cell)
-    -- function num : 0_14_0 , upvalues : self, _ENV
-    if cell.index == self.selectIndex then
-      return 
-    end
-    self.curCell = cell
-    self.selectIndex = cell.index
-    self:OnClickCell(id)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCgBookListItemClick, id)
-  end
-, config == nil)
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+      if cell.index == self.selectIndex then
+        return
+      end
+      self.curCell = cell
+      self.selectIndex = cell.index
+      self:OnClickCell(id)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCgBookListItemClick, id)
+    end, self.selectIndex == index)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.MovePanelToItemIndex = function(self)
-  -- function num : 0_15
+function UIBookCGPreviewController:MovePanelToItemIndex()
   local cellx = 380
   local paddingx = 5
   local contentWidth = #self._cgs * cellx + paddingx * (#self._cgs - 1)
-  local scrollWidth = ((self._scrollRt).rect).width
+  local scrollWidth = self._scrollRt.rect.width
   if contentWidth < scrollWidth then
-    return 
+    return
   end
-  local mIdx = nil
-  local showTab = (self._scrollView):GetVisibleItemIDsInScrollView()
-  do
-    if self.selectIndex == 1 or self.selectIndex == 2 then
-      local pos = 0
-      self:MovePanelToPos(pos)
-      return 
-    end
-    do
-      if self.selectIndex == #self._cgs or self.selectIndex == #self._cgs - 1 then
-        local pos = -1 * (contentWidth - scrollWidth)
-        self:MovePanelToPos(pos)
-        return 
-      end
-      local clickIdx = self.selectIndex
-      local contentX = ((self._contentRect).anchoredPosition).x
-      local left = false
-      local leftPos = (clickIdx - 2) * self._itemWidth + (clickIdx - 2) * self._padding
-      if leftPos < -1 * contentX then
-        left = true
-      end
-      do
-        if left then
-          local pos = -1 * leftPos
-          self:MovePanelToPos(pos)
-          return 
-        end
-        local right = false
-        local rightPos = (clickIdx + 1) * self._itemWidth + clickIdx * self._padding
-        if -1 * contentX + scrollWidth < rightPos then
-          right = true
-        end
-        if right then
-          local pos = -1 * (rightPos - scrollWidth)
-          self:MovePanelToPos(pos)
-          return 
-        end
-      end
-    end
+  local mIdx
+  local showTab = self._scrollView:GetVisibleItemIDsInScrollView()
+  if self.selectIndex == 1 or self.selectIndex == 2 then
+    local pos = 0
+    self:MovePanelToPos(pos)
+    return
+  end
+  if self.selectIndex == #self._cgs or self.selectIndex == #self._cgs - 1 then
+    local pos = -1 * (contentWidth - scrollWidth)
+    self:MovePanelToPos(pos)
+    return
+  end
+  local clickIdx = self.selectIndex
+  local contentX = self._contentRect.anchoredPosition.x
+  local left = false
+  local leftPos = (clickIdx - 2) * self._itemWidth + (clickIdx - 2) * self._padding
+  if leftPos < -1 * contentX then
+    left = true
+  end
+  if left then
+    local pos = -1 * leftPos
+    self:MovePanelToPos(pos)
+    return
+  end
+  local right = false
+  local rightPos = (clickIdx + 1) * self._itemWidth + clickIdx * self._padding
+  if rightPos > -1 * contentX + scrollWidth then
+    right = true
+  end
+  if right then
+    local pos = -1 * (rightPos - scrollWidth)
+    self:MovePanelToPos(pos)
+    return
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.MovePanelToPos = function(self, x)
-  -- function num : 0_16
-  (self._scrollRect):StopMovement()
+function UIBookCGPreviewController:MovePanelToPos(x)
+  self._scrollRect:StopMovement()
   if self._tweener then
-    (self._tweener):Kill()
+    self._tweener:Kill()
   end
-  self._tweener = (self._contentRect):DOAnchorPosX(x, self._moveTime)
+  self._tweener = self._contentRect:DOAnchorPosX(x, self._moveTime)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.OnClickCell = function(self, id, idx)
-  -- function num : 0_17 , upvalues : _ENV
+function UIBookCGPreviewController:OnClickCell(id, idx)
   self:StartAnim("uieff_BookCG_SwitchCG", 500)
   self:DestroyAllSpine()
   if self._inited then
     self:MovePanelToItemIndex()
   end
-  local cfg = (Cfg.cfg_cg_book)[id]
+  local cfg = Cfg.cfg_cg_book[id]
   if cfg.Spine then
-    ((GameGlobal.UIStateManager)()):SetBlackSideVisible(true)
-    ;
-    (self._staticPicGO):SetActive(false)
-    ;
-    (self._spine1Go):SetActive(true)
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    ((self._spine1Go).transform).localScale = Vector3(cfg.SpineScale, cfg.SpineScale, cfg.SpineScale)
-    local spineName1 = (cfg.Spine)[1]
-    ;
-    (self._spine1):LoadSpine(spineName1)
-    local spineName2 = (cfg.Spine)[2]
+    GameGlobal.UIStateManager():SetBlackSideVisible(true)
+    self._staticPicGO:SetActive(false)
+    self._spine1Go:SetActive(true)
+    self._spine1Go.transform.localScale = Vector3(cfg.SpineScale, cfg.SpineScale, cfg.SpineScale)
+    local spineName1 = cfg.Spine[1]
+    self._spine1:LoadSpine(spineName1)
+    local spineName2 = cfg.Spine[2]
     if spineName2 then
-      (self._spine2Go):SetActive(true)
-      ;
-      (self._spine2):LoadSpine(spineName2)
-      -- DECOMPILER ERROR at PC64: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      ((self._spine2Go).transform).localScale = Vector3(cfg.SpineScale, cfg.SpineScale, cfg.SpineScale)
+      self._spine2Go:SetActive(true)
+      self._spine2:LoadSpine(spineName2)
+      self._spine2Go.transform.localScale = Vector3(cfg.SpineScale, cfg.SpineScale, cfg.SpineScale)
     end
   else
-    do
-      ;
-      ((GameGlobal.UIStateManager)()):SetBlackSideVisible(true)
-      ;
-      (self._spine1Go):SetActive(false)
-      ;
-      (self._spine2Go):SetActive(false)
-      ;
-      (self._staticPicGO):SetActive(true)
-      ;
-      (self._staticPic):LoadImage(cfg.StaticPic)
-      self:_SetPicFullScreen(self._staticPicRect)
-      local word = cfg.info
-      local name = cfg.name
-      ;
-      (self.descTxt):SetText((StringTable.Get)(word))
-      ;
-      (self.nameTxt):SetText((StringTable.Get)(name))
-    end
+    GameGlobal.UIStateManager():SetBlackSideVisible(true)
+    self._spine1Go:SetActive(false)
+    self._spine2Go:SetActive(false)
+    self._staticPicGO:SetActive(true)
+    self._staticPic:LoadImage(cfg.StaticPic)
+    self:_SetPicFullScreen(self._staticPicRect)
   end
+  local word = cfg.info
+  local name = cfg.name
+  self.descTxt:SetText(StringTable.Get(word))
+  self.nameTxt:SetText(StringTable.Get(name))
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController._SetPicFullScreen = function(self, rectTrans)
-  -- function num : 0_18 , upvalues : _ENV
+function UIBookCGPreviewController:_SetPicFullScreen(rectTrans)
   local fullPicWidth = 2048
   local fullPicHeight = 946
   local screenWidth, screenHeight = self:GetCanvasSize()
@@ -410,125 +309,78 @@ UIBookCGPreviewController._SetPicFullScreen = function(self, rectTrans)
   local screenAspect = screenWidth / screenHeight
   local blackSideHeight = 0
   local blackSideWidth = 0
-  if screenAspect < picAspect then
+  if picAspect > screenAspect then
     local picHeight = fullPicHeight * screenWidth / fullPicWidth
     rectTrans.sizeDelta = Vector2(screenWidth, picHeight)
-    blackSideHeight = (math.abs)(screenHeight - picHeight) / 2
+    blackSideHeight = math.abs(screenHeight - picHeight) / 2
+  elseif picAspect < screenAspect then
+    local picWidth = fullPicWidth * screenHeight / fullPicHeight
+    rectTrans.sizeDelta = Vector2(picWidth, screenHeight)
+    blackSideWidth = math.abs(screenWidth - picWidth) / 2
   else
-    do
-      if picAspect < screenAspect then
-        local picWidth = fullPicWidth * screenHeight / fullPicHeight
-        rectTrans.sizeDelta = Vector2(picWidth, screenHeight)
-        blackSideWidth = (math.abs)(screenWidth - picWidth) / 2
-      else
-        do
-          rectTrans.sizeDelta = Vector2(screenWidth, screenHeight)
-          self:SetBlackSideSize(blackSideWidth, blackSideHeight)
-        end
-      end
-    end
+    rectTrans.sizeDelta = Vector2(screenWidth, screenHeight)
   end
+  self:SetBlackSideSize(blackSideWidth, blackSideHeight)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.SetBlackSideSize = function(self, width, height)
-  -- function num : 0_19 , upvalues : _ENV
-  ((self._topBlackSide):GetComponent("RectTransform")).sizeDelta = Vector2(0, height)
-  ;
-  ((self._bottomBlackSide):GetComponent("RectTransform")).sizeDelta = Vector2(0, height)
-  ;
-  (self._topBlackSide):SetActive(height > 0)
-  ;
-  (self._bottomBlackSide):SetActive(height > 0)
-  ;
-  ((self._leftBlackSide):GetComponent("RectTransform")).sizeDelta = Vector2(width, 0)
-  ;
-  ((self._rightBlackSide):GetComponent("RectTransform")).sizeDelta = Vector2(width, 0)
-  ;
-  (self._leftBlackSide):SetActive(width > 0)
-  ;
-  (self._rightBlackSide):SetActive(width > 0)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UIBookCGPreviewController:SetBlackSideSize(width, height)
+  self._topBlackSide:GetComponent("RectTransform").sizeDelta = Vector2(0, height)
+  self._bottomBlackSide:GetComponent("RectTransform").sizeDelta = Vector2(0, height)
+  self._topBlackSide:SetActive(0 < height)
+  self._bottomBlackSide:SetActive(0 < height)
+  self._leftBlackSide:GetComponent("RectTransform").sizeDelta = Vector2(width, 0)
+  self._rightBlackSide:GetComponent("RectTransform").sizeDelta = Vector2(width, 0)
+  self._leftBlackSide:SetActive(0 < width)
+  self._rightBlackSide:SetActive(0 < width)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.GetCanvasSize = function(self)
-  -- function num : 0_20
-  return ((self._uiCanvasRect).sizeDelta).x, ((self._uiCanvasRect).sizeDelta).y
+function UIBookCGPreviewController:GetCanvasSize()
+  return self._uiCanvasRect.sizeDelta.x, self._uiCanvasRect.sizeDelta.y
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.CalcPetScrollViewCount = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIBookCGPreviewController:CalcPetScrollViewCount()
   self.selectIndex = -1
-  for index,value in ipairs(self._cgs) do
+  for index, value in ipairs(self._cgs) do
     if value.active == true then
       self.selectIndex = index
       break
     end
   end
-  do
-    self._petCount = (table.count)(self._cgs)
-    self._listShowItemCount = (math.ceil)(self._petCount / self._itemCountPerRow)
-    self:CheckEmptyTip()
-  end
+  self._petCount = table.count(self._cgs)
+  self._listShowItemCount = math.ceil(self._petCount / self._itemCountPerRow)
+  self:CheckEmptyTip()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.CheckEmptyTip = function(self)
-  -- function num : 0_22
+function UIBookCGPreviewController:CheckEmptyTip()
   if self._petCount <= 0 then
-    (self._emptyDataTip):SetActive(true)
+    self._emptyDataTip:SetActive(true)
   end
-  ;
-  (self._emptyDataTip):SetActive(false)
+  self._emptyDataTip:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.RefrenshCGList = function(self)
-  -- function num : 0_23
+function UIBookCGPreviewController:RefrenshCGList()
   self:CalcPetScrollViewCount()
-  ;
-  (self._scrollView):SetListItemCount(self._listShowItemCount)
-  ;
-  (self._scrollView):MovePanelToItemIndex(0, 0)
+  self._scrollView:SetListItemCount(self._listShowItemCount)
+  self._scrollView:MovePanelToItemIndex(0, 0)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.bgbtnOnClick = function(self)
-  -- function num : 0_24
+function UIBookCGPreviewController:bgbtnOnClick()
   self.showBtns = not self.showBtns
   if self.showBtns then
-    (self.topLeftAnchor):SetActive(true)
-    ;
-    (self.centerAnchor):SetActive(true)
-    ;
-    (self.topRightAnchor):SetActive(true)
+    self.topLeftAnchor:SetActive(true)
+    self.centerAnchor:SetActive(true)
+    self.topRightAnchor:SetActive(true)
     self:StartAnim("uieff_BookCG_Back", 500)
   else
     self:StartAnim("uieff_BookCG_Full", 500)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookCGPreviewController.StartAnim = function(self, aniName, lastTime)
-  -- function num : 0_25 , upvalues : _ENV
+function UIBookCGPreviewController:StartAnim(aniName, lastTime)
   self:StartTask(function(TT)
-    -- function num : 0_25_0 , upvalues : self, aniName, _ENV, lastTime
     self:Lock("UIBookCGPreviewController:StartAnim")
-    ;
-    (self._animation):Play(aniName)
+    self._animation:Play(aniName)
     YIELD(TT, lastTime)
     self:UnLock("UIBookCGPreviewController:StartAnim")
-  end
-, self)
+  end, self)
 end
-
-

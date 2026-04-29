@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ground/homeland_brick_direction.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local HomelandBrickDirection = {Forward = 0, AFTER = 1, LEFT = 2, RIGHT = 3}
+local HomelandBrickDirection = {
+  Forward = 0,
+  AFTER = 1,
+  LEFT = 2,
+  RIGHT = 3
+}
 _enum("HomelandBrickDirection", HomelandBrickDirection)
-

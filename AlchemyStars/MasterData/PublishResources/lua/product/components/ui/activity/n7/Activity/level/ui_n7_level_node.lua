@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/Activity/level/ui_n7_level_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN7LevelNode", UICustomWidget)
 UIN7LevelNode = UIN7LevelNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN7LevelNode.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN7LevelNode:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelNode.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN7LevelNode:InitWidget()
   self.bg = self:GetUIComponent("Image", "bg")
   self.name = self:GetUIComponent("UILocalizationText", "name")
   self.shadowLabel = self:GetUIComponent("UILocalizationText", "Shadow")
@@ -26,135 +16,86 @@ UIN7LevelNode.InitWidget = function(self)
   self.star1 = self:GetUIComponent("Image", "Star1")
   self.star2 = self:GetUIComponent("Image", "Star2")
   self.star3 = self:GetUIComponent("Image", "Star3")
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
-  self._stars = {self.star1, self.star2, self.star3}
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
+  self._stars = {
+    self.star1,
+    self.star2,
+    self.star3
+  }
   self._atlas = self:GetAsset("UIN7.spriteatlas", LoadType.SpriteAtlas)
-  self._anim = (self:GetGameObject()):GetComponent("Animation")
+  self._anim = self:GetGameObject():GetComponent("Animation")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelNode.SetData = function(self, lineCfg, passInfo, cb)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN7LevelNode:SetData(lineCfg, passInfo, cb)
   self._missionID = lineCfg.CampaignMissionId
   self._onClick = cb
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMax = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMin = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).sizeDelta = Vector2.zero
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  self._rectTransform.anchorMax = Vector2(0, 0.5)
+  self._rectTransform.anchorMin = Vector2(0, 0.5)
+  self._rectTransform.sizeDelta = Vector2.zero
+  self._rectTransform.anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   if not missionCfg then
-    (Log.exception)("cfg_campaign_mission中找不到配置:", self._missionID)
+    Log.exception("cfg_campaign_mission中找不到配置:", self._missionID)
   end
-  ;
-  (self.name):SetText((StringTable.Get)(missionCfg.Name))
-  ;
-  (self.shadowLabel):SetText((StringTable.Get)(missionCfg.Name))
+  self.name:SetText(StringTable.Get(missionCfg.Name))
+  self.shadowLabel:SetText(StringTable.Get(missionCfg.Name))
   local hardParam = 1
-  local typeCfg = nil
+  local typeCfg
   if lineCfg.WayPointType == 4 then
-    typeCfg = (UIN7Level.NodeCfg)[UIN7Level.SLeval]
+    typeCfg = UIN7Level.NodeCfg[UIN7Level.SLeval]
   else
-    typeCfg = (UIN7Level.NodeCfg)[missionCfg.Type]
+    typeCfg = UIN7Level.NodeCfg[missionCfg.Type]
   end
-  local bg = nil
-  local mask = (typeCfg[hardParam]).press
-  local lock = (typeCfg[hardParam]).lock
-  local textColor, shadowColor = nil, nil
+  local bg
+  local mask = typeCfg[hardParam].press
+  local lock = typeCfg[hardParam].lock
+  local textColor, shadowColor
   if passInfo then
-    textColor = (typeCfg[hardParam]).textColor
-    shadowColor = (typeCfg[hardParam]).textShadow
+    textColor = typeCfg[hardParam].textColor
+    shadowColor = typeCfg[hardParam].textShadow
     local module = self:GetModule(MissionModule)
     local stars = module:ParseStarInfo(passInfo.star)
-    bg = (typeCfg[hardParam]).normal
+    bg = typeCfg[hardParam].normal
     for i = 1, 3 do
       local pass = i <= stars
-      -- DECOMPILER ERROR at PC102: Confused about usage of register: R19 in 'UnsetPending'
-
       if pass then
-        ((self._stars)[i]).sprite = (self._atlas):GetSprite((typeCfg[hardParam]).passStar)
+        self._stars[i].sprite = self._atlas:GetSprite(typeCfg[hardParam].passStar)
       else
-        -- DECOMPILER ERROR at PC111: Confused about usage of register: R19 in 'UnsetPending'
-
-        ((self._stars)[i]).sprite = (self._atlas):GetSprite((typeCfg[hardParam]).normalStar)
+        self._stars[i].sprite = self._atlas:GetSprite(typeCfg[hardParam].normalStar)
       end
     end
-    ;
-    (self.star):SetActive(missionCfg.Type ~= DiscoveryStageType.Plot)
-    ;
-    ((self.lock).gameObject):SetActive(false)
+    self.star:SetActive(missionCfg.Type ~= DiscoveryStageType.Plot)
+    self.lock.gameObject:SetActive(false)
   else
-    textColor = (typeCfg[hardParam]).textColor
-    shadowColor = (typeCfg[hardParam]).textShadow
-    bg = (typeCfg[hardParam]).normal
+    textColor = typeCfg[hardParam].textColor
+    shadowColor = typeCfg[hardParam].textShadow
+    bg = typeCfg[hardParam].normal
     local stars = 0
     for i = 1, 3 do
       local pass = i <= stars
-      -- DECOMPILER ERROR at PC153: Confused about usage of register: R18 in 'UnsetPending'
-
       if pass then
-        ((self._stars)[i]).sprite = (self._atlas):GetSprite((typeCfg[hardParam]).passStar)
+        self._stars[i].sprite = self._atlas:GetSprite(typeCfg[hardParam].passStar)
       else
-        -- DECOMPILER ERROR at PC162: Confused about usage of register: R18 in 'UnsetPending'
-
-        ((self._stars)[i]).sprite = (self._atlas):GetSprite((typeCfg[hardParam]).normalStar)
+        self._stars[i].sprite = self._atlas:GetSprite(typeCfg[hardParam].normalStar)
       end
     end
-    ;
-    (self.star):SetActive(missionCfg.Type ~= DiscoveryStageType.Plot)
-    ;
-    ((self.lock).gameObject):SetActive(false)
+    self.star:SetActive(missionCfg.Type ~= DiscoveryStageType.Plot)
+    self.lock.gameObject:SetActive(false)
   end
-  -- DECOMPILER ERROR at PC184: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self.bg).sprite = (self._atlas):GetSprite(bg)
-  -- DECOMPILER ERROR at PC190: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self.mask).sprite = (self._atlas):GetSprite(mask)
-  -- DECOMPILER ERROR at PC196: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self.lock).sprite = (self._atlas):GetSprite(lock)
-  -- DECOMPILER ERROR at PC198: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self.name).color = textColor
-  -- DECOMPILER ERROR at PC200: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self.shadowLabel).color = shadowColor
-  -- DECOMPILER ERROR at PC202: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self._circleOutline).effectColor = shadowColor
+  self.bg.sprite = self._atlas:GetSprite(bg)
+  self.mask.sprite = self._atlas:GetSprite(mask)
+  self.lock.sprite = self._atlas:GetSprite(lock)
+  self.name.color = textColor
+  self.shadowLabel.color = shadowColor
+  self._circleOutline.effectColor = shadowColor
   self._isStoryNode = missionCfg.Type == DiscoveryStageType.Plot
-  if lineCfg.MapPosY >= 0 then
-    (self._anim):Play("uieff_UIXH1MissionNode_belowin")
+  if 0 <= lineCfg.MapPosY then
+    self._anim:Play("uieff_UIXH1MissionNode_belowin")
   else
-    (self._anim):Play("uieff_UIXH1MissionNode_topin")
+    self._anim:Play("uieff_UIXH1MissionNode_topin")
   end
-  -- DECOMPILER ERROR: 13 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelNode.btnOnClick = function(self, go)
-  -- function num : 0_3
-  (self._onClick)(self._missionID, self._isStoryNode, (self._rectTransform).position)
+function UIN7LevelNode:btnOnClick(go)
+  self._onClick(self._missionID, self._isStoryNode, self._rectTransform.position)
 end
-
-

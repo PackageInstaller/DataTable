@@ -1,23 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_clear_record_force_movement_step.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicClearRecordForceMovementStep", BuffLogicBase)
 BuffLogicClearRecordForceMovementStep = BuffLogicClearRecordForceMovementStep
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicClearRecordForceMovementStep.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicClearRecordForceMovementStep:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicClearRecordForceMovementStep.DoLogic = function(self)
-  -- function num : 0_1
+function BuffLogicClearRecordForceMovementStep:DoLogic()
   local buffValueKey = "CurRoundForceMoveStep"
-  ;
-  (self._buffComponent):SetBuffValue(buffValueKey, 0)
+  self._buffComponent:SetBuffValue(buffValueKey, 0)
 end
-
-

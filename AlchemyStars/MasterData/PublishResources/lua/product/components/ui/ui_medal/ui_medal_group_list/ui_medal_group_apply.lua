@@ -1,34 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/ui_medal_group_list/ui_medal_group_apply.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalGroupApply", UIController)
 UIMedalGroupApply = UIMedalGroupApply
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalGroupApply.Constructor = function(self)
-  -- function num : 0_0
+function UIMedalGroupApply:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupApply.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIMedalGroupApply:OnShow(uiParams)
   self:InitWidget()
   self:CreateData()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupApply.GetAllCollectAnyGroup = function()
-  -- function num : 0_2 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_item_medal_group)({})
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local svrTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
+function UIMedalGroupApply.GetAllCollectAnyGroup()
+  local cfgs = Cfg.cfg_item_medal_group({})
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local svrTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
   local allHaveGroup = {}
-  for key,value in pairs(cfgs) do
+  for key, value in pairs(cfgs) do
     local insert = true
     if value.UnLockTime then
       local type = value.TimeTransform
@@ -41,54 +28,36 @@ UIMedalGroupApply.GetAllCollectAnyGroup = function()
         insert = false
       end
     end
-    do
-      do
-        if insert and (UIMedalGroupApply.CheckGroupCollect)(value) then
-          (table.insert)(allHaveGroup, value)
-        end
-        -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if insert and UIMedalGroupApply.CheckGroupCollect(value) then
+      table.insert(allHaveGroup, value)
     end
   end
   return allHaveGroup
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupApply.CheckGroupCollect = function(cfg)
-  -- function num : 0_3 , upvalues : _ENV
-  local haveBgNum = (UIMedalGroupApply.CheckBgCollect)(cfg)
-  local haveMedalNum = (UIMedalGroupApply.CheckMedalListCollect)(cfg)
-  do return haveBgNum > 0 or haveMedalNum > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIMedalGroupApply.CheckGroupCollect(cfg)
+  local haveBgNum = UIMedalGroupApply.CheckBgCollect(cfg)
+  local haveMedalNum = UIMedalGroupApply.CheckMedalListCollect(cfg)
+  return 0 < haveBgNum or 0 < haveMedalNum
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupApply.CheckBgCollect = function(data)
-  -- function num : 0_4 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIMedalGroupApply.CheckBgCollect(data)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local boardid = data.BoardID
   local bg_items = itemModule:GetItemByTempId(boardid)
-  if bg_items then
-    local bg_have = next(bg_items)
-  end
+  local bg_have = bg_items and next(bg_items)
   if bg_have then
     return 1
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupApply.CheckMedalListCollect = function(data)
-  -- function num : 0_5 , upvalues : _ENV
+function UIMedalGroupApply.CheckMedalListCollect(data)
   local medals = data.MedalIDList
   local haveCount = 0
-  for key,value in pairs(medals) do
+  for key, value in pairs(medals) do
     local medalid = value[1]
-    local have = (UIMedalGroupApply.CheckMedalCollect)(medalid)
+    local have = UIMedalGroupApply.CheckMedalCollect(medalid)
     if have then
       haveCount = haveCount + 1
     end
@@ -96,11 +65,8 @@ UIMedalGroupApply.CheckMedalListCollect = function(data)
   return haveCount
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupApply.CheckMedalCollect = function(id)
-  -- function num : 0_6 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIMedalGroupApply.CheckMedalCollect(id)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local items = itemModule:GetItemByTempId(id)
   if items and next(items) then
     return true
@@ -108,83 +74,55 @@ UIMedalGroupApply.CheckMedalCollect = function(id)
   return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupApply.CreateData = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._allHaveGroup = (UIMedalGroupApply.GetAllCollectAnyGroup)()
-  ;
-  (table.sort)(self._allHaveGroup, function(a, b)
-    -- function num : 0_7_0
-    do return a.Sort < b.Sort end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+function UIMedalGroupApply:CreateData()
+  self._allHaveGroup = UIMedalGroupApply.GetAllCollectAnyGroup()
+  table.sort(self._allHaveGroup, function(a, b)
+    return a.Sort < b.Sort
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupApply.OnValue = function(self)
-  -- function num : 0_8
-  (self.pool):SpawnObjects("UIMedalGroupApplyItem", #self._allHaveGroup)
-  local pools = (self.pool):GetAllSpawnList()
+function UIMedalGroupApply:OnValue()
+  self.pool:SpawnObjects("UIMedalGroupApplyItem", #self._allHaveGroup)
+  local pools = self.pool:GetAllSpawnList()
   for i = 1, #self._allHaveGroup do
     local item = pools[i]
-    local data = (self._allHaveGroup)[i]
+    local data = self._allHaveGroup[i]
     item:SetData(i, data, function(idx)
-    -- function num : 0_8_0 , upvalues : self
-    self:ItemOnClick(idx)
-  end
-, self.atlas)
+      self:ItemOnClick(idx)
+    end, self.atlas)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupApply.ItemOnClick = function(self, idx)
-  -- function num : 0_9 , upvalues : _ENV
-  local data = (self._allHaveGroup)[idx]
-  local haveBgNum = ((UIMedalGroupApply.CheckBgCollect)(data))
-  local bgid = nil
-  if haveBgNum and haveBgNum > 0 then
+function UIMedalGroupApply:ItemOnClick(idx)
+  local data = self._allHaveGroup[idx]
+  local haveBgNum = UIMedalGroupApply.CheckBgCollect(data)
+  local bgid
+  if haveBgNum and 0 < haveBgNum then
     bgid = data.BoardID
   end
   local list = {}
-  for index,value in ipairs(data.MedalIDList) do
+  for index, value in ipairs(data.MedalIDList) do
     local id = value[1]
-    local have = (UIMedalGroupApply.CheckMedalCollect)(id)
+    local have = UIMedalGroupApply.CheckMedalCollect(id)
     if have then
-      (table.insert)(list, value)
+      table.insert(list, value)
     end
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnMedalGroupApply, data.ID, list, bgid)
-  ;
-  (ToastManager.ShowToast)((StringTable.Get)("str_medal_group_apply_succ"))
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnMedalGroupApply, data.ID, list, bgid)
+  ToastManager.ShowToast(StringTable.Get("str_medal_group_apply_succ"))
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupApply.InitWidget = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIMedalGroupApply:InitWidget()
   self.atlas = self:GetAsset("UIMedal.spriteatlas", LoadType.SpriteAtlas)
   self.pool = self:GetUIComponent("UISelectObjectPath", "Content")
   local topButton = self:GetUIComponent("UISelectObjectPath", "topbtn")
   self.topButtonWidget = topButton:SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_10_0 , upvalues : self
+  self.topButtonWidget:SetData(function()
     self:CloseDialog()
-  end
-, nil, nil, true)
+  end, nil, nil, true)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupApply.BgOnClick = function(self, go)
-  -- function num : 0_11
+function UIMedalGroupApply:BgOnClick(go)
   self:CloseDialog()
 end
-
-

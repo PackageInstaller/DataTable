@@ -1,109 +1,84 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/homeland_task_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandTaskComponent", ICampaignComponent)
 HomelandTaskComponent = HomelandTaskComponent
-local Enum_CMP_HomelandTaskState = {EPTS_Unlock = 1, EPTS_UnComplete = 2, EPTS_UnHave = 3, EPTS_HaveGet = 4}
+local Enum_CMP_HomelandTaskState = {
+  EPTS_Unlock = 1,
+  EPTS_UnComplete = 2,
+  EPTS_UnHave = 3,
+  EPTS_HaveGet = 4
+}
 _enum("Enum_CMP_HomelandTaskState", Enum_CMP_HomelandTaskState)
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
 
-HomelandTaskComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandTaskComponent:Constructor()
   self._componentInfo = HomlandTaskComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTaskComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandTaskComponent:ComponentInfo()
   if not self._componentInfo then
     self._componentInfo = HomlandTaskComponentInfo:New()
   end
   return self._componentInfo
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTaskComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function HomelandTaskComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTaskComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandTaskComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_HOMELAND_TASK
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTaskComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  self.quest_mod = ((GameGlobal.GameLogic)()):GetModule(QuestModule)
-  self.login_mod = ((GameGlobal.GameLogic)()):GetModule(LoginModule)
-  self.time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  self.cam_mod = ((GameGlobal.GameLogic)()):GetModule(CampaignModule)
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self._componentInfo)
+function HomelandTaskComponent:InitComponentInfo(a_load_info)
+  self.quest_mod = GameGlobal.GameLogic():GetModule(QuestModule)
+  self.login_mod = GameGlobal.GameLogic():GetModule(LoginModule)
+  self.time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  self.cam_mod = GameGlobal.GameLogic():GetModule(CampaignModule)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self._componentInfo)
   return ret
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTaskComponent.HandlePangolinGet = function(self, TT, asyncRes, id)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandTaskComponent:HandlePangolinGet(TT, asyncRes, id)
   local request = HomlandTaskComponentGetReq:New()
   request.id = id
   local response = HomlandTaskComponentGetReply:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][CumulateLogin] HandlePangolinGet ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][CumulateLogin] HandlePangolinGet ret:", asyncRes.m_result)
     return asyncRes.m_result
   end
-  ;
-  (table.insert)((self._componentInfo).m_id, id)
+  table.insert(self._componentInfo.m_id, id)
   return asyncRes.m_result
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTaskComponent.GetCfgMap = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function HomelandTaskComponent:GetCfgMap()
   local ComponentInfo = self:ComponentInfo()
   if ComponentInfo == nil then
     return nil
   end
   local componentId = self:GetComponentCfgId()
-  local cfgMap = (Cfg.cfg_component_homeland_task)({ComponentID = componentId})
+  local cfgMap = Cfg.cfg_component_homeland_task({ComponentID = componentId})
   return cfgMap
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTaskComponent.GetTaskState = function(self, id)
-  -- function num : 0_7 , upvalues : _ENV, Enum_CMP_HomelandTaskState
+function HomelandTaskComponent:GetTaskState(id)
   local ComponentInfo = self:ComponentInfo()
   if ComponentInfo == nil then
     return nil
   end
   local componentId = self:GetComponentCfgId()
-  local cfg = (Cfg.cfg_component_homeland_task)[id]
+  local cfg = Cfg.cfg_component_homeland_task[id]
   if cfg == nil or cfg.ComponentID ~= componentId then
     return nil
   end
-  local nowTime = (self.time_mod):GetServerTime() * 0.001
-  for k,v in pairs((self._componentInfo).m_id) do
+  local nowTime = self.time_mod:GetServerTime() * 0.001
+  for k, v in pairs(self._componentInfo.m_id) do
     if v == id then
       return Enum_CMP_HomelandTaskState.EPTS_HaveGet
     end
   end
-  local endTime = (self.login_mod):GetTimeStampByTimeStr(cfg.UnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  if endTime <= nowTime then
-    if (self.quest_mod):IsTakeStatus(cfg.TaskID, QuestStatus.QUEST_Completed) == true or (self.quest_mod):IsTakeStatus(cfg.TaskID, QuestStatus.QUEST_Taken) == true then
+  local endTime = self.login_mod:GetTimeStampByTimeStr(cfg.UnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+  if nowTime >= endTime then
+    if self.quest_mod:IsTakeStatus(cfg.TaskID, QuestStatus.QUEST_Completed) == true or self.quest_mod:IsTakeStatus(cfg.TaskID, QuestStatus.QUEST_Taken) == true then
       return Enum_CMP_HomelandTaskState.EPTS_UnHave
     else
       return Enum_CMP_HomelandTaskState.EPTS_UnComplete
@@ -114,39 +89,25 @@ HomelandTaskComponent.GetTaskState = function(self, id)
   return nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTaskComponent.SetDB = function(self, id, capName, funcName)
-  -- function num : 0_8
+function HomelandTaskComponent:SetDB(id, capName, funcName)
   capName = self:GetCapNameAuto(capName)
-  if not funcName then
-    funcName = "red"
-  end
-  ;
-  (self.cam_mod):SetDB(id, capName, funcName)
+  funcName = funcName or "red"
+  self.cam_mod:SetDB(id, capName, funcName)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTaskComponent.GetDB = function(self, id, capName, funcName)
-  -- function num : 0_9
+function HomelandTaskComponent:GetDB(id, capName, funcName)
   capName = self:GetCapNameAuto(capName)
-  if not funcName then
-    funcName = "red"
-  end
-  return (self.cam_mod):GetDB(id, capName, funcName)
+  funcName = funcName or "red"
+  return self.cam_mod:GetDB(id, capName, funcName)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTaskComponent.NewTaskRed = function(self, capName, funcName)
-  -- function num : 0_10 , upvalues : _ENV, Enum_CMP_HomelandTaskState
+function HomelandTaskComponent:NewTaskRed(capName, funcName)
   local cfgMap = self:GetCfgMap()
   if cfgMap == nil then
     return 0
   end
   local num = 0
-  for k,v in pairs(cfgMap) do
+  for k, v in pairs(cfgMap) do
     if self:GetDB(v.ID, capName, funcName) == 0 and self:GetTaskState(v.ID) ~= Enum_CMP_HomelandTaskState.EPTS_Unlock and self:GetTaskState(v.ID) <= Enum_CMP_HomelandTaskState.EPTS_UnComplete then
       num = num + 1
     end
@@ -154,41 +115,27 @@ HomelandTaskComponent.NewTaskRed = function(self, capName, funcName)
   return num
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTaskComponent.GetNewKey = function(self, capName)
-  -- function num : 0_11 , upvalues : _ENV
+function HomelandTaskComponent:GetNewKey(capName)
   capName = self:GetCapNameAuto(capName)
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+  local mRole = GameGlobal.GetModule(RoleModule)
   return mRole:GetPstId() .. capName .. "New"
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTaskComponent.GetPrefsComponentNew = function(self, capName)
-  -- function num : 0_12 , upvalues : _ENV
-  return (LocalDB.GetInt)(self:GetNewKey(capName), 0)
+function HomelandTaskComponent:GetPrefsComponentNew(capName)
+  return LocalDB.GetInt(self:GetNewKey(capName), 0)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTaskComponent.SetPrefsComponentNew = function(self, capName)
-  -- function num : 0_13 , upvalues : _ENV
-  return (LocalDB.SetInt)(self:GetNewKey(capName), 1)
+function HomelandTaskComponent:SetPrefsComponentNew(capName)
+  return LocalDB.SetInt(self:GetNewKey(capName), 1)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTaskComponent.GetCapNameAuto = function(self, capName)
-  -- function num : 0_14 , upvalues : _ENV
-  if not (string.isnullorempty)(capName) then
+function HomelandTaskComponent:GetCapNameAuto(capName)
+  if not string.isnullorempty(capName) then
     return capName
   end
   local id = self:GetComponentCfgId()
-  local tb = {[106402503] = "N19TaskComp"}
-  if not tb[id] then
-    return "HomelandTaskCompoent_" .. id
-  end
+  local tb = {
+    [106402503] = "N19TaskComp"
+  }
+  return tb[id] or "HomelandTaskCompoent_" .. id
 end
-
-

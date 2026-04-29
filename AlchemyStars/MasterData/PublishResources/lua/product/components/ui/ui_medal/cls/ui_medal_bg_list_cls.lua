@@ -1,119 +1,80 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/cls/ui_medal_bg_list_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalBgListData", Object)
 UIMedalBgListData = UIMedalBgListData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalBgListData.Constructor = function(self)
-  -- function num : 0_0
+function UIMedalBgListData:Constructor()
   self.defMedalID = nil
   self.medalList = {}
   self.totalMedal = 0
   self.collectMedal = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListData.Init = function(self, server_medal_info)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMedalBgListData:Init(server_medal_info)
   self.visit = visit
-  for i,v in pairs(server_medal_info) do
-    if ((Cfg.cfg_item_medal_board)[v.medal_id]).IsDefault then
+  for i, v in pairs(server_medal_info) do
+    if Cfg.cfg_item_medal_board[v.medal_id].IsDefault then
       self.defMedalID = v.medal_id
     end
-    if (v.status ~= RewardStatus.E_MEDAL_REWARD_LOCK or ((Cfg.cfg_item_medal_board)[v.medal_id]).IsShow or v.status ~= RewardStatus.E_MEDAL_REWARD_LOCK) and v.status ~= RewardStatus.E_MEDAL_REWARD_FUNCTION_LOCK then
-      self.collectMedal = self.collectMedal + 1
+    if v.status == RewardStatus.E_MEDAL_REWARD_LOCK and not Cfg.cfg_item_medal_board[v.medal_id].IsShow then
+    else
+      if v.status ~= RewardStatus.E_MEDAL_REWARD_LOCK and v.status ~= RewardStatus.E_MEDAL_REWARD_FUNCTION_LOCK then
+        self.collectMedal = self.collectMedal + 1
+      end
+      self.totalMedal = self.totalMedal + 1
+      self.medalList[v.medal_id] = v
     end
-    self.totalMedal = self.totalMedal + 1
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.medalList)[v.medal_id] = v
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListData.GetTotalNum = function(self)
-  -- function num : 0_2
+function UIMedalBgListData:GetTotalNum()
   return self.totalMedal
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListData.GetUnLockNum = function(self)
-  -- function num : 0_3
+function UIMedalBgListData:GetUnLockNum()
   return self.collectMedal
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListData.GetDefMedalID = function(self)
-  -- function num : 0_4
+function UIMedalBgListData:GetDefMedalID()
   return self.defMedalID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListData.GetSortMedals = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIMedalBgListData:GetSortMedals()
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local tb, newList, commentList, lockList = {}, {}, {}, {}
-  for i,v in pairs(self.medalList) do
-    local item_data, is_new = nil, nil
+  for i, v in pairs(self.medalList) do
+    local item_data, is_new
     local items = itemModule:GetItemByTempId(v.medal_id)
-    if items and (table.count)(items) > 0 then
-      for _,value in pairs(items) do
+    if items and table.count(items) > 0 then
+      for _, value in pairs(items) do
         item_data = value
-        do break end
+        break
       end
     end
-    do
-      do
-        if item_data then
-          is_new = item_data:IsNewOverlay()
-        end
-        if v.status == RewardStatus.E_MEDAL_REWARD_LOCK then
-          (table.insert)(lockList, i)
-        else
-          if is_new then
-            (table.insert)(newList, i)
-          else
-            ;
-            (table.insert)(commentList, i)
-          end
-        end
-        -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if item_data then
+      is_new = item_data:IsNewOverlay()
+    end
+    if v.status == RewardStatus.E_MEDAL_REWARD_LOCK then
+      table.insert(lockList, i)
+    elseif is_new then
+      table.insert(newList, i)
+    else
+      table.insert(commentList, i)
     end
   end
-  ;
-  (table.sort)(newList)
-  ;
-  (table.sort)(commentList)
-  ;
-  (table.sort)(lockList)
-  for _,v in pairs(newList) do
-    (table.insert)(tb, (self.medalList)[v])
+  table.sort(newList)
+  table.sort(commentList)
+  table.sort(lockList)
+  for _, v in pairs(newList) do
+    table.insert(tb, self.medalList[v])
   end
-  for _,v in pairs(commentList) do
-    (table.insert)(tb, (self.medalList)[v])
+  for _, v in pairs(commentList) do
+    table.insert(tb, self.medalList[v])
   end
-  for _,v in pairs(lockList) do
-    (table.insert)(tb, (self.medalList)[v])
+  for _, v in pairs(lockList) do
+    table.insert(tb, self.medalList[v])
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListData.GetMedalDataByID = function(self, medalID)
-  -- function num : 0_6 , upvalues : _ENV
-  return (Cfg.cfg_item_medal_board)[medalID]
+function UIMedalBgListData:GetMedalDataByID(medalID)
+  return Cfg.cfg_item_medal_board[medalID]
 end
-
-

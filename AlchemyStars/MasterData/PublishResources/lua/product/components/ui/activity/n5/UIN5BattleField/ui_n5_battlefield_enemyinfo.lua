@@ -1,81 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/UIN5BattleField/ui_n5_battlefield_enemyinfo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN5BattleFieldEnemyInfo", UIController)
 UIN5BattleFieldEnemyInfo = UIN5BattleFieldEnemyInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN5BattleFieldEnemyInfo.Constructor = function(self)
-  -- function num : 0_0
+function UIN5BattleFieldEnemyInfo:Constructor()
   self._enemyItems = nil
   self._enemyItemsCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldEnemyInfo.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN5BattleFieldEnemyInfo:OnShow(uiParams)
   self._cfg_conquest_mission = uiParams[1]
   self._componentInfo = uiParams[2]
-  self._cfg_conquest_level_wave = self:_FilterCfg((self._cfg_conquest_mission).LevelID, (self._cfg_conquest_mission).WaveCount)
+  self._cfg_conquest_level_wave = self:_FilterCfg(self._cfg_conquest_mission.LevelID, self._cfg_conquest_mission.WaveCount)
   self._enemyItemsCount = #self._cfg_conquest_level_wave
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldEnemyInfo._FilterCfg = function(self, levelId, waveCount)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN5BattleFieldEnemyInfo:_FilterCfg(levelId, waveCount)
   local t = {}
-  local cfg = (Cfg.cfg_conquest_level_wave)({LevelID = levelId})
-  for key,value in pairs(cfg) do
-    if value.WaveIndex <= waveCount then
-      (table.insert)(t, value)
+  local cfg = Cfg.cfg_conquest_level_wave({LevelID = levelId})
+  for key, value in pairs(cfg) do
+    if waveCount >= value.WaveIndex then
+      table.insert(t, value)
     end
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldEnemyInfo._GetComponents = function(self)
-  -- function num : 0_3
+function UIN5BattleFieldEnemyInfo:_GetComponents()
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldEnemyInfo._OnValue = function(self)
-  -- function num : 0_4
+function UIN5BattleFieldEnemyInfo:_OnValue()
   self:_CreateEnemyList()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldEnemyInfo._CreateEnemyList = function(self)
-  -- function num : 0_5
-  (self._content):SpawnObjects("UIN5BattleFieldEnemyInfoItem", self._enemyItemsCount)
-  self._enemyItems = (self._content):GetAllSpawnList()
+function UIN5BattleFieldEnemyInfo:_CreateEnemyList()
+  self._content:SpawnObjects("UIN5BattleFieldEnemyInfoItem", self._enemyItemsCount)
+  self._enemyItems = self._content:GetAllSpawnList()
   for i = 1, self._enemyItemsCount do
-    ((self._enemyItems)[i]):SetData(i, self._enemyItemsCount, ((((self._componentInfo).m_battlefield_info).m_mission_level_wave_map)[(self._cfg_conquest_mission).MissionID])[i], (self._cfg_conquest_level_wave)[i])
+    self._enemyItems[i]:SetData(i, self._enemyItemsCount, self._componentInfo.m_battlefield_info.m_mission_level_wave_map[self._cfg_conquest_mission.MissionID][i], self._cfg_conquest_level_wave[i])
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldEnemyInfo.CloseBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIN5BattleFieldEnemyInfo:CloseBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldEnemyInfo.CloseBgOnClick = function(self, go)
-  -- function num : 0_7
+function UIN5BattleFieldEnemyInfo:CloseBgOnClick(go)
   self:CloseDialog()
 end
-
-

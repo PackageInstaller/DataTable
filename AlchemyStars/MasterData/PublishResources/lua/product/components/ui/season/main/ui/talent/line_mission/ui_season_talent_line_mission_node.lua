@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/talent/line_mission/ui_season_talent_line_mission_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTalentLineMissionNode", UICustomWidget)
 UISeasonTalentLineMissionNode = UISeasonTalentLineMissionNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTalentLineMissionNode.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonTalentLineMissionNode:OnShow()
   self._anim = self:GetUIComponent("Animation", "UISeasonTalentLineMission_Node")
   self._root = self:GetUIComponent("RectTransform", "pos")
   self._nameTex = self:GetUIComponent("UILocalizationText", "name")
@@ -20,19 +13,13 @@ UISeasonTalentLineMissionNode.OnShow = function(self)
   for i = 1, 3 do
     local uiname = "Star" .. i
     local star = self:GetGameObject(uiname)
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._stars)[i] = star
+    self._stars[i] = star
   end
   self._atlas = self:GetAsset("UIS4TalentTree.spriteAtlas", LoadType.SpriteAtlas)
   self:AttachEvent(GameEventType.OnTalentTreeRedLineChange, self.OnTalentTreeRedLineChange)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionNode.SetData = function(self, idx, cfg, lineInfo, callback)
-  -- function num : 0_1
+function UISeasonTalentLineMissionNode:SetData(idx, cfg, lineInfo, callback)
   self.idx = idx
   self.cfg = cfg
   self.lineInfo = lineInfo
@@ -40,133 +27,92 @@ UISeasonTalentLineMissionNode.SetData = function(self, idx, cfg, lineInfo, callb
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionNode.OnTalentTreeRedLineChange = function(self)
-  -- function num : 0_2
+function UISeasonTalentLineMissionNode:OnTalentTreeRedLineChange()
   self:SetRed()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionNode.RefreshUI = function(self)
-  -- function num : 0_3
+function UISeasonTalentLineMissionNode:RefreshUI()
   self:SetLock()
   self:SetStar()
   self:SetCfgName()
   self:SetPos()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionNode.SetCfgName = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local campMissionCfg = (Cfg.cfg_campaign_mission)[(self.cfg).CampaignMissionId]
+function UISeasonTalentLineMissionNode:SetCfgName()
+  local campMissionCfg = Cfg.cfg_campaign_mission[self.cfg.CampaignMissionId]
   local nameStr = campMissionCfg.Name
-  ;
-  (self._nameTex):SetText((StringTable.Get)(nameStr))
+  self._nameTex:SetText(StringTable.Get(nameStr))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionNode.SetPos = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local posx = (self.cfg).MapPosX
-  local posy = (self.cfg).MapPosY
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._root).anchoredPosition = Vector2(posx, posy)
-  if posy >= 0 then
-    (self._anim):Play("uianim_UISeasonTalentLineMission_Node_up")
+function UISeasonTalentLineMissionNode:SetPos()
+  local posx = self.cfg.MapPosX
+  local posy = self.cfg.MapPosY
+  self._root.anchoredPosition = Vector2(posx, posy)
+  if 0 <= posy then
+    self._anim:Play("uianim_UISeasonTalentLineMission_Node_up")
   else
-    ;
-    (self._anim):Play("uianim_UISeasonTalentLineMission_Node_down")
+    self._anim:Play("uianim_UISeasonTalentLineMission_Node_down")
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionNode.SetStar = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonTalentLineMissionNode:SetStar()
   local star = 0
-  local missionid = (self.cfg).CampaignMissionId
-  if ((self.lineInfo).m_pass_mission_info)[missionid] then
-    star = (((self.lineInfo).m_pass_mission_info)[missionid]).star
-    star = ((GameGlobal.GetModule)(MissionModule)):ParseStarInfo(star)
+  local missionid = self.cfg.CampaignMissionId
+  if self.lineInfo.m_pass_mission_info[missionid] then
+    star = self.lineInfo.m_pass_mission_info[missionid].star
+    star = GameGlobal.GetModule(MissionModule):ParseStarInfo(star)
   end
   for i = 1, 3 do
-    local go = (self._stars)[i]
-    local img = (go:GetComponent("Image"))
-    local spriteName = nil
+    local go = self._stars[i]
+    local img = go:GetComponent("Image")
+    local spriteName
     if i <= star then
       spriteName = "exp_s4_yxzx_xing01"
     else
       spriteName = "exp_s4_yxzx_xing02"
     end
-    img.sprite = (self._atlas):GetSprite(spriteName)
+    img.sprite = self._atlas:GetSprite(spriteName)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionNode.SetLock = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonTalentLineMissionNode:SetLock()
   self.lock = true
-  local needid = (self.cfg).NeedMissionId
-  if needid and needid > 0 and ((self.lineInfo).m_pass_mission_info)[needid] and (((self.lineInfo).m_pass_mission_info)[needid]).star > 0 then
+  local needid = self.cfg.NeedMissionId
+  if needid and 0 < needid then
+    if self.lineInfo.m_pass_mission_info[needid] and 0 < self.lineInfo.m_pass_mission_info[needid].star then
+      self.lock = false
+    end
+  else
     self.lock = false
   end
-  self.lock = false
-  ;
-  (self._lockGo):SetActive(self.lock)
-  ;
-  (self._star):SetActive(not self.lock)
+  self._lockGo:SetActive(self.lock)
+  self._star:SetActive(not self.lock)
   if self.lock then
-    local campMissionCfg = (Cfg.cfg_campaign_mission)[needid]
-    local nameStr = (StringTable.Get)(campMissionCfg.Name)
-    local tips = (StringTable.Get)("str_season_talent_tree_line_node_lock_tex", nameStr)
-    ;
-    (self._lockTex):SetText(tips)
+    local campMissionCfg = Cfg.cfg_campaign_mission[needid]
+    local nameStr = StringTable.Get(campMissionCfg.Name)
+    local tips = StringTable.Get("str_season_talent_tree_line_node_lock_tex", nameStr)
+    self._lockTex:SetText(tips)
   end
-  do
-    self:SetRed()
-  end
+  self:SetRed()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionNode.SetRed = function(self)
-  -- function num : 0_8
+function UISeasonTalentLineMissionNode:SetRed()
   local red = false
-  do
-    if not self.lock then
-      local missionid = (self.cfg).CampaignMissionId
-      red = not ((self.lineInfo).m_pass_mission_info)[missionid]
-    end
-    ;
-    (self._red):SetActive(red)
+  if not self.lock then
+    local missionid = self.cfg.CampaignMissionId
+    red = not self.lineInfo.m_pass_mission_info[missionid]
   end
+  self._red:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionNode.BtnOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonTalentLineMissionNode:BtnOnClick(go)
   if self.lock then
-    local needid = (self.cfg).NeedMissionId
-    local campMissionCfg = (Cfg.cfg_campaign_mission)[needid]
-    local nameStr = (StringTable.Get)(campMissionCfg.Name)
-    local tips = (StringTable.Get)("str_season_talent_tree_line_node_lock_tex", nameStr)
-    ;
-    (ToastManager.ShowToast)(tips)
-  else
-    do
-      if self.callback then
-        (self.callback)(self.idx)
-      end
-    end
+    local needid = self.cfg.NeedMissionId
+    local campMissionCfg = Cfg.cfg_campaign_mission[needid]
+    local nameStr = StringTable.Get(campMissionCfg.Name)
+    local tips = StringTable.Get("str_season_talent_tree_line_node_lock_tex", nameStr)
+    ToastManager.ShowToast(tips)
+  elseif self.callback then
+    self.callback(self.idx)
   end
 end
-
-

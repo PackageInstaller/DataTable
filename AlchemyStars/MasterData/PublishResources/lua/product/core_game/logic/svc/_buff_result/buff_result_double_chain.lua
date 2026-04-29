@@ -1,54 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_double_chain.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultSetDoubleChain", BuffResultBase)
 BuffResultSetDoubleChain = BuffResultSetDoubleChain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultSetDoubleChain.Constructor = function(self, chainSkillCount, rate)
-  -- function num : 0_0
+function BuffResultSetDoubleChain:Constructor(chainSkillCount, rate)
   self._chainSkillCount = chainSkillCount
   self._rate = rate
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetDoubleChain.GetChainSkillCount = function(self)
-  -- function num : 0_1
+function BuffResultSetDoubleChain:GetChainSkillCount()
   return self._chainSkillCount
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetDoubleChain.GetRate = function(self)
-  -- function num : 0_2
+function BuffResultSetDoubleChain:GetRate()
   return self._rate
 end
 
 _class("BuffResultResetDoubleChain", BuffResultBase)
 BuffResultResetDoubleChain = BuffResultResetDoubleChain
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultResetDoubleChain.Constructor = function(self, chainSkillCount, rate)
-  -- function num : 0_3
+function BuffResultResetDoubleChain:Constructor(chainSkillCount, rate)
   self._chainSkillCount = chainSkillCount
   self._rate = rate
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultResetDoubleChain.GetChainSkillCount = function(self)
-  -- function num : 0_4
+function BuffResultResetDoubleChain:GetChainSkillCount()
   return self._chainSkillCount
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultResetDoubleChain.GetRate = function(self)
-  -- function num : 0_5
+function BuffResultResetDoubleChain:GetRate()
   return self._rate
 end
-
-

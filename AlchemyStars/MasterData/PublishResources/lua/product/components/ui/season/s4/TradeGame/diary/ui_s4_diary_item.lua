@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/diary/ui_s4_diary_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4DiaryItem", UICustomWidget)
 UIS4DiaryItem = UIS4DiaryItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4DiaryItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIS4DiaryItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4DiaryItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIS4DiaryItem:InitWidget()
   self.title = self:GetUIComponent("UILocalizationText", "Title")
   self.eventIcon = self:GetUIComponent("RawImageLoader", "EventIcon")
   self.eventName = self:GetUIComponent("UILocalizationText", "EventName")
@@ -28,30 +18,20 @@ UIS4DiaryItem.InitWidget = function(self)
   self._anim = self:GetUIComponent("Animation", "UIS4DiaryItem")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4DiaryItem.SetData = function(self, id, have, isHarborEvent)
-  -- function num : 0_2
+function UIS4DiaryItem:SetData(id, have, isHarborEvent)
   self.id = id
   self.isHarborEvent = isHarborEvent
   self:SetBg(isHarborEvent)
   self:SetDetail()
-  ;
-  (self.lockMaskObj):SetActive(not have)
-  ;
-  ((self.eventName).gameObject):SetActive(have)
-  ;
-  ((self.title).gameObject):SetActive(have)
-  ;
-  (self.collectedObj):SetActive(have)
+  self.lockMaskObj:SetActive(not have)
+  self.eventName.gameObject:SetActive(have)
+  self.title.gameObject:SetActive(have)
+  self.collectedObj:SetActive(have)
   self:PlayItemAnimIn()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4DiaryItem.SetBg = function(self, isHarborEvent)
-  -- function num : 0_3
-  local collected, lockMask, BG = nil, nil, nil
+function UIS4DiaryItem:SetBg(isHarborEvent)
+  local collected, lockMask, BG
   if isHarborEvent then
     collected = "exp_s4_sj_btn01"
     lockMask = "exp_s4_sj_mask02"
@@ -61,27 +41,15 @@ UIS4DiaryItem.SetBg = function(self, isHarborEvent)
     lockMask = "exp_s4_sj_mask03"
     BG = "exp_s4_sj_di02"
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.collected).sprite = (self._atlas):GetSprite(collected)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.lockMask).sprite = (self._atlas):GetSprite(lockMask)
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.Bg).sprite = (self._atlas):GetSprite(BG)
+  self.collected.sprite = self._atlas:GetSprite(collected)
+  self.lockMask.sprite = self._atlas:GetSprite(lockMask)
+  self.Bg.sprite = self._atlas:GetSprite(BG)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4DiaryItem.SetDetail = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local globalCfg = (Cfg.cfg_component_business_global)({})
-  local eventCfg = ((Cfg.cfg_component_business_event)({}))
-  local EventName, EventIcon, title, key, LoadCfg = nil, nil, nil, nil, nil
+function UIS4DiaryItem:SetDetail()
+  local globalCfg = Cfg.cfg_component_business_global({})
+  local eventCfg = Cfg.cfg_component_business_event({})
+  local EventName, EventIcon, title, key, LoadCfg
   if self.isHarborEvent then
     key = self.id
     title = "str_season_s4_trade_harbor_event"
@@ -91,41 +59,28 @@ UIS4DiaryItem.SetDetail = function(self)
     title = "str_season_s4_trade_sea_event"
     LoadCfg = eventCfg
   end
-  EventName = (LoadCfg[key]).EventName
-  EventIcon = (LoadCfg[key]).EventIcon
-  ;
-  (self.title):SetText((StringTable.Get)(title))
-  ;
-  (self.eventName):SetText((StringTable.Get)(EventName))
-  ;
-  (self.eventIcon):LoadImage(EventIcon)
+  EventName = LoadCfg[key].EventName
+  EventIcon = LoadCfg[key].EventIcon
+  self.title:SetText(StringTable.Get(title))
+  self.eventName:SetText(StringTable.Get(EventName))
+  self.eventIcon:LoadImage(EventIcon)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4DiaryItem.BtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self.lockMaskObj).activeSelf then
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_s4_trade_event_lock_tip"))
-    return 
+function UIS4DiaryItem:BtnOnClick(go)
+  if self.lockMaskObj.activeSelf then
+    ToastManager.ShowToast(StringTable.Get("str_season_s4_trade_event_lock_tip"))
+    return
   end
   self:ShowDialog("UIS4ShowEventController", self.id, self.isHarborEvent, nil)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4DiaryItem.PlayItemAnimIn = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIS4DiaryItem:PlayItemAnimIn()
   local LockName = "UIS4DiaryItem_AnimIN"
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
     YIELD(TT, self.id * 40)
     if not tolua:isnull(self._anim) then
-      (self._anim):Play("uianim_UIS4DiaryItem_in")
+      self._anim:Play("uianim_UIS4DiaryItem_in")
     end
     YIELD(TT, 200)
-  end
-)
+  end)
 end
-
-

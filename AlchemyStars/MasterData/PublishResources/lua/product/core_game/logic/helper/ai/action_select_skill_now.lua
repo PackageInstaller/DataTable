@@ -1,44 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_select_skill_now.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionSelectSkillNow", AINewNode)
 ActionSelectSkillNow = ActionSelectSkillNow
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSelectSkillNow.Constructor = function(self)
-  -- function num : 0_0
+function ActionSelectSkillNow:Constructor()
   self._skillListIndex = 1
   self._skillID = 0
   self.m_nDefaultSkillIndex = 0
   self.m_nSkillListCount = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSelectSkillNow.InitializeNode = function(self, cfg, context, parentNode, configData)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionSelectSkillNow.super).InitializeNode)(self, cfg, context, parentNode, configData)
+function ActionSelectSkillNow:InitializeNode(cfg, context, parentNode, configData)
+  ActionSelectSkillNow.super.InitializeNode(self, cfg, context, parentNode, configData)
   if type(configData) == "number" then
     self._skillListIndex = configData
     self.m_nDefaultSkillIndex = 1
-  else
-    if type(configData) == "table" then
-      self._skillListIndex = configData[1]
-      self.m_nDefaultSkillIndex = configData[2]
-    end
+  elseif type(configData) == "table" then
+    self._skillListIndex = configData[1]
+    self.m_nDefaultSkillIndex = configData[2]
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSelectSkillNow.OnUpdate = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function ActionSelectSkillNow:OnUpdate()
   local configData = self.m_configData
   if type(configData) ~= "table" or #configData < 2 then
-    (Log.error)(self._className, "configData invalid: {skillListIndex, skillIndex} required. ")
+    Log.error(self._className, "configData invalid: {skillListIndex, skillIndex} required. ")
     return AINewNodeStatus.Failure
   end
   local listIndex = configData[1]
@@ -49,15 +34,13 @@ ActionSelectSkillNow.OnUpdate = function(self)
     self._skillID = skillList[skillIndex]
     self:PrintLog("按回合选技能<强行修改>, skillID = ", self._skillID)
     if self.m_nSkillListCount <= 0 then
-      self.m_nSkillListCount = (table.count)(skillList)
+      self.m_nSkillListCount = table.count(skillList)
       if self.m_nSkillListCount > 0 then
         self:SetRuntimeData("SkillCount", self.m_nSkillListCount)
       end
     end
   end
-  local cAI = (self.m_entityOwn):AI()
+  local cAI = self.m_entityOwn:AI()
   cAI:SetSelectSkillID(self._skillID)
   return AINewNodeStatus.Success
 end
-
-

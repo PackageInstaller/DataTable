@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_feature_alchemy_level_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFeatureAlchemyLevelInfo", UICustomWidget)
 UIFeatureAlchemyLevelInfo = UIFeatureAlchemyLevelInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFeatureAlchemyLevelInfo.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIFeatureAlchemyLevelInfo:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureAlchemyLevelInfo.InitWidget = function(self)
-  -- function num : 0_1
+function UIFeatureAlchemyLevelInfo:InitWidget()
   self._icon = self:GetGameObject("Icon")
   self._levelDesc = self:GetUIComponent("UILocalizationText", "LevelDesc")
   self._apCount = self:GetUIComponent("UILocalizationText", "APCount")
@@ -24,29 +14,15 @@ UIFeatureAlchemyLevelInfo.InitWidget = function(self)
   self._textLevel = self:GetUIComponent("UILocalizationText", "TextLevel")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureAlchemyLevelInfo.SetData = function(self, level, ap, desc, curAP)
-  -- function num : 0_2 , upvalues : _ENV
+function UIFeatureAlchemyLevelInfo:SetData(level, ap, desc, curAP)
   local show = ap <= curAP
-  ;
-  (self._icon):SetActive(show)
-  ;
-  (self._apCountGO):SetActive(not show)
+  self._icon:SetActive(show)
+  self._apCountGO:SetActive(not show)
   local strKey = "str_battle_n49_tlv_" .. 1 + level * 3
-  ;
-  (self._apCount):SetText((StringTable.Get)(strKey))
-  ;
-  (self._desc):SetText((StringTable.Get)(desc))
-  ;
-  (self._textLevel):SetText(level)
-  local enableColor = Color(0.3843137254902, 0.26666666666667, 0.054901960784314)
-  local disableColor = Color(0.51764705882353, 0.51764705882353, 0.51764705882353)
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self._desc).color = show and enableColor or disableColor
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self._apCount:SetText(StringTable.Get(strKey))
+  self._desc:SetText(StringTable.Get(desc))
+  self._textLevel:SetText(level)
+  local enableColor = Color(0.3843137254901961, 0.26666666666666666, 0.054901960784313725)
+  local disableColor = Color(0.5176470588235295, 0.5176470588235295, 0.5176470588235295)
+  self._desc.color = show and enableColor or disableColor
 end
-
-

@@ -1,19 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/sakura/ui_sakura_draw_shop/data/d_campaigin_draw_shop_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DCampaignDrawShopItem", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-DCampaignDrawShopItem.Constructor = function(self, goodsInfo)
-  -- function num : 0_0
+function DCampaignDrawShopItem:Constructor(goodsInfo)
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignDrawShopItem.Refresh = function(self, goodsInfo, component)
-  -- function num : 0_1
+function DCampaignDrawShopItem:Refresh(goodsInfo, component)
   self.award_id = goodsInfo.m_award_id
   self.item_id = goodsInfo.m_item_id
   self.item_count = goodsInfo.m_count
@@ -23,79 +13,54 @@ DCampaignDrawShopItem.Refresh = function(self, goodsInfo, component)
   self.lotteryCmpt = component
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignDrawShopItem.GetRestNum = function(self)
-  -- function num : 0_2
+function DCampaignDrawShopItem:GetRestNum()
   return self.remain_num
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignDrawShopItem.GetTotalNum = function(self)
-  -- function num : 0_3
+function DCampaignDrawShopItem:GetTotalNum()
   return self.lottery_limit_count
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignDrawShopItem.GetItemId = function(self)
-  -- function num : 0_4
+function DCampaignDrawShopItem:GetItemId()
   return self.item_id
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignDrawShopItem.GetItemCount = function(self)
-  -- function num : 0_5
+function DCampaignDrawShopItem:GetItemCount()
   return self.item_count
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignDrawShopItem.IsBigReward = function(self)
-  -- function num : 0_6
+function DCampaignDrawShopItem:IsBigReward()
   return self.is_big_reward
 end
 
 _class("DCampaignDrawShopItemBox", Object)
 DCampaignDrawShopItemBox = DCampaignDrawShopItemBox
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
 
-DCampaignDrawShopItemBox.Constructor = function(self, goodsInfoList)
-  -- function num : 0_7
+function DCampaignDrawShopItemBox:Constructor(goodsInfoList)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignDrawShopItemBox.Refresh = function(self, goodsInfoList, component)
-  -- function num : 0_8 , upvalues : _ENV
+function DCampaignDrawShopItemBox:Refresh(goodsInfoList, component)
   self.lotteryCmpt = component
   self.itemGroup = {}
   local boxItemLimit = 3
   local rowCellData = {}
   local curItemCountInRowCell = 0
   self:Sort(goodsInfoList)
-  for index,value in ipairs(goodsInfoList) do
+  for index, value in ipairs(goodsInfoList) do
     local shopItem = DCampaignDrawShopItem:New()
     shopItem:Refresh(value, component)
     curItemCountInRowCell = curItemCountInRowCell + 1
-    ;
-    (table.insert)(rowCellData, shopItem)
+    table.insert(rowCellData, shopItem)
     if curItemCountInRowCell == boxItemLimit or index == #goodsInfoList then
-      (table.insert)(self.itemGroup, rowCellData)
+      table.insert(self.itemGroup, rowCellData)
       rowCellData = {}
       curItemCountInRowCell = 0
     end
   end
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignDrawShopItemBox.Sort = function(self, goodsInfoList)
-  -- function num : 0_9 , upvalues : _ENV
-  (table.sort)(goodsInfoList, function(a, b)
-    -- function num : 0_9_0
+function DCampaignDrawShopItemBox:Sort(goodsInfoList)
+  table.sort(goodsInfoList, function(a, b)
     local ra = 1
     local rb = 1
     if a.m_lottery_count == 0 then
@@ -104,23 +69,18 @@ DCampaignDrawShopItemBox.Sort = function(self, goodsInfoList)
     if b.m_lottery_count == 0 then
       rb = 0
     end
-    if rb >= ra then
-      do return ra == rb end
-      do return a.m_award_id < b.m_award_id end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    if ra ~= rb then
+      return ra > rb
     end
-  end
-)
+    return a.m_award_id < b.m_award_id
+  end)
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignDrawShopItemBox.GetTotalRestItem = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function DCampaignDrawShopItemBox:GetTotalRestItem()
   local rest = 0
   local total = 0
-  for index,value in ipairs(self.itemGroup) do
-    for cellIndex,cellData in ipairs(value) do
+  for index, value in ipairs(self.itemGroup) do
+    for cellIndex, cellData in ipairs(value) do
       rest = rest + cellData:GetRestNum()
       total = total + cellData:GetTotalNum()
     end
@@ -128,12 +88,8 @@ DCampaignDrawShopItemBox.GetTotalRestItem = function(self)
   return rest, total
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignDrawShopItemBox.SortBig = function(self, goodsInfoList)
-  -- function num : 0_11 , upvalues : _ENV
-  (table.sort)(goodsInfoList, function(a, b)
-    -- function num : 0_11_0
+function DCampaignDrawShopItemBox:SortBig(goodsInfoList)
+  table.sort(goodsInfoList, function(a, b)
     local ra = 1
     local rb = 1
     if a.m_is_big_reward or b.m_is_big_reward then
@@ -149,52 +105,37 @@ DCampaignDrawShopItemBox.SortBig = function(self, goodsInfoList)
     if b.m_lottery_count == 0 then
       rb = 0
     end
-    if rb >= ra then
-      do return ra == rb end
-      do return a.m_award_id < b.m_award_id end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    if ra ~= rb then
+      return ra > rb
     end
-  end
-)
+    return a.m_award_id < b.m_award_id
+  end)
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignDrawShopItemBox.SortByRewardType = function(self, goodsInfoList)
-  -- function num : 0_12 , upvalues : _ENV
-  (table.sort)(goodsInfoList, function(a, b)
-    -- function num : 0_12_0
+function DCampaignDrawShopItemBox:SortByRewardType(goodsInfoList)
+  table.sort(goodsInfoList, function(a, b)
     local ac = a.m_lottery_count ~= 0
     local bc = b.m_lottery_count ~= 0
     if ac ~= bc then
       return ac
     end
-    if b.m_reward_type >= a.m_reward_type then
-      do return a.m_reward_type == b.m_reward_type end
-      do return a.m_award_id < b.m_award_id end
-      -- DECOMPILER ERROR: 6 unprocessed JMP targets
+    if a.m_reward_type ~= b.m_reward_type then
+      return a.m_reward_type > b.m_reward_type
     end
-  end
-)
+    return a.m_award_id < b.m_award_id
+  end)
 end
 
 _class("DCampaignDrawShopDrawResultRecord", Object)
 DCampaignDrawShopDrawResultRecord = DCampaignDrawShopDrawResultRecord
--- DECOMPILER ERROR at PC57: Confused about usage of register: R0 in 'UnsetPending'
 
-DCampaignDrawShopDrawResultRecord.Constructor = function(self)
-  -- function num : 0_13
+function DCampaignDrawShopDrawResultRecord:Constructor()
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignDrawShopDrawResultRecord.Record = function(self, getRewards, lotteryType, curBoxHasRest, isOpenNew, canDrawOnceMore)
-  -- function num : 0_14
+function DCampaignDrawShopDrawResultRecord:Record(getRewards, lotteryType, curBoxHasRest, isOpenNew, canDrawOnceMore)
   self.m_getRewards = getRewards
   self.m_lotteryType = lotteryType
   self.m_curBoxHasRest = curBoxHasRest
   self.m_isOpenNew = isOpenNew
   self.m_canDrawOnceMore = canDrawOnceMore
 end
-
-

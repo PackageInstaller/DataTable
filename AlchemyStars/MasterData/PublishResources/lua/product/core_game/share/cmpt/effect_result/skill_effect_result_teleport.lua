@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_teleport.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_Teleport", SkillEffectResultBase)
 SkillEffectResult_Teleport = SkillEffectResult_Teleport
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_Teleport.Constructor = function(self, nTargetID, posOld, colorOld, posNew, dirNew, stageIndex, onlyDeleteBlock)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectResult_Teleport:Constructor(nTargetID, posOld, colorOld, posNew, dirNew, stageIndex, onlyDeleteBlock)
   self.m_nCasterID = nTargetID
   self.m_nTargetID = nTargetID
   self.m_posOld = posOld
@@ -28,224 +21,129 @@ SkillEffectResult_Teleport.Constructor = function(self, nTargetID, posOld, color
   self._posCalcState = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.IsSame = function(self, otherResult)
-  -- function num : 0_1
+function SkillEffectResult_Teleport:IsSame(otherResult)
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.GetEffectType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectResult_Teleport:GetEffectType()
   return SkillEffectType.Teleport
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.GetTargetID = function(self)
-  -- function num : 0_3
+function SkillEffectResult_Teleport:GetTargetID()
   return self.m_nTargetID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.GetPosOld = function(self)
-  -- function num : 0_4
-  return (self.m_posOld):Clone()
+function SkillEffectResult_Teleport:GetPosOld()
+  return self.m_posOld:Clone()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.GetPosNew = function(self)
-  -- function num : 0_5
+function SkillEffectResult_Teleport:GetPosNew()
   if self.m_posNew then
-    return (self.m_posNew):Clone()
+    return self.m_posNew:Clone()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.GetDirNew = function(self)
-  -- function num : 0_6
+function SkillEffectResult_Teleport:GetDirNew()
   return self.m_dirNew
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.GetColorOld = function(self)
-  -- function num : 0_7
+function SkillEffectResult_Teleport:GetColorOld()
   return self.m_colorOld
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.SetColorNew = function(self, color)
-  -- function num : 0_8
+function SkillEffectResult_Teleport:SetColorNew(color)
   self.m_colorNew = color
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.GetColorNew = function(self)
-  -- function num : 0_9
+function SkillEffectResult_Teleport:GetColorNew()
   return self.m_colorNew
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.GetGridPos = function(self)
-  -- function num : 0_10
+function SkillEffectResult_Teleport:GetGridPos()
   return self.m_posOld
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.GetStageIndex = function(self)
-  -- function num : 0_11
+function SkillEffectResult_Teleport:GetStageIndex()
   return self.m_stageIndex
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.GetDamageStageIndex = function(self)
-  -- function num : 0_12
+function SkillEffectResult_Teleport:GetDamageStageIndex()
   return self.m_stageIndex
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.SetEddyData = function(self, nCasterID, bTriggerEddy)
-  -- function num : 0_13
+function SkillEffectResult_Teleport:SetEddyData(nCasterID, bTriggerEddy)
   self.m_nCasterID = nCasterID
   self.m_bTriggerEddy = bTriggerEddy
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.GetCasterID = function(self)
-  -- function num : 0_14
+function SkillEffectResult_Teleport:GetCasterID()
   return self.m_nCasterID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.IsEnableTriggerEddy = function(self)
-  -- function num : 0_15
+function SkillEffectResult_Teleport:IsEnableTriggerEddy()
   return self.m_bTriggerEddy
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.SetOnlyDeleteBlock = function(self, state)
-  -- function num : 0_16
+function SkillEffectResult_Teleport:SetOnlyDeleteBlock(state)
   self._onlyDeleteBlock = state
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.IsOnlyDeleteBlock = function(self)
-  -- function num : 0_17
+function SkillEffectResult_Teleport:IsOnlyDeleteBlock()
   return self._onlyDeleteBlock
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.GetTriggerTrapIDList = function(self)
-  -- function num : 0_18
+function SkillEffectResult_Teleport:GetTriggerTrapIDList()
   return self._triggerTrapIDList
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.SetTriggerTrapList = function(self, idList)
-  -- function num : 0_19
+function SkillEffectResult_Teleport:SetTriggerTrapList(idList)
   self._triggerTrapIDList = idList
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.SetNeedDelTrapEntityID = function(self, id)
-  -- function num : 0_20
+function SkillEffectResult_Teleport:SetNeedDelTrapEntityID(id)
   self._needDelTrapEntityID = id
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.GetNeedDelTrapEntityID = function(self)
-  -- function num : 0_21
+function SkillEffectResult_Teleport:GetNeedDelTrapEntityID()
   return self._needDelTrapEntityID
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.SetExtraTeleportPos = function(self, pos)
-  -- function num : 0_22
+function SkillEffectResult_Teleport:SetExtraTeleportPos(pos)
   self._extraTeleportPos = pos
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.GetExtraTeleportPos = function(self)
-  -- function num : 0_23
+function SkillEffectResult_Teleport:GetExtraTeleportPos()
   return self._extraTeleportPos
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.SetNeedDelTrapEntityIDs = function(self, ids)
-  -- function num : 0_24
+function SkillEffectResult_Teleport:SetNeedDelTrapEntityIDs(ids)
   self._needDelTrapEntityIDs = ids
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.GetNeedDelTrapEntityIDs = function(self)
-  -- function num : 0_25
+function SkillEffectResult_Teleport:GetNeedDelTrapEntityIDs()
   return self._needDelTrapEntityIDs
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.SetTeleportResult_IsPetActiveSkill = function(self, param)
-  -- function num : 0_26
+function SkillEffectResult_Teleport:SetTeleportResult_IsPetActiveSkill(param)
   self._isPetActiveSkill = param
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.GetTeleportResult_IsPetActiveSkill = function(self)
-  -- function num : 0_27
+function SkillEffectResult_Teleport:GetTeleportResult_IsPetActiveSkill()
   return self._isPetActiveSkill
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.SetRenderTeleportPath = function(self, param)
-  -- function num : 0_28
+function SkillEffectResult_Teleport:SetRenderTeleportPath(param)
   self._renderTeleportPath = param
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.GetRenderTeleportPath = function(self)
-  -- function num : 0_29
+function SkillEffectResult_Teleport:GetRenderTeleportPath()
   return self._renderTeleportPath
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.SetTeleportPosCalcState = function(self, calcState)
-  -- function num : 0_30
+function SkillEffectResult_Teleport:SetTeleportPosCalcState(calcState)
   self._posCalcState = calcState
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Teleport.GetTeleportPosCalcState = function(self)
-  -- function num : 0_31
+function SkillEffectResult_Teleport:GetTeleportPosCalcState()
   return self._posCalcState
 end
-
-

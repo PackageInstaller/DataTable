@@ -1,70 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/boss_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BossComponent", Object)
 BossComponent = BossComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BossComponent.Constructor = function(self)
-  -- function num : 0_0
+function BossComponent:Constructor()
   self._hasShow = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BossComponent.SetShowState = function(self, state)
-  -- function num : 0_1
+function BossComponent:SetShowState(state)
   self._hasShow = state
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BossComponent.IsHasShow = function(self)
-  -- function num : 0_2
+function BossComponent:IsHasShow()
   return self._hasShow
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Boss = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).Boss)
+function Entity:Boss()
+  return self:GetComponent(self.WEComponentsEnum.Boss)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasBoss = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).Boss)
+function Entity:HasBoss()
+  return self:HasComponent(self.WEComponentsEnum.Boss)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceBoss = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Boss
+function Entity:ReplaceBoss()
+  local index = self.WEComponentsEnum.Boss
   local component = BossComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddBoss = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Boss
+function Entity:AddBoss()
+  local index = self.WEComponentsEnum.Boss
   local component = BossComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveBoss = function(self)
-  -- function num : 0_7
+function Entity:RemoveBoss()
   if self:HasBoss() then
-    self:RemoveComponent((self.WEComponentsEnum).Boss)
+    self:RemoveComponent(self.WEComponentsEnum.Boss)
   end
 end
-
-

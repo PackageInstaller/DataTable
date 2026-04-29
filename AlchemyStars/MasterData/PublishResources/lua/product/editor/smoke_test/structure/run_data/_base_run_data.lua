@@ -1,58 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/run_data/_base_run_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TestRobotRunData", Object)
 TestRobotRunData = TestRobotRunData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotRunData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function TestRobotRunData:Constructor()
   self._petInfo = {}
   self._retryCount = 0
   self._currentTeamBuild = {}
   self._taskIDList = {}
-  self._manager = (GameGlobal.GetModule)(TestRobotModule)
+  self._manager = GameGlobal.GetModule(TestRobotModule)
   self._isExceptionDeclared = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotRunData.GetMissionID = function(self)
-  -- function num : 0_1
+function TestRobotRunData:GetMissionID()
   return self._missionID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotRunData.SetMissionID = function(self, id)
-  -- function num : 0_2
+function TestRobotRunData:SetMissionID(id)
   self._missionID = id
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotRunData.AddPet = function(self, data, isSanityFixSkipped)
-  -- function num : 0_3 , upvalues : _ENV
+function TestRobotRunData:AddPet(data, isSanityFixSkipped)
   if not isSanityFixSkipped then
     data:SanityFix()
   end
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._petInfo)[data:GetTemplateID()] = data
-  if not (table.icontains)(self._currentTeamBuild, data) then
-    (table.insert)(self._currentTeamBuild, data)
+  self._petInfo[data:GetTemplateID()] = data
+  if not table.icontains(self._currentTeamBuild, data) then
+    table.insert(self._currentTeamBuild, data)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotRunData.CheckRepeatBuildData = function(self, buildDataList, data)
-  -- function num : 0_4 , upvalues : _ENV
+function TestRobotRunData:CheckRepeatBuildData(buildDataList, data)
   local checkPetPstID = data:GetTemplateID()
-  for _,v in pairs(buildDataList) do
+  for _, v in pairs(buildDataList) do
     if v:GetTemplateID() == checkPetPstID then
       return true
     end
@@ -60,115 +38,66 @@ TestRobotRunData.CheckRepeatBuildData = function(self, buildDataList, data)
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotRunData.ResetCurrentTeamBuild = function(self)
-  -- function num : 0_5
+function TestRobotRunData:ResetCurrentTeamBuild()
   self._currentTeamBuild = {}
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotRunData.GetCurrentTeamBuild = function(self)
-  -- function num : 0_6
+function TestRobotRunData:GetCurrentTeamBuild()
   return self._currentTeamBuild
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotRunData.GetCurrentTeamBuildFormationTemplateID = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function TestRobotRunData:GetCurrentTeamBuildFormationTemplateID()
   local t = {}
-  for _,data in ipairs(self._currentTeamBuild) do
-    (table.insert)(t, data:GetTemplateID())
+  for _, data in ipairs(self._currentTeamBuild) do
+    table.insert(t, data:GetTemplateID())
   end
   return t
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotRunData.GetPetBuildData = function(self, templateID)
-  -- function num : 0_8
-  return (self._petInfo)[templateID]
+function TestRobotRunData:GetPetBuildData(templateID)
+  return self._petInfo[templateID]
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotRunData.ClearPetInfo = function(self)
-  -- function num : 0_9
+function TestRobotRunData:ClearPetInfo()
   self._petInfo = {}
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotRunData.GetRetryCount = function(self)
-  -- function num : 0_10
+function TestRobotRunData:GetRetryCount()
   return self._retryCount
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotRunData.AppendRetryCount = function(self)
-  -- function num : 0_11
+function TestRobotRunData:AppendRetryCount()
   self._retryCount = self._retryCount + 1
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotRunData.ResetRetryCount = function(self)
-  -- function num : 0_12
+function TestRobotRunData:ResetRetryCount()
   self._retryCount = 0
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotRunData.SetLastBattleResult = function(self, bVictory)
-  -- function num : 0_13
+function TestRobotRunData:SetLastBattleResult(bVictory)
   self._result = bVictory
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotRunData.GetLastBattleResult = function(self)
-  -- function num : 0_14
+function TestRobotRunData:GetLastBattleResult()
   return self._result
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotRunData.IsRandomTeam = function(self)
-  -- function num : 0_15
+function TestRobotRunData:IsRandomTeam()
   return true
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotRunData.AddRunTaskID = function(self, taskID)
-  -- function num : 0_16
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._taskIDList)[#self._taskIDList + 1] = taskID
+function TestRobotRunData:AddRunTaskID(taskID)
+  self._taskIDList[#self._taskIDList + 1] = taskID
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotRunData.GetRunTaskIDList = function(self)
-  -- function num : 0_17
+function TestRobotRunData:GetRunTaskIDList()
   return self._taskIDList
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotRunData.DeclareException = function(self)
-  -- function num : 0_18
+function TestRobotRunData:DeclareException()
   self._isExceptionDeclared = true
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotRunData.IsExceptionThrew = function(self)
-  -- function num : 0_19
+function TestRobotRunData:IsExceptionThrew()
   return self._isExceptionDeclared
 end
-
-

@@ -1,56 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/compute_scope_range.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ComputeScopeRange", Object)
 ComputeScopeRange = ComputeScopeRange
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ComputeScopeRange.Constructor = function(self)
-  -- function num : 0_0
+function ComputeScopeRange:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeScopeRange.GetNeighbourPos = function(nBodyAreaCount)
-  -- function num : 0_1 , upvalues : _ENV
-  local vecNeighbourPos = nil
-  if nBodyAreaCount == 1 then
-    vecNeighbourPos = {Vector2(0, 1), Vector2(1, 0), Vector2(0, -1), Vector2(-1, 0)}
-  else
-    if nBodyAreaCount == 4 then
-      vecNeighbourPos = {Vector2(0, 2), Vector2(1, 2), Vector2(2, 1), Vector2(2, 0), Vector2(1, -1), Vector2(0, -1), Vector2(-1, 0), Vector2(-1, 1)}
-    end
+function ComputeScopeRange.GetNeighbourPos(nBodyAreaCount)
+  local vecNeighbourPos
+  if 1 == nBodyAreaCount then
+    vecNeighbourPos = {
+      Vector2(0, 1),
+      Vector2(1, 0),
+      Vector2(0, -1),
+      Vector2(-1, 0)
+    }
+  elseif 4 == nBodyAreaCount then
+    vecNeighbourPos = {
+      Vector2(0, 2),
+      Vector2(1, 2),
+      Vector2(2, 1),
+      Vector2(2, 0),
+      Vector2(1, -1),
+      Vector2(0, -1),
+      Vector2(-1, 0),
+      Vector2(-1, 1)
+    }
   end
   return vecNeighbourPos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeScopeRange.GetBodyArea = function(nBodyAreaCount)
-  -- function num : 0_2 , upvalues : _ENV
+function ComputeScopeRange.GetBodyArea(nBodyAreaCount)
   local listReturn = {}
-  if nBodyAreaCount == 1 then
-    listReturn = {Vector2(0, 0)}
-  else
-    if nBodyAreaCount == 4 then
-      listReturn = {Vector2(0, 0), Vector2(0, 1), Vector2(1, 0), Vector2(1, 1)}
-    else
-      if nBodyAreaCount == 9 then
-        listReturn = {Vector2(0, 0), Vector2(0, 1), Vector2(0, 2), Vector2(1, 0), Vector2(1, 1), Vector2(1, 2), Vector2(2, 0), Vector2(2, 1), Vector2(2, 2)}
-      end
-    end
+  if 1 == nBodyAreaCount then
+    listReturn = {
+      Vector2(0, 0)
+    }
+  elseif 4 == nBodyAreaCount then
+    listReturn = {
+      Vector2(0, 0),
+      Vector2(0, 1),
+      Vector2(1, 0),
+      Vector2(1, 1)
+    }
+  elseif 9 == nBodyAreaCount then
+    listReturn = {
+      Vector2(0, 0),
+      Vector2(0, 1),
+      Vector2(0, 2),
+      Vector2(1, 0),
+      Vector2(1, 1),
+      Vector2(1, 2),
+      Vector2(2, 0),
+      Vector2(2, 1),
+      Vector2(2, 2)
+    }
   end
   return listReturn
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeScopeRange.ComputeBodyArea = function(centrePos, nBodyAreaCount, nWalkStep)
-  -- function num : 0_3 , upvalues : _ENV
+function ComputeScopeRange.ComputeBodyArea(centrePos, nBodyAreaCount, nWalkStep)
   local listReturn = {}
-  local listArea = (ComputeScopeRange.GetBodyArea)(nBodyAreaCount)
+  local listArea = ComputeScopeRange.GetBodyArea(nBodyAreaCount)
   for i = 1, #listArea do
     local posWork = centrePos + listArea[i]
     if nWalkStep then
@@ -62,48 +71,36 @@ ComputeScopeRange.ComputeBodyArea = function(centrePos, nBodyAreaCount, nWalkSte
   return listReturn
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeScopeRange.ComputeRange_Walk = function(centerPos, nBodyAreaCount, nWalkStep, callbackFilter, ...)
-  -- function num : 0_4 , upvalues : _ENV
+function ComputeScopeRange.ComputeRange_Walk(centerPos, nBodyAreaCount, nWalkStep, callbackFilter, ...)
   local computeWalkRange = ComputeWalkRange:New()
   computeWalkRange:ComputeRange(centerPos, nBodyAreaCount, nWalkStep, callbackFilter, ...)
   return computeWalkRange:GetResult()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeScopeRange.ComputeRange_WalkOnlyPos = function(centerPos, nBodyAreaCount, nWalkStep, callbackFilter, ...)
-  -- function num : 0_5 , upvalues : _ENV
+function ComputeScopeRange.ComputeRange_WalkOnlyPos(centerPos, nBodyAreaCount, nWalkStep, callbackFilter, ...)
   local computeWalkRange = ComputeWalkRange:New()
   computeWalkRange:ComputeRange(centerPos, nBodyAreaCount, nWalkStep, callbackFilter, ...)
   return computeWalkRange:GetResult()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeScopeRange.ComputeRange_WalkMathPos = function(centerPos, nBodyAreaCount, nWalkStep, callbackFilter, ...)
-  -- function num : 0_6 , upvalues : _ENV
+function ComputeScopeRange.ComputeRange_WalkMathPos(centerPos, nBodyAreaCount, nWalkStep, callbackFilter, ...)
   local computeWalkRange = ComputeWalkRange:New()
   computeWalkRange:ComputeRangeByMath(centerPos, nBodyAreaCount, nWalkStep, callbackFilter, ...)
   return computeWalkRange:GetResult()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeScopeRange.ComputeRange_PreviewWithStepAndBlock = function(centerPos, bodyArea, calcMoveBase, nWalkStep, monsterBlockData, callbackFilter, ...)
-  -- function num : 0_7 , upvalues : _ENV
+function ComputeScopeRange.ComputeRange_PreviewWithStepAndBlock(centerPos, bodyArea, calcMoveBase, nWalkStep, monsterBlockData, callbackFilter, ...)
   local computeWalkRange = ComputeWalkRange:New()
   computeWalkRange:_InsertTableBodyArea(computeWalkRange.m_listWalkRange, centerPos, centerPos, 0, bodyArea, monsterBlockData, callbackFilter, ...)
   local nextStepCalcPosList = {centerPos}
   for i = 1, nWalkStep do
     local stepIndex = i
     local curStepCalcPosList = {}
-    for key,movePos in ipairs(nextStepCalcPosList) do
+    for key, movePos in ipairs(nextStepCalcPosList) do
       local curwalkPosList = computeWalkRange:ComputeRangeWithStepAndBlock(movePos, bodyArea, calcMoveBase, stepIndex, monsterBlockData, callbackFilter, ...)
-      for _,pos in ipairs(curwalkPosList) do
-        if not (table.icontains)(curStepCalcPosList, pos) then
-          (table.insert)(curStepCalcPosList, pos)
+      for _, pos in ipairs(curwalkPosList) do
+        if not table.icontains(curStepCalcPosList, pos) then
+          table.insert(curStepCalcPosList, pos)
         end
       end
     end
@@ -112,43 +109,40 @@ ComputeScopeRange.ComputeRange_PreviewWithStepAndBlock = function(centerPos, bod
   return computeWalkRange:GetResult()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeScopeRange.ComputeRange_CrossScope = function(centerPos, nBodyAreaCount, nCrossStep)
-  -- function num : 0_8 , upvalues : _ENV
-  local dirs = {Vector2(0, 1), Vector2(1, 0), Vector2(0, -1), Vector2(-1, 0)}
-  local posNeighbour = (ComputeScopeRange.GetNeighbourPos)(nBodyAreaCount)
-  local nDicParam = (math.floor)(#posNeighbour / #dirs)
+function ComputeScopeRange.ComputeRange_CrossScope(centerPos, nBodyAreaCount, nCrossStep)
+  local dirs = {
+    Vector2(0, 1),
+    Vector2(1, 0),
+    Vector2(0, -1),
+    Vector2(-1, 0)
+  }
+  local posNeighbour = ComputeScopeRange.GetNeighbourPos(nBodyAreaCount)
+  local nDicParam = math.floor(#posNeighbour / #dirs)
   local listReturn = {}
-  for i,v in ipairs(posNeighbour) do
-    local dir = dirs[(math.floor)((i + nDicParam - 1) / nDicParam)]
+  for i, v in ipairs(posNeighbour) do
+    local dir = dirs[math.floor((i + nDicParam - 1) / nDicParam)]
     for j = 0, nCrossStep - 1 do
-      if centerPos == nil then
-        (table.insert)(listReturn, v + dir * j)
+      if nil == centerPos then
+        table.insert(listReturn, v + dir * j)
       else
-        ;
-        (table.insert)(listReturn, centerPos + v + dir * j)
+        table.insert(listReturn, centerPos + v + dir * j)
       end
     end
   end
   return listReturn
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeScopeRange.ComputeRange_SquareRing = function(centerPos, nBodyAreaCount, ringCount, bOnlyMax)
-  -- function num : 0_9 , upvalues : _ENV
-  local nBodyLine = (math.floor)((math.sqrt)(nBodyAreaCount) + 2 * ringCount)
+function ComputeScopeRange.ComputeRange_SquareRing(centerPos, nBodyAreaCount, ringCount, bOnlyMax)
+  local nBodyLine = math.floor(math.sqrt(nBodyAreaCount) + 2 * ringCount)
   local listReturn = {}
   for i = 1, nBodyLine do
     for j = 1, nBodyLine do
       local bSelect = false
-      -- DECOMPILER ERROR at PC35: Unhandled construct in 'MakeBoolean' P1
-
-      if (bOnlyMax == nil or bOnlyMax == false) and (i <= ringCount or nBodyLine - ringCount < i or j <= ringCount or nBodyLine - ringCount < j or ringCount == 0) then
-        bSelect = true
-      end
-      if i == 1 or i == nBodyLine or j == 1 or j == nBodyLine then
+      if nil == bOnlyMax or false == bOnlyMax then
+        if i <= ringCount or i > nBodyLine - ringCount or j <= ringCount or j > nBodyLine - ringCount or ringCount == 0 then
+          bSelect = true
+        end
+      elseif i == 1 or i == nBodyLine or j == 1 or j == nBodyLine then
         bSelect = true
       end
       if bSelect then
@@ -160,21 +154,27 @@ ComputeScopeRange.ComputeRange_SquareRing = function(centerPos, nBodyAreaCount, 
   return listReturn
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeScopeRange.ComputeRange_DirectionScope = function(centerPos, nBodyAreaCount, nStep)
-  -- function num : 0_10 , upvalues : _ENV
-  local dirs = {Vector2(0, 1), Vector2(1, 0), Vector2(0, -1), Vector2(-1, 0), Vector2(-1, 1), Vector2(1, 1), Vector2(1, -1), Vector2(-1, -1)}
-  local bodyArea = (ComputeScopeRange.GetBodyArea)(nBodyAreaCount)
+function ComputeScopeRange.ComputeRange_DirectionScope(centerPos, nBodyAreaCount, nStep)
+  local dirs = {
+    Vector2(0, 1),
+    Vector2(1, 0),
+    Vector2(0, -1),
+    Vector2(-1, 0),
+    Vector2(-1, 1),
+    Vector2(1, 1),
+    Vector2(1, -1),
+    Vector2(-1, -1)
+  }
+  local bodyArea = ComputeScopeRange.GetBodyArea(nBodyAreaCount)
   local listReturn = {}
-  for keyBody,valueBody in pairs(bodyArea) do
-    for keyDir,valueDir in pairs(dirs) do
+  for keyBody, valueBody in pairs(bodyArea) do
+    for keyDir, valueDir in pairs(dirs) do
       for i = 1, nStep do
         local posWork = valueDir * i + valueBody
         if centerPos then
           posWork = centerPos + centerPos
         end
-        if (table.iconstains)(listReturn, posWork) == false then
+        if false == table.iconstains(listReturn, posWork) then
           listReturn[#listReturn + 1] = posWork
         end
       end
@@ -185,73 +185,49 @@ end
 
 _class("ComputeWalkPos", Object)
 ComputeWalkPos = ComputeWalkPos
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-ComputeWalkPos.Constructor = function(self, dataPos, dataStep)
-  -- function num : 0_11
+function ComputeWalkPos:Constructor(dataPos, dataStep)
   self.m_nPos = dataPos
   self.m_nStep = dataStep
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeWalkPos.GetPos = function(self)
-  -- function num : 0_12
+function ComputeWalkPos:GetPos()
   return self.m_nPos
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeWalkPos.GetStep = function(self)
-  -- function num : 0_13
+function ComputeWalkPos:GetStep()
   return self.m_nStep
 end
 
 _class("ComputeWalkRange", Object)
 ComputeWalkRange = ComputeWalkRange
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
 
-ComputeWalkRange.Constructor = function(self)
-  -- function num : 0_14
+function ComputeWalkRange:Constructor()
   self.m_nMaxStep = 0
   self.m_listWalkRange = {}
   self.m_listHaveWork = {}
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeWalkRange.GetResult = function(self)
-  -- function num : 0_15
+function ComputeWalkRange:GetResult()
   return self.m_listWalkRange
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeWalkRange._IsHaveCompute = function(self, posWork, nStepIndex)
-  -- function num : 0_16
-  local walkStep = (self.m_listHaveWork)[posWork]
-  if walkStep == nil then
+function ComputeWalkRange:_IsHaveCompute(posWork, nStepIndex)
+  local walkStep = self.m_listHaveWork[posWork]
+  if nil == walkStep then
     return false
   end
-  if walkStep < nStepIndex then
+  if nStepIndex > walkStep then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeWalkRange._SetHaveCompute = function(self, posWork, nStepIndex)
-  -- function num : 0_17
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self.m_listHaveWork)[posWork] = nStepIndex
+function ComputeWalkRange:_SetHaveCompute(posWork, nStepIndex)
+  self.m_listHaveWork[posWork] = nStepIndex
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeWalkRange._IsHaveRecord = function(self, tableWork, dataPos)
-  -- function num : 0_18
+function ComputeWalkRange:_IsHaveRecord(tableWork, dataPos)
   local nCount = #tableWork
   for i = 1, nCount do
     local dataWork = tableWork[i]
@@ -262,187 +238,135 @@ ComputeWalkRange._IsHaveRecord = function(self, tableWork, dataPos)
   return nil
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeWalkRange._InsertTable = function(self, tableWork, dataPos, dataStep, callbackFilter, ...)
-  -- function num : 0_19 , upvalues : _ENV
-  if callbackFilter and callbackFilter:CallHaveReturn(dataPos, ...) == false then
-    return 
+function ComputeWalkRange:_InsertTable(tableWork, dataPos, dataStep, callbackFilter, ...)
+  if callbackFilter and false == callbackFilter:CallHaveReturn(dataPos, ...) then
+    return
   end
   local posData = self:_IsHaveRecord(tableWork, dataPos)
-  -- DECOMPILER ERROR at PC21: Unhandled construct in 'MakeBoolean' P1
-
-  if posData and (posData.m_nStep == nil or dataStep < posData.m_nStep) then
-    posData.m_nStep = dataStep
+  if posData then
+    if nil == posData.m_nStep or dataStep < posData.m_nStep then
+      posData.m_nStep = dataStep
+    end
+    return
   end
-  do return  end
   local posWalk = ComputeWalkPos:New(dataPos, dataStep)
-  ;
-  (table.insert)(tableWork, posWalk)
+  table.insert(tableWork, posWalk)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeWalkRange._CopyTable = function(self, tableA, tableB, dataStep, callbackFilter, ...)
-  -- function num : 0_20 , upvalues : _ENV
-  if tableB == nil or tableA == nil then
-    return 
+function ComputeWalkRange:_CopyTable(tableA, tableB, dataStep, callbackFilter, ...)
+  if nil == tableB or nil == tableA then
+    return
   end
-  for key,value in pairs(tableB) do
+  for key, value in pairs(tableB) do
     self:_InsertTable(tableA, value, dataStep, callbackFilter, ...)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeWalkRange.ComputeRange = function(self, centerPos, nBodyAreaCount, nWalkStep, callbackFilter, ...)
-  -- function num : 0_21 , upvalues : _ENV
+function ComputeWalkRange:ComputeRange(centerPos, nBodyAreaCount, nWalkStep, callbackFilter, ...)
   if nWalkStep <= 0 then
-    return 
+    return
   end
-  if self.m_nMaxStep <= 0 then
+  if 0 >= self.m_nMaxStep then
     self.m_nMaxStep = nWalkStep
     self:_InsertTable(self.m_listWalkRange, centerPos, 0, callbackFilter, ...)
   end
-  local listPosCross = (ComputeScopeRange.ComputeRange_CrossScope)(centerPos, 1, 1)
+  local listPosCross = ComputeScopeRange.ComputeRange_CrossScope(centerPos, 1, 1)
   local nNewWalkStep = nWalkStep - 1
   local nStepIndex = self.m_nMaxStep - nNewWalkStep
-  for key,value in pairs(listPosCross) do
-    local listArea = (ComputeScopeRange.ComputeBodyArea)(R14_PC31, nBodyAreaCount)
-    R14_PC31(self, self.m_listWalkRange, listArea, nStepIndex, callbackFilter, ...)
+  for key, value in pairs(listPosCross) do
+    local listArea = ComputeScopeRange.ComputeBodyArea(value, nBodyAreaCount)
+    self:_CopyTable(self.m_listWalkRange, listArea, nStepIndex, callbackFilter, ...)
   end
   self:_SetHaveCompute(centerPos, nStepIndex)
-  if nNewWalkStep > 0 then
-    for key,value in pairs(listPosCross) do
+  if 0 < nNewWalkStep then
+    for key, value in pairs(listPosCross) do
       local bEnable = true
-      -- DECOMPILER ERROR at PC54: Overwrote pending register: R14 in 'AssignReg'
-
-      if callbackFilter then
-        R14_PC31 = R14_PC31(callbackFilter, R16_PC57, ...)
-        if R14_PC31 == false then
-          bEnable = false
-        end
+      if callbackFilter and false == callbackFilter:CallHaveReturn(value, ...) then
+        bEnable = false
       end
-      if bEnable then
-        R14_PC31 = R14_PC31(self, R16_PC57, nStepIndex)
-        -- DECOMPILER ERROR at PC70: Overwrote pending register: R16 in 'AssignReg'
-
-        if R14_PC31 == false then
-          R14_PC31(self, R16_PC57, nBodyAreaCount, nNewWalkStep, callbackFilter, ...)
-        end
+      if bEnable and false == self:_IsHaveCompute(value, nStepIndex) then
+        self:ComputeRange(value, nBodyAreaCount, nNewWalkStep, callbackFilter, ...)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeWalkRange.ComputeRangeByMath = function(self, centerPos, nBodyAreaCount, nWalkStep, callbackFilter, ...)
-  -- function num : 0_22 , upvalues : _ENV
+function ComputeWalkRange:ComputeRangeByMath(centerPos, nBodyAreaCount, nWalkStep, callbackFilter, ...)
   for i = -nWalkStep, nWalkStep do
     for j = -nWalkStep, nWalkStep do
-      local nStep = (math.abs)(i) + (math.abs)(j)
-      if nStep <= nWalkStep then
-        local posWork = (Vector2.New)(i, j) + centerPos
-        local listArea = (ComputeScopeRange.ComputeBodyArea)(posWork, nBodyAreaCount)
+      local nStep = math.abs(i) + math.abs(j)
+      if nWalkStep >= nStep then
+        local posWork = Vector2.New(i, j) + centerPos
+        local listArea = ComputeScopeRange.ComputeBodyArea(posWork, nBodyAreaCount)
         self:_CopyTable(self.m_listWalkRange, listArea, nStep, callbackFilter, ...)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeWalkRange.ComputeRangeWithStepAndBlock = function(self, centerPos, bodyArea, calcMoveBase, nStepIndex, monsterBlockData, callbackFilter, ...)
-  -- function num : 0_23 , upvalues : _ENV
-  local nBodyAreaCount = (table.count)(bodyArea)
-  local listPosCross = (ComputeScopeRange.ComputeRange_CrossScope)(centerPos, 1, 1)
+function ComputeWalkRange:ComputeRangeWithStepAndBlock(centerPos, bodyArea, calcMoveBase, nStepIndex, monsterBlockData, callbackFilter, ...)
+  local nBodyAreaCount = table.count(bodyArea)
+  local listPosCross = ComputeScopeRange.ComputeRange_CrossScope(centerPos, 1, 1)
   local listPosCrossCanMove = {}
-  for key,value in ipairs(listPosCross) do
-    local listArea = nil
+  for key, value in ipairs(listPosCross) do
+    local listArea
     if calcMoveBase == true then
       listArea = {value}
     else
-      listArea = (ComputeScopeRange.ComputeBodyArea)(value, nBodyAreaCount)
+      listArea = ComputeScopeRange.ComputeBodyArea(value, nBodyAreaCount)
     end
-    if callbackFilter and callbackFilter:CallHaveReturn(centerPos, value, bodyArea, monsterBlockData, ...) == true then
+    if callbackFilter and true == callbackFilter:CallHaveReturn(centerPos, value, bodyArea, monsterBlockData, ...) then
       self:_CopyTableBodyArea(self.m_listWalkRange, listArea, nStepIndex, bodyArea, monsterBlockData, callbackFilter, ...)
-      ;
-      (table.insert)(listPosCrossCanMove, value)
+      table.insert(listPosCrossCanMove, value)
     end
   end
   self:_SetHaveCompute(centerPos, nStepIndex)
   return listPosCrossCanMove
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeWalkRange._InsertTableBodyArea = function(self, tableWork, startPos, dataPos, dataStep, bodyArea, monsterBlockData, callbackFilter, ...)
-  -- function num : 0_24 , upvalues : _ENV
-  if callbackFilter and callbackFilter:CallHaveReturn(startPos, dataPos, bodyArea, monsterBlockData, ...) == false then
-    return 
+function ComputeWalkRange:_InsertTableBodyArea(tableWork, startPos, dataPos, dataStep, bodyArea, monsterBlockData, callbackFilter, ...)
+  if callbackFilter and false == callbackFilter:CallHaveReturn(startPos, dataPos, bodyArea, monsterBlockData, ...) then
+    return
   end
   local posData = self:_IsHaveRecord(tableWork, dataPos)
-  -- DECOMPILER ERROR at PC24: Unhandled construct in 'MakeBoolean' P1
-
-  if posData and (posData.m_nStep == nil or dataStep < posData.m_nStep) then
-    posData.m_nStep = dataStep
+  if posData then
+    if nil == posData.m_nStep or dataStep < posData.m_nStep then
+      posData.m_nStep = dataStep
+    end
+    return
   end
-  do return  end
   local posWalk = ComputeWalkPos:New(dataPos, dataStep)
-  ;
-  (table.insert)(tableWork, posWalk)
+  table.insert(tableWork, posWalk)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-ComputeWalkRange._CopyTableBodyArea = function(self, tableA, tableB, dataStep, bodyArea, monsterBlockData, callbackFilter, ...)
-  -- function num : 0_25 , upvalues : _ENV
-  if tableB == nil or tableA == nil then
-    return 
+function ComputeWalkRange:_CopyTableBodyArea(tableA, tableB, dataStep, bodyArea, monsterBlockData, callbackFilter, ...)
+  if nil == tableB or nil == tableA then
+    return
   end
-  for key,value in pairs(tableB) do
+  for key, value in pairs(tableB) do
     self:_InsertTableBodyArea(tableA, value, value, dataStep, bodyArea, monsterBlockData, callbackFilter, ...)
   end
 end
 
 _class("AIWalkStepData", Object)
 AIWalkStepData = AIWalkStepData
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
 
-AIWalkStepData.Constructor = function(self)
-  -- function num : 0_26
+function AIWalkStepData:Constructor()
   self.m_posList = {}
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-AIWalkStepData.AddData = function(self, posData)
-  -- function num : 0_27
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_posList)[#self.m_posList + 1] = posData
+function AIWalkStepData:AddData(posData)
+  self.m_posList[#self.m_posList + 1] = posData
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-AIWalkStepData.ReplaceListData = function(self, posListData)
-  -- function num : 0_28
+function AIWalkStepData:ReplaceListData(posListData)
   self.m_posList = posListData
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-AIWalkStepData.GetStepCount = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  return (table.count)(self.m_posList)
+function AIWalkStepData:GetStepCount()
+  return table.count(self.m_posList)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-AIWalkStepData.GetStepPosList = function(self)
-  -- function num : 0_30
+function AIWalkStepData:GetStepPosList()
   return self.m_posList
 end
-
-

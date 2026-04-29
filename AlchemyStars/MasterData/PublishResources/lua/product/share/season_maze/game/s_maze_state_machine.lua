@@ -1,120 +1,91 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/s_maze_state_machine.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SMazeStateMachine", Object)
 SMazeStateMachine = SMazeStateMachine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeStateMachine.Constructor = function(self, mn)
-  -- function num : 0_0 , upvalues : _ENV
+function SMazeStateMachine:Constructor(mn)
   self._manager = mn
-  self._type2ID = {[SMazeState_Born] = SMazeStateID.Born, [SMazeState_RoundBegin] = SMazeStateID.RoundBegin, [SMazeState_PlayCard] = SMazeStateID.PlayCard, [SMazeState_CardSettle] = SMazeStateID.CardSettle, [SMazeState_PlayerMove] = SMazeStateID.PlayerMove, [SMazeState_ArriveRoom] = SMazeStateID.ArriveRoom, [SMazeState_RoomSettle] = SMazeStateID.RoomSettle, [SMazeState_RoundEnd] = SMazeStateID.RoundEnd, [SMazeState_BossAttack] = SMazeStateID.BossAttack, [SMazeState_MazeComplete] = SMazeStateID.MazeComplete, [SMazeState_ChooseRelic] = SMazeStateID.ChooseRelic, [SMazeState_Levelup] = SMazeStateID.Levelup, [SMazeState_ChooseFullPet] = SMazeStateID.ChooseFullPet, [SMazeState_WorldBoss] = SMazeStateID.WorldBoss}
+  self._type2ID = {
+    [SMazeState_Born] = SMazeStateID.Born,
+    [SMazeState_RoundBegin] = SMazeStateID.RoundBegin,
+    [SMazeState_PlayCard] = SMazeStateID.PlayCard,
+    [SMazeState_CardSettle] = SMazeStateID.CardSettle,
+    [SMazeState_PlayerMove] = SMazeStateID.PlayerMove,
+    [SMazeState_ArriveRoom] = SMazeStateID.ArriveRoom,
+    [SMazeState_RoomSettle] = SMazeStateID.RoomSettle,
+    [SMazeState_RoundEnd] = SMazeStateID.RoundEnd,
+    [SMazeState_BossAttack] = SMazeStateID.BossAttack,
+    [SMazeState_MazeComplete] = SMazeStateID.MazeComplete,
+    [SMazeState_ChooseRelic] = SMazeStateID.ChooseRelic,
+    [SMazeState_Levelup] = SMazeStateID.Levelup,
+    [SMazeState_ChooseFullPet] = SMazeStateID.ChooseFullPet,
+    [SMazeState_WorldBoss] = SMazeStateID.WorldBoss
+  }
   self._curState = nil
   self._curNode = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateMachine.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SMazeStateMachine:Init()
   local type = SMazeState_Born
-  local stateID = (self._type2ID)[type]
+  local stateID = self._type2ID[type]
   self._curState = type:New(stateID, self, self._manager)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSeasonMazeStateChanged, (self._curState):StateID())
-  ;
-  (self._curState):OnEnter()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSeasonMazeStateChanged, self._curState:StateID())
+  self._curState:OnEnter()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateMachine.Update = function(self, dt)
-  -- function num : 0_2
+function SMazeStateMachine:Update(dt)
   if self._curState then
-    (self._curState):OnUpdate(dt)
+    self._curState:OnUpdate(dt)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateMachine.Dispose = function(self)
-  -- function num : 0_3
+function SMazeStateMachine:Dispose()
   self._manager = nil
   self._type2ID = nil
-  if self._curState and (self._curState):Valid() then
-    (self._curState):Dispose()
+  if self._curState and self._curState:Valid() then
+    self._curState:Dispose()
   end
   self._curState = nil
   self._curNode = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateMachine.ChangeStateTo = function(self, type, ...)
-  -- function num : 0_4 , upvalues : _ENV
+function SMazeStateMachine:ChangeStateTo(type, ...)
   if not type:IsChildOf("SMazeStateBase") then
-    (Log.exception)(type._className, "不是 SMazeStateBase 的子类")
+    Log.exception(type._className, "不是 SMazeStateBase 的子类")
     return nil
   end
-  ;
-  (self._curState):OnExit()
-  ;
-  (self._curState):Dispose()
-  local stateID = (self._type2ID)[type]
+  self._curState:OnExit()
+  self._curState:Dispose()
+  local stateID = self._type2ID[type]
   local state = type:New(stateID, self, self._manager)
-  ;
-  (Log.debug)("赛季秘境切换状态:", state:StateID())
+  Log.debug("赛季秘境切换状态:", state:StateID())
   self._curState = state
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSeasonMazeStateChanged, (self._curState):StateID())
-  ;
-  (self._curState):OnEnter(...)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSeasonMazeStateChanged, self._curState:StateID())
+  self._curState:OnEnter(...)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateMachine.CurState = function(self)
-  -- function num : 0_5
+function SMazeStateMachine:CurState()
   return self._curState
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateMachine.SetCurNode = function(self, node)
-  -- function num : 0_6
+function SMazeStateMachine:SetCurNode(node)
   self._curNode = node
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateMachine.GetCurNode = function(self)
-  -- function num : 0_7
+function SMazeStateMachine:GetCurNode()
   return self._curNode
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateMachine._AddRelicEft = function(self, eft)
-  -- function num : 0_8 , upvalues : _ENV
+function SMazeStateMachine:_AddRelicEft(eft)
   if not self._relickEfts then
     self._relickEfts = {}
   end
-  ;
-  (table.insert)(self._relickEfts, eft)
+  table.insert(self._relickEfts, eft)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateMachine._GetAndClearRelicAssets = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function SMazeStateMachine:_GetAndClearRelicAssets()
   if not self._relickEfts then
-    return 
+    return
   end
-  local assets = (SeasonMazeTool:GetInstance()):Efts2Assets(self._relickEfts)
+  local assets = SeasonMazeTool:GetInstance():Efts2Assets(self._relickEfts)
   self._relickEfts = nil
   return assets
 end
-
-

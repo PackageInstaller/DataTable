@@ -1,36 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/animation/animator_ctrl_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AnimatorControllerComponent", Object)
 AnimatorControllerComponent = AnimatorControllerComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AnimatorControllerComponent.Constructor = function(self, triggerTable, boolTable, needDirToBoolTable, layerWeightTable)
-  -- function num : 0_0
-  if not triggerTable then
-    self.AniTriggerTable = {}
-    if not boolTable then
-      self.AniBoolTable = {}
-      self.AniNeedDirToBoolTable = needDirToBoolTable or false
-      self._LastHitAnimationTime = 0
-      if not layerWeightTable then
-        self.AnimatorLayerWeightTable = {}
-        self.bKeepAnimatorLayerWeight = false
-        self.specialAnimRoot = nil
-        self.linkAnimatorEntityArray = {}
-      end
-    end
-  end
+function AnimatorControllerComponent:Constructor(triggerTable, boolTable, needDirToBoolTable, layerWeightTable)
+  self.AniTriggerTable = triggerTable or {}
+  self.AniBoolTable = boolTable or {}
+  self.AniNeedDirToBoolTable = needDirToBoolTable or false
+  self._LastHitAnimationTime = 0
+  self.AnimatorLayerWeightTable = layerWeightTable or {}
+  self.bKeepAnimatorLayerWeight = false
+  self.specialAnimRoot = nil
+  self.linkAnimatorEntityArray = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AnimatorControllerComponent.IsNeedHitAnimation = function(self, currentTimeMs)
-  -- function num : 0_1 , upvalues : _ENV
+function AnimatorControllerComponent:IsNeedHitAnimation(currentTimeMs)
   local lastTime = self._LastHitAnimationTime
-  if BattleConst.HitAnimationIntervalMs < currentTimeMs - lastTime then
+  if currentTimeMs - lastTime > BattleConst.HitAnimationIntervalMs then
     self._LastHitAnimationTime = currentTimeMs
     return true
   else
@@ -38,48 +22,33 @@ AnimatorControllerComponent.IsNeedHitAnimation = function(self, currentTimeMs)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AnimatorControllerComponent.AddLinkAnimatorEntity = function(self, e)
-  -- function num : 0_2 , upvalues : _ENV
-  (table.insert)(self.linkAnimatorEntityArray, e)
+function AnimatorControllerComponent:AddLinkAnimatorEntity(e)
+  table.insert(self.linkAnimatorEntityArray, e)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AnimatorController = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).AnimatorController)
+function Entity:AnimatorController()
+  return self:GetComponent(self.WEComponentsEnum.AnimatorController)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasAnimatorController = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).AnimatorController)
+function Entity:HasAnimatorController()
+  return self:HasComponent(self.WEComponentsEnum.AnimatorController)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddAnimatorController = function(self, triggerTable, boolTable)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).AnimatorController
+function Entity:AddAnimatorController(triggerTable, boolTable)
+  local index = self.WEComponentsEnum.AnimatorController
   local component = AnimatorControllerComponent:New(triggerTable, boolTable)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetAnimatorControllerTriggers = function(self, triggerTable)
-  -- function num : 0_6 , upvalues : _ENV
-  if (table.count)(triggerTable) <= 0 then
-    return 
+function Entity:SetAnimatorControllerTriggers(triggerTable)
+  if table.count(triggerTable) <= 0 then
+    return
   end
-  local index = (self.WEComponentsEnum).AnimatorController
+  local index = self.WEComponentsEnum.AnimatorController
   local component = self:AnimatorController()
   if component then
     component.AniTriggerTable = triggerTable
-    for _,e in ipairs(component.linkAnimatorEntityArray) do
+    for _, e in ipairs(component.linkAnimatorEntityArray) do
       e:SetAnimatorControllerTriggers(triggerTable)
     end
     self:ReplaceComponent(index, component)
@@ -89,24 +58,17 @@ Entity.SetAnimatorControllerTriggers = function(self, triggerTable)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetAnimatorControllerBools = function(self, boolTable)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).AnimatorController
+function Entity:SetAnimatorControllerBools(boolTable)
+  local index = self.WEComponentsEnum.AnimatorController
   local component = self:AnimatorController()
   if component then
-    for param,value in pairs(boolTable) do
-      -- DECOMPILER ERROR at PC11: Confused about usage of register: R9 in 'UnsetPending'
-
-      (component.AniBoolTable)[param] = value
+    for param, value in pairs(boolTable) do
+      component.AniBoolTable[param] = value
     end
-    for _,e in ipairs(component.linkAnimatorEntityArray) do
+    for _, e in ipairs(component.linkAnimatorEntityArray) do
       local c = e:AnimatorController()
-      for param,value in pairs(boolTable) do
-        -- DECOMPILER ERROR at PC25: Confused about usage of register: R15 in 'UnsetPending'
-
-        (c.AniBoolTable)[param] = value
+      for param, value in pairs(boolTable) do
+        c.AniBoolTable[param] = value
       end
     end
     self:ReplaceComponent(index, component)
@@ -116,116 +78,86 @@ Entity.SetAnimatorControllerBools = function(self, boolTable)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetAnimatorControllerBoolsData = function(self, stBoolParam)
-  -- function num : 0_8 , upvalues : _ENV
+function Entity:GetAnimatorControllerBoolsData(stBoolParam)
   local component = self:AnimatorController()
   if component then
-    for param,value in pairs(component.AniBoolTable) do
+    for param, value in pairs(component.AniBoolTable) do
       if param == stBoolParam then
         return value
       end
     end
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveAnimatorController = function(self)
-  -- function num : 0_9
+function Entity:RemoveAnimatorController()
   if self:HasAnimatorController() then
-    self:RemoveComponent((self.WEComponentsEnum).AnimatorController)
+    self:RemoveComponent(self.WEComponentsEnum.AnimatorController)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.IsNeedHitAnimation = function(self, currentTimeMs)
-  -- function num : 0_10
-  do
-    if self:HasAnimatorController() then
-      local component = self:AnimatorController()
-      return component:IsNeedHitAnimation(currentTimeMs)
-    end
-    return true
+function Entity:IsNeedHitAnimation(currentTimeMs)
+  if self:HasAnimatorController() then
+    local component = self:AnimatorController()
+    return component:IsNeedHitAnimation(currentTimeMs)
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetHitAnimatorControllerTriggers = function(self, triggerTable)
-  -- function num : 0_11 , upvalues : _ENV
-  local timeService = (self:GetOwnerWorld()):GetService("Time")
+function Entity:SetHitAnimatorControllerTriggers(triggerTable)
+  local timeService = self:GetOwnerWorld():GetService("Time")
   local currentTimeMs = timeService:GetCurrentTimeMs()
-  local index = (self.WEComponentsEnum).AnimatorController
+  local index = self.WEComponentsEnum.AnimatorController
   local component = self:AnimatorController()
-  if component and self:IsNeedHitAnimation(currentTimeMs) then
-    component.AniTriggerTable = triggerTable
-    self:ReplaceComponent(index, component)
-    for _,e in ipairs(component.linkAnimatorEntityArray) do
-      e:SetHitAnimatorControllerTriggers(triggerTable)
+  if component then
+    if self:IsNeedHitAnimation(currentTimeMs) then
+      component.AniTriggerTable = triggerTable
+      self:ReplaceComponent(index, component)
+      for _, e in ipairs(component.linkAnimatorEntityArray) do
+        e:SetHitAnimatorControllerTriggers(triggerTable)
+      end
     end
-  end
-  do
+  else
     local component = AnimatorControllerComponent:New(triggerTable)
     self:ReplaceComponent(index, component)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetAnimatorLayerWeight = function(self, layerWeightTable)
-  -- function num : 0_12 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).AnimatorController
+function Entity:SetAnimatorLayerWeight(layerWeightTable)
+  local index = self.WEComponentsEnum.AnimatorController
   local component = self:AnimatorController()
   if component then
-    for param,value in pairs(layerWeightTable) do
-      -- DECOMPILER ERROR at PC11: Confused about usage of register: R9 in 'UnsetPending'
-
-      (component.AnimatorLayerWeightTable)[param] = value
+    for param, value in pairs(layerWeightTable) do
+      component.AnimatorLayerWeightTable[param] = value
     end
     self:ReplaceComponent(index, component)
-    for _,e in ipairs(component.linkAnimatorEntityArray) do
+    for _, e in ipairs(component.linkAnimatorEntityArray) do
       e:SetAnimatorLayerWeight(layerWeightTable)
     end
   else
-    do
-      local component = AnimatorControllerComponent:New({}, {}, nil, layerWeightTable)
-      self:ReplaceComponent(index, component)
-    end
+    local component = AnimatorControllerComponent:New({}, {}, nil, layerWeightTable)
+    self:ReplaceComponent(index, component)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetKeepAnimatorLayerWeight = function(self, bKeep)
-  -- function num : 0_13 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).AnimatorController
+function Entity:SetKeepAnimatorLayerWeight(bKeep)
+  local index = self.WEComponentsEnum.AnimatorController
   local component = self:AnimatorController()
   if component then
     component.bKeepAnimatorLayerWeight = bKeep
     self:ReplaceComponent(index, component)
-    for _,e in ipairs(component.linkAnimatorEntityArray) do
+    for _, e in ipairs(component.linkAnimatorEntityArray) do
       e:SetKeepAnimatorLayerWeight(bKeep)
     end
   else
-    do
-      local component = AnimatorControllerComponent:New({}, {}, nil, nil)
-      component.bKeepAnimatorLayerWeight = bKeep
-      self:ReplaceComponent(index, component)
-    end
+    local component = AnimatorControllerComponent:New({}, {}, nil, nil)
+    component.bKeepAnimatorLayerWeight = bKeep
+    self:ReplaceComponent(index, component)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetSpecialAnimRoot = function(self, specialRoot)
-  -- function num : 0_14 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).AnimatorController
+function Entity:SetSpecialAnimRoot(specialRoot)
+  local index = self.WEComponentsEnum.AnimatorController
   local component = self:AnimatorController()
   if component then
     component.specialAnimRoot = specialRoot
@@ -236,5 +168,3 @@ Entity.SetSpecialAnimRoot = function(self, specialRoot)
     self:ReplaceComponent(index, component)
   end
 end
-
-

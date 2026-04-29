@@ -1,47 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_decrease_first_dmg_from_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicDecreaseFirstDmgFromPet", BuffLogicBase)
 BuffLogicDecreaseFirstDmgFromPet = BuffLogicDecreaseFirstDmgFromPet
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDecreaseFirstDmgFromPet.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicDecreaseFirstDmgFromPet:Constructor(buffInstance, logicParam)
   self._dmgRate = logicParam.dmgRate
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDecreaseFirstDmgFromPet.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  if not (self._entity):HasMonsterID() then
-    return 
+function BuffLogicDecreaseFirstDmgFromPet:DoLogic(notify)
+  if not self._entity:HasMonsterID() then
+    return
   end
   local damageRecords = {}
-  ;
-  (self._buffComponent):SetBuffValue("BuffDecreaseFirstDmgFromPetRecords", damageRecords)
-  ;
-  (self._buffComponent):SetBuffValue("BuffDecreaseFirstDmgFromPet", tonumber(self._dmgRate))
+  self._buffComponent:SetBuffValue("BuffDecreaseFirstDmgFromPetRecords", damageRecords)
+  self._buffComponent:SetBuffValue("BuffDecreaseFirstDmgFromPet", tonumber(self._dmgRate))
 end
 
 _class("BuffLogicUndoDecreaseFirstDmgFromPet", BuffLogicBase)
 BuffLogicUndoDecreaseFirstDmgFromPet = BuffLogicUndoDecreaseFirstDmgFromPet
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUndoDecreaseFirstDmgFromPet.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicUndoDecreaseFirstDmgFromPet:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicUndoDecreaseFirstDmgFromPet.DoLogic = function(self, notify)
-  -- function num : 0_3
-  (self._buffComponent):SetBuffValue("BuffDecreaseFirstDmgFromPet", nil)
-  ;
-  (self._buffComponent):SetBuffValue("BuffDecreaseFirstDmgFromPetRecords", nil)
+function BuffLogicUndoDecreaseFirstDmgFromPet:DoLogic(notify)
+  self._buffComponent:SetBuffValue("BuffDecreaseFirstDmgFromPet", nil)
+  self._buffComponent:SetBuffValue("BuffDecreaseFirstDmgFromPetRecords", nil)
 end
-
-

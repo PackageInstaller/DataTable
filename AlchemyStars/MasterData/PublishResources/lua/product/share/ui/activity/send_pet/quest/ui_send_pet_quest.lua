@@ -1,81 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/send_pet/quest/ui_send_pet_quest.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISendPetQuest", UIController)
 UISendPetQuest = UISendPetQuest
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISendPetQuest.GetQuestList = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local comInfo = (self._questCom):GetComponentInfo()
+function UISendPetQuest:GetQuestList()
+  local comInfo = self._questCom:GetComponentInfo()
   local questList = comInfo.m_accept_cam_quest_list
   self._questList = {}
-  for k,v in pairs(questList) do
-    (table.insert)(self._questList, v)
+  for k, v in pairs(questList) do
+    table.insert(self._questList, v)
   end
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  ;
-  (table.sort)(self._questList, function(a, b)
-    -- function num : 0_0_0 , upvalues : self, _ENV, loginModule
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  table.sort(self._questList, function(a, b)
     local weiget_a = 0
     local weiget_b = 0
     local questInfo_a = self:GetQuestInfo(a)
     local questInfo_b = self:GetQuestInfo(b)
-    local component_quest_a = (Cfg.cfg_component_quest)({QuestID = questInfo_a.quest_id})
-    local component_quest_b = (Cfg.cfg_component_quest)({QuestID = questInfo_b.quest_id})
-    local nowTime = (math.ceil)((self._svrTimeModule):GetServerTime() * 0.001)
-    local endTimeA = loginModule:GetTimeStampByTimeStr((component_quest_a[1]).EndDateTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-    local endTimeB = loginModule:GetTimeStampByTimeStr((component_quest_b[1]).EndDateTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+    local component_quest_a = Cfg.cfg_component_quest({
+      QuestID = questInfo_a.quest_id
+    })
+    local component_quest_b = Cfg.cfg_component_quest({
+      QuestID = questInfo_b.quest_id
+    })
+    local nowTime = math.ceil(self._svrTimeModule:GetServerTime() * 0.001)
+    local endTimeA = loginModule:GetTimeStampByTimeStr(component_quest_a[1].EndDateTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+    local endTimeB = loginModule:GetTimeStampByTimeStr(component_quest_b[1].EndDateTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
     local secEndA = nowTime - endTimeA
     local secEndB = nowTime - endTimeB
     if questInfo_a.status == QuestStatus.QUEST_Completed then
       weiget_a = 30
+    elseif questInfo_a.status == QuestStatus.QUEST_Taken then
+      weiget_a = 10
     else
-      if questInfo_a.status == QuestStatus.QUEST_Taken then
-        weiget_a = 10
-      else
-        weiget_a = 20
-      end
+      weiget_a = 20
     end
     if questInfo_b.status == QuestStatus.QUEST_Completed then
       weiget_b = 30
+    elseif questInfo_b.status == QuestStatus.QUEST_Taken then
+      weiget_b = 10
     else
-      if questInfo_b.status == QuestStatus.QUEST_Taken then
-        weiget_b = 10
-      else
-        weiget_b = 20
-      end
+      weiget_b = 20
     end
-    if secEndA > 0 then
+    if 0 < secEndA then
       weiget_a = 0
     end
-    if secEndB > 0 then
+    if 0 < secEndB then
       weiget_b = 0
     end
     if weiget_a == weiget_b then
-      local cfg_com_quest_a = ((Cfg.cfg_component_quest)({QuestID = a}))[1]
-      local cfg_com_quest_b = ((Cfg.cfg_component_quest)({QuestID = b}))[1]
-      if a >= b then
-        do
-          do return cfg_com_quest_a.NeedReset ~= cfg_com_quest_b.NeedReset end
-          do return not cfg_com_quest_b.NeedReset end
-          do return weiget_b < weiget_a end
-          -- DECOMPILER ERROR: 5 unprocessed JMP targets
-        end
+      local cfg_com_quest_a = Cfg.cfg_component_quest({QuestID = a})[1]
+      local cfg_com_quest_b = Cfg.cfg_component_quest({QuestID = b})[1]
+      if cfg_com_quest_a.NeedReset == cfg_com_quest_b.NeedReset then
+        return a < b
+      else
+        return not cfg_com_quest_b.NeedReset
       end
+    else
+      return weiget_a > weiget_b
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest.OnShow = function(self, uiParam)
-  -- function num : 0_1 , upvalues : _ENV
+function UISendPetQuest:OnShow(uiParam)
   self._itemCountPerRow = 1
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
+  self._questModule = GameGlobal.GetModule(QuestModule)
   self._campaign = uiParam[1]
   self._questCom = uiParam[2]
   self.clickCallBack = uiParam[3]
@@ -90,87 +76,53 @@ UISendPetQuest.OnShow = function(self, uiParam)
   self:AttachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISendPetQuest:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
   self:DetachEvents()
   self:UnLock("UISendPetQuest:RefreshQuestReq")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest.OnDestroy = function(self)
-  -- function num : 0_3
+function UISendPetQuest:OnDestroy()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest.AttachEvents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISendPetQuest:AttachEvents()
   self:AttachEvent(GameEventType.QuestUpdate, self.OnRefresh)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest.DetachEvents = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISendPetQuest:DetachEvents()
   self:DetachEvent(GameEventType.QuestUpdate, self.OnRefresh)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest.GetComponents = function(self)
-  -- function num : 0_6
+function UISendPetQuest:GetComponents()
   self._questScrollView = self:GetUIComponent("UIDynamicScrollView", "QuestList")
   self._contentRT = self:GetUIComponent("RectTransform", "Content")
   self._remaineTime = self:GetUIComponent("UILocalizationText", "remaineTime")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest.OnRefresh = function(self)
-  -- function num : 0_7
+function UISendPetQuest:OnRefresh()
   self:ShowTimer()
   self:GetQuestList()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest.OnValue = function(self)
-  -- function num : 0_8
+function UISendPetQuest:OnValue()
   self:SetQuestList()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest.SetBlur = function(self)
-  -- function num : 0_9
+function UISendPetQuest:SetBlur()
   local bgCanvas = self:GetUIComponent("Canvas", "BGCanvas")
   self._blur = self:GetUIComponent("H3DUIBlurHelper", "Blur")
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._blur).OwnerCamera = bgCanvas.worldCamera
-  ;
-  (self._blur):RefreshBlurTexture()
+  self._blur.OwnerCamera = bgCanvas.worldCamera
+  self._blur:RefreshBlurTexture()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest.GetQuestInfo = function(self, id)
-  -- function num : 0_10
-  return ((self._questModule):GetQuest(id)):QuestInfo()
+function UISendPetQuest:GetQuestInfo(id)
+  return self._questModule:GetQuest(id):QuestInfo()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest._InitListView = function(self, scrollView, index)
-  -- function num : 0_11
+function UISendPetQuest:_InitListView(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -179,177 +131,123 @@ UISendPetQuest._InitListView = function(self, scrollView, index)
   local luaUnit = rowPool:SpawnObject("UISendPetQuestWidget")
   if luaUnit then
     local luaIdx = index + 1
-    local questid = (self._questList)[luaIdx]
+    local questid = self._questList[luaIdx]
     local questInfo = self:GetQuestInfo(questid)
     luaUnit:SetData(luaIdx, self._campaign, questInfo, function(idx)
-    -- function num : 0_11_0 , upvalues : self
-    self:QuestItemClick(idx)
+      self:QuestItemClick(idx)
+    end, function(assetId, pos)
+      self:AwardClick(assetId, pos)
+    end)
   end
-, function(assetId, pos)
-    -- function num : 0_11_1 , upvalues : self
-    self:AwardClick(assetId, pos)
-  end
-)
-  end
-  do
-    return item
-  end
+  return item
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest.AwardClick = function(self, assetId, pos)
-  -- function num : 0_12
+function UISendPetQuest:AwardClick(assetId, pos)
   if self._tipsInfo then
-    (self._tipsInfo):SetData(assetId, pos)
+    self._tipsInfo:SetData(assetId, pos)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest.SetQuestList = function(self)
-  -- function num : 0_13
+function UISendPetQuest:SetQuestList()
   if self._questScrollViewInited then
-    (self._questScrollView):SetListItemCount(#self._questList)
-    ;
-    (self._questScrollView):RefreshAllShownItem()
-    ;
-    (self._questScrollView):MovePanelToItemIndex(0, 0)
+    self._questScrollView:SetListItemCount(#self._questList)
+    self._questScrollView:RefreshAllShownItem()
+    self._questScrollView:MovePanelToItemIndex(0, 0)
   else
-    ;
-    (self._questScrollView):InitListView(#self._questList, function(scrollView, index)
-    -- function num : 0_13_0 , upvalues : self
-    return self:_InitListView(scrollView, index)
-  end
-)
+    self._questScrollView:InitListView(#self._questList, function(scrollView, index)
+      return self:_InitListView(scrollView, index)
+    end)
     self._questScrollViewInited = true
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest.QuestItemClick = function(self, id)
-  -- function num : 0_14 , upvalues : _ENV
+function UISendPetQuest:QuestItemClick(id)
   self:Lock("UISendPetQuest:QuestItemClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnQuestItemClick, self)
+  GameGlobal.TaskManager():StartTask(self.OnQuestItemClick, self)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest.OnQuestItemClick = function(self, TT)
-  -- function num : 0_15 , upvalues : _ENV
+function UISendPetQuest:OnQuestItemClick(TT)
   local res = AsyncRequestRes:New()
-  local ret, rewards = (self._questCom):HandleOneKeyTakeQuest(TT, res)
+  local ret, rewards = self._questCom:HandleOneKeyTakeQuest(TT, res)
   self:UnLock("UISendPetQuest:QuestItemClick")
   if res and res:GetSucc() then
     self:ShowUIGetItemController(rewards)
     self:GetQuestList()
     self:OnValue()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSendPetCardQuestGet)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSendPetCardQuestGet)
     if self.clickCallBack then
-      (self.clickCallBack)()
+      self.clickCallBack()
     end
   else
-    ;
-    (Log.error)("###[UISendPetQuest] HandleOneKeyTakeQuest fail! result:", res:GetResult())
+    Log.error("###[UISendPetQuest] HandleOneKeyTakeQuest fail! result:", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest.ShowUIGetItemController = function(self, rewards)
-  -- function num : 0_16 , upvalues : _ENV
+function UISendPetQuest:ShowUIGetItemController(rewards)
   if not rewards then
-    return 
+    return
   end
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
   local tempPets = {}
-  if #rewards > 0 then
+  if 0 < #rewards then
     for i = 1, #rewards do
-      local ispet = (self._petModule):IsPetID((rewards[i]).assetid)
+      local ispet = self._petModule:IsPetID(rewards[i].assetid)
       if ispet then
-        (table.insert)(tempPets, rewards[i])
+        table.insert(tempPets, rewards[i])
       end
     end
   end
-  do
-    local cbFunc = function()
-    -- function num : 0_16_0
+  
+  local function cbFunc()
   end
-
-    if #tempPets > 0 then
-      self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_16_1 , upvalues : _ENV, self, rewards, cbFunc
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    self:ShowDialog("UIGetItemController", rewards, cbFunc)
-  end
-)
-    else
+  
+  if 0 < #tempPets then
+    self:ShowDialog("UIPetObtain", tempPets, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
       self:ShowDialog("UIGetItemController", rewards, cbFunc)
-    end
+    end)
+  else
+    self:ShowDialog("UIGetItemController", rewards, cbFunc)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest.CloseBtnOnClick = function(self, go)
-  -- function num : 0_17
+function UISendPetQuest:CloseBtnOnClick(go)
   if self.closeCallBack then
-    (self.closeCallBack)()
+    self.closeCallBack()
   end
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest.ShowTimer = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  self._nextRefreshTime = (self._loginModule):GetNextTimeStampByHMS(5, 0, 0)
+function UISendPetQuest:ShowTimer()
+  self._nextRefreshTime = self._loginModule:GetNextTimeStampByHMS(5, 0, 0)
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
-  self._timer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_18_0 , upvalues : self
+  self._timer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:ShowTimeTex()
-  end
-)
+  end)
   self:ShowTimeTex()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest.ShowTimeTex = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UISendPetQuest:ShowTimeTex()
   local nextTime = self._nextRefreshTime
-  local nowTime = (math.ceil)((self._svrTimeModule):GetServerTime() * 0.001)
+  local nowTime = math.ceil(self._svrTimeModule:GetServerTime() * 0.001)
   local sec = nextTime - nowTime
-  if sec >= 0 then
-    local secStr = (HelperProxy:GetInstance()):Time2Tex(sec)
-    ;
-    (self._remaineTime):SetText((StringTable.Get)("str_activity_task_daily_desc", "  " .. secStr))
+  if 0 <= sec then
+    local secStr = HelperProxy:GetInstance():Time2Tex(sec)
+    self._remaineTime:SetText(StringTable.Get("str_activity_task_daily_desc", "  " .. secStr))
   else
-    do
-      if self._timer then
-        ((GameGlobal.Timer)()):CancelEvent(self._timer)
-      end
-      self:Lock("UISendPetQuest:RefreshQuestReq")
-      ;
-      ((GameGlobal.TaskManager)()):StartTask(self.RefreshQuestReq, self)
+    if self._timer then
+      GameGlobal.Timer():CancelEvent(self._timer)
     end
+    self:Lock("UISendPetQuest:RefreshQuestReq")
+    GameGlobal.TaskManager():StartTask(self.RefreshQuestReq, self)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetQuest.RefreshQuestReq = function(self, TT)
-  -- function num : 0_20 , upvalues : _ENV
+function UISendPetQuest:RefreshQuestReq(TT)
   local res = AsyncRequestRes:New()
-  ;
-  (self._questCom):HandleCamQuestDailyReset(TT, res)
+  self._questCom:HandleCamQuestDailyReset(TT, res)
   self:UnLock("UISendPetQuest:RefreshQuestReq")
   self:OnRefresh()
 end
-
-

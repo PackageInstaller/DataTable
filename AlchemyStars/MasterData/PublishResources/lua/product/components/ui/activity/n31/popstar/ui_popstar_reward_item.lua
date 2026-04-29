@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n31/popstar/ui_popstar_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPopStarRewardItem", UICustomWidget)
 UIPopStarRewardItem = UIPopStarRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPopStarRewardItem.OnShow = function(self)
-  -- function num : 0_0
+function UIPopStarRewardItem:OnShow()
   self._complete = self:GetGameObject("Complete")
   self._countLabel = self:GetUIComponent("UILocalizationText", "Count")
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
@@ -16,38 +9,22 @@ UIPopStarRewardItem.OnShow = function(self)
   self._go = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarRewardItem.SetData = function(self, data, isComplete, scale, callback)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R5 in 'UnsetPending'
-
-  ((self._go).transform).localScale = Vector3(scale, scale, scale)
+function UIPopStarRewardItem:SetData(data, isComplete, scale, callback)
+  self._go.transform.localScale = Vector3(scale, scale, scale)
   self._callback = callback
-  ;
-  (self._complete):SetActive(isComplete)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._btnImg).enabled = not isComplete
-  ;
-  (self._countLabel):SetText(data[2] .. "")
-  local cfg = (Cfg.cfg_item)[data[1]]
+  self._complete:SetActive(isComplete)
+  self._btnImg.enabled = not isComplete
+  self._countLabel:SetText(data[2] .. "")
+  local cfg = Cfg.cfg_item[data[1]]
   if not cfg then
-    return 
+    return
   end
-  ;
-  (self._iconLoader):LoadImage(cfg.Icon)
+  self._iconLoader:LoadImage(cfg.Icon)
   self._data = data
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarRewardItem.BtnOnClick = function(self)
-  -- function num : 0_2
+function UIPopStarRewardItem:BtnOnClick()
   if self._callback then
-    (self._callback)((self._data)[1], ((self._go).transform).position)
+    self._callback(self._data[1], self._go.transform.position)
   end
 end
-
-

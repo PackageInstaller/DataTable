@@ -1,34 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chat/ui_chat_quick_msg_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChatQuickMsgItem", UICustomWidget)
 UIChatQuickMsgItem = UIChatQuickMsgItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChatQuickMsgItem.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UIChatQuickMsgItem:OnShow(uiParam)
   self._msgLabel = self:GetUIComponent("UILocalizationText", "MsgInfo")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatQuickMsgItem.Refresh = function(self, quickMsgData, uiChatRecentFriendListPanel)
-  -- function num : 0_1
+function UIChatQuickMsgItem:Refresh(quickMsgData, uiChatRecentFriendListPanel)
   self._msg = quickMsgData.msg
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._msgLabel).text = self._msg
+  self._msgLabel.text = self._msg
   self._uiChatRecentFriendListPanel = uiChatRecentFriendListPanel
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatQuickMsgItem.SendOnClick = function(self, go)
-  -- function num : 0_2
-  (self._uiChatRecentFriendListPanel):SendQuickMessage(self._msg)
+function UIChatQuickMsgItem:SendOnClick(go)
+  self._uiChatRecentFriendListPanel:SendQuickMessage(self._msg)
 end
-
-

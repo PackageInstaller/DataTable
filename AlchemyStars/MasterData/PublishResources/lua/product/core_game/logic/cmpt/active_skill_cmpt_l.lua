@@ -1,143 +1,79 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/active_skill_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ActiveSkillComponent", Object)
 ActiveSkillComponent = ActiveSkillComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ActiveSkillComponent.Constructor = function(self)
-  -- function num : 0_0
+function ActiveSkillComponent:Constructor()
   self._activeSkillID = -1
   self._casterPetEntityID = -1
   self._powerfullRoundCount = {}
   self._previousReadyRoundCount = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillComponent.SetActiveSkillID = function(self, activeSkillID, casterEntityID)
-  -- function num : 0_1
+function ActiveSkillComponent:SetActiveSkillID(activeSkillID, casterEntityID)
   self._activeSkillID = activeSkillID
   self._casterPetEntityID = casterEntityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillComponent.GetActiveSkillID = function(self)
-  -- function num : 0_2
+function ActiveSkillComponent:GetActiveSkillID()
   return self._activeSkillID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillComponent.GetActiveSkillCasterEntityID = function(self)
-  -- function num : 0_3
+function ActiveSkillComponent:GetActiveSkillCasterEntityID()
   return self._casterPetEntityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillComponent.AddPowerfullRoundCount = function(self, entityId, cnt)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._powerfullRoundCount)[entityId] = ((self._powerfullRoundCount)[entityId] or 0) + cnt
+function ActiveSkillComponent:AddPowerfullRoundCount(entityId, cnt)
+  self._powerfullRoundCount[entityId] = (self._powerfullRoundCount[entityId] or 0) + cnt
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillComponent.ClearPowerfullRoundCount = function(self, entityId)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._powerfullRoundCount)[entityId] = 0
+function ActiveSkillComponent:ClearPowerfullRoundCount(entityId)
+  self._powerfullRoundCount[entityId] = 0
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillComponent.GetPowerfullRoundCount = function(self, entityId)
-  -- function num : 0_6
-  return (self._powerfullRoundCount)[entityId] or 0
+function ActiveSkillComponent:GetPowerfullRoundCount(entityId)
+  return self._powerfullRoundCount[entityId] or 0
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillComponent.AddPreviousReadyRoundCount = function(self, entityId, cnt)
-  -- function num : 0_7
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._previousReadyRoundCount)[entityId] = ((self._previousReadyRoundCount)[entityId] or 0) + cnt
+function ActiveSkillComponent:AddPreviousReadyRoundCount(entityId, cnt)
+  self._previousReadyRoundCount[entityId] = (self._previousReadyRoundCount[entityId] or 0) + cnt
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillComponent.ClearPreviousReadyRoundCount = function(self, entityId)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._previousReadyRoundCount)[entityId] = 0
+function ActiveSkillComponent:ClearPreviousReadyRoundCount(entityId)
+  self._previousReadyRoundCount[entityId] = 0
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillComponent.GetPreviousReadyRoundCount = function(self, entityId)
-  -- function num : 0_9
-  return (self._previousReadyRoundCount)[entityId] or 0
+function ActiveSkillComponent:GetPreviousReadyRoundCount(entityId)
+  return self._previousReadyRoundCount[entityId] or 0
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillComponent.ResetActiveSkillCmpt = function(self)
-  -- function num : 0_10
+function ActiveSkillComponent:ResetActiveSkillCmpt()
   self._activeSkillID = -1
   self._casterPetEntityID = -1
   self._powerfullRoundCount = {}
   self._previousReadyRoundCount = {}
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ActiveSkill = function(self)
-  -- function num : 0_11
-  return self:GetComponent((self.WEComponentsEnum).ActiveSkill)
+function Entity:ActiveSkill()
+  return self:GetComponent(self.WEComponentsEnum.ActiveSkill)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasActiveSkill = function(self)
-  -- function num : 0_12
-  return self:HasComponent((self.WEComponentsEnum).ActiveSkill)
+function Entity:HasActiveSkill()
+  return self:HasComponent(self.WEComponentsEnum.ActiveSkill)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddActiveSkill = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ActiveSkill
+function Entity:AddActiveSkill()
+  local index = self.WEComponentsEnum.ActiveSkill
   local component = ActiveSkillComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceActiveSkill = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ActiveSkill
+function Entity:ReplaceActiveSkill()
+  local index = self.WEComponentsEnum.ActiveSkill
   local component = ActiveSkillComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveActiveSkill = function(self)
-  -- function num : 0_15
+function Entity:RemoveActiveSkill()
   if self:HasActiveSkill() then
-    self:RemoveComponent((self.WEComponentsEnum).ActiveSkill)
+    self:RemoveComponent(self.WEComponentsEnum.ActiveSkill)
   end
 end
-
-

@@ -1,52 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_use_lowest_team_member_defence.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSetUseLowestTeamMemberDefence", BuffLogicBase)
 BuffLogicSetUseLowestTeamMemberDefence = BuffLogicSetUseLowestTeamMemberDefence
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetUseLowestTeamMemberDefence.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetUseLowestTeamMemberDefence:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetUseLowestTeamMemberDefence.DoLogic = function(self)
-  -- function num : 0_1
-  local holderEntity = (self._buffInstance):Entity()
+function BuffLogicSetUseLowestTeamMemberDefence:DoLogic()
+  local holderEntity = self._buffInstance:Entity()
   local attributeCmpt = holderEntity:Attributes()
   if attributeCmpt then
     attributeCmpt:SetSimpleAttribute("UseLowestTeamMemberDefence", 1)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetUseLowestTeamMemberDefence.DoOverlap = function(self, logicParam)
-  -- function num : 0_2
+function BuffLogicSetUseLowestTeamMemberDefence:DoOverlap(logicParam)
   self:DoLogic()
 end
 
 _class("BuffLogicResetUseLowestTeamMemberDefence", BuffLogicBase)
 BuffLogicResetUseLowestTeamMemberDefence = BuffLogicResetUseLowestTeamMemberDefence
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetUseLowestTeamMemberDefence.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicResetUseLowestTeamMemberDefence:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetUseLowestTeamMemberDefence.DoLogic = function(self)
-  -- function num : 0_4
-  local holderEntity = (self._buffInstance):Entity()
+function BuffLogicResetUseLowestTeamMemberDefence:DoLogic()
+  local holderEntity = self._buffInstance:Entity()
   local attributeCmpt = holderEntity:Attributes()
   if attributeCmpt then
     attributeCmpt:SetSimpleAttribute("UseLowestTeamMemberDefence", 0)
   end
 end
-
-

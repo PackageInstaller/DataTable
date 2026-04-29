@@ -1,52 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/random_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("random")
 _class("RandomServiceRender", BaseService)
 RandomServiceRender = RandomServiceRender
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-RandomServiceRender.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
-  self._renderRandor = lcg((world.BW_WorldInfo).world_seed)
+function RandomServiceRender:Constructor(world)
+  self._renderRandor = lcg(world.BW_WorldInfo.world_seed)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RandomServiceRender.RenderRand = function(self, m, n)
-  -- function num : 0_1
+function RandomServiceRender:RenderRand(m, n)
   local randomNum = -1
   if m == nil and n == nil then
-    randomNum = (self._renderRandor):random()
+    randomNum = self._renderRandor:random()
   else
-    randomNum = self:Rounding((self._renderRandor):random(m, n))
+    randomNum = self:Rounding(self._renderRandor:random(m, n))
   end
   return randomNum
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RandomServiceRender.Rounding = function(self, value)
-  -- function num : 0_2 , upvalues : _ENV
-  local f = (math.floor)(value)
+function RandomServiceRender:Rounding(value)
+  local f = math.floor(value)
   if f == value then
     return f
   else
-    return (math.floor)(value + 0.5)
+    return math.floor(value + 0.5)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RandomServiceRender.Shuffle = function(self, t)
-  -- function num : 0_3
+function RandomServiceRender:Shuffle(t)
   for i = 1, #t do
     local n = self:RenderRand(1, #t)
-    t[i] = t[n]
+    t[i], t[n] = t[n], t[i]
   end
   return t
 end
-
-

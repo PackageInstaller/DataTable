@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_pet_creation_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataPetCreationResult", Object)
 DataPetCreationResult = DataPetCreationResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataPetCreationResult.Constructor = function(self)
-  -- function num : 0_0
+function DataPetCreationResult:Constructor()
   self._resPath = nil
   self._logicEntityID = -1
   self._templateID = -1
@@ -20,124 +13,71 @@ DataPetCreationResult.Constructor = function(self)
   self._maxHp = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPetCreationResult.GetPetCreationGridPos = function(self)
-  -- function num : 0_1
+function DataPetCreationResult:GetPetCreationGridPos()
   return self._gridPos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPetCreationResult.SetPetCreationGridPos = function(self, pos)
-  -- function num : 0_2
+function DataPetCreationResult:SetPetCreationGridPos(pos)
   self._gridPos = pos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPetCreationResult.GetPetCreationFirstElementType = function(self)
-  -- function num : 0_3
+function DataPetCreationResult:GetPetCreationFirstElementType()
   return self._firstElementType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPetCreationResult.GetPetCreationSecondElementType = function(self)
-  -- function num : 0_4
+function DataPetCreationResult:GetPetCreationSecondElementType()
   return self._secondElementType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPetCreationResult.SetPetCreationElementType = function(self, firstType, secondType)
-  -- function num : 0_5
+function DataPetCreationResult:SetPetCreationElementType(firstType, secondType)
   self._firstElementType = firstType
   self._secondElementType = secondType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPetCreationResult.GetPetCreationTemplateID = function(self)
-  -- function num : 0_6
+function DataPetCreationResult:GetPetCreationTemplateID()
   return self._templateID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPetCreationResult.SetPetCreationTemplateID = function(self, id)
-  -- function num : 0_7
+function DataPetCreationResult:SetPetCreationTemplateID(id)
   self._templateID = id
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPetCreationResult.GetPetCreationPstID = function(self)
-  -- function num : 0_8
+function DataPetCreationResult:GetPetCreationPstID()
   return self._pstID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPetCreationResult.SetPetCreationPstID = function(self, id)
-  -- function num : 0_9
+function DataPetCreationResult:SetPetCreationPstID(id)
   self._pstID = id
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPetCreationResult.GetPetCreationLogicEntityID = function(self)
-  -- function num : 0_10
+function DataPetCreationResult:GetPetCreationLogicEntityID()
   return self._logicEntityID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPetCreationResult.SetPetCreationLogicEntityID = function(self, id)
-  -- function num : 0_11
+function DataPetCreationResult:SetPetCreationLogicEntityID(id)
   self._logicEntityID = id
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPetCreationResult.SetPetCreationRes = function(self, resPath)
-  -- function num : 0_12
+function DataPetCreationResult:SetPetCreationRes(resPath)
   self._resPath = resPath
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPetCreationResult.GetPetCreationRes = function(self)
-  -- function num : 0_13
+function DataPetCreationResult:GetPetCreationRes()
   return self._resPath
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPetCreationResult.SetPetCreation_CurHp = function(self, hp)
-  -- function num : 0_14
+function DataPetCreationResult:SetPetCreation_CurHp(hp)
   self._curHp = hp
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPetCreationResult.GetPetCreation_CurHp = function(self)
-  -- function num : 0_15
+function DataPetCreationResult:GetPetCreation_CurHp()
   return self._curHp
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPetCreationResult.SetPetCreation_MaxHp = function(self, hp)
-  -- function num : 0_16
+function DataPetCreationResult:SetPetCreation_MaxHp(hp)
   self._maxHp = hp
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPetCreationResult.GetPetCreation_MaxHp = function(self)
-  -- function num : 0_17
+function DataPetCreationResult:GetPetCreation_MaxHp()
   return self._maxHp
 end
-
-

@@ -1,24 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21_crisis_contract/shop/ui_activity_n21cc_shop_boss_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN21CCShopBossData", Object)
 UIActivityN21CCShopBossData = UIActivityN21CCShopBossData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN21CCShopBossData.Constructor = function(self, progressComponent, progressComponentInfo)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN21CCShopBossData:Constructor(progressComponent, progressComponentInfo)
   self._progressComponent = progressComponent
   self._rewardDatas = {}
   local progressRewards = progressComponentInfo.m_progress_rewards
   local currentProgress = progressComponentInfo.m_current_progress
   local receivedProgress = progressComponentInfo.m_received_progress
-  for k,v in pairs(progressRewards) do
+  for k, v in pairs(progressRewards) do
     local progress = k
     local rewards = v
     local status = UIActivityN21CCShopRewardStatus.UnComplete
-    if progress <= currentProgress then
+    if currentProgress >= progress then
       status = UIActivityN21CCShopRewardStatus.UnGet
       for i = 1, #receivedProgress do
         if progress == receivedProgress[i] then
@@ -27,23 +20,14 @@ UIActivityN21CCShopBossData.Constructor = function(self, progressComponent, prog
         end
       end
     end
-    do
-      do
-        -- DECOMPILER ERROR at PC40: Confused about usage of register: R14 in 'UnsetPending'
-
-        ;
-        (self._rewardDatas)[#self._rewardDatas + 1] = UIActivityN21CCShopItemData:New(progress, status, rewards, self._progressComponent)
-        -- DECOMPILER ERROR at PC41: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    self._rewardDatas[#self._rewardDatas + 1] = UIActivityN21CCShopItemData:New(progress, status, rewards, self._progressComponent)
   end
   self._totalScore = currentProgress
   self._isOpen = progressComponent:ComponentIsOpen()
   local componentId = progressComponent:GetComponentCfgId()
-  local cfg = (Cfg.cfg_activity_person_progress_client)[componentId]
+  local cfg = Cfg.cfg_activity_person_progress_client[componentId]
   if cfg then
-    self._tabName = (StringTable.Get)(cfg.Name)
+    self._tabName = StringTable.Get(cfg.Name)
     self._tabIcon = cfg.SmallIcon
     self._topIcon = cfg.BigIcon
     self._missionIds = cfg.MissionIds
@@ -51,48 +35,30 @@ UIActivityN21CCShopBossData.Constructor = function(self, progressComponent, prog
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopBossData.GetProgressComponent = function(self)
-  -- function num : 0_1
+function UIActivityN21CCShopBossData:GetProgressComponent()
   return self._progressComponent
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopBossData.Refresh = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (table.sort)(self._rewardDatas, function(a, b)
-    -- function num : 0_2_0
-    do return a:GetPriority() < b:GetPriority() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+function UIActivityN21CCShopBossData:Refresh()
+  table.sort(self._rewardDatas, function(a, b)
+    return a:GetPriority() < b:GetPriority()
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopBossData.GetRewardDatas = function(self)
-  -- function num : 0_3
+function UIActivityN21CCShopBossData:GetRewardDatas()
   return self._rewardDatas
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopBossData.GetTotalScore = function(self)
-  -- function num : 0_4
+function UIActivityN21CCShopBossData:GetTotalScore()
   return self._totalScore
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopBossData.HasCanGetReward = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN21CCShopBossData:HasCanGetReward()
   if not self:IsOpen() then
     return false
   end
   for i = 1, #self._rewardDatas do
-    local rewardData = (self._rewardDatas)[i]
+    local rewardData = self._rewardDatas[i]
     if rewardData:GetStatus() == UIActivityN21CCShopRewardStatus.UnGet then
       return true
     end
@@ -100,59 +66,39 @@ UIActivityN21CCShopBossData.HasCanGetReward = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopBossData.GetAllRewards = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityN21CCShopBossData:GetAllRewards()
   for i = 1, #self._rewardDatas do
-    local rewardData = (self._rewardDatas)[i]
+    local rewardData = self._rewardDatas[i]
     if rewardData:GetStatus() == UIActivityN21CCShopRewardStatus.UnGet then
       rewardData:SetStatus(UIActivityN21CCShopRewardStatus.HasGet)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopBossData.IsOpen = function(self)
-  -- function num : 0_7
+function UIActivityN21CCShopBossData:IsOpen()
   return self._isOpen
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopBossData.IsMission = function(self, missionId)
-  -- function num : 0_8
+function UIActivityN21CCShopBossData:IsMission(missionId)
   if not self._missionIds then
     return false
   end
   for i = 1, #self._missionIds do
-    if missionId == (self._missionIds)[i] then
+    if missionId == self._missionIds[i] then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopBossData.GetBossName = function(self)
-  -- function num : 0_9
+function UIActivityN21CCShopBossData:GetBossName()
   return self._tabName
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopBossData.GetBossSmallIcon = function(self)
-  -- function num : 0_10
+function UIActivityN21CCShopBossData:GetBossSmallIcon()
   return self._tabIcon
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopBossData.GetBossBigIcon = function(self)
-  -- function num : 0_11
+function UIActivityN21CCShopBossData:GetBossBigIcon()
   return self._topIcon
 end
-
-

@@ -1,39 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/optimize/coregame_perftest_loading_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CoreGamePerformanceTestLoadingHandler", LoadingHandler)
 CoreGamePerformanceTestLoadingHandler = CoreGamePerformanceTestLoadingHandler
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CoreGamePerformanceTestLoadingHandler.PreLoadBeforeLoadLevel = function(self, TT)
-  -- function num : 0_0
+function CoreGamePerformanceTestLoadingHandler:PreLoadBeforeLoadLevel(TT)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CoreGamePerformanceTestLoadingHandler.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  (LoadingHandler.PreLoadAfterLoadLevel)(self, TT, ...)
+function CoreGamePerformanceTestLoadingHandler:PreLoadAfterLoadLevel(TT, ...)
+  LoadingHandler.PreLoadAfterLoadLevel(self, TT, ...)
   self._levelID = 1000105
-  local levelRawData = (Cfg.cfg_level)[self._levelID]
-  local themeRawData = (Cfg.cfg_theme)[levelRawData.Theme]
+  local levelRawData = Cfg.cfg_level[self._levelID]
+  local themeRawData = Cfg.cfg_theme[levelRawData.Theme]
   local levelResPath = themeRawData.SceneResPath
-  self._sceneGO = (((GameGlobal:GetInstance()).gameLogic):LoadScene(TT, levelResPath)).Obj
+  self._sceneGO = GameGlobal:GetInstance().gameLogic:LoadScene(TT, levelResPath).Obj
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CoreGamePerformanceTestLoadingHandler.OnLoadingFinish = function(self, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal:GetInstance()):GetCollector("PerformanceTestLoading")):Sample("CoreGamePerformanceTestLoadingHandler:OnLoadingFinish() begin")
-  ;
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIPerformanceTest)
-  ;
-  (GameGlobal:GetInstance()):EnterPerformanceTest(self._levelID, self._sceneGO)
-  ;
-  ((GameGlobal:GetInstance()):GetCollector("PerformanceTestLoading")):Sample("CoreGamePerformanceTestLoadingHandler:OnLoadingFinish()")
+function CoreGamePerformanceTestLoadingHandler:OnLoadingFinish(...)
+  GameGlobal:GetInstance():GetCollector("PerformanceTestLoading"):Sample("CoreGamePerformanceTestLoadingHandler:OnLoadingFinish() begin")
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIPerformanceTest)
+  GameGlobal:GetInstance():EnterPerformanceTest(self._levelID, self._sceneGO)
+  GameGlobal:GetInstance():GetCollector("PerformanceTestLoading"):Sample("CoreGamePerformanceTestLoadingHandler:OnLoadingFinish()")
 end
-
-

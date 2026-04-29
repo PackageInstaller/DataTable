@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_detach_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectDetachMonsterParam", SkillEffectParamBase)
 SkillEffectDetachMonsterParam = SkillEffectDetachMonsterParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectDetachMonsterParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectDetachMonsterParam:Constructor(t)
   self._element = t.element
   self._removeElite = t.removeElite or false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDetachMonsterParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectDetachMonsterParam:GetEffectType()
   return SkillEffectType.DetachMonster
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDetachMonsterParam.GetElement = function(self)
-  -- function num : 0_2
+function SkillEffectDetachMonsterParam:GetElement()
   return self._element
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDetachMonsterParam.IsRemoveElite = function(self)
-  -- function num : 0_3
+function SkillEffectDetachMonsterParam:IsRemoveElite()
   return self._removeElite
 end
-
-

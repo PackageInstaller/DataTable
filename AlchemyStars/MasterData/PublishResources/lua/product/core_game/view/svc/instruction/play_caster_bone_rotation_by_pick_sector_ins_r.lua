@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_bone_rotation_by_pick_sector_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterBoneRotationByPickSectorInstruction", BaseInstruction)
 PlayCasterBoneRotationByPickSectorInstruction = PlayCasterBoneRotationByPickSectorInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterBoneRotationByPickSectorInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterBoneRotationByPickSectorInstruction:Constructor(paramList)
   self._bone = paramList.bone
   local absAngle = paramList.absAngle
   local absAangleNum = 45
@@ -21,83 +14,64 @@ PlayCasterBoneRotationByPickSectorInstruction.Constructor = function(self, param
   self._duration = strDuration and tonumber(strDuration) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterBoneRotationByPickSectorInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterBoneRotationByPickSectorInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
   local tfBone = self:GetTransform(casterEntity)
   if not tfBone then
-    (Log.fatal)("### PlayCasterBoneRotationByPickSectorInstruction cant find bone", self._bone)
+    Log.fatal("### PlayCasterBoneRotationByPickSectorInstruction cant find bone", self._bone)
   end
   local finalRotateAngle = 0
   local renderPickUpComponent = casterEntity:RenderPickUpComponent()
   local scopeGridList = renderPickUpComponent:GetAllValidPickUpGridPos()
   local curPos = casterEntity:GetGridPosition()
-  if scopeGridList and #scopeGridList >= 2 then
+  if scopeGridList and 2 <= #scopeGridList then
     local mainDirPos = scopeGridList[1]
     local expandDirPos = scopeGridList[2]
     local mainDir = mainDirPos - curPos
     local expandDir = expandDirPos - mainDirPos
     local mainDirVec3 = Vector3(mainDir.x, mainDir.y, 0)
     local expandDirVec3 = Vector3(expandDir.x, expandDir.y, 0)
-    local crossRes = (Vector3.Cross)(mainDirVec3, expandDirVec3)
+    local crossRes = Vector3.Cross(mainDirVec3, expandDirVec3)
     local angleDirFlag = 0
-    if crossRes.z > 0 then
+    if 0 < crossRes.z then
       angleDirFlag = -1
-    else
-      if crossRes.z < 0 then
-        angleDirFlag = 1
-      end
+    elseif 0 > crossRes.z then
+      angleDirFlag = 1
     end
     finalRotateAngle = self._absAngleNum * angleDirFlag
   end
-  do
-    self._rotation = (Quaternion.Euler)(0, finalRotateAngle, 0)
-    self:DORotate(TT, casterEntity, world)
-  end
+  self._rotation = Quaternion.Euler(0, finalRotateAngle, 0)
+  self:DORotate(TT, casterEntity, world)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterBoneRotationByPickSectorInstruction.GetTransform = function(self, e)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayCasterBoneRotationByPickSectorInstruction:GetTransform(e)
   local cView = e:View()
-  local tran = (cView.ViewWrapper).Transform
-  local tfBone = (GameObjectHelper.FindChild)(tran, self._bone)
+  local tran = cView.ViewWrapper.Transform
+  local tfBone = GameObjectHelper.FindChild(tran, self._bone)
   return tfBone
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterBoneRotationByPickSectorInstruction.DORotate = function(self, TT, e, world)
-  -- function num : 0_3 , upvalues : _ENV
-  local skillEffectResultContainer = (e:SkillRoutine()):GetResultContainer()
+function PlayCasterBoneRotationByPickSectorInstruction:DORotate(TT, e, world)
+  local skillEffectResultContainer = e:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.RotateByPickSector)
   local endRotation = Quaternion.identity
   if resultArray then
-    do
-      for i,result in ipairs(resultArray) do
-        local rotateAngle = result:GetRotateAngle()
-        do
-          local dirNew = result:GetDirNew()
-          local rotQua = (Quaternion.Euler)(0, rotateAngle, 0)
-          local tfBone = self:GetTransform(e)
-          endRotation = rotQua * tfBone.localRotation
-          local oriRotation = tfBone.localRotation
-          local tweener = tfBone:DOLocalRotateQuaternion(endRotation, self._duration * 0.001)
-          tweener:OnComplete(function()
-    -- function num : 0_3_0 , upvalues : tfBone, e, oriRotation
-    local finalDir = tfBone.forward
-    e:SetDirection(finalDir)
-    tfBone.localRotation = oriRotation
-  end
-)
-        end
-      end
+    for i, result in ipairs(resultArray) do
+      local rotateAngle = result:GetRotateAngle()
+      local dirNew = result:GetDirNew()
+      local rotQua = Quaternion.Euler(0, rotateAngle, 0)
+      local tfBone = self:GetTransform(e)
+      endRotation = rotQua * tfBone.localRotation
+      local oriRotation = tfBone.localRotation
+      local tweener = tfBone:DOLocalRotateQuaternion(endRotation, self._duration * 0.001)
+      tweener:OnComplete(function()
+        local finalDir = tfBone.forward
+        e:SetDirection(finalDir)
+        tfBone.localRotation = oriRotation
+      end)
     end
-    if self._duration > 0 then
+    if 0 < self._duration then
       YIELD(TT, self._duration)
     end
   else
@@ -106,16 +80,12 @@ PlayCasterBoneRotationByPickSectorInstruction.DORotate = function(self, TT, e, w
     local oriRotation = tfBone.localRotation
     local tweener = tfBone:DOLocalRotateQuaternion(endRotation, self._duration * 0.001)
     tweener:OnComplete(function()
-    -- function num : 0_3_1 , upvalues : tfBone, e, oriRotation
-    local finalDir = tfBone.forward
-    e:SetDirection(finalDir)
-    tfBone.localRotation = oriRotation
-  end
-)
-    if self._duration > 0 then
+      local finalDir = tfBone.forward
+      e:SetDirection(finalDir)
+      tfBone.localRotation = oriRotation
+    end)
+    if 0 < self._duration then
       YIELD(TT, self._duration)
     end
   end
 end
-
-

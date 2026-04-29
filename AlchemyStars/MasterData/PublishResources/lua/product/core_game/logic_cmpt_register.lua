@@ -1,9 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic_cmpt_register.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("enum_lookup")
-LogicComponentsRegister = ComponentsLookup:New({"LogicStartIndex", "CommandReceiver", "CommandSender", "Attributes", "Board", "Buff", "Trap", "AI", "CrazyMode", "MonsterEscape", "SkillContext", "SkillHolder", "Phantom", "ActiveSkill", "FeatureSkill", "DimensionFlag", "ScopeCenter", "LogicChainPath", "LogicRoundTeam", "LogicPickUp", "LogicChessPath", "SkillPetAttackData", "AffixData", "CurseTower", "DamageStatistics", "LogicFeature", "SyncMoveWithTeam", "TeleportRecord", "BoardMulti", "LogicTrapWall", "AuraRange", "LogicChainDamage", "ShareSkillResult", "Talent", "MoveScopeRecord", "EquipRefine", "BoardSplice", "PopStarLogic", "BoardPush", "UnscaledCountDownLogic", "Fetters", "LogicAutoBead", "SkillAutoBeadAttackData", "MonsterWeak", "ColorPalette", "TotalLogicComponents"})
-LogicUniqueComponentsRegister = ComponentsLookup:New({"LogicUniqueStartIndex", "GameFSM", "BattleStat", "BattleFlags", "BattleDamageStatistics", "SeasonMazeLogic", "EmblemLogic", "TotalLogicUniqueComponents"})
-
+LogicComponentsRegister = ComponentsLookup:New({
+  "LogicStartIndex",
+  "CommandReceiver",
+  "CommandSender",
+  "Attributes",
+  "Board",
+  "Buff",
+  "Trap",
+  "AI",
+  "CrazyMode",
+  "MonsterEscape",
+  "SkillContext",
+  "SkillHolder",
+  "Phantom",
+  "ActiveSkill",
+  "FeatureSkill",
+  "DimensionFlag",
+  "ScopeCenter",
+  "LogicChainPath",
+  "LogicRoundTeam",
+  "LogicPickUp",
+  "LogicChessPath",
+  "SkillPetAttackData",
+  "AffixData",
+  "CurseTower",
+  "DamageStatistics",
+  "LogicFeature",
+  "SyncMoveWithTeam",
+  "TeleportRecord",
+  "BoardMulti",
+  "LogicTrapWall",
+  "AuraRange",
+  "LogicChainDamage",
+  "ShareSkillResult",
+  "Talent",
+  "MoveScopeRecord",
+  "EquipRefine",
+  "BoardSplice",
+  "PopStarLogic",
+  "BoardPush",
+  "UnscaledCountDownLogic",
+  "Fetters",
+  "LogicAutoBead",
+  "SkillAutoBeadAttackData",
+  "MonsterWeak",
+  "ColorPalette",
+  "TotalLogicComponents"
+})
+LogicUniqueComponentsRegister = ComponentsLookup:New({
+  "LogicUniqueStartIndex",
+  "GameFSM",
+  "BattleStat",
+  "BattleFlags",
+  "BattleDamageStatistics",
+  "SeasonMazeLogic",
+  "EmblemLogic",
+  "TotalLogicUniqueComponents"
+})

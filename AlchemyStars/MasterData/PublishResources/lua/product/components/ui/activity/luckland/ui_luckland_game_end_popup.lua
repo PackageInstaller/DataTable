@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/ui_luckland_game_end_popup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandGameEndPopUp", UIController)
 UILuckLandGameEndPopUp = UILuckLandGameEndPopUp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandGameEndPopUp.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UILuckLandGameEndPopUp:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandGameEndPopUp.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UILuckLandGameEndPopUp:OnShow(uiParams)
   self:InitWidget()
   self.restartCB = uiParams[1]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandGameEndPopUp.InitWidget = function(self)
-  -- function num : 0_2
+function UILuckLandGameEndPopUp:InitWidget()
   self._animObj = self:GetGameObject("_anim")
   self.titleText = self:GetUIComponent("UILocalizationText", "TitleText")
   self.tipsText = self:GetUIComponent("UILocalizationText", "TipsText")
@@ -32,50 +19,28 @@ UILuckLandGameEndPopUp.InitWidget = function(self)
   self._anim = self:GetUIComponent("Animation", "_anim")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandGameEndPopUp.BgOnClick = function(self, go)
-  -- function num : 0_3
+function UILuckLandGameEndPopUp:BgOnClick(go)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandGameEndPopUp.ReBattleBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):CloseDialog("UILuckLandMainGameController")
-  ;
-  ((GameGlobal.UIStateManager)()):CloseDialog("UILuckLandLevelInfo")
+function UILuckLandGameEndPopUp:ReBattleBtnOnClick(go)
+  GameGlobal.UIStateManager():CloseDialog("UILuckLandMainGameController")
+  GameGlobal.UIStateManager():CloseDialog("UILuckLandLevelInfo")
   self:Lock("UILuckLandGameEndPopUp:Restart")
-  ;
-  ((GameGlobal.Timer)()):AddEvent(33, function()
-    -- function num : 0_4_0 , upvalues : self, _ENV
+  GameGlobal.Timer():AddEvent(33, function()
     self:UnLock("UILuckLandGameEndPopUp:Restart")
-    ;
-    ((LuckLandData:GetInstance()):CurCardDatas()):Reset(false)
-    ;
-    ((LuckLandData:GetInstance()):CurBuildingDatas()):Reset()
-    local id = (LuckLandData:GetInstance()):GetCurMissionID()
+    LuckLandData:GetInstance():CurCardDatas():Reset(false)
+    LuckLandData:GetInstance():CurBuildingDatas():Reset()
+    local id = LuckLandData:GetInstance():GetCurMissionID()
     self:ShowDialog("UILuckLandMainGameController", id)
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandGameEndPopUp.EndGameBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):CloseDialog("UILuckLandMainGameController")
-  ;
-  ((GameGlobal.UIStateManager)()):CloseDialog("UILuckLandLevelInfo")
-  ;
-  (self._anim):Play("uieff_UILuckLandGameEndPopUp_in")
-  ;
-  ((GameGlobal.Timer)()):AddEvent(390, function()
-    -- function num : 0_5_0 , upvalues : self
+function UILuckLandGameEndPopUp:EndGameBtnOnClick(go)
+  GameGlobal.UIStateManager():CloseDialog("UILuckLandMainGameController")
+  GameGlobal.UIStateManager():CloseDialog("UILuckLandLevelInfo")
+  self._anim:Play("uieff_UILuckLandGameEndPopUp_in")
+  GameGlobal.Timer():AddEvent(390, function()
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

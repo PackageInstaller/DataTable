@@ -1,49 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity_review/helper/ui_review_activity_n9.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIReviewActivityN9", UIReviewActivityBase)
 UIReviewActivityN9 = UIReviewActivityN9
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIReviewActivityN9.Constructor = function(self, id, sample)
-  -- function num : 0_0
+function UIReviewActivityN9:Constructor(id, sample)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN9.AssetPackageID = function(self)
-  -- function num : 0_1
+function UIReviewActivityN9:AssetPackageID()
   return 9
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN9.ActivityOnOpen = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local controller = ((GameGlobal.UIStateManager)()):GetController("UIActivityReview")
+function UIReviewActivityN9:ActivityOnOpen()
+  local controller = GameGlobal.UIStateManager():GetController("UIActivityReview")
   local rt = controller:GetShotImage()
-  local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, rt, cache_rt
+  local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+  GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cache_rt)
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIActivityN9MainController_Review, cache_rt)
-  end
-)
+    UnityEngine.Graphics.Blit(rt, cache_rt)
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIActivityN9MainController_Review, cache_rt)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN9.GetBattleExitParam = function(self, comID, missionCreateInfo, isWin, battleresultRt)
-  -- function num : 0_3 , upvalues : _ENV
+function UIReviewActivityN9:GetBattleExitParam(comID, missionCreateInfo, isWin, battleresultRt)
   if comID == ECampaignReviewN9ComponentID.ECAMPAIGN_REVIEW_ReviewN9_LINE_MISSION then
     return UIStateType.UIActivityN9LineMissionController_Review, nil
   end
 end
-
-

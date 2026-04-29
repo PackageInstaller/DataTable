@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/logic_feature_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("match_message")
 _class("LogicFeatureComponent", Object)
 LogicFeatureComponent = LogicFeatureComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LogicFeatureComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function LogicFeatureComponent:Constructor()
   self._featureDataDic = {}
   self._dayNightData = {}
   self._sanModifyTimes = 0
@@ -45,256 +38,145 @@ LogicFeatureComponent.Constructor = function(self)
   self._tetrisLock = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.AddFeatureData = function(self, featureType, featureData)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._featureDataDic)[featureType] = featureData
+function LogicFeatureComponent:AddFeatureData(featureType, featureData)
+  self._featureDataDic[featureType] = featureData
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetFeatureData = function(self, featureType)
-  -- function num : 0_2
-  return (self._featureDataDic)[featureType]
+function LogicFeatureComponent:GetFeatureData(featureType)
+  return self._featureDataDic[featureType]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetFeatureTypeList = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function LogicFeatureComponent:GetFeatureTypeList()
   local typeList = {}
-  for k,v in pairs(self._featureDataDic) do
-    (table.insert)(typeList, k)
+  for k, v in pairs(self._featureDataDic) do
+    table.insert(typeList, k)
   end
   return typeList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.RemoveFeatureData = function(self, featureType)
-  -- function num : 0_4 , upvalues : _ENV
-  for k,v in pairs(self._featureDataDic) do
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R7 in 'UnsetPending'
-
+function LogicFeatureComponent:RemoveFeatureData(featureType)
+  for k, v in pairs(self._featureDataDic) do
     if k == featureType then
-      (self._featureDataDic)[featureType] = nil
+      self._featureDataDic[featureType] = nil
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.RecordModifySanTimes = function(self)
-  -- function num : 0_5
+function LogicFeatureComponent:RecordModifySanTimes()
   self._sanModifyTimes = self._sanModifyTimes + 1
   return self._sanModifyTimes
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetModifySanTimes = function(self)
-  -- function num : 0_6
+function LogicFeatureComponent:GetModifySanTimes()
   return self._sanModifyTimes
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetDayNightData = function(self, state, restRound)
-  -- function num : 0_7
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._dayNightData).state = state
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._dayNightData).restRound = restRound
+function LogicFeatureComponent:SetDayNightData(state, restRound)
+  self._dayNightData.state = state
+  self._dayNightData.restRound = restRound
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetDayNightData = function(self)
-  -- function num : 0_8
-  return (self._dayNightData).state, (self._dayNightData).restRound
+function LogicFeatureComponent:GetDayNightData()
+  return self._dayNightData.state, self._dayNightData.restRound
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetDayNightIgnoreFirstRoundCheck = function(self, bIgnore)
-  -- function num : 0_9
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._dayNightData).ignoreFirstRoundCheck = bIgnore
+function LogicFeatureComponent:SetDayNightIgnoreFirstRoundCheck(bIgnore)
+  self._dayNightData.ignoreFirstRoundCheck = bIgnore
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetDayNightIgnoreFirstRoundCheck = function(self)
-  -- function num : 0_10
-  return (self._dayNightData).ignoreFirstRoundCheck
+function LogicFeatureComponent:GetDayNightIgnoreFirstRoundCheck()
+  return self._dayNightData.ignoreFirstRoundCheck
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetPersonaPetCount = function(self, petCount)
-  -- function num : 0_11
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._personaInfo).petCount = petCount
+function LogicFeatureComponent:SetPersonaPetCount(petCount)
+  self._personaInfo.petCount = petCount
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetPersonaPetCount = function(self)
-  -- function num : 0_12
-  return (self._personaInfo).petCount
+function LogicFeatureComponent:GetPersonaPetCount()
+  return self._personaInfo.petCount
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetCardSkillDic = function(self, skillDic)
-  -- function num : 0_13
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._cardInfo).skillDic = skillDic
+function LogicFeatureComponent:SetCardSkillDic(skillDic)
+  self._cardInfo.skillDic = skillDic
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetCardSkillDic = function(self)
-  -- function num : 0_14
-  return (self._cardInfo).SkillDic
+function LogicFeatureComponent:GetCardSkillDic()
+  return self._cardInfo.SkillDic
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetCardSkillID = function(self, index)
-  -- function num : 0_15
-  return ((self._cardInfo).SkillDic)[index]
+function LogicFeatureComponent:GetCardSkillID(index)
+  return self._cardInfo.SkillDic[index]
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.ClearCards = function(self)
-  -- function num : 0_16
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._cardInfo).Cards = {}
+function LogicFeatureComponent:ClearCards()
+  self._cardInfo.Cards = {}
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetCardMax = function(self, maxCount)
-  -- function num : 0_17
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._cardInfo).MaxCount = maxCount or 0
+function LogicFeatureComponent:SetCardMax(maxCount)
+  self._cardInfo.MaxCount = maxCount or 0
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetCardMax = function(self)
-  -- function num : 0_18
-  return (self._cardInfo).MaxCount
+function LogicFeatureComponent:GetCardMax()
+  return self._cardInfo.MaxCount
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetCurCardCount = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function LogicFeatureComponent:GetCurCardCount()
   local total = 0
-  if (self._cardInfo).Cards then
-    for k,v in pairs((self._cardInfo).Cards) do
+  if self._cardInfo.Cards then
+    for k, v in pairs(self._cardInfo.Cards) do
       total = total + v
     end
   end
-  do
-    return total
-  end
+  return total
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.CanAddCard = function(self)
-  -- function num : 0_20
+function LogicFeatureComponent:CanAddCard()
   local canDraw = self:GetCurCardCount() < self:GetCardMax()
-  do return canDraw end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return canDraw
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.AddCard = function(self, cardType)
-  -- function num : 0_21
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._cardInfo).Cards then
-    (self._cardInfo).Cards = {}
+function LogicFeatureComponent:AddCard(cardType)
+  if not self._cardInfo.Cards then
+    self._cardInfo.Cards = {}
   end
   if not self:CanAddCard() then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not ((self._cardInfo).Cards)[cardType] then
-    ((self._cardInfo).Cards)[cardType] = 0
+  if not self._cardInfo.Cards[cardType] then
+    self._cardInfo.Cards[cardType] = 0
   end
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._cardInfo).Cards)[cardType] = ((self._cardInfo).Cards)[cardType] + 1
+  self._cardInfo.Cards[cardType] = self._cardInfo.Cards[cardType] + 1
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetCards = function(self)
-  -- function num : 0_22
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  if not (self._cardInfo).Cards then
-    (self._cardInfo).Cards = {}
+function LogicFeatureComponent:GetCards()
+  if not self._cardInfo.Cards then
+    self._cardInfo.Cards = {}
   end
-  return (self._cardInfo).Cards
+  return self._cardInfo.Cards
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.CostCard = function(self, useCards)
-  -- function num : 0_23 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._cardInfo).Cards then
-    (self._cardInfo).Cards = {}
+function LogicFeatureComponent:CostCard(useCards)
+  if not self._cardInfo.Cards then
+    self._cardInfo.Cards = {}
   end
-  if useCards and #useCards > 0 then
-    for i,v in ipairs(useCards) do
-      local old = ((self._cardInfo).Cards)[v]
+  if useCards and 0 < #useCards then
+    for i, v in ipairs(useCards) do
+      local old = self._cardInfo.Cards[v]
       local cur = old - 1
       if cur < 0 then
         cur = 0
       end
-      -- DECOMPILER ERROR at PC25: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      ((self._cardInfo).Cards)[v] = cur
+      self._cardInfo.Cards[v] = cur
     end
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.RecordDrawCard = function(self, teamEntityID, curRound, cardType)
-  -- function num : 0_24 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
+function LogicFeatureComponent:RecordDrawCard(teamEntityID, curRound, cardType)
   if self._drawCardRecord then
-    if not (self._drawCardRecord)[teamEntityID] then
-      (self._drawCardRecord)[teamEntityID] = {}
+    if not self._drawCardRecord[teamEntityID] then
+      self._drawCardRecord[teamEntityID] = {}
     end
-    local teamRecord = (self._drawCardRecord)[teamEntityID]
+    local teamRecord = self._drawCardRecord[teamEntityID]
     if not teamRecord[curRound] then
       teamRecord[curRound] = {}
     end
@@ -306,16 +188,17 @@ LogicFeatureComponent.RecordDrawCard = function(self, teamEntityID, curRound, ca
       weightIncreaseNum = featureData:GetWeightIncreaseNum()
     end
     local roundRecord = teamRecord[curRound]
-    ;
-    (table.insert)(roundRecord, cardType)
-    -- DECOMPILER ERROR at PC50: Confused about usage of register: R9 in 'UnsetPending'
-
+    table.insert(roundRecord, cardType)
     if self._drawCardWeight then
-      if not (self._drawCardWeight)[teamEntityID] then
-        (self._drawCardWeight)[teamEntityID] = {defaultWeightNum, defaultWeightNum, defaultWeightNum}
+      if not self._drawCardWeight[teamEntityID] then
+        self._drawCardWeight[teamEntityID] = {
+          defaultWeightNum,
+          defaultWeightNum,
+          defaultWeightNum
+        }
       end
-      local weightTb = (self._drawCardWeight)[teamEntityID]
-      for weightCard,weight in ipairs(weightTb) do
+      local weightTb = self._drawCardWeight[teamEntityID]
+      for weightCard, weight in ipairs(weightTb) do
         if cardType == weightCard then
           weightTb[weightCard] = defaultWeightNum
         else
@@ -326,15 +209,12 @@ LogicFeatureComponent.RecordDrawCard = function(self, teamEntityID, curRound, ca
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetDrawCardTimes = function(self, teamEntityID, round)
-  -- function num : 0_25 , upvalues : _ENV
+function LogicFeatureComponent:GetDrawCardTimes(teamEntityID, round)
   if not teamEntityID then
-    return 
+    return
   end
   if round then
-    local teamRecord = (self._drawCardRecord)[teamEntityID]
+    local teamRecord = self._drawCardRecord[teamEntityID]
     if teamRecord then
       local roundRecord = teamRecord[round]
       if roundRecord then
@@ -342,62 +222,50 @@ LogicFeatureComponent.GetDrawCardTimes = function(self, teamEntityID, round)
       end
     end
   else
-    do
-      local teamRecord = (self._drawCardRecord)[teamEntityID]
-      do
-        if teamRecord then
-          local totalTimes = 0
-          for round,records in pairs(teamRecord) do
-            totalTimes = totalTimes + #records
-          end
-          return totalTimes
-        end
-        return 0
+    local teamRecord = self._drawCardRecord[teamEntityID]
+    if teamRecord then
+      local totalTimes = 0
+      for round, records in pairs(teamRecord) do
+        totalTimes = totalTimes + #records
       end
+      return totalTimes
     end
   end
+  return 0
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetAutoFightFirstRoundDrawCardEnough = function(self, teamEntityID, bEnough)
-  -- function num : 0_26
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._autoFightFirstRoundDrawCardEnough)[teamEntityID] = bEnough
+function LogicFeatureComponent:SetAutoFightFirstRoundDrawCardEnough(teamEntityID, bEnough)
+  self._autoFightFirstRoundDrawCardEnough[teamEntityID] = bEnough
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetAutoFightFirstRoundDrawCardEnough = function(self, teamEntityID)
-  -- function num : 0_27
-  return (self._autoFightFirstRoundDrawCardEnough)[teamEntityID]
+function LogicFeatureComponent:GetAutoFightFirstRoundDrawCardEnough(teamEntityID)
+  return self._autoFightFirstRoundDrawCardEnough[teamEntityID]
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetRandomDrawCardWeight = function(self, teamEntityID)
-  -- function num : 0_28 , upvalues : _ENV
+function LogicFeatureComponent:GetRandomDrawCardWeight(teamEntityID)
   local defaultWeightNum = 5
   local featureData = self:GetFeatureData(FeatureType.Card)
   if featureData then
     defaultWeightNum = featureData:GetDefaultWeightNum()
   end
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
   if self._drawCardWeight then
-    if not (self._drawCardWeight)[teamEntityID] then
-      (self._drawCardWeight)[teamEntityID] = {defaultWeightNum, defaultWeightNum, defaultWeightNum}
+    if not self._drawCardWeight[teamEntityID] then
+      self._drawCardWeight[teamEntityID] = {
+        defaultWeightNum,
+        defaultWeightNum,
+        defaultWeightNum
+      }
     end
-    return (self._drawCardWeight)[teamEntityID]
+    return self._drawCardWeight[teamEntityID]
   end
-  return {defaultWeightNum, defaultWeightNum, defaultWeightNum}
+  return {
+    defaultWeightNum,
+    defaultWeightNum,
+    defaultWeightNum
+  }
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.InitScanFeature = function(self, summonTrapSkillID, forceMovementSkillID, summonScanTrapSkillID, emptySkillID)
-  -- function num : 0_29 , upvalues : _ENV
+function LogicFeatureComponent:InitScanFeature(summonTrapSkillID, forceMovementSkillID, summonScanTrapSkillID, emptySkillID)
   self._summonTrapSkillID = summonTrapSkillID
   self._forceMovementSkillID = forceMovementSkillID
   self._summonScanTrapSkillID = summonScanTrapSkillID
@@ -405,261 +273,156 @@ LogicFeatureComponent.InitScanFeature = function(self, summonTrapSkillID, forceM
   self._scanActiveSkillType = ScanFeatureActiveSkillType.SummonTrap
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetScanSummonTrapSkillID = function(self)
-  -- function num : 0_30
+function LogicFeatureComponent:GetScanSummonTrapSkillID()
   return self._summonTrapSkillID
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetScanForceMovementSkillID = function(self)
-  -- function num : 0_31
+function LogicFeatureComponent:GetScanForceMovementSkillID()
   return self._forceMovementSkillID
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetScanSummonScanTrapSkillID = function(self)
-  -- function num : 0_32
+function LogicFeatureComponent:GetScanSummonScanTrapSkillID()
   return self._summonScanTrapSkillID
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetScanEmptySkillID = function(self)
-  -- function num : 0_33
+function LogicFeatureComponent:GetScanEmptySkillID()
   return self._summonScanTrapSkillID
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.ClearLastScan = function(self)
-  -- function num : 0_34
+function LogicFeatureComponent:ClearLastScan()
   self._skillConfigData = nil
   self._scanActiveSkillType = nil
   self._scanTrapID = nil
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetActiveSkillConfigData = function(self, data)
-  -- function num : 0_35
+function LogicFeatureComponent:SetActiveSkillConfigData(data)
   self._skillConfigData = data
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetActiveSkillConfigData = function(self)
-  -- function num : 0_36
+function LogicFeatureComponent:GetActiveSkillConfigData()
   return self._skillConfigData
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetScanResult = function(self, skillType, trapID)
-  -- function num : 0_37
+function LogicFeatureComponent:SetScanResult(skillType, trapID)
   self._scanActiveSkillType = skillType
   self._scanTrapID = trapID
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetScanActiveSkillType = function(self)
-  -- function num : 0_38
+function LogicFeatureComponent:GetScanActiveSkillType()
   return self._scanActiveSkillType
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetScanTrapID = function(self)
-  -- function num : 0_39
+function LogicFeatureComponent:GetScanTrapID()
   return self._scanTrapID
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetShopSelectedCellList = function(self)
-  -- function num : 0_40
+function LogicFeatureComponent:GetShopSelectedCellList()
   return self._shopSelectedList
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.AddShopSelectedCellList = function(self, cellList)
-  -- function num : 0_41 , upvalues : _ENV
+function LogicFeatureComponent:AddShopSelectedCellList(cellList)
   if cellList then
-    (table.appendArray)(self._shopSelectedList, cellList)
+    table.appendArray(self._shopSelectedList, cellList)
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetShopRecentSelectedCellList = function(self)
-  -- function num : 0_42
+function LogicFeatureComponent:GetShopRecentSelectedCellList()
   return self._shopRecentSelectedList
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetShopRecentSelectedCellList = function(self, cellList)
-  -- function num : 0_43
+function LogicFeatureComponent:SetShopRecentSelectedCellList(cellList)
   self._shopRecentSelectedList = cellList
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.ClearShopRecentSelectedCellList = function(self)
-  -- function num : 0_44
+function LogicFeatureComponent:ClearShopRecentSelectedCellList()
   self._shopRecentSelectedList = {}
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetShopCoinCount = function(self)
-  -- function num : 0_45
+function LogicFeatureComponent:GetShopCoinCount()
   return self._shopCoinCount or 0
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.AddShopCoinCount = function(self, addVal)
-  -- function num : 0_46 , upvalues : _ENV
+function LogicFeatureComponent:AddShopCoinCount(addVal)
   self._shopCoinCount = self._shopCoinCount + addVal
-  self._shopCoinCount = (math.max)(0, self._shopCoinCount)
+  self._shopCoinCount = math.max(0, self._shopCoinCount)
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetShopUIHadSeeUnlockCellList = function(self)
-  -- function num : 0_47
+function LogicFeatureComponent:GetShopUIHadSeeUnlockCellList()
   return self._shopUIHadSeeUnlockCellList
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetShopUIHadSeeUnlockCellList = function(self, cellList)
-  -- function num : 0_48
+function LogicFeatureComponent:SetShopUIHadSeeUnlockCellList(cellList)
   self._shopUIHadSeeUnlockCellList = cellList
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.InitStepPointParam = function(self, initStepPoint, maxStepPoint, recoverStepPoint)
-  -- function num : 0_49
+function LogicFeatureComponent:InitStepPointParam(initStepPoint, maxStepPoint, recoverStepPoint)
   self._curStepPoint = initStepPoint
   self._maxStepPoint = maxStepPoint
   self._recoverStepPoint = recoverStepPoint
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetCurStepPoint = function(self)
-  -- function num : 0_50
+function LogicFeatureComponent:GetCurStepPoint()
   return self._curStepPoint or 0
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.ChangeCurStepPoint = function(self, addVal)
-  -- function num : 0_51 , upvalues : _ENV
+function LogicFeatureComponent:ChangeCurStepPoint(addVal)
   self._curStepPoint = self._curStepPoint + addVal
-  self._curStepPoint = (math.max)(0, self._curStepPoint)
-  self._curStepPoint = (math.min)(self._curStepPoint, self._maxStepPoint)
+  self._curStepPoint = math.max(0, self._curStepPoint)
+  self._curStepPoint = math.min(self._curStepPoint, self._maxStepPoint)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetMaxStepPoint = function(self)
-  -- function num : 0_52
+function LogicFeatureComponent:GetMaxStepPoint()
   return self._maxStepPoint or 0
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.ChangeMaxStepPoint = function(self, addVal)
-  -- function num : 0_53 , upvalues : _ENV
+function LogicFeatureComponent:ChangeMaxStepPoint(addVal)
   self._maxStepPoint = self._maxStepPoint + addVal
-  self._maxStepPoint = (math.max)(0, self._maxStepPoint)
-  self._curStepPoint = (math.min)(self._curStepPoint, self._maxStepPoint)
+  self._maxStepPoint = math.max(0, self._maxStepPoint)
+  self._curStepPoint = math.min(self._curStepPoint, self._maxStepPoint)
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetRecoverStepPoint = function(self)
-  -- function num : 0_54
+function LogicFeatureComponent:GetRecoverStepPoint()
   return self._recoverStepPoint or 0
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.ChangeRecoverStepPoint = function(self, addVal)
-  -- function num : 0_55 , upvalues : _ENV
+function LogicFeatureComponent:ChangeRecoverStepPoint(addVal)
   self._recoverStepPoint = self._recoverStepPoint + addVal
-  self._recoverStepPoint = (math.max)(0, self._recoverStepPoint)
+  self._recoverStepPoint = math.max(0, self._recoverStepPoint)
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.RecordRecentMoveCostStepPoint = function(self, costVal)
-  -- function num : 0_56
+function LogicFeatureComponent:RecordRecentMoveCostStepPoint(costVal)
   self._recordRecentMoveCostStepPoint = costVal
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetRecentMoveCostStepPoint = function(self)
-  -- function num : 0_57
+function LogicFeatureComponent:GetRecentMoveCostStepPoint()
   return self._recordRecentMoveCostStepPoint
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.AddBanPetSkillCastRound = function(self, skillID, round)
-  -- function num : 0_58 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._banPetSkillCastRoundList)[skillID] then
-    (self._banPetSkillCastRoundList)[skillID] = {}
+function LogicFeatureComponent:AddBanPetSkillCastRound(skillID, round)
+  if not self._banPetSkillCastRoundList[skillID] then
+    self._banPetSkillCastRoundList[skillID] = {}
   end
-  ;
-  (table.insert)((self._banPetSkillCastRoundList)[skillID], round)
+  table.insert(self._banPetSkillCastRoundList[skillID], round)
   self._banPetSkillCastLastRound = round
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetBanPetSkillCastRoundList = function(self)
-  -- function num : 0_59
+function LogicFeatureComponent:GetBanPetSkillCastRoundList()
   return self._banPetSkillCastRoundList
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetBanPetSkillCastLastRound = function(self)
-  -- function num : 0_60
+function LogicFeatureComponent:GetBanPetSkillCastLastRound()
   return self._banPetSkillCastLastRound
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetMaxAUOEValue = function(self, maxValue)
-  -- function num : 0_61
+function LogicFeatureComponent:SetMaxAUOEValue(maxValue)
   self._maxAUOverloadEnergy = maxValue
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetMaxAUOEValue = function(self)
-  -- function num : 0_62
+function LogicFeatureComponent:GetMaxAUOEValue()
   return self._maxAUOverloadEnergy
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.InitTetris = function(self, tetrisDir, tetrisType, costPower)
-  -- function num : 0_63
+function LogicFeatureComponent:InitTetris(tetrisDir, tetrisType, costPower)
   self._tetrisPower = 0
   self._tetrisType = tetrisType
   self._tetrisIndex = 1
@@ -670,112 +433,68 @@ LogicFeatureComponent.InitTetris = function(self, tetrisDir, tetrisType, costPow
   self._tetrisMainColorCount = 0
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetTetrisMainColorCount = function(self, count)
-  -- function num : 0_64
+function LogicFeatureComponent:SetTetrisMainColorCount(count)
   self._tetrisMainColorCount = count
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetTetrisMainColorCount = function(self)
-  -- function num : 0_65
+function LogicFeatureComponent:GetTetrisMainColorCount()
   return self._tetrisMainColorCount
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetTetrisDirIndex = function(self)
-  -- function num : 0_66
+function LogicFeatureComponent:GetTetrisDirIndex()
   return self._tetrisDirIndex
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetTetrisDir = function(self, index, dir)
-  -- function num : 0_67
+function LogicFeatureComponent:SetTetrisDir(index, dir)
   self._tetrisDirIndex = index
   self._tetrisDir = dir
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetTetrisDir = function(self)
-  -- function num : 0_68
+function LogicFeatureComponent:GetTetrisDir()
   return self._tetrisDir
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetTetrisPower = function(self)
-  -- function num : 0_69
+function LogicFeatureComponent:GetTetrisPower()
   return self._tetrisPower
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetTetrisPower = function(self, power)
-  -- function num : 0_70
+function LogicFeatureComponent:SetTetrisPower(power)
   self._tetrisPower = power
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetTetrisIndex = function(self)
-  -- function num : 0_71
+function LogicFeatureComponent:GetTetrisIndex()
   return self._tetrisIndex
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetTetrisType = function(self, index, tetrisType)
-  -- function num : 0_72
+function LogicFeatureComponent:SetTetrisType(index, tetrisType)
   self._tetrisIndex = index
   self._tetrisType = tetrisType
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetTetrisType = function(self)
-  -- function num : 0_73
+function LogicFeatureComponent:GetTetrisType()
   return self._tetrisType
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetTetrisLock = function(self, lock)
-  -- function num : 0_74
+function LogicFeatureComponent:SetTetrisLock(lock)
   self._tetrisLock = lock
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetTetrisLock = function(self)
-  -- function num : 0_75
+function LogicFeatureComponent:GetTetrisLock()
   return self._tetrisLock
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetTetrisCostPower = function(self, costPower)
-  -- function num : 0_76
+function LogicFeatureComponent:SetTetrisCostPower(costPower)
   self._tetrisCostPower = costPower
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetTetrisCostPower = function(self)
-  -- function num : 0_77
+function LogicFeatureComponent:GetTetrisCostPower()
   return self._tetrisCostPower
 end
 
 _class("FeatureSkillCommonData", Object)
 FeatureSkillCommonData = FeatureSkillCommonData
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureSkillCommonData.Constructor = function(self)
-  -- function num : 0_78
+function FeatureSkillCommonData:Constructor()
   self.featureSkillID = {}
   self.skillHolderDic = {}
   self.powerInfo = {}
@@ -786,263 +505,155 @@ end
 
 _class("FeatureSkillCommonPowerData", Object)
 FeatureSkillCommonPowerData = FeatureSkillCommonPowerData
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureSkillCommonPowerData.Constructor = function(self)
-  -- function num : 0_79
+function FeatureSkillCommonPowerData:Constructor()
   self.power = 0
   self.ready = 0
   self.delayModifyPowerValue = 0
   self.featureType = 0
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetFeatureSkillID = function(self, featureType, skillID)
-  -- function num : 0_80
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  ((self._featureSkillCommon).featureSkillID)[featureType] = skillID
+function LogicFeatureComponent:SetFeatureSkillID(featureType, skillID)
+  self._featureSkillCommon.featureSkillID[featureType] = skillID
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetFeatureSkillID = function(self, featureType)
-  -- function num : 0_81
-  return ((self._featureSkillCommon).featureSkillID)[featureType]
+function LogicFeatureComponent:GetFeatureSkillID(featureType)
+  return self._featureSkillCommon.featureSkillID[featureType]
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetFeatureSkillHolderID = function(self, featureType, holderID)
-  -- function num : 0_82
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  ((self._featureSkillCommon).skillHolderDic)[featureType] = holderID
+function LogicFeatureComponent:SetFeatureSkillHolderID(featureType, holderID)
+  self._featureSkillCommon.skillHolderDic[featureType] = holderID
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetFeatureSkillHolderID = function(self, featureType)
-  -- function num : 0_83
-  return ((self._featureSkillCommon).skillHolderDic)[featureType]
+function LogicFeatureComponent:GetFeatureSkillHolderID(featureType)
+  return self._featureSkillCommon.skillHolderDic[featureType]
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetFeatureSkillCurPower = function(self, featureType, power, ready)
-  -- function num : 0_84 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not ((self._featureSkillCommon).powerInfo)[featureType] then
-    ((self._featureSkillCommon).powerInfo)[featureType] = FeatureSkillCommonPowerData:New()
+function LogicFeatureComponent:SetFeatureSkillCurPower(featureType, power, ready)
+  if not self._featureSkillCommon.powerInfo[featureType] then
+    self._featureSkillCommon.powerInfo[featureType] = FeatureSkillCommonPowerData:New()
   end
-  local featurePower = ((self._featureSkillCommon).powerInfo)[featureType]
+  local featurePower = self._featureSkillCommon.powerInfo[featureType]
   featurePower.power = power
   if ready then
     featurePower.ready = ready
   end
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetFeatureSkillCurPower = function(self, featureType)
-  -- function num : 0_85
-  do
-    if (self._featureSkillCommon).powerInfo then
-      local featurePower = ((self._featureSkillCommon).powerInfo)[featureType]
-      if featurePower then
-        return featurePower.power, featurePower.ready
-      end
+function LogicFeatureComponent:GetFeatureSkillCurPower(featureType)
+  if self._featureSkillCommon.powerInfo then
+    local featurePower = self._featureSkillCommon.powerInfo[featureType]
+    if featurePower then
+      return featurePower.power, featurePower.ready
     end
-    return 5, 0
   end
+  return 5, 0
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetFeatureSkillDelayModifyPower = function(self, featureType, delayModifyPower)
-  -- function num : 0_86 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not ((self._featureSkillCommon).powerInfo)[featureType] then
-    ((self._featureSkillCommon).powerInfo)[featureType] = FeatureSkillCommonPowerData:New()
+function LogicFeatureComponent:SetFeatureSkillDelayModifyPower(featureType, delayModifyPower)
+  if not self._featureSkillCommon.powerInfo[featureType] then
+    self._featureSkillCommon.powerInfo[featureType] = FeatureSkillCommonPowerData:New()
   end
-  local featurePower = ((self._featureSkillCommon).powerInfo)[featureType]
+  local featurePower = self._featureSkillCommon.powerInfo[featureType]
   featurePower.delayModifyPowerValue = delayModifyPower
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetFeatureSkillDelayModifyPower = function(self, featureType)
-  -- function num : 0_87
-  do
-    if (self._featureSkillCommon).powerInfo then
-      local featurePower = ((self._featureSkillCommon).powerInfo)[featureType]
-      if featurePower then
-        return featurePower.delayModifyPowerValue
-      end
+function LogicFeatureComponent:GetFeatureSkillDelayModifyPower(featureType)
+  if self._featureSkillCommon.powerInfo then
+    local featurePower = self._featureSkillCommon.powerInfo[featureType]
+    if featurePower then
+      return featurePower.delayModifyPowerValue
     end
-    return 0
-  end
-end
-
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetLastDoFeatureSkillRound = function(self, featureType)
-  -- function num : 0_88
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._featureSkillCommon).lastRoundInfo then
-    (self._featureSkillCommon).lastRoundInfo = {}
-  end
-  return ((self._featureSkillCommon).lastRoundInfo)[featureType]
-end
-
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetLastDoFeatureSkillRound = function(self, featureType, round)
-  -- function num : 0_89
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._featureSkillCommon).lastRoundInfo then
-    (self._featureSkillCommon).lastRoundInfo = {}
-  end
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._featureSkillCommon).lastRoundInfo)[featureType] = round
-end
-
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetAllFeatureSkillCdOff = function(self, cdOff)
-  -- function num : 0_90
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._featureSkillCommon).featureSkillCdOff = cdOff
-end
-
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetAllFeatureSkillCdOff = function(self)
-  -- function num : 0_91
-  return (self._featureSkillCommon).featureSkillCdOff
-end
-
--- DECOMPILER ERROR at PC299: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetSpecificFeatureSkillCdOff = function(self, featureType, cdOff)
-  -- function num : 0_92
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  ((self._featureSkillCommon).specificFeatureSkillCdOff)[featureType] = cdOff
-end
-
--- DECOMPILER ERROR at PC302: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetSpecificFeatureSkillCdOff = function(self, featureType)
-  -- function num : 0_93
-  if ((self._featureSkillCommon).specificFeatureSkillCdOff)[featureType] then
-    return ((self._featureSkillCommon).specificFeatureSkillCdOff)[featureType]
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC305: Confused about usage of register: R0 in 'UnsetPending'
+function LogicFeatureComponent:GetLastDoFeatureSkillRound(featureType)
+  if not self._featureSkillCommon.lastRoundInfo then
+    self._featureSkillCommon.lastRoundInfo = {}
+  end
+  return self._featureSkillCommon.lastRoundInfo[featureType]
+end
 
-LogicFeatureComponent.AddAlchemyAP = function(self, ap)
-  -- function num : 0_94
+function LogicFeatureComponent:SetLastDoFeatureSkillRound(featureType, round)
+  if not self._featureSkillCommon.lastRoundInfo then
+    self._featureSkillCommon.lastRoundInfo = {}
+  end
+  self._featureSkillCommon.lastRoundInfo[featureType] = round
+end
+
+function LogicFeatureComponent:SetAllFeatureSkillCdOff(cdOff)
+  self._featureSkillCommon.featureSkillCdOff = cdOff
+end
+
+function LogicFeatureComponent:GetAllFeatureSkillCdOff()
+  return self._featureSkillCommon.featureSkillCdOff
+end
+
+function LogicFeatureComponent:SetSpecificFeatureSkillCdOff(featureType, cdOff)
+  self._featureSkillCommon.specificFeatureSkillCdOff[featureType] = cdOff
+end
+
+function LogicFeatureComponent:GetSpecificFeatureSkillCdOff(featureType)
+  if self._featureSkillCommon.specificFeatureSkillCdOff[featureType] then
+    return self._featureSkillCommon.specificFeatureSkillCdOff[featureType]
+  end
+  return 0
+end
+
+function LogicFeatureComponent:AddAlchemyAP(ap)
   self._alchemyAP = self._alchemyAP + ap
   return self._alchemyAP
 end
 
--- DECOMPILER ERROR at PC308: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetAlchemyAP = function(self)
-  -- function num : 0_95
+function LogicFeatureComponent:GetAlchemyAP()
   return self._alchemyAP
 end
 
--- DECOMPILER ERROR at PC311: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetAlchemyLevel = function(self, level)
-  -- function num : 0_96
+function LogicFeatureComponent:SetAlchemyLevel(level)
   self._alchemyLevel = level
 end
 
--- DECOMPILER ERROR at PC314: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetAlchemyLevel = function(self)
-  -- function num : 0_97
+function LogicFeatureComponent:GetAlchemyLevel()
   return self._alchemyLevel
 end
 
--- DECOMPILER ERROR at PC317: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.SetAlchemyLevelMax = function(self, levelMax)
-  -- function num : 0_98
+function LogicFeatureComponent:SetAlchemyLevelMax(levelMax)
   self._alchemyLevelMax = levelMax
 end
 
--- DECOMPILER ERROR at PC320: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.GetAlchemyLevelMax = function(self)
-  -- function num : 0_99
+function LogicFeatureComponent:GetAlchemyLevelMax()
   return self._alchemyLevelMax
 end
 
--- DECOMPILER ERROR at PC323: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_100
+function LogicFeatureComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC326: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicFeatureComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_101
+function LogicFeatureComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC329: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.LogicFeature = function(self)
-  -- function num : 0_102
-  return self:GetComponent((self.WEComponentsEnum).LogicFeature)
+function Entity:LogicFeature()
+  return self:GetComponent(self.WEComponentsEnum.LogicFeature)
 end
 
--- DECOMPILER ERROR at PC332: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasLogicFeature = function(self)
-  -- function num : 0_103
-  return self:HasComponent((self.WEComponentsEnum).LogicFeature)
+function Entity:HasLogicFeature()
+  return self:HasComponent(self.WEComponentsEnum.LogicFeature)
 end
 
--- DECOMPILER ERROR at PC335: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddLogicFeature = function(self)
-  -- function num : 0_104 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LogicFeature
+function Entity:AddLogicFeature()
+  local index = self.WEComponentsEnum.LogicFeature
   local component = LogicFeatureComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC338: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceLogicFeature = function(self)
-  -- function num : 0_105 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LogicFeature
+function Entity:ReplaceLogicFeature()
+  local index = self.WEComponentsEnum.LogicFeature
   local component = LogicFeatureComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC341: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveLogicFeature = function(self)
-  -- function num : 0_106
+function Entity:RemoveLogicFeature()
   if self:HasLogicFeature() then
-    self:RemoveComponent((self.WEComponentsEnum).LogicFeature)
+    self:RemoveComponent(self.WEComponentsEnum.LogicFeature)
   end
 end
-
-

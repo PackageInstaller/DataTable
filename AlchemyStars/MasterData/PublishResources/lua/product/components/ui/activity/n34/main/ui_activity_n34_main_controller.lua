@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/main/ui_activity_n34_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN34MainController", UIActivityMainBase)
 UIActivityN34MainController = UIActivityN34MainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN34MainController.OnInit = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN34MainController:OnInit(uiParams)
   self._timeLabel = self:GetUIComponent("UILocalizationText", "Time")
   self._anim = self:GetUIComponent("Animation", "Anim")
   self._itemText = self:GetUIComponent("UILocalizationText", "Item")
@@ -23,55 +16,39 @@ UIActivityN34MainController.OnInit = function(self, uiParams)
   self:ReplaceMaterial()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34MainController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_1
+function UIActivityN34MainController:OnUpdate(deltaTimeMS)
   if self.view then
     self:RefreshActivityRemainTime()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34MainController.RefreshActivityRemainTime = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._activityConst):IsActivityEnd() then
-    (self._timeLabel):SetText((StringTable.Get)("str_n34_activity_end"))
-    return 
+function UIActivityN34MainController:RefreshActivityRemainTime()
+  if self._activityConst:IsActivityEnd() then
+    self._timeLabel:SetText(StringTable.Get("str_n34_activity_end"))
+    return
   end
-  local status, endTime = (self._activityConst):GetComponentStatus(ECampaignN34ComponentID.ECAMPAIGN_N34_SURVEY)
+  local status, endTime = self._activityConst:GetComponentStatus(ECampaignN34ComponentID.ECAMPAIGN_N34_SURVEY)
   if status == ActivityComponentStatus.Open then
     local tipsStr = "str_n34_activity_remain_time"
     local seconds = endTime
     if seconds <= 0 then
       seconds = 0
     end
-    local timeStr = (UIActivityCustomHelper.GetTimeString)(seconds, "str_n34_day", "str_n34_hour", "str_n34_minus", "str_n34_less_one_minus")
-    local timeTips = (StringTable.Get)(tipsStr, timeStr)
-    ;
-    (self._timeLabel):SetText(timeTips)
+    local timeStr = UIActivityCustomHelper.GetTimeString(seconds, "str_n34_day", "str_n34_hour", "str_n34_minus", "str_n34_less_one_minus")
+    local timeTips = StringTable.Get(tipsStr, timeStr)
+    self._timeLabel:SetText(timeTips)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34MainController.OnRefresh = function(self)
-  -- function num : 0_3
+function UIActivityN34MainController:OnRefresh()
   self:ShowItems()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34MainController.GetCampaignType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN34MainController:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N34
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34MainController.GetComponentIds = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN34MainController:GetComponentIds()
   local componentIds = {}
   componentIds[#componentIds + 1] = ECampaignN34ComponentID.ECAMPAIGN_N34_CUMULATIVE_LOGIN
   componentIds[#componentIds + 1] = ECampaignN34ComponentID.ECAMPAIGN_N34_POWER2ITEM
@@ -81,35 +58,29 @@ UIActivityN34MainController.GetComponentIds = function(self)
   return componentIds
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34MainController.GetLoginComponentId = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityN34MainController:GetLoginComponentId()
   return ECampaignN34ComponentID.ECAMPAIGN_N34_CUMULATIVE_LOGIN
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34MainController.GetCustomTimeStr = function(self)
-  -- function num : 0_7
+function UIActivityN34MainController:GetCustomTimeStr()
   return "str_n34_day", "str_n34_hour", "str_n34_minus", "str_n34_less_one_minus"
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34MainController.GetButtonStatusConfig = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityN34MainController:GetButtonStatusConfig()
   local configs = {}
   local survey = {}
   survey.Name = "Survey"
   survey.ComponentId = ECampaignN34ComponentID.ECAMPAIGN_N34_SURVEY
-  survey.CheckRedComponentIds = {ECampaignN34ComponentID.ECAMPAIGN_N34_SURVEY, ECampaignN34ComponentID.ECAMPAIGN_N34_QUEST}
-  survey.Callback = function()
-    -- function num : 0_8_0 , upvalues : self, _ENV
-    (self._activityConst):ClearComponentNew(ECampaignN34ComponentID.ECAMPAIGN_N34_SURVEY)
+  survey.CheckRedComponentIds = {
+    ECampaignN34ComponentID.ECAMPAIGN_N34_SURVEY,
+    ECampaignN34ComponentID.ECAMPAIGN_N34_QUEST
+  }
+  
+  function survey.Callback()
+    self._activityConst:ClearComponentNew(ECampaignN34ComponentID.ECAMPAIGN_N34_SURVEY)
     self:ShowDialog("UIActivityN34TaskMainController", 1, true)
   end
-
+  
   survey.RemainTimeStr = "str_n34_activity_survey_level_remain_time"
   survey.UnlockTimeStr = "str_n34_activity_survey_level_lock_time_tips"
   survey.UnlockMissionStr = "str_n34_activity_survey_level_lock_mission_tips"
@@ -118,12 +89,12 @@ UIActivityN34MainController.GetButtonStatusConfig = function(self)
   dispath.Name = "Dispath"
   dispath.ComponentId = ECampaignN34ComponentID.ECAMPAIGN_N34_DISPATCH
   dispath.CheckRedComponentIds = nil
-  dispath.Callback = function()
-    -- function num : 0_8_1 , upvalues : self, _ENV
-    (self._activityConst):ClearComponentNew(ECampaignN34ComponentID.ECAMPAIGN_N34_DISPATCH)
+  
+  function dispath.Callback()
+    self._activityConst:ClearComponentNew(ECampaignN34ComponentID.ECAMPAIGN_N34_DISPATCH)
     self:ShowDialog("UIN34DispatchMain")
   end
-
+  
   dispath.RemainTimeStr = "str_n34_activity_dispath_level_remain_time"
   dispath.UnlockTimeStr = "str_n34_activity_dispatch_level_lock_time_tips"
   dispath.UnlockMissionStr = "str_n34_activity_dispatch_level_lock_mission_tips"
@@ -131,123 +102,76 @@ UIActivityN34MainController.GetButtonStatusConfig = function(self)
   return configs
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34MainController.SurveyOnClick = function(self)
-  -- function num : 0_9
+function UIActivityN34MainController:SurveyOnClick()
   self:ClickButton("Survey")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34MainController.DispathOnClick = function(self)
-  -- function num : 0_10
+function UIActivityN34MainController:DispathOnClick()
   self:ClickButton("Dispath")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34MainController.StoryOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIStoryController", (self._activityConst):GetPlotId())
+function UIActivityN34MainController:StoryOnClick()
+  GameGlobal.UIStateManager():ShowDialog("UIStoryController", self._activityConst:GetPlotId())
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34MainController.SetPanelStatus = function(self, TT, isShow)
-  -- function num : 0_12
+function UIActivityN34MainController:SetPanelStatus(TT, isShow)
   if self._anim then
     if isShow then
-      (self._anim):Play("uieffanim_UIActivityN34MainController_show")
+      self._anim:Play("uieffanim_UIActivityN34MainController_show")
     else
-      ;
-      (self._anim):Play("uieffanim_UIActivityN34MainController_hide")
+      self._anim:Play("uieffanim_UIActivityN34MainController_hide")
     end
   end
-  ;
-  (self._showBtn):SetActive(not isShow)
+  self._showBtn:SetActive(not isShow)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34MainController.PlayAnimEnterCoro = function(self, TT)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityN34MainController:PlayAnimEnterCoro(TT)
   self:Lock("UIActivityN30MainController_PlayAnimEnterCoro")
-  ;
-  (self._anim):Play("uieffanim_UIActivityN34MainController_in")
+  self._anim:Play("uieffanim_UIActivityN34MainController_in")
   YIELD(TT, 900)
   self:UnLock("UIActivityN30MainController_PlayAnimEnterCoro")
   self:CheckGuide()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34MainController.CheckGuide = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN34MainController)
+function UIActivityN34MainController:CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN34MainController)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34MainController.GetCampaignType = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityN34MainController:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N34
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34MainController.ShowItems = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
-  local str = ((Cfg.cfg_global).survey_tokens_item).StrValue
-  local a, b = (string.match)(str, "(.*)%|(.*)")
-  local num = (self._itemModule):GetItemCount(tonumber(a))
-  if num > 9999999 then
+function UIActivityN34MainController:ShowItems()
+  self._itemModule = GameGlobal.GetModule(ItemModule)
+  local str = Cfg.cfg_global.survey_tokens_item.StrValue
+  local a, b = string.match(str, "(.*)%|(.*)")
+  local num = self._itemModule:GetItemCount(tonumber(a))
+  if 9999999 < num then
     num = 9999999
   end
-  ;
-  (self._itemText):SetText((UIActivityCustomHelper.GetItemCountStr)(7, num, "#d9d9d9", "#fff5cc"))
-  ;
-  (self._itemBackText):SetText((UIActivityCustomHelper.GetItemCountStr)(7, num, "#180f1f", "#180f1f"))
+  self._itemText:SetText(UIActivityCustomHelper.GetItemCountStr(7, num, "#d9d9d9", "#fff5cc"))
+  self._itemBackText:SetText(UIActivityCustomHelper.GetItemCountStr(7, num, "#180f1f", "#180f1f"))
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34MainController.Close = function(self, TT)
-  -- function num : 0_17 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._screenShot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
-  local rt = (self._screenShot):RefreshBlurTexture()
-  local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-  ;
-  ((UnityEngine.Graphics).Blit)(rt, cache_rt)
+function UIActivityN34MainController:Close(TT)
+  self._screenShot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
+  local rt = self._screenShot:RefreshBlurTexture()
+  local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+  UnityEngine.Graphics.Blit(rt, cache_rt)
   YIELD(TT)
-  ;
-  ((self._screenShot).gameObject):SetActive(false)
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._photoImage).texture = rt
+  self._screenShot.gameObject:SetActive(false)
+  self._photoImage.texture = rt
   self:Lock("UIActivityN30MainController_PlayAnimEnterCoro")
-  ;
-  (self._anim):Play("uieffanim_UIActivityN34MainController_out")
+  self._anim:Play("uieffanim_UIActivityN34MainController_out")
   YIELD(TT, 100)
   self:SwitchState(UIStateType.UIMain)
   self:UnLock("UIActivityN30MainController_PlayAnimEnterCoro")
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34MainController.ReplaceMaterial = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  self._lastMaterial = (self._rawImage).material
-  self._reqEffectMat = (ResourceManager:GetInstance()):SyncLoadAsset("uieff_n34_zjm_title01" .. ".mat", LoadType.Mat)
-  self._effectMat = (self._reqEffectMat).Obj
-  ;
-  (self._rawImageLoader):SetMat("uieff_n34_zjm_title01", self._effectMat, false)
-  ;
-  ((self._rawImage).material):SetTexture("_MainTex", (self._lastMaterial):GetTexture("_MainTex"))
+function UIActivityN34MainController:ReplaceMaterial()
+  self._lastMaterial = self._rawImage.material
+  self._reqEffectMat = ResourceManager:GetInstance():SyncLoadAsset("uieff_n34_zjm_title01" .. ".mat", LoadType.Mat)
+  self._effectMat = self._reqEffectMat.Obj
+  self._rawImageLoader:SetMat("uieff_n34_zjm_title01", self._effectMat, false)
+  self._rawImage.material:SetTexture("_MainTex", self._lastMaterial:GetTexture("_MainTex"))
 end
-
-

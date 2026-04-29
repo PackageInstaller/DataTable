@@ -1,35 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_fixed_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_FixedArea", SkillScopeCalculator_Base)
 SkillScopeCalculator_FixedArea = SkillScopeCalculator_FixedArea
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_FixedArea.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_FixedArea:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local fixedAreaType = scopeParam
   local target_area_grid = {}
   if fixedAreaType == FixedAreaType.DragonSweep then
     local vPos2Target = {}
     for i = 1, 4 do
-      (table.insert)(target_area_grid, centerPos + casterDir * i)
+      table.insert(target_area_grid, centerPos + casterDir * i)
       for j = 5 - i, 1, -1 do
         local vVerticalL = Vector2(casterDir.y, -casterDir.x)
         local vVerticalR = Vector2(-casterDir.y, casterDir.x)
-        ;
-        (table.insert)(target_area_grid, centerPos + vVerticalL * i + casterDir * j)
-        ;
-        (table.insert)(target_area_grid, centerPos + vVerticalR * i + casterDir * j)
+        table.insert(target_area_grid, centerPos + vVerticalL * i + casterDir * j)
+        table.insert(target_area_grid, centerPos + vVerticalR * i + casterDir * j)
       end
     end
   end
-  do
-    local result = SkillScopeResult:New(SkillScopeType.FixedArea, nil, target_area_grid, target_area_grid)
-    return result
-  end
+  local result = SkillScopeResult:New(SkillScopeType.FixedArea, nil, target_area_grid, target_area_grid)
+  return result
 end
-
-

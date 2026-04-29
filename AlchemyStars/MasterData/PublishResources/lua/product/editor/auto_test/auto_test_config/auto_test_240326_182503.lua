@@ -1,71 +1,130 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/auto_test_config/auto_test_240326_182503.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 AutoTest_240326_182503 = {
-cases = {
-[1] = {
-[1] = {action = "WaitGameFsm", 
-args = {id = 5}
+  cases = {
+    [1] = {
+      [1] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [2] = {
+        action = "SetTeamPosition",
+        args = {name = "team", pos = 502}
+      },
+      [3] = {
+        action = "AddMonster",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 5100111,
+          name = "e1",
+          pos = 504
+        }
+      },
+      [4] = {
+        action = "AddMonster",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 5100111,
+          name = "e2",
+          pos = 505
+        }
+      },
+      [5] = {
+        action = "AddMonster",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 5100111,
+          name = "e3",
+          pos = 506
+        }
+      },
+      [6] = {
+        action = "FakeInputChain",
+        args = {
+          chainPath = {
+            [1] = 502.0,
+            [2] = 402.0,
+            [3] = 302.0,
+            [4] = 403.0,
+            [5] = 303.0,
+            [6] = 203.0,
+            [7] = 103.0,
+            [8] = 202.0,
+            [9] = 301.0,
+            [10] = 401.0,
+            [11] = 501.0,
+            [12] = 601.0,
+            [13] = 701.0,
+            [14] = 802.0,
+            [15] = 903.0,
+            [16] = 904.0
+          },
+          pieceType = 1
+        }
+      },
+      [7] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [8] = {
+        action = "FakeInputChain",
+        args = {
+          chainPath = {
+            [1] = 904.0,
+            [2] = 804.0,
+            [3] = 704.0,
+            [4] = 604.0,
+            [5] = 503.0,
+            [6] = 504.0
+          },
+          pieceType = 1
+        }
+      },
+      [9] = {
+        action = "CaptureFormulaAttr",
+        args = {
+          attr = "damagePercent",
+          damageIndex = 1,
+          defname = "e3",
+          key = "CalcDamage_149",
+          skillid = 2302251,
+          trigger = 102,
+          varname = "v1"
+        }
+      },
+      [10] = {
+        action = "CheckLocalValue",
+        args = {
+          target = 2.2999999523163,
+          trigger = 102,
+          varname = "v1"
+        }
+      },
+      [11] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      name = "进极光时刻时,对最近单位挂一条边"
+    }
+  },
+  name = "缇亚拉精炼3",
+  petList = {
+    [1] = {
+      awakening = 3,
+      equipRefineLv = 3,
+      equiplv = 1,
+      grade = 3,
+      id = 1602251,
+      level = 1,
+      name = "p1"
+    }
+  },
+  remotePet = {},
+  setup = {
+    [1] = {
+      args = {levelID = 1, matchType = 1},
+      setup = "LevelBasic"
+    }
+  }
 }
-, 
-[2] = {action = "SetTeamPosition", 
-args = {name = "team", pos = 502}
-}
-, 
-[3] = {action = "AddMonster", 
-args = {dir = 1, disableai = true, id = 5100111, name = "e1", pos = 504}
-}
-, 
-[4] = {action = "AddMonster", 
-args = {dir = 1, disableai = true, id = 5100111, name = "e2", pos = 505}
-}
-, 
-[5] = {action = "AddMonster", 
-args = {dir = 1, disableai = true, id = 5100111, name = "e3", pos = 506}
-}
-, 
-[6] = {action = "FakeInputChain", 
-args = {
-chainPath = {[1] = 502, [2] = 402, [3] = 302, [4] = 403, [5] = 303, [6] = 203, [7] = 103, [8] = 202, [9] = 301, [10] = 401, [11] = 501, [12] = 601, [13] = 701, [14] = 802, [15] = 903, [16] = 904}
-, pieceType = 1}
-}
-, 
-[7] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, 
-[8] = {action = "FakeInputChain", 
-args = {
-chainPath = {[1] = 904, [2] = 804, [3] = 704, [4] = 604, [5] = 503, [6] = 504}
-, pieceType = 1}
-}
-, 
-[9] = {action = "CaptureFormulaAttr", 
-args = {attr = "damagePercent", damageIndex = 1, defname = "e3", key = "CalcDamage_149", skillid = 2302251, trigger = 102, varname = "v1"}
-}
-, 
-[10] = {action = "CheckLocalValue", 
-args = {target = 2.2999999523163, trigger = 102, varname = "v1"}
-}
-, 
-[11] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, name = "进极光时刻时,对最近单位挂一条边"}
-}
-, name = "缇亚拉精炼3", 
-petList = {
-[1] = {awakening = 3, equipRefineLv = 3, equiplv = 1, grade = 3, id = 1602251, level = 1, name = "p1"}
-}
-, 
-remotePet = {}
-, 
-setup = {
-[1] = {
-args = {levelID = 1, matchType = 1}
-, setup = "LevelBasic"}
-}
-}
-

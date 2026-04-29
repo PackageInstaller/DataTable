@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_angle_free_line_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectAngleFreeLineDamageResult", SkillEffectResultBase)
 SkillEffectAngleFreeLineDamageResult = SkillEffectAngleFreeLineDamageResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectAngleFreeLineDamageResult.Constructor = function(self, casterPos, pickupPos, damageResults, pieceEntity)
-  -- function num : 0_0
+function SkillEffectAngleFreeLineDamageResult:Constructor(casterPos, pickupPos, damageResults, pieceEntity)
   self._casterPos = casterPos
   self._pickupPos = pickupPos
   self._damageResults = damageResults
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAngleFreeLineDamageResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectAngleFreeLineDamageResult:GetEffectType()
   return SkillEffectType.AngleFreeLineDamage
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAngleFreeLineDamageResult.GetCasterPos = function(self)
-  -- function num : 0_2
+function SkillEffectAngleFreeLineDamageResult:GetCasterPos()
   return self._casterPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAngleFreeLineDamageResult.GetPickupPos = function(self)
-  -- function num : 0_3
+function SkillEffectAngleFreeLineDamageResult:GetPickupPos()
   return self._pickupPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAngleFreeLineDamageResult.GetDamageResults = function(self)
-  -- function num : 0_4
+function SkillEffectAngleFreeLineDamageResult:GetDamageResults()
   return self._damageResults
 end
-
-

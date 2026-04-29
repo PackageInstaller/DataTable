@@ -1,20 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/activity/line_level/ui_activity_n29_line_level_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN29LineLevelNode", UIActivityLineLevelNodeBase)
 UIActivityN29LineLevelNode = UIActivityN29LineLevelNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN29LineLevelNode.OnInit = function(self)
-  -- function num : 0_0
+function UIActivityN29LineLevelNode:OnInit()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29LineLevelNode.PlayAnimation = function(self)
-  -- function num : 0_1
+function UIActivityN29LineLevelNode:PlayAnimation()
 end
-
-

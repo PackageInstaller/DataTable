@@ -1,110 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_change_feature_step_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultChangeFeatureStepPoint", BuffResultBase)
 BuffResultChangeFeatureStepPoint = BuffResultChangeFeatureStepPoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeFeatureStepPoint.Constructor = function(self, curCount, oldCount, modifyValue)
-  -- function num : 0_0
+function BuffResultChangeFeatureStepPoint:Constructor(curCount, oldCount, modifyValue)
   self._curCount = curCount
   self._oldCount = oldCount
   self._modifyValue = modifyValue
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureStepPoint.GetCurCount = function(self)
-  -- function num : 0_1
+function BuffResultChangeFeatureStepPoint:GetCurCount()
   return self._curCount
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureStepPoint.GetOldCount = function(self)
-  -- function num : 0_2
+function BuffResultChangeFeatureStepPoint:GetOldCount()
   return self._oldCount
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureStepPoint.GetModifyValue = function(self)
-  -- function num : 0_3
+function BuffResultChangeFeatureStepPoint:GetModifyValue()
   return self._modifyValue
 end
 
 _class("BuffResultChangeFeatureMaxStepPoint", BuffResultBase)
 BuffResultChangeFeatureMaxStepPoint = BuffResultChangeFeatureMaxStepPoint
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeFeatureMaxStepPoint.Constructor = function(self, curCount, oldCount, modifyValue)
-  -- function num : 0_4
+function BuffResultChangeFeatureMaxStepPoint:Constructor(curCount, oldCount, modifyValue)
   self._curCount = curCount
   self._oldCount = oldCount
   self._modifyValue = modifyValue
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureMaxStepPoint.GetCurCount = function(self)
-  -- function num : 0_5
+function BuffResultChangeFeatureMaxStepPoint:GetCurCount()
   return self._curCount
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureMaxStepPoint.GetOldCount = function(self)
-  -- function num : 0_6
+function BuffResultChangeFeatureMaxStepPoint:GetOldCount()
   return self._oldCount
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureMaxStepPoint.GetModifyValue = function(self)
-  -- function num : 0_7
+function BuffResultChangeFeatureMaxStepPoint:GetModifyValue()
   return self._modifyValue
 end
 
 _class("BuffResultChangeFeatureRecoverStepPoint", BuffResultBase)
 BuffResultChangeFeatureRecoverStepPoint = BuffResultChangeFeatureRecoverStepPoint
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeFeatureRecoverStepPoint.Constructor = function(self, curCount, oldCount, modifyValue)
-  -- function num : 0_8
+function BuffResultChangeFeatureRecoverStepPoint:Constructor(curCount, oldCount, modifyValue)
   self._curCount = curCount
   self._oldCount = oldCount
   self._modifyValue = modifyValue
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureRecoverStepPoint.GetCurCount = function(self)
-  -- function num : 0_9
+function BuffResultChangeFeatureRecoverStepPoint:GetCurCount()
   return self._curCount
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureRecoverStepPoint.GetOldCount = function(self)
-  -- function num : 0_10
+function BuffResultChangeFeatureRecoverStepPoint:GetOldCount()
   return self._oldCount
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureRecoverStepPoint.GetModifyValue = function(self)
-  -- function num : 0_11
+function BuffResultChangeFeatureRecoverStepPoint:GetModifyValue()
   return self._modifyValue
 end
 
 _class("BuffResultChangeFeatureRecoverStepPointForLinkUI", BuffResultBase)
 BuffResultChangeFeatureRecoverStepPointForLinkUI = BuffResultChangeFeatureRecoverStepPointForLinkUI
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeFeatureRecoverStepPointForLinkUI.Constructor = function(self, flagID, isRevert, stepMin, stepMax, modifyValue)
-  -- function num : 0_12
+function BuffResultChangeFeatureRecoverStepPointForLinkUI:Constructor(flagID, isRevert, stepMin, stepMax, modifyValue)
   self._flagID = flagID
   self._isRevert = isRevert
   self._stepMin = stepMin
@@ -112,39 +72,22 @@ BuffResultChangeFeatureRecoverStepPointForLinkUI.Constructor = function(self, fl
   self._modifyValue = modifyValue
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureRecoverStepPointForLinkUI.GetFlagID = function(self)
-  -- function num : 0_13
+function BuffResultChangeFeatureRecoverStepPointForLinkUI:GetFlagID()
   return self._flagID
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureRecoverStepPointForLinkUI.GetIsRevert = function(self)
-  -- function num : 0_14
+function BuffResultChangeFeatureRecoverStepPointForLinkUI:GetIsRevert()
   return self._isRevert
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureRecoverStepPointForLinkUI.GetStepMin = function(self)
-  -- function num : 0_15
+function BuffResultChangeFeatureRecoverStepPointForLinkUI:GetStepMin()
   return self._stepMin
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureRecoverStepPointForLinkUI.GetStepMax = function(self)
-  -- function num : 0_16
+function BuffResultChangeFeatureRecoverStepPointForLinkUI:GetStepMax()
   return self._stepMax
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureRecoverStepPointForLinkUI.GetModifyValue = function(self)
-  -- function num : 0_17
+function BuffResultChangeFeatureRecoverStepPointForLinkUI:GetModifyValue()
   return self._modifyValue
 end
-
-

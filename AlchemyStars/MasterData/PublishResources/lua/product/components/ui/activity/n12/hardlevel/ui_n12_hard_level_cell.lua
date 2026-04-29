@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/hardlevel/ui_n12_hard_level_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12HardLevelCell", UICustomWidget)
 UIN12HardLevelCell = UIN12HardLevelCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12HardLevelCell.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN12HardLevelCell:Constructor()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardLevelCell.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN12HardLevelCell:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardLevelCell._GetComponents = function(self)
-  -- function num : 0_2
+function UIN12HardLevelCell:_GetComponents()
   self._levelIcon = self:GetUIComponent("RawImageLoader", "LevelIcon")
   self._scoreValue = self:GetUIComponent("UILocalizationText", "ScoreValue")
   self._levelName = self:GetUIComponent("UILocalizationText", "LevelName")
@@ -30,47 +17,33 @@ UIN12HardLevelCell._GetComponents = function(self)
   self._lockText = self:GetUIComponent("UILocalizationText", "LockText")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardLevelCell.SetData = function(self, campaign, levelIndex, levelData, score)
-  -- function num : 0_3
+function UIN12HardLevelCell:SetData(campaign, levelIndex, levelData, score)
   self._campaign = campaign
   self._levelIndex = levelIndex
   self._levelData = levelData
-  self._missionId = ((self._levelData)[levelIndex])[1]
-  self._unlockTime = ((self._levelData)[levelIndex])[2]
+  self._missionId = self._levelData[levelIndex][1]
+  self._unlockTime = self._levelData[levelIndex][2]
   self:RefreshUIInfo(score)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardLevelCell.RefreshUIInfo = function(self, score)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN12HardLevelCell:RefreshUIInfo(score)
   self._score = score
-  ;
-  (self._levelIcon):LoadImage(HardLevelCellImg[self._levelIndex])
-  ;
-  (self._scoreValue):SetText(self._score)
-  local cfg = (Cfg.cfg_component_challenge_mission)({CampaignMissionId = self._missionId})
-  ;
-  (self._levelName):SetText((StringTable.Get)((cfg[1]).MissionName))
-  local remainTime = self._unlockTime - (self._svrTimeModule):GetServerTime() * 0.001
-  ;
-  (self._lockObj):SetActive(remainTime > 0)
-  if remainTime > 0 then
-    (self._lockText):SetText((StringTable.Get)("str_n12_unlock", (N12ToolFunctions.GetRemainTime)(remainTime)))
+  self._levelIcon:LoadImage(HardLevelCellImg[self._levelIndex])
+  self._scoreValue:SetText(self._score)
+  local cfg = Cfg.cfg_component_challenge_mission({
+    CampaignMissionId = self._missionId
+  })
+  self._levelName:SetText(StringTable.Get(cfg[1].MissionName))
+  local remainTime = self._unlockTime - self._svrTimeModule:GetServerTime() * 0.001
+  self._lockObj:SetActive(0 < remainTime)
+  if 0 < remainTime then
+    self._lockText:SetText(StringTable.Get("str_n12_unlock", N12ToolFunctions.GetRemainTime(remainTime)))
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardLevelCell.LevelIconOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  if not (self._lockObj).activeSelf then
-    (N12ToolFunctions.SetLocalDBInt)(N12OperationRecordKey.HardLevelIndex, self._levelIndex)
+function UIN12HardLevelCell:LevelIconOnClick(go)
+  if not self._lockObj.activeSelf then
+    N12ToolFunctions.SetLocalDBInt(N12OperationRecordKey.HardLevelIndex, self._levelIndex)
     self:SwitchState(UIStateType.UIN12HardlLevelInfo)
   end
 end
-
-

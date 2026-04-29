@@ -1,41 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/trigger/luckland_trigger_factory.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LuckLandTriggerFactory", Object)
 LuckLandTriggerFactory = LuckLandTriggerFactory
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LuckLandTriggerFactory.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function LuckLandTriggerFactory:Constructor()
   self._triggerPrototype = {}
-  for k,v in pairs(LuckLandTriggerType) do
+  for k, v in pairs(LuckLandTriggerType) do
     local clsName = "LLTT" .. k
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._triggerPrototype)[v] = Classes[clsName]
+    self._triggerPrototype[v] = Classes[clsName]
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandTriggerFactory.CreateTrigger = function(self, triggerOwner, notifyTypes, triggerCfg)
-  -- function num : 0_1 , upvalues : _ENV
+function LuckLandTriggerFactory:CreateTrigger(triggerOwner, notifyTypes, triggerCfg)
   local combTrigger = LLCombinedTrigger:New(triggerOwner, notifyTypes)
-  for i,cfg in ipairs(triggerCfg) do
+  for i, cfg in ipairs(triggerCfg) do
     local triggerType = cfg[1]
-    local triggerProto = (self._triggerPrototype)[triggerType]
+    local triggerProto = self._triggerPrototype[triggerType]
     if not triggerProto then
-      (Log.error)("[LuckLandTriggerFactory]CreateTrigger() not find trigger type:", triggerType)
-      return 
+      Log.error("[LuckLandTriggerFactory]CreateTrigger() not find trigger type:", triggerType)
+      return
     end
-    local triggerParam = (table.sub)(cfg, 2, #cfg)
+    local triggerParam = table.sub(cfg, 2, #cfg)
     local trigger = triggerProto:New(triggerOwner, triggerType, triggerParam)
     combTrigger:AddTrigger(trigger)
   end
   return combTrigger
 end
-
-

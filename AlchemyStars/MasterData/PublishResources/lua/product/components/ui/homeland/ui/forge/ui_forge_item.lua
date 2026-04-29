@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/forge/ui_forge_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIForgeItem", UICustomWidget)
 UIForgeItem = UIForgeItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIForgeItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIForgeItem:OnShow()
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.imgQuality = self:GetUIComponent("Image", "imgQuality")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
@@ -18,74 +11,46 @@ UIForgeItem.OnShow = function(self)
   self.exp = self:GetGameObject("exp")
   self.forgeCount = self:GetUIComponent("UILocalizationText", "forgeCount")
   self.forgeCountParent = self:GetGameObject("forgeCountParent")
-  self.data = (self:GetModule(HomelandModule)):GetForgeData()
+  self.data = self:GetModule(HomelandModule):GetForgeData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeItem.OnHide = function(self)
-  -- function num : 0_1
-  (self.imgIcon):DestoryLastImage()
+function UIForgeItem:OnHide()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeItem.Flush = function(self, id)
-  -- function num : 0_2 , upvalues : _ENV
+function UIForgeItem:Flush(id)
   self.id = id
-  local item = (self.data):GetForgeInfoItemById(id)
-  ;
-  (self.imgIcon):LoadImage(item.icon)
-  ;
-  (self.txtName):SetText(item.name)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.imgQuality).color = (UIForgeData.qualityColors)[item.quality]
+  local item = self.data:GetForgeInfoItemById(id)
+  self.imgIcon:LoadImage(item.icon)
+  self.txtName:SetText(item.name)
+  self.imgQuality.color = UIForgeData.qualityColors[item.quality]
   if item.unlocked then
-    (self.lock):SetActive(false)
-    if (self.data):IsForgeable(item) then
-      (self.forgeable):SetActive(true)
+    self.lock:SetActive(false)
+    if self.data:IsForgeable(item) then
+      self.forgeable:SetActive(true)
     else
-      ;
-      (self.forgeable):SetActive(false)
+      self.forgeable:SetActive(false)
     end
-    ;
-    (self.exp):SetActive((self.data):IsUnforged(id))
+    self.exp:SetActive(self.data:IsUnforged(id))
   else
-    ;
-    (self.exp):SetActive(false)
-    ;
-    (self.lock):SetActive(true)
-    ;
-    (self.forgeable):SetActive(false)
+    self.exp:SetActive(false)
+    self.lock:SetActive(true)
+    self.forgeable:SetActive(false)
   end
-  ;
-  (self.forgeCount):SetText("×" .. item.forgeCount)
-  ;
-  (self.forgeCountParent):SetActive(item.forgeCount > 1)
+  self.forgeCount:SetText("×" .. item.forgeCount)
+  self.forgeCountParent:SetActive(item.forgeCount > 1)
   self:FlushRed()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeItem.FlushRed = function(self)
-  -- function num : 0_3
+function UIForgeItem:FlushRed()
   local isShowRed = false
-  local item = (self.data):GetForgeInfoItemById(self.id)
+  local item = self.data:GetForgeInfoItemById(self.id)
   if not item.unlocked and item:IsUnlockCostsEnough() then
     isShowRed = true
   end
-  ;
-  (self.red):SetActive(isShowRed)
+  self.red:SetActive(isShowRed)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeItem.bgOnClick = function(self, go)
-  -- function num : 0_4
+function UIForgeItem:bgOnClick(go)
   self:ShowDialog("UIForgeDetail", self.id)
 end
-
-

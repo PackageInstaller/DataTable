@@ -1,54 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_multiple_show_item_color.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardMultipleShowItemColor", Object)
 UIDrawCardMultipleShowItemColor = UIDrawCardMultipleShowItemColor
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardMultipleShowItemColor.InitWidget = function(self)
-  -- function num : 0_0
+function UIDrawCardMultipleShowItemColor:InitWidget()
   self.color = self:GetUIComponent("Transform", "root")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardMultipleShowItemColor.GetUIComponent = function(self, component, name)
-  -- function num : 0_1
-  return (self._view):GetUIComponent(component, name)
+function UIDrawCardMultipleShowItemColor:GetUIComponent(component, name)
+  return self._view:GetUIComponent(component, name)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardMultipleShowItemColor.GetAsset = function(self, name, loadType)
-  -- function num : 0_2 , upvalues : _ENV
-  return (UIResourceManager.GetAsset)(name, loadType, self.name2Assets)
+function UIDrawCardMultipleShowItemColor:GetAsset(name, loadType)
+  return UIResourceManager.GetAsset(name, loadType, self.name2Assets)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardMultipleShowItemColor.SetData = function(self, tmpID, view)
-  -- function num : 0_3 , upvalues : _ENV
+function UIDrawCardMultipleShowItemColor:SetData(tmpID, view)
   self.name2Assets = {}
   self._view = view
   self:InitWidget()
-  local cfg = (Cfg.cfg_pet)[tmpID]
+  local cfg = Cfg.cfg_pet[tmpID]
   local star = cfg.Star
-  if star > 3 then
-    ((self.color).gameObject):SetActive(true)
+  if 3 < star then
+    self.color.gameObject:SetActive(true)
   else
-    ;
-    ((self.color).gameObject):SetActive(false)
+    self.color.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardMultipleShowItemColor.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (UIResourceManager.DisposeAllAssets)(self.name2Assets)
+function UIDrawCardMultipleShowItemColor:OnHide()
+  UIResourceManager.DisposeAllAssets(self.name2Assets)
   self.name2Assets = nil
 end
-
-

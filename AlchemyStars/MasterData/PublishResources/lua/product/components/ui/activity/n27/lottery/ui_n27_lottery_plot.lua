@@ -1,23 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/lottery/ui_n27_lottery_plot.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN27LotteryPlot", UIController)
 UIN27LotteryPlot = UIN27LotteryPlot
-local UIN27LotteryPlotState = {locked = 1, new = 2, read = 3}
+local UIN27LotteryPlotState = {
+  locked = 1,
+  new = 2,
+  read = 3
+}
 _enum("UIN27LotteryPlotState", UIN27LotteryPlotState)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN27LotteryPlot.Constructor = function(self)
-  -- function num : 0_0
+function UIN27LotteryPlot:Constructor()
   self._idPage = 1
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27LotteryPlot.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIN27LotteryPlot:LoadDataOnEnter(TT, res, uiParams)
   self._plots = uiParams[1]
   self._fnCloseInvoke = uiParams[2]
   if self._plots == nil or self._fnCloseInvoke == nil then
@@ -27,16 +21,13 @@ UIN27LotteryPlot.LoadDataOnEnter = function(self, TT, res, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27LotteryPlot.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN27LotteryPlot:OnShow(uiParams)
   self._uiPageUnlocked = self:GetUIComponent("RectTransform", "uiPageUnlocked")
   self._uiPageLocked = self:GetUIComponent("RectTransform", "uiPageLocked")
   self._animation = self:GetUIComponent("Animation", "animation")
   self._newWorkBook = self:GetUIComponent("RectTransform", "newWorkBook")
   self._txtNameValue = self:GetUIComponent("UILocalizationText", "txtNameValue")
-  self._turningPoint = (self:GetGameObject("turningPoint")):GetComponent("UISelectObjectPath")
+  self._turningPoint = self:GetGameObject("turningPoint"):GetComponent("UISelectObjectPath")
   self._imgSnapshotLoader = self:GetUIComponent("RawImageLoader", "imgSnapshot")
   self._senderValue = self:GetUIComponent("UILocalizationText", "senderValue")
   self._receiverValue = self:GetUIComponent("UILocalizationText", "receiverValue")
@@ -51,45 +42,36 @@ UIN27LotteryPlot.OnShow = function(self, uiParams)
   self:TurnPagePoint(self._idPage, self._idPage)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27LotteryPlot.OnHide = function(self)
-  -- function num : 0_3
+function UIN27LotteryPlot:OnHide()
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27LotteryPlot.GetChildComponent = function(self, parent, componentTypeName, name)
-  -- function num : 0_4
-  local child = (parent.transform):Find(name)
+function UIN27LotteryPlot:GetChildComponent(parent, componentTypeName, name)
+  local child = parent.transform:Find(name)
   if child == nil then
     return nil
   end
   return child:GetComponent(componentTypeName)
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27LotteryPlot.CreateTurningPoint = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN27LotteryPlot:CreateTurningPoint()
   self._turningPointPool = {}
-  for i = 1, (self._plots).count do
-    local go = (self._turningPoint):SpawnOneObject(i - 1)
+  for i = 1, self._plots.count do
+    local go = self._turningPoint:SpawnOneObject(i - 1)
     self:ResetCellSize(go, Vector2(23, 23))
     local imgPointCur = self:GetChildComponent(go, "Image", "imgPointCur")
-    ;
-    (imgPointCur.gameObject):SetActive(false)
-    ;
-    (table.insert)(self._turningPointPool, {structName = "UIN27LotteryPlot::PagePoint", root = go, animation = go:GetComponent("Animation"), imgPointCur = imgPointCur})
+    imgPointCur.gameObject:SetActive(false)
+    table.insert(self._turningPointPool, {
+      structName = "UIN27LotteryPlot::PagePoint",
+      root = go,
+      animation = go:GetComponent("Animation"),
+      imgPointCur = imgPointCur
+    })
   end
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27LotteryPlot.ResetCellSize = function(self, go, cellSize)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN27LotteryPlot:ResetCellSize(go, cellSize)
   if go == nil then
-    return 
+    return
   end
   local rt = go.transform
   rt.pivot = Vector2.one * 0.5
@@ -100,206 +82,139 @@ UIN27LotteryPlot.ResetCellSize = function(self, go, cellSize)
   rt.anchoredPosition = Vector2.zero
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27LotteryPlot.FlushCurrentPage = function(self)
-  -- function num : 0_7 , upvalues : UIN27LotteryPlotState
+function UIN27LotteryPlot:FlushCurrentPage()
   self._idPage = 1
-  if (self._plots).manualBrowse then
-    local idNewState, idReadState = nil, nil
-    for i = 1, (self._plots).count do
-      local v = (self._plots)[i]
+  if self._plots.manualBrowse then
+    local idNewState, idReadState
+    for i = 1, self._plots.count do
+      local v = self._plots[i]
       if v.state == UIN27LotteryPlotState.new then
         idNewState = i
-      else
-        if v.state == UIN27LotteryPlotState.read then
-          idReadState = i
-        end
+      elseif v.state == UIN27LotteryPlotState.read then
+        idReadState = i
       end
     end
     if idNewState ~= nil then
       self._idPage = idNewState
-    else
-      if idReadState ~= nil then
-        self._idPage = idReadState
-      end
+    elseif idReadState ~= nil then
+      self._idPage = idReadState
     end
   else
-    do
-      for i = 1, (self._plots).count do
-        local v = (self._plots)[i]
-        if (self._plots).curPlot == v then
-          self._idPage = i
-          break
-        end
+    for i = 1, self._plots.count do
+      local v = self._plots[i]
+      if self._plots.curPlot == v then
+        self._idPage = i
+        break
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27LotteryPlot.TurnPage = function(self, idOldPage, idPage)
-  -- function num : 0_8 , upvalues : _ENV, UIN27LotteryPlotState
-  idPage = (math.max)(idPage, 1)
-  idPage = (math.min)(idPage, (self._plots).count)
+function UIN27LotteryPlot:TurnPage(idOldPage, idPage)
+  idPage = math.max(idPage, 1)
+  idPage = math.min(idPage, self._plots.count)
   self._idPage = idPage
-  local current = (self._plots)[self._idPage]
-  local isShowLeft = self._idPage > 1
-  local isShowRight = self._idPage < (self._plots).count
-  ;
-  ((self._btnPageLeft).gameObject):SetActive(isShowLeft)
-  ;
-  ((self._btnPageRight).gameObject):SetActive(isShowRight)
-  ;
-  ((self._uiPageUnlocked).gameObject):SetActive(current.state ~= UIN27LotteryPlotState.locked)
-  ;
-  ((self._uiPageLocked).gameObject):SetActive(current.state == UIN27LotteryPlotState.locked)
-  ;
-  ((self._newWorkBook).gameObject):SetActive(current.state == UIN27LotteryPlotState.new)
-  ;
-  (self._imgSnapshotLoader):LoadImage((current.cfg).RecvIcon)
-  ;
-  (self._txtNameValue):SetText((StringTable.Get)((current.cfg).BookName))
-  ;
-  (self._senderValue):SetText((StringTable.Get)((current.cfg).Sender))
-  ;
-  (self._receiverValue):SetText((StringTable.Get)((current.cfg).Receiver))
-  ;
-  (self._bookContent):SetText((StringTable.Get)((current.cfg).BookContent))
+  local current = self._plots[self._idPage]
+  local isShowLeft = 1 < self._idPage
+  local isShowRight = self._idPage < self._plots.count
+  self._btnPageLeft.gameObject:SetActive(isShowLeft)
+  self._btnPageRight.gameObject:SetActive(isShowRight)
+  self._uiPageUnlocked.gameObject:SetActive(current.state ~= UIN27LotteryPlotState.locked)
+  self._uiPageLocked.gameObject:SetActive(current.state == UIN27LotteryPlotState.locked)
+  self._newWorkBook.gameObject:SetActive(current.state == UIN27LotteryPlotState.new)
+  self._imgSnapshotLoader:LoadImage(current.cfg.RecvIcon)
+  self._txtNameValue:SetText(StringTable.Get(current.cfg.BookName))
+  self._senderValue:SetText(StringTable.Get(current.cfg.Sender))
+  self._receiverValue:SetText(StringTable.Get(current.cfg.Receiver))
+  self._bookContent:SetText(StringTable.Get(current.cfg.BookContent))
   local atlas = self:CallUIMethod("UIN27LotteryMain", "GetSpriteAtlas")
-  -- DECOMPILER ERROR at PC115: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._receiverSignIcon).sprite = atlas:GetSprite((current.cfg).ReceiverSign)
+  self._receiverSignIcon.sprite = atlas:GetSprite(current.cfg.ReceiverSign)
   if current.state == UIN27LotteryPlotState.locked then
-    (self._txtNameValue):SetText((StringTable.Get)((current.cfg).BookLockedName))
+    self._txtNameValue:SetText(StringTable.Get(current.cfg.BookLockedName))
   end
   local levelUp = 600
-  if (current.cfg).PlotLevel ~= nil then
-    levelUp = (current.cfg).PlotLevel
+  if current.cfg.PlotLevel ~= nil then
+    levelUp = current.cfg.PlotLevel
   end
-  local cost = (levelUp - (self._plots).completed) * (self._plots).costCount
-  cost = (math.max)(cost, 0)
-  local txtUnlockedDesc = (StringTable.Get)("str_n27_lottery_package_unlock_count", cost)
-  ;
-  (self._txtUnlockedDesc):SetText(txtUnlockedDesc)
-  if (self._plots).manualBrowse and current.state == UIN27LotteryPlotState.new then
+  local cost = (levelUp - self._plots.completed) * self._plots.costCount
+  cost = math.max(cost, 0)
+  local txtUnlockedDesc = StringTable.Get("str_n27_lottery_package_unlock_count", cost)
+  self._txtUnlockedDesc:SetText(txtUnlockedDesc)
+  if self._plots.manualBrowse and current.state == UIN27LotteryPlotState.new then
     current.state = UIN27LotteryPlotState.read
   elseif current.state == UIN27LotteryPlotState.new then
     current.state = UIN27LotteryPlotState.read
   end
-  -- DECOMPILER ERROR: 9 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27LotteryPlot.TurnPagePoint = function(self, idOldPage, idPage)
-  -- function num : 0_9 , upvalues : _ENV
-  idPage = (math.max)(idPage, 1)
-  idPage = (math.min)(idPage, (self._plots).count)
+function UIN27LotteryPlot:TurnPagePoint(idOldPage, idPage)
+  idPage = math.max(idPage, 1)
+  idPage = math.min(idPage, self._plots.count)
   self._idPage = idPage
-  local tpWidget = (self._turningPointPool)[idOldPage]
-  ;
-  ((tpWidget.imgPointCur).gameObject):SetActive(false)
+  local tpWidget = self._turningPointPool[idOldPage]
+  tpWidget.imgPointCur.gameObject:SetActive(false)
   self:ResetCellSize(tpWidget.root, Vector2(23, 23))
-  local tpWidget = (self._turningPointPool)[self._idPage]
+  local tpWidget = self._turningPointPool[self._idPage]
   self:ResetCellSize(tpWidget.root, Vector2(84, 23))
-  ;
-  ((tpWidget.imgPointCur).gameObject):SetActive(true)
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((tpWidget.imgPointCur).transform).anchoredPosition = Vector2.zero
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).MarkLayoutForRebuild)((self._turningPoint).transform)
+  tpWidget.imgPointCur.gameObject:SetActive(true)
+  tpWidget.imgPointCur.transform.anchoredPosition = Vector2.zero
+  UnityEngine.UI.LayoutRebuilder.MarkLayoutForRebuild(self._turningPoint.transform)
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27LotteryPlot.BtnCloseOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN27LotteryPlot:BtnCloseOnClick(go)
   self:StartTask(function()
-    -- function num : 0_10_0 , upvalues : self, _ENV
     self:Lock("UIN27LotteryPlot:CloseDialog")
-    ;
-    (self._animation):Play("uieffanim_UIN27LotteryPlot_out")
+    self._animation:Play("uieffanim_UIN27LotteryPlot_out")
     YIELD(TT, 133)
     self:UnLock("UIN27LotteryPlot:CloseDialog")
     self:CloseDialog()
     if self._fnCloseInvoke then
       self:StartTask(self.CloseInvokeTask, self)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27LotteryPlot.CloseInvokeTask = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN27LotteryPlot:CloseInvokeTask(TT)
   self:Lock("UIN27LotteryPlot:CloseInvoke")
   YIELD(TT, 100)
   self:UnLock("UIN27LotteryPlot:CloseInvoke")
-  ;
-  (self._fnCloseInvoke)()
+  self._fnCloseInvoke()
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27LotteryPlot.BtnPageLeftOnClick = function(self, go)
-  -- function num : 0_12
+function UIN27LotteryPlot:BtnPageLeftOnClick(go)
   self:StartTask(self.TurnPageAnimationTask, self, self._idPage, self._idPage - 1)
   self:StartTask(self.TurnPagePointAnimationTask, self, self._idPage, self._idPage - 1)
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27LotteryPlot.BtnPageRightOnClick = function(self, go)
-  -- function num : 0_13
+function UIN27LotteryPlot:BtnPageRightOnClick(go)
   self:StartTask(self.TurnPageAnimationTask, self, self._idPage, self._idPage + 1)
   self:StartTask(self.TurnPagePointAnimationTask, self, self._idPage, self._idPage + 1)
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27LotteryPlot.TurnPageAnimationTask = function(self, TT, idOldPage, idPage)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN27LotteryPlot:TurnPageAnimationTask(TT, idOldPage, idPage)
   self:Lock("UIN27LotteryPlot:TurnPageAnimation")
-  ;
-  (self._animation):Play("uieffanim_UIN27LotteryPlot_turn")
+  self._animation:Play("uieffanim_UIN27LotteryPlot_turn")
   YIELD(TT, 200)
   self:TurnPage(idOldPage, idPage)
   YIELD(TT, 600)
   self:UnLock("UIN27LotteryPlot:TurnPageAnimation")
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27LotteryPlot.TurnPagePointAnimationTask = function(self, TT, idOldPage, idPage)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN27LotteryPlot:TurnPagePointAnimationTask(TT, idOldPage, idPage)
   self:Lock("UIN27LotteryPlot:TurnPagePointAnimation")
-  local tpWidget = (self._turningPointPool)[idOldPage]
+  local tpWidget = self._turningPointPool[idOldPage]
   if idOldPage < idPage then
-    (tpWidget.animation):Play("uieffanim_UIN27LotteryTurningpoint_R")
+    tpWidget.animation:Play("uieffanim_UIN27LotteryTurningpoint_R")
   else
-    ;
-    (tpWidget.animation):Play("uieffanim_UIN27LotteryTurningpoint_L")
+    tpWidget.animation:Play("uieffanim_UIN27LotteryTurningpoint_L")
   end
   YIELD(TT, 400)
   self:TurnPagePoint(idOldPage, idPage)
   self:UnLock("UIN27LotteryPlot:TurnPagePointAnimation")
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27LotteryPlot.BtnViewPlotOnClick = function(self, go)
-  -- function num : 0_16
-  local current = (self._plots)[self._idPage]
-  self:ShowDialog("UIStoryController", (current.cfg).PlotID, function()
-    -- function num : 0_16_0
-  end
-)
+function UIN27LotteryPlot:BtnViewPlotOnClick(go)
+  local current = self._plots[self._idPage]
+  self:ShowDialog("UIStoryController", current.cfg.PlotID, function()
+  end)
 end
-
-

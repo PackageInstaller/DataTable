@@ -1,87 +1,118 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/auto_test_config/auto_test_174.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 AutoTest_174 = {
-cases = {
-[1] = {
-[1] = {action = "WaitGameFsm", 
-args = {id = 5}
+  cases = {
+    [1] = {
+      [1] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [2] = {
+        action = "SetTeamPosition",
+        args = {pos = 502}
+      },
+      [3] = {
+        action = "SetOnePieceType",
+        args = {pieceType = 2, pos = 203}
+      },
+      [4] = {
+        action = "SetOnePieceType",
+        args = {pieceType = 2, pos = 303}
+      },
+      [5] = {
+        action = "SetOnePieceType",
+        args = {pieceType = 2, pos = 405}
+      },
+      [6] = {
+        action = "SetOnePieceType",
+        args = {pieceType = 2, pos = 603}
+      },
+      [7] = {
+        action = "SetOnePieceType",
+        args = {pieceType = 2, pos = 702}
+      },
+      [8] = {
+        action = "SetOnePieceType",
+        args = {pieceType = 2, pos = 804}
+      },
+      [9] = {
+        action = "CheckPieceType",
+        args = {
+          pieceType = 3,
+          pos = 203,
+          trigger = 88
+        }
+      },
+      [10] = {
+        action = "CheckPieceType",
+        args = {
+          pieceType = 3,
+          pos = 303,
+          trigger = 88
+        }
+      },
+      [11] = {
+        action = "CheckPieceType",
+        args = {
+          pieceType = 3,
+          pos = 405,
+          trigger = 88
+        }
+      },
+      [12] = {
+        action = "CheckPieceType",
+        args = {
+          pieceType = 3,
+          pos = 603,
+          trigger = 88
+        }
+      },
+      [13] = {
+        action = "CheckPieceType",
+        args = {
+          pieceType = 3,
+          pos = 702,
+          trigger = 88
+        }
+      },
+      [14] = {
+        action = "CheckPieceType",
+        args = {
+          pieceType = 2,
+          pos = 804,
+          trigger = 88
+        }
+      },
+      [15] = {
+        action = "FakeCastSkill",
+        args = {
+          name = "p1",
+          pickUpPos = {
+            [1] = 502.0
+          }
+        }
+      },
+      [16] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      name = "主动技强化：改变5个格子"
+    }
+  },
+  name = "契法突5：转色格子+1",
+  petList = {
+    [1] = {
+      affinity = 1,
+      awakening = 5,
+      equiplv = 1,
+      grade = 1,
+      id = 1500921,
+      level = 10,
+      name = "p1"
+    }
+  },
+  setup = {
+    [1] = {
+      args = {levelID = 1, matchType = 1},
+      setup = "LevelBasic"
+    }
+  }
 }
-, 
-[2] = {action = "SetTeamPosition", 
-args = {pos = 502}
-}
-, 
-[3] = {action = "SetOnePieceType", 
-args = {pieceType = 2, pos = 203}
-}
-, 
-[4] = {action = "SetOnePieceType", 
-args = {pieceType = 2, pos = 303}
-}
-, 
-[5] = {action = "SetOnePieceType", 
-args = {pieceType = 2, pos = 405}
-}
-, 
-[6] = {action = "SetOnePieceType", 
-args = {pieceType = 2, pos = 603}
-}
-, 
-[7] = {action = "SetOnePieceType", 
-args = {pieceType = 2, pos = 702}
-}
-, 
-[8] = {action = "SetOnePieceType", 
-args = {pieceType = 2, pos = 804}
-}
-, 
-[9] = {action = "CheckPieceType", 
-args = {pieceType = 3, pos = 203, trigger = 88}
-}
-, 
-[10] = {action = "CheckPieceType", 
-args = {pieceType = 3, pos = 303, trigger = 88}
-}
-, 
-[11] = {action = "CheckPieceType", 
-args = {pieceType = 3, pos = 405, trigger = 88}
-}
-, 
-[12] = {action = "CheckPieceType", 
-args = {pieceType = 3, pos = 603, trigger = 88}
-}
-, 
-[13] = {action = "CheckPieceType", 
-args = {pieceType = 3, pos = 702, trigger = 88}
-}
-, 
-[14] = {action = "CheckPieceType", 
-args = {pieceType = 2, pos = 804, trigger = 88}
-}
-, 
-[15] = {action = "FakeCastSkill", 
-args = {name = "p1", 
-pickUpPos = {[1] = 502}
-}
-}
-, 
-[16] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, name = "主动技强化：改变5个格子"}
-}
-, name = "契法突5：转色格子+1", 
-petList = {
-[1] = {affinity = 1, awakening = 5, equiplv = 1, grade = 1, id = 1500921, level = 10, name = "p1"}
-}
-, 
-setup = {
-[1] = {
-args = {levelID = 1, matchType = 1}
-, setup = "LevelBasic"}
-}
-}
-

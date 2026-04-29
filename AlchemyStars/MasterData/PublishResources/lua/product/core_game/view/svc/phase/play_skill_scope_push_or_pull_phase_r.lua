@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_scope_push_or_pull_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillScopePushOrPullPhase", PlaySkillPhaseBase)
 PlaySkillScopePushOrPullPhase = PlaySkillScopePushOrPullPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillScopePushOrPullPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillScopePushOrPullPhase:PlayFlight(TT, casterEntity, phaseParam)
   local scopePushOrPullParam = phaseParam
   local gridEffectID = scopePushOrPullParam:GetBornEffectID()
   local bornEffectID = scopePushOrPullParam:GetBornEffectID()
@@ -24,7 +17,7 @@ PlaySkillScopePushOrPullPhase.PlayFlight = function(self, TT, casterEntity, phas
   local hitAnimationName = scopePushOrPullParam:GetHitAnimationName()
   local hitEffectID = scopePushOrPullParam:GetHitEffectID()
   local effectDirection = scopePushOrPullParam:GetEffectDirection()
-  local castPos = (casterEntity:GridLocation()).Position
+  local castPos = casterEntity:GridLocation().Position
   self._casterPos = castPos
   local renderPickUpComponent = casterEntity:RenderPickUpComponent()
   local checkPush = false
@@ -35,16 +28,14 @@ PlaySkillScopePushOrPullPhase.PlayFlight = function(self, TT, casterEntity, phas
   end
   if pickCount == 0 then
     checkPush = true
-  else
-    if pickCount == 1 then
-      checkPull = true
-    end
+  elseif pickCount == 1 then
+    checkPull = true
   end
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
-  local gridDataArray = (scopeResult:GetAttackRange())
-  local targetGridType = nil
+  local gridDataArray = scopeResult:GetAttackRange()
+  local targetGridType
   local convertGridList = {}
   local targetGirdList, _, maxGridCount = InnerGameSortGridHelperRender:SortGrid(gridDataArray, castPos)
   local isFinalAttack = skillEffectResultContainer:IsFinalAttack()
@@ -53,217 +44,172 @@ PlaySkillScopePushOrPullPhase.PlayFlight = function(self, TT, casterEntity, phas
     local targetEntityID = self:_SortDistanceForFinalAttack(castPos, damageResultArray)
     skillEffectResultContainer:SetFinalAttackEntityID(targetEntityID)
   end
-  do
-    self._beAttackPos = {}
-    local tidHitTask = {}
-    local effBornGridList = {}
-    local effEndGridList = {}
-    for dir = 1, 8 do
-      local dirGrids = targetGirdList[dir]
-      if #dirGrids.gridList > 0 then
-        local bornGrid, endGrid = self:_CalEffBornEndGrid(dirGrids, castPos, checkPush, checkPull)
-        if bornGrid then
-          effBornGridList[dir] = bornGrid
-        end
-        if endGrid then
-          effEndGridList[dir] = endGrid
-        end
-      end
-    end
-    local effectService = (self._world):GetService("Effect")
-    for dir = 1, 8 do
-      local bornGrid = effBornGridList[dir]
+  self._beAttackPos = {}
+  local tidHitTask = {}
+  local effBornGridList = {}
+  local effEndGridList = {}
+  for dir = 1, 8 do
+    local dirGrids = targetGirdList[dir]
+    if 0 < #dirGrids.gridList then
+      local bornGrid, endGrid = self:_CalEffBornEndGrid(dirGrids, castPos, checkPush, checkPull)
       if bornGrid then
-        local effDir = self:_CalEffDir(bornGrid, castPos, checkPush, checkPull)
-        effectService:CreateWorldPositionDirectionEffect(bornEffectID, bornGrid, effDir + self:_GetDirection(effectDirection))
+        effBornGridList[dir] = bornGrid
+      end
+      if endGrid then
+        effEndGridList[dir] = endGrid
       end
     end
-    YIELD(TT, moveEffectDelayTime)
-    local effInfoList = {}
-    for dir = 1, 8 do
-      local bornGrid = effBornGridList[dir]
-      if bornGrid then
-        local effDir = self:_CalEffDir(bornGrid, castPos, checkPush, checkPull)
-        local effEntity = effectService:CreateWorldPositionDirectionEffect(moveEffectID, bornGrid, effDir + self:_GetDirection(effectDirection))
-        local effInfo = {}
-        effInfo.entity = effEntity
-        effInfo.effStartPos = bornGrid
-        effInfo.effEndPos = effEndGridList[dir]
-        effInfoList[dir] = effInfo
-      end
-    end
-    local effFlyTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._StartEffectFly, self, casterEntity, castPos, effInfoList, scopePushOrPullParam, castPos)
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished({effFlyTaskID}) do
-      YIELD(TT)
-    end
-    YIELD(TT, disappearEffectTime)
   end
+  local effectService = self._world:GetService("Effect")
+  for dir = 1, 8 do
+    local bornGrid = effBornGridList[dir]
+    if bornGrid then
+      local effDir = self:_CalEffDir(bornGrid, castPos, checkPush, checkPull)
+      effectService:CreateWorldPositionDirectionEffect(bornEffectID, bornGrid, effDir + self:_GetDirection(effectDirection))
+    end
+  end
+  YIELD(TT, moveEffectDelayTime)
+  local effInfoList = {}
+  for dir = 1, 8 do
+    local bornGrid = effBornGridList[dir]
+    if bornGrid then
+      local effDir = self:_CalEffDir(bornGrid, castPos, checkPush, checkPull)
+      local effEntity = effectService:CreateWorldPositionDirectionEffect(moveEffectID, bornGrid, effDir + self:_GetDirection(effectDirection))
+      local effInfo = {}
+      effInfo.entity = effEntity
+      effInfo.effStartPos = bornGrid
+      effInfo.effEndPos = effEndGridList[dir]
+      effInfoList[dir] = effInfo
+    end
+  end
+  local effFlyTaskID = GameGlobal.TaskManager():CoreGameStartTask(self._StartEffectFly, self, casterEntity, castPos, effInfoList, scopePushOrPullParam, castPos)
+  while not TaskHelper:GetInstance():IsAllTaskFinished({effFlyTaskID}) do
+    YIELD(TT)
+  end
+  YIELD(TT, disappearEffectTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillScopePushOrPullPhase._GetDirection = function(self, effectDirection)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillScopePushOrPullPhase:_GetDirection(effectDirection)
   if effectDirection == "Bottom" then
     return Vector2(0, -1)
+  elseif effectDirection == "Up" then
+    return Vector2(0, 0)
+  elseif effectDirection == "Left" then
+    return Vector2(1, 0)
+  elseif effectDirection == "Right" then
+    return Vector2(-1, 0)
   else
-    if effectDirection == "Up" then
-      return Vector2(0, 0)
-    else
-      if effectDirection == "Left" then
-        return Vector2(1, 0)
-      else
-        if effectDirection == "Right" then
-          return Vector2(-1, 0)
-        else
-          return Vector2(0, 0)
-        end
-      end
-    end
+    return Vector2(0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillScopePushOrPullPhase._SortDistanceForFinalAttack = function(self, castPos, damageResultArray, checkPush, checkPull)
-  -- function num : 0_2 , upvalues : _ENV
-  local CmpDistancefuncPush = function(skillDamageEffectResult1, skillDamageEffectResult2)
-    -- function num : 0_2_0 , upvalues : self, castPos
+function PlaySkillScopePushOrPullPhase:_SortDistanceForFinalAttack(castPos, damageResultArray, checkPush, checkPull)
+  local function CmpDistancefuncPush(skillDamageEffectResult1, skillDamageEffectResult2)
+    local dis1 = self:_CalcDistanceToCaster(castPos, skillDamageEffectResult1)
+    
+    local dis2 = self:_CalcDistanceToCaster(castPos, skillDamageEffectResult2)
+    return dis1 > dis2
+  end
+  
+  local function CmpDistancefuncPull(skillDamageEffectResult1, skillDamageEffectResult2)
     local dis1 = self:_CalcDistanceToCaster(castPos, skillDamageEffectResult1)
     local dis2 = self:_CalcDistanceToCaster(castPos, skillDamageEffectResult2)
-    do return dis2 < dis1 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+    return dis1 < dis2
   end
-
-  local CmpDistancefuncPull = function(skillDamageEffectResult1, skillDamageEffectResult2)
-    -- function num : 0_2_1 , upvalues : self, castPos
-    local dis1 = self:_CalcDistanceToCaster(castPos, skillDamageEffectResult1)
-    local dis2 = self:_CalcDistanceToCaster(castPos, skillDamageEffectResult2)
-    do return dis1 < dis2 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
+  
   if checkPush then
-    (table.sort)(damageResultArray, CmpDistancefuncPush)
-  else
-    if checkPull then
-      (table.sort)(damageResultArray, CmpDistancefuncPull)
-    end
+    table.sort(damageResultArray, CmpDistancefuncPush)
+  elseif checkPull then
+    table.sort(damageResultArray, CmpDistancefuncPull)
   end
-  for _,v in ipairs(damageResultArray) do
+  for _, v in ipairs(damageResultArray) do
     local result = v
     local targetEntityID = result:GetTargetID()
-    local targetEntity = (self._world):GetEntityByID(targetEntityID)
+    local targetEntity = self._world:GetEntityByID(targetEntityID)
     if targetEntity:HasDeadFlag() then
       return targetEntityID
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillScopePushOrPullPhase._CalcDistanceToCaster = function(self, castPos, skillDamageResult)
-  -- function num : 0_3 , upvalues : _ENV
+function PlaySkillScopePushOrPullPhase:_CalcDistanceToCaster(castPos, skillDamageResult)
   local gridPos = skillDamageResult:GetGridPos()
-  return (Vector2.Distance)(gridPos, castPos)
+  return Vector2.Distance(gridPos, castPos)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillScopePushOrPullPhase._CalEffBornEndGrid = function(self, dirGrids, castPos, checkPush, checkPull)
-  -- function num : 0_4 , upvalues : _ENV
-  local startIndex, stopIndex, indexStep = nil, nil, nil
+function PlaySkillScopePushOrPullPhase:_CalEffBornEndGrid(dirGrids, castPos, checkPush, checkPull)
+  local startIndex, stopIndex, indexStep
   if checkPush then
     startIndex = 1
     stopIndex = #dirGrids.gridList
     indexStep = 1
+  elseif checkPull then
+    startIndex = #dirGrids.gridList
+    stopIndex = 1
+    indexStep = -1
   else
-    if checkPull then
-      startIndex = #dirGrids.gridList
-      stopIndex = 1
-      indexStep = -1
-    else
-      return 
-    end
+    return
   end
-  local utilDataSvc = ((self._world):GetService("UtilData"))
-  local bornPos, stopPos = nil, nil
+  local utilDataSvc = self._world:GetService("UtilData")
+  local bornPos, stopPos
   for i = startIndex, stopIndex, indexStep do
-    local pos = (dirGrids.gridList)[i]
-    if utilDataSvc:IsValidPiecePos(pos) then
-      local isPieceOnBoard = not utilDataSvc:IsPosBlock(pos, BlockFlag.Skill | BlockFlag.SkillSkip)
-    end
+    local pos = dirGrids.gridList[i]
+    local isPieceOnBoard = utilDataSvc:IsValidPiecePos(pos) and not utilDataSvc:IsPosBlock(pos, BlockFlag.Skill | BlockFlag.SkillSkip)
     if isPieceOnBoard then
-      if not bornPos then
-        bornPos = pos
-      end
+      bornPos = bornPos or pos
       stopPos = pos
     else
       break
     end
   end
-  do
-    return bornPos, stopPos
-  end
+  return bornPos, stopPos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillScopePushOrPullPhase._CalEffDir = function(self, bornGrid, castPos, checkPush, checkPull)
-  -- function num : 0_5
+function PlaySkillScopePushOrPullPhase:_CalEffDir(bornGrid, castPos, checkPush, checkPull)
   if checkPush then
     return bornGrid - castPos
-  else
-    if checkPull then
-      return castPos - bornGrid
-    end
+  elseif checkPull then
+    return castPos - bornGrid
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillScopePushOrPullPhase._StartEffectFly = function(self, TT, castEntity, worldPos, effInfoList, phaseParam, castPos)
-  -- function num : 0_6 , upvalues : _ENV
+function PlaySkillScopePushOrPullPhase:_StartEffectFly(TT, castEntity, worldPos, effInfoList, phaseParam, castPos)
   local flyOneGridMs = phaseParam:GetEffectFlyOneGridMs()
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   YIELD(TT)
   local atklist = ArrayList:New()
-  for k,v in pairs(effInfoList) do
+  for k, v in pairs(effInfoList) do
     local effectEntity = v.entity
     if effectEntity ~= nil then
       local endPos = v.effEndPos
       local startPos = v.effStartPos
-      local go = (effectEntity:View()):GetGameObject()
+      local go = effectEntity:View():GetGameObject()
       local tran = go.transform
       v.tran = go.transform
       local gridWorldpos = boardServiceRender:GridPos2RenderPos(endPos)
-      local disx = (math.abs)(endPos.x - startPos.x)
-      local disy = (math.abs)(endPos.y - startPos.y)
-      local dis = (math.max)(disx, disy)
+      local disx = math.abs(endPos.x - startPos.x)
+      local disy = math.abs(endPos.y - startPos.y)
+      local dis = math.max(disx, disy)
       v.FinalWorldPos = gridWorldpos
-      ;
-      (Log.notice)("[skill] PlaySkillService:_StartEffectFly from ", startPos.x, startPos.y, " to ", endPos.x, endPos.y)
+      Log.notice("[skill] PlaySkillService:_StartEffectFly from ", startPos.x, startPos.y, " to ", endPos.x, endPos.y)
       self:_EffectMove(tran, gridWorldpos, dis, flyOneGridMs)
     end
   end
   self:_CheckFlyAttack(TT, effInfoList, boardServiceRender, castEntity, phaseParam, atklist)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillScopePushOrPullPhase._CheckFlyAttack = function(self, TT, effInfoList, boardServiceRender, casterEntity, phaseParam)
-  -- function num : 0_7 , upvalues : _ENV
-  local effectService = (self._world):GetService("Effect")
+function PlaySkillScopePushOrPullPhase:_CheckFlyAttack(TT, effInfoList, boardServiceRender, casterEntity, phaseParam)
+  local effectService = self._world:GetService("Effect")
   local flyOneGridMs = phaseParam:GetEffectFlyOneGridMs()
   local hitAnimName = phaseParam:GetHitAnimationName()
   local hitEffectID = phaseParam:GetHitEffectID()
-  local l_0_7_10 = true
-  while l_0_7_10 do
-    l_0_7_10 = false
-    for k,v in pairs(effInfoList) do
+  local continue = true
+  while continue do
+    continue = false
+    for k, v in pairs(effInfoList) do
       local effectEntity = v.entity
       if effectEntity ~= nil then
-        l_0_7_10 = true
+        continue = true
         local tran = v.tran
         local flypos = boardServiceRender:BoardRenderPos2GridPos(tran.position)
         if v.flypos ~= flypos then
@@ -276,10 +222,9 @@ PlaySkillScopePushOrPullPhase._CheckFlyAttack = function(self, TT, effInfoList, 
           local effectDirection = phaseParam:GetEffectDirection()
           local effDir = v.effEndPos - v.effStartPos
           local effEntity = effectService:CreateWorldPositionDirectionEffect(phaseParam:GetDisappearEffectID(), flypos, effDir + self:_GetDirection(effectDirection))
-          local go = (effectEntity:View()):GetGameObject()
+          local go = effectEntity:View():GetGameObject()
           go:SetActive(false)
-          ;
-          (self._world):DestroyEntity(effectEntity)
+          self._world:DestroyEntity(effectEntity)
           v.entity = nil
         end
       end
@@ -288,88 +233,65 @@ PlaySkillScopePushOrPullPhase._CheckFlyAttack = function(self, TT, effInfoList, 
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillScopePushOrPullPhase._GetFlyTime = function(self, maxLength, flyOneGridMs)
-  -- function num : 0_8
+function PlaySkillScopePushOrPullPhase:_GetFlyTime(maxLength, flyOneGridMs)
   return flyOneGridMs * maxLength
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillScopePushOrPullPhase._EffectMove = function(self, tran, gridWorldPos, disGrid, flyOneGridMs)
-  -- function num : 0_9 , upvalues : _ENV
-  (tran:DOMove(gridWorldPos, disGrid * flyOneGridMs / 1000)):SetEase(((DG.Tweening).Ease).InOutSine)
+function PlaySkillScopePushOrPullPhase:_EffectMove(tran, gridWorldPos, disGrid, flyOneGridMs)
+  tran:DOMove(gridWorldPos, disGrid * flyOneGridMs / 1000.0):SetEase(DG.Tweening.Ease.InOutSine)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillScopePushOrPullPhase._HandlePlayFlyAttack = function(self, casterEntity, flypos, hitAnimName, hitEffectID, hitTurnToTarget)
-  -- function num : 0_10 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlaySkillScopePushOrPullPhase:_HandlePlayFlyAttack(casterEntity, flypos, hitAnimName, hitEffectID, hitTurnToTarget)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local results = skillEffectResultContainer:GetEffectResultsAsPosDic(SkillEffectType.Damage)
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   if not results then
-    return 
+    return
   end
-  for posIdx,res in pairs(results) do
-    local pos = (Vector2.Index2Pos)(posIdx)
+  for posIdx, res in pairs(results) do
+    local pos = Vector2.Index2Pos(posIdx)
     if self:IsAttackDataNeedBeHit(flypos, pos) and boardServiceRender:IsInPlayerArea(pos) then
       local targetEntityID = res:GetTargetID()
-      local targetEntity = (self._world):GetEntityByID(targetEntityID)
+      local targetEntity = self._world:GetEntityByID(targetEntityID)
       if targetEntity ~= nil then
         local targetDamage = res:GetDamageInfo(1)
-        ;
-        (Log.debug)("[skill] PlaySkillService:_HandlePlayFlyAttack ", targetEntityID, hitAnimName)
-        local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(hitAnimName)):SetHandleBeHitParam_HitEffectID(hitEffectID)):SetHandleBeHitParam_DamageInfo(targetDamage)):SetHandleBeHitParam_DamagePos(flypos)):SetHandleBeHitParam_HitTurnTarget(hitTurnToTarget)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(skillEffectResultContainer:IsFinalAttack())):SetHandleBeHitParam_SkillID(skillID)
-        local damageTextPos = (targetEntity:GridLocation()).Position
-        ;
-        ((GameGlobal.TaskManager)()):CoreGameStartTask((self:SkillService()).HandleBeHit, self:SkillService(), beHitParam)
+        Log.debug("[skill] PlaySkillService:_HandlePlayFlyAttack ", targetEntityID, hitAnimName)
+        local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(hitAnimName):SetHandleBeHitParam_HitEffectID(hitEffectID):SetHandleBeHitParam_DamageInfo(targetDamage):SetHandleBeHitParam_DamagePos(flypos):SetHandleBeHitParam_HitTurnTarget(hitTurnToTarget):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(skillEffectResultContainer:IsFinalAttack()):SetHandleBeHitParam_SkillID(skillID)
+        local damageTextPos = targetEntity:GridLocation().Position
+        GameGlobal.TaskManager():CoreGameStartTask(self:SkillService().HandleBeHit, self:SkillService(), beHitParam)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillScopePushOrPullPhase.CompPos2Caster = function(self, flyPos, resultPos, dir)
-  -- function num : 0_11 , upvalues : _ENV
-  if resultPos.y > flyPos.y then
-    do return dir ~= Vector2(0, 1) and dir ~= Vector2(1, 1) and dir ~= Vector2(-1, 1) end
-    if resultPos.x > flyPos.x then
-      do return dir ~= Vector2(1, 0) end
-      if flyPos.y > resultPos.y then
-        do return dir ~= Vector2(0, -1) and dir ~= Vector2(-1, -1) and dir ~= Vector2(1, -1) end
-        if flyPos.x > resultPos.x then
-          do return dir ~= Vector2(-1, 0) end
-          do return false end
-          -- DECOMPILER ERROR: 10 unprocessed JMP targets
-        end
-      end
-    end
+function PlaySkillScopePushOrPullPhase:CompPos2Caster(flyPos, resultPos, dir)
+  if dir == Vector2(0, 1) or dir == Vector2(1, 1) or dir == Vector2(-1, 1) then
+    return flyPos.y >= resultPos.y
+  elseif dir == Vector2(1, 0) then
+    return flyPos.x >= resultPos.x
+  elseif dir == Vector2(0, -1) or dir == Vector2(-1, -1) or dir == Vector2(1, -1) then
+    return flyPos.y <= resultPos.y
+  elseif dir == Vector2(-1, 0) then
+    return flyPos.x <= resultPos.x
+  else
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillScopePushOrPullPhase.IsAttackDataNeedBeHit = function(self, flyPos, resultPos)
-  -- function num : 0_12 , upvalues : _ENV
-  local flyDir = (Vector2.Normalize)(flyPos - self._casterPos)
-  local resultDir = (Vector2.Normalize)(resultPos - self._casterPos)
+function PlaySkillScopePushOrPullPhase:IsAttackDataNeedBeHit(flyPos, resultPos)
+  local flyDir = Vector2.Normalize(flyPos - self._casterPos)
+  local resultDir = Vector2.Normalize(resultPos - self._casterPos)
   flyDir = self:_GetBaseDir(flyDir)
   resultDir = self:_GetBaseDir(resultDir)
   if flyDir.x == resultDir.x and flyDir.y == resultDir.y and not self:IsPosBeAttack(resultPos) and self:CompPos2Caster(flyPos, resultPos, flyDir) then
-    (table.insert)(self._beAttackPos, resultPos)
+    table.insert(self._beAttackPos, resultPos)
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillScopePushOrPullPhase._GetBaseDir = function(self, oriDir)
-  -- function num : 0_13
+function PlaySkillScopePushOrPullPhase:_GetBaseDir(oriDir)
   local dir = oriDir
   if dir.x > 0 then
     dir.x = 1
@@ -377,25 +299,20 @@ PlaySkillScopePushOrPullPhase._GetBaseDir = function(self, oriDir)
   if dir.x < 0 then
     dir.x = -1
   end
-  if dir.y > 0 then
+  if 0 < dir.y then
     dir.y = 1
   end
-  if dir.y < 0 then
+  if 0 > dir.y then
     dir.y = -1
   end
   return dir
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillScopePushOrPullPhase.IsPosBeAttack = function(self, pos)
-  -- function num : 0_14 , upvalues : _ENV
-  for i,v in ipairs(self._beAttackPos) do
+function PlaySkillScopePushOrPullPhase:IsPosBeAttack(pos)
+  for i, v in ipairs(self._beAttackPos) do
     if v.x == pos.x and v.y == pos.y then
       return true
     end
   end
   return false
 end
-
-

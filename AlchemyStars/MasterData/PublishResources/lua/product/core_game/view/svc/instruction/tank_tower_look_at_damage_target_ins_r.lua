@@ -1,35 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/tank_tower_look_at_damage_target_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("TankTowerLookAtDamageTargetInstruction", BaseInstruction)
 TankTowerLookAtDamageTargetInstruction = TankTowerLookAtDamageTargetInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-TankTowerLookAtDamageTargetInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function TankTowerLookAtDamageTargetInstruction:Constructor(paramList)
   self._time = tonumber(paramList.time)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TankTowerLookAtDamageTargetInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function TankTowerLookAtDamageTargetInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   local targetEntity = world:GetEntityByID(targetEntityID)
-  local v3TargetRenderLocation = (targetEntity:Location()):GetPosition()
+  local v3TargetRenderLocation = targetEntity:Location():GetPosition()
   local cEffectHolder = casterEntity:EffectHolder()
-  local efx = (cEffectHolder:GetEffectList(BattleConst.Tank2002901TowerEffectKey))[1]
+  local efx = cEffectHolder:GetEffectList(BattleConst.Tank2002901TowerEffectKey)[1]
   local timeInSecond = self._time * 0.001
-  local tweener = ((((efx:View()):GetGameObject()).transform):DOLookAt(v3TargetRenderLocation, timeInSecond)):SetEase(((DG.Tweening).Ease).InOutSine)
+  local tweener = efx:View():GetGameObject().transform:DOLookAt(v3TargetRenderLocation, timeInSecond):SetEase(DG.Tweening.Ease.InOutSine)
   YIELD(TT, self._time)
   if not tweener:IsComplete() then
     tweener:Complete()
   end
 end
-
-

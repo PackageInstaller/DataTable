@@ -1,69 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/lottery/StateN29Shop/state_n29_shop_spine_anim.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateN29ShopSpineAnim", StateN29ShopBase)
 StateN29ShopSpineAnim = StateN29ShopSpineAnim
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateN29ShopSpineAnim.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
+function StateN29ShopSpineAnim:OnEnter(TT, ...)
   self:Init()
   self:ShowHideSpineSkip(true)
   self:SetSpineSkipClickCallback(function(...)
-    -- function num : 0_0_0 , upvalues : self, _ENV
     self:ChangeState(StateN29Shop.SpineAnim2, ...)
-  end
-)
-  local lotteryType = (table.unpack)({...})
+  end)
+  local lotteryType = table.unpack({
+    ...
+  })
   self:PlaySpineAnim(TT, lotteryType)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateN29ShopSpineAnim.OnExit = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function StateN29ShopSpineAnim:OnExit(TT)
   self:ShowHideSpineSkip(false)
   if self.taskId then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId)
+    GameGlobal.TaskManager():KillTask(self.taskId)
   end
   if self._playAudioTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._playAudioTask)
+    GameGlobal.TaskManager():KillTask(self._playAudioTask)
     self._playAudioTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateN29ShopSpineAnim.PlaySpineAnim = function(self, TT, lotteryType)
-  -- function num : 0_2 , upvalues : _ENV
-  local curPageIndex = (self:CurPageIndex())
-  local spineAnim = nil
+function StateN29ShopSpineAnim:PlaySpineAnim(TT, lotteryType)
+  local curPageIndex = self:CurPageIndex()
+  local spineAnim
   if lotteryType == ECampaignLotteryType.E_CLT_SINGLE then
     spineAnim = curPageIndex .. "_1"
   else
     spineAnim = curPageIndex .. "_3"
   end
-  self._playAudioTask = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV
+  self._playAudioTask = GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT, 1000)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N24Lottery)
-  end
-, self)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N24Lottery)
+  end, self)
   local yieldTime = self:PlaySpineAnimation(spineAnim, false)
-  if yieldTime and yieldTime > 0 then
-    self.taskId = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_2_1 , upvalues : _ENV, yieldTime, self, lotteryType
-    YIELD(TT, yieldTime)
-    self.taskId = nil
-    self:ChangeState(StateN29Shop.SpineAnim2, lotteryType)
-  end
-, self)
+  if yieldTime and 0 < yieldTime then
+    self.taskId = GameGlobal.TaskManager():StartTask(function(TT)
+      YIELD(TT, yieldTime)
+      self.taskId = nil
+      self:ChangeState(StateN29Shop.SpineAnim2, lotteryType)
+    end, self)
   else
     self:ChangeState(StateN29Shop.GetAward)
   end
 end
-
-

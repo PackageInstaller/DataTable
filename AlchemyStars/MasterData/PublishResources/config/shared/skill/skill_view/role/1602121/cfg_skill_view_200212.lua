@@ -1,17 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/role/1602121/cfg_skill_view_200212.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7, PhasePosDir = 8}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7,
+  PhasePosDir = 8
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterAnimation,animName = AtkChain; PlayAudio,audioID = 160212102,audioType=1; PlayCasterBindEffect,effectID=160212103; Wait,waitTime=2750; "}
-}
-, 
-{2, 2, 31, 1, 1, 1000, 
-{gridEffectID = 160212104, gridIntervalTime = 100, hasDamage = 1, hitAnimationName = "Hit", hitEffectID = 160212105, gridEffectDirection = "Up"}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName = AtkChain; PlayAudio,audioID = 160212102,audioType=1; PlayCasterBindEffect,effectID=160212103; Wait,waitTime=2750; "
+    }
+  },
+  {
+    2,
+    2,
+    31,
+    1,
+    1,
+    1000,
+    {
+      gridEffectID = 160212104,
+      gridIntervalTime = 100,
+      hasDamage = 1,
+      hitAnimationName = "Hit",
+      hitEffectID = 160212105,
+      gridEffectDirection = "Up"
+    }
+  }
 }
 return config, "ID", key
-

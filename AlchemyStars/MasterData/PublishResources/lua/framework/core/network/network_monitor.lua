@@ -1,173 +1,114 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/network/network_monitor.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("NetworkMonitor", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-NetworkMonitor.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function NetworkMonitor:Constructor()
   self.page = UIStateType.Invalid
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-NetworkMonitor.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.debug)("NetworkMonitor:Dispose")
-  self:Choose(false, ((GameGlobal.GameLogic)()):GetModule(LoginModule), "NetworkMonitor:Dispose", (Log.traceback)())
+function NetworkMonitor:Dispose()
+  Log.debug("NetworkMonitor:Dispose")
+  self:Choose(false, GameGlobal.GameLogic():GetModule(LoginModule), "NetworkMonitor:Dispose", Log.traceback())
   self.page = UIStateType.Invalid
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-NetworkMonitor.Choose = function(self, choose, module, reason)
-  -- function num : 0_2 , upvalues : _ENV
+function NetworkMonitor:Choose(choose, module, reason)
   if module == nil then
     return self.page
   end
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("ReConnect", {}, true)
+  GameGlobal.UAReportForceGuideEvent("ReConnect", {}, true)
   if choose then
-    (Log.debug)(module:Key(), " choose retry, reason: ", reason)
+    Log.debug(module:Key(), " choose retry, reason: ", reason)
     self:GoBack(UIStateType.Invalid)
   else
-    ;
-    (Log.debug)(module:Key(), " choose reset, reason: ", reason)
+    Log.debug(module:Key(), " choose reset, reason: ", reason)
     module.stateType = ModuleStateType.ResetDuring
   end
-  local moduleMain = ((GameGlobal.GameLogic)()):GetModule(LoginModule)
-  if moduleMain ~= nil or moduleMain.stateType == ModuleStateType.ResetDuring then
-    (Log.debug)(moduleMain:Key(), " need reset, reset all", (Log.traceback)())
-    ;
-    ((GameGlobal.GameLogic)()):ForModules(function(m)
-    -- function num : 0_2_0 , upvalues : moduleMain, reason
-    if m and m:IsChildOf("LoginBaseModule") then
-      local moduleOth = m
-      if moduleOth ~= moduleMain then
-        moduleOth:Reset(reason)
+  local moduleMain = GameGlobal.GameLogic():GetModule(LoginModule)
+  if moduleMain == nil then
+  elseif moduleMain.stateType == ModuleStateType.ResetDuring then
+    Log.debug(moduleMain:Key(), " need reset, reset all", Log.traceback())
+    GameGlobal.GameLogic():ForModules(function(m)
+      if m and m:IsChildOf("LoginBaseModule") then
+        local moduleOth = m
+        if moduleOth ~= moduleMain then
+          moduleOth:Reset(reason)
+        end
       end
-    end
-  end
-)
+    end)
     moduleMain:Reset(reason)
+  elseif moduleMain.stateType == ModuleStateType.RetryResetDuring then
+    Log.debug(moduleMain:Key(), " can retry, retry all", Log.traceback())
+    moduleMain:Retry(reason)
+    GameGlobal.GameLogic():ForModules(function(m)
+      if m and m:IsChildOf("LoginBaseModule") then
+        local moduleOth = m
+        if moduleOth == moduleMain then
+        elseif moduleOth.stateType == ModuleStateType.RetryResetDuring then
+          moduleOth:Retry(reason)
+        elseif moduleOth.stateType == ModuleStateType.ResetDuring then
+          moduleOth:Reset(reason)
+        end
+      end
+    end)
   else
-    if moduleMain.stateType == ModuleStateType.RetryResetDuring then
-      (Log.debug)(moduleMain:Key(), " can retry, retry all", (Log.traceback)())
-      moduleMain:Retry(reason)
-      ;
-      ((GameGlobal.GameLogic)()):ForModules(function(m)
-    -- function num : 0_2_1 , upvalues : moduleMain, _ENV, reason
-    if m and m:IsChildOf("LoginBaseModule") then
-      local moduleOth = m
-    end
-    if moduleOth ~= moduleMain or moduleOth.stateType == ModuleStateType.RetryResetDuring then
-      moduleOth:Retry(reason)
-    else
-      if moduleOth.stateType == ModuleStateType.ResetDuring then
-        moduleOth:Reset(reason)
+    Log.debug(moduleMain:Key(), " normal, retry all")
+    GameGlobal.GameLogic():ForModules(function(m)
+      if m and m:IsChildOf("LoginBaseModule") then
+        local moduleOth = m
+        if moduleOth == moduleMain then
+        elseif moduleOth.stateType == ModuleStateType.RetryResetDuring then
+          moduleOth:Retry(reason)
+        elseif moduleOth.stateType == ModuleStateType.ResetDuring then
+          moduleOth:Reset(reason)
+        end
       end
-    end
-  end
-)
-    else
-      ;
-      (Log.debug)(moduleMain:Key(), " normal, retry all")
-      ;
-      ((GameGlobal.GameLogic)()):ForModules(function(m)
-    -- function num : 0_2_2 , upvalues : moduleMain, _ENV, reason
-    if m and m:IsChildOf("LoginBaseModule") then
-      local moduleOth = m
-    end
-    if moduleOth ~= moduleMain or moduleOth.stateType == ModuleStateType.RetryResetDuring then
-      moduleOth:Retry(reason)
-    else
-      if moduleOth.stateType == ModuleStateType.ResetDuring then
-        moduleOth:Reset(reason)
-      end
-    end
-  end
-)
-    end
+    end)
   end
   local page = self.page
   self.page = UIStateType.Invalid
   return page
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-NetworkMonitor.ConnectRetryReset = function(self, module, reason)
-  -- function num : 0_3 , upvalues : _ENV
+function NetworkMonitor:ConnectRetryReset(module, reason)
   if module == nil or module.stateType ~= ModuleStateType.Unset then
-    return 
+    return
   end
-  ;
-  (Log.debug)(module:Key(), " ConnectRetryReset, reason: ", reason, (Log.traceback)())
+  Log.debug(module:Key(), " ConnectRetryReset, reason: ", reason, Log.traceback())
   module.stateType = ModuleStateType.RetryResetDuring
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AskPopupReset, (StringTable.Get)("str_login_ask_login_connect_timeout_text"), function()
-    -- function num : 0_3_0 , upvalues : _ENV, self, module, reason
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AskPopupReset, StringTable.Get("str_login_ask_login_connect_timeout_text"), function()
     UIGlobalModule:GoBackCallback(function()
-      -- function num : 0_3_0_0 , upvalues : self, module, reason
       return self:Choose(true, module, reason)
-    end
-)
-  end
-, function()
-    -- function num : 0_3_1 , upvalues : _ENV, self, module, reason
+    end)
+  end, function()
     UIGlobalModule:GoBackCallback(function()
-      -- function num : 0_3_1_0 , upvalues : self, module, reason
       return self:Choose(false, module, reason)
-    end
-)
-  end
-)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ConnectReset, reason)
+    end)
+  end)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ConnectReset, reason)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-NetworkMonitor.CallRetryReset = function(self, module, reason)
-  -- function num : 0_4 , upvalues : _ENV
+function NetworkMonitor:CallRetryReset(module, reason)
   if module == nil or module.stateType ~= ModuleStateType.Unset then
-    return 
+    return
   end
-  ;
-  (Log.debug)(module:Key(), " CallRetryReset, reason: ", reason, (Log.traceback)())
+  Log.debug(module:Key(), " CallRetryReset, reason: ", reason, Log.traceback())
   module.stateType = ModuleStateType.RetryResetDuring
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AskPopupReset, (StringTable.Get)("str_login_ask_login_request_timeout_text"), function()
-    -- function num : 0_4_0 , upvalues : _ENV, self, module, reason
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AskPopupReset, StringTable.Get("str_login_ask_login_request_timeout_text"), function()
     UIGlobalModule:GoBackCallback(function()
-      -- function num : 0_4_0_0 , upvalues : self, module, reason
       return self:Choose(true, module, reason)
-    end
-)
-  end
-, function()
-    -- function num : 0_4_1 , upvalues : _ENV, self, module, reason
+    end)
+  end, function()
     UIGlobalModule:GoBackCallback(function()
-      -- function num : 0_4_1_0 , upvalues : self, module, reason
       return self:Choose(false, module, reason)
-    end
-)
-  end
-)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-NetworkMonitor.LogoutReset = function(self, module, reason, popup, errcode, ...)
-  -- function num : 0_5 , upvalues : _ENV
+function NetworkMonitor:LogoutReset(module, reason, popup, errcode, ...)
   UIGlobalModule:SetCSUICameraStatus(true)
   if module == nil or module.stateType == ModuleStateType.ResetDuring then
-    return 
+    return
   end
-  ;
-  (Log.debug)(module:Key(), " LogoutReset, reason: ", reason, (Log.traceback)())
+  Log.debug(module:Key(), " LogoutReset, reason: ", reason, Log.traceback())
   local retrys = true
   local tips = "str_login_ask_login_connect_timeout_text"
   if errcode == MOBILE_LOGOUT_ERROR.MOBILE_LOGOUT_MULTI_LOGIN then
@@ -177,62 +118,39 @@ NetworkMonitor.LogoutReset = function(self, module, reason, popup, errcode, ...)
       tips = "str_login_mobile_logout_multi_login"
     end
     retrys = false
-  else
-    if errcode == MOBILE_LOGOUT_ERROR.MOBILE_LOGOUT_SERVER_KICK then
-      tips = "str_login_mobile_logout_server_kick"
-      retrys = false
-    else
-      if errcode == MOBILE_LOGIN_ERROR.MOBILE_LOGIN_NO_PLAYER then
-        tips = "str_login_mobile_longtime_leave"
-      else
-        if errcode == MOBILE_LOGOUT_ERROR.MOBILE_LOGOUT_MATCH_ERROR then
-          tips = "str_login_match_error"
-        else
-          if errcode == MOBILE_LOGOUT_ERROR.MOBILE_LOGOUT_LOADDATA then
-            tips = "str_login_load_data_error"
-            popup = true
-          else
-            if errcode == MOBILE_LOGOUT_ERROR.MOBILE_LOGOUT_PLAYER_LOGOUT then
-              popup = false
-            end
-          end
-        end
-      end
-    end
+  elseif errcode == MOBILE_LOGOUT_ERROR.MOBILE_LOGOUT_SERVER_KICK then
+    tips = "str_login_mobile_logout_server_kick"
+    retrys = false
+  elseif errcode == MOBILE_LOGIN_ERROR.MOBILE_LOGIN_NO_PLAYER then
+    tips = "str_login_mobile_longtime_leave"
+  elseif errcode == MOBILE_LOGOUT_ERROR.MOBILE_LOGOUT_MATCH_ERROR then
+    tips = "str_login_match_error"
+  elseif errcode == MOBILE_LOGOUT_ERROR.MOBILE_LOGOUT_LOADDATA then
+    tips = "str_login_load_data_error"
+    popup = true
+  elseif errcode == MOBILE_LOGOUT_ERROR.MOBILE_LOGOUT_PLAYER_LOGOUT then
+    popup = false
   end
   if IsPc() == false then
     module.stateType = ModuleStateType.ResetDuring
     UIGlobalModule:GoBackCallback(function()
-    -- function num : 0_5_0 , upvalues : self, module, reason
-    return self:Choose(false, module, reason)
+      return self:Choose(false, module, reason)
+    end, ...)
   end
-, ...)
-  end
-  if (popup == nil and true) or popup then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PopupReset, (StringTable.Get)(tips), function()
-    -- function num : 0_5_1 , upvalues : _ENV, retrys, self, reason
-    if IsPc() then
-      (EngineGameHelper.QuitApp)()
-    else
-      if retrys == true then
+  if popup == nil and true or popup then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.PopupReset, StringTable.Get(tips), function()
+      if IsPc() then
+        EngineGameHelper.QuitApp()
+      elseif retrys == true then
         UIGlobalModule:GoBackCallback(function()
-      -- function num : 0_5_1_0 , upvalues : self, _ENV, reason
-      return self:Choose(true, ((GameGlobal.GameLogic)()):GetModule(LoginModule), reason)
-    end
-)
+          return self:Choose(true, GameGlobal.GameLogic():GetModule(LoginModule), reason)
+        end)
       end
-    end
-  end
-)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-NetworkMonitor.GoBack = function(self, page)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.debug)("[net] NetworkMonitor:GoBack ", page, (Log.traceback)())
+function NetworkMonitor:GoBack(page)
+  Log.debug("[net] NetworkMonitor:GoBack ", page, Log.traceback())
   self.page = page
 end
-
-

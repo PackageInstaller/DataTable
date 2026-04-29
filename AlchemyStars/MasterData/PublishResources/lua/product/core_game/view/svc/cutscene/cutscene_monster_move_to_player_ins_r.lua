@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/cutscene/cutscene_monster_move_to_player_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("cutscene_base_ins_r")
 _class("CutsceneMonsterMoveToPlayerInstruction", CutsceneBaseInstruction)
 CutsceneMonsterMoveToPlayerInstruction = CutsceneMonsterMoveToPlayerInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneMonsterMoveToPlayerInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function CutsceneMonsterMoveToPlayerInstruction:Constructor(paramList)
   self._monsterName = paramList.monsterName
   self._moveSpeed = tonumber(paramList.moveSpeed) or 2
   self._moveGridCount = tonumber(paramList.moveGridCount) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneMonsterMoveToPlayerInstruction.DoInstruction = function(self, TT, phaseContext)
-  -- function num : 0_1
+function CutsceneMonsterMoveToPlayerInstruction:DoInstruction(TT, phaseContext)
   local world = phaseContext:GetCutsceneWorld()
   local cutsceneServiceRender = world:GetService("Cutscene")
   cutsceneServiceRender:PlayCutsceneMonsterMoveToPlayer(TT, self._monsterName, self._moveGridCount, self._moveSpeed)
 end
-
-

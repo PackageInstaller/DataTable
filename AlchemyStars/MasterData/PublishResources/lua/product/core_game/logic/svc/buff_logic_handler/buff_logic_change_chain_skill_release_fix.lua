@@ -1,81 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_chain_skill_release_fix.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeChainSkillReleaseFix", BuffLogicBase)
 BuffLogicChangeChainSkillReleaseFix = BuffLogicChangeChainSkillReleaseFix
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeChainSkillReleaseFix.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeChainSkillReleaseFix:Constructor(buffInstance, logicParam)
   self._fixVal = logicParam.val
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffInstance).changeChainSkillReleaseFix_runCount = 0
+  self._buffInstance.changeChainSkillReleaseFix_runCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeChainSkillReleaseFix.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local cAttr = (self:GetEntity()):Attributes()
+function BuffLogicChangeChainSkillReleaseFix:DoLogic()
+  local cAttr = self:GetEntity():Attributes()
   if not cAttr or not cAttr:GetAttribute("ChainSkillReleaseFix") then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._buffInstance).changeChainSkillReleaseFix_runCount = (self._buffInstance).changeChainSkillReleaseFix_runCount + 1
-  local changeVal = self._fixVal * (self._buffInstance).changeChainSkillReleaseFix_runCount
-  local bfsvc = (self._world):GetService("BuffLogic")
+  self._buffInstance.changeChainSkillReleaseFix_runCount = self._buffInstance.changeChainSkillReleaseFix_runCount + 1
+  local changeVal = self._fixVal * self._buffInstance.changeChainSkillReleaseFix_runCount
+  local bfsvc = self._world:GetService("BuffLogic")
   bfsvc:ChangeChainSkillReleaseFix(self:GetEntity(), self:GetBuffSeq(), changeVal)
   local val = cAttr:GetAttribute("ChainSkillReleaseFix")
-  local res = DataAttributeResult:New((self:GetEntity()):GetID(), "ChainSkillReleaseFix", val)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, res)
+  local res = DataAttributeResult:New(self:GetEntity():GetID(), "ChainSkillReleaseFix", val)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, res)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeChainSkillReleaseFix.DoOverlap = function(self)
-  -- function num : 0_2
+function BuffLogicChangeChainSkillReleaseFix:DoOverlap()
   return self:DoLogic()
 end
 
 _class("BuffLogicUndoChangeChainSkillReleaseFix", BuffLogicBase)
 BuffLogicUndoChangeChainSkillReleaseFix = BuffLogicUndoChangeChainSkillReleaseFix
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUndoChangeChainSkillReleaseFix.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicUndoChangeChainSkillReleaseFix:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicUndoChangeChainSkillReleaseFix.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cAttr = (self:GetEntity()):Attributes()
+function BuffLogicUndoChangeChainSkillReleaseFix:DoLogic()
+  local cAttr = self:GetEntity():Attributes()
   if not cAttr or not cAttr:GetAttribute("ChainSkillReleaseFix") then
-    return 
+    return
   end
-  local bfsvc = (self._world):GetService("BuffLogic")
+  local bfsvc = self._world:GetService("BuffLogic")
   bfsvc:RemoveChainSkillReleaseFix(self:GetEntity(), self:GetBuffSeq())
   local val = cAttr:GetAttribute("ChainSkillReleaseFix")
-  local res = DataAttributeResult:New((self:GetEntity()):GetID(), "ChainSkillReleaseFix", val)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, res)
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._buffInstance).changeChainSkillReleaseFix_runCount = 0
+  local res = DataAttributeResult:New(self:GetEntity():GetID(), "ChainSkillReleaseFix", val)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, res)
+  self._buffInstance.changeChainSkillReleaseFix_runCount = 0
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicUndoChangeChainSkillReleaseFix.DoOverlap = function(self)
-  -- function num : 0_5
+function BuffLogicUndoChangeChainSkillReleaseFix:DoOverlap()
 end
-
-

@@ -1,94 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/fetters_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FettersComponent", Object)
 FettersComponent = FettersComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FettersComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function FettersComponent:Constructor()
   self._fettersPetEntityID = -1
   self._fettersPrimaryType = PieceType.None
   self._isActive = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FettersComponent.SetFettersData = function(self, entityID, type)
-  -- function num : 0_1
+function FettersComponent:SetFettersData(entityID, type)
   self._fettersPetEntityID = entityID
   self._fettersPrimaryType = type
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FettersComponent.SetActive = function(self, isActive)
-  -- function num : 0_2
+function FettersComponent:SetActive(isActive)
   self._isActive = isActive
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FettersComponent.GetFettersPetEntityID = function(self)
-  -- function num : 0_3
+function FettersComponent:GetFettersPetEntityID()
   return self._fettersPetEntityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FettersComponent.GetFettersPrimaryType = function(self)
-  -- function num : 0_4
+function FettersComponent:GetFettersPrimaryType()
   return self._fettersPrimaryType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FettersComponent.IsActive = function(self)
-  -- function num : 0_5
+function FettersComponent:IsActive()
   return self._isActive
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Fetters = function(self)
-  -- function num : 0_6
-  return self:GetComponent((self.WEComponentsEnum).Fetters)
+function Entity:Fetters()
+  return self:GetComponent(self.WEComponentsEnum.Fetters)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasFetters = function(self)
-  -- function num : 0_7
-  return self:HasComponent((self.WEComponentsEnum).Fetters)
+function Entity:HasFetters()
+  return self:HasComponent(self.WEComponentsEnum.Fetters)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddFetters = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Fetters
+function Entity:AddFetters()
+  local index = self.WEComponentsEnum.Fetters
   local component = FettersComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceFetters = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Fetters
+function Entity:ReplaceFetters()
+  local index = self.WEComponentsEnum.Fetters
   local component = FettersComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveFetters = function(self)
-  -- function num : 0_10
+function Entity:RemoveFetters()
   if self:HasFetters() then
-    self:RemoveComponent((self.WEComponentsEnum).Fetters)
+    self:RemoveComponent(self.WEComponentsEnum.Fetters)
   end
 end
-
-

@@ -1,30 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_increase_active_skill_atk.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicDoIncreaseActiveSkillAtk", BuffLogicBase)
 BuffLogicDoIncreaseActiveSkillAtk = BuffLogicDoIncreaseActiveSkillAtk
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDoIncreaseActiveSkillAtk.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicDoIncreaseActiveSkillAtk:Constructor(buffInstance, logicParam)
   self._increaseMul = logicParam.increaseMul
   self._increaseLayer = logicParam.increaseLayer or 0
   self._iconPassiveSkillLight = logicParam.light == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDoIncreaseActiveSkillAtk.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local buffComponent = (self._entity):BuffComponent()
+function BuffLogicDoIncreaseActiveSkillAtk:DoLogic(notify)
+  local buffComponent = self._entity:BuffComponent()
   local buffSeq = self:GetBuffSeq()
   buffComponent:SetBuffValue("IncreaseActiveDamageSkillSeqID", buffSeq)
-  ;
-  (self._buffInstance):AddLayerCount(self._increaseLayer)
-  local layer = (self._buffInstance):GetLayerCount()
+  self._buffInstance:AddLayerCount(self._increaseLayer)
+  local layer = self._buffInstance:GetLayerCount()
   buffComponent:SetBuffValue("IncreaseActiveSkillDamageMul", self._increaseMul * layer)
   local res = BuffResultDoIncreaseActiveSkillAtk:New(self._iconPassiveSkillLight, layer)
   return res
@@ -32,19 +20,13 @@ end
 
 _class("BuffLogicUndoIncreaseActiveSkillAtk", BuffLogicBase)
 BuffLogicUndoIncreaseActiveSkillAtk = BuffLogicUndoIncreaseActiveSkillAtk
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUndoIncreaseActiveSkillAtk.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicUndoIncreaseActiveSkillAtk:Constructor(buffInstance, logicParam)
   self._iconPassiveSkillDark = logicParam.dark == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicUndoIncreaseActiveSkillAtk.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local buffComponent = (self._entity):BuffComponent()
+function BuffLogicUndoIncreaseActiveSkillAtk:DoLogic()
+  local buffComponent = self._entity:BuffComponent()
   buffComponent:SetBuffValue("IncreaseActiveSkillDamageMul", 0)
   local seqID = buffComponent:GetBuffValue("IncreaseActiveDamageSkillSeqID")
   local instance = buffComponent:GetBuffBySeq(seqID)
@@ -54,5 +36,3 @@ BuffLogicUndoIncreaseActiveSkillAtk.DoLogic = function(self)
   local result = BuffResultUndoIncreaseActiveSkillAtk:New(self._iconPassiveSkillDark)
   return result
 end
-
-

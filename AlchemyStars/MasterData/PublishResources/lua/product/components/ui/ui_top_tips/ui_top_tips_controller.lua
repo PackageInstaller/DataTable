@@ -1,29 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_top_tips/ui_top_tips_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITopTipsController", UIController)
 UITopTipsController = UITopTipsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITopTipsController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UITopTipsController:OnShow(uiParams)
   self.atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
   self:UnLock("UITopTips")
-  self._maskBGCanvas = (((((self:GetGameObject()).transform).parent).parent):Find("BGMaskCanvas")).gameObject
-  ;
-  (self._maskBGCanvas):SetActive(false)
+  self._maskBGCanvas = self:GetGameObject().transform.parent.parent:Find("BGMaskCanvas").gameObject
+  self._maskBGCanvas:SetActive(false)
   local offset = {}
   offset.x = 121
   offset.y = -30
   local enum = uiParams[1]
   local anchorPos = uiParams[2]
   local deltaPosition = uiParams[3]
-  local cfg = (Cfg.cfg_top_tips)[enum]
+  local cfg = Cfg.cfg_top_tips[enum]
   if cfg == nil then
-    (Log.fatal)("[toptip] error --> cfg_top_tips cfg is nil ! enum --> " .. enum)
-    return 
+    Log.fatal("[toptip] error --> cfg_top_tips cfg is nil ! enum --> " .. enum)
+    return
   end
   self._safeArea = self:GetUIComponent("RectTransform", "SafeArea")
   self._rect = self:GetUIComponent("RectTransform", "rect")
@@ -31,73 +23,51 @@ UITopTipsController.OnShow = function(self, uiParams)
   self._titleTex = self:GetUIComponent("UILocalizationText", "title")
   self._intrTex = self:GetUIComponent("UILocalizationText", "intr")
   self._icon = self:GetUIComponent("Image", "icon")
-  ;
-  (self._titleTex):SetText((StringTable.Get)(cfg.Title))
-  ;
-  (self._intrTex):SetText((StringTable.Get)(cfg.Intr))
-  ;
-  (UIWidgetHelper.InitImageSpriteOrRaw)(self, "icon", ((self._icon).transform).gameObject)
-  ;
-  (UIWidgetHelper.SetImageSpriteOrRaw)(self, "icon", self.atlas, cfg.Icon)
+  self._titleTex:SetText(StringTable.Get(cfg.Title))
+  self._intrTex:SetText(StringTable.Get(cfg.Intr))
+  UIWidgetHelper.InitImageSpriteOrRaw(self, "icon", self._icon.transform.gameObject)
+  UIWidgetHelper.SetImageSpriteOrRaw(self, "icon", self.atlas, cfg.Icon)
   local safeOffset = {}
   safeOffset.x = 0
   safeOffset.y = 0
-  -- DECOMPILER ERROR at PC109: Confused about usage of register: R8 in 'UnsetPending'
-
   if deltaPosition ~= nil then
-    (self._rect).position = (self._safeArea).position + deltaPosition
-    anchorPos = (self._rect).anchoredPosition + anchorPos
+    self._rect.position = self._safeArea.position + deltaPosition
+    anchorPos = self._rect.anchoredPosition + anchorPos
   end
   local v2 = Vector2(anchorPos.x + offset.x, offset.y + anchorPos.y)
-  local safeRect = (self._safeArea).rect
-  local layoutElementWidth = (self._rectLayoutElement).preferredWidth
-  -- DECOMPILER ERROR at PC141: Unhandled construct in 'MakeBoolean' P1
-
-  if v2.x > 0 and safeRect.width * 0.5 < v2.x + layoutElementWidth * 0.5 then
-    safeOffset.x = safeRect.width * 0.5 - (v2.x + layoutElementWidth * 0.5)
+  local safeRect = self._safeArea.rect
+  local layoutElementWidth = self._rectLayoutElement.preferredWidth
+  if v2.x > 0 then
+    if v2.x + layoutElementWidth * 0.5 > safeRect.width * 0.5 then
+      safeOffset.x = safeRect.width * 0.5 - (v2.x + layoutElementWidth * 0.5)
+    end
+  elseif math.abs(v2.x) + layoutElementWidth * 0.5 > safeRect.width * 0.5 then
+    safeOffset.x = math.abs(v2.x) + layoutElementWidth * 0.5 - safeRect.width * 0.5
   end
-  if safeRect.width * 0.5 < (math.abs)(v2.x) + layoutElementWidth * 0.5 then
-    safeOffset.x = (math.abs)(v2.x) + layoutElementWidth * 0.5 - safeRect.width * 0.5
+  if v2.y > 0 then
+    if v2.y + self._rect.sizeDelta.y * 0.5 > safeRect.height * 0.5 then
+      safeOffset.y = safeRect.height * 0.5 - (v2.y + self._rect.sizeDelta.y * 0.5)
+    end
+  elseif math.abs(v2.y) + self._rect.sizeDelta.y * 0.5 > safeRect.height * 0.5 then
+    safeOffset.y = math.abs(v2.y) + self._rect.sizeDelta.y * 0.5 - safeRect.height * 0.5
   end
-  -- DECOMPILER ERROR at PC185: Unhandled construct in 'MakeBoolean' P1
-
-  if v2.y > 0 and safeRect.height * 0.5 < v2.y + ((self._rect).sizeDelta).y * 0.5 then
-    safeOffset.y = safeRect.height * 0.5 - (v2.y + ((self._rect).sizeDelta).y * 0.5)
-  end
-  if safeRect.height * 0.5 < (math.abs)(v2.y) + ((self._rect).sizeDelta).y * 0.5 then
-    safeOffset.y = (math.abs)(v2.y) + ((self._rect).sizeDelta).y * 0.5 - safeRect.height * 0.5
-  end
-  -- DECOMPILER ERROR at PC222: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = Vector2(v2.x + safeOffset.x, safeOffset.y + v2.y)
+  self._rect.anchoredPosition = Vector2(v2.x + safeOffset.x, safeOffset.y + v2.y)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopTipsController.OnHide = function(self)
-  -- function num : 0_1
+function UITopTipsController:OnHide()
   self._titleTex = nil
   self._intrTex = nil
   self._icon = nil
   self._rect = nil
   if self._maskBGCanvas then
-    (self._maskBGCanvas):SetActive(true)
+    self._maskBGCanvas:SetActive(true)
   end
   self:UnLock("UITopTips")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopTipsController.bgOnClick = function(self)
-  -- function num : 0_2
+function UITopTipsController:bgOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopTipsController.Update = function(self)
-  -- function num : 0_3
+function UITopTipsController:Update()
 end
-
-

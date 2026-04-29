@@ -1,13 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2002101/cfg_skill_view_200210100.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterVisible,visible=1; PlayCasterHUDVisible,visible=1; PlaySummonTrap,trapID=PARAM.trapID1; PlayCasterAnimation,animName=Disappear; Wait,waitTime=1000; PlayRoleTeleport,type=3; PlayRoleTeleport,type=5,onlySelf=0; PlayRoleTeleport,type=6; PlayRoleTeleport,type=9; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterVisible,visible=1; PlayCasterHUDVisible,visible=1; PlaySummonTrap,trapID=PARAM.trapID1; PlayCasterAnimation,animName=Disappear; Wait,waitTime=1000; PlayRoleTeleport,type=3; PlayRoleTeleport,type=5,onlySelf=0; PlayRoleTeleport,type=6; PlayRoleTeleport,type=9; "
+    }
+  }
 }
 return config, "ID", key
-

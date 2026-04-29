@@ -1,29 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_coffin_musume_set_candle_light.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicCoffinMusumeSetCandleLight", BuffLogicBase)
 BuffLogicCoffinMusumeSetCandleLight = BuffLogicCoffinMusumeSetCandleLight
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicCoffinMusumeSetCandleLight.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicCoffinMusumeSetCandleLight:Constructor(buffInstance, logicParam)
   self._light = tonumber(logicParam.light)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicCoffinMusumeSetCandleLight.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local cBuff = (self:GetEntity()):BuffComponent()
-  local isLightBefore = cBuff:GetBuffValue(BattleConst.CandleLightKey) ~= 1 and false
-  ;
-  ((self:GetEntity()):BuffComponent()):SetBuffValue(BattleConst.CandleLightKey, self._light)
-  ;
-  ((self._world):GetService("Trigger")):Notify(NTCoffinMusumeLightChanged:New())
-  do return BuffResultCoffinMusumeSetCandleLight:New(isLightBefore, self._light) end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function BuffLogicCoffinMusumeSetCandleLight:DoLogic()
+  local cBuff = self:GetEntity():BuffComponent()
+  local isLightBefore = cBuff:GetBuffValue(BattleConst.CandleLightKey) == 1 or false
+  self:GetEntity():BuffComponent():SetBuffValue(BattleConst.CandleLightKey, self._light)
+  self._world:GetService("Trigger"):Notify(NTCoffinMusumeLightChanged:New())
+  return BuffResultCoffinMusumeSetCandleLight:New(isLightBefore, self._light)
 end
-
-

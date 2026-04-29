@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_true_damage_fixparam_by_defence.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeTrueDamageFixParamByDefence", BuffLogicBase)
 BuffLogicChangeTrueDamageFixParamByDefence = BuffLogicChangeTrueDamageFixParamByDefence
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeTrueDamageFixParamByDefence.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeTrueDamageFixParamByDefence:Constructor(buffInstance, logicParam)
   self._percent = logicParam.percent or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeTrueDamageFixParamByDefence.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeTrueDamageFixParamByDefence:DoLogic(notify)
   local attackerEntity = notify:GetAttackerEntity()
   local attackAttr = attackerEntity:Attributes()
   local attackerDefenderCount = attackAttr:GetDefence()
@@ -25,27 +15,19 @@ BuffLogicChangeTrueDamageFixParamByDefence.DoLogic = function(self, notify)
   local value = attackerDefenderCount / (attackerDefenderCount + defenderDefenderCount)
   value = self._percent * value
   value = value * 10000
-  value = (math.floor)(value)
+  value = math.floor(value)
   value = value / 10000
-  ;
-  (self._buffLogicService):ChangeTrueDamageFixParam(self._entity, self:GetBuffSeq(), value)
+  self._buffLogicService:ChangeTrueDamageFixParam(self._entity, self:GetBuffSeq(), value)
   return true
 end
 
 _class("BuffLogicUndoChangeTrueDamageFixParamByDefence", BuffLogicBase)
 BuffLogicUndoChangeTrueDamageFixParamByDefence = BuffLogicUndoChangeTrueDamageFixParamByDefence
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUndoChangeTrueDamageFixParamByDefence.Constructor = function(self)
-  -- function num : 0_2
+function BuffLogicUndoChangeTrueDamageFixParamByDefence:Constructor()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicUndoChangeTrueDamageFixParamByDefence.DoLogic = function(self)
-  -- function num : 0_3
-  (self._buffLogicService):RemoveTrueDamageFixParam(self._entity, self:GetBuffSeq())
+function BuffLogicUndoChangeTrueDamageFixParamByDefence:DoLogic()
+  self._buffLogicService:RemoveTrueDamageFixParam(self._entity, self:GetBuffSeq())
   return true
 end
-
-

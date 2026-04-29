@@ -1,55 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/ui_module/ui_tale_pet_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITalePetModule", UIModule)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UITalePetModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._talePetModule = (GameGlobal.GetModule)(TalePetModule)
+function UITalePetModule:Constructor()
+  self._talePetModule = GameGlobal.GetModule(TalePetModule)
   self:AttachEvent(GameEventType.TalePetBuffChange, self.HandleTalePetBuffChange)
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetModule.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UITalePetModule:Dispose()
   self:DetachEvent(GameEventType.TalePetBuffChange)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetModule.HandleTalePetBuffChange = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (ToastManager.ShowToast)((StringTable.Get)("str_tale_pet_buff_level_up_tips"))
+function UITalePetModule:HandleTalePetBuffChange()
+  ToastManager.ShowToast(StringTable.Get("str_tale_pet_buff_level_up_tips"))
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetModule.OpenTrailLevel = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UITalePetModule:OpenTrailLevel()
   self:ShowDialog("UITrailLevelController")
   self:Lock("UITalePetModule_OpenTrailLevel")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OpenTrailLevelCoro, self)
+  GameGlobal.TaskManager():StartTask(self.OpenTrailLevelCoro, self)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetModule.OpenTrailLevelCoro = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UITalePetModule:OpenTrailLevelCoro(TT)
   YIELD(TT, 830)
   self:ShowStory()
   self:UnLock("UITalePetModule_OpenTrailLevel")
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetModule.ShowStory = function(self)
-  -- function num : 0_5
-  local storyIds, templateIds = (self._talePetModule):GetEnterTrailLevelStoryIds()
+function UITalePetModule:ShowStory()
+  local storyIds, templateIds = self._talePetModule:GetEnterTrailLevelStoryIds()
   if storyIds then
     self:_PlayEnterTrailLevelStory(storyIds, templateIds, 1)
   else
@@ -57,115 +34,79 @@ UITalePetModule.ShowStory = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetModule._PlayEnterTrailLevelStory = function(self, storyIds, templateIds, index)
-  -- function num : 0_6 , upvalues : _ENV
-  if #storyIds < index then
+function UITalePetModule:_PlayEnterTrailLevelStory(storyIds, templateIds, index)
+  if index > #storyIds then
     self:ShowBuffTipsUI()
-    return 
+    return
   end
   self:ShowDialog("UIStoryBanner", storyIds[index], StoryBannerShowType.HalfPortrait, function()
-    -- function num : 0_6_0 , upvalues : _ENV, self, templateIds, index, storyIds
-    ((GameGlobal.TaskManager)()):StartTask(self.PlayStoryComplete, self, templateIds[index], storyIds, templateIds, index + 1)
-  end
-)
+    GameGlobal.TaskManager():StartTask(self.PlayStoryComplete, self, templateIds[index], storyIds, templateIds, index + 1)
+  end)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetModule.ShowBuffTipsUI = function(self)
-  -- function num : 0_7
-  if (self._talePetModule):IsShowBuffTips() then
+function UITalePetModule:ShowBuffTipsUI()
+  if self._talePetModule:IsShowBuffTips() then
     self:ShowDialog("UITrailLevelBuffTips")
   end
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetModule.PlayStoryComplete = function(self, TT, templateId, storyIds, templateIds, index)
-  -- function num : 0_8 , upvalues : _ENV
-  local talePetModule = (GameGlobal.GetModule)(TalePetModule)
+function UITalePetModule:PlayStoryComplete(TT, templateId, storyIds, templateIds, index)
+  local talePetModule = GameGlobal.GetModule(TalePetModule)
   talePetModule:PlayTrailLevelStroyComplete(TT, templateId)
   self:_PlayEnterTrailLevelStory(storyIds, templateIds, index)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetModule.OpenPracticeLevel = function(self, petTemplateId)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg = (Cfg.cfg_tale_pet)[petTemplateId]
+function UITalePetModule:OpenPracticeLevel(petTemplateId)
+  local cfg = Cfg.cfg_tale_pet[petTemplateId]
   if not cfg then
-    return 
+    return
   end
   self:ShowDialog("UITrailLevelDetail", cfg.PracticeLevelId)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetModule.BattleExist = function(self, stageId)
-  -- function num : 0_10 , upvalues : _ENV
-  local cfg = (Cfg.cfg_tale_stage)[stageId]
+function UITalePetModule:BattleExist(stageId)
+  local cfg = Cfg.cfg_tale_stage[stageId]
   if cfg.Type == TaleType.TT_FightMission then
     self:SwitchState(UIStateType.UITrailLevel, true)
-  else
-    if cfg.Type == TaleType.TT_TrainMission then
-      local callState = ((GameGlobal.GetModule)(TalePetModule)):GetCurCallState()
-      if callState then
-        self:SwitchState(UIStateType.UITalePetCollect, callState, true)
-      else
-        self:SwitchState(UIStateType.UITalePetList, true)
-      end
+  elseif cfg.Type == TaleType.TT_TrainMission then
+    local callState = GameGlobal.GetModule(TalePetModule):GetCurCallState()
+    if callState then
+      self:SwitchState(UIStateType.UITalePetCollect, callState, true)
+    else
+      self:SwitchState(UIStateType.UITalePetList, true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetModule.FormatTime = function(self, second)
-  -- function num : 0_11 , upvalues : _ENV
+function UITalePetModule:FormatTime(second)
   if second <= 0 then
     return "00:00:00"
   else
     local sec = second % 60
-    local _sec = (math.ceil)(sec)
-    local _min = (math.floor)(second / 60) % 60
-    local _hour = (math.floor)((math.floor)(second / 60) / 60) % 24
-    local _day = (math.floor)((math.floor)((math.floor)(second / 60) / 60) / 24)
-    if _day > 0 then
-      return (string.format)("%dd-%02d:%02d:%02d", _day, _hour, _min, _sec)
+    local _sec = math.ceil(sec)
+    local _min = math.floor(second / 60) % 60
+    local _hour = math.floor(math.floor(second / 60) / 60) % 24
+    local _day = math.floor(math.floor(math.floor(second / 60) / 60) / 24)
+    if 0 < _day then
+      return string.format("%dd-%02d:%02d:%02d", _day, _hour, _min, _sec)
     else
-      return (string.format)("%02d:%02d:%02d", _hour, _min, _sec)
+      return string.format("%02d:%02d:%02d", _hour, _min, _sec)
     end
   end
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetModule.ShowDialog = function(self, name, ...)
-  -- function num : 0_12 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog(name, ...)
+function UITalePetModule:ShowDialog(name, ...)
+  GameGlobal.UIStateManager():ShowDialog(name, ...)
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetModule.SwitchState = function(self, uiStateType, ...)
-  -- function num : 0_13 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):SwitchState(uiStateType, ...)
+function UITalePetModule:SwitchState(uiStateType, ...)
+  GameGlobal.UIStateManager():SwitchState(uiStateType, ...)
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetModule.Lock = function(self, name)
-  -- function num : 0_14 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock(name)
+function UITalePetModule:Lock(name)
+  GameGlobal.UIStateManager():Lock(name)
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
-
-UITalePetModule.UnLock = function(self, name)
-  -- function num : 0_15 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):UnLock(name)
+function UITalePetModule:UnLock(name)
+  GameGlobal.UIStateManager():UnLock(name)
 end
-
-

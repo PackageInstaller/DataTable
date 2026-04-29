@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/feature/feature_eff_param/feature_effect_param_ban_pet_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("feature_effect_param_base")
 _class("FeatureEffectParamBanPetSkill", FeatureEffectParamBase)
 FeatureEffectParamBanPetSkill = FeatureEffectParamBanPetSkill
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureEffectParamBanPetSkill.Constructor = function(self, t)
-  -- function num : 0_0
+function FeatureEffectParamBanPetSkill:Constructor(t)
   if not t then
-    return 
+    return
   end
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamBanPetSkill._RefreshData = function(self, t)
-  -- function num : 0_1
+function FeatureEffectParamBanPetSkill:_RefreshData(t)
   if not t then
-    return 
+    return
   end
   if t.BanNormalSkillID then
     self._banNormalSkillID = t.BanNormalSkillID
@@ -37,39 +27,22 @@ FeatureEffectParamBanPetSkill._RefreshData = function(self, t)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamBanPetSkill.GetFeatureType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function FeatureEffectParamBanPetSkill:GetFeatureType()
   return FeatureType.BanPetSkill
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamBanPetSkill.GetBanNormalSkillID = function(self)
-  -- function num : 0_3
+function FeatureEffectParamBanPetSkill:GetBanNormalSkillID()
   return self._banNormalSkillID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamBanPetSkill.GetBanChainSkillID = function(self)
-  -- function num : 0_4
+function FeatureEffectParamBanPetSkill:GetBanChainSkillID()
   return self._banChainSkillID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamBanPetSkill.GetBanActiveSkillID = function(self)
-  -- function num : 0_5
+function FeatureEffectParamBanPetSkill:GetBanActiveSkillID()
   return self._banActiveSkillID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamBanPetSkill.GetSkillCD = function(self)
-  -- function num : 0_6
+function FeatureEffectParamBanPetSkill:GetSkillCD()
   return self._skillCD
 end
-
-

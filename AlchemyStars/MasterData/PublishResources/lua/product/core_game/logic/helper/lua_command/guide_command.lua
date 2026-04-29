@@ -1,78 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/guide_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GuideCommand", IEntityCommand)
 GuideCommand = GuideCommand
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GuideCommand.Constructor = function(self)
-  -- function num : 0_0
+function GuideCommand:Constructor()
   self._commandType = "Guide"
   self._petPstId = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideCommand.GetExecStateID = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  return {GameStateID.WaitInput, GameStateID.PickUpActiveSkillTarget}
+function GuideCommand:GetExecStateID()
+  return {
+    GameStateID.WaitInput,
+    GameStateID.PickUpActiveSkillTarget
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideCommand.IsExecExcluded = function(self)
-  -- function num : 0_2
+function GuideCommand:IsExecExcluded()
   return 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideCommand.DependRoundCount = function(self)
-  -- function num : 0_3
+function GuideCommand:DependRoundCount()
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideCommand.SetPetPstId = function(self, pstId)
-  -- function num : 0_4
+function GuideCommand:SetPetPstId(pstId)
   self._petPstId = pstId
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideCommand.GetPetPstId = function(self, pstId)
-  -- function num : 0_5
+function GuideCommand:GetPetPstId(pstId)
   return self._petPstId
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideCommand.SetGuideStepID = function(self, guideStepID)
-  -- function num : 0_6
+function GuideCommand:SetGuideStepID(guideStepID)
   self._guideStepID = guideStepID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideCommand.GetGuideStepID = function(self)
-  -- function num : 0_7
+function GuideCommand:GetGuideStepID()
   return self._guideStepID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideCommand.GetCommandType = function(self)
-  -- function num : 0_8
+function GuideCommand:GetCommandType()
   return self._commandType
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideCommand.ToNetMessage = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function GuideCommand:ToNetMessage()
   local msg = CEventGuideCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
@@ -84,10 +53,7 @@ GuideCommand.ToNetMessage = function(self)
   return msg
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_10
+function GuideCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
@@ -96,5 +62,3 @@ GuideCommand.FromNetMessage = function(self, msg)
   self._petPstId = msg.PetPstID
   self._guideStepID = msg.GuideStepID
 end
-
-

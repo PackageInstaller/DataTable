@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/feature/feature_eff_param/feature_effect_param_algorithm_upgrade.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("feature_effect_param_base")
 _class("FeatureEffectParamAlgorithmUpgrade", FeatureEffectParamBase)
 FeatureEffectParamAlgorithmUpgrade = FeatureEffectParamAlgorithmUpgrade
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureEffectParamAlgorithmUpgrade.Constructor = function(self, t)
-  -- function num : 0_0
+function FeatureEffectParamAlgorithmUpgrade:Constructor(t)
   if not t then
-    return 
+    return
   end
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlgorithmUpgrade._RefreshData = function(self, t)
-  -- function num : 0_1
+function FeatureEffectParamAlgorithmUpgrade:_RefreshData(t)
   if not t then
-    return 
+    return
   end
   if t.EnterValue then
     self._enterValue = t.EnterValue
@@ -40,77 +30,44 @@ FeatureEffectParamAlgorithmUpgrade._RefreshData = function(self, t)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlgorithmUpgrade.GetFeatureType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function FeatureEffectParamAlgorithmUpgrade:GetFeatureType()
   return FeatureType.AlgorithmUpgrade
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlgorithmUpgrade.CopyFrom = function(self, param)
-  -- function num : 0_3 , upvalues : _ENV
+function FeatureEffectParamAlgorithmUpgrade:CopyFrom(param)
   if param then
-    for k,v in pairs(param) do
+    for k, v in pairs(param) do
       self[k] = v
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlgorithmUpgrade.CloneSelf = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function FeatureEffectParamAlgorithmUpgrade:CloneSelf()
   local param = FeatureEffectParamAlgorithmUpgrade:New()
   param:CopyFrom(self)
   return param
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlgorithmUpgrade.ReplaceByCustomCfg = function(self, t)
-  -- function num : 0_5
+function FeatureEffectParamAlgorithmUpgrade:ReplaceByCustomCfg(t)
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlgorithmUpgrade.GetEnterValue = function(self)
-  -- function num : 0_6
+function FeatureEffectParamAlgorithmUpgrade:GetEnterValue()
   return self._enterValue or 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlgorithmUpgrade.GetMaxValue = function(self)
-  -- function num : 0_7
+function FeatureEffectParamAlgorithmUpgrade:GetMaxValue()
   return self._maxValue or 100
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlgorithmUpgrade.GetMinValue = function(self)
-  -- function num : 0_8
+function FeatureEffectParamAlgorithmUpgrade:GetMinValue()
   return self._minValue or 0
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlgorithmUpgrade.GetRelicIDList = function(self)
-  -- function num : 0_9
-  if not self._relicIDList then
-    return {}
-  end
+function FeatureEffectParamAlgorithmUpgrade:GetRelicIDList()
+  return self._relicIDList or {}
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlgorithmUpgrade.GetRelicDescList = function(self)
-  -- function num : 0_10
-  if not self._relicDescList then
-    return {}
-  end
+function FeatureEffectParamAlgorithmUpgrade:GetRelicDescList()
+  return self._relicDescList or {}
 end
-
-

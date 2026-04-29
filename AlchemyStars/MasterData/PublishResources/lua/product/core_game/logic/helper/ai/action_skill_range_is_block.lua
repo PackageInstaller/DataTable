@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_skill_range_is_block.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_is_base")
 _class("ActionSkillRangeIsBlock", ActionIsBase)
 ActionSkillRangeIsBlock = ActionSkillRangeIsBlock
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSkillRangeIsBlock.Constructor = function(self)
-  -- function num : 0_0
+function ActionSkillRangeIsBlock:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillRangeIsBlock.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ActionSkillRangeIsBlock:OnUpdate()
   local entityCaster = self.m_entityOwn
   local aiComponent = entityCaster:AI()
-  if aiComponent == nil then
+  if nil == aiComponent then
     return AINewNodeStatus.Failure
   end
   local nSkillID = self:GetLogicData(1)
@@ -28,7 +18,7 @@ ActionSkillRangeIsBlock.OnUpdate = function(self)
     nSkillID = configSkillID
   end
   local id = entityCaster:GetID()
-  local bSuccess = (nSkillID > 0 and self:SkillRangeIsBlock(nSkillID, blockType))
+  local bSuccess = 0 < nSkillID and self:SkillRangeIsBlock(nSkillID, blockType)
   if bSuccess then
     self:PrintLog("判断技能范围阻挡 不可行动")
     self:PrintDebugLog("判断技能范围阻挡 不可行动")
@@ -36,8 +26,5 @@ ActionSkillRangeIsBlock.OnUpdate = function(self)
   end
   self:PrintLog("判断技能范围阻挡 可行动")
   self:PrintDebugLog("判断技能范围阻挡 可行动")
-  do return AINewNodeStatus.Success end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return AINewNodeStatus.Success
 end
-
-

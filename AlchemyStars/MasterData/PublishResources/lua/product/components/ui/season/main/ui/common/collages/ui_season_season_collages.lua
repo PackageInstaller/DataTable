@@ -1,178 +1,121 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/common/collages/ui_season_season_collages.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonSeasonCollages", UIController)
 UISeasonSeasonCollages = UISeasonSeasonCollages
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonSeasonCollages.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonSeasonCollages:OnShow(uiParams)
   self:InitWidget()
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_backBtns", "UICommonTopButton")
+  local obj = UIWidgetHelper.SpawnObject(self, "_backBtns", "UICommonTopButton")
   obj:SetData(function()
-    -- function num : 0_0_0 , upvalues : self
     self:StartTask(self._OnExit, self)
-  end
-, nil, nil, true, nil)
+  end, nil, nil, true, nil)
   self._collection = nil
   self._cg = nil
   self._music = nil
-  self._curSeasonobj = ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonObj()
-  local uiModule = (GameGlobal.GetUIModule)(SeasonModule)
-  self._seasonID = (self._curSeasonobj):GetSeasonID()
+  self._curSeasonobj = GameGlobal.GetModule(SeasonModule):GetCurSeasonObj()
+  local uiModule = GameGlobal.GetUIModule(SeasonModule)
+  self._seasonID = self._curSeasonobj:GetSeasonID()
   self._collageData = uiModule:GetCollageData()
-  ;
-  (self._collageData):FlushAllCollages()
-  local cfg = (UISeasonHelper.GetCurCollectionCfg)()
+  self._collageData:FlushAllCollages()
+  local cfg = UISeasonHelper.GetCurCollectionCfg()
   if cfg then
-    (self.bg):LoadImage(cfg.BgName)
+    self.bg:LoadImage(cfg.BgName)
   end
   local cgBtn = self:GetUIComponent("UISelectObjectPath", "CGBtn")
   self._cgBtn = cgBtn:SpawnObject("UISeasonSeasonCollageBtn")
-  ;
-  (self._cgBtn):SetData(2, function()
-    -- function num : 0_0_1 , upvalues : self
+  self._cgBtn:SetData(2, function()
     self:CGBtnOnClick()
-  end
-, self._collageData)
+  end, self._collageData)
   local musicBtn = self:GetUIComponent("UISelectObjectPath", "MusicBtn")
   self._musicBtn = musicBtn:SpawnObject("UISeasonSeasonCollageBtn")
-  ;
-  (self._musicBtn):SetData(3, function()
-    -- function num : 0_0_2 , upvalues : self
+  self._musicBtn:SetData(3, function()
     self:MusicBtnOnClick()
-  end
-, self._collageData)
+  end, self._collageData)
   self:CGBtnOnClick(nil, true)
   self:RefreshNew()
   self:AttachEvent(GameEventType.UISeasonS1OnSelectCollageItem, self.RefreshNew)
-  ;
-  (self._anim):Play("uieffanim_UISeasonS5Collages_in")
+  self._anim:Play("uieffanim_UISeasonS5Collages_in")
   self._active = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollages.OnHide = function(self)
-  -- function num : 0_1
+function UISeasonSeasonCollages:OnHide()
   self._active = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollages.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonSeasonCollages:InitWidget()
   self.cGTab = self:GetUIComponent("UISelectObjectPath", "CGTab")
   self.musicTab = self:GetUIComponent("UISelectObjectPath", "MusicTab")
   self.bg = self:GetUIComponent("RawImageLoader", "bg")
   self._anim = self:GetUIComponent("Animation", "SafeArea")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollages.CollectionBtnOnClick = function(self, go, onEnter)
-  -- function num : 0_3 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSlideDynamic)
+function UISeasonSeasonCollages:CollectionBtnOnClick(go, onEnter)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSlideDynamic)
   if not self._collection then
-    self._collection = (self.collectionTab):SpawnObject("UISeasonS3CollectionTab")
-    ;
-    (self._collection):SetData(self._collageData, onEnter)
+    self._collection = self.collectionTab:SpawnObject("UISeasonS3CollectionTab")
+    self._collection:SetData(self._collageData, onEnter)
   end
-  ;
-  (self._collection):SetShow(true)
+  self._collection:SetShow(true)
   if self._cg then
-    (self._cg):SetShow(false)
+    self._cg:SetShow(false)
   end
   if self._music then
-    (self._music):SetShow(false)
+    self._music:SetShow(false)
   end
-  ;
-  (self._cgBtn):SetSelect(false)
-  ;
-  (self._musicBtn):SetSelect(false)
+  self._cgBtn:SetSelect(false)
+  self._musicBtn:SetSelect(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollages.CGBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSlideDynamic)
+function UISeasonSeasonCollages:CGBtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSlideDynamic)
   if not self._cg then
-    self._cg = (self.cGTab):SpawnObject("UISeasonSeasonCGTab")
-    ;
-    (self._cg):SetData(self._collageData, self._curSeasonobj)
+    self._cg = self.cGTab:SpawnObject("UISeasonSeasonCGTab")
+    self._cg:SetData(self._collageData, self._curSeasonobj)
   end
-  ;
-  (self._cg):SetShow(true)
+  self._cg:SetShow(true)
   if self._collection then
-    (self._collection):SetShow(false)
+    self._collection:SetShow(false)
   end
   if self._music then
-    (self._music):SetShow(false)
+    self._music:SetShow(false)
   end
-  ;
-  (self._cgBtn):SetSelect(true)
-  ;
-  (self._musicBtn):SetSelect(false)
+  self._cgBtn:SetSelect(true)
+  self._musicBtn:SetSelect(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollages.MusicBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSlideDynamic)
+function UISeasonSeasonCollages:MusicBtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSlideDynamic)
   if not self._music then
-    self._music = (self.musicTab):SpawnObject("UISeasonSeasonMusicTab")
-    ;
-    (self._music):SetData(self._collageData)
+    self._music = self.musicTab:SpawnObject("UISeasonSeasonMusicTab")
+    self._music:SetData(self._collageData)
   end
-  ;
-  (self._music):SetShow(true)
+  self._music:SetShow(true)
   if self._collection then
-    (self._collection):SetShow(false)
+    self._collection:SetShow(false)
   end
   if self._cg then
-    (self._cg):SetShow(false)
+    self._cg:SetShow(false)
   end
-  ;
-  (self._cgBtn):SetSelect(false)
-  ;
-  (self._musicBtn):SetSelect(true)
+  self._cgBtn:SetSelect(false)
+  self._musicBtn:SetSelect(true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollages.RefreshNew = function(self)
-  -- function num : 0_6
-  (self._cgBtn):RefreshNew()
-  ;
-  (self._musicBtn):RefreshNew()
+function UISeasonSeasonCollages:RefreshNew()
+  self._cgBtn:RefreshNew()
+  self._musicBtn:RefreshNew()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollages.GetGuideItem = function(self)
-  -- function num : 0_7
+function UISeasonSeasonCollages:GetGuideItem()
   if self._collection then
-    return (self._collection):GetGuideItem()
+    return self._collection:GetGuideItem()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollages._OnExit = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonSeasonCollages:_OnExit(TT)
   self:Lock("UISeasonS3Collages._OnExit")
-  ;
-  (self._anim):Play("uieffanim_UISeasonS5Collages_out")
+  self._anim:Play("uieffanim_UISeasonS5Collages_out")
   YIELD(TT, 250)
   self:UnLock("UISeasonS3Collages._OnExit")
   if not self._active then
-    return 
+    return
   end
   self:CloseDialog()
 end
-
-

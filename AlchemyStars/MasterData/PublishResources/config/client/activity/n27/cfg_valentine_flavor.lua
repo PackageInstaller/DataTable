@@ -1,51 +1,113 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/n27/cfg_valentine_flavor.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, TaskID = 2, Info = 3}
+local key = {
+  ID = 1,
+  TaskID = 2,
+  Info = 3
+}
 local config = {
-{1, 3570025, "str_n27_valentine_y_flavor_1"}
-, 
-{2, 3570026, "str_n27_valentine_y_flavor_2"}
-, 
-{3, 3570027, "str_n27_valentine_y_flavor_3"}
-, 
-{4, 3570029, "str_n27_valentine_y_flavor_4"}
-, 
-{5, 3570030, "str_n27_valentine_y_flavor_5"}
-, 
-{6, 3570031, "str_n27_valentine_y_flavor_6"}
-, 
-{7, 3570033, "str_n27_valentine_y_flavor_7"}
-, 
-{8, 3570034, "str_n27_valentine_y_flavor_8"}
-, 
-{9, 3570035, "str_n27_valentine_y_flavor_9"}
-, 
-{10, 3570037, "str_n27_valentine_y_flavor_10"}
-, 
-{11, 3570038, "str_n27_valentine_y_flavor_11"}
-, 
-{12, 3570039, "str_n27_valentine_y_flavor_12"}
-, 
-{13, 3570041, "str_n27_valentine_y_flavor_13"}
-, 
-{14, 3570042, "str_n27_valentine_y_flavor_14"}
-, 
-{15, 3570043, "str_n27_valentine_y_flavor_15"}
-, 
-{16, 3570045, "str_n27_valentine_y_flavor_16"}
-, 
-{17, 3570046, "str_n27_valentine_y_flavor_17"}
-, 
-{18, 3570047, "str_n27_valentine_y_flavor_18"}
-, 
-{19, 3570049, "str_n27_valentine_y_flavor_19"}
-, 
-{20, 3570050, "str_n27_valentine_y_flavor_20"}
-, 
-{21, 3570051, "str_n27_valentine_y_flavor_21"}
+  {
+    1,
+    3570025,
+    "str_n27_valentine_y_flavor_1"
+  },
+  {
+    2,
+    3570026,
+    "str_n27_valentine_y_flavor_2"
+  },
+  {
+    3,
+    3570027,
+    "str_n27_valentine_y_flavor_3"
+  },
+  {
+    4,
+    3570029,
+    "str_n27_valentine_y_flavor_4"
+  },
+  {
+    5,
+    3570030,
+    "str_n27_valentine_y_flavor_5"
+  },
+  {
+    6,
+    3570031,
+    "str_n27_valentine_y_flavor_6"
+  },
+  {
+    7,
+    3570033,
+    "str_n27_valentine_y_flavor_7"
+  },
+  {
+    8,
+    3570034,
+    "str_n27_valentine_y_flavor_8"
+  },
+  {
+    9,
+    3570035,
+    "str_n27_valentine_y_flavor_9"
+  },
+  {
+    10,
+    3570037,
+    "str_n27_valentine_y_flavor_10"
+  },
+  {
+    11,
+    3570038,
+    "str_n27_valentine_y_flavor_11"
+  },
+  {
+    12,
+    3570039,
+    "str_n27_valentine_y_flavor_12"
+  },
+  {
+    13,
+    3570041,
+    "str_n27_valentine_y_flavor_13"
+  },
+  {
+    14,
+    3570042,
+    "str_n27_valentine_y_flavor_14"
+  },
+  {
+    15,
+    3570043,
+    "str_n27_valentine_y_flavor_15"
+  },
+  {
+    16,
+    3570045,
+    "str_n27_valentine_y_flavor_16"
+  },
+  {
+    17,
+    3570046,
+    "str_n27_valentine_y_flavor_17"
+  },
+  {
+    18,
+    3570047,
+    "str_n27_valentine_y_flavor_18"
+  },
+  {
+    19,
+    3570049,
+    "str_n27_valentine_y_flavor_19"
+  },
+  {
+    20,
+    3570050,
+    "str_n27_valentine_y_flavor_20"
+  },
+  {
+    21,
+    3570051,
+    "str_n27_valentine_y_flavor_21"
+  }
 }
 return config, "ID", key
-

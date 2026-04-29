@@ -1,44 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_trap_group_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTrapGroupEffectInstruction", BaseInstruction)
 PlayTrapGroupEffectInstruction = PlayTrapGroupEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTrapGroupEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTrapGroupEffectInstruction:Constructor(paramList)
   self._effId = tonumber(paramList.effId)
   local strRotate = paramList.rotate
-  if tonumber(strRotate) ~= 1 then
-    self._rotate = not strRotate
+  if strRotate then
+    self._rotate = tonumber(strRotate) == 1
+  else
     self._rotate = false
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrapGroupEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTrapGroupEffectInstruction:GetCacheResource()
   local t = {}
   if self._effId and self._effId > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effId]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effId].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrapGroupEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayTrapGroupEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local trapRenderCmpt = casterEntity:TrapRender()
   if not trapRenderCmpt then
-    (Log.fatal)("### casterEntity is not Trap.")
-    return 
+    Log.fatal("### casterEntity is not Trap.")
+    return
   end
   local groupId = trapRenderCmpt:GetGroupID()
   local mod = groupId % 10
@@ -49,30 +39,24 @@ PlayTrapGroupEffectInstruction.DoInstruction = function(self, TT, casterEntity, 
   local go = cView:GetGameObject()
   local animation = go:GetComponentInChildren(typeof(UnityEngine.Animation))
   if not animation then
-    (Log.fatal)("### PlayTrapGroupEffectInstruction cant find Animation.EffectId=", self._effId)
-    return 
+    Log.fatal("### PlayTrapGroupEffectInstruction cant find Animation.EffectId=", self._effId)
+    return
   end
-  local revStr = (string.reverse)((animation.clip).name)
-  local _, i = (string.find)(revStr, "_")
-  local m = (string.len)(revStr) - i + 1
-  local prefix = (string.sub)((animation.clip).name, 1, m)
+  local revStr = string.reverse(animation.clip.name)
+  local _, i = string.find(revStr, "_")
+  local m = string.len(revStr) - i + 1
+  local prefix = string.sub(animation.clip.name, 1, m)
   animation:Play(prefix .. mod)
   if self._rotate then
     self:RotateEffect(casterEntity, go)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrapGroupEffectInstruction.RotateEffect = function(self, casterEntity, go)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayTrapGroupEffectInstruction:RotateEffect(casterEntity, go)
   local cGridLocation = casterEntity:GridLocation()
   local dir = cGridLocation.Direction
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
   if dir == Vector2(0, -1) or dir == Vector2(1, 0) then
-    (go.transform).localRotation = (Quaternion.Euler)(0, 180, 0)
+    go.transform.localRotation = Quaternion.Euler(0, 180, 0)
+  else
   end
 end
-
-

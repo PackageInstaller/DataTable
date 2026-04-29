@@ -1,62 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_add_grid_effect_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillAddGridEffectResult", SkillEffectResultBase)
 SkillAddGridEffectResult = SkillAddGridEffectResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillAddGridEffectResult.Constructor = function(self, gridArray, gridConvertTypes, traps)
-  -- function num : 0_0
+function SkillAddGridEffectResult:Constructor(gridArray, gridConvertTypes, traps)
   self._gridArray = gridArray
   self._gridConvertTypes = gridConvertTypes
   self._traps = traps
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddGridEffectResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillAddGridEffectResult:GetEffectType()
   return SkillEffectType.AddGridEffect
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddGridEffectResult.GetTargetGridArray = function(self)
-  -- function num : 0_2
+function SkillAddGridEffectResult:GetTargetGridArray()
   return self._gridArray
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddGridEffectResult.GetGridConvertType = function(self, pos)
-  -- function num : 0_3 , upvalues : _ENV
-  local posIndex = (Vector2.Pos2Index)(pos)
-  return (self._gridConvertTypes)[posIndex]
+function SkillAddGridEffectResult:GetGridConvertType(pos)
+  local posIndex = Vector2.Pos2Index(pos)
+  return self._gridConvertTypes[posIndex]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddGridEffectResult.GetGridConvertTypes = function(self)
-  -- function num : 0_4
+function SkillAddGridEffectResult:GetGridConvertTypes()
   return self._gridConvertTypes
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddGridEffectResult.GetSummontTrapEntityID = function(self, pos)
-  -- function num : 0_5 , upvalues : _ENV
-  local posidx = (Vector2.Pos2Index)(pos)
-  return (self._traps)[posidx]
+function SkillAddGridEffectResult:GetSummontTrapEntityID(pos)
+  local posidx = Vector2.Pos2Index(pos)
+  return self._traps[posidx]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddGridEffectResult.GetSummonTraps = function(self)
-  -- function num : 0_6
+function SkillAddGridEffectResult:GetSummonTraps()
   return self._traps
 end
-
-

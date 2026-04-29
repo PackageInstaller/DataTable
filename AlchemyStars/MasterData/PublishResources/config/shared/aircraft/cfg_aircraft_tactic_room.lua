@@ -1,19 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/aircraft/cfg_aircraft_tactic_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, CartridgeLimit = 2, CD = 3, RandomID = 4, FreeCount = 5}
+local key = {
+  ID = 1,
+  CartridgeLimit = 2,
+  CD = 3,
+  RandomID = 4,
+  FreeCount = 5
+}
 local config = {
-[7111001] = {7111001, 8, 86400, 391900001, 1}
-, 
-[7111002] = {7111002, 9, 79200, 391900001, 1}
-, 
-[7111003] = {7111003, 9, 72000, 391900001, 1}
-, 
-[7111004] = {7111004, 10, 64800, 391900001, 1}
-, 
-[7111005] = {7111005, 10, 54000, 391900001, 1}
+  [7111001] = {
+    7111001,
+    8,
+    86400,
+    391900001,
+    1
+  },
+  [7111002] = {
+    7111002,
+    9,
+    79200,
+    391900001,
+    1
+  },
+  [7111003] = {
+    7111003,
+    9,
+    72000,
+    391900001,
+    1
+  },
+  [7111004] = {
+    7111004,
+    10,
+    64800,
+    391900001,
+    1
+  },
+  [7111005] = {
+    7111005,
+    10,
+    54000,
+    391900001,
+    1
+  }
 }
 return config, "ID", key
-

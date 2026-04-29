@@ -1,62 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_each_grid_add_buff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_EachGridAddBuff", Object)
 SkillEffectCalc_EachGridAddBuff = SkillEffectCalc_EachGridAddBuff
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_EachGridAddBuff.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_EachGridAddBuff:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_EachGridAddBuff.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_EachGridAddBuff:DoSkillEffectCalculator(skillEffectCalcParam)
   local layerCount = 0
-  local targetPieces = (skillEffectCalcParam.skillEffectParam):GetPieceTypes()
-  for _,pos in ipairs(skillEffectCalcParam.skillRange) do
+  local targetPieces = skillEffectCalcParam.skillEffectParam:GetPieceTypes()
+  for _, pos in ipairs(skillEffectCalcParam.skillRange) do
     if targetPieces then
-      local isMatch = (self._skillEffectService):_IsGridElementMatch(pos, targetPieces)
+      local isMatch = self._skillEffectService:_IsGridElementMatch(pos, targetPieces)
       if isMatch then
         layerCount = layerCount + 1
       end
     else
-      do
-        do
-          layerCount = layerCount + 1
-          -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      layerCount = layerCount + 1
     end
   end
   local result = self:_CalculateAddBuffSinglePosResult(layerCount, skillEffectCalcParam)
   return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_EachGridAddBuff._CalculateAddBuffSinglePosResult = function(self, layerCount, skillEffectCalcParam)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_EachGridAddBuff:_CalculateAddBuffSinglePosResult(layerCount, skillEffectCalcParam)
   local skillEffectCalc = SkillEffectCalc_AddBuff:New(self._world)
   local effectParam = skillEffectCalcParam.skillEffectParam
   effectParam:SetBuffInitLayer(layerCount)
   local tResults = skillEffectCalc:DoSkillEffectCalculator(skillEffectCalcParam)
-  for _,r in ipairs(tResults) do
+  for _, r in ipairs(tResults) do
     local eid = r:GetEntityID()
-    local e = (self._world):GetEntityByID(eid)
+    local e = self._world:GetEntityByID(eid)
     local newBuffArray = r:GetAddBuffResult()
     local cBuff = e:BuffComponent()
-    for _,seq in ipairs(newBuffArray) do
+    for _, seq in ipairs(newBuffArray) do
       local inst = cBuff:GetBuffBySeq(seq)
       local layer = inst:GetLayerCount()
       r:SetBuffInitLayer(layer)
@@ -64,5 +41,3 @@ SkillEffectCalc_EachGridAddBuff._CalculateAddBuffSinglePosResult = function(self
   end
   return tResults
 end
-
-

@@ -1,71 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/newway/ui_activity_n29_detective_newway_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN29DetectiveNewwayController", UIController)
 UIActivityN29DetectiveNewwayController = UIActivityN29DetectiveNewwayController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN29DetectiveNewwayController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIActivityN29DetectiveNewwayController:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveNewwayController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N20ShowNormalResult)
+function UIActivityN29DetectiveNewwayController:OnShow(uiParams)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N20ShowNormalResult)
   self._cfg = uiParams[1]
   self._callback = uiParams[2]
   self:_GetComponent()
   self:InitInfo()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveNewwayController.OnHide = function(self)
-  -- function num : 0_2
+function UIActivityN29DetectiveNewwayController:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveNewwayController._GetComponent = function(self)
-  -- function num : 0_3
+function UIActivityN29DetectiveNewwayController:_GetComponent()
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._info = self:GetUIComponent("UILocalizationText", "info")
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveNewwayController.InitInfo = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._icon):LoadImage((self._cfg).Pic)
-  ;
-  (self._name):SetText((StringTable.Get)((self._cfg).ShowName))
-  ;
-  (self._info):SetText((StringTable.Get)((self._cfg).Info))
+function UIActivityN29DetectiveNewwayController:InitInfo()
+  self._icon:LoadImage(self._cfg.Pic)
+  self._name:SetText(StringTable.Get(self._cfg.ShowName))
+  self._info:SetText(StringTable.Get(self._cfg.Info))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveNewwayController.MaskOnClick = function(self)
-  -- function num : 0_5
+function UIActivityN29DetectiveNewwayController:MaskOnClick()
   self:StartTask(self._Close, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveNewwayController._Close = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._anim):Play("uieff_UIN29DetectiveNewWayController_out")
+function UIActivityN29DetectiveNewwayController:_Close(TT)
+  self._anim:Play("uieff_UIN29DetectiveNewWayController_out")
   YIELD(TT, 300)
   self:CloseDialog()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
-
-

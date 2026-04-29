@@ -1,102 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_detail/ui_pet_skill_detail_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetSkillDetailController", UIController)
 UIPetSkillDetailController = UIPetSkillDetailController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetSkillDetailController.Constructor = function(self)
-  -- function num : 0_0
+function UIPetSkillDetailController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkillDetailController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPetSkillDetailController:OnShow(uiParams)
   self._petData = uiParams[1]
-  self._petModule = ((GameGlobal.GameLogic)()):GetModule(PetModule)
+  self._petModule = GameGlobal.GameLogic():GetModule(PetModule)
   self._skillRowPool = self:GetUIComponent("UISelectObjectPath", "fightSkillUISelectObjectPath")
   self._skillPanelTr = self:GetUIComponent("RectTransform", "MovePanel")
   self._skillPanelRightPos = self:GetUIComponent("RectTransform", "RightAnchorPos")
   self._leftPos = self:GetUIComponent("RectTransform", "LeftAnchorPos")
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._leftPos).anchoredPosition = Vector2(uiParams[2], 0)
+  self._leftPos.anchoredPosition = Vector2(uiParams[2], 0)
   self._closeCallback = uiParams[3]
   self._tweener = nil
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._skillPanelTr).position = (self._leftPos).position
+  self._skillPanelTr.position = self._leftPos.position
   self._isMoving = false
   self:RefreshPetSKill()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkillDetailController.MoveSkillPanel = function(self, isOpen)
-  -- function num : 0_2
+function UIPetSkillDetailController:MoveSkillPanel(isOpen)
   if self._tweener then
-    (self._tweener):Kill()
+    self._tweener:Kill()
   end
   if isOpen then
-    self._tweener = (self._skillPanelTr):DOMove((self._leftPos).position, 0.5)
+    self._tweener = self._skillPanelTr:DOMove(self._leftPos.position, 0.5)
     self._isMoving = true
-    ;
-    (self._tweener):OnComplete(function()
-    -- function num : 0_2_0 , upvalues : self
-    self._isMoving = false
-  end
-)
+    self._tweener:OnComplete(function()
+      self._isMoving = false
+    end)
   else
-    self._tweener = (self._skillPanelTr):DOMove((self._skillPanelRightPos).position, 0.4)
+    self._tweener = self._skillPanelTr:DOMove(self._skillPanelRightPos.position, 0.4)
     self._isMoving = true
-    ;
-    (self._tweener):OnComplete(function()
-    -- function num : 0_2_1 , upvalues : self
-    self._isMoving = false
-    self:CloseDialog()
-  end
-)
+    self._tweener:OnComplete(function()
+      self._isMoving = false
+      self:CloseDialog()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkillDetailController.OnHide = function(self)
-  -- function num : 0_3
+function UIPetSkillDetailController:OnHide()
   if self._closeCallback then
-    (self._closeCallback)()
+    self._closeCallback()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkillDetailController.bgOnClick = function(self, go)
-  -- function num : 0_4
+function UIPetSkillDetailController:bgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkillDetailController.RefreshPetSKill = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIPetSkillDetailController:RefreshPetSKill()
   local _creatCount = 0
-  local uiModule = (self._petModule).uiModule
+  local uiModule = self._petModule.uiModule
   self._skillDetailInfos = uiModule:GetSkillDetailInfoBySkillTypeHideExtra(self._petData)
-  _creatCount = (table.count)(self._skillDetailInfos)
-  ;
-  (self._skillRowPool):SpawnObjects("UIFightSkillItem", _creatCount)
-  local rowList = (self._skillRowPool):GetAllSpawnList()
+  _creatCount = table.count(self._skillDetailInfos)
+  self._skillRowPool:SpawnObjects("UIFightSkillItem", _creatCount)
+  local rowList = self._skillRowPool:GetAllSpawnList()
   for index = 1, _creatCount do
     local skillItem = rowList[index]
-    ;
-    (skillItem:GetGameObject()):SetActive(true)
-    skillItem:SetData((self._skillDetailInfos)[index], self._petData, index)
+    skillItem:GetGameObject():SetActive(true)
+    skillItem:SetData(self._skillDetailInfos[index], self._petData, index)
   end
 end
-
-

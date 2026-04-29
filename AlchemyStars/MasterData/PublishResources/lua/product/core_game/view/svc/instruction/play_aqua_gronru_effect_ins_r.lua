@@ -1,71 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_aqua_gronru_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayAquaGronruEffectInstruction", BaseInstruction)
 PlayAquaGronruEffectInstruction = PlayAquaGronruEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayAquaGronruEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayAquaGronruEffectInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._lineEffectID = tonumber(paramList.lineEffectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAquaGronruEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayAquaGronruEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local casterRenderPos = casterEntity:GetPosition()
   local effectService = world:GetService("Effect")
   local effectEntity = effectService:CreatePositionEffect(self._effectID, casterRenderPos)
-  local csgo = (effectEntity:View()):GetGameObject()
-  local water = (GameObjectHelper.FindChild)(csgo.transform, "water")
+  local csgo = effectEntity:View():GetGameObject()
+  local water = GameObjectHelper.FindChild(csgo.transform, "water")
   if not water or tostring(water) == "null" then
-    return 
+    return
   end
-  local csRenderer = (water.gameObject):GetComponent(typeof(UnityEngine.MeshRenderer))
+  local csRenderer = water.gameObject:GetComponent(typeof(UnityEngine.MeshRenderer))
   if not csRenderer then
-    return 
+    return
   end
   local v4 = Vector4.zero
   v4.x = casterRenderPos.x
   v4.y = casterRenderPos.y
   v4.z = casterRenderPos.z
-  ;
-  (csRenderer.sharedMaterial):SetVector("_Location_xyz", v4)
+  csRenderer.sharedMaterial:SetVector("_Location_xyz", v4)
   if not self._lineEffectID then
-    return 
+    return
   end
   local lineEffect = effectService:CreatePositionEffect(self._lineEffectID, casterRenderPos)
-  local csLineGO = (lineEffect:View()):GetGameObject()
-  local line = (GameObjectHelper.FindChild)(csLineGO.transform, "line")
+  local csLineGO = lineEffect:View():GetGameObject()
+  local line = GameObjectHelper.FindChild(csLineGO.transform, "line")
   if not line or tostring(line) == "null" then
-    return 
+    return
   end
-  local csLineRenderer = (line.gameObject):GetComponent(typeof(UnityEngine.MeshRenderer))
+  local csLineRenderer = line.gameObject:GetComponent(typeof(UnityEngine.MeshRenderer))
   if not csLineRenderer then
-    return 
+    return
   end
-  ;
-  (csLineRenderer.sharedMaterial):SetVector("_Location_xyz", v4)
+  csLineRenderer.sharedMaterial:SetVector("_Location_xyz", v4)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAquaGronruEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayAquaGronruEffectInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
-  if self._lineEffectID and self._lineEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._lineEffectID]).ResPath, 1})
+  if self._lineEffectID and 0 < self._lineEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._lineEffectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n16/entry/ui_activity_n16_mainlobby_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN16MainLobbyEntry", UICustomWidget)
 UIActivityN16MainLobbyEntry = UIActivityN16MainLobbyEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN16MainLobbyEntry.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN16MainLobbyEntry:OnShow(uiParams)
   self._subjectTipsPanel = self:GetGameObject("SubjectTipsPanel")
   self._subjectTipsLabel = self:GetUIComponent("UILocalizationText", "SubjectTips")
   self._subjectTipsRollingText = self:GetUIComponent("RollingText", "SubjectTips")
@@ -20,203 +13,136 @@ UIActivityN16MainLobbyEntry.OnShow = function(self, uiParams)
   self:_LoadCampaignInfo(false, ECampaignType.CAMPAIGN_TYPE_N16, ECampaignN16ComponentID.ECAMPAIGN_N16_SHOP, ECampaignN16ComponentID.ECAMPAIGN_N16_CUMULATIVE_LOGIN, ECampaignN16ComponentID.ECAMPAIGN_N16_LEVEL_COMMON, ECampaignN16ComponentID.ECAMPAIGN_N16_LEVEL_HARD, ECampaignN16ComponentID.ECAMPAIGN_N16_LEVEL_FIXTEAM, ECampaignN16ComponentID.ECAMPAIGN_N16_ACTION_POINT, ECampaignN16ComponentID.ECAMPAIGN_N16_STORY, ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16MainLobbyEntry.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN16MainLobbyEntry:OnHide()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16MainLobbyEntry.SetData_uiMainLobbyController = function(self, controller)
-  -- function num : 0_2
+function UIActivityN16MainLobbyEntry:SetData_uiMainLobbyController(controller)
   self._uiMainLobbyController = controller
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16MainLobbyEntry._LoadCampaignInfo = function(self, isLocal, camType, ...)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN16MainLobbyEntry:_LoadCampaignInfo(isLocal, camType, ...)
   self._campaign = UIActivityCampaign:New()
   if isLocal then
-    (self._campaign):LoadCampaignInfo_Local(camType, ...)
+    self._campaign:LoadCampaignInfo_Local(camType, ...)
     self:_CheckPoint()
   else
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(function(TT, ...)
-    -- function num : 0_3_0 , upvalues : self, _ENV, camType
-    local lockName = "UIActivityMainLobbyEntry_LoadCampaignInfo"
-    self:Lock(lockName)
-    local res = AsyncRequestRes:New()
-    ;
-    (self._campaign):LoadCampaignInfo(TT, res, camType, ...)
-    self:_CheckPoint()
-    self._hardComponent = (self._campaign):GetComponent(ECampaignN16ComponentID.ECAMPAIGN_N16_LEVEL_HARD)
-    self._hardComponentInfo = (self._campaign):GetComponentInfo(ECampaignN16ComponentID.ECAMPAIGN_N16_LEVEL_HARD)
-    self._cumulativeSubjectComponent = (self._campaign):GetComponent(ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
-    self._cumulativeSubjectComponentInfo = (self._campaign):GetComponentInfo(ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
-    self:StartCheckActivityStatus()
-    self:UnLock(lockName)
-  end
-)
+    GameGlobal.TaskManager():StartTask(function(TT, ...)
+      local lockName = "UIActivityMainLobbyEntry_LoadCampaignInfo"
+      self:Lock(lockName)
+      local res = AsyncRequestRes:New()
+      self._campaign:LoadCampaignInfo(TT, res, camType, ...)
+      self:_CheckPoint()
+      self._hardComponent = self._campaign:GetComponent(ECampaignN16ComponentID.ECAMPAIGN_N16_LEVEL_HARD)
+      self._hardComponentInfo = self._campaign:GetComponentInfo(ECampaignN16ComponentID.ECAMPAIGN_N16_LEVEL_HARD)
+      self._cumulativeSubjectComponent = self._campaign:GetComponent(ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
+      self._cumulativeSubjectComponentInfo = self._campaign:GetComponentInfo(ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
+      self:StartCheckActivityStatus()
+      self:UnLock(lockName)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16MainLobbyEntry.EntryBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.EntryBtnOnClickCoro, self)
+function UIActivityN16MainLobbyEntry:EntryBtnOnClick(go)
+  GameGlobal.TaskManager():StartTask(self.EntryBtnOnClickCoro, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16MainLobbyEntry.EntryBtnOnClickCoro = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN16MainLobbyEntry:EntryBtnOnClickCoro(TT)
   self:Lock("UIN16MainLobbyEntry_EntryBtnOnClickCoro")
-  ;
-  (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIActivityN16MainController, function()
-    -- function num : 0_5_0 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
+  CutsceneManager.ExcuteCutsceneIn(UIStateType.UIActivityN16MainController, function()
     if self._uiMainLobbyController then
-      ((self._uiMainLobbyController)._screenShot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera((self._uiMainLobbyController):GetName())
-      local rt = ((self._uiMainLobbyController)._screenShot):RefreshBlurTexture()
-      do
-        local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-        self:StartTask(function(TT)
-      -- function num : 0_5_0_0 , upvalues : _ENV, self, rt, cache_rt
-      YIELD(500)
-      self:UnLock("UIN16MainLobbyEntry_EntryBtnOnClickCoro")
-      ;
-      ((UnityEngine.Graphics).Blit)(rt, cache_rt)
-      self:SwitchState(self._stateType, cache_rt)
-    end
-)
-      end
-    else
-      do
-        self:SwitchState(self._stateType)
+      self._uiMainLobbyController._screenShot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self._uiMainLobbyController:GetName())
+      local rt = self._uiMainLobbyController._screenShot:RefreshBlurTexture()
+      local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+      self:StartTask(function(TT)
+        YIELD(500)
         self:UnLock("UIN16MainLobbyEntry_EntryBtnOnClickCoro")
-      end
+        UnityEngine.Graphics.Blit(rt, cache_rt)
+        self:SwitchState(self._stateType, cache_rt)
+      end)
+    else
+      self:SwitchState(self._stateType)
+      self:UnLock("UIN16MainLobbyEntry_EntryBtnOnClickCoro")
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16MainLobbyEntry._AttachEvents = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityN16MainLobbyEntry:_AttachEvents()
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:AttachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16MainLobbyEntry._DetachEvents = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityN16MainLobbyEntry:_DetachEvents()
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:DetachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16MainLobbyEntry._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_8
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UIActivityN16MainLobbyEntry:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16MainLobbyEntry._OnQuestUpdate = function(self)
-  -- function num : 0_9
+function UIActivityN16MainLobbyEntry:_OnQuestUpdate()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16MainLobbyEntry._CheckPoint = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityN16MainLobbyEntry:_CheckPoint()
   local newObj = self:GetGameObject("new")
   local redObj = self:GetGameObject("red")
-  local new = (UIActivityHelper.CheckCampaignSampleNewPoint)(self._campaign)
-  local red = (UIActivityHelper.CheckCampaignSampleRedPoint)(self._campaign)
-  if not new then
-    new = self:CheckNewState(ECampaignN16ComponentID.ECAMPAIGN_N16_LEVEL_HARD)
-  end
-  if not new then
-    new = self:CheckNewState(ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
-  end
-  local componentInfo = (self._campaign):GetComponentInfo(ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
+  local new = UIActivityHelper.CheckCampaignSampleNewPoint(self._campaign)
+  local red = UIActivityHelper.CheckCampaignSampleRedPoint(self._campaign)
+  new = new or self:CheckNewState(ECampaignN16ComponentID.ECAMPAIGN_N16_LEVEL_HARD)
+  new = new or self:CheckNewState(ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
+  local componentInfo = self._campaign:GetComponentInfo(ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
   if componentInfo and not red then
-    red = (UIN16Const.HasNewOpenSubjectLevel)(componentInfo)
+    red = UIN16Const.HasNewOpenSubjectLevel(componentInfo)
   end
-  ;
-  (UIActivityHelper.SetWidgetNewAndRed)(newObj, new, redObj, red)
+  UIActivityHelper.SetWidgetNewAndRed(newObj, new, redObj, red)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16MainLobbyEntry.StartCheckActivityStatus = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityN16MainLobbyEntry:StartCheckActivityStatus()
   self:CheckActivityStatus()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
-  self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_11_0 , upvalues : self
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:CheckActivityStatus()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16MainLobbyEntry.CheckActivityStatus = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local hardCmpUnLockTime = (self._hardComponentInfo).m_unlock_time
-  local subjectCmpUnLockTime = (self._cumulativeSubjectComponentInfo).m_unlock_time
-  local hardCompIsOpen = hardCmpUnLockTime <= curTime
-  local subjectCompIsOpen = subjectCmpUnLockTime <= curTime
+function UIActivityN16MainLobbyEntry:CheckActivityStatus()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local hardCmpUnLockTime = self._hardComponentInfo.m_unlock_time
+  local subjectCmpUnLockTime = self._cumulativeSubjectComponentInfo.m_unlock_time
+  local hardCompIsOpen = curTime >= hardCmpUnLockTime
+  local subjectCompIsOpen = curTime >= subjectCmpUnLockTime
   if subjectCompIsOpen then
-    (self._subjectTipsPanel):SetActive(true)
-    ;
-    (self._hardLevelTipsPanel):SetActive(false)
+    self._subjectTipsPanel:SetActive(true)
+    self._hardLevelTipsPanel:SetActive(false)
   else
-    (self._subjectTipsPanel):SetActive(false)
-    ;
-    (self._hardLevelTipsPanel):SetActive(false)
+    self._subjectTipsPanel:SetActive(false)
+    self._hardLevelTipsPanel:SetActive(false)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16MainLobbyEntry.CheckNewState = function(self, args)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityN16MainLobbyEntry:CheckNewState(args)
   local isOpen = false
   local componentId = args
-  local component = (self._campaign):GetComponent(componentId)
+  local component = self._campaign:GetComponent(componentId)
   if not component then
     return false
   end
   isOpen = component:ComponentIsOpen()
   local dbStr = args == ECampaignN16ComponentID.ECAMPAIGN_N16_LEVEL_HARD and "UIActivityN16HardLevel" or "UIActivityN16Subject"
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstid = roleModule:GetPstId()
   dbStr = dbStr .. pstid
-  local hadSave = not (LocalDB.HasKey)(dbStr)
-  return not isOpen or hadSave
+  local hadSave = not LocalDB.HasKey(dbStr)
+  return isOpen and hadSave
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/sp_miejin_roll.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseParam_MiejinRoll", SkillPhaseParamBase)
 SkillPhaseParam_MiejinRoll = SkillPhaseParam_MiejinRoll
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseParam_MiejinRoll.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhaseParam_MiejinRoll:Constructor(t)
   self._prerollDelayMS = tonumber(t.prerollDelay)
   self._rolloutTimeMS = tonumber(t.rolloutTime)
   self._standEdgeTimeMS = tonumber(t.standEdgeTime)
@@ -20,78 +13,49 @@ SkillPhaseParam_MiejinRoll.Constructor = function(self, t)
   self._summonTrapIDs = t.summonTrapIDs
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_MiejinRoll.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseParam_MiejinRoll:GetPhaseType()
   return SkillViewPhaseType.MiejinRoll
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_MiejinRoll.GetCacheTable = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseParam_MiejinRoll:GetCacheTable()
   local t = {}
-  if type(self._rollEffectID) and (Cfg.cfg_effect)[self._rollEffectID] then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._rollEffectID]).ResPath, 1})
+  if type(self._rollEffectID) and Cfg.cfg_effect[self._rollEffectID] then
+    table.insert(t, {
+      Cfg.cfg_effect[self._rollEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_MiejinRoll.GetPrerollDelayMS = function(self)
-  -- function num : 0_3
+function SkillPhaseParam_MiejinRoll:GetPrerollDelayMS()
   return self._prerollDelayMS
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_MiejinRoll.GetRolloutTimeMS = function(self)
-  -- function num : 0_4
+function SkillPhaseParam_MiejinRoll:GetRolloutTimeMS()
   return self._rolloutTimeMS
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_MiejinRoll.GetStandEdgeTimeMS = function(self)
-  -- function num : 0_5
+function SkillPhaseParam_MiejinRoll:GetStandEdgeTimeMS()
   return self._standEdgeTimeMS
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_MiejinRoll.GetRollbackTimeMS = function(self)
-  -- function num : 0_6
+function SkillPhaseParam_MiejinRoll:GetRollbackTimeMS()
   return self._rollbackTimeMS
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_MiejinRoll.GetPostrollDelayMS = function(self)
-  -- function num : 0_7
+function SkillPhaseParam_MiejinRoll:GetPostrollDelayMS()
   return self._postrollDelayMS
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_MiejinRoll.GetRollEffectID = function(self)
-  -- function num : 0_8
+function SkillPhaseParam_MiejinRoll:GetRollEffectID()
   return self._rollEffectID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_MiejinRoll.GetSummonTrapIDs = function(self)
-  -- function num : 0_9
+function SkillPhaseParam_MiejinRoll:GetSummonTrapIDs()
   return self._summonTrapIDs
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_MiejinRoll.GetHitAnimName = function(self)
-  -- function num : 0_10
+function SkillPhaseParam_MiejinRoll:GetHitAnimName()
   return self._hitAnimName
 end
-
-

@@ -1,113 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/game/ui_n25_idol_game.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolGame", UIController)
 UIN25IdolGame = UIN25IdolGame
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolGame._SetCommonTopButton = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_backBtns", "UINewCommonTopButton")
+function UIN25IdolGame:_SetCommonTopButton()
+  local obj = UIWidgetHelper.SpawnObject(self, "_backBtns", "UINewCommonTopButton")
   if self._isConcert then
     obj:SetData(function()
-    -- function num : 0_0_0 , upvalues : self
-    self:_Back()
-  end
-, nil, nil, true, nil)
+      self:_Back()
+    end, nil, nil, true, nil)
   else
     obj:SetData(function()
-    -- function num : 0_0_1 , upvalues : self
-    self:_Back()
-  end
-, function()
-    -- function num : 0_0_2 , upvalues : self, _ENV
-    self:ShowDialog("UIIntroLoader", "UIN25IdolGameIntro", MaskType.MT_BlurMask)
-  end
-, nil, true, function()
-    -- function num : 0_0_3 , upvalues : self
-    self:_HideUI()
-  end
-)
+      self:_Back()
+    end, function()
+      self:ShowDialog("UIIntroLoader", "UIN25IdolGameIntro", MaskType.MT_BlurMask)
+    end, nil, true, function()
+      self:_HideUI()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame._Back = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN25IdolGame:_Back()
   local lockName = "UIN25IdolGame:_Back"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self, _ENV, lockName
+  GameGlobal.UIStateManager():Lock(lockName)
+  TaskManager:GetInstance():StartTask(function(TT)
     if self._apEvent then
-      (self._apEvent):CloseAnim(TT)
+      self._apEvent:CloseAnim(TT)
     end
     self:SwitchState(UIStateType.UIN25IdolLogin)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockName)
-  end
-)
+    GameGlobal.UIStateManager():UnLock(lockName)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame._HideUI = function(self)
-  -- function num : 0_2
-  (self:GetGameObject("_backBtns")):SetActive(false)
-  ;
-  (self:GetGameObject("_showBtn")):SetActive(true)
-  ;
-  (self:GetGameObject("_uiElements")):SetActive(false)
+function UIN25IdolGame:_HideUI()
+  self:GetGameObject("_backBtns"):SetActive(false)
+  self:GetGameObject("_showBtn"):SetActive(true)
+  self:GetGameObject("_uiElements"):SetActive(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame._ShowUI = function(self)
-  -- function num : 0_3
-  (self:GetGameObject("_backBtns")):SetActive(true)
-  ;
-  (self:GetGameObject("_showBtn")):SetActive(false)
-  ;
-  (self:GetGameObject("_uiElements")):SetActive(true)
+function UIN25IdolGame:_ShowUI()
+  self:GetGameObject("_backBtns"):SetActive(true)
+  self:GetGameObject("_showBtn"):SetActive(false)
+  self:GetGameObject("_uiElements"):SetActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame._SetBg = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN25IdolGame:_SetBg()
   local url = "n25_ychjq_di07"
   if url then
-    (UIWidgetHelper.SetRawImage)(self, "_mainBg", url)
+    UIWidgetHelper.SetRawImage(self, "_mainBg", url)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame._SetSpine = function(self)
-  -- function num : 0_5
+function UIN25IdolGame:_SetSpine()
   local obj = self:GetUIComponent("SpineLoader", "_spine")
   obj:LoadSpine("geerdi_n23_spine_idle")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN25IdolGame:LoadDataOnEnter(TT, res, uiParams)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_N25
   self._componentId = ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL
-  self._campaign = (UIActivityHelper.LoadDataOnEnter)(TT, res, self._campaignType, {self._componentId})
-  self._component = (self._campaign):GetComponent(self._componentId)
-  self._componentInfo = (self._campaign):GetComponentInfo(self._componentId)
+  self._campaign = UIActivityHelper.LoadDataOnEnter(TT, res, self._campaignType, {
+    self._componentId
+  })
+  self._component = self._campaign:GetComponent(self._componentId)
+  self._componentInfo = self._campaign:GetComponentInfo(self._componentId)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame.OnShow = function(self, uiParams)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN25IdolGame:OnShow(uiParams)
   self._isConcert = false
   self._froceActOpened = false
   self._froceConcertOpened = false
@@ -116,59 +73,38 @@ UIN25IdolGame.OnShow = function(self, uiParams)
   self:_SetBg()
   self:_SetSpine()
   self:_Refresh()
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", "uieff_UIN25IdolGame_in", 600, function()
-    -- function num : 0_7_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAnimationPlay)(self, "_anim", "uieff_UIN25IdolGame_Dialog_in")
+  UIWidgetHelper.PlayAnimation(self, "_anim", "uieff_UIN25IdolGame_in", 600, function()
+    UIWidgetHelper.SetAnimationPlay(self, "_anim", "uieff_UIN25IdolGame_Dialog_in")
     self:_CheckGuide()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame.OnHide = function(self)
-  -- function num : 0_8
+function UIN25IdolGame:OnHide()
   self:_DetachEvents()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame._CheckGuide = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN25IdolGame)
+function UIN25IdolGame:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN25IdolGame)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame._Refresh = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  self._state = (UIN25IdolGameHelper.CheckState)(self._component, self._froceActOpened, self._froceConcertOpened, function()
-    -- function num : 0_10_0 , upvalues : self
+function UIN25IdolGame:_Refresh()
+  self._state = UIN25IdolGameHelper.CheckState(self._component, self._froceActOpened, self._froceConcertOpened, function()
     self:_RefreshUI()
-  end
-)
+  end)
   if self._state == IdolGameState.Weekend then
     self._froceActOpened = true
-  else
-    if self._state < IdolGameState.Weekend then
-      self._froceActOpened = false
-    end
+  elseif self._state < IdolGameState.Weekend then
+    self._froceActOpened = false
   end
   if self._state == IdolGameState.Concert then
     self._froceConcertOpened = true
-  else
-    if self._state < IdolGameState.Concert then
-      self._froceConcertOpened = false
-    end
+  elseif self._state < IdolGameState.Concert then
+    self._froceConcertOpened = false
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame._RefreshUI = function(self)
-  -- function num : 0_11
+function UIN25IdolGame:_RefreshUI()
   self:_SetConcert()
   self:_SetSchedule()
   self:_SetTrainPoint()
@@ -177,154 +113,102 @@ UIN25IdolGame._RefreshUI = function(self)
   self:_SetCommonTopButton()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame._SetActRed = function(self)
-  -- function num : 0_12
+function UIN25IdolGame:_SetActRed()
   local redGo = self:GetGameObject("actRed")
-  local show = (self._component):UI_GetActRed()
+  local show = self._component:UI_GetActRed()
   redGo:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame._SetSchedule = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  self._apEvent = (UIWidgetHelper.SpawnObject)(self, "_schedule", "UIN25IdolApEvent")
-  ;
-  (self._apEvent):SetData(self._component)
+function UIN25IdolGame:_SetSchedule()
+  self._apEvent = UIWidgetHelper.SpawnObject(self, "_schedule", "UIN25IdolApEvent")
+  self._apEvent:SetData(self._component)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame._SetConcert = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN25IdolGame:_SetConcert()
   local apGo = self:GetGameObject("_schedule")
   local BtnsGroup = self:GetGameObject("BtnsGroup")
-  local obj = (UIWidgetHelper.SpawnObject)(self, "Concert", "UIN25IdolConcertItem")
+  local obj = UIWidgetHelper.SpawnObject(self, "Concert", "UIN25IdolConcertItem")
   obj:SetData(self._component, function(pos, argsTable)
-    -- function num : 0_14_0 , upvalues : self
     self:_SetCommonTips(pos, argsTable)
-  end
-)
+  end)
   local fansEnough = false
-  self._isConcert = (self._component):UI_CheckConcert()
+  self._isConcert, fansEnough = self._component:UI_CheckConcert()
   local ConcertEnter = self:GetGameObject("ConcertEnter")
   ConcertEnter:SetActive(self._isConcert)
   apGo:SetActive(not self._isConcert)
   BtnsGroup:SetActive(not self._isConcert)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame._SetTrainPoint = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_trainPoint", "UIN25IdolCommonTrainPoint", 3)
-  for i,v in ipairs(objs) do
+function UIN25IdolGame:_SetTrainPoint()
+  local objs = UIWidgetHelper.SpawnObjects(self, "_trainPoint", "UIN25IdolCommonTrainPoint", 3)
+  for i, v in ipairs(objs) do
     local uiType = 1
     local trainType = i
-    local value = (self._component):UI_GetTrainPoint(trainType)
+    local value = self._component:UI_GetTrainPoint(trainType)
     local tips = true
     v:SetData(uiType, trainType, value, function(pos, argsTable)
-    -- function num : 0_15_0 , upvalues : self
-    self:_SetCommonTips(pos, argsTable)
-  end
-)
+      self:_SetCommonTips(pos, argsTable)
+    end)
   end
   self._trainPoint = objs
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame._SetCommonTips = function(self, pos, argsTable)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN25IdolGame:_SetCommonTips(pos, argsTable)
   local className = "UIN25IdolCommonTips"
   local prefabName = "UIN25Idol_Common_Tips.prefab"
-  ;
-  (UIWidgetHelper.SetActivityCommonTips)(self, "_tipsPool", className, prefabName, pos, argsTable)
+  UIWidgetHelper.SetActivityCommonTips(self, "_tipsPool", className, prefabName, pos, argsTable)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame._SetDialog = function(self, anim)
-  -- function num : 0_17 , upvalues : _ENV
-  local stage = (self._component):UI_GetCurrentConcertId()
-  local strIds = {"str_n25_idol_game_spine_talk_", "str_n25_idol_game_spine_talk_concert_"}
+function UIN25IdolGame:_SetDialog(anim)
+  local stage = self._component:UI_GetCurrentConcertId()
+  local strIds = {
+    "str_n25_idol_game_spine_talk_",
+    "str_n25_idol_game_spine_talk_concert_"
+  }
   local idx = self._isConcert and 2 or 1
   local key = strIds[idx] .. stage .. "_"
-  local tb = (UIActivityHelper.GetStringTableArray)(key)
-  ;
-  (table.shuffle)(tb)
+  local tb = UIActivityHelper.GetStringTableArray(key)
+  table.shuffle(tb)
   local strId = tb[1]
-  local name = (StringTable.Get)("str_n25_idol_game_spine_talk_name")
-  local text = (StringTable.Get)(strId)
-  text = (HelperProxy:GetInstance()):ReplacePlayerName(text)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtName", name)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtDialog", text)
+  local name = StringTable.Get("str_n25_idol_game_spine_talk_name")
+  local text = StringTable.Get(strId)
+  text = HelperProxy:GetInstance():ReplacePlayerName(text)
+  UIWidgetHelper.SetLocalizationText(self, "_txtName", name)
+  UIWidgetHelper.SetLocalizationText(self, "_txtDialog", text)
   if anim then
-    (UIWidgetHelper.SetAnimationPlay)(self, "_anim", "uieff_UIN25IdolGame_Dialog_in")
+    UIWidgetHelper.SetAnimationPlay(self, "_anim", "uieff_UIN25IdolGame_Dialog_in")
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame.SpineBtnOnClick = function(self, go)
-  -- function num : 0_18
+function UIN25IdolGame:SpineBtnOnClick(go)
   self:_SetDialog(true)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame.TrainingBtnOnClick = function(self, go)
-  -- function num : 0_19
+function UIN25IdolGame:TrainingBtnOnClick(go)
   self:ShowDialog("UIN25IdolGameTraining")
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame.ActBtnOnClick = function(self, go)
-  -- function num : 0_20 , upvalues : _ENV
-  (CutsceneManager.ExcuteCutsceneIn)("UIN25Idol_Common_Switch", function()
-    -- function num : 0_20_0 , upvalues : self
+function UIN25IdolGame:ActBtnOnClick(go)
+  CutsceneManager.ExcuteCutsceneIn("UIN25Idol_Common_Switch", function()
     self:ShowDialog("UIN25IdolAct", false)
-  end
-)
-  ;
-  (self._component):UI_SetActRed()
+  end)
+  self._component:UI_SetActRed()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame.ConcertBtnOnClick = function(self, go)
-  -- function num : 0_21 , upvalues : _ENV
-  (CutsceneManager.ExcuteCutsceneIn)("UIN25Idol_Common_Switch", function()
-    -- function num : 0_21_0 , upvalues : self
+function UIN25IdolGame:ConcertBtnOnClick(go)
+  CutsceneManager.ExcuteCutsceneIn("UIN25Idol_Common_Switch", function()
     self:ShowDialog("UIN25IdolConcert")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame.ShowBtnOnClick = function(self, go)
-  -- function num : 0_22
+function UIN25IdolGame:ShowBtnOnClick(go)
   self:_ShowUI()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame._AttachEvents = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIN25IdolGame:_AttachEvents()
   self:AttachEvent(GameEventType.N25IdolGameNextDay, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGame._DetachEvents = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIN25IdolGame:_DetachEvents()
   self:DetachEvent(GameEventType.N25IdolGameNextDay, self._Refresh)
 end
-
-

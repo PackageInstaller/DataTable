@@ -1,40 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_calc_scope_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewShowCalcScope", BuffViewBase)
 BuffViewShowCalcScope = BuffViewShowCalcScope
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewShowCalcScope.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewShowCalcScope:PlayView(TT)
   local result = self:GetBuffResult()
-  local renderEntityService = (self._world):GetService("RenderEntity")
-  local attackRange = (result:GetScopeResult()):GetAttackRange()
+  local renderEntityService = self._world:GetService("RenderEntity")
+  local attackRange = result:GetScopeResult():GetAttackRange()
   local outlineEntityList = renderEntityService:CreateAreaOutlineEntity(attackRange, EntityConfigIDRender.WarningArea)
   for i = 1, #outlineEntityList do
     local outlineEntity = outlineEntityList[i]
-    outlineEntity:ReplaceDamageWarningAreaElement((self:Entity()):GetID(), EntityConfigIDRender.WarningArea)
+    outlineEntity:ReplaceDamageWarningAreaElement(self:Entity():GetID(), EntityConfigIDRender.WarningArea)
   end
 end
 
 _class("BuffViewHideCalcScope", BuffViewBase)
 BuffViewHideCalcScope = BuffViewHideCalcScope
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewHideCalcScope.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local ownerEntityID = (self:Entity()):GetID()
+function BuffViewHideCalcScope:PlayView(TT)
+  local ownerEntityID = self:Entity():GetID()
   local casterEntity = self:Entity()
   local world = casterEntity:GetOwnerWorld()
-  local group = world:GetGroup((world.BW_WEMatchers).DamageWarningAreaElement)
+  local group = world:GetGroup(world.BW_WEMatchers.DamageWarningAreaElement)
   local pubListEntity = group:GetEntities()
   local listEntity = {}
-  for _,entity in ipairs(pubListEntity) do
+  for _, entity in ipairs(pubListEntity) do
     local cmpt = entity:DamageWarningAreaElement()
     if cmpt:GetOwnerEntityID() and cmpt:GetOwnerEntityID() == ownerEntityID then
-      (table.insert)(listEntity, entity)
+      table.insert(listEntity, entity)
     end
   end
   local entityPoolSvcR = world:GetService("EntityPool")
@@ -50,5 +41,3 @@ BuffViewHideCalcScope.PlayView = function(self, TT)
     cmpt:ClearOwnerEntityID()
   end
 end
-
-

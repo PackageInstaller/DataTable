@@ -1,30 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/ui_choose_sort_filter_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChooseSortFilterItem", UICustomWidget)
 UIChooseSortFilterItem = UIChooseSortFilterItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChooseSortFilterItem.Constructor = function(self)
-  -- function num : 0_0
+function UIChooseSortFilterItem:Constructor()
   self.MaxCol = 4
-  self._rowSortBtnPos = {[1] = 82, [2] = 266, [3] = 451, [4] = 635}
+  self._rowSortBtnPos = {
+    [1] = 82,
+    [2] = 266,
+    [3] = 451,
+    [4] = 635
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortFilterItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIChooseSortFilterItem:OnShow(uiParams)
   self:GetComponents()
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortFilterItem.GetComponents = function(self)
-  -- function num : 0_2
+function UIChooseSortFilterItem:GetComponents()
   self._sortsPool = self:GetUIComponent("UISelectObjectPath", "sortRowItem")
   self._propertiesPool = self:GetUIComponent("UISelectObjectPath", "attributeRowItem")
   self._typePool = self:GetUIComponent("UISelectObjectPath", "tagRowItem")
@@ -36,10 +28,7 @@ UIChooseSortFilterItem.GetComponents = function(self)
   self._sortsPoolTrans = self:GetUIComponent("RectTransform", "sortRowItem")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortFilterItem.SetData = function(self, sortType, sortOrder, filterParams, sortCfg, filterCfg, onChange, onClose)
-  -- function num : 0_3
+function UIChooseSortFilterItem:SetData(sortType, sortOrder, filterParams, sortCfg, filterCfg, onChange, onClose)
   self._sortType = sortType
   self._sortOrder = sortOrder
   self._filterTable = filterParams
@@ -50,36 +39,33 @@ UIChooseSortFilterItem.SetData = function(self, sortType, sortOrder, filterParam
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortFilterItem.SortBtnBySize = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local c = (table.count)(self._sortPool)
+function UIChooseSortFilterItem:SortBtnBySize()
+  local c = table.count(self._sortPool)
   local totalCol = 1
   local currentCalCol = 1
   for i = 1, c do
-    if currentCalCol > 4 then
+    if 4 < currentCalCol then
       totalCol = totalCol + 1
       currentCalCol = 1
     end
-    if ((self._sortPool)[i]).Type == PetSortType.Element then
+    if self._sortPool[i].Type == PetSortType.Element then
       currentCalCol = currentCalCol + 2
     else
       currentCalCol = currentCalCol + 1
     end
   end
-  self.sortLayer_All = (self._sortLayerPool):SpawnObjects("UiSortRowLayer", totalCol)
+  self.sortLayer_All = self._sortLayerPool:SpawnObjects("UiSortRowLayer", totalCol)
   local currentCol = 1
   local groupIndex = 1
-  self:SetBtnGroupSizeInfo((((self.sortLayer_All)[groupIndex]).view).gameObject)
+  self:SetBtnGroupSizeInfo(self.sortLayer_All[groupIndex].view.gameObject)
   for i = 1, c do
-    if currentCol > 4 then
+    if 4 < currentCol then
       currentCol = 1
       groupIndex = groupIndex + 1
-      self:SetBtnGroupSizeInfo((((self.sortLayer_All)[groupIndex]).view).gameObject)
+      self:SetBtnGroupSizeInfo(self.sortLayer_All[groupIndex].view.gameObject)
     end
-    self:SetSortBtnItemTrans((((self._sortBtns_all)[i]).view).gameObject, ((((self.sortLayer_All)[groupIndex]).view).gameObject).transform, currentCol)
-    if ((self._sortPool)[i]).Type == PetSortType.Element then
+    self:SetSortBtnItemTrans(self._sortBtns_all[i].view.gameObject, self.sortLayer_All[groupIndex].view.gameObject.transform, currentCol)
+    if self._sortPool[i].Type == PetSortType.Element then
       currentCol = currentCol + 2
     else
       currentCol = currentCol + 1
@@ -87,168 +73,116 @@ UIChooseSortFilterItem.SortBtnBySize = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortFilterItem.SetSortBtnItemTrans = function(self, obj, parent, index)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R4 in 'UnsetPending'
-
-  (obj.transform).parent = parent
-  local rect = (obj.transform):GetComponent("RectTransform")
+function UIChooseSortFilterItem:SetSortBtnItemTrans(obj, parent, index)
+  obj.transform.parent = parent
+  local rect = obj.transform:GetComponent("RectTransform")
   rect.anchorMax = Vector2(0, 1)
   rect.anchorMin = Vector2(0, 1)
   rect.pivot = Vector2(0.5, 0.5)
-  local pos = Vector3((self._rowSortBtnPos)[index], 0, 0)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (obj.transform).localPosition = pos
+  local pos = Vector3(self._rowSortBtnPos[index], 0, 0)
+  obj.transform.localPosition = pos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortFilterItem.SetBtnGroupSizeInfo = function(self, obj)
-  -- function num : 0_6
+function UIChooseSortFilterItem:SetBtnGroupSizeInfo(obj)
   local trans = obj:GetComponent("RectTransform")
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (trans.transform).parent = (self._sortsPoolTrans).transform
+  trans.transform.parent = self._sortsPoolTrans.transform
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortFilterItem.OnValue = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIChooseSortFilterItem:OnValue()
   self._sortPool = {}
-  self._secondAttributeSelectStatus = (self._petModule).PetSortChooseSecondAttribute
-  ;
-  (self._secondAttributeSelcetMark):SetActive(self._secondAttributeSelectStatus)
-  for key,value in (HelperProxy:GetInstance()):pairsByKeys(self._sortListCfg) do
-    (table.insert)(self._sortPool, value)
+  self._secondAttributeSelectStatus = self._petModule.PetSortChooseSecondAttribute
+  self._secondAttributeSelcetMark:SetActive(self._secondAttributeSelectStatus)
+  for key, value in HelperProxy:GetInstance():pairsByKeys(self._sortListCfg) do
+    table.insert(self._sortPool, value)
   end
-  local c = (table.count)(self._sortPool)
-  ;
-  (self._sortsPool):SpawnObjects("UIChooseSortBtnItem1", c)
-  self._sortBtns_all = (self._sortsPool):GetAllSpawnList()
+  local c = table.count(self._sortPool)
+  self._sortsPool:SpawnObjects("UIChooseSortBtnItem1", c)
+  self._sortBtns_all = self._sortsPool:GetAllSpawnList()
   for i = 1, c do
-    ((self._sortBtns_all)[i]):SetData(i, (self._sortPool)[i], self._sortType, self._sortOrder, function(idx)
-    -- function num : 0_7_0 , upvalues : self
-    self:SortClick(idx)
-  end
-, (self._petModule).PetSortElementIndex)
+    self._sortBtns_all[i]:SetData(i, self._sortPool[i], self._sortType, self._sortOrder, function(idx)
+      self:SortClick(idx)
+    end, self._petModule.PetSortElementIndex)
   end
   self:SortBtnBySize()
   local filters = {
-[PetFilterTag.ShuXing] = {pool = self._propertiesPool, title = self:GetGameObject("att"), items = (self._filterCfg)[PetFilterTag.ShuXing]}
-, 
-[PetFilterTag.LeiXing] = {pool = self._typePool, title = self:GetGameObject("tag"), items = (self._filterCfg)[PetFilterTag.LeiXing]}
-, 
-[PetFilterTag.ShiLi] = {pool = self._powerPool, title = self:GetGameObject("influence"), items = (self._filterCfg)[PetFilterTag.ShiLi]}
-}
+    [PetFilterTag.ShuXing] = {
+      pool = self._propertiesPool,
+      title = self:GetGameObject("att"),
+      items = self._filterCfg[PetFilterTag.ShuXing]
+    },
+    [PetFilterTag.LeiXing] = {
+      pool = self._typePool,
+      title = self:GetGameObject("tag"),
+      items = self._filterCfg[PetFilterTag.LeiXing]
+    },
+    [PetFilterTag.ShiLi] = {
+      pool = self._powerPool,
+      title = self:GetGameObject("influence"),
+      items = self._filterCfg[PetFilterTag.ShiLi]
+    }
+  }
   self._filterBtns = {}
-  local onBtnClick = function(type, tag)
-    -- function num : 0_7_1 , upvalues : self
+  
+  local function onBtnClick(type, tag)
     self:OnFilterBtnClick(type, tag)
   end
-
-  for tag,value in pairs(filters) do
+  
+  for tag, value in pairs(filters) do
     if value.items and #value.items > 0 then
       local count = #value.items
-      ;
-      (value.pool):SpawnObjects("UIChooseSortFilterBtnItem", count)
-      local btns = (value.pool):GetAllSpawnList()
+      value.pool:SpawnObjects("UIChooseSortFilterBtnItem", count)
+      local btns = value.pool:GetAllSpawnList()
       for i = 1, count do
         local btn = btns[i]
         local idx = #self._filterBtns + 1
-        btn:SetData((value.items)[i], self._filterTable, onBtnClick)
-        -- DECOMPILER ERROR at PC140: Confused about usage of register: R17 in 'UnsetPending'
-
-        ;
-        (self._filterBtns)[idx] = btn
+        btn:SetData(value.items[i], self._filterTable, onBtnClick)
+        self._filterBtns[idx] = btn
       end
-      ;
-      (((value.pool).dynamicInfoOfEngine).gameObject):SetActive(true)
-      ;
-      (value.title):SetActive(true)
+      value.pool.dynamicInfoOfEngine.gameObject:SetActive(true)
+      value.title:SetActive(true)
     else
-      do
-        do
-          ;
-          (((value.pool).dynamicInfoOfEngine).gameObject):SetActive(false)
-          ;
-          (value.title):SetActive(false)
-          -- DECOMPILER ERROR at PC163: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC163: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC163: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      value.pool.dynamicInfoOfEngine.gameObject:SetActive(false)
+      value.title:SetActive(false)
     end
   end
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._content)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._content)
   self._isOpen = true
-  -- DECOMPILER ERROR at PC186: Confused about usage of register: R4 in 'UnsetPending'
-
-  if ((((self._scrollView):GetComponent("RectTransform")).rect).size).y < (((self._content).rect).size).y then
-    (self._scrollView).enabled = true
+  if self._content.rect.size.y > self._scrollView:GetComponent("RectTransform").rect.size.y then
+    self._scrollView.enabled = true
   else
-    -- DECOMPILER ERROR at PC189: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._scrollView).enabled = false
+    self._scrollView.enabled = false
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortFilterItem.SortClick = function(self, idx)
-  -- function num : 0_8
-  local tp = ((self._sortListCfg)[idx]).Type
+function UIChooseSortFilterItem:SortClick(idx)
+  local tp = self._sortListCfg[idx].Type
   self:OnSortChanged(tp)
   self:FlushSortBtns()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortFilterItem.FlushSortBtns = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  for i = 1, (table.count)(self._sortBtns_all) do
-    ((self._sortBtns_all)[i]):Flush(self._sortType, self._sortOrder, (self._petModule).PetSortElementIndex)
+function UIChooseSortFilterItem:FlushSortBtns()
+  for i = 1, table.count(self._sortBtns_all) do
+    self._sortBtns_all[i]:Flush(self._sortType, self._sortOrder, self._petModule.PetSortElementIndex)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortFilterItem.FlushFilterBtns = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  for _,btn in ipairs(self._filterBtns) do
+function UIChooseSortFilterItem:FlushFilterBtns()
+  for _, btn in ipairs(self._filterBtns) do
     btn:Flush(self._filterTable)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortFilterItem.OnFilterBtnClick = function(self, type, tag)
-  -- function num : 0_11
+function UIChooseSortFilterItem:OnFilterBtnClick(type, tag)
   self:OnFilterChanged(type, tag)
   self:FlushFilterBtns()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortFilterItem.OnSortChanged = function(self, type)
-  -- function num : 0_12 , upvalues : _ENV
+function UIChooseSortFilterItem:OnSortChanged(type)
   if self._sortType == type then
     if self._sortOrder == PetSortOrder.Ascending then
       self._sortOrder = PetSortOrder.Descending
-    else
-      if self._sortOrder == PetSortOrder.Descending then
-        self._sortOrder = PetSortOrder.Ascending
-      end
+    elseif self._sortOrder == PetSortOrder.Descending then
+      self._sortOrder = PetSortOrder.Ascending
     end
   else
     self._sortType = type
@@ -257,67 +191,47 @@ UIChooseSortFilterItem.OnSortChanged = function(self, type)
   self:NotifyChange()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortFilterItem.OnFilterChanged = function(self, type, tag)
-  -- function num : 0_13 , upvalues : _ENV
+function UIChooseSortFilterItem:OnFilterChanged(type, tag)
   for i = 1, #self._filterTable do
-    if ((self._filterTable)[i])._filter_type == type then
-      (table.remove)(self._filterTable, i)
+    if self._filterTable[i]._filter_type == type then
+      table.remove(self._filterTable, i)
       self:NotifyChange()
-      return 
+      return
     end
   end
-  local filterParam = nil
+  local filterParam
   if tag then
     filterParam = PetFilterParam:New(type, tag)
   else
     filterParam = PetFilterParam:New(type)
   end
-  ;
-  (table.insert)(self._filterTable, filterParam)
+  table.insert(self._filterTable, filterParam)
   self:NotifyChange()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortFilterItem.NotifyChange = function(self)
-  -- function num : 0_14
-  (self._onChanged)(self._sortType, self._sortOrder, self._filterTable)
+function UIChooseSortFilterItem:NotifyChange()
+  self._onChanged(self._sortType, self._sortOrder, self._filterTable)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortFilterItem.bgOnClick = function(self)
-  -- function num : 0_15
-  (self:GetGameObject()):SetActive(false)
+function UIChooseSortFilterItem:bgOnClick()
+  self:GetGameObject():SetActive(false)
   if self._closeCallBack then
-    (self._closeCallBack)()
+    self._closeCallBack()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortFilterItem.selectMarkImageOnClick = function(self)
-  -- function num : 0_16
+function UIChooseSortFilterItem:selectMarkImageOnClick()
   if self._secondAttributeSelectStatus then
     self._secondAttributeSelectStatus = false
   else
     self._secondAttributeSelectStatus = true
   end
-  ;
-  (self._petModule):SavePetSecondAttributeFilterParam(self._secondAttributeSelectStatus)
+  self._petModule:SavePetSecondAttributeFilterParam(self._secondAttributeSelectStatus)
   self:NotifyChange()
-  ;
-  (self._secondAttributeSelcetMark):SetActive(self._secondAttributeSelectStatus)
+  self._secondAttributeSelcetMark:SetActive(self._secondAttributeSelectStatus)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortFilterItem.ClearFilters = function(self)
-  -- function num : 0_17
+function UIChooseSortFilterItem:ClearFilters()
   self._filterTable = {}
   self:FlushFilterBtns()
 end
-
-

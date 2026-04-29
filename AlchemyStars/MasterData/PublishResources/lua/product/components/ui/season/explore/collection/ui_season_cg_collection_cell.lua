@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/explore/collection/ui_season_cg_collection_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonCgCollectionCell", UICustomWidget)
 UISeasonCgCollectionCell = UISeasonCgCollectionCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonCgCollectionCell.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonCgCollectionCell:OnShow(uiParams)
   self:InitWidget()
-  self._bookModule = (GameGlobal.GetModule)(BookModule)
+  self._bookModule = GameGlobal.GetModule(BookModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgCollectionCell.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonCgCollectionCell:InitWidget()
   self.txtLock = self:GetUIComponent("UILocalizationText", "txtLock")
   self.lock = self:GetGameObject("lock")
   self.unlock = self:GetGameObject("unlock")
@@ -25,52 +15,35 @@ UISeasonCgCollectionCell.InitWidget = function(self)
   self.new = self:GetGameObject("new")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgCollectionCell.SetData = function(self, cfg, index, clickCb)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonCgCollectionCell:SetData(cfg, index, clickCb)
   self.index = index
   self.clickCb = clickCb
   self._cfg = cfg
-  local a, isUnLock = (self._bookModule):GetSeasonStory(cfg)
+  local a, isUnLock = self._bookModule:GetSeasonStory(cfg)
   self._isUnlock = isUnLock or false
-  ;
-  (self.lock):SetActive(not isUnLock)
-  ;
-  (self.unlock):SetActive(isUnLock)
+  self.lock:SetActive(not isUnLock)
+  self.unlock:SetActive(isUnLock)
   if isUnLock then
-    (self.imgCg):LoadImage(cfg.Preview)
-    ;
-    (self.txtCgName):SetText((StringTable.Get)(cfg.name))
+    self.imgCg:LoadImage(cfg.Preview)
+    self.txtCgName:SetText(StringTable.Get(cfg.name))
     self:_RefreshNew()
   else
-    ;
-    (self.txtLock):SetText((StringTable.Get)(cfg.UnLockDes))
-    ;
-    (self.new):SetActive(false)
+    self.txtLock:SetText(StringTable.Get(cfg.UnLockDes))
+    self.new:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgCollectionCell.CgBtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonCgCollectionCell:CgBtnOnClick(go)
   if self.clickCb then
-    (self.clickCb)(self.index, self._isUnlock)
+    self.clickCb(self.index, self._isUnlock)
   end
   if self._isUnlock then
-    (UISeasonExploreHelper.SetCgAsClicked)((self._cfg).ID)
+    UISeasonExploreHelper.SetCgAsClicked(self._cfg.ID)
     self:_RefreshNew()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgCollectionCell._RefreshNew = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local isNew = not (UISeasonExploreHelper.IsCgHasClicked)((self._cfg).ID)
-  ;
-  (self.new):SetActive(isNew)
+function UISeasonCgCollectionCell:_RefreshNew()
+  local isNew = not UISeasonExploreHelper.IsCgHasClicked(self._cfg.ID)
+  self.new:SetActive(isNew)
 end
-
-

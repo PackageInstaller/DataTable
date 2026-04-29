@@ -1,48 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_tower/ui_tower_pass_award/ui_tower_pass_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITowerPassAwardItem", UICustomWidget)
 UITowerPassAwardItem = UITowerPassAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITowerPassAwardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UITowerPassAwardItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAwardItem._GetComponents = function(self)
-  -- function num : 0_1
+function UITowerPassAwardItem:_GetComponents()
   self._uIItem = self:GetUIComponent("UISelectObjectPath", "UIItem")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAwardItem.SetData = function(self, data, callBack)
-  -- function num : 0_2 , upvalues : _ENV
+function UITowerPassAwardItem:SetData(data, callBack)
   if data == nil then
-    return 
+    return
   end
   self._data = data
   self._callBack = callBack
-  local cfg = (Cfg.cfg_item)[(self._data).assetid]
+  local cfg = Cfg.cfg_item[self._data.assetid]
   if cfg then
-    local widget = (self._uIItem):SpawnObject("UIItem")
+    local widget = self._uIItem:SpawnObject("UIItem")
     widget:SetForm(UIItemForm.Base, UIItemScale.Level1)
-    widget:SetData({icon = cfg.Icon, text1 = (self._data).count, text2 = (StringTable.Get)(cfg.Name), quality = cfg.Color, itemId = cfg.ID})
+    widget:SetData({
+      icon = cfg.Icon,
+      text1 = self._data.count,
+      text2 = StringTable.Get(cfg.Name),
+      quality = cfg.Color,
+      itemId = cfg.ID
+    })
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAwardItem.TipBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UITowerPassAwardItem:TipBtnOnClick(go)
   if self._callBack then
-    (self._callBack)((self._data).assetid, (go.transform).position)
+    self._callBack(self._data.assetid, go.transform.position)
   end
 end
-
-

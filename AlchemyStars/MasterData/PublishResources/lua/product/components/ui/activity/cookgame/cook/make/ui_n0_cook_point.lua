@@ -1,29 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cookgame/cook/make/ui_n0_cook_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN0CookPoint", UICustomWidget)
 UIN0CookPoint = UIN0CookPoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN0CookPoint.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN0CookPoint:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookPoint.InitWidget = function(self)
-  -- function num : 0_1
+function UIN0CookPoint:InitWidget()
   self.pointSel = self:GetGameObject("pointSel")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookPoint.SetSelect = function(self, bSelect)
-  -- function num : 0_2
-  (self.pointSel):SetActive(bSelect)
+function UIN0CookPoint:SetSelect(bSelect)
+  self.pointSel:SetActive(bSelect)
 end
-
-

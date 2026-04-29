@@ -1,57 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n4/crisisContract/detail/ui_activity_n4_cc_level_detail_eff_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN4CCLevelDetailEffItem", UICustomWidget)
 UIActivityN4CCLevelDetailEffItem = UIActivityN4CCLevelDetailEffItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN4CCLevelDetailEffItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityN4CCLevelDetailEffItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailEffItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIActivityN4CCLevelDetailEffItem:InitWidget()
   self.txt = self:GetUIComponent("UILocalizationText", "txt")
   self.imgEmpty = self:GetGameObject("imgEmpty")
   self.imgLock = self:GetGameObject("imgLock")
   self.select = self:GetGameObject("select")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailEffItem.SetData = function(self, effId, bLock, clickCb)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN4CCLevelDetailEffItem:SetData(effId, bLock, clickCb)
   self._isLock = bLock ~= nil
   self.clickCb = clickCb
-  ;
-  (self.imgLock):SetActive(self._isLock)
-  ;
-  (self.imgEmpty):SetActive((effId == nil and not self._isLock))
-  ;
-  (self.select):SetActive(effId ~= nil)
+  self.imgLock:SetActive(self._isLock)
+  self.imgEmpty:SetActive(effId == nil and not self._isLock)
+  self.select:SetActive(effId ~= nil)
   if effId then
-    local cfg = (Cfg.cfg_affix)[effId]
+    local cfg = Cfg.cfg_affix[effId]
     if cfg then
-      local str = (UIActivityN4CCHelper.GetAffixDesc)(cfg, "ffdf31")
-      ;
-      (self.txt):SetText(str)
+      local str = UIActivityN4CCHelper.GetAffixDesc(cfg, "ffdf31")
+      self.txt:SetText(str)
     end
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailEffItem.BtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIActivityN4CCLevelDetailEffItem:BtnOnClick(go)
   if not self._isLock and self.clickCb then
-    (self.clickCb)()
+    self.clickCb()
   end
 end
-
-

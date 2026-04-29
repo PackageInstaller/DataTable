@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_change_block_data_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillChangeBlockDataParam", SkillEffectParamBase)
 SkillChangeBlockDataParam = SkillChangeBlockDataParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillChangeBlockDataParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillChangeBlockDataParam:Constructor(t)
   self._change = t.change
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillChangeBlockDataParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillChangeBlockDataParam:GetEffectType()
   return SkillEffectType.ChangeBlockData
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillChangeBlockDataParam.GetChangeType = function(self)
-  -- function num : 0_2
+function SkillChangeBlockDataParam:GetChangeType()
   return self._change
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_achievement/ui_quest_achievement_achieve_type_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestAchievementAchieveTypeItem", UICustomWidget)
 UIQuestAchievementAchieveTypeItem = UIQuestAchievementAchieveTypeItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestAchievementAchieveTypeItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._atlas = (self:RootUIOwner()):GetAsset("UIQuest.spriteatlas", LoadType.SpriteAtlas)
+function UIQuestAchievementAchieveTypeItem:OnShow(uiParams)
+  self._atlas = self:RootUIOwner():GetAsset("UIQuest.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementAchieveTypeItem.SetData = function(self, type, sprite, name, nowValue, allValue, callback)
-  -- function num : 0_1
+function UIQuestAchievementAchieveTypeItem:SetData(type, sprite, name, nowValue, allValue, callback)
   self:_GetComponents()
   self._type = type
   self._sprite = sprite
@@ -26,62 +16,37 @@ UIQuestAchievementAchieveTypeItem.SetData = function(self, type, sprite, name, n
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementAchieveTypeItem.PlayAnim = function(self, yieldTime)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._anim).enabled = false
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._anim).enabled = true
-  ;
-  (self._anim):Stop()
-  ;
-  (self._anim):Sample()
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).alpha = 0
+function UIQuestAchievementAchieveTypeItem:PlayAnim(yieldTime)
+  self._anim.enabled = false
+  self._anim.enabled = true
+  self._anim:Stop()
+  self._anim:Sample()
+  self._canvasGroup.alpha = 0
   if yieldTime then
     if self._timer then
-      ((GameGlobal.Timer)()):CancelEvent(self._timer)
+      GameGlobal.Timer():CancelEvent(self._timer)
     end
-    self._timer = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_2_0 , upvalues : self
-    (self._anim):Play("uieffanim_UIQuestAchievementAchieveTypeItem_in01")
-  end
-)
+    self._timer = GameGlobal.Timer():AddEvent(yieldTime, function()
+      self._anim:Play("uieffanim_UIQuestAchievementAchieveTypeItem_in01")
+    end)
   else
-    ;
-    (self._anim):Play("uieffanim_UIQuestAchievementAchieveTypeItem_in01")
+    self._anim:Play("uieffanim_UIQuestAchievementAchieveTypeItem_in01")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementAchieveTypeItem.BtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIQuestAchievementAchieveTypeItem:BtnOnClick(go)
   if self._callback then
-    (self._callback)(self._type)
+    self._callback(self._type)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementAchieveTypeItem.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIQuestAchievementAchieveTypeItem:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementAchieveTypeItem._GetComponents = function(self)
-  -- function num : 0_5
+function UIQuestAchievementAchieveTypeItem:_GetComponents()
   self._icon = self:GetUIComponent("Image", "icon")
   self._nameTex = self:GetUIComponent("UILocalizationText", "nameTex")
   self._rateImg = self:GetUIComponent("Image", "rateImg")
@@ -91,56 +56,36 @@ UIQuestAchievementAchieveTypeItem._GetComponents = function(self)
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "rect")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementAchieveTypeItem._OnValue = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._icon).sprite = (self._atlas):GetSprite(self._sprite)
-  ;
-  (self._nameTex):SetText((StringTable.Get)(self._name))
+function UIQuestAchievementAchieveTypeItem:_OnValue()
+  self._icon.sprite = self._atlas:GetSprite(self._sprite)
+  self._nameTex:SetText(StringTable.Get(self._name))
   local rate = self._nowValue / self._allValue
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rateImg).fillAmount = rate
-  local str = nil
-  if self._allValue <= self._nowValue then
+  self._rateImg.fillAmount = rate
+  local str
+  if self._nowValue >= self._allValue then
     str = "<color=#fdd100>" .. self._nowValue .. "/" .. self._allValue .. "</color>"
   else
     str = "<color=#fdd100>" .. self._nowValue .. "</color>" .. "/" .. self._allValue
   end
-  ;
-  (self._rateTex):SetText(str)
+  self._rateTex:SetText(str)
   if self._red then
     self:SetRed()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementAchieveTypeItem.SetRed = function(self)
-  -- function num : 0_7
-  (self._red):SetActive(self:CheckRed(self._type))
+function UIQuestAchievementAchieveTypeItem:SetRed()
+  self._red:SetActive(self:CheckRed(self._type))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementAchieveTypeItem.CheckRed = function(self, type)
-  -- function num : 0_8 , upvalues : _ENV
-  local questModule = (GameGlobal.GetModule)(QuestModule)
+function UIQuestAchievementAchieveTypeItem:CheckRed(type)
+  local questModule = GameGlobal.GetModule(QuestModule)
   local redInfo = questModule:GetRedPoint()
-  if (table.count)(redInfo[QuestType.QT_Achieve]) > 0 then
-    for i = 1, (table.count)(redInfo[QuestType.QT_Achieve]) do
-      if (redInfo[QuestType.QT_Achieve])[i] == type then
+  if table.count(redInfo[QuestType.QT_Achieve]) > 0 then
+    for i = 1, table.count(redInfo[QuestType.QT_Achieve]) do
+      if redInfo[QuestType.QT_Achieve][i] == type then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
-
-

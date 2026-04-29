@@ -1,70 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_add_feature.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAddFeature", BuffLogicBase)
 BuffLogicAddFeature = BuffLogicAddFeature
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddFeature.Constructor = function(self, buffinstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddFeature:Constructor(buffinstance, logicParam)
   self._cfgFeatureList = logicParam.FeatureList
   self._randomOne = logicParam.RandomOne
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddFeature.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+function BuffLogicAddFeature:DoLogic(notify)
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   local cfgFeatureList = {}
   if self._randomOne then
-    local featureCfgDic = (self._cfgFeatureList).feature
+    local featureCfgDic = self._cfgFeatureList.feature
     if not featureCfgDic then
-      return 
+      return
     end
     local featureTypeList = {}
-    for featureType,featureCfg in pairs(featureCfgDic) do
-      (table.insert)(featureTypeList, featureType)
+    for featureType, featureCfg in pairs(featureCfgDic) do
+      table.insert(featureTypeList, featureType)
     end
     if #featureTypeList == 0 then
-      return 
+      return
     end
     local validFeatureList = {}
-    for _,featureType in ipairs(featureTypeList) do
+    for _, featureType in ipairs(featureTypeList) do
       if not lsvcFeature:HasFeatureType(featureType) then
-        (table.insert)(validFeatureList, featureType)
+        table.insert(validFeatureList, featureType)
       end
     end
     if #validFeatureList == 0 then
-      return 
+      return
     end
-    ;
-    (table.sort)(validFeatureList, function(a, b)
-    -- function num : 0_1_0
-    do return a < b end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-    local lsvcRandom = (self._world):GetService("RandomLogic")
+    table.sort(validFeatureList, function(a, b)
+      return a < b
+    end)
+    local lsvcRandom = self._world:GetService("RandomLogic")
     local featureIndex = 1
     featureIndex = lsvcRandom:LogicRand(1, #validFeatureList)
     local useFeature = validFeatureList[featureIndex]
-    cfgFeatureList = (table.cloneconf)(self._cfgFeatureList)
+    cfgFeatureList = table.cloneconf(self._cfgFeatureList)
     cfgFeatureList.feature = {}
-    -- DECOMPILER ERROR at PC77: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (cfgFeatureList.feature)[useFeature] = ((self._cfgFeatureList).feature)[useFeature]
+    cfgFeatureList.feature[useFeature] = self._cfgFeatureList.feature[useFeature]
   else
-    do
-      cfgFeatureList = self._cfgFeatureList
-      lsvcFeature:OnBuffAddFeature(cfgFeatureList)
-      return BuffResultAddFeature:New()
-    end
+    cfgFeatureList = self._cfgFeatureList
   end
+  lsvcFeature:OnBuffAddFeature(cfgFeatureList)
+  return BuffResultAddFeature:New()
 end
-
-

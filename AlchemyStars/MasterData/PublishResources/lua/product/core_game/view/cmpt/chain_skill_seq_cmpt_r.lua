@@ -1,56 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/chain_skill_seq_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChainSkillSequenceComponent", Object)
 ChainSkillSequenceComponent = ChainSkillSequenceComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChainSkillSequenceComponent.Constructor = function(self)
-  -- function num : 0_0
+function ChainSkillSequenceComponent:Constructor()
   self.ChainSkillSeqTable = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ChainSkillSequence = function(self)
-  -- function num : 0_1
-  return self:GetComponent((self.WEComponentsEnum).ChainSkillSequence)
+function Entity:ChainSkillSequence()
+  return self:GetComponent(self.WEComponentsEnum.ChainSkillSequence)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasChainSkillSequence = function(self)
-  -- function num : 0_2
-  return self:HasComponent((self.WEComponentsEnum).ChainSkillSequence)
+function Entity:HasChainSkillSequence()
+  return self:HasComponent(self.WEComponentsEnum.ChainSkillSequence)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddChainSkillSequence = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ChainSkillSequence
+function Entity:AddChainSkillSequence()
+  local index = self.WEComponentsEnum.ChainSkillSequence
   local component = ChainSkillSequenceComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceChainSkillSequence = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ChainSkillSequence
+function Entity:ReplaceChainSkillSequence()
+  local index = self.WEComponentsEnum.ChainSkillSequence
   local component = ChainSkillSequenceComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveChainSkillSequence = function(self)
-  -- function num : 0_5
+function Entity:RemoveChainSkillSequence()
   if self:HasChainSkillSequence() then
-    self:RemoveComponent((self.WEComponentsEnum).ChainSkillSequence)
+    self:RemoveComponent(self.WEComponentsEnum.ChainSkillSequence)
   end
 end
-
-

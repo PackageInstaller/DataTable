@@ -1,228 +1,145 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n17/entry/ui_n17_mainlobby_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN17MainLobbyEntry", UICustomWidget)
 UIN17MainLobbyEntry = UIN17MainLobbyEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN17MainLobbyEntry.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN17MainLobbyEntry:OnShow(uiParams)
   self:_AttachEvents()
   self._stateType = UIStateType.UIN17MainController
   self:_LoadCampaignInfo(false, ECampaignType.CAMPAIGN_TYPE_N17, ECampaignN17ComponentID.ECAMPAIGN_N17_CYCLE_QUEST, ECampaignN17ComponentID.ECAMPAIGN_N17_LOTTERY, ECampaignN17ComponentID.ECAMPAIGN_N17_CUMULATIVE_LOGIN, ECampaignN17ComponentID.ECAMPAIGN_N17_STORY, ECampaignN17ComponentID.ECAMPAIGN_N17_MINI_GAME)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17MainLobbyEntry.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN17MainLobbyEntry:OnHide()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17MainLobbyEntry.SetData_uiMainLobbyController = function(self, controller)
-  -- function num : 0_2
+function UIN17MainLobbyEntry:SetData_uiMainLobbyController(controller)
   self._uiMainLobbyController = controller
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17MainLobbyEntry._LoadCampaignInfo = function(self, isLocal, camType, ...)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN17MainLobbyEntry:_LoadCampaignInfo(isLocal, camType, ...)
   self._campaign = UIActivityCampaign:New()
   if isLocal then
-    (self._campaign):LoadCampaignInfo_Local(camType, ...)
+    self._campaign:LoadCampaignInfo_Local(camType, ...)
     self:_CheckPoint()
   else
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(function(TT, ...)
-    -- function num : 0_3_0 , upvalues : self, _ENV, camType
-    local lockName = "UIActivityMainLobbyEntry_LoadCampaignInfo"
-    self:Lock(lockName)
-    local res = AsyncRequestRes:New()
-    ;
-    (self._campaign):LoadCampaignInfo(TT, res, camType, ...)
-    self:_CheckPoint()
-    self._lotteryComponent = (self._campaign):GetComponent(ECampaignN17ComponentID.ECAMPAIGN_N17_LOTTERY)
-    self._miniGameComponent = (self._campaign):GetComponent(ECampaignN17ComponentID.ECAMPAIGN_N17_MINI_GAME)
-    self:StartCheckActivityStatus()
-    self:UnLock(lockName)
-  end
-)
+    GameGlobal.TaskManager():StartTask(function(TT, ...)
+      local lockName = "UIActivityMainLobbyEntry_LoadCampaignInfo"
+      self:Lock(lockName)
+      local res = AsyncRequestRes:New()
+      self._campaign:LoadCampaignInfo(TT, res, camType, ...)
+      self:_CheckPoint()
+      self._lotteryComponent = self._campaign:GetComponent(ECampaignN17ComponentID.ECAMPAIGN_N17_LOTTERY)
+      self._miniGameComponent = self._campaign:GetComponent(ECampaignN17ComponentID.ECAMPAIGN_N17_MINI_GAME)
+      self:StartCheckActivityStatus()
+      self:UnLock(lockName)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17MainLobbyEntry.EntryBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  (UIActivityHelper.PlayFirstPlot_Campaign)(self._campaign, function()
-    -- function num : 0_4_0 , upvalues : self
+function UIN17MainLobbyEntry:EntryBtnOnClick(go)
+  UIActivityHelper.PlayFirstPlot_Campaign(self._campaign, function()
     self:_Entry()
-  end
-, false)
+  end, false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17MainLobbyEntry._Entry = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIN17MainLobbyEntry:_Entry()
   if self._uiMainLobbyController then
-    ((self._uiMainLobbyController)._screenShot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera((self._uiMainLobbyController):GetName())
-    local rt = ((self._uiMainLobbyController)._screenShot):RefreshBlurTexture()
-    do
-      local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-      self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, rt, cache_rt, self
-    YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cache_rt)
-    self:SwitchState(self._stateType, cache_rt)
-  end
-)
-    end
-  else
-    do
-      self:SwitchState(self._stateType)
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17MainLobbyEntry.EntryBtnOnClickCoro = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  self:Lock("UIN17MainLobbyEntry_EntryBtnOnClickCoro")
-  ;
-  (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIActivityN16MainController, function()
-    -- function num : 0_6_0 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-    if self._uiMainLobbyController then
-      ((self._uiMainLobbyController)._screenShot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera((self._uiMainLobbyController):GetName())
-      local rt = ((self._uiMainLobbyController)._screenShot):RefreshBlurTexture()
-      do
-        local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-        self:StartTask(function(TT)
-      -- function num : 0_6_0_0 , upvalues : _ENV, self, rt, cache_rt
-      YIELD(500)
-      self:UnLock("UIN17MainLobbyEntry_EntryBtnOnClickCoro")
-      ;
-      ((UnityEngine.Graphics).Blit)(rt, cache_rt)
+    self._uiMainLobbyController._screenShot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self._uiMainLobbyController:GetName())
+    local rt = self._uiMainLobbyController._screenShot:RefreshBlurTexture()
+    local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+    self:StartTask(function(TT)
+      YIELD(TT)
+      UnityEngine.Graphics.Blit(rt, cache_rt)
       self:SwitchState(self._stateType, cache_rt)
-    end
-)
-      end
-    else
-      do
-        self:SwitchState(self._stateType)
-        self:UnLock("UIN17MainLobbyEntry_EntryBtnOnClickCoro")
-      end
-    end
+    end)
+  else
+    self:SwitchState(self._stateType)
   end
-)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
+function UIN17MainLobbyEntry:EntryBtnOnClickCoro(TT)
+  self:Lock("UIN17MainLobbyEntry_EntryBtnOnClickCoro")
+  CutsceneManager.ExcuteCutsceneIn(UIStateType.UIActivityN16MainController, function()
+    if self._uiMainLobbyController then
+      self._uiMainLobbyController._screenShot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self._uiMainLobbyController:GetName())
+      local rt = self._uiMainLobbyController._screenShot:RefreshBlurTexture()
+      local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+      self:StartTask(function(TT)
+        YIELD(500)
+        self:UnLock("UIN17MainLobbyEntry_EntryBtnOnClickCoro")
+        UnityEngine.Graphics.Blit(rt, cache_rt)
+        self:SwitchState(self._stateType, cache_rt)
+      end)
+    else
+      self:SwitchState(self._stateType)
+      self:UnLock("UIN17MainLobbyEntry_EntryBtnOnClickCoro")
+    end
+  end)
+end
 
-UIN17MainLobbyEntry._AttachEvents = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN17MainLobbyEntry:_AttachEvents()
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:AttachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17MainLobbyEntry._DetachEvents = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN17MainLobbyEntry:_DetachEvents()
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:DetachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17MainLobbyEntry._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_9
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UIN17MainLobbyEntry:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17MainLobbyEntry._OnQuestUpdate = function(self)
-  -- function num : 0_10
+function UIN17MainLobbyEntry:_OnQuestUpdate()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17MainLobbyEntry._CheckPoint = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local new = ((self._campaign):GetLocalProcess()):GetEntryNew()
-  local red = ((self._campaign):GetLocalProcess()):GetEntryRedDot()
-  ;
-  (UIWidgetHelper.SetNewAndReds)(self, new, red, "new", "red")
+function UIN17MainLobbyEntry:_CheckPoint()
+  local new = self._campaign:GetLocalProcess():GetEntryNew()
+  local red = self._campaign:GetLocalProcess():GetEntryRedDot()
+  UIWidgetHelper.SetNewAndReds(self, new, red, "new", "red")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17MainLobbyEntry.StartCheckActivityStatus = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN17MainLobbyEntry:StartCheckActivityStatus()
   self:CheckActivityStatus()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
-  self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_12_0 , upvalues : self
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:CheckActivityStatus()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17MainLobbyEntry.CheckActivityStatus = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local step1_a = ((self._miniGameComponent):GetComponentInfo()).m_unlock_time
-  local step1_b = ((self._miniGameComponent):GetComponentInfo()).m_close_time
-  local step1 = step1_a <= curTime and curTime < step1_b
-  local step2_a = ((self._miniGameComponent):GetComponentInfo()).m_unlock_time
-  local step2_b = ((self._miniGameComponent):GetComponentInfo()).m_close_time
-  local step2 = step2_a <= curTime and curTime < step2_b
-  local mode = (step1 and 1) or (step2 and 2) or 0
+function UIN17MainLobbyEntry:CheckActivityStatus()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local step1_a = self._miniGameComponent:GetComponentInfo().m_unlock_time
+  local step1_b = self._miniGameComponent:GetComponentInfo().m_close_time
+  local step1 = curTime >= step1_a and curTime < step1_b
+  local step2_a = self._miniGameComponent:GetComponentInfo().m_unlock_time
+  local step2_b = self._miniGameComponent:GetComponentInfo().m_close_time
+  local step2 = curTime >= step2_a and curTime < step2_b
+  local mode = step1 and 1 or step2 and 2 or 0
   self:_SetHintOpen(mode)
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17MainLobbyEntry._SetHintOpen = function(self, mode)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN17MainLobbyEntry:_SetHintOpen(mode)
   if self._mode == mode then
-    return 
+    return
   end
   self._mode = mode
-  ;
-  (self:GetGameObject("_hintBg")):SetActive(mode ~= 0)
-  local ids = {"str_n17_drawgame_unlock", "str_n17_exploregame_unlock"}
-  local text = (StringTable.Get)(ids[mode])
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_hintText", text)
-  ;
-  (UIWidgetHelper.SetRollingText)(self, "_hintText")
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self:GetGameObject("_hintBg"):SetActive(mode ~= 0)
+  local ids = {
+    "str_n17_drawgame_unlock",
+    "str_n17_exploregame_unlock"
+  }
+  local text = StringTable.Get(ids[mode])
+  UIWidgetHelper.SetLocalizationText(self, "_hintText", text)
+  UIWidgetHelper.SetRollingText(self, "_hintText")
 end
-
-

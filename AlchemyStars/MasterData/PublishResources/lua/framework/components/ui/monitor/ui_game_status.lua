@@ -1,31 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/components/ui/monitor/ui_game_status.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIGameStatus", UIController)
 UIGameStatus = UIGameStatus
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGameStatus.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIGameStatus:OnShow(uiParams)
   self.title = self:GetUIComponent("Text", "title")
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.title).text = uiParams[1]
+  self.title.text = uiParams[1]
   self.content = self:GetUIComponent("Text", "content")
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.content).text = uiParams[2]
+  self.content.text = uiParams[2]
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGameStatus.btnCloseOnClick = function(self, go)
-  -- function num : 0_1
+function UIGameStatus:btnCloseOnClick(go)
   self:CloseDialog()
 end
-
-

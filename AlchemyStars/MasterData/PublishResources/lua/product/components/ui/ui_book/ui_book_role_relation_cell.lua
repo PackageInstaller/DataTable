@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_book/ui_book_role_relation_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBookRoleRelationCell", UICustomWidget)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBookRoleRelationCell.OnShow = function(self)
-  -- function num : 0_0
-  self.rect = ((self:GetGameObject()).transform):GetComponent("RectTransform")
+function UIBookRoleRelationCell:OnShow()
+  self.rect = self:GetGameObject().transform:GetComponent("RectTransform")
   self.bgRect = self:GetUIComponent("RectTransform", "bg")
   self.bg = self:GetUIComponent("Image", "yellowBg")
   self.nameTxt = self:GetUIComponent("UILocalizationText", "name")
@@ -16,11 +9,9 @@ UIBookRoleRelationCell.OnShow = function(self)
   self.sopRole = self:GetUIComponent("UISelectObjectPath", "contentrole")
   self.sopMonster = self:GetUIComponent("UISelectObjectPath", "contentmonster")
   self.contentRoleGO = self:GetGameObject("contentrole")
-  ;
-  (self.contentRoleGO):SetActive(false)
+  self.contentRoleGO:SetActive(false)
   self.contentMonsterGO = self:GetGameObject("contentmonster")
-  ;
-  (self.contentMonsterGO):SetActive(false)
+  self.contentMonsterGO:SetActive(false)
   self.btnInfoGO = self:GetGameObject("btninfo")
   self.nameGo = self:GetGameObject("name")
   self.yellowBgGo = self:GetGameObject("yellowBg")
@@ -28,148 +19,95 @@ UIBookRoleRelationCell.OnShow = function(self)
   self.line2 = self:GetGameObject("line2")
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleRelationCell.OnHide = function(self)
-  -- function num : 0_1
+function UIBookRoleRelationCell:OnHide()
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleRelationCell.Refresh = function(self, bookRoleType, friendType, data, multOrSing, shiLiTag)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBookRoleRelationCell:Refresh(bookRoleType, friendType, data, multOrSing, shiLiTag)
   self.shiLiTag = shiLiTag
   self.friendTag = friendType
   self.bookRoleType = bookRoleType
   self.data = data
-  local cfg = (Cfg.cfg_pet_tags)[friendType]
+  local cfg = Cfg.cfg_pet_tags[friendType]
   if not cfg then
-    return 
+    return
   end
-  local shiLiCfg = (Cfg.cfg_pet_tags)[shiLiTag]
+  local shiLiCfg = Cfg.cfg_pet_tags[shiLiTag]
   local atlas = self:GetAsset("UIBook.spriteatlas", LoadType.SpriteAtlas)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self.bg).sprite = atlas:GetSprite(shiLiCfg.RelationTiaoSpriteIcon)
-  ;
-  (self.nameTxt):SetText((StringTable.Get)(cfg.Name))
+  self.bg.sprite = atlas:GetSprite(shiLiCfg.RelationTiaoSpriteIcon)
+  self.nameTxt:SetText(StringTable.Get(cfg.Name))
   self:InitRoles()
   local firstKey = -1
-  for key,value in pairs(self.data) do
+  for key, value in pairs(self.data) do
     firstKey = key
-    do break end
+    break
   end
-  do
-    ;
-    (self.contentRoleGO):SetActive(true)
-    ;
-    (self.contentMonsterGO):SetActive(false)
-    ;
-    (self.line1):SetActive(multOrSing)
-    ;
-    (self.line2):SetActive(not multOrSing)
-    if multOrSing then
-      local btnWidth = 207.1
-      if (Cfg.cfg_monster_class)[firstKey] then
-        (self.btnInfoGO):SetActive(false)
-        btnWidth = 0
-      else
-        ;
-        (self.btnInfoGO):SetActive(true)
-      end
-      ;
-      (self.nameGo):SetActive(true)
-      ;
-      (self.yellowBgGo):SetActive(true)
-      local count = (table.count)(self.data)
-      local newCount = count <= 3 and 3 or 4
-      local customWidth = newCount * 142 + (newCount - 1) * 36
-      -- DECOMPILER ERROR at PC102: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self.bgRect).sizeDelta = Vector2(customWidth, 70)
-      -- DECOMPILER ERROR at PC108: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self.rect).sizeDelta = Vector2(customWidth + 30, 630)
-      local namePreOff = 27.8
-      local nameOriWidth = 432.7
-      local restNameRectWidth = customWidth - namePreOff - btnWidth
-      if restNameRectWidth < 0 then
-        restNameRectWidth = nameOriWidth
-      end
-      -- DECOMPILER ERROR at PC125: Confused about usage of register: R17 in 'UnsetPending'
-
-      if restNameRectWidth < nameOriWidth then
-        (self.nameRect).sizeDelta = Vector2(restNameRectWidth, ((self.nameRect).sizeDelta).y)
-      else
-        -- DECOMPILER ERROR at PC134: Confused about usage of register: R17 in 'UnsetPending'
-
-        ;
-        (self.nameRect).sizeDelta = Vector2(nameOriWidth, ((self.nameRect).sizeDelta).y)
-      end
+  self.contentRoleGO:SetActive(true)
+  self.contentMonsterGO:SetActive(false)
+  self.line1:SetActive(multOrSing)
+  self.line2:SetActive(not multOrSing)
+  if multOrSing then
+    local btnWidth = 207.1
+    if Cfg.cfg_monster_class[firstKey] then
+      self.btnInfoGO:SetActive(false)
+      btnWidth = 0
     else
-      do
-        ;
-        (self.btnInfoGO):SetActive(false)
-        ;
-        (self.nameGo):SetActive(false)
-        ;
-        (self.yellowBgGo):SetActive(false)
-        -- DECOMPILER ERROR at PC153: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self.bgRect).sizeDelta = Vector2(170, 70)
-        -- DECOMPILER ERROR at PC159: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self.rect).sizeDelta = Vector2(170, 630)
-      end
+      self.btnInfoGO:SetActive(true)
     end
+    self.nameGo:SetActive(true)
+    self.yellowBgGo:SetActive(true)
+    local count = table.count(self.data)
+    local newCount = count <= 3 and 3 or 4
+    local customWidth = newCount * 142 + (newCount - 1) * 36
+    self.bgRect.sizeDelta = Vector2(customWidth, 70)
+    self.rect.sizeDelta = Vector2(customWidth + 30, 630)
+    local namePreOff = 27.8
+    local nameOriWidth = 432.7
+    local restNameRectWidth = customWidth - namePreOff - btnWidth
+    if restNameRectWidth < 0 then
+      restNameRectWidth = nameOriWidth
+    end
+    if nameOriWidth > restNameRectWidth then
+      self.nameRect.sizeDelta = Vector2(restNameRectWidth, self.nameRect.sizeDelta.y)
+    else
+      self.nameRect.sizeDelta = Vector2(nameOriWidth, self.nameRect.sizeDelta.y)
+    end
+  else
+    self.btnInfoGO:SetActive(false)
+    self.nameGo:SetActive(false)
+    self.yellowBgGo:SetActive(false)
+    self.bgRect.sizeDelta = Vector2(170, 70)
+    self.rect.sizeDelta = Vector2(170, 630)
   end
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleRelationCell.btninfoOnClick = function(self, go)
-  -- function num : 0_3
+function UIBookRoleRelationCell:btninfoOnClick(go)
   self:ShowDialog("UIBookRoleRelationShowController", self.dataList, self.shiLiTag, self.friendTag)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleRelationCell.OpenEnemy = function(self, monsterId)
-  -- function num : 0_4 , upvalues : _ENV
+function UIBookRoleRelationCell:OpenEnemy(monsterId)
   local enemys = {monsterId}
   if not enemys then
-    (ToastManager.ShowToast)((StringTable.Get)("str_toast_manager_no_enemy_info"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_toast_manager_no_enemy_info"))
+    return
   end
   self:ShowDialog("UIEnemyBookTip", enemys)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleRelationCell.btngoOnClick = function(self, go)
-  -- function num : 0_5
+function UIBookRoleRelationCell:btngoOnClick(go)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleRelationCell.InitRoles = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local sop = nil
+function UIBookRoleRelationCell:InitRoles()
+  local sop
   self.dataList = {}
-  local count = (table.count)(self.data)
+  local count = table.count(self.data)
   if self.bookRoleType == BookRoleType.Pet then
     sop = self.sopRole
-    for key,value in pairs(self.data) do
+    for key, value in pairs(self.data) do
       local data = {}
-      if not (Cfg.cfg_monster_class)[key] then
+      if not Cfg.cfg_monster_class[key] then
         data.petTempId = key
         data.petPsdId = value
-        data.sortId = ((Cfg.cfg_pet)[key]).BookSort
+        data.sortId = Cfg.cfg_pet[key].BookSort
         data.isMonster = false
       else
         data.monsterClassId = key
@@ -177,78 +115,53 @@ UIBookRoleRelationCell.InitRoles = function(self)
         data.sortId = 1
         data.isMonster = true
       end
-      ;
-      (table.insert)(self.dataList, data)
+      table.insert(self.dataList, data)
     end
-  else
-    do
-      if self.bookRoleType == BookRoleType.Monster then
-        sop = self.sopRole
-        for key,value in pairs(self.data) do
-          local data = {}
-          data.monsterClassId = key
-          data.monsterId = value
-          data.sortId = 1
-          ;
-          (table.insert)(self.dataList, data)
-        end
-      end
-      do
-        ;
-        (table.sort)(self.dataList, function(a, b)
-    -- function num : 0_6_0
-    do return a.sortId < b.sortId end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  elseif self.bookRoleType == BookRoleType.Monster then
+    sop = self.sopRole
+    for key, value in pairs(self.data) do
+      local data = {}
+      data.monsterClassId = key
+      data.monsterId = value
+      data.sortId = 1
+      table.insert(self.dataList, data)
+    end
   end
-)
-        sop:SpawnObjects("UIBookRoleRelationRoleCell", count)
-        local list = sop:GetAllSpawnList()
-        for index = 1, #list do
-          local cell = list[index]
-          cell:SetClickCallBack(function(cell)
-    -- function num : 0_6_1 , upvalues : self, _ENV
-    if cell:IsActive() then
-      if self.bookRoleType == BookRoleType.Pet then
-        if (cell.data).isMonster then
-          self:OpenEnemy((cell.data).monsterId)
+  table.sort(self.dataList, function(a, b)
+    return a.sortId < b.sortId
+  end)
+  sop:SpawnObjects("UIBookRoleRelationRoleCell", count)
+  local list = sop:GetAllSpawnList()
+  for index = 1, #list do
+    local cell = list[index]
+    cell:SetClickCallBack(function(cell)
+      if cell:IsActive() then
+        if self.bookRoleType == BookRoleType.Pet then
+          if cell.data.isMonster then
+            self:OpenEnemy(cell.data.monsterId)
+          else
+            local pet = self:GetModule(PetModule):GetPet(cell.data.petPsdId)
+            self:ShowDialog("UIPetIntimacyMainController", pet:GetTemplateID(), PetIntimacyWindowType.FilesPanel)
+          end
+        elseif self.bookRoleType == BookRoleType.Monster then
+          self:OpenEnemy(cell.data.monsterId)
+        end
+      elseif self.bookRoleType == BookRoleType.Pet then
+        if cell.data.isMonster then
+          ToastManager.ShowToast(StringTable.Get("str_book_monster_dont_have"))
         else
-          local pet = (self:GetModule(PetModule)):GetPet((cell.data).petPsdId)
-          self:ShowDialog("UIPetIntimacyMainController", pet:GetTemplateID(), PetIntimacyWindowType.FilesPanel)
+          ToastManager.ShowToast(StringTable.Get("str_book_role_dont_have"))
         end
-      else
-        do
-          if self.bookRoleType == BookRoleType.Monster then
-            self:OpenEnemy((cell.data).monsterId)
-          end
-          if self.bookRoleType == BookRoleType.Pet then
-            if (cell.data).isMonster then
-              (ToastManager.ShowToast)((StringTable.Get)("str_book_monster_dont_have"))
-            else
-              ;
-              (ToastManager.ShowToast)((StringTable.Get)("str_book_role_dont_have"))
-            end
-          else
-            if self.bookRoleType == BookRoleType.Monster then
-              (ToastManager.ShowToast)((StringTable.Get)("str_book_monster_dont_have"))
-            end
-          end
-        end
+      elseif self.bookRoleType == BookRoleType.Monster then
+        ToastManager.ShowToast(StringTable.Get("str_book_monster_dont_have"))
       end
+    end)
+    local showLine = false
+    if index == #self.dataList then
+      showLine = false
+    else
+      showLine = index % 4 ~= 0
     end
-  end
-)
-          local showLine = false
-          if index == #self.dataList then
-            showLine = false
-          else
-            showLine = index % 4 ~= 0
-          end
-          cell:Refresh(self.bookRoleType, (self.dataList)[index], showLine, index > 4)
-        end
-        -- DECOMPILER ERROR: 3 unprocessed JMP targets
-      end
-    end
+    cell:Refresh(self.bookRoleType, self.dataList[index], showLine, 4 < index)
   end
 end
-
-

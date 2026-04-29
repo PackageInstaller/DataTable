@@ -1,34 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_pick_up_double_cross_with_distance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_PickUpDoubleCrossWithDistance", SkillScopeCalculator_Base)
 SkillScopeCalculator_PickUpDoubleCrossWithDistance = SkillScopeCalculator_PickUpDoubleCrossWithDistance
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_PickUpDoubleCrossWithDistance.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_PickUpDoubleCrossWithDistance:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local distance = scopeParam[1] or 1
   local calcBlock = scopeParam[2]
-  local world = ((self._hub)._gridFilter)._world
+  local world = self._hub._gridFilter._world
   local utilScopeSvc = world:GetService("UtilScopeCalc")
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
   local pickUpDir = centerPos - casterPos
-  if pickUpDir.x > 1 then
+  if 1 < pickUpDir.x then
     pickUpDir.x = 1
-  else
-    if pickUpDir.x < -1 then
-      pickUpDir.x = -1
-    end
+  elseif pickUpDir.x < -1 then
+    pickUpDir.x = -1
   end
-  if pickUpDir.y > 1 then
+  if 1 < pickUpDir.y then
     pickUpDir.y = 1
-  else
-    if pickUpDir.y < -1 then
-      pickUpDir.y = -1
-    end
+  elseif -1 > pickUpDir.y then
+    pickUpDir.y = -1
   end
   local moveDisPos = Vector2(casterPos.x + distance * pickUpDir.x, casterPos.y + distance * pickUpDir.y)
   if calcBlock == 1 then
@@ -38,14 +27,10 @@ SkillScopeCalculator_PickUpDoubleCrossWithDistance.CalcRange = function(self, sc
       moveDisPos = casterPos
     end
   end
-  do
-    local resultPosList = {moveDisPos}
-    if centerPos.x == moveDisPos.x and centerPos.y == moveDisPos.y then
-      resultPosList = {casterPos}
-    end
-    local result = SkillScopeResult:New(SkillScopeType.PickUpDoubleCrossWithDistance, casterPos, resultPosList, resultPosList)
-    return result
+  local resultPosList = {moveDisPos}
+  if centerPos.x == moveDisPos.x and centerPos.y == moveDisPos.y then
+    resultPosList = {casterPos}
   end
+  local result = SkillScopeResult:New(SkillScopeType.PickUpDoubleCrossWithDistance, casterPos, resultPosList, resultPosList)
+  return result
 end
-
-

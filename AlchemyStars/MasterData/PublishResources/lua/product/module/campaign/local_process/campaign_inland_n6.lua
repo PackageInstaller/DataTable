@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_inland_n6.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignCN6", ICampaignComponentLocalProcessBase)
 CCampaignCN6 = CCampaignCN6
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignCN6.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignCN6:Constructor()
   self._cumulativeLoginComponent = nil
   self._cumulativeLoginCompInfo = nil
   self._lineMissionComponent = nil
@@ -32,24 +25,15 @@ CCampaignCN6.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignCN6:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N26
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignCN6:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignCN6:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetCumulativeLoginComponent()
   self:_GetLineMissionComponent()
@@ -63,120 +47,87 @@ CCampaignCN6.InitComponent = function(self, campaignObj)
   self:_GetDifficultyMissionComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6._GetDifficultyMissionComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._diffcultyMissionComponent = (self._campaignObj):GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_HEIXIA)
+function CCampaignCN6:_GetDifficultyMissionComponent()
+  self._diffcultyMissionComponent = self._campaignObj:GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_HEIXIA)
   if not self._diffcultyMissionComponent then
-    return 
+    return
   end
-  self._difficultyMissionCompInfo = (self._diffcultyMissionComponent):ComponentInfo()
+  self._difficultyMissionCompInfo = self._diffcultyMissionComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6._GetLineMissionComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._lineMissionComponent = (self._campaignObj):GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_LINE_MISSION)
+function CCampaignCN6:_GetLineMissionComponent()
+  self._lineMissionComponent = self._campaignObj:GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_LINE_MISSION)
   if not self._lineMissionComponent then
-    return 
+    return
   end
-  self._lineMissionComponentInfo = (self._lineMissionComponent):ComponentInfo()
+  self._lineMissionComponentInfo = self._lineMissionComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6._GetCumulativeLoginComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._cumulativeLoginComponent = (self._campaignObj):GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_CUMULATIVE_LOGIN)
+function CCampaignCN6:_GetCumulativeLoginComponent()
+  self._cumulativeLoginComponent = self._campaignObj:GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_CUMULATIVE_LOGIN)
   if not self._cumulativeLoginComponent then
-    return 
+    return
   end
-  self._cumulativeLoginComponentInfo = (self._cumulativeLoginComponent):ComponentInfo()
+  self._cumulativeLoginComponentInfo = self._cumulativeLoginComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6._GetDifficultMissionComponent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._levelHardComponent = (self._campaignObj):GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_DIFFICULT_MISSION)
+function CCampaignCN6:_GetDifficultMissionComponent()
+  self._levelHardComponent = self._campaignObj:GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_DIFFICULT_MISSION)
   if not self._levelHardComponent then
-    return 
+    return
   end
-  self._levelHardCompInfo = (self._levelHardComponent):ComponentInfo()
+  self._levelHardCompInfo = self._levelHardComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6._GetShopComponent = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._powerShopComponent = (self._campaignObj):GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_SHOP)
+function CCampaignCN6:_GetShopComponent()
+  self._powerShopComponent = self._campaignObj:GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_SHOP)
   if not self._powerShopComponent then
-    return 
+    return
   end
-  self._powerShopCompInfo = (self._powerShopComponent):ComponentInfo()
+  self._powerShopCompInfo = self._powerShopComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6._GetPower2ItemComponent = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  self._power2itemComponent = (self._campaignObj):GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_POWER2ITEM)
+function CCampaignCN6:_GetPower2ItemComponent()
+  self._power2itemComponent = self._campaignObj:GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_POWER2ITEM)
   if not self._power2itemComponent then
-    return 
+    return
   end
-  self._power2itemComponentInfo = (self._power2itemComponent):ComponentInfo()
+  self._power2itemComponentInfo = self._power2itemComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6._GetSharedStoryComponent = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  self._storySharedComponent = (self._campaignObj):GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_SHARED)
+function CCampaignCN6:_GetSharedStoryComponent()
+  self._storySharedComponent = self._campaignObj:GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_SHARED)
   if not self._storySharedComponent then
-    return 
+    return
   end
-  self._storySharedComponentInfo = (self._storySharedComponent):ComponentInfo()
+  self._storySharedComponentInfo = self._storySharedComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6._GetSmeltItemComponent = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  self._smeltItemComponent = (self._campaignObj):GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_SMELTITEM)
+function CCampaignCN6:_GetSmeltItemComponent()
+  self._smeltItemComponent = self._campaignObj:GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_SMELTITEM)
   if not self._smeltItemComponent then
-    return 
+    return
   end
-  self._smeltItemCompInfo = (self._smeltItemComponent):ComponentInfo()
+  self._smeltItemCompInfo = self._smeltItemComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6._GetQuestComponent = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  self._questComponent = (self._campaignObj):GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_QUEST)
+function CCampaignCN6:_GetQuestComponent()
+  self._questComponent = self._campaignObj:GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_QUEST)
   if not self._questComponent then
-    return 
+    return
   end
-  self._questComponentInfo = (self._questComponent):ComponentInfo()
+  self._questComponentInfo = self._questComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6._GetPersonProgressComponent = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  self._personProgressScoreComponent = (self._campaignObj):GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_PERSON_PROCESS)
+function CCampaignCN6:_GetPersonProgressComponent()
+  self._personProgressScoreComponent = self._campaignObj:GetComponent(ECampaignCN6ComponentID.ECAMPAIGN_N6_PERSON_PROCESS)
   if not self._personProgressScoreComponent then
-    return 
+    return
   end
-  self._personProgressScoreCompInfo = (self._personProgressScoreComponent):ComponentInfo()
+  self._personProgressScoreCompInfo = self._personProgressScoreComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6.GetComponent = function(self, componentID)
-  -- function num : 0_14 , upvalues : _ENV
+function CCampaignCN6:GetComponent(componentID)
   if ECampaignCN6ComponentID.ECAMPAIGN_N6_CUMULATIVE_LOGIN == componentID then
     return self._cumulativeLoginComponent
   end
@@ -210,10 +161,7 @@ CCampaignCN6.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6.GetComponentInfo = function(self, componentID)
-  -- function num : 0_15 , upvalues : _ENV
+function CCampaignCN6:GetComponentInfo(componentID)
   if ECampaignCN6ComponentID.ECAMPAIGN_N6_CUMULATIVE_LOGIN == componentID then
     return self._cumulativeLoginComponentInfo
   end
@@ -247,70 +195,41 @@ CCampaignCN6.GetComponentInfo = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6.GetEntryNew = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignCN6:GetEntryNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_INLAND_N6)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6.GetEntryRedDot = function(self)
-  -- function num : 0_17
-  if not self:HardLineMissionRedDot() and not self:AccumulateLoginReddot() and not self:LineMissionRedDot() then
-    return self:DifficultyMissionRedDot()
-  end
+function CCampaignCN6:GetEntryRedDot()
+  return self:HardLineMissionRedDot() or self:AccumulateLoginReddot() or self:LineMissionRedDot() or self:DifficultyMissionRedDot()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6.AccumulateLoginReddot = function(self)
-  -- function num : 0_18
-  if self._cumulativeLoginComponent then
-    return (self._cumulativeLoginComponent):HaveRedPoint()
-  end
+function CCampaignCN6:AccumulateLoginReddot()
+  return self._cumulativeLoginComponent and self._cumulativeLoginComponent:HaveRedPoint()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6.BattlePassRedPoint = function(self, battlePassCampaign)
-  -- function num : 0_19 , upvalues : _ENV
-  return (UIActivityBattlePassHelper.CheckCampaignRedPoint)(battlePassCampaign)
+function CCampaignCN6:BattlePassRedPoint(battlePassCampaign)
+  return UIActivityBattlePassHelper.CheckCampaignRedPoint(battlePassCampaign)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6.LineMissionRedDot = function(self)
-  -- function num : 0_20
-  if not (self._lineMissionComponent):ComponentIsOpen() then
+function CCampaignCN6:LineMissionRedDot()
+  if not self._lineMissionComponent:ComponentIsOpen() then
     return false
   end
-  return (self._lineMissionComponent):HaveRedPoint()
+  return self._lineMissionComponent:HaveRedPoint()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6.HardLineMissionRedDot = function(self)
-  -- function num : 0_21
-  if not (self._levelHardComponent):ComponentIsOpen() then
+function CCampaignCN6:HardLineMissionRedDot()
+  if not self._levelHardComponent:ComponentIsOpen() then
     return false
   end
-  return (self._levelHardComponent):HaveRedPoint()
+  return self._levelHardComponent:HaveRedPoint()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCN6.DifficultyMissionRedDot = function(self)
-  -- function num : 0_22
-  if not (self._diffcultyMissionComponent):ComponentIsOpen() then
+function CCampaignCN6:DifficultyMissionRedDot()
+  if not self._diffcultyMissionComponent:ComponentIsOpen() then
     return false
   end
-  return (self._diffcultyMissionComponent):HaveRedPoint()
+  return self._diffcultyMissionComponent:HaveRedPoint()
 end
-
-

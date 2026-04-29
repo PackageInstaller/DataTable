@@ -1,40 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/homelandpet_behavior_interacting_player.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homelandpet_behavior_base")
 _class("HomelandPetBehaviorInteractingPlayer", HomelandPetBehaviorBase)
 HomelandPetBehaviorInteractingPlayer = HomelandPetBehaviorInteractingPlayer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetBehaviorInteractingPlayer.Constructor = function(self, behaviorType, pet)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandPetBehaviorInteractingPlayer:Constructor(behaviorType, pet)
   self._animationComponent = self:GetComponent(HomelandPetComponentType.Animation)
   self._bubbleComponent = self:GetComponent(HomelandPetComponentType.Bubble)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorInteractingPlayer.Enter = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((HomelandPetBehaviorInteractingPlayer.super).Enter)(self)
-  if (self._pet):GetMotionType() == HomelandPetMotionType.Swim then
-    (self._animationComponent):Play(HomelandPetAnimName.Float)
+function HomelandPetBehaviorInteractingPlayer:Enter()
+  HomelandPetBehaviorInteractingPlayer.super.Enter(self)
+  if self._pet:GetMotionType() == HomelandPetMotionType.Swim then
+    self._animationComponent:Play(HomelandPetAnimName.Float)
   else
-    ;
-    (self._animationComponent):Play(HomelandPetAnimName.Greet)
+    self._animationComponent:Play(HomelandPetAnimName.Greet)
   end
-  ;
-  (self._bubbleComponent):Show()
+  self._bubbleComponent:Show()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorInteractingPlayer.ShowBubble = function(self, bubble)
-  -- function num : 0_2
-  local time = (self._bubbleComponent):ShowBubble(bubble)
+function HomelandPetBehaviorInteractingPlayer:ShowBubble(bubble)
+  local time = self._bubbleComponent:ShowBubble(bubble)
   return time
 end
-
-

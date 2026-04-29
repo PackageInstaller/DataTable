@@ -1,54 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_all_feature_skill_cd_off.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 local ModifyAllFeatureSkillCdOffType = {Add = 1, Set = 2}
 _enum("ModifyAllFeatureSkillCdOffType", ModifyAllFeatureSkillCdOffType)
 _class("BuffLogicChangeAllFeatureSkillCdOff", BuffLogicBase)
 BuffLogicChangeAllFeatureSkillCdOff = BuffLogicChangeAllFeatureSkillCdOff
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicChangeAllFeatureSkillCdOff.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : ModifyAllFeatureSkillCdOffType
+function BuffLogicChangeAllFeatureSkillCdOff:Constructor(buffInstance, logicParam)
   self._modifyValue = logicParam.modValue or 1
   self._modifyType = logicParam.modType or ModifyAllFeatureSkillCdOffType.Add
   self._featureList = logicParam.featureList
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeAllFeatureSkillCdOff.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV, ModifyAllFeatureSkillCdOffType
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+function BuffLogicChangeAllFeatureSkillCdOff:DoLogic(notify)
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   if self._featureList then
-    for _,featureType in ipairs(self._featureList) do
+    for _, featureType in ipairs(self._featureList) do
       local oldCdOff = lsvcFeature:GetSpecificFeatureSkillCdOff(featureType)
       local curCdOff = oldCdOff
       if self._modifyType == ModifyAllFeatureSkillCdOffType.Add then
         curCdOff = oldCdOff + self._modifyValue
-      else
-        if self._modifyType == ModifyAllFeatureSkillCdOffType.Set then
-          curCdOff = self._modifyValue
-        end
+      elseif self._modifyType == ModifyAllFeatureSkillCdOffType.Set then
+        curCdOff = self._modifyValue
       end
       lsvcFeature:SetSpecificFeatureSkillCdOff(featureType, curCdOff)
     end
   else
-    do
-      local oldCdOff = lsvcFeature:GetAllFeatureSkillCdOff()
-      local curCdOff = oldCdOff
-      if self._modifyType == ModifyAllFeatureSkillCdOffType.Add then
-        curCdOff = oldCdOff + self._modifyValue
-      else
-        if self._modifyType == ModifyAllFeatureSkillCdOffType.Set then
-          curCdOff = self._modifyValue
-        end
-      end
-      lsvcFeature:SetAllFeatureSkillCdOff(curCdOff)
+    local oldCdOff = lsvcFeature:GetAllFeatureSkillCdOff()
+    local curCdOff = oldCdOff
+    if self._modifyType == ModifyAllFeatureSkillCdOffType.Add then
+      curCdOff = oldCdOff + self._modifyValue
+    elseif self._modifyType == ModifyAllFeatureSkillCdOffType.Set then
+      curCdOff = self._modifyValue
     end
+    lsvcFeature:SetAllFeatureSkillCdOff(curCdOff)
   end
 end
-
-

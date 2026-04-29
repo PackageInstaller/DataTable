@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_death_instant_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewDeathInstant", BuffViewBase)
 BuffViewDeathInstant = BuffViewDeathInstant
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewDeathInstant.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewDeathInstant:PlayView(TT)
   local entity = self._entity
   local result = self._buffResult
   local hasDead = result:GetIsDead()
@@ -16,39 +9,27 @@ BuffViewDeathInstant.PlayView = function(self, TT)
     entity:AddDeadFlag()
     local hasBoss = entity:HasBoss()
     local buffCmpt = entity:BuffView()
-    if buffCmpt then
-      local curShowBossHP = buffCmpt:HasBuffEffect(BuffEffectType.CurShowBossHP)
-    end
+    local curShowBossHP = buffCmpt and buffCmpt:HasBuffEffect(BuffEffectType.CurShowBossHP)
     if hasBoss or curShowBossHP then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossRedHp, entity:GetID(), 0, 0, 1)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossWhiteHp, entity:GetID(), 0, 0, 1)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossShield, entity:GetID(), 0)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossGreyHP, entity:GetID(), 0, 1)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossRedHp, entity:GetID(), 0, 0, 1)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossWhiteHp, entity:GetID(), 0, 0, 1)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossShield, entity:GetID(), 0)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossGreyHP, entity:GetID(), 0, 1)
     end
-    local targetEffectID = ((self:BuffViewInstance()):BuffConfigData()):GetExecEffectID()
+    local targetEffectID = self:BuffViewInstance():BuffConfigData():GetExecEffectID()
     if targetEffectID then
-      local effectService = (self._world):GetService("Effect")
+      local effectService = self._world:GetService("Effect")
       local effectEntity = effectService:CreateEffect(targetEffectID, entity)
       YIELD(TT, 1000)
     end
-    do
-      local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
-      sMonsterShowRender:_DoOneMonsterDead(TT, entity)
-    end
+    local sMonsterShowRender = self._world:GetService("MonsterShowRender")
+    sMonsterShowRender:_DoOneMonsterDead(TT, entity)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewDeathInstant.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
-  if (self._buffResult):GetCasterID() == (notify:GetNotifyEntity()):GetID() then
+function BuffViewDeathInstant:IsNotifyMatch(notify)
+  if self._buffResult:GetCasterID() == notify:GetNotifyEntity():GetID() then
     return true
   end
   return false
 end
-
-

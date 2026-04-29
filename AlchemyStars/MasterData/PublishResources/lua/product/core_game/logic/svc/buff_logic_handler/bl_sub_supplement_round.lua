@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_sub_supplement_round.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSubSupplementRound", BuffLogicBase)
 BuffLogicSubSupplementRound = BuffLogicSubSupplementRound
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSubSupplementRound.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSubSupplementRound:Constructor(buffInstance, logicParam)
   self._levelRound = logicParam.levelRound
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSubSupplementRound.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local battleStatCmpt = (self._world):BattleStat()
+function BuffLogicSubSupplementRound:DoLogic(notify)
+  local battleStatCmpt = self._world:BattleStat()
   battleStatCmpt:SubCurWaveRoundByEffect(self._levelRound)
   return true
 end
-
-

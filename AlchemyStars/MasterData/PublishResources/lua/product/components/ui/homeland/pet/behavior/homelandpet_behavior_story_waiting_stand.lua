@@ -1,54 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/homelandpet_behavior_story_waiting_stand.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homelandpet_behavior_base")
 _class("HomelandPetBehaviorStoryWaitingStand", HomelandPetBehaviorBase)
 HomelandPetBehaviorStoryWaitingStand = HomelandPetBehaviorStoryWaitingStand
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetBehaviorStoryWaitingStand.Constructor = function(self, behaviorType, pet)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomelandPetBehaviorStoryWaitingStand.super).Constructor)(self, behaviorType, pet)
+function HomelandPetBehaviorStoryWaitingStand:Constructor(behaviorType, pet)
+  HomelandPetBehaviorStoryWaitingStand.super.Constructor(self, behaviorType, pet)
   self._bubbleComponent = self:GetComponent(HomelandPetComponentType.Bubble)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorStoryWaitingStand.Enter = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((HomelandPetBehaviorStoryWaitingStand.super).Enter)(self)
-  ;
-  (self._bubbleComponent):Show()
+function HomelandPetBehaviorStoryWaitingStand:Enter()
+  HomelandPetBehaviorStoryWaitingStand.super.Enter(self)
+  self._bubbleComponent:Show()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorStoryWaitingStand.Exit = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((HomelandPetBehaviorStoryWaitingStand.super).Exit)(self)
+function HomelandPetBehaviorStoryWaitingStand:Exit()
+  HomelandPetBehaviorStoryWaitingStand.super.Exit(self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorStoryWaitingStand.CanInterrupt = function(self)
-  -- function num : 0_3
+function HomelandPetBehaviorStoryWaitingStand:CanInterrupt()
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorStoryWaitingStand.TriggerSucc = function(self, startPos, startRot, id)
-  -- function num : 0_4 , upvalues : _ENV
-  self.triggerSuccParam = {startPos, startRot, id}
-  ;
-  (self._pet):SetPosition(startPos)
-  ;
-  (self._pet):SetRotation((Quaternion.Euler)(startRot))
-  local ob = (self._pet):GetNavMeshObstacle()
+function HomelandPetBehaviorStoryWaitingStand:TriggerSucc(startPos, startRot, id)
+  self.triggerSuccParam = {
+    startPos,
+    startRot,
+    id
+  }
+  self._pet:SetPosition(startPos)
+  self._pet:SetRotation(Quaternion.Euler(startRot))
+  local ob = self._pet:GetNavMeshObstacle()
   ob.enabled = true
   return true
 end
-
-

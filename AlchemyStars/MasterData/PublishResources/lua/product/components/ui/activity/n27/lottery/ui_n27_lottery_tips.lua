@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/lottery/ui_n27_lottery_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN27LotteryTips", UIController)
 UIN27LotteryTips = UIN27LotteryTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN27LotteryTips.Constructor = function(self)
-  -- function num : 0_0
+function UIN27LotteryTips:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryTips.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN27LotteryTips:OnShow(uiParams)
   self._awardInfo = uiParams[1]
   self._deltaPosition = uiParams[2]
   if self._awardInfo == nil then
-    return 
+    return
   end
   self._center = self:GetUIComponent("RectTransform", "center")
   self._offsetRoot = self:GetUIComponent("RectTransform", "offsetRoot")
@@ -32,132 +22,78 @@ UIN27LotteryTips.OnShow = function(self, uiParams)
   self:FlushPosition()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryTips.GetOffset = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._offsetX = ((self._offsetRoot).rect).width * 0.5
-  self._offsetY = ((self._offsetRoot).rect).height * 0.5
-  local descHeight = (self._description).preferredHeight
-  local offsetRootHeight = (math.max)(descHeight + 83, 168)
+function UIN27LotteryTips:GetOffset()
+  self._offsetX = self._offsetRoot.rect.width * 0.5
+  self._offsetY = self._offsetRoot.rect.height * 0.5
+  local descHeight = self._description.preferredHeight
+  local offsetRootHeight = math.max(descHeight + 83, 168)
   self._offsetY = offsetRootHeight * 0.5
   self._anchorOffsets = {}
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._anchorOffsets)[1] = Vector2(-50 - self._offsetX, -50 - self._offsetY)
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._anchorOffsets)[2] = Vector2(50 + self._offsetX, -50 - self._offsetY)
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._anchorOffsets)[3] = Vector2(50 + self._offsetX, 50 + self._offsetY)
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._anchorOffsets)[4] = Vector2(-50 - self._offsetX, 50 + self._offsetY)
+  self._anchorOffsets[1] = Vector2(-50 - self._offsetX, -50 - self._offsetY)
+  self._anchorOffsets[2] = Vector2(50 + self._offsetX, -50 - self._offsetY)
+  self._anchorOffsets[3] = Vector2(50 + self._offsetX, 50 + self._offsetY)
+  self._anchorOffsets[4] = Vector2(-50 - self._offsetX, 50 + self._offsetY)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryTips.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN27LotteryTips:Flush()
   if self._awardInfo == nil then
-    return 
+    return
   end
-  local itemId = (self._awardInfo).m_item_id
-  ;
-  (UIWidgetHelper.SetItemText)(self, itemId, "name", "description")
-  ;
-  (UIWidgetHelper.SetItemCount)(self, itemId, "ownCount", function(count)
-    -- function num : 0_3_0 , upvalues : _ENV
-    local strCount = (HelperProxy:GetInstance()):FormatItemCount(count)
-    return (StringTable.Get)("str_item_public_owned") .. strCount
+  local itemId = self._awardInfo.m_item_id
+  UIWidgetHelper.SetItemText(self, itemId, "name", "description")
+  UIWidgetHelper.SetItemCount(self, itemId, "ownCount", function(count)
+    local strCount = HelperProxy:GetInstance():FormatItemCount(count)
+    return StringTable.Get("str_item_public_owned") .. strCount
+  end)
+  local itemCfg = Cfg.cfg_item[self._awardInfo.m_item_id]
+  if itemCfg then
+    local res = itemCfg.Icon
+    self._itemIcon:LoadImage(res)
   end
-)
-  local itemCfg = (Cfg.cfg_item)[(self._awardInfo).m_item_id]
-  do
-    if itemCfg then
-      local res = itemCfg.Icon
-      ;
-      (self._itemIcon):LoadImage(res)
-    end
-    ;
-    (self._itemNum):SetText((string.format)("x%d", (self._awardInfo).m_count))
-  end
+  self._itemNum:SetText(string.format("x%d", self._awardInfo.m_count))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryTips.FlushPosition = function(self)
-  -- function num : 0_4
+function UIN27LotteryTips:FlushPosition()
   self:GetOffset()
   if self._deltaPosition == nil then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._offsetRoot).position = (self._center).position + self._deltaPosition
+  self._offsetRoot.position = self._center.position + self._deltaPosition
   local index = 0
-  local anchoredPosition = (self._offsetRoot).anchoredPosition
-  if anchoredPosition.x > 0 then
-    if anchoredPosition.y > 0 then
+  local anchoredPosition = self._offsetRoot.anchoredPosition
+  if 0 < anchoredPosition.x then
+    if 0 < anchoredPosition.y then
       index = 1
     else
       index = 4
     end
+  elseif 0 < anchoredPosition.y then
+    index = 2
   else
-    if anchoredPosition.y > 0 then
-      index = 2
-    else
-      index = 3
-    end
+    index = 3
   end
-  local anchoredPosition = (self._offsetRoot).anchoredPosition
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._offsetRoot).anchoredPosition = anchoredPosition + (self._anchorOffsets)[index]
+  local anchoredPosition = self._offsetRoot.anchoredPosition
+  self._offsetRoot.anchoredPosition = anchoredPosition + self._anchorOffsets[index]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryTips.ShowAwardTips = function(self, dataItem, clickPosition)
-  -- function num : 0_5
+function UIN27LotteryTips:ShowAwardTips(dataItem, clickPosition)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryTips.CloseBtnOnClick = function(self)
-  -- function num : 0_6
+function UIN27LotteryTips:CloseBtnOnClick()
   self:PlayAnimation("uieffanim_UIN27LotteryTips_out", 267, function()
-    -- function num : 0_6_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryTips.PlayAnimation = function(self, animName, duration, cbComplete)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN27LotteryTips:PlayAnimation(animName, duration, cbComplete)
   local lockName = "UIN27LotteryTips:PlayAnimation_" .. animName
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, lockName, animName, _ENV, duration, cbComplete
+  TaskManager:GetInstance():StartTask(function(TT)
     self:Lock(lockName)
-    ;
-    (self._animation):Play(animName)
+    self._animation:Play(animName)
     YIELD(TT, duration)
     self:UnLock(lockName)
     if cbComplete then
       cbComplete()
     end
-  end
-)
+  end)
 end
-
-

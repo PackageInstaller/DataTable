@@ -1,188 +1,123 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/preview_active_skill_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewActiveSkillSystem_Render", ReactiveSystem)
 PreviewActiveSkillSystem_Render = PreviewActiveSkillSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewActiveSkillSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function PreviewActiveSkillSystem_Render:Constructor(world)
   self._world = world
   self._configService = world:GetService("Config")
   self._previewInstructionSetDic = {}
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._previewInstructionSetDic)[SkillPreviewType.ConvertElement] = 110
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._previewInstructionSetDic)[SkillPreviewType.Scope] = 111
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._previewInstructionSetDic)[SkillPreviewType.ActorDamage] = 112
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._previewInstructionSetDic)[SkillPreviewType.SupportAddBuff] = 113
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._previewInstructionSetDic)[SkillPreviewType.SupportAddBuffWithCastCheck] = 120
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._previewInstructionSetDic)[SkillPreviewType.SupportAddBuffWithCastCheckSan] = 121
+  self._previewInstructionSetDic[SkillPreviewType.ConvertElement] = 110
+  self._previewInstructionSetDic[SkillPreviewType.Scope] = 111
+  self._previewInstructionSetDic[SkillPreviewType.ActorDamage] = 112
+  self._previewInstructionSetDic[SkillPreviewType.SupportAddBuff] = 113
+  self._previewInstructionSetDic[SkillPreviewType.SupportAddBuffWithCastCheck] = 120
+  self._previewInstructionSetDic[SkillPreviewType.SupportAddBuffWithCastCheckSan] = 121
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewActiveSkillSystem_Render.Dispose = function(self)
-  -- function num : 0_1
+function PreviewActiveSkillSystem_Render:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewActiveSkillSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_2 , upvalues : _ENV
-  local group = world:GetGroup((world.BW_WEMatchers).PreviewActiveSkill)
-  local c = Collector:New({group}, {"AddedOrRemoved"})
+function PreviewActiveSkillSystem_Render:GetTrigger(world)
+  local group = world:GetGroup(world.BW_WEMatchers.PreviewActiveSkill)
+  local c = Collector:New({group}, {
+    "AddedOrRemoved"
+  })
   return c
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewActiveSkillSystem_Render.Filter = function(self, entity)
-  -- function num : 0_3
+function PreviewActiveSkillSystem_Render:Filter(entity)
   return true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewActiveSkillSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_4 , upvalues : _ENV
+function PreviewActiveSkillSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     local actorEntity = entities[i]
     local hasPreviewCmpt = actorEntity:HasPreviewActiveSkill()
     if hasPreviewCmpt then
       local previewIndex = self:_GetPreviewIndex()
-      ;
-      ((GameGlobal.TaskManager)()):CoreGameStartTask(self._NewPreviewRoutine, self, actorEntity, previewIndex)
+      GameGlobal.TaskManager():CoreGameStartTask(self._NewPreviewRoutine, self, actorEntity, previewIndex)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewActiveSkillSystem_Render._NewPreviewRoutine = function(self, TT, actorEntity, previewIndex)
-  -- function num : 0_5 , upvalues : _ENV
+function PreviewActiveSkillSystem_Render:_NewPreviewRoutine(TT, actorEntity, previewIndex)
   self:_HideLastPreview(actorEntity)
   YIELD(TT)
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local curStateID = utilDataSvc:GetCurMainStateID()
   if curStateID ~= GameStateID.PreviewActiveSkill then
-    (Log.fatal)("PreviewActiveSkill not in preview state,cur state is :", curStateID)
+    Log.fatal("PreviewActiveSkill not in preview state,cur state is :", curStateID)
   end
   local curPreviewIndex = self:_GetPreviewIndex()
   if curPreviewIndex ~= previewIndex then
-    return 
+    return
   end
   self:_NewPreviewIndex()
   self:_ShowPreview(TT, actorEntity)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewActiveSkillSystem_Render._ShowPreview = function(self, TT, actorEntity)
-  -- function num : 0_6 , upvalues : _ENV
-  local eventListenerService = (self._world):GetService("EventListener")
+function PreviewActiveSkillSystem_Render:_ShowPreview(TT, actorEntity)
+  local eventListenerService = self._world:GetService("EventListener")
   local preClickHeadSkillID = eventListenerService:GetPreClickHeadSkillID()
   local previewActiveSkillCmpt = actorEntity:PreviewActiveSkill()
   local activeSkillID = previewActiveSkillCmpt:GetActiveSKillID()
   if preClickHeadSkillID ~= activeSkillID then
-    (Log.fatal)("preview active skill not match", preClickHeadSkillID, activeSkillID)
-    return 
+    Log.fatal("preview active skill not match", preClickHeadSkillID, activeSkillID)
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HideCanMoveArrow)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HideCanMoveArrow)
   local configService = self._configService
   local skillConfigData = configService:GetSkillConfigData(activeSkillID, actorEntity)
   local previewType = skillConfigData:GetSkillPreviewType()
   if previewType == SkillPreviewType.Instruction then
     self:_DoPreviewInstruction(TT, activeSkillID, actorEntity)
+  elseif previewType == SkillPreviewType.ConvertElement or previewType == SkillPreviewType.Scope or previewType == SkillPreviewType.ActorDamage or previewType == SkillPreviewType.SupportAddBuff or previewType == SkillPreviewType.SupportAddBuffWithCastCheck or previewType == SkillPreviewType.SupportAddBuffWithCastCheckSan then
+    self:_DoOtherPreviewInstruction(TT, activeSkillID, actorEntity, previewType)
+  elseif previewType == SkillPreviewType.TrapActiveSkill then
+    self:_DoPreviewInstruction(TT, activeSkillID, actorEntity)
   else
-    if previewType == SkillPreviewType.ConvertElement or previewType == SkillPreviewType.Scope or previewType == SkillPreviewType.ActorDamage or previewType == SkillPreviewType.SupportAddBuff or previewType == SkillPreviewType.SupportAddBuffWithCastCheck or previewType == SkillPreviewType.SupportAddBuffWithCastCheckSan then
-      self:_DoOtherPreviewInstruction(TT, activeSkillID, actorEntity, previewType)
-    else
-      if previewType == SkillPreviewType.TrapActiveSkill then
-        self:_DoPreviewInstruction(TT, activeSkillID, actorEntity)
-      else
-        ;
-        (Log.fatal)("other preview type is ", previewType)
-      end
-    end
+    Log.fatal("other preview type is ", previewType)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewActiveSkillSystem_Render._HideLastPreview = function(self, actorEntity)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetHidePreviewArrow)
+function PreviewActiveSkillSystem_Render:_HideLastPreview(actorEntity)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PetHidePreviewArrow)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewActiveSkillSystem_Render._NewPreviewIndex = function(self, enablePrview)
-  -- function num : 0_8
-  local previewEntity = (self._world):GetPreviewEntity()
+function PreviewActiveSkillSystem_Render:_NewPreviewIndex(enablePrview)
+  local previewEntity = self._world:GetPreviewEntity()
   if previewEntity ~= nil then
     local renderState = previewEntity:RenderState()
     renderState:NewPreviewRoutine()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewActiveSkillSystem_Render.ResetPreview = function(self)
-  -- function num : 0_9
-  local previewEntity = (self._world):GetPreviewEntity()
+function PreviewActiveSkillSystem_Render:ResetPreview()
+  local previewEntity = self._world:GetPreviewEntity()
   if previewEntity ~= nil then
     local renderState = previewEntity:RenderState()
     renderState:ResetPreviewRoutine()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewActiveSkillSystem_Render._GetPreviewIndex = function(self)
-  -- function num : 0_10
-  local previewEntity = (self._world):GetPreviewEntity()
-  do
-    if previewEntity ~= nil then
-      local renderState = previewEntity:RenderState()
-      return renderState:GetPreviewRoutineIndex()
-    end
-    return 0
+function PreviewActiveSkillSystem_Render:_GetPreviewIndex()
+  local previewEntity = self._world:GetPreviewEntity()
+  if previewEntity ~= nil then
+    local renderState = previewEntity:RenderState()
+    return renderState:GetPreviewRoutineIndex()
   end
+  return 0
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewActiveSkillSystem_Render._DoOtherPreviewInstruction = function(self, TT, activeSkillID, casterEntity, previewType)
-  -- function num : 0_11 , upvalues : _ENV
+function PreviewActiveSkillSystem_Render:_DoOtherPreviewInstruction(TT, activeSkillID, casterEntity, previewType)
   local taskIDList = {}
-  local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID, casterEntity)
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+  local skillConfigData = self._configService:GetSkillConfigData(activeSkillID, casterEntity)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
   local skillPreviewParamInstruction = SkillPreviewParamInstruction:New({})
-  local instructionSetID = (self._previewInstructionSetDic)[previewType]
+  local instructionSetID = self._previewInstructionSetDic[previewType]
   if not instructionSetID then
-    (Log.exception)("SkillID:", activeSkillID, "PreviewType :", previewType, "Invalid ")
-    return 
+    Log.exception("SkillID:", activeSkillID, "PreviewType :", previewType, "Invalid ")
+    return
   end
   local instructionSet = skillPreviewParamInstruction:_ParseInstructionSet(instructionSetID)
   local previewContext = SkillPreviewContext:New(self._world, casterEntity)
@@ -190,51 +125,45 @@ PreviewActiveSkillSystem_Render._DoOtherPreviewInstruction = function(self, TT, 
   previewContext:SetEffectList(skillEffectArray)
   local targetType = skillConfigData:GetSkillTargetType()
   local targetTypeParam = skillConfigData:GetSkillTargetTypeParam()
-  local scopeParam = SkillPreviewScopeParam:New({TargetType = targetType, ScopeType = skillConfigData:GetSkillScopeType(), ScopeCenterType = skillConfigData:GetSkillScopeCenterType(), TargetTypeParam = targetTypeParam})
+  local scopeParam = SkillPreviewScopeParam:New({
+    TargetType = targetType,
+    ScopeType = skillConfigData:GetSkillScopeType(),
+    ScopeCenterType = skillConfigData:GetSkillScopeCenterType(),
+    TargetTypeParam = targetTypeParam
+  })
   scopeParam:SetScopeParamData(skillConfigData:GetSkillScopeParam())
   local scopeResult = utilScopeSvc:CalcScopeResult(scopeParam, casterEntity)
   previewContext:SetScopeResult(scopeResult:GetAttackRange())
   previewContext:SetScopeType(scopeResult:GetScopeType())
   local targetIDList = utilScopeSvc:SelectSkillTarget(casterEntity, targetType, scopeResult, activeSkillID, targetTypeParam)
   previewContext:SetTargetEntityIDList(targetIDList)
-  do
-    if instructionSet then
-      local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(previewActiveSkillService.DoPreviewInstruction, previewActiveSkillService, instructionSet, casterEntity, previewContext)
-      ;
-      (table.insert)(taskIDList, taskID)
-    end
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDList) do
-      YIELD(TT)
-    end
+  if instructionSet then
+    local taskID = GameGlobal.TaskManager():CoreGameStartTask(previewActiveSkillService.DoPreviewInstruction, previewActiveSkillService, instructionSet, casterEntity, previewContext)
+    table.insert(taskIDList, taskID)
+  end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDList) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewActiveSkillSystem_Render._DoPreviewInstruction = function(self, TT, activeSkillID, casterEntity)
-  -- function num : 0_12 , upvalues : _ENV
+function PreviewActiveSkillSystem_Render:_DoPreviewInstruction(TT, activeSkillID, casterEntity)
   local taskIDList = {}
-  local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID, casterEntity)
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
-  for _,v in ipairs(skillConfigData._previewParamList) do
+  local skillConfigData = self._configService:GetSkillConfigData(activeSkillID, casterEntity)
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
+  for _, v in ipairs(skillConfigData._previewParamList) do
     if v:GetPreviewType() == SkillPreviewType.Instruction then
       local instructionParam = v
-      for _,skillPreviewConfigData in pairs(instructionParam._previewList) do
+      for _, skillPreviewConfigData in pairs(instructionParam._previewList) do
         local instructionSet = skillPreviewConfigData:GetOnStartInstructionSet()
         if instructionSet then
           local previewContext = previewActiveSkillService:CreatePreviewContext(skillPreviewConfigData, casterEntity)
-          local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(previewActiveSkillService.DoPreviewInstruction, previewActiveSkillService, instructionSet, casterEntity, previewContext)
-          ;
-          (table.insert)(taskIDList, taskID)
+          local taskID = GameGlobal.TaskManager():CoreGameStartTask(previewActiveSkillService.DoPreviewInstruction, previewActiveSkillService, instructionSet, casterEntity, previewContext)
+          table.insert(taskIDList, taskID)
         end
       end
     end
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDList) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDList) do
+    YIELD(TT)
   end
 end
-
-

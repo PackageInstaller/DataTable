@@ -1,35 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/install/world_pack_base_installer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("enum_lookup")
-WEComponents_Base = ComponentsLookup:New({"CommandReceiver", "CommandSender", "Asset", "View"})
+WEComponents_Base = ComponentsLookup:New({
+  "CommandReceiver",
+  "CommandSender",
+  "Asset",
+  "View"
+})
 WUniqueComponents_Base = ComponentsLookup:New({})
 _staticClass("BasePackInstaller")
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BasePackInstaller.InstallEntityComponentsLookup = function(self, weComponents)
-  -- function num : 0_0 , upvalues : _ENV
+function BasePackInstaller:InstallEntityComponentsLookup(weComponents)
   weComponents:MergeLookup(WEComponents_Base)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BasePackInstaller.InstallUniqueComponentsLookup = function(self, uniqueComponents)
-  -- function num : 0_1 , upvalues : _ENV
+function BasePackInstaller:InstallUniqueComponentsLookup(uniqueComponents)
   local lookup = WUniqueComponents_Base
   uniqueComponents:MergeLookup(lookup)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BasePackInstaller.InstallEntityMatchers = function(self, entityMatchers, weComponents)
-  -- function num : 0_2 , upvalues : _ENV
-  entityMatchers.Asset = Matcher:New({weComponents.Asset}, {}, {})
-  entityMatchers.View = Matcher:New({weComponents.View}, {}, {})
-  entityMatchers.CommandReceiver = Matcher:New({weComponents.CommandReceiver}, {}, {})
-  entityMatchers.CommandSender = Matcher:New({weComponents.CommandSender}, {}, {})
+function BasePackInstaller:InstallEntityMatchers(entityMatchers, weComponents)
+  entityMatchers.Asset = Matcher:New({
+    weComponents.Asset
+  }, {}, {})
+  entityMatchers.View = Matcher:New({
+    weComponents.View
+  }, {}, {})
+  entityMatchers.CommandReceiver = Matcher:New({
+    weComponents.CommandReceiver
+  }, {}, {})
+  entityMatchers.CommandSender = Matcher:New({
+    weComponents.CommandSender
+  }, {}, {})
 end
-
-

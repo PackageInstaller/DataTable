@@ -1,52 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/data/d_shop_season_good.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("d_shop_secret_store_base")
 _class("DShopSeasonGood", DShopSecretGoodBase)
 DShopSeasonGood = DShopSeasonGood
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DShopSeasonGood.ShowRemain = function(self)
-  -- function num : 0_0
+function DShopSeasonGood:ShowRemain()
   return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSeasonGood.IsUnLimit = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  do return self.saleMaxNum == SpecialNum.MysteryGoodsUnlimitedNum end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function DShopSeasonGood:IsUnLimit()
+  return self.saleMaxNum == SpecialNum.MysteryGoodsUnlimitedNum
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSeasonGood.GetSeasonSaleTag = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if self.cfg then
-    local saleTag = (self.cfg)[ConfigKey.ConfigKey_SaleTag]
-  end
+function DShopSeasonGood:GetSeasonSaleTag()
+  local saleTag = self.cfg and self.cfg[ConfigKey.ConfigKey_SaleTag]
   if saleTag and saleTag == 1 then
     return 1
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSeasonGood.GrandPrize = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_shop_season_goods)[self.goodId]
-  do
-    if cfg then
-      local grandPrize = cfg.GrandPrize
-      return not grandPrize or grandPrize == 1
-    end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function DShopSeasonGood:GrandPrize()
+  local cfg = Cfg.cfg_shop_season_goods[self.goodId]
+  if cfg then
+    local grandPrize = cfg.GrandPrize
+    return grandPrize and grandPrize == 1
   end
+  return false
 end
-
-

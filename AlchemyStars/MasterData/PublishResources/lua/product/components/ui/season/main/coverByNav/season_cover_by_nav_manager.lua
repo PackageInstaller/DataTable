@@ -1,35 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/coverByNav/season_cover_by_nav_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonCoverByNavManager", Object)
 SeasonCoverByNavManager = SeasonCoverByNavManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonCoverByNavManager.Constructor = function(self)
-  -- function num : 0_0
+function SeasonCoverByNavManager:Constructor()
   self._flag = "_navcover"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonCoverByNavManager.OnInit = function(self, seasonID)
-  -- function num : 0_1
+function SeasonCoverByNavManager:OnInit(seasonID)
   self._covers = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonCoverByNavManager.Update = function(self, deltaTime)
-  -- function num : 0_2
+function SeasonCoverByNavManager:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonCoverByNavManager.OnCoverCheck = function(self, areaName)
-  -- function num : 0_3 , upvalues : _ENV
-  for k,cover in pairs(self._covers) do
+function SeasonCoverByNavManager:OnCoverCheck(areaName)
+  for k, cover in pairs(self._covers) do
     if cover:OnCoverCheck(areaName) then
       cover:IncreaseBuildingY()
     else
@@ -38,39 +22,23 @@ SeasonCoverByNavManager.OnCoverCheck = function(self, areaName)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonCoverByNavManager.Dispose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,cover in pairs(self._covers) do
+function SeasonCoverByNavManager:Dispose()
+  for _, cover in pairs(self._covers) do
     cover:Dispose()
   end
-  ;
-  (table.clear)(self._covers)
+  table.clear(self._covers)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonCoverByNavManager.CoverFlag = function(self)
-  -- function num : 0_5
+function SeasonCoverByNavManager:CoverFlag()
   return self._flag
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonCoverByNavManager.AddCover = function(self, transform, areaName)
-  -- function num : 0_6 , upvalues : _ENV
+function SeasonCoverByNavManager:AddCover(transform, areaName)
   if transform and areaName then
     local cov = SeasonCoverByNav:New(transform, areaName)
-    ;
-    (table.insert)(self._covers, cov)
+    table.insert(self._covers, cov)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonCoverByNavManager._TryCleanCover = function(self)
-  -- function num : 0_7
+function SeasonCoverByNavManager:_TryCleanCover()
 end
-
-

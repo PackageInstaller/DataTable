@@ -1,46 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_forbid_cure.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicForbidCure", BuffLogicBase)
 BuffLogicForbidCure = BuffLogicForbidCure
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicForbidCure.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicForbidCure:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicForbidCure.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  if not (self._entity):HasTeam() then
-    (Log.fatal)("确定要给非队长加禁疗Buff?")
+function BuffLogicForbidCure:DoLogic(notify)
+  if not self._entity:HasTeam() then
+    Log.fatal("确定要给非队长加禁疗Buff?")
   end
-  local cpt = (self._entity):Attributes()
+  local cpt = self._entity:Attributes()
   cpt:SetSimpleAttribute("BuffForbidCure", 1)
 end
 
 _class("BuffLogicRemoveForbidCure", BuffLogicBase)
 BuffLogicRemoveForbidCure = BuffLogicRemoveForbidCure
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveForbidCure.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveForbidCure:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveForbidCure.DoLogic = function(self, notify)
-  -- function num : 0_3 , upvalues : _ENV
-  local cpt = (self._entity):Attributes()
+function BuffLogicRemoveForbidCure:DoLogic(notify)
+  local cpt = self._entity:Attributes()
   if cpt:GetAttribute("BuffForbidCure") then
     cpt:RemoveSimpleAttribute("BuffForbidCure")
   else
-    ;
-    (Log.fatal)("No forbid cure buff on target")
+    Log.fatal("No forbid cure buff on target")
   end
 end
-
-

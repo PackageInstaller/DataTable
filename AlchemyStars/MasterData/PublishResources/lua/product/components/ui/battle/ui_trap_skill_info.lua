@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_trap_skill_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITrapSkillInfo", UICustomWidget)
 UITrapSkillInfo = UITrapSkillInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITrapSkillInfo.Constructor = function(self)
-  -- function num : 0_0
+function UITrapSkillInfo:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrapSkillInfo.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UITrapSkillInfo:OnShow()
   self.enableFakeInput = true
   self._skillRoot = self:GetGameObject("skillRoot")
   self._skillRootPath = self:GetUIComponent("UISelectObjectPath", "skillRoot")
@@ -22,36 +12,29 @@ UITrapSkillInfo.OnShow = function(self)
   self:AttachEvent(GameEventType.TrapPowerVisible, self.OnTrapPowerVisible)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrapSkillInfo.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UITrapSkillInfo:OnHide()
   self:DetachEvent(GameEventType.TrapPowerChange, self.OnTrapPowerChange)
   self:DetachEvent(GameEventType.TrapPowerVisible, self.OnTrapPowerVisible)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrapSkillInfo.SetData = function(self, entityID)
-  -- function num : 0_3 , upvalues : _ENV
+function UITrapSkillInfo:SetData(entityID)
   self._entityID = entityID
-  local trapPowerMax = (InnerGameHelperRender.GetTrapAttribute)(self._entityID, "TrapPowerMax")
-  ;
-  (self._skillRootPath):SpawnObjects("UITrapSkillEnergyItem", trapPowerMax)
-  self._skillItemList = (self._skillRootPath):GetAllSpawnList()
+  local trapPowerMax = InnerGameHelperRender.GetTrapAttribute(self._entityID, "TrapPowerMax")
+  self._skillRootPath:SpawnObjects("UITrapSkillEnergyItem", trapPowerMax)
+  self._skillItemList = self._skillRootPath:GetAllSpawnList()
   local gridLayoutGroup = self:GetUIComponent("GridLayoutGroup", "skillRoot")
-  local useCarSkin = (InnerGameHelperRender.GetTrapIsCastSkillByRound)(self._entityID)
+  local useCarSkin = InnerGameHelperRender.GetTrapIsCastSkillByRound(self._entityID)
   self.innerUIAtlas = self:GetAsset("InnerUI.spriteatlas", LoadType.SpriteAtlas)
   for i = 1, #self._skillItemList do
-    local skillItem = (self._skillItemList)[i]
-    local spriteImage, spriteImageBG = nil, nil
+    local skillItem = self._skillItemList[i]
+    local spriteImage, spriteImageBG
     local imageOffset = Vector3(0, 0, 0)
     if useCarSkin then
-      spriteImage = (self.innerUIAtlas):GetSprite("N15_WarChess_icon_carcharged")
-      spriteImageBG = (self.innerUIAtlas):GetSprite("N15_WarChess_icon_caruncharged")
+      spriteImage = self.innerUIAtlas:GetSprite("N15_WarChess_icon_carcharged")
+      spriteImageBG = self.innerUIAtlas:GetSprite("N15_WarChess_icon_caruncharged")
     else
-      spriteImage = (self.innerUIAtlas):GetSprite("thread_junei_xuetiao15")
-      spriteImageBG = (self.innerUIAtlas):GetSprite("thread_junei_xuetiao14")
+      spriteImage = self.innerUIAtlas:GetSprite("thread_junei_xuetiao15")
+      spriteImageBG = self.innerUIAtlas:GetSprite("thread_junei_xuetiao14")
       imageOffset = Vector3(0, -2.1, 0)
     end
     skillItem:OnRefreshImage(spriteImage, spriteImageBG, imageOffset)
@@ -64,46 +47,30 @@ UITrapSkillInfo.SetData = function(self, entityID)
   self:_OnUpdate()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrapSkillInfo.OnTrapPowerVisible = function(self, visible)
-  -- function num : 0_4
+function UITrapSkillInfo:OnTrapPowerVisible(visible)
   if not self._skillRoot then
-    return 
+    return
   end
-  ;
-  ((self._skillRoot).gameObject):SetActive(visible)
+  self._skillRoot.gameObject:SetActive(visible)
   if visible then
     self:_OnUpdate()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrapSkillInfo.OnTrapPowerChange = function(self)
-  -- function num : 0_5
+function UITrapSkillInfo:OnTrapPowerChange()
   if not self._entityID then
-    return 
+    return
   end
   self:_OnUpdate()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrapSkillInfo._OnUpdate = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local trapPower = (InnerGameHelperRender.GetTrapAttribute)(self._entityID, "TrapPower")
+function UITrapSkillInfo:_OnUpdate()
+  local trapPower = InnerGameHelperRender.GetTrapAttribute(self._entityID, "TrapPower")
   for i = 1, #self._skillItemList do
-    local skillItem = (self._skillItemList)[i]
+    local skillItem = self._skillItemList[i]
     skillItem:OnVisible(i <= trapPower)
   end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrapSkillInfo.buttonSkillOnClick = function(self)
-  -- function num : 0_7
+function UITrapSkillInfo:buttonSkillOnClick()
 end
-
-

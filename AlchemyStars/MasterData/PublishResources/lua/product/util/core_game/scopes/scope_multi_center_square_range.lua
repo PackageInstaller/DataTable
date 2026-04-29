@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_multi_center_square_range.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_MultiCenterSquare", SkillScopeCalculator_Base)
 SkillScopeCalculator_MultiCenterSquare = SkillScopeCalculator_MultiCenterSquare
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_MultiCenterSquare.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_MultiCenterSquare:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local fixedAreaType = scopeParam
   local squareBorder = scopeParam
   if #centerPos == 0 then
@@ -18,23 +11,21 @@ SkillScopeCalculator_MultiCenterSquare.CalcRange = function(self, scopeType, sco
   local range = {}
   local wholeArea = {}
   local v = centerPos
-  for _,v in ipairs(centerPos) do
+  for _, v in ipairs(centerPos) do
     local select_piece = {}
-    local left = v.x + (BodyAreaHelper.GetBodyAreaLeft)(bodyArea)
-    local right = v.x + (BodyAreaHelper.GetBodyAreaRight)(bodyArea)
-    local up = v.y + (BodyAreaHelper.GetBodyAreaUp)(bodyArea)
-    local down = v.y + (BodyAreaHelper.GetBodyAreaDown)(bodyArea)
+    local left = v.x + BodyAreaHelper.GetBodyAreaLeft(bodyArea)
+    local right = v.x + BodyAreaHelper.GetBodyAreaRight(bodyArea)
+    local up = v.y + BodyAreaHelper.GetBodyAreaUp(bodyArea)
+    local down = v.y + BodyAreaHelper.GetBodyAreaDown(bodyArea)
     for i = left - squareBorder, right + squareBorder do
       for j = down - squareBorder, up + squareBorder do
         select_piece[#select_piece + 1] = Vector2(i, j)
       end
     end
-    for _,pos in ipairs(select_piece) do
+    for _, pos in ipairs(select_piece) do
       self:_InsertTargetGrid(range, pos, wholeArea)
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.MultiCenterSquare, centerPos, range, wholeArea)
   return result
 end
-
-

@@ -1,84 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/photo/ui_home_photo_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomePhotoController", UIController)
 UIHomePhotoController = UIHomePhotoController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomePhotoController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioEnterMuseum)
+function UIHomePhotoController:OnShow(uiParams)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioEnterMuseum)
   self:GetComponent()
   self:OnValue()
-  ;
-  (AudioHelperController.PlayBGM)(CriAudioIDConst.BGSeniorSkin, AudioConstValue.BGMCrossFadeTime)
+  AudioHelperController.PlayBGM(CriAudioIDConst.BGSeniorSkin, AudioConstValue.BGMCrossFadeTime)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoController.GetComponent = function(self)
-  -- function num : 0_1
+function UIHomePhotoController:GetComponent()
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
   self._btnPool = self:GetUIComponent("UISelectObjectPath", "btnPool")
-  self._btnItem = (self._btnPool):SpawnObject("UIHomeCommonCloseBtn")
-  ;
-  (self._btnItem):SetData(function()
-    -- function num : 0_1_0 , upvalues : self
+  self._btnItem = self._btnPool:SpawnObject("UIHomeCommonCloseBtn")
+  self._btnItem:SetData(function()
     self:closeBtnOnClick()
-  end
-, nil, true)
+  end, nil, true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoController.OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomePhotoController:OnValue()
   self._datas = {}
-  self._viewCfg = (Cfg.cfg_home_photo_layout)({})
+  self._viewCfg = Cfg.cfg_home_photo_layout({})
   if self._viewCfg and next(self._viewCfg) then
     for i = 1, #self._viewCfg do
-      local cfg = (self._viewCfg)[i]
+      local cfg = self._viewCfg[i]
       local data = {}
       data.group = cfg.Group
       data.index = cfg.Index
       data.title = cfg.Title
       data.icon = cfg.Iocn
-      ;
-      (table.insert)(self._datas, data)
+      table.insert(self._datas, data)
     end
   end
-  do
-    local maxCount = 0
-    for i = 1, #self._datas do
-      if maxCount < ((self._datas)[i]).index then
-        maxCount = ((self._datas)[i]).index
-      end
+  local maxCount = 0
+  for i = 1, #self._datas do
+    if maxCount < self._datas[i].index then
+      maxCount = self._datas[i].index
     end
-    ;
-    (self._pool):SpawnObjects("UIHomePhotoEnterItem", maxCount)
-    local pools = (self._pool):GetAllSpawnList()
-    for i = 1, #pools do
-      local innerData = self:InnerData(i)
-      local item = pools[i]
-      item:Active(innerData)
-      if innerData then
-        local data = self:GetData(i)
-        if data then
-          item:SetData(data)
-        end
+  end
+  self._pool:SpawnObjects("UIHomePhotoEnterItem", maxCount)
+  local pools = self._pool:GetAllSpawnList()
+  for i = 1, #pools do
+    local innerData = self:InnerData(i)
+    local item = pools[i]
+    item:Active(innerData)
+    if innerData then
+      local data = self:GetData(i)
+      if data then
+        item:SetData(data)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoController.InnerData = function(self, idx)
-  -- function num : 0_3
+function UIHomePhotoController:InnerData(idx)
   for i = 1, #self._datas do
-    local data = (self._datas)[i]
+    local data = self._datas[i]
     if data.index == idx then
       return true
     end
@@ -86,32 +62,20 @@ UIHomePhotoController.InnerData = function(self, idx)
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoController.GetData = function(self, idx)
-  -- function num : 0_4
+function UIHomePhotoController:GetData(idx)
   for i = 1, #self._datas do
-    local data = (self._datas)[i]
+    local data = self._datas[i]
     if data.index == idx then
       return data
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoController.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (((GameGlobal.GetUIModule)(HomelandModule)):GetClient()):PlayHomelandBgm()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshInteractUI)
+function UIHomePhotoController:OnHide()
+  GameGlobal.GetUIModule(HomelandModule):GetClient():PlayHomelandBgm()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshInteractUI)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoController.closeBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIHomePhotoController:closeBtnOnClick(go)
   self:CloseDialog()
 end
-
-

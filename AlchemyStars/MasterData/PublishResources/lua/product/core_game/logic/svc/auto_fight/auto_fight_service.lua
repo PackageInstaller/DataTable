@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/auto_fight_service.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 _class("AutoSkillCastData", Object)
 AutoSkillCastData = AutoSkillCastData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AutoSkillCastData.Constructor = function(self, pCaster, nSkillID, nPetID, listPickUpPos, selectTeamPos, pickExtraParam, clientSelectInfo)
-  -- function num : 0_0
+function AutoSkillCastData:Constructor(pCaster, nSkillID, nPetID, listPickUpPos, selectTeamPos, pickExtraParam, clientSelectInfo)
   self.m_pCaster = pCaster
   self.m_nSkillID = nSkillID
   self.m_nPetID = nPetID
@@ -21,10 +14,8 @@ end
 
 _class("AutoFightService", BaseService)
 AutoFightService = AutoFightService
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-AutoFightService.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function AutoFightService:Constructor()
   self._scopeFilterDevice = SkillScopeFilterDevice:New()
   self._lastConvertColor = 0
   self._randPieceColor = false
@@ -38,59 +29,38 @@ AutoFightService.Constructor = function(self)
   self:RegistPickUpPolicyCalculator()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.Initialize = function(self)
-  -- function num : 0_2
-  self._boardServiceLogic = (self._world):GetService("BoardLogic")
-  self._boardServiceRender = (self._world):GetService("BoardRender")
-  self._configService = (self._world):GetService("Config")
-  self._battleService = (self._world):GetService("Battle")
-  self._utilSvc = (self._world):GetService("UtilData")
-  self._utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+function AutoFightService:Initialize()
+  self._boardServiceLogic = self._world:GetService("BoardLogic")
+  self._boardServiceRender = self._world:GetService("BoardRender")
+  self._configService = self._world:GetService("Config")
+  self._battleService = self._world:GetService("Battle")
+  self._utilSvc = self._world:GetService("UtilData")
+  self._utilScopeSvc = self._world:GetService("UtilScopeCalc")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.EnableAutoMove = function(self, enabled)
-  -- function num : 0_3
+function AutoFightService:EnableAutoMove(enabled)
   self._autoMoving = not enabled
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.IsRunning = function(self)
-  -- function num : 0_4
+function AutoFightService:IsRunning()
   return self._autoMoving
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.SetCastPetTrapSkillPetEntity = function(self, entity)
-  -- function num : 0_5
+function AutoFightService:SetCastPetTrapSkillPetEntity(entity)
   self._castPetTrapSkillPetEntity = entity
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.GetCastActiveSkillCount = function(self)
-  -- function num : 0_6
+function AutoFightService:GetCastActiveSkillCount()
   return self._castActiveSkillCount
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.SetCastActiveSkillCount = function(self, count)
-  -- function num : 0_7
+function AutoFightService:SetCastActiveSkillCount(count)
   self._castActiveSkillCount = count
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.AutoFight = function(self, TT, teamEntity)
-  -- function num : 0_8 , upvalues : _ENV
+function AutoFightService:AutoFight(TT, teamEntity)
   if self._autoMoving then
-    return 
+    return
   end
   self:OnAutoFight_Begin(teamEntity)
   if DEBUG_AUTO_FIGHT then
@@ -101,558 +71,471 @@ AutoFightService.AutoFight = function(self, TT, teamEntity)
   self:OnAutoFight_End(teamEntity)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._DoAutoFight = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
+function AutoFightService:_DoAutoFight(TT)
   local battleService = self._battleService
   if self:Handle_PickUpChainSkillTarget(TT) then
-    return 
+    return
   end
-  local allMonsterDead = battleService:CheckAllMonstersDead((self._env).TeamEntity)
+  local allMonsterDead = battleService:CheckAllMonstersDead(self._env.TeamEntity)
   if allMonsterDead then
     self:Handle_MovePath(TT)
-    return 
+    return
   end
   if self:Handle_NotifyClientUnscaledCountDown(TT) then
-    return 
+    return
   end
   if self:Handle_CastTrapSkill(TT) then
-    return 
+    return
   end
   if self._castPetTrapSkillPetEntity then
-    local teamEntity = (self._env).TeamEntity
-    if not (table.icontains)((teamEntity:Team()):GetTeamPetEntities(), self._castPetTrapSkillPetEntity) then
+    local teamEntity = self._env.TeamEntity
+    if not table.icontains(teamEntity:Team():GetTeamPetEntities(), self._castPetTrapSkillPetEntity) then
       self._castPetTrapSkillPetEntity = nil
     end
     if self:Handle_CastPetTrapSkill(TT, self._castPetTrapSkillPetEntity) then
       self._castPetTrapSkillPetEntity = nil
-      return 
+      return
     else
       self._castPetTrapSkillPetEntity = nil
     end
-  else
-    do
-      if self:Handle_CastActiveSkill(TT) then
-        return 
-      end
-      self:ClearPetActiveSkillTempData()
-      if self:Handle_CastPetTrapSkill(TT) then
-        return 
-      end
-      self:Handle_MovePath(TT)
-    end
+  elseif self:Handle_CastActiveSkill(TT) then
+    return
   end
+  self:ClearPetActiveSkillTempData()
+  if self:Handle_CastPetTrapSkill(TT) then
+    return
+  end
+  self:Handle_MovePath(TT)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.OnAutoFight_Begin = function(self, teamEntity)
-  -- function num : 0_10 , upvalues : _ENV
+function AutoFightService:OnAutoFight_Begin(teamEntity)
   self._autoMoving = true
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.BanAutoFightBtn, true)
+  self._world:EventDispatcher():Dispatch(GameEventType.BanAutoFightBtn, true)
   self:_BuildMoveEnv(teamEntity)
-  if (self._world):MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
+  if self._world:MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
     self:_BuildPopStarProPickUpEnv(teamEntity)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.OnAutoFight_End = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function AutoFightService:OnAutoFight_End()
   self._env = nil
   self._envPickUp = nil
   self._autoMoving = false
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.BanAutoFightBtn, false)
+  self._world:EventDispatcher():Dispatch(GameEventType.BanAutoFightBtn, false)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.Handle_MovePath = function(self, TT)
-  -- function num : 0_12
+function AutoFightService:Handle_MovePath(TT)
   return self:_AutoMovePath(TT)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.Handle_PickUpChainSkillTarget = function(self, TT)
-  -- function num : 0_13 , upvalues : _ENV
+function AutoFightService:Handle_PickUpChainSkillTarget(TT)
   if GameStateID.PickUpChainSkillTarget == self:_GetFsmStateID() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIChainSkillPreview", input = "btnCancelOnClick", 
-args = {nil}
-})
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+      ui = "UIChainSkillPreview",
+      input = "btnCancelOnClick",
+      args = {nil}
+    })
     YIELD(TT, 1000)
     return true
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.Handle_CastTrapSkill = function(self, TT)
-  -- function num : 0_14
+function AutoFightService:Handle_CastTrapSkill(TT)
   local pSkillData = self:_FindTrapSkill()
-  if pSkillData == nil then
-    return 
+  if nil == pSkillData then
+    return
   end
   return self:_CastTrapSkill(TT, pSkillData.m_pCaster, pSkillData.m_nSkillID, pSkillData.m_listPickUpPos)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.Handle_CastPetTrapSkill = function(self, TT, petEntity)
-  -- function num : 0_15
+function AutoFightService:Handle_CastPetTrapSkill(TT, petEntity)
   local pSkillData = self:_FindPetTrapSkill(petEntity)
-  if pSkillData == nil then
-    return 
+  if nil == pSkillData then
+    return
   end
   return self:_CastTrapSkill(TT, pSkillData.m_pCaster, pSkillData.m_nSkillID, pSkillData.m_listPickUpPos)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.Handle_CastActiveSkill = function(self, TT)
-  -- function num : 0_16 , upvalues : _ENV
+function AutoFightService:Handle_CastActiveSkill(TT)
   if self:MissionCanCast() == false then
-    return 
+    return
   end
-  local t1 = (os.clock)()
+  local t1 = os.clock()
   local pSkillData = self:_FindActiveSkill(TT)
-  if pSkillData == nil then
-    return 
+  if nil == pSkillData then
+    return
   end
-  local t2 = (os.clock)()
-  ;
-  (Log.debug)("[AutoFight]FindActiveSkill() use time=", (t2 - t1) * 1000)
+  local t2 = os.clock()
+  Log.debug("[AutoFight]FindActiveSkill() use time=", (t2 - t1) * 1000)
   if self:_IsFeatureSkill(pSkillData.m_nSkillID) then
     self:_CastFeatureSkill(TT, pSkillData)
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._lastCastSkillPetIds)[pSkillData.m_nPetID] = true
+    self._lastCastSkillPetIds[pSkillData.m_nPetID] = true
   else
     self:_CastActiveSkill(TT, pSkillData.m_pCaster, pSkillData.m_nSkillID, pSkillData.m_nPetID, pSkillData.m_listPickUpPos, pSkillData.m_listSelectTeamPos, pSkillData.m_pickExtraParam)
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._lastCastSkillPetIds)[pSkillData.m_nPetID] = true
+    self._lastCastSkillPetIds[pSkillData.m_nPetID] = true
   end
   return pSkillData
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._IsFeatureSkill = function(self, skillID)
-  -- function num : 0_17 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function AutoFightService:_IsFeatureSkill(skillID)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID)
-  do
-    if skillConfigData then
-      local skillType = skillConfigData:GetSkillType()
-      if skillType == SkillType.FeatureSkill then
-        return true
-      end
+  if skillConfigData then
+    local skillType = skillConfigData:GetSkillType()
+    if skillType == SkillType.FeatureSkill then
+      return true
     end
     if skillConfigData:GetAutoFightPickPosPolicy() == PickPosPolicy.PetBatiya then
-      return false
     end
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._IsPersonaSkill = function(self, skillID)
-  -- function num : 0_18 , upvalues : _ENV
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
-  do
-    if lsvcFeature:HasFeatureType(FeatureType.PersonaSkill) then
-      local personSkillID = lsvcFeature:GetFeatureSkillID(FeatureType.PersonaSkill)
-      if personSkillID == skillID then
-        return true
-      end
+function AutoFightService:_IsPersonaSkill(skillID)
+  local lsvcFeature = self._world:GetService("FeatureLogic")
+  if lsvcFeature:HasFeatureType(FeatureType.PersonaSkill) then
+    local personSkillID = lsvcFeature:GetFeatureSkillID(FeatureType.PersonaSkill)
+    if personSkillID == skillID then
+      return true
     end
-    return false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.MissionCanCast = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local matchModule = (GameGlobal.GetModule)(MatchModule)
+function AutoFightService:MissionCanCast()
+  local matchModule = GameGlobal.GetModule(MatchModule)
   local enterData = matchModule:GetMatchEnterData()
   if enterData:GetMatchType() == MatchType.MT_Mission then
-    local currentMissionId = (enterData:GetMissionCreateInfo()).mission_id
-    local current_mission_cfg = (Cfg.cfg_mission)[currentMissionId]
+    local currentMissionId = enterData:GetMissionCreateInfo().mission_id
+    local current_mission_cfg = Cfg.cfg_mission[currentMissionId]
     if current_mission_cfg == nil then
       return true
     end
     local missionCanCast = current_mission_cfg.CastSkillLimit
     return missionCanCast
   end
-  do
-    return true
+  return true
+end
+
+function AutoFightService:_TryInsertSkillToSortList(sorted_skills, e, petId, skillId, configService, battleStatCmpt)
+  if self._usePickCheck and self._world:GetGameTurn() == GameTurnType.LocalPlayerTurn then
+    local curRound = battleStatCmpt:GetLevelTotalRoundCount()
+    if self:_CheckLocalCastActiveSkillErrorCurRound(curRound, skillId) then
+      return
+    end
+  end
+  local isBuffSetCanNotReady = self._utilSvc:IsBuffSetExtraActiveSkillCanNotReady(petId, skillId)
+  if isBuffSetCanNotReady then
+    return
+  end
+  local skillConfigData = configService:GetSkillConfigData(skillId)
+  local powerEligibility = false
+  if skillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
+    local legendPower = e:Attributes():GetAttribute("LegendPower")
+    local defaultCost = skillConfigData:GetSkillTriggerParam()
+    local minCost = self._utilSvc:CalcMinCostLegendPowerByExtraParam(e, defaultCost, skillConfigData, 0, true)
+    powerEligibility = legendPower >= minCost
+  elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.BuffLayer then
+    local extraParam = skillConfigData:GetSkillTriggerExtraParam()
+    local buffEffectType = extraParam.buffEffectType
+    local blsvc = self._world:GetService("BuffLogic")
+    local currentVal = blsvc:GetBuffLayer(e, buffEffectType)
+    local requiredVal = skillConfigData:GetSkillTriggerParam()
+    powerEligibility = currentVal >= requiredVal
+  elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.AlchemyEnergy then
+    local petEntity = self._utilSvc:GetEntityByPstID(petId)
+    local alchemyPower = e:Attributes():GetAttribute("AlchemyPower")
+    local utilCalcSvc = self._world:GetService("UtilCalc")
+    local defaultCost = skillConfigData:GetSkillTriggerParam()
+    powerEligibility = alchemyPower >= defaultCost and not utilCalcSvc:IsPetCurRoundCastActiveSkill(petEntity)
+  elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.ColorPalette then
+    local colorPalette = e:ColorPalette()
+    if colorPalette then
+      powerEligibility = colorPalette:IsSatisfy()
+    end
+  else
+    local power = self._utilSvc:GetPetPowerAttr(e, skillId)
+    powerEligibility = power == 0
+  end
+  local disWhenIsTeamLeader = false
+  if self._utilSvc:IsSkillDisabledWhenCasterIsTeamLeader(petId, skillId) and self._utilSvc:IsPetCurrentTeamLeader(petId) then
+    disWhenIsTeamLeader = true
+  end
+  local ready = self._utilSvc:GetPetSkillReadyAttr(e, skillId)
+  local canOverdraw = e:HasBuffFlag(BuffFlags.CanOverdraw)
+  if canOverdraw then
+    ready = 1
+    powerEligibility = true
+  end
+  if not e:HasPetDeadMark() and powerEligibility and ready == 1 and not disWhenIsTeamLeader then
+    table.insert(sorted_skills, {
+      e,
+      skillId,
+      petId
+    })
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._TryInsertSkillToSortList = function(self, sorted_skills, e, petId, skillId, configService, battleStatCmpt)
-  -- function num : 0_20 , upvalues : _ENV
-  do
-    if self._usePickCheck and (self._world):GetGameTurn() == GameTurnType.LocalPlayerTurn then
-      local curRound = battleStatCmpt:GetLevelTotalRoundCount()
-      if self:_CheckLocalCastActiveSkillErrorCurRound(curRound, skillId) then
-        return 
-      end
-    end
-    local isBuffSetCanNotReady = (self._utilSvc):IsBuffSetExtraActiveSkillCanNotReady(petId, skillId)
-    if isBuffSetCanNotReady then
-      return 
-    end
-    local skillConfigData = configService:GetSkillConfigData(skillId)
-    local powerEligibility = false
-    if skillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
-      local legendPower = (e:Attributes()):GetAttribute("LegendPower")
-      local defaultCost = skillConfigData:GetSkillTriggerParam()
-      local minCost = (self._utilSvc):CalcMinCostLegendPowerByExtraParam(e, defaultCost, skillConfigData, 0, true)
-      powerEligibility = minCost <= legendPower
-    elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.BuffLayer then
-      local extraParam = skillConfigData:GetSkillTriggerExtraParam()
-      local buffEffectType = extraParam.buffEffectType
-      local blsvc = (self._world):GetService("BuffLogic")
-      local currentVal = blsvc:GetBuffLayer(e, buffEffectType)
-      local requiredVal = skillConfigData:GetSkillTriggerParam()
-      powerEligibility = requiredVal <= currentVal
-    elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.AlchemyEnergy then
-      local petEntity = (self._utilSvc):GetEntityByPstID(petId)
-      local alchemyPower = (e:Attributes()):GetAttribute("AlchemyPower")
-      local utilCalcSvc = (self._world):GetService("UtilCalc")
-      local defaultCost = skillConfigData:GetSkillTriggerParam()
-      if defaultCost <= alchemyPower then
-        powerEligibility = not utilCalcSvc:IsPetCurRoundCastActiveSkill(petEntity)
-      else
-        powerEligibility = false
-      end
-    elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.ColorPalette then
-      local colorPalette = e:ColorPalette()
-      if colorPalette then
-        powerEligibility = colorPalette:IsSatisfy()
-      end
-    else
-      local power = (self._utilSvc):GetPetPowerAttr(e, skillId)
-      powerEligibility = power == 0
-    end
-    local disWhenIsTeamLeader = false
-    if (self._utilSvc):IsSkillDisabledWhenCasterIsTeamLeader(petId, skillId) and (self._utilSvc):IsPetCurrentTeamLeader(petId) then
-      disWhenIsTeamLeader = true
-    end
-    local ready = (self._utilSvc):GetPetSkillReadyAttr(e, skillId)
-    local canOverdraw = e:HasBuffFlag(BuffFlags.CanOverdraw)
-    if canOverdraw then
-      ready = 1
-      powerEligibility = true
-    end
-    if not e:HasPetDeadMark() and powerEligibility and ready == 1 and not disWhenIsTeamLeader then
-      (table.insert)(sorted_skills, {e, skillId, petId})
-    end
-    -- DECOMPILER ERROR: 12 unprocessed JMP targets
-  end
-end
-
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._FindActiveSkill = function(self, TT)
-  -- function num : 0_21 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function AutoFightService:_FindActiveSkill(TT)
+  local configService = self._world:GetService("Config")
   local env = self._env
   local teamEntity = env.TeamEntity
   local pickUpType = SkillPickUpType.None
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local curRound = battleStatCmpt:GetLevelTotalRoundCount()
   local sorted_skills = {}
-  for i,e in ipairs((teamEntity:Team()):GetTeamPetEntities()) do
-    local matchPet = (e:MatchPet()):GetMatchPet()
-    if not matchPet:GetFeatureList() then
-      local featureList = {
-feature = {}
-}
-    end
-    if (featureList.feature)[FeatureType.Scan] then
-      local featureLogicComponent = ((self._world):GetBoardEntity()):LogicFeature()
+  for i, e in ipairs(teamEntity:Team():GetTeamPetEntities()) do
+    local matchPet = e:MatchPet():GetMatchPet()
+    local featureList = matchPet:GetFeatureList() or {
+      feature = {}
+    }
+    if featureList.feature[FeatureType.Scan] then
+      local featureLogicComponent = self._world:GetBoardEntity():LogicFeature()
       local scanActiveSkillType = featureLogicComponent:GetScanActiveSkillType()
       if scanActiveSkillType ~= ScanFeatureActiveSkillType.SummonTrap then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ScanFeatureSaveInfo, {skillType = ScanFeatureActiveSkillType.SummonTrap})
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.ScanFeatureSaveInfo, {
+          skillType = ScanFeatureActiveSkillType.SummonTrap
+        })
       end
       YIELD(TT, 200)
     end
-    do
-      local petId = (e:PetPstID()):GetPstID()
-      local isSilence = (self._utilSvc):IsSilenceState(petId)
-      if not isSilence and not e:HasBuffFlag(BuffFlags.SealedCurse) then
-        local petCanActiveAttack = (self._utilSvc):OnCheckPetCanCastActiveSkill(e:GetID())
-        if petCanActiveAttack ~= false then
-          local isBuffSetCanNotReady = (self._utilSvc):IsBuffSetActiveSkillCanNotReady(petId)
-          if not isBuffSetCanNotReady then
-            local skillId = (e:SkillInfo()):GetActiveSkillID()
-            do
-              if not skillId then
-                local petData = (self._world):GetPetData(petId)
-                skillId = petData:GetPetActiveSkill()
-              end
-              self:_TryInsertSkillToSortList(sorted_skills, e, petId, skillId, configService, battleStatCmpt)
-              local extraSkillList = (e:SkillInfo()):GetExtraActiveSkillIDList()
-              if extraSkillList and #extraSkillList > 0 then
-                for index,extraSkillId in ipairs(extraSkillList) do
-                  self:_TryInsertSkillToSortList(sorted_skills, e, petId, extraSkillId, configService, battleStatCmpt)
-                end
-              end
-              do
-                -- DECOMPILER ERROR at PC137: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC137: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC137: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC137: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC137: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC137: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC137: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC137: LeaveBlock: unexpected jumping out DO_STMT
-
-              end
+    local petId = e:PetPstID():GetPstID()
+    local isSilence = self._utilSvc:IsSilenceState(petId)
+    if not isSilence and not e:HasBuffFlag(BuffFlags.SealedCurse) then
+      local petCanActiveAttack = self._utilSvc:OnCheckPetCanCastActiveSkill(e:GetID())
+      if petCanActiveAttack ~= false then
+        local isBuffSetCanNotReady = self._utilSvc:IsBuffSetActiveSkillCanNotReady(petId)
+        if not isBuffSetCanNotReady then
+          local skillId = e:SkillInfo():GetActiveSkillID()
+          if not skillId then
+            local petData = self._world:GetPetData(petId)
+            skillId = petData:GetPetActiveSkill()
+          end
+          self:_TryInsertSkillToSortList(sorted_skills, e, petId, skillId, configService, battleStatCmpt)
+          local extraSkillList = e:SkillInfo():GetExtraActiveSkillIDList()
+          if extraSkillList and 0 < #extraSkillList then
+            for index, extraSkillId in ipairs(extraSkillList) do
+              self:_TryInsertSkillToSortList(sorted_skills, e, petId, extraSkillId, configService, battleStatCmpt)
             end
           end
         end
       end
     end
   end
-  if (self._world):GetGameTurn() == GameTurnType.LocalPlayerTurn then
-    local lsvcFeature = (self._world):GetService("FeatureLogic")
+  if self._world:GetGameTurn() == GameTurnType.LocalPlayerTurn then
+    local lsvcFeature = self._world:GetService("FeatureLogic")
     if lsvcFeature:HasFeatureType(FeatureType.PersonaSkill) then
       local curPower, ready = lsvcFeature:GetFeatureSkillCurPower(FeatureType.PersonaSkill)
       if ready and ready == 1 and curPower == 0 then
         local skillId = lsvcFeature:GetFeatureSkillID(FeatureType.PersonaSkill)
-        ;
-        (table.insert)(sorted_skills, {nil, skillId, 0, FeatureType.PersonaSkill})
+        table.insert(sorted_skills, {
+          nil,
+          skillId,
+          0,
+          FeatureType.PersonaSkill
+        })
       end
     end
-    do
-      if lsvcFeature:HasFeatureType(FeatureType.MasterSkillRecover) then
-        local curPower, ready = lsvcFeature:GetFeatureSkillCurPower(FeatureType.MasterSkillRecover)
-        if ready and ready == 1 and curPower == 0 then
-          local skillId = lsvcFeature:GetFeatureSkillID(FeatureType.MasterSkillRecover)
-          ;
-          (table.insert)(sorted_skills, {nil, skillId, 0, FeatureType.MasterSkillRecover})
-        end
+    if lsvcFeature:HasFeatureType(FeatureType.MasterSkillRecover) then
+      local curPower, ready = lsvcFeature:GetFeatureSkillCurPower(FeatureType.MasterSkillRecover)
+      if ready and ready == 1 and curPower == 0 then
+        local skillId = lsvcFeature:GetFeatureSkillID(FeatureType.MasterSkillRecover)
+        table.insert(sorted_skills, {
+          nil,
+          skillId,
+          0,
+          FeatureType.MasterSkillRecover
+        })
       end
-      do
-        if lsvcFeature:HasFeatureType(FeatureType.MasterSkill) then
-          local curPower, ready = lsvcFeature:GetFeatureSkillCurPower(FeatureType.MasterSkill)
-          if ready and ready == 1 and curPower == 0 then
-            local skillId = lsvcFeature:GetFeatureSkillID(FeatureType.MasterSkill)
-            ;
-            (table.insert)(sorted_skills, {nil, skillId, 0, FeatureType.MasterSkill})
-          end
-        end
-        do
-          do
-            if lsvcFeature:HasFeatureType(FeatureType.Card) then
-              local skillId = self:_FindFeatureCardSkillID()
-              if skillId then
-                (table.insert)(sorted_skills, {nil, skillId, 0, FeatureType.Card})
-              end
-            end
-            do
-              if lsvcFeature:HasFeatureType(FeatureType.Shop) then
-                local skillId, selectInfo = self:_FindFeatureShopSkillID()
-                if skillId then
-                  (table.insert)(sorted_skills, {nil, skillId, 0, FeatureType.Shop; selectInfo = selectInfo})
-                end
-              end
-              do
-                if lsvcFeature:HasFeatureType(FeatureType.BanPetSkill) then
-                  local skillId = self:_FindFeatureBanPetSkillID()
-                  if skillId then
-                    (table.insert)(sorted_skills, {nil, skillId, 0, FeatureType.BanPetSkill})
-                  end
-                end
-                local svcCfg = self._configService
-                ;
-                (table.sort)(sorted_skills, function(a, b)
-    -- function num : 0_21_0 , upvalues : svcCfg, teamEntity
-    local order1 = (svcCfg:GetSkillConfigData(a[2])):GetAutoFightSkillOrder()
-    local order2 = (svcCfg:GetSkillConfigData(b[2])):GetAutoFightSkillOrder()
+    end
+    if lsvcFeature:HasFeatureType(FeatureType.MasterSkill) then
+      local curPower, ready = lsvcFeature:GetFeatureSkillCurPower(FeatureType.MasterSkill)
+      if ready and ready == 1 and curPower == 0 then
+        local skillId = lsvcFeature:GetFeatureSkillID(FeatureType.MasterSkill)
+        table.insert(sorted_skills, {
+          nil,
+          skillId,
+          0,
+          FeatureType.MasterSkill
+        })
+      end
+    end
+    if lsvcFeature:HasFeatureType(FeatureType.Card) then
+      local skillId = self:_FindFeatureCardSkillID()
+      if skillId then
+        table.insert(sorted_skills, {
+          nil,
+          skillId,
+          0,
+          FeatureType.Card
+        })
+      end
+    end
+    if lsvcFeature:HasFeatureType(FeatureType.Shop) then
+      local skillId, selectInfo = self:_FindFeatureShopSkillID()
+      if skillId then
+        table.insert(sorted_skills, {
+          nil,
+          skillId,
+          0,
+          FeatureType.Shop,
+          selectInfo = selectInfo
+        })
+      end
+    end
+    if lsvcFeature:HasFeatureType(FeatureType.BanPetSkill) then
+      local skillId = self:_FindFeatureBanPetSkillID()
+      if skillId then
+        table.insert(sorted_skills, {
+          nil,
+          skillId,
+          0,
+          FeatureType.BanPetSkill
+        })
+      end
+    end
+  end
+  local svcCfg = self._configService
+  table.sort(sorted_skills, function(a, b)
+    local order1 = svcCfg:GetSkillConfigData(a[2]):GetAutoFightSkillOrder()
+    local order2 = svcCfg:GetSkillConfigData(b[2]):GetAutoFightSkillOrder()
     if order1 == order2 then
       local teamCmpt = teamEntity:Team()
       local teamIdx1 = teamCmpt:GetTeamIndexByPetPstID(a[3]) or 0
       local teamIdx2 = teamCmpt:GetTeamIndexByPetPstID(b[3]) or 0
       return teamIdx1 < teamIdx2
     end
-    do return order1 < order2 end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
-  end
-)
-                local caster = nil
-                local skillID = 0
-                local petID = 0
-                local clientSelectInfo = nil
-                for _,v in ipairs(sorted_skills) do
-                  local e = v[1]
-                  local skillId = v[2]
-                  local petId = v[3]
-                  local selectInfo = v.selectInfo
-                  local skillCfgData = svcCfg:GetSkillConfigData(skillId)
-                  local subSkillList = skillCfgData:GetSubSkillIDList()
-                  if self:_IsFeatureSkill(skillId) and self:_CheckFeatureSkillCondition(TT, e, skillId, env) then
-                    caster = e
-                    skillID = skillId
-                    petID = petId
-                    clientSelectInfo = selectInfo
-                    break
-                  end
-                  if #subSkillList > 0 and self:_CheckSubSkillCondition(TT, e, subSkillList, env) then
-                    caster = e
-                    skillID = env.subSkillID
-                    petID = petId
-                    break
-                  end
-                  if self:_CheckSkillCondition(TT, e, skillId, env) then
-                    caster = e
-                    skillID = skillId
-                    petID = petId
-                    break
-                  end
-                end
-                do
-                  if caster == nil and not self:_IsFeatureSkill(skillID) then
-                    return nil
-                  end
-                  return AutoSkillCastData:New(caster, skillID, petID, env.PickUpGridPos, env.SelectTeamPos, env.PickUpExtraParam, clientSelectInfo)
-                end
-              end
-            end
-          end
-        end
+    return order1 < order2
+  end)
+  local caster
+  local skillID = 0
+  local petID = 0
+  local clientSelectInfo
+  for _, v in ipairs(sorted_skills) do
+    local e = v[1]
+    local skillId = v[2]
+    local petId = v[3]
+    local selectInfo = v.selectInfo
+    local skillCfgData = svcCfg:GetSkillConfigData(skillId)
+    local subSkillList = skillCfgData:GetSubSkillIDList()
+    if self:_IsFeatureSkill(skillId) then
+      if self:_CheckFeatureSkillCondition(TT, e, skillId, env) then
+        caster = e
+        skillID = skillId
+        petID = petId
+        clientSelectInfo = selectInfo
+        break
       end
+    elseif 0 < #subSkillList then
+      if self:_CheckSubSkillCondition(TT, e, subSkillList, env) then
+        caster = e
+        skillID = env.subSkillID
+        petID = petId
+        break
+      end
+    elseif self:_CheckSkillCondition(TT, e, skillId, env) then
+      caster = e
+      skillID = skillId
+      petID = petId
+      break
     end
   end
+  if nil == caster and not self:_IsFeatureSkill(skillID) then
+    return nil
+  end
+  return AutoSkillCastData:New(caster, skillID, petID, env.PickUpGridPos, env.SelectTeamPos, env.PickUpExtraParam, clientSelectInfo)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._GetFsmStateID = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local gameFsmCmpt = (self._world):GameFSM()
+function AutoFightService:_GetFsmStateID()
+  local gameFsmCmpt = self._world:GameFSM()
   if gameFsmCmpt then
     return gameFsmCmpt:CurStateID()
   end
   return GameStateID.Invalid
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._FindTrapSkill = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  ((self._world):GetGroup(((self._world).BW_WEMatchers).Trap))
-  local group = nil
-  local caster = nil
-  for i,e in ipairs(group:GetEntities()) do
-    local power = (e:Attributes()):GetAttribute("TrapPower") or 0
+function AutoFightService:_FindTrapSkill()
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  local caster
+  for i, e in ipairs(group:GetEntities()) do
+    local power = e:Attributes():GetAttribute("TrapPower") or 0
     local trapComponent = e:Trap()
     local canAutoSkill = trapComponent:GetCantAutoSkill() == nil or trapComponent:GetCantAutoSkill() == 0
-    if power > 0 and canAutoSkill then
+    if 0 < power and canAutoSkill then
       caster = e
       break
     end
   end
-  if caster == nil then
-    return 
+  if nil == caster then
+    return
   end
   local skillID = 0
-  if caster and (caster:Trap()):IsAircraftCore() then
+  if caster and caster:Trap():IsAircraftCore() then
     skillID = self:_FindAircraftCoreSkillID(caster)
     if not self:_CanCastTrapSkill(caster, skillID) then
-      return 
+      return
     end
   end
   local env = self._env
-  if caster and (caster:Trap()):IsCastSkillByRound() then
+  if caster and caster:Trap():IsCastSkillByRound() then
     skillID = self:_FindRoundkillID(caster)
     if not self:_CanCastTrapSkill(caster, skillID, env) then
-      return 
+      return
     end
   end
-  local clientSelectInfo = nil
-  do return AutoSkillCastData:New(caster, skillID, nil, env.PickUpGridPos, env.SelectTeamPos, env.PickUpExtraParam, clientSelectInfo) end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  local clientSelectInfo
+  return AutoSkillCastData:New(caster, skillID, nil, env.PickUpGridPos, env.SelectTeamPos, env.PickUpExtraParam, clientSelectInfo)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._FindPetTrapSkill = function(self, petEntity)
-  -- function num : 0_24 , upvalues : _ENV
-  local caster = nil
+function AutoFightService:_FindPetTrapSkill(petEntity)
+  local caster
   local petEntityIDList = {}
   if petEntity then
-    (table.insert)(petEntityIDList, petEntity:GetID())
+    table.insert(petEntityIDList, petEntity:GetID())
   else
-    local pets = (((self._env).TeamEntity):Team()):GetTeamPetEntities()
-    for _,petEntity in ipairs(pets) do
-      (table.insert)(petEntityIDList, petEntity:GetID())
+    local pets = self._env.TeamEntity:Team():GetTeamPetEntities()
+    for _, petEntity in ipairs(pets) do
+      table.insert(petEntityIDList, petEntity:GetID())
     end
   end
-  do
-    local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-    for _,e in ipairs(trapGroup:GetEntities()) do
-      if not e:HasDeadMark() and (e:Trap()):IsPetTrapCastSkill() and e:HasSummoner() then
-        local summonEntityID = (e:Summoner()):GetSummonerEntityID()
-        local summonEntity = e:GetSummonerEntity()
-        if summonEntity and summonEntity:HasSuperEntity() and summonEntity:GetSuperEntity() then
-          summonEntityID = (summonEntity:GetSuperEntity()):GetID()
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  for _, e in ipairs(trapGroup:GetEntities()) do
+    if not e:HasDeadMark() and e:Trap():IsPetTrapCastSkill() and e:HasSummoner() then
+      local summonEntityID = e:Summoner():GetSummonerEntityID()
+      local summonEntity = e:GetSummonerEntity()
+      if summonEntity and summonEntity:HasSuperEntity() and summonEntity:GetSuperEntity() then
+        summonEntityID = summonEntity:GetSuperEntity():GetID()
+      end
+      if table.icontains(petEntityIDList, summonEntityID) then
+        local isCovered = false
+        local trapPos = e:GetGridPosition()
+        if self._utilScopeSvc:IsPosHaveMonsterOrPet(trapPos) then
+          isCovered = true
         end
-        if (table.icontains)(petEntityIDList, summonEntityID) then
-          local isCovered = false
-          local trapPos = e:GetGridPosition()
-          if (self._utilScopeSvc):IsPosHaveMonsterOrPet(trapPos) then
-            isCovered = true
-          end
-          local power = (e:Attributes()):GetAttribute("TrapPower") or 0
-          if power > 0 and not isCovered then
-            caster = e
-            break
-          end
+        local power = e:Attributes():GetAttribute("TrapPower") or 0
+        if 0 < power and not isCovered then
+          caster = e
+          break
         end
       end
     end
-    do
-      if caster == nil then
-        return 
-      end
-      local env = self._env
-      local skillID = 0
-      skillID = self:_FindQingTongTrapSkillID(caster)
-      if not self:_CanCastTrapSkill(caster, skillID, env, petEntityIDList) then
-        return 
-      end
-      local env = self._env
-      local clientSelectInfo = nil
-      return AutoSkillCastData:New(caster, skillID, nil, env.PickUpGridPos, env.SelectTeamPos, env.PickUpExtraParam, clientSelectInfo)
-    end
   end
+  if nil == caster then
+    return
+  end
+  local env = self._env
+  local skillID = 0
+  skillID = self:_FindQingTongTrapSkillID(caster)
+  if not self:_CanCastTrapSkill(caster, skillID, env, petEntityIDList) then
+    return
+  end
+  local env = self._env
+  local clientSelectInfo
+  return AutoSkillCastData:New(caster, skillID, nil, env.PickUpGridPos, env.SelectTeamPos, env.PickUpExtraParam, clientSelectInfo)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._FindAircraftCoreSkillID = function(self, caster)
-  -- function num : 0_25 , upvalues : _ENV
-  if (self._world):LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
+function AutoFightService:_FindAircraftCoreSkillID(caster)
+  if self._world:LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
     return 0
   end
   local skillID = 0
@@ -662,63 +545,53 @@ AutoFightService._FindAircraftCoreSkillID = function(self, caster)
   local healSkillID = activeSkillID[2]
   local shieldSkillID = activeSkillID[3]
   local _, targetIds = self:_CalcSkillScopeResultAndTargets(caster, damageSkillID)
-  if #targetIds > 0 then
-    for i,id in ipairs(targetIds) do
-      local e = (self._world):GetEntityByID(id)
-      local hp = (e:Attributes()):GetCurrentHP()
-      local maxhp = (e:Attributes()):GetAttribute("MaxHP")
+  if 0 < #targetIds then
+    for i, id in ipairs(targetIds) do
+      local e = self._world:GetEntityByID(id)
+      local hp = e:Attributes():GetCurrentHP()
+      local maxhp = e:Attributes():GetAttribute("MaxHP")
       if hp < maxhp * 0.4 then
         skillID = damageSkillID
         return skillID
       end
     end
   end
-  do
-    local com = caster:BuffComponent()
-    if com and not com:HasBuffEffect(BuffEffectType.LayerShield) then
-      skillID = shieldSkillID
-      return skillID
-    end
-    local hp = (caster:Attributes()):GetCurrentHP()
-    local hpMax = (caster:Attributes()):GetAttribute("MaxHP")
-    if hp / hpMax < 0.7 then
-      skillID = healSkillID
-      return skillID
-    end
+  local com = caster:BuffComponent()
+  if com and not com:HasBuffEffect(BuffEffectType.LayerShield) then
+    skillID = shieldSkillID
     return skillID
   end
+  local hp = caster:Attributes():GetCurrentHP()
+  local hpMax = caster:Attributes():GetAttribute("MaxHP")
+  if hp / hpMax < 0.7 then
+    skillID = healSkillID
+    return skillID
+  end
+  return skillID
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._FindRoundkillID = function(self, caster)
-  -- function num : 0_26
+function AutoFightService:_FindRoundkillID(caster)
   local attrCmpt = caster:Attributes()
   local curRound = attrCmpt:GetAttribute("CurrentRound")
   local trapCmpt = caster:Trap()
   local activeSkillID = trapCmpt:GetActiveSkillID()
   local skillID = activeSkillID[curRound]
-  if not skillID then
-    skillID = 0
-  end
+  skillID = skillID or 0
   return skillID
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._FindQingTongTrapSkillID = function(self, caster)
-  -- function num : 0_27 , upvalues : _ENV
+function AutoFightService:_FindQingTongTrapSkillID(caster)
   local skillID = 0
   local trapCmpt = caster:Trap()
   local activeSkillIDs = trapCmpt:GetActiveSkillID()
   local damageSkillID = activeSkillIDs[1] or 0
   local convertSkillID = activeSkillIDs[2] or 0
-  local skillConfigData = (self._configService):GetSkillConfigData(damageSkillID)
+  local skillConfigData = self._configService:GetSkillConfigData(damageSkillID)
   if skillConfigData:GetAutoFightPickPosPolicy() == PickPosPolicy.PetYisitawanTrap then
     return damageSkillID
   end
   local trapPos = caster:GetGridPosition()
-  if PieceType.Blue ~= (self._boardServiceLogic):GetPieceType(trapPos) then
+  if PieceType.Blue ~= self._boardServiceLogic:GetPieceType(trapPos) then
     skillID = convertSkillID
   else
     skillID = damageSkillID
@@ -726,85 +599,75 @@ AutoFightService._FindQingTongTrapSkillID = function(self, caster)
   return skillID
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CanCastTrapSkill = function(self, caster, skillID, env, petEntityIDList)
-  -- function num : 0_28 , upvalues : _ENV
+function AutoFightService:_CanCastTrapSkill(caster, skillID, env, petEntityIDList)
   if skillID <= 0 then
     return false
   end
-  local skillConfigData = (self._configService):GetSkillConfigData(skillID)
-  local power = (caster:Attributes()):GetAttribute("TrapPower") or 0
-  local count = (caster:Attributes()):GetAttribute("SkillCount") or 0
-  if skillConfigData:GetSkillTriggerParam() <= power and count > 0 then
+  local skillConfigData = self._configService:GetSkillConfigData(skillID)
+  local power = caster:Attributes():GetAttribute("TrapPower") or 0
+  local count = caster:Attributes():GetAttribute("SkillCount") or 0
+  if power >= skillConfigData:GetSkillTriggerParam() and 0 < count then
     local oneRoundLimit = 1
-    local castSkillRound = (caster:Attributes()):GetAttribute("CastSkillRound")
-    local battleStatCmpt = (self._world):BattleStat()
+    local castSkillRound = caster:Attributes():GetAttribute("CastSkillRound")
+    local battleStatCmpt = self._world:BattleStat()
     local curRound = battleStatCmpt:GetLevelTotalRoundCount()
-    for _,round in ipairs(castSkillRound) do
+    for _, round in ipairs(castSkillRound) do
       if round == curRound then
         oneRoundLimit = oneRoundLimit - 1
       end
     end
-    if oneRoundLimit > 0 then
+    if 0 < oneRoundLimit then
       local pickUpType = skillConfigData:GetSkillPickType()
-      if pickUpType ~= SkillPickUpType.None or pickUpType == SkillPickUpType.Instruction then
+      if pickUpType == SkillPickUpType.None then
+      elseif pickUpType == SkillPickUpType.Instruction then
         local skillTags = skillConfigData:GetSkillTag()
-        do
-          if (table.icontains)(skillTags, PetSkillTag.FixedPieceColor) then
-            local posList, gridList, tarList, pickUpExtraParam = self:_CalcTrapPickupPosList(caster, skillID)
-            env.PickUpGridPos = posList
-            env.PickUpExtraParam = pickUpExtraParam
-          end
-          do
-            do
-              if skillConfigData:GetAutoFightPickPosPolicy() == PickPosPolicy.PetYisitawanTrap then
-                local posList, gridList, tarList, pickUpExtraParam = self:_CalcTrapPickupPosList_YiSiTaWan(caster, skillID, petEntityIDList)
-                env.PickUpGridPos = posList
-                env.PickUpExtraParam = pickUpExtraParam
-              end
-              do return true end
-              return false
-            end
-          end
+        if table.icontains(skillTags, PetSkillTag.FixedPieceColor) then
+          local posList, gridList, tarList, pickUpExtraParam = self:_CalcTrapPickupPosList(caster, skillID)
+          env.PickUpGridPos = posList
+          env.PickUpExtraParam = pickUpExtraParam
+        end
+        if skillConfigData:GetAutoFightPickPosPolicy() == PickPosPolicy.PetYisitawanTrap then
+          local posList, gridList, tarList, pickUpExtraParam = self:_CalcTrapPickupPosList_YiSiTaWan(caster, skillID, petEntityIDList)
+          env.PickUpGridPos = posList
+          env.PickUpExtraParam = pickUpExtraParam
         end
       end
+      return true
     end
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CastTrapSkill = function(self, TT, caster, skillID, pickUpGridPos)
-  -- function num : 0_29 , upvalues : _ENV
+function AutoFightService:_CastTrapSkill(TT, caster, skillID, pickUpGridPos)
   if skillID <= 0 then
     return false
   end
-  ;
-  (Log.debug)("[AutoFight] CastTrapSkill skillID=", skillID)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UITrapSkillVisible, true, caster:GetID())
+  Log.debug("[AutoFight] CastTrapSkill skillID=", skillID)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UITrapSkillVisible, true, caster:GetID())
   while GameStateID.PreviewActiveSkill ~= self:_GetFsmStateID() do
     YIELD(TT, 100)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetTrapSkill", input = "_OnShowSelectSkill", 
-args = {skillID}
-})
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+    ui = "UIWidgetTrapSkill",
+    input = "_OnShowSelectSkill",
+    args = {skillID}
+  })
   YIELD(TT, 500)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetTrapSkill", input = "btnGoOnClick", 
-args = {}
-})
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+    ui = "UIWidgetTrapSkill",
+    input = "btnGoOnClick",
+    args = {}
+  })
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   local configSvc = self._configService
   local skillConfigData = configSvc:GetSkillConfigData(skillID)
   local pickUpType = skillConfigData:GetSkillPickType()
-  if pickUpType ~= SkillPickUpType.None or pickUpType == SkillPickUpType.Instruction then
+  if pickUpType == SkillPickUpType.None then
+  elseif pickUpType == SkillPickUpType.Instruction then
     if pickUpGridPos then
-      for i,pos in ipairs(pickUpGridPos) do
-        (Log.debug)("pickup pos ", (Vector2.Pos2Index)(pos))
+      for i, pos in ipairs(pickUpGridPos) do
+        Log.debug("pickup pos ", Vector2.Pos2Index(pos))
         pickUpTargetCmpt:SetPickUpTargetType(pickUpType)
         pickUpTargetCmpt:SetPickUpGridPos(pos)
         pickUpTargetCmpt:SetCurActiveSkillInfo(skillID, -1)
@@ -812,370 +675,353 @@ args = {}
         YIELD(TT, 500)
       end
     end
-    do
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetChooseTarget", input = "HandleActiveSkillConfirm", 
-args = {}
-})
-      YIELD(TT, 500)
-      while GameStateID.ActiveSkill ~= self:_GetFsmStateID() do
-        YIELD(TT, 100)
-      end
-      return true
-    end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+      ui = "UIWidgetChooseTarget",
+      input = "HandleActiveSkillConfirm",
+      args = {}
+    })
   end
+  YIELD(TT, 500)
+  while GameStateID.ActiveSkill ~= self:_GetFsmStateID() do
+    YIELD(TT, 100)
+  end
+  return true
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CastActiveSkill = function(self, TT, caster, skillID, petID, pickUpGridPos, selectTeamPos, pickExtraParam)
-  -- function num : 0_30 , upvalues : _ENV
-  (Log.debug)("[AutoFight] CastActiveSkill caster=", caster:GetID(), " skillID=", skillID)
-  if (self._world):GetGameTurn() == GameTurnType.LocalPlayerTurn then
+function AutoFightService:_CastActiveSkill(TT, caster, skillID, petID, pickUpGridPos, selectTeamPos, pickExtraParam)
+  Log.debug("[AutoFight] CastActiveSkill caster=", caster:GetID(), " skillID=", skillID)
+  if self._world:GetGameTurn() == GameTurnType.LocalPlayerTurn then
     self:_LocalPlayerCastActiveSkill(TT, caster, skillID, petID, pickUpGridPos, selectTeamPos)
   else
     self:_RemotePlayerCastActiveSkill(TT, caster, skillID, petID, pickUpGridPos, selectTeamPos, pickExtraParam)
   end
-  while 1 do
-    if GameStateID.ActiveSkill ~= self:_GetFsmStateID() and not self._localLastCastActiveError then
-      if GameStateID.WaitInput == self:_GetFsmStateID() then
-        self._localLastCastActiveError = true
-        local battleStatCmpt = (self._world):BattleStat()
-        local curRound = battleStatCmpt:GetLevelTotalRoundCount()
-        self:_RecordLocalCastActiveSkillError(curRound, skillID)
-        break
-      end
-      do
-        YIELD(TT, 100)
-        -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out DO_STMT
-
-        -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  while GameStateID.ActiveSkill ~= self:_GetFsmStateID() and not self._localLastCastActiveError do
+    if GameStateID.WaitInput == self:_GetFsmStateID() then
+      self._localLastCastActiveError = true
+      local battleStatCmpt = self._world:BattleStat()
+      local curRound = battleStatCmpt:GetLevelTotalRoundCount()
+      self:_RecordLocalCastActiveSkillError(curRound, skillID)
+      break
     end
+    YIELD(TT, 100)
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._LocalPlayerCastActiveSkill = function(self, TT, petEntity, skillID, petID, pickUpGridPos, selectTeamPos)
-  -- function num : 0_31 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.WaitInputFinish, 3)
+function AutoFightService:_LocalPlayerCastActiveSkill(TT, petEntity, skillID, petID, pickUpGridPos, selectTeamPos)
+  self._world:EventDispatcher():Dispatch(GameEventType.WaitInputFinish, 3)
   while GameStateID.PreviewActiveSkill ~= self:_GetFsmStateID() do
     YIELD(TT, 100)
   end
   YIELD(TT, 500)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AutoFightCheckSwitchPetColumn, petID)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AutoFightCheckSwitchPetColumn, petID)
   YIELD(TT, 100)
   local configSvc = self._configService
   local skillConfigData = configSvc:GetSkillConfigData(skillID)
   local pickUpType = skillConfigData:GetSkillPickType()
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   if pickUpType == SkillPickUpType.None then
-    if selectTeamPos and #selectTeamPos > 0 and skillConfigData:GetAutoFightPickPosPolicy() == PickPosPolicy.PetBonai then
-      local eTeam = (petEntity:Pet()):GetOwnerTeamEntity()
-      local petPstID = (petEntity:PetPstID()):GetPstID()
-      local cmd = (CastSelectTeamOrderPositionCommand.GenerateCommand)(eTeam:GetID(), petPstID, selectTeamPos[1])
-      ;
-      ((self._world):Player()):SendCommand(cmd)
+    if selectTeamPos and 0 < #selectTeamPos and skillConfigData:GetAutoFightPickPosPolicy() == PickPosPolicy.PetBonai then
+      local eTeam = petEntity:Pet():GetOwnerTeamEntity()
+      local petPstID = petEntity:PetPstID():GetPstID()
+      local cmd = CastSelectTeamOrderPositionCommand.GenerateCommand(eTeam:GetID(), petPstID, selectTeamPos[1])
+      self._world:Player():SendCommand(cmd)
     end
-    do
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AutoFightCastSkill, skillID, pickUpType, petID)
-      if pickUpType == SkillPickUpType.LinkLine then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetBattlePet", uiid = ((self._world):GetPetData(petID)).uiid, input = "OnUp", 
-args = {}
-})
-        YIELD(TT, 1000)
-        local isMultiSkill, skillIndex = self:_CheckIsMultiActiveSkill(petEntity, skillID)
-        if isMultiSkill then
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetPetMultiActiveSkill", input = "SubSkillOnClick", 
-args = {skillIndex}
-})
-          YIELD(TT, 1000)
-        end
-        local previewEntity = (self._world):GetPreviewEntity()
-        local linkLineSvc = (self._world):GetService("PreviewLinkLine")
-        local showPath = {}
-        for i,pos in ipairs(pickUpGridPos) do
-          if i == 1 then
-            pickUpTargetCmpt:SetPickUpTargetType(pickUpType)
-            pickUpTargetCmpt:SetPickUpGridPos(pos)
-          end
-          ;
-          (table.insert)(showPath, pos)
-          previewEntity:ReplacePreviewLinkLine(showPath, PieceType.Blue, PieceType.None)
-          linkLineSvc:NotifyPickUpTargetChange()
-          YIELD(TT, 100)
-        end
-        local linkageSvc = (self._world):GetService("LinkageRender")
-        linkageSvc:DestroyTouchPosEffect()
-        YIELD(TT, 500)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetChooseTarget", input = "HandleActiveSkillConfirm", 
-args = {}
-})
-      else
-        do
-          if pickUpType == SkillPickUpType.LinkLineSP then
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetBattlePet", uiid = ((self._world):GetPetData(petID)).uiid, input = "OnUp", 
-args = {}
-})
-            YIELD(TT, 1000)
-            local isMultiSkill, skillIndex = self:_CheckIsMultiActiveSkill(petEntity, skillID)
-            if isMultiSkill then
-              ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetPetMultiActiveSkill", input = "SubSkillOnClick", 
-args = {skillIndex}
-})
-              YIELD(TT, 1000)
-            end
-            local previewEntity = (self._world):GetPreviewEntity()
-            local linkLineSvc = (self._world):GetService("PreviewLinkLine")
-            local showPath = {}
-            for i,pos in ipairs(pickUpGridPos) do
-              if i == 1 then
-                pickUpTargetCmpt:SetPickUpTargetType(pickUpType)
-                pickUpTargetCmpt:SetPickUpGridPos(pos)
-              end
-              ;
-              (table.insert)(showPath, pos)
-              previewEntity:ReplacePreviewLinkLine(showPath, PieceType.Blue, PieceType.None)
-              linkLineSvc:NotifyPickUpTargetChange()
-              YIELD(TT, 100)
-            end
-            local linkageSvc = (self._world):GetService("LinkageRender")
-            linkageSvc:DestroyTouchPosEffect()
-            YIELD(TT, 500)
-            ;
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetChooseTarget", input = "HandleActiveSkillConfirm", 
-args = {}
-})
-          else
-            do
-              if pickUpType == SkillPickUpType.Puzzle then
-                ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetBattlePet", uiid = ((self._world):GetPetData(petID)).uiid, input = "OnUp", 
-args = {}
-})
-                YIELD(TT, 1000)
-                local isMultiSkill, skillIndex = self:_CheckIsMultiActiveSkill(petEntity, skillID)
-                if isMultiSkill then
-                  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetPetMultiActiveSkill", input = "SubSkillOnClick", 
-args = {skillIndex}
-})
-                  YIELD(TT, 1000)
-                end
-                for _,pos in ipairs(pickUpGridPos) do
-                  pickUpTargetCmpt:SetPickUpTargetType(pickUpType)
-                  pickUpTargetCmpt:SetPickUpGridPos(pos)
-                  pickUpTargetCmpt:SetCurActiveSkillInfo(skillID, petID)
-                  renderBoardEntity:ReplacePickUpTarget()
-                  YIELD(TT, 500)
-                end
-                YIELD(TT, 500)
-                ;
-                ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetChooseTarget", input = "HandleActiveSkillConfirm", 
-args = {}
-})
-              else
-                do
-                  if pickUpType == SkillPickUpType.PickUpUIAndTrap then
-                    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetBattlePet", uiid = ((self._world):GetPetData(petID)).uiid, input = "OnUp", 
-args = {}
-})
-                    YIELD(TT, 1000)
-                    local isMultiSkill, skillIndex = self:_CheckIsMultiActiveSkill(petEntity, skillID)
-                    if not isMultiSkill then
-                      isMultiSkill = self:_CheckIsVariantActiveSkill(petEntity, skillID)
-                    end
-                    if isMultiSkill then
-                      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetPetMultiActiveSkill", input = "SubSkillOnClick", 
-args = {skillIndex}
-})
-                      YIELD(TT, 1000)
-                      ;
-                      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetPetMultiActiveSkill", input = "BtnGoOnClick", 
-args = {}
-})
-                      YIELD(TT, 1000)
-                    else
-                      ;
-                      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetPetSkill", input = "btnGoOnClick", 
-args = {skillIndex}
-})
-                      YIELD(TT, 1000)
-                    end
-                    local index = selectTeamPos[2]
-                    ;
-                    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetBattlePet", uiid = ((self._world):GetPetData(selectTeamPos[1])).uiid, input = "OnUp", 
-args = {}
-})
-                    YIELD(TT, 1000)
-                    YIELD(TT, 500)
-                    ;
-                    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetChooseTarget", input = "HandleActiveSkillConfirm", 
-args = {}
-})
-                  else
-                    do
-                      -- DECOMPILER ERROR at PC548: Overwrote pending register: R13 in 'AssignReg'
-
-                      if pickUpType == SkillPickUpType.Moye then
-                        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetBattlePet", uiid = ((self._world):GetPetData(petID)).uiid, input = "OnUp", 
-args = {}
-})
-                        YIELD(TT, 1000)
-                        local isMultiSkill, skillIndex = self:_CheckIsMultiActiveSkill(petEntity, skillID)
-                        if isMultiSkill then
-                          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetPetMultiActiveSkill", input = "SubSkillOnClick", 
-args = {skillIndex}
-})
-                          YIELD(TT, 1000)
-                        end
-                        local previewEntity = (self._world):GetPreviewEntity()
-                        local linkLineSvc = (self._world):GetService("PreviewLinkLine")
-                        local showPath = {}
-                        for i,pos in ipairs(pickUpGridPos) do
-                          if i == 1 then
-                            pickUpTargetCmpt:SetPickUpTargetType(pickUpType)
-                            pickUpTargetCmpt:SetPickUpGridPos(pos)
-                            pickUpTargetCmpt:SetCurActiveSkillInfo(skillID, petID)
-                          end
-                          ;
-                          (table.insert)(showPath, pos)
-                          previewEntity:ReplacePreviewLinkLine(showPath, PieceType.Blue, PieceType.None)
-                          linkLineSvc:NotifyPickUpTargetChange()
-                          YIELD(TT, 100)
-                        end
-                        local linkageSvc = (self._world):GetService("LinkageRender")
-                        linkageSvc:DestroyTouchPosEffect()
-                        YIELD(TT, 500)
-                        ;
-                        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetChooseTarget", input = "HandleActiveSkillConfirm", 
-args = {}
-})
-                      else
-                        do
-                          ;
-                          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetBattlePet", uiid = ((self._world):GetPetData(petID)).uiid, input = "OnUp", 
-args = {}
-})
-                          YIELD(TT, 1000)
-                          local isMultiSkill, skillIndex = self:_CheckIsMultiActiveSkill(petEntity, skillID)
-                          if not isMultiSkill then
-                            isMultiSkill = self:_CheckIsVariantActiveSkill(petEntity, skillID)
-                          end
-                          if isMultiSkill then
-                            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetPetMultiActiveSkill", input = "SubSkillOnClick", 
-args = {skillIndex}
-})
-                            YIELD(TT, 1000)
-                          end
-                          local findPickError = false
-                          local tryPickCount = #pickUpGridPos
-                          for i,pos in ipairs(pickUpGridPos) do
-                            (Log.debug)("pickup pos ", (Vector2.Pos2Index)(pos))
-                            pickUpTargetCmpt:SetPickUpTargetType(pickUpType)
-                            pickUpTargetCmpt:SetPickUpGridPos(pos)
-                            pickUpTargetCmpt:SetCurActiveSkillInfo(skillID, petID)
-                            renderBoardEntity:ReplacePickUpTarget()
-                            YIELD(TT, 500)
-                            if self._usePickCheck then
-                              local curPickEnough = self:_CheckLocalCastActiveSkillPickEnough(i, petEntity, pickUpType)
-                              if not curPickEnough then
-                                findPickError = true
-                                break
-                              end
-                            end
-                          end
-                          do
-                            YIELD(TT, 500)
-                            if self._usePickCheck then
-                              local pickEnough = self:_CheckLocalCastActiveSkillPickEnough(tryPickCount, petEntity, pickUpType)
-                              local stateError = false
-                              if GameStateID.WaitInput == self:_GetFsmStateID() then
-                                stateError = true
-                              end
-                              self._localLastCastActiveError = false
-                              if not stateError then
-                                if pickEnough and not findPickError then
-                                  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetChooseTarget", input = "HandleActiveSkillConfirm", 
-args = {}
-})
-                                else
-                                  ;
-                                  (Log.error)("autofight pick error!!!")
-                                  ;
-                                  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetChooseTarget", input = "HandleActiveSkillCancel", 
-args = {}
-})
-                                  self._localLastCastActiveError = true
-                                  local errorStep = ActivePickSkillCheckErrorStep.AutoPickOnPickError
-                                  local errorType = 0
-                                  if findPickError then
-                                    errorType = ActivePickSkillCheckErrorType.AutoPickFail
-                                  else
-                                    if not pickEnough then
-                                      errorType = ActivePickSkillCheckErrorType.AutoPickFail
-                                    end
-                                  end
-                                  self:_OnLocalCastActivePickSkillFail(errorStep, errorType, skillID, petEntity, pickUpGridPos)
-                                end
-                              else
-                                do
-                                  self._localLastCastActiveError = true
-                                  local errorStep = ActivePickSkillCheckErrorStep.AutoPickOnStateError
-                                  do
-                                    local errorType = ActivePickSkillCheckErrorType.AutoPickStateError
-                                    self:_OnLocalCastActivePickSkillFail(errorStep, errorType, skillID, petEntity, pickUpGridPos)
-                                    if self._localLastCastActiveError then
-                                      local battleStatCmpt = (self._world):BattleStat()
-                                      local curRound = battleStatCmpt:GetLevelTotalRoundCount()
-                                      self:_RecordLocalCastActiveSkillError(curRound, skillID)
-                                    end
-                                    do
-                                      ;
-                                      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetChooseTarget", input = "HandleActiveSkillConfirm", 
-args = {}
-})
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AutoFightCastSkill, skillID, pickUpType, petID)
+  elseif pickUpType == SkillPickUpType.LinkLine then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+      ui = "UIWidgetBattlePet",
+      uiid = self._world:GetPetData(petID).uiid,
+      input = "OnUp",
+      args = {}
+    })
+    YIELD(TT, 1000)
+    local isMultiSkill, skillIndex = self:_CheckIsMultiActiveSkill(petEntity, skillID)
+    if isMultiSkill then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+        ui = "UIWidgetPetMultiActiveSkill",
+        input = "SubSkillOnClick",
+        args = {skillIndex}
+      })
+      YIELD(TT, 1000)
+    end
+    local previewEntity = self._world:GetPreviewEntity()
+    local linkLineSvc = self._world:GetService("PreviewLinkLine")
+    local showPath = {}
+    for i, pos in ipairs(pickUpGridPos) do
+      if i == 1 then
+        pickUpTargetCmpt:SetPickUpTargetType(pickUpType)
+        pickUpTargetCmpt:SetPickUpGridPos(pos)
+      end
+      table.insert(showPath, pos)
+      previewEntity:ReplacePreviewLinkLine(showPath, PieceType.Blue, PieceType.None)
+      linkLineSvc:NotifyPickUpTargetChange()
+      YIELD(TT, 100)
+    end
+    local linkageSvc = self._world:GetService("LinkageRender")
+    linkageSvc:DestroyTouchPosEffect()
+    YIELD(TT, 500)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+      ui = "UIWidgetChooseTarget",
+      input = "HandleActiveSkillConfirm",
+      args = {}
+    })
+  elseif pickUpType == SkillPickUpType.LinkLineSP then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+      ui = "UIWidgetBattlePet",
+      uiid = self._world:GetPetData(petID).uiid,
+      input = "OnUp",
+      args = {}
+    })
+    YIELD(TT, 1000)
+    local isMultiSkill, skillIndex = self:_CheckIsMultiActiveSkill(petEntity, skillID)
+    if isMultiSkill then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+        ui = "UIWidgetPetMultiActiveSkill",
+        input = "SubSkillOnClick",
+        args = {skillIndex}
+      })
+      YIELD(TT, 1000)
+    end
+    local previewEntity = self._world:GetPreviewEntity()
+    local linkLineSvc = self._world:GetService("PreviewLinkLine")
+    local showPath = {}
+    for i, pos in ipairs(pickUpGridPos) do
+      if i == 1 then
+        pickUpTargetCmpt:SetPickUpTargetType(pickUpType)
+        pickUpTargetCmpt:SetPickUpGridPos(pos)
+      end
+      table.insert(showPath, pos)
+      previewEntity:ReplacePreviewLinkLine(showPath, PieceType.Blue, PieceType.None)
+      linkLineSvc:NotifyPickUpTargetChange()
+      YIELD(TT, 100)
+    end
+    local linkageSvc = self._world:GetService("LinkageRender")
+    linkageSvc:DestroyTouchPosEffect()
+    YIELD(TT, 500)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+      ui = "UIWidgetChooseTarget",
+      input = "HandleActiveSkillConfirm",
+      args = {}
+    })
+  elseif pickUpType == SkillPickUpType.Puzzle then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+      ui = "UIWidgetBattlePet",
+      uiid = self._world:GetPetData(petID).uiid,
+      input = "OnUp",
+      args = {}
+    })
+    YIELD(TT, 1000)
+    local isMultiSkill, skillIndex = self:_CheckIsMultiActiveSkill(petEntity, skillID)
+    if isMultiSkill then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+        ui = "UIWidgetPetMultiActiveSkill",
+        input = "SubSkillOnClick",
+        args = {skillIndex}
+      })
+      YIELD(TT, 1000)
+    end
+    for _, pos in ipairs(pickUpGridPos) do
+      pickUpTargetCmpt:SetPickUpTargetType(pickUpType)
+      pickUpTargetCmpt:SetPickUpGridPos(pos)
+      pickUpTargetCmpt:SetCurActiveSkillInfo(skillID, petID)
+      renderBoardEntity:ReplacePickUpTarget()
+      YIELD(TT, 500)
+    end
+    YIELD(TT, 500)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+      ui = "UIWidgetChooseTarget",
+      input = "HandleActiveSkillConfirm",
+      args = {}
+    })
+  elseif pickUpType == SkillPickUpType.PickUpUIAndTrap then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+      ui = "UIWidgetBattlePet",
+      uiid = self._world:GetPetData(petID).uiid,
+      input = "OnUp",
+      args = {}
+    })
+    YIELD(TT, 1000)
+    local isMultiSkill, skillIndex = self:_CheckIsMultiActiveSkill(petEntity, skillID)
+    if not isMultiSkill then
+      isMultiSkill, skillIndex = self:_CheckIsVariantActiveSkill(petEntity, skillID)
+    end
+    if isMultiSkill then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+        ui = "UIWidgetPetMultiActiveSkill",
+        input = "SubSkillOnClick",
+        args = {skillIndex}
+      })
+      YIELD(TT, 1000)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+        ui = "UIWidgetPetMultiActiveSkill",
+        input = "BtnGoOnClick",
+        args = {}
+      })
+      YIELD(TT, 1000)
+    else
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+        ui = "UIWidgetPetSkill",
+        input = "btnGoOnClick",
+        args = {skillIndex}
+      })
+      YIELD(TT, 1000)
+    end
+    local index = selectTeamPos[2]
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+      ui = "UIWidgetBattlePet",
+      uiid = self._world:GetPetData(selectTeamPos[1]).uiid,
+      input = "OnUp",
+      args = {}
+    })
+    YIELD(TT, 1000)
+    YIELD(TT, 500)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+      ui = "UIWidgetChooseTarget",
+      input = "HandleActiveSkillConfirm",
+      args = {}
+    })
+  elseif pickUpType == SkillPickUpType.Moye then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+      ui = "UIWidgetBattlePet",
+      uiid = self._world:GetPetData(petID).uiid,
+      input = "OnUp",
+      args = {}
+    })
+    YIELD(TT, 1000)
+    local isMultiSkill, skillIndex = self:_CheckIsMultiActiveSkill(petEntity, skillID)
+    if isMultiSkill then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+        ui = "UIWidgetPetMultiActiveSkill",
+        input = "SubSkillOnClick",
+        args = {skillIndex}
+      })
+      YIELD(TT, 1000)
+    end
+    local previewEntity = self._world:GetPreviewEntity()
+    local linkLineSvc = self._world:GetService("PreviewLinkLine")
+    local showPath = {}
+    for i, pos in ipairs(pickUpGridPos) do
+      if i == 1 then
+        pickUpTargetCmpt:SetPickUpTargetType(pickUpType)
+        pickUpTargetCmpt:SetPickUpGridPos(pos)
+        pickUpTargetCmpt:SetCurActiveSkillInfo(skillID, petID)
+      end
+      table.insert(showPath, pos)
+      previewEntity:ReplacePreviewLinkLine(showPath, PieceType.Blue, PieceType.None)
+      linkLineSvc:NotifyPickUpTargetChange()
+      YIELD(TT, 100)
+    end
+    local linkageSvc = self._world:GetService("LinkageRender")
+    linkageSvc:DestroyTouchPosEffect()
+    YIELD(TT, 500)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+      ui = "UIWidgetChooseTarget",
+      input = "HandleActiveSkillConfirm",
+      args = {}
+    })
+  else
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+      ui = "UIWidgetBattlePet",
+      uiid = self._world:GetPetData(petID).uiid,
+      input = "OnUp",
+      args = {}
+    })
+    YIELD(TT, 1000)
+    local isMultiSkill, skillIndex = self:_CheckIsMultiActiveSkill(petEntity, skillID)
+    if not isMultiSkill then
+      isMultiSkill, skillIndex = self:_CheckIsVariantActiveSkill(petEntity, skillID)
+    end
+    if isMultiSkill then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+        ui = "UIWidgetPetMultiActiveSkill",
+        input = "SubSkillOnClick",
+        args = {skillIndex}
+      })
+      YIELD(TT, 1000)
+    end
+    local findPickError = false
+    local tryPickCount = #pickUpGridPos
+    for i, pos in ipairs(pickUpGridPos) do
+      Log.debug("pickup pos ", Vector2.Pos2Index(pos))
+      pickUpTargetCmpt:SetPickUpTargetType(pickUpType)
+      pickUpTargetCmpt:SetPickUpGridPos(pos)
+      pickUpTargetCmpt:SetCurActiveSkillInfo(skillID, petID)
+      renderBoardEntity:ReplacePickUpTarget()
+      YIELD(TT, 500)
+      if self._usePickCheck then
+        local curPickEnough = self:_CheckLocalCastActiveSkillPickEnough(i, petEntity, pickUpType)
+        if not curPickEnough then
+          findPickError = true
+          break
         end
       end
+    end
+    YIELD(TT, 500)
+    if self._usePickCheck then
+      local pickEnough = self:_CheckLocalCastActiveSkillPickEnough(tryPickCount, petEntity, pickUpType)
+      local stateError = false
+      if GameStateID.WaitInput == self:_GetFsmStateID() then
+        stateError = true
+      end
+      self._localLastCastActiveError = false
+      if not stateError then
+        if pickEnough and not findPickError then
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+            ui = "UIWidgetChooseTarget",
+            input = "HandleActiveSkillConfirm",
+            args = {}
+          })
+        else
+          Log.error("autofight pick error!!!")
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+            ui = "UIWidgetChooseTarget",
+            input = "HandleActiveSkillCancel",
+            args = {}
+          })
+          self._localLastCastActiveError = true
+          local errorStep = ActivePickSkillCheckErrorStep.AutoPickOnPickError
+          local errorType = 0
+          if findPickError then
+            errorType = ActivePickSkillCheckErrorType.AutoPickFail
+          elseif not pickEnough then
+            errorType = ActivePickSkillCheckErrorType.AutoPickFail
+          end
+          self:_OnLocalCastActivePickSkillFail(errorStep, errorType, skillID, petEntity, pickUpGridPos)
+        end
+      else
+        self._localLastCastActiveError = true
+        local errorStep = ActivePickSkillCheckErrorStep.AutoPickOnStateError
+        local errorType = ActivePickSkillCheckErrorType.AutoPickStateError
+        self:_OnLocalCastActivePickSkillFail(errorStep, errorType, skillID, petEntity, pickUpGridPos)
+      end
+      if self._localLastCastActiveError then
+        local battleStatCmpt = self._world:BattleStat()
+        local curRound = battleStatCmpt:GetLevelTotalRoundCount()
+        self:_RecordLocalCastActiveSkillError(curRound, skillID)
+      end
+    else
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+        ui = "UIWidgetChooseTarget",
+        input = "HandleActiveSkillConfirm",
+        args = {}
+      })
     end
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CheckIsMultiActiveSkill = function(self, petEntity, skillId)
-  -- function num : 0_32 , upvalues : _ENV
+function AutoFightService:_CheckIsMultiActiveSkill(petEntity, skillId)
   local isMultiSkill = false
   local skillIndex = 1
   local skillInfoCmpt = petEntity:SkillInfo()
   local activeSkillID = skillInfoCmpt:GetActiveSkillID()
   local extraSkillList = skillInfoCmpt:GetExtraActiveSkillIDList()
-  if extraSkillList and #extraSkillList > 0 then
+  if extraSkillList and 0 < #extraSkillList then
     isMultiSkill = true
     if skillId == activeSkillID then
       skillIndex = 1
     else
-      for index,extraSkillId in ipairs(extraSkillList) do
+      for index, extraSkillId in ipairs(extraSkillList) do
         if skillId == extraSkillId then
           skillIndex = index + 1
           break
@@ -1183,15 +1029,10 @@ AutoFightService._CheckIsMultiActiveSkill = function(self, petEntity, skillId)
       end
     end
   end
-  do
-    return isMultiSkill, skillIndex
-  end
+  return isMultiSkill, skillIndex
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CheckIsVariantActiveSkill = function(self, petEntity, skillId)
-  -- function num : 0_33 , upvalues : _ENV
+function AutoFightService:_CheckIsVariantActiveSkill(petEntity, skillId)
   local isMultiSkill = false
   local skillIndex = 1
   local skillInfoCmpt = petEntity:SkillInfo()
@@ -1204,229 +1045,193 @@ AutoFightService._CheckIsVariantActiveSkill = function(self, petEntity, skillId)
     else
       local variantSkillList = variantSkillInfo[activeSkillID]
       if variantSkillList then
-        for index,variantSkillId in ipairs(variantSkillList) do
+        for index, variantSkillId in ipairs(variantSkillList) do
           if skillId == variantSkillId then
             skillIndex = index + 1
             break
           end
         end
+      else
       end
     end
   end
-  do
-    return isMultiSkill, skillIndex
-  end
+  return isMultiSkill, skillIndex
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CheckLocalCastActiveSkillPickEnough = function(self, tryPickCount, petEntity, pickUpType)
-  -- function num : 0_34 , upvalues : _ENV
+function AutoFightService:_CheckLocalCastActiveSkillPickEnough(tryPickCount, petEntity, pickUpType)
   local pickEnough = true
-  if petEntity and petEntity:HasPreviewPickUpComponent() then
-    local previewPickUpComponent = petEntity:PreviewPickUpComponent()
-    local ignoreCheck = previewPickUpComponent:IsIgnorePickCheck()
-    if ignoreCheck then
-      return true
-    end
-    local pickGrids = previewPickUpComponent:GetAllValidPickUpGridPos()
-    local pickGridsCount = #pickGrids
-    if pickUpType == SkillPickUpType.PickOnePosAndRotate then
-      if pickGridsCount ~= 1 then
-        do
-          pickEnough = not pickGridsCount or pickGridsCount == tryPickCount
+  if petEntity then
+    if petEntity:HasPreviewPickUpComponent() then
+      local previewPickUpComponent = petEntity:PreviewPickUpComponent()
+      local ignoreCheck = previewPickUpComponent:IsIgnorePickCheck()
+      if ignoreCheck then
+        return true
+      end
+      local pickGrids = previewPickUpComponent:GetAllValidPickUpGridPos()
+      local pickGridsCount = #pickGrids
+      if pickGridsCount and pickGridsCount ~= tryPickCount then
+        if pickUpType == SkillPickUpType.PickOnePosAndRotate then
+          pickEnough = pickGridsCount == 1
+        else
           pickEnough = false
-          pickEnough = false
-          do return pickEnough end
-          -- DECOMPILER ERROR: 4 unprocessed JMP targets
         end
       end
+    else
+      pickEnough = false
     end
   end
+  return pickEnough
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._RecordLocalCastActiveSkillError = function(self, curRound, skillID)
-  -- function num : 0_35 , upvalues : _ENV
+function AutoFightService:_RecordLocalCastActiveSkillError(curRound, skillID)
   if not self._localActiveErrorRecord then
     self._localActiveErrorRecord = {}
   end
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._localActiveErrorRecord)[curRound] then
-    (self._localActiveErrorRecord)[curRound] = {}
+  if not self._localActiveErrorRecord[curRound] then
+    self._localActiveErrorRecord[curRound] = {}
   end
-  local roundReceod = (self._localActiveErrorRecord)[curRound]
-  ;
-  (table.insert)(roundReceod, skillID)
+  local roundReceod = self._localActiveErrorRecord[curRound]
+  table.insert(roundReceod, skillID)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CheckLocalCastActiveSkillErrorCurRound = function(self, curRound, skillID)
-  -- function num : 0_36 , upvalues : _ENV
-  do
-    if self._localActiveErrorRecord and (self._localActiveErrorRecord)[curRound] then
-      local roundReceod = (self._localActiveErrorRecord)[curRound]
-      if (table.icontains)(roundReceod, skillID) then
-        return true
-      end
+function AutoFightService:_CheckLocalCastActiveSkillErrorCurRound(curRound, skillID)
+  if self._localActiveErrorRecord and self._localActiveErrorRecord[curRound] then
+    local roundReceod = self._localActiveErrorRecord[curRound]
+    if table.icontains(roundReceod, skillID) then
+      return true
     end
-    return false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._RemotePlayerCastActiveSkill = function(self, TT, petEntity, skillID, petPstID, pickUpGridPos, selectTeamPos, pickExtraParam)
-  -- function num : 0_37 , upvalues : _ENV
-  local skillConfigData = (self._configService):GetSkillConfigData(skillID)
+function AutoFightService:_RemotePlayerCastActiveSkill(TT, petEntity, skillID, petPstID, pickUpGridPos, selectTeamPos, pickExtraParam)
+  local skillConfigData = self._configService:GetSkillConfigData(skillID)
   local pickUpType = skillConfigData:GetSkillPickType()
   if pickUpType == SkillPickUpType.None then
-    do
-      if selectTeamPos and #selectTeamPos > 0 and skillConfigData:GetAutoFightPickPosPolicy() == PickPosPolicy.PetBonai then
-        local cTeam = ((petEntity:Pet()):GetOwnerTeamEntity()):Team()
-        cTeam:SetSelectedTeamOrderPosition(selectTeamPos[1])
-      end
-      do
-        local cmd = CastActiveSkillCommand:New()
-        cmd:SetCmdActiveSkillID(skillID)
-        cmd:SetCmdCasterPstID(petPstID)
-        ;
-        ((self._world):Player()):SendCommand(cmd)
-        local previewPickUpComponent = petEntity:PreviewPickUpComponent()
-        if not previewPickUpComponent then
-          petEntity:AddPreviewPickUpComponent()
-          previewPickUpComponent = petEntity:PreviewPickUpComponent()
-        end
-        local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-        local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
-        for i,pos in ipairs(pickUpGridPos) do
-          local direction = scopeCalculator:GetDirection(pos, (self._env).PlayerPos)
-          previewPickUpComponent:AddGridPos(pos)
-          previewPickUpComponent:AddDirection(direction, pos)
-        end
-        previewPickUpComponent:AddPickExtraParamList(pickExtraParam)
-        do
-          local cmd = CastPickUpActiveSkillCommand:New()
-          cmd:SetCmdActiveSkillID(skillID)
-          cmd:SetCmdCasterPstID(petPstID)
-          cmd:SetCmdPickUpResult(pickUpGridPos)
-          cmd:SetPickUpDirectionResult(previewPickUpComponent:GetPickUpDirectionPos(), previewPickUpComponent:GetAllDirection(), previewPickUpComponent:GetLastPickUpDirection())
-          cmd:SetReflectDir(previewPickUpComponent:GetReflectDir())
-          cmd:SetCmdPickUpExtraParamResult(previewPickUpComponent:GetAllPickExtraParam())
-          ;
-          ((self._world):Player()):SendCommand(cmd)
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.EnemyPetCastActiveSkill, petPstID)
-        end
-      end
+    if selectTeamPos and 0 < #selectTeamPos and skillConfigData:GetAutoFightPickPosPolicy() == PickPosPolicy.PetBonai then
+      local cTeam = petEntity:Pet():GetOwnerTeamEntity():Team()
+      cTeam:SetSelectedTeamOrderPosition(selectTeamPos[1])
     end
+    local cmd = CastActiveSkillCommand:New()
+    cmd:SetCmdActiveSkillID(skillID)
+    cmd:SetCmdCasterPstID(petPstID)
+    self._world:Player():SendCommand(cmd)
+  else
+    local previewPickUpComponent = petEntity:PreviewPickUpComponent()
+    if not previewPickUpComponent then
+      petEntity:AddPreviewPickUpComponent()
+      previewPickUpComponent = petEntity:PreviewPickUpComponent()
+    end
+    local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+    local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
+    for i, pos in ipairs(pickUpGridPos) do
+      local direction = scopeCalculator:GetDirection(pos, self._env.PlayerPos)
+      previewPickUpComponent:AddGridPos(pos)
+      previewPickUpComponent:AddDirection(direction, pos)
+    end
+    previewPickUpComponent:AddPickExtraParamList(pickExtraParam)
+    local cmd = CastPickUpActiveSkillCommand:New()
+    cmd:SetCmdActiveSkillID(skillID)
+    cmd:SetCmdCasterPstID(petPstID)
+    cmd:SetCmdPickUpResult(pickUpGridPos)
+    cmd:SetPickUpDirectionResult(previewPickUpComponent:GetPickUpDirectionPos(), previewPickUpComponent:GetAllDirection(), previewPickUpComponent:GetLastPickUpDirection())
+    cmd:SetReflectDir(previewPickUpComponent:GetReflectDir())
+    cmd:SetCmdPickUpExtraParamResult(previewPickUpComponent:GetAllPickExtraParam())
+    self._world:Player():SendCommand(cmd)
   end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.EnemyPetCastActiveSkill, petPstID)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CalcPickupPosList = function(self, TT, petEntity, activeSkillID)
-  -- function num : 0_38 , upvalues : _ENV
+function AutoFightService:_CalcPickupPosList(TT, petEntity, activeSkillID)
   local env = self._env
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local boardService = (self._world):GetService("BoardLogic")
-  local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local boardService = self._world:GetService("BoardLogic")
+  local skillConfigData = self._configService:GetSkillConfigData(activeSkillID)
   local skillTags = skillConfigData:GetSkillTag()
   local validGirdList = utilScopeSvc:BuildScopeGridList(skillConfigData._pickUpValidScopeList, petEntity)
   local invalidGridList = utilScopeSvc:BuildScopeGridList(skillConfigData._pickUpInvalidScopeList, petEntity)
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local extraBoardPosRange = utilData:GetExtraBoardPosList()
-  for _,extraPos in ipairs(extraBoardPosRange) do
-    (table.insert)(invalidGridList, extraPos)
+  for _, extraPos in ipairs(extraBoardPosRange) do
+    table.insert(invalidGridList, extraPos)
   end
   local policy = skillConfigData:GetAutoFightPickPosPolicy()
   local policyParam = skillConfigData:GetAutoFightPickPosPolicyParam()
-  local pickUpNum = tonumber((skillConfigData._pickUpParam)[1])
+  local pickUpNum = tonumber(skillConfigData._pickUpParam[1])
   local pickUpType = skillConfigData:GetSkillPickType()
-  local casterPos = (petEntity:GridLocation()).Position
+  local casterPos = petEntity:GridLocation().Position
   local casterPosIndex = self:_Pos2Index(casterPos)
-  local petColor = (petEntity:Element()):GetPrimaryType()
+  local petColor = petEntity:Element():GetPrimaryType()
   local invalidGridDict = {}
-  for _,invalidPos in ipairs(invalidGridList) do
+  for _, invalidPos in ipairs(invalidGridList) do
     invalidGridDict[self:_Pos2Index(invalidPos)] = true
   end
   local validPosIdxList = {}
   local validPosList = {}
-  for _,validPos in ipairs(validGirdList) do
+  for _, validPos in ipairs(validGirdList) do
     local validPosIdx = self:_Pos2Index(validPos)
     if not invalidGridDict[validPosIdx] then
       validPosIdxList[validPosIdx] = true
       validPosList[#validPosList + 1] = validPos
     end
   end
-  if (table.count)(validPosList) == 0 and (table.count)(invalidGridDict) > 0 then
+  if table.count(validPosList) == 0 and table.count(invalidGridDict) > 0 then
     return {}, {}, {}
   end
-  local levelPolicy = (self._env).LevelPolicy
-  if levelPolicy == LevelPosPolicy.GotoExitPos and (table.icontains)(skillTags, PetSkillTag.Transport) and (self._env).ExitPos then
-    local targetPos = nil
-    local exitPos = (self._env).ExitPos
-    local neareastDistance = casterPos.x - exitPos.x ^ 2 + casterPos.y - exitPos.y ^ 2
-    for i,pos in ipairs(validPosList) do
-      local dis = pos.x - exitPos.x ^ 2 + pos.y - exitPos.y ^ 2
-      if dis < neareastDistance then
+  local levelPolicy = self._env.LevelPolicy
+  if levelPolicy == LevelPosPolicy.GotoExitPos and table.icontains(skillTags, PetSkillTag.Transport) and self._env.ExitPos then
+    local targetPos
+    local exitPos = self._env.ExitPos
+    local neareastDistance = (casterPos.x - exitPos.x) ^ 2 + (casterPos.y - exitPos.y) ^ 2
+    for i, pos in ipairs(validPosList) do
+      local dis = (pos.x - exitPos.x) ^ 2 + (pos.y - exitPos.y) ^ 2
+      if neareastDistance > dis then
         neareastDistance = dis
         targetPos = pos
       end
     end
     return {targetPos}, {}, {}
   end
-  do
-    local pickPosList, attackPosList, targetIdList, extraParam = self:CalcPickUpByPolicy(TT, petEntity, activeSkillID, policy, policyParam)
-    if pickPosList then
-      return pickPosList, attackPosList, targetIdList, extraParam
-    else
-      return {}, {}, {}
-    end
+  local pickPosList, attackPosList, targetIdList, extraParam = self:CalcPickUpByPolicy(TT, petEntity, activeSkillID, policy, policyParam)
+  if pickPosList then
+    return pickPosList, attackPosList, targetIdList, extraParam
+  else
+    return {}, {}, {}
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CalcTrapPickupPosList_YiSiTaWan = function(self, trapEntity, activeSkillID, petEntityIDList)
-  -- function num : 0_39 , upvalues : _ENV
+function AutoFightService:_CalcTrapPickupPosList_YiSiTaWan(trapEntity, activeSkillID, petEntityIDList)
   local pickUpPolicyObject = PickUpPolicy_YiSiTaWanTrap:New(self._world)
   local calcParam = PickUpPolicy_CalcParam:New(nil, trapEntity, activeSkillID, nil)
   return pickUpPolicyObject:CalcAutoFightPickUpPolicy(calcParam, petEntityIDList)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CalcTrapPickupPosList = function(self, trapEntity, activeSkillID)
-  -- function num : 0_40 , upvalues : _ENV
+function AutoFightService:_CalcTrapPickupPosList(trapEntity, activeSkillID)
   local env = self._env
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local boardService = (self._world):GetService("BoardLogic")
-  local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local boardService = self._world:GetService("BoardLogic")
+  local skillConfigData = self._configService:GetSkillConfigData(activeSkillID)
   local skillTags = skillConfigData:GetSkillTag()
   local validGirdList = utilScopeSvc:BuildScopeGridList(skillConfigData._pickUpValidScopeList, trapEntity)
   local invalidGridList = utilScopeSvc:BuildScopeGridList(skillConfigData._pickUpInvalidScopeList, trapEntity)
-  local pickUpNum = tonumber((skillConfigData._pickUpParam)[1])
+  local pickUpNum = tonumber(skillConfigData._pickUpParam[1])
   local pickUpType = skillConfigData:GetSkillPickType()
   local petColor = 0
   local invalidGridDict = {}
-  for _,invalidPos in ipairs(invalidGridList) do
+  for _, invalidPos in ipairs(invalidGridList) do
     invalidGridDict[self:_Pos2Index(invalidPos)] = true
   end
   local validPosIdxList = {}
   local validPosList = {}
-  for _,validPos in ipairs(validGirdList) do
+  for _, validPos in ipairs(validGirdList) do
     local validPosIdx = self:_Pos2Index(validPos)
     if not invalidGridDict[validPosIdx] then
       validPosIdxList[validPosIdx] = true
       validPosList[#validPosList + 1] = validPos
     end
   end
-  local teamEntity = (self._env).TeamEntity
-  local casterPos = (teamEntity:GridLocation()).Position
+  local teamEntity = self._env.TeamEntity
+  local casterPos = teamEntity:GridLocation().Position
   local pickPosList = {}
   local targetIdList = {}
   local attackPosList = {}
@@ -1434,63 +1239,60 @@ AutoFightService._CalcTrapPickupPosList = function(self, trapEntity, activeSkill
   return posList, attackPosList, targetIdList
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CalcPickUpColor = function(self, petEntity, activeSkillID, validGirdList)
-  -- function num : 0_41 , upvalues : _ENV
+function AutoFightService:_CalcPickUpColor(petEntity, activeSkillID, validGirdList)
   local env = self._env
   local results = {}
   local selectedColor = {}
-  for _,pos in ipairs(validGirdList) do
+  for _, pos in ipairs(validGirdList) do
     local posIdx = self:_Pos2Index(pos)
-    local color = (env.BoardPosPieces)[posIdx]
+    local color = env.BoardPosPieces[posIdx]
     if not selectedColor[color] then
       selectedColor[color] = true
       local scope_result, target_ids = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, pos)
-      if #target_ids > 0 then
-        (table.insert)(results, {pos, target_ids, scope_result:GetAttackRange()})
+      if 0 < #target_ids then
+        table.insert(results, {
+          pos,
+          target_ids,
+          scope_result:GetAttackRange()
+        })
       end
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CalcPickUpPosAndRange = function(self, petEntity, activeSkillID, validGirdList)
-  -- function num : 0_42 , upvalues : _ENV
+function AutoFightService:_CalcPickUpPosAndRange(petEntity, activeSkillID, validGirdList)
   local env = self._env
   local results = {}
-  ;
-  (table.shuffle)(validGirdList)
-  for _,pos in ipairs(validGirdList) do
+  table.shuffle(validGirdList)
+  for _, pos in ipairs(validGirdList) do
     local posIdx = self:_Pos2Index(pos)
-    if (env.BoardPosPieces)[posIdx] then
+    if env.BoardPosPieces[posIdx] then
       local scope_result, target_ids = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, pos)
-      if #target_ids > 0 then
-        (table.insert)(results, {pos, target_ids, scope_result:GetAttackRange()})
+      if 0 < #target_ids then
+        table.insert(results, {
+          pos,
+          target_ids,
+          scope_result:GetAttackRange()
+        })
       end
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CalcPickUpPosAndTeleport = function(self, petEntity, activeSkillID, validGirdList)
-  -- function num : 0_43 , upvalues : _ENV
+function AutoFightService:_CalcPickUpPosAndTeleport(petEntity, activeSkillID, validGirdList)
   local env = self._env
   local results = {}
-  ;
-  (table.shuffle)(validGirdList)
+  table.shuffle(validGirdList)
   local playerPosIdx = self:_Pos2Index(env.PlayerPos)
   local firstPickUpPos = validGirdList[1]
   if not firstPickUpPos then
     return results
   end
-  local secondPos = nil
-  local battleSvc = (self._world):GetService("Battle")
-  local connect = (env.ConnectMap)[playerPosIdx]
+  local secondPos
+  local battleSvc = self._world:GetService("Battle")
+  local connect = env.ConnectMap[playerPosIdx]
   for i = 1, 8 do
     local posIdx = connect[i]
     if posIdx then
@@ -1504,71 +1306,68 @@ AutoFightService._CalcPickUpPosAndTeleport = function(self, petEntity, activeSki
       end
     end
   end
-  do
-    if secondPos then
-      (table.insert)(results, {firstPickUpPos, 
-{1}
-, 
-{firstPickUpPos}
-, secondPos})
-    end
-    return results
+  if secondPos then
+    table.insert(results, {
+      firstPickUpPos,
+      {1},
+      {firstPickUpPos},
+      secondPos
+    })
   end
+  return results
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CalcPickUpDirection = function(self, petEntity, activeSkillID, validGirdList)
-  -- function num : 0_44 , upvalues : _ENV
+function AutoFightService:_CalcPickUpDirection(petEntity, activeSkillID, validGirdList)
   local env = self._env
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
   local results = {}
   local casterPos = petEntity:GetGridPosition()
-  ;
-  (table.shuffle)(validGirdList)
+  table.shuffle(validGirdList)
   local selectedDirection = {}
-  for _,pos in ipairs(validGirdList) do
+  for _, pos in ipairs(validGirdList) do
     local posIdx = self:_Pos2Index(pos)
     local direction = scopeCalculator:GetDirection(pos, casterPos)
-    if not (table.icontains)(selectedDirection, direction) or (env.BoardPosPieces)[posIdx] then
-      (table.insert)(selectedDirection, direction)
+    if table.icontains(selectedDirection, direction) then
+    elseif env.BoardPosPieces[posIdx] then
+      table.insert(selectedDirection, direction)
       local scope_result, target_ids = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, pos)
-      if #target_ids > 0 then
-        (table.insert)(results, {pos, target_ids, scope_result:GetAttackRange()})
+      if 0 < #target_ids then
+        table.insert(results, {
+          pos,
+          target_ids,
+          scope_result:GetAttackRange()
+        })
       end
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CalcPickUpPosAndDirection = function(self, petEntity, activeSkillID, validGirdList)
-  -- function num : 0_45 , upvalues : _ENV
+function AutoFightService:_CalcPickUpPosAndDirection(petEntity, activeSkillID, validGirdList)
   local env = self._env
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
   local results = {}
   local casterPos = petEntity:GetGridPosition()
-  ;
-  (table.shuffle)(validGirdList)
-  for _,firstPickUpPos in ipairs(validGirdList) do
+  table.shuffle(validGirdList)
+  for _, firstPickUpPos in ipairs(validGirdList) do
     local directionGridList = {}
-    ;
-    (table.insert)(directionGridList, Vector2(firstPickUpPos.x + 0, firstPickUpPos.y + 1))
-    ;
-    (table.insert)(directionGridList, Vector2(firstPickUpPos.x + 1, firstPickUpPos.y + 0))
-    ;
-    (table.insert)(directionGridList, Vector2(firstPickUpPos.x + 0, firstPickUpPos.y - 1))
-    ;
-    (table.insert)(directionGridList, Vector2(firstPickUpPos.x - 1, firstPickUpPos.y + 0))
-    for _,secondPos in ipairs(directionGridList) do
+    table.insert(directionGridList, Vector2(firstPickUpPos.x + 0, firstPickUpPos.y + 1))
+    table.insert(directionGridList, Vector2(firstPickUpPos.x + 1, firstPickUpPos.y + 0))
+    table.insert(directionGridList, Vector2(firstPickUpPos.x + 0, firstPickUpPos.y - 1))
+    table.insert(directionGridList, Vector2(firstPickUpPos.x - 1, firstPickUpPos.y + 0))
+    for _, secondPos in ipairs(directionGridList) do
       local posIdx = self:_Pos2Index(secondPos)
-      if (env.BoardPosPieces)[posIdx] then
+      if env.BoardPosPieces[posIdx] then
         local scope_result, target_ids = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, {firstPickUpPos, secondPos})
-        if #target_ids > 0 then
-          (table.insert)(results, {firstPickUpPos, target_ids, scope_result:GetAttackRange(), secondPos})
+        if 0 < #target_ids then
+          table.insert(results, {
+            firstPickUpPos,
+            target_ids,
+            scope_result:GetAttackRange(),
+            secondPos
+          })
         end
       end
     end
@@ -1576,47 +1375,43 @@ AutoFightService._CalcPickUpPosAndDirection = function(self, petEntity, activeSk
   return results
 end
 
-local GetTwoSideOffset = function(centerPos, dir)
-  -- function num : 0_46 , upvalues : _ENV
+local function GetTwoSideOffset(centerPos, dir)
   local ret = {}
   if dir.x ~= 0 then
-    (table.insert)(ret, Vector2(centerPos.x, centerPos.y + 1))
-    ;
-    (table.insert)(ret, Vector2(centerPos.x, centerPos.y - 1))
-  else
-    if dir.y ~= 0 then
-      (table.insert)(ret, Vector2(centerPos.x + 1, centerPos.y))
-      ;
-      (table.insert)(ret, Vector2(centerPos.x - 1, centerPos.y))
-    end
+    table.insert(ret, Vector2(centerPos.x, centerPos.y + 1))
+    table.insert(ret, Vector2(centerPos.x, centerPos.y - 1))
+  elseif dir.y ~= 0 then
+    table.insert(ret, Vector2(centerPos.x + 1, centerPos.y))
+    table.insert(ret, Vector2(centerPos.x - 1, centerPos.y))
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC156: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalcPickUpLineAndDirection = function(self, petEntity, activeSkillID, validGirdList)
-  -- function num : 0_47 , upvalues : _ENV, GetTwoSideOffset
+function AutoFightService:_CalcPickUpLineAndDirection(petEntity, activeSkillID, validGirdList)
   local env = self._env
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
   local results = {}
   local casterPos = petEntity:GetGridPosition()
-  ;
-  (table.shuffle)(validGirdList)
-  for _,firstPickUpPos in ipairs(validGirdList) do
+  table.shuffle(validGirdList)
+  for _, firstPickUpPos in ipairs(validGirdList) do
     local directionGridList = {}
     local mainDir = firstPickUpPos - casterPos
     local sidePos = GetTwoSideOffset(firstPickUpPos, mainDir)
-    for _,sideGrid in ipairs(sidePos) do
-      (table.insert)(directionGridList, sideGrid)
+    for _, sideGrid in ipairs(sidePos) do
+      table.insert(directionGridList, sideGrid)
     end
-    for _,secondPos in ipairs(directionGridList) do
+    for _, secondPos in ipairs(directionGridList) do
       local posIdx = self:_Pos2Index(secondPos)
-      if (env.BoardPosPieces)[posIdx] then
+      if env.BoardPosPieces[posIdx] then
         local scope_result, target_ids = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, {firstPickUpPos, secondPos})
-        if #target_ids > 0 then
-          (table.insert)(results, {firstPickUpPos, target_ids, scope_result:GetAttackRange(), secondPos})
+        if 0 < #target_ids then
+          table.insert(results, {
+            firstPickUpPos,
+            target_ids,
+            scope_result:GetAttackRange(),
+            secondPos
+          })
         end
       end
     end
@@ -1624,17 +1419,13 @@ AutoFightService._CalcPickUpLineAndDirection = function(self, petEntity, activeS
   return results
 end
 
--- DECOMPILER ERROR at PC159: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalcPickUpPosAndRotate = function(self, petEntity, activeSkillID, validGirdList, dirCount)
-  -- function num : 0_48 , upvalues : _ENV
+function AutoFightService:_CalcPickUpPosAndRotate(petEntity, activeSkillID, validGirdList, dirCount)
   local env = self._env
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
   local results = {}
   local casterPos = petEntity:GetGridPosition()
-  ;
-  (table.shuffle)(validGirdList)
+  table.shuffle(validGirdList)
   petEntity:AddPreviewPickUpComponent()
   local pickUpCmpt = petEntity:PreviewPickUpComponent()
   local dirs = {1, 2}
@@ -1642,12 +1433,17 @@ AutoFightService._CalcPickUpPosAndRotate = function(self, petEntity, activeSkill
     dirs[3] = 3
     dirs[4] = 4
   end
-  for _,dir in ipairs(dirs) do
+  for _, dir in ipairs(dirs) do
     pickUpCmpt:SetReflectDir(dir)
-    for _,pickUpPos in ipairs(validGirdList) do
+    for _, pickUpPos in ipairs(validGirdList) do
       local scope_result, target_ids = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, pickUpPos)
-      if #target_ids > 0 then
-        (table.insert)(results, {pickUpPos, target_ids, scope_result:GetAttackRange(), dir})
+      if 0 < #target_ids then
+        table.insert(results, {
+          pickUpPos,
+          target_ids,
+          scope_result:GetAttackRange(),
+          dir
+        })
         return results
       end
     end
@@ -1655,119 +1451,105 @@ AutoFightService._CalcPickUpPosAndRotate = function(self, petEntity, activeSkill
   return results
 end
 
--- DECOMPILER ERROR at PC162: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalcPickUpSwitch = function(self, petEntity, activeSkillID, validGridList)
-  -- function num : 0_49 , upvalues : _ENV
+function AutoFightService:_CalcPickUpSwitch(petEntity, activeSkillID, validGridList)
   local env = self._env
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
   local results = {}
   local casterPos = petEntity:GetGridPosition()
   local pickDirPos = {}
   if validGridList then
-    for _,gridPos in ipairs(validGridList) do
+    for _, gridPos in ipairs(validGridList) do
       local hitBackDirType = scopeCalculator:GetDirection(gridPos, casterPos)
       local pickDirType = PickDirTypeForScope.NONE
       if hitBackDirType then
         if self:_IsCrossDir(hitBackDirType) then
           pickDirType = PickDirTypeForScope.CROSS
           pickDirPos[pickDirType] = {hitBackDirType, gridPos}
+        elseif self:_IsXDir(hitBackDirType) then
+          pickDirType = PickDirTypeForScope.XSHAPE
+          pickDirPos[pickDirType] = {hitBackDirType, gridPos}
         else
-          if self:_IsXDir(hitBackDirType) then
-            pickDirType = PickDirTypeForScope.XSHAPE
-            pickDirPos[pickDirType] = {hitBackDirType, gridPos}
-          else
-            pickDirType = PickDirTypeForScope.NONE
-          end
+          pickDirType = PickDirTypeForScope.NONE
         end
       else
         pickDirType = scopeParam.defaultDirType
       end
     end
   end
-  do
-    petEntity:AddPreviewPickUpComponent()
-    local pickUpCmpt = petEntity:PreviewPickUpComponent()
-    local dirs = {2, 3}
-    for dirType,record in pairs(pickDirPos) do
-      pickUpCmpt:AddDirection(record[1], record[2])
-      local scope_result, target_ids = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, casterPos)
-      if #target_ids > 0 then
-        (table.insert)(results, {record[2], target_ids, scope_result:GetAttackRange()})
-      end
+  petEntity:AddPreviewPickUpComponent()
+  local pickUpCmpt = petEntity:PreviewPickUpComponent()
+  local dirs = {2, 3}
+  for dirType, record in pairs(pickDirPos) do
+    pickUpCmpt:AddDirection(record[1], record[2])
+    local scope_result, target_ids = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, casterPos)
+    if 0 < #target_ids then
+      table.insert(results, {
+        record[2],
+        target_ids,
+        scope_result:GetAttackRange()
+      })
     end
-    return results
   end
+  return results
 end
 
--- DECOMPILER ERROR at PC165: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalcPickUpPosAndRange = function(self, petEntity, activeSkillID, validGirdList)
-  -- function num : 0_50 , upvalues : _ENV
+function AutoFightService:_CalcPickUpPosAndRange(petEntity, activeSkillID, validGirdList)
   local env = self._env
   local results = {}
-  ;
-  (table.shuffle)(validGirdList)
-  for _,pos in ipairs(validGirdList) do
+  table.shuffle(validGirdList)
+  for _, pos in ipairs(validGirdList) do
     local posIdx = self:_Pos2Index(pos)
-    if (env.BoardPosPieces)[posIdx] then
+    if env.BoardPosPieces[posIdx] then
       local scope_result, target_ids = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, pos)
-      if #target_ids > 0 then
-        (table.insert)(results, {pos, target_ids, scope_result:GetAttackRange()})
+      if 0 < #target_ids then
+        table.insert(results, {
+          pos,
+          target_ids,
+          scope_result:GetAttackRange()
+        })
       end
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC168: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._IsCrossDir = function(self, dirType)
-  -- function num : 0_51 , upvalues : _ENV
+function AutoFightService:_IsCrossDir(dirType)
   if dirType == HitBackDirectionType.Down or dirType == HitBackDirectionType.Up or dirType == HitBackDirectionType.Left or dirType == HitBackDirectionType.Right then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC171: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._IsXDir = function(self, dirType)
-  -- function num : 0_52 , upvalues : _ENV
+function AutoFightService:_IsXDir(dirType)
   if dirType == HitBackDirectionType.RightUp or dirType == HitBackDirectionType.RightDown or dirType == HitBackDirectionType.LeftUp or dirType == HitBackDirectionType.LeftDown then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC174: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalcSkillScopeResult = function(self, petEntity, skillConfigData, scopeType, scopeParam, centerType, targetType, centerPos)
-  -- function num : 0_53 , upvalues : _ENV
-  local playerBodyArea = (petEntity:BodyArea()):GetArea()
-  local casterDir = (petEntity:GridLocation()):GetGridDir()
-  local casterPos = (petEntity:GridLocation()).Position
-  if not centerPos then
-    centerPos = casterPos
-  end
+function AutoFightService:_CalcSkillScopeResult(petEntity, skillConfigData, scopeType, scopeParam, centerType, targetType, centerPos)
+  local playerBodyArea = petEntity:BodyArea():GetArea()
+  local casterDir = petEntity:GridLocation():GetGridDir()
+  local casterPos = petEntity:GridLocation().Position
+  centerPos = centerPos or casterPos
   if IsRandomSkillScopeType(scopeType) then
     scopeType = SkillScopeType.FullScreen
   end
-  local scopeCalculator = (self._utilScopeSvc):GetSkillScopeCalc()
+  local scopeCalculator = self._utilScopeSvc:GetSkillScopeCalc()
   local result = scopeCalculator:ComputeScopeRange(scopeType, scopeParam, centerPos, playerBodyArea, casterDir, targetType, casterPos, petEntity)
-  local filterPassParam = SkillScopeFilterPassParam:New({casterPos = casterPos, casterBodyAreaArray = playerBodyArea, world = self._world})
-  ;
-  (self._scopeFilterDevice):DoFilter(result, skillConfigData:GetScopeFilterParam(), filterPassParam)
+  local filterPassParam = SkillScopeFilterPassParam:New({
+    casterPos = casterPos,
+    casterBodyAreaArray = playerBodyArea,
+    world = self._world
+  })
+  self._scopeFilterDevice:DoFilter(result, skillConfigData:GetScopeFilterParam(), filterPassParam)
   return result
 end
 
--- DECOMPILER ERROR at PC177: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalcSkillScopeResultAndTargets = function(self, petEntity, activeSkillID, centerPos)
-  -- function num : 0_54 , upvalues : _ENV
-  local buffLogicSvc = (self._world):GetService("BuffLogic")
-  local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID)
+function AutoFightService:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, centerPos)
+  local buffLogicSvc = self._world:GetService("BuffLogic")
+  local skillConfigData = self._configService:GetSkillConfigData(activeSkillID)
   local scopeType = skillConfigData:GetSkillScopeType()
   local scopeParam = skillConfigData:GetSkillScopeParam()
   local centerType = skillConfigData:GetSkillScopeCenterType()
@@ -1783,46 +1565,41 @@ AutoFightService._CalcSkillScopeResultAndTargets = function(self, petEntity, act
     targetType = SkillTargetType.Monster
   end
   local result = self:_CalcSkillScopeResult(petEntity, skillConfigData, scopeType, scopeParam, centerType, targetType, centerPos)
-  local targetSelector = (self._world):GetSkillScopeTargetSelector()
+  local targetSelector = self._world:GetSkillScopeTargetSelector()
   local targetIds = targetSelector:DoSelectSkillTarget(petEntity, targetType, result, activeSkillID)
   for i = #targetIds, 1, -1 do
     local targetID = targetIds[i]
-    local targetEntity = (self._world):GetEntityByID(targetID)
+    local targetEntity = self._world:GetEntityByID(targetID)
     if targetEntity and targetEntity:HasBuff() and not buffLogicSvc:CheckCanBeMagicAttack(petEntity, targetEntity) then
-      (table.remove)(targetIds, i)
+      table.remove(targetIds, i)
     end
   end
   if skillScopeAndTarget and skillScopeAndTarget.useType == AutoFightScopeUseType.ReplaceTargetAndTrapCount then
     local trapID = skillScopeAndTarget.trapID
     local count = skillScopeAndTarget.trapCount
-    local trapSvc = (self._world):GetService("TrapLogic")
+    local trapSvc = self._world:GetService("TrapLogic")
     local trapPosList = trapSvc:FindTrapPosByTrapID(trapID)
-    if #trapPosList < count then
+    if count > #trapPosList then
       targetIds = {}
     end
   end
-  do
-    return result, targetIds
-  end
+  return result, targetIds
 end
 
--- DECOMPILER ERROR at PC180: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CheckSkillCondition = function(self, TT, caster, skillID, env)
-  -- function num : 0_55 , upvalues : _ENV
-  local skillConfigData = (self._configService):GetSkillConfigData(skillID)
+function AutoFightService:_CheckSkillCondition(TT, caster, skillID, env)
+  local skillConfigData = self._configService:GetSkillConfigData(skillID)
   local condition = skillConfigData:GetAutoFightCondition()
   local skillScopeAndTarget = skillConfigData:GetAutoFightSkillScopeTypeAndTargetType()
   local scopeType = skillConfigData:GetSkillScopeType()
   local skillTags = skillConfigData:GetSkillTag()
   local pickUpType = skillConfigData:GetSkillPickType()
-  local petColor = (caster:Element()):GetPrimaryType()
+  local petColor = caster:Element():GetPrimaryType()
   env.MVP = nil
-  local teamEntity = (self._env).TeamEntity
-  if (table.icontains)(skillTags, PetSkillTag.RandPieceColor) and not ((GameGlobal.GetModule)(SkillPerfModule)):IsPerfCoreGame() and (self._randPieceColor or self._lastConvertColor > 0) then
+  local teamEntity = self._env.TeamEntity
+  if table.icontains(skillTags, PetSkillTag.RandPieceColor) and not GameGlobal.GetModule(SkillPerfModule):IsPerfCoreGame() and (self._randPieceColor or self._lastConvertColor > 0) then
     return false
   end
-  if (table.icontains)(skillTags, PetSkillTag.FixedPieceColor) and not ((GameGlobal.GetModule)(SkillPerfModule)):IsPerfCoreGame() then
+  if table.icontains(skillTags, PetSkillTag.FixedPieceColor) and not GameGlobal.GetModule(SkillPerfModule):IsPerfCoreGame() then
     if self._randPieceColor then
       return false
     end
@@ -1842,17 +1619,11 @@ AutoFightService._CheckSkillCondition = function(self, TT, caster, skillID, env)
     attackTargetCnt = #targetIds
     gridList = result:GetAttackRange()
     attackGridCnt = #gridList
-    for _,pos in ipairs(result:GetWholeGridRange()) do
+    for _, pos in ipairs(result:GetWholeGridRange()) do
       local posIdx = self:_Pos2Index(pos)
-      local pieceType = (env.BoardPosPieces)[posIdx]
-      if not gridColorCnt[pieceType] then
-        do
-          gridColorCnt[pieceType] = (not pieceType or 0) + 1
-          -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      local pieceType = env.BoardPosPieces[posIdx]
+      if pieceType then
+        gridColorCnt[pieceType] = (gridColorCnt[pieceType] or 0) + 1
       end
     end
     local policy = skillConfigData:GetAutoFightPickPosPolicy()
@@ -1860,298 +1631,144 @@ AutoFightService._CheckSkillCondition = function(self, TT, caster, skillID, env)
       env.SelectTeamPos = {1}
     end
   else
-    do
-      local t1 = (os.clock)()
-      posList = self:_CalcPickupPosList(TT, caster, skillID)
-      local t2 = (os.clock)()
-      ;
-      (Log.debug)("[AutoFight]_CalcPickupPosList() use time=", (t2 - t1) * 1000, " skillID=", skillID)
-      if #posList == 0 then
-        return false
-      end
-      do
-        local policy = skillConfigData:GetAutoFightPickPosPolicy()
-        if policy == PickPosPolicy.PetYisitawan then
-          env.SelectTeamPos = pickUpExtraParam
+    local t1 = os.clock()
+    posList, gridList, tarList, pickUpExtraParam = self:_CalcPickupPosList(TT, caster, skillID)
+    local t2 = os.clock()
+    Log.debug("[AutoFight]_CalcPickupPosList() use time=", (t2 - t1) * 1000, " skillID=", skillID)
+    if #posList == 0 then
+      return false
+    end
+    local policy = skillConfigData:GetAutoFightPickPosPolicy()
+    if policy == PickPosPolicy.PetYisitawan then
+      env.SelectTeamPos = pickUpExtraParam
+    end
+    attackGridCnt = #gridList
+    attackTargetCnt = #tarList
+    env.PickUpGridPos = posList
+    env.PickUpExtraParam = pickUpExtraParam
+  end
+  if self._env.LevelPolicy == LevelPosPolicy.GotoExitPos and table.icontains(skillTags, PetSkillTag.Transport) and self._env.ExitPos then
+    return true
+  end
+  if table.icontains(skillTags, PetSkillTag.Attack) and attackTargetCnt == 0 and not GameGlobal.GetModule(SkillPerfModule):IsPerfCoreGame() then
+    return false
+  end
+  if table.icontains(skillTags, PetSkillTag.FixedPieceColor) and attackGridCnt == 0 and not GameGlobal.GetModule(SkillPerfModule):IsPerfCoreGame() then
+    return false
+  end
+  local checkResult = true
+  if condition then
+    for k, v in pairs(condition.conds) do
+      if k == "AlwaysFalse" then
+        condition.conds[k] = "false"
+      elseif k == "AlwaysTrue" then
+        condition.conds[k] = "true"
+      elseif k == "PlayerHP" then
+        local playerHP = teamEntity:Attributes():GetCurrentHP()
+        local maxHP = teamEntity:Attributes():CalcMaxHp()
+        local lsvcCalcDamage = self._world:GetService("CalcDamage")
+        local teamHP, teamMaxHP = lsvcCalcDamage:GetTeamLogicHP(teamEntity)
+        condition.conds[k] = teamHP / teamMaxHP
+      elseif k == "MonsterMinHP" or k == "MonsterMaxHP" then
+        local group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+        local minblood = 1
+        local maxblood = 0
+        for i, e in ipairs(group:GetEntities()) do
+          local hp = e:Attributes():GetCurrentHP()
+          local maxhp = e:Attributes():CalcMaxHp()
+          local p = hp / maxhp
+          if minblood > p then
+            minblood = p
+          end
+          if maxblood < p then
+            maxblood = p
+          end
         end
-        attackGridCnt = #gridList
-        attackTargetCnt = #tarList
-        env.PickUpGridPos = posList
-        env.PickUpExtraParam = pickUpExtraParam
-        if (self._env).LevelPolicy == LevelPosPolicy.GotoExitPos and (table.icontains)(skillTags, PetSkillTag.Transport) and (self._env).ExitPos then
-          return true
-        end
-        if (table.icontains)(skillTags, PetSkillTag.Attack) and attackTargetCnt == 0 and not ((GameGlobal.GetModule)(SkillPerfModule)):IsPerfCoreGame() then
-          return false
-        end
-        if (table.icontains)(skillTags, PetSkillTag.FixedPieceColor) and attackGridCnt == 0 and not ((GameGlobal.GetModule)(SkillPerfModule)):IsPerfCoreGame() then
-          return false
-        end
-        local checkResult = true
-        if condition then
-          for k,v in pairs(condition.conds) do
-            -- DECOMPILER ERROR at PC234: Confused about usage of register: R26 in 'UnsetPending'
-
-            if k == "AlwaysFalse" then
-              (condition.conds)[k] = "false"
-            else
-              -- DECOMPILER ERROR at PC239: Confused about usage of register: R26 in 'UnsetPending'
-
-              if k == "AlwaysTrue" then
-                (condition.conds)[k] = "true"
-              else
-                if k == "PlayerHP" then
-                  local playerHP = (teamEntity:Attributes()):GetCurrentHP()
-                  local maxHP = (teamEntity:Attributes()):CalcMaxHp()
-                  local lsvcCalcDamage = (self._world):GetService("CalcDamage")
-                  local teamHP, teamMaxHP = lsvcCalcDamage:GetTeamLogicHP(teamEntity)
-                  -- DECOMPILER ERROR at PC260: Confused about usage of register: R31 in 'UnsetPending'
-
-                  ;
-                  (condition.conds)[k] = teamHP / teamMaxHP
-                else
-                  do
-                    if k == "MonsterMinHP" or k == "MonsterMaxHP" then
-                      local group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-                      local minblood = 1
-                      local maxblood = 0
-                      for i,e in ipairs(group:GetEntities()) do
-                        local hp = (e:Attributes()):GetCurrentHP()
-                        local maxhp = (e:Attributes()):CalcMaxHp()
-                        local p = hp / maxhp
-                        if p < minblood then
-                          minblood = p
-                        end
-                        if maxblood < p then
-                          maxblood = p
-                        end
-                      end
-                      -- DECOMPILER ERROR at PC297: Confused about usage of register: R29 in 'UnsetPending'
-
-                      ;
-                      (condition.conds).MonsterMinHP = minblood
-                      -- DECOMPILER ERROR at PC299: Confused about usage of register: R29 in 'UnsetPending'
-
-                      ;
-                      (condition.conds).MonsterMaxHP = maxblood
-                    else
-                      do
-                        -- DECOMPILER ERROR at PC304: Confused about usage of register: R26 in 'UnsetPending'
-
-                        if k == "AttackGrid" then
-                          (condition.conds)[k] = attackGridCnt
-                        else
-                          -- DECOMPILER ERROR at PC309: Confused about usage of register: R26 in 'UnsetPending'
-
-                          if k == "AttackTarget" then
-                            (condition.conds)[k] = attackTargetCnt
-                          else
-                            -- DECOMPILER ERROR at PC323: Confused about usage of register: R26 in 'UnsetPending'
-
-                            if not (teamEntity:ActiveSkill()):GetPowerfullRoundCount(caster:GetID()) then
-                              (condition.conds)[k] = k ~= "PowerfullRound" or 0
-                              if k == "ScopeGridCount" then
-                                do
-                                  if skillScopeAndTarget and skillScopeAndTarget.scopeType then
-                                    local effScopeResult = self:_CalcSkillScopeResult(caster, skillConfigData, skillScopeAndTarget.scopeType, skillScopeAndTarget.scopeParam, skillScopeAndTarget.centerType, skillScopeAndTarget.targetType)
-                                    gridColorCnt = {}
-                                    for _,pos in ipairs(effScopeResult:GetAttackRange()) do
-                                      local posIdx = self:_Pos2Index(pos)
-                                      local pieceType = (env.BoardPosPieces)[posIdx]
-                                      if not gridColorCnt[pieceType] then
-                                        do
-                                          gridColorCnt[pieceType] = (not pieceType or 0) + 1
-                                          -- DECOMPILER ERROR at PC360: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                                          -- DECOMPILER ERROR at PC360: LeaveBlock: unexpected jumping out IF_STMT
-
-                                        end
-                                      end
-                                    end
-                                  end
-                                  -- DECOMPILER ERROR at PC367: Confused about usage of register: R26 in 'UnsetPending'
-
-                                  ;
-                                  (condition.conds)[k] = gridColorCnt[petColor] or 0
-                                  if k == "ChainPathEvalue" then
-                                    local chainPath, pieceType, evalue = self:GetAutoChainPath(TT, teamEntity)
-                                    -- DECOMPILER ERROR at PC376: Confused about usage of register: R29 in 'UnsetPending'
-
-                                    ;
-                                    (condition.conds)[k] = evalue
-                                  else
-                                    do
-                                      if k == "NotTeamLeader" then
-                                        local teamLeaderEntity = (teamEntity:Team()):GetTeamLeaderEntity()
-                                        -- DECOMPILER ERROR at PC395: Confused about usage of register: R27 in 'UnsetPending'
-
-                                        ;
-                                        (condition.conds)[k] = teamLeaderEntity:GetID() ~= caster:GetID() and "true" or "false"
-                                      else
-                                        do
-                                          if k == "SanHPPercent" then
-                                            local lsvcFeature = (self._world):GetService("FeatureLogic")
-                                            local context = {}
-                                            context.scopeGridCount = #gridList
-                                            -- DECOMPILER ERROR at PC414: Confused about usage of register: R28 in 'UnsetPending'
-
-                                            if not lsvcFeature:IsActiveSkillCanCast(caster, skillID, context) then
-                                              (condition.conds)[k] = 0
-                                            else
-                                              local requireSanVal, requireHPPercent = lsvcFeature:CalcActiveSkillSanCost(caster, skillID, context)
-                                              local currentVal = lsvcFeature:GetSanValue()
-                                              -- DECOMPILER ERROR at PC428: Confused about usage of register: R31 in 'UnsetPending'
-
-                                              if requireSanVal <= currentVal and requireHPPercent == 0 then
-                                                (condition.conds)[k] = 1
-                                              else
-                                                local lsvcCalcDamage = (self._world):GetService("CalcDamage")
-                                                local teamHP, teamMaxHP = lsvcCalcDamage:GetTeamLogicHP(teamEntity)
-                                                local percent = (teamHP - teamMaxHP * requireHPPercent) / teamMaxHP
-                                                -- DECOMPILER ERROR at PC441: Confused about usage of register: R35 in 'UnsetPending'
-
-                                                ;
-                                                (condition.conds)[k] = percent
-                                              end
-                                            end
-                                          else
-                                            do
-                                              -- DECOMPILER ERROR at PC448: Confused about usage of register: R26 in 'UnsetPending'
-
-                                              if k == "CheckJiero" then
-                                                (condition.conds)[k] = self:_CheckCondition_PetJiero()
-                                              else
-                                                -- DECOMPILER ERROR at PC457: Confused about usage of register: R26 in 'UnsetPending'
-
-                                                if k == "CheckLingEn" then
-                                                  (condition.conds)[k] = self:_CheckCondition_PetLingEn(caster, skillID)
-                                                else
-                                                  -- DECOMPILER ERROR at PC465: Confused about usage of register: R26 in 'UnsetPending'
-
-                                                  if k == "CheckLegendEnergy" then
-                                                    (condition.conds)[k] = self:_CheckCondition_LegendEnergy(caster)
-                                                  else
-                                                    if k == "PetHP" then
-                                                      local petHP = (caster:Attributes()):GetCurrentHP()
-                                                      local petMaxHP = (caster:Attributes()):CalcMaxHp()
-                                                      -- DECOMPILER ERROR at PC479: Confused about usage of register: R28 in 'UnsetPending'
-
-                                                      ;
-                                                      (condition.conds)[k] = petHP / petMaxHP
-                                                    end
-                                                  end
-                                                end
-                                              end
-                                              do
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out DO_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out DO_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out DO_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out DO_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out DO_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out DO_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                                -- DECOMPILER ERROR at PC480: LeaveBlock: unexpected jumping out IF_STMT
-
-                                              end
-                                            end
-                                          end
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
+        condition.conds.MonsterMinHP = minblood
+        condition.conds.MonsterMaxHP = maxblood
+      elseif k == "AttackGrid" then
+        condition.conds[k] = attackGridCnt
+      elseif k == "AttackTarget" then
+        condition.conds[k] = attackTargetCnt
+      elseif k == "PowerfullRound" then
+        condition.conds[k] = teamEntity:ActiveSkill():GetPowerfullRoundCount(caster:GetID()) or 0
+      elseif k == "ScopeGridCount" then
+        if skillScopeAndTarget and skillScopeAndTarget.scopeType then
+          local effScopeResult = self:_CalcSkillScopeResult(caster, skillConfigData, skillScopeAndTarget.scopeType, skillScopeAndTarget.scopeParam, skillScopeAndTarget.centerType, skillScopeAndTarget.targetType)
+          gridColorCnt = {}
+          for _, pos in ipairs(effScopeResult:GetAttackRange()) do
+            local posIdx = self:_Pos2Index(pos)
+            local pieceType = env.BoardPosPieces[posIdx]
+            if pieceType then
+              gridColorCnt[pieceType] = (gridColorCnt[pieceType] or 0) + 1
             end
           end
-          checkResult = condition:callback()
         end
-        if ((GameGlobal.GetModule)(SkillPerfModule)):IsBeginPerf() and ((GameGlobal.GetModule)(SkillPerfModule)):HasAppointSkill() then
-          if ((GameGlobal.GetModule)(SkillPerfModule)):IsAppointSkill(skillID) then
-            return true
+        condition.conds[k] = gridColorCnt[petColor] or 0
+      elseif k == "ChainPathEvalue" then
+        local chainPath, pieceType, evalue = self:GetAutoChainPath(TT, teamEntity)
+        condition.conds[k] = evalue
+      elseif k == "NotTeamLeader" then
+        local teamLeaderEntity = teamEntity:Team():GetTeamLeaderEntity()
+        condition.conds[k] = teamLeaderEntity:GetID() ~= caster:GetID() and "true" or "false"
+      elseif k == "SanHPPercent" then
+        local lsvcFeature = self._world:GetService("FeatureLogic")
+        local context = {}
+        context.scopeGridCount = #gridList
+        if not lsvcFeature:IsActiveSkillCanCast(caster, skillID, context) then
+          condition.conds[k] = 0
+        else
+          local requireSanVal, requireHPPercent = lsvcFeature:CalcActiveSkillSanCost(caster, skillID, context)
+          local currentVal = lsvcFeature:GetSanValue()
+          if requireSanVal <= currentVal and requireHPPercent == 0 then
+            condition.conds[k] = 1
           else
-            return false
+            local lsvcCalcDamage = self._world:GetService("CalcDamage")
+            local teamHP, teamMaxHP = lsvcCalcDamage:GetTeamLogicHP(teamEntity)
+            local percent = (teamHP - teamMaxHP * requireHPPercent) / teamMaxHP
+            condition.conds[k] = percent
           end
         end
-        if ((GameGlobal.GetModule)(SkillPerfModule)):IsPerfCoreGame() then
-          checkResult = true
-        end
-        if not checkResult then
-          return false
-        end
-        if (table.icontains)(skillTags, PetSkillTag.RandPieceColor) and not ((GameGlobal.GetModule)(SkillPerfModule)):IsPerfCoreGame() then
-          self._randPieceColor = true
-          env.MVP = nil
-        end
-        if (table.icontains)(skillTags, PetSkillTag.FixedPieceColor) and not ((GameGlobal.GetModule)(SkillPerfModule)):IsPerfCoreGame() then
-          self._lastConvertColor = petColor
-          env.MVP = nil
-        end
-        return true
+      elseif k == "CheckJiero" then
+        condition.conds[k] = self:_CheckCondition_PetJiero()
+      elseif k == "CheckLingEn" then
+        condition.conds[k] = self:_CheckCondition_PetLingEn(caster, skillID)
+      elseif k == "CheckLegendEnergy" then
+        condition.conds[k] = self:_CheckCondition_LegendEnergy(caster)
+      elseif k == "PetHP" then
+        local petHP = caster:Attributes():GetCurrentHP()
+        local petMaxHP = caster:Attributes():CalcMaxHp()
+        condition.conds[k] = petHP / petMaxHP
       end
     end
+    checkResult = condition:callback()
   end
+  if GameGlobal.GetModule(SkillPerfModule):IsBeginPerf() and GameGlobal.GetModule(SkillPerfModule):HasAppointSkill() then
+    if GameGlobal.GetModule(SkillPerfModule):IsAppointSkill(skillID) then
+      return true
+    else
+      return false
+    end
+  end
+  if GameGlobal.GetModule(SkillPerfModule):IsPerfCoreGame() then
+    checkResult = true
+  end
+  if not checkResult then
+    return false
+  end
+  if table.icontains(skillTags, PetSkillTag.RandPieceColor) and not GameGlobal.GetModule(SkillPerfModule):IsPerfCoreGame() then
+    self._randPieceColor = true
+    env.MVP = nil
+  end
+  if table.icontains(skillTags, PetSkillTag.FixedPieceColor) and not GameGlobal.GetModule(SkillPerfModule):IsPerfCoreGame() then
+    self._lastConvertColor = petColor
+    env.MVP = nil
+  end
+  return true
 end
 
--- DECOMPILER ERROR at PC183: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CheckFeatureSkillCondition = function(self, TT, caster, skillID, env)
-  -- function num : 0_56 , upvalues : _ENV
-  local skillConfigData = (self._configService):GetSkillConfigData(skillID)
+function AutoFightService:_CheckFeatureSkillCondition(TT, caster, skillID, env)
+  local skillConfigData = self._configService:GetSkillConfigData(skillID)
   local condition = skillConfigData:GetAutoFightCondition()
   local skillScopeAndTarget = skillConfigData:GetAutoFightSkillScopeTypeAndTargetType()
   local scopeType = skillConfigData:GetSkillScopeType()
@@ -2159,11 +1776,11 @@ AutoFightService._CheckFeatureSkillCondition = function(self, TT, caster, skillI
   local pickUpType = skillConfigData:GetSkillPickType()
   local triggerExtraParam = skillConfigData:GetSkillTriggerExtraParam()
   env.MVP = nil
-  local teamEntity = (self._env).TeamEntity
+  local teamEntity = self._env.TeamEntity
   local attackTargetCnt = 0
   local attackGridCnt = 0
   local gridColorCnt = {}
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   local posList = {}
   local gridList = {}
   local tarList = {}
@@ -2174,176 +1791,155 @@ AutoFightService._CheckFeatureSkillCondition = function(self, TT, caster, skillI
   end
   if FeatureType.PersonaSkill == featureType then
     return true
-  else
-    if FeatureType.MasterSkillRecover == featureType then
-      return true
-    else
-      if FeatureType.MasterSkill == featureType then
-        caster = lsvcFeature:GetFeatureSkillHolderEntity(featureType)
-        posList = self:_CalcPickupPosList(TT, caster, skillID)
-        if #posList == 0 then
-          return false
-        end
-        attackGridCnt = #gridList
-        attackTargetCnt = #tarList
-        env.PickUpGridPos = posList
-        env.PickUpExtraParam = pickUpExtraParam
-      else
-        if FeatureType.Card == featureType then
-          return true
-        else
-          if FeatureType.Shop == featureType then
-            return true
-          else
-            if FeatureType.BanPetSkill == featureType then
-              return true
-            end
-          end
-        end
-      end
+  elseif FeatureType.MasterSkillRecover == featureType then
+    return true
+  elseif FeatureType.MasterSkill == featureType then
+    caster = lsvcFeature:GetFeatureSkillHolderEntity(featureType)
+    posList, gridList, tarList, pickUpExtraParam = self:_CalcPickupPosList(TT, caster, skillID)
+    if #posList == 0 then
+      return false
     end
+    attackGridCnt = #gridList
+    attackTargetCnt = #tarList
+    env.PickUpGridPos = posList
+    env.PickUpExtraParam = pickUpExtraParam
+  elseif FeatureType.Card == featureType then
+    return true
+  elseif FeatureType.Shop == featureType then
+    return true
+  elseif FeatureType.BanPetSkill == featureType then
+    return true
   end
   return true
 end
 
--- DECOMPILER ERROR at PC186: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicyPetXiNuoPu = function(self, petEntity, activeSkillID, casterPos)
-  -- function num : 0_57 , upvalues : _ENV
+function AutoFightService:_CalPickPosPolicyPetXiNuoPu(petEntity, activeSkillID, casterPos)
   local env = self._env
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local boardService = (self._world):GetService("BoardLogic")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local boardService = self._world:GetService("BoardLogic")
   local ringMax = boardService:GetCurBoardRingMax()
-  local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID)
+  local skillConfigData = self._configService:GetSkillConfigData(activeSkillID)
   local scopeParamList = skillConfigData._pickUpValidScopeList
   local casterPosIndex = self:_Pos2Index(casterPos)
   local pickPosList = {}
   local retScopeResult = {}
   local retTargetIds = {}
-  if #scopeParamList > 0 then
+  if 0 < #scopeParamList then
     local totalScopeParam = scopeParamList[1]
     if totalScopeParam:GetScopeType() == SkillScopeType.ScopeByPickNum then
       local subScopeParamList = totalScopeParam:GetScopeParamData()
       if subScopeParamList then
         local subParam = subScopeParamList[1]
-        local validScopeParam = SkillPreviewScopeParam:New({TargetType = subParam.targetType, ScopeType = subParam.scopeType, ScopeCenterType = subParam.scopeCenterType, TargetTypeParam = subParam.targetTypeParam})
+        local validScopeParam = SkillPreviewScopeParam:New({
+          TargetType = subParam.targetType,
+          ScopeType = subParam.scopeType,
+          ScopeCenterType = subParam.scopeCenterType,
+          TargetTypeParam = subParam.targetTypeParam
+        })
         validScopeParam:SetScopeParamData(subParam.scopeParam)
         local validGirdList = utilScopeSvc:BuildScopeGridList({validScopeParam}, petEntity)
         local invalidGridList = utilScopeSvc:BuildScopeGridList(skillConfigData._pickUpInvalidScopeList, petEntity)
         local invalidGridDict = {}
-        for _,invalidPos in ipairs(invalidGridList) do
+        for _, invalidPos in ipairs(invalidGridList) do
           invalidGridDict[self:_Pos2Index(invalidPos)] = true
         end
         local validPosIdxList = {}
         local validPosList = {}
-        for _,validPos in ipairs(validGirdList) do
+        for _, validPos in ipairs(validGirdList) do
           local validPosIdx = self:_Pos2Index(validPos)
           if not invalidGridDict[validPosIdx] then
             validPosIdxList[validPosIdx] = true
             validPosList[#validPosList + 1] = validPos
           end
         end
-        local firstPickPos = nil
-        for _,off in ipairs(ringMax) do
+        local firstPickPos
+        for _, off in ipairs(ringMax) do
           local posIdx = self:_PosIndexAddOffset(casterPosIndex, off)
           if validPosIdxList[posIdx] then
             local pos = self:_Index2Pos(posIdx)
-            local color = (env.BoardPosPieces)[posIdx]
+            local color = env.BoardPosPieces[posIdx]
             if color and color ~= PieceType.Green then
               firstPickPos = pos
               break
             end
           end
         end
-        do
-          if firstPickPos then
-            subParam = subScopeParamList[2]
-            local validScopeParam = SkillPreviewScopeParam:New({TargetType = subParam.targetType, ScopeType = subParam.scopeType, ScopeCenterType = subParam.scopeCenterType, TargetTypeParam = subParam.targetTypeParam})
-            validScopeParam:SetScopeParamData(subParam.scopeParam)
-            validGirdList = utilScopeSvc:BuildScopeGridListMultiPick({validScopeParam}, petEntity, {firstPickPos})
-            local validPosIdxList = {}
-            local validPosList = {}
-            for _,validPos in ipairs(validGirdList) do
-              local validPosIdx = self:_Pos2Index(validPos)
-              if not invalidGridDict[validPosIdx] then
-                validPosIdxList[validPosIdx] = true
-                validPosList[#validPosList + 1] = validPos
+        if firstPickPos then
+          subParam = subScopeParamList[2]
+          local validScopeParam = SkillPreviewScopeParam:New({
+            TargetType = subParam.targetType,
+            ScopeType = subParam.scopeType,
+            ScopeCenterType = subParam.scopeCenterType,
+            TargetTypeParam = subParam.targetTypeParam
+          })
+          validScopeParam:SetScopeParamData(subParam.scopeParam)
+          validGirdList = utilScopeSvc:BuildScopeGridListMultiPick({validScopeParam}, petEntity, {firstPickPos})
+          local validPosIdxList = {}
+          local validPosList = {}
+          for _, validPos in ipairs(validGirdList) do
+            local validPosIdx = self:_Pos2Index(validPos)
+            if not invalidGridDict[validPosIdx] then
+              validPosIdxList[validPosIdx] = true
+              validPosList[#validPosList + 1] = validPos
+            end
+          end
+          local secondPickPos
+          for _, pos in ipairs(validPosList) do
+            if firstPickPos ~= pos then
+              secondPickPos = secondPickPos or pos
+              local posIdx = self:_Pos2Index(pos)
+              local color = env.BoardPosPieces[posIdx]
+              if color and color ~= PieceType.Green then
+                secondPickPos = pos
+                break
               end
             end
-            local secondPickPos = nil
-            for _,pos in ipairs(validPosList) do
-              if firstPickPos ~= pos then
-                if not secondPickPos then
-                  secondPickPos = pos
-                end
-                local posIdx = self:_Pos2Index(pos)
-                local color = (env.BoardPosPieces)[posIdx]
-                if color and color ~= PieceType.Green then
-                  secondPickPos = pos
-                  break
-                end
-              end
-            end
-            do
-              do
-                if secondPickPos then
-                  (table.insert)(pickPosList, firstPickPos)
-                  ;
-                  (table.insert)(pickPosList, secondPickPos)
-                  retScopeResult = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, pickPosList)
-                end
-                return pickPosList, retScopeResult, retTargetIds
-              end
-            end
+          end
+          if secondPickPos then
+            table.insert(pickPosList, firstPickPos)
+            table.insert(pickPosList, secondPickPos)
+            retScopeResult, retTargetIds = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, pickPosList)
           end
         end
       end
     end
   end
+  return pickPosList, retScopeResult, retTargetIds
 end
 
--- DECOMPILER ERROR at PC189: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicy_NearestPos = function(self, petEntity, activeSkillID, casterPos, validPosIdxList, pickUpNum, petColor)
-  -- function num : 0_58 , upvalues : _ENV
-  local boardService = (self._world):GetService("BoardLogic")
+function AutoFightService:_CalPickPosPolicy_NearestPos(petEntity, activeSkillID, casterPos, validPosIdxList, pickUpNum, petColor)
+  local boardService = self._world:GetService("BoardLogic")
   local ringMax = boardService:GetCurBoardRingMax()
   local casterPosIndex = self:_Pos2Index(casterPos)
   local env = self._env
   local posList = {}
   local targetIdList = {}
   local attackPosList = {}
-  for _,off in ipairs(ringMax) do
+  for _, off in ipairs(ringMax) do
     local posIdx = self:_PosIndexAddOffset(casterPosIndex, off)
     if validPosIdxList[posIdx] then
       local pos = self:_Index2Pos(posIdx)
-      if (env.BoardPosCanMove)[posIdx] and (env.BoardPosPieces)[posIdx] ~= petColor then
+      if env.BoardPosCanMove[posIdx] and env.BoardPosPieces[posIdx] ~= petColor then
         local result, targetIds = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, pos)
-        ;
-        (table.appendArray)(attackPosList, result:GetAttackRange())
-        ;
-        (table.appendArray)(targetIdList, targetIds)
+        table.appendArray(attackPosList, result:GetAttackRange())
+        table.appendArray(targetIdList, targetIds)
         posList[#posList + 1] = pos
+        if pickUpNum <= #posList then
+          break
+        end
       end
     end
   end
-  do
-    if pickUpNum > #posList then
-      return posList, attackPosList, targetIdList
-    end
-  end
+  return posList, attackPosList, targetIdList
 end
 
--- DECOMPILER ERROR at PC192: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicy_MovePathEndPos = function(self, TT, petEntity, activeSkillID)
-  -- function num : 0_59 , upvalues : _ENV
+function AutoFightService:_CalPickPosPolicy_MovePathEndPos(TT, petEntity, activeSkillID)
   local env = self._env
   local attackPosList = {}
   local chainPath, pieceType, evalue = self:GetAutoChainPath(TT, env.TeamEntity)
   local pos = chainPath[#chainPath]
-  local isBlockedSummonTrap = (self._boardServiceLogic):IsPosBlock(pos, BlockFlag.MonsterLand)
-  local isBlockedLinkLine = (self._boardServiceLogic):IsPosBlock(pos, BlockFlag.LinkLine)
+  local isBlockedSummonTrap = self._boardServiceLogic:IsPosBlock(pos, BlockFlag.MonsterLand)
+  local isBlockedLinkLine = self._boardServiceLogic:IsPosBlock(pos, BlockFlag.LinkLine)
   if #chainPath == 1 or isBlockedSummonTrap or isBlockedLinkLine then
     return {}, {}, {}
   end
@@ -2352,25 +1948,28 @@ AutoFightService._CalPickPosPolicy_MovePathEndPos = function(self, TT, petEntity
   return {pos}, attackPosList, targetIds
 end
 
--- DECOMPILER ERROR at PC195: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicy_PetJiaBaiLie = function(self, validPosList)
-  -- function num : 0_60 , upvalues : _ENV
+function AutoFightService:_CalPickPosPolicy_PetJiaBaiLie(validPosList)
   local env = self._env
   local targetIdList = {}
-  local _pieceCnt = {0, 0, 0, 0, 0}
+  local _pieceCnt = {
+    0,
+    0,
+    0,
+    0,
+    0
+  }
   local _pickPos = {}
-  for _,pos in ipairs(validPosList) do
+  for _, pos in ipairs(validPosList) do
     local posIdx = self:_Pos2Index(pos)
-    local color = (env.BoardPosPieces)[posIdx]
+    local color = env.BoardPosPieces[posIdx]
     if color and color ~= PieceType.Green then
       _pieceCnt[color] = _pieceCnt[color] + 1
       _pickPos[color] = pos
     end
   end
-  local maxCnt, maxPos = 0, nil
-  for color,cnt in ipairs(_pieceCnt) do
-    if maxCnt < cnt then
+  local maxCnt, maxPos = 0
+  for color, cnt in ipairs(_pieceCnt) do
+    if cnt > maxCnt then
       maxCnt = cnt
       maxPos = _pickPos[color]
     end
@@ -2378,19 +1977,16 @@ AutoFightService._CalPickPosPolicy_PetJiaBaiLie = function(self, validPosList)
   return {maxPos}, {maxPos}, targetIdList
 end
 
--- DECOMPILER ERROR at PC198: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicy_PetLuoYi = function(self, petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
-  -- function num : 0_61 , upvalues : _ENV
+function AutoFightService:_CalPickPosPolicy_PetLuoYi(petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
   local env = self._env
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local boardService = (self._world):GetService("BoardLogic")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local boardService = self._world:GetService("BoardLogic")
   local ringMax = boardService:GetCurBoardRingMax()
-  local udsvc = (self._world):GetService("UtilData")
-  local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID)
+  local udsvc = self._world:GetService("UtilData")
+  local skillConfigData = self._configService:GetSkillConfigData(activeSkillID)
   local casterPosIndex = self:_Pos2Index(casterPos)
   local needCheckPower = false
-  local powerIfNoTrap, tarTrapId = nil, nil
+  local powerIfNoTrap, tarTrapId
   local extraParam = skillConfigData:GetSkillTriggerExtraParam()
   if extraParam and extraParam[SkillTriggerTypeExtraParam.PickPosNoCfgTrap] then
     needCheckPower = true
@@ -2401,109 +1997,82 @@ AutoFightService._CalPickPosPolicy_PetLuoYi = function(self, petEntity, activeSk
       tarTrapId = pickParams[3]
     end
   end
-  do
-    local legendPower = 0
-    do
-      if needCheckPower then
-        local attributeCmpt = petEntity:Attributes()
-        if attributeCmpt then
-          legendPower = attributeCmpt:GetAttribute("LegendPower")
-        end
-      end
-      local pickExtraParam = {}
-      local firstPickPos = nil
-      for _,off in ipairs(ringMax) do
-        local posIdx = self:_PosIndexAddOffset(casterPosIndex, off)
-        if validPosIdxList[posIdx] then
-          local pos = self:_Index2Pos(posIdx)
-          local color = (env.BoardPosPieces)[posIdx]
-          if color and color ~= PieceType.Yellow then
-            if needCheckPower then
-              local bPickTrap = false
-              local traps = udsvc:GetTrapsAtPos(pos)
-              if traps then
-                for index,e in ipairs(traps) do
-                  if tarTrapId == (e:Trap()):GetTrapID() then
-                    bPickTrap = true
-                    break
-                  end
-                end
-              end
-              do
-                do
-                  do
-                    if not bPickTrap and powerIfNoTrap <= legendPower then
-                      firstPickPos = pos
-                      ;
-                      (table.insert)(pickExtraParam, SkillTriggerTypeExtraParam.PickPosNoCfgTrap)
-                      break
-                    end
-                    firstPickPos = pos
-                    do break end
-                    -- DECOMPILER ERROR at PC118: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC118: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC118: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC118: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC118: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC118: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC118: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC118: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
-                end
+  local legendPower = 0
+  if needCheckPower then
+    local attributeCmpt = petEntity:Attributes()
+    if attributeCmpt then
+      legendPower = attributeCmpt:GetAttribute("LegendPower")
+    end
+  end
+  local pickExtraParam = {}
+  local firstPickPos
+  for _, off in ipairs(ringMax) do
+    local posIdx = self:_PosIndexAddOffset(casterPosIndex, off)
+    if validPosIdxList[posIdx] then
+      local pos = self:_Index2Pos(posIdx)
+      local color = env.BoardPosPieces[posIdx]
+      if color and color ~= PieceType.Yellow then
+        if needCheckPower then
+          local bPickTrap = false
+          local traps = udsvc:GetTrapsAtPos(pos)
+          if traps then
+            for index, e in ipairs(traps) do
+              if tarTrapId == e:Trap():GetTrapID() then
+                bPickTrap = true
+                break
               end
             end
           end
+          if not bPickTrap and powerIfNoTrap <= legendPower then
+            firstPickPos = pos
+            table.insert(pickExtraParam, SkillTriggerTypeExtraParam.PickPosNoCfgTrap)
+            break
+          end
+        else
+          firstPickPos = pos
+          break
         end
-      end
-      if firstPickPos then
-        return {firstPickPos}, {firstPickPos}, {}, pickExtraParam
-      else
-        return {}, {}, {}, {}
       end
     end
   end
+  if firstPickPos then
+    return {firstPickPos}, {firstPickPos}, {}, pickExtraParam
+  else
+    return {}, {}, {}, {}
+  end
 end
 
--- DECOMPILER ERROR at PC201: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicy_PetLen = function(self, policyParam, petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
-  -- function num : 0_62 , upvalues : _ENV
+function AutoFightService:_CalPickPosPolicy_PetLen(policyParam, petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
   local pickPosList = {}
   local atkPosList = {}
   local targetIds = {}
   local extraParam = {}
   local greatestHPVal = 0
-  local greatestHPValEntity = nil
+  local greatestHPValEntity
   local posIndexEntityIDDic = {}
-  local monsterGlobalEntityGroup = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).MonsterID)
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    monsterGlobalEntityGroup = {(((petEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()}
+  local monsterGlobalEntityGroup = self._world:GetGroupEntities(self._world.BW_WEMatchers.MonsterID)
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    monsterGlobalEntityGroup = {
+      petEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
+    }
   end
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local extraBoardPosRange = utilData:GetExtraBoardPosList()
-  for _,e in ipairs(monsterGlobalEntityGroup) do
+  for _, e in ipairs(monsterGlobalEntityGroup) do
     local isSelectable = true
     if e:HasBuff() then
-      isSelectable = not (e:BuffComponent()):HasBuffEffect(BuffEffectType.NotBeSelectedAsSkillTarget)
+      isSelectable = not e:BuffComponent():HasBuffEffect(BuffEffectType.NotBeSelectedAsSkillTarget)
     end
     if not e:HasDeadMark() and isSelectable then
-      local hp = (e:Attributes()):GetCurrentHP()
-      local tv2BodyArea = (e:BodyArea()):GetArea()
+      local hp = e:Attributes():GetCurrentHP()
+      local tv2BodyArea = e:BodyArea():GetArea()
       local v2GridPos = e:GetGridPosition()
       local eid = e:GetID()
       local hasValidBodyPos = false
-      for _,v2Relative in ipairs(tv2BodyArea) do
+      for _, v2Relative in ipairs(tv2BodyArea) do
         local v2 = v2GridPos + v2Relative
-        if not (table.intable)(extraBoardPosRange, v2) then
-          local index = (Vector2.Pos2Index)(v2)
+        if not table.intable(extraBoardPosRange, v2) then
+          local index = Vector2.Pos2Index(v2)
           posIndexEntityIDDic[index] = eid
           hasValidBodyPos = true
         end
@@ -2515,131 +2084,123 @@ AutoFightService._CalPickPosPolicy_PetLen = function(self, policyParam, petEntit
     end
   end
   if not greatestHPValEntity then
-    (Log.debug)(self._className, "自动主动技释放：场上没怪")
+    Log.debug(self._className, "自动主动技释放：场上没怪")
     return pickPosList, atkPosList, targetIds, extraParam
   end
   local greatestHPValEntityID = greatestHPValEntity:GetID()
-  ;
-  (Log.debug)(self._className, "自动主动技释放：必然包含目标：", greatestHPValEntityID)
+  Log.debug(self._className, "自动主动技释放：必然包含目标：", greatestHPValEntityID)
   local greatestHPValGridPos = greatestHPValEntity:GetGridPosition()
-  if (table.intable)(extraBoardPosRange, greatestHPValGridPos) then
+  if table.intable(extraBoardPosRange, greatestHPValGridPos) then
     local v2GridPos = greatestHPValGridPos
-    local tv2BodyArea = (greatestHPValEntity:BodyArea()):GetArea()
+    local tv2BodyArea = greatestHPValEntity:BodyArea():GetArea()
     local validList = {}
-    for _,v2Relative in ipairs(tv2BodyArea) do
+    for _, v2Relative in ipairs(tv2BodyArea) do
       local v2 = v2GridPos + v2Relative
-      if not (table.intable)(extraBoardPosRange, v2) then
-        (table.insert)(validList, v2)
+      if not table.intable(extraBoardPosRange, v2) then
+        table.insert(validList, v2)
       end
     end
-    if #validList > 0 then
-      (table.sort)(validList, function(a, b)
-    -- function num : 0_62_0
-    if a.x >= b.x then
-      do return a.x == b.x end
-      do return a.y < b.y end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
-    end
-  end
-)
+    if 0 < #validList then
+      table.sort(validList, function(a, b)
+        if a.x ~= b.x then
+          return a.x < b.x
+        else
+          return a.y < b.y
+        end
+      end)
       greatestHPValGridPos = validList[1]
     else
       return pickPosList, atkPosList, targetIds, extraParam
     end
   end
-  do
-    local utilData = (self._world):GetService("UtilData")
-    local testResult = {}
-    local resultIndex = 0
-    for i = 1, #policyParam, 2 do
-      local policyXOffset = policyParam[i]
-      local policyYOffset = policyParam[i + 1]
-      local gridPosX = greatestHPValGridPos.x
-      local gridPosY = greatestHPValGridPos.y
-      local gridPosOffsetX = gridPosX + policyXOffset
-      local gridPosOffsetY = gridPosY + policyYOffset
-      local pickPos2 = (Vector2.New)(gridPosOffsetX, gridPosOffsetY)
-      if utilData:IsValidPiecePos(pickPos2) and not self:_IsPosInExtraBoard(pickPos2, extraBoardPosRange) then
-        resultIndex = resultIndex + 1
-        local result = {greatestHPValEntityCount = 0, otherMonsterEntityCount = 0, index = resultIndex, x1 = gridPosX, x2 = gridPosOffsetX, y1 = gridPosY, y2 = gridPosOffsetY, 
-targetIDs = {}
-}
-        local minX = (math.min)(gridPosX, gridPosOffsetX)
-        local maxX = (math.max)(gridPosX, gridPosOffsetX)
-        local minY = (math.min)(gridPosY, gridPosOffsetY)
-        local maxY = (math.max)(gridPosY, gridPosOffsetY)
-        for x = minX, maxX do
-          for y = minY, maxY do
-            local v2 = (Vector2.New)(x, y)
-            local tMonsterList = utilData:FindEntityByPosAndType(v2, EnumTargetEntity.Monster)
-            do
-              if (self._world):MatchType() == MatchType.MT_BlackFist then
-                local eTeam = (((petEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()
-                if eTeam:GetGridPosition() == v2 then
-                  tMonsterList = {eTeam:GetID()}
-                end
-              end
-              for _,eid in ipairs(tMonsterList) do
-                if not (table.icontains)(result.targetIDs, eid) then
-                  (table.insert)(result.targetIDs, eid)
-                end
-                if eid == greatestHPValEntityID then
-                  result.greatestHPValEntityCount = result.greatestHPValEntityCount + 1
-                else
-                  result.otherMonsterEntityCount = result.otherMonsterEntityCount + 1
-                end
-              end
-              -- DECOMPILER ERROR at PC302: LeaveBlock: unexpected jumping out DO_STMT
-
+  local utilData = self._world:GetService("UtilData")
+  local testResult = {}
+  local resultIndex = 0
+  for i = 1, #policyParam, 2 do
+    local policyXOffset = policyParam[i]
+    local policyYOffset = policyParam[i + 1]
+    local gridPosX = greatestHPValGridPos.x
+    local gridPosY = greatestHPValGridPos.y
+    local gridPosOffsetX = gridPosX + policyXOffset
+    local gridPosOffsetY = gridPosY + policyYOffset
+    local pickPos2 = Vector2.New(gridPosOffsetX, gridPosOffsetY)
+    if utilData:IsValidPiecePos(pickPos2) and not self:_IsPosInExtraBoard(pickPos2, extraBoardPosRange) then
+      resultIndex = resultIndex + 1
+      local result = {
+        greatestHPValEntityCount = 0,
+        otherMonsterEntityCount = 0,
+        index = resultIndex,
+        x1 = gridPosX,
+        x2 = gridPosOffsetX,
+        y1 = gridPosY,
+        y2 = gridPosOffsetY,
+        targetIDs = {}
+      }
+      local minX = math.min(gridPosX, gridPosOffsetX)
+      local maxX = math.max(gridPosX, gridPosOffsetX)
+      local minY = math.min(gridPosY, gridPosOffsetY)
+      local maxY = math.max(gridPosY, gridPosOffsetY)
+      for x = minX, maxX do
+        for y = minY, maxY do
+          local v2 = Vector2.New(x, y)
+          local tMonsterList = utilData:FindEntityByPosAndType(v2, EnumTargetEntity.Monster)
+          if self._world:MatchType() == MatchType.MT_BlackFist then
+            local eTeam = petEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
+            if eTeam:GetGridPosition() == v2 then
+              tMonsterList = {
+                eTeam:GetID()
+              }
+            end
+          end
+          for _, eid in ipairs(tMonsterList) do
+            if not table.icontains(result.targetIDs, eid) then
+              table.insert(result.targetIDs, eid)
+            end
+            if eid == greatestHPValEntityID then
+              result.greatestHPValEntityCount = result.greatestHPValEntityCount + 1
+            else
+              result.otherMonsterEntityCount = result.otherMonsterEntityCount + 1
             end
           end
         end
-        ;
-        (table.insert)(testResult, result)
       end
+      table.insert(testResult, result)
     end
-    ;
-    (table.sort)(testResult, function(a, b)
-    -- function num : 0_62_1
-    if b.greatestHPValEntityCount >= a.greatestHPValEntityCount then
-      do return a.greatestHPValEntityCount == b.greatestHPValEntityCount end
-      if b.otherMonsterEntityCount >= a.otherMonsterEntityCount then
-        do return a.otherMonsterEntityCount == b.otherMonsterEntityCount end
-        do return a.index < b.index end
-        -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  end
+  table.sort(testResult, function(a, b)
+    if a.greatestHPValEntityCount ~= b.greatestHPValEntityCount then
+      return a.greatestHPValEntityCount > b.greatestHPValEntityCount
+    elseif a.otherMonsterEntityCount ~= b.otherMonsterEntityCount then
+      return a.otherMonsterEntityCount > b.otherMonsterEntityCount
+    else
+      return a.index < b.index
+    end
+  end)
+  local finalResult = testResult[1]
+  local pickPosA = Vector2.New(finalResult.x1, finalResult.y1)
+  local pickPosB = Vector2.New(finalResult.x2, finalResult.y2)
+  local minX = math.min(pickPosA.x, pickPosB.x)
+  local maxX = math.max(pickPosA.x, pickPosB.x)
+  local minY = math.min(pickPosA.y, pickPosB.y)
+  local maxY = math.max(pickPosA.y, pickPosB.y)
+  for x = minX, maxX do
+    for y = minY, maxY do
+      local v2 = Vector2.New(x, y)
+      if utilData:IsValidPiecePos(v2) then
+        table.insert(atkPosList, v2)
       end
     end
   end
-)
-    local finalResult = testResult[1]
-    local pickPosA = (Vector2.New)(finalResult.x1, finalResult.y1)
-    local pickPosB = (Vector2.New)(finalResult.x2, finalResult.y2)
-    local minX = (math.min)(pickPosA.x, pickPosB.x)
-    local maxX = (math.max)(pickPosA.x, pickPosB.x)
-    local minY = (math.min)(pickPosA.y, pickPosB.y)
-    local maxY = (math.max)(pickPosA.y, pickPosB.y)
-    for x = minX, maxX do
-      for y = minY, maxY do
-        local v2 = (Vector2.New)(x, y)
-        if utilData:IsValidPiecePos(v2) then
-          (table.insert)(atkPosList, v2)
-        end
-      end
-    end
-    return {pickPosA, pickPosB}, atkPosList, finalResult.targetIDs, extraParam
-  end
+  return {pickPosA, pickPosB}, atkPosList, finalResult.targetIDs, extraParam
 end
 
--- DECOMPILER ERROR at PC204: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicyPetYuSen = function(self, petEntity, activeSkillID, casterPos)
-  -- function num : 0_63 , upvalues : _ENV
+function AutoFightService:_CalPickPosPolicyPetYuSen(petEntity, activeSkillID, casterPos)
   local env = self._env
   local trapID = 0
-  local stpSummonTrap = nil
-  local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID)
+  local stpSummonTrap
+  local skillConfigData = self._configService:GetSkillConfigData(activeSkillID)
   local skillEffectArray = skillConfigData:GetSkillEffect()
-  for _,skillEffect in ipairs(skillEffectArray) do
+  for _, skillEffect in ipairs(skillEffectArray) do
     if skillEffect:GetEffectType() == SkillEffectType.SummonTrap then
       stpSummonTrap = skillEffect
       trapID = stpSummonTrap:GetTrapID()
@@ -2649,92 +2210,77 @@ AutoFightService._CalPickPosPolicyPetYuSen = function(self, petEntity, activeSki
       break
     end
   end
-  do
-    local targetEntityList = {}
-    if (self._world):MatchType() == MatchType.MT_BlackFist then
-      local teamEntity = (petEntity:Pet()):GetOwnerTeamEntity()
-      local enemyTeam = (teamEntity:Team()):GetEnemyTeamEntity()
-      ;
-      (table.insert)(targetEntityList, enemyTeam)
-    else
-      do
-        local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-        for _,monsterEntity in ipairs(monsterGroup:GetEntities()) do
-          if not monsterEntity:HasDeadMark() then
-            (table.insert)(targetEntityList, monsterEntity)
-          end
-        end
-        do
-          local trapEntityList = {}
-          local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-          for i,e in ipairs(trapGroup:GetEntities()) do
-            if not e:HasDeadMark() and (e:TrapID()):GetTrapID() == trapID and e:HasSummoner() and (e:Summoner()):GetSummonerEntityID() == petEntity:GetID() then
-              (table.insert)(trapEntityList, e)
-            end
-          end
-          local pickupPosList = {}
-          for _,targetEntity in pairs(targetEntityList) do
-            local posList = self:GetPosListAroundBodyArea(targetEntity, 1)
-            for _,trapEntity in pairs(trapEntityList) do
-              local trapPos = (trapEntity:GridLocation()):GetGridPos()
-              if (table.icontains)(posList, trapPos) then
-                local boardCmpt = ((self._world):GetBoardEntity()):Board()
-                local es = boardCmpt:GetPieceEntities(trapPos, function(e)
-    -- function num : 0_63_0
-    if not e:HasTeam() then
-      return e:HasMonsterID()
+  local targetEntityList = {}
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    local teamEntity = petEntity:Pet():GetOwnerTeamEntity()
+    local enemyTeam = teamEntity:Team():GetEnemyTeamEntity()
+    table.insert(targetEntityList, enemyTeam)
+  else
+    local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+    for _, monsterEntity in ipairs(monsterGroup:GetEntities()) do
+      if not monsterEntity:HasDeadMark() then
+        table.insert(targetEntityList, monsterEntity)
+      end
     end
   end
-)
-                if #es == 0 and not (self._boardServiceLogic):IsPosBlock(trapPos, BlockFlag.LinkLine) then
-                  (table.insert)(pickupPosList, trapPos)
-                end
-              end
-            end
-          end
-          local pickPosList = {}
-          local targetIDs = {}
-          ;
-          (table.insert)(targetIDs, petEntity:GetID())
-          if #pickupPosList > 0 then
-            pickPosList = (table.randomn)(pickupPosList, 1)
-            return pickPosList, pickPosList, targetIDs
-          end
-          local scopeCalculator = (self._utilScopeSvc):GetSkillScopeCalc()
-          local tarSelector = (self._world):GetSkillScopeTargetSelector()
-          local posList = (self._utilSvc):GetCloneBoardGridPos()
-          local skillScopeResult = SkillScopeResult:New(SkillScopeType.None, petEntity, posList, posList)
-          local nearstTargetIDs = tarSelector:DoSelectSkillTarget(petEntity, SkillTargetType.NearestMonster, skillScopeResult)
-          if #nearstTargetIDs < 1 then
-            return pickPosList, pickPosList, targetIDs
-          end
-          local targetID = nearstTargetIDs[1]
-          local targetEntity = (self._world):GetEntityByID(targetID)
-          local posList = self:GetPosListAroundBodyArea(targetEntity, 1)
-          for _,pickPos in pairs(posList) do
-            local trapSvc = (self._world):GetService("TrapLogic")
-            if stpSummonTrap:GetBlock() == 0 or trapSvc:CanSummonTrapOnPos(pickPos, trapID) then
-              (table.insert)(pickupPosList, pickPos)
-            end
-          end
-          HelperProxy:SortPosByCenterPosDistance(casterPos, pickupPosList)
-          for i = 2, #pickupPosList do
-            pickupPosList[i] = nil
-          end
-          return pickupPosList, pickupPosList, targetIDs
+  local trapEntityList = {}
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  for i, e in ipairs(trapGroup:GetEntities()) do
+    if not e:HasDeadMark() and e:TrapID():GetTrapID() == trapID and e:HasSummoner() and e:Summoner():GetSummonerEntityID() == petEntity:GetID() then
+      table.insert(trapEntityList, e)
+    end
+  end
+  local pickupPosList = {}
+  for _, targetEntity in pairs(targetEntityList) do
+    local posList = self:GetPosListAroundBodyArea(targetEntity, 1)
+    for _, trapEntity in pairs(trapEntityList) do
+      local trapPos = trapEntity:GridLocation():GetGridPos()
+      if table.icontains(posList, trapPos) then
+        local boardCmpt = self._world:GetBoardEntity():Board()
+        local es = boardCmpt:GetPieceEntities(trapPos, function(e)
+          return e:HasTeam() or e:HasMonsterID()
+        end)
+        if #es == 0 and not self._boardServiceLogic:IsPosBlock(trapPos, BlockFlag.LinkLine) then
+          table.insert(pickupPosList, trapPos)
         end
       end
     end
   end
+  local pickPosList = {}
+  local targetIDs = {}
+  table.insert(targetIDs, petEntity:GetID())
+  if 0 < #pickupPosList then
+    pickPosList = table.randomn(pickupPosList, 1)
+    return pickPosList, pickPosList, targetIDs
+  end
+  local scopeCalculator = self._utilScopeSvc:GetSkillScopeCalc()
+  local tarSelector = self._world:GetSkillScopeTargetSelector()
+  local posList = self._utilSvc:GetCloneBoardGridPos()
+  local skillScopeResult = SkillScopeResult:New(SkillScopeType.None, petEntity, posList, posList)
+  local nearstTargetIDs = tarSelector:DoSelectSkillTarget(petEntity, SkillTargetType.NearestMonster, skillScopeResult)
+  if #nearstTargetIDs < 1 then
+    return pickPosList, pickPosList, targetIDs
+  end
+  local targetID = nearstTargetIDs[1]
+  local targetEntity = self._world:GetEntityByID(targetID)
+  local posList = self:GetPosListAroundBodyArea(targetEntity, 1)
+  for _, pickPos in pairs(posList) do
+    local trapSvc = self._world:GetService("TrapLogic")
+    if stpSummonTrap:GetBlock() == 0 or trapSvc:CanSummonTrapOnPos(pickPos, trapID) then
+      table.insert(pickupPosList, pickPos)
+    end
+  end
+  HelperProxy:SortPosByCenterPosDistance(casterPos, pickupPosList)
+  for i = 2, #pickupPosList do
+    pickupPosList[i] = nil
+  end
+  return pickupPosList, pickupPosList, targetIDs
 end
 
--- DECOMPILER ERROR at PC207: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CheckSubSkillCondition = function(self, TT, e, subSkillList, env)
-  -- function num : 0_64 , upvalues : _ENV
+function AutoFightService:_CheckSubSkillCondition(TT, e, subSkillList, env)
   local svcCfg = self._configService
   local petEntity = e
-  local petPstID = (petEntity:PetPstID()):GetPstID()
+  local petPstID = petEntity:PetPstID():GetPstID()
   local sorted_skills = {}
   for i = 1, #subSkillList do
     local skillId = subSkillList[i]
@@ -2743,39 +2289,34 @@ AutoFightService._CheckSubSkillCondition = function(self, TT, e, subSkillList, e
     if cfgExtraParam then
       local trapID = cfgExtraParam[SkillTriggerTypeExtraParam.TrapID]
       if trapID then
-        local trapServiceLogic = (self._world):GetService("TrapLogic")
+        local trapServiceLogic = self._world:GetService("TrapLogic")
         if not trapServiceLogic:IsTrapCovered(trapID, petPstID) then
-          (table.insert)(sorted_skills, {petEntity, skillId, petPstID, i})
+          table.insert(sorted_skills, {
+            petEntity,
+            skillId,
+            petPstID,
+            i
+          })
         end
       end
     else
-      do
-        do
-          ;
-          (table.insert)(sorted_skills, {petEntity, skillId, petPstID, i})
-          -- DECOMPILER ERROR at PC55: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC55: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC55: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      table.insert(sorted_skills, {
+        petEntity,
+        skillId,
+        petPstID,
+        i
+      })
     end
   end
-  ;
-  (table.sort)(sorted_skills, function(a, b)
-    -- function num : 0_64_0 , upvalues : svcCfg
-    local order1 = (svcCfg:GetSkillConfigData(a[2])):GetAutoFightSkillOrder()
-    local order2 = (svcCfg:GetSkillConfigData(b[2])):GetAutoFightSkillOrder()
-    if a[4] >= b[4] then
-      do return order1 ~= order2 end
-      do return order1 < order2 end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  table.sort(sorted_skills, function(a, b)
+    local order1 = svcCfg:GetSkillConfigData(a[2]):GetAutoFightSkillOrder()
+    local order2 = svcCfg:GetSkillConfigData(b[2]):GetAutoFightSkillOrder()
+    if order1 == order2 then
+      return a[4] < b[4]
     end
-  end
-)
-  for _,v in ipairs(sorted_skills) do
+    return order1 < order2
+  end)
+  for _, v in ipairs(sorted_skills) do
     local skillId = v[2]
     if self:_CheckSkillCondition(TT, petEntity, skillId, env) then
       env.subSkillID = skillId
@@ -2785,35 +2326,29 @@ AutoFightService._CheckSubSkillCondition = function(self, TT, e, subSkillList, e
   return false
 end
 
--- DECOMPILER ERROR at PC210: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CanAttack = function(self, trapPos, targetPosList)
-  -- function num : 0_65 , upvalues : _ENV
-  local scopeCalculator = (self._utilScopeSvc):GetSkillScopeCalc()
+function AutoFightService:_CanAttack(trapPos, targetPosList)
+  local scopeCalculator = self._utilScopeSvc:GetSkillScopeCalc()
   local scopeResult = scopeCalculator:ComputeScopeRange(SkillScopeType.Rhombus, {2}, trapPos)
   local attackRange = scopeResult:GetAttackRange()
-  local targetInRange = (table.union)(attackRange, targetPosList)
+  local targetInRange = table.union(attackRange, targetPosList)
   if #targetInRange == 0 then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC213: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._IsNeedSummonTrap = function(self, petEntity, trapID, pieceType, targetPosList)
-  -- function num : 0_66 , upvalues : _ENV
+function AutoFightService:_IsNeedSummonTrap(petEntity, trapID, pieceType, targetPosList)
   local trapEntityList = {}
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-  for i,e in ipairs(trapGroup:GetEntities()) do
-    if not e:HasDeadMark() and (e:TrapID()):GetTrapID() == trapID and e:HasSummoner() then
-      local summonEntityID = (e:Summoner()):GetSummonerEntityID()
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  for i, e in ipairs(trapGroup:GetEntities()) do
+    if not e:HasDeadMark() and e:TrapID():GetTrapID() == trapID and e:HasSummoner() then
+      local summonEntityID = e:Summoner():GetSummonerEntityID()
       local summonEntity = e:GetSummonerEntity()
       if summonEntity and summonEntity:HasSuperEntity() and summonEntity:GetSuperEntity() then
-        summonEntityID = (summonEntity:GetSuperEntity()):GetID()
+        summonEntityID = summonEntity:GetSuperEntity():GetID()
       end
       if summonEntityID == petEntity:GetID() then
-        (table.insert)(trapEntityList, e)
+        table.insert(trapEntityList, e)
       end
     end
   end
@@ -2822,13 +2357,13 @@ AutoFightService._IsNeedSummonTrap = function(self, petEntity, trapID, pieceType
   end
   local trapEntity = trapEntityList[1]
   local trapPos = trapEntity:GetGridPosition()
-  if (self._utilScopeSvc):IsPosHaveMonsterOrPet(trapPos) then
+  if self._utilScopeSvc:IsPosHaveMonsterOrPet(trapPos) then
     return true, trapPos
   end
-  if (self._utilScopeSvc):IsPosBlock(trapPos, BlockFlag.LinkLine) then
+  if self._utilScopeSvc:IsPosBlock(trapPos, BlockFlag.LinkLine) then
     return true, trapPos
   end
-  if pieceType == (self._boardServiceLogic):GetPieceType(trapPos) then
+  if pieceType == self._boardServiceLogic:GetPieceType(trapPos) then
     return true, trapPos, true
   end
   if not self:_CanAttack(trapPos, targetPosList) then
@@ -2837,20 +2372,17 @@ AutoFightService._IsNeedSummonTrap = function(self, petEntity, trapID, pieceType
   return false, trapPos
 end
 
--- DECOMPILER ERROR at PC216: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalcMatchPickPos = function(self, casterPos, posListTab, trapID, pieceType)
-  -- function num : 0_67 , upvalues : _ENV
-  for _,posList in ipairs(posListTab) do
-    posList = (table.unique)(posList)
+function AutoFightService:_CalcMatchPickPos(casterPos, posListTab, trapID, pieceType)
+  for _, posList in ipairs(posListTab) do
+    posList = table.unique(posList)
     HelperProxy:SortPosByCenterPosDistance(casterPos, posList)
-    local trapSvc = (self._world):GetService("TrapLogic")
-    for _,pickPos in pairs(posList) do
+    local trapSvc = self._world:GetService("TrapLogic")
+    for _, pickPos in pairs(posList) do
       if trapSvc:CanSummonTrapOnPos(pickPos, trapID) then
         if not pieceType then
           return pickPos
         end
-        if pieceType and pieceType ~= (self._boardServiceLogic):GetPieceType(pickPos) then
+        if pieceType and pieceType ~= self._boardServiceLogic:GetPieceType(pickPos) then
           return pickPos
         end
       end
@@ -2859,18 +2391,14 @@ AutoFightService._CalcMatchPickPos = function(self, casterPos, posListTab, trapI
   return nil
 end
 
--- DECOMPILER ERROR at PC219: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicyPetQingTong = function(self, petEntity, activeSkillID, casterPos)
-  -- function num : 0_68 , upvalues : _ENV
+function AutoFightService:_CalPickPosPolicyPetQingTong(petEntity, activeSkillID, casterPos)
   local pickPosList = {}
   local targetIDs = {}
-  ;
-  (table.insert)(targetIDs, petEntity:GetID())
+  table.insert(targetIDs, petEntity:GetID())
   local trapID = 0
   local pieceType = 0
   local canPickTrap = false
-  local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID)
+  local skillConfigData = self._configService:GetSkillConfigData(activeSkillID)
   local pickPosPolicyParam = skillConfigData:GetAutoFightSkillScopeTypeAndTargetType()
   if pickPosPolicyParam and pickPosPolicyParam.useType == AutoFightScopeUseType.PickPosPolicy then
     trapID = pickPosPolicyParam.trapID
@@ -2878,161 +2406,142 @@ AutoFightService._CalPickPosPolicyPetQingTong = function(self, petEntity, active
     canPickTrap = pickPosPolicyParam.canPickTrap
   end
   local targetEntityList = {}
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    local teamEntity = (petEntity:Pet()):GetOwnerTeamEntity()
-    local enemyTeam = (teamEntity:Team()):GetEnemyTeamEntity()
-    ;
-    (table.insert)(targetEntityList, enemyTeam)
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    local teamEntity = petEntity:Pet():GetOwnerTeamEntity()
+    local enemyTeam = teamEntity:Team():GetEnemyTeamEntity()
+    table.insert(targetEntityList, enemyTeam)
   else
-    do
-      local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-      for _,monsterEntity in ipairs(monsterGroup:GetEntities()) do
-        if not monsterEntity:HasDeadMark() then
-          (table.insert)(targetEntityList, monsterEntity)
-        end
-      end
-      do
-        local targetPosList = {}
-        local squareRing1PosList = {}
-        local squareRing2PosList = {}
-        for _,targetEntity in pairs(targetEntityList) do
-          local targetPos = (targetEntity:GridLocation()):GetGridPos()
-          local bodyArea = (targetEntity:BodyArea()):GetArea()
-          for _,value in pairs(bodyArea) do
-            local workPos = targetPos + value
-            ;
-            (table.insert)(targetPosList, workPos)
-          end
-          local ring1 = self:GetPosListAroundBodyArea(targetEntity, 1)
-          ;
-          (table.appendArray)(squareRing1PosList, ring1)
-          local ring2 = self:GetPosListAroundBodyArea(targetEntity, 2)
-          ;
-          (table.appendArray)(squareRing2PosList, ring2)
-        end
-        local needSummon, trapPos, matchPieceType = self:_IsNeedSummonTrap(petEntity, trapID, pieceType, targetPosList)
-        if canPickTrap and not needSummon and trapPos then
-          (table.insert)(pickPosList, trapPos)
-          return pickPosList, pickPosList, targetIDs
-        end
-        local squareRingListTab = {}
-        ;
-        (table.insert)(squareRingListTab, squareRing1PosList)
-        ;
-        (table.insert)(squareRingListTab, squareRing2PosList)
-        local pickPos = self:_CalcMatchPickPos(casterPos, squareRingListTab, trapID, pieceType)
-        if pickPos then
-          (table.insert)(pickPosList, pickPos)
-          return pickPosList, pickPosList, targetIDs
-        end
-        if canPickTrap and needSummon and trapPos and matchPieceType and self:_CanAttack(trapPos, targetPosList) then
-          (table.insert)(pickPosList, trapPos)
-          return pickPosList, pickPosList, targetIDs
-        end
-        pickPos = self:_CalcMatchPickPos(casterPos, squareRingListTab, trapID)
-        if pickPos then
-          (table.insert)(pickPosList, pickPos)
-          return pickPosList, pickPosList, targetIDs
-        end
-        local vec2BoardMax = {}
-        local boardRingMax = (self._boardServiceLogic):GetCurBoardRingMax()
-        for _,boardPos in ipairs(boardRingMax) do
-          local vec2Pos = Vector2(boardPos[1], boardPos[2])
-          ;
-          (table.insert)(vec2BoardMax, vec2Pos)
-        end
-        ;
-        (table.removev)(vec2BoardMax, casterPos)
-        HelperProxy:SortPosByCenterPosDistance(casterPos, vec2BoardMax)
-        local trapSvc = (self._world):GetService("TrapLogic")
-        for _,pickPos in pairs(vec2BoardMax) do
-          if trapSvc:CanSummonTrapOnPos(pickPos, trapID) then
-            (table.insert)(pickPosList, pickPos)
-            return pickPosList, pickPosList, targetIDs
-          end
-        end
-        return pickPosList, pickPosList, targetIDs
+    local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+    for _, monsterEntity in ipairs(monsterGroup:GetEntities()) do
+      if not monsterEntity:HasDeadMark() then
+        table.insert(targetEntityList, monsterEntity)
       end
     end
   end
+  local targetPosList = {}
+  local squareRing1PosList = {}
+  local squareRing2PosList = {}
+  for _, targetEntity in pairs(targetEntityList) do
+    local targetPos = targetEntity:GridLocation():GetGridPos()
+    local bodyArea = targetEntity:BodyArea():GetArea()
+    for _, value in pairs(bodyArea) do
+      local workPos = targetPos + value
+      table.insert(targetPosList, workPos)
+    end
+    local ring1 = self:GetPosListAroundBodyArea(targetEntity, 1)
+    table.appendArray(squareRing1PosList, ring1)
+    local ring2 = self:GetPosListAroundBodyArea(targetEntity, 2)
+    table.appendArray(squareRing2PosList, ring2)
+  end
+  local needSummon, trapPos, matchPieceType = self:_IsNeedSummonTrap(petEntity, trapID, pieceType, targetPosList)
+  if canPickTrap and not needSummon and trapPos then
+    table.insert(pickPosList, trapPos)
+    return pickPosList, pickPosList, targetIDs
+  end
+  local squareRingListTab = {}
+  table.insert(squareRingListTab, squareRing1PosList)
+  table.insert(squareRingListTab, squareRing2PosList)
+  local pickPos = self:_CalcMatchPickPos(casterPos, squareRingListTab, trapID, pieceType)
+  if pickPos then
+    table.insert(pickPosList, pickPos)
+    return pickPosList, pickPosList, targetIDs
+  end
+  if canPickTrap and needSummon and trapPos and matchPieceType and self:_CanAttack(trapPos, targetPosList) then
+    table.insert(pickPosList, trapPos)
+    return pickPosList, pickPosList, targetIDs
+  end
+  pickPos = self:_CalcMatchPickPos(casterPos, squareRingListTab, trapID)
+  if pickPos then
+    table.insert(pickPosList, pickPos)
+    return pickPosList, pickPosList, targetIDs
+  end
+  local vec2BoardMax = {}
+  local boardRingMax = self._boardServiceLogic:GetCurBoardRingMax()
+  for _, boardPos in ipairs(boardRingMax) do
+    local vec2Pos = Vector2(boardPos[1], boardPos[2])
+    table.insert(vec2BoardMax, vec2Pos)
+  end
+  table.removev(vec2BoardMax, casterPos)
+  HelperProxy:SortPosByCenterPosDistance(casterPos, vec2BoardMax)
+  local trapSvc = self._world:GetService("TrapLogic")
+  for _, pickPos in pairs(vec2BoardMax) do
+    if trapSvc:CanSummonTrapOnPos(pickPos, trapID) then
+      table.insert(pickPosList, pickPos)
+      return pickPosList, pickPosList, targetIDs
+    end
+  end
+  return pickPosList, pickPosList, targetIDs
 end
 
--- DECOMPILER ERROR at PC222: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicy_PetGiles = function(self, petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
-  -- function num : 0_69 , upvalues : _ENV
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+function AutoFightService:_CalPickPosPolicy_PetGiles(petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   local minHp = 1
-  local targetEntity = nil
-  for i,e in ipairs(group:GetEntities()) do
+  local targetEntity
+  for i, e in ipairs(group:GetEntities()) do
     if not e:HasDeadMark() then
-      local hp = (e:Attributes()):GetCurrentHP()
-      if not targetEntity or hp < minHp then
+      local hp = e:Attributes():GetCurrentHP()
+      if not targetEntity or minHp > hp then
         minHp = hp
         targetEntity = e
       end
     end
   end
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    targetEntity = (((petEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    targetEntity = petEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
   end
   if not targetEntity then
     return {}, {}, {}
   end
   local retScopeResult = {}
   local retTargetIds = {}
-  local pickPos = nil
-  local targetGridPos = (targetEntity:GridLocation()):GetGridPos()
-  local bodyArea = (targetEntity:BodyArea()):GetArea()
-  local dirs = {Vector2(0, 1), Vector2(1, 0), Vector2(0, -1), Vector2(-1, 0)}
-  for _,value in ipairs(bodyArea) do
+  local pickPos
+  local targetGridPos = targetEntity:GridLocation():GetGridPos()
+  local bodyArea = targetEntity:BodyArea():GetArea()
+  local dirs = {
+    Vector2(0, 1),
+    Vector2(1, 0),
+    Vector2(0, -1),
+    Vector2(-1, 0)
+  }
+  for _, value in ipairs(bodyArea) do
     local workPos = targetGridPos + value
-    for _,dir in ipairs(dirs) do
+    for _, dir in ipairs(dirs) do
       local targetPos = workPos + dir
       if targetPos == casterPos then
         pickPos = targetPos
         break
       end
     end
+    if pickPos then
+      break
+    end
   end
-  do
-    if not pickPos then
-      local utilData = (self._world):GetService("UtilData")
-      local extraBoardPosRange = utilData:GetExtraBoardPosList()
-      if not pickPos then
-        local utilDataSvc = (self._world):GetService("UtilData")
-        for _,dir in ipairs(dirs) do
-          local targetPos = targetGridPos + dir
-          if utilDataSvc:IsValidPiecePos(targetPos) and not self:_IsPosInExtraBoard(targetPos, extraBoardPosRange) then
-            pickPos = targetPos
-            break
-          end
-        end
-      end
-      do
-        retScopeResult = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, pickPos)
-        return {pickPos}, retScopeResult:GetAttackRange(), retTargetIds
+  local utilData = self._world:GetService("UtilData")
+  local extraBoardPosRange = utilData:GetExtraBoardPosList()
+  if not pickPos then
+    local utilDataSvc = self._world:GetService("UtilData")
+    for _, dir in ipairs(dirs) do
+      local targetPos = targetGridPos + dir
+      if utilDataSvc:IsValidPiecePos(targetPos) and not self:_IsPosInExtraBoard(targetPos, extraBoardPosRange) then
+        pickPos = targetPos
+        break
       end
     end
   end
+  retScopeResult, retTargetIds = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, pickPos)
+  return {pickPos}, retScopeResult:GetAttackRange(), retTargetIds
 end
 
--- DECOMPILER ERROR at PC225: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService.GetPosListAroundBodyArea = function(self, entity, ringCount)
-  -- function num : 0_70 , upvalues : _ENV
+function AutoFightService:GetPosListAroundBodyArea(entity, ringCount)
   local v2SelfGridPos = entity:GetGridPosition()
-  local bodyArea = (entity:BodyArea()):GetArea()
+  local bodyArea = entity:BodyArea():GetArea()
   local v2SelfDir = entity:GetGridDirection()
   local scopeCalc = SkillScopeCalculator:New(self._utilScopeSvc)
   local scopeResult = scopeCalc:ComputeScopeRange(SkillScopeType.AroundBodyArea, {0, ringCount}, v2SelfGridPos, bodyArea, v2SelfDir, SkillTargetType.Monster, v2SelfGridPos)
   return scopeResult:GetAttackRange()
 end
 
--- DECOMPILER ERROR at PC228: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._IsPosCanPick = function(self, pos, checkBadGrid, checkExtraBoard, utilSvc, extraBoardPosRange)
-  -- function num : 0_71
+function AutoFightService:_IsPosCanPick(pos, checkBadGrid, checkExtraBoard, utilSvc, extraBoardPosRange)
   if checkBadGrid and self:_IsPosBadGrid(pos, utilSvc) then
     return false
   end
@@ -3042,81 +2551,61 @@ AutoFightService._IsPosCanPick = function(self, pos, checkBadGrid, checkExtraBoa
   return true
 end
 
--- DECOMPILER ERROR at PC231: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._IsPosBadGrid = function(self, pos, utilSvc)
-  -- function num : 0_72
-  if not utilSvc then
-    utilSvc = (self._world):GetService("UtilData")
-  end
+function AutoFightService:_IsPosBadGrid(pos, utilSvc)
+  utilSvc = utilSvc or self._world:GetService("UtilData")
   if utilSvc:IsBadGridPos(pos) then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC234: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._IsPosInExtraBoard = function(self, pos, extraBoardPosRange)
-  -- function num : 0_73 , upvalues : _ENV
-  do
-    if not extraBoardPosRange then
-      local utilData = (self._world):GetService("UtilData")
-      extraBoardPosRange = utilData:GetExtraBoardPosList()
-    end
-    if (table.intable)(extraBoardPosRange, pos) then
-      return true
-    end
-    return false
+function AutoFightService:_IsPosInExtraBoard(pos, extraBoardPosRange)
+  if not extraBoardPosRange then
+    local utilData = self._world:GetService("UtilData")
+    extraBoardPosRange = utilData:GetExtraBoardPosList()
   end
+  if table.intable(extraBoardPosRange, pos) then
+    return true
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC237: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicy_PetVice = function(self, petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
-  -- function num : 0_74 , upvalues : _ENV
-  local targetEntity = nil
-  local utilSvc = (self._world):GetService("UtilData")
-  local utilData = (self._world):GetService("UtilData")
+function AutoFightService:_CalPickPosPolicy_PetVice(petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
+  local targetEntity
+  local utilSvc = self._world:GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local extraBoardPosRange = utilData:GetExtraBoardPosList()
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    targetEntity = (((petEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    targetEntity = petEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
   else
     local bossEntityList = {}
     local targetEntityList = {}
-    local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+    local utilScopeSvc = self._world:GetService("UtilScopeCalc")
     local monsterList, monsterPosList = utilScopeSvc:SelectAllMonster(petEntity)
-    for i,e in ipairs(monsterList) do
-      local gridPos = (e:GridLocation()):GetGridPos()
-      local bodyArea = (e:BodyArea()):GetArea()
+    for i, e in ipairs(monsterList) do
+      local gridPos = e:GridLocation():GetGridPos()
+      local bodyArea = e:BodyArea():GetArea()
       local hasCacPickPos = false
-      for _,value in pairs(bodyArea) do
+      for _, value in pairs(bodyArea) do
         local workPos = gridPos + value
         if self:_IsPosCanPick(workPos, true, true, utilSvc, extraBoardPosRange) then
           hasCacPickPos = true
           break
         end
       end
-      do
-        do
-          if hasCacPickPos then
-            if e:HasBoss() then
-              (table.insert)(bossEntityList, e)
-            end
-            ;
-            (table.insert)(targetEntityList, e)
-          end
-          -- DECOMPILER ERROR at PC84: LeaveBlock: unexpected jumping out DO_STMT
-
+      if hasCacPickPos then
+        if e:HasBoss() then
+          table.insert(bossEntityList, e)
         end
+        table.insert(targetEntityList, e)
       end
     end
-    if (table.count)(bossEntityList) > 0 then
+    if table.count(bossEntityList) > 0 then
       targetEntityList = bossEntityList
     end
-    local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID)
+    local skillConfigData = self._configService:GetSkillConfigData(activeSkillID)
     local policyParam = skillConfigData:GetAutoFightPickPosPolicyParam()
-    for i,e in ipairs(targetEntityList) do
+    for i, e in ipairs(targetEntityList) do
       local buffCmp = e:BuffComponent()
       if buffCmp then
         local buffEffect = policyParam[1]
@@ -3126,91 +2615,75 @@ AutoFightService._CalPickPosPolicy_PetVice = function(self, petEntity, activeSki
         end
       end
     end
-    do
-      if not targetEntity then
-        local maxHP = 0
-        for i,e in ipairs(targetEntityList) do
-          local hp = (e:Attributes()):GetCurrentHP()
-          if not targetEntity or maxHP < hp then
-            maxHP = hp
-            targetEntity = e
-          end
-        end
-      end
-      do
-        if not targetEntity then
-          return {}, {}, {}
-        end
-        local retScopeResult = {}
-        local retTargetIds = {}
-        local pickPos = (targetEntity:GridLocation()):GetGridPos()
-        if not self:_IsPosCanPick(pickPos, true, true, utilSvc, extraBoardPosRange) then
-          local bodyArea = (targetEntity:BodyArea()):GetArea()
-          for _,value in pairs(bodyArea) do
-            local workPos = pickPos + value
-            local isCanPickPos = self:_IsPosCanPick(workPos, true, true, utilSvc, extraBoardPosRange)
-            if isCanPickPos then
-              pickPos = workPos
-              break
-            end
-          end
-        end
-        do
-          retScopeResult = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, pickPos)
-          return {pickPos}, retScopeResult:GetAttackRange(), retTargetIds
+    if not targetEntity then
+      local maxHP = 0
+      for i, e in ipairs(targetEntityList) do
+        local hp = e:Attributes():GetCurrentHP()
+        if not targetEntity or maxHP < hp then
+          maxHP = hp
+          targetEntity = e
         end
       end
     end
   end
+  if not targetEntity then
+    return {}, {}, {}
+  end
+  local retScopeResult = {}
+  local retTargetIds = {}
+  local pickPos = targetEntity:GridLocation():GetGridPos()
+  if not self:_IsPosCanPick(pickPos, true, true, utilSvc, extraBoardPosRange) then
+    local bodyArea = targetEntity:BodyArea():GetArea()
+    for _, value in pairs(bodyArea) do
+      local workPos = pickPos + value
+      local isCanPickPos = self:_IsPosCanPick(workPos, true, true, utilSvc, extraBoardPosRange)
+      if isCanPickPos then
+        pickPos = workPos
+        break
+      end
+    end
+  end
+  retScopeResult, retTargetIds = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, pickPos)
+  return {pickPos}, retScopeResult:GetAttackRange(), retTargetIds
 end
 
--- DECOMPILER ERROR at PC240: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicy_FeatureMasterSkill = function(self, petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
-  -- function num : 0_75 , upvalues : _ENV
+function AutoFightService:_CalPickPosPolicy_FeatureMasterSkill(petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
   local env = self._env
-  local boardService = (self._world):GetService("BoardLogic")
+  local boardService = self._world:GetService("BoardLogic")
   local ringMax = boardService:GetCurBoardRingMax()
   local teamColor = PieceType.Yellow
   local teamPos = casterPos
-  local teamEntity = (self._env).TeamEntity
-  do
-    if teamEntity then
-      local teamLeaderEntity = (teamEntity:Team()):GetTeamLeaderEntity()
-      teamColor = (teamLeaderEntity:Element()):GetPrimaryType()
-      teamPos = teamEntity:GetGridPosition()
-    end
-    local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID)
-    local casterPosIndex = self:_Pos2Index(teamPos)
-    local pickExtraParam = {}
-    local firstPickPos = nil
-    for _,off in ipairs(ringMax) do
-      local posIdx = self:_PosIndexAddOffset(casterPosIndex, off)
-      if validPosIdxList[posIdx] then
-        local pos = self:_Index2Pos(posIdx)
-        local color = (env.BoardPosPieces)[posIdx]
-        if color and color ~= teamColor then
-          firstPickPos = pos
-          break
-        end
-      end
-    end
-    do
-      if firstPickPos then
-        return {firstPickPos}, {firstPickPos}, {}, pickExtraParam
-      else
-        return {}, {}, {}, {}
+  local teamEntity = self._env.TeamEntity
+  if teamEntity then
+    local teamLeaderEntity = teamEntity:Team():GetTeamLeaderEntity()
+    teamColor = teamLeaderEntity:Element():GetPrimaryType()
+    teamPos = teamEntity:GetGridPosition()
+  end
+  local skillConfigData = self._configService:GetSkillConfigData(activeSkillID)
+  local casterPosIndex = self:_Pos2Index(teamPos)
+  local pickExtraParam = {}
+  local firstPickPos
+  for _, off in ipairs(ringMax) do
+    local posIdx = self:_PosIndexAddOffset(casterPosIndex, off)
+    if validPosIdxList[posIdx] then
+      local pos = self:_Index2Pos(posIdx)
+      local color = env.BoardPosPieces[posIdx]
+      if color and color ~= teamColor then
+        firstPickPos = pos
+        break
       end
     end
   end
+  if firstPickPos then
+    return {firstPickPos}, {firstPickPos}, {}, pickExtraParam
+  else
+    return {}, {}, {}, {}
+  end
 end
 
--- DECOMPILER ERROR at PC243: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._PetKaLian_CanGridConvertToRed = function(self, pos, casterPos)
-  -- function num : 0_76 , upvalues : _ENV
-  local utilScope = (self._world):GetService("UtilScopeCalc")
-  local lsvcBoard = (self._world):GetService("BoardLogic")
+function AutoFightService:_PetKaLian_CanGridConvertToRed(pos, casterPos)
+  local utilScope = self._world:GetService("UtilScopeCalc")
+  local lsvcBoard = self._world:GetService("BoardLogic")
   if not utilScope:IsValidPiecePos(pos) then
     return false
   end
@@ -3226,14 +2699,11 @@ AutoFightService._PetKaLian_CanGridConvertToRed = function(self, pos, casterPos)
   return true
 end
 
--- DECOMPILER ERROR at PC246: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicy_PetSPKaLian_NoDamage = function(self, TT, petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
-  -- function num : 0_77 , upvalues : _ENV
-  local utilScope = (self._world):GetService("UtilScopeCalc")
-  local lsvcBoard = (self._world):GetService("BoardLogic")
+function AutoFightService:_CalPickPosPolicy_PetSPKaLian_NoDamage(TT, petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
+  local utilScope = self._world:GetService("UtilScopeCalc")
+  local lsvcBoard = self._world:GetService("BoardLogic")
   local tInfo = {}
-  for _,v2 in ipairs(validPosList) do
+  for _, v2 in ipairs(validPosList) do
     local convertCount = 0
     local convertPos = {}
     local dir = utilScope:GetStandardDirection8D(v2 - casterPos)
@@ -3241,69 +2711,59 @@ AutoFightService._CalPickPosPolicy_PetSPKaLian_NoDamage = function(self, TT, pet
     local posBackward = v2 - dir
     if self:_PetKaLian_CanGridConvertToRed(posForward, casterPos) then
       convertCount = convertCount + 1
-      ;
-      (table.insert)(convertPos, posForward)
+      table.insert(convertPos, posForward)
     end
     if self:_PetKaLian_CanGridConvertToRed(posBackward, casterPos) then
       convertCount = convertCount + 1
-      ;
-      (table.insert)(convertPos, posBackward)
+      table.insert(convertPos, posBackward)
     end
-    if convertCount > 0 then
-      local tMonsters, tMonsterPos = nil, nil
-      if (self._world):MatchType() ~= MatchType.MT_BlackFist then
-        tMonsters = utilScope:SelectNearestMonsterOnPos(v2, 1)
+    if 0 < convertCount then
+      local tMonsters, tMonsterPos
+      if self._world:MatchType() ~= MatchType.MT_BlackFist then
+        tMonsters, tMonsterPos = utilScope:SelectNearestMonsterOnPos(v2, 1)
       else
-        local enemyTeamEntity = (((petEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()
+        local enemyTeamEntity = petEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
         tMonsters = {enemyTeamEntity}
-        -- DECOMPILER ERROR at PC77: Overwrote pending register: R21 in 'AssignReg'
-
+        tMonsterPos = {
+          enemyTeamEntity:GetGridPosition()
+        }
       end
-      do
-        do
-          local candidateInfo = {index = #tInfo, pos = v2, convertCount = convertCount, convertPos = convertPos, nearestMonsterCount = #tMonsters, nearestMonsterDistance = #tMonsterPos > 0 and (Vector2.Distance)(v2, tMonsterPos[1]) or nil}
-          ;
-          (table.insert)(tInfo, candidateInfo)
-          -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      local candidateInfo = {
+        index = #tInfo,
+        pos = v2,
+        convertCount = convertCount,
+        convertPos = convertPos,
+        nearestMonsterCount = #tMonsters,
+        nearestMonsterDistance = 0 < #tMonsterPos and Vector2.Distance(v2, tMonsterPos[1]) or nil
+      }
+      table.insert(tInfo, candidateInfo)
     end
   end
   if #tInfo == 0 then
     return {}, {}, {}, {}
   end
-  ;
-  (table.sort)(tInfo, function(a, b)
-    -- function num : 0_77_0
-    if b.convertCount >= a.convertCount then
-      do return a.convertCount == b.convertCount end
-      if a.nearestMonsterDistance >= b.nearestMonsterDistance then
-        do return a.nearestMonsterDistance == b.nearestMonsterDistance end
-        do return a.index < b.index end
-        -- DECOMPILER ERROR: 5 unprocessed JMP targets
-      end
+  table.sort(tInfo, function(a, b)
+    if a.convertCount ~= b.convertCount then
+      return a.convertCount > b.convertCount
     end
-  end
-)
+    if a.nearestMonsterDistance ~= b.nearestMonsterDistance then
+      return a.nearestMonsterDistance < b.nearestMonsterDistance
+    end
+    return a.index < b.index
+  end)
   local final = tInfo[1]
-  return {final.pos}, final.convertPos, {}, {}
+  return {
+    final.pos
+  }, final.convertPos, {}, {}
 end
 
--- DECOMPILER ERROR at PC249: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicy_PetSPKaLian_WithDamage = function(self, TT, petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
-  -- function num : 0_78 , upvalues : _ENV
-  local utilScope = (self._world):GetService("UtilScopeCalc")
-  local lsvcBoard = (self._world):GetService("BoardLogic")
+function AutoFightService:_CalPickPosPolicy_PetSPKaLian_WithDamage(TT, petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
+  local utilScope = self._world:GetService("UtilScopeCalc")
+  local lsvcBoard = self._world:GetService("BoardLogic")
   local configSvc = self._configService
   local skillConfigData = configSvc:GetSkillConfigData(activeSkillID)
   local tInfo = {}
-  for _,v2 in ipairs(validPosList) do
+  for _, v2 in ipairs(validPosList) do
     local convertCount = 0
     local dir = utilScope:GetStandardDirection8D(v2 - casterPos)
     local posForward = v2 + dir
@@ -3314,177 +2774,134 @@ AutoFightService._CalPickPosPolicy_PetSPKaLian_WithDamage = function(self, TT, p
     if self:_PetKaLian_CanGridConvertToRed(posBackward, casterPos) then
       convertCount = convertCount + 1
     end
-    if convertCount > 0 then
-      local tMonsters, tMonsterPos = nil, nil
-      if (self._world):MatchType() ~= MatchType.MT_BlackFist then
-        tMonsters = utilScope:SelectNearestMonsterOnPos(v2, 1)
+    if 0 < convertCount then
+      local tMonsters, tMonsterPos
+      if self._world:MatchType() ~= MatchType.MT_BlackFist then
+        tMonsters, tMonsterPos = utilScope:SelectNearestMonsterOnPos(v2, 1)
         YIELD(TT)
       else
-        local enemyTeamEntity = (((petEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()
+        local enemyTeamEntity = petEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
         tMonsters = {enemyTeamEntity}
-        -- DECOMPILER ERROR at PC73: Overwrote pending register: R22 in 'AssignReg'
-
+        tMonsterPos = {
+          enemyTeamEntity:GetGridPosition()
+        }
       end
-      do
-        local scopeCalculator = utilScope:GetSkillScopeCalc()
-        local attackRangeScopeResult = scopeCalculator:ComputeScopeRange(SkillScopeType.AngleFreeLine, {widthThreshold = 1, noExtend = 1}, v2, (petEntity:BodyArea()):GetArea(), petEntity:GetGridDirection(), SkillTargetType.MonsterTrap, petEntity:GetGridPosition(), petEntity)
-        if not attackRangeScopeResult:GetAttackRange() then
-          local attackRange = {}
-        end
-        local targetSelector = (self._world):GetSkillScopeTargetSelector()
-        if not targetSelector:DoSelectSkillTarget(petEntity, SkillTargetType.Monster, attackRangeScopeResult, activeSkillID) then
-          local targetIds = {}
-        end
-        do
-          local candidateInfo = {index = #tInfo, pos = v2, convertCount = convertCount, nearestMonsterCount = #tMonsters, nearestMonsterDistance = #tMonsterPos > 0 and (Vector2.Distance)(v2, tMonsterPos[1]) or nil, attackRange = attackRange, targetIds = targetIds}
-          ;
-          (table.insert)(tInfo, candidateInfo)
-          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      local scopeCalculator = utilScope:GetSkillScopeCalc()
+      local attackRangeScopeResult = scopeCalculator:ComputeScopeRange(SkillScopeType.AngleFreeLine, {widthThreshold = 1, noExtend = 1}, v2, petEntity:BodyArea():GetArea(), petEntity:GetGridDirection(), SkillTargetType.MonsterTrap, petEntity:GetGridPosition(), petEntity)
+      local attackRange = attackRangeScopeResult:GetAttackRange() or {}
+      local targetSelector = self._world:GetSkillScopeTargetSelector()
+      local targetIds = targetSelector:DoSelectSkillTarget(petEntity, SkillTargetType.Monster, attackRangeScopeResult, activeSkillID) or {}
+      local candidateInfo = {
+        index = #tInfo,
+        pos = v2,
+        convertCount = convertCount,
+        nearestMonsterCount = #tMonsters,
+        nearestMonsterDistance = 0 < #tMonsterPos and Vector2.Distance(v2, tMonsterPos[1]) or nil,
+        attackRange = attackRange,
+        targetIds = targetIds
+      }
+      table.insert(tInfo, candidateInfo)
     end
   end
   if #tInfo == 0 then
     return {}, {}, {}, {}
   end
-  ;
-  (table.sort)(tInfo, function(a, b)
-    -- function num : 0_78_0
-    if b.convertCount >= a.convertCount then
-      do return a.convertCount == b.convertCount end
-      local countA = #a.targetIds
-      local countB = #b.targetIds
-      if countB >= countA then
-        do return countA == countB end
-        do return a.index < b.index end
-        -- DECOMPILER ERROR: 5 unprocessed JMP targets
-      end
+  table.sort(tInfo, function(a, b)
+    if a.convertCount ~= b.convertCount then
+      return a.convertCount > b.convertCount
     end
-  end
-)
+    local countA = #a.targetIds
+    local countB = #b.targetIds
+    if countA ~= countB then
+      return countA > countB
+    end
+    return a.index < b.index
+  end)
   local final = tInfo[1]
   YIELD(TT)
-  return {final.pos}, final.attackRange, final.targetIds, {}
+  return {
+    final.pos
+  }, final.attackRange, final.targetIds, {}
 end
 
--- DECOMPILER ERROR at PC252: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._GetReinhardtRange = function(self, pos)
-  -- function num : 0_79 , upvalues : _ENV
+function AutoFightService:_GetReinhardtRange(pos)
   local retPos = {}
-  ;
-  (table.insert)(retPos, pos + Vector2(0, 0))
-  ;
-  (table.insert)(retPos, pos + Vector2(0, 1))
-  ;
-  (table.insert)(retPos, pos + Vector2(0, -1))
-  ;
-  (table.insert)(retPos, pos + Vector2(1, 0))
-  ;
-  (table.insert)(retPos, pos + Vector2(-1, 0))
+  table.insert(retPos, pos + Vector2(0, 0))
+  table.insert(retPos, pos + Vector2(0, 1))
+  table.insert(retPos, pos + Vector2(0, -1))
+  table.insert(retPos, pos + Vector2(1, 0))
+  table.insert(retPos, pos + Vector2(-1, 0))
   return retPos
 end
 
--- DECOMPILER ERROR at PC255: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicy_PetReinhardt = function(self, petEntity, activeSkillID, policyParam, casterPos, validPosList, validPosIdxList, pickUpNum)
-  -- function num : 0_80 , upvalues : _ENV
+function AutoFightService:_CalPickPosPolicy_PetReinhardt(petEntity, activeSkillID, policyParam, casterPos, validPosList, validPosIdxList, pickUpNum)
   local targetEntity = {}
   local targetPosList = {}
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    targetEntity = (((petEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    targetEntity = petEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
     local pos = targetEntity:GetGridPosition()
-    local posIndex = (Vector2.Pos2Index)(pos)
+    local posIndex = Vector2.Pos2Index(pos)
     targetPosList[posIndex] = targetEntity:GetID()
   else
-    do
-      local groupEntities = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).MonsterID)
-      for i,v in ipairs(groupEntities) do
-        local areaCmpt = v:BodyArea()
-        local pos = v:GetGridPosition()
-        local areaList = areaCmpt:GetArea()
-        for i,area in ipairs(areaList) do
-          local newPos = area + pos
-          local posIndex = (Vector2.Pos2Index)(newPos)
-          targetPosList[posIndex] = v:GetID()
-        end
-      end
-      do
-        local pickPos = {}
-        while 1 do
-          if pickUpNum > 0 then
-            local attackPosCount = 0
-            local pickUpPos = nil
-            for i,pos in ipairs(validPosList) do
-              local range = self:_GetReinhardtRange(pos)
-              local tmpAPC = 0
-              for i,v in ipairs(range) do
-                local index = (Vector2.Pos2Index)(v)
-                if targetPosList[index] then
-                  tmpAPC = tmpAPC + 1
-                end
-              end
-              if attackPosCount < tmpAPC and not (table.Vector2Include)(pickPos, pos) then
-                attackPosCount = tmpAPC
-                pickUpPos = pos
-              end
-            end
-            do
-              while not pickUpPos and not pickUpPos do
-                local count = #validPosList
-                local index = (math.random)(1, count)
-                local pos = validPosList[index]
-                if not (table.Vector2Include)(pickPos, pos) then
-                  pickUpPos = pos
-                  break
-                end
-              end
-              do
-                do
-                  pickUpNum = pickUpNum - 1
-                  ;
-                  (table.insert)(pickPos, pickUpPos)
-                  -- DECOMPILER ERROR at PC127: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC127: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC127: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC127: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
-            end
-          end
-        end
-        return pickPos, pickPos, {}
+    local groupEntities = self._world:GetGroupEntities(self._world.BW_WEMatchers.MonsterID)
+    for i, v in ipairs(groupEntities) do
+      local areaCmpt = v:BodyArea()
+      local pos = v:GetGridPosition()
+      local areaList = areaCmpt:GetArea()
+      for i, area in ipairs(areaList) do
+        local newPos = area + pos
+        local posIndex = Vector2.Pos2Index(newPos)
+        targetPosList[posIndex] = v:GetID()
       end
     end
   end
+  local pickPos = {}
+  while 0 < pickUpNum do
+    local attackPosCount = 0
+    local pickUpPos
+    for i, pos in ipairs(validPosList) do
+      local range = self:_GetReinhardtRange(pos)
+      local tmpAPC = 0
+      for i, v in ipairs(range) do
+        local index = Vector2.Pos2Index(v)
+        if targetPosList[index] then
+          tmpAPC = tmpAPC + 1
+        end
+      end
+      if attackPosCount < tmpAPC and not table.Vector2Include(pickPos, pos) then
+        attackPosCount = tmpAPC
+        pickUpPos = pos
+      end
+    end
+    if not pickUpPos then
+      while not pickUpPos do
+        local count = #validPosList
+        local index = math.random(1, count)
+        local pos = validPosList[index]
+        if not table.Vector2Include(pickPos, pos) then
+          pickUpPos = pos
+          break
+        end
+      end
+    end
+    pickUpNum = pickUpNum - 1
+    table.insert(pickPos, pickUpPos)
+  end
+  return pickPos, pickPos, {}
 end
 
--- DECOMPILER ERROR at PC258: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CastFeatureSkill = function(self, TT, skillData)
-  -- function num : 0_81 , upvalues : _ENV
-  (Log.debug)("[AutoFight] _CastFeatureSkill skillID=", skillData.m_nSkillID)
-  if (self._world):GetGameTurn() == GameTurnType.LocalPlayerTurn then
+function AutoFightService:_CastFeatureSkill(TT, skillData)
+  Log.debug("[AutoFight] _CastFeatureSkill skillID=", skillData.m_nSkillID)
+  if self._world:GetGameTurn() == GameTurnType.LocalPlayerTurn then
     self:_LocalPlayerCastFeatureSkill(TT, skillData)
+  else
   end
   while GameStateID.PersonaSkill ~= self:_GetFsmStateID() do
     YIELD(TT, 100)
   end
 end
 
--- DECOMPILER ERROR at PC261: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._LocalPlayerCastFeatureSkill = function(self, TT, skillData)
-  -- function num : 0_82 , upvalues : _ENV
+function AutoFightService:_LocalPlayerCastFeatureSkill(TT, skillData)
   local configSvc = self._configService
   local skillConfigData = configSvc:GetSkillConfigData(skillData.m_nSkillID)
   local pickUpType = skillConfigData:GetSkillPickType()
@@ -3494,155 +2911,141 @@ AutoFightService._LocalPlayerCastFeatureSkill = function(self, TT, skillData)
     featureType = triggerExtraParam[SkillTriggerTypeExtraParam.FeatureType]
   end
   if FeatureType.BanPetSkill == featureType then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.WaitInputFinish, 3)
+  else
+    self._world:EventDispatcher():Dispatch(GameEventType.WaitInputFinish, 3)
     while GameStateID.PreviewActiveSkill ~= self:_GetFsmStateID() do
       YIELD(TT, 100)
     end
+  end
+  YIELD(TT, 500)
+  if FeatureType.PersonaSkill == featureType then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AutoFightCastPersonaSkill)
+  elseif FeatureType.MasterSkillRecover == featureType then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AutoFightCastPersonaSkill, featureType)
+  elseif FeatureType.MasterSkill == featureType then
+    local pickUpGridPos = skillData.m_listPickUpPos
+    local renderBoardEntity = self._world:GetRenderBoardEntity()
+    local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+      ui = "UIWidgetFeatureMasterSkill",
+      input = "OnClickUI",
+      args = {}
+    })
+    YIELD(TT, 1000)
+    for i, pos in ipairs(pickUpGridPos) do
+      Log.debug("pickup pos ", Vector2.Pos2Index(pos))
+      pickUpTargetCmpt:SetPickUpTargetType(pickUpType)
+      pickUpTargetCmpt:SetPickUpGridPos(pos)
+      local petID = 0
+      pickUpTargetCmpt:SetCurActiveSkillInfo(skillData.m_nSkillID, petID)
+      renderBoardEntity:ReplacePickUpTarget()
+      YIELD(TT, 500)
+    end
     YIELD(TT, 500)
-    if FeatureType.PersonaSkill == featureType then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AutoFightCastPersonaSkill)
-    else
-      if FeatureType.MasterSkillRecover == featureType then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AutoFightCastPersonaSkill, featureType)
-      else
-        if FeatureType.MasterSkill == featureType then
-          local pickUpGridPos = skillData.m_listPickUpPos
-          local renderBoardEntity = (self._world):GetRenderBoardEntity()
-          local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetFeatureMasterSkill", input = "OnClickUI", 
-args = {}
-})
-          YIELD(TT, 1000)
-          for i,pos in ipairs(pickUpGridPos) do
-            (Log.debug)("pickup pos ", (Vector2.Pos2Index)(pos))
-            pickUpTargetCmpt:SetPickUpTargetType(pickUpType)
-            pickUpTargetCmpt:SetPickUpGridPos(pos)
-            local petID = 0
-            pickUpTargetCmpt:SetCurActiveSkillInfo(skillData.m_nSkillID, petID)
-            renderBoardEntity:ReplacePickUpTarget()
-            YIELD(TT, 500)
-          end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+      ui = "UIWidgetChooseTarget",
+      input = "HandleActiveSkillConfirm",
+      args = {}
+    })
+  elseif FeatureType.Card == featureType then
+    local cardCostType = triggerExtraParam[SkillTriggerTypeExtraParam.CardCost]
+    if cardCostType then
+      local lsvcFeature = self._world:GetService("FeatureLogic")
+      local featureData = lsvcFeature:GetFeatureData(FeatureType.Card)
+      local cardUiType = featureData:GetUiType()
+      local cardUiName = "UIWidgetFeatureCard"
+      local cardInfoUiName = "UIWidgetFeatureCardInfo"
+      if cardUiType == FeatureCardUiType.Skin1 then
+        cardUiName = "UIWidgetFeatureCard_L"
+        cardInfoUiName = "UIWidgetFeatureCardInfo_L"
+      end
+      local costList = lsvcFeature:GetCostCardListByType(cardCostType)
+      if costList then
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+          ui = cardUiName,
+          input = "OnClickUI",
+          args = {}
+        })
+        YIELD(TT, 1000)
+        for _, cardType in ipairs(costList) do
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+            ui = cardInfoUiName,
+            input = "AutoCardImgOnClick",
+            args = {cardType}
+          })
           YIELD(TT, 500)
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIWidgetChooseTarget", input = "HandleActiveSkillConfirm", 
-args = {}
-})
-        else
-          do
-            if FeatureType.Card == featureType then
-              local cardCostType = triggerExtraParam[SkillTriggerTypeExtraParam.CardCost]
-              if cardCostType then
-                local lsvcFeature = (self._world):GetService("FeatureLogic")
-                local featureData = lsvcFeature:GetFeatureData(FeatureType.Card)
-                local cardUiType = featureData:GetUiType()
-                local cardUiName = "UIWidgetFeatureCard"
-                local cardInfoUiName = "UIWidgetFeatureCardInfo"
-                if cardUiType == FeatureCardUiType.Skin1 then
-                  cardUiName = "UIWidgetFeatureCard_L"
-                  cardInfoUiName = "UIWidgetFeatureCardInfo_L"
-                end
-                local costList = lsvcFeature:GetCostCardListByType(cardCostType)
-                if costList then
-                  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = cardUiName, input = "OnClickUI", 
-args = {}
-})
-                  YIELD(TT, 1000)
-                  for _,cardType in ipairs(costList) do
-                    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = cardInfoUiName, input = "AutoCardImgOnClick", 
-args = {cardType}
-})
-                    YIELD(TT, 500)
-                  end
-                  YIELD(TT, 500)
-                  ;
-                  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = cardInfoUiName, input = "OnCastClick", 
-args = {}
-})
-                end
-              end
-            else
-              do
-                if FeatureType.Shop == featureType then
-                  local newUnlockCellList = {}
-                  local shopUIHadSeeUnlockCellList = (FeatureServiceHelper.GetShopUIHadSeeUnlockCellList)()
-                  for index,cellID in ipairs(skillData.m_clientSelectInfo) do
-                    if not (table.icontains)(shopUIHadSeeUnlockCellList, cellID) then
-                      (table.insert)(newUnlockCellList, cellID)
-                    end
-                  end
-                  if (table.count)(newUnlockCellList) > 0 then
-                    (table.appendArray)(shopUIHadSeeUnlockCellList, newUnlockCellList)
-                    ;
-                    (FeatureServiceHelper.SetShopUIHadSeeUnlockCellList)(shopUIHadSeeUnlockCellList)
-                  end
-                  ;
-                  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CastShopSkill, skillData.m_nSkillID, skillData.m_clientSelectInfo)
-                  ;
-                  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIResetLastPreviewPetId)
-                  YIELD(TT)
-                else
-                  do
-                    if FeatureType.BanPetSkill == featureType then
-                      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureAutoFightCastBanPetSkill, skillData.m_nSkillID)
-                    end
-                  end
-                end
-              end
-            end
-          end
         end
+        YIELD(TT, 500)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+          ui = cardInfoUiName,
+          input = "OnCastClick",
+          args = {}
+        })
       end
     end
+  elseif FeatureType.Shop == featureType then
+    local newUnlockCellList = {}
+    local shopUIHadSeeUnlockCellList = FeatureServiceHelper.GetShopUIHadSeeUnlockCellList()
+    for index, cellID in ipairs(skillData.m_clientSelectInfo) do
+      if not table.icontains(shopUIHadSeeUnlockCellList, cellID) then
+        table.insert(newUnlockCellList, cellID)
+      end
+    end
+    if 0 < table.count(newUnlockCellList) then
+      table.appendArray(shopUIHadSeeUnlockCellList, newUnlockCellList)
+      FeatureServiceHelper.SetShopUIHadSeeUnlockCellList(shopUIHadSeeUnlockCellList)
+    end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.CastShopSkill, skillData.m_nSkillID, skillData.m_clientSelectInfo)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIResetLastPreviewPetId)
+    YIELD(TT)
+  elseif FeatureType.BanPetSkill == featureType then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureAutoFightCastBanPetSkill, skillData.m_nSkillID)
   end
 end
 
--- DECOMPILER ERROR at PC264: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicyPetFeiYa = function(self, petEntity, activeSkillID)
-  -- function num : 0_83 , upvalues : _ENV
+function AutoFightService:_CalPickPosPolicyPetFeiYa(petEntity, activeSkillID)
   local pickPosList = {}
   local targetIDs = {}
-  local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID)
+  local skillConfigData = self._configService:GetSkillConfigData(activeSkillID)
   if self._castActiveSkillCount == 0 and skillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
-    local legendPower = (petEntity:Attributes()):GetAttribute("LegendPower")
-    local canCast = 2 * skillConfigData:GetSkillTriggerParam() <= legendPower
+    local legendPower = petEntity:Attributes():GetAttribute("LegendPower")
+    local canCast = legendPower >= 2 * skillConfigData:GetSkillTriggerParam()
     if not canCast then
       self._castActiveSkillCount = 0
       return pickPosList, pickPosList, targetIDs
     end
   end
   local enemyEntities = {}
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for i,e in ipairs(monsterGroup:GetEntities()) do
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for i, e in ipairs(monsterGroup:GetEntities()) do
     if not e:HasDeadMark() then
-      (table.insert)(enemyEntities, e)
+      table.insert(enemyEntities, e)
     end
   end
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   if petEntity then
     if petEntity:HasTeam() then
       teamEntity = petEntity
     elseif petEntity:HasPet() then
-      teamEntity = (petEntity:Pet()):GetOwnerTeamEntity()
+      teamEntity = petEntity:Pet():GetOwnerTeamEntity()
     end
   end
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    (table.insert)(enemyEntities, (teamEntity:Team()):GetEnemyTeamEntity())
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    table.insert(enemyEntities, teamEntity:Team():GetEnemyTeamEntity())
   end
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local extraBoardPosRange = utilData:GetExtraBoardPosList()
   local minHPEntityID = 0
   local minHP = MAX_INT_32
-  local minHPEntityPos = nil
-  for _,e in ipairs(enemyEntities) do
+  local minHPEntityPos
+  for _, e in ipairs(enemyEntities) do
     local gridLocCmpt = e:GridLocation()
     local pickPos = gridLocCmpt:GetGridPos()
     if utilData:IsValidPiecePos(pickPos) then
       local isCanPickPos = self:_IsPosCanPick(pickPos, true, true, utilData, extraBoardPosRange)
       if not isCanPickPos then
-        local bodyArea = (e:BodyArea()):GetArea()
-        for _,value in pairs(bodyArea) do
+        local bodyArea = e:BodyArea():GetArea()
+        for _, value in pairs(bodyArea) do
           local workPos = pickPos + value
           isCanPickPos = self:_IsPosCanPick(workPos, true, true, utilData, extraBoardPosRange)
           if isCanPickPos then
@@ -3652,8 +3055,8 @@ AutoFightService._CalPickPosPolicyPetFeiYa = function(self, petEntity, activeSki
         end
       end
       if isCanPickPos then
-        local hp = (e:Attributes()):GetCurrentHP()
-        if hp < minHP then
+        local hp = e:Attributes():GetCurrentHP()
+        if minHP > hp then
           minHP = hp
           minHPEntityPos = pickPos
           minHPEntityID = e:GetID()
@@ -3662,66 +3065,52 @@ AutoFightService._CalPickPosPolicyPetFeiYa = function(self, petEntity, activeSki
     end
   end
   if minHPEntityPos then
-    (table.insert)(pickPosList, minHPEntityPos)
-    ;
-    (table.insert)(targetIDs, minHPEntityID)
+    table.insert(pickPosList, minHPEntityPos)
+    table.insert(targetIDs, minHPEntityID)
     self._castActiveSkillCount = self._castActiveSkillCount + 1
     if self._castActiveSkillCount == 2 then
       self._castActiveSkillCount = 0
     end
   end
-  do return pickPosList, pickPosList, targetIDs end
-  -- DECOMPILER ERROR: 10 unprocessed JMP targets
+  return pickPosList, pickPosList, targetIDs
 end
 
--- DECOMPILER ERROR at PC267: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._FindFeatureCardSkillID = function(self)
-  -- function num : 0_84
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+function AutoFightService:_FindFeatureCardSkillID()
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   local skillList = lsvcFeature:GetAvailableCardSkillList()
-  if skillList and #skillList > 0 then
+  if skillList and 0 < #skillList then
     return skillList[1]
   else
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC270: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._FindFeatureShopSkillID = function(self)
-  -- function num : 0_85
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+function AutoFightService:_FindFeatureShopSkillID()
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   local skillID, selectInfo = lsvcFeature:GetAvailableShopSkill()
-  if skillID and skillID > 0 then
+  if skillID and 0 < skillID then
     return skillID, selectInfo
   else
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC273: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._FindFeatureBanPetSkillID = function(self)
-  -- function num : 0_86
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+function AutoFightService:_FindFeatureBanPetSkillID()
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   local skillID = lsvcFeature:OnGetAutoFightCastBanPetSkillID()
-  if skillID and skillID > 0 then
+  if skillID and 0 < skillID then
     return skillID
   else
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC276: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicyPetJudge = function(self, petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
-  -- function num : 0_87 , upvalues : _ENV
+function AutoFightService:_CalPickPosPolicyPetJudge(petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
   local env = self._env
   local petEntityID = petEntity:GetID()
   local petTraps = {}
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-  for _,e in ipairs(trapGroup:GetEntities()) do
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  for _, e in ipairs(trapGroup:GetEntities()) do
     if not e:HasDeadMark() and e:HasSummoner() then
       local summonEntity = e:GetSummonerEntity()
       if summonEntity and summonEntity:HasSuperEntity() then
@@ -3730,75 +3119,66 @@ AutoFightService._CalPickPosPolicyPetJudge = function(self, petEntity, activeSki
       if summonEntity then
         local summonEntityID = summonEntity:GetID()
         if petEntityID == summonEntityID then
-          (table.insert)(petTraps, e)
+          table.insert(petTraps, e)
         end
       end
     end
   end
-  local pickPos, pickScopeRange = nil, nil
+  local pickPos, pickScopeRange
   if #petTraps == 0 then
     local ringNum = 2
     local posList = self:GetPosListAroundBodyArea(petEntity, ringNum)
-    ;
-    (table.shuffle)(posList)
-    for _,pos in ipairs(posList) do
+    table.shuffle(posList)
+    for _, pos in ipairs(posList) do
       local posIdx = self:_Pos2Index(pos)
       if validPosIdxList[posIdx] then
         pickPos = pos
         break
       end
     end
-    do
-      do
-        if pickPos then
-          local scope_result, target_ids = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, pickPos)
-          pickScopeRange = scope_result:GetAttackRange()
-        end
-        ;
-        (table.shuffle)(validPosList)
-        local results = {}
-        for _,pos in ipairs(validPosList) do
-          local posIdx = self:_Pos2Index(pos)
-          if (env.BoardPosPieces)[posIdx] then
-            local scope_result, target_ids = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, pos)
-            if #target_ids > 0 then
-              (table.insert)(results, {pos, target_ids, scope_result:GetAttackRange()})
-            end
-          end
-        end
-        if #results > 0 then
-          (table.sort)(results, function(a, b)
-    -- function num : 0_87_0
-    do return #b[2] < #a[2] end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-          local tarResult = results[1]
-          pickPos = tarResult[1]
-          pickScopeRange = tarResult[3]
-        end
-        do
-          if pickPos then
-            return {pickPos}, pickScopeRange, {petEntityID}
-          else
-            return {}, {}, {}
-          end
+    if pickPos then
+      local scope_result, target_ids = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, pickPos)
+      pickScopeRange = scope_result:GetAttackRange()
+    end
+  else
+    table.shuffle(validPosList)
+    local results = {}
+    for _, pos in ipairs(validPosList) do
+      local posIdx = self:_Pos2Index(pos)
+      if env.BoardPosPieces[posIdx] then
+        local scope_result, target_ids = self:_CalcSkillScopeResultAndTargets(petEntity, activeSkillID, pos)
+        if 0 < #target_ids then
+          table.insert(results, {
+            pos,
+            target_ids,
+            scope_result:GetAttackRange()
+          })
         end
       end
     end
+    if 0 < #results then
+      table.sort(results, function(a, b)
+        return #a[2] > #b[2]
+      end)
+      local tarResult = results[1]
+      pickPos = tarResult[1]
+      pickScopeRange = tarResult[3]
+    end
+  end
+  if pickPos then
+    return {pickPos}, pickScopeRange, {petEntityID}
+  else
+    return {}, {}, {}
   end
 end
 
--- DECOMPILER ERROR at PC279: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicyPet1601701 = function(self, petEntity, activeSkillID, casterPos, policyParam)
-  -- function num : 0_88 , upvalues : _ENV
+function AutoFightService:_CalPickPosPolicyPet1601701(petEntity, activeSkillID, casterPos, policyParam)
   local env = self._env
-  local petEntityID = (petEntity:GetID())
-  local pickPos, pickScopeRange = nil, nil
+  local petEntityID = petEntity:GetID()
+  local pickPos, pickScopeRange
   local leftPos = casterPos.x - 1
   local rightPos = casterPos.x + 1
-  local boardSvc = (self._world):GetService("BoardLogic")
+  local boardSvc = self._world:GetService("BoardLogic")
   local maxY = boardSvc:GetCurBoardMaxY()
   local leftLine, rightLine = {}, {}
   local leftCount, rightCount = 0, 0
@@ -3807,7 +3187,7 @@ AutoFightService._CalPickPosPolicyPet1601701 = function(self, petEntity, activeS
     local newPos = Vector2(leftPos, i)
     local pieceType = boardSvc:GetPieceType(newPos)
     if pieceType and pieceType ~= PieceType.None then
-      (table.insert)(leftLine, newPos)
+      table.insert(leftLine, newPos)
       if pieceType == spPieceType then
         leftCount = leftCount + 1
       end
@@ -3815,135 +3195,113 @@ AutoFightService._CalPickPosPolicyPet1601701 = function(self, petEntity, activeS
     newPos = Vector2(rightPos, i)
     pieceType = boardSvc:GetPieceType(newPos)
     if pieceType and pieceType ~= PieceType.None then
-      (table.insert)(rightLine, newPos)
+      table.insert(rightLine, newPos)
       if pieceType == spPieceType then
         rightCount = rightCount + 1
       end
     end
   end
-  local curLine = nil
-  if rightCount < leftCount then
+  local curLine
+  if leftCount > rightCount then
     curLine = leftLine
   else
     curLine = rightLine
   end
   if #curLine == 0 then
-    if #leftLine > 0 then
+    if 0 < #leftLine then
       curLine = leftLine
     else
       curLine = rightLine
     end
   end
-  local pickUpPos = nil
-  local battleSvc = (self._world):GetService("Battle")
-  for i,pos in ipairs(curLine) do
+  local pickUpPos
+  local battleSvc = self._world:GetService("Battle")
+  for i, pos in ipairs(curLine) do
     local targetEntityList = battleSvc:FindMonsterEntityInPos(pos)
     if #targetEntityList ~= 0 then
       pickUpPos = pos
     end
   end
-  do
-    if not pickUpPos then
-      local index = (math.random)(1, #curLine)
-      pickUpPos = curLine[index]
-    end
-    local maxX = boardSvc:GetCurBoardMaxX()
-    local leftEdgeLen = (math.abs)(maxX - pickUpPos.x - 1)
-    local rightEdgeLen = ((math.abs)(maxX - pickUpPos.x + 1))
-    local dirPos = nil
-    if leftEdgeLen < rightEdgeLen then
-      dirPos = Vector2(pickUpPos.x - 1, pickUpPos.y)
-    else
-      dirPos = Vector2(pickUpPos.x + 1, pickUpPos.y)
-    end
-    return {pickUpPos, dirPos}, {pickUpPos, dirPos}, {}
+  if not pickUpPos then
+    local index = math.random(1, #curLine)
+    pickUpPos = curLine[index]
   end
+  local maxX = boardSvc:GetCurBoardMaxX()
+  local leftEdgeLen = math.abs(maxX - pickUpPos.x - 1)
+  local rightEdgeLen = math.abs(maxX - pickUpPos.x + 1)
+  local dirPos
+  if leftEdgeLen < rightEdgeLen then
+    dirPos = Vector2(pickUpPos.x - 1, pickUpPos.y)
+  else
+    dirPos = Vector2(pickUpPos.x + 1, pickUpPos.y)
+  end
+  return {pickUpPos, dirPos}, {pickUpPos, dirPos}, {}
 end
 
--- DECOMPILER ERROR at PC282: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicyPet1601751 = function(self, petEntity, activeSkillID, policyParam, casterPos, validPosList, validPosIdxList)
-  -- function num : 0_89 , upvalues : _ENV
-  local eTeam = (petEntity:Pet()):GetOwnerTeamEntity()
-  local lsvcCalcDamage = (self._world):GetService("CalcDamage")
+function AutoFightService:_CalPickPosPolicyPet1601751(petEntity, activeSkillID, policyParam, casterPos, validPosList, validPosIdxList)
+  local eTeam = petEntity:Pet():GetOwnerTeamEntity()
+  local lsvcCalcDamage = self._world:GetService("CalcDamage")
   local teamHP, teamMaxHP = lsvcCalcDamage:GetTeamLogicHP(eTeam)
   local percent = teamHP / teamMaxHP
-  if percent >= 0.5 then
-    local autoActiveSkillCount = (petEntity:PetRender()):GetPet1601751HPAboveLimitAutoCastActiveCount()
-    if autoActiveSkillCount > 0 then
+  if 0.5 <= percent then
+    local autoActiveSkillCount = petEntity:PetRender():GetPet1601751HPAboveLimitAutoCastActiveCount()
+    if 0 < autoActiveSkillCount then
       return {}, {}, {}
     end
     local pickPos, atkPos, targetList = self:_CalPickupPosPolicyPet1601751SummonHealTrap(petEntity, activeSkillID, policyParam, casterPos, validPosList, validPosIdxList)
-    ;
-    (petEntity:PetRender()):TickPet1601751HPAboveLimitAutoCastActiveCount()
+    petEntity:PetRender():TickPet1601751HPAboveLimitAutoCastActiveCount()
     return pickPos, atkPos, targetList
   else
-    do
-      local globalTrapGroupEntities = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).Trap)
-      local tSelectedTrap = {}
-      for _,e in ipairs(globalTrapGroupEntities) do
-        if not e:HasDeadMark() and (e:TrapID()):GetTrapID() == policyParam.healTrapID and (table.Vector2Include)(validPosList, e:GetGridPosition()) then
-          (table.insert)(tSelectedTrap, e)
-        end
+    local globalTrapGroupEntities = self._world:GetGroupEntities(self._world.BW_WEMatchers.Trap)
+    local tSelectedTrap = {}
+    for _, e in ipairs(globalTrapGroupEntities) do
+      if not e:HasDeadMark() and e:TrapID():GetTrapID() == policyParam.healTrapID and table.Vector2Include(validPosList, e:GetGridPosition()) then
+        table.insert(tSelectedTrap, e)
       end
-      if #tSelectedTrap > 0 then
-        local firstTrap = (table.remove)(tSelectedTrap, 1)
-        local trapGridPos = firstTrap:GetGridPosition()
-        return {trapGridPos}, {trapGridPos}, {}
-      else
-        do
-          local pickPos, atkPos, targetList = self:_CalPickupPosPolicyPet1601751SummonHealTrap(petEntity, activeSkillID, policyParam, casterPos, validPosList, validPosIdxList)
-          do return pickPos, atkPos, targetList end
-        end
-      end
+    end
+    if 0 < #tSelectedTrap then
+      local firstTrap = table.remove(tSelectedTrap, 1)
+      local trapGridPos = firstTrap:GetGridPosition()
+      return {trapGridPos}, {trapGridPos}, {}
+    else
+      local pickPos, atkPos, targetList = self:_CalPickupPosPolicyPet1601751SummonHealTrap(petEntity, activeSkillID, policyParam, casterPos, validPosList, validPosIdxList)
+      return pickPos, atkPos, targetList
     end
   end
 end
 
--- DECOMPILER ERROR at PC285: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickupPosPolicyPet1601751SummonHealTrap = function(self, petEntity, activeSkillID, policyParam, casterPos, validPosList, validPosIdxList)
-  -- function num : 0_90 , upvalues : _ENV
-  local utilData = (self._world):GetService("UtilData")
+function AutoFightService:_CalPickupPosPolicyPet1601751SummonHealTrap(petEntity, activeSkillID, policyParam, casterPos, validPosList, validPosIdxList)
+  local utilData = self._world:GetService("UtilData")
   local pool = {}
-  for _,v2 in ipairs(validPosList) do
+  for _, v2 in ipairs(validPosList) do
     local tTrapEntities = utilData:GetAllTrapEntitiesAtPosByTrapID(v2, policyParam.healTrapID)
     if #tTrapEntities == 0 then
-      (table.insert)(pool, v2)
+      table.insert(pool, v2)
     end
   end
   if #pool == 0 then
     return {}, {}, {}
   end
-  local luckyPosIndex = (math.random)(1, #pool)
-  local luckyPos = (table.remove)(pool, luckyPosIndex)
+  local luckyPosIndex = math.random(1, #pool)
+  local luckyPos = table.remove(pool, luckyPosIndex)
   return {luckyPos}, {luckyPos}, {}
 end
 
--- DECOMPILER ERROR at PC288: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._OnLocalCastActivePickSkillFail = function(self, errorStep, errorType, activeSkillID, petEntity, pickUpGridPos)
-  -- function num : 0_91 , upvalues : _ENV
+function AutoFightService:_OnLocalCastActivePickSkillFail(errorStep, errorType, activeSkillID, petEntity, pickUpGridPos)
   local pickPosList = {}
-  do
-    if petEntity and petEntity:HasPreviewPickUpComponent() then
-      local previewPickUpComponent = petEntity:PreviewPickUpComponent()
-      if previewPickUpComponent then
-        pickPosList = previewPickUpComponent:GetAllValidPickUpGridPos()
-      end
+  if petEntity and petEntity:HasPreviewPickUpComponent() then
+    local previewPickUpComponent = petEntity:PreviewPickUpComponent()
+    if previewPickUpComponent then
+      pickPosList = previewPickUpComponent:GetAllValidPickUpGridPos()
     end
-    local cmd = (ClientExceptionReportCommand.CreateAutoFightPickErrorReport)(activeSkillID, errorStep, errorType, pickPosList, pickUpGridPos)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClientExceptionReport, cmd)
   end
+  local cmd = ClientExceptionReportCommand.CreateAutoFightPickErrorReport(activeSkillID, errorStep, errorType, pickPosList, pickUpGridPos)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ClientExceptionReport, cmd)
 end
 
--- DECOMPILER ERROR at PC291: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService.ClearPetActiveSkillTempData = function(self)
-  -- function num : 0_92 , upvalues : _ENV
-  local globalPetRenderEntities = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).Pet)
-  for _,e in ipairs(globalPetRenderEntities) do
+function AutoFightService:ClearPetActiveSkillTempData()
+  local globalPetRenderEntities = self._world:GetGroupEntities(self._world.BW_WEMatchers.Pet)
+  for _, e in ipairs(globalPetRenderEntities) do
     local cPetRender = e:PetRender()
     if cPetRender then
       cPetRender:ClearPet1601751HPAboveLimitAutoCastActiveCount()
@@ -3951,140 +3309,122 @@ AutoFightService.ClearPetActiveSkillTempData = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC294: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicy_PetZhongxuMain = function(self, petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
-  -- function num : 0_93 , upvalues : _ENV
+function AutoFightService:_CalPickPosPolicy_PetZhongxuMain(petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
   local env = self._env
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local boardService = (self._world):GetService("BoardLogic")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local boardService = self._world:GetService("BoardLogic")
   local ringMax = boardService:GetCurBoardRingMax()
-  local udsvc = (self._world):GetService("UtilData")
-  local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID)
-  local casterPosIndex = (self:_Pos2Index(casterPos))
-  local firstPickPos, blackFistEnemyPos = nil, nil
-  do
-    if (self._world):MatchType() == MatchType.MT_BlackFist and petEntity:HasPet() then
-      local enemy = (((petEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()
-      blackFistEnemyPos = enemy:GetGridPosition()
-    end
-    for _,off in ipairs(ringMax) do
-      local posIdx = self:_PosIndexAddOffset(casterPosIndex, off)
-      if validPosIdxList[posIdx] then
-        local pos = self:_Index2Pos(posIdx)
-        local color = (env.BoardPosPieces)[posIdx]
-        -- DECOMPILER ERROR at PC76: Unhandled construct in 'MakeBoolean' P1
-
-        -- DECOMPILER ERROR at PC76: Unhandled construct in 'MakeBoolean' P1
-
-        if color and color ~= PieceType.Red and (self._world):MatchType() == MatchType.MT_BlackFist and blackFistEnemyPos ~= pos then
-          firstPickPos = pos
-          break
+  local udsvc = self._world:GetService("UtilData")
+  local skillConfigData = self._configService:GetSkillConfigData(activeSkillID)
+  local casterPosIndex = self:_Pos2Index(casterPos)
+  local firstPickPos, blackFistEnemyPos
+  if self._world:MatchType() == MatchType.MT_BlackFist and petEntity:HasPet() then
+    local enemy = petEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
+    blackFistEnemyPos = enemy:GetGridPosition()
+  end
+  for _, off in ipairs(ringMax) do
+    local posIdx = self:_PosIndexAddOffset(casterPosIndex, off)
+    if validPosIdxList[posIdx] then
+      local pos = self:_Index2Pos(posIdx)
+      local color = env.BoardPosPieces[posIdx]
+      if color and color ~= PieceType.Red then
+        if self._world:MatchType() == MatchType.MT_BlackFist then
+          if blackFistEnemyPos ~= pos then
+            firstPickPos = pos
+            break
+          end
+        else
+          local isHasMonster, monsterID = utilScopeSvc:IsPosHasMonster(pos)
+          if not isHasMonster then
+            firstPickPos = pos
+            break
+          end
         end
-      end
-      local isHasMonster, monsterID = utilScopeSvc:IsPosHasMonster(pos)
-      if not isHasMonster then
-        firstPickPos = pos
-        break
-      end
-    end
-    do
-      if firstPickPos then
-        return {firstPickPos}, {firstPickPos}, {}
-      else
-        return {}, {}, {}
       end
     end
   end
+  if firstPickPos then
+    return {firstPickPos}, {firstPickPos}, {}
+  else
+    return {}, {}, {}
+  end
 end
 
--- DECOMPILER ERROR at PC297: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicy_PetZhongxuExtra = function(self, petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
-  -- function num : 0_94 , upvalues : _ENV
-  local trapEntity = nil
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-  for i,e in ipairs(trapGroup:GetEntities()) do
-    if not e:HasDeadMark() and e:HasSummoner() and (e:Summoner()):GetSummonerEntityID() == petEntity:GetID() then
+function AutoFightService:_CalPickPosPolicy_PetZhongxuExtra(petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
+  local trapEntity
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  for i, e in ipairs(trapGroup:GetEntities()) do
+    if not e:HasDeadMark() and e:HasSummoner() and e:Summoner():GetSummonerEntityID() == petEntity:GetID() then
       trapEntity = e
       break
     end
   end
-  do
-    if not trapEntity then
-      return {}, {}, {}
-    end
-    local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID)
-    local scopeType = SkillScopeType.ZhongxuForceMovementPickRange
-    local scopeParam, centerType, targetType = nil, nil, nil
-    local skillScopeAndTarget = skillConfigData:GetAutoFightSkillScopeTypeAndTargetType()
-    if skillScopeAndTarget and skillScopeAndTarget.useType == AutoFightScopeUseType.PickPosPolicy then
-      scopeParam = skillScopeAndTarget.ScopeParam
-    else
-      return {}, {}, {}
-    end
-    local centerPos = trapEntity:GetGridPosition()
-    local firstPickPos = centerPos
-    local result = self:_CalcSkillScopeResult(petEntity, skillConfigData, scopeType, scopeParam, centerType, targetType, centerPos)
-    if result then
-      local attackRange = (result:GetAttackRange())
-      local upPos, downPos, leftPos, rightPos = nil, nil, nil, nil
-      for index,rangePos in ipairs(attackRange) do
-        if not upPos or upPos.y < rangePos.y then
-          upPos = rangePos
-        end
-        if not downPos or rangePos.y < downPos.y then
-          downPos = rangePos
-        end
-        if not leftPos or rangePos.x < leftPos.x then
-          leftPos = rangePos
-        end
-        if not rightPos or rightPos.x < rangePos.x then
-          rightPos = rangePos
-        end
-      end
-      local secondPickRange = {}
-      if upPos then
-        (table.insert)(secondPickRange, upPos)
-      end
-      if downPos then
-        (table.insert)(secondPickRange, downPos)
-      end
-      if leftPos then
-        (table.insert)(secondPickRange, leftPos)
-      end
-      if rightPos then
-        (table.insert)(secondPickRange, rightPos)
-      end
-      local secondPickRangeCount = #secondPickRange
-      if secondPickRangeCount == 0 then
-        return {}, {}, {}
-      end
-      local secondPosIndex = (math.random)(1, secondPickRangeCount)
-      local secondPickPos = secondPickRange[secondPosIndex]
-      local pickPosList = {}
-      ;
-      (table.insert)(pickPosList, firstPickPos)
-      ;
-      (table.insert)(pickPosList, secondPickPos)
-      return pickPosList, pickPosList, {}
-    end
-    do
-      return {}, {}, {}
-    end
+  if not trapEntity then
+    return {}, {}, {}
   end
+  local skillConfigData = self._configService:GetSkillConfigData(activeSkillID)
+  local scopeType = SkillScopeType.ZhongxuForceMovementPickRange
+  local scopeParam, centerType, targetType
+  local skillScopeAndTarget = skillConfigData:GetAutoFightSkillScopeTypeAndTargetType()
+  if skillScopeAndTarget and skillScopeAndTarget.useType == AutoFightScopeUseType.PickPosPolicy then
+    scopeParam = skillScopeAndTarget.ScopeParam
+  else
+    return {}, {}, {}
+  end
+  local centerPos = trapEntity:GetGridPosition()
+  local firstPickPos = centerPos
+  local result = self:_CalcSkillScopeResult(petEntity, skillConfigData, scopeType, scopeParam, centerType, targetType, centerPos)
+  if result then
+    local attackRange = result:GetAttackRange()
+    local upPos, downPos, leftPos, rightPos
+    for index, rangePos in ipairs(attackRange) do
+      if not upPos or rangePos.y > upPos.y then
+        upPos = rangePos
+      end
+      if not downPos or rangePos.y < downPos.y then
+        downPos = rangePos
+      end
+      if not leftPos or rangePos.x < leftPos.x then
+        leftPos = rangePos
+      end
+      if not rightPos or rangePos.x > rightPos.x then
+        rightPos = rangePos
+      end
+    end
+    local secondPickRange = {}
+    if upPos then
+      table.insert(secondPickRange, upPos)
+    end
+    if downPos then
+      table.insert(secondPickRange, downPos)
+    end
+    if leftPos then
+      table.insert(secondPickRange, leftPos)
+    end
+    if rightPos then
+      table.insert(secondPickRange, rightPos)
+    end
+    local secondPickRangeCount = #secondPickRange
+    if secondPickRangeCount == 0 then
+      return {}, {}, {}
+    end
+    local secondPosIndex = math.random(1, secondPickRangeCount)
+    local secondPickPos = secondPickRange[secondPosIndex]
+    local pickPosList = {}
+    table.insert(pickPosList, firstPickPos)
+    table.insert(pickPosList, secondPickPos)
+    return pickPosList, pickPosList, {}
+  end
+  return {}, {}, {}
 end
 
--- DECOMPILER ERROR at PC300: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicy_PetYeliyaMain = function(self, petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
-  -- function num : 0_95 , upvalues : _ENV
+function AutoFightService:_CalPickPosPolicy_PetYeliyaMain(petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
   local env = self._env
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local boardService = (self._world):GetService("BoardLogic")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local utilDataSvc = self._world:GetService("UtilData")
+  local boardService = self._world:GetService("BoardLogic")
   local ringMax = boardService:GetCurBoardRingMax()
-  local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID)
+  local skillConfigData = self._configService:GetSkillConfigData(activeSkillID)
   local scopeParamList = skillConfigData._pickUpValidScopeList
   local casterPosIndex = self:_Pos2Index(casterPos)
   local checkDamageSkillID = 30018411
@@ -4096,147 +3436,127 @@ AutoFightService._CalPickPosPolicy_PetYeliyaMain = function(self, petEntity, act
   local retScopeResult = {}
   local retTargetIds = {}
   local tmpPickList = {}
-  if #scopeParamList > 0 then
+  if 0 < #scopeParamList then
     local totalScopeParam = scopeParamList[1]
     if totalScopeParam:GetScopeType() == SkillScopeType.ScopeByPickNum then
       local subScopeParamList = totalScopeParam:GetScopeParamData()
       if subScopeParamList then
         local subParam = subScopeParamList[1]
-        local validScopeParam = SkillPreviewScopeParam:New({TargetType = subParam.targetType, ScopeType = subParam.scopeType, ScopeCenterType = subParam.scopeCenterType, TargetTypeParam = subParam.targetTypeParam})
+        local validScopeParam = SkillPreviewScopeParam:New({
+          TargetType = subParam.targetType,
+          ScopeType = subParam.scopeType,
+          ScopeCenterType = subParam.scopeCenterType,
+          TargetTypeParam = subParam.targetTypeParam
+        })
         validScopeParam:SetScopeParamData(subParam.scopeParam)
         local validGirdList = utilScopeSvc:BuildScopeGridList({validScopeParam}, petEntity)
         local invalidGridList = utilScopeSvc:BuildScopeGridList(skillConfigData._pickUpInvalidScopeList, petEntity)
         local invalidGridDict = {}
-        for _,invalidPos in ipairs(invalidGridList) do
+        for _, invalidPos in ipairs(invalidGridList) do
           invalidGridDict[self:_Pos2Index(invalidPos)] = true
         end
         local validPosIdxList = {}
         local validPosList = {}
-        for _,validPos in ipairs(validGirdList) do
+        for _, validPos in ipairs(validGirdList) do
           local validPosIdx = self:_Pos2Index(validPos)
           if not invalidGridDict[validPosIdx] then
             validPosIdxList[validPosIdx] = true
             validPosList[#validPosList + 1] = validPos
           end
         end
-        local firstPickPos, lastPickPos = nil, nil
+        local firstPickPos, lastPickPos
         local lastPickSuperGrid = false
-        local testPickPos = nil
+        local testPickPos
         testPickPos = self:_YeliyaFindValidPosWithSuperGrid(petEntity, casterPos, validPosIdxList, tmpPickList)
         if testPickPos then
           firstPickPos = testPickPos
           lastPickPos = testPickPos
           lastPickSuperGrid = true
-          ;
-          (table.insert)(tmpPickList, firstPickPos)
+          table.insert(tmpPickList, firstPickPos)
         else
           testPickPos = self:_YeliyaFindValidPosWithMaxTargetCount(petEntity, casterPos, validPosIdxList, tmpPickList, checkDamageSkillID)
           if testPickPos then
             firstPickPos = testPickPos
             lastPickPos = testPickPos
             lastPickSuperGrid = false
-            ;
-            (table.insert)(tmpPickList, firstPickPos)
+            table.insert(tmpPickList, firstPickPos)
           else
             return {}, {}, {}
           end
         end
         if firstPickPos then
           if not lastPickSuperGrid then
+          else
             local subPickFinish = false
             local maxFindTimes = 30
             local findNextTimes = 0
             subParam = subScopeParamList[2]
-            local validScopeParam = SkillPreviewScopeParam:New({TargetType = subParam.targetType, ScopeType = subParam.scopeType, ScopeCenterType = subParam.scopeCenterType, TargetTypeParam = subParam.targetTypeParam})
+            local validScopeParam = SkillPreviewScopeParam:New({
+              TargetType = subParam.targetType,
+              ScopeType = subParam.scopeType,
+              ScopeCenterType = subParam.scopeCenterType,
+              TargetTypeParam = subParam.targetTypeParam
+            })
             validScopeParam:SetScopeParamData(subParam.scopeParam)
-            while 1 do
-              while 1 do
-                if not subPickFinish then
-                  findNextTimes = findNextTimes + 1
-                  if maxFindTimes < findNextTimes then
-                    subPickFinish = true
-                  else
-                    if lastPickSuperGrid then
-                      local subScopeResult = (self._utilScopeSvc):CalcSKillPreviewScopeResult(validScopeParam, lastPickPos, petEntity)
-                      local validGirdList = subScopeResult:GetAttackRange()
-                      local validPosIdxList = {}
-                      local validPosList = {}
-                      for _,validPos in ipairs(validGirdList) do
-                        local validPosIdx = self:_Pos2Index(validPos)
-                        if not invalidGridDict[validPosIdx] then
-                          validPosIdxList[validPosIdx] = true
-                          validPosList[#validPosList + 1] = validPos
-                        end
-                      end
-                      local nextPickPos = nil
-                      testPickPos = self:_YeliyaFindValidPosWithSuperGrid(petEntity, lastPickPos, validPosIdxList, tmpPickList)
-                      if testPickPos then
-                        nextPickPos = testPickPos
-                        lastPickPos = testPickPos
-                        lastPickSuperGrid = true
-                        ;
-                        (table.insert)(tmpPickList, nextPickPos)
-                        -- DECOMPILER ERROR at PC229: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                        -- DECOMPILER ERROR at PC229: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC229: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                        -- DECOMPILER ERROR at PC229: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC229: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                        -- DECOMPILER ERROR at PC229: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC229: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                        -- DECOMPILER ERROR at PC229: LeaveBlock: unexpected jumping out IF_STMT
-
-                      end
-                    end
+            while not subPickFinish do
+              findNextTimes = findNextTimes + 1
+              if maxFindTimes < findNextTimes then
+                subPickFinish = true
+                break
+              end
+              if lastPickSuperGrid then
+                local subScopeResult = self._utilScopeSvc:CalcSKillPreviewScopeResult(validScopeParam, lastPickPos, petEntity)
+                local validGirdList = subScopeResult:GetAttackRange()
+                local validPosIdxList = {}
+                local validPosList = {}
+                for _, validPos in ipairs(validGirdList) do
+                  local validPosIdx = self:_Pos2Index(validPos)
+                  if not invalidGridDict[validPosIdx] then
+                    validPosIdxList[validPosIdx] = true
+                    validPosList[#validPosList + 1] = validPos
                   end
                 end
-              end
-              testPickPos = self:_YeliyaFindValidPosWithMaxTargetCount(petEntity, lastPickPos, validPosIdxList, tmpPickList, checkDamageSkillID)
-              if testPickPos then
-                nextPickPos = testPickPos
-                lastPickPos = testPickPos
-                lastPickSuperGrid = false
-                ;
-                (table.insert)(tmpPickList, nextPickPos)
-              else
-                testPickPos = self:_YeliyaFindValidPosNearToMonster(petEntity, lastPickPos, validPosIdxList, validPosList, tmpPickList)
+                local nextPickPos
+                testPickPos = self:_YeliyaFindValidPosWithSuperGrid(petEntity, lastPickPos, validPosIdxList, tmpPickList)
                 if testPickPos then
                   nextPickPos = testPickPos
                   lastPickPos = testPickPos
-                  lastPickSuperGrid = false
-                  ;
-                  (table.insert)(tmpPickList, nextPickPos)
+                  lastPickSuperGrid = true
+                  table.insert(tmpPickList, nextPickPos)
+                else
+                  testPickPos = self:_YeliyaFindValidPosWithMaxTargetCount(petEntity, lastPickPos, validPosIdxList, tmpPickList, checkDamageSkillID)
+                  if testPickPos then
+                    nextPickPos = testPickPos
+                    lastPickPos = testPickPos
+                    lastPickSuperGrid = false
+                    table.insert(tmpPickList, nextPickPos)
+                  else
+                    testPickPos = self:_YeliyaFindValidPosNearToMonster(petEntity, lastPickPos, validPosIdxList, validPosList, tmpPickList)
+                    if testPickPos then
+                      nextPickPos = testPickPos
+                      lastPickPos = testPickPos
+                      lastPickSuperGrid = false
+                      table.insert(tmpPickList, nextPickPos)
+                    end
+                  end
+                  subPickFinish = true
                 end
               end
-              subPickFinish = true
             end
-            do
-              do
-                if tmpPickList and #tmpPickList > 0 then
-                  pickPosList = tmpPickList
-                end
-                return pickPosList, retScopeResult, retTargetIds
-              end
-            end
+          end
+          if tmpPickList and 0 < #tmpPickList then
+            pickPosList = tmpPickList
           end
         end
       end
     end
   end
+  return pickPosList, retScopeResult, retTargetIds
 end
 
--- DECOMPILER ERROR at PC303: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._CalPickPosPolicy_PetYeliyaExtra = function(self, petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
-  -- function num : 0_96 , upvalues : _ENV
-  local boardService = (self._world):GetService("BoardLogic")
-  local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID)
+function AutoFightService:_CalPickPosPolicy_PetYeliyaExtra(petEntity, activeSkillID, casterPos, validPosList, validPosIdxList)
+  local boardService = self._world:GetService("BoardLogic")
+  local skillConfigData = self._configService:GetSkillConfigData(activeSkillID)
   local checkDamageSkillID = 30018411
   local policyParam = skillConfigData:GetAutoFightPickPosPolicyParam()
   if policyParam and policyParam.checkDamageSkillID then
@@ -4245,37 +3565,34 @@ AutoFightService._CalPickPosPolicy_PetYeliyaExtra = function(self, petEntity, ac
   local pickPosList = {}
   local retScopeResult = {}
   local retTargetIds = {}
-  local testPickPos = nil
+  local testPickPos
   local tmpPickList = {}
   testPickPos = self:_YeliyaFindValidPosWithMaxTargetCount(petEntity, casterPos, validPosIdxList, tmpPickList, checkDamageSkillID)
   if testPickPos then
-    (table.insert)(pickPosList, testPickPos)
+    table.insert(pickPosList, testPickPos)
   else
     return {}, {}, {}
   end
   return pickPosList, retScopeResult, retTargetIds
 end
 
--- DECOMPILER ERROR at PC306: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._YeliyaFindValidPosWithSuperGrid = function(self, petEntity, centerPos, validPosIdxList, alreadyPickList)
-  -- function num : 0_97 , upvalues : _ENV
-  local pickPos = nil
+function AutoFightService:_YeliyaFindValidPosWithSuperGrid(petEntity, centerPos, validPosIdxList, alreadyPickList)
+  local pickPos
   local utilDataSvc = self._utilSvc
   local boardService = self._boardServiceLogic
   local ringMax = boardService:GetCurBoardRingMax()
   local centerPosIndex = self:_Pos2Index(centerPos)
-  for _,off in ipairs(ringMax) do
+  for _, off in ipairs(ringMax) do
     local posIdx = self:_PosIndexAddOffset(centerPosIndex, off)
     if validPosIdxList[posIdx] then
       local pos = self:_Index2Pos(posIdx)
-      if not (table.icontains)(alreadyPickList, pos) then
+      if not table.icontains(alreadyPickList, pos) then
         local isBlockedLinkLine = boardService:IsPosBlock(pos, BlockFlag.LinkLine)
         if not isBlockedLinkLine then
           local traps = utilDataSvc:GetTrapsAtPos(pos)
           if traps then
-            for index,e in ipairs(traps) do
-              if (e:Trap()):IsSuperGrid() then
+            for index, e in ipairs(traps) do
+              if e:Trap():IsSuperGrid() then
                 pickPos = pos
                 break
               end
@@ -4288,22 +3605,19 @@ AutoFightService._YeliyaFindValidPosWithSuperGrid = function(self, petEntity, ce
   return pickPos
 end
 
--- DECOMPILER ERROR at PC309: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._YeliyaFindValidPosWithMaxTargetCount = function(self, petEntity, centerPos, validPosIdxList, alreadyPickList, checkDamageSkillID)
-  -- function num : 0_98 , upvalues : _ENV
-  local pickPos = nil
+function AutoFightService:_YeliyaFindValidPosWithMaxTargetCount(petEntity, centerPos, validPosIdxList, alreadyPickList, checkDamageSkillID)
+  local pickPos
   checkDamageSkillID = 30018411
   local boardService = self._boardServiceLogic
   local ringMax = boardService:GetCurBoardRingMax()
   local centerPosIndex = self:_Pos2Index(centerPos)
   local maxTargetCount = 0
-  local maxTargetPos = nil
-  for _,off in ipairs(ringMax) do
+  local maxTargetPos
+  for _, off in ipairs(ringMax) do
     local posIdx = self:_PosIndexAddOffset(centerPosIndex, off)
     if validPosIdxList[posIdx] then
       local pos = self:_Index2Pos(posIdx)
-      if not (table.icontains)(alreadyPickList, pos) then
+      if not table.icontains(alreadyPickList, pos) then
         local isBlockedLinkLine = boardService:IsPosBlock(pos, BlockFlag.LinkLine)
         if not isBlockedLinkLine then
           local result, targetIds = self:_CalcSkillScopeResultAndTargets(petEntity, checkDamageSkillID, pos)
@@ -4324,71 +3638,57 @@ AutoFightService._YeliyaFindValidPosWithMaxTargetCount = function(self, petEntit
   return pickPos
 end
 
--- DECOMPILER ERROR at PC312: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService._YeliyaFindValidPosNearToMonster = function(self, petEntity, centerPos, validPosIdxList, validPosList, alreadyPickList)
-  -- function num : 0_99 , upvalues : _ENV
-  local pickPos = nil
-  local buffLogicSvc = (self._world):GetService("BuffLogic")
+function AutoFightService:_YeliyaFindValidPosNearToMonster(petEntity, centerPos, validPosIdxList, validPosList, alreadyPickList)
+  local pickPos
+  local buffLogicSvc = self._world:GetService("BuffLogic")
   local boardService = self._boardServiceLogic
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   local validEnemyList = {}
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    local enemyTeam = (((petEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()
-    ;
-    (table.insert)(validEnemyList, enemyTeam)
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    local enemyTeam = petEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
+    table.insert(validEnemyList, enemyTeam)
   else
-    do
-      for _,monsterEntity in ipairs(monsterGroup:GetEntities()) do
-        if not monsterEntity:HasDeadMark() then
-          (table.insert)(validEnemyList, monsterEntity)
-        end
+    for _, monsterEntity in ipairs(monsterGroup:GetEntities()) do
+      if not monsterEntity:HasDeadMark() then
+        table.insert(validEnemyList, monsterEntity)
       end
-      do
-        if validEnemyList and #validEnemyList > 0 then
-          local enemyPosList = {}
-          for index,enemyEntity in ipairs(validEnemyList) do
-            local enemyPos = enemyEntity:GetGridPosition()
-            local tv2BodyArea = (enemyEntity:BodyArea()):GetArea()
-            for _,v2Relative in ipairs(tv2BodyArea) do
-              local v2 = enemyPos + v2Relative
-              ;
-              (table.insert)(enemyPosList, v2)
+    end
+  end
+  if validEnemyList and 0 < #validEnemyList then
+    local enemyPosList = {}
+    for index, enemyEntity in ipairs(validEnemyList) do
+      local enemyPos = enemyEntity:GetGridPosition()
+      local tv2BodyArea = enemyEntity:BodyArea():GetArea()
+      for _, v2Relative in ipairs(tv2BodyArea) do
+        local v2 = enemyPos + v2Relative
+        table.insert(enemyPosList, v2)
+      end
+    end
+    local sortedEnemyPosList = HelperProxy:SortPosByCenterPosDistance(centerPos, enemyPosList)
+    if sortedEnemyPosList and 0 < #sortedEnemyPosList then
+      local nearestPos = sortedEnemyPosList[1]
+      local sortedValidPosList = HelperProxy:SortPosByCenterPosDistance(nearestPos, validPosList)
+      if sortedValidPosList then
+        for index, pos in ipairs(sortedValidPosList) do
+          if not table.icontains(alreadyPickList, pos) then
+            local isBlockedLinkLine = boardService:IsPosBlock(pos, BlockFlag.LinkLine)
+            if not isBlockedLinkLine then
+              pickPos = pos
+              break
             end
           end
-          local sortedEnemyPosList = HelperProxy:SortPosByCenterPosDistance(centerPos, enemyPosList)
-          if sortedEnemyPosList and #sortedEnemyPosList > 0 then
-            local nearestPos = sortedEnemyPosList[1]
-            local sortedValidPosList = HelperProxy:SortPosByCenterPosDistance(nearestPos, validPosList)
-            if sortedValidPosList then
-              for index,pos in ipairs(sortedValidPosList) do
-                if not (table.icontains)(alreadyPickList, pos) then
-                  local isBlockedLinkLine = boardService:IsPosBlock(pos, BlockFlag.LinkLine)
-                  if not isBlockedLinkLine then
-                    pickPos = pos
-                    break
-                  end
-                end
-              end
-            end
-          end
-        end
-        do
-          return pickPos
         end
       end
     end
   end
+  return pickPos
 end
 
--- DECOMPILER ERROR at PC315: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoFightService.Handle_NotifyClientUnscaledCountDown = function(self, TT)
-  -- function num : 0_100 , upvalues : _ENV
+function AutoFightService:Handle_NotifyClientUnscaledCountDown(TT)
   local isWaitTrigger = false
-  local waitTriggerCmpt = nil
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).UnscaledCountDownRender)
-  for i,e in ipairs(group:GetEntities()) do
+  local waitTriggerCmpt
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.UnscaledCountDownRender)
+  for i, e in ipairs(group:GetEntities()) do
     local cmpt = e:UnscaledCountDownRender()
     if cmpt:GetIsActive() and cmpt:GetIsWaitTrigger() then
       isWaitTrigger = true
@@ -4396,23 +3696,17 @@ AutoFightService.Handle_NotifyClientUnscaledCountDown = function(self, TT)
       break
     end
   end
-  do
-    if not isWaitTrigger then
-      return false
-    end
-    local flagID = waitTriggerCmpt:GetFlagID()
-    local state = 1
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SyncClientUnscaledCountDownFinish, flagID, state)
-    waitTriggerCmpt:SetIsWaitTrigger(false)
-    waitTriggerCmpt:SetWaitPlayNotify(true)
-    ;
-    (Log.info)("autoFight UnscaledCD _CountDownFinish, flagID:", flagID)
-    while GameStateID.UnscaledCountDownFinishNotify ~= self:_GetFsmStateID() do
-      YIELD(TT, 100)
-    end
-    return true
+  if not isWaitTrigger then
+    return false
   end
+  local flagID = waitTriggerCmpt:GetFlagID()
+  local state = 1
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SyncClientUnscaledCountDownFinish, flagID, state)
+  waitTriggerCmpt:SetIsWaitTrigger(false)
+  waitTriggerCmpt:SetWaitPlayNotify(true)
+  Log.info("autoFight UnscaledCD _CountDownFinish, flagID:", flagID)
+  while GameStateID.UnscaledCountDownFinishNotify ~= self:_GetFsmStateID() do
+    YIELD(TT, 100)
+  end
+  return true
 end
-
-

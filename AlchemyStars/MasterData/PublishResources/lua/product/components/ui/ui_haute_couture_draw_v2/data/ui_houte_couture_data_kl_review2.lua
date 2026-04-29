@@ -1,63 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/data/ui_houte_couture_data_kl_review2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureKL_Review2", UIHauteCoutureDataBase)
 UIHauteCoutureKL_Review2 = UIHauteCoutureKL_Review2
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureKL_Review2.CostItemID = function(self)
-  -- function num : 0_0
+function UIHauteCoutureKL_Review2:CostItemID()
   return 3000365
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureKL_Review2.ShopGoodsOnClick = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIHauteCoutureDrawControllerKLReview2")
+function UIHauteCoutureKL_Review2:ShopGoodsOnClick()
+  GameGlobal.UIStateManager():ShowDialog("UIHauteCoutureDrawControllerKLReview2")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureKL_Review2.BuyItem = function(self)
-  -- function num : 0_2
+function UIHauteCoutureKL_Review2:BuyItem()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureKL_Review2.IsReview = function(self)
-  -- function num : 0_3
+function UIHauteCoutureKL_Review2:IsReview()
   return true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureKL_Review2.HC_Type = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.exception)("HC_Type()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureKL_Review2:HC_Type()
+  Log.exception("HC_Type()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureKL_Review2.GetMainUIInfo = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.exception)("GetMainUIInfo()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureKL_Review2:GetMainUIInfo()
+  Log.exception("GetMainUIInfo()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureKL_Review2.GetMainUIBgInfo = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.exception)("GetMainUIInfo()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureKL_Review2:GetMainUIBgInfo()
+  Log.exception("GetMainUIInfo()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureKL_Review2.SideEnterText = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  return (StringTable.Get)("str_senior_skin_draw_lobby_enter_title")
+function UIHauteCoutureKL_Review2:SideEnterText()
+  return StringTable.Get("str_senior_skin_draw_lobby_enter_title")
 end
-
-

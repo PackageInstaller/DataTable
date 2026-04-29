@@ -1,158 +1,139 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/tale_pet/tale_pet_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local tale_petMessageDef = {CLSID_CEventNotifyTalePetChange = 31000, CLSID_CEventTaleFirstReq = 31001, CLSID_CEventTaleFirstResult = 31002, CLSID_CEventTaleChooseReq = 31003, CLSID_CEventTaleChooseResult = 31004, CLSID_CEventTaleTaskRewardReq = 31005, CLSID_CEventTaleTaskRewardResult = 31006, CLSID_CEventTalePetCallReq = 31007, CLSID_CEventTalePetCallResult = 31008, CLSID_CEventTalePetReq = 31009, CLSID_CEventTalePetResult = 31010, CLSID_CEventReqCurrentBuffInfo = 31011, CLSID_CEventReplyCurrentBuffInfo = 31012, CLSID_CEventReqPassedTaleMission = 31013, CLSID_CEventReplyPassedTaleMission = 31014, CLSID_CEventReqRewardStatus = 31015, CLSID_CEventReplyRewardStatus = 31016, CLSID_CEventReqAcceptStageReward = 31017, CLSID_CEventReplyAcceptStageReward = 31018, CLSID_CEventReqTaleletFormation = 31019, CLSID_CEventReplyTaleletFormation = 31020, CLSID_CEventRequestChangeTalepetFormation = 31021, CLSID_CEventReplyChangeTalepetFormation = 31022, CLSID_CEventPushNewBuffInfo = 31023, CLSID_CEventCaseFinishTaskReq = 31024, CLSID_CEventCaseFinishTaskResult = 31025}
-;
-(table.append)(MessageDef, tale_petMessageDef)
+local tale_petMessageDef = {
+  CLSID_CEventNotifyTalePetChange = 31000,
+  CLSID_CEventTaleFirstReq = 31001,
+  CLSID_CEventTaleFirstResult = 31002,
+  CLSID_CEventTaleChooseReq = 31003,
+  CLSID_CEventTaleChooseResult = 31004,
+  CLSID_CEventTaleTaskRewardReq = 31005,
+  CLSID_CEventTaleTaskRewardResult = 31006,
+  CLSID_CEventTalePetCallReq = 31007,
+  CLSID_CEventTalePetCallResult = 31008,
+  CLSID_CEventTalePetReq = 31009,
+  CLSID_CEventTalePetResult = 31010,
+  CLSID_CEventReqCurrentBuffInfo = 31011,
+  CLSID_CEventReplyCurrentBuffInfo = 31012,
+  CLSID_CEventReqPassedTaleMission = 31013,
+  CLSID_CEventReplyPassedTaleMission = 31014,
+  CLSID_CEventReqRewardStatus = 31015,
+  CLSID_CEventReplyRewardStatus = 31016,
+  CLSID_CEventReqAcceptStageReward = 31017,
+  CLSID_CEventReplyAcceptStageReward = 31018,
+  CLSID_CEventReqTaleletFormation = 31019,
+  CLSID_CEventReplyTaleletFormation = 31020,
+  CLSID_CEventRequestChangeTalepetFormation = 31021,
+  CLSID_CEventReplyChangeTalepetFormation = 31022,
+  CLSID_CEventPushNewBuffInfo = 31023,
+  CLSID_CEventCaseFinishTaskReq = 31024,
+  CLSID_CEventCaseFinishTaskResult = 31025
+}
+table.append(MessageDef, tale_petMessageDef)
 _class("CEventNotifyTalePetChange", CSvrPushEvent)
 CEventNotifyTalePetChange = CEventNotifyTalePetChange
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventNotifyTalePetChange.Constructor = function(self)
-  -- function num : 0_0
+function CEventNotifyTalePetChange:Constructor()
   self.datas = {}
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventNotifyTalePetChange._proto = {
-[1] = {"datas", "map<int,tale_pet_msg>"}
+  [1] = {
+    "datas",
+    "map<int,tale_pet_msg>"
+  }
 }
 _class("CEventTaleFirstReq", CCallRequestEvent)
 CEventTaleFirstReq = CEventTaleFirstReq
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventTaleFirstReq.Constructor = function(self)
-  -- function num : 0_1
+function CEventTaleFirstReq:Constructor()
   self.types = 0
   self.cfg_id = 0
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventTaleFirstReq._proto = {
-[1] = {"types", "int"}
-, 
-[2] = {"cfg_id", "int"}
+  [1] = {"types", "int"},
+  [2] = {"cfg_id", "int"}
 }
 _class("CEventTaleFirstResult", CCallReplyEvent)
 CEventTaleFirstResult = CEventTaleFirstResult
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventTaleFirstResult.Constructor = function(self)
-  -- function num : 0_2
+function CEventTaleFirstResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventTaleFirstResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventTaleChooseReq", CCallRequestEvent)
 CEventTaleChooseReq = CEventTaleChooseReq
--- DECOMPILER ERROR at PC99: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventTaleChooseReq.Constructor = function(self)
-  -- function num : 0_3
+function CEventTaleChooseReq:Constructor()
   self.cfg_id = 0
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventTaleChooseReq._proto = {
-[1] = {"cfg_id", "int"}
+  [1] = {"cfg_id", "int"}
 }
 _class("CEventTaleChooseResult", CCallReplyEvent)
 CEventTaleChooseResult = CEventTaleChooseResult
--- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventTaleChooseResult.Constructor = function(self)
-  -- function num : 0_4
+function CEventTaleChooseResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC124: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventTaleChooseResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventTaleTaskRewardReq", CCallRequestEvent)
 CEventTaleTaskRewardReq = CEventTaleTaskRewardReq
--- DECOMPILER ERROR at PC133: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventTaleTaskRewardReq.Constructor = function(self)
-  -- function num : 0_5
+function CEventTaleTaskRewardReq:Constructor()
   self.cfg_id = 0
 end
 
--- DECOMPILER ERROR at PC141: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventTaleTaskRewardReq._proto = {
-[1] = {"cfg_id", "int"}
+  [1] = {"cfg_id", "int"}
 }
 _class("CEventTaleTaskRewardResult", CCallReplyEvent)
 CEventTaleTaskRewardResult = CEventTaleTaskRewardResult
--- DECOMPILER ERROR at PC150: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventTaleTaskRewardResult.Constructor = function(self)
-  -- function num : 0_6
+function CEventTaleTaskRewardResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventTaleTaskRewardResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventTalePetCallReq", CCallRequestEvent)
 CEventTalePetCallReq = CEventTalePetCallReq
--- DECOMPILER ERROR at PC167: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventTalePetCallReq.Constructor = function(self)
-  -- function num : 0_7
+function CEventTalePetCallReq:Constructor()
   self.cfg_id = 0
 end
 
--- DECOMPILER ERROR at PC175: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventTalePetCallReq._proto = {
-[1] = {"cfg_id", "int"}
+  [1] = {"cfg_id", "int"}
 }
 _class("CEventTalePetCallResult", CCallReplyEvent)
 CEventTalePetCallResult = CEventTalePetCallResult
--- DECOMPILER ERROR at PC184: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventTalePetCallResult.Constructor = function(self)
-  -- function num : 0_8
+function CEventTalePetCallResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC192: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventTalePetCallResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventTalePetReq", CCallRequestEvent)
 CEventTalePetReq = CEventTalePetReq
--- DECOMPILER ERROR at PC201: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventTalePetReq.Constructor = function(self)
-  -- function num : 0_9
+function CEventTalePetReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC204: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventTalePetReq._proto = {}
 _class("CEventTalePetResult", CCallReplyEvent)
 CEventTalePetResult = CEventTalePetResult
--- DECOMPILER ERROR at PC213: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventTalePetResult.Constructor = function(self)
-  -- function num : 0_10
+function CEventTalePetResult:Constructor()
   self.ret = 0
   self.first_enter = false
   self.first_buff = false
@@ -162,40 +143,35 @@ CEventTalePetResult.Constructor = function(self)
   self.select_cfg_id = 0
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventTalePetResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"first_enter", "bool"}
-, 
-[3] = {"first_buff", "bool"}
-, 
-[4] = {"datas", "list<tale_pet_msg>"}
-, 
-[5] = {"start_time", "int64"}
-, 
-[6] = {"end_time", "int64"}
-, 
-[7] = {"select_cfg_id", "int"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "first_enter",
+    "bool"
+  },
+  [3] = {"first_buff", "bool"},
+  [4] = {
+    "datas",
+    "list<tale_pet_msg>"
+  },
+  [5] = {"start_time", "int64"},
+  [6] = {"end_time", "int64"},
+  [7] = {
+    "select_cfg_id",
+    "int"
+  }
 }
 _class("CEventReqCurrentBuffInfo", CCallRequestEvent)
 CEventReqCurrentBuffInfo = CEventReqCurrentBuffInfo
--- DECOMPILER ERROR at PC260: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReqCurrentBuffInfo.Constructor = function(self)
-  -- function num : 0_11
+function CEventReqCurrentBuffInfo:Constructor()
 end
-
--- DECOMPILER ERROR at PC263: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventReqCurrentBuffInfo._proto = {}
 _class("CEventReplyCurrentBuffInfo", CCallReplyEvent)
 CEventReplyCurrentBuffInfo = CEventReplyCurrentBuffInfo
--- DECOMPILER ERROR at PC272: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyCurrentBuffInfo.Constructor = function(self)
-  -- function num : 0_12
+function CEventReplyCurrentBuffInfo:Constructor()
   self.ret = 0
   self.TalePetBuff = {}
   self.NormalPetBuff = {}
@@ -203,211 +179,184 @@ CEventReplyCurrentBuffInfo.Constructor = function(self)
   self.trail_buff_level_id = 0
 end
 
--- DECOMPILER ERROR at PC300: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyCurrentBuffInfo._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"TalePetBuff", "list<int>"}
-, 
-[3] = {"NormalPetBuff", "list<int>"}
-, 
-[4] = {"experience_value", "int"}
-, 
-[5] = {"trail_buff_level_id", "int"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "TalePetBuff",
+    "list<int>"
+  },
+  [3] = {
+    "NormalPetBuff",
+    "list<int>"
+  },
+  [4] = {
+    "experience_value",
+    "int"
+  },
+  [5] = {
+    "trail_buff_level_id",
+    "int"
+  }
 }
 _class("CEventReqPassedTaleMission", CCallRequestEvent)
 CEventReqPassedTaleMission = CEventReqPassedTaleMission
--- DECOMPILER ERROR at PC309: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReqPassedTaleMission.Constructor = function(self)
-  -- function num : 0_13
+function CEventReqPassedTaleMission:Constructor()
 end
-
--- DECOMPILER ERROR at PC312: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventReqPassedTaleMission._proto = {}
 _class("CEventReplyPassedTaleMission", CCallReplyEvent)
 CEventReplyPassedTaleMission = CEventReplyPassedTaleMission
--- DECOMPILER ERROR at PC321: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyPassedTaleMission.Constructor = function(self)
-  -- function num : 0_14
+function CEventReplyPassedTaleMission:Constructor()
   self.ret = 0
   self.tale_mission_list = {}
 end
 
--- DECOMPILER ERROR at PC334: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyPassedTaleMission._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"tale_mission_list", "map<int,int>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "tale_mission_list",
+    "map<int,int>"
+  }
 }
 _class("CEventReqRewardStatus", CCallRequestEvent)
 CEventReqRewardStatus = CEventReqRewardStatus
--- DECOMPILER ERROR at PC343: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReqRewardStatus.Constructor = function(self)
-  -- function num : 0_15
+function CEventReqRewardStatus:Constructor()
 end
-
--- DECOMPILER ERROR at PC346: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventReqRewardStatus._proto = {}
 _class("CEventReplyRewardStatus", CCallReplyEvent)
 CEventReplyRewardStatus = CEventReplyRewardStatus
--- DECOMPILER ERROR at PC355: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyRewardStatus.Constructor = function(self)
-  -- function num : 0_16
+function CEventReplyRewardStatus:Constructor()
   self.ret = 0
   self.accepted_stage_ids = {}
 end
 
--- DECOMPILER ERROR at PC368: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyRewardStatus._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"accepted_stage_ids", "list<int>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "accepted_stage_ids",
+    "list<int>"
+  }
 }
 _class("CEventReqAcceptStageReward", CCallRequestEvent)
 CEventReqAcceptStageReward = CEventReqAcceptStageReward
--- DECOMPILER ERROR at PC377: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReqAcceptStageReward.Constructor = function(self)
-  -- function num : 0_17
+function CEventReqAcceptStageReward:Constructor()
   self.stage_id = 0
 end
 
--- DECOMPILER ERROR at PC385: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReqAcceptStageReward._proto = {
-[1] = {"stage_id", "int"}
+  [1] = {"stage_id", "int"}
 }
 _class("CEventReplyAcceptStageReward", CCallReplyEvent)
 CEventReplyAcceptStageReward = CEventReplyAcceptStageReward
--- DECOMPILER ERROR at PC394: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyAcceptStageReward.Constructor = function(self)
-  -- function num : 0_18
+function CEventReplyAcceptStageReward:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC402: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyAcceptStageReward._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventReqTaleletFormation", CCallRequestEvent)
 CEventReqTaleletFormation = CEventReqTaleletFormation
--- DECOMPILER ERROR at PC411: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReqTaleletFormation.Constructor = function(self)
-  -- function num : 0_19
+function CEventReqTaleletFormation:Constructor()
 end
-
--- DECOMPILER ERROR at PC414: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventReqTaleletFormation._proto = {}
 _class("CEventReplyTaleletFormation", CCallReplyEvent)
 CEventReplyTaleletFormation = CEventReplyTaleletFormation
--- DECOMPILER ERROR at PC423: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyTaleletFormation.Constructor = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function CEventReplyTaleletFormation:Constructor()
   self.ret = 0
   self.formation_info = TalePetFormationInfo:New()
 end
 
--- DECOMPILER ERROR at PC436: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyTaleletFormation._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"formation_info", "TalePetFormationInfo"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "formation_info",
+    "TalePetFormationInfo"
+  }
 }
 _class("CEventRequestChangeTalepetFormation", CCallRequestEvent)
 CEventRequestChangeTalepetFormation = CEventRequestChangeTalepetFormation
--- DECOMPILER ERROR at PC445: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRequestChangeTalepetFormation.Constructor = function(self)
-  -- function num : 0_21
+function CEventRequestChangeTalepetFormation:Constructor()
   self.m_formation_id = 0
   self.m_formation_name = ""
   self.m_formation_pet_list = {}
 end
 
--- DECOMPILER ERROR at PC463: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventRequestChangeTalepetFormation._proto = {
-[1] = {"m_formation_id", "int"}
-, 
-[2] = {"m_formation_name", "string"}
-, 
-[3] = {"m_formation_pet_list", "list<int64>"}
+  [1] = {
+    "m_formation_id",
+    "int"
+  },
+  [2] = {
+    "m_formation_name",
+    "string"
+  },
+  [3] = {
+    "m_formation_pet_list",
+    "list<int64>"
+  }
 }
 _class("CEventReplyChangeTalepetFormation", CCallReplyEvent)
 CEventReplyChangeTalepetFormation = CEventReplyChangeTalepetFormation
--- DECOMPILER ERROR at PC472: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyChangeTalepetFormation.Constructor = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function CEventReplyChangeTalepetFormation:Constructor()
   self.ret = 0
   self.formation_info = TalePetFormationInfo:New()
 end
 
--- DECOMPILER ERROR at PC485: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyChangeTalepetFormation._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"formation_info", "TalePetFormationInfo"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "formation_info",
+    "TalePetFormationInfo"
+  }
 }
 _class("CEventPushNewBuffInfo", CSvrPushEvent)
 CEventPushNewBuffInfo = CEventPushNewBuffInfo
--- DECOMPILER ERROR at PC494: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushNewBuffInfo.Constructor = function(self)
-  -- function num : 0_23
+function CEventPushNewBuffInfo:Constructor()
   self.trail_buff_level_id = 0
   self.experience_value = 0
 end
 
--- DECOMPILER ERROR at PC507: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventPushNewBuffInfo._proto = {
-[1] = {"trail_buff_level_id", "int"}
-, 
-[2] = {"experience_value", "int"}
+  [1] = {
+    "trail_buff_level_id",
+    "int"
+  },
+  [2] = {
+    "experience_value",
+    "int"
+  }
 }
 _class("CEventCaseFinishTaskReq", CCallRequestEvent)
 CEventCaseFinishTaskReq = CEventCaseFinishTaskReq
--- DECOMPILER ERROR at PC516: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventCaseFinishTaskReq.Constructor = function(self)
-  -- function num : 0_24
+function CEventCaseFinishTaskReq:Constructor()
   self.cfg_id = 0
 end
 
--- DECOMPILER ERROR at PC524: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventCaseFinishTaskReq._proto = {
-[1] = {"cfg_id", "int"}
+  [1] = {"cfg_id", "int"}
 }
 _class("CEventCaseFinishTaskResult", CCallReplyEvent)
 CEventCaseFinishTaskResult = CEventCaseFinishTaskResult
--- DECOMPILER ERROR at PC533: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventCaseFinishTaskResult.Constructor = function(self)
-  -- function num : 0_25
+function CEventCaseFinishTaskResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC541: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventCaseFinishTaskResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
-

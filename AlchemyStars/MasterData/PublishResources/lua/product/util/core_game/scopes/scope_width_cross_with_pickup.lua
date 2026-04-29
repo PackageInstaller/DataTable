@@ -1,29 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_width_cross_with_pickup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_WidthCrossWithPickUp", SkillScopeCalculator_Base)
 SkillScopeCalculator_WidthCrossWithPickUp = SkillScopeCalculator_WidthCrossWithPickUp
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_WidthCrossWithPickUp.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_WidthCrossWithPickUp:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local casterPos = centerPos
   local bodyAreaArray = bodyArea
   local param = scopeParam
   local size = param[1]
   local width = param[2]
   local target_area_grid = {}
-  local offset = (math.floor)(width / 2)
+  local offset = math.floor(width / 2)
   for i = 1, offset do
     local posList = self:_GetCenterPos8DirectionWithOffset(casterPos, i)
     self:_CopyTable(target_area_grid, posList)
   end
   local cross_area = {}
   local wholeArea = {}
-  for i,p in ipairs(target_area_grid) do
+  for i, p in ipairs(target_area_grid) do
     local center_x = p.x
     local center_y = p.y
     for index = 1, size do
@@ -35,16 +28,16 @@ SkillScopeCalculator_WidthCrossWithPickUp.CalcRange = function(self, scopeType, 
       self:_InsertTargetGridIntoOneArea(downPos, wholeArea)
       self:_InsertTargetGridIntoOneArea(leftPos, wholeArea)
       self:_InsertTargetGridIntoOneArea(rightPos, wholeArea)
-      if (self._gridFilter):IsValidPiecePos(upPos) then
+      if self._gridFilter:IsValidPiecePos(upPos) then
         self:_InsertTargetGridIntoOneArea(upPos, cross_area)
       end
-      if (self._gridFilter):IsValidPiecePos(downPos) then
+      if self._gridFilter:IsValidPiecePos(downPos) then
         self:_InsertTargetGridIntoOneArea(downPos, cross_area)
       end
-      if (self._gridFilter):IsValidPiecePos(leftPos) then
+      if self._gridFilter:IsValidPiecePos(leftPos) then
         self:_InsertTargetGridIntoOneArea(leftPos, cross_area)
       end
-      if (self._gridFilter):IsValidPiecePos(rightPos) then
+      if self._gridFilter:IsValidPiecePos(rightPos) then
         self:_InsertTargetGridIntoOneArea(rightPos, cross_area)
       end
     end
@@ -53,10 +46,7 @@ SkillScopeCalculator_WidthCrossWithPickUp.CalcRange = function(self, scopeType, 
   return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_WidthCrossWithPickUp._GetCenterPos8DirectionWithOffset = function(self, centerPos, offSet)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeCalculator_WidthCrossWithPickUp:_GetCenterPos8DirectionWithOffset(centerPos, offSet)
   local UpPos = Vector2(centerPos.x, centerPos.y + offSet)
   local BottomPos = Vector2(centerPos.x, centerPos.y - offSet)
   local LeftPos = Vector2(centerPos.x - offSet, centerPos.y)
@@ -65,19 +55,23 @@ SkillScopeCalculator_WidthCrossWithPickUp._GetCenterPos8DirectionWithOffset = fu
   local UpRightPos = Vector2(centerPos.x + offSet, centerPos.y + offSet)
   local BottomLeftPos = Vector2(centerPos.x - offSet, centerPos.y - offSet)
   local BottomRightPos = Vector2(centerPos.x + offSet, centerPos.y - offSet)
-  return {UpPos, BottomPos, LeftPos, RightPos, UpLeftPos, UpRightPos, BottomLeftPos, BottomRightPos}
+  return {
+    UpPos,
+    BottomPos,
+    LeftPos,
+    RightPos,
+    UpLeftPos,
+    UpRightPos,
+    BottomLeftPos,
+    BottomRightPos
+  }
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_WidthCrossWithPickUp._CopyTable = function(self, tableA, tableB)
-  -- function num : 0_2 , upvalues : _ENV
-  if tableB == nil or tableA == nil then
-    return 
+function SkillScopeCalculator_WidthCrossWithPickUp:_CopyTable(tableA, tableB)
+  if nil == tableB or nil == tableA then
+    return
   end
-  for key,value in pairs(tableB) do
-    (table.insert)(tableA, value)
+  for key, value in pairs(tableB) do
+    table.insert(tableA, value)
   end
 end
-
-

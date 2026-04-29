@@ -1,23 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_top_rank/ui_top_rank_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITopRankItem", UICustomWidget)
 UITopRankItem = UITopRankItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITopRankItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._lvSize = {[1] = 100, [2] = 90, [3] = 70, [4] = 60}
+function UITopRankItem:OnShow(uiParams)
+  self._lvSize = {
+    [1] = 100,
+    [2] = 90,
+    [3] = 70,
+    [4] = 60
+  }
   self:GetComponents()
   self:AttachEvent(GameEventType.OnTopRankGetAward, self.OnTopRankGetAward)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankItem.GetComponents = function(self)
-  -- function num : 0_1
+function UITopRankItem:GetComponents()
   self._itemPool = self:GetUIComponent("UISelectObjectPath", "Content")
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._getBtnGo = self:GetGameObject("getBtn")
@@ -27,90 +22,57 @@ UITopRankItem.GetComponents = function(self)
   self._bg = self:GetUIComponent("Image", "bg")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankItem.Award = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UITopRankItem:Award()
   local awards = self._awards
-  ;
-  (self._itemPool):SpawnObjects("UITopRankAward", #awards)
-  local items = (self._itemPool):GetAllSpawnList()
+  self._itemPool:SpawnObjects("UITopRankAward", #awards)
+  local items = self._itemPool:GetAllSpawnList()
   for i = 1, #items do
     local item = items[i]
     local award = Award:New()
-    award:InitWithCount((awards[i])[1], (awards[i])[2])
+    award:InitWithCount(awards[i][1], awards[i][2])
     item:SetData(award, function(id, pos)
-    -- function num : 0_2_0 , upvalues : self
-    if self._callback then
-      (self._callback)(id, pos)
-    end
-  end
-)
+      if self._callback then
+        self._callback(id, pos)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankItem.Name = function(self)
-  -- function num : 0_3
+function UITopRankItem:Name()
   local size = 60
   if self._lv < 100 then
-    size = (self._lvSize)[1]
-  else
-    if self._lv < 1000 then
-      size = (self._lvSize)[2]
-    else
-      if self._lv < 10000 then
-        size = (self._lvSize)[3]
-      else
-        if self._lv < 100000 then
-          size = (self._lvSize)[4]
-        end
-      end
-    end
+    size = self._lvSize[1]
+  elseif self._lv < 1000 then
+    size = self._lvSize[2]
+  elseif self._lv < 10000 then
+    size = self._lvSize[3]
+  elseif self._lv < 100000 then
+    size = self._lvSize[4]
   end
-  ;
-  (self._name):SetText("<size=" .. size .. ">" .. self._lv .. "</size>")
+  self._name:SetText("<size=" .. size .. ">" .. self._lv .. "</size>")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankItem.State = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local state = nil
+function UITopRankItem:State()
+  local state
   if self._got then
     state = UITopRankAwardGotState.GOT
+  elseif self._lv > self._currentLv then
+    state = UITopRankAwardGotState.DOING
   else
-    if self._currentLv < self._lv then
-      state = UITopRankAwardGotState.DOING
-    else
-      state = UITopRankAwardGotState.GET
-    end
+    state = UITopRankAwardGotState.GET
   end
-  ;
-  (self._getBtnGo):SetActive(state == UITopRankAwardGotState.GET)
-  ;
-  (self._doingGo):SetActive(state == UITopRankAwardGotState.DOING)
-  ;
-  (self._gotGo):SetActive(state == UITopRankAwardGotState.GOT)
-  ;
-  (self._lvGo):SetActive(state ~= UITopRankAwardGotState.GOT)
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
-
+  self._getBtnGo:SetActive(state == UITopRankAwardGotState.GET)
+  self._doingGo:SetActive(state == UITopRankAwardGotState.DOING)
+  self._gotGo:SetActive(state == UITopRankAwardGotState.GOT)
+  self._lvGo:SetActive(state ~= UITopRankAwardGotState.GOT)
   if state == UITopRankAwardGotState.GOT then
-    (self._bg).sprite = self._sp2
+    self._bg.sprite = self._sp2
   else
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R2 in 'UnsetPending'
-
-    (self._bg).sprite = self._sp1
+    self._bg.sprite = self._sp1
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankItem.SetData = function(self, idx, lv, currentLv, got, awards, sp1, sp2, getCallBack, callback)
-  -- function num : 0_5
+function UITopRankItem:SetData(idx, lv, currentLv, got, awards, sp1, sp2, getCallBack, callback)
   self._idx = idx
   self._lv = lv
   self._currentLv = currentLv
@@ -125,29 +87,21 @@ UITopRankItem.SetData = function(self, idx, lv, currentLv, got, awards, sp1, sp2
   self:Name()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankItem.getBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UITopRankItem:getBtnOnClick(go)
   if self._getCallBack then
-    (self._getCallBack)(self._lv)
+    self._getCallBack(self._lv)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankItem.OnTopRankGetAward = function(self, getLvList)
-  -- function num : 0_7
-  if getLvList and #getLvList > 0 then
+function UITopRankItem:OnTopRankGetAward(getLvList)
+  if getLvList and 0 < #getLvList then
     for i = 1, #getLvList do
       local _lv = getLvList[i]
       if _lv == self._lv then
         self._got = true
         self:State()
-        return 
+        return
       end
     end
   end
 end
-
-

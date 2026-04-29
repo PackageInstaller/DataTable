@@ -1,36 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/common/ui_asset/ui_asset_component_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAssetComponentLevel", UIAssetComponentBase)
 UIAssetComponentLevel = UIAssetComponentLevel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAssetComponentLevel.OnInit = function(self)
-  -- function num : 0_0
-  self._levelObj = (((self._gameObject).transform):Find("g_level")).gameObject
-  self._levelTxt = (((self._gameObject).transform):Find("g_level/et_levelnum")):GetComponent("UILocalizationText")
+function UIAssetComponentLevel:OnInit()
+  self._levelObj = self._gameObject.transform:Find("g_level").gameObject
+  self._levelTxt = self._gameObject.transform:Find("g_level/et_levelnum"):GetComponent("UILocalizationText")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentLevel.ShowLevel = function(self, show)
-  -- function num : 0_1
-  (self._levelObj):SetActive(show)
+function UIAssetComponentLevel:ShowLevel(show)
+  self._levelObj:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentLevel.SetLevel = function(self, level)
-  -- function num : 0_2
+function UIAssetComponentLevel:SetLevel(level)
   if level < 0 then
     self:ShowLevel(false)
   else
     self:ShowLevel(true)
-    ;
-    (self._levelTxt):SetText(level)
+    self._levelTxt:SetText(level)
   end
 end
-
-

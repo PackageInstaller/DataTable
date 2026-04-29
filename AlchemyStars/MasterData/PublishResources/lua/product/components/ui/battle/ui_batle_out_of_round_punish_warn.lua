@@ -1,9 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_batle_out_of_round_punish_warn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_controller")
 _class("UIBattleOutOfRoundPunishWarn", UIController)
 UIBattleOutOfRoundPunishWarn = UIBattleOutOfRoundPunishWarn
-

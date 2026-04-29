@@ -1,62 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/ui_summer_1/ui_xh1_point_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXH1PointInfo", UICustomWidget)
 UIXH1PointInfo = UIXH1PointInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXH1PointInfo.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIXH1PointInfo:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1PointInfo.InitWidget = function(self)
-  -- function num : 0_1
+function UIXH1PointInfo:InitWidget()
   self.icon = self:GetUIComponent("Image", "icon")
   self.text = self:GetUIComponent("UILocalizationText", "text")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1PointInfo.SetData = function(self, camCpt, needCount)
-  -- function num : 0_2 , upvalues : _ENV
+function UIXH1PointInfo:SetData(camCpt, needCount)
   self._campComponent = camCpt
-  local cmpID = (self._campComponent):GetComponentCfgId()
-  local cfg = (self._campComponent):GetActionPointConfig()
+  local cmpID = self._campComponent:GetComponentCfgId()
+  local cfg = self._campComponent:GetActionPointConfig()
   if cfg == nil then
-    (Log.exception)("cfg_component_action_point中找不到组件ID:", cmpID)
+    Log.exception("cfg_component_action_point中找不到组件ID:", cmpID)
   end
   self._pointID = cfg.ItemID
   local module = self:GetModule(ItemModule)
   local count = module:GetItemCount(self._pointID)
-  if not count then
-    count = 0
-  end
+  count = count or 0
   local ceiling = cfg.RegainMax
-  local text = nil
-  if count < needCount then
+  local text
+  if needCount > count then
     text = "<color=#00ffea>" .. count .. "</color>" .. " /" .. ceiling
   else
     text = count .. " /" .. ceiling
   end
-  ;
-  (self.text):SetText(text)
-  local itemCfg = (Cfg.cfg_top_tips)[self._pointID]
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self.icon).sprite = (self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)):GetSprite(itemCfg.Icon)
+  self.text:SetText(text)
+  local itemCfg = Cfg.cfg_top_tips[self._pointID]
+  self.icon.sprite = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas):GetSprite(itemCfg.Icon)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1PointInfo.itemOnClick = function(self, go)
-  -- function num : 0_3
+function UIXH1PointInfo:itemOnClick(go)
   self:ShowDialog("UIXH1PointDetail")
 end
-
-

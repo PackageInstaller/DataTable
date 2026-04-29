@@ -1,47 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_item/ui_item_for_conversion.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIItemForConversion", UICustomWidget)
 UIItemForConversion = UIItemForConversion
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIItemForConversion.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIItemForConversion:OnShow(uiParams)
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
   self._nameTex = self:GetUIComponent("UILocalizationText", "nameTex")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemForConversion.SetData = function(self, info, clickCallback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIItemForConversion:SetData(info, clickCallback)
   self._tid = info.assetid
   local count = info.count
   self._clickCallback = clickCallback
-  local cfg = (Cfg.cfg_item)[self._tid]
+  local cfg = Cfg.cfg_item[self._tid]
   local itemName = cfg.Name
-  ;
-  (self._nameTex):SetText((StringTable.Get)(itemName))
+  self._nameTex:SetText(StringTable.Get(itemName))
   local params = {}
   params.quality = cfg.Color
   params.icon = cfg.Icon
   params.text = count
-  self.item = (self._pool):SpawnObject("UIAsset")
-  ;
-  (self.item):SetItemData(params)
-  ;
-  (self.item):SetData(self._tid)
+  self.item = self._pool:SpawnObject("UIAsset")
+  self.item:SetItemData(params)
+  self.item:SetData(self._tid)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemForConversion.BtnOnClick = function(self, go)
-  -- function num : 0_2
+function UIItemForConversion:BtnOnClick(go)
   if self._clickCallback then
-    (self._clickCallback)(self._tid, (go.transform).position)
+    self._clickCallback(self._tid, go.transform.position)
   end
 end
-
-

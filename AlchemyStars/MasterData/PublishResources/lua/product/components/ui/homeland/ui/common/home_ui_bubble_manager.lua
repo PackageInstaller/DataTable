@@ -1,20 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/common/home_ui_bubble_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("singleton")
 _class("HomeUIBubbleManager", Singleton)
 HomeUIBubbleManager = HomeUIBubbleManager
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeUIBubbleManager.Init = function(self, uiroot)
-  -- function num : 0_0
-  self._go = ((uiroot.transform):Find("UICameras/depth_high/UI/HomeUIBubbleManager")).gameObject
-  self._root = ((self._go).transform):Find("SafeArea/Center/pools")
-  self._item = ((self._root):Find("item")).gameObject
-  ;
-  (self._item):SetActive(false)
+function HomeUIBubbleManager:Init(uiroot)
+  self._go = uiroot.transform:Find("UICameras/depth_high/UI/HomeUIBubbleManager").gameObject
+  self._root = self._go.transform:Find("SafeArea/Center/pools")
+  self._item = self._root:Find("item").gameObject
+  self._item:SetActive(false)
   self._initCount = 10
   self._currentCount = 0
   self._showTime = 3000
@@ -24,102 +16,68 @@ HomeUIBubbleManager.Init = function(self, uiroot)
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeUIBubbleManager._OnValue = function(self)
-  -- function num : 0_1
+function HomeUIBubbleManager:_OnValue()
   for i = 1, self._initCount do
     self:CreateUnit()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeUIBubbleManager.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.HomeShowUIBubble, self.ShowBubbleHandler)
+function HomeUIBubbleManager:Dispose()
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.HomeShowUIBubble, self.ShowBubbleHandler)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeUIBubbleManager._AddListener = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self.ShowBubbleHandler = (GameHelper:GetInstance()):CreateCallback(self.ShowBubble, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.HomeShowUIBubble, self.ShowBubbleHandler)
+function HomeUIBubbleManager:_AddListener()
+  self.ShowBubbleHandler = GameHelper:GetInstance():CreateCallback(self.ShowBubble, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.HomeShowUIBubble, self.ShowBubbleHandler)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeUIBubbleManager.ShowBubble = function(self, tex, icon)
-  -- function num : 0_4 , upvalues : _ENV
+function HomeUIBubbleManager:ShowBubble(tex, icon)
   local idx = #self._usingPools + 1
-  local item = nil
+  local item
   for i = 1, self._currentCount do
-    local lua = (self._pools)[i]
+    local lua = self._pools[i]
     if not lua:Using() then
       item = lua
       break
     end
   end
-  do
-    if not item then
-      item = self:CreateAndReturn()
-      ;
-      (table.insert)(self._pools, item)
-    end
-    item:SetData(idx, tex, icon, function(item)
-    -- function num : 0_4_0 , upvalues : self
+  if not item then
+    item = self:CreateAndReturn()
+    table.insert(self._pools, item)
+  end
+  item:SetData(idx, tex, icon, function(item)
     self:Use(item)
-  end
-, function(item)
-    -- function num : 0_4_1 , upvalues : self
+  end, function(item)
     self:NoUse(item)
-  end
-)
-    local gapsY = 100
-    for i = 1, #self._usingPools do
-      local lua = (self._usingPools)[i]
-      local y = gapsY * (i - 1)
-      lua:MovePosY(y)
-    end
+  end)
+  local gapsY = 100
+  for i = 1, #self._usingPools do
+    local lua = self._usingPools[i]
+    local y = gapsY * (i - 1)
+    lua:MovePosY(y)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeUIBubbleManager.Use = function(self, item)
-  -- function num : 0_5 , upvalues : _ENV
-  (table.insert)(self._usingPools, 1, item)
+function HomeUIBubbleManager:Use(item)
+  table.insert(self._usingPools, 1, item)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeUIBubbleManager.NoUse = function(self, item)
-  -- function num : 0_6 , upvalues : _ENV
-  (table.removev)(self._usingPools, item)
+function HomeUIBubbleManager:NoUse(item)
+  table.removev(self._usingPools, item)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeUIBubbleManager.CreateUnit = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function HomeUIBubbleManager:CreateUnit()
   local lua = self:CreateAndReturn()
-  ;
-  (table.insert)(self._pools, lua)
+  table.insert(self._pools, lua)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeUIBubbleManager.CreateAndReturn = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local item = ((UnityEngine.GameObject).Instantiate)(self._item, Vector3(0, 0, 0), Quaternion.identity, self._root)
-  ;
-  (item.transform):SetAsLastSibling()
-  local anim = ((item.transform):Find("layout")).gameObject
-  local iconGo = ((item.transform):Find("layout/iconGo")).gameObject
-  local icon = ((item.transform):Find("layout/iconGo/icon")).gameObject
-  local tex = ((item.transform):Find("layout/tex")).gameObject
+function HomeUIBubbleManager:CreateAndReturn()
+  local item = UnityEngine.GameObject.Instantiate(self._item, Vector3(0, 0, 0), Quaternion.identity, self._root)
+  item.transform:SetAsLastSibling()
+  local anim = item.transform:Find("layout").gameObject
+  local iconGo = item.transform:Find("layout/iconGo").gameObject
+  local icon = item.transform:Find("layout/iconGo/icon").gameObject
+  local tex = item.transform:Find("layout/tex").gameObject
   local _itemGo = item
   local _iconGo = iconGo
   local _icon = icon:GetComponent("RawImageLoader")
@@ -134,10 +92,8 @@ end
 
 _class("HomeUIBubbleItem", Object)
 HomeUIBubbleItem = HomeUIBubbleItem
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeUIBubbleItem.Constructor = function(self, root, iconGo, icon, tex, anim, layout, animTime)
-  -- function num : 0_9
+function HomeUIBubbleItem:Constructor(root, iconGo, icon, tex, anim, layout, animTime)
   self._go = root
   self._iconGo = iconGo
   self._icon = icon
@@ -149,81 +105,50 @@ HomeUIBubbleItem.Constructor = function(self, root, iconGo, icon, tex, anim, lay
   self._using = false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeUIBubbleItem.SetData = function(self, idx, tex, icon, using, close)
-  -- function num : 0_10 , upvalues : _ENV
+function HomeUIBubbleItem:SetData(idx, tex, icon, using, close)
   self._using = true
   self._usingCb = using
   self._closeCb = close
   self:SetActive(true)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self._go).transform).localPosition = Vector3(0, 0, 0)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._layout).anchoredPosition = Vector2(-72, 0)
-  ;
-  (self._tex):SetText(tex)
+  self._go.transform.localPosition = Vector3(0, 0, 0)
+  self._layout.anchoredPosition = Vector2(-72, 0)
+  self._tex:SetText(tex)
   if icon then
-    (self._iconGo):SetActive(true)
-    ;
-    (self._icon):LoadImage(icon)
+    self._iconGo:SetActive(true)
+    self._icon:LoadImage(icon)
   else
-    ;
-    (self._iconGo):SetActive(false)
+    self._iconGo:SetActive(false)
   end
   if self._usingCb then
-    (self._usingCb)(self)
+    self._usingCb(self)
   end
-  ;
-  (self._anim):Play()
-  ;
-  ((GameGlobal.Timer)()):AddEvent(self._animTime, function()
-    -- function num : 0_10_0 , upvalues : self
+  self._anim:Play()
+  GameGlobal.Timer():AddEvent(self._animTime, function()
     self:Close()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeUIBubbleItem.MovePosY = function(self, y)
-  -- function num : 0_11
-  local rt = (self._go):GetComponent("RectTransform")
+function HomeUIBubbleItem:MovePosY(y)
+  local rt = self._go:GetComponent("RectTransform")
   if self._tweener then
-    (self._tweener):Kill()
+    self._tweener:Kill()
   end
   self._tweener = rt:DOAnchorPosY(y, 0.3)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeUIBubbleItem.Close = function(self)
-  -- function num : 0_12
+function HomeUIBubbleItem:Close()
   self._using = false
   self:SetActive(false)
   if self._closeCb then
-    (self._closeCb)(self)
+    self._closeCb(self)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeUIBubbleItem.SetActive = function(self, active)
-  -- function num : 0_13
+function HomeUIBubbleItem:SetActive(active)
   self._active = active
-  ;
-  (self._go):SetActive(self._active)
+  self._go:SetActive(self._active)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeUIBubbleItem.Using = function(self)
-  -- function num : 0_14
+function HomeUIBubbleItem:Using()
   return self._using
 end
-
-

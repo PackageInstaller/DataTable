@@ -1,73 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/data/attr_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RenderAttributesComponent", Object)
 RenderAttributesComponent = RenderAttributesComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RenderAttributesComponent.Constructor = function(self)
-  -- function num : 0_0
+function RenderAttributesComponent:Constructor()
   self._attrValues = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderAttributesComponent.SetAttribute = function(self, attrName, value)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._attrValues)[attrName] = value
+function RenderAttributesComponent:SetAttribute(attrName, value)
+  self._attrValues[attrName] = value
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderAttributesComponent.GetAttribute = function(self, attrName)
-  -- function num : 0_2
+function RenderAttributesComponent:GetAttribute(attrName)
   if attrName then
-    return (self._attrValues)[attrName]
+    return self._attrValues[attrName]
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RenderAttributes = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).RenderAttributes)
+function Entity:RenderAttributes()
+  return self:GetComponent(self.WEComponentsEnum.RenderAttributes)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasRenderAttributes = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).RenderAttributes)
+function Entity:HasRenderAttributes()
+  return self:HasComponent(self.WEComponentsEnum.RenderAttributes)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddRenderAttributes = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderAttributes
+function Entity:AddRenderAttributes()
+  local index = self.WEComponentsEnum.RenderAttributes
   local component = RenderAttributesComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveRenderAttributes = function(self)
-  -- function num : 0_6
+function Entity:RemoveRenderAttributes()
   if self:HasRenderAttributes() then
-    self:RemoveComponent((self.WEComponentsEnum).RenderAttributes)
+    self:RemoveComponent(self.WEComponentsEnum.RenderAttributes)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceRenderAttributes = function(self, component)
-  -- function num : 0_7
-  self:ReplaceComponent((self.WEComponentsEnum).RenderAttributes, component)
+function Entity:ReplaceRenderAttributes(component)
+  self:ReplaceComponent(self.WEComponentsEnum.RenderAttributes, component)
 end
-
-

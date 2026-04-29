@@ -1,63 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/preview_link_line_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewLinkLineComponent", Object)
 PreviewLinkLineComponent = PreviewLinkLineComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewLinkLineComponent.Constructor = function(self, chainPath, elementType)
-  -- function num : 0_0 , upvalues : _ENV
-  if not chainPath then
-    self._chainPath = {}
-    if not elementType then
-      self._elementType = PieceType.None
-      self._chainNum = 0
-      if #self._chainPath > 0 then
-        self._chainNum = #self._chainPath - 1
-      end
-      self._nearbyGridRadius = {}
-      self._bMoveBack = false
-      self._firstElementType = nil
-      self._firstElementIndex = -1
-      self._linkLineType = ELinkLineType.ELLT_LINE_Common
-    end
+function PreviewLinkLineComponent:Constructor(chainPath, elementType)
+  self._chainPath = chainPath or {}
+  self._elementType = elementType or PieceType.None
+  self._chainNum = 0
+  if #self._chainPath > 0 then
+    self._chainNum = #self._chainPath - 1
   end
+  self._nearbyGridRadius = {}
+  self._bMoveBack = false
+  self._firstElementType = nil
+  self._firstElementIndex = -1
+  self._linkLineType = ELinkLineType.ELLT_LINE_Common
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineComponent.SetLinkLineType = function(self, type)
-  -- function num : 0_1
+function PreviewLinkLineComponent:SetLinkLineType(type)
   self._linkLineType = type
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineComponent.GetLinkLineType = function(self)
-  -- function num : 0_2
+function PreviewLinkLineComponent:GetLinkLineType()
   return self._linkLineType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineComponent.GetPreviewChainPath = function(self)
-  -- function num : 0_3
+function PreviewLinkLineComponent:GetPreviewChainPath()
   return self._chainPath
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineComponent.GetPreviewPieceType = function(self)
-  -- function num : 0_4
+function PreviewLinkLineComponent:GetPreviewPieceType()
   return self._elementType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineComponent.SetPreviewChainPath = function(self, chainPath, elementType)
-  -- function num : 0_5
+function PreviewLinkLineComponent:SetPreviewChainPath(chainPath, elementType)
   self._chainPath = chainPath
   self._elementType = elementType
   if chainPath then
@@ -67,41 +41,26 @@ PreviewLinkLineComponent.SetPreviewChainPath = function(self, chainPath, element
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineComponent.GetPreviewChainNum = function(self)
-  -- function num : 0_6
+function PreviewLinkLineComponent:GetPreviewChainNum()
   return self._chainNum
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineComponent.GetPreviewChainTotalCount = function(self)
-  -- function num : 0_7
+function PreviewLinkLineComponent:GetPreviewChainTotalCount()
   return #self._chainPath
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineComponent.ClearPreviewChainPath = function(self)
-  -- function num : 0_8
+function PreviewLinkLineComponent:ClearPreviewChainPath()
   self._chainPath = {}
   self._firstElementType = nil
   self._firstElementIndex = -1
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineComponent.SetGridRadius = function(self, nearbyGridRadius)
-  -- function num : 0_9
+function PreviewLinkLineComponent:SetGridRadius(nearbyGridRadius)
   self._nearbyGridRadius = nearbyGridRadius
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineComponent.GetGridRadius = function(self, gridPos)
-  -- function num : 0_10 , upvalues : _ENV
-  for k,v in pairs(self._nearbyGridRadius) do
+function PreviewLinkLineComponent:GetGridRadius(gridPos)
+  for k, v in pairs(self._nearbyGridRadius) do
     if k == gridPos then
       return v
     end
@@ -109,79 +68,50 @@ PreviewLinkLineComponent.GetGridRadius = function(self, gridPos)
   return GridRadiusType.Default
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineComponent.GetMoveBack = function(self)
-  -- function num : 0_11
+function PreviewLinkLineComponent:GetMoveBack()
   return self._bMoveBack
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineComponent.SetMoveBack = function(self, bMoveBack)
-  -- function num : 0_12
+function PreviewLinkLineComponent:SetMoveBack(bMoveBack)
   self._bMoveBack = bMoveBack
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineComponent.SetFirstElementData = function(self, elementType, index)
-  -- function num : 0_13
+function PreviewLinkLineComponent:SetFirstElementData(elementType, index)
   self._firstElementType = elementType
   self._firstElementIndex = index
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineComponent.GetFirstElementData = function(self)
-  -- function num : 0_14
+function PreviewLinkLineComponent:GetFirstElementData()
   return self._firstElementType, self._firstElementIndex
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PreviewLinkLine = function(self)
-  -- function num : 0_15
-  return self:GetComponent((self.WEComponentsEnum).PreviewLinkLine)
+function Entity:PreviewLinkLine()
+  return self:GetComponent(self.WEComponentsEnum.PreviewLinkLine)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPreviewLinkLine = function(self)
-  -- function num : 0_16
-  return self:HasComponent((self.WEComponentsEnum).PreviewLinkLine)
+function Entity:HasPreviewLinkLine()
+  return self:HasComponent(self.WEComponentsEnum.PreviewLinkLine)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPreviewLinkLine = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewLinkLine
+function Entity:AddPreviewLinkLine()
+  local index = self.WEComponentsEnum.PreviewLinkLine
   local component = PreviewLinkLineComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePreviewLinkLine = function(self, chainPath, elementType, inheritLinkLineType)
-  -- function num : 0_18 , upvalues : _ENV
-  local linkLineType = nil
+function Entity:ReplacePreviewLinkLine(chainPath, elementType, inheritLinkLineType)
+  local linkLineType
   if inheritLinkLineType then
-    linkLineType = (self:PreviewLinkLine()):GetLinkLineType()
+    linkLineType = self:PreviewLinkLine():GetLinkLineType()
   end
-  local index = (self.WEComponentsEnum).PreviewLinkLine
+  local index = self.WEComponentsEnum.PreviewLinkLine
   local component = PreviewLinkLineComponent:New(chainPath, elementType)
   component:SetLinkLineType(linkLineType)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePreviewLinkLine = function(self)
-  -- function num : 0_19
+function Entity:RemovePreviewLinkLine()
   if self:HasPreviewLinkLine() then
-    self:RemoveComponent((self.WEComponentsEnum).PreviewLinkLine)
+    self:RemoveComponent(self.WEComponentsEnum.PreviewLinkLine)
   end
 end
-
-

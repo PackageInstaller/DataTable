@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_boss_2904001_teleport_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayBoss2904001TeleportInstruction", BaseInstruction)
 PlayBoss2904001TeleportInstruction = PlayBoss2904001TeleportInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayBoss2904001TeleportInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayBoss2904001TeleportInstruction:Constructor(paramList)
   self._stockpileTimeMs = tonumber(paramList.stockpileTimeMs)
   self._stockpileAnimTriggerName = paramList.stockpileAnimTriggerName
   self._jumpTimeMs = tonumber(paramList.jumpTimeMs)
@@ -18,14 +11,11 @@ PlayBoss2904001TeleportInstruction.Constructor = function(self, paramList)
   self._landAnimTriggerName = paramList.landAnimTriggerName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayBoss2904001TeleportInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayBoss2904001TeleportInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local casterPos = casterEntity:GetGridPosition()
   local targetPos = casterEntity:GetGridPosition()
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local teleportResult = routineComponent:GetEffectResultByArray(SkillEffectType.Teleport)
   if teleportResult then
     casterPos = teleportResult:GetPosOld()
@@ -36,59 +26,58 @@ PlayBoss2904001TeleportInstruction.DoInstruction = function(self, TT, casterEnti
       targetPos = casterPos
     end
   end
-  do
-    if self._stockpileAnimTriggerName then
-      casterEntity:SetAnimatorControllerTriggers({self._stockpileAnimTriggerName})
-    end
-    YIELD(TT, self._stockpileTimeMs)
-    if self._jumpAnimTriggerName then
-      casterEntity:SetAnimatorControllerTriggers({self._jumpAnimTriggerName})
-    end
-    do
-      if casterPos ~= targetPos then
-        local speed = (Vector2.Distance)(targetPos, casterPos) / self._jumpTimeMs * 1000
-        casterEntity:AddGridMove(speed, targetPos, casterPos)
-      end
-      local pieceService = world:GetService("Piece")
-      local renderEntityService = world:GetService("RenderEntity")
-      renderEntityService:DestroyMonsterAreaOutLineEntity(casterEntity)
-      local bodyArea = (casterEntity:BodyArea()):GetArea()
-      for _,body in ipairs(bodyArea) do
-        pieceService:SetPieceAnimUp(casterPos + body)
-      end
-      YIELD(TT, self._jumpTimeMs)
-      while casterEntity:HasGridMove() do
-        YIELD(TT)
-      end
-      local trapServiceRender = world:GetService("TrapRender")
-      trapServiceRender:ShowHideTrapAtPos(targetPos, false)
-      local trapIDList = {}
-      if teleportResult then
-        trapIDList = teleportResult:GetTriggerTrapIDList()
-      end
-      local trapEntityList = {}
-      for _,v in ipairs(trapIDList) do
-        local trapEntity = world:GetEntityByID(v)
-        trapEntityList[#trapEntityList + 1] = trapEntity
-      end
-      local sPlaySkillInstruction = world:GetService("PlaySkillInstruction")
-      sPlaySkillInstruction:PlayTrapTrigger(TT, casterEntity, trapEntityList)
-      renderEntityService:CreateMonsterAreaOutlineEntity(casterEntity)
-      if self._landAnimTriggerName then
-        casterEntity:SetAnimatorControllerTriggers({self._landAnimTriggerName})
-      end
-      YIELD(TT, self._landTimeMs)
-      for _,body in ipairs(bodyArea) do
-        pieceService:SetPieceAnimDown(targetPos + body)
-      end
-    end
+  if self._stockpileAnimTriggerName then
+    casterEntity:SetAnimatorControllerTriggers({
+      self._stockpileAnimTriggerName
+    })
+  end
+  YIELD(TT, self._stockpileTimeMs)
+  if self._jumpAnimTriggerName then
+    casterEntity:SetAnimatorControllerTriggers({
+      self._jumpAnimTriggerName
+    })
+  end
+  if casterPos ~= targetPos then
+    local speed = Vector2.Distance(targetPos, casterPos) / self._jumpTimeMs * 1000
+    casterEntity:AddGridMove(speed, targetPos, casterPos)
+  end
+  local pieceService = world:GetService("Piece")
+  local renderEntityService = world:GetService("RenderEntity")
+  renderEntityService:DestroyMonsterAreaOutLineEntity(casterEntity)
+  local bodyArea = casterEntity:BodyArea():GetArea()
+  for _, body in ipairs(bodyArea) do
+    pieceService:SetPieceAnimUp(casterPos + body)
+  end
+  YIELD(TT, self._jumpTimeMs)
+  while casterEntity:HasGridMove() do
+    YIELD(TT)
+  end
+  local trapServiceRender = world:GetService("TrapRender")
+  trapServiceRender:ShowHideTrapAtPos(targetPos, false)
+  local trapIDList = {}
+  if teleportResult then
+    trapIDList = teleportResult:GetTriggerTrapIDList()
+  end
+  local trapEntityList = {}
+  for _, v in ipairs(trapIDList) do
+    local trapEntity = world:GetEntityByID(v)
+    trapEntityList[#trapEntityList + 1] = trapEntity
+  end
+  local sPlaySkillInstruction = world:GetService("PlaySkillInstruction")
+  sPlaySkillInstruction:PlayTrapTrigger(TT, casterEntity, trapEntityList)
+  renderEntityService:CreateMonsterAreaOutlineEntity(casterEntity)
+  if self._landAnimTriggerName then
+    casterEntity:SetAnimatorControllerTriggers({
+      self._landAnimTriggerName
+    })
+  end
+  YIELD(TT, self._landTimeMs)
+  for _, body in ipairs(bodyArea) do
+    pieceService:SetPieceAnimDown(targetPos + body)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayBoss2904001TeleportInstruction._PlayCasterControlGridDown = function(self, casterEntity, enable)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayBoss2904001TeleportInstruction:_PlayCasterControlGridDown(casterEntity, enable)
   if casterEntity:MonsterID() then
     local monsterIDCmpt = casterEntity:MonsterID()
     monsterIDCmpt:SetNeedGridDownEnable(enable == 1)
@@ -96,7 +85,7 @@ PlayBoss2904001TeleportInstruction._PlayCasterControlGridDown = function(self, c
     local trapRender = casterEntity:TrapRender()
     trapRender:SetNeedGridDownEnable(enable == 1)
   else
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local bodyAreaCmpt = casterEntity:BodyArea()
@@ -112,7 +101,4 @@ PlayBoss2904001TeleportInstruction._PlayCasterControlGridDown = function(self, c
       pieceSvc:SetPieceAnimNormal(pos)
     end
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
-
-

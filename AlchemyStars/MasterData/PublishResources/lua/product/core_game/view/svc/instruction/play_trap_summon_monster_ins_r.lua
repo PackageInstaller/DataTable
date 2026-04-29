@@ -1,56 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_trap_summon_monster_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTrapSummonMonsterInstruction", BaseInstruction)
 PlayTrapSummonMonsterInstruction = PlayTrapSummonMonsterInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTrapSummonMonsterInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTrapSummonMonsterInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._materialAnimName = paramList.materialAnimName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrapSummonMonsterInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTrapSummonMonsterInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrapSummonMonsterInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayTrapSummonMonsterInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.TrapSummonMonster)
   if not resultArray or not resultArray[1] then
-    return 
+    return
   end
   local result = resultArray[1]
   if not result:GetSummonEntityID() then
-    return 
+    return
   end
   local entityID = result:GetSummonEntityID()
   local transformParam = result:GetMonsterTransformParam()
-  local summonEntity = (self._world):GetEntityByID(entityID)
+  local summonEntity = self._world:GetEntityByID(entityID)
   local gridPos = summonEntity:GetGridPosition()
   summonEntity:SetPosition(gridPos)
   summonEntity:SetLocationHeight(0)
   summonEntity:SetViewVisible(true)
-  local effectSvc = (self._world):GetService("Effect")
+  local effectSvc = self._world:GetService("Effect")
   effectSvc:CreateWorldPositionDirectionEffect(self._effectID, gridPos)
-  local monsterShowRenderSvc = (self._world):GetService("MonsterShowRender")
+  local monsterShowRenderSvc = self._world:GetService("MonsterShowRender")
   summonEntity:PlayMaterialAnim(self._materialAnimName)
   monsterShowRenderSvc:ShowSummonMonster(TT, summonEntity, transformParam)
 end
-
-

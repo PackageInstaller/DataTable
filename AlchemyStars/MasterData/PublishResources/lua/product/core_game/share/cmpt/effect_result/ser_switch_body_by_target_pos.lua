@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_switch_body_by_target_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectSwitchBodyAreaByTargetPosResult", SkillEffectResultBase)
 SkillEffectSwitchBodyAreaByTargetPosResult = SkillEffectSwitchBodyAreaByTargetPosResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectSwitchBodyAreaByTargetPosResult.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectSwitchBodyAreaByTargetPosResult:GetEffectType()
   return SkillEffectType.SwitchBodyAreaByTargetPos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSwitchBodyAreaByTargetPosResult.Constructor = function(self, newDir, newBodyArea, switchDirType, oldBodyAreaPos, oldBodyArea)
-  -- function num : 0_1
+function SkillEffectSwitchBodyAreaByTargetPosResult:Constructor(newDir, newBodyArea, switchDirType, oldBodyAreaPos, oldBodyArea)
   self._newDir = newDir
   self._newBodyArea = newBodyArea
   self._switchDirType = switchDirType
@@ -24,39 +14,22 @@ SkillEffectSwitchBodyAreaByTargetPosResult.Constructor = function(self, newDir, 
   self._oldBodyArea = oldBodyArea
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSwitchBodyAreaByTargetPosResult.GetOldBodyAreaPos = function(self)
-  -- function num : 0_2
+function SkillEffectSwitchBodyAreaByTargetPosResult:GetOldBodyAreaPos()
   return self._oldBodyAreaPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSwitchBodyAreaByTargetPosResult.GetSwitchDirType = function(self)
-  -- function num : 0_3
+function SkillEffectSwitchBodyAreaByTargetPosResult:GetSwitchDirType()
   return self._switchDirType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSwitchBodyAreaByTargetPosResult.GetNewDir = function(self)
-  -- function num : 0_4
+function SkillEffectSwitchBodyAreaByTargetPosResult:GetNewDir()
   return self._newDir
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSwitchBodyAreaByTargetPosResult.GetNewBodyArea = function(self)
-  -- function num : 0_5
+function SkillEffectSwitchBodyAreaByTargetPosResult:GetNewBodyArea()
   return self._newBodyArea
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSwitchBodyAreaByTargetPosResult.GetOldBodyArea = function(self)
-  -- function num : 0_6
+function SkillEffectSwitchBodyAreaByTargetPosResult:GetOldBodyArea()
   return self._oldBodyArea
 end
-
-

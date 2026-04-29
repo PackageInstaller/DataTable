@@ -1,137 +1,92 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/tree_cutting/ui_homeland_felling.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandFelling", UICustomWidget)
 UIHomelandFelling = UIHomelandFelling
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandFelling.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandFelling:OnShow()
   self._btn = self:GetGameObject("FellBtn")
-  ;
-  (self._btn):SetActive(false)
+  self._btn:SetActive(false)
   self._curTree = nil
   self._doFelling = false
   self._fellTaskID = nil
   self._minCutTriggerTime = 100
-  self._uiHomelandModule = (GameGlobal.GetUIModule)(HomelandModule)
-  self._homelandTreeCuttingManager = ((self._uiHomelandModule):GetClient()):TreeCuttingManager()
-  local etl = (UICustomUIEventListener.Get)(self._btn)
+  self._uiHomelandModule = GameGlobal.GetUIModule(HomelandModule)
+  self._homelandTreeCuttingManager = self._uiHomelandModule:GetClient():TreeCuttingManager()
+  local etl = UICustomUIEventListener.Get(self._btn)
   self:AddUICustomEventListener(etl, UIEvent.Press, function(go)
-    -- function num : 0_0_0 , upvalues : self
     self:OnPress()
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Release, function(go)
-    -- function num : 0_0_1 , upvalues : self
     self:OnRelease()
-  end
-)
+  end)
   self:AttachEvent(GameEventType.EnterBuildInteract, self.EnterBuildInteractEventHandle)
   self:AttachEvent(GameEventType.LeaveBuildInteract, self.LeaveBuildInteractEventHandle)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandFelling.OnHide = function(self)
-  -- function num : 0_1
+function UIHomelandFelling:OnHide()
   self._doFelling = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandFelling.OnPress = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandFelling:OnPress()
   self._doFelling = true
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._btn).transform).localScale = Vector3(0.95, 0.95, 0.95)
-  if not ((GameGlobal.TaskManager)()):FindTask(self._fellTaskID) then
+  self._btn.transform.localScale = Vector3(0.95, 0.95, 0.95)
+  if not GameGlobal.TaskManager():FindTask(self._fellTaskID) then
     self._fellTaskID = self:StartTask(UIHomelandFelling.FellTask, self)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandFelling.OnRelease = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandFelling:OnRelease()
   self._doFelling = false
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._btn).transform).localScale = Vector3(1, 1, 1)
+  self._btn.transform.localScale = Vector3(1.0, 1.0, 1.0)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandFelling.FellTask = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandFelling:FellTask(TT)
   while self._doFelling and self._curTree do
-    if (self._uiHomelandModule):IsRunning() and not (self._homelandTreeCuttingManager):IsCutting() then
-      (self._homelandTreeCuttingManager):CutTree(self._curTree)
+    if self._uiHomelandModule:IsRunning() and not self._homelandTreeCuttingManager:IsCutting() then
+      self._homelandTreeCuttingManager:CutTree(self._curTree)
     end
     YIELD(TT, self._minCutTriggerTime)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandFelling.EnterBuildInteractEventHandle = function(self, interactPoint)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandFelling:EnterBuildInteractEventHandle(interactPoint)
   if interactPoint:GetPointType() == InteractPointType.CutTree then
-    if not ((GameGlobal.GetModule)(HomelandModule)):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_FELL_UI) then
-      return 
+    if not GameGlobal.GetModule(HomelandModule):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_FELL_UI) then
+      return
     end
-    if not (self._homelandTreeCuttingManager):HaveAxe() then
-      return 
+    if not self._homelandTreeCuttingManager:HaveAxe() then
+      return
     end
     local tree = interactPoint:GetBuild()
     if tree == self._curTree then
-      return 
+      return
     end
     if self._curTree then
-      (self._curTree):LeaveInteractScope()
+      self._curTree:LeaveInteractScope()
     end
     self._curTree = interactPoint:GetBuild()
-    ;
-    (self._curTree):EnterInteractScope()
-    ;
-    (self._btn):SetActive(true)
+    self._curTree:EnterInteractScope()
+    self._btn:SetActive(true)
     self:_CheckGuide()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandFelling.LeaveBuildInteractEventHandle = function(self, interactPoint)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandFelling:LeaveBuildInteractEventHandle(interactPoint)
   if interactPoint:GetPointType() == InteractPointType.CutTree then
-    if not ((GameGlobal.GetModule)(HomelandModule)):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_FELL_UI) then
-      return 
+    if not GameGlobal.GetModule(HomelandModule):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_FELL_UI) then
+      return
     end
-    if not (self._homelandTreeCuttingManager):HaveAxe() then
-      return 
+    if not self._homelandTreeCuttingManager:HaveAxe() then
+      return
     end
-    ;
-    (self._btn):SetActive(false)
+    self._btn:SetActive(false)
     if self._curTree then
-      (self._curTree):LeaveInteractScope()
+      self._curTree:LeaveInteractScope()
       self._curTree = nil
     else
-      ;
-      (Log.fatal)("[Homeland] UIHomelandFelling cur tree is nil")
+      Log.fatal("[Homeland] UIHomelandFelling cur tree is nil")
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandFelling._CheckGuide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIHomelandFelling)
+function UIHomelandFelling:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIHomelandFelling)
 end
-
-

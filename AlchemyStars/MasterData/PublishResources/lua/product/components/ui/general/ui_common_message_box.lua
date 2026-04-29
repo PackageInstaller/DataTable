@@ -1,13 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/general/ui_common_message_box.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICommonMessageBox", UIMessageBox)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UICommonMessageBox.Constructor = function(self)
-  -- function num : 0_0
+function UICommonMessageBox:Constructor()
   self._okMsgBox = nil
   self._okCancelMsgBox = nil
   self.okCallback = nil
@@ -15,10 +8,7 @@ UICommonMessageBox.Constructor = function(self)
   self._text = nil
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonMessageBox.Destructor = function(self)
-  -- function num : 0_1
+function UICommonMessageBox:Destructor()
   self._okMsgBox = nil
   self._okCancelMsgBox = nil
   self.okCallback = nil
@@ -26,168 +16,116 @@ UICommonMessageBox.Destructor = function(self)
   self._text = nil
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonMessageBox.OnShow = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICommonMessageBox:OnShow()
   self._okMsgBox = self:GetGameObject("OKMsgBoxRoot")
   self._okCancelMsgBox = self:GetGameObject("OKCancelMsgBoxRoot")
   self._blurMask = self:GetUIComponent("H3DUIBlurHelper", "BlurMask")
   self._blurMaskObject = self:GetGameObject("BlurMask")
   self.tglNotRemind = self:GetUIComponent("Toggle", "tglNotRemind")
-  ;
-  ((self.tglNotRemind).gameObject):SetActive(false)
-  ;
-  (self._blurMaskObject):SetActive(true)
-  local camera = ((GameGlobal.UIStateManager)()):GetMessageBoxCamera()
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._blurMask).OwnerCamera = camera
-  ;
-  (self._blurMask):RefreshBlurTexture()
+  self.tglNotRemind.gameObject:SetActive(false)
+  self._blurMaskObject:SetActive(true)
+  local camera = GameGlobal.UIStateManager():GetMessageBoxCamera()
+  self._blurMask.OwnerCamera = camera
+  self._blurMask:RefreshBlurTexture()
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonMessageBox.ClearCallback = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (Log.debug)("[msgbox] ClearCallback")
+function UICommonMessageBox:ClearCallback()
+  Log.debug("[msgbox] ClearCallback")
   self.okCallback = nil
   self.cancelCallback = nil
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonMessageBox.Alert = function(self, popup, params)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._blurMask):RefreshBlurTexture()
+function UICommonMessageBox:Alert(popup, params)
+  self._blurMask:RefreshBlurTexture()
   local type = params[1]
   if type == PopupMsgBoxType.Ok then
     self:AlertOK(popup, params)
-  else
-    if type == PopupMsgBoxType.OkCancel then
-      self:AlertOKCancel(popup, params)
-    end
+  elseif type == PopupMsgBoxType.OkCancel then
+    self:AlertOKCancel(popup, params)
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonMessageBox.AlertOK = function(self, popup, params)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.debug)("[msgbox] UICommonMessageBox AlertOK [", params[2], "]", params[3])
-  ;
-  (self._okMsgBox):SetActive(true)
-  ;
-  (self._okCancelMsgBox):SetActive(false)
+function UICommonMessageBox:AlertOK(popup, params)
+  Log.debug("[msgbox] UICommonMessageBox AlertOK [", params[2], "]", params[3])
+  self._okMsgBox:SetActive(true)
+  self._okCancelMsgBox:SetActive(false)
   self._title = self:GetUIComponent("UIRichText", "OKTitle")
-  ;
-  (self._title):SetText(params[2])
+  self._title:SetText(params[2])
   self._text = self:GetUIComponent("UIRichText", "OKText")
-  ;
-  (self._text):SetText(params[3])
+  self._text:SetText(params[3])
   self.okCallback = self:GetCallBack(popup, params[4], params[5])
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
   if params[6] then
-    (self._text).onHrefClick = params[6]
+    self._text.onHrefClick = params[6]
   end
   self._okBtnText = self:GetUIComponent("UILocalizationText", "OkCancelOkBtnText")
   if self._okBtnText then
     if params[7] then
-      (self._okBtnText):SetText(params[7])
+      self._okBtnText:SetText(params[7])
     else
-      ;
-      (self._okBtnText):SetText((StringTable.Get)("str_common_ok"))
+      self._okBtnText:SetText(StringTable.Get("str_common_ok"))
     end
   end
-  ;
-  ((self.tglNotRemind).gameObject):SetActive(false)
+  self.tglNotRemind.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonMessageBox.AlertOKCancel = function(self, popup, params)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.debug)("[msgbox] UICommonMessageBox AlertOKCancel [", params[2], "]", params[3])
-  ;
-  (self._okMsgBox):SetActive(false)
-  ;
-  (self._okCancelMsgBox):SetActive(true)
+function UICommonMessageBox:AlertOKCancel(popup, params)
+  Log.debug("[msgbox] UICommonMessageBox AlertOKCancel [", params[2], "]", params[3])
+  self._okMsgBox:SetActive(false)
+  self._okCancelMsgBox:SetActive(true)
   self._title = self:GetUIComponent("UIRichText", "OKCancelTitle")
-  ;
-  (self._title):SetText(params[2])
+  self._title:SetText(params[2])
   self._text = self:GetUIComponent("UIRichText", "OKCancelText")
-  ;
-  (self._text):SetText(params[3])
+  self._text:SetText(params[3])
   self.okCallback = self:GetCallBack(popup, params[4], params[5])
   self.cancelCallback = self:GetCallBack(popup, params[6], params[7])
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R3 in 'UnsetPending'
-
   if params[8] then
-    (self._text).onHrefClick = params[8]
+    self._text.onHrefClick = params[8]
   end
   self._okBtnText = self:GetUIComponent("UILocalizationText", "OkCancelOkBtnText")
   if self._okBtnText then
     if params[9] then
-      (self._okBtnText):SetText(params[9])
+      self._okBtnText:SetText(params[9])
     else
-      ;
-      (self._okBtnText):SetText((StringTable.Get)("str_common_ok"))
+      self._okBtnText:SetText(StringTable.Get("str_common_ok"))
     end
   end
   self._okCancelCancelBtnText = self:GetUIComponent("UILocalizationText", "OkCancelCancelBtnText")
   if self._okCancelCancelBtnText then
     if params[10] then
-      (self._okCancelCancelBtnText):SetText(params[10])
+      self._okCancelCancelBtnText:SetText(params[10])
     else
-      ;
-      (self._okCancelCancelBtnText):SetText((StringTable.Get)("str_common_cancel"))
+      self._okCancelCancelBtnText:SetText(StringTable.Get("str_common_cancel"))
     end
   end
   self.toggleTrueCallback = params[11]
   if self.toggleTrueCallback then
-    ((self.tglNotRemind).gameObject):SetActive(true)
+    self.tglNotRemind.gameObject:SetActive(true)
   else
-    ;
-    ((self.tglNotRemind).gameObject):SetActive(false)
+    self.tglNotRemind.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonMessageBox.ButtonOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  (Log.debug)("[msgbox] UICommonMessageBox AlertOK click ok")
+function UICommonMessageBox:ButtonOnClick(go)
+  Log.debug("[msgbox] UICommonMessageBox AlertOK click ok")
   if self.okCallback then
-    (self.okCallback)()
+    self.okCallback()
   end
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonMessageBox.ButtonOKOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  (Log.debug)("[msgbox] UICommonMessageBox AlertOKCancel click ok")
-  if (self.tglNotRemind).isOn and self.toggleTrueCallback then
-    (self.toggleTrueCallback)()
+function UICommonMessageBox:ButtonOKOnClick(go)
+  Log.debug("[msgbox] UICommonMessageBox AlertOKCancel click ok")
+  if self.tglNotRemind.isOn and self.toggleTrueCallback then
+    self.toggleTrueCallback()
   end
   if self.okCallback then
-    (self.okCallback)()
+    self.okCallback()
   end
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonMessageBox.ButtonCancelOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.debug)("[msgbox] UICommonMessageBox AlertOKCancel click cancel")
+function UICommonMessageBox:ButtonCancelOnClick(go)
+  Log.debug("[msgbox] UICommonMessageBox AlertOKCancel click cancel")
   if self.cancelCallback then
-    (self.cancelCallback)()
+    self.cancelCallback()
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCancel)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCancel)
 end
-
-

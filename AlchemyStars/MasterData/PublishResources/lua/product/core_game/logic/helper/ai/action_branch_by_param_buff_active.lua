@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_branch_by_param_buff_active.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_cast_skill_base")
 _class("ActionBranchByParamBuffActive", AINewNode)
 ActionBranchByParamBuffActive = ActionBranchByParamBuffActive
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionBranchByParamBuffActive.Constructor = function(self)
-  -- function num : 0_0
+function ActionBranchByParamBuffActive:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionBranchByParamBuffActive.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ActionBranchByParamBuffActive:OnUpdate()
   local checkBuffCount = self:GetLogicData(-1)
   self._buffIDList = {}
   for i = 2, checkBuffCount + 1 do
-    (table.insert)(self._buffIDList, self:GetLogicData(-1 * i))
+    table.insert(self._buffIDList, self:GetLogicData(-1 * i))
   end
-  local buffCmp = (self.m_entityOwn):BuffComponent()
-  for index,buffID in ipairs(self._buffIDList) do
+  local buffCmp = self.m_entityOwn:BuffComponent()
+  for index, buffID in ipairs(self._buffIDList) do
     local buffInstance = buffCmp:GetBuffById(buffID)
     if buffInstance and not buffInstance:IsUnload() then
       return AINewNodeStatus.Other + index
@@ -30,5 +20,3 @@ ActionBranchByParamBuffActive.OnUpdate = function(self)
   end
   return AINewNodeStatus.Other + 1
 end
-
-

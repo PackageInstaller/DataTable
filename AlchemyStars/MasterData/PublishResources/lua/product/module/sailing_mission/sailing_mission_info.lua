@@ -1,75 +1,73 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/sailing_mission/sailing_mission_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local SailingMissionErrorType = {E_SAILINGMISSION_ERROR_TYPE_SUCCESS = 0, E_SAILINGMISSION_ERROR_TYPE_FAILURE = 1, E_SAILINGMISSION_LOAD_ERROR = 2, E_SAILINGMISSION_SAVE_ERROR = 3, E_SAILINGMISSION_ERROR_UNLOCK = 4, E_SAILINGMISSION_ERROR_RECORD_NOT_EXIST = 5, E_SAILINGMISSION_CHOSE_RECORD_ERROR = 6, E_SAILINGMISSION_FORMATION_INVALID_PET = 10, E_SAILINGMISSION_FORMATION_INVALID_PETCOUNT = 11, E_SAILINGMISSION_FORMATION_DUPLICATION_PET = 12, E_SAILINGMISSION_FORMATION_DATA_INVALID = 13, E_SAILINGMISSION_FORMATION_SAME_BINDER = 14}
+local SailingMissionErrorType = {
+  E_SAILINGMISSION_ERROR_TYPE_SUCCESS = 0,
+  E_SAILINGMISSION_ERROR_TYPE_FAILURE = 1,
+  E_SAILINGMISSION_LOAD_ERROR = 2,
+  E_SAILINGMISSION_SAVE_ERROR = 3,
+  E_SAILINGMISSION_ERROR_UNLOCK = 4,
+  E_SAILINGMISSION_ERROR_RECORD_NOT_EXIST = 5,
+  E_SAILINGMISSION_CHOSE_RECORD_ERROR = 6,
+  E_SAILINGMISSION_FORMATION_INVALID_PET = 10,
+  E_SAILINGMISSION_FORMATION_INVALID_PETCOUNT = 11,
+  E_SAILINGMISSION_FORMATION_DUPLICATION_PET = 12,
+  E_SAILINGMISSION_FORMATION_DATA_INVALID = 13,
+  E_SAILINGMISSION_FORMATION_SAME_BINDER = 14
+}
 _enum("SailingMissionErrorType", SailingMissionErrorType)
 local SailingMissionFormationPetPlaceType = {E_SM_FormationPetPlaceType_None = 0}
 _enum("SailingMissionFormationPetPlaceType", SailingMissionFormationPetPlaceType)
 _class("SailingMissionInfo", Object)
 SailingMissionInfo = SailingMissionInfo
--- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
 
-SailingMissionInfo.Constructor = function(self)
-  -- function num : 0_0
+function SailingMissionInfo:Constructor()
   self.mission_id = 0
   self.pet_list = {}
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
 SailingMissionInfo._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"pet_list", "list<int64>"}
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "pet_list",
+    "list<int64>"
+  }
 }
 _class("SailingLayerInfo", Object)
 SailingLayerInfo = SailingLayerInfo
--- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
 
-SailingLayerInfo.Constructor = function(self)
-  -- function num : 0_1
+function SailingLayerInfo:Constructor()
   self.layer_id = 0
   self.mission_infos = {}
   self.status = 0
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R2 in 'UnsetPending'
-
 SailingLayerInfo._proto = {
-[1] = {"layer_id", "int"}
-, 
-[2] = {"mission_infos", "list<SailingMissionInfo>"}
-, 
-[4] = {"status", "int"}
+  [1] = {"layer_id", "int"},
+  [2] = {
+    "mission_infos",
+    "list<SailingMissionInfo>"
+  },
+  [4] = {"status", "int"}
 }
 _class("TeamCache", Object)
 TeamCache = TeamCache
--- DECOMPILER ERROR at PC80: Confused about usage of register: R2 in 'UnsetPending'
 
-TeamCache.Constructor = function(self)
-  -- function num : 0_2
+function TeamCache:Constructor()
   self.layer_id = 0
   self.mission_id = 0
   self.pet_list = {}
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R2 in 'UnsetPending'
-
 TeamCache._proto = {
-[1] = {"layer_id", "int"}
-, 
-[2] = {"mission_id", "int"}
-, 
-[3] = {"pet_list", "list<int64>"}
+  [1] = {"layer_id", "int"},
+  [2] = {"mission_id", "int"},
+  [3] = {
+    "pet_list",
+    "list<int64>"
+  }
 }
 _class("ClientSailingMissionInfo", Object)
 ClientSailingMissionInfo = ClientSailingMissionInfo
--- DECOMPILER ERROR at PC107: Confused about usage of register: R2 in 'UnsetPending'
 
-ClientSailingMissionInfo.Constructor = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ClientSailingMissionInfo:Constructor()
   self.max_layer_id = 0
   self.infos = {}
   self.team_cache = TeamCache:New()
@@ -78,19 +76,26 @@ ClientSailingMissionInfo.Constructor = function(self)
   self.received_exploration_reward = {}
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R2 in 'UnsetPending'
-
 ClientSailingMissionInfo._proto = {
-[1] = {"max_layer_id", "int"}
-, 
-[2] = {"infos", "map<int,SailingLayerInfo>"}
-, 
-[3] = {"team_cache", "TeamCache"}
-, 
-[4] = {"cur_exploration_progress", "int"}
-, 
-[5] = {"history_exploration_progress", "int"}
-, 
-[6] = {"received_exploration_reward", "list<int>"}
+  [1] = {
+    "max_layer_id",
+    "int"
+  },
+  [2] = {
+    "infos",
+    "map<int,SailingLayerInfo>"
+  },
+  [3] = {"team_cache", "TeamCache"},
+  [4] = {
+    "cur_exploration_progress",
+    "int"
+  },
+  [5] = {
+    "history_exploration_progress",
+    "int"
+  },
+  [6] = {
+    "received_exploration_reward",
+    "list<int>"
+  }
 }
-

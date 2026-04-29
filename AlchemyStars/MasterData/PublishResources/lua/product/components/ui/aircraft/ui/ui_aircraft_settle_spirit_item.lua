@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_settle_spirit_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftSettleSpiritItem", UICustomWidget)
 UIAircraftSettleSpiritItem = UIAircraftSettleSpiritItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftSettleSpiritItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftSettleSpiritItem:OnShow(uiParams)
   self._module = self:GetModule(PetModule)
   self._pstid = 0
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSettleSpiritItem.OnHide = function(self)
-  -- function num : 0_1
+function UIAircraftSettleSpiritItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSettleSpiritItem.InitWidget = function(self)
-  -- function num : 0_2
+function UIAircraftSettleSpiritItem:InitWidget()
   self.textSpiriteName = self:GetUIComponent("UILocalizationText", "TextSpiriteName")
   self.textSpiriteNameEn = self:GetUIComponent("UILocalizationText", "TextSpiriteNameEn")
   self.starLayout = self:GetUIComponent("UISelectObjectPath", "StarLayout")
@@ -36,77 +23,50 @@ UIAircraftSettleSpiritItem.InitWidget = function(self)
   self._n = self:GetGameObject("n")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSettleSpiritItem.SetData = function(self, _pstid, _roomData, _onRemove, index)
-  -- function num : 0_3 , upvalues : _ENV
+function UIAircraftSettleSpiritItem:SetData(_pstid, _roomData, _onRemove, index)
   self._pstid = _pstid or 0
   self._index = index
   self.roomData = _roomData
   self.onRemove = _onRemove
   if self._pstid == 0 or self._pstid == nil then
-    (self._h):SetActive(false)
-    ;
-    (self._n):SetActive(true)
-    return 
+    self._h:SetActive(false)
+    self._n:SetActive(true)
+    return
   end
-  ;
-  (self._h):SetActive(true)
-  ;
-  (self._n):SetActive(false)
-  self.petData = (self._module):GetPet(_pstid)
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.textSpiriteName).text = (StringTable.Get)((self.petData):GetPetName())
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.textSpiriteNameEn).text = (StringTable.Get)((self.petData):GetPetEnglishName())
-  ;
-  (self.rawImageIcon):LoadImage((self.petData):GetPetAircraftBody(PetSkinEffectPath.BODY_INTO_AIRCRAFT_AIRBODY))
-  ;
-  (self.starLayout):SpawnObjects("UIEmptyWidget", (self.petData):GetPetStar())
+  self._h:SetActive(true)
+  self._n:SetActive(false)
+  self.petData = self._module:GetPet(_pstid)
+  self.textSpiriteName.text = StringTable.Get(self.petData:GetPetName())
+  self.textSpiriteNameEn.text = StringTable.Get(self.petData:GetPetEnglishName())
+  self.rawImageIcon:LoadImage(self.petData:GetPetAircraftBody(PetSkinEffectPath.BODY_INTO_AIRCRAFT_AIRBODY))
+  self.starLayout:SpawnObjects("UIEmptyWidget", self.petData:GetPetStar())
   local skill = self:GetActiveSkill()
   if skill == nil then
-    (self._skillDesc):SetActive(false)
-    ;
-    (self._skillInvalidTip):SetActive(true)
+    self._skillDesc:SetActive(false)
+    self._skillInvalidTip:SetActive(true)
   else
-    ;
-    (self._skillDescText):RefreshText((StringTable.Get)(skill.Desc))
-    ;
-    (self._skillDesc):SetActive(true)
-    ;
-    (self._skillInvalidTip):SetActive(false)
+    self._skillDescText:RefreshText(StringTable.Get(skill.Desc))
+    self._skillDesc:SetActive(true)
+    self._skillInvalidTip:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSettleSpiritItem.Close = function(self)
-  -- function num : 0_4
+function UIAircraftSettleSpiritItem:Close()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSettleSpiritItem.PetID = function(self)
-  -- function num : 0_5
-  return (self.petData):GetPstID()
+function UIAircraftSettleSpiritItem:PetID()
+  return self.petData:GetPstID()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSettleSpiritItem.GetActiveSkill = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local skills = (self.petData):GetPetWorkSkills()
+function UIAircraftSettleSpiritItem:GetActiveSkill()
+  local skills = self.petData:GetPetWorkSkills()
   if skills == nil or #skills == 0 then
     return nil
   end
-  local roomType = (self.roomData):GetRoomType()
+  local roomType = self.roomData:GetRoomType()
   for i = 1, #skills do
-    if skills[i] > 0 then
-      local cfg = (Cfg.cfg_work_skill)[skills[i]]
+    if 0 < skills[i] then
+      local cfg = Cfg.cfg_work_skill[skills[i]]
       if cfg.RoomType == roomType then
         return cfg
       end
@@ -115,18 +75,10 @@ UIAircraftSettleSpiritItem.GetActiveSkill = function(self)
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSettleSpiritItem.SettleSpiritItemOnClick = function(self, go)
-  -- function num : 0_7
+function UIAircraftSettleSpiritItem:SettleSpiritItemOnClick(go)
   self:ShowDialog("UIAircraftEnterBuildController", self.roomData, self._pstid, self._index)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSettleSpiritItem.ButtonRemoveOnClick = function(self, go)
-  -- function num : 0_8
-  (self.onRemove)(self._pstid, self._index)
+function UIAircraftSettleSpiritItem:ButtonRemoveOnClick(go)
+  self.onRemove(self._pstid, self._index)
 end
-
-

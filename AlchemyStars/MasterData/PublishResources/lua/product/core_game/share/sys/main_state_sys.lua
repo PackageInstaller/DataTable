@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/main_state_sys.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("unique_reactive_system")
 _class("MainStateSystem", UniqueReactiveSystem)
 MainStateSystem = MainStateSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MainStateSystem.IsInterested = function(self, index, previousComponent, component)
-  -- function num : 0_0 , upvalues : _ENV
+function MainStateSystem:IsInterested(index, previousComponent, component)
   if component == nil then
     return false
   end
@@ -22,31 +15,21 @@ MainStateSystem.IsInterested = function(self, index, previousComponent, componen
   return false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem.Filter = function(self, world)
-  -- function num : 0_1
+function MainStateSystem:Filter(world)
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem.ExecuteWorld = function(self, world)
-  -- function num : 0_2 , upvalues : _ENV
+function MainStateSystem:ExecuteWorld(world)
   self._world = world
-  self._renderBattleService = (self._world):GetService("RenderBattle")
-  if (self._world):RunAtServer() then
+  self._renderBattleService = self._world:GetService("RenderBattle")
+  if self._world:RunAtServer() then
     self:MainStateEnter()
   else
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(self.MainStateEnter, self)
+    GameGlobal.TaskManager():CoreGameStartTask(self.MainStateEnter, self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem.MainStateEnter = function(self, TT)
-  -- function num : 0_3
+function MainStateSystem:MainStateEnter(TT)
   self:_DetailMathLoggerDoLogicTakeSnapshot()
   self:_OnMainStateEnter(TT)
   self:_HandleEntityCommand()
@@ -54,218 +37,171 @@ MainStateSystem.MainStateEnter = function(self, TT)
   self:_DoLogicBattleSync()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._GetMainStateID = function(self)
-  -- function num : 0_4
+function MainStateSystem:_GetMainStateID()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_5
+function MainStateSystem:_OnMainStateEnter(TT)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._IsBattleEnd = function(self)
-  -- function num : 0_6
+function MainStateSystem:_IsBattleEnd()
   local isBattleEnd, isWaveFinished = self:IsBattleEnded()
   self:SetStatBattleWaveResult(isWaveFinished)
   return isBattleEnd
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem.SetStatBattleWaveResult = function(self, isWaveFinished)
-  -- function num : 0_7
-  local cBattleStat = (self._world):BattleStat()
+function MainStateSystem:SetStatBattleWaveResult(isWaveFinished)
+  local cBattleStat = self._world:BattleStat()
   cBattleStat:SetBattleWaveResult(isWaveFinished)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._WaitTasksEnd = function(self, TT, waitTaskIDList, notCheckTimeOut)
-  -- function num : 0_8 , upvalues : _ENV
+function MainStateSystem:_WaitTasksEnd(TT, waitTaskIDList, notCheckTimeOut)
   if waitTaskIDList == nil then
-    return 
+    return
   end
-  while not (self._world):RunAtServer() and not (TaskHelper:GetInstance()):IsAllTaskFinished(waitTaskIDList, notCheckTimeOut) do
-    YIELD(TT)
+  if not self._world:RunAtServer() then
+    while not TaskHelper:GetInstance():IsAllTaskFinished(waitTaskIDList, notCheckTimeOut) do
+      YIELD(TT)
+    end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._WaitTime = function(self, TT, msTime)
-  -- function num : 0_9 , upvalues : _ENV
-  if not (self._world):RunAtServer() then
+function MainStateSystem:_WaitTime(TT, msTime)
+  if not self._world:RunAtServer() then
     YIELD(TT, msTime)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DoLogicAutoRemoveBuff = function(self)
-  -- function num : 0_10
-  local buffLogic = (self._world):GetService("BuffLogic")
+function MainStateSystem:_DoLogicAutoRemoveBuff()
+  local buffLogic = self._world:GetService("BuffLogic")
   buffLogic:AutoRemoveUnloadedBuff()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DoLogicBattleSync = function(self)
-  -- function num : 0_11
-  local syncService = (self._world):GetService("SyncLogic")
+function MainStateSystem:_DoLogicBattleSync()
+  local syncService = self._world:GetService("SyncLogic")
   syncService:DoBattleSync()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DoLogicSyncPieceType = function(self)
-  -- function num : 0_12
-  local svc = (self._world):GetService("L2R")
+function MainStateSystem:_DoLogicSyncPieceType()
+  local svc = self._world:GetService("L2R")
   svc:L2RSyncPieceType()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._CompareLogicRenderHP = function(self, enable)
-  -- function num : 0_13 , upvalues : _ENV
+function MainStateSystem:_CompareLogicRenderHP(enable)
   local ignoreEntityIds = {}
-  do
-    if (self._world):MatchType() == MatchType.MT_Maze or (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
-      local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-      ignoreEntityIds[teamEntity:GetID()] = 1
-    end
-    local st = self:_GetMainStateID()
-    local hpLog = {}
-    local attrGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Attributes)
-    for i,e in ipairs(attrGroup:GetEntities()) do
-      if not ignoreEntityIds[e:GetID()] then
-        local logicHP = (e:Attributes()):GetCurrentHP()
-        local logicHPMax = (e:Attributes()):CalcMaxHp()
-        if logicHP and e:HP() then
-          local renderHP = (e:HP()):GetRedHP()
-          local renderHPMax = (e:HP()):GetMaxHP()
-          if logicHP ~= renderHP or logicHPMax ~= renderHPMax then
-            hpLog[e:GetID()] = {logicHP = logicHP, renderHP = renderHP}
-            if ForceSyncHP then
-              (Log.debug)("ForceSyncHP entityID=", e:GetID(), " logicHP=", logicHP, " renderHP=", renderHP, " logicHPMax=", logicHPMax, " renderHPMax=", renderHPMax)
-              self:_RefreshRenderHP(e, logicHP, logicHPMax)
-            end
+  if self._world:MatchType() == MatchType.MT_Maze or self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
+    local teamEntity = self._world:Player():GetLocalTeamEntity()
+    ignoreEntityIds[teamEntity:GetID()] = 1
+  end
+  local st = self:_GetMainStateID()
+  local hpLog = {}
+  local attrGroup = self._world:GetGroup(self._world.BW_WEMatchers.Attributes)
+  for i, e in ipairs(attrGroup:GetEntities()) do
+    if not ignoreEntityIds[e:GetID()] then
+      local logicHP = e:Attributes():GetCurrentHP()
+      local logicHPMax = e:Attributes():CalcMaxHp()
+      if logicHP and e:HP() then
+        local renderHP = e:HP():GetRedHP()
+        local renderHPMax = e:HP():GetMaxHP()
+        if logicHP ~= renderHP or logicHPMax ~= renderHPMax then
+          hpLog[e:GetID()] = {logicHP = logicHP, renderHP = renderHP}
+          if ForceSyncHP then
+            Log.debug("ForceSyncHP entityID=", e:GetID(), " logicHP=", logicHP, " renderHP=", renderHP, " logicHPMax=", logicHPMax, " renderHPMax=", renderHPMax)
+            self:_RefreshRenderHP(e, logicHP, logicHPMax)
           end
         end
       end
     end
-    if enable and next(hpLog) then
-      hpLog[1] = {fsm = GetEnumKey("GameStateID", st)}
-      ;
-      (Log.exception)(echo(hpLog))
-      ;
-      ((self._world):GetService("AutoFight")):EnableAutoMove(false)
-    end
+  end
+  if enable and next(hpLog) then
+    hpLog[1] = {
+      fsm = GetEnumKey("GameStateID", st)
+    }
+    Log.exception(echo(hpLog))
+    self._world:GetService("AutoFight"):EnableAutoMove(false)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._RefreshRenderHP = function(self, e, hp, hpMax)
-  -- function num : 0_14 , upvalues : _ENV
+function MainStateSystem:_RefreshRenderHP(e, hp, hpMax)
   e:ReplaceRedHPAndWhitHP(hp)
   e:ReplaceMaxHP(hpMax)
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local greyVal = utilDataSvc:GetEntityBuffValue(e, "GreyHPValue") or 0
   e:ReplaceGreyHP(greyVal)
-  local curShowBossHP = (e:BuffView()):HasBuffEffect(BuffEffectType.CurShowBossHP)
+  local curShowBossHP = e:BuffView():HasBuffEffect(BuffEffectType.CurShowBossHP)
   if e:HasBoss() or curShowBossHP then
-    local maxhp = (e:HP()):GetMaxHP()
-    local redhp = (e:HP()):GetRedHP()
+    local maxhp = e:HP():GetMaxHP()
+    local redhp = e:HP():GetRedHP()
     local hpPercent = redhp / maxhp
-    if redhp > 0 and hpPercent < 0.01 then
+    if 0 < redhp and hpPercent < 0.01 then
       hpPercent = 0.01
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossRedHp, e:GetID(), hpPercent, redhp, maxhp)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossWhiteHp, e:GetID(), hpPercent, redhp, maxhp)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossGreyHP, e:GetID(), greyVal, redhp, maxhp)
-    local showCurseHp = (e:HP()):GetShowCurseHp()
-    local curseHpValue = (e:HP()):GetCurseHpValue()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossCurseHP, e:GetID(), showCurseHp, curseHpValue, redhp, maxhp)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossRedHp, e:GetID(), hpPercent, redhp, maxhp)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossWhiteHp, e:GetID(), hpPercent, redhp, maxhp)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossGreyHP, e:GetID(), greyVal, redhp, maxhp)
+    local showCurseHp = e:HP():GetShowCurseHp()
+    local curseHpValue = e:HP():GetCurseHpValue()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossCurseHP, e:GetID(), showCurseHp, curseHpValue, redhp, maxhp)
   end
-  do
-    if e:HasTeam() then
-      local hpCmpt = e:HP()
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TeamHPChange, {isLocalTeam = ((self._world):Player()):IsLocalTeamEntity(e), currentHP = hpCmpt:GetRedHP(), maxHP = hpCmpt:GetMaxHP(), hitpoint = hpCmpt:GetWhiteHP(), shield = hpCmpt:GetShieldValue(), entityID = e:GetID(), showCurseHp = hpCmpt:GetShowCurseHp(), curseHpVal = hpCmpt:GetCurseHpValue()})
-    end
+  if e:HasTeam() then
+    local hpCmpt = e:HP()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.TeamHPChange, {
+      isLocalTeam = self._world:Player():IsLocalTeamEntity(e),
+      currentHP = hpCmpt:GetRedHP(),
+      maxHP = hpCmpt:GetMaxHP(),
+      hitpoint = hpCmpt:GetWhiteHP(),
+      shield = hpCmpt:GetShieldValue(),
+      entityID = e:GetID(),
+      showCurseHp = hpCmpt:GetShowCurseHp(),
+      curseHpVal = hpCmpt:GetCurseHpValue()
+    })
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DoLogicTrapDie = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function MainStateSystem:_DoLogicTrapDie()
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   trapServiceLogic:CalcAllTrapDeadMark()
   local data = DataDeadMarkResult:New()
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-  for i,e in ipairs(trapGroup:GetEntities()) do
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  for i, e in ipairs(trapGroup:GetEntities()) do
     if e:HasDeadMark() then
       data:AddDeadEntityID(e:GetID())
     end
   end
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, data)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, data)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DoLogicMonsterDead = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function MainStateSystem:_DoLogicMonsterDead()
   local drops = {}
   local deadEntityIDList = {}
   self:_DoLogicRecursMonsterDead(drops, deadEntityIDList)
   local data = DataDeadMarkResult:New(deadEntityIDList)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, data)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, data)
   local deadEntityList = {}
-  for _,id in ipairs(deadEntityIDList) do
-    deadEntityList[#deadEntityList + 1] = (self._world):GetEntityByID(id)
+  for _, id in ipairs(deadEntityIDList) do
+    deadEntityList[#deadEntityList + 1] = self._world:GetEntityByID(id)
   end
   return deadEntityList
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DoLogicRecursMonsterDead = function(self, drops, deadEntityIDList)
-  -- function num : 0_17 , upvalues : _ENV
-  local sMonsterShowLogic = (self._world):GetService("MonsterShowLogic")
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,e in ipairs(monsterGroup:GetEntities()) do
+function MainStateSystem:_DoLogicRecursMonsterDead(drops, deadEntityIDList)
+  local sMonsterShowLogic = self._world:GetService("MonsterShowLogic")
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(monsterGroup:GetEntities()) do
     sMonsterShowLogic:AddMonsterDeadMark(e)
   end
   local tmpDrops, tmpDeadEntityIDList = sMonsterShowLogic:DoAllMonsterDeadLogic()
-  ;
-  (table.appendArray)(drops, tmpDrops)
-  ;
-  (table.appendArray)(deadEntityIDList, tmpDeadEntityIDList)
+  table.appendArray(drops, tmpDrops)
+  table.appendArray(deadEntityIDList, tmpDeadEntityIDList)
   local hasNewDead = self:_DoLogicCheckNewDead()
   if hasNewDead then
     self:_DoLogicRecursMonsterDead(drops, deadEntityIDList)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DoLogicCheckNewDead = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local sMonsterShowLogic = (self._world):GetService("MonsterShowLogic")
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,e in ipairs(monsterGroup:GetEntities()) do
+function MainStateSystem:_DoLogicCheckNewDead()
+  local sMonsterShowLogic = self._world:GetService("MonsterShowLogic")
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(monsterGroup:GetEntities()) do
     local cAttributes = e:Attributes()
     local curHp = cAttributes:GetCurrentHP()
     if curHp <= 0 and not e:HasDeadMark() then
@@ -275,75 +211,55 @@ MainStateSystem._DoLogicCheckNewDead = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DoLogicChessPetDead = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local chessSvc = (self._world):GetService("ChessLogic")
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).ChessPet)
+function MainStateSystem:_DoLogicChessPetDead()
+  local chessSvc = self._world:GetService("ChessLogic")
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.ChessPet)
   local chessPetEntityIDList = {}
-  for _,e in ipairs(monsterGroup:GetEntities()) do
+  for _, e in ipairs(monsterGroup:GetEntities()) do
     chessPetEntityIDList[#chessPetEntityIDList + 1] = e:GetID()
   end
   chessSvc:DoChessPetListDeadLogic(chessPetEntityIDList)
   local hadDeadEntityIDList = chessSvc:GetHasDeadMarkChessPetList()
-  ;
-  ((self._world):BattleStat()):SetChessDeadPlayerPawnCount(hadDeadEntityIDList)
+  self._world:BattleStat():SetChessDeadPlayerPawnCount(hadDeadEntityIDList)
   local data = DataDeadMarkResult:New(hadDeadEntityIDList)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, data)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, data)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DoRenderTrapDie = function(self, TT)
-  -- function num : 0_20
-  if (self._world):RunAtClient() then
-    local trapServiceRender = (self._world):GetService("TrapRender")
+function MainStateSystem:_DoRenderTrapDie(TT)
+  if self._world:RunAtClient() then
+    local trapServiceRender = self._world:GetService("TrapRender")
     trapServiceRender:PlayAllTrapDead(TT)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DoRenderMonsterDead = function(self, TT)
-  -- function num : 0_21
-  if (self._world):RunAtClient() then
-    local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
+function MainStateSystem:_DoRenderMonsterDead(TT)
+  if self._world:RunAtClient() then
+    local sMonsterShowRender = self._world:GetService("MonsterShowRender")
     sMonsterShowRender:DoAllMonsterDeadRender(TT)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DoRenderChessPetDead = function(self, TT)
-  -- function num : 0_22
-  if (self._world):RunAtClient() then
-    local chessSvcRender = (self._world):GetService("ChessRender")
+function MainStateSystem:_DoRenderChessPetDead(TT)
+  if self._world:RunAtClient() then
+    local chessSvcRender = self._world:GetService("ChessRender")
     chessSvcRender:DoAllChessPetListDeadRender(TT)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DoRenderWaitDeathEnd = function(self, TT)
-  -- function num : 0_23 , upvalues : _ENV
+function MainStateSystem:_DoRenderWaitDeathEnd(TT)
   while self:_CheckShowDeathNotEnd() do
     YIELD(TT)
   end
-  if (self._world):RunAtClient() then
-    local playSkillService = (self._world):GetService("PlaySkill")
+  if self._world:RunAtClient() then
+    local playSkillService = self._world:GetService("PlaySkill")
     local listWaitTask = playSkillService:GetWaitFreeList()
     self:_WaitTasksEnd(TT, listWaitTask)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._CheckShowDeathNotEnd = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local deathGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).ShowDeath)
-  for _,v in ipairs(deathGroup:GetEntities()) do
+function MainStateSystem:_CheckShowDeathNotEnd()
+  local deathGroup = self._world:GetGroup(self._world.BW_WEMatchers.ShowDeath)
+  for _, v in ipairs(deathGroup:GetEntities()) do
     local entity = v
     local showDeathCmpt = entity:ShowDeath()
     if not showDeathCmpt:IsShowDeathEnd() then
@@ -353,55 +269,37 @@ MainStateSystem._CheckShowDeathNotEnd = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DoLogicClearDeadEntity = function(self)
-  -- function num : 0_25
-  local sMonsterShowLogic = (self._world):GetService("MonsterShowLogic")
+function MainStateSystem:_DoLogicClearDeadEntity()
+  local sMonsterShowLogic = self._world:GetService("MonsterShowLogic")
   sMonsterShowLogic:ClearMonsterDeadEntity()
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   trapServiceLogic:ClearTrapDeadEntity()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DoLogicSpawnInWaveMonsters = function(self, monsterWaveInternalTime)
-  -- function num : 0_26
-  local monsterCreationSvc = (self._world):GetService("MonsterCreationLogic")
+function MainStateSystem:_DoLogicSpawnInWaveMonsters(monsterWaveInternalTime)
+  local monsterCreationSvc = self._world:GetService("MonsterCreationLogic")
   local traps, monsters = monsterCreationSvc:CreateInternalRefreshMonsterLogic(monsterWaveInternalTime)
   return traps, monsters
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem.BlinkMainCamera = function(self, isShow)
-  -- function num : 0_27
-  local sCamera = (self._world):GetService("Camera")
+function MainStateSystem:BlinkMainCamera(isShow)
+  local sCamera = self._world:GetService("Camera")
   sCamera:BlinkMainCamera(isShow)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DoLogicCalcBonusObjective = function(self)
-  -- function num : 0_28
-  local bonusService = (self._world):GetService("BonusCalc")
+function MainStateSystem:_DoLogicCalcBonusObjective()
+  local bonusService = self._world:GetService("BonusCalc")
   bonusService:CalcBonusObjective()
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._HandleEntityCommand = function(self)
-  -- function num : 0_29
-  local cmdHandler = (self._world):GetPlayerCommandHandler()
+function MainStateSystem:_HandleEntityCommand()
+  local cmdHandler = self._world:GetPlayerCommandHandler()
   cmdHandler:ClearHandlerState()
   cmdHandler:HandleCommand()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem.IsBattleEnded = function(self)
-  -- function num : 0_30
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+function MainStateSystem:IsBattleEnded()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   if teamEntity and self:IsPlayerDead(teamEntity) then
     return true, false
   end
@@ -421,45 +319,39 @@ MainStateSystem.IsBattleEnded = function(self)
   if monsterEscapeTooMuch then
     return true, false
   end
-  local cBattleStat = (self._world):BattleStat()
+  local cBattleStat = self._world:BattleStat()
   local waveCount = cBattleStat:GetCurWaveIndex()
-  local cfgSvc = (self._world):GetService("Config")
+  local cfgSvc = self._world:GetService("Config")
   local levelConfigData = cfgSvc:GetLevelConfigData()
   local completeConditionType = levelConfigData:GetWaveCompleteConditionType(waveCount)
   local completeConditionParm = levelConfigData:GetWaveCompleteConditionParam(waveCount)
-  local completeService = (self._world):GetService("CompleteCondition")
+  local completeService = self._world:GetService("CompleteCondition")
   local combinedConditionArguments = levelConfigData:GetWaveCombinedCompleteConditionArguments(waveCount)
   local isComplete = completeService:IsDoneCompleteCondition(completeConditionType, completeConditionParm, combinedConditionArguments)
   return isComplete, isComplete
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem.IsPlayerDead = function(self, teamEntity)
-  -- function num : 0_31
-  local battleSvc = (self._world):GetService("Battle")
+function MainStateSystem:IsPlayerDead(teamEntity)
+  local battleSvc = self._world:GetService("Battle")
   return battleSvc:HandlePlayerCalculation(teamEntity)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem.IsProtectedTrapDead = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  local cfgSvc = (self._world):GetService("Config")
+function MainStateSystem:IsProtectedTrapDead()
+  local cfgSvc = self._world:GetService("Config")
   local levelCfgData = cfgSvc:GetLevelConfigData()
   local ingore = levelCfgData:GetIgnoreProtectedTrapDead()
   if ingore == 1 then
     return false
   end
-  local utilSvc = (self._world):GetService("UtilData")
+  local utilSvc = self._world:GetService("UtilData")
   if utilSvc:GetProtectedTrap() then
-    local trapGroup = ((self._world):GetGroup(((self._world).BW_WEMatchers).Trap))
-    local protectedTrap = nil
-    for _,e in ipairs(trapGroup:GetEntities()) do
+    local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+    local protectedTrap
+    for _, e in ipairs(trapGroup:GetEntities()) do
       local trapCmpt = e:Trap()
       if trapCmpt:GetTrapType() == TrapType.Protected then
         protectedTrap = e
-        local curHP = (e:Attributes()):GetCurrentHP()
+        local curHP = e:Attributes():GetCurrentHP()
         if curHP <= 0 then
           return true
         end
@@ -469,145 +361,112 @@ MainStateSystem.IsProtectedTrapDead = function(self)
       return true
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem.IsCurseTowerAllActive = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  local curseTowerGroupEntities = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).CurseTower)
-  do
-    if curseTowerGroupEntities and #curseTowerGroupEntities > 0 then
-      local isAllActive = true
-      for _,eTower in ipairs(curseTowerGroupEntities) do
-        local isActive = (eTower:CurseTower()):GetTowerState() == CurseTowerState.Active
-        if isAllActive then
-          isAllActive = isActive
-        end
-      end
-      if isAllActive then
-        return true
-      end
+function MainStateSystem:IsCurseTowerAllActive()
+  local curseTowerGroupEntities = self._world:GetGroupEntities(self._world.BW_WEMatchers.CurseTower)
+  if curseTowerGroupEntities and 0 < #curseTowerGroupEntities then
+    local isAllActive = true
+    for _, eTower in ipairs(curseTowerGroupEntities) do
+      local isActive = eTower:CurseTower():GetTowerState() == CurseTowerState.Active
+      isAllActive = isAllActive and isActive
     end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    if isAllActive then
+      return true
+    end
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem.IsChessCalculation = function(self)
-  -- function num : 0_34
-  local battleSvc = (self._world):GetService("Battle")
+function MainStateSystem:IsChessCalculation()
+  local battleSvc = self._world:GetService("Battle")
   return battleSvc:HandleChessCalculation()
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem.IsMonsterEscapeTooMuch = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  local cmptBattleStat = (self._world):BattleStat()
+function MainStateSystem:IsMonsterEscapeTooMuch()
+  local cmptBattleStat = self._world:BattleStat()
   local waveCount = cmptBattleStat:GetCurWaveIndex()
-  local cfgSvc = (self._world):GetService("Config")
+  local cfgSvc = self._world:GetService("Config")
   local levelConfigData = cfgSvc:GetLevelConfigData()
   local completeConditionType = levelConfigData:GetWaveCompleteConditionType(waveCount)
   local completeConditionParm = levelConfigData:GetWaveCompleteConditionParam(waveCount)
   if completeConditionType == CompleteConditionType.RoundCountLimitAndCheckMonsterEscape then
-    local limit = (completeConditionParm[1])[2]
+    local limit = completeConditionParm[1][2]
     local nEscape = cmptBattleStat:GetMonsterEscapeNum()
     local escapeTooMuch = limit <= nEscape
     return escapeTooMuch
   end
-  do return false end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DoLogicPetDead = function(self, teamEntity)
-  -- function num : 0_36
-  local battleService = (self._world):GetService("Battle")
+function MainStateSystem:_DoLogicPetDead(teamEntity)
+  local battleService = self._world:GetService("Battle")
   return battleService:UnloadPetLogic(teamEntity)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DoRenderPetDead = function(self, TT, teamEntity, ntTeamOrderChange)
-  -- function num : 0_37 , upvalues : _ENV
-  if (self._world):RunAtClient() then
-    local renderBattleService = (self.world):GetService("RenderBattle")
+function MainStateSystem:_DoRenderPetDead(TT, teamEntity, ntTeamOrderChange)
+  if self._world:RunAtClient() then
+    local renderBattleService = self.world:GetService("RenderBattle")
     renderBattleService:ChangeTeamLeaderRender(TT, teamEntity)
     if ntTeamOrderChange then
       local viewRequest = BattleTeamOrderViewRequest:New(ntTeamOrderChange:GetOldTeamOrder(), ntTeamOrderChange:GetNewTeamOrder(), BattleTeamOrderViewType.FillVacancies_MazePetDead)
-      local renderBattleSvc = (self._world):GetService("RenderBattle")
+      local renderBattleSvc = self._world:GetService("RenderBattle")
       renderBattleSvc:RequestUIChangeTeamOrderView(viewRequest)
       local seqNo = viewRequest:GetRequestSequenceNo()
-      while not ((self._world):RenderBattleStat()):IsChangeTeamOrderRequestFinished(seqNo) do
+      while not self._world:RenderBattleStat():IsChangeTeamOrderRequestFinished(seqNo) do
         YIELD(TT)
+        if self._world:RenderBattleStat():IsChangeTeamOrderViewDisabled() then
+          break
+        end
       end
-      if not ((self._world):RenderBattleStat()):IsChangeTeamOrderViewDisabled() then
-        ((self._world):GetService("PlayBuff")):PlayBuffView(TT, ntTeamOrderChange)
-        local playDamageService = (self._world):GetService("PlayDamage")
-        playDamageService:OnTeamOrderChangeRefresh()
-      end
+      self._world:GetService("PlayBuff"):PlayBuffView(TT, ntTeamOrderChange)
+      local playDamageService = self._world:GetService("PlayDamage")
+      playDamageService:OnTeamOrderChangeRefresh()
     end
   end
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DoLogicCloseAuroraTime = function(self, isReEnterClose)
-  -- function num : 0_38 , upvalues : _ENV
-  if not ((self._world):BattleStat()):IsRoundAuroraTime() then
-    return 
+function MainStateSystem:_DoLogicCloseAuroraTime(isReEnterClose)
+  if not self._world:BattleStat():IsRoundAuroraTime() then
+    return
   end
   if isReEnterClose then
-    ((self._world):BattleStat()):SetRoundAuroraTime(false)
-    ;
-    ((self._world):BattleStat()):SetReEnterAuroraTime(false)
-    local triggerSvc = (self._world):GetService("Trigger")
-    triggerSvc:Notify(NTExitAuroraTime:New())
+  else
+    self._world:BattleStat():SetRoundAuroraTime(false)
+    self._world:BattleStat():SetReEnterAuroraTime(false)
   end
+  local triggerSvc = self._world:GetService("Trigger")
+  triggerSvc:Notify(NTExitAuroraTime:New())
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DoRenderCloseAuroraTime = function(self, TT)
-  -- function num : 0_39 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function MainStateSystem:_DoRenderCloseAuroraTime(TT)
+  if self._world:RunAtServer() then
+    return
   end
-  local battleRenderCmpt = (self._world):BattleRenderConfig()
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ShowHideAuroraTime, false)
-  ;
-  ((self._world):MainCamera()):ToggleAuroraTime(false)
+  local battleRenderCmpt = self._world:BattleRenderConfig()
+  self._world:EventDispatcher():Dispatch(GameEventType.ShowHideAuroraTime, false)
+  self._world:MainCamera():ToggleAuroraTime(false)
   battleRenderCmpt:SetWaitInputAuroraTime(false)
   battleRenderCmpt:SetReEnterAuroraTimePlayed(false)
   YIELD(TT, BattleConst.AuroraFxExitTimeMs)
-  ;
-  ((self._world):MainCamera()):SetAuroaTimeObjActive(false)
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+  self._world:MainCamera():SetAuroaTimeObjActive(false)
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayBuffView(TT, NTExitAuroraTime:New())
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-MainStateSystem._DetailMathLoggerDoLogicTakeSnapshot = function(self)
-  -- function num : 0_40 , upvalues : _ENV
-  local detailLogger = (self._world):GetDetailMatchLogger()
+function MainStateSystem:_DetailMathLoggerDoLogicTakeSnapshot()
+  local detailLogger = self._world:GetDetailMatchLogger()
   if detailLogger then
-    local fsmState = ((self._world):GameFSM()):CurStateID()
-    local detailNeedTakeSnapFsm = {GameStateID.RoundResult, GameStateID.RoundEnter}
+    local fsmState = self._world:GameFSM():CurStateID()
+    local detailNeedTakeSnapFsm = {
+      GameStateID.RoundResult,
+      GameStateID.RoundEnter
+    }
     local onlyFsm = true
-    if (table.icontains)(detailNeedTakeSnapFsm, fsmState) then
+    if table.icontains(detailNeedTakeSnapFsm, fsmState) then
       onlyFsm = false
     end
     detailLogger:TakeSnapshot(onlyFsm)
   end
 end
-
-

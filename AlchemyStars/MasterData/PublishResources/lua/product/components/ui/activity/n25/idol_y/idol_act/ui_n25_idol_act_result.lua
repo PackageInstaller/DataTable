@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/idol_act/ui_n25_idol_act_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolActResult", UIController)
 UIN25IdolActResult = UIN25IdolActResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolActResult.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  (AudioHelperController.RequestUISoundSync)(CriAudioIDConst.HomelandAudioGood)
+function UIN25IdolActResult:Constructor()
+  AudioHelperController.RequestUISoundSync(CriAudioIDConst.HomelandAudioGood)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolActResult.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25IdolActResult:OnShow(uiParams)
   self.idolAcID = uiParams[1]
   self.callback = uiParams[2]
   self:CreateData()
@@ -23,77 +13,48 @@ UIN25IdolActResult.OnShow = function(self, uiParams)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolActResult.CreateData = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self.cfg = (Cfg.cfg_component_idol_activity)[self.idolAcID]
+function UIN25IdolActResult:CreateData()
+  self.cfg = Cfg.cfg_component_idol_activity[self.idolAcID]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolActResult.GetComponents = function(self)
-  -- function num : 0_3
+function UIN25IdolActResult:GetComponents()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtn")
   self.backBtns = backBtns:SpawnObject("UINewCommonTopButton")
-  ;
-  (self.backBtns):SetData(function()
-    -- function num : 0_3_0 , upvalues : self
+  self.backBtns:SetData(function()
     self:CloseDialog()
-  end
-, nil, nil, true)
+  end, nil, nil, true)
   local resultPool = self:GetUIComponent("UISelectObjectPath", "ResultPool")
   self.resultItem = resultPool:SpawnObject("UIN25IdolCommonResultItem")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolActResult.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN25IdolActResult:OnHide()
   if self.callback then
-    (self.callback)()
+    self.callback()
   end
-  ;
-  (AudioHelperController.ReleaseUISoundById)(CriAudioIDConst.HomelandAudioGood)
+  AudioHelperController.ReleaseUISoundById(CriAudioIDConst.HomelandAudioGood)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolActResult.OnValue = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local valuePlus = (self.cfg).Fans or 0
-  local desc1 = (self.cfg).Desc1
-  local desc2 = (self.cfg).Desc2
-  ;
-  (self.resultItem):SetData(UIIdolResultType.Act, valuePlus, desc1, desc2)
+function UIN25IdolActResult:OnValue()
+  local valuePlus = self.cfg.Fans or 0
+  local desc1 = self.cfg.Desc1
+  local desc2 = self.cfg.Desc2
+  self.resultItem:SetData(UIIdolResultType.Act, valuePlus, desc1, desc2)
   self:_PlayAudio()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolActResult._PlayAudio = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN25IdolActResult:_PlayAudio()
   local lockName = "UIN25IdolActResult_PlayAudio"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
+  GameGlobal.UIStateManager():Lock(lockName)
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, _ENV, lockName
-    self._soundPlayingID = (AudioHelperController.PlayUISoundResource)(CriAudioIDConst.HomelandAudioGood, true)
+    self._soundPlayingID = AudioHelperController.PlayUISoundResource(CriAudioIDConst.HomelandAudioGood, true)
     YIELD(TT, 2000)
     if self._soundPlayingID then
-      (AudioHelperController.StopUISound)(self._soundPlayingID)
+      AudioHelperController.StopUISound(self._soundPlayingID)
     end
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockName)
-  end
-)
+    GameGlobal.UIStateManager():UnLock(lockName)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolActResult.ResultBtnOnClick = function(self, go)
-  -- function num : 0_7
+function UIN25IdolActResult:ResultBtnOnClick(go)
   self:CloseDialog()
 end
-
-

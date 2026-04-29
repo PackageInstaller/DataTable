@@ -1,34 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/enter/ui_season_maze_boss_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeBossRewardItem", UICustomWidget)
 UISeasonMazeBossRewardItem = UISeasonMazeBossRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeBossRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMazeBossRewardItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBossRewardItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMazeBossRewardItem:InitWidget()
   self.item = self:GetUIComponent("UISelectObjectPath", "Item")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBossRewardItem.SetData = function(self)
-  -- function num : 0_2
+function UISeasonMazeBossRewardItem:SetData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBossRewardItem.TipsBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UISeasonMazeBossRewardItem:TipsBtnOnClick(go)
 end
-
-

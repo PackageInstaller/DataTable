@@ -1,39 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_attribute_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAttributeItem", UICustomWidget)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAttributeItem.Constructor = function(self)
-  -- function num : 0_0
+function UIAttributeItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAttributeItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIAttributeItem:OnShow(uiParams)
   self._nameText = self:GetUIComponent("Text", "attName")
   self._nameEnglishText = self:GetUIComponent("Text", "attEnglishName")
   self._attValue = self:GetUIComponent("Text", "attValue")
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAttributeItem.SetData = function(self, itemInfo, index)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._attValue).text = itemInfo.attValue
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._nameText).text = (StringTable.Get)(itemInfo.attType)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._nameEnglishText).text = (StringTable.Get)(itemInfo.englishName)
+function UIAttributeItem:SetData(itemInfo, index)
+  self._attValue.text = itemInfo.attValue
+  self._nameText.text = StringTable.Get(itemInfo.attType)
+  self._nameEnglishText.text = StringTable.Get(itemInfo.englishName)
 end
-
-

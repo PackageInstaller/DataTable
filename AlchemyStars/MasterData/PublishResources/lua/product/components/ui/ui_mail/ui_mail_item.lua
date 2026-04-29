@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_mail/ui_mail_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMailItem", UICustomWidget)
 UIMailItem = UIMailItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMailItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMailItem:OnShow(uiParams)
   self._titleLabel = self:GetUIComponent("UILocalizationText", "Title")
   self._senderLabel = self:GetUIComponent("UILocalizationText", "Sender")
   self._sendTimeLabel = self:GetUIComponent("UILocalizationText", "SendTime")
@@ -18,8 +11,7 @@ UIMailItem.OnShow = function(self, uiParams)
   self._rewardGo = self:GetGameObject("Reward")
   local sop = self:GetUIComponent("UISelectObjectPath", "Reward")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base)
+  self.uiItem:SetForm(UIItemForm.Base)
   self._buttonGetGo = self:GetGameObject("ButtonGet")
   self._buttonDeleteGo = self:GetGameObject("ButtonDelete")
   self._defaultIconIconGo = self:GetGameObject("DefaultIcon")
@@ -31,236 +23,146 @@ UIMailItem.OnShow = function(self, uiParams)
   self._expireTimePanel = self:GetGameObject("ExpireTimePanel")
   self._Light = self:GetGameObject("Light")
   self._Scale = self:GetUIComponent("Transform", "UIMailItem")
-  self._currentTimeEvent = ((GameGlobal.RealTimer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, self.OnOneMinusUpdate, self)
+  self._currentTimeEvent = GameGlobal.RealTimer():AddEventTimes(1000, TimerTriggerCount.Infinite, self.OnOneMinusUpdate, self)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMailItem:OnHide()
   if self._currentTimeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._currentTimeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._currentTimeEvent)
     self._currentTimeEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailItem.OnOneMinusUpdate = function(self)
-  -- function num : 0_2
+function UIMailItem:OnOneMinusUpdate()
   self:_RefreshExpireTimeLabel()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailItem._RefreshExpireTimeLabel = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMailItem:_RefreshExpireTimeLabel()
   if not self._mailData then
-    return 
+    return
   end
-  local remaindSeconds = (self._mailData).remainSeconds
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
+  local remaindSeconds = self._mailData.remainSeconds
   if remaindSeconds <= 0 then
-    (self._expireTimeLabel).text = (StringTable.Get)("str_mail_expire")
-    return 
+    self._expireTimeLabel.text = StringTable.Get("str_mail_expire")
+    return
   end
-  local days = (math.floor)(remaindSeconds / 86400)
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-  if days >= 1 then
-    (self._expireTimeLabel).text = (string.format)((StringTable.Get)("str_mail_expire_day"), days)
+  local days = math.floor(remaindSeconds / 86400)
+  if 1 <= days then
+    self._expireTimeLabel.text = string.format(StringTable.Get("str_mail_expire_day"), days)
   else
-    local hours = (math.floor)(remaindSeconds / 3600)
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R4 in 'UnsetPending'
-
-    if hours >= 1 then
-      (self._expireTimeLabel).text = (string.format)((StringTable.Get)("str_mail_expire_hour"), hours)
+    local hours = math.floor(remaindSeconds / 3600)
+    if 1 <= hours then
+      self._expireTimeLabel.text = string.format(StringTable.Get("str_mail_expire_hour"), hours)
     else
-      local minus = (math.floor)(remaindSeconds / 60)
-      -- DECOMPILER ERROR at PC64: Confused about usage of register: R5 in 'UnsetPending'
-
-      if minus >= 1 then
-        (self._expireTimeLabel).text = (string.format)((StringTable.Get)("str_mail_expire_minus"), minus)
+      local minus = math.floor(remaindSeconds / 60)
+      if 1 <= minus then
+        self._expireTimeLabel.text = string.format(StringTable.Get("str_mail_expire_minus"), minus)
       else
-        -- DECOMPILER ERROR at PC71: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._expireTimeLabel).text = (StringTable.Get)("str_mail_lower_mins")
+        self._expireTimeLabel.text = StringTable.Get("str_mail_lower_mins")
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailItem.Refresh = function(self, mailController, mailData, isCollect)
-  -- function num : 0_4
-  if not isCollect then
-    isCollect = false
-  end
-  ;
-  (self._expireTimePanel):SetActive(not isCollect)
+function UIMailItem:Refresh(mailController, mailData, isCollect)
+  isCollect = isCollect or false
+  self._expireTimePanel:SetActive(not isCollect)
   self._mailController = mailController
   self._mailData = mailData
   self:_RefreshMailInfo()
   self:_RefreshExpireTimeLabel()
-  if not (self._mailController).InitedMailList then
+  if not self._mailController.InitedMailList then
     local anim = self:GetUIComponent("Animation", "UIMailItem")
     anim:Play("uieff_MailItem_In")
   else
-    do
-      local anim = self:GetUIComponent("Animation", "UIMailItem")
-      anim:Play("uieff_MailItem_In")
-      local state = anim:get_Item("uieff_MailItem_In")
-      state.normalizedTime = 1
-    end
+    local anim = self:GetUIComponent("Animation", "UIMailItem")
+    anim:Play("uieff_MailItem_In")
+    local state = anim:get_Item("uieff_MailItem_In")
+    state.normalizedTime = 1
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailItem._RefreshMailInfo = function(self)
-  -- function num : 0_5
+function UIMailItem:_RefreshMailInfo()
   if not self._mailData then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._titleLabel).text = (self._mailData).title
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._senderLabel).text = (self._mailData).senderName
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._sendTimeLabel).text = (self._mailData).createTime
-  if (self._mailData).mailIcon and (self._mailData).mailIcon ~= "" then
-    (self._rewardGo):SetActive(false)
-    ;
-    (self._iconPanel):SetActive(true)
-    ;
-    (self._defaultIconIconGo):SetActive(false)
-    ;
-    (self._iconLoader):LoadImage((self._mailData).mailIcon)
+  self._titleLabel.text = self._mailData.title
+  self._senderLabel.text = self._mailData.senderName
+  self._sendTimeLabel.text = self._mailData.createTime
+  if self._mailData.mailIcon and self._mailData.mailIcon ~= "" then
+    self._rewardGo:SetActive(false)
+    self._iconPanel:SetActive(true)
+    self._defaultIconIconGo:SetActive(false)
+    self._iconLoader:LoadImage(self._mailData.mailIcon)
+  elseif self._mailData.hasReward == true then
+    self._rewardGo:SetActive(true)
+    self._iconPanel:SetActive(false)
+    self._defaultIconIconGo:SetActive(false)
+    local reward = self._mailData.rewards[1]
+    self:_RefreshRewardInfo(reward)
   else
-    if (self._mailData).hasReward == true then
-      (self._rewardGo):SetActive(true)
-      ;
-      (self._iconPanel):SetActive(false)
-      ;
-      (self._defaultIconIconGo):SetActive(false)
-      local reward = ((self._mailData).rewards)[1]
-      self:_RefreshRewardInfo(reward)
-    else
-      do
-        ;
-        (self._rewardGo):SetActive(false)
-        ;
-        (self._iconPanel):SetActive(false)
-        ;
-        (self._defaultIconIconGo):SetActive(true)
-        if (self._mailData).isRead == false then
-          (self._newMailiconGo):SetActive(true)
-          ;
-          (self._newMailFrameGo):SetActive(true)
-          ;
-          (self._unGainIconGo):SetActive(false)
-          ;
-          (self._hasReadIconGo):SetActive(false)
-          -- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-          ;
-          (self._canvasGroup).enabled = false
-        else
-          if (self._mailData).hasReward and (self._mailData).isGain == false then
-            (self._newMailiconGo):SetActive(false)
-            ;
-            (self._newMailFrameGo):SetActive(false)
-            ;
-            (self._unGainIconGo):SetActive(true)
-            ;
-            (self._hasReadIconGo):SetActive(false)
-            -- DECOMPILER ERROR at PC125: Confused about usage of register: R1 in 'UnsetPending'
-
-            ;
-            (self._canvasGroup).enabled = false
-          else
-            ;
-            (self._newMailiconGo):SetActive(false)
-            ;
-            (self._newMailFrameGo):SetActive(false)
-            ;
-            (self._unGainIconGo):SetActive(false)
-            ;
-            (self._hasReadIconGo):SetActive(true)
-            -- DECOMPILER ERROR at PC144: Confused about usage of register: R1 in 'UnsetPending'
-
-            ;
-            (self._canvasGroup).enabled = true
-          end
-        end
-      end
-    end
+    self._rewardGo:SetActive(false)
+    self._iconPanel:SetActive(false)
+    self._defaultIconIconGo:SetActive(true)
+  end
+  if self._mailData.isRead == false then
+    self._newMailiconGo:SetActive(true)
+    self._newMailFrameGo:SetActive(true)
+    self._unGainIconGo:SetActive(false)
+    self._hasReadIconGo:SetActive(false)
+    self._canvasGroup.enabled = false
+  elseif self._mailData.hasReward and self._mailData.isGain == false then
+    self._newMailiconGo:SetActive(false)
+    self._newMailFrameGo:SetActive(false)
+    self._unGainIconGo:SetActive(true)
+    self._hasReadIconGo:SetActive(false)
+    self._canvasGroup.enabled = false
+  else
+    self._newMailiconGo:SetActive(false)
+    self._newMailFrameGo:SetActive(false)
+    self._unGainIconGo:SetActive(false)
+    self._hasReadIconGo:SetActive(true)
+    self._canvasGroup.enabled = true
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailItem._RefreshRewardInfo = function(self, reward)
-  -- function num : 0_6 , upvalues : _ENV
+function UIMailItem:_RefreshRewardInfo(reward)
   if not reward then
-    return 
+    return
   end
-  local templateData = (Cfg.cfg_item)[reward.assetid]
+  local templateData = Cfg.cfg_item[reward.assetid]
   if not templateData then
-    return 
+    return
   end
   local icon = templateData.Icon
   local itemId = reward.assetid
   local quality = templateData.Color
   local text1 = reward.count
-  ;
-  (self.uiItem):SetData({icon = icon, itemId = itemId, quality = quality, text1 = text1})
+  self.uiItem:SetData({
+    icon = icon,
+    itemId = itemId,
+    quality = quality,
+    text1 = text1
+  })
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailItem.ButtonGetOnClick = function(self, go)
-  -- function num : 0_7
-  (self._mailController):CollectedReward(self._mailData)
+function UIMailItem:ButtonGetOnClick(go)
+  self._mailController:CollectedReward(self._mailData)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailItem.ButtonDeleteOnClick = function(self, go)
-  -- function num : 0_8
-  (self._mailController):DeleteMail(self._mailData)
+function UIMailItem:ButtonDeleteOnClick(go)
+  self._mailController:DeleteMail(self._mailData)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailItem.ButtonReadOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+function UIMailItem:ButtonReadOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
   self:Lock("UIMailItem:ButtonReadOnClick")
-  ;
-  (self._Light):SetActive(true)
-  local tween1 = ((self._Scale):DOScale(Vector3(0.95, 0.95, 1), 0.1)):OnComplete(function()
-    -- function num : 0_9_0 , upvalues : self, _ENV
-    local tween2 = ((self._Scale):DOScale(Vector3(1, 1, 1), 0.13)):OnComplete(function()
-      -- function num : 0_9_0_0 , upvalues : self
+  self._Light:SetActive(true)
+  local tween1 = self._Scale:DOScale(Vector3(0.95, 0.95, 1), 0.1):OnComplete(function()
+    local tween2 = self._Scale:DOScale(Vector3(1, 1, 1), 0.13):OnComplete(function()
       self:UnLock("UIMailItem:ButtonReadOnClick")
-      ;
-      (self._Light):SetActive(false)
-      ;
-      (self._mailController):ReadMail(self._mailData)
-    end
-)
-  end
-)
+      self._Light:SetActive(false)
+      self._mailController:ReadMail(self._mailData)
+    end)
+  end)
 end
-
-

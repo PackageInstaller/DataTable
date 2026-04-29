@@ -1,49 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/vampire/ui_n25_vampire_result_pet_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25VampireResultPetItem", UICustomWidget)
 UIN25VampireResultPetItem = UIN25VampireResultPetItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25VampireResultPetItem.Constructor = function(self)
-  -- function num : 0_0
+function UIN25VampireResultPetItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireResultPetItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25VampireResultPetItem:OnShow(uiParams)
   self.Icon = self:GetUIComponent("RawImageLoader", "Icon")
   self.image = self:GetGameObject("Image")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireResultPetItem.OnHide = function(self)
-  -- function num : 0_2
-  (self.Icon):DestoryLastImage()
+function UIN25VampireResultPetItem:OnHide()
+  self.Icon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireResultPetItem.Flush = function(self, tplId, pet)
-  -- function num : 0_3
+function UIN25VampireResultPetItem:Flush(tplId, pet)
   self.tplId = tplId
-  ;
-  (self.image):SetActive(false)
-  ;
-  (self.Icon):LoadImage(pet:Icon())
+  self.image:SetActive(false)
+  self.Icon:LoadImage(pet:Icon())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireResultPetItem.IconOnClick = function(self, go)
-  -- function num : 0_4
+function UIN25VampireResultPetItem:IconOnClick(go)
   if self.callback then
-    (self.callback)()
+    self.callback()
   end
 end
-
-

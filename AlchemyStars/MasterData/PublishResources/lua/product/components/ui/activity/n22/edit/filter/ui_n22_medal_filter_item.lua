@@ -1,113 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/edit/filter/ui_n22_medal_filter_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22MedalFilterItem", UICustomWidget)
 UIN22MedalFilterItem = UIN22MedalFilterItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22MedalFilterItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN22MedalFilterItem:OnShow()
   self.bg = self:GetGameObject("Bg")
   self.select = self:GetGameObject("select")
   self.imgSelect = self:GetUIComponent("Image", "imgSelect")
   self.txtFilter = self:GetUIComponent("UILocalizationText", "txtFilter")
-  local etl = (UICustomUIEventListener.Get)(self.bg)
+  local etl = UICustomUIEventListener.Get(self.bg)
   self:AddUICustomEventListener(etl, UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_0_0 , upvalues : self
     if self:IsSelect() then
+    else
       self:PlayAnimBg()
     end
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Drag, function(eventData)
-    -- function num : 0_0_1
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.EndDrag, function(eventData)
-    -- function num : 0_0_2
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Click, function(go)
-    -- function num : 0_0_3 , upvalues : self
     self:PlayAnimBg(function()
-      -- function num : 0_0_3_0 , upvalues : self
       if self.clickCallback then
-        (self.clickCallback)()
+        self.clickCallback()
       end
-    end
-)
-  end
-)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalFilterItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN22MedalFilterItem:OnHide()
   if self.taskId and self.taskId > 0 then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId)
+    GameGlobal.TaskManager():KillTask(self.taskId)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalFilterItem.Flush = function(self, filter, name, clickCallback)
-  -- function num : 0_2
+function UIN22MedalFilterItem:Flush(filter, name, clickCallback)
   self.filter = filter
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.bg).name = "Bg" .. filter
+  self.bg.name = "Bg" .. filter
   self.clickCallback = clickCallback
-  ;
-  (self.txtFilter):SetText(name)
+  self.txtFilter:SetText(name)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalFilterItem.FlushSelect = function(self, filter)
-  -- function num : 0_3
-  (self.select):SetActive(filter == self.filter)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIN22MedalFilterItem:FlushSelect(filter)
+  self.select:SetActive(filter == self.filter)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalFilterItem.IsSelect = function(self)
-  -- function num : 0_4
-  return (self.select).activeInHierarchy
+function UIN22MedalFilterItem:IsSelect()
+  return self.select.activeInHierarchy
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalFilterItem.PlayAnimBg = function(self, callback)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN22MedalFilterItem:PlayAnimBg(callback)
   self.taskId = self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV, callback
     local key = "UIN22MedalFilterItemPlayAnimBg"
     self:Lock(key)
-    ;
-    (self.select):SetActive(true)
-    ;
-    (self.imgSelect):CrossFadeAlpha(0, 0, false)
+    self.select:SetActive(true)
+    self.imgSelect:CrossFadeAlpha(0, 0, false)
     local duration1 = 0.1
-    ;
-    (self.imgSelect):CrossFadeAlpha(1, duration1, false)
+    self.imgSelect:CrossFadeAlpha(1, duration1, false)
     YIELD(TT, duration1 * 1000)
-    ;
-    (self.imgSelect):CrossFadeAlpha(0, duration1, false)
+    self.imgSelect:CrossFadeAlpha(0, duration1, false)
     YIELD(TT, duration1 * 1000)
-    ;
-    (self.select):SetActive(false)
+    self.select:SetActive(false)
     self.taskId = 0
     if callback then
       callback()
     end
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
-
-

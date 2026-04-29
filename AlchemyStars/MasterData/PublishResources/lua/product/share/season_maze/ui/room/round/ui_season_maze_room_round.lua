@@ -1,44 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/room/round/ui_season_maze_room_round.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRoomRound", UISeasonMazeRoomBase)
 UISeasonMazeRoomRound = UISeasonMazeRoomRound
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoomRound.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonMazeRoomRound:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomRound.OnShowUI = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeRoomRound:OnShowUI(uiParams)
   self:Lock("UISeasonMazeRoomRound")
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
-    local result = (self._component):HandleSeasonMazeRound(TT, res)
+    local result = self._component:HandleSeasonMazeRound(TT, res)
     self:UnLock("UISeasonMazeRoomRound")
     if not res:GetSucc() then
-      (Log.error)("回合奖励房间UI结算失败:", res:GetResult())
-      if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-        return 
+      Log.error("回合奖励房间UI结算失败:", res:GetResult())
+      if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+        return
       end
-      return 
+      return
     end
     self._round = 0
-    local reward = (result.reward)[1]
+    local reward = result.reward[1]
     self._round = reward.value_min
     self:ShowDialog("UISeasonMazeRoomPopBox", SeasonMazeRoomType.SMRT_Round, function()
-      -- function num : 0_1_0_0 , upvalues : self
       self:OnHideUI(self._round)
-    end
-, reward)
-  end
-, self)
+    end, reward)
+  end, self)
 end
-
-

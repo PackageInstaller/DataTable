@@ -1,43 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_snake_body_born_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlaySnakeBodyBornInstruction", BaseInstruction)
 PlaySnakeBodyBornInstruction = PlaySnakeBodyBornInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySnakeBodyBornInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySnakeBodyBornInstruction:Constructor(paramList)
   self._bodyEffectID = tonumber(paramList.bodyEffectID)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySnakeBodyBornInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySnakeBodyBornInstruction:GetCacheResource()
   local t = {}
-  ;
-  (table.insert)(t, {((Cfg.cfg_effect)[self._bodyEffectID]).ResPath, 1})
+  table.insert(t, {
+    Cfg.cfg_effect[self._bodyEffectID].ResPath,
+    1
+  })
   return t
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySnakeBodyBornInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySnakeBodyBornInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
-  local bodyArea = (casterEntity:BodyArea()):GetArea()
+  local bodyArea = casterEntity:BodyArea():GetArea()
   local casterPos = casterEntity:GetRenderGridPosition()
-  for i,v in ipairs(bodyArea) do
+  for i, v in ipairs(bodyArea) do
     if i ~= 1 then
       local bodyPos = casterPos + v
-      local effectSvc = (self._world):GetService("Effect")
+      local effectSvc = self._world:GetService("Effect")
       local entity = effectSvc:CreateGridEffectWithEffectHolder(self._bodyEffectID, bodyPos, casterEntity)
       local dir = Vector2(v.x * -1, v.y * -1)
       entity:SetDirection(dir)
     end
   end
 end
-
-

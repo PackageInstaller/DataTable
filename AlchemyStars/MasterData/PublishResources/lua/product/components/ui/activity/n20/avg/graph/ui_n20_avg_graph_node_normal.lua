@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/graph/ui_n20_avg_graph_node_normal.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20AVGGraphNodeNormal", UIN20AVGGraphNodeBase)
 UIN20AVGGraphNodeNormal = UIN20AVGGraphNodeNormal
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20AVGGraphNodeNormal.FlushName = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local state = (self.node):State()
+function UIN20AVGGraphNodeNormal:FlushName()
+  local state = self.node:State()
   if state == AVGStoryNodeState.CantPlay then
-    (self.txtName):SetText("???")
+    self.txtName:SetText("???")
   else
-    ;
-    (self.txtName):SetText((self.node).title)
+    self.txtName:SetText(self.node.title)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphNodeNormal.FlushState = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local state = (self.node):State()
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIN20AVGGraphNodeNormal:FlushState()
+  local state = self.node:State()
   if state == AVGStoryNodeState.CantPlay then
-    (self.imgBG).sprite = (self.atlas):GetSprite("N20_avg_lcxz_di02")
+    self.imgBG.sprite = self.atlas:GetSprite("N20_avg_lcxz_di02")
   else
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.imgBG).sprite = (self.atlas):GetSprite("N20_avg_lcxz_di01")
+    self.imgBG.sprite = self.atlas:GetSprite("N20_avg_lcxz_di01")
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/render_board_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RenderBoardComponent", Object)
 RenderBoardComponent = RenderBoardComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RenderBoardComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function RenderBoardComponent:Constructor()
   self._firstPetEntityID = -1
   self._gridEntityTable = {}
   self._sceneGOs = {}
@@ -31,396 +24,229 @@ RenderBoardComponent.Constructor = function(self)
   self._activeLinkLineGhostEntityID = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function RenderBoardComponent:Dispose()
   self._sceneGOs = {}
   if self._brillantLineReq then
-    (self._brillantLineReq):Dispose()
+    self._brillantLineReq:Dispose()
     self._brillantLineReq = nil
   end
-  ;
-  (Log.info)("RenderBoardComponent:Dispose")
+  Log.info("RenderBoardComponent:Dispose")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.GetFirstPetRenderEntityID = function(self)
-  -- function num : 0_2
+function RenderBoardComponent:GetFirstPetRenderEntityID()
   return self._firstPetEntityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.SetFirstPetRenderEntityID = function(self, id)
-  -- function num : 0_3
+function RenderBoardComponent:SetFirstPetRenderEntityID(id)
   self._firstPetEntityID = id
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.GetGridRenderEntityTable = function(self)
-  -- function num : 0_4
+function RenderBoardComponent:GetGridRenderEntityTable()
   return self._gridEntityTable
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.GetGridRenderEntity = function(self, pos)
-  -- function num : 0_5
-  if not pos or not (self._gridEntityTable)[pos.x] or not ((self._gridEntityTable)[pos.x])[pos.y] then
+function RenderBoardComponent:GetGridRenderEntity(pos)
+  if not (pos and self._gridEntityTable[pos.x]) or not self._gridEntityTable[pos.x][pos.y] then
     return nil
   end
-  return ((self._gridEntityTable)[pos.x])[pos.y]
+  return self._gridEntityTable[pos.x][pos.y]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.SetGridRenderEntityData = function(self, pos, gridEntity)
-  -- function num : 0_6
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._gridEntityTable)[pos.x] then
-    (self._gridEntityTable)[pos.x] = {}
+function RenderBoardComponent:SetGridRenderEntityData(pos, gridEntity)
+  if not self._gridEntityTable[pos.x] then
+    self._gridEntityTable[pos.x] = {}
   end
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not ((self._gridEntityTable)[pos.x])[pos.y] then
-    ((self._gridEntityTable)[pos.x])[pos.y] = {}
+  if not self._gridEntityTable[pos.x][pos.y] then
+    self._gridEntityTable[pos.x][pos.y] = {}
   end
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._gridEntityTable)[pos.x])[pos.y] = gridEntity
+  self._gridEntityTable[pos.x][pos.y] = gridEntity
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.RemoveGridRenderEntityData = function(self, pos)
-  -- function num : 0_7
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not ((self._gridEntityTable)[pos.x])[pos.y] then
-    ((self._gridEntityTable)[pos.x])[pos.y] = {}
+function RenderBoardComponent:RemoveGridRenderEntityData(pos)
+  if not self._gridEntityTable[pos.x][pos.y] then
+    self._gridEntityTable[pos.x][pos.y] = {}
   end
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._gridEntityTable)[pos.x])[pos.y] = nil
+  self._gridEntityTable[pos.x][pos.y] = nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.GetGridEffectEntityID = function(self, pos)
-  -- function num : 0_8
-  if not pos or not (self._gridEffectEntityIDTable)[pos.x] or not ((self._gridEffectEntityIDTable)[pos.x])[pos.y] then
+function RenderBoardComponent:GetGridEffectEntityID(pos)
+  if not (pos and self._gridEffectEntityIDTable[pos.x]) or not self._gridEffectEntityIDTable[pos.x][pos.y] then
     return nil
   end
-  return ((self._gridEffectEntityIDTable)[pos.x])[pos.y]
+  return self._gridEffectEntityIDTable[pos.x][pos.y]
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.SetGridEffectEntityID = function(self, pos, entityID)
-  -- function num : 0_9
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._gridEffectEntityIDTable)[pos.x] then
-    (self._gridEffectEntityIDTable)[pos.x] = {}
+function RenderBoardComponent:SetGridEffectEntityID(pos, entityID)
+  if not self._gridEffectEntityIDTable[pos.x] then
+    self._gridEffectEntityIDTable[pos.x] = {}
   end
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not ((self._gridEffectEntityIDTable)[pos.x])[pos.y] then
-    ((self._gridEffectEntityIDTable)[pos.x])[pos.y] = {}
+  if not self._gridEffectEntityIDTable[pos.x][pos.y] then
+    self._gridEffectEntityIDTable[pos.x][pos.y] = {}
   end
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._gridEffectEntityIDTable)[pos.x])[pos.y] = entityID
+  self._gridEffectEntityIDTable[pos.x][pos.y] = entityID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.RemoveGridEffectEntityID = function(self, pos)
-  -- function num : 0_10
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._gridEffectEntityIDTable)[pos.x] and ((self._gridEffectEntityIDTable)[pos.x])[pos.y] then
-    ((self._gridEffectEntityIDTable)[pos.x])[pos.y] = nil
+function RenderBoardComponent:RemoveGridEffectEntityID(pos)
+  if self._gridEffectEntityIDTable[pos.x] and self._gridEffectEntityIDTable[pos.x][pos.y] then
+    self._gridEffectEntityIDTable[pos.x][pos.y] = nil
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.GetSceneEffectEntityID = function(self)
-  -- function num : 0_11
+function RenderBoardComponent:GetSceneEffectEntityID()
   return self._sceneEffectEntityID
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.SetSceneEffectEntityID = function(self, entityID)
-  -- function num : 0_12
+function RenderBoardComponent:SetSceneEffectEntityID(entityID)
   self._sceneEffectEntityID = entityID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.GetSceneGO = function(self, name)
-  -- function num : 0_13
-  return (self._sceneGOs)[name]
+function RenderBoardComponent:GetSceneGO(name)
+  return self._sceneGOs[name]
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.SetSceneGO = function(self, go)
-  -- function num : 0_14
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
+function RenderBoardComponent:SetSceneGO(go)
   if go then
-    (self._sceneGOs)[go.name] = go
+    self._sceneGOs[go.name] = go
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.SetBrillantGridLineExtendParam = function(self, len)
-  -- function num : 0_15
+function RenderBoardComponent:SetBrillantGridLineExtendParam(len)
   self._brillantGridLineExtendParam = len
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.GetBrillantGridLineExtendParam = function(self)
-  -- function num : 0_16
+function RenderBoardComponent:GetBrillantGridLineExtendParam()
   return self._brillantGridLineExtendParam
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.GetBrillantGridObj = function(self)
-  -- function num : 0_17
+function RenderBoardComponent:GetBrillantGridObj()
   if self._brillantLineReq == nil then
     return nil
   end
-  return (self._brillantLineReq).Obj
+  return self._brillantLineReq.Obj
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.SetBrillantGridRequest = function(self, req)
-  -- function num : 0_18
+function RenderBoardComponent:SetBrillantGridRequest(req)
   self._brillantLineReq = req
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.SetBrillantGridLineList = function(self, h, v)
-  -- function num : 0_19
+function RenderBoardComponent:SetBrillantGridLineList(h, v)
   self._hLineObjList = h
   self._vLineObjList = v
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.GetBrillantGridLineList = function(self)
-  -- function num : 0_20
+function RenderBoardComponent:GetBrillantGridLineList()
   return self._hLineObjList, self._vLineObjList
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.GetDimensionClearPreviewTaskID = function(self)
-  -- function num : 0_21
+function RenderBoardComponent:GetDimensionClearPreviewTaskID()
   return self._dimensionClearPreviewTaskID
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.SetDimensionClearPreviewTaskID = function(self, id)
-  -- function num : 0_22
+function RenderBoardComponent:SetDimensionClearPreviewTaskID(id)
   self._dimensionClearPreviewTaskID = id
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.GetChainPathCancelAreaActive = function(self)
-  -- function num : 0_23
+function RenderBoardComponent:GetChainPathCancelAreaActive()
   return self._chainPathCancelAreaActive
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.SetChainPathCancelAreaActive = function(self, isActive)
-  -- function num : 0_24
+function RenderBoardComponent:SetChainPathCancelAreaActive(isActive)
   self._chainPathCancelAreaActive = isActive
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.GetMapPieceFirstChainPathEffectEntityID = function(self)
-  -- function num : 0_25
+function RenderBoardComponent:GetMapPieceFirstChainPathEffectEntityID()
   return self._mapPieceFirstChainPathEffectEntityID
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.SetMapPieceFirstChainPathEffectEntityID = function(self, entityID)
-  -- function num : 0_26
+function RenderBoardComponent:SetMapPieceFirstChainPathEffectEntityID(entityID)
   self._mapPieceFirstChainPathEffectEntityID = entityID
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.GetMapPieceFirstChainPathEffectID = function(self)
-  -- function num : 0_27
+function RenderBoardComponent:GetMapPieceFirstChainPathEffectID()
   return self._mapPieceFirstChainPathEffectID
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.SetMapPieceFirstChainPathEffectID = function(self, effectID)
-  -- function num : 0_28
+function RenderBoardComponent:SetMapPieceFirstChainPathEffectID(effectID)
   self._mapPieceFirstChainPathEffectID = effectID
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.GetMapPieceFirstChainPathEffectOutAnim = function(self)
-  -- function num : 0_29
+function RenderBoardComponent:GetMapPieceFirstChainPathEffectOutAnim()
   return self._mapPieceFirstChainPathEffectOutAnim
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.SetMapPieceFirstChainPathEffectOutAnim = function(self, outAnim)
-  -- function num : 0_30
+function RenderBoardComponent:SetMapPieceFirstChainPathEffectOutAnim(outAnim)
   self._mapPieceFirstChainPathEffectOutAnim = outAnim
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.SetBaseGridRenderPos = function(self, renderPos)
-  -- function num : 0_31
+function RenderBoardComponent:SetBaseGridRenderPos(renderPos)
   self._baseGridRenderPos = renderPos
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.GetBaseGridRenderPos = function(self)
-  -- function num : 0_32
+function RenderBoardComponent:GetBaseGridRenderPos()
   return self._baseGridRenderPos
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.AttachSceneEffByEffID = function(self, effectID, effectEntityID)
-  -- function num : 0_33 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._sceneEffEntityIDDic)[effectID] then
-    (self._sceneEffEntityIDDic)[effectID] = {}
+function RenderBoardComponent:AttachSceneEffByEffID(effectID, effectEntityID)
+  if not self._sceneEffEntityIDDic[effectID] then
+    self._sceneEffEntityIDDic[effectID] = {}
   end
-  ;
-  (table.insert)((self._sceneEffEntityIDDic)[effectID], effectEntityID)
+  table.insert(self._sceneEffEntityIDDic[effectID], effectEntityID)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.GetSceneEffEntityIDByEffID = function(self, effectID)
-  -- function num : 0_34
-  return (self._sceneEffEntityIDDic)[effectID]
+function RenderBoardComponent:GetSceneEffEntityIDByEffID(effectID)
+  return self._sceneEffEntityIDDic[effectID]
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.GetBattleCheatHideSceneObjList = function(self, key)
-  -- function num : 0_35
+function RenderBoardComponent:GetBattleCheatHideSceneObjList(key)
   if not self._battleCheatHideSceneObjList then
     self._battleCheatHideSceneObjList = {}
   end
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._battleCheatHideSceneObjList)[key] then
-    (self._battleCheatHideSceneObjList)[key] = {}
+  if not self._battleCheatHideSceneObjList[key] then
+    self._battleCheatHideSceneObjList[key] = {}
   end
-  if not (self._battleCheatHideSceneObjList)[key] then
-    return {}
-  end
+  return self._battleCheatHideSceneObjList[key] or {}
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.SetBattleCheatHideSceneObjList = function(self, key, value)
-  -- function num : 0_36
+function RenderBoardComponent:SetBattleCheatHideSceneObjList(key, value)
   if not self._battleCheatHideSceneObjList then
     self._battleCheatHideSceneObjList = {}
   end
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._battleCheatHideSceneObjList)[key] then
-    (self._battleCheatHideSceneObjList)[key] = {}
+  if not self._battleCheatHideSceneObjList[key] then
+    self._battleCheatHideSceneObjList[key] = {}
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._battleCheatHideSceneObjList)[key] = value
+  self._battleCheatHideSceneObjList[key] = value
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.SetActiveLinkLineGhostEntityID = function(self, entityID)
-  -- function num : 0_37
+function RenderBoardComponent:SetActiveLinkLineGhostEntityID(entityID)
   self._activeLinkLineGhostEntityID = entityID
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardComponent.GetActiveLinkLineGhostEntityID = function(self)
-  -- function num : 0_38
+function RenderBoardComponent:GetActiveLinkLineGhostEntityID()
   return self._activeLinkLineGhostEntityID
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RenderBoard = function(self)
-  -- function num : 0_39
-  return self:GetComponent((self.WEComponentsEnum).RenderBoard)
+function Entity:RenderBoard()
+  return self:GetComponent(self.WEComponentsEnum.RenderBoard)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasRenderBoard = function(self)
-  -- function num : 0_40
-  return self:HasComponent((self.WEComponentsEnum).RenderBoard)
+function Entity:HasRenderBoard()
+  return self:HasComponent(self.WEComponentsEnum.RenderBoard)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddRenderBoard = function(self)
-  -- function num : 0_41 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderBoard
+function Entity:AddRenderBoard()
+  local index = self.WEComponentsEnum.RenderBoard
   local component = RenderBoardComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceRenderBoard = function(self)
-  -- function num : 0_42 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderBoard
+function Entity:ReplaceRenderBoard()
+  local index = self.WEComponentsEnum.RenderBoard
   local component = RenderBoardComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveRenderBoard = function(self)
-  -- function num : 0_43
+function Entity:RemoveRenderBoard()
   if self:HasRenderBoard() then
-    self:RemoveComponent((self.WEComponentsEnum).RenderBoard)
+    self:RemoveComponent(self.WEComponentsEnum.RenderBoard)
   end
 end
-
-

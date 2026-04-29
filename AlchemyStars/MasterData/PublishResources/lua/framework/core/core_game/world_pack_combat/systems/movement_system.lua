@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_combat/systems/movement_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MovementSystem", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-MovementSystem.Constructor = function(self, world)
-  -- function num : 0_0
+function MovementSystem:Constructor(world)
   self.world = world
-  self.group = world:GetGroup((world.BW_WEMatchers).CanMove)
+  self.group = world:GetGroup(world.BW_WEMatchers.CanMove)
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-MovementSystem.Execute = function(self)
-  -- function num : 0_1
-  (self.group):HandleForeach(self, self.SimpleMove)
+function MovementSystem:Execute()
+  self.group:HandleForeach(self, self.SimpleMove)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-MovementSystem.SimpleMove = function(self, e)
-  -- function num : 0_2
+function MovementSystem:SimpleMove(e)
   local movement = e:Movement()
   local location = e:Location()
   local deltaTime = 0.03
@@ -32,5 +19,3 @@ MovementSystem.SimpleMove = function(self, e)
     e:RemoveMovement()
   end
 end
-
-

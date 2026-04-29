@@ -1,30 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_all_add_hp_text_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayAllAddHpTextInstruction", BaseInstruction)
 PlayAllAddHpTextInstruction = PlayAllAddHpTextInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayAllAddHpTextInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayAllAddHpTextInstruction:Constructor(paramList)
   self._stageIndex = tonumber(paramList.damageStageIndex) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAllAddHpTextInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayAllAddHpTextInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local playDamageService = world:GetService("PlayDamage")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local addHpResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AddBlood, self._stageIndex)
   if not addHpResultArray then
-    return 
+    return
   end
-  for i,addHpResult in ipairs(addHpResultArray) do
+  for i, addHpResult in ipairs(addHpResultArray) do
     local targetID = addHpResult:GetTargetID()
     local targetPos = addHpResult:GetGridPos()
     local addValue = addHpResult:GetAddValue()
@@ -37,20 +27,7 @@ PlayAllAddHpTextInstruction.DoInstruction = function(self, TT, casterEntity, pha
       addHpDamageInfo:SetRenderGridPos(targetPos)
       playDamageService:AsyncUpdateHPAndDisplayDamage(targetEntity, addHpDamageInfo)
     else
-      do
-        do
-          ;
-          (Log.error)("[PlayInstruction_AddHpText] 没有找到目标， nSkillID = ", skillID, ", TargetID = ", targetID)
-          -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      Log.error("[PlayInstruction_AddHpText] 没有找到目标， nSkillID = ", skillID, ", TargetID = ", targetID)
     end
   end
 end
-
-

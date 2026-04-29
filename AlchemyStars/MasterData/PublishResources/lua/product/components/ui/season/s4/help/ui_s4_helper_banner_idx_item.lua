@@ -1,55 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/help/ui_s4_helper_banner_idx_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4HelperBannerIdxItem", UICustomWidget)
 UIS4HelperBannerIdxItem = UIS4HelperBannerIdxItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4HelperBannerIdxItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIS4HelperBannerIdxItem:OnShow()
   self._atlas = self:GetAsset("UIS4Main.spriteatlas", LoadType.SpriteAtlas)
   self._img = self:GetUIComponent("Image", "img")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4HelperBannerIdxItem.OnHide = function(self)
-  -- function num : 0_1
+function UIS4HelperBannerIdxItem:OnHide()
   self._idx = nil
   self._atlas = nil
   self._img = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4HelperBannerIdxItem.SetData = function(self, idx, currIdx)
-  -- function num : 0_2
+function UIS4HelperBannerIdxItem:SetData(idx, currIdx)
   self._idx = idx
   self:Flush(currIdx)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4HelperBannerIdxItem.Flush = function(self, currIdx)
-  -- function num : 0_3
+function UIS4HelperBannerIdxItem:Flush(currIdx)
   if not self._atlas then
-    return 
+    return
   end
   if not self._img then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
   if self._idx == currIdx then
-    (self._img).sprite = (self._atlas):GetSprite("exp_s4_help_btn03")
+    self._img.sprite = self._atlas:GetSprite("exp_s4_help_btn03")
   else
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._img).sprite = (self._atlas):GetSprite("exp_s4_help_btn04")
+    self._img.sprite = self._atlas:GetSprite("exp_s4_help_btn04")
   end
 end
-
-

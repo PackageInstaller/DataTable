@@ -1,31 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/data_select_scope_grid_range_pick_up_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("DataSelectScopeGridRangePickUpInstruction", BaseInstruction)
 DataSelectScopeGridRangePickUpInstruction = DataSelectScopeGridRangePickUpInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSelectScopeGridRangePickUpInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function DataSelectScopeGridRangePickUpInstruction:Constructor(paramList)
   self._pickUpIndex = tonumber(paramList.pickUpIndex)
   self._noPhaseEnd = paramList.noPhaseEnd
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectScopeGridRangePickUpInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function DataSelectScopeGridRangePickUpInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
-  do return activeSkillPickUpComponent or (not self._noPhaseEnd and InstructionConst.PhaseEnd) or nil end
+  if not activeSkillPickUpComponent then
+    return not self._noPhaseEnd and InstructionConst.PhaseEnd or nil
+  end
   local pickUpGridArray = activeSkillPickUpComponent:GetAllValidPickUpGridPos()
   local v2PickupPos = pickUpGridArray[self._pickUpIndex]
-  if self._noPhaseEnd or not InstructionConst.PhaseEnd then
-    do return v2PickupPos ~= nil or nil end
-    phaseContext:SetScopeGridList({v2PickupPos})
+  if v2PickupPos == nil then
+    return not self._noPhaseEnd and InstructionConst.PhaseEnd or nil
   end
+  phaseContext:SetScopeGridList({v2PickupPos})
 end
-
-

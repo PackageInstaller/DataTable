@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_award_detail_item_new.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardAwardDetailItemNew", UICustomWidget)
 UIDrawCardAwardDetailItemNew = UIDrawCardAwardDetailItemNew
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardAwardDetailItemNew.OnShow = function(self)
-  -- function num : 0_0
+function UIDrawCardAwardDetailItemNew:OnShow()
   self.title = self:GetUIComponent("UILocalizationText", "title")
   self.detail = self:GetUIComponent("UILocalizationText", "detail")
   self.content = self:GetGameObject("content")
@@ -33,142 +26,89 @@ UIDrawCardAwardDetailItemNew.OnShow = function(self)
   self.uiLayout = self:GetUIComponent("RectTransform", "uiLayout")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardDetailItemNew.SetWishPool = function(self, isOpen, wishPool)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDrawCardAwardDetailItemNew:SetWishPool(isOpen, wishPool)
   self._wishPoolOpen = isOpen
   if wishPool ~= nil then
     self._wishPool = {1000}
-    for k,v in pairs(wishPool) do
-      -- DECOMPILER ERROR at PC13: Confused about usage of register: R8 in 'UnsetPending'
-
-      (self._wishPool)[k + 1] = v
+    for k, v in pairs(wishPool) do
+      self._wishPool[k + 1] = v
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardDetailItemNew.SetData = function(self, title, content, id)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDrawCardAwardDetailItemNew:SetData(title, content, id)
   self.poolId = id
-  local cfg = (Cfg.cfg_recruit_pool_view)[id]
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.title).text = (StringTable.Get)(title)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
+  local cfg = Cfg.cfg_recruit_pool_view[id]
+  self.title.text = StringTable.Get(title)
   if content then
-    (self.detail).text = (StringTable.Get)(content)
+    self.detail.text = StringTable.Get(content)
   else
-    ;
-    (self.content):SetActive(false)
+    self.content:SetActive(false)
   end
   if not id then
-    (self.allPetTitle):SetActive(false)
-    ;
-    (self.upTitle):SetActive(false)
-    ;
-    (self.upSix):SetActive(false)
-    ;
-    (self.upPetSix):SetActive(false)
-    ;
-    (self.upFive):SetActive(false)
-    ;
-    (self.upPetFive):SetActive(false)
-    ;
-    (self.mustTitle):SetActive(false)
-    ;
-    (self.must):SetActive(false)
+    self.allPetTitle:SetActive(false)
+    self.upTitle:SetActive(false)
+    self.upSix:SetActive(false)
+    self.upPetSix:SetActive(false)
+    self.upFive:SetActive(false)
+    self.upPetFive:SetActive(false)
+    self.mustTitle:SetActive(false)
+    self.must:SetActive(false)
   end
   if id then
-    (self.allPetTitle):SetActive(true)
-    ;
-    (self.detailItem):SpawnObjects("UIDrawCardAwardPet", 4)
-    local item = (self.detailItem):GetAllSpawnList()
-    for k,value in ipairs(item) do
+    self.allPetTitle:SetActive(true)
+    self.detailItem:SpawnObjects("UIDrawCardAwardPet", 4)
+    local item = self.detailItem:GetAllSpawnList()
+    for k, value in ipairs(item) do
       value:SetWishPool(self._wishPool)
       value:SetData(k, id)
     end
-    ;
-    ((UnityEngine.Canvas).ForceUpdateCanvases)()
+    UnityEngine.Canvas.ForceUpdateCanvases()
   end
-  do
-    if id then
-      local fivepet = cfg.fiveup
-      local sixpet = cfg.sixup
-      local fivetitle = cfg.fivetitle
-      local sixtitle = cfg.sixtitle
-      if sixpet and sixpet[1] and (sixpet[1])[2] then
-        (self.upTitle):SetActive(true)
-        ;
-        (self.upSix):SetActive(true)
-        ;
-        (self.upPetSix):SetActive(true)
-        ;
-        (self.upTitleText):SetText((StringTable.Get)(sixtitle[1]))
-        ;
-        (self.sixrateText):SetText((StringTable.Get)(sixtitle[2]))
-        ;
-        (self.sixup):SpawnObjects("UIDrawCardAwardPetItem", #sixpet)
-        self.sixitems = (self.sixup):GetAllSpawnList()
-        for idx,value in ipairs(self.sixitems) do
-          value:SetData(6, (sixpet[idx])[1], (sixpet[idx])[2] / 1000)
-        end
+  if id then
+    local fivepet = cfg.fiveup
+    local sixpet = cfg.sixup
+    local fivetitle = cfg.fivetitle
+    local sixtitle = cfg.sixtitle
+    if sixpet and sixpet[1] and sixpet[1][2] then
+      self.upTitle:SetActive(true)
+      self.upSix:SetActive(true)
+      self.upPetSix:SetActive(true)
+      self.upTitleText:SetText(StringTable.Get(sixtitle[1]))
+      self.sixrateText:SetText(StringTable.Get(sixtitle[2]))
+      self.sixup:SpawnObjects("UIDrawCardAwardPetItem", #sixpet)
+      self.sixitems = self.sixup:GetAllSpawnList()
+      for idx, value in ipairs(self.sixitems) do
+        value:SetData(6, sixpet[idx][1], sixpet[idx][2] / 1000)
       end
-      do
-        if sixpet and sixpet[1] and (sixpet[1])[2] == nil then
-          (self.mustTitle):SetActive(true)
-          ;
-          (self.must):SetActive(true)
-          ;
-          (self.mustText):SetText((StringTable.Get)(sixtitle[1]))
-          ;
-          (self.mustPet):SpawnObjects("UIDrawCardAwardPetItem", #sixpet)
-          self.mustPetItems = (self.mustPet):GetAllSpawnList()
-          for idx,value in ipairs(self.mustPetItems) do
-            value:SetData(6, (sixpet[idx])[1])
-          end
-        end
-        do
-          if fivepet and fivepet[1] and (fivepet[1])[2] then
-            (self.upTitle):SetActive(true)
-            ;
-            (self.upFive):SetActive(true)
-            ;
-            (self.upPetFive):SetActive(true)
-            ;
-            (self.upTitleText):SetText((StringTable.Get)(fivetitle[1]))
-            ;
-            (self.fiverateText):SetText((StringTable.Get)(fivetitle[2]))
-            ;
-            (self.fiveup):SpawnObjects("UIDrawCardAwardPetItem", #fivepet)
-            self.fiveitems = (self.fiveup):GetAllSpawnList()
-            for idx,value in ipairs(self.fiveitems) do
-              value:SetData(5, (fivepet[idx])[1], (fivepet[idx])[2] / 1000)
-            end
-          end
-          do
-            ;
-            ((self.wishUnopen).gameObject):SetActive(not self._wishPoolOpen or self._wishPool == nil)
-            ;
-            ((self.wishOpen).gameObject):SetActive(not self._wishPoolOpen or self._wishPool ~= nil)
-            ;
-            (((UnityEngine.UI).LayoutRebuilder).MarkLayoutForRebuild)(self.uiLayout)
-            -- DECOMPILER ERROR: 4 unprocessed JMP targets
-          end
-        end
+    end
+    if sixpet and sixpet[1] and sixpet[1][2] == nil then
+      self.mustTitle:SetActive(true)
+      self.must:SetActive(true)
+      self.mustText:SetText(StringTable.Get(sixtitle[1]))
+      self.mustPet:SpawnObjects("UIDrawCardAwardPetItem", #sixpet)
+      self.mustPetItems = self.mustPet:GetAllSpawnList()
+      for idx, value in ipairs(self.mustPetItems) do
+        value:SetData(6, sixpet[idx][1])
+      end
+    end
+    if fivepet and fivepet[1] and fivepet[1][2] then
+      self.upTitle:SetActive(true)
+      self.upFive:SetActive(true)
+      self.upPetFive:SetActive(true)
+      self.upTitleText:SetText(StringTable.Get(fivetitle[1]))
+      self.fiverateText:SetText(StringTable.Get(fivetitle[2]))
+      self.fiveup:SpawnObjects("UIDrawCardAwardPetItem", #fivepet)
+      self.fiveitems = self.fiveup:GetAllSpawnList()
+      for idx, value in ipairs(self.fiveitems) do
+        value:SetData(5, fivepet[idx][1], fivepet[idx][2] / 1000)
       end
     end
   end
+  self.wishUnopen.gameObject:SetActive(self._wishPoolOpen and self._wishPool == nil)
+  self.wishOpen.gameObject:SetActive(self._wishPoolOpen and self._wishPool ~= nil)
+  UnityEngine.UI.LayoutRebuilder.MarkLayoutForRebuild(self.uiLayout)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardDetailItemNew.OnHide = function(self)
-  -- function num : 0_3
+function UIDrawCardAwardDetailItemNew:OnHide()
 end
-
-

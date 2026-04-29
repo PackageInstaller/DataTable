@@ -1,46 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n31/popstar/ui_popstar_task_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPopStarTaskItem", UICustomWidget)
 UIPopStarTaskItem = UIPopStarTaskItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPopStarTaskItem.OnShow = function(self)
-  -- function num : 0_0
+function UIPopStarTaskItem:OnShow()
   self._desLabel = self:GetUIComponent("UILocalizationText", "Des")
   self._countLabel = self:GetUIComponent("UILocalizationText", "Count")
   self._complete = self:GetGameObject("Complete")
   self._rewardLoader = self:GetUIComponent("UISelectObjectPath", "Content")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTaskItem.SetData = function(self, data, rewardClick)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPopStarTaskItem:SetData(data, rewardClick)
   local total = data:GetTotal()
   local progress = data:GetProgress()
-  ;
-  (self._desLabel):SetText((StringTable.Get)("str_n31_popstar_task_des", total))
-  ;
-  (self._countLabel):SetText((StringTable.Get)("str_n31_popstar_challenge_level_task_count", progress, total))
-  ;
-  (self._complete):SetActive(data:IsComplete())
+  self._desLabel:SetText(StringTable.Get("str_n31_popstar_task_des", total))
+  self._countLabel:SetText(StringTable.Get("str_n31_popstar_challenge_level_task_count", progress, total))
+  self._complete:SetActive(data:IsComplete())
   local rewards = data:GetRewards()
-  ;
-  (self._rewardLoader):SpawnObjects("UIPopStarRewardItem", #rewards)
-  local list = (self._rewardLoader):GetAllSpawnList()
+  self._rewardLoader:SpawnObjects("UIPopStarRewardItem", #rewards)
+  local list = self._rewardLoader:GetAllSpawnList()
   for i = 1, #list do
     local item = list[i]
     item:SetData(rewards[i], data:IsComplete(), 0.9, function(id, pos)
-    -- function num : 0_1_0 , upvalues : rewardClick
-    if rewardClick then
-      rewardClick(id, pos)
-    end
-  end
-)
+      if rewardClick then
+        rewardClick(id, pos)
+      end
+    end)
   end
 end
-
-

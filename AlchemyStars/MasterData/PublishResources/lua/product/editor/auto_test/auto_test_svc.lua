@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/auto_test_svc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AutoTestService", BaseService)
 AutoTestService = AutoTestService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AutoTestService.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.md = (GameGlobal.GetModule)(AutoTestModule)
+function AutoTestService:Constructor()
+  self.md = GameGlobal.GetModule(AutoTestModule)
   self._cheat = AutoTestCheat:New(self._world, self)
   self._isRunning = false
   self._blackBoard = {}
@@ -19,184 +12,130 @@ AutoTestService.Constructor = function(self)
   self._entities = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService.IsRunning = function(self)
-  -- function num : 0_1
+function AutoTestService:IsRunning()
   return self._isRunning
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService.AutoTest = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  local config = (self.md):GetTestConfig()
-  local setup = (self.md):GetTestSetup()
+function AutoTestService:AutoTest(TT)
+  local config = self.md:GetTestConfig()
+  local setup = self.md:GetTestSetup()
   local cases = config.cases
   self:BeginAutoTest_Test(config, setup)
   self:BeginSuiteLog_Test(config.name)
-  for i,case in ipairs(cases) do
+  for i, case in ipairs(cases) do
     self:RunCase(TT, case)
   end
   self:EndSuiteLog_Test()
   self:EndAutoTest_Test()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService.BeginAutoTest_Test = function(self, config, setup)
-  -- function num : 0_3 , upvalues : _ENV
+function AutoTestService:BeginAutoTest_Test(config, setup)
   self._isRunning = true
   self._checkPoints = {}
   self._logCollector = {}
   self._logs = {}
   self._entities = {}
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._entities).team = teamEntity
-  local es = (teamEntity:Team()):GetTeamPetEntities()
-  for i,e in ipairs(es) do
-    local petid = (e:PetPstID()):GetTemplateID()
-    for _,pet in ipairs(config.petList) do
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  self._entities.team = teamEntity
+  local es = teamEntity:Team():GetTeamPetEntities()
+  for i, e in ipairs(es) do
+    local petid = e:PetPstID():GetTemplateID()
+    for _, pet in ipairs(config.petList) do
       if pet.id == petid then
-        if (self._entities)[pet.name] then
-          (Log.error)("白盒测试对象命名冲突：", pet.name)
+        if self._entities[pet.name] then
+          Log.error("白盒测试对象命名冲突：", pet.name)
         end
-        -- DECOMPILER ERROR at PC47: Confused about usage of register: R16 in 'UnsetPending'
-
-        ;
-        (self._entities)[pet.name] = e
+        self._entities[pet.name] = e
         break
       end
     end
   end
-  local teamEntity = ((self._world):Player()):GetRemoteTeamEntity()
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R6 in 'UnsetPending'
-
+  local teamEntity = self._world:Player():GetRemoteTeamEntity()
   if teamEntity then
-    (self._entities).enemy = teamEntity
-    local es = (teamEntity:Team()):GetTeamPetEntities()
-    for i,e in ipairs(es) do
-      local petid = (e:PetPstID()):GetTemplateID()
-      for _,pet in ipairs(config.remotePet) do
+    self._entities.enemy = teamEntity
+    local es = teamEntity:Team():GetTeamPetEntities()
+    for i, e in ipairs(es) do
+      local petid = e:PetPstID():GetTemplateID()
+      for _, pet in ipairs(config.remotePet) do
         if pet.id == petid then
-          if (self._entities)[pet.name] then
-            (Log.error)("白盒测试对象命名冲突：", pet.name)
+          if self._entities[pet.name] then
+            Log.error("白盒测试对象命名冲突：", pet.name)
           end
-          -- DECOMPILER ERROR at PC93: Confused about usage of register: R18 in 'UnsetPending'
-
-          ;
-          (self._entities)[pet.name] = e
+          self._entities[pet.name] = e
           break
         end
       end
     end
   end
-  do
-    setup:OnWaitInput(self._world)
-  end
+  setup:OnWaitInput(self._world)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService.EndAutoTest_Test = function(self)
-  -- function num : 0_4
+function AutoTestService:EndAutoTest_Test()
   self._blackBoard = {}
-  ;
-  (self.md):AddResultLogs(self._logs)
-  ;
-  (self.md):AutoTestClose()
+  self.md:AddResultLogs(self._logs)
+  self.md:AutoTestClose()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService.RunCase = function(self, TT, case)
-  -- function num : 0_5 , upvalues : _ENV
+function AutoTestService:RunCase(TT, case)
   self:BeginCaseLog_Test(case.name)
-  for i,node in ipairs(case) do
-    local action = (self._cheat)[node.action .. "_Test"]
+  for i, node in ipairs(case) do
+    local action = self._cheat[node.action .. "_Test"]
     if not action then
       local class = Classes[node.action .. "_Test"]
       if class then
         self:AddCheckPoint_Test(node)
       else
-        ;
-        (Log.exception)("RunCase() not find action=", node.action)
-        return 
+        Log.exception("RunCase() not find action=", node.action)
+        return
       end
     else
-      do
-        do
-          ;
-          (Log.debug)("[AutoTest] RunCase action:", i, " ", node.action)
-          action(self._cheat, TT, node.args)
-          YIELD(TT, 100)
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      Log.debug("[AutoTest] RunCase action:", i, " ", node.action)
+      action(self._cheat, TT, node.args)
     end
+    YIELD(TT, 100)
   end
   self:EndCaseLog_Test()
   self:RemoveCheckPoints_Test()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService.BeginSuiteLog_Test = function(self, suiteName)
-  -- function num : 0_6 , upvalues : _ENV
-  (table.insert)(self._logCollector, {suiteName = suiteName, time = (os.date)("%Y-%m-%d %H:%M:%S")})
+function AutoTestService:BeginSuiteLog_Test(suiteName)
+  table.insert(self._logCollector, {
+    suiteName = suiteName,
+    time = os.date("%Y-%m-%d %H:%M:%S")
+  })
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService.BeginCaseLog_Test = function(self, caseName)
-  -- function num : 0_7
-  local suiteLog = (self._logCollector)[#self._logCollector]
+function AutoTestService:BeginCaseLog_Test(caseName)
+  local suiteLog = self._logCollector[#self._logCollector]
   suiteLog[#suiteLog + 1] = {caseName = caseName}
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService.AddActionLog_Test = function(self, t)
-  -- function num : 0_8
-  local suiteLog = (self._logCollector)[#self._logCollector]
+function AutoTestService:AddActionLog_Test(t)
+  local suiteLog = self._logCollector[#self._logCollector]
   local caseLog = suiteLog[#suiteLog]
   caseLog[#caseLog + 1] = t
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService.EndCaseLog_Test = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  for i,v in ipairs(self._checkPoints) do
-    local t = (v.checker):CollectResult()
+function AutoTestService:EndCaseLog_Test()
+  for i, v in ipairs(self._checkPoints) do
+    local t = v.checker:CollectResult()
     self:AddActionLog_Test(t)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService.EndSuiteLog_Test = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function AutoTestService:EndSuiteLog_Test()
   local fail = false
-  local suiteLog = (self._logCollector)[#self._logCollector]
+  local suiteLog = self._logCollector[#self._logCollector]
   local mdb = MarkdownBuilder:New()
   local branchName = "[" .. self:_OnGetBranchName() .. "]"
   local consoleLog = branchName .. " 用例组:" .. suiteLog.suiteName .. "\n"
   local s = branchName .. " 用例组:" .. suiteLog.suiteName
   mdb:AppendH1(s)
-  for i,case in ipairs(suiteLog) do
+  for i, case in ipairs(suiteLog) do
     consoleLog = consoleLog .. "\t[" .. i .. "] 用例:" .. case.caseName .. "\n"
     s = "[" .. i .. "] 用例:" .. case.caseName
     mdb:AppendH2(s)
-    for i,action in ipairs(case) do
+    for i, action in ipairs(case) do
       local actionName = self:_ActionNameTranslate(action.actionName)
       consoleLog = consoleLog .. "\t\t" .. "[" .. actionName .. "] result:"
       s = "\t\t" .. "[" .. actionName .. "] result:"
@@ -216,43 +155,32 @@ AutoTestService.EndSuiteLog_Test = function(self)
       mdb:AppendColorGray(s)
     end
   end
-  ;
-  (Log.debug)(consoleLog)
+  Log.debug(consoleLog)
   s = mdb:ToString()
-  if fail and (self.md):GetStartType() ~= AutoTestStartType.Debug then
-    (self.md):AddFailedSuite(suiteLog.suiteName)
-    ;
-    (WorkWXPoster.SendWorkWXMarkDown)(s)
+  if fail and self.md:GetStartType() ~= AutoTestStartType.Debug then
+    self.md:AddFailedSuite(suiteLog.suiteName)
+    WorkWXPoster.SendWorkWXMarkDown(s)
   end
-  ;
-  (table.insert)(self._logs, consoleLog)
+  table.insert(self._logs, consoleLog)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService._OnGetBranchName = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function AutoTestService:_OnGetBranchName()
   local strStoragePath = EngineGameHelper.StoragePath
   local branchName = ""
-  local findBranchNameTrunk, trunktartIndex = (string.find)(strStoragePath, "matchsrpg/trunk")
-  local findBranchName, branchStartIndex = (string.find)(strStoragePath, "matchsrpg/b/")
+  local findBranchNameTrunk, trunktartIndex = string.find(strStoragePath, "matchsrpg/trunk")
+  local findBranchName, branchStartIndex = string.find(strStoragePath, "matchsrpg/b/")
   if findBranchNameTrunk then
     branchName = "trunk分支"
   end
   if findBranchName then
-    local str = (string.sub)(strStoragePath, branchStartIndex + 1, 99)
-    local findBranchNameNextLine, lineStartIndex = (string.find)(str, "/")
-    branchName = (string.sub)(str, 1, lineStartIndex - 1) .. "分支"
+    local str = string.sub(strStoragePath, branchStartIndex + 1, 99)
+    local findBranchNameNextLine, lineStartIndex = string.find(str, "/")
+    branchName = string.sub(str, 1, lineStartIndex - 1) .. "分支"
   end
-  do
-    return branchName
-  end
+  return branchName
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService._ActionNameTranslate = function(self, actionName)
-  -- function num : 0_12 , upvalues : _ENV
+function AutoTestService:_ActionNameTranslate(actionName)
   local actionNameStr = actionName
   local actionNameTranslateStr = AutoTestCheckNameTranslate[actionName]
   if actionNameTranslateStr then
@@ -261,44 +189,37 @@ AutoTestService._ActionNameTranslate = function(self, actionName)
   return actionNameStr
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService.AddCheckPoint_Test = function(self, node)
-  -- function num : 0_13 , upvalues : _ENV
+function AutoTestService:AddCheckPoint_Test(node)
   local action = node.action
   local args = node.args
   local class = _G[action .. "_Test"]
   if not class then
-    (Log.error)("AddCheckPoint_Test not find check point ", action)
-    return 
+    Log.error("AddCheckPoint_Test not find check point ", action)
+    return
   end
-  local e = (self._entities)[args.name or "team"]
+  local e = self._entities[args.name or "team"]
   local checker = class:New(e, args, self._world)
   if args.trigger == 0 then
     checker:OnTrigger()
-    ;
-    (table.insert)(self._checkPoints, {trigger = nil, checker = checker})
-    return 
+    table.insert(self._checkPoints, {trigger = nil, checker = checker})
+    return
   end
-  local svc = (self._world):GetService("Trigger")
+  local svc = self._world:GetService("Trigger")
   local cond = {
-{args.trigger}
-, 
-{1}
-}
+    {
+      args.trigger
+    },
+    {1}
+  }
   local trigger = svc:CreateTrigger(checker, cond, self._world)
   trigger:SetActive(true)
   svc:Attach(trigger)
-  ;
-  (table.insert)(self._checkPoints, {trigger = trigger, checker = checker})
+  table.insert(self._checkPoints, {trigger = trigger, checker = checker})
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService.RemoveCheckPoints_Test = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local svc = (self._world):GetService("Trigger")
-  for i,v in ipairs(self._checkPoints) do
+function AutoTestService:RemoveCheckPoints_Test()
+  local svc = self._world:GetService("Trigger")
+  for i, v in ipairs(self._checkPoints) do
     if v.trigger then
       svc:Detach(v.trigger)
     end
@@ -306,63 +227,36 @@ AutoTestService.RemoveCheckPoints_Test = function(self)
   self._checkPoints = {}
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService.DetachCheckPassedPoints_Test = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local svc = (self._world):GetService("Trigger")
-  for i,v in ipairs(self._checkPoints) do
-    if (v.checker)._result == AutoTestCheckResult.CheckPassed and v.trigger then
+function AutoTestService:DetachCheckPassedPoints_Test()
+  local svc = self._world:GetService("Trigger")
+  for i, v in ipairs(self._checkPoints) do
+    if v.checker._result == AutoTestCheckResult.CheckPassed and v.trigger then
       svc:Detach(v.trigger)
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService.WriteBlackBoard_Test = function(self, key, value)
-  -- function num : 0_16
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._blackBoard)[key] = value
+function AutoTestService:WriteBlackBoard_Test(key, value)
+  self._blackBoard[key] = value
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService.ReadBlackBoard_Test = function(self, key, default)
-  -- function num : 0_17
-  return (self._blackBoard)[key] or default
+function AutoTestService:ReadBlackBoard_Test(key, default)
+  return self._blackBoard[key] or default
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService.GetEntityByName_Test = function(self, entityName)
-  -- function num : 0_18
-  local e = (self._entities)[entityName]
+function AutoTestService:GetEntityByName_Test(entityName)
+  local e = self._entities[entityName]
   return e
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService.SetEntityName_Test = function(self, name, entity)
-  -- function num : 0_19
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._entities)[name] = entity
+function AutoTestService:SetEntityName_Test(name, entity)
+  self._entities[name] = entity
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService.SetGameOver_Test = function(self)
-  -- function num : 0_20
+function AutoTestService:SetGameOver_Test()
   self._gameOver = true
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestService.IsGameOver_Test = function(self)
-  -- function num : 0_21
+function AutoTestService:IsGameOver_Test()
   return self._gameOver
 end
-
-

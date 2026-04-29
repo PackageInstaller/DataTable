@@ -1,50 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/audio/season_audio_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonAudioManager", Object)
 SeasonAudioManager = SeasonAudioManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonAudioManager.Constructor = function(self)
-  -- function num : 0_0
+function SeasonAudioManager:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudioManager.OnInit = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonAudioManager:OnInit()
   self._seasonAudio = SeasonAudio:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudioManager.OnAfterInit = function(self)
-  -- function num : 0_2
-  (self._seasonAudio):OnAfterInit()
+function SeasonAudioManager:OnAfterInit()
+  self._seasonAudio:OnAfterInit()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudioManager.Update = function(self, deltaTime)
-  -- function num : 0_3
-  (self._seasonAudio):Update(deltaTime)
+function SeasonAudioManager:Update(deltaTime)
+  self._seasonAudio:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudioManager.Dispose = function(self)
-  -- function num : 0_4
-  (self._seasonAudio):Dispose()
+function SeasonAudioManager:Dispose()
+  self._seasonAudio:Dispose()
   self._seasonAudio = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudioManager.GetSeasonAudio = function(self)
-  -- function num : 0_5
+function SeasonAudioManager:GetSeasonAudio()
   return self._seasonAudio
 end
-
-

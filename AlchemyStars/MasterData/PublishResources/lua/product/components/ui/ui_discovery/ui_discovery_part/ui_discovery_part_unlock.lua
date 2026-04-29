@@ -1,40 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_part/ui_discovery_part_unlock.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiscoveryPartUnlock", UIController)
 UIDiscoveryPartUnlock = UIDiscoveryPartUnlock
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiscoveryPartUnlock.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDiscoveryPartUnlock:Constructor()
   self.module = self:GetModule(MissionModule)
-  self.data = (self.module):GetDiscoveryData()
+  self.data = self.module:GetDiscoveryData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPartUnlock.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDiscoveryPartUnlock:OnShow(uiParams)
   local sectionId = uiParams[1]
-  local section = (self.data):GetDiscoverySectionBySectionId(sectionId)
+  local section = self.data:GetDiscoverySectionBySectionId(sectionId)
   self.txtHint = self:GetUIComponent("UILocalizationText", "txtHint")
-  ;
-  (self.txtHint):SetText((StringTable.Get)("str_discovery_section_unlock", section.index_name))
+  self.txtHint:SetText(StringTable.Get("str_discovery_section_unlock", section.index_name))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPartUnlock.OnHide = function(self)
-  -- function num : 0_2
+function UIDiscoveryPartUnlock:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPartUnlock.BgOnClick = function(self, go)
-  -- function num : 0_3
+function UIDiscoveryPartUnlock:BgOnClick(go)
   self:CloseDialog()
 end
-
-

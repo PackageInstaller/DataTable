@@ -1,131 +1,84 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/command_handler/scan_feature_command_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("command_base_handler")
 require("match_message")
 require("scan_feature_command")
 _class("ScanFeatureCommandHandler", CommandBaseHandler)
 ScanFeatureCommandHandler = ScanFeatureCommandHandler
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-ScanFeatureCommandHandler.DoHandleCommand = function(self, cmd)
-  -- function num : 0_0 , upvalues : _ENV
+function ScanFeatureCommandHandler:DoHandleCommand(cmd)
   local scanSkillType = cmd:GetActiveSkillType()
   local trapID = cmd:GetScanTrapID()
-  local globalLogicFeatureEntities = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).LogicFeature)
+  local globalLogicFeatureEntities = self._world:GetGroupEntities(self._world.BW_WEMatchers.LogicFeature)
   local e = globalLogicFeatureEntities[1]
   if not e then
-    (Log.exception)("ScanFeatureCommandHandler: no LogicFeatureComponent found. ")
-    return 
+    Log.exception("ScanFeatureCommandHandler: no LogicFeatureComponent found. ")
+    return
   end
-  if not ((self._world):GetService("FeatureLogic")):HasFeatureType(FeatureType.Scan) then
-    (Log.exception)("ScanFeatureCommandHandler: no FeatureType.Scan in current match. ")
-    return 
+  if not self._world:GetService("FeatureLogic"):HasFeatureType(FeatureType.Scan) then
+    Log.exception("ScanFeatureCommandHandler: no FeatureType.Scan in current match. ")
+    return
   end
   local cLogicFeature = e:LogicFeature()
   cLogicFeature:SetScanResult(scanSkillType, trapID)
-  local activeSkillID = (cLogicFeature:GetScanSummonTrapSkillID())
-  local skillConfigData = nil
-  local globalMatchPetGroup = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).MatchPet)
-  for _,petEntity in ipairs(globalMatchPetGroup) do
-    local matchPet = (petEntity:MatchPet()):GetMatchPet()
-    if not matchPet:GetFeatureList() then
-      local featureList = {
-feature = {}
-}
-    end
-    if (featureList.feature)[FeatureType.Scan] then
+  local activeSkillID = cLogicFeature:GetScanSummonTrapSkillID()
+  local skillConfigData
+  local globalMatchPetGroup = self._world:GetGroupEntities(self._world.BW_WEMatchers.MatchPet)
+  for _, petEntity in ipairs(globalMatchPetGroup) do
+    local matchPet = petEntity:MatchPet():GetMatchPet()
+    local featureList = matchPet:GetFeatureList() or {
+      feature = {}
+    }
+    if featureList.feature[FeatureType.Scan] then
       if scanSkillType == ScanFeatureActiveSkillType.SummonTrap then
         activeSkillID = cLogicFeature:GetScanSummonTrapSkillID()
-        skillConfigData = ((self._world):GetService("Config")):GetSkillConfigData(activeSkillID)
-      else
-        if scanSkillType == ScanFeatureActiveSkillType.ForceMovement then
-          activeSkillID = cLogicFeature:GetScanForceMovementSkillID()
-          skillConfigData = ((self._world):GetService("Config")):GetSkillConfigData(activeSkillID)
-        else
-          if scanSkillType == ScanFeatureActiveSkillType.SummonScanTrap then
-            activeSkillID = cLogicFeature:GetScanSummonScanTrapSkillID()
-            local cfgTrapScan = (Cfg.cfg_trap_scan)[trapID]
-            if not cfgTrapScan then
-              (Log.exception)("ScanFeatureCommandHandler: invalid trapID: ", tostring(trapID))
-              return 
-            end
-            local templateSkillConfigData = ((self._world):GetService("Config")):GetSkillConfigData(activeSkillID, petEntity, true)
-            if not cfgTrapScan.PreviewList then
-              local tmpSkillConfig = {PickUpScopeType = cfgTrapScan.PickUpScopeType, PickUpInvalidScopeList = cfgTrapScan.PickUpInvalidScopeList, PreviewList = templateSkillConfigData.PreviewList}
-              do
-                local cfgDecoSvc = (self._world):GetService("ConfigDecoration")
-                skillConfigData = cfgDecoSvc:GenerateSkillConfigData(activeSkillID, {_skillDesc = cfgTrapScan.Desc, _triggerParam = cfgTrapScan.Energy})
-                skillConfigData:ParsePreview(tmpSkillConfig)
-                ;
-                (Log.exception)("ScanFeatureCommandHandler: invalid active skill type: ", tostring(scanSkillType))
-                do return  end
-                ;
-                (petEntity:SkillInfo()):SetActiveSkillID(skillConfigData:GetID())
-                cLogicFeature:SetActiveSkillConfigData(skillConfigData)
-                local matchPet = (petEntity:MatchPet()):GetMatchPet()
-                if not matchPet:GetFeatureList() then
-                  local featureList = {
-feature = {}
-}
-                end
-                if (featureList.feature)[FeatureType.Scan] then
-                  (petEntity:SkillInfo()):SetActiveSkillID(skillConfigData:GetID())
-                end
-                local requiredEnergy = skillConfigData:GetSkillTriggerParam()
-                local currentEnergy = (petEntity:Attributes()):GetAttribute("LegendPower")
-                local isReady = requiredEnergy <= currentEnergy and 1 or 0
-                local blsvc = (self._world):GetService("BuffLogic")
-                blsvc:ChangePetActiveSkillReady(petEntity, isReady)
-                local oldActiveSkillConfig = cLogicFeature:GetActiveSkillConfigData()
-                if not oldActiveSkillConfig then
-                  oldActiveSkillConfig = ((self._world):GetService("Config")):GetSkillConfigData((petEntity:SkillInfo()):GetActiveSkillID())
-                end
-                local previouslyReady = requiredEnergy <= oldActiveSkillConfig:GetSkillTriggerParam()
-                do
-                  do
-                    if (self._world):RunAtClient() then
-                      local pstID = (petEntity:PetPstID()):GetPstID()
-                      ;
-                      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ScanFeatureReplaceUIActiveSkillID, pstID, skillConfigData:GetID(), isReady, previouslyReady)
-                    end
-                    do break end
-                    -- DECOMPILER ERROR at PC261: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC261: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC261: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC261: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC261: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC261: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC261: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC261: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC261: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC261: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC261: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC261: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
-                end
-              end
-            end
-          end
+        skillConfigData = self._world:GetService("Config"):GetSkillConfigData(activeSkillID)
+      elseif scanSkillType == ScanFeatureActiveSkillType.ForceMovement then
+        activeSkillID = cLogicFeature:GetScanForceMovementSkillID()
+        skillConfigData = self._world:GetService("Config"):GetSkillConfigData(activeSkillID)
+      elseif scanSkillType == ScanFeatureActiveSkillType.SummonScanTrap then
+        activeSkillID = cLogicFeature:GetScanSummonScanTrapSkillID()
+        local cfgTrapScan = Cfg.cfg_trap_scan[trapID]
+        if not cfgTrapScan then
+          Log.exception("ScanFeatureCommandHandler: invalid trapID: ", tostring(trapID))
+          return
         end
+        local templateSkillConfigData = self._world:GetService("Config"):GetSkillConfigData(activeSkillID, petEntity, true)
+        local tmpSkillConfig = {
+          PickUpScopeType = cfgTrapScan.PickUpScopeType,
+          PickUpInvalidScopeList = cfgTrapScan.PickUpInvalidScopeList,
+          PreviewList = cfgTrapScan.PreviewList or templateSkillConfigData.PreviewList
+        }
+        local cfgDecoSvc = self._world:GetService("ConfigDecoration")
+        skillConfigData = cfgDecoSvc:GenerateSkillConfigData(activeSkillID, {
+          _skillDesc = cfgTrapScan.Desc,
+          _triggerParam = cfgTrapScan.Energy
+        })
+        skillConfigData:ParsePreview(tmpSkillConfig)
+      else
+        Log.exception("ScanFeatureCommandHandler: invalid active skill type: ", tostring(scanSkillType))
+        return
       end
+      petEntity:SkillInfo():SetActiveSkillID(skillConfigData:GetID())
+      cLogicFeature:SetActiveSkillConfigData(skillConfigData)
+      local matchPet = petEntity:MatchPet():GetMatchPet()
+      local featureList = matchPet:GetFeatureList() or {
+        feature = {}
+      }
+      if featureList.feature[FeatureType.Scan] then
+        petEntity:SkillInfo():SetActiveSkillID(skillConfigData:GetID())
+      end
+      local requiredEnergy = skillConfigData:GetSkillTriggerParam()
+      local currentEnergy = petEntity:Attributes():GetAttribute("LegendPower")
+      local isReady = requiredEnergy <= currentEnergy and 1 or 0
+      local blsvc = self._world:GetService("BuffLogic")
+      blsvc:ChangePetActiveSkillReady(petEntity, isReady)
+      local oldActiveSkillConfig = cLogicFeature:GetActiveSkillConfigData()
+      oldActiveSkillConfig = oldActiveSkillConfig or self._world:GetService("Config"):GetSkillConfigData(petEntity:SkillInfo():GetActiveSkillID())
+      local previouslyReady = requiredEnergy <= oldActiveSkillConfig:GetSkillTriggerParam()
+      if self._world:RunAtClient() then
+        local pstID = petEntity:PetPstID():GetPstID()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.ScanFeatureReplaceUIActiveSkillID, pstID, skillConfigData:GetID(), isReady, previouslyReady)
+      end
+      break
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
-
-

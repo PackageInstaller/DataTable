@@ -1,56 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/main/ui_homeland_movie_explain_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMovieExplainController", UIController)
 UIHomelandMovieExplainController = UIHomelandMovieExplainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMovieExplainController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._cfg = (Cfg.cfg_homeland_movice_expain)({})
+function UIHomelandMovieExplainController:Constructor()
+  self._cfg = Cfg.cfg_homeland_movice_expain({})
   self._widgets = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieExplainController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandMovieExplainController:OnShow(uiParams)
   self:InitWidget()
   self:SetData()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieExplainController.OnHide = function(self)
-  -- function num : 0_2
+function UIHomelandMovieExplainController:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieExplainController.InitWidget = function(self)
-  -- function num : 0_3
+function UIHomelandMovieExplainController:InitWidget()
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieExplainController.SetData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._widgets = (self._content):SpawnObjects("UIHomelandMovieExplainItem", (table.count)(self._cfg))
+function UIHomelandMovieExplainController:SetData()
+  self._widgets = self._content:SpawnObjects("UIHomelandMovieExplainItem", table.count(self._cfg))
   local index = 1
-  for i,v in pairs(self._cfg) do
-    ((self._widgets)[index]):SetData(v)
+  for i, v in pairs(self._cfg) do
+    self._widgets[index]:SetData(v)
     index = index + 1
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieExplainController.BtnBackOnClick = function(self, TT)
-  -- function num : 0_5
+function UIHomelandMovieExplainController:BtnBackOnClick(TT)
   self:CloseDialog()
 end
-
-

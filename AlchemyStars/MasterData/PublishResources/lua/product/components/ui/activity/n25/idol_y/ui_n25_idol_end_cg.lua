@@ -1,35 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/ui_n25_idol_end_cg.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolEndCG", UIController)
 UIN25IdolEndCG = UIN25IdolEndCG
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolEndCG.Constructor = function(self)
-  -- function num : 0_0
+function UIN25IdolEndCG:Constructor()
   self._endingId = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolEndCG.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIN25IdolEndCG:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N25)
-  self._idolComponent = (self._localProcess):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
-  self._endingId = (self._idolComponent):GetCurrentEndingId()
-  local idolInfo = (self._idolComponent):GetComponentInfo()
+  self._idolComponent = self._localProcess:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
+  self._endingId = self._idolComponent:GetCurrentEndingId()
+  local idolInfo = self._idolComponent:GetComponentInfo()
   self._achieveList = idolInfo.ending_list
   local breakInfo = idolInfo.break_info
   self._valueFans = breakInfo.funs_num
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolEndCG.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN25IdolEndCG:OnShow(uiParams)
   self._atlas = self:GetAsset("UIN25Idol.spriteatlas", LoadType.SpriteAtlas)
   self._uiWidget = self:GetUIComponent("RectTransform", "uiWidget")
   self._uiShow = self:GetUIComponent("RectTransform", "uiShow")
@@ -48,105 +35,64 @@ UIN25IdolEndCG.OnShow = function(self, uiParams)
   self:FlushAchieve()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolEndCG.OnHide = function(self)
-  -- function num : 0_3
+function UIN25IdolEndCG:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolEndCG.CreateAchievePool = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN25IdolEndCG:CreateAchievePool()
   self._achievePoolData = {}
-  local allAchieves = (Cfg.cfg_component_idol_achieve)({})
-  for k,v in pairs(self._achieveList) do
+  local allAchieves = Cfg.cfg_component_idol_achieve({})
+  for k, v in pairs(self._achieveList) do
     local cfg = allAchieves[v]
     if cfg ~= nil then
-      (table.insert)(self._achievePoolData, cfg)
+      table.insert(self._achievePoolData, cfg)
     end
   end
-  ;
-  (table.sort)(self._achievePoolData, function(a, b)
-    -- function num : 0_4_0
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._achievePoolData, function(a, b)
+    return a.ID < b.ID
+  end)
   local countAchieve = #self._achievePoolData
-  self._achievePool = (self._achieveContent):SpawnObjects("UIN25IdolAchieveTitle", countAchieve)
+  self._achievePool = self._achieveContent:SpawnObjects("UIN25IdolAchieveTitle", countAchieve)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolEndCG.InitCommonTopButton = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._backBtns = (self._ltBtn):SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_5_0 , upvalues : self, _ENV
+function UIN25IdolEndCG:InitCommonTopButton()
+  self._backBtns = self._ltBtn:SpawnObject("UINewCommonTopButton")
+  self._backBtns:SetData(function()
     self:SwitchState(UIStateType.UIN25IdolLogin)
-  end
-, nil, function()
-    -- function num : 0_5_1 , upvalues : self, _ENV
+  end, nil, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-, true, function()
-    -- function num : 0_5_2 , upvalues : self
+  end, true, function()
     self:EnterFullScreenBg(true)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolEndCG.FlushAchieve = function(self)
-  -- function num : 0_6
+function UIN25IdolEndCG:FlushAchieve()
   local countAchieve = #self._achievePoolData
   for i = 1, countAchieve do
-    local ui = (self._achievePool)[i]
-    ui:SetData(self, (self._achievePoolData)[i])
+    local ui = self._achievePool[i]
+    ui:SetData(self, self._achievePoolData[i])
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolEndCG.FlushEndingCG = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local allEndings = (Cfg.cfg_component_idol_ending)({})
+function UIN25IdolEndCG:FlushEndingCG()
+  local allEndings = Cfg.cfg_component_idol_ending({})
   local cfgEnding = allEndings[self._endingId]
   if cfgEnding ~= nil then
-    (self._txtTitle):SetText((StringTable.Get)(cfgEnding.Name))
-    ;
-    (self._cgtBGLoader):LoadImage(cfgEnding.CgPreview)
-    ;
-    (self._txtEndingDesc):SetText((StringTable.Get)(cfgEnding.DescriptionTxt))
+    self._txtTitle:SetText(StringTable.Get(cfgEnding.Name))
+    self._cgtBGLoader:LoadImage(cfgEnding.CgPreview)
+    self._txtEndingDesc:SetText(StringTable.Get(cfgEnding.DescriptionTxt))
   end
-  ;
-  (self._txtFansValue):SetText(self._valueFans)
+  self._txtFansValue:SetText(self._valueFans)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolEndCG.EnterFullScreenBg = function(self, isEnter)
-  -- function num : 0_8
-  ((self._uiWidget).gameObject):SetActive(not isEnter)
-  ;
-  ((self._uiShow).gameObject):SetActive(isEnter)
+function UIN25IdolEndCG:EnterFullScreenBg(isEnter)
+  self._uiWidget.gameObject:SetActive(not isEnter)
+  self._uiShow.gameObject:SetActive(isEnter)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolEndCG.BtnUiShowOnClick = function(self, go)
-  -- function num : 0_9
+function UIN25IdolEndCG:BtnUiShowOnClick(go)
   self:EnterFullScreenBg(false)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolEndCG.GetAtlas = function(self)
-  -- function num : 0_10
+function UIN25IdolEndCG:GetAtlas()
   return self._atlas
 end
-
-

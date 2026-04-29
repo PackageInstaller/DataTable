@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/gronru_game/ui_n28_gronru_game_base_page.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28GronruGameBasePage", UICustomWidget)
 UIN28GronruGameBasePage = UIN28GronruGameBasePage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28GronruGameBasePage.Constructor = function(self)
-  -- function num : 0_0
+function UIN28GronruGameBasePage:Constructor()
   self._parent = nil
   self._cfg = nil
   self._atlas = nil
   self._isHighlight = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameBasePage.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN28GronruGameBasePage:OnShow(uiParams)
   self._uiNormal = self:GetUIComponent("Image", "uiNormal")
   self._uiHighlight = self:GetUIComponent("Image", "uiHighlight")
   self._txtNormal = self:GetUIComponent("UILocalizationText", "txtNormal")
@@ -27,7 +17,7 @@ UIN28GronruGameBasePage.OnShow = function(self, uiParams)
   self._txtHighlight = self:GetUIComponent("UILocalizationText", "txtHighlight")
   self._txtHighlightSub = self:GetUIComponent("UILocalizationText", "txtHighlightSub")
   self._animation = self:GetUIComponent("Animation", "animation")
-  self._atlas = (self:RootUIOwner()):GetSpriteAtlas()
+  self._atlas = self:RootUIOwner():GetSpriteAtlas()
   self._uiNormalCanvasGroup = self:GetUIComponent("CanvasGroup", "uiNormal")
   self._uiHighlightCanvasGroup = self:GetUIComponent("CanvasGroup", "uiHighlight")
   self._txtHighlightShadowCo = self:GetUIComponent("H3D.UGUI.CircleOutline", "txtHighlightShadow")
@@ -35,182 +25,101 @@ UIN28GronruGameBasePage.OnShow = function(self, uiParams)
   self:SetHighlight(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameBasePage.OnHide = function(self)
-  -- function num : 0_2
+function UIN28GronruGameBasePage:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameBasePage.PlayPageBtnAudio = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BounceTab)
+function UIN28GronruGameBasePage:PlayPageBtnAudio()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BounceTab)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameBasePage.BtnPageOnClick = function(self, go)
-  -- function num : 0_4
+function UIN28GronruGameBasePage:BtnPageOnClick(go)
   self:PlayPageBtnAudio()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameBasePage.SetHighlight = function(self, inShow)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN28GronruGameBasePage:SetHighlight(inShow)
   self._isHighlight = inShow
-  ;
-  ((self._uiNormal).gameObject):SetActive(not inShow)
-  ;
-  ((self._uiHighlight).gameObject):SetActive(inShow)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._uiNormalCanvasGroup).alpha = 1
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._uiHighlightCanvasGroup).alpha = 1
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._uiHighlight).transform).anchoredPosition = Vector2(30, 0)
-  local effectColor = (self._txtHighlightShadow).color
+  self._uiNormal.gameObject:SetActive(not inShow)
+  self._uiHighlight.gameObject:SetActive(inShow)
+  self._uiNormalCanvasGroup.alpha = 1
+  self._uiHighlightCanvasGroup.alpha = 1
+  self._uiHighlight.transform.anchoredPosition = Vector2(30, 0)
+  local effectColor = self._txtHighlightShadow.color
   effectColor.a = 1
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._txtHighlightShadow).color = effectColor
-  local effectColor = (self._txtHighlight).color
+  self._txtHighlightShadow.color = effectColor
+  local effectColor = self._txtHighlight.color
   effectColor.a = 1
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._txtHighlight).color = effectColor
-  local effectColor = (self._txtHighlightSub).color
+  self._txtHighlight.color = effectColor
+  local effectColor = self._txtHighlightSub.color
   effectColor.a = 1
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._txtHighlightSub).color = effectColor
-  local effectColor = (self._txtHighlightShadowCo).effectColor
+  self._txtHighlightSub.color = effectColor
+  local effectColor = self._txtHighlightShadowCo.effectColor
   effectColor.a = 1
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._txtHighlightShadowCo).effectColor = effectColor
-  local effectColor = (self._txtHighlightCo).effectColor
+  self._txtHighlightShadowCo.effectColor = effectColor
+  local effectColor = self._txtHighlightCo.effectColor
   effectColor.a = 1
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._txtHighlightCo).effectColor = effectColor
+  self._txtHighlightCo.effectColor = effectColor
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameBasePage.IsHighlight = function(self)
-  -- function num : 0_6
+function UIN28GronruGameBasePage:IsHighlight()
   return self._isHighlight
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameBasePage.ShowNormalHighlight = function(self, showNormal, showHighlight)
-  -- function num : 0_7
-  ((self._uiNormal).gameObject):SetActive(showNormal)
-  ;
-  ((self._uiHighlight).gameObject):SetActive(showHighlight)
+function UIN28GronruGameBasePage:ShowNormalHighlight(showNormal, showHighlight)
+  self._uiNormal.gameObject:SetActive(showNormal)
+  self._uiHighlight.gameObject:SetActive(showHighlight)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameBasePage.GetCfg = function(self)
-  -- function num : 0_8
+function UIN28GronruGameBasePage:GetCfg()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameBasePage.PlayAnimation = function(self, animName, duration, cbComplete)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN28GronruGameBasePage:PlayAnimation(animName, duration, cbComplete)
   local lockName = "UIN28GronruGameBasePage:PlayAnimation_" .. animName
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, lockName, animName, _ENV, duration, cbComplete
+  TaskManager:GetInstance():StartTask(function(TT)
     self:Lock(lockName)
-    ;
-    (self._animation):Play(animName)
+    self._animation:Play(animName)
     YIELD(TT, duration)
     self:UnLock(lockName)
     if cbComplete then
       cbComplete()
     end
-  end
-)
+  end)
 end
 
 _class("UIN28GronruGameAlbumPage", UIN28GronruGameBasePage)
 UIN28GronruGameAlbumPage = UIN28GronruGameAlbumPage
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28GronruGameAlbumPage.Flush = function(self, parent, cfg)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN28GronruGameAlbumPage:Flush(parent, cfg)
   self._parent = parent
   self._cfg = cfg
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._uiNormal).sprite = (self._atlas):GetSprite(cfg.SpriteNormal)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._uiHighlight).sprite = (self._atlas):GetSprite(cfg.SpriteHighlight)
-  ;
-  (self._txtNormal):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self._txtHighlightShadow):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self._txtHighlight):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self._txtNormalSub):SetText((StringTable.Get)(cfg.SubName))
-  ;
-  (self._txtHighlightSub):SetText((StringTable.Get)(cfg.SubName))
+  self._uiNormal.sprite = self._atlas:GetSprite(cfg.SpriteNormal)
+  self._uiHighlight.sprite = self._atlas:GetSprite(cfg.SpriteHighlight)
+  self._txtNormal:SetText(StringTable.Get(cfg.Name))
+  self._txtHighlightShadow:SetText(StringTable.Get(cfg.Name))
+  self._txtHighlight:SetText(StringTable.Get(cfg.Name))
+  self._txtNormalSub:SetText(StringTable.Get(cfg.SubName))
+  self._txtHighlightSub:SetText(StringTable.Get(cfg.SubName))
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAlbumPage.BtnPageOnClick = function(self, go)
-  -- function num : 0_11
-  (self._parent):OpenPageAnimation(self._cfg)
+function UIN28GronruGameAlbumPage:BtnPageOnClick(go)
+  self._parent:OpenPageAnimation(self._cfg)
   self:SetHighlight(true)
   self:PlayPageBtnAudio()
 end
 
 _class("UIN28GronruGameAdventurePage", UIN28GronruGameBasePage)
 UIN28GronruGameAdventurePage = UIN28GronruGameAdventurePage
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28GronruGameAdventurePage.Flush = function(self, parent, cfg)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN28GronruGameAdventurePage:Flush(parent, cfg)
   self._parent = parent
   self._cfg = cfg
-  ;
-  (self._txtNormal):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self._txtHighlightShadow):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self._txtHighlight):SetText((StringTable.Get)(cfg.Name))
+  self._txtNormal:SetText(StringTable.Get(cfg.Name))
+  self._txtHighlightShadow:SetText(StringTable.Get(cfg.Name))
+  self._txtHighlight:SetText(StringTable.Get(cfg.Name))
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventurePage.BtnPageOnClick = function(self, go)
-  -- function num : 0_13
-  (self._parent):OpenPageAnimation(self._cfg)
+function UIN28GronruGameAdventurePage:BtnPageOnClick(go)
+  self._parent:OpenPageAnimation(self._cfg)
   self:SetHighlight(true)
   self:PlayPageBtnAudio()
 end
-
-

@@ -1,73 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_damage_same_pos_reduce.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalcDamageSamePosReduce", Object)
 SkillEffectCalcDamageSamePosReduce = SkillEffectCalcDamageSamePosReduce
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalcDamageSamePosReduce.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalcDamageSamePosReduce:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcDamageSamePosReduce.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalcDamageSamePosReduce:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillDamageParam = skillEffectCalcParam.skillEffectParam
   local range = skillEffectCalcParam.skillRange
   local targetIDs = skillEffectCalcParam:GetTargetEntityIDs()
   if #targetIDs == 1 and targetIDs[1] == -1 then
     local damageStageIndex = skillDamageParam:GetSkillEffectDamageStageIndex()
-    local skillResult = (self._skillEffectService):NewSkillDamageEffectResult(nil, -1, 0, nil, damageStageIndex)
+    local skillResult = self._skillEffectService:NewSkillDamageEffectResult(nil, -1, 0, nil, damageStageIndex)
     return {skillResult}
   end
-  do
-    local casterID = skillEffectCalcParam.casterEntityID
-    local casterEntity = (self._world):GetEntityByID(casterID)
-    local reduce = skillDamageParam:GetDampPercent()
-    local posReduce = {}
-    local effectCalcSvc = self._skillEffectService
-    local damageStageIndex = skillDamageParam:GetSkillEffectDamageStageIndex()
-    local attackPos = casterEntity:GetGridPosition()
-    local retResult = {}
-    local buffLogicService = (self._world):GetService("BuffLogic")
-    local finalEffectType = skillDamageParam:GetFinalEffectType()
-    for i,pos in ipairs(range) do
-      local targetID = self:GetTargetIDByPos(targetIDs, pos)
-      if targetID then
-        local targetEntity = (self._world):GetEntityByID(targetID)
-        local targetPos = pos
-        local targetPosIndex = (Vector2.Pos2Index)(pos)
-        if not posReduce[targetPosIndex] then
-          posReduce[targetPosIndex] = 0
-        end
-        buffLogicService:ChangeSkillFinalParam(casterEntity, SkillEffectType.DamageSamePosReduce, finalEffectType, posReduce[targetPosIndex])
-        local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(casterEntity, attackPos, targetEntity, targetPos, skillEffectCalcParam.skillID, skillDamageParam, SkillEffectType.DamageSamePosReduce, damageStageIndex)
-        local skillResult = effectCalcSvc:NewSkillDamageEffectResult(targetPos, targetEntity:GetID(), nTotalDamage, listDamageInfo, damageStageIndex)
-        buffLogicService:RemoveSkillFinalParam(casterEntity, SkillEffectType.DamageSamePosReduce, finalEffectType)
-        posReduce[targetPosIndex] = posReduce[targetPosIndex] - reduce
-        ;
-        (table.insert)(retResult, skillResult)
+  local casterID = skillEffectCalcParam.casterEntityID
+  local casterEntity = self._world:GetEntityByID(casterID)
+  local reduce = skillDamageParam:GetDampPercent()
+  local posReduce = {}
+  local effectCalcSvc = self._skillEffectService
+  local damageStageIndex = skillDamageParam:GetSkillEffectDamageStageIndex()
+  local attackPos = casterEntity:GetGridPosition()
+  local retResult = {}
+  local buffLogicService = self._world:GetService("BuffLogic")
+  local finalEffectType = skillDamageParam:GetFinalEffectType()
+  for i, pos in ipairs(range) do
+    local targetID = self:GetTargetIDByPos(targetIDs, pos)
+    if targetID then
+      local targetEntity = self._world:GetEntityByID(targetID)
+      local targetPos = pos
+      local targetPosIndex = Vector2.Pos2Index(pos)
+      if not posReduce[targetPosIndex] then
+        posReduce[targetPosIndex] = 0
       end
+      buffLogicService:ChangeSkillFinalParam(casterEntity, SkillEffectType.DamageSamePosReduce, finalEffectType, posReduce[targetPosIndex])
+      local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(casterEntity, attackPos, targetEntity, targetPos, skillEffectCalcParam.skillID, skillDamageParam, SkillEffectType.DamageSamePosReduce, damageStageIndex)
+      local skillResult = effectCalcSvc:NewSkillDamageEffectResult(targetPos, targetEntity:GetID(), nTotalDamage, listDamageInfo, damageStageIndex)
+      buffLogicService:RemoveSkillFinalParam(casterEntity, SkillEffectType.DamageSamePosReduce, finalEffectType)
+      posReduce[targetPosIndex] = posReduce[targetPosIndex] - reduce
+      table.insert(retResult, skillResult)
     end
-    return retResult
   end
+  return retResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcDamageSamePosReduce.GetTargetIDByPos = function(self, targetIDs, pos)
-  -- function num : 0_2 , upvalues : _ENV
-  for i,targetID in ipairs(targetIDs) do
-    local targetEntity = (self._world):GetEntityByID(targetID)
+function SkillEffectCalcDamageSamePosReduce:GetTargetIDByPos(targetIDs, pos)
+  for i, targetID in ipairs(targetIDs) do
+    local targetEntity = self._world:GetEntityByID(targetID)
     local targetPos = targetEntity:GetGridPosition()
     local areCmpt = targetEntity:BodyArea()
     local bodyArea = areCmpt:GetArea()
-    for i,v in ipairs(bodyArea) do
+    for i, v in ipairs(bodyArea) do
       local newPos = v + targetPos
       if newPos.x == pos.x and newPos.y == pos.y then
         return targetID
@@ -75,5 +59,3 @@ SkillEffectCalcDamageSamePosReduce.GetTargetIDByPos = function(self, targetIDs, 
     end
   end
 end
-
-

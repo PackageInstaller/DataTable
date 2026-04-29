@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_season_maze_cost_hp_add_coin.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSMCostHPAddCoin", BuffLogicBase)
 BuffLogicSMCostHPAddCoin = BuffLogicSMCostHPAddCoin
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSMCostHPAddCoin.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSMCostHPAddCoin:Constructor(buffInstance, logicParam)
   self._damageParam = logicParam
   self._addCoin = logicParam.addCoin
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSMCostHPAddCoin.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local casterEntity = (self._buffInstance):Entity()
+function BuffLogicSMCostHPAddCoin:DoLogic(notify)
+  local casterEntity = self._buffInstance:Entity()
   local attrCmpt = casterEntity:Attributes()
   local curHP = attrCmpt:GetCurrentHP()
-  if curHP <= (self._damageParam).fixedDamage then
-    return 
+  if curHP <= self._damageParam.fixedDamage then
+    return
   end
-  local buffSvc = (self._world):GetService("BuffLogic")
-  local damageInfo = buffSvc:DoBuffDamage((self._buffInstance):BuffID(), casterEntity, casterEntity, self._damageParam)
-  local seasonMazeSvc = (self._world):GetService("SeasonMaze")
+  local buffSvc = self._world:GetService("BuffLogic")
+  local damageInfo = buffSvc:DoBuffDamage(self._buffInstance:BuffID(), casterEntity, casterEntity, self._damageParam)
+  local seasonMazeSvc = self._world:GetService("SeasonMaze")
   if seasonMazeSvc then
     seasonMazeSvc:AddRewardGoldCoin(self._addCoin)
   end
@@ -34,11 +24,6 @@ BuffLogicSMCostHPAddCoin.DoLogic = function(self, notify)
   return buffResult
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSMCostHPAddCoin.DoOverlap = function(self)
-  -- function num : 0_2
+function BuffLogicSMCostHPAddCoin:DoOverlap()
   return self:DoLogic()
 end
-
-

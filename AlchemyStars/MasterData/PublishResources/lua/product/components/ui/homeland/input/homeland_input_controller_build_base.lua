@@ -1,161 +1,94 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/input/homeland_input_controller_build_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandInputControllerBuildBase", Object)
 HomelandInputControllerBuildBase = HomelandInputControllerBuildBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandInputControllerBuildBase.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandInputControllerBuildBase:Constructor()
   self._curBuildingInfo = nil
   self._touchBuilding = false
-  self._speedMin = (BuildConfig.Camera).SpeedMin
-  self._speedMax = (BuildConfig.Camera).SpeedMax
+  self._speedMin = BuildConfig.Camera.SpeedMin
+  self._speedMax = BuildConfig.Camera.SpeedMax
   self._dragInBuildingID = nil
-  self._moveLimitCircleCenter = (BuildConfig.MaxCircle).Center
-  self._moveLimitCircleRadiusSqr = (BuildConfig.MaxCircle).Radius * (BuildConfig.MaxCircle).Radius
+  self._moveLimitCircleCenter = BuildConfig.MaxCircle.Center
+  self._moveLimitCircleRadiusSqr = BuildConfig.MaxCircle.Radius * BuildConfig.MaxCircle.Radius
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerBuildBase.Init = function(self, mainCharacterController, globalCameraController)
-  -- function num : 0_1
+function HomelandInputControllerBuildBase:Init(mainCharacterController, globalCameraController)
   self._mainCharacterController = mainCharacterController
   self._globalCameraController = globalCameraController
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerBuildBase.Dispose = function(self)
-  -- function num : 0_2
+function HomelandInputControllerBuildBase:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerBuildBase.Update = function(self, deltaTimeMS)
-  -- function num : 0_3
+function HomelandInputControllerBuildBase:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerBuildBase.HandleMove = function(self, moveVec)
-  -- function num : 0_4
+function HomelandInputControllerBuildBase:HandleMove(moveVec)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerBuildBase.HandleRotate = function(self, rotateVec)
-  -- function num : 0_5
+function HomelandInputControllerBuildBase:HandleRotate(rotateVec)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerBuildBase.HandleScale = function(self, scale)
-  -- function num : 0_6
+function HomelandInputControllerBuildBase:HandleScale(scale)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerBuildBase.Enter = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+function HomelandInputControllerBuildBase:Enter()
+  local guideModule = GameGlobal.GetModule(GuideModule)
   if guideModule:IsGuideProcessKey("guide_dormitory_edit") then
-    local cfg = (Cfg.cfg_guide_const).guide_dormitory_edit
+    local cfg = Cfg.cfg_guide_const.guide_dormitory_edit
     local guides = guideModule:GetCurGuides()
     if guides then
-      for _,guide in pairs(guides) do
-        if (guide.data).id == cfg.IntValue then
+      for _, guide in pairs(guides) do
+        if guide.data.id == cfg.IntValue then
           local curStep = guide:GetCurStep()
-          if curStep and curStep.show and curStep.data and (curStep.data).guideType == GuideType.OperationFinish then
+          if curStep and curStep.show and curStep.data and curStep.data.guideType == GuideType.OperationFinish then
             local param = curStep:GetGuideParams()
-            ;
-            (self._globalCameraController):UpdatePos(Vector3(param[1], 0, param[2]))
-            ;
-            (self._globalCameraController):ForceSetRotation(param[3], param[4])
-            ;
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.OperationFinish)
-            return 
+            self._globalCameraController:UpdatePos(Vector3(param[1], 0, param[2]))
+            self._globalCameraController:ForceSetRotation(param[3], param[4])
+            GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.OperationFinish)
+            return
           end
         end
       end
     end
   end
-  do
-    local checkValid = true
-    ;
-    (self._globalCameraController):UpdatePos((self._mainCharacterController):Position(), checkValid)
-  end
+  local checkValid = true
+  self._globalCameraController:UpdatePos(self._mainCharacterController:Position(), checkValid)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerBuildBase.HandleBuildAreaDown = function(self, pos)
-  -- function num : 0_8
+function HomelandInputControllerBuildBase:HandleBuildAreaDown(pos)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerBuildBase.HandleBuildAreaMove = function(self, pos)
-  -- function num : 0_9
+function HomelandInputControllerBuildBase:HandleBuildAreaMove(pos)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerBuildBase.HandleBuildAreaClick = function(self, pos)
-  -- function num : 0_10
+function HomelandInputControllerBuildBase:HandleBuildAreaClick(pos)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerBuildBase.TouchBuilding = function(self)
-  -- function num : 0_11
+function HomelandInputControllerBuildBase:TouchBuilding()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerBuildBase.ReleaseTouch = function(self)
-  -- function num : 0_12
+function HomelandInputControllerBuildBase:ReleaseTouch()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerBuildBase.SetCurrentBuilding = function(self, info)
-  -- function num : 0_13
+function HomelandInputControllerBuildBase:SetCurrentBuilding(info)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerBuildBase.HandleDragIn = function(self, buildingID)
-  -- function num : 0_14
+function HomelandInputControllerBuildBase:HandleDragIn(buildingID)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerBuildBase.MoveDragInFinger = function(self, pos)
-  -- function num : 0_15
+function HomelandInputControllerBuildBase:MoveDragInFinger(pos)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerBuildBase.CheckAndLimitMovePos = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local pos = (self._globalCameraController):GetFocusPos()
+function HomelandInputControllerBuildBase:CheckAndLimitMovePos()
+  local pos = self._globalCameraController:GetFocusPos()
   local pos2D = Vector2(pos.x, pos.z)
   local disSqr = (pos2D - self._moveLimitCircleCenter):SqrMagnitude()
-  if self._moveLimitCircleRadiusSqr < disSqr then
-    local lerpPos = (Vector2.Lerp)(self._moveLimitCircleCenter, pos2D, (math.sqrt)(self._moveLimitCircleRadiusSqr / disSqr))
-    ;
-    (self._globalCameraController):UpdatePosXZ(lerpPos.x, lerpPos.y)
+  if disSqr > self._moveLimitCircleRadiusSqr then
+    local lerpPos = Vector2.Lerp(self._moveLimitCircleCenter, pos2D, math.sqrt(self._moveLimitCircleRadiusSqr / disSqr))
+    self._globalCameraController:UpdatePosXZ(lerpPos.x, lerpPos.y)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerBuildBase._GetMoveSpeed = function(self)
-  -- function num : 0_17
-  return self._speedMin + (self._globalCameraController):ScalePercent() * (self._speedMax - self._speedMin)
+function HomelandInputControllerBuildBase:_GetMoveSpeed()
+  return self._speedMin + self._globalCameraController:ScalePercent() * (self._speedMax - self._speedMin)
 end
-
-

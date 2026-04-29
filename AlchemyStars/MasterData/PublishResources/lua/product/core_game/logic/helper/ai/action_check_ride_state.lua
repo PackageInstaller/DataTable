@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_check_ride_state.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCheckRideState", AINewNode)
 ActionCheckRideState = ActionCheckRideState
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckRideState.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionCheckRideState:OnUpdate()
   local entity = self.m_entityOwn
-  local aiComponent = (self.m_entityOwn):AI()
+  local aiComponent = self.m_entityOwn:AI()
   if not entity:HasRide() then
     return AINewNodeStatus.Other + AIRideStateType.NoRide
   end
@@ -19,7 +12,7 @@ ActionCheckRideState.OnUpdate = function(self)
   if entity:GetID() == rideCmpt:GetMountID() then
     return AINewNodeStatus.Other + AIRideStateType.BeRide
   end
-  local mountEntity = (self._world):GetEntityByID(rideCmpt:GetMountID())
+  local mountEntity = self._world:GetEntityByID(rideCmpt:GetMountID())
   if not mountEntity then
     return AINewNodeStatus.Other + AIRideStateType.NoRide
   end
@@ -31,5 +24,3 @@ ActionCheckRideState.OnUpdate = function(self)
   end
   return AINewNodeStatus.Other + AIRideStateType.NoRide
 end
-
-

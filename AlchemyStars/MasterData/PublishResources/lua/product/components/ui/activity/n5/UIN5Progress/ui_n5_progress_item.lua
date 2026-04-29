@@ -1,34 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/UIN5Progress/ui_n5_progress_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN5ProgressItem", UICustomWidget)
 UIN5ProgressItem = UIN5ProgressItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN5ProgressItem.Constructor = function(self)
-  -- function num : 0_0
+function UIN5ProgressItem:Constructor()
   self._detailExpanded = false
-  self._playerInfoBgCfg = {[1] = "n5_rank_rank1", [2] = "n5_rank_rank2", [3] = "n5_rank_rank3", [-1] = "n5_rank_rank4"}
+  self._playerInfoBgCfg = {
+    [1] = "n5_rank_rank1",
+    [2] = "n5_rank_rank2",
+    [3] = "n5_rank_rank3",
+    [-1] = "n5_rank_rank4"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN5ProgressItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItem.OnHide = function(self)
-  -- function num : 0_2
+function UIN5ProgressItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItem.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN5ProgressItem:InitWidget()
   self._rewardArea = self:GetGameObject("RewardArea")
   self._detailArea = self:GetGameObject("DetailArea")
   self._tarPointTxt1 = self:GetUIComponent("UILocalizationText", "TarPointTxt1")
@@ -46,16 +35,14 @@ UIN5ProgressItem.InitWidget = function(self)
   self._closeDetailAreaGo = self:GetGameObject("CloseDetailTextArea")
   self._rankInfoTextBgRect = self:GetUIComponent("RectTransform", "RankInfoTextBg")
   if self._rankInfoTextBgRect then
-    self._baseRankInfoTextBgRectSize = (self._rankInfoTextBgRect).sizeDelta
+    self._baseRankInfoTextBgRectSize = self._rankInfoTextBgRect.sizeDelta
   end
   self._rewardBgGo = self:GetGameObject("RewardBg")
   self._rewardBgImg = self:GetUIComponent("Image", "RewardBg")
   if self._rewardBgGo then
-    self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._rewardBgGo), UIEvent.BeginDrag, function(pointData)
-    -- function num : 0_3_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.N5ProgressScrollDragBegin)
-  end
-)
+    self:AddUICustomEventListener(UICustomUIEventListener.Get(self._rewardBgGo), UIEvent.BeginDrag, function(pointData)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.N5ProgressScrollDragBegin)
+    end)
   end
   self._cardRawImg = self:GetUIComponent("RawImageLoader", "CardImg")
   self._playerInfoBg = self:GetUIComponent("Image", "PlayerInfoBg")
@@ -65,10 +52,7 @@ UIN5ProgressItem.InitWidget = function(self)
   self:AttachEvent(GameEventType.N5ProgressScrollDragBegin, self._OnScrollDragBegin)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItem.SetData = function(self, index, count, itemInfo, componentInfo, callback, itemCallBack, specificData, cmptCfgId, onExpandCallBack)
-  -- function num : 0_4
+function UIN5ProgressItem:SetData(index, count, itemInfo, componentInfo, callback, itemCallBack, specificData, cmptCfgId, onExpandCallBack)
   self._itemInfo = itemInfo
   self:InitWidget()
   self._index = index
@@ -82,166 +66,133 @@ UIN5ProgressItem.SetData = function(self, index, count, itemInfo, componentInfo,
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItem._OnValue = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  do
-    if not self.atlas then
-      local atlasName = (self._specificData):GetSpriteAtlasName()
-      self.atlas = self:GetAsset(atlasName, LoadType.SpriteAtlas)
-    end
-    local target = (self._itemInfo).target
-    self._isSpecialAward = (self._itemInfo).bSpecial
-    self:_FillRewardArea()
-    self:_FillNumArea(target)
-    self:_FillInfoArea()
-    self:_SetUIByRank()
+function UIN5ProgressItem:_OnValue()
+  if not self.atlas then
+    local atlasName = self._specificData:GetSpriteAtlasName()
+    self.atlas = self:GetAsset(atlasName, LoadType.SpriteAtlas)
   end
+  local target = self._itemInfo.target
+  self._isSpecialAward = self._itemInfo.bSpecial
+  self:_FillRewardArea()
+  self:_FillNumArea(target)
+  self:_FillInfoArea()
+  self:_SetUIByRank()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItem._FillRewardArea = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local target = (self._itemInfo).target
-  local cur = (self._componentInfo).m_current_progress
-  local received = (self._componentInfo).m_received_progress
+function UIN5ProgressItem:_FillRewardArea()
+  local target = self._itemInfo.target
+  local cur = self._componentInfo.m_current_progress
+  local received = self._componentInfo.m_received_progress
   self._state = self:_CalcState(target, cur, received)
-  local rewards = ((self._componentInfo).m_progress_rewards)[target]
+  local rewards = self._componentInfo.m_progress_rewards[target]
   self:_SetRewardItem(rewards, "UIN5ProgressRewardItem")
   self:_SetStateCanGetReward(self._state == UIActivityProgressRewardState.STATE_UNLOCK)
   self:_SetStateReceivedReward(self._state == UIActivityProgressRewardState.STATE_RECEIVED)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItem._FillNumArea = function(self, target)
-  -- function num : 0_7
+function UIN5ProgressItem:_FillNumArea(target)
   self:_SetProgressText(target)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItem._FillInfoArea = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN5ProgressItem:_FillInfoArea()
   local bShowDetail = false
-  local cfgGroup = (Cfg.cfg_activity_person_progress_extra_client)({ComponentID = self._cmptCfgId, ItemCount = (self._itemInfo).target})
-  if cfgGroup and #cfgGroup > 0 then
+  local cfgGroup = Cfg.cfg_activity_person_progress_extra_client({
+    ComponentID = self._cmptCfgId,
+    ItemCount = self._itemInfo.target
+  })
+  if cfgGroup and 0 < #cfgGroup then
     local curCfg = cfgGroup[1]
     local npcNameCfg = curCfg.NpcName
-    if (string.isnullorempty)(npcNameCfg) then
-      local titleStr = curCfg.RankTitle
+    if string.isnullorempty(npcNameCfg) then
+    else
       do
-        local rankIndex = (self._itemInfo).rank
+        local titleStr = curCfg.RankTitle
+        local rankIndex = self._itemInfo.rank
         if rankIndex then
           if self._rankTitleText1 then
-            (self._rankTitleText1):SetText((StringTable.Get)(titleStr, rankIndex))
+            self._rankTitleText1:SetText(StringTable.Get(titleStr, rankIndex))
           end
           if self._rankTitleText2 then
-            (self._rankTitleText2):SetText((StringTable.Get)(titleStr, rankIndex))
-          end
-        end
-        do
-          if self._playerNameText then
-            local oriStr = curCfg.NpcName
-            if not (string.isnullorempty)(oriStr) then
-              (self._playerNameText):RefreshText((StringTable.Get)(oriStr))
-            end
-          end
-          do
-            if self._playerRollingTitleText then
-              local oriStr = curCfg.NpcTitle
-              if not (string.isnullorempty)(oriStr) then
-                (self._playerRollingTitleText):RefreshText((StringTable.Get)(oriStr))
-              end
-            end
-            do
-              if self._cardRawImg then
-                local oriStr = curCfg.NpcCard
-                if not (string.isnullorempty)(oriStr) then
-                  (self._cardRawImg):LoadImage(oriStr)
-                end
-              end
-              if self._rankInfoText then
-                local detailStr = curCfg.DetailInfo
-              end
-              if (string.isnullorempty)(detailStr) then
-                (self._rankInfoText):SetText((StringTable.Get)(detailStr))
-                do
-                  local height = (self._rankInfoText).preferredHeight
-                  if height > 120 then
-                    (self._openDetailAreaGo):SetActive(true)
-                  end
-                  bShowDetail = true
-                  if self._detailArea then
-                    (self._detailArea):SetActive(bShowDetail)
-                  end
-                end
-              end
-            end
+            self._rankTitleText2:SetText(StringTable.Get(titleStr, rankIndex))
           end
         end
       end
+      if self._playerNameText then
+        local oriStr = curCfg.NpcName
+        if not string.isnullorempty(oriStr) then
+          self._playerNameText:RefreshText(StringTable.Get(oriStr))
+        end
+      end
+      if self._playerRollingTitleText then
+        local oriStr = curCfg.NpcTitle
+        if not string.isnullorempty(oriStr) then
+          self._playerRollingTitleText:RefreshText(StringTable.Get(oriStr))
+        end
+      end
+      if self._cardRawImg then
+        local oriStr = curCfg.NpcCard
+        if not string.isnullorempty(oriStr) then
+          self._cardRawImg:LoadImage(oriStr)
+        end
+      end
+    end
+    if self._rankInfoText then
+      local detailStr = curCfg.DetailInfo
+      if string.isnullorempty(detailStr) then
+      else
+        self._rankInfoText:SetText(StringTable.Get(detailStr))
+        local height = self._rankInfoText.preferredHeight
+        if 120 < height then
+          self._openDetailAreaGo:SetActive(true)
+        end
+        bShowDetail = true
+      end
     end
   end
+  if self._detailArea then
+    self._detailArea:SetActive(bShowDetail)
+  end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItem._SetProgressText = function(self, point)
-  -- function num : 0_9
+function UIN5ProgressItem:_SetProgressText(point)
   local showStr = point
   if self._tarPointTxt1 then
-    (self._tarPointTxt1):SetText(showStr)
+    self._tarPointTxt1:SetText(showStr)
   end
   if self._tarPointTxt2 then
-    (self._tarPointTxt2):SetText(showStr)
+    self._tarPointTxt2:SetText(showStr)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItem._SetRewardItem = function(self, infoList, classType)
-  -- function num : 0_10 , upvalues : _ENV
-  (self._rewardItemPool):SpawnObjects(classType, (table.count)(infoList))
-  local itemList = (self._rewardItemPool):GetAllSpawnList()
-  for i = 1, (table.count)(infoList) do
-    (itemList[i]):SetData(R10_PC25, self._state, self._isSpecialAward, infoList[i], self._itemCallback)
+function UIN5ProgressItem:_SetRewardItem(infoList, classType)
+  self._rewardItemPool:SpawnObjects(classType, table.count(infoList))
+  local itemList = self._rewardItemPool:GetAllSpawnList()
+  for i = 1, table.count(infoList) do
+    itemList[i]:SetData(i, self._state, self._isSpecialAward, infoList[i], self._itemCallback)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItem._SetStateCanGetReward = function(self, isShow)
-  -- function num : 0_11
-  (self._canGetRewardObj):SetActive(isShow)
+function UIN5ProgressItem:_SetStateCanGetReward(isShow)
+  self._canGetRewardObj:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItem._SetStateReceivedReward = function(self, isShow)
-  -- function num : 0_12
-  (self._receivedRewardObj):SetActive(isShow)
+function UIN5ProgressItem:_SetStateReceivedReward(isShow)
+  self._receivedRewardObj:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItem._SetUIByRank = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIN5ProgressItem:_SetUIByRank()
   local cellBgCfg = {}
   local cellFrontBgCfg = {}
   local rankInfoStyleCfg = {}
-  local cellBgDefaultCfg, cellFrontBgDefaultCfg, rankInfoStyleDefaultCfg = nil, nil, nil
-  local curCfg = (Cfg.cfg_activity_person_progress_ui)[self._cmptCfgId]
+  local cellBgDefaultCfg, cellFrontBgDefaultCfg, rankInfoStyleDefaultCfg
+  local curCfg = Cfg.cfg_activity_person_progress_ui[self._cmptCfgId]
   if curCfg then
     local cellBgVec = curCfg.CellBg
     if cellBgVec then
-      for index,value in ipairs(cellBgVec) do
+      for index, value in ipairs(cellBgVec) do
         local cfgStr = value
-        local rank, res = nil, nil
-        local params = (string.split)(cfgStr, ",")
+        local rank, res
+        local params = string.split(cfgStr, ",")
         if #params == 2 then
           rank = tonumber(params[1])
           res = params[2]
@@ -249,158 +200,119 @@ UIN5ProgressItem._SetUIByRank = function(self)
         end
       end
     end
-    do
-      cellBgDefaultCfg = curCfg.CellBgDefault
-      local cellFrontBgVec = curCfg.CellFrontBg
-      if cellFrontBgVec then
-        for index,value in ipairs(cellFrontBgVec) do
-          local cfgStr = value
-          local rank, res = nil, nil
-          local params = (string.split)(cfgStr, ",")
-          if #params == 2 then
-            rank = tonumber(params[1])
-            res = params[2]
-            cellFrontBgCfg[rank] = res
-          end
+    cellBgDefaultCfg = curCfg.CellBgDefault
+    local cellFrontBgVec = curCfg.CellFrontBg
+    if cellFrontBgVec then
+      for index, value in ipairs(cellFrontBgVec) do
+        local cfgStr = value
+        local rank, res
+        local params = string.split(cfgStr, ",")
+        if #params == 2 then
+          rank = tonumber(params[1])
+          res = params[2]
+          cellFrontBgCfg[rank] = res
         end
       end
-      do
-        cellFrontBgDefaultCfg = curCfg.CellFrontBgDefault
-        local rankInfoStyleVec = curCfg.RankInfoStyle
-        if rankInfoStyleVec then
-          for index,value in ipairs(rankInfoStyleVec) do
-            local cfgStr = value
-            local rank, res = nil, nil
-            local params = (string.split)(cfgStr, ",")
-            if #params == 2 then
-              rank = tonumber(params[1])
-              res = tonumber(params[2])
-              rankInfoStyleCfg[rank] = res
-            end
-          end
-        end
-        do
-          do
-            rankInfoStyleDefaultCfg = tonumber(curCfg.RankInfoStyleDefault)
-            local cellType = (self._itemInfo).cellType
-            local rank = (self._itemInfo).rank
-            local rankStyle = rankInfoStyleDefaultCfg
-            if rankInfoStyleCfg[rank] then
-              rankStyle = rankInfoStyleCfg[rank]
-            end
-            if rankStyle ~= 1 then
-              (self._rankInfoAreaGo1):SetActive(not self._rankInfoAreaGo1)
-              if rankStyle ~= 2 then
-                (self._rankInfoAreaGo2):SetActive(not self._rankInfoAreaGo2)
-                if self.atlas then
-                  local playerInfoBgRes = cellFrontBgDefaultCfg
-                  if cellFrontBgCfg[rank] then
-                    playerInfoBgRes = cellFrontBgCfg[rank]
-                  end
-                  -- DECOMPILER ERROR at PC139: Confused about usage of register: R12 in 'UnsetPending'
-
-                  if self._playerInfoBg then
-                    (self._playerInfoBg).sprite = (self.atlas):GetSprite(playerInfoBgRes)
-                  end
-                  local bgRes = cellBgDefaultCfg
-                  if cellBgCfg[rank] then
-                    bgRes = cellBgCfg[rank]
-                  end
-                  -- DECOMPILER ERROR at PC153: Confused about usage of register: R13 in 'UnsetPending'
-
-                  if self._rewardBgImg then
-                    (self._rewardBgImg).sprite = (self.atlas):GetSprite(bgRes)
-                  end
-                end
-                -- DECOMPILER ERROR: 8 unprocessed JMP targets
-              end
-            end
-          end
+    end
+    cellFrontBgDefaultCfg = curCfg.CellFrontBgDefault
+    local rankInfoStyleVec = curCfg.RankInfoStyle
+    if rankInfoStyleVec then
+      for index, value in ipairs(rankInfoStyleVec) do
+        local cfgStr = value
+        local rank, res
+        local params = string.split(cfgStr, ",")
+        if #params == 2 then
+          rank = tonumber(params[1])
+          res = tonumber(params[2])
+          rankInfoStyleCfg[rank] = res
         end
       end
+    end
+    rankInfoStyleDefaultCfg = tonumber(curCfg.RankInfoStyleDefault)
+  end
+  local cellType = self._itemInfo.cellType
+  local rank = self._itemInfo.rank
+  local rankStyle = rankInfoStyleDefaultCfg
+  if rankInfoStyleCfg[rank] then
+    rankStyle = rankInfoStyleCfg[rank]
+  end
+  if self._rankInfoAreaGo1 then
+    self._rankInfoAreaGo1:SetActive(rankStyle == 1)
+  end
+  if self._rankInfoAreaGo2 then
+    self._rankInfoAreaGo2:SetActive(rankStyle == 2)
+  end
+  if self.atlas then
+    local playerInfoBgRes = cellFrontBgDefaultCfg
+    if cellFrontBgCfg[rank] then
+      playerInfoBgRes = cellFrontBgCfg[rank]
+    end
+    if self._playerInfoBg then
+      self._playerInfoBg.sprite = self.atlas:GetSprite(playerInfoBgRes)
+    end
+    local bgRes = cellBgDefaultCfg
+    if cellBgCfg[rank] then
+      bgRes = cellBgCfg[rank]
+    end
+    if self._rewardBgImg then
+      self._rewardBgImg.sprite = self.atlas:GetSprite(bgRes)
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItem.GetRewardOnClick = function(self, go)
-  -- function num : 0_14
+function UIN5ProgressItem:GetRewardOnClick(go)
   if self._callback then
-    (self._callback)(self._index)
+    self._callback(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItem._CalcState = function(self, target, cur, received)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN5ProgressItem:_CalcState(target, cur, received)
   local state = 0
   if target <= cur then
     state = 1
-    for _,x in pairs(received) do
+    for _, x in pairs(received) do
       if x == target then
         state = 2
       end
     end
   end
-  do
-    return state
-  end
+  return state
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItem.OpenDetailTextBtnOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN5ProgressItem:OpenDetailTextBtnOnClick(go)
   if self._closeDetailAreaGo then
-    (self._closeDetailAreaGo):SetActive(true)
+    self._closeDetailAreaGo:SetActive(true)
   end
   if self._openDetailAreaGo then
-    (self._openDetailAreaGo):SetActive(false)
+    self._openDetailAreaGo:SetActive(false)
   end
   if self._rankInfoTextBgRect then
     local height = 228
-    height = (self._rankInfoText).preferredHeight + 15
-    local x = ((self._rankInfoTextBgRect).sizeDelta).x
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._rankInfoTextBgRect).sizeDelta = Vector2(x, height)
+    height = self._rankInfoText.preferredHeight + 15
+    local x = self._rankInfoTextBgRect.sizeDelta.x
+    self._rankInfoTextBgRect.sizeDelta = Vector2(x, height)
   end
-  do
-    self._detailExpanded = true
-    if self._onExpandCallBack then
-      (self._onExpandCallBack)()
-    end
+  self._detailExpanded = true
+  if self._onExpandCallBack then
+    self._onExpandCallBack()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItem.CloseDetailTextAreaOnClick = function(self, go)
-  -- function num : 0_17
+function UIN5ProgressItem:CloseDetailTextAreaOnClick(go)
   if self._openDetailAreaGo then
-    (self._openDetailAreaGo):SetActive(true)
+    self._openDetailAreaGo:SetActive(true)
   end
   if self._closeDetailAreaGo then
-    (self._closeDetailAreaGo):SetActive(false)
+    self._closeDetailAreaGo:SetActive(false)
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
   if self._rankInfoTextBgRect then
-    (self._rankInfoTextBgRect).sizeDelta = self._baseRankInfoTextBgRectSize
+    self._rankInfoTextBgRect.sizeDelta = self._baseRankInfoTextBgRectSize
   end
   self._detailExpanded = false
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItem._OnScrollDragBegin = function(self)
-  -- function num : 0_18
+function UIN5ProgressItem:_OnScrollDragBegin()
   if self._detailExpanded then
     self:CloseDetailTextAreaOnClick(nil)
   end
 end
-
-

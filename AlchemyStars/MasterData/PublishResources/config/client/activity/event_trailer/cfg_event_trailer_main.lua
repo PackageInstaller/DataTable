@@ -1,13 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/event_trailer/cfg_event_trailer_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {ID = 1, CampaignGroup = 2}
 local config = {
-EventTrailer_CN13 = {"EventTrailer_CN13", 
-{44, 45, 46}
-}
+  EventTrailer_CN13 = {
+    "EventTrailer_CN13",
+    {
+      44,
+      45,
+      46
+    }
+  }
 }
 return config, "ID", key
-

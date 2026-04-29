@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/task/main/ui_n34_task_delegate_person_task_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN34TaskDelegatePersonTaskItem", UICustomWidget)
 UIN34TaskDelegatePersonTaskItem = UIN34TaskDelegatePersonTaskItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN34TaskDelegatePersonTaskItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN34TaskDelegatePersonTaskItem:OnShow(uiParams)
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
   self._costLabel = self:GetUIComponent("UILocalizationText", "Cost")
   self._desLabel = self:GetUIComponent("UILocalizationText", "Des")
@@ -19,100 +12,62 @@ UIN34TaskDelegatePersonTaskItem.OnShow = function(self, uiParams)
   self._anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePersonTaskItem.SetData = function(self, data, isSelected, callback, itemClickCallback)
-  -- function num : 0_1
+function UIN34TaskDelegatePersonTaskItem:SetData(data, isSelected, callback, itemClickCallback)
   if not data then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
-  ;
-  (self._go):SetActive(true)
+  self._go:SetActive(true)
   self._data = data
   self._callback = callback
-  ;
-  (self._nameLabel):SetText(data:GetName())
-  ;
-  (self._iconLoader):LoadImage(data:GetIcon())
-  ;
-  (self._costLabel):SetText(data:GetCost())
-  ;
-  (self._desLabel):SetText("-" .. data:GetDes())
-  ;
-  (self._selected):SetActive(isSelected)
+  self._nameLabel:SetText(data:GetName())
+  self._iconLoader:LoadImage(data:GetIcon())
+  self._costLabel:SetText(data:GetCost())
+  self._desLabel:SetText("-" .. data:GetDes())
+  self._selected:SetActive(isSelected)
   local rewards = data:GetRewards()
   local trust = data:GetTrustValue()
-  ;
-  (self._rewardLoader):SpawnObjects("UIN34TaskDelegatePersonTaskReward", #rewards)
-  local items = (self._rewardLoader):GetAllSpawnList()
+  self._rewardLoader:SpawnObjects("UIN34TaskDelegatePersonTaskReward", #rewards)
+  local items = self._rewardLoader:GetAllSpawnList()
   for i = 1, #items do
-    (items[i]):SetData(false, rewards[i], function(id, pos)
-    -- function num : 0_1_0 , upvalues : itemClickCallback
-    if itemClickCallback then
-      itemClickCallback(id, pos)
-    end
-  end
-)
+    items[i]:SetData(false, rewards[i], function(id, pos)
+      if itemClickCallback then
+        itemClickCallback(id, pos)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePersonTaskItem.GetData = function(self)
-  -- function num : 0_2
+function UIN34TaskDelegatePersonTaskItem:GetData()
   return self._data
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePersonTaskItem.Select = function(self)
-  -- function num : 0_3
-  (self._selected):SetActive(true)
+function UIN34TaskDelegatePersonTaskItem:Select()
+  self._selected:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePersonTaskItem.UnSelect = function(self)
-  -- function num : 0_4
-  (self._selected):SetActive(false)
+function UIN34TaskDelegatePersonTaskItem:UnSelect()
+  self._selected:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePersonTaskItem.BGOnClick = function(self)
-  -- function num : 0_5
+function UIN34TaskDelegatePersonTaskItem:BGOnClick()
   if self._callback then
-    (self._callback)(self._data)
+    self._callback(self._data)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePersonTaskItem.PlayAnimation = function(self)
-  -- function num : 0_6
-  (self._anim):Play("uieff_UIN34TaskDelegatePersonTaskItem_in")
+function UIN34TaskDelegatePersonTaskItem:PlayAnimation()
+  self._anim:Play("uieff_UIN34TaskDelegatePersonTaskItem_in")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePersonTaskItem.PlayGetAnimation = function(self)
-  -- function num : 0_7
-  (self._anim):Play("uieff_UIN34TaskDelegatePersonTaskItem_get")
+function UIN34TaskDelegatePersonTaskItem:PlayGetAnimation()
+  self._anim:Play("uieff_UIN34TaskDelegatePersonTaskItem_get")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePersonTaskItem.StopAnimation = function(self)
-  -- function num : 0_8
-  (self._anim):Stop()
+function UIN34TaskDelegatePersonTaskItem:StopAnimation()
+  self._anim:Stop()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePersonTaskItem.SetActive = function(self, status)
-  -- function num : 0_9
-  (self._go):SetActive(status)
+function UIN34TaskDelegatePersonTaskItem:SetActive(status)
+  self._go:SetActive(status)
 end
-
-

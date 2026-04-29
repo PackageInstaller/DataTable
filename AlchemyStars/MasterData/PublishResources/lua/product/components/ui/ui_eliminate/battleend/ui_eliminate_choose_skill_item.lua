@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_eliminate/battleend/ui_eliminate_choose_skill_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEliminateSkillItem", UICustomWidget)
 UIEliminateSkillItem = UIEliminateSkillItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEliminateSkillItem.Constructor = function(self)
-  -- function num : 0_0
+function UIEliminateSkillItem:Constructor()
   self._isSelect = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateSkillItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIEliminateSkillItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateSkillItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIEliminateSkillItem:_GetComponents()
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._intro = self:GetUIComponent("UILocalizationText", "Intro")
@@ -30,10 +17,7 @@ UIEliminateSkillItem._GetComponents = function(self)
   self._selectMaskObj = self:GetGameObject("selectMask")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateSkillItem.SetData = function(self, id, index, clickCB, chooseCB)
-  -- function num : 0_3
+function UIEliminateSkillItem:SetData(id, index, clickCB, chooseCB)
   self._id = id
   self._index = index
   self._clickCB = clickCB
@@ -41,74 +25,46 @@ UIEliminateSkillItem.SetData = function(self, id, index, clickCB, chooseCB)
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateSkillItem._InitComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local itemCfg = (Cfg.cfg_item)[self._id]
-  ;
-  (self._icon):LoadImage(itemCfg.Icon)
-  ;
-  (self._name):SetText((StringTable.Get)(itemCfg.Name))
-  ;
-  (self._intro):SetText((StringTable.Get)(itemCfg.Intro))
+function UIEliminateSkillItem:_InitComponents()
+  local itemCfg = Cfg.cfg_item[self._id]
+  self._icon:LoadImage(itemCfg.Icon)
+  self._name:SetText(StringTable.Get(itemCfg.Name))
+  self._intro:SetText(StringTable.Get(itemCfg.Intro))
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self
     YIELD(TT, 30 * (self._index - 1))
-    ;
-    (self._anim):Play("uieff_UIEliminateChooseSkillItem_in")
-  end
-)
+    self._anim:Play("uieff_UIEliminateChooseSkillItem_in")
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateSkillItem.GetID = function(self)
-  -- function num : 0_5
+function UIEliminateSkillItem:GetID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateSkillItem.SetSelect = function(self, isSelect)
-  -- function num : 0_6
+function UIEliminateSkillItem:SetSelect(isSelect)
   self._isSelect = isSelect
-  ;
-  (self._selectMaskObj):SetActive(isSelect)
+  self._selectMaskObj:SetActive(isSelect)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateSkillItem.ChooseItem = function(self)
-  -- function num : 0_7
+function UIEliminateSkillItem:ChooseItem()
   if self._chooseCB then
-    (self._chooseCB)(self)
+    self._chooseCB(self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateSkillItem.PlayOutAnim = function(self)
-  -- function num : 0_8
+function UIEliminateSkillItem:PlayOutAnim()
   if self._isSelect then
-    (self._anim):Play("uieff_UIEliminateChooseSkillItem_out2")
+    self._anim:Play("uieff_UIEliminateChooseSkillItem_out2")
   else
-    ;
-    (self._anim):Play("uieff_UIEliminateChooseSkillItem_out1")
+    self._anim:Play("uieff_UIEliminateChooseSkillItem_out1")
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateSkillItem.BtnOnClick = function(self)
-  -- function num : 0_9
+function UIEliminateSkillItem:BtnOnClick()
   if self._isSelect then
-    return 
+    return
   end
   self:SetSelect(true)
   if self._clickCB then
-    (self._clickCB)(self)
+    self._clickCB(self)
   end
 end
-
-

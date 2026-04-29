@@ -1,89 +1,325 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_season_maze_save.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, Lv = 3, NeedNum = 4, LockHard = 5, Desc = 6, EffectIDs = 7}
-local config = {
-{1, 900308001, 1, 50, 1, "str_season_maze_save_1"}
-, 
-{2, 900308001, 2, 100, 1, "str_season_maze_save_2"}
-, 
-{3, 900308001, 3, 150, 1, "str_season_maze_save_3"}
-, 
-{4, 900308001, 4, 200, 1, "str_season_maze_save_4"}
-, 
-{5, 900308001, 5, 250, 1, "str_season_maze_save_5"}
-, 
-{6, 900308001, 6, 300, 2, "str_season_maze_save_6"}
-, 
-{7, 900308001, 7, 350, 2, "str_season_maze_save_7"}
-, 
-{8, 900308001, 8, 400, 2, "str_season_maze_save_8"}
-, 
-{9, 900308001, 9, 450, 2, "str_season_maze_save_9", 
-{20023}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  Lv = 3,
+  NeedNum = 4,
+  LockHard = 5,
+  Desc = 6,
+  EffectIDs = 7
 }
-, 
-{10, 900308001, 10, 500, 2, "str_season_maze_save_10"}
-, 
-{11, 900308001, 11, 550, 3, "str_season_maze_save_11"}
-, 
-{12, 900308001, 12, 600, 3, "str_season_maze_save_12"}
-, 
-{13, 900308001, 13, 650, 3, "str_season_maze_save_13"}
-, 
-{14, 900308001, 14, 700, 3, "str_season_maze_save_14"}
-, 
-{15, 900308001, 15, 750, 3, "str_season_maze_save_15"}
-, 
-{16, 900308001, 16, 800, 3, "str_season_maze_save_16"}
-, 
-{17, 900308001, 17, 850, 3, "str_season_maze_save_17"}
-, 
-{18, 900308001, 18, 900, 3, "str_season_maze_save_18"}
-, 
-{19, 900308001, 19, 950, 3, "str_season_maze_save_19"}
-, 
-{20, 900308001, 20, 1000, 3, "str_season_maze_save_20"}
-, 
-{21, 900308001, 21, 1050, 3, "str_season_maze_save_21"}
-, 
-{22, 900308001, 22, 1100, 3, "str_season_maze_save_22"}
-, 
-{23, 900308001, 23, 1150, 3, "str_season_maze_save_23"}
-, 
-{24, 900308001, 24, 1200, 3, "str_season_maze_save_24"}
-, 
-{25, 900308001, 25, 1250, 3, "str_season_maze_save_25"}
-, 
-{26, 900308001, 26, 1300, 3, "str_season_maze_save_26"}
-, 
-{27, 900308001, 27, 1350, 3, "str_season_maze_save_27"}
-, 
-{28, 900308001, 28, 1400, 3, "str_season_maze_save_28"}
-, 
-{29, 900308001, 29, 1450, 4, "str_season_maze_save_29"}
-, 
-{30, 900308001, 30, 1500, 4, "str_season_maze_save_30"}
-, 
-{31, 900308001, 31, 1550, 4, "str_season_maze_save_31"}
-, 
-{32, 900308001, 32, 1600, 4, "str_season_maze_save_32"}
-, 
-{33, 900308001, 33, 1650, 4, "str_season_maze_save_33"}
-, 
-{34, 900308001, 34, 1700, 4, "str_season_maze_save_34"}
-, 
-{35, 900308001, 35, 1750, 4, "str_season_maze_save_35"}
-, 
-{36, 900308001, 36, 1800, 4, "str_season_maze_save_36"}
-, 
-{37, 900308001, 37, 1900, 4, "str_season_maze_save_37"}
-, 
-{38, 900308001, 38, 2000, 4, "str_season_maze_save_38"}
-, 
-{39, 900308001, 39, 2100, 4, "str_season_maze_save_39"}
+local config = {
+  {
+    1,
+    900308001,
+    1,
+    50,
+    1,
+    "str_season_maze_save_1"
+  },
+  {
+    2,
+    900308001,
+    2,
+    100,
+    1,
+    "str_season_maze_save_2"
+  },
+  {
+    3,
+    900308001,
+    3,
+    150,
+    1,
+    "str_season_maze_save_3"
+  },
+  {
+    4,
+    900308001,
+    4,
+    200,
+    1,
+    "str_season_maze_save_4"
+  },
+  {
+    5,
+    900308001,
+    5,
+    250,
+    1,
+    "str_season_maze_save_5"
+  },
+  {
+    6,
+    900308001,
+    6,
+    300,
+    2,
+    "str_season_maze_save_6"
+  },
+  {
+    7,
+    900308001,
+    7,
+    350,
+    2,
+    "str_season_maze_save_7"
+  },
+  {
+    8,
+    900308001,
+    8,
+    400,
+    2,
+    "str_season_maze_save_8"
+  },
+  {
+    9,
+    900308001,
+    9,
+    450,
+    2,
+    "str_season_maze_save_9",
+    {20023}
+  },
+  {
+    10,
+    900308001,
+    10,
+    500,
+    2,
+    "str_season_maze_save_10"
+  },
+  {
+    11,
+    900308001,
+    11,
+    550,
+    3,
+    "str_season_maze_save_11"
+  },
+  {
+    12,
+    900308001,
+    12,
+    600,
+    3,
+    "str_season_maze_save_12"
+  },
+  {
+    13,
+    900308001,
+    13,
+    650,
+    3,
+    "str_season_maze_save_13"
+  },
+  {
+    14,
+    900308001,
+    14,
+    700,
+    3,
+    "str_season_maze_save_14"
+  },
+  {
+    15,
+    900308001,
+    15,
+    750,
+    3,
+    "str_season_maze_save_15"
+  },
+  {
+    16,
+    900308001,
+    16,
+    800,
+    3,
+    "str_season_maze_save_16"
+  },
+  {
+    17,
+    900308001,
+    17,
+    850,
+    3,
+    "str_season_maze_save_17"
+  },
+  {
+    18,
+    900308001,
+    18,
+    900,
+    3,
+    "str_season_maze_save_18"
+  },
+  {
+    19,
+    900308001,
+    19,
+    950,
+    3,
+    "str_season_maze_save_19"
+  },
+  {
+    20,
+    900308001,
+    20,
+    1000,
+    3,
+    "str_season_maze_save_20"
+  },
+  {
+    21,
+    900308001,
+    21,
+    1050,
+    3,
+    "str_season_maze_save_21"
+  },
+  {
+    22,
+    900308001,
+    22,
+    1100,
+    3,
+    "str_season_maze_save_22"
+  },
+  {
+    23,
+    900308001,
+    23,
+    1150,
+    3,
+    "str_season_maze_save_23"
+  },
+  {
+    24,
+    900308001,
+    24,
+    1200,
+    3,
+    "str_season_maze_save_24"
+  },
+  {
+    25,
+    900308001,
+    25,
+    1250,
+    3,
+    "str_season_maze_save_25"
+  },
+  {
+    26,
+    900308001,
+    26,
+    1300,
+    3,
+    "str_season_maze_save_26"
+  },
+  {
+    27,
+    900308001,
+    27,
+    1350,
+    3,
+    "str_season_maze_save_27"
+  },
+  {
+    28,
+    900308001,
+    28,
+    1400,
+    3,
+    "str_season_maze_save_28"
+  },
+  {
+    29,
+    900308001,
+    29,
+    1450,
+    4,
+    "str_season_maze_save_29"
+  },
+  {
+    30,
+    900308001,
+    30,
+    1500,
+    4,
+    "str_season_maze_save_30"
+  },
+  {
+    31,
+    900308001,
+    31,
+    1550,
+    4,
+    "str_season_maze_save_31"
+  },
+  {
+    32,
+    900308001,
+    32,
+    1600,
+    4,
+    "str_season_maze_save_32"
+  },
+  {
+    33,
+    900308001,
+    33,
+    1650,
+    4,
+    "str_season_maze_save_33"
+  },
+  {
+    34,
+    900308001,
+    34,
+    1700,
+    4,
+    "str_season_maze_save_34"
+  },
+  {
+    35,
+    900308001,
+    35,
+    1750,
+    4,
+    "str_season_maze_save_35"
+  },
+  {
+    36,
+    900308001,
+    36,
+    1800,
+    4,
+    "str_season_maze_save_36"
+  },
+  {
+    37,
+    900308001,
+    37,
+    1900,
+    4,
+    "str_season_maze_save_37"
+  },
+  {
+    38,
+    900308001,
+    38,
+    2000,
+    4,
+    "str_season_maze_save_38"
+  },
+  {
+    39,
+    900308001,
+    39,
+    2100,
+    4,
+    "str_season_maze_save_39"
+  }
 }
 return config, "ID", key
-

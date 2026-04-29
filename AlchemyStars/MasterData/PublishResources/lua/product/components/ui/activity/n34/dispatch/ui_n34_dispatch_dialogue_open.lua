@@ -1,95 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/dispatch/ui_n34_dispatch_dialogue_open.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN34DispatchDialogueOpen", UIController)
 UIN34DispatchDialogueOpen = UIN34DispatchDialogueOpen
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN34DispatchDialogueOpen.Constructor = function(self)
-  -- function num : 0_0
+function UIN34DispatchDialogueOpen:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchDialogueOpen.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIN34DispatchDialogueOpen:LoadDataOnEnter(TT, res, uiParams)
   self._archId = uiParams[1]
   self._fnOpen = uiParams[2]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchDialogueOpen.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN34DispatchDialogueOpen:OnShow(uiParams)
   self:UIWidget()
   self:InAnimation()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchDialogueOpen.OnHide = function(self)
-  -- function num : 0_3
+function UIN34DispatchDialogueOpen:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchDialogueOpen.BtnAnywhereOnClick = function(self, go)
-  -- function num : 0_4
+function UIN34DispatchDialogueOpen:BtnAnywhereOnClick(go)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchDialogueOpen.BtnOpenOnClick = function(self, go)
-  -- function num : 0_5
+function UIN34DispatchDialogueOpen:BtnOpenOnClick(go)
   self:OutAnimation(self._fnOpen)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchDialogueOpen.UIWidget = function(self)
-  -- function num : 0_6
+function UIN34DispatchDialogueOpen:UIWidget()
   self._loopAnim = self:GetUIComponent("Animation", "loopAnim")
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchDialogueOpen.InAnimation = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN34DispatchDialogueOpen:InAnimation()
   local lockName = "UIN34DispatchDialogueOpen:InAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_UIN34DispatchDialogueOpen_in")
+    self._animation:Play("uieff_UIN34DispatchDialogueOpen_in")
     YIELD(TT, 430)
-    ;
-    (self._loopAnim):Play("uieff_UIN34DispatchDialogueOpen_loop")
+    self._loopAnim:Play("uieff_UIN34DispatchDialogueOpen_loop")
     YIELD(TT, 170)
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchDialogueOpen.OutAnimation = function(self, endCb)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN34DispatchDialogueOpen:OutAnimation(endCb)
   local lockName = "UIN34DispatchDialogueOpen:OutAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, lockName, _ENV, endCb
     self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_UIN34DispatchDialogueOpen_out")
+    self._animation:Play("uieff_UIN34DispatchDialogueOpen_out")
     YIELD(TT, 200)
     if endCb ~= nil then
       endCb()
     end
     self:UnLock(lockName)
-  end
-)
+  end)
 end
-
-

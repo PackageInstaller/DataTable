@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/match/serial_auto_fight_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SerialAutoFightModule", GameModule)
 SerialAutoFightModule = SerialAutoFightModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SerialAutoFightModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SerialAutoFightModule:Constructor()
   self:ResetModuleData()
   self:ResetAutoPickStuff()
   self:AttachEvent(GameEventType.UIShowEnd, self.OnUIShowEnd)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.ResetModuleData = function(self)
-  -- function num : 0_1
+function SerialAutoFightModule:ResetModuleData()
   self._matchType = nil
   self._missionId = 0
   self._taskId = 0
@@ -37,73 +27,48 @@ SerialAutoFightModule.ResetModuleData = function(self)
   self._matchResult = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.ResetAutoPickStuff = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SerialAutoFightModule:ResetAutoPickStuff()
   self._apStuff = SerialAutoPickStuffData:New()
   self._jumpData = SerialAutoFightJumpData:New()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.GetApsData = function(self)
-  -- function num : 0_3
+function SerialAutoFightModule:GetApsData()
   return self._apStuff
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.GetJumpData = function(self)
-  -- function num : 0_4
+function SerialAutoFightModule:GetJumpData()
   return self._jumpData
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.Dispose = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (GameModule.Dispose)(self)
-  ;
-  (self._apStuff):Dispose()
+function SerialAutoFightModule:Dispose()
+  GameModule.Dispose(self)
+  self._apStuff:Dispose()
   self._apStuff = nil
-  ;
-  (self._jumpData):Dispose()
+  self._jumpData:Dispose()
   self._jumpData = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.SetAutoFightDatas = function(self, matchType, totalCount, autoData)
-  -- function num : 0_6
+function SerialAutoFightModule:SetAutoFightDatas(matchType, totalCount, autoData)
   self:ResetModuleData()
   self._matchType = matchType
   self._totalCount = totalCount
   self._autoDatas = autoData
   self._inited = true
-  ;
-  (self._apStuff):SetAutoFight()
+  self._apStuff:SetAutoFight()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.SetSerialAutoFight = function(self, matchType, totalCount, campWaitUI, towerData)
-  -- function num : 0_7
+function SerialAutoFightModule:SetSerialAutoFight(matchType, totalCount, campWaitUI, towerData)
   self:ResetModuleData()
   self._matchType = matchType
   self._totalCount = totalCount
   self._inited = true
   self._campaignWaitUI = campWaitUI
   self._towerData = towerData
-  ;
-  (self._apStuff):SetAutoFight()
+  self._apStuff:SetAutoFight()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.QuickSetData = function(active, matchType, totalCount, campWaitUI, towerData)
-  -- function num : 0_8 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(SerialAutoFightModule)
+function SerialAutoFightModule.QuickSetData(active, matchType, totalCount, campWaitUI, towerData)
+  local module = GameGlobal.GetModule(SerialAutoFightModule)
   if active then
     module:SetSerialAutoFight(matchType, totalCount, campWaitUI, towerData)
   else
@@ -111,293 +76,196 @@ SerialAutoFightModule.QuickSetData = function(active, matchType, totalCount, cam
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.QuickSetData_Campaign = function(active, campaignType, matchType, totalCount)
-  -- function num : 0_9 , upvalues : _ENV
-  local campStageUI, campWaitUI = (CampaignConst.GetCampaignAutoFightInfo)(campaignType)
-  ;
-  (SerialAutoFightModule.QuickSetData)(active, matchType, totalCount, campWaitUI)
+function SerialAutoFightModule.QuickSetData_Campaign(active, campaignType, matchType, totalCount)
+  local campStageUI, campWaitUI = CampaignConst.GetCampaignAutoFightInfo(campaignType)
+  SerialAutoFightModule.QuickSetData(active, matchType, totalCount, campWaitUI)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.QuickSetData_Tower = function(active, id)
-  -- function num : 0_10 , upvalues : _ENV
-  (SerialAutoFightModule.QuickSetData)(active, MatchType.MT_Tower, 99999, nil, {id = id})
+function SerialAutoFightModule.QuickSetData_Tower(active, id)
+  SerialAutoFightModule.QuickSetData(active, MatchType.MT_Tower, 99999, nil, {id = id})
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.CancelSerialAutoFight = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):KillTask(self._taskId)
+function SerialAutoFightModule:CancelSerialAutoFight()
+  GameGlobal.TaskManager():KillTask(self._taskId)
   self:ResetModuleData()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CancelSerialAutoFight)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CancelSerialAutoFight)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.GetTicketCount = function(self)
-  -- function num : 0_12
+function SerialAutoFightModule:GetTicketCount()
   if not self._inited then
     return 0
   end
   if not self._autoDatas then
     return 0
   end
-  local autoData = (self._autoDatas)[self._fightCount + 1]
+  local autoData = self._autoDatas[self._fightCount + 1]
   if not autoData then
     return 0
   end
   return autoData.ticketCount
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.GetTicketCountByIndex = function(self, idx)
-  -- function num : 0_13
+function SerialAutoFightModule:GetTicketCountByIndex(idx)
   if not self._inited then
     return 0
   end
   if not self._autoDatas then
     return 0
   end
-  local autoData = (self._autoDatas)[idx]
+  local autoData = self._autoDatas[idx]
   if not autoData then
     return 0
   end
   return autoData.ticketCount
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.GetAutoFightDatas_Tower = function(self)
-  -- function num : 0_14
-  if self._towerData then
-    return (self._towerData).id
-  end
+function SerialAutoFightModule:GetAutoFightDatas_Tower()
+  return self._towerData and self._towerData.id
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.GetMatchType = function(self)
-  -- function num : 0_15
+function SerialAutoFightModule:GetMatchType()
   return self._matchType
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.IsInited = function(self)
-  -- function num : 0_16
+function SerialAutoFightModule:IsInited()
   return self._inited
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.IsRunning = function(self)
-  -- function num : 0_17
+function SerialAutoFightModule:IsRunning()
   return self._running
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.GetWinCount = function(self)
-  -- function num : 0_18
+function SerialAutoFightModule:GetWinCount()
   return self._winCount
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.GetFightCount = function(self)
-  -- function num : 0_19
+function SerialAutoFightModule:GetFightCount()
   return self._fightCount
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.GetTotalCount = function(self)
-  -- function num : 0_20
+function SerialAutoFightModule:GetTotalCount()
   return self._totalCount
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.GetRewardList = function(self)
-  -- function num : 0_21
+function SerialAutoFightModule:GetRewardList()
   return self._rewardList
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.GetResult = function(self)
-  -- function num : 0_22
+function SerialAutoFightModule:GetResult()
   return self._matchResult
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.GetActivityRewardList = function(self)
-  -- function num : 0_23
+function SerialAutoFightModule:GetActivityRewardList()
   return self._activityRewardList
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.GetReturnHelpRewardList = function(self)
-  -- function num : 0_24
+function SerialAutoFightModule:GetReturnHelpRewardList()
   return self._returnHelpRewardList
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.GetWaitTime = function(self)
-  -- function num : 0_25
+function SerialAutoFightModule:GetWaitTime()
   return self._waitTime
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.SetBattleResultComplated = function(self)
-  -- function num : 0_26
+function SerialAutoFightModule:SetBattleResultComplated()
   self._battleResultComplated = true
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.OnUIShowEnd = function(self, uiName, uiParams)
-  -- function num : 0_27
-  local cb = (self._waitingUI)[uiName]
+function SerialAutoFightModule:OnUIShowEnd(uiName, uiParams)
+  local cb = self._waitingUI[uiName]
   if cb then
     cb(uiParams)
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._waitingUI)[uiName] = nil
+    self._waitingUI[uiName] = nil
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.WaitForUIShow = function(self, TT, uiName, callback)
-  -- function num : 0_28 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R4 in 'UnsetPending'
-
-  (self._waitingUI)[uiName] = callback
-  while (self._waitingUI)[uiName] do
+function SerialAutoFightModule:WaitForUIShow(TT, uiName, callback)
+  self._waitingUI[uiName] = callback
+  while self._waitingUI[uiName] do
     YIELD(TT, 200)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.StartSerialFight = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function SerialAutoFightModule:StartSerialFight()
   if not self._inited then
-    return 
+    return
   end
   if self._running then
-    return 
+    return
   end
   self._running = true
-  self._taskId = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_29_0 , upvalues : self, _ENV
+  self._taskId = GameGlobal.TaskManager():StartTask(function(TT)
     if self._matchType == MatchType.MT_Mission then
       self:_DoAutoFight(TT)
       self:WaitForUIShow(TT, "UIDiscovery", function()
-      -- function num : 0_29_0_0 , upvalues : _ENV
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIDiscovery", input = "ShowSerialRewards", 
-args = {}
-})
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+          ui = "UIDiscovery",
+          input = "ShowSerialRewards",
+          args = {}
+        })
+      end)
+    elseif self._matchType == MatchType.MT_Tower then
+      self:_DoAutoFight(TT)
+      self:WaitForUIShow(TT, "UITowerLayerController", function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+          ui = "UITowerLayerController",
+          input = "ShowSerialRewards",
+          args = {}
+        })
+      end)
+    elseif self._matchType == MatchType.MT_ResDungeon then
+      self:_DoAutoFight(TT)
+      self:WaitForUIShow(TT, "UIResDetailController", function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+          ui = "UIResDetailController",
+          input = "ShowSerialRewards",
+          args = {}
+        })
+      end)
+    elseif self._matchType == MatchType.MT_Campaign then
+      self:_DoAutoFight(TT)
+      self:WaitForUIShow(TT, self._campaignWaitUI, function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+          ui = self._campaignWaitUI,
+          input = "ShowSerialRewards",
+          args = {}
+        })
+      end)
+    elseif self._matchType == MatchType.MT_Season then
+      self:_DoAutoFight(TT)
+      self:WaitForUIShow(TT, self._campaignWaitUI, function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+          ui = self._campaignWaitUI,
+          input = "ShowSerialRewards",
+          args = {}
+        })
+      end)
     end
-)
-    else
-      if self._matchType == MatchType.MT_Tower then
-        self:_DoAutoFight(TT)
-        self:WaitForUIShow(TT, "UITowerLayerController", function()
-      -- function num : 0_29_0_1 , upvalues : _ENV
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UITowerLayerController", input = "ShowSerialRewards", 
-args = {}
-})
-    end
-)
-      else
-        if self._matchType == MatchType.MT_ResDungeon then
-          self:_DoAutoFight(TT)
-          self:WaitForUIShow(TT, "UIResDetailController", function()
-      -- function num : 0_29_0_2 , upvalues : _ENV
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIResDetailController", input = "ShowSerialRewards", 
-args = {}
-})
-    end
-)
-        else
-          if self._matchType == MatchType.MT_Campaign then
-            self:_DoAutoFight(TT)
-            self:WaitForUIShow(TT, self._campaignWaitUI, function()
-      -- function num : 0_29_0_3 , upvalues : _ENV, self
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = self._campaignWaitUI, input = "ShowSerialRewards", 
-args = {}
-})
-    end
-)
-          else
-            if self._matchType == MatchType.MT_Season then
-              self:_DoAutoFight(TT)
-              self:WaitForUIShow(TT, self._campaignWaitUI, function()
-      -- function num : 0_29_0_4 , upvalues : _ENV, self
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = self._campaignWaitUI, input = "ShowSerialRewards", 
-args = {}
-})
-    end
-)
-            end
-          end
-        end
-      end
-    end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule._DoAutoFight = function(self, TT)
-  -- function num : 0_30 , upvalues : _ENV
-  while 1 do
-    while 1 do
-      if self._fightCount < self._totalCount then
-        if not self._battleResultComplated then
-          YIELD(TT, 100)
-          -- DECOMPILER ERROR at PC11: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC11: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC11: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC11: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+function SerialAutoFightModule:_DoAutoFight(TT)
+  while self._fightCount < self._totalCount do
+    while not self._battleResultComplated do
+      YIELD(TT, 100)
     end
     self._battleResultComplated = false
     local count = self._fightCount + 1
     self:_CalcRewards(count)
     if not self:_CheckRunning() then
       self._running = false
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIBattleResultComplete", input = "bgOnClick", 
-args = {}
-})
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+        ui = "UIBattleResultComplete",
+        input = "bgOnClick",
+        args = {}
+      })
       self._fightCount = self._fightCount + 1
       self._totalCount = self._fightCount
-      return 
+      return
     end
     for waitTime = 3, 1, -1 do
       self._waitTime = waitTime
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SerialAutoFightWaitTime, waitTime)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.SerialAutoFightWaitTime, waitTime)
       YIELD(TT, 1000)
     end
     self:_NextFightInBattleResult()
@@ -405,143 +273,96 @@ args = {}
     YIELD(TT, 1000)
     for waitTime = 3, 1, -1 do
       self._waitTime = waitTime
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SerialAutoFightWaitTime, waitTime)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.SerialAutoFightWaitTime, waitTime)
       YIELD(TT, 1000)
     end
     self._waitTime = 3
     self._fightCount = self._fightCount + 1
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UITeams", input = "btnFightOnClick", 
-args = {}
-})
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+      ui = "UITeams",
+      input = "btnFightOnClick",
+      args = {}
+    })
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule._CheckRunning = function(self, count)
-  -- function num : 0_31 , upvalues : _ENV
+function SerialAutoFightModule:_CheckRunning(count)
   if self._matchType == MatchType.MT_Tower then
     local gameMatchModule = self:GetModule(GameMatchModule)
     local matchResult = gameMatchModule:GetMachResult()
     local isVictory = matchResult.m_bVictory
-    local towerModule = (GameGlobal.GetModule)(TowerModule)
+    local towerModule = GameGlobal.GetModule(TowerModule)
     local nextCfg = towerModule:GetNextStageCfg(matchResult.m_nID)
     local haveNext = nextCfg ~= nil
-    return not isVictory or haveNext
+    return isVictory and haveNext
   else
     return self._fightCount + 1 < self._totalCount
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule._NextFightInBattleResult = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function SerialAutoFightModule:_NextFightInBattleResult()
   local func = self._matchType == MatchType.MT_Tower and "NextFightTeams_Tower" or "againFightBtnOnClick"
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIBattleResultComplete", input = func, 
-args = {}
-})
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+    ui = "UIBattleResultComplete",
+    input = func,
+    args = {}
+  })
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule._CalcRewards = function(self, count)
-  -- function num : 0_33 , upvalues : _ENV
+function SerialAutoFightModule:_CalcRewards(count)
   local gameMatchModule = self:GetModule(GameMatchModule)
   local matchResult = gameMatchModule:GetMachResult()
-  ;
-  (table.insert)(self._matchResult, matchResult.m_bVictory)
+  table.insert(self._matchResult, matchResult.m_bVictory)
   if matchResult.m_bVictory then
     self._winCount = self._winCount + 1
-    if (table.count)(matchResult.m_activity_rewards) > 0 then
-      for index,value in ipairs(matchResult.m_activity_rewards) do
+    if table.count(matchResult.m_activity_rewards) > 0 then
+      for index, value in ipairs(matchResult.m_activity_rewards) do
         value.type = StageAwardType.Activity
       end
       local activityAwards = {}
-      ;
-      (table.appendArray)(activityAwards, matchResult.m_activity_rewards)
-      -- DECOMPILER ERROR at PC38: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._activityRewardList)[count] = activityAwards
+      table.appendArray(activityAwards, matchResult.m_activity_rewards)
+      self._activityRewardList[count] = activityAwards
     else
-      do
-        -- DECOMPILER ERROR at PC41: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._activityRewardList)[count] = nil
-        if (table.count)(matchResult.m_back_rewards) > 0 then
-          for index,value in ipairs(matchResult.m_back_rewards) do
-            value.type = StageAwardType.Activity
-          end
-          local returnAwards = {}
-          ;
-          (table.appendArray)(returnAwards, matchResult.m_back_rewards)
-          -- DECOMPILER ERROR at PC64: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._returnHelpRewardList)[count] = returnAwards
-        else
-          do
-            -- DECOMPILER ERROR at PC67: Confused about usage of register: R4 in 'UnsetPending'
-
-            ;
-            (self._returnHelpRewardList)[count] = nil
-            do
-              local normalAwards = {}
-              ;
-              (table.appendArray)(normalAwards, matchResult.m_vecAwardNormal)
-              ;
-              (table.appendArray)(normalAwards, matchResult.m_vecAwardPerfect)
-              ;
-              (table.appendArray)(normalAwards, matchResult.m_vecExtAward)
-              ;
-              (table.appendArray)(normalAwards, matchResult.m_vecDoubleExtAward)
-              ;
-              (table.appendArray)(normalAwards, matchResult.m_vecFirstPassAward)
-              ;
-              (table.sort)(normalAwards, function(a, b)
-    -- function num : 0_33_0 , upvalues : _ENV
-    local qa = ((Cfg.cfg_item)[a.assetid]).Color
-    local qb = ((Cfg.cfg_item)[b.assetid]).Color
-    if a.assetid >= b.assetid then
-      do return qa ~= qb end
-      do return qb < qa end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+      self._activityRewardList[count] = nil
     end
-  end
-)
-              -- DECOMPILER ERROR at PC100: Confused about usage of register: R5 in 'UnsetPending'
-
-              ;
-              (self._rewardList)[count] = normalAwards
-              -- DECOMPILER ERROR at PC103: Confused about usage of register: R4 in 'UnsetPending'
-
-              ;
-              (self._rewardList)[count] = nil
-            end
-          end
-        end
+    if 0 < table.count(matchResult.m_back_rewards) then
+      for index, value in ipairs(matchResult.m_back_rewards) do
+        value.type = StageAwardType.Activity
       end
+      local returnAwards = {}
+      table.appendArray(returnAwards, matchResult.m_back_rewards)
+      self._returnHelpRewardList[count] = returnAwards
+    else
+      self._returnHelpRewardList[count] = nil
     end
+    local normalAwards = {}
+    table.appendArray(normalAwards, matchResult.m_vecAwardNormal)
+    table.appendArray(normalAwards, matchResult.m_vecAwardPerfect)
+    table.appendArray(normalAwards, matchResult.m_vecExtAward)
+    table.appendArray(normalAwards, matchResult.m_vecDoubleExtAward)
+    table.appendArray(normalAwards, matchResult.m_vecFirstPassAward)
+    table.sort(normalAwards, function(a, b)
+      local qa = Cfg.cfg_item[a.assetid].Color
+      local qb = Cfg.cfg_item[b.assetid].Color
+      if qa == qb then
+        return a.assetid < b.assetid
+      end
+      return qa > qb
+    end)
+    self._rewardList[count] = normalAwards
+  else
+    self._rewardList[count] = nil
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.MergeRewards = function(self)
-  -- function num : 0_34 , upvalues : _ENV
+function SerialAutoFightModule:MergeRewards()
   local original = self._rewardList
   local map = {}
   self._mergedAwardList = {}
   for i = 1, self._totalCount do
     local awards = original[i]
     if awards then
-      for i,reward in ipairs(awards) do
+      for i, reward in ipairs(awards) do
         if not map[reward.assetid] then
           map[reward.assetid] = reward.count
         else
@@ -550,41 +371,31 @@ SerialAutoFightModule.MergeRewards = function(self)
       end
     end
   end
-  for id,cnt in pairs(map) do
+  for id, cnt in pairs(map) do
     local asset = RoleAsset:New()
     asset.assetid = id
     asset.count = cnt
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._mergedAwardList)[#self._mergedAwardList + 1] = asset
+    self._mergedAwardList[#self._mergedAwardList + 1] = asset
   end
-  ;
-  (table.sort)(self._mergedAwardList, function(a, b)
-    -- function num : 0_34_0 , upvalues : _ENV
-    local qa = ((Cfg.cfg_item)[a.assetid]).Color
-    local qb = ((Cfg.cfg_item)[b.assetid]).Color
-    if a.assetid >= b.assetid then
-      do return qa ~= qb end
-      do return qb < qa end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  table.sort(self._mergedAwardList, function(a, b)
+    local qa = Cfg.cfg_item[a.assetid].Color
+    local qb = Cfg.cfg_item[b.assetid].Color
+    if qa == qb then
+      return a.assetid < b.assetid
     end
-  end
-)
+    return qa > qb
+  end)
   return self._mergedAwardList
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.GetMergedActivityRewards = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function SerialAutoFightModule:GetMergedActivityRewards()
   local original = self._activityRewardList
   local map = {}
   self._mergedActivityRewardList = {}
   for i = 1, self._totalCount do
     local awards = original[i]
     if awards then
-      for i,reward in ipairs(awards) do
+      for i, reward in ipairs(awards) do
         if not map[reward.assetid] then
           map[reward.assetid] = reward.count
         else
@@ -593,42 +404,32 @@ SerialAutoFightModule.GetMergedActivityRewards = function(self)
       end
     end
   end
-  for id,cnt in pairs(map) do
+  for id, cnt in pairs(map) do
     local asset = RoleAsset:New()
     asset.assetid = id
     asset.count = cnt
     asset.type = StageAwardType.Activity
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._mergedActivityRewardList)[#self._mergedActivityRewardList + 1] = asset
+    self._mergedActivityRewardList[#self._mergedActivityRewardList + 1] = asset
   end
-  ;
-  (table.sort)(self._mergedActivityRewardList, function(a, b)
-    -- function num : 0_35_0 , upvalues : _ENV
-    local qa = ((Cfg.cfg_item)[a.assetid]).Color
-    local qb = ((Cfg.cfg_item)[b.assetid]).Color
-    if a.assetid >= b.assetid then
-      do return qa ~= qb end
-      do return qb < qa end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  table.sort(self._mergedActivityRewardList, function(a, b)
+    local qa = Cfg.cfg_item[a.assetid].Color
+    local qb = Cfg.cfg_item[b.assetid].Color
+    if qa == qb then
+      return a.assetid < b.assetid
     end
-  end
-)
+    return qa > qb
+  end)
   return self._mergedActivityRewardList
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.GetMergedReturnHelpRewards = function(self)
-  -- function num : 0_36 , upvalues : _ENV
+function SerialAutoFightModule:GetMergedReturnHelpRewards()
   local original = self._returnHelpRewardList
   local map = {}
   self._mergedReturnHelpRewardList = {}
   for i = 1, self._totalCount do
     local awards = original[i]
     if awards then
-      for i,reward in ipairs(awards) do
+      for i, reward in ipairs(awards) do
         if not map[reward.assetid] then
           map[reward.assetid] = reward.count
         else
@@ -637,80 +438,56 @@ SerialAutoFightModule.GetMergedReturnHelpRewards = function(self)
       end
     end
   end
-  for id,cnt in pairs(map) do
+  for id, cnt in pairs(map) do
     local asset = RoleAsset:New()
     asset.assetid = id
     asset.count = cnt
     asset.type = StageAwardType.Normal
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._mergedReturnHelpRewardList)[#self._mergedReturnHelpRewardList + 1] = asset
+    self._mergedReturnHelpRewardList[#self._mergedReturnHelpRewardList + 1] = asset
   end
-  ;
-  (table.sort)(self._mergedReturnHelpRewardList, function(a, b)
-    -- function num : 0_36_0 , upvalues : _ENV
-    local qa = ((Cfg.cfg_item)[a.assetid]).Color
-    local qb = ((Cfg.cfg_item)[b.assetid]).Color
-    if a.assetid >= b.assetid then
-      do return qa ~= qb end
-      do return qb < qa end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  table.sort(self._mergedReturnHelpRewardList, function(a, b)
+    local qa = Cfg.cfg_item[a.assetid].Color
+    local qb = Cfg.cfg_item[b.assetid].Color
+    if qa == qb then
+      return a.assetid < b.assetid
     end
-  end
-)
+    return qa > qb
+  end)
   return self._mergedReturnHelpRewardList
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-SerialAutoFightModule.GetTotalRewards = function(self)
-  -- function num : 0_37 , upvalues : _ENV
-  if not self._rewardList then
-    local normal = {}
-  end
-  if not self._activityRewardList then
-    local activity = {}
-  end
-  if not self._returnHelpRewardList then
-    local returnSys = {}
-  end
-  local all = {normal, activity, returnSys}
+function SerialAutoFightModule:GetTotalRewards()
+  local normal = self._rewardList or {}
+  local activity = self._activityRewardList or {}
+  local returnSys = self._returnHelpRewardList or {}
+  local all = {
+    normal,
+    activity,
+    returnSys
+  }
   local total = {}
-  for _,rewards in pairs(all) do
-    for __,assets in pairs(rewards) do
-      for ___,asset in pairs(assets) do
+  for _, rewards in pairs(all) do
+    for __, assets in pairs(rewards) do
+      for ___, asset in pairs(assets) do
         local id = asset.assetid
         local count = asset.count
         if not total[id] then
           total[id] = NewRoleAsset(id, count)
-          -- DECOMPILER ERROR at PC42: Confused about usage of register: R23 in 'UnsetPending'
-
-          ;
-          (total[id]).type = asset.type
+          total[id].type = asset.type
         else
-          -- DECOMPILER ERROR at PC48: Confused about usage of register: R23 in 'UnsetPending'
-
-          ;
-          (total[id]).count = (total[id]).count + count
+          total[id].count = total[id].count + count
         end
       end
     end
   end
-  local total = (table.toArray)(total)
-  ;
-  (table.sort)(total, function(a, b)
-    -- function num : 0_37_0 , upvalues : _ENV
-    local qa = ((Cfg.cfg_item)[a.assetid]).Color
-    local qb = ((Cfg.cfg_item)[b.assetid]).Color
-    if a.assetid >= b.assetid then
-      do return qa ~= qb end
-      do return qb < qa end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  local total = table.toArray(total)
+  table.sort(total, function(a, b)
+    local qa = Cfg.cfg_item[a.assetid].Color
+    local qb = Cfg.cfg_item[b.assetid].Color
+    if qa == qb then
+      return a.assetid < b.assetid
     end
-  end
-)
+    return qa > qb
+  end)
   return total
 end
-
-

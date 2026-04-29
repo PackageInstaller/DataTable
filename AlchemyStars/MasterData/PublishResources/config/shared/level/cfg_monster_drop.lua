@@ -1,25 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/level/cfg_monster_drop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, DropItem = 2, MinCount = 3, MaxCount = 4, Probability = 5}
+local key = {
+  ID = 1,
+  DropItem = 2,
+  MinCount = 3,
+  MaxCount = 4,
+  Probability = 5
+}
 local config = {
-[3] = {3, 4, 250, 350, 1}
-, 
-[4] = {4, 4, 300, 500, 1}
-, 
-[301] = {301, 4, 400, 600, 1}
-, 
-[302] = {302, 4, 800, 1200, 1}
-, 
-[303] = {303, 4, 1200, 1800, 1}
-, 
-[304] = {304, 4, 1600, 2400, 1}
-, 
-[305] = {305, 4, 2000, 3000, 1}
-, 
-[9997001] = {9997001, 5, 144, 252, 1}
+  [3] = {
+    3,
+    4,
+    250,
+    350,
+    1
+  },
+  [4] = {
+    4,
+    4,
+    300,
+    500,
+    1
+  },
+  [301] = {
+    301,
+    4,
+    400,
+    600,
+    1
+  },
+  [302] = {
+    302,
+    4,
+    800,
+    1200,
+    1
+  },
+  [303] = {
+    303,
+    4,
+    1200,
+    1800,
+    1
+  },
+  [304] = {
+    304,
+    4,
+    1600,
+    2400,
+    1
+  },
+  [305] = {
+    305,
+    4,
+    2000,
+    3000,
+    1
+  },
+  [9997001] = {
+    9997001,
+    5,
+    144,
+    252,
+    1
+  }
 }
 return config, "ID", key
-

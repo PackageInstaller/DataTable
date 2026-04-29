@@ -1,16 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/game_logic/login_base_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ModuleStateType = {Unset = "Unset", RetryResetDuring = "RetryResetDuring", ResetDuring = "ResetDuring"}
+local ModuleStateType = {
+  Unset = "Unset",
+  RetryResetDuring = "RetryResetDuring",
+  ResetDuring = "ResetDuring"
+}
 _enum("ModuleStateType", ModuleStateType)
 _class("LoginBaseModule", GameModule)
 LoginBaseModule = LoginBaseModule
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-LoginBaseModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : ModuleStateType
+function LoginBaseModule:Constructor()
   self.svrId = 0
   self.isLogin = false
   self.curTaskId = 0
@@ -27,15 +24,10 @@ LoginBaseModule.Constructor = function(self)
   self.tempList = {}
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((LoginBaseModule.super).Init)(self)
-  ;
-  (self.caller):RegisterPushHandler(CEventSvrPushLogout, self.HandleLogout, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventSvrPushNotification, self.HandleNotification, self)
+function LoginBaseModule:Init()
+  LoginBaseModule.super.Init(self)
+  self.caller:RegisterPushHandler(CEventSvrPushLogout, self.HandleLogout, self)
+  self.caller:RegisterPushHandler(CEventSvrPushNotification, self.HandleNotification, self)
   self:AttachEvent(GameEventType.ConnectDone, self.OnConnectDone)
   self:AttachEvent(GameEventType.ConnectFail, self.OnConnectFailed)
   self:AttachEvent(GameEventType.ConnectClose, self.OnConnectClosed)
@@ -46,388 +38,260 @@ LoginBaseModule.Init = function(self)
   self.isLogin = false
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function LoginBaseModule:Dispose()
   self.isLogin = false
   self:StopFastCheck()
   self:CancelRetryTimer()
-  ;
-  (self.caller):UnRegisterPushHandler(CEventSvrPushLogout)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventSvrPushNotification)
-  ;
-  ((LoginBaseModule.super).Dispose)(self)
+  self.caller:UnRegisterPushHandler(CEventSvrPushLogout)
+  self.caller:UnRegisterPushHandler(CEventSvrPushNotification)
+  LoginBaseModule.super.Dispose(self)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.Update = function(self, curTime)
-  -- function num : 0_3 , upvalues : _ENV
-  ((LoginBaseModule.super).Update)(self, curTime)
+function LoginBaseModule:Update(curTime)
+  LoginBaseModule.super.Update(self, curTime)
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.Key = function(self)
-  -- function num : 0_4
-  return self.caller and (self.caller):Key() or "<disposed module>"
+function LoginBaseModule:Key()
+  return self.caller and self.caller:Key() or "<disposed module>"
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.IsLogin = function(self)
-  -- function num : 0_5
+function LoginBaseModule:IsLogin()
   return self.isLogin
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.Reset = function(self, reason)
-  -- function num : 0_6 , upvalues : _ENV, ModuleStateType
-  (Log.debug)(self:Key(), " Reset, reason: ", reason, (Log.traceback)())
+function LoginBaseModule:Reset(reason)
+  Log.debug(self:Key(), " Reset, reason: ", reason, Log.traceback())
   self.stateType = ModuleStateType.Unset
   self.isLogin = false
   self:StopFastCheck()
   self:CancelRetryTimer()
   self:Logout(reason)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LoginReset)
-  ;
-  (self.caller):ResetCall(CallResultType.CallReset)
-  ;
-  (self.caller):Disconnect(reason)
-  ;
-  ((GameGlobal.GameLogic)()):GoBack()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.LoginReset)
+  self.caller:ResetCall(CallResultType.CallReset)
+  self.caller:Disconnect(reason)
+  GameGlobal.GameLogic():GoBack()
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.Retry = function(self, reason)
-  -- function num : 0_7 , upvalues : _ENV, ModuleStateType
-  (Log.debug)(self:Key(), " Retry, reason: ", reason, (Log.traceback)())
+function LoginBaseModule:Retry(reason)
+  Log.debug(self:Key(), " Retry, reason: ", reason, Log.traceback())
   self.stateType = ModuleStateType.Unset
-  local delayTime = self.lastRetryTime + self.retryDelayCD - (GameGlobal:GetInstance()):GetCurrentRealTime()
-  if (self.caller):IsCallTimeout() then
-    (self.caller):ResetCallTimeout()
+  local delayTime = self.lastRetryTime + self.retryDelayCD - GameGlobal:GetInstance():GetCurrentRealTime()
+  if self.caller:IsCallTimeout() then
+    self.caller:ResetCallTimeout()
     delayTime = 40
-  else
-    if (self.caller):HasSyncCall() then
-      delayTime = 40
-    else
-      if (self.caller):IsConnected() then
-        delayTime = 40
-      else
-        if delayTime <= 0 then
-          delayTime = 40
-        end
-      end
-    end
+  elseif self.caller:HasSyncCall() then
+    delayTime = 40
+  elseif self.caller:IsConnected() then
+    delayTime = 40
+  elseif delayTime <= 0 then
+    delayTime = 40
   end
   self:StartRetryProc(delayTime, reason)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.StartRetryProc = function(self, delayTime, reason)
-  -- function num : 0_8 , upvalues : _ENV
-  (Log.debug)(self:Key(), " Retry after: ", delayTime)
-  self.retryTimer = ((GameGlobal.RealTimer)()):AddEvent(delayTime, self.RetryProc, self, "reason: " .. reason .. ", before: " .. tostring(delayTime))
+function LoginBaseModule:StartRetryProc(delayTime, reason)
+  Log.debug(self:Key(), " Retry after: ", delayTime)
+  self.retryTimer = GameGlobal.RealTimer():AddEvent(delayTime, self.RetryProc, self, "reason: " .. reason .. ", before: " .. tostring(delayTime))
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.CancelRetryTimer = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function LoginBaseModule:CancelRetryTimer()
   if self.retryTimer == nil then
-    return 
+    return
   end
-  ;
-  (Log.debug)(self:Key(), " CancelRetryTimer", (Log.traceback)())
-  ;
-  ((GameGlobal.RealTimer)()):CancelEvent(self.retryTimer)
+  Log.debug(self:Key(), " CancelRetryTimer", Log.traceback())
+  GameGlobal.RealTimer():CancelEvent(self.retryTimer)
   self.retryTimer = nil
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.RetryProc = function(self, reason)
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.debug)(self:Key(), " RetryProc, reason: ", reason, (Log.traceback)())
+function LoginBaseModule:RetryProc(reason)
+  Log.debug(self:Key(), " RetryProc, reason: ", reason, Log.traceback())
   self:CancelRetryTimer()
-  if (self.caller):HasAuth() then
-    (Log.warn)(self:Key(), " has auth, need not retry")
-    return 
+  if self.caller:HasAuth() then
+    Log.warn(self:Key(), " has auth, need not retry")
+    return
   end
-  self.lastRetryTime = (GameGlobal:GetInstance()):GetCurrentRealTime()
+  self.lastRetryTime = GameGlobal:GetInstance():GetCurrentRealTime()
   if self.curTaskId == 0 then
     local timeout = self.retryTimeout
-    do
-      do
-        if self.fastCheckTimer then
-          local elapsed = (self.caller):LastRecvElapsedTick()
-          if self.fastCheckTimeout <= elapsed then
-            timeout = self.fastCheckTimelong
-          else
-            if self.fastCheckTimeout - elapsed <= self.fastCheckTimelong then
-              timeout = self.fastCheckTimeout - elapsed
-            else
-              timeout = self.fastCheckTimelong
-            end
-          end
-        end
-        ;
-        ((GameGlobal.TaskManager)()):StartTask(self.RetryTask, self, timeout)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NetWorkRetryStart)
-        ;
-        (self.caller):RetryCall(self.curTaskId)
+    if self.fastCheckTimer then
+      local elapsed = self.caller:LastRecvElapsedTick()
+      if elapsed >= self.fastCheckTimeout then
+        timeout = self.fastCheckTimelong
+      elseif self.fastCheckTimelong >= self.fastCheckTimeout - elapsed then
+        timeout = self.fastCheckTimeout - elapsed
+      else
+        timeout = self.fastCheckTimelong
       end
     end
+    GameGlobal.TaskManager():StartTask(self.RetryTask, self, timeout)
+  else
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.NetWorkRetryStart)
+    self.caller:RetryCall(self.curTaskId)
   end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.RetryTask = function(self, TT, timeout)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NetWorkRetryStart)
+function LoginBaseModule:RetryTask(TT, timeout)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.NetWorkRetryStart)
   self.startRetryTime = self.lastRetryTime
-  ;
-  (Log.debug)(self:Key(), " RetryTask, timeout: ", timeout, (Log.traceback)())
+  Log.debug(self:Key(), " RetryTask, timeout: ", timeout, Log.traceback())
   local res = self:Login(TT, self.svrId, true, timeout)
   self:CancelRetryTimer()
   if res:GetSucc() then
-    (Log.debug)(self:Key(), " retry done")
+    Log.debug(self:Key(), " retry done")
+  elseif res:GetCallSucc() then
+    Log.fatal(self:Key(), " retry failed, msg: ", tostring(res:GetResult()))
+  elseif self:IsLogin() then
+    Log.fatal(self:Key(), " retry failed, call: ", tostring(res:GetCallErr()))
+    GameGlobal.GameLogic().NetworkMonitor:CallRetryReset(self, "call login timeout")
   else
-    if res:GetCallSucc() then
-      (Log.fatal)(self:Key(), " retry failed, msg: ", tostring(res:GetResult()))
-    else
-      if self:IsLogin() then
-        (Log.fatal)(self:Key(), " retry failed, call: ", tostring(res:GetCallErr()))
-        ;
-        (((GameGlobal.GameLogic)()).NetworkMonitor):CallRetryReset(self, "call login timeout")
-      else
-        ;
-        (self.caller):ResetCall(CallResultType.CallTimeout)
-      end
-    end
+    self.caller:ResetCall(CallResultType.CallTimeout)
   end
   self.startRetryTime = 0
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NetWorkRetryEnd)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.NetWorkRetryEnd)
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.Login = function(self, TT, svrId, silent, timeout)
-  -- function num : 0_12 , upvalues : _ENV
+function LoginBaseModule:Login(TT, svrId, silent, timeout)
   return AsyncRequestRes:New()
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.Logout = function(self, reason)
-  -- function num : 0_13 , upvalues : _ENV
-  if not (self.caller):IsConnected() then
-    return 
+function LoginBaseModule:Logout(reason)
+  if not self.caller:IsConnected() then
+    return
   end
-  ;
-  (Log.debug)(self:Key(), " Logout, reason: ", reason, (Log.traceback)())
-  local msg = (NetMessageFactory:GetInstance()):CreateMessage(CEventCliPushLogout)
+  Log.debug(self:Key(), " Logout, reason: ", reason, Log.traceback())
+  local msg = NetMessageFactory:GetInstance():CreateMessage(CEventCliPushLogout)
   self:Push(msg)
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.HandleLogout = function(self, msg)
-  -- function num : 0_14 , upvalues : _ENV
-  (Log.debug)(self:Key(), " HandleLogout, err: ", tostring(msg.m_err), " reason: ", msg.m_reason, (Log.traceback)())
-  ;
-  ((GameGlobal.GameLogic)()):BackToLogin(false, self, "server logout, err: " .. tostring(msg.m_err) .. " reason: " .. msg.m_reason, self:IsLogin(), msg.m_err, (Log.traceback)())
+function LoginBaseModule:HandleLogout(msg)
+  Log.debug(self:Key(), " HandleLogout, err: ", tostring(msg.m_err), " reason: ", msg.m_reason, Log.traceback())
+  GameGlobal.GameLogic():BackToLogin(false, self, "server logout, err: " .. tostring(msg.m_err) .. " reason: " .. msg.m_reason, self:IsLogin(), msg.m_err, Log.traceback())
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.HandleNotification = function(self, msg)
-  -- function num : 0_15 , upvalues : _ENV
-  (Log.debug)(self:Key(), " HandleNotification, notification_type: ", tostring(msg.m_notification_type), (Log.traceback)())
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PushNotification, msg.m_notification_type, msg.m_hot_update_res_ver)
+function LoginBaseModule:HandleNotification(msg)
+  Log.debug(self:Key(), " HandleNotification, notification_type: ", tostring(msg.m_notification_type), Log.traceback())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PushNotification, msg.m_notification_type, msg.m_hot_update_res_ver)
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.StartFastCheck = function(self, interval, timelong, timeout)
-  -- function num : 0_16 , upvalues : _ENV
-  if not (self.caller):HasAuth() then
-    return 
+function LoginBaseModule:StartFastCheck(interval, timelong, timeout)
+  if not self.caller:HasAuth() then
+    return
   end
   self:StopFastCheck()
   self.fastCheckTimelong = timelong
   self.fastCheckTimeout = timeout
-  local lastSendElapsedTick = (self.caller):LastSendElapsedTick()
-  local lastRecvElapsedTick = (self.caller):LastRecvElapsedTick()
-  ;
-  (Log.debug)(self:Key(), " StartFastCheck, send elapsed: ", lastSendElapsedTick, ", recv elapsed: ", lastRecvElapsedTick, ", interval: ", interval, ", timelong: ", timelong, ", timeout: ", timeout, (Log.traceback)())
-  if timelong <= lastRecvElapsedTick and lastSendElapsedTick < timelong then
-    (self.caller):DisconnectLink("fast check timelong")
-    return 
+  local lastSendElapsedTick = self.caller:LastSendElapsedTick()
+  local lastRecvElapsedTick = self.caller:LastRecvElapsedTick()
+  Log.debug(self:Key(), " StartFastCheck, send elapsed: ", lastSendElapsedTick, ", recv elapsed: ", lastRecvElapsedTick, ", interval: ", interval, ", timelong: ", timelong, ", timeout: ", timeout, Log.traceback())
+  if timelong <= lastRecvElapsedTick and timelong > lastSendElapsedTick then
+    self.caller:DisconnectLink("fast check timelong")
+    return
   end
   if interval <= lastSendElapsedTick then
-    (self.caller):Alive()
+    self.caller:Alive()
   end
-  self.fastCheckTimer = ((GameGlobal.RealTimer)()):AddEvent(interval, self.StartFastCheck, self, interval, timelong, timeout)
+  self.fastCheckTimer = GameGlobal.RealTimer():AddEvent(interval, self.StartFastCheck, self, interval, timelong, timeout)
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.StopFastCheck = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function LoginBaseModule:StopFastCheck()
   if self.fastCheckTimer == nil then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.RealTimer)()):CancelEvent(self.fastCheckTimer)
+  GameGlobal.RealTimer():CancelEvent(self.fastCheckTimer)
   self.fastCheckTimer = nil
   self.fastCheckTimelong = self.retryTimeout / 2
   self.fastCheckTimeout = self.retryTimeout
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.OnFastCheckFailed = function(self, reason)
-  -- function num : 0_18 , upvalues : _ENV
-  (Log.debug)(self:Key(), " OnFastCheckFailed, reason: ", reason, (Log.traceback)())
-  if (self.caller):LastRecvElapsedTick() < self.fastCheckTimeout then
+function LoginBaseModule:OnFastCheckFailed(reason)
+  Log.debug(self:Key(), " OnFastCheckFailed, reason: ", reason, Log.traceback())
+  if self.caller:LastRecvElapsedTick() < self.fastCheckTimeout then
     self:Retry(reason)
   else
-    ;
-    (((GameGlobal.GameLogic)()).NetworkMonitor):ConnectRetryReset(self, reason)
+    GameGlobal.GameLogic().NetworkMonitor:ConnectRetryReset(self, reason)
   end
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.OnConnectDone = function(self, caller)
-  -- function num : 0_19
+function LoginBaseModule:OnConnectDone(caller)
   if caller ~= self.caller then
-    return 
+    return
   end
   self:Retry("connect done")
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.OnConnectFailed = function(self, caller, reason)
-  -- function num : 0_20 , upvalues : _ENV
+function LoginBaseModule:OnConnectFailed(caller, reason)
   if caller ~= self.caller then
-    return 
+    return
   end
-  if not (self.caller):IsCallTimeout() or not self:IsLogin() then
-    (self.caller):ResetCall(CallResultType.ConnectFailed)
+  if self.caller:IsCallTimeout() then
+  elseif not self:IsLogin() then
+    self.caller:ResetCall(CallResultType.ConnectFailed)
+  elseif self.fastCheckTimer then
+    self:OnFastCheckFailed(reason)
+  elseif self.caller:HasSyncCall() then
+    self:Retry(reason)
+  elseif self.startRetryTime == 0 or GameGlobal:GetInstance():GetCurrentRealTime() - self.startRetryTime < self.retryTimeout then
+    self:Retry(reason)
   else
-    if self.fastCheckTimer then
-      self:OnFastCheckFailed(reason)
-    else
-      if (self.caller):HasSyncCall() then
-        self:Retry(reason)
-      else
-        if self.startRetryTime == 0 or (GameGlobal:GetInstance()):GetCurrentRealTime() - self.startRetryTime < self.retryTimeout then
-          self:Retry(reason)
-        else
-          ;
-          (((GameGlobal.GameLogic)()).NetworkMonitor):ConnectRetryReset(self, reason)
-        end
-      end
-    end
+    GameGlobal.GameLogic().NetworkMonitor:ConnectRetryReset(self, reason)
   end
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.OnConnectClosed = function(self, caller, reason)
-  -- function num : 0_21 , upvalues : _ENV
+function LoginBaseModule:OnConnectClosed(caller, reason)
   if caller ~= self.caller then
-    return 
+    return
   end
-  ;
-  (self.caller):LostAuth()
-  if not (self.caller):IsCallTimeout() or not self:IsLogin() then
-    (self.caller):ResetCall(CallResultType.ConnectClosed)
+  self.caller:LostAuth()
+  if self.caller:IsCallTimeout() then
+  elseif not self:IsLogin() then
+    self.caller:ResetCall(CallResultType.ConnectClosed)
+  elseif self.fastCheckTimer then
+    self:OnFastCheckFailed(reason)
+  elseif self.caller:HasSyncCall() then
+    self:Retry(reason)
+  elseif self.startRetryTime == 0 or GameGlobal:GetInstance():GetCurrentRealTime() - self.startRetryTime < self.retryTimeout then
+    self:Retry(reason)
   else
-    if self.fastCheckTimer then
-      self:OnFastCheckFailed(reason)
-    else
-      if (self.caller):HasSyncCall() then
-        self:Retry(reason)
-      else
-        if self.startRetryTime == 0 or (GameGlobal:GetInstance()):GetCurrentRealTime() - self.startRetryTime < self.retryTimeout then
-          self:Retry(reason)
-        else
-          ;
-          (((GameGlobal.GameLogic)()).NetworkMonitor):ConnectRetryReset(self, reason)
-        end
-      end
-    end
+    GameGlobal.GameLogic().NetworkMonitor:ConnectRetryReset(self, reason)
   end
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.OnCallBegin = function(self, caller, msg)
-  -- function num : 0_22
+function LoginBaseModule:OnCallBegin(caller, msg)
   if caller ~= self.caller then
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.OnCallEnd = function(self, caller, msg)
-  -- function num : 0_23 , upvalues : _ENV
+function LoginBaseModule:OnCallEnd(caller, msg)
   if caller ~= self.caller then
-    return 
+    return
   end
   if self.isBusy then
-    ((GameGlobal.UIStateManager)()):ShowBusy(false)
+    GameGlobal.UIStateManager():ShowBusy(false)
     self.isBusy = false
   end
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.OnCallTimelong = function(self, caller, msg)
-  -- function num : 0_24 , upvalues : _ENV
+function LoginBaseModule:OnCallTimelong(caller, msg)
   if caller ~= self.caller then
-    return 
+    return
   end
   if self.isBusy == false then
     self.isBusy = true
-    ;
-    ((GameGlobal.UIStateManager)()):ShowBusy(true)
+    GameGlobal.UIStateManager():ShowBusy(true)
   end
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginBaseModule.OnCallTimeout = function(self, caller)
-  -- function num : 0_25 , upvalues : _ENV
+function LoginBaseModule:OnCallTimeout(caller)
   if caller ~= self.caller then
-    return 
+    return
   end
   self.isBusy = false
-  ;
-  ((GameGlobal.UIStateManager)()):ShowBusy(false)
-  ;
-  (self.caller):DisconnectLink("call timeout")
+  GameGlobal.UIStateManager():ShowBusy(false)
+  self.caller:DisconnectLink("call timeout")
   if not self:IsLogin() then
-    (self.caller):ResetCall(CallResultType.CallTimeout)
+    self.caller:ResetCall(CallResultType.CallTimeout)
   else
-    ;
-    (((GameGlobal.GameLogic)()).NetworkMonitor):CallRetryReset(self, "call timeout")
+    GameGlobal.GameLogic().NetworkMonitor:CallRetryReset(self, "call timeout")
   end
 end
-
-

@@ -1,32 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/cast_select_team_order_position_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CastSelectTeamOrderPositionCommand", IEntityCommand)
 CastSelectTeamOrderPositionCommand = CastSelectTeamOrderPositionCommand
--- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
 CastSelectTeamOrderPositionCommand.CommandType = "CastSelectTeamOrderPosition"
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
 
-CastSelectTeamOrderPositionCommand.Constructor = function(self)
-  -- function num : 0_0
+function CastSelectTeamOrderPositionCommand:Constructor()
   self._targetPos = -1
   self._casterPstID = -1
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectTeamOrderPositionCommand.GetCommandType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CastSelectTeamOrderPositionCommand:GetCommandType()
   return CastSelectTeamOrderPositionCommand.CommandType
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectTeamOrderPositionCommand.GetExecStateID = function(self, runAtClient)
-  -- function num : 0_2 , upvalues : _ENV
+function CastSelectTeamOrderPositionCommand:GetExecStateID(runAtClient)
   if runAtClient then
     return GameStateID.PreviewActiveSkill
   else
@@ -34,24 +19,15 @@ CastSelectTeamOrderPositionCommand.GetExecStateID = function(self, runAtClient)
   end
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectTeamOrderPositionCommand.IsExecExcluded = function(self)
-  -- function num : 0_3
+function CastSelectTeamOrderPositionCommand:IsExecExcluded()
   return 0
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectTeamOrderPositionCommand.DependRoundCount = function(self)
-  -- function num : 0_4
+function CastSelectTeamOrderPositionCommand:DependRoundCount()
   return true
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectTeamOrderPositionCommand.ToNetMessage = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function CastSelectTeamOrderPositionCommand:ToNetMessage()
   local msg = CEventCastSelectTeamOrderPositionCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
@@ -63,10 +39,7 @@ CastSelectTeamOrderPositionCommand.ToNetMessage = function(self)
   return msg
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectTeamOrderPositionCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_6
+function CastSelectTeamOrderPositionCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
@@ -76,28 +49,17 @@ CastSelectTeamOrderPositionCommand.FromNetMessage = function(self, msg)
   self._casterPstID = msg.casterPstID
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectTeamOrderPositionCommand.GetCasterPstID = function(self)
-  -- function num : 0_7
+function CastSelectTeamOrderPositionCommand:GetCasterPstID()
   return self._casterPstID
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectTeamOrderPositionCommand.GetTargetPos = function(self)
-  -- function num : 0_8
+function CastSelectTeamOrderPositionCommand:GetTargetPos()
   return self._targetPos
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectTeamOrderPositionCommand.GenerateCommand = function(teamEntityID, casterPetPstID, targetPos)
-  -- function num : 0_9 , upvalues : _ENV
+function CastSelectTeamOrderPositionCommand.GenerateCommand(teamEntityID, casterPetPstID, targetPos)
   local cmd = CastSelectTeamOrderPositionCommand:New()
   cmd._casterPstID = casterPetPstID
   cmd._targetPos = targetPos
   return cmd
 end
-
-

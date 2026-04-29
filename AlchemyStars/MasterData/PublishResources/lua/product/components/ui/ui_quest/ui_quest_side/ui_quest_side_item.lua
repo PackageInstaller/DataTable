@@ -1,182 +1,113 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_side/ui_quest_side_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestSideItem", UICustomWidget)
 UIQuestSideItem = UIQuestSideItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestSideItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIQuestSideItem:OnShow(uiParams)
   self._transition = self:GetUIComponent("ATransitionComponent", "UIQuestSideItem")
   self._anim = self:GetUIComponent("Animation", "UIQuestSideItem")
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "UIQuestSideItem")
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).blocksRaycasts = false
+  self._canvasGroup.blocksRaycasts = false
   self._itemCountPerRow = 1
   self._items = {}
   self:AttachEvents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideItem.AnimatedListIntro = function(self)
-  -- function num : 0_1
+function UIQuestSideItem:AnimatedListIntro()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideItem.OnClose = function(self)
-  -- function num : 0_2
+function UIQuestSideItem:OnClose()
   self._isOpen = false
-  ;
-  (self._anim):Stop()
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).alpha = 0
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).blocksRaycasts = false
+  self._anim:Stop()
+  self._canvasGroup.alpha = 0
+  self._canvasGroup.blocksRaycasts = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideItem.SetData = function(self, type)
-  -- function num : 0_3 , upvalues : _ENV
+function UIQuestSideItem:SetData(type)
   if self._listInitAnimateTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._listInitAnimateTask)
+    GameGlobal.TaskManager():KillTask(self._listInitAnimateTask)
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).alpha = 1
-  ;
-  (self._transition):PlayEnterAnimation(true)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).blocksRaycasts = true
+  self._canvasGroup.alpha = 1
+  self._transition:PlayEnterAnimation(true)
+  self._canvasGroup.blocksRaycasts = true
   self._isIntro = not self._isOpen
   self._isOpen = true
   self:_GetComponents()
   self._type = type
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
+  self._questModule = GameGlobal.GetModule(QuestModule)
   if self._questModule == nil then
-    (Log.fatal)("[quest] error --> questModule is nil !")
-    return 
+    Log.fatal("[quest] error --> questModule is nil !")
+    return
   end
   self._taskList = self:_GetQuestList()
-  self._taskCount = (table.count)(self._taskList)
+  self._taskCount = table.count(self._taskList)
   self:_OnValue(true)
-  self._listInitAnimateTask = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, self
+  self._listInitAnimateTask = GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT, 500)
     self._isIntro = false
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideItem._GetQuestList = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local taskList = (self._questModule):GetQuestByQuestType(self._type)
+function UIQuestSideItem:_GetQuestList()
+  local taskList = self._questModule:GetQuestByQuestType(self._type)
   local taskListT = {}
   for i = 1, #taskList do
-    local quest = (taskList[i]):QuestInfo()
+    local quest = taskList[i]:QuestInfo()
     if quest.status ~= QuestStatus.QUEST_NotStart and quest.status ~= QuestStatus.QUEST_Taken then
-      (table.insert)(taskListT, taskList[i])
+      table.insert(taskListT, taskList[i])
     end
   end
   return taskListT
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideItem.OnHide = function(self)
-  -- function num : 0_5
+function UIQuestSideItem:OnHide()
   self:RemoveEvents()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideItem.RefrenshList = function(self, force)
-  -- function num : 0_6 , upvalues : _ENV
+function UIQuestSideItem:RefrenshList(force)
   self._items = {}
   self._taskList = self:_GetQuestList()
-  self._taskCount = (table.count)(self._taskList)
-  local contentPos = (((self._list).ScrollRect).content).localPosition
-  ;
-  ((self._list).ScrollRect):StopMovement()
+  self._taskCount = table.count(self._taskList)
+  local contentPos = self._list.ScrollRect.content.localPosition
+  self._list.ScrollRect:StopMovement()
   if self._taskCount <= 0 then
-    (self._noTaskGo):SetActive(true)
-    ;
-    (self._taskRootGo):SetActive(false)
+    self._noTaskGo:SetActive(true)
+    self._taskRootGo:SetActive(false)
   else
-    ;
-    (self._noTaskGo):SetActive(false)
-    ;
-    (self._taskRootGo):SetActive(true)
-    ;
-    (self._list):SetListItemCount(self._taskCount)
-    ;
-    (self._list):MovePanelToItemIndex(0, 0)
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R3 in 'UnsetPending'
-
+    self._noTaskGo:SetActive(false)
+    self._taskRootGo:SetActive(true)
+    self._list:SetListItemCount(self._taskCount)
+    self._list:MovePanelToItemIndex(0, 0)
     if not force then
-      (((self._list).ScrollRect).content).localPosition = contentPos
+      self._list.ScrollRect.content.localPosition = contentPos
     else
-      -- DECOMPILER ERROR at PC61: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (((self._list).ScrollRect).content).localPosition = Vector2(0, 0)
+      self._list.ScrollRect.content.localPosition = Vector2(0, 0)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideItem._GetComponents = function(self)
-  -- function num : 0_7
+function UIQuestSideItem:_GetComponents()
   self._list = self:GetUIComponent("UIDynamicScrollView", "taskList")
   self._scrollrect = self:GetUIComponent("ScrollRect", "taskList")
   self._noTaskGo = self:GetGameObject("noTaskGo")
   self._taskRootGo = self:GetGameObject("taskRootGo")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideItem._OnValue = function(self, force)
-  -- function num : 0_8
-  (self._list):InitListView(0, function(scrollView, index)
-    -- function num : 0_8_0 , upvalues : self
+function UIQuestSideItem:_OnValue(force)
+  self._list:InitListView(0, function(scrollView, index)
     return self:_InitSideTaskList(scrollView, index)
-  end
-)
+  end)
   self._playAnim = true
-  if self._taskCount <= 0 then
-    (self._noTaskGo):SetActive(true)
-    ;
-    (self._taskRootGo):SetActive(false)
+  if 0 >= self._taskCount then
+    self._noTaskGo:SetActive(true)
+    self._taskRootGo:SetActive(false)
   else
     self:RefrenshList(force)
-    ;
-    (self._noTaskGo):SetActive(false)
-    ;
-    (self._taskRootGo):SetActive(true)
+    self._noTaskGo:SetActive(false)
+    self._taskRootGo:SetActive(true)
   end
   self._playAnim = false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideItem._InitSideTaskList = function(self, scrollView, index)
-  -- function num : 0_9
+function UIQuestSideItem:_InitSideTaskList(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -195,114 +126,76 @@ UIQuestSideItem._InitSideTaskList = function(self, scrollView, index)
   return item
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideItem._ShowSideItem = function(self, heartItem, idx)
-  -- function num : 0_10 , upvalues : _ENV
-  local config = (self._taskList)[idx]
-  ;
-  (heartItem:GetGameObject()):SetActive(true)
+function UIQuestSideItem:_ShowSideItem(heartItem, idx)
+  local config = self._taskList[idx]
+  heartItem:GetGameObject():SetActive(true)
   if config ~= nil then
     heartItem:SetData(idx, config, function(questInfo)
-    -- function num : 0_10_0 , upvalues : self
-    self:_SideTaskItemClick(questInfo.quest_id)
+      self:_SideTaskItemClick(questInfo.quest_id)
+    end, function(matid, pos)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.QuestAwardItemClick, matid, pos)
+    end, self._playAnim)
   end
-, function(matid, pos)
-    -- function num : 0_10_1 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.QuestAwardItemClick, matid, pos)
-  end
-, self._playAnim)
-  end
-  ;
-  (table.insert)(self._items, heartItem)
+  table.insert(self._items, heartItem)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideItem._SideTaskItemClick = function(self, id)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
+function UIQuestSideItem:_SideTaskItemClick(id)
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
   self:Lock("UIQuestGet")
   self:StartTask(self.On_SideTaskItemClick, self, id)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideItem.On_SideTaskItemClick = function(self, TT, id)
-  -- function num : 0_12 , upvalues : _ENV
-  local res, msg = (self._questModule):TakeQuestReward(TT, id)
+function UIQuestSideItem:On_SideTaskItemClick(TT, id)
+  local res, msg = self._questModule:TakeQuestReward(TT, id)
   self:UnLock("UIQuestGet")
   if self.uiOwner == nil then
-    return 
+    return
   end
   if res:GetSucc() then
     local tempPets = {}
     local pets = msg.rewards
     self._tempMsgRewards = msg.rewards
-    if #pets > 0 then
+    if 0 < #pets then
       for i = 1, #pets do
-        local ispet = ((GameGlobal.GetModule)(PetModule)):IsPetID((pets[i]).assetid)
+        local ispet = GameGlobal.GetModule(PetModule):IsPetID(pets[i].assetid)
         if ispet then
-          (table.insert)(tempPets, pets[i])
+          table.insert(tempPets, pets[i])
         end
       end
     end
-    do
-      if #tempPets > 0 then
-        self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_12_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIPetObtainCloseInQuest, QuestType.QT_Branch)
-  end
-)
-      else
-        self:ShowDialog("UIGetItemController", msg.rewards, function()
-    -- function num : 0_12_1 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Branch)
-  end
-)
-      end
+    if 0 < #tempPets then
+      self:ShowDialog("UIPetObtain", tempPets, function()
+        GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIPetObtainCloseInQuest, QuestType.QT_Branch)
+      end)
+    else
+      self:ShowDialog("UIGetItemController", msg.rewards, function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Branch)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideItem.AttachEvents = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIQuestSideItem:AttachEvents()
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:AttachEvent(GameEventType.OnUIPetObtainCloseInQuest, self.OnUIPetObtainCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideItem.RemoveEvents = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIQuestSideItem:RemoveEvents()
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:DetachEvent(GameEventType.OnUIPetObtainCloseInQuest, self.OnUIPetObtainCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideItem.OnUIGetItemCloseInQuest = function(self, type)
-  -- function num : 0_15 , upvalues : _ENV
+function UIQuestSideItem:OnUIGetItemCloseInQuest(type)
   if self._isOpen and type == QuestType.QT_Branch then
     self:RefrenshList()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideItem.OnUIPetObtainCloseInQuest = function(self, type)
-  -- function num : 0_16 , upvalues : _ENV
+function UIQuestSideItem:OnUIPetObtainCloseInQuest(type)
   if self._isOpen and type == QuestType.QT_Branch then
     self:ShowDialog("UIGetItemController", self._tempMsgRewards, function()
-    -- function num : 0_16_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Branch)
-  end
-)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Branch)
+    end)
   end
 end
-
-

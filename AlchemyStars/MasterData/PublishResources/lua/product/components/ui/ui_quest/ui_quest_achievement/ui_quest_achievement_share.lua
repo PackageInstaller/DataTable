@@ -1,102 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_achievement/ui_quest_achievement_share.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestAchievementShare", UIController)
 UIQuestAchievementShare = UIQuestAchievementShare
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestAchievementShare.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
-  self._cfg_quest_achieve_type = (Cfg.cfg_quest_achieve_type)({})
+function UIQuestAchievementShare:Constructor()
+  self._questModule = GameGlobal.GetModule(QuestModule)
+  self._cfg_quest_achieve_type = Cfg.cfg_quest_achieve_type({})
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementShare.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIQuestAchievementShare:OnShow(uiParams)
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementShare._GetComponents = function(self)
-  -- function num : 0_2
+function UIQuestAchievementShare:_GetComponents()
   self._achTypePool = self:GetUIComponent("UISelectObjectPath", "achTypePool")
   self._allViewFillAmont = self:GetUIComponent("Image", "allViewFillAmont")
   self._allViewValue = self:GetUIComponent("UILocalizationText", "allViewValue")
   self._allViewValue2 = self:GetUIComponent("UILocalizedTMP", "allViewValue2")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementShare._OnValue = function(self)
-  -- function num : 0_3
+function UIQuestAchievementShare:_OnValue()
   self:_InitAchTypePool()
   self:_Share()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementShare._InitAchTypePool = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local allViewType = ((self._cfg_quest_achieve_type)[1]).BigTypeEnum
+function UIQuestAchievementShare:_InitAchTypePool()
+  local allViewType = self._cfg_quest_achieve_type[1].BigTypeEnum
   local allViewNowValue, allViewAllValue = self:GetCountByType(allViewType)
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._allViewFillAmont).fillAmount = allViewNowValue / allViewAllValue
-  ;
-  (self._allViewValue):SetText(allViewNowValue)
-  ;
-  (self._allViewValue2):SetText("/" .. allViewAllValue)
+  self._allViewFillAmont.fillAmount = allViewNowValue / allViewAllValue
+  self._allViewValue:SetText(allViewNowValue)
+  self._allViewValue2:SetText("/" .. allViewAllValue)
   local achieveTypes = {}
   for i = 1, #self._cfg_quest_achieve_type do
     if i ~= 1 then
-      (table.insert)(achieveTypes, (self._cfg_quest_achieve_type)[i])
+      table.insert(achieveTypes, self._cfg_quest_achieve_type[i])
     end
   end
-  local count = (table.count)(achieveTypes)
-  ;
-  (self._achTypePool):SpawnObjects("UIQuestAchievementAchieveTypeItem", count)
-  local items = (self._achTypePool):GetAllSpawnList()
+  local count = table.count(achieveTypes)
+  self._achTypePool:SpawnObjects("UIQuestAchievementAchieveTypeItem", count)
+  local items = self._achTypePool:GetAllSpawnList()
   for i = 1, count do
-    local name = (achieveTypes[i]).BigTypeName
-    local type = (achieveTypes[i]).BigTypeEnum
+    local name = achieveTypes[i].BigTypeName
+    local type = achieveTypes[i].BigTypeEnum
     local nowValue, allValue = self:GetCountByType(type)
-    local sprite = (achieveTypes[i]).Icon
-    ;
-    (items[i]):SetData(type, sprite, name, nowValue, allValue)
+    local sprite = achieveTypes[i].Icon
+    items[i]:SetData(type, sprite, name, nowValue, allValue)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementShare.GetCountByType = function(self, enum)
-  -- function num : 0_5
-  local cur, total, taken = (self._questModule):GetAchieveCount(enum)
+function UIQuestAchievementShare:GetCountByType(enum)
+  local cur, total, taken = self._questModule:GetAchieveCount(enum)
   return taken, total
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementShare._Share = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIQuestAchievementShare:_Share()
   self:Lock("UIQuestAchievementShare")
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
     YIELD(TT)
-    self:ShowDialog("UIShare", (self:GetName()), nil, function()
-      -- function num : 0_6_0_0 , upvalues : self
+    self:ShowDialog("UIShare", self:GetName(), nil, function()
       self:CloseDialog()
-    end
-, nil, nil, nil, ShareSceneType.Achievement)
+    end, nil, nil, nil, ShareSceneType.Achievement)
     self:UnLock("UIQuestAchievementShare")
-  end
-, self)
+  end, self)
 end
-
-

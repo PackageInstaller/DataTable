@@ -1,43 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/map/s_maze_map_room_random_event.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("s_maze_map_room_base")
 _class("SMazeMapRoom_RandomEvent", SMazeMapRoomBase)
 SMazeMapRoom_RandomEvent = SMazeMapRoom_RandomEvent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeMapRoom_RandomEvent.Constructor = function(self)
-  -- function num : 0_0
+function SMazeMapRoom_RandomEvent:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoom_RandomEvent.OnTrigger = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SMazeMapRoom_RandomEvent:OnTrigger()
   self:BindEvent(GameEventType.OnSeasonMazeRoomOperationFinish, self.OnTriggerComplete)
   self:ShowDialog("UISeasonMazeRoomRandomEvent", self:NodeID())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoom_RandomEvent.OnTriggerComplete = function(self, efts)
-  -- function num : 0_2 , upvalues : _ENV
+function SMazeMapRoom_RandomEvent:OnTriggerComplete(efts)
   self:UnBindEvent(GameEventType.OnSeasonMazeRoomOperationFinish)
-  local assets = (SeasonMazeTool:GetInstance()):Efts2Assets(efts)
-  local log = {"随机事件房奖励:"}
-  for _,asset in ipairs(assets) do
-    (table.insert)(log, asset:Name())
-    ;
-    (table.insert)(log, "+" .. asset:Count())
-    ;
-    (table.insert)(log, ",")
+  local assets = SeasonMazeTool:GetInstance():Efts2Assets(efts)
+  local log = {
+    "随机事件房奖励:"
+  }
+  for _, asset in ipairs(assets) do
+    table.insert(log, asset:Name())
+    table.insert(log, "+" .. asset:Count())
+    table.insert(log, ",")
   end
-  ;
-  (Log.info)((table.concat)(log))
+  Log.info(table.concat(log))
   self:SetAwardAssets(assets)
   self:Finish()
 end
-
-

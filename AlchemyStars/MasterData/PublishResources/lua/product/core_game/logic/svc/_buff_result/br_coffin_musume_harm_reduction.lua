@@ -1,53 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_coffin_musume_harm_reduction.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultCoffinMusumeHarmReduction", BuffResultBase)
 BuffResultCoffinMusumeHarmReduction = BuffResultCoffinMusumeHarmReduction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultCoffinMusumeHarmReduction.Constructor = function(self, tLightCandleID, uiText, val, lineList)
-  -- function num : 0_0
+function BuffResultCoffinMusumeHarmReduction:Constructor(tLightCandleID, uiText, val, lineList)
   self._tLightCandleID = tLightCandleID
   self._uiText = uiText or "str_battle_harm_reduction"
   self._val = val
   self._lineList = lineList
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCoffinMusumeHarmReduction.GetLightCandleIDs = function(self)
-  -- function num : 0_1
+function BuffResultCoffinMusumeHarmReduction:GetLightCandleIDs()
   return self._tLightCandleID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCoffinMusumeHarmReduction.GetLightCandleCount = function(self)
-  -- function num : 0_2
+function BuffResultCoffinMusumeHarmReduction:GetLightCandleCount()
   return #self._tLightCandleID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCoffinMusumeHarmReduction.GetHarmReduction = function(self)
-  -- function num : 0_3
+function BuffResultCoffinMusumeHarmReduction:GetHarmReduction()
   return self._val
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCoffinMusumeHarmReduction.GetUIText = function(self)
-  -- function num : 0_4
+function BuffResultCoffinMusumeHarmReduction:GetUIText()
   return self._uiText
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCoffinMusumeHarmReduction.GetLines = function(self)
-  -- function num : 0_5
+function BuffResultCoffinMusumeHarmReduction:GetLines()
   return self._lineList
 end
-
-

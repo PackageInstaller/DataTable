@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_cast_animation_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseCastAnimationParam", SkillPhaseParamBase)
 SkillPhaseCastAnimationParam = SkillPhaseCastAnimationParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseCastAnimationParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhaseCastAnimationParam:Constructor(t)
   self._castAnimationName = t.castAnimationName
   self._finishDelayTime = t.finishDelayTime
   self._buffDelayTime = t.buffDelayTime
@@ -19,122 +12,96 @@ SkillPhaseCastAnimationParam.Constructor = function(self, t)
   local castEffectIDArray = {}
   local effectparam = t.effectparam
   if effectparam then
-    local effectarray = (string.split)(effectparam, ",")
-    for k,idStr in ipairs(effectarray) do
-      local params = (string.split)(idStr, ";")
+    local effectarray = string.split(effectparam, ",")
+    for k, idStr in ipairs(effectarray) do
+      local params = string.split(idStr, ";")
       local effectid = 0
       local delay = 0
-      if (table.count)(params) >= 1 then
+      if table.count(params) >= 1 then
         effectid = tonumber(params[1])
       end
-      if (table.count)(params) >= 2 then
+      if table.count(params) >= 2 then
         delay = tonumber(params[2])
       end
       castEffectIDArray[#castEffectIDArray + 1] = SkillCommonParam:New(effectid, delay)
     end
   end
-  do
-    self._castEffectIDArray = castEffectIDArray
-    local castGridEffectIDArray = {}
-    effectparam = t.grideffectparam
-    if effectparam then
-      local effectarray = (string.split)(effectparam, ",")
-      for k,idStr in ipairs(effectarray) do
-        local params = (string.split)(idStr, ";")
-        local effectid = 0
-        local delay = 0
-        if (table.count)(params) >= 1 then
-          effectid = tonumber(params[1])
-        end
-        if (table.count)(params) >= 2 then
-          delay = tonumber(params[2])
-        end
-        castGridEffectIDArray[#castGridEffectIDArray + 1] = SkillCommonParam:New(effectid, delay)
+  self._castEffectIDArray = castEffectIDArray
+  local castGridEffectIDArray = {}
+  effectparam = t.grideffectparam
+  if effectparam then
+    local effectarray = string.split(effectparam, ",")
+    for k, idStr in ipairs(effectarray) do
+      local params = string.split(idStr, ";")
+      local effectid = 0
+      local delay = 0
+      if table.count(params) >= 1 then
+        effectid = tonumber(params[1])
       end
-    end
-    do
-      self._castGridEffectIDArray = castGridEffectIDArray
-      self._rotateToCenter = t.rotateToCenter == 1
-      -- DECOMPILER ERROR: 1 unprocessed JMP targets
+      if table.count(params) >= 2 then
+        delay = tonumber(params[2])
+      end
+      castGridEffectIDArray[#castGridEffectIDArray + 1] = SkillCommonParam:New(effectid, delay)
     end
   end
+  self._castGridEffectIDArray = castGridEffectIDArray
+  self._rotateToCenter = t.rotateToCenter == 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCastAnimationParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseCastAnimationParam:GetCacheTable()
   local t = {}
-  for i,eff in ipairs(self._castEffectIDArray) do
+  for i, eff in ipairs(self._castEffectIDArray) do
     local effid = eff:GetSkillEffectID()
-    local cfg = (Cfg.cfg_effect)[effid]
+    local cfg = Cfg.cfg_effect[effid]
     if cfg then
-      (table.insert)(t, {cfg.ResPath, 1})
+      table.insert(t, {
+        cfg.ResPath,
+        1
+      })
     end
   end
-  for i,eff in ipairs(self._castGridEffectIDArray) do
+  for i, eff in ipairs(self._castGridEffectIDArray) do
     local effid = eff:GetSkillEffectID()
-    local cfg = (Cfg.cfg_effect)[effid]
+    local cfg = Cfg.cfg_effect[effid]
     if cfg then
-      (table.insert)(t, {cfg.ResPath, 1})
+      table.insert(t, {
+        cfg.ResPath,
+        1
+      })
     end
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCastAnimationParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseCastAnimationParam:GetPhaseType()
   return SkillViewPhaseType.CastAnimation
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCastAnimationParam.GetSkillCastEffectIDArray = function(self)
-  -- function num : 0_3
+function SkillPhaseCastAnimationParam:GetSkillCastEffectIDArray()
   return self._castEffectIDArray
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCastAnimationParam.GetSkillCastGridEffectIDArray = function(self)
-  -- function num : 0_4
+function SkillPhaseCastAnimationParam:GetSkillCastGridEffectIDArray()
   return self._castGridEffectIDArray
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCastAnimationParam.GetSkillCastEffectAnimationName = function(self)
-  -- function num : 0_5
+function SkillPhaseCastAnimationParam:GetSkillCastEffectAnimationName()
   return self._castAnimationName
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCastAnimationParam.GetFinishDelayTime = function(self)
-  -- function num : 0_6
+function SkillPhaseCastAnimationParam:GetFinishDelayTime()
   return self._finishDelayTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCastAnimationParam.GetBuffDelayTime = function(self)
-  -- function num : 0_7
+function SkillPhaseCastAnimationParam:GetBuffDelayTime()
   return self._buffDelayTime
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCastAnimationParam.GetHideRoleTime = function(self)
-  -- function num : 0_8
+function SkillPhaseCastAnimationParam:GetHideRoleTime()
   return self._hideRoleTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCastAnimationParam.GetBuffNeedImmediatelyEffect = function(self)
-  -- function num : 0_9
+function SkillPhaseCastAnimationParam:GetBuffNeedImmediatelyEffect()
   if self._buffNeedImmediatelyEffect then
     return self._buffNeedImmediatelyEffect
   else
@@ -142,18 +109,10 @@ SkillPhaseCastAnimationParam.GetBuffNeedImmediatelyEffect = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCastAnimationParam.GetSkipBuff = function(self)
-  -- function num : 0_10
+function SkillPhaseCastAnimationParam:GetSkipBuff()
   return self._skipBuff or 0
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCastAnimationParam.GetRotateToCenter = function(self)
-  -- function num : 0_11
+function SkillPhaseCastAnimationParam:GetRotateToCenter()
   return self._rotateToCenter
 end
-
-

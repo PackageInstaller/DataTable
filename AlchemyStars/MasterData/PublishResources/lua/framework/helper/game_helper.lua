@@ -1,46 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/helper/game_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GameHelper", Singleton)
 GameHelper = GameHelper
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-GameHelper.EMPTY_TABLE = setmetatable({}, {__newindex = function(t, k, v)
-  -- function num : 0_0 , upvalues : _ENV
-  error("readonly!")
-end
+GameHelper.EMPTY_TABLE = setmetatable({}, {
+  __newindex = function(t, k, v)
+    error("readonly!")
+  end
 })
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
 
-GameHelper.Constructor = function(self)
-  -- function num : 0_1
+function GameHelper:Constructor()
   self.callbackID = 0
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-GameHelper.CreateCallback = function(self, func, ...)
-  -- function num : 0_2 , upvalues : _ENV
+function GameHelper:CreateCallback(func, ...)
   self.callbackID = self.callbackID + 1
   return Callback:New(self.callbackID, func, ...)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-GameHelper.CreateEventCallback = function(self, gameEventType, func, ...)
-  -- function num : 0_3 , upvalues : _ENV
+function GameHelper:CreateEventCallback(gameEventType, func, ...)
   self.callbackID = self.callbackID + 1
   local callBack = EventCallback:New(self.callbackID, func, ...)
   callBack:SetEventType(gameEventType)
   return callBack
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-GameHelper.IsNull = function(...)
-  -- function num : 0_4 , upvalues : _ENV
+function GameHelper.IsNull(...)
   local len = select("#", ...)
   local t = {}
   for i = 1, len do
@@ -49,33 +31,26 @@ GameHelper.IsNull = function(...)
       t[#t + 1] = v
     end
   end
-  do return #t == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return #t == 0
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-GameHelper.StringSplit = function(str, separatorPatten)
-  -- function num : 0_5 , upvalues : _ENV
+function GameHelper.StringSplit(str, separatorPatten)
   local list = {}
   local s = 1
   repeat
-    local i, j = (string.find)(str, separatorPatten, s)
+    local i, j = string.find(str, separatorPatten, s)
     if i then
-      list[#list + 1] = (string.sub)(str, s, i - 1)
+      list[#list + 1] = string.sub(str, s, i - 1)
       s = j + 1
     else
-      list[#list + 1] = (string.sub)(str, s)
+      list[#list + 1] = string.sub(str, s)
     end
   until not i
   return list
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-GameHelper.ComputeLogicDir = function(posDir)
-  -- function num : 0_6 , upvalues : _ENV
-  local nMax = (math.max)((math.abs)(posDir.x), (math.abs)(posDir.y))
+function GameHelper.ComputeLogicDir(posDir)
+  local nMax = math.max(math.abs(posDir.x), math.abs(posDir.y))
   if nMax ~= 0 then
     posDir.x = posDir.x / nMax
     posDir.y = posDir.y / nMax
@@ -83,76 +58,54 @@ GameHelper.ComputeLogicDir = function(posDir)
   return posDir
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-GameHelper.ComputeLogicDistance = function(posA, posB)
-  -- function num : 0_7
+function GameHelper.ComputeLogicDistance(posA, posB)
   local nX = posA.x - posB.x
   local nY = posA.y - posB.y
   return nX * nX + nY * nY
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
-
-GameHelper.ComputeLogicStep = function(posA, posB)
-  -- function num : 0_8 , upvalues : _ENV
+function GameHelper.ComputeLogicStep(posA, posB)
   local nX = posA.x - posB.x
   local nY = posA.y - posB.y
-  return (math.abs)(nX) + (math.abs)(nY)
+  return math.abs(nX) + math.abs(nY)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R0 in 'UnsetPending'
-
-GameHelper.IsPointOneLine = function(posA, posB, posC)
-  -- function num : 0_9 , upvalues : _ENV
-  local posDirAB = (GameHelper.ComputeLogicDir)(posA - posB)
-  local posDirBC = (GameHelper.ComputeLogicDir)(posB - posC)
-  do return posDirAB == posDirBC end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function GameHelper.IsPointOneLine(posA, posB, posC)
+  local posDirAB = GameHelper.ComputeLogicDir(posA - posB)
+  local posDirBC = GameHelper.ComputeLogicDir(posB - posC)
+  return posDirAB == posDirBC
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R0 in 'UnsetPending'
-
-GameHelper.MakePosString = function(posWork)
-  -- function num : 0_10
+function GameHelper.MakePosString(posWork)
   local stReturn = "(" .. posWork.x .. "," .. posWork.y .. ")"
   return stReturn
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R0 in 'UnsetPending'
-
-GameHelper.GetFrameCount = function()
-  -- function num : 0_11 , upvalues : _ENV
+function GameHelper.GetFrameCount()
   local gameGlobal = GameGlobal:GetInstance()
   if gameGlobal.GetMainWorld then
-    return (UnityEngine.Time).frameCount
+    return UnityEngine.Time.frameCount
   else
     return gameGlobal:GetFrameCount()
   end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R0 in 'UnsetPending'
-
-GameHelper.AddShaderNames = function()
-  -- function num : 0_12 , upvalues : _ENV
-  local BindingFlags = (System.Reflection).BindingFlags
-  local flag = (((System.Reflection).BindingFlags).GetMask)(BindingFlags.Public, BindingFlags.NonPublic, BindingFlags.Static, BindingFlags.Instance)
+function GameHelper.AddShaderNames()
+  local BindingFlags = System.Reflection.BindingFlags
+  local flag = System.Reflection.BindingFlags.GetMask(BindingFlags.Public, BindingFlags.NonPublic, BindingFlags.Static, BindingFlags.Instance)
   require("tolua.reflection")
-  ;
-  (tolua.loadassembly)("Assembly-CSharp")
+  tolua.loadassembly("Assembly-CSharp")
   local type1 = typeof("GraphicUtli")
-  local s_ShaderNameToAssets_field = (tolua.getfield)(type1, "s_ShaderNameToAssets", flag)
+  local s_ShaderNameToAssets_field = tolua.getfield(type1, "s_ShaderNameToAssets", flag)
   if not s_ShaderNameToAssets_field then
-    (Log.fatal)("get s_ShaderNameToAssets field failed!")
-    return 
+    Log.fatal("get s_ShaderNameToAssets field failed!")
+    return
   end
-  local instance = (tolua.createinstance)(type1)
+  local instance = tolua.createinstance(type1)
   local s_ShaderNameToAssets = s_ShaderNameToAssets_field:Get(instance)
   if not s_ShaderNameToAssets then
-    (Log.fatal)("get s_ShaderNameToAssets failed!")
-    return 
+    Log.fatal("get s_ShaderNameToAssets failed!")
+    return
   end
   s_ShaderNameToAssets:Add("H3D/UI/Transparent Alpha Colored", "Transparent Alpha Colored.shader")
 end
-
-

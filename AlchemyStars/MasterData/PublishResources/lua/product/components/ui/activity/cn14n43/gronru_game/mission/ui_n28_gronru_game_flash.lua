@@ -1,59 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/gronru_game/mission/ui_n28_gronru_game_flash.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28GronruGameFlash", UIController)
 UIN28GronruGameFlash = UIN28GronruGameFlash
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28GronruGameFlash.Constructor = function(self)
-  -- function num : 0_0
+function UIN28GronruGameFlash:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameFlash.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN28GronruGameFlash:OnShow(uiParams)
   self:InitWidget()
   self:Flush()
-  ;
-  (AudioHelperController.StopBGM)()
+  AudioHelperController.StopBGM()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameFlash.OnHide = function(self)
-  -- function num : 0_2
+function UIN28GronruGameFlash:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameFlash.InitWidget = function(self)
-  -- function num : 0_3
+function UIN28GronruGameFlash:InitWidget()
   self._uilogo = self:GetGameObject("Logo")
   self._uiflash = self:GetGameObject("Flash")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameFlash.Flush = function(self)
-  -- function num : 0_4
+function UIN28GronruGameFlash:Flush()
   self:StartTask(self.ShowGameEnter, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameFlash.ShowGameEnter = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN28GronruGameFlash:ShowGameEnter(TT)
   self:Lock("UIN28GronruGameFlash:ShowGameEnter")
   YIELD(TT, 4000)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BounceLogo)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BounceLogo)
   YIELD(TT, 3167)
   self:UnLock("UIN28GronruGameFlash:ShowGameEnter")
   self:ShowDialog(UIStateType.UIN28GronruGameSelectPlayer)
   self:CloseDialog()
 end
-
-

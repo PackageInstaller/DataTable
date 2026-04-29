@@ -1,8 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/chess_pick_up_target_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-ChessPickUpTargetType = {None = 0, Monster = 1, Trap = 2, ChessPet = 3, Grid = 4}
+ChessPickUpTargetType = {
+  None = 0,
+  Monster = 1,
+  Trap = 2,
+  ChessPet = 3,
+  Grid = 4
+}
 _enum("ChessPickUpTargetType", ChessPickUpTargetType)
-

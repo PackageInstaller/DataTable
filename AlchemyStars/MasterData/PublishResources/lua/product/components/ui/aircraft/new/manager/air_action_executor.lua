@@ -1,118 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/manager/air_action_executor.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionExecutor", Object)
 AirActionExecutor = AirActionExecutor
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionExecutor.Constructor = function(self, aircraftMain)
-  -- function num : 0_0 , upvalues : _ENV
+function AirActionExecutor:Constructor(aircraftMain)
   self._actions = ArrayList:New()
   self._needAdd = {}
   self._needRemoveIdxs = {}
   self._aircraftMain = aircraftMain
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionExecutor.Init = function(self)
-  -- function num : 0_1
+function AirActionExecutor:Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionExecutor.Update = function(self, deltaTimeMS)
-  -- function num : 0_2 , upvalues : _ENV
+function AirActionExecutor:Update(deltaTimeMS)
   if #self._needAdd > 0 then
-    for _,action in ipairs(self._needAdd) do
-      (self._actions):PushBack(action)
+    for _, action in ipairs(self._needAdd) do
+      self._actions:PushBack(action)
     end
     self._needAdd = {}
   end
-  for idx,a in ipairs((self._actions).elements) do
+  for idx, a in ipairs(self._actions.elements) do
     local action = a
     if self:CheckOver(idx, action) then
-      do
-        action:Update(deltaTimeMS)
-        self:CheckOver(idx, action)
-        -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    else
+      action:Update(deltaTimeMS)
+      self:CheckOver(idx, action)
     end
   end
-  if #self._needRemoveIdxs > 0 then
-    for _,idx in ipairs(self._needRemoveIdxs) do
-      (self._actions):RemoveAt(idx)
+  if 0 < #self._needRemoveIdxs then
+    for _, idx in ipairs(self._needRemoveIdxs) do
+      self._actions:RemoveAt(idx)
     end
     self._needRemoveIdxs = {}
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionExecutor.CheckOver = function(self, idx, action)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
+function AirActionExecutor:CheckOver(idx, action)
   if action:IsOver() then
-    (self._needRemoveIdxs)[#self._needRemoveIdxs + 1] = idx
+    self._needRemoveIdxs[#self._needRemoveIdxs + 1] = idx
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionExecutor.Dispose = function(self)
-  -- function num : 0_4
-  (self._actions):ForEach(function(a)
-    -- function num : 0_4_0
+function AirActionExecutor:Dispose()
+  self._actions:ForEach(function(a)
     local action = a
     action:Dispose()
-  end
-)
-  ;
-  (self._actions):Clear()
+  end)
+  self._actions:Clear()
   self._actions = nil
   self._aircraftMain = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionExecutor.StartAction = function(self, action)
-  -- function num : 0_5
+function AirActionExecutor:StartAction(action)
   action:Start()
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._needAdd)[#self._needAdd + 1] = action
+  self._needAdd[#self._needAdd + 1] = action
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionExecutor.GetActionList = function(self)
-  -- function num : 0_6
+function AirActionExecutor:GetActionList()
   local a = {}
-  ;
-  (self._actions):ForEach(function(action)
-    -- function num : 0_6_0 , upvalues : a
+  self._actions:ForEach(function(action)
     a[#a + 1] = action
-  end
-)
+  end)
   return a
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionExecutor.StopAction = function(self, action)
-  -- function num : 0_7 , upvalues : _ENV
+function AirActionExecutor:StopAction(action)
   local success = false
   if action:IsOver() then
-    (Log.fatal)("[AircraftAction] Action is already over")
+    Log.fatal("[AircraftAction] Action is already over")
     success = false
   else
     action:Stop()
@@ -121,50 +77,35 @@ AirActionExecutor.StopAction = function(self, action)
   return success
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionExecutor.PushAction = function(self, action)
-  -- function num : 0_8
-  (self._actions):PushBack(action)
+function AirActionExecutor:PushAction(action)
+  self._actions:PushBack(action)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionExecutor.StopPetAllAction = function(self, pet)
-  -- function num : 0_9 , upvalues : _ENV
+function AirActionExecutor:StopPetAllAction(pet)
   local tmpID = pet:TemplateID()
-  ;
-  (self._actions):ForEach(function(_act)
-    -- function num : 0_9_0 , upvalues : _ENV, tmpID
+  self._actions:ForEach(function(_act)
     local action = _act
     local pets = action:GetPets()
-    if pets and #pets > 0 then
-      for _,value in ipairs(pets) do
+    if pets and 0 < #pets then
+      for _, value in ipairs(pets) do
         if value:TemplateID() == tmpID and not action:IsOver() then
           action:Stop()
         end
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionExecutor.StopByIndex = function(self, index)
-  -- function num : 0_10 , upvalues : _ENV
-  local action = (self._actions):GetAt(index)
+function AirActionExecutor:StopByIndex(index)
+  local action = self._actions:GetAt(index)
   local success = false
   if action:IsOver() then
-    (Log.fatal)("[AircraftAction] Action is already over")
+    Log.fatal("[AircraftAction] Action is already over")
     success = false
   else
     action:Stop()
     success = true
   end
-  ;
-  (self._actions):RemoveAt(index)
+  self._actions:RemoveAt(index)
   return success
 end
-
-

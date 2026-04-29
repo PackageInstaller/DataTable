@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/lineTalent/ui_cn20_n49_line_talent_stage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49LineTalentStage", UIController)
 UICN20N49LineTalentStage = UICN20N49LineTalentStage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49LineTalentStage.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN20N49LineTalentStage:OnShow(uiParams)
   self._module = self:GetModule(MissionModule)
   self._missionID = uiParams[1]
   self._cmpt = uiParams[2]
   self._campaign = uiParams[3]
   if uiParams[4] then
     self._actionPointComponentId = uiParams[4]
-    self._pointComp = (self._campaign):GetComponent(self._actionPointComponentId)
+    self._pointComp = self._campaign:GetComponent(self._actionPointComponentId)
   end
-  self._campType = (self._campaign):GetCampaignType()
+  self._campType = self._campaign:GetCampaignType()
   self:InitWigets()
   self:Init()
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStage.InitWigets = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN20N49LineTalentStage:InitWigets()
   local conditionPool = self:GetUIComponent("UISelectObjectPath", "sweepCondition")
   self._stageCondition = conditionPool:SpawnObject("UICN20N49LineTalentStageSweepCondition")
   local awardPool = self:GetUIComponent("UISelectObjectPath", "award")
@@ -42,8 +32,7 @@ UICN20N49LineTalentStage.InitWigets = function(self)
   self._titleTxt = self:GetUIComponent("UILocalizationText", "titleTxt")
   self._titleTxtShadow = self:GetUIComponent("UILocalizationText", "titleTxtShadow")
   self._uiAnim = self:GetUIComponent("Animation", "uiAnim")
-  ;
-  (self._uiAnim):Play("uieff_Stage_In")
+  self._uiAnim:Play("uieff_Stage_In")
   self._btnIcon = self:GetUIComponent("Image", "powerIcon")
   self._txtCost = self:GetUIComponent("UILocalizationText", "txtCost")
   self._costGo = self:GetGameObject("cost")
@@ -52,18 +41,15 @@ UICN20N49LineTalentStage.InitWigets = function(self)
   self._btnSweepLockAreaGo = self:GetGameObject("BtnSweepLockArea")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStage.Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+function UICN20N49LineTalentStage:Init()
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   self._powerID = RoleAssetID.RoleAssetPhyPoint
   self._needPower = missionCfg.NeedPower
   if missionCfg.NeedAP then
-    self._powerID = (missionCfg.NeedAP)[1]
-    self._needPower = (missionCfg.NeedAP)[2]
+    self._powerID = missionCfg.NeedAP[1]
+    self._needPower = missionCfg.NeedAP[2]
   end
-  local hasPass = (((self._cmpt):GetComponentInfo()).m_pass_mission_info)[self._missionID]
+  local hasPass = self._cmpt:GetComponentInfo().m_pass_mission_info[self._missionID]
   if hasPass then
     self._canSweep = true
   else
@@ -72,203 +58,158 @@ UICN20N49LineTalentStage.Init = function(self)
   self:AttachEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStage.AttachEvents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN20N49LineTalentStage:AttachEvents()
   self:AttachEvent(GameEventType.ItemCountChanged, self._OnItemChanged)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStage.Flush = function(self)
-  -- function num : 0_4
-  (self._stageAward):SetData(self._missionID, self._cmpt)
-  ;
-  (self._stageCondition):SetData(self._missionID, self._cmpt)
-  ;
-  (self._stageEnemy):SetData(self._missionID, self._cmpt)
+function UICN20N49LineTalentStage:Flush()
+  self._stageAward:SetData(self._missionID, self._cmpt)
+  self._stageCondition:SetData(self._missionID, self._cmpt)
+  self._stageEnemy:SetData(self._missionID, self._cmpt)
   if self._actionPointComponentId then
-    (self._costGo):SetActive(true)
-    ;
-    (self._sweepAreaGo):SetActive(true)
+    self._costGo:SetActive(true)
+    self._sweepAreaGo:SetActive(true)
     self:FlushCostInfo()
     self:FlushSweepInfo()
     self:_SetActionPoint("_actionPoint")
   else
-    ;
-    (self._costGo):SetActive(false)
-    ;
-    (self._sweepAreaGo):SetActive(false)
+    self._costGo:SetActive(false)
+    self._sweepAreaGo:SetActive(false)
   end
   self:FlushFightInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStage.FlushCostInfo = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UICN20N49LineTalentStage:FlushCostInfo()
   local needPowerText = self._needPower
-  if self._powerID ~= RoleAssetID.RoleAssetPhyPoint or not self._pointComp then
-    (Log.exception)("关卡体力为行动点,但没有活动的行动点组件")
-  end
-  local cmpID = (self._pointComp):GetComponentCfgId()
-  local pointCfg = (self._pointComp):GetActionPointConfig()
-  local itemCfg = (Cfg.cfg_top_tips)[pointCfg.ItemID]
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._btnIcon).sprite = (self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)):GetSprite(itemCfg.Icon)
-  do
-    local cur, ceil = (self._pointComp):GetItemCount()
+  if self._powerID == RoleAssetID.RoleAssetPhyPoint then
+  else
+    if not self._pointComp then
+      Log.exception("关卡体力为行动点,但没有活动的行动点组件")
+    end
+    local cmpID = self._pointComp:GetComponentCfgId()
+    local pointCfg = self._pointComp:GetActionPointConfig()
+    local itemCfg = Cfg.cfg_top_tips[pointCfg.ItemID]
+    self._btnIcon.sprite = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas):GetSprite(itemCfg.Icon)
+    local cur, ceil = self._pointComp:GetItemCount()
     if cur < self._needPower then
       needPowerText = "<color=#FF0000>" .. self._needPower .. "</color>"
     end
-    ;
-    (self._txtCost):SetText(needPowerText)
   end
+  self._txtCost:SetText(needPowerText)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStage.FlushFightInfo = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
-  local txt = (StringTable.Get)(missionCfg.Name)
-  ;
-  (self._titleTxt):SetText(txt)
-  ;
-  (self._titleTxtShadow):SetText(txt)
+function UICN20N49LineTalentStage:FlushFightInfo()
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
+  local txt = StringTable.Get(missionCfg.Name)
+  self._titleTxt:SetText(txt)
+  self._titleTxtShadow:SetText(txt)
   local recommendAwaken = missionCfg.RecommendAwaken and missionCfg.RecommendAwaken or 0
   local recommendLV = missionCfg.RecommendLV and missionCfg.RecommendLV or 0
-  local tex = (StringTable.Get)("str_discovery_node_recommend_lv")
-  if recommendAwaken and recommendAwaken > 0 then
-    tex = tex .. " " .. (StringTable.Get)("str_pet_config_common_advance") .. recommendAwaken
+  local tex = StringTable.Get("str_discovery_node_recommend_lv")
+  if recommendAwaken and 0 < recommendAwaken then
+    tex = tex .. " " .. StringTable.Get("str_pet_config_common_advance") .. recommendAwaken
   end
   if recommendLV then
     tex = tex .. " LV." .. recommendLV
   end
-  ;
-  (self._reLv):SetText(tex)
-  local txtStr = nil
+  self._reLv:SetText(tex)
+  local txtStr
   if missionCfg.Desc then
-    txtStr = (StringTable.Get)(missionCfg.Desc)
+    txtStr = StringTable.Get(missionCfg.Desc)
   else
     txtStr = ""
   end
-  ;
-  (self._txtAttr):SetText(txtStr)
-  ;
-  (self._noAttrGo):SetActive((string.isnullorempty)(txtStr))
+  self._txtAttr:SetText(txtStr)
+  self._noAttrGo:SetActive(string.isnullorempty(txtStr))
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStage._GetWordDesc = function(self, levelId, wordId)
-  -- function num : 0_7 , upvalues : _ENV
-  local word = (Cfg.cfg_word_buff)[wordId]
+function UICN20N49LineTalentStage:_GetWordDesc(levelId, wordId)
+  local word = Cfg.cfg_word_buff[wordId]
   if not word or not word.Word then
     return nil
   end
-  if (string.isnullorempty)((word.Word)[1]) and (string.isnullorempty)(word.Desc) then
+  if string.isnullorempty(word.Word[1]) and string.isnullorempty(word.Desc) then
     return nil
   end
-  local name = (StringTable.Get)((word.Word)[1])
-  local desc = (StringTable.Get)(word.Desc)
+  local name = StringTable.Get(word.Word[1])
+  local desc = StringTable.Get(word.Desc)
   local tex = "【" .. name .. "】" .. desc
   return tex
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStage.BtnFightOnClick = function(self, go)
-  -- function num : 0_8
+function UICN20N49LineTalentStage:BtnFightOnClick(go)
   self:_DoFight()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStage._DoFight = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local subCfg = (self._cmpt):GetLineSubCfg()
+function UICN20N49LineTalentStage:_DoFight()
+  local subCfg = self._cmpt:GetLineSubCfg()
   local type = TeamOpenerType.Campaign
-  local ctx = ((GameGlobal.GetModule)(MissionModule)):TeamCtx()
-  do
-    if type == TeamOpenerType.Campaign then
-      local param = {self._missionID, (self._cmpt):GetCampaignMissionComponentId(), (self._cmpt):GetCampaignMissionParamKeyMap(), self._cmpt}
-      ctx:Init(TeamOpenerType.Campaign, param)
-    end
-    self:ShowDialog("UITeams")
+  local ctx = GameGlobal.GetModule(MissionModule):TeamCtx()
+  if type == TeamOpenerType.Campaign then
+    local param = {
+      self._missionID,
+      self._cmpt:GetCampaignMissionComponentId(),
+      self._cmpt:GetCampaignMissionParamKeyMap(),
+      self._cmpt
+    }
+    ctx:Init(TeamOpenerType.Campaign, param)
   end
+  self:ShowDialog("UITeams")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStage.ShowTips = function(self, itemId, pos)
-  -- function num : 0_10
-  (self._tips):SetData(itemId, pos)
+function UICN20N49LineTalentStage:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStage.BgOnClick = function(self)
-  -- function num : 0_11
+function UICN20N49LineTalentStage:BgOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStage.BtnSweepOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  local id = self._missionID
-  local power = self._needPower
-  local unlock = true
-  local campParams = UISerialAutoFightOptionCampParams:New(self._pointComp, self._campType, 2, 0, (self._cmpt):GetCampaignMissionComponentId(), (self._cmpt):GetCampaignMissionParamKeyMap())
-  campParams._displayTitleState = 1
-  campParams._displayTitleText = (StringTable.Get)("str_cn20_line_talent_sweep_title")
-  local matchType = MatchType.MT_Campaign
-  local params = {matchType = matchType, stageId = id, needPower = power, uuid = nil, unlock = unlock, trackData = nil, campParams = campParams, toIndex = nil, checkFunction = function()
-    -- function num : 0_12_0
-    return true
+function UICN20N49LineTalentStage:BtnSweepOnClick(go)
+  do
+    local id = self._missionID
+    local power = self._needPower
+    local unlock = true
+    local campParams = UISerialAutoFightOptionCampParams:New(self._pointComp, self._campType, 2, 0, self._cmpt:GetCampaignMissionComponentId(), self._cmpt:GetCampaignMissionParamKeyMap())
+    campParams._displayTitleState = 1
+    campParams._displayTitleText = StringTable.Get("str_cn20_line_talent_sweep_title")
+    local matchType = MatchType.MT_Campaign
+    local params = {
+      matchType = matchType,
+      stageId = id,
+      needPower = power,
+      uuid = nil,
+      unlock = unlock,
+      trackData = nil,
+      campParams = campParams,
+      toIndex = nil,
+      checkFunction = function()
+        return true
+      end,
+      autoFightCallback = function(count)
+        self:_DoFight(count)
+      end,
+      resultHideEnough = true
+    }
+    self:ShowDialog("UISerialAutoFightOptionNew", params)
   end
-, autoFightCallback = function(count)
-    -- function num : 0_12_1 , upvalues : self
-    self:_DoFight(count)
-  end
-, resultHideEnough = true}
-  self:ShowDialog("UISerialAutoFightOptionNew", params)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStage.BtnSweepLockOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  (ToastManager.ShowToast)((StringTable.Get)("str_cn20_line_talent_sweep_lock_tips"))
+function UICN20N49LineTalentStage:BtnSweepLockOnClick(go)
+  ToastManager.ShowToast(StringTable.Get("str_cn20_line_talent_sweep_lock_tips"))
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStage.FlushSweepInfo = function(self)
-  -- function num : 0_14
-  (self._btnSweepGo):SetActive(self._canSweep)
-  ;
-  (self._btnSweepLockAreaGo):SetActive(not self._canSweep)
+function UICN20N49LineTalentStage:FlushSweepInfo()
+  self._btnSweepGo:SetActive(self._canSweep)
+  self._btnSweepLockAreaGo:SetActive(not self._canSweep)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStage._SetActionPoint = function(self, widgetName)
-  -- function num : 0_15 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UICN20N49ActionPointLineTalent")
+function UICN20N49LineTalentStage:_SetActionPoint(widgetName)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UICN20N49ActionPointLineTalent")
   obj:SetData(self._campaign, ECampaignCN20ComponentID.ECN20_ACTION_POINT, "UICN20N49ActionPointDetail", false, self:GetName())
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineTalentStage._OnItemChanged = function(self, id)
-  -- function num : 0_16
+function UICN20N49LineTalentStage:_OnItemChanged(id)
   self:FlushCostInfo()
   self:_SetActionPoint("_actionPoint")
 end
-
-

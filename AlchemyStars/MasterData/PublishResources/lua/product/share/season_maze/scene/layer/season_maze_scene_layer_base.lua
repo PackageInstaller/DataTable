@@ -1,52 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/scene/layer/season_maze_scene_layer_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeSceneLayerBase", Object)
 SeasonMazeSceneLayerBase = SeasonMazeSceneLayerBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeSceneLayerBase.Constructor = function(self, sceneRoot)
-  -- function num : 0_0
+function SeasonMazeSceneLayerBase:Constructor(sceneRoot)
   self._sceneRootTransform = sceneRoot.transform
   self._maxMapCount = 12
   self._map = {}
   self._renderers = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneLayerBase.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.clear)(self._renderers)
+function SeasonMazeSceneLayerBase:Dispose()
+  table.clear(self._renderers)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneLayerBase.UnLock = function(self, zoneMask, zoneID2Animation)
-  -- function num : 0_2
+function SeasonMazeSceneLayerBase:UnLock(zoneMask, zoneID2Animation)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneLayerBase.ChangeMap = function(self, ids, openID, closeID)
-  -- function num : 0_3
+function SeasonMazeSceneLayerBase:ChangeMap(ids, openID, closeID)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneLayerBase.InsertMeshRender = function(self, zoneid, renderer)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
+function SeasonMazeSceneLayerBase:InsertMeshRender(zoneid, renderer)
   if zoneid and renderer then
-    if not (self._renderers)[zoneid] then
-      (self._renderers)[zoneid] = {}
+    if not self._renderers[zoneid] then
+      self._renderers[zoneid] = {}
     end
-    ;
-    (table.insert)((self._renderers)[zoneid], renderer)
+    table.insert(self._renderers[zoneid], renderer)
   end
 end
-
-

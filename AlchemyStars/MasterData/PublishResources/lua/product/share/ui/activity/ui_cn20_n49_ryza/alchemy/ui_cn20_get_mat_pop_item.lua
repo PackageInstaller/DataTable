@@ -1,96 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/alchemy/ui_cn20_get_mat_pop_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20GetMatPopItem", UICustomWidget)
 UICN20GetMatPopItem = UICN20GetMatPopItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20GetMatPopItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN20GetMatPopItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20GetMatPopItem.InitWidget = function(self)
-  -- function num : 0_1
+function UICN20GetMatPopItem:InitWidget()
   self.root = self:GetGameObject("root")
   self.rushText = self:GetUIComponent("UILocalizationText", "RushText")
   self.lockBtnObj = self:GetGameObject("lockBtn")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20GetMatPopItem.SetData = function(self, campaign)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN20GetMatPopItem:SetData(campaign)
   self._campaign = campaign
   if self._campaign then
     local name = "actionPoint"
-    self.actionCmpt = (UICN20N49Helper.GetComponent)(self._campaign, name)
+    self.actionCmpt = UICN20N49Helper.GetComponent(self._campaign, name)
     if self.actionCmpt then
-      local rushCount = (self.actionCmpt):GetItemCount()
-      if rushCount > 0 then
-        (self.lockBtnObj):SetActive(false)
+      local rushCount = self.actionCmpt:GetItemCount()
+      if 0 < rushCount then
+        self.lockBtnObj:SetActive(false)
       else
-        ;
-        (self.lockBtnObj):SetActive(true)
+        self.lockBtnObj:SetActive(true)
       end
-      ;
-      (self.rushText):SetText((StringTable.Get)("str_cn20_ryza_get_mat_pop3", rushCount))
+      self.rushText:SetText(StringTable.Get("str_cn20_ryza_get_mat_pop3", rushCount))
     end
   else
-    do
-      ;
-      (self.lockBtnObj):SetActive(true)
-      ;
-      (self.rushText):SetText((StringTable.Get)("str_cn20_ryza_get_mat_pop3", 0))
-      self:SetPopActive(true)
-    end
+    self.lockBtnObj:SetActive(true)
+    self.rushText:SetText(StringTable.Get("str_cn20_ryza_get_mat_pop3", 0))
   end
+  self:SetPopActive(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20GetMatPopItem.SetPopActive = function(self, active)
-  -- function num : 0_3
-  (self.root):SetActive(active)
+function UICN20GetMatPopItem:SetPopActive(active)
+  self.root:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20GetMatPopItem.GOTO1BtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UICN20GetMatPopItem:GOTO1BtnOnClick(go)
   self:SwitchState(UIStateType.UIDiscovery)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20GetMatPopItem.GOTO2BtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  do
-    if (self.lockBtnObj).activeSelf then
-      local tips = (StringTable.Get)("str_cn20_n49_ryza_tips")
-      ;
-      (ToastManager.ShowToast)(tips)
-      return 
-    end
-    self:SwitchState(UIStateType.UICN20N49LineTalentController)
+function UICN20GetMatPopItem:GOTO2BtnOnClick(go)
+  if self.lockBtnObj.activeSelf then
+    local tips = StringTable.Get("str_cn20_n49_ryza_tips")
+    ToastManager.ShowToast(tips)
+    return
   end
+  self:SwitchState(UIStateType.UICN20N49LineTalentController)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20GetMatPopItem.CloseBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UICN20GetMatPopItem:CloseBtnOnClick(go)
   self:SetPopActive(false)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20GetMatPopItem.ClickbgBtnOnClick = function(self, go)
-  -- function num : 0_7
+function UICN20GetMatPopItem:ClickbgBtnOnClick(go)
 end
-
-

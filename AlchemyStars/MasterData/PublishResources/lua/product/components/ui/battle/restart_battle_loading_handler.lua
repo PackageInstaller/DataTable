@@ -1,46 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/restart_battle_loading_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ReStartCoreGameHandler", LoadingHandler)
 ReStartCoreGameHandler = ReStartCoreGameHandler
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ReStartCoreGameHandler.PreLoadBeforeLoadLevel = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(GameMatchModule)
+function ReStartCoreGameHandler:PreLoadBeforeLoadLevel(TT)
+  local module = GameGlobal.GetModule(GameMatchModule)
   module:QuickReStartMatchTT(TT)
-  ;
-  (Log.fatal)("ReStartCoreGameHandler:PreLoadBeforeLoadLevel")
+  Log.fatal("ReStartCoreGameHandler:PreLoadBeforeLoadLevel")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ReStartCoreGameHandler.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  (LoadingHandler.PreLoadAfterLoadLevel)(self, TT, ...)
-  local enterData = ((GameGlobal.GetModule)(MatchModule)):GetMatchEnterData()
-  local enterPreferenceData = ((GameGlobal.GetModule)(MatchModule)):GetMatchEnterPreferenceData()
-  ;
-  (GameGlobal:GetInstance()):EnterCoreGame(enterData, enterPreferenceData)
-  ;
-  (Log.fatal)("ReStartCoreGameHandler:PreLoadAfterLoadLevel")
+function ReStartCoreGameHandler:PreLoadAfterLoadLevel(TT, ...)
+  LoadingHandler.PreLoadAfterLoadLevel(self, TT, ...)
+  local enterData = GameGlobal.GetModule(MatchModule):GetMatchEnterData()
+  local enterPreferenceData = GameGlobal.GetModule(MatchModule):GetMatchEnterPreferenceData()
+  GameGlobal:GetInstance():EnterCoreGame(enterData, enterPreferenceData)
+  Log.fatal("ReStartCoreGameHandler:PreLoadAfterLoadLevel")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ReStartCoreGameHandler.OnLoadingFinish = function(self, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal:GetInstance()):GetCollector("CoreGameLoading")):Sample("ReStartCoreGameHandler:OnLoadingFinish() begin")
-  local matchModule = (GameGlobal.GetModule)(MatchModule)
+function ReStartCoreGameHandler:OnLoadingFinish(...)
+  GameGlobal:GetInstance():GetCollector("CoreGameLoading"):Sample("ReStartCoreGameHandler:OnLoadingFinish() begin")
+  local matchModule = GameGlobal.GetModule(MatchModule)
   if matchModule then
     matchModule:Loading(100)
   end
-  ;
-  ((GameGlobal:GetInstance()):GetCollector("CoreGameLoading")):Sample("ReStartCoreGameHandler:OnLoadingFinish()")
-  ;
-  (Log.fatal)("ReStartCoreGameHandler:OnLoadingFinish")
+  GameGlobal:GetInstance():GetCollector("CoreGameLoading"):Sample("ReStartCoreGameHandler:OnLoadingFinish()")
+  Log.fatal("ReStartCoreGameHandler:OnLoadingFinish")
 end
-
-

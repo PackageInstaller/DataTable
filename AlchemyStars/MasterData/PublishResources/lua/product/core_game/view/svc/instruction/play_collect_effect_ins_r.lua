@@ -1,47 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_collect_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCollectEffectInstruction", BaseInstruction)
 PlayCollectEffectInstruction = PlayCollectEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCollectEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayCollectEffectInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCollectEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCollectEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local arrResult = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AddCollectDropNum)
   if not arrResult or not casterEntity:View() then
-    return 
+    return
   end
   local configService = world:GetService("Config")
   local levelConfigData = configService:GetLevelConfigData()
   local maxCollect = levelConfigData:GetLevelCollectItem()
-  for index,value in ipairs(arrResult) do
-    local dropWorldPos = (((casterEntity:View()):GetGameObject()).transform).position
+  for index, value in ipairs(arrResult) do
+    local dropWorldPos = casterEntity:View():GetGameObject().transform.position
     local dropUIWorldPos = self:_CalcUIWorldPos(world, dropWorldPos + Vector3(0, 0.5, 0))
-    ;
-    (world:EventDispatcher()):Dispatch(GameEventType.ShowCollectDropInfo, dropUIWorldPos)
+    world:EventDispatcher():Dispatch(GameEventType.ShowCollectDropInfo, dropUIWorldPos)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCollectEffectInstruction._CalcUIWorldPos = function(self, world, dropPos)
-  -- function num : 0_2 , upvalues : _ENV
-  local camera = (world:MainCamera()):Camera()
+function PlayCollectEffectInstruction:_CalcUIWorldPos(world, dropPos)
+  local camera = world:MainCamera():Camera()
   local screenPos = camera:WorldToScreenPoint(dropPos)
-  local uiCam = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIBattle")
+  local uiCam = GameGlobal.UIStateManager():GetControllerCamera("UIBattle")
   local UIWorldPos = uiCam:ScreenToWorldPoint(screenPos)
   return Vector2(UIWorldPos.x, UIWorldPos.y)
 end
-
-

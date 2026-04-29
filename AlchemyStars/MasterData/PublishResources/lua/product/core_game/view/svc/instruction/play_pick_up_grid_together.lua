@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_pick_up_grid_together.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayPickUpGridTogetherEffectInstruction", BaseInstruction)
 PlayPickUpGridTogetherEffectInstruction = PlayPickUpGridTogetherEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayPickUpGridTogetherEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayPickUpGridTogetherEffectInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPickUpGridTogetherEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayPickUpGridTogetherEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.PickUpGridTogether)
   if not resultArray then
-    return 
+    return
   end
   local result = resultArray[1]
   local world = casterEntity:GetOwnerWorld()
   local boardServiceR = world:GetService("BoardRender")
   local utilDataSvc = world:GetService("UtilData")
   local newGridList = result:GetNewGridDataList()
-  for i,data in ipairs(newGridList) do
+  for i, data in ipairs(newGridList) do
     local newPieceType = data:GetGridType()
     local pos = data:GetGridPos()
     if utilDataSvc:GetRenderPieceType(pos) ~= newPieceType then
@@ -39,12 +29,7 @@ PlayPickUpGridTogetherEffectInstruction.DoInstruction = function(self, TT, caste
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPickUpGridTogetherEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_2
+function PlayPickUpGridTogetherEffectInstruction:GetCacheResource()
   local t = {}
   return t
 end
-
-

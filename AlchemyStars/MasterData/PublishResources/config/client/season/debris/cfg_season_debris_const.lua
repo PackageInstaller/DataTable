@@ -1,13 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/season/debris/cfg_season_debris_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, MissionID = 2, UnlockTime = 3, CloseTime = 4, TimeTransform = 5}
+local key = {
+  ID = 1,
+  MissionID = 2,
+  UnlockTime = 3,
+  CloseTime = 4,
+  TimeTransform = 5
+}
 local config = {
-[8003] = {8003, 
-{8003029, 2}
-, "2023-12-06 05:00:00", "2024-01-10 04:00:00", 0}
+  [8003] = {
+    8003,
+    {8003029, 2},
+    "2023-12-06 05:00:00",
+    "2024-01-10 04:00:00",
+    0
+  }
 }
 return config, "ID", key
-

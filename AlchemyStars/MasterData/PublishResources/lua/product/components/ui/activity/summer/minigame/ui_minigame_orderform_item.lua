@@ -1,31 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/minigame/ui_minigame_orderform_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMiniGameOrderformItem", UICustomWidget)
 UIMiniGameOrderformItem = UIMiniGameOrderformItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMiniGameOrderformItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._cfg_minigame = (Cfg.cfg_summer_minigame)[1]
+function UIMiniGameOrderformItem:Constructor()
+  self._cfg_minigame = Cfg.cfg_summer_minigame[1]
   self._current_mood = 1
   self._fromColor = Color(1, 1, 1, 1)
   self._toColor = Color(0.6, 0.1, 0.1, 1)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameOrderformItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIMiniGameOrderformItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameOrderformItem._GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMiniGameOrderformItem:_GetComponents()
   self._di = self:GetUIComponent("Image", "Di")
   self._weight = self:GetUIComponent("Image", "Weight")
   self._ingredient = self:GetUIComponent("Image", "Ingredient")
@@ -36,148 +23,73 @@ UIMiniGameOrderformItem._GetComponents = function(self)
   self._animation = self:GetUIComponent("Animation", "Animation")
   self._readyAnimation = self:GetUIComponent("Animation", "ReadyAnimation")
   self._light = {}
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._light)[Weight.Small] = self:GetGameObject("LightSmall")
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._light)[Weight.Big] = self:GetGameObject("LightBig")
+  self._light[Weight.Small] = self:GetGameObject("LightSmall")
+  self._light[Weight.Big] = self:GetGameObject("LightBig")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameOrderformItem.SetData = function(self, orderform)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMiniGameOrderformItem:SetData(orderform)
   self._orderform = orderform
   self._current_mood = GuestMood.LookForward
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._di).sprite = (self._atlas):GetSprite((GuestOrderformImg.DiImg)[orderform._weight])
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._weight).sprite = (self._atlas):GetSprite((GuestOrderformImg.WeightImg)[orderform._weight])
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._ingredient).sprite = (self._atlas):GetSprite(((GuestOrderformImg.IngredientImg)[orderform._weight])[orderform._ingredient])
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._jam).sprite = (self._atlas):GetSprite(((GuestOrderformImg.JamImg)[orderform._weight])[orderform._jam])
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._emotion).sprite = (self._atlas):GetSprite((GuestOrderformImg.MoodImg)[self._current_mood])
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._value).fillAmount = 1
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._value).color = self._fromColor
-  ;
-  ((self._light)[Weight.Small]):SetActive(false)
-  ;
-  ((self._light)[Weight.Big]):SetActive(false)
+  self._di.sprite = self._atlas:GetSprite(GuestOrderformImg.DiImg[orderform._weight])
+  self._weight.sprite = self._atlas:GetSprite(GuestOrderformImg.WeightImg[orderform._weight])
+  self._ingredient.sprite = self._atlas:GetSprite(GuestOrderformImg.IngredientImg[orderform._weight][orderform._ingredient])
+  self._jam.sprite = self._atlas:GetSprite(GuestOrderformImg.JamImg[orderform._weight][orderform._jam])
+  self._emotion.sprite = self._atlas:GetSprite(GuestOrderformImg.MoodImg[self._current_mood])
+  self._value.fillAmount = 1
+  self._value.color = self._fromColor
+  self._light[Weight.Small]:SetActive(false)
+  self._light[Weight.Big]:SetActive(false)
   self:PlayAnimation("in")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameOrderformItem._Update = function(self, ms)
-  -- function num : 0_4 , upvalues : _ENV
-  local p = (self._orderform)._elapseWaitingTime / (self._orderform)._waitingTime
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._value).fillAmount = 1 - p
+function UIMiniGameOrderformItem:_Update(ms)
+  local p = self._orderform._elapseWaitingTime / self._orderform._waitingTime
+  self._value.fillAmount = 1 - p
   local mood = self:_GetGuestMood(p * 100)
   if self._current_mood ~= mood then
     self._current_mood = mood
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._emotion).sprite = (self._atlas):GetSprite((GuestOrderformImg.MoodImg)[self._current_mood])
+    self._emotion.sprite = self._atlas:GetSprite(GuestOrderformImg.MoodImg[self._current_mood])
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R4 in 'UnsetPending'
-
-  if (self._value).fillAmount < 1 then
-    (self._value).color = (Color.Lerp)(self._fromColor, self._toColor, p)
+  if self._value.fillAmount < 1 then
+    self._value.color = Color.Lerp(self._fromColor, self._toColor, p)
   else
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._value).color = self._toColor
+    self._value.color = self._toColor
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameOrderformItem._GetGuestMood = function(self, time)
-  -- function num : 0_5
-  local mood = ((self._cfg_minigame).WaitingMood)[2]
+function UIMiniGameOrderformItem:_GetGuestMood(time)
+  local mood = self._cfg_minigame.WaitingMood[2]
   if time <= mood[1] then
-    return (((self._cfg_minigame).WaitingMood)[1])[3]
+    return self._cfg_minigame.WaitingMood[1][3]
+  elseif time > mood[2] then
+    return self._cfg_minigame.WaitingMood[3][3]
   else
-    if mood[2] < time then
-      return (((self._cfg_minigame).WaitingMood)[3])[3]
-    else
-      return mood[3]
-    end
+    return mood[3]
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameOrderformItem.SetActive = function(self, active)
-  -- function num : 0_6
-  ((self.view).gameObject):SetActive(active)
+function UIMiniGameOrderformItem:SetActive(active)
+  self.view.gameObject:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameOrderformItem.PlayAnimation = function(self, animation)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._animation):Play((MGAnimations.Orderform)[animation])
+function UIMiniGameOrderformItem:PlayAnimation(animation)
+  self._animation:Play(MGAnimations.Orderform[animation])
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameOrderformItem.PlayReadyAnimation = function(self, play)
-  -- function num : 0_8 , upvalues : _ENV
+function UIMiniGameOrderformItem:PlayReadyAnimation(play)
   if play then
-    (self._readyAnimation):Play((MGAnimations.Orderform).ready)
+    self._readyAnimation:Play(MGAnimations.Orderform.ready)
   else
-    ;
-    (self._readyAnimation):Stop()
+    self._readyAnimation:Stop()
   end
-  ;
-  ((self._light)[(self._orderform)._weight]):SetActive(play)
+  self._light[self._orderform._weight]:SetActive(play)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameOrderformItem.SetPosition = function(self, position, offset)
-  -- function num : 0_9
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  ((self.view).transform).position = position
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self.view).transform).localPosition = ((self.view).transform).localPosition + offset
+function UIMiniGameOrderformItem:SetPosition(position, offset)
+  self.view.transform.position = position
+  self.view.transform.localPosition = self.view.transform.localPosition + offset
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameOrderformItem.GetCurrentMood = function(self)
-  -- function num : 0_10
+function UIMiniGameOrderformItem:GetCurrentMood()
   return self._current_mood
 end
-
-

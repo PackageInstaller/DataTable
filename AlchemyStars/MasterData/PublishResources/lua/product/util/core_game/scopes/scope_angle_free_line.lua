@@ -1,22 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_angle_free_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_AngleFreeLine", SkillScopeCalculator_Base)
 SkillScopeCalculator_AngleFreeLine = SkillScopeCalculator_AngleFreeLine
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_AngleFreeLine.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_AngleFreeLine:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local centerPosArray = centerPos
   if centerPos._className then
     centerPosArray = {centerPos}
   end
-  local world = ((self._hub)._gridFilter)._world
+  local world = self._hub._gridFilter._world
   if not world then
-    (Log.exception)(self._className, "AngleFreeLine无法用于没有world的环境下")
+    Log.exception(self._className, "AngleFreeLine无法用于没有world的环境下")
     return SkillScopeResult:New(SkillScopeType.AngleFreeLine, casterPos, {}, {})
   end
   if scopeParam.useTrapAsBegin then
@@ -25,79 +18,66 @@ SkillScopeCalculator_AngleFreeLine.CalcRange = function(self, scopeType, scopePa
     local trapList = {}
     if type(trapID) == "number" then
       trapList[#trapList + 1] = trapID
-    else
-      if type(trapID) == "table" then
-        trapList = trapID
-      end
+    elseif type(trapID) == "table" then
+      trapList = trapID
     end
     local bFind = false
-    for _,vTrapID in ipairs(trapList) do
+    for _, vTrapID in ipairs(trapList) do
       local trapCenterPosList = trapServerLogic:FindTrapPosByTrapID(vTrapID)
-      if (table.count)(trapCenterPosList) == 0 then
-        do
-          casterPos = trapCenterPosList[1]
-          bFind = true
-          do break end
-          -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      if table.count(trapCenterPosList) == 0 then
+      else
+        casterPos = trapCenterPosList[1]
+        bFind = true
+        break
       end
     end
     if not bFind then
       return SkillScopeResult:New(SkillScopeType.AngleFreeLine, casterPos, {}, {})
     end
   end
-  do
-    if casterPos == centerPosArray[1] then
-      return SkillScopeResult:New(SkillScopeType.AngleFreeLine, casterPos, {casterPos}, {})
-    end
-    local boardService = world:GetService("BoardLogic")
-    local pieceXYMap = boardService.GridTiles
-    local attackRange = {}
-    local wholeRange = {}
-    local posOnLine = {}
-    local bNoExtend = scopeParam.noExtend == 1
-    local widthThreshold = BattleConst.ScopeAngleFreeLineThreshold
-    if scopeParam.widthThreshold then
-      widthThreshold = scopeParam.widthThreshold * 0.8
-    end
-    local isDirectionReverse = scopeParam.directionReverse == 1
-    local casterX = casterPos.x
-    local casterY = casterPos.y
-    for _,pickupPos in ipairs(centerPosArray) do
-      self:_CalcLineBetween(casterPos, pickupPos, widthThreshold, bNoExtend, isDirectionReverse, attackRange, wholeRange)
-    end
-    local extendList = {}
-    if scopeParam.useBodyArea then
-      for i,v in ipairs(attackRange) do
-        for _,body in ipairs(bodyArea) do
-          local newPos = v + body
-          if not (table.Vector2Include)(attackRange, newPos) then
-            (table.insert)(extendList, newPos)
-          end
+  if casterPos == centerPosArray[1] then
+    return SkillScopeResult:New(SkillScopeType.AngleFreeLine, casterPos, {casterPos}, {})
+  end
+  local boardService = world:GetService("BoardLogic")
+  local pieceXYMap = boardService.GridTiles
+  local attackRange = {}
+  local wholeRange = {}
+  local posOnLine = {}
+  local bNoExtend = scopeParam.noExtend == 1
+  local widthThreshold = BattleConst.ScopeAngleFreeLineThreshold
+  if scopeParam.widthThreshold then
+    widthThreshold = scopeParam.widthThreshold * 0.8
+  end
+  local isDirectionReverse = scopeParam.directionReverse == 1
+  local casterX = casterPos.x
+  local casterY = casterPos.y
+  for _, pickupPos in ipairs(centerPosArray) do
+    self:_CalcLineBetween(casterPos, pickupPos, widthThreshold, bNoExtend, isDirectionReverse, attackRange, wholeRange)
+  end
+  local extendList = {}
+  if scopeParam.useBodyArea then
+    for i, v in ipairs(attackRange) do
+      for _, body in ipairs(bodyArea) do
+        local newPos = v + body
+        if not table.Vector2Include(attackRange, newPos) then
+          table.insert(extendList, newPos)
         end
       end
     end
-    if #extendList > 0 then
-      (table.Vector2Append)(attackRange, extendList)
-    end
-    local result = SkillScopeResult:New(SkillScopeType.AngleFreeLine, centerPos, attackRange, wholeRange)
-    do return result end
-    -- DECOMPILER ERROR: 8 unprocessed JMP targets
   end
+  if 0 < #extendList then
+    table.Vector2Append(attackRange, extendList)
+  end
+  local result = SkillScopeResult:New(SkillScopeType.AngleFreeLine, centerPos, attackRange, wholeRange)
+  return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_AngleFreeLine._CalcLineBetween = function(self, casterPos, pickupPos, widthThreshold, bNoExtend, isDirectionReverse, attackRange, wholeRange)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeCalculator_AngleFreeLine:_CalcLineBetween(casterPos, pickupPos, widthThreshold, bNoExtend, isDirectionReverse, attackRange, wholeRange)
   if isDirectionReverse then
-    casterPos = pickupPos
+    casterPos, pickupPos = pickupPos, casterPos
   end
   local posOnLine = {}
-  local pickupDistance = (Vector2.Distance)(pickupPos, casterPos)
+  local pickupDistance = Vector2.Distance(pickupPos, casterPos)
   local relativePickupPos = pickupPos - casterPos
   local relativePickupX = relativePickupPos.x
   local relativePickupY = relativePickupPos.y
@@ -110,52 +90,50 @@ SkillScopeCalculator_AngleFreeLine._CalcLineBetween = function(self, casterPos, 
   local relativeNegPickupY = relativeNegPickupPos.y
   local casterX = casterPos.x
   local casterY = casterPos.y
-  local world = ((self._hub)._gridFilter)._world
+  local world = self._hub._gridFilter._world
   local boardService = world:GetService("BoardLogic")
   local pieceXYMap = boardService.GridTiles
-  for x,tableY in pairs(pieceXYMap) do
+  for x, tableY in pairs(pieceXYMap) do
     local relativeX = x - casterX
     local relativeNegX = x - pickupX
-    for y,_ in pairs(tableY) do
+    for y, _ in pairs(tableY) do
       local relativeY = y - casterY
       local relativeNegY = y - pickupY
       local v2 = Vector2(x, y)
-      if b * relativeX == a * relativeY and relativeX * relativePickupX >= 0 and relativeY * relativePickupY >= 0 and (not bNoExtend or (Vector2.Distance)(v2, casterPos) <= pickupDistance) then
-        if not (table.icontains)(attackRange, v2) then
-          (table.insert)(attackRange, v2)
+      if b * relativeX == a * relativeY and 0 <= relativeX * relativePickupX and 0 <= relativeY * relativePickupY and (not bNoExtend or pickupDistance >= Vector2.Distance(v2, casterPos)) then
+        if not table.icontains(attackRange, v2) then
+          table.insert(attackRange, v2)
         end
-        if not (table.icontains)(wholeRange, v2) then
-          (table.insert)(wholeRange, v2)
+        if not table.icontains(wholeRange, v2) then
+          table.insert(wholeRange, v2)
         end
-        if not (table.icontains)(posOnLine, v2) then
-          (table.insert)(posOnLine, v2)
+        if not table.icontains(posOnLine, v2) then
+          table.insert(posOnLine, v2)
         end
       end
     end
   end
-  for _,linePos in ipairs(posOnLine) do
-    local disThreshold = (Vector2.Distance)(linePos, casterPos) + widthThreshold
+  for _, linePos in ipairs(posOnLine) do
+    local disThreshold = Vector2.Distance(linePos, casterPos) + widthThreshold
     local relativeLinePos = casterPos - linePos
     local a = relativeLinePos.x
     local b = relativeLinePos.y
-    local sqrtLinePos = (math.sqrt)(a * a + b * b)
+    local sqrtLinePos = math.sqrt(a * a + b * b)
     local sqrt = sqrtLinePos * widthThreshold
-    for x,tableY in pairs(pieceXYMap) do
+    for x, tableY in pairs(pieceXYMap) do
       local relativeX = casterX - x
-      for y,_ in pairs(tableY) do
+      for y, _ in pairs(tableY) do
         local relativeY = casterY - y
         local v2 = Vector2(x, y)
-        if (math.abs)(b * relativeX - a * relativeY) < sqrt and relativeX * a >= 0 and relativeY * b >= 0 and (not bNoExtend or (Vector2.Distance)(v2, casterPos) < disThreshold) then
-          if not (table.icontains)(attackRange, v2) then
-            (table.insert)(attackRange, v2)
+        if sqrt > math.abs(b * relativeX - a * relativeY) and 0 <= relativeX * a and 0 <= relativeY * b and (not bNoExtend or disThreshold > Vector2.Distance(v2, casterPos)) then
+          if not table.icontains(attackRange, v2) then
+            table.insert(attackRange, v2)
           end
-          if not (table.icontains)(wholeRange, v2) then
-            (table.insert)(wholeRange, v2)
+          if not table.icontains(wholeRange, v2) then
+            table.insert(wholeRange, v2)
           end
         end
       end
     end
   end
 end
-
-

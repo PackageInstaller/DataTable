@@ -1,85 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/common/collages/ui_season_season_cg_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonSeasonCGTab", UICustomWidget)
 UISeasonSeasonCGTab = UISeasonSeasonCGTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonSeasonCGTab.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonSeasonCGTab:OnShow(uiParams)
   self:InitWidget()
   self:AttachEvent(GameEventType.OnSeasonShareCgFinished, self._OnShareFinish)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCGTab.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonSeasonCGTab:InitWidget()
   self.content = self:GetUIComponent("UISelectObjectPath", "Content")
-  self._anim = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
+  self._anim = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCGTab.SetData = function(self, data, seasonObj)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonSeasonCGTab:SetData(data, seasonObj)
   self._collageData = data
   self._cpt = seasonObj:GetComponent(ECCampaignSeasonComponentID.STORY)
-  ;
-  (self._collageData):RefreshCgShareState(self._cpt)
+  self._collageData:RefreshCgShareState(self._cpt)
   self._seasonID = data:GetSeasonID()
-  local count = (self._collageData):GetCGCount()
-  self._items = (self.content):SpawnObjects("UISeasonSeasonCollageCGItem", count)
-  local onSelect = function(data)
-    -- function num : 0_2_0 , upvalues : self
+  local count = self._collageData:GetCGCount()
+  self._items = self.content:SpawnObjects("UISeasonSeasonCollageCGItem", count)
+  
+  local function onSelect(data)
     self:_OnSelect(data)
   end
-
+  
   for i = 1, count do
-    ((self._items)[i]):SetData((self._collageData):GetCGByIndex(i), onSelect)
+    self._items[i]:SetData(self._collageData:GetCGByIndex(i), onSelect)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCGTab.SetShow = function(self, show)
-  -- function num : 0_3
-  (self:GetGameObject()):SetActive(show)
+function UISeasonSeasonCGTab:SetShow(show)
+  self:GetGameObject():SetActive(show)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCGTab._OnSelect = function(self, data)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonSeasonCGTab:_OnSelect(data)
   if not data:IsUnlock() then
-    return 
+    return
   end
   if data:IsNew() then
-    (self._collageData):CGCancelNew(data)
-    ;
-    ((self._items)[data:Index()]):SetNew(false)
+    self._collageData:CGCancelNew(data)
+    self._items[data:Index()]:SetNew(false)
     self:DispatchEvent(GameEventType.UISeasonS1OnSelectCollageItem)
   end
-  self:ShowDialog("UISeasonCgDetailController", (Cfg.cfg_cg_book)[data:ID()], self._cpt)
+  self:ShowDialog("UISeasonCgDetailController", Cfg.cfg_cg_book[data:ID()], self._cpt)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCGTab._OnShareFinish = function(self, id)
-  -- function num : 0_5
-  (self._collageData):RefreshCgShareState(self._cpt)
-  local count = (self._collageData):GetCGCount()
+function UISeasonSeasonCGTab:_OnShareFinish(id)
+  self._collageData:RefreshCgShareState(self._cpt)
+  local count = self._collageData:GetCGCount()
   for i = 1, count do
-    ((self._items)[i]):ResetShareState()
+    self._items[i]:ResetShareState()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCGTab.PlayExitAnim = function(self)
-  -- function num : 0_6
+function UISeasonSeasonCGTab:PlayExitAnim()
 end
-
-

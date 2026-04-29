@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/guide_preview_link_line_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GuidePreviewLinkLineSystem_Render", ReactiveSystem)
 GuidePreviewLinkLineSystem_Render = GuidePreviewLinkLineSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GuidePreviewLinkLineSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function GuidePreviewLinkLineSystem_Render:Constructor(world)
   self._world = world
   self._fingerTweener = nil
   self._guideLineEntityArray = {}
@@ -18,120 +11,91 @@ GuidePreviewLinkLineSystem_Render.Constructor = function(self, world)
   self._guideStepEvent = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = world:GetGroup((world.BW_WEMatchers).GuidePreviewLinkLine)
+function GuidePreviewLinkLineSystem_Render:GetTrigger(world)
+  local group = world:GetGroup(world.BW_WEMatchers.GuidePreviewLinkLine)
   local c = Collector:New({group}, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2
+function GuidePreviewLinkLineSystem_Render:Filter(entity)
   return entity:HasGuidePreviewLinkLine()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineSystem_Render.TearDown = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function GuidePreviewLinkLineSystem_Render:TearDown()
   if self._fingerTweener ~= nil then
-    (self._fingerTweener):Kill()
+    self._fingerTweener:Kill()
     self._fingerTweener = nil
   end
   if self._guideStepEvent ~= nil then
-    ((GameGlobal.Timer)()):CancelEvent(self._guideStepEvent)
+    GameGlobal.Timer():CancelEvent(self._guideStepEvent)
     self._guideStepEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_4
+function GuidePreviewLinkLineSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     self:OnGuidePLLPath(entities[i])
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineSystem_Render.OnGuidePLLPath = function(self, entity)
-  -- function num : 0_5 , upvalues : _ENV
-  local reBoard = (self._world):GetRenderBoardEntity()
+function GuidePreviewLinkLineSystem_Render:OnGuidePLLPath(entity)
+  local reBoard = self._world:GetRenderBoardEntity()
   local fingerEntity = self:_GetFingerEntity()
   local guidePLLCmpt = reBoard:GuidePreviewLinkLine()
   local refreshType = guidePLLCmpt:GetGuideRefreshType()
   if refreshType == GuideRefreshType.StopGuidePath then
     if self._fingerTweener ~= nil then
-      (self._fingerTweener):Kill()
+      self._fingerTweener:Kill()
       self._fingerTweener = nil
     end
     if self._guideStepEvent ~= nil then
-      ((GameGlobal.Timer)()):CancelEvent(self._guideStepEvent)
+      GameGlobal.Timer():CancelEvent(self._guideStepEvent)
       self._guideStepEvent = nil
     end
     self:_DestroyGuideLinkDot()
     self:_DestroyGuideLinkLine()
     fingerEntity:SetViewVisible(false)
-  else
-    if refreshType == GuideRefreshType.StartGuidePath then
-      fingerEntity:SetViewVisible(true)
-      self._showGuideMark = true
-      do
-        if self._showGuideMark == true then
-          local guidePath = self:_GetGuidePreviewLinkLine()
-          self:_CreateGuideMarkEntity(guidePath)
-          self._showGuideMark = false
-        end
-        self:_GuideTargetPath()
-        if refreshType == GuideRefreshType.ShowGuideLine then
-          if self._fingerTweener ~= nil then
-            (self._fingerTweener):Kill()
-            self._fingerTweener = nil
-          end
-          if self._guideStepEvent ~= nil then
-            ((GameGlobal.Timer)()):CancelEvent(self._guideStepEvent)
-            self._guideStepEvent = nil
-          end
-          local linkageRenderService = (self._world):GetService("LinkageRender")
-          local guidePath = self:_GetGuidePreviewLinkLine()
-          for index,value in ipairs(guidePath) do
-            linkageRenderService:ShowLinkNormal(value)
-          end
-          fingerEntity:SetViewVisible(false)
-        else
-          do
-            if refreshType == GuideRefreshType.RestartGuidePath then
-              fingerEntity:SetViewVisible(true)
-              do
-                if self._showGuideMark == true then
-                  local guidePath = self:_GetGuidePreviewLinkLine()
-                  self:_CreateGuideMarkEntity(guidePath)
-                  self._showGuideMark = false
-                end
-                self:_GuideTargetPath()
-              end
-            end
-          end
-        end
-      end
+  elseif refreshType == GuideRefreshType.StartGuidePath then
+    fingerEntity:SetViewVisible(true)
+    self._showGuideMark = true
+    if self._showGuideMark == true then
+      local guidePath = self:_GetGuidePreviewLinkLine()
+      self:_CreateGuideMarkEntity(guidePath)
+      self._showGuideMark = false
     end
+    self:_GuideTargetPath()
+  elseif refreshType == GuideRefreshType.ShowGuideLine then
+    if self._fingerTweener ~= nil then
+      self._fingerTweener:Kill()
+      self._fingerTweener = nil
+    end
+    if self._guideStepEvent ~= nil then
+      GameGlobal.Timer():CancelEvent(self._guideStepEvent)
+      self._guideStepEvent = nil
+    end
+    local linkageRenderService = self._world:GetService("LinkageRender")
+    local guidePath = self:_GetGuidePreviewLinkLine()
+    for index, value in ipairs(guidePath) do
+      linkageRenderService:ShowLinkNormal(value)
+    end
+    fingerEntity:SetViewVisible(false)
+  elseif refreshType == GuideRefreshType.RestartGuidePath then
+    fingerEntity:SetViewVisible(true)
+    if self._showGuideMark == true then
+      local guidePath = self:_GetGuidePreviewLinkLine()
+      self:_CreateGuideMarkEntity(guidePath)
+      self._showGuideMark = false
+    end
+    self:_GuideTargetPath()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineSystem_Render._GuideTargetPath = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local reBoard = (self._world):GetRenderBoardEntity()
+function GuidePreviewLinkLineSystem_Render:_GuideTargetPath()
+  local reBoard = self._world:GetRenderBoardEntity()
   local fingerEntity = self:_GetFingerEntity()
   local hasView = self:_HasView(fingerEntity)
   if hasView == false then
-    return 
+    return
   end
   local guidePLLCmpt = reBoard:GuidePreviewLinkLine()
   local guidePath = guidePLLCmpt:GetGuidePLLPath()
@@ -139,65 +103,52 @@ GuidePreviewLinkLineSystem_Render._GuideTargetPath = function(self)
   local duration = guidePointCount * BattleConst.GuidePathInternal
   self:_StartDoTweenGuide(guidePath, duration)
   if self._guideStepEvent == nil then
-    self._guideStepEvent = ((GameGlobal.Timer)()):AddEventTimes(duration * 1000 + BattleConst.GuidePathStepWaitTime, TimerTriggerCount.Infinite, function()
-    -- function num : 0_6_0 , upvalues : guidePLLCmpt, _ENV, self, guidePath, duration
-    local refreshType = guidePLLCmpt:GetGuideRefreshType()
-    if refreshType == GuideRefreshType.StartGuidePath or refreshType == GuideRefreshType.RestartGuidePath then
-      self:_OnGuideComplete()
-      self:_StartDoTweenGuide(guidePath, duration)
-    end
-  end
-)
+    self._guideStepEvent = GameGlobal.Timer():AddEventTimes(duration * 1000 + BattleConst.GuidePathStepWaitTime, TimerTriggerCount.Infinite, function()
+      local refreshType = guidePLLCmpt:GetGuideRefreshType()
+      if refreshType == GuideRefreshType.StartGuidePath or refreshType == GuideRefreshType.RestartGuidePath then
+        self:_OnGuideComplete()
+        self:_StartDoTweenGuide(guidePath, duration)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineSystem_Render._StartDoTweenGuide = function(self, guidePath, duration)
-  -- function num : 0_7 , upvalues : _ENV
+function GuidePreviewLinkLineSystem_Render:_StartDoTweenGuide(guidePath, duration)
   local fingerEntity = self:_GetFingerEntity()
   fingerEntity:SetViewVisible(true)
   local viewCmpt = fingerEntity:View()
-  local fingerTrans = (viewCmpt:GetGameObject()).transform
-  local rectTrans = (viewCmpt:GetGameObject()):GetComponent("RectTransform")
+  local fingerTrans = viewCmpt:GetGameObject().transform
+  local rectTrans = viewCmpt:GetGameObject():GetComponent("RectTransform")
   if rectTrans ~= nil then
     rectTrans:SetAsLastSibling()
   end
   local guideHudPosArray = self:_CalcGuideFingerPath(guidePath)
   fingerTrans.position = guideHudPosArray[1]
-  self._fingerTweener = ((fingerTrans:DOPath(guideHudPosArray, duration)):SetEase(((DG.Tweening).Ease).Linear)):OnWaypointChange(function(waypointIndex)
-    -- function num : 0_7_0 , upvalues : self
+  self._fingerTweener = fingerTrans:DOPath(guideHudPosArray, duration):SetEase(DG.Tweening.Ease.Linear):OnWaypointChange(function(waypointIndex)
     local guidePathIndex = waypointIndex + 1
     self:_OnGuideWayPointChange(guidePathIndex)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineSystem_Render._OnGuideWayPointChange = function(self, guidePosIndex)
-  -- function num : 0_8
+function GuidePreviewLinkLineSystem_Render:_OnGuideWayPointChange(guidePosIndex)
   if guidePosIndex <= 1 then
-    return 
+    return
   end
   local guidePath = self:_GetGuidePreviewLinkLine()
   local headPos = guidePath[guidePosIndex - 1]
   local endPos = guidePath[guidePosIndex]
   if endPos == nil then
-    return 
+    return
   end
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local pieceType = utilData:FindPieceElement(endPos)
-  local linkageRenderService = (self._world):GetService("LinkageRender")
+  local linkageRenderService = self._world:GetService("LinkageRender")
   linkageRenderService:CreateLineRender(headPos, endPos, guidePosIndex, endPos, nil, pieceType)
   linkageRenderService:ShowLinkDot(endPos)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineSystem_Render._OnGuideComplete = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.notice)("_OnGuideComplete", (UnityEngine.Time).frameCount)
+function GuidePreviewLinkLineSystem_Render:_OnGuideComplete()
+  Log.notice("_OnGuideComplete", UnityEngine.Time.frameCount)
   local guidePath = self:_GetGuidePreviewLinkLine()
   if self._showGuideMark == true then
     self:_CreateGuideMarkEntity(guidePath)
@@ -205,42 +156,31 @@ GuidePreviewLinkLineSystem_Render._OnGuideComplete = function(self)
   end
   local fingerEntity = self:_GetFingerEntity()
   fingerEntity:SetViewVisible(false)
-  ;
-  ((fingerEntity:View()):GetGameObject()):SetActive(false)
-  local linkageRenderService = (self._world):GetService("LinkageRender")
+  fingerEntity:View():GetGameObject():SetActive(false)
+  local linkageRenderService = self._world:GetService("LinkageRender")
   linkageRenderService:DestroyAllLinkLine()
   linkageRenderService:DestroyLinkedGridEffect()
   for i = 2, #guidePath do
     linkageRenderService:HideLinkDot(guidePath[i])
   end
-  ;
-  (self._fingerTweener):Kill()
+  self._fingerTweener:Kill()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineSystem_Render._GetGuidePreviewLinkLine = function(self)
-  -- function num : 0_10
-  local reBoard = (self._world):GetRenderBoardEntity()
+function GuidePreviewLinkLineSystem_Render:_GetGuidePreviewLinkLine()
+  local reBoard = self._world:GetRenderBoardEntity()
   local guidePLLCmpt = reBoard:GuidePreviewLinkLine()
   local guidePath = guidePLLCmpt:GetGuidePLLPath()
   return guidePath
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineSystem_Render._GetFingerEntity = function(self)
-  -- function num : 0_11
-  local fingerGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).GuideFinger)
+function GuidePreviewLinkLineSystem_Render:_GetFingerEntity()
+  local fingerGroup = self._world:GetGroup(self._world.BW_WEMatchers.GuideFinger)
   local fingerEntities = fingerGroup:GetEntities()
   local fingerEntity = fingerEntities[1]
   return fingerEntity
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineSystem_Render._CreateGuideMarkEntity = function(self, guidePath)
-  -- function num : 0_12
+function GuidePreviewLinkLineSystem_Render:_CreateGuideMarkEntity(guidePath)
   local guidePathMaxCount = #guidePath
   for guidePosIndex = 2, guidePathMaxCount do
     self:_CreateGuideLinkDot(guidePath[guidePosIndex])
@@ -250,10 +190,7 @@ GuidePreviewLinkLineSystem_Render._CreateGuideMarkEntity = function(self, guideP
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineSystem_Render._HasView = function(self, e)
-  -- function num : 0_13
+function GuidePreviewLinkLineSystem_Render:_HasView(e)
   local viewCmpt = e:View()
   if viewCmpt == nil then
     return false
@@ -265,13 +202,10 @@ GuidePreviewLinkLineSystem_Render._HasView = function(self, e)
   return true
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineSystem_Render._CalcGuideFingerPath = function(self, guideGridPath)
-  -- function num : 0_14 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
+function GuidePreviewLinkLineSystem_Render:_CalcGuideFingerPath(guideGridPath)
+  local boardServiceRender = self._world:GetService("BoardRender")
   local fingerPath = {}
-  for k,v in ipairs(guideGridPath) do
+  for k, v in ipairs(guideGridPath) do
     local gridRenderPos = boardServiceRender:GridPos2RenderPos(v)
     local hudPos = self:_CalcGridHUDWorldPos(gridRenderPos)
     fingerPath[#fingerPath + 1] = hudPos
@@ -279,59 +213,44 @@ GuidePreviewLinkLineSystem_Render._CalcGuideFingerPath = function(self, guideGri
   return fingerPath
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineSystem_Render._CalcGridHUDWorldPos = function(self, gridRenderPos)
-  -- function num : 0_15
-  local camera = ((self._world):MainCamera()):Camera()
+function GuidePreviewLinkLineSystem_Render:_CalcGridHUDWorldPos(gridRenderPos)
+  local camera = self._world:MainCamera():Camera()
   local screenPos = camera:WorldToScreenPoint(gridRenderPos)
-  local hudCamera = ((self._world):MainCamera()):HUDCamera()
+  local hudCamera = self._world:MainCamera():HUDCamera()
   local hudWorldPos = hudCamera:ScreenToWorldPoint(screenPos)
   return hudWorldPos
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineSystem_Render._CreateGuideLinkDot = function(self, pos)
-  -- function num : 0_16
+function GuidePreviewLinkLineSystem_Render:_CreateGuideLinkDot(pos)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineSystem_Render._DestroyGuideLinkDot = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local guideSpotGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).GuideSpot)
+function GuidePreviewLinkLineSystem_Render:_DestroyGuideLinkDot()
+  local guideSpotGroup = self._world:GetGroup(self._world.BW_WEMatchers.GuideSpot)
   local remove_list = {}
-  for _,guideSpotEntity in ipairs(guideSpotGroup:GetEntities()) do
-    (table.insert)(remove_list, guideSpotEntity)
+  for _, guideSpotEntity in ipairs(guideSpotGroup:GetEntities()) do
+    table.insert(remove_list, guideSpotEntity)
   end
-  for _,e in ipairs(remove_list) do
-    (self._world):DestroyEntity(e)
+  for _, e in ipairs(remove_list) do
+    self._world:DestroyEntity(e)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineSystem_Render._DestroyGuideLinkLine = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local guideLineGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).GuideLinkLine)
+function GuidePreviewLinkLineSystem_Render:_DestroyGuideLinkLine()
+  local guideLineGroup = self._world:GetGroup(self._world.BW_WEMatchers.GuideLinkLine)
   local remove_list = {}
-  for _,guideSpotEntity in ipairs(guideLineGroup:GetEntities()) do
-    (table.insert)(remove_list, guideSpotEntity)
+  for _, guideSpotEntity in ipairs(guideLineGroup:GetEntities()) do
+    table.insert(remove_list, guideSpotEntity)
   end
-  for _,e in ipairs(remove_list) do
-    (self._world):DestroyEntity(e)
+  for _, e in ipairs(remove_list) do
+    self._world:DestroyEntity(e)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineSystem_Render._CreateGuideLineRender = function(self, headGridPos, endGridPos, gridPos)
-  -- function num : 0_19 , upvalues : _ENV
-  local sEntity = (self._world):GetService("RenderEntity")
+function GuidePreviewLinkLineSystem_Render:_CreateGuideLineRender(headGridPos, endGridPos, gridPos)
+  local sEntity = self._world:GetService("RenderEntity")
   local linkLineRenderEntity = sEntity:CreateRenderEntity(EntityConfigIDRender.GuideLinkLine)
   linkLineRenderEntity:SetLocation(gridPos, Vector2(1, 0))
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   local headRenderPos = boardServiceRender:GridPos2RenderPos(headGridPos)
   local endRenderPos = boardServiceRender:GridPos2RenderPos(endGridPos)
   local lineHeight = 0.01
@@ -340,5 +259,3 @@ GuidePreviewLinkLineSystem_Render._CreateGuideLineRender = function(self, headGr
   linkLineRenderEntity:ReplaceLinkLineRender(headRenderPos, endRenderPos)
   return linkLineRenderEntity
 end
-
-

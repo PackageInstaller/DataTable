@@ -1,123 +1,244 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/auto_test_config/auto_test_230511_104442.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 AutoTest_230511_104442 = {
-cases = {
-[1] = {
-[1] = {action = "WaitGameFsm", 
-args = {id = 5}
+  cases = {
+    [1] = {
+      [1] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [2] = {
+        action = "SetTeamPosition",
+        args = {name = "team", pos = 502}
+      },
+      [3] = {
+        action = "AddTrap",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 14,
+          name = "e1",
+          pos = 504
+        }
+      },
+      [4] = {
+        action = "AddTrap",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 141,
+          name = "e2",
+          pos = 505
+        }
+      },
+      [5] = {
+        action = "AddTrap",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 1994,
+          name = "e3",
+          pos = 506
+        }
+      },
+      [6] = {
+        action = "AddTrap",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 2004,
+          name = "e4",
+          pos = 507
+        }
+      },
+      [7] = {
+        action = "AddTrap",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 60,
+          name = "e5",
+          pos = 508
+        }
+      },
+      [8] = {
+        action = "AddTrap",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 61,
+          name = "e6",
+          pos = 608
+        }
+      },
+      [9] = {
+        action = "AddMonster",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 5100111,
+          name = "e7",
+          pos = 708
+        }
+      },
+      [10] = {
+        action = "SetAllMonstersHP",
+        args = {value = 100000}
+      },
+      [11] = {
+        action = "CheckEntityBuffLayer",
+        args = {
+          layer = 1,
+          layerType = 4101920,
+          name = "p1",
+          trigger = 88
+        }
+      },
+      [12] = {
+        action = "CaptureFormulaAttr",
+        args = {
+          attr = "damagePercent",
+          damageIndex = 1,
+          defname = "e7",
+          key = "CalcDamage_4",
+          skillid = 2001921,
+          trigger = 102,
+          varname = "v1"
+        }
+      },
+      [13] = {
+        action = "CheckLocalValue",
+        args = {
+          target = 1.5299999713898,
+          trigger = 102,
+          varname = "v1"
+        }
+      },
+      [14] = {
+        action = "FakeInputChain",
+        args = {
+          chainPath = {
+            [1] = 502.0,
+            [2] = 503.0,
+            [3] = 504.0,
+            [4] = 505.0,
+            [5] = 506.0,
+            [6] = 507.0,
+            [7] = 508.0,
+            [8] = 608.0
+          },
+          pieceType = 1
+        }
+      },
+      [15] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [16] = {
+        action = "SetEntityBuffLayer",
+        args = {
+          display = true,
+          layer = 98,
+          layerType = 4101920,
+          name = "p1"
+        }
+      },
+      [17] = {
+        action = "AddTrap",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 14,
+          name = "w1",
+          pos = 607
+        }
+      },
+      [18] = {
+        action = "AddTrap",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 14,
+          name = "w2",
+          pos = 606
+        }
+      },
+      [19] = {
+        action = "AddTrap",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 14,
+          name = "w3",
+          pos = 605
+        }
+      },
+      [20] = {
+        action = "CaptureFormulaAttr",
+        args = {
+          attr = "damagePercent",
+          damageIndex = 1,
+          defname = "e7",
+          key = "CalcDamage_4",
+          skillid = 2001921,
+          trigger = 102,
+          varname = "v2"
+        }
+      },
+      [21] = {
+        action = "CheckLocalValue",
+        args = {
+          target = 4.4699997901917,
+          trigger = 88,
+          varname = "v2"
+        }
+      },
+      [22] = {
+        action = "FakeInputChain",
+        args = {
+          chainPath = {
+            [1] = 608.0,
+            [2] = 607.0,
+            [3] = 606.0,
+            [4] = 605.0,
+            [5] = 705.0,
+            [6] = 706.0,
+            [7] = 707.0
+          },
+          pieceType = 1
+        }
+      },
+      [23] = {
+        action = "CheckEntityBuffLayer",
+        args = {
+          layer = 99,
+          layerType = 4101920,
+          name = "p1",
+          trigger = 88
+        }
+      },
+      [24] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      name = "觉1系数提高：0.03"
+    }
+  },
+  name = "列奥精炼Ⅰ",
+  petList = {
+    [1] = {
+      awakening = 0,
+      equipRefineLv = 1,
+      equiplv = 10,
+      grade = 3,
+      id = 1601921,
+      level = 80,
+      name = "p1"
+    }
+  },
+  remotePet = {},
+  setup = {
+    [1] = {
+      args = {levelID = 1, matchType = 1},
+      setup = "LevelBasic"
+    }
+  }
 }
-, 
-[2] = {action = "SetTeamPosition", 
-args = {name = "team", pos = 502}
-}
-, 
-[3] = {action = "AddTrap", 
-args = {dir = 1, disableai = true, id = 14, name = "e1", pos = 504}
-}
-, 
-[4] = {action = "AddTrap", 
-args = {dir = 1, disableai = true, id = 141, name = "e2", pos = 505}
-}
-, 
-[5] = {action = "AddTrap", 
-args = {dir = 1, disableai = true, id = 1994, name = "e3", pos = 506}
-}
-, 
-[6] = {action = "AddTrap", 
-args = {dir = 1, disableai = true, id = 2004, name = "e4", pos = 507}
-}
-, 
-[7] = {action = "AddTrap", 
-args = {dir = 1, disableai = true, id = 60, name = "e5", pos = 508}
-}
-, 
-[8] = {action = "AddTrap", 
-args = {dir = 1, disableai = true, id = 61, name = "e6", pos = 608}
-}
-, 
-[9] = {action = "AddMonster", 
-args = {dir = 1, disableai = true, id = 5100111, name = "e7", pos = 708}
-}
-, 
-[10] = {action = "SetAllMonstersHP", 
-args = {value = 100000}
-}
-, 
-[11] = {action = "CheckEntityBuffLayer", 
-args = {layer = 1, layerType = 4101920, name = "p1", trigger = 88}
-}
-, 
-[12] = {action = "CaptureFormulaAttr", 
-args = {attr = "damagePercent", damageIndex = 1, defname = "e7", key = "CalcDamage_4", skillid = 2001921, trigger = 102, varname = "v1"}
-}
-, 
-[13] = {action = "CheckLocalValue", 
-args = {target = 1.5299999713898, trigger = 102, varname = "v1"}
-}
-, 
-[14] = {action = "FakeInputChain", 
-args = {
-chainPath = {[1] = 502, [2] = 503, [3] = 504, [4] = 505, [5] = 506, [6] = 507, [7] = 508, [8] = 608}
-, pieceType = 1}
-}
-, 
-[15] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, 
-[16] = {action = "SetEntityBuffLayer", 
-args = {display = true, layer = 98, layerType = 4101920, name = "p1"}
-}
-, 
-[17] = {action = "AddTrap", 
-args = {dir = 1, disableai = true, id = 14, name = "w1", pos = 607}
-}
-, 
-[18] = {action = "AddTrap", 
-args = {dir = 1, disableai = true, id = 14, name = "w2", pos = 606}
-}
-, 
-[19] = {action = "AddTrap", 
-args = {dir = 1, disableai = true, id = 14, name = "w3", pos = 605}
-}
-, 
-[20] = {action = "CaptureFormulaAttr", 
-args = {attr = "damagePercent", damageIndex = 1, defname = "e7", key = "CalcDamage_4", skillid = 2001921, trigger = 102, varname = "v2"}
-}
-, 
-[21] = {action = "CheckLocalValue", 
-args = {target = 4.4699997901917, trigger = 88, varname = "v2"}
-}
-, 
-[22] = {action = "FakeInputChain", 
-args = {
-chainPath = {[1] = 608, [2] = 607, [3] = 606, [4] = 605, [5] = 705, [6] = 706, [7] = 707}
-, pieceType = 1}
-}
-, 
-[23] = {action = "CheckEntityBuffLayer", 
-args = {layer = 99, layerType = 4101920, name = "p1", trigger = 88}
-}
-, 
-[24] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, name = "觉1系数提高：0.03"}
-}
-, name = "列奥精炼Ⅰ", 
-petList = {
-[1] = {awakening = 0, equipRefineLv = 1, equiplv = 10, grade = 3, id = 1601921, level = 80, name = "p1"}
-}
-, 
-remotePet = {}
-, 
-setup = {
-[1] = {
-args = {levelID = 1, matchType = 1}
-, setup = "LevelBasic"}
-}
-}
-

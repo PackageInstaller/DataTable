@@ -1,74 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/fsm/state_bounce_prepare.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateBouncePrepare", StateBounceBase)
 StateBouncePrepare = StateBouncePrepare
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateBouncePrepare.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
+function StateBouncePrepare:OnEnter(TT, ...)
   self:Init()
-  ;
-  (self.bounceData):Reset()
-  self.guideModule = (GameGlobal.GetModule)(GuideModule)
-  for k,v in pairs(self.monsterGenerator) do
+  self.bounceData:Reset()
+  self.guideModule = GameGlobal.GetModule(GuideModule)
+  for k, v in pairs(self.monsterGenerator) do
     v:Reset()
   end
-  ;
-  (self.objMgr):Reset()
-  ;
-  (self.objMgr):SetPlayerVisbile(true)
-  local prepareView = (self.uiController):GetPrepareView()
-  if (self.bounceData).levelId == 1 then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIBounceMainController)
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.bounceData).guidingId = BounceConst.GuideFirst
-  else
-    if (self.bounceData).levelId == 2 then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIBounceMainController2)
-      -- DECOMPILER ERROR at PC62: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.bounceData).guidingId = BounceConst.GuideSecond
-    end
+  self.objMgr:Reset()
+  self.objMgr:SetPlayerVisbile(true)
+  local prepareView = self.uiController:GetPrepareView()
+  if self.bounceData.levelId == 1 then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIBounceMainController)
+    self.bounceData.guidingId = BounceConst.GuideFirst
+  elseif self.bounceData.levelId == 2 then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIBounceMainController2)
+    self.bounceData.guidingId = BounceConst.GuideSecond
   end
   prepareView:Start(function()
-    -- function num : 0_0_0 , upvalues : self, _ENV
-    if (self.bounceData).guidingId == BounceConst.GuideFirst then
-      local isGuiding = (self.guideModule):IsGuideProcess(BounceConst.GuideFirst)
-      ;
-      (self.bounceData):SetIsGuiding(isGuiding)
+    if self.bounceData.guidingId == BounceConst.GuideFirst then
+      local isGuiding = self.guideModule:IsGuideProcess(BounceConst.GuideFirst)
+      self.bounceData:SetIsGuiding(isGuiding)
       if isGuiding then
-        (self.coreController):SetGuideStepShow("guide5420081")
+        self.coreController:SetGuideStepShow("guide5420081")
       end
-    else
-      do
-        do
-          if (self.bounceData).guidingId == BounceConst.GuideSecond then
-            local isGuiding = (self.guideModule):IsGuideProcess(BounceConst.GuideSecond)
-            ;
-            (self.bounceData):SetIsGuiding(isGuiding)
-            if isGuiding then
-              (self.coreController):SetGuideStepShow("guide5420091")
-            end
-          end
-          ;
-          (self.coreController):ChgFsmState(StateBounce.Battle)
-        end
+    elseif self.bounceData.guidingId == BounceConst.GuideSecond then
+      local isGuiding = self.guideModule:IsGuideProcess(BounceConst.GuideSecond)
+      self.bounceData:SetIsGuiding(isGuiding)
+      if isGuiding then
+        self.coreController:SetGuideStepShow("guide5420091")
       end
     end
-  end
-)
+    self.coreController:ChgFsmState(StateBounce.Battle)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePrepare.OnExit = function(self, TT)
-  -- function num : 0_1
+function StateBouncePrepare:OnExit(TT)
 end
-
-

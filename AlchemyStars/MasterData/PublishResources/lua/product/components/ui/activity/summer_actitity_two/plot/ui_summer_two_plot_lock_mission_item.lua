@@ -1,54 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/plot/ui_summer_two_plot_lock_mission_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummerTwoPlotLockMissionItem", UICustomWidget)
 UISummerTwoPlotLockMissionItem = UISummerTwoPlotLockMissionItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummerTwoPlotLockMissionItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISummerTwoPlotLockMissionItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerTwoPlotLockMissionItem._GetComponents = function(self)
-  -- function num : 0_1
+function UISummerTwoPlotLockMissionItem:_GetComponents()
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._go = self:GetGameObject("go")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerTwoPlotLockMissionItem.SetData = function(self, index, data)
-  -- function num : 0_2
+function UISummerTwoPlotLockMissionItem:SetData(index, data)
   self._idx = index
   self._missionData = data
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerTwoPlotLockMissionItem.SetActive = function(self, active)
-  -- function num : 0_3
-  (self._go):SetActive(active)
+function UISummerTwoPlotLockMissionItem:SetActive(active)
+  self._go:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerTwoPlotLockMissionItem._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local missionid = (self._missionData).missionid
-  local cfgs = (Cfg.cfg_campaign_mission)({CampaignMissionId = missionid})
+function UISummerTwoPlotLockMissionItem:_OnValue()
+  local missionid = self._missionData.missionid
+  local cfgs = Cfg.cfg_campaign_mission({CampaignMissionId = missionid})
   if not cfgs then
-    (Log.error)("###[UISummerTwoPlotLockMissionItem] cfgs is nil ! id --> ", missionid)
-    return 
+    Log.error("###[UISummerTwoPlotLockMissionItem] cfgs is nil ! id --> ", missionid)
+    return
   end
-  local name = (cfgs[1]).Name
-  ;
-  (self._name):SetText((StringTable.Get)("str_summer_activity_two_plot_pass_mission_unlock", (StringTable.Get)(name)))
+  local name = cfgs[1].Name
+  self._name:SetText(StringTable.Get("str_summer_activity_two_plot_pass_mission_unlock", StringTable.Get(name)))
 end
-
-

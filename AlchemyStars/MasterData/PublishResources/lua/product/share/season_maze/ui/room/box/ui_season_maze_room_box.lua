@@ -1,182 +1,135 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/room/box/ui_season_maze_room_box.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRoomBox", UISeasonMazeRoomBase)
 UISeasonMazeRoomBox = UISeasonMazeRoomBox
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoomBox.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonMazeRoomBox:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBox.OnShowUI = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeRoomBox:OnShowUI(uiParams)
   self._selected = {false, false}
-  self._haveHalidom = (self._component):GetAttrValue(SeasonMazeAttrType.SMAT_Chest_All_Reward) > 0
+  self._haveHalidom = self._component:GetAttrValue(SeasonMazeAttrType.SMAT_Chest_All_Reward) > 0
   self:_InitWidget()
   self:_OnValue()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBox._InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeRoomBox:_InitWidget()
   self._rewards = self:GetUIComponent("UISelectObjectPath", "Rewards")
   self._choiceTips = self:GetUIComponent("UILocalizationText", "ChoiceTips")
   self._itemTips = self:GetUIComponent("UISelectObjectPath", "ItemTips")
-  self._tips = (self._itemTips):SpawnObject("UISelectInfo")
+  self._tips = self._itemTips:SpawnObject("UISelectInfo")
   self._choiceMarkGO = self:GetGameObject("ChoiceMark")
   self:AttachEvent(GameEventType.OnSeasonMazeShowRewardsFinish, self.OnSeasonMazeShowRewardsFinish)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBox._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMazeRoomBox:_OnValue()
   if self._haveHalidom then
-    (self._choiceTips):SetText((StringTable.Get)("str_season_maze_room_box2", "圣物名字"))
+    self._choiceTips:SetText(StringTable.Get("str_season_maze_room_box2", "圣物名字"))
   else
-    ;
-    (self._choiceTips):SetText((StringTable.Get)("str_season_maze_room_box"))
+    self._choiceTips:SetText(StringTable.Get("str_season_maze_room_box"))
   end
-  ;
-  (self._rewards):SpawnObjects("UISeasonMazeRoomBoxItem", 2)
-  self._itemWidgets = (self._rewards):GetAllSpawnList()
-  for key,widget in ipairs(self._itemWidgets) do
-    widget:SetData(key, ((self._roomInfo).rand_box)[key], function(index)
-    -- function num : 0_3_0 , upvalues : self
-    self:OnClickItem(index)
+  self._rewards:SpawnObjects("UISeasonMazeRoomBoxItem", 2)
+  self._itemWidgets = self._rewards:GetAllSpawnList()
+  for key, widget in ipairs(self._itemWidgets) do
+    widget:SetData(key, self._roomInfo.rand_box[key], function(index)
+      self:OnClickItem(index)
+    end, function(index, position)
+      self:_ShowTips(index, position)
+    end)
   end
-, function(index, position)
-    -- function num : 0_3_1 , upvalues : self
-    self:_ShowTips(index, position)
-  end
-)
-  end
-  ;
-  (self._choiceMarkGO):SetActive(true)
+  self._choiceMarkGO:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBox.ChoiceBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMazeRoomBox:ChoiceBtnOnClick(go)
   local index = -1
-  if (self._selected)[1] then
+  if self._selected[1] then
     index = 0
   end
-  if (self._selected)[2] then
+  if self._selected[2] then
     index = 1
   end
-  if (self._selected)[1] and (self._selected)[2] then
+  if self._selected[1] and self._selected[2] then
     index = 2
   end
   if index < 0 or self._haveHalidom and index ~= 2 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_maze_room_not_choice"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_season_maze_room_not_choice"))
+    return
   end
   self:Lock("UISeasonMazeRoomBox")
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self, index
     local res = AsyncRequestRes:New()
-    local result = (self._component):HandleSeasonMazeBox(TT, res, index)
+    local result = self._component:HandleSeasonMazeBox(TT, res, index)
     if not res:GetSucc() then
-      (Log.error)("宝箱房间UI结算失败:", res:GetResult())
-      if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-        return 
+      Log.error("宝箱房间UI结算失败:", res:GetResult())
+      if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+        return
       end
-      return 
+      return
     end
     self:UnLock("UISeasonMazeRoomBox")
     if result.reward then
       self._waitNotifyReward = result.reward
       local showRewards = {}
-      for _,value in ipairs(result.reward) do
+      for _, value in ipairs(result.reward) do
         local reward = value
         if reward.type == SeasonMazeEffectType.SMET_Bead then
-          (table.insert)(showRewards, reward)
+          table.insert(showRewards, reward)
         end
       end
-      for index,isSelected in ipairs(self._selected) do
+      for index, isSelected in ipairs(self._selected) do
         if isSelected then
-          local effect = ((self._roomInfo).rand_box)[index]
+          local effect = self._roomInfo.rand_box[index]
           if effect and (effect.type == SeasonMazeEffectType.SMET_Pro or effect.type == SeasonMazeEffectType.SMET_Relic) then
-            (table.insert)(showRewards, effect)
+            table.insert(showRewards, effect)
           end
         end
       end
-      ;
-      (SeasonMazeTool:GetInstance()):ShowUIGetRewards(showRewards)
+      SeasonMazeTool:GetInstance():ShowUIGetRewards(showRewards)
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBox.OnSeasonMazeShowRewardsFinish = function(self, flag)
-  -- function num : 0_5
+function UISeasonMazeRoomBox:OnSeasonMazeShowRewardsFinish(flag)
   self:OnHideUI(self._waitNotifyReward)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBox.OnClickItem = function(self, index)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._selected)[index] = true
+function UISeasonMazeRoomBox:OnClickItem(index)
+  self._selected[index] = true
   if not self._haveHalidom then
-    for _index,_ in ipairs(self._selected) do
-      -- DECOMPILER ERROR at PC12: Confused about usage of register: R7 in 'UnsetPending'
-
+    for _index, _ in ipairs(self._selected) do
       if _index ~= index then
-        (self._selected)[_index] = false
+        self._selected[_index] = false
         break
       end
     end
   end
-  do
-    for index,value in ipairs(self._itemWidgets) do
-      value:OnSelected((self._selected)[index])
+  for index, value in ipairs(self._itemWidgets) do
+    value:OnSelected(self._selected[index])
+  end
+  if self._haveHalidom then
+    if self._selected[1] and self._selected[2] then
+      self._choiceMarkGO:SetActive(false)
     end
-    if self._haveHalidom and (self._selected)[1] and (self._selected)[2] then
-      (self._choiceMarkGO):SetActive(false)
-    end
-    ;
-    (self._choiceMarkGO):SetActive(false)
+  else
+    self._choiceMarkGO:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBox._ShowTips = function(self, index, position)
-  -- function num : 0_7 , upvalues : _ENV
-  local data = ((self._roomInfo).rand_box)[index]
+function UISeasonMazeRoomBox:_ShowTips(index, position)
+  local data = self._roomInfo.rand_box[index]
   local totalCount = 0
   if data.type == SeasonMazeEffectType.SMET_Pro then
-    totalCount = (self._component):GetAttrValue(data.id)
-  else
-    if data.type == SeasonMazeEffectType.SMET_Bead and (self._comInfo).m_auto_bead_map then
-      for _,value in pairs((self._comInfo).m_auto_bead_map) do
+    totalCount = self._component:GetAttrValue(data.id)
+  elseif data.type == SeasonMazeEffectType.SMET_Bead then
+    if self._comInfo.m_auto_bead_map then
+      for _, value in pairs(self._comInfo.m_auto_bead_map) do
         local bead = value
-        if data.id == (bead.bead_info).cfg_id then
+        if data.id == bead.bead_info.cfg_id then
           totalCount = totalCount + 1
         end
       end
     end
+  else
+    totalCount = self._component:GetEffectNum(data.type, data.id)
   end
-  do
-    totalCount = (self._component):GetEffectNum(data.type, data.id)
-    ;
-    (self._tips):SetSeasonMazeData(data, totalCount, position)
-  end
+  self._tips:SetSeasonMazeData(data, totalCount, position)
 end
-
-

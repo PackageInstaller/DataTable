@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/view_extensions/grid_view_wrapper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("view_wrapper")
 _class("GridViewWrapper", IViewWrapper)
 GridViewWrapper = GridViewWrapper
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GridViewWrapper.Constructor = function(self, resource_service, resRequest)
-  -- function num : 0_0
+function GridViewWrapper:Constructor(resource_service, resRequest)
   self.ViewType = "GridView"
   self.ResRequest = resRequest
   self.GameObject = resRequest.Obj
-  self.Transform = (resRequest.Obj).transform
+  self.Transform = resRequest.Obj.transform
   self._ResService = resource_service
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GridViewWrapper.SyncTransform = function(self, pos, dir, scale, id, onOtherBoard)
-  -- function num : 0_1 , upvalues : _ENV
+function GridViewWrapper:SyncTransform(pos, dir, scale, id, onOtherBoard)
   local tf = self.Transform
   if dir ~= Vector3(0, 0, 0) then
     tf.forward = dir
@@ -34,28 +24,15 @@ GridViewWrapper.SyncTransform = function(self, pos, dir, scale, id, onOtherBoard
   tf.localScale = scale
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GridViewWrapper.SetVisible = function(self, active)
-  -- function num : 0_2 , upvalues : _ENV
-  local curPos = ((self.GameObject).transform).position
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
+function GridViewWrapper:SetVisible(active)
+  local curPos = self.GameObject.transform.position
   if active then
-    ((self.GameObject).transform).position = Vector3(curPos.x, 0, curPos.z)
+    self.GameObject.transform.position = Vector3(curPos.x, 0, curPos.z)
   else
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((self.GameObject).transform).position = Vector3(curPos.x, BattleConst.CacheHeight, curPos.z)
+    self.GameObject.transform.position = Vector3(curPos.x, BattleConst.CacheHeight, curPos.z)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GridViewWrapper.ViewDispose = function(self)
-  -- function num : 0_3
-  (self._ResService):DestroyView(self)
+function GridViewWrapper:ViewDispose()
+  self._ResService:DestroyView(self)
 end
-
-

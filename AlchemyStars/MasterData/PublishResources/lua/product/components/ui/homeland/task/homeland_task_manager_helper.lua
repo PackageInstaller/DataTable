@@ -1,122 +1,80 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/task/homeland_task_manager_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandTaskManagerHelper", Object)
 HomelandTaskManagerHelper = HomelandTaskManagerHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandTaskManagerHelper.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._taskGroups = (Cfg.cfg_homeland_task_group)({})
-  self._taskLibrary = (Cfg.cfg_homeland_task)({})
-  self._taskConditionCfg = (Cfg.cfg_homeland_task_finish_conditions)({})
-  self._storyTaskConditionCfg = (Cfg.cfg_homeland_story_task)({})
+function HomelandTaskManagerHelper:Constructor()
+  self._taskGroups = Cfg.cfg_homeland_task_group({})
+  self._taskLibrary = Cfg.cfg_homeland_task({})
+  self._taskConditionCfg = Cfg.cfg_homeland_task_finish_conditions({})
+  self._storyTaskConditionCfg = Cfg.cfg_homeland_story_task({})
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManagerHelper.Init = function(self, homelandTaskManager)
-  -- function num : 0_1
+function HomelandTaskManagerHelper:Init(homelandTaskManager)
   self._homelandTaskManager = homelandTaskManager
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManagerHelper.Dispose = function(self)
-  -- function num : 0_2
+function HomelandTaskManagerHelper:Dispose()
   self._taskGroups = nil
   self._taskLibrary = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManagerHelper.GetTaskGroupCfg = function(self, groupId)
-  -- function num : 0_3
-  return (self._taskGroups)[groupId]
+function HomelandTaskManagerHelper:GetTaskGroupCfg(groupId)
+  return self._taskGroups[groupId]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManagerHelper.GetSortedTaskItems = function(self, groupId)
-  -- function num : 0_4 , upvalues : _ENV
-  local items = ((Cfg.cfg_homeland_task)({GroupID = groupId}))
-  -- DECOMPILER ERROR at PC5: Overwrote pending register: R3 in 'AssignReg'
-
-  local firstTaskItemId = .end
-  for key,value in pairs(items) do
+function HomelandTaskManagerHelper:GetSortedTaskItems(groupId)
+  local items = Cfg.cfg_homeland_task({GroupID = groupId})
+  local firstTaskItemId
+  for key, value in pairs(items) do
     if not value.PriorQuestId then
       firstTaskItemId = value.ID
       break
     end
   end
-  do
-    if not firstTaskItemId then
-      (Log.error)(groupId .. " :groupId not set first taskitem ")
-      return 
-    end
-    local sortedlist = {}
-    ;
-    (table.insert)(sortedlist, (self._taskLibrary)[firstTaskItemId])
-    for i = 1, #items do
-      for k = 1, #items do
-        if (items[k]).PriorQuestId and ((items[k]).PriorQuestId)[1] == firstTaskItemId then
-          firstTaskItemId = (items[k]).ID
-          ;
-          (table.insert)(sortedlist, (self._taskLibrary)[firstTaskItemId])
-          break
-        end
+  if not firstTaskItemId then
+    Log.error(groupId .. " :groupId not set first taskitem ")
+    return
+  end
+  local sortedlist = {}
+  table.insert(sortedlist, self._taskLibrary[firstTaskItemId])
+  for i = 1, #items do
+    for k = 1, #items do
+      if items[k].PriorQuestId and items[k].PriorQuestId[1] == firstTaskItemId then
+        firstTaskItemId = items[k].ID
+        table.insert(sortedlist, self._taskLibrary[firstTaskItemId])
+        break
       end
     end
-    return sortedlist
   end
+  return sortedlist
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManagerHelper.GetTaskItemCfg = function(self, taskId)
-  -- function num : 0_5
-  return (self._taskLibrary)[taskId]
+function HomelandTaskManagerHelper:GetTaskItemCfg(taskId)
+  return self._taskLibrary[taskId]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManagerHelper.GetTaskConditionCfg = function(self, conditionId)
-  -- function num : 0_6
-  return (self._taskConditionCfg)[conditionId]
+function HomelandTaskManagerHelper:GetTaskConditionCfg(conditionId)
+  return self._taskConditionCfg[conditionId]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManagerHelper.GetStoryTaskCfg = function(self, stroyTaskId)
-  -- function num : 0_7
-  return (self._storyTaskConditionCfg)[stroyTaskId]
+function HomelandTaskManagerHelper:GetStoryTaskCfg(stroyTaskId)
+  return self._storyTaskConditionCfg[stroyTaskId]
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManagerHelper.GetStoryTaskAllCfg = function(self)
-  -- function num : 0_8
+function HomelandTaskManagerHelper:GetStoryTaskAllCfg()
   return self._storyTaskConditionCfg
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManagerHelper.CheckTaskGroupInTime = function(self, taskGroupId)
-  -- function num : 0_9 , upvalues : _ENV
+function HomelandTaskManagerHelper:CheckTaskGroupInTime(taskGroupId)
   local confg = self:GetTaskGroupCfg(taskGroupId)
   if not confg.StartTime or not confg.EndTime then
-    return 
+    return
   end
-  local svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+  local svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local beginTime = loginModule:GetTimeStampByTimeStr(confg.StartTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  if beginTime <= curTime then
+  if curTime >= beginTime then
     return true
   end
   return false
 end
-
-

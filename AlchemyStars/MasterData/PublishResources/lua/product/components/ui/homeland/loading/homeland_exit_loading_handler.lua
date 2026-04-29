@@ -1,46 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/loading/homeland_exit_loading_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandExitLoadingHandler", LoadingHandler)
 HomelandExitLoadingHandler = HomelandExitLoadingHandler
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandExitLoadingHandler.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("HomelandExitLoading")
+function HomelandExitLoadingHandler:Constructor()
+  GameGlobal.UIStateManager():Lock("HomelandExitLoading")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandExitLoadingHandler.PreLoadBeforeLoadLevel = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local uiModule = (GameGlobal.GetUIModule)(HomelandModule)
+function HomelandExitLoadingHandler:PreLoadBeforeLoadLevel(TT)
+  local uiModule = GameGlobal.GetUIModule(HomelandModule)
   uiModule:LeaveHomeland()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandExitLoadingHandler.OnLoadingFinish = function(self, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  local loadingParams = {...}
+function HomelandExitLoadingHandler:OnLoadingFinish(...)
+  local loadingParams = {
+    ...
+  }
   local finishCallBack = loadingParams[1]
   if finishCallBack then
     finishCallBack()
   else
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
   end
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("HomelandExitLoading")
+  GameGlobal.UIStateManager():UnLock("HomelandExitLoading")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandExitLoadingHandler.LoadingType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandExitLoadingHandler:LoadingType()
   return LoadingType.STATICPIC
 end
-
-

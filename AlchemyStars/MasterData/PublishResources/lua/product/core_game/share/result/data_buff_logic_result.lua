@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_buff_logic_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataBuffLogicResult", Object)
 DataBuffLogicResult = DataBuffLogicResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataBuffLogicResult.Constructor = function(self, entityID, buffSeq, buffLogicName, notify, buffResult, triggers, buffID)
-  -- function num : 0_0
+function DataBuffLogicResult:Constructor(entityID, buffSeq, buffLogicName, notify, buffResult, triggers, buffID)
   self._entityID = entityID
   self._buffSeq = buffSeq
   self._buffLogicName = buffLogicName
@@ -19,74 +12,42 @@ DataBuffLogicResult.Constructor = function(self, entityID, buffSeq, buffLogicNam
   self._logicType = ""
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBuffLogicResult.GetEntityID = function(self)
-  -- function num : 0_1
+function DataBuffLogicResult:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBuffLogicResult.GetBuffSeq = function(self)
-  -- function num : 0_2
+function DataBuffLogicResult:GetBuffSeq()
   return self._buffSeq
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBuffLogicResult.GetBuffLogicName = function(self)
-  -- function num : 0_3
+function DataBuffLogicResult:GetBuffLogicName()
   return self._buffLogicName
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBuffLogicResult.GetNotify = function(self)
-  -- function num : 0_4
+function DataBuffLogicResult:GetNotify()
   return self._notify
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBuffLogicResult.GetBuffResult = function(self)
-  -- function num : 0_5
+function DataBuffLogicResult:GetBuffResult()
   return self._buffResult
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBuffLogicResult.GetTriggers = function(self)
-  -- function num : 0_6
+function DataBuffLogicResult:GetTriggers()
   return self._triggers
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBuffLogicResult.GetBuffID = function(self)
-  -- function num : 0_7
+function DataBuffLogicResult:GetBuffID()
   return self._buffID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBuffLogicResult.SetBuffID = function(self, buffID)
-  -- function num : 0_8
+function DataBuffLogicResult:SetBuffID(buffID)
   self._buffID = buffID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBuffLogicResult.GetLogicType = function(self)
-  -- function num : 0_9
+function DataBuffLogicResult:GetLogicType()
   return self._logicType
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBuffLogicResult.SetLogicType = function(self, logicType)
-  -- function num : 0_10
+function DataBuffLogicResult:SetLogicType(logicType)
   self._logicType = logicType
 end
-
-

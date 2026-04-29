@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/pick_up_inst_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local PickUpInstructionType = {Repeat = 1, Valid = 2, Invalid = 3, Empty = 4}
+local PickUpInstructionType = {
+  Repeat = 1,
+  Valid = 2,
+  Invalid = 3,
+  Empty = 4
+}
 _enum("PickUpInstructionType", PickUpInstructionType)
-

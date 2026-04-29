@@ -1,33 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_super_material_anim_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlaySuperMaterialAnimInstruction", BaseInstruction)
 PlaySuperMaterialAnimInstruction = PlaySuperMaterialAnimInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySuperMaterialAnimInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlaySuperMaterialAnimInstruction:Constructor(paramList)
   self._animName = paramList.animName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySuperMaterialAnimInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySuperMaterialAnimInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local e = casterEntity
-  do
-    if e:HasSuperEntity() and (casterEntity:EntityType()):IsSkillHolder() then
-      local cSuperEntity = casterEntity:SuperEntityComponent()
-      e = cSuperEntity:GetSuperEntity()
-    end
-    if not e:HasMaterialAnimationComponent() then
-      (Log.error)(self._className, "entity has no MaterialAnimationComponent. ")
-    end
-    e:PlayMaterialAnim(self._animName)
+  if e:HasSuperEntity() and casterEntity:EntityType():IsSkillHolder() then
+    local cSuperEntity = casterEntity:SuperEntityComponent()
+    e = cSuperEntity:GetSuperEntity()
   end
+  if not e:HasMaterialAnimationComponent() then
+    Log.error(self._className, "entity has no MaterialAnimationComponent. ")
+  end
+  e:PlayMaterialAnim(self._animName)
 end
-
-

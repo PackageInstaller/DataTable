@@ -1,22 +1,148 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/shop/cfg_shop_paymarket_goods.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, SequenceId = 2, BeginTime = 3, EndTime = 4, HmtItemId = 5, USItemId = 6, ItemId = 7, ItemCount = 8, FirstPresentCount = 9, FixedPresentCount = 10, RawPrice = 11, NewPrice = 12, Discount = 13, SaleNum = 14, SaleTag = 15, Name = 16, Icon = 17, Tag = 18}
-local common = {"2021-05-01 00:00:00", "2100-12-31 24:00:00", "str_pay_recharge_first_label_1"}
+local key = {
+  ID = 1,
+  SequenceId = 2,
+  BeginTime = 3,
+  EndTime = 4,
+  HmtItemId = 5,
+  USItemId = 6,
+  ItemId = 7,
+  ItemCount = 8,
+  FirstPresentCount = 9,
+  FixedPresentCount = 10,
+  RawPrice = 11,
+  NewPrice = 12,
+  Discount = 13,
+  SaleNum = 14,
+  SaleTag = 15,
+  Name = 16,
+  Icon = 17,
+  Tag = 18
+}
+local common = {
+  "2021-05-01 00:00:00",
+  "2100-12-31 24:00:00",
+  "str_pay_recharge_first_label_1"
+}
 local config = {
-{1, 1, common[1], common[2], "com.gamamobi.baiyehmt.crystal90", "com.proximabeta.baiyeus.crystal90", "com.tencent.baiyeint.crystal90", 90, 90, 5, 0, 99, 0, 888888888, 0, "str_pay_recharge_name_60", "shop_yaojing_tu1", common[3]}
-, 
-{2, 2, common[1], common[2], "com.gamamobi.baiyehmt.crystal500", "com.proximabeta.baiyeus.crystal500", "com.tencent.baiyeint.crystal500", 500, 500, 50, 0, 499, 0, 888888888, 0, "str_pay_recharge_name_300", "shop_yaojing_tu2", common[3]}
-, 
-{3, 3, common[1], common[2], "com.gamamobi.baiyehmt.crystal1565", "com.proximabeta.baiyeus.crystal1565", "com.tencent.baiyeint.crystal1565", 1565, 1565, 235, 0, 1499, 0, 888888888, 0, "str_pay_recharge_name_980", "shop_yaojing_tu3", common[3]}
-, 
-{4, 4, common[1], common[2], "com.gamamobi.baiyehmt.crystal3130", "com.proximabeta.baiyeus.crystal3130", "com.tencent.baiyeint.crystal3130", 3130, 3130, 620, 0, 2999, 0, 888888888, 0, "str_pay_recharge_name_1980", "shop_yaojing_tu4", common[3]}
-, 
-{5, 5, common[1], common[2], "com.gamamobi.baiyehmt.crystal5200", "com.proximabeta.baiyeus.crystal5200", "com.tencent.baiyeint.crystal5200", 5200, 5200, 1400, 0, 4999, 0, 888888888, 0, "str_pay_recharge_name_3280", "shop_yaojing_tu5", common[3]}
-, 
-{6, 6, common[1], common[2], "com.gamamobi.baiyehmt.crystal10500", "com.proximabeta.baiyeus.crystal10500", "com.tencent.baiyeint.crystal10500", 10500, 10500, 3000, 0, 9999, 0, 888888888, 0, "str_pay_recharge_name_6480", "shop_yaojing_tu6", common[3]}
+  {
+    1,
+    1,
+    common[1],
+    common[2],
+    "com.gamamobi.baiyehmt.crystal90",
+    "com.proximabeta.baiyeus.crystal90",
+    "com.tencent.baiyeint.crystal90",
+    90,
+    90,
+    5,
+    0,
+    99,
+    0,
+    888888888,
+    0,
+    "str_pay_recharge_name_60",
+    "shop_yaojing_tu1",
+    common[3]
+  },
+  {
+    2,
+    2,
+    common[1],
+    common[2],
+    "com.gamamobi.baiyehmt.crystal500",
+    "com.proximabeta.baiyeus.crystal500",
+    "com.tencent.baiyeint.crystal500",
+    500,
+    500,
+    50,
+    0,
+    499,
+    0,
+    888888888,
+    0,
+    "str_pay_recharge_name_300",
+    "shop_yaojing_tu2",
+    common[3]
+  },
+  {
+    3,
+    3,
+    common[1],
+    common[2],
+    "com.gamamobi.baiyehmt.crystal1565",
+    "com.proximabeta.baiyeus.crystal1565",
+    "com.tencent.baiyeint.crystal1565",
+    1565,
+    1565,
+    235,
+    0,
+    1499,
+    0,
+    888888888,
+    0,
+    "str_pay_recharge_name_980",
+    "shop_yaojing_tu3",
+    common[3]
+  },
+  {
+    4,
+    4,
+    common[1],
+    common[2],
+    "com.gamamobi.baiyehmt.crystal3130",
+    "com.proximabeta.baiyeus.crystal3130",
+    "com.tencent.baiyeint.crystal3130",
+    3130,
+    3130,
+    620,
+    0,
+    2999,
+    0,
+    888888888,
+    0,
+    "str_pay_recharge_name_1980",
+    "shop_yaojing_tu4",
+    common[3]
+  },
+  {
+    5,
+    5,
+    common[1],
+    common[2],
+    "com.gamamobi.baiyehmt.crystal5200",
+    "com.proximabeta.baiyeus.crystal5200",
+    "com.tencent.baiyeint.crystal5200",
+    5200,
+    5200,
+    1400,
+    0,
+    4999,
+    0,
+    888888888,
+    0,
+    "str_pay_recharge_name_3280",
+    "shop_yaojing_tu5",
+    common[3]
+  },
+  {
+    6,
+    6,
+    common[1],
+    common[2],
+    "com.gamamobi.baiyehmt.crystal10500",
+    "com.proximabeta.baiyeus.crystal10500",
+    "com.tencent.baiyeint.crystal10500",
+    10500,
+    10500,
+    3000,
+    0,
+    9999,
+    0,
+    888888888,
+    0,
+    "str_pay_recharge_name_6480",
+    "shop_yaojing_tu6",
+    common[3]
+  }
 }
 return config, "ID", key
-

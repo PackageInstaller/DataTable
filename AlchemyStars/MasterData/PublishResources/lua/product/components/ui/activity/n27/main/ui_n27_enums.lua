@@ -1,8 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/main/ui_n27_enums.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local N27ComponetStatus = {NotStart = 1, OverTime = 2, Lock = 3, Other = 4, Open = 5}
+local N27ComponetStatus = {
+  NotStart = 1,
+  OverTime = 2,
+  Lock = 3,
+  Other = 4,
+  Open = 5
+}
 _enum("N27ComponetStatus", N27ComponetStatus)
-

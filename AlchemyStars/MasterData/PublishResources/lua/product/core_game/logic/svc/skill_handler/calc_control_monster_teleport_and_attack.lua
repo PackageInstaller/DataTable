@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_control_monster_teleport_and_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_ControlMonsterTeleportAndAttack", SkillEffectCalc_Base)
 SkillEffectCalc_ControlMonsterTeleportAndAttack = SkillEffectCalc_ControlMonsterTeleportAndAttack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ControlMonsterTeleportAndAttack.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_ControlMonsterTeleportAndAttack:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ControlMonsterTeleportAndAttack.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_ControlMonsterTeleportAndAttack:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillResults = {}
   local skillParam = skillEffectCalcParam.skillEffectParam
   local stageIndex = skillParam:GetSkillEffectDamageStageIndex()
@@ -23,106 +13,86 @@ SkillEffectCalc_ControlMonsterTeleportAndAttack.DoSkillEffectCalculator = functi
   local monsterClassID = skillParam:GetMonsterClassID()
   local attackScopeType = skillParam:GetAttackScopeType()
   local attackScopeParam = skillParam:GetAttackScopeParam()
-  if not skillEffectCalcParam.skillRange then
-    local skillRange = {}
-  end
+  local skillRange = skillEffectCalcParam.skillRange or {}
   local casterEntityID = skillEffectCalcParam:GetCasterEntityID()
-  local casterEntity = (self._world):GetEntityByID(casterEntityID)
+  local casterEntity = self._world:GetEntityByID(casterEntityID)
   local casterPos = casterEntity:GetGridPosition()
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-  local teamPos = (teamEntity:GetGridPosition())
-  local targetMonsterEntity = nil
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,monsterEntity in ipairs(monsterGroup:GetEntities()) do
-    if monsterClassID == (monsterEntity:MonsterID()):GetMonsterClassID() then
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  local teamPos = teamEntity:GetGridPosition()
+  local targetMonsterEntity
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, monsterEntity in ipairs(monsterGroup:GetEntities()) do
+    if monsterClassID == monsterEntity:MonsterID():GetMonsterClassID() then
       targetMonsterEntity = monsterEntity
       break
     end
   end
-  do
-    local targetMonsterEntityPos = targetMonsterEntity:GetGridPosition()
-    local damagePos = targetMonsterEntityPos
-    local utilData = (self._world):GetService("UtilData")
-    local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-    local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
-    local scopeResult = scopeCalculator:ComputeScopeRange(attackScopeType, attackScopeParam, targetMonsterEntityPos)
-    local attackRange = scopeResult:GetAttackRange()
-    local attackRangeFinish = {}
-    if (table.icontains)(attackRange, teamPos) then
-      (table.appendArray)(attackRangeFinish, attackRange)
-    else
-      local dirList = {}
-      if targetMonsterEntityPos.x < teamPos.x then
-        (table.insert)(dirList, Vector2(1, 0))
-      end
-      if teamPos.x < targetMonsterEntityPos.x then
-        (table.insert)(dirList, Vector2(-1, 0))
-      end
-      if targetMonsterEntityPos.y < teamPos.y then
-        (table.insert)(dirList, Vector2(0, 1))
-      end
-      if teamPos.y < targetMonsterEntityPos.y then
-        (table.insert)(dirList, Vector2(0, -1))
-      end
-      local moveDir = nil
-      for _,dir in ipairs(dirList) do
-        local newPos = targetMonsterEntityPos + dir
-        local scopeResultTmp = scopeCalculator:ComputeScopeRange(attackScopeType, attackScopeParam, newPos)
-        local attackRangeTmp = scopeResultTmp:GetAttackRange()
-        if (table.icontains)(attackRangeTmp, teamPos) then
-          moveDir = dir
-          break
-        end
-      end
-      do
-        if moveDir == nil then
-          (table.sort)(dirList, function(a, b)
-    -- function num : 0_1_0 , upvalues : targetMonsterEntityPos, _ENV, teamPos
-    local newPosA = targetMonsterEntityPos + a
-    local newPosB = targetMonsterEntityPos + b
-    local disA = (Vector2.Distance)(teamPos, newPosA)
-    local disB = (Vector2.Distance)(teamPos, newPosB)
-    do return disA < disB end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-          moveDir = dirList[1]
-        end
-        local moveNewPos = targetMonsterEntityPos + moveDir
-        local colorOld = utilData:FindPieceElement(targetMonsterEntityPos)
-        local casterColorOld = utilData:FindPieceElement(casterPos)
-        local casterNewPos = casterPos - moveDir
-        if not utilData:IsPosBlock(moveNewPos, BlockFlag.MonsterLand) and not utilData:IsPosBlock(casterNewPos, BlockFlag.MonsterLand) then
-          damagePos = moveNewPos
-          local skillResultTeleport = SkillEffectResult_Teleport:New(targetMonsterEntity:GetID(), targetMonsterEntityPos, colorOld, moveNewPos, moveDir, stageIndex)
-          ;
-          (table.insert)(skillResults, skillResultTeleport)
-          local skillResultTeleport = SkillEffectResult_Teleport:New(casterEntityID, casterPos, casterColorOld, casterNewPos, -moveDir, stageIndex)
-          ;
-          (table.insert)(skillResults, skillResultTeleport)
-          local scopeResultTmp = scopeCalculator:ComputeScopeRange(attackScopeType, attackScopeParam, moveNewPos)
-          local attackRangeTmp = scopeResultTmp:GetAttackRange()
-          ;
-          (table.appendArray)(attackRangeFinish, attackRangeTmp)
-        end
-        do
-          if (table.icontains)(attackRangeFinish, teamPos) then
-            local effectCalcSvc = self._skillEffectService
-            local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(targetMonsterEntity, damagePos, teamEntity, teamPos, skillEffectCalcParam.skillID, skillParam, SkillEffectType.Damage, stageIndex)
-            local skillDamageEffectResult = effectCalcSvc:NewSkillDamageEffectResult(teamPos, teamEntity:GetID(), nTotalDamage, listDamageInfo, stageIndex)
-            ;
-            (table.insert)(skillResults, skillDamageEffectResult)
-          end
-          do
-            local skillEffectResultTeleportAndAttack = SkillEffectResultControlMonsterTeleportAndAttack:New(targetMonsterEntity:GetID())
-            ;
-            (table.insert)(skillResults, skillEffectResultTeleportAndAttack)
-            return skillResults
-          end
-        end
+  local targetMonsterEntityPos = targetMonsterEntity:GetGridPosition()
+  local damagePos = targetMonsterEntityPos
+  local utilData = self._world:GetService("UtilData")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
+  local scopeResult = scopeCalculator:ComputeScopeRange(attackScopeType, attackScopeParam, targetMonsterEntityPos)
+  local attackRange = scopeResult:GetAttackRange()
+  local attackRangeFinish = {}
+  if table.icontains(attackRange, teamPos) then
+    table.appendArray(attackRangeFinish, attackRange)
+  else
+    local dirList = {}
+    if teamPos.x > targetMonsterEntityPos.x then
+      table.insert(dirList, Vector2(1, 0))
+    end
+    if teamPos.x < targetMonsterEntityPos.x then
+      table.insert(dirList, Vector2(-1, 0))
+    end
+    if teamPos.y > targetMonsterEntityPos.y then
+      table.insert(dirList, Vector2(0, 1))
+    end
+    if teamPos.y < targetMonsterEntityPos.y then
+      table.insert(dirList, Vector2(0, -1))
+    end
+    local moveDir
+    for _, dir in ipairs(dirList) do
+      local newPos = targetMonsterEntityPos + dir
+      local scopeResultTmp = scopeCalculator:ComputeScopeRange(attackScopeType, attackScopeParam, newPos)
+      local attackRangeTmp = scopeResultTmp:GetAttackRange()
+      if table.icontains(attackRangeTmp, teamPos) then
+        moveDir = dir
+        break
       end
     end
+    if moveDir == nil then
+      table.sort(dirList, function(a, b)
+        local newPosA = targetMonsterEntityPos + a
+        local newPosB = targetMonsterEntityPos + b
+        local disA = Vector2.Distance(teamPos, newPosA)
+        local disB = Vector2.Distance(teamPos, newPosB)
+        return disA < disB
+      end)
+      moveDir = dirList[1]
+    end
+    local moveNewPos = targetMonsterEntityPos + moveDir
+    local colorOld = utilData:FindPieceElement(targetMonsterEntityPos)
+    local casterColorOld = utilData:FindPieceElement(casterPos)
+    local casterNewPos = casterPos - moveDir
+    if not utilData:IsPosBlock(moveNewPos, BlockFlag.MonsterLand) and not utilData:IsPosBlock(casterNewPos, BlockFlag.MonsterLand) then
+      damagePos = moveNewPos
+      local skillResultTeleport = SkillEffectResult_Teleport:New(targetMonsterEntity:GetID(), targetMonsterEntityPos, colorOld, moveNewPos, moveDir, stageIndex)
+      table.insert(skillResults, skillResultTeleport)
+      local skillResultTeleport = SkillEffectResult_Teleport:New(casterEntityID, casterPos, casterColorOld, casterNewPos, -moveDir, stageIndex)
+      table.insert(skillResults, skillResultTeleport)
+      local scopeResultTmp = scopeCalculator:ComputeScopeRange(attackScopeType, attackScopeParam, moveNewPos)
+      local attackRangeTmp = scopeResultTmp:GetAttackRange()
+      table.appendArray(attackRangeFinish, attackRangeTmp)
+    end
   end
+  if table.icontains(attackRangeFinish, teamPos) then
+    local effectCalcSvc = self._skillEffectService
+    local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(targetMonsterEntity, damagePos, teamEntity, teamPos, skillEffectCalcParam.skillID, skillParam, SkillEffectType.Damage, stageIndex)
+    local skillDamageEffectResult = effectCalcSvc:NewSkillDamageEffectResult(teamPos, teamEntity:GetID(), nTotalDamage, listDamageInfo, stageIndex)
+    table.insert(skillResults, skillDamageEffectResult)
+  end
+  local skillEffectResultTeleportAndAttack = SkillEffectResultControlMonsterTeleportAndAttack:New(targetMonsterEntity:GetID())
+  table.insert(skillResults, skillEffectResultTeleportAndAttack)
+  return skillResults
 end
-
-

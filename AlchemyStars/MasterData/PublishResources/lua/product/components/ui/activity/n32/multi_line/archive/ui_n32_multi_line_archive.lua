@@ -1,55 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n32/multi_line/archive/ui_n32_multi_line_archive.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN32MultiLineArchive", UIController)
 UIN32MultiLineArchive = UIN32MultiLineArchive
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN32MultiLineArchive.Constructor = function(self)
-  -- function num : 0_0
+function UIN32MultiLineArchive:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN32MultiLineArchive:LoadDataOnEnter(TT, res)
   self._campaignModule = self:GetModule(CampaignModule)
   local comType = ECampaignType.CAMPAIGN_TYPE_N32
   local comId = ECampaignN32ComponentID.ECAMPAIGN_N32_MULTILINE_MISSION
   self._multiLineData = UIMultiLineData:New()
-  if not (self._multiLineData):LoadData(TT, res, comType, comId) then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaignModule)._id, nil, nil)
-    return 
+  if not self._multiLineData:LoadData(TT, res, comType, comId) then
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaignModule._id, nil, nil)
+    return
   end
   res:SetSucc(true)
-  self._componentId = (self._multiLineData):GetComponentID()
+  self._componentId = self._multiLineData:GetComponentID()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN32MultiLineArchive:OnShow(uiParams)
   self._animInfo = {
-["in"] = {"uieff_UIN32MultiLineArchive_in", 433}
-, 
-out = {"uieff_UIN32MultiLineArchive_out", 200}
-, 
-switchin = {"uieff_UIN32MultiLineArchive_switch_in", 433}
-, 
-switchout = {"uieff_UIN32MultiLineArchive_switch_out", 167}
-}
+    ["in"] = {
+      "uieff_UIN32MultiLineArchive_in",
+      433
+    },
+    out = {
+      "uieff_UIN32MultiLineArchive_out",
+      200
+    },
+    switchin = {
+      "uieff_UIN32MultiLineArchive_switch_in",
+      433
+    },
+    switchout = {
+      "uieff_UIN32MultiLineArchive_switch_out",
+      167
+    }
+  }
   self:SetController(uiParams[1])
   self:InitComponent()
   self:InitUI()
   self:PlayAnim("in")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.InitComponent = function(self)
-  -- function num : 0_3
+function UIN32MultiLineArchive:InitComponent()
   self._btnstab = self:GetUIComponent("UISelectObjectPath", "btns")
   self._awards = self:GetUIComponent("UISelectObjectPath", "awards")
   self._itemtab = self:GetUIComponent("UISelectObjectPath", "tabs")
@@ -72,59 +65,47 @@ UIN32MultiLineArchive.InitComponent = function(self)
   self._anim = self:GetUIComponent("Animation", "SafeArea")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.CheckBtnRedPoint = function(self, petInfo)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN32MultiLineArchive:CheckBtnRedPoint(petInfo)
   if not petInfo then
     return false
   end
-  for index,value in ipairs(petInfo.FilesID) do
-    local readed = (self._multiLineData):GetPetFileReaded(value)
+  for index, value in ipairs(petInfo.FilesID) do
+    local readed = self._multiLineData:GetPetFileReaded(value)
     if not readed then
-      return (self._multiLineData):CheckPetFileReceived(value)
+      return self._multiLineData:CheckPetFileReceived(value)
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.InitUI = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._petInfos = (self._multiLineData):MultiLinePetCfg(self._componentId)
+function UIN32MultiLineArchive:InitUI()
+  self._petInfos = self._multiLineData:MultiLinePetCfg(self._componentId)
   self._petIndex = 1
   local guideModuel = self:GetModule(GuideModule)
   if guideModuel:IsGuideProcess(122004) then
     self._petIndex = self:GetHasUnlockDocIndex()
   end
-  self._petInfo = (self._petInfos)[self._petIndex]
+  self._petInfo = self._petInfos[self._petIndex]
   self._fileSelectIndex = 1
-  self._fileId = ((self._petInfo).FilesID)[1]
+  self._fileId = self._petInfo.FilesID[1]
   self._spreadContent = false
-  ;
-  (self._btnstab):SpawnObjects("UIN32MultiLineArchiveBtn", #self._petInfos)
-  self._btnItems = (self._btnstab):GetAllSpawnList()
-  for i,v in ipairs(self._btnItems) do
-    v:SetData(i, self._petIndex, (self._petInfos)[i], self:CheckBtnRedPoint((self._petInfos)[i]), function(index)
-    -- function num : 0_5_0 , upvalues : self
-    self:BtnClickCallBack(index)
-  end
-)
+  self._btnstab:SpawnObjects("UIN32MultiLineArchiveBtn", #self._petInfos)
+  self._btnItems = self._btnstab:GetAllSpawnList()
+  for i, v in ipairs(self._btnItems) do
+    v:SetData(i, self._petIndex, self._petInfos[i], self:CheckBtnRedPoint(self._petInfos[i]), function(index)
+      self:BtnClickCallBack(index)
+    end)
   end
   self:GetReward()
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.GetHasUnlockDocIndex = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN32MultiLineArchive:GetHasUnlockDocIndex()
   local index = 1
-  for i,v in ipairs(self._petInfos) do
+  for i, v in ipairs(self._petInfos) do
     local files = v.FilesID
-    for k,fileId in pairs(files) do
-      if (self._multiLineData):CheckPetFileReceived(fileId) then
+    for k, fileId in pairs(files) do
+      if self._multiLineData:CheckPetFileReceived(fileId) then
         return i
       end
     end
@@ -132,280 +113,188 @@ UIN32MultiLineArchive.GetHasUnlockDocIndex = function(self)
   return index
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.RefreshUI = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._petInfo = (self._petInfos)[self._petIndex]
-  local temp = (self._petInfo).Rewards
-  local items = (self._awards):GetAllSpawnList()
-  ;
-  (self._awards):SpawnObjects("UIN32MultiLineArchiveRewardItem", #temp)
-  for i,v in ipairs(items) do
-    v:SetData(i, temp[i], (self._multiLineData):CheckPetRewardReceived((self._petInfo).PetID), function(itemId, pos)
-    -- function num : 0_7_0 , upvalues : self
-    self:RewardItemClickCallBack(itemId, pos)
+function UIN32MultiLineArchive:RefreshUI()
+  self._petInfo = self._petInfos[self._petIndex]
+  local temp = self._petInfo.Rewards
+  local items = self._awards:GetAllSpawnList()
+  self._awards:SpawnObjects("UIN32MultiLineArchiveRewardItem", #temp)
+  for i, v in ipairs(items) do
+    v:SetData(i, temp[i], self._multiLineData:CheckPetRewardReceived(self._petInfo.PetID), function(itemId, pos)
+      self:RewardItemClickCallBack(itemId, pos)
+    end)
   end
-)
-  end
-  temp = (self._petInfo).FilesID
-  ;
-  (self._itemtab):SpawnObjects("UIN32MultiLineArchiveItem", #temp)
+  temp = self._petInfo.FilesID
+  self._itemtab:SpawnObjects("UIN32MultiLineArchiveItem", #temp)
   temp = self:SortFileItems(temp)
-  items = (self._itemtab):GetAllSpawnList()
-  for i,v in ipairs(items) do
-    v:SetData(i, temp[i], (self._multiLineData):MultiLinePetFilesCfg(self._componentId, temp[i]), (self._multiLineData):CheckPetFileReceived(temp[i]), (self._multiLineData):CheckMultilineMissionPassed(self._componentId, temp[i]), function(index, file, sp)
-    -- function num : 0_7_1 , upvalues : self
-    self:ItemClickCallBack(index, file, sp)
-  end
-)
-    if (self._multiLineData):CheckPetFileReceived(temp[i]) and not (self._multiLineData):GetPetFileReaded(temp[i]) then
-      (self._multiLineData):SetPetFileReaded(temp[i])
+  items = self._itemtab:GetAllSpawnList()
+  for i, v in ipairs(items) do
+    v:SetData(i, temp[i], self._multiLineData:MultiLinePetFilesCfg(self._componentId, temp[i]), self._multiLineData:CheckPetFileReceived(temp[i]), self._multiLineData:CheckMultilineMissionPassed(self._componentId, temp[i]), function(index, file, sp)
+      self:ItemClickCallBack(index, file, sp)
+    end)
+    if self._multiLineData:CheckPetFileReceived(temp[i]) and not self._multiLineData:GetPetFileReaded(temp[i]) then
+      self._multiLineData:SetPetFileReaded(temp[i])
     end
   end
-  for i,v in ipairs(self._btnItems) do
-    v:RefreshRed(self:CheckBtnRedPoint((self._petInfos)[i]))
+  for i, v in ipairs(self._btnItems) do
+    v:RefreshRed(self:CheckBtnRedPoint(self._petInfos[i]))
   end
   if self._controller then
-    (self._controller):RefreshDocRed()
+    self._controller:RefreshDocRed()
   end
-  ;
-  (self._titleText):SetText((StringTable.Get)((self._petInfo).PetName))
-  ;
-  (self._contentText):SetText((StringTable.Get)((self._petInfo).PetInfo))
-  -- DECOMPILER ERROR at PC126: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._contentRect).parent).anchoredPosition = Vector2(0, 0)
-  ;
-  (self._headImg):LoadImage((self._petInfo).HeadImg)
-  -- DECOMPILER ERROR at PC139: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._headRawImg).color = Color(1, 1, 1, 0.23529411764706)
-  local count = self:GetReceivedCount(self._petInfo) .. "/" .. #(self._petInfo).FilesID
-  ;
-  (self._rewardText):SetText((StringTable.Get)("str_n32_multiline_petfile_reward_title") .. count)
-  ;
-  (self._itemContent):SetActive(self._spreadContent)
-  -- DECOMPILER ERROR at PC166: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._tabRect).anchoredPosition = Vector2(0, 0)
+  self._titleText:SetText(StringTable.Get(self._petInfo.PetName))
+  self._contentText:SetText(StringTable.Get(self._petInfo.PetInfo))
+  self._contentRect.parent.anchoredPosition = Vector2(0, 0)
+  self._headImg:LoadImage(self._petInfo.HeadImg)
+  self._headRawImg.color = Color(1.0, 1.0, 1.0, 0.23529411764705882)
+  local count = self:GetReceivedCount(self._petInfo) .. "/" .. #self._petInfo.FilesID
+  self._rewardText:SetText(StringTable.Get("str_n32_multiline_petfile_reward_title") .. count)
+  self._itemContent:SetActive(self._spreadContent)
+  self._tabRect.anchoredPosition = Vector2(0, 0)
   self:StartTask(function(TT)
-    -- function num : 0_7_2 , upvalues : self
     self:SetRect(TT)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.SetRect = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN32MultiLineArchive:SetRect(TT)
   YIELD(TT, 200)
   self._rightcontent = self:GetUIComponent("RectTransform", "rightcontent")
   self._tabRect = self:GetUIComponent("RectTransform", "tabs")
-  local height = ((self._tabRect).sizeDelta).y <= 465.5 and ((self._tabRect).sizeDelta).y - 0.5 or 465.5
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rightcontent).sizeDelta = Vector2(977.6, height)
+  local height = self._tabRect.sizeDelta.y <= 465.5 and self._tabRect.sizeDelta.y - 0.5 or 465.5
+  self._rightcontent.sizeDelta = Vector2(977.6, height)
   self._liftScRect = self:GetUIComponent("RectTransform", "liftSc")
-  height = ((self._liftcontent).sizeDelta).y + 5 <= 225 and ((self._liftcontent).sizeDelta).y + 5 - 0.5 or 225
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._liftScRect).sizeDelta = Vector2(488.542, height)
+  height = self._liftcontent.sizeDelta.y + 5 <= 225 and self._liftcontent.sizeDelta.y + 5 - 0.5 or 225
+  self._liftScRect.sizeDelta = Vector2(488.542, height)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.SortFileItems = function(self, tempTable)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN32MultiLineArchive:SortFileItems(tempTable)
   local temp1, temp2, temp3 = {}, {}, {}
-  for index,value in ipairs(tempTable) do
-    if (self._multiLineData):CheckPetFileReceived(value) then
-      if (self._multiLineData):GetPetFileReaded(value) then
-        (table.insert)(temp2, value)
+  for index, value in ipairs(tempTable) do
+    if self._multiLineData:CheckPetFileReceived(value) then
+      if self._multiLineData:GetPetFileReaded(value) then
+        table.insert(temp2, value)
       else
-        ;
-        (table.insert)(temp1, value)
+        table.insert(temp1, value)
       end
     else
-      ;
-      (table.insert)(temp3, value)
+      table.insert(temp3, value)
     end
   end
-  for index,value in ipairs(temp2) do
+  for index, value in ipairs(temp2) do
     temp1[#temp1 + 1] = value
   end
-  for index,value in ipairs(temp3) do
+  for index, value in ipairs(temp3) do
     temp1[#temp1 + 1] = value
   end
   return temp1
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.RefreshArchiveContent = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local cfg = (self._multiLineData):MultiLinePetFilesCfg(self._componentId, self._fileId)
-  ;
-  (self._itemContent):SetActive(false)
-  ;
-  ((self._itemContent).transform):SetSiblingIndex(self._fileSelectIndex)
+function UIN32MultiLineArchive:RefreshArchiveContent()
+  local cfg = self._multiLineData:MultiLinePetFilesCfg(self._componentId, self._fileId)
+  self._itemContent:SetActive(false)
+  self._itemContent.transform:SetSiblingIndex(self._fileSelectIndex)
   if cfg then
-    (self._archiveTextText):SetText((StringTable.Get)((cfg[1]).DocDesc))
+    self._archiveTextText:SetText(StringTable.Get(cfg[1].DocDesc))
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.BtnClickCallBack = function(self, index)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN32MultiLineArchive:BtnClickCallBack(index)
   self._spreadContent = false
   local lastIndex = self._petIndex
   if index ~= self._petIndex then
     self._petIndex = index
   end
-  self._petInfo = (self._petInfos)[self._petIndex]
+  self._petInfo = self._petInfos[self._petIndex]
   self:PlayAnim("switchout", function()
-    -- function num : 0_11_0 , upvalues : _ENV, self, lastIndex
-    for i,v in ipairs(self._btnItems) do
+    for i, v in ipairs(self._btnItems) do
       v:Refresh(self._petIndex, lastIndex)
     end
     self:GetReward()
     self:RefreshUI()
     self:PlayAnim("switchin")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.GetReward = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  if self:CheckPetAllReceived(self._petInfo) and not (self._multiLineData):CheckPetRewardReceived((self._petInfo).PetID) then
+function UIN32MultiLineArchive:GetReward()
+  if self:CheckPetAllReceived(self._petInfo) and not self._multiLineData:CheckPetRewardReceived(self._petInfo.PetID) then
     self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : _ENV, self
-    (AsyncRequestRes:New())
-    local asyncRes = nil
-    local rewards = nil
-    asyncRes = ((self._multiLineData):GetComponent()):HandleMultiLineMissionGetReward(TT, asyncRes, (self._petInfo).PetID)
-    if asyncRes:GetSucc() and rewards then
-      self:CheckAndShowItemReward(rewards, function()
-      -- function num : 0_12_0_0 , upvalues : self
-      self:RefreshUI()
-    end
-)
-    end
-  end
-)
+      local asyncRes = AsyncRequestRes:New()
+      local rewards
+      asyncRes, rewards = self._multiLineData:GetComponent():HandleMultiLineMissionGetReward(TT, asyncRes, self._petInfo.PetID)
+      if asyncRes:GetSucc() and rewards then
+        self:CheckAndShowItemReward(rewards, function()
+          self:RefreshUI()
+        end)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.CheckPetAllReceived = function(self, petInfo)
-  -- function num : 0_13 , upvalues : _ENV
-  for key,value in pairs(petInfo.FilesID) do
-    if not (self._multiLineData):CheckPetFileReceived(value) then
+function UIN32MultiLineArchive:CheckPetAllReceived(petInfo)
+  for key, value in pairs(petInfo.FilesID) do
+    if not self._multiLineData:CheckPetFileReceived(value) then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.GetReceivedCount = function(self, petInfo)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN32MultiLineArchive:GetReceivedCount(petInfo)
   local count = 0
-  for key,value in pairs(petInfo.FilesID) do
-    if (self._multiLineData):CheckPetFileReceived(value) then
+  for key, value in pairs(petInfo.FilesID) do
+    if self._multiLineData:CheckPetFileReceived(value) then
       count = count + 1
     end
   end
   return count
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.CheckAndShowItemReward = function(self, itemReward, finshCallback)
-  -- function num : 0_15 , upvalues : _ENV
-  if (table.count)(itemReward) ~= 0 then
+function UIN32MultiLineArchive:CheckAndShowItemReward(itemReward, finshCallback)
+  if table.count(itemReward) ~= 0 then
     self:ShowDialog("UIGetItemController", itemReward, function()
-    -- function num : 0_15_0 , upvalues : finshCallback
-    if finshCallback then
-      finshCallback()
-    end
-  end
-)
-  else
-    if finshCallback then
-      finshCallback()
-    end
+      if finshCallback then
+        finshCallback()
+      end
+    end)
+  elseif finshCallback then
+    finshCallback()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.RewardItemClickCallBack = function(self, itemId, go)
-  -- function num : 0_16
-  local deltaPosition = (go.transform).position - ((self._safeArea).transform).position
+function UIN32MultiLineArchive:RewardItemClickCallBack(itemId, go)
+  local deltaPosition = go.transform.position - self._safeArea.transform.position
   self:ShowDialog("UICommonItemInfo", itemId, deltaPosition, "UIN32MultiLineSelectInfo.prefab")
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.ItemClickCallBack = function(self, index, fileId, spreadContent)
-  -- function num : 0_17 , upvalues : _ENV
+function UIN32MultiLineArchive:ItemClickCallBack(index, fileId, spreadContent)
   self._fileId = fileId
   self._fileSelectIndex = index
   self._spreadContent = false
-  local items = (self._itemtab):GetAllSpawnList()
-  for i,v in ipairs(items) do
-    v:Refresh(i, (self._multiLineData):CheckPetFileReceived(((self._petInfo).FilesID)[i]), (self._multiLineData):CheckMultilineMissionPassed(self._componentId, ((self._petInfo).FilesID)[i]), self._fileSelectIndex)
+  local items = self._itemtab:GetAllSpawnList()
+  for i, v in ipairs(items) do
+    v:Refresh(i, self._multiLineData:CheckPetFileReceived(self._petInfo.FilesID[i]), self._multiLineData:CheckMultilineMissionPassed(self._componentId, self._petInfo.FilesID[i]), self._fileSelectIndex)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.BtnCloseOnClick = function(self)
-  -- function num : 0_18
+function UIN32MultiLineArchive:BtnCloseOnClick()
   self:PlayAnim("out", function()
-    -- function num : 0_18_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.SetController = function(self, controller)
-  -- function num : 0_19
+function UIN32MultiLineArchive:SetController(controller)
   self._controller = controller
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchive.PlayAnim = function(self, name, callBack)
-  -- function num : 0_20 , upvalues : _ENV
-  local animinfo = (self._animInfo)[name]
+function UIN32MultiLineArchive:PlayAnim(name, callBack)
+  local animinfo = self._animInfo[name]
   self:StartTask(function(TT)
-    -- function num : 0_20_0 , upvalues : name, self, animinfo, _ENV, callBack
     local lockName = "UIN32MultiLineArchive:" .. name
     self:Lock(lockName)
-    ;
-    (self._anim):Play(animinfo[1])
+    self._anim:Play(animinfo[1])
     YIELD(TT, animinfo[2])
     self:UnLock(lockName)
     if callBack then
       callBack()
     end
-  end
-)
+  end)
 end
-
-

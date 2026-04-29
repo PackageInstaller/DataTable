@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_rows_columns.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_NRowsMColumns", SkillScopeCalculator_Base)
 SkillScopeCalculator_NRowsMColumns = SkillScopeCalculator_NRowsMColumns
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_NRowsMColumns.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_NRowsMColumns:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   if centerPos._className == "Vector2" then
     centerPos = {centerPos}
   end
@@ -18,9 +11,9 @@ SkillScopeCalculator_NRowsMColumns.CalcRange = function(self, scopeType, scopePa
   local targetArea = {}
   local wholeArea = {}
   local resultArea = {}
-  for _,posCenter in ipairs(centerPos) do
-    local yMoveCount = (math.floor)((rows - 1) / 2 + 0.5)
-    local xMoveCount = (math.floor)((columns - 1) / 2 + 0.5)
+  for _, posCenter in ipairs(centerPos) do
+    local yMoveCount = math.floor((rows - 1) / 2 + 0.5)
+    local xMoveCount = math.floor((columns - 1) / 2 + 0.5)
     for xMoveIndex = 0, xMoveCount do
       local rightX = posCenter.x + xMoveIndex
       local leftX = posCenter.x - xMoveIndex
@@ -38,8 +31,8 @@ SkillScopeCalculator_NRowsMColumns.CalcRange = function(self, scopeType, scopePa
       end
     end
   end
-  for x,columnDic in pairs(resultArea) do
-    for y,pos in pairs(columnDic) do
+  for x, columnDic in pairs(resultArea) do
+    for y, pos in pairs(columnDic) do
       targetArea[#targetArea + 1] = pos
       wholeArea[#wholeArea + 1] = pos
     end
@@ -47,5 +40,3 @@ SkillScopeCalculator_NRowsMColumns.CalcRange = function(self, scopeType, scopePa
   local result = SkillScopeResult:New(SkillScopeType.NRowsMColumns, casterPos, targetArea, wholeArea)
   return result
 end
-
-

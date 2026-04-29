@@ -1,39 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/cutscene/cutscene_phase_context_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CutscenePhaseContext", Object)
 CutscenePhaseContext = CutscenePhaseContext
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CutscenePhaseContext.Constructor = function(self, world)
-  -- function num : 0_0
+function CutscenePhaseContext:Constructor(world)
   self._world = world
   self._waitTaskList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CutscenePhaseContext.GetCutsceneWorld = function(self)
-  -- function num : 0_1
+function CutscenePhaseContext:GetCutsceneWorld()
   return self._world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutscenePhaseContext.AddPhaseTask = function(self, taskID)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._waitTaskList)[#self._waitTaskList + 1] = taskID
+function CutscenePhaseContext:AddPhaseTask(taskID)
+  self._waitTaskList[#self._waitTaskList + 1] = taskID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CutscenePhaseContext.GetPhaseTaskList = function(self)
-  -- function num : 0_3
+function CutscenePhaseContext:GetPhaseTaskList()
   return self._waitTaskList
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/skill_preview_config_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPreviewConfigData", Object)
 SkillPreviewConfigData = SkillPreviewConfigData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewConfigData.Constructor = function(self)
-  -- function num : 0_0
+function SkillPreviewConfigData:Constructor()
   self._previewEffectList = {}
   self._scopeParam = nil
   self._onStartInstructionSet = nil
@@ -24,174 +17,98 @@ SkillPreviewConfigData.Constructor = function(self)
   self._id = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.SetPreviewEffectList = function(self, effectList)
-  -- function num : 0_1
+function SkillPreviewConfigData:SetPreviewEffectList(effectList)
   self._previewEffectList = effectList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.SetPreviewScopeParam = function(self, scopeParam)
-  -- function num : 0_2
+function SkillPreviewConfigData:SetPreviewScopeParam(scopeParam)
   self._scopeParam = scopeParam
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.SetPreviewInstructionSet = function(self, instructionSet, type)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._instructionSetList)[type] = instructionSet
+function SkillPreviewConfigData:SetPreviewInstructionSet(instructionSet, type)
+  self._instructionSetList[type] = instructionSet
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.GetPreviewInstructionSet = function(self, type)
-  -- function num : 0_4
-  return (self._instructionSetList)[type]
+function SkillPreviewConfigData:GetPreviewInstructionSet(type)
+  return self._instructionSetList[type]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.SetOnStartInstructionSet = function(self, instructionSet)
-  -- function num : 0_5
+function SkillPreviewConfigData:SetOnStartInstructionSet(instructionSet)
   self._onStartInstructionSet = instructionSet
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.SetOnSelectValidInstructionSet = function(self, instructionSet)
-  -- function num : 0_6
+function SkillPreviewConfigData:SetOnSelectValidInstructionSet(instructionSet)
   self._onSelectValidInstructionSet = instructionSet
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.SetOnSelectCancelInstructionSet = function(self, instructionSet)
-  -- function num : 0_7
+function SkillPreviewConfigData:SetOnSelectCancelInstructionSet(instructionSet)
   self._onSelectCancelInstructionSet = instructionSet
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.SetOnSelectInvalidInstructionSet = function(self, instructionSet)
-  -- function num : 0_8
+function SkillPreviewConfigData:SetOnSelectInvalidInstructionSet(instructionSet)
   self._onSelectInvalidInstructionSet = instructionSet
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.SetOnSelectEmptyInstructionSet = function(self, instructionSet)
-  -- function num : 0_9
+function SkillPreviewConfigData:SetOnSelectEmptyInstructionSet(instructionSet)
   self._onSelectEmptyInstructionSet = instructionSet
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.SetCancelPreviewInstructionSet = function(self, instructionSet)
-  -- function num : 0_10
+function SkillPreviewConfigData:SetCancelPreviewInstructionSet(instructionSet)
   self._onCancelPreviewInstructionSet = instructionSet
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.SetActiveSkillInstructionSet = function(self, instructionSet)
-  -- function num : 0_11
+function SkillPreviewConfigData:SetActiveSkillInstructionSet(instructionSet)
   self._onActiveSkillInstructionSet = instructionSet
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.SetPreActiveSkillInstructionSet = function(self, instructionSet)
-  -- function num : 0_12
+function SkillPreviewConfigData:SetPreActiveSkillInstructionSet(instructionSet)
   self._onPreActiveSkillInstructionSet = instructionSet
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.GetPreviewEffectList = function(self)
-  -- function num : 0_13
+function SkillPreviewConfigData:GetPreviewEffectList()
   return self._previewEffectList
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.GetPreviewScopeParam = function(self)
-  -- function num : 0_14
+function SkillPreviewConfigData:GetPreviewScopeParam()
   return self._scopeParam
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.GetOnSelectValidInstructionSet = function(self)
-  -- function num : 0_15
+function SkillPreviewConfigData:GetOnSelectValidInstructionSet()
   return self._onSelectValidInstructionSet
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.GetOnSelectCancelInstructionSet = function(self)
-  -- function num : 0_16
+function SkillPreviewConfigData:GetOnSelectCancelInstructionSet()
   return self._onSelectCancelInstructionSet
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.GetOnSelectInvalidInstructionSet = function(self)
-  -- function num : 0_17
+function SkillPreviewConfigData:GetOnSelectInvalidInstructionSet()
   return self._onSelectInvalidInstructionSet
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.GetOnStartInstructionSet = function(self)
-  -- function num : 0_18
+function SkillPreviewConfigData:GetOnStartInstructionSet()
   return self._onStartInstructionSet
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.GetOnSelectEmptyInstructionSet = function(self)
-  -- function num : 0_19
+function SkillPreviewConfigData:GetOnSelectEmptyInstructionSet()
   return self._onSelectEmptyInstructionSet
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.GetCancelPreviewInstructionSet = function(self)
-  -- function num : 0_20
+function SkillPreviewConfigData:GetCancelPreviewInstructionSet()
   return self._onCancelPreviewInstructionSet
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.GetActiveSkillInstructionSet = function(self)
-  -- function num : 0_21
+function SkillPreviewConfigData:GetActiveSkillInstructionSet()
   return self._onActiveSkillInstructionSet
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.GetPreActiveSkillInstructionSet = function(self)
-  -- function num : 0_22
+function SkillPreviewConfigData:GetPreActiveSkillInstructionSet()
   return self._onPreActiveSkillInstructionSet
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.SetID = function(self, id)
-  -- function num : 0_23
+function SkillPreviewConfigData:SetID(id)
   self._id = id
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewConfigData.GetID = function(self)
-  -- function num : 0_24
+function SkillPreviewConfigData:GetID()
   return self._id
 end
-
-

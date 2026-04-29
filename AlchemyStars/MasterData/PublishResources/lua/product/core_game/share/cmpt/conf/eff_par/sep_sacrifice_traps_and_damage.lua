@@ -1,101 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_sacrifice_traps_and_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectSacrificeTrapsAndDamageParam", SkillEffectParamBase)
 SkillEffectSacrificeTrapsAndDamageParam = SkillEffectSacrificeTrapsAndDamageParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectSacrificeTrapsAndDamageParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectSacrificeTrapsAndDamageParam:Constructor(t)
   self._trapID = {}
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
   if type(t.trapID) == "number" then
-    (self._trapID)[t.trapID] = true
-  else
-    if type(t.trapID) == "table" then
-      for _,id in ipairs(t.trapID) do
-        -- DECOMPILER ERROR at PC21: Confused about usage of register: R7 in 'UnsetPending'
-
-        (self._trapID)[id] = true
-      end
+    self._trapID[t.trapID] = true
+  elseif type(t.trapID) == "table" then
+    for _, id in ipairs(t.trapID) do
+      self._trapID[id] = true
     end
   end
-  do
-    self._basePercent = t.basePercent
-    self._addValue = t.addValue
-    self._damageScopeType = t.damageScopeType
-    self._damageScopeParam = t.damageScopeParam
-    self._damageScopeCenterType = t.damageScopeCenterType
-    self._damageTargetType = t.damageTargetType
-    self._formulaID = t.formulaID
-  end
+  self._basePercent = t.basePercent
+  self._addValue = t.addValue
+  self._damageScopeType = t.damageScopeType
+  self._damageScopeParam = t.damageScopeParam
+  self._damageScopeCenterType = t.damageScopeCenterType
+  self._damageTargetType = t.damageTargetType
+  self._formulaID = t.formulaID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTrapsAndDamageParam.GetBasePercent = function(self)
-  -- function num : 0_1
+function SkillEffectSacrificeTrapsAndDamageParam:GetBasePercent()
   return self._basePercent
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTrapsAndDamageParam.GetTrapID = function(self)
-  -- function num : 0_2
+function SkillEffectSacrificeTrapsAndDamageParam:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTrapsAndDamageParam.GetAddValue = function(self)
-  -- function num : 0_3
+function SkillEffectSacrificeTrapsAndDamageParam:GetAddValue()
   return self._addValue
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTrapsAndDamageParam.GetDamageScopeType = function(self)
-  -- function num : 0_4
+function SkillEffectSacrificeTrapsAndDamageParam:GetDamageScopeType()
   return self._damageScopeType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTrapsAndDamageParam.GetDamageScopeParam = function(self)
-  -- function num : 0_5
+function SkillEffectSacrificeTrapsAndDamageParam:GetDamageScopeParam()
   return self._damageScopeParam
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTrapsAndDamageParam.GetDamageScopeCenterType = function(self)
-  -- function num : 0_6
+function SkillEffectSacrificeTrapsAndDamageParam:GetDamageScopeCenterType()
   return self._damageScopeCenterType
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTrapsAndDamageParam.GetDamageTargetType = function(self)
-  -- function num : 0_7
+function SkillEffectSacrificeTrapsAndDamageParam:GetDamageTargetType()
   return self._damageTargetType
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTrapsAndDamageParam.GetEffectType = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function SkillEffectSacrificeTrapsAndDamageParam:GetEffectType()
   return SkillEffectType.SacrificeTrapsAndDamage
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTrapsAndDamageParam.GetSacrificeFormulaID = function(self)
-  -- function num : 0_9
+function SkillEffectSacrificeTrapsAndDamageParam:GetSacrificeFormulaID()
   return self._formulaID
 end
-
-

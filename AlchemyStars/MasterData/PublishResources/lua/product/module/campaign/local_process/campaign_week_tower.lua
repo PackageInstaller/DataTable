@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_week_tower.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignWeekTower", ICampaignComponentLocalProcessBase)
 CCampaignWeekTower = CCampaignWeekTower
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignWeekTower.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignWeekTower:Constructor()
   self._weekTowerMissionComponent = nil
   self._weekTowerMissionComponentInfo = nil
   self._questComponent = nil
@@ -16,55 +9,37 @@ CCampaignWeekTower.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignWeekTower.InitComponent = function(self, campaignObj)
-  -- function num : 0_1
+function CCampaignWeekTower:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetWeekTowerMissionComponent()
   self:_GetQuestComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignWeekTower.GetCampaignType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function CCampaignWeekTower:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_WEEK_TOWER
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignWeekTower.CampaignObjInfo = function(self)
-  -- function num : 0_3
+function CCampaignWeekTower:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignWeekTower._GetWeekTowerMissionComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._weekTowerMissionComponent = (self._campaignObj):GetComponent(ECampaignWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_MISSION)
+function CCampaignWeekTower:_GetWeekTowerMissionComponent()
+  self._weekTowerMissionComponent = self._campaignObj:GetComponent(ECampaignWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_MISSION)
   if not self._weekTowerMissionComponent then
-    return 
+    return
   end
-  self._weekTowerMissionComponentInfo = (self._weekTowerMissionComponent):ComponentInfo()
+  self._weekTowerMissionComponentInfo = self._weekTowerMissionComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignWeekTower._GetQuestComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._questComponent = (self._campaignObj):GetComponent(ECampaignWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_TASK)
+function CCampaignWeekTower:_GetQuestComponent()
+  self._questComponent = self._campaignObj:GetComponent(ECampaignWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_TASK)
   if not self._questComponent then
-    return 
+    return
   end
-  self._questComponentInfo = (self._questComponent):ComponentInfo()
+  self._questComponentInfo = self._questComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignWeekTower.GetComponent = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignWeekTower:GetComponent(componentID)
   if ECampaignWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_MISSION == componentID then
     return self._weekTowerMissionComponent
   end
@@ -74,10 +49,7 @@ CCampaignWeekTower.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignWeekTower.GetComponentInfo = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignWeekTower:GetComponentInfo(componentID)
   if ECampaignWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_MISSION == componentID then
     return self._weekTowerMissionComponentInfo
   end
@@ -87,18 +59,15 @@ CCampaignWeekTower.GetComponentInfo = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignWeekTower.GetWeekTowerMissionList = function(self)
-  -- function num : 0_8
-  local missionList = {[1] = 1001, [2] = 1002}
+function CCampaignWeekTower:GetWeekTowerMissionList()
+  local missionList = {
+    [1] = 1001,
+    [2] = 1002
+  }
   return missionList
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignWeekTower.GetWeekTowerMissionInfo = function(self)
-  -- function num : 0_9
+function CCampaignWeekTower:GetWeekTowerMissionInfo()
   local missionInfoMap = {}
   local info = {}
   info.missionid = 1001
@@ -110,5 +79,3 @@ CCampaignWeekTower.GetWeekTowerMissionInfo = function(self)
   missionInfoMap[info2.missionid] = info2
   return missionInfoMap
 end
-
-

@@ -1,65 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/buff/llb_logic_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LLBuffLogicBase", Object)
 LLBuffLogicBase = LLBuffLogicBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuffLogicBase.Constructor = function(self, buffObj, logicParam)
-  -- function num : 0_0
+function LLBuffLogicBase:Constructor(buffObj, logicParam)
   self._buffObj = buffObj
   self._entity = buffObj:Entity()
   self._logicParam = logicParam
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicBase.SetLogicIndex = function(self, index)
-  -- function num : 0_1
+function LLBuffLogicBase:SetLogicIndex(index)
   self._logicIndex = index
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicBase.GetLogicIndex = function(self)
-  -- function num : 0_2
+function LLBuffLogicBase:GetLogicIndex()
   return self._logicIndex
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicBase.DoLogic = function(self, notify)
-  -- function num : 0_3
+function LLBuffLogicBase:DoLogic(notify)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicBase.GetLogicName = function(self)
-  -- function num : 0_4
-  return (self._logicParam).logic
+function LLBuffLogicBase:GetLogicName()
+  return self._logicParam.logic
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicBase.GetBuffSeq = function(self)
-  -- function num : 0_5
-  return (self._buffObj):BuffSeqID()
+function LLBuffLogicBase:GetBuffSeq()
+  return self._buffObj:BuffSeqID()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicBase.GetEntity = function(self)
-  -- function num : 0_6
+function LLBuffLogicBase:GetEntity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicBase.GetLogicParam = function(self)
-  -- function num : 0_7
+function LLBuffLogicBase:GetLogicParam()
   return self._logicParam
 end
-
-

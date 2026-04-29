@@ -1,220 +1,157 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/camera/aircraft_decorate_camera.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftDecorateCamera", Object)
 AircraftDecorateCamera = AircraftDecorateCamera
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftDecorateCamera.Constructor = function(self, far)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftDecorateCamera:Constructor(far)
   self._farPoint = far
-  self._lerpValue = ((Cfg.cfg_aircraft_camera).lerpParam).Value
+  self._lerpValue = Cfg.cfg_aircraft_camera.lerpParam.Value
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateCamera.Init = function(self, camera, input)
-  -- function num : 0_1 , upvalues : _ENV
+function AircraftDecorateCamera:Init(camera, input)
   self._camera = camera
   self._transform = camera.transform
   self._input = input
   self._controller = AircraftCameraSphere:New(input, self._farPoint)
-  self._currentPos = ((self._camera).transform).position
-  self._currentRot = ((self._camera).transform).rotation
+  self._currentPos = self._camera.transform.position
+  self._currentRot = self._camera.transform.rotation
   self._worldPos = self._currentPos
   self._worldRot = self._currentRot
   self._active = true
   self._anim = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateCamera.Dispose = function(self)
-  -- function num : 0_2
-  (self._controller):Dispose()
+function AircraftDecorateCamera:Dispose()
+  self._controller:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateCamera.SetActive = function(self, active)
-  -- function num : 0_3
+function AircraftDecorateCamera:SetActive(active)
   self._active = active
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateCamera.Update = function(self, deltaTimeMS)
-  -- function num : 0_4 , upvalues : _ENV
+function AircraftDecorateCamera:Update(deltaTimeMS)
   if not self._active then
-    return 
+    return
   end
   if self._anim then
-    (self._anim):Update(deltaTimeMS)
-    self._currentPos = (self._anim):Pos()
-    self._currentRot = (self._anim):Rot()
-    if (self._anim):IsComplete() then
+    self._anim:Update(deltaTimeMS)
+    self._currentPos = self._anim:Pos()
+    self._currentRot = self._anim:Rot()
+    if self._anim:IsComplete() then
       self._anim = nil
     end
   else
-    self._currentPos = (self._controller):Pos()
-    self._currentRot = (self._controller):Rot()
+    self._currentPos = self._controller:Pos()
+    self._currentRot = self._controller:Rot()
   end
-  self._worldPos = (Vector3.Lerp)(self._worldPos, self._currentPos, self._lerpValue)
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._transform).position = self._worldPos
-  self._worldRot = (Quaternion.Lerp)(self._worldRot, self._currentRot, self._lerpValue)
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._transform).rotation = self._worldRot
+  self._worldPos = Vector3.Lerp(self._worldPos, self._currentPos, self._lerpValue)
+  self._transform.position = self._worldPos
+  self._worldRot = Quaternion.Lerp(self._worldRot, self._currentRot, self._lerpValue)
+  self._transform.rotation = self._worldRot
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateCamera.OnScale = function(self)
-  -- function num : 0_5
-  local scaling, length, centerPos = (self._input):GetScale()
+function AircraftDecorateCamera:OnScale()
+  local scaling, length, centerPos = self._input:GetScale()
   if scaling then
-    (self._controller):OnScale(length)
+    self._controller:OnScale(length)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateCamera.OnDrag = function(self, delta)
-  -- function num : 0_6
-  (self._controller):OnDrag(-delta)
+function AircraftDecorateCamera:OnDrag(delta)
+  self._controller:OnDrag(-delta)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateCamera.MoveAnim = function(self, targetPos, callback)
-  -- function num : 0_7 , upvalues : _ENV
+function AircraftDecorateCamera:MoveAnim(targetPos, callback)
   if self._anim then
-    (Log.exception)("重复的装修相机动画:", (debug.traceback)())
+    Log.exception("重复的装修相机动画:", debug.traceback())
   end
   AirLog("装修相机动画，位移")
-  local originPos = (self._currentPos):Clone()
-  local originRot = (self._currentRot):Clone()
+  local originPos = self._currentPos:Clone()
+  local originRot = self._currentRot:Clone()
   self._anim = AircraftDecorateCameraAnim:New(originPos, originRot, targetPos, nil, 700, callback)
   self._cameraCfg = nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateCamera.SwitchCfg = function(self, cfgID, locateType, onFinish)
-  -- function num : 0_8 , upvalues : _ENV
+function AircraftDecorateCamera:SwitchCfg(cfgID, locateType, onFinish)
   if self._cameraCfg == cfgID and self._locateType == locateType then
-    return 
+    return
   end
   local changeTarget = false
-  local useFloorTarget = nil
+  local useFloorTarget
   if self._cameraCfg == cfgID then
     if locateType == nil and self._locateType == LocationType.Floor then
       changeTarget = true
-    else
-      if locateType == LocationType.Floor and self._locateType == nil then
-        useFloorTarget = true
-        changeTarget = true
-      end
+    elseif locateType == LocationType.Floor and self._locateType == nil then
+      useFloorTarget = true
+      changeTarget = true
     end
   end
   self._cameraCfg = cfgID
   self._locateType = locateType
-  local cfg = (Cfg.cfg_aircraft_decorate_camera)[cfgID]
+  local cfg = Cfg.cfg_aircraft_decorate_camera[cfgID]
   if cfg == nil then
-    (Log.exception)("找不到装修相机配置：", cfgID)
+    Log.exception("找不到装修相机配置：", cfgID)
   end
   if changeTarget then
-    (self._controller):ChangeTarget(cfg, useFloorTarget)
+    self._controller:ChangeTarget(cfg, useFloorTarget)
   else
-    ;
-    (self._controller):ChangeView(cfg)
+    self._controller:ChangeView(cfg)
   end
-  local targetPos = (self._controller):Pos()
-  local targetRot = (self._controller):Rot()
+  local targetPos = self._controller:Pos()
+  local targetRot = self._controller:Rot()
   if self._anim then
-    (Log.exception)("重复的装修相机动画:", (debug.traceback)())
+    Log.exception("重复的装修相机动画:", debug.traceback())
   end
   AirLog("装修相机动画，切换配置")
   self._anim = AircraftDecorateCameraAnim:New(self._currentPos, self._currentRot, targetPos, targetRot, 700, onFinish)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateCamera.MoveToFar = function(self, callback)
-  -- function num : 0_9 , upvalues : _ENV
+function AircraftDecorateCamera:MoveToFar(callback)
   AirLog("装修相机动画，移向最远处")
-  local originPos = (self._currentPos):Clone()
-  local originRot = (self._currentRot):Clone()
+  local originPos = self._currentPos:Clone()
+  local originRot = self._currentRot:Clone()
   local targetPos = self._farPoint
   local targetRot = Quaternion.identity
   if self._anim then
-    (Log.exception)("重复的装修相机动画:", (debug.traceback)())
+    Log.exception("重复的装修相机动画:", debug.traceback())
   end
-  ;
-  (self._controller):Reset()
+  self._controller:Reset()
   self._anim = AircraftDecorateCameraAnim:New(originPos, originRot, targetPos, targetRot, 700, callback)
   self._cameraCfg = nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateCamera.Camera = function(self)
-  -- function num : 0_10
+function AircraftDecorateCamera:Camera()
   return self._camera
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateCamera.CameraPosition = function(self)
-  -- function num : 0_11
-  return (self._transform).position
+function AircraftDecorateCamera:CameraPosition()
+  return self._transform.position
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateCamera.RaycastAll = function(self, screenPos, layer)
-  -- function num : 0_12 , upvalues : _ENV
-  local clickRay = (self._camera):ScreenPointToRay(screenPos)
-  local results = ((UnityEngine.Physics).RaycastAll)(clickRay, 1000, layer)
+function AircraftDecorateCamera:RaycastAll(screenPos, layer)
+  local clickRay = self._camera:ScreenPointToRay(screenPos)
+  local results = UnityEngine.Physics.RaycastAll(clickRay, 1000, layer)
   if results and results.Length > 0 then
     local t = {}
     for i = 1, results.Length do
       t[i] = results[i - 1]
     end
-    ;
-    (table.sort)(t, function(a, b)
-    -- function num : 0_12_0
-    do return a.distance < b.distance end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    table.sort(t, function(a, b)
+      return a.distance < b.distance
+    end)
     return t
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateCamera.Raycast = function(self, screenPos, layer)
-  -- function num : 0_13 , upvalues : _ENV
-  local clickRay = (self._camera):ScreenPointToRay(screenPos)
-  local castRes, hitInfo = ((UnityEngine.Physics).Raycast)(clickRay, nil, 1000, layer)
+function AircraftDecorateCamera:Raycast(screenPos, layer)
+  local clickRay = self._camera:ScreenPointToRay(screenPos)
+  local castRes, hitInfo = UnityEngine.Physics.Raycast(clickRay, nil, 1000, layer)
   if castRes then
     return hitInfo
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateCamera.Reset = function(self)
-  -- function num : 0_14
-  self._currentPos = ((self._camera).transform).position
-  self._currentRot = ((self._camera).transform).rotation
+function AircraftDecorateCamera:Reset()
+  self._currentPos = self._camera.transform.position
+  self._currentRot = self._camera.transform.rotation
   self._worldPos = self._currentPos
   self._worldRot = self._currentRot
   self._cameraCfg = nil
@@ -222,11 +159,9 @@ end
 
 _class("AircraftDecorateCameraAnim", Object)
 AircraftDecorateCameraAnim = AircraftDecorateCameraAnim
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftDecorateCameraAnim.Constructor = function(self, originPos, originRot, targetPos, targetRot, duration, onFinish)
-  -- function num : 0_15 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, true, "AircraftDecorateCameraAnim")
+function AircraftDecorateCameraAnim:Constructor(originPos, originRot, targetPos, targetRot, duration, onFinish)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, true, "AircraftDecorateCameraAnim")
   self._fromPos = originPos
   self._fromRot = originRot
   self._targetPos = targetPos
@@ -241,53 +176,36 @@ AircraftDecorateCameraAnim.Constructor = function(self, originPos, originRot, ta
   self._rot = originRot
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateCameraAnim.Update = function(self, deltaTimeMS)
-  -- function num : 0_16 , upvalues : _ENV
+function AircraftDecorateCameraAnim:Update(deltaTimeMS)
   if self._completed then
-    return 
+    return
   end
   if self._timer < self._duration then
     local t = self._timer / self._duration
     self._timer = self._timer + deltaTimeMS
-    self._pos = (Vector3.Lerp)(self._fromPos, self._targetPos, t)
+    self._pos = Vector3.Lerp(self._fromPos, self._targetPos, t)
     if self._targetRot then
-      self._rot = (Quaternion.Lerp)(self._fromRot, self._targetRot, t)
+      self._rot = Quaternion.Lerp(self._fromRot, self._targetRot, t)
     end
   else
-    do
-      self._pos = self._targetPos
-      self._rot = self._targetRot
-      self._completed = true
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, false, "AircraftDecorateCameraAnim")
-      if self._onfinish then
-        (self._onfinish)()
-      end
+    self._pos = self._targetPos
+    self._rot = self._targetRot
+    self._completed = true
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, false, "AircraftDecorateCameraAnim")
+    if self._onfinish then
+      self._onfinish()
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateCameraAnim.Pos = function(self)
-  -- function num : 0_17
+function AircraftDecorateCameraAnim:Pos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateCameraAnim.Rot = function(self)
-  -- function num : 0_18
+function AircraftDecorateCameraAnim:Rot()
   return self._rot
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateCameraAnim.IsComplete = function(self)
-  -- function num : 0_19
+function AircraftDecorateCameraAnim:IsComplete()
   return self._completed
 end
-
-

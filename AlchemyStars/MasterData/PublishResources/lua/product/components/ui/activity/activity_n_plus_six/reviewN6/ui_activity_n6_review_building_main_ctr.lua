@@ -1,109 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/activity_n_plus_six/reviewN6/ui_activity_n6_review_building_main_ctr.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN6ReviewBuildingMainController", UIController)
 UIActivityN6ReviewBuildingMainController = UIActivityN6ReviewBuildingMainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN6ReviewBuildingMainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIActivityN6ReviewBuildingMainController:LoadDataOnEnter(TT, res, uiParams)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_REVIEW_N6, ECampaignReviewN6ComponentID.BUILD, ECampaignReviewN6ComponentID.QUEST)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_REVIEW_N6, ECampaignReviewN6ComponentID.BUILD, ECampaignReviewN6ComponentID.QUEST)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
   if not self._campaign then
-    return 
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  self._buildComponent = (self._localProcess):GetComponent(ECampaignReviewN6ComponentID.BUILD)
-  self._buildComponentInfo = (self._localProcess):GetComponentInfo(ECampaignReviewN6ComponentID.BUILD)
-  self._questComponent = (self._localProcess):GetComponent(ECampaignReviewN6ComponentID.QUEST)
-  self._questComponentInfo = (self._localProcess):GetComponentInfo(ECampaignReviewN6ComponentID.QUEST)
-  self._storyComponent = (self._localProcess):GetComponent(ECampaignReviewN6ComponentID.STORY)
-  self._storyComponentInfo = (self._localProcess):GetComponentInfo(ECampaignReviewN6ComponentID.STORY)
+  self._buildComponent = self._localProcess:GetComponent(ECampaignReviewN6ComponentID.BUILD)
+  self._buildComponentInfo = self._localProcess:GetComponentInfo(ECampaignReviewN6ComponentID.BUILD)
+  self._questComponent = self._localProcess:GetComponent(ECampaignReviewN6ComponentID.QUEST)
+  self._questComponentInfo = self._localProcess:GetComponentInfo(ECampaignReviewN6ComponentID.QUEST)
+  self._storyComponent = self._localProcess:GetComponent(ECampaignReviewN6ComponentID.STORY)
+  self._storyComponentInfo = self._localProcess:GetComponentInfo(ECampaignReviewN6ComponentID.STORY)
   self._buildingDatas = uiParams[1]
-  do
-    if self._buildingDatas == nil then
-      local componentId = (self._buildComponent):GetComponentCfgId((self._campaign)._id, (self._buildComponentInfo).m_component_id)
-      self._buildingDatas = UIActivityNPlusSixBuildingDatas:New(componentId, self._localProcess)
-    end
-    self._maxBuildingCount = 2
-    self:RefreshEventData()
+  if self._buildingDatas == nil then
+    local componentId = self._buildComponent:GetComponentCfgId(self._campaign._id, self._buildComponentInfo.m_component_id)
+    self._buildingDatas = UIActivityNPlusSixBuildingDatas:New(componentId, self._localProcess)
   end
+  self._maxBuildingCount = 2
+  self:RefreshEventData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.RefreshData = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  self._itemCount = itemModule:GetItemCount((UIActivityNPlusSixConst.GetCoinItemId)())
+function UIActivityN6ReviewBuildingMainController:RefreshData()
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  self._itemCount = itemModule:GetItemCount(UIActivityNPlusSixConst.GetCoinItemId())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.RefreshEventData = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN6ReviewBuildingMainController:RefreshEventData()
   self._eventDatas = {}
-  local eventInfo = (self._buildComponentInfo).event_info
+  local eventInfo = self._buildComponentInfo.event_info
   if eventInfo.cur_event_list then
     for i = 1, #eventInfo.cur_event_list do
-      -- DECOMPILER ERROR at PC21: Confused about usage of register: R6 in 'UnsetPending'
-
-      (self._eventDatas)[#self._eventDatas + 1] = UIActivityNPlusSixEventData:New((eventInfo.cur_event_list)[i])
+      self._eventDatas[#self._eventDatas + 1] = UIActivityNPlusSixEventData:New(eventInfo.cur_event_list[i])
     end
   end
-  do
-    ;
-    (table.sort)(self._eventDatas, function(a, b)
-    -- function num : 0_2_0
-    do return a:GetEventId() < b:GetEventId() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  end
+  table.sort(self._eventDatas, function(a, b)
+    return a:GetEventId() < b:GetEventId()
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN6ReviewBuildingMainController:OnShow(uiParams)
   self._completeSpineLoader = self:GetUIComponent("UISelectObjectPath", "Complete")
   self._BGLoader = self:GetUIComponent("RawImageLoader", "BG")
   self._showBtn = self:GetGameObject("ShowBtn")
   self._btnPanel = self:GetGameObject("BtnPanel")
-  ;
-  (self._showBtn):SetActive(false)
-  ;
-  (self._btnPanel):SetActive(true)
+  self._showBtn:SetActive(false)
+  self._btnPanel:SetActive(true)
   self._eventItemLoader = self:GetUIComponent("UISelectObjectPath", "EventItems")
   local s = self:GetUIComponent("UISelectObjectPath", "itemTips")
   self._tips = s:SpawnObject("UISelectInfo")
   self._rewardRed = self:GetGameObject("RewardRed")
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_3_0 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NPlusSixMainRefresh)
+  self._backBtn:SetData(function()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.NPlusSixMainRefresh)
     self:CloseDialog()
-  end
-, nil, nil, false, function()
-    -- function num : 0_3_1 , upvalues : self
-    (self._showBtn):SetActive(true)
-    ;
-    (self._btnPanel):SetActive(false)
-  end
-)
+  end, nil, nil, false, function()
+    self._showBtn:SetActive(true)
+    self._btnPanel:SetActive(false)
+  end)
   self._scoreLabel = self:GetUIComponent("UILocalizationText", "Score")
   self:AttachEvent(GameEventType.NPlusSixBuildingMainRefresh, self.RefreshUI)
   self:AttachEvent(GameEventType.NPlusSixBuildingBuildingComplete, self.PlayBuildingCompleteEffect)
@@ -112,21 +77,17 @@ UIActivityN6ReviewBuildingMainController.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.NPlusSixEventComplete, self.EventCompleteHandle)
   self:AttachEvent(GameEventType.NPlusSixShowEventRewardTips, self.ShowTips)
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
-  local iconName = (UIActivityNPlusSixConst.GetItemIconName)()
+  local iconName = UIActivityNPlusSixConst.GetItemIconName()
   if iconName then
-    (self._iconLoader):LoadImage(iconName)
+    self._iconLoader:LoadImage(iconName)
   end
   self:RefreshUI()
   self:RefreshEventUI()
   self:CheckStory()
-  ;
-  (self._buildingDatas):EnterBuilding()
+  self._buildingDatas:EnterBuilding()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN6ReviewBuildingMainController:OnHide()
   self:DetachEvent(GameEventType.NPlusSixBuildingMainRefresh, self.RefreshUI)
   self:DetachEvent(GameEventType.NPlusSixBuildingBuildingComplete, self.PlayBuildingCompleteEffect)
   self:DetachEvent(GameEventType.NPlusSixBuildingAllBuildingComplete, self.BuildingAllBuildingComplete)
@@ -135,113 +96,82 @@ UIActivityN6ReviewBuildingMainController.OnHide = function(self)
   self:DetachEvent(GameEventType.NPlusSixEventComplete, self.EventCompleteHandle)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.ShowBtnOnClick = function(self)
-  -- function num : 0_5
-  (self._showBtn):SetActive(false)
-  ;
-  (self._btnPanel):SetActive(true)
+function UIActivityN6ReviewBuildingMainController:ShowBtnOnClick()
+  self._showBtn:SetActive(false)
+  self._btnPanel:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.RefreshUI = function(self)
-  -- function num : 0_6
+function UIActivityN6ReviewBuildingMainController:RefreshUI()
   self:RefreshData()
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scoreLabel).text = self:GetItemCountStr(self._itemCount)
+  self._scoreLabel.text = self:GetItemCountStr(self._itemCount)
   self:RefreshBuildings()
   self:RefreshRed()
   self:RefreshBg()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.RefreshBg = function(self)
-  -- function num : 0_7
+function UIActivityN6ReviewBuildingMainController:RefreshBg()
   local buildingRoot = self:GetGameObject("Buildings")
-  local isComplete = (self._buildingDatas):IsAllBuildingComplete()
+  local isComplete = self._buildingDatas:IsAllBuildingComplete()
   if isComplete then
     if self._completeSpineLoader then
-      local list = (self._completeSpineLoader):GetAllSpawnList()
+      local list = self._completeSpineLoader:GetAllSpawnList()
       for i = 1, #list do
-        (list[i]):SetVisible(true)
+        list[i]:SetVisible(true)
       end
     end
-    do
-      ;
-      (self._BGLoader):LoadImage("n6_rebuild_bg1")
-      if self._completeSpineLoader then
-        local list = (self._completeSpineLoader):GetAllSpawnList()
-        for i = 1, #list do
-          (list[i]):SetVisible(false)
-        end
-      end
-      do
-        ;
-        (self._BGLoader):LoadImage("n6_rebuild_bg")
-        buildingRoot:SetActive(true)
+    self._BGLoader:LoadImage("n6_rebuild_bg1")
+  else
+    if self._completeSpineLoader then
+      local list = self._completeSpineLoader:GetAllSpawnList()
+      for i = 1, #list do
+        list[i]:SetVisible(false)
       end
     end
+    self._BGLoader:LoadImage("n6_rebuild_bg")
   end
+  buildingRoot:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.GetItemCountStr = function(self, count)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityN6ReviewBuildingMainController:GetItemCountStr(count)
   local dight = 0
   local tmpCount = count
-  while tmpCount > 0 do
-    tmpCount = (math.floor)(tmpCount / 10)
+  while 0 < tmpCount do
+    tmpCount = math.floor(tmpCount / 10)
     dight = dight + 1
   end
   local pre = ""
-  for i = 1, 7 - (dight) do
+  for i = 1, 7 - dight do
     pre = pre .. "0"
   end
-  if count > 0 then
-    return (string.format)("<color=#5e5e5e>%s</color><color=#f2c641>%s</color>", pre, count)
+  if 0 < count then
+    return string.format("<color=#5e5e5e>%s</color><color=#f2c641>%s</color>", pre, count)
   else
-    return (string.format)("<color=#5e5e5e>%s</color>", pre)
+    return string.format("<color=#5e5e5e>%s</color>", pre)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.RefreshRed = function(self)
-  -- function num : 0_9
-  (self._rewardRed):SetActive((self._questComponent):HaveRedPoint())
+function UIActivityN6ReviewBuildingMainController:RefreshRed()
+  self._rewardRed:SetActive(self._questComponent:HaveRedPoint())
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.RefreshBuildings = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityN6ReviewBuildingMainController:RefreshBuildings()
   if not self._buildingDatas then
-    return 
+    return
   end
-  local buildingList = (self._buildingDatas):GetBuildingList()
+  local buildingList = self._buildingDatas:GetBuildingList()
   if not buildingList then
-    return 
+    return
   end
   local buildingDatas = {}
-  for k,v in pairs(buildingList) do
+  for k, v in pairs(buildingList) do
     buildingDatas[#buildingDatas + 1] = v
   end
-  ;
-  (table.sort)(buildingDatas, function(a, b)
-    -- function num : 0_10_0
-    if a:GetLayer() >= b:GetLayer() then
-      do return a:GetLayer() == b:GetLayer() end
-      do return a:GetBuildingId() < b:GetBuildingId() end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  table.sort(buildingDatas, function(a, b)
+    if a:GetLayer() ~= b:GetLayer() then
+      return a:GetLayer() < b:GetLayer()
     end
-  end
-)
+    return a:GetBuildingId() < b:GetBuildingId()
+  end)
   local buildingLoader = self:GetUIComponent("UISelectObjectPath", "Buildings")
   buildingLoader:SpawnObjects("UIActivityNPlusSixBuildingItem", #buildingDatas)
   local buildingItems = buildingLoader:GetAllSpawnList()
@@ -256,13 +186,13 @@ UIActivityN6ReviewBuildingMainController.RefreshBuildings = function(self)
     local item = buildingItems[i]
     item:Refresh(buildingDatas[i])
   end
-  local cfgs = (Cfg.cfg_component_build_item_extra)({})
+  local cfgs = Cfg.cfg_component_build_item_extra({})
   if not cfgs then
-    return 
+    return
   end
   local parent = self:GetUIComponent("Transform", "Buildings")
-  local findChildIndexInTrans = function(tran)
-    -- function num : 0_10_1 , upvalues : parent
+  
+  local function findChildIndexInTrans(tran)
     for i = 0, parent.childCount - 1 do
       if parent:GetChild(i) == tran then
         return i
@@ -270,47 +200,40 @@ UIActivityN6ReviewBuildingMainController.RefreshBuildings = function(self)
     end
     return nil
   end
-
-  local findInserIndex = function(layer)
-    -- function num : 0_10_2 , upvalues : buildingItems, findChildIndexInTrans
+  
+  local function findInserIndex(layer)
     for i = 1, #buildingItems do
-      local buildingData = (buildingItems[i])._buildingData
+      local buildingData = buildingItems[i]._buildingData
       if layer < buildingData:GetLayer() then
-        return findChildIndexInTrans(((buildingItems[i])._go).transform)
+        return findChildIndexInTrans(buildingItems[i]._go.transform)
       end
     end
     return nil
   end
-
-  ;
-  (self._completeSpineLoader):SpawnObjects("UIActivityNPlusSixBuildingSpine", #cfgs)
-  local items = (self._completeSpineLoader):GetAllSpawnList()
+  
+  self._completeSpineLoader:SpawnObjects("UIActivityNPlusSixBuildingSpine", #cfgs)
+  local items = self._completeSpineLoader:GetAllSpawnList()
   for i = 1, #cfgs do
-    (items[i]):Refresh(parent, cfgs[i])
-    local index = findInserIndex((cfgs[i]).Layer)
+    items[i]:Refresh(parent, cfgs[i])
+    local index = findInserIndex(cfgs[i].Layer)
     if index then
-      ((items[i])._tran):SetSiblingIndex(index)
+      items[i]._tran:SetSiblingIndex(index)
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.BuildingAllBuildingComplete = function(self)
-  -- function num : 0_11
+function UIActivityN6ReviewBuildingMainController:BuildingAllBuildingComplete()
   self:RefreshBg()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.PlayBuildingCompleteEffect = function(self, buildingData)
-  -- function num : 0_12
-  local isComplete = (self._buildingDatas):IsAllBuildingComplete()
+function UIActivityN6ReviewBuildingMainController:PlayBuildingCompleteEffect(buildingData)
+  local isComplete = self._buildingDatas:IsAllBuildingComplete()
   local finishEffect = self:GetGameObject("FinishEffect")
-  if isComplete and finishEffect then
-    finishEffect:SetActive(true)
-  end
-  if finishEffect then
+  if isComplete then
+    if finishEffect then
+      finishEffect:SetActive(true)
+    end
+  elseif finishEffect then
     finishEffect:SetActive(false)
   end
   local buildingLoader = self:GetUIComponent("UISelectObjectPath", "Buildings")
@@ -319,137 +242,91 @@ UIActivityN6ReviewBuildingMainController.PlayBuildingCompleteEffect = function(s
     local item = buildingItems[i]
     if item._buildingData == buildingData then
       item:PlayBuildingCompleteEffect()
-      return 
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.EventCompleteHandle = function(self)
-  -- function num : 0_13
+function UIActivityN6ReviewBuildingMainController:EventCompleteHandle()
   self:RefreshData()
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scoreLabel).text = self:GetItemCountStr(self._itemCount)
+  self._scoreLabel.text = self:GetItemCountStr(self._itemCount)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.RefreshEvent = function(self)
-  -- function num : 0_14
+function UIActivityN6ReviewBuildingMainController:RefreshEvent()
   self:RefreshData()
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scoreLabel).text = self:GetItemCountStr(self._itemCount)
+  self._scoreLabel.text = self:GetItemCountStr(self._itemCount)
   self:RefreshEventData()
   self:RefreshEventUI()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.RefreshEventUI = function(self)
-  -- function num : 0_15
-  (self._eventItemLoader):SpawnObjects("UIActivityN6ReviewEventItem", #self._eventDatas)
-  local items = (self._eventItemLoader):GetAllSpawnList()
+function UIActivityN6ReviewBuildingMainController:RefreshEventUI()
+  self._eventItemLoader:SpawnObjects("UIActivityN6ReviewEventItem", #self._eventDatas)
+  local items = self._eventItemLoader:GetAllSpawnList()
   for i = 1, #items do
     local item = items[i]
-    item:Refresh(self._campaign, (self._eventDatas)[i])
+    item:Refresh(self._campaign, self._eventDatas[i])
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.RebuildingRewardBtnOnClick = function(self)
-  -- function num : 0_16
+function UIActivityN6ReviewBuildingMainController:RebuildingRewardBtnOnClick()
   self:ShowDialog("UIActivityN6ReviewRewardController", self._buildingDatas)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.ShowTips = function(self, itemId, pos)
-  -- function num : 0_17
-  (self._tips):SetData(itemId, pos)
+function UIActivityN6ReviewBuildingMainController:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.CheckStory = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local pstId = ((GameGlobal.GetModule)(RoleModule)):GetPstId()
+function UIActivityN6ReviewBuildingMainController:CheckStory()
+  local pstId = GameGlobal.GetModule(RoleModule):GetPstId()
   local firstEnterKey = "NP6FirstEnterRebuild_" .. pstId
-  if ((UnityEngine.PlayerPrefs).GetInt)(firstEnterKey, 0) == 0 then
-    if not (self._buildComponentInfo).m_first_story_id then
-      (Log.exception)("首次进入重建界面,但找不到剧情id")
+  if UnityEngine.PlayerPrefs.GetInt(firstEnterKey, 0) == 0 then
+    if not self._buildComponentInfo.m_first_story_id then
+      Log.exception("首次进入重建界面,但找不到剧情id")
     end
-    ;
-    ((UnityEngine.PlayerPrefs).SetInt)(firstEnterKey, 1)
-    self:ShowDialog("UIStoryController", (self._buildComponentInfo).m_first_story_id)
+    UnityEngine.PlayerPrefs.SetInt(firstEnterKey, 1)
+    self:ShowDialog("UIStoryController", self._buildComponentInfo.m_first_story_id)
   else
-    local storyList = (self._buildingDatas):GetUnPlayStoryList()
+    local storyList = self._buildingDatas:GetUnPlayStoryList()
     if storyList == nil or #storyList <= 0 then
-      return 
+      return
     end
     self:PlayStoryList(storyList)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.PlayStoryList = function(self, storyList)
-  -- function num : 0_19 , upvalues : _ENV
-  if (table.count)(storyList) <= 0 then
-    return 
+function UIActivityN6ReviewBuildingMainController:PlayStoryList(storyList)
+  if table.count(storyList) <= 0 then
+    return
   end
   local storyInfo = storyList[1]
-  ;
-  (table.remove)(storyList, 1)
+  table.remove(storyList, 1)
   self:PlayStory(storyInfo, function()
-    -- function num : 0_19_0 , upvalues : self, storyList
     self:PlayStoryList(storyList)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.PlayStory = function(self, storyInfo, callback)
-  -- function num : 0_20 , upvalues : _ENV
+function UIActivityN6ReviewBuildingMainController:PlayStory(storyInfo, callback)
   local storyType = storyInfo[1]
   local storyId = storyInfo[2]
   local curStatus = storyInfo[3]
   local buildingId = storyInfo[4]
   if storyType == 1 or storyType == 3 then
     self:ShowDialog("UIStoryBanner", storyId, StoryBannerShowType.HalfPortrait, function()
-    -- function num : 0_20_0 , upvalues : _ENV, self, curStatus, buildingId, callback
-    ((GameGlobal.TaskManager)()):StartTask(self.CompleteStory, self, curStatus, buildingId, callback)
-  end
-)
-  else
-    if storyType == 2 then
-      self:ShowDialog("UIStoryController", storyId, function()
-    -- function num : 0_20_1 , upvalues : _ENV, self, curStatus, buildingId, callback
-    ((GameGlobal.TaskManager)()):StartTask(self.CompleteStory, self, curStatus, buildingId, callback)
-  end
-)
-    end
+      GameGlobal.TaskManager():StartTask(self.CompleteStory, self, curStatus, buildingId, callback)
+    end)
+  elseif storyType == 2 then
+    self:ShowDialog("UIStoryController", storyId, function()
+      GameGlobal.TaskManager():StartTask(self.CompleteStory, self, curStatus, buildingId, callback)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN6ReviewBuildingMainController.CompleteStory = function(self, TT, curStatus, buildingId, callback)
-  -- function num : 0_21 , upvalues : _ENV
+function UIActivityN6ReviewBuildingMainController:CompleteStory(TT, curStatus, buildingId, callback)
   self:Lock("UIActivityN6ReviewBuildingMainController_CompleteStory")
   local res = AsyncRequestRes:New()
-  ;
-  (self._buildComponent):HandleStory(TT, res, buildingId, curStatus)
+  self._buildComponent:HandleStory(TT, res, buildingId, curStatus)
   self:UnLock("UIActivityN6ReviewBuildingMainController_CompleteStory")
   if callback then
     callback()
   end
 end
-
-

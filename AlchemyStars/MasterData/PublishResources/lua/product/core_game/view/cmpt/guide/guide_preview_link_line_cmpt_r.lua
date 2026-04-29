@@ -1,107 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/guide/guide_preview_link_line_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GuidePreviewLinkLineComponent", Object)
 GuidePreviewLinkLineComponent = GuidePreviewLinkLineComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GuidePreviewLinkLineComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function GuidePreviewLinkLineComponent:Constructor()
   self._guidePLLPath = {}
   self._refreshType = GuideRefreshType.None
   self._invokeType = GuideInvokeType.None
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineComponent.GetInvokeType = function(self)
-  -- function num : 0_1
+function GuidePreviewLinkLineComponent:GetInvokeType()
   return self._invokeType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineComponent.SetInvokeType = function(self, invokeType)
-  -- function num : 0_2
+function GuidePreviewLinkLineComponent:SetInvokeType(invokeType)
   self._invokeType = invokeType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineComponent.GetGuideRefreshType = function(self)
-  -- function num : 0_3
+function GuidePreviewLinkLineComponent:GetGuideRefreshType()
   return self._refreshType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineComponent.SetGuideRefreshType = function(self, refreshType)
-  -- function num : 0_4
+function GuidePreviewLinkLineComponent:SetGuideRefreshType(refreshType)
   self._refreshType = refreshType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineComponent.SetGuidePLLPath = function(self, path)
-  -- function num : 0_5 , upvalues : _ENV
+function GuidePreviewLinkLineComponent:SetGuidePLLPath(path)
   self._guidePLLPath = {}
-  for k,v in ipairs(path) do
+  for k, v in ipairs(path) do
     local vec = Vector2(v[1], v[2])
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._guidePLLPath)[#self._guidePLLPath + 1] = vec
+    self._guidePLLPath[#self._guidePLLPath + 1] = vec
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePreviewLinkLineComponent.GetGuidePLLPath = function(self)
-  -- function num : 0_6
+function GuidePreviewLinkLineComponent:GetGuidePLLPath()
   return self._guidePLLPath
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GuidePreviewLinkLine = function(self)
-  -- function num : 0_7
-  return self:GetComponent((self.WEComponentsEnum).GuidePreviewLinkLine)
+function Entity:GuidePreviewLinkLine()
+  return self:GetComponent(self.WEComponentsEnum.GuidePreviewLinkLine)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasGuidePreviewLinkLine = function(self)
-  -- function num : 0_8
-  return self:HasComponent((self.WEComponentsEnum).GuidePreviewLinkLine)
+function Entity:HasGuidePreviewLinkLine()
+  return self:HasComponent(self.WEComponentsEnum.GuidePreviewLinkLine)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddGuidePreviewLinkLine = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).GuidePreviewLinkLine
+function Entity:AddGuidePreviewLinkLine()
+  local index = self.WEComponentsEnum.GuidePreviewLinkLine
   local component = GuidePreviewLinkLineComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceGuidePreviewLinkLine = function(self)
-  -- function num : 0_10
-  local index = (self.WEComponentsEnum).GuidePreviewLinkLine
+function Entity:ReplaceGuidePreviewLinkLine()
+  local index = self.WEComponentsEnum.GuidePreviewLinkLine
   local component = self:GuidePreviewLinkLine()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveGuidePreviewLinkLine = function(self)
-  -- function num : 0_11
+function Entity:RemoveGuidePreviewLinkLine()
   if self:HasGuidePreviewLinkLine() then
-    self:RemoveComponent((self.WEComponentsEnum).GuidePreviewLinkLine)
+    self:RemoveComponent(self.WEComponentsEnum.GuidePreviewLinkLine)
   end
 end
-
-

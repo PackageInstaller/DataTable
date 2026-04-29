@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/component/logic_extensions/view_wrapper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("IViewWrapper", Object)
 IViewWrapper = IViewWrapper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-IViewWrapper.Constructor = function(self)
-  -- function num : 0_0
+function IViewWrapper:Constructor()
   self.ViewType = "invalid"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-IViewWrapper.FindChild = function(self, name)
-  -- function num : 0_1
+function IViewWrapper:FindChild(name)
   return nil
 end
-
-

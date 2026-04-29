@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/notify_trigger/trigger_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("trigger_type")
 _class("TriggerBase", Object)
 TriggerBase = TriggerBase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-TriggerBase.Constructor = function(self, owner, triggerCond)
-  -- function num : 0_0 , upvalues : _ENV
+function TriggerBase:Constructor(owner, triggerCond)
   self._owner = owner
   self._world = owner._world
   self._triggerType = triggerCond[1]
@@ -18,157 +11,107 @@ TriggerBase.Constructor = function(self, owner, triggerCond)
   self._z = triggerCond[4]
   self._param = {}
   for i = 2, #triggerCond do
-    (table.insert)(self._param, triggerCond[i])
+    table.insert(self._param, triggerCond[i])
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerBase.GetNotifyType = function(self)
-  -- function num : 0_1
-  return (self._owner):GetNotifyType()
+function TriggerBase:GetNotifyType()
+  return self._owner:GetNotifyType()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerBase.GetTriggerType = function(self)
-  -- function num : 0_2
+function TriggerBase:GetTriggerType()
   return self._triggerType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerBase.OnNotify = function(self, notify)
-  -- function num : 0_3
+function TriggerBase:OnNotify(notify)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerBase.IsSatisfied = function(self, notify)
-  -- function num : 0_4
+function TriggerBase:IsSatisfied(notify)
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerBase.Reset = function(self)
-  -- function num : 0_5
+function TriggerBase:Reset()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerBase.GetOwnerEntity = function(self)
-  -- function num : 0_6
-  return (self._owner):GetOwnerEntity()
+function TriggerBase:GetOwnerEntity()
+  return self._owner:GetOwnerEntity()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerBase.GetWorld = function(self)
-  -- function num : 0_7
-  return (self._owner):GetWorld()
+function TriggerBase:GetWorld()
+  return self._owner:GetWorld()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerBase.GetTriggerParamByIndex = function(self, paramIndex)
-  -- function num : 0_8
+function TriggerBase:GetTriggerParamByIndex(paramIndex)
   local paramCount = #self._param
-  if paramCount < paramIndex then
+  if paramIndex > paramCount then
     return nil
   end
-  return (self._param)[paramIndex]
+  return self._param[paramIndex]
 end
 
 _class("CombinedTrigger", TriggerBase)
 CombinedTrigger = CombinedTrigger
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-CombinedTrigger.Constructor = function(self, triggerOwner, notifyTypes, world)
-  -- function num : 0_9
+function CombinedTrigger:Constructor(triggerOwner, notifyTypes, world)
   self._triggers = {}
   self._world = world
   self._triggerOwner = triggerOwner
   self._notifyType = notifyTypes
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CombinedTrigger.GetNotifyType = function(self)
-  -- function num : 0_10
+function CombinedTrigger:GetNotifyType()
   return self._notifyType
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CombinedTrigger.AddTrigger = function(self, trigger)
-  -- function num : 0_11 , upvalues : _ENV
-  (table.insert)(self._triggers, trigger)
+function CombinedTrigger:AddTrigger(trigger)
+  table.insert(self._triggers, trigger)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-CombinedTrigger.GetTriggers = function(self)
-  -- function num : 0_12
+function CombinedTrigger:GetTriggers()
   return self._triggers
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-CombinedTrigger.OnNotifyWrapper = function(self, notify)
-  -- function num : 0_13 , upvalues : _ENV
+function CombinedTrigger:OnNotifyWrapper(notify)
   local notifyList = self:GetNotifyType()
-  for k,notifyType in ipairs(notifyList) do
+  for k, notifyType in ipairs(notifyList) do
     if notify:GetNotifyType() == notifyType then
-      for i,trigger in ipairs(self._triggers) do
+      for i, trigger in ipairs(self._triggers) do
         trigger:OnNotify(notify)
       end
-      return 
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-CombinedTrigger.CheckNotifyGameTurn = function(self, notify)
-  -- function num : 0_14 , upvalues : _ENV
-  if (self._world):MatchType() ~= MatchType.MT_BlackFist then
+function CombinedTrigger:CheckNotifyGameTurn(notify)
+  if self._world:MatchType() ~= MatchType.MT_BlackFist then
     return true
   end
-  for i,trigger in ipairs(self._triggers) do
+  for i, trigger in ipairs(self._triggers) do
     if trigger:GetTriggerType() == TriggerType.DonotCheckGameTurn then
       return true
     end
   end
-  local ownerEntity = (self._triggerOwner):GetOwnerEntity()
+  local ownerEntity = self._triggerOwner:GetOwnerEntity()
   if notify:NeedCheckGameTurn() and ownerEntity:HasGameTurn() then
-    local ownerEntityTurn = (ownerEntity:GameTurn()):GetGameTurn()
+    local ownerEntityTurn = ownerEntity:GameTurn():GetGameTurn()
     if notify:GetNotifyType() == NotifyType.EnemyTurnStart or notify:GetNotifyType() == NotifyType.EnemyTurnEnd then
-      local enemyTurn = ((notify:GetNotifyEntity()):GameTurn()):GetGameTurn()
+      local enemyTurn = notify:GetNotifyEntity():GameTurn():GetGameTurn()
       if enemyTurn == ownerEntityTurn then
         return false
       end
-    else
-      do
-        do
-          if (self._world):GetGameTurn() ~= ownerEntityTurn then
-            return false
-          end
-          return true
-        end
-      end
+    elseif self._world:GetGameTurn() ~= ownerEntityTurn then
+      return false
     end
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-CombinedTrigger.IsSatisfied = function(self, notify)
-  -- function num : 0_15 , upvalues : _ENV
+function CombinedTrigger:IsSatisfied(notify)
   if not self:CheckNotifyGameTurn(notify) then
     return false
   end
-  for i,trigger in ipairs(self._triggers) do
+  for i, trigger in ipairs(self._triggers) do
     if not trigger:IsSatisfied(notify) then
       return false
     end
@@ -176,134 +119,89 @@ CombinedTrigger.IsSatisfied = function(self, notify)
   return true
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-CombinedTrigger.Reset = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  for i,trigger in ipairs(self._triggers) do
+function CombinedTrigger:Reset()
+  for i, trigger in ipairs(self._triggers) do
     trigger:Reset()
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-CombinedTrigger.GetTriggerOwner = function(self)
-  -- function num : 0_17
+function CombinedTrigger:GetTriggerOwner()
   return self._triggerOwner
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-CombinedTrigger.OnTrigger = function(self, notify)
-  -- function num : 0_18
-  (self._triggerOwner):OnTrigger(notify, self._triggers)
+function CombinedTrigger:OnTrigger(notify)
+  self._triggerOwner:OnTrigger(notify, self._triggers)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-CombinedTrigger.SetActive = function(self, active)
-  -- function num : 0_19
+function CombinedTrigger:SetActive(active)
   self._active = active
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-CombinedTrigger.IsActive = function(self)
-  -- function num : 0_20
+function CombinedTrigger:IsActive()
   return self._active
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-CombinedTrigger.GetOwnerEntity = function(self)
-  -- function num : 0_21
-  return (self._triggerOwner):GetOwnerEntity()
+function CombinedTrigger:GetOwnerEntity()
+  return self._triggerOwner:GetOwnerEntity()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-CombinedTrigger.GetWorld = function(self)
-  -- function num : 0_22
+function CombinedTrigger:GetWorld()
   return self._world
 end
 
 _class("TriggerCount", TriggerBase)
 TriggerCount = TriggerCount
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
 
-TriggerCount.Constructor = function(self)
-  -- function num : 0_23
+function TriggerCount:Constructor()
   self._count = 0
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerCount.SetCount = function(self, val)
-  -- function num : 0_24
+function TriggerCount:SetCount(val)
   self._count = val
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerCount.AddCount = function(self, val)
-  -- function num : 0_25
+function TriggerCount:AddCount(val)
   self._count = self._count + val
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerCount.IsSatisfied = function(self, notify)
-  -- function num : 0_26
-  do return self._x <= self._count end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function TriggerCount:IsSatisfied(notify)
+  return self._count >= self._x
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerCount.Reset = function(self)
-  -- function num : 0_27
+function TriggerCount:Reset()
   self._count = 0
 end
 
 _class("TTNone", TriggerBase)
 TTNone = TTNone
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
 
-TTNone.IsSatisfied = function(self, notify)
-  -- function num : 0_28
+function TTNone:IsSatisfied(notify)
   return false
 end
 
 _class("TTAlways", TriggerBase)
 TTAlways = TTAlways
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
 
-TTAlways.IsSatisfied = function(self, notify)
-  -- function num : 0_29
+function TTAlways:IsSatisfied(notify)
   return true
 end
 
 _class("TTNotifyMe", TriggerBase)
 TTNotifyMe = TTNotifyMe
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
 
-TTNotifyMe.IsSatisfied = function(self, notify)
-  -- function num : 0_30 , upvalues : _ENV
+function TTNotifyMe:IsSatisfied(notify)
   local owner = self:GetOwnerEntity()
   if notify:GetNotifyType() == NotifyType.CoffinMusumeSkillChangeLight then
-    return (table.icontains)(notify:GetSelectLightID(), owner:GetID())
+    return table.icontains(notify:GetSelectLightID(), owner:GetID())
   end
   local entity = notify:GetNotifyEntity()
-  do return owner == entity end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return owner == entity
 end
 
 _class("TTProb", TriggerBase)
 TTProb = TTProb
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
 
-TTProb.IsSatisfied = function(self, notify)
-  -- function num : 0_31 , upvalues : _ENV
+function TTProb:IsSatisfied(notify)
   local rate = self._x
   if self._y and self._y == 1 then
     local buffID = self._z
@@ -313,59 +211,46 @@ TTProb.IsSatisfied = function(self, notify)
     local addVal = cBuff:GetBuffValue(key) or 0
     rate = rate + addVal
   end
-  do
-    local randomSvc = (self._world):GetService("RandomLogic")
-    local r = randomSvc:LogicRand()
-    do return r < rate end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
+  local randomSvc = self._world:GetService("RandomLogic")
+  local r = randomSvc:LogicRand()
+  return rate > r
 end
 
 _class("TTNotifyMeProb", TriggerBase)
 TTNotifyMeProb = TTNotifyMeProb
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
 
-TTNotifyMeProb.IsSatisfied = function(self, notify)
-  -- function num : 0_32
+function TTNotifyMeProb:IsSatisfied(notify)
   local owner = self:GetOwnerEntity()
   local entity = notify:GetNotifyEntity()
-  local randomSvc = (self._world):GetService("RandomLogic")
+  local randomSvc = self._world:GetService("RandomLogic")
   local r = randomSvc:LogicRand()
-  do return owner == entity and r < self._x end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return owner == entity and r < self._x
 end
 
 _class("TTProbMultiplyLayer", TriggerBase)
 TTProbMultiplyLayer = TTProbMultiplyLayer
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
 
-TTProbMultiplyLayer.IsSatisfied = function(self, notify)
-  -- function num : 0_33
+function TTProbMultiplyLayer:IsSatisfied(notify)
   local buffId = self._x
   local rateParam = self._y
   local owner = self:GetOwnerEntity()
   local cBuff = owner:BuffComponent()
   local layerCount = 0
   local instance = cBuff:GetBuffById(buffId)
-  do
-    if instance then
-      local layerName = instance:GetBuffLayerName()
-      layerCount = cBuff:GetBuffValue(layerName) or 0
-    end
-    local rate = (layerCount) * rateParam
-    local randomSvc = (self._world):GetService("RandomLogic")
-    local r = randomSvc:LogicRand()
-    do return r < rate end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  if instance then
+    local layerName = instance:GetBuffLayerName()
+    layerCount = cBuff:GetBuffValue(layerName) or 0
   end
+  local rate = layerCount * rateParam
+  local randomSvc = self._world:GetService("RandomLogic")
+  local r = randomSvc:LogicRand()
+  return rate > r
 end
 
 _class("TTMyTurn", TriggerBase)
 TTMyTurn = TTMyTurn
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
 
-TTMyTurn.IsSatisfied = function(self, notify)
-  -- function num : 0_34 , upvalues : _ENV
+function TTMyTurn:IsSatisfied(notify)
   local e = self:GetOwnerEntity()
   if e:HasMonsterID() and notify:GetNotifyType() == NotifyType.MonsterTurnStart then
     return true
@@ -378,32 +263,25 @@ end
 
 _class("TTLayerCount", TriggerBase)
 TTLayerCount = TTLayerCount
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
 
-TTLayerCount.IsSatisfied = function(self, notify)
-  -- function num : 0_35
+function TTLayerCount:IsSatisfied(notify)
   local buffId = self._x
   local maxLayerCount = self._y
   local e = self:GetOwnerEntity()
   local cBuff = e:BuffComponent()
   local layerCount = 0
   local instance = cBuff:GetBuffById(buffId)
-  do
-    if instance then
-      local layerName = instance:GetBuffLayerName()
-      layerCount = cBuff:GetBuffValue(layerName) or 0
-    end
-    do return maxLayerCount <= layerCount end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  if instance then
+    local layerName = instance:GetBuffLayerName()
+    layerCount = cBuff:GetBuffValue(layerName) or 0
   end
+  return maxLayerCount <= layerCount
 end
 
 _class("TTCompareLayerCount", TriggerBase)
 TTCompareLayerCount = TTCompareLayerCount
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
 
-TTCompareLayerCount.IsSatisfied = function(self, notify)
-  -- function num : 0_36 , upvalues : _ENV
+function TTCompareLayerCount:IsSatisfied(notify)
   local compareFlag = self._x
   local buffId = self._y
   local count = self._z
@@ -421,69 +299,49 @@ TTCompareLayerCount.IsSatisfied = function(self, notify)
       count = cBuff:GetBuffValue(layerName) or 0
     end
   end
-  do
-    local layerCount = 0
-    local instance = cBuff:GetBuffById(buffId)
-    do
-      if instance then
-        local layerName = instance:GetBuffLayerName()
-        layerCount = cBuff:GetBuffValue(layerName) or 0
-      end
-      local satisfied = false
-      if layerCount ~= count then
-        satisfied = compareFlag ~= ComparisonOperator.EQ
-        if layerCount == count then
-          satisfied = compareFlag ~= ComparisonOperator.NE
-          if count >= layerCount then
-            satisfied = compareFlag ~= ComparisonOperator.GT
-            if count > layerCount then
-              satisfied = compareFlag ~= ComparisonOperator.GE
-              if layerCount >= count then
-                satisfied = compareFlag ~= ComparisonOperator.LT
-                if layerCount > count then
-                  satisfied = compareFlag ~= ComparisonOperator.LE
-                  do return satisfied end
-                  -- DECOMPILER ERROR: 12 unprocessed JMP targets
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+  local layerCount = 0
+  local instance = cBuff:GetBuffById(buffId)
+  if instance then
+    local layerName = instance:GetBuffLayerName()
+    layerCount = cBuff:GetBuffValue(layerName) or 0
   end
+  local satisfied = false
+  if compareFlag == ComparisonOperator.EQ then
+    satisfied = layerCount == count
+  elseif compareFlag == ComparisonOperator.NE then
+    satisfied = layerCount ~= count
+  elseif compareFlag == ComparisonOperator.GT then
+    satisfied = count < layerCount
+  elseif compareFlag == ComparisonOperator.GE then
+    satisfied = count <= layerCount
+  elseif compareFlag == ComparisonOperator.LT then
+    satisfied = count > layerCount
+  elseif compareFlag == ComparisonOperator.LE then
+    satisfied = count >= layerCount
+  end
+  return satisfied
 end
 
 _class("TTCompareLayerChange", TriggerBase)
 TTCompareLayerChange = TTCompareLayerChange
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
 
-TTCompareLayerChange.IsSatisfied = function(self, notify)
-  -- function num : 0_37 , upvalues : _ENV
+function TTCompareLayerChange:IsSatisfied(notify)
   local compareFlag = self._x
   local count = self._y
   local change = notify:GetChangeLayer()
   local satisfied = false
-  if change ~= count then
-    satisfied = compareFlag ~= ComparisonOperator.EQ
-    if change == count then
-      satisfied = compareFlag ~= ComparisonOperator.NE
-      if count >= change then
-        satisfied = compareFlag ~= ComparisonOperator.GT
-        if count > change then
-          satisfied = compareFlag ~= ComparisonOperator.GE
-          if change >= count then
-            satisfied = compareFlag ~= ComparisonOperator.LT
-            if change > count then
-              satisfied = compareFlag ~= ComparisonOperator.LE
-              do return satisfied end
-              -- DECOMPILER ERROR: 12 unprocessed JMP targets
-            end
-          end
-        end
-      end
-    end
+  if compareFlag == ComparisonOperator.EQ then
+    satisfied = change == count
+  elseif compareFlag == ComparisonOperator.NE then
+    satisfied = change ~= count
+  elseif compareFlag == ComparisonOperator.GT then
+    satisfied = count < change
+  elseif compareFlag == ComparisonOperator.GE then
+    satisfied = count <= change
+  elseif compareFlag == ComparisonOperator.LT then
+    satisfied = count > change
+  elseif compareFlag == ComparisonOperator.LE then
+    satisfied = count >= change
   end
+  return satisfied
 end
-
-

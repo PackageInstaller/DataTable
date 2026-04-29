@@ -1,8 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/tw/activity/n19/str_n19_p5.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_n19_p5_name = "盜於月夜之下", str_n19_p5_drop_time = "活動剩餘時間：", str_n19_p5_activity_remaining_time = "介面關閉時間：", str_n19_p5_battle_pass = "特別事件薄", str_n19_p5_login_award = "登入獎勵", str_n19_p5_pet = "光靈初見", str_n19_p5_shop = "潛入開始！", str_n19_p5_story_replay_start = "序章", str_n19_p5_story_replay_end = "終章", str_n19_p5_intro_title = "活動說明", str_n19_p5_intro_content = "【潛入點數】取得方式：\n1.活動期間，完成消耗稜鏡的主線或資源整備關卡時，可獲得一定數量的【潛入點數】。\n2.活動結束後，上述關卡不再掉落【潛入點數】。\n\n【潛入點數】道具使用：\n1.活動期間，可在參與【潛入開始！】玩法時，在【關卡】中消耗【潛入點數】向前前進。\n2.活動結束後，【潛入開始！】還會開放3天，請及時使用【潛入點數】。【潛入開始！】關閉後，未使用的【潛入點數】將按照1:10的比例轉換為白夜幣。", str_n19_p5_lottery_one = "向前前進（1次）", str_n19_p5_lottery_multi = "向前前進（10次）", str_n19_p5_lottery_intro_title = "規則說明", str_n19_p5_lottery_intro_content = "1.消耗【潛入點數】可以在【關卡】中前進。\n2.活動期間共開放6個【關卡】。\n3.每個【關卡】有一個【稀有道具】，只有在獲取目前【關卡】中的【稀有道具】後，才可進入到下一個【關卡】中。\n4.【潛入開始】關閉後，剩餘的【潛入點數】會按照1:10的比例轉換成白夜幣。在活動結束1小時後，再次登入遊戲時透過郵件獲得。", str_n19_p5_lottery_pool = "關卡{1}", str_n19_p5_pool_lock_tips = "獲得上一個關卡的稀有獎勵後解鎖本關卡", str_n19_p5_shop_no_item_tips = "已獲得該關卡的所有道具，請切換關卡", str_n19_p5_shop_box_unlock_intro = "獲得<color=#F6A201>關卡{1}</color>稀有道具後解鎖該關卡！", str_n19_p5_shop_open_next_text = "已獲取本關卡稀有道具【{1}】，關卡【{2}】解鎖！", str_n19_p5_shop_draw_once_more_text = "是否消耗{1}潛入點數繼續向前？", str_n19_p5_sign_title = "活動期間累積登入{1}天\n領取光珀、MONA與限定頭像！", str_n19_p5_cost_not_enough = "{1}數量不足", str_n19_p5_award_empty_tip = "本關卡中的獎勵已全部獲得"}
+local config = {
+  str_n19_p5_name = "盜於月夜之下",
+  str_n19_p5_drop_time = "活動剩餘時間：",
+  str_n19_p5_activity_remaining_time = "介面關閉時間：",
+  str_n19_p5_battle_pass = "特別事件薄",
+  str_n19_p5_login_award = "登入獎勵",
+  str_n19_p5_pet = "光靈初見",
+  str_n19_p5_shop = "潛入開始！",
+  str_n19_p5_story_replay_start = "序章",
+  str_n19_p5_story_replay_end = "終章",
+  str_n19_p5_intro_title = "活動說明",
+  str_n19_p5_intro_content = "【潛入點數】取得方式：\n1.活動期間，完成消耗稜鏡的主線或資源整備關卡時，可獲得一定數量的【潛入點數】。\n2.活動結束後，上述關卡不再掉落【潛入點數】。\n\n【潛入點數】道具使用：\n1.活動期間，可在參與【潛入開始！】玩法時，在【關卡】中消耗【潛入點數】向前前進。\n2.活動結束後，【潛入開始！】還會開放3天，請及時使用【潛入點數】。【潛入開始！】關閉後，未使用的【潛入點數】將按照1:10的比例轉換為白夜幣。",
+  str_n19_p5_lottery_one = "向前前進（1次）",
+  str_n19_p5_lottery_multi = "向前前進（10次）",
+  str_n19_p5_lottery_intro_title = "規則說明",
+  str_n19_p5_lottery_intro_content = "1.消耗【潛入點數】可以在【關卡】中前進。\n2.活動期間共開放6個【關卡】。\n3.每個【關卡】有一個【稀有道具】，只有在獲取目前【關卡】中的【稀有道具】後，才可進入到下一個【關卡】中。\n4.【潛入開始】關閉後，剩餘的【潛入點數】會按照1:10的比例轉換成白夜幣。在活動結束1小時後，再次登入遊戲時透過郵件獲得。",
+  str_n19_p5_lottery_pool = "關卡{1}",
+  str_n19_p5_pool_lock_tips = "獲得上一個關卡的稀有獎勵後解鎖本關卡",
+  str_n19_p5_shop_no_item_tips = "已獲得該關卡的所有道具，請切換關卡",
+  str_n19_p5_shop_box_unlock_intro = "獲得<color=#F6A201>關卡{1}</color>稀有道具後解鎖該關卡！",
+  str_n19_p5_shop_open_next_text = "已獲取本關卡稀有道具【{1}】，關卡【{2}】解鎖！",
+  str_n19_p5_shop_draw_once_more_text = "是否消耗{1}潛入點數繼續向前？",
+  str_n19_p5_sign_title = "活動期間累積登入{1}天\n領取光珀、MONA與限定頭像！",
+  str_n19_p5_cost_not_enough = "{1}數量不足",
+  str_n19_p5_award_empty_tip = "本關卡中的獎勵已全部獲得"
+}
 return config
-

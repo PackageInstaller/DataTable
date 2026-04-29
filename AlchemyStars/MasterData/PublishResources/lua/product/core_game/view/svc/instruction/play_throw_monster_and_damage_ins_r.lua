@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_throw_monster_and_damage_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayThrowMonsterAndDamageInstruction", BaseInstruction)
 PlayThrowMonsterAndDamageInstruction = PlayThrowMonsterAndDamageInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayThrowMonsterAndDamageInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayThrowMonsterAndDamageInstruction:Constructor(paramList)
   self._hitAnimName = paramList.hitAnim
   self._hitEffectID = tonumber(paramList.hitEffectID)
   self._dieEffectID = tonumber(paramList.dieEffectID)
@@ -22,79 +15,67 @@ PlayThrowMonsterAndDamageInstruction.Constructor = function(self, paramList)
   self._eachFlyDelayTime = tonumber(paramList.eachFlyDelayTime) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayThrowMonsterAndDamageInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayThrowMonsterAndDamageInstruction:GetCacheResource()
   local t = {}
   if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    })
   end
-  if self._dieEffectID and self._dieEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._dieEffectID]).ResPath, 1})
+  if self._dieEffectID and 0 < self._dieEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._dieEffectID].ResPath,
+      1
+    })
   end
-  if self._trapTrajectoryID and self._trapTrajectoryID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._trapTrajectoryID]).ResPath, 1})
+  if self._trapTrajectoryID and 0 < self._trapTrajectoryID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._trapTrajectoryID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayThrowMonsterAndDamageInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayThrowMonsterAndDamageInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local resultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local resultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local result = resultContainer:GetEffectResultByArray(SkillEffectType.ThrowMonsterAndDamage)
   if not result then
-    return 
+    return
   end
   local damageResult = result:GetDamageResult()
   if not damageResult then
-    return 
+    return
   end
   local damagePos = damageResult:GetGridPos()
   local targetEntityID = damageResult:GetTargetID()
   local targetEntity = world:GetEntityByID(targetEntityID)
-  local targetPos = (Vector2.New)(damagePos.x, damagePos.y)
+  local targetPos = Vector2.New(damagePos.x, damagePos.y)
   local boardServiceRender = world:GetService("BoardRender")
-  targetPos = boardServiceRender:GridPos2RenderPos((Vector2.New)(targetPos.x + 0.5, targetPos.y + 0.5))
+  targetPos = boardServiceRender:GridPos2RenderPos(Vector2.New(targetPos.x + 0.5, targetPos.y + 0.5))
   targetPos.y = targetPos.y + self._endHeight
   local effectService = world:GetService("Effect")
   local msrSvc = world:GetService("MonsterShowRender")
   local monsterIDArray = result:GetMonsterEntityIDs()
-  for _,entityID in ipairs(monsterIDArray) do
+  for _, entityID in ipairs(monsterIDArray) do
     local entity = world:GetEntityByID(entityID)
     local hpComponent = entity:HP()
-    do
-      if hpComponent then
-        local sliderEntityId = hpComponent:GetHPSliderEntityID()
-        local sliderEntity = world:GetEntityByID(sliderEntityId)
-        if sliderEntity then
-          do
-            sliderEntity:SetViewVisible(false)
-            -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+    if hpComponent then
+      local sliderEntityId = hpComponent:GetHPSliderEntityID()
+      local sliderEntity = world:GetEntityByID(sliderEntityId)
+      if sliderEntity then
+        sliderEntity:SetViewVisible(false)
       end
     end
   end
   local trapTaskIDs = {}
-  for _,entityID in ipairs(monsterIDArray) do
+  for _, entityID in ipairs(monsterIDArray) do
     local monsterEntity = world:GetEntityByID(entityID)
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : msrSvc, monsterEntity
-    msrSvc:PlayOneMonsterSpDead(TT, monsterEntity)
-  end
-)
+    GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      msrSvc:PlayOneMonsterSpDead(TT, monsterEntity)
+    end)
     local entityPos = boardServiceRender:GetRealEntityGridPos(monsterEntity)
     local effectDir = damagePos - entityPos
     local beginPos = boardServiceRender:GridPos2RenderPos(entityPos)
@@ -109,44 +90,47 @@ PlayThrowMonsterAndDamageInstruction.DoInstruction = function(self, TT, casterEn
     if effectEntity then
       effectEntity:SetDirection(effectDir)
     end
-    local trajectoryInfo = {startHeight = self._startHeight, endHeight = self._endHeight, totalTime = self._flyTotalTime * 0.001, totalTimeMs = self._flyTotalTime, targetRenderPos = targetPos, currentTime = 0, trajectoryID = self._trajectoryID, trajectoryEntity = effectEntity, hitEntity = targetEntity}
-    ;
-    (table.insert)(trapTaskIDs, ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoFly, self, trajectoryInfo))
+    local trajectoryInfo = {
+      startHeight = self._startHeight,
+      endHeight = self._endHeight,
+      totalTime = self._flyTotalTime * 0.001,
+      totalTimeMs = self._flyTotalTime,
+      targetRenderPos = targetPos,
+      currentTime = 0,
+      trajectoryID = self._trajectoryID,
+      trajectoryEntity = effectEntity,
+      hitEntity = targetEntity
+    }
+    table.insert(trapTaskIDs, GameGlobal.TaskManager():CoreGameStartTask(self._DoFly, self, trajectoryInfo))
     YIELD(TT, self._eachFlyDelayTime)
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(trapTaskIDs) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(trapTaskIDs) do
     YIELD(TT)
-    local hitAnimName = self._hitAnimName
-    local hitFxID = self._hitEffectID
-    local playSkillSvc = world:GetService("PlaySkill")
-    local skillID = resultContainer:GetSkillID()
-    local damageInfoArray = damageResult:GetDamageInfoArray()
-    for __,damageInfo in ipairs(damageInfoArray) do
-      local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(hitAnimName)):SetHandleBeHitParam_HitEffectID(hitFxID)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damagePos)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(false)):SetHandleBeHitParam_SkillID(skillID)):SetHandleBeHitParam_PlayHitBack(false)
-      playSkillSvc:HandleBeHit(TT, beHitParam)
-    end
+  end
+  YIELD(TT)
+  local hitAnimName = self._hitAnimName
+  local hitFxID = self._hitEffectID
+  local playSkillSvc = world:GetService("PlaySkill")
+  local skillID = resultContainer:GetSkillID()
+  local damageInfoArray = damageResult:GetDamageInfoArray()
+  for __, damageInfo in ipairs(damageInfoArray) do
+    local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(hitAnimName):SetHandleBeHitParam_HitEffectID(hitFxID):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damagePos):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(false):SetHandleBeHitParam_SkillID(skillID):SetHandleBeHitParam_PlayHitBack(false)
+    playSkillSvc:HandleBeHit(TT, beHitParam)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayThrowMonsterAndDamageInstruction._DoFly = function(self, TT, trajectoryInfo)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayThrowMonsterAndDamageInstruction:_DoFly(TT, trajectoryInfo)
   local entity = trajectoryInfo.trajectoryEntity
   local effectViewCmpt = entity:View()
   local effectObject = effectViewCmpt:GetGameObject()
   local transWork = effectObject.transform
-  local easeWork = (transWork:DOMove(trajectoryInfo.targetRenderPos, trajectoryInfo.totalTime, false)):SetEase(((DG.Tweening).Ease).InOutSine)
+  local easeWork = transWork:DOMove(trajectoryInfo.targetRenderPos, trajectoryInfo.totalTime, false):SetEase(DG.Tweening.Ease.InOutSine)
   YIELD(TT, trajectoryInfo.totalTimeMs)
   local world = entity:GetOwnerWorld()
   world:DestroyEntity(entity)
-  ;
-  (trajectoryInfo.hitEntity):SetAnimatorControllerTriggers({self._hitAnimName})
+  trajectoryInfo.hitEntity:SetAnimatorControllerTriggers({
+    self._hitAnimName
+  })
   local effectService = world:GetService("Effect")
   effectService:CreateEffect(self._hitEffectID, trajectoryInfo.hitEntity)
 end
-
-

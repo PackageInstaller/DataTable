@@ -1,29 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/find_treasure/data/ui_find_treasure_game_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFindTreasureGameData", Object)
 UIFindTreasureGameData = UIFindTreasureGameData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFindTreasureGameData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local primaryId, seniorId = nil, nil
-  local singleCfg = (HomelandFindTreasureConst.GetSingleCfg)()
+function UIFindTreasureGameData:Constructor()
+  local primaryId, seniorId
+  local singleCfg = HomelandFindTreasureConst.GetSingleCfg()
   if singleCfg then
     primaryId = singleCfg.PrimaryEquipID
     seniorId = singleCfg.SeniorEquipID
   end
   self._isSpecialSingle = false
-  local cfg = nil
-  local normalCount, specialCount = (HomelandFindTreasureConst.GetHasCostSingle)()
-  local primaryCount, seniorCount = (HomelandFindTreasureConst.GetSingleCount)()
+  local cfg
+  local normalCount, specialCount = HomelandFindTreasureConst.GetHasCostSingle()
+  local primaryCount, seniorCount = HomelandFindTreasureConst.GetSingleCount()
   local hasSingle = true
-  if seniorCount > 0 then
-    local cfgs = (Cfg.cfg_component_minigame_explore_reward)({EquipID = seniorId})
+  if 0 < seniorCount then
+    local cfgs = Cfg.cfg_component_minigame_explore_reward({EquipID = seniorId})
     local maxValue = -1
-    for _,v in pairs(cfgs) do
+    for _, v in pairs(cfgs) do
       if maxValue < v.EquipNum then
         maxValue = v.EquipNum
       end
@@ -32,106 +25,72 @@ UIFindTreasureGameData.Constructor = function(self)
     if maxValue < count then
       count = maxValue
     end
-    cfg = (Cfg.cfg_component_minigame_explore_reward)({EquipID = seniorId, EquipNum = count})
+    cfg = Cfg.cfg_component_minigame_explore_reward({EquipID = seniorId, EquipNum = count})
     self._isSpecialSingle = true
-  else
-    do
-      if primaryCount > 0 then
-        local cfgs = (Cfg.cfg_component_minigame_explore_reward)({EquipID = primaryId})
-        local maxValue = -1
-        for _,v in pairs(cfgs) do
-          if maxValue < v.EquipNum then
-            maxValue = v.EquipNum
-          end
-        end
-        local count = normalCount + 1
-        if maxValue < count then
-          count = maxValue
-        end
-        cfg = (Cfg.cfg_component_minigame_explore_reward)({EquipID = primaryId, EquipNum = count})
-      else
-        do
-          hasSingle = false
-          do
-            local tmpCfgs = {}
-            for k,v in pairs((Cfg.cfg_component_minigame_explore_reward)({})) do
-              tmpCfgs[#tmpCfgs + 1] = v
-            end
-            cfg = {}
-            cfg[1] = tmpCfgs[(math.random)(1, #tmpCfgs)]
-            self._id = (cfg[1]).ID
-            self._rewards = (cfg[1]).ScoreBReward
-            if not hasSingle then
-              self._rewards = {}
-            end
-            self._model = (cfg[1]).Model
-            self._totalTime = (cfg[1]).GameTime
-            self._gameTime = 0
-          end
-        end
+  elseif 0 < primaryCount then
+    local cfgs = Cfg.cfg_component_minigame_explore_reward({EquipID = primaryId})
+    local maxValue = -1
+    for _, v in pairs(cfgs) do
+      if maxValue < v.EquipNum then
+        maxValue = v.EquipNum
       end
     end
+    local count = normalCount + 1
+    if maxValue < count then
+      count = maxValue
+    end
+    cfg = Cfg.cfg_component_minigame_explore_reward({EquipID = primaryId, EquipNum = count})
+  else
+    hasSingle = false
+    local tmpCfgs = {}
+    for k, v in pairs(Cfg.cfg_component_minigame_explore_reward({})) do
+      tmpCfgs[#tmpCfgs + 1] = v
+    end
+    cfg = {}
+    cfg[1] = tmpCfgs[math.random(1, #tmpCfgs)]
   end
+  self._id = cfg[1].ID
+  self._rewards = cfg[1].ScoreBReward
+  if not hasSingle then
+    self._rewards = {}
+  end
+  self._model = cfg[1].Model
+  self._totalTime = cfg[1].GameTime
+  self._gameTime = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureGameData.GetId = function(self)
-  -- function num : 0_1
+function UIFindTreasureGameData:GetId()
   return self._id
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureGameData.IsSpecialSingle = function(self)
-  -- function num : 0_2
+function UIFindTreasureGameData:IsSpecialSingle()
   return self._isSpecialSingle
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureGameData.GetRewards = function(self)
-  -- function num : 0_3
+function UIFindTreasureGameData:GetRewards()
   return self._rewards
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureGameData.GetModel = function(self)
-  -- function num : 0_4
+function UIFindTreasureGameData:GetModel()
   return self._model
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureGameData.AddGameTime = function(self, time)
-  -- function num : 0_5
+function UIFindTreasureGameData:AddGameTime(time)
   self._gameTime = self._gameTime + time
-  if self:GetGameTotalTime() < self._gameTime then
+  if self._gameTime > self:GetGameTotalTime() then
     self._gameTime = self:GetGameTotalTime()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureGameData.GetGameTime = function(self)
-  -- function num : 0_6
+function UIFindTreasureGameData:GetGameTime()
   return self._gameTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureGameData.GetGameTotalTime = function(self)
-  -- function num : 0_7
+function UIFindTreasureGameData:GetGameTotalTime()
   return self._totalTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureGameData.SkillCD = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
+function UIFindTreasureGameData:SkillCD()
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
   return cfg.SkillCD / 1000
 end
-
-

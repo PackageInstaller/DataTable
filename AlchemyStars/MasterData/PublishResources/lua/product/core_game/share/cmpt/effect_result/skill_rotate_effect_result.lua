@@ -1,45 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_rotate_effect_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillRotateEffectResult", SkillEffectResultBase)
 SkillRotateEffectResult = SkillRotateEffectResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillRotateEffectResult.Constructor = function(self, targetID, dirOld, dirNew)
-  -- function num : 0_0
+function SkillRotateEffectResult:Constructor(targetID, dirOld, dirNew)
   self._targetID = targetID
   self._dirOld = dirOld:Clone()
   self._dirNew = dirNew:Clone()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRotateEffectResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillRotateEffectResult:GetEffectType()
   return SkillEffectType.Rotate
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRotateEffectResult.GetTargetID = function(self)
-  -- function num : 0_2
+function SkillRotateEffectResult:GetTargetID()
   return self._targetID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRotateEffectResult.GetDirOld = function(self)
-  -- function num : 0_3
+function SkillRotateEffectResult:GetDirOld()
   return self._dirOld
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRotateEffectResult.GetDirNew = function(self)
-  -- function num : 0_4
+function SkillRotateEffectResult:GetDirNew()
   return self._dirNew
 end
-
-

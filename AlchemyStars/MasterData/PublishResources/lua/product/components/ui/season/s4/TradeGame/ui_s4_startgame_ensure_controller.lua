@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/ui_s4_startgame_ensure_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4StartGameEnsureController", UIController)
 UIS4StartGameEnsureController = UIS4StartGameEnsureController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4StartGameEnsureController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIS4StartGameEnsureController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4StartGameEnsureController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIS4StartGameEnsureController:OnShow(uiParams)
   self._tradeData = uiParams[1]
   self.OnChooseHarborId = uiParams[2]
   self.state = uiParams[3]
@@ -24,79 +14,51 @@ UIS4StartGameEnsureController.OnShow = function(self, uiParams)
   self:InitData()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4StartGameEnsureController.InitWidget = function(self)
-  -- function num : 0_2
+function UIS4StartGameEnsureController:InitWidget()
   self.stateCount = self:GetUIComponent("UILocalizationText", "StateCount")
   self._headList = self:GetUIComponent("UISelectObjectPath", "headList")
   self.cdTimeTxt = self:GetUIComponent("UILocalizationText", "CdTime")
   self._shipName = self:GetUIComponent("UILocalizationText", "txt")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4StartGameEnsureController.InitData = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self._crews = (self._tradeData):GetCrewsByHarbourID(self.OnChooseHarborId)
-  self._crewItemTb = (self._headList):SpawnObjects("UIS4TradeCrewManagerItem", 3)
-  for i,item in pairs(self._crewItemTb) do
-    local crew = nil
-    if i <= (table.count)(self._crews) then
-      crew = (self._crews)[i]
+function UIS4StartGameEnsureController:InitData()
+  self._crews = self._tradeData:GetCrewsByHarbourID(self.OnChooseHarborId)
+  self._crewItemTb = self._headList:SpawnObjects("UIS4TradeCrewManagerItem", 3)
+  for i, item in pairs(self._crewItemTb) do
+    local crew
+    if i <= table.count(self._crews) then
+      crew = self._crews[i]
     end
     item:SetData(crew)
     item:SetLayout(156, 164, Vector2(156, 164), Vector3(1.4, 1.4, 1.4))
   end
   local shipnamestr = "str_season_s4_trade_ship_" .. self.OnChooseHarborId
-  ;
-  (self._shipName):SetText((StringTable.Get)(shipnamestr))
-  ;
-  (self.stateCount):SetText(self.state .. "%")
-  ;
-  (self.cdTimeTxt):SetText(self.cdTime)
+  self._shipName:SetText(StringTable.Get(shipnamestr))
+  self.stateCount:SetText(self.state .. "%")
+  self.cdTimeTxt:SetText(self.cdTime)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4StartGameEnsureController.EnsureBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  if (table.count)(self._crews) == 0 then
-    local title = (StringTable.Get)("str_season_s4_trade_sail_confirm")
-    ;
-    (PopupManager.Alert)("UIS4MessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", title, function()
-    -- function num : 0_4_0 , upvalues : self
-    self:EnsureCallback()
-  end
-)
-  else
-    do
+function UIS4StartGameEnsureController:EnsureBtnOnClick(go)
+  if table.count(self._crews) == 0 then
+    local title = StringTable.Get("str_season_s4_trade_sail_confirm")
+    PopupManager.Alert("UIS4MessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", title, function()
       self:EnsureCallback()
-      self:CloseDialog()
-    end
+    end)
+  else
+    self:EnsureCallback()
+    self:CloseDialog()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4StartGameEnsureController.EnsureCallback = function(self)
-  -- function num : 0_5
+function UIS4StartGameEnsureController:EnsureCallback()
   self:ShowDialog("UIS4TradeGameMainController", self._tradeData, self.OnChooseHarborId)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4StartGameEnsureController.CancelBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIS4StartGameEnsureController:CancelBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4StartGameEnsureController.CloseBtnOnClick = function(self, go)
-  -- function num : 0_7
+function UIS4StartGameEnsureController:CloseBtnOnClick(go)
   self:CloseDialog()
 end
-
-

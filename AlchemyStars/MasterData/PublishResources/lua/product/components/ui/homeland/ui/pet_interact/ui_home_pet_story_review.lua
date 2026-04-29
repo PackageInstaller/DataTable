@@ -1,39 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/pet_interact/ui_home_pet_story_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomePetStoryReview", UIController)
 UIHomePetStoryReview = UIHomePetStoryReview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomePetStoryReview.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomePetStoryReview:OnShow(uiParams)
   self._content = uiParams[1]
   self._itemCountPerRow = 1
   self._listCount = #self._content
   self:InitReviewList()
-  ;
-  (self._dialogReviewScrollView):MovePanelToItemIndex((table.count)(self._content) - 1, 0)
+  self._dialogReviewScrollView:MovePanelToItemIndex(table.count(self._content) - 1, 0)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetStoryReview.InitReviewList = function(self)
-  -- function num : 0_1
+function UIHomePetStoryReview:InitReviewList()
   self._dialogReviewScrollView = self:GetUIComponent("UIDynamicScrollView", "scrollView")
-  ;
-  (self._dialogReviewScrollView):InitListView(self._listCount, function(scrollView, index)
-    -- function num : 0_1_0 , upvalues : self
+  self._dialogReviewScrollView:InitListView(self._listCount, function(scrollView, index)
     return self:_InitScrollView(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetStoryReview._InitScrollView = function(self, scrollView, index)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomePetStoryReview:_InitScrollView(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -49,31 +32,19 @@ UIHomePetStoryReview._InitScrollView = function(self, scrollView, index)
     local itemIndex = index * self._itemCountPerRow + i
     self:_ShowItem(item, itemIndex)
   end
-  local rt = (item.gameObject):GetComponent("RectTransform")
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(rt)
+  local rt = item.gameObject:GetComponent("RectTransform")
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(rt)
   return item
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetStoryReview._ShowItem = function(self, item, idx)
-  -- function num : 0_3
-  local data = (self._content)[idx]
+function UIHomePetStoryReview:_ShowItem(item, idx)
+  local data = self._content[idx]
   local showLine = idx < self._listCount
   item:SetData(data, showLine, function(go)
-    -- function num : 0_3_0 , upvalues : self
     self:bgOnClick()
-  end
-)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetStoryReview.bgOnClick = function(self, go)
-  -- function num : 0_4
+function UIHomePetStoryReview:bgOnClick(go)
   self:CloseDialog()
 end
-
-

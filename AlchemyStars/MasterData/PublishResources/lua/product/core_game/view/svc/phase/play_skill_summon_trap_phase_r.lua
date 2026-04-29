@@ -1,35 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_summon_trap_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillSummonTrapPhase", PlaySkillPhaseBase)
 PlaySkillSummonTrapPhase = PlaySkillSummonTrapPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillSummonTrapPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillSummonTrapPhase:PlayFlight(TT, casterEntity, phaseParam)
   local summonTrapParam = phaseParam
   local showTime = summonTrapParam:GetShowTimeDelay()
-  if showTime > 0 then
+  if 0 < showTime then
     YIELD(TT, showTime)
   end
-  local trapServiceRender = (self._world):GetService("TrapRender")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local trapServiceRender = self._world:GetService("TrapRender")
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SummonTrap)
   if not resultArray then
-    (Log.fatal)("### PlaySkillSummonTrapPhase SummonTrap result nil")
-    return 
+    Log.fatal("### PlaySkillSummonTrapPhase SummonTrap result nil")
+    return
   end
-  for _,result in ipairs(resultArray) do
+  for _, result in ipairs(resultArray) do
     local trapIDList = result:GetTrapIDList()
     for i = 1, #trapIDList do
-      local trapEntity = (self._world):GetEntityByID(trapIDList[i])
+      local trapEntity = self._world:GetEntityByID(trapIDList[i])
       trapServiceRender:CreateSingleTrapRender(TT, trapEntity, true)
-      trapEntity:SetPosition(Vector2((result:GetPos()).x, (result:GetPos()).y))
+      trapEntity:SetPosition(Vector2(result:GetPos().x, result:GetPos().y))
     end
   end
 end
-
-

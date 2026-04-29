@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_we_chat/ui_we_chat_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWeChatCell", UICustomWidget)
 local UIWeChatCellState = {Wait = 1, Normal = 2}
 _enum("UIWeChatCellState", UIWeChatCellState)
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
 
-UIWeChatCell.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWeChatCell:Constructor()
   self.defaultHeight = 76
   self.module = self:GetModule(QuestChatModule)
-  self.weChatProxy = (self.module):GetWeChatProxy()
+  self.weChatProxy = self.module:GetWeChatProxy()
   self._padding_left = 150
   self._padding_right = 100
   self._allWidth = 1227
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeChatCell.OnShow = function(self)
-  -- function num : 0_1
-  self.rect = (self:GetGameObject()):GetComponent("RectTransform")
+function UIWeChatCell:OnShow()
+  self.rect = self:GetGameObject():GetComponent("RectTransform")
   self.leftGO = self:GetGameObject("g_left")
   self.leftTxt = self:GetUIComponent("UILocalizationText", "lefttxt")
   self.leftNameTxt = self:GetUIComponent("UILocalizationText", "leftname")
@@ -38,11 +28,14 @@ UIWeChatCell.OnShow = function(self)
   self.voiceBtnName = self:GetUIComponent("UILocalizationText", "voicebtnname")
   self.voiceName = self:GetUIComponent("UILocalizationText", "voicename")
   self.voiceRed = self:GetGameObject("voicered")
-  ;
-  (self.voiceRed):SetActive(false)
+  self.voiceRed:SetActive(false)
   self.startGO = self:GetGameObject("g_start")
   self.voiceNumTxt = self:GetUIComponent("UILocalizationText", "voicenum")
-  self.voiceAnisGO = {self:GetGameObject("ani1"), self:GetGameObject("ani2"), self:GetGameObject("ani3")}
+  self.voiceAnisGO = {
+    self:GetGameObject("ani1"),
+    self:GetGameObject("ani2"),
+    self:GetGameObject("ani3")
+  }
   self.leftTxtContentSize = self:GetUIComponent("ContentSizeFitter", "lefttxt")
   self.rightTxtContentSize = self:GetUIComponent("ContentSizeFitter", "righttxt")
   self.leftBtnGO = self:GetGameObject("leftbtngoempty")
@@ -56,145 +49,110 @@ UIWeChatCell.OnShow = function(self)
   self.ani2 = self:GetUIComponent("Animator", "playAnim2")
   self.aniimage1 = self:GetGameObject("image1")
   self.aniimage2 = self:GetGameObject("image2")
-  -- DECOMPILER ERROR at PC159: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.ani1).enabled = false
-  -- DECOMPILER ERROR at PC161: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.ani2).enabled = false
+  self.ani1.enabled = false
+  self.ani2.enabled = false
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeChatCell.OnHide = function(self)
-  -- function num : 0_2
+function UIWeChatCell:OnHide()
   self:StopTimer()
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeChatCell._DoEscape = function(self, strContent)
-  -- function num : 0_3 , upvalues : _ENV
-  if (string.isnullorempty)(self.roleName) then
-    self.roleName = ((GameGlobal.GetModule)(RoleModule)):GetName()
+function UIWeChatCell:_DoEscape(strContent)
+  if string.isnullorempty(self.roleName) then
+    self.roleName = GameGlobal.GetModule(RoleModule):GetName()
   end
-  strContent = (string.gsub)(strContent, "PlayerName", self.roleName)
+  strContent = string.gsub(strContent, "PlayerName", self.roleName)
   return strContent
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeChatCell.SetData = function(self, talk, weChatRole)
-  -- function num : 0_4 , upvalues : _ENV
+function UIWeChatCell:SetData(talk, weChatRole)
   self:StopTimer()
   if weChatRole then
     self.weChatRole = weChatRole
   end
-  local name = (self.weChatRole):GetName() .. ": "
+  local name = self.weChatRole:GetName() .. ": "
   self.talk = talk
   local txt = ""
   if talk.talkType ~= WeChatTalkType.Start then
-    txt = self:_DoEscape((self.talk).txt)
+    txt = self:_DoEscape(self.talk.txt)
   end
-  ;
-  (self.leftGO):SetActive(talk.talkType == WeChatTalkType.Left)
-  ;
-  (self.rightGO):SetActive(talk.talkType == WeChatTalkType.Right)
-  ;
-  (self.voiceGO):SetActive(talk.talkType == WeChatTalkType.Voice)
-  ;
-  (self.startGO):SetActive(talk.talkType == WeChatTalkType.Start)
+  self.leftGO:SetActive(talk.talkType == WeChatTalkType.Left)
+  self.rightGO:SetActive(talk.talkType == WeChatTalkType.Right)
+  self.voiceGO:SetActive(talk.talkType == WeChatTalkType.Voice)
+  self.startGO:SetActive(talk.talkType == WeChatTalkType.Start)
   if talk.talkType == WeChatTalkType.Left then
     if talk.readed == false then
-      (self.leftBtnGO):SetActive(false)
+      self.leftBtnGO:SetActive(false)
       self.index = 1
-      self.str = (StringTable.Get)("str_quest_chat_xinhao_chuanshuzhong")
-      self.strPool = {self.str .. ".", self.str .. "..", self.str .. "..."}
-      self.timer = ((GameGlobal.Timer)()):AddEventTimes(100, TimerTriggerCount.Infinite, self.OnTimerLoop, self)
+      self.str = StringTable.Get("str_quest_chat_xinhao_chuanshuzhong")
+      self.strPool = {
+        self.str .. ".",
+        self.str .. "..",
+        self.str .. "..."
+      }
+      self.timer = GameGlobal.Timer():AddEventTimes(100, TimerTriggerCount.Infinite, self.OnTimerLoop, self)
       self.height = self.defaultHeight
-      ;
-      (self.leftNameTxt):SetText(name)
+      self.leftNameTxt:SetText(name)
       self:OnTimerLoop()
     else
       if talk.jumpId then
-        (self.leftBtnGO):SetActive(true)
+        self.leftBtnGO:SetActive(true)
         if talk.isClickJump == false then
-          (self.leftBtnDarkGO):SetActive(false)
-          ;
-          (self.leftBtnLightGO):SetActive(true)
+          self.leftBtnDarkGO:SetActive(false)
+          self.leftBtnLightGO:SetActive(true)
         else
-          (self.leftBtnDarkGO):SetActive(true)
-          ;
-          (self.leftBtnLightGO):SetActive(false)
+          self.leftBtnDarkGO:SetActive(true)
+          self.leftBtnLightGO:SetActive(false)
         end
       else
-        (self.leftBtnGO):SetActive(false)
+        self.leftBtnGO:SetActive(false)
       end
-      ;
-      (self.leftNameTxt):SetText(name)
-      ;
-      (self.leftTxt):SetText(txt)
+      self.leftNameTxt:SetText(name)
+      self.leftTxt:SetText(txt)
       self.height = self:CalcHeight(talk.talkType)
     end
   elseif talk.talkType == WeChatTalkType.Right then
     if talk.readed == false then
-      (self.rightBtnGO):SetActive(false)
+      self.rightBtnGO:SetActive(false)
     elseif talk.jumpId then
-      (self.rightBtnGO):SetActive(true)
+      self.rightBtnGO:SetActive(true)
       if talk.isClickJump == false then
-        (self.rightBtnDarkGO):SetActive(false)
-        ;
-        (self.rightBtnLightGO):SetActive(true)
+        self.rightBtnDarkGO:SetActive(false)
+        self.rightBtnLightGO:SetActive(true)
       else
-        (self.rightBtnDarkGO):SetActive(true)
-        ;
-        (self.rightBtnLightGO):SetActive(false)
+        self.rightBtnDarkGO:SetActive(true)
+        self.rightBtnLightGO:SetActive(false)
       end
     else
-      (self.rightBtnGO):SetActive(false)
+      self.rightBtnGO:SetActive(false)
     end
-    ;
-    (self.rightTxt):SetText(txt)
+    self.rightTxt:SetText(txt)
     self.height = self:CalcHeight(talk.talkType)
   elseif talk.talkType == WeChatTalkType.Voice then
-    (self.voiceName):SetText(name)
-    ;
-    (self.voiceBtnName):SetText(name)
-    ;
-    (self.voiceNumTxt):SetText(self:GetAudioLength())
+    self.voiceName:SetText(name)
+    self.voiceBtnName:SetText(name)
+    self.voiceNumTxt:SetText(self:GetAudioLength())
     self.height = self:CalcHeight(talk.talkType)
   elseif talk.talkType == WeChatTalkType.Start then
     self.height = self:CalcHeight(talk.talkType)
   end
-  -- DECOMPILER ERROR at PC248: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.rect).sizeDelta = Vector2(self._allWidth, self.height)
-  do return self.height end
-  -- DECOMPILER ERROR: 16 unprocessed JMP targets
+  self.rect.sizeDelta = Vector2(self._allWidth, self.height)
+  return self.height
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeChatCell.OnTimerLoop = function(self)
-  -- function num : 0_5
+function UIWeChatCell:OnTimerLoop()
   if self.leftTxt then
-    (self.leftTxt):SetText((self.strPool)[self.index])
+    self.leftTxt:SetText(self.strPool[self.index])
     self.index = self.index + 1
-    if #self.strPool < self.index then
+    if self.index > #self.strPool then
       self.index = 1
     end
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeChatCell.OnVoiceAniLoop = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIWeChatCell:OnVoiceAniLoop()
   if self.voiceAnisGO then
-    for index,value in ipairs(self.voiceAnisGO) do
+    for index, value in ipairs(self.voiceAnisGO) do
       if value then
         if index <= self.voiceAniIndex then
           value:SetActive(true)
@@ -204,298 +162,191 @@ UIWeChatCell.OnVoiceAniLoop = function(self)
       end
     end
     self.voiceAniIndex = self.voiceAniIndex + 1
-    if #self.voiceAnisGO < self.voiceAniIndex then
+    if self.voiceAniIndex > #self.voiceAnisGO then
       self.voiceAniIndex = 1
     end
   end
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeChatCell.StopTimer = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIWeChatCell:StopTimer()
   if self.timer then
-    ((GameGlobal.Timer)()):CancelEvent(self.timer)
+    GameGlobal.Timer():CancelEvent(self.timer)
     self.timer = nil
   end
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeChatCell.voiceOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local currentTimeMS = (self._timeService):GetCurrentTimeMs()
+function UIWeChatCell:voiceOnClick()
+  local currentTimeMS = self._timeService:GetCurrentTimeMs()
   if currentTimeMS - self._lastClickTime < BattleConst.DoubleClickIntervalTime then
-    return 
+    return
   end
   self._lastClickTime = currentTimeMS
   local module = self:GetModule(QuestChatModule)
   local clientWeChat = module:GetClientWeChat()
-  clientWeChat:ChangeState((self.data):GetStartvoiceTime())
+  clientWeChat:ChangeState(self.data:GetStartvoiceTime())
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeChatCell.leftbtngoOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  if self.talk and (self.talk).talkType == WeChatTalkType.Left and (self.talk).jumpId then
+function UIWeChatCell:leftbtngoOnClick()
+  if self.talk and self.talk.talkType == WeChatTalkType.Left and self.talk.jumpId then
     self:ShowDialog("UIWeChatJumpController", self.talk)
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-    if (self.talk).isClickJump == false then
-      (self.talk).isClickJump = true
-      ;
-      (self.leftBtnDarkGO):SetActive(true)
-      ;
-      (self.leftBtnLightGO):SetActive(false)
+    if self.talk.isClickJump == false then
+      self.talk.isClickJump = true
+      self.leftBtnDarkGO:SetActive(true)
+      self.leftBtnLightGO:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeChatCell.rightbtngoOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  if self.talk and (self.talk).talkType == WeChatTalkType.Right and (self.talk).jumpId then
+function UIWeChatCell:rightbtngoOnClick()
+  if self.talk and self.talk.talkType == WeChatTalkType.Right and self.talk.jumpId then
     self:ShowDialog("UIWeChatJumpController", self.talk)
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-    if (self.talk).isClickJump == false then
-      (self.talk).isClickJump = true
-      ;
-      (self.rightBtnDarkGO):SetActive(true)
-      ;
-      (self.rightBtnLightGO):SetActive(false)
+    if self.talk.isClickJump == false then
+      self.talk.isClickJump = true
+      self.rightBtnDarkGO:SetActive(true)
+      self.rightBtnLightGO:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeChatCell.CalcHeight = function(self, talkType)
-  -- function num : 0_11 , upvalues : _ENV
+function UIWeChatCell:CalcHeight(talkType)
   local height = 0
   if talkType == WeChatTalkType.Left then
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.leftNameTxtRect)
-    local textWidth = self._allWidth - self._padding_left - self._padding_right - ((self.leftNameTxtRect).sizeDelta).x
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.leftTxtRect).sizeDelta = Vector2(textWidth, ((self.leftTxtRect).sizeDelta).y)
-    ;
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.leftTxtRect)
-    height = ((self.leftTxtRect).sizeDelta).y + 46
-    if (self.leftBtnGO).activeInHierarchy then
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.leftNameTxtRect)
+    local textWidth = self._allWidth - self._padding_left - self._padding_right - self.leftNameTxtRect.sizeDelta.x
+    self.leftTxtRect.sizeDelta = Vector2(textWidth, self.leftTxtRect.sizeDelta.y)
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.leftTxtRect)
+    height = self.leftTxtRect.sizeDelta.y + 46
+    if self.leftBtnGO.activeInHierarchy then
       local _txt = self.leftTxt
-      local settings = _txt:GetGenerationSettings(((_txt.rectTransform).rect).size)
+      local settings = _txt:GetGenerationSettings(_txt.rectTransform.rect.size)
       local tg = _txt.cachedTextGenerator
       tg:Invalidate()
       tg:Populate(_txt.text, settings)
-      ;
-      ((UnityEngine.Canvas).ForceUpdateCanvases)()
-      local line = (tg.lines)[tg.lineCount - 1]
-      local sLastLine = (EngineGameHelper.SubString)(_txt.text, line.startCharIdx, -1)
+      UnityEngine.Canvas.ForceUpdateCanvases()
+      local line = tg.lines[tg.lineCount - 1]
+      local sLastLine = EngineGameHelper.SubString(_txt.text, line.startCharIdx, -1)
       sLastLine = self:GetStringWithoutMark(sLastLine)
       local width = tg:GetPreferredWidth(sLastLine, settings)
       width = width / settings.scaleFactor
       local posY = line.topY / settings.scaleFactor
-      -- DECOMPILER ERROR at PC87: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self.leftBtnRT).anchoredPosition = Vector2(width, posY)
+      self.leftBtnRT.anchoredPosition = Vector2(width, posY)
     end
-  else
-    do
-      if talkType == WeChatTalkType.Right then
-        local textWidth = 840
-        -- DECOMPILER ERROR at PC103: Confused about usage of register: R4 in 'UnsetPending'
-
-        if textWidth <= (self.rightTxt).preferredWidth then
-          (self.rightTxtRect).sizeDelta = Vector2(840, 0)
-          -- DECOMPILER ERROR at PC110: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (self.rightTxtContentSize).horizontalFit = (((UnityEngine.UI).ContentSizeFitter).FitMode).Unconstrained
-        else
-          -- DECOMPILER ERROR at PC118: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (self.rightTxtContentSize).horizontalFit = (((UnityEngine.UI).ContentSizeFitter).FitMode).PreferredSize
-        end
-        ;
-        (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.rightTxtRect)
-        height = ((self.rightTxtRect).sizeDelta).y + 46
-        if (self.rightBtnGO).activeInHierarchy then
-          local _txt = self.rightTxt
-          local settings = _txt:GetGenerationSettings(((_txt.rectTransform).rect).size)
-          local tg = _txt.cachedTextGenerator
-          tg:Invalidate()
-          tg:Populate(_txt.text, settings)
-          ;
-          ((UnityEngine.Canvas).ForceUpdateCanvases)()
-          local line = (tg.lines)[tg.lineCount - 1]
-          local sLastLine = (EngineGameHelper.SubString)(_txt.text, line.startCharIdx, -1)
-          sLastLine = self:GetStringWithoutMark(sLastLine)
-          local width = tg:GetPreferredWidth(sLastLine, settings)
-          width = width / settings.scaleFactor
-          local posY = line.topY / settings.scaleFactor
-          ;
-          ((self.rightBtnGO):GetComponent("RectTransform")).anchoredPosition = Vector2(-(width), posY)
-        end
-      else
-        do
-          if talkType == WeChatTalkType.Voice then
-            if (self.talk).readed then
-              (self.voiceTxtGO):SetActive(true)
-              ;
-              (self.voiceRed):SetActive(false)
-              local txt = self:_DoEscape((self.talk).txt)
-              ;
-              (self.voiceTxt):SetText(txt)
-              ;
-              (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.voiceTxtRect)
-              height = ((self.voiceTxtRect).sizeDelta).y + 30 + 46 + 46
-            else
-              do
-                height = 76
-                ;
-                (self.voiceTxtGO):SetActive(false)
-                ;
-                (self.voiceRed):SetActive(true)
-                if talkType == WeChatTalkType.Start then
-                  height = 35
-                end
-                return height
-              end
-            end
-          end
-        end
-      end
+  elseif talkType == WeChatTalkType.Right then
+    local textWidth = 840
+    if textWidth <= self.rightTxt.preferredWidth then
+      self.rightTxtRect.sizeDelta = Vector2(840, 0)
+      self.rightTxtContentSize.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.Unconstrained
+    else
+      self.rightTxtContentSize.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.PreferredSize
     end
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.rightTxtRect)
+    height = self.rightTxtRect.sizeDelta.y + 46
+    if self.rightBtnGO.activeInHierarchy then
+      local _txt = self.rightTxt
+      local settings = _txt:GetGenerationSettings(_txt.rectTransform.rect.size)
+      local tg = _txt.cachedTextGenerator
+      tg:Invalidate()
+      tg:Populate(_txt.text, settings)
+      UnityEngine.Canvas.ForceUpdateCanvases()
+      local line = tg.lines[tg.lineCount - 1]
+      local sLastLine = EngineGameHelper.SubString(_txt.text, line.startCharIdx, -1)
+      sLastLine = self:GetStringWithoutMark(sLastLine)
+      local width = tg:GetPreferredWidth(sLastLine, settings)
+      width = width / settings.scaleFactor
+      local posY = line.topY / settings.scaleFactor
+      self.rightBtnGO:GetComponent("RectTransform").anchoredPosition = Vector2(-width, posY)
+    end
+  elseif talkType == WeChatTalkType.Voice then
+    if self.talk.readed then
+      self.voiceTxtGO:SetActive(true)
+      self.voiceRed:SetActive(false)
+      local txt = self:_DoEscape(self.talk.txt)
+      self.voiceTxt:SetText(txt)
+      UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.voiceTxtRect)
+      height = self.voiceTxtRect.sizeDelta.y + 30 + 46 + 46
+    else
+      height = 76
+      self.voiceTxtGO:SetActive(false)
+      self.voiceRed:SetActive(true)
+    end
+  elseif talkType == WeChatTalkType.Start then
+    height = 35
   end
+  return height
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeChatCell.getByteCount = function(self, str, idx)
-  -- function num : 0_12 , upvalues : _ENV
-  local curByte = (string.byte)(str, idx)
+function UIWeChatCell:getByteCount(str, idx)
+  local curByte = string.byte(str, idx)
   local byteCount = 0
   if curByte < 128 then
     byteCount = 1
+  elseif curByte < 224 then
+    byteCount = 2
+  elseif curByte < 240 then
+    byteCount = 3
+  elseif curByte < 248 then
+    byteCount = 4
+  elseif curByte < 252 then
+    byteCount = 5
+  elseif curByte < 254 then
+    byteCount = 6
   else
-    if curByte < 224 then
-      byteCount = 2
-    else
-      if curByte < 240 then
-        byteCount = 3
-      else
-        if curByte < 248 then
-          byteCount = 4
-        else
-          if curByte < 252 then
-            byteCount = 5
-          else
-            if curByte < 254 then
-              byteCount = 6
-            else
-              ;
-              (Log.debug)("###[UIWeChatCell] getByteCount fail !")
-            end
-          end
-        end
-      end
-    end
+    Log.debug("###[UIWeChatCell] getByteCount fail !")
   end
   return byteCount, curByte
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeChatCell.GetStringWithoutMark = function(self, s)
-  -- function num : 0_13 , upvalues : _ENV
-  local ret = (string.gsub)(s, "</color>", "")
-  ret = (string.gsub)(ret, "<color=#%x*>", "")
+function UIWeChatCell:GetStringWithoutMark(s)
+  local ret = string.gsub(s, "</color>", "")
+  ret = string.gsub(ret, "<color=#%x*>", "")
   return ret
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeChatCell.btnvoiceOnClick = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-  if self.talk and (self.talk).talkType == WeChatTalkType.Voice then
-    (self.ani1).enabled = true
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.ani2).enabled = true
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.WeChatPlayVoice, (self.talk).voiceId, self)
-    if (self.talk).readed == false then
-      (self.weChatProxy):SendTalkReaded((self.weChatRole):GetSpeakerId(), (self.talk).chatId, (self.talk).talkId, (self.talk).triggerIndex, false, true)
+function UIWeChatCell:btnvoiceOnClick()
+  if self.talk and self.talk.talkType == WeChatTalkType.Voice then
+    self.ani1.enabled = true
+    self.ani2.enabled = true
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.WeChatPlayVoice, self.talk.voiceId, self)
+    if self.talk.readed == false then
+      self.weChatProxy:SendTalkReaded(self.weChatRole:GetSpeakerId(), self.talk.chatId, self.talk.talkId, self.talk.triggerIndex, false, true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeChatCell.StartVoiceAni = function(self)
-  -- function num : 0_15
+function UIWeChatCell:StartVoiceAni()
   self.voiceAniIndex = 1
   self:OnVoiceAniLoop()
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeChatCell.StopVoiceAni = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIWeChatCell:StopVoiceAni()
   self.voiceAniIndex = 1
   if self.voiceAnisGO then
-    for index,value in ipairs(self.voiceAnisGO) do
+    for index, value in ipairs(self.voiceAnisGO) do
       if value then
         value:SetActive(true)
       end
     end
   end
-  do
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.ani1).enabled = false
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.ani2).enabled = false
-  end
+  self.ani1.enabled = false
+  self.ani2.enabled = false
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeChatCell.GetAudioLength = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIWeChatCell:GetAudioLength()
   if USEADX2AUDIO then
-    local length = (AudioHelperController.Adx2_GetVoiceSecLengthSyncReq)((self.talk).voiceId)
+    local length = AudioHelperController.Adx2_GetVoiceSecLengthSyncReq(self.talk.voiceId)
     if length ~= -1 then
-      return (math.floor)(length) .. "\'\'"
+      return math.floor(length) .. "''"
     end
   else
-    do
-      local config = (AudioHelperController.GetCfgAudio)((self.talk).voiceId)
-      if config then
-        local request = (ResourceManager:GetInstance()):SyncLoadAsset(config.ResName, LoadType.Audio)
-        local length = (request.Obj).length
-        if request then
-          request:Dispose()
-        end
-        return (math.floor)(length) .. "\'\'"
+    local config = AudioHelperController.GetCfgAudio(self.talk.voiceId)
+    if config then
+      local request = ResourceManager:GetInstance():SyncLoadAsset(config.ResName, LoadType.Audio)
+      local length = request.Obj.length
+      if request then
+        request:Dispose()
       end
-      do
-        return 4
-      end
+      return math.floor(length) .. "''"
     end
   end
+  return 4
 end
-
-

@@ -1,64 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/ui_luckland_card_detail_popup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandCardDetailPopUp", UIController)
 UILuckLandCardDetailPopUp = UILuckLandCardDetailPopUp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandCardDetailPopUp.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UILuckLandCardDetailPopUp:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardDetailPopUp.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UILuckLandCardDetailPopUp:OnShow(uiParams)
   self:InitWidget()
   self.cardData = uiParams[1]
   self:RefreshCardDetail()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardDetailPopUp.InitWidget = function(self)
-  -- function num : 0_2
+function UILuckLandCardDetailPopUp:InitWidget()
   self._animObj = self:GetGameObject("_anim")
   self.characterNameText = self:GetUIComponent("UILocalizationText", "CharacterNameText")
   self.skillTipsText = self:GetUIComponent("UILocalizationText", "SkillTipsText")
   self._anim = self:GetUIComponent("Animation", "_anim")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardDetailPopUp.RefreshCardDetail = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self.CardAreaList = (UIWidgetHelper.SpawnObjects)(self, "Card", "UILuckLandSingleCard", 1)
+function UILuckLandCardDetailPopUp:RefreshCardDetail()
+  self.CardAreaList = UIWidgetHelper.SpawnObjects(self, "Card", "UILuckLandSingleCard", 1)
   for i = 1, #self.CardAreaList do
-    local item = (self.CardAreaList)[i]
+    local item = self.CardAreaList[i]
     item:SetData(self.cardData)
   end
-  ;
-  (self.characterNameText):SetText((StringTable.Get)(((self.cardData):Cfg()).CardName))
-  ;
-  (self.skillTipsText):SetText((StringTable.Get)(((self.cardData):Cfg()).CardTips))
-  local cardStarCount = ((self.cardData):Cfg()).CardStar
-  self.CardAreaList = (UIWidgetHelper.SpawnObjects)(self, "Star", "UILuckLandStarItem", cardStarCount)
+  self.characterNameText:SetText(StringTable.Get(self.cardData:Cfg().CardName))
+  self.skillTipsText:SetText(StringTable.Get(self.cardData:Cfg().CardTips))
+  local cardStarCount = self.cardData:Cfg().CardStar
+  self.CardAreaList = UIWidgetHelper.SpawnObjects(self, "Star", "UILuckLandStarItem", cardStarCount)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardDetailPopUp.BgOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._anim):Play("uieff_UILuckLandCardDetailPopUp_out")
-  ;
-  ((GameGlobal.Timer)()):AddEvent(300, function()
-    -- function num : 0_4_0 , upvalues : self
+function UILuckLandCardDetailPopUp:BgOnClick(go)
+  self._anim:Play("uieff_UILuckLandCardDetailPopUp_out")
+  GameGlobal.Timer():AddEvent(300, function()
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

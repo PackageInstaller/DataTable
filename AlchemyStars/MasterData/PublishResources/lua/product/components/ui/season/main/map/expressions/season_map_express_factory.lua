@@ -1,54 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/expressions/season_map_express_factory.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapExpressFactory", Singleton)
 SeasonMapExpressFactory = SeasonMapExpressFactory
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapExpressFactory.Constructor = function(self)
-  -- function num : 0_0
+function SeasonMapExpressFactory:Constructor()
   self._express = {}
   self:_Register()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressFactory._RegistorExpress = function(self, expressType, express)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._express)[expressType]
-  if e ~= nil then
-    (Log.error)("SeasonMapExpress is exist! expressType:", expressType)
-    return 
+function SeasonMapExpressFactory:_RegistorExpress(expressType, express)
+  local e = self._express[expressType]
+  if nil ~= e then
+    Log.error("SeasonMapExpress is exist! expressType:", expressType)
+    return
   end
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._express)[expressType] = express
+  self._express[expressType] = express
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressFactory.CreateMapExpress = function(self, eventPoint, expressType, cfg)
-  -- function num : 0_2 , upvalues : _ENV
-  local type = (self._express)[expressType]
+function SeasonMapExpressFactory:CreateMapExpress(eventPoint, expressType, cfg)
+  local type = self._express[expressType]
   if not type then
-    (Log.error)("SeasonMapExpress is not exist! expressType:", expressType)
-    return 
+    Log.error("SeasonMapExpress is not exist! expressType:", expressType)
+    return
   end
   local express = type:New(cfg, eventPoint)
   if not express then
-    (Log.error)("SeasonMapExpress create fail! expressType:", expressType)
-    return 
+    Log.error("SeasonMapExpress create fail! expressType:", expressType)
+    return
   end
   return express
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressFactory._Register = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonMapExpressFactory:_Register()
   self:_RegistorExpress(SeasonExpressType.Level, SeasonMapExpressLevel)
   self:_RegistorExpress(SeasonExpressType.Animation, SeasonMapExpressAnimation)
   self:_RegistorExpress(SeasonExpressType.Effect, SeasonMapExpressEffect)
@@ -69,5 +50,3 @@ SeasonMapExpressFactory._Register = function(self)
   self:_RegistorExpress(SeasonExpressType.Story3D, SeasonMapExpressStory3D)
   self:_RegistorExpress(SeasonExpressType.Function, SeasonMapExpressFunction)
 end
-
-

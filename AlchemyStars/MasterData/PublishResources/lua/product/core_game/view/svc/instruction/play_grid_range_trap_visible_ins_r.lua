@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_grid_range_trap_visible_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayGridRangeTrapVisbleInstruction", BaseInstruction)
 PlayGridRangeTrapVisbleInstruction = PlayGridRangeTrapVisbleInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayGridRangeTrapVisbleInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayGridRangeTrapVisbleInstruction:Constructor(paramList)
   local param = tonumber(paramList.visible)
   if param == 1 then
     self._visible = true
@@ -19,10 +12,7 @@ PlayGridRangeTrapVisbleInstruction.Constructor = function(self, paramList)
   self._trapID = tonumber(paramList.trapID) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridRangeTrapVisbleInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayGridRangeTrapVisbleInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local scopeGridRange = phaseContext:GetScopeGridRange()
   if not scopeGridRange then
     return InstructionConst.PhaseEnd
@@ -33,38 +23,28 @@ PlayGridRangeTrapVisbleInstruction.DoInstruction = function(self, TT, casterEnti
   end
   local curScopeGridRangeIndex = phaseContext:GetCurScopeGridRangeIndex()
   if maxScopeRangeCount < curScopeGridRangeIndex then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
-  local group = world:GetGroup((world.BW_WEMatchers).Trap)
-  for _,range in pairs(scopeGridRange) do
+  local group = world:GetGroup(world.BW_WEMatchers.Trap)
+  for _, range in pairs(scopeGridRange) do
     if range then
       local posList = range[curScopeGridRangeIndex]
       if posList then
-        for _,pos in pairs(posList) do
-          for _,e in ipairs(group:GetEntities()) do
+        for _, pos in pairs(posList) do
+          for _, e in ipairs(group:GetEntities()) do
             local trapRenderCmpt = e:TrapRender()
             if trapRenderCmpt and not trapRenderCmpt:GetHadPlayDestroy() and self._trapID == trapRenderCmpt:GetTrapID() and pos == e:GetGridPosition() then
               local location = e:Location()
               if location then
                 local gridWorldPos = e:GetPosition()
                 local offsetY = self._visible and 0 or 1000
-                local gridWorldNew = (Vector3.New)(gridWorldPos.x, offsetY, gridWorldPos.z)
+                local gridWorldNew = Vector3.New(gridWorldPos.x, offsetY, gridWorldPos.z)
                 e:SetPosition(gridWorldNew)
               end
-              do
-                do
-                  local cTrapRoundInfo = e:TrapRoundInfoRender()
-                  if cTrapRoundInfo then
-                    cTrapRoundInfo:SetIsShow(self._visible)
-                  end
-                  -- DECOMPILER ERROR at PC89: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC89: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC89: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
+              local cTrapRoundInfo = e:TrapRoundInfoRender()
+              if cTrapRoundInfo then
+                cTrapRoundInfo:SetIsShow(self._visible)
               end
             end
           end
@@ -73,5 +53,3 @@ PlayGridRangeTrapVisbleInstruction.DoInstruction = function(self, TT, casterEnti
     end
   end
 end
-
-

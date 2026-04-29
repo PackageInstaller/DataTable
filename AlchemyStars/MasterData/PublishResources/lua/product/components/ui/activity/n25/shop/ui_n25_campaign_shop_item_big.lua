@@ -1,65 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/shop/ui_n25_campaign_shop_item_big.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25CampaignShopItemBig", UICampaignShopItemBig)
 UIN25CampaignShopItemBig = UIN25CampaignShopItemBig
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25CampaignShopItemBig._FillRemainArea = function(self)
-  -- function num : 0_0
-  local showRemain = (self._data):ShowRemain()
-  local remainCount = (self._data):GetRemainCount()
+function UIN25CampaignShopItemBig:_FillRemainArea()
+  local showRemain = self._data:ShowRemain()
+  local remainCount = self._data:GetRemainCount()
   if showRemain == false then
-    (self._itemRestAreaGO):SetActive(false)
+    self._itemRestAreaGO:SetActive(false)
+  elseif self._data:IsUnLimit() then
+    self._itemRestAreaGO:SetActive(false)
+  elseif remainCount <= 0 then
+    self._itemRestAreaGO:SetActive(false)
   else
-    if (self._data):IsUnLimit() then
-      (self._itemRestAreaGO):SetActive(false)
-    else
-      if remainCount <= 0 then
-        (self._itemRestAreaGO):SetActive(false)
-      else
-        ;
-        (self._itemRestAreaGO):SetActive(true)
-        ;
-        (self._itemRestText):SetText(remainCount)
-      end
-    end
+    self._itemRestAreaGO:SetActive(true)
+    self._itemRestText:SetText(remainCount)
   end
-  if (self._data):IsUnLimit() then
-    (self._selledAreaGO):SetActive(false)
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._infoCanvasGroup).blocksRaycasts = true
+  if self._data:IsUnLimit() then
+    self._selledAreaGO:SetActive(false)
+    self._infoCanvasGroup.blocksRaycasts = true
+  elseif remainCount <= 0 then
+    self._selledAreaGO:SetActive(true)
+    self._infoCanvasGroup.blocksRaycasts = false
   else
-    if remainCount <= 0 then
-      (self._selledAreaGO):SetActive(true)
-      -- DECOMPILER ERROR at PC57: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._infoCanvasGroup).blocksRaycasts = false
-    else
-      ;
-      (self._selledAreaGO):SetActive(false)
-      -- DECOMPILER ERROR at PC64: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._infoCanvasGroup).blocksRaycasts = true
-    end
+    self._selledAreaGO:SetActive(false)
+    self._infoCanvasGroup.blocksRaycasts = true
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25CampaignShopItemBig.PlaySellOutAni = function(self)
-  -- function num : 0_1
+function UIN25CampaignShopItemBig:PlaySellOutAni()
   if not self.sellOutAni then
     self.sellOutAni = self:GetUIComponent("Animation", "sellOutAni")
   end
-  ;
-  (self.sellOutAni):Play()
+  self.sellOutAni:Play()
 end
-
-

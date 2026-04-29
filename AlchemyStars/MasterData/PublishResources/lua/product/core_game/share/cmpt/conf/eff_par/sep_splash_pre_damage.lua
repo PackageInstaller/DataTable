@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_splash_pre_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 local SkillSplashCenterType = {Target = 1, Caster = 2}
 _enum("SkillSplashCenterType", SkillSplashCenterType)
 _class("SkillEffectParamSplashPreDamage", SkillDamageEffectParam)
 SkillEffectParamSplashPreDamage = SkillEffectParamSplashPreDamage
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillEffectParamSplashPreDamage.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : SkillSplashCenterType
+function SkillEffectParamSplashPreDamage:Constructor(t)
   self._splashRate = t.splashRate
   self._splashScopeType = t.splashScopeType
   self._splashScopeParam = t.splashScopeParam
@@ -19,46 +12,26 @@ SkillEffectParamSplashPreDamage.Constructor = function(self, t)
   self._splashCenterType = t.splashCenterType or SkillSplashCenterType.Target
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamSplashPreDamage.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamSplashPreDamage:GetEffectType()
   return SkillEffectType.SplashPreDamage
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamSplashPreDamage.GetSplashRate = function(self)
-  -- function num : 0_2
+function SkillEffectParamSplashPreDamage:GetSplashRate()
   return self._splashRate
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamSplashPreDamage.GetSplashScopeType = function(self)
-  -- function num : 0_3
+function SkillEffectParamSplashPreDamage:GetSplashScopeType()
   return self._splashScopeType
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamSplashPreDamage.GetSplashScopeParam = function(self)
-  -- function num : 0_4
+function SkillEffectParamSplashPreDamage:GetSplashScopeParam()
   return self._splashScopeParam
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamSplashPreDamage.GetBaseDamageStageIndex = function(self)
-  -- function num : 0_5
+function SkillEffectParamSplashPreDamage:GetBaseDamageStageIndex()
   return self._baseDamageStageIndex
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamSplashPreDamage.GetSplashCenterType = function(self)
-  -- function num : 0_6
+function SkillEffectParamSplashPreDamage:GetSplashCenterType()
   return self._splashCenterType
 end
-
-

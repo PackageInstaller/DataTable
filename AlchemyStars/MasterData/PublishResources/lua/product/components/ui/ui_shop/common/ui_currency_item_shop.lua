@@ -1,18 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/common/ui_currency_item_shop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICurrencyItem_Shop", UICustomWidget)
 UICurrencyItem_Shop = UICurrencyItem_Shop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICurrencyItem_Shop.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UICurrencyItem_Shop:OnShow()
   self.icon = self:GetUIComponent("Image", "Icon")
-  self.iconGO = (self.icon).gameObject
-  ;
-  (UIWidgetHelper.InitImageSpriteOrRaw)(self, "icon", self.iconGO)
+  self.iconGO = self.icon.gameObject
+  UIWidgetHelper.InitImageSpriteOrRaw(self, "icon", self.iconGO)
   self.txt = self:GetUIComponent("UILocalizationText", "txt")
   self.txtRect = self:GetUIComponent("RectTransform", "txt")
   self.btnGO = self:GetGameObject("AddBtn")
@@ -21,370 +13,221 @@ UICurrencyItem_Shop.OnShow = function(self)
   self:AddListener()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.OnHide = function(self)
-  -- function num : 0_1
+function UICurrencyItem_Shop:OnHide()
   self:RemoveListener()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.AddListener = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICurrencyItem_Shop:AddListener()
   self:AttachEvent(GameEventType.ItemCountChanged, self.OnItemCountChange)
   self:AttachEvent(GameEventType.DiamondCountChanged, self.OnItemCountChange)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.RemoveListener = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICurrencyItem_Shop:RemoveListener()
   self:DetachEvent(GameEventType.ItemCountChanged, self.OnItemCountChange)
   self:DetachEvent(GameEventType.DiamondCountChanged, self.OnItemCountChange)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.OnItemCountChange = function(self)
-  -- function num : 0_4
+function UICurrencyItem_Shop:OnItemCountChange()
   self:RefreshTxt()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.GetTypeId = function(self)
-  -- function num : 0_5
+function UICurrencyItem_Shop:GetTypeId()
   return self._typeId
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.SetAsShortForm = function(self, isShortForm)
-  -- function num : 0_6
+function UICurrencyItem_Shop:SetAsShortForm(isShortForm)
   self._shortForm = isShortForm
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.SetData = function(self, typeId, iconClick, hideAddBtn)
-  -- function num : 0_7 , upvalues : _ENV
+function UICurrencyItem_Shop:SetData(typeId, iconClick, hideAddBtn)
   self._typeId = typeId
   self._hideAddBtn = hideAddBtn
-  self._cfg = (Cfg.cfg_top_tips)[self._typeId]
+  self._cfg = Cfg.cfg_top_tips[self._typeId]
   if not self._cfg then
-    return 
+    return
   end
   self._iconClick = iconClick
-  ;
-  (UIWidgetHelper.SetImageSpriteOrRaw)(self, "icon", self.atlas, (self._cfg).Icon)
+  UIWidgetHelper.SetImageSpriteOrRaw(self, "icon", self.atlas, self._cfg.Icon)
   self:RefreshBg()
   self:RefreshTxt()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.ShowSwitch = function(self, show)
-  -- function num : 0_8
+function UICurrencyItem_Shop:ShowSwitch(show)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.ShowOpen = function(self, open)
-  -- function num : 0_9
+function UICurrencyItem_Shop:ShowOpen(open)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.SetAddCallBack = function(self, addCallBack)
-  -- function num : 0_10
+function UICurrencyItem_Shop:SetAddCallBack(addCallBack)
   self._addCallBack = addCallBack
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.SetBgCallBack = function(self, bgCallBack)
-  -- function num : 0_11
+function UICurrencyItem_Shop:SetBgCallBack(bgCallBack)
   self._bgCallBack = bgCallBack
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.SetSwitchCallBack = function(self, switchCallBack)
-  -- function num : 0_12
+function UICurrencyItem_Shop:SetSwitchCallBack(switchCallBack)
   self._switchCallBack = switchCallBack
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.RefreshTxtTransform = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
+function UICurrencyItem_Shop:RefreshTxtTransform()
   if self._typeId == RoleAssetID.RoleAssetDoubleRes then
-    (self.txtRect).anchoredPosition = Vector2(-17, 8)
+    self.txtRect.anchoredPosition = Vector2(-17, 8)
+  elseif self._shortForm then
+    self.txtRect.anchoredPosition = Vector2(29, 8)
   else
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-    if self._shortForm then
-      (self.txtRect).anchoredPosition = Vector2(29, 8)
-    else
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self.txtRect).anchoredPosition = Vector2(13.7, 8)
-    end
+    self.txtRect.anchoredPosition = Vector2(13.7, 8)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.RefreshTxt = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local countStr = nil
+function UICurrencyItem_Shop:RefreshTxt()
+  local countStr
   if self._typeId == RoleAssetID.RoleAssetDiamond then
     local mShop = self:GetModule(ShopModule)
     local count1, freeCount1 = mShop:GetDiamondCount()
-    countStr = (HelperProxy:GetInstance()):Format9999W(count1)
-  else
-    do
-      if self._typeId == RoleAssetID.RoleAssetGold then
-        countStr = (HelperProxy:GetInstance()):Format9999W((self.roleModule):GetGold())
-      else
-        if self._typeId == RoleAssetID.RoleAssetGlow then
-          countStr = (HelperProxy:GetInstance()):Format9999W((self.roleModule):GetGlow())
-        else
-          if self._typeId == RoleAssetID.RoleAssetMazeCoin then
-            countStr = (HelperProxy:GetInstance()):Format9999W((self.roleModule):GetMazeCoin())
-          else
-            if self._typeId == RoleAssetID.RoleAssetPhyPoint then
-              local currentStr, upperStr = nil, nil
-              local currentPhysicalPower = (self.roleModule):GetAssetCount(RoleAssetID.RoleAssetPhyPoint)
-              local upperPhysicalPower = (self.roleModule):GetHpLevelMax()
-              if currentPhysicalPower > 9999 then
-                currentStr = "9999+"
-              else
-                currentStr = currentPhysicalPower .. ""
-              end
-              if upperPhysicalPower > 9999 then
-                upperStr = "9999+"
-              else
-                upperStr = upperPhysicalPower .. ""
-              end
-              upperStr = "<color=#aeaeae>" .. upperStr .. "</color>"
-              if upperPhysicalPower < currentPhysicalPower then
-                currentStr = "<color=#00ffea>" .. currentStr .. "</color>"
-              else
-                currentStr = "<color=#ffffff>" .. currentStr .. "</color>"
-              end
-              countStr = currentStr .. "<color=#ffffff>/</color>" .. upperStr
-            else
-              do
-                if self._typeId == RoleAssetID.RoleAssetDoubleRes then
-                  local resModule = self:GetModule(ResDungeonModule)
-                  local count = resModule:GetDoubleResNum()
-                  local aircraftModule = self:GetModule(AircraftModule)
-                  local room = aircraftModule:GetResRoom()
-                  local maxCount = room and (math.floor)(room:GetResCardLimit()) or -1
-                  if maxCount <= count then
-                    countStr = "<color=#ffffff>" .. (HelperProxy:GetInstance()):Format999(count) .. "/" .. maxCount .. "</color>"
-                  else
-                    countStr = "<color=#ffffff>" .. count .. "/" .. maxCount .. "</color>"
-                  end
-                else
-                  do
-                    if self._typeId == RoleAssetID.RoleAssetDrawCard100 then
-                      countStr = (HelperProxy:GetInstance()):Format9999W((self.roleModule):GetAssetCount(RoleAssetID.RoleAssetDrawCard100))
-                    else
-                      if self._typeId == RoleAssetID.RoleAssetDrawCard101 then
-                        countStr = (HelperProxy:GetInstance()):Format9999W((self.roleModule):GetAssetCount(RoleAssetID.RoleAssetDrawCard101))
-                      else
-                        if self._typeId == RoleAssetID.RoleAssetLight then
-                          local resModule = self:GetModule(ResDungeonModule)
-                          countStr = (HelperProxy:GetInstance()):Format999((self.roleModule):GetAssetCount(RoleAssetID.RoleAssetLight))
-                        else
-                          do
-                            if self._typeId == RoleAssetID.RoleAssetXingZuan then
-                              local itemMd = self:GetModule(ItemModule)
-                              countStr = (HelperProxy:GetInstance()):Format9999W(itemMd:GetItemCount(RoleAssetID.RoleAssetXingZuan))
-                            else
-                              do
-                                if self._typeId == RoleAssetID.RoleAssetHuiYao then
-                                  local itemMd = self:GetModule(ItemModule)
-                                  countStr = (HelperProxy:GetInstance()):Format9999W(itemMd:GetItemCount(RoleAssetID.RoleAssetHuiYao))
-                                else
-                                  do
-                                    if self._typeId == CurrenyTypeId.StarPoint then
-                                      countStr = nil
-                                    else
-                                      if self._typeId == RoleAssetID.RoleAssetFirefly then
-                                        countStr = nil
-                                      else
-                                        if self._typeId == RoleAssetID.RoleAssetAtom then
-                                          countStr = nil
-                                        else
-                                          if self._typeId == RoleAssetID.RoleAssetActiveToken then
-                                            local max = ((Cfg.cfg_global).ActiveReviewTokenMax).IntValue
-                                            local count = (self:GetModule(ItemModule)):GetItemCount(self._typeId)
-                                            countStr = count .. "/" .. max
-                                          else
-                                            do
-                                              do
-                                                local itemMd = self:GetModule(ItemModule)
-                                                countStr = (HelperProxy:GetInstance()):Format9999W(itemMd:GetItemCount(self._typeId))
-                                                if countStr then
-                                                  self:SetText(countStr)
-                                                end
-                                              end
-                                            end
-                                          end
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.SetText = function(self, str)
-  -- function num : 0_15
-  (self.txt):SetText(str)
-end
-
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.RefreshBg = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  if not self._hideAddBtn and (self._typeId == RoleAssetID.RoleAssetFirefly or self._typeId == RoleAssetID.RoleAssetDiamond or self._typeId == RoleAssetID.RoleAssetGlow or self._typeId == RoleAssetID.RoleAssetPhyPoint or self._typeId == RoleAssetID.RoleAssetAtom or self._typeId == RoleAssetID.RoleAssetFurnitureCoin or self._typeId == RoleAssetID.RoleAssetDrawCardSeniorSkin or self._typeId == RoleAssetID.RoleAssetDrawCardSeniorSkinGL or self._typeId == RoleAssetID.RoleAssetDrawCardSeniorSkinKR or self._typeId == RoleAssetID.RoleAssetDrawCardSeniorSkinKL_Re or self._typeId == RoleAssetID.RoleAssetDrawCardSeniorSkinBLH or self._typeId == RoleAssetID.RoleAssetDrawCard100 or self._typeId == RoleAssetID.RoleAssetDrawCard101 or self._typeId == RoleAssetID.RoleAssetGold or self._typeId == RoleAssetID.RoleAssetXingZuan or self._typeId == RoleAssetID.RoleAssetHuiYao or self._typeId == RoleAssetID.RoleAssetHongPiao) then
-    (self.btnGO):SetActive(true)
-  else
-    if self._typeId == RoleAssetID.RoleAssetDoubleRes then
-      (self.btnGO):SetActive(false)
+    countStr = HelperProxy:GetInstance():Format9999W(count1)
+  elseif self._typeId == RoleAssetID.RoleAssetGold then
+    countStr = HelperProxy:GetInstance():Format9999W(self.roleModule:GetGold())
+  elseif self._typeId == RoleAssetID.RoleAssetGlow then
+    countStr = HelperProxy:GetInstance():Format9999W(self.roleModule:GetGlow())
+  elseif self._typeId == RoleAssetID.RoleAssetMazeCoin then
+    countStr = HelperProxy:GetInstance():Format9999W(self.roleModule:GetMazeCoin())
+  elseif self._typeId == RoleAssetID.RoleAssetPhyPoint then
+    local currentStr, upperStr
+    local currentPhysicalPower = self.roleModule:GetAssetCount(RoleAssetID.RoleAssetPhyPoint)
+    local upperPhysicalPower = self.roleModule:GetHpLevelMax()
+    if 9999 < currentPhysicalPower then
+      currentStr = "9999+"
     else
-      if self._shortForm then
-        (self.btnGO):SetActive(false)
-      else
-        ;
-        (self.btnGO):SetActive(false)
-      end
+      currentStr = currentPhysicalPower .. ""
     end
+    if 9999 < upperPhysicalPower then
+      upperStr = "9999+"
+    else
+      upperStr = upperPhysicalPower .. ""
+    end
+    upperStr = "<color=#aeaeae>" .. upperStr .. "</color>"
+    if currentPhysicalPower > upperPhysicalPower then
+      currentStr = "<color=#00ffea>" .. currentStr .. "</color>"
+    else
+      currentStr = "<color=#ffffff>" .. currentStr .. "</color>"
+    end
+    countStr = currentStr .. "<color=#ffffff>/</color>" .. upperStr
+  elseif self._typeId == RoleAssetID.RoleAssetDoubleRes then
+    local resModule = self:GetModule(ResDungeonModule)
+    local count = resModule:GetDoubleResNum()
+    local aircraftModule = self:GetModule(AircraftModule)
+    local room = aircraftModule:GetResRoom()
+    local maxCount = room and math.floor(room:GetResCardLimit()) or -1
+    if count >= maxCount then
+      countStr = "<color=#ffffff>" .. HelperProxy:GetInstance():Format999(count) .. "/" .. maxCount .. "</color>"
+    else
+      countStr = "<color=#ffffff>" .. count .. "/" .. maxCount .. "</color>"
+    end
+  elseif self._typeId == RoleAssetID.RoleAssetDrawCard100 then
+    countStr = HelperProxy:GetInstance():Format9999W(self.roleModule:GetAssetCount(RoleAssetID.RoleAssetDrawCard100))
+  elseif self._typeId == RoleAssetID.RoleAssetDrawCard101 then
+    countStr = HelperProxy:GetInstance():Format9999W(self.roleModule:GetAssetCount(RoleAssetID.RoleAssetDrawCard101))
+  elseif self._typeId == RoleAssetID.RoleAssetLight then
+    local resModule = self:GetModule(ResDungeonModule)
+    countStr = HelperProxy:GetInstance():Format999(self.roleModule:GetAssetCount(RoleAssetID.RoleAssetLight))
+  elseif self._typeId == RoleAssetID.RoleAssetXingZuan then
+    local itemMd = self:GetModule(ItemModule)
+    countStr = HelperProxy:GetInstance():Format9999W(itemMd:GetItemCount(RoleAssetID.RoleAssetXingZuan))
+  elseif self._typeId == RoleAssetID.RoleAssetHuiYao then
+    local itemMd = self:GetModule(ItemModule)
+    countStr = HelperProxy:GetInstance():Format9999W(itemMd:GetItemCount(RoleAssetID.RoleAssetHuiYao))
+  elseif self._typeId == CurrenyTypeId.StarPoint then
+    countStr = nil
+  elseif self._typeId == RoleAssetID.RoleAssetFirefly then
+    countStr = nil
+  elseif self._typeId == RoleAssetID.RoleAssetAtom then
+    countStr = nil
+  elseif self._typeId == RoleAssetID.RoleAssetActiveToken then
+    local max = Cfg.cfg_global.ActiveReviewTokenMax.IntValue
+    local count = self:GetModule(ItemModule):GetItemCount(self._typeId)
+    countStr = count .. "/" .. max
+  else
+    local itemMd = self:GetModule(ItemModule)
+    countStr = HelperProxy:GetInstance():Format9999W(itemMd:GetItemCount(self._typeId))
+  end
+  if countStr then
+    self:SetText(countStr)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
+function UICurrencyItem_Shop:SetText(str)
+  self.txt:SetText(str)
+end
 
-UICurrencyItem_Shop.CloseAddBtn = function(self)
-  -- function num : 0_17
+function UICurrencyItem_Shop:RefreshBg()
+  if not self._hideAddBtn and (self._typeId == RoleAssetID.RoleAssetFirefly or self._typeId == RoleAssetID.RoleAssetDiamond or self._typeId == RoleAssetID.RoleAssetGlow or self._typeId == RoleAssetID.RoleAssetPhyPoint or self._typeId == RoleAssetID.RoleAssetAtom or self._typeId == RoleAssetID.RoleAssetFurnitureCoin or self._typeId == RoleAssetID.RoleAssetDrawCardSeniorSkin or self._typeId == RoleAssetID.RoleAssetDrawCardSeniorSkinGL or self._typeId == RoleAssetID.RoleAssetDrawCardSeniorSkinKR or self._typeId == RoleAssetID.RoleAssetDrawCardSeniorSkinKL_Re or self._typeId == RoleAssetID.RoleAssetDrawCardSeniorSkinBLH or self._typeId == RoleAssetID.RoleAssetDrawCard100 or self._typeId == RoleAssetID.RoleAssetDrawCard101 or self._typeId == RoleAssetID.RoleAssetGold or self._typeId == RoleAssetID.RoleAssetXingZuan or self._typeId == RoleAssetID.RoleAssetHuiYao or self._typeId == RoleAssetID.RoleAssetHongPiao) then
+    self.btnGO:SetActive(true)
+  elseif self._typeId == RoleAssetID.RoleAssetDoubleRes then
+    self.btnGO:SetActive(false)
+  elseif self._shortForm then
+    self.btnGO:SetActive(false)
+  else
+    self.btnGO:SetActive(false)
+  end
+end
+
+function UICurrencyItem_Shop:CloseAddBtn()
   self._hideAddBtn = true
   self:RefreshBg()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.AddBtnOnClick = function(self, go)
-  -- function num : 0_18 , upvalues : _ENV
+function UICurrencyItem_Shop:AddBtnOnClick(go)
   if self._typeId == RoleAssetID.RoleAssetDiamond then
     local mShop = self:GetModule(ShopModule)
     local clientShop = mShop:GetClientShop()
     clientShop:OpenRechargeShop()
+  elseif self._typeId == RoleAssetID.RoleAssetGlow then
+    GameGlobal.UIStateManager():ShowDialog("UIShopCurrency1To2", 0)
+  elseif self._typeId == RoleAssetID.RoleAssetDrawCard100 or self._typeId == RoleAssetID.RoleAssetDrawCard101 then
+    GameGlobal.UIStateManager():ShowDialog("UIShopController", 2, ShopMainTabType.Exchange, MarketType.Shop_GuangPo)
+  elseif self._typeId == RoleAssetID.RoleAssetFurnitureCoin then
+    GameGlobal.UIStateManager():ShowDialog("UIShopHomelandGetCoin")
+  elseif self._typeId == RoleAssetID.RoleAssetGold then
+    GameGlobal.UIStateManager():ShowDialog("UIItemGetPathController", RoleAssetID.RoleAssetGold)
+  elseif self._typeId == RoleAssetID.RoleAssetXingZuan then
+    GameGlobal.UIStateManager():ShowDialog("UIDrawCardAwardConversionForOtherController")
+  elseif self._typeId == RoleAssetID.RoleAssetHuiYao then
+    GameGlobal.UIStateManager():ShowDialog("UIDrawCardAwardConversionForOtherController")
+  elseif self._typeId == RoleAssetID.RoleAssetHongPiao then
+    GameGlobal.UIStateManager():ShowDialog("UIDrawCardAwardConversionForOtherController")
+  elseif self._addCallBack then
+    self._addCallBack(self._typeId, self.btnGO)
   else
-    do
-      if self._typeId == RoleAssetID.RoleAssetGlow then
-        ((GameGlobal.UIStateManager)()):ShowDialog("UIShopCurrency1To2", 0)
-      else
-        if self._typeId == RoleAssetID.RoleAssetDrawCard100 or self._typeId == RoleAssetID.RoleAssetDrawCard101 then
-          ((GameGlobal.UIStateManager)()):ShowDialog("UIShopController", 2, ShopMainTabType.Exchange, MarketType.Shop_GuangPo)
-        else
-          if self._typeId == RoleAssetID.RoleAssetFurnitureCoin then
-            ((GameGlobal.UIStateManager)()):ShowDialog("UIShopHomelandGetCoin")
-          else
-            if self._typeId == RoleAssetID.RoleAssetGold then
-              ((GameGlobal.UIStateManager)()):ShowDialog("UIItemGetPathController", RoleAssetID.RoleAssetGold)
-            else
-              if self._typeId == RoleAssetID.RoleAssetXingZuan then
-                ((GameGlobal.UIStateManager)()):ShowDialog("UIDrawCardAwardConversionForOtherController")
-              else
-                if self._typeId == RoleAssetID.RoleAssetHuiYao then
-                  ((GameGlobal.UIStateManager)()):ShowDialog("UIDrawCardAwardConversionForOtherController")
-                else
-                  if self._typeId == RoleAssetID.RoleAssetHongPiao then
-                    ((GameGlobal.UIStateManager)()):ShowDialog("UIDrawCardAwardConversionForOtherController")
-                  else
-                    if self._addCallBack then
-                      (self._addCallBack)(self._typeId, self.btnGO)
-                    else
-                      ;
-                      (ToastManager.ShowLockTip)()
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+    ToastManager.ShowLockTip()
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.IconOnClick = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UICurrencyItem_Shop:IconOnClick()
   if self._typeId == RoleAssetID.RoleAssetGlow or self._typeId == RoleAssetID.RoleAssetDrawCard100 or self._typeId == RoleAssetID.RoleAssetDrawCard101 then
     local itemMd = self:GetModule(ItemModule)
     local count = itemMd:GetItemCount(self._typeId)
     if count < 0 then
-      (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, (StringTable.Get)("str_shop_resourceerror_title"), (StringTable.Get)("str_shop_resourceerror_desc"), function(param)
-    -- function num : 0_19_0
-  end
-)
-      return 
+      PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, StringTable.Get("str_shop_resourceerror_title"), StringTable.Get("str_shop_resourceerror_desc"), function(param)
+      end)
+      return
     end
+  else
   end
-  do
-    if self._iconClick then
-      (self._iconClick)(self._typeId, self.iconGO)
-    end
+  if self._iconClick then
+    self._iconClick(self._typeId, self.iconGO)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.BgOnClick = function(self)
-  -- function num : 0_20
+function UICurrencyItem_Shop:BgOnClick()
   if self._bgCallBack then
-    (self._bgCallBack)(self._typeId)
+    self._bgCallBack(self._typeId)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.ShowRollingAnim = function(self, deltaCount, duration)
-  -- function num : 0_21
+function UICurrencyItem_Shop:ShowRollingAnim(deltaCount, duration)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyItem_Shop.GetUIText = function(self)
-  -- function num : 0_22
+function UICurrencyItem_Shop:GetUIText()
   return self.txt
 end
-
-

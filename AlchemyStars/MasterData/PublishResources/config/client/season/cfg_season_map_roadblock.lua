@@ -1,14 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/season/cfg_season_map_roadblock.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, RoadBlockRes = 2, Position = 3, Rotation = 4}
+local key = {
+  ID = 1,
+  RoadBlockRes = 2,
+  Position = 3,
+  Rotation = 4
+}
 local common = {
-{0, 0, 0}
+  {
+    0,
+    0,
+    0
+  }
 }
 local config = {
-{1, "1500331.prefab", common[1], common[1]}
+  {
+    1,
+    "1500331.prefab",
+    common[1],
+    common[1]
+  }
 }
 return config, "ID", key
-

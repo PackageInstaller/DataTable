@@ -1,39 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_add_dimension_flag.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_AddDimensionFlag", SkillEffectCalc_Base)
 SkillEffectCalc_AddDimensionFlag = SkillEffectCalc_AddDimensionFlag
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_AddDimensionFlag.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_AddDimensionFlag:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
     if result then
-      (table.insert)(results, result)
+      table.insert(results, result)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_AddDimensionFlag._CalculateSingleTarget = function(self, skillEffectCalcParam, nTargetID)
-  -- function num : 0_1 , upvalues : _ENV
-  local eTarget = (self._world):GetEntityByID(nTargetID)
+function SkillEffectCalc_AddDimensionFlag:_CalculateSingleTarget(skillEffectCalcParam, nTargetID)
+  local eTarget = self._world:GetEntityByID(nTargetID)
   if not eTarget then
-    return 
+    return
   end
   if not eTarget:HasTeam() then
-    return 
+    return
   end
   local result = SkillEffectResult_AddDimensionFlag:New(nTargetID)
   return result
 end
-
-

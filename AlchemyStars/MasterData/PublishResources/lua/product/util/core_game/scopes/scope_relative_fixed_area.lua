@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_relative_fixed_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_RelativeFixedPos", SkillScopeCalculator_Base)
 SkillScopeCalculator_RelativeFixedPos = SkillScopeCalculator_RelativeFixedPos
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_RelativeFixedPos.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_RelativeFixedPos:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local centerX = centerPos.x
   local centerY = centerPos.y
   local attackRange = {}
   local wholeRange = {}
-  for index,kvp in ipairs(scopeParam.pos) do
+  for index, kvp in ipairs(scopeParam.pos) do
     if #kvp ~= 2 then
-      (Log.Exception)("范围类型[112]RelativeFixedPos: pos中第", index, "个数据不全")
+      Log.Exception("范围类型[112]RelativeFixedPos: pos中第", index, "个数据不全")
     else
-      local v2 = (Vector2.New)(centerX + kvp[1], centerY + kvp[2])
-      ;
-      (table.insert)(wholeRange, v2)
-      if (self._gridFilter):IsValidPiecePos(v2) then
-        (table.insert)(attackRange, v2)
+      local v2 = Vector2.New(centerX + kvp[1], centerY + kvp[2])
+      table.insert(wholeRange, v2)
+      if self._gridFilter:IsValidPiecePos(v2) then
+        table.insert(attackRange, v2)
       end
     end
   end
   return SkillScopeResult:New(SkillScopeType.RelativeFixedPos, centerPos, attackRange, wholeRange)
 end
-
-

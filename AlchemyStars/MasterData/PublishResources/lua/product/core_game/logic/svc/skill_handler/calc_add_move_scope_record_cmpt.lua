@@ -1,43 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_add_move_scope_record_cmpt.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_AddMoveScopeRecordCmpt", Object)
 SkillEffectCalc_AddMoveScopeRecordCmpt = SkillEffectCalc_AddMoveScopeRecordCmpt
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_AddMoveScopeRecordCmpt.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_AddMoveScopeRecordCmpt:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_AddMoveScopeRecordCmpt.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_AddMoveScopeRecordCmpt:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillEffectParam = skillEffectCalcParam.skillEffectParam
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local battleCmpt = (self._world):BattleStat()
-  local boardEntity = (self._world):GetBoardEntity()
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local battleCmpt = self._world:BattleStat()
+  local boardEntity = self._world:GetBoardEntity()
   local boardComponent = boardEntity:Board()
   local results = {}
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local centerPos = skillEffectCalcParam:GetCenterPos()
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  local utilData = (self._world):GetService("UtilData")
-  for _,targetID in ipairs(targets) do
-    local e = (self._world):GetEntityByID(targetID)
+  local utilData = self._world:GetService("UtilData")
+  for _, targetID in ipairs(targets) do
+    local e = self._world:GetEntityByID(targetID)
     if e then
       local entityCenterPos = e:GetGridPosition()
       local offSet = Vector2(centerPos.x - entityCenterPos.x, centerPos.y - entityCenterPos.y)
       local result = SkillEffectResultAddMoveScopeRecordCmpt:New(targetID, offSet)
-      ;
-      (table.insert)(results, result)
+      table.insert(results, result)
     end
   end
   return results
 end
-
-

@@ -1,206 +1,776 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/xiaolinjia/xiaolinjia/cfg_xiaolinjia_story_3.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Speaker = 2, Content = 3, ContentBG = 4, Continuous = 5, FaceIcon = 6, Topic = 7, Options = 8, OptionsJump = 9, Answer = 10, OtherPlayerAnswer = 11, Jump = 12, CheckResult = 13}
-local common = {"n36_xljmqd_chat-02", "n36_xljmqd_chat-01", "ui_story_5059_50590104_63_dialog_content", 
-{"n36_bust_8_1", "n36_bust_14_1", "n36_bust_5_3", "n36_bust_6_2"}
-, 
-{"n36_bust_8_1", "n36_bust_14_2", "n36_bust_5_3", "n36_bust_6_2"}
-, 
-{"n36_bust_8_1", "n36_bust_14_4", "n36_bust_5_3", "n36_bust_6_2"}
-, 
-{"n36_bust_8_1", "n36_bust_14_1", "n36_bust_5_1", "n36_bust_6_2"}
-, 
-{"n36_bust_8_3", "n36_bust_14_1", "n36_bust_5_1", "n36_bust_6_2"}
-, 
-{"n36_bust_8_3", "n36_bust_14_1", "n36_bust_5_1", "n36_bust_6_3"}
-, 
-{"n36_bust_8_1", "n36_bust_14_3", "n36_bust_5_1", "n36_bust_6_2"}
-, 
-{"n36_bust_8_1", "n36_bust_14_4", "n36_bust_5_1", "n36_bust_6_2"}
-, 
-{"n36_bust_8_1", "n36_bust_14_3", "n36_bust_5_3", "n36_bust_6_2"}
-, 
-{"n36_bust_8_3", "n36_bust_14_3", "n36_bust_5_1", "n36_bust_6_2"}
-, 
-{"n36_bust_8_3", "n36_bust_14_3", "n36_bust_5_2", "n36_bust_6_1"}
-, 
-{"n36_bust_8_3", "n36_bust_14_1", "n36_bust_5_3", "n36_bust_6_2"}
+local key = {
+  ID = 1,
+  Speaker = 2,
+  Content = 3,
+  ContentBG = 4,
+  Continuous = 5,
+  FaceIcon = 6,
+  Topic = 7,
+  Options = 8,
+  OptionsJump = 9,
+  Answer = 10,
+  OtherPlayerAnswer = 11,
+  Jump = 12,
+  CheckResult = 13
+}
+local common = {
+  "n36_xljmqd_chat-02",
+  "n36_xljmqd_chat-01",
+  "ui_story_5059_50590104_63_dialog_content",
+  {
+    "n36_bust_8_1",
+    "n36_bust_14_1",
+    "n36_bust_5_3",
+    "n36_bust_6_2"
+  },
+  {
+    "n36_bust_8_1",
+    "n36_bust_14_2",
+    "n36_bust_5_3",
+    "n36_bust_6_2"
+  },
+  {
+    "n36_bust_8_1",
+    "n36_bust_14_4",
+    "n36_bust_5_3",
+    "n36_bust_6_2"
+  },
+  {
+    "n36_bust_8_1",
+    "n36_bust_14_1",
+    "n36_bust_5_1",
+    "n36_bust_6_2"
+  },
+  {
+    "n36_bust_8_3",
+    "n36_bust_14_1",
+    "n36_bust_5_1",
+    "n36_bust_6_2"
+  },
+  {
+    "n36_bust_8_3",
+    "n36_bust_14_1",
+    "n36_bust_5_1",
+    "n36_bust_6_3"
+  },
+  {
+    "n36_bust_8_1",
+    "n36_bust_14_3",
+    "n36_bust_5_1",
+    "n36_bust_6_2"
+  },
+  {
+    "n36_bust_8_1",
+    "n36_bust_14_4",
+    "n36_bust_5_1",
+    "n36_bust_6_2"
+  },
+  {
+    "n36_bust_8_1",
+    "n36_bust_14_3",
+    "n36_bust_5_3",
+    "n36_bust_6_2"
+  },
+  {
+    "n36_bust_8_3",
+    "n36_bust_14_3",
+    "n36_bust_5_1",
+    "n36_bust_6_2"
+  },
+  {
+    "n36_bust_8_3",
+    "n36_bust_14_3",
+    "n36_bust_5_2",
+    "n36_bust_6_1"
+  },
+  {
+    "n36_bust_8_3",
+    "n36_bust_14_1",
+    "n36_bust_5_3",
+    "n36_bust_6_2"
+  }
 }
 local config = {
-{1, 3, "ui_story_5059_50590104_4_dialog_content", common[1], nil, common[4]}
-, 
-{2, 4, "ui_story_5059_50590104_5_dialog_content", common[1], nil, common[4]}
-, 
-{3, 4, "ui_story_5059_50590104_6_dialog_content", common[1], nil, common[4]}
-, 
-{4, 4, "ui_story_5059_50590104_7_dialog_content", common[1], nil, common[4]}
-, 
-{5, 2, "ui_story_5059_50590104_11_dialog_content", common[1], nil, common[5]}
-, 
-{6, 4, "ui_story_5059_50590104_12_dialog_content", common[1], nil, common[5]}
-, 
-{7, 3, "ui_story_5059_50590104_13_dialog_content", common[1], nil, common[5]}
-, 
-{8, 4, "ui_story_5059_50590104_14_dialog_content", common[1], nil, common[5]}
-, 
-{9, 3, "ui_story_5059_50590104_15_dialog_content", common[1], nil, common[5]}
-, 
-{10, 4, "ui_story_5059_50590104_16_dialog_content", common[1], nil, common[5]}
-, 
-{11, 4, "ui_story_5059_50590104_17_dialog_content", common[1], nil, common[5]}
-, 
-{12, 4, "ui_story_5059_50590104_18_dialog_content", common[1], nil, common[5]}
-, 
-{13, 2, "ui_story_5059_50590104_19_dialog_content", common[1], nil, common[6]}
-, 
-{14, 1, "ui_story_5059_50590104_20_dialog_content", common[1], nil, common[6]}
-, 
-{15, 4, "ui_story_5059_50590104_21_dialog_content", common[1], nil, common[7]}
-, 
-{16, 1, "ui_story_5059_50590104_22_dialog_content", common[1], nil, common[8]}
-, 
-{17, 4, "ui_story_5059_50590104_23_dialog_content", common[1], nil, common[9]}
-, 
-{18, 1, "ui_story_5059_50590104_24_dialog_content", common[1], nil, common[9]}
-, 
-{19, 4, "ui_story_5059_50590104_25_dialog_content", common[1], nil, common[8]}
-, 
-{20, 1, "ui_story_5059_50590104_26_dialog_content", common[1], nil, common[7]}
-, 
-{21, 1, "ui_story_5059_50590104_27_dialog_content", common[1], nil, common[7]}
-, 
-{22, 2, "ui_story_5059_50590104_28_dialog_content", common[1], nil, common[10]}
-, 
-{23, 2, "ui_story_5059_50590104_29_dialog_content", common[1], nil, common[10]}
-, 
-{24, nil, nil, nil, nil, nil, "ui_story_5059_50590104_30_dialog_content", 
-{"ui_story_5059_50590104_31_dialog_content", "ui_story_5059_50590104_40_dialog_content"}
-, 
-{25, 33}
-, 1, 
-{1, 1, 1}
-}
-, 
-{25, 2, "ui_story_5059_50590104_32_dialog_content", common[2], nil, common[10]}
-, 
-{26, 2, "ui_story_5059_50590104_33_dialog_content", common[1], nil, common[10]}
-, 
-{27, 2, "ui_story_5059_50590104_34_dialog_content", common[1], nil, common[10]}
-, 
-{28, 1, "ui_story_5059_50590104_35_dialog_content", common[1], nil, common[10]}
-, 
-{29, 2, "ui_story_5059_50590104_36_dialog_content", common[1], nil, common[11]}
-, 
-{30, 2, "ui_story_5059_50590104_37_dialog_content", common[1], nil, common[11]}
-, 
-{31, 3, "ui_story_5059_50590104_38_dialog_content", common[1], nil, common[11]}
-, 
-{32, 2, "ui_story_5059_50590104_39_dialog_content", common[2], nil, common[10], nil, nil, nil, nil, nil, 41}
-, 
-{33, 2, "ui_story_5059_50590104_41_dialog_content", common[2], nil, common[10]}
-, 
-{34, 2, "ui_story_5059_50590104_42_dialog_content", common[1], nil, common[10]}
-, 
-{35, 1, "ui_story_5059_50590104_43_dialog_content", common[1], nil, common[10]}
-, 
-{36, 2, "ui_story_5059_50590104_44_dialog_content", common[1], nil, common[10]}
-, 
-{37, 3, "ui_story_5059_50590104_45_dialog_content", common[1], nil, common[12]}
-, 
-{38, 4, "ui_story_5059_50590104_46_dialog_content", common[1], nil, common[12]}
-, 
-{39, 4, "ui_story_5059_50590104_47_dialog_content", common[1], nil, common[12]}
-, 
-{40, 2, "ui_story_5059_50590104_48_dialog_content", common[2], nil, common[12], nil, nil, nil, nil, nil, 41}
-, 
-{41, nil, nil, nil, nil, nil, "ui_story_5059_50590104_49_dialog_content", 
-{"ui_story_5059_50590104_50_dialog_content", "ui_story_5059_50590104_56_dialog_content"}
-, 
-{42, 47}
-, 2, 
-{2, 1, 2}
-}
-, 
-{42, 1, "ui_story_5059_50590104_51_dialog_content", common[1], nil, common[8]}
-, 
-{43, 2, "ui_story_5059_50590104_52_dialog_content", common[1], nil, common[13]}
-, 
-{44, 2, "ui_story_5059_50590104_53_dialog_content", common[1], nil, common[13]}
-, 
-{45, 1, "ui_story_5059_50590104_54_dialog_content", common[1], nil, common[13]}
-, 
-{46, 2, "ui_story_5059_50590104_55_dialog_content", common[1], nil, 
-{"n36_bust_8_3", "n36_bust_14_2", "n36_bust_5_1", "n36_bust_6_2"}
-, nil, nil, nil, nil, nil, 57}
-, 
-{47, 2, "ui_story_5059_50590104_57_dialog_content", common[1], nil, common[7]}
-, 
-{48, 2, "ui_story_5059_50590104_58_dialog_content", common[1], nil, common[7]}
-, 
-{49, 4, "ui_story_5059_50590104_59_dialog_content", common[1], nil, common[7]}
-, 
-{50, 1, "ui_story_5059_50590104_60_dialog_content", common[1], nil, common[8]}
-, 
-{51, 1, "ui_story_5059_50590104_61_dialog_content", common[1], nil, common[8]}
-, 
-{52, 3, "ui_story_5059_50590104_62_dialog_content", common[1], nil, 
-{"n36_bust_8_1", "n36_bust_14_1", "n36_bust_5_2", "n36_bust_6_2"}
-}
-, 
-{53, 1, common[3], common[1], 1, common[14]}
-, 
-{54, 2, common[3], common[1], 1, common[14]}
-, 
-{55, 4, common[3], common[1], 1, common[14]}
-, 
-{56, 3, "ui_story_5059_50590104_64_dialog_content", common[2], nil, 
-{"n36_bust_8_3", "n36_bust_14_3", "n36_bust_5_3", "n36_bust_6_1"}
-, nil, nil, nil, nil, nil, 57}
-, 
-{57, nil, nil, nil, nil, nil, "ui_story_5059_50590104_65_dialog_content", 
-{"ui_story_5059_50590104_66_dialog_content", "ui_story_5059_50590104_72_dialog_content"}
-, 
-{58, 63}
-, 1, 
-{1, 2, 2}
-}
-, 
-{58, 2, "ui_story_5059_50590104_67_dialog_content", common[1], nil, common[11]}
-, 
-{59, 2, "ui_story_5059_50590104_68_dialog_content", common[1], nil, common[11]}
-, 
-{60, 1, "ui_story_5059_50590104_69_dialog_content", common[1], nil, common[11]}
-, 
-{61, 1, "ui_story_5059_50590104_70_dialog_content", common[1], nil, common[11]}
-, 
-{62, 2, "ui_story_5059_50590104_71_dialog_content", common[1], nil, common[10], nil, nil, nil, nil, nil, 69, 1}
-, 
-{63, 1, "ui_story_5059_50590104_73_dialog_content", common[1], nil, common[8]}
-, 
-{64, 2, "ui_story_5059_50590104_74_dialog_content", common[1], nil, common[8]}
-, 
-{65, 1, "ui_story_5059_50590104_75_dialog_content", common[1], nil, common[7]}
-, 
-{66, 3, "ui_story_5059_50590104_76_dialog_content", common[1], nil, common[7]}
-, 
-{67, 4, "ui_story_5059_50590104_77_dialog_content", common[1], nil, common[7]}
-, 
-{68, 2, "ui_story_5059_50590104_78_dialog_content", common[2], nil, common[10], nil, nil, nil, nil, nil, 69, 1}
-, 
-{69, 1, "ui_story_5059_50590104_97_dialog_content", common[1], nil, common[8]}
-, 
-{70, 3, "ui_story_5059_50590104_98_dialog_content", common[1], nil, common[15]}
-, 
-{71, 3, "ui_story_5059_50590104_99_dialog_content", common[1], nil, common[15]}
-, 
-{72, 3, "ui_story_5059_50590104_100_dialog_content", common[1], nil, common[15]}
-, 
-{73, 1, "ui_story_5059_50590104_101_dialog_content", common[1], nil, common[15]}
-, 
-{74, 1, "ui_story_5059_50590104_102_dialog_content", common[1], nil, common[15]}
+  {
+    1,
+    3,
+    "ui_story_5059_50590104_4_dialog_content",
+    common[1],
+    nil,
+    common[4]
+  },
+  {
+    2,
+    4,
+    "ui_story_5059_50590104_5_dialog_content",
+    common[1],
+    nil,
+    common[4]
+  },
+  {
+    3,
+    4,
+    "ui_story_5059_50590104_6_dialog_content",
+    common[1],
+    nil,
+    common[4]
+  },
+  {
+    4,
+    4,
+    "ui_story_5059_50590104_7_dialog_content",
+    common[1],
+    nil,
+    common[4]
+  },
+  {
+    5,
+    2,
+    "ui_story_5059_50590104_11_dialog_content",
+    common[1],
+    nil,
+    common[5]
+  },
+  {
+    6,
+    4,
+    "ui_story_5059_50590104_12_dialog_content",
+    common[1],
+    nil,
+    common[5]
+  },
+  {
+    7,
+    3,
+    "ui_story_5059_50590104_13_dialog_content",
+    common[1],
+    nil,
+    common[5]
+  },
+  {
+    8,
+    4,
+    "ui_story_5059_50590104_14_dialog_content",
+    common[1],
+    nil,
+    common[5]
+  },
+  {
+    9,
+    3,
+    "ui_story_5059_50590104_15_dialog_content",
+    common[1],
+    nil,
+    common[5]
+  },
+  {
+    10,
+    4,
+    "ui_story_5059_50590104_16_dialog_content",
+    common[1],
+    nil,
+    common[5]
+  },
+  {
+    11,
+    4,
+    "ui_story_5059_50590104_17_dialog_content",
+    common[1],
+    nil,
+    common[5]
+  },
+  {
+    12,
+    4,
+    "ui_story_5059_50590104_18_dialog_content",
+    common[1],
+    nil,
+    common[5]
+  },
+  {
+    13,
+    2,
+    "ui_story_5059_50590104_19_dialog_content",
+    common[1],
+    nil,
+    common[6]
+  },
+  {
+    14,
+    1,
+    "ui_story_5059_50590104_20_dialog_content",
+    common[1],
+    nil,
+    common[6]
+  },
+  {
+    15,
+    4,
+    "ui_story_5059_50590104_21_dialog_content",
+    common[1],
+    nil,
+    common[7]
+  },
+  {
+    16,
+    1,
+    "ui_story_5059_50590104_22_dialog_content",
+    common[1],
+    nil,
+    common[8]
+  },
+  {
+    17,
+    4,
+    "ui_story_5059_50590104_23_dialog_content",
+    common[1],
+    nil,
+    common[9]
+  },
+  {
+    18,
+    1,
+    "ui_story_5059_50590104_24_dialog_content",
+    common[1],
+    nil,
+    common[9]
+  },
+  {
+    19,
+    4,
+    "ui_story_5059_50590104_25_dialog_content",
+    common[1],
+    nil,
+    common[8]
+  },
+  {
+    20,
+    1,
+    "ui_story_5059_50590104_26_dialog_content",
+    common[1],
+    nil,
+    common[7]
+  },
+  {
+    21,
+    1,
+    "ui_story_5059_50590104_27_dialog_content",
+    common[1],
+    nil,
+    common[7]
+  },
+  {
+    22,
+    2,
+    "ui_story_5059_50590104_28_dialog_content",
+    common[1],
+    nil,
+    common[10]
+  },
+  {
+    23,
+    2,
+    "ui_story_5059_50590104_29_dialog_content",
+    common[1],
+    nil,
+    common[10]
+  },
+  {
+    24,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "ui_story_5059_50590104_30_dialog_content",
+    {
+      "ui_story_5059_50590104_31_dialog_content",
+      "ui_story_5059_50590104_40_dialog_content"
+    },
+    {25, 33},
+    1,
+    {
+      1,
+      1,
+      1
+    }
+  },
+  {
+    25,
+    2,
+    "ui_story_5059_50590104_32_dialog_content",
+    common[2],
+    nil,
+    common[10]
+  },
+  {
+    26,
+    2,
+    "ui_story_5059_50590104_33_dialog_content",
+    common[1],
+    nil,
+    common[10]
+  },
+  {
+    27,
+    2,
+    "ui_story_5059_50590104_34_dialog_content",
+    common[1],
+    nil,
+    common[10]
+  },
+  {
+    28,
+    1,
+    "ui_story_5059_50590104_35_dialog_content",
+    common[1],
+    nil,
+    common[10]
+  },
+  {
+    29,
+    2,
+    "ui_story_5059_50590104_36_dialog_content",
+    common[1],
+    nil,
+    common[11]
+  },
+  {
+    30,
+    2,
+    "ui_story_5059_50590104_37_dialog_content",
+    common[1],
+    nil,
+    common[11]
+  },
+  {
+    31,
+    3,
+    "ui_story_5059_50590104_38_dialog_content",
+    common[1],
+    nil,
+    common[11]
+  },
+  {
+    32,
+    2,
+    "ui_story_5059_50590104_39_dialog_content",
+    common[2],
+    nil,
+    common[10],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    41
+  },
+  {
+    33,
+    2,
+    "ui_story_5059_50590104_41_dialog_content",
+    common[2],
+    nil,
+    common[10]
+  },
+  {
+    34,
+    2,
+    "ui_story_5059_50590104_42_dialog_content",
+    common[1],
+    nil,
+    common[10]
+  },
+  {
+    35,
+    1,
+    "ui_story_5059_50590104_43_dialog_content",
+    common[1],
+    nil,
+    common[10]
+  },
+  {
+    36,
+    2,
+    "ui_story_5059_50590104_44_dialog_content",
+    common[1],
+    nil,
+    common[10]
+  },
+  {
+    37,
+    3,
+    "ui_story_5059_50590104_45_dialog_content",
+    common[1],
+    nil,
+    common[12]
+  },
+  {
+    38,
+    4,
+    "ui_story_5059_50590104_46_dialog_content",
+    common[1],
+    nil,
+    common[12]
+  },
+  {
+    39,
+    4,
+    "ui_story_5059_50590104_47_dialog_content",
+    common[1],
+    nil,
+    common[12]
+  },
+  {
+    40,
+    2,
+    "ui_story_5059_50590104_48_dialog_content",
+    common[2],
+    nil,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    41
+  },
+  {
+    41,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "ui_story_5059_50590104_49_dialog_content",
+    {
+      "ui_story_5059_50590104_50_dialog_content",
+      "ui_story_5059_50590104_56_dialog_content"
+    },
+    {42, 47},
+    2,
+    {
+      2,
+      1,
+      2
+    }
+  },
+  {
+    42,
+    1,
+    "ui_story_5059_50590104_51_dialog_content",
+    common[1],
+    nil,
+    common[8]
+  },
+  {
+    43,
+    2,
+    "ui_story_5059_50590104_52_dialog_content",
+    common[1],
+    nil,
+    common[13]
+  },
+  {
+    44,
+    2,
+    "ui_story_5059_50590104_53_dialog_content",
+    common[1],
+    nil,
+    common[13]
+  },
+  {
+    45,
+    1,
+    "ui_story_5059_50590104_54_dialog_content",
+    common[1],
+    nil,
+    common[13]
+  },
+  {
+    46,
+    2,
+    "ui_story_5059_50590104_55_dialog_content",
+    common[1],
+    nil,
+    {
+      "n36_bust_8_3",
+      "n36_bust_14_2",
+      "n36_bust_5_1",
+      "n36_bust_6_2"
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    57
+  },
+  {
+    47,
+    2,
+    "ui_story_5059_50590104_57_dialog_content",
+    common[1],
+    nil,
+    common[7]
+  },
+  {
+    48,
+    2,
+    "ui_story_5059_50590104_58_dialog_content",
+    common[1],
+    nil,
+    common[7]
+  },
+  {
+    49,
+    4,
+    "ui_story_5059_50590104_59_dialog_content",
+    common[1],
+    nil,
+    common[7]
+  },
+  {
+    50,
+    1,
+    "ui_story_5059_50590104_60_dialog_content",
+    common[1],
+    nil,
+    common[8]
+  },
+  {
+    51,
+    1,
+    "ui_story_5059_50590104_61_dialog_content",
+    common[1],
+    nil,
+    common[8]
+  },
+  {
+    52,
+    3,
+    "ui_story_5059_50590104_62_dialog_content",
+    common[1],
+    nil,
+    {
+      "n36_bust_8_1",
+      "n36_bust_14_1",
+      "n36_bust_5_2",
+      "n36_bust_6_2"
+    }
+  },
+  {
+    53,
+    1,
+    common[3],
+    common[1],
+    1,
+    common[14]
+  },
+  {
+    54,
+    2,
+    common[3],
+    common[1],
+    1,
+    common[14]
+  },
+  {
+    55,
+    4,
+    common[3],
+    common[1],
+    1,
+    common[14]
+  },
+  {
+    56,
+    3,
+    "ui_story_5059_50590104_64_dialog_content",
+    common[2],
+    nil,
+    {
+      "n36_bust_8_3",
+      "n36_bust_14_3",
+      "n36_bust_5_3",
+      "n36_bust_6_1"
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    57
+  },
+  {
+    57,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "ui_story_5059_50590104_65_dialog_content",
+    {
+      "ui_story_5059_50590104_66_dialog_content",
+      "ui_story_5059_50590104_72_dialog_content"
+    },
+    {58, 63},
+    1,
+    {
+      1,
+      2,
+      2
+    }
+  },
+  {
+    58,
+    2,
+    "ui_story_5059_50590104_67_dialog_content",
+    common[1],
+    nil,
+    common[11]
+  },
+  {
+    59,
+    2,
+    "ui_story_5059_50590104_68_dialog_content",
+    common[1],
+    nil,
+    common[11]
+  },
+  {
+    60,
+    1,
+    "ui_story_5059_50590104_69_dialog_content",
+    common[1],
+    nil,
+    common[11]
+  },
+  {
+    61,
+    1,
+    "ui_story_5059_50590104_70_dialog_content",
+    common[1],
+    nil,
+    common[11]
+  },
+  {
+    62,
+    2,
+    "ui_story_5059_50590104_71_dialog_content",
+    common[1],
+    nil,
+    common[10],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    69,
+    1
+  },
+  {
+    63,
+    1,
+    "ui_story_5059_50590104_73_dialog_content",
+    common[1],
+    nil,
+    common[8]
+  },
+  {
+    64,
+    2,
+    "ui_story_5059_50590104_74_dialog_content",
+    common[1],
+    nil,
+    common[8]
+  },
+  {
+    65,
+    1,
+    "ui_story_5059_50590104_75_dialog_content",
+    common[1],
+    nil,
+    common[7]
+  },
+  {
+    66,
+    3,
+    "ui_story_5059_50590104_76_dialog_content",
+    common[1],
+    nil,
+    common[7]
+  },
+  {
+    67,
+    4,
+    "ui_story_5059_50590104_77_dialog_content",
+    common[1],
+    nil,
+    common[7]
+  },
+  {
+    68,
+    2,
+    "ui_story_5059_50590104_78_dialog_content",
+    common[2],
+    nil,
+    common[10],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    69,
+    1
+  },
+  {
+    69,
+    1,
+    "ui_story_5059_50590104_97_dialog_content",
+    common[1],
+    nil,
+    common[8]
+  },
+  {
+    70,
+    3,
+    "ui_story_5059_50590104_98_dialog_content",
+    common[1],
+    nil,
+    common[15]
+  },
+  {
+    71,
+    3,
+    "ui_story_5059_50590104_99_dialog_content",
+    common[1],
+    nil,
+    common[15]
+  },
+  {
+    72,
+    3,
+    "ui_story_5059_50590104_100_dialog_content",
+    common[1],
+    nil,
+    common[15]
+  },
+  {
+    73,
+    1,
+    "ui_story_5059_50590104_101_dialog_content",
+    common[1],
+    nil,
+    common[15]
+  },
+  {
+    74,
+    1,
+    "ui_story_5059_50590104_102_dialog_content",
+    common[1],
+    nil,
+    common[15]
+  }
 }
 return config, "ID", key
-

@@ -1,73 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/normallevel/ui_n12_normal_level_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12NormalLevelItem", UICustomWidget)
 UIN12NormalLevelItem = UIN12NormalLevelItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12NormalLevelItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN12NormalLevelItem:Constructor()
   self._atlas = self:GetAsset("UIN12.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevelItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN12NormalLevelItem:OnShow(uiParams)
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevelItem._GetComponent = function(self)
-  -- function num : 0_2
+function UIN12NormalLevelItem:_GetComponent()
   self._text = self:GetUIComponent("UILocalizationText", "Text")
   self._gainType = self:GetUIComponent("Image", "GainType")
-  self._animation = ((self.view).gameObject):GetComponent("Animation")
+  self._animation = self.view.gameObject:GetComponent("Animation")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevelItem.SetData = function(self, id, index)
-  -- function num : 0_3 , upvalues : _ENV
-  local missionAffixCfg = (Cfg.cfg_component_mission_affix)[id]
+function UIN12NormalLevelItem:SetData(id, index)
+  local missionAffixCfg = Cfg.cfg_component_mission_affix[id]
   if not missionAffixCfg then
-    (Log.error)("cfg_component_mission_affix does not exist." .. id)
-    return 
+    Log.error("cfg_component_mission_affix does not exist." .. id)
+    return
   end
-  local affixCfg = (Cfg.cfg_affix)[missionAffixCfg.AffixID]
+  local affixCfg = Cfg.cfg_affix[missionAffixCfg.AffixID]
   if not affixCfg then
-    (Log.error)("cfg_affix does not exist." .. missionAffixCfg.AffixID)
-    return 
+    Log.error("cfg_affix does not exist." .. missionAffixCfg.AffixID)
+    return
   end
-  ;
-  (N12ToolFunctions.SetAffixText)(self._text, affixCfg)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._gainType).sprite = (self._atlas):GetSprite(GainTypeSprite[missionAffixCfg.GainType])
+  N12ToolFunctions.SetAffixText(self._text, affixCfg)
+  self._gainType.sprite = self._atlas:GetSprite(GainTypeSprite[missionAffixCfg.GainType])
   self:_PlayAnimation(index)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevelItem._PlayAnimation = function(self, index)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN12NormalLevelItem:_PlayAnimation(index)
   if self._animationTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._animationTask)
+    GameGlobal.TaskManager():KillTask(self._animationTask)
     self._animationTask = nil
   end
   self._animationTask = self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, index, self
     YIELD(TT, index * 33)
-    ;
-    (self._animation):Stop()
-    ;
-    (self._animation):Play("uieff_N12_Normal_Item_In")
-  end
-)
+    self._animation:Stop()
+    self._animation:Play("uieff_N12_Normal_Item_In")
+  end)
 end
-
-

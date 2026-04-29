@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_team_creation_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataTeamCreationResult", Object)
 DataTeamCreationResult = DataTeamCreationResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataTeamCreationResult.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function DataTeamCreationResult:Constructor()
   self._teamEntityID = -1
   self._firstPetEntityID = -1
   self._BornPos = nil
@@ -22,160 +15,90 @@ DataTeamCreationResult.Constructor = function(self)
   self._petCreationResultList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.AddPetCreationOrder = function(self, petPstID)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._petCreationOrder)[#self._petCreationOrder + 1] = petPstID
+function DataTeamCreationResult:AddPetCreationOrder(petPstID)
+  self._petCreationOrder[#self._petCreationOrder + 1] = petPstID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.GetPetCreationOrder = function(self)
-  -- function num : 0_2
+function DataTeamCreationResult:GetPetCreationOrder()
   return self._petCreationOrder
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.SetCreationResultTeamEntityID = function(self, id)
-  -- function num : 0_3
+function DataTeamCreationResult:SetCreationResultTeamEntityID(id)
   self._teamEntityID = id
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.GetCreationResultTeamEntityID = function(self)
-  -- function num : 0_4
+function DataTeamCreationResult:GetCreationResultTeamEntityID()
   return self._teamEntityID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.SetCreationResultFirstPetEntityID = function(self, id)
-  -- function num : 0_5
+function DataTeamCreationResult:SetCreationResultFirstPetEntityID(id)
   self._firstPetEntityID = id
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.GetCreationResultFirstPetEntityID = function(self)
-  -- function num : 0_6
+function DataTeamCreationResult:GetCreationResultFirstPetEntityID()
   return self._firstPetEntityID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.SetCreationResultHPOffset = function(self, offset)
-  -- function num : 0_7
+function DataTeamCreationResult:SetCreationResultHPOffset(offset)
   self._hpOffset = offset
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.GetCreationResultHPOffset = function(self)
-  -- function num : 0_8
+function DataTeamCreationResult:GetCreationResultHPOffset()
   return self._hpOffset
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.SetCreationResultElement = function(self, element)
-  -- function num : 0_9
+function DataTeamCreationResult:SetCreationResultElement(element)
   self._elementType = element
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.GetCreationResultElement = function(self)
-  -- function num : 0_10
+function DataTeamCreationResult:GetCreationResultElement()
   return self._elementType
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.SetCreationResultHP = function(self, hp)
-  -- function num : 0_11
+function DataTeamCreationResult:SetCreationResultHP(hp)
   self._hp = hp
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.GetCreationResultHP = function(self)
-  -- function num : 0_12
+function DataTeamCreationResult:GetCreationResultHP()
   return self._hp
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.SetCreationResultMaxHP = function(self, maxHp)
-  -- function num : 0_13
+function DataTeamCreationResult:SetCreationResultMaxHP(maxHp)
   self._maxHp = maxHp
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.GetCreationResultMaxHP = function(self)
-  -- function num : 0_14
+function DataTeamCreationResult:GetCreationResultMaxHP()
   return self._maxHp
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.SetCreationResultLogicPos = function(self, pos)
-  -- function num : 0_15
+function DataTeamCreationResult:SetCreationResultLogicPos(pos)
   self._logicPos = pos
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.GetCreationResultLogicPos = function(self)
-  -- function num : 0_16
+function DataTeamCreationResult:GetCreationResultLogicPos()
   return self._logicPos
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.SetCreationResultBornPos = function(self, pos)
-  -- function num : 0_17
+function DataTeamCreationResult:SetCreationResultBornPos(pos)
   self._BornPos = pos
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.GetCreationResultBornPos = function(self)
-  -- function num : 0_18
+function DataTeamCreationResult:GetCreationResultBornPos()
   return self._BornPos
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.SetCreationResultBornRotation = function(self, rotation)
-  -- function num : 0_19
+function DataTeamCreationResult:SetCreationResultBornRotation(rotation)
   self._BornRotation = rotation
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.GetCreationResultBornRotation = function(self)
-  -- function num : 0_20
+function DataTeamCreationResult:GetCreationResultBornRotation()
   return self._BornRotation
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.GetPetCreationResultList = function(self)
-  -- function num : 0_21
+function DataTeamCreationResult:GetPetCreationResultList()
   return self._petCreationResultList
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTeamCreationResult.SetPetCreationResultList = function(self, petResList)
-  -- function num : 0_22
+function DataTeamCreationResult:SetPetCreationResultList(petResList)
   self._petCreationResultList = petResList
 end
-
-

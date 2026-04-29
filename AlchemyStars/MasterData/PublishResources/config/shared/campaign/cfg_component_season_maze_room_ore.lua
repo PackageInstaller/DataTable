@@ -1,52 +1,265 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_season_maze_room_ore.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, Odds = 3, MinLay = 4, MaxLay = 5, Prof = 6, FirstElement = 7, HardGap = 8, OnceGolds = 9, RoundGolds = 10, RoundNum = 11, RoundCount = 12}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  Odds = 3,
+  MinLay = 4,
+  MaxLay = 5,
+  Prof = 6,
+  FirstElement = 7,
+  HardGap = 8,
+  OnceGolds = 9,
+  RoundGolds = 10,
+  RoundNum = 11,
+  RoundCount = 12
+}
 local common = {
-{1, 2, 3, 4}
-, 
-{20, 30, 50}
-, 
-{4, 5, 6}
-, 
-{5}
-, 
-{2, 4, 6}
+  {
+    1,
+    2,
+    3,
+    4
+  },
+  {
+    20,
+    30,
+    50
+  },
+  {
+    4,
+    5,
+    6
+  },
+  {5},
+  {
+    2,
+    4,
+    6
+  }
 }
 local config = {
-[10001] = {10001, 900308001, 100, 1, 0, 0, 0, common[1], common[2], common[3], common[4], common[5]}
-, 
-[10002] = {10002, 900308001, 100, 1, 0, 0, 0, common[1], common[2], common[3], common[4], common[5]}
-, 
-[10003] = {10003, 900308001, 100, 1, 0, 0, 0, common[1], common[2], common[3], common[4], common[5]}
-, 
-[10004] = {10004, 900308001, 100, 1, 0, 0, 0, common[1], common[2], common[3], common[4], common[5]}
-, 
-[10005] = {10005, 900308001, 150, 1, 0, 0, 0, common[1], common[2], common[3], common[4], common[5]}
-, 
-[10006] = {10006, 900308001, 150, 1, 0, 0, 0, common[1], common[2], common[3], common[4], common[5]}
-, 
-[10007] = {10007, 900308001, 150, 1, 0, 0, 0, common[1], common[2], common[3], common[4], common[5]}
-, 
-[10008] = {10008, 900308001, 150, 1, 0, 0, 0, common[1], common[2], common[3], common[4], common[5]}
-, 
-[10009] = {10009, 900308001, 150, 1, 0, 0, 0, common[1], common[2], common[3], common[4], common[5]}
-, 
-[10010] = {10010, 900308001, 150, 1, 0, 0, 0, common[1], common[2], common[3], common[4], common[5]}
-, 
-[10011] = {10011, 900308001, 150, 1, 0, 0, 0, common[1], common[2], common[3], common[4], common[5]}
-, 
-[10012] = {10012, 900308001, 150, 1, 0, 0, 0, common[1], common[2], common[3], common[4], common[5]}
-, 
-[10013] = {10013, 900308001, 100, 1, 0, 0, 0, common[1], common[2], common[3], common[4], common[5]}
-, 
-[10014] = {10014, 900308001, 100, 1, 0, 0, 0, common[1], common[2], common[3], common[4], common[5]}
-, 
-[10015] = {10015, 900308001, 100, 1, 0, 0, 0, common[1], common[2], common[3], common[4], common[5]}
-, 
-[10016] = {10016, 900308001, 100, 1, 0, 0, 0, common[1], common[2], common[3], common[4], common[5]}
+  [10001] = {
+    10001,
+    900308001,
+    100,
+    1,
+    0,
+    0,
+    0,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    common[5]
+  },
+  [10002] = {
+    10002,
+    900308001,
+    100,
+    1,
+    0,
+    0,
+    0,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    common[5]
+  },
+  [10003] = {
+    10003,
+    900308001,
+    100,
+    1,
+    0,
+    0,
+    0,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    common[5]
+  },
+  [10004] = {
+    10004,
+    900308001,
+    100,
+    1,
+    0,
+    0,
+    0,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    common[5]
+  },
+  [10005] = {
+    10005,
+    900308001,
+    150,
+    1,
+    0,
+    0,
+    0,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    common[5]
+  },
+  [10006] = {
+    10006,
+    900308001,
+    150,
+    1,
+    0,
+    0,
+    0,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    common[5]
+  },
+  [10007] = {
+    10007,
+    900308001,
+    150,
+    1,
+    0,
+    0,
+    0,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    common[5]
+  },
+  [10008] = {
+    10008,
+    900308001,
+    150,
+    1,
+    0,
+    0,
+    0,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    common[5]
+  },
+  [10009] = {
+    10009,
+    900308001,
+    150,
+    1,
+    0,
+    0,
+    0,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    common[5]
+  },
+  [10010] = {
+    10010,
+    900308001,
+    150,
+    1,
+    0,
+    0,
+    0,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    common[5]
+  },
+  [10011] = {
+    10011,
+    900308001,
+    150,
+    1,
+    0,
+    0,
+    0,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    common[5]
+  },
+  [10012] = {
+    10012,
+    900308001,
+    150,
+    1,
+    0,
+    0,
+    0,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    common[5]
+  },
+  [10013] = {
+    10013,
+    900308001,
+    100,
+    1,
+    0,
+    0,
+    0,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    common[5]
+  },
+  [10014] = {
+    10014,
+    900308001,
+    100,
+    1,
+    0,
+    0,
+    0,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    common[5]
+  },
+  [10015] = {
+    10015,
+    900308001,
+    100,
+    1,
+    0,
+    0,
+    0,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    common[5]
+  },
+  [10016] = {
+    10016,
+    900308001,
+    100,
+    1,
+    0,
+    0,
+    0,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    common[5]
+  }
 }
 return config, "ID", key
-

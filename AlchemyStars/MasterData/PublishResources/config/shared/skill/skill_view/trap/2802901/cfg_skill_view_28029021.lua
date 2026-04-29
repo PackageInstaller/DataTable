@@ -1,17 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/trap/2802901/cfg_skill_view_28029021.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{"PlayAddBuffResultAll;"}
-}
-, 
-{2, 2, 0, 1, 0, 0, 
-{" PlaySceneObjLegacyAnimation,sceneObjName=eff_Scene_ymck_boss1,animNames=eff_scene_ymck_idle_to_ult; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      "PlayAddBuffResultAll;"
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlaySceneObjLegacyAnimation,sceneObjName=eff_Scene_ymck_boss1,animNames=eff_scene_ymck_idle_to_ult; "
+    }
+  }
 }
 return config, "ID", key
-

@@ -1,69 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n23/replay/ui_n23_replay_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN23ReplayItem", UICustomWidget)
 UIN23ReplayItem = UIN23ReplayItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN23ReplayItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN23ReplayItem:Constructor()
   self.mCampaign = self:GetModule(CampaignModule)
-  self.data = (self.mCampaign):GetN23Data()
+  self.data = self.mCampaign:GetN23Data()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23ReplayItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN23ReplayItem:OnShow(uiParams)
   self.normal = self:GetGameObject("normal")
   self.lock = self:GetGameObject("lock")
   self.imgClip = self:GetUIComponent("RawImageLoader", "imgClip")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23ReplayItem.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgClip):DestoryLastImage()
+function UIN23ReplayItem:OnHide()
+  self.imgClip:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23ReplayItem.Flush = function(self, index, id, ui)
-  -- function num : 0_3
+function UIN23ReplayItem:Flush(index, id, ui)
   self.index = index
   self.id = id
   self.ui = ui
-  self.replay = (self.data):GetReplayById(id)
-  if (self.replay):IsUnlock() then
-    (self.normal):SetActive(true)
-    ;
-    (self.lock):SetActive(false)
-    ;
-    (self.imgClip):LoadImage((self.replay).icon)
+  self.replay = self.data:GetReplayById(id)
+  if self.replay:IsUnlock() then
+    self.normal:SetActive(true)
+    self.lock:SetActive(false)
+    self.imgClip:LoadImage(self.replay.icon)
   else
-    ;
-    (self.normal):SetActive(false)
-    ;
-    (self.lock):SetActive(true)
+    self.normal:SetActive(false)
+    self.lock:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23ReplayItem.BtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  self.replay = (self.data):GetReplayById(self.id)
-  if (self.replay):IsUnlock() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityShopBuySuccess, (self.replay).exchangeId)
-    ;
-    (self.ui):CloseDialog()
+function UIN23ReplayItem:BtnOnClick(go)
+  self.replay = self.data:GetReplayById(self.id)
+  if self.replay:IsUnlock() then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityShopBuySuccess, self.replay.exchangeId)
+    self.ui:CloseDialog()
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_n23_replay_not_unlock"))
+    ToastManager.ShowToast(StringTable.Get("str_n23_replay_not_unlock"))
   end
 end
-
-

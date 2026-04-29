@@ -1,121 +1,76 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/campaign_shaving_ice_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("CampaignShavingIceComponent", ICampaignComponent)
 CampaignShavingIceComponent = CampaignShavingIceComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CampaignShavingIceComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CampaignShavingIceComponent:Constructor()
   self.m_component_info = ShavingIceComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignShavingIceComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CampaignShavingIceComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = ShavingIceComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignShavingIceComponent.GetShavingIceMissionInfo = function(self)
-  -- function num : 0_2
-  return (self.m_component_info).mission_info_list
+function CampaignShavingIceComponent:GetShavingIceMissionInfo()
+  return self.m_component_info.mission_info_list
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignShavingIceComponent.GetComponentInfo = function(self)
-  -- function num : 0_3
+function CampaignShavingIceComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignShavingIceComponent.GetComponentType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function CampaignShavingIceComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_SHAVING_ICE
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignShavingIceComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_5 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function CampaignShavingIceComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignShavingIceComponent.HandleStoryMsg = function(self, TT, asyncRes, mission_id, story_type)
-  -- function num : 0_6 , upvalues : _ENV
+function CampaignShavingIceComponent:HandleStoryMsg(TT, asyncRes, mission_id, story_type)
   local request = ShavingIceComponentMissionStoryReq:New()
   request.mission_id = mission_id
   request.story_type = story_type
   local response = ShavingIceComponentMissionStoryRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][CampaignShavingIceComponent] HandleStoryMsg ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][CampaignShavingIceComponent] HandleStoryMsg ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  ((self.m_component_info).mission_info_list)[response.mission_id] = response.info
+  self.m_component_info.mission_info_list[response.mission_id] = response.info
   return asyncRes
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignShavingIceComponent.HandleScoreMsg = function(self, TT, asyncRes, mission_id, score)
-  -- function num : 0_7 , upvalues : _ENV
+function CampaignShavingIceComponent:HandleScoreMsg(TT, asyncRes, mission_id, score)
   local request = ShavingIceComponentScoreReq:New()
   request.mission_id = mission_id
   request.score = score
   local response = ShavingIceComponentScoreRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][CampaignShavingIceComponent] HandleScoreMsg ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][CampaignShavingIceComponent] HandleScoreMsg ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  ((self.m_component_info).mission_info_list)[response.mission_id] = response.info
+  self.m_component_info.mission_info_list[response.mission_id] = response.info
   return asyncRes
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignShavingIceComponent.HandleRecvRewardMsg = function(self, TT, asyncRes, mission_id, grade)
-  -- function num : 0_8 , upvalues : _ENV
+function CampaignShavingIceComponent:HandleRecvRewardMsg(TT, asyncRes, mission_id, grade)
   local request = ShavingIceComponentRecvRewardReq:New()
   request.mission_id = mission_id
   request.grade = grade
   local response = ShavingIceComponentRecvRewardRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][CampaignShavingIceComponent] HandleRecvRewardMsg ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][CampaignShavingIceComponent] HandleRecvRewardMsg ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  ((self.m_component_info).mission_info_list)[response.mission_id] = response.info
+  self.m_component_info.mission_info_list[response.mission_id] = response.info
   return asyncRes, response.rewards
 end
-
-

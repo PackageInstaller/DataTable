@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_currency_menu.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopCurrencyMenu", UICustomWidget)
 UIShopCurrencyMenu = UIShopCurrencyMenu
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopCurrencyMenu.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopCurrencyMenu:OnShow()
   self.diamondGO = self:GetGameObject("diamondpanel")
   self.goldGO = self:GetGameObject("goldpanel")
   self.secretGO = self:GetGameObject("secretpanel")
@@ -19,133 +12,78 @@ UIShopCurrencyMenu.OnShow = function(self)
   self:AddListener()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrencyMenu.OnHide = function(self)
-  -- function num : 0_1
+function UIShopCurrencyMenu:OnHide()
   self:RemoveListener()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrencyMenu.AddListener = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopCurrencyMenu:AddListener()
   self:AttachEvent(GameEventType.ItemCountChanged, self.OnItemCountChange)
   self:AttachEvent(GameEventType.DiamondCountChanged, self.OnItemCountChange)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrencyMenu.RemoveListener = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIShopCurrencyMenu:RemoveListener()
   self:DetachEvent(GameEventType.ItemCountChanged, self.OnItemCountChange)
   self:DetachEvent(GameEventType.DiamondCountChanged, self.OnItemCountChange)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrencyMenu.Refresh = function(self, subTabType)
-  -- function num : 0_4 , upvalues : _ENV
+function UIShopCurrencyMenu:Refresh(subTabType)
   self.subTabType = subTabType
   if self.subTabType == MarketType.Shop_BlackMarket then
-    (self.diamondGO):SetActive(true)
-    ;
-    (self.goldGO):SetActive(true)
-    ;
-    (self.secretGO):SetActive(false)
-    ;
-    (self.diamondTxt):SetText((self.roleModule):GetGlow())
-    ;
-    (self.goldTxt):SetText((self.roleModule):GetGold())
-  else
-    if self.subTabType == MarketType.Shop_MysteryMarket then
-      (self.diamondGO):SetActive(false)
-      ;
-      (self.goldGO):SetActive(false)
-      ;
-      (self.secretGO):SetActive(true)
-      ;
-      (self.secretTxt):SetText((self.roleModule):GetMazeCoin())
-    else
-      if self.subTabType == MarketType.Shop_WorldBoss then
-        (self.diamondGO):SetActive(false)
-        ;
-        (self.goldGO):SetActive(false)
-        ;
-        (self.secretGO):SetActive(true)
-        ;
-        (self.secretTxt):SetText((self.roleModule):GetMazeCoin())
-      end
-    end
+    self.diamondGO:SetActive(true)
+    self.goldGO:SetActive(true)
+    self.secretGO:SetActive(false)
+    self.diamondTxt:SetText(self.roleModule:GetGlow())
+    self.goldTxt:SetText(self.roleModule:GetGold())
+  elseif self.subTabType == MarketType.Shop_MysteryMarket then
+    self.diamondGO:SetActive(false)
+    self.goldGO:SetActive(false)
+    self.secretGO:SetActive(true)
+    self.secretTxt:SetText(self.roleModule:GetMazeCoin())
+  elseif self.subTabType == MarketType.Shop_WorldBoss then
+    self.diamondGO:SetActive(false)
+    self.goldGO:SetActive(false)
+    self.secretGO:SetActive(true)
+    self.secretTxt:SetText(self.roleModule:GetMazeCoin())
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrencyMenu.OnItemCountChange = function(self)
-  -- function num : 0_5
+function UIShopCurrencyMenu:OnItemCountChange()
   self:Refresh(self.subTabType)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrencyMenu.btndiamondOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  (ToastManager.ShowLockTip)()
+function UIShopCurrencyMenu:btndiamondOnClick(go)
+  ToastManager.ShowLockTip()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrencyMenu.btnsecretOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  (ToastManager.ShowLockTip)()
+function UIShopCurrencyMenu:btnsecretOnClick(go)
+  ToastManager.ShowLockTip()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrencyMenu.btngoldOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  (ToastManager.ShowLockTip)()
+function UIShopCurrencyMenu:btngoldOnClick(go)
+  ToastManager.ShowLockTip()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrencyMenu.SetData = function(self, iconClick)
-  -- function num : 0_9
+function UIShopCurrencyMenu:SetData(iconClick)
   self._iconClick = iconClick
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrencyMenu.secreticonOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIShopCurrencyMenu:secreticonOnClick()
   if self._iconClick then
     local go = self:GetGameObject("secreticon")
-    ;
-    (self._iconClick)(RoleAssetID.RoleAssetMazeCoin, go)
+    self._iconClick(RoleAssetID.RoleAssetMazeCoin, go)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrencyMenu.goldiconOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIShopCurrencyMenu:goldiconOnClick()
   if self._iconClick then
     local go = self:GetGameObject("goldicon")
-    ;
-    (self._iconClick)(RoleAssetID.RoleAssetGold, go)
+    self._iconClick(RoleAssetID.RoleAssetGold, go)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrencyMenu.diamondiconOnClick = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIShopCurrencyMenu:diamondiconOnClick()
   if self._iconClick then
     local go = self:GetGameObject("diamondicon")
-    ;
-    (self._iconClick)(RoleAssetID.RoleAssetGlow, go)
+    self._iconClick(RoleAssetID.RoleAssetGlow, go)
   end
 end
-
-

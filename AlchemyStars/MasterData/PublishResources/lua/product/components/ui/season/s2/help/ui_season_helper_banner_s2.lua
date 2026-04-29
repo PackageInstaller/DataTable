@@ -1,36 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s2/help/ui_season_helper_banner_s2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonHelperBannerS2", UICustomWidget)
 UISeasonHelperBannerS2 = UISeasonHelperBannerS2
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonHelperBannerS2.OnShow = function(self)
-  -- function num : 0_0
+function UISeasonHelperBannerS2:OnShow()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperBannerS2.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonHelperBannerS2:OnHide()
   if self._scrollEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._scrollEvent)
+    GameGlobal.Timer():CancelEvent(self._scrollEvent)
     self._scrollEvent = nil
   end
   self._matRes = {}
-  if self._scrollPlayer and (self._scrollPlayer):IsPlaying() then
-    (self._scrollPlayer):Stop()
+  if self._scrollPlayer and self._scrollPlayer:IsPlaying() then
+    self._scrollPlayer:Stop()
   end
   self._scrollPlayer = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperBannerS2.SetData = function(self, tabIndex)
-  -- function num : 0_2
+function UISeasonHelperBannerS2:SetData(tabIndex)
   if tabIndex then
     self._tabIndex = tabIndex
   else
@@ -39,10 +26,7 @@ UISeasonHelperBannerS2.SetData = function(self, tabIndex)
   self:InitScrollView()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperBannerS2.InitWidget = function(self)
-  -- function num : 0_3
+function UISeasonHelperBannerS2:InitWidget()
   self._cellArea1Go = self:GetGameObject("CellArea1")
   self._cellArea2Go = self:GetGameObject("CellArea2")
   local cellGen1 = self:GetUIComponent("UISelectObjectPath", "CellArea1")
@@ -61,29 +45,24 @@ UISeasonHelperBannerS2.InitWidget = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperBannerS2.ScrollToIndex = function(self, tarIdx)
-  -- function num : 0_4
+function UISeasonHelperBannerS2:ScrollToIndex(tarIdx)
   if self._count <= 1 then
-    return 
+    return
   end
   if self._scrollIng then
-    return 
+    return
   end
   local oldIndex = self._currIdx
   local tmpIdx = tarIdx
-  if self._count < tmpIdx then
+  if tmpIdx > self._count then
     self._currIdx = tmpIdx % self._count
+  elseif tmpIdx <= 0 then
+    self._currIdx = self._count
   else
-    if tmpIdx <= 0 then
-      self._currIdx = self._count
-    else
-      self._currIdx = tmpIdx
-    end
+    self._currIdx = tmpIdx
   end
   for i = 1, #self._idxItems do
-    ((self._idxItems)[i]):Flush(self._currIdx)
+    self._idxItems[i]:Flush(self._currIdx)
   end
   self:_SetCellForAnim()
   self:_SetScrollCellData(self._cellWidget1, oldIndex)
@@ -91,37 +70,27 @@ UISeasonHelperBannerS2.ScrollToIndex = function(self, tarIdx)
   self:_PlayScrollAnim(oldIndex < self._currIdx)
   self:_CreateScrollEvent()
   self:_RefreshArrowBtn()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperBannerS2.ImageLeftOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+function UISeasonHelperBannerS2:ImageLeftOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   if self._count <= 1 then
-    return 
+    return
   end
   local tmpIdx = self._currIdx - 1
   self:ScrollToIndex(tmpIdx)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperBannerS2.ImageRightOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+function UISeasonHelperBannerS2:ImageRightOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   if self._count <= 1 then
-    return 
+    return
   end
   local tmpIdx = self._currIdx + 1
   self:ScrollToIndex(tmpIdx)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperBannerS2.InitScrollView = function(self)
-  -- function num : 0_7
+function UISeasonHelperBannerS2:InitScrollView()
   self:_SetCellForNormal()
   self._isDarging = false
   self._isScrollReady = false
@@ -133,10 +102,7 @@ UISeasonHelperBannerS2.InitScrollView = function(self)
   self._isScrollReady = true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperBannerS2._RefreshArrowBtn = function(self)
-  -- function num : 0_8
+function UISeasonHelperBannerS2:_RefreshArrowBtn()
   local showLeft = true
   if self._currIdx == 1 then
     showLeft = false
@@ -145,49 +111,39 @@ UISeasonHelperBannerS2._RefreshArrowBtn = function(self)
   if self._currIdx == self._count then
     showRight = false
   end
-  ;
-  (self._imageLeftGo):SetActive(showLeft)
-  ;
-  (self._imageRightGo):SetActive(showRight)
+  self._imageLeftGo:SetActive(showLeft)
+  self._imageRightGo:SetActive(showRight)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperBannerS2._CreateScrollData = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonHelperBannerS2:_CreateScrollData()
   self._carouselTab = {}
-  self._cfgTab = (Cfg.cfg_season_helper)({SeasonID = UISeasonID.S2, Tab = self._tabIndex})
-  local count = (table.count)(self._cfgTab)
-  count = (table.count)(self._cfgTab)
+  self._cfgTab = Cfg.cfg_season_helper({
+    SeasonID = UISeasonID.S2,
+    Tab = self._tabIndex
+  })
+  local count = table.count(self._cfgTab)
+  count = table.count(self._cfgTab)
   self._count = count
   for i = 1, self._count do
     local cfg_item_middle = {}
-    cfg_item_middle.data = (self._cfgTab)[i]
-    ;
-    (table.insert)(self._carouselTab, cfg_item_middle)
+    cfg_item_middle.data = self._cfgTab[i]
+    table.insert(self._carouselTab, cfg_item_middle)
   end
-  ;
-  (table.sort)(self._carouselTab, function(a, b)
-    -- function num : 0_9_0
-    if (a.data).ID >= (b.data).ID then
-      do return (a.data).OrderInTab ~= (b.data).OrderInTab end
-      do return (a.data).OrderInTab < (b.data).OrderInTab end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  table.sort(self._carouselTab, function(a, b)
+    if a.data.OrderInTab == b.data.OrderInTab then
+      return a.data.ID < b.data.ID
+    else
+      return a.data.OrderInTab < b.data.OrderInTab
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperBannerS2._CreateScrollItem = function(self)
-  -- function num : 0_10
+function UISeasonHelperBannerS2:_CreateScrollItem()
   self._grid = self:GetUIComponent("UISelectObjectPath", "grid")
-  ;
-  (self._grid):SpawnObjects("UISeasonHelperBannerIdxItemS2", self._count)
-  self._idxItems = (self._grid):GetAllSpawnList()
+  self._grid:SpawnObjects("UISeasonHelperBannerIdxItemS2", self._count)
+  self._idxItems = self._grid:GetAllSpawnList()
   for i = 1, #self._idxItems do
-    ((self._idxItems)[i]):SetData(i, self._currIdx)
+    self._idxItems[i]:SetData(i, self._currIdx)
   end
   self._content = self:GetUIComponent("RectTransform", "Content")
   self._scroll = self:GetGameObject("scroll")
@@ -195,76 +151,67 @@ UISeasonHelperBannerS2._CreateScrollItem = function(self)
   self._width = 1235
   local dataCount = #self._carouselTab
   if dataCount == 0 then
-    (self._scroll):SetActive(false)
-    return 
+    self._scroll:SetActive(false)
+    return
   end
   self:_SetCellForAnim()
   self:_SetScrollCellData(self._cellWidget2, 1)
   self:_PlayScrollAnim()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperBannerS2._SetScrollCellData = function(self, cellWidget, dataIndex)
-  -- function num : 0_11 , upvalues : _ENV
-  cellWidget:SetData((self._carouselTab)[dataIndex], function(cfgID)
-    -- function num : 0_11_0
-  end
-, function(eventData)
-    -- function num : 0_11_1 , upvalues : self, _ENV
+function UISeasonHelperBannerS2:_SetScrollCellData(cellWidget, dataIndex)
+  cellWidget:SetData(self._carouselTab[dataIndex], function(cfgID)
+  end, function(eventData)
     if self._count <= 1 then
-      return 
+      return
     end
     if self._scrollIng then
-      return 
+      return
     end
-    self._bDragPosY = (eventData.position).y
-    self._bDragPosX = (eventData.position).x
+    self._bDragPosY = eventData.position.y
+    self._bDragPosX = eventData.position.x
     self._isDarging = true
     if self._scrollEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._scrollEvent)
+      GameGlobal.Timer():CancelEvent(self._scrollEvent)
       self._scrollEvent = nil
     end
-  end
-, function(eventData)
-    -- function num : 0_11_2 , upvalues : self
+  end, function(eventData)
     if self._count <= 1 then
-      return 
+      return
     end
-  end
-, function(eventData)
-    -- function num : 0_11_3 , upvalues : self, _ENV
+  end, function(eventData)
     if self._count <= 1 then
-      return 
+      return
     end
     if not self._isDarging then
-      return 
+      return
     end
     local triggerRange = self._width * 0.1
     local tmpIdx = self._currIdx
     local idChanged = false
-    self._eDragPosY = (eventData.position).y
-    self._eDragPosX = (eventData.position).x
-    local delta = (math.abs)(self._eDragPosX - self._bDragPosX)
-    -- DECOMPILER ERROR at PC33: Unhandled construct in 'MakeBoolean' P1
-
-    if self._eDragPosX < self._bDragPosX and triggerRange < delta and tmpIdx < self._count then
-      tmpIdx = tmpIdx + 1
-      idChanged = true
-    end
-    if triggerRange < delta and tmpIdx > 1 then
-      tmpIdx = tmpIdx - 1
-      idChanged = true
+    self._eDragPosY = eventData.position.y
+    self._eDragPosX = eventData.position.x
+    local delta = math.abs(self._eDragPosX - self._bDragPosX)
+    if self._eDragPosX < self._bDragPosX then
+      if triggerRange < delta and tmpIdx < self._count then
+        tmpIdx = tmpIdx + 1
+        idChanged = true
+      else
+      end
+    else
+      if triggerRange < delta and 1 < tmpIdx then
+        tmpIdx = tmpIdx - 1
+        idChanged = true
+      else
+      end
     end
     local newIdx = tmpIdx
-    if self._count < tmpIdx then
-      newIdx = (tmpIdx) % self._count
+    if tmpIdx > self._count then
+      newIdx = tmpIdx % self._count
+    elseif tmpIdx <= 0 then
+      newIdx = self._count
     else
-      if tmpIdx <= 0 then
-        newIdx = self._count
-      else
-        newIdx = tmpIdx
-      end
+      newIdx = tmpIdx
     end
     self._isDarging = false
     if idChanged then
@@ -272,117 +219,69 @@ UISeasonHelperBannerS2._SetScrollCellData = function(self, cellWidget, dataIndex
     else
       self:_CreateScrollEvent()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperBannerS2._CreateScrollEvent = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  do return  end
+function UISeasonHelperBannerS2:_CreateScrollEvent()
+  do return end
   local deltaTime = self._rollInterval
   local dir = 1
   if self._scrollEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._scrollEvent)
+    GameGlobal.Timer():CancelEvent(self._scrollEvent)
     self._scrollEvent = nil
   end
-  if self._count > 1 then
-    self._scrollEvent = ((GameGlobal.Timer)()):AddEventTimes(deltaTime, TimerTriggerCount.Infinite, function()
-    -- function num : 0_12_0 , upvalues : self, dir
-    if not self._isDarging then
-      local idx = self._currIdx
-      if dir == 1 then
-        idx = self._currIdx + 1
-      else
-        idx = self._currIdx - 1
-      end
-      if idx < 1 then
-        idx = self._count
-      else
-        if self._count < idx then
+  if 1 < self._count then
+    self._scrollEvent = GameGlobal.Timer():AddEventTimes(deltaTime, TimerTriggerCount.Infinite, function()
+      if not self._isDarging then
+        local idx = self._currIdx
+        if dir == 1 then
+          idx = self._currIdx + 1
+        else
+          idx = self._currIdx - 1
+        end
+        if idx < 1 then
+          idx = self._count
+        elseif idx > self._count then
           idx = 1
         end
+        for i = 1, #self._idxItems do
+          self._idxItems[i]:Flush(idx)
+        end
+        self:ScrollToIndex(idx)
       end
-      for i = 1, #self._idxItems do
-        ((self._idxItems)[i]):Flush(idx)
-      end
-      self:ScrollToIndex(idx)
-    end
-  end
-)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperBannerS2._SetCellForNormal = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  (self._cellArea1Go):SetActive(true)
-  ;
-  (self._cellArea2Go):SetActive(false)
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._cellCanvas1).alpha = 1
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._cellRect1).anchoredPosition = Vector2(0, 0)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._cellRect2).anchoredPosition = Vector2(0, 0)
+function UISeasonHelperBannerS2:_SetCellForNormal()
+  self._cellArea1Go:SetActive(true)
+  self._cellArea2Go:SetActive(false)
+  self._cellCanvas1.alpha = 1
+  self._cellRect1.anchoredPosition = Vector2(0, 0)
+  self._cellRect2.anchoredPosition = Vector2(0, 0)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperBannerS2._SetCellForAnim = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (self._cellArea1Go):SetActive(true)
-  ;
-  (self._cellArea2Go):SetActive(true)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._cellRect1).anchoredPosition = Vector2(0, 0)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._cellRect2).anchoredPosition = Vector2(0, 0)
+function UISeasonHelperBannerS2:_SetCellForAnim()
+  self._cellArea1Go:SetActive(true)
+  self._cellArea2Go:SetActive(true)
+  self._cellRect1.anchoredPosition = Vector2(0, 0)
+  self._cellRect2.anchoredPosition = Vector2(0, 0)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperBannerS2.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_15
+function UISeasonHelperBannerS2:OnUpdate(deltaTimeMS)
   if self._isScrollReady and self._count <= 1 then
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperBannerS2._PlayScrollAnim = function(self, bDown)
-  -- function num : 0_16
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._cellCanvas1).alpha = 1
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._cellCanvas2).alpha = 0
+function UISeasonHelperBannerS2:_PlayScrollAnim(bDown)
+  self._cellCanvas1.alpha = 1
+  self._cellCanvas2.alpha = 0
   self._scrollIng = true
-  ;
-  (self._cellCanvas1):DOFade(0, 0.3)
-  ;
-  ((self._cellCanvas2):DOFade(1, 0.3)):OnComplete(function()
-    -- function num : 0_16_0 , upvalues : self
+  self._cellCanvas1:DOFade(0, 0.3)
+  self._cellCanvas2:DOFade(1, 0.3):OnComplete(function()
     self:_SetCellForNormal()
     self:_SetScrollCellData(self._cellWidget1, self._currIdx)
     self._scrollIng = false
-  end
-)
+  end)
 end
-
-

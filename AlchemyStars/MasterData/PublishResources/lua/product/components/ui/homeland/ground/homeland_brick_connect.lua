@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ground/homeland_brick_connect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandBrickConnect", Object)
 HomelandBrickConnect = HomelandBrickConnect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandBrickConnect.Constructor = function(self, firstBrick, firstDirection, secondBrick, secondDirection)
-  -- function num : 0_0
+function HomelandBrickConnect:Constructor(firstBrick, firstDirection, secondBrick, secondDirection)
   self._firstBrick = firstBrick
   self._firstBrickDirection = firstDirection
   self._secondBrick = secondBrick
@@ -16,33 +9,21 @@ HomelandBrickConnect.Constructor = function(self, firstBrick, firstDirection, se
   self:SetEdgeVisible(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandBrickConnect.Destroy = function(self)
-  -- function num : 0_1
+function HomelandBrickConnect:Destroy()
   self:SetEdgeVisible(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandBrickConnect.SetEdgeVisible = function(self, status)
-  -- function num : 0_2
-  (self._firstBrick):SetEdgeVisible(self._firstBrickDirection, status)
-  ;
-  (self._secondBrick):SetEdgeVisible(self._secondBrickDirection, status)
+function HomelandBrickConnect:SetEdgeVisible(status)
+  self._firstBrick:SetEdgeVisible(self._firstBrickDirection, status)
+  self._secondBrick:SetEdgeVisible(self._secondBrickDirection, status)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandBrickConnect.Contain = function(self, brick)
-  -- function num : 0_3
-  if (self._firstBrick):Equal(brick) then
+function HomelandBrickConnect:Contain(brick)
+  if self._firstBrick:Equal(brick) then
     return true
   end
-  if (self._secondBrick):Equal(brick) then
+  if self._secondBrick:Equal(brick) then
     return true
   end
   return false
 end
-
-

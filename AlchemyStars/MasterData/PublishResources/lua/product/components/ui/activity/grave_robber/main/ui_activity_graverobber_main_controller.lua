@@ -1,54 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/grave_robber/main/ui_activity_graverobber_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityGraveRobberMainController", UIController)
 UIActivityGraveRobberMainController = UIActivityGraveRobberMainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityGraveRobberMainController._GetLineMissionComponent = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityGraveRobberMainController:_GetLineMissionComponent()
   local cmptId = ECampaignGrassComponentID.ECAMPAIGN_GRASS_MISSION
-  return (self._campaign):GetComponent(cmptId)
+  return self._campaign:GetComponent(cmptId)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberMainController._GetLineMissionComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityGraveRobberMainController:_GetLineMissionComponentInfo()
   local cmptId = ECampaignGrassComponentID.ECAMPAIGN_GRASS_MISSION
-  return (self._campaign):GetComponentInfo(cmptId)
+  return self._campaign:GetComponentInfo(cmptId)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberMainController._GetComponents = function(self)
-  -- function num : 0_2
+function UIActivityGraveRobberMainController:_GetComponents()
   self._GoBtn = self:GetGameObject("GoBtn")
   self._StayBtn = self:GetGameObject("StayBtn")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberMainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIActivityGraveRobberMainController:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_GRASS, ECampaignGrassComponentID.ECAMPAIGN_GRASS_MISSION)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_GRASS, ECampaignGrassComponentID.ECAMPAIGN_GRASS_MISSION)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
-  ;
-  (self._campaign):ClearCampaignNew(TT)
+  self._campaign:ClearCampaignNew(TT)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberMainController.OnShow = function(self, uiParams)
-  -- function num : 0_4
+function UIActivityGraveRobberMainController:OnShow(uiParams)
   self:_AttachEvents()
   self._isOpen = true
   self:_GetComponents()
@@ -59,196 +38,134 @@ UIActivityGraveRobberMainController.OnShow = function(self, uiParams)
   self:_CheckRedPointAll()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberMainController.OnHide = function(self)
-  -- function num : 0_5
+function UIActivityGraveRobberMainController:OnHide()
   self:_DetachEvents()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberMainController._SetBg = function(self, idx)
-  -- function num : 0_6 , upvalues : _ENV
-  local url = (UIActivityHelper.GetCampaignMainBg)(self._campaign, idx)
-  ;
-  (self:GetGameObject("mainBg")):SetActive(url ~= nil)
-  do
-    if url then
-      local mainBg = self:GetUIComponent("RawImageLoader", "mainBg")
-      mainBg:LoadImage(url)
-    end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIActivityGraveRobberMainController:_SetBg(idx)
+  local url = UIActivityHelper.GetCampaignMainBg(self._campaign, idx)
+  self:GetGameObject("mainBg"):SetActive(url ~= nil)
+  if url then
+    local mainBg = self:GetUIComponent("RawImageLoader", "mainBg")
+    mainBg:LoadImage(url)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberMainController._SetRemainingTime = function(self)
-  -- function num : 0_7
+function UIActivityGraveRobberMainController:_SetRemainingTime()
   local componentInfo = self:_GetLineMissionComponentInfo()
   local remainingTimePool = self:GetUIComponent("UISelectObjectPath", "RemainingTimePool")
   self._remainingTime = remainingTimePool:SpawnObject("UIActivityCommonRemainingTime")
-  ;
-  (self._remainingTime):SetCustomTimeStr({day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_grass_escape_after_lt_m", over = "str_activity_grass_escape_after_lt_m"})
+  self._remainingTime:SetCustomTimeStr({
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_grass_escape_after_lt_m",
+    over = "str_activity_grass_escape_after_lt_m"
+  })
   local endTime = componentInfo.m_close_time
-  ;
-  (self._remainingTime):SetData(endTime, nil, nil)
+  self._remainingTime:SetData(endTime, nil, nil)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberMainController._SetProgress = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityGraveRobberMainController:_SetProgress()
   local txtProgress = self:GetUIComponent("UILocalizationText", "_txtProgress")
   local txtProgress2 = self:GetUIComponent("UILocalizationText", "_txtProgress2")
   local component = self:_GetLineMissionComponent()
   local clear, all = component:GetClearProgress()
   txtProgress:SetText(clear)
-  txtProgress2:SetText((string.format)("/%s", all))
+  txtProgress2:SetText(string.format("/%s", all))
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberMainController._SetRewardPool = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityGraveRobberMainController:_SetRewardPool()
   local sop = self:GetUIComponent("UISelectObjectPath", "_rewardPool")
   sop:SpawnObjects("UIActivityGraveRobberItemIcon", 4)
   local list = sop:GetAllSpawnList()
   local rewards = Cfg.cfg_grave_robber_rewards
   for i = 1, #list do
     local roleAsset = RoleAsset:New()
-    roleAsset.assetid = (rewards[i]).AssetidID
-    ;
-    (list[i]):SetData(i, roleAsset, function(matid, pos)
-    -- function num : 0_9_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityQuestAwardItemClick, matid, pos)
-  end
-)
+    roleAsset.assetid = rewards[i].AssetidID
+    list[i]:SetData(i, roleAsset, function(matid, pos)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityQuestAwardItemClick, matid, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberMainController._SetGoBtn = function(self)
-  -- function num : 0_10
+function UIActivityGraveRobberMainController:_SetGoBtn()
   local component = self:_GetLineMissionComponent()
   local clear, all = component:GetClearProgress()
   local canChallenge = clear ~= all
-  ;
-  (self._GoBtn):SetActive(canChallenge)
-  ;
-  (self._StayBtn):SetActive(not canChallenge)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._GoBtn:SetActive(canChallenge)
+  self._StayBtn:SetActive(not canChallenge)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberMainController.GoBtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  (Log.info)("UIActivityGraveRobberMainController:GoBtnOnClick")
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  do
-    if not (self._campaign):CheckComponentOpen(ECampaignGrassComponentID.ECAMPAIGN_GRASS_MISSION) then
-      local result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_UNLOCK
-      campaignModule:ShowErrorToast(result, true)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._campaign)._id)
-      return 
-    end
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-    local grassData = campaignModule:GetGraveRobberData()
-    local canPlay = grassData:GetCanPlayNodesCount()
-    if canPlay == 0 then
-      local str = (StringTable.Get)("str_activity_grass_escape_battle3")
-      ;
-      (ToastManager.ShowToast)(str)
+function UIActivityGraveRobberMainController:GoBtnOnClick(go)
+  Log.info("UIActivityGraveRobberMainController:GoBtnOnClick")
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
+  if not self._campaign:CheckComponentOpen(ECampaignGrassComponentID.ECAMPAIGN_GRASS_MISSION) then
+    local result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_UNLOCK
+    campaignModule:ShowErrorToast(result, true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaign._id)
+    return
+  end
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
+  local grassData = campaignModule:GetGraveRobberData()
+  local canPlay = grassData:GetCanPlayNodesCount()
+  if canPlay == 0 then
+    local str = StringTable.Get("str_activity_grass_escape_battle3")
+    ToastManager.ShowToast(str)
+  else
+    self.grassData = GameGlobal.GetModule(CampaignModule):GetGraveRobberData()
+    if self.grassData:IsOpenGraveRobber() and self.grassData:HasCanPlayNode() then
+      DiscoveryData.EnterStateUIDiscovery(7, nil)
     else
-      do
-        self.grassData = ((GameGlobal.GetModule)(CampaignModule)):GetGraveRobberData()
-        if (self.grassData):IsOpenGraveRobber() and (self.grassData):HasCanPlayNode() then
-          (DiscoveryData.EnterStateUIDiscovery)(7, nil)
-        else
-          ;
-          (DiscoveryData.EnterStateUIDiscovery)(1)
-        end
-      end
+      DiscoveryData.EnterStateUIDiscovery(1)
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberMainController.ExitBgOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  (Log.info)("UIActivityGraveRobberMainController:ExitBgOnClick")
+function UIActivityGraveRobberMainController:ExitBgOnClick(go)
+  Log.info("UIActivityGraveRobberMainController:ExitBgOnClick")
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberMainController._AttachEvents = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityGraveRobberMainController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:AttachEvent(GameEventType.ActivityQuestAwardItemClick, self._OnActivityQuestAwardItemClick)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberMainController._DetachEvents = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityGraveRobberMainController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:DetachEvent(GameEventType.ActivityQuestAwardItemClick, self._OnActivityQuestAwardItemClick)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberMainController._CheckActivityClose = function(self, id)
-  -- function num : 0_15 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIActivityGraveRobberMainController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberMainController._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_16
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UIActivityGraveRobberMainController:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:_CheckRedPointAll()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberMainController._CheckRedPointAll = function(self)
-  -- function num : 0_17
+function UIActivityGraveRobberMainController:_CheckRedPointAll()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberMainController._CheckRedPoint = function(self, obj, ...)
-  -- function num : 0_18
-  local bShow = (self._campaign):CheckComponentRed(...)
+function UIActivityGraveRobberMainController:_CheckRedPoint(obj, ...)
+  local bShow = self._campaign:CheckComponentRed(...)
   obj:SetActive(bShow)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberMainController._OnActivityQuestAwardItemClick = function(self, matid, pos)
-  -- function num : 0_19
-  do
-    if not self._tips then
-      local itemInfoPool = self:GetUIComponent("UISelectObjectPath", "itemInfoPool")
-      self._tips = itemInfoPool:SpawnObject("UISelectInfo")
-    end
-    if self._tips then
-      (self._tips):SetData(matid, pos)
-    end
+function UIActivityGraveRobberMainController:_OnActivityQuestAwardItemClick(matid, pos)
+  if not self._tips then
+    local itemInfoPool = self:GetUIComponent("UISelectObjectPath", "itemInfoPool")
+    self._tips = itemInfoPool:SpawnObject("UISelectInfo")
+  end
+  if self._tips then
+    self._tips:SetData(matid, pos)
   end
 end
-
-

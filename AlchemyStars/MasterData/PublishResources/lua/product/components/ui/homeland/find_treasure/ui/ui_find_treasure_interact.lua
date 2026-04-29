@@ -1,27 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/find_treasure/ui/ui_find_treasure_interact.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFindTreasureInteract", UICustomWidget)
 UIFindTreasureInteract = UIFindTreasureInteract
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFindTreasureInteract.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+function UIFindTreasureInteract:OnShow(uiParams)
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
-  local characterController = (homelandClient:CharacterManager()):MainCharacterController()
+  local characterController = homelandClient:CharacterManager():MainCharacterController()
   characterController:SetForbiddenMove(true)
   self._dialogLayout1 = self:GetGameObject("DialogLayout1")
   self._speakerName1Label = self:GetUIComponent("UILocalizedTMP", "SpeakerName1")
-  self._matReq = (UIWidgetHelper.SetLocalizedTMPMaterial)(self, "SpeakerName1", "UIHomeStorySpeakerName.mat", self._matReq)
+  self._matReq = UIWidgetHelper.SetLocalizedTMPMaterial(self, "SpeakerName1", "UIHomeStorySpeakerName.mat", self._matReq)
   self._myTalkGo = self:GetGameObject("DialogLayout2")
   self._petTalkGo = self:GetGameObject("DialogLayout1")
-  ;
-  (self._myTalkGo):SetActive(false)
-  ;
-  (self._petTalkGo):SetActive(false)
+  self._myTalkGo:SetActive(false)
+  self._petTalkGo:SetActive(false)
   self._content1Label = self:GetUIComponent("UILocalizationText", "Content1")
   self._options = self:GetGameObject("Options")
   self._chooseLoader = self:GetUIComponent("UISelectObjectPath", "choosePool")
@@ -30,94 +21,58 @@ UIFindTreasureInteract.OnShow = function(self, uiParams)
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureInteract.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+function UIFindTreasureInteract:OnHide()
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
-  local characterController = (homelandClient:CharacterManager()):MainCharacterController()
+  local characterController = homelandClient:CharacterManager():MainCharacterController()
   characterController:SetForbiddenMove(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureInteract.Destroy = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._matReq = (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self._matReq)
+function UIFindTreasureInteract:Destroy()
+  self._matReq = UIWidgetHelper.DisposeLocalizedTMPMaterial(self._matReq)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureInteract.Refresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._dialogLayout1):SetActive(true)
-  ;
-  (self._options):SetActive(true)
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
-  ;
-  (self._speakerName1Label):SetText((StringTable.Get)("str_homeland_find_treasure_dialog_pet_name"))
-  ;
-  (self._content1Label):SetText((StringTable.Get)("str_homeland_find_treasure_dialog_content"))
+function UIFindTreasureInteract:Refresh()
+  self._dialogLayout1:SetActive(true)
+  self._options:SetActive(true)
+  local roleModule = GameGlobal.GetModule(RoleModule)
+  self._speakerName1Label:SetText(StringTable.Get("str_homeland_find_treasure_dialog_pet_name"))
+  self._content1Label:SetText(StringTable.Get("str_homeland_find_treasure_dialog_content"))
   local count = 2
   local btnDatas = {
-{name = (StringTable.Get)("str_homeland_find_treasure_enter_game_btn_name")}
-, 
-{name = (StringTable.Get)("str_homeland_find_treasure_exit_interact_btn_name")}
-}
-  ;
-  (self._chooseLoader):SpawnObjects("UIHomeStoryChooseItem", count)
-  self._pools = (self._chooseLoader):GetAllSpawnList()
+    {
+      name = StringTable.Get("str_homeland_find_treasure_enter_game_btn_name")
+    },
+    {
+      name = StringTable.Get("str_homeland_find_treasure_exit_interact_btn_name")
+    }
+  }
+  self._chooseLoader:SpawnObjects("UIHomeStoryChooseItem", count)
+  self._pools = self._chooseLoader:GetAllSpawnList()
   for i = 1, #self._pools do
-    local btn = (self._pools)[i]
-    if i <= count then
+    local btn = self._pools[i]
+    if count >= i then
       btn:Active(true)
-      local txt = (btnDatas[i]).name
+      local txt = btnDatas[i].name
       btn:SetData(i, txt, function(idx)
-    -- function num : 0_3_0 , upvalues : self
-    self:ItemClick(idx)
-  end
-)
+        self:ItemClick(idx)
+      end)
     else
-      do
-        do
-          btn:Active(false)
-          -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      btn:Active(false)
     end
   end
-  ;
-  (self._bodyLeft):LoadImage((HomelandFindTreasureConst.GetNPCHeadImage)())
-  -- DECOMPILER ERROR at PC87: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._poolRect).anchoredPosition = Vector2(((self._poolRect).anchoredPosition).x, 0)
+  self._bodyLeft:LoadImage(HomelandFindTreasureConst.GetNPCHeadImage())
+  self._poolRect.anchoredPosition = Vector2(self._poolRect.anchoredPosition.x, 0)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureInteract.Init = function(self, main)
-  -- function num : 0_4
+function UIFindTreasureInteract:Init(main)
   self._main = main
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureInteract.ItemClick = function(self, id)
-  -- function num : 0_5
+function UIFindTreasureInteract:ItemClick(id)
   if id == 1 then
-    (self._main):Enter()
-  else
-    if id == 2 then
-      (self._main):Exit()
-    end
+    self._main:Enter()
+  elseif id == 2 then
+    self._main:Exit()
   end
 end
-
-

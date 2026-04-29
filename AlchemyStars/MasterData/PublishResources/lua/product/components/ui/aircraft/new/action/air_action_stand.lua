@@ -1,66 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_stand.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionStand", AirActionBase)
 AirActionStand = AirActionStand
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionStand.Constructor = function(self, pet, min, max)
-  -- function num : 0_0 , upvalues : _ENV
+function AirActionStand:Constructor(pet, min, max)
   self._pet = pet
   if max then
-    self._duration = (math.random)(min, max)
+    self._duration = math.random(min, max)
   else
     self._duration = min
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionStand.Start = function(self)
-  -- function num : 0_1
+function AirActionStand:Start()
   self._running = true
   self._curTime = 0
-  ;
-  (self._pet):Anim_Stand()
+  self._pet:Anim_Stand()
   self:LogStart()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionStand.Update = function(self, deltaTimeMS)
-  -- function num : 0_2
+function AirActionStand:Update(deltaTimeMS)
   if self._running then
     self._curTime = self._curTime + deltaTimeMS
-    if self._duration < self._curTime then
+    if self._curTime > self._duration then
       self:Stop()
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionStand.IsOver = function(self)
-  -- function num : 0_3
+function AirActionStand:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionStand.Stop = function(self)
-  -- function num : 0_4
+function AirActionStand:Stop()
   self._running = false
   self._curTime = self._duration + 1
   self:LogStop()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionStand.GetPets = function(self)
-  -- function num : 0_5
-  return {self._pet}
+function AirActionStand:GetPets()
+  return {
+    self._pet
+  }
 end
-
-

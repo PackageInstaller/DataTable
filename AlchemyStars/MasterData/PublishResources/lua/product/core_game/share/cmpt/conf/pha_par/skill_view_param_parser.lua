@@ -1,442 +1,129 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_view_param_parser.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPaaseParam", Object)
 SkillPaaseParam = SkillPaaseParam
 _class("SkillViewParamParser", Object)
 SkillViewParamParser = SkillViewParamParser
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillViewParamParser.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillViewParamParser:Constructor()
   self._viewParamDic = {}
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.Instruction] = SkillPhaseInstructionParam
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.AttackAnimation] = SkillPhaseAttackAnimationParam
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.CastAnimation] = SkillPhaseCastAnimationParam
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.OnHit] = SkillPhaseOnHitParam
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.GridArray] = SkillPhaseGridArrayParam
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.ScreenShake] = SkillPhaseScreenShakeParam
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.WaveGridArray] = SkillPhaseWaveGridArrayParam
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.RoleCG] = SkillPhaseRoleCGParam
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.SquareRing] = SkillPhaseSquareRingParam
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.LRAttackAnimation] = SkillPhaseLRAttackAnimationParam
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.FireAnimation] = SkillPhaseFireAnimationParam
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.ImpactAnimation] = SkillPhaseImpactAnimationParam
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.FlightVehicle] = SkillFlightVehcileGridArrayParam
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.TurnRoundFlightVehicle] = SkillTurnFlightVehcileGridArrayParam
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.AddGridEffect] = SkillPhaseAddGridEffectParam
-  -- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.RoundGridDifferent] = SkillPhaseRoundGridParam
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.AbsorbPieceAnimation] = SkillPhaseAbsorbPieceParam
-  -- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.TrajectoryAnimation] = SkillPhaseTrajectoryParam
-  -- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.FlashKnifeAndLine] = SkillPhaseFlashKnifeAndLineParam
-  -- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.SummonTrap] = SkillPhaseSummonTrapParam
-  -- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.GridReturn] = SkillPhaseParam_GridReturn
-  -- DECOMPILER ERROR at PC111: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.RandAttack] = SkillPhaseParam_RandAttack
-  -- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.RangeAttackAnimation] = SkillPhaseRangeAttackAnimationParam
-  -- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.HitBack] = SkillPhaseHitBackParam
-  -- DECOMPILER ERROR at PC126: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.PullAround] = SkillPhasePullAroundParam
-  -- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.ShowWarningArea] = SkillPhaseParam_ShowWarningArea
-  -- DECOMPILER ERROR at PC136: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.ConvertElment] = SkillPhaseConvertElementParam
-  -- DECOMPILER ERROR at PC141: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.ScopeForward] = SkillPhaseScopeForwardParam
-  -- DECOMPILER ERROR at PC146: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.EffectLineFlyWithDirection] = SkillPhaseLineFlyWithDirectionParam
-  -- DECOMPILER ERROR at PC151: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.Charge] = SkillPhaseChargeParam
-  -- DECOMPILER ERROR at PC156: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.SummonEverything] = SkillPhaseParam_SummonEverything
-  -- DECOMPILER ERROR at PC161: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.AddBlood] = SkillPhaseParam_AddBlood
-  -- DECOMPILER ERROR at PC166: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.Blink] = SkillPhaseBlinkParam
-  -- DECOMPILER ERROR at PC171: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.RemoveEffect] = SkillPhaseRemoveEffectParam
-  -- DECOMPILER ERROR at PC176: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.TrainConvertElement] = SkillPhaseTrainConvertElementParam
-  -- DECOMPILER ERROR at PC181: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.TrainHitBack] = SkillPhaseTrainHitBackParam
-  -- DECOMPILER ERROR at PC186: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.EffectRangeAttack] = SkillPhaseAttackEffectAnimationParam
-  -- DECOMPILER ERROR at PC191: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.PlayAudio] = SkillPhasePlayAudioParam
-  -- DECOMPILER ERROR at PC196: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.StoryTips] = SkillPhaseStoryTipsParam
-  -- DECOMPILER ERROR at PC201: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.LRAttackDifferentAnimation] = SkillPhaseLRAttackDifferentAnimationParam
-  -- DECOMPILER ERROR at PC206: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.LeaveEnterBattleField] = SkillPhaseLeaveEnterBattleFieldParam
-  -- DECOMPILER ERROR at PC211: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.PlayLoopAudio] = SkillPhasePlayLoopAudioParam
-  -- DECOMPILER ERROR at PC216: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.PlayEffect] = SkillPhasePlayEffectParam
-  -- DECOMPILER ERROR at PC221: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.WaveGridTransform] = SkillPhaseWaveGridTransformParam
-  -- DECOMPILER ERROR at PC226: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.ScopeForwardTransform] = SkillPhaseScopeForwardTransformParam
-  -- DECOMPILER ERROR at PC231: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.TwoWayFlightVehicle] = SkillPhaseTwoWayFlightVehicleParam
-  -- DECOMPILER ERROR at PC236: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.PlayEffectAtSomeElementGrid] = SkillPhasePlayEffectAtSomeElementGridParam
-  -- DECOMPILER ERROR at PC241: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.ShowHideRole] = SkillPhaseParam_ShowHideRole
-  -- DECOMPILER ERROR at PC246: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.PlayEffectAtGrid] = SkillPhasePlayEffectAtGridParam
-  -- DECOMPILER ERROR at PC251: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.GridSpread] = SkillPhaseGridSpreadParam
-  -- DECOMPILER ERROR at PC256: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.GridDark] = SkillPhaseParam_GridDark
-  -- DECOMPILER ERROR at PC261: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.Trajectory] = SkillPhaseParam_Trajectory
-  -- DECOMPILER ERROR at PC266: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.ScopeForwardByDistance] = SkillPhaseParamScopeForwardByDistance
-  -- DECOMPILER ERROR at PC271: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.MultiGridEffect] = SkillPhaseParamMultiGridEffect
-  -- DECOMPILER ERROR at PC276: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.CenterFirst] = SkillPhaseCenterFirstParam
-  -- DECOMPILER ERROR at PC281: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.ScopeGroup] = SkillPhaseScopeGroupParam
-  -- DECOMPILER ERROR at PC286: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.AOEDamage] = SkillPhaseAOEDamageParam
-  -- DECOMPILER ERROR at PC291: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.MultiGridColumnAndRowCenterRandom] = SkillPhaseParamMultiGridColumnAndRowCenterRandom
-  -- DECOMPILER ERROR at PC296: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.ColumnForward] = SkillPhaseParamColumnForward
-  -- DECOMPILER ERROR at PC301: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.ConvertOccupiedGridPhase] = SkillPhaseConvertOccupiedGridElementParam
-  -- DECOMPILER ERROR at PC306: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.ScopeTrajectory] = SkillPhaseParamScopeTrajectory
-  -- DECOMPILER ERROR at PC311: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.ContinueAttack] = SkillPhaseParamContinueAttack
-  -- DECOMPILER ERROR at PC316: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.SinkAllTarget] = SkillPhaseParamSinkAllTarget
-  -- DECOMPILER ERROR at PC321: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.BombBullet] = SkillPhaseBombBulletParam
-  -- DECOMPILER ERROR at PC326: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.SacrificeTrapsAndDamage] = SkillPhaseSacrificeTrapsAndDamageParam
-  -- DECOMPILER ERROR at PC331: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.MultiGridDamageTrace] = SkillPhaseMultiGridDamageTraceParam
-  -- DECOMPILER ERROR at PC336: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.BulletFlyToCasterFromEdge] = PlaySkillParamBulletFlyToCaster
-  -- DECOMPILER ERROR at PC341: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.TrainResetElement] = SkillPhaseTrainResetElementParam
-  -- DECOMPILER ERROR at PC346: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.MultiStageDamage] = SkillPhaseMultiStageDamageParam
-  -- DECOMPILER ERROR at PC351: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.SphereTrajectoryMultiStageDamage] = SkillPhaseSphereTrajectoryMultiStageDamageParam
-  -- DECOMPILER ERROR at PC356: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.CircleFlyMultipleEffect] = SkillPhaseCircleFlyMultipleEffectParam
-  -- DECOMPILER ERROR at PC361: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.SummonChessSoldier] = SkillPhaseSummonChessSoldierParam
-  -- DECOMPILER ERROR at PC366: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.TeleportAndSummonTrap] = SkillPhaseTeleportAndSummonTrapParam
-  -- DECOMPILER ERROR at PC371: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.NormalAttackForAddBlood] = SkillPhaseNormalAttackForAddBloodParam
-  -- DECOMPILER ERROR at PC376: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.ScopePushOrPull] = SkillPhaseScopePushOrPullParam
-  -- DECOMPILER ERROR at PC381: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.MiejinRoll] = SkillPhaseParam_MiejinRoll
-  -- DECOMPILER ERROR at PC386: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.GatherThrowDamage] = SkillPhaseGatherThrowDamageParam
-  -- DECOMPILER ERROR at PC391: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.AbsorbTrapsAndDamageByPickupTarget] = SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam
-  -- DECOMPILER ERROR at PC396: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.FlotageTrajectory] = SkillPhaseFlotageTrajectoryParam
-  -- DECOMPILER ERROR at PC401: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.NormalAttackOnlyAnimation] = SkillPhaseNormalAttackOnlyAnimationParam
-  -- DECOMPILER ERROR at PC406: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.CircularTrajectory] = SkillPhaseCircularTrajectoryParam
-  -- DECOMPILER ERROR at PC411: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.NormalAttackWithMove] = SkillPhaseNormalAttackWithMoveParam
-  -- DECOMPILER ERROR at PC416: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.Transposition] = SkillPhaseTranspositionParam
-  -- DECOMPILER ERROR at PC421: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.TrajectoryHitOnOwnTrapPos] = SkillPhaseTrajectoryHitOnOwnTrapPosParam
-  -- DECOMPILER ERROR at PC426: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.ZhongxuSummonTrapOrAttachFlag] = SkillPhaseZhongxuSummonTrapOrAttachFlagParam
-  -- DECOMPILER ERROR at PC431: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.CasterRotationTrajectory] = SkillPhaseCasterRotationTrajectoryParam
-  -- DECOMPILER ERROR at PC436: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.DashTeleportWithPath] = SkillPhaseDashTeleportWithPathParam
-  -- DECOMPILER ERROR at PC441: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.ControlMonsterMoveAttackSummon] = SkillPhaseControlMonsterMoveAttackSummonParam
-  -- DECOMPILER ERROR at PC446: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.ConvertDamageTeleportByLinkLine] = SkillPhaseConvertDamageTeleportByLinkLineParam
-  -- DECOMPILER ERROR at PC451: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.DrillerSummonBaseMonster] = SkillPhaseDrillerSummonBaseMonsterParam
-  -- DECOMPILER ERROR at PC456: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.DrillerSacrificeTrapAndDamage] = SkillPhaseDrillerSacrificeTrapAndDamageParam
-  -- DECOMPILER ERROR at PC461: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.DrillerExplosion] = SkillPhaseDrillerExplosionParam
-  -- DECOMPILER ERROR at PC466: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.DrillerExplosionSimple] = SkillPhaseDrillerExplosionSimpleParam
-  -- DECOMPILER ERROR at PC471: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.NightKingTeleportDamageWithPath] = SkillPhaseNightKingTeleportDamageWithPathParam
-  -- DECOMPILER ERROR at PC476: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.PetANaTuoLiTraction] = SkillPhasePetANaTuoLiTractionParam
-  -- DECOMPILER ERROR at PC481: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.ScopeForwardNoAttack] = SkillPhaseScopeForwardNoAttackParam
-  -- DECOMPILER ERROR at PC486: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.ScopeForwardTransformNoAttack] = SkillPhaseScopeForwardTransformNoAttackParam
-  -- DECOMPILER ERROR at PC491: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.Pet1602091Chain] = SkillPhasePet1602091ChainParam
-  -- DECOMPILER ERROR at PC496: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.MultiRandomTrajectory] = SkillPhaseMultiRandomTrajectoryParam
-  -- DECOMPILER ERROR at PC501: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[SkillViewPhaseType.Moye] = SkillPhaseMoyeParam
+  self._viewParamDic[SkillViewPhaseType.Instruction] = SkillPhaseInstructionParam
+  self._viewParamDic[SkillViewPhaseType.AttackAnimation] = SkillPhaseAttackAnimationParam
+  self._viewParamDic[SkillViewPhaseType.CastAnimation] = SkillPhaseCastAnimationParam
+  self._viewParamDic[SkillViewPhaseType.OnHit] = SkillPhaseOnHitParam
+  self._viewParamDic[SkillViewPhaseType.GridArray] = SkillPhaseGridArrayParam
+  self._viewParamDic[SkillViewPhaseType.ScreenShake] = SkillPhaseScreenShakeParam
+  self._viewParamDic[SkillViewPhaseType.WaveGridArray] = SkillPhaseWaveGridArrayParam
+  self._viewParamDic[SkillViewPhaseType.RoleCG] = SkillPhaseRoleCGParam
+  self._viewParamDic[SkillViewPhaseType.SquareRing] = SkillPhaseSquareRingParam
+  self._viewParamDic[SkillViewPhaseType.LRAttackAnimation] = SkillPhaseLRAttackAnimationParam
+  self._viewParamDic[SkillViewPhaseType.FireAnimation] = SkillPhaseFireAnimationParam
+  self._viewParamDic[SkillViewPhaseType.ImpactAnimation] = SkillPhaseImpactAnimationParam
+  self._viewParamDic[SkillViewPhaseType.FlightVehicle] = SkillFlightVehcileGridArrayParam
+  self._viewParamDic[SkillViewPhaseType.TurnRoundFlightVehicle] = SkillTurnFlightVehcileGridArrayParam
+  self._viewParamDic[SkillViewPhaseType.AddGridEffect] = SkillPhaseAddGridEffectParam
+  self._viewParamDic[SkillViewPhaseType.RoundGridDifferent] = SkillPhaseRoundGridParam
+  self._viewParamDic[SkillViewPhaseType.AbsorbPieceAnimation] = SkillPhaseAbsorbPieceParam
+  self._viewParamDic[SkillViewPhaseType.TrajectoryAnimation] = SkillPhaseTrajectoryParam
+  self._viewParamDic[SkillViewPhaseType.FlashKnifeAndLine] = SkillPhaseFlashKnifeAndLineParam
+  self._viewParamDic[SkillViewPhaseType.SummonTrap] = SkillPhaseSummonTrapParam
+  self._viewParamDic[SkillViewPhaseType.GridReturn] = SkillPhaseParam_GridReturn
+  self._viewParamDic[SkillViewPhaseType.RandAttack] = SkillPhaseParam_RandAttack
+  self._viewParamDic[SkillViewPhaseType.RangeAttackAnimation] = SkillPhaseRangeAttackAnimationParam
+  self._viewParamDic[SkillViewPhaseType.HitBack] = SkillPhaseHitBackParam
+  self._viewParamDic[SkillViewPhaseType.PullAround] = SkillPhasePullAroundParam
+  self._viewParamDic[SkillViewPhaseType.ShowWarningArea] = SkillPhaseParam_ShowWarningArea
+  self._viewParamDic[SkillViewPhaseType.ConvertElment] = SkillPhaseConvertElementParam
+  self._viewParamDic[SkillViewPhaseType.ScopeForward] = SkillPhaseScopeForwardParam
+  self._viewParamDic[SkillViewPhaseType.EffectLineFlyWithDirection] = SkillPhaseLineFlyWithDirectionParam
+  self._viewParamDic[SkillViewPhaseType.Charge] = SkillPhaseChargeParam
+  self._viewParamDic[SkillViewPhaseType.SummonEverything] = SkillPhaseParam_SummonEverything
+  self._viewParamDic[SkillViewPhaseType.AddBlood] = SkillPhaseParam_AddBlood
+  self._viewParamDic[SkillViewPhaseType.Blink] = SkillPhaseBlinkParam
+  self._viewParamDic[SkillViewPhaseType.RemoveEffect] = SkillPhaseRemoveEffectParam
+  self._viewParamDic[SkillViewPhaseType.TrainConvertElement] = SkillPhaseTrainConvertElementParam
+  self._viewParamDic[SkillViewPhaseType.TrainHitBack] = SkillPhaseTrainHitBackParam
+  self._viewParamDic[SkillViewPhaseType.EffectRangeAttack] = SkillPhaseAttackEffectAnimationParam
+  self._viewParamDic[SkillViewPhaseType.PlayAudio] = SkillPhasePlayAudioParam
+  self._viewParamDic[SkillViewPhaseType.StoryTips] = SkillPhaseStoryTipsParam
+  self._viewParamDic[SkillViewPhaseType.LRAttackDifferentAnimation] = SkillPhaseLRAttackDifferentAnimationParam
+  self._viewParamDic[SkillViewPhaseType.LeaveEnterBattleField] = SkillPhaseLeaveEnterBattleFieldParam
+  self._viewParamDic[SkillViewPhaseType.PlayLoopAudio] = SkillPhasePlayLoopAudioParam
+  self._viewParamDic[SkillViewPhaseType.PlayEffect] = SkillPhasePlayEffectParam
+  self._viewParamDic[SkillViewPhaseType.WaveGridTransform] = SkillPhaseWaveGridTransformParam
+  self._viewParamDic[SkillViewPhaseType.ScopeForwardTransform] = SkillPhaseScopeForwardTransformParam
+  self._viewParamDic[SkillViewPhaseType.TwoWayFlightVehicle] = SkillPhaseTwoWayFlightVehicleParam
+  self._viewParamDic[SkillViewPhaseType.PlayEffectAtSomeElementGrid] = SkillPhasePlayEffectAtSomeElementGridParam
+  self._viewParamDic[SkillViewPhaseType.ShowHideRole] = SkillPhaseParam_ShowHideRole
+  self._viewParamDic[SkillViewPhaseType.PlayEffectAtGrid] = SkillPhasePlayEffectAtGridParam
+  self._viewParamDic[SkillViewPhaseType.GridSpread] = SkillPhaseGridSpreadParam
+  self._viewParamDic[SkillViewPhaseType.GridDark] = SkillPhaseParam_GridDark
+  self._viewParamDic[SkillViewPhaseType.Trajectory] = SkillPhaseParam_Trajectory
+  self._viewParamDic[SkillViewPhaseType.ScopeForwardByDistance] = SkillPhaseParamScopeForwardByDistance
+  self._viewParamDic[SkillViewPhaseType.MultiGridEffect] = SkillPhaseParamMultiGridEffect
+  self._viewParamDic[SkillViewPhaseType.CenterFirst] = SkillPhaseCenterFirstParam
+  self._viewParamDic[SkillViewPhaseType.ScopeGroup] = SkillPhaseScopeGroupParam
+  self._viewParamDic[SkillViewPhaseType.AOEDamage] = SkillPhaseAOEDamageParam
+  self._viewParamDic[SkillViewPhaseType.MultiGridColumnAndRowCenterRandom] = SkillPhaseParamMultiGridColumnAndRowCenterRandom
+  self._viewParamDic[SkillViewPhaseType.ColumnForward] = SkillPhaseParamColumnForward
+  self._viewParamDic[SkillViewPhaseType.ConvertOccupiedGridPhase] = SkillPhaseConvertOccupiedGridElementParam
+  self._viewParamDic[SkillViewPhaseType.ScopeTrajectory] = SkillPhaseParamScopeTrajectory
+  self._viewParamDic[SkillViewPhaseType.ContinueAttack] = SkillPhaseParamContinueAttack
+  self._viewParamDic[SkillViewPhaseType.SinkAllTarget] = SkillPhaseParamSinkAllTarget
+  self._viewParamDic[SkillViewPhaseType.BombBullet] = SkillPhaseBombBulletParam
+  self._viewParamDic[SkillViewPhaseType.SacrificeTrapsAndDamage] = SkillPhaseSacrificeTrapsAndDamageParam
+  self._viewParamDic[SkillViewPhaseType.MultiGridDamageTrace] = SkillPhaseMultiGridDamageTraceParam
+  self._viewParamDic[SkillViewPhaseType.BulletFlyToCasterFromEdge] = PlaySkillParamBulletFlyToCaster
+  self._viewParamDic[SkillViewPhaseType.TrainResetElement] = SkillPhaseTrainResetElementParam
+  self._viewParamDic[SkillViewPhaseType.MultiStageDamage] = SkillPhaseMultiStageDamageParam
+  self._viewParamDic[SkillViewPhaseType.SphereTrajectoryMultiStageDamage] = SkillPhaseSphereTrajectoryMultiStageDamageParam
+  self._viewParamDic[SkillViewPhaseType.CircleFlyMultipleEffect] = SkillPhaseCircleFlyMultipleEffectParam
+  self._viewParamDic[SkillViewPhaseType.SummonChessSoldier] = SkillPhaseSummonChessSoldierParam
+  self._viewParamDic[SkillViewPhaseType.TeleportAndSummonTrap] = SkillPhaseTeleportAndSummonTrapParam
+  self._viewParamDic[SkillViewPhaseType.NormalAttackForAddBlood] = SkillPhaseNormalAttackForAddBloodParam
+  self._viewParamDic[SkillViewPhaseType.ScopePushOrPull] = SkillPhaseScopePushOrPullParam
+  self._viewParamDic[SkillViewPhaseType.MiejinRoll] = SkillPhaseParam_MiejinRoll
+  self._viewParamDic[SkillViewPhaseType.GatherThrowDamage] = SkillPhaseGatherThrowDamageParam
+  self._viewParamDic[SkillViewPhaseType.AbsorbTrapsAndDamageByPickupTarget] = SkillPhaseAbsorbTrapsAndDamageByPickupTargetParam
+  self._viewParamDic[SkillViewPhaseType.FlotageTrajectory] = SkillPhaseFlotageTrajectoryParam
+  self._viewParamDic[SkillViewPhaseType.NormalAttackOnlyAnimation] = SkillPhaseNormalAttackOnlyAnimationParam
+  self._viewParamDic[SkillViewPhaseType.CircularTrajectory] = SkillPhaseCircularTrajectoryParam
+  self._viewParamDic[SkillViewPhaseType.NormalAttackWithMove] = SkillPhaseNormalAttackWithMoveParam
+  self._viewParamDic[SkillViewPhaseType.Transposition] = SkillPhaseTranspositionParam
+  self._viewParamDic[SkillViewPhaseType.TrajectoryHitOnOwnTrapPos] = SkillPhaseTrajectoryHitOnOwnTrapPosParam
+  self._viewParamDic[SkillViewPhaseType.ZhongxuSummonTrapOrAttachFlag] = SkillPhaseZhongxuSummonTrapOrAttachFlagParam
+  self._viewParamDic[SkillViewPhaseType.CasterRotationTrajectory] = SkillPhaseCasterRotationTrajectoryParam
+  self._viewParamDic[SkillViewPhaseType.DashTeleportWithPath] = SkillPhaseDashTeleportWithPathParam
+  self._viewParamDic[SkillViewPhaseType.ControlMonsterMoveAttackSummon] = SkillPhaseControlMonsterMoveAttackSummonParam
+  self._viewParamDic[SkillViewPhaseType.ConvertDamageTeleportByLinkLine] = SkillPhaseConvertDamageTeleportByLinkLineParam
+  self._viewParamDic[SkillViewPhaseType.DrillerSummonBaseMonster] = SkillPhaseDrillerSummonBaseMonsterParam
+  self._viewParamDic[SkillViewPhaseType.DrillerSacrificeTrapAndDamage] = SkillPhaseDrillerSacrificeTrapAndDamageParam
+  self._viewParamDic[SkillViewPhaseType.DrillerExplosion] = SkillPhaseDrillerExplosionParam
+  self._viewParamDic[SkillViewPhaseType.DrillerExplosionSimple] = SkillPhaseDrillerExplosionSimpleParam
+  self._viewParamDic[SkillViewPhaseType.NightKingTeleportDamageWithPath] = SkillPhaseNightKingTeleportDamageWithPathParam
+  self._viewParamDic[SkillViewPhaseType.PetANaTuoLiTraction] = SkillPhasePetANaTuoLiTractionParam
+  self._viewParamDic[SkillViewPhaseType.ScopeForwardNoAttack] = SkillPhaseScopeForwardNoAttackParam
+  self._viewParamDic[SkillViewPhaseType.ScopeForwardTransformNoAttack] = SkillPhaseScopeForwardTransformNoAttackParam
+  self._viewParamDic[SkillViewPhaseType.Pet1602091Chain] = SkillPhasePet1602091ChainParam
+  self._viewParamDic[SkillViewPhaseType.MultiRandomTrajectory] = SkillPhaseMultiRandomTrajectoryParam
+  self._viewParamDic[SkillViewPhaseType.Moye] = SkillPhaseMoyeParam
   self._blackList = {}
   self._useSkillViewIDList = {}
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewParamParser.ClearSkillView = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  for k,v in pairs(self._useSkillViewIDList) do
+function SkillViewParamParser:ClearSkillView()
+  for k, v in pairs(self._useSkillViewIDList) do
     CfgClear("cfg_skill_view_" .. k)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewParamParser.ParseSkillView = function(self, skillViewID, viewParams)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillViewParamParser:ParseSkillView(skillViewID, viewParams)
   local viewPhaseArray = {}
   if not skillViewID or skillViewID == 0 then
     return viewPhaseArray
   end
-  local skillViewArray = nil
+  local skillViewArray
   skillViewArray = self:_GetSeperateView(skillViewID)
   if skillViewArray == nil then
-    (Log.fatal)("Can not find skill view:", skillViewID)
+    Log.fatal("Can not find skill view:", skillViewID)
   end
   local phaseCount = skillViewArray and skillViewArray:Size() or 0
   if phaseCount == 0 then
@@ -447,80 +134,60 @@ SkillViewParamParser.ParseSkillView = function(self, skillViewID, viewParams)
     self:_ReplaceViewParams(viewParams, phaseData)
     self:_ParseSkillViewPhase(phaseData, viewPhaseArray)
   end
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._useSkillViewIDList)[skillViewID] = 1
+  self._useSkillViewIDList[skillViewID] = 1
   return viewPhaseArray
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewParamParser._ReplaceViewParams = function(self, viewParams, phaseData)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillViewParamParser:_ReplaceViewParams(viewParams, phaseData)
   local Prefix = "PARAM."
   local phaseParam = phaseData.PhaseParam
-  if viewParams and (table.count)(viewParams) > 0 and phaseParam and type(phaseParam) == "table" then
-    for k,v in pairs(phaseParam) do
-      -- DECOMPILER ERROR at PC34: Unhandled construct in 'MakeBoolean' P1
-
-      if phaseData.PhaseType == SkillViewPhaseType.Instruction and type(v) == "string" then
-        for key,value in pairs(viewParams) do
-          local str = Prefix .. key
-          v = (string.gsub)(v, str, tostring(value))
+  if viewParams and table.count(viewParams) > 0 and phaseParam and type(phaseParam) == "table" then
+    for k, v in pairs(phaseParam) do
+      if phaseData.PhaseType == SkillViewPhaseType.Instruction then
+        if type(v) == "string" then
+          for key, value in pairs(viewParams) do
+            local str = Prefix .. key
+            v = string.gsub(v, str, tostring(value))
+          end
+          phaseParam[k] = v
         end
-        phaseParam[k] = v
-      end
-      if (string.find)(v, Prefix) then
-        local result = type(v) ~= "string" or true
-      end
-      if result then
-        local key = (string.gsub)(v, Prefix, "")
-        local value = viewParams[key]
-        if value then
-          phaseParam[k] = value
-        else
-          ;
-          (Log.error)("view params don\'t exit param!")
+      elseif type(v) == "string" then
+        local result = string.find(v, Prefix) and true
+        if result then
+          local key = string.gsub(v, Prefix, "")
+          local value = viewParams[key]
+          if value then
+            phaseParam[k] = value
+          else
+            Log.error("view params don't exit param!")
+          end
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewParamParser._GetSkillViewArray = function(self, skillViewID)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillViewParamParser:_GetSkillViewArray(skillViewID)
   local phaseArray = ArrayList:New()
-  local allSkillView = (Cfg.cfg_skill_view)({ViewID = skillViewID})
+  local allSkillView = Cfg.cfg_skill_view({ViewID = skillViewID})
   if not allSkillView then
-    (Log.fatal)("skill view parse failed:", skillViewID)
+    Log.fatal("skill view parse failed:", skillViewID)
     return nil
   end
-  ;
-  (table.sort)(allSkillView, function(a, b)
-    -- function num : 0_4_0
-    do return a.ViewPhase < b.ViewPhase end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  for k,v in pairs(allSkillView) do
+  table.sort(allSkillView, function(a, b)
+    return a.ViewPhase < b.ViewPhase
+  end)
+  for k, v in pairs(allSkillView) do
     phaseArray:PushBack(v)
   end
   return phaseArray
 end
 
-local Sort_GetSeperateView = function(a, b)
-  -- function num : 0_5
-  do return a.ViewPhase < b.ViewPhase end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+local function Sort_GetSeperateView(a, b)
+  return a.ViewPhase < b.ViewPhase
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillViewParamParser._GetSeperateView = function(self, skillViewID)
-  -- function num : 0_6 , upvalues : _ENV, Sort_GetSeperateView
+function SkillViewParamParser:_GetSeperateView(skillViewID)
   local phaseArray = ArrayList:New()
   local skillViewTableName = "cfg_skill_view_" .. skillViewID
   if EDITOR and AUTO_RELOAD_GAME_CFG then
@@ -528,49 +195,42 @@ SkillViewParamParser._GetSeperateView = function(self, skillViewID)
   end
   local fileExist = self:_CheckSeperateSkillViewExist(skillViewTableName)
   if not fileExist then
-    (Log.warn)("skill view not seperate:", skillViewTableName)
+    Log.warn("skill view not seperate:", skillViewTableName)
     return nil
   end
-  local inBlackList = (table.icontains)(self._blackList, skillViewID)
+  local inBlackList = table.icontains(self._blackList, skillViewID)
   if inBlackList then
     return nil
   end
-  local skillViewList = (table.cloneconf)((Cfg[skillViewTableName])())
-  ;
-  (table.sort)(skillViewList, Sort_GetSeperateView)
-  for k,v in ipairs(skillViewList) do
+  local skillViewList = table.cloneconf(Cfg[skillViewTableName]())
+  table.sort(skillViewList, Sort_GetSeperateView)
+  for k, v in ipairs(skillViewList) do
     phaseArray:Insert(v, k)
   end
   return phaseArray
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillViewParamParser._CheckSeperateSkillViewExist = function(self, skillViewTableName)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillViewParamParser:_CheckSeperateSkillViewExist(skillViewTableName)
   if ResourceManager then
-    return (ResourceManager:GetInstance()):HasLua(skillViewTableName)
+    return ResourceManager:GetInstance():HasLua(skillViewTableName)
   else
     return CheckCfgExist(skillViewTableName)
   end
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillViewParamParser._ParseSkillViewPhase = function(self, curPhase, viewPhaseArray)
-  -- function num : 0_8 , upvalues : _ENV
+function SkillViewParamParser:_ParseSkillViewPhase(curPhase, viewPhaseArray)
   if curPhase and curPhase.PhaseType then
-    local phaseClass = (self._viewParamDic)[curPhase.PhaseType]
+    local phaseClass = self._viewParamDic[curPhase.PhaseType]
     if not phaseClass then
-      (Log.fatal)("parse skill view phase error, phase type = ", curPhase.PhaseType)
-      return 
+      Log.fatal("parse skill view phase error, phase type = ", curPhase.PhaseType)
+      return
     end
-    local phaseViewData = (phaseClass:New(curPhase.PhaseParam))
-    local posdisdata = nil
+    local phaseViewData = phaseClass:New(curPhase.PhaseParam)
+    local posdisdata
     if curPhase.PhasePosDir then
-      local gridpos, griddir = nil, nil
-      local pos = (string.split)((curPhase.PhasePosDir)[1], ",")
-      local dir = (string.split)((curPhase.PhasePosDir)[2], ",")
+      local gridpos, griddir
+      local pos = string.split(curPhase.PhasePosDir[1], ",")
+      local dir = string.split(curPhase.PhasePosDir[2], ",")
       if pos[1] and pos[2] then
         gridpos = Vector2(tonumber(pos[1]), tonumber(pos[2]))
       end
@@ -579,11 +239,7 @@ SkillViewParamParser._ParseSkillViewPhase = function(self, curPhase, viewPhaseAr
       end
       posdisdata = SkillPosDirParam:New(gridpos, griddir)
     end
-    do
-      local viewdata = SkillPhaseData:New(posdisdata, curPhase.DelayType, curPhase.DelayFromPhase, curPhase.DelayMS, phaseViewData)
-      viewPhaseArray[#viewPhaseArray + 1] = viewdata
-    end
+    local viewdata = SkillPhaseData:New(posdisdata, curPhase.DelayType, curPhase.DelayFromPhase, curPhase.DelayMS, phaseViewData)
+    viewPhaseArray[#viewPhaseArray + 1] = viewdata
   end
 end
-
-

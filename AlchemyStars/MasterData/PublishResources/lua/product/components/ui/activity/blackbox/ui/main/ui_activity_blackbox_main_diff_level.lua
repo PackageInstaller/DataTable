@@ -1,122 +1,76 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/blackbox/ui/main/ui_activity_blackbox_main_diff_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_activity_diff_level")
 _class("UIActivityBlackBoxMainDiffLevel", UIActivityDiffLevel)
 UIActivityBlackBoxMainDiffLevel = UIActivityBlackBoxMainDiffLevel
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBlackBoxMainDiffLevel.OnInit = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._contentRect = (self._controller):GetUIComponent("RectTransform", "Content")
-  self._linesPool = (self._controller):GetUIComponent("UISelectObjectPath", "Lines")
+function UIActivityBlackBoxMainDiffLevel:OnInit()
+  self._contentRect = self._controller:GetUIComponent("RectTransform", "Content")
+  self._linesPool = self._controller:GetUIComponent("UISelectObjectPath", "Lines")
   self._selectNode = nil
-  self._linesRect = (self._controller):GetUIComponent("RectTransform", "Lines")
-  self._nodesRect = (self._controller):GetUIComponent("RectTransform", "DiffNodes")
-  self._screenWidth = (ResolutionManager.ScreenWidth)()
-  self._screenHeight = (ResolutionManager.ScreenHeight)()
-  self._campaign = (self._controller):GetCampaign()
+  self._linesRect = self._controller:GetUIComponent("RectTransform", "Lines")
+  self._nodesRect = self._controller:GetUIComponent("RectTransform", "DiffNodes")
+  self._screenWidth = ResolutionManager.ScreenWidth()
+  self._screenHeight = ResolutionManager.ScreenHeight()
+  self._campaign = self._controller:GetCampaign()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxMainDiffLevel.GetTimeDownString = function(self)
-  -- function num : 0_1
+function UIActivityBlackBoxMainDiffLevel:GetTimeDownString()
   return "str_n27_level_remain_time_tips"
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxMainDiffLevel.NodePlayAnimationInterval = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityBlackBoxMainDiffLevel:NodePlayAnimationInterval(TT)
   YIELD(TT, 30)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxMainDiffLevel.CreateItems = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._controller):Lock("UIActivityN27DiffLevel_CreateItems")
+function UIActivityBlackBoxMainDiffLevel:CreateItems(TT)
+  self._controller:Lock("UIActivityN27DiffLevel_CreateItems")
   local extra_width = 249
   local right = 0
-  local lineCfgs = (Cfg.cfg_blackbox_line)({ComponentID = (self._blackHardComponent):GetComponentCfgId()})
-  ;
-  (self._nodesPool):SpawnObjects("UIActivityBlackBoxMainDiffLevelNode", #self._levelDatas)
-  ;
-  (self._linesPool):SpawnObjects("UIActivityBlackBoxMainDiffLevelLine", #lineCfgs)
-  local lines = (self._linesPool):GetAllSpawnList()
-  self._nodes = (self._nodesPool):GetAllSpawnList()
+  local lineCfgs = Cfg.cfg_blackbox_line({
+    ComponentID = self._blackHardComponent:GetComponentCfgId()
+  })
+  self._nodesPool:SpawnObjects("UIActivityBlackBoxMainDiffLevelNode", #self._levelDatas)
+  self._linesPool:SpawnObjects("UIActivityBlackBoxMainDiffLevelLine", #lineCfgs)
+  local lines = self._linesPool:GetAllSpawnList()
+  self._nodes = self._nodesPool:GetAllSpawnList()
   for i = 1, #self._nodes do
-    local pos = ((self._levelDatas)[i]):GetPosition()
-    if pos.x >= right or not right then
-      right = pos.x
-    end
-    ;
-    ((self._nodes)[i]):SetData((self._levelDatas)[i], self._campaign, function(data, node)
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    if self._selectNode then
-      (self._selectNode):SetSelect(false)
-    end
-    self._selectNode = node
-    ;
-    (self._selectNode):SetSelect(true)
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(function(TT)
-      -- function num : 0_3_0_0 , upvalues : _ENV, self, data
-      YIELD(TT, 200)
-      self:OnNodeClick(data)
-    end
-, self)
-  end
-)
+    local pos = self._levelDatas[i]:GetPosition()
+    right = right > pos.x and right or pos.x
+    self._nodes[i]:SetData(self._levelDatas[i], self._campaign, function(data, node)
+      if self._selectNode then
+        self._selectNode:SetSelect(false)
+      end
+      self._selectNode = node
+      self._selectNode:SetSelect(true)
+      GameGlobal.TaskManager():StartTask(function(TT)
+        YIELD(TT, 200)
+        self:OnNodeClick(data)
+      end, self)
+    end)
   end
   for i = 1, #lines do
     local cfg = lineCfgs[i]
-    ;
-    (lines[i]):Flush(cfg)
+    lines[i]:Flush(cfg)
   end
   self:NodePlayAnimationInterval(TT)
   local width = right + extra_width
   local ratio = self._screenWidth / self._screenHeight
-  do
-    if ratio > 1.8 then
-      local dis = (ratio - 1.8) * 500
-      -- DECOMPILER ERROR at PC82: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._linesRect).anchoredPosition = Vector2(dis, 0)
-      -- DECOMPILER ERROR at PC88: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._nodesRect).anchoredPosition = Vector2(dis, 0)
-    end
-    -- DECOMPILER ERROR at PC96: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._contentRect).sizeDelta = Vector2(width, ((self._contentRect).sizeDelta).y)
-    ;
-    (self._controller):UnLock("UIActivityN27DiffLevel_CreateItems")
+  if 1.8 < ratio then
+    local dis = (ratio - 1.8) * 500
+    self._linesRect.anchoredPosition = Vector2(dis, 0)
+    self._nodesRect.anchoredPosition = Vector2(dis, 0)
   end
+  self._contentRect.sizeDelta = Vector2(width, self._contentRect.sizeDelta.y)
+  self._controller:UnLock("UIActivityN27DiffLevel_CreateItems")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxMainDiffLevel.GetIntroName = function(self)
-  -- function num : 0_4
+function UIActivityBlackBoxMainDiffLevel:GetIntroName()
   return "UIN29DiffLevelIntro"
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxMainDiffLevel.OpenLevel = function(self, createInfo)
-  -- function num : 0_5 , upvalues : _ENV
-  for _,v in pairs(self._nodes) do
+function UIActivityBlackBoxMainDiffLevel:OpenLevel(createInfo)
+  for _, v in pairs(self._nodes) do
     if v:GetDiffLevelID() == createInfo.nCampaignMissionId then
       v:BtnOnClick()
     end
   end
 end
-
-

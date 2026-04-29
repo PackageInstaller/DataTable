@@ -1,76 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/ui_gm_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIGMHelper", Object)
 UIGMHelper = UIGMHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGMHelper.Start_SendCmdTask = function(cmd, callback)
-  -- function num : 0_0 , upvalues : _ENV
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : _ENV, cmd, callback
-    local gmproxy = (GameGlobal.GetModule)(GMProxyModule)
+function UIGMHelper.Start_SendCmdTask(cmd, callback)
+  TaskManager:GetInstance():StartTask(function(TT)
+    local gmproxy = GameGlobal.GetModule(GMProxyModule)
     local res = gmproxy:SendCmdTask(TT, cmd)
     if res.m_call_err ~= CallResultType.Normal then
-      (ToastManager.ShowToast)("UIGMHelper.Start_SendCmdTask Failed, cmd = ", cmd)
+      ToastManager.ShowToast("UIGMHelper.Start_SendCmdTask Failed, cmd = ", cmd)
     else
-      ;
-      (ToastManager.ShowToast)("UIGMHelper.Start_SendCmdTask() Succ")
+      ToastManager.ShowToast("UIGMHelper.Start_SendCmdTask() Succ")
     end
     if callback then
       callback()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGMHelper.AddAsset = function(itemId, count, callback)
-  -- function num : 0_1 , upvalues : _ENV
-  local cmd = (string.format)("add_asset %s %d %d", (LocalDB.GetString)("OpenIdTest"), itemId, count)
-  ;
-  (UIGMHelper.Start_SendCmdTask)(cmd, callback)
+function UIGMHelper.AddAsset(itemId, count, callback)
+  local cmd = string.format("add_asset %s %d %d", LocalDB.GetString("OpenIdTest"), itemId, count)
+  UIGMHelper.Start_SendCmdTask(cmd, callback)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGMHelper.ChangeQuestStatus = function(questId, status, b, callback)
-  -- function num : 0_2 , upvalues : _ENV
-  local cmd = (string.format)("ChangeQuestStatus %s %d %d %d", (LocalDB.GetString)("OpenIdTest"), questId, status, b)
-  ;
-  (UIGMHelper.Start_SendCmdTask)(cmd, callback)
+function UIGMHelper.ChangeQuestStatus(questId, status, b, callback)
+  local cmd = string.format("ChangeQuestStatus %s %d %d %d", LocalDB.GetString("OpenIdTest"), questId, status, b)
+  UIGMHelper.Start_SendCmdTask(cmd, callback)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGMHelper.CompleteOneQuest = function(questId, callback)
-  -- function num : 0_3 , upvalues : _ENV
-  local cmd = (string.format)("CompleteOneQuest %s %d", (LocalDB.GetString)("OpenIdTest"), questId)
-  ;
-  (UIGMHelper.Start_SendCmdTask)(cmd, callback)
+function UIGMHelper.CompleteOneQuest(questId, callback)
+  local cmd = string.format("CompleteOneQuest %s %d", LocalDB.GetString("OpenIdTest"), questId)
+  UIGMHelper.Start_SendCmdTask(cmd, callback)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGMHelper.GotoTime = function(target, callback)
-  -- function num : 0_4 , upvalues : _ENV
-  local curTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() / 1000
-  local step = (math.floor)((math.max)(target - curTime, 0))
-  local cmd = (string.format)("modify_allsvc_time_bias 513 1 %d", step)
-  ;
-  (UIGMHelper.Start_SendCmdTask)(cmd, callback)
+function UIGMHelper.GotoTime(target, callback)
+  local curTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() / 1000
+  local step = math.floor(math.max(target - curTime, 0))
+  local cmd = string.format("modify_allsvc_time_bias 513 1 %d", step)
+  UIGMHelper.Start_SendCmdTask(cmd, callback)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGMHelper.PassLineCampMission = function(cmptCfgId, missionId, callback)
-  -- function num : 0_5 , upvalues : _ENV
-  local cmd = (string.format)("PassLineCampMission %s %d %d", (LocalDB.GetString)("OpenIdTest"), cmptCfgId, missionId)
-  ;
-  (UIGMHelper.Start_SendCmdTask)(cmd, callback)
+function UIGMHelper.PassLineCampMission(cmptCfgId, missionId, callback)
+  local cmd = string.format("PassLineCampMission %s %d %d", LocalDB.GetString("OpenIdTest"), cmptCfgId, missionId)
+  UIGMHelper.Start_SendCmdTask(cmd, callback)
 end
-
-

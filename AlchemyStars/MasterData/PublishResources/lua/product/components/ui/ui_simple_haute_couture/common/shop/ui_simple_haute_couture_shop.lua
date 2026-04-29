@@ -1,87 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_simple_haute_couture/common/shop/ui_simple_haute_couture_shop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISimpleHauteCoutureShop", UIController)
 UISimpleHauteCoutureShop = UISimpleHauteCoutureShop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISimpleHauteCoutureShop.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISimpleHauteCoutureShop:OnShow(uiParams)
   self._campaign = uiParams[1]
-  self._shopComponent = (self._campaign):GetComponent(ECampaignPetSkinComponentID.SHOPEXCHANGE)
-  self._shopCmpInfo = (self._shopComponent):GetComponentInfo()
-  self._randomLotteryComponent = (self._campaign):GetComponent(ECampaignPetSkinComponentID.RANDOMLOTTERY)
-  self._cfgMap = (self._randomLotteryComponent):GetFirstCfg()
-  self._cfgMain = (self._randomLotteryComponent):GetCfgMain()
+  self._shopComponent = self._campaign:GetComponent(ECampaignPetSkinComponentID.SHOPEXCHANGE)
+  self._shopCmpInfo = self._shopComponent:GetComponentInfo()
+  self._randomLotteryComponent = self._campaign:GetComponent(ECampaignPetSkinComponentID.RANDOMLOTTERY)
+  self._cfgMap = self._randomLotteryComponent:GetFirstCfg()
+  self._cfgMain = self._randomLotteryComponent:GetCfgMain()
   self:AttachEvent(GameEventType.ActivityShopBuySuccess, self.RefreshUI)
   self:_GetComponents()
   self:_InitUI()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureShop.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISimpleHauteCoutureShop:OnHide()
   self:DetachEvent(GameEventType.ActivityShopBuySuccess, self.RefreshUI)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureShop._GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISimpleHauteCoutureShop:_GetComponents()
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   local backBtn = btns:SpawnObject("UINewCommonTopButton")
   backBtn:SetData(function()
-    -- function num : 0_2_0 , upvalues : self
     self:Close()
-  end
-, nil, function()
-    -- function num : 0_2_1 , upvalues : self, _ENV
+  end, nil, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-, false)
+  end, false)
   self._smallLoader = self:GetUIComponent("UISelectObjectPath", "SmallList")
   self._bigLoader = self:GetUIComponent("UISelectObjectPath", "Big")
   self._topContent = self:GetUIComponent("UISelectObjectPath", "topContent")
   self._topTips = self:GetUIComponent("UISelectObjectPath", "toptips")
-  self._topTipsInfo = (self._topTips):SpawnObject("UITopTipsContext")
+  self._topTipsInfo = self._topTips:SpawnObject("UITopTipsContext")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureShop.Close = function(self)
-  -- function num : 0_3
+function UISimpleHauteCoutureShop:Close()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureShop._InitUI = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local topMenu = (self._topContent):SpawnObject("UISimpleHauteCoutureTopMenu")
-  topMenu:SetData(self._topTipsInfo, (self._cfgMap).CostItemID, RoleAssetID.RoleAssetDiamond, (self._cfgMain).ScoreID, function()
-    -- function num : 0_4_0
-  end
-, true, true)
+function UISimpleHauteCoutureShop:_InitUI()
+  local topMenu = self._topContent:SpawnObject("UISimpleHauteCoutureTopMenu")
+  topMenu:SetData(self._topTipsInfo, self._cfgMap.CostItemID, RoleAssetID.RoleAssetDiamond, self._cfgMain.ScoreID, function()
+  end, true, true)
   self:RefreshGoodList(true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureShop.RefreshUI = function(self)
-  -- function num : 0_5
+function UISimpleHauteCoutureShop:RefreshUI()
   self:RefreshGoodList(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureShop.RefreshGoodList = function(self, playAnim)
-  -- function num : 0_6 , upvalues : _ENV
+function UISimpleHauteCoutureShop:RefreshGoodList(playAnim)
   local bigList = {}
   local smallList = {}
-  for _,itemInfo in ipairs((self._shopCmpInfo).m_exchange_item_list) do
+  for _, itemInfo in ipairs(self._shopCmpInfo.m_exchange_item_list) do
     local isSpecial = itemInfo.m_is_special
     if isSpecial then
       bigList[#bigList + 1] = itemInfo
@@ -92,157 +61,118 @@ UISimpleHauteCoutureShop.RefreshGoodList = function(self, playAnim)
   if playAnim then
     self:StartTask(self.CreateItemAnim, self, bigList, smallList, self._shopComponent)
   else
-    ;
-    (self._bigLoader):SpawnObjects("UISimpleHauteCoutureShopItem", #bigList)
-    local items = (self._bigLoader):GetAllSpawnList()
+    self._bigLoader:SpawnObjects("UISimpleHauteCoutureShopItem", #bigList)
+    local items = self._bigLoader:GetAllSpawnList()
     for i = 1, #items do
-      (items[i]):Refresh(bigList[i], self._shopComponent, self._randomLotteryComponent, function(itemInfo)
-    -- function num : 0_6_0 , upvalues : self
-    self:ExchangeItem(itemInfo)
-  end
-)
+      items[i]:Refresh(bigList[i], self._shopComponent, self._randomLotteryComponent, function(itemInfo)
+        self:ExchangeItem(itemInfo)
+      end)
     end
-    ;
-    (self._smallLoader):SpawnObjects("UISimpleHauteCoutureShopItem", #smallList)
-    local items = (self._smallLoader):GetAllSpawnList()
+    self._smallLoader:SpawnObjects("UISimpleHauteCoutureShopItem", #smallList)
+    local items = self._smallLoader:GetAllSpawnList()
     for i = 1, #items do
-      (items[i]):Refresh(smallList[i], self._shopComponent, self._randomLotteryComponent, function(itemInfo)
-    -- function num : 0_6_1 , upvalues : self
-    self:ExchangeItem(itemInfo)
-  end
-)
+      items[i]:Refresh(smallList[i], self._shopComponent, self._randomLotteryComponent, function(itemInfo)
+        self:ExchangeItem(itemInfo)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureShop.CreateItemAnim = function(self, TT, bigList, smallList, shopCom)
-  -- function num : 0_7 , upvalues : _ENV
+function UISimpleHauteCoutureShop:CreateItemAnim(TT, bigList, smallList, shopCom)
   self:Lock("UISimpleHauteCouturShop_CreateItemAnim")
-  ;
-  (self._bigLoader):SpawnObjects("UISimpleHauteCoutureShopItem", #bigList)
-  local items = (self._bigLoader):GetAllSpawnList()
+  self._bigLoader:SpawnObjects("UISimpleHauteCoutureShopItem", #bigList)
+  local items = self._bigLoader:GetAllSpawnList()
   for i = 1, #items do
-    (items[i]):SetVisible(false)
+    items[i]:SetVisible(false)
   end
   for i = 1, #items do
-    (items[i]):Refresh(bigList[i], shopCom, self._randomLotteryComponent, function(itemInfo)
-    -- function num : 0_7_0 , upvalues : self
-    self:ExchangeItem(itemInfo)
-  end
-)
+    items[i]:Refresh(bigList[i], shopCom, self._randomLotteryComponent, function(itemInfo)
+      self:ExchangeItem(itemInfo)
+    end)
     YIELD(TT, 80)
   end
-  ;
-  (self._smallLoader):SpawnObjects("UISimpleHauteCoutureShopItem", #smallList)
-  local items = (self._smallLoader):GetAllSpawnList()
+  self._smallLoader:SpawnObjects("UISimpleHauteCoutureShopItem", #smallList)
+  local items = self._smallLoader:GetAllSpawnList()
   for i = 1, #items do
-    (items[i]):SetVisible(false)
+    items[i]:SetVisible(false)
   end
   for i = 1, #items do
-    (items[i]):Refresh(smallList[i], shopCom, self._randomLotteryComponent, function(itemInfo)
-    -- function num : 0_7_1 , upvalues : self
-    self:ExchangeItem(itemInfo)
-  end
-)
+    items[i]:Refresh(smallList[i], shopCom, self._randomLotteryComponent, function(itemInfo)
+      self:ExchangeItem(itemInfo)
+    end)
     YIELD(TT, 80)
   end
   self:UnLock("UISimpleHauteCouturShop_CreateItemAnim")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureShop.ExchangeItem = function(self, itemInfo)
-  -- function num : 0_8 , upvalues : _ENV
+function UISimpleHauteCoutureShop:ExchangeItem(itemInfo)
   local uiItemData = DCampaignShopItemBase:New()
   uiItemData:Refresh(itemInfo, self._shopComponent)
   local useNormalDlg = false
-  do
-    if not uiItemData:IsUnLimit() then
-      local remainCount = uiItemData:GetRemainCount()
-      if remainCount <= 0 then
-        return 
-      end
-      if remainCount == 1 then
-        useNormalDlg = true
-      end
+  if not uiItemData:IsUnLimit() then
+    local remainCount = uiItemData:GetRemainCount()
+    if remainCount <= 0 then
+      return
     end
-    if uiItemData.isSpecial then
-      self:ShowDialog("UIPetSkinsMainController", PetSkinUiOpenType.PSUT_ACTIVITY_DETAIL, (self._cfgMain).SkinID, uiItemData, function()
-    -- function num : 0_8_0 , upvalues : useNormalDlg, self, uiItemData
-    if useNormalDlg then
-      self:ShowDialog("UICampaignShopConfirmNormalController", uiItemData)
-    else
-      self:ShowDialog("UICampaignShopConfirmDetailController", uiItemData)
+    if remainCount == 1 then
+      useNormalDlg = true
     end
   end
-)
-    else
+  if uiItemData.isSpecial then
+    self:ShowDialog("UIPetSkinsMainController", PetSkinUiOpenType.PSUT_ACTIVITY_DETAIL, self._cfgMain.SkinID, uiItemData, function()
       if useNormalDlg then
         self:ShowDialog("UICampaignShopConfirmNormalController", uiItemData)
       else
         self:ShowDialog("UICampaignShopConfirmDetailController", uiItemData)
       end
-    end
+    end)
+  elseif useNormalDlg then
+    self:ShowDialog("UICampaignShopConfirmNormalController", uiItemData)
+  else
+    self:ShowDialog("UICampaignShopConfirmDetailController", uiItemData)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureShop.GetItemCountStr = function(self, byteCount, count, preColor, countColor)
-  -- function num : 0_9 , upvalues : _ENV
+function UISimpleHauteCoutureShop:GetItemCountStr(byteCount, count, preColor, countColor)
   local dight = 0
   local tmpCount = count
   if tmpCount < 0 then
     tmpCount = -tmpCount
   end
-  while tmpCount > 0 do
-    tmpCount = (math.floor)(tmpCount / 10)
+  while 0 < tmpCount do
+    tmpCount = math.floor(tmpCount / 10)
     dight = dight + 1
   end
   local pre = ""
-  if count >= 0 then
-    for i = 1, byteCount - (dight) do
+  if 0 <= count then
+    for i = 1, byteCount - dight do
       pre = pre .. "0"
     end
   else
-    do
-      for i = 1, byteCount - (dight) - 1 do
-        pre = pre .. "0"
-      end
-      do
-        if count > 0 then
-          return (string.format)("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
-        else
-          if count == 0 then
-            return (string.format)("<color=" .. preColor .. ">%s</color>", pre)
-          else
-            return (string.format)("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
-          end
-        end
-      end
+    for i = 1, byteCount - dight - 1 do
+      pre = pre .. "0"
     end
+  end
+  if 0 < count then
+    return string.format("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
+  elseif count == 0 then
+    return string.format("<color=" .. preColor .. ">%s</color>", pre)
+  else
+    return string.format("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureShop._RandomIndex = function(self, index)
-  -- function num : 0_10 , upvalues : _ENV
+function UISimpleHauteCoutureShop:_RandomIndex(index)
   local t = {}
   for i = 1, 5 do
     if i ~= index then
       t[#t + 1] = i
     end
   end
-  return t[(math.random)(1, #t)]
+  return t[math.random(1, #t)]
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureShop.CheckComponentStatus = function(self, component)
-  -- function num : 0_11 , upvalues : _ENV
+function UISimpleHauteCoutureShop:CheckComponentStatus(component)
   if not component then
     return ActivityComponentStatus.Close, 0
   end
@@ -250,18 +180,18 @@ UISimpleHauteCoutureShop.CheckComponentStatus = function(self, component)
   if not info then
     return ActivityComponentStatus.Close, 0
   end
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  if info.m_close_time <= curTime then
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  if curTime >= info.m_close_time then
     return ActivityComponentStatus.Close, 0
   end
   local opentTime = info.m_open_time
   local unLockTime = info.m_unlock_time
   local time = opentTime
-  if time < unLockTime then
+  if unLockTime > time then
     time = unLockTime
   end
-  if time < curTime then
+  if curTime > time then
     if not info.m_b_unlock then
       return ActivityComponentStatus.MissionLock, 0
     end
@@ -269,5 +199,3 @@ UISimpleHauteCoutureShop.CheckComponentStatus = function(self, component)
   end
   return ActivityComponentStatus.TimeLock, time - curTime
 end
-
-

@@ -1,330 +1,259 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/cutscene_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CutsceneServiceRender", BaseService)
 CutsceneServiceRender = CutsceneServiceRender
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneServiceRender.Constructor = function(self, world)
-  -- function num : 0_0
+function CutsceneServiceRender:Constructor(world)
   self._originalSkyBoxColor = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.SetOriginalSkyBoxColor = function(self, color)
-  -- function num : 0_1
+function CutsceneServiceRender:SetOriginalSkyBoxColor(color)
   self._originalSkyBoxColor = color
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.GetOriginalSkyBoxColor = function(self)
-  -- function num : 0_2
+function CutsceneServiceRender:GetOriginalSkyBoxColor()
   return self._originalSkyBoxColor
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.ResetSkyBoxColor = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CutsceneServiceRender:ResetSkyBoxColor()
   if self._originalSkyBoxColor then
-    ((UnityEngine.RenderSettings).skybox):SetColor("_Tint", self._originalSkyBoxColor)
+    UnityEngine.RenderSettings.skybox:SetColor("_Tint", self._originalSkyBoxColor)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.PlayRealTimeCutscene = function(self, TT, type)
-  -- function num : 0_4 , upvalues : _ENV
+function CutsceneServiceRender:PlayRealTimeCutscene(TT, type)
   local cfgService = self._configService
   local levelConfigData = cfgService:GetLevelConfigData()
   local cutsceneParam = levelConfigData:GetLevelCutsceneParam()
-  for k,v in pairs(cutsceneParam) do
+  for k, v in pairs(cutsceneParam) do
     if v:GetType() == type then
       local cutsceneDirector = CutsceneDirector:New(self._world)
       cutsceneDirector:DoPlayCutscenePhase(TT, v:GetID())
-      ;
-      (Log.debug)("Play Cutscene ID ", v:GetID(), "Type:", type)
+      Log.debug("Play Cutscene ID ", v:GetID(), "Type:", type)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.ReviewCutscene = function(self, TT, levelID)
-  -- function num : 0_5 , upvalues : _ENV
-  local levelRawData = (Cfg.cfg_level)[levelID]
+function CutsceneServiceRender:ReviewCutscene(TT, levelID)
+  local levelRawData = Cfg.cfg_level[levelID]
   if not levelRawData or not levelRawData.Cutscene then
-    return 
+    return
   end
   local cutsceneID = -1
-  for _,cutsceneRawData in pairs(levelRawData.Cutscene) do
+  for _, cutsceneRawData in pairs(levelRawData.Cutscene) do
     cutsceneID = cutsceneRawData.CutsceneID
   end
   local cutsceneDirector = CutsceneDirector:New(self._world)
   cutsceneDirector:DoPlayCutscenePhase(TT, cutsceneID)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.GetCutsceneRenderGridPosition = function(self, entity)
-  -- function num : 0_6 , upvalues : _ENV
-  local boardServiceRender = ((self._world):GetService("BoardRender"))
-  -- DECOMPILER ERROR at PC4: Overwrote pending register: R3 in 'AssignReg'
-
-  local targetGridPos = .end
+function CutsceneServiceRender:GetCutsceneRenderGridPosition(entity)
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local targetGridPos
   local monster_body_area_cmpt = entity:BodyArea()
   local monster_body_area = {}
   if monster_body_area_cmpt then
     monster_body_area = monster_body_area_cmpt:GetArea()
   end
-  if #monster_body_area > 1 then
-    local renderPosition = (entity:Location()).Position
+  if 1 < #monster_body_area then
+    local renderPosition = entity:Location().Position
     targetGridPos = boardServiceRender:BoardRenderPos2FloatGridPos_New(renderPosition)
     local offset = Vector2(0, 0)
     if #monster_body_area == 4 then
       offset = Vector2(0.5, 0.5)
-    else
-      if #monster_body_area == 9 then
-        offset = Vector2(1, 1)
-      end
+    elseif #monster_body_area == 9 then
+      offset = Vector2(1, 1)
     end
     targetGridPos = targetGridPos - offset
-    targetGridPos = Vector2((math.floor)(targetGridPos.x), (math.floor)(targetGridPos.y))
+    targetGridPos = Vector2(math.floor(targetGridPos.x), math.floor(targetGridPos.y))
   else
-    do
-      do
-        local renderPosition = (entity:Location()).Position
-        targetGridPos = boardServiceRender:BoardRenderPos2GridPos(renderPosition)
-        return targetGridPos
-      end
-    end
+    local renderPosition = entity:Location().Position
+    targetGridPos = boardServiceRender:BoardRenderPos2GridPos(renderPosition)
   end
+  return targetGridPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.PlayCutsceneCreateMonster = function(self, TT, monsterID, monsterClassID, name, pos, dir, turnToPlayer)
-  -- function num : 0_7 , upvalues : _ENV
-  local sEntity = (self._world):GetService("RenderEntity")
+function CutsceneServiceRender:PlayCutsceneCreateMonster(TT, monsterID, monsterClassID, name, pos, dir, turnToPlayer)
+  local sEntity = self._world:GetService("RenderEntity")
   local cutsceneMonsterEntity = sEntity:CreateRenderEntity(EntityConfigIDRender.CutsceneMonster)
-  local monsterConfigData = ((self._configService):GetMonsterConfigData())
-  local monsterResPath, areaArray = nil, nil
-  do
-    if monsterClassID then
-      local monsterClassConfigData = (Cfg.cfg_monster_class)[monsterClassID]
-      monsterResPath = monsterClassConfigData.ResPath
-      areaArray = monsterConfigData:ExplainMonsterArea(monsterClassConfigData.Area)
-    end
-    if monsterID then
-      monsterResPath = monsterConfigData:GetMonsterResPath(monsterID)
-      areaArray = monsterConfigData:GetMonsterArea(monsterID)
-    end
-    cutsceneMonsterEntity:ReplaceAsset(NativeUnityPrefabAsset:New(monsterResPath, true))
-    cutsceneMonsterEntity:ReplaceBodyArea(areaArray)
-    local blocks = self:_GetCutsceneBlockPos()
-    local playerEntity = ((self._world):Player()):GetLocalTeamEntity()
-    local playerPos = self:GetCutsceneRenderGridPosition(playerEntity)
-    local listReturn = self:_CalcScopeSquareRing(playerPos, {Vector2(0, 0)}, 9, 2)
-    local gridPos = self:_GetCutsceneCreateMonsterPos(pos, areaArray, blocks, listReturn)
-    local monster_body_area_cmpt = cutsceneMonsterEntity:BodyArea()
-    local monster_body_area = {}
-    if monster_body_area_cmpt then
-      monster_body_area = monster_body_area_cmpt:GetArea()
-    end
-    local offset = Vector2(0, 0)
-    if #monster_body_area == 4 then
-      offset = Vector2(0.5, 0.5)
-    else
-      if #monster_body_area == 9 then
-        offset = Vector2(1, 1)
-      end
-    end
-    gridPos = gridPos + offset
-    if turnToPlayer == 1 then
-      dir = playerPos - (gridPos)
-    end
-    cutsceneMonsterEntity:SetLocation(gridPos, dir)
-    cutsceneMonsterEntity:AddCutsceneMonster()
-    local cutsceneMonsterComponent = cutsceneMonsterEntity:CutsceneMonster()
-    cutsceneMonsterComponent:SetCutsceneMonsterName(name)
+  local monsterConfigData = self._configService:GetMonsterConfigData()
+  local monsterResPath, areaArray
+  if monsterClassID then
+    local monsterClassConfigData = Cfg.cfg_monster_class[monsterClassID]
+    monsterResPath = monsterClassConfigData.ResPath
+    areaArray = monsterConfigData:ExplainMonsterArea(monsterClassConfigData.Area)
   end
+  if monsterID then
+    monsterResPath = monsterConfigData:GetMonsterResPath(monsterID)
+    areaArray = monsterConfigData:GetMonsterArea(monsterID)
+  end
+  cutsceneMonsterEntity:ReplaceAsset(NativeUnityPrefabAsset:New(monsterResPath, true))
+  cutsceneMonsterEntity:ReplaceBodyArea(areaArray)
+  local blocks = self:_GetCutsceneBlockPos()
+  local playerEntity = self._world:Player():GetLocalTeamEntity()
+  local playerPos = self:GetCutsceneRenderGridPosition(playerEntity)
+  local listReturn = self:_CalcScopeSquareRing(playerPos, {
+    Vector2(0, 0)
+  }, 9, 2)
+  local gridPos = self:_GetCutsceneCreateMonsterPos(pos, areaArray, blocks, listReturn)
+  local monster_body_area_cmpt = cutsceneMonsterEntity:BodyArea()
+  local monster_body_area = {}
+  if monster_body_area_cmpt then
+    monster_body_area = monster_body_area_cmpt:GetArea()
+  end
+  local offset = Vector2(0, 0)
+  if #monster_body_area == 4 then
+    offset = Vector2(0.5, 0.5)
+  elseif #monster_body_area == 9 then
+    offset = Vector2(1, 1)
+  end
+  gridPos = gridPos + offset
+  if turnToPlayer == 1 then
+    dir = playerPos - gridPos
+  end
+  cutsceneMonsterEntity:SetLocation(gridPos, dir)
+  cutsceneMonsterEntity:AddCutsceneMonster()
+  local cutsceneMonsterComponent = cutsceneMonsterEntity:CutsceneMonster()
+  cutsceneMonsterComponent:SetCutsceneMonsterName(name)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender._GetCutsceneBlockPos = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function CutsceneServiceRender:_GetCutsceneBlockPos()
   local blocks = {}
   local gapTiles = BattleConst.GapTiles
   local gapTilesPosList = {}
-  for i,p in ipairs(gapTiles) do
+  for i, p in ipairs(gapTiles) do
     local gridPos = Vector2(p[1], p[2])
-    ;
-    (table.insert)(blocks, gridPos)
+    table.insert(blocks, gridPos)
   end
-  for _,entity in ipairs(self:GetCutsceneMonsterGroupEntity()) do
-    local bodyArea = (entity:BodyArea()):GetArea()
+  for _, entity in ipairs(self:GetCutsceneMonsterGroupEntity()) do
+    local bodyArea = entity:BodyArea():GetArea()
     local gridPos = self:GetCutsceneRenderGridPosition(entity)
-    for _,area in ipairs(bodyArea) do
+    for _, area in ipairs(bodyArea) do
       local bodyPos = area + gridPos
-      ;
-      (table.insert)(blocks, bodyPos)
+      table.insert(blocks, bodyPos)
     end
   end
-  local playerEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local playerEntity = self._world:Player():GetLocalTeamEntity()
   local playerPos = self:GetCutsceneRenderGridPosition(playerEntity)
-  ;
-  (table.insert)(blocks, playerPos)
+  table.insert(blocks, playerPos)
   return blocks
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.GetCutsceneMonsterGroupEntity = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function CutsceneServiceRender:GetCutsceneMonsterGroupEntity()
   local entityList = {}
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).CutsceneMonster)
-  for _,entity in ipairs(group:GetEntities()) do
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.CutsceneMonster)
+  for _, entity in ipairs(group:GetEntities()) do
     local cutsceneMonsterComponent = entity:CutsceneMonster()
     if not cutsceneMonsterComponent:GetHadPlayDead() then
-      (table.insert)(entityList, entity)
+      table.insert(entityList, entity)
     end
   end
   return entityList
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender._GetCutsceneCreateMonsterPos = function(self, pos, bodyArea, blocks, attackRange)
-  -- function num : 0_10 , upvalues : _ENV
+function CutsceneServiceRender:_GetCutsceneCreateMonsterPos(pos, bodyArea, blocks, attackRange)
   local canCutsceneCreate = true
-  for _,area in ipairs(bodyArea) do
+  for _, area in ipairs(bodyArea) do
     local bodyPos = Vector2(area.x + pos.x, area.y + pos.y)
-    if (table.icontains)(blocks, bodyPos) then
+    if table.icontains(blocks, bodyPos) then
       canCutsceneCreate = false
     end
   end
   if canCutsceneCreate then
     return pos
   else
-    ;
-    (table.insert)(blocks, pos)
-    ;
-    (table.removev)(attackRange, pos)
-    local randomIndex = (Mathf.Random)(1, (table.count)(attackRange))
+    table.insert(blocks, pos)
+    table.removev(attackRange, pos)
+    local randomIndex = Mathf.Random(1, table.count(attackRange))
     local posRandom = attackRange[randomIndex]
     local posNew = self:_GetCutsceneCreateMonsterPos(posRandom, bodyArea, blocks, attackRange)
     return posNew
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.PlayCutsceneMonsterDead = function(self, TT, monsterEntity, monsterDeadType)
-  -- function num : 0_11 , upvalues : _ENV
+function CutsceneServiceRender:PlayCutsceneMonsterDead(TT, monsterEntity, monsterDeadType)
   local cutsceneMonsterComponent = monsterEntity:CutsceneMonster()
   cutsceneMonsterComponent:SetHadPlayDead(true)
   local deadTriggerParam = "Death"
   monsterEntity:SetAnimatorControllerTriggers({deadTriggerParam})
   if monsterDeadType and monsterDeadType ~= DeathShowType.None then
-    local deathEffectID = nil
+    local deathEffectID
     if monsterDeadType == DeathShowType.DissolveLight then
       monsterEntity:NewPlayDeadLight()
       deathEffectID = BattleConst.MonsterDeadEffectLight
+    elseif monsterDeadType == DeathShowType.DissolveDark then
+      monsterEntity:NewPlayDeadDark()
+      deathEffectID = BattleConst.MonsterDeadEffectDark
     else
-      if monsterDeadType == DeathShowType.DissolveDark then
-        monsterEntity:NewPlayDeadDark()
-        deathEffectID = BattleConst.MonsterDeadEffectDark
-      else
-        deathEffectID = monsterDeadType
-      end
+      deathEffectID = monsterDeadType
     end
     if deathEffectID then
-      local effectService = (self._world):GetService("Effect")
+      local effectService = self._world:GetService("Effect")
       if type(deathEffectID) == "number" then
         deathEffectID = {deathEffectID}
       end
-      for i,effID in ipairs(deathEffectID) do
+      for i, effID in ipairs(deathEffectID) do
         local effectEntity = effectService:CreateEffect(effID, monsterEntity)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender._CalcScopeSquareRing = function(self, casterPos, bodyArea, ringCount, ringCountRemove)
-  -- function num : 0_12 , upvalues : _ENV
-  local listTotalData = (ComputeScopeRange.ComputeRange_SquareRing)(casterPos, #bodyArea, ringCount)
+function CutsceneServiceRender:_CalcScopeSquareRing(casterPos, bodyArea, ringCount, ringCountRemove)
+  local listTotalData = ComputeScopeRange.ComputeRange_SquareRing(casterPos, #bodyArea, ringCount)
   local listTotalDataRemove = {}
-  if ringCountRemove and ringCountRemove > 0 then
-    listTotalDataRemove = (ComputeScopeRange.ComputeRange_SquareRing)(casterPos, #bodyArea, ringCountRemove)
+  if ringCountRemove and 0 < ringCountRemove then
+    listTotalDataRemove = ComputeScopeRange.ComputeRange_SquareRing(casterPos, #bodyArea, ringCountRemove)
   end
   local listAttackData = {}
-  for key,value in ipairs(listTotalData) do
+  for key, value in ipairs(listTotalData) do
     local isValidGrid = self:isValidGrid(value)
-    if isValidGrid and not (table.intable)(listTotalDataRemove, value) then
+    if isValidGrid and not table.intable(listTotalDataRemove, value) then
       listAttackData[#listAttackData + 1] = value
     end
   end
   return listAttackData
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.PlayCutsceneMonsterMoveToPlayer = function(self, TT, monsterName, moveGridCount, moveSpeed)
-  -- function num : 0_13 , upvalues : _ENV
+function CutsceneServiceRender:PlayCutsceneMonsterMoveToPlayer(TT, monsterName, moveGridCount, moveSpeed)
   local waitTaskList = {}
   local moveMonsterEntityList = {}
-  for _,entity in ipairs(self:GetCutsceneMonsterGroupEntity()) do
+  for _, entity in ipairs(self:GetCutsceneMonsterGroupEntity()) do
     local cutsceneMonsterComponent = entity:CutsceneMonster()
     if cutsceneMonsterComponent:GetCutsceneMonsterName() == monsterName then
-      (table.insert)(moveMonsterEntityList, entity)
+      table.insert(moveMonsterEntityList, entity)
     end
   end
   for i = 1, moveGridCount do
-    for _,entity in ipairs(moveMonsterEntityList) do
+    for _, entity in ipairs(moveMonsterEntityList) do
       self.m_entityOwn = entity
       local posWalk = self:_CalcMovePos(entity)
       if posWalk ~= nil then
         local posSelf = self:GetCutsceneRenderGridPosition(entity)
         local cutsceneMonsterComponent = entity:CutsceneMonster()
         cutsceneMonsterComponent:SetLastMovePos(posSelf)
-        local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoWalk, self, entity, {posWalk}, moveSpeed)
-        if taskID > 0 then
+        local taskID = GameGlobal.TaskManager():CoreGameStartTask(self._DoWalk, self, entity, {posWalk}, moveSpeed)
+        if 0 < taskID then
           waitTaskList[#waitTaskList + 1] = taskID
         end
       end
     end
-    do
-      do
-        while #waitTaskList > 0 and not (TaskHelper:GetInstance()):IsAllTaskFinished(waitTaskList) do
-          YIELD(TT)
-        end
-        -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out DO_STMT
-
+    if 0 < #waitTaskList then
+      while not TaskHelper:GetInstance():IsAllTaskFinished(waitTaskList) do
+        YIELD(TT)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender._DoWalk = function(self, TT, monsterEntity, walkResultList, moveSpeed)
-  -- function num : 0_14 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
+function CutsceneServiceRender:_DoWalk(TT, monsterEntity, walkResultList, moveSpeed)
+  local boardServiceRender = self._world:GetService("BoardRender")
   local hasWalkPoint = false
-  if #walkResultList > 0 then
+  if 0 < #walkResultList then
     hasWalkPoint = true
   end
   if hasWalkPoint then
     self:StartMoveAnimation(monsterEntity, true)
   end
-  for _,resultPos in ipairs(walkResultList) do
+  for _, resultPos in ipairs(walkResultList) do
     local curPos = boardServiceRender:GetRealEntityGridPos(monsterEntity)
     local walkPos = resultPos
     local bodyAreaCmpt = monsterEntity:BodyArea()
@@ -335,8 +264,7 @@ CutsceneServiceRender._DoWalk = function(self, TT, monsterEntity, walkResultList
     local walkDir = walkPos - curPos
     monsterEntity:AddGridMove(moveSpeed, walkPos, curPos)
     monsterEntity:SetDirection(walkDir)
-    ;
-    (Log.debug)("[PlayAI]Entity:", monsterEntity:GetID(), ",CurPos:", curPos, " WalkTo,", walkPos)
+    Log.debug("[PlayAI]Entity:", monsterEntity:GetID(), ",CurPos:", curPos, " WalkTo,", walkPos)
     while monsterEntity:HasGridMove() do
       YIELD(TT)
     end
@@ -346,20 +274,14 @@ CutsceneServiceRender._DoWalk = function(self, TT, monsterEntity, walkResultList
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.StartMoveAnimation = function(self, targetEntity, isMove)
-  -- function num : 0_15
+function CutsceneServiceRender:StartMoveAnimation(targetEntity, isMove)
   local curVal = targetEntity:GetAnimatorControllerBoolsData("Move")
   if curVal ~= isMove then
     targetEntity:SetAnimatorControllerBools({Move = isMove})
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender._CalcMovePos = function(self, entityWork)
-  -- function num : 0_16
+function CutsceneServiceRender:_CalcMovePos(entityWork)
   local posSelf = self:GetCutsceneRenderGridPosition(entityWork)
   local posTarget = self:FindNewTargetPos(entityWork)
   if posSelf == posTarget then
@@ -374,36 +296,30 @@ CutsceneServiceRender._CalcMovePos = function(self, entityWork)
   return posWalk
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.FindNewTargetPos = function(self, entityWork)
-  -- function num : 0_17 , upvalues : _ENV
+function CutsceneServiceRender:FindNewTargetPos(entityWork)
   local selfPos = self:GetCutsceneRenderGridPosition(entityWork)
-  local selfBodyArea = (entityWork:BodyArea()):GetArea()
-  local playerEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local selfBodyArea = entityWork:BodyArea():GetArea()
+  local playerEntity = self._world:Player():GetLocalTeamEntity()
   local playerPos = self:GetCutsceneRenderGridPosition(playerEntity)
   local workCenter = playerPos
-  local listReturn = self:_CalcScopeSquareRing(workCenter, {Vector2(0, 0)}, 1, 0)
+  local listReturn = self:_CalcScopeSquareRing(workCenter, {
+    Vector2(0, 0)
+  }, 1, 0)
   self.m_nextPosList = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByNear)
-  ;
-  (self.m_nextPosList):AllowDuplicate()
-  ;
-  (self.m_nextPosList):Clear()
+  self.m_nextPosList:AllowDuplicate()
+  self.m_nextPosList:Clear()
   for i = 1, #listReturn do
     local posWork = listReturn[i]
     if self:IsPosAccessible(posWork) then
-      (AINewNode.InsertSortedArray)(self.m_nextPosList, selfPos, posWork, i)
+      AINewNode.InsertSortedArray(self.m_nextPosList, selfPos, posWork, i)
     end
   end
   local posReturn = self:FindPosValid(self.m_nextPosList, playerPos)
   return posReturn
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.FindPosValid = function(self, planPosList, defPos)
-  -- function num : 0_18
-  if planPosList == nil or planPosList:Size() <= 0 then
+function CutsceneServiceRender:FindPosValid(planPosList, defPos)
+  if nil == planPosList or planPosList:Size() <= 0 then
     return defPos
   end
   local posSelf = defPos
@@ -412,127 +328,94 @@ CutsceneServiceRender.FindPosValid = function(self, planPosList, defPos)
   for i = 1, nPosCount do
     local posWork = planPosList:GetAt(i)
     local bAccessible = self:IsPosAccessible(posWork.data)
-    if bAccessible == true then
+    if true == bAccessible then
       posReturn = posWork.data
       break
     end
   end
-  do
-    return posReturn
-  end
+  return posReturn
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.ComputeWalkRange = function(self, centerPos, nWalkStep, bFilter)
-  -- function num : 0_19 , upvalues : _ENV
-  if not bFilter then
-    bFilter = false
-  end
-  local cbFilter = nil
+function CutsceneServiceRender:ComputeWalkRange(centerPos, nWalkStep, bFilter)
+  bFilter = bFilter or false
+  local cbFilter
   if bFilter then
     cbFilter = Callback:New(1, self.IsPosAccessible, self)
   end
-  return (ComputeScopeRange.ComputeRange_WalkMathPos)(centerPos, 1, nWalkStep, cbFilter)
+  return ComputeScopeRange.ComputeRange_WalkMathPos(centerPos, 1, nWalkStep, cbFilter)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.IsPosAccessible = function(self, pos)
-  -- function num : 0_20 , upvalues : _ENV
+function CutsceneServiceRender:IsPosAccessible(pos)
   local coverList = self:GetCoverAreaList(pos)
   local wordPos = self:GetCutsceneRenderGridPosition(self.m_entityOwn)
   local coverListSelf = self:GetCoverAreaList(wordPos)
   local blocks = self:_GetCutsceneBlockPos()
   for i = 1, #coverList do
     local posWork = coverList[i]
-    if not (table.icontains)(coverListSelf, posWork) and (table.icontains)(blocks, posWork) then
+    if not table.icontains(coverListSelf, posWork) and table.icontains(blocks, posWork) then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.GetCoverAreaList = function(self, pos)
-  -- function num : 0_21
+function CutsceneServiceRender:GetCoverAreaList(pos)
   local posList = {}
   if self.m_entityOwn then
-    posList = (self.m_entityOwn):GetCoverAreaList(pos)
+    posList = self.m_entityOwn:GetCoverAreaList(pos)
   end
   return posList
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.FindNewWalkPos = function(self, walkRange, posCenter, posDef)
-  -- function num : 0_22
+function CutsceneServiceRender:FindNewWalkPos(walkRange, posCenter, posDef)
   return self:FindPosByNearCenter(walkRange, posCenter, posDef, 1)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.FindPosByNearCenter = function(self, listPlanPos, posCenter, posDef, nCheckStep)
-  -- function num : 0_23 , upvalues : _ENV
-  if listPlanPos == nil or (table.count)(listPlanPos) <= 0 then
+function CutsceneServiceRender:FindPosByNearCenter(listPlanPos, posCenter, posDef, nCheckStep)
+  if nil == listPlanPos or table.count(listPlanPos) <= 0 then
     return posDef
   end
   local listWalk = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByNear)
   listWalk:AllowDuplicate()
-  local cutsceneMonsterComponent = (self.m_entityOwn):CutsceneMonster()
+  local cutsceneMonsterComponent = self.m_entityOwn:CutsceneMonster()
   local lastMovePos = cutsceneMonsterComponent:GetLastMovePos()
   for i = 1, #listPlanPos do
     local posData = listPlanPos[i]
     local posWalk = posData:GetPos()
-    if posWalk ~= posDef and (nCheckStep == nil or nCheckStep == posData:GetStep()) and posWalk ~= lastMovePos then
-      (AINewNode.InsertSortedArray)(listWalk, posCenter, posWalk, i)
+    if posWalk ~= posDef and (nil == nCheckStep or nCheckStep == posData:GetStep()) and posWalk ~= lastMovePos then
+      AINewNode.InsertSortedArray(listWalk, posCenter, posWalk, i)
+    else
     end
   end
   return self:FindPosValid(listWalk, posDef)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.PlayCutsceneHitbackPlayer = function(self, TT, dis, dir, speed)
-  -- function num : 0_24 , upvalues : _ENV
-  local playerEntity = ((self._world):Player()):GetLocalTeamEntity()
+function CutsceneServiceRender:PlayCutsceneHitbackPlayer(TT, dis, dir, speed)
+  local playerEntity = self._world:Player():GetLocalTeamEntity()
   local playerPos = self:GetCutsceneRenderGridPosition(playerEntity)
   local blocks = self:_GetCutsceneBlockPos()
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   local gapTiles = BattleConst.GapTiles
   local gapTilesPosList = {}
-  for i,p in ipairs(gapTiles) do
+  for i, p in ipairs(gapTiles) do
     local gridPos = Vector2(p[1], p[2])
-    ;
-    (table.insert)(gapTilesPosList, gridPos)
+    table.insert(gapTilesPosList, gridPos)
   end
   local targetPos = playerPos
   for i = 1, dis do
     local hitBackPos = playerPos + Vector2(dir.x * i, dir.y * i)
-    if not (table.icontains)(blocks, hitBackPos) and self:isValidGrid(hitBackPos) and not (table.icontains)(gapTilesPosList, hitBackPos) then
-      do
-        targetPos = hitBackPos
-        -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    if not (not table.icontains(blocks, hitBackPos) and self:isValidGrid(hitBackPos)) or table.icontains(gapTilesPosList, hitBackPos) then
+      break
     end
+    targetPos = hitBackPos
   end
   playerEntity:AddHitback(playerPos, speed, targetPos, dir)
-  while playerEntity:HasHitback() and not (playerEntity:Hitback()):IsHitbackEnd() do
+  while playerEntity:HasHitback() and not playerEntity:Hitback():IsHitbackEnd() do
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneServiceRender.isValidGrid = function(self, pos)
-  -- function num : 0_25 , upvalues : _ENV
-  local isValid = pos.x >= 1 and pos.y >= 1 and pos.x <= BattleConst.DefaultMaxX and pos.y <= BattleConst.DefaultMaxY
-  do return isValid end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function CutsceneServiceRender:isValidGrid(pos)
+  local isValid = pos.x >= 1 and 1 <= pos.y and pos.x <= BattleConst.DefaultMaxX and pos.y <= BattleConst.DefaultMaxY
+  return isValid
 end
-
-

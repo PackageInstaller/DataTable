@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_skins/ui_pet_skins_select_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetSkinsSelectCell", UICustomWidget)
 UIPetSkinsSelectCell = UIPetSkinsSelectCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetSkinsSelectCell.Constructor = function(self)
-  -- function num : 0_0
+function UIPetSkinsSelectCell:Constructor()
   self._data = nil
   self._lastOnTop = true
   self._lastOrderLayer = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsSelectCell.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIPetSkinsSelectCell:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsSelectCell.SetData = function(self, skinCfg, idx, callbcak, begindrag, drag, enddrag)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPetSkinsSelectCell:SetData(skinCfg, idx, callbcak, begindrag, drag, enddrag)
   self._skinCfg = skinCfg
   self._idx = idx
   self._callback = callbcak
@@ -32,44 +19,40 @@ UIPetSkinsSelectCell.SetData = function(self, skinCfg, idx, callbcak, begindrag,
   self._drag = drag
   self._endDrag = enddrag
   if self._skinCfg then
-    self._petId = (self._skinCfg).PetId
-    self._petCfg = (Cfg.cfg_pet)[self._petId]
+    self._petId = self._skinCfg.PetId
+    self._petCfg = Cfg.cfg_pet[self._petId]
   end
   if self._lockCoverGo then
-    (self._lockCoverGo):SetActive(false)
+    self._lockCoverGo:SetActive(false)
   end
   if self._skinCfg then
-    (self._clothImg):LoadImage((self._skinCfg).TeamBody)
+    self._clothImg:LoadImage(self._skinCfg.TeamBody)
   end
-  if (self._skinCfg).SkinType ~= PetSkinFlag.PSF_COLLECTION then
-    (self._flagGo):SetActive(not self._flagGo or not self._skinCfg)
-    if (self._skinCfg).SkinType ~= 3 then
-      (self._specialGo):SetActive(not self._specialGo or not self._skinCfg)
-      if (self._skinCfg).SkinType ~= PetSkinFlag.PSF_MEMORY then
-        (self._memoryObj):SetActive(not self._memoryObj or not self._skinCfg)
-        if (self._skinCfg).SkinType ~= 3 then
-          (self._specialEffGo):SetActive(not self._specialEffGo or not self._skinCfg)
-          if (self._skinCfg).SkinType ~= PetSkinFlag.PSF_WISH then
-            (self._wishGo):SetActive(not self._wishGo or not self._skinCfg)
-            if self._logoImg and self._petCfg then
-              (self._logoImg):LoadImage((self._petCfg).Logo)
-            end
-            self:SetIsOnTop(true)
-            self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._bgGo), UIEvent.BeginDrag, self._beginDrag)
-            self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._bgGo), UIEvent.Drag, self._drag)
-            self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._bgGo), UIEvent.EndDrag, self._endDrag)
-            -- DECOMPILER ERROR: 11 unprocessed JMP targets
-          end
-        end
-      end
-    end
+  if self._flagGo and self._skinCfg then
+    self._flagGo:SetActive(self._skinCfg.SkinType == PetSkinFlag.PSF_COLLECTION)
   end
+  if self._specialGo and self._skinCfg then
+    self._specialGo:SetActive(self._skinCfg.SkinType == 3)
+  end
+  if self._memoryObj and self._skinCfg then
+    self._memoryObj:SetActive(self._skinCfg.SkinType == PetSkinFlag.PSF_MEMORY)
+  end
+  if self._specialEffGo and self._skinCfg then
+    self._specialEffGo:SetActive(self._skinCfg.SkinType == 3)
+  end
+  if self._wishGo and self._skinCfg then
+    self._wishGo:SetActive(self._skinCfg.SkinType == PetSkinFlag.PSF_WISH)
+  end
+  if self._logoImg and self._petCfg then
+    self._logoImg:LoadImage(self._petCfg.Logo)
+  end
+  self:SetIsOnTop(true)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._bgGo), UIEvent.BeginDrag, self._beginDrag)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._bgGo), UIEvent.Drag, self._drag)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._bgGo), UIEvent.EndDrag, self._endDrag)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsSelectCell.InitWidget = function(self)
-  -- function num : 0_3
+function UIPetSkinsSelectCell:InitWidget()
   self._clothImg = self:GetUIComponent("RawImageLoader", "ClothImg")
   self._logoImg = self:GetUIComponent("RawImageLoader", "LogoImg")
   self._lockCover = self:GetUIComponent("Image", "LockCover")
@@ -89,94 +72,67 @@ UIPetSkinsSelectCell.InitWidget = function(self)
   self._wishGo = self:GetGameObject("wish")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsSelectCell.BottomBgOnClick = function(self, go)
-  -- function num : 0_4
+function UIPetSkinsSelectCell:BottomBgOnClick(go)
   if self._callback then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsSelectCell.RefreshData = function(self, uiData)
-  -- function num : 0_5
+function UIPetSkinsSelectCell:RefreshData(uiData)
   self._data = uiData
   self:_RefreshStateUi()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsSelectCell._RefreshStateUi = function(self)
-  -- function num : 0_6
+function UIPetSkinsSelectCell:_RefreshStateUi()
   if self._data then
-    local isShop = (self._data):IsShopDetail()
-    local isObtained = (self._data):IsObtained()
-    local cfg = (self._data).cfg
-    if (self._data):IsShopDetail() then
-      (self._lockCoverGo):SetActive(not isObtained)
+    local isShop = self._data:IsShopDetail()
+    local isObtained = self._data:IsObtained()
+    local cfg = self._data.cfg
+    if self._data:IsShopDetail() then
+      self._lockCoverGo:SetActive(not isObtained)
     end
-    local isShowLock = (not isShop and not isObtained)
+    local isShowLock = not isShop and not isObtained
     if self._lockCoverGo then
-      (self._lockCoverGo):SetActive(isShowLock)
+      self._lockCoverGo:SetActive(isShowLock)
     end
     if self._curIconGo then
-      (self._curIconGo):SetActive((self._data):IsCurrentSkin())
+      self._curIconGo:SetActive(self._data:IsCurrentSkin())
     end
     if isObtained and cfg.StoryId then
-      if (self._data):IsUnlockCg() then
-        (self._redPoint):SetActive(false)
+      if self._data:IsUnlockCg() then
+        self._redPoint:SetActive(false)
       else
-        (self._redPoint):SetActive(true)
+        self._redPoint:SetActive(true)
       end
     else
-      (self._redPoint):SetActive(false)
+      self._redPoint:SetActive(false)
     end
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsSelectCell.SetIsOnTop = function(self, isOnTop)
-  -- function num : 0_7
+function UIPetSkinsSelectCell:SetIsOnTop(isOnTop)
   if self._lastOnTop ~= isOnTop then
     self._lastOnTop = isOnTop
   else
-    return 
+    return
   end
-  ;
-  (self._lockLayerGo):SetActive(isOnTop)
-  ;
-  (self._blackCoverGo):SetActive(isOnTop)
-  ;
-  (self._grayCoverGo):SetActive(not isOnTop)
-  ;
-  (self._funcLayerGo):SetActive(isOnTop)
-  ;
-  (self._frameImgGo):SetActive(isOnTop)
+  self._lockLayerGo:SetActive(isOnTop)
+  self._blackCoverGo:SetActive(isOnTop)
+  self._grayCoverGo:SetActive(not isOnTop)
+  self._funcLayerGo:SetActive(isOnTop)
+  self._frameImgGo:SetActive(isOnTop)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsSelectCell.SetOrderLayer = function(self, orderLayer)
-  -- function num : 0_8 , upvalues : _ENV
+function UIPetSkinsSelectCell:SetOrderLayer(orderLayer)
   if self._lastOrderLayer ~= orderLayer then
     self._lastOrderLayer = orderLayer
   else
-    return 
+    return
   end
   local scaleParam = 1 - 0.05 * orderLayer
-  ;
-  ((self:GetGameObject()).transform):DOScale(Vector3(scaleParam, scaleParam, 1), 0.2)
+  self:GetGameObject().transform:DOScale(Vector3(scaleParam, scaleParam, 1), 0.2)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinsSelectCell.RefreshLogo = function(self, logoImg)
-  -- function num : 0_9
-  (self._logoImg):LoadImage(logoImg)
+function UIPetSkinsSelectCell:RefreshLogo(logoImg)
+  self._logoImg:LoadImage(logoImg)
 end
-
-

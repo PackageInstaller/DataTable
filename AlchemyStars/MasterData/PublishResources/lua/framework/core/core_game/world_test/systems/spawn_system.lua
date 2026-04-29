@@ -1,36 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_test/systems/spawn_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SpawnSystem", ReactiveSystem)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-SpawnSystem.Constructor = function(self, world)
-  -- function num : 0_0
+function SpawnSystem:Constructor(world)
   self.world = world
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnSystem.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = world:GetGroup((world.BW_WEMatchers).Spawn)
+function SpawnSystem:GetTrigger(world)
+  local group = world:GetGroup(world.BW_WEMatchers.Spawn)
   local c = Collector:New({group}, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnSystem.Filter = function(self, entity)
-  -- function num : 0_2
+function SpawnSystem:Filter(entity)
   return entity:HasSpawn()
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnSystem.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function SpawnSystem:ExecuteEntities(entities)
   local world = self.world
   for i = 1, #entities do
     local e = entities[i]
@@ -40,5 +24,3 @@ SpawnSystem.ExecuteEntities = function(self, entities)
     e:RemoveSpawn()
   end
 end
-
-

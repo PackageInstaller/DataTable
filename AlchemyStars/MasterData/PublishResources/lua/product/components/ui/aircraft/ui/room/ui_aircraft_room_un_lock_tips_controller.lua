@@ -1,112 +1,69 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/room/ui_aircraft_room_un_lock_tips_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftRoomUnLockTipsController", UIController)
 UIAircraftRoomUnLockTipsController = UIAircraftRoomUnLockTipsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftRoomUnLockTipsController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftRoomUnLockTipsController:OnShow(uiParams)
   self:_GetComponents()
   local spaceid = uiParams[1]
   self._module = self:GetModule(AircraftModule)
-  self._buildArray = (self._module):GetBuildTypeSorted(spaceid)
-  local buildID = self:BuildType2BuildID(((self._buildArray)[1]).BuildType)
-  self._room_cfg = (Cfg.cfg_aircraft_room)[buildID]
+  self._buildArray = self._module:GetBuildTypeSorted(spaceid)
+  local buildID = self:BuildType2BuildID(self._buildArray[1].BuildType)
+  self._room_cfg = Cfg.cfg_aircraft_room[buildID]
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomUnLockTipsController.BuildType2BuildID = function(self, type)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_room)({RoomType = type, Level = 1})
+function UIAircraftRoomUnLockTipsController:BuildType2BuildID(type)
+  local cfg = Cfg.cfg_aircraft_room({RoomType = type, Level = 1})
   if cfg then
-    return (cfg[1]).ID
+    return cfg[1].ID
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomUnLockTipsController._GetComponents = function(self)
-  -- function num : 0_2
+function UIAircraftRoomUnLockTipsController:_GetComponents()
   self._roomName = self:GetUIComponent("UILocalizationText", "roomName")
   self._roomDesc = self:GetUIComponent("UILocalizationText", "roomDesc")
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomUnLockTipsController._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local roomName = (self._room_cfg).Name
-  local roomCount = ((self._buildArray)[1]).Count
-  local roomCountUpper = ((self._buildArray)[1]).MaxNum
-  ;
-  (self._roomName):SetText((StringTable.Get)(roomName) .. " " .. roomCount .. "<color=#ff6b0d>/</color><color=#d5d5d5>" .. roomCountUpper .. "</color>")
-  local roomIcon = (self._room_cfg).RoomTypeIcon2
-  ;
-  (self._icon):LoadImage(roomIcon)
-  local roomDesc = (self._room_cfg).Description
-  ;
-  (self._roomDesc):SetText((StringTable.Get)(roomDesc))
+function UIAircraftRoomUnLockTipsController:_OnValue()
+  local roomName = self._room_cfg.Name
+  local roomCount = self._buildArray[1].Count
+  local roomCountUpper = self._buildArray[1].MaxNum
+  self._roomName:SetText(StringTable.Get(roomName) .. " " .. roomCount .. "<color=#ff6b0d>/</color><color=#d5d5d5>" .. roomCountUpper .. "</color>")
+  local roomIcon = self._room_cfg.RoomTypeIcon2
+  self._icon:LoadImage(roomIcon)
+  local roomDesc = self._room_cfg.Description
+  self._roomDesc:SetText(StringTable.Get(roomDesc))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomUnLockTipsController.OnHide = function(self)
-  -- function num : 0_4
+function UIAircraftRoomUnLockTipsController:OnHide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomUnLockTipsController.bgOnClick = function(self)
-  -- function num : 0_5
+function UIAircraftRoomUnLockTipsController:bgOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomUnLockTipsController.infoOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local roomType = ((self._buildArray)[1]).BuildType
-  if roomType ~= AirRoomType.AisleRoom or roomType == AirRoomType.CentralRoom then
+function UIAircraftRoomUnLockTipsController:infoOnClick()
+  local roomType = self._buildArray[1].BuildType
+  if roomType == AirRoomType.AisleRoom then
+  elseif roomType == AirRoomType.CentralRoom then
     self:ShowDialog("UIHelpController", "UIAircraftCentralRoom")
-  else
-    if roomType == AirRoomType.PowerRoom then
-      self:ShowDialog("UIHelpController", "UIAircraftPowerRoom")
-    else
-      if roomType == AirRoomType.MazeRoom then
-        self:ShowDialog("UIHelpController", "UIAircraftMazeRoom")
-      else
-        if roomType == AirRoomType.ResourceRoom then
-          self:ShowDialog("UIHelpController", "UIAircraftResourceRoom")
-        else
-          if roomType == AirRoomType.PrismRoom then
-            self:ShowDialog("UIHelpController", "UIAircraftPrismRoom")
-          else
-            if roomType == AirRoomType.TowerRoom then
-              self:ShowDialog("UIHelpController", "UIAircraftTowerRoom")
-            else
-            end
-          end
-        end
-      end
-    end
-  end
-  if (roomType == AirRoomType.EvilRoom and roomType ~= AirRoomType.PurifyRoom) or roomType == AirRoomType.DispatchRoom then
+  elseif roomType == AirRoomType.PowerRoom then
+    self:ShowDialog("UIHelpController", "UIAircraftPowerRoom")
+  elseif roomType == AirRoomType.MazeRoom then
+    self:ShowDialog("UIHelpController", "UIAircraftMazeRoom")
+  elseif roomType == AirRoomType.ResourceRoom then
+    self:ShowDialog("UIHelpController", "UIAircraftResourceRoom")
+  elseif roomType == AirRoomType.PrismRoom then
+    self:ShowDialog("UIHelpController", "UIAircraftPrismRoom")
+  elseif roomType == AirRoomType.TowerRoom then
+    self:ShowDialog("UIHelpController", "UIAircraftTowerRoom")
+  elseif roomType == AirRoomType.EvilRoom then
+  elseif roomType == AirRoomType.PurifyRoom then
+  elseif roomType == AirRoomType.DispatchRoom then
     self:ShowDialog("UIHelpController", "UIDispatchDetailController")
-  else
-    if roomType == AirRoomType.SmeltRoom then
-      self:ShowDialog("UIHelpController", "UIAircraftSmeltRoom")
-    else
-      if roomType == AirRoomType.TacticRoom then
-        self:ShowDialog("UIHelpController", "UIAircraftTactic")
-      end
-    end
+  elseif roomType == AirRoomType.SmeltRoom then
+    self:ShowDialog("UIHelpController", "UIAircraftSmeltRoom")
+  elseif roomType == AirRoomType.TacticRoom then
+    self:ShowDialog("UIHelpController", "UIAircraftTactic")
   end
 end
-
-

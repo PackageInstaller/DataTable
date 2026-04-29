@@ -1,36 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common/helper/ui_activity_main_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityMainBase", UIController)
 UIActivityMainBase = UIActivityMainBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityMainBase.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIActivityMainBase:LoadDataOnEnter(TT, res, uiParams)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
   self._activityConst = UIActivityCustomConst:New(self:GetCampaignType(), self:GetComponentIds())
-  ;
-  (self._activityConst):LoadData(TT, res)
+  self._activityConst:LoadData(TT, res)
   if res and not res:GetSucc() then
-    local campModule = (GameGlobal.GetModule)(CampaignModule)
-    campModule:CheckErrorCode(res.m_result, ((self._activityConst):GetCampaignId()), nil, nil)
+    local campModule = GameGlobal.GetModule(CampaignModule)
+    campModule:CheckErrorCode(res.m_result, self._activityConst:GetCampaignId(), nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityMainBase:OnShow(uiParams)
   self._buttons = {}
   self._eventRed = self:GetGameObject("EventRed")
   self._loginRed = self:GetGameObject("LoginRed")
   self:InitTopButton(uiParams)
   self._btnPanel = self:GetGameObject("BtnPanel")
   self._showBtn = self:GetGameObject("ShowBtn")
-  ;
-  (self._showBtn):SetActive(false)
+  self._showBtn:SetActive(false)
   self:OnPlayPlot()
   self:AttachEvent(GameEventType.OnActivityTotalAwardGot, self.RefreshData)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self.RefreshData)
@@ -43,290 +31,188 @@ UIActivityMainBase.OnShow = function(self, uiParams)
       local dayStr, hourStr, minusStr, lessOneMinusStr = self:GetCustomTimeStr()
       button:SetCustomTimeStr(dayStr, hourStr, minusStr, lessOneMinusStr)
       button:Init()
-      -- DECOMPILER ERROR at PC80: Confused about usage of register: R13 in 'UnsetPending'
-
-      ;
-      (self._buttons)[config.Name] = button
+      self._buttons[config.Name] = button
     end
   end
-  do
-    ;
-    (self._activityConst):ClearEnterNew()
-    self:OnInit(uiParams)
-    self:Refresh()
-  end
+  self._activityConst:ClearEnterNew()
+  self:OnInit(uiParams)
+  self:Refresh()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityMainBase:OnHide()
   if self._buttons then
-    for k,v in pairs(self._buttons) do
+    for k, v in pairs(self._buttons) do
       v:Release()
     end
   end
-  do
-    self._buttons = nil
-    self:DetachEvent(GameEventType.OnActivityTotalAwardGot, self.RefreshData)
-    self:DetachEvent(GameEventType.CampaignComponentStepChange, self.RefreshData)
-    self:DetachEvent(GameEventType.ActivityMainStatusRefreshEvent, self.RefreshData)
-    self:OnRelease()
-    self:CloseRefreshDataTask()
-  end
+  self._buttons = nil
+  self:DetachEvent(GameEventType.OnActivityTotalAwardGot, self.RefreshData)
+  self:DetachEvent(GameEventType.CampaignComponentStepChange, self.RefreshData)
+  self:DetachEvent(GameEventType.ActivityMainStatusRefreshEvent, self.RefreshData)
+  self:OnRelease()
+  self:CloseRefreshDataTask()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.Refresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for k,v in pairs(self._buttons) do
+function UIActivityMainBase:Refresh()
+  for k, v in pairs(self._buttons) do
     v:Refresh()
   end
   self:RefreshRedAndNew()
   self:OnRefresh()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.CloseRefreshDataTask = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityMainBase:CloseRefreshDataTask()
   if self._taskIdMainBaseRefreshData == nil then
-    return 
+    return
   end
-  local task = ((GameGlobal.TaskManager)()):FindTask(self._taskIdMainBaseRefreshData)
+  local task = GameGlobal.TaskManager():FindTask(self._taskIdMainBaseRefreshData)
   if task and task.state ~= TaskState.Stop then
-    ((GameGlobal.TaskManager)()):KillTask(self._taskIdMainBaseRefreshData)
+    GameGlobal.TaskManager():KillTask(self._taskIdMainBaseRefreshData)
     self._taskIdMainBaseRefreshData = nil
     self:UnLock("UIActivityMainBase_ReLoadData")
     self:UnLock("UIActivityMainBase_ReLoadDataRefresh")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.RefreshData = function(self)
-  -- function num : 0_5
+function UIActivityMainBase:RefreshData()
   self:CloseRefreshDataTask()
   self._taskIdMainBaseRefreshData = self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self
     self:Lock("UIActivityMainBase_ReLoadData")
     self:ReLoadData(TT, "Refresh")
     self:Refresh()
     self._taskIdMainBaseRefreshData = nil
     self:UnLock("UIActivityMainBase_ReLoadData")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.ReLoadData = function(self, TT, key)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityMainBase:ReLoadData(TT, key)
   self:Lock("UIActivityMainBase_ReLoadData" .. key)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (self._activityConst):LoadData(TT, res)
+  self._activityConst:LoadData(TT, res)
   self:UnLock("UIActivityMainBase_ReLoadData" .. key)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.InitTopButton = function(self, uiParams)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityMainBase:InitTopButton(uiParams)
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   local backBtn = btns:SpawnObject("UICommonTopButton")
   backBtn:SetData(function()
-    -- function num : 0_7_0 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(self.CloseCoro, self)
-  end
-, nil, nil, false, function()
-    -- function num : 0_7_1 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(self.SetButtonShowStatusCoro, self, false)
-  end
-)
+    GameGlobal.TaskManager():StartTask(self.CloseCoro, self)
+  end, nil, nil, false, function()
+    GameGlobal.TaskManager():StartTask(self.SetButtonShowStatusCoro, self, false)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.CloseCoro = function(self, TT)
-  -- function num : 0_8
+function UIActivityMainBase:CloseCoro(TT)
   self:Lock("UIActivityN21CCMainController_CloseCoro")
   self:Close(TT)
   self:UnLock("UIActivityN21CCMainController_CloseCoro")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.SetButtonShowStatusCoro = function(self, TT, isShow)
-  -- function num : 0_9
+function UIActivityMainBase:SetButtonShowStatusCoro(TT, isShow)
   self:SetPanelStatus(TT, isShow)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.PlayComponentPlot = function(self, componetId, callback)
-  -- function num : 0_10 , upvalues : _ENV
-  (UIActivityHelper.PlayFirstPlot_Component)((self._activityConst):GetCampaign(), componetId, function()
-    -- function num : 0_10_0 , upvalues : callback
+function UIActivityMainBase:PlayComponentPlot(componetId, callback)
+  UIActivityHelper.PlayFirstPlot_Component(self._activityConst:GetCampaign(), componetId, function()
     if callback then
       callback()
     end
-  end
-, false)
+  end, false)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.PlayPlot = function(self, callback)
-  -- function num : 0_11 , upvalues : _ENV
-  (UIActivityHelper.PlayFirstPlot_Campaign)((self._activityConst):GetCampaign(), callback)
+function UIActivityMainBase:PlayPlot(callback)
+  UIActivityHelper.PlayFirstPlot_Campaign(self._activityConst:GetCampaign(), callback)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.OnPlayPlot = function(self)
-  -- function num : 0_12
+function UIActivityMainBase:OnPlayPlot()
   self:PlayPlot()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.RefreshRedAndNew = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  (self._eventRed):SetActive((self._activityConst):IsShowBattlePassRed())
-  ;
-  (self._loginRed):SetActive((self._activityConst):IsShowComponentRed(self:GetLoginComponentId()))
+function UIActivityMainBase:RefreshRedAndNew()
+  self._eventRed:SetActive(self._activityConst:IsShowBattlePassRed())
+  self._loginRed:SetActive(self._activityConst:IsShowComponentRed(self:GetLoginComponentId()))
   if self._buttons then
-    for k,v in pairs(self._buttons) do
+    for k, v in pairs(self._buttons) do
       v:RefreshRedAndNew()
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.ClickButton = function(self, name)
-  -- function num : 0_14
+function UIActivityMainBase:ClickButton(name)
   if self._buttons == nil then
-    return 
+    return
   end
-  local button = (self._buttons)[name]
+  local button = self._buttons[name]
   button:BtnOnClick()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.InfoOnClick = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local campaign = (self._activityConst):GetCampaign()
+function UIActivityMainBase:InfoOnClick()
+  local campaign = self._activityConst:GetCampaign()
   local sample = campaign:GetSample()
   if sample == nil then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
+    return
   end
   local campId = sample.id
-  local introCfg = (Cfg.cfg_activity_intro_in_discovery)[campId]
+  local introCfg = Cfg.cfg_activity_intro_in_discovery[campId]
   self:ShowDialog("UIIntroLoader", introCfg.IntroLoaderKey)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.EventOnClick = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  (UIActivityBattlePassHelper.OpenMainController)()
+function UIActivityMainBase:EventOnClick()
+  UIActivityBattlePassHelper.OpenMainController()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.LoginOnClick = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local status, time = (self._activityConst):GetComponentStatus(self:GetLoginComponentId())
+function UIActivityMainBase:LoginOnClick()
+  local status, time = self._activityConst:GetComponentStatus(self:GetLoginComponentId())
   if status == ActivityComponentStatus.Close or status == ActivityComponentStatus.ActivityEnd then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     if status == ActivityComponentStatus.ActivityEnd then
       self:SwitchState(UIStateType.UIMain)
     end
-    return 
+    return
   end
   self:ShowDialog("UIActivityTotalLoginAwardController", false, self:GetCampaignType(), self:GetLoginComponentId())
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.ShowBtnOnClick = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.SetButtonShowStatusCoro, self, true)
+function UIActivityMainBase:ShowBtnOnClick()
+  GameGlobal.TaskManager():StartTask(self.SetButtonShowStatusCoro, self, true)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.OnInit = function(self)
-  -- function num : 0_19
+function UIActivityMainBase:OnInit()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.OnRelease = function(self)
-  -- function num : 0_20
+function UIActivityMainBase:OnRelease()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.OnRefresh = function(self)
-  -- function num : 0_21
+function UIActivityMainBase:OnRefresh()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.Close = function(self, TT)
-  -- function num : 0_22 , upvalues : _ENV
+function UIActivityMainBase:Close(TT)
   self:SwitchState(UIStateType.UIMain)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.SetPanelStatus = function(self, TT, isShow)
-  -- function num : 0_23
-  (self._showBtn):SetActive(not isShow)
-  ;
-  (self._btnPanel):SetActive(isShow)
+function UIActivityMainBase:SetPanelStatus(TT, isShow)
+  self._showBtn:SetActive(not isShow)
+  self._btnPanel:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.GetCampaignType = function(self)
-  -- function num : 0_24
+function UIActivityMainBase:GetCampaignType()
   return nil
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.GetComponentIds = function(self)
-  -- function num : 0_25
+function UIActivityMainBase:GetComponentIds()
   return nil
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.GetLoginComponentId = function(self)
-  -- function num : 0_26
+function UIActivityMainBase:GetLoginComponentId()
   return nil
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.GetButtonStatusConfig = function(self)
-  -- function num : 0_27
+function UIActivityMainBase:GetButtonStatusConfig()
   return {}
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainBase.GetCustomTimeStr = function(self)
-  -- function num : 0_28
+function UIActivityMainBase:GetCustomTimeStr()
   return nil
 end
-
-

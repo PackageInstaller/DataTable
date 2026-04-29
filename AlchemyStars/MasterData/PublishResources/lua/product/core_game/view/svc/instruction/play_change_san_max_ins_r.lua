@@ -1,22 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_change_san_max_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayChangeSanMaxInstruction", BaseInstruction)
 PlayChangeSanMaxInstruction = PlayChangeSanMaxInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayChangeSanMaxInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayChangeSanMaxInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local rsvcFeature = world:GetService("FeatureRender")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.ChangeSanMax)
   if not resultArray then
-    return 
+    return
   end
-  for _,result in ipairs(resultArray) do
+  for _, result in ipairs(resultArray) do
     local val = result:GetDeltaVal()
     local old = result:GetOldSanValue()
     local current = result:GetNewSanValue()
@@ -26,10 +19,7 @@ PlayChangeSanMaxInstruction.DoInstruction = function(self, TT, casterEntity, pha
     rsvcFeature:NotifySanMaxValueChange(current, old, val, curMaxVal)
     if val ~= 0 then
       local nt = NTSanValueChange:New(current, old, debtVal, modifyTimes)
-      ;
-      (world:GetService("PlayBuff")):PlayBuffView(TT, nt)
+      world:GetService("PlayBuff"):PlayBuffView(TT, nt)
     end
   end
 end
-
-

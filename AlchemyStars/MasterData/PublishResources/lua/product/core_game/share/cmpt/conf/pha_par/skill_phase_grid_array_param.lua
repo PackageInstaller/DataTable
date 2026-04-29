@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_grid_array_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseGridArrayParam", SkillPhaseParamBase)
 SkillPhaseGridArrayParam = SkillPhaseGridArrayParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseGridArrayParam.Constructor = function(self, phaseParam)
-  -- function num : 0_0
+function SkillPhaseGridArrayParam:Constructor(phaseParam)
   self._gridEffectID = phaseParam.gridEffectID
   self._bestEffectTime = phaseParam.bestEffectTime
   self._finishTime = phaseParam.finishTime
@@ -20,74 +13,53 @@ SkillPhaseGridArrayParam.Constructor = function(self, phaseParam)
   self._castAnimation = phaseParam.castAnimation
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGridArrayParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseGridArrayParam:GetCacheTable()
   local t = {
-{((Cfg.cfg_effect)[self._castEffectID]).ResPath, 1}
-, 
-{((Cfg.cfg_effect)[self._atkEffectID]).ResPath, 1}
-}
+    {
+      Cfg.cfg_effect[self._castEffectID].ResPath,
+      1
+    },
+    {
+      Cfg.cfg_effect[self._atkEffectID].ResPath,
+      1
+    }
+  }
   if self._gridEffectID and self._gridEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._gridEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._gridEffectID].ResPath,
+      1
+    })
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGridArrayParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseGridArrayParam:GetPhaseType()
   return SkillViewPhaseType.GridArray
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGridArrayParam.GetGridEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseGridArrayParam:GetGridEffectID()
   return self._gridEffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGridArrayParam.GetFinishTime = function(self)
-  -- function num : 0_4
+function SkillPhaseGridArrayParam:GetFinishTime()
   return self._finishTime
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGridArrayParam.GetBestEffectTime = function(self)
-  -- function num : 0_5
+function SkillPhaseGridArrayParam:GetBestEffectTime()
   return self._bestEffectTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGridArrayParam.GetCastEffectID = function(self)
-  -- function num : 0_6
+function SkillPhaseGridArrayParam:GetCastEffectID()
   return self._castEffectID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGridArrayParam.GetAtkEffectID = function(self)
-  -- function num : 0_7
+function SkillPhaseGridArrayParam:GetAtkEffectID()
   return self._atkEffectID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGridArrayParam.GetHitDelayTime = function(self)
-  -- function num : 0_8
+function SkillPhaseGridArrayParam:GetHitDelayTime()
   return self._hitDelay
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseGridArrayParam.GetHitAnimation = function(self)
-  -- function num : 0_9
+function SkillPhaseGridArrayParam:GetHitAnimation()
   return self._hitAnimation
 end
-
-

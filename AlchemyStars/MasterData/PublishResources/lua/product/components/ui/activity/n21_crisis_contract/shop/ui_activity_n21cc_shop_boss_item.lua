@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21_crisis_contract/shop/ui_activity_n21cc_shop_boss_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN21CCShopBossItem", UICustomWidget)
 UIActivityN21CCShopBossItem = UIActivityN21CCShopBossItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN21CCShopBossItem.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityN21CCShopBossItem:OnShow()
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
   self._scoreLabel = self:GetUIComponent("UILocalizationText", "Score")
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
@@ -20,81 +13,52 @@ UIActivityN21CCShopBossItem.OnShow = function(self)
   self._go = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopBossItem.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityN21CCShopBossItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopBossItem.Refresh = function(self, bossData, callback)
-  -- function num : 0_2
+function UIActivityN21CCShopBossItem:Refresh(bossData, callback)
   if bossData == nil then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
-  ;
-  (self._go):SetActive(true)
+  self._go:SetActive(true)
   self._bossData = bossData
   self._callback = callback
   if bossData:IsOpen() then
-    (self._scoreIcon):SetActive(true)
-    ;
-    (self._name):SetActive(true)
-    ;
-    (self._score):SetActive(true)
-    ;
-    (self._iconLoader):LoadImage(bossData:GetBossSmallIcon())
-    ;
-    (self._scoreLabel):SetText(bossData:GetTotalScore())
-    ;
-    (self._nameLabel):SetText(bossData:GetBossName())
-    ;
-    (self._lock):SetActive(false)
+    self._scoreIcon:SetActive(true)
+    self._name:SetActive(true)
+    self._score:SetActive(true)
+    self._iconLoader:LoadImage(bossData:GetBossSmallIcon())
+    self._scoreLabel:SetText(bossData:GetTotalScore())
+    self._nameLabel:SetText(bossData:GetBossName())
+    self._lock:SetActive(false)
   else
-    ;
-    (self._scoreIcon):SetActive(false)
-    ;
-    (self._name):SetActive(false)
-    ;
-    (self._score):SetActive(false)
-    ;
-    (self._lock):SetActive(true)
-    ;
-    (self._iconLoader):LoadImage("n21_wjyz_lb_di07")
+    self._scoreIcon:SetActive(false)
+    self._name:SetActive(false)
+    self._score:SetActive(false)
+    self._lock:SetActive(true)
+    self._iconLoader:LoadImage("n21_wjyz_lb_di07")
   end
   self:SetSelectStatus(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopBossItem.GetBossData = function(self)
-  -- function num : 0_3
+function UIActivityN21CCShopBossItem:GetBossData()
   return self._bossData
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopBossItem.SetSelectStatus = function(self, status)
-  -- function num : 0_4
-  (self._selected):SetActive(status)
+function UIActivityN21CCShopBossItem:SetSelectStatus(status)
+  self._selected:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopBossItem.BtnOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN21CCShopBossItem:BtnOnClick()
   if not self._bossData then
-    return 
+    return
   end
-  if not (self._bossData):IsOpen() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n20_crisis_contract_boss_item_lock_tips"))
-    return 
+  if not self._bossData:IsOpen() then
+    ToastManager.ShowToast(StringTable.Get("str_n20_crisis_contract_boss_item_lock_tips"))
+    return
   end
   if self._callback then
-    (self._callback)(self)
+    self._callback(self)
   end
 end
-
-

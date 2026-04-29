@@ -1,30 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_grade_info_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIGradeInfoItem", Object)
 UIGradeInfoItem = UIGradeInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGradeInfoItem.OnShowItem = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIGradeInfoItem:OnShowItem(uiParams)
   self._name2Assets = {}
   self.key2CustomWidgetPools = {}
   self.type2ComponentTable = {}
-  self._petModule = (GameGlobal.GetModule)(PetModule)
-  self._roleModule = (GameGlobal.GetModule)(RoleModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
+  self._roleModule = GameGlobal.GetModule(RoleModule)
   self._uiPetGradeAtlas = self:GetAsset("UIPetGrade.spriteatlas", LoadType.SpriteAtlas)
   self._atlasAwake = self:GetAsset("UIAwake.spriteatlas", LoadType.SpriteAtlas)
   self.zhuangshiInfo = {
-[0] = {chineseTip = "str_pet_config_grade1_decorate_tip_cn", engTip = "str_pet_config_grade1_decorate_tip_eng"}
-, 
-[1] = {chineseTip = "str_pet_config_grade1_decorate_tip_cn", engTip = "str_pet_config_grade1_decorate_tip_eng"}
-, 
-[2] = {chineseTip = "str_pet_config_grade2_decorate_tip_cn", engTip = "str_pet_config_grade2_decorate_tip_eng"}
-, 
-[3] = {chineseTip = "str_pet_config_grade3_decorate_tip_cn", engTip = "str_pet_config_grade3_decorate_tip_eng"}
-}
+    [0] = {
+      chineseTip = "str_pet_config_grade1_decorate_tip_cn",
+      engTip = "str_pet_config_grade1_decorate_tip_eng"
+    },
+    [1] = {
+      chineseTip = "str_pet_config_grade1_decorate_tip_cn",
+      engTip = "str_pet_config_grade1_decorate_tip_eng"
+    },
+    [2] = {
+      chineseTip = "str_pet_config_grade2_decorate_tip_cn",
+      engTip = "str_pet_config_grade2_decorate_tip_eng"
+    },
+    [3] = {
+      chineseTip = "str_pet_config_grade3_decorate_tip_cn",
+      engTip = "str_pet_config_grade3_decorate_tip_eng"
+    }
+  }
   self._varyPool = self:GetUIComponent("UISelectObjectPath", "varyRowItem")
   self._materialPool = self:GetUIComponent("UISelectObjectPath", "RowItem")
   self._gradeLeftImg = self:GetUIComponent("Image", "gradeLeft")
@@ -39,235 +41,155 @@ UIGradeInfoItem.OnShowItem = function(self, uiParams)
   self._nameTex = self:GetUIComponent("UILocalizationText", "nameTex")
   self._btn = self:GetGameObject("DetailButton")
   self._uieventListener = UICustomUIEventListener:New()
-  ;
-  (self._uieventListener):AddUICustomEventListener((UICustomUIEventListener.Get)((self._btn).gameObject), UIEvent.Click, function(go)
-    -- function num : 0_0_0 , upvalues : self
+  self._uieventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self._btn.gameObject), UIEvent.Click, function(go)
     self:DetailButtonOnClick(go)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.DetailButtonOnClick = function(self, go)
-  -- function num : 0_1 , upvalues : _ENV
+function UIGradeInfoItem:DetailButtonOnClick(go)
   if not self._click then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIGradeSkillPanelController", (self._petInfo):GetPstID())
+  GameGlobal.UIStateManager():ShowDialog("UIGradeSkillPanelController", self._petInfo:GetPstID())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.StopTween = function(self)
-  -- function num : 0_2
+function UIGradeInfoItem:StopTween()
   if self._consumItem then
-    (self._consumItem):StopTween()
+    self._consumItem:StopTween()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.GetNotEnoughMatList = function(self)
-  -- function num : 0_3
+function UIGradeInfoItem:GetNotEnoughMatList()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.GradeButtonOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIGradeInfoItem:GradeButtonOnClick()
   if not self._click then
     return false
   end
   local isOk, index = self:CheckIndexMaterialItems()
   if isOk == false then
-    local rowList = (self._materialPool):GetAllSpawnList()
+    local rowList = self._materialPool:GetAllSpawnList()
     local item = rowList[index]
     self._consumItem = item
     item:DOShakePosition()
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundUIMaterialNotEnough)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundUIMaterialNotEnough)
     return false
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.CheckIndexMaterialItems = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIGradeInfoItem:CheckIndexMaterialItems()
   if self._materialItemInfos == nil then
     return true, 1
   end
-  for index,itemInfo in pairs(self._materialItemInfos) do
+  for index, itemInfo in pairs(self._materialItemInfos) do
     if itemInfo.ConditionType == "Level" then
-      local petLevel = (self._petInfo):GetPetLevel()
+      local petLevel = self._petInfo:GetPetLevel()
       if petLevel < itemInfo.condition then
         return false, index
       end
+    elseif itemInfo.ConditionType == "Coin" then
+      local bagNum = self._roleModule:GetGold()
+      if bagNum < itemInfo.condition then
+        return false, -1
+      end
     else
-      do
-        if itemInfo.ConditionType == "Coin" then
-          local bagNum = (self._roleModule):GetGold()
-          if bagNum < itemInfo.condition then
-            return false, -1
-          end
-        else
-          do
-            do
-              local bagNum = (self._roleModule):GetAssetCount(itemInfo.ID)
-              if bagNum < itemInfo.condition then
-                return false, index
-              end
-              -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
+      local bagNum = self._roleModule:GetAssetCount(itemInfo.ID)
+      if bagNum < itemInfo.condition then
+        return false, index
       end
     end
   end
   return true, 1
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.ShowElementAndTex = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg_pet_element = (Cfg.cfg_pet_element)({})
-  local f = (self._petInfo):GetPetFirstElement()
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._firstLeft).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[f]).Icon))
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._firstRight).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[f]).Icon))
-  local sNow = (self._petInfo):GetPetSecondElement()
+function UIGradeInfoItem:ShowElementAndTex()
+  local cfg_pet_element = Cfg.cfg_pet_element({})
+  local f = self._petInfo:GetPetFirstElement()
+  self._firstLeft.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[f].Icon))
+  self._firstRight.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[f].Icon))
+  local sNow = self._petInfo:GetPetSecondElement()
   if sNow == nil or sNow == 0 then
-    ((self._sceondLeft).gameObject):SetActive(false)
+    self._sceondLeft.gameObject:SetActive(false)
   else
-    ;
-    ((self._sceondLeft).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC60: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._sceondLeft).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[sNow]).Icon))
+    self._sceondLeft.gameObject:SetActive(true)
+    self._sceondLeft.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[sNow].Icon))
   end
-  local gradeNow = (self._petInfo):GetPetGrade()
-  local gradeMax = (self._petInfo):GetMaxGrade()
-  local gradeNext = (self._petInfo):GetPetGrade() + 1
+  local gradeNow = self._petInfo:GetPetGrade()
+  local gradeMax = self._petInfo:GetMaxGrade()
+  local gradeNext = self._petInfo:GetPetGrade() + 1
   if gradeNow < gradeMax then
-    local cfg_pet = (Cfg.cfg_pet)[(self._petInfo):GetTemplateID()]
+    local cfg_pet = Cfg.cfg_pet[self._petInfo:GetTemplateID()]
     if cfg_pet == nil then
-      (Log.fatal)("###cfg_pet is nil ! id --> ", (self._petInfo):GetTemplateID())
-      return 
+      Log.fatal("###cfg_pet is nil ! id --> ", self._petInfo:GetTemplateID())
+      return
     end
     local gradeSecondNeed = cfg_pet.Element2NeedGrade
-    if gradeSecondNeed <= gradeNext then
+    if gradeNext >= gradeSecondNeed then
       local secondTemp = cfg_pet.SecondElement
       if secondTemp ~= nil and secondTemp ~= 0 then
-        ((self._secondRight).gameObject):SetActive(true)
-        -- DECOMPILER ERROR at PC114: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._secondRight).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[cfg_pet.SecondElement]).Icon))
+        self._secondRight.gameObject:SetActive(true)
+        self._secondRight.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[cfg_pet.SecondElement].Icon))
       else
-        ;
-        ((self._secondRight).gameObject):SetActive(false)
+        self._secondRight.gameObject:SetActive(false)
       end
     else
-      do
-        do
-          ;
-          ((self._secondRight).gameObject):SetActive(false)
-          local gradeTexNow = ""
-          if gradeNow < gradeMax then
-            gradeTexNow = (StringTable.Get)("str_pet_config_common_advance") .. gradeNow
-          else
-            gradeTexNow = (StringTable.Get)("str_pet_config_awake_full")
-          end
-          ;
-          (self._gradeTexLeft):SetText(gradeTexNow)
-          local gradeTexNext = ""
-          if gradeNext < gradeMax then
-            gradeTexNext = (StringTable.Get)("str_pet_config_common_advance") .. gradeNext
-          else
-            gradeTexNext = (StringTable.Get)("str_pet_config_awake_full")
-          end
-          ;
-          (self._gradeTexRight):SetText(gradeTexNext)
-        end
-      end
+      self._secondRight.gameObject:SetActive(false)
     end
   end
+  local gradeTexNow = ""
+  if gradeNow < gradeMax then
+    gradeTexNow = StringTable.Get("str_pet_config_common_advance") .. gradeNow
+  else
+    gradeTexNow = StringTable.Get("str_pet_config_awake_full")
+  end
+  self._gradeTexLeft:SetText(gradeTexNow)
+  local gradeTexNext = ""
+  if gradeMax > gradeNext then
+    gradeTexNext = StringTable.Get("str_pet_config_common_advance") .. gradeNext
+  else
+    gradeTexNext = StringTable.Get("str_pet_config_awake_full")
+  end
+  self._gradeTexRight:SetText(gradeTexNext)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.SetLeftIcon = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local petId = (self._petInfo):GetTemplateID()
-  local petGradeLevel = (self._petInfo):GetPetGrade()
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._gradeLeftImg).sprite = (self._atlasAwake):GetSprite((UIPetModule.GetAwakeSpriteName)(petId, petGradeLevel))
+function UIGradeInfoItem:SetLeftIcon()
+  local petId = self._petInfo:GetTemplateID()
+  local petGradeLevel = self._petInfo:GetPetGrade()
+  self._gradeLeftImg.sprite = self._atlasAwake:GetSprite(UIPetModule.GetAwakeSpriteName(petId, petGradeLevel))
   local nextGradeLevel = petGradeLevel + 1
-  local maxGrade = (self._petInfo):GetMaxGrade()
-  if maxGrade < nextGradeLevel then
+  local maxGrade = self._petInfo:GetMaxGrade()
+  if nextGradeLevel > maxGrade then
     nextGradeLevel = maxGrade
   end
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._gradeRightImg).sprite = (self._atlasAwake):GetSprite((UIPetModule.GetAwakeSpriteName)(petId, nextGradeLevel))
+  self._gradeRightImg.sprite = self._atlasAwake:GetSprite(UIPetModule.GetAwakeSpriteName(petId, nextGradeLevel))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.ShowVarySkill = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local uiModule = (self._petModule).uiModule
-  self._bodyDiff = uiModule:GetDiffWithGrade(self._petInfo, true)
+function UIGradeInfoItem:ShowVarySkill()
+  local uiModule = self._petModule.uiModule
+  self._bodyDiff, self._varyInfo = uiModule:GetDiffWithGrade(self._petInfo, true)
   if self._varyInfo == nil then
-    return 
+    return
   end
-  self._varyInfo = uiModule:RemoveNotShowSkill((self._petInfo):GetTemplateID(), (self._petInfo):GetPetGrade() + 1, (self._petInfo):GetPetAwakening(), self._varyInfo)
-  local _itemCountPerRow = (table.count)(self._varyInfo)
+  self._varyInfo = uiModule:RemoveNotShowSkill(self._petInfo:GetTemplateID(), self._petInfo:GetPetGrade() + 1, self._petInfo:GetPetAwakening(), self._varyInfo)
+  local _itemCountPerRow = table.count(self._varyInfo)
   if _itemCountPerRow <= 0 then
-    return 
+    return
   end
-  ;
-  (self._varyPool):SpawnObjects("GradeVaryItem", _itemCountPerRow)
-  local rowList = (self._varyPool):GetAllSpawnList()
+  self._varyPool:SpawnObjects("GradeVaryItem", _itemCountPerRow)
+  local rowList = self._varyPool:GetAllSpawnList()
   local tempTab = {}
   local hasWork = false
   for i = 1, #self._varyInfo do
-    local item = (self._varyInfo)[i]
-    -- DECOMPILER ERROR at PC55: Unhandled construct in 'MakeBoolean' P1
-
-    if item.type == "work" and hasWork == false then
-      hasWork = true
-      ;
-      (table.insert)(tempTab, item)
+    local item = self._varyInfo[i]
+    if item.type == "work" then
+      if hasWork == false then
+        hasWork = true
+        table.insert(tempTab, item)
+      end
+    else
+      table.insert(tempTab, item)
     end
-    ;
-    (table.insert)(tempTab, item)
   end
   for itemIndex = 1, _itemCountPerRow do
     local varyItem = rowList[itemIndex]
@@ -275,115 +197,85 @@ UIGradeInfoItem.ShowVarySkill = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.RefreshItemCount = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local _itemCountPerRow = (table.count)(self._materialItemInfos)
-  local rowList = (self._materialPool):GetAllSpawnList()
+function UIGradeInfoItem:RefreshItemCount()
+  local _itemCountPerRow = table.count(self._materialItemInfos)
+  local rowList = self._materialPool:GetAllSpawnList()
   for i = 1, _itemCountPerRow do
     local tMaterialItem = rowList[i]
     tMaterialItem:RefreshItemCount()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.ShowConsumMaterial = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIGradeInfoItem:ShowConsumMaterial()
   if not self._petInfo then
-    return 
+    return
   end
   self._materialItemInfos = self:GetConsumMaterialInfo()
-  local _itemCountPerRow = (table.count)(self._materialItemInfos)
-  ;
-  (self._materialPool):SpawnObjects("UIConsumaItem", _itemCountPerRow)
-  local rowList = (self._materialPool):GetAllSpawnList()
+  local _itemCountPerRow = table.count(self._materialItemInfos)
+  self._materialPool:SpawnObjects("UIConsumaItem", _itemCountPerRow)
+  local rowList = self._materialPool:GetAllSpawnList()
   for itemIndex = 1, _itemCountPerRow do
     local tMaterialItem = rowList[itemIndex]
-    tMaterialItem:SetData(self._petInfo, (self._materialItemInfos)[itemIndex], itemIndex, false, function(itemID, condition, pos)
-    -- function num : 0_10_0 , upvalues : self
-    self:SetItemTip(itemID, condition, pos)
+    tMaterialItem:SetData(self._petInfo, self._materialItemInfos[itemIndex], itemIndex, false, function(itemID, condition, pos)
+      self:SetItemTip(itemID, condition, pos)
+    end)
   end
-)
-  end
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self:GetUIComponent("RectTransform", "RowItem"))
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self:GetUIComponent("RectTransform", "RowItem"))
   local sizeFilter = self:GetUIComponent("ContentSizeFitter", "RowItem")
   sizeFilter.enabled = false
   local grid = self:GetUIComponent("GridLayoutGroup", "RowItem")
   grid.enabled = false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.SetItemTip = function(self, itemID, condition, pos)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIItemGetPathController", itemID, nil, nil, condition)
+function UIGradeInfoItem:SetItemTip(itemID, condition, pos)
+  GameGlobal.UIStateManager():ShowDialog("UIItemGetPathController", itemID, nil, nil, condition)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.GetNextGradeInfo = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local gradeLevel = (self._petInfo):GetPetGrade()
-  local cfg = (Cfg.cfg_pet_grade)({PetID = (self._petInfo):GetTemplateID(), Grade = gradeLevel + 1})
+function UIGradeInfoItem:GetNextGradeInfo()
+  local gradeLevel = self._petInfo:GetPetGrade()
+  local cfg = Cfg.cfg_pet_grade({
+    PetID = self._petInfo:GetTemplateID(),
+    Grade = gradeLevel + 1
+  })
   return cfg
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.GetConsumMaterialInfo = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local gradeLevel = (self._petInfo):GetPetGrade()
+function UIGradeInfoItem:GetConsumMaterialInfo()
+  local gradeLevel = self._petInfo:GetPetGrade()
   local cfg = self:GetNextGradeInfo()
-  local cfg = (Cfg.cfg_pet_grade)({PetID = (self._petInfo):GetTemplateID(), Grade = gradeLevel + 1})
+  local cfg = Cfg.cfg_pet_grade({
+    PetID = self._petInfo:GetTemplateID(),
+    Grade = gradeLevel + 1
+  })
   local itemInfos = {}
   if cfg then
-    local gradeNeedItemList = (cfg[1]).NeedItem
+    local gradeNeedItemList = cfg[1].NeedItem
     local levelCondition = {}
     levelCondition.ConditionType = "Level"
-    levelCondition.condition = (cfg[1]).NeedLevel
-    ;
-    (table.insert)(itemInfos, levelCondition)
-    for key,value in pairs(gradeNeedItemList) do
-      local data = (string.split)(value, ",")
+    levelCondition.condition = cfg[1].NeedLevel
+    table.insert(itemInfos, levelCondition)
+    for key, value in pairs(gradeNeedItemList) do
+      local data = string.split(value, ",")
       local itemCondition = {}
       itemCondition.ConditionType = "Consum"
       itemCondition.ID = tonumber(data[1])
       itemCondition.condition = tonumber(data[2])
       if itemCondition.ID == RoleAssetID.RoleAssetGold then
-        do
-          (table.insert)(itemInfos, itemCondition)
-          -- DECOMPILER ERROR at PC60: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC60: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      else
+        table.insert(itemInfos, itemCondition)
       end
     end
   end
-  do
-    return itemInfos
-  end
+  return itemInfos
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.OnHide = function(self)
-  -- function num : 0_14
+function UIGradeInfoItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.OnHideCallBack = function(self)
-  -- function num : 0_15
+function UIGradeInfoItem:OnHideCallBack()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.SetData = function(self, index, pet)
-  -- function num : 0_16
+function UIGradeInfoItem:SetData(index, pet)
   self._petInfo = pet
   self:ShowConsumMaterial()
   self:ShowVarySkill()
@@ -393,10 +285,7 @@ UIGradeInfoItem.SetData = function(self, index, pet)
   self:ShowName()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.RefreshData = function(self, index, pet)
-  -- function num : 0_17
+function UIGradeInfoItem:RefreshData(index, pet)
   self._petInfo = pet
   self:ShowConsumMaterial()
   self:ShowVarySkill()
@@ -406,267 +295,192 @@ UIGradeInfoItem.RefreshData = function(self, index, pet)
   self:ShowName()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.ShowName = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  (self._nameTex):SetText((StringTable.Get)((self._petInfo):GetPetName()))
+function UIGradeInfoItem:ShowName()
+  self._nameTex:SetText(StringTable.Get(self._petInfo:GetPetName()))
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.GetCurGradeInfo = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local gradeLevel = (self._petInfo):GetPetGrade()
-  local cfg = (Cfg.cfg_pet_grade)({PetID = (self._petInfo):GetTemplateID(), Grade = gradeLevel})
+function UIGradeInfoItem:GetCurGradeInfo()
+  local gradeLevel = self._petInfo:GetPetGrade()
+  local cfg = Cfg.cfg_pet_grade({
+    PetID = self._petInfo:GetTemplateID(),
+    Grade = gradeLevel
+  })
   return cfg
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.ShowTopGradeVaryInfo = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local petGrade = (self._petInfo):GetPetGrade()
-  local nextCfg = (self:GetNextGradeInfo())
-  -- DECOMPILER ERROR at PC5: Overwrote pending register: R3 in 'AssignReg'
-
-  local curCfg = .end
+function UIGradeInfoItem:ShowTopGradeVaryInfo()
+  local petGrade = self._petInfo:GetPetGrade()
+  local nextCfg = self:GetNextGradeInfo()
+  local curCfg
   local curPetGradeStr = ""
   local nextPetGradeStr = ""
-  local curTen = (math.floor)(petGrade / 10)
+  local curTen = math.floor(petGrade / 10)
   local curBit = petGrade % 10
   curPetGradeStr = curPetGradeStr .. curTen .. curBit
   if petGrade <= 0 then
-    local templateID = (self._petInfo):GetTemplateID()
-    curCfg = (Cfg.cfg_pet)[templateID]
+    local templateID = self._petInfo:GetTemplateID()
+    curCfg = Cfg.cfg_pet[templateID]
     if curCfg then
-      curPetGradeStr = curPetGradeStr .. (StringTable.Get)(curCfg.Name)
-      -- DECOMPILER ERROR at PC34: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._gradeTexLeft).text = curPetGradeStr
+      curPetGradeStr = curPetGradeStr .. StringTable.Get(curCfg.Name)
+      self._gradeTexLeft.text = curPetGradeStr
     end
   else
-    do
-      curCfg = self:GetCurGradeInfo()
-      if curCfg then
-        curPetGradeStr = curPetGradeStr .. (StringTable.Get)((curCfg[1]).Shape)
-        -- DECOMPILER ERROR at PC49: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._gradeTexLeft).text = curPetGradeStr
-      end
-      if nextCfg then
-        local nextTen = (math.floor)((petGrade + 1) / 10)
-        local nextBit = (petGrade + 1) % 10
-        nextPetGradeStr = nextPetGradeStr .. nextTen .. nextBit
-        nextPetGradeStr = nextPetGradeStr .. (StringTable.Get)((nextCfg[1]).Shape)
-        -- DECOMPILER ERROR at PC71: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._gradeTexRight).text = nextPetGradeStr
-      end
-      do
-        self._click = true
-        local grade = (self._petInfo):GetPetGrade()
-        local maxGrade = (self._petInfo):GetMaxGrade()
-        if maxGrade <= grade then
-          self._click = false
-        end
-        local starLevel = (self._petInfo):GetPetStar()
-        local openAwakenCfg = (Cfg.cfg_global).pet_open_grade
-        if starLevel <= openAwakenCfg.IntValue then
-          self._click = false
-        end
-      end
+    curCfg = self:GetCurGradeInfo()
+    if curCfg then
+      curPetGradeStr = curPetGradeStr .. StringTable.Get(curCfg[1].Shape)
+      self._gradeTexLeft.text = curPetGradeStr
     end
+  end
+  if nextCfg then
+    local nextTen = math.floor((petGrade + 1) / 10)
+    local nextBit = (petGrade + 1) % 10
+    nextPetGradeStr = nextPetGradeStr .. nextTen .. nextBit
+    nextPetGradeStr = nextPetGradeStr .. StringTable.Get(nextCfg[1].Shape)
+    self._gradeTexRight.text = nextPetGradeStr
+  end
+  self._click = true
+  local grade = self._petInfo:GetPetGrade()
+  local maxGrade = self._petInfo:GetMaxGrade()
+  if grade >= maxGrade then
+    self._click = false
+  end
+  local starLevel = self._petInfo:GetPetStar()
+  local openAwakenCfg = Cfg.cfg_global.pet_open_grade
+  if starLevel <= openAwakenCfg.IntValue then
+    self._click = false
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.GetNeedMatList = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIGradeInfoItem:GetNeedMatList()
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local matList = {}
   for i = 1, #self._materialItemInfos do
-    local info = (self._materialItemInfos)[i]
+    local info = self._materialItemInfos[i]
     local type = info.ConditionType
     if type == "Consum" then
       local id = info.ID
       local needCount = info.condition
       local haveCount = itemModule:GetItemCount(id)
-      if haveCount < needCount then
+      if needCount > haveCount then
         local gapsCount = needCount - haveCount
         local mat = {}
         mat.id = id
         mat.count = gapsCount
-        ;
-        (table.insert)(matList, mat)
+        table.insert(matList, mat)
       end
     end
   end
-  if (table.count)(matList) > 0 then
+  if table.count(matList) > 0 then
     return matList
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.CanGradeClick = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIGradeInfoItem:CanGradeClick()
   local levelOk = false
-  local gradeLevel = (self._petInfo):GetPetGrade()
-  local cfg = (Cfg.cfg_pet_grade)({PetID = (self._petInfo):GetTemplateID(), Grade = gradeLevel + 1})
+  local gradeLevel = self._petInfo:GetPetGrade()
+  local cfg = Cfg.cfg_pet_grade({
+    PetID = self._petInfo:GetTemplateID(),
+    Grade = gradeLevel + 1
+  })
   if cfg then
-    local nowLv = (self._petInfo):GetPetLevel()
-    local levelCondition = (cfg[1]).NeedLevel
-    if levelCondition <= nowLv then
+    local nowLv = self._petInfo:GetPetLevel()
+    local levelCondition = cfg[1].NeedLevel
+    if nowLv >= levelCondition then
       levelOk = true
     end
   end
-  do
-    return not self._click or levelOk
-  end
+  return self._click and levelOk
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.SetView = function(self, view)
-  -- function num : 0_23
+function UIGradeInfoItem:SetView(view)
   self._view = view
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.GetName = function(self)
-  -- function num : 0_24
+function UIGradeInfoItem:GetName()
   return "UIGradeInfoItem"
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.GetUIComponent = function(self, componentTypeName, name)
-  -- function num : 0_25 , upvalues : _ENV
+function UIGradeInfoItem:GetUIComponent(componentTypeName, name)
   if componentTypeName == "UISelectObjectPath" then
-    local uiCustomWidgetPool = (self.key2CustomWidgetPools)[name]
+    local uiCustomWidgetPool = self.key2CustomWidgetPools[name]
     if uiCustomWidgetPool then
       return uiCustomWidgetPool
     end
     local view = self._view
-    do
-      do
-        if view then
-          local dynamicInfoOfEngine = view:GetUIComponent(componentTypeName, name)
-          if dynamicInfoOfEngine then
-            uiCustomWidgetPool = UICustomWidgetPool:New(self, dynamicInfoOfEngine)
-            -- DECOMPILER ERROR at PC23: Confused about usage of register: R6 in 'UnsetPending'
-
-            ;
-            (self.key2CustomWidgetPools)[name] = uiCustomWidgetPool
-            return uiCustomWidgetPool
-          end
-        end
-        ;
-        (Log.fatal)("UIController", self:GetName(), " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
-        do return nil end
-        local name2Component = (self.type2ComponentTable)[componentTypeName]
-        do
-          if name2Component then
-            local component = name2Component[name]
-            if component then
-              return component
-            end
-          end
-          local view = self._view
-          do
-            if view then
-              local target = view:GetUIComponent(componentTypeName, name)
-              -- DECOMPILER ERROR at PC60: Confused about usage of register: R6 in 'UnsetPending'
-
-              if target then
-                if name2Component == nil then
-                  (self.type2ComponentTable)[componentTypeName] = {}
-                  name2Component = (self.type2ComponentTable)[componentTypeName]
-                end
-                name2Component[name] = target
-                return target
-              end
-            end
-            ;
-            (Log.fatal)("UIController", self:GetName(), " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
-            do return nil end
-          end
-        end
+    if view then
+      local dynamicInfoOfEngine = view:GetUIComponent(componentTypeName, name)
+      if dynamicInfoOfEngine then
+        uiCustomWidgetPool = UICustomWidgetPool:New(self, dynamicInfoOfEngine)
+        self.key2CustomWidgetPools[name] = uiCustomWidgetPool
+        return uiCustomWidgetPool
       end
     end
+    Log.fatal("UIController", self:GetName(), " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
+    return nil
+  else
+    local name2Component = self.type2ComponentTable[componentTypeName]
+    if name2Component then
+      local component = name2Component[name]
+      if component then
+        return component
+      end
+    end
+    local view = self._view
+    if view then
+      local target = view:GetUIComponent(componentTypeName, name)
+      if target then
+        if name2Component == nil then
+          self.type2ComponentTable[componentTypeName] = {}
+          name2Component = self.type2ComponentTable[componentTypeName]
+        end
+        name2Component[name] = target
+        return target
+      end
+    end
+    Log.fatal("UIController", self:GetName(), " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
+    return nil
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.GetGameObject = function(self, name)
-  -- function num : 0_26
-  return (self._view):GetGameObject(name)
+function UIGradeInfoItem:GetGameObject(name)
+  return self._view:GetGameObject(name)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.GetAsset = function(self, name, loadType)
-  -- function num : 0_27 , upvalues : _ENV
-  return (UIResourceManager.GetAsset)(name, loadType, self._name2Assets)
+function UIGradeInfoItem:GetAsset(name, loadType)
+  return UIResourceManager.GetAsset(name, loadType, self._name2Assets)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.DisposeCustomWidgets = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  local key2CustomWidgetPools = (table.shallowcopy)(self.key2CustomWidgetPools)
+function UIGradeInfoItem:DisposeCustomWidgets()
+  local key2CustomWidgetPools = table.shallowcopy(self.key2CustomWidgetPools)
   if key2CustomWidgetPools then
-    for k,v in pairs(key2CustomWidgetPools) do
+    for k, v in pairs(key2CustomWidgetPools) do
       v:Dispose()
     end
   end
-  do
-    ;
-    (table.clear)(self.key2CustomWidgetPools)
-    self.key2CustomWidgetPools = nil
-  end
+  table.clear(self.key2CustomWidgetPools)
+  self.key2CustomWidgetPools = nil
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.Dispose = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UIGradeInfoItem:Dispose()
   self:DisposeCustomWidgets()
-  ;
-  (UIResourceManager.DisposeAllAssets)(self._name2Assets)
+  UIResourceManager.DisposeAllAssets(self._name2Assets)
   self._name2Assets = nil
-  ;
-  (self._uieventListener):Dispose()
+  self._uieventListener:Dispose()
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.GetGuideItem = function(self)
-  -- function num : 0_30
-  local rowList = (self._materialPool):GetAllSpawnList()
+function UIGradeInfoItem:GetGuideItem()
+  local rowList = self._materialPool:GetAllSpawnList()
   local guideItem = rowList[2]
   if guideItem then
     return guideItem:GetBtn()
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInfoItem.ClickGuideItem = function(self)
-  -- function num : 0_31
-  local rowList = (self._materialPool):GetAllSpawnList()
+function UIGradeInfoItem:ClickGuideItem()
+  local rowList = self._materialPool:GetAllSpawnList()
   local guideItem = rowList[3]
   if guideItem then
     guideItem:ClickItemForGuide()
   end
 end
-
-

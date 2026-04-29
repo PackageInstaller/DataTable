@@ -1,95 +1,114 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/gamble/gamble_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local gambleMessageDef = {CLSID_CEventApplyAllPoolInfo = 6000, CLSID_CEventApplyAllPoolInfoResult = 6001, CLSID_CEventShake = 6002, CLSID_CEventShakeResult = 6003}
-;
-(table.append)(MessageDef, gambleMessageDef)
-local GAMBLE_CODE = {GAMBLE_SERVER_NORESPONSE = -1, GAMBLE_SUCCESS = 0, GAMBLE_POOL_UNEXIST = 1, GAMBLE_COST_UNENOUGH = 2, GAMBLE_SHAKETYPE_ERROR = 3, GAMBLE_COST_ERROR = 4, GAMBLE_PRIORITIES_ERROR = 5, GAMBLE_LOAD_ERROR = 6, GAMBLE_NOT_OPTIONAL_PET = 7, GAMBLE_OPTIONAL_POOL_INVALID = 8, GAMBLE_RANDOM_NOT_FIND_OP_ID = 101, GAMBLE_RANDOM_OP_VEC_NUM_ERR = 102, GAMBLE_RANDOM_OP_VEC_EMPTY = 103, GAMBLE_RANDOM_OP_VEC_ID_INVALID = 104, GAMBLE_RANDOM_OP_INDEX_INVALID = 105}
+local gambleMessageDef = {
+  CLSID_CEventApplyAllPoolInfo = 6000,
+  CLSID_CEventApplyAllPoolInfoResult = 6001,
+  CLSID_CEventShake = 6002,
+  CLSID_CEventShakeResult = 6003
+}
+table.append(MessageDef, gambleMessageDef)
+local GAMBLE_CODE = {
+  GAMBLE_SERVER_NORESPONSE = -1,
+  GAMBLE_SUCCESS = 0,
+  GAMBLE_POOL_UNEXIST = 1,
+  GAMBLE_COST_UNENOUGH = 2,
+  GAMBLE_SHAKETYPE_ERROR = 3,
+  GAMBLE_COST_ERROR = 4,
+  GAMBLE_PRIORITIES_ERROR = 5,
+  GAMBLE_LOAD_ERROR = 6,
+  GAMBLE_NOT_OPTIONAL_PET = 7,
+  GAMBLE_OPTIONAL_POOL_INVALID = 8,
+  GAMBLE_RANDOM_NOT_FIND_OP_ID = 101,
+  GAMBLE_RANDOM_OP_VEC_NUM_ERR = 102,
+  GAMBLE_RANDOM_OP_VEC_EMPTY = 103,
+  GAMBLE_RANDOM_OP_VEC_ID_INVALID = 104,
+  GAMBLE_RANDOM_OP_INDEX_INVALID = 105
+}
 _enum("GAMBLE_CODE", GAMBLE_CODE)
 local ShakeType = {SHAKE_ONCE = 0, SHAKE_MULTIPLE = 1}
 _enum("ShakeType", ShakeType)
-local PrizePoolType = {BEGINNER_POOL = 0, PERSIST_POOL = 1, PROMOTION_POOL = 2, OPTIONAL_POOL = 3, NEW_REGIST_POOL = 4, PLAYER_BACK_POOL = 5}
+local PrizePoolType = {
+  BEGINNER_POOL = 0,
+  PERSIST_POOL = 1,
+  PROMOTION_POOL = 2,
+  OPTIONAL_POOL = 3,
+  NEW_REGIST_POOL = 4,
+  PLAYER_BACK_POOL = 5
+}
 _enum("PrizePoolType", PrizePoolType)
-local PrizePoolOpenCloseType = {PLAY_TIMES_CONDITON = 0, PERMANENT = 1, TIME_CONDITON = 2}
+local PrizePoolOpenCloseType = {
+  PLAY_TIMES_CONDITON = 0,
+  PERMANENT = 1,
+  TIME_CONDITON = 2
+}
 _enum("PrizePoolOpenCloseType", PrizePoolOpenCloseType)
 _class("CEventApplyAllPoolInfo", CCallRequestEvent)
 CEventApplyAllPoolInfo = CEventApplyAllPoolInfo
--- DECOMPILER ERROR at PC67: Confused about usage of register: R5 in 'UnsetPending'
 
-CEventApplyAllPoolInfo.Constructor = function(self)
-  -- function num : 0_0
+function CEventApplyAllPoolInfo:Constructor()
 end
-
--- DECOMPILER ERROR at PC70: Confused about usage of register: R5 in 'UnsetPending'
 
 CEventApplyAllPoolInfo._proto = {}
 _class("CEventApplyAllPoolInfoResult", CCallReplyEvent)
 CEventApplyAllPoolInfoResult = CEventApplyAllPoolInfoResult
--- DECOMPILER ERROR at PC79: Confused about usage of register: R5 in 'UnsetPending'
 
-CEventApplyAllPoolInfoResult.Constructor = function(self)
-  -- function num : 0_1
+function CEventApplyAllPoolInfoResult:Constructor()
   self.ret = 0
   self.all_prize_pool = {}
   self.state_info = {}
   self.pool_extern_info = {}
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R5 in 'UnsetPending'
-
 CEventApplyAllPoolInfoResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"all_prize_pool", "list<PrizePoolInfo>"}
-, 
-[3] = {"state_info", "list<map<int,string>>"}
-, 
-[4] = {"pool_extern_info", "map<int,map<int,PrizePoolExternInfo>>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "all_prize_pool",
+    "list<PrizePoolInfo>"
+  },
+  [3] = {
+    "state_info",
+    "list<map<int,string>>"
+  },
+  [4] = {
+    "pool_extern_info",
+    "map<int,map<int,PrizePoolExternInfo>>"
+  }
 }
 _class("CEventShake", CCallRequestEvent)
 CEventShake = CEventShake
--- DECOMPILER ERROR at PC111: Confused about usage of register: R5 in 'UnsetPending'
 
-CEventShake.Constructor = function(self)
-  -- function num : 0_2
+function CEventShake:Constructor()
   self.shake_type = 0
   self.prize_pool_id = 0
   self.cost_id = 0
   self.cost_count = 0
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R5 in 'UnsetPending'
-
 CEventShake._proto = {
-[1] = {"shake_type", "int"}
-, 
-[2] = {"prize_pool_id", "int"}
-, 
-[3] = {"cost_id", "int"}
-, 
-[4] = {"cost_count", "int"}
+  [1] = {"shake_type", "int"},
+  [2] = {
+    "prize_pool_id",
+    "int"
+  },
+  [3] = {"cost_id", "int"},
+  [4] = {"cost_count", "int"}
 }
 _class("CEventShakeResult", CCallReplyEvent)
 CEventShakeResult = CEventShakeResult
--- DECOMPILER ERROR at PC143: Confused about usage of register: R5 in 'UnsetPending'
 
-CEventShakeResult.Constructor = function(self)
-  -- function num : 0_3
+function CEventShakeResult:Constructor()
   self.ret = 0
   self.award_cards = {}
   self.exchange_mark = {}
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R5 in 'UnsetPending'
-
 CEventShakeResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"award_cards", "list<int>"}
-, 
-[3] = {"exchange_mark", "list<int>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "award_cards",
+    "list<int>"
+  },
+  [3] = {
+    "exchange_mark",
+    "list<int>"
+  }
 }
-

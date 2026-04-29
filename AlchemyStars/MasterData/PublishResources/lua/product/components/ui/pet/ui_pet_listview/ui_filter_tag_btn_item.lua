@@ -1,83 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_listview/ui_filter_tag_btn_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFilterTagBtnItem", UICustomWidget)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFilterTagBtnItem.Constructor = function(self)
-  -- function num : 0_0
+function UIFilterTagBtnItem:Constructor()
   self._selected = false
   self._tagData = nil
   self._clickCallback = nil
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFilterTagBtnItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._petModule = ((GameGlobal.GameLogic)()):GetModule(PetModule)
+function UIFilterTagBtnItem:OnShow(uiParams)
+  self._petModule = GameGlobal.GameLogic():GetModule(PetModule)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFilterTagBtnItem.SetData = function(self, itemDataInfo, clickCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIFilterTagBtnItem:SetData(itemDataInfo, clickCallback)
   self._tagData = itemDataInfo
   self._clickCallback = clickCallback
   self._icon = self:GetUIComponent("Image", "Image")
   self._text = self:GetUIComponent("Text", "Text")
-  ;
-  (self._text):SetText((StringTable.Get)(itemDataInfo.Name))
+  self._text:SetText(StringTable.Get(itemDataInfo.Name))
   self._chooseImage = self:GetUIComponent("Image", "chooseImage")
   self._chooseImageGo = self:GetGameObject("chooseImage")
   self._uiItemAtlas = self:GetAsset("UIHeartItem.spriteatlas", LoadType.SpriteAtlas)
-  if (self._tagData).tagType == 1 then
-    self._selected = ((self._petModule).uiModule):ContainTagFilterType(itemDataInfo.tagID)
-  else
-    if (self._tagData).tagType == 2 then
-      self._selected = ((self._petModule).uiModule):ContainSecondTagFilterType(itemDataInfo.tagID)
-    end
+  if self._tagData.tagType == 1 then
+    self._selected = self._petModule.uiModule:ContainTagFilterType(itemDataInfo.tagID)
+  elseif self._tagData.tagType == 2 then
+    self._selected = self._petModule.uiModule:ContainSecondTagFilterType(itemDataInfo.tagID)
   end
   self:RefreshShow()
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFilterTagBtnItem.RefreshShow = function(self)
-  -- function num : 0_3
+function UIFilterTagBtnItem:RefreshShow()
   if self._selected == true then
-    (self._chooseImageGo):SetActive(true)
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._chooseImage).sprite = (self._uiItemAtlas):GetSprite("spirit_gou1_icon")
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._icon).sprite = (self._uiItemAtlas):GetSprite("spirit_zhezhao4_frame")
+    self._chooseImageGo:SetActive(true)
+    self._chooseImage.sprite = self._uiItemAtlas:GetSprite("spirit_gou1_icon")
+    self._icon.sprite = self._uiItemAtlas:GetSprite("spirit_zhezhao4_frame")
   else
-    ;
-    (self._chooseImageGo):SetActive(false)
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._icon).sprite = (self._uiItemAtlas):GetSprite("spirit_zhezhao3_frame")
+    self._chooseImageGo:SetActive(false)
+    self._icon.sprite = self._uiItemAtlas:GetSprite("spirit_zhezhao3_frame")
   end
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFilterTagBtnItem.itemBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIFilterTagBtnItem:itemBtnOnClick(go)
   self._selected = not self._selected
   self:RefreshShow()
   if self._clickCallback then
-    (self._clickCallback)((self._tagData).tagID)
+    self._clickCallback(self._tagData.tagID)
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundAddUp)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundAddUp)
 end
-
-

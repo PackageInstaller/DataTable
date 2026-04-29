@@ -1,39 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/ui_summer_1/ui_xh1_shop_small_item_box.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXH1ShopSmallItemBox", UICustomWidget)
 UIXH1ShopSmallItemBox = UIXH1ShopSmallItemBox
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXH1ShopSmallItemBox.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIXH1ShopSmallItemBox:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1ShopSmallItemBox.InitWidget = function(self)
-  -- function num : 0_1
+function UIXH1ShopSmallItemBox:InitWidget()
   self._smallItemGen = self:GetGameObject("SmallItemGen")
   self._smallItemsPool = self:GetUIComponent("UISelectObjectPath", "SmallItemGen")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1ShopSmallItemBox.SetData = function(self)
-  -- function num : 0_2
+function UIXH1ShopSmallItemBox:SetData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1ShopSmallItemBox.InitData = function(self, data)
-  -- function num : 0_3 , upvalues : _ENV
-  local itemList = (self._smallItemsPool):SpawnObjects("UIXH1ShopItemSmall", #data)
-  for index,value in ipairs(itemList) do
+function UIXH1ShopSmallItemBox:InitData(data)
+  local itemList = self._smallItemsPool:SpawnObjects("UIXH1ShopItemSmall", #data)
+  for index, value in ipairs(itemList) do
     value:InitData(data[index])
   end
 end
-
-

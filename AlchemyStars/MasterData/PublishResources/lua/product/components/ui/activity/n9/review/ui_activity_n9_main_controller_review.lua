@@ -1,58 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n9/review/ui_activity_n9_main_controller_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN9MainController_Review", UIController)
 UIActivityN9MainController_Review = UIActivityN9MainController_Review
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN9MainController_Review._PlayAnim = function(self, widgetName, animName, time, callback)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN9MainController_Review:_PlayAnim(widgetName, animName, time, callback)
   local anim = self:GetUIComponent("Animation", widgetName)
   self:Lock(animName)
   anim:Play(animName)
   self:StartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : _ENV, time, self, animName, callback
     YIELD(TT, time)
     self:UnLock(animName)
     if callback then
       callback()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN9MainController_Review._InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN9MainController_Review:_InitWidget()
   self._mainBg = self:GetUIComponent("RawImageLoader", "_mainBg")
-  local backBtns = (UIWidgetHelper.SpawnObject)(self, "_backBtns", "UICommonTopButton")
+  local backBtns = UIWidgetHelper.SpawnObject(self, "_backBtns", "UICommonTopButton")
   backBtns:SetData(function()
-    -- function num : 0_1_0 , upvalues : self, _ENV
     self:SwitchState(UIStateType.UIActivityReview)
-  end
-, nil, nil, false, function()
-    -- function num : 0_1_1 , upvalues : self
+  end, nil, nil, false, function()
     self:HideBtnOnClick()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN9MainController_Review.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN9MainController_Review:LoadDataOnEnter(TT, res, uiParams)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_REVIEW_N9
-  self._campaign = (UIActivityHelper.LoadDataOnEnter)(TT, res, self._campaignType, {})
+  self._campaign = UIActivityHelper.LoadDataOnEnter(TT, res, self._campaignType, {})
   self:_SetProgressData(TT, res)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN9MainController_Review.OnShow = function(self, uiParams)
-  -- function num : 0_3
+function UIActivityN9MainController_Review:OnShow(uiParams)
   self:_AttachEvents()
   self._isOpen = true
   self:_InitWidget()
@@ -63,103 +41,69 @@ UIActivityN9MainController_Review.OnShow = function(self, uiParams)
     local rt = self:GetUIComponent("RawImage", "rt")
     rt.texture = self.imgRT
     self:_PlayAnim("_anim", "uieffanim_ActivityN9Main_in", 2000, function()
-    -- function num : 0_3_0 , upvalues : self
-    self:_CheckGuide()
-  end
-)
-  else
-    do
       self:_CheckGuide()
-    end
+    end)
+  else
+    self:_CheckGuide()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN9MainController_Review.OnHide = function(self)
-  -- function num : 0_4
+function UIActivityN9MainController_Review:OnHide()
   self:_DetachEvents()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN9MainController_Review._Refresh = function(self)
-  -- function num : 0_5
+function UIActivityN9MainController_Review:_Refresh()
   self:_SetProgressUI()
   self:_SetLineMissionBtn()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN9MainController_Review._SetBg = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local url = (UIActivityHelper.GetCampaignMainBg)(self._campaign, 1)
+function UIActivityN9MainController_Review:_SetBg()
+  local url = UIActivityHelper.GetCampaignMainBg(self._campaign, 1)
   if url then
-    (self._mainBg):LoadImage(url)
+    self._mainBg:LoadImage(url)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN9MainController_Review._SetSpine = function(self)
-  -- function num : 0_7
+function UIActivityN9MainController_Review:_SetSpine()
   local obj = self:GetUIComponent("SpineLoader", "_spine")
   obj:LoadSpine("n9_kv_1_spine_idle")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN9MainController_Review._SetProgressData = function(self, TT, res)
-  -- function num : 0_8 , upvalues : _ENV
-  local uiModule = (GameGlobal.GetUIModule)(CampaignModule)
-  self._reviewData = (uiModule:GetReviewData()):GetActivityByType(self._campaignType)
-  ;
-  (self._reviewData):ReqDetailInfo(TT, res)
+function UIActivityN9MainController_Review:_SetProgressData(TT, res)
+  local uiModule = GameGlobal.GetUIModule(CampaignModule)
+  self._reviewData = uiModule:GetReviewData():GetActivityByType(self._campaignType)
+  self._reviewData:ReqDetailInfo(TT, res)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN9MainController_Review._SetProgressUI = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local progress = (UIReviewProgressConst.SpawnObject)(self, "_progress", self._reviewData)
+function UIActivityN9MainController_Review:_SetProgressUI()
+  local progress = UIReviewProgressConst.SpawnObject(self, "_progress", self._reviewData)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN9MainController_Review._SetLineMissionBtn = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityN9MainController_Review:_SetLineMissionBtn()
   local componentId = ECampaignReviewN9ComponentID.ECAMPAIGN_REVIEW_ReviewN9_LINE_MISSION
-  local component = (self._campaign):GetComponent(componentId)
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_lineMissionBtn", "UIActivityCommonComponentEnterLock")
+  local component = self._campaign:GetComponent(componentId)
+  local obj = UIWidgetHelper.SpawnObject(self, "_lineMissionBtn", "UIActivityCommonComponentEnterLock")
   obj:SetRed("red", function()
-    -- function num : 0_10_0 , upvalues : self, componentId
-    if (self._campaign):CheckComponentOpen(componentId) then
-      return (self._campaign):CheckComponentRed(componentId)
-    end
-  end
-)
+    return self._campaign:CheckComponentOpen(componentId) and self._campaign:CheckComponentRed(componentId)
+  end)
   local tb = {
-{"state_lock"}
-, 
-{"state_lock"}
-, 
-{"state_unlock"}
-, 
-{"state_close"}
-}
+    {"state_lock"},
+    {"state_lock"},
+    {
+      "state_unlock"
+    },
+    {
+      "state_close"
+    }
+  }
   obj:SetWidgetNameGroup(tb)
   obj:SetData(self._campaign, componentId, function()
-    -- function num : 0_10_1 , upvalues : self, _ENV
     self:SwitchState(UIStateType.UIActivityN9LineMissionController_Review)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN9MainController_Review.ShowBtnOnClick = function(self)
-  -- function num : 0_11
+function UIActivityN9MainController_Review:ShowBtnOnClick()
   local hideBtn = self:GetGameObject("_backBtns")
   hideBtn:SetActive(true)
   local showBtn = self:GetGameObject("_showBtn")
@@ -168,10 +112,7 @@ UIActivityN9MainController_Review.ShowBtnOnClick = function(self)
   uiElements:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN9MainController_Review.HideBtnOnClick = function(self)
-  -- function num : 0_12
+function UIActivityN9MainController_Review:HideBtnOnClick()
   local hideBtn = self:GetGameObject("_backBtns")
   hideBtn:SetActive(false)
   local showBtn = self:GetGameObject("_showBtn")
@@ -180,49 +121,29 @@ UIActivityN9MainController_Review.HideBtnOnClick = function(self)
   uiElements:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN9MainController_Review.InfoBtnOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  (UIActivityHelper.ShowActivityIntro)("UIN9Intro")
+function UIActivityN9MainController_Review:InfoBtnOnClick(go)
+  UIActivityHelper.ShowActivityIntro("UIN9Intro")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN9MainController_Review._AttachEvents = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityN9MainController_Review:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN9MainController_Review._DetachEvents = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityN9MainController_Review:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN9MainController_Review._CheckActivityClose = function(self, id)
-  -- function num : 0_16 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIActivityN9MainController_Review:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN9MainController_Review._GetRoleId = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityN9MainController_Review:_GetRoleId()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   return pstId
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN9MainController_Review._CheckGuide = function(self)
-  -- function num : 0_18
+function UIActivityN9MainController_Review:_CheckGuide()
 end
-
-

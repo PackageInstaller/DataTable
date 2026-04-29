@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/entity/luckland_entity_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LLEntityMonster", LuckLandEntity)
 LLEntityMonster = LLEntityMonster
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LLEntityMonster.InitData = function(self, templateID)
-  -- function num : 0_0 , upvalues : _ENV
+function LLEntityMonster:InitData(templateID)
   self._entityType = LuckLandEntityType.Monster
-  local cfgData = (self._configMng):GetMonsterConfigData(templateID)
+  local cfgData = self._configMng:GetMonsterConfigData(templateID)
   self._cfg = cfgData
-  local levelCfgData = (self._configMng):GetLevelConfigData()
+  local levelCfgData = self._configMng:GetLevelConfigData()
   local roundHardRate = 1
   self._resType = LuckLandCardResType.Attack
   local baseAtk = cfgData:GetMonsterAtkBase()
@@ -25,116 +18,69 @@ LLEntityMonster.InitData = function(self, templateID)
   self._countDown = cfgData:GetCountDown()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMonster.SetDemandRound = function(self, round)
-  -- function num : 0_1
+function LLEntityMonster:SetDemandRound(round)
   self._demandRound = round
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMonster.GetDemandRound = function(self)
-  -- function num : 0_2
+function LLEntityMonster:GetDemandRound()
   return self._demandRound
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMonster.DecreaseDemandRound = function(self)
-  -- function num : 0_3
+function LLEntityMonster:DecreaseDemandRound()
   self._demandRound = self._demandRound - 1
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMonster.SetDemandMoney = function(self, money)
-  -- function num : 0_4
+function LLEntityMonster:SetDemandMoney(money)
   self._demandMoney = money
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMonster.GetDemandMoney = function(self)
-  -- function num : 0_5
+function LLEntityMonster:GetDemandMoney()
   return self._demandMoney
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMonster.DecreaseDemandMoney = function(self, money)
-  -- function num : 0_6
+function LLEntityMonster:DecreaseDemandMoney(money)
   self._demandMoney = self._demandMoney - money
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMonster.SetEntryRound = function(self, roundCount)
-  -- function num : 0_7
+function LLEntityMonster:SetEntryRound(roundCount)
   self._entryRound = roundCount
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMonster.SetDead = function(self, isDead)
-  -- function num : 0_8
+function LLEntityMonster:SetDead(isDead)
   self._isDead = isDead
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMonster.IsDead = function(self)
-  -- function num : 0_9
+function LLEntityMonster:IsDead()
   return self._isDead
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMonster.AddCountDownNum = function(self, addVal)
-  -- function num : 0_10
+function LLEntityMonster:AddCountDownNum(addVal)
   if addVal == nil then
-    return 
+    return
   end
   self._countDown = self._countDown + addVal
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMonster.SetCurHP = function(self, curHP)
-  -- function num : 0_11
+function LLEntityMonster:SetCurHP(curHP)
   self._curHP = curHP
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMonster.MaxHp = function(self)
-  -- function num : 0_12
+function LLEntityMonster:MaxHp()
   return self._maxHP
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMonster.GetCurHP = function(self)
-  -- function num : 0_13
+function LLEntityMonster:GetCurHP()
   return self._curHP
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMonster.AddHP = function(self, add)
-  -- function num : 0_14
-  if self._maxHP < self._curHP + add then
+function LLEntityMonster:AddHP(add)
+  if self._curHP + add > self._maxHP then
     self._curHP = self._maxHP
   else
     self._curHP = self._curHP + add
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityMonster.GetEnemyAtk = function(self)
-  -- function num : 0_15
+function LLEntityMonster:GetEnemyAtk()
   return self:CalculateRes()
 end
-
-

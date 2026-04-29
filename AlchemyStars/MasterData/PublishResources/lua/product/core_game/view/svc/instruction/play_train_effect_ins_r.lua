@@ -1,78 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_train_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTrainEffectInstruction", BaseInstruction)
 PlayTrainEffectInstruction = PlayTrainEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTrainEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTrainEffectInstruction:Constructor(paramList)
   self._trainEffectID = tonumber(paramList.effectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrainEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTrainEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
   local renderPickUpComponent = casterEntity:RenderPickUpComponent()
   local directionType = renderPickUpComponent:GetLastPickUpDirection()
-  local castPos = (casterEntity:GridLocation()).Position
+  local castPos = casterEntity:GridLocation().Position
   local trainCenterPos = self:_GetTrainEffectCenterPos(directionType, castPos, Vector2(5, 5))
-  local sEffect = (self._world):GetService("Effect")
+  local sEffect = self._world:GetService("Effect")
   local trainEffectEntity = sEffect:CreateWorldPositionDirectionEffect(self._trainEffectID, trainCenterPos, self:_GetDirection(directionType))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrainEffectInstruction._GetTrainEffectCenterPos = function(self, directionType, casterPos, boardCenterPos)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayTrainEffectInstruction:_GetTrainEffectCenterPos(directionType, casterPos, boardCenterPos)
   local trainCenterPos = Vector2.zero
   if directionType == HitBackDirectionType.Up or directionType == HitBackDirectionType.Down then
     trainCenterPos = Vector2(casterPos.x, boardCenterPos.y)
-  else
-    if directionType == HitBackDirectionType.Left or directionType == HitBackDirectionType.Right then
-      trainCenterPos = Vector2(boardCenterPos.x, casterPos.y)
-    end
+  elseif directionType == HitBackDirectionType.Left or directionType == HitBackDirectionType.Right then
+    trainCenterPos = Vector2(boardCenterPos.x, casterPos.y)
   end
   return trainCenterPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrainEffectInstruction._GetDirection = function(self, directionType)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayTrainEffectInstruction:_GetDirection(directionType)
   if directionType == HitBackDirectionType.Up then
     return Vector2(0, -1)
+  elseif directionType == HitBackDirectionType.Down then
+    return Vector2(0, 1)
+  elseif directionType == HitBackDirectionType.Left then
+    return Vector2(1, 0)
+  elseif directionType == HitBackDirectionType.Right then
+    return Vector2(-1, 0)
   else
-    if directionType == HitBackDirectionType.Down then
-      return Vector2(0, 1)
-    else
-      if directionType == HitBackDirectionType.Left then
-        return Vector2(1, 0)
-      else
-        if directionType == HitBackDirectionType.Right then
-          return Vector2(-1, 0)
-        else
-          return Vector2(0, 0)
-        end
-      end
-    end
+    return Vector2(0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrainEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function PlayTrainEffectInstruction:GetCacheResource()
   local t = {}
   if self._trainEffectID and self._trainEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._trainEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._trainEffectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

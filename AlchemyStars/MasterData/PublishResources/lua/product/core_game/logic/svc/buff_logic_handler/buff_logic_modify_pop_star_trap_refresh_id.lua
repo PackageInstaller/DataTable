@@ -1,28 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_modify_pop_star_trap_refresh_id.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicModifyPopStarTrapRefreshID", BuffLogicBase)
 BuffLogicModifyPopStarTrapRefreshID = BuffLogicModifyPopStarTrapRefreshID
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicModifyPopStarTrapRefreshID.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicModifyPopStarTrapRefreshID:Constructor(buffInstance, logicParam)
   self._refreshID = logicParam.refreshID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicModifyPopStarTrapRefreshID.DoLogic = function(self, notify)
-  -- function num : 0_1
+function BuffLogicModifyPopStarTrapRefreshID:DoLogic(notify)
   if not self._refreshID then
     return true
   end
-  local popStarSvc = (self._world):GetService("PopStarLogic")
+  local popStarSvc = self._world:GetService("PopStarLogic")
   popStarSvc:DoParseTrapRefreshData(self._refreshID)
   return true
 end
-
-

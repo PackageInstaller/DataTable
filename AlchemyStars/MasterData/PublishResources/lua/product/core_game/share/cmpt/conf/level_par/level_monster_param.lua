@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/level_par/level_monster_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LevelMonsterParam", Object)
 LevelMonsterParam = LevelMonsterParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LevelMonsterParam.Constructor = function(self, world)
-  -- function num : 0_0
+function LevelMonsterParam:Constructor(world)
   self._world = world
   self._monsterWaveCount = 0
   self._monsterWaveArray = {}
@@ -17,112 +10,79 @@ LevelMonsterParam.Constructor = function(self, world)
   self._runningMonsterIDs = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetMonsterWaveArray = function(self)
-  -- function num : 0_1
+function LevelMonsterParam:GetMonsterWaveArray()
   return self._monsterWaveArray
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetWaveConfig = function(self, waveNum)
-  -- function num : 0_2
-  local waveConfig = (self._monsterWaveArray)[waveNum]
+function LevelMonsterParam:GetWaveConfig(waveNum)
+  local waveConfig = self._monsterWaveArray[waveNum]
   if waveConfig then
     return waveConfig
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetWaveCompleteConditionType = function(self, waveNum)
-  -- function num : 0_3
-  local waveConfig = (self._monsterWaveArray)[waveNum]
+function LevelMonsterParam:GetWaveCompleteConditionType(waveNum)
+  local waveConfig = self._monsterWaveArray[waveNum]
   if waveConfig then
     return waveConfig:GetCompleteConditionType()
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetWaveCompleteConditionParam = function(self, waveNum)
-  -- function num : 0_4
-  local waveConfig = (self._monsterWaveArray)[waveNum]
+function LevelMonsterParam:GetWaveCompleteConditionParam(waveNum)
+  local waveConfig = self._monsterWaveArray[waveNum]
   if waveConfig then
     return waveConfig:GetCompleteConditionParam()
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.IsCombinedConditionWave = function(self, waveNum)
-  -- function num : 0_5
-  local waveConfig = (self._monsterWaveArray)[waveNum]
+function LevelMonsterParam:IsCombinedConditionWave(waveNum)
+  local waveConfig = self._monsterWaveArray[waveNum]
   if not waveConfig then
-    return 
+    return
   end
   return waveConfig:IsCombinedConditionWave()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetWaveCombinedCompleteConditionArguments = function(self, waveNum)
-  -- function num : 0_6
-  local waveConfig = (self._monsterWaveArray)[waveNum]
+function LevelMonsterParam:GetWaveCombinedCompleteConditionArguments(waveNum)
+  local waveConfig = self._monsterWaveArray[waveNum]
   if not waveConfig then
-    return 
+    return
   end
   return waveConfig:GetCombinedCompleteConditionArguments()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetWaveInternalRefreshData = function(self, waveNum)
-  -- function num : 0_7
-  local waveConfig = (self._monsterWaveArray)[waveNum]
+function LevelMonsterParam:GetWaveInternalRefreshData(waveNum)
+  local waveConfig = self._monsterWaveArray[waveNum]
   if waveConfig then
     return waveConfig:GetWaveInternalRefreshData()
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetWaveInternalRefreshType = function(self, waveNum)
-  -- function num : 0_8
-  local waveConfig = (self._monsterWaveArray)[waveNum]
+function LevelMonsterParam:GetWaveInternalRefreshType(waveNum)
+  local waveConfig = self._monsterWaveArray[waveNum]
   if waveConfig then
     return waveConfig:GetInternalRefreshType()
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetWaveInternalRefreshTypeParam = function(self, waveNum)
-  -- function num : 0_9
-  local waveConfig = (self._monsterWaveArray)[waveNum]
+function LevelMonsterParam:GetWaveInternalRefreshTypeParam(waveNum)
+  local waveConfig = self._monsterWaveArray[waveNum]
   if waveConfig then
     return waveConfig:GetInternalRefreshTypeParam()
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetMonsterWaveCount = function(self)
-  -- function num : 0_10
+function LevelMonsterParam:GetMonsterWaveCount()
   return self._monsterWaveCount
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetWaveBeginMonsterParam = function(self, waveNum, playerPos)
-  -- function num : 0_11
+function LevelMonsterParam:GetWaveBeginMonsterParam(waveNum, playerPos)
   local waveConfig = self:GetWaveConfig(waveNum)
   if waveConfig then
     return waveConfig:GetWaveBeginRefreshParam(playerPos)
@@ -130,10 +90,7 @@ LevelMonsterParam.GetWaveBeginMonsterParam = function(self, waveNum, playerPos)
   return nil
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetWaveInternalRefreshMonsterParam = function(self, waveNum, refreshType)
-  -- function num : 0_12
+function LevelMonsterParam:GetWaveInternalRefreshMonsterParam(waveNum, refreshType)
   local waveConfig = self:GetWaveConfig(waveNum)
   if waveConfig then
     return waveConfig:GetWaveInternalRefreshParam(refreshType)
@@ -141,10 +98,7 @@ LevelMonsterParam.GetWaveInternalRefreshMonsterParam = function(self, waveNum, r
   return nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetWaveBeginTrapArray = function(self, waveNum)
-  -- function num : 0_13
+function LevelMonsterParam:GetWaveBeginTrapArray(waveNum)
   local waveConfig = self:GetWaveConfig(waveNum)
   if waveConfig then
     return waveConfig:GetWaveBeginRefreshTrapArray()
@@ -152,39 +106,30 @@ LevelMonsterParam.GetWaveBeginTrapArray = function(self, waveNum)
   return nil
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetMonsterConfigWaveArray = function(self, levelConfigData)
-  -- function num : 0_14 , upvalues : _ENV
-  if (self._world):MatchType() == MatchType.MT_Conquest or (self._world):MatchType() == MatchType.MT_SimpleBattleField then
-    return ((self._world).BW_WorldInfo).waveIDList
+function LevelMonsterParam:GetMonsterConfigWaveArray(levelConfigData)
+  if self._world:MatchType() == MatchType.MT_Conquest or self._world:MatchType() == MatchType.MT_SimpleBattleField then
+    return self._world.BW_WorldInfo.waveIDList
   else
     return levelConfigData.MonsterWave
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetWaveRandoms = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local mazeService = (self._world):GetService("Maze")
+function LevelMonsterParam:GetWaveRandoms()
+  local mazeService = self._world:GetService("Maze")
   if mazeService and mazeService:IsMazeMatch() then
     return mazeService:GetMazeWaveRandoms()
   end
-  local popStarPorSvc = (self._world):GetService("PopStarProLogic")
-  if popStarPorSvc and (self._world):MatchType(GetMatchTypeType.PopStarProNoRelic) == MatchType.MT_PopStarPro then
+  local popStarPorSvc = self._world:GetService("PopStarProLogic")
+  if popStarPorSvc and self._world:MatchType(GetMatchTypeType.PopStarProNoRelic) == MatchType.MT_PopStarPro then
     return popStarPorSvc:GetWaveRandoms()
   end
-  if (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
-    local seasonMazeSvc = (self._world):GetService("SeasonMaze")
+  if self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
+    local seasonMazeSvc = self._world:GetService("SeasonMaze")
     return seasonMazeSvc:GetWaveRandoms()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.ParseMonsterParam = function(self, levelConfigData)
-  -- function num : 0_16 , upvalues : _ENV
+function LevelMonsterParam:ParseMonsterParam(levelConfigData)
   self._monsterWaveArray = {}
   self._allWaveMonsterIDs = {}
   self._loadingMonsterIDs = {}
@@ -192,59 +137,49 @@ LevelMonsterParam.ParseMonsterParam = function(self, levelConfigData)
   local monsterWaveArray = self:GetMonsterConfigWaveArray(levelConfigData)
   self._monsterWaveCount = #monsterWaveArray
   local waveRandoms = self:GetWaveRandoms()
-  local affixService = (self._world):GetService("Affix")
-  for k,monsterWaveID in ipairs(monsterWaveArray) do
-    local monsterWaveConfig = (Cfg.cfg_monster_wave)[monsterWaveID]
+  local affixService = self._world:GetService("Affix")
+  for k, monsterWaveID in ipairs(monsterWaveArray) do
+    local monsterWaveConfig = Cfg.cfg_monster_wave[monsterWaveID]
     if monsterWaveConfig == nil then
-      (Log.error)("LevelMonsterParam:ParseMonsterParam monsterWaveConfig =nil", monsterWaveID)
+      Log.error("LevelMonsterParam:ParseMonsterParam monsterWaveConfig =nil", monsterWaveID)
     end
-    local mazeWaveInfo = nil
+    local mazeWaveInfo
     if waveRandoms then
-      mazeWaveInfo = {waveRandoms[2 * k - 1], waveRandoms[2 * k]}
+      mazeWaveInfo = {
+        waveRandoms[2 * k - 1],
+        waveRandoms[2 * k]
+      }
     end
     local monsterWaveParam = LevelMonsterWaveParam:New(self._world, k)
     monsterWaveParam:ParseMonsterWaveParam(monsterWaveConfig, mazeWaveInfo)
     if affixService then
       monsterWaveParam = affixService:ChangeWaveMonsterRefreshParam(monsterWaveParam, k)
     end
-    -- DECOMPILER ERROR at PC64: Confused about usage of register: R13 in 'UnsetPending'
-
-    ;
-    (self._monsterWaveArray)[#self._monsterWaveArray + 1] = monsterWaveParam
+    self._monsterWaveArray[#self._monsterWaveArray + 1] = monsterWaveParam
     local monsterIDList = monsterWaveParam:GetWaveMonsterIDArray()
-    ;
-    (table.appendArray)(self._allWaveMonsterIDs, monsterIDList)
+    table.appendArray(self._allWaveMonsterIDs, monsterIDList)
     if k == 1 then
-      (table.appendArray)(self._loadingMonsterIDs, monsterIDList)
+      table.appendArray(self._loadingMonsterIDs, monsterIDList)
     else
-      ;
-      (table.appendArray)(self._runningMonsterIDs, monsterIDList)
+      table.appendArray(self._runningMonsterIDs, monsterIDList)
     end
   end
   local preMonsterWave = levelConfigData.PreMonsterWave
   if preMonsterWave then
-    local monsterWaveConfig = (Cfg.cfg_monster_wave)[preMonsterWave]
+    local monsterWaveConfig = Cfg.cfg_monster_wave[preMonsterWave]
     if monsterWaveConfig == nil then
-      (Log.error)("LevelMonsterParam:ParseMonsterParam monsterWaveConfig =nil", preMonsterWave)
+      Log.error("LevelMonsterParam:ParseMonsterParam monsterWaveConfig =nil", preMonsterWave)
     end
     local monsterWaveParam = LevelMonsterWaveParam:New(self._world, 0)
     monsterWaveParam:ParseMonsterWaveParam(monsterWaveConfig)
-    -- DECOMPILER ERROR at PC109: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._monsterWaveArray)[0] = monsterWaveParam
+    self._monsterWaveArray[0] = monsterWaveParam
     local monsterIDList = monsterWaveParam:GetWaveMonsterIDArray()
-    ;
-    (table.appendArray)(self._allWaveMonsterIDs, monsterIDList)
-    ;
-    (table.appendArray)(self._loadingMonsterIDs, monsterIDList)
+    table.appendArray(self._allWaveMonsterIDs, monsterIDList)
+    table.appendArray(self._loadingMonsterIDs, monsterIDList)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetIsBoss = function(self, waveNum)
-  -- function num : 0_17
+function LevelMonsterParam:GetIsBoss(waveNum)
   local waveConfig = self:GetWaveConfig(waveNum)
   if waveConfig then
     return waveConfig:IsBossWave()
@@ -252,10 +187,7 @@ LevelMonsterParam.GetIsBoss = function(self, waveNum)
   return false
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetBossID = function(self, waveNum)
-  -- function num : 0_18
+function LevelMonsterParam:GetBossID(waveNum)
   local waveConfig = self:GetWaveConfig(waveNum)
   if waveConfig then
     return waveConfig:GetBossID()
@@ -263,31 +195,19 @@ LevelMonsterParam.GetBossID = function(self, waveNum)
   return nil
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetAllMonsterID = function(self)
-  -- function num : 0_19
+function LevelMonsterParam:GetAllMonsterID()
   return self._allWaveMonsterIDs
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetLoadingMonsterID = function(self)
-  -- function num : 0_20
+function LevelMonsterParam:GetLoadingMonsterID()
   return self._loadingMonsterIDs
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetRunningMonsterID = function(self)
-  -- function num : 0_21
+function LevelMonsterParam:GetRunningMonsterID()
   return self._runningMonsterIDs
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.HitBackParam = function(self, waveNum)
-  -- function num : 0_22
+function LevelMonsterParam:HitBackParam(waveNum)
   local waveConfig = self:GetWaveConfig(waveNum)
   if waveConfig then
     return waveConfig:HitBackParam()
@@ -295,10 +215,7 @@ LevelMonsterParam.HitBackParam = function(self, waveNum)
   return false
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.BGMParam = function(self, waveNum)
-  -- function num : 0_23
+function LevelMonsterParam:BGMParam(waveNum)
   local waveConfig = self:GetWaveConfig(waveNum)
   if waveConfig then
     return waveConfig:BGMParam()
@@ -306,20 +223,14 @@ LevelMonsterParam.BGMParam = function(self, waveNum)
   return false
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.DebugCompleteCondition = function(self, nType, nParam)
-  -- function num : 0_24
+function LevelMonsterParam:DebugCompleteCondition(nType, nParam)
   for i = 1, #self._monsterWaveArray do
-    local waveParam = (self._monsterWaveArray)[i]
+    local waveParam = self._monsterWaveArray[i]
     waveParam:DebugCompleteCondition(nType, nParam)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.GetWaveBoard = function(self, waveNum)
-  -- function num : 0_25
+function LevelMonsterParam:GetWaveBoard(waveNum)
   local waveConfig = self:GetWaveConfig(waveNum)
   if waveConfig then
     return waveConfig:GetWaveBoard()
@@ -327,52 +238,39 @@ LevelMonsterParam.GetWaveBoard = function(self, waveNum)
   return nil
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.ParseMonsterParamMultiBoard = function(self, monsterWaveArray)
-  -- function num : 0_26 , upvalues : _ENV
+function LevelMonsterParam:ParseMonsterParamMultiBoard(monsterWaveArray)
   self._monsterWaveArray = {}
   self._allWaveMonsterIDs = {}
   self._loadingMonsterIDs = {}
   self._runningMonsterIDs = {}
   self._monsterWaveCount = #monsterWaveArray
-  local affixService = (self._world):GetService("Affix")
-  for k,monsterWaveID in ipairs(monsterWaveArray) do
-    local monsterWaveConfig = (Cfg.cfg_monster_wave)[monsterWaveID]
+  local affixService = self._world:GetService("Affix")
+  for k, monsterWaveID in ipairs(monsterWaveArray) do
+    local monsterWaveConfig = Cfg.cfg_monster_wave[monsterWaveID]
     if monsterWaveConfig == nil then
-      (Log.error)("LevelMonsterParam:ParseMonsterParam monsterWaveConfig =nil", monsterWaveID)
+      Log.error("LevelMonsterParam:ParseMonsterParam monsterWaveConfig =nil", monsterWaveID)
     end
-    local mazeWaveInfo = nil
+    local mazeWaveInfo
     local monsterWaveParam = LevelMonsterWaveParam:New(self._world, k)
     monsterWaveParam:ParseMonsterWaveParam(monsterWaveConfig, mazeWaveInfo)
     if affixService then
       monsterWaveParam = affixService:ChangeWaveMonsterRefreshParam(monsterWaveParam, k)
     end
-    -- DECOMPILER ERROR at PC49: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._monsterWaveArray)[#self._monsterWaveArray + 1] = monsterWaveParam
+    self._monsterWaveArray[#self._monsterWaveArray + 1] = monsterWaveParam
     local monsterIDList = monsterWaveParam:GetWaveMonsterIDArray()
-    ;
-    (table.appendArray)(self._allWaveMonsterIDs, monsterIDList)
+    table.appendArray(self._allWaveMonsterIDs, monsterIDList)
     if k == 1 then
-      (table.appendArray)(self._loadingMonsterIDs, monsterIDList)
+      table.appendArray(self._loadingMonsterIDs, monsterIDList)
     else
-      ;
-      (table.appendArray)(self._runningMonsterIDs, monsterIDList)
+      table.appendArray(self._runningMonsterIDs, monsterIDList)
     end
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterParam.WaveMonsterShowInterval = function(self, waveNum)
-  -- function num : 0_27
+function LevelMonsterParam:WaveMonsterShowInterval(waveNum)
   local waveConfig = self:GetWaveConfig(waveNum)
   if waveConfig then
     return waveConfig:GetMonsterWaveShowInterval()
   end
   return 0
 end
-
-

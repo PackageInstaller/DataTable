@@ -1,22 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/explore/ui_season_explore_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonExploreHelper", Object)
 UISeasonExploreHelper = UISeasonExploreHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonExploreHelper.GetPreviewCfg = function()
-  -- function num : 0_0 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local cfgs = (Cfg.cfg_season_preview)({})
-  for k,cfg in pairs(cfgs) do
+function UISeasonExploreHelper.GetPreviewCfg()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local cfgs = Cfg.cfg_season_preview({})
+  for k, cfg in pairs(cfgs) do
     local beginShowTime = loginModule:GetTimeStampByTimeStr(cfg.BeginShowTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
     if curTime < beginShowTime then
-      return 
+      return
     end
     local openTime = loginModule:GetTimeStampByTimeStr(cfg.SeasonOpenTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
     local endShowTime = loginModule:GetTimeStampByTimeStr(cfg.EndShowTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
@@ -24,219 +17,142 @@ UISeasonExploreHelper.GetPreviewCfg = function()
       return cfg, openTime
     end
   end
-  return 
+  return
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper.GetSeasonCgCfgs = function()
-  -- function num : 0_1 , upvalues : _ENV
-  local cfgs = ((GameGlobal.GetModule)(BookModule)):GetShowCfgsWithType(4)
+function UISeasonExploreHelper.GetSeasonCgCfgs()
+  local cfgs = GameGlobal.GetModule(BookModule):GetShowCfgsWithType(4)
   return cfgs
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper.IsSeasonCgHasNew = function()
-  -- function num : 0_2 , upvalues : _ENV
-  local cfgs = ((GameGlobal.GetModule)(BookModule)):GetShowCfgsWithType(4)
-  local bookModule = (GameGlobal.GetModule)(BookModule)
-  for k,v in pairs(cfgs) do
+function UISeasonExploreHelper.IsSeasonCgHasNew()
+  local cfgs = GameGlobal.GetModule(BookModule):GetShowCfgsWithType(4)
+  local bookModule = GameGlobal.GetModule(BookModule)
+  for k, v in pairs(cfgs) do
     local k, isUnLock = bookModule:GetSeasonStory(v)
-    if isUnLock and not (UISeasonExploreHelper.IsCgHasClicked)(v.ID) then
+    if isUnLock and not UISeasonExploreHelper.IsCgHasClicked(v.ID) then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper.IsCgHasClicked = function(cgId)
-  -- function num : 0_3 , upvalues : _ENV
-  local key = (UISeasonExploreHelper.GetCgNewKey)(cgId)
-  return (UISeasonExploreHelper._HasKey)(key)
+function UISeasonExploreHelper.IsCgHasClicked(cgId)
+  local key = UISeasonExploreHelper.GetCgNewKey(cgId)
+  return UISeasonExploreHelper._HasKey(key)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper.SetCgAsClicked = function(cgId)
-  -- function num : 0_4 , upvalues : _ENV
-  local key = (UISeasonExploreHelper.GetCgNewKey)(cgId)
-  ;
-  (UISeasonExploreHelper._SetKey)(key)
+function UISeasonExploreHelper.SetCgAsClicked(cgId)
+  local key = UISeasonExploreHelper.GetCgNewKey(cgId)
+  UISeasonExploreHelper._SetKey(key)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper.GetCgNewKey = function(cgId)
-  -- function num : 0_5
+function UISeasonExploreHelper.GetCgNewKey(cgId)
   return "season_cg_click" .. cgId
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper.GetSeasonMusicCfgs = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UISeasonExploreHelper:GetSeasonMusicCfgs()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local retCfgs = {}
-  local cfgs = (Cfg.cfg_role_music)({})
-  for k,cfg in pairs(cfgs) do
+  local cfgs = Cfg.cfg_role_music({})
+  for k, cfg in pairs(cfgs) do
     if roleModule:UI_CheckTimeUnlock(cfg) then
-      (table.insert)(retCfgs, cfg)
+      table.insert(retCfgs, cfg)
     end
   end
   return retCfgs
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper.IsSeasonMusicHasNew = function()
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonExploreHelper.IsSeasonMusicHasNew()
   local cfgs = UISeasonExploreHelper:GetSeasonMusicCfgs()
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
-  for k,cfg in pairs(cfgs) do
+  local roleModule = GameGlobal.GetModule(RoleModule)
+  for k, cfg in pairs(cfgs) do
     local isUnlock = not roleModule:UI_CheckMusicLock(cfg)
-    if isUnlock and not (UISeasonExploreHelper.IsMusicHasClicked)(cfg.ID) then
+    if isUnlock and not UISeasonExploreHelper.IsMusicHasClicked(cfg.ID) then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper.IsMusicHasClicked = function(musicId)
-  -- function num : 0_8 , upvalues : _ENV
-  local key = (UISeasonExploreHelper.GetMusicNewKey)(musicId)
-  return (UISeasonExploreHelper._HasKey)(key)
+function UISeasonExploreHelper.IsMusicHasClicked(musicId)
+  local key = UISeasonExploreHelper.GetMusicNewKey(musicId)
+  return UISeasonExploreHelper._HasKey(key)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper.SetMusicAsClicked = function(musicId)
-  -- function num : 0_9 , upvalues : _ENV
-  local key = (UISeasonExploreHelper.GetMusicNewKey)(musicId)
-  ;
-  (UISeasonExploreHelper._SetKey)(key)
+function UISeasonExploreHelper.SetMusicAsClicked(musicId)
+  local key = UISeasonExploreHelper.GetMusicNewKey(musicId)
+  UISeasonExploreHelper._SetKey(key)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper.GetMusicNewKey = function(musicId)
-  -- function num : 0_10
+function UISeasonExploreHelper.GetMusicNewKey(musicId)
   return "season_music_click" .. musicId
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper.GetSeasonRareItems = function()
-  -- function num : 0_11 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function UISeasonExploreHelper.GetSeasonRareItems()
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local itmes = itemModule:GetItemListBySubType(ItemSubType.ItemSubType_Season_Collection)
   return itmes
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper.IsSeasonRareItemHasNew = function()
-  -- function num : 0_12 , upvalues : _ENV
-  local items = (UISeasonExploreHelper.GetSeasonRareItems)()
+function UISeasonExploreHelper.IsSeasonRareItemHasNew()
+  local items = UISeasonExploreHelper.GetSeasonRareItems()
   if items then
-    for k,item in pairs(items) do
-      local isNew = not (UISeasonExploreHelper.IsRareItemHasClicked)(item:GetID())
+    for k, item in pairs(items) do
+      local isNew = not UISeasonExploreHelper.IsRareItemHasClicked(item:GetID())
       if isNew then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper.IsRareItemHasClicked = function(pstId)
-  -- function num : 0_13 , upvalues : _ENV
-  local key = (UISeasonExploreHelper.GetRareItemKey)(pstId)
-  return (UISeasonExploreHelper._HasKey)(key)
+function UISeasonExploreHelper.IsRareItemHasClicked(pstId)
+  local key = UISeasonExploreHelper.GetRareItemKey(pstId)
+  return UISeasonExploreHelper._HasKey(key)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper.SetRareItemAsClicked = function(pstId)
-  -- function num : 0_14 , upvalues : _ENV
-  local key = (UISeasonExploreHelper.GetRareItemKey)(pstId)
-  ;
-  (UISeasonExploreHelper._SetKey)(key)
+function UISeasonExploreHelper.SetRareItemAsClicked(pstId)
+  local key = UISeasonExploreHelper.GetRareItemKey(pstId)
+  UISeasonExploreHelper._SetKey(key)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper.GetRareItemKey = function(pstId)
-  -- function num : 0_15
+function UISeasonExploreHelper.GetRareItemKey(pstId)
   return "season_rare_item_click" .. pstId
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper.IsPreviewHasClicked = function(previewId)
-  -- function num : 0_16 , upvalues : _ENV
-  local key = (UISeasonExploreHelper.GetPreviewKey)(previewId)
-  return (UISeasonExploreHelper._HasKey)(key)
+function UISeasonExploreHelper.IsPreviewHasClicked(previewId)
+  local key = UISeasonExploreHelper.GetPreviewKey(previewId)
+  return UISeasonExploreHelper._HasKey(key)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper.SetPreviewAsClicked = function(previewId)
-  -- function num : 0_17 , upvalues : _ENV
-  local key = (UISeasonExploreHelper.GetPreviewKey)(previewId)
-  ;
-  (UISeasonExploreHelper._SetKey)(key)
+function UISeasonExploreHelper.SetPreviewAsClicked(previewId)
+  local key = UISeasonExploreHelper.GetPreviewKey(previewId)
+  UISeasonExploreHelper._SetKey(key)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper.GetPreviewKey = function(previewId)
-  -- function num : 0_18
+function UISeasonExploreHelper.GetPreviewKey(previewId)
   return "season_preview_click" .. previewId
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper._HasKey = function(k)
-  -- function num : 0_19 , upvalues : _ENV
-  local key = (UISeasonExploreHelper._GetPrefsKey)(k)
-  return ((UnityEngine.PlayerPrefs).HasKey)(key)
+function UISeasonExploreHelper._HasKey(k)
+  local key = UISeasonExploreHelper._GetPrefsKey(k)
+  return UnityEngine.PlayerPrefs.HasKey(key)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper._SetKey = function(k)
-  -- function num : 0_20 , upvalues : _ENV
-  local key = (UISeasonExploreHelper._GetPrefsKey)(k)
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+function UISeasonExploreHelper._SetKey(k)
+  local key = UISeasonExploreHelper._GetPrefsKey(k)
+  UnityEngine.PlayerPrefs.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreHelper._GetPrefsKey = function(str)
-  -- function num : 0_21 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function UISeasonExploreHelper._GetPrefsKey(str)
+  local mRole = GameGlobal.GetModule(RoleModule)
   local pstId = mRole:GetPstId()
   local playerPrefsKey = pstId .. str
   return playerPrefsKey
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R0 in 'UnsetPending'
-
 UISeasonExploreHelper.playingStateNone = 0
--- DECOMPILER ERROR at PC75: Confused about usage of register: R0 in 'UnsetPending'
-
 UISeasonExploreHelper.playingStatePlaying = 1
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
 UISeasonExploreHelper.playingStatePause = 2
-

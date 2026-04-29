@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_normal_attack_cross_two.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetNormalAttackCrossTwo", BuffLogicBase)
 BuffLogicSetNormalAttackCrossTwo = BuffLogicSetNormalAttackCrossTwo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetNormalAttackCrossTwo.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetNormalAttackCrossTwo:Constructor(buffInstance, logicParam)
   self._count = logicParam.count
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetNormalAttackCrossTwo.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
+function BuffLogicSetNormalAttackCrossTwo:DoLogic(notify)
+  local e = self._buffInstance:Entity()
   local buffComponent = e:BuffComponent()
   buffComponent:SetBuffValue("NormalAttackCrossTwoCount", self._count)
   buffComponent:SetBuffValue("ChangeNormalSkillCount", self._count)
@@ -29,5 +19,3 @@ BuffLogicSetNormalAttackCrossTwo.DoLogic = function(self, notify)
   buffComponent:SetBuffValue("ChangeNormalSkillUseAttackPosAsCenter", enable)
   buffComponent:SetBuffValue("NormalAttackOneDamageOneCombo", enable)
 end
-
-

@@ -1,67 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/collect_card/award/ui_collect_card_award_view.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICollectCardAwardView", UIController)
 UICollectCardAwardView = UICollectCardAwardView
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICollectCardAwardView.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UICollectCardAwardView:OnShow(uiParam)
   self._cfg = uiParam[1]
   self:GetComponents()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardAwardView.GetComponents = function(self)
-  -- function num : 0_1
+function UICollectCardAwardView:GetComponents()
   self._pool = self:GetUIComponent("UISelectObjectPath", "Pool")
   local selectInfo = self:GetUIComponent("UISelectObjectPath", "selectInfo")
   self.tips = selectInfo:SpawnObject("UISelectInfo")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardAwardView.OnValue = function(self)
-  -- function num : 0_2
+function UICollectCardAwardView:OnValue()
   self:SetPool()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardAwardView.SetPool = function(self)
-  -- function num : 0_3
-  local rewards = (self._cfg).Rewards
-  ;
-  (self._pool):SpawnObjects("UICollectCardAwardViewItem", #rewards)
-  local pools = (self._pool):GetAllSpawnList()
+function UICollectCardAwardView:SetPool()
+  local rewards = self._cfg.Rewards
+  self._pool:SpawnObjects("UICollectCardAwardViewItem", #rewards)
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, #rewards do
     local item = pools[i]
-    local id = (rewards[i])[1]
-    local count = (rewards[i])[2]
+    local id = rewards[i][1]
+    local count = rewards[i][2]
     item:SetData(id, count, function(id, pos)
-    -- function num : 0_3_0 , upvalues : self
-    self:OnItemClick(id, pos)
-  end
-)
+      self:OnItemClick(id, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardAwardView.OnItemClick = function(self, id, pos)
-  -- function num : 0_4
-  (self.tips):SetData(id, pos)
+function UICollectCardAwardView:OnItemClick(id, pos)
+  self.tips:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardAwardView.BtnOnClick = function(self, go)
-  -- function num : 0_5
+function UICollectCardAwardView:BtnOnClick(go)
   self:CloseDialog()
 end
-
-

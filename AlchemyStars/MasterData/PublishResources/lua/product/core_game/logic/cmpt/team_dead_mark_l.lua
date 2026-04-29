@@ -1,53 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/team_dead_mark_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TeamDeadMarkComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-TeamDeadMarkComponent.Constructor = function(self, pos)
-  -- function num : 0_0
+function TeamDeadMarkComponent:Constructor(pos)
   self._deadPos = pos
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamDeadMarkComponent.GetDeadGridPos = function(self)
-  -- function num : 0_1
+function TeamDeadMarkComponent:GetDeadGridPos()
   return self._deadPos
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.TeamDeadMark = function(self)
-  -- function num : 0_2
-  return self:GetComponent((self.WEComponentsEnum).TeamDeadMark)
+function Entity:TeamDeadMark()
+  return self:GetComponent(self.WEComponentsEnum.TeamDeadMark)
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasTeamDeadMark = function(self)
-  -- function num : 0_3
-  return self:HasComponent((self.WEComponentsEnum).TeamDeadMark)
+function Entity:HasTeamDeadMark()
+  return self:HasComponent(self.WEComponentsEnum.TeamDeadMark)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddTeamDeadMark = function(self, pos)
-  -- function num : 0_4 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).TeamDeadMark
+function Entity:AddTeamDeadMark(pos)
+  local index = self.WEComponentsEnum.TeamDeadMark
   local component = TeamDeadMarkComponent:New(pos)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveTeamDeadMark = function(self)
-  -- function num : 0_5
+function Entity:RemoveTeamDeadMark()
   if self:HasDeadFlag() then
-    self:RemoveComponent((self.WEComponentsEnum).TeamDeadMark)
+    self:RemoveComponent(self.WEComponentsEnum.TeamDeadMark)
   end
 end
-
-

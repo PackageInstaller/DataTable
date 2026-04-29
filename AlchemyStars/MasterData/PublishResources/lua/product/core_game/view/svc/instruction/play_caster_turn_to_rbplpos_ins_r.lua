@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_turn_to_rbplpos_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterTurnToRoundBeginPlayerPosInstruction", BaseInstruction)
 PlayCasterTurnToRoundBeginPlayerPosInstruction = PlayCasterTurnToRoundBeginPlayerPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterTurnToRoundBeginPlayerPosInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayCasterTurnToRoundBeginPlayerPosInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterTurnToRoundBeginPlayerPosInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterTurnToRoundBeginPlayerPosInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   local world = casterEntity:GetOwnerWorld()
-  local targetPos = (BattleStatHelper.GetRoundBeginPlayerPos)()
+  local targetPos = BattleStatHelper.GetRoundBeginPlayerPos()
   local playSkillService = world:GetService("PlaySkill")
   if not playSkillService:CheckSourceCanTurn(casterEntity) then
-    (Log.fatal)("CasterID:", casterEntity:GetID(), "can\'t turn ")
-    return 
+    Log.fatal("CasterID:", casterEntity:GetID(), "can't turn ")
+    return
   end
   if casterEntity:HasTeam() then
     casterEntity = casterEntity:GetTeamLeaderPetEntity()
@@ -32,5 +22,3 @@ PlayCasterTurnToRoundBeginPlayerPosInstruction.DoInstruction = function(self, TT
   local gridDir = Vector2(dir.x, dir.y)
   casterEntity:SetDirection(gridDir)
 end
-
-

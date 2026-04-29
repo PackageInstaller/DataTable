@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/yx/task/ui_activity_evesinsa_task_progress_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityEveSinsaTaskProgressItem", UICustomWidget)
 UIActivityEveSinsaTaskProgressItem = UIActivityEveSinsaTaskProgressItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityEveSinsaTaskProgressItem._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityEveSinsaTaskProgressItem:_GetComponents()
   self._apItemIcon = self:GetUIComponent("RawImageLoader", "_apItemIcon")
   self._apProgresslTex = self:GetUIComponent("UILocalizationText", "_apProgresslTex")
   self._apProgressImg = self:GetUIComponent("Image", "_apProgressImg")
@@ -31,10 +24,7 @@ UIActivityEveSinsaTaskProgressItem._GetComponents = function(self)
   self._numNormalLine = self:GetGameObject("_normalLine")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskProgressItem.SetData = function(self, index, count, itemInfo, componentInfo, callback, itemCallBack, specificData, numColor, gotStr, canGetStr)
-  -- function num : 0_1
+function UIActivityEveSinsaTaskProgressItem:SetData(index, count, itemInfo, componentInfo, callback, itemCallBack, specificData, numColor, gotStr, canGetStr)
   self:_GetComponents()
   self._index = index
   self._totalCellCount = count
@@ -46,67 +36,48 @@ UIActivityEveSinsaTaskProgressItem.SetData = function(self, index, count, itemIn
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskProgressItem._OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  do
-    if not self.atlas then
-      local atlasName = (self._specificData):GetSpriteAtlasName()
-      self.atlas = self:GetAsset(atlasName, LoadType.SpriteAtlas)
-    end
-    local index = self._index
-    local prev = (self._itemInfo).prev
-    local target = (self._itemInfo).target
-    local count = (self._itemInfo).count
-    local itemId = (self._componentInfo).m_item_id
-    self:_SetItemIcon(itemId)
-    self:_SetProgressText(target)
-    local cur = (self._componentInfo).m_current_progress
-    local rate = self:_CalcRate(prev, target, cur)
-    local effectShow = (rate ~= 0 and rate ~= 1) or (rate == 0 and cur == prev)
-    local blackShow = index ~= count
-    self:_SetProgressImgRes()
-    self:_SetProgressImg(rate, effectShow, blackShow)
-    local rewards = ((self._componentInfo).m_progress_rewards)[target]
-    self:_SetRewardItem(rewards, "UIActivityEveSinsaTaskRewardItem")
-    local received = (self._componentInfo).m_received_progress
-    local state = self:_CalcState(target, cur, received)
-    self:_SetStateCanGetReward(state == 1)
-    self:_SetStateReceivedReward(state == 2)
-    self:_FillNumAre(state, target)
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UIActivityEveSinsaTaskProgressItem:_OnValue()
+  if not self.atlas then
+    local atlasName = self._specificData:GetSpriteAtlasName()
+    self.atlas = self:GetAsset(atlasName, LoadType.SpriteAtlas)
   end
+  local index = self._index
+  local prev = self._itemInfo.prev
+  local target = self._itemInfo.target
+  local count = self._itemInfo.count
+  local itemId = self._componentInfo.m_item_id
+  self:_SetItemIcon(itemId)
+  self:_SetProgressText(target)
+  local cur = self._componentInfo.m_current_progress
+  local rate = self:_CalcRate(prev, target, cur)
+  local effectShow = rate ~= 0 and rate ~= 1 or rate == 0 and cur == prev
+  local blackShow = index ~= count
+  self:_SetProgressImgRes()
+  self:_SetProgressImg(rate, effectShow, blackShow)
+  local rewards = self._componentInfo.m_progress_rewards[target]
+  self:_SetRewardItem(rewards, "UIActivityEveSinsaTaskRewardItem")
+  local received = self._componentInfo.m_received_progress
+  local state = self:_CalcState(target, cur, received)
+  self:_SetStateCanGetReward(state == 1)
+  self:_SetStateReceivedReward(state == 2)
+  self:_FillNumAre(state, target)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskProgressItem.OnShow = function(self, uiParams)
-  -- function num : 0_3
+function UIActivityEveSinsaTaskProgressItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskProgressItem.OnHide = function(self)
-  -- function num : 0_4
+function UIActivityEveSinsaTaskProgressItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskProgressItem._SetItemIcon = function(self, itemId)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfgItem = (Cfg.cfg_item)[itemId]
+function UIActivityEveSinsaTaskProgressItem:_SetItemIcon(itemId)
+  local cfgItem = Cfg.cfg_item[itemId]
   if not cfgItem then
-    return 
+    return
   end
-  ;
-  (self._apItemIcon):LoadImage(cfgItem.Icon)
+  self._apItemIcon:LoadImage(cfgItem.Icon)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskProgressItem._FillNumAre = function(self, state, target)
-  -- function num : 0_6
+function UIActivityEveSinsaTaskProgressItem:_FillNumAre(state, target)
   local colorNum = false
   if state == 1 or state == 2 then
     colorNum = true
@@ -115,216 +86,120 @@ UIActivityEveSinsaTaskProgressItem._FillNumAre = function(self, state, target)
   self:_SetNumLine(colorNum)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskProgressItem._SetProgressText = function(self, point, colorNum)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityEveSinsaTaskProgressItem:_SetProgressText(point, colorNum)
   local color = "FFFFFF"
   if colorNum then
-    color = (self._specificData):GetQuestNumSpecialColor()
+    color = self._specificData:GetQuestNumSpecialColor()
   end
   local formatStr = "<color=#%s>%s</color>"
-  local showStr = (string.format)(formatStr, color, point)
-  ;
-  (self._apProgresslTex):SetText(showStr)
+  local showStr = string.format(formatStr, color, point)
+  self._apProgresslTex:SetText(showStr)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskProgressItem._SetNumLine = function(self, colorNum)
-  -- function num : 0_8
+function UIActivityEveSinsaTaskProgressItem:_SetNumLine(colorNum)
   if self._numColorLine and self._numNormalLine then
-    (self._numColorLine):SetActive(colorNum)
-    ;
-    (self._numNormalLine):SetActive(not colorNum)
+    self._numColorLine:SetActive(colorNum)
+    self._numNormalLine:SetActive(not colorNum)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskProgressItem._SetProgressImgRes = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-  if self.atlas and self._specificData and (self._specificData):IsProgressImgNeedChange() then
+function UIActivityEveSinsaTaskProgressItem:_SetProgressImgRes()
+  if self.atlas and self._specificData and self._specificData:IsProgressImgNeedChange() then
     if self:_IsFirstCell() then
       if self._apProgressBgImgRect and self._apProgressImgRect then
-        (self._apProgressBgImgRect).sizeDelta = Vector2(((self._apProgressBgImgRect).sizeDelta).x, (self._specificData):GetProgressFirstCellImgHeight())
-        -- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._apProgressImgRect).sizeDelta = Vector2(((self._apProgressImgRect).sizeDelta).x, (self._specificData):GetProgressFirstCellImgHeight())
+        self._apProgressBgImgRect.sizeDelta = Vector2(self._apProgressBgImgRect.sizeDelta.x, self._specificData:GetProgressFirstCellImgHeight())
+        self._apProgressImgRect.sizeDelta = Vector2(self._apProgressImgRect.sizeDelta.x, self._specificData:GetProgressFirstCellImgHeight())
       end
-      -- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._apProgressImg).sprite = (self.atlas):GetSprite((self._specificData):GetTopProgressImg())
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._apProgressBgImg).sprite = (self.atlas):GetSprite((self._specificData):GetTopProgressBgImg())
+      self._apProgressImg.sprite = self.atlas:GetSprite(self._specificData:GetTopProgressImg())
+      self._apProgressBgImg.sprite = self.atlas:GetSprite(self._specificData:GetTopProgressBgImg())
+    elseif self:_IsEndCell() then
+      if self._apProgressBgImgRect and self._apProgressImgRect then
+        self._apProgressBgImgRect.sizeDelta = Vector2(self._apProgressBgImgRect.sizeDelta.x, self._specificData:GetProgressNormalCellImgHeight())
+        self._apProgressImgRect.sizeDelta = Vector2(self._apProgressImgRect.sizeDelta.x, self._specificData:GetProgressNormalCellImgHeight())
+      end
+      self._apProgressImg.sprite = self.atlas:GetSprite(self._specificData:GetBottomProgressImg())
+      self._apProgressBgImg.sprite = self.atlas:GetSprite(self._specificData:GetBottomProgressBgImg())
     else
-      -- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-      if self:_IsEndCell() then
-        if self._apProgressBgImgRect and self._apProgressImgRect then
-          (self._apProgressBgImgRect).sizeDelta = Vector2(((self._apProgressBgImgRect).sizeDelta).x, (self._specificData):GetProgressNormalCellImgHeight())
-          -- DECOMPILER ERROR at PC87: Confused about usage of register: R1 in 'UnsetPending'
-
-          ;
-          (self._apProgressImgRect).sizeDelta = Vector2(((self._apProgressImgRect).sizeDelta).x, (self._specificData):GetProgressNormalCellImgHeight())
-        end
-        -- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._apProgressImg).sprite = (self.atlas):GetSprite((self._specificData):GetBottomProgressImg())
-        -- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._apProgressBgImg).sprite = (self.atlas):GetSprite((self._specificData):GetBottomProgressBgImg())
-      else
-        -- DECOMPILER ERROR at PC120: Confused about usage of register: R1 in 'UnsetPending'
-
-        if self._apProgressBgImgRect and self._apProgressImgRect then
-          (self._apProgressBgImgRect).sizeDelta = Vector2(((self._apProgressBgImgRect).sizeDelta).x, (self._specificData):GetProgressNormalCellImgHeight())
-          -- DECOMPILER ERROR at PC130: Confused about usage of register: R1 in 'UnsetPending'
-
-          ;
-          (self._apProgressImgRect).sizeDelta = Vector2(((self._apProgressImgRect).sizeDelta).x, (self._specificData):GetProgressNormalCellImgHeight())
-        end
-        -- DECOMPILER ERROR at PC138: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._apProgressImg).sprite = (self.atlas):GetSprite((self._specificData):GetNormalProgressImg())
-        -- DECOMPILER ERROR at PC146: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._apProgressBgImg).sprite = (self.atlas):GetSprite((self._specificData):GetNormalProgressBgImg())
+      if self._apProgressBgImgRect and self._apProgressImgRect then
+        self._apProgressBgImgRect.sizeDelta = Vector2(self._apProgressBgImgRect.sizeDelta.x, self._specificData:GetProgressNormalCellImgHeight())
+        self._apProgressImgRect.sizeDelta = Vector2(self._apProgressImgRect.sizeDelta.x, self._specificData:GetProgressNormalCellImgHeight())
       end
+      self._apProgressImg.sprite = self.atlas:GetSprite(self._specificData:GetNormalProgressImg())
+      self._apProgressBgImg.sprite = self.atlas:GetSprite(self._specificData:GetNormalProgressBgImg())
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskProgressItem._SetProgressImg = function(self, rate, effectShow, blackShow)
-  -- function num : 0_10 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R4 in 'UnsetPending'
-
-  (self._apProgressImg).fillAmount = rate
-  local height = ((self._apProgressImgRect).sizeDelta).y
-  local offset = ((self._apProgressEffectImgRect).sizeDelta).y / 2
+function UIActivityEveSinsaTaskProgressItem:_SetProgressImg(rate, effectShow, blackShow)
+  self._apProgressImg.fillAmount = rate
+  local height = self._apProgressImgRect.sizeDelta.y
+  local offset = self._apProgressEffectImgRect.sizeDelta.y / 2
   local posY = -1 * rate * height - offset
-  local oriX = ((self._apProgressEffectImgRect).anchoredPosition).x
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._apProgressEffectImgRect).anchoredPosition = Vector2(oriX, posY)
-  ;
-  (self._apProgressEffectImgObj):SetActive(effectShow)
-  ;
-  (self._apProgressBlackLine):SetActive(blackShow)
+  local oriX = self._apProgressEffectImgRect.anchoredPosition.x
+  self._apProgressEffectImgRect.anchoredPosition = Vector2(oriX, posY)
+  self._apProgressEffectImgObj:SetActive(effectShow)
+  self._apProgressBlackLine:SetActive(blackShow)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskProgressItem._SetRewardItem = function(self, infoList, classType)
-  -- function num : 0_11 , upvalues : _ENV
-  (self._ItemPool):SpawnObjects(classType, (table.count)(infoList))
-  local itemList = (self._ItemPool):GetAllSpawnList()
-  for i = 1, (table.count)(infoList) do
-    (itemList[i]):SetData(R10_PC23, infoList[i], self._itemCallback)
+function UIActivityEveSinsaTaskProgressItem:_SetRewardItem(infoList, classType)
+  self._ItemPool:SpawnObjects(classType, table.count(infoList))
+  local itemList = self._ItemPool:GetAllSpawnList()
+  for i = 1, table.count(infoList) do
+    itemList[i]:SetData(i, infoList[i], self._itemCallback)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskProgressItem._SetStateCanGetReward = function(self, isShow)
-  -- function num : 0_12 , upvalues : _ENV
-  local EnglishFlag = (HelperProxy:GetInstance()):IsInEnglish()
-  ;
-  (self._canGetRewardTexEnObj):SetActive(EnglishFlag)
-  ;
-  (self._canGetRewardObj):SetActive(isShow)
-  local canGetStr = (self._specificData):GetQuestCanGetStr()
-  ;
-  (self._canGetRewardTex):SetText((StringTable.Get)(canGetStr))
-  ;
-  (self._canGetRewardTexEn):SetText((StringTable.Get)(canGetStr))
+function UIActivityEveSinsaTaskProgressItem:_SetStateCanGetReward(isShow)
+  local EnglishFlag = HelperProxy:GetInstance():IsInEnglish()
+  self._canGetRewardTexEnObj:SetActive(EnglishFlag)
+  self._canGetRewardObj:SetActive(isShow)
+  local canGetStr = self._specificData:GetQuestCanGetStr()
+  self._canGetRewardTex:SetText(StringTable.Get(canGetStr))
+  self._canGetRewardTexEn:SetText(StringTable.Get(canGetStr))
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskProgressItem._SetStateReceivedReward = function(self, isShow)
-  -- function num : 0_13 , upvalues : _ENV
-  local EnglishFlag = (HelperProxy:GetInstance()):IsInEnglish()
-  ;
-  (self._receivedRewardTexEnObj):SetActive(EnglishFlag)
-  ;
-  (self._receivedRewardObj):SetActive(isShow)
-  local gotStr = (self._specificData):GetQuestGotStr()
-  ;
-  (self._receivedRewardTex):SetText((StringTable.Get)(gotStr))
-  ;
-  (self._receivedRewardTexEn):SetText((StringTable.Get)(gotStr))
+function UIActivityEveSinsaTaskProgressItem:_SetStateReceivedReward(isShow)
+  local EnglishFlag = HelperProxy:GetInstance():IsInEnglish()
+  self._receivedRewardTexEnObj:SetActive(EnglishFlag)
+  self._receivedRewardObj:SetActive(isShow)
+  local gotStr = self._specificData:GetQuestGotStr()
+  self._receivedRewardTex:SetText(StringTable.Get(gotStr))
+  self._receivedRewardTexEn:SetText(StringTable.Get(gotStr))
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskProgressItem.GetRewardBtnOnClick = function(self)
-  -- function num : 0_14
+function UIActivityEveSinsaTaskProgressItem:GetRewardBtnOnClick()
   if self._callback then
-    (self._callback)(self._index)
+    self._callback(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskProgressItem._CalcRate = function(self, low, hi, cur)
-  -- function num : 0_15
+function UIActivityEveSinsaTaskProgressItem:_CalcRate(low, hi, cur)
   if cur <= low then
     return 0
+  elseif hi <= cur then
+    return 1
   else
-    if hi <= cur then
-      return 1
-    else
-      return (cur - low) / (hi - low)
-    end
+    return (cur - low) / (hi - low)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskProgressItem._CalcState = function(self, target, cur, received)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityEveSinsaTaskProgressItem:_CalcState(target, cur, received)
   local state = 0
   if target <= cur then
     state = 1
-    for _,x in pairs(received) do
+    for _, x in pairs(received) do
       if x == target then
         state = 2
       end
     end
   end
-  do
-    return state
-  end
+  return state
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskProgressItem._IsFirstCell = function(self)
-  -- function num : 0_17
-  do return self._index == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIActivityEveSinsaTaskProgressItem:_IsFirstCell()
+  return self._index == 1
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskProgressItem._IsEndCell = function(self)
-  -- function num : 0_18
-  do return self._index == self._totalCellCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIActivityEveSinsaTaskProgressItem:_IsEndCell()
+  return self._index == self._totalCellCount
 end
-
-

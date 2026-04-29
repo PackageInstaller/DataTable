@@ -1,70 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_tetris_effect_on_pickpos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTetrisEffectOnPickUpPosInstruction", BaseInstruction)
 PlayTetrisEffectOnPickUpPosInstruction = PlayTetrisEffectOnPickUpPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTetrisEffectOnPickUpPosInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTetrisEffectOnPickUpPosInstruction:Constructor(paramList)
   local strList = paramList.tetrisEffectList
-  local strIDs = (string.split)(strList, "|")
+  local strIDs = string.split(strList, "|")
   self._tetrisEffectList = {}
   for i = 1, #strIDs do
     local effectID = tonumber(strIDs[i])
-    ;
-    (table.insert)(self._tetrisEffectList, effectID)
+    table.insert(self._tetrisEffectList, effectID)
   end
-  do
-    self._waitTime = tonumber(paramList.waitTime or 0)
-  end
+  self._waitTime = tonumber(paramList.waitTime or 0)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTetrisEffectOnPickUpPosInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTetrisEffectOnPickUpPosInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local utilDataSvc = self._world:GetService("UtilData")
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local convertResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.ConvertGridElement)
   if not convertResultArray or convertResultArray == {} then
-    return 
+    return
   end
   local result = convertResultArray[1]
   local tetrisIndex = result:GetSaveTetrisIndex()
   local dirType = result:GetSaveTetrisDirType()
   local tetrisDir = utilDataSvc:ParseFeatureTetrisDirTypeToVector2(dirType)
-  local effectID = (self._tetrisEffectList)[tetrisIndex]
-  local pickUpGridPos = nil
+  local effectID = self._tetrisEffectList[tetrisIndex]
+  local pickUpGridPos
   local renderPickUpComponent = casterEntity:RenderPickUpComponent()
   if renderPickUpComponent then
     pickUpGridPos = renderPickUpComponent:GetLastPickUpGridPos()
   end
-  local effectEntity = ((self._world):GetService("Effect")):CreateWorldPositionDirectionEffect(effectID, pickUpGridPos, tetrisDir)
-  local effectGO = (effectEntity:View()):GetGameObject()
-  local anim = (effectGO.gameObject):GetComponent("Animation")
+  local effectEntity = self._world:GetService("Effect"):CreateWorldPositionDirectionEffect(effectID, pickUpGridPos, tetrisDir)
+  local effectGO = effectEntity:View():GetGameObject()
+  local anim = effectGO.gameObject:GetComponent("Animation")
   if self._waitTime ~= 0 then
     YIELD(TT, self._waitTime)
-    ;
-    (self._world):DestroyEntity(effectEntity)
+    self._world:DestroyEntity(effectEntity)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTetrisEffectOnPickUpPosInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayTetrisEffectOnPickUpPosInstruction:GetCacheResource()
   local res = {}
-  for i,effectID in pairs(self._tetrisEffectList) do
-    local skinEffRes = {((Cfg.cfg_effect)[effectID]).ResPath, 1}
-    ;
-    (table.insert)(res, skinEffRes)
+  for i, effectID in pairs(self._tetrisEffectList) do
+    local skinEffRes = {
+      Cfg.cfg_effect[effectID].ResPath,
+      1
+    }
+    table.insert(res, skinEffRes)
   end
   return res
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/ui_medal_group_list/ui_medal_group_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalGroupListItem", UICustomWidget)
 UIMedalGroupListItem = UIMedalGroupListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalGroupListItem.Constructor = function(self)
-  -- function num : 0_0
+function UIMedalGroupListItem:Constructor()
   self.medalData = nil
   self.callBack = nil
   self.select = false
@@ -17,42 +10,37 @@ UIMedalGroupListItem.Constructor = function(self)
   self._isSelect = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIMedalGroupListItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIMedalGroupListItem:_GetComponents()
   self.medalBg = self:GetUIComponent("RawImageLoader", "medal_bg")
   self.medalRedPoiot = self:GetGameObject("medal_redPoiot")
   self.medalSelectObj = self:GetGameObject("medal_select")
   self.medal_collect = self:GetUIComponent("UILocalizationText", "medal_collect")
   self.bg_collect = self:GetUIComponent("UILocalizationText", "bg_collect")
   self.anim = self:GetUIComponent("Animation", "UIMedalGroupListItem")
-  self._anims = {select_in = "uieff_UIMedalBgListItem_unlocked_select_in", normal_in = "uieff_UIMedalBgListItem_unlocked_in", switch_out = "uieff_UIMedalBgListItem_switch_out", switch_in = "uieff_UIMedalBgListItem_switch_in"}
+  self._anims = {
+    select_in = "uieff_UIMedalBgListItem_unlocked_select_in",
+    normal_in = "uieff_UIMedalBgListItem_unlocked_in",
+    switch_out = "uieff_UIMedalBgListItem_switch_out",
+    switch_in = "uieff_UIMedalBgListItem_switch_in"
+  }
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListItem.SetData = function(self, idx, data, callBack)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMedalGroupListItem:SetData(idx, data, callBack)
   self.idx = idx
   self.medalData = data
   self.callBack = callBack
   self:CheckLock()
   self:ShowRedPoint()
   self:SetSelect(false)
-  local icon = ((Cfg.cfg_item_medal_board)[(self.medalData).BoardID]).Icon
+  local icon = Cfg.cfg_item_medal_board[self.medalData.BoardID].Icon
   if icon then
-    (self.medalBg):LoadImage(icon)
+    self.medalBg:LoadImage(icon)
   else
-    ;
-    (self.medalBg):LoadImage("icon_item_6000202")
+    self.medalBg:LoadImage("icon_item_6000202")
   end
   self:SetBgCollect()
   self:SetMedalListCollect()
@@ -60,165 +48,114 @@ UIMedalGroupListItem.SetData = function(self, idx, data, callBack)
   self._inited = true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListItem.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIMedalGroupListItem:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListItem.PlayAnim = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIMedalGroupListItem:PlayAnim()
   local rootTr = self:GetUIComponent("RectTransform", "Root")
   rootTr.anchoredPosition = Vector2(0, -30)
   local canvasG = self:GetUIComponent("CanvasGroup", "UIMedalGroupListItem")
   canvasG.alpha = 0
   local yieldTime = (self.idx - 1) * 60
-  self._timer = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_5_0 , upvalues : self
+  self._timer = GameGlobal.Timer():AddEvent(yieldTime, function()
     if self.idx == 1 then
-      (self.anim):Play((self._anims).select_in)
+      self.anim:Play(self._anims.select_in)
     else
-      ;
-      (self.anim):Play((self._anims).normal_in)
+      self.anim:Play(self._anims.normal_in)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListItem.SetBgCollect = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local boardid = (self.medalData).BoardID
+function UIMedalGroupListItem:SetBgCollect()
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local boardid = self.medalData.BoardID
   local items = itemModule:GetItemByTempId(boardid)
-  if items then
-    local have = next(items)
-  end
+  local have = items and next(items)
   local haveCount = have and 1 or 0
   local allCount = 1
-  ;
-  (self.bg_collect):SetText(haveCount .. "/" .. allCount)
+  self.bg_collect:SetText(haveCount .. "/" .. allCount)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListItem.SetMedalListCollect = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local medals = (self.medalData).MedalIDList
+function UIMedalGroupListItem:SetMedalListCollect()
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local medals = self.medalData.MedalIDList
   local allCount = #medals
   local haveCount = 0
-  for key,value in pairs(medals) do
+  for key, value in pairs(medals) do
     local medalid = value[1]
     local items = itemModule:GetItemByTempId(medalid)
-    if items then
-      local have = next(items)
-    end
+    local have = items and next(items)
     if have then
       haveCount = haveCount + 1
     end
   end
-  ;
-  (self.medal_collect):SetText(haveCount .. "/" .. allCount)
+  self.medal_collect:SetText(haveCount .. "/" .. allCount)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListItem.GetData = function(self)
-  -- function num : 0_8
+function UIMedalGroupListItem:GetData()
   return self.medalData
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListItem.GetID = function(self)
-  -- function num : 0_9
-  return (self.medalData).medal_id
+function UIMedalGroupListItem:GetID()
+  return self.medalData.medal_id
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListItem.CheckLock = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local locked = (self.medalData).status == RewardStatus.E_MEDAL_REWARD_LOCK
-  do return locked end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIMedalGroupListItem:CheckLock()
+  local locked = self.medalData.status == RewardStatus.E_MEDAL_REWARD_LOCK
+  return locked
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListItem.ShowRedPoint = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local item_data = nil
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local items = itemModule:GetItemByTempId((self.medalData).medal_id)
-  if items and (table.count)(items) > 0 then
-    for key,value in pairs(items) do
+function UIMedalGroupListItem:ShowRedPoint()
+  local item_data
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local items = itemModule:GetItemByTempId(self.medalData.medal_id)
+  if items and table.count(items) > 0 then
+    for key, value in pairs(items) do
       item_data = value
-      do break end
+      break
     end
   end
-  do
-    if item_data then
-      self._redState = item_data:IsNewOverlay()
-      self._pstid = item_data:GetID()
-    end
-    if self:CheckLock() then
-      (self.medalRedPoiot):SetActive(false)
-    else
-      ;
-      (self.medalRedPoiot):SetActive(self._redState)
-    end
+  if item_data then
+    self._redState = item_data:IsNewOverlay()
+    self._pstid = item_data:GetID()
+  end
+  if self:CheckLock() then
+    self.medalRedPoiot:SetActive(false)
+  else
+    self.medalRedPoiot:SetActive(self._redState)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListItem.SetSelect = function(self, bSelect)
-  -- function num : 0_12
-  (self.medalSelectObj):SetActive(bSelect)
+function UIMedalGroupListItem:SetSelect(bSelect)
+  self.medalSelectObj:SetActive(bSelect)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListItem.Select = function(self, idx)
-  -- function num : 0_13
+function UIMedalGroupListItem:Select(idx)
   self:SetSelect(idx == self.idx)
   local isSelect = idx == self.idx
-  if (self._isSelect ~= nil or self._isSelect == false) and isSelect then
-    (self.anim):Play((self._anims).switch_in)
+  if self._isSelect == nil then
+  elseif self._isSelect == false and isSelect then
+    self.anim:Play(self._anims.switch_in)
   elseif self._isSelect == true and not isSelect then
-    (self.anim):Play((self._anims).switch_out)
+    self.anim:Play(self._anims.switch_out)
   end
   self._isSelect = isSelect
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListItem.MedalBtnOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
+function UIMedalGroupListItem:MedalBtnOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_14_0 , upvalues : self, _ENV
-    if (self.medalData).medal_id and self._pstid then
-      local itemModule = (GameGlobal.GetModule)(ItemModule)
+    if self.medalData.medal_id and self._pstid then
+      local itemModule = GameGlobal.GetModule(ItemModule)
       itemModule:SetItemUnnewOverlay(TT, self._pstid)
       itemModule:SetItemUnnew(TT, self._pstid)
     end
-  end
-)
+  end)
   self._redState = false
-  ;
-  (self.medalRedPoiot):SetActive(self._redState)
+  self.medalRedPoiot:SetActive(self._redState)
   if self.callBack then
-    (self.callBack)(self.idx)
+    self.callBack(self.idx)
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/shop/ui_cn20_n49_ryza_shop_warning.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49Ryza_ShopWarning", UIController)
 UICN20N49Ryza_ShopWarning = UICN20N49Ryza_ShopWarning
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49Ryza_ShopWarning.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN20N49Ryza_ShopWarning:OnShow(uiParams)
   self._map = uiParams[1]
   self._saveCb = uiParams[2]
   self._passCb = uiParams[3]
@@ -17,66 +10,47 @@ UICN20N49Ryza_ShopWarning.OnShow = function(self, uiParams)
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopWarning.GetItemList = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN20N49Ryza_ShopWarning:GetItemList()
   local list = {}
   if self._map and next(self._map) then
-    for k,v in pairs(self._map) do
+    for k, v in pairs(self._map) do
       local data = UICN20N49RyzaItemData:New()
       data.id = k
       data.count = v
-      local price, color = (UICN20N49Ryza_Shop.GetItemPriceColor)(k)
+      local price, color = UICN20N49Ryza_Shop.GetItemPriceColor(k)
       data.price = price
       data.color = color
-      ;
-      (table.insert)(list, data)
+      table.insert(list, data)
     end
-    ;
-    (UICN20N49Ryza_Shop.SortItemDataLsit)(list)
+    UICN20N49Ryza_Shop.SortItemDataLsit(list)
   end
   self._list = list
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopWarning.InitWidgets = function(self)
-  -- function num : 0_2
+function UICN20N49Ryza_ShopWarning:InitWidgets()
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopWarning.RefreshUI = function(self)
-  -- function num : 0_3
-  (self._pool):SpawnObjects("UICN20N49Ryza_ShopCell", #self._list)
-  local pools = (self._pool):GetAllSpawnList()
+function UICN20N49Ryza_ShopWarning:RefreshUI()
+  self._pool:SpawnObjects("UICN20N49Ryza_ShopCell", #self._list)
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, #self._list do
     local item = pools[i]
-    local data = (self._list)[i]
+    local data = self._list[i]
     item:SetData(i, data)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopWarning.SaveBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UICN20N49Ryza_ShopWarning:SaveBtnOnClick(go)
   if self._saveCb then
-    (self._saveCb)()
+    self._saveCb()
   end
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopWarning.PassBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UICN20N49Ryza_ShopWarning:PassBtnOnClick(go)
   if self._passCb then
-    (self._passCb)()
+    self._passCb()
   end
   self:CloseDialog()
 end
-
-

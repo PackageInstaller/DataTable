@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_check_play_skill_round_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCheckPlaySkillRoundCount", AINewNode)
 ActionCheckPlaySkillRoundCount = ActionCheckPlaySkillRoundCount
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckPlaySkillRoundCount.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local attrCmpt = (self.m_entityOwn):Attributes()
+function ActionCheckPlaySkillRoundCount:OnUpdate()
+  local attrCmpt = self.m_entityOwn:Attributes()
   local totalRound = attrCmpt:GetAttribute("TotalRound")
   local curRound = attrCmpt:GetAttribute("CurrentRound")
   if totalRound == curRound then
@@ -18,5 +11,3 @@ ActionCheckPlaySkillRoundCount.OnUpdate = function(self)
   end
   return AINewNodeStatus.Failure
 end
-
-

@@ -1,105 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/talent_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TalentComponent", Object)
 TalentComponent = TalentComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TalentComponent.Constructor = function(self)
-  -- function num : 0_0
+function TalentComponent:Constructor()
   self._talentDataList = {}
   self._unlockRelicIDList = {}
   self._isChosenOpeningRelic = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentComponent.AddTalentData = function(self, talentType, param)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._talentDataList)[talentType] then
-    (self._talentDataList)[talentType] = {}
+function TalentComponent:AddTalentData(talentType, param)
+  if not self._talentDataList[talentType] then
+    self._talentDataList[talentType] = {}
   end
-  ;
-  (table.insert)((self._talentDataList)[talentType], param)
+  table.insert(self._talentDataList[talentType], param)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentComponent.HasTalentData = function(self, talentType)
-  -- function num : 0_2
-  do return (self._talentDataList)[talentType] ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function TalentComponent:HasTalentData(talentType)
+  return self._talentDataList[talentType] ~= nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentComponent.GetTalentDataList = function(self, talentType)
-  -- function num : 0_3
-  return (self._talentDataList)[talentType]
+function TalentComponent:GetTalentDataList(talentType)
+  return self._talentDataList[talentType]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentComponent.SetUnlockRelicIDList = function(self, relicIDList)
-  -- function num : 0_4
+function TalentComponent:SetUnlockRelicIDList(relicIDList)
   self._unlockRelicIDList = relicIDList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentComponent.GetUnlockRelicIDList = function(self)
-  -- function num : 0_5
+function TalentComponent:GetUnlockRelicIDList()
   return self._unlockRelicIDList
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentComponent.SetIsChosenOpeningRelic = function(self, isChosen)
-  -- function num : 0_6
+function TalentComponent:SetIsChosenOpeningRelic(isChosen)
   self._isChosenOpeningRelic = isChosen
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentComponent.IsChosenOpeningRelic = function(self)
-  -- function num : 0_7
+function TalentComponent:IsChosenOpeningRelic()
   return self._isChosenOpeningRelic
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Talent = function(self)
-  -- function num : 0_8
-  return self:GetComponent((self.WEComponentsEnum).Talent)
+function Entity:Talent()
+  return self:GetComponent(self.WEComponentsEnum.Talent)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasTalent = function(self)
-  -- function num : 0_9
-  return self:HasComponent((self.WEComponentsEnum).Talent)
+function Entity:HasTalent()
+  return self:HasComponent(self.WEComponentsEnum.Talent)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddTalent = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Talent
+function Entity:AddTalent()
+  local index = self.WEComponentsEnum.Talent
   local component = TalentComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceTalent = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Talent
+function Entity:ReplaceTalent()
+  local index = self.WEComponentsEnum.Talent
   local component = TalentComponent:New()
   self:ReplaceComponent(index, component)
 end
-
-

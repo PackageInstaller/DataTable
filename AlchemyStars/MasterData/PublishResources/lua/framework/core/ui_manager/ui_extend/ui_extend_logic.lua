@@ -1,42 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_extend/ui_extend_logic.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIExtendLogic", UIBase)
 UIExtendLogic = UIExtendLogic
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIExtendLogic.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.debug)("[UIExtend] UIExtendLogic:Constructor")
+function UIExtendLogic:Constructor()
+  Log.debug("[UIExtend] UIExtendLogic:Constructor")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtendLogic.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIExtendLogic:Dispose()
   self:OnDestroy()
-  ;
-  (Log.debug)("[UIExtend] UIExtendLogic:Dispose")
-  ;
-  ((UIExtendLogic.super).Hide)(self)
-  ;
-  ((UIExtendLogic.super).UnLoad)(self)
-  ;
-  ((UIExtendLogic.super).Dispose)(self)
+  Log.debug("[UIExtend] UIExtendLogic:Dispose")
+  UIExtendLogic.super.Hide(self)
+  UIExtendLogic.super.UnLoad(self)
+  UIExtendLogic.super.Dispose(self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtendLogic.OnCreate = function(self)
-  -- function num : 0_2
+function UIExtendLogic:OnCreate()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtendLogic.OnDestroy = function(self)
-  -- function num : 0_3
+function UIExtendLogic:OnDestroy()
 end
-
-

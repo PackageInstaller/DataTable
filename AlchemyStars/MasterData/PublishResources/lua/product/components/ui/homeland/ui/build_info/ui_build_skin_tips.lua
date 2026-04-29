@@ -1,36 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/build_info/ui_build_skin_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBuildSkinTips", UIController)
 UIBuildSkinTips = UIBuildSkinTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBuildSkinTips.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBuildSkinTips:OnShow(uiParams)
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
   self._conditionLabel = self:GetUIComponent("UILocalizationText", "Condition")
   local skinId = uiParams[1]
-  local cfg = (Cfg.cfg_item_architecture_skin)[skinId]
-  ;
-  (self._nameLabel):SetText((StringTable.Get)(cfg.SkinName))
-  ;
-  (self._conditionLabel):SetText((StringTable.Get)(cfg.UnLockCondition, cfg.Level))
+  local cfg = Cfg.cfg_item_architecture_skin[skinId]
+  self._nameLabel:SetText(StringTable.Get(cfg.SkinName))
+  self._conditionLabel:SetText(StringTable.Get(cfg.UnLockCondition, cfg.Level))
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildSkinTips.BtnGotoOnClick = function(self, go)
-  -- function num : 0_1
+function UIBuildSkinTips:BtnGotoOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildSkinTips.MaskOnClick = function(self, go)
-  -- function num : 0_2
+function UIBuildSkinTips:MaskOnClick(go)
   self:CloseDialog()
 end
-
-

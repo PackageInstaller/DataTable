@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass/common/ui_activity_battlepass_exp_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBattlePassExpInfo", UICustomWidget)
 UIActivityBattlePassExpInfo = UIActivityBattlePassExpInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBattlePassExpInfo._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityBattlePassExpInfo:_GetComponents()
   self._txtTitle1 = self:GetUIComponent("UILocalizationText", "txtTitle1")
   self._txtTitle2 = self:GetUIComponent("UILocalizationText", "txtTitle2")
   self._txtTitle3 = self:GetUIComponent("UILocalizationText", "txtTitle3")
@@ -20,28 +13,19 @@ UIActivityBattlePassExpInfo._GetComponents = function(self)
   self._maxObj = self:GetGameObject("max")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassExpInfo.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityBattlePassExpInfo:OnShow()
   self._isOpen = true
   self:_GetComponents()
-  self._seq = (((DG.Tweening).DOTween).Sequence)()
+  self._seq = DG.Tweening.DOTween.Sequence()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassExpInfo.OnHide = function(self)
-  -- function num : 0_2
+function UIActivityBattlePassExpInfo:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassExpInfo.SetData = function(self, componentInfo, upgrade)
-  -- function num : 0_3
+function UIActivityBattlePassExpInfo:SetData(componentInfo, upgrade)
   self._componentInfo = componentInfo
-  self:_SetIcon((self._componentInfo).m_item_id)
+  self:_SetIcon(self._componentInfo.m_item_id)
   if not upgrade then
     self:_SetExpNormal()
   else
@@ -49,84 +33,58 @@ UIActivityBattlePassExpInfo.SetData = function(self, componentInfo, upgrade)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassExpInfo._SetTitle = function(self, lv)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._txtTitle1):SetText("Lv.")
-  ;
-  (self._txtTitle2):SetText(lv)
-  ;
-  (self._txtTitle3):SetText((StringTable.Get)("str_activity_battlepass_main_title"))
-  ;
-  (self._txtTitle4):SetText((StringTable.Get)("str_activity_battlepass_main_title_2"))
-  local eng = (HelperProxy:GetInstance()):IsInEnglish()
+function UIActivityBattlePassExpInfo:_SetTitle(lv)
+  self._txtTitle1:SetText("Lv.")
+  self._txtTitle2:SetText(lv)
+  self._txtTitle3:SetText(StringTable.Get("str_activity_battlepass_main_title"))
+  self._txtTitle4:SetText(StringTable.Get("str_activity_battlepass_main_title_2"))
+  local eng = HelperProxy:GetInstance():IsInEnglish()
   if eng then
-    (self:GetGameObject("txtTitle4")):SetActive(false)
+    self:GetGameObject("txtTitle4"):SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassExpInfo._SetExp = function(self, lv, progress)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityBattlePassExpInfo:_SetExp(lv, progress)
   self:_SetTitle(lv)
-  local maxProgress = (self._componentInfo).m_level_max_progress
-  local maxLv = (self._componentInfo).m_max_level
+  local maxProgress = self._componentInfo.m_level_max_progress
+  local maxLv = self._componentInfo.m_max_level
   local formatStr = "%s/%s"
-  ;
-  (self._txtProgress):SetText((string.format)(formatStr, progress, maxProgress))
+  self._txtProgress:SetText(string.format(formatStr, progress, maxProgress))
   local rate = progress / maxProgress
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R7 in 'UnsetPending'
-
-  if rate ~= nil and rate >= 0 and rate <= 1 then
-    (self._imgProgressValue).fillAmount = rate
+  if rate ~= nil and 0 <= rate and rate <= 1 then
+    self._imgProgressValue.fillAmount = rate
   end
-  ;
-  (self._maxObj):SetActive(lv == maxLv and progress == maxProgress)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._maxObj:SetActive(lv == maxLv and progress == maxProgress)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassExpInfo._SetIcon = function(self, itemId)
-  -- function num : 0_6 , upvalues : _ENV
-  self._cfg_item = (Cfg.cfg_item)[itemId]
+function UIActivityBattlePassExpInfo:_SetIcon(itemId)
+  self._cfg_item = Cfg.cfg_item[itemId]
   if self._cfg_item == nil then
-    (Log.fatal)("[quest] error --> cfg_item is nil ! id --> " .. itemId)
-    return 
+    Log.fatal("[quest] error --> cfg_item is nil ! id --> " .. itemId)
+    return
   end
-  local icon = (self._cfg_item).Icon
-  ;
-  (self._imgIcon):LoadImage(icon)
+  local icon = self._cfg_item.Icon
+  self._imgIcon:LoadImage(icon)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassExpInfo._SetExpNormal = function(self)
-  -- function num : 0_7
-  self._curLv = (self._componentInfo).m_current_level
-  self._curProgress = (self._componentInfo).m_current_progress
+function UIActivityBattlePassExpInfo:_SetExpNormal()
+  self._curLv = self._componentInfo.m_current_level
+  self._curProgress = self._componentInfo.m_current_progress
   self:_SetExp(self._curLv, self._curProgress)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassExpInfo._SetExpUpgrade = function(self)
-  -- function num : 0_8
+function UIActivityBattlePassExpInfo:_SetExpUpgrade()
   self._expIncreaseAnimTime = 1
   local curLv = self._curLv
   local curProgress = self._curProgress
-  local targetLv = (self._componentInfo).m_current_level
-  local targetProgress = (self._componentInfo).m_current_progress
-  local maxProgress = (self._componentInfo).m_level_max_progress
+  local targetLv = self._componentInfo.m_current_level
+  local targetProgress = self._componentInfo.m_current_progress
+  local maxProgress = self._componentInfo.m_level_max_progress
   if curLv < targetLv then
     self:_PlayFillAmount(curLv, maxProgress, function()
-    -- function num : 0_8_0 , upvalues : self, targetLv, targetProgress
-    self:_SetExp(targetLv, 0)
-    self:_PlayFillAmount(targetLv, targetProgress)
-  end
-)
+      self:_SetExp(targetLv, 0)
+      self:_PlayFillAmount(targetLv, targetProgress)
+    end)
   else
     self:_PlayFillAmount(targetLv, targetProgress)
   end
@@ -134,27 +92,17 @@ UIActivityBattlePassExpInfo._SetExpUpgrade = function(self)
   self._curProgress = targetProgress
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassExpInfo._PlayFillAmount = function(self, lv, progress, callback)
-  -- function num : 0_9 , upvalues : _ENV
-  local maxProgress = (self._componentInfo).m_level_max_progress
+function UIActivityBattlePassExpInfo:_PlayFillAmount(lv, progress, callback)
+  local maxProgress = self._componentInfo.m_level_max_progress
   local rate = progress / maxProgress
-  local tweener = (((self._imgProgressValue):DOFillAmount(rate, self._expIncreaseAnimTime)):OnUpdate(function()
-    -- function num : 0_9_0 , upvalues : _ENV, self, maxProgress, lv
-    local value = (math.floor)((self._imgProgressValue).fillAmount * maxProgress)
+  local tweener = self._imgProgressValue:DOFillAmount(rate, self._expIncreaseAnimTime):OnUpdate(function()
+    local value = math.floor(self._imgProgressValue.fillAmount * maxProgress)
     self:_SetExp(lv, value)
-  end
-)):OnComplete(function()
-    -- function num : 0_9_1 , upvalues : self, lv, progress, callback
+  end):OnComplete(function()
     self:_SetExp(lv, progress)
     if callback then
       callback()
     end
-  end
-)
-  ;
-  (self._seq):Append(tweener)
+  end)
+  self._seq:Append(tweener)
 end
-
-

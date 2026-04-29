@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n32/multi_line/map/ui_n32_multi_line_map_dialog_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN32MultiLineMapDialoglNode", UICustomWidget)
 UIN32MultiLineMapDialoglNode = UIN32MultiLineMapDialoglNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN32MultiLineMapDialoglNode.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN32MultiLineMapDialoglNode:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapDialoglNode.InitWidget = function(self)
-  -- function num : 0_1
+function UIN32MultiLineMapDialoglNode:InitWidget()
   self.hasRead = self:GetGameObject("hasRead")
   self.unRead = self:GetGameObject("unRead")
   self.animation = self:GetUIComponent("Animation", "animation")
@@ -23,83 +13,51 @@ UIN32MultiLineMapDialoglNode.InitWidget = function(self)
   self._btnGo = self:GetGameObject("btn")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapDialoglNode.SetData = function(self, levelId, missionId, isPass, cb)
-  -- function num : 0_2
+function UIN32MultiLineMapDialoglNode:SetData(levelId, missionId, isPass, cb)
   self._callback = cb
   self._levelId = levelId
   self._missionId = missionId
-  ;
-  (self.hasRead):SetActive(isPass)
-  ;
-  (self.unRead):SetActive(not isPass)
+  self.hasRead:SetActive(isPass)
+  self.unRead:SetActive(not isPass)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapDialoglNode.BtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIN32MultiLineMapDialoglNode:BtnOnClick(go)
   if self._callback then
-    (self._callback)(self._levelId, self._missionId)
+    self._callback(self._levelId, self._missionId)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapDialoglNode.PlayEnterAni = function(self)
-  -- function num : 0_4
+function UIN32MultiLineMapDialoglNode:PlayEnterAni()
   self:ResetAni(self.animation, "uieff_UIN32MultiLineDialogueNode_in")
-  ;
-  (self.animation):Play("uieff_UIN32MultiLineDialogueNode_in")
+  self.animation:Play("uieff_UIN32MultiLineDialogueNode_in")
   if self.unRead then
     self:PlayUnReadAni()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapDialoglNode.PlayUnReadAni = function(self)
-  -- function num : 0_5
+function UIN32MultiLineMapDialoglNode:PlayUnReadAni()
   self:ResetAni(self.unReadAni, "uieff_UIN32MultiLineDialogueNode_unRead_loop")
-  ;
-  (self.unReadAni):Play("uieff_UIN32MultiLineDialogueNode_unRead_loop")
+  self.unReadAni:Play("uieff_UIN32MultiLineDialogueNode_unRead_loop")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapDialoglNode.ResetAni = function(self, animation, clipName)
-  -- function num : 0_6
+function UIN32MultiLineMapDialoglNode:ResetAni(animation, clipName)
   local state = animation:get_Item(clipName)
   state.normalizedTime = 0
   animation:Stop()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapDialoglNode.GetLevelId = function(self)
-  -- function num : 0_7
+function UIN32MultiLineMapDialoglNode:GetLevelId()
   return self._levelId
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapDialoglNode.SetVisible = function(self, bVisible)
-  -- function num : 0_8
+function UIN32MultiLineMapDialoglNode:SetVisible(bVisible)
   if not bVisible then
-    (self.unReadAni):Stop()
-    ;
-    (self.animation):Stop()
+    self.unReadAni:Stop()
+    self.animation:Stop()
   end
-  ;
-  (self:GetGameObject()):SetActive(bVisible)
+  self:GetGameObject():SetActive(bVisible)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapDialoglNode.GetBtn = function(self)
-  -- function num : 0_9
+function UIN32MultiLineMapDialoglNode:GetBtn()
   return self._btnGo
 end
-
-

@@ -1,77 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_feature_step_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local BuffChangeFeatureStepPointType = {Value = 1, ByLayer = 2}
 _enum("BuffChangeFeatureStepPointType", BuffChangeFeatureStepPointType)
 _class("BuffLogicChangeFeatureStepPoint", BuffLogicBase)
 BuffLogicChangeFeatureStepPoint = BuffLogicChangeFeatureStepPoint
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicChangeFeatureStepPoint.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : BuffChangeFeatureStepPointType
+function BuffLogicChangeFeatureStepPoint:Constructor(buffInstance, logicParam)
   self._modifyValue = logicParam.modifyValue or 0
   self._modifyType = logicParam.modifyType or BuffChangeFeatureStepPointType.Value
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-  end
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeFeatureStepPoint.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV, BuffChangeFeatureStepPointType
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+function BuffLogicChangeFeatureStepPoint:DoLogic(notify)
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   if not lsvcFeature:HasFeatureType(FeatureType.StepPoint) then
-    return 
+    return
   end
   local modifyValue = self._modifyValue
   if self._modifyType == BuffChangeFeatureStepPointType.Value then
     modifyValue = self._modifyValue
-  else
-    if self._modifyType == BuffChangeFeatureStepPointType.ByLayer then
-      local layerEntity = self._entity
-      local curMarkLayer = (self._buffLogicService):GetBuffLayer(layerEntity, self._layerType)
-      if curMarkLayer then
-        modifyValue = modifyValue * curMarkLayer
-      else
-        modifyValue = 0
-      end
+  elseif self._modifyType == BuffChangeFeatureStepPointType.ByLayer then
+    local layerEntity = self._entity
+    local curMarkLayer = self._buffLogicService:GetBuffLayer(layerEntity, self._layerType)
+    if curMarkLayer then
+      modifyValue = modifyValue * curMarkLayer
+    else
+      modifyValue = 0
     end
   end
-  do
-    local oldCount = lsvcFeature:GetCurStepPoint()
-    lsvcFeature:ChangeCurStepPoint(modifyValue)
-    local curCount = lsvcFeature:GetCurStepPoint()
-    local buffResult = BuffResultChangeFeatureStepPoint:New(curCount, oldCount, modifyValue)
-    return buffResult
-  end
+  local oldCount = lsvcFeature:GetCurStepPoint()
+  lsvcFeature:ChangeCurStepPoint(modifyValue)
+  local curCount = lsvcFeature:GetCurStepPoint()
+  local buffResult = BuffResultChangeFeatureStepPoint:New(curCount, oldCount, modifyValue)
+  return buffResult
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeFeatureStepPoint.DoOverlap = function(self)
-  -- function num : 0_2
+function BuffLogicChangeFeatureStepPoint:DoOverlap()
   return self:DoLogic()
 end
 
 _class("BuffLogicChangeFeatureMaxStepPoint", BuffLogicBase)
 BuffLogicChangeFeatureMaxStepPoint = BuffLogicChangeFeatureMaxStepPoint
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicChangeFeatureMaxStepPoint.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicChangeFeatureMaxStepPoint:Constructor(buffInstance, logicParam)
   self._modifyValue = logicParam.modifyValue or 0
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeFeatureMaxStepPoint.DoLogic = function(self, notify)
-  -- function num : 0_4 , upvalues : _ENV
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+function BuffLogicChangeFeatureMaxStepPoint:DoLogic(notify)
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   if not lsvcFeature:HasFeatureType(FeatureType.StepPoint) then
-    return 
+    return
   end
   local modifyValue = self._modifyValue
   local oldCount = lsvcFeature:GetMaxStepPoint()
@@ -81,29 +57,21 @@ BuffLogicChangeFeatureMaxStepPoint.DoLogic = function(self, notify)
   return buffResult
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeFeatureMaxStepPoint.DoOverlap = function(self)
-  -- function num : 0_5
+function BuffLogicChangeFeatureMaxStepPoint:DoOverlap()
   return self:DoLogic()
 end
 
 _class("BuffLogicChangeFeatureRecoverStepPoint", BuffLogicBase)
 BuffLogicChangeFeatureRecoverStepPoint = BuffLogicChangeFeatureRecoverStepPoint
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicChangeFeatureRecoverStepPoint.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_6
+function BuffLogicChangeFeatureRecoverStepPoint:Constructor(buffInstance, logicParam)
   self._modifyValue = logicParam.modifyValue or 0
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeFeatureRecoverStepPoint.DoLogic = function(self, notify)
-  -- function num : 0_7 , upvalues : _ENV
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+function BuffLogicChangeFeatureRecoverStepPoint:DoLogic(notify)
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   if not lsvcFeature:HasFeatureType(FeatureType.StepPoint) then
-    return 
+    return
   end
   local modifyValue = self._modifyValue
   local oldCount = lsvcFeature:GetRecoverStepPoint()
@@ -113,32 +81,24 @@ BuffLogicChangeFeatureRecoverStepPoint.DoLogic = function(self, notify)
   return buffResult
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeFeatureRecoverStepPoint.DoOverlap = function(self)
-  -- function num : 0_8
+function BuffLogicChangeFeatureRecoverStepPoint:DoOverlap()
   return self:DoLogic()
 end
 
 _class("BuffLogicChangeFeatureRecoverStepPointForLinkUI", BuffLogicBase)
 BuffLogicChangeFeatureRecoverStepPointForLinkUI = BuffLogicChangeFeatureRecoverStepPointForLinkUI
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicChangeFeatureRecoverStepPointForLinkUI.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_9
+function BuffLogicChangeFeatureRecoverStepPointForLinkUI:Constructor(buffInstance, logicParam)
   self._isRevert = logicParam.isRevert or 0
   self._modifyValue = logicParam.modifyValue or 0
   self._stepMin = logicParam.stepMin or 0
   self._stepMax = logicParam.stepMax or 0
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeFeatureRecoverStepPointForLinkUI.DoLogic = function(self, notify)
-  -- function num : 0_10 , upvalues : _ENV
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+function BuffLogicChangeFeatureRecoverStepPointForLinkUI:DoLogic(notify)
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   if not lsvcFeature:HasFeatureType(FeatureType.StepPoint) then
-    return 
+    return
   end
   local buffSeqID = self:GetBuffSeq()
   local modifyValue = self._modifyValue
@@ -146,11 +106,6 @@ BuffLogicChangeFeatureRecoverStepPointForLinkUI.DoLogic = function(self, notify)
   return buffResult
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeFeatureRecoverStepPointForLinkUI.DoOverlap = function(self)
-  -- function num : 0_11
+function BuffLogicChangeFeatureRecoverStepPointForLinkUI:DoOverlap()
   return self:DoLogic()
 end
-
-

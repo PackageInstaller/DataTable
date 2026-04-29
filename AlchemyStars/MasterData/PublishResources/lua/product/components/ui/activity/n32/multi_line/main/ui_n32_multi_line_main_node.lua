@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n32/multi_line/main/ui_n32_multi_line_main_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN32MultiLineMainNode", UICustomWidget)
 UIN32MultiLineMainNode = UIN32MultiLineMainNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN32MultiLineMainNode.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN32MultiLineMainNode:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMainNode.InitWidget = function(self)
-  -- function num : 0_1
+function UIN32MultiLineMainNode:InitWidget()
   self.txtDescM = self:GetUIComponent("UILocalizationText", "txtDescM")
   self.txtDescB = self:GetUIComponent("UILocalizationText", "txtDescB")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
@@ -25,123 +15,81 @@ UIN32MultiLineMainNode.InitWidget = function(self)
   self.unReadAni = self:GetUIComponent("Animation", "unReadAni")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMainNode.SetData = function(self, index, cfg, multilineData, isRead)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN32MultiLineMainNode:SetData(index, cfg, multilineData, isRead)
   self._index = index
   self._cfg = cfg
   self._multilineData = multilineData
-  ;
-  (self.txtName):SetText((StringTable.Get)(self:GetNameKey(index)))
-  ;
-  (self.unReadGo):SetActive(not isRead)
+  self.txtName:SetText(StringTable.Get(self:GetNameKey(index)))
+  self.unReadGo:SetActive(not isRead)
   self._isRead = isRead
   if isRead then
-    local unPassM, unPassB, unLockAllB, unLockZeroB = (self._multilineData):CheckFolderState(index)
-    if unPassM > 0 then
-      (self.txtDescM):SetText((StringTable.Get)("str_n32_multiline_main_folder_unpass"))
+    local unPassM, unPassB, unLockAllB, unLockZeroB = self._multilineData:CheckFolderState(index)
+    if 0 < unPassM then
+      self.txtDescM:SetText(StringTable.Get("str_n32_multiline_main_folder_unpass"))
     else
-      ;
-      (self.txtDescM):SetText((StringTable.Get)("str_n32_multiline_main_forlder_pass"))
+      self.txtDescM:SetText(StringTable.Get("str_n32_multiline_main_forlder_pass"))
     end
     if unLockZeroB then
-      (self.txtDescB):SetText("")
-    else
-      if unPassB > 0 then
-        if unLockAllB then
-          (self.txtDescB):SetText((StringTable.Get)("str_n32_multiline_branch_folder_unpass_format", unPassB))
-        else
-          ;
-          (self.txtDescB):SetText((StringTable.Get)("str_n32_multiline_branch_folder_unpass_normal"))
-        end
+      self.txtDescB:SetText("")
+    elseif 0 < unPassB then
+      if unLockAllB then
+        self.txtDescB:SetText(StringTable.Get("str_n32_multiline_branch_folder_unpass_format", unPassB))
       else
-        ;
-        (self.txtDescB):SetText((StringTable.Get)("str_n32_multiline_branch_folder_pass"))
+        self.txtDescB:SetText(StringTable.Get("str_n32_multiline_branch_folder_unpass_normal"))
       end
+    else
+      self.txtDescB:SetText(StringTable.Get("str_n32_multiline_branch_folder_pass"))
     end
   else
-    do
-      ;
-      (self.txtDescM):SetText("")
-      ;
-      (self.txtDescB):SetText("")
-      ;
-      (self.unReadAni):Play("uieff_UIN32MultiLineMainNode_starloop")
-    end
+    self.txtDescM:SetText("")
+    self.txtDescB:SetText("")
+    self.unReadAni:Play("uieff_UIN32MultiLineMainNode_starloop")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMainNode.CheckAndPlayUnReadEff = function(self)
-  -- function num : 0_3
+function UIN32MultiLineMainNode:CheckAndPlayUnReadEff()
   if not self._isRead then
-    (self.unReadAni):Play("uieff_UIN32MultiLineMainNode_starloop")
+    self.unReadAni:Play("uieff_UIN32MultiLineMainNode_starloop")
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMainNode.NameBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  if not (self:RootUIOwner()):CheckComponentTime() then
-    return 
+function UIN32MultiLineMainNode:NameBtnOnClick(go)
+  if not self:RootUIOwner():CheckComponentTime() then
+    return
   end
-  local lastPassFolderNum = (self:RootUIOwner()):GetUnlockFolderNum()
-  ;
-  (self._multilineData):SnapFolderContexBeforeEnterMap(lastPassFolderNum)
+  local lastPassFolderNum = self:RootUIOwner():GetUnlockFolderNum()
+  self._multilineData:SnapFolderContexBeforeEnterMap(lastPassFolderNum)
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV
-    if not (self._multilineData):IsForlderHasRead((self._cfg).ID) then
-      (self._multilineData):SetFoolderAsRead(TT, (self._cfg).ID)
+    if not self._multilineData:IsForlderHasRead(self._cfg.ID) then
+      self._multilineData:SetFoolderAsRead(TT, self._cfg.ID)
       self:Lock("UIN32MultiLineMainNode_SetForlderMark")
-      ;
-      (self.unReadAni):Stop()
-      ;
-      (self.animation):Play("uieff_UIN32MultiLineMainNode_click")
+      self.unReadAni:Stop()
+      self.animation:Play("uieff_UIN32MultiLineMainNode_click")
       YIELD(TT, 800)
       self:UnLock("UIN32MultiLineMainNode_SetForlderMark")
     end
     self:Lock("UIN32MultiLineMain_OutAni")
-    ;
-    (self:RootUIOwner()):PlayOutAniDirect()
+    self:RootUIOwner():PlayOutAniDirect()
     YIELD(TT, 1420)
     self:UnLock("UIN32MultiLineMain_OutAni")
-    ;
-    (self:RootUIOwner()):GetRenderTexture(function(cache_rt)
-      -- function num : 0_4_0_0 , upvalues : self, _ENV
+    self:RootUIOwner():GetRenderTexture(function(cache_rt)
       self:SwitchState(UIStateType.UIN32MultiLineMapController, self._index, nil, nil, cache_rt)
-    end
-)
-  end
-)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMainNode.GetNameKey = function(self, index)
-  -- function num : 0_5
+function UIN32MultiLineMainNode:GetNameKey(index)
   return "str_n32_multiline_name_" .. index
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMainNode.PlayAni = function(self, right)
-  -- function num : 0_6
+function UIN32MultiLineMainNode:PlayAni(right)
   if right then
-    (self.animation):Play("uieff_UIN32MultiLineMainNode_in01")
+    self.animation:Play("uieff_UIN32MultiLineMainNode_in01")
   else
-    ;
-    (self.animation):Play("uieff_UIN32MultiLineMainNode_in")
+    self.animation:Play("uieff_UIN32MultiLineMainNode_in")
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMainNode.GetBtn = function(self)
-  -- function num : 0_7
+function UIN32MultiLineMainNode:GetBtn()
   return self.nameBtnGo
 end
-
-

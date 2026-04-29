@@ -1,13 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2000411/cfg_skill_view_501006.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterAnimation,animName = Atk; PlayAudio,audioID = 7002,audioType=1; Wait,waitTime=1650; DataSelectScopeGridRange,effectType=1; DataSortScopeGridRange,sortType=8; DataSelectScopeGridRangeIndex,index=1; DataSelectBuff,buffIndex=1; PlayGridRangeEffect,effectID=1134,step=4,offset=0.5|0.5,label=playRangeEffect; Wait,waitTime=100; PlayAudio,audioID = 7003,audioType=1; PlayGridRangeBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; PlayTargetAddBuff,buffEffectType=501006; Wait,waitTime=100; DataSelectNextScopeGridRange; Jump,condition=CheckCurrentScopeGridRangeIndexValid,goto=playRangeEffect; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName = Atk; PlayAudio,audioID = 7002,audioType=1; Wait,waitTime=1650; DataSelectScopeGridRange,effectType=1; DataSortScopeGridRange,sortType=8; DataSelectScopeGridRangeIndex,index=1; DataSelectBuff,buffIndex=1; PlayGridRangeEffect,effectID=1134,step=4,offset=0.5|0.5,label=playRangeEffect; Wait,waitTime=100; PlayAudio,audioID = 7003,audioType=1; PlayGridRangeBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; PlayTargetAddBuff,buffEffectType=501006; Wait,waitTime=100; DataSelectNextScopeGridRange; Jump,condition=CheckCurrentScopeGridRangeIndexValid,goto=playRangeEffect; "
+    }
+  }
 }
 return config, "ID", key
-

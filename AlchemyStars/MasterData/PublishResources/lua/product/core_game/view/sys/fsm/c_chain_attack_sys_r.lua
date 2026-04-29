@@ -1,179 +1,124 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_chain_attack_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("chain_attack_state_system")
 _class("ClientChainAttackSystem_Render", ChainAttackStateSystem)
 ClientChainAttackSystem_Render = ClientChainAttackSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientChainAttackSystem_Render._DoRenderBeforeCalcChain = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function ClientChainAttackSystem_Render:_DoRenderBeforeCalcChain(TT)
   local ntBeforeCalcChainSkill = NTBeforeCalcChainSkill:New()
-  ;
-  ((self._world):GetService("PlayBuff")):PlayBuffView(TT, ntBeforeCalcChainSkill)
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, ntBeforeCalcChainSkill)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientChainAttackSystem_Render._DoRenderShowSuperChainSkill = function(self, TT)
-  -- function num : 0_1
-  local chainAttackServiceRender = (self.world):GetService("ChainAttackRender")
+function ClientChainAttackSystem_Render:_DoRenderShowSuperChainSkill(TT)
+  local chainAttackServiceRender = self.world:GetService("ChainAttackRender")
   chainAttackServiceRender:_DoRenderShowSuperChainSkill(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientChainAttackSystem_Render._DoRenderShowChainAttack = function(self, TT, teamEntity)
-  -- function num : 0_2 , upvalues : _ENV
-  local chainAttackServiceRender = (self.world):GetService("ChainAttackRender")
+function ClientChainAttackSystem_Render:_DoRenderShowChainAttack(TT, teamEntity)
+  local chainAttackServiceRender = self.world:GetService("ChainAttackRender")
   chainAttackServiceRender:_DoRenderShowChainAttack(TT, teamEntity)
-  local playSkillSvc = (self._world):GetService("PlaySkill")
+  local playSkillSvc = self._world:GetService("PlaySkill")
   playSkillSvc:ShowPlayerEntity(teamEntity)
-  ;
-  (TaskManager:GetInstance()):CoreGameStartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : chainAttackServiceRender
+  TaskManager:GetInstance():CoreGameStartTask(function(TT)
     chainAttackServiceRender:_StopFocusEffect()
-  end
-)
+  end)
   playSkillSvc:_ClearCombo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientChainAttackSystem_Render._DoRenderClearLastAttack = function(self)
-  -- function num : 0_3
-  local renderBattleSvc = (self._world):GetService("RenderBattle")
+function ClientChainAttackSystem_Render:_DoRenderClearLastAttack()
+  local renderBattleSvc = self._world:GetService("RenderBattle")
   local comboNum = 0
   renderBattleSvc:SetComboNum(comboNum)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientChainAttackSystem_Render._DoRenderInWave = function(self, TT, traps, monsters)
-  -- function num : 0_4
-  local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
+function ClientChainAttackSystem_Render:_DoRenderInWave(TT, traps, monsters)
+  local sMonsterShowRender = self._world:GetService("MonsterShowRender")
   sMonsterShowRender:PlaySpawnInWave(TT, traps, monsters)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientChainAttackSystem_Render._DoRenderNotifyEnterAuroraTimeInChainSys = function(self, TT, isAuroraTime)
-  -- function num : 0_5 , upvalues : _ENV
+function ClientChainAttackSystem_Render:_DoRenderNotifyEnterAuroraTimeInChainSys(TT, isAuroraTime)
   if isAuroraTime then
-    local playbuffsvc = (self._world):GetService("PlayBuff")
+    local playbuffsvc = self._world:GetService("PlayBuff")
     playbuffsvc:PlayBuffView(TT, NTEnterAuroraTimeInChainSys:New())
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientChainAttackSystem_Render._DoRenderClearChainPath = function(self)
-  -- function num : 0_6
-  local rBoardEntity = (self._world):GetRenderBoardEntity()
-  ;
-  (rBoardEntity:RenderChainPath()):ClearRenderChainPath()
-  local playSkillSvc = (self._world):GetService("PlaySkill")
+function ClientChainAttackSystem_Render:_DoRenderClearChainPath()
+  local rBoardEntity = self._world:GetRenderBoardEntity()
+  rBoardEntity:RenderChainPath():ClearRenderChainPath()
+  local playSkillSvc = self._world:GetService("PlaySkill")
   playSkillSvc:_ClearCombo()
-  local renderBattleSvc = (self._world):GetService("RenderBattle")
+  local renderBattleSvc = self._world:GetService("RenderBattle")
   local comboNum = 0
   renderBattleSvc:SetComboNum(comboNum)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientChainAttackSystem_Render._DoRenderWaitPlaySkillTaskFinish = function(self, TT)
-  -- function num : 0_7
-  local playSkillService = (self._world):GetService("PlaySkill")
+function ClientChainAttackSystem_Render:_DoRenderWaitPlaySkillTaskFinish(TT)
+  local playSkillService = self._world:GetService("PlaySkill")
   local listWaitTask = playSkillService:GetWaitFreeList()
   self:_WaitTasksEnd(TT, listWaitTask)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientChainAttackSystem_Render._DoRenderPlayerBuffDelayed = function(self, TT, teamEntity)
-  -- function num : 0_8
-  local playBuffService = (self._world):GetService("PlayBuff")
+function ClientChainAttackSystem_Render:_DoRenderPlayerBuffDelayed(TT, teamEntity)
+  local playBuffService = self._world:GetService("PlayBuff")
   playBuffService:PlayPlayerTurnStartBuff(TT, teamEntity, nil, true)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientChainAttackSystem_Render._DoRenderResetAuroraTimeState = function(self, TT)
-  -- function num : 0_9
-  local battleRenderCmpt = (self._world):BattleRenderConfig()
+function ClientChainAttackSystem_Render:_DoRenderResetAuroraTimeState(TT)
+  local battleRenderCmpt = self._world:BattleRenderConfig()
   battleRenderCmpt:SetReEnterAuroraTimePlayed(false)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientChainAttackSystem_Render._WaitChainAttackTrapTaskEnd = function(self, TT)
-  -- function num : 0_10 , upvalues : _ENV
-  local trapRSvc = (self._world):GetService("TrapRender")
+function ClientChainAttackSystem_Render:_WaitChainAttackTrapTaskEnd(TT)
+  local trapRSvc = self._world:GetService("TrapRender")
   while not trapRSvc:IsTrapViewTaskOver() do
     YIELD(TT)
   end
   trapRSvc:ClearTrapViewTask()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientChainAttackSystem_Render._DoRenderShowAutoBeadSkill = function(self, TT, teamEntity)
-  -- function num : 0_11 , upvalues : _ENV
-  local autoBeadServiceRender = (self.world):GetService("AutoBeadRender")
+function ClientChainAttackSystem_Render:_DoRenderShowAutoBeadSkill(TT, teamEntity)
+  local autoBeadServiceRender = self.world:GetService("AutoBeadRender")
   autoBeadServiceRender:_DoRenderShowAutoBeadAttack(TT, teamEntity)
-  local playSkillSvc = (self._world):GetService("PlaySkill")
+  local playSkillSvc = self._world:GetService("PlaySkill")
   playSkillSvc:ShowPlayerEntity(teamEntity)
-  ;
-  (TaskManager:GetInstance()):CoreGameStartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : autoBeadServiceRender
+  TaskManager:GetInstance():CoreGameStartTask(function(TT)
     autoBeadServiceRender:_StopFocusEffect()
-  end
-)
+  end)
   playSkillSvc:_ClearCombo()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientChainAttackSystem_Render._DoRenderNotifyChainAttackFinish = function(self, TT, teamEntity, ntChainAttackFinish)
-  -- function num : 0_12 , upvalues : _ENV
+function ClientChainAttackSystem_Render:_DoRenderNotifyChainAttackFinish(TT, teamEntity, ntChainAttackFinish)
   if ntChainAttackFinish then
-    local playbuffsvc = (self._world):GetService("PlayBuff")
+    local playbuffsvc = self._world:GetService("PlayBuff")
     playbuffsvc:PlayBuffView(TT, NTChainAttackFinish:New(teamEntity))
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientChainAttackSystem_Render._DoRenderActiveSkillLinkLineRestorePos = function(self, TT, teamEntity, isActiveSkillLinkLine)
-  -- function num : 0_13 , upvalues : _ENV
+function ClientChainAttackSystem_Render:_DoRenderActiveSkillLinkLineRestorePos(TT, teamEntity, isActiveSkillLinkLine)
   if not isActiveSkillLinkLine then
-    return 
+    return
   end
-  local renderBattleStatCmpt = (self._world):RenderBattleStat()
+  local renderBattleStatCmpt = self._world:RenderBattleStat()
   renderBattleStatCmpt:SetPet1702361ActiveSkillPreviewState(false)
-  local teamLeader = (teamEntity:Team()):GetTeamLeaderEntity()
-  local es = (teamEntity:Team()):GetTeamPetEntities()
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local teamLeader = teamEntity:Team():GetTeamLeaderEntity()
+  local es = teamEntity:Team():GetTeamPetEntities()
+  local boardServiceRender = self._world:GetService("BoardRender")
   local casterPos = boardServiceRender:GetRealEntityGridPos(teamLeader)
-  local playBuffSvc = (self._world):GetService("PlayBuff")
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  local utilDataSvc = self._world:GetService("UtilData")
   local sourcePos, sourceDir = utilDataSvc:GetRenderActiveSkillLinkLineTeamPos()
   teamEntity:SetLocation(sourcePos, sourceDir)
   playBuffSvc:PlayBuffView(TT, NTActiveSkillLinkLineChainAttackFinish:New(teamEntity, casterPos))
-  teamLeader = (teamEntity:Team()):GetTeamLeaderEntity()
-  local boardEntity = (self._world):GetRenderBoardEntity()
+  teamLeader = teamEntity:Team():GetTeamLeaderEntity()
+  local boardEntity = self._world:GetRenderBoardEntity()
   local renderBoardCmpt = boardEntity:RenderBoard()
   local ghostEntityID = renderBoardCmpt:GetActiveLinkLineGhostEntityID()
-  local ghostEntity = (self._world):GetEntityByID(ghostEntityID)
+  local ghostEntity = self._world:GetEntityByID(ghostEntityID)
   if ghostEntity then
-    (self._world):DestroyEntity(ghostEntity)
+    self._world:DestroyEntity(ghostEntity)
   end
-  ;
-  (teamEntity:Location()):SetSyncToHPBarState(true)
+  teamEntity:Location():SetSyncToHPBarState(true)
   renderBoardCmpt:SetActiveLinkLineGhostEntityID(nil)
-  for i,petEntity in ipairs(es) do
+  for i, petEntity in ipairs(es) do
     petEntity:SetLocation(sourcePos, sourceDir)
     if petEntity:GetID() ~= teamLeader:GetID() then
       petEntity:SetViewVisible(false)
@@ -182,5 +127,3 @@ ClientChainAttackSystem_Render._DoRenderActiveSkillLinkLineRestorePos = function
     end
   end
 end
-
-

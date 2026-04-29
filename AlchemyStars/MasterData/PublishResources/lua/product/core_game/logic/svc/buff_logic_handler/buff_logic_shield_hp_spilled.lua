@@ -1,36 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_shield_hp_spilled.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddHPShieldHpSpilled", BuffLogicBase)
 BuffLogicAddHPShieldHpSpilled = BuffLogicAddHPShieldHpSpilled
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddHPShieldHpSpilled.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddHPShieldHpSpilled:Constructor(buffInstance, logicParam)
   self._addBuffID = logicParam.addBuffID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddHPShieldHpSpilled.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicAddHPShieldHpSpilled:DoLogic(notify)
   local hpSpilled = notify:GetHPSpilled()
   if not hpSpilled or hpSpilled <= 0 then
-    return 
+    return
   end
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local buffLogicSvc = (self._world):GetService("BuffLogic")
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local buffLogicSvc = self._world:GetService("BuffLogic")
   local buffInstance = buffLogicSvc:AddBuff(self._addBuffID, teamEntity, {hpSpilled = hpSpilled})
   return BuffResultAddHPShieldHpSpilled:New(buffInstance:BuffSeq())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddHPShieldHpSpilled.DoOverlap = function(self, logicParam)
-  -- function num : 0_2
+function BuffLogicAddHPShieldHpSpilled:DoOverlap(logicParam)
   return self:DoLogic()
 end
-
-

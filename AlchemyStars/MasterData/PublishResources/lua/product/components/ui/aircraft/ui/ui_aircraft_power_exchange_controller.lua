@@ -1,26 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_power_exchange_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPowerExchangeController", UIController)
 UIPowerExchangeController = UIPowerExchangeController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPowerExchangeController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPowerExchangeController:OnShow(uiParams)
   local sop = self:GetUIComponent("UISelectObjectPath", "currencymenu")
   self.currencyMenu = sop:SpawnObject("UICurrencyMenu")
-  ;
-  (self.currencyMenu):SetData({RoleAssetID.RoleAssetFirefly, RoleAssetID.RoleAssetPhyPoint})
-  self.fireFlyItem = (self.currencyMenu):GetItemByTypeId(RoleAssetID.RoleAssetFirefly)
+  self.currencyMenu:SetData({
+    RoleAssetID.RoleAssetFirefly,
+    RoleAssetID.RoleAssetPhyPoint
+  })
+  self.fireFlyItem = self.currencyMenu:GetItemByTypeId(RoleAssetID.RoleAssetFirefly)
   self:InitWidget()
-  self.airData = ((GameGlobal.GameLogic)()):GetModule(AircraftModule)
-  local roleModel = ((GameGlobal.GameLogic)()):GetModule(RoleModule)
-  ;
-  (self.fireFlyItem):SetText((math.floor)((self.airData):GetFirefly()) .. "/" .. (math.floor)((self.airData):GetMaxFirefly()))
-  self.exchangeRate = ((Cfg.cfg_aircraft_values)[4]).IntValue
-  self.maxPower = (self.airData):GetMaxHealthPoint()
+  self.airData = GameGlobal.GameLogic():GetModule(AircraftModule)
+  local roleModel = GameGlobal.GameLogic():GetModule(RoleModule)
+  self.fireFlyItem:SetText(math.floor(self.airData:GetFirefly()) .. "/" .. math.floor(self.airData:GetMaxFirefly()))
+  self.exchangeRate = Cfg.cfg_aircraft_values[4].IntValue
+  self.maxPower = self.airData:GetMaxHealthPoint()
   if self.maxPower < 1 then
     self.curPower = 0
     self.maxPower = 0
@@ -33,202 +27,134 @@ UIPowerExchangeController.OnShow = function(self, uiParams)
   self:RefreshFirflyWindowInfo()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPowerExchangeController.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPowerExchangeController:OnHide()
   if self.timeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.timeEvent)
+    GameGlobal.Timer():CancelEvent(self.timeEvent)
     self.timeEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPowerExchangeController.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPowerExchangeController:InitWidget()
   self.textExchangePowerValue = self:GetUIComponent("UILocalizationText", "TextExchangePowerValue")
   self.textExchangeFireflyValue = self:GetUIComponent("UILocalizationText", "TextExchangeFireflyValue")
   self.textExchangeTip = self:GetUIComponent("UILocalizationText", "TextExchangeTip")
   self.decreaseBtn = self:GetGameObject("ButtonExchangeDecrease")
   self.increaseBtn = self:GetGameObject("ButtonExchangeIncrease")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self.decreaseBtn), UIEvent.Hovered, function(go)
-    -- function num : 0_2_0 , upvalues : self
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self.decreaseBtn), UIEvent.Hovered, function(go)
     self:StartTimer(false)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self.decreaseBtn), UIEvent.Unhovered, function(go)
-    -- function num : 0_2_1 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self.decreaseBtn), UIEvent.Unhovered, function(go)
     self:StopTimer()
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self.decreaseBtn), UIEvent.Release, function(go)
-    -- function num : 0_2_2 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self.decreaseBtn), UIEvent.Release, function(go)
     self:StopTimer()
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self.increaseBtn), UIEvent.Hovered, function(go)
-    -- function num : 0_2_3 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self.increaseBtn), UIEvent.Hovered, function(go)
     self:StartTimer(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self.increaseBtn), UIEvent.Unhovered, function(go)
-    -- function num : 0_2_4 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self.increaseBtn), UIEvent.Unhovered, function(go)
     self:StopTimer()
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self.increaseBtn), UIEvent.Release, function(go)
-    -- function num : 0_2_5 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self.increaseBtn), UIEvent.Release, function(go)
     self:StopTimer()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPowerExchangeController.RefreshFirflyWindowInfo = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIPowerExchangeController:RefreshFirflyWindowInfo()
   local curFirefly = self.curPower * self.exchangeRate
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.textExchangePowerValue).text = self.curPower
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.textExchangeFireflyValue).text = "+" .. curFirefly
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.textExchangeTip).text = (string.format)((StringTable.Get)("str_aircraft_tip_exchange"), self.curPower, curFirefly)
+  self.textExchangePowerValue.text = self.curPower
+  self.textExchangeFireflyValue.text = "+" .. curFirefly
+  self.textExchangeTip.text = string.format(StringTable.Get("str_aircraft_tip_exchange"), self.curPower, curFirefly)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPowerExchangeController.StartTimer = function(self, isIncrease)
-  -- function num : 0_4 , upvalues : _ENV
+function UIPowerExchangeController:StartTimer(isIncrease)
   if self.timeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.timeEvent)
+    GameGlobal.Timer():CancelEvent(self.timeEvent)
     self.timeEvent = nil
   end
-  self.timeEvent = ((GameGlobal.Timer)()):AddEvent(500, function()
-    -- function num : 0_4_0 , upvalues : self, isIncrease
+  self.timeEvent = GameGlobal.Timer():AddEvent(500, function()
     self:StepCount(isIncrease)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPowerExchangeController.StopTimer = function(self, isIncrease)
-  -- function num : 0_5 , upvalues : _ENV
+function UIPowerExchangeController:StopTimer(isIncrease)
   if self.timeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.timeEvent)
+    GameGlobal.Timer():CancelEvent(self.timeEvent)
     self.timeEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPowerExchangeController.StepCount = function(self, isIncrease)
-  -- function num : 0_6 , upvalues : _ENV
-  self.timeEvent = ((GameGlobal.Timer)()):AddEvent(300, function()
-    -- function num : 0_6_0 , upvalues : isIncrease, self
+function UIPowerExchangeController:StepCount(isIncrease)
+  self.timeEvent = GameGlobal.Timer():AddEvent(300, function()
     if isIncrease then
       self:ButtonExchangeIncreaseOnClick()
     else
       self:ButtonExchangeDecreaseOnClick()
     end
     self:StepCount(isIncrease)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPowerExchangeController.ButtonExchangeIncreaseOnClick = function(self, go)
-  -- function num : 0_7
-  if self.maxPower <= self.curPower then
+function UIPowerExchangeController:ButtonExchangeIncreaseOnClick(go)
+  if self.curPower >= self.maxPower then
     self.curPower = self.maxPower
-    return 
+    return
   end
   self.curPower = self.curPower + 1
   self:RefreshFirflyWindowInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPowerExchangeController.ButtonExchangeDecreaseOnClick = function(self, go)
-  -- function num : 0_8
+function UIPowerExchangeController:ButtonExchangeDecreaseOnClick(go)
   if self.curPower <= self.minPower then
     self.curPower = self.minPower
-    return 
+    return
   end
   self.curPower = self.curPower - 1
   self:RefreshFirflyWindowInfo()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPowerExchangeController.ButtonExchangeMaxOnClick = function(self, go)
-  -- function num : 0_9
-  if self.maxPower <= self.curPower then
+function UIPowerExchangeController:ButtonExchangeMaxOnClick(go)
+  if self.curPower >= self.maxPower then
     self.curPower = self.maxPower
-    return 
+    return
   end
   self.curPower = self.maxPower
   self:RefreshFirflyWindowInfo()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPowerExchangeController.ButtonExchangeMinOnClick = function(self, go)
-  -- function num : 0_10
+function UIPowerExchangeController:ButtonExchangeMinOnClick(go)
   if self.curPower <= self.minPower then
     self.curPower = self.minPower
-    return 
+    return
   end
   self.curPower = self.minPower
   self:RefreshFirflyWindowInfo()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPowerExchangeController.ButtonExchangeConfirmOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  if (self.airData):GetMaxFirefly() <= (self.airData):GetFirefly() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_aircraft_tip_firefly_full"))
-    return 
+function UIPowerExchangeController:ButtonExchangeConfirmOnClick(go)
+  if self.airData:GetFirefly() >= self.airData:GetMaxFirefly() then
+    ToastManager.ShowToast(StringTable.Get("str_aircraft_tip_firefly_full"))
+    return
   end
   if self.maxPower <= 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_aircraft_tip_phys_not_enough"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_aircraft_tip_phys_not_enough"))
+    return
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.Exchange, self)
+  GameGlobal.TaskManager():StartTask(self.Exchange, self)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPowerExchangeController.Exchange = function(self, TT)
-  -- function num : 0_12 , upvalues : _ENV
+function UIPowerExchangeController:Exchange(TT)
   self:Lock(self:GetName())
-  local result = (self.airData):RedeemFirefly(TT, self.curPower)
+  local result = self.airData:RedeemFirefly(TT, self.curPower)
   self:UnLock(self:GetName())
   if result:GetSucc() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshTopbar)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshTopbar)
     self:CloseDialog()
   else
-    ;
-    (ToastManager.ShowToast)((self.airData):GetErrorMsg(result:GetResult()))
+    ToastManager.ShowToast(self.airData:GetErrorMsg(result:GetResult()))
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPowerExchangeController.ButtonExchangeCancelOnClick = function(self, go)
-  -- function num : 0_13
+function UIPowerExchangeController:ButtonExchangeCancelOnClick(go)
   self:CloseDialog()
 end
-
-

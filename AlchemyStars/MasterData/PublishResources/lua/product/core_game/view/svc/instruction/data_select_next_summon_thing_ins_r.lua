@@ -1,37 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/data_select_next_summon_thing_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("DataSelectNextSummonThingInstruction", BaseInstruction)
 DataSelectNextSummonThingInstruction = DataSelectNextSummonThingInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSelectNextSummonThingInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function DataSelectNextSummonThingInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectNextSummonThingInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function DataSelectNextSummonThingInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   if skillEffectResultContainer == nil then
-    (Log.fatal)("DataSelectNextSummonThingInstruction has no result")
-    return 
+    Log.fatal("DataSelectNextSummonThingInstruction has no result")
+    return
   end
   local summonEverythingResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SummonEverything)
   if not summonEverythingResultArray then
-    return 
+    return
   end
-  assert(#summonEverythingResultArray > 0, "DataSelectNextSummonThing目前只对SummonEverything有效")
+  assert(0 < #summonEverythingResultArray, "DataSelectNextSummonThing目前只对SummonEverything有效")
   local summonIndex = phaseContext:GetCurSummonInEverythingIndex()
   summonIndex = summonIndex + 1
   phaseContext:SetCurSummonInEverythingIndex(-1)
   phaseContext:SetCurTargetEntityID(-1)
-  if #summonEverythingResultArray < summonIndex then
-    return 
+  if summonIndex > #summonEverythingResultArray then
+    return
   end
   local result = summonEverythingResultArray[summonIndex]
   local tmpData = result:GetMonsterData()
@@ -45,13 +35,10 @@ DataSelectNextSummonThingInstruction.DoInstruction = function(self, TT, casterEn
   if not entityWork then
     phaseContext:SetCurSummonInEverythingIndex(-1)
     phaseContext:SetCurTargetEntityID(-1)
-    return 
+    return
   end
   phaseContext:SetCurSummonInEverythingIndex(summonIndex)
   if entityWork then
     phaseContext:SetCurTargetEntityID(entityWorkID)
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
-
-

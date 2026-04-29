@@ -1,151 +1,79 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n31/hard/ui_n31_hard_level_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN31HardLevelItem", UICustomWidget)
 UIN31HardLevelItem = UIN31HardLevelItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN31HardLevelItem.Constructor = function(self, uiview)
-  -- function num : 0_0
+function UIN31HardLevelItem:Constructor(uiview)
   self._view = uiview
   self:OnShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31HardLevelItem.OnShow = function(self)
-  -- function num : 0_1
-  self._normal = (self._view):GetUIComponent("Image", "normal")
-  self._pass = (self._view):GetUIComponent("Image", "pass")
-  self._close = (self._view):GetUIComponent("Image", "close")
-  self._lockIcon = (self._view):GetUIComponent("Image", "lockIcon")
-  self._passBg = (self._view):GetUIComponent("Image", "passBg")
-  self._name = (self._view):GetUIComponent("UILocalizationText", "name")
-  self._titleOutline = (self._view):GetUIComponent("H3D.UGUI.CircleOutline", "name")
-  self._closeCanvasGroup = (self._view):GetUIComponent("CanvasGroup", "close")
-  self._localPos = (((self._view).transform).localPosition):Clone()
-  self._hadimg = (self._view):GetUIComponent("Image", "hadimg")
-  self._anim = (self._view):GetUIComponent("Animation", "anim")
+function UIN31HardLevelItem:OnShow()
+  self._normal = self._view:GetUIComponent("Image", "normal")
+  self._pass = self._view:GetUIComponent("Image", "pass")
+  self._close = self._view:GetUIComponent("Image", "close")
+  self._lockIcon = self._view:GetUIComponent("Image", "lockIcon")
+  self._passBg = self._view:GetUIComponent("Image", "passBg")
+  self._name = self._view:GetUIComponent("UILocalizationText", "name")
+  self._titleOutline = self._view:GetUIComponent("H3D.UGUI.CircleOutline", "name")
+  self._closeCanvasGroup = self._view:GetUIComponent("CanvasGroup", "close")
+  self._localPos = self._view.transform.localPosition:Clone()
+  self._hadimg = self._view:GetUIComponent("Image", "hadimg")
+  self._anim = self._view:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31HardLevelItem.OnHide = function(self)
-  -- function num : 0_2
+function UIN31HardLevelItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31HardLevelItem.SetData = function(self, idx, cfg, passInfo, cur, atlas)
-  -- function num : 0_3 , upvalues : _ENV
-  local levelCfg = (UIN31HardLevel.LevelCfg)[idx]
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._normal).sprite = atlas:GetSprite(levelCfg.normal)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._hadimg).sprite = atlas:GetSprite(levelCfg.close)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._name).color = levelCfg.titleColor
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._lockIcon).sprite = atlas:GetSprite(levelCfg.lock)
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._passBg).sprite = atlas:GetSprite(levelCfg.passBg)
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R7 in 'UnsetPending'
-
+function UIN31HardLevelItem:SetData(idx, cfg, passInfo, cur, atlas)
+  local levelCfg = UIN31HardLevel.LevelCfg[idx]
+  self._normal.sprite = atlas:GetSprite(levelCfg.normal)
+  self._hadimg.sprite = atlas:GetSprite(levelCfg.close)
+  self._name.color = levelCfg.titleColor
+  self._lockIcon.sprite = atlas:GetSprite(levelCfg.lock)
+  self._passBg.sprite = atlas:GetSprite(levelCfg.passBg)
   if levelCfg.titleOutlineColor then
-    (self._titleOutline).enabled = true
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._titleOutline).effectColor = levelCfg.titleOutlineColor
+    self._titleOutline.enabled = true
+    self._titleOutline.effectColor = levelCfg.titleOutlineColor
   else
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._titleOutline).enabled = false
+    self._titleOutline.enabled = false
   end
   if idx < cur then
     if not passInfo then
-      (Log.exception)("没有通关信息：", idx)
+      Log.exception("没有通关信息：", idx)
     end
-    ;
-    ((self._pass).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._closeCanvasGroup).alpha = 0
+    self._pass.gameObject:SetActive(true)
+    self._closeCanvasGroup.alpha = 0
+  elseif cur < idx then
+    self._pass.gameObject:SetActive(false)
+    self._closeCanvasGroup.alpha = 1
   else
-    if cur < idx then
-      ((self._pass).gameObject):SetActive(false)
-      -- DECOMPILER ERROR at PC62: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._closeCanvasGroup).alpha = 1
-    else
-      ;
-      ((self._normal).gameObject):SetActive(true)
-      ;
-      ((self._pass).gameObject):SetActive(false)
-      -- DECOMPILER ERROR at PC75: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._closeCanvasGroup).alpha = 0
-    end
+    self._normal.gameObject:SetActive(true)
+    self._pass.gameObject:SetActive(false)
+    self._closeCanvasGroup.alpha = 0
   end
-  local missionCfg = (Cfg.cfg_campaign_mission)[cfg.CampaignMissionId]
-  ;
-  (self._name):SetText((StringTable.Get)(missionCfg.Name))
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local missionCfg = Cfg.cfg_campaign_mission[cfg.CampaignMissionId]
+  self._name:SetText(StringTable.Get(missionCfg.Name))
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local playerId = roleModule:GetPstId()
   self.key = playerId .. "UIN31HardLevelBtnTips" .. cfg.CampaignMissionId
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31HardLevelItem.LocalPosition = function(self)
-  -- function num : 0_4
+function UIN31HardLevelItem:LocalPosition()
   return self._localPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31HardLevelItem.Anim_Pass = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local value = (LocalDB.GetInt)(self.key, 2)
+function UIN31HardLevelItem:Anim_Pass()
+  local value = LocalDB.GetInt(self.key, 2)
   if value == 2 then
-    (LocalDB.SetInt)(self.key, 1)
-    ;
-    (self._anim):Play("uieff_UIN31HardLevel_Finish")
+    LocalDB.SetInt(self.key, 1)
+    self._anim:Play("uieff_UIN31HardLevel_Finish")
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31HardLevelItem.Anim_Open = function(self)
-  -- function num : 0_6
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._closeCanvasGroup).alpha = 1
-  ;
-  (self._anim):Play("uieff_UIN31HardLevel_lock")
+function UIN31HardLevelItem:Anim_Open()
+  self._closeCanvasGroup.alpha = 1
+  self._anim:Play("uieff_UIN31HardLevel_lock")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31HardLevelItem.SetActive = function(self, bShow)
-  -- function num : 0_7
-  ((self._view).gameObject):SetActive(bShow)
+function UIN31HardLevelItem:SetActive(bShow)
+  self._view.gameObject:SetActive(bShow)
 end
-
-

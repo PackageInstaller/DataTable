@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_grid_range_visible_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayGridRangeVisibleInstruction", BaseInstruction)
 PlayGridRangeVisibleInstruction = PlayGridRangeVisibleInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayGridRangeVisibleInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayGridRangeVisibleInstruction:Constructor(paramList)
   self._visible = tonumber(paramList.visible)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridRangeVisibleInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayGridRangeVisibleInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local scopeGridRange = phaseContext:GetScopeGridRange()
   if not scopeGridRange then
     return InstructionConst.PhaseEnd
@@ -27,36 +17,28 @@ PlayGridRangeVisibleInstruction.DoInstruction = function(self, TT, casterEntity,
   end
   local curScopeGridRangeIndex = phaseContext:GetCurScopeGridRangeIndex()
   if maxScopeRangeCount < curScopeGridRangeIndex then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
-  local pieceSvc = (self._world):GetService("Piece")
-  for _,range in pairs(scopeGridRange) do
+  local pieceSvc = self._world:GetService("Piece")
+  for _, range in pairs(scopeGridRange) do
     if range then
       local posList = range[curScopeGridRangeIndex]
       if posList then
-        local len = (table.count)(posList)
+        local len = table.count(posList)
         for i = 1, len do
           local pos = posList[i]
           local pieceEntity = pieceSvc:FindPieceEntity(pos)
-          ;
-          ((pieceEntity:View()):GetGameObject()):SetActive(self._visible == 1)
-          ;
-          (pieceEntity:View()):SetViewVisible(self._visible == 1)
+          pieceEntity:View():GetGameObject():SetActive(self._visible == 1)
+          pieceEntity:View():SetViewVisible(self._visible == 1)
         end
       end
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridRangeVisibleInstruction.GetCacheResource = function(self)
-  -- function num : 0_2
+function PlayGridRangeVisibleInstruction:GetCacheResource()
   local t = {}
   return t
 end
-
-

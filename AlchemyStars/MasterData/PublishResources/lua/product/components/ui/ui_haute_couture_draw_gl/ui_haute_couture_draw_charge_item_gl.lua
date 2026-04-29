@@ -1,36 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_gl/ui_haute_couture_draw_charge_item_gl.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawChargeItemGL", UIHauteCoutureDrawChargeItemBase)
 UIHauteCoutureDrawChargeItemGL = UIHauteCoutureDrawChargeItemGL
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawChargeItemGL.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHauteCoutureDrawChargeItemGL:OnShow(uiParams)
   self:InitWidgets()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeItemGL.OnHide = function(self)
-  -- function num : 0_1
+function UIHauteCoutureDrawChargeItemGL:OnHide()
   self:ClearTimer()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeItemGL.InitWidgets = function(self, uiParams)
-  -- function num : 0_2
+function UIHauteCoutureDrawChargeItemGL:InitWidgets(uiParams)
   self:InitWidgetsBase()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeItemGL.GetCountStrKey = function(self)
-  -- function num : 0_3
+function UIHauteCoutureDrawChargeItemGL:GetCountStrKey()
   return "str_senior_skin_draw_gift_count_gl"
 end
-
-

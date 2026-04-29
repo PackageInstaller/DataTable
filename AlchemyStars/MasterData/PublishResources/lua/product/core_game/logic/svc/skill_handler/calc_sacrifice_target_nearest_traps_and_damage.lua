@@ -1,47 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_sacrifice_target_nearest_traps_and_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SacrificeTargetNearestTrapsAndDamage", Object)
 SkillEffectCalc_SacrificeTargetNearestTrapsAndDamage = SkillEffectCalc_SacrificeTargetNearestTrapsAndDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SacrificeTargetNearestTrapsAndDamage.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SacrificeTargetNearestTrapsAndDamage:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SacrificeTargetNearestTrapsAndDamage.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_SacrificeTargetNearestTrapsAndDamage:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
     if result then
-      (table.insert)(results, result)
+      table.insert(results, result)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SacrificeTargetNearestTrapsAndDamage._CalculateSingleTarget = function(self, skillEffectCalcParam, targetID)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_SacrificeTargetNearestTrapsAndDamage:_CalculateSingleTarget(skillEffectCalcParam, targetID)
   local param = skillEffectCalcParam.skillEffectParam
-  local defenderEntity = (self._world):GetEntityByID(targetID)
+  local defenderEntity = self._world:GetEntityByID(targetID)
   local defenderPos = defenderEntity:GetGridPosition()
-  local utilSvc = (self._world):GetService("UtilData")
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilSvc = self._world:GetService("UtilData")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local limitCount = param:GetTrapLimit()
   local checkTrapIDList = param:GetCheckTrapIDList()
   local traps, findTrapPosList, trapIDs = utilScopeSvc:SelectNearestTrapsOnPos(checkTrapIDList, defenderPos, limitCount)
   local trapCount = #traps
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local damageResults = {}
   local mainBasePercent = param:GetMainBasePercent()
   if mainBasePercent then
@@ -52,34 +39,34 @@ SkillEffectCalc_SacrificeTargetNearestTrapsAndDamage._CalculateSingleTarget = fu
       mainFormulaID = 100
     end
     local mainSkillDamageParam = SkillDamageEffectParam:New({
-percent = {mainBasePercent}
-, addPercent = mainAddPercent, formulaID = mainFormulaID, damageStageIndex = 1})
+      percent = {mainBasePercent},
+      addPercent = mainAddPercent,
+      formulaID = mainFormulaID,
+      damageStageIndex = 1
+    })
     local mainDamageStageIndex = mainSkillDamageParam:GetSkillEffectDamageStageIndex()
-    local nMianTotalDamage, mainListDamageInfo = (self._skillEffectService):ComputeSkillDamage(casterEntity, casterEntity:GetGridPosition(), defenderEntity, defenderEntity:GetGridPosition(), skillEffectCalcParam.skillID, mainSkillDamageParam, SkillEffectType.SacrificeTargetNearestTrapsAndDamage, mainDamageStageIndex)
-    local mainDamageResult = (self._skillEffectService):NewSkillDamageEffectResult(defenderPos, targetID, nMianTotalDamage, mainListDamageInfo, mainDamageStageIndex)
-    ;
-    (table.insert)(damageResults, mainDamageResult)
+    local nMianTotalDamage, mainListDamageInfo = self._skillEffectService:ComputeSkillDamage(casterEntity, casterEntity:GetGridPosition(), defenderEntity, defenderEntity:GetGridPosition(), skillEffectCalcParam.skillID, mainSkillDamageParam, SkillEffectType.SacrificeTargetNearestTrapsAndDamage, mainDamageStageIndex)
+    local mainDamageResult = self._skillEffectService:NewSkillDamageEffectResult(defenderPos, targetID, nMianTotalDamage, mainListDamageInfo, mainDamageStageIndex)
+    table.insert(damageResults, mainDamageResult)
   end
-  do
-    local basePercent = param:GetBasePercent()
-    local addVal = param:GetAddValue()
-    local addPercent = addVal
-    local curFormulaID = param:GetSacrificeFormulaID()
-    if curFormulaID == nil then
-      curFormulaID = 100
-    end
-    local skillDamageParam = SkillDamageEffectParam:New({
-percent = {basePercent}
-, addPercent = addPercent, formulaID = curFormulaID, damageStageIndex = 1})
-    local damageStageIndex = skillDamageParam:GetSkillEffectDamageStageIndex()
-    for i = 1, trapCount do
-      local nTotalDamage, listDamageInfo = (self._skillEffectService):ComputeSkillDamage(casterEntity, casterEntity:GetGridPosition(), defenderEntity, defenderEntity:GetGridPosition(), skillEffectCalcParam.skillID, skillDamageParam, SkillEffectType.SacrificeTargetNearestTrapsAndDamage, damageStageIndex)
-      local damageResult = (self._skillEffectService):NewSkillDamageEffectResult(defenderPos, targetID, nTotalDamage, listDamageInfo, damageStageIndex)
-      ;
-      (table.insert)(damageResults, damageResult)
-    end
-    return SkillEffectSacrificeTargetNearestTrapsAndDamageResult:New(trapIDs, damageResults)
+  local basePercent = param:GetBasePercent()
+  local addVal = param:GetAddValue()
+  local addPercent = addVal
+  local curFormulaID = param:GetSacrificeFormulaID()
+  if curFormulaID == nil then
+    curFormulaID = 100
   end
+  local skillDamageParam = SkillDamageEffectParam:New({
+    percent = {basePercent},
+    addPercent = addPercent,
+    formulaID = curFormulaID,
+    damageStageIndex = 1
+  })
+  local damageStageIndex = skillDamageParam:GetSkillEffectDamageStageIndex()
+  for i = 1, trapCount do
+    local nTotalDamage, listDamageInfo = self._skillEffectService:ComputeSkillDamage(casterEntity, casterEntity:GetGridPosition(), defenderEntity, defenderEntity:GetGridPosition(), skillEffectCalcParam.skillID, skillDamageParam, SkillEffectType.SacrificeTargetNearestTrapsAndDamage, damageStageIndex)
+    local damageResult = self._skillEffectService:NewSkillDamageEffectResult(defenderPos, targetID, nTotalDamage, listDamageInfo, damageStageIndex)
+    table.insert(damageResults, damageResult)
+  end
+  return SkillEffectSacrificeTargetNearestTrapsAndDamageResult:New(trapIDs, damageResults)
 end
-
-

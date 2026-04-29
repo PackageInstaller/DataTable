@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/cutscene/cutscene_wait_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("cutscene_base_ins_r")
 _class("CutsceneWaitInstruction", CutsceneBaseInstruction)
 CutsceneWaitInstruction = CutsceneWaitInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneWaitInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function CutsceneWaitInstruction:Constructor(paramList)
   self._waitTime = tonumber(paramList.waitTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneWaitInstruction.DoInstruction = function(self, TT, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function CutsceneWaitInstruction:DoInstruction(TT, phaseContext)
   if self._waitTime > 0 then
     YIELD(TT, self._waitTime)
   else
     YIELD(TT)
   end
 end
-
-

@@ -1,1231 +1,7266 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/cfg_check.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, TableName = 2, EnableNull = 3, CheckType = 4, CheckParamArray = 5, FieldName = 6, ParseType = 7, ParseDataArray = 8, ParseParam = 9, CheckParam1 = 10, CheckParam2 = 11, CheckParam3 = 12, EnableDefault = 13}
-local common = {"cfg_check", "ClassName", "cfg_ai", "LuaKey", "AILogicConfig", "ID", "TableKey", "cfg_battle_skill", "cfg_aircraft_central_room", "cfg_aircraft_room", "cfg_discovery.map_nodes", "id", "cfg_mission", "cfg_waypoint", "cfg_discovery.lines", "cfg_item_getway", "Getway1", "LuaBase", "Base", "Enum", "ItemGetwayType", "str_item", "cfg_jump", "Getway2", "Getway3", "Getway4", "Getway5", "cfg_item_relic", "BuffID", "cfg_buff", "cfg_level", "cfg_monster_wave", "CompleteConditionType", "CallBack", "cfg_maze_layer", "RandRule", "cfg_maze_rule_room", "FieldEqual", "RoomIDArray", "MissionID", "Type", "Range", "1", "3", "Action", "2", "FightLevel", "NeedLevel", "0", "NeedPower", "MonsterList", "cfg_monster", "NeedMissionList", "FirstAwardDropGroupID", "cfg_common_random", "AwardDropGroupID", "ThreeStarAwardDropGroupID", "ThreeStarCondition1", "cfg_threestarcondition", "ThreeStarCondition2", "ThreeStarCondition3", "cfg_campaign_mission", "4", "cfg_component_line_mission", "CampaignMissionId", "NeedMissionId", "cfg_component_tree_mission", "cfg_mission_chapter", "WayPointID", "MainChapterID", "cfg_discovery.chapterBeginPos", "cfg_mission_guide", "BattlePetList", "cfg_pet", "_CheckMissionGuide", "cfg_passive_skill", "cfg_quest", "JumpID", "UIJumpType", "Cond", "QuestCondition", "AcceptCond", "_CheckQuestJump", "cfg_component_quest", "QuestID", "WaveBeginRefreshID", "cfg_refresh", "WaveInternalRefresh", "TrapRefreshIDList", "TrapWeight", "cfg_refresh_trap", "MonsterRefreshIDList", "MonsterWeight", "cfg_refresh_monster", "MonsterIDList", "MonsterRefreshType", "MonsterRefreshPosType", "MonsterPosition", "<=", "TrapIDList", "cfg_trap", "TrapPosition", "TrapRotation", "cfg_res_instance_detail", "FightLevelid", "MinCostPower", "WordBuff", "cfg_word_buff", "AwardDropId", "cfg_drop", "DropID", "cfg_template_mail", "MailType", "MailValidTime", "35000000", "ClassID", "cfg_monster_class", "cfg_tower_detail", "FieldSole", "FirstDropId", "cfg_maze_pass_drop", "PassFixDropId", "cfg_quest_chat", "FirstWord", "cfg_quest_talk", "AwardItemID", "cfg_item", "AwardItemCount", "TriggerCondition", "AnswerID", "NextWord", "cfg_quest_chat_time", "ChatList", "cfg_aircraft_pet_stroy_refresh", "cfg_pet_story", "PetID", "EnterTriggerNeedPetsArray", "FirstPassMissionID", "cfg_aircraft_amusement_room", "StoryEventId", "cfg_role_head_image_lock_condition", "ConditionParam", "NeedRoomId", "cfg_aircraft_furniture_evaluate", "DropGroupIdId", "VisitPetDropGroupId", "cfg_aircraft_dispatch_room", "OneSpeed", "cfg_aircraft_dispatch_task", "AssignPetId", "DispatchTaskType", "Score", "CompleteTime", "ItemId", "TaskSite", "7", "cfg_aircraft_dispatch_award", "DropId", "ExtraAward", "cfg_aircraft_click_action_lib", "Audio", "cfg_adx2_audio", "cfg_role_head_frame", "FlagItem", "LockCondition", "cfg_role_head_frame_lock_condition", "cfg_role_head_image", "TrapType", "GroupTriggerTrapID", "SkillID", "LuaNestArray", "TriggerByRace", "AIID", "cfg_shop_giftmarket_goods", "cfg_mend_crux_award", "ItemNum", "cfg_item_title", "ConditionId", "cfg_condition", "CondID", "cfg_item_fifure", "cfg_homeland_event", "SkillType", "TriggerType", "SkillTriggerType", "TargetType", "SkillTargetType", "ScopeCenterType", "SkillScopeCenterType", "ScopeType", "SkillScopeType", "PreviewType", "SkillPreviewType", "EffectTable", "SkillEffectType", "ViewID", "FileSuffix", "cfg_skill_view_", "cfg_pet_battle_skill", "PickUpScopeType", "cfg_active_skill_preview", "cfg_preview_instruction_set", "ActiveTrigger", "LuaKeyIndex", "NotifyType", "DeactiveTrigger", "ExecTrigger", "UnloadTrigger", "ActiveLogic", "BuffTargetType", "cfg_effect", "LuaKeyAutoArray", "DeactiveLogic", "ExecLogic", "UnloadLogic", "LoadLogic", "ViewParams", "cfg_pet_grade", "NeedItem", "ArrayCount", "1000", "LuaItemPair", "cfg_pet_awakening", "cfg_pet_level", "cfg_pet_affinity_exp", "cfg_pet_skill", "cfg_work_skill", "ListKey", "ListEqual", "cfg_pet_voice", "cfg_pet_affinity_event", "ElementType", "cfg_pet_tags", "ExchangeItem", "PassiveSkillIcon", "MainLobbyWelcome", "MainLobbyInteract", "pet_intimacy_condition", "Leisure", "Appointment", "Obtain", "LevelUp", "Grade1Up", "Grade2Up", "Formation", "Charge", "StandBy", "Skill", "TeamLeaderAppear", "BattleSucceed", "BattleFail", "AircraftClick", "AircraftInteract", "Story1", "Story2", "Story3", "RewardIDList", "RewardCountList", "AddAffinity", "cfg_pet_task", "AffinityLevel", "TaskEventWeightList", "pet_voice_name", "CheckNull", "ReceiveGift", "ReceiveLoveGift", "cfg_pet_equip", "cfg_tale_pet", "cfg_tale_task", "Phase", "cfg_tale_task_phase_reward", "99", "cfg_block", "TrapEffectType", "cfg_blackfist_mission", "cfg_component_blackfist", "cfg_blackfist_hard", "ItemID", "cfg_component_homeland_task", "Rewards", "cfg_component_season_maze_event_option", "EffectIDs", "cfg_component_season_maze_effect", "cfg_component_season_maze_mission_reward", "cfg_component_season_maze_relic_group", "GroupID", "cfg_homeland_shop", "cfg_homeland_treasure_board_tips", "Weight", "cfg_homeland_treasure_content", "cfg_homeland_univalence", "cfg_homeland_goods", "cfg_homeland_dairy_item", "EventId", "cfg_item_architecture", "cfg_item_tree_attribute", "cfg_homeland_story_task", "cfg_homeland_task_group", "CostItemNum", "cfg_season_mission", 
-{
-[1] = {[1] = "cfg_pet_battle_skill"}
+local key = {
+  ID = 1,
+  TableName = 2,
+  EnableNull = 3,
+  CheckType = 4,
+  CheckParamArray = 5,
+  FieldName = 6,
+  ParseType = 7,
+  ParseDataArray = 8,
+  ParseParam = 9,
+  CheckParam1 = 10,
+  CheckParam2 = 11,
+  CheckParam3 = 12,
+  EnableDefault = 13
 }
-, 
-{1}
-, 
-{2}
-, 
-{
-{3, 1}
-}
-, 
-{"SkillID"}
-, 
-{"effectType"}
-, 
-{"buffID"}
-, 
-{"trapID"}
-, 
-{"SkillTargetType"}
-, 
-{"SkillScopeCenterType"}
-, 
-{"SkillScopeType"}
-, 
-{[1] = 2, [2] = 1}
-, 
-{"newAI"}
-, 
-{"targetType"}
-, 
-{"hitEffectID"}
-, 
-{"skillID"}
-, 
-{"attackSkillId"}
-, 
-{[1] = "", [2] = true}
-, 
-{[1] = "", [2] = false}
+local common = {
+  "cfg_check",
+  "ClassName",
+  "cfg_ai",
+  "LuaKey",
+  "AILogicConfig",
+  "ID",
+  "TableKey",
+  "cfg_battle_skill",
+  "cfg_aircraft_central_room",
+  "cfg_aircraft_room",
+  "cfg_discovery.map_nodes",
+  "id",
+  "cfg_mission",
+  "cfg_waypoint",
+  "cfg_discovery.lines",
+  "cfg_item_getway",
+  "Getway1",
+  "LuaBase",
+  "Base",
+  "Enum",
+  "ItemGetwayType",
+  "str_item",
+  "cfg_jump",
+  "Getway2",
+  "Getway3",
+  "Getway4",
+  "Getway5",
+  "cfg_item_relic",
+  "BuffID",
+  "cfg_buff",
+  "cfg_level",
+  "cfg_monster_wave",
+  "CompleteConditionType",
+  "CallBack",
+  "cfg_maze_layer",
+  "RandRule",
+  "cfg_maze_rule_room",
+  "FieldEqual",
+  "RoomIDArray",
+  "MissionID",
+  "Type",
+  "Range",
+  "1",
+  "3",
+  "Action",
+  "2",
+  "FightLevel",
+  "NeedLevel",
+  "0",
+  "NeedPower",
+  "MonsterList",
+  "cfg_monster",
+  "NeedMissionList",
+  "FirstAwardDropGroupID",
+  "cfg_common_random",
+  "AwardDropGroupID",
+  "ThreeStarAwardDropGroupID",
+  "ThreeStarCondition1",
+  "cfg_threestarcondition",
+  "ThreeStarCondition2",
+  "ThreeStarCondition3",
+  "cfg_campaign_mission",
+  "4",
+  "cfg_component_line_mission",
+  "CampaignMissionId",
+  "NeedMissionId",
+  "cfg_component_tree_mission",
+  "cfg_mission_chapter",
+  "WayPointID",
+  "MainChapterID",
+  "cfg_discovery.chapterBeginPos",
+  "cfg_mission_guide",
+  "BattlePetList",
+  "cfg_pet",
+  "_CheckMissionGuide",
+  "cfg_passive_skill",
+  "cfg_quest",
+  "JumpID",
+  "UIJumpType",
+  "Cond",
+  "QuestCondition",
+  "AcceptCond",
+  "_CheckQuestJump",
+  "cfg_component_quest",
+  "QuestID",
+  "WaveBeginRefreshID",
+  "cfg_refresh",
+  "WaveInternalRefresh",
+  "TrapRefreshIDList",
+  "TrapWeight",
+  "cfg_refresh_trap",
+  "MonsterRefreshIDList",
+  "MonsterWeight",
+  "cfg_refresh_monster",
+  "MonsterIDList",
+  "MonsterRefreshType",
+  "MonsterRefreshPosType",
+  "MonsterPosition",
+  "<=",
+  "TrapIDList",
+  "cfg_trap",
+  "TrapPosition",
+  "TrapRotation",
+  "cfg_res_instance_detail",
+  "FightLevelid",
+  "MinCostPower",
+  "WordBuff",
+  "cfg_word_buff",
+  "AwardDropId",
+  "cfg_drop",
+  "DropID",
+  "cfg_template_mail",
+  "MailType",
+  "MailValidTime",
+  "35000000",
+  "ClassID",
+  "cfg_monster_class",
+  "cfg_tower_detail",
+  "FieldSole",
+  "FirstDropId",
+  "cfg_maze_pass_drop",
+  "PassFixDropId",
+  "cfg_quest_chat",
+  "FirstWord",
+  "cfg_quest_talk",
+  "AwardItemID",
+  "cfg_item",
+  "AwardItemCount",
+  "TriggerCondition",
+  "AnswerID",
+  "NextWord",
+  "cfg_quest_chat_time",
+  "ChatList",
+  "cfg_aircraft_pet_stroy_refresh",
+  "cfg_pet_story",
+  "PetID",
+  "EnterTriggerNeedPetsArray",
+  "FirstPassMissionID",
+  "cfg_aircraft_amusement_room",
+  "StoryEventId",
+  "cfg_role_head_image_lock_condition",
+  "ConditionParam",
+  "NeedRoomId",
+  "cfg_aircraft_furniture_evaluate",
+  "DropGroupIdId",
+  "VisitPetDropGroupId",
+  "cfg_aircraft_dispatch_room",
+  "OneSpeed",
+  "cfg_aircraft_dispatch_task",
+  "AssignPetId",
+  "DispatchTaskType",
+  "Score",
+  "CompleteTime",
+  "ItemId",
+  "TaskSite",
+  "7",
+  "cfg_aircraft_dispatch_award",
+  "DropId",
+  "ExtraAward",
+  "cfg_aircraft_click_action_lib",
+  "Audio",
+  "cfg_adx2_audio",
+  "cfg_role_head_frame",
+  "FlagItem",
+  "LockCondition",
+  "cfg_role_head_frame_lock_condition",
+  "cfg_role_head_image",
+  "TrapType",
+  "GroupTriggerTrapID",
+  "SkillID",
+  "LuaNestArray",
+  "TriggerByRace",
+  "AIID",
+  "cfg_shop_giftmarket_goods",
+  "cfg_mend_crux_award",
+  "ItemNum",
+  "cfg_item_title",
+  "ConditionId",
+  "cfg_condition",
+  "CondID",
+  "cfg_item_fifure",
+  "cfg_homeland_event",
+  "SkillType",
+  "TriggerType",
+  "SkillTriggerType",
+  "TargetType",
+  "SkillTargetType",
+  "ScopeCenterType",
+  "SkillScopeCenterType",
+  "ScopeType",
+  "SkillScopeType",
+  "PreviewType",
+  "SkillPreviewType",
+  "EffectTable",
+  "SkillEffectType",
+  "ViewID",
+  "FileSuffix",
+  "cfg_skill_view_",
+  "cfg_pet_battle_skill",
+  "PickUpScopeType",
+  "cfg_active_skill_preview",
+  "cfg_preview_instruction_set",
+  "ActiveTrigger",
+  "LuaKeyIndex",
+  "NotifyType",
+  "DeactiveTrigger",
+  "ExecTrigger",
+  "UnloadTrigger",
+  "ActiveLogic",
+  "BuffTargetType",
+  "cfg_effect",
+  "LuaKeyAutoArray",
+  "DeactiveLogic",
+  "ExecLogic",
+  "UnloadLogic",
+  "LoadLogic",
+  "ViewParams",
+  "cfg_pet_grade",
+  "NeedItem",
+  "ArrayCount",
+  "1000",
+  "LuaItemPair",
+  "cfg_pet_awakening",
+  "cfg_pet_level",
+  "cfg_pet_affinity_exp",
+  "cfg_pet_skill",
+  "cfg_work_skill",
+  "ListKey",
+  "ListEqual",
+  "cfg_pet_voice",
+  "cfg_pet_affinity_event",
+  "ElementType",
+  "cfg_pet_tags",
+  "ExchangeItem",
+  "PassiveSkillIcon",
+  "MainLobbyWelcome",
+  "MainLobbyInteract",
+  "pet_intimacy_condition",
+  "Leisure",
+  "Appointment",
+  "Obtain",
+  "LevelUp",
+  "Grade1Up",
+  "Grade2Up",
+  "Formation",
+  "Charge",
+  "StandBy",
+  "Skill",
+  "TeamLeaderAppear",
+  "BattleSucceed",
+  "BattleFail",
+  "AircraftClick",
+  "AircraftInteract",
+  "Story1",
+  "Story2",
+  "Story3",
+  "RewardIDList",
+  "RewardCountList",
+  "AddAffinity",
+  "cfg_pet_task",
+  "AffinityLevel",
+  "TaskEventWeightList",
+  "pet_voice_name",
+  "CheckNull",
+  "ReceiveGift",
+  "ReceiveLoveGift",
+  "cfg_pet_equip",
+  "cfg_tale_pet",
+  "cfg_tale_task",
+  "Phase",
+  "cfg_tale_task_phase_reward",
+  "99",
+  "cfg_block",
+  "TrapEffectType",
+  "cfg_blackfist_mission",
+  "cfg_component_blackfist",
+  "cfg_blackfist_hard",
+  "ItemID",
+  "cfg_component_homeland_task",
+  "Rewards",
+  "cfg_component_season_maze_event_option",
+  "EffectIDs",
+  "cfg_component_season_maze_effect",
+  "cfg_component_season_maze_mission_reward",
+  "cfg_component_season_maze_relic_group",
+  "GroupID",
+  "cfg_homeland_shop",
+  "cfg_homeland_treasure_board_tips",
+  "Weight",
+  "cfg_homeland_treasure_content",
+  "cfg_homeland_univalence",
+  "cfg_homeland_goods",
+  "cfg_homeland_dairy_item",
+  "EventId",
+  "cfg_item_architecture",
+  "cfg_item_tree_attribute",
+  "cfg_homeland_story_task",
+  "cfg_homeland_task_group",
+  "CostItemNum",
+  "cfg_season_mission",
+  {
+    [1] = {
+      [1] = "cfg_pet_battle_skill"
+    }
+  },
+  {1},
+  {2},
+  {
+    {3, 1}
+  },
+  {"SkillID"},
+  {"effectType"},
+  {"buffID"},
+  {"trapID"},
+  {
+    "SkillTargetType"
+  },
+  {
+    "SkillScopeCenterType"
+  },
+  {
+    "SkillScopeType"
+  },
+  {
+    [1] = 2,
+    [2] = 1
+  },
+  {"newAI"},
+  {"targetType"},
+  {
+    "hitEffectID"
+  },
+  {"skillID"},
+  {
+    "attackSkillId"
+  },
+  {
+    [1] = "",
+    [2] = true
+  },
+  {
+    [1] = "",
+    [2] = false
+  }
 }
 local empty = {}
 local config = {
-{1, common[1], true, common[2], empty, "ParseType", nil, nil, nil, "LDataParse_?"}
-, 
-{2, common[1], false, common[2], empty, "CheckType", nil, nil, nil, "LCheckAction_?"}
-, 
-{3, common[3], false, common[4], empty, "LogicID", nil, nil, nil, common[5], common[6]}
-, 
-{4, common[3], true, common[7], common[301], "SkillList", nil, nil, nil, common[8]}
-; 
-[1001] = {1001, common[9], false, common[7], empty, common[6], nil, nil, nil, common[10]}
-, 
-[1002] = {1002, common[9], false, common[7], empty, "OpenSpaces", nil, nil, nil, "cfg_aircraft_space"}
-, 
-[1003] = {1003, common[11], false, common[7], empty, common[12], nil, nil, nil, common[13]}
-, 
-[1004] = {1004, common[11], false, common[7], empty, common[12], nil, nil, nil, common[14]}
-, 
-[1005] = {1005, common[15], false, common[7], empty, "s", nil, nil, nil, common[13]}
-, 
-[1006] = {1006, common[15], false, common[7], empty, "e", nil, nil, nil, common[13]}
-, 
-[1007] = {1007, common[16], false, common[19], empty, common[17], common[18], false}
-, 
-[1008] = {1008, common[16], false, common[20], empty, common[17], common[18], false, common[302], common[21]}
-, 
-[1009] = {1009, common[16], false, common[7], empty, common[17], common[18], false, common[303], common[22]}
-, 
-[1010] = {1010, common[16], true, common[7], empty, common[17], common[18], false, common[304], common[23]}
-, 
-[1011] = {1011, common[16], true, common[19], empty, common[24], common[18], false}
-, 
-[1012] = {1012, common[16], false, common[20], empty, common[24], common[18], false, common[302], common[21]}
-, 
-[1013] = {1013, common[16], false, common[7], empty, common[24], common[18], false, common[303], common[22]}
-, 
-[1014] = {1014, common[16], true, common[7], empty, common[24], common[18], false, common[304], common[23]}
-, 
-[1015] = {1015, common[16], true, common[19], empty, common[25], common[18], false}
-, 
-[1016] = {1016, common[16], false, common[20], empty, common[25], common[18], false, common[302], common[21]}
-, 
-[1017] = {1017, common[16], false, common[7], empty, common[25], common[18], false, common[303], common[22]}
-, 
-[1018] = {1018, common[16], true, common[7], empty, common[25], common[18], false, common[304], common[23]}
-, 
-[1019] = {1019, common[16], true, common[19], empty, common[26], common[18], false}
-, 
-[1020] = {1020, common[16], false, common[20], empty, common[26], common[18], false, common[302], common[21]}
-, 
-[1021] = {1021, common[16], false, common[7], empty, common[26], common[18], false, common[303], common[22]}
-, 
-[1022] = {1022, common[16], true, common[7], empty, common[26], common[18], false, common[304], common[23]}
-, 
-[1023] = {1023, common[16], true, common[19], empty, common[27], common[18], false}
-, 
-[1024] = {1024, common[16], false, common[20], empty, common[27], common[18], false, common[302], common[21]}
-, 
-[1025] = {1025, common[16], false, common[7], empty, common[27], common[18], false, common[303], common[22]}
-, 
-[1026] = {1026, common[16], true, common[7], empty, common[27], common[18], false, common[304], common[23]}
-, 
-[1027] = {1027, common[28], false, common[7], empty, common[29], nil, nil, nil, common[30], nil, nil, 0}
-, 
-[1028] = {1028, common[31], false, common[7], empty, "MonsterWave", nil, nil, nil, common[32]}
-, 
-[1029] = {1029, common[31], false, common[20], empty, "CompleteConditionID", nil, nil, nil, common[33]}
-, 
-[1030] = {1030, common[31], false, common[34], empty, nil, common[18], false, nil, "_CheckLevel_CompleteConditionID"}
-, 
-[1031] = {1031, common[31], false, common[7], empty, "Theme", nil, nil, nil, "cfg_theme"}
-, 
-[1032] = {1032, common[31], false, common[7], empty, "GridGenID", nil, nil, nil, "cfg_board"}
-, 
-[1033] = {1033, common[35], false, common[7], empty, common[36], nil, nil, nil, common[37], "RuleID"}
-, 
-[1034] = {1034, common[35], false, common[38], empty, nil, common[18], false, nil, common[36], "RandWeight"}
-, 
-[1035] = {1035, common[37], false, common[7], empty, common[39], nil, nil, nil, "cfg_maze_room"}
-, 
-[1036] = {1036, common[37], false, common[7], empty, common[40], nil, nil, nil, common[13]}
-, 
-[1037] = {1037, common[37], false, common[38], empty, nil, common[18], false, nil, common[39], "RoomWeightArray"}
-, 
-[1038] = {1038, common[13], false, common[42], empty, common[41], nil, nil, nil, common[43], common[44]}
-, 
-[1039] = {1039, common[13], false, common[42], empty, common[45], nil, nil, nil, common[43], common[46]}
-, 
-[1040] = {1040, common[13], false, common[7], empty, common[47], nil, nil, nil, common[31]}
-, 
-[1041] = {1041, common[13], false, common[42], empty, common[48], nil, nil, nil, common[49]}
-, 
-[1042] = {1042, common[13], false, common[42], empty, common[50], nil, nil, nil, common[49]}
-, 
-[1043] = {1043, common[13], false, common[7], empty, common[51], nil, nil, nil, common[52]}
-, 
-[1044] = {1044, common[13], false, common[7], empty, common[53], nil, nil, nil, common[13]}
-, 
-[1045] = {1045, common[13], true, common[7], empty, common[54], nil, nil, nil, common[55], nil, nil, 0}
-, 
-[1046] = {1046, common[13], true, common[7], empty, common[56], nil, nil, nil, common[55]}
-, 
-[1047] = {1047, common[13], true, common[7], empty, common[57], nil, nil, nil, common[55]}
-, 
-[1048] = {1048, common[13], true, common[7], empty, common[58], nil, nil, nil, common[59], nil, nil, 0}
-, 
-[1049] = {1049, common[13], true, common[7], empty, common[60], nil, nil, nil, common[59], nil, nil, 0}
-, 
-[1050] = {1050, common[13], true, common[7], empty, common[61], nil, nil, nil, common[59], nil, nil, 0}
-, 
-[1051] = {1051, common[62], false, common[42], empty, common[41], nil, nil, nil, common[43], common[63]}
-, 
-[1052] = {1052, common[62], false, common[42], empty, common[45], nil, nil, nil, common[43], common[46]}
-, 
-[1053] = {1053, common[62], false, common[7], empty, common[47], nil, nil, nil, common[31]}
-, 
-[1054] = {1054, common[62], false, common[42], empty, common[48], nil, nil, nil, common[49]}
-, 
-[1055] = {1055, common[62], false, common[42], empty, common[50], nil, nil, nil, common[49]}
-, 
-[1056] = {1056, common[62], true, common[7], empty, common[58], nil, nil, nil, common[59], nil, nil, 0}
-, 
-[1057] = {1057, common[62], true, common[7], empty, common[60], nil, nil, nil, common[59], nil, nil, 0}
-, 
-[1058] = {1058, common[62], true, common[7], empty, common[61], nil, nil, nil, common[59], nil, nil, 0}
-, 
-[1059] = {1059, common[64], false, common[7], empty, common[65], nil, nil, nil, common[62], common[65]}
-, 
-[1060] = {1060, common[64], true, common[7], empty, common[66], nil, nil, nil, common[62], common[65], nil, 0}
-, 
-[1061] = {1061, common[67], false, common[7], empty, common[65], nil, nil, nil, common[62], common[65]}
-, 
-[1062] = {1062, common[67], true, common[7], empty, common[53], common[18], true, nil, common[62], common[65], nil, 0}
-, 
-[1063] = {1063, common[68], false, common[7], empty, common[40], nil, nil, nil, common[13]}
-, 
-[1064] = {1064, common[68], false, common[7], empty, common[69], nil, nil, nil, common[11]}
-, 
-[1065] = {1065, common[68], false, common[7], empty, common[69], nil, nil, nil, common[14]}
-, 
-[1066] = {1066, common[68], false, common[7], empty, common[70], nil, nil, nil, common[71]}
-, 
-[1067] = {1067, common[72], false, common[7], empty, common[73], common[18], true, common[302], common[74]}
-, 
-[1068] = {1068, common[72], false, common[34], empty, common[73], common[18], true, nil, common[75]}
-, 
-[1069] = {1069, common[76], false, common[7], empty, common[29], nil, nil, nil, common[30]}
-, 
-[1071] = {1071, common[77], true, common[20], empty, common[78], nil, nil, nil, common[79]}
-, 
-[1072] = {1072, common[77], false, common[81], empty, common[80]}
-, 
-[1073] = {1073, common[77], false, common[81], empty, common[82]}
-, 
-[1074] = {1074, common[77], false, common[34], empty, nil, common[18], false, nil, common[83]}
-, 
-[1075] = {1075, common[84], false, common[7], empty, common[85], nil, nil, nil, common[77], common[6]}
-, 
-[1076] = {1076, common[32], false, common[7], empty, common[86], nil, nil, nil, common[87]}
-, 
-[1077] = {1077, common[32], false, common[20], empty, "CompleteCondition", nil, nil, nil, common[33]}
-, 
-[1078] = {1078, common[32], true, common[7], empty, "BossID", nil, nil, nil, common[52]}
-, 
-[1079] = {1079, common[32], true, common[7], empty, common[88], common[18], true, 
-{"refreshID"}
-, common[87]}
-, 
-[1080] = {1080, common[32], true, common[20], empty, common[88], common[18], true, 
-{"type"}
-, "MonsterWaveInternalRefreshType"}
-, 
-[1081] = {1081, common[87], true, common[38], empty, nil, common[18], false, nil, common[89], common[90]}
-, 
-[1082] = {1082, common[87], false, common[7], empty, common[89], nil, nil, nil, common[91], nil, nil, 0}
-, 
-[1083] = {1083, common[87], true, common[38], empty, nil, common[18], false, nil, common[92], common[93]}
-, 
-[1084] = {1084, common[87], false, common[7], empty, common[92], nil, nil, nil, common[94], nil, nil, 0}
-, 
-[1085] = {1085, common[94], true, common[7], empty, common[95], nil, nil, nil, common[52]}
-, 
-[1086] = {1086, common[94], true, common[20], empty, common[96], nil, nil, nil, common[97]}
-, 
-[1087] = {1087, common[94], true, common[38], empty, nil, common[18], false, nil, common[95], common[98], common[99]}
-, 
-[1088] = {1088, common[91], true, common[7], empty, common[100], nil, nil, nil, common[101]}
-, 
-[1089] = {1089, common[91], true, common[38], empty, nil, common[18], false, nil, common[100], common[102]}
-, 
-[1090] = {1090, common[91], true, common[38], empty, nil, common[18], false, nil, common[100], common[103]}
-, 
-[1091] = {1091, common[104], false, common[7], empty, common[51], nil, nil, nil, common[52]}
-, 
-[1092] = {1092, common[104], false, common[7], empty, common[105], nil, nil, nil, common[31]}
-, 
-[1093] = {1093, common[104], false, common[42], empty, common[50], nil, nil, nil, common[49]}
-, 
-[1094] = {1094, common[104], false, common[42], empty, common[106], nil, nil, nil, common[49]}
-, 
-[1095] = {1095, common[104], true, common[7], empty, common[107], nil, nil, nil, common[108], nil, nil, 0}
-, 
-[1096] = {1096, common[104], false, common[7], empty, common[109], nil, nil, nil, common[110], common[111]}
-, 
-[1097] = {1097, common[112], false, common[20], empty, common[41], nil, nil, nil, common[113]}
-, 
-[1098] = {1098, common[112], false, common[81], empty, common[80], nil, nil, nil, nil, nil, nil, 0}
-, 
-[1099] = {1099, common[112], false, common[42], empty, common[114], nil, nil, nil, common[43], common[115]}
-, 
-[1100] = {1100, common[108], false, common[7], empty, common[29], nil, nil, nil, common[30], common[6]}
-, 
-[1101] = {1101, common[52], false, common[7], empty, common[116], nil, nil, nil, common[117]}
-, 
-[1102] = {1102, common[118], false, common[119], empty, nil, common[18], false, nil, common[105]}
-, 
-[1103] = {1103, common[118], false, common[7], empty, common[105], nil, nil, nil, common[31]}
-, 
-[1104] = {1104, common[118], true, common[7], empty, common[107], nil, nil, nil, common[108], nil, nil, 0}
-, 
-[1105] = {1105, common[118], false, common[7], empty, common[120], nil, nil, nil, common[110], common[111]}
-, 
-[1106] = {1106, common[121], false, common[7], empty, common[122], nil, nil, nil, common[110], common[111]}
-, 
-[1107] = {1107, common[123], false, common[7], empty, common[124], nil, nil, nil, common[125]}
-, 
-[1108] = {1108, common[123], false, common[7], empty, common[126], nil, nil, nil, common[127]}
-, 
-[1109] = {1109, common[123], false, common[42], empty, common[128], nil, nil, nil, common[43]}
-, 
-[1110] = {1110, common[123], false, common[38], empty, nil, common[18], false, nil, common[126], common[128]}
-, 
-[1111] = {1111, common[123], true, common[81], empty, common[129]}
-, 
-[1112] = {1112, common[125], true, common[7], empty, common[130], nil, nil, nil, common[125], nil, nil, 0}
-, 
-[1113] = {1113, common[125], true, common[7], empty, common[131], nil, nil, nil, common[125], nil, nil, 0}
-, 
-[1114] = {1114, common[16], false, common[7], empty, common[26], common[18], false, common[303], common[22]}
-, 
-[1115] = {1115, common[16], true, common[7], empty, common[26], common[18], false, common[304], common[23]}
-, 
-[1116] = {1116, common[16], true, common[19], empty, common[27], common[18], false}
-, 
-[1117] = {1117, common[132], false, common[7], empty, common[133], nil, nil, nil, common[123]}
-, 
-[1118] = {1118, common[134], false, common[7], empty, common[6], nil, nil, nil, common[135], common[6]}
-, 
-[1119] = {1119, common[134], false, common[7], empty, common[136], nil, nil, nil, common[74]}
-, 
-[1120] = {1120, common[134], true, common[7], empty, common[137], nil, true, nil, common[74]}
-, 
-[1121] = {1121, common[134], true, common[7], empty, common[138], nil, nil, nil, common[13], common[6], nil, 0}
-, 
-[1122] = {1122, common[139], false, common[7], empty, common[6], nil, nil, nil, common[10], common[6]}
-, 
-[1123] = {1123, common[139], true, common[7], empty, common[140], nil, nil, nil, common[134], common[6], nil, 0}
-, 
-[1126] = {1126, common[141], false, common[81], empty, common[142]}
-, 
-[1127] = {1127, common[134], true, common[7], empty, common[143], nil, true, nil, common[10], common[6]}
-, 
-[1129] = {1129, common[144], false, common[7], empty, common[145], nil, nil, nil, common[55], common[6]}
-, 
-[1130] = {1130, common[144], false, common[7], empty, common[146], nil, nil, nil, common[55], common[6]}
-, 
-[1131] = {1131, common[147], false, common[42], empty, common[148], nil, nil, nil, common[49]}
-, 
-[1132] = {1132, common[149], true, common[7], empty, common[150], nil, nil, nil, common[74], common[6]}
-, 
-[1133] = {1133, common[149], false, common[20], empty, common[41], nil, nil, nil, common[151]}
-, 
-[1134] = {1134, common[149], false, common[42], empty, common[152], nil, nil, nil, common[49]}
-, 
-[1135] = {1135, common[149], false, common[42], empty, common[153], nil, nil, nil, common[49]}
-, 
-[1136] = {1136, common[149], true, common[7], empty, common[154], nil, nil, nil, common[127], common[6], nil, 0}
-, 
-[1137] = {1137, common[149], false, common[42], empty, common[155], nil, nil, nil, common[49], common[156]}
-, 
-[1138] = {1138, common[157], false, common[7], empty, common[158], nil, nil, nil, common[110], common[111]}
-, 
-[1139] = {1139, common[157], false, common[7], empty, common[159], common[18], true, common[302], common[127], common[6]}
-, 
-[1140] = {1140, common[157], false, common[42], empty, common[159], common[18], true, common[303], common[49]}
-, 
-[1141] = {1141, common[160], true, common[7], empty, common[161], nil, nil, nil, common[162]}
-, 
-[1142] = {1142, common[163], true, common[7], empty, common[164], nil, nil, common[302], common[127]}
-, 
-[1143] = {1143, common[163], true, common[7], empty, common[165], nil, true, nil, common[166]}
-, 
-[1144] = {1144, common[166], true, common[81], empty, common[142]}
-, 
-[1145] = {1145, common[167], true, common[7], empty, common[164], nil, nil, common[302], common[127]}
-, 
-[1146] = {1146, common[167], true, common[7], empty, common[165], nil, true, nil, common[141]}
-, 
-[1147] = {1147, common[141], true, common[81], empty, common[142]}
-, 
-[1200] = {1200, common[13], false, common[42], empty, common[41], nil, nil, nil, common[43], common[44]}
-, 
-[1201] = {1201, common[13], false, common[42], empty, common[45], nil, nil, nil, common[43], common[46]}
-, 
-[1202] = {1202, common[13], false, common[7], empty, common[47], nil, nil, nil, common[31]}
-, 
-[1203] = {1203, common[13], false, common[42], empty, common[48], nil, nil, nil, common[49]}
-, 
-[1204] = {1204, common[13], false, common[42], empty, common[50], nil, nil, nil, common[49]}
-, 
-[1205] = {1205, common[13], false, common[7], empty, common[51], nil, nil, nil, common[52]}
-, 
-[1206] = {1206, common[13], false, common[7], empty, common[53], nil, nil, nil, common[13]}
-, 
-[1207] = {1207, common[13], true, common[7], empty, common[54], nil, nil, nil, common[55], nil, nil, 0}
-, 
-[1208] = {1208, common[13], true, common[7], empty, common[56], nil, nil, nil, common[55]}
-, 
-[1209] = {1209, common[13], true, common[7], empty, common[57], nil, nil, nil, common[55]}
-, 
-[1210] = {1210, common[13], true, common[7], empty, common[58], nil, nil, nil, common[59], nil, nil, 0}
-, 
-[1211] = {1211, common[13], true, common[7], empty, common[60], nil, nil, nil, common[59], nil, nil, 0}
-, 
-[1212] = {1212, common[13], true, common[7], empty, common[61], nil, nil, nil, common[59], nil, nil, 0}
-, 
-[1213] = {1213, common[62], false, common[42], empty, common[41], nil, nil, nil, common[43], common[63]}
-, 
-[1214] = {1214, common[62], false, common[42], empty, common[45], nil, nil, nil, common[43], common[46]}
-, 
-[1215] = {1215, common[62], false, common[7], empty, common[47], nil, nil, nil, common[31]}
-, 
-[1216] = {1216, common[62], false, common[42], empty, common[48], nil, nil, nil, common[49]}
-, 
-[1217] = {1217, common[62], false, common[42], empty, common[50], nil, nil, nil, common[49]}
-, 
-[1218] = {1218, common[62], true, common[7], empty, common[58], nil, nil, nil, common[59], nil, nil, 0}
-, 
-[1219] = {1219, common[62], true, common[7], empty, common[60], nil, nil, nil, common[59], nil, nil, 0}
-, 
-[1220] = {1220, common[62], true, common[7], empty, common[61], nil, nil, nil, common[59], nil, nil, 0}
-, 
-[1221] = {1221, common[64], false, common[7], empty, common[65], nil, nil, nil, common[62], common[65]}
-, 
-[1222] = {1222, common[64], true, common[7], empty, common[66], nil, nil, nil, common[62], common[65], nil, 0}
-, 
-[1223] = {1223, common[67], false, common[7], empty, common[65], nil, nil, nil, common[62], common[65]}
-, 
-[1224] = {1224, common[67], true, common[7], empty, common[53], common[18], true, nil, common[62], common[65], nil, 0}
-, 
-[1230] = {1230, common[68], false, common[7], empty, common[40], nil, nil, nil, common[13]}
-, 
-[1231] = {1231, common[68], false, common[7], empty, common[69], nil, nil, nil, common[11]}
-, 
-[1232] = {1232, common[68], false, common[7], empty, common[69], nil, nil, nil, common[14]}
-, 
-[1233] = {1233, common[68], false, common[7], empty, common[70], nil, nil, nil, common[71]}
-, 
-[1234] = {1234, common[72], false, common[7], empty, common[73], common[18], true, common[302], common[74]}
-, 
-[1235] = {1235, common[72], false, common[34], empty, common[73], common[18], true, nil, common[75]}
-, 
-[1236] = {1236, common[32], false, common[7], empty, common[86], nil, nil, nil, common[87]}
-, 
-[1237] = {1237, common[76], false, common[7], empty, common[29], nil, nil, nil, common[30]}
-, 
-[1239] = {1239, common[77], true, common[20], empty, common[78], nil, nil, nil, common[79]}
-, 
-[1240] = {1240, common[77], false, common[81], empty, common[80]}
-, 
-[1241] = {1241, common[77], false, common[81], empty, common[82]}
-, 
-[1242] = {1242, common[77], false, common[34], empty, nil, common[18], false, nil, common[83]}
-, 
-[1243] = {1243, common[84], false, common[7], empty, common[85], nil, nil, nil, common[77], common[6]}
-, 
-[1300] = {1300, common[87], true, common[38], empty, nil, common[18], false, nil, common[89], common[90]}
-, 
-[1301] = {1301, common[87], false, common[7], empty, common[89], nil, nil, nil, common[91], nil, nil, 0}
-, 
-[1302] = {1302, common[87], true, common[38], empty, nil, common[18], false, nil, common[92], common[93]}
-, 
-[1303] = {1303, common[87], false, common[7], empty, common[92], nil, nil, nil, common[94], nil, nil, 0}
-, 
-[1310] = {1310, common[94], true, common[7], empty, common[95], nil, nil, nil, common[52]}
-, 
-[1311] = {1311, common[94], true, common[20], empty, common[96], nil, nil, nil, common[97]}
-, 
-[1312] = {1312, common[94], true, common[38], empty, nil, common[18], false, nil, common[95], common[98], common[99]}
-, 
-[1320] = {1320, common[91], true, common[7], empty, common[100], nil, nil, nil, common[101]}
-, 
-[1321] = {1321, common[91], true, common[38], empty, nil, common[18], false, nil, common[100], common[102]}
-, 
-[1322] = {1322, common[91], true, common[38], empty, nil, common[18], false, nil, common[100], common[103]}
-, 
-[1330] = {1330, common[104], false, common[7], empty, common[51], nil, nil, nil, common[52]}
-, 
-[1331] = {1331, common[104], false, common[7], empty, common[105], nil, nil, nil, common[31]}
-, 
-[1332] = {1332, common[104], false, common[42], empty, common[50], nil, nil, nil, common[49]}
-, 
-[1333] = {1333, common[104], false, common[42], empty, common[106], nil, nil, nil, common[49]}
-, 
-[1334] = {1334, common[104], true, common[7], empty, common[107], nil, nil, nil, common[108], nil, nil, 0}
-, 
-[1336] = {1336, common[104], false, common[7], empty, common[109], nil, nil, nil, common[110], common[111]}
-, 
-[1342] = {1342, common[112], false, common[20], empty, common[41], nil, nil, nil, common[113]}
-, 
-[1343] = {1343, common[112], false, common[81], empty, common[80], nil, nil, nil, nil, nil, nil, 0}
-, 
-[1344] = {1344, common[112], false, common[42], empty, common[114], nil, nil, nil, common[43], common[115]}
-, 
-[1350] = {1350, common[101], false, common[20], empty, common[168], nil, nil, nil, common[168]}
-, 
-[1351] = {1351, common[101], false, common[42], empty, "TrapLevel", nil, nil, nil, "-1", "9999"}
-, 
-[1352] = {1352, common[101], true, common[7], empty, common[169], nil, nil, nil, common[101]}
-, 
-[1353] = {1353, common[101], true, common[7], empty, common[170], common[171], true, nil, common[8]}
-, 
-[1354] = {1354, common[101], true, common[7], empty, common[172], common[18], true, common[305], common[8]}
-, 
-[1355] = {1355, common[101], true, common[7], empty, common[173], nil, nil, nil, common[3], common[6]}
-, 
-[1360] = {1360, common[108], false, common[7], empty, common[29], nil, nil, nil, common[30], common[6]}
-, 
-[1361] = {1361, common[52], false, common[7], empty, common[116], nil, nil, nil, common[117]}
-, 
-[1370] = {1370, common[118], false, common[119], empty, nil, common[18], false, nil, common[105]}
-, 
-[1371] = {1371, common[118], false, common[7], empty, common[105], nil, nil, nil, common[31]}
-, 
-[1372] = {1372, common[118], true, common[7], empty, common[107], nil, nil, nil, common[108], nil, nil, 0}
-, 
-[1373] = {1373, common[118], false, common[7], empty, common[120], nil, nil, nil, common[110], common[111]}
-, 
-[1374] = {1374, common[121], false, common[7], empty, common[122], nil, nil, nil, common[110], common[111]}
-, 
-[1380] = {1380, common[123], false, common[7], empty, common[124], nil, nil, nil, common[125]}
-, 
-[1381] = {1381, common[123], false, common[7], empty, common[126], nil, nil, nil, common[127]}
-, 
-[1382] = {1382, common[123], false, common[42], empty, common[128], nil, nil, nil, common[43]}
-, 
-[1383] = {1383, common[123], false, common[38], empty, nil, common[18], false, nil, common[126], common[128]}
-, 
-[1384] = {1384, common[123], true, common[81], empty, common[129]}
-, 
-[1390] = {1390, common[125], true, common[7], empty, common[130], nil, nil, nil, common[125], nil, nil, 0}
-, 
-[1391] = {1391, common[125], true, common[7], empty, common[131], nil, nil, nil, common[125], nil, nil, 0}
-, 
-[1403] = {1403, common[132], false, common[7], empty, common[133], nil, nil, nil, common[123]}
-, 
-[1404] = {1404, common[134], false, common[7], empty, common[6], nil, nil, nil, common[135], common[6]}
-, 
-[1405] = {1405, common[134], false, common[7], empty, common[136], nil, nil, nil, common[74]}
-, 
-[1406] = {1406, common[134], true, common[7], empty, common[137], nil, true, nil, common[74]}
-, 
-[1407] = {1407, common[134], true, common[7], empty, common[138], nil, nil, nil, common[13], common[6], nil, 0}
-, 
-[1408] = {1408, common[139], false, common[7], empty, common[6], nil, nil, nil, common[10], common[6]}
-, 
-[1409] = {1409, common[139], true, common[7], empty, common[140], nil, nil, nil, common[134], common[6], nil, 0}
-, 
-[1420] = {1420, common[141], false, common[81], empty, common[142]}
-, 
-[1421] = {1421, common[134], true, common[7], empty, common[143], nil, true, nil, common[10], common[6]}
-, 
-[1431] = {1431, common[144], false, common[7], empty, common[145], nil, nil, nil, common[55], common[6]}
-, 
-[1432] = {1432, common[144], false, common[7], empty, common[146], nil, nil, nil, common[55], common[6]}
-, 
-[1440] = {1440, common[147], false, common[42], empty, common[148], nil, nil, nil, common[49]}
-, 
-[1441] = {1441, common[149], true, common[7], empty, common[150], nil, nil, nil, common[74], common[6]}
-, 
-[1442] = {1442, common[149], false, common[20], empty, common[41], nil, nil, nil, common[151]}
-, 
-[1443] = {1443, common[149], false, common[42], empty, common[152], nil, nil, nil, common[49]}
-, 
-[1444] = {1444, common[149], false, common[42], empty, common[153], nil, nil, nil, common[49]}
-, 
-[1445] = {1445, common[149], true, common[7], empty, common[154], nil, nil, nil, common[127], common[6], nil, 0}
-, 
-[1446] = {1446, common[149], false, common[42], empty, common[155], nil, nil, nil, common[49], common[156]}
-, 
-[1447] = {1447, common[157], false, common[7], empty, common[158], nil, nil, nil, common[110], common[111]}
-, 
-[1448] = {1448, common[157], false, common[7], empty, common[159], common[18], true, common[302], common[127], common[6]}
-, 
-[1449] = {1449, common[157], false, common[42], empty, common[159], common[18], true, common[303], common[49]}
-, 
-[1450] = {1450, common[160], true, common[7], empty, common[161], nil, nil, nil, common[162]}
-, 
-[1451] = {1451, common[163], true, common[7], empty, common[164], nil, nil, common[302], common[127]}
-, 
-[1452] = {1452, common[163], true, common[7], empty, common[165], nil, true, nil, common[166]}
-, 
-[1453] = {1453, common[166], true, common[81], empty, common[142]}
-, 
-[1454] = {1454, common[167], true, common[7], empty, common[164], nil, nil, common[302], common[127]}
-, 
-[1455] = {1455, common[167], true, common[7], empty, common[165], nil, true, nil, common[141]}
-, 
-[1456] = {1456, common[141], true, common[81], empty, common[142]}
-, 
-[1457] = {1457, "cfg_item_cartridge", false, common[7], empty, common[6], nil, nil, nil, common[127], common[6]}
-, 
-[1461] = {1461, "cfg_item_gift", false, common[7], empty, common[6], nil, nil, nil, common[127], common[6]}
-, 
-[1462] = {1462, "cfg_item_pet_exp", false, common[7], empty, common[6], nil, nil, nil, common[127], common[6]}
-, 
-[1463] = {1463, common[28], false, common[7], empty, common[6], nil, nil, nil, common[127], common[6]}
-, 
-[1464] = {1464, "cfg_item_pet_present", false, common[7], empty, common[6], nil, nil, nil, common[127], common[6]}
-, 
-[1465] = {1465, common[174], true, common[119], empty, nil, common[18], false, nil, "HmtDirectAMidasID"}
-, 
-[1466] = {1466, common[174], true, common[119], empty, nil, common[18], false, nil, "DirectAMidasID"}
-, 
-[1467] = {1467, common[174], true, common[119], empty, nil, common[18], false, nil, "USDirectAMidasID"}
-, 
-[1468] = {1468, common[175], false, common[81], empty, common[80]}
-, 
-[1469] = {1469, common[175], false, common[7], empty, common[154], nil, nil, nil, common[127]}
-, 
-[1470] = {1470, common[175], false, common[42], empty, common[176], nil, nil, nil, common[49]}
-, 
-[1471] = {1471, common[177], false, common[7], empty, common[6], nil, nil, nil, common[127], common[6]}
-, 
-[1472] = {1472, common[177], false, common[7], empty, common[178], nil, nil, nil, common[179], common[180]}
-, 
-[1473] = {1473, common[181], false, common[7], empty, common[6], nil, nil, nil, common[127], common[6]}
-, 
-[1474] = {1474, common[181], false, common[7], empty, common[178], nil, nil, nil, common[179], common[180]}
-, 
-[1475] = {1475, common[182], true, common[119], empty, nil, common[18], false, nil, "QuestId"}
-, 
-[1476] = {1476, common[179], false, common[81], empty, common[82]}
-, 
-[1477] = {1477, common[179], false, common[81], empty, common[80]}
-, 
-[1478] = {1478, common[104], true, common[7], empty, "SPassRandomAward", nil, nil, nil, common[55], common[6], nil, 0}
-, 
-[1479] = {1479, common[104], false, common[7], empty, "DoubleRandomAward", nil, nil, nil, common[55], common[6], nil, 0}
-, 
-[1480] = {1480, "cfg_gamble", true, common[7], empty, "OptionalPoolID", nil, nil, nil, "cfg_optional_pool", common[6], nil, 0}
-, 
-[10001] = {10001, common[8], false, common[42], empty, common[6], nil, nil, nil, common[43]}
-, 
-[10002] = {10002, common[8], false, common[20], empty, common[41], nil, nil, nil, common[183]}
-, 
-[10003] = {10003, common[8], false, common[20], empty, common[184], nil, nil, nil, common[185]}
-, 
-[10004] = {10004, common[8], false, common[20], empty, common[186], nil, nil, nil, common[187]}
-, 
-[10005] = {10005, common[8], false, common[20], empty, common[188], nil, nil, nil, common[189]}
-, 
-[10006] = {10006, common[8], false, common[20], empty, common[190], nil, nil, nil, common[191]}
-, 
-[10007] = {10007, common[8], false, common[20], empty, common[192], nil, nil, nil, common[193]}
-, 
-[10008] = {10008, common[8], false, common[20], empty, common[194], common[18], false, common[306], common[195]}
-, 
-[10009] = {10009, common[8], true, common[7], empty, common[194], common[18], false, common[307], common[30]}
-, 
-[10010] = {10010, common[8], true, common[7], empty, common[194], common[18], false, common[308], common[101]}
-, 
-[10011] = {10011, common[8], true, common[20], empty, common[194], common[18], false, common[309], common[187]}
-, 
-[10012] = {10012, common[8], true, common[20], empty, common[194], common[18], false, common[310], common[189]}
-, 
-[10013] = {10013, common[8], true, common[20], empty, common[194], common[18], false, common[311], common[191]}
-, 
-[10014] = {10014, common[8], true, common[197], empty, common[196], nil, nil, nil, common[198], nil, nil, 0}
-, 
-[10015] = {10015, common[199], false, common[42], empty, common[6], nil, nil, nil, common[43]}
-, 
-[10016] = {10016, common[199], false, common[20], empty, common[41], nil, nil, nil, common[183]}
-, 
-[10017] = {10017, common[199], false, common[20], empty, common[184], nil, nil, nil, common[185]}
-, 
-[10018] = {10018, common[199], false, common[20], empty, common[186], nil, nil, nil, common[187]}
-, 
-[10019] = {10019, common[199], false, common[20], empty, common[188], nil, nil, nil, common[189]}
-, 
-[10020] = {10020, common[199], false, common[20], empty, common[190], nil, nil, nil, common[191]}
-, 
-[10021] = {10021, common[199], false, common[20], empty, common[192], nil, nil, nil, common[193]}
-, 
-[10022] = {10022, common[199], false, common[20], empty, common[194], common[18], false, 
-{[1] = "effectType"}
-, common[195]}
-, 
-[10023] = {10023, common[199], true, common[7], empty, common[194], common[18], false, common[307], common[30]}
-, 
-[10024] = {10024, common[199], true, common[7], empty, common[194], common[18], false, common[308], common[101]}
-, 
-[10025] = {10025, common[199], true, common[20], empty, common[194], common[18], false, common[309], common[187]}
-, 
-[10026] = {10026, common[199], true, common[20], empty, common[194], common[18], false, common[310], common[189]}
-, 
-[10027] = {10027, common[199], true, common[20], empty, common[194], common[18], false, common[311], common[191]}
-, 
-[10028] = {10028, common[199], true, common[197], empty, common[196], nil, nil, nil, common[198], nil, nil, 0}
-, 
-[10029] = {10029, common[199], false, common[20], empty, "PickUpType", nil, nil, nil, "SkillPickUpType"}
-, 
-[10030] = {10030, common[199], true, common[20], empty, common[200], common[18], false, 
-{"TargetType"}
-, common[187]}
-, 
-[10031] = {10031, common[199], true, common[20], empty, common[200], common[18], false, 
-{"ScopeCenterType"}
-, common[189]}
-, 
-[10032] = {10032, common[199], true, common[20], empty, common[200], common[18], false, 
-{"ScopeType"}
-, common[191]}
-, 
-[10033] = {10033, common[199], true, common[7], empty, "PreviewList", common[18], false, 
-{"Param"}
-, common[201]}
-, 
-[10034] = {10034, common[201], true, common[20], empty, "PreviewEffectType", common[18], false, common[306], common[195]}
-, 
-[10035] = {10035, common[201], true, common[20], empty, common[186], nil, nil, nil, common[187]}
-, 
-[10036] = {10036, common[201], true, common[20], empty, common[188], nil, nil, nil, common[189]}
-, 
-[10037] = {10037, common[201], true, common[20], empty, common[190], nil, nil, nil, common[191]}
-, 
-[10038] = {10038, common[201], true, common[7], empty, "OnStart", nil, nil, nil, common[202]}
-, 
-[10039] = {10039, common[201], true, common[7], empty, "OnSelectValid", nil, nil, nil, common[202]}
-, 
-[10040] = {10040, common[201], true, common[7], empty, "OnSelectEmpty", nil, nil, nil, common[202]}
-, 
-[10041] = {10041, common[201], true, common[7], empty, "OnSelectCancel", nil, nil, nil, common[202]}
-, 
-[10042] = {10042, common[201], true, common[7], empty, "OnSelectInvalid", nil, nil, nil, common[202]}
-, 
-[10043] = {10043, common[201], true, common[7], empty, "OnCancelPreview", nil, nil, nil, common[202]}
-, 
-[10044] = {10044, common[201], true, common[7], empty, "OnActiveSkill", nil, nil, nil, common[202]}
-, 
-[20002] = {20002, common[30], false, common[42], empty, "RoundCount", nil, nil, nil, common[49]}
-, 
-[20003] = {20003, common[30], false, common[42], empty, "ExecCount", nil, nil, nil, common[49]}
-, 
-[20004] = {20004, common[30], false, common[20], empty, common[203], common[204], false, common[302], common[205]}
-, 
-[20005] = {20005, common[30], false, common[20], empty, common[203], common[204], false, common[312], common[184]}
-, 
-[20006] = {20006, common[30], false, common[20], empty, common[206], common[204], false, common[302], common[205]}
-, 
-[20007] = {20007, common[30], false, common[20], empty, common[206], common[204], false, common[312], common[184]}
-, 
-[20008] = {20008, common[30], false, common[20], empty, common[207], common[204], false, common[302], common[205]}
-, 
-[20009] = {20009, common[30], false, common[20], empty, common[207], common[204], false, common[312], common[184]}
-, 
-[20010] = {20010, common[30], false, common[20], empty, common[208], common[204], false, common[302], common[205]}
-, 
-[20011] = {20011, common[30], false, common[20], empty, common[208], common[204], false, common[312], common[184]}
-, 
-[20012] = {20012, common[30], true, common[4], empty, common[209], common[18], true, common[313], common[5]}
-, 
-[20013] = {20013, common[30], true, common[20], empty, common[209], common[18], true, common[314], common[210]}
-, 
-[20014] = {20014, common[30], true, common[7], empty, common[209], common[18], true, common[307], common[30]}
-, 
-[20015] = {20015, common[30], true, common[7], empty, common[209], common[18], true, common[315], common[211]}
-, 
-[20016] = {20016, common[30], true, common[7], common[301], common[209], common[212], true, common[316], common[8]}
-, 
-[20017] = {20017, common[30], true, common[7], empty, common[209], common[18], true, common[317], common[199]}
-, 
-[20019] = {20019, common[30], true, common[7], empty, common[209], common[18], true, common[308], common[101]}
-, 
-[20020] = {20020, common[30], true, common[4], empty, common[213], common[18], true, common[313], common[5]}
-, 
-[20021] = {20021, common[30], true, common[20], empty, common[213], common[18], true, common[314], common[210]}
-, 
-[20022] = {20022, common[30], true, common[7], empty, common[213], common[18], true, common[307], common[30]}
-, 
-[20023] = {20023, common[30], true, common[7], empty, common[213], common[18], true, common[315], common[211]}
-, 
-[20024] = {20024, common[30], true, common[7], common[301], common[213], common[212], true, common[316], common[8]}
-, 
-[20025] = {20025, common[30], true, common[7], empty, common[213], common[18], true, common[317], common[199]}
-, 
-[20027] = {20027, common[30], true, common[7], empty, common[213], common[18], true, common[308], common[101]}
-, 
-[20028] = {20028, common[30], true, common[4], empty, common[214], common[18], true, common[313], common[5]}
-, 
-[20029] = {20029, common[30], true, common[20], empty, common[214], common[18], true, common[314], common[210]}
-, 
-[20030] = {20030, common[30], true, common[7], empty, common[214], common[18], true, common[307], common[30]}
-, 
-[20031] = {20031, common[30], true, common[7], empty, common[214], common[18], true, common[315], common[211]}
-, 
-[20032] = {20032, common[30], true, common[7], common[301], common[214], common[212], true, common[316], common[8]}
-, 
-[20033] = {20033, common[30], true, common[7], empty, common[214], common[18], true, common[317], common[199]}
-, 
-[20035] = {20035, common[30], true, common[7], empty, common[214], common[18], true, common[308], common[101]}
-, 
-[20036] = {20036, common[30], true, common[4], empty, common[215], common[18], true, common[313], common[5]}
-, 
-[20037] = {20037, common[30], true, common[20], empty, common[215], common[18], true, common[314], common[210]}
-, 
-[20038] = {20038, common[30], true, common[7], empty, common[215], common[18], true, common[307], common[30]}
-, 
-[20039] = {20039, common[30], true, common[7], empty, common[215], common[18], true, common[315], common[211]}
-, 
-[20040] = {20040, common[30], true, common[7], common[301], common[215], common[212], true, common[316], common[8]}
-, 
-[20041] = {20041, common[30], true, common[7], empty, common[215], common[18], true, common[317], common[199]}
-, 
-[20043] = {20043, common[30], true, common[7], empty, common[215], common[18], true, common[308], common[101]}
-, 
-[20044] = {20044, common[30], true, common[4], empty, common[216], common[18], true, common[313], common[5]}
-, 
-[20045] = {20045, common[30], true, common[20], empty, common[216], common[18], true, common[314], common[210]}
-, 
-[20046] = {20046, common[30], true, common[7], empty, common[216], common[18], true, common[307], common[30]}
-, 
-[20047] = {20047, common[30], true, common[7], empty, common[216], common[18], true, common[315], common[211]}
-, 
-[20048] = {20048, common[30], true, common[7], common[301], common[216], common[212], true, common[316], common[8]}
-, 
-[20049] = {20049, common[30], true, common[7], empty, common[216], common[18], true, common[317], common[199]}
-, 
-[20051] = {20051, common[30], true, common[7], empty, common[216], common[18], true, common[308], common[101]}
-, 
-[20052] = {20052, common[30], true, common[7], empty, common[217], common[18], false, 
-{"LoadEffectID"}
-, common[211]}
-, 
-[20053] = {20053, common[30], true, common[7], empty, common[217], common[18], false, 
-{"ExecEffectID"}
-, common[211]}
-, 
-[20054] = {20054, common[30], true, common[7], empty, common[217], common[18], false, 
-{"HitEffectId"}
-, common[211]}
-, 
-[20055] = {20055, common[30], true, common[7], common[301], common[217], common[18], false, common[305], common[8]}
-, 
-[30000] = {30000, common[218], false, common[7], empty, common[136], nil, nil, nil, common[74]}
-, 
-[30001] = {30001, common[218], false, common[220], empty, common[219], common[18], false, nil, common[43], common[221]}
-, 
-[30002] = {30002, common[218], false, common[7], empty, common[219], common[222], true, common[318], common[127]}
-, 
-[30003] = {30003, common[218], false, common[42], empty, common[219], common[222], true, common[319], common[43]}
-, 
-[30004] = {30004, common[223], false, common[7], empty, common[136], nil, nil, nil, common[74]}
-, 
-[30005] = {30005, common[223], false, common[220], empty, common[219], common[18], false, nil, common[43], common[221]}
-, 
-[30006] = {30006, common[223], false, common[7], empty, common[219], common[222], true, common[318], common[127]}
-, 
-[30007] = {30007, common[223], false, common[42], empty, common[219], common[222], true, common[319], common[43]}
-, 
-[30008] = {30008, common[224], false, common[7], empty, common[136], nil, nil, nil, common[74]}
-, 
-[30009] = {30009, common[224], false, common[42], empty, "NeedExp", nil, nil, nil, common[43]}
-, 
-[30010] = {30010, common[224], false, common[42], empty, "NeedGold", nil, nil, nil, common[43]}
-, 
-[30011] = {30011, common[225], false, common[42], empty, "NeedAffintyExp", nil, nil, nil, common[49]}
-, 
-[31000] = {31000, common[226], false, common[7], empty, common[136], nil, nil, nil, common[74]}
-, 
-[31001] = {31001, common[226], false, common[7], empty, "NormalSkill", nil, nil, nil, common[199]}
-, 
-[31002] = {31002, common[226], false, common[7], empty, "ActiveSkill", nil, nil, nil, common[199]}
-, 
-[31003] = {31003, common[226], false, common[7], empty, "ChainSkill1", nil, nil, nil, common[199]}
-, 
-[31004] = {31004, common[226], true, common[7], empty, "ChainSkill2", nil, nil, nil, common[199], nil, nil, 0}
-, 
-[31005] = {31005, common[226], true, common[7], empty, "ChainSkill3", nil, nil, nil, common[199], nil, nil, 0}
-, 
-[31006] = {31006, common[226], true, common[7], empty, "PassiveSkill", nil, nil, nil, common[76], nil, nil, 0}
-, 
-[31007] = {31007, common[226], true, common[7], empty, "WorkSkill1", nil, nil, nil, common[227], nil, nil, 0}
-, 
-[31008] = {31008, common[226], true, common[7], empty, "WorkSkill2", nil, nil, nil, common[227], nil, nil, 0}
-, 
-[31009] = {31009, common[226], true, common[7], empty, "WorkSkill3", nil, nil, nil, common[227], nil, nil, 0}
-, 
-[31010] = {31010, common[226], false, common[229], 
-{
-[1] = {[1] = "PetID", [2] = "PetID"}
-, 
-[2] = {[1] = "Grade", [2] = "Grade", [3] = 0}
-}
-, nil, common[228], false, 
-{"", "PetID", "Grade"}
-, common[218], common[49]}
-, 
-[31011] = {31011, common[226], false, common[229], 
-{
-[1] = {[1] = "PetID", [2] = "PetID"}
-, 
-[2] = {[1] = "Awakening", [2] = "Awakening", [3] = 0}
-}
-, nil, common[228], false, 
-{"", "PetID", "Awakening"}
-, common[223], common[49]}
-, 
-[31012] = {31012, common[226], true, common[7], empty, "IntensifyBuff", nil, nil, nil, common[30]}
-, 
-[31110] = {31110, common[227], false, common[20], empty, "RoomType", nil, nil, nil, "AirRoomType"}
-, 
-[32000] = {32000, common[74], false, common[7], empty, common[6], nil, nil, nil, common[230], common[136]}
-, 
-[32001] = {32001, common[74], true, common[229], 
-{
-[1] = {[1] = "ID", [2] = "PetID"}
-, 
-[2] = {[1] = "Formal", [2] = 1, [3] = true}
-}
-, nil, common[228], false, 
-{"", "ID", "Formal"}
-, common[231], common[49]}
-, 
-[32002] = {32002, common[74], false, common[20], empty, "FirstElement", nil, nil, nil, common[232]}
-, 
-[32003] = {32003, common[74], false, common[20], empty, "SecondElement", nil, nil, nil, common[232]}
-, 
-[32004] = {32004, common[74], false, common[7], empty, "Tags", nil, nil, nil, common[233]}
-, 
-[32005] = {32005, common[74], false, common[7], empty, common[234], common[222], true, common[318], common[127]}
-, 
-[32006] = {32006, common[74], false, common[42], empty, common[234], common[222], true, common[319], common[43]}
-, 
-[32007] = {32007, common[74], false, common[220], empty, "BuffIconOffset", common[18], false, nil, common[46], common[46]}
-, 
-[32008] = {32008, common[74], true, common[220], empty, common[235], common[18], false, nil, common[46], common[44]}
-, 
-[32009] = {32009, common[74], true, common[20], empty, common[235], common[18], false, common[302], "PassiveSkillIconType_1"}
-, 
-[32010] = {32010, common[74], true, common[20], empty, common[235], common[18], false, common[303], "PassiveSkillIconType_2"}
-, 
-[32011] = {32011, common[74], false, common[7], empty, common[6], nil, nil, nil, "cfg_maze_pet_info"}
-, 
-[32012] = {32012, common[74], false, common[7], empty, "FriendTeam", nil, nil, nil, common[233], nil, nil, 0}
-, 
-[32013] = {32013, common[230], false, common[7], empty, common[136], nil, nil, nil, common[74]}
-, 
-[32014] = {32014, common[230], true, common[7], empty, common[236], common[18], true, common[302], common[162]}
-, 
-[32015] = {32015, common[230], true, common[7], empty, common[237], common[18], true, common[302], common[162]}
-, 
-[32016] = {32016, common[230], true, common[7], empty, common[237], common[18], true, common[303], common[238], nil, nil, -1}
-, 
-[32017] = {32017, common[230], true, common[7], empty, common[239], common[18], true, common[302], common[162]}
-, 
-[32018] = {32018, common[230], true, common[7], empty, common[240], common[18], true, common[302], common[162]}
-, 
-[32019] = {32019, common[230], true, common[7], empty, common[241], common[18], true, common[302], common[162]}
-, 
-[32020] = {32020, common[230], true, common[7], empty, common[242], common[18], true, common[302], common[162]}
-, 
-[32021] = {32021, common[230], true, common[7], empty, common[243], common[18], true, common[302], common[162]}
-, 
-[32022] = {32022, common[230], true, common[7], empty, common[244], common[18], true, common[302], common[162]}
-, 
-[32023] = {32023, common[230], true, common[7], empty, common[245], common[18], true, common[302], common[162]}
-, 
-[32024] = {32024, common[230], true, common[7], empty, common[246], common[18], true, common[302], common[162]}
-, 
-[32025] = {32025, common[230], true, common[7], empty, common[247], common[18], true, common[302], common[162]}
-, 
-[32026] = {32026, common[230], true, common[7], empty, common[248], common[18], true, common[302], common[162]}
-, 
-[32027] = {32027, common[230], true, common[7], empty, common[248], common[18], true, common[303], common[238], nil, nil, -1}
-, 
-[32028] = {32028, common[230], true, common[7], empty, common[249], common[18], true, common[302], common[162]}
-, 
-[32029] = {32029, common[230], true, common[7], empty, common[250], common[18], true, common[302], common[162]}
-, 
-[32030] = {32030, common[230], true, common[7], empty, common[251], common[18], true, common[302], common[162]}
-, 
-[32031] = {32031, common[230], true, common[7], empty, common[252], common[18], true, common[302], common[162]}
-, 
-[32032] = {32032, common[230], true, common[7], empty, common[253], common[18], true, common[302], common[162]}
-, 
-[32035] = {32035, common[230], true, common[7], empty, common[254], common[18], true, common[302], common[162]}
-, 
-[32036] = {32036, common[230], true, common[7], empty, common[255], common[18], true, common[302], common[162]}
-, 
-[32037] = {32037, common[230], true, common[7], empty, common[256], common[18], true, common[302], common[162]}
-, 
-[32039] = {32039, common[135], false, common[7], empty, "StoryID", nil, nil, nil, "cfg_story"}
-, 
-[32040] = {32040, common[135], false, common[38], empty, nil, common[18], false, nil, common[257], common[258]}
-, 
-[32041] = {32041, common[135], false, common[7], empty, common[257], nil, nil, nil, common[127], nil, nil, 0}
-, 
-[32042] = {32042, common[135], false, common[42], empty, common[258], nil, nil, nil, common[49]}
-, 
-[32043] = {32043, common[135], false, common[42], empty, common[259], nil, nil, nil, common[49]}
-, 
-[32044] = {32044, common[135], false, common[7], empty, "Condition", nil, nil, nil, common[238]}
-, 
-[32045] = {32045, common[260], false, common[34], empty, nil, common[18], false, nil, "_CheckPetTaskType"}
-, 
-[32046] = {32046, common[260], false, common[38], empty, nil, common[18], false, nil, common[257], common[258]}
-, 
-[32047] = {32047, common[260], false, common[7], empty, common[257], nil, nil, nil, common[127]}
-, 
-[32048] = {32048, common[260], false, common[42], empty, common[258], nil, nil, nil, common[43]}
-, 
-[32049] = {32049, common[260], false, common[42], empty, common[259], nil, nil, nil, common[43]}
-, 
-[32050] = {32050, common[231], false, common[119], empty, nil, common[18], false, nil, common[136], common[261]}
-, 
-[32051] = {32051, common[231], false, common[7], empty, common[136], nil, nil, nil, common[74]}
-, 
-[32052] = {32052, common[231], false, common[7], empty, common[261], nil, nil, nil, common[225]}
-, 
-[32053] = {32053, common[231], true, common[7], empty, "StoryEventID", nil, nil, nil, common[135], nil, nil, 0}
-, 
-[32054] = {32054, common[231], false, common[38], empty, nil, common[18], false, nil, "TaskEventIDList", common[262]}
-, 
-[32055] = {32055, common[231], false, common[42], empty, common[262], nil, nil, nil, common[43]}
-, 
-[32056] = {32056, common[231], false, common[229], empty, nil, common[228], false, 
-{"", "TaskEventIDList", "PetID"}
-, common[260], common[49]}
-, 
-[32057] = {32057, common[263], false, common[264], 
-{
-[1] = {[1] = "TaskEventIDList", [2] = "ID"}
-, 
-[2] = {[1] = "PetID", [2] = "TaskContent"}
-, 
-[3] = {[1] = "Type", [2] = 1, [3] = true}
-}
-, common[6]}
-, 
-[32058] = {32058, common[263], false, common[264], empty, common[236]}
-, 
-[32059] = {32059, common[263], false, common[264], empty, common[237]}
-, 
-[32060] = {32060, common[263], false, common[264], empty, common[239]}
-, 
-[32061] = {32061, common[263], false, common[264], empty, common[240]}
-, 
-[32062] = {32062, common[263], false, common[264], empty, common[241]}
-, 
-[32063] = {32063, common[263], false, common[264], empty, common[242]}
-, 
-[32064] = {32064, common[263], false, common[264], empty, common[243]}
-, 
-[32065] = {32065, common[263], false, common[264], empty, common[244]}
-, 
-[32066] = {32066, common[263], false, common[264], empty, common[245]}
-, 
-[32067] = {32067, common[263], false, common[264], empty, common[246]}
-, 
-[32068] = {32068, common[263], false, common[264], empty, common[247]}
-, 
-[32069] = {32069, common[263], false, common[264], empty, common[248]}
-, 
-[32070] = {32070, common[263], false, common[264], empty, common[249]}
-, 
-[32071] = {32071, common[263], false, common[264], empty, common[250]}
-, 
-[32072] = {32072, common[263], false, common[264], empty, common[251]}
-, 
-[32073] = {32073, common[263], false, common[264], empty, common[252]}
-, 
-[32074] = {32074, common[263], false, common[264], empty, common[253]}
-, 
-[32075] = {32075, common[263], false, common[264], empty, common[265]}
-, 
-[32076] = {32076, common[263], false, common[264], empty, common[266]}
-, 
-[32077] = {32077, common[263], false, common[264], empty, common[254]}
-, 
-[32078] = {32078, common[263], false, common[264], empty, common[255]}
-, 
-[32079] = {32079, common[263], false, common[264], empty, common[256]}
-, 
-[32080] = {32080, common[230], true, common[7], empty, common[236], common[18], true, common[303], common[238], nil, nil, 0}
-, 
-[32081] = {32081, common[230], true, common[7], empty, "FirstMainLobbyWelcome", common[18], true, common[303], common[238], nil, nil, 0}
-, 
-[32082] = {32082, common[230], true, common[7], empty, common[265], common[18], true, common[303], common[238], nil, nil, 0}
-, 
-[32083] = {32083, common[230], true, common[7], empty, common[266], common[18], true, common[303], common[238], nil, nil, 0}
-, 
-[32084] = {32084, common[267], true, common[7], empty, "elementParam", common[18], true, 
-{"BuffID"}
-, common[30]}
-, 
-[32085] = {32085, common[267], false, common[7], empty, common[136], nil, nil, nil, common[74]}
-, 
-[50000] = {50000, common[268], false, common[7], empty, common[6], nil, nil, nil, common[74]}
-, 
-[50001] = {50001, common[268], false, common[42], empty, "BuffLock", nil, nil, nil, common[49]}
-, 
-[50002] = {50002, common[268], false, common[42], empty, "BuffAwakening", nil, nil, nil, common[49]}
-, 
-[50003] = {50003, common[269], false, common[81], empty, common[80]}
-, 
-[50004] = {50004, common[269], false, common[7], empty, common[136], nil, nil, nil, common[74]}
-, 
-[50005] = {50005, common[269], false, common[42], empty, common[270], nil, nil, nil, common[49]}
-, 
-[50006] = {50006, common[271], false, common[7], empty, common[136], nil, nil, nil, common[74]}
-, 
-[50007] = {50007, common[271], false, common[42], empty, common[270], nil, nil, nil, common[49]}
-, 
-[50008] = {50008, common[271], false, common[7], empty, common[154], nil, nil, nil, common[127]}
-, 
-[50009] = {50009, common[268], false, common[7], empty, "PracticeLevelId", nil, nil, nil, "cfg_tale_stage"}
-, 
-[50010] = {50010, common[269], false, common[81], empty, common[80]}
-, 
-[60000] = {60000, common[101], false, common[20], empty, common[168], nil, nil, nil, common[168]}
-, 
-[60001] = {60001, common[101], false, common[42], empty, "RaceType", nil, nil, nil, common[49], common[272]}
-, 
-[60002] = {60002, common[101], true, common[42], empty, "TrapElement", nil, nil, nil, common[49], common[63]}
-, 
-[60003] = {60003, common[101], true, common[42], empty, "GridPieceElement", nil, nil, nil, common[49], "5"}
-, 
-[60004] = {60004, common[101], false, common[42], empty, "ReplaceLevel", nil, nil, nil, common[49], common[272]}
-, 
-[60005] = {60005, common[101], true, common[7], empty, common[29], nil, nil, nil, common[30]}
-, 
-[60006] = {60006, common[101], true, common[7], empty, common[169], nil, nil, nil, common[101]}
-, 
-[60007] = {60007, common[101], true, common[7], empty, common[170], common[171], true, nil, common[8]}
-, 
-[60008] = {60008, common[101], true, common[7], empty, common[172], common[18], true, common[305], common[8]}
-, 
-[60009] = {60009, common[101], true, common[7], empty, common[173], nil, nil, nil, common[3]}
-, 
-[60010] = {60010, common[101], true, common[7], empty, "Block", nil, nil, nil, common[273]}
-, 
-[60011] = {60011, common[101], true, common[7], empty, "BlockByRace", common[18], true, 
-{"Block"}
-, common[273]}
-, 
-[60012] = {60012, common[101], true, common[20], empty, common[274], nil, nil, nil, common[274]}
-, 
-[60013] = {60013, common[101], true, common[20], empty, "HeadShowType", nil, nil, nil, "TrapHeadShowType"}
-, 
-[60014] = {60014, common[101], true, common[7], empty, "PermanentEffect", nil, nil, nil, common[211]}
-, 
-[60015] = {60015, common[101], true, common[7], empty, "IdleEffect", nil, nil, nil, common[211]}
-, 
-[70001] = {70001, common[275], false, common[7], empty, "LevelID", nil, nil, nil, common[31]}
-, 
-[70002] = {70002, common[276], false, common[7], empty, common[40], nil, nil, nil, common[275]}
-, 
-[70003] = {70003, common[276], false, common[7], empty, "ComponentID", nil, nil, nil, "cfg_campaign_component"}
-, 
-[70004] = {70004, common[276], false, common[7], empty, "HardID", nil, nil, nil, common[277]}
-, 
-[70005] = {70005, common[276], false, common[7], empty, "SquadsID", nil, nil, nil, "cfg_blackfist_squads"}
-, 
-[70006] = {70006, common[277], true, common[7], empty, "PrestigeItemID", nil, nil, nil, common[127]}
-, 
-[70007] = {70007, common[277], true, common[42], empty, "PrestigeItemNum", nil, nil, nil, common[49]}
-, 
-[70008] = {70008, common[277], true, common[7], empty, "BaseWordBuff", nil, nil, nil, common[108]}
-, 
-[70009] = {70009, "cfg_component_person_progress", false, common[7], empty, common[278], nil, nil, nil, common[127]}
-, 
-[70010] = {70010, common[279], false, common[7], empty, "TaskID", nil, nil, nil, common[77]}
-, 
-[70011] = {70011, common[279], false, common[7], empty, common[280], common[18], true, common[302], common[127]}
-, 
-[70012] = {70012, common[279], false, common[42], empty, common[280], common[18], true, common[303], common[49]}
-, 
-[70013] = {70013, "cfg_campaign", true, common[81], empty, "UnlockCond"}
-, 
-[70014] = {70014, "cfg_component_idol_achieve", false, common[81], empty, common[80]}
-, 
-[70015] = {70015, common[281], true, common[7], empty, common[282], nil, nil, nil, common[283]}
-, 
-[70016] = {70016, "cfg_component_season_maze_hand", true, common[7], empty, common[282], nil, nil, nil, common[283]}
-, 
-[70017] = {70017, "cfg_component_season_maze_lv", true, common[7], empty, common[282], nil, nil, nil, common[283]}
-, 
-[70018] = {70018, common[284], true, common[7], empty, common[282], nil, nil, nil, common[283]}
-, 
-[70019] = {70019, common[284], true, common[7], empty, "RelicRule", nil, nil, nil, common[285], common[286], nil, 0}
-, 
-[70020] = {70020, "cfg_component_season_maze_once", true, common[7], empty, common[282], nil, nil, nil, common[283]}
-, 
-[70021] = {70021, common[285], true, common[7], empty, "EffID", nil, nil, nil, common[283]}
-, 
-[70022] = {70022, "cfg_component_season_maze_room_box", true, common[7], empty, "RelicGroup", nil, nil, nil, common[285], common[286]}
-, 
-[70023] = {70023, "cfg_component_season_maze_room_event", true, common[7], empty, "Options", nil, nil, nil, common[281]}
-, 
-[70024] = {70024, "cfg_component_season_maze_room_res", true, common[7], empty, common[282], nil, nil, nil, common[283]}
-, 
-[70025] = {70025, "cfg_component_season_maze_save", true, common[7], empty, common[282], nil, nil, nil, common[283]}
-, 
-[80001] = {80001, common[287], false, common[20], empty, common[41], nil, nil, nil, "HomelandShopType"}
-, 
-[80002] = {80002, common[287], false, common[7], empty, common[278], nil, nil, nil, common[127]}
-, 
-[80003] = {80003, common[287], false, common[42], empty, common[176], nil, nil, nil, common[49]}
-, 
-[80004] = {80004, common[287], false, common[7], empty, "CostID", nil, nil, nil, common[127]}
-, 
-[80005] = {80005, common[287], false, common[42], empty, "CostNum", nil, nil, nil, common[49]}
-, 
-[80006] = {80006, common[288], false, common[42], empty, common[289], nil, nil, nil, common[49]}
-, 
-[80007] = {80007, common[288], true, common[7], empty, common[136], nil, nil, nil, common[74]}
-, 
-[80008] = {80008, common[290], true, common[7], empty, "RewardRandomID", nil, nil, nil, common[55]}
-, 
-[80009] = {80009, common[290], false, common[42], empty, common[289], nil, nil, nil, common[49]}
-, 
-[80010] = {80010, common[291], false, common[7], empty, common[6], nil, nil, nil, common[127]}
-, 
-[80011] = {80011, common[291], false, common[42], empty, "Goods", nil, nil, nil, common[49]}
-, 
-[80012] = {80012, common[291], false, common[42], empty, "Sell", nil, nil, nil, common[49]}
-, 
-[80013] = {80013, common[291], false, common[7], empty, "GainItemId", nil, nil, nil, common[127]}
-, 
-[80014] = {80014, common[292], false, common[20], empty, common[41], nil, nil, nil, "HomelandGoodsType"}
-, 
-[80015] = {80015, common[292], false, common[42], empty, "Odds", nil, nil, nil, common[49]}
-, 
-[80016] = {80016, common[182], true, common[81], empty, common[80]}
-, 
-[80017] = {80017, common[293], false, common[7], empty, common[294], nil, nil, nil, common[182], common[6]}
-, 
-[80018] = {80018, common[293], false, common[119], empty, nil, common[18], false, nil, common[294]}
-, 
-[80019] = {80019, common[295], false, common[7], empty, common[6], nil, nil, nil, common[127], common[6]}
-, 
-[80020] = {80020, "cfg_item_photo", false, common[7], empty, common[6], nil, nil, nil, common[127], common[6]}
-, 
-[80021] = {80021, common[296], false, common[7], empty, common[6], nil, nil, nil, common[295], common[6]}
-, 
-[80022] = {80022, "cfg_item_tree_seed", false, common[7], empty, "TreeId", nil, nil, nil, common[296], common[6]}
-, 
-[80023] = {80023, "cfg_item_wishing_coin", false, common[7], empty, common[6], nil, nil, nil, common[127], common[6]}
-, 
-[90001] = {90001, common[297], false, common[7], empty, "StoryTaskGroupTb", nil, nil, nil, common[298]}
-, 
-[90002] = {90002, common[297], false, common[42], empty, common[299], nil, nil, nil, common[49]}
-, 
-[90003] = {90003, common[297], false, common[7], empty, common[299], nil, nil, nil, common[298]}
-, 
-[90004] = {90004, common[297], true, "CallBackTime", empty, nil, nil, nil, nil, "_CheckCompareTime", "UnCostTimeStart", "UnCostTimeEnd"}
-, 
-[100002] = {100002, common[300], true, common[7], empty, "ThreeStarDropId", nil, nil, nil, common[110], common[111], nil, 0}
-, 
-[100003] = {100003, common[300], true, common[7], empty, common[120], nil, nil, nil, common[110], common[111], nil, 0}
-, 
-[100004] = {100004, common[300], true, common[7], empty, common[122], nil, nil, nil, common[110], common[111], nil, 0}
-, 
-[100005] = {100005, common[300], true, common[7], empty, common[58], nil, nil, nil, common[59], nil, nil, 0}
-, 
-[100006] = {100006, common[300], true, common[7], empty, common[60], nil, nil, nil, common[59], nil, nil, 0}
-, 
-[100007] = {100007, common[300], true, common[7], empty, common[61], nil, nil, nil, common[59], nil, nil, 0}
+  {
+    1,
+    common[1],
+    true,
+    common[2],
+    empty,
+    "ParseType",
+    nil,
+    nil,
+    nil,
+    "LDataParse_?"
+  },
+  {
+    2,
+    common[1],
+    false,
+    common[2],
+    empty,
+    "CheckType",
+    nil,
+    nil,
+    nil,
+    "LCheckAction_?"
+  },
+  {
+    3,
+    common[3],
+    false,
+    common[4],
+    empty,
+    "LogicID",
+    nil,
+    nil,
+    nil,
+    common[5],
+    common[6]
+  },
+  {
+    4,
+    common[3],
+    true,
+    common[7],
+    common[301],
+    "SkillList",
+    nil,
+    nil,
+    nil,
+    common[8]
+  },
+  [1001] = {
+    1001,
+    common[9],
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[10]
+  },
+  [1002] = {
+    1002,
+    common[9],
+    false,
+    common[7],
+    empty,
+    "OpenSpaces",
+    nil,
+    nil,
+    nil,
+    "cfg_aircraft_space"
+  },
+  [1003] = {
+    1003,
+    common[11],
+    false,
+    common[7],
+    empty,
+    common[12],
+    nil,
+    nil,
+    nil,
+    common[13]
+  },
+  [1004] = {
+    1004,
+    common[11],
+    false,
+    common[7],
+    empty,
+    common[12],
+    nil,
+    nil,
+    nil,
+    common[14]
+  },
+  [1005] = {
+    1005,
+    common[15],
+    false,
+    common[7],
+    empty,
+    "s",
+    nil,
+    nil,
+    nil,
+    common[13]
+  },
+  [1006] = {
+    1006,
+    common[15],
+    false,
+    common[7],
+    empty,
+    "e",
+    nil,
+    nil,
+    nil,
+    common[13]
+  },
+  [1007] = {
+    1007,
+    common[16],
+    false,
+    common[19],
+    empty,
+    common[17],
+    common[18],
+    false
+  },
+  [1008] = {
+    1008,
+    common[16],
+    false,
+    common[20],
+    empty,
+    common[17],
+    common[18],
+    false,
+    common[302],
+    common[21]
+  },
+  [1009] = {
+    1009,
+    common[16],
+    false,
+    common[7],
+    empty,
+    common[17],
+    common[18],
+    false,
+    common[303],
+    common[22]
+  },
+  [1010] = {
+    1010,
+    common[16],
+    true,
+    common[7],
+    empty,
+    common[17],
+    common[18],
+    false,
+    common[304],
+    common[23]
+  },
+  [1011] = {
+    1011,
+    common[16],
+    true,
+    common[19],
+    empty,
+    common[24],
+    common[18],
+    false
+  },
+  [1012] = {
+    1012,
+    common[16],
+    false,
+    common[20],
+    empty,
+    common[24],
+    common[18],
+    false,
+    common[302],
+    common[21]
+  },
+  [1013] = {
+    1013,
+    common[16],
+    false,
+    common[7],
+    empty,
+    common[24],
+    common[18],
+    false,
+    common[303],
+    common[22]
+  },
+  [1014] = {
+    1014,
+    common[16],
+    true,
+    common[7],
+    empty,
+    common[24],
+    common[18],
+    false,
+    common[304],
+    common[23]
+  },
+  [1015] = {
+    1015,
+    common[16],
+    true,
+    common[19],
+    empty,
+    common[25],
+    common[18],
+    false
+  },
+  [1016] = {
+    1016,
+    common[16],
+    false,
+    common[20],
+    empty,
+    common[25],
+    common[18],
+    false,
+    common[302],
+    common[21]
+  },
+  [1017] = {
+    1017,
+    common[16],
+    false,
+    common[7],
+    empty,
+    common[25],
+    common[18],
+    false,
+    common[303],
+    common[22]
+  },
+  [1018] = {
+    1018,
+    common[16],
+    true,
+    common[7],
+    empty,
+    common[25],
+    common[18],
+    false,
+    common[304],
+    common[23]
+  },
+  [1019] = {
+    1019,
+    common[16],
+    true,
+    common[19],
+    empty,
+    common[26],
+    common[18],
+    false
+  },
+  [1020] = {
+    1020,
+    common[16],
+    false,
+    common[20],
+    empty,
+    common[26],
+    common[18],
+    false,
+    common[302],
+    common[21]
+  },
+  [1021] = {
+    1021,
+    common[16],
+    false,
+    common[7],
+    empty,
+    common[26],
+    common[18],
+    false,
+    common[303],
+    common[22]
+  },
+  [1022] = {
+    1022,
+    common[16],
+    true,
+    common[7],
+    empty,
+    common[26],
+    common[18],
+    false,
+    common[304],
+    common[23]
+  },
+  [1023] = {
+    1023,
+    common[16],
+    true,
+    common[19],
+    empty,
+    common[27],
+    common[18],
+    false
+  },
+  [1024] = {
+    1024,
+    common[16],
+    false,
+    common[20],
+    empty,
+    common[27],
+    common[18],
+    false,
+    common[302],
+    common[21]
+  },
+  [1025] = {
+    1025,
+    common[16],
+    false,
+    common[7],
+    empty,
+    common[27],
+    common[18],
+    false,
+    common[303],
+    common[22]
+  },
+  [1026] = {
+    1026,
+    common[16],
+    true,
+    common[7],
+    empty,
+    common[27],
+    common[18],
+    false,
+    common[304],
+    common[23]
+  },
+  [1027] = {
+    1027,
+    common[28],
+    false,
+    common[7],
+    empty,
+    common[29],
+    nil,
+    nil,
+    nil,
+    common[30],
+    nil,
+    nil,
+    0
+  },
+  [1028] = {
+    1028,
+    common[31],
+    false,
+    common[7],
+    empty,
+    "MonsterWave",
+    nil,
+    nil,
+    nil,
+    common[32]
+  },
+  [1029] = {
+    1029,
+    common[31],
+    false,
+    common[20],
+    empty,
+    "CompleteConditionID",
+    nil,
+    nil,
+    nil,
+    common[33]
+  },
+  [1030] = {
+    1030,
+    common[31],
+    false,
+    common[34],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    "_CheckLevel_CompleteConditionID"
+  },
+  [1031] = {
+    1031,
+    common[31],
+    false,
+    common[7],
+    empty,
+    "Theme",
+    nil,
+    nil,
+    nil,
+    "cfg_theme"
+  },
+  [1032] = {
+    1032,
+    common[31],
+    false,
+    common[7],
+    empty,
+    "GridGenID",
+    nil,
+    nil,
+    nil,
+    "cfg_board"
+  },
+  [1033] = {
+    1033,
+    common[35],
+    false,
+    common[7],
+    empty,
+    common[36],
+    nil,
+    nil,
+    nil,
+    common[37],
+    "RuleID"
+  },
+  [1034] = {
+    1034,
+    common[35],
+    false,
+    common[38],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[36],
+    "RandWeight"
+  },
+  [1035] = {
+    1035,
+    common[37],
+    false,
+    common[7],
+    empty,
+    common[39],
+    nil,
+    nil,
+    nil,
+    "cfg_maze_room"
+  },
+  [1036] = {
+    1036,
+    common[37],
+    false,
+    common[7],
+    empty,
+    common[40],
+    nil,
+    nil,
+    nil,
+    common[13]
+  },
+  [1037] = {
+    1037,
+    common[37],
+    false,
+    common[38],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[39],
+    "RoomWeightArray"
+  },
+  [1038] = {
+    1038,
+    common[13],
+    false,
+    common[42],
+    empty,
+    common[41],
+    nil,
+    nil,
+    nil,
+    common[43],
+    common[44]
+  },
+  [1039] = {
+    1039,
+    common[13],
+    false,
+    common[42],
+    empty,
+    common[45],
+    nil,
+    nil,
+    nil,
+    common[43],
+    common[46]
+  },
+  [1040] = {
+    1040,
+    common[13],
+    false,
+    common[7],
+    empty,
+    common[47],
+    nil,
+    nil,
+    nil,
+    common[31]
+  },
+  [1041] = {
+    1041,
+    common[13],
+    false,
+    common[42],
+    empty,
+    common[48],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [1042] = {
+    1042,
+    common[13],
+    false,
+    common[42],
+    empty,
+    common[50],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [1043] = {
+    1043,
+    common[13],
+    false,
+    common[7],
+    empty,
+    common[51],
+    nil,
+    nil,
+    nil,
+    common[52]
+  },
+  [1044] = {
+    1044,
+    common[13],
+    false,
+    common[7],
+    empty,
+    common[53],
+    nil,
+    nil,
+    nil,
+    common[13]
+  },
+  [1045] = {
+    1045,
+    common[13],
+    true,
+    common[7],
+    empty,
+    common[54],
+    nil,
+    nil,
+    nil,
+    common[55],
+    nil,
+    nil,
+    0
+  },
+  [1046] = {
+    1046,
+    common[13],
+    true,
+    common[7],
+    empty,
+    common[56],
+    nil,
+    nil,
+    nil,
+    common[55]
+  },
+  [1047] = {
+    1047,
+    common[13],
+    true,
+    common[7],
+    empty,
+    common[57],
+    nil,
+    nil,
+    nil,
+    common[55]
+  },
+  [1048] = {
+    1048,
+    common[13],
+    true,
+    common[7],
+    empty,
+    common[58],
+    nil,
+    nil,
+    nil,
+    common[59],
+    nil,
+    nil,
+    0
+  },
+  [1049] = {
+    1049,
+    common[13],
+    true,
+    common[7],
+    empty,
+    common[60],
+    nil,
+    nil,
+    nil,
+    common[59],
+    nil,
+    nil,
+    0
+  },
+  [1050] = {
+    1050,
+    common[13],
+    true,
+    common[7],
+    empty,
+    common[61],
+    nil,
+    nil,
+    nil,
+    common[59],
+    nil,
+    nil,
+    0
+  },
+  [1051] = {
+    1051,
+    common[62],
+    false,
+    common[42],
+    empty,
+    common[41],
+    nil,
+    nil,
+    nil,
+    common[43],
+    common[63]
+  },
+  [1052] = {
+    1052,
+    common[62],
+    false,
+    common[42],
+    empty,
+    common[45],
+    nil,
+    nil,
+    nil,
+    common[43],
+    common[46]
+  },
+  [1053] = {
+    1053,
+    common[62],
+    false,
+    common[7],
+    empty,
+    common[47],
+    nil,
+    nil,
+    nil,
+    common[31]
+  },
+  [1054] = {
+    1054,
+    common[62],
+    false,
+    common[42],
+    empty,
+    common[48],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [1055] = {
+    1055,
+    common[62],
+    false,
+    common[42],
+    empty,
+    common[50],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [1056] = {
+    1056,
+    common[62],
+    true,
+    common[7],
+    empty,
+    common[58],
+    nil,
+    nil,
+    nil,
+    common[59],
+    nil,
+    nil,
+    0
+  },
+  [1057] = {
+    1057,
+    common[62],
+    true,
+    common[7],
+    empty,
+    common[60],
+    nil,
+    nil,
+    nil,
+    common[59],
+    nil,
+    nil,
+    0
+  },
+  [1058] = {
+    1058,
+    common[62],
+    true,
+    common[7],
+    empty,
+    common[61],
+    nil,
+    nil,
+    nil,
+    common[59],
+    nil,
+    nil,
+    0
+  },
+  [1059] = {
+    1059,
+    common[64],
+    false,
+    common[7],
+    empty,
+    common[65],
+    nil,
+    nil,
+    nil,
+    common[62],
+    common[65]
+  },
+  [1060] = {
+    1060,
+    common[64],
+    true,
+    common[7],
+    empty,
+    common[66],
+    nil,
+    nil,
+    nil,
+    common[62],
+    common[65],
+    nil,
+    0
+  },
+  [1061] = {
+    1061,
+    common[67],
+    false,
+    common[7],
+    empty,
+    common[65],
+    nil,
+    nil,
+    nil,
+    common[62],
+    common[65]
+  },
+  [1062] = {
+    1062,
+    common[67],
+    true,
+    common[7],
+    empty,
+    common[53],
+    common[18],
+    true,
+    nil,
+    common[62],
+    common[65],
+    nil,
+    0
+  },
+  [1063] = {
+    1063,
+    common[68],
+    false,
+    common[7],
+    empty,
+    common[40],
+    nil,
+    nil,
+    nil,
+    common[13]
+  },
+  [1064] = {
+    1064,
+    common[68],
+    false,
+    common[7],
+    empty,
+    common[69],
+    nil,
+    nil,
+    nil,
+    common[11]
+  },
+  [1065] = {
+    1065,
+    common[68],
+    false,
+    common[7],
+    empty,
+    common[69],
+    nil,
+    nil,
+    nil,
+    common[14]
+  },
+  [1066] = {
+    1066,
+    common[68],
+    false,
+    common[7],
+    empty,
+    common[70],
+    nil,
+    nil,
+    nil,
+    common[71]
+  },
+  [1067] = {
+    1067,
+    common[72],
+    false,
+    common[7],
+    empty,
+    common[73],
+    common[18],
+    true,
+    common[302],
+    common[74]
+  },
+  [1068] = {
+    1068,
+    common[72],
+    false,
+    common[34],
+    empty,
+    common[73],
+    common[18],
+    true,
+    nil,
+    common[75]
+  },
+  [1069] = {
+    1069,
+    common[76],
+    false,
+    common[7],
+    empty,
+    common[29],
+    nil,
+    nil,
+    nil,
+    common[30]
+  },
+  [1071] = {
+    1071,
+    common[77],
+    true,
+    common[20],
+    empty,
+    common[78],
+    nil,
+    nil,
+    nil,
+    common[79]
+  },
+  [1072] = {
+    1072,
+    common[77],
+    false,
+    common[81],
+    empty,
+    common[80]
+  },
+  [1073] = {
+    1073,
+    common[77],
+    false,
+    common[81],
+    empty,
+    common[82]
+  },
+  [1074] = {
+    1074,
+    common[77],
+    false,
+    common[34],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[83]
+  },
+  [1075] = {
+    1075,
+    common[84],
+    false,
+    common[7],
+    empty,
+    common[85],
+    nil,
+    nil,
+    nil,
+    common[77],
+    common[6]
+  },
+  [1076] = {
+    1076,
+    common[32],
+    false,
+    common[7],
+    empty,
+    common[86],
+    nil,
+    nil,
+    nil,
+    common[87]
+  },
+  [1077] = {
+    1077,
+    common[32],
+    false,
+    common[20],
+    empty,
+    "CompleteCondition",
+    nil,
+    nil,
+    nil,
+    common[33]
+  },
+  [1078] = {
+    1078,
+    common[32],
+    true,
+    common[7],
+    empty,
+    "BossID",
+    nil,
+    nil,
+    nil,
+    common[52]
+  },
+  [1079] = {
+    1079,
+    common[32],
+    true,
+    common[7],
+    empty,
+    common[88],
+    common[18],
+    true,
+    {"refreshID"},
+    common[87]
+  },
+  [1080] = {
+    1080,
+    common[32],
+    true,
+    common[20],
+    empty,
+    common[88],
+    common[18],
+    true,
+    {"type"},
+    "MonsterWaveInternalRefreshType"
+  },
+  [1081] = {
+    1081,
+    common[87],
+    true,
+    common[38],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[89],
+    common[90]
+  },
+  [1082] = {
+    1082,
+    common[87],
+    false,
+    common[7],
+    empty,
+    common[89],
+    nil,
+    nil,
+    nil,
+    common[91],
+    nil,
+    nil,
+    0
+  },
+  [1083] = {
+    1083,
+    common[87],
+    true,
+    common[38],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[92],
+    common[93]
+  },
+  [1084] = {
+    1084,
+    common[87],
+    false,
+    common[7],
+    empty,
+    common[92],
+    nil,
+    nil,
+    nil,
+    common[94],
+    nil,
+    nil,
+    0
+  },
+  [1085] = {
+    1085,
+    common[94],
+    true,
+    common[7],
+    empty,
+    common[95],
+    nil,
+    nil,
+    nil,
+    common[52]
+  },
+  [1086] = {
+    1086,
+    common[94],
+    true,
+    common[20],
+    empty,
+    common[96],
+    nil,
+    nil,
+    nil,
+    common[97]
+  },
+  [1087] = {
+    1087,
+    common[94],
+    true,
+    common[38],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[95],
+    common[98],
+    common[99]
+  },
+  [1088] = {
+    1088,
+    common[91],
+    true,
+    common[7],
+    empty,
+    common[100],
+    nil,
+    nil,
+    nil,
+    common[101]
+  },
+  [1089] = {
+    1089,
+    common[91],
+    true,
+    common[38],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[100],
+    common[102]
+  },
+  [1090] = {
+    1090,
+    common[91],
+    true,
+    common[38],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[100],
+    common[103]
+  },
+  [1091] = {
+    1091,
+    common[104],
+    false,
+    common[7],
+    empty,
+    common[51],
+    nil,
+    nil,
+    nil,
+    common[52]
+  },
+  [1092] = {
+    1092,
+    common[104],
+    false,
+    common[7],
+    empty,
+    common[105],
+    nil,
+    nil,
+    nil,
+    common[31]
+  },
+  [1093] = {
+    1093,
+    common[104],
+    false,
+    common[42],
+    empty,
+    common[50],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [1094] = {
+    1094,
+    common[104],
+    false,
+    common[42],
+    empty,
+    common[106],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [1095] = {
+    1095,
+    common[104],
+    true,
+    common[7],
+    empty,
+    common[107],
+    nil,
+    nil,
+    nil,
+    common[108],
+    nil,
+    nil,
+    0
+  },
+  [1096] = {
+    1096,
+    common[104],
+    false,
+    common[7],
+    empty,
+    common[109],
+    nil,
+    nil,
+    nil,
+    common[110],
+    common[111]
+  },
+  [1097] = {
+    1097,
+    common[112],
+    false,
+    common[20],
+    empty,
+    common[41],
+    nil,
+    nil,
+    nil,
+    common[113]
+  },
+  [1098] = {
+    1098,
+    common[112],
+    false,
+    common[81],
+    empty,
+    common[80],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    0
+  },
+  [1099] = {
+    1099,
+    common[112],
+    false,
+    common[42],
+    empty,
+    common[114],
+    nil,
+    nil,
+    nil,
+    common[43],
+    common[115]
+  },
+  [1100] = {
+    1100,
+    common[108],
+    false,
+    common[7],
+    empty,
+    common[29],
+    nil,
+    nil,
+    nil,
+    common[30],
+    common[6]
+  },
+  [1101] = {
+    1101,
+    common[52],
+    false,
+    common[7],
+    empty,
+    common[116],
+    nil,
+    nil,
+    nil,
+    common[117]
+  },
+  [1102] = {
+    1102,
+    common[118],
+    false,
+    common[119],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[105]
+  },
+  [1103] = {
+    1103,
+    common[118],
+    false,
+    common[7],
+    empty,
+    common[105],
+    nil,
+    nil,
+    nil,
+    common[31]
+  },
+  [1104] = {
+    1104,
+    common[118],
+    true,
+    common[7],
+    empty,
+    common[107],
+    nil,
+    nil,
+    nil,
+    common[108],
+    nil,
+    nil,
+    0
+  },
+  [1105] = {
+    1105,
+    common[118],
+    false,
+    common[7],
+    empty,
+    common[120],
+    nil,
+    nil,
+    nil,
+    common[110],
+    common[111]
+  },
+  [1106] = {
+    1106,
+    common[121],
+    false,
+    common[7],
+    empty,
+    common[122],
+    nil,
+    nil,
+    nil,
+    common[110],
+    common[111]
+  },
+  [1107] = {
+    1107,
+    common[123],
+    false,
+    common[7],
+    empty,
+    common[124],
+    nil,
+    nil,
+    nil,
+    common[125]
+  },
+  [1108] = {
+    1108,
+    common[123],
+    false,
+    common[7],
+    empty,
+    common[126],
+    nil,
+    nil,
+    nil,
+    common[127]
+  },
+  [1109] = {
+    1109,
+    common[123],
+    false,
+    common[42],
+    empty,
+    common[128],
+    nil,
+    nil,
+    nil,
+    common[43]
+  },
+  [1110] = {
+    1110,
+    common[123],
+    false,
+    common[38],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[126],
+    common[128]
+  },
+  [1111] = {
+    1111,
+    common[123],
+    true,
+    common[81],
+    empty,
+    common[129]
+  },
+  [1112] = {
+    1112,
+    common[125],
+    true,
+    common[7],
+    empty,
+    common[130],
+    nil,
+    nil,
+    nil,
+    common[125],
+    nil,
+    nil,
+    0
+  },
+  [1113] = {
+    1113,
+    common[125],
+    true,
+    common[7],
+    empty,
+    common[131],
+    nil,
+    nil,
+    nil,
+    common[125],
+    nil,
+    nil,
+    0
+  },
+  [1114] = {
+    1114,
+    common[16],
+    false,
+    common[7],
+    empty,
+    common[26],
+    common[18],
+    false,
+    common[303],
+    common[22]
+  },
+  [1115] = {
+    1115,
+    common[16],
+    true,
+    common[7],
+    empty,
+    common[26],
+    common[18],
+    false,
+    common[304],
+    common[23]
+  },
+  [1116] = {
+    1116,
+    common[16],
+    true,
+    common[19],
+    empty,
+    common[27],
+    common[18],
+    false
+  },
+  [1117] = {
+    1117,
+    common[132],
+    false,
+    common[7],
+    empty,
+    common[133],
+    nil,
+    nil,
+    nil,
+    common[123]
+  },
+  [1118] = {
+    1118,
+    common[134],
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[135],
+    common[6]
+  },
+  [1119] = {
+    1119,
+    common[134],
+    false,
+    common[7],
+    empty,
+    common[136],
+    nil,
+    nil,
+    nil,
+    common[74]
+  },
+  [1120] = {
+    1120,
+    common[134],
+    true,
+    common[7],
+    empty,
+    common[137],
+    nil,
+    true,
+    nil,
+    common[74]
+  },
+  [1121] = {
+    1121,
+    common[134],
+    true,
+    common[7],
+    empty,
+    common[138],
+    nil,
+    nil,
+    nil,
+    common[13],
+    common[6],
+    nil,
+    0
+  },
+  [1122] = {
+    1122,
+    common[139],
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[10],
+    common[6]
+  },
+  [1123] = {
+    1123,
+    common[139],
+    true,
+    common[7],
+    empty,
+    common[140],
+    nil,
+    nil,
+    nil,
+    common[134],
+    common[6],
+    nil,
+    0
+  },
+  [1126] = {
+    1126,
+    common[141],
+    false,
+    common[81],
+    empty,
+    common[142]
+  },
+  [1127] = {
+    1127,
+    common[134],
+    true,
+    common[7],
+    empty,
+    common[143],
+    nil,
+    true,
+    nil,
+    common[10],
+    common[6]
+  },
+  [1129] = {
+    1129,
+    common[144],
+    false,
+    common[7],
+    empty,
+    common[145],
+    nil,
+    nil,
+    nil,
+    common[55],
+    common[6]
+  },
+  [1130] = {
+    1130,
+    common[144],
+    false,
+    common[7],
+    empty,
+    common[146],
+    nil,
+    nil,
+    nil,
+    common[55],
+    common[6]
+  },
+  [1131] = {
+    1131,
+    common[147],
+    false,
+    common[42],
+    empty,
+    common[148],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [1132] = {
+    1132,
+    common[149],
+    true,
+    common[7],
+    empty,
+    common[150],
+    nil,
+    nil,
+    nil,
+    common[74],
+    common[6]
+  },
+  [1133] = {
+    1133,
+    common[149],
+    false,
+    common[20],
+    empty,
+    common[41],
+    nil,
+    nil,
+    nil,
+    common[151]
+  },
+  [1134] = {
+    1134,
+    common[149],
+    false,
+    common[42],
+    empty,
+    common[152],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [1135] = {
+    1135,
+    common[149],
+    false,
+    common[42],
+    empty,
+    common[153],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [1136] = {
+    1136,
+    common[149],
+    true,
+    common[7],
+    empty,
+    common[154],
+    nil,
+    nil,
+    nil,
+    common[127],
+    common[6],
+    nil,
+    0
+  },
+  [1137] = {
+    1137,
+    common[149],
+    false,
+    common[42],
+    empty,
+    common[155],
+    nil,
+    nil,
+    nil,
+    common[49],
+    common[156]
+  },
+  [1138] = {
+    1138,
+    common[157],
+    false,
+    common[7],
+    empty,
+    common[158],
+    nil,
+    nil,
+    nil,
+    common[110],
+    common[111]
+  },
+  [1139] = {
+    1139,
+    common[157],
+    false,
+    common[7],
+    empty,
+    common[159],
+    common[18],
+    true,
+    common[302],
+    common[127],
+    common[6]
+  },
+  [1140] = {
+    1140,
+    common[157],
+    false,
+    common[42],
+    empty,
+    common[159],
+    common[18],
+    true,
+    common[303],
+    common[49]
+  },
+  [1141] = {
+    1141,
+    common[160],
+    true,
+    common[7],
+    empty,
+    common[161],
+    nil,
+    nil,
+    nil,
+    common[162]
+  },
+  [1142] = {
+    1142,
+    common[163],
+    true,
+    common[7],
+    empty,
+    common[164],
+    nil,
+    nil,
+    common[302],
+    common[127]
+  },
+  [1143] = {
+    1143,
+    common[163],
+    true,
+    common[7],
+    empty,
+    common[165],
+    nil,
+    true,
+    nil,
+    common[166]
+  },
+  [1144] = {
+    1144,
+    common[166],
+    true,
+    common[81],
+    empty,
+    common[142]
+  },
+  [1145] = {
+    1145,
+    common[167],
+    true,
+    common[7],
+    empty,
+    common[164],
+    nil,
+    nil,
+    common[302],
+    common[127]
+  },
+  [1146] = {
+    1146,
+    common[167],
+    true,
+    common[7],
+    empty,
+    common[165],
+    nil,
+    true,
+    nil,
+    common[141]
+  },
+  [1147] = {
+    1147,
+    common[141],
+    true,
+    common[81],
+    empty,
+    common[142]
+  },
+  [1200] = {
+    1200,
+    common[13],
+    false,
+    common[42],
+    empty,
+    common[41],
+    nil,
+    nil,
+    nil,
+    common[43],
+    common[44]
+  },
+  [1201] = {
+    1201,
+    common[13],
+    false,
+    common[42],
+    empty,
+    common[45],
+    nil,
+    nil,
+    nil,
+    common[43],
+    common[46]
+  },
+  [1202] = {
+    1202,
+    common[13],
+    false,
+    common[7],
+    empty,
+    common[47],
+    nil,
+    nil,
+    nil,
+    common[31]
+  },
+  [1203] = {
+    1203,
+    common[13],
+    false,
+    common[42],
+    empty,
+    common[48],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [1204] = {
+    1204,
+    common[13],
+    false,
+    common[42],
+    empty,
+    common[50],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [1205] = {
+    1205,
+    common[13],
+    false,
+    common[7],
+    empty,
+    common[51],
+    nil,
+    nil,
+    nil,
+    common[52]
+  },
+  [1206] = {
+    1206,
+    common[13],
+    false,
+    common[7],
+    empty,
+    common[53],
+    nil,
+    nil,
+    nil,
+    common[13]
+  },
+  [1207] = {
+    1207,
+    common[13],
+    true,
+    common[7],
+    empty,
+    common[54],
+    nil,
+    nil,
+    nil,
+    common[55],
+    nil,
+    nil,
+    0
+  },
+  [1208] = {
+    1208,
+    common[13],
+    true,
+    common[7],
+    empty,
+    common[56],
+    nil,
+    nil,
+    nil,
+    common[55]
+  },
+  [1209] = {
+    1209,
+    common[13],
+    true,
+    common[7],
+    empty,
+    common[57],
+    nil,
+    nil,
+    nil,
+    common[55]
+  },
+  [1210] = {
+    1210,
+    common[13],
+    true,
+    common[7],
+    empty,
+    common[58],
+    nil,
+    nil,
+    nil,
+    common[59],
+    nil,
+    nil,
+    0
+  },
+  [1211] = {
+    1211,
+    common[13],
+    true,
+    common[7],
+    empty,
+    common[60],
+    nil,
+    nil,
+    nil,
+    common[59],
+    nil,
+    nil,
+    0
+  },
+  [1212] = {
+    1212,
+    common[13],
+    true,
+    common[7],
+    empty,
+    common[61],
+    nil,
+    nil,
+    nil,
+    common[59],
+    nil,
+    nil,
+    0
+  },
+  [1213] = {
+    1213,
+    common[62],
+    false,
+    common[42],
+    empty,
+    common[41],
+    nil,
+    nil,
+    nil,
+    common[43],
+    common[63]
+  },
+  [1214] = {
+    1214,
+    common[62],
+    false,
+    common[42],
+    empty,
+    common[45],
+    nil,
+    nil,
+    nil,
+    common[43],
+    common[46]
+  },
+  [1215] = {
+    1215,
+    common[62],
+    false,
+    common[7],
+    empty,
+    common[47],
+    nil,
+    nil,
+    nil,
+    common[31]
+  },
+  [1216] = {
+    1216,
+    common[62],
+    false,
+    common[42],
+    empty,
+    common[48],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [1217] = {
+    1217,
+    common[62],
+    false,
+    common[42],
+    empty,
+    common[50],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [1218] = {
+    1218,
+    common[62],
+    true,
+    common[7],
+    empty,
+    common[58],
+    nil,
+    nil,
+    nil,
+    common[59],
+    nil,
+    nil,
+    0
+  },
+  [1219] = {
+    1219,
+    common[62],
+    true,
+    common[7],
+    empty,
+    common[60],
+    nil,
+    nil,
+    nil,
+    common[59],
+    nil,
+    nil,
+    0
+  },
+  [1220] = {
+    1220,
+    common[62],
+    true,
+    common[7],
+    empty,
+    common[61],
+    nil,
+    nil,
+    nil,
+    common[59],
+    nil,
+    nil,
+    0
+  },
+  [1221] = {
+    1221,
+    common[64],
+    false,
+    common[7],
+    empty,
+    common[65],
+    nil,
+    nil,
+    nil,
+    common[62],
+    common[65]
+  },
+  [1222] = {
+    1222,
+    common[64],
+    true,
+    common[7],
+    empty,
+    common[66],
+    nil,
+    nil,
+    nil,
+    common[62],
+    common[65],
+    nil,
+    0
+  },
+  [1223] = {
+    1223,
+    common[67],
+    false,
+    common[7],
+    empty,
+    common[65],
+    nil,
+    nil,
+    nil,
+    common[62],
+    common[65]
+  },
+  [1224] = {
+    1224,
+    common[67],
+    true,
+    common[7],
+    empty,
+    common[53],
+    common[18],
+    true,
+    nil,
+    common[62],
+    common[65],
+    nil,
+    0
+  },
+  [1230] = {
+    1230,
+    common[68],
+    false,
+    common[7],
+    empty,
+    common[40],
+    nil,
+    nil,
+    nil,
+    common[13]
+  },
+  [1231] = {
+    1231,
+    common[68],
+    false,
+    common[7],
+    empty,
+    common[69],
+    nil,
+    nil,
+    nil,
+    common[11]
+  },
+  [1232] = {
+    1232,
+    common[68],
+    false,
+    common[7],
+    empty,
+    common[69],
+    nil,
+    nil,
+    nil,
+    common[14]
+  },
+  [1233] = {
+    1233,
+    common[68],
+    false,
+    common[7],
+    empty,
+    common[70],
+    nil,
+    nil,
+    nil,
+    common[71]
+  },
+  [1234] = {
+    1234,
+    common[72],
+    false,
+    common[7],
+    empty,
+    common[73],
+    common[18],
+    true,
+    common[302],
+    common[74]
+  },
+  [1235] = {
+    1235,
+    common[72],
+    false,
+    common[34],
+    empty,
+    common[73],
+    common[18],
+    true,
+    nil,
+    common[75]
+  },
+  [1236] = {
+    1236,
+    common[32],
+    false,
+    common[7],
+    empty,
+    common[86],
+    nil,
+    nil,
+    nil,
+    common[87]
+  },
+  [1237] = {
+    1237,
+    common[76],
+    false,
+    common[7],
+    empty,
+    common[29],
+    nil,
+    nil,
+    nil,
+    common[30]
+  },
+  [1239] = {
+    1239,
+    common[77],
+    true,
+    common[20],
+    empty,
+    common[78],
+    nil,
+    nil,
+    nil,
+    common[79]
+  },
+  [1240] = {
+    1240,
+    common[77],
+    false,
+    common[81],
+    empty,
+    common[80]
+  },
+  [1241] = {
+    1241,
+    common[77],
+    false,
+    common[81],
+    empty,
+    common[82]
+  },
+  [1242] = {
+    1242,
+    common[77],
+    false,
+    common[34],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[83]
+  },
+  [1243] = {
+    1243,
+    common[84],
+    false,
+    common[7],
+    empty,
+    common[85],
+    nil,
+    nil,
+    nil,
+    common[77],
+    common[6]
+  },
+  [1300] = {
+    1300,
+    common[87],
+    true,
+    common[38],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[89],
+    common[90]
+  },
+  [1301] = {
+    1301,
+    common[87],
+    false,
+    common[7],
+    empty,
+    common[89],
+    nil,
+    nil,
+    nil,
+    common[91],
+    nil,
+    nil,
+    0
+  },
+  [1302] = {
+    1302,
+    common[87],
+    true,
+    common[38],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[92],
+    common[93]
+  },
+  [1303] = {
+    1303,
+    common[87],
+    false,
+    common[7],
+    empty,
+    common[92],
+    nil,
+    nil,
+    nil,
+    common[94],
+    nil,
+    nil,
+    0
+  },
+  [1310] = {
+    1310,
+    common[94],
+    true,
+    common[7],
+    empty,
+    common[95],
+    nil,
+    nil,
+    nil,
+    common[52]
+  },
+  [1311] = {
+    1311,
+    common[94],
+    true,
+    common[20],
+    empty,
+    common[96],
+    nil,
+    nil,
+    nil,
+    common[97]
+  },
+  [1312] = {
+    1312,
+    common[94],
+    true,
+    common[38],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[95],
+    common[98],
+    common[99]
+  },
+  [1320] = {
+    1320,
+    common[91],
+    true,
+    common[7],
+    empty,
+    common[100],
+    nil,
+    nil,
+    nil,
+    common[101]
+  },
+  [1321] = {
+    1321,
+    common[91],
+    true,
+    common[38],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[100],
+    common[102]
+  },
+  [1322] = {
+    1322,
+    common[91],
+    true,
+    common[38],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[100],
+    common[103]
+  },
+  [1330] = {
+    1330,
+    common[104],
+    false,
+    common[7],
+    empty,
+    common[51],
+    nil,
+    nil,
+    nil,
+    common[52]
+  },
+  [1331] = {
+    1331,
+    common[104],
+    false,
+    common[7],
+    empty,
+    common[105],
+    nil,
+    nil,
+    nil,
+    common[31]
+  },
+  [1332] = {
+    1332,
+    common[104],
+    false,
+    common[42],
+    empty,
+    common[50],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [1333] = {
+    1333,
+    common[104],
+    false,
+    common[42],
+    empty,
+    common[106],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [1334] = {
+    1334,
+    common[104],
+    true,
+    common[7],
+    empty,
+    common[107],
+    nil,
+    nil,
+    nil,
+    common[108],
+    nil,
+    nil,
+    0
+  },
+  [1336] = {
+    1336,
+    common[104],
+    false,
+    common[7],
+    empty,
+    common[109],
+    nil,
+    nil,
+    nil,
+    common[110],
+    common[111]
+  },
+  [1342] = {
+    1342,
+    common[112],
+    false,
+    common[20],
+    empty,
+    common[41],
+    nil,
+    nil,
+    nil,
+    common[113]
+  },
+  [1343] = {
+    1343,
+    common[112],
+    false,
+    common[81],
+    empty,
+    common[80],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    0
+  },
+  [1344] = {
+    1344,
+    common[112],
+    false,
+    common[42],
+    empty,
+    common[114],
+    nil,
+    nil,
+    nil,
+    common[43],
+    common[115]
+  },
+  [1350] = {
+    1350,
+    common[101],
+    false,
+    common[20],
+    empty,
+    common[168],
+    nil,
+    nil,
+    nil,
+    common[168]
+  },
+  [1351] = {
+    1351,
+    common[101],
+    false,
+    common[42],
+    empty,
+    "TrapLevel",
+    nil,
+    nil,
+    nil,
+    "-1",
+    "9999"
+  },
+  [1352] = {
+    1352,
+    common[101],
+    true,
+    common[7],
+    empty,
+    common[169],
+    nil,
+    nil,
+    nil,
+    common[101]
+  },
+  [1353] = {
+    1353,
+    common[101],
+    true,
+    common[7],
+    empty,
+    common[170],
+    common[171],
+    true,
+    nil,
+    common[8]
+  },
+  [1354] = {
+    1354,
+    common[101],
+    true,
+    common[7],
+    empty,
+    common[172],
+    common[18],
+    true,
+    common[305],
+    common[8]
+  },
+  [1355] = {
+    1355,
+    common[101],
+    true,
+    common[7],
+    empty,
+    common[173],
+    nil,
+    nil,
+    nil,
+    common[3],
+    common[6]
+  },
+  [1360] = {
+    1360,
+    common[108],
+    false,
+    common[7],
+    empty,
+    common[29],
+    nil,
+    nil,
+    nil,
+    common[30],
+    common[6]
+  },
+  [1361] = {
+    1361,
+    common[52],
+    false,
+    common[7],
+    empty,
+    common[116],
+    nil,
+    nil,
+    nil,
+    common[117]
+  },
+  [1370] = {
+    1370,
+    common[118],
+    false,
+    common[119],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[105]
+  },
+  [1371] = {
+    1371,
+    common[118],
+    false,
+    common[7],
+    empty,
+    common[105],
+    nil,
+    nil,
+    nil,
+    common[31]
+  },
+  [1372] = {
+    1372,
+    common[118],
+    true,
+    common[7],
+    empty,
+    common[107],
+    nil,
+    nil,
+    nil,
+    common[108],
+    nil,
+    nil,
+    0
+  },
+  [1373] = {
+    1373,
+    common[118],
+    false,
+    common[7],
+    empty,
+    common[120],
+    nil,
+    nil,
+    nil,
+    common[110],
+    common[111]
+  },
+  [1374] = {
+    1374,
+    common[121],
+    false,
+    common[7],
+    empty,
+    common[122],
+    nil,
+    nil,
+    nil,
+    common[110],
+    common[111]
+  },
+  [1380] = {
+    1380,
+    common[123],
+    false,
+    common[7],
+    empty,
+    common[124],
+    nil,
+    nil,
+    nil,
+    common[125]
+  },
+  [1381] = {
+    1381,
+    common[123],
+    false,
+    common[7],
+    empty,
+    common[126],
+    nil,
+    nil,
+    nil,
+    common[127]
+  },
+  [1382] = {
+    1382,
+    common[123],
+    false,
+    common[42],
+    empty,
+    common[128],
+    nil,
+    nil,
+    nil,
+    common[43]
+  },
+  [1383] = {
+    1383,
+    common[123],
+    false,
+    common[38],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[126],
+    common[128]
+  },
+  [1384] = {
+    1384,
+    common[123],
+    true,
+    common[81],
+    empty,
+    common[129]
+  },
+  [1390] = {
+    1390,
+    common[125],
+    true,
+    common[7],
+    empty,
+    common[130],
+    nil,
+    nil,
+    nil,
+    common[125],
+    nil,
+    nil,
+    0
+  },
+  [1391] = {
+    1391,
+    common[125],
+    true,
+    common[7],
+    empty,
+    common[131],
+    nil,
+    nil,
+    nil,
+    common[125],
+    nil,
+    nil,
+    0
+  },
+  [1403] = {
+    1403,
+    common[132],
+    false,
+    common[7],
+    empty,
+    common[133],
+    nil,
+    nil,
+    nil,
+    common[123]
+  },
+  [1404] = {
+    1404,
+    common[134],
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[135],
+    common[6]
+  },
+  [1405] = {
+    1405,
+    common[134],
+    false,
+    common[7],
+    empty,
+    common[136],
+    nil,
+    nil,
+    nil,
+    common[74]
+  },
+  [1406] = {
+    1406,
+    common[134],
+    true,
+    common[7],
+    empty,
+    common[137],
+    nil,
+    true,
+    nil,
+    common[74]
+  },
+  [1407] = {
+    1407,
+    common[134],
+    true,
+    common[7],
+    empty,
+    common[138],
+    nil,
+    nil,
+    nil,
+    common[13],
+    common[6],
+    nil,
+    0
+  },
+  [1408] = {
+    1408,
+    common[139],
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[10],
+    common[6]
+  },
+  [1409] = {
+    1409,
+    common[139],
+    true,
+    common[7],
+    empty,
+    common[140],
+    nil,
+    nil,
+    nil,
+    common[134],
+    common[6],
+    nil,
+    0
+  },
+  [1420] = {
+    1420,
+    common[141],
+    false,
+    common[81],
+    empty,
+    common[142]
+  },
+  [1421] = {
+    1421,
+    common[134],
+    true,
+    common[7],
+    empty,
+    common[143],
+    nil,
+    true,
+    nil,
+    common[10],
+    common[6]
+  },
+  [1431] = {
+    1431,
+    common[144],
+    false,
+    common[7],
+    empty,
+    common[145],
+    nil,
+    nil,
+    nil,
+    common[55],
+    common[6]
+  },
+  [1432] = {
+    1432,
+    common[144],
+    false,
+    common[7],
+    empty,
+    common[146],
+    nil,
+    nil,
+    nil,
+    common[55],
+    common[6]
+  },
+  [1440] = {
+    1440,
+    common[147],
+    false,
+    common[42],
+    empty,
+    common[148],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [1441] = {
+    1441,
+    common[149],
+    true,
+    common[7],
+    empty,
+    common[150],
+    nil,
+    nil,
+    nil,
+    common[74],
+    common[6]
+  },
+  [1442] = {
+    1442,
+    common[149],
+    false,
+    common[20],
+    empty,
+    common[41],
+    nil,
+    nil,
+    nil,
+    common[151]
+  },
+  [1443] = {
+    1443,
+    common[149],
+    false,
+    common[42],
+    empty,
+    common[152],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [1444] = {
+    1444,
+    common[149],
+    false,
+    common[42],
+    empty,
+    common[153],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [1445] = {
+    1445,
+    common[149],
+    true,
+    common[7],
+    empty,
+    common[154],
+    nil,
+    nil,
+    nil,
+    common[127],
+    common[6],
+    nil,
+    0
+  },
+  [1446] = {
+    1446,
+    common[149],
+    false,
+    common[42],
+    empty,
+    common[155],
+    nil,
+    nil,
+    nil,
+    common[49],
+    common[156]
+  },
+  [1447] = {
+    1447,
+    common[157],
+    false,
+    common[7],
+    empty,
+    common[158],
+    nil,
+    nil,
+    nil,
+    common[110],
+    common[111]
+  },
+  [1448] = {
+    1448,
+    common[157],
+    false,
+    common[7],
+    empty,
+    common[159],
+    common[18],
+    true,
+    common[302],
+    common[127],
+    common[6]
+  },
+  [1449] = {
+    1449,
+    common[157],
+    false,
+    common[42],
+    empty,
+    common[159],
+    common[18],
+    true,
+    common[303],
+    common[49]
+  },
+  [1450] = {
+    1450,
+    common[160],
+    true,
+    common[7],
+    empty,
+    common[161],
+    nil,
+    nil,
+    nil,
+    common[162]
+  },
+  [1451] = {
+    1451,
+    common[163],
+    true,
+    common[7],
+    empty,
+    common[164],
+    nil,
+    nil,
+    common[302],
+    common[127]
+  },
+  [1452] = {
+    1452,
+    common[163],
+    true,
+    common[7],
+    empty,
+    common[165],
+    nil,
+    true,
+    nil,
+    common[166]
+  },
+  [1453] = {
+    1453,
+    common[166],
+    true,
+    common[81],
+    empty,
+    common[142]
+  },
+  [1454] = {
+    1454,
+    common[167],
+    true,
+    common[7],
+    empty,
+    common[164],
+    nil,
+    nil,
+    common[302],
+    common[127]
+  },
+  [1455] = {
+    1455,
+    common[167],
+    true,
+    common[7],
+    empty,
+    common[165],
+    nil,
+    true,
+    nil,
+    common[141]
+  },
+  [1456] = {
+    1456,
+    common[141],
+    true,
+    common[81],
+    empty,
+    common[142]
+  },
+  [1457] = {
+    1457,
+    "cfg_item_cartridge",
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[127],
+    common[6]
+  },
+  [1461] = {
+    1461,
+    "cfg_item_gift",
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[127],
+    common[6]
+  },
+  [1462] = {
+    1462,
+    "cfg_item_pet_exp",
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[127],
+    common[6]
+  },
+  [1463] = {
+    1463,
+    common[28],
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[127],
+    common[6]
+  },
+  [1464] = {
+    1464,
+    "cfg_item_pet_present",
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[127],
+    common[6]
+  },
+  [1465] = {
+    1465,
+    common[174],
+    true,
+    common[119],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    "HmtDirectAMidasID"
+  },
+  [1466] = {
+    1466,
+    common[174],
+    true,
+    common[119],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    "DirectAMidasID"
+  },
+  [1467] = {
+    1467,
+    common[174],
+    true,
+    common[119],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    "USDirectAMidasID"
+  },
+  [1468] = {
+    1468,
+    common[175],
+    false,
+    common[81],
+    empty,
+    common[80]
+  },
+  [1469] = {
+    1469,
+    common[175],
+    false,
+    common[7],
+    empty,
+    common[154],
+    nil,
+    nil,
+    nil,
+    common[127]
+  },
+  [1470] = {
+    1470,
+    common[175],
+    false,
+    common[42],
+    empty,
+    common[176],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [1471] = {
+    1471,
+    common[177],
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[127],
+    common[6]
+  },
+  [1472] = {
+    1472,
+    common[177],
+    false,
+    common[7],
+    empty,
+    common[178],
+    nil,
+    nil,
+    nil,
+    common[179],
+    common[180]
+  },
+  [1473] = {
+    1473,
+    common[181],
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[127],
+    common[6]
+  },
+  [1474] = {
+    1474,
+    common[181],
+    false,
+    common[7],
+    empty,
+    common[178],
+    nil,
+    nil,
+    nil,
+    common[179],
+    common[180]
+  },
+  [1475] = {
+    1475,
+    common[182],
+    true,
+    common[119],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    "QuestId"
+  },
+  [1476] = {
+    1476,
+    common[179],
+    false,
+    common[81],
+    empty,
+    common[82]
+  },
+  [1477] = {
+    1477,
+    common[179],
+    false,
+    common[81],
+    empty,
+    common[80]
+  },
+  [1478] = {
+    1478,
+    common[104],
+    true,
+    common[7],
+    empty,
+    "SPassRandomAward",
+    nil,
+    nil,
+    nil,
+    common[55],
+    common[6],
+    nil,
+    0
+  },
+  [1479] = {
+    1479,
+    common[104],
+    false,
+    common[7],
+    empty,
+    "DoubleRandomAward",
+    nil,
+    nil,
+    nil,
+    common[55],
+    common[6],
+    nil,
+    0
+  },
+  [1480] = {
+    1480,
+    "cfg_gamble",
+    true,
+    common[7],
+    empty,
+    "OptionalPoolID",
+    nil,
+    nil,
+    nil,
+    "cfg_optional_pool",
+    common[6],
+    nil,
+    0
+  },
+  [10001] = {
+    10001,
+    common[8],
+    false,
+    common[42],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[43]
+  },
+  [10002] = {
+    10002,
+    common[8],
+    false,
+    common[20],
+    empty,
+    common[41],
+    nil,
+    nil,
+    nil,
+    common[183]
+  },
+  [10003] = {
+    10003,
+    common[8],
+    false,
+    common[20],
+    empty,
+    common[184],
+    nil,
+    nil,
+    nil,
+    common[185]
+  },
+  [10004] = {
+    10004,
+    common[8],
+    false,
+    common[20],
+    empty,
+    common[186],
+    nil,
+    nil,
+    nil,
+    common[187]
+  },
+  [10005] = {
+    10005,
+    common[8],
+    false,
+    common[20],
+    empty,
+    common[188],
+    nil,
+    nil,
+    nil,
+    common[189]
+  },
+  [10006] = {
+    10006,
+    common[8],
+    false,
+    common[20],
+    empty,
+    common[190],
+    nil,
+    nil,
+    nil,
+    common[191]
+  },
+  [10007] = {
+    10007,
+    common[8],
+    false,
+    common[20],
+    empty,
+    common[192],
+    nil,
+    nil,
+    nil,
+    common[193]
+  },
+  [10008] = {
+    10008,
+    common[8],
+    false,
+    common[20],
+    empty,
+    common[194],
+    common[18],
+    false,
+    common[306],
+    common[195]
+  },
+  [10009] = {
+    10009,
+    common[8],
+    true,
+    common[7],
+    empty,
+    common[194],
+    common[18],
+    false,
+    common[307],
+    common[30]
+  },
+  [10010] = {
+    10010,
+    common[8],
+    true,
+    common[7],
+    empty,
+    common[194],
+    common[18],
+    false,
+    common[308],
+    common[101]
+  },
+  [10011] = {
+    10011,
+    common[8],
+    true,
+    common[20],
+    empty,
+    common[194],
+    common[18],
+    false,
+    common[309],
+    common[187]
+  },
+  [10012] = {
+    10012,
+    common[8],
+    true,
+    common[20],
+    empty,
+    common[194],
+    common[18],
+    false,
+    common[310],
+    common[189]
+  },
+  [10013] = {
+    10013,
+    common[8],
+    true,
+    common[20],
+    empty,
+    common[194],
+    common[18],
+    false,
+    common[311],
+    common[191]
+  },
+  [10014] = {
+    10014,
+    common[8],
+    true,
+    common[197],
+    empty,
+    common[196],
+    nil,
+    nil,
+    nil,
+    common[198],
+    nil,
+    nil,
+    0
+  },
+  [10015] = {
+    10015,
+    common[199],
+    false,
+    common[42],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[43]
+  },
+  [10016] = {
+    10016,
+    common[199],
+    false,
+    common[20],
+    empty,
+    common[41],
+    nil,
+    nil,
+    nil,
+    common[183]
+  },
+  [10017] = {
+    10017,
+    common[199],
+    false,
+    common[20],
+    empty,
+    common[184],
+    nil,
+    nil,
+    nil,
+    common[185]
+  },
+  [10018] = {
+    10018,
+    common[199],
+    false,
+    common[20],
+    empty,
+    common[186],
+    nil,
+    nil,
+    nil,
+    common[187]
+  },
+  [10019] = {
+    10019,
+    common[199],
+    false,
+    common[20],
+    empty,
+    common[188],
+    nil,
+    nil,
+    nil,
+    common[189]
+  },
+  [10020] = {
+    10020,
+    common[199],
+    false,
+    common[20],
+    empty,
+    common[190],
+    nil,
+    nil,
+    nil,
+    common[191]
+  },
+  [10021] = {
+    10021,
+    common[199],
+    false,
+    common[20],
+    empty,
+    common[192],
+    nil,
+    nil,
+    nil,
+    common[193]
+  },
+  [10022] = {
+    10022,
+    common[199],
+    false,
+    common[20],
+    empty,
+    common[194],
+    common[18],
+    false,
+    {
+      [1] = "effectType"
+    },
+    common[195]
+  },
+  [10023] = {
+    10023,
+    common[199],
+    true,
+    common[7],
+    empty,
+    common[194],
+    common[18],
+    false,
+    common[307],
+    common[30]
+  },
+  [10024] = {
+    10024,
+    common[199],
+    true,
+    common[7],
+    empty,
+    common[194],
+    common[18],
+    false,
+    common[308],
+    common[101]
+  },
+  [10025] = {
+    10025,
+    common[199],
+    true,
+    common[20],
+    empty,
+    common[194],
+    common[18],
+    false,
+    common[309],
+    common[187]
+  },
+  [10026] = {
+    10026,
+    common[199],
+    true,
+    common[20],
+    empty,
+    common[194],
+    common[18],
+    false,
+    common[310],
+    common[189]
+  },
+  [10027] = {
+    10027,
+    common[199],
+    true,
+    common[20],
+    empty,
+    common[194],
+    common[18],
+    false,
+    common[311],
+    common[191]
+  },
+  [10028] = {
+    10028,
+    common[199],
+    true,
+    common[197],
+    empty,
+    common[196],
+    nil,
+    nil,
+    nil,
+    common[198],
+    nil,
+    nil,
+    0
+  },
+  [10029] = {
+    10029,
+    common[199],
+    false,
+    common[20],
+    empty,
+    "PickUpType",
+    nil,
+    nil,
+    nil,
+    "SkillPickUpType"
+  },
+  [10030] = {
+    10030,
+    common[199],
+    true,
+    common[20],
+    empty,
+    common[200],
+    common[18],
+    false,
+    {"TargetType"},
+    common[187]
+  },
+  [10031] = {
+    10031,
+    common[199],
+    true,
+    common[20],
+    empty,
+    common[200],
+    common[18],
+    false,
+    {
+      "ScopeCenterType"
+    },
+    common[189]
+  },
+  [10032] = {
+    10032,
+    common[199],
+    true,
+    common[20],
+    empty,
+    common[200],
+    common[18],
+    false,
+    {"ScopeType"},
+    common[191]
+  },
+  [10033] = {
+    10033,
+    common[199],
+    true,
+    common[7],
+    empty,
+    "PreviewList",
+    common[18],
+    false,
+    {"Param"},
+    common[201]
+  },
+  [10034] = {
+    10034,
+    common[201],
+    true,
+    common[20],
+    empty,
+    "PreviewEffectType",
+    common[18],
+    false,
+    common[306],
+    common[195]
+  },
+  [10035] = {
+    10035,
+    common[201],
+    true,
+    common[20],
+    empty,
+    common[186],
+    nil,
+    nil,
+    nil,
+    common[187]
+  },
+  [10036] = {
+    10036,
+    common[201],
+    true,
+    common[20],
+    empty,
+    common[188],
+    nil,
+    nil,
+    nil,
+    common[189]
+  },
+  [10037] = {
+    10037,
+    common[201],
+    true,
+    common[20],
+    empty,
+    common[190],
+    nil,
+    nil,
+    nil,
+    common[191]
+  },
+  [10038] = {
+    10038,
+    common[201],
+    true,
+    common[7],
+    empty,
+    "OnStart",
+    nil,
+    nil,
+    nil,
+    common[202]
+  },
+  [10039] = {
+    10039,
+    common[201],
+    true,
+    common[7],
+    empty,
+    "OnSelectValid",
+    nil,
+    nil,
+    nil,
+    common[202]
+  },
+  [10040] = {
+    10040,
+    common[201],
+    true,
+    common[7],
+    empty,
+    "OnSelectEmpty",
+    nil,
+    nil,
+    nil,
+    common[202]
+  },
+  [10041] = {
+    10041,
+    common[201],
+    true,
+    common[7],
+    empty,
+    "OnSelectCancel",
+    nil,
+    nil,
+    nil,
+    common[202]
+  },
+  [10042] = {
+    10042,
+    common[201],
+    true,
+    common[7],
+    empty,
+    "OnSelectInvalid",
+    nil,
+    nil,
+    nil,
+    common[202]
+  },
+  [10043] = {
+    10043,
+    common[201],
+    true,
+    common[7],
+    empty,
+    "OnCancelPreview",
+    nil,
+    nil,
+    nil,
+    common[202]
+  },
+  [10044] = {
+    10044,
+    common[201],
+    true,
+    common[7],
+    empty,
+    "OnActiveSkill",
+    nil,
+    nil,
+    nil,
+    common[202]
+  },
+  [20002] = {
+    20002,
+    common[30],
+    false,
+    common[42],
+    empty,
+    "RoundCount",
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [20003] = {
+    20003,
+    common[30],
+    false,
+    common[42],
+    empty,
+    "ExecCount",
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [20004] = {
+    20004,
+    common[30],
+    false,
+    common[20],
+    empty,
+    common[203],
+    common[204],
+    false,
+    common[302],
+    common[205]
+  },
+  [20005] = {
+    20005,
+    common[30],
+    false,
+    common[20],
+    empty,
+    common[203],
+    common[204],
+    false,
+    common[312],
+    common[184]
+  },
+  [20006] = {
+    20006,
+    common[30],
+    false,
+    common[20],
+    empty,
+    common[206],
+    common[204],
+    false,
+    common[302],
+    common[205]
+  },
+  [20007] = {
+    20007,
+    common[30],
+    false,
+    common[20],
+    empty,
+    common[206],
+    common[204],
+    false,
+    common[312],
+    common[184]
+  },
+  [20008] = {
+    20008,
+    common[30],
+    false,
+    common[20],
+    empty,
+    common[207],
+    common[204],
+    false,
+    common[302],
+    common[205]
+  },
+  [20009] = {
+    20009,
+    common[30],
+    false,
+    common[20],
+    empty,
+    common[207],
+    common[204],
+    false,
+    common[312],
+    common[184]
+  },
+  [20010] = {
+    20010,
+    common[30],
+    false,
+    common[20],
+    empty,
+    common[208],
+    common[204],
+    false,
+    common[302],
+    common[205]
+  },
+  [20011] = {
+    20011,
+    common[30],
+    false,
+    common[20],
+    empty,
+    common[208],
+    common[204],
+    false,
+    common[312],
+    common[184]
+  },
+  [20012] = {
+    20012,
+    common[30],
+    true,
+    common[4],
+    empty,
+    common[209],
+    common[18],
+    true,
+    common[313],
+    common[5]
+  },
+  [20013] = {
+    20013,
+    common[30],
+    true,
+    common[20],
+    empty,
+    common[209],
+    common[18],
+    true,
+    common[314],
+    common[210]
+  },
+  [20014] = {
+    20014,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[209],
+    common[18],
+    true,
+    common[307],
+    common[30]
+  },
+  [20015] = {
+    20015,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[209],
+    common[18],
+    true,
+    common[315],
+    common[211]
+  },
+  [20016] = {
+    20016,
+    common[30],
+    true,
+    common[7],
+    common[301],
+    common[209],
+    common[212],
+    true,
+    common[316],
+    common[8]
+  },
+  [20017] = {
+    20017,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[209],
+    common[18],
+    true,
+    common[317],
+    common[199]
+  },
+  [20019] = {
+    20019,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[209],
+    common[18],
+    true,
+    common[308],
+    common[101]
+  },
+  [20020] = {
+    20020,
+    common[30],
+    true,
+    common[4],
+    empty,
+    common[213],
+    common[18],
+    true,
+    common[313],
+    common[5]
+  },
+  [20021] = {
+    20021,
+    common[30],
+    true,
+    common[20],
+    empty,
+    common[213],
+    common[18],
+    true,
+    common[314],
+    common[210]
+  },
+  [20022] = {
+    20022,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[213],
+    common[18],
+    true,
+    common[307],
+    common[30]
+  },
+  [20023] = {
+    20023,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[213],
+    common[18],
+    true,
+    common[315],
+    common[211]
+  },
+  [20024] = {
+    20024,
+    common[30],
+    true,
+    common[7],
+    common[301],
+    common[213],
+    common[212],
+    true,
+    common[316],
+    common[8]
+  },
+  [20025] = {
+    20025,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[213],
+    common[18],
+    true,
+    common[317],
+    common[199]
+  },
+  [20027] = {
+    20027,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[213],
+    common[18],
+    true,
+    common[308],
+    common[101]
+  },
+  [20028] = {
+    20028,
+    common[30],
+    true,
+    common[4],
+    empty,
+    common[214],
+    common[18],
+    true,
+    common[313],
+    common[5]
+  },
+  [20029] = {
+    20029,
+    common[30],
+    true,
+    common[20],
+    empty,
+    common[214],
+    common[18],
+    true,
+    common[314],
+    common[210]
+  },
+  [20030] = {
+    20030,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[214],
+    common[18],
+    true,
+    common[307],
+    common[30]
+  },
+  [20031] = {
+    20031,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[214],
+    common[18],
+    true,
+    common[315],
+    common[211]
+  },
+  [20032] = {
+    20032,
+    common[30],
+    true,
+    common[7],
+    common[301],
+    common[214],
+    common[212],
+    true,
+    common[316],
+    common[8]
+  },
+  [20033] = {
+    20033,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[214],
+    common[18],
+    true,
+    common[317],
+    common[199]
+  },
+  [20035] = {
+    20035,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[214],
+    common[18],
+    true,
+    common[308],
+    common[101]
+  },
+  [20036] = {
+    20036,
+    common[30],
+    true,
+    common[4],
+    empty,
+    common[215],
+    common[18],
+    true,
+    common[313],
+    common[5]
+  },
+  [20037] = {
+    20037,
+    common[30],
+    true,
+    common[20],
+    empty,
+    common[215],
+    common[18],
+    true,
+    common[314],
+    common[210]
+  },
+  [20038] = {
+    20038,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[215],
+    common[18],
+    true,
+    common[307],
+    common[30]
+  },
+  [20039] = {
+    20039,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[215],
+    common[18],
+    true,
+    common[315],
+    common[211]
+  },
+  [20040] = {
+    20040,
+    common[30],
+    true,
+    common[7],
+    common[301],
+    common[215],
+    common[212],
+    true,
+    common[316],
+    common[8]
+  },
+  [20041] = {
+    20041,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[215],
+    common[18],
+    true,
+    common[317],
+    common[199]
+  },
+  [20043] = {
+    20043,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[215],
+    common[18],
+    true,
+    common[308],
+    common[101]
+  },
+  [20044] = {
+    20044,
+    common[30],
+    true,
+    common[4],
+    empty,
+    common[216],
+    common[18],
+    true,
+    common[313],
+    common[5]
+  },
+  [20045] = {
+    20045,
+    common[30],
+    true,
+    common[20],
+    empty,
+    common[216],
+    common[18],
+    true,
+    common[314],
+    common[210]
+  },
+  [20046] = {
+    20046,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[216],
+    common[18],
+    true,
+    common[307],
+    common[30]
+  },
+  [20047] = {
+    20047,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[216],
+    common[18],
+    true,
+    common[315],
+    common[211]
+  },
+  [20048] = {
+    20048,
+    common[30],
+    true,
+    common[7],
+    common[301],
+    common[216],
+    common[212],
+    true,
+    common[316],
+    common[8]
+  },
+  [20049] = {
+    20049,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[216],
+    common[18],
+    true,
+    common[317],
+    common[199]
+  },
+  [20051] = {
+    20051,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[216],
+    common[18],
+    true,
+    common[308],
+    common[101]
+  },
+  [20052] = {
+    20052,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[217],
+    common[18],
+    false,
+    {
+      "LoadEffectID"
+    },
+    common[211]
+  },
+  [20053] = {
+    20053,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[217],
+    common[18],
+    false,
+    {
+      "ExecEffectID"
+    },
+    common[211]
+  },
+  [20054] = {
+    20054,
+    common[30],
+    true,
+    common[7],
+    empty,
+    common[217],
+    common[18],
+    false,
+    {
+      "HitEffectId"
+    },
+    common[211]
+  },
+  [20055] = {
+    20055,
+    common[30],
+    true,
+    common[7],
+    common[301],
+    common[217],
+    common[18],
+    false,
+    common[305],
+    common[8]
+  },
+  [30000] = {
+    30000,
+    common[218],
+    false,
+    common[7],
+    empty,
+    common[136],
+    nil,
+    nil,
+    nil,
+    common[74]
+  },
+  [30001] = {
+    30001,
+    common[218],
+    false,
+    common[220],
+    empty,
+    common[219],
+    common[18],
+    false,
+    nil,
+    common[43],
+    common[221]
+  },
+  [30002] = {
+    30002,
+    common[218],
+    false,
+    common[7],
+    empty,
+    common[219],
+    common[222],
+    true,
+    common[318],
+    common[127]
+  },
+  [30003] = {
+    30003,
+    common[218],
+    false,
+    common[42],
+    empty,
+    common[219],
+    common[222],
+    true,
+    common[319],
+    common[43]
+  },
+  [30004] = {
+    30004,
+    common[223],
+    false,
+    common[7],
+    empty,
+    common[136],
+    nil,
+    nil,
+    nil,
+    common[74]
+  },
+  [30005] = {
+    30005,
+    common[223],
+    false,
+    common[220],
+    empty,
+    common[219],
+    common[18],
+    false,
+    nil,
+    common[43],
+    common[221]
+  },
+  [30006] = {
+    30006,
+    common[223],
+    false,
+    common[7],
+    empty,
+    common[219],
+    common[222],
+    true,
+    common[318],
+    common[127]
+  },
+  [30007] = {
+    30007,
+    common[223],
+    false,
+    common[42],
+    empty,
+    common[219],
+    common[222],
+    true,
+    common[319],
+    common[43]
+  },
+  [30008] = {
+    30008,
+    common[224],
+    false,
+    common[7],
+    empty,
+    common[136],
+    nil,
+    nil,
+    nil,
+    common[74]
+  },
+  [30009] = {
+    30009,
+    common[224],
+    false,
+    common[42],
+    empty,
+    "NeedExp",
+    nil,
+    nil,
+    nil,
+    common[43]
+  },
+  [30010] = {
+    30010,
+    common[224],
+    false,
+    common[42],
+    empty,
+    "NeedGold",
+    nil,
+    nil,
+    nil,
+    common[43]
+  },
+  [30011] = {
+    30011,
+    common[225],
+    false,
+    common[42],
+    empty,
+    "NeedAffintyExp",
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [31000] = {
+    31000,
+    common[226],
+    false,
+    common[7],
+    empty,
+    common[136],
+    nil,
+    nil,
+    nil,
+    common[74]
+  },
+  [31001] = {
+    31001,
+    common[226],
+    false,
+    common[7],
+    empty,
+    "NormalSkill",
+    nil,
+    nil,
+    nil,
+    common[199]
+  },
+  [31002] = {
+    31002,
+    common[226],
+    false,
+    common[7],
+    empty,
+    "ActiveSkill",
+    nil,
+    nil,
+    nil,
+    common[199]
+  },
+  [31003] = {
+    31003,
+    common[226],
+    false,
+    common[7],
+    empty,
+    "ChainSkill1",
+    nil,
+    nil,
+    nil,
+    common[199]
+  },
+  [31004] = {
+    31004,
+    common[226],
+    true,
+    common[7],
+    empty,
+    "ChainSkill2",
+    nil,
+    nil,
+    nil,
+    common[199],
+    nil,
+    nil,
+    0
+  },
+  [31005] = {
+    31005,
+    common[226],
+    true,
+    common[7],
+    empty,
+    "ChainSkill3",
+    nil,
+    nil,
+    nil,
+    common[199],
+    nil,
+    nil,
+    0
+  },
+  [31006] = {
+    31006,
+    common[226],
+    true,
+    common[7],
+    empty,
+    "PassiveSkill",
+    nil,
+    nil,
+    nil,
+    common[76],
+    nil,
+    nil,
+    0
+  },
+  [31007] = {
+    31007,
+    common[226],
+    true,
+    common[7],
+    empty,
+    "WorkSkill1",
+    nil,
+    nil,
+    nil,
+    common[227],
+    nil,
+    nil,
+    0
+  },
+  [31008] = {
+    31008,
+    common[226],
+    true,
+    common[7],
+    empty,
+    "WorkSkill2",
+    nil,
+    nil,
+    nil,
+    common[227],
+    nil,
+    nil,
+    0
+  },
+  [31009] = {
+    31009,
+    common[226],
+    true,
+    common[7],
+    empty,
+    "WorkSkill3",
+    nil,
+    nil,
+    nil,
+    common[227],
+    nil,
+    nil,
+    0
+  },
+  [31010] = {
+    31010,
+    common[226],
+    false,
+    common[229],
+    {
+      [1] = {
+        [1] = "PetID",
+        [2] = "PetID"
+      },
+      [2] = {
+        [1] = "Grade",
+        [2] = "Grade",
+        [3] = 0
+      }
+    },
+    nil,
+    common[228],
+    false,
+    {
+      "",
+      "PetID",
+      "Grade"
+    },
+    common[218],
+    common[49]
+  },
+  [31011] = {
+    31011,
+    common[226],
+    false,
+    common[229],
+    {
+      [1] = {
+        [1] = "PetID",
+        [2] = "PetID"
+      },
+      [2] = {
+        [1] = "Awakening",
+        [2] = "Awakening",
+        [3] = 0
+      }
+    },
+    nil,
+    common[228],
+    false,
+    {
+      "",
+      "PetID",
+      "Awakening"
+    },
+    common[223],
+    common[49]
+  },
+  [31012] = {
+    31012,
+    common[226],
+    true,
+    common[7],
+    empty,
+    "IntensifyBuff",
+    nil,
+    nil,
+    nil,
+    common[30]
+  },
+  [31110] = {
+    31110,
+    common[227],
+    false,
+    common[20],
+    empty,
+    "RoomType",
+    nil,
+    nil,
+    nil,
+    "AirRoomType"
+  },
+  [32000] = {
+    32000,
+    common[74],
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[230],
+    common[136]
+  },
+  [32001] = {
+    32001,
+    common[74],
+    true,
+    common[229],
+    {
+      [1] = {
+        [1] = "ID",
+        [2] = "PetID"
+      },
+      [2] = {
+        [1] = "Formal",
+        [2] = 1,
+        [3] = true
+      }
+    },
+    nil,
+    common[228],
+    false,
+    {
+      "",
+      "ID",
+      "Formal"
+    },
+    common[231],
+    common[49]
+  },
+  [32002] = {
+    32002,
+    common[74],
+    false,
+    common[20],
+    empty,
+    "FirstElement",
+    nil,
+    nil,
+    nil,
+    common[232]
+  },
+  [32003] = {
+    32003,
+    common[74],
+    false,
+    common[20],
+    empty,
+    "SecondElement",
+    nil,
+    nil,
+    nil,
+    common[232]
+  },
+  [32004] = {
+    32004,
+    common[74],
+    false,
+    common[7],
+    empty,
+    "Tags",
+    nil,
+    nil,
+    nil,
+    common[233]
+  },
+  [32005] = {
+    32005,
+    common[74],
+    false,
+    common[7],
+    empty,
+    common[234],
+    common[222],
+    true,
+    common[318],
+    common[127]
+  },
+  [32006] = {
+    32006,
+    common[74],
+    false,
+    common[42],
+    empty,
+    common[234],
+    common[222],
+    true,
+    common[319],
+    common[43]
+  },
+  [32007] = {
+    32007,
+    common[74],
+    false,
+    common[220],
+    empty,
+    "BuffIconOffset",
+    common[18],
+    false,
+    nil,
+    common[46],
+    common[46]
+  },
+  [32008] = {
+    32008,
+    common[74],
+    true,
+    common[220],
+    empty,
+    common[235],
+    common[18],
+    false,
+    nil,
+    common[46],
+    common[44]
+  },
+  [32009] = {
+    32009,
+    common[74],
+    true,
+    common[20],
+    empty,
+    common[235],
+    common[18],
+    false,
+    common[302],
+    "PassiveSkillIconType_1"
+  },
+  [32010] = {
+    32010,
+    common[74],
+    true,
+    common[20],
+    empty,
+    common[235],
+    common[18],
+    false,
+    common[303],
+    "PassiveSkillIconType_2"
+  },
+  [32011] = {
+    32011,
+    common[74],
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    "cfg_maze_pet_info"
+  },
+  [32012] = {
+    32012,
+    common[74],
+    false,
+    common[7],
+    empty,
+    "FriendTeam",
+    nil,
+    nil,
+    nil,
+    common[233],
+    nil,
+    nil,
+    0
+  },
+  [32013] = {
+    32013,
+    common[230],
+    false,
+    common[7],
+    empty,
+    common[136],
+    nil,
+    nil,
+    nil,
+    common[74]
+  },
+  [32014] = {
+    32014,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[236],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32015] = {
+    32015,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[237],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32016] = {
+    32016,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[237],
+    common[18],
+    true,
+    common[303],
+    common[238],
+    nil,
+    nil,
+    -1
+  },
+  [32017] = {
+    32017,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[239],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32018] = {
+    32018,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[240],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32019] = {
+    32019,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[241],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32020] = {
+    32020,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[242],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32021] = {
+    32021,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[243],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32022] = {
+    32022,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[244],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32023] = {
+    32023,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[245],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32024] = {
+    32024,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[246],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32025] = {
+    32025,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[247],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32026] = {
+    32026,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[248],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32027] = {
+    32027,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[248],
+    common[18],
+    true,
+    common[303],
+    common[238],
+    nil,
+    nil,
+    -1
+  },
+  [32028] = {
+    32028,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[249],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32029] = {
+    32029,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[250],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32030] = {
+    32030,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[251],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32031] = {
+    32031,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[252],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32032] = {
+    32032,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[253],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32035] = {
+    32035,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[254],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32036] = {
+    32036,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[255],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32037] = {
+    32037,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[256],
+    common[18],
+    true,
+    common[302],
+    common[162]
+  },
+  [32039] = {
+    32039,
+    common[135],
+    false,
+    common[7],
+    empty,
+    "StoryID",
+    nil,
+    nil,
+    nil,
+    "cfg_story"
+  },
+  [32040] = {
+    32040,
+    common[135],
+    false,
+    common[38],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[257],
+    common[258]
+  },
+  [32041] = {
+    32041,
+    common[135],
+    false,
+    common[7],
+    empty,
+    common[257],
+    nil,
+    nil,
+    nil,
+    common[127],
+    nil,
+    nil,
+    0
+  },
+  [32042] = {
+    32042,
+    common[135],
+    false,
+    common[42],
+    empty,
+    common[258],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [32043] = {
+    32043,
+    common[135],
+    false,
+    common[42],
+    empty,
+    common[259],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [32044] = {
+    32044,
+    common[135],
+    false,
+    common[7],
+    empty,
+    "Condition",
+    nil,
+    nil,
+    nil,
+    common[238]
+  },
+  [32045] = {
+    32045,
+    common[260],
+    false,
+    common[34],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    "_CheckPetTaskType"
+  },
+  [32046] = {
+    32046,
+    common[260],
+    false,
+    common[38],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[257],
+    common[258]
+  },
+  [32047] = {
+    32047,
+    common[260],
+    false,
+    common[7],
+    empty,
+    common[257],
+    nil,
+    nil,
+    nil,
+    common[127]
+  },
+  [32048] = {
+    32048,
+    common[260],
+    false,
+    common[42],
+    empty,
+    common[258],
+    nil,
+    nil,
+    nil,
+    common[43]
+  },
+  [32049] = {
+    32049,
+    common[260],
+    false,
+    common[42],
+    empty,
+    common[259],
+    nil,
+    nil,
+    nil,
+    common[43]
+  },
+  [32050] = {
+    32050,
+    common[231],
+    false,
+    common[119],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[136],
+    common[261]
+  },
+  [32051] = {
+    32051,
+    common[231],
+    false,
+    common[7],
+    empty,
+    common[136],
+    nil,
+    nil,
+    nil,
+    common[74]
+  },
+  [32052] = {
+    32052,
+    common[231],
+    false,
+    common[7],
+    empty,
+    common[261],
+    nil,
+    nil,
+    nil,
+    common[225]
+  },
+  [32053] = {
+    32053,
+    common[231],
+    true,
+    common[7],
+    empty,
+    "StoryEventID",
+    nil,
+    nil,
+    nil,
+    common[135],
+    nil,
+    nil,
+    0
+  },
+  [32054] = {
+    32054,
+    common[231],
+    false,
+    common[38],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    "TaskEventIDList",
+    common[262]
+  },
+  [32055] = {
+    32055,
+    common[231],
+    false,
+    common[42],
+    empty,
+    common[262],
+    nil,
+    nil,
+    nil,
+    common[43]
+  },
+  [32056] = {
+    32056,
+    common[231],
+    false,
+    common[229],
+    empty,
+    nil,
+    common[228],
+    false,
+    {
+      "",
+      "TaskEventIDList",
+      "PetID"
+    },
+    common[260],
+    common[49]
+  },
+  [32057] = {
+    32057,
+    common[263],
+    false,
+    common[264],
+    {
+      [1] = {
+        [1] = "TaskEventIDList",
+        [2] = "ID"
+      },
+      [2] = {
+        [1] = "PetID",
+        [2] = "TaskContent"
+      },
+      [3] = {
+        [1] = "Type",
+        [2] = 1,
+        [3] = true
+      }
+    },
+    common[6]
+  },
+  [32058] = {
+    32058,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[236]
+  },
+  [32059] = {
+    32059,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[237]
+  },
+  [32060] = {
+    32060,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[239]
+  },
+  [32061] = {
+    32061,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[240]
+  },
+  [32062] = {
+    32062,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[241]
+  },
+  [32063] = {
+    32063,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[242]
+  },
+  [32064] = {
+    32064,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[243]
+  },
+  [32065] = {
+    32065,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[244]
+  },
+  [32066] = {
+    32066,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[245]
+  },
+  [32067] = {
+    32067,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[246]
+  },
+  [32068] = {
+    32068,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[247]
+  },
+  [32069] = {
+    32069,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[248]
+  },
+  [32070] = {
+    32070,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[249]
+  },
+  [32071] = {
+    32071,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[250]
+  },
+  [32072] = {
+    32072,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[251]
+  },
+  [32073] = {
+    32073,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[252]
+  },
+  [32074] = {
+    32074,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[253]
+  },
+  [32075] = {
+    32075,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[265]
+  },
+  [32076] = {
+    32076,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[266]
+  },
+  [32077] = {
+    32077,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[254]
+  },
+  [32078] = {
+    32078,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[255]
+  },
+  [32079] = {
+    32079,
+    common[263],
+    false,
+    common[264],
+    empty,
+    common[256]
+  },
+  [32080] = {
+    32080,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[236],
+    common[18],
+    true,
+    common[303],
+    common[238],
+    nil,
+    nil,
+    0
+  },
+  [32081] = {
+    32081,
+    common[230],
+    true,
+    common[7],
+    empty,
+    "FirstMainLobbyWelcome",
+    common[18],
+    true,
+    common[303],
+    common[238],
+    nil,
+    nil,
+    0
+  },
+  [32082] = {
+    32082,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[265],
+    common[18],
+    true,
+    common[303],
+    common[238],
+    nil,
+    nil,
+    0
+  },
+  [32083] = {
+    32083,
+    common[230],
+    true,
+    common[7],
+    empty,
+    common[266],
+    common[18],
+    true,
+    common[303],
+    common[238],
+    nil,
+    nil,
+    0
+  },
+  [32084] = {
+    32084,
+    common[267],
+    true,
+    common[7],
+    empty,
+    "elementParam",
+    common[18],
+    true,
+    {"BuffID"},
+    common[30]
+  },
+  [32085] = {
+    32085,
+    common[267],
+    false,
+    common[7],
+    empty,
+    common[136],
+    nil,
+    nil,
+    nil,
+    common[74]
+  },
+  [50000] = {
+    50000,
+    common[268],
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[74]
+  },
+  [50001] = {
+    50001,
+    common[268],
+    false,
+    common[42],
+    empty,
+    "BuffLock",
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [50002] = {
+    50002,
+    common[268],
+    false,
+    common[42],
+    empty,
+    "BuffAwakening",
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [50003] = {
+    50003,
+    common[269],
+    false,
+    common[81],
+    empty,
+    common[80]
+  },
+  [50004] = {
+    50004,
+    common[269],
+    false,
+    common[7],
+    empty,
+    common[136],
+    nil,
+    nil,
+    nil,
+    common[74]
+  },
+  [50005] = {
+    50005,
+    common[269],
+    false,
+    common[42],
+    empty,
+    common[270],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [50006] = {
+    50006,
+    common[271],
+    false,
+    common[7],
+    empty,
+    common[136],
+    nil,
+    nil,
+    nil,
+    common[74]
+  },
+  [50007] = {
+    50007,
+    common[271],
+    false,
+    common[42],
+    empty,
+    common[270],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [50008] = {
+    50008,
+    common[271],
+    false,
+    common[7],
+    empty,
+    common[154],
+    nil,
+    nil,
+    nil,
+    common[127]
+  },
+  [50009] = {
+    50009,
+    common[268],
+    false,
+    common[7],
+    empty,
+    "PracticeLevelId",
+    nil,
+    nil,
+    nil,
+    "cfg_tale_stage"
+  },
+  [50010] = {
+    50010,
+    common[269],
+    false,
+    common[81],
+    empty,
+    common[80]
+  },
+  [60000] = {
+    60000,
+    common[101],
+    false,
+    common[20],
+    empty,
+    common[168],
+    nil,
+    nil,
+    nil,
+    common[168]
+  },
+  [60001] = {
+    60001,
+    common[101],
+    false,
+    common[42],
+    empty,
+    "RaceType",
+    nil,
+    nil,
+    nil,
+    common[49],
+    common[272]
+  },
+  [60002] = {
+    60002,
+    common[101],
+    true,
+    common[42],
+    empty,
+    "TrapElement",
+    nil,
+    nil,
+    nil,
+    common[49],
+    common[63]
+  },
+  [60003] = {
+    60003,
+    common[101],
+    true,
+    common[42],
+    empty,
+    "GridPieceElement",
+    nil,
+    nil,
+    nil,
+    common[49],
+    "5"
+  },
+  [60004] = {
+    60004,
+    common[101],
+    false,
+    common[42],
+    empty,
+    "ReplaceLevel",
+    nil,
+    nil,
+    nil,
+    common[49],
+    common[272]
+  },
+  [60005] = {
+    60005,
+    common[101],
+    true,
+    common[7],
+    empty,
+    common[29],
+    nil,
+    nil,
+    nil,
+    common[30]
+  },
+  [60006] = {
+    60006,
+    common[101],
+    true,
+    common[7],
+    empty,
+    common[169],
+    nil,
+    nil,
+    nil,
+    common[101]
+  },
+  [60007] = {
+    60007,
+    common[101],
+    true,
+    common[7],
+    empty,
+    common[170],
+    common[171],
+    true,
+    nil,
+    common[8]
+  },
+  [60008] = {
+    60008,
+    common[101],
+    true,
+    common[7],
+    empty,
+    common[172],
+    common[18],
+    true,
+    common[305],
+    common[8]
+  },
+  [60009] = {
+    60009,
+    common[101],
+    true,
+    common[7],
+    empty,
+    common[173],
+    nil,
+    nil,
+    nil,
+    common[3]
+  },
+  [60010] = {
+    60010,
+    common[101],
+    true,
+    common[7],
+    empty,
+    "Block",
+    nil,
+    nil,
+    nil,
+    common[273]
+  },
+  [60011] = {
+    60011,
+    common[101],
+    true,
+    common[7],
+    empty,
+    "BlockByRace",
+    common[18],
+    true,
+    {"Block"},
+    common[273]
+  },
+  [60012] = {
+    60012,
+    common[101],
+    true,
+    common[20],
+    empty,
+    common[274],
+    nil,
+    nil,
+    nil,
+    common[274]
+  },
+  [60013] = {
+    60013,
+    common[101],
+    true,
+    common[20],
+    empty,
+    "HeadShowType",
+    nil,
+    nil,
+    nil,
+    "TrapHeadShowType"
+  },
+  [60014] = {
+    60014,
+    common[101],
+    true,
+    common[7],
+    empty,
+    "PermanentEffect",
+    nil,
+    nil,
+    nil,
+    common[211]
+  },
+  [60015] = {
+    60015,
+    common[101],
+    true,
+    common[7],
+    empty,
+    "IdleEffect",
+    nil,
+    nil,
+    nil,
+    common[211]
+  },
+  [70001] = {
+    70001,
+    common[275],
+    false,
+    common[7],
+    empty,
+    "LevelID",
+    nil,
+    nil,
+    nil,
+    common[31]
+  },
+  [70002] = {
+    70002,
+    common[276],
+    false,
+    common[7],
+    empty,
+    common[40],
+    nil,
+    nil,
+    nil,
+    common[275]
+  },
+  [70003] = {
+    70003,
+    common[276],
+    false,
+    common[7],
+    empty,
+    "ComponentID",
+    nil,
+    nil,
+    nil,
+    "cfg_campaign_component"
+  },
+  [70004] = {
+    70004,
+    common[276],
+    false,
+    common[7],
+    empty,
+    "HardID",
+    nil,
+    nil,
+    nil,
+    common[277]
+  },
+  [70005] = {
+    70005,
+    common[276],
+    false,
+    common[7],
+    empty,
+    "SquadsID",
+    nil,
+    nil,
+    nil,
+    "cfg_blackfist_squads"
+  },
+  [70006] = {
+    70006,
+    common[277],
+    true,
+    common[7],
+    empty,
+    "PrestigeItemID",
+    nil,
+    nil,
+    nil,
+    common[127]
+  },
+  [70007] = {
+    70007,
+    common[277],
+    true,
+    common[42],
+    empty,
+    "PrestigeItemNum",
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [70008] = {
+    70008,
+    common[277],
+    true,
+    common[7],
+    empty,
+    "BaseWordBuff",
+    nil,
+    nil,
+    nil,
+    common[108]
+  },
+  [70009] = {
+    70009,
+    "cfg_component_person_progress",
+    false,
+    common[7],
+    empty,
+    common[278],
+    nil,
+    nil,
+    nil,
+    common[127]
+  },
+  [70010] = {
+    70010,
+    common[279],
+    false,
+    common[7],
+    empty,
+    "TaskID",
+    nil,
+    nil,
+    nil,
+    common[77]
+  },
+  [70011] = {
+    70011,
+    common[279],
+    false,
+    common[7],
+    empty,
+    common[280],
+    common[18],
+    true,
+    common[302],
+    common[127]
+  },
+  [70012] = {
+    70012,
+    common[279],
+    false,
+    common[42],
+    empty,
+    common[280],
+    common[18],
+    true,
+    common[303],
+    common[49]
+  },
+  [70013] = {
+    70013,
+    "cfg_campaign",
+    true,
+    common[81],
+    empty,
+    "UnlockCond"
+  },
+  [70014] = {
+    70014,
+    "cfg_component_idol_achieve",
+    false,
+    common[81],
+    empty,
+    common[80]
+  },
+  [70015] = {
+    70015,
+    common[281],
+    true,
+    common[7],
+    empty,
+    common[282],
+    nil,
+    nil,
+    nil,
+    common[283]
+  },
+  [70016] = {
+    70016,
+    "cfg_component_season_maze_hand",
+    true,
+    common[7],
+    empty,
+    common[282],
+    nil,
+    nil,
+    nil,
+    common[283]
+  },
+  [70017] = {
+    70017,
+    "cfg_component_season_maze_lv",
+    true,
+    common[7],
+    empty,
+    common[282],
+    nil,
+    nil,
+    nil,
+    common[283]
+  },
+  [70018] = {
+    70018,
+    common[284],
+    true,
+    common[7],
+    empty,
+    common[282],
+    nil,
+    nil,
+    nil,
+    common[283]
+  },
+  [70019] = {
+    70019,
+    common[284],
+    true,
+    common[7],
+    empty,
+    "RelicRule",
+    nil,
+    nil,
+    nil,
+    common[285],
+    common[286],
+    nil,
+    0
+  },
+  [70020] = {
+    70020,
+    "cfg_component_season_maze_once",
+    true,
+    common[7],
+    empty,
+    common[282],
+    nil,
+    nil,
+    nil,
+    common[283]
+  },
+  [70021] = {
+    70021,
+    common[285],
+    true,
+    common[7],
+    empty,
+    "EffID",
+    nil,
+    nil,
+    nil,
+    common[283]
+  },
+  [70022] = {
+    70022,
+    "cfg_component_season_maze_room_box",
+    true,
+    common[7],
+    empty,
+    "RelicGroup",
+    nil,
+    nil,
+    nil,
+    common[285],
+    common[286]
+  },
+  [70023] = {
+    70023,
+    "cfg_component_season_maze_room_event",
+    true,
+    common[7],
+    empty,
+    "Options",
+    nil,
+    nil,
+    nil,
+    common[281]
+  },
+  [70024] = {
+    70024,
+    "cfg_component_season_maze_room_res",
+    true,
+    common[7],
+    empty,
+    common[282],
+    nil,
+    nil,
+    nil,
+    common[283]
+  },
+  [70025] = {
+    70025,
+    "cfg_component_season_maze_save",
+    true,
+    common[7],
+    empty,
+    common[282],
+    nil,
+    nil,
+    nil,
+    common[283]
+  },
+  [80001] = {
+    80001,
+    common[287],
+    false,
+    common[20],
+    empty,
+    common[41],
+    nil,
+    nil,
+    nil,
+    "HomelandShopType"
+  },
+  [80002] = {
+    80002,
+    common[287],
+    false,
+    common[7],
+    empty,
+    common[278],
+    nil,
+    nil,
+    nil,
+    common[127]
+  },
+  [80003] = {
+    80003,
+    common[287],
+    false,
+    common[42],
+    empty,
+    common[176],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [80004] = {
+    80004,
+    common[287],
+    false,
+    common[7],
+    empty,
+    "CostID",
+    nil,
+    nil,
+    nil,
+    common[127]
+  },
+  [80005] = {
+    80005,
+    common[287],
+    false,
+    common[42],
+    empty,
+    "CostNum",
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [80006] = {
+    80006,
+    common[288],
+    false,
+    common[42],
+    empty,
+    common[289],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [80007] = {
+    80007,
+    common[288],
+    true,
+    common[7],
+    empty,
+    common[136],
+    nil,
+    nil,
+    nil,
+    common[74]
+  },
+  [80008] = {
+    80008,
+    common[290],
+    true,
+    common[7],
+    empty,
+    "RewardRandomID",
+    nil,
+    nil,
+    nil,
+    common[55]
+  },
+  [80009] = {
+    80009,
+    common[290],
+    false,
+    common[42],
+    empty,
+    common[289],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [80010] = {
+    80010,
+    common[291],
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[127]
+  },
+  [80011] = {
+    80011,
+    common[291],
+    false,
+    common[42],
+    empty,
+    "Goods",
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [80012] = {
+    80012,
+    common[291],
+    false,
+    common[42],
+    empty,
+    "Sell",
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [80013] = {
+    80013,
+    common[291],
+    false,
+    common[7],
+    empty,
+    "GainItemId",
+    nil,
+    nil,
+    nil,
+    common[127]
+  },
+  [80014] = {
+    80014,
+    common[292],
+    false,
+    common[20],
+    empty,
+    common[41],
+    nil,
+    nil,
+    nil,
+    "HomelandGoodsType"
+  },
+  [80015] = {
+    80015,
+    common[292],
+    false,
+    common[42],
+    empty,
+    "Odds",
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [80016] = {
+    80016,
+    common[182],
+    true,
+    common[81],
+    empty,
+    common[80]
+  },
+  [80017] = {
+    80017,
+    common[293],
+    false,
+    common[7],
+    empty,
+    common[294],
+    nil,
+    nil,
+    nil,
+    common[182],
+    common[6]
+  },
+  [80018] = {
+    80018,
+    common[293],
+    false,
+    common[119],
+    empty,
+    nil,
+    common[18],
+    false,
+    nil,
+    common[294]
+  },
+  [80019] = {
+    80019,
+    common[295],
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[127],
+    common[6]
+  },
+  [80020] = {
+    80020,
+    "cfg_item_photo",
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[127],
+    common[6]
+  },
+  [80021] = {
+    80021,
+    common[296],
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[295],
+    common[6]
+  },
+  [80022] = {
+    80022,
+    "cfg_item_tree_seed",
+    false,
+    common[7],
+    empty,
+    "TreeId",
+    nil,
+    nil,
+    nil,
+    common[296],
+    common[6]
+  },
+  [80023] = {
+    80023,
+    "cfg_item_wishing_coin",
+    false,
+    common[7],
+    empty,
+    common[6],
+    nil,
+    nil,
+    nil,
+    common[127],
+    common[6]
+  },
+  [90001] = {
+    90001,
+    common[297],
+    false,
+    common[7],
+    empty,
+    "StoryTaskGroupTb",
+    nil,
+    nil,
+    nil,
+    common[298]
+  },
+  [90002] = {
+    90002,
+    common[297],
+    false,
+    common[42],
+    empty,
+    common[299],
+    nil,
+    nil,
+    nil,
+    common[49]
+  },
+  [90003] = {
+    90003,
+    common[297],
+    false,
+    common[7],
+    empty,
+    common[299],
+    nil,
+    nil,
+    nil,
+    common[298]
+  },
+  [90004] = {
+    90004,
+    common[297],
+    true,
+    "CallBackTime",
+    empty,
+    nil,
+    nil,
+    nil,
+    nil,
+    "_CheckCompareTime",
+    "UnCostTimeStart",
+    "UnCostTimeEnd"
+  },
+  [100002] = {
+    100002,
+    common[300],
+    true,
+    common[7],
+    empty,
+    "ThreeStarDropId",
+    nil,
+    nil,
+    nil,
+    common[110],
+    common[111],
+    nil,
+    0
+  },
+  [100003] = {
+    100003,
+    common[300],
+    true,
+    common[7],
+    empty,
+    common[120],
+    nil,
+    nil,
+    nil,
+    common[110],
+    common[111],
+    nil,
+    0
+  },
+  [100004] = {
+    100004,
+    common[300],
+    true,
+    common[7],
+    empty,
+    common[122],
+    nil,
+    nil,
+    nil,
+    common[110],
+    common[111],
+    nil,
+    0
+  },
+  [100005] = {
+    100005,
+    common[300],
+    true,
+    common[7],
+    empty,
+    common[58],
+    nil,
+    nil,
+    nil,
+    common[59],
+    nil,
+    nil,
+    0
+  },
+  [100006] = {
+    100006,
+    common[300],
+    true,
+    common[7],
+    empty,
+    common[60],
+    nil,
+    nil,
+    nil,
+    common[59],
+    nil,
+    nil,
+    0
+  },
+  [100007] = {
+    100007,
+    common[300],
+    true,
+    common[7],
+    empty,
+    common[61],
+    nil,
+    nil,
+    nil,
+    common[59],
+    nil,
+    nil,
+    0
+  }
 }
 return config, "ID", key
-

@@ -1,103 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_cn1/preview/ui_battlepass_cn1_preview_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattlePassCN1PreviewController", UIController)
 UIBattlePassCN1PreviewController = UIBattlePassCN1PreviewController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattlePassCN1PreviewController._SetCommonTopButton = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "backBtns", "UINewCommonTopButton")
+function UIBattlePassCN1PreviewController:_SetCommonTopButton()
+  local obj = UIWidgetHelper.SpawnObject(self, "backBtns", "UINewCommonTopButton")
   obj:SetData(function()
-    -- function num : 0_0_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1PreviewController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._campaign = (UIActivityBattlePassHelper.LoadDataOnEnter)(TT, res)
+function UIBattlePassCN1PreviewController:LoadDataOnEnter(TT, res, uiParams)
+  self._campaign = UIActivityBattlePassHelper.LoadDataOnEnter(TT, res)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1PreviewController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBattlePassCN1PreviewController:OnShow(uiParams)
   self:_AttachEvents()
-  ;
-  (UIBattlePassStyleHelper.FitStyle_Widget)(self._campaign, self)
+  UIBattlePassStyleHelper.FitStyle_Widget(self._campaign, self)
   self:_SetCommonTopButton()
   self:_SetRewards()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1PreviewController.OnHide = function(self)
-  -- function num : 0_3
+function UIBattlePassCN1PreviewController:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1PreviewController._SetRewards = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cmptId, component, componentInfo = (UIActivityBattlePassHelper.Component_LVReward)(self._campaign)
+function UIBattlePassCN1PreviewController:_SetRewards()
+  local cmptId, component, componentInfo = UIActivityBattlePassHelper.Component_LVReward(self._campaign)
   local rewards = component:GetSortAdvancedRewards()
   self:_SpawnRewards("rewardElite", rewards)
   local rewards = component:GetSortNormalRewards()
   self:_SpawnRewards("rewardStandard", rewards)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1PreviewController._SpawnRewards = function(self, widgetName, rewards)
-  -- function num : 0_5 , upvalues : _ENV
-  local items = (UIWidgetHelper.SpawnObjects)(self, widgetName, "UIBattlePassCN1ItemIcon", (table.count)(rewards))
-  for i,v in ipairs(items) do
+function UIBattlePassCN1PreviewController:_SpawnRewards(widgetName, rewards)
+  local items = UIWidgetHelper.SpawnObjects(self, widgetName, "UIBattlePassCN1ItemIcon", table.count(rewards))
+  for i, v in ipairs(items) do
     v:SetData(i, rewards[i], function(matid, pos)
-    -- function num : 0_5_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
-  end
-, UIItemScale.Level4)
+      UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
+    end, UIItemScale.Level4)
     local count = 3
-    v:PlayAnimationInSequence((math.floor)((i - 1) / count))
+    v:PlayAnimationInSequence(math.floor((i - 1) / count))
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1PreviewController.CloseBtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.info)("UIBattlePassCN1PreviewController:CloseBtnOnClick")
+function UIBattlePassCN1PreviewController:CloseBtnOnClick(go)
+  Log.info("UIBattlePassCN1PreviewController:CloseBtnOnClick")
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1PreviewController._AttachEvents = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIBattlePassCN1PreviewController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1PreviewController._DetachEvents = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIBattlePassCN1PreviewController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1PreviewController._CheckActivityClose = function(self, id)
-  -- function num : 0_9 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIBattlePassCN1PreviewController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
-
-

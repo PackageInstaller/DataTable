@@ -1,76 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/replac_prefab_by_under_grid_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ReplacePrefabByUnderGridInstruction", BaseInstruction)
 ReplacePrefabByUnderGridInstruction = ReplacePrefabByUnderGridInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ReplacePrefabByUnderGridInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function ReplacePrefabByUnderGridInstruction:Constructor(paramList)
   self._redPrefab = paramList.redPrefab
   self._yellowPrefab = paramList.yellowPrefab
   self._bluePrefab = paramList.bluePrefab
   self._greenPrefab = paramList.greenPrefab
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ReplacePrefabByUnderGridInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ReplacePrefabByUnderGridInstruction:GetCacheResource()
   local t = {}
   if self._redPrefab then
-    (table.insert)(t, {self._redPrefab, 1})
+    table.insert(t, {
+      self._redPrefab,
+      1
+    })
   end
   if self._yellowPrefab then
-    (table.insert)(t, {self._yellowPrefab, 1})
+    table.insert(t, {
+      self._yellowPrefab,
+      1
+    })
   end
   if self._bluePrefab then
-    (table.insert)(t, {self._bluePrefab, 1})
+    table.insert(t, {
+      self._bluePrefab,
+      1
+    })
   end
   if self._greenPrefab then
-    (table.insert)(t, {self._greenPrefab, 1})
+    table.insert(t, {
+      self._greenPrefab,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ReplacePrefabByUnderGridInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function ReplacePrefabByUnderGridInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local e = casterEntity
-  do
-    if casterEntity:HasSuperEntity() and (casterEntity:EntityType()):IsSkillHolder() then
-      local cSuperEntity = casterEntity:SuperEntityComponent()
-      e = cSuperEntity:GetSuperEntity()
-    end
-    local gridPos = e:GetRenderGridPosition()
-    self._world = e:GetOwnerWorld()
-    local utilDataSvc = (self._world):GetService("UtilData")
-    local pieceType = (utilDataSvc:GetPieceType(gridPos))
-    local resPath = nil
-    if pieceType == PieceType.Blue then
-      resPath = self._bluePrefab
-    else
-      if pieceType == PieceType.Red then
-        resPath = self._redPrefab
-      else
-        if pieceType == PieceType.Green then
-          resPath = self._greenPrefab
-        else
-          if pieceType == PieceType.Yellow then
-            resPath = self._yellowPrefab
-          else
-            resPath = self._bluePrefab
-          end
-        end
-      end
-    end
-    if (e:Asset()):GetResPath() ~= resPath then
-      e:ReplaceAsset(NativeUnityPrefabAsset:New(resPath, true))
-    end
+  if casterEntity:HasSuperEntity() and casterEntity:EntityType():IsSkillHolder() then
+    local cSuperEntity = casterEntity:SuperEntityComponent()
+    e = cSuperEntity:GetSuperEntity()
+  end
+  local gridPos = e:GetRenderGridPosition()
+  self._world = e:GetOwnerWorld()
+  local utilDataSvc = self._world:GetService("UtilData")
+  local pieceType = utilDataSvc:GetPieceType(gridPos)
+  local resPath
+  if pieceType == PieceType.Blue then
+    resPath = self._bluePrefab
+  elseif pieceType == PieceType.Red then
+    resPath = self._redPrefab
+  elseif pieceType == PieceType.Green then
+    resPath = self._greenPrefab
+  elseif pieceType == PieceType.Yellow then
+    resPath = self._yellowPrefab
+  else
+    resPath = self._bluePrefab
+  end
+  if e:Asset():GetResPath() ~= resPath then
+    e:ReplaceAsset(NativeUnityPrefabAsset:New(resPath, true))
   end
 end
-
-

@@ -1,26 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_empty/ui_empty_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEmptyController", UIController)
 UIEmptyController = UIEmptyController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEmptyController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIEmptyController:OnShow(uiParams)
   self._pos = self:GetUIComponent("RectTransform", "pos")
   self._safe = self:GetUIComponent("RectTransform", "SafeArea")
   local pos = uiParams[1]
   local size = uiParams[2]
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
   if self._pos then
-    (self._pos).position = pos + (self._safe).position
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._pos).sizeDelta = size
+    self._pos.position = pos + self._safe.position
+    self._pos.sizeDelta = size
   end
   self._callback = uiParams[3]
   if uiParams[5] then
@@ -31,42 +19,25 @@ UIEmptyController.OnShow = function(self, uiParams)
   self:UnLock("UIPowerOpened")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEmptyController.Dispose = function(self)
-  -- function num : 0_1
+function UIEmptyController:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEmptyController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIEmptyClose)
+function UIEmptyController:OnHide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIEmptyClose)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEmptyController.Constructor = function(self)
-  -- function num : 0_3
+function UIEmptyController:Constructor()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEmptyController.bgOnClick = function(self)
-  -- function num : 0_4
+function UIEmptyController:bgOnClick()
   if self._callback then
     self:_callback()
   end
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEmptyController.OnAppHome = function(self)
-  -- function num : 0_5
+function UIEmptyController:OnAppHome()
   if self._homeCall then
     self:bgOnClick()
   end
 end
-
-

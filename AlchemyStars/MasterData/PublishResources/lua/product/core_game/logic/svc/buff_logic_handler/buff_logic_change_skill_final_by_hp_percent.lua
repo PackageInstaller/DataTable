@@ -1,47 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_skill_final_by_hp_percent.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local ChangeSkillFinalByHPPercentType = {RestHP = 1, LostHP = 2}
 _enum("ChangeSkillFinalByHPPercentType", ChangeSkillFinalByHPPercentType)
 _class("BuffLogicChangeSkillFinalByHPPercent", BuffLogicBase)
 BuffLogicChangeSkillFinalByHPPercent = BuffLogicChangeSkillFinalByHPPercent
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicChangeSkillFinalByHPPercent.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : ChangeSkillFinalByHPPercentType, _ENV
-  if not logicParam.HPPercent then
-    self._HPPercent = {}
-    if not logicParam.promote then
-      self._promote = {}
-      self._useLinear = logicParam.useLinear
-      self._promoteType = logicParam.promoteType or ChangeSkillFinalByHPPercentType.RestHP
-      self._eachHpPercent = logicParam.eachHpPercent
-      self._promotePercent = logicParam.promotePercent
-      self._maxSkillFinal = logicParam.maxSkillFinal
-      self._effectList = logicParam.effectList
-      self._calcSourceType = tonumber(logicParam.hpPercentSourceType) or 1
-      self._entity = buffInstance._entity
-    end
-  end
+function BuffLogicChangeSkillFinalByHPPercent:Constructor(buffInstance, logicParam)
+  self._HPPercent = logicParam.HPPercent or {}
+  self._promote = logicParam.promote or {}
+  self._useLinear = logicParam.useLinear
+  self._promoteType = logicParam.promoteType or ChangeSkillFinalByHPPercentType.RestHP
+  self._eachHpPercent = logicParam.eachHpPercent
+  self._promotePercent = logicParam.promotePercent
+  self._maxSkillFinal = logicParam.maxSkillFinal
+  self._effectList = logicParam.effectList
+  self._calcSourceType = tonumber(logicParam.hpPercentSourceType) or 1
+  self._entity = buffInstance._entity
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeSkillFinalByHPPercent.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : ChangeSkillFinalByHPPercentType, _ENV
-  local sourceEntity = nil
+function BuffLogicChangeSkillFinalByHPPercent:DoLogic(notify)
+  local sourceEntity
   if self._calcSourceType == 1 then
     sourceEntity = notify:GetDefenderEntity()
-  else
-    if self._calcSourceType == 2 then
-      sourceEntity = ((self._world):Player()):GetCurrentTeamEntity()
-    else
-      if self._calcSourceType == 3 then
-        sourceEntity = self:GetEntity()
-      end
-    end
+  elseif self._calcSourceType == 2 then
+    sourceEntity = self._world:Player():GetCurrentTeamEntity()
+  elseif self._calcSourceType == 3 then
+    sourceEntity = self:GetEntity()
   end
   local cAttributes = sourceEntity:Attributes()
   local curHP = cAttributes:GetCurrentHP()
@@ -51,46 +33,40 @@ BuffLogicChangeSkillFinalByHPPercent.DoLogic = function(self, notify)
     percentHP = (maxHP - curHP) / maxHP
   end
   local promoteRate = 0
-  if self._useLinear and self._useLinear == 1 and self._eachHpPercent and self._promotePercent and self._eachHpPercent ~= 0 then
-    promoteRate = percentHP / self._eachHpPercent * self._promotePercent
-    if self._maxSkillFinal and self._maxSkillFinal < promoteRate then
-      promoteRate = self._maxSkillFinal
+  if self._useLinear and self._useLinear == 1 then
+    if self._eachHpPercent and self._promotePercent and self._eachHpPercent ~= 0 then
+      promoteRate = percentHP / self._eachHpPercent * self._promotePercent
+      if self._maxSkillFinal and promoteRate > self._maxSkillFinal then
+        promoteRate = self._maxSkillFinal
+      end
     end
-  end
-  do
+  else
     local sepIdx = 0
-    for index,per in ipairs(self._HPPercent) do
-      if percentHP <= per then
+    for index, per in ipairs(self._HPPercent) do
+      if per >= percentHP then
         sepIdx = index
       end
     end
-    promoteRate = (self._promote)[sepIdx] or 0
-    if promoteRate == 0 then
-      return 
-    end
-    for _,paramType in ipairs(self._effectList) do
-      (self._buffLogicService):ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, promoteRate)
-    end
+    promoteRate = self._promote[sepIdx] or 0
+  end
+  if promoteRate == 0 then
+    return
+  end
+  for _, paramType in ipairs(self._effectList) do
+    self._buffLogicService:ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, promoteRate)
   end
 end
 
 _class("BuffLogicRemoveSkillFinalByHPPercent", BuffLogicBase)
 BuffLogicRemoveSkillFinalByHPPercent = BuffLogicRemoveSkillFinalByHPPercent
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicRemoveSkillFinalByHPPercent.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveSkillFinalByHPPercent:Constructor(buffInstance, logicParam)
   self._entity = buffInstance._entity
   self._effectList = logicParam.effectList
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicRemoveSkillFinalByHPPercent.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,paramType in ipairs(self._effectList) do
-    (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
+function BuffLogicRemoveSkillFinalByHPPercent:DoLogic()
+  for _, paramType in ipairs(self._effectList) do
+    self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
   end
 end
-
-

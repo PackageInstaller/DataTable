@@ -1,43 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/test_func/ui_test_func_main_lobby.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITestFuncMainLobby", UICustomWidget)
 UITestFuncMainLobby = UITestFuncMainLobby
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITestFuncMainLobby.SetData = function(self, data)
-  -- function num : 0_0 , upvalues : _ENV
+function UITestFuncMainLobby:SetData(data)
   self._main = UITestFuncBtnManager:New(self, "Content_Main", "PagePool")
   self:_SetContent_Main(self._main)
-  ;
-  (self._main):SpawnBtns()
+  self._main:SpawnBtns()
   self._sub = UITestFuncBtnManager:New(self, "Content_Sub", "PagePool")
   self:_SetContent_Sub(self._sub)
-  ;
-  (self._sub):SpawnBtns()
+  self._sub:SpawnBtns()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncMainLobby._SetContent_Main = function(self, manager)
-  -- function num : 0_1 , upvalues : _ENV
+function UITestFuncMainLobby:_SetContent_Main(manager)
   manager:AddBtn_SwitchState("局内测试", UIStateType.UICoreGameTest)
   manager:AddBtn_SwitchState("剧情测试", UIStateType.UIStoryViewer)
   manager:AddBtn_SwitchState("3D剧情", UIStateType.UICutsceneTest)
   manager:AddBtn_ShowDialog("赛季剧情测试", "UISeasonStoryController", 65010301)
   manager:AddBtn_SubPage("家园剧情测试", "UITestFuncHomelandStory", "UITestFunc_HomelandStory.prefab")
   manager:AddBtn_Default("场景测试", function()
-    -- function num : 0_1_0 , upvalues : _ENV
-    ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.CorGamePerformanceTest_Enter)
-  end
-)
+    GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.CorGamePerformanceTest_Enter)
+  end)
   manager:AddBtn_Default("局内技能测试", function()
-    -- function num : 0_1_1 , upvalues : self, _ENV
-    (self:GetModule(SkillPerfModule)):EnterCoreGame()
-  end
-)
+    self:GetModule(SkillPerfModule):EnterCoreGame()
+  end)
   manager:AddBtn_SubPage("LocalDB 测试", "UITestFuncLocalDB", "UITestFunc_LocalDB.prefab")
   manager:AddBtn_SubPage("Jump 测试", "UITestFuncJump", "UITestFunc_Jump.prefab")
   manager:AddBtn_SubPage("Guide Clear", "UITestFuncGuideClear", "UITestFunc_GuideClear.prefab")
@@ -47,232 +31,160 @@ UITestFuncMainLobby._SetContent_Main = function(self, manager)
   manager:AddBtn_ShowDialog("赛季秘境入口", "UISeasonMazeEnterController")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncMainLobby._SetContent_Sub = function(self, manager)
-  -- function num : 0_2 , upvalues : _ENV
+function UITestFuncMainLobby:_SetContent_Sub(manager)
   manager:AddBtn_Default("崩溃测试", function()
-    -- function num : 0_2_0 , upvalues : self
     self:_CrashTest()
-  end
-)
+  end)
   manager:AddBtn_Default("清除登录状态", function()
-    -- function num : 0_2_1 , upvalues : self
     self:_ResetLoginState()
-  end
-)
+  end)
   manager:AddBtn_Default("掉线", function()
-    -- function num : 0_2_2 , upvalues : self
     self:_BackToLogin()
-  end
-)
+  end)
   manager:AddBtn_Default("IOS商店评分", function()
-    -- function num : 0_2_3 , upvalues : self
     self:_IosStoreReview()
-  end
-)
+  end)
   manager:AddBtn_Default("删除公告存档", function()
-    -- function num : 0_2_4 , upvalues : self
     self:_DeleteNoticeKey()
-  end
-)
+  end)
   manager:AddBtn_Default("恢复音频", function()
-    -- function num : 0_2_5 , upvalues : self
     self:_RecoveryAudio()
-  end
-)
+  end)
   manager:AddBtn_Default("心悦测试", function()
-    -- function num : 0_2_6 , upvalues : _ENV
-    (UIXinyueHelper.OpenUrl)()
-  end
-)
+    UIXinyueHelper.OpenUrl()
+  end)
   manager:AddBtn_Toggle("卡池计数查看", self:_GetToggleFunc_GamblePoolCount())
   manager:AddBtn_Default("战斗通行证", function()
-    -- function num : 0_2_7 , upvalues : _ENV
-    (UIActivityBattlePassHelper.OpenMainController)()
-  end
-)
+    UIActivityBattlePassHelper.OpenMainController()
+  end)
   manager:AddBtn_Default("战斗通行证-购买精英", function()
-    -- function num : 0_2_8 , upvalues : _ENV
-    (UIActivityBattlePassHelper.OpenBuyGiftResultController)(CampaignGiftType.ECGT_ADVANCED)
-  end
-)
+    UIActivityBattlePassHelper.OpenBuyGiftResultController(CampaignGiftType.ECGT_ADVANCED)
+  end)
   manager:AddBtn_Default("战斗通行证-购买豪华", function()
-    -- function num : 0_2_9 , upvalues : _ENV
-    (UIActivityBattlePassHelper.OpenBuyGiftResultController)(CampaignGiftType.ECGT_LUXURY)
-  end
-)
+    UIActivityBattlePassHelper.OpenBuyGiftResultController(CampaignGiftType.ECGT_LUXURY)
+  end)
   manager:AddBtn_ShowDialog("通用活动调试窗口", "UIN28GronruPlatform")
   manager:AddBtn_ShowDialog("熔炼室", "UIAircraftItemSmeltController")
   manager:AddBtn_ShowDialog("战术模拟器", "UIAircraftTactic")
-  manager:AddBtn_ShowDialog("活动中心-指定跳转", "UISideEnterCenterController", {campaign_type = 10060, single_mode = true, 
-params = {true}
-})
+  manager:AddBtn_ShowDialog("活动中心-指定跳转", "UISideEnterCenterController", {
+    campaign_type = 10060,
+    single_mode = true,
+    params = {true}
+  })
   manager:AddBtn_ShowDialog("分享测试", "UIShareDemoController")
   manager:AddBtn_ShowDialog("好友链测试", "UIFriendsDemoController")
   manager:AddBtn_ShowDialog("赛季 S2", "UIS2MainController")
   manager:AddBtn_SwitchState("活动30商店买", UIStateType.UIN30ShopController)
   manager:AddBtn_Toggle("显示弹跳包围盒", function()
-    -- function num : 0_2_10 , upvalues : _ENV
-    -- DECOMPILER ERROR at PC4: Confused about usage of register: R0 in 'UnsetPending'
-
     BounceDebug.ShowObjRect = not BounceDebug.ShowObjRect
-  end
-, function()
-    -- function num : 0_2_11 , upvalues : _ENV
+  end, function()
     return BounceDebug.ShowObjRect
-  end
-)
+  end)
   manager:AddBtn_Toggle("弹跳角色永生", function()
-    -- function num : 0_2_12 , upvalues : _ENV
-    -- DECOMPILER ERROR at PC4: Confused about usage of register: R0 in 'UnsetPending'
-
     BounceDebug.PlayerLiveForever = not BounceDebug.PlayerLiveForever
-  end
-, function()
-    -- function num : 0_2_13 , upvalues : _ENV
+  end, function()
     return BounceDebug.PlayerLiveForever
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncMainLobby._CrashTest = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UITestFuncMainLobby:_CrashTest()
   local bigTable = {}
   local index = 1
-  while 1 do
+  while true do
     bigTable[index] = {}
     for i = 1, 999999999 do
-      -- DECOMPILER ERROR at PC17: Confused about usage of register: R7 in 'UnsetPending'
-
-      (bigTable[index])[i] = tostring(index) .. "CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash\n                CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash\n                CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash\n                CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash\n                CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash\n                CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash\n                CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash\n                CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash\n                CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash\n                CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash" .. tostring(i)
+      bigTable[index][i] = tostring(index) .. [[
+CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash
+                CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash
+                CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash
+                CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash
+                CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash
+                CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash
+                CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash
+                CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash
+                CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash
+                CrashCrashCrashCrashCrashCrashCrashCrashCrashCrash]] .. tostring(i)
     end
     index = index + 1
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncMainLobby._ResetLoginState = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (LocalDB.Delete)(LoginKeyName.FirstLogin)
-  ;
-  (LocalDB.Delete)(LoginKeyName.LoginPrivacy)
-  ;
-  (LocalDB.Delete)(LoginKeyName.LoginPUTime)
-  ;
-  (LocalDB.Delete)(LoginKeyName.ZoneId)
-  ;
-  (LocalDB.Delete)(LoginKeyName.FirstLaunchApp)
-  ;
-  (LocalDB.Delete)(LoginKeyName.PrivecyVersion)
-  ;
-  (ToastManager.ShowToast)("已清除")
+function UITestFuncMainLobby:_ResetLoginState()
+  LocalDB.Delete(LoginKeyName.FirstLogin)
+  LocalDB.Delete(LoginKeyName.LoginPrivacy)
+  LocalDB.Delete(LoginKeyName.LoginPUTime)
+  LocalDB.Delete(LoginKeyName.ZoneId)
+  LocalDB.Delete(LoginKeyName.FirstLaunchApp)
+  LocalDB.Delete(LoginKeyName.PrivecyVersion)
+  ToastManager.ShowToast("已清除")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncMainLobby._BackToLogin = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.GameLogic)()):BackToLogin(false, LoginModule, BackToLoginReason.LoginFailed, true, 303)
+function UITestFuncMainLobby:_BackToLogin()
+  GameGlobal.GameLogic():BackToLogin(false, LoginModule, BackToLoginReason.LoginFailed, true, 303)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncMainLobby._IosStoreReview = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, (StringTable.Get)("str_common_guide_appraise_title"), (StringTable.Get)("str_common_guide_appraise_context"), function()
-    -- function num : 0_6_0 , upvalues : _ENV
+function UITestFuncMainLobby:_IosStoreReview()
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, StringTable.Get("str_common_guide_appraise_title"), StringTable.Get("str_common_guide_appraise_context"), function()
     local app_store_id = "6443444750"
-    local srm = (GameStore.StoreReviewManager):New()
+    local srm = GameStore.StoreReviewManager:New()
     srm:RequestSystemBasedReview(app_store_id)
-  end
-, nil, function()
-    -- function num : 0_6_1
-  end
-, nil)
+  end, nil, function()
+  end, nil)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncMainLobby._DeleteNoticeKey = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local key1 = ((GameGlobal.GameLogic)()):GetOpenId() .. "SystemNotice"
-  local key2 = ((GameGlobal.GameLogic)()):GetOpenId() .. "ActiveNotice"
-  ;
-  ((UnityEngine.PlayerPrefs).DeleteKey)(key1)
-  ;
-  ((UnityEngine.PlayerPrefs).DeleteKey)(key2)
-  ;
-  (ToastManager.ShowToast)("删除")
+function UITestFuncMainLobby:_DeleteNoticeKey()
+  local key1 = GameGlobal.GameLogic():GetOpenId() .. "SystemNotice"
+  local key2 = GameGlobal.GameLogic():GetOpenId() .. "ActiveNotice"
+  UnityEngine.PlayerPrefs.DeleteKey(key1)
+  UnityEngine.PlayerPrefs.DeleteKey(key2)
+  ToastManager.ShowToast("删除")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncMainLobby._RecoveryAudio = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UITestFuncMainLobby:_RecoveryAudio()
   require("tolua.reflection")
-  ;
-  (tolua.loadassembly)("CriMw.CriWare.Runtime")
+  tolua.loadassembly("CriMw.CriWare.Runtime")
   local type = typeof("CriWare.CriAtomPlugin")
-  local func = (tolua.getmethod)(type, "Pause", typeof("System.Boolean"))
+  local func = tolua.getmethod(type, "Pause", typeof("System.Boolean"))
   func:Call(false)
   func:Destroy()
-  ;
-  (ToastManager.ShowToast)("恢复音频")
-  ;
-  (Log.debug)("恢复音频")
+  ToastManager.ShowToast("恢复音频")
+  Log.debug("恢复音频")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncMainLobby._GetToggleFunc_ActivityDebug = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local click = function()
-    -- function num : 0_9_0 , upvalues : _ENV
-    local key = (UIActivityHelper.GetDebugOpenKey)()
-    if (LocalDB.HasKey)(key) then
-      (ToastManager.ShowToast)("Close")
-      ;
-      (LocalDB.Delete)(key)
+function UITestFuncMainLobby:_GetToggleFunc_ActivityDebug()
+  local function click()
+    local key = UIActivityHelper.GetDebugOpenKey()
+    
+    if LocalDB.HasKey(key) then
+      ToastManager.ShowToast("Close")
+      LocalDB.Delete(key)
     else
-      ;
-      (LocalDB.SetInt)(key, 1)
-      ;
-      (ToastManager.ShowToast)("Open")
+      LocalDB.SetInt(key, 1)
+      ToastManager.ShowToast("Open")
     end
   end
-
-  local getValue = function()
-    -- function num : 0_9_1 , upvalues : _ENV
-    local key = (UIActivityHelper.GetDebugOpenKey)()
-    local hasKey = (LocalDB.HasKey)(key)
+  
+  local function getValue()
+    local key = UIActivityHelper.GetDebugOpenKey()
+    local hasKey = LocalDB.HasKey(key)
     return hasKey
   end
-
+  
   return click, getValue
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncMainLobby._GetToggleFunc_GamblePoolCount = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local click = function()
-    -- function num : 0_10_0 , upvalues : _ENV
-    local gambleModule = (GameGlobal.GetModule)(GambleModule)
+function UITestFuncMainLobby:_GetToggleFunc_GamblePoolCount()
+  local function click()
+    local gambleModule = GameGlobal.GetModule(GambleModule)
+    
     local value = gambleModule:GetShowPoolCountCalc()
     return gambleModule:SetShowPoolCountCalc(not value)
   end
-
-  local getValue = function()
-    -- function num : 0_10_1 , upvalues : _ENV
-    local gambleModule = (GameGlobal.GetModule)(GambleModule)
+  
+  local function getValue()
+    local gambleModule = GameGlobal.GetModule(GambleModule)
     return gambleModule:GetShowPoolCountCalc()
   end
-
+  
   return click, getValue
 end
-
-

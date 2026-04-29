@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_pet_try/ui_activity_pet_try_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityPetTryItem", UICustomWidget)
 UIActivityPetTryItem = UIActivityPetTryItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityPetTryItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityPetTryItem:OnShow(uiParams)
   self._go = self:GetGameObject("go")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryItem._GetComponents = function(self)
-  -- function num : 0_1
+function UIActivityPetTryItem:_GetComponents()
   self._head = self:GetUIComponent("RawImageLoader", "head")
   self._passGo = self:GetGameObject("pass")
   self._select = self:GetGameObject("select")
@@ -28,39 +18,18 @@ UIActivityPetTryItem._GetComponents = function(self)
   local star4 = self:GetGameObject("star4")
   local star5 = self:GetGameObject("star5")
   local star6 = self:GetGameObject("star6")
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._starTab)[1] = star1
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._starTab)[2] = star2
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._starTab)[3] = star3
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._starTab)[4] = star4
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._starTab)[5] = star5
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._starTab)[6] = star6
+  self._starTab[1] = star1
+  self._starTab[2] = star2
+  self._starTab[3] = star3
+  self._starTab[4] = star4
+  self._starTab[5] = star5
+  self._starTab[6] = star6
   self._rect = self:GetUIComponent("RectTransform", "go")
   self._red = self:GetGameObject("red")
   self._nameImg = self:GetUIComponent("RectTransform", "Image")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryItem.SetData = function(self, index, curIdx, data, callback)
-  -- function num : 0_2
+function UIActivityPetTryItem:SetData(index, curIdx, data, callback)
   self:_GetComponents()
   self._idx = index
   self._selected = false
@@ -75,74 +44,48 @@ UIActivityPetTryItem.SetData = function(self, index, curIdx, data, callback)
   self:OnSelected(curIdx)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryItem.Active = function(self, active)
-  -- function num : 0_3
-  (self._go):SetActive(active)
+function UIActivityPetTryItem:Active(active)
+  self._go:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryItem._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._head):LoadImage((self._data).head)
-  ;
-  (self._passGo):SetActive((self._data).pass)
-  ;
-  (self._red):SetActive(not (self._data).pass)
-  ;
-  (self._name):SetText((self._data).name)
-  local nameTr = ((self._name).gameObject):GetComponent("RectTransform")
-  local scale = (nameTr.localScale).x
+function UIActivityPetTryItem:_OnValue()
+  self._head:LoadImage(self._data.head)
+  self._passGo:SetActive(self._data.pass)
+  self._red:SetActive(not self._data.pass)
+  self._name:SetText(self._data.name)
+  local nameTr = self._name.gameObject:GetComponent("RectTransform")
+  local scale = nameTr.localScale.x
   local imgWidth = 192
-  if scale >= 1 then
-    imgWidth = (self._name).preferredWidth + 19 + 13
-    if imgWidth > 192 then
+  if 1 <= scale then
+    imgWidth = self._name.preferredWidth + 19 + 13
+    if 192 < imgWidth then
       imgWidth = 192
     end
   end
-  ;
-  (Log.fatal)("######################", imgWidth)
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._nameImg).sizeDelta = Vector2(imgWidth, 35)
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._element).sprite = (self._data).element
+  Log.fatal("######################", imgWidth)
+  self._nameImg.sizeDelta = Vector2(imgWidth, 35)
+  self._element.sprite = self._data.element
   for i = 1, #self._starTab do
-    ((self._starTab)[i]):SetActive(i <= (self._data).star)
+    self._starTab[i]:SetActive(i <= self._data.star)
   end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryItem.bgOnClick = function(self, go)
-  -- function num : 0_5
+function UIActivityPetTryItem:bgOnClick(go)
   if self._callback then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryItem.OnSelected = function(self, idx)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityPetTryItem:OnSelected(idx)
   local select = idx == self._idx
-  local animName = nil
+  local animName
   if select and not self._selected then
     animName = "uieff_Activity_PetryItem_select"
   elseif not select and self._selected then
     animName = "uieff_Activity_PetryItem_unselect"
   end
   if animName then
-    (UIWidgetHelper.SetAnimationPlay)(self, "_anim", animName)
+    UIWidgetHelper.SetAnimationPlay(self, "_anim", animName)
   end
   self._selected = select
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
-
-

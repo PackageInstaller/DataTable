@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/breed/ui_homeland_breed_directive.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBreedDirective", UIController)
 UIHomelandBreedDirective = UIHomelandBreedDirective
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBreedDirective.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandBreedDirective:Constructor()
   self._selectTree = nil
   self._items = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedDirective.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandBreedDirective:OnShow(uiParams)
   self._mainSeedData = uiParams[1]
   self._mutationSeedData = uiParams[2]
   self._directiveId = uiParams[3]
@@ -25,99 +15,69 @@ UIHomelandBreedDirective.OnShow = function(self, uiParams)
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedDirective._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandBreedDirective:_GetComponents()
   self._scrollView = self:GetUIComponent("Image", "ScrollView")
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._mark = self:GetGameObject("Mark")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedDirective._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandBreedDirective:_OnValue()
   if self._directiveId <= 0 then
     self._data = self:_DataFilter()
   else
     self._selectTree = self._directiveId
     self._data = {}
-    local cfgTree = (Cfg.cfg_item_tree_attribute)[self._directiveId]
-    ;
-    (table.insert)(self._data, cfgTree)
+    local cfgTree = Cfg.cfg_item_tree_attribute[self._directiveId]
+    table.insert(self._data, cfgTree)
   end
-  do
-    local count = (table.count)(self._data)
-    if count <= 0 then
-      (Log.error)("Homeland Breed Directive Cfg Error.")
-      return 
-    end
-    ;
-    (self._content):SpawnObjects("UIHomelandBreedDirectiveItem", count)
-    self._items = (self._content):GetAllSpawnList()
-    for i = 1, count do
-      ((self._items)[i]):SetData((self._data)[i], i, function(id, index)
-    -- function num : 0_3_0 , upvalues : self
-    self:_OnSelect(id, index)
+  local count = table.count(self._data)
+  if count <= 0 then
+    Log.error("Homeland Breed Directive Cfg Error.")
+    return
   end
-)
-    end
-    ;
-    (self._mark):SetActive(false)
+  self._content:SpawnObjects("UIHomelandBreedDirectiveItem", count)
+  self._items = self._content:GetAllSpawnList()
+  for i = 1, count do
+    self._items[i]:SetData(self._data[i], i, function(id, index)
+      self:_OnSelect(id, index)
+    end)
   end
+  self._mark:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedDirective.CloseBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIHomelandBreedDirective:CloseBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedDirective.OnSureBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIHomelandBreedDirective:OnSureBtnOnClick(go)
   if not self._selectTree then
-    return 
+    return
   end
   if self._callback then
-    (self._callback)(self._selectTree)
+    self._callback(self._selectTree)
   end
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedDirective._DataFilter = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfgMainSeed = (Cfg.cfg_item_tree_seed)[(self._mainSeedData).ID]
-  local cfgMainTree = (Cfg.cfg_item_tree_attribute)[cfgMainSeed.TreeId]
-  local cfgMutationSeed = (Cfg.cfg_item_tree_seed)[(self._mutationSeedData).ID]
-  local cfgMutationTree = (Cfg.cfg_item_tree_attribute)[cfgMutationSeed.TreeId]
-  local cfgTree = (Cfg.cfg_item_tree_attribute)({})
+function UIHomelandBreedDirective:_DataFilter()
+  local cfgMainSeed = Cfg.cfg_item_tree_seed[self._mainSeedData.ID]
+  local cfgMainTree = Cfg.cfg_item_tree_attribute[cfgMainSeed.TreeId]
+  local cfgMutationSeed = Cfg.cfg_item_tree_seed[self._mutationSeedData.ID]
+  local cfgMutationTree = Cfg.cfg_item_tree_attribute[cfgMutationSeed.TreeId]
+  local cfgTree = Cfg.cfg_item_tree_attribute({})
   local data = {}
-  for _,tree in pairs(cfgTree) do
+  for _, tree in pairs(cfgTree) do
     if tree.Species == cfgMainTree.Species and (tree.Pedigree == cfgMainTree.Pedigree or tree.Pedigree == cfgMutationTree.Pedigree) and tree.Rarity - cfgMainTree.Rarity == 1 then
-      (table.insert)(data, tree)
+      table.insert(data, tree)
     end
   end
   return data
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedDirective._OnSelect = function(self, treeID, index)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHomelandBreedDirective:_OnSelect(treeID, index)
   self._selectTree = treeID
-  if not (self._mark).activeSelf then
-    (self._mark):SetActive(true)
+  if not self._mark.activeSelf then
+    self._mark:SetActive(true)
   end
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._mark).transform).localPosition = Vector3(((((((self._items)[index]).view).gameObject).transform).localPosition).x, (((self._mark).transform).localPosition).y, 0)
+  self._mark.transform.localPosition = Vector3(self._items[index].view.gameObject.transform.localPosition.x, self._mark.transform.localPosition.y, 0)
 end
-
-

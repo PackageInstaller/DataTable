@@ -1,49 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21_crisis_contract/affix/ui_activity_n21cc_affix_detail_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN21CCAffixDetailItem", UICustomWidget)
 UIActivityN21CCAffixDetailItem = UIActivityN21CCAffixDetailItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN21CCAffixDetailItem.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityN21CCAffixDetailItem:OnShow()
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
   self._scoreLabel = self:GetUIComponent("UILocalizationText", "Score")
   self._categoryIconLoader = self:GetUIComponent("RawImageLoader", "CategoryIcon")
   self._go = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCAffixDetailItem.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityN21CCAffixDetailItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCAffixDetailItem.Refresh = function(self, affixData)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN21CCAffixDetailItem:Refresh(affixData)
   if affixData == nil then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
-  ;
-  (self._go):SetActive(true)
+  self._go:SetActive(true)
   local score = affixData:GetScroe()
   local scoreStr = ""
-  if score >= 0 then
+  if 0 <= score then
     scoreStr = "<color=#ffbf14>+" .. score .. "</color>"
   else
     scoreStr = "<color=#b3f12d>" .. score .. "</color>"
   end
-  ;
-  (self._nameLabel):SetText(affixData:GetDes())
-  ;
-  (self._scoreLabel):SetText(scoreStr)
-  ;
-  (self._categoryIconLoader):LoadImage((UIActivityN21CCConst.GetAffixCategoryIcon)(affixData:GetCategoryType()))
+  self._nameLabel:SetText(affixData:GetDes())
+  self._scoreLabel:SetText(scoreStr)
+  self._categoryIconLoader:LoadImage(UIActivityN21CCConst.GetAffixCategoryIcon(affixData:GetCategoryType()))
 end
-
-

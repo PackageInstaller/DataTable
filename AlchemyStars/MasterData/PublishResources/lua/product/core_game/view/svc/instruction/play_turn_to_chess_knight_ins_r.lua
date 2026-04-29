@@ -1,40 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_turn_to_chess_knight_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTurnToChessKnightInstruction", BaseInstruction)
 PlayTurnToChessKnightInstruction = PlayTurnToChessKnightInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTurnToChessKnightInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTurnToChessKnightInstruction:Constructor(paramList)
   self._stageIndex = tonumber(paramList.stageIndex) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTurnToChessKnightInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayTurnToChessKnightInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local teleportEffectResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Teleport, self._stageIndex)
   if not teleportEffectResult then
-    return 
+    return
   end
   local newPos = teleportEffectResult:GetPosNew()
   local oldPos = teleportEffectResult:GetPosOld()
   if newPos == oldPos then
-    return 
+    return
   end
   local dir = newPos - oldPos
-  if (math.abs)(dir.x) == 1 then
+  if math.abs(dir.x) == 1 then
     dir.x = 0
   end
-  if (math.abs)(dir.y) == 1 then
+  if math.abs(dir.y) == 1 then
     dir.y = 0
   end
   casterEntity:SetDirection(dir)
 end
-
-

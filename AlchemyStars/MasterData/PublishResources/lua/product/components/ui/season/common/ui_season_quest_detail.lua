@@ -1,145 +1,93 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/ui_season_quest_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonQuestDetail", UIController)
 UISeasonQuestDetail = UISeasonQuestDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonQuestDetail.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  if uiParams then
-    local list = uiParams[1]
-  end
+function UISeasonQuestDetail:LoadDataOnEnter(TT, res, uiParams)
+  local list = uiParams and uiParams[1]
   if list == nil or #list == 0 then
-    (Log.exception)("UISeasonQuestDetail:LoadDataOnEnter() list is empty")
+    Log.exception("UISeasonQuestDetail:LoadDataOnEnter() list is empty")
     res:SetSucc(false)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonQuestDetail.OnShow = function(self, uiParams)
-  -- function num : 0_1
-  if uiParams then
-    local list = uiParams[1]
-  end
+function UISeasonQuestDetail:OnShow(uiParams)
+  local list = uiParams and uiParams[1]
   self._data = list
   self:_SetData(1)
   self:_PlayAnim(1)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonQuestDetail.OnHide = function(self)
-  -- function num : 0_2
+function UISeasonQuestDetail:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonQuestDetail._SetData = function(self, index)
-  -- function num : 0_3 , upvalues : _ENV
-  self._index = (Mathf.Clamp)(index, 1, #self._data)
+function UISeasonQuestDetail:_SetData(index)
+  self._index = Mathf.Clamp(index, 1, #self._data)
   self:_SetPage(index)
   self:_SetBtnObj(index)
-  local id = (self._data)[index]
+  local id = self._data[index]
   if id == nil then
-    (Log.exception)("UISeasonQuestDetail:_SetData(", index, ") id = nil")
-    return 
+    Log.exception("UISeasonQuestDetail:_SetData(", index, ") id = nil")
+    return
   end
-  local cfg = (UISeasonCfgHelper.CfgSeason_QuestItemClient)(id)
+  local cfg = UISeasonCfgHelper.CfgSeason_QuestItemClient(id)
   self:_SetTitle(cfg)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonQuestDetail._PlayAnim = function(self, type, callback)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonQuestDetail:_PlayAnim(type, callback)
   local tb = {
-{animName = "uieffanim_UISeasonQuestDetail_in", duration = 867}
-, 
-{animName = "uieffanim_UISeasonQuestDetail_middlePreBtn", duration = 667}
-, 
-{animName = "uieffanim_UISeasonQuestDetail_out", duration = 233}
-}
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", (tb[type]).animName, (tb[type]).duration, callback)
+    {
+      animName = "uieffanim_UISeasonQuestDetail_in",
+      duration = 867
+    },
+    {
+      animName = "uieffanim_UISeasonQuestDetail_middlePreBtn",
+      duration = 667
+    },
+    {
+      animName = "uieffanim_UISeasonQuestDetail_out",
+      duration = 233
+    }
+  }
+  UIWidgetHelper.PlayAnimation(self, "_anim", tb[type].animName, tb[type].duration, callback)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonQuestDetail._SetTitle = function(self, cfg)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonQuestDetail:_SetTitle(cfg)
   local title, desc = cfg.Title, cfg.Desc
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtTitle", (StringTable.Get)(title))
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtDesc", (StringTable.Get)(desc))
+  UIWidgetHelper.SetLocalizationText(self, "_txtTitle", StringTable.Get(title))
+  UIWidgetHelper.SetLocalizationText(self, "_txtDesc", StringTable.Get(desc))
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonQuestDetail._SetPage = function(self, index)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonQuestDetail:_SetPage(index)
   local all = #self._data
-  ;
-  (self:GetGameObject("_txtPage")):SetActive(all ~= 1)
-  local str = (string.format)("-%s/%s-", index, all)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtPage", str)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self:GetGameObject("_txtPage"):SetActive(all ~= 1)
+  local str = string.format("-%s/%s-", index, all)
+  UIWidgetHelper.SetLocalizationText(self, "_txtPage", str)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonQuestDetail._SetBtnObj = function(self, index)
-  -- function num : 0_7
+function UISeasonQuestDetail:_SetBtnObj(index)
   local isPre = index ~= 1
-  ;
-  (self:GetGameObject("PreBtn")):SetActive(isPre)
+  self:GetGameObject("PreBtn"):SetActive(isPre)
   local isNext = index ~= #self._data
-  ;
-  (self:GetGameObject("NextBtn")):SetActive(isNext)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self:GetGameObject("NextBtn"):SetActive(isNext)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonQuestDetail.CloseBtnOnClick = function(self, go)
-  -- function num : 0_8
+function UISeasonQuestDetail:CloseBtnOnClick(go)
   self:_PlayAnim(3, function()
-    -- function num : 0_8_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonQuestDetail.PreBtnOnClick = function(self, go)
-  -- function num : 0_9
+function UISeasonQuestDetail:PreBtnOnClick(go)
   self:_ChangePage(self._index - 1)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonQuestDetail.NextBtnOnClick = function(self, go)
-  -- function num : 0_10
+function UISeasonQuestDetail:NextBtnOnClick(go)
   self:_ChangePage(self._index + 1)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonQuestDetail._ChangePage = function(self, index)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonQuestDetail:_ChangePage(index)
   self:_PlayAnim(2)
   self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : _ENV, self, index
     YIELD(TT, 300)
     self:_SetData(index)
-  end
-)
+  end)
 end
-
-

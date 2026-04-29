@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_flight_vehcile_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillFlightVehcileGridArrayParam", SkillPhaseParamBase)
 SkillFlightVehcileGridArrayParam = SkillFlightVehcileGridArrayParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillFlightVehcileGridArrayParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillFlightVehcileGridArrayParam:Constructor(t)
   self._bornEffectDelay = t.bornEffectDelay
   self._bornEffectID = t.bornEffectID
   self._flyStartMs = t.flyStartMs
@@ -20,96 +13,66 @@ SkillFlightVehcileGridArrayParam.Constructor = function(self, t)
   self._disappearEffectID = t.disappearEffectID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillFlightVehcileGridArrayParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillFlightVehcileGridArrayParam:GetPhaseType()
   return SkillViewPhaseType.FlightVehicle
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillFlightVehcileGridArrayParam.GetBornEffectDelay = function(self)
-  -- function num : 0_2
+function SkillFlightVehcileGridArrayParam:GetBornEffectDelay()
   return self._bornEffectDelay
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillFlightVehcileGridArrayParam.GetBornEffectID = function(self)
-  -- function num : 0_3
+function SkillFlightVehcileGridArrayParam:GetBornEffectID()
   return self._bornEffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillFlightVehcileGridArrayParam.GetFlyStartMs = function(self)
-  -- function num : 0_4
+function SkillFlightVehcileGridArrayParam:GetFlyStartMs()
   return self._flyStartMs
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillFlightVehcileGridArrayParam.GetStartDelayTime = function(self)
-  -- function num : 0_5
+function SkillFlightVehcileGridArrayParam:GetStartDelayTime()
   return self._startDelayTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillFlightVehcileGridArrayParam.GetGridEffectID = function(self)
-  -- function num : 0_6
+function SkillFlightVehcileGridArrayParam:GetGridEffectID()
   return self._gridEffectID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillFlightVehcileGridArrayParam.GetFlyOneGridMS = function(self)
-  -- function num : 0_7
+function SkillFlightVehcileGridArrayParam:GetFlyOneGridMS()
   return self._flyOneGridMS
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillFlightVehcileGridArrayParam.GetHitAnimName = function(self)
-  -- function num : 0_8
+function SkillFlightVehcileGridArrayParam:GetHitAnimName()
   return self._hitAnimName
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillFlightVehcileGridArrayParam.GetHitEffectID = function(self)
-  -- function num : 0_9
+function SkillFlightVehcileGridArrayParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillFlightVehcileGridArrayParam.GetDisappearEffectID = function(self)
-  -- function num : 0_10
+function SkillFlightVehcileGridArrayParam:GetDisappearEffectID()
   return self._disappearEffectID
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillFlightVehcileGridArrayParam.GetFinishWaitTime = function(self)
-  -- function num : 0_11
+function SkillFlightVehcileGridArrayParam:GetFinishWaitTime()
   return self._finishWaitTime
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillFlightVehcileGridArrayParam.GetCacheTable = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function SkillFlightVehcileGridArrayParam:GetCacheTable()
   local t = {}
-  local effIds = {self._gridEffectID, self._hitEffectID, self._bornEffectID, self._disappearEffectID}
-  for i,v in ipairs(effIds) do
-    local cfgv = (Cfg.cfg_effect)[v]
+  local effIds = {
+    self._gridEffectID,
+    self._hitEffectID,
+    self._bornEffectID,
+    self._disappearEffectID
+  }
+  for i, v in ipairs(effIds) do
+    local cfgv = Cfg.cfg_effect[v]
     if cfgv then
-      (table.insert)(t, {cfgv.ResPath, 1})
+      table.insert(t, {
+        cfgv.ResPath,
+        1
+      })
     end
   end
   return t
 end
-
-

@@ -1,64 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_bind_effect_by_buff_layer_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterBindEffectByBuffLayerInstruction", BaseInstruction)
 PlayCasterBindEffectByBuffLayerInstruction = PlayCasterBindEffectByBuffLayerInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterBindEffectByBuffLayerInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
-  local strIDList = (string.split)(paramList.effectIDList, "|")
-  local strLayerList = (string.split)(paramList.layerCountList, "|")
+function PlayCasterBindEffectByBuffLayerInstruction:Constructor(paramList)
+  local strIDList = string.split(paramList.effectIDList, "|")
+  local strLayerList = string.split(paramList.layerCountList, "|")
   self._effectIDList = {}
-  for _,value in ipairs(strIDList) do
-    (table.insert)(self._effectIDList, tonumber(value))
+  for _, value in ipairs(strIDList) do
+    table.insert(self._effectIDList, tonumber(value))
   end
   self._buffLayerCountList = {}
-  for _,value in ipairs(strLayerList) do
-    (table.insert)(self._buffLayerCountList, tonumber(value))
+  for _, value in ipairs(strLayerList) do
+    table.insert(self._buffLayerCountList, tonumber(value))
   end
   if #self._effectIDList ~= #self._buffLayerCountList then
-    (Log.fatal)("PlayCasterBindEffectByBuffLayer: count error.")
+    Log.fatal("PlayCasterBindEffectByBuffLayer: count error.")
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterBindEffectByBuffLayerInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterBindEffectByBuffLayerInstruction:GetCacheResource()
   local t = {}
   if self._effectIDList then
-    for i,eff in ipairs(self._effectIDList) do
-      (table.insert)(t, {((Cfg.cfg_effect)[eff]).ResPath, 1})
+    for i, eff in ipairs(self._effectIDList) do
+      table.insert(t, {
+        Cfg.cfg_effect[eff].ResPath,
+        1
+      })
     end
   end
-  do
-    return t
-  end
+  return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterBindEffectByBuffLayerInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayCasterBindEffectByBuffLayerInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local damageResult = routineComponent:GetEffectResultByArray(SkillEffectType.Damage)
   if not damageResult then
-    return 
+    return
   end
   local layerCount = damageResult:GetBuffLayerCountForDamage()
-  local effectID = (self._effectIDList)[1]
-  for index,value in ipairs(self._buffLayerCountList) do
+  local effectID = self._effectIDList[1]
+  for index, value in ipairs(self._buffLayerCountList) do
     if value <= layerCount then
-      effectID = (self._effectIDList)[index]
+      effectID = self._effectIDList[index]
     end
   end
   local world = casterEntity:GetOwnerWorld()
   local effectSvc = world:GetService("Effect")
   effectSvc:CreateEffect(effectID, casterEntity)
 end
-
-

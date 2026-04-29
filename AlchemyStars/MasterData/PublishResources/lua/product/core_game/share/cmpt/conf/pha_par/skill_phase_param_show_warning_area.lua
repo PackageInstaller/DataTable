@@ -1,17 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_param_show_warning_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local WarningCenterPosType = {CasterPos = 1, GridPos = 2, CasterPosOffSet = 3, EffectPos = 4}
+local WarningCenterPosType = {
+  CasterPos = 1,
+  GridPos = 2,
+  CasterPosOffSet = 3,
+  EffectPos = 4
+}
 _enum("WarningCenterPosType", WarningCenterPosType)
 require("skill_phase_param_base")
 _class("SkillPhaseParam_ShowWarningArea", SkillPhaseParamBase)
 SkillPhaseParam_ShowWarningArea = SkillPhaseParam_ShowWarningArea
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillPhaseParam_ShowWarningArea.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseParam_ShowWarningArea:Constructor(t)
   self._warningCenterPosType = t.warningCenterPosType
   self._warningCenterPosParam = t.warningCenterPosParam
   self._warningTextEffectID = t.warningTextEffectID
@@ -19,69 +17,45 @@ SkillPhaseParam_ShowWarningArea.Constructor = function(self, t)
   self._hasDeadWarning = t.hasDeadWarning
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_ShowWarningArea.GetCacheTable = function(self)
-  -- function num : 0_1
+function SkillPhaseParam_ShowWarningArea:GetCacheTable()
   local t = {
-{self._areaRes, 1}
-}
+    {
+      self._areaRes,
+      1
+    }
+  }
   return t
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_ShowWarningArea.GetTextEffectID = function(self)
-  -- function num : 0_2
+function SkillPhaseParam_ShowWarningArea:GetTextEffectID()
   return self._warningTextEffectID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_ShowWarningArea.GetAreaRes = function(self)
-  -- function num : 0_3
+function SkillPhaseParam_ShowWarningArea:GetAreaRes()
   return self._areaRes
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_ShowWarningArea.GetWarningCenterPosType = function(self)
-  -- function num : 0_4
+function SkillPhaseParam_ShowWarningArea:GetWarningCenterPosType()
   return self._warningCenterPosType
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_ShowWarningArea.GetPhaseType = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillPhaseParam_ShowWarningArea:GetPhaseType()
   return SkillViewPhaseType.ShowWarningArea
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_ShowWarningArea.GetGridPosList = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillPhaseParam_ShowWarningArea:GetGridPosList()
   local gridPosList = {}
-  for k,v in ipairs(self._warningCenterPosParam) do
+  for k, v in ipairs(self._warningCenterPosParam) do
     local gridPos = Vector2(v.x, v.y)
-    ;
-    (table.insert)(gridPosList, gridPos)
+    table.insert(gridPosList, gridPos)
   end
   return gridPosList
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_ShowWarningArea.GetOffSet = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillPhaseParam_ShowWarningArea:GetOffSet()
   return tonumber(self._warningCenterPosParam)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_ShowWarningArea.HasDeadWaring = function(self)
-  -- function num : 0_8
+function SkillPhaseParam_ShowWarningArea:HasDeadWaring()
   return self._hasDeadWarning
 end
-
-

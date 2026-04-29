@@ -1,107 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/guide/guide_weak_path_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GuideWeakPathComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-GuideWeakPathComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function GuideWeakPathComponent:Constructor()
   self._guidePath = {}
   self._refreshType = GuideRefreshType.None
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideWeakPathComponent.GetGuideRefreshType = function(self)
-  -- function num : 0_1
+function GuideWeakPathComponent:GetGuideRefreshType()
   return self._refreshType
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideWeakPathComponent.SetGuideRefreshType = function(self, refreshType)
-  -- function num : 0_2
+function GuideWeakPathComponent:SetGuideRefreshType(refreshType)
   self._refreshType = refreshType
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideWeakPathComponent.SetGuidePath = function(self, path)
-  -- function num : 0_3 , upvalues : _ENV
+function GuideWeakPathComponent:SetGuidePath(path)
   self._guidePath = {}
-  for k,v in ipairs(path) do
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._guidePath)[#self._guidePath + 1] = v
+  for k, v in ipairs(path) do
+    self._guidePath[#self._guidePath + 1] = v
   end
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideWeakPathComponent.GetGuidePath = function(self)
-  -- function num : 0_4
+function GuideWeakPathComponent:GetGuidePath()
   return self._guidePath
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideWeakPathComponent.IsMatchGuidePath = function(self, chainPath)
-  -- function num : 0_5
+function GuideWeakPathComponent:IsMatchGuidePath(chainPath)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideWeakPathComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_6
+function GuideWeakPathComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideWeakPathComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_7
+function GuideWeakPathComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GuideWeakPath = function(self)
-  -- function num : 0_8
-  return self:GetComponent((self.WEComponentsEnum).GuideWeakPath)
+function Entity:GuideWeakPath()
+  return self:GetComponent(self.WEComponentsEnum.GuideWeakPath)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasGuideWeakPath = function(self)
-  -- function num : 0_9
-  return self:HasComponent((self.WEComponentsEnum).GuideWeakPath)
+function Entity:HasGuideWeakPath()
+  return self:HasComponent(self.WEComponentsEnum.GuideWeakPath)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddGuideWeakPath = function(self, newPath)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).GuideWeakPath
+function Entity:AddGuideWeakPath(newPath)
+  local index = self.WEComponentsEnum.GuideWeakPath
   local component = GuideWeakPathComponent:New(newPath)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceGuideWeakPath = function(self)
-  -- function num : 0_11
-  local index = (self.WEComponentsEnum).GuideWeakPath
+function Entity:ReplaceGuideWeakPath()
+  local index = self.WEComponentsEnum.GuideWeakPath
   local cmpt = self:GuideWeakPath()
   self:ReplaceComponent(index, cmpt)
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveGuideWeakPath = function(self)
-  -- function num : 0_12
+function Entity:RemoveGuideWeakPath()
   if self:HasGuideWeakPath() then
-    self:RemoveComponent((self.WEComponentsEnum).GuideWeakPath)
+    self:RemoveComponent(self.WEComponentsEnum.GuideWeakPath)
   end
 end
-
-

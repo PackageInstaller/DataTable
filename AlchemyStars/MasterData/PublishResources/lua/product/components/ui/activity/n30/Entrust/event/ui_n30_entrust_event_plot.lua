@@ -1,27 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n30/Entrust/event/ui_n30_entrust_event_plot.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local e = require("ui_n30_entrust_event")
 e:Class("N30EntrustEventPlot", N30EntrustEvent, EntrustEventType.EntrustEventType_Story)
--- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
 
-N30EntrustEventPlot.Constructor = function(self)
-  -- function num : 0_0
+function N30EntrustEventPlot:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventPlot.DebugName = function(self)
-  -- function num : 0_1
+function N30EntrustEventPlot:DebugName()
   return "Plot"
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventPlot.GetIconName = function(self)
-  -- function num : 0_2
+function N30EntrustEventPlot:GetIconName()
   if self._isPass then
     return "n30_wt_ld_icon04"
   else
@@ -29,87 +16,58 @@ N30EntrustEventPlot.GetIconName = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventPlot.GetWidgetName = function(self)
-  -- function num : 0_3
+function N30EntrustEventPlot:GetWidgetName()
   return "UIN30EntrustEventPlot"
 end
 
 _class("UIN30EntrustEventPlot", UIN30EntrustEventWidget)
 UIN30EntrustEventPlot = UIN30EntrustEventPlot
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN30EntrustEventPlot.Constructor = function(self)
-  -- function num : 0_4
+function UIN30EntrustEventPlot:Constructor()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventPlot.OnShow = function(self, uiParams)
-  -- function num : 0_5
+function UIN30EntrustEventPlot:OnShow(uiParams)
   self._txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
   self._txtConfirm = self:GetUIComponent("UILocalizationText", "txtConfirm")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventPlot.OnHide = function(self)
-  -- function num : 0_6
+function UIN30EntrustEventPlot:OnHide()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventPlot.BtnConfirmOnClick = function(self, go)
-  -- function num : 0_7
-  if (self._event):IsPass() then
-    self:ShowDialog("UIStoryController", (self._event):ParamStoryID(), function()
-    -- function num : 0_7_0 , upvalues : self
-    (self:RootUIOwner()):CloseDialog()
-  end
-)
+function UIN30EntrustEventPlot:BtnConfirmOnClick(go)
+  if self._event:IsPass() then
+    self:ShowDialog("UIStoryController", self._event:ParamStoryID(), function()
+      self:RootUIOwner():CloseDialog()
+    end)
   else
-    self:CallUIMethod("UIN30EntrustLine", "CompleteEvent", (self._event):ID(), function()
-    -- function num : 0_7_1 , upvalues : self
-    self:ShowDialog("UIStoryController", (self._event):ParamStoryID(), function()
-      -- function num : 0_7_1_0 , upvalues : self
-      (self:RootUIOwner()):CloseDialog()
-      self:CallUIMethod("UIN30EntrustLine", "OnEventFinish", {(self._event):ID()})
-    end
-)
-  end
-)
+    self:CallUIMethod("UIN30EntrustLine", "CompleteEvent", self._event:ID(), function()
+      self:ShowDialog("UIStoryController", self._event:ParamStoryID(), function()
+        self:RootUIOwner():CloseDialog()
+        self:CallUIMethod("UIN30EntrustLine", "OnEventFinish", {
+          self._event:ID()
+        })
+      end)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventPlot.GetIcon = function(self)
-  -- function num : 0_8
+function UIN30EntrustEventPlot:GetIcon()
   return "n30_wt_playicon"
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventPlot.Refresh = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local txtKey = nil
-  if (self._event):IsPass() then
+function UIN30EntrustEventPlot:Refresh()
+  local txtKey
+  if self._event:IsPass() then
     txtKey = "str_n30_entrust_event_plot_again_btn"
   else
     txtKey = "str_n30_entrust_event_plot_btn"
   end
-  ;
-  (self._txtConfirm):SetText((StringTable.Get)(txtKey))
-  local descKey = (self._event):ParamDesc()
+  self._txtConfirm:SetText(StringTable.Get(txtKey))
+  local descKey = self._event:ParamDesc()
   if descKey ~= nil then
-    ((self._txtDesc).gameObject):SetActive(true)
-    ;
-    (self._txtDesc):SetText((StringTable.Get)(descKey))
+    self._txtDesc.gameObject:SetActive(true)
+    self._txtDesc:SetText(StringTable.Get(descKey))
   else
-    ;
-    ((self._txtDesc).gameObject):SetActive(false)
+    self._txtDesc.gameObject:SetActive(false)
   end
 end
-
-

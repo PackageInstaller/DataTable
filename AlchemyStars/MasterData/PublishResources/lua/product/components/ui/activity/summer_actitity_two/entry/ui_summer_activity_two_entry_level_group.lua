@@ -1,75 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/entry/ui_summer_activity_two_entry_level_group.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummerActivityTwoEntryLevelGroup", UICustomWidget)
 UISummerActivityTwoEntryLevelGroup = UISummerActivityTwoEntryLevelGroup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummerActivityTwoEntryLevelGroup.OnShow = function(self)
-  -- function num : 0_0
+function UISummerActivityTwoEntryLevelGroup:OnShow()
   self._go = self:GetGameObject("Go")
   self._loader = self:GetUIComponent("UISelectObjectPath", "spawnobj")
   self._currentSelectedItem = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoEntryLevelGroup.Refresh = function(self, entryGroupData, selecteChangeCallback)
-  -- function num : 0_1
+function UISummerActivityTwoEntryLevelGroup:Refresh(entryGroupData, selecteChangeCallback)
   if entryGroupData == nil then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
   self._entryGroupData = entryGroupData
   self._selecteChangeCallback = selecteChangeCallback
-  ;
-  (self._go):SetActive(true)
-  local entryLevelDatas = (self._entryGroupData):GetEntryLevelDatas()
-  ;
-  (self._loader):SpawnObjects("UISummerActivityTwoEntryLevelItem", #entryLevelDatas)
-  self._list = (self._loader):GetAllSpawnList()
+  self._go:SetActive(true)
+  local entryLevelDatas = self._entryGroupData:GetEntryLevelDatas()
+  self._loader:SpawnObjects("UISummerActivityTwoEntryLevelItem", #entryLevelDatas)
+  self._list = self._loader:GetAllSpawnList()
   for i = 1, #self._list do
-    do
-      ((self._list)[i]):Refresh(entryLevelDatas[i], true, function()
-    -- function num : 0_1_0 , upvalues : self, i
-    self:OnItemClicked((self._list)[i])
-  end
-)
-    end
+    self._list[i]:Refresh(entryLevelDatas[i], true, function()
+      self:OnItemClicked(self._list[i])
+    end)
   end
   for i = 1, #self._list do
-    local entryLevelData = ((self._list)[i]):GetEntryLevelData()
+    local entryLevelData = self._list[i]:GetEntryLevelData()
     if entryLevelData:IsSelected() then
-      ((self._list)[i]):SelectedBtnOnClick()
+      self._list[i]:SelectedBtnOnClick()
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoEntryLevelGroup.OnItemClicked = function(self, entryItem)
-  -- function num : 0_2
+function UISummerActivityTwoEntryLevelGroup:OnItemClicked(entryItem)
   if self._currentSelectedItem == entryItem then
     self._currentSelectedItem = nil
   else
     self._currentSelectedItem = entryItem
   end
   for i = 1, #self._list do
-    ((self._list)[i]):SetSelectStatus((self._list)[i] == self._currentSelectedItem)
+    self._list[i]:SetSelectStatus(self._list[i] == self._currentSelectedItem)
   end
-  ;
-  (self._selecteChangeCallback)()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._selecteChangeCallback()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoEntryLevelGroup.GetSelectedEntryLevelItem = function(self)
-  -- function num : 0_3
+function UISummerActivityTwoEntryLevelGroup:GetSelectedEntryLevelItem()
   return self._currentSelectedItem
 end
-
-

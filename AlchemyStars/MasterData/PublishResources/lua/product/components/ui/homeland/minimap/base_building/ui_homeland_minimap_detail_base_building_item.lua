@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/base_building/ui_homeland_minimap_detail_base_building_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapDetailBaseBuildingItem", UICustomWidget)
 UIHomelandMinimapDetailBaseBuildingItem = UIHomelandMinimapDetailBaseBuildingItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapDetailBaseBuildingItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.data = (self.mHomeland):GetForgeData()
+function UIHomelandMinimapDetailBaseBuildingItem:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.data = self.mHomeland:GetForgeData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBaseBuildingItem.OnShow = function(self)
-  -- function num : 0_1
+function UIHomelandMinimapDetailBaseBuildingItem:OnShow()
   self.unlock = self:GetGameObject("unlock")
   self.forging = self:GetGameObject("forging")
   self.getable = self:GetGameObject("getable")
@@ -26,71 +16,44 @@ UIHomelandMinimapDetailBaseBuildingItem.OnShow = function(self)
   self.txtCD = self:GetUIComponent("UILocalizationText", "txtCD")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBaseBuildingItem.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgIcon):DestoryLastImage()
+function UIHomelandMinimapDetailBaseBuildingItem:OnHide()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBaseBuildingItem.Flush = function(self, index)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandMinimapDetailBaseBuildingItem:Flush(index)
   self.index = index
-  local s = (self.data):GetForgeSequenceByIndex(index)
+  local s = self.data:GetForgeSequenceByIndex(index)
   if s.state == ForgeSequenceState.Locked then
-    (self.unlock):SetActive(false)
-    ;
-    (self.lock):SetActive(true)
-    ;
-    (self.idle):SetActive(false)
+    self.unlock:SetActive(false)
+    self.lock:SetActive(true)
+    self.idle:SetActive(false)
+  elseif s.state == ForgeSequenceState.Idle then
+    self.unlock:SetActive(false)
+    self.lock:SetActive(false)
+    self.idle:SetActive(true)
   else
-    if s.state == ForgeSequenceState.Idle then
-      (self.unlock):SetActive(false)
-      ;
-      (self.lock):SetActive(false)
-      ;
-      (self.idle):SetActive(true)
+    self.unlock:SetActive(true)
+    self.lock:SetActive(false)
+    self.idle:SetActive(false)
+    local item = self.data:GetForgeInfoItemById(s.forgeItemId)
+    self.imgIcon:LoadImage(item.icon)
+    if s.state == ForgeSequenceState.Forging then
+      self.forging:SetActive(true)
+      self.getable:SetActive(false)
+      UIForge.FlushCDText(self.txtCD, s.doneTimestamp, self.data.strsWillGetable, true)
+    elseif s.state == ForgeSequenceState.Getable then
+      self.forging:SetActive(false)
+      self.getable:SetActive(true)
     else
-      ;
-      (self.unlock):SetActive(true)
-      ;
-      (self.lock):SetActive(false)
-      ;
-      (self.idle):SetActive(false)
-      local item = (self.data):GetForgeInfoItemById(s.forgeItemId)
-      ;
-      (self.imgIcon):LoadImage(item.icon)
-      if s.state == ForgeSequenceState.Forging then
-        (self.forging):SetActive(true)
-        ;
-        (self.getable):SetActive(false)
-        ;
-        (UIForge.FlushCDText)(self.txtCD, s.doneTimestamp, (self.data).strsWillGetable, true)
-      else
-        if s.state == ForgeSequenceState.Getable then
-          (self.forging):SetActive(false)
-          ;
-          (self.getable):SetActive(true)
-        else
-          ;
-          (Log.fatal)("### invalid state. state=", s.state)
-        end
-      end
+      Log.fatal("### invalid state. state=", s.state)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBaseBuildingItem.bgOnClick = function(self, go)
-  -- function num : 0_4
-  local s = (self.data):GetForgeSequenceByIndex(self.index)
-  local item = (self.data):GetForgeInfoItemById(s.forgeItemId)
+function UIHomelandMinimapDetailBaseBuildingItem:bgOnClick(go)
+  local s = self.data:GetForgeSequenceByIndex(self.index)
+  local item = self.data:GetForgeInfoItemById(s.forgeItemId)
   if item then
     self:ShowDialog("UIItemTipsHomeland", item.id, go)
   end
 end
-
-

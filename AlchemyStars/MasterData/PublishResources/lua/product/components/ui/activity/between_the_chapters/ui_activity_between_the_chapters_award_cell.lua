@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/between_the_chapters/ui_activity_between_the_chapters_award_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBetweenTheChaptersAwardCell", UICustomWidget)
 UIActivityBetweenTheChaptersAwardCell = UIActivityBetweenTheChaptersAwardCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBetweenTheChaptersAwardCell.InitWidget = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityBetweenTheChaptersAwardCell:InitWidget()
   self._rootAnim = self:GetUIComponent("Animation", "_anim")
   self._valueNumText = self:GetUIComponent("UILocalizationText", "ValueNumText")
   self._specialDayNumText = self:GetUIComponent("UILocalizationText", "SpecialDayNumText")
@@ -26,45 +19,44 @@ UIActivityBetweenTheChaptersAwardCell.InitWidget = function(self)
   self._stateCanGet = self:GetGameObject("StateCanGet")
   self._stateLocked = self:GetGameObject("StateLocked")
   self._cellState = 1
-  self._stateAreaGroup = {[ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED] = self._stateGot, [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV] = self._stateCanGet, [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK] = self._stateLocked}
+  self._stateAreaGroup = {
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED] = self._stateGot,
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV] = self._stateCanGet,
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK] = self._stateLocked
+  }
   self._item1 = self:GetUIComponent("UISelectObjectPath", "Item1")
   self._item2 = self:GetUIComponent("UISelectObjectPath", "item2")
-  self._items = {self._item1, self._item2}
+  self._items = {
+    self._item1,
+    self._item2
+  }
   self._itemGo1 = self:GetGameObject("Item1")
   self._itemGo2 = self:GetGameObject("item2")
-  self._itemGos = {self._itemGo1, self._itemGo2}
+  self._itemGos = {
+    self._itemGo1,
+    self._itemGo2
+  }
   self._itemWidgetTb = {}
   self._stateGotText = self:GetUIComponent("UILocalizationText", "StateGotText")
-  local gotStr = (StringTable.Get)("str_between_chapters_received")
-  ;
-  (self._stateGotText):SetText(gotStr)
+  local gotStr = StringTable.Get("str_between_chapters_received")
+  self._stateGotText:SetText(gotStr)
   self._stateCanGetText = self:GetUIComponent("UILocalizationText", "StateCanGetText")
-  local canGetStr = "- " .. (StringTable.Get)("str_between_chapters_receive") .. " -"
-  ;
-  (self._stateCanGetText):SetText(canGetStr)
+  local canGetStr = "- " .. StringTable.Get("str_between_chapters_receive") .. " -"
+  self._stateCanGetText:SetText(canGetStr)
   self._eff_front = self:GetGameObject("eff_front")
   self._eff_back = self:GetGameObject("eff_back")
   self._valueNum = 1
   self:SetSelected(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersAwardCell.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityBetweenTheChaptersAwardCell:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersAwardCell.OnHide = function(self)
-  -- function num : 0_2
+function UIActivityBetweenTheChaptersAwardCell:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersAwardCell.SetData = function(self, index, data, selectCallback, getCallback, tipsCallback)
-  -- function num : 0_3
+function UIActivityBetweenTheChaptersAwardCell:SetData(index, data, selectCallback, getCallback, tipsCallback)
   self._index = index
   self._data = data
   self._selectCallback = selectCallback
@@ -73,61 +65,42 @@ UIActivityBetweenTheChaptersAwardCell.SetData = function(self, index, data, sele
   self:FillUi()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersAwardCell.PlayAnimationInSequence = function(self, index)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityBetweenTheChaptersAwardCell:PlayAnimationInSequence(index)
   local delay = 0 + (index - 1) * 70
-  ;
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", "_root", "uieff_UIActivityBetweenTheChaptersAwardCell_in", delay)
+  UIWidgetHelper.PlayAnimationInSequence(self, "_anim", "_root", "uieff_UIActivityBetweenTheChaptersAwardCell_in", delay)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersAwardCell.FillUi = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self:SetBg((self._data)._state ~= ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED)
-  self:SetState((self._data)._state)
-  ;
-  (self._valueNumText):SetText((self._data)._valueNum)
-  ;
-  (self._specialDayNumText):SetText((self._data)._valueNum)
-  for index,value in ipairs(self._items) do
-    if self._items and (self._items)[index] then
+function UIActivityBetweenTheChaptersAwardCell:FillUi()
+  self:SetBg(self._data._state ~= ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED)
+  self:SetState(self._data._state)
+  self._valueNumText:SetText(self._data._valueNum)
+  self._specialDayNumText:SetText(self._data._valueNum)
+  for index, value in ipairs(self._items) do
+    if self._items and self._items[index] then
       value:SpawnObject("UIActivityBetweenTheChaptersAwardItem")
       local widgets = value:GetAllSpawnList()
-      for indexWidget,valueWidget in ipairs(widgets) do
-        valueWidget:SetData(((self._data)._items)[index], self._tipsCallback)
-        ;
-        (table.insert)(self._itemWidgetTb, valueWidget)
+      for indexWidget, valueWidget in ipairs(widgets) do
+        valueWidget:SetData(self._data._items[index], self._tipsCallback)
+        table.insert(self._itemWidgetTb, valueWidget)
       end
-      ;
-      ((self._itemGos)[index]):SetActive(true)
+      self._itemGos[index]:SetActive(true)
     else
-      ((self._itemGos)[index]):SetActive(false)
+      self._itemGos[index]:SetActive(false)
     end
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersAwardCell.SetSelected = function(self, isSelected)
-  -- function num : 0_6
-  (self._selectStateAreaGo):SetActive(isSelected)
-  ;
-  (self._backGo):SetActive(isSelected)
+function UIActivityBetweenTheChaptersAwardCell:SetSelected(isSelected)
+  self._selectStateAreaGo:SetActive(isSelected)
+  self._backGo:SetActive(isSelected)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersAwardCell.SetState = function(self, state)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityBetweenTheChaptersAwardCell:SetState(state)
   self._cellState = state
   if self._cellState == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_Expired or self._cellState == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_UNKNOW then
     self._cellState = ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK
   end
-  for index,value in ipairs(self._stateAreaGroup) do
+  for index, value in ipairs(self._stateAreaGroup) do
     value:SetActive(index == self._cellState)
   end
   if self._cellState == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED then
@@ -137,83 +110,51 @@ UIActivityBetweenTheChaptersAwardCell.SetState = function(self, state)
     self:_SetAlpha(1)
     self:SetBg(true)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersAwardCell.SetBg = function(self, isSpecial)
-  -- function num : 0_8
-  (self._bgNormalGo):SetActive(not isSpecial)
-  ;
-  (self._bgSpecialGo):SetActive(isSpecial)
-  ;
-  (self._dayAreaGo):SetActive(true)
+function UIActivityBetweenTheChaptersAwardCell:SetBg(isSpecial)
+  self._bgNormalGo:SetActive(not isSpecial)
+  self._bgSpecialGo:SetActive(isSpecial)
+  self._dayAreaGo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersAwardCell._SetAlpha = function(self, alpha)
-  -- function num : 0_9
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._setAlphaArea).alpha = alpha
+function UIActivityBetweenTheChaptersAwardCell:_SetAlpha(alpha)
+  self._setAlphaArea.alpha = alpha
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersAwardCell._CheckEff = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityBetweenTheChaptersAwardCell:_CheckEff()
   local canShowEff = true
   if self._cellState == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED then
     canShowEff = false
   end
-  ;
-  (self._eff_front):SetActive(canShowEff)
-  ;
-  (self._eff_back):SetActive(canShowEff)
+  self._eff_front:SetActive(canShowEff)
+  self._eff_back:SetActive(canShowEff)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersAwardCell._CellOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  (self._selectCallback)(self._index)
+function UIActivityBetweenTheChaptersAwardCell:_CellOnClick()
+  self._selectCallback(self._index)
   if self._cellState == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK then
-    local uiJumpModule = (GameGlobal.GetUIModule)(QuestModule)
+    local uiJumpModule = GameGlobal.GetUIModule(QuestModule)
     local jumpID = UIJumpType.UI_JumpMission
-    local jumpParam = nil
+    local jumpParam
     uiJumpModule:SetJumpUIData(jumpID, jumpParam)
     uiJumpModule:Jump()
-    return 
+    return
   end
-  do
-    if self._cellState ~= ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED then
-      (self._getCallback)((self._data)._valueNum)
-    end
-    self:SetState(self._cellState)
+  if self._cellState ~= ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED then
+    self._getCallback(self._data._valueNum)
   end
+  self:SetState(self._cellState)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersAwardCell.BgAreaOnClick = function(self, go)
-  -- function num : 0_12
+function UIActivityBetweenTheChaptersAwardCell:BgAreaOnClick(go)
   self:_CellOnClick()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersAwardCell.BgNormalOnClick = function(self, go)
-  -- function num : 0_13
+function UIActivityBetweenTheChaptersAwardCell:BgNormalOnClick(go)
   self:_CellOnClick()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersAwardCell.BgSpecialOnClick = function(self, go)
-  -- function num : 0_14
+function UIActivityBetweenTheChaptersAwardCell:BgSpecialOnClick(go)
   self:_CellOnClick()
 end
-
-

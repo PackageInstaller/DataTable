@@ -1,16 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/battle_pass/cfg_battle_pass_style_2006.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, uiName = 2, widgetName = 3, type = 4, atlasName = 5, spriteName = 6, imageColor = 7, rawImageName = 8, textStrId = 9, textColor = 10, outlineColor = 11, active = 12}
-local common = {"RawImage", "n41bp_buy_head1"}
+local key = {
+  ID = 1,
+  uiName = 2,
+  widgetName = 3,
+  type = 4,
+  atlasName = 5,
+  spriteName = 6,
+  imageColor = 7,
+  rawImageName = 8,
+  textStrId = 9,
+  textColor = 10,
+  outlineColor = 11,
+  active = 12
+}
+local common = {
+  "RawImage",
+  "n41bp_buy_head1"
+}
 local config = {
-[5115] = {5115, "UIBattlePassCN1GiftBoard_mainImg", "_advanced", common[1], nil, nil, nil, common[2]}
-, 
-[6102] = {6102, "UIBattlePassCN1BuyGiftResultController", "_bgIcon_Elite", common[1], nil, nil, nil, common[2]}
-, 
-[6304] = {6304, "UIBattlePassCN1PreviewController", "_rawCard", common[1], nil, nil, nil, "n41_bp_yl_card"}
+  [5115] = {
+    5115,
+    "UIBattlePassCN1GiftBoard_mainImg",
+    "_advanced",
+    common[1],
+    nil,
+    nil,
+    nil,
+    common[2]
+  },
+  [6102] = {
+    6102,
+    "UIBattlePassCN1BuyGiftResultController",
+    "_bgIcon_Elite",
+    common[1],
+    nil,
+    nil,
+    nil,
+    common[2]
+  },
+  [6304] = {
+    6304,
+    "UIBattlePassCN1PreviewController",
+    "_rawCard",
+    common[1],
+    nil,
+    nil,
+    nil,
+    "n41_bp_yl_card"
+  }
 }
 return config, "ID", key
-

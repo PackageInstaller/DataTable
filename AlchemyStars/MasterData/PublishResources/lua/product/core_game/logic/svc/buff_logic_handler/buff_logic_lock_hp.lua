@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_lock_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local LockHPType = {Normal = 1, MonsterTurnUnLock = 2}
 _enum("LockHPType", LockHPType)
 _class("BuffLogicLockHP", BuffLogicBase)
 BuffLogicLockHP = BuffLogicLockHP
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicLockHP.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : LockHPType
+function BuffLogicLockHP:Constructor(buffInstance, logicParam)
   self._lockHPList = logicParam.lockHPList
   self._isLockHPAlways = false
   self._lockHPType = logicParam.lockHPType or LockHPType.Normal
@@ -19,32 +12,23 @@ BuffLogicLockHP.Constructor = function(self, buffInstance, logicParam)
   end
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicLockHP.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicLockHP:DoLogic()
+  local e = self._buffInstance:Entity()
   if self._isLockHPAlways then
-    (e:BuffComponent()):SetBuffValue("LockHPAlways", true)
+    e:BuffComponent():SetBuffValue("LockHPAlways", true)
   else
-    ;
-    (e:BuffComponent()):SetBuffValue("LockHPByRound", true)
+    e:BuffComponent():SetBuffValue("LockHPByRound", true)
   end
-  ;
-  (e:BuffComponent()):SetBuffValue("LockHPType", self._lockHPType)
-  ;
-  (e:BuffComponent()):SetBuffValue("LockHPList", self._lockHPList)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataBuffValue, e:GetID(), "LockHPList", self._lockHPList)
+  e:BuffComponent():SetBuffValue("LockHPType", self._lockHPType)
+  e:BuffComponent():SetBuffValue("LockHPList", self._lockHPList)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataBuffValue, e:GetID(), "LockHPList", self._lockHPList)
 end
 
 _class("BuffLogicUnlockHP", BuffLogicBase)
 BuffLogicUnlockHP = BuffLogicUnlockHP
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicUnlockHP.DoLogic = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicUnlockHP:DoLogic()
+  local e = self._buffInstance:Entity()
   local cBuff = e:BuffComponent()
   cBuff:SetBuffValue("IsUnlockHP", true)
   cBuff:SetBuffValue("LockHPAlways", false)
@@ -52,8 +36,5 @@ BuffLogicUnlockHP.DoLogic = function(self)
   cBuff:SetBuffValue("LockHPList", nil)
   cBuff:ResetHPLockState()
   cBuff._lockHpPercent = {}
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataBuffValue, e:GetID(), "LockHPList", {})
+  self._world:EventDispatcher():Dispatch(GameEventType.DataBuffValue, e:GetID(), "LockHPList", {})
 end
-
-

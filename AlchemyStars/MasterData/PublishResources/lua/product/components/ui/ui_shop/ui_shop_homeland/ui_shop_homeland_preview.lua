@@ -1,139 +1,89 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_homeland/ui_shop_homeland_preview.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopHomelandPreview", UIController)
 UIShopHomelandPreview = UIShopHomelandPreview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopHomelandPreview.Constructor = function(self)
-  -- function num : 0_0
+function UIShopHomelandPreview:Constructor()
   self._currentIndex = 0
   self._items = {}
   self._deltaTime = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPreview.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_1
+function UIShopHomelandPreview:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPreview.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIShopHomelandPreview:OnShow(uiParams)
   self._pictures = uiParams[1]
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPreview._GetComponents = function(self)
-  -- function num : 0_3
+function UIShopHomelandPreview:_GetComponents()
   self._scrollView = self:GetUIComponent("RectTransform", "ScrollView")
   self._safeArea = self:GetUIComponent("RectTransform", "SafeArea")
   self._index = self:GetUIComponent("UISelectObjectPath", "Index")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPreview._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIShopHomelandPreview:_OnValue()
   self._totalCount = #self._pictures
-  ;
-  (self._index):SpawnObjects("UIShopHomelandIndex", self._totalCount)
-  self._indexPointWidgets = (self._index):GetAllSpawnList()
-  for _,widget in pairs(self._indexPointWidgets) do
+  self._index:SpawnObjects("UIShopHomelandIndex", self._totalCount)
+  self._indexPointWidgets = self._index:GetAllSpawnList()
+  for _, widget in pairs(self._indexPointWidgets) do
     widget:SetData(false)
   end
-  self._canvas = ((self._safeArea).parent):GetComponent("RectTransform")
-  local safesize = ((self._canvas).rect).size
-  safesize.x = safesize.x * (((self._safeArea).anchorMax).x - ((self._safeArea).anchorMin).x)
+  self._canvas = self._safeArea.parent:GetComponent("RectTransform")
+  local safesize = self._canvas.rect.size
+  safesize.x = safesize.x * (self._safeArea.anchorMax.x - self._safeArea.anchorMin.x)
   safesize.x = safesize.x + 1
   safesize.y = safesize.y + 1
   self._scrollViewHelper = H3DScrollViewHelper:New(self, "ScrollView", "UUIShopHomelandPreviewItem", function(index, uiwidget)
-    -- function num : 0_4_0 , upvalues : self
     return self:_OnShowItem(index, uiwidget)
-  end
-)
-  ;
-  (self._scrollViewHelper):SetGroupChangedCallback(function(index, item)
-    -- function num : 0_4_1 , upvalues : self
-    if self._totalCount < index + 1 then
-      return 
+  end)
+  self._scrollViewHelper:SetGroupChangedCallback(function(index, item)
+    if index + 1 > self._totalCount then
+      return
     end
     self:_ShowItemData(index + 1)
-  end
-)
-  ;
-  (self._scrollViewHelper):Init(self._totalCount, 1, safesize)
-  -- DECOMPILER ERROR at PC69: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._scrollView).anchoredPosition = Vector2(0, 88)
+  end)
+  self._scrollViewHelper:Init(self._totalCount, 1, safesize)
+  self._scrollView.anchoredPosition = Vector2(0, 88)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPreview.BackgroundOnClick = function(self, go)
-  -- function num : 0_5
+function UIShopHomelandPreview:BackgroundOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPreview._ShowItemData = function(self, index)
-  -- function num : 0_6
+function UIShopHomelandPreview:_ShowItemData(index)
   self._deltaTime = 0
-  if (self._indexPointWidgets)[self._currentIndex] then
-    ((self._indexPointWidgets)[self._currentIndex]):SetData(false)
+  if self._indexPointWidgets[self._currentIndex] then
+    self._indexPointWidgets[self._currentIndex]:SetData(false)
   end
   self._currentIndex = index
-  if (self._indexPointWidgets)[self._currentIndex] then
-    ((self._indexPointWidgets)[self._currentIndex]):SetData(true)
+  if self._indexPointWidgets[self._currentIndex] then
+    self._indexPointWidgets[self._currentIndex]:SetData(true)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPreview._OnShowItem = function(self, index, widget)
-  -- function num : 0_7
-  widget:SetData((self._pictures)[index])
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._items)[index] = widget
+function UIShopHomelandPreview:_OnShowItem(index, widget)
+  widget:SetData(self._pictures[index])
+  self._items[index] = widget
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPreview.OnHide = function(self)
-  -- function num : 0_8
+function UIShopHomelandPreview:OnHide()
   self._currentIndex = 0
   self._safeArea = nil
   if self._scrollViewHelper then
-    (self._scrollViewHelper):Dispose()
+    self._scrollViewHelper:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPreview.OnUpdate = function(self, ms)
-  -- function num : 0_9
+function UIShopHomelandPreview:OnUpdate(ms)
   self._deltaTime = self._deltaTime + ms
   if self._deltaTime > 2000 then
     local nextIndex = self._currentIndex + 1
-    if self._totalCount < nextIndex then
+    if nextIndex > self._totalCount then
       nextIndex = 1
     end
-    ;
-    (self._scrollViewHelper):MovePanelToIndex(nextIndex)
+    self._scrollViewHelper:MovePanelToIndex(nextIndex)
     self._deltaTime = 0
   end
 end
-
-

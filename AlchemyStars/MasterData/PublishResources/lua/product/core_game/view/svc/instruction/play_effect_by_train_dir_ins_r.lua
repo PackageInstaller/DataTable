@@ -1,62 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_effect_by_train_dir_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayEffectByTrainDirInstruction", BaseInstruction)
 PlayEffectByTrainDirInstruction = PlayEffectByTrainDirInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayEffectByTrainDirInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayEffectByTrainDirInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectByTrainDirInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayEffectByTrainDirInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
   local renderPickUpComponent = casterEntity:RenderPickUpComponent()
   local directionType = renderPickUpComponent:GetLastPickUpDirection()
-  local castPos = (casterEntity:GridLocation()).Position
-  local sEffect = (self._world):GetService("Effect")
+  local castPos = casterEntity:GridLocation().Position
+  local sEffect = self._world:GetService("Effect")
   local trainEffectEntity = sEffect:CreateWorldPositionDirectionEffect(self._effectID, castPos, self:_GetDirection(directionType))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectByTrainDirInstruction._GetDirection = function(self, directionType)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayEffectByTrainDirInstruction:_GetDirection(directionType)
   if directionType == HitBackDirectionType.Up then
     return Vector2(0, -1)
+  elseif directionType == HitBackDirectionType.Down then
+    return Vector2(0, 1)
+  elseif directionType == HitBackDirectionType.Left then
+    return Vector2(1, 0)
+  elseif directionType == HitBackDirectionType.Right then
+    return Vector2(-1, 0)
   else
-    if directionType == HitBackDirectionType.Down then
-      return Vector2(0, 1)
-    else
-      if directionType == HitBackDirectionType.Left then
-        return Vector2(1, 0)
-      else
-        if directionType == HitBackDirectionType.Right then
-          return Vector2(-1, 0)
-        else
-          return Vector2(0, 0)
-        end
-      end
-    end
+    return Vector2(0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectByTrainDirInstruction.GetCacheResource = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayEffectByTrainDirInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

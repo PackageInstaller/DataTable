@@ -1,30 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_damage_statistics.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAddDamageStatisticsComponent", BuffLogicBase)
 BuffLogicAddDamageStatisticsComponent = BuffLogicAddDamageStatisticsComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddDamageStatisticsComponent.DoLogic = function(self, notify)
-  -- function num : 0_0 , upvalues : _ENV
-  if (self:GetEntity()):HasDamageStatisticsComponent() then
-    (Log.error)(self._className, "已经执行过AddDamageStatisticsComponent逻辑的单位，在执行反逻辑前不可重新执行。")
-    return 
+function BuffLogicAddDamageStatisticsComponent:DoLogic(notify)
+  if self:GetEntity():HasDamageStatisticsComponent() then
+    Log.error(self._className, "已经执行过AddDamageStatisticsComponent逻辑的单位，在执行反逻辑前不可重新执行。")
+    return
   end
-  ;
-  (self:GetEntity()):AddDamageStatisticsComponent()
+  self:GetEntity():AddDamageStatisticsComponent()
 end
 
 _class("BuffLogicRemoveDamageStatisticsComponent", BuffLogicBase)
 BuffLogicRemoveDamageStatisticsComponent = BuffLogicRemoveDamageStatisticsComponent
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveDamageStatisticsComponent.DoLogic = function(self, notify)
-  -- function num : 0_1
-  (self:GetEntity()):RemoveDamageStatisticsComponent()
+function BuffLogicRemoveDamageStatisticsComponent:DoLogic(notify)
+  self:GetEntity():RemoveDamageStatisticsComponent()
 end
-
-

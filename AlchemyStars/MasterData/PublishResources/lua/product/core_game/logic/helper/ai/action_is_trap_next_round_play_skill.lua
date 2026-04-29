@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_is_trap_next_round_play_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionIsTrapNextRoundPlaySkill", AINewNode)
 ActionIsTrapNextRoundPlaySkill = ActionIsTrapNextRoundPlaySkill
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionIsTrapNextRoundPlaySkill.OnUpdate = function(self, dt)
-  -- function num : 0_0 , upvalues : _ENV
-  local attrCmpt = (self.m_entityOwn):Attributes()
+function ActionIsTrapNextRoundPlaySkill:OnUpdate(dt)
+  local attrCmpt = self.m_entityOwn:Attributes()
   local totalRound = attrCmpt:GetAttribute("TotalRound")
   local curRound = attrCmpt:GetAttribute("CurrentRound")
   if totalRound == curRound then
@@ -18,5 +11,3 @@ ActionIsTrapNextRoundPlaySkill.OnUpdate = function(self, dt)
   end
   return AINewNodeStatus.Failure
 end
-
-

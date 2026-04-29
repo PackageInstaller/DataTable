@@ -1,102 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss_multi/ui_worldboss_multi.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorldBossMulti", UISideEnterCenterContentBase)
 UIWorldBossMulti = UIWorldBossMulti
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossMulti.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWorldBossMulti:Constructor()
   self._worldBossModule = self:GetModule(WorldBossModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMulti.DoInit = function(self)
-  -- function num : 0_1
+function UIWorldBossMulti:DoInit()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMulti.DoShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWorldBossMulti:DoShow(uiParams)
   self:_GetComponents()
   self:_OnValue()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnOpenWorldBossMultiUI)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnOpenWorldBossMultiUI)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMulti._GetComponents = function(self)
-  -- function num : 0_3
+function UIWorldBossMulti:_GetComponents()
   self._remainTimeText = self:GetUIComponent("UILocalizationText", "RemainTimeText")
   self._desc = self:GetUIComponent("UILocalizationText", "Desc")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMulti._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local count = (string.format)("<color=#ffff4e>%d</color>", (self._worldBossModule):GetAwardMultiple())
-  ;
-  (self._desc):SetText((StringTable.Get)("str_n18_worldboss_desc", count))
+function UIWorldBossMulti:_OnValue()
+  local count = string.format("<color=#ffff4e>%d</color>", self._worldBossModule:GetAwardMultiple())
+  self._desc:SetText(StringTable.Get("str_n18_worldboss_desc", count))
   self:RefreshRemainTime()
-  self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_4_0 , upvalues : self
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:RefreshRemainTime()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMulti.RefreshRemainTime = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local remainTime = ((self._worldBossModule).m_world_boss_data).end_time - (self:GetModule(SvrTimeModule)):GetServerTime() * 0.001
-  if remainTime > 0 then
-    remainTime = (string.format)("<color=#ffff4e>%s</color>", (UIWorldBossMultiToolFunctions.GetRemainTime)(remainTime))
-    ;
-    (self._remainTimeText):SetText((StringTable.Get)("str_n18_worldboss_remain_time", remainTime))
+function UIWorldBossMulti:RefreshRemainTime()
+  local remainTime = self._worldBossModule.m_world_boss_data.end_time - self:GetModule(SvrTimeModule):GetServerTime() * 0.001
+  if 0 < remainTime then
+    remainTime = string.format("<color=#ffff4e>%s</color>", UIWorldBossMultiToolFunctions.GetRemainTime(remainTime))
+    self._remainTimeText:SetText(StringTable.Get("str_n18_worldboss_remain_time", remainTime))
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMulti.DoHide = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIWorldBossMulti:DoHide()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMulti.GotoBtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  local open = (self._worldBossModule):AwardMultiOpen()
+function UIWorldBossMulti:GotoBtnOnClick(go)
+  local open = self._worldBossModule:AwardMultiOpen()
   if not open then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n18_worldboss_close"))
+    ToastManager.ShowToast(StringTable.Get("str_n18_worldboss_close"))
     self:CloseDialog()
   else
     self:SwitchState(UIStateType.UIWorldBoss)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMulti.CloseBtnOnClick = function(self, go)
-  -- function num : 0_8
+function UIWorldBossMulti:CloseBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMulti.DoDestroy = function(self)
-  -- function num : 0_9
+function UIWorldBossMulti:DoDestroy()
 end
-
-

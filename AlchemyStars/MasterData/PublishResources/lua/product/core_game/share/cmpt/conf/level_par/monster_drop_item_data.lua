@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/level_par/monster_drop_item_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MonsterDropItemConfigData", Object)
 MonsterDropItemConfigData = MonsterDropItemConfigData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterDropItemConfigData.Constructor = function(self)
-  -- function num : 0_0
+function MonsterDropItemConfigData:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterDropItemConfigData.GetPickupType = function(self, dropItemID)
-  -- function num : 0_1 , upvalues : _ENV
-  local dropConfig = (Cfg.cfg_monster_drop_item)[dropItemID]
+function MonsterDropItemConfigData:GetPickupType(dropItemID)
+  local dropConfig = Cfg.cfg_monster_drop_item[dropItemID]
   return dropConfig.PickupType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterDropItemConfigData.GetDropEffectType = function(self, dropItemID)
-  -- function num : 0_2 , upvalues : _ENV
-  local dropConfig = (Cfg.cfg_monster_drop_item)[dropItemID]
+function MonsterDropItemConfigData:GetDropEffectType(dropItemID)
+  local dropConfig = Cfg.cfg_monster_drop_item[dropItemID]
   return dropConfig.EffectType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterDropItemConfigData.GetDropEffectParam = function(self, dropItemID)
-  -- function num : 0_3 , upvalues : _ENV
-  local dropConfig = (Cfg.cfg_monster_drop_item)[dropItemID]
+function MonsterDropItemConfigData:GetDropEffectParam(dropItemID)
+  local dropConfig = Cfg.cfg_monster_drop_item[dropItemID]
   return dropConfig.EffectParam
 end
-
-

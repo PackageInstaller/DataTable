@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_detail_panel.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipDetailPanel", UICustomWidget)
 UIPetEquipDetailPanel = UIPetEquipDetailPanel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipDetailPanel.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIPetEquipDetailPanel:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipDetailPanel.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPetEquipDetailPanel:InitWidget()
   self._atk = self:GetUIComponent("UILocalizationText", "atkV")
   self._def = self:GetUIComponent("UILocalizationText", "defV")
   self._hp = self:GetUIComponent("UILocalizationText", "hpV")
@@ -24,14 +14,11 @@ UIPetEquipDetailPanel.InitWidget = function(self)
   self._maxLv = self:GetGameObject("maxLv")
   self._skill = self:GetUIComponent("RectTransform", "skill")
   self._skillDesc = self:GetUIComponent("UILocalizedTMP", "skillDesc")
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillDesc).onHrefClick = function(hrefName)
-    -- function num : 0_1_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):ShowDialog("UISkillHrefInfo", hrefName)
+  
+  function self._skillDesc.onHrefClick(hrefName)
+    GameGlobal.UIStateManager():ShowDialog("UISkillHrefInfo", hrefName)
   end
-
+  
   self._skillIcon = self:GetUIComponent("RawImageLoader", "skillIcon")
   self._skillInfoBtnGo = self:GetGameObject("skillUpInfoBtn")
   self._attInfoBtnGo = self:GetGameObject("attUpInfoBtn")
@@ -42,56 +29,47 @@ UIPetEquipDetailPanel.InitWidget = function(self)
   self.animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipDetailPanel.SetData = function(self, petData)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPetEquipDetailPanel:SetData(petData)
   self._petData = petData
-  self._petId = (self._petData):GetTemplateID()
-  self._pstId = (self._petData):GetPstID()
-  self._currentEquipLv = (self._petData):GetEquipLv()
-  self._elem = (self._petData):GetPetFirstElement()
+  self._petId = self._petData:GetTemplateID()
+  self._pstId = self._petData:GetPstID()
+  self._currentEquipLv = self._petData:GetEquipLv()
+  self._elem = self._petData:GetPetFirstElement()
   self._equipMaxLv = 0
-  local cfg_equip = (Cfg.cfg_pet_equip)({PetID = self._petId})
-  if cfg_equip and #cfg_equip > 0 then
-    for k,subCfg in pairs(cfg_equip) do
-      if self._equipMaxLv < subCfg.Level then
+  local cfg_equip = Cfg.cfg_pet_equip({
+    PetID = self._petId
+  })
+  if cfg_equip and 0 < #cfg_equip then
+    for k, subCfg in pairs(cfg_equip) do
+      if subCfg.Level > self._equipMaxLv then
         self._equipMaxLv = subCfg.Level
       end
     end
   else
-    do
-      ;
-      (Log.fatal)("###[UIPetEquipDetailPanel] cfg_pet_equip is nil ! id --> ", self._petId)
-      self:_CheckInfoBtnActive()
-      self:_ShowEquipInfo()
-      self:_ShowPetRefineInfo()
-    end
+    Log.fatal("###[UIPetEquipDetailPanel] cfg_pet_equip is nil ! id --> ", self._petId)
   end
+  self:_CheckInfoBtnActive()
+  self:_ShowEquipInfo()
+  self:_ShowPetRefineInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipDetailPanel._CheckInfoBtnActive = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg_equip = (Cfg.cfg_pet_equip)({PetID = self._petId})
+function UIPetEquipDetailPanel:_CheckInfoBtnActive()
+  local cfg_equip = Cfg.cfg_pet_equip({
+    PetID = self._petId
+  })
   if not cfg_equip then
-    (Log.fatal)("###[UIPetEquipController] cfg_equip is nil ! id --> ", self._petId)
+    Log.fatal("###[UIPetEquipController] cfg_equip is nil ! id --> ", self._petId)
   end
-  ;
-  (table.sort)(cfg_equip, function(a, b)
-    -- function num : 0_3_0
-    do return a.Level < b.Level end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(cfg_equip, function(a, b)
+    return a.Level < b.Level
+  end)
   local dataCount = 0
   local skillCount = 0
   local attInfoBtnActive = false
   local skillInfoBtnActive = false
   for i = 1, #cfg_equip do
     local cfgData = cfg_equip[i]
-    if cfgData.Level > 1 then
+    if 1 < cfgData.Level then
       local cfgDataLast = cfg_equip[i - 1]
       local addPro = cfgData.PropertyRestraint - cfgDataLast.PropertyRestraint
       local addAtk = cfgData.Attack - cfgDataLast.Attack
@@ -101,164 +79,111 @@ UIPetEquipDetailPanel._CheckInfoBtnActive = function(self)
         dataCount = dataCount + 1
       end
     end
-    do
-      do
-        if cfgData.IsParamImprove and cfgData.IsParamImprove == 1 then
-          skillCount = skillCount + 1
-        end
-        -- DECOMPILER ERROR at PC60: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if cfgData.IsParamImprove and cfgData.IsParamImprove == 1 then
+      skillCount = skillCount + 1
     end
   end
-  if dataCount > 0 then
+  if 0 < dataCount then
     attInfoBtnActive = true
   end
-  ;
-  (self._attInfoBtnGo):SetActive(attInfoBtnActive)
-  if skillCount > 0 then
+  self._attInfoBtnGo:SetActive(attInfoBtnActive)
+  if 0 < skillCount then
     skillInfoBtnActive = true
   end
-  ;
-  (self._skillInfoBtnGo):SetActive(skillInfoBtnActive)
+  self._skillInfoBtnGo:SetActive(skillInfoBtnActive)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipDetailPanel._ShowEquipInfo = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIPetEquipDetailPanel:_ShowEquipInfo()
   self:_CheckMaxLv()
-  ;
-  (self._lv):SetText((StringTable.Get)("str_pet_equip_Lv") .. self._currentEquipLv)
+  self._lv:SetText(StringTable.Get("str_pet_equip_Lv") .. self._currentEquipLv)
   local isShowAtt = self:_IsShowAtt()
   if isShowAtt then
-    (self._atts):SetActive(true)
+    self._atts:SetActive(true)
     self:_ShowAttInfo()
   else
-    ;
-    (self._atts):SetActive(false)
+    self._atts:SetActive(false)
   end
   self:_ShowSkillInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipDetailPanel._CheckMaxLv = function(self)
-  -- function num : 0_5
-  if self._equipMaxLv <= self._currentEquipLv then
-    (self.onlyIntroGo):SetActive(true)
-    ;
-    (self.introlAndUpGo):SetActive(false)
+function UIPetEquipDetailPanel:_CheckMaxLv()
+  if self._currentEquipLv >= self._equipMaxLv then
+    self.onlyIntroGo:SetActive(true)
+    self.introlAndUpGo:SetActive(false)
   else
-    ;
-    (self.onlyIntroGo):SetActive(false)
-    ;
-    (self.introlAndUpGo):SetActive(true)
+    self.onlyIntroGo:SetActive(false)
+    self.introlAndUpGo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipDetailPanel._IsShowAtt = function(self)
-  -- function num : 0_6
+function UIPetEquipDetailPanel:_IsShowAtt()
   return true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipDetailPanel._ShowAttInfo = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg_pet_equip = (Cfg.cfg_pet_equip)({PetID = self._petId, Level = self._currentEquipLv})
+function UIPetEquipDetailPanel:_ShowAttInfo()
+  local cfg_pet_equip = Cfg.cfg_pet_equip({
+    PetID = self._petId,
+    Level = self._currentEquipLv
+  })
   if not cfg_pet_equip then
-    (Log.fatal)("###[UIPetEquipController]cfg_pet_equip is nil ! id --> ", self._petId, "|level --> ", self._currentEquipLv)
-    return 
+    Log.fatal("###[UIPetEquipController]cfg_pet_equip is nil ! id --> ", self._petId, "|level --> ", self._currentEquipLv)
+    return
   end
-  local atk = (cfg_pet_equip[1]).Attack
-  local def = (cfg_pet_equip[1]).Defence
-  local hp = (cfg_pet_equip[1]).Health
-  ;
-  (self._atk):SetText("+" .. atk)
-  ;
-  (self._def):SetText("+" .. def)
-  ;
-  (self._hp):SetText("+" .. hp)
-  local elemValue = (cfg_pet_equip[1]).PropertyRestraint
-  local attItem = (self._attPool):SpawnObject("UIPetEquipElemItem")
+  local atk = cfg_pet_equip[1].Attack
+  local def = cfg_pet_equip[1].Defence
+  local hp = cfg_pet_equip[1].Health
+  self._atk:SetText("+" .. atk)
+  self._def:SetText("+" .. def)
+  self._hp:SetText("+" .. hp)
+  local elemValue = cfg_pet_equip[1].PropertyRestraint
+  local attItem = self._attPool:SpawnObject("UIPetEquipElemItem")
   attItem:SetData(self._elem, elemValue)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipDetailPanel._ShowSkillInfo = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local skillID = (self._petData):GetPetPassiveSkill()
+function UIPetEquipDetailPanel:_ShowSkillInfo()
+  local skillID = self._petData:GetPetPassiveSkill()
   local cfg = BattleSkillCfg(skillID)
   if cfg then
-    (self._skillIcon):LoadImage(cfg.Icon)
-    ;
-    (self._skillDesc):SetText((HelperProxy:GetInstance()):GetPetSkillDescFull(self._petData, skillID, true))
+    self._skillIcon:LoadImage(cfg.Icon)
+    self._skillDesc:SetText(HelperProxy:GetInstance():GetPetSkillDescFull(self._petData, skillID, true))
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipDetailPanel._ShowPetRefineInfo = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  if not (UIPetEquipHelper.HasRefine)(self._petId) then
-    return 
+function UIPetEquipDetailPanel:_ShowPetRefineInfo()
+  if not UIPetEquipHelper.HasRefine(self._petId) then
+    return
   end
   if not self._refineItem then
-    self._refineItem = (self._refineItemPool):SpawnObject("UIPetEquipLvIcon")
+    self._refineItem = self._refineItemPool:SpawnObject("UIPetEquipLvIcon")
   end
-  ;
-  (self._refineItem):SetData(self._petData)
+  self._refineItem:SetData(self._petData)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipDetailPanel.UpBtnOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local aps = ((GameGlobal.GetModule)(SerialAutoFightModule)):GetApsData()
+function UIPetEquipDetailPanel:UpBtnOnClick()
+  local aps = GameGlobal.GetModule(SerialAutoFightModule):GetApsData()
   aps:SetTrack(true)
   self:ShowDialog("UIPetEquipUpLevelController", self._petData)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipDetailPanel.IntrBtnOnClick = function(self, go)
-  -- function num : 0_11
+function UIPetEquipDetailPanel:IntrBtnOnClick(go)
   self:ShowDialog("UIPetEquipIntrController", self._petId)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipDetailPanel.IntrBtn2OnClick = function(self, go)
-  -- function num : 0_12
+function UIPetEquipDetailPanel:IntrBtn2OnClick(go)
   self:ShowDialog("UIPetEquipIntrController", self._petId)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipDetailPanel.SkillUpInfoBtnOnClick = function(self, go)
-  -- function num : 0_13
-  local skillID = (self._petData):GetPetPassiveSkill()
+function UIPetEquipDetailPanel:SkillUpInfoBtnOnClick(go)
+  local skillID = self._petData:GetPetPassiveSkill()
   self:ShowDialog("UIPetEquipUpLvInfoController", self._petData, self._currentEquipLv, skillID)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipDetailPanel.AttUpInfoBtnOnClick = function(self, go)
-  -- function num : 0_14
+function UIPetEquipDetailPanel:AttUpInfoBtnOnClick(go)
   self:ShowDialog("UIPetEquipUpLvInfoController", self._petData, self._currentEquipLv)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipDetailPanel.PlayAni = function(self, aniName)
-  -- function num : 0_15
+function UIPetEquipDetailPanel:PlayAni(aniName)
   if self.animation then
-    (self.animation):Play(aniName)
+    self.animation:Play(aniName)
   end
 end
-
-

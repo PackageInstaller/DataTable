@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_ctl_outline.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterControlOutLineInstruction", BaseInstruction)
 PlayCasterControlOutLineInstruction = PlayCasterControlOutLineInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterControlOutLineInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterControlOutLineInstruction:Constructor(paramList)
   self._enable = tonumber(paramList.enable)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterControlOutLineInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayCasterControlOutLineInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if casterEntity:MonsterID() then
     local world = casterEntity:GetOwnerWorld()
     local monsterIDCmpt = casterEntity:MonsterID()
@@ -29,7 +19,4 @@ PlayCasterControlOutLineInstruction.DoInstruction = function(self, TT, casterEnt
       renderEntityService:DestroyMonsterAreaOutLineEntity(casterEntity)
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
-
-

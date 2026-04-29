@@ -1,38 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n15/Raffle/ui_n15_raffle_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN15RaffleItem", UICustomWidget)
 UIN15RaffleItem = UIN15RaffleItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN15RaffleItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN15RaffleItem:Constructor()
   self._atlas = self:GetAsset("UIN15.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15RaffleItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN15RaffleItem:OnShow(uiParams)
   self:_GetComponents()
   self:_InitParmams(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15RaffleItem._InitParmams = function(self, uiParams)
-  -- function num : 0_2
+function UIN15RaffleItem:_InitParmams(uiParams)
   self._select_count = 0
   self._award_count = 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15RaffleItem._GetComponents = function(self)
-  -- function num : 0_3
-  self._anim = ((self.view).gameObject):GetComponent("Animation")
+function UIN15RaffleItem:_GetComponents()
+  self._anim = self.view.gameObject:GetComponent("Animation")
   self._icon_bg_rect = self:GetUIComponent("RectTransform", "_icon_bg")
   self._get_award_count_rect = self:GetUIComponent("RectTransform", "_get_award_count")
   self._icon_raw = self:GetUIComponent("RawImageLoader", "_icon")
@@ -46,32 +30,19 @@ UIN15RaffleItem._GetComponents = function(self)
   self._get_award_count_obj = self:GetGameObject("_get_award_count")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15RaffleItem._show = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._icon_raw):LoadImage((N15ToolFunctions.GetItemIcon)((self._award_date).m_item_id))
-  ;
-  (self._award_count_txt):SetText("x" .. (self._award_date).m_lottery_count)
-  ;
-  (self._goods_count_txt):SetText("x" .. (self._award_date).m_count)
-  ;
-  (self._get_award_obj):SetActive(false)
-  ;
-  (self._get_award_count_obj):SetActive(false)
-  ;
-  (self._halo_obj):SetActive(false)
-  ;
-  (self._select_single_obj):SetActive(false)
-  ;
-  (self._select_more_obj):SetActive(false)
-  self:SetGrey((self._award_date).m_lottery_count)
+function UIN15RaffleItem:_show()
+  self._icon_raw:LoadImage(N15ToolFunctions.GetItemIcon(self._award_date.m_item_id))
+  self._award_count_txt:SetText("x" .. self._award_date.m_lottery_count)
+  self._goods_count_txt:SetText("x" .. self._award_date.m_count)
+  self._get_award_obj:SetActive(false)
+  self._get_award_count_obj:SetActive(false)
+  self._halo_obj:SetActive(false)
+  self._select_single_obj:SetActive(false)
+  self._select_more_obj:SetActive(false)
+  self:SetGrey(self._award_date.m_lottery_count)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15RaffleItem.SetData = function(self, award_date, item_press_callback, isBig, animCB)
-  -- function num : 0_5
+function UIN15RaffleItem:SetData(award_date, item_press_callback, isBig, animCB)
   if isBig then
     self._icon_bg_raw = self:GetUIComponent("RawImageLoader", "_icon_bg")
   else
@@ -82,123 +53,74 @@ UIN15RaffleItem.SetData = function(self, award_date, item_press_callback, isBig,
   self._select_count = 0
   self._award_date = award_date
   self._item_press_callback = item_press_callback
-  self._award_count = (self._award_date).m_count
+  self._award_count = self._award_date.m_count
   self:_show()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15RaffleItem.SetSelectHighLight = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN15RaffleItem:SetSelectHighLight()
   self._select_count = self._select_count + 1
-  ;
-  (self._get_award_count_obj):SetActive(true)
-  ;
-  (self._get_award_obj):SetActive(true)
-  ;
-  (self._get_award_count_txt):SetText((StringTable.Get)("str_n15_get", self._select_count))
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N15RaffleSucc)
+  self._get_award_count_obj:SetActive(true)
+  self._get_award_obj:SetActive(true)
+  self._get_award_count_txt:SetText(StringTable.Get("str_n15_get", self._select_count))
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N15RaffleSucc)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15RaffleItem.SetGrey = function(self, time)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN15RaffleItem:SetGrey(time)
   local greyTab = {}
-  ;
-  (table.insert)(greyTab, self._icon_raw)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
+  table.insert(greyTab, self._icon_raw)
   if time <= 0 then
     if self._icon_bg_img then
-      (self._icon_bg_img).sprite = (self._atlas):GetSprite("n15_shop_item4")
-    else
-      if self._icon_bg_raw then
-        (self._icon_bg_raw):LoadImage("n15_shop_grand4")
-      end
+      self._icon_bg_img.sprite = self._atlas:GetSprite("n15_shop_item4")
+    elseif self._icon_bg_raw then
+      self._icon_bg_raw:LoadImage("n15_shop_grand4")
     end
-    ;
-    (N15ToolFunctions.SetGrey)(greyTab, 1)
+    N15ToolFunctions.SetGrey(greyTab, 1)
   else
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R3 in 'UnsetPending'
-
     if self._icon_bg_img then
-      (self._icon_bg_img).sprite = (self._atlas):GetSprite("n15_shop_item1")
-    else
-      if self._icon_bg_raw then
-        (self._icon_bg_raw):LoadImage("n15_shop_grand1")
-      end
+      self._icon_bg_img.sprite = self._atlas:GetSprite("n15_shop_item1")
+    elseif self._icon_bg_raw then
+      self._icon_bg_raw:LoadImage("n15_shop_grand1")
     end
-    ;
-    (N15ToolFunctions.SetGrey)(greyTab, 0)
+    N15ToolFunctions.SetGrey(greyTab, 0)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15RaffleItem.SetRaffleHighLight = function(self, single_high)
-  -- function num : 0_8
-  (self._halo_obj):SetActive(single_high)
+function UIN15RaffleItem:SetRaffleHighLight(single_high)
+  self._halo_obj:SetActive(single_high)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15RaffleItem.SetGetAward = function(self, award_count)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN15RaffleItem:SetGetAward(award_count)
   if not award_count then
-    return 
+    return
   end
-  ;
-  (self._get_award_obj):SetActive(true)
-  ;
-  (self._get_award_count_obj):SetActive(true)
-  ;
-  (self._get_award_count_txt):SetText((StringTable.Get)("str_n15_get", award_count))
+  self._get_award_obj:SetActive(true)
+  self._get_award_count_obj:SetActive(true)
+  self._get_award_count_txt:SetText(StringTable.Get("str_n15_get", award_count))
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15RaffleItem.GetAwardId = function(self)
-  -- function num : 0_10
-  return (self._award_date).m_award_id
+function UIN15RaffleItem:GetAwardId()
+  return self._award_date.m_award_id
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15RaffleItem.GetState = function(self)
-  -- function num : 0_11
-  do return (self._award_date).m_lottery_count == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIN15RaffleItem:GetState()
+  return self._award_date.m_lottery_count == 0
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15RaffleItem.PlayAnim = function(self)
-  -- function num : 0_12
-  (self._anim):Stop()
+function UIN15RaffleItem:PlayAnim()
+  self._anim:Stop()
   if self._isBig then
-    (self._animCB)("uieffanim_N15_Raffle_win_2")
-    ;
-    (self._anim):Play("uieffanim_N15_DrawIntroItem_02")
+    self._animCB("uieffanim_N15_Raffle_win_2")
+    self._anim:Play("uieffanim_N15_DrawIntroItem_02")
   else
-    ;
-    (self._animCB)("uieffanim_N15_Raffle_win_1")
-    ;
-    (self._anim):Play("uieffanim_N15_DrawIntroItem_01")
+    self._animCB("uieffanim_N15_Raffle_win_1")
+    self._anim:Play("uieffanim_N15_DrawIntroItem_01")
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15RaffleItem.IconOnClick = function(self, go)
-  -- function num : 0_13
+function UIN15RaffleItem:IconOnClick(go)
   if self._item_press_callback then
     local tr = go.transform
     local pos = tr.position
-    ;
-    (self._item_press_callback)((self._award_date).m_item_id, pos)
+    self._item_press_callback(self._award_date.m_item_id, pos)
   end
 end
-
-

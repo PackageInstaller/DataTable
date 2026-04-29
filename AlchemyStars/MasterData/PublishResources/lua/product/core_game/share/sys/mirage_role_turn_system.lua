@@ -1,54 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/mirage_role_turn_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("MirageRoleTurnSystem", MainStateSystem)
 MirageRoleTurnSystem = MirageRoleTurnSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MirageRoleTurnSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function MirageRoleTurnSystem:_GetMainStateID()
   return GameStateID.MirageRoleTurn
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageRoleTurnSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.info)("MirageRoleTurnSystem:Begin")
+function MirageRoleTurnSystem:_OnMainStateEnter(TT)
+  Log.info("MirageRoleTurnSystem:Begin")
   self:_DoLogicMirageMove()
   self:_DoRenderMirageMove(TT)
   self:_DoLogicSwitchMainFsmState()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageRoleTurnSystem._DoLogicMirageMove = function(self)
-  -- function num : 0_2
-  local mirageSvc = (self._world):GetService("MirageLogic")
+function MirageRoleTurnSystem:_DoLogicMirageMove()
+  local mirageSvc = self._world:GetService("MirageLogic")
   mirageSvc:DoMirageCalculateTeamMove()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageRoleTurnSystem._DoLogicSwitchMainFsmState = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local mirageSvc = (self.world):GetService("MirageLogic")
+function MirageRoleTurnSystem:_DoLogicSwitchMainFsmState()
+  local mirageSvc = self.world:GetService("MirageLogic")
   local isForceClose = mirageSvc:IsMirageForceClose()
   if isForceClose then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.MirageRoleTurnFinish, 2)
-    return 
+    self._world:EventDispatcher():Dispatch(GameEventType.MirageRoleTurnFinish, 2)
+    return
   end
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.MirageRoleTurnFinish, 1)
+  self._world:EventDispatcher():Dispatch(GameEventType.MirageRoleTurnFinish, 1)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageRoleTurnSystem._DoRenderMirageMove = function(self, TT)
-  -- function num : 0_4
+function MirageRoleTurnSystem:_DoRenderMirageMove(TT)
 end
-
-

@@ -1,72 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_show_chain_damage_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewShowChainDamage", BuffViewBase)
 BuffViewShowChainDamage = BuffViewShowChainDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewShowChainDamage.PlayView = function(self, TT, notify)
-  -- function num : 0_0
+function BuffViewShowChainDamage:PlayView(TT, notify)
   local result = self._buffResult
   local attackerID = result:GetAttackerID()
   local defenderID = result:GetDefenderID()
   local lineEffectID = result:GetLineEffectID()
   local isShow = result:GetIsShow()
-  local attacker = (self._world):GetEntityByID(attackerID)
-  local defender = (self._world):GetEntityByID(defenderID)
+  local attacker = self._world:GetEntityByID(attackerID)
+  local defender = self._world:GetEntityByID(defenderID)
   if not attacker then
-    return 
+    return
   end
-  if not ((self._viewInstance):BuffConfigData()):GetViewParams() then
-    local viewParams = {}
-  end
+  local viewParams = self._viewInstance:BuffConfigData():GetViewParams() or {}
   local effectHolderCmpt = attacker:EffectHolder()
-  do
-    if attacker:HasTeam() then
-      local leader = attacker:GetTeamLeaderPetEntity()
+  if attacker:HasTeam() then
+    local leader = attacker:GetTeamLeaderPetEntity()
+    effectHolderCmpt = leader:EffectHolder()
+    if not effectHolderCmpt then
+      leader:AddEffectHolder()
       effectHolderCmpt = leader:EffectHolder()
-      if not effectHolderCmpt then
-        leader:AddEffectHolder()
-        effectHolderCmpt = leader:EffectHolder()
-      end
     end
-    local attackerEffectEntityIdList = (effectHolderCmpt:GetEffectIDEntityDic())[lineEffectID]
-    local lineEffect = nil
-    if attackerEffectEntityIdList then
-      lineEffect = (self._world):GetEntityByID(attackerEffectEntityIdList[1])
+  end
+  local attackerEffectEntityIdList = effectHolderCmpt:GetEffectIDEntityDic()[lineEffectID]
+  local lineEffect
+  if attackerEffectEntityIdList then
+    lineEffect = self._world:GetEntityByID(attackerEffectEntityIdList[1])
+  end
+  if lineEffect then
+    lineEffect:SetViewVisible(isShow)
+  end
+  local targetPermanentEffectID = viewParams.targetPermanentEffectID
+  if targetPermanentEffectID then
+    if defender:HasTeam() then
+      defender = defender:GetTeamLeaderPetEntity()
     end
-    if lineEffect then
-      lineEffect:SetViewVisible(isShow)
+    local defenderEffectHolderCmpt = defender:EffectHolder()
+    if not defenderEffectHolderCmpt then
+      defender:AddEffectHolder()
+      defenderEffectHolderCmpt = defender:EffectHolder()
     end
-    local targetPermanentEffectID = viewParams.targetPermanentEffectID
-    if targetPermanentEffectID then
-      if defender:HasTeam() then
-        defender = defender:GetTeamLeaderPetEntity()
-      end
-      local defenderEffectHolderCmpt = defender:EffectHolder()
-      if not defenderEffectHolderCmpt then
-        defender:AddEffectHolder()
-        defenderEffectHolderCmpt = defender:EffectHolder()
-      end
-      local effect = nil
-      local defenderEffectEntityIdList = (defenderEffectHolderCmpt:GetEffectIDEntityDic())[targetPermanentEffectID]
-      if defenderEffectEntityIdList then
-        effect = (self._world):GetEntityByID(defenderEffectEntityIdList[1])
-      end
-      if effect then
-        effect:SetViewVisible(isShow)
-      end
+    local effect
+    local defenderEffectEntityIdList = defenderEffectHolderCmpt:GetEffectIDEntityDic()[targetPermanentEffectID]
+    if defenderEffectEntityIdList then
+      effect = self._world:GetEntityByID(defenderEffectEntityIdList[1])
+    end
+    if effect then
+      effect:SetViewVisible(isShow)
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewShowChainDamage.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewShowChainDamage:IsNotifyMatch(notify)
   return true
 end
-
-

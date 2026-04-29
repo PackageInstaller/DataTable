@@ -1,98 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/scene/season_maze_scene_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeSceneManager", Object)
 SeasonMazeSceneManager = SeasonMazeSceneManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeSceneManager.Constructor = function(self)
-  -- function num : 0_0
+function SeasonMazeSceneManager:Constructor()
   self._mapEventPointRootName = "MapEventPoint"
   self._sceneRootName = "SceneRoot"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneManager.OnInit = function(self, seasonID)
-  -- function num : 0_1 , upvalues : _ENV
-  self._sceenRoot = (GameObjectHelper.Find)(self._sceneRootName)
+function SeasonMazeSceneManager:OnInit(seasonID)
+  self._sceenRoot = GameObjectHelper.Find(self._sceneRootName)
   if not self._sceenRoot then
-    (Log.fatal)("SeasonMazeSceneManager scene no sceneroot! root name is ", self._sceneRootName)
-    return 
+    Log.fatal("SeasonMazeSceneManager scene no sceneroot! root name is ", self._sceneRootName)
+    return
   end
-  self._mapEventPointRoot = (GameObjectHelper.CreateEmpty)(self._mapEventPointRootName, nil)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._mapEventPointRoot).layer = SeasonLayerMask.Stage
-  self._scene = (self._mapEventPointRoot).scene
+  self._mapEventPointRoot = GameObjectHelper.CreateEmpty(self._mapEventPointRootName, nil)
+  self._mapEventPointRoot.layer = SeasonLayerMask.Stage
+  self._scene = self._mapEventPointRoot.scene
   self._sceneLayers = SeasonMazeSceneLayers:New(self._sceenRoot)
   self._environment = SeasonMazeSceneEnvironment:New(self._sceenRoot)
   self:UnLockZone(15)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneManager.GetEventPointRoot = function(self)
-  -- function num : 0_2
+function SeasonMazeSceneManager:GetEventPointRoot()
   return self._mapEventPointRoot
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneManager.GetEventPointRootTransform = function(self)
-  -- function num : 0_3
-  return (self._mapEventPointRoot).transform
+function SeasonMazeSceneManager:GetEventPointRootTransform()
+  return self._mapEventPointRoot.transform
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneManager.Update = function(self, deltaTime)
-  -- function num : 0_4
-  (self._environment):Update(deltaTime)
+function SeasonMazeSceneManager:Update(deltaTime)
+  self._environment:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneManager.Dispose = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._sceneLayers):Dispose()
-  ;
-  (self._environment):Dispose()
-  ;
-  ((UnityEngine.Object).Destroy)(self._mapEventPointRoot)
+function SeasonMazeSceneManager:Dispose()
+  self._sceneLayers:Dispose()
+  self._environment:Dispose()
+  UnityEngine.Object.Destroy(self._mapEventPointRoot)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneManager.Scene = function(self)
-  -- function num : 0_6
+function SeasonMazeSceneManager:Scene()
   return self._scene
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneManager.GetLayer = function(self, layerType)
-  -- function num : 0_7
-  return (self._sceneLayers):GetLayer(layerType)
+function SeasonMazeSceneManager:GetLayer(layerType)
+  return self._sceneLayers:GetLayer(layerType)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneManager.UnLockZone = function(self, zoneMask, zoneID2Animation)
-  -- function num : 0_8
-  (self._sceneLayers):UnLockZone(zoneMask, zoneID2Animation)
-  ;
-  (self._environment):UnLockZone(zoneMask, zoneID2Animation)
+function SeasonMazeSceneManager:UnLockZone(zoneMask, zoneID2Animation)
+  self._sceneLayers:UnLockZone(zoneMask, zoneID2Animation)
+  self._environment:UnLockZone(zoneMask, zoneID2Animation)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneManager.ChangeMap = function(self, ids, openingID, closeID)
-  -- function num : 0_9
-  (self._sceneLayers):ChangeMap(ids, openingID, closeID)
+function SeasonMazeSceneManager:ChangeMap(ids, openingID, closeID)
+  self._sceneLayers:ChangeMap(ids, openingID, closeID)
 end
-
-

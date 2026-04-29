@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/role_movement_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("RoleMovementSystem", MainStateSystem)
 RoleMovementSystem = RoleMovementSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-RoleMovementSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function RoleMovementSystem:_GetMainStateID()
   return GameStateID.RoleTurn
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleMovementSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1
+function RoleMovementSystem:_OnMainStateEnter(TT)
   self:_DoLoginFeatureOnRoleMoveEnter()
   self:_DoRenderFeatureOnRoleMoveEnter(TT)
   local elementType = self:_DoLogicGetChainElementType()
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   self:_DoRenderNotifyBuff(TT, elementType, teamEntity)
   self:_DoRenderCreateActiveLinkLineGhost(TT, teamEntity)
   self:_DoRenderPetHeadShow(TT)
@@ -32,78 +22,43 @@ RoleMovementSystem._OnMainStateEnter = function(self, TT)
   self:_DoLogicGotoNextState()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleMovementSystem._DoLogicGetChainElementType = function(self)
-  -- function num : 0_2
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function RoleMovementSystem:_DoLogicGetChainElementType()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local logicChainPathCmpt = teamEntity:LogicChainPath()
   return logicChainPathCmpt:GetLogicPieceType()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleMovementSystem._DoLogicGotoNextState = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.RoleTurnFinish, 1)
+function RoleMovementSystem:_DoLogicGotoNextState()
+  self._world:EventDispatcher():Dispatch(GameEventType.RoleTurnFinish, 1)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleMovementSystem._DoLoginFeatureOnRoleMoveEnter = function(self)
-  -- function num : 0_4
-  local featureLogicSvc = (self._world):GetService("FeatureLogic")
+function RoleMovementSystem:_DoLoginFeatureOnRoleMoveEnter()
+  local featureLogicSvc = self._world:GetService("FeatureLogic")
   if featureLogicSvc and featureLogicSvc:CanEnableFeature() then
     featureLogicSvc:DoFeatureOnRoleMoveEnter()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleMovementSystem._DoRenderPetHeadShow = function(self, TT)
-  -- function num : 0_5
+function RoleMovementSystem:_DoRenderPetHeadShow(TT)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleMovementSystem._DoRendererMove = function(self, TT, teamEntity)
-  -- function num : 0_6
+function RoleMovementSystem:_DoRendererMove(TT, teamEntity)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleMovementSystem._DoRenderNotifyBuff = function(self, TT)
-  -- function num : 0_7
+function RoleMovementSystem:_DoRenderNotifyBuff(TT)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleMovementSystem._DoRenderNotifyBuffNormalAttackEnd = function(self, TT)
-  -- function num : 0_8
+function RoleMovementSystem:_DoRenderNotifyBuffNormalAttackEnd(TT)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleMovementSystem._DoRenderResetPieceAnim = function(self, TT)
-  -- function num : 0_9
+function RoleMovementSystem:_DoRenderResetPieceAnim(TT)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleMovementSystem._SendPrismNotify = function(self, TT)
-  -- function num : 0_10
+function RoleMovementSystem:_SendPrismNotify(TT)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleMovementSystem._DoRenderFeatureOnRoleMoveEnter = function(self, TT)
-  -- function num : 0_11
+function RoleMovementSystem:_DoRenderFeatureOnRoleMoveEnter(TT)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleMovementSystem._DoRenderCreateActiveLinkLineGhost = function(self, TT)
-  -- function num : 0_12
+function RoleMovementSystem:_DoRenderCreateActiveLinkLineGhost(TT)
 end
-
-

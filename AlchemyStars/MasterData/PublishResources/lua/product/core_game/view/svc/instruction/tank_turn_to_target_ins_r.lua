@@ -1,53 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/tank_turn_to_target_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("TankTurnToTargetInstruction", BaseInstruction)
 TankTurnToTargetInstruction = TankTurnToTargetInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-TankTurnToTargetInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function TankTurnToTargetInstruction:Constructor(paramList)
   self._time = tonumber(paramList.time)
   self._animatorTrigger = paramList.animatorTrigger
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TankTurnToTargetInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function TankTurnToTargetInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local targetEntity = (world:Player()):GetLocalTeamEntity()
+  local targetEntity = world:Player():GetLocalTeamEntity()
   local gridDir = self:GetDir(targetEntity:GetGridPosition(), casterEntity)
   local BoardServiceRender = world:GetService("BoardRender")
   local renderDir = BoardServiceRender:GridDir2LocationDir(gridDir)
-  local go = (casterEntity:View()):GetGameObject()
-  local tween = (go.transform):DORotate(renderDir, self._time * 0.001)
+  local go = casterEntity:View():GetGameObject()
+  local tween = go.transform:DORotate(renderDir, self._time * 0.001)
   YIELD(TT, self._time)
   if not tween:IsComplete() then
     tween:Complete()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TankTurnToTargetInstruction.GetDir = function(self, targetPos, entity)
-  -- function num : 0_2 , upvalues : _ENV
+function TankTurnToTargetInstruction:GetDir(targetPos, entity)
   local gridLoc = entity:GridLocation()
   local center = gridLoc:Center()
-  local vectors = {Vector2(-1, 0), Vector2(1, 0), Vector2(0, -1), Vector2(0, 1)}
+  local vectors = {
+    Vector2(-1, 0),
+    Vector2(1, 0),
+    Vector2(0, -1),
+    Vector2(0, 1)
+  }
   local minIdx, minAngle = 1, 180
   local vec = targetPos - center
-  for i,v in ipairs(vectors) do
-    local angle = (Vector2.Angle)(vec, v)
-    if angle < minAngle then
+  for i, v in ipairs(vectors) do
+    local angle = Vector2.Angle(vec, v)
+    if minAngle > angle then
       minAngle = angle
       minIdx = i
     end
   end
   return vectors[minIdx]
 end
-
-

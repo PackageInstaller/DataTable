@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_flight_vehicle_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_flight_base_r")
 _class("PlaySkillFlightVehiclePhase", PlaySkillFlightBase)
 PlaySkillFlightVehiclePhase = PlaySkillFlightVehiclePhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillFlightVehiclePhase._GetGridList = function(self, pet_entity)
-  -- function num : 0_0
-  local petSkillRoutine = (pet_entity:SkillRoutine()):GetResultContainer()
+function PlaySkillFlightVehiclePhase:_GetGridList(pet_entity)
+  local petSkillRoutine = pet_entity:SkillRoutine():GetResultContainer()
   local scopeResult = petSkillRoutine:GetScopeResult()
   if scopeResult == nil then
     return nil
@@ -19,87 +12,53 @@ PlaySkillFlightVehiclePhase._GetGridList = function(self, pet_entity)
   return chainGrid
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlightVehiclePhase._GetFlyOneGridMS = function(self, phaseParam)
-  -- function num : 0_1
+function PlaySkillFlightVehiclePhase:_GetFlyOneGridMS(phaseParam)
   local waveGridArrayParam = phaseParam
   return waveGridArrayParam:GetFlyOneGridMS()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlightVehiclePhase._GetGridEffectID = function(self, phaseParam)
-  -- function num : 0_2
+function PlaySkillFlightVehiclePhase:_GetGridEffectID(phaseParam)
   local waveGridArrayParam = phaseParam
   return waveGridArrayParam:GetGridEffectID()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlightVehiclePhase._GetHitAnimName = function(self, phaseParam)
-  -- function num : 0_3
+function PlaySkillFlightVehiclePhase:_GetHitAnimName(phaseParam)
   local waveGridArrayParam = phaseParam
   return waveGridArrayParam:GetHitAnimName()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlightVehiclePhase._GetHitEffectID = function(self, phaseParam)
-  -- function num : 0_4
+function PlaySkillFlightVehiclePhase:_GetHitEffectID(phaseParam)
   local waveGridArrayParam = phaseParam
   return waveGridArrayParam:GetHitEffectID()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlightVehiclePhase._GetDisappearEffectID = function(self, phaseParam)
-  -- function num : 0_5
+function PlaySkillFlightVehiclePhase:_GetDisappearEffectID(phaseParam)
   local waveGridArrayParam = phaseParam
   return waveGridArrayParam:GetDisappearEffectID()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlightVehiclePhase._GetBornEffectID = function(self, phaseParam)
-  -- function num : 0_6
+function PlaySkillFlightVehiclePhase:_GetBornEffectID(phaseParam)
   local waveGridArrayParam = phaseParam
   return waveGridArrayParam:GetBornEffectID()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlightVehiclePhase._GetBornEffectDelay = function(self, phaseParam)
-  -- function num : 0_7
+function PlaySkillFlightVehiclePhase:_GetBornEffectDelay(phaseParam)
   local waveGridArrayParam = phaseParam
   return waveGridArrayParam:GetBornEffectDelay()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlightVehiclePhase._GetFlyStartMs = function(self, phaseParam)
-  -- function num : 0_8
+function PlaySkillFlightVehiclePhase:_GetFlyStartMs(phaseParam)
   local waveGridArrayParam = phaseParam
   return waveGridArrayParam:GetFlyStartMs()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlightVehiclePhase._Move = function(self, go, tran, worldPos, gridWorldpos, disx, flyOneGridMs, phaseParam, atklist)
-  -- function num : 0_9 , upvalues : _ENV
-  ((tran:DOMove(gridWorldpos, disx * flyOneGridMs / 1000, false)):SetEase(((DG.Tweening).Ease).InOutSine)):OnComplete(function()
-    -- function num : 0_9_0 , upvalues : go
+function PlaySkillFlightVehiclePhase:_Move(go, tran, worldPos, gridWorldpos, disx, flyOneGridMs, phaseParam, atklist)
+  tran:DOMove(gridWorldpos, disx * flyOneGridMs / 1000.0, false):SetEase(DG.Tweening.Ease.InOutSine):OnComplete(function()
     go:SetActive(false)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlightVehiclePhase._GetFlyTime = function(self, maxLength, phaseParam)
-  -- function num : 0_10
+function PlaySkillFlightVehiclePhase:_GetFlyTime(maxLength, phaseParam)
   local waveGridArrayParam = phaseParam
   return maxLength * waveGridArrayParam:GetFlyOneGridMS(), maxLength * waveGridArrayParam:GetFlyOneGridMS()
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/fight_result_event_listener_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FightResultEventListenerRender", Object)
 FightResultEventListenerRender = FightResultEventListenerRender
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FightResultEventListenerRender.Constructor = function(self, world, autoBinder)
-  -- function num : 0_0 , upvalues : _ENV
+function FightResultEventListenerRender:Constructor(world, autoBinder)
   self._world = world
   autoBinder:BindEvent(GameEventType.MissionFightResult, self, self.OnCommonFightResult)
   autoBinder:BindEvent(GameEventType.ExtMissionFightResult, self, self.OnCommonFightResult)
@@ -23,42 +16,29 @@ FightResultEventListenerRender.Constructor = function(self, world, autoBinder)
   autoBinder:BindEvent(GameEventType.AniPopFightResult, self, self.OnCommonFightResult)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FightResultEventListenerRender.OnCommonFightResult = function(self, result)
-  -- function num : 0_1 , upvalues : _ENV
+function FightResultEventListenerRender:OnCommonFightResult(result)
   if result == true then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BattleResultFinish, result)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.BattleResultFinish, result)
   else
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(self._WaitPlayerDeadTask, self, result)
+    GameGlobal.TaskManager():CoreGameStartTask(self._WaitPlayerDeadTask, self, result)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FightResultEventListenerRender._WaitPlayerDeadTask = function(self, TT, battleRes)
-  -- function num : 0_2 , upvalues : _ENV
-  local playerEntity = ((self._world):Player()):GetLocalTeamEntity()
+function FightResultEventListenerRender:_WaitPlayerDeadTask(TT, battleRes)
+  local playerEntity = self._world:Player():GetLocalTeamEntity()
   if playerEntity then
     local teamLeaderEntity = playerEntity:GetTeamLeaderPetEntity()
-    local utilData = (self._world):GetService("UtilData")
+    local utilData = self._world:GetService("UtilData")
     if utilData:PlayerIsDead(playerEntity) then
       local deadTriggerParam = "Death"
       local deadAnimName = "death"
       local viewCmpt = teamLeaderEntity:View()
       local playerObj = viewCmpt:GetGameObject()
-      local animTimeLen = (GameObjectHelper.GetActorAnimationLength)(playerObj, deadAnimName)
+      local animTimeLen = GameObjectHelper.GetActorAnimationLength(playerObj, deadAnimName)
       teamLeaderEntity:SetAnimatorControllerTriggers({deadTriggerParam})
       YIELD(TT, animTimeLen * 1000)
-      ;
-      (Log.debug)("EventListenerServiceRender:_WaitPlayerDeadTask ", battleRes)
+      Log.debug("EventListenerServiceRender:_WaitPlayerDeadTask ", battleRes)
     end
   end
-  do
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BattleResultFinish, battleRes)
-  end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.BattleResultFinish, battleRes)
 end
-
-

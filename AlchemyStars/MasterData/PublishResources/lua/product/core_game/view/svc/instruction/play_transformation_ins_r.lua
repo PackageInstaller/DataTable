@@ -1,30 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_transformation_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayTransformationInstruction", BaseInstruction)
 PlayTransformationInstruction = PlayTransformationInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTransformationInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayTransformationInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTransformationInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTransformationInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Transformation)
   for i = 1, #resultArray do
     local result = resultArray[i]
     local caster = world:GetEntityByID(result:GetCaster())
     local elementType = result:GetElementType()
     if not caster then
-      (Log.fatal)("没有施法者，变身失败")
-      return 
+      Log.fatal("没有施法者，变身失败")
+      return
     end
     local cfgService = world:GetService("Config")
     local monsterConfigData = cfgService:GetMonsterConfigData()
@@ -37,27 +27,16 @@ PlayTransformationInstruction.DoInstruction = function(self, TT, casterEntity, p
     local sMonsterShowRender = world:GetService("MonsterShowRender")
     sMonsterShowRender:CreateMonsterEffect(casterEntity, result:GetMonsterID())
     local transformationHp = result:GetTransformationHp()
-    do
-      if transformationHp ~= 0 then
-        local transformationHpMax = result:GetTransformationHpMax()
-        caster:ReplaceRedAndMaxHP(transformationHp, transformationHpMax)
-      end
-      local sliderEntityID = (caster:HP()):GetHPSliderEntityID()
-      local sliderEntity = world:GetEntityByID(sliderEntityID)
-      ;
-      (TaskManager:GetInstance()):CoreGameStartTask((InnerGameHelperRender:GetInstance()).SetHpSliderElementIcon, InnerGameHelperRender:GetInstance(), sliderEntity, elementType)
-      local utilDataSvc = world:GetService("UtilData")
-      do
-        local hpBarType = utilDataSvc:GetHPBarTypeByEntity(caster)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossNameAndElement, result:GetMonsterID(), hpBarType, caster:GetID())
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossElement, elementType, caster:GetID())
-        -- DECOMPILER ERROR at PC118: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if transformationHp ~= 0 then
+      local transformationHpMax = result:GetTransformationHpMax()
+      caster:ReplaceRedAndMaxHP(transformationHp, transformationHpMax)
     end
+    local sliderEntityID = caster:HP():GetHPSliderEntityID()
+    local sliderEntity = world:GetEntityByID(sliderEntityID)
+    TaskManager:GetInstance():CoreGameStartTask(InnerGameHelperRender:GetInstance().SetHpSliderElementIcon, InnerGameHelperRender:GetInstance(), sliderEntity, elementType)
+    local utilDataSvc = world:GetService("UtilData")
+    local hpBarType = utilDataSvc:GetHPBarTypeByEntity(caster)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossNameAndElement, result:GetMonsterID(), hpBarType, caster:GetID())
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossElement, elementType, caster:GetID())
   end
 end
-
-

@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_add_dimension_flag.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_AddDimensionFlag", SkillEffectResultBase)
 SkillEffectResult_AddDimensionFlag = SkillEffectResult_AddDimensionFlag
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_AddDimensionFlag.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectResult_AddDimensionFlag:GetEffectType()
   return SkillEffectType.AddDimensionFlag
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_AddDimensionFlag.Constructor = function(self, eTeamId)
-  -- function num : 0_1
+function SkillEffectResult_AddDimensionFlag:Constructor(eTeamId)
   self._eTeamId = eTeamId
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_AddDimensionFlag.GetTeamEntityId = function(self)
-  -- function num : 0_2
+function SkillEffectResult_AddDimensionFlag:GetTeamEntityId()
   return self._eTeamId
 end
-
-

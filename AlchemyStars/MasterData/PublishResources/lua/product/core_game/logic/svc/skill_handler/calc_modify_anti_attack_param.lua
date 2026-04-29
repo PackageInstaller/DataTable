@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_modify_anti_attack_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_ModifyAntiAttackParam", SkillEffectCalc_Base)
 SkillEffectCalc_ModifyAntiAttackParam = SkillEffectCalc_ModifyAntiAttackParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ModifyAntiAttackParam.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_ModifyAntiAttackParam:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ModifyAntiAttackParam.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_ModifyAntiAttackParam:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillParam = skillEffectCalcParam.skillEffectParam
-  local entity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local entity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local attributeCmpt = entity:Attributes()
   local modifyType = skillParam:GetModifyType()
   local modifyValue = skillParam:GetModifyParam()
@@ -26,29 +16,23 @@ SkillEffectCalc_ModifyAntiAttackParam.DoSkillEffectCalculator = function(self, s
   if modifyType == ModifyAntiAttackParamType.WaitActiveSkillCount then
     modifyType = "WaitActiveSkillCount"
     curValue = attributeCmpt:GetAttribute(modifyType) or 0
-    newValue = (curValue) + modifyValue
+    newValue = curValue + modifyValue
     if newValue < 0 then
       newValue = 0
     end
-  else
-    if modifyType == ModifyAntiAttackParamType.AntiSkillCountCurRound then
-      modifyType = "MaxAntiSkillCountPerRound"
-      curValue = attributeCmpt:GetAttribute(modifyType) or 0
-      newValue = (curValue) + modifyValue
-      if newValue < 0 then
-        newValue = 0
-      end
-    else
-      if modifyType == ModifyAntiAttackParamType.AntiSkillEnabled then
-        modifyType = "AntiSkillEnabled"
-        newValue = modifyValue
-      end
+  elseif modifyType == ModifyAntiAttackParamType.AntiSkillCountCurRound then
+    modifyType = "MaxAntiSkillCountPerRound"
+    curValue = attributeCmpt:GetAttribute(modifyType) or 0
+    newValue = curValue + modifyValue
+    if newValue < 0 then
+      newValue = 0
     end
+  elseif modifyType == ModifyAntiAttackParamType.AntiSkillEnabled then
+    modifyType = "AntiSkillEnabled"
+    newValue = modifyValue
   end
   if not modifyType then
-    return 
+    return
   end
   return SkillEffectResultModifyAntiAttackParam:New(skillEffectCalcParam.casterEntityID, modifyType, newValue)
 end
-
-

@@ -1,53 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/test_func/ui_test_func_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITestFuncController", UIController)
 UITestFuncController = UITestFuncController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITestFuncController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  if uiParams then
-    local className = uiParams[1]
-  end
-  if uiParams then
-    local prefabName = uiParams[2]
-  end
-  if uiParams then
-    local func = uiParams[3]
-  end
+function UITestFuncController:LoadDataOnEnter(TT, res, uiParams)
+  local className = uiParams and uiParams[1]
+  local prefabName = uiParams and uiParams[2]
+  local func = uiParams and uiParams[3]
   if func then
     self._data = func()
   end
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_pool", className, prefabName)
+  local obj = UIWidgetHelper.SpawnObject(self, "_pool", className, prefabName)
   obj:SetData(self._data)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UITestFuncController:OnShow(uiParams)
   self:_SetCommonTopButton()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncController.OnHide = function(self)
-  -- function num : 0_2
+function UITestFuncController:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncController._SetCommonTopButton = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_backBtns", "UICommonTopButton")
+function UITestFuncController:_SetCommonTopButton()
+  local obj = UIWidgetHelper.SpawnObject(self, "_backBtns", "UICommonTopButton")
   obj:SetData(function()
-    -- function num : 0_3_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

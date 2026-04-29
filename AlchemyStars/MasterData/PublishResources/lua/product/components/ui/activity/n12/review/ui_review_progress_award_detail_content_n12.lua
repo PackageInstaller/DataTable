@@ -1,15 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/review/ui_review_progress_award_detail_content_n12.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIReviewProgressAwardDetailContent_N12", UIReviewProgressAwardDetailContent)
 UIReviewProgressAwardDetailContent_N12 = UIReviewProgressAwardDetailContent_N12
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIReviewProgressAwardDetailContent_N12._GetCloseAnim = function(self)
-  -- function num : 0_0
+function UIReviewProgressAwardDetailContent_N12:_GetCloseAnim()
   return "uieffanim_ReviewProgressAwardDetailContent_N9_out", 200
 end
-
-

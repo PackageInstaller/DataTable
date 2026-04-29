@@ -1,25 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/singleton.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Singleton", Object)
 Singleton = Singleton
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Singleton.GetInstance = function(self)
-  -- function num : 0_0
+function Singleton:GetInstance()
   if not self._instance then
     self._instance = self:New(self)
   end
   return self._instance
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Singleton.Dispose = function(self)
-  -- function num : 0_1
+function Singleton:Dispose()
   self._instance = nil
 end
-
-

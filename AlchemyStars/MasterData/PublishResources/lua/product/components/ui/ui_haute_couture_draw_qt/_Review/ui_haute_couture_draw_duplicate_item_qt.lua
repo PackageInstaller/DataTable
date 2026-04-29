@@ -1,16 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_qt/_Review/ui_haute_couture_draw_duplicate_item_qt.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDuplicateItemQT", UIHauteCoutureDuplicateItem)
 UIHauteCoutureDuplicateItemQT = UIHauteCoutureDuplicateItemQT
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDuplicateItemQT.SetBg = function(self, cfg)
-  -- function num : 0_0
+function UIHauteCoutureDuplicateItemQT:SetBg(cfg)
   if cfg.RewardSortOrder == 10 then
+  else
   end
 end
-
-

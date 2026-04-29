@@ -1,58 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/homelandpet_behavior_fishing_prepare.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homelandpet_behavior_base")
 _class("HomelandPetBehaviorFishingPrepare", HomelandPetBehaviorBase)
 HomelandPetBehaviorFishingPrepare = HomelandPetBehaviorFishingPrepare
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetBehaviorFishingPrepare.Constructor = function(self, behaviorType, pet)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomelandPetBehaviorFishingPrepare.super).Constructor)(self, behaviorType, pet)
+function HomelandPetBehaviorFishingPrepare:Constructor(behaviorType, pet)
+  HomelandPetBehaviorFishingPrepare.super.Constructor(self, behaviorType, pet)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFishingPrepare.Dispose = function(self)
-  -- function num : 0_1
+function HomelandPetBehaviorFishingPrepare:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFishingPrepare.Enter = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((HomelandPetBehaviorTreasure.super).Enter)(self)
+function HomelandPetBehaviorFishingPrepare:Enter()
+  HomelandPetBehaviorTreasure.super.Enter(self)
   local type = HomelandMimimapIconMarkType.FishingMatch
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnInitMinimapIconMark, type, (self._pet):TemplateID())
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnAddMinimapIconMark, type, (self._pet):TemplateID())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnInitMinimapIconMark, type, self._pet:TemplateID())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnAddMinimapIconMark, type, self._pet:TemplateID())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFishingPrepare.Update = function(self, dms)
-  -- function num : 0_3 , upvalues : _ENV
-  ((HomelandPetBehaviorFishingPrepare.super).Update)(self, dms)
+function HomelandPetBehaviorFishingPrepare:Update(dms)
+  HomelandPetBehaviorFishingPrepare.super.Update(self, dms)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFishingPrepare.Exit = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((HomelandPetBehaviorFishingPrepare.super).Exit)(self)
+function HomelandPetBehaviorFishingPrepare:Exit()
+  HomelandPetBehaviorFishingPrepare.super.Exit(self)
   local type = HomelandMimimapIconMarkType.FishingMatch
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnRemoveMinimapIconMark, type, (self._pet):TemplateID())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnRemoveMinimapIconMark, type, self._pet:TemplateID())
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFishingPrepare.Finish = function(self)
-  -- function num : 0_5
+function HomelandPetBehaviorFishingPrepare:Finish()
   return false
 end
-
-

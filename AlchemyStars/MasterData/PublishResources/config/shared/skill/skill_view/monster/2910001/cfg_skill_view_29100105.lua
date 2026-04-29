@@ -1,13 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2910001/cfg_skill_view_29100105.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterAnimation,animName = Death; PlayCasterMaterialAnim,animName=eff_2910001_death_main; PlaySelectObjAnimation,objName=eff_2910001_idle_Bip001_Head,animName=eff_2910001_idle_death; PlaySelectObjAnimation,objName=eff_2910001_idle_Bone006,animName=eff_2910001_idle_death; PlaySelectObjAnimation,objName=eff_2910001_idle_Bone006(mirrored),animName=eff_2910001_idle_death; PlayAudio,audioID=291000104; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName = Death; PlayCasterMaterialAnim,animName=eff_2910001_death_main; PlaySelectObjAnimation,objName=eff_2910001_idle_Bip001_Head,animName=eff_2910001_idle_death; PlaySelectObjAnimation,objName=eff_2910001_idle_Bone006,animName=eff_2910001_idle_death; PlaySelectObjAnimation,objName=eff_2910001_idle_Bone006(mirrored),animName=eff_2910001_idle_death; PlayAudio,audioID=291000104; "
+    }
+  }
 }
 return config, "ID", key
-

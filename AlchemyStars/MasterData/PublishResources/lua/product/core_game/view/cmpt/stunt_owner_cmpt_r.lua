@@ -1,85 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/stunt_owner_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StuntOwnerComponent", Object)
 StuntOwnerComponent = StuntOwnerComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StuntOwnerComponent.Constructor = function(self)
-  -- function num : 0_0
+function StuntOwnerComponent:Constructor()
   self._stunts = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StuntOwnerComponent.AddStunt = function(self, tag, e)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._stunts)[tag] = e
+function StuntOwnerComponent:AddStunt(tag, e)
+  self._stunts[tag] = e
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StuntOwnerComponent.RemoveStunt = function(self, tag)
-  -- function num : 0_2
-  local e = (self._stunts)[tag]
-  ;
-  (e:GetOwnerWorld()):DestroyEntity(e)
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._stunts)[tag] = nil
+function StuntOwnerComponent:RemoveStunt(tag)
+  local e = self._stunts[tag]
+  e:GetOwnerWorld():DestroyEntity(e)
+  self._stunts[tag] = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StuntOwnerComponent.GetStuntByTag = function(self, tag)
-  -- function num : 0_3
-  return (self._stunts)[tag]
+function StuntOwnerComponent:GetStuntByTag(tag)
+  return self._stunts[tag]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.StuntOwnerComponent = function(self)
-  -- function num : 0_4
-  return self:GetComponent((self.WEComponentsEnum).StuntOwner)
+function Entity:StuntOwnerComponent()
+  return self:GetComponent(self.WEComponentsEnum.StuntOwner)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasStuntOwnerComponent = function(self)
-  -- function num : 0_5
-  return self:HasComponent((self.WEComponentsEnum).StuntOwner)
+function Entity:HasStuntOwnerComponent()
+  return self:HasComponent(self.WEComponentsEnum.StuntOwner)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddStuntOwnerComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).StuntOwner
+function Entity:AddStuntOwnerComponent()
+  local index = self.WEComponentsEnum.StuntOwner
   local component = StuntOwnerComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceStuntOwnerComponent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).StuntOwner
+function Entity:ReplaceStuntOwnerComponent()
+  local index = self.WEComponentsEnum.StuntOwner
   local component = StuntOwnerComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveStuntOwnerComponent = function(self)
-  -- function num : 0_8
+function Entity:RemoveStuntOwnerComponent()
   if self:HasStuntOwnerComponent() then
-    self:RemoveComponent((self.WEComponentsEnum).StuntOwner)
+    self:RemoveComponent(self.WEComponentsEnum.StuntOwner)
   end
 end
-
-

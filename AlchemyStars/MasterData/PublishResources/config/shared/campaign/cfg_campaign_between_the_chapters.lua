@@ -1,30 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_campaign_between_the_chapters.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, NeedValue = 2, Title = 3}
+local key = {
+  ID = 1,
+  NeedValue = 2,
+  Title = 3
+}
 local common = {"str_title"}
 local config = {
-{1, 1, common[1]}
-, 
-{2, 2, common[1]}
-, 
-{3, 3, common[1]}
-, 
-{4, 4, common[1]}
-, 
-{5, 5, common[1]}
-, 
-{6, 6, common[1]}
-, 
-{7, 7, common[1]}
-, 
-{8, 8, common[1]}
-, 
-{9, 9, common[1]}
-, 
-{10, 10, common[1]}
+  {
+    1,
+    1,
+    common[1]
+  },
+  {
+    2,
+    2,
+    common[1]
+  },
+  {
+    3,
+    3,
+    common[1]
+  },
+  {
+    4,
+    4,
+    common[1]
+  },
+  {
+    5,
+    5,
+    common[1]
+  },
+  {
+    6,
+    6,
+    common[1]
+  },
+  {
+    7,
+    7,
+    common[1]
+  },
+  {
+    8,
+    8,
+    common[1]
+  },
+  {
+    9,
+    9,
+    common[1]
+  },
+  {
+    10,
+    10,
+    common[1]
+  }
 }
 return config, "ID", key
-

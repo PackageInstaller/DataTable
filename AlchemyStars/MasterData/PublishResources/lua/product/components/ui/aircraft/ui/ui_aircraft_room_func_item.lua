@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_room_func_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftRoomFuncItem", UICustomWidget)
 UIAircraftRoomFuncItem = UIAircraftRoomFuncItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftRoomFuncItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIAircraftRoomFuncItem:OnShow(uiParams)
   self.title = self:GetUIComponent("UILocalizationText", "TextTitle")
   self.value = self:GetUIComponent("UILocalizationText", "TextValue")
   self.layoutRect = self:GetUIComponent("RectTransform", "layout")
@@ -16,103 +9,73 @@ UIAircraftRoomFuncItem.OnShow = function(self, uiParams)
   self.deBuffFormat = "%s<color=#eb4040>(%s)</color>"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomFuncItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIAircraftRoomFuncItem:OnHide()
   self:DetachEvent(GameEventType.AircraftOnAtomChanged, self.RefreshAtom)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomFuncItem.GetLayoutRect = function(self)
-  -- function num : 0_2
+function UIAircraftRoomFuncItem:GetLayoutRect()
   return self.layoutRect
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomFuncItem.SetAsAtom = function(self, name)
-  -- function num : 0_3 , upvalues : _ENV
+function UIAircraftRoomFuncItem:SetAsAtom(name)
   self:DetachEvent(GameEventType.AircraftOnAtomChanged, self.RefreshAtom)
-  ;
-  (self.title):SetText((StringTable.Get)(name))
+  self.title:SetText(StringTable.Get(name))
   self:RefreshAtom()
   self:AttachEvent(GameEventType.AircraftOnAtomChanged, self.RefreshAtom)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomFuncItem.RefreshAtom = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
-  local airModule = (GameGlobal.GetModule)(AircraftModule)
+function UIAircraftRoomFuncItem:RefreshAtom()
+  local roleModule = GameGlobal.GetModule(RoleModule)
+  local airModule = GameGlobal.GetModule(AircraftModule)
   local room = airModule:GetSmeltRoom()
   local count = roleModule:GetAtom()
   local ceiling = room:GetStorageMax()
-  ;
-  (self.value):SetText(count .. "/" .. ceiling)
+  self.value:SetText(count .. "/" .. ceiling)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomFuncItem.SetDataSpecial = function(self, name, val, bonus)
-  -- function num : 0_5 , upvalues : _ENV
+function UIAircraftRoomFuncItem:SetDataSpecial(name, val, bonus)
   self:DetachEvent(GameEventType.AircraftOnAtomChanged, self.RefreshAtom)
-  ;
-  (self.title):SetText((StringTable.Get)(name))
-  if bonus and bonus > 0 then
-    (self.value):SetText((string.format)(self.buffFormat, val, bonus))
+  self.title:SetText(StringTable.Get(name))
+  if bonus and 0 < bonus then
+    self.value:SetText(string.format(self.buffFormat, val, bonus))
   else
-    ;
-    (self.value):SetText(val)
+    self.value:SetText(val)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomFuncItem.SetData = function(self, name, base, add, isInt, isPercent)
-  -- function num : 0_6 , upvalues : _ENV
+function UIAircraftRoomFuncItem:SetData(name, base, add, isInt, isPercent)
   self:DetachEvent(GameEventType.AircraftOnAtomChanged, self.RefreshAtom)
-  ;
-  (self.title):SetText((StringTable.Get)(name))
+  self.title:SetText(StringTable.Get(name))
   local baseStr, addStr = "", ""
   if isInt then
-    baseStr = (math.floor)(base)
+    baseStr = math.floor(base)
     if add then
-      addStr = (math.floor)(add)
+      addStr = math.floor(add)
     end
   else
     if base == 0 then
       baseStr = ""
     else
-      baseStr = (string.format)("%.2f", base)
+      baseStr = string.format("%.2f", base)
     end
     if add then
-      addStr = (string.format)("%.2f", add)
+      addStr = string.format("%.2f", add)
     end
   end
   if isPercent then
     if base == 0 then
       baseStr = "0%"
     else
-      baseStr = (math.floor)(base * 100) .. "%"
+      baseStr = math.floor(base * 100) .. "%"
     end
   end
   if add == nil then
-    (self.value):SetText(baseStr)
+    self.value:SetText(baseStr)
+  elseif 0 < add then
+    self.value:SetText(string.format(self.buffFormat, baseStr, addStr))
+  elseif add < 0 then
+    self.value:SetText(string.format(self.deBuffFormat, baseStr, addStr))
   else
-    if add > 0 then
-      (self.value):SetText((string.format)(self.buffFormat, baseStr, addStr))
-    else
-      if add < 0 then
-        (self.value):SetText((string.format)(self.deBuffFormat, baseStr, addStr))
-      else
-        ;
-        (self.value):SetText(baseStr)
-      end
-    end
+    self.value:SetText(baseStr)
   end
 end
-
-

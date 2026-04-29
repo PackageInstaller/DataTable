@@ -1,70 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_add_hp_by_move_notify_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddHPByMoveNotify", BuffViewBase)
 BuffViewAddHPByMoveNotify = BuffViewAddHPByMoveNotify
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddHPByMoveNotify.Constructor = function(self)
-  -- function num : 0_0
+function BuffViewAddHPByMoveNotify:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddHPByMoveNotify.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewAddHPByMoveNotify:IsNotifyMatch(notify)
   if notify and (notify:GetNotifyType() == NotifyType.EntityMoveEnd or notify:GetNotifyType() == NotifyType.PlayerEachMoveEnd) then
     local n = notify
     local ntPosNew = n:GetPosNew()
-    local resPosNew = (self._buffResult):GetPosNew()
+    local resPosNew = self._buffResult:GetPosNew()
     if ntPosNew and resPosNew and ntPosNew == resPosNew then
       return true
     end
     return false
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddHPByMoveNotify.PlayView = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffViewAddHPByMoveNotify:PlayView(TT)
   local res = self._buffResult
   local entity = self._entity
   local damageInfo = res:GetDamageInfo()
   local headOut = res:GetHeadout()
   local delay = res:GetDelay()
-  if delay > 0 then
+  if 0 < delay then
     YIELD(TT, delay)
   end
   if headOut then
     local petPstIdCmp = entity:PetPstID()
     local petPstId = petPstIdCmp:GetPstID()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.InOutQueue, petPstId, true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.InOutQueue, petPstId, true)
   end
-  do
-    local playDmg = (self._world):GetService("PlayDamage")
-    if entity:PetPstID() then
-      (entity:Pet()):GetOwnerTeamEntity()
-      local teamEntity = (entity:Pet()):GetOwnerTeamEntity()
-      playDmg:AsyncUpdateHPAndDisplayDamage(teamEntity, damageInfo)
-    else
-      do
-        playDmg:AsyncUpdateHPAndDisplayDamage(entity, damageInfo)
-        if headOut then
-          local petPstIdCmp = entity:PetPstID()
-          local petPstId = petPstIdCmp:GetPstID()
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.InOutQueue, petPstId, false)
-        end
-      end
-    end
+  local playDmg = self._world:GetService("PlayDamage")
+  if entity:PetPstID() then
+    entity:Pet():GetOwnerTeamEntity()
+    local teamEntity = entity:Pet():GetOwnerTeamEntity()
+    playDmg:AsyncUpdateHPAndDisplayDamage(teamEntity, damageInfo)
+  else
+    playDmg:AsyncUpdateHPAndDisplayDamage(entity, damageInfo)
+  end
+  if headOut then
+    local petPstIdCmp = entity:PetPstID()
+    local petPstId = petPstIdCmp:GetPstID()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.InOutQueue, petPstId, false)
   end
 end
-
-

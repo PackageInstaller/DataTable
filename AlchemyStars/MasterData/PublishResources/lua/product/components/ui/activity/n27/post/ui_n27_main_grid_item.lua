@@ -1,114 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/post/ui_n27_main_grid_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN27MainGridItem", Object)
 UIN27MainGridItem = UIN27MainGridItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN27MainGridItem.Constructor = function(self, row, col, gameObject)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN27MainGridItem:Constructor(row, col, gameObject)
   self._row = row
   self._col = col
   self._gameObject = gameObject
-  self._occupyObj = (((self._gameObject).transform):Find("occupy")).gameObject
-  self._greenObj = (((self._gameObject).transform):Find("green")).gameObject
-  self._redObj = (((self._gameObject).transform):Find("red")).gameObject
+  self._occupyObj = self._gameObject.transform:Find("occupy").gameObject
+  self._greenObj = self._gameObject.transform:Find("green").gameObject
+  self._redObj = self._gameObject.transform:Find("red").gameObject
   self._occupy = false
   self._uiCustomEventListener = UICustomUIEventListener:New()
-  ;
-  (self._uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(gameObject), UIEvent.Hovered, function(go)
-    -- function num : 0_0_0 , upvalues : _ENV, self
-    (Log.debug)("Hovered!!!!!!!!!!!!", self:GetX(), self:GetY())
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN27PostGameBlockHovered, self)
-  end
-)
-  ;
-  (self._uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(gameObject), UIEvent.Press, function(go)
-    -- function num : 0_0_1 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN27PostGameBlockPress, self)
-  end
-)
-  ;
-  (self._uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(gameObject), UIEvent.Release, function(go)
-    -- function num : 0_0_2 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN27PostGameBlockRelease, self)
-  end
-)
+  self._uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(gameObject), UIEvent.Hovered, function(go)
+    Log.debug("Hovered!!!!!!!!!!!!", self:GetX(), self:GetY())
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN27PostGameBlockHovered, self)
+  end)
+  self._uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(gameObject), UIEvent.Press, function(go)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN27PostGameBlockPress, self)
+  end)
+  self._uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(gameObject), UIEvent.Release, function(go)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN27PostGameBlockRelease, self)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MainGridItem.SetOccupy = function(self, flag, atomicItemID, itemID)
-  -- function num : 0_1
+function UIN27MainGridItem:SetOccupy(flag, atomicItemID, itemID)
   self._occupy = flag
   self._atomicItemID = atomicItemID
   self._itemID = itemID
-  ;
-  (self._occupyObj):SetActive(self._occupy)
+  self._occupyObj:SetActive(self._occupy)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MainGridItem.SetOccupyColor = function(self, flag)
-  -- function num : 0_2
-  (self._occupyObj):SetActive(flag)
+function UIN27MainGridItem:SetOccupyColor(flag)
+  self._occupyObj:SetActive(flag)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MainGridItem.ShowCheckColor = function(self, isPass)
-  -- function num : 0_3
-  (self._greenObj):SetActive(isPass)
+function UIN27MainGridItem:ShowCheckColor(isPass)
+  self._greenObj:SetActive(isPass)
   if not self._occupy then
-    (self._redObj):SetActive(not isPass)
+    self._redObj:SetActive(not isPass)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MainGridItem.ClearCheckColor = function(self)
-  -- function num : 0_4
-  (self._greenObj):SetActive(false)
-  ;
-  (self._redObj):SetActive(false)
+function UIN27MainGridItem:ClearCheckColor()
+  self._greenObj:SetActive(false)
+  self._redObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MainGridItem.GetAtomicItemID = function(self)
-  -- function num : 0_5
+function UIN27MainGridItem:GetAtomicItemID()
   return self._atomicItemID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MainGridItem.GetItemID = function(self)
-  -- function num : 0_6
+function UIN27MainGridItem:GetItemID()
   return self._itemID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MainGridItem.GetIsOccupy = function(self)
-  -- function num : 0_7
+function UIN27MainGridItem:GetIsOccupy()
   return self._occupy
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MainGridItem.GetX = function(self)
-  -- function num : 0_8
+function UIN27MainGridItem:GetX()
   return self._row
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MainGridItem.GetY = function(self)
-  -- function num : 0_9
+function UIN27MainGridItem:GetY()
   return self._col
 end
-
-

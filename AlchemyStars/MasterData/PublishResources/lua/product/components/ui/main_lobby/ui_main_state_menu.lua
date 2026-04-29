@@ -1,126 +1,87 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_state_menu.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainStateMenu", UICustomWidget)
 UIMainStateMenu = UIMainStateMenu
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainStateMenu.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMainStateMenu:OnShow(uiParams)
   local sop = self:GetUIComponent("UISelectObjectPath", "currencymenu")
   self.currencyMenu = sop:SpawnObject("UICurrencyMenu")
-  ;
-  (self.currencyMenu):SetData({RoleAssetID.RoleAssetDoubleRes, RoleAssetID.RoleAssetPhyPoint})
-  self.doubleItem = (self.currencyMenu):GetItemByTypeId(RoleAssetID.RoleAssetDoubleRes)
-  ;
-  (self.doubleItem):SetSwitchCallBack(function()
-    -- function num : 0_0_0 , upvalues : self
+  self.currencyMenu:SetData({
+    RoleAssetID.RoleAssetDoubleRes,
+    RoleAssetID.RoleAssetPhyPoint
+  })
+  self.doubleItem = self.currencyMenu:GetItemByTypeId(RoleAssetID.RoleAssetDoubleRes)
+  self.doubleItem:SetSwitchCallBack(function()
     if not self._enable then
-      return 
+      return
     end
     if self._open == false then
       self:Send(true)
     else
       self:Send(false)
     end
-  end
-)
+  end)
   self._resModule = self:GetModule(ResDungeonModule)
   self._aircraftModule = self:GetModule(AircraftModule)
-  self._open = (self._resModule):IsOpenDoubleRes()
+  self._open = self._resModule:IsOpenDoubleRes()
   self._enable = true
   self._power = self:GetUIComponent("Transform", "power")
   self._powerPool = self:GetUIComponent("UISelectObjectPath", "powerpool")
-  local powerPool = (self._powerPool):SpawnObject("UIPowerInfo")
-  powerPool:SetData(self._power, (self.currencyMenu):GetItemByTypeId(RoleAssetID.RoleAssetPhyPoint))
+  local powerPool = self._powerPool:SpawnObject("UIPowerInfo")
+  powerPool:SetData(self._power, self.currencyMenu:GetItemByTypeId(RoleAssetID.RoleAssetPhyPoint))
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainStateMenu.SetOpen = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local room = (self._aircraftModule):GetResRoom()
+function UIMainStateMenu:SetOpen()
+  local room = self._aircraftModule:GetResRoom()
   if room then
-    (self.doubleItem):Enable(true)
-    ;
-    (self.doubleItem):ShowSwitch(true)
-    ;
-    (self.doubleItem):ShowOpen(self._open)
+    self.doubleItem:Enable(true)
+    self.doubleItem:ShowSwitch(true)
+    self.doubleItem:ShowOpen(self._open)
     local guideModule = self:GetModule(GuideModule)
     if guideModule:GuideInProgress() then
-      return 
+      return
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideShowResDouble)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideShowResDouble)
   else
-    do
-      ;
-      (self.doubleItem):Enable(false)
-    end
+    self.doubleItem:Enable(false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainStateMenu.OpenAndClose = function(self, msg)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMainStateMenu:OpenAndClose(msg)
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, msg, self
-    (ToastManager.ShowToast)((StringTable.Get)(msg))
+    ToastManager.ShowToast(StringTable.Get(msg))
     if self.doubleItem then
-      (self.doubleItem):ShowOpen(true)
+      self.doubleItem:ShowOpen(true)
     end
     self._enable = false
     YIELD(TT, 100)
     self._enable = true
     if self.doubleItem then
-      (self.doubleItem):ShowOpen(false)
+      self.doubleItem:ShowOpen(false)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainStateMenu.Send = function(self, open)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMainStateMenu:Send(open)
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, open, _ENV
-    local a = (self._resModule):SetDoubleResSwitch(TT, open)
+    local a = self._resModule:SetDoubleResSwitch(TT, open)
     if a == RES_DUNGEON_CODE.RES_DUNGEON_SUCCEED then
       self._open = open
       self:SetOpen()
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeResDouble, self._open)
-    else
-      if a == RES_DUNGEON_CODE.RES_DUNGEON_DOUBLE_RES_NOT_ENOUGH then
-        self:OpenAndClose("str_res_instance_detail_double_no_enough")
-      else
-        if a == RES_DUNGEON_CODE.RES_DUNGEON_DOUBLE_RES_INVALID then
-          self:OpenAndClose("str_res_instance_detail_double_switch_error")
-        else
-          if a == RES_DUNGEON_CODE.RES_DUNGEON_AIRCRAFT_RESOURCE_ROOM_UNOPEN then
-            self:OpenAndClose("str_res_instance_detail_double_no_air")
-          end
-        end
-      end
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeResDouble, self._open)
+    elseif a == RES_DUNGEON_CODE.RES_DUNGEON_DOUBLE_RES_NOT_ENOUGH then
+      self:OpenAndClose("str_res_instance_detail_double_no_enough")
+    elseif a == RES_DUNGEON_CODE.RES_DUNGEON_DOUBLE_RES_INVALID then
+      self:OpenAndClose("str_res_instance_detail_double_switch_error")
+    elseif a == RES_DUNGEON_CODE.RES_DUNGEON_AIRCRAFT_RESOURCE_ROOM_UNOPEN then
+      self:OpenAndClose("str_res_instance_detail_double_no_air")
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainStateMenu.Refresh = function(self)
-  -- function num : 0_4
-  local doubleCount = (self._resModule):GetDoubleResNum()
+function UIMainStateMenu:Refresh()
+  local doubleCount = self._resModule:GetDoubleResNum()
   if doubleCount <= 0 then
     self:Send(false)
   end
   self:SetOpen()
 end
-
-

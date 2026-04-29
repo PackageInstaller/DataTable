@@ -1,32 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_change_shader_value_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangeShaderValue", BuffViewBase)
 BuffViewChangeShaderValue = BuffViewChangeShaderValue
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeShaderValue.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewChangeShaderValue:PlayView(TT)
   local buffResult = self._buffResult
   local entity = self._entity
   if not entity:HasView() then
-    return 
+    return
   end
-  local root = (GameObjectHelper.FindChild)((((entity:View()).ViewWrapper).GameObject).transform, buffResult:GetRoot())
+  local root = GameObjectHelper.FindChild(entity:View().ViewWrapper.GameObject.transform, buffResult:GetRoot())
   if not root then
-    return 
+    return
   end
   local renderer = root:GetComponentInChildren(typeof(UnityEngine.MeshRenderer))
   if not renderer then
-    return 
+    return
   end
   local material = renderer.sharedMaterial
   if not material then
-    return 
+    return
   end
   material:SetFloat(buffResult:GetParam(), buffResult:GetBlood() / 100)
 end
-
-

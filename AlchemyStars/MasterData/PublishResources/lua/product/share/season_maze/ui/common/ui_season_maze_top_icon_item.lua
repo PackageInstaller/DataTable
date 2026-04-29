@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/common/ui_season_maze_top_icon_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeTopIconItem", UICustomWidget)
 UISeasonMazeTopIconItem = UISeasonMazeTopIconItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeTopIconItem.InitWidget = function(self)
-  -- function num : 0_0
+function UISeasonMazeTopIconItem:InitWidget()
   self._lvTex = self:GetUIComponent("UILocalizationText", "LvTex")
   self._rateVal = self:GetUIComponent("Image", "RateVal")
   self._rateTex = self:GetUIComponent("UILocalizationText", "rateTex")
@@ -23,187 +16,133 @@ UISeasonMazeTopIconItem.InitWidget = function(self)
   self._moneyAddGo = self:GetGameObject("MoneyAddGo")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTopIconItem.OnShow = function(self)
-  -- function num : 0_1
+function UISeasonMazeTopIconItem:OnShow()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTopIconItem.OnSeasonMazeExpChange = function(self, attType)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC14: Unhandled construct in 'MakeBoolean' P1
-
-  if (attType == SeasonMazeAttrType.SMAT_Exp or attType == SeasonMazeAttrType.SMAT_Lv) and self._type == SeasonMazeTopIconType.Lv then
-    self:SetLv()
-  end
-  -- DECOMPILER ERROR at PC35: Unhandled construct in 'MakeBoolean' P1
-
-  if (attType == SeasonMazeAttrType.SMAT_Gold or attType == SeasonMazeAttrType.SMAT_Gold_Round_Add) and (self._type == SeasonMazeTopIconType.Money or self._type == SeasonMazeTopIconType.MoneyAdd) then
-    self:SetMoney()
-  end
-  if attType == SeasonMazeAttrType.SMAT_Ms and self._type == SeasonMazeTopIconType.Ms then
+function UISeasonMazeTopIconItem:OnSeasonMazeExpChange(attType)
+  if attType == SeasonMazeAttrType.SMAT_Exp or attType == SeasonMazeAttrType.SMAT_Lv then
+    if self._type == SeasonMazeTopIconType.Lv then
+      self:SetLv()
+    end
+  elseif attType == SeasonMazeAttrType.SMAT_Gold or attType == SeasonMazeAttrType.SMAT_Gold_Round_Add then
+    if self._type == SeasonMazeTopIconType.Money or self._type == SeasonMazeTopIconType.MoneyAdd then
+      self:SetMoney()
+    end
+  elseif attType == SeasonMazeAttrType.SMAT_Ms and self._type == SeasonMazeTopIconType.Ms then
     self:SetMs()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTopIconItem.SetData = function(self, type, sp, callback, seasonObj)
-  -- function num : 0_3
+function UISeasonMazeTopIconItem:SetData(type, sp, callback, seasonObj)
   self._type = type
   self._callback = callback
   self._sp = sp
   self._seasonObj = seasonObj
-  self._com = (self._seasonObj):GetMazeComponent()
-  self._comCfgID = (self._com):GetComponentCfgId()
-  self._comInfo = (self._com):GetComponentInfo()
+  self._com = self._seasonObj:GetMazeComponent()
+  self._comCfgID = self._com:GetComponentCfgId()
+  self._comInfo = self._com:GetComponentInfo()
   self:SetLv()
   self:SetMoney()
   self:SetMs()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTopIconItem.GetLvCfg = function(self, lv)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_season_maze_lv)({ComponentID = self._comCfgID, Lv = lv})
+function UISeasonMazeTopIconItem:GetLvCfg(lv)
+  local cfgs = Cfg.cfg_component_season_maze_lv({
+    ComponentID = self._comCfgID,
+    Lv = lv
+  })
   if cfgs and next(cfgs) then
     return cfgs[1]
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTopIconItem.GetMaxLv = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_season_maze_lv)({ComponentID = self._comCfgID})
-  return (table.count)(cfgs)
+function UISeasonMazeTopIconItem:GetMaxLv()
+  local cfgs = Cfg.cfg_component_season_maze_lv({
+    ComponentID = self._comCfgID
+  })
+  return table.count(cfgs)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTopIconItem.SetLv = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._lvGo):SetActive(self._type == SeasonMazeTopIconType.Lv)
+function UISeasonMazeTopIconItem:SetLv()
+  self._lvGo:SetActive(self._type == SeasonMazeTopIconType.Lv)
   if self._type == SeasonMazeTopIconType.Lv then
     local lvMax = false
-    self._currentLv = (self._com):GetAttrValue(SeasonMazeAttrType.SMAT_Lv)
-    local currentExp = (self._com):GetAttrValue(SeasonMazeAttrType.SMAT_Exp)
+    self._currentLv = self._com:GetAttrValue(SeasonMazeAttrType.SMAT_Lv)
+    local currentExp = self._com:GetAttrValue(SeasonMazeAttrType.SMAT_Exp)
     local maxLv = self:GetMaxLv()
     if maxLv <= self._currentLv then
       lvMax = true
     end
     local cfg = self:GetLvCfg(self._currentLv)
     local nextExp = cfg.Exp
-    local rate, rateTex = nil, nil
+    local rate, rateTex
     if lvMax then
       rate = 1
       rateTex = "MAX"
     else
       rate = currentExp / nextExp
-      local rateInt = (math.floor)(rate * 100)
+      local rateInt = math.floor(rate * 100)
       rateTex = currentExp .. "/" .. nextExp
     end
-    ;
-    (self._lvTex):SetText("LV." .. self._currentLv)
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._rateVal).fillAmount = rate
-    ;
-    (self._rateTex):SetText(rateTex)
+    self._lvTex:SetText("LV." .. self._currentLv)
+    self._rateVal.fillAmount = rate
+    self._rateTex:SetText(rateTex)
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTopIconItem.SetMoney = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._moneyGo):SetActive(self._type == SeasonMazeTopIconType.Money or self._type == SeasonMazeTopIconType.MoneyAdd)
-  do
-    if self._type == SeasonMazeTopIconType.Money or self._type == SeasonMazeTopIconType.MoneyAdd then
-      local num = (self._com):GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
-      ;
-      (self._moneyNumberTex):SetText(num)
+function UISeasonMazeTopIconItem:SetMoney()
+  self._moneyGo:SetActive(self._type == SeasonMazeTopIconType.Money or self._type == SeasonMazeTopIconType.MoneyAdd)
+  if self._type == SeasonMazeTopIconType.Money or self._type == SeasonMazeTopIconType.MoneyAdd then
+    local num = self._com:GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
+    self._moneyNumberTex:SetText(num)
+  end
+  self._moneyAddGo:SetActive(self._type == SeasonMazeTopIconType.MoneyAdd)
+  if self._type == SeasonMazeTopIconType.MoneyAdd then
+    local addTex
+    local add = self._com:GetAttrValue(SeasonMazeAttrType.SMAT_Gold_Round_Add)
+    if add < 0 then
+      addTex = "<color=#f15454>" .. add .. "</color>"
+    elseif add == 0 then
+      addTex = "<color=#ffffff>+" .. add .. "</color>"
+    else
+      addTex = "<color=#45c97f>+" .. add .. "</color>"
     end
-    ;
-    (self._moneyAddGo):SetActive(self._type == SeasonMazeTopIconType.MoneyAdd)
-    if self._type == SeasonMazeTopIconType.MoneyAdd then
-      local addTex = nil
-      local add = (self._com):GetAttrValue(SeasonMazeAttrType.SMAT_Gold_Round_Add)
-      if add < 0 then
-        addTex = "<color=#f15454>" .. add .. "</color>"
-      elseif add == 0 then
-        addTex = "<color=#ffffff>+" .. add .. "</color>"
-      else
-        addTex = "<color=#45c97f>+" .. add .. "</color>"
-      end
-      ;
-      (self._addMoneyTex):SetText(addTex)
-    end
-    -- DECOMPILER ERROR: 8 unprocessed JMP targets
+    self._addMoneyTex:SetText(addTex)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTopIconItem.SetMs = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (self._msGo):SetActive(self._type == SeasonMazeTopIconType.Ms)
-  do
-    if self._type == SeasonMazeTopIconType.Ms then
-      local ms = (self._com):GetAttrValue(SeasonMazeAttrType.SMAT_Ms)
-      ;
-      (self._msNumberTex):SetText(ms)
-    end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UISeasonMazeTopIconItem:SetMs()
+  self._msGo:SetActive(self._type == SeasonMazeTopIconType.Ms)
+  if self._type == SeasonMazeTopIconType.Ms then
+    local ms = self._com:GetAttrValue(SeasonMazeAttrType.SMAT_Ms)
+    self._msNumberTex:SetText(ms)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTopIconItem.OnHide = function(self)
-  -- function num : 0_9
+function UISeasonMazeTopIconItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTopIconItem.MoneyIconOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonMazeTopIconItem:MoneyIconOnClick(go)
   if self._callback then
-    (self._callback)(SeasonMazeTopIconType.Money, go)
+    self._callback(SeasonMazeTopIconType.Money, go)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTopIconItem.MsIconOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonMazeTopIconItem:MsIconOnClick(go)
   if self._callback then
-    (self._callback)(SeasonMazeTopIconType.Ms, go)
+    self._callback(SeasonMazeTopIconType.Ms, go)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTopIconItem.AddMoneyIconOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
+function UISeasonMazeTopIconItem:AddMoneyIconOnClick(go)
   if self._callback then
-    (self._callback)(SeasonMazeTopIconType.MoneyAdd, go)
+    self._callback(SeasonMazeTopIconType.MoneyAdd, go)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTopIconItem.LvOnClick = function(self, go)
-  -- function num : 0_13
+function UISeasonMazeTopIconItem:LvOnClick(go)
   if self._callback then
-    (self._callback)(self._type, go)
+    self._callback(self._type, go)
   end
 end
-
-

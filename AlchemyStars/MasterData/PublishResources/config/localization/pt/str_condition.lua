@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/pt/str_condition.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_condition_312 = "Aurorian alcança a Ascensão {1} Lv. {2}", str_condition_313 = "Aurorian atinge o avanço {1}", str_condition_314 = "A afinidade auroriana atinge {1}", str_condition_318 = "Nível de equipamento auroriano atinge {1}"}
+local config = {
+  str_condition_312 = "Aurorian alcança a Ascensão {1} Lv. {2}",
+  str_condition_313 = "Aurorian atinge o avanço {1}",
+  str_condition_314 = "A afinidade auroriana atinge {1}",
+  str_condition_318 = "Nível de equipamento auroriano atinge {1}"
+}
 return config
-

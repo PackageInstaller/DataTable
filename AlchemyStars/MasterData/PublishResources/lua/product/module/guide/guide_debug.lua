@@ -1,57 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/guide/guide_debug.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GuideDebug", Object)
 GuideDebug = GuideDebug
--- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
 GuideDebug.Enable = nil
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
 GuideDebug.LastGuide = nil
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
 GuideDebug.LastStep = nil
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
 GuideDebug.TestGudie = nil
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
 
-GuideDebug.LogGuide = function(guide)
-  -- function num : 0_0 , upvalues : _ENV
+function GuideDebug.LogGuide(guide)
   if not GuideDebug.Enable then
-    return 
+    return
   end
   if GuideDebug.LastGuide == guide then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
   GuideDebug.LastGuide = guide
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
   GuideDebug.LastStep = nil
-  ;
-  (Log.debug)("[GuideDebug] new Guide : " .. guide)
+  Log.debug("[GuideDebug] new Guide : " .. guide)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideDebug.LogStep = function(step)
-  -- function num : 0_1 , upvalues : _ENV
+function GuideDebug.LogStep(step)
   if not GuideDebug.Enable then
-    return 
+    return
   end
   if GuideDebug.LastStep == step then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
   GuideDebug.LastStep = step
-  ;
-  (Log.debug)("[GuideDebug] Guide : " .. GuideDebug.LastGuide .. " Step : " .. step)
+  Log.debug("[GuideDebug] Guide : " .. GuideDebug.LastGuide .. " Step : " .. step)
 end
-
-

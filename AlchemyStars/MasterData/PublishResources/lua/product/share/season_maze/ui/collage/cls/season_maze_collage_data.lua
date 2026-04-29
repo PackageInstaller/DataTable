@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/collage/cls/season_maze_collage_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeCollageData", UICustomWidget)
 SeasonMazeCollageData = SeasonMazeCollageData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeCollageData.Constructor = function(self)
-  -- function num : 0_0
+function SeasonMazeCollageData:Constructor()
   self._cfgId = 0
   self._cfg = nil
   self._unLockLv = 0
@@ -17,10 +10,7 @@ SeasonMazeCollageData.Constructor = function(self)
   self._bPreConditionUnlock = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCollageData.SetData = function(self, cfgId, type, cfg, unLockLv)
-  -- function num : 0_1
+function SeasonMazeCollageData:SetData(cfgId, type, cfg, unLockLv)
   self._cfgId = cfgId
   self._type = type
   self._cfg = cfg
@@ -28,106 +18,69 @@ SeasonMazeCollageData.SetData = function(self, cfgId, type, cfg, unLockLv)
   self._hasReadNew = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCollageData.GetCfgId = function(self)
-  -- function num : 0_2
+function SeasonMazeCollageData:GetCfgId()
   return self._cfgId
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCollageData.GetCfg = function(self)
-  -- function num : 0_3
+function SeasonMazeCollageData:GetCfg()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCollageData.GetShowOrder = function(self)
-  -- function num : 0_4
-  return (self._cfg).ShowOrder
+function SeasonMazeCollageData:GetShowOrder()
+  return self._cfg.ShowOrder
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCollageData.GetUnLockLv = function(self)
-  -- function num : 0_5
+function SeasonMazeCollageData:GetUnLockLv()
   return self._unLockLv
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCollageData.GetNew = function(self)
-  -- function num : 0_6
+function SeasonMazeCollageData:GetNew()
   return self._bNew
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCollageData.GetPreConditionUnlock = function(self)
-  -- function num : 0_7
+function SeasonMazeCollageData:GetPreConditionUnlock()
   return self._bPreConditionUnlock, self._unlockLevel
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCollageData.GetUnlock = function(self)
-  -- function num : 0_8
+function SeasonMazeCollageData:GetUnlock()
   return self._bUnlock
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCollageData.CheckState = function(self, moneyLv, preConditionTable)
-  -- function num : 0_9
+function SeasonMazeCollageData:CheckState(moneyLv, preConditionTable)
   self._bNew = false
   self._bPreConditionUnlock = preConditionTable.OK
   self._unlockLevel = preConditionTable.UnlockLevel
   if not self._bPreConditionUnlock then
     self._bUnlock = false
-    return 
+    return
   end
-  self._bUnlock = self._unLockLv <= moneyLv
+  self._bUnlock = moneyLv >= self._unLockLv
   if not self._bUnlock then
-    return 
+    return
   end
   if not self:_HasReadNew() then
     self._bNew = true
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCollageData.SetNewAsRead = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function SeasonMazeCollageData:SetNewAsRead()
   self._bNew = false
   local key = self:_GetPrefKey()
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+  UnityEngine.PlayerPrefs.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCollageData._GetPrefKey = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function SeasonMazeCollageData:_GetPrefKey()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local playerPrefsKey = pstId .. "collageNew_" .. self._type .. "_" .. self._cfgId
   return playerPrefsKey
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCollageData._HasReadNew = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function SeasonMazeCollageData:_HasReadNew()
   local key = self:_GetPrefKey()
   if self._hasReadNew then
     return self._hasReadNew
   end
-  self._hasReadNew = ((UnityEngine.PlayerPrefs).HasKey)(key)
+  self._hasReadNew = UnityEngine.PlayerPrefs.HasKey(key)
   return self._hasReadNew
 end
-
-

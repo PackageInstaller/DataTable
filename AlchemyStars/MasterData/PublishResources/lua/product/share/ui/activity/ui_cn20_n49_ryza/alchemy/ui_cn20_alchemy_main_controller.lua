@@ -1,51 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/alchemy/ui_cn20_alchemy_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20AlchemyMainController", UIController)
 UICN20AlchemyMainController = UICN20AlchemyMainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20AlchemyMainController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UICN20AlchemyMainController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN20AlchemyMainController:OnShow(uiParams)
   self._talkPopList = {}
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._talkPopList)[1] = "str_cn20_ryza_pop_1"
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._talkPopList)[2] = "str_cn20_ryza_pop_2"
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._talkPopList)[3] = "str_cn20_ryza_pop_3"
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._talkPopList)[4] = "str_cn20_ryza_pop_4"
+  self._talkPopList[1] = "str_cn20_ryza_pop_1"
+  self._talkPopList[2] = "str_cn20_ryza_pop_2"
+  self._talkPopList[3] = "str_cn20_ryza_pop_3"
+  self._talkPopList[4] = "str_cn20_ryza_pop_4"
   self._campaign = uiParams[1]
   self:InitWidget()
   self:InitUI()
-  ;
-  (self.bgAnim):Play("uieff_UICN20AlchemyMainController_idle01")
+  self.bgAnim:Play("uieff_UICN20AlchemyMainController_idle01")
   self:_CheckGuide()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN20AlchemyMainController:OnHide()
   if self.eventId ~= nil then
     self.eventId = nil
     self:UnLock("UICN20AlchemyMainController:_SetRyzaPopAndAudio")
@@ -53,35 +27,27 @@ UICN20AlchemyMainController.OnHide = function(self)
   self:DetachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.AfterUILayerChanged = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN20AlchemyMainController:AfterUILayerChanged(go)
   if not self.EnterShop then
-    return 
+    return
   end
-  local topui = ((GameGlobal.UIStateManager)()):IsTopUI(self:GetName())
+  local topui = GameGlobal.UIStateManager():IsTopUI(self:GetName())
   if topui then
     if self.curSelectFromula == nil then
       self:_CheckUnLockFormula()
       self:_RefreshFormulas()
-      return 
+      return
     else
       self:_CheckUnLockFormula()
       self:_RefreshFormulas()
-      ;
-      (self.formulaItemClick)(1)
-      ;
-      (self.curSelectFromula):SetSelect()
+      self.formulaItemClick(1)
+      self.curSelectFromula:SetSelect()
     end
     self.EnterShop = false
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.InitWidget = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UICN20AlchemyMainController:InitWidget()
   self._anim = self:GetUIComponent("Animation", "_anim")
   self.skipBtnText = self:GetUIComponent("UILocalizationText", "SkipBtnText")
   self.checkGetBtn = self:GetUIComponent("Image", "CheckGetBtn")
@@ -89,7 +55,7 @@ UICN20AlchemyMainController.InitWidget = function(self)
   self.reExtractBtn = self:GetUIComponent("Image", "ReExtractBtn")
   self.skipBtn = self:GetUIComponent("Image", "SkipBtn")
   self.guideImg = self:GetUIComponent("RawImageLoader", "GuideImg")
-  self.backBtns = (UIWidgetHelper.SpawnObject)(self, "backBtns", "UINewCommonTopButton")
+  self.backBtns = UIWidgetHelper.SpawnObject(self, "backBtns", "UINewCommonTopButton")
   self.synthesisText = self:GetUIComponent("UILocalizationText", "SynthesisText")
   self.quickModeToggle = self:GetUIComponent("Toggle", "Toggle")
   self.formulaPool = self:GetUIComponent("UISelectObjectPath", "FormulaPool")
@@ -110,172 +76,119 @@ UICN20AlchemyMainController.InitWidget = function(self)
   self.bgMask = self:GetUIComponent("Image", "bgMask")
   self.rawbg2 = self:GetUIComponent("CanvasGroup", "rawbg2")
   self.guideDumpStepGo = {}
-  -- DECOMPILER ERROR at PC140: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.guideDumpStepGo)[1] = self:GetGameObject("GuideListStep1")
-  -- DECOMPILER ERROR at PC145: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.guideDumpStepGo)[2] = self:GetGameObject("GuideRingStep2")
-  -- DECOMPILER ERROR at PC150: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.guideDumpStepGo)[3] = self:GetGameObject("GuideRingStep3")
-  -- DECOMPILER ERROR at PC155: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.guideDumpStepGo)[4] = self:GetGameObject("GuideRingStep4")
-  -- DECOMPILER ERROR at PC160: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.guideDumpStepGo)[5] = self:GetGameObject("GuideToggle")
+  self.guideDumpStepGo[1] = self:GetGameObject("GuideListStep1")
+  self.guideDumpStepGo[2] = self:GetGameObject("GuideRingStep2")
+  self.guideDumpStepGo[3] = self:GetGameObject("GuideRingStep3")
+  self.guideDumpStepGo[4] = self:GetGameObject("GuideRingStep4")
+  self.guideDumpStepGo[5] = self:GetGameObject("GuideToggle")
   self.bgAnim = self:GetUIComponent("Animation", "BgAnim")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.InitUI = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UICN20AlchemyMainController:InitUI()
   self:_SetRyzaPopAndAudio(1)
   self:_InitBackBtn()
   self:Init_QuickPutMode()
   self.curSelectFromula = nil
   self.UnLockFormula = {}
-  ;
-  (self._makeView):SetActive(false)
+  self._makeView:SetActive(false)
   self:_RefreshBgMask(false)
   local comcfgid = 506708108
-  do
-    if self._campaign then
-      local name = "alchemy"
-      self.alchemyCmpt = (UICN20N49Helper.GetComponent)(self._campaign, name)
-      self.cmptInfo = (self.alchemyCmpt):GetComponentInfo()
-      comcfgid = (self.alchemyCmpt):GetComponentCfgId()
-    end
-    self.allFormulaCfgs = (Cfg.cfg_component_alchemy_formula)({ComponentID = comcfgid})
-    self.itemModule = (GameGlobal.GetModule)(ItemModule)
-    self:_CheckUnLockFormula()
-    self:_RefreshFormulas()
-    self._curFormulaUsingMat = {}
-    self.selectMatPop = (self.topPool):SpawnObject("UICN20SelectMatPopItem")
-    ;
-    (self.selectMatPop):SetPopActive(false)
-    self.unlessMatPop = (self.unlessViewPool):SpawnObject("UICN20MatUnlessItem")
-    ;
-    (self.unlessMatPop):SetPopActive(false)
-    self.getMatPathPop = (self.getMatPathViewPool):SpawnObject("UICN20GetMatPopItem")
-    ;
-    (self.getMatPathPop):SetPopActive(false)
-    self.makeSucPop = (self.makeSucViewPool):SpawnObject("UICN20MakeSucItem")
-    ;
-    (self.makeSucPop):SetPopActive(false)
-    self.readyMakeCount = 0
+  if self._campaign then
+    local name = "alchemy"
+    self.alchemyCmpt = UICN20N49Helper.GetComponent(self._campaign, name)
+    self.cmptInfo = self.alchemyCmpt:GetComponentInfo()
+    comcfgid = self.alchemyCmpt:GetComponentCfgId()
   end
+  self.allFormulaCfgs = Cfg.cfg_component_alchemy_formula({ComponentID = comcfgid})
+  self.itemModule = GameGlobal.GetModule(ItemModule)
+  self:_CheckUnLockFormula()
+  self:_RefreshFormulas()
+  self._curFormulaUsingMat = {}
+  self.selectMatPop = self.topPool:SpawnObject("UICN20SelectMatPopItem")
+  self.selectMatPop:SetPopActive(false)
+  self.unlessMatPop = self.unlessViewPool:SpawnObject("UICN20MatUnlessItem")
+  self.unlessMatPop:SetPopActive(false)
+  self.getMatPathPop = self.getMatPathViewPool:SpawnObject("UICN20GetMatPopItem")
+  self.getMatPathPop:SetPopActive(false)
+  self.makeSucPop = self.makeSucViewPool:SpawnObject("UICN20MakeSucItem")
+  self.makeSucPop:SetPopActive(false)
+  self.readyMakeCount = 0
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_6
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
+function UICN20AlchemyMainController:OnUpdate(deltaTimeMS)
   if self.matRingPoolRectTf ~= nil and self.matPathPoolRectTf ~= nil then
-    (self.matPathPoolRectTf).anchoredPosition = (self.matRingPoolRectTf).anchoredPosition
+    self.matPathPoolRectTf.anchoredPosition = self.matRingPoolRectTf.anchoredPosition
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController._RefreshBgMask = function(self, high)
-  -- function num : 0_7
+function UICN20AlchemyMainController:_RefreshBgMask(high)
   if self.bgHigh == high then
-    return 
+    return
   end
   self.bgHigh = high
   if high then
-    (self.bgAnim):Play("uieff_UICN20AlchemyMainController_cut02")
+    self.bgAnim:Play("uieff_UICN20AlchemyMainController_cut02")
     self:_SetRyzaPopAndAudio(2)
   else
-    ;
-    (self.bgAnim):Play("uieff_UICN20AlchemyMainController_cut01")
+    self.bgAnim:Play("uieff_UICN20AlchemyMainController_cut01")
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.Init_QuickPutMode = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
-  local quickMode = (LocalDB.GetInt)("UICN20AlchemyQuickPutMode" .. open_id)
+function UICN20AlchemyMainController:Init_QuickPutMode()
+  local open_id = GameGlobal.GameLogic():GetOpenId()
+  local quickMode = LocalDB.GetInt("UICN20AlchemyQuickPutMode" .. open_id)
   if quickMode == nil then
-    (LocalDB.SetInt)("UICN20AlchemyQuickPutMode" .. open_id, 0)
+    LocalDB.SetInt("UICN20AlchemyQuickPutMode" .. open_id, 0)
     quickMode = 0
   end
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
   if quickMode == 0 then
-    (self.quickModeToggle).isOn = false
+    self.quickModeToggle.isOn = false
   else
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.quickModeToggle).isOn = true
+    self.quickModeToggle.isOn = true
   end
-  self.OntoggleValueChanged = function(isOn)
-    -- function num : 0_8_0 , upvalues : _ENV, open_id, self
+  
+  function self.OntoggleValueChanged(isOn)
     if isOn then
-      (LocalDB.SetInt)("UICN20AlchemyQuickPutMode" .. open_id, 1)
+      LocalDB.SetInt("UICN20AlchemyQuickPutMode" .. open_id, 1)
       self:Lock("UICN20AlchemyMainController:Task_ONEPIECE_PutShow")
-      ;
-      ((GameGlobal.TaskManager)()):StartTask(self.Task_ONEPIECE_PutShow, self)
+      GameGlobal.TaskManager():StartTask(self.Task_ONEPIECE_PutShow, self)
     else
-      ;
-      (LocalDB.SetInt)("UICN20AlchemyQuickPutMode" .. open_id, 0)
+      LocalDB.SetInt("UICN20AlchemyQuickPutMode" .. open_id, 0)
     end
   end
-
-  ;
-  ((self.quickModeToggle).onValueChanged):AddListener(self.OntoggleValueChanged)
+  
+  self.quickModeToggle.onValueChanged:AddListener(self.OntoggleValueChanged)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController._Get_MaxCanMakeCount = function(self)
-  -- function num : 0_9
+function UICN20AlchemyMainController:_Get_MaxCanMakeCount()
   if self.curSelectFromula == nil then
-    return 
+    return
   end
-  local canMakeCount = (self.curSelectFromula):GetCanMakeCount()
+  local canMakeCount = self.curSelectFromula:GetCanMakeCount()
   if canMakeCount < 0 then
     canMakeCount = 0
   end
   return canMakeCount
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController._CheckUnLockFormula = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (table.clear)(self.UnLockFormula)
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
-  for i = 1, (table.count)(self.allFormulaCfgs) do
-    local cfg = (self.allFormulaCfgs)[i]
-    local count = (self.itemModule):GetItemCount(cfg.ID)
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R7 in 'UnsetPending'
-
-    if count > 0 then
-      (self.UnLockFormula)[#self.UnLockFormula + 1] = cfg.ID
+function UICN20AlchemyMainController:_CheckUnLockFormula()
+  table.clear(self.UnLockFormula)
+  self.itemModule = GameGlobal.GetModule(ItemModule)
+  for i = 1, table.count(self.allFormulaCfgs) do
+    local cfg = self.allFormulaCfgs[i]
+    local count = self.itemModule:GetItemCount(cfg.ID)
+    if 0 < count then
+      self.UnLockFormula[#self.UnLockFormula + 1] = cfg.ID
     end
   end
   self:_SortFormulas()
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+  local guideModule = GameGlobal.GetModule(GuideModule)
   local guideDone = guideModule:IsGuideDone(2004911)
   if not guideDone then
     local forms = {}
     forms[1] = 8800221
     for i = 1, #self.UnLockFormula do
-      local curForm = (self.UnLockFormula)[i]
+      local curForm = self.UnLockFormula[i]
       if curForm ~= 8800221 then
         forms[#forms + 1] = curForm
       end
@@ -284,37 +197,29 @@ UICN20AlchemyMainController._CheckUnLockFormula = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController._SortFormulas = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  (table.sort)(self.UnLockFormula, function(a, b)
-    -- function num : 0_11_0 , upvalues : _ENV, self
-    local aFormulaCfg = (Cfg.cfg_component_alchemy_formula)[a]
-    local bFormulaCfg = (Cfg.cfg_component_alchemy_formula)[b]
+function UICN20AlchemyMainController:_SortFormulas()
+  table.sort(self.UnLockFormula, function(a, b)
+    local aFormulaCfg = Cfg.cfg_component_alchemy_formula[a]
+    local bFormulaCfg = Cfg.cfg_component_alchemy_formula[b]
     local aCanMakeCount = self:_CalcuCanCount(aFormulaCfg.Materials)
     local bCanMakeCount = self:_CalcuCanCount(bFormulaCfg.Materials)
-    if bCanMakeCount >= aCanMakeCount then
-      do return (aCanMakeCount <= 0 or bCanMakeCount <= 0 or aCanMakeCount <= 0) and bCanMakeCount <= 0 end
-      local aAlemCfg = ((Cfg.cfg_component_alchemy_item)({FormulaID = a}))[1]
-      local bAlemCfg = ((Cfg.cfg_component_alchemy_item)({FormulaID = b}))[1]
-      if bAlemCfg.Quality >= aAlemCfg.Quality then
-        do return aAlemCfg.Quality == bAlemCfg.Quality end
-        if bAlemCfg.Price >= aAlemCfg.Price then
-          do return aAlemCfg.Price == bAlemCfg.Price end
-          do return a < b end
-          -- DECOMPILER ERROR: 7 unprocessed JMP targets
-        end
-      end
+    if 0 < aCanMakeCount and 0 < bCanMakeCount then
+    elseif 0 < aCanMakeCount or 0 < bCanMakeCount then
+      return aCanMakeCount > bCanMakeCount
     end
-  end
-)
+    local aAlemCfg = Cfg.cfg_component_alchemy_item({FormulaID = a})[1]
+    local bAlemCfg = Cfg.cfg_component_alchemy_item({FormulaID = b})[1]
+    if aAlemCfg.Quality ~= bAlemCfg.Quality then
+      return aAlemCfg.Quality > bAlemCfg.Quality
+    end
+    if aAlemCfg.Price ~= bAlemCfg.Price then
+      return aAlemCfg.Price > bAlemCfg.Price
+    end
+    return a < b
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController._CalcuCanCount = function(self, mats)
-  -- function num : 0_12 , upvalues : _ENV
+function UICN20AlchemyMainController:_CalcuCanCount(mats)
   local matList = {}
   for i = 1, #mats do
     if matList[mats[i]] ~= nil then
@@ -325,9 +230,9 @@ UICN20AlchemyMainController._CalcuCanCount = function(self, mats)
   end
   local canCount = 0
   local matCanCountList = {}
-  for itemid,singleCount in pairs(matList) do
-    local canUseCount = (self.itemModule):GetItemCount(itemid)
-    local singleMatCanCount = (math.floor)(canUseCount / singleCount)
+  for itemid, singleCount in pairs(matList) do
+    local canUseCount = self.itemModule:GetItemCount(itemid)
+    local singleMatCanCount = math.floor(canUseCount / singleCount)
     if singleMatCanCount == nil then
       singleMatCanCount = 0
     end
@@ -335,286 +240,232 @@ UICN20AlchemyMainController._CalcuCanCount = function(self, mats)
   end
   canCount = matCanCountList[1]
   for i = 2, #matCanCountList do
-    if matCanCountList[i] < canCount then
+    if canCount > matCanCountList[i] then
       canCount = matCanCountList[i]
     end
   end
   return canCount
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController._SetRyzaPopAndAudio = function(self, Index)
-  -- function num : 0_13 , upvalues : _ENV
-  ((self.pop).gameObject):SetActive(true)
-  local str = (self._talkPopList)[Index]
-  ;
-  (self.popText):SetText((StringTable.Get)(str))
+function UICN20AlchemyMainController:_SetRyzaPopAndAudio(Index)
+  self.pop.gameObject:SetActive(true)
+  local str = self._talkPopList[Index]
+  self.popText:SetText(StringTable.Get(str))
   self:Lock("UICN20AlchemyMainController:_SetRyzaPopAndAudio")
   self.lockPop = true
-  self.eventId = ((GameGlobal.Timer)()):AddEvent(1000, function()
-    -- function num : 0_13_0 , upvalues : self
+  self.eventId = GameGlobal.Timer():AddEvent(1000, function()
     if self.eventId ~= nil then
-      ((self.pop).gameObject):SetActive(false)
+      self.pop.gameObject:SetActive(false)
     end
     self:UnLock("UICN20AlchemyMainController:_SetRyzaPopAndAudio")
     self.lockPop = false
     self.eventId = nil
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.Task_ONEPIECE_PutShow = function(self, TT)
-  -- function num : 0_14 , upvalues : _ENV
-  local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
-  local quickMode = (LocalDB.GetInt)("UICN20AlchemyQuickPutMode" .. open_id)
+function UICN20AlchemyMainController:Task_ONEPIECE_PutShow(TT)
+  local open_id = GameGlobal.GameLogic():GetOpenId()
+  local quickMode = LocalDB.GetInt("UICN20AlchemyQuickPutMode" .. open_id)
   if quickMode == 1 then
-    local criItem1 = (self.AllRingItem)[1]
-    local criItem2 = (self.AllRingItem)[2]
+    local criItem1 = self.AllRingItem[1]
+    local criItem2 = self.AllRingItem[2]
     if criItem1 and criItem2 then
       if not criItem1.putItem or not criItem2.putItem then
         YIELD(TT, 500)
         if not criItem1.putItem then
           local itemid = criItem1.itemCfgId
-          local canUseCount = (self.itemModule):GetItemCount(itemid)
+          local canUseCount = self.itemModule:GetItemCount(itemid)
           local usingCount = self:_GetUsingCount(itemid)
           canUseCount = canUseCount - usingCount
-          if canUseCount > 0 then
+          if 0 < canUseCount then
             criItem1:Refresh_PutShow()
             self:_AddUsingCount(itemid, 1)
             self:_RefreshRingsLock(1)
           end
         end
-        do
-          YIELD(TT, 50)
-          if not criItem2.putItem then
-            local itemid = criItem2.itemCfgId
-            local canUseCount = (self.itemModule):GetItemCount(itemid)
+        YIELD(TT, 50)
+        if not criItem2.putItem then
+          local itemid = criItem2.itemCfgId
+          local canUseCount = self.itemModule:GetItemCount(itemid)
+          local usingCount = self:_GetUsingCount(itemid)
+          canUseCount = canUseCount - usingCount
+          if 0 < canUseCount then
+            criItem2:Refresh_PutShow()
+            self:_AddUsingCount(itemid, 1)
+            self:_RefreshRingsLock(2)
+          end
+        end
+        YIELD(TT, 50)
+        if criItem1.putItem and criItem2.putItem then
+          self:_RefreshBgMask(true)
+          YIELD(TT, 1000)
+        end
+      end
+      for i = 3, #self.AllRingItem do
+        local hexItem = self.AllRingItem[i]
+        if hexItem then
+          local itemid = hexItem.itemCfgId
+          local canUseCount = self.itemModule:GetItemCount(itemid)
+          local usingCount = self:_GetUsingCount(itemid)
+          canUseCount = canUseCount - usingCount
+          if 0 < canUseCount and not hexItem.isLock and not hexItem.putItem then
+            hexItem:Refresh_PutShow()
+            self:_AddUsingCount(itemid, 1)
+            self:_RefreshRingsLock(i)
+            self:LookAtTargetRing(i, 500)
+            YIELD(TT, 500)
+          end
+        end
+      end
+      for j = 1, 5 do
+        for i = 3, #self.AllRingItem do
+          local hexItem = self.AllRingItem[i]
+          if hexItem then
+            local itemid = hexItem.itemCfgId
+            local canUseCount = self.itemModule:GetItemCount(itemid)
             local usingCount = self:_GetUsingCount(itemid)
             canUseCount = canUseCount - usingCount
-            if canUseCount > 0 then
-              criItem2:Refresh_PutShow()
+            if 0 < canUseCount and not hexItem.isLock and not hexItem.putItem then
+              hexItem:Refresh_PutShow()
               self:_AddUsingCount(itemid, 1)
-              self:_RefreshRingsLock(2)
-            end
-          end
-          do
-            do
-              YIELD(TT, 50)
-              if criItem1.putItem and criItem2.putItem then
-                self:_RefreshBgMask(true)
-                YIELD(TT, 1000)
-              end
-              for i = 3, #self.AllRingItem do
-                local hexItem = (self.AllRingItem)[i]
-                if hexItem then
-                  local itemid = hexItem.itemCfgId
-                  local canUseCount = (self.itemModule):GetItemCount(itemid)
-                  local usingCount = self:_GetUsingCount(itemid)
-                  canUseCount = canUseCount - usingCount
-                  if canUseCount > 0 and not hexItem.isLock and not hexItem.putItem then
-                    hexItem:Refresh_PutShow()
-                    self:_AddUsingCount(itemid, 1)
-                    self:_RefreshRingsLock(i)
-                    self:LookAtTargetRing(i, 500)
-                    YIELD(TT, 500)
-                  end
-                end
-              end
-              for j = 1, 5 do
-                for i = 3, #self.AllRingItem do
-                  local hexItem = (self.AllRingItem)[i]
-                  if hexItem then
-                    local itemid = hexItem.itemCfgId
-                    local canUseCount = (self.itemModule):GetItemCount(itemid)
-                    local usingCount = self:_GetUsingCount(itemid)
-                    canUseCount = canUseCount - usingCount
-                    if canUseCount > 0 and not hexItem.isLock and not hexItem.putItem then
-                      hexItem:Refresh_PutShow()
-                      self:_AddUsingCount(itemid, 1)
-                      self:_RefreshRingsLock(i)
-                      self:LookAtTargetRing(i, 500)
-                      YIELD(TT, 500)
-                    end
-                  end
-                end
-              end
+              self:_RefreshRingsLock(i)
+              self:LookAtTargetRing(i, 500)
               YIELD(TT, 500)
-              self:UnLock("UICN20AlchemyMainController:Task_ONEPIECE_PutShow")
             end
           end
         end
       end
+      YIELD(TT, 500)
     end
   end
+  self:UnLock("UICN20AlchemyMainController:Task_ONEPIECE_PutShow")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController._RefreshFormulas = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  self.AllFormulaItem = (self.formulaPool):SpawnObjects("UICN20RyzaFormulaItem", (table.count)(self.UnLockFormula))
-  self.formulaItemClick = function(index)
-    -- function num : 0_15_0 , upvalues : self, _ENV
-    (self._makeView):SetActive(true)
+function UICN20AlchemyMainController:_RefreshFormulas()
+  self.AllFormulaItem = self.formulaPool:SpawnObjects("UICN20RyzaFormulaItem", table.count(self.UnLockFormula))
+  
+  function self.formulaItemClick(index)
+    self._makeView:SetActive(true)
     for i = 1, #self.AllFormulaItem do
       if index ~= i then
-        local item = (self.AllFormulaItem)[i]
+        local item = self.AllFormulaItem[i]
         item:SetUnSelect()
       end
     end
     self:_RefreshBgMask(false)
-    ;
-    (self.lockMakeImgObj):SetActive(true)
-    ;
-    (self.lockMakeImgObj2):SetActive(true)
-    self.curSelectFromula = (self.AllFormulaItem)[index]
+    self.lockMakeImgObj:SetActive(true)
+    self.lockMakeImgObj2:SetActive(true)
+    self.curSelectFromula = self.AllFormulaItem[index]
     self.curSelectMakeCount = 0
-    if (self.curSelectFromula):GetCanMakeCount() > 0 then
+    if 0 < self.curSelectFromula:GetCanMakeCount() then
       self.curSelectMakeCount = 1
     end
-    ;
-    (self.synthesisText):SetText("" .. 0)
-    ;
-    (table.clear)(self._curFormulaUsingMat)
+    self.synthesisText:SetText("" .. 0)
+    table.clear(self._curFormulaUsingMat)
     self:_RefreshFormulaRings(index)
     self:_CheckAllPathState()
     self:LookAtTargetRing_Init(500)
     self:Lock("UICN20AlchemyMainController:Task_ONEPIECE_PutShow")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.Task_ONEPIECE_PutShow, self)
+    GameGlobal.TaskManager():StartTask(self.Task_ONEPIECE_PutShow, self)
   end
-
-  for i = 1, (table.count)(self.UnLockFormula) do
-    local item = (self.AllFormulaItem)[i]
-    local cfg = (Cfg.cfg_component_alchemy_formula)[(self.UnLockFormula)[i]]
+  
+  for i = 1, table.count(self.UnLockFormula) do
+    local item = self.AllFormulaItem[i]
+    local cfg = Cfg.cfg_component_alchemy_formula[self.UnLockFormula[i]]
     item:SetData(cfg, self.formulaItemClick, i)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController._RefreshFormulaRings = function(self, index)
-  -- function num : 0_16 , upvalues : _ENV
-  local formulaCfg = (Cfg.cfg_component_alchemy_formula)[(self.UnLockFormula)[index]]
+function UICN20AlchemyMainController:_RefreshFormulaRings(index)
+  local formulaCfg = Cfg.cfg_component_alchemy_formula[self.UnLockFormula[index]]
   local ringCfgs = formulaCfg.Materials
-  self.curFormulaClientCfg = (Cfg.cfg_cn20_n49_game_client)[formulaCfg.ID]
+  self.curFormulaClientCfg = Cfg.cfg_cn20_n49_game_client[formulaCfg.ID]
   if self.curFormulaClientCfg == nil then
-    (Log.error)("curFormulaClientCfg IS NIL  配方id关联的素材环位置表 没有该配方数据，请策划配置", formulaCfg.ID)
-    self.curFormulaClientCfg = (Cfg.cfg_cn20_n49_game_client)[3400066]
+    Log.error("curFormulaClientCfg IS NIL  配方id关联的素材环位置表 没有该配方数据，请策划配置", formulaCfg.ID)
+    self.curFormulaClientCfg = Cfg.cfg_cn20_n49_game_client[3400066]
   end
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.matRingPoolRectTf).sizeDelta = Vector2(((self.curFormulaClientCfg).MapSize)[1], ((self.curFormulaClientCfg).MapSize)[2])
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.matPathPoolRectTf).sizeDelta = Vector2(((self.curFormulaClientCfg).MapSize)[1], ((self.curFormulaClientCfg).MapSize)[2])
+  self.matRingPoolRectTf.sizeDelta = Vector2(self.curFormulaClientCfg.MapSize[1], self.curFormulaClientCfg.MapSize[2])
+  self.matPathPoolRectTf.sizeDelta = Vector2(self.curFormulaClientCfg.MapSize[1], self.curFormulaClientCfg.MapSize[2])
   self.ringPosDataList = {}
-  for i = 1, #(self.curFormulaClientCfg).MatPosDatas do
-    local posData = ((self.curFormulaClientCfg).MatPosDatas)[i]
-    local pos = (string.split)(posData, ";")
-    -- DECOMPILER ERROR at PC64: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self.ringPosDataList)[i] = Vector2(pos[1], pos[2])
+  for i = 1, #self.curFormulaClientCfg.MatPosDatas do
+    local posData = self.curFormulaClientCfg.MatPosDatas[i]
+    local pos = string.split(posData, ";")
+    self.ringPosDataList[i] = Vector2(pos[1], pos[2])
   end
   self.ringLinkDataList = {}
-  for i = 1, #(self.curFormulaClientCfg).LinkData do
-    local linkData = ((self.curFormulaClientCfg).LinkData)[i]
-    local link = (string.split)(linkData, ";")
-    -- DECOMPILER ERROR at PC91: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self.ringLinkDataList)[i] = Vector2(tonumber(link[1]), tonumber(link[2]))
+  for i = 1, #self.curFormulaClientCfg.LinkData do
+    local linkData = self.curFormulaClientCfg.LinkData[i]
+    local link = string.split(linkData, ";")
+    self.ringLinkDataList[i] = Vector2(tonumber(link[1]), tonumber(link[2]))
   end
-  self.ringClickCB = function(index)
-    -- function num : 0_16_0 , upvalues : self
+  
+  function self.ringClickCB(index)
     self:_CheckCanPut(index)
     self:LookAtTargetRing(index, 500)
   end
-
-  self.AllRingItem = (self.matRingPool):SpawnObjects("UICN20MatRingItem", (table.count)(ringCfgs))
-  for i = 1, (table.count)(ringCfgs) do
+  
+  self.AllRingItem = self.matRingPool:SpawnObjects("UICN20MatRingItem", table.count(ringCfgs))
+  for i = 1, table.count(ringCfgs) do
     local isHex = false
-    if i > 2 then
+    if 2 < i then
       isHex = true
     end
     local ringCfgID = ringCfgs[i]
-    local item = (self.AllRingItem)[i]
-    local originPos = (self.ringPosDataList)[i]
+    local item = self.AllRingItem[i]
+    local originPos = self.ringPosDataList[i]
     item:SetData(ringCfgID, isHex, originPos, i, self.centerRect, self.ringClickCB)
   end
-  self.AllPathItem = (self.matPathPool):SpawnObjects("UICN20MatPathItem", (table.count)(self.ringLinkDataList))
-  for i = 1, (table.count)(self.ringLinkDataList) do
-    local data = (self.ringLinkDataList)[i]
-    local item = (self.AllPathItem)[i]
-    local pos = ((self.ringPosDataList)[data.x] + (self.ringPosDataList)[data.y]) / 2
-    local dir = (Vector2.Normalize)((self.ringPosDataList)[data.x] - (self.ringPosDataList)[data.y])
-    local angle = (Vector2.Angle)(dir, Vector2.left)
-    local dot = (Vector3.Cross)(Vector3(dir.x, dir.y, 0), Vector3.left)
-    if dot.z > 0 then
+  self.AllPathItem = self.matPathPool:SpawnObjects("UICN20MatPathItem", table.count(self.ringLinkDataList))
+  for i = 1, table.count(self.ringLinkDataList) do
+    local data = self.ringLinkDataList[i]
+    local item = self.AllPathItem[i]
+    local pos = (self.ringPosDataList[data.x] + self.ringPosDataList[data.y]) / 2
+    local dir = Vector2.Normalize(self.ringPosDataList[data.x] - self.ringPosDataList[data.y])
+    local angle = Vector2.Angle(dir, Vector2.left)
+    local dot = Vector3.Cross(Vector3(dir.x, dir.y, 0), Vector3.left)
+    if 0 < dot.z then
       angle = -angle
+    else
     end
-    local width = ((self.ringPosDataList)[data.x] - (self.ringPosDataList)[data.y]):Magnitude()
+    local width = (self.ringPosDataList[data.x] - self.ringPosDataList[data.y]):Magnitude()
     item:SetData(pos, angle, data, width)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.LookAtTargetRing_Init = function(self, time)
-  -- function num : 0_17 , upvalues : _ENV
+function UICN20AlchemyMainController:LookAtTargetRing_Init(time)
   self:Lock("UICN20AlchemyMainController:LookAtTargetRing_Init")
-  local item1 = (self.AllRingItem)[1]
-  local item2 = (self.AllRingItem)[2]
+  local item1 = self.AllRingItem[1]
+  local item2 = self.AllRingItem[2]
   local pos1 = item1:GetPos()
   local pos2 = item2:GetPos()
   local pos = (pos1 + pos2) / 2
-  local centerPos = (self.matRingPoolRectTf).anchoredPosition
+  local centerPos = self.matRingPoolRectTf.anchoredPosition
   local calcuePos = centerPos - pos
-  ;
-  (self.matRingPoolRectTf):DOAnchorPos(calcuePos, time / 1000, false)
+  self.matRingPoolRectTf:DOAnchorPos(calcuePos, time / 1000, false)
   self.lookAtTime = time
-  ;
-  ((GameGlobal.Timer)()):AddEvent(self.lookAtTime, function()
-    -- function num : 0_17_0 , upvalues : self
+  GameGlobal.Timer():AddEvent(self.lookAtTime, function()
     self:UnLock("UICN20AlchemyMainController:LookAtTargetRing_Init")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.LookAtTargetRing = function(self, index, time)
-  -- function num : 0_18 , upvalues : _ENV
-  local item = (self.AllRingItem)[index]
+function UICN20AlchemyMainController:LookAtTargetRing(index, time)
+  local item = self.AllRingItem[index]
   if item == nil then
-    return 
+    return
   end
   self:Lock("UICN20AlchemyMainController:LookAtTargetRing")
   local pos = item:GetPos()
-  local centerPos = (self.matRingPoolRectTf).anchoredPosition
+  local centerPos = self.matRingPoolRectTf.anchoredPosition
   local calcuePos = centerPos - pos
-  ;
-  (self.matRingPoolRectTf):DOAnchorPos(calcuePos, time / 1000, false)
+  self.matRingPoolRectTf:DOAnchorPos(calcuePos, time / 1000, false)
   self.lookAtTime = time
-  ;
-  ((GameGlobal.Timer)()):AddEvent(self.lookAtTime, function()
-    -- function num : 0_18_0 , upvalues : self
+  GameGlobal.Timer():AddEvent(self.lookAtTime, function()
     self:UnLock("UICN20AlchemyMainController:LookAtTargetRing")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController._GetUsingCount = function(self, id)
-  -- function num : 0_19
-  local cur = (self._curFormulaUsingMat)[id]
+function UICN20AlchemyMainController:_GetUsingCount(id)
+  local cur = self._curFormulaUsingMat[id]
   if cur == nil then
     return 0
   else
@@ -622,129 +473,90 @@ UICN20AlchemyMainController._GetUsingCount = function(self, id)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController._AddUsingCount = function(self, id, num)
-  -- function num : 0_20
-  local cur = (self._curFormulaUsingMat)[id]
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R4 in 'UnsetPending'
-
+function UICN20AlchemyMainController:_AddUsingCount(id, num)
+  local cur = self._curFormulaUsingMat[id]
   if cur == nil then
-    (self._curFormulaUsingMat)[id] = 1
+    self._curFormulaUsingMat[id] = 1
   else
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._curFormulaUsingMat)[id] = (self._curFormulaUsingMat)[id] + num
+    self._curFormulaUsingMat[id] = self._curFormulaUsingMat[id] + num
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController._RefreshAllUnSelect = function(self, selectId)
-  -- function num : 0_21
+function UICN20AlchemyMainController:_RefreshAllUnSelect(selectId)
   for i = 1, #self.AllRingItem do
-    local ringItem = (self.AllRingItem)[i]
+    local ringItem = self.AllRingItem[i]
     if selectId ~= i then
       ringItem:RefreshUnSelect()
     end
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController._CheckCanPut = function(self, id)
-  -- function num : 0_22 , upvalues : _ENV
-  local ringItem = (self.AllRingItem)[id]
+function UICN20AlchemyMainController:_CheckCanPut(id)
+  local ringItem = self.AllRingItem[id]
   local ringPos = ringItem:GetPos()
   local itemid = ringItem.itemCfgId
-  local canUseCount = (self.itemModule):GetItemCount(itemid)
+  local canUseCount = self.itemModule:GetItemCount(itemid)
   local usingCount = self:_GetUsingCount(itemid)
   canUseCount = canUseCount - usingCount
   self:_RefreshAllUnSelect(id)
   if ringItem.putItem then
     canUseCount = canUseCount + 1
   end
-  if canUseCount > 0 then
+  if 0 < canUseCount then
     if ringItem.isHex then
       if ringItem.putItem then
         self:Lock("UICN20AlchemyMainController:Refresh_HeXPutPop_2")
-        ;
-        ((GameGlobal.Timer)()):AddEvent(self.lookAtTime, function()
-    -- function num : 0_22_0 , upvalues : self, itemid, canUseCount, id, ringItem
-    (self.selectMatPop):SetData(itemid, canUseCount, id, ringItem, ringItem:GetPos(), function(uiitem, _itemid, _id)
-      -- function num : 0_22_0_0
-      uiitem:Refresh_PutShow()
-    end
-, function(uiitem)
-      -- function num : 0_22_0_1
-    end
-)
-    self:UnLock("UICN20AlchemyMainController:Refresh_HeXPutPop_2")
-  end
-)
+        GameGlobal.Timer():AddEvent(self.lookAtTime, function()
+          self.selectMatPop:SetData(itemid, canUseCount, id, ringItem, ringItem:GetPos(), function(uiitem, _itemid, _id)
+            uiitem:Refresh_PutShow()
+          end, function(uiitem)
+          end)
+          self:UnLock("UICN20AlchemyMainController:Refresh_HeXPutPop_2")
+        end)
       else
         self:Lock("UICN20AlchemyMainController:Refresh_HeXPutPop")
-        ;
-        ((GameGlobal.Timer)()):AddEvent(self.lookAtTime, function()
-    -- function num : 0_22_1 , upvalues : ringItem, self, itemid, canUseCount, id
-    ringItem:Refresh_HeXPutPop(false)
-    ;
-    (self.selectMatPop):SetData(itemid, canUseCount, id, ringItem, ringItem:GetPos(), function(uiitem, _itemid, _id)
-      -- function num : 0_22_1_0 , upvalues : self
-      uiitem:Refresh_PutShow()
-      self:_AddUsingCount(_itemid, 1)
-      self:_RefreshRingsLock(_id)
-    end
-, function(uiitem)
-      -- function num : 0_22_1_1
-      if not uiitem.putItem then
-        uiitem:Refresh_HeXPutPop(true)
-      end
-    end
-)
-    self:UnLock("UICN20AlchemyMainController:Refresh_HeXPutPop")
-  end
-)
+        GameGlobal.Timer():AddEvent(self.lookAtTime, function()
+          ringItem:Refresh_HeXPutPop(false)
+          self.selectMatPop:SetData(itemid, canUseCount, id, ringItem, ringItem:GetPos(), function(uiitem, _itemid, _id)
+            uiitem:Refresh_PutShow()
+            self:_AddUsingCount(_itemid, 1)
+            self:_RefreshRingsLock(_id)
+          end, function(uiitem)
+            if not uiitem.putItem then
+              uiitem:Refresh_HeXPutPop(true)
+            end
+          end)
+          self:UnLock("UICN20AlchemyMainController:Refresh_HeXPutPop")
+        end)
       end
     else
       ringItem:Refresh_PutShow()
       self:_AddUsingCount(itemid, 1)
       self:_RefreshRingsLock(id)
     end
-  else
-    if not ringItem.putItem and ringItem.isHex then
-      self:Lock("UICN20AlchemyMainController:Refresh_HeXPutPop_3")
-      ;
-      ((GameGlobal.Timer)()):AddEvent(self.lookAtTime, function()
-    -- function num : 0_22_2 , upvalues : self, itemid
-    (self.unlessMatPop):SetData(itemid)
-    self:UnLock("UICN20AlchemyMainController:Refresh_HeXPutPop_3")
-  end
-)
-    else
-      if not ringItem.putItem then
-        (ToastManager.ShowToast)((StringTable.Get)("str_cn20_ryza_uncan_formula"))
-      end
-    end
+  elseif not ringItem.putItem and ringItem.isHex then
+    self:Lock("UICN20AlchemyMainController:Refresh_HeXPutPop_3")
+    GameGlobal.Timer():AddEvent(self.lookAtTime, function()
+      self.unlessMatPop:SetData(itemid)
+      self:UnLock("UICN20AlchemyMainController:Refresh_HeXPutPop_3")
+    end)
+  elseif not ringItem.putItem then
+    ToastManager.ShowToast(StringTable.Get("str_cn20_ryza_uncan_formula"))
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController._RefreshRingsLock = function(self, id)
-  -- function num : 0_23 , upvalues : _ENV
+function UICN20AlchemyMainController:_RefreshRingsLock(id)
   local links = {}
-  for i = 1, (table.count)(self.ringLinkDataList) do
-    if self:_Check_PutRingCount() > 1 then
-      local link = (self.ringLinkDataList)[i]
+  for i = 1, table.count(self.ringLinkDataList) do
+    if 1 < self:_Check_PutRingCount() then
+      local link = self.ringLinkDataList[i]
       if link.x == id then
         links[#links + 1] = link.y
       end
       for i = 1, #self.AllRingItem do
-        local item = (self.AllRingItem)[i]
+        local item = self.AllRingItem[i]
         if item.putItem and item.index ~= id and link.x == item.index then
-          local lockItem = (self.AllRingItem)[link.y]
+          local lockItem = self.AllRingItem[link.y]
           if lockItem.isLock then
             links[#links + 1] = link.y
           end
@@ -754,18 +566,16 @@ UICN20AlchemyMainController._RefreshRingsLock = function(self, id)
   end
   for i = 1, #links do
     local id = links[i]
-    local item = (self.AllRingItem)[id]
+    local item = self.AllRingItem[id]
     if item then
       item:SetUnLock()
     end
   end
   if self:_Check_AllRingsPuted() then
-    (self.lockMakeImgObj):SetActive(false)
-    ;
-    (self.lockMakeImgObj2):SetActive(false)
+    self.lockMakeImgObj:SetActive(false)
+    self.lockMakeImgObj2:SetActive(false)
     self:_SetRyzaPopAndAudio(3)
-    ;
-    (self.synthesisText):SetText("" .. self.curSelectMakeCount)
+    self.synthesisText:SetText("" .. self.curSelectMakeCount)
   end
   self:_CheckAllPathState()
   if self:_Check_PutRingCount() >= 2 then
@@ -773,22 +583,17 @@ UICN20AlchemyMainController._RefreshRingsLock = function(self, id)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController._CheckAllPathState = function(self)
-  -- function num : 0_24
+function UICN20AlchemyMainController:_CheckAllPathState()
   for i = 1, #self.AllPathItem do
-    local item = (self.AllPathItem)[i]
+    local item = self.AllPathItem[i]
     local data = item:GetPathLinkData()
-    local ring1 = (self.AllRingItem)[data.x]
-    local ring2 = (self.AllRingItem)[data.y]
+    local ring1 = self.AllRingItem[data.x]
+    local ring2 = self.AllRingItem[data.y]
     if ring1 == nil or ring2 == nil then
       item:SetItemActive(false)
     else
       item:SetItemActive(true)
-      if not ring1.putItem then
-        local put = ring2.putItem
-      end
+      local put = ring1.putItem or ring2.putItem
       if put and not ring1.isLock and not ring2.isLock then
         item:SetHigh(true)
       else
@@ -798,132 +603,92 @@ UICN20AlchemyMainController._CheckAllPathState = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController._InitBackBtn = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  (self.backBtns):SetData(function()
-    -- function num : 0_25_0 , upvalues : self, _ENV
+function UICN20AlchemyMainController:_InitBackBtn()
+  self.backBtns:SetData(function()
     if self.lockPop then
-      return 
+      return
     end
-    ;
-    (self._anim):Play("uieff_UICN20AlchemyMainController_out")
-    self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(400, TimerTriggerCount.Once, function()
-      -- function num : 0_25_0_0 , upvalues : self
+    self._anim:Play("uieff_UICN20AlchemyMainController_out")
+    self._timerHandler = GameGlobal.Timer():AddEventTimes(400, TimerTriggerCount.Once, function()
       self:CloseDialog()
-    end
-)
-  end
-, function()
-    -- function num : 0_25_1 , upvalues : self, _ENV
+    end)
+  end, function()
     self:ShowDialog("UIIntroLoader", "UICN20N49AlchemyIntro", MaskType.MT_BlurMask)
-  end
-, nil, true, nil, false, nil)
+  end, nil, true, nil, false, nil)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.GetMaterialBtnOnClick = function(self, go)
-  -- function num : 0_26
-  (self.getMatPathPop):SetData(self._campaign)
+function UICN20AlchemyMainController:GetMaterialBtnOnClick(go)
+  self.getMatPathPop:SetData(self._campaign)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.TalentTreeBtnOnClick = function(self, go)
-  -- function num : 0_27
+function UICN20AlchemyMainController:TalentTreeBtnOnClick(go)
   self:ShowDialog("UICN20N49TreeController")
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.ShopBtnOnClick = function(self, go)
-  -- function num : 0_28
+function UICN20AlchemyMainController:ShopBtnOnClick(go)
   self.EnterShop = true
   self:ShowDialog("UICN20N49Ryza_Shop")
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.DelCountBtnOnClick = function(self, go)
-  -- function num : 0_29 , upvalues : _ENV
+function UICN20AlchemyMainController:DelCountBtnOnClick(go)
   if not self:_Check_AllRingsPuted() then
-    return 
+    return
   end
   self.curSelectMakeCount = self.curSelectMakeCount - 1
   if self.curSelectMakeCount < 1 then
     self.curSelectMakeCount = 1
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_cn20_n49_shop_list_sub_0"))
+    ToastManager.ShowToast(StringTable.Get("str_cn20_n49_shop_list_sub_0"))
   end
-  ;
-  (self.synthesisText):SetText("" .. self.curSelectMakeCount)
+  self.synthesisText:SetText("" .. self.curSelectMakeCount)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.AddCountBtnOnClick = function(self, go)
-  -- function num : 0_30 , upvalues : _ENV
+function UICN20AlchemyMainController:AddCountBtnOnClick(go)
   if not self:_Check_AllRingsPuted() then
-    return 
+    return
   end
   self.curSelectMakeCount = self.curSelectMakeCount + 1
-  local max = (self.curSelectFromula):GetCanMakeCount()
+  local max = self.curSelectFromula:GetCanMakeCount()
   if max < self.curSelectMakeCount then
     self.curSelectMakeCount = max
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_cn20_n49_shop_list_add_count_max"))
+    ToastManager.ShowToast(StringTable.Get("str_cn20_n49_shop_list_add_count_max"))
   end
-  ;
-  (self.synthesisText):SetText("" .. self.curSelectMakeCount)
+  self.synthesisText:SetText("" .. self.curSelectMakeCount)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.MaxCountBtnOnClick = function(self, go)
-  -- function num : 0_31
+function UICN20AlchemyMainController:MaxCountBtnOnClick(go)
   if not self:_Check_AllRingsPuted() then
-    return 
+    return
   end
-  local max = (self.curSelectFromula):GetCanMakeCount()
-  if self.curSelectMakeCount < max then
+  local max = self.curSelectFromula:GetCanMakeCount()
+  if max > self.curSelectMakeCount then
     self.curSelectMakeCount = max
   end
-  ;
-  (self.synthesisText):SetText("" .. self.curSelectMakeCount)
+  self.synthesisText:SetText("" .. self.curSelectMakeCount)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.CheckGetBtnOnClick = function(self, go)
-  -- function num : 0_32 , upvalues : _ENV
+function UICN20AlchemyMainController:CheckGetBtnOnClick(go)
   self:SetGuideDumpVisible(false)
   if self.curSelectFromula == nil then
-    return 
+    return
   end
-  local maxCanMake = (self.curSelectFromula):GetCanMakeCount()
+  local maxCanMake = self.curSelectFromula:GetCanMakeCount()
   if maxCanMake <= 0 then
-    return 
+    return
   end
-  if self.curSelectMakeCount <= 0 then
-    return 
+  if 0 >= self.curSelectMakeCount then
+    return
   end
   if not self:_Check_AllRingsPuted() then
-    return 
+    return
   end
   self:Lock("UICN20AlchemyMainController:OnMake")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._Task_OnMake, self, (self.curSelectFromula):GetCanMakeItemId(), self.curSelectMakeCount)
+  GameGlobal.TaskManager():StartTask(self._Task_OnMake, self, self.curSelectFromula:GetCanMakeItemId(), self.curSelectMakeCount)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController._Check_PutRingCount = function(self)
-  -- function num : 0_33
+function UICN20AlchemyMainController:_Check_PutRingCount()
   local putedCount = 0
   for i = 1, #self.AllRingItem do
-    local ringItem = (self.AllRingItem)[i]
+    local ringItem = self.AllRingItem[i]
     if ringItem.putItem then
       putedCount = putedCount + 1
     end
@@ -931,13 +696,10 @@ UICN20AlchemyMainController._Check_PutRingCount = function(self)
   return putedCount
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController._Check_AllRingsPuted = function(self)
-  -- function num : 0_34
+function UICN20AlchemyMainController:_Check_AllRingsPuted()
   local allPut = true
   for i = 1, #self.AllRingItem do
-    local ringItem = (self.AllRingItem)[i]
+    local ringItem = self.AllRingItem[i]
     if not ringItem.putItem then
       allPut = false
     end
@@ -945,99 +707,62 @@ UICN20AlchemyMainController._Check_AllRingsPuted = function(self)
   return allPut
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController._Task_OnMake = function(self, TT, itemId, num)
-  -- function num : 0_35 , upvalues : _ENV
+function UICN20AlchemyMainController:_Task_OnMake(TT, itemId, num)
   if self.alchemyCmpt ~= nil then
     local res = AsyncRequestRes:New()
-    local res1, responese = (self.alchemyCmpt):HandleAlchemyMakeup(TT, res, itemId, num)
+    local res1, responese = self.alchemyCmpt:HandleAlchemyMakeup(TT, res, itemId, num)
     if res:GetSucc() then
-      (self.makeSucPop):SetData(responese, function()
-    -- function num : 0_35_0 , upvalues : self
-    self:_CheckUnLockFormula()
-    self:_RefreshFormulas()
-    ;
-    (self.formulaItemClick)(1)
-    ;
-    (self.curSelectFromula):SetSelect()
-  end
-, self._campaign)
+      self.makeSucPop:SetData(responese, function()
+        self:_CheckUnLockFormula()
+        self:_RefreshFormulas()
+        self.formulaItemClick(1)
+        self.curSelectFromula:SetSelect()
+      end, self._campaign)
     else
-      ;
-      (Log.debug)("[FX] HandleAlchemyMakeup IS error,itemId:", itemId)
+      Log.debug("[FX] HandleAlchemyMakeup IS error,itemId:", itemId)
     end
+  else
   end
-  do
-    self:_SetRyzaPopAndAudio(4)
-    self:UnLock("UICN20AlchemyMainController:OnMake")
-  end
+  self:_SetRyzaPopAndAudio(4)
+  self:UnLock("UICN20AlchemyMainController:OnMake")
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.GuideListStep1OnClick = function(self)
-  -- function num : 0_36
-  ((self.AllFormulaItem)[1]):BgOnClick()
+function UICN20AlchemyMainController:GuideListStep1OnClick()
+  self.AllFormulaItem[1]:BgOnClick()
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.GuideRingStep2OnClick = function(self)
-  -- function num : 0_37
-  ((self.AllRingItem)[1]):AddBGOnClick()
+function UICN20AlchemyMainController:GuideRingStep2OnClick()
+  self.AllRingItem[1]:AddBGOnClick()
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.GuideRingStep3OnClick = function(self)
-  -- function num : 0_38
-  ((self.AllRingItem)[2]):AddBGOnClick()
+function UICN20AlchemyMainController:GuideRingStep3OnClick()
+  self.AllRingItem[2]:AddBGOnClick()
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.GuideRingStep4OnClick = function(self)
-  -- function num : 0_39
-  ((self.AllRingItem)[3]):AddBGOnClick()
+function UICN20AlchemyMainController:GuideRingStep4OnClick()
+  self.AllRingItem[3]:AddBGOnClick()
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.GuideToggleOnClick = function(self)
-  -- function num : 0_40
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.quickModeToggle).isOn = true
+function UICN20AlchemyMainController:GuideToggleOnClick()
+  self.quickModeToggle.isOn = true
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController._CheckGuide = function(self)
-  -- function num : 0_41 , upvalues : _ENV
+function UICN20AlchemyMainController:_CheckGuide()
   self:UnLock("UICN20AlchemyMainController:_CheckGuide")
   self:StartTask(function(TT)
-    -- function num : 0_41_0 , upvalues : _ENV, self
     YIELD(TT, 500)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUIShare.UICN20AlchemyMainController)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUIShare.UICN20AlchemyMainController)
     YIELD(TT, 33)
-    local guideModule = (GameGlobal.GetModule)(GuideModule)
+    local guideModule = GameGlobal.GetModule(GuideModule)
     if guideModule:IsGuideProcess(2004911) then
       self:SetGuideDumpVisible(true)
     end
     self:UnLock("UICN20AlchemyMainController:_CheckGuide")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyMainController.SetGuideDumpVisible = function(self, bVisible)
-  -- function num : 0_42 , upvalues : _ENV
-  for k,v in pairs(self.guideDumpStepGo) do
+function UICN20AlchemyMainController:SetGuideDumpVisible(bVisible)
+  for k, v in pairs(self.guideDumpStepGo) do
     v:SetActive(bVisible)
   end
 end
-
-

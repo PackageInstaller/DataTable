@@ -1,35 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/homelandpet_behavior_following.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homelandpet_behavior_base")
 _class("HomelandPetBehaviorFollowing", HomelandPetBehaviorBase)
 HomelandPetBehaviorFollowing = HomelandPetBehaviorFollowing
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetBehaviorFollowing.Constructor = function(self, behaviorType, pet)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomelandPetBehaviorFollowing.super).Constructor)(self, behaviorType, pet)
+function HomelandPetBehaviorFollowing:Constructor(behaviorType, pet)
+  HomelandPetBehaviorFollowing.super.Constructor(self, behaviorType, pet)
   self._fixedTime = 500
   self._yieldTime = 0
   self._stopDis = 2
   self._runDis = 5
   self._isMoving = false
-  self._petTransform = (self._pet):AgentTransform()
+  self._petTransform = self._pet:AgentTransform()
   self._moveComponent = self:GetComponent(HomelandPetComponentType.Move)
   self._animationComponent = self:GetComponent(HomelandPetComponentType.Animation)
   self._speedState = nil
   self._followPosOffset = Vector3(0, 0, 0)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFollowing.Enter = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((HomelandPetBehaviorFollowing.super).Enter)(self)
-  local followList = ((self._homelandClient):PetManager()):GetFollowPets()
-  local petid = (self._pet):PstID()
+function HomelandPetBehaviorFollowing:Enter()
+  HomelandPetBehaviorFollowing.super.Enter(self)
+  local followList = self._homelandClient:PetManager():GetFollowPets()
+  local petid = self._pet:PstID()
   local followIdx = 1
   for i = 1, #followList do
     local _pet = followList[i]
@@ -38,126 +28,93 @@ HomelandPetBehaviorFollowing.Enter = function(self)
       break
     end
   end
-  do
-    local followMgr = (self._homelandClient):HomePetFollowManager()
-    self._followPosOffset = followMgr:GetPosOffset(followIdx)
-    self._followRot = followMgr:GetRot(followIdx)
-    if self._followPosOffset then
-      local character = (self._homelandClient):CharacterManager()
-      self._targetTransform = character:GetCharacterTransform()
-    else
-      do
-        if followIdx == 1 then
-          local character = (self._homelandClient):CharacterManager()
-          self._targetTransform = character:GetCharacterTransform()
-        else
-          do
-            local followPet = followList[followIdx - 1]
-            self._targetTransform = followPet:AgentTransform()
-          end
-        end
-      end
-    end
+  local followMgr = self._homelandClient:HomePetFollowManager()
+  self._followPosOffset = followMgr:GetPosOffset(followIdx)
+  self._followRot = followMgr:GetRot(followIdx)
+  if self._followPosOffset then
+    local character = self._homelandClient:CharacterManager()
+    self._targetTransform = character:GetCharacterTransform()
+  elseif followIdx == 1 then
+    local character = self._homelandClient:CharacterManager()
+    self._targetTransform = character:GetCharacterTransform()
+  else
+    local followPet = followList[followIdx - 1]
+    self._targetTransform = followPet:AgentTransform()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFollowing.ReloadTarget = function(self)
-  -- function num : 0_2
-  local character = (self._homelandClient):CharacterManager()
+function HomelandPetBehaviorFollowing:ReloadTarget()
+  local character = self._homelandClient:CharacterManager()
   self._targetTransform = character:GetCharacterTransform()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFollowing.GetTargetPos = function(self)
-  -- function num : 0_3
-  local pos = (self._targetTransform).position
-  local rot = (self._targetTransform).rotation
+function HomelandPetBehaviorFollowing:GetTargetPos()
+  local pos = self._targetTransform.position
+  local rot = self._targetTransform.rotation
   local worldPos = pos + rot * self._followPosOffset
   return worldPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFollowing.Update = function(self, dms)
-  -- function num : 0_4 , upvalues : _ENV
-  ((HomelandPetBehaviorFollowing.super).Update)(self, dms)
-  local petPos = (self._petTransform).position
-  local charaPos = nil
+function HomelandPetBehaviorFollowing:Update(dms)
+  HomelandPetBehaviorFollowing.super.Update(self, dms)
+  local petPos = self._petTransform.position
+  local charaPos
   if self._followPosOffset then
     charaPos = self:GetTargetPos()
   else
-    charaPos = (self._targetTransform).position
+    charaPos = self._targetTransform.position
   end
   if self:Distance(petPos, charaPos) <= self._stopDis then
-    (self._moveComponent):Stop()
+    self._moveComponent:Stop()
     if self._speedState ~= 1 then
-      (self._animationComponent):PlayStand()
+      self._animationComponent:PlayStand()
       self._speedState = 1
       if self._followPosOffset and self._followRot then
-        local targetRot = (self._targetTransform).localRotation
+        local targetRot = self._targetTransform.localRotation
         local v3 = targetRot:ToEulerAngles()
         local tov3 = Vector3(v3.x, v3.y + self._followRot, v3.z)
-        ;
-        (self._petTransform):DOLocalRotate(tov3, 0.2)
+        self._petTransform:DOLocalRotate(tov3, 0.2)
       end
     end
-    do
-      ;
-      (self._animationComponent):Resting()
-      if self._yieldTime - dms < 0 then
-        -- DECOMPILER ERROR at PC79: Unhandled construct in 'MakeBoolean' P1
-
-        if self:Distance(petPos, charaPos) <= self._runDis and self._speedState ~= 2 then
-          (self._pet):SetSpeed((self._pet).walkSpeed)
+    self._animationComponent:Resting()
+  else
+    if self._yieldTime - dms < 0 then
+      if self:Distance(petPos, charaPos) <= self._runDis then
+        if self._speedState ~= 2 then
+          self._pet:SetSpeed(self._pet.walkSpeed)
           self._speedState = 2
         end
+      else
         if self._speedState ~= 3 then
-          (self._pet):SetSpeed((self._pet).runSpeed)
+          self._pet:SetSpeed(self._pet.runSpeed)
           self._speedState = 3
         end
-        if (self._pet):GetSpeed() ~= (self._pet).runSpeed then
-          (self._pet):SetSpeed((self._pet).runSpeed)
+        if self._pet:GetSpeed() ~= self._pet.runSpeed then
+          self._pet:SetSpeed(self._pet.runSpeed)
         end
-        self._yieldTime = self._fixedTime
-        ;
-        (self._moveComponent):SetTarget(charaPos)
-        ;
-        (self._moveComponent):Resting()
       end
-      self._yieldTime = self._yieldTime - dms
+      self._yieldTime = self._fixedTime
+      self._moveComponent:SetTarget(charaPos)
+      self._moveComponent:Resting()
     end
+    self._yieldTime = self._yieldTime - dms
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFollowing.Distance = function(self, v1, v2)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandPetBehaviorFollowing:Distance(v1, v2)
   local v1x = v1.x
   local v1z = v1.z
   local v2x = v2.x
   local v2z = v2.z
-  local dis = (math.sqrt)((v1x - v2x) * (v1x - v2x) + (v1z - v2z) * (v1z - v2z))
+  local dis = math.sqrt((v1x - v2x) * (v1x - v2x) + (v1z - v2z) * (v1z - v2z))
   return dis
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFollowing.CanInterrupt = function(self)
-  -- function num : 0_6
+function HomelandPetBehaviorFollowing:CanInterrupt()
   return true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFollowing.Exit = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((HomelandPetBehaviorFollowing.super).Exit)(self)
-  ;
-  (self._pet):SetSpeed((self._pet).walkSpeed)
+function HomelandPetBehaviorFollowing:Exit()
+  HomelandPetBehaviorFollowing.super.Exit(self)
+  self._pet:SetSpeed(self._pet.walkSpeed)
 end
-
-

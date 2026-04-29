@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_book/map/ui_book_role_map_represent_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBookRoleMapRepresentItem", UICustomWidget)
 UIBookRoleMapRepresentItem = UIBookRoleMapRepresentItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBookRoleMapRepresentItem.Constructor = function(self)
-  -- function num : 0_0
+function UIBookRoleMapRepresentItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapRepresentItem.OnShow = function(self)
-  -- function num : 0_1
+function UIBookRoleMapRepresentItem:OnShow()
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapRepresentItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIBookRoleMapRepresentItem:_GetComponents()
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapRepresentItem.SetData = function(self, petID, pic, callback)
-  -- function num : 0_3
+function UIBookRoleMapRepresentItem:SetData(petID, pic, callback)
   self._petID = petID
   self._pic = pic
   self._callback = callback
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapRepresentItem._InitComponents = function(self)
-  -- function num : 0_4
-  (self._icon):LoadImage(self._pic)
+function UIBookRoleMapRepresentItem:_InitComponents()
+  self._icon:LoadImage(self._pic)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapRepresentItem.IconOnClick = function(self)
-  -- function num : 0_5
+function UIBookRoleMapRepresentItem:IconOnClick()
   if self._callback then
-    (self._callback)(self._petID)
+    self._callback(self._petID)
   end
 end
-
-

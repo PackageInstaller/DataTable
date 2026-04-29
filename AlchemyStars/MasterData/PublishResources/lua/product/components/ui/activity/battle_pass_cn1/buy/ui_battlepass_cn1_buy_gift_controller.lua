@@ -1,210 +1,128 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_cn1/buy/ui_battlepass_cn1_buy_gift_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattlePassCN1BuyGiftController", UIController)
 UIBattlePassCN1BuyGiftController = UIBattlePassCN1BuyGiftController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattlePassCN1BuyGiftController._GetComponents = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBattlePassCN1BuyGiftController:_GetComponents()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UINewCommonTopButton")
-  self._homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
-  local hideHomeBtn = (self._homeLandModule):IsRunning()
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_0_0 , upvalues : self
+  self._homeLandModule = GameGlobal.GetUIModule(HomelandModule)
+  local hideHomeBtn = self._homeLandModule:IsRunning()
+  self._backBtns:SetData(function()
     self:_PlayAnimOut()
-  end
-, nil, nil, hideHomeBtn)
+  end, nil, nil, hideHomeBtn)
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1BuyGiftController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._campaign = (UIActivityBattlePassHelper.LoadDataOnEnter)(TT, res)
+function UIBattlePassCN1BuyGiftController:LoadDataOnEnter(TT, res, uiParams)
+  self._campaign = UIActivityBattlePassHelper.LoadDataOnEnter(TT, res)
   if res and not res:GetSucc() then
-    return 
+    return
   end
-  ;
-  (UIActivityBattlePassHelper.GetAllGiftLocalPrice)(self._campaign)
+  UIActivityBattlePassHelper.GetAllGiftLocalPrice(self._campaign)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1BuyGiftController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  if uiParams then
-    self.callback = uiParams[1]
-    self._cmptId = (UIActivityBattlePassHelper.Component_BuyGift)(self._campaign)
-    self:_GetComponents()
-    ;
-    (UIBattlePassStyleHelper.FitStyle_Widget)(self._campaign, R4_PC8)
-    -- DECOMPILER ERROR at PC21: Overwrote pending register: R4 in 'AssignReg'
-
-    ;
-    (UIActivityBattlePassHelper.SetSpecialImgInfo)(self._campaign, R4_PC8, "imgRoot", "img")
-    self:_Refresh()
-    self:_PlayAnimIn()
-    self:_AttachEvents()
-  end
+function UIBattlePassCN1BuyGiftController:OnShow(uiParams)
+  self.callback = uiParams and uiParams[1]
+  self._cmptId, self._component, self._componentInfo = UIActivityBattlePassHelper.Component_BuyGift(self._campaign)
+  self:_GetComponents()
+  UIBattlePassStyleHelper.FitStyle_Widget(self._campaign, self)
+  UIActivityBattlePassHelper.SetSpecialImgInfo(self._campaign, self, "imgRoot", "img")
+  self:_Refresh()
+  self:_PlayAnimIn()
+  self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1BuyGiftController.OnHide = function(self)
-  -- function num : 0_3
+function UIBattlePassCN1BuyGiftController:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1BuyGiftController._Refresh = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIBattlePassCN1BuyGiftController:_Refresh()
   self:_SetBoard("eliteBoardPool", CampaignGiftType.ECGT_ADVANCED)
   self:_SetBoard("deluxeBoardPool", CampaignGiftType.ECGT_LUXURY)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1BuyGiftController._SetBoard = function(self, widgetName, type)
-  -- function num : 0_5 , upvalues : _ENV
-  local buyState = (self._componentInfo).m_buy_state
-  if buyState ~= BuyGiftStateType.EBGST_ADVANCED or type ~= CampaignGiftType.ECGT_LUXURY or not CampaignGiftType.ECGT_ADDITIONALBUY then
-    local clickCallback = function(type)
-    -- function num : 0_5_0 , upvalues : self
+function UIBattlePassCN1BuyGiftController:_SetBoard(widgetName, type)
+  local buyState = self._componentInfo.m_buy_state
+  type = buyState == BuyGiftStateType.EBGST_ADVANCED and type == CampaignGiftType.ECGT_LUXURY and CampaignGiftType.ECGT_ADDITIONALBUY or type
+  
+  local function clickCallback(type)
     self:BuyBtnOnClick(type)
   end
-
-    local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIBattlePassCN1GiftBoard")
-    obj:SetData(self._campaign, type, clickCallback)
-  end
+  
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIBattlePassCN1GiftBoard")
+  obj:SetData(self._campaign, type, clickCallback)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1BuyGiftController.BuyBtnOnClick = function(self, type)
-  -- function num : 0_6 , upvalues : _ENV
-  local cmptId, component, componentInfo = (UIActivityBattlePassHelper.Component_BuyGift)(self._campaign)
+function UIBattlePassCN1BuyGiftController:BuyBtnOnClick(type)
+  local cmptId, component, componentInfo = UIActivityBattlePassHelper.Component_BuyGift(self._campaign)
   local giftId = component:GetFirstGiftIDByType(type)
   component:BuyGift(giftId, 1, type)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1BuyGiftController.PreviewBtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  (Log.info)("UIBattlePassCN1BuyGiftController:PreviewBtnOnClick")
-  ;
-  (UIActivityBattlePassHelper.OpenPreviewController)()
+function UIBattlePassCN1BuyGiftController:PreviewBtnOnClick(go)
+  Log.info("UIBattlePassCN1BuyGiftController:PreviewBtnOnClick")
+  UIActivityBattlePassHelper.OpenPreviewController()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1BuyGiftController._AttachEvents = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIBattlePassCN1BuyGiftController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.ActivityCurrencyBuySuccess, self._OnCurrencyBuySuccess)
   self:AttachEvent(GameEventType.PayGetLocalPriceFinished, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1BuyGiftController._DetachEvents = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIBattlePassCN1BuyGiftController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.ActivityCurrencyBuySuccess, self._OnCurrencyBuySuccess)
   self:DetachEvent(GameEventType.PayGetLocalPriceFinished, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1BuyGiftController._CheckActivityClose = function(self, id)
-  -- function num : 0_10 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIBattlePassCN1BuyGiftController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1BuyGiftController._OnCurrencyBuySuccess = function(self, id)
-  -- function num : 0_11 , upvalues : _ENV
-  local cmptId, component, componentInfo = (UIActivityBattlePassHelper.Component_BuyGift)(self._campaign)
-  local type = nil
+function UIBattlePassCN1BuyGiftController:_OnCurrencyBuySuccess(id)
+  local cmptId, component, componentInfo = UIActivityBattlePassHelper.Component_BuyGift(self._campaign)
+  local type
   for t = CampaignGiftType.ECGT_ADVANCED, CampaignGiftType.ECGT_ADDITIONALBUY do
     if component:GetFirstGiftIDByType(t) == id then
       type = t
       break
     end
   end
-  do
-    if type then
-      (UIActivityBattlePassHelper.OpenBuyGiftResultController)(type, function()
-    -- function num : 0_11_0 , upvalues : self, type, _ENV
-    if type ~= CampaignGiftType.ECGT_LUXURY and type ~= CampaignGiftType.ECGT_ADDITIONALBUY then
-      (self.callback)(not self.callback)
+  if type then
+    UIActivityBattlePassHelper.OpenBuyGiftResultController(type, function()
+      if self.callback then
+        self.callback(type == CampaignGiftType.ECGT_LUXURY or type == CampaignGiftType.ECGT_ADDITIONALBUY)
+      end
       self:_PlayAnimOut()
-      -- DECOMPILER ERROR: 2 unprocessed JMP targets
-    end
-  end
-)
-    else
-      ;
-      (Log.fatal)("UIBattlePassCN1BuyGiftController:_OnCurrencyBuySuccess(id) CampaignGiftType Wrong! id = ", id)
-    end
+    end)
+  else
+    Log.fatal("UIBattlePassCN1BuyGiftController:_OnCurrencyBuySuccess(id) CampaignGiftType Wrong! id = ", id)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1BuyGiftController._PlayAnimIn = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIBattlePassCN1BuyGiftController:_PlayAnimIn()
   self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-    (self._animation).enabled = true
-    ;
-    (self._animation):Play("UIeff_UIBattlePassCN1BuyGiftController_in")
+    self._animation.enabled = true
+    self._animation:Play("UIeff_UIBattlePassCN1BuyGiftController_in")
     YIELD(TT, 400)
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._animation).enabled = false
-  end
-)
+    self._animation.enabled = false
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1BuyGiftController._PlayAnimOut = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIBattlePassCN1BuyGiftController:_PlayAnimOut()
   if not self.view then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_13_0 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-    (self._animation).enabled = true
-    ;
-    (self._animation):Play("UIeff_UIBattlePassCN1BuyGiftController_out")
+    self._animation.enabled = true
+    self._animation:Play("UIeff_UIBattlePassCN1BuyGiftController_out")
     YIELD(TT, 167)
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._animation).enabled = false
+    self._animation.enabled = false
     if self.callback then
-      (self.callback)()
+      self.callback()
     end
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

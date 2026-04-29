@@ -1,38 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/backtrack/ui_season_backtrack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBackTrack", UIController)
 UISeasonBackTrack = UISeasonBackTrack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBackTrack.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonBackTrack:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrack.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonBackTrack:OnShow(uiParams)
   self.openCb = uiParams[2]
-  self._seasonModule = (GameGlobal.GetModule)(SeasonModule)
-  self._seasonUIModule = (GameGlobal.GetUIModule)(SeasonModule)
+  self._seasonModule = GameGlobal.GetModule(SeasonModule)
+  self._seasonUIModule = GameGlobal.GetUIModule(SeasonModule)
   self._seasonID = self:_GetCurSeasonID()
   self._preIndex = nil
   self._curIndex = nil
   self:InitWidget()
   self:_OnValue()
   if self.openCb then
-    (self.openCb)(true)
+    self.openCb(true)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrack.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonBackTrack:InitWidget()
   self._map = self:GetUIComponent("RawImageLoader", "Map")
   self._mapRect = self:GetUIComponent("RectTransform", "Map")
   self._arrowRect = self:GetUIComponent("RectTransform", "Arrow")
@@ -47,305 +34,225 @@ UISeasonBackTrack.InitWidget = function(self)
   self._transPointPool = self:GetUIComponent("UISelectObjectPath", "Map")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrack._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonBackTrack:_OnValue()
   self._cfgs = {}
-  local normalSeasonId = (self._seasonModule):GetCurSeasonID()
-  local cfgs = (Cfg.cfg_season_backtrack)({})
-  for _,cfg in pairs(cfgs) do
+  local normalSeasonId = self._seasonModule:GetCurSeasonID()
+  local cfgs = Cfg.cfg_season_backtrack({})
+  for _, cfg in pairs(cfgs) do
     if EDITOR then
-      (table.insert)(self._cfgs, cfg)
-    else
-      if cfg.ID <= normalSeasonId then
-        (table.insert)(self._cfgs, cfg)
-      end
+      table.insert(self._cfgs, cfg)
+    elseif normalSeasonId >= cfg.ID then
+      table.insert(self._cfgs, cfg)
     end
   end
-  ;
-  (table.sort)(self._cfgs, function(a, b)
-    -- function num : 0_3_0
-    do return b.ID < a.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  ;
-  (self._content):SpawnObjects("UISeasonBackTrackItem", #self._cfgs)
-  self._widgets = (self._content):GetAllSpawnList()
-  for index,cfg in ipairs(self._cfgs) do
-    ((self._widgets)[index]):SetData(self._seasonID, self._atlas, index, cfg, function(index)
-    -- function num : 0_3_1 , upvalues : self
-    self:_OnClickItem(index)
-  end
-, function(seasonID)
-    -- function num : 0_3_2 , upvalues : self
-    return self:_IsShowSign(seasonID)
-  end
-)
+  table.sort(self._cfgs, function(a, b)
+    return a.ID > b.ID
+  end)
+  self._content:SpawnObjects("UISeasonBackTrackItem", #self._cfgs)
+  self._widgets = self._content:GetAllSpawnList()
+  for index, cfg in ipairs(self._cfgs) do
+    self._widgets[index]:SetData(self._seasonID, self._atlas, index, cfg, function(index)
+      self:_OnClickItem(index)
+    end, function(seasonID)
+      return self:_IsShowSign(seasonID)
+    end)
   end
   for i = 1, #self._cfgs do
-    if ((self._cfgs)[i]).ID == self._seasonID then
+    if self._cfgs[i].ID == self._seasonID then
       self:_OnClickItem(i, true)
       break
     end
   end
-  do
-    self:Lock("UISeasonBackTrack_EnterAni")
-    self:StartTask(function(TT)
-    -- function num : 0_3_3 , upvalues : _ENV, self
-    for index,widget in ipairs(self._widgets) do
+  self:Lock("UISeasonBackTrack_EnterAni")
+  self:StartTask(function(TT)
+    for index, widget in ipairs(self._widgets) do
       widget:PlayEngerAni()
       widget:OnSelect(self._curIndex == index)
       YIELD(TT, 50)
     end
     self:UnLock("UISeasonBackTrack_EnterAni")
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-)
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrack._OnClickItem = function(self, index, dontPlayClickAni)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonBackTrack:_OnClickItem(index, dontPlayClickAni)
   if self._curIndex == index then
-    return 
+    return
   end
   self._selectTransPoint = nil
   self._preIndex = self._curIndex
   self._curIndex = index
-  local cfg = (self._cfgs)[self._curIndex]
+  local cfg = self._cfgs[self._curIndex]
   if cfg then
     self._seasonID = cfg.ID
-    ;
-    (self._map):LoadImage(cfg.MapImage)
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._mapRect).sizeDelta = Vector2((cfg.Size)[1], (cfg.Size)[2])
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._title).text = (StringTable.Get)(cfg.Title)
-    ;
-    (self._desc):RefreshText((StringTable.Get)(cfg.Desc))
+    self._map:LoadImage(cfg.MapImage)
+    self._mapRect.sizeDelta = Vector2(cfg.Size[1], cfg.Size[2])
+    self._title.text = StringTable.Get(cfg.Title)
+    self._desc:RefreshText(StringTable.Get(cfg.Desc))
     self:_RefreshTransPoint()
   end
   if not dontPlayClickAni then
     self:Lock("UISeasonBackTrack_ItemClickAni")
     self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self
-    for _index,widget in pairs(self._widgets) do
-      if _index == self._preIndex then
-        widget:OnSelect(false)
-      else
-        if _index == self._curIndex then
+      for _index, widget in pairs(self._widgets) do
+        if _index == self._preIndex then
+          widget:OnSelect(false)
+        elseif _index == self._curIndex then
           widget:OnSelect(true)
         end
       end
-    end
-    YIELD(TT, 400)
-    self:UnLock("UISeasonBackTrack_ItemClickAni")
-  end
-)
+      YIELD(TT, 400)
+      self:UnLock("UISeasonBackTrack_ItemClickAni")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrack._RefreshTransPoint = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonBackTrack:_RefreshTransPoint()
   local transCfgs = {}
-  local cfgs = (Cfg.cfg_season_mission)({BackTrackID = self._seasonID})
-  local normalSeasonId = ((self._seasonModule):GetCurSeasonID())
-  -- DECOMPILER ERROR at PC10: Overwrote pending register: R4 in 'AssignReg'
-
-  local backTrackNavPoint, unLockZoneIds = .end, nil
+  local cfgs = Cfg.cfg_season_mission({
+    BackTrackID = self._seasonID
+  })
+  local normalSeasonId = self._seasonModule:GetCurSeasonID()
+  local backTrackNavPoint, unLockZoneIds
   if self._seasonID ~= normalSeasonId then
     backTrackNavPoint = true
   else
-    local isBackTrack = (self._seasonUIModule):IsBackTrack()
+    local isBackTrack = self._seasonUIModule:IsBackTrack()
     if isBackTrack then
-      unLockZoneIds = (self._seasonUIModule):GetSnapNormalSeasonData("UnlockZoneIds")
+      unLockZoneIds = self._seasonUIModule:GetSnapNormalSeasonData("UnlockZoneIds")
     else
-      unLockZoneIds = (((self._seasonUIModule):SeasonManager()):SeasonMapManager()):UnlockZoneIDs()
+      unLockZoneIds = self._seasonUIModule:SeasonManager():SeasonMapManager():UnlockZoneIDs()
     end
   end
-  do
-    for k,cfg in pairs(cfgs) do
-      local id = cfg.ID
-      local cfgEventPoint = (Cfg.cfg_season_map_eventpoint)[id]
-      if cfgEventPoint and cfgEventPoint.EventPointType == SeasonEventPointType.NavPoint then
-        if backTrackNavPoint then
-          (table.insert)(transCfgs, cfgEventPoint)
-        else
-          for _,zoneId in pairs(unLockZoneIds) do
-            if zoneId == cfg.ZoneID then
-              (table.insert)(transCfgs, cfgEventPoint)
-              break
-            end
+  for k, cfg in pairs(cfgs) do
+    local id = cfg.ID
+    local cfgEventPoint = Cfg.cfg_season_map_eventpoint[id]
+    if cfgEventPoint and cfgEventPoint.EventPointType == SeasonEventPointType.NavPoint then
+      if backTrackNavPoint then
+        table.insert(transCfgs, cfgEventPoint)
+      else
+        for _, zoneId in pairs(unLockZoneIds) do
+          if zoneId == cfg.ZoneID then
+            table.insert(transCfgs, cfgEventPoint)
+            break
           end
         end
       end
     end
-    local len = #transCfgs
-    local widgets = (self._transPointPool):SpawnObjects("UISeasonTransPoint", len)
-    for i = 1, len do
-      local subWidget = widgets[i]
-      local cfg = transCfgs[i]
-      local pos = Vector2((cfg.Position)[1], (cfg.Position)[3])
-      pos = (((self._seasonUIModule):SeasonManager()):SeasonMapManager()):TransMapObjPos2D(pos)
-      local w = ((self._mapRect).sizeDelta).x
-      pos.x = pos.x * w
-      pos.y = pos.y * ((self._mapRect).sizeDelta).y
-      local scale = 1700 / w
-      subWidget:SetData(cfg, pos, scale, function(select)
-    -- function num : 0_5_0 , upvalues : self
-    if self._selectTransPoint then
-      (self._selectTransPoint):SetSelect(false)
-    end
-    self._selectTransPoint = select
-    ;
-    (self._selectTransPoint):SetSelect(true)
   end
-)
-    end
+  local len = #transCfgs
+  local widgets = self._transPointPool:SpawnObjects("UISeasonTransPoint", len)
+  for i = 1, len do
+    local subWidget = widgets[i]
+    local cfg = transCfgs[i]
+    local pos = Vector2(cfg.Position[1], cfg.Position[3])
+    pos = self._seasonUIModule:SeasonManager():SeasonMapManager():TransMapObjPos2D(pos)
+    local w = self._mapRect.sizeDelta.x
+    pos.x = pos.x * w
+    pos.y = pos.y * self._mapRect.sizeDelta.y
+    local scale = 1700 / w
+    subWidget:SetData(cfg, pos, scale, function(select)
+      if self._selectTransPoint then
+        self._selectTransPoint:SetSelect(false)
+      end
+      self._selectTransPoint = select
+      self._selectTransPoint:SetSelect(true)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrack._TransToTarget = function(self, position, eventId)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonBackTrack:_TransToTarget(position, eventId)
   if self._seasonID == self:_GetCurSeasonID() then
-    ((((self._seasonUIModule):SeasonManager()):SeasonPlayerManager()):GetPlayer()):TransToTarget(position, eventId)
+    self._seasonUIModule:SeasonManager():SeasonPlayerManager():GetPlayer():TransToTarget(position, eventId)
     self:CloseDialog()
   else
     local param = {}
     param.position = position
     param.eventId = eventId
     param.style = SeaonPlayerEnterStyle.Direct
-    if self._seasonID == (self:GetModule(SeasonModule)):GetCurSeasonID() then
-      ((self._seasonModule).uiModule):BackToCurSeason(param)
+    if self._seasonID == self:GetModule(SeasonModule):GetCurSeasonID() then
+      self._seasonModule.uiModule:BackToCurSeason(param)
     else
-      ;
-      ((self._seasonModule).uiModule):SeasonBackTrack(self._seasonID, param)
+      self._seasonModule.uiModule:SeasonBackTrack(self._seasonID, param)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrack.MapListBtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  local show = (self._scrollViewGO).activeSelf
-  ;
-  (self._scrollViewGO):SetActive(not show)
-  ;
-  (self._animation2):Stop()
+function UISeasonBackTrack:MapListBtnOnClick(go)
+  local show = self._scrollViewGO.activeSelf
+  self._scrollViewGO:SetActive(not show)
+  self._animation2:Stop()
   self:Lock("UISeasonBackTrack_ListBtnClick_Ani")
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : show, self, _ENV
     if show then
-      (self._animation2):Play("uieff_UISeasonBackTrack_list_close")
+      self._animation2:Play("uieff_UISeasonBackTrack_list_close")
     else
-      ;
-      (self._animation2):Play("uieff_UISeasonBackTrack_list_open")
+      self._animation2:Play("uieff_UISeasonBackTrack_list_open")
     end
     YIELD(TT, 300)
     self:UnLock("UISeasonBackTrack_ListBtnClick_Ani")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrack.GoBtnOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  if not (self._seasonModule):CheckSeasonAndMissionCoseAndJump() then
-    return 
+function UISeasonBackTrack:GoBtnOnClick(go)
+  if not self._seasonModule:CheckSeasonAndMissionCoseAndJump() then
+    return
   end
   if self._selectTransPoint then
-    local clickCfg = (self._selectTransPoint):GetCfg()
-    local pos = Vector3((clickCfg.Position)[1], (clickCfg.Position)[2], (clickCfg.Position)[3])
+    local clickCfg = self._selectTransPoint:GetCfg()
+    local pos = Vector3(clickCfg.Position[1], clickCfg.Position[2], clickCfg.Position[3])
     local offset = clickCfg.TransportPointSkew
-    local targetPos = (SeasonNavTransPoint.CalcNavPosition)(pos, offset)
+    local targetPos = SeasonNavTransPoint.CalcNavPosition(pos, offset)
     self:_TransToTarget(targetPos, clickCfg.ID)
-    return 
+    return
   end
-  do
-    if self._seasonID == self:_GetCurSeasonID() then
-      (ToastManager.ShowToast)((StringTable.Get)("str_season_backtrack_go_toast"))
+  if self._seasonID == self:_GetCurSeasonID() then
+    ToastManager.ShowToast(StringTable.Get("str_season_backtrack_go_toast"))
+  else
+    if not self._seasonModule.uiModule:IsBackTrack() then
+      self._seasonModule.uiModule:SeasonManager():SeasonPlayerManager():GetPlayer():SyncPosition()
+    end
+    if self._seasonID == self:GetModule(SeasonModule):GetCurSeasonID() then
+      self._seasonModule.uiModule:BackToCurSeason()
     else
-      if not ((self._seasonModule).uiModule):IsBackTrack() then
-        (((((self._seasonModule).uiModule):SeasonManager()):SeasonPlayerManager()):GetPlayer()):SyncPosition()
-      end
-      if self._seasonID == (self:GetModule(SeasonModule)):GetCurSeasonID() then
-        ((self._seasonModule).uiModule):BackToCurSeason()
-      else
-        ;
-        ((self._seasonModule).uiModule):SeasonBackTrack(self._seasonID)
-      end
+      self._seasonModule.uiModule:SeasonBackTrack(self._seasonID)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrack.CloseBtnOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonBackTrack:CloseBtnOnClick(go)
   self:Lock("UISeasonBackTrackCloseBtnOnClick")
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV
-    (self._animation):Play("uieff_UISeasonBackTrack_out")
+    self._animation:Play("uieff_UISeasonBackTrack_out")
     YIELD(TT, 200)
     self:CloseDialog()
     self:UnLock("UISeasonBackTrackCloseBtnOnClick")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrack.MapBtnOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonBackTrack:MapBtnOnClick(go)
   if self._selectTransPoint then
     self:Lock("MapBtnOnClick")
     self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self, _ENV
-    (self._selectTransPoint):SetSelect(false)
-    self._selectTransPoint = nil
-    YIELD(TT, 300)
-    self:UnLock("MapBtnOnClick")
-  end
-)
+      self._selectTransPoint:SetSelect(false)
+      self._selectTransPoint = nil
+      YIELD(TT, 300)
+      self:UnLock("MapBtnOnClick")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrack._GetCurSeasonID = function(self)
-  -- function num : 0_11
-  return ((self._seasonModule).uiModule):GetSeasonID()
+function UISeasonBackTrack:_GetCurSeasonID()
+  return self._seasonModule.uiModule:GetSeasonID()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrack._IsShowSign = function(self, seasonID)
-  -- function num : 0_12 , upvalues : _ENV
-  local tasks = ((((self._seasonModule).uiModule):SeasonManager()):SeasonMapManager()):GetEventPointsByType(SeasonEventPointType.Task)
+function UISeasonBackTrack:_IsShowSign(seasonID)
+  local tasks = self._seasonModule.uiModule:SeasonManager():SeasonMapManager():GetEventPointsByType(SeasonEventPointType.Task)
   if tasks then
-    for _,eventPoint in pairs(tasks) do
-      if (eventPoint:GetMissionCfg()).BackTrackID == seasonID then
+    for _, eventPoint in pairs(tasks) do
+      if eventPoint:GetMissionCfg().BackTrackID == seasonID then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
-
-

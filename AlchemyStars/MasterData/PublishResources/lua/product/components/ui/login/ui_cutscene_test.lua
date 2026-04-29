@@ -1,40 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/login/ui_cutscene_test.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICutsceneTestController", UIController)
 UICutsceneTestController = UICutsceneTestController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICutsceneTestController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UICutsceneTestController:OnShow(uiParams)
   self._storyIDTxt = self:GetUIComponent("Text", "Text")
   self._debugModeToggle = self:GetUIComponent("Toggle", "Toggle")
-  ;
-  (AudioHelperController.StopBGM)(1)
+  AudioHelperController.StopBGM(1)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICutsceneTestController.EnterStoryBtnOnClick = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local idStr = (self._storyIDTxt).text
+function UICutsceneTestController:EnterStoryBtnOnClick()
+  local idStr = self._storyIDTxt.text
   local idNumber = tonumber(idStr)
-  local debug = (self._debugModeToggle).isOn
+  local debug = self._debugModeToggle.isOn
   if idNumber then
-    local uiStoryModule = (self:GetModule(StoryModule)):GetUIModule()
+    local uiStoryModule = self:GetModule(StoryModule):GetUIModule()
     uiStoryModule:SetLevelID(idNumber)
-    ;
-    ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Cutscene_Enter)
+    GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Cutscene_Enter)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICutsceneTestController.ExitBtnOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICutsceneTestController:ExitBtnOnClick()
   self:SwitchState(UIStateType.UIMain)
 end
-
-

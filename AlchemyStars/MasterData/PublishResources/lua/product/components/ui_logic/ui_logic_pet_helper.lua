@@ -1,22 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui_logic/ui_logic_pet_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILogicPetHelper", Object)
 UILogicPetHelper = UILogicPetHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILogicPetHelper.Constructor = function(self)
-  -- function num : 0_0
+function UILogicPetHelper:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILogicPetHelper.ShowSkillEnergy = function(skillTriggerType)
-  -- function num : 0_1 , upvalues : _ENV
-  do return skillTriggerType ~= SkillTriggerType.LegendEnergy and skillTriggerType ~= SkillTriggerType.BuffLayer and skillTriggerType ~= SkillTriggerType.ColorPalette and skillTriggerType ~= SkillTriggerType.AlchemyEnergy end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UILogicPetHelper.ShowSkillEnergy(skillTriggerType)
+  return skillTriggerType ~= SkillTriggerType.LegendEnergy and skillTriggerType ~= SkillTriggerType.BuffLayer and skillTriggerType ~= SkillTriggerType.ColorPalette and skillTriggerType ~= SkillTriggerType.AlchemyEnergy
 end
-
-

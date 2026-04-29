@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/test_func/ui_test_func_homeland_story.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITestFuncHomelandStory", UICustomWidget)
 UITestFuncHomelandStory = UITestFuncHomelandStory
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITestFuncHomelandStory.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UITestFuncHomelandStory:OnShow(uiParams)
   self:ShowSaveHomeList()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncHomelandStory.OnHide = function(self)
-  -- function num : 0_1
+function UITestFuncHomelandStory:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncHomelandStory.ShowSaveHomeList = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UITestFuncHomelandStory:ShowSaveHomeList()
   self._homeStoryInp = self:GetUIComponent("InputField", "HomeStoryInputField")
-  local uiHomeModule = (GameGlobal.GetUIModule)(HomelandModule)
+  local uiHomeModule = GameGlobal.GetUIModule(HomelandModule)
   local saveStoryList = uiHomeModule:SaveStoryList()
   if saveStoryList and next(saveStoryList) then
     local showTex = ""
@@ -34,31 +21,20 @@ UITestFuncHomelandStory.ShowSaveHomeList = function(self)
         showTex = showTex .. ","
       end
     end
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._homeStoryInp).text = showTex
+    self._homeStoryInp.text = showTex
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncHomelandStory.HomeStorySaveBtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  local uiHomeModule = (GameGlobal.GetUIModule)(HomelandModule)
-  local tex = (self._homeStoryInp).text
-  local idStrs = (string.split)(tex, ",")
+function UITestFuncHomelandStory:HomeStorySaveBtnOnClick(go)
+  local uiHomeModule = GameGlobal.GetUIModule(HomelandModule)
+  local tex = self._homeStoryInp.text
+  local idStrs = string.split(tex, ",")
   local idList = {}
   for i = 1, #idStrs do
-    do
-      local succ = pcall(function()
-    -- function num : 0_3_0 , upvalues : _ENV, idStrs, i, idList
-    local id = tonumber(idStrs[i])
-    ;
-    (table.insert)(idList, id)
-  end
-)
-    end
+    local succ = pcall(function()
+      local id = tonumber(idStrs[i])
+      table.insert(idList, id)
+    end)
   end
   local tips = ""
   for i = 1, #idList do
@@ -68,10 +44,7 @@ UITestFuncHomelandStory.HomeStorySaveBtnOnClick = function(self, go)
       tips = tips .. ","
     end
   end
-  local count = (table.count)(idList)
-  ;
-  (ToastManager.ShowToast)("保存成功,触发剧情" .. count .. "个,ID:" .. tips)
+  local count = table.count(idList)
+  ToastManager.ShowToast("保存成功,触发剧情" .. count .. "个,ID:" .. tips)
   uiHomeModule:SaveStoryList(idList)
 end
-
-

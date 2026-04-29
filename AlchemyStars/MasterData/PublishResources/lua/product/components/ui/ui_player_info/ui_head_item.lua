@@ -1,49 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_player_info/ui_head_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHeadItem", UICustomWidget)
 UIHeadItem = UIHeadItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHeadItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHeadItem:OnShow(uiParams)
   self:AttachEvent(GameEventType.OnPlayerChangeHeadItemClick, self.OnPlayerChangeHeadItemClick)
   self:AttachEvent(GameEventType.HideHeadRedPoint, self.HideHeadRedPoint)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadItem.SetData = function(self, idx, headitem, isOpen, canUnLock, currid, callback)
-  -- function num : 0_1
+function UIHeadItem:SetData(idx, headitem, isOpen, canUnLock, currid, callback)
   self:_GetComponents()
   if headitem then
-    (self._uiRoot):SetActive(true)
+    self._uiRoot:SetActive(true)
     self._idx = idx
     self._headItem = headitem
-    self._headid = (self._headItem).m_nImageID
+    self._headid = self._headItem.m_nImageID
     self._callback = callback
     self._isOpen = isOpen
     self._canUnLock = canUnLock
     self._isSelect = self._headid == currid
     self:_OnValue()
   else
-    (self._uiRoot):SetActive(false)
+    self._uiRoot:SetActive(false)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadItem.OnHide = function(self)
-  -- function num : 0_2
+function UIHeadItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadItem._GetComponents = function(self)
-  -- function num : 0_3
+function UIHeadItem:_GetComponents()
   self._uiRoot = self:GetGameObject("icon")
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._iconRect = self:GetUIComponent("RectTransform", "icon")
@@ -52,84 +35,54 @@ UIHeadItem._GetComponents = function(self)
   self._goRedPoint = self:GetGameObject("UICommonRedPoint")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadItem._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg_head = (Cfg.cfg_role_head_image)[self._headid]
+function UIHeadItem:_OnValue()
+  local cfg_head = Cfg.cfg_role_head_image[self._headid]
   if cfg_head then
-    (self._icon):LoadImage(cfg_head.Icon)
-    ;
-    (HelperProxy:GetInstance()):GetHeadIconSizeWithTag(self._iconRect, cfg_head.Tag)
+    self._icon:LoadImage(cfg_head.Icon)
+    HelperProxy:GetInstance():GetHeadIconSizeWithTag(self._iconRect, cfg_head.Tag)
   else
-    ;
-    (Log.fatal)("###playerinfo - cfg_role_head_image is nil ! id ", self._headid)
+    Log.fatal("###playerinfo - cfg_role_head_image is nil ! id ", self._headid)
   end
   self:Select(self._isSelect)
   self:CheckLockState()
   self:FlushRed()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadItem.FlushRed = function(self)
-  -- function num : 0_5
+function UIHeadItem:FlushRed()
   local red = false
   if not self._isOpen and self._canUnLock then
     red = true
   end
-  ;
-  (self._goRedPoint):SetActive(red)
+  self._goRedPoint:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadItem.bgOnClick = function(self)
-  -- function num : 0_6
+function UIHeadItem:bgOnClick()
   if self._callback then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadItem.HideHeadRedPoint = function(self, id)
-  -- function num : 0_7
+function UIHeadItem:HideHeadRedPoint(id)
   if id == self._headid then
-    (self._goRedPoint):SetActive(false)
+    self._goRedPoint:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadItem.OnPlayerChangeHeadItemClick = function(self, headid)
-  -- function num : 0_8
+function UIHeadItem:OnPlayerChangeHeadItemClick(headid)
   self._isSelect = headid == self._headid
   self:Select(self._isSelect)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadItem.CheckLockState = function(self)
-  -- function num : 0_9
+function UIHeadItem:CheckLockState()
   local lock = true
   if self._isOpen then
     lock = false
-  else
-    if self._canUnLock then
-      lock = false
-    end
+  elseif self._canUnLock then
+    lock = false
   end
-  ;
-  (self._lock):SetActive(lock)
+  self._lock:SetActive(lock)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadItem.Select = function(self, select)
-  -- function num : 0_10
-  (self._select):SetActive(select)
+function UIHeadItem:Select(select)
+  self._select:SetActive(select)
 end
-
-

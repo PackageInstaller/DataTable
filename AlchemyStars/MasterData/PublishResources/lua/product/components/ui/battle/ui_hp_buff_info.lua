@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_hp_buff_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHPBuffInfo", UICustomWidget)
 UIHPBuffInfo = UIHPBuffInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHPBuffInfo.Constructor = function(self)
-  -- function num : 0_0
+function UIHPBuffInfo:Constructor()
   self._entityId = nil
   self._isBigHPSlider = false
   self._show_buff_interval_time = 2
@@ -31,24 +24,18 @@ UIHPBuffInfo.Constructor = function(self)
   self._onShow = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHPBuffInfo:Dispose()
   self._onShow = false
   if self.__playRefreshPageTask then
-    (TaskManager:GetInstance()):KillTask(self.__playRefreshPageTask)
+    TaskManager:GetInstance():KillTask(self.__playRefreshPageTask)
     self.__playRefreshPageTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo.OnShow = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
+function UIHPBuffInfo:OnShow()
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
   if not self._isBoss then
-    self._pageBuffCount = (((self._rectTransform).rect).width + BattleConst.HUDHPSliderBuffIconFullWidthOffset) // BattleConst.HUDHPSliderBuffIconWidth
+    self._pageBuffCount = (self._rectTransform.rect.width + BattleConst.HUDHPSliderBuffIconFullWidthOffset) // BattleConst.HUDHPSliderBuffIconWidth
   end
   self:_OnCreateBuffItemList()
   self._shieldRoot = self:GetGameObject("ShieldRoot")
@@ -58,21 +45,20 @@ UIHPBuffInfo.OnShow = function(self)
   self._brokenRoot = self:GetGameObject("BrokenRoot")
   if self._brokenRoot then
     self._brokenRootPath = self:GetUIComponent("UISelectObjectPath", "BrokenRoot")
-    ;
-    (self._brokenRoot):SetActive(false)
+    self._brokenRoot:SetActive(false)
   end
   self._bombRoot = self:GetGameObject("BombRoot")
   if self._bombRoot then
-    self._bombTransform = (self._bombRoot):GetComponent("RectTransform")
+    self._bombTransform = self._bombRoot:GetComponent("RectTransform")
     self._textBomb = self:GetUIComponent("UILocalizationText", "TextBomb")
   end
   self._antiRoot = self:GetGameObject("AntiRoot")
   if self._antiRoot then
-    self._antiTransform = (self._antiRoot):GetComponent("RectTransform")
+    self._antiTransform = self._antiRoot:GetComponent("RectTransform")
     self._textAnti = self:GetUIComponent("UILocalizationText", "TextAnti")
   end
-  local parent = (((self._rectTransform).transform).parent).parent
-  local chessHP = (parent.transform):Find("chessHP")
+  local parent = self._rectTransform.transform.parent.parent
+  local chessHP = parent.transform:Find("chessHP")
   if chessHP then
     self._chessHPTransform = chessHP
     self._chessHPRoot = chessHP.gameObject
@@ -80,8 +66,7 @@ UIHPBuffInfo.OnShow = function(self)
   self._blinkRoot = self:GetGameObject("BlinkRoot")
   if self._blinkRoot then
     self._blinkRootPath = self:GetUIComponent("UISelectObjectPath", "BlinkRoot")
-    ;
-    (self._blinkRoot):SetActive(false)
+    self._blinkRoot:SetActive(false)
   end
   self:AttachEvent(GameEventType.ChangeBuff, self.OnChangeBuff)
   self:AttachEvent(GameEventType.HPSliderBroken, self.OnHPSliderBroken)
@@ -90,26 +75,18 @@ UIHPBuffInfo.OnShow = function(self)
   self:AttachEvent(GameEventType.HPSliderBlink, self.OnHPSliderBlink)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo._OnCreateBuffItemList = function(self)
-  -- function num : 0_3
+function UIHPBuffInfo:_OnCreateBuffItemList()
   self._buffRootPath = self:GetUIComponent("UISelectObjectPath", "BuffRoot")
-  ;
-  (self._buffRootPath):SpawnObjects("UIHPBuffItem", self._pageBuffCount)
-  self._buffItemList = (self._buffRootPath):GetAllSpawnList()
+  self._buffRootPath:SpawnObjects("UIHPBuffItem", self._pageBuffCount)
+  self._buffItemList = self._buffRootPath:GetAllSpawnList()
   self._buffAnimationRootPath = self:GetUIComponent("UISelectObjectPath", "BuffAnimationRoot")
-  ;
-  (self._buffAnimationRootPath):SpawnObjects("UIHPBuffItem", self._pageBuffCount)
-  self._buffAnimationList = (self._buffAnimationRootPath):GetAllSpawnList()
+  self._buffAnimationRootPath:SpawnObjects("UIHPBuffItem", self._pageBuffCount)
+  self._buffAnimationList = self._buffAnimationRootPath:GetAllSpawnList()
   if self._isBigHPSlider then
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHPBuffInfo:OnHide()
   self:DetachEvent(GameEventType.ChangeBuff, self.OnChangeBuff)
   self:DetachEvent(GameEventType.HPSliderBroken, self.OnHPSliderBroken)
   self:DetachEvent(GameEventType.HPBombLayer, self.OnRefreshHPBombLayer)
@@ -117,27 +94,18 @@ UIHPBuffInfo.OnHide = function(self)
   self:DetachEvent(GameEventType.HPSliderBlink, self.OnHPSliderBlink)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo.OnOnwerEntityDead = function(self)
-  -- function num : 0_5
+function UIHPBuffInfo:OnOnwerEntityDead()
   self._entityId = nil
   self._buffViewInstanceList = {}
   self:_OnPlayCurPage()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo.SetData = function(self, entityId)
-  -- function num : 0_6
+function UIHPBuffInfo:SetData(entityId)
   self._buffViewInstanceList = {}
   self._entityId = entityId
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo.SetBossData = function(self, entityId)
-  -- function num : 0_7
+function UIHPBuffInfo:SetBossData(entityId)
   self._entityId = entityId
   self._isBigHPSlider = true
   self._show_buff_interval_time = 9999999
@@ -149,62 +117,52 @@ UIHPBuffInfo.SetBossData = function(self, entityId)
   self:OnChangeBuff()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo.OnChangeBuff = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIHPBuffInfo:OnChangeBuff()
   if not self._entityId then
-    return 
+    return
   end
-  local viewInstanceArray = (InnerGameHelperRender.GetUIBuffViewArray)(self._entityId, true)
+  local viewInstanceArray = InnerGameHelperRender.GetUIBuffViewArray(self._entityId, true)
   local viewInstanceIDArray = {}
-  for i,buffView in ipairs(viewInstanceArray) do
-    (table.insert)(viewInstanceIDArray, buffView:BuffID())
+  for i, buffView in ipairs(viewInstanceArray) do
+    table.insert(viewInstanceIDArray, buffView:BuffID())
   end
   local addBuffViewList = {}
   local removeBuffViewList = {}
-  for i,buffView in ipairs(self._buffViewInstanceList) do
-    if not (table.intable)(viewInstanceIDArray, buffView:BuffID()) then
-      (table.insert)(removeBuffViewList, buffView)
+  for i, buffView in ipairs(self._buffViewInstanceList) do
+    if not table.intable(viewInstanceIDArray, buffView:BuffID()) then
+      table.insert(removeBuffViewList, buffView)
     end
   end
-  for i,buffView in ipairs(viewInstanceArray) do
-    if not (table.intable)(removeBuffViewList, buffView) then
-      (table.insert)(addBuffViewList, buffView)
+  for i, buffView in ipairs(viewInstanceArray) do
+    if not table.intable(removeBuffViewList, buffView) then
+      table.insert(addBuffViewList, buffView)
     end
   end
-  for i,buffView in ipairs(addBuffViewList) do
+  for i, buffView in ipairs(addBuffViewList) do
     self:_OnRefreshBuff(true, buffView)
   end
-  for i,buffView in ipairs(removeBuffViewList) do
+  for i, buffView in ipairs(removeBuffViewList) do
     self:_OnRefreshBuff(false, buffView)
   end
-  if self._layerShieldViewInstance and not (table.intable)(viewInstanceArray, self._layerShieldViewInstance) then
+  if self._layerShieldViewInstance and not table.intable(viewInstanceArray, self._layerShieldViewInstance) then
     self:_ShowShieldBuff(true)
   end
   local t = {}
-  for _,v in ipairs(viewInstanceArray) do
+  for _, v in ipairs(viewInstanceArray) do
     t[v:BuffID()] = v:GetLayerCount() or 0
   end
-  ;
-  (InnerGameHelperRender.UISetHPBuffIcon)(self._entityId, t)
+  InnerGameHelperRender.UISetHPBuffIcon(self._entityId, t)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo._OnRefreshBuff = function(self, isAdd, buffViewInstance)
-  -- function num : 0_9
+function UIHPBuffInfo:_OnRefreshBuff(isAdd, buffViewInstance)
   if self:_OnSpecialBuffShow(buffViewInstance, not isAdd) then
-    return 
+    return
   end
   self:_OnUpdateBuffData(isAdd, buffViewInstance)
   self:_OnPlayBuff(isAdd)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo._OnSpecialBuffShow = function(self, buffViewInstance, remove)
-  -- function num : 0_10 , upvalues : _ENV
+function UIHPBuffInfo:_OnSpecialBuffShow(buffViewInstance, remove)
   if buffViewInstance:GetBuffEffectType() == BuffEffectType.LayerShield then
     self:_ShowShieldBuff(remove)
     return true
@@ -212,168 +170,133 @@ UIHPBuffInfo._OnSpecialBuffShow = function(self, buffViewInstance, remove)
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo._OnUpdateBuffData = function(self, isAdd, buffViewInstance)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHPBuffInfo:_OnUpdateBuffData(isAdd, buffViewInstance)
   self.removeIndex = 1
-  local oldBuffView = nil
+  local oldBuffView
   for i = 1, #self._buffViewInstanceList do
-    if buffViewInstance:BuffID() == ((self._buffViewInstanceList)[i]):BuffID() then
-      oldBuffView = (self._buffViewInstanceList)[i]
+    if buffViewInstance:BuffID() == self._buffViewInstanceList[i]:BuffID() then
+      oldBuffView = self._buffViewInstanceList[i]
       self.removeIndex = i
       break
     end
   end
-  do
-    if isAdd then
-      if buffViewInstance:GetLayerCount() == 0 and buffViewInstance:GetBuffEffectType() == BuffEffectType.DragonMark then
-        return 
-      end
-      if not oldBuffView or not (table.icontains)(self._buffViewInstanceList, oldBuffView) then
-        (table.insert)(self._buffViewInstanceList, buffViewInstance)
-      else
-        -- DECOMPILER ERROR at PC50: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._buffViewInstanceList)[self.removeIndex] = buffViewInstance
-      end
-    else
-      if oldBuffView then
-        self.curPageEndIndex = self._curPage * self._pageBuffCount
-        self.curPageStartIndex = (self._curPage - 1) * self._pageBuffCount + 1
-        self.backPreviousPage = false
-        ;
-        (table.removev)(self._buffViewInstanceList, oldBuffView)
-      end
+  if isAdd then
+    if buffViewInstance:GetLayerCount() == 0 and buffViewInstance:GetBuffEffectType() == BuffEffectType.DragonMark then
+      return
     end
-    self._buffViewInstanceList = self:OnSortBuffArray(self._buffViewInstanceList)
-    self:_GetPageCount()
+    if not oldBuffView or not table.icontains(self._buffViewInstanceList, oldBuffView) then
+      table.insert(self._buffViewInstanceList, buffViewInstance)
+    else
+      self._buffViewInstanceList[self.removeIndex] = buffViewInstance
+    end
+  elseif oldBuffView then
+    self.curPageEndIndex = self._curPage * self._pageBuffCount
+    self.curPageStartIndex = (self._curPage - 1) * self._pageBuffCount + 1
+    self.backPreviousPage = false
+    table.removev(self._buffViewInstanceList, oldBuffView)
   end
+  self._buffViewInstanceList = self:OnSortBuffArray(self._buffViewInstanceList)
+  self:_GetPageCount()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo._OnPlayBuff = function(self, isAdd)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHPBuffInfo:_OnPlayBuff(isAdd)
   if isAdd then
     self:_OnPlayCurPage()
   else
-    self.backPreviousPage = self._curPage * self._pageBuffCount < self.curPageStartIndex
+    self.backPreviousPage = self.curPageStartIndex > self._curPage * self._pageBuffCount
     if #self._buffViewInstanceList == 0 or self.backPreviousPage then
       self:_OnPlayCurPage()
-      return 
+      return
     end
     if self.removeIndex <= self.curPageEndIndex then
       local startIndex = 1
-      if self.curPageStartIndex < self.removeIndex then
+      if self.removeIndex > self.curPageStartIndex then
         startIndex = self.removeIndex - self.curPageStartIndex + 1
       end
-      local minCount = (math.min)(self._pageBuffCount, #self._buffViewInstanceList)
+      local minCount = math.min(self._pageBuffCount, #self._buffViewInstanceList)
       if minCount + 1 <= self._pageBuffCount then
         for i = minCount + 1, self._pageBuffCount do
-          do
-            local buffItem = (self._buffItemList)[i]
-            buffItem:OnHide()
-          end
+          local buffItem = self._buffItemList[i]
+          buffItem:OnHide()
         end
       end
       for i = startIndex, minCount do
-        (TaskManager:GetInstance()):CoreGameStartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : self, i, _ENV
-    local buffItem = (self._buffItemList)[i]
-    buffItem:OnHide()
-    local animationItem = self:_GetEmptyBuffAnimationItem()
-    local endPos = ((buffItem:GetGameObject()):GetComponent("Transform")).localPosition
-    local startPos = endPos + Vector3(self._show_buff_move_distance, 0, 0)
-    buffItem:SetTargetData((self._buffViewInstanceList)[i])
-    animationItem:DoMoveTween((self._buffViewInstanceList)[i], startPos, endPos, self._show_buff_move_time)
-    YIELD(TT, self._show_buff_move_time * 1000)
-    buffItem:RefreshData()
-  end
-)
+        TaskManager:GetInstance():CoreGameStartTask(function(TT)
+          local buffItem = self._buffItemList[i]
+          buffItem:OnHide()
+          local animationItem = self:_GetEmptyBuffAnimationItem()
+          local endPos = buffItem:GetGameObject():GetComponent("Transform").localPosition
+          local startPos = endPos + Vector3(self._show_buff_move_distance, 0, 0)
+          buffItem:SetTargetData(self._buffViewInstanceList[i])
+          animationItem:DoMoveTween(self._buffViewInstanceList[i], startPos, endPos, self._show_buff_move_time)
+          YIELD(TT, self._show_buff_move_time * 1000)
+          buffItem:RefreshData()
+        end)
       end
     else
       self:_OnPlayCurPage()
     end
   end
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo._GetPageCount = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  self._pageMax = (math.ceil)(#self._buffViewInstanceList / self._pageBuffCount)
+function UIHPBuffInfo:_GetPageCount()
+  self._pageMax = math.ceil(#self._buffViewInstanceList / self._pageBuffCount)
   if self._pageMax == 1 then
     self._curPage = 1
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo._GetEmptyBuffAnimationItem = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  for i,item in ipairs(self._buffAnimationList) do
+function UIHPBuffInfo:_GetEmptyBuffAnimationItem()
+  for i, item in ipairs(self._buffAnimationList) do
     if not item:IsInMoveTween() then
       return item
     end
   end
-  return (self._buffAnimationList)[#self._buffAnimationList]
+  return self._buffAnimationList[#self._buffAnimationList]
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo._OnPlayCurPage = function(self)
-  -- function num : 0_15
+function UIHPBuffInfo:_OnPlayCurPage()
   self._show_buff_delta_time = 0
   for i = 1, #self._buffItemList do
     local index = (self._curPage - 1) * self._pageBuffCount + i
-    local buffItem = (self._buffItemList)[i]
+    local buffItem = self._buffItemList[i]
     if index <= #self._buffViewInstanceList then
-      buffItem:SetData((self._buffViewInstanceList)[index])
+      buffItem:SetData(self._buffViewInstanceList[index])
     else
       buffItem:OnHide()
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo.OnRefreshBuffTime = function(self, deltaTime)
-  -- function num : 0_16
+function UIHPBuffInfo:OnRefreshBuffTime(deltaTime)
   if #self._buffViewInstanceList <= self._pageBuffCount then
-    return 
+    return
   end
   self._show_buff_delta_time = self._show_buff_delta_time + deltaTime
-  if self._show_buff_interval_time + self._show_buff_fade_time < self._show_buff_delta_time then
+  if self._show_buff_delta_time > self._show_buff_interval_time + self._show_buff_fade_time then
     self._show_buff_delta_time = self._show_buff_delta_time - self._show_buff_interval_time - self._show_buff_fade_time
     self:_PlayRefreshPage()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo._PlayRefreshPage = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIHPBuffInfo:_PlayRefreshPage()
   if self.__playRefreshPageTask then
-    (TaskManager:GetInstance()):KillTask(self.__playRefreshPageTask)
+    TaskManager:GetInstance():KillTask(self.__playRefreshPageTask)
   end
-  self.__playRefreshPageTask = (TaskManager:GetInstance()):CoreGameStartTask(function(TT)
-    -- function num : 0_17_0 , upvalues : self, _ENV
+  self.__playRefreshPageTask = TaskManager:GetInstance():CoreGameStartTask(function(TT)
     for i = 1, #self._buffItemList do
-      local buffItem = (self._buffItemList)[i]
+      local buffItem = self._buffItemList[i]
       buffItem:DoFadeTween(0, self._show_buff_fade_time / 2)
     end
     for i = 1, #self._buffAnimationList do
-      local buffItem = (self._buffAnimationList)[i]
+      local buffItem = self._buffAnimationList[i]
       buffItem:DoFadeTween(0, self._show_buff_fade_time / 2)
     end
     YIELD(TT, self._show_buff_fade_time / 2 * 1000)
     self:_GetPageCount()
-    if self._pageMax > 1 then
+    if 1 < self._pageMax then
       self._curPage = self._curPage + 1
-      if self._pageMax < self._curPage then
+      if self._curPage > self._pageMax then
         self._curPage = 1
       end
     else
@@ -381,260 +304,182 @@ UIHPBuffInfo._PlayRefreshPage = function(self)
     end
     self:_OnPlayCurPage()
     for i = 1, #self._buffItemList do
-      local buffItem = (self._buffItemList)[i]
+      local buffItem = self._buffItemList[i]
       buffItem:DoFadeTween(1, self._show_buff_fade_time / 2)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo._ShowShieldBuff = function(self, remove)
-  -- function num : 0_18 , upvalues : _ENV
+function UIHPBuffInfo:_ShowShieldBuff(remove)
   if not self._shieldRoot then
-    return 
+    return
   end
   local shieldLayer = 0
-  self._layerShieldViewInstance = (InnerGameHelperRender.GetSingleBuffByBuffEffect)(self._entityId, BuffEffectType.LayerShield)
-  shieldLayer = not self._layerShieldViewInstance or (self._layerShieldViewInstance):GetLayerCount() or 0
+  self._layerShieldViewInstance = InnerGameHelperRender.GetSingleBuffByBuffEffect(self._entityId, BuffEffectType.LayerShield)
+  if self._layerShieldViewInstance then
+    shieldLayer = self._layerShieldViewInstance:GetLayerCount() or 0
+  end
   if remove then
     shieldLayer = 0
   end
   if shieldLayer == self._shieldLayer then
-    return 
+    return
   end
   if shieldLayer < self._shieldLayer then
     if shieldLayer == 0 then
-      (self._rootAnim):Play("113")
-      ;
-      ((GameGlobal.TaskManager)()):CoreGameStartTask(self._delayHideShield, self)
-      ;
-      (InnerGameHelperRender.RemoveBuffViewInstance)(self._entityId, self._layerShieldViewInstance)
+      self._rootAnim:Play("113")
+      GameGlobal.TaskManager():CoreGameStartTask(self._delayHideShield, self)
+      InnerGameHelperRender.RemoveBuffViewInstance(self._entityId, self._layerShieldViewInstance)
     else
-      ;
-      (self._rootAnim):Play("112")
+      self._rootAnim:Play("112")
     end
   else
-    if ((self._shieldRoot).transform).childCount == 0 then
-      (self._shieldRootPath):SpawnObject(nil)
+    if self._shieldRoot.transform.childCount == 0 then
+      self._shieldRootPath:SpawnObject(nil)
     end
     if not self._textGo then
-      self._textGo = (GameObjectHelper.FindChild)((self._shieldRoot).transform, "Number")
-      self._textShield = ((self._textGo).gameObject):GetComponent("Text")
+      self._textGo = GameObjectHelper.FindChild(self._shieldRoot.transform, "Number")
+      self._textShield = self._textGo.gameObject:GetComponent("Text")
     end
     if not self._rootAnimGo then
-      self._rootAnimGo = ((self._shieldRoot).transform):GetChild(0)
-      self._rootAnim = ((self._rootAnimGo).gameObject):GetComponent("Animation")
+      self._rootAnimGo = self._shieldRoot.transform:GetChild(0)
+      self._rootAnim = self._rootAnimGo.gameObject:GetComponent("Animation")
     end
-    ;
-    (self._shieldRoot):SetActive(true)
-    ;
-    (self._rootAnim):Play("111")
+    self._shieldRoot:SetActive(true)
+    self._rootAnim:Play("111")
   end
-  -- DECOMPILER ERROR at PC104: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._textShield).text = shieldLayer
+  self._textShield.text = shieldLayer
   self._shieldLayer = shieldLayer
-  ;
-  (InnerGameHelperRender.UISetHPLayerShieldCount)(self._entityId, shieldLayer)
+  InnerGameHelperRender.UISetHPLayerShieldCount(self._entityId, shieldLayer)
   self:_OnSortShieldAndBombPos()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo._delayHideShield = function(self, TT)
-  -- function num : 0_19 , upvalues : _ENV
+function UIHPBuffInfo:_delayHideShield(TT)
   YIELD(TT, 500)
-  if self._shieldRoot and self._onShow and (self._rootAnim):IsPlaying("111") == false then
-    (self._shieldRoot):SetActive(false)
+  if self._shieldRoot and self._onShow and self._rootAnim:IsPlaying("111") == false then
+    self._shieldRoot:SetActive(false)
   end
   self:_OnSortShieldAndBombPos()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo.OnCheckBuffAnimation = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIHPBuffInfo:OnCheckBuffAnimation()
   if self._initAnimation then
-    return 
+    return
   end
   if not self._rootAnim then
-    return 
+    return
   end
-  if (self._rootAnim):IsPlaying("111") then
+  if self._rootAnim:IsPlaying("111") then
     self._initAnimation = true
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(self._WaitAnimationInit, self)
+    GameGlobal.TaskManager():CoreGameStartTask(self._WaitAnimationInit, self)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo._WaitAnimationInit = function(self, TT)
-  -- function num : 0_21 , upvalues : _ENV
-  (self._shieldRoot):SetActive(false)
-  ;
-  (self._rootAnim):Stop()
+function UIHPBuffInfo:_WaitAnimationInit(TT)
+  self._shieldRoot:SetActive(false)
+  self._rootAnim:Stop()
   YIELD(TT)
   if self._shieldRoot then
-    (self._shieldRoot):SetActive(true)
-    ;
-    (self._rootAnim):Play("111")
+    self._shieldRoot:SetActive(true)
+    self._rootAnim:Play("111")
   end
   self:_OnSortShieldAndBombPos()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo.OnHPSliderBroken = function(self, entityID)
-  -- function num : 0_22
+function UIHPBuffInfo:OnHPSliderBroken(entityID)
   if self._entityId ~= entityID then
-    return 
+    return
   end
   if not self._brokenRoot then
-    return 
+    return
   end
-  if ((self._brokenRoot).transform).childCount == 0 then
-    (self._brokenRootPath):SpawnObject(nil)
+  if self._brokenRoot.transform.childCount == 0 then
+    self._brokenRootPath:SpawnObject(nil)
   end
-  ;
-  (self._brokenRoot):SetActive(true)
+  self._brokenRoot:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo.OnSortBuffArray = function(self, buffViewArray)
-  -- function num : 0_23 , upvalues : _ENV
-  (table.sort)(buffViewArray, function(a, b)
-    -- function num : 0_23_0
-    if a:BuffSeq() >= b:BuffSeq() then
-      do return a:BuffID() ~= b:BuffID() end
-      do return a:BuffID() < b:BuffID() end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function UIHPBuffInfo:OnSortBuffArray(buffViewArray)
+  table.sort(buffViewArray, function(a, b)
+    if a:BuffID() == b:BuffID() then
+      return a:BuffSeq() < b:BuffSeq()
     end
-  end
-)
+    return a:BuffID() < b:BuffID()
+  end)
   return buffViewArray
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo.OnRefreshHPBombLayer = function(self, entityID, layerCount)
-  -- function num : 0_24 , upvalues : _ENV
+function UIHPBuffInfo:OnRefreshHPBombLayer(entityID, layerCount)
   if self._entityId ~= entityID then
-    return 
+    return
   end
   if not self._bombRoot then
-    return 
+    return
   end
-  ;
-  (self._bombRoot):SetActive(layerCount > 0)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._textBomb).text = layerCount
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_24_0 , upvalues : _ENV, self
+  self._bombRoot:SetActive(0 < layerCount)
+  self._textBomb.text = layerCount
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     YIELD(TT)
     self:_OnSortShieldAndBombPos()
-  end
-)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  end)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo._OnSortShieldAndBombPos = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  do
-    if self._bombRoot and (self._bombRoot).gameObject and ((self._bombRoot).gameObject).activeSelf then
-      if not self._textShield or not ((self._shieldRoot).gameObject).activeSelf or not Vector2(135, -25) then
-        local pos = Vector2(90, -25)
-      end
-      -- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._bombTransform).anchoredPosition = pos
+function UIHPBuffInfo:_OnSortShieldAndBombPos()
+  if self._bombRoot and self._bombRoot.gameObject and self._bombRoot.gameObject.activeSelf then
+    local pos = self._textShield and self._shieldRoot.gameObject.activeSelf and Vector2(135, -25) or Vector2(90, -25)
+    self._bombTransform.anchoredPosition = pos
+  end
+  if self._antiRoot and self._antiRoot.gameObject and self._antiRoot.gameObject.activeSelf then
+    local posAnti = Vector2(90, -25)
+    if self._shieldRoot.gameObject.activeSelf and self._textShield then
+      posAnti = posAnti + Vector2(45, 0)
     end
-    do
-      if self._antiRoot and (self._antiRoot).gameObject and ((self._antiRoot).gameObject).activeSelf then
-        local posAnti = Vector2(90, -25)
-        if ((self._shieldRoot).gameObject).activeSelf and self._textShield then
-          posAnti = posAnti + Vector2(45, 0)
-        end
-        if ((self._bombRoot).gameObject).activeSelf then
-          posAnti = posAnti + Vector2(45, 0)
-        end
-        -- DECOMPILER ERROR at PC72: Confused about usage of register: R2 in 'UnsetPending'
-
-        ;
-        (self._antiTransform).anchoredPosition = posAnti
-      end
-      -- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-      if self._chessHPRoot and (self._chessHPRoot).activeSelf and self._shieldRoot then
-        ((self._shieldRoot).transform).anchoredPosition = Vector2(50, 25)
-      end
+    if self._bombRoot.gameObject.activeSelf then
+      posAnti = posAnti + Vector2(45, 0)
     end
+    self._antiTransform.anchoredPosition = posAnti
+  end
+  if self._chessHPRoot and self._chessHPRoot.activeSelf and self._shieldRoot then
+    self._shieldRoot.transform.anchoredPosition = Vector2(50, 25)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo.UpdateAntiActiveSkill = function(self, entityID, showCD)
-  -- function num : 0_26 , upvalues : _ENV
+function UIHPBuffInfo:UpdateAntiActiveSkill(entityID, showCD)
   if entityID ~= self._entityId then
-    return 
+    return
   end
   if not self._antiRoot then
-    return 
+    return
   end
-  local antiSkillEnabled = (InnerGameHelperRender.GetEntityAttribute)(entityID, "AntiSkillEnabled")
-  local maxCount = (InnerGameHelperRender.GetEntityAttribute)(entityID, "MaxAntiSkillCountPerRound")
-  local antiCD = (InnerGameHelperRender.GetEntityAttribute)(entityID, "WaitActiveSkillCount")
-  local show = (maxCount ~= 0 and antiSkillEnabled == 1) or showCD ~= nil
-  ;
-  ((self._antiRoot).gameObject):SetActive(show)
-  local originalCount = (InnerGameHelperRender.GetEntityAttribute)(entityID, "OriginalWaitActiveSkillCount")
-  ;
-  ((self._textAnti).gameObject):SetActive(originalCount ~= 1)
+  local antiSkillEnabled = InnerGameHelperRender.GetEntityAttribute(entityID, "AntiSkillEnabled")
+  local maxCount = InnerGameHelperRender.GetEntityAttribute(entityID, "MaxAntiSkillCountPerRound")
+  local antiCD = InnerGameHelperRender.GetEntityAttribute(entityID, "WaitActiveSkillCount")
+  local show = maxCount ~= 0 and antiSkillEnabled == 1 or showCD ~= nil
+  self._antiRoot.gameObject:SetActive(show)
+  local originalCount = InnerGameHelperRender.GetEntityAttribute(entityID, "OriginalWaitActiveSkillCount")
+  self._textAnti.gameObject:SetActive(originalCount ~= 1)
   if showCD then
     antiCD = showCD
   end
-  ;
-  (self._textAnti):SetText(antiCD)
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_26_0 , upvalues : _ENV, self
+  self._textAnti:SetText(antiCD)
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     YIELD(TT)
     self:_OnSortShieldAndBombPos()
-  end
-)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  end)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffInfo.OnHPSliderBlink = function(self, entityID, show)
-  -- function num : 0_27
+function UIHPBuffInfo:OnHPSliderBlink(entityID, show)
   if self._entityId ~= entityID then
-    return 
+    return
   end
   if not self._blinkRoot then
-    return 
+    return
   end
-  if ((self._blinkRoot).transform).childCount == 0 then
+  if self._blinkRoot.transform.childCount == 0 then
     if show == false then
-      return 
+      return
     end
-    ;
-    (self._blinkRootPath):SpawnObject(nil)
+    self._blinkRootPath:SpawnObject(nil)
   end
-  ;
-  (self._blinkRoot):SetActive(show)
+  self._blinkRoot:SetActive(show)
 end
-
-

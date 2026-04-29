@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/shop/ui_activity_n28_shop_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN28ShopItem", UICustomWidget)
 UIActivityN28ShopItem = UIActivityN28ShopItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN28ShopItem.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityN28ShopItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28ShopItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN28ShopItem:OnShow()
   self._petIcon = self:GetGameObject("PetIcon")
   self._petIconLoader = self:GetUIComponent("RawImageLoader", "PetIcon")
   self._petIconRect = self:GetUIComponent("RectTransform", "PetIcon")
@@ -34,135 +24,88 @@ UIActivityN28ShopItem.OnShow = function(self)
   self._atlas = self:GetAsset("UIN28.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28ShopItem.SetVisible = function(self, status)
-  -- function num : 0_2
-  (self._go):SetActive(status)
+function UIActivityN28ShopItem:SetVisible(status)
+  self._go:SetActive(status)
   if status then
-    (self._anim):Play("uieff_UIActivityN28ShopSmallItem_in")
+    self._anim:Play("uieff_UIActivityN28ShopSmallItem_in")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28ShopItem.Refresh = function(self, itemInfo, comp, goodID, callback)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN28ShopItem:Refresh(itemInfo, comp, goodID, callback)
   if itemInfo == nil then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
-  ;
-  (self._go):SetActive(true)
+  self._go:SetActive(true)
   self._itemInfo = itemInfo
   self._callback = callback
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
-  if (self._itemInfo).isSpecial then
-    (self._bg).sprite = (self._atlas):GetSprite("n28_shop_sml1")
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._bgRect).localRotation = (Quaternion.Euler)(0, 0, 3)
+  if self._itemInfo.isSpecial then
+    self._bg.sprite = self._atlas:GetSprite("n28_shop_sml1")
+    self._bgRect.localRotation = Quaternion.Euler(0, 0, 3)
   else
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._bg).sprite = (self._atlas):GetSprite("n28_shop_sml2")
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._bgRect).localRotation = (Quaternion.Euler)(0, 0, 1)
+    self._bg.sprite = self._atlas:GetSprite("n28_shop_sml2")
+    self._bgRect.localRotation = Quaternion.Euler(0, 0, 1)
   end
-  if (self._itemInfo).m_exchange_limit_count == -1 then
-    (self._empty):SetActive(false)
-    ;
-    (self._reamainCountLabel):SetText((StringTable.Get)("str_n26_item_unlimit_count"))
+  if self._itemInfo.m_exchange_limit_count == -1 then
+    self._empty:SetActive(false)
+    self._reamainCountLabel:SetText(StringTable.Get("str_n26_item_unlimit_count"))
   else
-    ;
-    (self._reamainCountLabel):SetText("x" .. (self._itemInfo).m_can_exchange_count)
-    if (self._itemInfo).m_can_exchange_count == 0 then
-      (self._empty):SetActive(true)
-      -- DECOMPILER ERROR at PC84: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._bgRect).localRotation = (Quaternion.Euler)(0, 0, 3)
+    self._reamainCountLabel:SetText("x" .. self._itemInfo.m_can_exchange_count)
+    if self._itemInfo.m_can_exchange_count == 0 then
+      self._empty:SetActive(true)
+      self._bgRect.localRotation = Quaternion.Euler(0, 0, 3)
       if goodID and goodID == itemInfo.m_id then
-        (self._emptyAnim):Play("uieff_UIActivityN28ShopSmallItem_Finish")
+        self._emptyAnim:Play("uieff_UIActivityN28ShopSmallItem_Finish")
       end
     else
-      ;
-      (self._empty):SetActive(false)
+      self._empty:SetActive(false)
     end
   end
-  local itemId = ((self._itemInfo).m_reward).assetid
-  local count = ((self._itemInfo).m_reward).count
-  ;
-  (self._counttLabel):SetText("x" .. count)
-  local cfgItem = (Cfg.cfg_item)[itemId]
+  local itemId = self._itemInfo.m_reward.assetid
+  local count = self._itemInfo.m_reward.count
+  self._counttLabel:SetText("x" .. count)
+  local cfgItem = Cfg.cfg_item[itemId]
   if not cfgItem then
-    return 
+    return
   end
-  ;
-  (self._nameLabel):SetText((StringTable.Get)(cfgItem.Name))
-  local specialIconCfg = (Cfg.cfg_activity_shop_special_item_icon_client)[itemId]
+  self._nameLabel:SetText(StringTable.Get(cfgItem.Name))
+  local specialIconCfg = Cfg.cfg_activity_shop_special_item_icon_client[itemId]
   if specialIconCfg and specialIconCfg.UseInBigCell then
-    (self._petIconLoader):LoadImage(specialIconCfg.SpecialIcon)
-    ;
-    (self._icon):SetActive(false)
-    ;
-    (self._petIcon):SetActive(true)
+    self._petIconLoader:LoadImage(specialIconCfg.SpecialIcon)
+    self._icon:SetActive(false)
+    self._petIcon:SetActive(true)
     if specialIconCfg.PosInBigCell then
-      local b = (string.split)(specialIconCfg.PosInBigCell, "|")
+      local b = string.split(specialIconCfg.PosInBigCell, "|")
       local posX = tonumber(b[1])
       local posY = tonumber(b[2])
-      -- DECOMPILER ERROR at PC163: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self._petIconRect).anchoredPosition = Vector2(posX, posY)
+      self._petIconRect.anchoredPosition = Vector2(posX, posY)
     end
-    do
-      if specialIconCfg.SizeInBigCell then
-        local b = (string.split)(specialIconCfg.SizeInBigCell, "|")
-        local w = tonumber(b[1])
-        local h = tonumber(b[2])
-        -- DECOMPILER ERROR at PC183: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (self._petIconRect).sizeDelta = Vector2(w, h)
-      end
-      do
-        ;
-        (self._icon):SetActive(true)
-        ;
-        (self._petIcon):SetActive(false)
-        ;
-        (self._iconLoader):LoadImage(cfgItem.Icon)
-        local icon1, realCount = comp:GetCostItemIconText()
-        ;
-        (self._costIconLoader):LoadImage(icon1)
-        if (self._itemInfo).m_cost_count <= realCount then
-          (self._costLabel):SetText("<color=#6C6759>" .. (self._itemInfo).m_cost_count .. "</color>")
-        else
-          ;
-          (self._costLabel):SetText("<color=#ff0000>" .. (self._itemInfo).m_cost_count .. "</color>")
-        end
-      end
+    if specialIconCfg.SizeInBigCell then
+      local b = string.split(specialIconCfg.SizeInBigCell, "|")
+      local w = tonumber(b[1])
+      local h = tonumber(b[2])
+      self._petIconRect.sizeDelta = Vector2(w, h)
     end
+  else
+    self._icon:SetActive(true)
+    self._petIcon:SetActive(false)
+    self._iconLoader:LoadImage(cfgItem.Icon)
+  end
+  local icon1, realCount = comp:GetCostItemIconText()
+  self._costIconLoader:LoadImage(icon1)
+  if realCount >= self._itemInfo.m_cost_count then
+    self._costLabel:SetText("<color=#6C6759>" .. self._itemInfo.m_cost_count .. "</color>")
+  else
+    self._costLabel:SetText("<color=#ff0000>" .. self._itemInfo.m_cost_count .. "</color>")
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28ShopItem.BGOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self._itemInfo).m_exchange_limit_count ~= -1 and (self._itemInfo).m_can_exchange_count == 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n26_item_has_empty_tips"))
-    return 
+function UIActivityN28ShopItem:BGOnClick()
+  if self._itemInfo.m_exchange_limit_count ~= -1 and self._itemInfo.m_can_exchange_count == 0 then
+    ToastManager.ShowToast(StringTable.Get("str_n26_item_has_empty_tips"))
+    return
   end
   if self._callback then
-    (self._callback)(self._itemInfo)
+    self._callback(self._itemInfo)
   end
 end
-
-

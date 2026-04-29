@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/pop_star/pop_star_battle_result_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("battle_result_system")
 _class("PopStarBattleResultSystem", MainStateSystem)
 PopStarBattleResultSystem = PopStarBattleResultSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarBattleResultSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PopStarBattleResultSystem:_GetMainStateID()
   return GameStateID.PopStarBattleResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarBattleResultSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1
+function PopStarBattleResultSystem:_OnMainStateEnter(TT)
   local victory, defeatType = self:_DoLogicBeforeExit()
   self:_DoRenderShowExit(TT, victory, defeatType)
   self:_DoLogicAfterExit()
@@ -24,27 +14,20 @@ PopStarBattleResultSystem._OnMainStateEnter = function(self, TT)
   self:_DoRenderBattleResult()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarBattleResultSystem._DoLogicBeforeExit = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function PopStarBattleResultSystem:_DoLogicBeforeExit()
+  local battleStatCmpt = self._world:BattleStat()
   local victory = battleStatCmpt:GetBattleLevelResult() and 1 or 0
   local defeatType = self:_DoCalculateDefeatType()
-  ;
-  ((self._world):GetService("Trigger")):Notify(NTGameOver:New(victory, defeatType))
-  local svc = (self._world):GetService("AutoTest")
+  self._world:GetService("Trigger"):Notify(NTGameOver:New(victory, defeatType))
+  local svc = self._world:GetService("AutoTest")
   if svc then
     svc:SetGameOver_Test()
   end
   return victory, defeatType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarBattleResultSystem._DoCalculateDefeatType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local battleService = (self._world):GetService("Battle")
+function PopStarBattleResultSystem:_DoCalculateDefeatType()
+  local battleService = self._world:GetService("Battle")
   local popStarNumNotEnough = battleService:HandlePopStarNumber()
   if popStarNumNotEnough then
     return PlayerDefeatType.PopStarNumberNotEnough
@@ -52,154 +35,66 @@ PopStarBattleResultSystem._DoCalculateDefeatType = function(self)
   return PlayerDefeatType.None
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarBattleResultSystem._DoLogicAfterExit = function(self)
-  -- function num : 0_4
-  do
-    if ((self._world):BattleWorldEnterData()):IsHaveBonusCondition() then
-      local bonusCalcSvc = (self._world):GetService("BonusCalc")
-      bonusCalcSvc:CalcBonusObjective()
-    end
-    local battleStatCmpt = (self._world):BattleStat()
-    local matchType = (self._world):MatchType()
-    self.battleMatchResult = self:_CalcBattleResult(matchType, battleStatCmpt)
-    ;
-    ((self._world):GetDataLogger()):AddDataLog("OnShowEnd")
-    ;
-    ((self._world):GetDataLogger()):AddDataLog("OnBattleEnd")
+function PopStarBattleResultSystem:_DoLogicAfterExit()
+  if self._world:BattleWorldEnterData():IsHaveBonusCondition() then
+    local bonusCalcSvc = self._world:GetService("BonusCalc")
+    bonusCalcSvc:CalcBonusObjective()
   end
+  local battleStatCmpt = self._world:BattleStat()
+  local matchType = self._world:MatchType()
+  self.battleMatchResult = self:_CalcBattleResult(matchType, battleStatCmpt)
+  self._world:GetDataLogger():AddDataLog("OnShowEnd")
+  self._world:GetDataLogger():AddDataLog("OnBattleEnd")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarBattleResultSystem._CalcBattleResult = function(self, matchType, battleStatCmpt)
-  -- function num : 0_5
-  local battleService = (self._world):GetService("Battle")
+function PopStarBattleResultSystem:_CalcBattleResult(matchType, battleStatCmpt)
+  local battleService = self._world:GetService("Battle")
   local result = battleService:CalcBattleResultLogic(matchType, battleStatCmpt:GetBattleLevelResult())
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).ActiveSkill = battleStatCmpt:GetActiveSkillCount()
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).Blood = self:_CalcLeftBlood(battleStatCmpt)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).ChainSkill = battleStatCmpt:GetChainSkillCount()
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).ColorSkill = battleStatCmpt:GetColorSkillCount()
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).KillBoss = battleStatCmpt:GetKillBossCount()
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).KillMonster = battleStatCmpt:GetKillMonsterCount()
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).LeftTurn = battleStatCmpt:GetLevelLeftRoundCount()
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).MaxChain = battleStatCmpt:GetOneMatchMaxNum()
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).OneActiveSkillKill = battleStatCmpt:GetOneActiveSkillKillCount()
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).OneChainKillMonster = battleStatCmpt:GetOneChainKillCount()
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).OneChainNormalAttack = battleStatCmpt:GetOneChainNormalAttackCount()
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).SuperChain = battleStatCmpt:GetAuroraTimeCount()
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).UseTurn = battleStatCmpt:GetLevelTotalRoundCount() - 1
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).AutoFight = battleStatCmpt:GetEverAutoFight()
-  -- DECOMPILER ERROR at PC70: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).changeTeamLeaderNum = battleStatCmpt:GetTeamLeaderChangeNum()
-  -- DECOMPILER ERROR at PC74: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).passivechangeLeaderNum = battleStatCmpt:GetPassiveTeamLeaderChangeNum()
-  -- DECOMPILER ERROR at PC78: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).line_time = battleStatCmpt:GetTotalChainNum()
-  -- DECOMPILER ERROR at PC82: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).step_num = battleStatCmpt:GetTotalMatchNum()
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).MazeAddLight = battleStatCmpt:GetMazeAddLight()
-  -- DECOMPILER ERROR at PC90: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (result.battle_statistics).EraseSquare = battleStatCmpt:GetElementMatchNum()
-  local renderBattleStat = (self._world):RenderBattleStat()
-  -- DECOMPILER ERROR at PC99: Confused about usage of register: R6 in 'UnsetPending'
-
+  result.battle_statistics.ActiveSkill = battleStatCmpt:GetActiveSkillCount()
+  result.battle_statistics.Blood = self:_CalcLeftBlood(battleStatCmpt)
+  result.battle_statistics.ChainSkill = battleStatCmpt:GetChainSkillCount()
+  result.battle_statistics.ColorSkill = battleStatCmpt:GetColorSkillCount()
+  result.battle_statistics.KillBoss = battleStatCmpt:GetKillBossCount()
+  result.battle_statistics.KillMonster = battleStatCmpt:GetKillMonsterCount()
+  result.battle_statistics.LeftTurn = battleStatCmpt:GetLevelLeftRoundCount()
+  result.battle_statistics.MaxChain = battleStatCmpt:GetOneMatchMaxNum()
+  result.battle_statistics.OneActiveSkillKill = battleStatCmpt:GetOneActiveSkillKillCount()
+  result.battle_statistics.OneChainKillMonster = battleStatCmpt:GetOneChainKillCount()
+  result.battle_statistics.OneChainNormalAttack = battleStatCmpt:GetOneChainNormalAttackCount()
+  result.battle_statistics.SuperChain = battleStatCmpt:GetAuroraTimeCount()
+  result.battle_statistics.UseTurn = battleStatCmpt:GetLevelTotalRoundCount() - 1
+  result.battle_statistics.AutoFight = battleStatCmpt:GetEverAutoFight()
+  result.battle_statistics.changeTeamLeaderNum = battleStatCmpt:GetTeamLeaderChangeNum()
+  result.battle_statistics.passivechangeLeaderNum = battleStatCmpt:GetPassiveTeamLeaderChangeNum()
+  result.battle_statistics.line_time = battleStatCmpt:GetTotalChainNum()
+  result.battle_statistics.step_num = battleStatCmpt:GetTotalMatchNum()
+  result.battle_statistics.MazeAddLight = battleStatCmpt:GetMazeAddLight()
+  result.battle_statistics.EraseSquare = battleStatCmpt:GetElementMatchNum()
+  local renderBattleStat = self._world:RenderBattleStat()
   if renderBattleStat then
-    (result.battle_statistics).DoubleSpeed = renderBattleStat:GetEverSpeed()
+    result.battle_statistics.DoubleSpeed = renderBattleStat:GetEverSpeed()
   end
   return result
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarBattleResultSystem._CalcLeftBlood = function(self, battleStatCmpt)
-  -- function num : 0_6 , upvalues : _ENV
+function PopStarBattleResultSystem:_CalcLeftBlood(battleStatCmpt)
   local hpPercent = battleStatCmpt:GetLeftBlood()
   if hpPercent <= 0 then
     hpPercent = 0
+  elseif hpPercent <= 0.01 then
+    hpPercent = 1
   else
-    if hpPercent <= 0.01 then
-      hpPercent = 1
-    else
-      hpPercent = (math.floor)(hpPercent * 100 + 0.5)
-    end
+    hpPercent = math.floor(hpPercent * 100 + 0.5)
   end
   hpPercent = hpPercent / 100
   return hpPercent
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarBattleResultSystem._DoLogicBattleResult = function(self)
-  -- function num : 0_7
+function PopStarBattleResultSystem:_DoLogicBattleResult()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarBattleResultSystem._DoRenderShowExit = function(self, TT, victory, defeatType)
-  -- function num : 0_8
+function PopStarBattleResultSystem:_DoRenderShowExit(TT, victory, defeatType)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarBattleResultSystem._DoRenderBattleResult = function(self)
-  -- function num : 0_9
+function PopStarBattleResultSystem:_DoRenderBattleResult()
 end
-
-

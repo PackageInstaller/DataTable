@@ -1,40 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_tower/ui_team_item_show.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITeamItemShow", UICustomWidget)
 UITeamItemShow = UITeamItemShow
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITeamItemShow.OnShow = function(self)
-  -- function num : 0_0
+function UITeamItemShow:OnShow()
   self._card = self:GetUIComponent("UISelectObjectPath", "card")
   self._cardGo = self:GetGameObject("card")
-  ;
-  (self:GetGameObject("imgMask")):SetActive(false)
-  ;
-  (self:GetGameObject("imgAdd")):SetActive(false)
-  ;
-  (self:GetGameObject("imgLock")):SetActive(false)
-  ;
-  (self:GetGameObject("UIWeakKuang")):SetActive(false)
-  ;
-  (self:GetUIComponent("Image", "imgBG")).raycastTarget = false
+  self:GetGameObject("imgMask"):SetActive(false)
+  self:GetGameObject("imgAdd"):SetActive(false)
+  self:GetGameObject("imgLock"):SetActive(false)
+  self:GetGameObject("UIWeakKuang"):SetActive(false)
+  self:GetUIComponent("Image", "imgBG").raycastTarget = false
   self._slot = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamItemShow.Flush = function(self, slot, pet)
-  -- function num : 0_1
+function UITeamItemShow:Flush(slot, pet)
   self._slot = slot
   self._pet = pet
   if pet == nil then
-    (self._cardGo):SetActive(true)
-    local uiItem = (self._card):SpawnObject("UIPetMemberItemShow")
+  else
+    self._cardGo:SetActive(true)
+    local uiItem = self._card:SpawnObject("UIPetMemberItemShow")
     uiItem:SetData(self._slot, self._pet)
   end
 end
-
-

@@ -1,56 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_two_scope_difference.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_TwoScopeDifference", SkillScopeCalculator_Base)
 SkillScopeCalculator_TwoScopeDifference = SkillScopeCalculator_TwoScopeDifference
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_TwoScopeDifference.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local calc = SkillScopeCalculator:New((self._hub)._gridFilter)
+function SkillScopeCalculator_TwoScopeDifference:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local calc = SkillScopeCalculator:New(self._hub._gridFilter)
   local attackRange = {}
   local wholeRange = {}
   local attackRangeList = {}
   local wholeRangeList = {}
-  for _,v in ipairs(scopeParam) do
+  for _, v in ipairs(scopeParam) do
     local _scopeType = v.scopeType
     local _scpoe_param = v.scopeParam
     local result = calc:ComputeScopeRange(_scopeType, _scpoe_param, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-    ;
-    (table.insert)(attackRangeList, result:GetAttackRange())
-    ;
-    (table.insert)(wholeRangeList, result:GetWholeGridRange())
+    table.insert(attackRangeList, result:GetAttackRange())
+    table.insert(wholeRangeList, result:GetWholeGridRange())
   end
-  if #attackRangeList >= 2 then
+  if 2 <= #attackRangeList then
     attackRange = self:_GetRestValidScope(attackRangeList[1], attackRangeList[2])
   end
-  if #wholeRangeList >= 2 then
+  if 2 <= #wholeRangeList then
     wholeRange = self:_GetRestValidScope(wholeRangeList[1], wholeRangeList[2])
   end
   return SkillScopeResult:New(SkillScopeType.TwoScopeDifference, centerPos, attackRange, wholeRange)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_TwoScopeDifference._GetRestValidScope = function(self, validGridList, invalidGridList)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeCalculator_TwoScopeDifference:_GetRestValidScope(validGridList, invalidGridList)
   local tv2FilteredInvalidGridList = {}
-  for _,v2 in ipairs(invalidGridList) do
-    if (table.icontains)(validGridList, v2) then
-      (table.insert)(tv2FilteredInvalidGridList, v2)
+  for _, v2 in ipairs(invalidGridList) do
+    if table.icontains(validGridList, v2) then
+      table.insert(tv2FilteredInvalidGridList, v2)
     end
   end
   local tv2FilteredValidGridList = {}
-  for _,v2 in ipairs(validGridList) do
-    if not (table.icontains)(tv2FilteredInvalidGridList, v2) then
-      (table.insert)(tv2FilteredValidGridList, v2)
+  for _, v2 in ipairs(validGridList) do
+    if not table.icontains(tv2FilteredInvalidGridList, v2) then
+      table.insert(tv2FilteredValidGridList, v2)
     end
   end
   validGridList = tv2FilteredValidGridList
   return tv2FilteredValidGridList
 end
-
-

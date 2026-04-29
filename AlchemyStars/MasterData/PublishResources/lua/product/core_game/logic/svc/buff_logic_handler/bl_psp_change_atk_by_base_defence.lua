@@ -1,56 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_psp_change_atk_by_base_defence.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicPSPChangeAtkByBaseDefence", BuffLogicBase)
 BuffLogicPSPChangeAtkByBaseDefence = BuffLogicPSPChangeAtkByBaseDefence
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicPSPChangeAtkByBaseDefence.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicPSPChangeAtkByBaseDefence:Constructor(buffInstance, logicParam)
   self._rate = logicParam.rate or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicPSPChangeAtkByBaseDefence.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local entity = (self._buffInstance):Entity()
+function BuffLogicPSPChangeAtkByBaseDefence:DoLogic()
+  local entity = self._buffInstance:Entity()
   local comp = entity:Attributes()
   if not comp then
     return false
   end
   local baseDefence = comp:GetAttribute("Defense")
-  local addValue = (math.floor)(self._rate * baseDefence + 0.5)
-  local curModifyVal = (self._buffLogicService):GetModifyValueByID(entity, "AttackConstantFix", self:GetBuffSeq())
+  local addValue = math.floor(self._rate * baseDefence + 0.5)
+  local curModifyVal = self._buffLogicService:GetModifyValueByID(entity, "AttackConstantFix", self:GetBuffSeq())
   addValue = addValue + curModifyVal
-  ;
-  (self._buffLogicService):ChangeBaseAttack(entity, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, addValue)
+  self._buffLogicService:ChangeBaseAttack(entity, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, addValue)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicPSPChangeAtkByBaseDefence.DoOverlap = function(self, logicParam)
-  -- function num : 0_2
+function BuffLogicPSPChangeAtkByBaseDefence:DoOverlap(logicParam)
   return self:DoLogic()
 end
 
 _class("BuffLogicUndoPSPChangeAtkByBaseDefence", BuffLogicBase)
 BuffLogicUndoPSPChangeAtkByBaseDefence = BuffLogicUndoPSPChangeAtkByBaseDefence
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUndoPSPChangeAtkByBaseDefence.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicUndoPSPChangeAtkByBaseDefence:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicUndoPSPChangeAtkByBaseDefence.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):RemoveBaseAttack(e, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix)
+function BuffLogicUndoPSPChangeAtkByBaseDefence:DoLogic()
+  local e = self._buffInstance:Entity()
+  self._buffLogicService:RemoveBaseAttack(e, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix)
 end
-
-

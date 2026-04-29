@@ -1,89 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_direct_line_blocked_edge_free.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_DirectLineBlockedEdgeFree", SkillScopeCalculator_Base)
 SkillScopeCalculator_DirectLineBlockedEdgeFree = SkillScopeCalculator_DirectLineBlockedEdgeFree
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_DirectLineBlockedEdgeFree.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_DirectLineBlockedEdgeFree:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local casterPos = centerPos
   local bodyAreaArray = bodyArea
   local effectDirType = 1
   local size = scopeParam[1]
-  if not scopeParam[2] or not GetBlockFlagByValue(scopeParam[2]) then
-    local blockFlag = BlockFlag.Skill
-  end
+  local blockFlag = scopeParam[2] and GetBlockFlagByValue(scopeParam[2]) or BlockFlag.Skill
   local isCenterInRange = scopeParam[3]
   local isBlockSkill = effectDirType == 1
   local boayArea = {}
-  for i,p in ipairs(bodyAreaArray) do
-    (table.insert)(boayArea, Vector2(casterPos.x + p.x, casterPos.y + p.y))
+  for i, p in ipairs(bodyAreaArray) do
+    table.insert(boayArea, Vector2(casterPos.x + p.x, casterPos.y + p.y))
   end
   local targetArea = {}
   local wholeArea = {}
-  for i,p in ipairs(boayArea) do
+  for i, p in ipairs(boayArea) do
     for index = 1, size do
       local directpos = Vector2(p.x + casterDir.x * index, p.y + casterDir.y * index)
-      if not isBlockSkill or not self:IsPosBlock(directpos, blockFlag) then
-        do
-          self:_InsertTargetGrid(targetArea, directpos, wholeArea)
-          -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      if isBlockSkill and self:IsPosBlock(directpos, blockFlag) then
+        break
       end
+      self:_InsertTargetGrid(targetArea, directpos, wholeArea)
     end
   end
   if isCenterInRange and not self:IsPosBlock(centerPos, blockFlag) then
     self:_InsertTargetGrid(targetArea, centerPos, wholeArea)
   end
-  local result = nil
+  local result
   if isBlockSkill then
     result = SkillScopeResult:New(SkillScopeType.DirectLineBlockedEdgeFree, casterPos, targetArea, wholeArea)
   else
     result = SkillScopeResult:New(SkillScopeType.DirectLine, casterPos, targetArea, wholeArea)
   end
-  do return result end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
+  return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_DirectLineBlockedEdgeFree.IsPosBlock = function(self, pos, blockFlag)
-  -- function num : 0_1
+function SkillScopeCalculator_DirectLineBlockedEdgeFree:IsPosBlock(pos, blockFlag)
   if not pos then
     return false
   end
-  if not (self._gridFilter)._world then
+  if not self._gridFilter._world then
     return false
   end
-  local lbsvc = ((self._gridFilter)._world):GetService("BoardLogic")
-  if (self._gridFilter):IsValidPiecePos(pos) then
+  local lbsvc = self._gridFilter._world:GetService("BoardLogic")
+  if self._gridFilter:IsValidPiecePos(pos) then
     if not blockFlag then
       return false
     end
-    local world = (self._gridFilter)._world
+    local world = self._gridFilter._world
     local utildata = world:GetService("UtilData")
     local pieceBlock = utildata:FindBlockByPos(pos)
-    if pieceBlock == nil then
+    if nil == pieceBlock then
       return true
     end
     return pieceBlock:CheckBlock(blockFlag)
   else
-    do
-      local boardMaxX = lbsvc:GetCurBoardMaxX()
-      do
-        local boardMaxY = lbsvc:GetCurBoardMaxY()
-        do return pos.x < 1 or boardMaxX < pos.x or pos.y < 1 or boardMaxY < pos.y end
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
-      end
-    end
+    local boardMaxX = lbsvc:GetCurBoardMaxX()
+    local boardMaxY = lbsvc:GetCurBoardMaxY()
+    return pos.x < 1 or boardMaxX < pos.x or 1 > pos.y or boardMaxY < pos.y
   end
 end
-
-

@@ -1,35 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/wave_result_award_apply_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("WaveResultAwardApplySystem", MainStateSystem)
 WaveResultAwardApplySystem = WaveResultAwardApplySystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-WaveResultAwardApplySystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function WaveResultAwardApplySystem:_GetMainStateID()
   return GameStateID.WaveResultAwardApply
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveResultAwardApplySystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function WaveResultAwardApplySystem:_OnMainStateEnter(TT)
+  local battleStatCmpt = self._world:BattleStat()
   local relicID, isOpening, partnerID = battleStatCmpt:GetWaveWaitApplyAward()
   battleStatCmpt:ClearWaveWaitApplyAward()
   local switchState = WaveResultAwardNextStateType.None
   if isOpening then
     switchState = WaveResultAwardNextStateType.WaitInput
-  else
-    if partnerID == 0 then
-      switchState = WaveResultAwardNextStateType.WaveSwitch
-    end
+  elseif partnerID == 0 then
+    switchState = WaveResultAwardNextStateType.WaveSwitch
   end
-  ;
-  (Log.debug)("[MiniMaze] WaveResultAwardApplySystem relicID: ", relicID, " partnerID: ", partnerID, " isOpen ", isOpening, " switchState: ", switchState)
+  Log.debug("[MiniMaze] WaveResultAwardApplySystem relicID: ", relicID, " partnerID: ", partnerID, " isOpen ", isOpening, " switchState: ", switchState)
   local applyRelicID, relicBuffs = self:_DoLogicApplyRelic(relicID, switchState)
   if applyRelicID then
     self:_DoRenderApplyRelic(TT, applyRelicID, relicBuffs, switchState)
@@ -38,38 +25,22 @@ WaveResultAwardApplySystem._OnMainStateEnter = function(self, TT)
   if applyPartnerID then
     self:_DoRenderAddPartner(TT, applyPartnerID, petInfo, matchPet, petRes, hp, maxHP)
   end
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.WaveResultAwardApplyFinish, isOpening and 2 or 1)
+  self._world:EventDispatcher():Dispatch(GameEventType.WaveResultAwardApplyFinish, isOpening and 2 or 1)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveResultAwardApplySystem._DoLogicApplyRelic = function(self, relicID, switchState)
-  -- function num : 0_2
-  local battleSvc = (self._world):GetService("Battle")
+function WaveResultAwardApplySystem:_DoLogicApplyRelic(relicID, switchState)
+  local battleSvc = self._world:GetService("Battle")
   return battleSvc:ApplyRelic(relicID, switchState)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveResultAwardApplySystem._DoLogicAddPartner = function(self, partnerID)
-  -- function num : 0_3 , upvalues : _ENV
-  local partnerService = (self._world):GetService("PartnerLogic")
-  ;
-  (Log.debug)("[MiniMaze] ChooseMiniMazeWaveAwardCommandHandler:AddPartner partnerID: ", partnerID)
+function WaveResultAwardApplySystem:_DoLogicAddPartner(partnerID)
+  local partnerService = self._world:GetService("PartnerLogic")
+  Log.debug("[MiniMaze] ChooseMiniMazeWaveAwardCommandHandler:AddPartner partnerID: ", partnerID)
   return partnerService:CreatePartner(partnerID)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveResultAwardApplySystem._DoRenderApplyRelic = function(self, TT, applyRelicID, relicBuffs, switchState)
-  -- function num : 0_4
+function WaveResultAwardApplySystem:_DoRenderApplyRelic(TT, applyRelicID, relicBuffs, switchState)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveResultAwardApplySystem._DoRenderAddPartner = function(self, TT, applyPartnerID, petInfo, matchPet, petRes, hp, maxHP)
-  -- function num : 0_5
+function WaveResultAwardApplySystem:_DoRenderAddPartner(TT, applyPartnerID, petInfo, matchPet, petRes, hp, maxHP)
 end
-
-

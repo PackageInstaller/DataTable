@@ -1,135 +1,82 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_guide/ui_guide_pop_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIGuidePopController", UIController)
 UIGuidePopController = UIGuidePopController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGuidePopController.Constructor = function(self)
-  -- function num : 0_0
+function UIGuidePopController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuidePopController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  (GuideHelper.GuideLoadLock)(false, "Pop")
-  self.anim = ((self:GetGameObject()).transform):GetComponent("Animation")
-  ;
-  (self.anim):Play("uieff_uiGuidePop_In")
+function UIGuidePopController:OnShow(uiParams)
+  GuideHelper.GuideLoadLock(false, "Pop")
+  self.anim = self:GetGameObject().transform:GetComponent("Animation")
+  self.anim:Play("uieff_uiGuidePop_In")
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, self
     YIELD(TT, 1000)
-    ;
-    (self.anim):Play("uieff_uiGuidePop_HangOn")
-  end
-)
+    self.anim:Play("uieff_uiGuidePop_HangOn")
+  end)
   self.titleTxt = self:GetUIComponent("UILocalizationText", "title")
   self.descTxt = self:GetUIComponent("UILocalizationText", "desc")
   self.extraTxt = self:GetUIComponent("UILocalizationText", "extra")
   self.btnTxt = self:GetUIComponent("UILocalizationText", "btntxt")
-  ;
-  (self.btnTxt):SetText((StringTable.Get)("str_guide_pop_close"))
+  self.btnTxt:SetText(StringTable.Get("str_guide_pop_close"))
   self.btnGO = self:GetGameObject("btnclose")
   self.uiWeakKuang = self:GetGameObject("UIWeakKuang")
-  ;
-  (self.uiWeakKuang):SetActive(false)
-  self.id = (uiParams[1]).guideParam
-  self.data = (uiParams[1]).data
+  self.uiWeakKuang:SetActive(false)
+  self.id = uiParams[1].guideParam
+  self.data = uiParams[1].data
   self:Refresh()
-  local url = (ResourceManager:GetInstance()):GetAssetPath((self.cfg).movie .. ".mp4", LoadType.VideoClip)
-  ;
-  (Log.debug)("[guide movie] move url ", url)
+  local url = ResourceManager:GetInstance():GetAssetPath(self.cfg.movie .. ".mp4", LoadType.VideoClip)
+  Log.debug("[guide movie] move url ", url)
   self._vp = self:GetUIComponent("VideoPlayer", "VideoPlayer")
-  ;
-  ((self._vp).gameObject):SetActive(true)
-  -- DECOMPILER ERROR at PC93: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._vp).url = url
-  -- DECOMPILER ERROR at PC101: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._vp).targetCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIGuidePopController")
-  ;
-  (self._vp):Play()
-  -- DECOMPILER ERROR at PC110: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._vp).loopPointReached = (self._vp).loopPointReached + self._LoopPointReached
+  self._vp.gameObject:SetActive(true)
+  self._vp.url = url
+  self._vp.targetCamera = GameGlobal.UIStateManager():GetControllerCamera("UIGuidePopController")
+  self._vp:Play()
+  self._vp.loopPointReached = self._vp.loopPointReached + self._LoopPointReached
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuidePopController._LoopPointReached = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local controller = ((GameGlobal.UIStateManager)()):GetController("UIGuidePopController")
+function UIGuidePopController:_LoopPointReached()
+  local controller = GameGlobal.UIStateManager():GetController("UIGuidePopController")
   if controller then
-    (controller._vp):Stop()
-    ;
-    (controller._vp):Play()
+    controller._vp:Stop()
+    controller._vp:Play()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuidePopController.Refresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self.cfg = (Cfg.cfg_guide_pop)[self.id]
-  ;
-  (self.titleTxt):SetText((StringTable.Get)((self.cfg).title))
-  ;
-  (self.descTxt):SetText((StringTable.Get)((self.cfg).desc))
-  ;
-  (self.extraTxt):SetText((StringTable.Get)((self.cfg).extra))
-  ;
-  (self.btnGO):SetActive(false)
+function UIGuidePopController:Refresh()
+  self.cfg = Cfg.cfg_guide_pop[self.id]
+  self.titleTxt:SetText(StringTable.Get(self.cfg.title))
+  self.descTxt:SetText(StringTable.Get(self.cfg.desc))
+  self.extraTxt:SetText(StringTable.Get(self.cfg.extra))
+  self.btnGO:SetActive(false)
   self.time = 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuidePopController.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.Pop)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._vp).loopPointReached = (self._vp).loopPointReached - self._LoopPointReached
+function UIGuidePopController:OnHide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.Pop)
+  self._vp.loopPointReached = self._vp.loopPointReached - self._LoopPointReached
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuidePopController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_5
+function UIGuidePopController:OnUpdate(deltaTimeMS)
   if self.time == nil then
-    return 
+    return
   end
   self.time = self.time + deltaTimeMS
   if self.time >= 3000 then
-    (self.btnGO):SetActive(true)
+    self.btnGO:SetActive(true)
   end
   if self.time >= 5000 then
-    (self.uiWeakKuang):SetActive(true)
+    self.uiWeakKuang:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuidePopController.btncloseOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("GuideStepClick", {(self.data).guide or -1, (self.data).step or -1, (self.data).step})
-  ;
-  (self.anim):Play("uieff_uiGuidePop_Out")
+function UIGuidePopController:btncloseOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("GuideStepClick", {
+    self.data.guide or -1,
+    self.data.step or -1,
+    self.data.step
+  })
+  self.anim:Play("uieff_uiGuidePop_Out")
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
     YIELD(TT, 500)
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

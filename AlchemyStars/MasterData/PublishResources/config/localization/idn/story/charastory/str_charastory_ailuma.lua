@@ -1,8 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/idn/story/charastory/str_charastory_ailuma.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {ui_story_31350401_1_dialog_content = "PlayerName, Aku harus bekerja!", ui_story_31350401_2_dialog_content = "B-Benarkah? Aku tidak tahu ada orang yang bisa menyukai pekerjaan sebanyak itu...", ui_story_31350401_3_dialog_content = "Saya tidak bisa hanya tinggal di sini tanpa menghasilkan sesuatu! Ini bertentangan dengan tatanan yang umum!", ui_story_31350401_4_dialog_content = "(Hampir lupa, Elma termasuk dalam faksi Harmony, jadi dia sangat mengutamakan aturan dan tatanan.)", ui_story_31350401_5_dialog_content = "Baiklah, mari kita pergi melihat-lihat sekitar Soroz.", ui_story_31350401_6_dialog_content = "Wow, ini Bar-nya?!", ui_story_31350401_7_dialog_content = "Jika kamu sedang mencari pekerjaan, kenapa tidak bekerja di sini? Bagian terpenting dari pekerjaan ini juga adalah menjaga ketertiban.", ui_story_31350401_8_dialog_content = "Mengerti! Serahkan padaku!", ui_story_31350401_9_dialog_content = "Hoi, kamu yang di situ! Ini bukan tempat untuk anak-anak!", ui_story_31350401_10_dialog_content = "Hah? Tapi aku sudah dewasa sejak lama...", ui_story_31350401_11_dialog_content = "Jadi, berapa umurmu?", ui_story_31350401_12_dialog_content = "Berapa umur, ya... Terlalu tua sampai lupa, jujur saja!", ui_story_31350401_13_dialog_content = "Dia memang cukup tua untuk berada di sini, Elma.", ui_story_31350401_14_dialog_content = "Kamu pasti teman PlayerName dari dunia lain! Ayo minum bersamaku!", ui_story_31350401_15_dialog_content = "D-Apakah rasanya enak?", ui_story_31350401_16_dialog_content = "Tentu saja! Ini adalah spesialisasi Northland: anggur manis yang dibuat dengan salju leleh langsung dari puncak gunung!", ui_story_31350401_17_dialog_content = "Wow—Kamu nggak bercanda! Rasanya benar-benar lezat!", ui_story_31350401_18_dialog_content = "Tunggu, ini tidak benar! Seharusnya aku menjaga tempat ini! T-Tapi... aku tidak bisa berhenti!", ui_story_31350401_19_dialog_content = "Mu-mungkin kita bisa melihat beberapa pekerjaan lain?", ui_story_31350401_20_dialog_content = "Ini adalah Lumina Grid. Yang perlu kamu lakukan adalah bergaul dengan Firefly untuk mengelola area ini.", ui_story_31350401_21_dialog_content = "...", ui_story_31350401_22_dialog_content = "(Ini pekerjaan sangat sederhana, tidak akan ada masalah sama sekali.)", ui_story_31350401_23_dialog_content = "Ancaman serius terdeteksi. Mengaktifkan protokol pelarian.", ui_story_31350401_24_dialog_content = "Jangan mendekati kami. Jangan tambahkan kami ke minumanmu. Kami bukan makanan.", ui_story_31350401_25_dialog_content = "Huh, apa yang terjadi? Para Firefly melarikan diri dari tempat favorit mereka di Colossus!", ui_story_31350401_26_dialog_content = "Ah... Aku rasa itu karena dulu aku pernah salah mengira mereka sebagai bola madu kecil yang mengapung, dan aku mencoba menambahkannya ke minumanku...", ui_story_31350401_27_dialog_content = "Kalau begitu, aku tidak yakin ada pekerjaan lain yang cocok untuk kamu di sini...", ui_story_31350401_28_dialog_content = "Boo-hoo... A-Aku tidak bisa melakukan apa-apa dengan benar di sini! Aku aib bagi seluruh faksi Harmony!", ui_story_31350401_29_dialog_content = "Jangan bilang begitu! Kamu orang yang luar biasa!", ui_story_31350401_30_dialog_content = "T-Tapi... Dalam situasi ini—", ui_story_31350401_31_dialog_content = "Aku tidak akan mampu membeli kue super-loaded dari toko permen Umbraton! Aku sudah menghabiskan hampir semua gaji dari Federasi Illumina!", ui_story_31350401_32_dialog_content = "Aku seharusnya tahu.", ui_story_31350401_33_dialog_content = "Aku benar-benar menantikan kue itu...", ui_story_31350401_34_option_content = "Lain kali, aku akan membelikannya untukmu.", ui_story_31350401_35_dialog_content = "Wow, sungguh?! T-Tapi aku tidak bisa menerimanya tanpa bekerja keras!", ui_story_31350401_36_dialog_content = "Tidak apa-apa. Lagipula, kamu membantu kami memberantas Eclipsite sebelumnya, bukan? Anggap saja kue itu sebagai cara saya membalas budi.", ui_story_31350401_37_option_content = "Sebentar lagi, akan kubuatkan satu untukmu.", ui_story_31350401_38_dialog_content = "K-Kamu sebenarnya tahu cara membuat kue?!", ui_story_31350401_39_dialog_content = "Sedikit.", ui_story_31350401_40_dialog_content = "Benarkah aku bisa mencicipi salah satu kue buatan tangan PlayerName? Aku tak bisa percaya betapa beruntungnya aku!", ui_story_31350401_41_dialog_content = "Untuk kue di Umbraton, nanti saya akan ikut serta dan membelikannya untuk kamu.", ui_story_31350401_42_dialog_content = "Wow, sungguh?! T-Tapi aku tidak bisa menerimanya tanpa bekerja keras!", ui_story_31350401_43_dialog_content = "Tidak apa-apa. Lagipula, kamu membantu kami memberantas Eclipsite sebelumnya, bukan? Anggap saja kue itu sebagai cara saya membalas budi.", ui_story_31350401_44_dialog_content = "Jadi, berapa sih harga kue di Umbraton itu?", ui_story_31350401_45_dialog_content = "<size=45>30.000 Nightium</size>, jika saya tidak salah ingat.", ui_story_31350401_46_dialog_content = "Urgh—!", ui_story_31350401_47_dialog_content = "Ada apa? Kamu merasa baik-baik saja?!", ui_story_31350401_48_dialog_content = "A-Aku baik-baik saja... Memang ini semua uang hasil jerih payahku, tapi aku akan melakukannya hanya untukmu, Elma."}
+local config = {
+  ui_story_31350401_1_dialog_content = "PlayerName, Aku harus bekerja!",
+  ui_story_31350401_2_dialog_content = "B-Benarkah? Aku tidak tahu ada orang yang bisa menyukai pekerjaan sebanyak itu...",
+  ui_story_31350401_3_dialog_content = "Saya tidak bisa hanya tinggal di sini tanpa menghasilkan sesuatu! Ini bertentangan dengan tatanan yang umum!",
+  ui_story_31350401_4_dialog_content = "(Hampir lupa, Elma termasuk dalam faksi Harmony, jadi dia sangat mengutamakan aturan dan tatanan.)",
+  ui_story_31350401_5_dialog_content = "Baiklah, mari kita pergi melihat-lihat sekitar Soroz.",
+  ui_story_31350401_6_dialog_content = "Wow, ini Bar-nya?!",
+  ui_story_31350401_7_dialog_content = "Jika kamu sedang mencari pekerjaan, kenapa tidak bekerja di sini? Bagian terpenting dari pekerjaan ini juga adalah menjaga ketertiban.",
+  ui_story_31350401_8_dialog_content = "Mengerti! Serahkan padaku!",
+  ui_story_31350401_9_dialog_content = "Hoi, kamu yang di situ! Ini bukan tempat untuk anak-anak!",
+  ui_story_31350401_10_dialog_content = "Hah? Tapi aku sudah dewasa sejak lama...",
+  ui_story_31350401_11_dialog_content = "Jadi, berapa umurmu?",
+  ui_story_31350401_12_dialog_content = "Berapa umur, ya... Terlalu tua sampai lupa, jujur saja!",
+  ui_story_31350401_13_dialog_content = "Dia memang cukup tua untuk berada di sini, Elma.",
+  ui_story_31350401_14_dialog_content = "Kamu pasti teman PlayerName dari dunia lain! Ayo minum bersamaku!",
+  ui_story_31350401_15_dialog_content = "D-Apakah rasanya enak?",
+  ui_story_31350401_16_dialog_content = "Tentu saja! Ini adalah spesialisasi Northland: anggur manis yang dibuat dengan salju leleh langsung dari puncak gunung!",
+  ui_story_31350401_17_dialog_content = "Wow—Kamu nggak bercanda! Rasanya benar-benar lezat!",
+  ui_story_31350401_18_dialog_content = "Tunggu, ini tidak benar! Seharusnya aku menjaga tempat ini! T-Tapi... aku tidak bisa berhenti!",
+  ui_story_31350401_19_dialog_content = "Mu-mungkin kita bisa melihat beberapa pekerjaan lain?",
+  ui_story_31350401_20_dialog_content = "Ini adalah Lumina Grid. Yang perlu kamu lakukan adalah bergaul dengan Firefly untuk mengelola area ini.",
+  ui_story_31350401_21_dialog_content = "...",
+  ui_story_31350401_22_dialog_content = "(Ini pekerjaan sangat sederhana, tidak akan ada masalah sama sekali.)",
+  ui_story_31350401_23_dialog_content = "Ancaman serius terdeteksi. Mengaktifkan protokol pelarian.",
+  ui_story_31350401_24_dialog_content = "Jangan mendekati kami. Jangan tambahkan kami ke minumanmu. Kami bukan makanan.",
+  ui_story_31350401_25_dialog_content = "Huh, apa yang terjadi? Para Firefly melarikan diri dari tempat favorit mereka di Colossus!",
+  ui_story_31350401_26_dialog_content = "Ah... Aku rasa itu karena dulu aku pernah salah mengira mereka sebagai bola madu kecil yang mengapung, dan aku mencoba menambahkannya ke minumanku...",
+  ui_story_31350401_27_dialog_content = "Kalau begitu, aku tidak yakin ada pekerjaan lain yang cocok untuk kamu di sini...",
+  ui_story_31350401_28_dialog_content = "Boo-hoo... A-Aku tidak bisa melakukan apa-apa dengan benar di sini! Aku aib bagi seluruh faksi Harmony!",
+  ui_story_31350401_29_dialog_content = "Jangan bilang begitu! Kamu orang yang luar biasa!",
+  ui_story_31350401_30_dialog_content = "T-Tapi... Dalam situasi ini—",
+  ui_story_31350401_31_dialog_content = "Aku tidak akan mampu membeli kue super-loaded dari toko permen Umbraton! Aku sudah menghabiskan hampir semua gaji dari Federasi Illumina!",
+  ui_story_31350401_32_dialog_content = "Aku seharusnya tahu.",
+  ui_story_31350401_33_dialog_content = "Aku benar-benar menantikan kue itu...",
+  ui_story_31350401_34_option_content = "Lain kali, aku akan membelikannya untukmu.",
+  ui_story_31350401_35_dialog_content = "Wow, sungguh?! T-Tapi aku tidak bisa menerimanya tanpa bekerja keras!",
+  ui_story_31350401_36_dialog_content = "Tidak apa-apa. Lagipula, kamu membantu kami memberantas Eclipsite sebelumnya, bukan? Anggap saja kue itu sebagai cara saya membalas budi.",
+  ui_story_31350401_37_option_content = "Sebentar lagi, akan kubuatkan satu untukmu.",
+  ui_story_31350401_38_dialog_content = "K-Kamu sebenarnya tahu cara membuat kue?!",
+  ui_story_31350401_39_dialog_content = "Sedikit.",
+  ui_story_31350401_40_dialog_content = "Benarkah aku bisa mencicipi salah satu kue buatan tangan PlayerName? Aku tak bisa percaya betapa beruntungnya aku!",
+  ui_story_31350401_41_dialog_content = "Untuk kue di Umbraton, nanti saya akan ikut serta dan membelikannya untuk kamu.",
+  ui_story_31350401_42_dialog_content = "Wow, sungguh?! T-Tapi aku tidak bisa menerimanya tanpa bekerja keras!",
+  ui_story_31350401_43_dialog_content = "Tidak apa-apa. Lagipula, kamu membantu kami memberantas Eclipsite sebelumnya, bukan? Anggap saja kue itu sebagai cara saya membalas budi.",
+  ui_story_31350401_44_dialog_content = "Jadi, berapa sih harga kue di Umbraton itu?",
+  ui_story_31350401_45_dialog_content = "<size=45>30.000 Nightium</size>, jika saya tidak salah ingat.",
+  ui_story_31350401_46_dialog_content = "Urgh—!",
+  ui_story_31350401_47_dialog_content = "Ada apa? Kamu merasa baik-baik saja?!",
+  ui_story_31350401_48_dialog_content = "A-Aku baik-baik saja... Memang ini semua uang hasil jerih payahku, tapi aku akan melakukannya hanya untukmu, Elma."
+}
 return config
-

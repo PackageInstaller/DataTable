@@ -1,10 +1,82 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/auto_fight_policy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-PickPosPolicy = {MaxTargetCount = 0, MovePathEndPos = 1, PetFei = 2, PetJiaBaiLie = 3, PetKaLian = 4, PetSaiKa = 5, NearestPos = 6, HeroPos = 7, PetXiNuoPu = 8, PetBonai = 9, PetYuSen = 10, PetSaiKaReverse = 11, PetLuoYi = 12, PetQingTong = 13, PetLen = 14, PetGiles = 15, PetVice = 16, PetReinhardt = 17, FeatureMasterSkill = 18, PetSPKaLian = 19, PetSPKaLianWithDamage = 20, PetFeiYa = 21, PetJudge = 22, Pet1601701 = 23, Pet1601751 = 24, PetZhongxuMain = 25, PetZhongxuExtra = 26, PetYeliyaMain = 27, PetYeliyaExtra = 28, PetLingEn = 29, PetDiNa = 30, PetNaNuSaiEr = 31, PetANaTuoLi = 32, FeatureMasterSkillExtra = 33, PetSorkBekk = 34, PetDanTang = 35, PickupConvertWithWeight = 36, Pet1502051SPBaiLan = 37, LocalTeamSelectGrid1x4Or2x2Convert = 38, LocalTeamSelectCenterGridFor3x3Convert = 39, LocalTeamSelectCornerGridsFor3x3Convert = 40, LocalTeamSelectCenterGridFor1xCrossConvert = 41, LocalTeamPickupConvertWithWeight = 42, PetLarrey = 43, PetSinan = 44, PetJocelyn = 45, PetKangNa = 46, PetYiSha = 47, PetYisitawan = 48, PetYisitawanTrap = 49, PetShe = 50, PetAlGore = 51, PetChenNi = 52, PetPrima = 53, PetZeta1 = 54, PetBatiya = 55, PetWilliam = 56, PetMoye = 57, MAX = 99}
-AutoFightScopeUseType = {Replace = 1, Other = 2, PickPosPolicy = 3, ReplaceTargetAndTrapCount = 4}
-LevelPosPolicy = {ProtectTrap = 1, KillMonster = 2, GotoExitPos = 3, GotoTrapPos = 4}
-PetSkillTag = {Attack = 1, RandPieceColor = 2, FixedPieceColor = 3, AddBlood = 4, Transport = 5, San = 6, SummonTrap = 7}
-
+PickPosPolicy = {
+  MaxTargetCount = 0,
+  MovePathEndPos = 1,
+  PetFei = 2,
+  PetJiaBaiLie = 3,
+  PetKaLian = 4,
+  PetSaiKa = 5,
+  NearestPos = 6,
+  HeroPos = 7,
+  PetXiNuoPu = 8,
+  PetBonai = 9,
+  PetYuSen = 10,
+  PetSaiKaReverse = 11,
+  PetLuoYi = 12,
+  PetQingTong = 13,
+  PetLen = 14,
+  PetGiles = 15,
+  PetVice = 16,
+  PetReinhardt = 17,
+  FeatureMasterSkill = 18,
+  PetSPKaLian = 19,
+  PetSPKaLianWithDamage = 20,
+  PetFeiYa = 21,
+  PetJudge = 22,
+  Pet1601701 = 23,
+  Pet1601751 = 24,
+  PetZhongxuMain = 25,
+  PetZhongxuExtra = 26,
+  PetYeliyaMain = 27,
+  PetYeliyaExtra = 28,
+  PetLingEn = 29,
+  PetDiNa = 30,
+  PetNaNuSaiEr = 31,
+  PetANaTuoLi = 32,
+  FeatureMasterSkillExtra = 33,
+  PetSorkBekk = 34,
+  PetDanTang = 35,
+  PickupConvertWithWeight = 36,
+  Pet1502051SPBaiLan = 37,
+  LocalTeamSelectGrid1x4Or2x2Convert = 38,
+  LocalTeamSelectCenterGridFor3x3Convert = 39,
+  LocalTeamSelectCornerGridsFor3x3Convert = 40,
+  LocalTeamSelectCenterGridFor1xCrossConvert = 41,
+  LocalTeamPickupConvertWithWeight = 42,
+  PetLarrey = 43,
+  PetSinan = 44,
+  PetJocelyn = 45,
+  PetKangNa = 46,
+  PetYiSha = 47,
+  PetYisitawan = 48,
+  PetYisitawanTrap = 49,
+  PetShe = 50,
+  PetAlGore = 51,
+  PetChenNi = 52,
+  PetPrima = 53,
+  PetZeta1 = 54,
+  PetBatiya = 55,
+  PetWilliam = 56,
+  PetMoye = 57,
+  MAX = 99
+}
+AutoFightScopeUseType = {
+  Replace = 1,
+  Other = 2,
+  PickPosPolicy = 3,
+  ReplaceTargetAndTrapCount = 4
+}
+LevelPosPolicy = {
+  ProtectTrap = 1,
+  KillMonster = 2,
+  GotoExitPos = 3,
+  GotoTrapPos = 4
+}
+PetSkillTag = {
+  Attack = 1,
+  RandPieceColor = 2,
+  FixedPieceColor = 3,
+  AddBlood = 4,
+  Transport = 5,
+  San = 6,
+  SummonTrap = 7
+}

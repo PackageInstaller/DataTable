@@ -1,46 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_refresh_grid_by_board_id.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_RefreshGridByBoardID", Object)
 SkillEffectCalc_RefreshGridByBoardID = SkillEffectCalc_RefreshGridByBoardID
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_RefreshGridByBoardID.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_RefreshGridByBoardID:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_RefreshGridByBoardID.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_RefreshGridByBoardID:DoSkillEffectCalculator(skillEffectCalcParam)
   local param = skillEffectCalcParam.skillEffectParam
   local boardID = param:GetBoardID()
   local result = SkillEffectRefreshGridByBoardIDResult:New()
-  local trapSvc = (self._world):GetService("TrapLogic")
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-  for _,trap in ipairs(trapGroup:GetEntities()) do
+  local trapSvc = self._world:GetService("TrapLogic")
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  for _, trap in ipairs(trapGroup:GetEntities()) do
     if not trap:HasDeadMark() then
-      (trap:Attributes()):Modify("HP", 0)
+      trap:Attributes():Modify("HP", 0)
       local disableDieSkill = true
       trapSvc:AddTrapDeadMark(trap, disableDieSkill)
       result:AddDestroyTrapEntityIDList(trap:GetID())
     end
   end
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-  local logicEntitySvc = (self._world):GetService("LogicEntity")
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  local logicEntitySvc = self._world:GetService("LogicEntity")
   logicEntitySvc:GenerateBoardDataByID(boardID, teamEntity)
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local gridPieceData = utilDataSvc:GetReplicaGridEntityData()
   result:SetGridPieceData(gridPieceData)
-  local battleFlags = (self._world):BattleFlags()
+  local battleFlags = self._world:BattleFlags()
   battleFlags:AddSceneChangeTimes(1)
   local changeTimes = battleFlags:GetSceneChangeTimes()
   result:SetSceneChangeTimes(changeTimes)
   return {result}
 end
-
-

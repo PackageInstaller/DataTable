@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_transformation_effect_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillTransformationEffectResult", SkillEffectResultBase)
 SkillTransformationEffectResult = SkillTransformationEffectResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillTransformationEffectResult.Constructor = function(self, caster, monsterID, useHpPercent)
-  -- function num : 0_0
+function SkillTransformationEffectResult:Constructor(caster, monsterID, useHpPercent)
   self.caster = caster
   self.monsterID = monsterID
   self.useHpPercent = useHpPercent
@@ -18,88 +11,50 @@ SkillTransformationEffectResult.Constructor = function(self, caster, monsterID, 
   self.newPos = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTransformationEffectResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillTransformationEffectResult:GetEffectType()
   return SkillEffectType.Transformation
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTransformationEffectResult.GetCaster = function(self)
-  -- function num : 0_2
+function SkillTransformationEffectResult:GetCaster()
   return self.caster
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTransformationEffectResult.GetMonsterID = function(self)
-  -- function num : 0_3
+function SkillTransformationEffectResult:GetMonsterID()
   return self.monsterID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTransformationEffectResult.GetUseHpPercent = function(self)
-  -- function num : 0_4
+function SkillTransformationEffectResult:GetUseHpPercent()
   return self.useHpPercent
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTransformationEffectResult.SetElementType = function(self, type)
-  -- function num : 0_5
+function SkillTransformationEffectResult:SetElementType(type)
   self.elementType = type
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTransformationEffectResult.GetElementType = function(self)
-  -- function num : 0_6
+function SkillTransformationEffectResult:GetElementType()
   return self.elementType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTransformationEffectResult.SetTransformationHp = function(self, transformationHp)
-  -- function num : 0_7
+function SkillTransformationEffectResult:SetTransformationHp(transformationHp)
   self.transformationHp = transformationHp
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTransformationEffectResult.GetTransformationHp = function(self)
-  -- function num : 0_8
+function SkillTransformationEffectResult:GetTransformationHp()
   return self.transformationHp
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTransformationEffectResult.SetTransformationHpMax = function(self, transformationHpMax)
-  -- function num : 0_9
+function SkillTransformationEffectResult:SetTransformationHpMax(transformationHpMax)
   self.transformationHpMax = transformationHpMax
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTransformationEffectResult.GetTransformationHpMax = function(self)
-  -- function num : 0_10
+function SkillTransformationEffectResult:GetTransformationHpMax()
   return self.transformationHpMax
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTransformationEffectResult.SetNewPos = function(self, newPos)
-  -- function num : 0_11
+function SkillTransformationEffectResult:SetNewPos(newPos)
   self.newPos = newPos
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTransformationEffectResult.GetNewPos = function(self)
-  -- function num : 0_12
+function SkillTransformationEffectResult:GetNewPos()
   return self.newPos
 end
-
-

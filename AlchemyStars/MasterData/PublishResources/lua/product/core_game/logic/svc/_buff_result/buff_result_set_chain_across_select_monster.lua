@@ -1,31 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_set_chain_across_select_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultSetChainAcrossSelectMonster", BuffResultBase)
 BuffResultSetChainAcrossSelectMonster = BuffResultSetChainAcrossSelectMonster
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultSetChainAcrossSelectMonster.Constructor = function(self, remove, entityID)
-  -- function num : 0_0
+function BuffResultSetChainAcrossSelectMonster:Constructor(remove, entityID)
   self._remove = remove
   self._entityID = entityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetChainAcrossSelectMonster.GetRemove = function(self)
-  -- function num : 0_1
+function BuffResultSetChainAcrossSelectMonster:GetRemove()
   return self._remove
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetChainAcrossSelectMonster.GetEntityID = function(self)
-  -- function num : 0_2
+function BuffResultSetChainAcrossSelectMonster:GetEntityID()
   return self._entityID
 end
-
-

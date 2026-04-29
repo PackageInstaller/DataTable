@@ -1,67 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_summon_on_fix_pos_limit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultSummonOnFixPosLimit", SkillEffectResultBase)
 SkillEffectResultSummonOnFixPosLimit = SkillEffectResultSummonOnFixPosLimit
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultSummonOnFixPosLimit.Constructor = function(self, trapID, summonPosList)
-  -- function num : 0_0
+function SkillEffectResultSummonOnFixPosLimit:Constructor(trapID, summonPosList)
   self._trapID = trapID
   self._summonPosList = summonPosList
   self._destroyEntityIDList = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonOnFixPosLimit.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultSummonOnFixPosLimit:GetEffectType()
   return SkillEffectType.SummonOnFixPosLimit
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonOnFixPosLimit.GetTrapID = function(self)
-  -- function num : 0_2
+function SkillEffectResultSummonOnFixPosLimit:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonOnFixPosLimit.GetSummonPosList = function(self)
-  -- function num : 0_3
+function SkillEffectResultSummonOnFixPosLimit:GetSummonPosList()
   return self._summonPosList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonOnFixPosLimit.GetDestroyEntityIDList = function(self)
-  -- function num : 0_4
+function SkillEffectResultSummonOnFixPosLimit:GetDestroyEntityIDList()
   return self._destroyEntityIDList
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonOnFixPosLimit.SetDestroyEntityIDList = function(self, destroyEntityIDList)
-  -- function num : 0_5
+function SkillEffectResultSummonOnFixPosLimit:SetDestroyEntityIDList(destroyEntityIDList)
   self._destroyEntityIDList = destroyEntityIDList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonOnFixPosLimit.SetTrapIDList = function(self, trapIDList)
-  -- function num : 0_6
+function SkillEffectResultSummonOnFixPosLimit:SetTrapIDList(trapIDList)
   self._trapIDList = trapIDList
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonOnFixPosLimit.GetTrapIDList = function(self)
-  -- function num : 0_7
+function SkillEffectResultSummonOnFixPosLimit:GetTrapIDList()
   return self._trapIDList
 end
-
-

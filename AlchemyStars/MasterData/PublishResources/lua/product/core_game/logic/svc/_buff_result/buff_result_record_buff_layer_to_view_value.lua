@@ -1,39 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_record_buff_layer_to_view_value.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultRecordBuffLayerToViewValue", BuffResultBase)
 BuffResultRecordBuffLayerToViewValue = BuffResultRecordBuffLayerToViewValue
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultRecordBuffLayerToViewValue.Constructor = function(self, buffLayerType, layerCount, isRevert)
-  -- function num : 0_0
+function BuffResultRecordBuffLayerToViewValue:Constructor(buffLayerType, layerCount, isRevert)
   self._buffLayerType = buffLayerType
   self._layerCount = layerCount
   self._isRevert = isRevert
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRecordBuffLayerToViewValue.GetBuffLayerType = function(self)
-  -- function num : 0_1
+function BuffResultRecordBuffLayerToViewValue:GetBuffLayerType()
   return self._buffLayerType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRecordBuffLayerToViewValue.GetLayerCount = function(self)
-  -- function num : 0_2
+function BuffResultRecordBuffLayerToViewValue:GetLayerCount()
   return self._layerCount
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRecordBuffLayerToViewValue.GetIsRevert = function(self)
-  -- function num : 0_3
+function BuffResultRecordBuffLayerToViewValue:GetIsRevert()
   return self._isRevert
 end
-
-

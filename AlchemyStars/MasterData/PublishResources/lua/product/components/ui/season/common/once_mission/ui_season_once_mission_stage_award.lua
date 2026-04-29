@@ -1,136 +1,101 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/once_mission/ui_season_once_mission_stage_award.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonOnceMissionStageAward", UICustomWidget)
 UISeasonOnceMissionStageAward = UISeasonOnceMissionStageAward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonOnceMissionStageAward.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonOnceMissionStageAward:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionStageAward.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonOnceMissionStageAward:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionStageAward.SetData = function(self, missionID, onceMissionData, cmpt)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonOnceMissionStageAward:SetData(missionID, onceMissionData, cmpt)
   self._missionID = missionID
   self._onceMissionData = onceMissionData
   self._cmpt = cmpt
-  local cmpInfo = (self._cmpt):GetComponentInfo()
-  self._missionFinishInfo = (cmpInfo.m_pass_mission_info)[missionID]
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  local cmpInfo = self._cmpt:GetComponentInfo()
+  self._missionFinishInfo = cmpInfo.m_pass_mission_info[missionID]
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   self:InitAllAwards(missionCfg)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionStageAward.InitAllAwards = function(self, missionCfg)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonOnceMissionStageAward:InitAllAwards(missionCfg)
   local awards = self:ProcessAward(missionCfg)
   if not awards then
-    return 
+    return
   end
-  local count = (table.count)(awards)
+  local count = table.count(awards)
   local grid = self:GetUIComponent("GridLayoutGroup", "Content")
   local contentSizeFilter = self:GetUIComponent("ContentSizeFitter", "Content")
   local contentRect = self:GetUIComponent("RectTransform", "Content")
-  if count > 4 then
-    grid.childAlignment = (UnityEngine.TextAnchor).MiddleLeft
+  if 4 < count then
+    grid.childAlignment = UnityEngine.TextAnchor.MiddleLeft
     contentSizeFilter.enabled = true
   else
-    grid.childAlignment = (UnityEngine.TextAnchor).MiddleCenter
+    grid.childAlignment = UnityEngine.TextAnchor.MiddleCenter
     contentSizeFilter.enabled = false
   end
   contentRect.localPosition = Vector3(0, 0, 0)
   local sop = self:GetUIComponent("UISelectObjectPath", "Content")
   sop:SpawnObjects("UIAwardItem", count)
   local list = sop:GetAllSpawnList()
-  for i,v in ipairs(list) do
+  for i, v in ipairs(list) do
     v:Flush(awards[i])
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionStageAward.ProcessAward = function(self, missionCfg)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonOnceMissionStageAward:ProcessAward(missionCfg)
   local awards = {}
   if not self:HasPassThreeStar(missionCfg) then
     local awardsStar = self:GetSortedArr(AwardType.ThreeStar, missionCfg, StageAwardType.Star)
     if awardsStar then
-      for i,v in ipairs(awardsStar) do
+      for i, v in ipairs(awardsStar) do
         awards[#awards + 1] = v
       end
     end
   end
-  do
-    if not self._missionFinishInfo then
-      local awardsFirst = self:GetSortedArr(AwardType.First, missionCfg, StageAwardType.First)
-      if awardsFirst then
-        for i,v in ipairs(awardsFirst) do
-          awards[#awards + 1] = v
-        end
-      end
-    end
-    do
-      local normalArr = self:GetSortedArr(AwardType.Pass, missionCfg, StageAwardType.Normal)
-      if normalArr then
-        for i,v in ipairs(normalArr) do
-          awards[#awards + 1] = v
-        end
-      end
-      do
-        return awards
+  if not self._missionFinishInfo then
+    local awardsFirst = self:GetSortedArr(AwardType.First, missionCfg, StageAwardType.First)
+    if awardsFirst then
+      for i, v in ipairs(awardsFirst) do
+        awards[#awards + 1] = v
       end
     end
   end
+  local normalArr = self:GetSortedArr(AwardType.Pass, missionCfg, StageAwardType.Normal)
+  if normalArr then
+    for i, v in ipairs(normalArr) do
+      awards[#awards + 1] = v
+    end
+  end
+  return awards
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionStageAward.GetSortedArr = function(self, awardType, cfg, stageAwardType)
-  -- function num : 0_5 , upvalues : _ENV
-  local list = (UICommonHelper:GetInstance()):GetDropByAwardType(awardType, cfg)
+function UISeasonOnceMissionStageAward:GetSortedArr(awardType, cfg, stageAwardType)
+  local list = UICommonHelper:GetInstance():GetDropByAwardType(awardType, cfg)
   local vecSort = SortedArray:New(Algorithm.COMPARE_CUSTOM, DiscoveryStage._LessComparer)
   if list then
-    for i,v in ipairs(list) do
+    for i, v in ipairs(list) do
       local award = Award:New()
       award:InitWithCount(v.ItemID, v.Count, v.Type)
       award:FlushType(stageAwardType)
       vecSort:Insert(award)
     end
   end
-  do
-    return vecSort.elements
-  end
+  return vecSort.elements
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionStageAward.HasPassThreeStar = function(self, missionCfg)
-  -- function num : 0_6
+function UISeasonOnceMissionStageAward:HasPassThreeStar(missionCfg)
   if not self._missionFinishInfo then
     return false
   end
-  if missionCfg.ThreeStarCondition1 and (self._missionFinishInfo).star & 1 == 0 then
+  if missionCfg.ThreeStarCondition1 and self._missionFinishInfo.star & 1 == 0 then
     return false
   end
-  if missionCfg.ThreeStarCondition2 and (self._missionFinishInfo).star & 2 == 0 then
+  if missionCfg.ThreeStarCondition2 and self._missionFinishInfo.star & 2 == 0 then
     return false
   end
-  if missionCfg.ThreeStarCondition3 and (self._missionFinishInfo).star & 4 == 0 then
+  if missionCfg.ThreeStarCondition3 and self._missionFinishInfo.star & 4 == 0 then
     return false
   end
   return true
 end
-
-

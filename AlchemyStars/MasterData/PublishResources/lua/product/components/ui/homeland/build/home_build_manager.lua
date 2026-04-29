@@ -1,31 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/build/home_build_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeBuildManager", Object)
 HomeBuildManager = HomeBuildManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeBuildManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local areaGO = ((UnityEngine.GameObject).Find)("HomeArea")
+function HomeBuildManager:Constructor()
+  local areaGO = UnityEngine.GameObject.Find("HomeArea")
   if not areaGO then
     BuildError("场景中没有HomeArea节点")
-    return 
+    return
   end
   local area = areaGO:GetComponent("HomeArea")
   if not area then
     BuildError("HomeArea节点上没有HomeArea组件")
-    return 
+    return
   end
   self._area = HomeBuildArea:New(area)
   self._curFatherBuildingArea = nil
   self._curFreeBuildingArea = nil
   self._sonBuildingRayOffset = Vector3(0, 10, 0)
   self._areaRaycastRecurStep = Vector3(0, -0.01, 0)
-  self._module = (GameGlobal.GetModule)(HomelandModule)
-  self._uiModule = (GameGlobal.GetUIModule)(HomelandModule)
+  self._module = GameGlobal.GetModule(HomelandModule)
+  self._uiModule = GameGlobal.GetUIModule(HomelandModule)
   self._active = false
   self._mode = BuildEditorMode.None
   self._architectures = nil
@@ -43,217 +36,146 @@ HomeBuildManager.Constructor = function(self)
   self:AttachEvent(GameEventType.HomelandForgeUpdateSequence, self.OnHomelandForgeUpdateSequence)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager._GetData = function(self)
-  -- function num : 0_1
+function HomeBuildManager:_GetData()
   if self._isVisit then
-    local visitInfo = (self._uiModule):GetVisitInfo()
-    return (visitInfo.architecture_list).architecture_list
+    local visitInfo = self._uiModule:GetVisitInfo()
+    return visitInfo.architecture_list.architecture_list
   else
-    do
-      do return (self._module):GetBuildArchitecture() end
-    end
+    return self._module:GetBuildArchitecture()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.AttachEvent = function(self, eventType, func)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._eventListners)[eventType] then
+function HomeBuildManager:AttachEvent(eventType, func)
+  if self._eventListners[eventType] then
     BuildError("不可添加重复的事件监听")
-    return 
+    return
   end
-  local callback = (GameHelper:GetInstance()):CreateCallback(func, self)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._eventListners)[eventType] = callback
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(eventType, callback)
+  local callback = GameHelper:GetInstance():CreateCallback(func, self)
+  self._eventListners[eventType] = callback
+  GameGlobal.EventDispatcher():AddCallbackListener(eventType, callback)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.DetachEvent = function(self, eventType, func)
-  -- function num : 0_3 , upvalues : _ENV
-  local callback = (self._eventListners)[eventType]
+function HomeBuildManager:DetachEvent(eventType, func)
+  local callback = self._eventListners[eventType]
   if callback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(eventType, callback)
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._eventListners)[eventType] = nil
+    GameGlobal.EventDispatcher():RemoveCallbackListener(eventType, callback)
+    self._eventListners[eventType] = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.Init = function(self, TT, client)
-  -- function num : 0_4 , upvalues : _ENV
+function HomeBuildManager:Init(TT, client)
   self._client = client
-  self._isVisit = (self._client):IsVisit()
+  self._isVisit = self._client:IsVisit()
   self._architectures = self:_GetData()
-  ;
-  (Log.debug)("[homeland loading] HomeBuildManager:Init refreshBuilding start")
+  Log.debug("[homeland loading] HomeBuildManager:Init refreshBuilding start")
   self:refreshBuilding()
-  ;
-  (Log.debug)("[homeland loading] HomeBuildManager:Init BuildNavMesh start")
-  local res = ((self._client):SceneManager()):BuildNavMesh()
+  Log.debug("[homeland loading] HomeBuildManager:Init BuildNavMesh start")
+  local res = self._client:SceneManager():BuildNavMesh()
   while not res.isDone do
     YIELD(TT)
   end
-  local circlePos = (BuildConfig.MaxCircle).Center
-  self._circlePos = Vector3(circlePos.x, (self._area):GetHeight(), circlePos.y)
-  self._circleRadius = (BuildConfig.MaxCircle).Radius
-  ;
-  (Log.debug)("[homeland loading] HomeBuildManager:Init BuildNavMesh end")
+  local circlePos = BuildConfig.MaxCircle.Center
+  self._circlePos = Vector3(circlePos.x, self._area:GetHeight(), circlePos.y)
+  self._circleRadius = BuildConfig.MaxCircle.Radius
+  Log.debug("[homeland loading] HomeBuildManager:Init BuildNavMesh end")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.OnModeChanged = function(self, TT, mode)
-  -- function num : 0_5 , upvalues : _ENV
+function HomeBuildManager:OnModeChanged(TT, mode)
   if self._isVisit then
     BuildError("拜访家园不允许切换模式")
-    return 
+    return
   end
   if mode == HomelandMode.Build then
     self._active = true
-    ;
-    (self._area):ShowArea(true)
+    self._area:ShowArea(true)
     self:CollectObstacle()
     self._mode = BuildEditorMode.Normal
-  else
-    if mode == HomelandMode.Normal and (self._client):LastMode() == HomelandMode.Build then
-      self._active = false
-      ;
-      (self._area):ShowArea(false)
-      ;
-      ((GameGlobal.UIStateManager)()):Lock("WaitBuildNavMesh")
-      local res = ((self._client):SceneManager()):BuildNavMesh()
-      while not res.isDone do
-        YIELD(TT)
-      end
-      self._obstacles = {}
-      ;
-      ((GameGlobal.UIStateManager)()):UnLock("WaitBuildNavMesh")
-      self._mode = BuildEditorMode.None
+  elseif mode == HomelandMode.Normal and self._client:LastMode() == HomelandMode.Build then
+    self._active = false
+    self._area:ShowArea(false)
+    GameGlobal.UIStateManager():Lock("WaitBuildNavMesh")
+    local res = self._client:SceneManager():BuildNavMesh()
+    while not res.isDone do
+      YIELD(TT)
     end
+    self._obstacles = {}
+    GameGlobal.UIStateManager():UnLock("WaitBuildNavMesh")
+    self._mode = BuildEditorMode.None
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.SetBuildEditorMode = function(self, editorMode)
-  -- function num : 0_6
+function HomeBuildManager:SetBuildEditorMode(editorMode)
   self._mode = editorMode
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.GetBuildEditorMode = function(self)
-  -- function num : 0_7
+function HomeBuildManager:GetBuildEditorMode()
   return self._mode
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.ShowArea = function(self, bShow)
-  -- function num : 0_8
-  (self._area):ShowArea(bShow)
+function HomeBuildManager:ShowArea(bShow)
+  self._area:ShowArea(bShow)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.BuildModeUpdate = function(self, dtMS)
-  -- function num : 0_9 , upvalues : _ENV
+function HomeBuildManager:BuildModeUpdate(dtMS)
   if not self._active then
-    return 
+    return
   end
-  local y = (((self._client):CameraManager()):GlobalCameraController()):GetCamHeight()
-  local height = y - (self._area):GetHeight()
-  local space = (self._area):GetGridSpace()
+  local y = self._client:CameraManager():GlobalCameraController():GetCamHeight()
+  local height = y - self._area:GetHeight()
+  local space = self._area:GetGridSpace()
   if height <= 15 then
     space = BuildGridSize.One
-  else
-    if height <= 25 then
-      space = BuildGridSize.Two
-    else
-      if height <= 30 then
-        space = BuildGridSize.Three
-      end
-    end
+  elseif height <= 25 then
+    space = BuildGridSize.Two
+  elseif height <= 30 then
+    space = BuildGridSize.Three
   end
-  if (self._area):GetGridSpace() ~= space then
-    (self._area):SetGridSpace(space)
+  if self._area:GetGridSpace() ~= space then
+    self._area:SetGridSpace(space)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.Update = function(self, dtMS)
-  -- function num : 0_10 , upvalues : _ENV
-  if (self._client):CurrentMode() == HomelandMode.Build then
+function HomeBuildManager:Update(dtMS)
+  if self._client:CurrentMode() == HomelandMode.Build then
     self:BuildModeUpdate(dtMS)
   end
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._cdForge).cdPeriod > 0 then
-    (self._cdForge).cdTick = (self._cdForge).cdTick + dtMS
-    if (self._cdForge).cdPeriod <= (self._cdForge).cdTick then
+  if self._cdForge.cdPeriod > 0 then
+    self._cdForge.cdTick = self._cdForge.cdTick + dtMS
+    if self._cdForge.cdTick >= self._cdForge.cdPeriod then
       self:RefreshWhiteTowerHeadBoard()
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.GetArchitecture = function(self, pstid)
-  -- function num : 0_11
-  return (self._architectures)[pstid]
+function HomeBuildManager:GetArchitecture(pstid)
+  return self._architectures[pstid]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.RemoveBuilding = function(self, building)
-  -- function num : 0_12
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._buildings)[building:InsID()] = nil
+function HomeBuildManager:RemoveBuilding(building)
+  self._buildings[building:InsID()] = nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.Dispose = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function HomeBuildManager:Dispose()
   self:RevertAll()
-  for key,building in pairs(self._buildings) do
+  for key, building in pairs(self._buildings) do
     building:Dispose()
   end
-  for k,v in pairs(self._eventListners) do
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(k, v)
+  for k, v in pairs(self._eventListners) do
+    GameGlobal.EventDispatcher():RemoveCallbackListener(k, v)
   end
   self._eventListners = nil
   BuildLog("家园建造析构完成")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.RefreshBuildingCurrentAreaID = function(self, building)
-  -- function num : 0_14
-  if self._curFatherBuildingArea and (self._curFatherBuildingArea):GetBelongBuildingArea() then
-    building.CurrentAreaID = ((self._curFatherBuildingArea):GetBelongBuildingArea()):GetID()
+function HomeBuildManager:RefreshBuildingCurrentAreaID(building)
+  if self._curFatherBuildingArea and self._curFatherBuildingArea:GetBelongBuildingArea() then
+    building.CurrentAreaID = self._curFatherBuildingArea:GetBelongBuildingArea():GetID()
   else
     building.CurrentAreaID = nil
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.PickUp = function(self, building, notifyInput)
-  -- function num : 0_15 , upvalues : _ENV
+function HomeBuildManager:PickUp(building, notifyInput)
   local mdf = HomeBuildModifier:New(building)
   self._curMdf = mdf
   local preFreeBuildingArea = self._curFreeBuildingArea
@@ -269,144 +191,106 @@ HomeBuildManager.PickUp = function(self, building, notifyInput)
     self:ChangeCurFatherBuildingArea(nil)
   end
   local legal, illegalType = self:CheckLegal()
-  ;
-  (self._curMdf):Start(legal, illegalType)
+  self._curMdf:Start(legal, illegalType)
   BuildLog("抬起建筑:", mdf:InsID())
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomeBuildOnSelectBuilding)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomeBuildOnSelectBuilding)
   if notifyInput then
-    (((self._client):InputManager()):GetControllerBuild()):SetCurrentBuilding(building)
+    self._client:InputManager():GetControllerBuild():SetCurrentBuilding(building)
   end
   self:CheckBuildingArrow(building, true)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.DropDown = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local legal = (self._curMdf):IsLegal()
+function HomeBuildManager:DropDown()
+  local legal = self._curMdf:IsLegal()
   if not legal then
-    if (self._curMdf):GetIllegalType() == BuildEditIllegalType.SonNotOnFather then
-      self:ShowChildBuildDropError(((self._curMdf):Building()):GetBuildId())
+    if self._curMdf:GetIllegalType() == BuildEditIllegalType.SonNotOnFather then
+      self:ShowChildBuildDropError(self._curMdf:Building():GetBuildId())
       BuildLog("子建筑不在父建筑区域范围内，不能放下")
     else
       if self._mode == BuildEditorMode.MakeMovieFree then
-        (ToastManager.ShowHomeToast)((StringTable.Get)("str_movie_homeland_build_location_error"))
+        ToastManager.ShowHomeToast(StringTable.Get("str_movie_homeland_build_location_error"))
       else
-        ;
-        (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_build_location_error"))
+        ToastManager.ShowHomeToast(StringTable.Get("str_homeland_build_location_error"))
       end
       BuildLog("当前位置不合法，不能放下")
     end
     return false
   end
   BuildLog("放下建筑")
-  local building = (self._curMdf):Building()
+  local building = self._curMdf:Building()
   building:SetShowDeleteBtn(true)
-  ;
-  (self._curMdf):Finish()
-  ;
-  (self._curMdf):DropDown()
+  self._curMdf:Finish()
+  self._curMdf:DropDown()
   self:CheckBuildingArrow(building, false)
-  -- DECOMPILER ERROR at PC72: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._mdfs)[#self._mdfs + 1] = self._curMdf
+  self._mdfs[#self._mdfs + 1] = self._curMdf
   self._curMdf = nil
   self:ChangeCurFatherBuildingArea(nil)
   self:ChangeCurFreeBuildingArea(nil)
-  ;
-  (((self._client):InputManager()):GetControllerBuild()):SetCurrentBuilding(nil)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomeBuildOnSelectBuilding)
+  self._client:InputManager():GetControllerBuild():SetCurrentBuilding(nil)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomeBuildOnSelectBuilding)
   self:SetLinkBuildings()
   return true
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.getBuildingByRay = function(self, ray)
-  -- function num : 0_17 , upvalues : _ENV
+function HomeBuildManager:getBuildingByRay(ray)
   if self._curMdf == nil then
-    local castRes, hitInfo = ((UnityEngine.Physics).Raycast)(ray, nil, 1000, 1 << HomeBuildLayer.Building)
+    local castRes, hitInfo = UnityEngine.Physics.Raycast(ray, nil, 1000, 1 << HomeBuildLayer.Building)
     if castRes then
-      local building = (self._collider2Building)[hitInfo.collider]
+      local building = self._collider2Building[hitInfo.collider]
       if not building then
-        BuildError("无效的建筑:", ((hitInfo.transform).gameObject).name)
+        BuildError("无效的建筑:", hitInfo.transform.gameObject.name)
       end
       return building, hitInfo.point
     end
   else
-    do
-      local t = {}
-      do
-        local results = ((UnityEngine.Physics).RaycastAll)(ray, 1000, 1 << HomeBuildLayer.Building)
-        if results and results.Length > 0 then
-          for i = 1, results.Length do
-            t[i] = results[i - 1]
-          end
-          ;
-          (table.sort)(t, function(a, b)
-    -- function num : 0_17_0
-    do return a.distance < b.distance end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-        end
-        if #t > 0 then
-          for _,hitInfo in ipairs(t) do
-            local building = (self._collider2Building)[hitInfo.collider]
-            if building and building:InsID() == ((self._curMdf):Building()):InsID() then
-              return building, hitInfo.point
-            end
-          end
-          return (self._collider2Building)[(t[1]).collider], (t[1]).point
-        end
-        return nil
+    local t = {}
+    local results = UnityEngine.Physics.RaycastAll(ray, 1000, 1 << HomeBuildLayer.Building)
+    if results and results.Length > 0 then
+      for i = 1, results.Length do
+        t[i] = results[i - 1]
       end
+      table.sort(t, function(a, b)
+        return a.distance < b.distance
+      end)
+    end
+    if 0 < #t then
+      for _, hitInfo in ipairs(t) do
+        local building = self._collider2Building[hitInfo.collider]
+        if building and building:InsID() == self._curMdf:Building():InsID() then
+          return building, hitInfo.point
+        end
+      end
+      return self._collider2Building[t[1].collider], t[1].point
     end
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.getBuildingArrowByRay = function(self, ray)
-  -- function num : 0_18 , upvalues : _ENV
-  local castRes, hitInfo = ((UnityEngine.Physics).Raycast)(ray, nil, 1000, 1 << HomeBuildLayer.Arrow)
-  do
-    if castRes then
-      local go = (hitInfo.collider).gameObject
-      return tonumber(go.name)
-    end
-    return nil
+function HomeBuildManager:getBuildingArrowByRay(ray)
+  local castRes, hitInfo = UnityEngine.Physics.Raycast(ray, nil, 1000, 1 << HomeBuildLayer.Arrow)
+  if castRes then
+    local go = hitInfo.collider.gameObject
+    return tonumber(go.name)
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.getTouchPosByRay = function(self, ray)
-  -- function num : 0_19 , upvalues : _ENV
-  local castRes, hitInfo = ((UnityEngine.Physics).Raycast)(ray, nil, 1000, 1 << HomeBuildLayer.Surface)
+function HomeBuildManager:getTouchPosByRay(ray)
+  local castRes, hitInfo = UnityEngine.Physics.Raycast(ray, nil, 1000, 1 << HomeBuildLayer.Surface)
   if castRes then
     return hitInfo.point, hitInfo.transform
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.getDragPosByRay = function(self, ray)
-  -- function num : 0_20 , upvalues : _ENV
-  local castRes, hitInfo = ((UnityEngine.Physics).Raycast)(ray, nil, 1000, 1 << HomeBuildLayer.Drag)
+function HomeBuildManager:getDragPosByRay(ray)
+  local castRes, hitInfo = UnityEngine.Physics.Raycast(ray, nil, 1000, 1 << HomeBuildLayer.Drag)
   if castRes then
     return hitInfo.point
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.getBelowAreaAndHeight = function(self, pos)
-  -- function num : 0_21 , upvalues : _ENV
-  local ray = (Ray.New)(Vector3.down, pos)
+function HomeBuildManager:getBelowAreaAndHeight(pos)
+  local ray = Ray.New(Vector3.down, pos)
   local pos, trans = self:getTouchPosByRay(ray)
   if pos and trans then
     local area, building = self:GetFatherBuildingArea(trans)
@@ -417,314 +301,225 @@ HomeBuildManager.getBelowAreaAndHeight = function(self, pos)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.refreshBuilding = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function HomeBuildManager:refreshBuilding()
   local new = {}
   local parentList = {}
   local childList = {}
-  local commonRootTrans = ((self._client):SceneManager()):BuildingRootTrans()
-  for _,arch in pairs(self._architectures) do
-    local building = nil
+  local commonRootTrans = self._client:SceneManager():BuildingRootTrans()
+  for _, arch in pairs(self._architectures) do
+    local building
     if next(self._buildings) then
-      for insid,bd in pairs(self._buildings) do
-        if arch.pstid == (bd:GetArchitecture()).pstid then
-          (bd:Transform()):SetParent(commonRootTrans)
+      for insid, bd in pairs(self._buildings) do
+        if arch.pstid == bd:GetArchitecture().pstid then
+          bd:Transform():SetParent(commonRootTrans)
           bd:Reset(arch)
           building = bd
-          -- DECOMPILER ERROR at PC38: Confused about usage of register: R16 in 'UnsetPending'
-
-          ;
-          (self._buildings)[insid] = nil
+          self._buildings[insid] = nil
         end
       end
     end
-    do
-      if not building then
-        building = (BuildHelper.CreateBuilding)(arch)
-        local colliders = building:GetColliders()
-        for _,collider in pairs(colliders) do
-          -- DECOMPILER ERROR at PC55: Confused about usage of register: R17 in 'UnsetPending'
-
-          (self._collider2Building)[collider] = building
-        end
+    if not building then
+      building = BuildHelper.CreateBuilding(arch)
+      local colliders = building:GetColliders()
+      for _, collider in pairs(colliders) do
+        self._collider2Building[collider] = building
       end
-      do
-        do
-          new[building:InsID()] = building
-          if building:GetBuildType() == ArchitectureSubType.Father_Architecture then
-            parentList[building:GetBuildId()] = building
-          else
-            if building:GetBuildType() == ArchitectureSubType.Son_Architecture then
-              building:StartShakeAnimation(true)
-              ;
-              (table.insert)(childList, building)
-            else
-              if building:GetParentAssetID() ~= 0 then
-                (table.insert)(childList, building)
-              end
-            end
-          end
-          -- DECOMPILER ERROR at PC95: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC95: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
-      end
+    end
+    new[building:InsID()] = building
+    if building:GetBuildType() == ArchitectureSubType.Father_Architecture then
+      parentList[building:GetBuildId()] = building
+    elseif building:GetBuildType() == ArchitectureSubType.Son_Architecture then
+      building:StartShakeAnimation(true)
+      table.insert(childList, building)
+    elseif building:GetParentAssetID() ~= 0 then
+      table.insert(childList, building)
     end
   end
   if next(self._buildings) then
-    for _,building in pairs(self._buildings) do
+    for _, building in pairs(self._buildings) do
       building:Dispose()
     end
   end
-  do
-    self._buildings = new
-    for i = 1, #childList do
-      local parentAssetID = (childList[i]):GetParentAssetID()
-      if parentAssetID and parentList[parentAssetID] then
-        (parentList[parentAssetID]):AddChild(childList[i])
-      else
-        BuildError("子建筑", (childList[i]):GetBuildPstId(), "没有对应的父建筑数据")
-      end
+  self._buildings = new
+  for i = 1, #childList do
+    local parentAssetID = childList[i]:GetParentAssetID()
+    if parentAssetID and parentList[parentAssetID] then
+      parentList[parentAssetID]:AddChild(childList[i])
+    else
+      BuildError("子建筑", childList[i]:GetBuildPstId(), "没有对应的父建筑数据")
     end
-    self:RefreshWhiteTowerHeadBoard()
-    self:SetLinkBuildings()
   end
+  self:RefreshWhiteTowerHeadBoard()
+  self:SetLinkBuildings()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.RefreshWhiteTowerHeadBoard = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local mHomeland = (GameGlobal.GetModule)(HomelandModule)
+function HomeBuildManager:RefreshWhiteTowerHeadBoard()
+  local mHomeland = GameGlobal.GetModule(HomelandModule)
   local clientHomelandInfo = mHomeland:GetHomelandInfo()
   local forge_info = clientHomelandInfo.forge_info
   local forge_list = forge_info.forge_list
   local forgeState = ForgeSequenceState.Forging
   local theMinSecond = math.maxinteger
-  for _,v in ipairs(forge_list) do
+  for _, v in ipairs(forge_list) do
     local doneTimestamp = v.end_time
     local leftSecond = 0
-    if doneTimestamp > 0 then
-      leftSecond = (UICommonHelper.CalcLeftSeconds)(doneTimestamp)
+    if 0 < doneTimestamp then
+      leftSecond = UICommonHelper.CalcLeftSeconds(doneTimestamp)
     end
     if leftSecond == 0 then
       forgeState = ForgeSequenceState.Getable
-    else
-      if leftSecond > 0 then
-        theMinSecond = (math.min)(theMinSecond, leftSecond)
-      end
+    elseif 0 < leftSecond then
+      theMinSecond = math.min(theMinSecond, leftSecond)
     end
   end
-  for _,building in pairs(self._buildings) do
+  for _, building in pairs(self._buildings) do
     local buildType = building:GetBuildType()
-    if forgeState ~= ForgeSequenceState.Getable then
-      do
-        building:ShowInteractBoard(buildType ~= ArchitectureSubType.White_Tower)
-        -- DECOMPILER ERROR at PC58: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC58: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    if buildType == ArchitectureSubType.White_Tower then
+      building:ShowInteractBoard(forgeState == ForgeSequenceState.Getable)
     end
   end
-  -- DECOMPILER ERROR at PC65: Confused about usage of register: R7 in 'UnsetPending'
-
   if theMinSecond < math.maxinteger then
-    (self._cdForge).cdTick = 0
-    -- DECOMPILER ERROR at PC68: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._cdForge).cdPeriod = theMinSecond * 1000
+    self._cdForge.cdTick = 0
+    self._cdForge.cdPeriod = theMinSecond * 1000
   else
-    -- DECOMPILER ERROR at PC71: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._cdForge).cdTick = 0
-    -- DECOMPILER ERROR at PC73: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._cdForge).cdPeriod = 0
+    self._cdForge.cdTick = 0
+    self._cdForge.cdPeriod = 0
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.OnHomelandForgeUpdateSequence = function(self)
-  -- function num : 0_24
+function HomeBuildManager:OnHomelandForgeUpdateSequence()
   self:RefreshWhiteTowerHeadBoard()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager._NotifyAmbientChanged = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function HomeBuildManager:_NotifyAmbientChanged()
   local value = 0
-  for _,building in pairs(self._buildings) do
+  for _, building in pairs(self._buildings) do
     if not building:IsDelete() and not building:IsShabby() then
       local skin = building:SkinID()
-      if skin > 0 then
-        value = value + ((Cfg.cfg_item_architecture_skin)[skin]).LivableValue
+      if 0 < skin then
+        value = value + Cfg.cfg_item_architecture_skin[skin].LivableValue
       else
-        value = value + ((Cfg.cfg_item_architecture)[building:GetBuildId()]).LivableValue
+        value = value + Cfg.cfg_item_architecture[building:GetBuildId()].LivableValue
       end
     end
   end
-  value = (math.min)((self._module):GetAmbientCeiling(), value)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomeBuildOnAmbientChanged, value)
+  value = math.min(self._module:GetAmbientCeiling(), value)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomeBuildOnAmbientChanged, value)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.isOutofArea = function(self, building)
-  -- function num : 0_26 , upvalues : _ENV
+function HomeBuildManager:isOutofArea(building)
   local points = building:GetPoints()
-  for _,point in ipairs(points) do
-    if not (self._area):Contains(point) then
+  for _, point in ipairs(points) do
+    if not self._area:Contains(point) then
       return true
     end
   end
   local points = building:GetExtendPoints()
-  for _,point in ipairs(points) do
-    if not (self._area):Contains(point) then
+  for _, point in ipairs(points) do
+    if not self._area:Contains(point) then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager._CheckLegalFixedChild = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function HomeBuildManager:_CheckLegalFixedChild()
   local legal = true
   local illegalType = BuildEditIllegalType.None
-  for _,legalBuilding in pairs(self._illegalBuildings) do
+  for _, legalBuilding in pairs(self._illegalBuildings) do
     legalBuilding:ShowArea(false, true)
   end
   self._illegalBuildings = {}
   return legal, illegalType
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager._CheckLegalFreeChild = function(self, building)
-  -- function num : 0_28 , upvalues : _ENV
+function HomeBuildManager:_CheckLegalFreeChild(building)
   local legal = true
   local illegalType = BuildEditIllegalType.None
   local illegalFree = false
   if building:GetBuildType() == ArchitectureSubType.Son_Architecture then
     illegalFree = true
-  else
-    if building.Parent == nil then
-      illegalFree = true
-    else
-      if (building.Parent):InFreeAreaBlackList(building:GetBuildId()) then
-        illegalFree = true
-      end
-    end
+  elseif building.Parent == nil then
+    illegalFree = true
+  elseif building.Parent:InFreeAreaBlackList(building:GetBuildId()) then
+    illegalFree = true
   end
   if illegalFree then
     local legalBuildings = self._illegalBuildings
-    self._illegalBuildings = {[building:InsID()] = building}
-    for _,legalBuilding in pairs(legalBuildings) do
+    self._illegalBuildings = {
+      [building:InsID()] = building
+    }
+    for _, legalBuilding in pairs(legalBuildings) do
       legalBuilding:ShowArea(false, true)
     end
-    for _,legalBuilding in pairs(self._illegalBuildings) do
+    for _, legalBuilding in pairs(self._illegalBuildings) do
       legalBuilding:ShowArea(true, false)
     end
     legal = false
   else
-    do
-      legal = self:_CheckLegalCommon(building)
-      if legal then
-        legal = false
-        local freeAreaID = ((self._curFreeBuildingArea):GetBelongBuildingArea()):GetID()
-        if (building.Parent):CheckInArea(freeAreaID, building) then
-          legal = true
-        end
-      end
-      do
-        return legal, illegalType
+    legal = self:_CheckLegalCommon(building)
+    if legal then
+      legal = false
+      local freeAreaID = self._curFreeBuildingArea:GetBelongBuildingArea():GetID()
+      if building.Parent:CheckInArea(freeAreaID, building) then
+        legal = true
       end
     end
   end
+  return legal, illegalType
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager._CheckLegalCommon = function(self, building)
-  -- function num : 0_29 , upvalues : _ENV
+function HomeBuildManager:_CheckLegalCommon(building)
   local outside = self:isOutofArea(building)
   local overlaps = self:GetOverlapBuilding(building)
   local illegalType = BuildEditIllegalType.None
-  for id,overlapBuilding in pairs(overlaps) do
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R10 in 'UnsetPending'
-
-    (self._illegalBuildings)[id] = nil
+  for id, overlapBuilding in pairs(overlaps) do
+    self._illegalBuildings[id] = nil
   end
-  for _,legalBuilding in pairs(self._illegalBuildings) do
+  for _, legalBuilding in pairs(self._illegalBuildings) do
     legalBuilding:ShowArea(false, true)
   end
-  do
-    local legal = not outside and next(overlaps) == nil
-    do
-      if legal then
-        local obs = self:GetOverlapObstacle(building)
-        legal = not obs
-      end
-      if legal and building:GetBuildType() == ArchitectureSubType.Son_Architecture and not self:CheckChildBuildingLegal(building) then
-        legal = false
-        illegalType = BuildEditIllegalType.SonNotOnFather
-      end
-      if not legal then
-        overlaps[building:InsID()] = building
-      else
-        building:ShowArea(true, true)
-      end
-      self._illegalBuildings = overlaps
-      for _,legalBuilding in pairs(self._illegalBuildings) do
-        legalBuilding:ShowArea(true, false)
-      end
-      do return legal, illegalType end
-      -- DECOMPILER ERROR: 6 unprocessed JMP targets
-    end
+  local legal = not outside and next(overlaps) == nil
+  if legal then
+    local obs = self:GetOverlapObstacle(building)
+    legal = not obs
   end
+  if legal and building:GetBuildType() == ArchitectureSubType.Son_Architecture and not self:CheckChildBuildingLegal(building) then
+    legal = false
+    illegalType = BuildEditIllegalType.SonNotOnFather
+  end
+  if not legal then
+    overlaps[building:InsID()] = building
+  else
+    building:ShowArea(true, true)
+  end
+  self._illegalBuildings = overlaps
+  for _, legalBuilding in pairs(self._illegalBuildings) do
+    legalBuilding:ShowArea(true, false)
+  end
+  return legal, illegalType
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.CheckLegal = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  local building = (self._curMdf):Building()
+function HomeBuildManager:CheckLegal()
+  local building = self._curMdf:Building()
   if building:IsFixedChild() then
     return self:_CheckLegalFixedChild(building)
+  elseif self._curFreeBuildingArea ~= nil then
+    return self:_CheckLegalFreeChild(building)
   else
-    if self._curFreeBuildingArea ~= nil then
-      return self:_CheckLegalFreeChild(building)
-    else
-      if self._mode == BuildEditorMode.MakeMovieFree then
-        local legal = false
-        local illegalType = BuildEditIllegalType.None
-        return legal, illegalType
-      end
-      do
-        do return self:_CheckLegalCommon(building) end
-      end
+    if self._mode == BuildEditorMode.MakeMovieFree then
+      local legal = false
+      local illegalType = BuildEditIllegalType.None
+      return legal, illegalType
     end
+    return self:_CheckLegalCommon(building)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.CheckChildBuildingLegal = function(self, building)
-  -- function num : 0_31 , upvalues : _ENV
-  local sonCfg = (Cfg.cfg_item_son_architecture)[building:GetBuildId()]
+function HomeBuildManager:CheckChildBuildingLegal(building)
+  local sonCfg = Cfg.cfg_item_son_architecture[building:GetBuildId()]
   local legal = false
-  for _,area in ipairs(sonCfg.Areas) do
+  for _, area in ipairs(sonCfg.Areas) do
     if area == building.CurrentAreaID then
       legal = true
     end
@@ -733,7 +528,7 @@ HomeBuildManager.CheckChildBuildingLegal = function(self, building)
     return false
   end
   for i = 1, #sonCfg.FatherArch do
-    local fatherBuilding = self:FindBuildingByCfgID((sonCfg.FatherArch)[i])
+    local fatherBuilding = self:FindBuildingByCfgID(sonCfg.FatherArch[i])
     if fatherBuilding and fatherBuilding:CheckInArea(building.CurrentAreaID, building) then
       return true
     end
@@ -741,36 +536,28 @@ HomeBuildManager.CheckChildBuildingLegal = function(self, building)
   return false
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.clampPos = function(self, pos)
-  -- function num : 0_32 , upvalues : _ENV
-  local x = pos.x - (self._circlePos).x
-  local z = pos.z - (self._circlePos).z
-  do
-    if self._circleRadius ^ 2 < x ^ 2 + z ^ 2 then
-      local delta = Vector2(x, z)
-      delta = delta:Normalize() * self._circleRadius
-      return Vector3((self._circlePos).x + delta.x, pos.y, (self._circlePos).z + delta.y), true
-    end
-    return pos, false
+function HomeBuildManager:clampPos(pos)
+  local x = pos.x - self._circlePos.x
+  local z = pos.z - self._circlePos.z
+  if x ^ 2 + z ^ 2 > self._circleRadius ^ 2 then
+    local delta = Vector2(x, z)
+    delta = delta:Normalize() * self._circleRadius
+    return Vector3(self._circlePos.x + delta.x, pos.y, self._circlePos.z + delta.y), true
   end
+  return pos, false
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.handleAdsorb = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  local building = (self._curMdf):Building()
-  for id,build in pairs(self._buildings) do
+function HomeBuildManager:handleAdsorb()
+  local building = self._curMdf:Building()
+  for id, build in pairs(self._buildings) do
     if not build:IsDelete() and id ~= building:InsID() and not build:IsDefaultBuilding() and (build:RotY() - building:RotY()) % 90 == 0 then
-      local dx = (build:Pos()).x - (building:Pos()).x
-      local dz = (build:Pos()).z - (building:Pos()).z
-      if dx * dx + dz * dz < build:MaxDiagonal() / 2 + building:MaxDiagonal() / 2 ^ 2 then
-        for _,sides in ipairs(building:GetSides()) do
-          for i,side in ipairs(sides) do
-            for __,tsides in ipairs(build:GetSides()) do
-              for j,tside in ipairs(tsides) do
+      local dx = build:Pos().x - building:Pos().x
+      local dz = build:Pos().z - building:Pos().z
+      if dx * dx + dz * dz < (build:MaxDiagonal() / 2 + building:MaxDiagonal() / 2) ^ 2 then
+        for _, sides in ipairs(building:GetSides()) do
+          for i, side in ipairs(sides) do
+            for __, tsides in ipairs(build:GetSides()) do
+              for j, tside in ipairs(tsides) do
                 local result, delta = side:CheckAdsorb(tside)
                 if delta then
                   return Vector3(delta.x, 0, delta.y)
@@ -784,60 +571,61 @@ HomeBuildManager.handleAdsorb = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.handleGridAdsorb = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  local building = (self._curMdf):Building()
+function HomeBuildManager:handleGridAdsorb()
+  local building = self._curMdf:Building()
   if building:RotY() % 90 ~= 0 then
-    return 
+    return
   end
-  local space = (self._area):MinSpace()
-  local sides = (building:GetSides())[#building:GetSides()]
-  local hor, ver = nil, nil
-  if (BuildHelper.Equal)(((sides[1]).Start).x, ((sides[1]).End).x) then
-    hor = {sides[2], sides[4]}
-    ver = {sides[1], sides[3]}
+  local space = self._area:MinSpace()
+  local sides = building:GetSides()[#building:GetSides()]
+  local hor, ver
+  if BuildHelper.Equal(sides[1].Start.x, sides[1].End.x) then
+    hor = {
+      sides[2],
+      sides[4]
+    }
+    ver = {
+      sides[1],
+      sides[3]
+    }
   else
-    hor = {sides[1], sides[3]}
-    ver = {sides[2], sides[4]}
+    hor = {
+      sides[1],
+      sides[3]
+    }
+    ver = {
+      sides[2],
+      sides[4]
+    }
   end
   local y = 99999
   for i = 1, 2 do
-    local h = ((hor[i]).Start).y
-    local step = (math.floor)(h / space)
+    local h = hor[i].Start.y
+    local step = math.floor(h / space)
     local d = step * space - h
-    if (math.abs)(d) < (math.abs)(y) then
+    if math.abs(d) < math.abs(y) then
       y = d
     end
   end
   local x = 99999
   for i = 1, 2 do
-    local v = ((ver[i]).Start).x
-    local step = (math.floor)(v / space)
+    local v = ver[i].Start.x
+    local step = math.floor(v / space)
     local d = step * space - v
-    if (math.abs)(d) < (math.abs)(x) then
+    if math.abs(d) < math.abs(x) then
       x = d
     end
   end
   return Vector3(x, 0, y)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager._CreateBuilding = function(self, architecture, parentBuilding)
-  -- function num : 0_35 , upvalues : _ENV
-  local building = (BuildHelper.CreateBuilding)(architecture)
+function HomeBuildManager:_CreateBuilding(architecture, parentBuilding)
+  local building = BuildHelper.CreateBuilding(architecture)
   local colliders = building:GetColliders()
-  for _,collider in pairs(colliders) do
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R10 in 'UnsetPending'
-
-    (self._collider2Building)[collider] = building
+  for _, collider in pairs(colliders) do
+    self._collider2Building[collider] = building
   end
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._buildings)[building:InsID()] = building
+  self._buildings[building:InsID()] = building
   if architecture.parent ~= 0 and parentBuilding == nil then
     parentBuilding = self:_GetParentBuilding(architecture.parent)
   end
@@ -847,218 +635,157 @@ HomeBuildManager._CreateBuilding = function(self, architecture, parentBuilding)
   return building
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager._GetParentBuilding = function(self, parentId)
-  -- function num : 0_36 , upvalues : _ENV
-  local parentBuilding = nil
-  for key,value in pairs(self._buildings) do
+function HomeBuildManager:_GetParentBuilding(parentId)
+  local parentBuilding
+  for key, value in pairs(self._buildings) do
     if value:GetBuildType() == ArchitectureSubType.Father_Architecture and value:GetBuildId() == parentId and not value:IsDelete() then
       parentBuilding = value
       break
     end
   end
-  do
-    return parentBuilding
-  end
+  return parentBuilding
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.AfterCreateChildBuilding = function(self, building)
-  -- function num : 0_37 , upvalues : _ENV
+function HomeBuildManager:AfterCreateChildBuilding(building)
   local colliders = building:GetColliders()
-  for _,collider in pairs(colliders) do
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self._collider2Building)[collider] = building
+  for _, collider in pairs(colliders) do
+    self._collider2Building[collider] = building
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buildings)[building:InsID()] = building
+  self._buildings[building:InsID()] = building
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.GetBuildHeight = function(self)
-  -- function num : 0_38
-  return (self._area):GetHeight()
+function HomeBuildManager:GetBuildHeight()
+  return self._area:GetHeight()
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.RayTargetInCircle = function(self, ray)
-  -- function num : 0_39
+function HomeBuildManager:RayTargetInCircle(ray)
   local pos = self:getTouchPosByRay(ray)
-  do
-    if pos then
-      local _, clamped = self:clampPos(pos)
-      return not clamped
-    end
-    return false
+  if pos then
+    local _, clamped = self:clampPos(pos)
+    return not clamped
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.SelectBuilding = function(self, ray)
-  -- function num : 0_40 , upvalues : _ENV
+function HomeBuildManager:SelectBuilding(ray)
   if self._mode == BuildEditorMode.MakeMovieClosing then
     return nil
   end
   if self._mode == BuildEditorMode.MakeMovieOther then
-    (HomelandMoviePrepareManager:GetInstance()):HomelandMoviePrepareItemSelect(ray)
+    HomelandMoviePrepareManager:GetInstance():HomelandMoviePrepareItemSelect(ray)
     return nil
   end
   if self._mode == BuildEditorMode.ChangeSkin then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_build_cant_build"))
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_build_cant_build"))
     return nil
   end
   local building = self:getBuildingByRay(ray)
   if not building then
     return self:SelectBuildingArrow(ray)
   end
-  if building or not self._curMdf then
+  if not building then
+  elseif not self._curMdf then
     if self._mode == BuildEditorMode.MakeMovieFree and not self:CheckSelectForMakeMovie(building) then
       return nil
     end
     self:PickUp(building, false)
-  else
-    if (self._curMdf):InsID() ~= building:InsID() then
-      if self._mode == BuildEditorMode.MakeMovieFree and not self:CheckSelectForMakeMovie(building) then
-        return nil
-      end
-      if self:DropDown() then
-        self:PickUp(building, false)
-      else
-        return (self._curMdf):Building()
-      end
-    else
+  elseif self._curMdf:InsID() ~= building:InsID() then
+    if self._mode == BuildEditorMode.MakeMovieFree and not self:CheckSelectForMakeMovie(building) then
+      return nil
     end
+    if self:DropDown() then
+      self:PickUp(building, false)
+    else
+      return self._curMdf:Building()
+    end
+  elseif self._curMdf:InsID() == building:InsID() then
   end
-  if (self._curMdf):InsID() == building:InsID() then
-    return building
-  end
+  return building
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.SetFatherBuildingForMakeMovie = function(self, fatherBuilding)
-  -- function num : 0_41
+function HomeBuildManager:SetFatherBuildingForMakeMovie(fatherBuilding)
   self.fatherBuilding = fatherBuilding
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.CheckSelectForMakeMovie = function(self, building)
-  -- function num : 0_42 , upvalues : _ENV
+function HomeBuildManager:CheckSelectForMakeMovie(building)
   if self._mode ~= BuildEditorMode.MakeMovieFree then
     return true
   end
-  local freeChild = (self.fatherBuilding):GetFreeChild(building:InsID())
-  do return freeChild ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local freeChild = self.fatherBuilding:GetFreeChild(building:InsID())
+  return freeChild ~= nil
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.SelectBuildingArrow = function(self, ray)
-  -- function num : 0_43 , upvalues : _ENV
+function HomeBuildManager:SelectBuildingArrow(ray)
   if not self._curMdf then
-    return 
+    return
   end
-  local curBuilding = (self._curMdf):Building()
+  local curBuilding = self._curMdf:Building()
   if not curBuilding then
-    return 
+    return
   end
   local dir = self:getBuildingArrowByRay(ray)
   if not dir then
-    return 
+    return
   end
   local architecture = curBuilding:GetArchitecture()
   local tran = curBuilding:Transform()
   local size = curBuilding:GetSize()
   local width = size.x
   local height = size.y
-  local pos = nil
+  local pos
   if dir == BuildArrowDirection.Forward then
     pos = curBuilding:Pos() + tran:TransformDirection(Vector3(0, 0, height))
-  else
-    if dir == BuildArrowDirection.ForwardRight then
-      pos = curBuilding:Pos() + tran:TransformDirection(Vector3(width, 0, height))
-    else
-      if dir == BuildArrowDirection.Right then
-        pos = curBuilding:Pos() + tran:TransformDirection(Vector3(width, 0, 0))
-      else
-        if dir == BuildArrowDirection.BackRight then
-          pos = curBuilding:Pos() + tran:TransformDirection(Vector3(width, 0, -height))
-        else
-          if dir == BuildArrowDirection.Back then
-            pos = curBuilding:Pos() + tran:TransformDirection(Vector3(0, 0, -height))
-          else
-            if dir == BuildArrowDirection.BackLeft then
-              pos = curBuilding:Pos() + tran:TransformDirection(Vector3(-width, 0, -height))
-            else
-              if dir == BuildArrowDirection.Left then
-                pos = curBuilding:Pos() + tran:TransformDirection(Vector3(-width, 0, 0))
-              else
-                if dir == BuildArrowDirection.ForwardLeft then
-                  pos = curBuilding:Pos() + tran:TransformDirection(Vector3(-width, 0, height))
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif dir == BuildArrowDirection.ForwardRight then
+    pos = curBuilding:Pos() + tran:TransformDirection(Vector3(width, 0, height))
+  elseif dir == BuildArrowDirection.Right then
+    pos = curBuilding:Pos() + tran:TransformDirection(Vector3(width, 0, 0))
+  elseif dir == BuildArrowDirection.BackRight then
+    pos = curBuilding:Pos() + tran:TransformDirection(Vector3(width, 0, -height))
+  elseif dir == BuildArrowDirection.Back then
+    pos = curBuilding:Pos() + tran:TransformDirection(Vector3(0, 0, -height))
+  elseif dir == BuildArrowDirection.BackLeft then
+    pos = curBuilding:Pos() + tran:TransformDirection(Vector3(-width, 0, -height))
+  elseif dir == BuildArrowDirection.Left then
+    pos = curBuilding:Pos() + tran:TransformDirection(Vector3(-width, 0, 0))
+  elseif dir == BuildArrowDirection.ForwardLeft then
+    pos = curBuilding:Pos() + tran:TransformDirection(Vector3(-width, 0, height))
   end
   local building = self:AddBuildAtTransform(architecture.asset_id, pos, curBuilding:RotY())
   return building
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.PressBuilding = function(self, ray)
-  -- function num : 0_44 , upvalues : _ENV
+function HomeBuildManager:PressBuilding(ray)
   if self._mode == BuildEditorMode.ChangeSkin then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_build_cant_build"))
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_build_cant_build"))
     return nil
   end
-  local canMove = nil
+  local canMove
   local building, point = self:getBuildingByRay(ray)
   if building ~= nil then
     canMove = building:CanMove()
   end
   if canMove == false then
-    (ToastManager.ShowToast)((StringTable.Get)("str_homeland_build_fixed_move"))
-  else
-    if canMove == true then
-      (self._area):SetDragHeight(point.y)
-      local gArea, gPosY, gBuilding = self:getBelowAreaAndHeight(building:Pos() + self._sonBuildingRayOffset)
-      self:FlushCurFreeBuildingArea(gArea, gPosY, gBuilding)
-      if building:GetBuildType() == ArchitectureSubType.Son_Architecture then
-        self:ChangeCurFatherBuildingArea(gArea, gPosY, gBuilding)
-        self:RefreshBuildingCurrentAreaID(building)
-      else
-        self:ChangeCurFatherBuildingArea(nil)
-      end
-      if self._curMdf and point and building:InsID() == (self._curMdf):InsID() then
-        self._dragOffset = point - building:Pos()
-      end
+    ToastManager.ShowToast(StringTable.Get("str_homeland_build_fixed_move"))
+  elseif canMove == true then
+    self._area:SetDragHeight(point.y)
+    local gArea, gPosY, gBuilding = self:getBelowAreaAndHeight(building:Pos() + self._sonBuildingRayOffset)
+    self:FlushCurFreeBuildingArea(gArea, gPosY, gBuilding)
+    if building:GetBuildType() == ArchitectureSubType.Son_Architecture then
+      self:ChangeCurFatherBuildingArea(gArea, gPosY, gBuilding)
+      self:RefreshBuildingCurrentAreaID(building)
+    else
+      self:ChangeCurFatherBuildingArea(nil)
+    end
+    if self._curMdf and point and building:InsID() == self._curMdf:InsID() then
+      self._dragOffset = point - building:Pos()
     end
   end
-  do
-    return building
-  end
+  return building
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.DragBuilding = function(self, ray)
-  -- function num : 0_45 , upvalues : _ENV
+function HomeBuildManager:DragBuilding(ray)
   if self._curMdf then
-    local building = (self._curMdf):Building()
+    local building = self._curMdf:Building()
     if building and building:CanMove() then
       local pos = self:getDragPosByRay(ray)
       local preFreeBuildingArea = self._curFreeBuildingArea
@@ -1066,154 +793,103 @@ HomeBuildManager.DragBuilding = function(self, ray)
       self:FlushCurFreeBuildingArea(gArea, gPosY, gBuilding)
       if building:GetBuildType() == ArchitectureSubType.Son_Architecture then
         self:DragBuildingFlushCommonChildParent(building, gArea, gPosY, gBuilding)
-      else
-        if self._curFreeBuildingArea ~= preFreeBuildingArea then
-          self:DragBuildingFlushFreeChildParent(building, gArea, gPosY, gBuilding)
-        else
-          if building ~= gBuilding and building:GetBuildType() ~= ArchitectureSubType.Father_Architecture then
-            if not gPosY then
-              gPosY = self:GetBuildHeight()
-            end
-            if self._dragOffset ~= nil then
-              local changeY = gPosY - (building:Pos()).y
-              -- DECOMPILER ERROR at PC74: Confused about usage of register: R9 in 'UnsetPending'
-
-              ;
-              (self._dragOffset).y = (self._dragOffset).y - changeY
-            end
-          end
+      elseif self._curFreeBuildingArea ~= preFreeBuildingArea then
+        self:DragBuildingFlushFreeChildParent(building, gArea, gPosY, gBuilding)
+      elseif building ~= gBuilding and building:GetBuildType() ~= ArchitectureSubType.Father_Architecture then
+        gPosY = gPosY or self:GetBuildHeight()
+        if self._dragOffset ~= nil then
+          local changeY = gPosY - building:Pos().y
+          self._dragOffset.y = self._dragOffset.y - changeY
         end
       end
-      do
-        if pos and self._dragOffset then
-          self:Move(pos - self._dragOffset)
-        end
+      if pos and self._dragOffset then
+        self:Move(pos - self._dragOffset)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.DragBuildingFlushFreeChildParent = function(self, building, gArea, gPosY, gBuilding)
-  -- function num : 0_46
+function HomeBuildManager:DragBuildingFlushFreeChildParent(building, gArea, gPosY, gBuilding)
   if building.Parent then
-    (building.Parent):RemoveChild(building)
+    building.Parent:RemoveChild(building)
   end
   if gBuilding ~= nil and self._curFreeBuildingArea == gArea then
     gBuilding:AddChild(building)
   end
-  if not gPosY then
-    gPosY = self:GetBuildHeight()
+  gPosY = gPosY or self:GetBuildHeight()
+  if self._dragOffset ~= nil then
+    local changeY = gPosY - building:Pos().y
+    self._dragOffset.y = self._dragOffset.y - changeY
   end
-  do
-    if self._dragOffset ~= nil then
-      local changeY = gPosY - (building:Pos()).y
-      -- DECOMPILER ERROR at PC31: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._dragOffset).y = (self._dragOffset).y - changeY
-    end
-    local buildingPos = building:Pos()
-    buildingPos.y = gPosY
-    building:SetPos(buildingPos)
-  end
+  local buildingPos = building:Pos()
+  buildingPos.y = gPosY
+  building:SetPos(buildingPos)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.DragBuildingFlushCommonChildParent = function(self, building, gArea, gPosY, gBuilding)
-  -- function num : 0_47
+function HomeBuildManager:DragBuildingFlushCommonChildParent(building, gArea, gPosY, gBuilding)
   local buildingPos = building:Pos()
   local fatherBuildingArea, y, fatherBuilding = gArea, gPosY, gBuilding
   if self._curFatherBuildingArea ~= fatherBuildingArea then
     self:ChangeCurFatherBuildingArea(fatherBuildingArea)
-    if not y then
-      y = self:GetBuildHeight()
-    end
+    y = y or self:GetBuildHeight()
     self:RefreshBuildingCurrentAreaID(building)
     if building.Parent then
-      (building.Parent):RemoveChild(building)
+      building.Parent:RemoveChild(building)
     end
     if fatherBuilding then
       fatherBuilding:AddChild(building)
     end
     local changeY = y - buildingPos.y
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._dragOffset).y = (self._dragOffset).y - changeY
+    self._dragOffset.y = self._dragOffset.y - changeY
   end
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.ReleaseTouch = function(self)
-  -- function num : 0_48
+function HomeBuildManager:ReleaseTouch()
   self._dragOffset = nil
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.Move = function(self, target)
-  -- function num : 0_49
+function HomeBuildManager:Move(target)
   target = self:clampPos(target)
-  ;
-  (self._curMdf):Move(target)
+  self._curMdf:Move(target)
   if self._showGrid then
     local delta = self:handleGridAdsorb()
     if delta then
-      (self._curMdf):Move(target + delta)
+      self._curMdf:Move(target + delta)
     end
   else
-    do
-      do
-        local delta = self:handleAdsorb()
-        if delta then
-          (self._curMdf):SetAdsorb(true)
-          ;
-          (self._curMdf):Move(target + delta)
-        end
-        local building = (self._curMdf):Building()
-        self:CheckBuildingArrow(building, true)
-        local legal, illegalType = self:CheckLegal()
-        ;
-        (self._curMdf):SetLegal(legal, illegalType)
-        self:SetLinkBuildings()
-      end
+    local delta = self:handleAdsorb()
+    if delta then
+      self._curMdf:SetAdsorb(true)
+      self._curMdf:Move(target + delta)
     end
   end
+  local building = self._curMdf:Building()
+  self:CheckBuildingArrow(building, true)
+  local legal, illegalType = self:CheckLegal()
+  self._curMdf:SetLegal(legal, illegalType)
+  self:SetLinkBuildings()
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.Rotate = function(self, y)
-  -- function num : 0_50
-  (self._curMdf):Rotate(y)
-  local building = (self._curMdf):Building()
+function HomeBuildManager:Rotate(y)
+  self._curMdf:Rotate(y)
+  local building = self._curMdf:Building()
   self:CheckBuildingArrow(building, true)
   local legal = self:CheckLegal()
-  ;
-  (self._curMdf):SetLegal(legal)
+  self._curMdf:SetLegal(legal)
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.Add = function(self, id, ray)
-  -- function num : 0_51 , upvalues : _ENV
+function HomeBuildManager:Add(id, ray)
   if self._curMdf then
     BuildError("必须操作完成后才能新增建筑")
   end
-  local childBuildingCfg = (Cfg.cfg_item_son_architecture)[id]
-  local building = nil
+  local childBuildingCfg = Cfg.cfg_item_son_architecture[id]
+  local building
   if childBuildingCfg ~= nil and childBuildingCfg.FatherSlot ~= nil then
     building = self:AddFixedChildBuilding(id, ray, childBuildingCfg)
+  elseif childBuildingCfg then
+    building = self:AddChildBuilding(id, ray, childBuildingCfg)
   else
-    if childBuildingCfg then
-      building = self:AddChildBuilding(id, ray, childBuildingCfg)
-    else
-      building = self:AddBuilding(id, ray)
-    end
+    building = self:AddBuilding(id, ray)
   end
   if building and building:GetBuildType() == ArchitectureSubType.Father_Architecture then
     self:CollectObstacle()
@@ -1221,71 +897,62 @@ HomeBuildManager.Add = function(self, id, ray)
   self:SetLinkBuildings()
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.AddBuilding = function(self, id, ray)
-  -- function num : 0_52 , upvalues : _ENV
-  local pos, areaTrans, fatherBuilding = nil, nil, nil
+function HomeBuildManager:AddBuilding(id, ray)
+  local pos, areaTrans, fatherBuilding
   local dragAdd = false
   if ray then
     pos = self:getTouchPosByRay(ray)
     dragAdd = true
   else
-    ray = (((self._client):CameraManager()):GlobalCameraController()):CameraFowardRay()
+    ray = self._client:CameraManager():GlobalCameraController():CameraFowardRay()
   end
-  pos = self:getTouchPosByRay(ray)
+  pos, areaTrans = self:getTouchPosByRay(ray)
   if pos == nil then
-    pos = (((self._client):CameraManager()):GlobalCameraController()):GetFocusPos()
+    pos = self._client:CameraManager():GlobalCameraController():GetFocusPos()
   end
   local data = Architecture:New()
   data.asset_id = id
-  data.pos_x = (BuildHelper.ToInt)(pos.x)
-  data.pos_z = (BuildHelper.ToInt)(pos.z)
+  data.pos_x = BuildHelper.ToInt(pos.x)
+  data.pos_z = BuildHelper.ToInt(pos.z)
   data.rot = 0
   data.pstid = 0
   if areaTrans then
     fatherBuilding = self:GetFatherBuilding(areaTrans)
     if fatherBuilding then
-      data.pos_y = (BuildHelper.ToInt)(pos.y)
+      data.pos_y = BuildHelper.ToInt(pos.y)
     end
   end
   local building = self:_CreateBuilding(data)
   building:SetShowDeleteBtn(false)
   building:SetPos(pos)
   self:PickUp(building, not dragAdd)
-  ;
-  (self._curMdf):Add()
+  self._curMdf:Add()
   self:_NotifyAmbientChanged()
   if dragAdd then
-    (self._area):SetDragHeight((self._area):GetHeight() + 0.5)
+    self._area:SetDragHeight(self._area:GetHeight() + 0.5)
     local touchPos = self:getDragPosByRay(ray)
     if touchPos then
       self._dragOffset = touchPos - building:Pos()
     end
   end
-  do
-    return building
-  end
+  return building
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.AddFixedChildBuilding = function(self, id, ray, childBuildingCfg)
-  -- function num : 0_53 , upvalues : _ENV
+function HomeBuildManager:AddFixedChildBuilding(id, ray, childBuildingCfg)
   local fatherSlot = childBuildingCfg.FatherSlot
-  local cfg_fixed_position = ((Cfg.cfg_homeland_building_fixed_position)({}))[fatherSlot]
+  local cfg_fixed_position = Cfg.cfg_homeland_building_fixed_position({})[fatherSlot]
   if cfg_fixed_position == nil then
     BuildError("找不到固定家具位置cfg_homeland_building_fixed_position ：" .. fatherSlot)
-    return 
+    return
   end
-  local homelandClient = (self._uiModule):GetClient()
+  local homelandClient = self._uiModule:GetClient()
   local characterManager = homelandClient:CharacterManager()
   local playerTran = characterManager:GetCharacterTransform()
   local playerPosition = playerTran.position
   local lookFatherArch = {}
-  for k,v in pairs(childBuildingCfg.FatherArch) do
+  for k, v in pairs(childBuildingCfg.FatherArch) do
     local findSlot = false
-    local cfg_father_architecture = ((Cfg.cfg_item_father_architecture)({}))[v]
+    local cfg_father_architecture = Cfg.cfg_item_father_architecture({})[v]
     local slotsCount = 0
     local fatherFixedSlots = cfg_father_architecture.FixedSlots
     if fatherFixedSlots ~= nil then
@@ -1297,29 +964,21 @@ HomeBuildManager.AddFixedChildBuilding = function(self, id, ray, childBuildingCf
         break
       end
     end
-    do
-      do
-        if findSlot then
-          lookFatherArch[v] = v
-        end
-        -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if findSlot then
+      lookFatherArch[v] = v
     end
   end
-  local theNearestFather = nil
+  local theNearestFather
   local theMinDistance = math.maxinteger
-  for key,value in pairs(self._buildings) do
+  for key, value in pairs(self._buildings) do
     local isValid = value:GetBuildType() == ArchitectureSubType.Father_Architecture
+    isValid = isValid and not value:IsDelete()
+    isValid = isValid and lookFatherArch[value:GetBuildId()] ~= nil
     if isValid then
-      isValid = not value:IsDelete()
-    end
-    isValid = not isValid or lookFatherArch[value:GetBuildId()] ~= nil
-    if isValid then
-      local buildingPosition = (value:Transform()).position
+      local buildingPosition = value:Transform().position
       local distance3D = playerPosition - buildingPosition
       local distance1D = distance3D:SqrMagnitude()
-      if distance1D < theMinDistance then
+      if theMinDistance > distance1D then
         theNearestFather = value
         theMinDistance = distance1D
       end
@@ -1327,9 +986,9 @@ HomeBuildManager.AddFixedChildBuilding = function(self, id, ray, childBuildingCf
   end
   if theNearestFather == nil then
     self:ShowChildBuildDropError(id)
-    return 
+    return
   end
-  local fixedTransform = nil
+  local fixedTransform
   local fatherTransform = theNearestFather:Transform()
   local fatherPosition = fatherTransform.position
   if cfg_fixed_position.FixedPosition ~= nil then
@@ -1339,8 +998,8 @@ HomeBuildManager.AddFixedChildBuilding = function(self, id, ray, childBuildingCf
     fixedTransform = fatherTransform
   end
   local relationPosition = fixedTransform.position - fatherPosition
-  local fatherYaw = (fatherTransform.eulerAngles).y
-  local relationYaw = (fixedTransform.eulerAngles).y - fatherYaw
+  local fatherYaw = fatherTransform.eulerAngles.y
+  local relationYaw = fixedTransform.eulerAngles.y - fatherYaw
   local replacedBuilding = theNearestFather:GetFixedChild(fatherSlot)
   if replacedBuilding ~= nil then
     if replacedBuilding:IsDelete() then
@@ -1354,89 +1013,75 @@ HomeBuildManager.AddFixedChildBuilding = function(self, id, ray, childBuildingCf
   local data = Architecture:New()
   data.asset_id = id
   data.parent = theNearestFather:GetBuildId()
-  data.pos_x = (BuildHelper.ToInt)(worldPosition.x)
-  data.pos_y = (BuildHelper.ToInt)(worldPosition.y)
-  data.pos_z = (BuildHelper.ToInt)(worldPosition.z)
-  data.rot = (math.floor)(worldYaw)
+  data.pos_x = BuildHelper.ToInt(worldPosition.x)
+  data.pos_y = BuildHelper.ToInt(worldPosition.y)
+  data.pos_z = BuildHelper.ToInt(worldPosition.z)
+  data.rot = math.floor(worldYaw)
   data.pstid = 0
   local building = self:_CreateBuilding(data)
   building:SetShowDeleteBtn(false)
   self:PickUp(building, true)
-  ;
-  (self._curMdf):FixedAdd(replacedBuilding)
+  self._curMdf:FixedAdd(replacedBuilding)
   self:_NotifyAmbientChanged()
   local focusPoint = theNearestFather:ChangeSkinFocusPoint()
   self:FocusPoint(focusPoint, nil)
-  do return building end
-  -- DECOMPILER ERROR: 10 unprocessed JMP targets
+  return building
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.AddChildBuilding = function(self, id, ray, childBuildingCfg)
-  -- function num : 0_54 , upvalues : _ENV
-  local pos, areaTrans, fatherBuilding = nil, nil, nil
+function HomeBuildManager:AddChildBuilding(id, ray, childBuildingCfg)
+  local pos, areaTrans, fatherBuilding
   local dragAdd = false
   if ray then
     dragAdd = true
   else
-    ray = (((self._client):CameraManager()):GlobalCameraController()):CameraFowardRay()
+    ray = self._client:CameraManager():GlobalCameraController():CameraFowardRay()
   end
-  pos = self:getTouchPosByRay(ray)
+  pos, areaTrans = self:getTouchPosByRay(ray)
   if pos == nil then
-    pos = (((self._client):CameraManager()):GlobalCameraController()):GetFocusPos()
+    pos = self._client:CameraManager():GlobalCameraController():GetFocusPos()
   end
   local data = Architecture:New()
   data.asset_id = id
-  data.pos_x = (BuildHelper.ToInt)(pos.x)
+  data.pos_x = BuildHelper.ToInt(pos.x)
   if areaTrans then
     fatherBuilding = self:GetFatherBuilding(areaTrans)
     if fatherBuilding then
       data.parent = fatherBuilding:GetBuildId()
-      data.pos_y = (BuildHelper.ToInt)(pos.y)
+      data.pos_y = BuildHelper.ToInt(pos.y)
     end
   end
-  data.pos_z = (BuildHelper.ToInt)(pos.z)
+  data.pos_z = BuildHelper.ToInt(pos.z)
   data.rot = 0
   data.pstid = 0
   local building = self:_CreateBuilding(data)
   building:SetShowDeleteBtn(false)
   self:PickUp(building, not dragAdd)
   if self._curFatherBuildingArea then
-    pos.y = (self._curFatherBuildingArea):GetHeight()
+    pos.y = self._curFatherBuildingArea:GetHeight()
     building:SetPos(pos)
   end
-  ;
-  (self._curMdf):Add()
+  self._curMdf:Add()
   self:_NotifyAmbientChanged()
   if dragAdd then
-    (self._area):SetDragHeight((self._area):GetHeight() + 0.5)
+    self._area:SetDragHeight(self._area:GetHeight() + 0.5)
     local touchPos = self:getDragPosByRay(ray)
     if touchPos then
       self._dragOffset = touchPos - building:Pos()
     end
   end
-  do
-    return building
-  end
+  return building
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.GetFatherBuilding = function(self, areaTrans)
-  -- function num : 0_55 , upvalues : _ENV
-  for key,building in pairs(self._buildings) do
+function HomeBuildManager:GetFatherBuilding(areaTrans)
+  for key, building in pairs(self._buildings) do
     if building:GetBuildType() == ArchitectureSubType.Father_Architecture and building:HasArea(areaTrans) then
       return building
     end
   end
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.GetFatherBuildingArea = function(self, areaTrans)
-  -- function num : 0_56 , upvalues : _ENV
-  for key,building in pairs(self._buildings) do
+function HomeBuildManager:GetFatherBuildingArea(areaTrans)
+  for key, building in pairs(self._buildings) do
     if building:GetBuildType() == ArchitectureSubType.Father_Architecture then
       local area = building:GetArea(areaTrans)
       if area then
@@ -1446,56 +1091,40 @@ HomeBuildManager.GetFatherBuildingArea = function(self, areaTrans)
   end
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.AddBuildAtTransform = function(self, id, pos, rot)
-  -- function num : 0_57 , upvalues : _ENV
+function HomeBuildManager:AddBuildAtTransform(id, pos, rot)
   local data = Architecture:New()
   data.asset_id = id
-  data.pos_x = (BuildHelper.ToInt)(pos.x)
-  data.pos_z = (BuildHelper.ToInt)(pos.z)
+  data.pos_x = BuildHelper.ToInt(pos.x)
+  data.pos_z = BuildHelper.ToInt(pos.z)
   data.rot = rot
   data.pstid = 0
   local building = self:_CreateBuilding(data)
   self:DropDown()
   self:PickUp(building, false)
-  ;
-  (self._curMdf):Add()
+  self._curMdf:Add()
   self:_NotifyAmbientChanged()
   return building
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.Delete = function(self)
-  -- function num : 0_58 , upvalues : _ENV
-  self:CheckBuildingArrow((self._curMdf):Building(), false)
-  ;
-  (self._curMdf):Delete()
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._mdfs)[#self._mdfs + 1] = self._curMdf
+function HomeBuildManager:Delete()
+  self:CheckBuildingArrow(self._curMdf:Building(), false)
+  self._curMdf:Delete()
+  self._mdfs[#self._mdfs + 1] = self._curMdf
   self._curMdf = nil
   self:ChangeCurFatherBuildingArea(nil)
   self:ChangeCurFreeBuildingArea(nil)
-  ;
-  (((self._client):InputManager()):GetControllerBuild()):SetCurrentBuilding(nil)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomeBuildOnSelectBuilding)
+  self._client:InputManager():GetControllerBuild():SetCurrentBuilding(nil)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomeBuildOnSelectBuilding)
   self:_NotifyAmbientChanged()
   self:SetLinkBuildings()
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.RevertAll = function(self)
-  -- function num : 0_59 , upvalues : _ENV
+function HomeBuildManager:RevertAll()
   BuildLog("回滚")
   local count = #self._mdfs
   if count == 0 then
     BuildLog("没有改动，不用回滚")
-    return 
+    return
   end
   if self._curMdf then
     BuildError("必须操作完成后才能回滚操作")
@@ -1505,19 +1134,16 @@ HomeBuildManager.RevertAll = function(self)
   self:_NotifyAmbientChanged()
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.Save = function(self, TT)
-  -- function num : 0_60 , upvalues : _ENV
+function HomeBuildManager:Save(TT)
   if self._isVisit then
     BuildError("拜访家园不允许保存建筑")
-    return 
+    return
   end
   BuildLog("保存")
   local count = #self._mdfs
   if count == 0 then
     BuildLog("没有改动，不用保存")
-    return 
+    return
   end
   if self._curMdf then
     BuildError("必须操作完成后才能保存")
@@ -1527,50 +1153,36 @@ HomeBuildManager.Save = function(self, TT)
   local delete = {}
   local deleteBuildings = {}
   local newBuildings = {}
-  for _,building in pairs(self._buildings) do
+  for _, building in pairs(self._buildings) do
     local data, isNew, isDelete = building:GetServerData()
     if isDelete then
       if isNew then
-        do
-          deleteBuildings[#deleteBuildings + 1] = building:GetBuildId()
-          delete[#delete + 1] = (building:GetArchitecture()).pstid
-          if data ~= nil or isNew then
-            newadd[#newadd + 1] = data
-            newBuildings[#newBuildings + 1] = data.asset_id
-          else
-            update[#update + 1] = data
-          end
-          -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      else
+        deleteBuildings[#deleteBuildings + 1] = building:GetBuildId()
+        delete[#delete + 1] = building:GetArchitecture().pstid
       end
+    elseif data == nil then
+    elseif isNew then
+      newadd[#newadd + 1] = data
+      newBuildings[#newBuildings + 1] = data.asset_id
+    else
+      update[#update + 1] = data
     end
   end
   if #newadd == 0 and #delete == 0 and #update == 0 then
     BuildLog("实际的改动数据未空，不用保存")
     self._curMdf = nil
     self._mdfs = {}
-    return 
-  else
-    if #newadd + #delete + #update > 400 then
-      (Log.fatal)("达到了单次操作最大上限:", #newadd, ",", #delete, ",", #update)
-      ;
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_build_error_max_operation"))
-      return 
-    end
+    return
+  elseif 400 < #newadd + #delete + #update then
+    Log.fatal("达到了单次操作最大上限:", #newadd, ",", #delete, ",", #update)
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_build_error_max_operation"))
+    return
   end
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("BuildReqSave")
-  local res = (self._module):HomelandBuild(TT, newadd, delete, update)
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("BuildReqSave")
-  self._architectures = (self._module):GetBuildArchitecture()
+  GameGlobal.UIStateManager():Lock("BuildReqSave")
+  local res = self._module:HomelandBuild(TT, newadd, delete, update)
+  GameGlobal.UIStateManager():UnLock("BuildReqSave")
+  self._architectures = self._module:GetBuildArchitecture()
   if res:GetSucc() then
     self:_OnSaveSuccess(update, delete)
   end
@@ -1578,63 +1190,46 @@ HomeBuildManager.Save = function(self, TT)
   self._curMdf = nil
   self._mdfs = {}
   if res:GetSucc() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomeBuildOnSelectBuilding)
-    ;
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_build_success"))
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HomeBuildOnSelectBuilding)
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_build_success"))
     self:SetLinkBuildings()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandBuildOnSave, deleteBuildings, newBuildings)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandBuildOnSave, deleteBuildings, newBuildings)
     return true
   else
     local code = res:GetResult()
-    if code == HomeLandErrorType.E_CONFIG_ERROR or HomeLandErrorType.E_SCENE_NOT_ARCHITECTURE <= code and code <= HomeLandErrorType.E_BUILD_MAX_LIMIT then
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_build_error" .. code))
+    if code == HomeLandErrorType.E_CONFIG_ERROR or code >= HomeLandErrorType.E_SCENE_NOT_ARCHITECTURE and code <= HomeLandErrorType.E_BUILD_MAX_LIMIT then
+      ToastManager.ShowHomeToast(StringTable.Get("str_homeland_build_error" .. code))
     else
-      ;
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_build_unknownerror", code))
+      ToastManager.ShowHomeToast(StringTable.Get("str_homeland_build_unknownerror", code))
     end
     return false
   end
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.ShowGrid = function(self, show)
-  -- function num : 0_61
+function HomeBuildManager:ShowGrid(show)
   if self._showGrid == show then
-    return 
+    return
   end
   self._showGrid = show
-  ;
-  (self._area):ShowGrid(show)
+  self._area:ShowGrid(show)
   if self._curFatherBuildingArea then
-    (self._curFatherBuildingArea):ShowGrid(show)
+    self._curFatherBuildingArea:ShowGrid(show)
   end
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.GetCurrentBuilding = function(self)
-  -- function num : 0_62
+function HomeBuildManager:GetCurrentBuilding()
   if self._curMdf then
-    return (self._curMdf):Building()
+    return self._curMdf:Building()
   end
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.HaveUnsavedModify = function(self)
-  -- function num : 0_63 , upvalues : _ENV
-  do return self._curMdf ~= nil or next(self._mdfs) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomeBuildManager:HaveUnsavedModify()
+  return self._curMdf ~= nil or next(self._mdfs) ~= nil
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.GetBuildings = function(self)
-  -- function num : 0_64 , upvalues : _ENV
+function HomeBuildManager:GetBuildings()
   local buildings = {}
-  for id,building in pairs(self._buildings) do
+  for id, building in pairs(self._buildings) do
     if not building:IsDelete() then
       buildings[#buildings + 1] = building
     end
@@ -1642,15 +1237,12 @@ HomeBuildManager.GetBuildings = function(self)
   return buildings
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.GetBuildingsFilter = function(self, filter)
-  -- function num : 0_65 , upvalues : _ENV
+function HomeBuildManager:GetBuildingsFilter(filter)
   if not filter then
     return self:GetBuildings()
   end
   local buildings = {}
-  for id,building in pairs(self._buildings) do
+  for id, building in pairs(self._buildings) do
     if filter(building) then
       buildings[#buildings + 1] = building
     end
@@ -1658,173 +1250,111 @@ HomeBuildManager.GetBuildingsFilter = function(self, filter)
   return buildings
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.GetBuildingBySubType = function(self, subtype)
-  -- function num : 0_66 , upvalues : _ENV
-  for _,building in pairs(self._buildings) do
+function HomeBuildManager:GetBuildingBySubType(subtype)
+  for _, building in pairs(self._buildings) do
     if building._buildType == subtype then
       return building
     end
   end
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.FindBuildingBySubType = function(self, subType)
-  -- function num : 0_67 , upvalues : _ENV
-  for _,building in pairs(self._buildings) do
+function HomeBuildManager:FindBuildingBySubType(subType)
+  for _, building in pairs(self._buildings) do
     if building:GetBuildType() == subType then
       return building
     end
   end
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.FindBuildingByCfgID = function(self, cfgID)
-  -- function num : 0_68 , upvalues : _ENV
-  for _,building in pairs(self._buildings) do
+function HomeBuildManager:FindBuildingByCfgID(cfgID)
+  for _, building in pairs(self._buildings) do
     if building:GetBuildId() == cfgID and not building:IsDelete() then
       return building
     end
   end
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.RevertCurrent = function(self)
-  -- function num : 0_69 , upvalues : _ENV
+function HomeBuildManager:RevertCurrent()
   if not self._curMdf then
     BuildError("当前没有抬起的建筑，不能取消操作")
     return false
   end
-  for _,legalBuilding in pairs(self._illegalBuildings) do
+  for _, legalBuilding in pairs(self._illegalBuildings) do
     legalBuilding:ShowArea(false, false)
   end
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-  if (self._curMdf):Type() & HomeBuildEditType.Add > 0 then
-    (self._buildings)[((self._curMdf):Building()):InsID()] = nil
-    ;
-    (self._curMdf):Finish()
-    ;
-    (self._curMdf):Revert()
+  if self._curMdf:Type() & HomeBuildEditType.Add > 0 then
+    self._buildings[self._curMdf:Building():InsID()] = nil
+    self._curMdf:Finish()
+    self._curMdf:Revert()
     self._curMdf = nil
     self:ChangeCurFatherBuildingArea(nil)
     self:ChangeCurFreeBuildingArea(nil)
-    ;
-    (((self._client):InputManager()):GetControllerBuild()):SetCurrentBuilding(nil)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomeBuildOnSelectBuilding)
+    self._client:InputManager():GetControllerBuild():SetCurrentBuilding(nil)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HomeBuildOnSelectBuilding)
     self:_NotifyAmbientChanged()
     self:SetLinkBuildings()
     return true
+  elseif not self._curMdf:IsOriginLegal() then
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_build_location_error"))
+    BuildLog("初始位置不合法，不能取消")
+    return false
   else
-    if not (self._curMdf):IsOriginLegal() then
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_build_location_error"))
-      BuildLog("初始位置不合法，不能取消")
-      return false
-    else
-      ;
-      (self._curMdf):Finish()
-      ;
-      (self._curMdf):Revert()
-      self._curMdf = nil
-      self:ChangeCurFatherBuildingArea(nil)
-      self:ChangeCurFreeBuildingArea(nil)
-      ;
-      (((self._client):InputManager()):GetControllerBuild()):SetCurrentBuilding(nil)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomeBuildOnSelectBuilding)
-      self:_NotifyAmbientChanged()
-      return true
-    end
+    self._curMdf:Finish()
+    self._curMdf:Revert()
+    self._curMdf = nil
+    self:ChangeCurFatherBuildingArea(nil)
+    self:ChangeCurFreeBuildingArea(nil)
+    self._client:InputManager():GetControllerBuild():SetCurrentBuilding(nil)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HomeBuildOnSelectBuilding)
+    self:_NotifyAmbientChanged()
+    return true
   end
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.GetOverlapBuilding = function(self, building)
-  -- function num : 0_70 , upvalues : _ENV
+function HomeBuildManager:GetOverlapBuilding(building)
   local buildType = building:GetBuildType()
-  local colliders = (BuildHelper.GetOverlapColliders)(building:GetColliders(), building:Transform(), HomeBuildLayer.Building)
+  local colliders = BuildHelper.GetOverlapColliders(building:GetColliders(), building:Transform(), HomeBuildLayer.Building)
   local targets = {}
   if next(colliders) then
-    for collider,_ in pairs(colliders) do
-      local other = (self._collider2Building)[collider]
+    for collider, _ in pairs(colliders) do
+      local other = self._collider2Building[collider]
       if other then
         local otherBuildType = other:GetBuildType()
         local isFatherSon = false
-        if building:GetChild(other:InsID()) == nil then
-          isFatherSon = buildType ~= ArchitectureSubType.Father_Architecture
-          if other:GetChild(building:InsID()) == nil then
-            do
-              isFatherSon = otherBuildType ~= ArchitectureSubType.Father_Architecture
-              if ((isFatherSon and not other:IsFixedChild()) or other:LocateLayer() == building:LocateLayer()) and not targets[other:InsID()] then
-                targets[other:InsID()] = other
-              end
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+        if buildType == ArchitectureSubType.Father_Architecture then
+          isFatherSon = building:GetChild(other:InsID()) ~= nil
+        elseif otherBuildType == ArchitectureSubType.Father_Architecture then
+          isFatherSon = other:GetChild(building:InsID()) ~= nil
+        end
+        if isFatherSon then
+        elseif other:IsFixedChild() then
+        elseif other:LocateLayer() == building:LocateLayer() and not targets[other:InsID()] then
+          targets[other:InsID()] = other
         end
       end
     end
   end
-  do return targets end
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
+  return targets
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.GetOverlapObstacle = function(self, building)
-  -- function num : 0_71 , upvalues : _ENV
-  do
-    if next(self._obstacles) then
-      local colliders = (BuildHelper.GetOverlapColliders)(building:GetColliders(), building:Transform(), HomeBuildLayer.BuildObstacle)
-      if next(colliders) then
-        for collider,_ in pairs(colliders) do
-          local obstacleType = (self._obstacles)[collider]
-          if obstacleType == BuildObstacleType.Treasures then
-            return true
-          else
-            if building:GetBuildType() ~= ArchitectureSubType.Son_Architecture then
-              do
-                do return obstacleType ~= BuildObstacleType.ParentBuildingObstacles end
-                -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
-          end
+function HomeBuildManager:GetOverlapObstacle(building)
+  if next(self._obstacles) then
+    local colliders = BuildHelper.GetOverlapColliders(building:GetColliders(), building:Transform(), HomeBuildLayer.BuildObstacle)
+    if next(colliders) then
+      for collider, _ in pairs(colliders) do
+        local obstacleType = self._obstacles[collider]
+        if obstacleType == BuildObstacleType.Treasures then
+          return true
+        elseif obstacleType == BuildObstacleType.ParentBuildingObstacles then
+          return building:GetBuildType() == ArchitectureSubType.Son_Architecture
         end
       end
     end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.CanPlaceGroundBrick = function(self, building, excludeBuildings)
-  -- function num : 0_72 , upvalues : _ENV
+function HomeBuildManager:CanPlaceGroundBrick(building, excludeBuildings)
   if self:GetBuildCount(building:GetBuildId()) <= 0 then
     return false
   end
@@ -1840,8 +1370,8 @@ HomeBuildManager.CanPlaceGroundBrick = function(self, building, excludeBuildings
   if not targets then
     return true
   end
-  targets[((self._curMdf):Building()):InsID()] = nil
-  if (table.count)(targets) <= 0 then
+  targets[self._curMdf:Building():InsID()] = nil
+  if 0 >= table.count(targets) then
     return true
   end
   if not excludeBuildings then
@@ -1852,29 +1382,26 @@ HomeBuildManager.CanPlaceGroundBrick = function(self, building, excludeBuildings
     local instanceId = building:InsID()
     targets[instanceId] = nil
   end
-  if (table.count)(targets) <= 0 then
+  if 0 >= table.count(targets) then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.CheckBuildingArrow = function(self, building, status)
-  -- function num : 0_73 , upvalues : _ENV
+function HomeBuildManager:CheckBuildingArrow(building, status)
   if not building then
-    return 
+    return
   end
   if not building:HaveArrow() then
-    return 
+    return
   end
   if not status then
     building:ShowArrow(nil)
-    return 
+    return
   end
   if not self:CanPlaceGroundBrick(building) then
     building:ShowArrow(nil)
-    return 
+    return
   end
   local architecture = building:GetArchitecture()
   local data = Architecture:New()
@@ -1883,7 +1410,7 @@ HomeBuildManager.CheckBuildingArrow = function(self, building, status)
   data.pos_z = architecture.pos_z
   data.rot = 0
   data.pstid = 0
-  local tempBuilding = (BuildHelper.CreateBuilding)(data)
+  local tempBuilding = BuildHelper.CreateBuilding(data)
   tempBuilding:SetMeshVisible(false)
   tempBuilding:SetRotY(building:RotY())
   local tran = building:Transform()
@@ -1945,20 +1472,14 @@ HomeBuildManager.CheckBuildingArrow = function(self, building, status)
   building:ShowArrow(arrows)
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.GetHomeArea = function(self)
-  -- function num : 0_74
+function HomeBuildManager:GetHomeArea()
   return self._area
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.GetBuildCount = function(self, id)
-  -- function num : 0_75 , upvalues : _ENV
+function HomeBuildManager:GetBuildCount(id)
   local count = 0
-  local count = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(id)
-  for _,building in pairs(self._buildings) do
+  local count = GameGlobal.GetModule(ItemModule):GetItemCount(id)
+  for _, building in pairs(self._buildings) do
     if not building:IsDelete() and building:GetBuildId() == id then
       count = count - 1
     end
@@ -1969,71 +1490,51 @@ HomeBuildManager.GetBuildCount = function(self, id)
   return count
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.GetBuildingByCollider = function(self, collider)
-  -- function num : 0_76
-  return (self._collider2Building)[collider]
+function HomeBuildManager:GetBuildingByCollider(collider)
+  return self._collider2Building[collider]
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.ResetOneBuilding = function(self, pstid, needUpdateNavmesh)
-  -- function num : 0_77 , upvalues : _ENV
+function HomeBuildManager:ResetOneBuilding(pstid, needUpdateNavmesh)
   if pstid then
-    local architecture = nil
+    local architecture
     self._architectures = self:_GetData()
-    for _,arch in pairs(self._architectures) do
+    for _, arch in pairs(self._architectures) do
       if arch.pstid == pstid then
         architecture = arch
         break
       end
     end
-    do
-      if not architecture then
-        BuildError("找不到要刷新的建筑数据:", pstid)
+    if not architecture then
+      BuildError("找不到要刷新的建筑数据:", pstid)
+    end
+    local building
+    for _, value in pairs(self._buildings) do
+      if value:PstID() == pstid then
+        building = value
+        break
       end
-      local building = nil
-      for _,value in pairs(self._buildings) do
-        if value:PstID() == pstid then
-          building = value
-          break
-        end
+    end
+    if building then
+      local cs = building:GetColliders()
+      for _, collider in pairs(cs) do
+        self._collider2Building[collider] = nil
       end
-      do
-        if building then
-          local cs = building:GetColliders()
-          for _,collider in pairs(cs) do
-            -- DECOMPILER ERROR at PC45: Confused about usage of register: R11 in 'UnsetPending'
-
-            (self._collider2Building)[collider] = nil
-          end
-          building:Reset(architecture)
-          local cs = building:GetColliders()
-          for _,collider in pairs(cs) do
-            -- DECOMPILER ERROR at PC58: Confused about usage of register: R12 in 'UnsetPending'
-
-            (self._collider2Building)[collider] = building
-          end
-        else
-          do
-            ;
-            (Log.debug)("创建1个本地没有的建筑")
-            self:_CreateBuilding(architecture)
-            if needUpdateNavmesh then
-              ((self._client):SceneManager()):BuildNavMeshAsync()
-            end
-          end
-        end
+      building:Reset(architecture)
+      local cs = building:GetColliders()
+      for _, collider in pairs(cs) do
+        self._collider2Building[collider] = building
       end
+    else
+      Log.debug("创建1个本地没有的建筑")
+      self:_CreateBuilding(architecture)
+    end
+    if needUpdateNavmesh then
+      self._client:SceneManager():BuildNavMeshAsync()
     end
   end
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.StartChangeSkin = function(self)
-  -- function num : 0_78 , upvalues : _ENV
+function HomeBuildManager:StartChangeSkin()
   if self._mode == BuildEditorMode.Normal then
     BuildLog("开始换肤")
     self._mode = BuildEditorMode.ChangeSkin
@@ -2042,184 +1543,121 @@ HomeBuildManager.StartChangeSkin = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.SelectChangeSkinBuilding = function(self, building)
-  -- function num : 0_79 , upvalues : _ENV
+function HomeBuildManager:SelectChangeSkinBuilding(building)
   if self._mode ~= BuildEditorMode.ChangeSkin then
     BuildError("不在换肤模式不能选中换肤建筑")
-    return 
+    return
   end
   if self._curMdf then
     BuildError("当前有选中的建筑，不能进入换肤模式")
-    return 
+    return
   end
-  ;
-  (((self._client):CameraManager()):GlobalCameraController()):Focus(building:ChangeSkinFocusPoint())
-  if self._curMdf and ((self._curMdf):Building()):InsID() ~= building:InsID() then
-    (self._curMdf):FinishChangeSkin()
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._mdfs)[#self._mdfs + 1] = self._curMdf
+  self._client:CameraManager():GlobalCameraController():Focus(building:ChangeSkinFocusPoint())
+  if self._curMdf and self._curMdf:Building():InsID() ~= building:InsID() then
+    self._curMdf:FinishChangeSkin()
+    self._mdfs[#self._mdfs + 1] = self._curMdf
     self._curMdf = nil
   end
   self._curMdf = HomeBuildModifier:New(building)
-  ;
-  (self._curMdf):StartChangeSkin()
+  self._curMdf:StartChangeSkin()
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.ChangeSkin = function(self, skinID)
-  -- function num : 0_80 , upvalues : _ENV
+function HomeBuildManager:ChangeSkin(skinID)
   if self._mode ~= BuildEditorMode.ChangeSkin then
     BuildError("不在换肤模式不能换肤")
-    return 
+    return
   end
   if not self._curMdf then
     BuildError("没有选中的建筑，不能换肤")
   end
-  ;
-  (self._curMdf):ChangeSkin(skinID)
+  self._curMdf:ChangeSkin(skinID)
   self:_NotifyAmbientChanged()
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.FinishChangeSkin = function(self)
-  -- function num : 0_81 , upvalues : _ENV
+function HomeBuildManager:FinishChangeSkin()
   if self._mode ~= BuildEditorMode.ChangeSkin then
     BuildError("不在换肤模式不能退出")
-    return 
+    return
   end
   if self._curMdf then
-    (self._curMdf):FinishChangeSkin()
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._mdfs)[#self._mdfs + 1] = self._curMdf
+    self._curMdf:FinishChangeSkin()
+    self._mdfs[#self._mdfs + 1] = self._curMdf
     self._curMdf = nil
   end
   self._mode = BuildEditorMode.Normal
   BuildLog("结束换肤")
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.RevertCurrentSkin = function(self)
-  -- function num : 0_82
-  (self._curMdf):Finish()
-  ;
-  (self._curMdf):Revert()
+function HomeBuildManager:RevertCurrentSkin()
+  self._curMdf:Finish()
+  self._curMdf:Revert()
   self._curMdf = nil
   self:_NotifyAmbientChanged()
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager._OnSaveSuccess = function(self, update, delete)
-  -- function num : 0_83 , upvalues : _ENV
+function HomeBuildManager:_OnSaveSuccess(update, delete)
   local updateBuildings = {}
   local deleteBuildings = {}
-  for _,building in pairs(self._buildings) do
+  for _, building in pairs(self._buildings) do
     local found = false
-    for _,arch in ipairs(update) do
+    for _, arch in ipairs(update) do
       if building:GetBuildPstId() == arch.pstid then
         building:ResetInteractPos()
-        ;
-        (table.insert)(updateBuildings, building)
+        table.insert(updateBuildings, building)
         found = true
         break
       end
     end
-    do
-      if not found then
-        for _,pstid in ipairs(delete) do
-          if building:GetBuildPstId() == pstid then
-            (table.insert)(deleteBuildings, building)
-            found = true
-            break
-          end
+    if not found then
+      for _, pstid in ipairs(delete) do
+        if building:GetBuildPstId() == pstid then
+          table.insert(deleteBuildings, building)
+          found = true
+          break
         end
-      end
-      do
-        -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out DO_STMT
-
       end
     end
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandBuildOnSaveBuilding, updateBuildings, deleteBuildings)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandBuildOnSaveBuilding, updateBuildings, deleteBuildings)
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.CheckBuildingLock = function(self, subType)
-  -- function num : 0_84 , upvalues : _ENV
+function HomeBuildManager:CheckBuildingLock(subType)
   if self._isVisit then
     return false
   end
   if subType == ArchitectureSubType.White_Tower then
-    return not (self._module):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_MAIN_ARC_UI)
-  else
-    if subType == ArchitectureSubType.Shop then
-      return not (self._module):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_SHOP_ARC_UI)
-    else
-      if subType == ArchitectureSubType.Museum then
-        return not (self._module):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_PHOTO_UI)
-      else
-        if subType == ArchitectureSubType.Wishing_Pool then
-          return not (self._module):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_WISHING_POOL_UI)
-        else
-          if subType == ArchitectureSubType.Storage_Box then
-            return not (self._module):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_VISIT_BOX_UI)
-          else
-            if subType == ArchitectureSubType.Album then
-              return not (self._module):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_ALBUM)
-            else
-              if subType == ArchitectureSubType.Medal_Wall then
-                return not (self._module):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_MEDAL_WALL)
-              end
-            end
-          end
-        end
-      end
-    end
+    return not self._module:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_MAIN_ARC_UI)
+  elseif subType == ArchitectureSubType.Shop then
+    return not self._module:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_SHOP_ARC_UI)
+  elseif subType == ArchitectureSubType.Museum then
+    return not self._module:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_PHOTO_UI)
+  elseif subType == ArchitectureSubType.Wishing_Pool then
+    return not self._module:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_WISHING_POOL_UI)
+  elseif subType == ArchitectureSubType.Storage_Box then
+    return not self._module:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_VISIT_BOX_UI)
+  elseif subType == ArchitectureSubType.Album then
+    return not self._module:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_ALBUM)
+  elseif subType == ArchitectureSubType.Medal_Wall then
+    return not self._module:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_MEDAL_WALL)
   end
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.OnHomelandFunctionUnlock = function(self, functionType)
-  -- function num : 0_85 , upvalues : _ENV
-  local targetBuildingSubType = nil
+function HomeBuildManager:OnHomelandFunctionUnlock(functionType)
+  local targetBuildingSubType
   if functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_MAIN_ARC_UI then
     targetBuildingSubType = ArchitectureSubType.White_Tower
-  else
-    if functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_SHOP_ARC_UI then
-      targetBuildingSubType = ArchitectureSubType.Shop
-    else
-      if functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_PHOTO_UI then
-        targetBuildingSubType = ArchitectureSubType.Museum
-      else
-        if functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_WISHING_POOL_UI then
-          targetBuildingSubType = ArchitectureSubType.Wishing_Pool
-        else
-          if functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_VISIT_BOX_UI then
-            targetBuildingSubType = ArchitectureSubType.Storage_Box
-          else
-            if functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_ALBUM then
-              targetBuildingSubType = ArchitectureSubType.Album
-            else
-              if functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_MEDAL_WALL then
-                targetBuildingSubType = ArchitectureSubType.Medal_Wall
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_SHOP_ARC_UI then
+    targetBuildingSubType = ArchitectureSubType.Shop
+  elseif functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_PHOTO_UI then
+    targetBuildingSubType = ArchitectureSubType.Museum
+  elseif functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_WISHING_POOL_UI then
+    targetBuildingSubType = ArchitectureSubType.Wishing_Pool
+  elseif functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_VISIT_BOX_UI then
+    targetBuildingSubType = ArchitectureSubType.Storage_Box
+  elseif functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_ALBUM then
+    targetBuildingSubType = ArchitectureSubType.Album
+  elseif functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_MEDAL_WALL then
+    targetBuildingSubType = ArchitectureSubType.Medal_Wall
   end
   if targetBuildingSubType then
     local building = self:GetBuildingBySubType(targetBuildingSubType)
@@ -2229,53 +1667,41 @@ HomeBuildManager.OnHomelandFunctionUnlock = function(self, functionType)
   end
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.CollectObstacle = function(self)
-  -- function num : 0_86 , upvalues : _ENV
+function HomeBuildManager:CollectObstacle()
   self._obstacles = {}
   local treasureGos = {}
-  local treasures = ((self._client):TreasureManager()):GetAllTreasure()
-  for _,treasure in pairs(treasures) do
+  local treasures = self._client:TreasureManager():GetAllTreasure()
+  for _, treasure in pairs(treasures) do
     treasureGos[#treasureGos + 1] = treasure:GameObject()
   end
-  for _,go in ipairs(treasureGos) do
+  for _, go in ipairs(treasureGos) do
     local collider = go:GetComponent(typeof(UnityEngine.Collider))
     if collider then
       go.layer = HomeBuildLayer.BuildObstacle
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._obstacles)[collider] = BuildObstacleType.Treasures
+      self._obstacles[collider] = BuildObstacleType.Treasures
     end
   end
   local parentObstacleGos = {}
-  for _,building in pairs(self._buildings) do
+  for _, building in pairs(self._buildings) do
     if building:GetBuildType() == ArchitectureSubType.Father_Architecture then
       local list = building:GetObstacles()
-      for _,go in ipairs(list) do
+      for _, go in ipairs(list) do
         parentObstacleGos[#parentObstacleGos + 1] = go
       end
     end
   end
-  for _,go in ipairs(parentObstacleGos) do
+  for _, go in ipairs(parentObstacleGos) do
     local collider = go:GetComponent(typeof(UnityEngine.Collider))
     if collider then
       go.layer = HomeBuildLayer.BuildObstacle
-      -- DECOMPILER ERROR at PC82: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self._obstacles)[collider] = BuildObstacleType.ParentBuildingObstacles
+      self._obstacles[collider] = BuildObstacleType.ParentBuildingObstacles
     end
   end
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.ActiveAllBuilding = function(self, active)
-  -- function num : 0_87 , upvalues : _ENV
+function HomeBuildManager:ActiveAllBuilding(active)
   if self._buildings and next(self._buildings) then
-    for _,building in pairs(self._buildings) do
+    for _, building in pairs(self._buildings) do
       if not building:IsDefaultBuilding() then
         building:Active(active)
       end
@@ -2283,46 +1709,32 @@ HomeBuildManager.ActiveAllBuilding = function(self, active)
   end
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.ShowChildBuildDropError = function(self, buildAssetID)
-  -- function num : 0_88 , upvalues : _ENV
+function HomeBuildManager:ShowChildBuildDropError(buildAssetID)
   if not self._childBuildDropErrorStrList then
     self._childBuildDropErrorStrList = {}
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._childBuildDropErrorStrList)[buildAssetID] then
-    (self._childBuildDropErrorStrList)[buildAssetID] = self:GetChildBuildDropErrorStr(buildAssetID)
+  if not self._childBuildDropErrorStrList[buildAssetID] then
+    self._childBuildDropErrorStrList[buildAssetID] = self:GetChildBuildDropErrorStr(buildAssetID)
   end
-  ;
-  (ToastManager.ShowHomeToast)((self._childBuildDropErrorStrList)[buildAssetID])
+  ToastManager.ShowHomeToast(self._childBuildDropErrorStrList[buildAssetID])
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.GetChildBuildDropErrorStr = function(self, buildAssetID)
-  -- function num : 0_89 , upvalues : _ENV
-  local sonCfg = (Cfg.cfg_item_son_architecture)[buildAssetID]
+function HomeBuildManager:GetChildBuildDropErrorStr(buildAssetID)
+  local sonCfg = Cfg.cfg_item_son_architecture[buildAssetID]
   local parentStr = ""
-  for index,fatherAssetID in ipairs(sonCfg.FatherArch) do
-    if index > 1 then
-      parentStr = parentStr .. (StringTable.Get)("str_homeland_build_child_drop_error_seperator")
+  for index, fatherAssetID in ipairs(sonCfg.FatherArch) do
+    if 1 < index then
+      parentStr = parentStr .. StringTable.Get("str_homeland_build_child_drop_error_seperator")
     end
-    parentStr = parentStr .. (StringTable.Get)(((Cfg.cfg_item)[fatherAssetID]).Name)
+    parentStr = parentStr .. StringTable.Get(Cfg.cfg_item[fatherAssetID].Name)
   end
-  local errorStr = (StringTable.Get)("str_homeland_build_child_drop_error", (StringTable.Get)(((Cfg.cfg_item)[buildAssetID]).Name), parentStr)
+  local errorStr = StringTable.Get("str_homeland_build_child_drop_error", StringTable.Get(Cfg.cfg_item[buildAssetID].Name), parentStr)
   return errorStr
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.IsFatherBuildingDisplayedArea = function(self, area)
-  -- function num : 0_90
-  local buildingArea = (area:GetBelongBuildingArea())
-  -- DECOMPILER ERROR at PC2: Overwrote pending register: R3 in 'AssignReg'
-
-  local fatherBuilding = .end
+function HomeBuildManager:IsFatherBuildingDisplayedArea(area)
+  local buildingArea = area:GetBelongBuildingArea()
+  local fatherBuilding
   if buildingArea ~= nil then
     fatherBuilding = buildingArea:GetFatherBuilding()
   end
@@ -2332,125 +1744,89 @@ HomeBuildManager.IsFatherBuildingDisplayedArea = function(self, area)
   return false
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.ChangeCurFatherBuildingArea = function(self, area)
-  -- function num : 0_91
+function HomeBuildManager:ChangeCurFatherBuildingArea(area)
   if self._curFatherBuildingArea == area then
-    return 
+    return
   end
-  do
-    if self._curFatherBuildingArea then
-      local showArea = self:IsFatherBuildingDisplayedArea(self._curFatherBuildingArea)
-      ;
-      (self._curFatherBuildingArea):ShowArea(showArea)
-    end
-    self._curFatherBuildingArea = area
-    if self._curFatherBuildingArea then
-      (self._curFatherBuildingArea):ShowArea(true)
-      ;
-      (self._curFatherBuildingArea):ShowGrid((self._area):GetShowGrid())
-      ;
-      (self._curFatherBuildingArea):SetGridSpace((self._area):GetGridSpace())
-    end
+  if self._curFatherBuildingArea then
+    local showArea = self:IsFatherBuildingDisplayedArea(self._curFatherBuildingArea)
+    self._curFatherBuildingArea:ShowArea(showArea)
+  end
+  self._curFatherBuildingArea = area
+  if self._curFatherBuildingArea then
+    self._curFatherBuildingArea:ShowArea(true)
+    self._curFatherBuildingArea:ShowGrid(self._area:GetShowGrid())
+    self._curFatherBuildingArea:SetGridSpace(self._area:GetGridSpace())
   end
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.ChangeCurFreeBuildingArea = function(self, area)
-  -- function num : 0_92
+function HomeBuildManager:ChangeCurFreeBuildingArea(area)
   if self._curFreeBuildingArea == area then
-    return 
+    return
   end
-  do
-    if self._curFreeBuildingArea then
-      local showArea = self:IsFatherBuildingDisplayedArea(self._curFreeBuildingArea)
-      ;
-      (self._curFreeBuildingArea):ShowArea(showArea)
-    end
-    self._curFreeBuildingArea = area
-    if self._curFreeBuildingArea then
-      (self._curFreeBuildingArea):ShowArea(true)
-      ;
-      (self._curFreeBuildingArea):ShowGrid((self._area):GetShowGrid())
-      ;
-      (self._curFreeBuildingArea):SetGridSpace((self._area):GetGridSpace())
-    end
+  if self._curFreeBuildingArea then
+    local showArea = self:IsFatherBuildingDisplayedArea(self._curFreeBuildingArea)
+    self._curFreeBuildingArea:ShowArea(showArea)
+  end
+  self._curFreeBuildingArea = area
+  if self._curFreeBuildingArea then
+    self._curFreeBuildingArea:ShowArea(true)
+    self._curFreeBuildingArea:ShowGrid(self._area:GetShowGrid())
+    self._curFreeBuildingArea:SetGridSpace(self._area:GetGridSpace())
   end
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.FlushCurFreeBuildingArea = function(self, area, posY, building)
-  -- function num : 0_93 , upvalues : _ENV
-  local freeArea = nil
-  do
-    if area ~= nil and building:GetBuildType() == ArchitectureSubType.Father_Architecture then
-      local areaID = (area:GetBelongBuildingArea()):GetID()
-      if building:IsFreeArea(areaID) then
-        freeArea = area
-      end
+function HomeBuildManager:FlushCurFreeBuildingArea(area, posY, building)
+  local freeArea
+  if area ~= nil and building:GetBuildType() == ArchitectureSubType.Father_Architecture then
+    local areaID = area:GetBelongBuildingArea():GetID()
+    if building:IsFreeArea(areaID) then
+      freeArea = area
     end
-    self:ChangeCurFreeBuildingArea(freeArea)
   end
+  self:ChangeCurFreeBuildingArea(freeArea)
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.FocusAndOutline = function(self, cfgID)
-  -- function num : 0_94 , upvalues : _ENV
+function HomeBuildManager:FocusAndOutline(cfgID)
   local building = self:FindBuildingByCfgID(cfgID)
   if not building then
     BuildError("找不到建筑" .. cfgID)
-    return 
+    return
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.FocusAndOutlineProc, self, building)
+  GameGlobal.TaskManager():StartTask(self.FocusAndOutlineProc, self, building)
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.FocusAndOutlineProc = function(self, TT, building)
-  -- function num : 0_95 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("HomeBuildManager:FocusAndOutlineProc")
+function HomeBuildManager:FocusAndOutlineProc(TT, building)
+  GameGlobal.UIStateManager():Lock("HomeBuildManager:FocusAndOutlineProc")
   local focusTime = 0.5
   if not building:ChangeSkinFocusPoint() then
-    ((GameGlobal.UIStateManager)()):UnLock("HomeBuildManager:FocusAndOutlineProc")
-    return 
+    GameGlobal.UIStateManager():UnLock("HomeBuildManager:FocusAndOutlineProc")
+    return
   end
-  ;
-  (((self._client):CameraManager()):GlobalCameraController()):Focus(building:ChangeSkinFocusPoint(), focusTime)
+  self._client:CameraManager():GlobalCameraController():Focus(building:ChangeSkinFocusPoint(), focusTime)
   YIELD(TT, focusTime * 1000)
-  local color = Color(0.23921568627451, 0.58823529411765, 1, 1)
+  local color = Color(0.23921568627450981, 0.5882352941176471, 1.0, 1)
   local flashTimes = 2
   local flashLength = 1000
   local currentTime = 0
   local totalTime = flashTimes * flashLength
   building:ShowOutline()
-  do
-    while currentTime <= totalTime do
-      local percent = 1 * (currentTime % flashLength) / flashLength
-      color.a = (((DG.Tweening).DOVirtual).EasedValue)(0, 1, percent, ((DG.Tweening).Ease).Flash)
-      building:SetOutlineColor(color)
-      YIELD(TT)
-      currentTime = currentTime + (GameGlobal:GetInstance()):GetDeltaTime()
-    end
-    color.a = 1
+  while currentTime <= totalTime do
+    local percent = 1 * (currentTime % flashLength) / flashLength
+    color.a = DG.Tweening.DOVirtual.EasedValue(0, 1, percent, DG.Tweening.Ease.Flash)
     building:SetOutlineColor(color)
-    building:HideOutline()
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("HomeBuildManager:FocusAndOutlineProc")
+    YIELD(TT)
+    currentTime = currentTime + GameGlobal:GetInstance():GetDeltaTime()
   end
+  color.a = 1
+  building:SetOutlineColor(color)
+  building:HideOutline()
+  GameGlobal.UIStateManager():UnLock("HomeBuildManager:FocusAndOutlineProc")
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.GetCouldLinkBuildings = function(self, oribuilding)
-  -- function num : 0_96 , upvalues : _ENV
-  local checkfun = function(building)
-    -- function num : 0_96_0 , upvalues : _ENV, oribuilding
-    if building:GetCheckLinkDistance() < (Vector3.Distance)(oribuilding:Pos(), building:Pos()) then
+function HomeBuildManager:GetCouldLinkBuildings(oribuilding)
+  local function checkfun(building)
+    if Vector3.Distance(oribuilding:Pos(), building:Pos()) > building:GetCheckLinkDistance() then
       return false
     end
     if oribuilding:GetBuildId() ~= building:GetBuildId() then
@@ -2464,43 +1840,37 @@ HomeBuildManager.GetCouldLinkBuildings = function(self, oribuilding)
     end
     return true
   end
-
+  
   local list = self:GetBuildingsFilter(checkfun)
   if #list <= oribuilding:GetLinkCount() then
     return list
   else
     local endList = {}
-    local sortFun = function(x, y)
-    -- function num : 0_96_1 , upvalues : _ENV, oribuilding
-    do return (Vector3.Distance)(x:Pos(), oribuilding:Pos()) < (Vector3.Distance)(y:Pos(), oribuilding:Pos()) end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-    ;
-    (table.sort)(list, sortFun)
+    
+    local function sortFun(x, y)
+      return Vector3.Distance(x:Pos(), oribuilding:Pos()) < Vector3.Distance(y:Pos(), oribuilding:Pos())
+    end
+    
+    table.sort(list, sortFun)
     for i = 1, oribuilding:GetLinkCount() do
-      (table.insert)(endList, list[i])
+      table.insert(endList, list[i])
     end
     return endList
   end
 end
 
--- DECOMPILER ERROR at PC299: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.SetLinkBuildings = function(self)
-  -- function num : 0_97 , upvalues : _ENV
-  local checkfun = function(building)
-    -- function num : 0_97_0
+function HomeBuildManager:SetLinkBuildings()
+  local function checkfun(building)
     return building:CheckCanLink()
   end
-
+  
   local list = self:GetBuildingsFilter(checkfun)
-  for index,value in ipairs(list) do
+  for index, value in ipairs(list) do
     value:ClearLinkPointObj()
   end
-  for index,value in ipairs(list) do
+  for index, value in ipairs(list) do
     local temps = self:GetCouldLinkBuildings(value)
-    for i,v in ipairs(temps) do
+    for i, v in ipairs(temps) do
       if value:GetLinkingCount() < value:GetLinkCount() and v:GetLinkingCount() < v:GetLinkCount() and not value:IsDelete() and not v:IsDelete() then
         value:SetLinkPointTransform(v)
       end
@@ -2508,38 +1878,25 @@ HomeBuildManager.SetLinkBuildings = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.OnClickMedal = function(self, ray)
-  -- function num : 0_98 , upvalues : _ENV
-  local castRes, hitInfo = ((UnityEngine.Physics).Raycast)(ray, nil, 1000, 1 << HomeBuildLayer.MedalWall)
+function HomeBuildManager:OnClickMedal(ray)
+  local castRes, hitInfo = UnityEngine.Physics.Raycast(ray, nil, 1000, 1 << HomeBuildLayer.MedalWall)
   if castRes then
-    local go = (hitInfo.collider).gameObject
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIMedalTipsHomelandController", tonumber(go.name))
+    local go = hitInfo.collider.gameObject
+    GameGlobal.UIStateManager():ShowDialog("UIMedalTipsHomelandController", tonumber(go.name))
   end
 end
 
--- DECOMPILER ERROR at PC305: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.FocusPoint = function(self, focusPoint, callback)
-  -- function num : 0_99
+function HomeBuildManager:FocusPoint(focusPoint, callback)
   if focusPoint == nil then
     if callback ~= nil then
       callback()
     end
-    return 
+    return
   end
   local focusTime = 0.5
-  ;
-  (((self._client):CameraManager()):GlobalCameraController()):Focus(focusPoint, focusTime, callback)
+  self._client:CameraManager():GlobalCameraController():Focus(focusPoint, focusTime, callback)
 end
 
--- DECOMPILER ERROR at PC308: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildManager.FocusPointDirect = function(self, focusPoint)
-  -- function num : 0_100
-  (((self._client):CameraManager()):GlobalCameraController()):FocusDirect(focusPoint)
+function HomeBuildManager:FocusPointDirect(focusPoint)
+  self._client:CameraManager():GlobalCameraController():FocusDirect(focusPoint)
 end
-
-

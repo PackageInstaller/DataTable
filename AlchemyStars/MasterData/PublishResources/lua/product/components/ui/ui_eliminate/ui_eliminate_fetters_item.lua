@@ -1,21 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_eliminate/ui_eliminate_fetters_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEliminateFettersItem", UICustomWidget)
 UIEliminateFettersItem = UIEliminateFettersItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEliminateFettersItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.ElementSpriteName = {[ElementType.ElementType_Blue] = "bing_color", [ElementType.ElementType_Red] = "huo_color", [ElementType.ElementType_Green] = "sen_color", [ElementType.ElementType_Yellow] = "lei_color"}
+function UIEliminateFettersItem:Constructor()
+  self.ElementSpriteName = {
+    [ElementType.ElementType_Blue] = "bing_color",
+    [ElementType.ElementType_Red] = "huo_color",
+    [ElementType.ElementType_Green] = "sen_color",
+    [ElementType.ElementType_Yellow] = "lei_color"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateFettersItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIEliminateFettersItem:OnShow(uiParams)
   self._cg1 = self:GetUIComponent("RawImageLoader", "CG1")
   self._logo1 = self:GetUIComponent("RawImageLoader", "Logo1")
   self._mask1 = self:GetGameObject("Mask1")
@@ -27,54 +22,48 @@ UIEliminateFettersItem.OnShow = function(self, uiParams)
   self._attr2 = self:GetUIComponent("Image", "Attr2")
   self._name2 = self:GetUIComponent("UILocalizationText", "Name2")
   self._pets = {
-{CG = self._cg1, logo = self._logo1, mask = self._mask1, attr = self._attr1, name = self._name1}
-, 
-{CG = self._cg2, logo = self._logo2, mask = self._mask2, attr = self._attr2, name = self._name2}
-}
+    {
+      CG = self._cg1,
+      logo = self._logo1,
+      mask = self._mask1,
+      attr = self._attr1,
+      name = self._name1
+    },
+    {
+      CG = self._cg2,
+      logo = self._logo2,
+      mask = self._mask2,
+      attr = self._attr2,
+      name = self._name2
+    }
+  }
   self._petModule = self:GetModule(PetModule)
-  self._atlasProperty = (self.uiOwner):GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
+  self._atlasProperty = self.uiOwner:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateFettersItem.SetData = function(self, fettersCfg)
-  -- function num : 0_2
+function UIEliminateFettersItem:SetData(fettersCfg)
   self:SetPetData(fettersCfg.PetAID, 1)
   self:SetPetData(fettersCfg.PetBID, 2)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateFettersItem.SetPetData = function(self, petTempID, index)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet)[petTempID]
-  local petData = ((self._petModule):GetPetByTemplateId(petTempID))
-  local body = nil
+function UIEliminateFettersItem:SetPetData(petTempID, index)
+  local cfg = Cfg.cfg_pet[petTempID]
+  local petData = self._petModule:GetPetByTemplateId(petTempID)
+  local body
   if petData then
     local grade = petData:GetPetGrade()
-    body = (HelperProxy:GetInstance()):GetPetTeamBody(petTempID, grade, petData:GetSkinId(), PetSkinEffectPath.CARD_ROLE_RELATION)
+    body = HelperProxy:GetInstance():GetPetTeamBody(petTempID, grade, petData:GetSkinId(), PetSkinEffectPath.CARD_ROLE_RELATION)
   else
-    do
-      body = (HelperProxy:GetInstance()):GetPetTeamBody(petTempID, 0, 0, PetSkinEffectPath.CARD_ROLE_RELATION)
-      ;
-      (((self._pets)[index]).CG):LoadImage(body)
-      ;
-      (((self._pets)[index]).logo):LoadImage(cfg.Logo)
-      ;
-      (((self._pets)[index]).name):SetText((StringTable.Get)(cfg.Name))
-      -- DECOMPILER ERROR at PC66: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (((self._pets)[index]).attr).sprite = (self._atlasProperty):GetSprite((self.ElementSpriteName)[cfg.FirstElement])
-      local petModule = (GameGlobal.GetModule)(PetModule)
-      if petModule:GetPetByTemplateId(petTempID) then
-        (((self._pets)[index]).mask):SetActive(false)
-      else
-        ;
-        (((self._pets)[index]).mask):SetActive(true)
-      end
-    end
+    body = HelperProxy:GetInstance():GetPetTeamBody(petTempID, 0, 0, PetSkinEffectPath.CARD_ROLE_RELATION)
+  end
+  self._pets[index].CG:LoadImage(body)
+  self._pets[index].logo:LoadImage(cfg.Logo)
+  self._pets[index].name:SetText(StringTable.Get(cfg.Name))
+  self._pets[index].attr.sprite = self._atlasProperty:GetSprite(self.ElementSpriteName[cfg.FirstElement])
+  local petModule = GameGlobal.GetModule(PetModule)
+  if petModule:GetPetByTemplateId(petTempID) then
+    self._pets[index].mask:SetActive(false)
+  else
+    self._pets[index].mask:SetActive(true)
   end
 end
-
-

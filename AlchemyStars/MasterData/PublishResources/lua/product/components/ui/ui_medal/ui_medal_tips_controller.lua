@@ -1,60 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/ui_medal_tips_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalTipsController", UIController)
 UIMedalTipsController = UIMedalTipsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalTipsController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMedalTipsController:OnShow(uiParams)
   self.itemId = uiParams[1]
   self._atlas = self:GetAsset("UIMedal.spriteatlas", LoadType.SpriteAtlas)
   self:InitWidget()
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalTipsController.InitWidget = function(self)
-  -- function num : 0_1
+function UIMedalTipsController:InitWidget()
   self.imgIcon = self:GetUIComponent("Image", "imgIcon")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self.txtdesc = self:GetUIComponent("UILocalizationText", "txtdesc")
   self.txtGetWay = self:GetUIComponent("UILocalizationText", "txtGetWay")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalTipsController.Refresh = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMedalTipsController:Refresh()
   if not self.itemId then
-    return 
+    return
   end
-  local cfgItem = (Cfg.cfg_item)[self.itemId]
+  local cfgItem = Cfg.cfg_item[self.itemId]
   if cfgItem then
-    (self.txtName):SetText((StringTable.Get)(cfgItem.Name))
-    ;
-    (self.txtdesc):SetText((StringTable.Get)(cfgItem.RpIntro))
+    self.txtName:SetText(StringTable.Get(cfgItem.Name))
+    self.txtdesc:SetText(StringTable.Get(cfgItem.RpIntro))
   end
-  local cfgMedal = (Cfg.cfg_item_medal)[self.itemId]
+  local cfgMedal = Cfg.cfg_item_medal[self.itemId]
   if cfgMedal then
-    (self.txtGetWay):SetText((StringTable.Get)(cfgMedal.GetPathDesc))
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.imgIcon).sprite = (self._atlas):GetSprite(cfgMedal.Icon)
-    ;
-    (self.imgIcon):SetNativeSize()
+    self.txtGetWay:SetText(StringTable.Get(cfgMedal.GetPathDesc))
+    self.imgIcon.sprite = self._atlas:GetSprite(cfgMedal.Icon)
+    self.imgIcon:SetNativeSize()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalTipsController.BgOnClick = function(self, go)
-  -- function num : 0_3
+function UIMedalTipsController:BgOnClick(go)
   self:CloseDialog()
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/date/arch/ui_activity_n33_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN33RewardItem", UICustomWidget)
 UIActivityN33RewardItem = UIActivityN33RewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN33RewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityN33RewardItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33RewardItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIActivityN33RewardItem:InitWidget()
   self.itemNode = self:GetGameObject("ItemNode")
   self.petNode = self:GetGameObject("PetNode")
   self.petDontClickMark = self:GetGameObject("PetDontClickMark")
@@ -27,79 +17,54 @@ UIActivityN33RewardItem.InitWidget = function(self)
   self.canClickShowTips = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33RewardItem.SetRewardData_Item = function(self, rewardConf, isReceived, activityConst)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN33RewardItem:SetRewardData_Item(rewardConf, isReceived, activityConst)
   self.activityConst = activityConst
-  ;
-  (self.itemNode):SetActive(true)
-  ;
-  (self.petNode):SetActive(false)
+  self.itemNode:SetActive(true)
+  self.petNode:SetActive(false)
   if not rewardConf then
-    return 
+    return
   end
   local assetid = rewardConf[1]
-  if not assetid then
-    assetid = rewardConf.assetid
-  end
+  assetid = assetid or rewardConf.assetid
   local count = rewardConf[2]
-  if not count then
-    count = rewardConf.count
-  end
-  local templateData = (Cfg.cfg_item)[assetid]
+  count = count or rewardConf.count
+  local templateData = Cfg.cfg_item[assetid]
   if not templateData then
-    (Log.fatal)("###cfg_item is nil ! id --> ", assetid)
-    return 
+    Log.fatal("###cfg_item is nil ! id --> ", assetid)
+    return
   end
-  ;
-  (self.itemNumText):SetText("X" .. count)
+  self.itemNumText:SetText("X" .. count)
   self._assetID = assetid
   self._uiItemAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
   local icon = templateData.Icon
   local quality = templateData.Color
   local text1 = count
   local itemId = templateData.ID
-  ;
-  (self.itemIconLoader):LoadImage(icon)
-  ;
-  ((self.dontClickMark).gameObject):SetActive(isReceived)
+  self.itemIconLoader:LoadImage(icon)
+  self.dontClickMark.gameObject:SetActive(isReceived)
   self.canClickShowTips = not isReceived
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33RewardItem.SetRewardData_PetStory = function(self, petStoryID, isReceived, activityConst)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN33RewardItem:SetRewardData_PetStory(petStoryID, isReceived, activityConst)
   self.activityConst = activityConst
-  ;
-  (self.itemNode):SetActive(false)
-  ;
-  (self.petNode):SetActive(true)
-  ;
-  (self.petDontClickMark):SetActive(isReceived)
-  local cfg = (Cfg.cfg_component_simulation_operation_story)[petStoryID]
-  ;
-  (self.petImg):LoadImage(cfg.BonuslIcon)
+  self.itemNode:SetActive(false)
+  self.petNode:SetActive(true)
+  self.petDontClickMark:SetActive(isReceived)
+  local cfg = Cfg.cfg_component_simulation_operation_story[petStoryID]
+  self.petImg:LoadImage(cfg.BonuslIcon)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33RewardItem.ClickItemBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self.activityConst):CheckSimulationOperationIsOver() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+function UIActivityN33RewardItem:ClickItemBtnOnClick(go)
+  if self.activityConst:CheckSimulationOperationIsOver() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     self:SwitchState(UIStateType.UIActivityN33MainController)
-    return 
+    return
   end
   if not self._assetID then
-    return 
+    return
   end
   if not self.canClickShowTips then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftInteractiveEventRewardShowItemTips, self._assetID, ((self:GetGameObject()).transform).position)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftInteractiveEventRewardShowItemTips, self._assetID, self:GetGameObject().transform.position)
 end
-
-

@@ -1,78 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_unscaled_count_down.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicStartUnscaledCountDown", BuffLogicBase)
 BuffLogicStartUnscaledCountDown = BuffLogicStartUnscaledCountDown
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicStartUnscaledCountDown.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicStartUnscaledCountDown:Constructor(buffInstance, logicParam)
   self._flagID = logicParam.flagID or 1
   self._cdMs = logicParam.cdMs
   self._isGlobal = logicParam.isGlobal or 1
   self._showGlobalUI = logicParam.showGlobalUI or 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicStartUnscaledCountDown.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicStartUnscaledCountDown:DoLogic(notify)
+  local e = self._buffInstance:Entity()
   local flagID = self._flagID
   if self._isGlobal and self._isGlobal == 1 then
     flagID = BattleConst.ClientGlobalUnscaledCountDownFlagID
   end
   if self._isGlobal and self._isGlobal == 1 then
-    local boardEntity = (self._world):GetBoardEntity()
+    local boardEntity = self._world:GetBoardEntity()
     local cmpt = boardEntity:UnscaledCountDownLogic()
-    ;
-    (Log.debug)("BuffLogicStartUnscaledCountDown get cmpt")
+    Log.debug("BuffLogicStartUnscaledCountDown get cmpt")
     if cmpt then
       cmpt:StartCoundDown(flagID, self._cdMs)
-      ;
-      (Log.debug)("BuffLogicStartUnscaledCountDown cmpt flagID:", cmpt:GetFlagID(), " isActive:", cmpt:GetIsActive())
+      Log.debug("BuffLogicStartUnscaledCountDown cmpt flagID:", cmpt:GetFlagID(), " isActive:", cmpt:GetIsActive())
     end
   end
-  do
-    return BuffResultStartUnscaledCountDown:New(flagID, self._cdMs, self._showGlobalUI)
-  end
+  return BuffResultStartUnscaledCountDown:New(flagID, self._cdMs, self._showGlobalUI)
 end
 
 _class("BuffLogicStopUnscaledCountDown", BuffLogicBase)
 BuffLogicStopUnscaledCountDown = BuffLogicStopUnscaledCountDown
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicStopUnscaledCountDown.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicStopUnscaledCountDown:Constructor(buffInstance, logicParam)
   self._flagID = logicParam.flagID or 1
   self._isGlobal = logicParam.isGlobal or 1
   self._hideGlobalUI = logicParam.hideGlobalUI or 1
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicStopUnscaledCountDown.DoLogic = function(self, notify)
-  -- function num : 0_3 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicStopUnscaledCountDown:DoLogic(notify)
+  local e = self._buffInstance:Entity()
   local flagID = self._flagID
   if self._isGlobal and self._isGlobal == 1 then
     flagID = BattleConst.ClientGlobalUnscaledCountDownFlagID
   end
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).UnscaledCountDownLogic)
-  for i,e in ipairs(group:GetEntities()) do
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.UnscaledCountDownLogic)
+  for i, e in ipairs(group:GetEntities()) do
     local cmpt = e:UnscaledCountDownLogic()
-    ;
-    (Log.debug)("BuffLogicStopUnscaledCountDown cmpt flagID:", cmpt:GetFlagID(), " isActive:", cmpt:GetIsActive())
+    Log.debug("BuffLogicStopUnscaledCountDown cmpt flagID:", cmpt:GetFlagID(), " isActive:", cmpt:GetIsActive())
     if flagID == cmpt:GetFlagID() then
       cmpt:Reset()
       break
     end
   end
-  do
-    return BuffResultStopUnscaledCountDown:New(flagID, self._hideGlobalUI)
-  end
+  return BuffResultStopUnscaledCountDown:New(flagID, self._hideGlobalUI)
 end
-
-

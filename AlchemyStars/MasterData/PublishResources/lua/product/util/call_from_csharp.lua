@@ -1,53 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/call_from_csharp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-G_ShowException = function(expmessage, stWorkPath)
-  -- function num : 0_0 , upvalues : _ENV
+function G_ShowException(expmessage, stWorkPath)
   if Log.loglevel < ELogLevel.None then
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.System, PopupMsgBoxType.OkCancel, "", expmessage)
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.System, PopupMsgBoxType.OkCancel, "", expmessage)
   end
 end
 
-G_StartLuaProfiler = function()
-  -- function num : 0_1 , upvalues : _ENV
-  (GameGlobal.StartProfiler)()
+function G_StartLuaProfiler()
+  GameGlobal.StartProfiler()
 end
 
-G_StopLuaProfiler = function()
-  -- function num : 0_2 , upvalues : _ENV
-  (GameGlobal.StopProfiler)()
+function G_StopLuaProfiler()
+  GameGlobal.StopProfiler()
 end
 
-G_GetNoticeData = function(noticeGroup, language, region, partition, extraJson)
-  -- function num : 0_3 , upvalues : _ENV
+function G_GetNoticeData(noticeGroup, language, region, partition, extraJson)
   local data = ""
-  local fileName = nil
+  local fileName
   if noticeGroup == "beforeEnter" then
     fileName = "noticedata_beforeEnter.bytes"
-  else
-    if noticeGroup == "system" then
-      fileName = "noticedata_system.bytes"
-    else
-      if noticeGroup == "active" then
-        fileName = "noticedata_active.bytes"
-      else
-        if noticeGroup == "afterEnter" then
-          fileName = "noticedata_afterEnter.bytes"
-        end
-      end
-    end
+  elseif noticeGroup == "system" then
+    fileName = "noticedata_system.bytes"
+  elseif noticeGroup == "active" then
+    fileName = "noticedata_active.bytes"
+  elseif noticeGroup == "afterEnter" then
+    fileName = "noticedata_afterEnter.bytes"
   end
   if fileName == nil then
-    (Log.fatal)("###noticedata --  fileName is nil !")
+    Log.fatal("###noticedata --  fileName is nil !")
     return nil
   end
-  local request = (ResourceManager:GetInstance()):SyncLoadAsset(fileName, LoadType.Text)
+  local request = ResourceManager:GetInstance():SyncLoadAsset(fileName, LoadType.Text)
   if request.Obj ~= nil then
-    data = (EngineGameHelper.GetUTF8String)(request.Obj)
+    data = EngineGameHelper.GetUTF8String(request.Obj)
+  else
   end
   return data
 end
-
-

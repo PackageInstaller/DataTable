@@ -1,37 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_smelt_room/ui_touch_button.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITouchButton", Object)
 UITouchButton = UITouchButton
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITouchButton.Constructor = function(self, button, callBack)
-  -- function num : 0_0 , upvalues : _ENV
+function UITouchButton:Constructor(button, callBack)
   self._eventListener = UICustomUIEventListener:New()
-  ;
-  (self._eventListener):AddUICustomEventListener(button, UIEvent.Press, function()
-    -- function num : 0_0_0 , upvalues : self
+  self._eventListener:AddUICustomEventListener(button, UIEvent.Press, function()
     self:OnDwon()
-  end
-)
-  ;
-  (self._eventListener):AddUICustomEventListener(button, UIEvent.Release, function()
-    -- function num : 0_0_1 , upvalues : self
+  end)
+  self._eventListener:AddUICustomEventListener(button, UIEvent.Release, function()
     self:OnUp()
-  end
-)
-  ;
-  (self._eventListener):AddUICustomEventListener(button, UIEvent.Drag, function()
-    -- function num : 0_0_2 , upvalues : self
+  end)
+  self._eventListener:AddUICustomEventListener(button, UIEvent.Drag, function()
     self:Cancel()
-  end
-)
+  end)
   self._callBack = callBack
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._touchTime = ((Cfg.cfg_global).pet_up_level_start_long_time).IntValue
-  self._callDeltaTime = ((Cfg.cfg_global).pet_up_level_add_count_per_second).IntValue
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._touchTime = Cfg.cfg_global.pet_up_level_start_long_time.IntValue
+  self._callDeltaTime = Cfg.cfg_global.pet_up_level_add_count_per_second.IntValue
   self._downTime = 0
   self._down = false
   self._callTime = 0
@@ -39,40 +23,29 @@ UITouchButton.Constructor = function(self, button, callBack)
   self._active = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITouchButton.OnDwon = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UITouchButton:OnDwon()
   if not self._active then
-    return 
+    return
   end
   self._down = true
   self._downTime = self:Time()
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._Update, self)
+  GameGlobal.TaskManager():StartTask(self._Update, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITouchButton.OnUp = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UITouchButton:OnUp()
   if not self._active then
-    return 
+    return
   end
   if self._down and not self._touching then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
-    ;
-    (self._callBack)()
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
+    self._callBack()
   end
   self:Cancel()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITouchButton.Cancel = function(self)
-  -- function num : 0_3
+function UITouchButton:Cancel()
   if not self._active then
-    return 
+    return
   end
   self._down = false
   self._touching = false
@@ -80,45 +53,32 @@ UITouchButton.Cancel = function(self)
   self._callTime = 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITouchButton._Update = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UITouchButton:_Update(TT)
   while self._down do
     YIELD(TT)
     if not self._active then
-      return 
+      return
     end
     if self._down then
       local time = self:Time()
-      if not self._touching and self._touchTime < time - self._downTime then
+      if not self._touching and time - self._downTime > self._touchTime then
         self._touching = true
         self._callTime = time
-        ;
-        (self._callBack)()
+        self._callBack()
       end
-      if not self._touching or self._callDeltaTime < time - self._callTime then
+      if self._touching and time - self._callTime > self._callDeltaTime then
         self._callTime = time
-        ;
-        (self._callBack)()
+        self._callBack()
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITouchButton.Time = function(self)
-  -- function num : 0_5
-  return (self._timeModule):GetServerTime()
+function UITouchButton:Time()
+  return self._timeModule:GetServerTime()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITouchButton.Dispose = function(self)
-  -- function num : 0_6
-  (self._eventListener):Dispose()
+function UITouchButton:Dispose()
+  self._eventListener:Dispose()
   self._active = false
 end
-
-

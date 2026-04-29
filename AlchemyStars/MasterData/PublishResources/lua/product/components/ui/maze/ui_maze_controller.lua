@@ -1,359 +1,246 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/maze/ui_maze_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMazeController", UIController)
 UIMazeController = UIMazeController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMazeController.Constructor = function(self)
-  -- function num : 0_0
+function UIMazeController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMazeController:LoadDataOnEnter(TT, res, uiParams)
   local module = self:GetModule(MazeModule)
   local ack = module:RequestMazeVersion(TT)
   if ack:GetSucc() then
     res:SetSucc(true)
-    ;
-    (Log.notice)("[Maze] request data success, open ui")
+    Log.notice("[Maze] request data success, open ui")
   else
     res:SetSucc(false)
-    ;
-    (Log.notice)("[Maze] request data time up, open failed")
-    ;
-    (ToastManager.ShowToast)(ack:GetResult())
+    Log.notice("[Maze] request data time up, open failed")
+    ToastManager.ShowToast(ack:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.SetToOpenRoomIndex = function(roomIndex)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIMazeController.SetToOpenRoomIndex(roomIndex)
   UIMazeController.RoomIndex = roomIndex
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMazeController:OnShow(uiParams)
   self._sceneReq = uiParams[1]
   self._active = true
   self._disposed = false
   local topButton = self:GetUIComponent("UISelectObjectPath", "TopButtons")
   self.topButtonWidget = topButton:SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_3_0 , upvalues : self, _ENV
+  self.topButtonWidget:SetData(function()
     self:OnLeave()
-    ;
-    ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Maze_Exit, "UI", function()
-      -- function num : 0_3_0_0 , upvalues : _ENV
-      ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIDiscovery)
-    end
-)
-  end
-, function()
-    -- function num : 0_3_1 , upvalues : self
+    GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Maze_Exit, "UI", function()
+      GameGlobal.UIStateManager():SwitchState(UIStateType.UIDiscovery)
+    end)
+  end, function()
     self:ShowDialog("UIHelpController", "Maze")
-  end
-, function()
-    -- function num : 0_3_2 , upvalues : self, _ENV
+  end, function()
     self:OnLeave()
-    ;
-    ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Maze_Exit, "UI", function()
-      -- function num : 0_3_2_0 , upvalues : _ENV
-      ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
-    end
-)
-  end
-)
+    GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Maze_Exit, "UI", function()
+      GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
+    end)
+  end)
   self:InitUIWidget()
-  self._mazeModule = (GameGlobal.GetModule)(MazeModule)
-  self.mazeInfo = (self._mazeModule):GetMazeInfo()
-  self._version = (self.mazeInfo).maze_version
-  self._curLayer = (self.mazeInfo).layer
+  self._mazeModule = GameGlobal.GetModule(MazeModule)
+  self.mazeInfo = self._mazeModule:GetMazeInfo()
+  self._version = self.mazeInfo.maze_version
+  self._curLayer = self.mazeInfo.layer
   self._archieves = {}
-  local idx = (self.mazeInfo).room_index + 1
+  local idx = self.mazeInfo.room_index + 1
   if idx <= 0 then
-    for _,_room in ipairs((self.mazeInfo).room_info) do
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R9 in 'UnsetPending'
-
-      if _room.layer_step == 1 and (_room.level_info).has_archive then
-        (self._archieves)[_room.room_index] = true
+    for _, _room in ipairs(self.mazeInfo.room_info) do
+      if _room.layer_step == 1 and _room.level_info.has_archive then
+        self._archieves[_room.room_index] = true
       end
     end
   else
-    do
-      local room = ((self.mazeInfo).room_info)[idx]
-      for _,id in ipairs(room.next_rooms) do
-        local _idx = id + 1
-        local _room = ((self.mazeInfo).room_info)[_idx]
-        -- DECOMPILER ERROR at PC77: Confused about usage of register: R12 in 'UnsetPending'
-
-        if (_room.level_info).has_archive then
-          (self._archieves)[_room.room_index] = true
-        end
+    local room = self.mazeInfo.room_info[idx]
+    for _, id in ipairs(room.next_rooms) do
+      local _idx = id + 1
+      local _room = self.mazeInfo.room_info[_idx]
+      if _room.level_info.has_archive then
+        self._archieves[_room.room_index] = true
       end
-      do
-        local ctx = (self:GetModule(MissionModule)):TeamCtx()
-        local teamInfo = (self._mazeModule):GetFormationInfo()
-        ctx:InitMazeTeam(teamInfo)
-        self._3dManager = Maze3DManager:New()
-        ;
-        (self._3dManager):Init(self, self.mazeInfo, function(room)
-    -- function num : 0_3_3 , upvalues : self
-    if (self._archieves)[room.room_index] ~= true then
-      do return not room end
-      do return false end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
     end
   end
-)
-        self:RefreshUI()
-        self:CheckUnselectRelics()
-        self:CheckVersionAndLayer()
-        self:PlayGetAwardAnim()
-        self:AttachEvent(GameEventType.TeamMemberChanged, self.OnTeamMemberChanged)
-        self:AttachEvent(GameEventType.MazeInfoUpdate, self.OnMazeInfoUpdate)
-        self:AttachEvent(GameEventType.OnLeaveMaze, self.OnLeave)
-        self:AttachEvent(GameEventType.OnPassRestRoom, self.ForceRefreshScene)
-        self:AttachEvent(GameEventType.MazeJumpOutTo, self.JumpOutTo)
-        self:AttachEvent(GameEventType.OnQuickFightClose, self.OnQuickFightClose)
-        self:AttachEvent(GameEventType.OnChooseCardClose, self.OnChooseCardClose)
-        if UIMazeController.RoomIndex then
-          (self._3dManager):GoToRoomByIndex(UIMazeController.RoomIndex)
-          -- DECOMPILER ERROR at PC154: Confused about usage of register: R6 in 'UnsetPending'
-
-          UIMazeController.RoomIndex = nil
-        end
-      end
+  local ctx = self:GetModule(MissionModule):TeamCtx()
+  local teamInfo = self._mazeModule:GetFormationInfo()
+  ctx:InitMazeTeam(teamInfo)
+  self._3dManager = Maze3DManager:New()
+  self._3dManager:Init(self, self.mazeInfo, function(room)
+    if room then
+      return self._archieves[room.room_index] == true
+    else
+      return false
     end
+  end)
+  self:RefreshUI()
+  self:CheckUnselectRelics()
+  self:CheckVersionAndLayer()
+  self:PlayGetAwardAnim()
+  self:AttachEvent(GameEventType.TeamMemberChanged, self.OnTeamMemberChanged)
+  self:AttachEvent(GameEventType.MazeInfoUpdate, self.OnMazeInfoUpdate)
+  self:AttachEvent(GameEventType.OnLeaveMaze, self.OnLeave)
+  self:AttachEvent(GameEventType.OnPassRestRoom, self.ForceRefreshScene)
+  self:AttachEvent(GameEventType.MazeJumpOutTo, self.JumpOutTo)
+  self:AttachEvent(GameEventType.OnQuickFightClose, self.OnQuickFightClose)
+  self:AttachEvent(GameEventType.OnChooseCardClose, self.OnChooseCardClose)
+  if UIMazeController.RoomIndex then
+    self._3dManager:GoToRoomByIndex(UIMazeController.RoomIndex)
+    UIMazeController.RoomIndex = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.PlayGetAwardAnim = function(self)
-  -- function num : 0_4
-  local pass = (self._mazeModule):MazeIsPass()
+function UIMazeController:PlayGetAwardAnim()
+  local pass = self._mazeModule:MazeIsPass()
   if pass then
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIMazeController:OnHide()
   self:OnLeave()
   if not self._disposed then
-    (self._3dManager):Dispose()
+    self._3dManager:Dispose()
     self._disposed = true
   end
   if self._countTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._countTimer)
+    GameGlobal.Timer():CancelEvent(self._countTimer)
     self._countTimer = nil
   end
   if self.layerDelayTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self.layerDelayTimer)
+    GameGlobal.Timer():CancelEvent(self.layerDelayTimer)
     self.layerDelayTimer = nil
   end
-  ;
-  (Log.warn)("[Maze] 关闭迷宫，析构场景")
+  Log.warn("[Maze] 关闭迷宫，析构场景")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.JumpOutTo = function(self, func)
-  -- function num : 0_6 , upvalues : _ENV
+function UIMazeController:JumpOutTo(func)
   self:OnLeave()
-  ;
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Maze_Exit, "UI", func)
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Maze_Exit, "UI", func)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.OnLeave = function(self)
-  -- function num : 0_7
+function UIMazeController:OnLeave()
   self._active = false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.RefreshUI = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIMazeController:RefreshUI()
   self:HideRoomMsg()
   local sop = self:GetUIComponent("UISelectObjectPath", "currencyMenu")
   local currencyMenu = sop:SpawnObject("UICurrencyMenu")
-  currencyMenu:SetData({RoleAssetID.RoleAssetLight})
+  currencyMenu:SetData({
+    RoleAssetID.RoleAssetLight
+  })
   self.lightItem = currencyMenu:GetItemByTypeId(RoleAssetID.RoleAssetLight)
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._layerText).text = (string.format)((StringTable.Get)("str_maze_tip_cur_layer"), (self.mazeInfo).layer)
+  self._layerText.text = string.format(StringTable.Get("str_maze_tip_cur_layer"), self.mazeInfo.layer)
   self:CountDown()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.OnMazeInfoUpdate = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.warn)("[Maze] 刷新迷宫")
+function UIMazeController:OnMazeInfoUpdate()
+  Log.warn("[Maze] 刷新迷宫")
   if not self._active then
-    return 
+    return
   end
-  local curVer = (((GameGlobal.GetModule)(MazeModule)):GetMazeInfo()).maze_version
+  local curVer = GameGlobal.GetModule(MazeModule):GetMazeInfo().maze_version
   if self._version == curVer then
-    (Log.warn)("[Maze] 版本号没变，不执行刷新")
-    return 
+    Log.warn("[Maze] 版本号没变，不执行刷新")
+    return
   end
   self:SwitchState(UIStateType.UIMaze, self._sceneReq)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.OnTeamMemberChanged = function(self)
-  -- function num : 0_10
-  (self._3dManager):RefreshActor()
+function UIMazeController:OnTeamMemberChanged()
+  self._3dManager:RefreshActor()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.CheckUnselectRelics = function(self)
-  -- function num : 0_11
-  local count = #((self._mazeModule)._mazeInfo).dangling_relics
-  if count > 0 then
-    self:ShowDialog("UIRugueLikeChooseCardController", ((self._mazeModule)._mazeInfo).dangling_relics)
+function UIMazeController:CheckUnselectRelics()
+  local count = #self._mazeModule._mazeInfo.dangling_relics
+  if 0 < count then
+    self:ShowDialog("UIRugueLikeChooseCardController", self._mazeModule._mazeInfo.dangling_relics)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.CheckVersionAndLayer = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local serverVer = (self.mazeInfo).maze_version
-  local serverLayer = (self.mazeInfo).layer
-  local playerID = ((GameGlobal.GetModule)(RoleModule)):GetPstId()
+function UIMazeController:CheckVersionAndLayer()
+  local serverVer = self.mazeInfo.maze_version
+  local serverLayer = self.mazeInfo.layer
+  local playerID = GameGlobal.GetModule(RoleModule):GetPstId()
   local versionkey = "MazeVersion-" .. playerID
   local layerkey = "MazeLayer-" .. playerID
-  if ((UnityEngine.PlayerPrefs).HasKey)(versionkey) then
-    local localLayer = ((UnityEngine.PlayerPrefs).GetInt)(layerkey)
-    do
-      local layerChanged = localLayer ~= serverLayer
-      if layerChanged then
-        ((UnityEngine.PlayerPrefs).SetInt)(layerkey, serverLayer)
-      end
-      local localVer = ((UnityEngine.PlayerPrefs).GetInt)(versionkey)
-      if localVer ~= serverVer then
-        ((UnityEngine.PlayerPrefs).SetInt)(versionkey, serverVer)
-        self:ShowDialog("UIRugueLikeResetMsgBoxController", (StringTable.Get)("str_maze_tips_reset"), function()
-    -- function num : 0_12_0 , upvalues : layerChanged, self
+  if UnityEngine.PlayerPrefs.HasKey(versionkey) then
+    local localLayer = UnityEngine.PlayerPrefs.GetInt(layerkey)
+    local layerChanged = localLayer ~= serverLayer
     if layerChanged then
-      self:OnLayerChanged()
+      UnityEngine.PlayerPrefs.SetInt(layerkey, serverLayer)
     end
-  end
-)
-        if ((GameGlobal.UIStateManager)()):IsShow("UIRugueLikeChooseCardController") then
-          ((GameGlobal.UIStateManager)()):CloseDialog("UIRugueLikeChooseCardController")
-        end
-        if ((GameGlobal.UIStateManager)()):IsShow("UIMazeQuickFightController") then
-          ((GameGlobal.UIStateManager)()):CloseDialog("UIMazeQuickFightController")
-        end
-        return true
-      else
+    local localVer = UnityEngine.PlayerPrefs.GetInt(versionkey)
+    if localVer ~= serverVer then
+      UnityEngine.PlayerPrefs.SetInt(versionkey, serverVer)
+      self:ShowDialog("UIRugueLikeResetMsgBoxController", StringTable.Get("str_maze_tips_reset"), function()
         if layerChanged then
           self:OnLayerChanged()
         end
-        return false
+      end)
+      if GameGlobal.UIStateManager():IsShow("UIRugueLikeChooseCardController") then
+        GameGlobal.UIStateManager():CloseDialog("UIRugueLikeChooseCardController")
       end
+      if GameGlobal.UIStateManager():IsShow("UIMazeQuickFightController") then
+        GameGlobal.UIStateManager():CloseDialog("UIMazeQuickFightController")
+      end
+      return true
+    else
+      if layerChanged then
+        self:OnLayerChanged()
+      end
+      return false
     end
   else
-    ((UnityEngine.PlayerPrefs).SetInt)(versionkey, serverVer)
-    ;
-    ((UnityEngine.PlayerPrefs).SetInt)(layerkey, serverLayer)
+    UnityEngine.PlayerPrefs.SetInt(versionkey, serverVer)
+    UnityEngine.PlayerPrefs.SetInt(layerkey, serverLayer)
   end
-  do return false end
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.OnLayerChanged = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local layer = (self.mazeInfo).layer
+function UIMazeController:OnLayerChanged()
+  local layer = self.mazeInfo.layer
   if false then
-    (self._layerEndless):SetActive(true)
-    ;
-    (self._layerStepGO):SetActive(false)
+    self._layerEndless:SetActive(true)
+    self._layerStepGO:SetActive(false)
   else
-    ;
-    (self._layerEndless):SetActive(false)
-    ;
-    (self._layerStepGO):SetActive(true)
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._layerNum).text = layer
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._layerTextEN).text = (string.format)((StringTable.Get)("str_maze_enter_layer_en"), layer)
+    self._layerEndless:SetActive(false)
+    self._layerStepGO:SetActive(true)
+    self._layerNum.text = layer
+    self._layerTextEN.text = string.format(StringTable.Get("str_maze_enter_layer_en"), layer)
   end
-  ;
-  (self._layerTipGO):SetActive(true)
-  ;
-  (self._animation):Play("UIMaze_1")
-  self.layerDelayTimer = ((GameGlobal.Timer)()):AddEvent(1700, function()
-    -- function num : 0_13_0 , upvalues : self
-    (self._layerTipGO):SetActive(false)
+  self._layerTipGO:SetActive(true)
+  self._animation:Play("UIMaze_1")
+  self.layerDelayTimer = GameGlobal.Timer():AddEvent(1700, function()
+    self._layerTipGO:SetActive(false)
     self.layerDelayTimer = nil
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.ForceRefreshScene = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (Log.warn)("[Maze] 休息完成，刷新路点")
-  self.mazeInfo = (self._mazeModule):GetMazeInfo()
-  ;
-  (self._3dManager):Dispose()
+function UIMazeController:ForceRefreshScene()
+  Log.warn("[Maze] 休息完成，刷新路点")
+  self.mazeInfo = self._mazeModule:GetMazeInfo()
+  self._3dManager:Dispose()
   self._disposed = false
-  ;
-  (self._3dManager):Init(self, self.mazeInfo, function(room)
-    -- function num : 0_14_0 , upvalues : self
-    if (self._archieves)[room.room_index] ~= true then
-      do return not room end
-      do return false end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self._3dManager:Init(self, self.mazeInfo, function(room)
+    if room then
+      return self._archieves[room.room_index] == true
+    else
+      return false
     end
-  end
-)
+  end)
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_15
+function UIMazeController:OnUpdate(deltaTimeMS)
   if not self._active then
-    return 
+    return
   end
-  ;
-  (self._3dManager):Update(deltaTimeMS / 1000)
+  self._3dManager:Update(deltaTimeMS / 1000)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.InitUIWidget = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIMazeController:InitUIWidget()
   self._roomName = self:GetUIComponent("UILocalizationText", "RoomName")
   self._roomBG = self:GetUIComponent("Image", "RoomBg")
   self._roomBGRect = self:GetUIComponent("RectTransform", "RoomCard")
@@ -367,20 +254,35 @@ UIMazeController.InitUIWidget = function(self)
   self._layerText = self:GetUIComponent("UILocalizationText", "Layer")
   self._timerText = self:GetUIComponent("UILocalizationText", "Timer")
   self._roomUICfg = {
-[1] = {bg = "map_tansuo_tu1", btnText = "str_maze_btn_battle"}
-, 
-[2] = {bg = "map_tansuo_tu2", btnText = "str_maze_btn_battle"}
-, 
-[3] = {bg = "map_tansuo_tu4", btnText = "str_maze_btn_battle"}
-, 
-[4] = {bg = "map_tansuo_tu3", btnText = "str_maze_btn_battle"}
-, 
-[5] = {bg = "map_tansuo_tu5", btnText = "str_maze_btn_battle"}
-, 
-[6] = {bg = "map_tansuo_tu11", btnText = "str_maze_btn_battle"}
-, 
-[7] = {bg = "map_tansuo_tu6", btnText = "str_maze_btn_battle"}
-}
+    [1] = {
+      bg = "map_tansuo_tu1",
+      btnText = "str_maze_btn_battle"
+    },
+    [2] = {
+      bg = "map_tansuo_tu2",
+      btnText = "str_maze_btn_battle"
+    },
+    [3] = {
+      bg = "map_tansuo_tu4",
+      btnText = "str_maze_btn_battle"
+    },
+    [4] = {
+      bg = "map_tansuo_tu3",
+      btnText = "str_maze_btn_battle"
+    },
+    [5] = {
+      bg = "map_tansuo_tu5",
+      btnText = "str_maze_btn_battle"
+    },
+    [6] = {
+      bg = "map_tansuo_tu11",
+      btnText = "str_maze_btn_battle"
+    },
+    [7] = {
+      bg = "map_tansuo_tu6",
+      btnText = "str_maze_btn_battle"
+    }
+  }
   self._atlas = self:GetAsset("UIMazeMain.spriteatlas", LoadType.SpriteAtlas)
   self._dropLoader = self:GetUIComponent("UISelectObjectPath", "DropContent")
   self._dropTitle = self:GetUIComponent("RectTransform", "awardTitle")
@@ -390,12 +292,11 @@ UIMazeController.InitUIWidget = function(self)
   self._enemyTitle = self:GetUIComponent("RectTransform", "enemytitle")
   self._enemyList = self:GetUIComponent("RectTransform", "EnemyLoader")
   self.matTip = self:GetUIComponent("UISelectObjectPath", "matTip")
-  self.matTipWidget = (self.matTip):SpawnObject("UISelectInfo")
+  self.matTipWidget = self.matTip:SpawnObject("UISelectInfo")
   self._roomInfoGO = self:GetGameObject("msg")
   self._layerTipGO = self:GetGameObject("LayerTip")
   self._animation = self:GetUIComponent("Animation", "uianim")
-  ;
-  (self._layerTipGO):SetActive(false)
+  self._layerTipGO:SetActive(false)
   self._layerStepGO = self:GetGameObject("Step")
   self._layerEndless = self:GetGameObject("Endless")
   self._layerNum = self:GetUIComponent("UILocalizationText", "LayerNum")
@@ -405,520 +306,344 @@ UIMazeController.InitUIWidget = function(self)
   self._quickFightLock = self:GetGameObject("quickFightLock")
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.CountDown = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIMazeController:CountDown()
   if not self._active then
-    return 
+    return
   end
   self:_refreshCountDownTime()
-  local time = (math.floor)((self._mazeModule):GetSecToFinish())
-  if time > 0 then
-    self._countTimer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_17_0 , upvalues : self
-    self:_refreshCountDownTime()
-  end
-)
+  local time = math.floor(self._mazeModule:GetSecToFinish())
+  if 0 < time then
+    self._countTimer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+      self:_refreshCountDownTime()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController._refreshCountDownTime = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIMazeController:_refreshCountDownTime()
   if not self._active then
-    return 
+    return
   end
-  local time = (math.floor)((self._mazeModule):GetSecToFinish())
+  local time = math.floor(self._mazeModule:GetSecToFinish())
   if time <= 0 then
-    ((GameGlobal.Timer)()):CancelEvent(self._countTimer)
+    GameGlobal.Timer():CancelEvent(self._countTimer)
     self._countTimer = nil
-    ;
-    (self._timerText):SetText("00:00:00")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.RequestUpdateMazeInfo, self)
+    self._timerText:SetText("00:00:00")
+    GameGlobal.TaskManager():StartTask(self.RequestUpdateMazeInfo, self)
+  elseif 86400 < time then
+    local day = math.floor(time / 60 / 60 / 24)
+    day = day .. StringTable.Get("str_maze_open_time_day_str")
+    local hour = math.floor(time / 60 / 60) % 24
+    hour = hour .. StringTable.Get("str_maze_open_time_hour_str")
+    self._timerText:SetText(day .. hour)
   else
-    if time > 86400 then
-      local day = (math.floor)(time / 60 / 60 / 24)
-      day = day .. (StringTable.Get)("str_maze_open_time_day_str")
-      local hour = (math.floor)(time / 60 / 60) % 24
-      hour = hour .. (StringTable.Get)("str_maze_open_time_hour_str")
-      ;
-      (self._timerText):SetText(day .. hour)
-    else
-      do
-        local hour = (math.floor)(time / 3600)
-        local min = (math.floor)(time % 3600 / 60)
-        if min < 10 then
-          min = "0" .. min
-        end
-        local sceonds = (math.floor)(time % 60)
-        if sceonds < 10 then
-          sceonds = "0" .. sceonds
-        end
-        ;
-        (self._timerText):SetText(hour .. ":" .. min .. ":" .. sceonds)
-      end
+    local hour = math.floor(time / 3600)
+    local min = math.floor(time % 3600 / 60)
+    if min < 10 then
+      min = "0" .. min
     end
+    local sceonds = math.floor(time % 60)
+    if sceonds < 10 then
+      sceonds = "0" .. sceonds
+    end
+    self._timerText:SetText(hour .. ":" .. min .. ":" .. sceonds)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.ShowRoomMsg = function(self, roomData, canReach)
-  -- function num : 0_19 , upvalues : _ENV
+function UIMazeController:ShowRoomMsg(roomData, canReach)
   self._roomData = roomData
-  self._roomCfgData = (Cfg.cfg_maze_room)[roomData.room_id]
-  ;
-  (self._battleButton):SetActive(canReach)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._roomName).text = self:FormateColorText((self._roomCfgData).Title)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._roomDes).text = (StringTable.Get)((self._roomCfgData).Desc)
-  local uiCfg = (self._roomUICfg)[(self._roomCfgData).MazeRoomType]
-  ;
-  (self._battleText):SetText((StringTable.Get)(uiCfg.btnText))
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._roomBG).sprite = (self._atlas):GetSprite(uiCfg.bg)
-  local roomType = (self._roomCfgData).MazeRoomType
+  self._roomCfgData = Cfg.cfg_maze_room[roomData.room_id]
+  self._battleButton:SetActive(canReach)
+  self._roomName.text = self:FormateColorText(self._roomCfgData.Title)
+  self._roomDes.text = StringTable.Get(self._roomCfgData.Desc)
+  local uiCfg = self._roomUICfg[self._roomCfgData.MazeRoomType]
+  self._battleText:SetText(StringTable.Get(uiCfg.btnText))
+  self._roomBG.sprite = self._atlas:GetSprite(uiCfg.bg)
+  local roomType = self._roomCfgData.MazeRoomType
   if roomType == MazeRoomType.MazeRoomType_Normal then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.MazeRoomType_Normal)
-  else
-    if roomType == MazeRoomType.MazeRoomType_Battery then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.MazeRoomType_Battery)
-    else
-      if roomType == MazeRoomType.MazeRoomType_XRoot then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.MazeRoomType_XRoot)
-      else
-        if roomType == MazeRoomType.MazeRoomType_Elite then
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.MazeRoomType_Elite)
-        end
-      end
-    end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.MazeRoomType_Normal)
+  elseif roomType == MazeRoomType.MazeRoomType_Battery then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.MazeRoomType_Battery)
+  elseif roomType == MazeRoomType.MazeRoomType_XRoot then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.MazeRoomType_XRoot)
+  elseif roomType == MazeRoomType.MazeRoomType_Elite then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.MazeRoomType_Elite)
   end
-  if (self._roomCfgData).MazeRoomType == MazeRoomType.MazeRoomType_Battery then
-    (self._roomInfoGO):SetActive(false)
-    -- DECOMPILER ERROR at PC114: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._roomBGRect).anchoredPosition = Vector2(-36, ((self._roomBGRect).anchoredPosition).y)
+  if self._roomCfgData.MazeRoomType == MazeRoomType.MazeRoomType_Battery then
+    self._roomInfoGO:SetActive(false)
+    self._roomBGRect.anchoredPosition = Vector2(-36, self._roomBGRect.anchoredPosition.y)
   else
-    local wordCount = #((self._roomData).level_info).word_ids
+    local wordCount = #self._roomData.level_info.word_ids
     local hasWord = false
-    if wordCount > 0 then
-      local wordIds = ((self._roomData).level_info).word_ids
-      local totalWordDesc = nil
-      for _,wordId in ipairs(wordIds) do
-        local wordCfg = (Cfg.cfg_word_buff)[wordId]
-        local word = "【" .. (StringTable.Get)((wordCfg.Word)[1]) .. "】"
-        local wordName = (string.format)("<color=#%s>%s</color>", (wordCfg.Word)[2], word)
-        local desc = wordName .. (StringTable.Get)(wordCfg.Desc)
+    if 0 < wordCount then
+      local wordIds = self._roomData.level_info.word_ids
+      local totalWordDesc
+      for _, wordId in ipairs(wordIds) do
+        local wordCfg = Cfg.cfg_word_buff[wordId]
+        local word = "【" .. StringTable.Get(wordCfg.Word[1]) .. "】"
+        local wordName = string.format("<color=#%s>%s</color>", wordCfg.Word[2], word)
+        local desc = wordName .. StringTable.Get(wordCfg.Desc)
         if totalWordDesc then
           totalWordDesc = totalWordDesc .. "\n" .. desc
         else
           totalWordDesc = desc
         end
       end
-      -- DECOMPILER ERROR at PC166: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._property).text = totalWordDesc
-      ;
-      (self._attribute):SetActive(true)
+      self._property.text = totalWordDesc
+      self._attribute:SetActive(true)
       hasWord = true
-    else
-      do
-        do
-          if wordCount == 0 then
-            (self._attribute):SetActive(false)
-            hasWord = false
-          end
-          self:SetEnemy(hasWord)
-          self:SetDrop(hasWord)
-          -- DECOMPILER ERROR at PC193: Confused about usage of register: R7 in 'UnsetPending'
-
-          ;
-          (self._roomBGRect).anchoredPosition = Vector2(-428, ((self._roomBGRect).anchoredPosition).y)
-          ;
-          (self._roomInfoGO):SetActive(true)
-          ;
-          (self._cantReach):SetActive(not canReach)
-          self:SetQuickFightBtn(canReach)
-          ;
-          (self._roomMsg):SetActive(true)
-        end
-      end
+    elseif wordCount == 0 then
+      self._attribute:SetActive(false)
+      hasWord = false
     end
+    self:SetEnemy(hasWord)
+    self:SetDrop(hasWord)
+    self._roomBGRect.anchoredPosition = Vector2(-428, self._roomBGRect.anchoredPosition.y)
+    self._roomInfoGO:SetActive(true)
   end
+  self._cantReach:SetActive(not canReach)
+  self:SetQuickFightBtn(canReach)
+  self._roomMsg:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.CheckArchieve = function(self, room)
-  -- function num : 0_20 , upvalues : _ENV
+function UIMazeController:CheckArchieve(room)
   if not next(self._archieves) then
-    return 
+    return
   end
-  if not (self._archieves)[room.room_index] then
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_maze_hava_a_archieve_room"), function(param)
-    -- function num : 0_20_0 , upvalues : _ENV
-    (Log.notice)("[Maze] 进入没有存档的关卡")
-  end
-, nil, function(param)
-    -- function num : 0_20_1 , upvalues : self
-    (self._3dManager):ExitPreviewRoom()
-  end
-, nil)
+  if not self._archieves[room.room_index] then
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_maze_hava_a_archieve_room"), function(param)
+      Log.notice("[Maze] 进入没有存档的关卡")
+    end, nil, function(param)
+      self._3dManager:ExitPreviewRoom()
+    end, nil)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.FormateColorText = function(self, text)
-  -- function num : 0_21 , upvalues : _ENV
+function UIMazeController:FormateColorText(text)
   local color = text[2]
   if color then
-    return (string.format)("<color=#%s>%s</color>", color, (StringTable.Get)(text[1]))
+    return string.format("<color=#%s>%s</color>", color, StringTable.Get(text[1]))
   else
-    return (StringTable.Get)(text[1])
+    return StringTable.Get(text[1])
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.SetEnemy = function(self, hasWord)
-  -- function num : 0_22 , upvalues : _ENV
-  local enemyIds = (self._mazeModule):GetRoomMonsterList((self._roomData).room_index)
+function UIMazeController:SetEnemy(hasWord)
+  local enemyIds = self._mazeModule:GetRoomMonsterList(self._roomData.room_index)
   if next(enemyIds) then
-    local enemyMsg = (self._enemyLoader):SpawnObject("UIEnemyMsg")
+    local enemyMsg = self._enemyLoader:SpawnObject("UIEnemyMsg")
     enemyMsg:SetData(nil, enemyIds)
-    ;
-    (self._enemyRoot):SetActive(true)
+    self._enemyRoot:SetActive(true)
   else
-    do
-      ;
-      (self._enemyRoot):SetActive(false)
-      -- DECOMPILER ERROR at PC34: Confused about usage of register: R3 in 'UnsetPending'
-
-      if hasWord then
-        (self._enemyList).anchoredPosition = Vector2(245.6, 19)
-        -- DECOMPILER ERROR at PC40: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._enemyTitle).anchoredPosition = Vector2(1100, -557)
-      else
-        -- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._enemyList).anchoredPosition = Vector2(245.6, 120)
-        -- DECOMPILER ERROR at PC53: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._enemyTitle).anchoredPosition = Vector2(1100, -436)
-      end
-    end
+    self._enemyRoot:SetActive(false)
+  end
+  if hasWord then
+    self._enemyList.anchoredPosition = Vector2(245.6, 19)
+    self._enemyTitle.anchoredPosition = Vector2(1100, -557)
+  else
+    self._enemyList.anchoredPosition = Vector2(245.6, 120)
+    self._enemyTitle.anchoredPosition = Vector2(1100, -436)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.SetDrop = function(self, hasWord)
-  -- function num : 0_23 , upvalues : _ENV
-  local certainDrop, randomDrop = (UICommonHelper:GetInstance()):GetPassAward(AwardHeadType.Maze, (self._roomCfgData).ID, true)
+function UIMazeController:SetDrop(hasWord)
+  local certainDrop, randomDrop = UICommonHelper:GetInstance():GetPassAward(AwardHeadType.Maze, self._roomCfgData.ID, true)
   local randomCount = 0
-  if randomDrop and #randomDrop > 0 then
+  if randomDrop and 0 < #randomDrop then
     randomCount = #randomDrop
   end
   local certainDropCount = #certainDrop
   local totalDrop = certainDropCount + randomCount
-  ;
-  (self._dropLoader):SpawnObjects("UIAssetItem1", totalDrop)
-  local items = (self._dropLoader):GetAllSpawnList()
-  local randomText = (StringTable.Get)("str_maze_random_drop")
-  local certainText = (StringTable.Get)("str_maze_certain_drop")
+  self._dropLoader:SpawnObjects("UIAssetItem1", totalDrop)
+  local items = self._dropLoader:GetAllSpawnList()
+  local randomText = StringTable.Get("str_maze_random_drop")
+  local certainText = StringTable.Get("str_maze_certain_drop")
   for idx = 1, totalDrop do
     local item = items[idx]
-    local text, data = nil, nil
+    local text, data
     if idx <= certainDropCount then
-      text = (string.format)("<color=#ffffff>%s</color>", certainText)
+      text = string.format("<color=#ffffff>%s</color>", certainText)
       data = certainDrop[idx]
     else
-      text = (string.format)("<color=#ffdc39>%s</color>", randomText)
+      text = string.format("<color=#ffdc39>%s</color>", randomText)
       data = randomDrop[idx - certainDropCount]
     end
     item:SetData(data.ItemID, text, function(id, pos)
-    -- function num : 0_23_0 , upvalues : self
-    self:OnMatClick(id, pos)
+      self:OnMatClick(id, pos)
+    end, data.Count)
   end
-, data.Count)
-  end
-  -- DECOMPILER ERROR at PC73: Confused about usage of register: R10 in 'UnsetPending'
-
   if hasWord then
-    (self._dropList).anchoredPosition = Vector2(236.6, -258)
-    -- DECOMPILER ERROR at PC79: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._dropTitle).anchoredPosition = Vector2(1099, -855)
+    self._dropList.anchoredPosition = Vector2(236.6, -258)
+    self._dropTitle.anchoredPosition = Vector2(1099, -855)
   else
-    -- DECOMPILER ERROR at PC86: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._dropList).anchoredPosition = Vector2(236.6, -208)
-    -- DECOMPILER ERROR at PC92: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._dropTitle).anchoredPosition = Vector2(1099, -794)
+    self._dropList.anchoredPosition = Vector2(236.6, -208)
+    self._dropTitle.anchoredPosition = Vector2(1099, -794)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.HideRoomMsg = function(self)
-  -- function num : 0_24
-  (self._roomMsg):SetActive(false)
+function UIMazeController:HideRoomMsg()
+  self._roomMsg:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.EnemyButtonOnClick = function(self)
-  -- function num : 0_25
-  local enemyIds = (self._mazeModule):GetRoomMonsterList((self._roomData).room_index)
+function UIMazeController:EnemyButtonOnClick()
+  local enemyIds = self._mazeModule:GetRoomMonsterList(self._roomData.room_index)
   self:ShowDialog("UIEnemyTip", enemyIds, 1)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.StartBattleOnClick = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIMazeController:StartBattleOnClick()
   if self._roomCfgData == nil then
-    (Log.fatal)("[Maze]", "room is nil")
+    Log.fatal("[Maze]", "room is nil")
   end
   local showArchieve = false
-  if next(self._archieves) and not (self._archieves)[(self._roomData).room_index] then
+  if next(self._archieves) and not self._archieves[self._roomData.room_index] then
     showArchieve = true
   end
   if showArchieve then
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_maze_hava_a_archieve_room"), function(param)
-    -- function num : 0_26_0 , upvalues : _ENV, self
-    (Log.notice)("[Maze] 进入没有存档的关卡")
-    self:EnterRoom()
-  end
-, nil, function(param)
-    -- function num : 0_26_1 , upvalues : self
-    (self._3dManager):ExitPreviewRoom()
-  end
-, nil)
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_maze_hava_a_archieve_room"), function(param)
+      Log.notice("[Maze] 进入没有存档的关卡")
+      self:EnterRoom()
+    end, nil, function(param)
+      self._3dManager:ExitPreviewRoom()
+    end, nil)
   else
     self:EnterRoom()
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.EnterRoom = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  if (self._roomCfgData).MazeRoomType == MazeRoomType.MazeRoomType_Battery then
+function UIMazeController:EnterRoom()
+  if self._roomCfgData.MazeRoomType == MazeRoomType.MazeRoomType_Battery then
     self:ShowDialog("UIRugueLikeRestRoomController", self._roomData)
   else
-    local light = ((GameGlobal.GetModule)(RoleModule)):GetLight()
+    local light = GameGlobal.GetModule(RoleModule):GetLight()
     if light <= 0 then
-      (ToastManager.ShowToast)((StringTable.Get)("str_maze_no_light"))
-      return 
+      ToastManager.ShowToast(StringTable.Get("str_maze_no_light"))
+      return
     end
     local module = self:GetModule(MissionModule)
     local ctx = module:TeamCtx()
-    ctx:Init(TeamOpenerType.Maze, (self._roomData).room_index)
+    ctx:Init(TeamOpenerType.Maze, self._roomData.room_index)
     self:ShowDialog("UITeams")
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.RequestUpdateMazeInfo = function(self, TT)
-  -- function num : 0_28 , upvalues : _ENV
-  local res = (self._mazeModule):RequestMazeVersion(TT)
+function UIMazeController:RequestUpdateMazeInfo(TT)
+  local res = self._mazeModule:RequestMazeVersion(TT)
   if res:GetSucc() then
-    (Log.fatal)("[Maze] update maze info error:", res:GetResult())
+  else
+    Log.fatal("[Maze] update maze info error:", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.RelicBagButtonOnClick = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  if #(self.mazeInfo).relics <= 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_maze_no_relics"))
-    return 
+function UIMazeController:RelicBagButtonOnClick()
+  if #self.mazeInfo.relics <= 0 then
+    ToastManager.ShowToast(StringTable.Get("str_maze_no_relics"))
+    return
   end
   self:ShowDialog("UIRugueLikeBackpackController")
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.MysteryStoreButtonOnClick = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  (ClientShop.OpenShop)(nil, ShopMainTabType.Secret, MarketType.Shop_MysteryMarket)
+function UIMazeController:MysteryStoreButtonOnClick()
+  ClientShop.OpenShop(nil, ShopMainTabType.Secret, MarketType.Shop_MysteryMarket)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.RoomEmptyOnClick = function(self)
-  -- function num : 0_31
-  (self._3dManager):ExitPreviewRoom()
+function UIMazeController:RoomEmptyOnClick()
+  self._3dManager:ExitPreviewRoom()
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.OnMatClick = function(self, matId, pos)
-  -- function num : 0_32
-  (self.matTipWidget):SetData(matId, pos)
+function UIMazeController:OnMatClick(matId, pos)
+  self.matTipWidget:SetData(matId, pos)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.GetLightItemBg = function(self)
-  -- function num : 0_33
-  if self.lightItem then
-    return (self.lightItem):GetGameObject()
-  end
+function UIMazeController:GetLightItemBg()
+  return self.lightItem and self.lightItem:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.SetQuickFightBtn = function(self, canReach)
-  -- function num : 0_34 , upvalues : _ENV
-  local _showBtn, _unLock = nil, nil
+function UIMazeController:SetQuickFightBtn(canReach)
+  local _showBtn, _unLock
   self._cost = 0
   if not canReach then
     _showBtn = false
   else
-    local roomid = (self._roomData).room_id
-    local cfg_maze_room = (Cfg.cfg_maze_room)[roomid]
+    local roomid = self._roomData.room_id
+    local cfg_maze_room = Cfg.cfg_maze_room[roomid]
     if not cfg_maze_room then
-      (Log.error)("###[UIMazeController] cfg_maze_room is nil ! id --> ", roomid)
+      Log.error("###[UIMazeController] cfg_maze_room is nil ! id --> ", roomid)
     end
     if cfg_maze_room.CanSkip then
       _showBtn = true
-      _unLock = (self._mazeModule):UnlockSweep()
+      _unLock = self._mazeModule:UnlockSweep()
       self._cost = cfg_maze_room.SkipCostMS
     else
       _showBtn = false
     end
   end
-  do
-    if _showBtn then
-      if _unLock then
-        local light = (((GameGlobal.GetModule)(RoleModule)):GetLight())
-        local _costTex = nil
-        if self._cost <= light then
-          _costTex = "<color=#ffffff>" .. self._cost .. "</color><color=#ffd83d>/" .. light .. "</color>"
-        else
-          _costTex = "<color=#ff0000>" .. self._cost .. "</color><color=#ffd83d>/" .. light .. "</color>"
-        end
-        ;
-        (self._quickFightCost):SetText(_costTex)
+  if _showBtn then
+    if _unLock then
+      local light = GameGlobal.GetModule(RoleModule):GetLight()
+      local _costTex
+      if light >= self._cost then
+        _costTex = "<color=#ffffff>" .. self._cost .. "</color><color=#ffd83d>/" .. light .. "</color>"
+      else
+        _costTex = "<color=#ff0000>" .. self._cost .. "</color><color=#ffd83d>/" .. light .. "</color>"
       end
-      do
-        ;
-        (self._quickFightLock):SetActive(not _unLock)
-        ;
-        (self._quickFightBtn):SetActive(_unLock)
-        ;
-        (self._quickFightLock):SetActive(false)
-        ;
-        (self._quickFightBtn):SetActive(false)
-      end
+      self._quickFightCost:SetText(_costTex)
     end
+    self._quickFightLock:SetActive(not _unLock)
+    self._quickFightBtn:SetActive(_unLock)
+  else
+    self._quickFightLock:SetActive(false)
+    self._quickFightBtn:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.quickFightLockBtnOnClick = function(self, go)
-  -- function num : 0_35 , upvalues : _ENV
-  (ToastManager.ShowToast)((StringTable.Get)("str_maze_quick_fight_lock"))
+function UIMazeController:quickFightLockBtnOnClick(go)
+  ToastManager.ShowToast(StringTable.Get("str_maze_quick_fight_lock"))
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.quickFightBtnOnClick = function(self, go)
-  -- function num : 0_36 , upvalues : _ENV
+function UIMazeController:quickFightBtnOnClick(go)
   self:Lock("UIMazeController:quickFightBtnOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnQuickFightRequest, self)
+  GameGlobal.TaskManager():StartTask(self.OnQuickFightRequest, self)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.OnQuickFightRequest = function(self, TT)
-  -- function num : 0_37 , upvalues : _ENV
-  local res, reply = (self._mazeModule):RequestSweep(TT, (self._roomData).room_index)
+function UIMazeController:OnQuickFightRequest(TT)
+  local res, reply = self._mazeModule:RequestSweep(TT, self._roomData.room_index)
   self:UnLock("UIMazeController:quickFightBtnOnClick")
   if res:GetSucc() then
     local rewards = reply.awards
     self:ShowDialog("UIMazeQuickFightController", rewards, self._cost)
   else
-    do
-      local result = res:GetResult()
-      local tips = self:GetErrorResult(result)
-      ;
-      (ToastManager.ShowToast)(tips)
-      ;
-      (Log.error)("###[UIMazeController] self._mazeModule:RequestSweep fail ! result --> ", result)
-    end
+    local result = res:GetResult()
+    local tips = self:GetErrorResult(result)
+    ToastManager.ShowToast(tips)
+    Log.error("###[UIMazeController] self._mazeModule:RequestSweep fail ! result --> ", result)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.GetErrorResult = function(self, result)
-  -- function num : 0_38 , upvalues : _ENV
-  local str = nil
+function UIMazeController:GetErrorResult(result)
+  local str
   if result == MazeOpResCode.MAZE_NEED_LIGHT then
-    str = (StringTable.Get)("str_maze_no_light")
+    str = StringTable.Get("str_maze_no_light")
+  elseif result == MazeOpResCode.MAZE_INVALID_ROOM then
+    str = StringTable.Get("str_maze_tip_cantreach")
+  elseif result == MazeOpResCode.MAZE_VERSION_ERROR then
+    str = StringTable.Get("str_help_maze_title6")
   else
-    if result == MazeOpResCode.MAZE_INVALID_ROOM then
-      str = (StringTable.Get)("str_maze_tip_cantreach")
-    else
-      if result == MazeOpResCode.MAZE_VERSION_ERROR then
-        str = (StringTable.Get)("str_help_maze_title6")
-      else
-        str = "Other Error ! Result --> " .. result
-      end
-    end
+    str = "Other Error ! Result --> " .. result
   end
   return str
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.OnQuickFightClose = function(self)
-  -- function num : 0_39 , upvalues : _ENV
-  (Log.debug)("###[UIMazeController] OnQuickFightClose 关闭扫荡收获界面，开始选择圣物")
-  self._quickRelic = ((self._mazeModule)._mazeInfo).dangling_relics
-  if self._quickRelic and (table.count)(self._quickRelic) > 0 then
-    (Log.debug)("###[UIMazeController] OnQuickFightClose 有圣物，开始选择")
+function UIMazeController:OnQuickFightClose()
+  Log.debug("###[UIMazeController] OnQuickFightClose 关闭扫荡收获界面，开始选择圣物")
+  self._quickRelic = self._mazeModule._mazeInfo.dangling_relics
+  if self._quickRelic and table.count(self._quickRelic) > 0 then
+    Log.debug("###[UIMazeController] OnQuickFightClose 有圣物，开始选择")
     self:ShowDialog("UIRugueLikeChooseCardController", self._quickRelic, true)
   else
-    ;
-    (Log.debug)("###[UIMazeController] OnQuickFightClose 没有圣物，刷新秘境")
+    Log.debug("###[UIMazeController] OnQuickFightClose 没有圣物，刷新秘境")
     self:OnChooseCardClose()
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeController.OnChooseCardClose = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function UIMazeController:OnChooseCardClose()
   self:SwitchState(UIStateType.UIMaze, self._sceneReq)
 end
-
-

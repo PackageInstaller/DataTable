@@ -1,96 +1,63 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_ecs/systems/reactive_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("collector")
 _class("ReactiveSystem", Object)
 ReactiveSystem = ReactiveSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ReactiveSystem.Constructor = function(self, world)
-  -- function num : 0_0
+function ReactiveSystem:Constructor(world)
   self._collector = self:GetTrigger(world)
   self._buffer = {}
   self.IsReactiveSystem = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ReactiveSystem.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.debug)("call super ReactiveSystem:GetTrigger Error")
+function ReactiveSystem:GetTrigger(world)
+  Log.debug("call super ReactiveSystem:GetTrigger Error")
   return nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ReactiveSystem.Filter = function(self, entity)
-  -- function num : 0_2
+function ReactiveSystem:Filter(entity)
   return true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ReactiveSystem.ExecuteEntities = function(self, entities)
-  -- function num : 0_3 , upvalues : _ENV
+function ReactiveSystem:ExecuteEntities(entities)
   error("call super ReactiveSystem:ExecuteEntities Error")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ReactiveSystem.Activate = function(self)
-  -- function num : 0_4
-  (self._collector):Activate()
+function ReactiveSystem:Activate()
+  self._collector:Activate()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ReactiveSystem.Deactivate = function(self)
-  -- function num : 0_5
-  (self._collector):Deactivate()
+function ReactiveSystem:Deactivate()
+  self._collector:Deactivate()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ReactiveSystem.Clear = function(self)
-  -- function num : 0_6
-  (self._collector):ClearCollectedEntities()
+function ReactiveSystem:Clear()
+  self._collector:ClearCollectedEntities()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ReactiveSystem.Execute = function(self)
-  -- function num : 0_7
-  local collectedEntities = (self._collector).collectedEntities
+function ReactiveSystem:Execute()
+  local collectedEntities = self._collector.collectedEntities
   if collectedEntities == nil then
-    return 
+    return
   end
   if collectedEntities:Size() <= 0 then
-    return 
+    return
   end
   for i = 1, collectedEntities:Size() do
     local e = collectedEntities:GetAt(i)
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R7 in 'UnsetPending'
-
     if self:Filter(e) then
-      (self._buffer)[#self._buffer + 1] = e
+      self._buffer[#self._buffer + 1] = e
       if e.Retain then
         e:Retain(self)
       end
     end
   end
-  ;
-  (self._collector):ClearCollectedEntities()
-  if #self._buffer > 0 then
+  self._collector:ClearCollectedEntities()
+  if 0 < #self._buffer then
     self:ExecuteEntities(self._buffer)
     for i = 1, #self._buffer do
-      if ((self._buffer)[i]).Release then
-        ((self._buffer)[i]):Release(self)
+      if self._buffer[i].Release then
+        self._buffer[i]:Release(self)
       end
     end
     self._buffer = {}
   end
 end
-
-

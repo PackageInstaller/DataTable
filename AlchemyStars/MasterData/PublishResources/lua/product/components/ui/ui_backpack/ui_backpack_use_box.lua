@@ -1,68 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_backpack/ui_backpack_use_box.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBackPackUseBox", UIController)
 UIBackPackUseBox = UIBackPackUseBox
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBackPackUseBox.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBackPackUseBox:Constructor()
   self._useCount = 1
   self._operateItemInfo = nil
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
+  self._itemModule = GameGlobal.GetModule(ItemModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox.Dispose = function(self)
-  -- function num : 0_1
+function UIBackPackUseBox:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBackPackUseBox:OnShow(uiParams)
   self:AttachEvent(GameEventType.SwitchUseBoxItem, self.SwtichUseBoxItem)
   self:InitWidget()
   self._item = uiParams[1]
-  ;
-  (self._txtName):SetText((StringTable.Get)(((self._item):GetTemplate()).Name))
-  local lst = self:GetItemList((self._item):GetTemplateID())
+  self._txtName:SetText(StringTable.Get(self._item:GetTemplate().Name))
+  local lst = self:GetItemList(self._item:GetTemplateID())
   self._itemList = {}
-  for i,item in ipairs(lst) do
+  for i, item in ipairs(lst) do
     local tplId = item[1]
     local count = item[2]
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._itemList)[i] = BackPackBoxItem:New(tplId, count)
+    self._itemList[i] = BackPackBoxItem:New(tplId, count)
   end
   self._count = 0
   self._selectedId = nil
   if uiParams[2] then
-    self._needItem = (uiParams[2])[1]
-    self._needNum = (uiParams[2])[2]
-    local count = (self._itemModule):GetItemCount((self._item):GetTemplateID())
-    self._useCount = (math.min)(count, self:CaculateNum(self._needItem, self._needNum))
-    self._index = self:GetSelectedItemInfo(self._needItem)
+    self._needItem = uiParams[2][1]
+    self._needNum = uiParams[2][2]
+    local count = self._itemModule:GetItemCount(self._item:GetTemplateID())
+    self._useCount = math.min(count, self:CaculateNum(self._needItem, self._needNum))
+    self._index, self._operateItemInfo = self:GetSelectedItemInfo(self._needItem)
   end
-  do
-    local len = (table.count)(self._itemList)
-    ;
-    (self._content):SpawnObjects("UIBackPackBoxUseItem", len)
-    self:SetSelectItemId()
-    self:ShowText()
-    self:FlushItemsUI()
-    self:_MoveToIndex()
-  end
+  local len = table.count(self._itemList)
+  self._content:SpawnObjects("UIBackPackBoxUseItem", len)
+  self:SetSelectItemId()
+  self:ShowText()
+  self:FlushItemsUI()
+  self:_MoveToIndex()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIBackPackUseBox:InitWidget()
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._itemCount = self:GetUIComponent("InputField", "itemCount")
@@ -73,73 +50,59 @@ UIBackPackUseBox.InitWidget = function(self)
   self._contentRcet = self:GetUIComponent("RectTransform", "Content")
   self._addBtn = self:GetGameObject("addBtn")
   self._subBtn = self:GetGameObject("subBtn")
-  self._pressTime = ((Cfg.cfg_global).sale_and_use_press_long_deltaTime).IntValue
+  self._pressTime = Cfg.cfg_global.sale_and_use_press_long_deltaTime.IntValue
   self._updateTime = 0
   self._isAddMouseDown = false
   self._isSubMouseDown = false
-  local etlAdd = (UILongPressTriggerListener.Get)(self._addBtn)
-  etlAdd.onLongPress = function(go)
-    -- function num : 0_3_0 , upvalues : self
+  local etlAdd = UILongPressTriggerListener.Get(self._addBtn)
+  
+  function etlAdd.onLongPress(go)
     if self._isAddMouseDown == false then
       self._isAddMouseDown = true
     end
   end
-
-  etlAdd.onLongPressEnd = function(go)
-    -- function num : 0_3_1 , upvalues : self
+  
+  function etlAdd.onLongPressEnd(go)
     if self._isAddMouseDown == true then
       self._isAddMouseDown = false
     end
   end
-
-  etlAdd.onClick = function(go)
-    -- function num : 0_3_2 , upvalues : self
+  
+  function etlAdd.onClick(go)
     self:AddBtnOnClick()
   end
-
-  local etlSub = (UILongPressTriggerListener.Get)(self._subBtn)
-  etlSub.onLongPress = function(go)
-    -- function num : 0_3_3 , upvalues : self
+  
+  local etlSub = UILongPressTriggerListener.Get(self._subBtn)
+  
+  function etlSub.onLongPress(go)
     if self._isSubMouseDown == false then
       self._isSubMouseDown = true
     end
   end
-
-  etlSub.onLongPressEnd = function(go)
-    -- function num : 0_3_4 , upvalues : self
+  
+  function etlSub.onLongPressEnd(go)
     if self._isSubMouseDown == true then
       self._isSubMouseDown = false
     end
   end
-
-  etlSub.onClick = function(go)
-    -- function num : 0_3_5 , upvalues : self
+  
+  function etlSub.onClick(go)
     self:SubBtnOnClick()
   end
-
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CloseUIBackPackBox)
+function UIBackPackUseBox:OnHide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CloseUIBackPackBox)
   self:DetachEvent(GameEventType.SwitchUseBoxItem, self.SwtichUseBoxItem)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox.BgOnClick = function(self)
-  -- function num : 0_5
+function UIBackPackUseBox:BgOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_6
+function UIBackPackUseBox:OnUpdate(deltaTimeMS)
   self._updateTime = self._updateTime + deltaTimeMS
-  if self._pressTime < self._updateTime then
+  if self._updateTime > self._pressTime then
     self._updateTime = self._updateTime - self._pressTime
     if self._isAddMouseDown then
       self:AddBtnOnClick()
@@ -150,25 +113,20 @@ UIBackPackUseBox.OnUpdate = function(self, deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox.SwtichUseBoxItem = function(self, isOn, index, item)
-  -- function num : 0_7
-  if not isOn or not item then
-    self._operateItemInfo = not isOn or nil
+function UIBackPackUseBox:SwtichUseBoxItem(isOn, index, item)
+  if isOn then
+    self._operateItemInfo = isOn and item or nil
     self._index = index
-    self._selectedId = (self._operateItemInfo):GetTplId()
+    self._selectedId = self._operateItemInfo:GetTplId()
+  else
     self._selectedId = nil
     self._operateItemInfo = nil
     self._index = nil
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox.GetItemList = function(self, itemGiftID)
-  -- function num : 0_8 , upvalues : _ENV
-  local cfgItemGift = (Cfg.cfg_item_gift)[itemGiftID]
+function UIBackPackUseBox:GetItemList(itemGiftID)
+  local cfgItemGift = Cfg.cfg_item_gift[itemGiftID]
   if not cfgItemGift then
     return 0
   end
@@ -176,161 +134,111 @@ UIBackPackUseBox.GetItemList = function(self, itemGiftID)
   return lst
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox.AddBtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local maxCount = (self._itemModule):GetItemCount((self._item):GetTemplateID())
-  maxCount = (math.min)(maxCount, 99)
-  self._useCount = (math.min)(maxCount, self._useCount + 1)
+function UIBackPackUseBox:AddBtnOnClick()
+  local maxCount = self._itemModule:GetItemCount(self._item:GetTemplateID())
+  maxCount = math.min(maxCount, 99)
+  self._useCount = math.min(maxCount, self._useCount + 1)
   self:ShowText()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox.SubBtnOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  self._useCount = (math.max)(1, self._useCount - 1)
+function UIBackPackUseBox:SubBtnOnClick()
+  self._useCount = math.max(1, self._useCount - 1)
   self:ShowText()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox.BtnUseOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIBackPackUseBox:BtnUseOnClick()
   if not self._operateItemInfo then
-    (ToastManager.ShowToast)((StringTable.Get)("str_common_needselect_one_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_common_needselect_one_tips"))
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : self, _ENV
-    local res, msg = (self._itemModule):RequestChooseGift(TT, (self._item):GetID(), self._index - 1, self._useCount)
+    local res, msg = self._itemModule:RequestChooseGift(TT, self._item:GetID(), self._index - 1, self._useCount)
     if res:GetSucc() then
       if self._operateItemInfo == nil then
-        (ToastManager.ShowToast)((StringTable.Get)("str_common_needselect_one_tips"))
-        return 
+        ToastManager.ShowToast(StringTable.Get("str_common_needselect_one_tips"))
+        return
       end
       local ra = RoleAsset:New()
-      ra.assetid = (self._operateItemInfo):GetTplId()
-      ra.count = (self._operateItemInfo):GetCount() * self._useCount
+      ra.assetid = self._operateItemInfo:GetTplId()
+      ra.count = self._operateItemInfo:GetCount() * self._useCount
       self:ShowDialog("UIGetItemController", {ra})
       self:CloseDialog()
     else
-      do
-        ;
-        (Log.fatal)("### fail")
-      end
+      Log.fatal("### fail")
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox.MaxOnClick = function(self)
-  -- function num : 0_12
+function UIBackPackUseBox:MaxOnClick()
   self:CaculateMax()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox.ShowText = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._itemCount).text = tostring(self._useCount)
+function UIBackPackUseBox:ShowText()
+  self._itemCount.text = tostring(self._useCount)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox.CaculateMax = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  self._useCount = (self._itemModule):GetItemCount((self._item):GetTemplateID())
-  self._useCount = (math.min)(self._useCount, 99)
+function UIBackPackUseBox:CaculateMax()
+  self._useCount = self._itemModule:GetItemCount(self._item:GetTemplateID())
+  self._useCount = math.min(self._useCount, 99)
   self:ShowText()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox.ShowTips = function(self, itemId, pos)
-  -- function num : 0_15
-  (self._tips):SetData(itemId, pos)
+function UIBackPackUseBox:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox.FlushItemsUI = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIBackPackUseBox:FlushItemsUI()
   self._count = self._useCount
-  local len = (table.count)(self._itemList)
-  self._uiItems = (self._content):GetAllSpawnList()
-  for i,uiItem in ipairs(self._uiItems) do
+  local len = table.count(self._itemList)
+  self._uiItems = self._content:GetAllSpawnList()
+  for i, uiItem in ipairs(self._uiItems) do
     if i <= len then
-      uiItem:Flush((self._itemList)[i], i, 1, self._toggleGroup, function(itemId, pos)
-    -- function num : 0_16_0 , upvalues : self
-    self:ShowTips(itemId, pos)
-  end
-, self._selectedId)
+      uiItem:Flush(self._itemList[i], i, 1, self._toggleGroup, function(itemId, pos)
+        self:ShowTips(itemId, pos)
+      end, self._selectedId)
     else
       uiItem:FlushEmpty()
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox.CaculateNum = function(self, itemId, num)
-  -- function num : 0_17 , upvalues : _ENV
+function UIBackPackUseBox:CaculateNum(itemId, num)
   local needCount = 0
   if not self._item then
     return needCount
   end
-  for key,value in pairs(self._itemList) do
+  for key, value in pairs(self._itemList) do
     if value:GetTplId() == itemId then
-      needCount = (math.max)(1, (math.ceil)(num / value:GetCount()))
+      needCount = math.max(1, math.ceil(num / value:GetCount()))
       return needCount
     end
   end
   return needCount
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox.GetSelectedItemInfo = function(self, itemId)
-  -- function num : 0_18 , upvalues : _ENV
-  for key,value in pairs(self._itemList) do
+function UIBackPackUseBox:GetSelectedItemInfo(itemId)
+  for key, value in pairs(self._itemList) do
     if value:GetTplId() == itemId then
       return key, value
     end
   end
-  return 
+  return
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox.SetSelectItemId = function(self)
-  -- function num : 0_19
+function UIBackPackUseBox:SetSelectItemId()
   if not self._needItem then
-    return 
+    return
   end
   self._selectedId = self._needItem
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackUseBox._MoveToIndex = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIBackPackUseBox:_MoveToIndex()
   if not self._operateItemInfo then
-    return 
+    return
   end
   local posx = 200 * self._index + 15 * (self._index - 1) - 100
   local endPointX = 0
-  local len = ((self._listRcet).sizeDelta).x
-  endPointX = (Mathf.Min)(0, len / 2 - posx)
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._contentRcet).anchoredPosition = Vector2(endPointX, 0)
+  local len = self._listRcet.sizeDelta.x
+  endPointX = Mathf.Min(0, len / 2 - posx)
+  self._contentRcet.anchoredPosition = Vector2(endPointX, 0)
 end
-
-

@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/ranking/ui_worldboss_legenddan.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorldBossLegendDan", UIController)
 UIWorldBossLegendDan = UIWorldBossLegendDan
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossLegendDan.Constructor = function(self)
-  -- function num : 0_0
+function UIWorldBossLegendDan:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossLegendDan.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIWorldBossLegendDan:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossLegendDan.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWorldBossLegendDan:OnShow(uiParams)
   self._uiWidget = self:GetUIComponent("RectTransform", "uiWidget")
   self._btnAnywhere = self:GetUIComponent("RectTransform", "btnAnywhere")
   self._animation = self:GetUIComponent("Animation", "animation")
@@ -30,123 +17,77 @@ UIWorldBossLegendDan.OnShow = function(self, uiParams)
   self:FlushReward()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossLegendDan.OnHide = function(self)
-  -- function num : 0_3
+function UIWorldBossLegendDan:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossLegendDan.BtnAnywhereOnClick = function(self, go)
-  -- function num : 0_4
+function UIWorldBossLegendDan:BtnAnywhereOnClick(go)
   self:OutAnimation()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossLegendDan.BtnCloseOnClick = function(self, go)
-  -- function num : 0_5
+function UIWorldBossLegendDan:BtnCloseOnClick(go)
   self:OutAnimation()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossLegendDan.CreateReward = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIWorldBossLegendDan:CreateReward()
   local worldBossModule = self:GetModule(WorldBossModule)
   local worldBossData = worldBossModule.m_world_boss_data
-  local cfgGroup = (UIWorldBossHelper.GetWorldBossLegendDanGroup)(worldBossData.boss_mission_id)
+  local cfgGroup = UIWorldBossHelper.GetWorldBossLegendDanGroup(worldBossData.boss_mission_id)
   self._dataRewardPool = {}
-  for k,v in pairs(cfgGroup) do
-    (table.insert)(self._dataRewardPool, v)
+  for k, v in pairs(cfgGroup) do
+    table.insert(self._dataRewardPool, v)
   end
-  ;
-  (table.sort)(self._dataRewardPool, function(a, b)
-    -- function num : 0_6_0
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  self._widgetRewardPool = (self._rewardContent):SpawnObjects("UIWorldBossLegendDanWidget", #self._dataRewardPool)
+  table.sort(self._dataRewardPool, function(a, b)
+    return a.ID < b.ID
+  end)
+  self._widgetRewardPool = self._rewardContent:SpawnObjects("UIWorldBossLegendDanWidget", #self._dataRewardPool)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossLegendDan.FlushReward = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIWorldBossLegendDan:FlushReward()
   local idBegin = 1
-  for k,v in pairs(self._dataRewardPool) do
-    local ui = (self._widgetRewardPool)[k]
+  for k, v in pairs(self._dataRewardPool) do
+    local ui = self._widgetRewardPool[k]
     ui:Flush(idBegin, v)
     idBegin = v.RankingLevel + 1
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossLegendDan.OnUIQuestWorldBossRest = function(self)
-  -- function num : 0_8
+function UIWorldBossLegendDan:OnUIQuestWorldBossRest()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossLegendDan.OutAnimation = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIWorldBossLegendDan:OutAnimation()
   local lockName = "UIWorldBossLegendDan:OutAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    ;
-    (self._animation):Play("UIWorldBossLegendDan_out")
+    self._animation:Play("UIWorldBossLegendDan_out")
     YIELD(TT, 433)
     self:UnLock(lockName)
     self:CloseDialog()
-  end
-)
+  end)
 end
 
 _class("UIWorldBossLegendDanWidget", UICustomWidget)
 UIWorldBossLegendDanWidget = UIWorldBossLegendDanWidget
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossLegendDanWidget.Constructor = function(self)
-  -- function num : 0_10
+function UIWorldBossLegendDanWidget:Constructor()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossLegendDanWidget.OnShow = function(self, uiParams)
-  -- function num : 0_11
+function UIWorldBossLegendDanWidget:OnShow(uiParams)
   self._txtPosition = self:GetUIComponent("UILocalizationText", "txtPosition")
   self._loadBadgeIcon = self:GetUIComponent("RawImageLoader", "BadgeIcon")
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossLegendDanWidget.OnHide = function(self)
-  -- function num : 0_12
+function UIWorldBossLegendDanWidget:OnHide()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossLegendDanWidget.Flush = function(self, idBegin, cfg)
-  -- function num : 0_13 , upvalues : _ENV
+function UIWorldBossLegendDanWidget:Flush(idBegin, cfg)
   self._idBegin = idBegin
   self._cfg = cfg
-  ;
-  (self._txtPosition):SetText((string.format)("%d-%d", self._idBegin, (self._cfg).RankingLevel))
-  ;
-  (self._loadBadgeIcon):LoadImage((self._cfg).SimpleDanBadgeBase)
+  self._txtPosition:SetText(string.format("%d-%d", self._idBegin, self._cfg.RankingLevel))
+  self._loadBadgeIcon:LoadImage(self._cfg.SimpleDanBadgeBase)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossLegendDanWidget.PlayAnimation = function(self, animName)
-  -- function num : 0_14
-  (self._animation):Play(animName)
+function UIWorldBossLegendDanWidget:PlayAnimation(animName)
+  self._animation:Play(animName)
 end
-
-

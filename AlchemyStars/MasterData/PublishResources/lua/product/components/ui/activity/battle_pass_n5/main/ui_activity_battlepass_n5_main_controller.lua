@@ -1,91 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_n5/main/ui_activity_battlepass_n5_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBattlePassN5MainController", UIController)
 UIActivityBattlePassN5MainController = UIActivityBattlePassN5MainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBattlePassN5MainController._GetBuyGiftComponent = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityBattlePassN5MainController:_GetBuyGiftComponent()
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT
-  return (self._campaign):GetComponent(cmptId)
+  return self._campaign:GetComponent(cmptId)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController._GetBuyGiftComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityBattlePassN5MainController:_GetBuyGiftComponentInfo()
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT
-  return (self._campaign):GetComponentInfo(cmptId)
+  return self._campaign:GetComponentInfo(cmptId)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController._GetComponents = function(self)
-  -- function num : 0_2
+function UIActivityBattlePassN5MainController:_GetComponents()
   self._mainBg = self:GetUIComponent("RawImageLoader", "mainBg")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, function()
-    -- function num : 0_2_1 , upvalues : self
+  end, function()
     self:ShowDialog("UIHelpController", "UIActivityBattlePassMainController")
-  end
-)
-  self._tabBtnSelected = {self:GetGameObject("rewardTabBtnSelected"), self:GetGameObject("questTabBtnSelected")}
-  self._tabBtnNormal = {self:GetGameObject("rewardTabBtnNormal"), self:GetGameObject("questTabBtnNormal")}
+  end)
+  self._tabBtnSelected = {
+    self:GetGameObject("rewardTabBtnSelected"),
+    self:GetGameObject("questTabBtnSelected")
+  }
+  self._tabBtnNormal = {
+    self:GetGameObject("rewardTabBtnNormal"),
+    self:GetGameObject("questTabBtnNormal")
+  }
   self._rewardTabBtnRed = self:GetGameObject("rewardTabBtnRed")
   self._questTabBtnRed = self:GetGameObject("questTabBtnRed")
   self._rewardTabObj = self:GetGameObject("rewardTab")
   local rewardTab = self:GetUIComponent("UISelectObjectPath", "rewardTab")
   self._rewardTab = rewardTab:SpawnObject("UIActivityBattlePassN5MainTabReward")
-  ;
-  (self._rewardTab):SetData(self._campaign, function()
-    -- function num : 0_2_2 , upvalues : self
+  self._rewardTab:SetData(self._campaign, function()
     self:CloseDialog()
-  end
-)
+  end)
   self._questTabObj = self:GetGameObject("questTab")
   local questTab = self:GetUIComponent("UISelectObjectPath", "questTab")
   self._questTab = questTab:SpawnObject("UIActivityBattlePassN5MainTabQuest")
-  ;
-  (self._questTab):SetData(self._campaign)
+  self._questTab:SetData(self._campaign)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIActivityBattlePassN5MainController:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
   local component = self:_GetBuyGiftComponent()
   component:GetAllGiftLocalPrice()
-  ;
-  (self._campaign):ClearCampaignNew(TT)
+  self._campaign:ClearCampaignNew(TT)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController.OnShow = function(self, uiParams)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityBattlePassN5MainController:OnShow(uiParams)
   self._callBack = uiParams[1]
   self:_AttachEvents()
   self._isOpen = true
@@ -95,124 +70,100 @@ UIActivityBattlePassN5MainController.OnShow = function(self, uiParams)
   self._tabIndex = 0
   self:RewardTabBtnOnClick()
   self:_CheckRedPointAll()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityBattlePassN5MainController)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityBattlePassN5MainController)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController.OnHide = function(self)
-  -- function num : 0_5
+function UIActivityBattlePassN5MainController:OnHide()
   self:_DetachEvents()
   self._isOpen = false
   if self._callBack then
-    (self._callBack)()
+    self._callBack()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController._SetBg = function(self, idx)
-  -- function num : 0_6 , upvalues : _ENV
-  local url = (UIActivityHelper.GetCampaignMainBg)(self._campaign, idx)
+function UIActivityBattlePassN5MainController:_SetBg(idx)
+  local url = UIActivityHelper.GetCampaignMainBg(self._campaign, idx)
   if url then
-    (self._mainBg):LoadImage(url)
+    self._mainBg:LoadImage(url)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController._SetTextSize = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local tb = {self:GetUIComponent("UILocalizationText", "tabBtnText1"), self:GetUIComponent("UILocalizationText", "tabBtnText2"), self:GetUIComponent("UILocalizationText", "tabBtnText3"), self:GetUIComponent("UILocalizationText", "tabBtnText4")}
-  local language = (Localization.GetCurLanguage)()
+function UIActivityBattlePassN5MainController:_SetTextSize()
+  local tb = {
+    self:GetUIComponent("UILocalizationText", "tabBtnText1"),
+    self:GetUIComponent("UILocalizationText", "tabBtnText2"),
+    self:GetUIComponent("UILocalizationText", "tabBtnText3"),
+    self:GetUIComponent("UILocalizationText", "tabBtnText4")
+  }
+  local language = Localization.GetCurLanguage()
   if language == LanguageType.es or language == LanguageType.pt then
-    for _,v in pairs(tb) do
+    for _, v in pairs(tb) do
       v.fontSize = 26
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController._SetTabBtnSelected = function(self, idx)
-  -- function num : 0_8 , upvalues : _ENV
-  for k,v in pairs(self._tabBtnSelected) do
+function UIActivityBattlePassN5MainController:_SetTabBtnSelected(idx)
+  for k, v in pairs(self._tabBtnSelected) do
     v:SetActive(k == idx)
   end
-  for k,v in pairs(self._tabBtnNormal) do
+  for k, v in pairs(self._tabBtnNormal) do
     v:SetActive(k ~= idx)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController._SetTabPage = function(self, resetPos, upgrade, anim_PlayIn, anim_ListItem)
-  -- function num : 0_9 , upvalues : _ENV
-  local tabPages = {self._rewardTabObj, self._questTabObj}
-  for i,v in ipairs(tabPages) do
+function UIActivityBattlePassN5MainController:_SetTabPage(resetPos, upgrade, anim_PlayIn, anim_ListItem)
+  local tabPages = {
+    self._rewardTabObj,
+    self._questTabObj
+  }
+  for i, v in ipairs(tabPages) do
     v:SetActive(i == self._tabIndex)
   end
-  local items = {self._rewardTab, self._questTab}
-  ;
-  (items[self._tabIndex]):_Refresh(resetPos, upgrade, anim_PlayIn, anim_ListItem)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local items = {
+    self._rewardTab,
+    self._questTab
+  }
+  items[self._tabIndex]:_Refresh(resetPos, upgrade, anim_PlayIn, anim_ListItem)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController._OnTabBtnSelected = function(self, index)
-  -- function num : 0_10
+function UIActivityBattlePassN5MainController:_OnTabBtnSelected(index)
   if index ~= self._tabIndex then
     self:Lock(self:GetName() .. "_SwitchTabPage()")
-    local items = {self._rewardTab, self._questTab}
+    local items = {
+      self._rewardTab,
+      self._questTab
+    }
     if self._tabIndex > 0 and self._tabIndex <= #items then
-      (items[self._tabIndex]):_PlayAnimOut(function()
-    -- function num : 0_10_0 , upvalues : self, index
-    self:_SwitchTabPage(index)
-  end
-)
+      items[self._tabIndex]:_PlayAnimOut(function()
+        self:_SwitchTabPage(index)
+      end)
     else
       self:_SwitchTabPage(index)
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController._SwitchTabPage = function(self, index)
-  -- function num : 0_11
+function UIActivityBattlePassN5MainController:_SwitchTabPage(index)
   self._tabIndex = index
   self:_SetTabBtnSelected(index)
   self:_SetTabPage(true, 1, true, true)
   self:UnLock(self:GetName() .. "_SwitchTabPage()")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController.RewardTabBtnOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  (Log.info)("UIActivityBattlePassN5MainController:RewardTabBtnOnClick")
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+function UIActivityBattlePassN5MainController:RewardTabBtnOnClick(go)
+  Log.info("UIActivityBattlePassN5MainController:RewardTabBtnOnClick")
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
   self:_OnTabBtnSelected(1)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController.QuestTabBtnOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  (Log.info)("UIActivityBattlePassN5MainController:QuestTabBtn")
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+function UIActivityBattlePassN5MainController:QuestTabBtnOnClick(go)
+  Log.info("UIActivityBattlePassN5MainController:QuestTabBtn")
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
   self:_OnTabBtnSelected(2)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController._AttachEvents = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityBattlePassN5MainController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:AttachEvent(GameEventType.ActivityQuestAwardItemClick, self._OnActivityQuestAwardItemClick)
@@ -220,10 +171,7 @@ UIActivityBattlePassN5MainController._AttachEvents = function(self)
   self:AttachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController._DetachEvents = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityBattlePassN5MainController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:DetachEvent(GameEventType.ActivityQuestAwardItemClick, self._OnActivityQuestAwardItemClick)
@@ -231,61 +179,36 @@ UIActivityBattlePassN5MainController._DetachEvents = function(self)
   self:DetachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController._CheckActivityClose = function(self, id)
-  -- function num : 0_16 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIActivityBattlePassN5MainController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_17
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UIActivityBattlePassN5MainController:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:_CheckRedPointAll()
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController._CheckRedPointAll = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIActivityBattlePassN5MainController:_CheckRedPointAll()
   self:_CheckRedPoint(self._rewardTabBtnRed, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD)
   self:_CheckRedPoint(self._questTabBtnRed, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController._CheckRedPoint = function(self, obj, ...)
-  -- function num : 0_19 , upvalues : _ENV
-  if self._campaign then
-    local bShow = (UIActivityBattlePassHelper.CheckComponentRedPoint)(self._campaign, ...)
-  end
+function UIActivityBattlePassN5MainController:_CheckRedPoint(obj, ...)
+  local bShow = self._campaign and UIActivityBattlePassHelper.CheckComponentRedPoint(self._campaign, ...)
   obj:SetActive(bShow)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController._OnActivityQuestAwardItemClick = function(self, matid, pos)
-  -- function num : 0_20 , upvalues : _ENV
-  (UIWidgetHelper.SetAwardItemTips)(self, "itemInfoPool", matid, pos)
+function UIActivityBattlePassN5MainController:_OnActivityQuestAwardItemClick(matid, pos)
+  UIWidgetHelper.SetAwardItemTips(self, "itemInfoPool", matid, pos)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController.OnUIGetItemCloseInQuest = function(self, type)
-  -- function num : 0_21
+function UIActivityBattlePassN5MainController:OnUIGetItemCloseInQuest(type)
   self:_SetTabPage(true, 2, false, false)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5MainController._OnQuestUpdate = function(self)
-  -- function num : 0_22
+function UIActivityBattlePassN5MainController:_OnQuestUpdate()
   self:_SetTabPage(false, 0, false, false)
 end
-
-

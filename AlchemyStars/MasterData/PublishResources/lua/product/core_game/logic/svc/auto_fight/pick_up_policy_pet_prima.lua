@@ -1,56 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_pet_prima.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_PetPrima", PickUpPolicy_Base)
 PickUpPolicy_PetPrima = PickUpPolicy_PetPrima
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_PetPrima.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PickUpPolicy_PetPrima:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
   local activeSkillID = calcParam.activeSkillID
   local policyParam = calcParam.policyParam
-  local casterPos = (petEntity:GridLocation()).Position
-  local curBodyArea = (petEntity:BodyArea()):GetArea()
+  local casterPos = petEntity:GridLocation().Position
+  local curBodyArea = petEntity:BodyArea():GetArea()
   local pickPosList = {}
   local targetIDs = {}
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
   local platformScopeResult = scopeCalculator:ComputeScopeRange(SkillScopeType.FullScreen, 1, casterPos, curBodyArea)
-  local tarSelector = (self._world):GetSkillScopeTargetSelector()
+  local tarSelector = self._world:GetSkillScopeTargetSelector()
   local targetArrray = tarSelector:DoSelectSkillTarget(petEntity, SkillTargetType.NearestMonster, platformScopeResult)
   if #targetArrray < 1 then
     return pickPosList, pickPosList, targetIDs
   end
   local targetID = targetArrray[1]
-  local targetEntity = (self._world):GetEntityByID(targetID)
-  ;
-  (table.insert)(targetIDs, targetID)
+  local targetEntity = self._world:GetEntityByID(targetID)
+  table.insert(targetIDs, targetID)
   local targetBodyAreaOutSidePosList = self:GetPosListAroundBodyArea(targetEntity, 1)
-  local targetBodyAreaPosList = (targetEntity:BodyArea()):GetArea()
-  local targetPos = (targetEntity:GridLocation()).Position
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local dirs = {Vector2(0, 1), Vector2(1, 0), Vector2(0, -1), Vector2(-1, 0)}
-  for _,bodyArea in pairs(targetBodyAreaPosList) do
+  local targetBodyAreaPosList = targetEntity:BodyArea():GetArea()
+  local targetPos = targetEntity:GridLocation().Position
+  local utilDataSvc = self._world:GetService("UtilData")
+  local dirs = {
+    Vector2(0, 1),
+    Vector2(1, 0),
+    Vector2(0, -1),
+    Vector2(-1, 0)
+  }
+  for _, bodyArea in pairs(targetBodyAreaPosList) do
     local bodyAreaPos = targetPos + bodyArea
-    for _,dir in pairs(dirs) do
+    for _, dir in pairs(dirs) do
       local firstPos = bodyAreaPos + dir
-      if utilDataSvc:IsValidPiecePos(firstPos) and not (table.icontains)(targetBodyAreaPosList, firstPos) then
-        (table.insert)(pickPosList, firstPos)
-        ;
-        (table.insert)(pickPosList, bodyAreaPos)
+      if utilDataSvc:IsValidPiecePos(firstPos) and not table.icontains(targetBodyAreaPosList, firstPos) then
+        table.insert(pickPosList, firstPos)
+        table.insert(pickPosList, bodyAreaPos)
         break
       end
     end
-  end
-  do
-    if (table.count)(pickPosList) <= 0 then
-      return pickPosList, pickPosList, targetIDs
+    if 0 < table.count(pickPosList) then
+      break
     end
   end
+  return pickPosList, pickPosList, targetIDs
 end
-
-

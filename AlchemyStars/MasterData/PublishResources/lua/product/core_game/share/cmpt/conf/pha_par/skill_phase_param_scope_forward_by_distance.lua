@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_param_scope_forward_by_distance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseParamScopeForwardByDistance", SkillPhaseParamBase)
 SkillPhaseParamScopeForwardByDistance = SkillPhaseParamScopeForwardByDistance
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseParamScopeForwardByDistance.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseParamScopeForwardByDistance:Constructor(t)
   self._gridEffectID = t.gridEffectID
   self._intervalTime = t.intervalTime
   self._hitEffectID = t.hitEffectID
@@ -19,74 +12,51 @@ SkillPhaseParamScopeForwardByDistance.Constructor = function(self, t)
   self._quadrantDiagonal = t.quadrantDiagonal
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeForwardByDistance.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseParamScopeForwardByDistance:GetCacheTable()
   local t = {}
   if self._gridEffectID and self._gridEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._gridEffectID]).ResPath, 1}
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._gridEffectID].ResPath,
+      1
+    }
   end
-  if self._hitEffectID and self._hitEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1}
+  if self._hitEffectID and 0 < self._hitEffectID then
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    }
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeForwardByDistance.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseParamScopeForwardByDistance:GetPhaseType()
   return SkillViewPhaseType.ScopeForwardByDistance
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeForwardByDistance.GetEffectIntervalTime = function(self)
-  -- function num : 0_3
+function SkillPhaseParamScopeForwardByDistance:GetEffectIntervalTime()
   return self._intervalTime
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeForwardByDistance.GetGridEffectDirection = function(self)
-  -- function num : 0_4
+function SkillPhaseParamScopeForwardByDistance:GetGridEffectDirection()
   return self._gridEffectDirection
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeForwardByDistance.GetGridEffectID = function(self)
-  -- function num : 0_5
+function SkillPhaseParamScopeForwardByDistance:GetGridEffectID()
   return self._gridEffectID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeForwardByDistance.GetHitEffectID = function(self)
-  -- function num : 0_6
+function SkillPhaseParamScopeForwardByDistance:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeForwardByDistance.GetScopeType = function(self)
-  -- function num : 0_7
+function SkillPhaseParamScopeForwardByDistance:GetScopeType()
   return self._scopeHorizontalOrVertical
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeForwardByDistance.GetHitAnimationName = function(self)
-  -- function num : 0_8
+function SkillPhaseParamScopeForwardByDistance:GetHitAnimationName()
   return self._hitAnimationName
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeForwardByDistance.GetQuadrantDiagonal = function(self)
-  -- function num : 0_9
+function SkillPhaseParamScopeForwardByDistance:GetQuadrantDiagonal()
   return self._quadrantDiagonal
 end
-
-

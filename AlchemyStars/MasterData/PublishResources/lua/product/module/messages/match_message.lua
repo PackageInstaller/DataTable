@@ -1,384 +1,425 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/messages/match_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local matchMessageDef = {CLSID_CEventRequestCreateMatch = 11000, CLSID_CEventReplyCreateMatch = 11001, CLSID_CEventRequestJoinMatch = 11002, CLSID_CEventReplyJoinMatch = 11003, CLSID_CEventRequestEnterMatch = 11004, CLSID_CEventReplyEnterMatch = 11005, CLSID_CEventRequestLeaveMatch = 11006, CLSID_CEventReplyLeaveMatch = 11007, CLSID_CEventPushMatchEnd = 11008, CLSID_CEventPushJoinMatch = 11009, CLSID_CEventPushLeaveMatch = 11010, CLSID_CEventRequestEnterInnerGame = 11011, CLSID_CEventRequestExitInnerGame = 11012, CLSID_CEventMatchStartLoading = 11013, CLSID_CEventUpdateLoadingProgress = 11014, CLSID_CEventMatchStart = 11015, CLSID_CEventGameOver = 11016, CLSID_CEventBattleLog = 11017, CLSID_CEventLuaCommand = 11018, CLSID_CEventWaveEnd = 11019, CLSID_CEventCommandBase = 11020, CLSID_CEventAutoFightCommand = 11021, CLSID_CEventCancelChainSkillCommand = 11022, CLSID_CEventCastActiveSkillCommand = 11023, CLSID_CEventCastPickUpChainSkillCommand = 11024, CLSID_CEventCastPickUpActiveSkillCommand = 11025, CLSID_CEventChangeTeamLeaderCommand = 11026, CLSID_CEventGuideCommand = 11027, CLSID_CEventMovePathDoneCommand = 11028, CLSID_CEventCastChessPetMoveCommand = 11029, CLSID_CEventCastChessPetAttackCommand = 11030, CLSID_CEventCastChessPetEndTurnCommand = 11031, CLSID_CEventCastSelectTeamOrderPositionCommand = 11032, CLSID_CEventCastClearSelectedTeamOrderPositionCommand = 11033, CLSID_CEventClientExceptionReportCommand = 11034, CLSID_CEventScanFeatureCommand = 11035, CLSID_CEventChooseMiniMazeWaveAwardCommand = 11036, CLSID_CEventMiragePickUpCommand = 11037, CLSID_CEventMirageForceCloseCommand = 11038, CLSID_CEventSwitchPetEquipRefineUICommand = 11039, CLSID_CEventPopStarPickUpCommand = 11040, CLSID_CEventRequestSweepMatch = 11041, CLSID_CEventReplySweepMatch = 11042, CLSID_CEventSyncClientUnscaledCountDownCommand = 11043, CLSID_CEventCastSelectInfoActiveSkillCommand = 11044, CLSID_CEventTetrisFeatureCommand = 11045}
-;
-(table.append)(MessageDef, matchMessageDef)
-local MatchOpResCode = {MATCH_SUCCESS = 0, MATCH_FAIL = 1, MATCH_TIMEOUT = 2, MATCH_GROUP_ERROR = 3, MATCH_NO_SERVER = 4, MATCH_NO_MATCH = 5, MATCH_LIMIT = 6, MATCH_ALREADY_IN_MATCH = 7, MATCH_QUICK_MATCHING = 8, MATCH_WAITING = 9, MATCH_LEAVING = 10, MATCH_NOT_ENOUGH_PHY_POWER = 11, MATCH_INVALID_TEAM = 12, MATCH_INVALID_MISSION_ID = 13, MATCH_INVALID_ExtMissionID = 14, MATCH_INVALID_RoleLevel = 15, MATCH_INVALID_MissionLock = 16, MATCH_INVALID_ExtTaskLock = 17, MATCH_INVALID_ExtTaskID = 18, MATCH_INVALID_LowPower = 19, MATCH_INVALID_MAZE_ROOM_ID = 20, MATCH_NOT_ENOUGH_LIGHT = 21, MATCH_NO_BLOOD = 22, MATCH_DOUBLE_TICKET_NOTENOUGH = 23, MATCH_TOWER_IS_LOCKED = 24, MATCH_TOWER_CONFIG_INVALID = 25, MATCH_TOWER_ID_INVALID = 26, MATCH_TOWER_AFTER_LEVEL_NOT_PASS = 27, MATCH_TOWER_TYPE_INVALID = 28, MATCH_TOWER_PET_NUM_ERR = 29, MATCH_TOWER_PET_INVALID = 30, MATCH_TOWER_PET_REPEAT = 31, MATCH_ELEMENT_TYPE_ERR = 32, MATCH_TOWER_DROPID_INVALIED = 33, MATCH_PSTID_ERROR = 34, MATCH_TALEPET_STAGE_LOCK = 35, MATCH_CAMPAIGN_CAN_NOT_REPEAT_FIGHT = 36, MATCH_CAMPAIGN_CamNotOpen = 37, MATCH_CAMPAIGN_ComNotOpen = 38, MATCH_CAMPAIGN_NotOnOClock = 39, MATCH_CAMPAIGN_FORMATION_INVALID = 40, MATCH_NOT_ENOUGH_ACTIONPOINT = 41, MATCH_CAMPAIGN_MISSIOHN_CROSS_DAY = 42, MATCH_CAMPAIGN_MISSIOHN_ID_ERR = 43, MATCH_CAMPAIGN_COM_CFG_ERR = 44, MATCH_WORLD_BOSS_IS_LOCKED = 45, MATCH_WORLD_BOSS_FORMATION_INVALID = 46, MATCH_WORLD_BOSS_CONFIG_INVALID = 47, MATCH_WORLD_BOSS_MISSION_INVALID = 48, MATCH_ASSET_DOUBLE_ITEM_NOT_ENOUGH = 49, MATCH_DIFFICULTY_CONFIG_ERROR = 50, MATCH_DIFFICULTY_FORMATION_ERROR = 51, MATCH_DIFFICULTY_LOCKED = 52, MATCH_DIFFICULTY_PRE_LOCKED = 53, MATCH_DM_FORMATION_INVALID = 54, MATCH_DIFFICULTY_COMPONENT_CFG_ID = 55, MATCH_DIFFICULTY_OP_COMPONENT_ID = 56, MATCH_3STAR_NOT_COMPLETE = 57, MATCH_PASSED_ERROR_TIMES = 58, MATCH_SAILING_CONFIG_ERROR = 60, MATCH_SAILING_MOUDULE_LOCKED = 61, MATCH_SAILING_PRE_NOT_FINISH = 62, MATCH_SAILING_FORMATION_INVALID = 63, MATCH_BLOODSUCKER_PREMISSION_UNLOCK = 64, MATCH_EIGHT_PETS_FORMATION_INVALID = 65, MATCH_ANIPOP_HARD_ERROR = 66, MATCH_ANIPOP_BLOOD_ERROR = 67, MATCH_ANIPOP_SWEEP_ERROR = 68, MATCH_CAMPAIGN_PREMISSIONNOTPASS = 70}
+local matchMessageDef = {
+  CLSID_CEventRequestCreateMatch = 11000,
+  CLSID_CEventReplyCreateMatch = 11001,
+  CLSID_CEventRequestJoinMatch = 11002,
+  CLSID_CEventReplyJoinMatch = 11003,
+  CLSID_CEventRequestEnterMatch = 11004,
+  CLSID_CEventReplyEnterMatch = 11005,
+  CLSID_CEventRequestLeaveMatch = 11006,
+  CLSID_CEventReplyLeaveMatch = 11007,
+  CLSID_CEventPushMatchEnd = 11008,
+  CLSID_CEventPushJoinMatch = 11009,
+  CLSID_CEventPushLeaveMatch = 11010,
+  CLSID_CEventRequestEnterInnerGame = 11011,
+  CLSID_CEventRequestExitInnerGame = 11012,
+  CLSID_CEventMatchStartLoading = 11013,
+  CLSID_CEventUpdateLoadingProgress = 11014,
+  CLSID_CEventMatchStart = 11015,
+  CLSID_CEventGameOver = 11016,
+  CLSID_CEventBattleLog = 11017,
+  CLSID_CEventLuaCommand = 11018,
+  CLSID_CEventWaveEnd = 11019,
+  CLSID_CEventCommandBase = 11020,
+  CLSID_CEventAutoFightCommand = 11021,
+  CLSID_CEventCancelChainSkillCommand = 11022,
+  CLSID_CEventCastActiveSkillCommand = 11023,
+  CLSID_CEventCastPickUpChainSkillCommand = 11024,
+  CLSID_CEventCastPickUpActiveSkillCommand = 11025,
+  CLSID_CEventChangeTeamLeaderCommand = 11026,
+  CLSID_CEventGuideCommand = 11027,
+  CLSID_CEventMovePathDoneCommand = 11028,
+  CLSID_CEventCastChessPetMoveCommand = 11029,
+  CLSID_CEventCastChessPetAttackCommand = 11030,
+  CLSID_CEventCastChessPetEndTurnCommand = 11031,
+  CLSID_CEventCastSelectTeamOrderPositionCommand = 11032,
+  CLSID_CEventCastClearSelectedTeamOrderPositionCommand = 11033,
+  CLSID_CEventClientExceptionReportCommand = 11034,
+  CLSID_CEventScanFeatureCommand = 11035,
+  CLSID_CEventChooseMiniMazeWaveAwardCommand = 11036,
+  CLSID_CEventMiragePickUpCommand = 11037,
+  CLSID_CEventMirageForceCloseCommand = 11038,
+  CLSID_CEventSwitchPetEquipRefineUICommand = 11039,
+  CLSID_CEventPopStarPickUpCommand = 11040,
+  CLSID_CEventRequestSweepMatch = 11041,
+  CLSID_CEventReplySweepMatch = 11042,
+  CLSID_CEventSyncClientUnscaledCountDownCommand = 11043,
+  CLSID_CEventCastSelectInfoActiveSkillCommand = 11044,
+  CLSID_CEventTetrisFeatureCommand = 11045
+}
+table.append(MessageDef, matchMessageDef)
+local MatchOpResCode = {
+  MATCH_SUCCESS = 0,
+  MATCH_FAIL = 1,
+  MATCH_TIMEOUT = 2,
+  MATCH_GROUP_ERROR = 3,
+  MATCH_NO_SERVER = 4,
+  MATCH_NO_MATCH = 5,
+  MATCH_LIMIT = 6,
+  MATCH_ALREADY_IN_MATCH = 7,
+  MATCH_QUICK_MATCHING = 8,
+  MATCH_WAITING = 9,
+  MATCH_LEAVING = 10,
+  MATCH_NOT_ENOUGH_PHY_POWER = 11,
+  MATCH_INVALID_TEAM = 12,
+  MATCH_INVALID_MISSION_ID = 13,
+  MATCH_INVALID_ExtMissionID = 14,
+  MATCH_INVALID_RoleLevel = 15,
+  MATCH_INVALID_MissionLock = 16,
+  MATCH_INVALID_ExtTaskLock = 17,
+  MATCH_INVALID_ExtTaskID = 18,
+  MATCH_INVALID_LowPower = 19,
+  MATCH_INVALID_MAZE_ROOM_ID = 20,
+  MATCH_NOT_ENOUGH_LIGHT = 21,
+  MATCH_NO_BLOOD = 22,
+  MATCH_DOUBLE_TICKET_NOTENOUGH = 23,
+  MATCH_TOWER_IS_LOCKED = 24,
+  MATCH_TOWER_CONFIG_INVALID = 25,
+  MATCH_TOWER_ID_INVALID = 26,
+  MATCH_TOWER_AFTER_LEVEL_NOT_PASS = 27,
+  MATCH_TOWER_TYPE_INVALID = 28,
+  MATCH_TOWER_PET_NUM_ERR = 29,
+  MATCH_TOWER_PET_INVALID = 30,
+  MATCH_TOWER_PET_REPEAT = 31,
+  MATCH_ELEMENT_TYPE_ERR = 32,
+  MATCH_TOWER_DROPID_INVALIED = 33,
+  MATCH_PSTID_ERROR = 34,
+  MATCH_TALEPET_STAGE_LOCK = 35,
+  MATCH_CAMPAIGN_CAN_NOT_REPEAT_FIGHT = 36,
+  MATCH_CAMPAIGN_CamNotOpen = 37,
+  MATCH_CAMPAIGN_ComNotOpen = 38,
+  MATCH_CAMPAIGN_NotOnOClock = 39,
+  MATCH_CAMPAIGN_FORMATION_INVALID = 40,
+  MATCH_NOT_ENOUGH_ACTIONPOINT = 41,
+  MATCH_CAMPAIGN_MISSIOHN_CROSS_DAY = 42,
+  MATCH_CAMPAIGN_MISSIOHN_ID_ERR = 43,
+  MATCH_CAMPAIGN_COM_CFG_ERR = 44,
+  MATCH_WORLD_BOSS_IS_LOCKED = 45,
+  MATCH_WORLD_BOSS_FORMATION_INVALID = 46,
+  MATCH_WORLD_BOSS_CONFIG_INVALID = 47,
+  MATCH_WORLD_BOSS_MISSION_INVALID = 48,
+  MATCH_ASSET_DOUBLE_ITEM_NOT_ENOUGH = 49,
+  MATCH_DIFFICULTY_CONFIG_ERROR = 50,
+  MATCH_DIFFICULTY_FORMATION_ERROR = 51,
+  MATCH_DIFFICULTY_LOCKED = 52,
+  MATCH_DIFFICULTY_PRE_LOCKED = 53,
+  MATCH_DM_FORMATION_INVALID = 54,
+  MATCH_DIFFICULTY_COMPONENT_CFG_ID = 55,
+  MATCH_DIFFICULTY_OP_COMPONENT_ID = 56,
+  MATCH_3STAR_NOT_COMPLETE = 57,
+  MATCH_PASSED_ERROR_TIMES = 58,
+  MATCH_SAILING_CONFIG_ERROR = 60,
+  MATCH_SAILING_MOUDULE_LOCKED = 61,
+  MATCH_SAILING_PRE_NOT_FINISH = 62,
+  MATCH_SAILING_FORMATION_INVALID = 63,
+  MATCH_BLOODSUCKER_PREMISSION_UNLOCK = 64,
+  MATCH_EIGHT_PETS_FORMATION_INVALID = 65,
+  MATCH_ANIPOP_HARD_ERROR = 66,
+  MATCH_ANIPOP_BLOOD_ERROR = 67,
+  MATCH_ANIPOP_SWEEP_ERROR = 68,
+  MATCH_CAMPAIGN_PREMISSIONNOTPASS = 70
+}
 _enum("MatchOpResCode", MatchOpResCode)
 local ChessTurnEndType = {Single = 1, All = 2}
 _enum("ChessTurnEndType", ChessTurnEndType)
 _class("CEventRequestCreateMatch", CCallRequestEvent)
 CEventRequestCreateMatch = CEventRequestCreateMatch
--- DECOMPILER ERROR at PC144: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventRequestCreateMatch.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CEventRequestCreateMatch:Constructor()
   self.m_match_type = 0
   self.m_formation_id = 0
   self.m_client_create_info = ClientMatchCreateInfo:New()
   self.m_nHelpPetKey = 0
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventRequestCreateMatch._proto = {
-[1] = {"m_match_type", "int"}
-, 
-[2] = {"m_formation_id", "int"}
-, 
-[3] = {"m_client_create_info", "ClientMatchCreateInfo"}
-, 
-[4] = {"m_nHelpPetKey", "int"}
+  [1] = {
+    "m_match_type",
+    "int"
+  },
+  [2] = {
+    "m_formation_id",
+    "int"
+  },
+  [3] = {
+    "m_client_create_info",
+    "ClientMatchCreateInfo"
+  },
+  [4] = {
+    "m_nHelpPetKey",
+    "int"
+  }
 }
 _class("CEventReplyCreateMatch", CCallReplyEvent)
 CEventReplyCreateMatch = CEventReplyCreateMatch
--- DECOMPILER ERROR at PC176: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventReplyCreateMatch.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CEventReplyCreateMatch:Constructor()
   self.m_ret = 0
   self.m_match_created = GroupToken:New()
   self.m_vkey = 0
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventReplyCreateMatch._proto = {
-[1] = {"m_ret", "int"}
-, 
-[2] = {"m_match_created", "GroupToken"}
-, 
-[3] = {"m_vkey", "int"}
+  [1] = {"m_ret", "int"},
+  [2] = {
+    "m_match_created",
+    "GroupToken"
+  },
+  [3] = {"m_vkey", "int"}
 }
 _class("CEventRequestJoinMatch", CCallRequestEvent)
-_ENV.CEventRequestJoinMatch = _ENV.CEventRequestJoinMatch
--- DECOMPILER ERROR at PC206: Confused about usage of register: R3 in 'UnsetPending'
+CEventRequestJoinMatch = CEventRequestJoinMatch
 
-;
-(_ENV.CEventRequestJoinMatch).Constructor = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function CEventRequestJoinMatch:Constructor()
   self.m_match_to_join = GroupToken:New()
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventRequestJoinMatch)._proto = {
-[1] = {"m_match_to_join", "GroupToken"}
+CEventRequestJoinMatch._proto = {
+  [1] = {
+    "m_match_to_join",
+    "GroupToken"
+  }
 }
 _class("CEventReplyJoinMatch", CCallReplyEvent)
-_ENV.CEventReplyJoinMatch = _ENV.CEventReplyJoinMatch
--- DECOMPILER ERROR at PC227: Confused about usage of register: R3 in 'UnsetPending'
+CEventReplyJoinMatch = CEventReplyJoinMatch
 
-;
-(_ENV.CEventReplyJoinMatch).Constructor = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CEventReplyJoinMatch:Constructor()
   self.m_ret = 0
   self.m_match_to_join = GroupToken:New()
   self.m_vkey = 0
 end
 
--- DECOMPILER ERROR at PC246: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventReplyJoinMatch)._proto = {
-[1] = {"m_ret", "int"}
-, 
-[2] = {"m_match_to_join", "GroupToken"}
-, 
-[3] = {"m_vkey", "int"}
+CEventReplyJoinMatch._proto = {
+  [1] = {"m_ret", "int"},
+  [2] = {
+    "m_match_to_join",
+    "GroupToken"
+  },
+  [3] = {"m_vkey", "int"}
 }
 _class("CEventRequestEnterMatch", CCallRequestEvent)
-_ENV.CEventRequestEnterMatch = _ENV.CEventRequestEnterMatch
--- DECOMPILER ERROR at PC258: Confused about usage of register: R3 in 'UnsetPending'
+CEventRequestEnterMatch = CEventRequestEnterMatch
 
-;
-(_ENV.CEventRequestEnterMatch).Constructor = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function CEventRequestEnterMatch:Constructor()
   self.m_match_to_enter = GroupToken:New()
   self.m_player_id = 0
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventRequestEnterMatch)._proto = {
-[1] = {"m_match_to_enter", "GroupToken"}
-, 
-[2] = {"m_player_id", "int64"}
+CEventRequestEnterMatch._proto = {
+  [1] = {
+    "m_match_to_enter",
+    "GroupToken"
+  },
+  [2] = {
+    "m_player_id",
+    "int64"
+  }
 }
 _class("CEventReplyEnterMatch", CCallReplyEvent)
-_ENV.CEventReplyEnterMatch = _ENV.CEventReplyEnterMatch
--- DECOMPILER ERROR at PC284: Confused about usage of register: R3 in 'UnsetPending'
+CEventReplyEnterMatch = CEventReplyEnterMatch
 
-;
-(_ENV.CEventReplyEnterMatch).Constructor = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function CEventReplyEnterMatch:Constructor()
   self.m_ret = 0
   self.create_info = MatchCreateInfo:New()
   self.player_list = {}
 end
 
--- DECOMPILER ERROR at PC303: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventReplyEnterMatch)._proto = {
-[1] = {"m_ret", "int"}
-, 
-[2] = {"create_info", "MatchCreateInfo"}
-, 
-[3] = {"player_list", "map<int64,LuaMatchPlayerInfo>"}
+CEventReplyEnterMatch._proto = {
+  [1] = {"m_ret", "int"},
+  [2] = {
+    "create_info",
+    "MatchCreateInfo"
+  },
+  [3] = {
+    "player_list",
+    "map<int64,LuaMatchPlayerInfo>"
+  }
 }
 _class("CEventRequestLeaveMatch", CCallRequestEvent)
-_ENV.CEventRequestLeaveMatch = _ENV.CEventRequestLeaveMatch
--- DECOMPILER ERROR at PC315: Confused about usage of register: R3 in 'UnsetPending'
+CEventRequestLeaveMatch = CEventRequestLeaveMatch
 
-;
-(_ENV.CEventRequestLeaveMatch).Constructor = function(self)
-  -- function num : 0_6
+function CEventRequestLeaveMatch:Constructor()
   self.m_restart = false
 end
 
--- DECOMPILER ERROR at PC324: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventRequestLeaveMatch)._proto = {
-[1] = {"m_restart", "bool"}
+CEventRequestLeaveMatch._proto = {
+  [1] = {"m_restart", "bool"}
 }
 _class("CEventReplyLeaveMatch", CCallReplyEvent)
-_ENV.CEventReplyLeaveMatch = _ENV.CEventReplyLeaveMatch
--- DECOMPILER ERROR at PC336: Confused about usage of register: R3 in 'UnsetPending'
+CEventReplyLeaveMatch = CEventReplyLeaveMatch
 
-;
-(_ENV.CEventReplyLeaveMatch).Constructor = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function CEventReplyLeaveMatch:Constructor()
   self.m_ret = 0
   self.m_result = MatchLeaveResult:New()
   self.m_match_to_join = GroupToken:New()
 end
 
--- DECOMPILER ERROR at PC355: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventReplyLeaveMatch)._proto = {
-[1] = {"m_ret", "int"}
-, 
-[2] = {"m_result", "MatchLeaveResult"}
-, 
-[3] = {"m_match_to_join", "GroupToken"}
+CEventReplyLeaveMatch._proto = {
+  [1] = {"m_ret", "int"},
+  [2] = {
+    "m_result",
+    "MatchLeaveResult"
+  },
+  [3] = {
+    "m_match_to_join",
+    "GroupToken"
+  }
 }
-_class("CEventPushMatchEnd", _ENV.CSvrPushEvent)
-_ENV.CEventPushMatchEnd = _ENV.CEventPushMatchEnd
--- DECOMPILER ERROR at PC368: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventPushMatchEnd", CSvrPushEvent)
+CEventPushMatchEnd = CEventPushMatchEnd
 
-;
-(_ENV.CEventPushMatchEnd).Constructor = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function CEventPushMatchEnd:Constructor()
   self.match_token = GroupToken:New()
   self.match_type = 0
   self.m_result = MatchResult:New()
 end
 
--- DECOMPILER ERROR at PC387: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventPushMatchEnd)._proto = {
-[1] = {"match_token", "GroupToken"}
-, 
-[2] = {"match_type", "int"}
-, 
-[3] = {"m_result", "MatchResult"}
+CEventPushMatchEnd._proto = {
+  [1] = {
+    "match_token",
+    "GroupToken"
+  },
+  [2] = {"match_type", "int"},
+  [3] = {
+    "m_result",
+    "MatchResult"
+  }
 }
-_class("CEventPushJoinMatch", _ENV.CSvrPushEvent)
-_ENV.CEventPushJoinMatch = _ENV.CEventPushJoinMatch
--- DECOMPILER ERROR at PC400: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventPushJoinMatch", CSvrPushEvent)
+CEventPushJoinMatch = CEventPushJoinMatch
 
-;
-(_ENV.CEventPushJoinMatch).Constructor = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function CEventPushJoinMatch:Constructor()
   self.m_match_to_join = GroupToken:New()
 end
 
--- DECOMPILER ERROR at PC409: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventPushJoinMatch)._proto = {
-[1] = {"m_match_to_join", "GroupToken"}
+CEventPushJoinMatch._proto = {
+  [1] = {
+    "m_match_to_join",
+    "GroupToken"
+  }
 }
-_class("CEventPushLeaveMatch", _ENV.CSvrPushEvent)
-_ENV.CEventPushLeaveMatch = _ENV.CEventPushLeaveMatch
--- DECOMPILER ERROR at PC422: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventPushLeaveMatch", CSvrPushEvent)
+CEventPushLeaveMatch = CEventPushLeaveMatch
 
-;
-(_ENV.CEventPushLeaveMatch).Constructor = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function CEventPushLeaveMatch:Constructor()
   self.m_result = MatchLeaveResult:New()
   self.m_match_to_join = GroupToken:New()
 end
 
--- DECOMPILER ERROR at PC436: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventPushLeaveMatch)._proto = {
-[1] = {"m_result", "MatchLeaveResult"}
-, 
-[2] = {"m_match_to_join", "GroupToken"}
+CEventPushLeaveMatch._proto = {
+  [1] = {
+    "m_result",
+    "MatchLeaveResult"
+  },
+  [2] = {
+    "m_match_to_join",
+    "GroupToken"
+  }
 }
 _class("CEventRequestEnterInnerGame", CCallRequestEvent)
-_ENV.CEventRequestEnterInnerGame = _ENV.CEventRequestEnterInnerGame
--- DECOMPILER ERROR at PC448: Confused about usage of register: R3 in 'UnsetPending'
+CEventRequestEnterInnerGame = CEventRequestEnterInnerGame
 
-;
-(_ENV.CEventRequestEnterInnerGame).Constructor = function(self)
-  -- function num : 0_11
+function CEventRequestEnterInnerGame:Constructor()
 end
 
--- DECOMPILER ERROR at PC452: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventRequestEnterInnerGame)._proto = {}
+CEventRequestEnterInnerGame._proto = {}
 _class("CEventRequestExitInnerGame", CCallRequestEvent)
-_ENV.CEventRequestExitInnerGame = _ENV.CEventRequestExitInnerGame
--- DECOMPILER ERROR at PC464: Confused about usage of register: R3 in 'UnsetPending'
+CEventRequestExitInnerGame = CEventRequestExitInnerGame
 
-;
-(_ENV.CEventRequestExitInnerGame).Constructor = function(self)
-  -- function num : 0_12
+function CEventRequestExitInnerGame:Constructor()
 end
 
--- DECOMPILER ERROR at PC468: Confused about usage of register: R3 in 'UnsetPending'
+CEventRequestExitInnerGame._proto = {}
+_class("CEventMatchStartLoading", CMatchPushEvent)
+CEventMatchStartLoading = CEventMatchStartLoading
 
-;
-(_ENV.CEventRequestExitInnerGame)._proto = {}
-_class("CEventMatchStartLoading", _ENV.CMatchPushEvent)
-_ENV.CEventMatchStartLoading = _ENV.CEventMatchStartLoading
--- DECOMPILER ERROR at PC481: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventMatchStartLoading).Constructor = function(self)
-  -- function num : 0_13
+function CEventMatchStartLoading:Constructor()
   self.match_type = 0
   self.level_id = 0
 end
 
--- DECOMPILER ERROR at PC495: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventMatchStartLoading)._proto = {
-[1] = {"match_type", "int"}
-, 
-[2] = {"level_id", "int"}
+CEventMatchStartLoading._proto = {
+  [1] = {"match_type", "int"},
+  [2] = {"level_id", "int"}
 }
-_class("CEventUpdateLoadingProgress", _ENV.CMatchPushEvent)
-_ENV.CEventUpdateLoadingProgress = _ENV.CEventUpdateLoadingProgress
--- DECOMPILER ERROR at PC508: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventUpdateLoadingProgress", CMatchPushEvent)
+CEventUpdateLoadingProgress = CEventUpdateLoadingProgress
 
-;
-(_ENV.CEventUpdateLoadingProgress).Constructor = function(self)
-  -- function num : 0_14
+function CEventUpdateLoadingProgress:Constructor()
   self.m_progress = 0
 end
 
--- DECOMPILER ERROR at PC517: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventUpdateLoadingProgress)._proto = {
-[1] = {"m_progress", "int"}
+CEventUpdateLoadingProgress._proto = {
+  [1] = {"m_progress", "int"}
 }
-_class("CEventMatchStart", _ENV.CMatchPushEvent)
-_ENV.CEventMatchStart = _ENV.CEventMatchStart
--- DECOMPILER ERROR at PC530: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventMatchStart", CMatchPushEvent)
+CEventMatchStart = CEventMatchStart
 
-;
-(_ENV.CEventMatchStart).Constructor = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function CEventMatchStart:Constructor()
   self.m_match_to_start = GroupToken:New()
 end
 
--- DECOMPILER ERROR at PC539: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventMatchStart)._proto = {
-[1] = {"m_match_to_start", "GroupToken"}
+CEventMatchStart._proto = {
+  [1] = {
+    "m_match_to_start",
+    "GroupToken"
+  }
 }
-_class("CEventGameOver", _ENV.CMatchPushEvent)
-_ENV.CEventGameOver = _ENV.CEventGameOver
--- DECOMPILER ERROR at PC552: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventGameOver", CMatchPushEvent)
+CEventGameOver = CEventGameOver
 
-;
-(_ENV.CEventGameOver).Constructor = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function CEventGameOver:Constructor()
   self.m_player_pstid = 0
   self.m_result = MatchResult:New()
 end
 
--- DECOMPILER ERROR at PC566: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventGameOver)._proto = {
-[1] = {"m_player_pstid", "int64"}
-, 
-[2] = {"m_result", "MatchResult"}
+CEventGameOver._proto = {
+  [1] = {
+    "m_player_pstid",
+    "int64"
+  },
+  [2] = {
+    "m_result",
+    "MatchResult"
+  }
 }
-_class("CEventBattleLog", _ENV.CMatchPushEvent)
-_ENV.CEventBattleLog = _ENV.CEventBattleLog
--- DECOMPILER ERROR at PC579: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventBattleLog", CMatchPushEvent)
+CEventBattleLog = CEventBattleLog
 
-;
-(_ENV.CEventBattleLog).Constructor = function(self)
-  -- function num : 0_17
+function CEventBattleLog:Constructor()
   self.m_data_point_log = ""
 end
 
--- DECOMPILER ERROR at PC588: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventBattleLog)._proto = {
-[1] = {"m_data_point_log", "string"}
+CEventBattleLog._proto = {
+  [1] = {
+    "m_data_point_log",
+    "string"
+  }
 }
-_class("CEventLuaCommand", _ENV.CMatchPushEvent)
-_ENV.CEventLuaCommand = _ENV.CEventLuaCommand
--- DECOMPILER ERROR at PC601: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventLuaCommand", CMatchPushEvent)
+CEventLuaCommand = CEventLuaCommand
 
-;
-(_ENV.CEventLuaCommand).Constructor = function(self)
-  -- function num : 0_18
+function CEventLuaCommand:Constructor()
   self.cmd = ""
 end
 
--- DECOMPILER ERROR at PC610: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventLuaCommand)._proto = {
-[1] = {"cmd", "string"}
+CEventLuaCommand._proto = {
+  [1] = {"cmd", "string"}
 }
-_class("CEventWaveEnd", _ENV.CMatchPushEvent)
-_ENV.CEventWaveEnd = _ENV.CEventWaveEnd
--- DECOMPILER ERROR at PC623: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventWaveEnd", CMatchPushEvent)
+CEventWaveEnd = CEventWaveEnd
 
-;
-(_ENV.CEventWaveEnd).Constructor = function(self)
-  -- function num : 0_19
+function CEventWaveEnd:Constructor()
   self.wave_index = 0
 end
 
--- DECOMPILER ERROR at PC632: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventWaveEnd)._proto = {
-[1] = {"wave_index", "int"}
+CEventWaveEnd._proto = {
+  [1] = {"wave_index", "int"}
 }
-_class("CEventCommandBase", _ENV.CMatchPushEvent)
-_ENV.CEventCommandBase = _ENV.CEventCommandBase
--- DECOMPILER ERROR at PC645: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventCommandBase", CMatchPushEvent)
+CEventCommandBase = CEventCommandBase
 
-;
-(_ENV.CEventCommandBase).Constructor = function(self)
-  -- function num : 0_20
+function CEventCommandBase:Constructor()
   self.EntityID = 0
   self.RoundCount = 0
   self.ClientWaitInput = 0
@@ -386,94 +427,76 @@ _ENV.CEventCommandBase = _ENV.CEventCommandBase
   self.CmdIndex = 0
 end
 
--- DECOMPILER ERROR at PC674: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventCommandBase)._proto = {
-[1] = {"EntityID", "int"}
-, 
-[2] = {"RoundCount", "int"}
-, 
-[3] = {"ClientWaitInput", "int"}
-, 
-[4] = {"IsAutoFight", "bool"}
-, 
-[5] = {"CmdIndex", "int"}
+CEventCommandBase._proto = {
+  [1] = {"EntityID", "int"},
+  [2] = {"RoundCount", "int"},
+  [3] = {
+    "ClientWaitInput",
+    "int"
+  },
+  [4] = {
+    "IsAutoFight",
+    "bool"
+  },
+  [5] = {"CmdIndex", "int"}
 }
-_class("CEventAutoFightCommand", _ENV.CEventCommandBase)
-_ENV.CEventAutoFightCommand = _ENV.CEventAutoFightCommand
--- DECOMPILER ERROR at PC687: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventAutoFightCommand", CEventCommandBase)
+CEventAutoFightCommand = CEventAutoFightCommand
 
-;
-(_ENV.CEventAutoFightCommand).Constructor = function(self)
-  -- function num : 0_21
+function CEventAutoFightCommand:Constructor()
   self.EnableAutoFight = false
 end
 
--- DECOMPILER ERROR at PC696: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventAutoFightCommand)._proto = {
-[1] = {"EnableAutoFight", "bool"}
+CEventAutoFightCommand._proto = {
+  [1] = {
+    "EnableAutoFight",
+    "bool"
+  }
 }
-_class("CEventCancelChainSkillCommand", _ENV.CEventCommandBase)
-_ENV.CEventCancelChainSkillCommand = _ENV.CEventCancelChainSkillCommand
--- DECOMPILER ERROR at PC709: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventCancelChainSkillCommand", CEventCommandBase)
+CEventCancelChainSkillCommand = CEventCancelChainSkillCommand
 
-;
-(_ENV.CEventCancelChainSkillCommand).Constructor = function(self)
-  -- function num : 0_22
+function CEventCancelChainSkillCommand:Constructor()
 end
 
--- DECOMPILER ERROR at PC713: Confused about usage of register: R3 in 'UnsetPending'
+CEventCancelChainSkillCommand._proto = {}
+_class("CEventCastActiveSkillCommand", CEventCommandBase)
+CEventCastActiveSkillCommand = CEventCastActiveSkillCommand
 
-;
-(_ENV.CEventCancelChainSkillCommand)._proto = {}
-_class("CEventCastActiveSkillCommand", _ENV.CEventCommandBase)
-_ENV.CEventCastActiveSkillCommand = _ENV.CEventCastActiveSkillCommand
--- DECOMPILER ERROR at PC726: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventCastActiveSkillCommand).Constructor = function(self)
-  -- function num : 0_23
+function CEventCastActiveSkillCommand:Constructor()
   self.ActiveSkillID = 0
   self.CasterPstID = 0
   self.CasterTrapEntityID = 0
 end
 
--- DECOMPILER ERROR at PC745: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventCastActiveSkillCommand)._proto = {
-[1] = {"ActiveSkillID", "int"}
-, 
-[2] = {"CasterPstID", "int64"}
-, 
-[3] = {"CasterTrapEntityID", "int"}
+CEventCastActiveSkillCommand._proto = {
+  [1] = {
+    "ActiveSkillID",
+    "int"
+  },
+  [2] = {
+    "CasterPstID",
+    "int64"
+  },
+  [3] = {
+    "CasterTrapEntityID",
+    "int"
+  }
 }
-_class("CEventCastPickUpChainSkillCommand", _ENV.CEventCommandBase)
-_ENV.CEventCastPickUpChainSkillCommand = _ENV.CEventCastPickUpChainSkillCommand
--- DECOMPILER ERROR at PC758: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventCastPickUpChainSkillCommand", CEventCommandBase)
+CEventCastPickUpChainSkillCommand = CEventCastPickUpChainSkillCommand
 
-;
-(_ENV.CEventCastPickUpChainSkillCommand).Constructor = function(self)
-  -- function num : 0_24
+function CEventCastPickUpChainSkillCommand:Constructor()
   self.PickUpPos = 0
 end
 
--- DECOMPILER ERROR at PC767: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventCastPickUpChainSkillCommand)._proto = {
-[1] = {"PickUpPos", "int"}
+CEventCastPickUpChainSkillCommand._proto = {
+  [1] = {"PickUpPos", "int"}
 }
-_class("CEventCastPickUpActiveSkillCommand", _ENV.CEventCommandBase)
-_ENV.CEventCastPickUpActiveSkillCommand = _ENV.CEventCastPickUpActiveSkillCommand
--- DECOMPILER ERROR at PC780: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventCastPickUpActiveSkillCommand", CEventCommandBase)
+CEventCastPickUpActiveSkillCommand = CEventCastPickUpActiveSkillCommand
 
-;
-(_ENV.CEventCastPickUpActiveSkillCommand).Constructor = function(self)
-  -- function num : 0_25
+function CEventCastPickUpActiveSkillCommand:Constructor()
   self.ActiveSkillID = 0
   self.CasterPstID = 0
   self.PickUpPosList = {}
@@ -487,338 +510,294 @@ _ENV.CEventCastPickUpActiveSkillCommand = _ENV.CEventCastPickUpActiveSkillComman
   self.TetrisDirIndex = 0
 end
 
--- DECOMPILER ERROR at PC839: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventCastPickUpActiveSkillCommand)._proto = {
-[1] = {"ActiveSkillID", "int"}
-, 
-[2] = {"CasterPstID", "int64"}
-, 
-[3] = {"PickUpPosList", "list<int>"}
-, 
-[4] = {"PickUpDirList", "list<int>"}
-, 
-[5] = {"LastPickUpDirection", "int"}
-, 
-[6] = {"DirectionPickUpPos", "map<int,int>"}
-, 
-[7] = {"ReflectDir", "int"}
-, 
-[8] = {"CasterTrapEntityID", "int"}
-, 
-[9] = {"PickUpExtraParamList", "list<int>"}
-, 
-[10] = {"PickUpPetPstID", "int64"}
-, 
-[11] = {"TetrisDirIndex", "int"}
+CEventCastPickUpActiveSkillCommand._proto = {
+  [1] = {
+    "ActiveSkillID",
+    "int"
+  },
+  [2] = {
+    "CasterPstID",
+    "int64"
+  },
+  [3] = {
+    "PickUpPosList",
+    "list<int>"
+  },
+  [4] = {
+    "PickUpDirList",
+    "list<int>"
+  },
+  [5] = {
+    "LastPickUpDirection",
+    "int"
+  },
+  [6] = {
+    "DirectionPickUpPos",
+    "map<int,int>"
+  },
+  [7] = {"ReflectDir", "int"},
+  [8] = {
+    "CasterTrapEntityID",
+    "int"
+  },
+  [9] = {
+    "PickUpExtraParamList",
+    "list<int>"
+  },
+  [10] = {
+    "PickUpPetPstID",
+    "int64"
+  },
+  [11] = {
+    "TetrisDirIndex",
+    "int"
+  }
 }
-_class("CEventChangeTeamLeaderCommand", _ENV.CEventCommandBase)
-_ENV.CEventChangeTeamLeaderCommand = _ENV.CEventChangeTeamLeaderCommand
--- DECOMPILER ERROR at PC852: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventChangeTeamLeaderCommand", CEventCommandBase)
+CEventChangeTeamLeaderCommand = CEventChangeTeamLeaderCommand
 
-;
-(_ENV.CEventChangeTeamLeaderCommand).Constructor = function(self)
-  -- function num : 0_26
+function CEventChangeTeamLeaderCommand:Constructor()
   self.OldLeaderPstID = 0
   self.NewLeaderPstID = 0
 end
 
--- DECOMPILER ERROR at PC866: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventChangeTeamLeaderCommand)._proto = {
-[1] = {"OldLeaderPstID", "int64"}
-, 
-[2] = {"NewLeaderPstID", "int64"}
+CEventChangeTeamLeaderCommand._proto = {
+  [1] = {
+    "OldLeaderPstID",
+    "int64"
+  },
+  [2] = {
+    "NewLeaderPstID",
+    "int64"
+  }
 }
-_class("CEventGuideCommand", _ENV.CEventCommandBase)
-_ENV.CEventGuideCommand = _ENV.CEventGuideCommand
--- DECOMPILER ERROR at PC879: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventGuideCommand", CEventCommandBase)
+CEventGuideCommand = CEventGuideCommand
 
-;
-(_ENV.CEventGuideCommand).Constructor = function(self)
-  -- function num : 0_27
+function CEventGuideCommand:Constructor()
   self.PetPstID = 0
   self.GuideStepID = 0
 end
 
--- DECOMPILER ERROR at PC893: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventGuideCommand)._proto = {
-[1] = {"PetPstID", "int64"}
-, 
-[2] = {"GuideStepID", "int"}
+CEventGuideCommand._proto = {
+  [1] = {"PetPstID", "int64"},
+  [2] = {
+    "GuideStepID",
+    "int"
+  }
 }
-_class("CEventMovePathDoneCommand", _ENV.CEventCommandBase)
-_ENV.CEventMovePathDoneCommand = _ENV.CEventMovePathDoneCommand
--- DECOMPILER ERROR at PC906: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventMovePathDoneCommand", CEventCommandBase)
+CEventMovePathDoneCommand = CEventMovePathDoneCommand
 
-;
-(_ENV.CEventMovePathDoneCommand).Constructor = function(self)
-  -- function num : 0_28
+function CEventMovePathDoneCommand:Constructor()
   self.ChainPath = {}
   self.ElementType = 0
   self.ActiveSkillID = 0
   self.CasterPstID = 0
 end
 
--- DECOMPILER ERROR at PC930: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventMovePathDoneCommand)._proto = {
-[1] = {"ChainPath", "list<int>"}
-, 
-[2] = {"ElementType", "int"}
-, 
-[3] = {"ActiveSkillID", "int"}
-, 
-[4] = {"CasterPstID", "int64"}
+CEventMovePathDoneCommand._proto = {
+  [1] = {"ChainPath", "list<int>"},
+  [2] = {
+    "ElementType",
+    "int"
+  },
+  [3] = {
+    "ActiveSkillID",
+    "int"
+  },
+  [4] = {
+    "CasterPstID",
+    "int64"
+  }
 }
-_class("CEventCastChessPetMoveCommand", _ENV.CEventCommandBase)
-_ENV.CEventCastChessPetMoveCommand = _ENV.CEventCastChessPetMoveCommand
--- DECOMPILER ERROR at PC943: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventCastChessPetMoveCommand", CEventCommandBase)
+CEventCastChessPetMoveCommand = CEventCastChessPetMoveCommand
 
-;
-(_ENV.CEventCastChessPetMoveCommand).Constructor = function(self)
-  -- function num : 0_29
+function CEventCastChessPetMoveCommand:Constructor()
   self.casterEntityID = 0
   self.chessPath = {}
 end
 
--- DECOMPILER ERROR at PC957: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventCastChessPetMoveCommand)._proto = {
-[1] = {"casterEntityID", "int"}
-, 
-[2] = {"chessPath", "list<int>"}
+CEventCastChessPetMoveCommand._proto = {
+  [1] = {
+    "casterEntityID",
+    "int"
+  },
+  [2] = {"chessPath", "list<int>"}
 }
-_class("CEventCastChessPetAttackCommand", _ENV.CEventCommandBase)
-_ENV.CEventCastChessPetAttackCommand = _ENV.CEventCastChessPetAttackCommand
--- DECOMPILER ERROR at PC970: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventCastChessPetAttackCommand", CEventCommandBase)
+CEventCastChessPetAttackCommand = CEventCastChessPetAttackCommand
 
-;
-(_ENV.CEventCastChessPetAttackCommand).Constructor = function(self)
-  -- function num : 0_30
+function CEventCastChessPetAttackCommand:Constructor()
   self.casterEntityID = 0
   self.targetEntityList = {}
   self.chessPath = {}
   self.pickUpPos = 0
 end
 
--- DECOMPILER ERROR at PC994: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventCastChessPetAttackCommand)._proto = {
-[1] = {"casterEntityID", "int"}
-, 
-[2] = {"targetEntityList", "list<int>"}
-, 
-[3] = {"chessPath", "list<int>"}
-, 
-[4] = {"pickUpPos", "int"}
+CEventCastChessPetAttackCommand._proto = {
+  [1] = {
+    "casterEntityID",
+    "int"
+  },
+  [2] = {
+    "targetEntityList",
+    "list<int>"
+  },
+  [3] = {"chessPath", "list<int>"},
+  [4] = {"pickUpPos", "int"}
 }
-_class("CEventCastChessPetEndTurnCommand", _ENV.CEventCommandBase)
-_ENV.CEventCastChessPetEndTurnCommand = _ENV.CEventCastChessPetEndTurnCommand
--- DECOMPILER ERROR at PC1007: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventCastChessPetEndTurnCommand", CEventCommandBase)
+CEventCastChessPetEndTurnCommand = CEventCastChessPetEndTurnCommand
 
-;
-(_ENV.CEventCastChessPetEndTurnCommand).Constructor = function(self)
-  -- function num : 0_31
+function CEventCastChessPetEndTurnCommand:Constructor()
   self.turnType = 0
   self.turnEndEntityID = 0
 end
 
--- DECOMPILER ERROR at PC1021: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventCastChessPetEndTurnCommand)._proto = {
-[1] = {"turnType", "int"}
-, 
-[2] = {"turnEndEntityID", "int"}
+CEventCastChessPetEndTurnCommand._proto = {
+  [1] = {"turnType", "int"},
+  [2] = {
+    "turnEndEntityID",
+    "int"
+  }
 }
-_class("CEventCastSelectTeamOrderPositionCommand", _ENV.CEventCommandBase)
-_ENV.CEventCastSelectTeamOrderPositionCommand = _ENV.CEventCastSelectTeamOrderPositionCommand
--- DECOMPILER ERROR at PC1034: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventCastSelectTeamOrderPositionCommand", CEventCommandBase)
+CEventCastSelectTeamOrderPositionCommand = CEventCastSelectTeamOrderPositionCommand
 
-;
-(_ENV.CEventCastSelectTeamOrderPositionCommand).Constructor = function(self)
-  -- function num : 0_32
+function CEventCastSelectTeamOrderPositionCommand:Constructor()
   self.targetPos = 0
   self.casterPstID = 0
 end
 
--- DECOMPILER ERROR at PC1048: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventCastSelectTeamOrderPositionCommand)._proto = {
-[1] = {"targetPos", "int"}
-, 
-[2] = {"casterPstID", "int64"}
+CEventCastSelectTeamOrderPositionCommand._proto = {
+  [1] = {"targetPos", "int"},
+  [2] = {
+    "casterPstID",
+    "int64"
+  }
 }
-_class("CEventCastClearSelectedTeamOrderPositionCommand", _ENV.CEventCommandBase)
-_ENV.CEventCastClearSelectedTeamOrderPositionCommand = _ENV.CEventCastClearSelectedTeamOrderPositionCommand
--- DECOMPILER ERROR at PC1061: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventCastClearSelectedTeamOrderPositionCommand", CEventCommandBase)
+CEventCastClearSelectedTeamOrderPositionCommand = CEventCastClearSelectedTeamOrderPositionCommand
 
-;
-(_ENV.CEventCastClearSelectedTeamOrderPositionCommand).Constructor = function(self)
-  -- function num : 0_33
+function CEventCastClearSelectedTeamOrderPositionCommand:Constructor()
   self.targetPos = 0
   self.casterPstID = 0
 end
 
--- DECOMPILER ERROR at PC1075: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventCastClearSelectedTeamOrderPositionCommand)._proto = {
-[1] = {"targetPos", "int"}
-, 
-[2] = {"casterPstID", "int64"}
+CEventCastClearSelectedTeamOrderPositionCommand._proto = {
+  [1] = {"targetPos", "int"},
+  [2] = {
+    "casterPstID",
+    "int64"
+  }
 }
-_class("CEventClientExceptionReportCommand", _ENV.CEventCommandBase)
-_ENV.CEventClientExceptionReportCommand = _ENV.CEventClientExceptionReportCommand
--- DECOMPILER ERROR at PC1088: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventClientExceptionReportCommand", CEventCommandBase)
+CEventClientExceptionReportCommand = CEventClientExceptionReportCommand
 
-;
-(_ENV.CEventClientExceptionReportCommand).Constructor = function(self)
-  -- function num : 0_34
+function CEventClientExceptionReportCommand:Constructor()
   self.reportType = 0
   self.msg = ""
   self.tag = ""
 end
 
--- DECOMPILER ERROR at PC1107: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventClientExceptionReportCommand)._proto = {
-[1] = {"reportType", "int"}
-, 
-[2] = {"msg", "string"}
-, 
-[3] = {"tag", "string"}
+CEventClientExceptionReportCommand._proto = {
+  [1] = {"reportType", "int"},
+  [2] = {"msg", "string"},
+  [3] = {"tag", "string"}
 }
-local ScanFeatureActiveSkillType = {SummonTrap = 1, ForceMovement = 2, SummonScanTrap = 3}
+local ScanFeatureActiveSkillType = {
+  SummonTrap = 1,
+  ForceMovement = 2,
+  SummonScanTrap = 3
+}
 _enum("ScanFeatureActiveSkillType", ScanFeatureActiveSkillType)
-_class("CEventScanFeatureCommand", _ENV.CEventCommandBase)
-_ENV.CEventScanFeatureCommand = _ENV.CEventScanFeatureCommand
--- DECOMPILER ERROR at PC1131: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventScanFeatureCommand", CEventCommandBase)
+CEventScanFeatureCommand = CEventScanFeatureCommand
 
-;
-(_ENV.CEventScanFeatureCommand).Constructor = function(self)
-  -- function num : 0_35
+function CEventScanFeatureCommand:Constructor()
   self.EntityID = 0
   self.ActiveSkillType = 0
   self.TrapID = 0
 end
 
--- DECOMPILER ERROR at PC1150: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventScanFeatureCommand)._proto = {
-[1] = {"EntityID", "int"}
-, 
-[2] = {"ActiveSkillType", "int"}
-, 
-[3] = {"TrapID", "int"}
+CEventScanFeatureCommand._proto = {
+  [1] = {"EntityID", "int"},
+  [2] = {
+    "ActiveSkillType",
+    "int"
+  },
+  [3] = {"TrapID", "int"}
 }
-_class("CEventChooseMiniMazeWaveAwardCommand", _ENV.CEventCommandBase)
-_ENV.CEventChooseMiniMazeWaveAwardCommand = _ENV.CEventChooseMiniMazeWaveAwardCommand
--- DECOMPILER ERROR at PC1163: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventChooseMiniMazeWaveAwardCommand", CEventCommandBase)
+CEventChooseMiniMazeWaveAwardCommand = CEventChooseMiniMazeWaveAwardCommand
 
-;
-(_ENV.CEventChooseMiniMazeWaveAwardCommand).Constructor = function(self)
-  -- function num : 0_36
+function CEventChooseMiniMazeWaveAwardCommand:Constructor()
   self.relicID = 0
   self.partnerID = 0
   self.isBattleOpening = false
 end
 
--- DECOMPILER ERROR at PC1182: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventChooseMiniMazeWaveAwardCommand)._proto = {
-[1] = {"relicID", "int"}
-, 
-[2] = {"partnerID", "int"}
-, 
-[3] = {"isBattleOpening", "bool"}
+CEventChooseMiniMazeWaveAwardCommand._proto = {
+  [1] = {"relicID", "int"},
+  [2] = {"partnerID", "int"},
+  [3] = {
+    "isBattleOpening",
+    "bool"
+  }
 }
-_class("CEventMiragePickUpCommand", _ENV.CEventCommandBase)
-_ENV.CEventMiragePickUpCommand = _ENV.CEventMiragePickUpCommand
--- DECOMPILER ERROR at PC1195: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventMiragePickUpCommand", CEventCommandBase)
+CEventMiragePickUpCommand = CEventMiragePickUpCommand
 
-;
-(_ENV.CEventMiragePickUpCommand).Constructor = function(self)
-  -- function num : 0_37
+function CEventMiragePickUpCommand:Constructor()
   self.gridPos = 0
 end
 
--- DECOMPILER ERROR at PC1204: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventMiragePickUpCommand)._proto = {
-[1] = {"gridPos", "int"}
+CEventMiragePickUpCommand._proto = {
+  [1] = {"gridPos", "int"}
 }
-_class("CEventMirageForceCloseCommand", _ENV.CEventCommandBase)
-_ENV.CEventMirageForceCloseCommand = _ENV.CEventMirageForceCloseCommand
--- DECOMPILER ERROR at PC1217: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventMirageForceCloseCommand", CEventCommandBase)
+CEventMirageForceCloseCommand = CEventMirageForceCloseCommand
 
-;
-(_ENV.CEventMirageForceCloseCommand).Constructor = function(self)
-  -- function num : 0_38
+function CEventMirageForceCloseCommand:Constructor()
 end
 
--- DECOMPILER ERROR at PC1221: Confused about usage of register: R4 in 'UnsetPending'
+CEventMirageForceCloseCommand._proto = {}
+_class("CEventSwitchPetEquipRefineUICommand", CEventCommandBase)
+CEventSwitchPetEquipRefineUICommand = CEventSwitchPetEquipRefineUICommand
 
-;
-(_ENV.CEventMirageForceCloseCommand)._proto = {}
-_class("CEventSwitchPetEquipRefineUICommand", _ENV.CEventCommandBase)
-_ENV.CEventSwitchPetEquipRefineUICommand = _ENV.CEventSwitchPetEquipRefineUICommand
--- DECOMPILER ERROR at PC1234: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventSwitchPetEquipRefineUICommand).Constructor = function(self)
-  -- function num : 0_39
+function CEventSwitchPetEquipRefineUICommand:Constructor()
   self.UIState = 0
   self.CasterPstID = 0
 end
 
--- DECOMPILER ERROR at PC1248: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventSwitchPetEquipRefineUICommand)._proto = {
-[1] = {"UIState", "int"}
-, 
-[2] = {"CasterPstID", "int64"}
+CEventSwitchPetEquipRefineUICommand._proto = {
+  [1] = {"UIState", "int"},
+  [2] = {
+    "CasterPstID",
+    "int64"
+  }
 }
-_class("CEventPopStarPickUpCommand", _ENV.CEventCommandBase)
-_ENV.CEventPopStarPickUpCommand = _ENV.CEventPopStarPickUpCommand
--- DECOMPILER ERROR at PC1261: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventPopStarPickUpCommand", CEventCommandBase)
+CEventPopStarPickUpCommand = CEventPopStarPickUpCommand
 
-;
-(_ENV.CEventPopStarPickUpCommand).Constructor = function(self)
-  -- function num : 0_40
+function CEventPopStarPickUpCommand:Constructor()
   self.gridPos = 0
   self.connectPieces = {}
 end
 
--- DECOMPILER ERROR at PC1275: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventPopStarPickUpCommand)._proto = {
-[1] = {"gridPos", "int"}
-, 
-[2] = {"connectPieces", "list<int>"}
+CEventPopStarPickUpCommand._proto = {
+  [1] = {"gridPos", "int"},
+  [2] = {
+    "connectPieces",
+    "list<int>"
+  }
 }
 _class("CEventRequestSweepMatch", CCallRequestEvent)
-_ENV.CEventRequestSweepMatch = _ENV.CEventRequestSweepMatch
--- DECOMPILER ERROR at PC1287: Confused about usage of register: R4 in 'UnsetPending'
+CEventRequestSweepMatch = CEventRequestSweepMatch
 
-;
-(_ENV.CEventRequestSweepMatch).Constructor = function(self)
-  -- function num : 0_41
+function CEventRequestSweepMatch:Constructor()
   self.match_type = 0
   self.mission_id = 0
   self.times = 0
@@ -826,97 +805,78 @@ _ENV.CEventRequestSweepMatch = _ENV.CEventRequestSweepMatch
   self.CampaignMissionParams = {}
 end
 
--- DECOMPILER ERROR at PC1316: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventRequestSweepMatch)._proto = {
-[1] = {"match_type", "int"}
-, 
-[2] = {"mission_id", "int"}
-, 
-[3] = {"times", "int"}
-, 
-[4] = {"component_id", "int"}
-, 
-[5] = {"CampaignMissionParams", "map<int,int64>"}
+CEventRequestSweepMatch._proto = {
+  [1] = {"match_type", "int"},
+  [2] = {"mission_id", "int"},
+  [3] = {"times", "int"},
+  [4] = {
+    "component_id",
+    "int"
+  },
+  [5] = {
+    "CampaignMissionParams",
+    "map<int,int64>"
+  }
 }
 _class("CEventReplySweepMatch", CCallReplyEvent)
-_ENV.CEventReplySweepMatch = _ENV.CEventReplySweepMatch
--- DECOMPILER ERROR at PC1328: Confused about usage of register: R4 in 'UnsetPending'
+CEventReplySweepMatch = CEventReplySweepMatch
 
-;
-(_ENV.CEventReplySweepMatch).Constructor = function(self)
-  -- function num : 0_42 , upvalues : _ENV
+function CEventReplySweepMatch:Constructor()
   self.m_ret = 0
   self.m_result = MatchResult:New()
 end
 
--- DECOMPILER ERROR at PC1342: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventReplySweepMatch)._proto = {
-[1] = {"m_ret", "int"}
-, 
-[2] = {"m_result", "MatchResult"}
+CEventReplySweepMatch._proto = {
+  [1] = {"m_ret", "int"},
+  [2] = {
+    "m_result",
+    "MatchResult"
+  }
 }
-_class("CEventSyncClientUnscaledCountDownCommand", _ENV.CEventCommandBase)
-_ENV.CEventSyncClientUnscaledCountDownCommand = _ENV.CEventSyncClientUnscaledCountDownCommand
--- DECOMPILER ERROR at PC1355: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventSyncClientUnscaledCountDownCommand", CEventCommandBase)
+CEventSyncClientUnscaledCountDownCommand = CEventSyncClientUnscaledCountDownCommand
 
-;
-(_ENV.CEventSyncClientUnscaledCountDownCommand).Constructor = function(self)
-  -- function num : 0_43
+function CEventSyncClientUnscaledCountDownCommand:Constructor()
   self.flagID = 0
   self.state = 0
 end
 
--- DECOMPILER ERROR at PC1369: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventSyncClientUnscaledCountDownCommand)._proto = {
-[1] = {"flagID", "int"}
-, 
-[2] = {"state", "int"}
+CEventSyncClientUnscaledCountDownCommand._proto = {
+  [1] = {"flagID", "int"},
+  [2] = {"state", "int"}
 }
-_class("CEventCastSelectInfoActiveSkillCommand", _ENV.CEventCommandBase)
-_ENV.CEventCastSelectInfoActiveSkillCommand = _ENV.CEventCastSelectInfoActiveSkillCommand
--- DECOMPILER ERROR at PC1382: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventCastSelectInfoActiveSkillCommand", CEventCommandBase)
+CEventCastSelectInfoActiveSkillCommand = CEventCastSelectInfoActiveSkillCommand
 
-;
-(_ENV.CEventCastSelectInfoActiveSkillCommand).Constructor = function(self)
-  -- function num : 0_44
+function CEventCastSelectInfoActiveSkillCommand:Constructor()
   self.ActiveSkillID = 0
   self.CasterPstID = 0
   self.SelectInfoList = {}
 end
 
--- DECOMPILER ERROR at PC1401: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventCastSelectInfoActiveSkillCommand)._proto = {
-[1] = {"ActiveSkillID", "int"}
-, 
-[2] = {"CasterPstID", "int64"}
-, 
-[3] = {"SelectInfoList", "list<int>"}
+CEventCastSelectInfoActiveSkillCommand._proto = {
+  [1] = {
+    "ActiveSkillID",
+    "int"
+  },
+  [2] = {
+    "CasterPstID",
+    "int64"
+  },
+  [3] = {
+    "SelectInfoList",
+    "list<int>"
+  }
 }
-_class("CEventTetrisFeatureCommand", _ENV.CEventCommandBase)
-_ENV.CEventTetrisFeatureCommand = _ENV.CEventTetrisFeatureCommand
--- DECOMPILER ERROR at PC1414: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventTetrisFeatureCommand", CEventCommandBase)
+CEventTetrisFeatureCommand = CEventTetrisFeatureCommand
 
-;
-(_ENV.CEventTetrisFeatureCommand).Constructor = function(self)
-  -- function num : 0_45
+function CEventTetrisFeatureCommand:Constructor()
   self.opType = 0
   self.opValue = false
 end
 
--- DECOMPILER ERROR at PC1428: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventTetrisFeatureCommand)._proto = {
-[1] = {"opType", "int"}
-, 
-[2] = {"opValue", "bool"}
+CEventTetrisFeatureCommand._proto = {
+  [1] = {"opType", "int"},
+  [2] = {"opValue", "bool"}
 }
-

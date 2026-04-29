@@ -1,35 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_build_room/ui_aircraft_mat_prefab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftMatPrefab", UICustomWidget)
 UIAircraftMatPrefab = UIAircraftMatPrefab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftMatPrefab.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._waitTime = ((Cfg.cfg_global).shakeWaitTime).IntValue or 2000
-  self._shakeX = ((Cfg.cfg_global).shakeOffsetX).IntValue or 10
-  self._shakeY = ((Cfg.cfg_global).shakeOffsetY).IntValue or 10
+function UIAircraftMatPrefab:OnShow(uiParams)
+  self._waitTime = Cfg.cfg_global.shakeWaitTime.IntValue or 2000
+  self._shakeX = Cfg.cfg_global.shakeOffsetX.IntValue or 10
+  self._shakeY = Cfg.cfg_global.shakeOffsetY.IntValue or 10
   self._roleModule = self:GetModule(RoleModule)
   self._rect = self:GetUIComponent("RectTransform", "rect")
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base)
-  ;
-  (self.uiItem):SetClickCallBack(function(go)
-    -- function num : 0_0_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.Base)
+  self.uiItem:SetClickCallBack(function(go)
     self:itemOnClick(go)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftMatPrefab.SetData = function(self, index, matInfo, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIAircraftMatPrefab:SetData(index, matInfo, callback)
   self._index = index
   self._matInfo = matInfo
   self._callback = callback
@@ -39,113 +25,89 @@ UIAircraftMatPrefab.SetData = function(self, index, matInfo, callback)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftMatPrefab.RefreshData = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._matID = (self._matInfo)._matID
-  local countStr = nil
+function UIAircraftMatPrefab:RefreshData()
+  self._matID = self._matInfo._matID
+  local countStr
   self._text1 = ""
   if self._roleModule then
-    self._matCountHave = (math.floor)((self._roleModule):GetAssetCount((self._matInfo)._matID))
-    self._matCountUpper = (self._matInfo)._count
+    self._matCountHave = math.floor(self._roleModule:GetAssetCount(self._matInfo._matID))
+    self._matCountUpper = self._matInfo._count
     local cuStr = self._matCountUpper
     local chStr = self._matCountHave
     if self._matCountHave > 9999 then
       chStr = "9999+"
     end
     self.chStr = chStr
-    local showStr = nil
-    if self._matCountUpper <= self._matCountHave then
+    local showStr
+    if self._matCountHave >= self._matCountUpper then
       showStr = "<color=#ffd300>" .. chStr .. "</color><color=#ffffff>/</color><color=#ffd300>" .. cuStr .. "</color>"
     else
       showStr = "<color=#ff0000>" .. chStr .. "</color><color=#ffffff>/</color><color=#ffffff>" .. cuStr .. "</color>"
     end
     self._text1 = showStr
   end
-  do
-    local icon = ""
-    local quality = ""
-    local itemId = (self._matInfo)._matID
-    local cfg = (Cfg.cfg_item)[(self._matInfo)._matID]
-    if cfg then
-      quality = cfg.Color
-      icon = cfg.Icon
-    else
-      ;
-      (Log.fatal)("###cfg is nil,item_id = " .. (self._matInfo)._matID)
-    end
-    ;
-    (self.uiItem):SetData({icon = icon, quality = quality, text1 = self._text1, itemId = itemId})
+  local icon = ""
+  local quality = ""
+  local itemId = self._matInfo._matID
+  local cfg = Cfg.cfg_item[self._matInfo._matID]
+  if cfg then
+    quality = cfg.Color
+    icon = cfg.Icon
+  else
+    Log.fatal("###cfg is nil,item_id = " .. self._matInfo._matID)
   end
+  self.uiItem:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = self._text1,
+    itemId = itemId
+  })
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftMatPrefab.CheckCountEnough = function(self)
-  -- function num : 0_3
-  do return self._matCountUpper <= self._matCountHave end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIAircraftMatPrefab:CheckCountEnough()
+  return self._matCountHave >= self._matCountUpper
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftMatPrefab.Blink = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIAircraftMatPrefab:Blink()
   if self._matCountHave < self._matCountUpper then
     if self._tweener then
-      (self._tweener):Kill()
+      self._tweener:Kill()
     end
     if self._event then
-      ((GameGlobal.Timer)()):CancelEvent(self._event)
-      -- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._rect).anchoredPosition = Vector2(0, 0)
+      GameGlobal.Timer():CancelEvent(self._event)
+      self._rect.anchoredPosition = Vector2(0, 0)
     end
     local head = self.chStr
     local tail = self._matCountUpper
     local text1 = "<color=#ff0000>" .. head .. "/" .. tail .. "</color>"
-    ;
-    (self.uiItem):SetData({text1 = text1})
-    self._tweener = ((self._rect):DOShakePosition(1, Vector3(self._shakeX, self._shakeY, 0))):OnComplete(function()
-    -- function num : 0_4_0 , upvalues : self, _ENV
-    self._event = ((GameGlobal.Timer)()):AddEvent(self._waitTime, function()
-      -- function num : 0_4_0_0 , upvalues : self
-      (self.uiItem):SetData({text1 = self._text1})
-    end
-)
-  end
-)
+    self.uiItem:SetData({text1 = text1})
+    self._tweener = self._rect:DOShakePosition(1, Vector3(self._shakeX, self._shakeY, 0)):OnComplete(function()
+      self._event = GameGlobal.Timer():AddEvent(self._waitTime, function()
+        self.uiItem:SetData({
+          text1 = self._text1
+        })
+      end)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftMatPrefab.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIAircraftMatPrefab:OnHide()
   if self._tweener then
-    (self._tweener):Kill()
+    self._tweener:Kill()
   end
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftMatPrefab.Constructor = function(self)
-  -- function num : 0_6
+function UIAircraftMatPrefab:Constructor()
   self._matCountHave = 0
   self._matCountUpper = 0
   self._matID = 0
   self._callback = nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftMatPrefab.Dispose = function(self)
-  -- function num : 0_7
+function UIAircraftMatPrefab:Dispose()
   self._matCountHave = 0
   self._matCountUpper = 0
   self._matID = 0
@@ -155,13 +117,8 @@ UIAircraftMatPrefab.Dispose = function(self)
   self._atlas = nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftMatPrefab.itemOnClick = function(self, go)
-  -- function num : 0_8
+function UIAircraftMatPrefab:itemOnClick(go)
   if self._callback then
-    (self._callback)(self._matID, (go.transform).position)
+    self._callback(self._matID, go.transform.position)
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/monster_id_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MonsterIDComponent", Object)
 MonsterIDComponent = MonsterIDComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterIDComponent.Constructor = function(self, monsterID, raceType, nMonsterType, nGroupID, classID, campType)
-  -- function num : 0_0 , upvalues : _ENV
+function MonsterIDComponent:Constructor(monsterID, raceType, nMonsterType, nGroupID, classID, campType)
   self._monsterID = monsterID
   self._raceType = raceType
   self._monsterType = nMonsterType
@@ -45,548 +38,325 @@ MonsterIDComponent.Constructor = function(self, monsterID, raceType, nMonsterTyp
   self._hasMoveGroupLine = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.HasMoveGroupLine = function(self)
-  -- function num : 0_1
+function MonsterIDComponent:HasMoveGroupLine()
   return self._hasMoveGroupLine
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.SetMoveGroupLineState = function(self, state)
-  -- function num : 0_2
+function MonsterIDComponent:SetMoveGroupLineState(state)
   self._hasMoveGroupLine = state
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.SetMoveGroupID = function(self, groupID)
-  -- function num : 0_3
+function MonsterIDComponent:SetMoveGroupID(groupID)
   self._moveGroupID = groupID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetMoveGroupID = function(self)
-  -- function num : 0_4
+function MonsterIDComponent:GetMoveGroupID()
   return self._moveGroupID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.SetAuraRangeData = function(self, auraRangeSkillID, groupID)
-  -- function num : 0_5
+function MonsterIDComponent:SetAuraRangeData(auraRangeSkillID, groupID)
   self._auraRangeSkillID = auraRangeSkillID
   self._auraGroupID = groupID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetAuraRangeSkillID = function(self)
-  -- function num : 0_6
+function MonsterIDComponent:GetAuraRangeSkillID()
   return self._auraRangeSkillID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetAuraGroupID = function(self)
-  -- function num : 0_7
+function MonsterIDComponent:GetAuraGroupID()
   return self._auraGroupID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetAuraRange = function(self)
-  -- function num : 0_8
+function MonsterIDComponent:GetAuraRange()
   return self._auraRange
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.SetAuraRange = function(self, range)
-  -- function num : 0_9
+function MonsterIDComponent:SetAuraRange(range)
   self._auraRange = range
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.SetUIBossHPBarType = function(self, type)
-  -- function num : 0_10
+function MonsterIDComponent:SetUIBossHPBarType(type)
   if type then
     self._uiBossHPBarType = type
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetUIBossHPBarType = function(self)
-  -- function num : 0_11
+function MonsterIDComponent:GetUIBossHPBarType()
   return self._uiBossHPBarType
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetCampType = function(self)
-  -- function num : 0_12
+function MonsterIDComponent:GetCampType()
   return self._campType
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.SetSnakeBodyEffect = function(self, effectID)
-  -- function num : 0_13
+function MonsterIDComponent:SetSnakeBodyEffect(effectID)
   self._snakeBodyEffectID = effectID
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetSnakeBodyEffectID = function(self)
-  -- function num : 0_14
+function MonsterIDComponent:GetSnakeBodyEffectID()
   return self._snakeBodyEffectID
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.SetDamageSyncMonsterID = function(self, monsterID)
-  -- function num : 0_15
+function MonsterIDComponent:SetDamageSyncMonsterID(monsterID)
   self._monsterDamageSyncMonsterID = monsterID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.SetDamageSyncFindType = function(self, findType)
-  -- function num : 0_16
+function MonsterIDComponent:SetDamageSyncFindType(findType)
   self._monsterDamageSyncFindType = findType
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetDamageSyncFindType = function(self)
-  -- function num : 0_17
+function MonsterIDComponent:GetDamageSyncFindType()
   return self._monsterDamageSyncFindType
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetDamageSyncMonsterID = function(self)
-  -- function num : 0_18
+function MonsterIDComponent:GetDamageSyncMonsterID()
   return self._monsterDamageSyncMonsterID
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.SetDamageSyncEffect = function(self, effectID)
-  -- function num : 0_19
+function MonsterIDComponent:SetDamageSyncEffect(effectID)
   self._monsterDamageSyncEffectID = effectID
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetDamageSyncEffect = function(self)
-  -- function num : 0_20
+function MonsterIDComponent:GetDamageSyncEffect()
   return self._monsterDamageSyncEffectID
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetMonsterID = function(self)
-  -- function num : 0_21
+function MonsterIDComponent:GetMonsterID()
   return self._monsterID
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetMonsterClassID = function(self)
-  -- function num : 0_22
+function MonsterIDComponent:GetMonsterClassID()
   return self._classID
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetMonsterType = function(self)
-  -- function num : 0_23
+function MonsterIDComponent:GetMonsterType()
   return self._monsterType
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetMonsterGroupID = function(self)
-  -- function num : 0_24
+function MonsterIDComponent:GetMonsterGroupID()
   return self._groupID
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetMonsterRaceType = function(self)
-  -- function num : 0_25
+function MonsterIDComponent:GetMonsterRaceType()
   return self._raceType
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetMonsterBlockData = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function MonsterIDComponent:GetMonsterBlockData()
   if MonsterRaceType.Fly == self._raceType then
     return BlockFlag.MonsterFly
   end
   return BlockFlag.MonsterLand
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.IsNeedGridDown = function(self)
-  -- function num : 0_27
+function MonsterIDComponent:IsNeedGridDown()
   return self._gridDownEnable
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.SetNeedGridDownEnable = function(self, enable)
-  -- function num : 0_28
+function MonsterIDComponent:SetNeedGridDownEnable(enable)
   self._gridDownEnable = enable
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.IsNeedOutLine = function(self)
-  -- function num : 0_29
+function MonsterIDComponent:IsNeedOutLine()
   return self._outLineEnable
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.SetNeedOutLineEnable = function(self, enable)
-  -- function num : 0_30
+function MonsterIDComponent:SetNeedOutLineEnable(enable)
   self._outLineEnable = enable
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.InitWorldBossStageData = function(self, stageData)
-  -- function num : 0_31 , upvalues : _ENV
-  for _,v in ipairs(stageData) do
+function MonsterIDComponent:InitWorldBossStageData(stageData)
+  for _, v in ipairs(stageData) do
     local stageIndex = v.stage
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._initStageHPData)[stageIndex] = v.hp
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._initStageBuffData)[stageIndex] = {}
-    for _,buffID in ipairs(v.buffIDList) do
-      (table.insert)((self._initStageBuffData)[stageIndex], buffID)
+    self._initStageHPData[stageIndex] = v.hp
+    self._initStageBuffData[stageIndex] = {}
+    for _, buffID in ipairs(v.buffIDList) do
+      table.insert(self._initStageBuffData[stageIndex], buffID)
     end
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._initStageAttrData)[stageIndex] = (table.cloneconf)(v.attr)
+    self._initStageAttrData[stageIndex] = table.cloneconf(v.attr)
   end
   self._curStage = 1
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.AddMonsterBeHitDamage = function(self, damage)
-  -- function num : 0_32
+function MonsterIDComponent:AddMonsterBeHitDamage(damage)
   self._curBeHitDamage = self._curBeHitDamage + damage
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.WorldBossSwitchStage = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function MonsterIDComponent:WorldBossSwitchStage()
   local needAddBuffList = {}
-  local newAttrData = nil
-  while 1 do
-    while 1 do
-      if (self._initStageHPData)[self._curStage] <= self._curBeHitDamage and self._curStage < (table.count)(self._initStageHPData) and (self._initStageHPData)[self._curStage] <= self._curBeHitDamage and self._curStage < (table.count)(self._initStageHPData) then
-        self._curBeHitDamage = self._curBeHitDamage - (self._initStageHPData)[self._curStage]
-        self._curStage = self._curStage + 1
-        if (table.count)(self._initStageHPData) < self._curStage then
-          self._curStage = (table.count)(self._initStageHPData)
-          -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_STMT
-
+  local newAttrData
+  if self._curBeHitDamage >= self._initStageHPData[self._curStage] and self._curStage < table.count(self._initStageHPData) then
+    while self._curBeHitDamage >= self._initStageHPData[self._curStage] and self._curStage < table.count(self._initStageHPData) do
+      self._curBeHitDamage = self._curBeHitDamage - self._initStageHPData[self._curStage]
+      self._curStage = self._curStage + 1
+      if self._curStage > table.count(self._initStageHPData) then
+        self._curStage = table.count(self._initStageHPData)
+      else
+        self._curRoundChangeStageCount = self._curRoundChangeStageCount + 1
+        local addBuffList = self._initStageBuffData[self._curStage]
+        for _, buffID in ipairs(addBuffList) do
+          table.insert(needAddBuffList, buffID)
         end
+        local attrData = self._initStageAttrData[self._curStage]
+        newAttrData = attrData
       end
     end
-    self._curRoundChangeStageCount = self._curRoundChangeStageCount + 1
-    local addBuffList = (self._initStageBuffData)[self._curStage]
-    for _,buffID in ipairs(addBuffList) do
-      (table.insert)(needAddBuffList, buffID)
-    end
-    local attrData = (self._initStageAttrData)[self._curStage]
-    newAttrData = attrData
   end
-  do
-    return needAddBuffList, newAttrData
-  end
+  return needAddBuffList, newAttrData
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetCurRoundChangeStageCount = function(self)
-  -- function num : 0_34
+function MonsterIDComponent:GetCurRoundChangeStageCount()
   return self._curRoundChangeStageCount
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.ResetCurRoundChangeStageCount = function(self)
-  -- function num : 0_35
+function MonsterIDComponent:ResetCurRoundChangeStageCount()
   self._curRoundChangeStageCount = 0
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.SetWorldBossState = function(self, state)
-  -- function num : 0_36
+function MonsterIDComponent:SetWorldBossState(state)
   self._isWorldBoss = state
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.IsWorldBoss = function(self)
-  -- function num : 0_37
+function MonsterIDComponent:IsWorldBoss()
   return self._isWorldBoss
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetCurStage = function(self)
-  -- function num : 0_38
+function MonsterIDComponent:GetCurStage()
   return self._curStage
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.SetEliteIDArray = function(self, t)
-  -- function num : 0_39 , upvalues : _ENV
+function MonsterIDComponent:SetEliteIDArray(t)
   self._eliteIDArray = t
-  self._eliteIDArrayOri = (table.cloneconf)(t)
+  self._eliteIDArrayOri = table.cloneconf(t)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetEliteIDArray = function(self)
-  -- function num : 0_40
+function MonsterIDComponent:GetEliteIDArray()
   return self._eliteIDArray
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.IsEliteMonster = function(self)
-  -- function num : 0_41
-  do return #self._eliteIDArray > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MonsterIDComponent:IsEliteMonster()
+  return #self._eliteIDArray > 0
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.SetEliteIDArrayAttach = function(self, t)
-  -- function num : 0_42 , upvalues : _ENV
-  (table.appendArray)(self._eliteIDArrayAttach, t)
-  ;
-  (table.appendArray)(self._eliteIDArray, t)
+function MonsterIDComponent:SetEliteIDArrayAttach(t)
+  table.appendArray(self._eliteIDArrayAttach, t)
+  table.appendArray(self._eliteIDArray, t)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetEliteIDArrayAttach = function(self)
-  -- function num : 0_43
+function MonsterIDComponent:GetEliteIDArrayAttach()
   return self._eliteIDArrayAttach
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.ClearEliteIDArrayAttach = function(self)
-  -- function num : 0_44 , upvalues : _ENV
+function MonsterIDComponent:ClearEliteIDArrayAttach()
   if #self._eliteIDArrayAttach == 0 then
-    return 
+    return
   end
   self._eliteIDArrayAttach = {}
-  self._eliteIDArray = (table.cloneconf)(self._eliteIDArrayOri)
+  self._eliteIDArray = table.cloneconf(self._eliteIDArrayOri)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetWorldBossStageAttrData = function(self, stage)
-  -- function num : 0_45
-  local attrData = (self._initStageAttrData)[stage]
+function MonsterIDComponent:GetWorldBossStageAttrData(stage)
+  local attrData = self._initStageAttrData[stage]
   return attrData
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetWorldBossStageHPData = function(self, stage)
-  -- function num : 0_46
-  local hp = (self._initStageHPData)[stage]
+function MonsterIDComponent:GetWorldBossStageHPData(stage)
+  local hp = self._initStageHPData[stage]
   return hp
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.IsMultiHPMonster = function(self)
-  -- function num : 0_47
+function MonsterIDComponent:IsMultiHPMonster()
   return self._multiHP
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetMultiHPStage = function(self)
-  -- function num : 0_48
+function MonsterIDComponent:GetMultiHPStage()
   return self._multiHPStage
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.HasNextMultiStageHPData = function(self)
-  -- function num : 0_49 , upvalues : _ENV
-  do return self._multiHPStage < (table.count)(self._multiHPData) end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MonsterIDComponent:HasNextMultiStageHPData()
+  return self._multiHPStage < table.count(self._multiHPData)
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetNextMultiStageHPData = function(self, curHP)
-  -- function num : 0_50 , upvalues : _ENV
+function MonsterIDComponent:GetNextMultiStageHPData(curHP)
   local changeCount = 0
-  while curHP <= 0 and self._multiHPStage < (table.count)(self._multiHPData) do
+  while curHP <= 0 and self._multiHPStage < table.count(self._multiHPData) do
     self._multiHPStage = self._multiHPStage + 1
-    local newHP = (self._multiHPData)[self._multiHPStage]
+    local newHP = self._multiHPData[self._multiHPStage]
     curHP = curHP + newHP
     changeCount = changeCount + 1
   end
-  do
-    return (self._multiHPData)[self._multiHPStage], curHP, self._multiHPStage, changeCount
-  end
+  return self._multiHPData[self._multiHPStage], curHP, self._multiHPStage, changeCount
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.InitMultiHPData = function(self, hpData)
-  -- function num : 0_51 , upvalues : _ENV
+function MonsterIDComponent:InitMultiHPData(hpData)
   self._multiHP = true
-  for _,v in ipairs(hpData) do
-    (table.insert)(self._multiHPData, v)
+  for _, v in ipairs(hpData) do
+    table.insert(self._multiHPData, v)
   end
   self._multiHPStage = 1
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.AddMultiHPSwitchRound = function(self, round)
-  -- function num : 0_52 , upvalues : _ENV
-  (table.insert)(self._multiHPSwitchRound, round)
+function MonsterIDComponent:AddMultiHPSwitchRound(round)
+  table.insert(self._multiHPSwitchRound, round)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.IsRoundSwitchMultiHP = function(self, round)
-  -- function num : 0_53 , upvalues : _ENV
-  return (table.intable)(self._multiHPSwitchRound, round)
+function MonsterIDComponent:IsRoundSwitchMultiHP(round)
+  return table.intable(self._multiHPSwitchRound, round)
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetDoppelgangerValue = function(self)
-  -- function num : 0_54
+function MonsterIDComponent:GetDoppelgangerValue()
   return self._doppelgangerValue
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.SetDoppelgangerValue = function(self, doppelganger)
-  -- function num : 0_55
+function MonsterIDComponent:SetDoppelgangerValue(doppelganger)
   self._doppelgangerValue = doppelganger
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetDoppelgangerParam = function(self)
-  -- function num : 0_56
-  if not self._doppelgangerParam then
-    return {}
-  end
+function MonsterIDComponent:GetDoppelgangerParam()
+  return self._doppelgangerParam or {}
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.SetDoppelgangerParam = function(self, doppelgangerParam)
-  -- function num : 0_57
+function MonsterIDComponent:SetDoppelgangerParam(doppelgangerParam)
   self._doppelgangerParam = doppelgangerParam
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.GetSkipComplateCondition = function(self)
-  -- function num : 0_58
+function MonsterIDComponent:GetSkipComplateCondition()
   return self._skipComplateCondition
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterIDComponent.SetSkipComplateCondition = function(self, skipComplateCondition)
-  -- function num : 0_59
+function MonsterIDComponent:SetSkipComplateCondition(skipComplateCondition)
   self._skipComplateCondition = skipComplateCondition
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.MonsterID = function(self)
-  -- function num : 0_60
-  return self:GetComponent((self.WEComponentsEnum).MonsterID)
+function Entity:MonsterID()
+  return self:GetComponent(self.WEComponentsEnum.MonsterID)
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasMonsterID = function(self)
-  -- function num : 0_61
-  return self:HasComponent((self.WEComponentsEnum).MonsterID)
+function Entity:HasMonsterID()
+  return self:HasComponent(self.WEComponentsEnum.MonsterID)
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddMonsterID = function(self)
-  -- function num : 0_62 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MonsterID
+function Entity:AddMonsterID()
+  local index = self.WEComponentsEnum.MonsterID
   local component = MonsterIDComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceMonsterID = function(self, monsterID, raceType, nMonsterType, nGroupID, monsterClassID, campType)
-  -- function num : 0_63 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MonsterID
+function Entity:ReplaceMonsterID(monsterID, raceType, nMonsterType, nGroupID, monsterClassID, campType)
+  local index = self.WEComponentsEnum.MonsterID
   local component = MonsterIDComponent:New(monsterID, raceType, nMonsterType, nGroupID, monsterClassID, campType)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveMonsterID = function(self)
-  -- function num : 0_64
+function Entity:RemoveMonsterID()
   if self:HasMonsterID() then
-    self:RemoveComponent((self.WEComponentsEnum).MonsterID)
+    self:RemoveComponent(self.WEComponentsEnum.MonsterID)
   end
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetMonsterIDComponentEnum = function(self)
-  -- function num : 0_65
-  local index = (self.WEComponentsEnum).MonsterID
+function Entity:GetMonsterIDComponentEnum()
+  local index = self.WEComponentsEnum.MonsterID
   return index
 end
 
 local MonsterSyncFindType = {MonsterClassID = 1, MonsterID = 2}
 _enum("MonsterSyncFindType", MonsterSyncFindType)
-

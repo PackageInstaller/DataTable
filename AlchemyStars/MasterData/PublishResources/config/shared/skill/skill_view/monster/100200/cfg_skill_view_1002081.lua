@@ -1,13 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/100200/cfg_skill_view_1002081.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayEffectAtTeamGridAndBindCaster,effectID=290940105,bindCaster=1; PlayEntityLegacyAnimation,animNames=eff_2909401_skill03_in,casterEffectID=290940105; Wait,waitTime=800; PlayEntityLegacyAnimation,animNames=eff_2909401_skill03_loop,casterEffectID=290940105; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayEffectAtTeamGridAndBindCaster,effectID=290940105,bindCaster=1; PlayEntityLegacyAnimation,animNames=eff_2909401_skill03_in,casterEffectID=290940105; Wait,waitTime=800; PlayEntityLegacyAnimation,animNames=eff_2909401_skill03_loop,casterEffectID=290940105; "
+    }
+  }
 }
 return config, "ID", key
-

@@ -1,62 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/ui_xiaolinjia_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXiaoLinJiaRewardItem", UICustomWidget)
 UIXiaoLinJiaRewardItem = UIXiaoLinJiaRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXiaoLinJiaRewardItem.Constructor = function(self)
-  -- function num : 0_0
+function UIXiaoLinJiaRewardItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIXiaoLinJiaRewardItem:OnShow(uiParams)
   self.rewardRoot = self:GetGameObject("rewardItems")
   self.anim = self:GetUIComponent("Animation", "anim")
   self.firstIn = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardItem.SetData = function(self, index, campaign, quest, status, componentInfo, clickCallback, tipsCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIXiaoLinJiaRewardItem:SetData(index, campaign, quest, status, componentInfo, clickCallback, tipsCallback)
   self._index = index
   self._campaign = campaign
   self._quest = quest:QuestInfo()
-  if not status then
-    self._state = CampaignQuestStatus.CQS_Over
-    self._componentInfo = componentInfo
-    self._clickCallback = clickCallback
-    self._tipsCallback = tipsCallback
-    self:_Refresh()
-    self:PlayShowAnim()
-  end
+  self._state = status or CampaignQuestStatus.CQS_Over
+  self._componentInfo = componentInfo
+  self._clickCallback = clickCallback
+  self._tipsCallback = tipsCallback
+  self:_Refresh()
+  self:PlayShowAnim()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardItem.PlayShowAnim = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIXiaoLinJiaRewardItem:PlayShowAnim()
   if self.firstIn then
     self.firstIn = false
     self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, self
-    YIELD(TT, self._index * 50)
-    ;
-    (self.anim):Play("uieffanim_UIXiaoLinJiaQuestionDBItem_in")
-  end
-)
+      YIELD(TT, self._index * 50)
+      self.anim:Play("uieffanim_UIXiaoLinJiaQuestionDBItem_in")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardItem._Refresh = function(self)
-  -- function num : 0_4
+function UIXiaoLinJiaRewardItem:_Refresh()
   self:_SetObject()
   self:_SetTitle()
   self:_SetItem()
@@ -64,92 +40,56 @@ UIXiaoLinJiaRewardItem._Refresh = function(self)
   self:_SetEvent()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardItem._SetEvent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local count = (table.count)((self._quest).rewards)
+function UIXiaoLinJiaRewardItem:_SetEvent()
+  local count = table.count(self._quest.rewards)
   for i = 1, 3 do
-    do
-      local btn = self:GetGameObject("icon" .. i)
-      self:AddUICustomEventListener((UICustomUIEventListener.Get)(btn), UIEvent.Click, function(go)
-    -- function num : 0_5_0 , upvalues : self, i
-    if ((self._quest).rewards)[i] then
-      (self._tipsCallback)((((self._quest).rewards)[i]).assetid, (go.transform).position)
-    end
-  end
-)
-    end
+    local btn = self:GetGameObject("icon" .. i)
+    self:AddUICustomEventListener(UICustomUIEventListener.Get(btn), UIEvent.Click, function(go)
+      if self._quest.rewards[i] then
+        self._tipsCallback(self._quest.rewards[i].assetid, go.transform.position)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardItem._SetObject = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local count = (table.count)((self._quest).rewards)
+function UIXiaoLinJiaRewardItem:_SetObject()
+  local count = table.count(self._quest.rewards)
   for i = 1, 3 do
-    ((((self.rewardRoot).transform):GetChild(i - 1)).gameObject):SetActive(i <= count)
+    self.rewardRoot.transform:GetChild(i - 1).gameObject:SetActive(i <= count)
   end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardItem.PlayAnimationInSequence = function(self, index)
-  -- function num : 0_7 , upvalues : _ENV
+function UIXiaoLinJiaRewardItem:PlayAnimationInSequence(index)
   local animName, duration = "UIeff_UIXiaoLinJiaRewardItem_in1", 367
   local delay = index * 60
-  ;
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", "_root", animName, delay, duration, nil, false)
+  UIWidgetHelper.PlayAnimationInSequence(self, "_anim", "_root", animName, delay, duration, nil, false)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardItem._SetTitle = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local title = (StringTable.Get)((self._quest).CondDesc)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txt_title", title)
+function UIXiaoLinJiaRewardItem:_SetTitle()
+  local title = StringTable.Get(self._quest.CondDesc)
+  UIWidgetHelper.SetLocalizationText(self, "_txt_title", title)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardItem._SetItem = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  for i,roleAsset in pairs((self._quest).rewards) do
-    (UIWidgetHelper.SetLocalizationText)(self, "count" .. i, roleAsset.count)
-    ;
-    (UIWidgetHelper.SetItemIcon)(self, roleAsset.assetid, "icon" .. i)
+function UIXiaoLinJiaRewardItem:_SetItem()
+  for i, roleAsset in pairs(self._quest.rewards) do
+    UIWidgetHelper.SetLocalizationText(self, "count" .. i, roleAsset.count)
+    UIWidgetHelper.SetItemIcon(self, roleAsset.assetid, "icon" .. i)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardItem._SetState = function(self, state)
-  -- function num : 0_10 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-[CampaignQuestStatus.CQS_NotStart] = {}
-, 
-[CampaignQuestStatus.CQS_Accepted] = {"inProgress"}
-, 
-[CampaignQuestStatus.CQS_Completed] = {"canGet"}
-, 
-[CampaignQuestStatus.CQS_Taken] = {"finished"}
-, 
-[CampaignQuestStatus.CQS_Over] = {}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+function UIXiaoLinJiaRewardItem:_SetState(state)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    [CampaignQuestStatus.CQS_NotStart] = {},
+    [CampaignQuestStatus.CQS_Accepted] = {"inProgress"},
+    [CampaignQuestStatus.CQS_Completed] = {"canGet"},
+    [CampaignQuestStatus.CQS_Taken] = {"finished"},
+    [CampaignQuestStatus.CQS_Over] = {}
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardItem.CanGetBtnOnClick = function(self)
-  -- function num : 0_11
+function UIXiaoLinJiaRewardItem:CanGetBtnOnClick()
   if self._clickCallback then
-    (self._clickCallback)(self._quest)
+    self._clickCallback(self._quest)
   end
 end
-
-

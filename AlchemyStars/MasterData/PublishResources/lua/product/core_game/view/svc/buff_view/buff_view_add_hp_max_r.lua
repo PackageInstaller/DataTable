@@ -1,40 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_add_hp_max_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddHPMax", BuffViewBase)
 BuffViewAddHPMax = BuffViewAddHPMax
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddHPMax.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  do
-    if self:ViewParams() then
-      local skipView = (self:ViewParams()).SkipView
-      if skipView == 1 then
-        return 
-      end
-    end
-    local playDamageSvc = (self._world):GetService("PlayDamage")
-    local result = self._buffResult
-    local damageInfo = result:GetDamageInfo()
-    local entityID = result:GetEntityID()
-    local ret = result:GetMaxHPResult()
-    for k,v in pairs(ret) do
-      local e = (self._world):GetEntityByID(k)
-      e:ReplaceMaxHP(v)
-    end
-    local entityWork = (self._world):GetEntityByID(entityID)
-    if result:GetNotAddHP() == 1 then
-      playDamageSvc:_RefreshTeamHP(TT, entityWork, damageInfo)
-      return 
-    end
-    playDamageSvc:UpdateTargetHPBar(TT, entityWork, damageInfo)
-    if result:GetDisplayDamage() == 1 then
-      playDamageSvc:DisplayDamage(TT, entityWork, damageInfo)
+function BuffViewAddHPMax:PlayView(TT)
+  if self:ViewParams() then
+    local skipView = self:ViewParams().SkipView
+    if skipView == 1 then
+      return
     end
   end
+  local playDamageSvc = self._world:GetService("PlayDamage")
+  local result = self._buffResult
+  local damageInfo = result:GetDamageInfo()
+  local entityID = result:GetEntityID()
+  local ret = result:GetMaxHPResult()
+  for k, v in pairs(ret) do
+    local e = self._world:GetEntityByID(k)
+    e:ReplaceMaxHP(v)
+  end
+  local entityWork = self._world:GetEntityByID(entityID)
+  if result:GetNotAddHP() == 1 then
+    playDamageSvc:_RefreshTeamHP(TT, entityWork, damageInfo)
+    return
+  end
+  playDamageSvc:UpdateTargetHPBar(TT, entityWork, damageInfo)
+  if result:GetDisplayDamage() == 1 then
+    playDamageSvc:DisplayDamage(TT, entityWork, damageInfo)
+  end
 end
-
-

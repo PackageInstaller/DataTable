@@ -1,26 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_add_move_scope_record_cmpt.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParam_AddMoveScopeRecordCmpt", SkillEffectParamBase)
 SkillEffectParam_AddMoveScopeRecordCmpt = SkillEffectParam_AddMoveScopeRecordCmpt
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_AddMoveScopeRecordCmpt.Constructor = function(self, t)
-  -- function num : 0_0
-  -- DECOMPILER ERROR at PC7: Unhandled construct in 'MakeBoolean' P3
-
-  self._bSetOff = (t.setOff and t.setOff == 1)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function SkillEffectParam_AddMoveScopeRecordCmpt:Constructor(t)
+  self._bSetOff = t.setOff and t.setOff == 1 or false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_AddMoveScopeRecordCmpt.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_AddMoveScopeRecordCmpt:GetEffectType()
   return SkillEffectType.AddMoveScopeRecordCmpt
 end
-
-

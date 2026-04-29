@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_is_all_move_done.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_is_base")
 _class("ActionIs_AllMoveDone", ActionIsBase)
 ActionIs_AllMoveDone = ActionIs_AllMoveDone
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionIs_AllMoveDone.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionIs_AllMoveDone:OnUpdate()
   local ret = self:_IsAllAIMoveDone()
   if ret then
     self:PrintLog("检所有AI移动结束！")
@@ -19,5 +12,3 @@ ActionIs_AllMoveDone.OnUpdate = function(self)
     return AINewNodeStatus.Failure
   end
 end
-
-

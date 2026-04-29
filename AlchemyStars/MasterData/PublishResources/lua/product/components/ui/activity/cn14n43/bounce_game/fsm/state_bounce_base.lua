@@ -1,47 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/fsm/state_bounce_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateBounceBase", State)
 StateBounceBase = StateBounceBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateBounceBase.Init = function(self)
-  -- function num : 0_0
+function StateBounceBase:Init()
   if not self.coreController then
-    self.coreController = (self.fsm):GetData()
-    self.bounceData = (self.coreController):GetData()
-    self.uiController = (self.coreController):GetUIController()
-    self.monsterPool = (self.coreController):GetMonsterPool()
-    self.objMgr = (self.coreController):GetObjMgr()
-    self.monsterGenerator = (self.coreController):GetMonsterGenerator()
+    self.coreController = self.fsm:GetData()
+    self.bounceData = self.coreController:GetData()
+    self.uiController = self.coreController:GetUIController()
+    self.monsterPool = self.coreController:GetMonsterPool()
+    self.objMgr = self.coreController:GetObjMgr()
+    self.monsterGenerator = self.coreController:GetMonsterGenerator()
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBounceBase.GetPlayer = function(self)
-  -- function num : 0_1
-  return (self.objMgr).player
+function StateBounceBase:GetPlayer()
+  return self.objMgr.player
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBounceBase.Destroy = function(self)
-  -- function num : 0_2
+function StateBounceBase:Destroy()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBounceBase.OnJump = function(self)
-  -- function num : 0_3
+function StateBounceBase:OnJump()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBounceBase.OnAttack = function(self)
-  -- function num : 0_4
+function StateBounceBase:OnAttack()
 end
-
-

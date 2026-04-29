@@ -1,56 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_skill_final_by_target_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillFinalByTargetCount", BuffLogicBase)
 BuffLogicChangeSkillFinalByTargetCount = BuffLogicChangeSkillFinalByTargetCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillFinalByTargetCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._buffInstance)._effectList = logicParam.effectList
-  if not logicParam.rates then
-    self._rates = {}
-  end
+function BuffLogicChangeSkillFinalByTargetCount:Constructor(buffInstance, logicParam)
+  self._buffInstance._effectList = logicParam.effectList
+  self._rates = logicParam.rates or {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillFinalByTargetCount.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeSkillFinalByTargetCount:DoLogic(notify)
   local targetCount = notify:GetTargetCount()
   if targetCount == 0 then
-    return 
+    return
   end
-  local changeValue = (self._rates)[targetCount]
-  if not changeValue then
-    changeValue = (self._rates)[(table.count)(self._rates)]
-  end
+  local changeValue = self._rates[targetCount]
+  changeValue = changeValue or self._rates[table.count(self._rates)]
   local casterEntity = self._entity
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):ChangeSkillFinalParam(casterEntity, self:GetBuffSeq(), paramType, changeValue)
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:ChangeSkillFinalParam(casterEntity, self:GetBuffSeq(), paramType, changeValue)
   end
 end
 
 _class("BuffLogicRemoveSkillFinalByTargetCount", BuffLogicBase)
 BuffLogicRemoveSkillFinalByTargetCount = BuffLogicRemoveSkillFinalByTargetCount
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveSkillFinalByTargetCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveSkillFinalByTargetCount:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveSkillFinalByTargetCount.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function BuffLogicRemoveSkillFinalByTargetCount:DoLogic()
   local casterEntity = self._entity
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillFinalParam(casterEntity, self:GetBuffSeq(), paramType)
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillFinalParam(casterEntity, self:GetBuffSeq(), paramType)
   end
 end
-
-

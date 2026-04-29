@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_scope_forward_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseScopeForwardParam", SkillPhaseParamBase)
 SkillPhaseScopeForwardParam = SkillPhaseScopeForwardParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseScopeForwardParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseScopeForwardParam:Constructor(t)
   self._gridEffectID = t.gridEffectID
   self._gridIntervalTime = t.gridIntervalTime
   self._bestConvertTime = t.bestConvertTime
@@ -23,120 +16,83 @@ SkillPhaseScopeForwardParam.Constructor = function(self, t)
   self._backwardByPickNum = t.backwardByPickNum
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeForwardParam.GetCacheTable = function(self, skillConfigData)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseScopeForwardParam:GetCacheTable(skillConfigData)
   local skillScopeType = skillConfigData:GetSkillScopeType()
   local skillScopeParam = skillConfigData:GetSkillScopeParam()
   local cacheNum = self:_CalcScopeRangeGridNum(skillScopeType, skillScopeParam)
   local t = {}
   if self._gridEffectID and self._gridEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._gridEffectID]).ResPath, cacheNum}
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._gridEffectID].ResPath,
+      cacheNum
+    }
   end
-  if self._hitEffectID and self._hitEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, cacheNum}
+  if self._hitEffectID and 0 < self._hitEffectID then
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      cacheNum
+    }
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeForwardParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseScopeForwardParam:GetPhaseType()
   return SkillViewPhaseType.ScopeForward
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeForwardParam.GetGridEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseScopeForwardParam:GetGridEffectID()
   return self._gridEffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeForwardParam.GetGridIntervalTime = function(self)
-  -- function num : 0_4
+function SkillPhaseScopeForwardParam:GetGridIntervalTime()
   return self._gridIntervalTime
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeForwardParam.GetBestEffectTime = function(self)
-  -- function num : 0_5
+function SkillPhaseScopeForwardParam:GetBestEffectTime()
   return self._bestConvertTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeForwardParam.GetFinishDelayTime = function(self)
-  -- function num : 0_6
+function SkillPhaseScopeForwardParam:GetFinishDelayTime()
   return self._finishDelayTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeForwardParam.HasDamage = function(self)
-  -- function num : 0_7
-  if self._hasDamage ~= 1 then
-    do return not self._hasDamage end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function SkillPhaseScopeForwardParam:HasDamage()
+  if self._hasDamage then
+    return self._hasDamage == 1
+  else
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeForwardParam.HasConvert = function(self)
-  -- function num : 0_8
-  if self._hasConvert ~= 1 then
-    do return not self._hasConvert end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function SkillPhaseScopeForwardParam:HasConvert()
+  if self._hasConvert then
+    return self._hasConvert == 1
+  else
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeForwardParam.GetGridEffectTime = function(self)
-  -- function num : 0_9
+function SkillPhaseScopeForwardParam:GetGridEffectTime()
   return self._gridEffectTime
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeForwardParam.GetHitAnimationName = function(self)
-  -- function num : 0_10
+function SkillPhaseScopeForwardParam:GetHitAnimationName()
   return self._hitAnimationName
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeForwardParam.GetHitEffectID = function(self)
-  -- function num : 0_11
+function SkillPhaseScopeForwardParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeForwardParam.GetEffectDirection = function(self)
-  -- function num : 0_12
+function SkillPhaseScopeForwardParam:GetEffectDirection()
   return self._gridEffectDirection
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeForwardParam.IsBackward = function(self, pickNum)
-  -- function num : 0_13
-  if self._backward ~= 1 then
-    do return not self._backward end
-    if self._backwardByPickNum and pickNum and self._backwardByPickNum == pickNum then
-      return true
-    end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function SkillPhaseScopeForwardParam:IsBackward(pickNum)
+  if self._backward then
+    return self._backward == 1
+  elseif self._backwardByPickNum and pickNum and self._backwardByPickNum == pickNum then
+    return true
   end
+  return false
 end
-
-

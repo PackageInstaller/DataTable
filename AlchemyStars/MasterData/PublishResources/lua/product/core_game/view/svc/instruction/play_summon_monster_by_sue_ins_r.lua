@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_summon_monster_by_sue_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlaySummonMonsterBySummonEveryThingInstruction", BaseInstruction)
 PlaySummonMonsterBySummonEveryThingInstruction = PlaySummonMonsterBySummonEveryThingInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySummonMonsterBySummonEveryThingInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySummonMonsterBySummonEveryThingInstruction:Constructor(paramList)
   self._monsterID = tonumber(paramList.monsterID)
   self._fromCage = tonumber(paramList.fromCage)
   self._cageSummonDelayTime = tonumber(paramList.cageSummonDelayTime)
@@ -18,24 +11,18 @@ PlaySummonMonsterBySummonEveryThingInstruction.Constructor = function(self, para
   self._cageSummonMatAnim = paramList.cageSummonMatAnim
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySummonMonsterBySummonEveryThingInstruction.GetCacheResource = function(self)
-  -- function num : 0_1
+function PlaySummonMonsterBySummonEveryThingInstruction:GetCacheResource()
   local t = {}
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySummonMonsterBySummonEveryThingInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySummonMonsterBySummonEveryThingInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local sPlaySkillInstruction = world:GetService("PlaySkillInstruction")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local summonResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SummonEverything)
   if not summonResultArray then
-    return 
+    return
   end
   local isFromCage = false
   if self._fromCage and self._fromCage == 1 then
@@ -45,38 +32,32 @@ PlaySummonMonsterBySummonEveryThingInstruction.DoInstruction = function(self, TT
   for i = 1, #summonResultArray do
     local summonRes = summonResultArray[i]
     summonRes:SetRenderIsFromCage(isFromCage)
-    do
-      if isFromCage then
-        local renderParam = RenderSummonFromCageParam:New()
-        renderParam.cageSummonDelayTime = self._cageSummonDelayTime
-        renderParam.cageSummonMoveTime = self._cageSummonMoveTime
-        renderParam.cageSummonUnderDis = self._cageSummonUnderDis
-        renderParam.cageSummonMatAnim = self._cageSummonMatAnim
-        summonRes:SetRenderFromCageParam(renderParam)
-      end
-      local summonType = summonRes:GetSummonType()
-      local summonMonsterID = summonRes:GetSummonID()
-      local checkIDPass = false
-      -- DECOMPILER ERROR at PC60: Unhandled construct in 'MakeBoolean' P1
-
-      if self._monsterID and self._monsterID == summonMonsterID then
+    if isFromCage then
+      local renderParam = RenderSummonFromCageParam:New()
+      renderParam.cageSummonDelayTime = self._cageSummonDelayTime
+      renderParam.cageSummonMoveTime = self._cageSummonMoveTime
+      renderParam.cageSummonUnderDis = self._cageSummonUnderDis
+      renderParam.cageSummonMatAnim = self._cageSummonMatAnim
+      summonRes:SetRenderFromCageParam(renderParam)
+    end
+    local summonType = summonRes:GetSummonType()
+    local summonMonsterID = summonRes:GetSummonID()
+    local checkIDPass = false
+    if self._monsterID then
+      if self._monsterID == summonMonsterID then
         checkIDPass = true
       end
+    else
       checkIDPass = true
-      do
-        if summonType == SkillEffectEnum_SummonType.Monster and checkIDPass then
-          local nTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(sPlaySkillInstruction.ShowSummonAction, sPlaySkillInstruction, world, summonRes)
-          ;
-          (table.insert)(listWaitTask, nTaskID)
-        end
-        -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    end
+    if summonType == SkillEffectEnum_SummonType.Monster and checkIDPass then
+      local nTaskID = GameGlobal.TaskManager():CoreGameStartTask(sPlaySkillInstruction.ShowSummonAction, sPlaySkillInstruction, world, summonRes)
+      table.insert(listWaitTask, nTaskID)
     end
   end
-  while (table.count)(listWaitTask) > 0 and not (TaskHelper:GetInstance()):IsAllTaskFinished(listWaitTask) do
-    YIELD(TT)
+  if table.count(listWaitTask) > 0 then
+    while not TaskHelper:GetInstance():IsAllTaskFinished(listWaitTask) do
+      YIELD(TT)
+    end
   end
 end
-
-

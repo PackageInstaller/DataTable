@@ -1,58 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cookgame/cook/make/ui_n0_cook_make_failed_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN0CookMakeFailedController", UIController)
 UIN0CookMakeFailedController = UIN0CookMakeFailedController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN0CookMakeFailedController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIN0CookMakeFailedController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeFailedController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN0CookMakeFailedController:OnShow(uiParams)
   self:InitWidget()
   local name = uiParams[1]
   local tips = uiParams[2]
   local petIcon = uiParams[3]
-  ;
-  (self.name1):SetText((StringTable.Get)(name))
-  ;
-  (self.tips):SetText((StringTable.Get)("str_n0_food_false_tishi", tips))
-  ;
-  (self.head):LoadImage(petIcon)
+  self.name1:SetText(StringTable.Get(name))
+  self.tips:SetText(StringTable.Get("str_n0_food_false_tishi", tips))
+  self.head:LoadImage(petIcon)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeFailedController.InitWidget = function(self)
-  -- function num : 0_2
+function UIN0CookMakeFailedController:InitWidget()
   self.name1 = self:GetUIComponent("UILocalizationText", "name1")
   self.tips = self:GetUIComponent("UILocalizationText", "tips")
   self.head = self:GetUIComponent("RawImageLoader", "head")
   self.animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeFailedController.MaskOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN0CookMakeFailedController:MaskOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, _ENV
     local lockName = "UIN0CookMakeFailedController:MaskOnClick"
     self:Lock(lockName)
-    ;
-    (self.animation):Play("uieff_N0_CookMakeFailedController_out")
+    self.animation:Play("uieff_N0_CookMakeFailedController_out")
     YIELD(TT, 160)
     self:CloseDialog()
     self:UnLock(lockName)
-  end
-)
+  end)
 end
-
-

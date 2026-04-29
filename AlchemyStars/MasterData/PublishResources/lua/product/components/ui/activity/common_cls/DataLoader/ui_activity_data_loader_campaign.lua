@@ -1,41 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_cls/DataLoader/ui_activity_data_loader_campaign.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_activity_data_loader_base")
 _class("UIActivityDataLoader_Campaign", UIActivityDataLoaderBase)
 UIActivityDataLoader_Campaign = UIActivityDataLoader_Campaign
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityDataLoader_Campaign.SetData = function(self, params)
-  -- function num : 0_0
-  if params then
-    self._campaignType = params.campaign_type
-    if not params or not params.component_ids then
-      self._componentIds = {}
-      if params then
-        self._campaignId = params.campaign_id
-      end
-    end
-  end
+function UIActivityDataLoader_Campaign:SetData(params)
+  self._campaignType = params and params.campaign_type
+  self._componentIds = params and params.component_ids or {}
+  self._campaignId = params and params.campaign_id
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDataLoader_Campaign.LoadData = function(self, TT, res)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityDataLoader_Campaign:LoadData(TT, res)
   self._campaign = UIActivityCampaign:New()
   if not self._campaignId then
-    (self._campaign):LoadCampaignInfo(TT, res, self._campaignType, (table.unpack)(self._componentIds))
+    self._campaign:LoadCampaignInfo(TT, res, self._campaignType, table.unpack(self._componentIds))
   else
-    ;
-    (self._campaign):LoadCampaignInfo_Id(TT, res, self._campaignId, (table.unpack)(self._componentIds))
+    self._campaign:LoadCampaignInfo_Id(TT, res, self._campaignId, table.unpack(self._componentIds))
   end
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, nil, nil)
+    self._campaign:CheckErrorCode(res.m_result, nil, nil)
   end
   return self._campaign
 end
-
-

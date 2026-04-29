@@ -1,62 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/collect_card/send/ui_collect_card_send.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICollectCardSend", UIController)
 UICollectCardSend = UICollectCardSend
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICollectCardSend.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._socialModule = (GameGlobal.GetModule)(SocialModule)
-  if not (self._socialModule):GetFriendList(TT) then
-    self._allFriendList = {}
-    self._itemCountPerRow = 1
-    self._PersonSendCardNUm = ((Cfg.cfg_global).PersonSendCardNUm).IntValue
-    self._SendCardNum = ((Cfg.cfg_global).SendCardNum).IntValue
-    self._cardCom = uiParams[1]
-    self._campID = uiParams[2]
-    self._comInfo = (self._cardCom):GetComponentInfo()
-    self:GetFilterList()
-    self:GetFriendList()
-  end
+function UICollectCardSend:LoadDataOnEnter(TT, res, uiParams)
+  self._socialModule = GameGlobal.GetModule(SocialModule)
+  self._allFriendList = self._socialModule:GetFriendList(TT) or {}
+  self._itemCountPerRow = 1
+  self._PersonSendCardNUm = Cfg.cfg_global.PersonSendCardNUm.IntValue
+  self._SendCardNum = Cfg.cfg_global.SendCardNum.IntValue
+  self._cardCom = uiParams[1]
+  self._campID = uiParams[2]
+  self._comInfo = self._cardCom:GetComponentInfo()
+  self:GetFilterList()
+  self:GetFriendList()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.GetFilterList = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICollectCardSend:GetFilterList()
   self._filterList = {}
-  local filterMap = (self._comInfo).send_card_info
-  if filterMap and (table.count)(filterMap) then
-    for pstid,count in pairs(filterMap) do
-      if self._PersonSendCardNUm <= count then
-        (table.insert)(self._filterList, pstid)
+  local filterMap = self._comInfo.send_card_info
+  if filterMap and table.count(filterMap) then
+    for pstid, count in pairs(filterMap) do
+      if count >= self._PersonSendCardNUm then
+        table.insert(self._filterList, pstid)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.GetFriendList = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICollectCardSend:GetFriendList()
   self._friendList = {}
   local tmpList = {}
-  for pstId,data in pairs(self._allFriendList) do
+  for pstId, data in pairs(self._allFriendList) do
     local simpleInfo = data.simple_info
-    ;
-    (table.insert)(tmpList, simpleInfo)
+    table.insert(tmpList, simpleInfo)
   end
-  for key,value in pairs(tmpList) do
-    if not (table.icontains)(self._filterList, value.pstid) then
-      (table.insert)(self._friendList, value)
+  for key, value in pairs(tmpList) do
+    if not table.icontains(self._filterList, value.pstid) then
+      table.insert(self._friendList, value)
     end
   end
-  ;
-  (table.sort)(self._friendList, function(a, b)
-    -- function num : 0_2_0
+  table.sort(self._friendList, function(a, b)
     local weight_a = 0
     local weight_b = 0
     if a.is_online then
@@ -65,7 +47,7 @@ UICollectCardSend.GetFriendList = function(self)
     if b.is_online then
       weight_b = weight_b + 100
     end
-    if b.last_logout_time < a.last_logout_time then
+    if a.last_logout_time > b.last_logout_time then
       weight_a = weight_a + 10
     else
       weight_b = weight_b + 10
@@ -75,16 +57,11 @@ UICollectCardSend.GetFriendList = function(self)
     else
       weight_b = weight_b + 1
     end
-    do return weight_b < weight_a end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    return weight_a > weight_b
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.OnShow = function(self, uiParam)
-  -- function num : 0_3 , upvalues : _ENV
+function UICollectCardSend:OnShow(uiParam)
   self._selectFriend = nil
   self._selectFriendIdx = 0
   self._selectCard = nil
@@ -94,10 +71,7 @@ UICollectCardSend.OnShow = function(self, uiParam)
   self:AttachEvent(GameEventType.OnCollectCardSelectCard, self.OnCollectCardSelectCard)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.GetComponents = function(self)
-  -- function num : 0_4
+function UICollectCardSend:GetComponents()
   self._friendScrollView = self:GetUIComponent("UIDynamicScrollView", "FriendList")
   self._needCardPool = self:GetUIComponent("UISelectObjectPath", "NeedCardPool")
   self._normalCardPool = self:GetUIComponent("UISelectObjectPath", "NormalCardPool")
@@ -112,18 +86,12 @@ UICollectCardSend.GetComponents = function(self)
   self._contentRT = self:GetUIComponent("RectTransform", "Content")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.OnValue = function(self)
-  -- function num : 0_5
+function UICollectCardSend:OnValue()
   self:SetFriendList()
   self:SetSelectInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend._InitListView = function(self, scrollView, index)
-  -- function num : 0_6
+function UICollectCardSend:_InitListView(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -132,61 +100,41 @@ UICollectCardSend._InitListView = function(self, scrollView, index)
   local luaUnit = rowPool:SpawnObject("UICollectCardFriendItem")
   if luaUnit then
     local luaIdx = index + 1
-    local info = (self._friendList)[luaIdx]
+    local info = self._friendList[luaIdx]
     luaUnit:SetData(luaIdx, info, function(idx)
-    -- function num : 0_6_0 , upvalues : self
-    self:OnFriendItemClick(idx)
+      self:OnFriendItemClick(idx)
+    end, self._selectFriendIdx)
   end
-, self._selectFriendIdx)
-  end
-  do
-    return item
-  end
+  return item
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.SetFriendList = function(self)
-  -- function num : 0_7
+function UICollectCardSend:SetFriendList()
   if self._friendScrollViewInited then
-    (self._friendScrollView):SetListItemCount(#self._friendList)
-    ;
-    (self._friendScrollView):RefreshAllShownItem()
-    ;
-    (self._friendScrollView):MovePanelToItemIndex(0, 0)
+    self._friendScrollView:SetListItemCount(#self._friendList)
+    self._friendScrollView:RefreshAllShownItem()
+    self._friendScrollView:MovePanelToItemIndex(0, 0)
   else
-    ;
-    (self._friendScrollView):InitListView(#self._friendList, function(scrollView, index)
-    -- function num : 0_7_0 , upvalues : self
-    return self:_InitListView(scrollView, index)
-  end
-)
+    self._friendScrollView:InitListView(#self._friendList, function(scrollView, index)
+      return self:_InitListView(scrollView, index)
+    end)
     self._friendScrollViewInited = true
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.OnFriendItemClick = function(self, idx)
-  -- function num : 0_8 , upvalues : _ENV
-  if (self._friendList)[idx] == self._selectFriend then
-    return 
+function UICollectCardSend:OnFriendItemClick(idx)
+  if self._friendList[idx] == self._selectFriend then
+    return
   else
-    self._selectFriend = (self._friendList)[idx]
+    self._selectFriend = self._friendList[idx]
     self._selectFriendIdx = idx
     self._selectCard = nil
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCollectCardSelectCard, self._selectCard)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCollectCardSelectCard, self._selectCard)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCollectCardSelectFriend, idx)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCollectCardSelectFriend, idx)
   self:SetSelectInfo()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.SetSelectInfo = function(self)
-  -- function num : 0_9
+function UICollectCardSend:SetSelectInfo()
   if self._selectFriend then
     self:SetCardList()
   else
@@ -194,99 +142,68 @@ UICollectCardSend.SetSelectInfo = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.GetMyCards = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local allCards = (self._comInfo).card
+function UICollectCardSend:GetMyCards()
+  local allCards = self._comInfo.card
   local cardList = {}
-  for key,value in pairs(allCards) do
-    if self:IsNormalCard(key) and value > 1 then
+  for key, value in pairs(allCards) do
+    if self:IsNormalCard(key) and 1 < value then
       local tab = {}
       tab.id = key
       tab.count = value - 1
-      ;
-      (table.insert)(cardList, tab)
+      table.insert(cardList, tab)
     end
   end
   return cardList
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.IsNormalCard = function(self, id)
-  -- function num : 0_11 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_collect_card)[id]
+function UICollectCardSend:IsNormalCard(id)
+  local cfg = Cfg.cfg_component_collect_card[id]
   if cfg.Type == 1 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.GetCards = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UICollectCardSend:GetCards()
   local needCards = {}
   local normalCards = {}
   local myCards = self:GetMyCards()
   self._cards = {}
-  for key,value in pairs(myCards) do
+  for key, value in pairs(myCards) do
     local id = value.id
-    if ((self._selectFriend).collect_cards)[self._campID] then
-      if (((self._selectFriend).collect_cards)[self._campID])[id] then
-        (table.insert)(normalCards, value)
+    if self._selectFriend.collect_cards[self._campID] then
+      if self._selectFriend.collect_cards[self._campID][id] then
+        table.insert(normalCards, value)
       else
-        ;
-        (table.insert)(needCards, value)
+        table.insert(needCards, value)
       end
     else
-      ;
-      (table.insert)(needCards, value)
+      table.insert(needCards, value)
     end
   end
-  if needCards and #needCards > 0 then
+  if needCards and 0 < #needCards then
     self:SortCard(needCards)
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._cards).need = needCards
+    self._cards.need = needCards
   end
-  if normalCards and #normalCards > 0 then
+  if normalCards and 0 < #normalCards then
     self:SortCard(normalCards)
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._cards).normal = normalCards
+    self._cards.normal = normalCards
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.SortCard = function(self, cardList)
-  -- function num : 0_13 , upvalues : _ENV
-  (table.sort)(cardList, function(a, b)
-    -- function num : 0_13_0
-    do return a.id < b.id end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+function UICollectCardSend:SortCard(cardList)
+  table.sort(cardList, function(a, b)
+    return a.id < b.id
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.SetCardList = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (self._scrollRect):StopMovement()
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._contentRT).anchoredPosition = Vector2(0, 0)
+function UICollectCardSend:SetCardList()
+  self._scrollRect:StopMovement()
+  self._contentRT.anchoredPosition = Vector2(0, 0)
   self:GetCards()
-  if self._cards and (table.count)(self._cards) > 0 then
-    (self._noCardGo):SetActive(false)
-    ;
-    (self._cardGo):SetActive(true)
+  if self._cards and 0 < table.count(self._cards) then
+    self._noCardGo:SetActive(false)
+    self._cardGo:SetActive(true)
     self:SetNeedCardList()
     self:SetNormalCardList()
     self:SetScrollRectEnable()
@@ -296,248 +213,168 @@ UICollectCardSend.SetCardList = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.SetScrollRectEnable = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UICollectCardSend:SetScrollRectEnable()
   local normalLen = 0
-  if (self._cards).normal then
-    normalLen = (table.count)((self._cards).normal)
+  if self._cards.normal then
+    normalLen = table.count(self._cards.normal)
   end
   local needLen = 0
-  if (self._cards).need then
-    needLen = (table.count)((self._cards).need)
+  if self._cards.need then
+    needLen = table.count(self._cards.need)
   end
   local enable = true
   local needRow = 0
-  if needLen > 0 then
+  if 0 < needLen then
     needRow = (needLen - 1) // 3 + 1
   end
   local normalRow = 0
-  if normalLen > 0 then
+  if 0 < normalLen then
     normalRow = (normalLen - 1) // 3 + 1
   end
-  local row = normalRow + (needRow)
+  local row = normalRow + needRow
   if row <= 2 then
     enable = false
   end
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._scrollRect).enabled = enable
+  self._scrollRect.enabled = enable
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.SetNoCards = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  (self._noCardGo):SetActive(true)
-  ;
-  (self._cardGo):SetActive(false)
-  local tips = (StringTable.Get)("str_collect_card_friend_tips10")
-  ;
-  (self._noCardDesc):SetText(tips)
+function UICollectCardSend:SetNoCards()
+  self._noCardGo:SetActive(true)
+  self._cardGo:SetActive(false)
+  local tips = StringTable.Get("str_collect_card_friend_tips10")
+  self._noCardDesc:SetText(tips)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.SetNoSelectFriend = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  (self._noCardGo):SetActive(true)
-  ;
-  (self._cardGo):SetActive(false)
-  local tips = (StringTable.Get)("str_collect_card_friend_tips4")
-  ;
-  (self._noCardDesc):SetText(tips)
+function UICollectCardSend:SetNoSelectFriend()
+  self._noCardGo:SetActive(true)
+  self._cardGo:SetActive(false)
+  local tips = StringTable.Get("str_collect_card_friend_tips4")
+  self._noCardDesc:SetText(tips)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.SetNeedCardList = function(self)
-  -- function num : 0_18
-  local show = not (self._cards).need or #(self._cards).need > 0
-  ;
-  (self._needLayout):SetActive(show)
+function UICollectCardSend:SetNeedCardList()
+  local show = self._cards.need and #self._cards.need > 0
+  self._needLayout:SetActive(show)
   if show then
-    (self._needCardPool):SpawnObjects("UICollectCardSendCardItem", #(self._cards).need)
-    local pools = (self._needCardPool):GetAllSpawnList()
-    for i = 1, #(self._cards).need do
-      local card = ((self._cards).need)[i]
+    self._needCardPool:SpawnObjects("UICollectCardSendCardItem", #self._cards.need)
+    local pools = self._needCardPool:GetAllSpawnList()
+    for i = 1, #self._cards.need do
+      local card = self._cards.need[i]
       local item = pools[i]
       item:SetData(i, card, function(cardid)
-    -- function num : 0_18_0 , upvalues : self
-    self:SelectCard(cardid)
-  end
-)
+        self:SelectCard(cardid)
+      end)
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.SelectCard = function(self, id)
-  -- function num : 0_19 , upvalues : _ENV
+function UICollectCardSend:SelectCard(id)
   if id == self._selectCard then
     self._selectCard = nil
+  elseif self._selectCard == nil then
+    self._selectCard = id
   else
-    if self._selectCard == nil then
-      self._selectCard = id
-    else
-      local tips = (StringTable.Get)("str_collect_card_friend_tips9")
-      ;
-      (ToastManager.ShowToast)(tips)
-      return 
-    end
+    local tips = StringTable.Get("str_collect_card_friend_tips9")
+    ToastManager.ShowToast(tips)
+    return
   end
-  do
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCollectCardSelectCard, self._selectCard)
-  end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCollectCardSelectCard, self._selectCard)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.OnCollectCardSelectCard = function(self)
-  -- function num : 0_20
-  (self._sendBtn):SetActive(self._selectCard ~= nil)
-  ;
-  (self._sendBtnHide):SetActive(self._selectCard == nil)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UICollectCardSend:OnCollectCardSelectCard()
+  self._sendBtn:SetActive(self._selectCard ~= nil)
+  self._sendBtnHide:SetActive(self._selectCard == nil)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.SetNormalCardList = function(self)
-  -- function num : 0_21
-  local show = not (self._cards).normal or #(self._cards).normal > 0
-  ;
-  (self._normalLayout):SetActive(show)
+function UICollectCardSend:SetNormalCardList()
+  local show = self._cards.normal and #self._cards.normal > 0
+  self._normalLayout:SetActive(show)
   if show then
-    (self._normalCardPool):SpawnObjects("UICollectCardSendCardItem", #(self._cards).normal)
-    local pools = (self._normalCardPool):GetAllSpawnList()
-    for i = 1, #(self._cards).normal do
-      local card = ((self._cards).normal)[i]
+    self._normalCardPool:SpawnObjects("UICollectCardSendCardItem", #self._cards.normal)
+    local pools = self._normalCardPool:GetAllSpawnList()
+    for i = 1, #self._cards.normal do
+      local card = self._cards.normal[i]
       local item = pools[i]
       item:SetData(i, card, function(cardid)
-    -- function num : 0_21_0 , upvalues : self
-    self:SelectCard(cardid)
-  end
-)
+        self:SelectCard(cardid)
+      end)
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.CheckSendMax = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local filterMap = (self._comInfo).send_card_info
+function UICollectCardSend:CheckSendMax()
+  local filterMap = self._comInfo.send_card_info
   local sendCount = 0
-  if filterMap and (table.count)(filterMap) > 0 then
-    for key,value in pairs(filterMap) do
+  if filterMap and 0 < table.count(filterMap) then
+    for key, value in pairs(filterMap) do
       sendCount = sendCount + value
     end
   end
-  do
-    do return self._SendCardNum <= sendCount end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
+  return sendCount >= self._SendCardNum
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.SendBtnOnClick = function(self, go)
-  -- function num : 0_23 , upvalues : _ENV
-  do
-    if self:CheckSendMax() then
-      local tips = (StringTable.Get)("str_collect_card_gift_max")
-      ;
-      (ToastManager.ShowToast)(tips)
-      return 
-    end
-    local cardCfg = (Cfg.cfg_component_collect_card)[self._selectCard]
-    local cardName = cardCfg.Name
-    local friendName = nil
-    if (string.isnullorempty)((self._selectFriend).remark_name) then
-      friendName = (self._selectFriend).nick
-    else
-      friendName = (self._selectFriend).remark_name
-    end
-    local desc = (StringTable.Get)("str_collect_card_friend_tips12", (StringTable.Get)(cardName), friendName)
-    self:ShowDialog("UICollectCardPop", desc, function()
-    -- function num : 0_23_0 , upvalues : self
+function UICollectCardSend:SendBtnOnClick(go)
+  if self:CheckSendMax() then
+    local tips = StringTable.Get("str_collect_card_gift_max")
+    ToastManager.ShowToast(tips)
+    return
+  end
+  local cardCfg = Cfg.cfg_component_collect_card[self._selectCard]
+  local cardName = cardCfg.Name
+  local friendName
+  if string.isnullorempty(self._selectFriend.remark_name) then
+    friendName = self._selectFriend.nick
+  else
+    friendName = self._selectFriend.remark_name
+  end
+  local desc = StringTable.Get("str_collect_card_friend_tips12", StringTable.Get(cardName), friendName)
+  self:ShowDialog("UICollectCardPop", desc, function()
     self:HandleSendCardReq()
-  end
-)
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.HandleSendCardReq = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UICollectCardSend:HandleSendCardReq()
   if self._selectFriend and self._selectCard then
     self:Lock("UICollectCardSend:HandleSendCardReq")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.OnHandleSendCardReq, self)
+    GameGlobal.TaskManager():StartTask(self.OnHandleSendCardReq, self)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.OnHandleSendCardReq = function(self, TT)
-  -- function num : 0_25 , upvalues : _ENV
+function UICollectCardSend:OnHandleSendCardReq(TT)
   local res = AsyncRequestRes:New()
-  local pstid = (self._selectFriend).pstid
-  res = (self._cardCom):HandleSendCardReq(TT, res, pstid, self._selectCard)
+  local pstid = self._selectFriend.pstid
+  res = self._cardCom:HandleSendCardReq(TT, res, pstid, self._selectCard)
   self:UnLock("UICollectCardSend:HandleSendCardReq")
   if res and res:GetSucc() then
-    local tips = (StringTable.Get)("str_collect_card_friend_tips13")
-    ;
-    (ToastManager.ShowToast)(tips)
-    ;
-    (Log.debug)("###[UICollectCardSend] start refresh ui view !")
+    local tips = StringTable.Get("str_collect_card_friend_tips13")
+    ToastManager.ShowToast(tips)
+    Log.debug("###[UICollectCardSend] start refresh ui view !")
     self:ClearSelectFriend()
     self._selectCard = nil
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCollectCardSelectCard, self._selectCard)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCollectCardSelectCard, self._selectCard)
     self._cards = nil
     self:GetFilterList()
     self:GetFriendList()
     self:OnValue()
   else
-    do
-      local result = res:GetResult()
-      ;
-      (Log.error)("###[UICollectCardSend] OnHandleSendCardReq fail ! result:", result)
-    end
+    local result = res:GetResult()
+    Log.error("###[UICollectCardSend] OnHandleSendCardReq fail ! result:", result)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.ClearSelectFriend = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  local pstid = (self._selectFriend).pstid
-  local filterMap = (self._comInfo).send_card_info
-  if filterMap and (table.count)(filterMap) then
+function UICollectCardSend:ClearSelectFriend()
+  local pstid = self._selectFriend.pstid
+  local filterMap = self._comInfo.send_card_info
+  if filterMap and table.count(filterMap) then
     local info = filterMap[pstid]
-    if info and self._PersonSendCardNUm <= info then
+    if info and info >= self._PersonSendCardNUm then
       self._selectFriend = nil
       self._selectFriendIdx = 0
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCollectCardSelectFriend, 0)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCollectCardSelectFriend, 0)
     end
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardSend.CloseBtnOnClick = function(self, go)
-  -- function num : 0_27
+function UICollectCardSend:CloseBtnOnClick(go)
   self:CloseDialog()
 end
-
-

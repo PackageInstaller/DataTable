@@ -1,114 +1,75 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_march_forward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectMarchForwardResult", SkillEffectResultBase)
 SkillEffectMarchForwardResult = SkillEffectMarchForwardResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectMarchForwardResult.Constructor = function(self, walkResultList, isDead, isEnd)
-  -- function num : 0_0
+function SkillEffectMarchForwardResult:Constructor(walkResultList, isDead, isEnd)
   self._walkResultList = walkResultList
   self._isDead = isDead
   self._isMarchEnd = isEnd
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMarchForwardResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectMarchForwardResult:GetEffectType()
   return SkillEffectType.MarchForward
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMarchForwardResult.GetWalkResultList = function(self)
-  -- function num : 0_2
+function SkillEffectMarchForwardResult:GetWalkResultList()
   return self._walkResultList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMarchForwardResult.IsCasterDead = function(self)
-  -- function num : 0_3
+function SkillEffectMarchForwardResult:IsCasterDead()
   return self._isDead
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMarchForwardResult.IsMarchEnd = function(self)
-  -- function num : 0_4
+function SkillEffectMarchForwardResult:IsMarchEnd()
   return self._isMarchEnd
 end
 
 _class("MarchForwardResult", Object)
 MarchForwardResult = MarchForwardResult
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
 
-MarchForwardResult.Constructor = function(self)
-  -- function num : 0_5
+function MarchForwardResult:Constructor()
   self._walkPos = nil
   self._moveEntities = {}
   self._convertInfoList = {}
   self._trapSkillResults = {}
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MarchForwardResult.GetWalkPos = function(self)
-  -- function num : 0_6
+function MarchForwardResult:GetWalkPos()
   return self._walkPos
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MarchForwardResult.SetWalkPos = function(self, pos)
-  -- function num : 0_7
+function MarchForwardResult:SetWalkPos(pos)
   self._walkPos = pos
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MarchForwardResult.AddMoveEntity = function(self, eid, oldPos, newPos)
-  -- function num : 0_8 , upvalues : _ENV
-  (table.insert)(self._moveEntities, {eid, oldPos, newPos})
+function MarchForwardResult:AddMoveEntity(eid, oldPos, newPos)
+  table.insert(self._moveEntities, {
+    eid,
+    oldPos,
+    newPos
+  })
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MarchForwardResult.GetMoveEntities = function(self)
-  -- function num : 0_9
+function MarchForwardResult:GetMoveEntities()
   return self._moveEntities
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MarchForwardResult.AddConvertInfo = function(self, pos, newColor)
-  -- function num : 0_10 , upvalues : _ENV
-  (table.insert)(self._convertInfoList, {pos, newColor})
+function MarchForwardResult:AddConvertInfo(pos, newColor)
+  table.insert(self._convertInfoList, {pos, newColor})
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MarchForwardResult.GetConvertInfo = function(self)
-  -- function num : 0_11
+function MarchForwardResult:GetConvertInfo()
   return self._convertInfoList
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MarchForwardResult.AddTrapSkillResult = function(self, entityID, skillResult, triggerEntityID)
-  -- function num : 0_12 , upvalues : _ENV
-  (table.insert)(self._trapSkillResults, {entityID, skillResult, triggerEntityID})
+function MarchForwardResult:AddTrapSkillResult(entityID, skillResult, triggerEntityID)
+  table.insert(self._trapSkillResults, {
+    entityID,
+    skillResult,
+    triggerEntityID
+  })
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-MarchForwardResult.GetTrapSkillResults = function(self)
-  -- function num : 0_13
+function MarchForwardResult:GetTrapSkillResults()
   return self._trapSkillResults
 end
-
-

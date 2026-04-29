@@ -1,68 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cookgame/cook/make/ui_n0_cook_make_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN0CookMakeController", UIController)
 UIN0CookMakeController = UIN0CookMakeController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN0CookMakeController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIN0CookMakeController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN0CookMakeController:OnShow(uiParams)
   self._dataId = uiParams[1]
   self._cookData = uiParams[2]
   self:InitWidget()
   self:InitData()
   self.curTipsIndex = 1
   self:InitTips()
-  ;
-  (self._spine):LoadSpine("n0_g_spine_idle")
-  ;
-  (self._spine):SetAnimation(0, "idle", true)
+  self._spine:LoadSpine("n0_g_spine_idle")
+  self._spine:SetAnimation(0, "idle", true)
   self:Refresh(true)
   self:RefreshTips()
-  self._eventMakeSucc = (GameHelper:GetInstance()):CreateCallback(self.OnMakeSucc, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnN0CookMakeSucc, self._eventMakeSucc)
+  self._eventMakeSucc = GameHelper:GetInstance():CreateCallback(self.OnMakeSucc, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnN0CookMakeSucc, self._eventMakeSucc)
   self:AttachEvent(GameEventType.ActivityCloseEvent, self.OnActivityCloseEvent)
   self:PlayEnterAni()
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._spine).AnimationState then
-    (((self._spine).AnimationState).Data).DefaultMix = 0
+  if self._spine.AnimationState then
+    self._spine.AnimationState.Data.DefaultMix = 0
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN0CookMakeController:OnHide()
   if self._eventMakeSucc then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnN0CookMakeSucc, self._eventMakeSucc)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnN0CookMakeSucc, self._eventMakeSucc)
     self._eventMakeSucc = nil
   end
   self._isHide = true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeController.PlayEnterAni = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN0CookMakeController:PlayEnterAni()
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, _ENV
     local lockName = "UIN0CookMainController:PlayEnterAni"
-    ;
-    (self.rootAni):Play("uieff_N0_CookMakeController")
+    self.rootAni:Play("uieff_N0_CookMakeController")
     self:Lock(lockName)
     local delay = 20
-    for i,v in ipairs(self.matItems) do
+    for i, v in ipairs(self.matItems) do
       YIELD(TT, delay)
       v:PlayEnterAni()
       delay = delay + 20
@@ -70,39 +47,28 @@ UIN0CookMakeController.PlayEnterAni = function(self)
     YIELD(TT, 600)
     self:UnLock(lockName)
     self:CheckPreStory()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeController.CheckPreStory = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN0CookMakeController:CheckPreStory()
   if not self.preStoryId then
-    return 
+    return
   end
-  local componentid = (self._cookData):GetComponentId()
+  local componentid = self._cookData:GetComponentId()
   local key = componentid .. "CookGamePreStory_" .. self._foodId
-  if (UIN0CookData.HasKey)(key) then
-    return 
+  if UIN0CookData.HasKey(key) then
+    return
   end
-  ;
-  (UIN0CookData.SetKey)(key)
+  UIN0CookData.SetKey(key)
   self:ShowDialog("UIStoryController", self.preStoryId)
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeController.OnMakeSucc = function(self)
-  -- function num : 0_5
+function UIN0CookMakeController:OnMakeSucc()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeController.InitWidget = function(self)
-  -- function num : 0_6
+function UIN0CookMakeController:InitWidget()
   self.list = self:GetUIComponent("UISelectObjectPath", "list")
   self.detail = self:GetUIComponent("UISelectObjectPath", "detail")
   self.left = self:GetGameObject("left")
@@ -127,241 +93,169 @@ UIN0CookMakeController.InitWidget = function(self)
   local btns = self:GetUIComponent("UISelectObjectPath", "topBtn")
   local backBtn = btns:SpawnObject("UICommonTopButton")
   backBtn:SetData(function()
-    -- function num : 0_6_0 , upvalues : self
     self:CloseDialog()
-  end
-, nil, nil)
+  end, nil, nil)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeController.InitData = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._foodCfg = (Cfg.cfg_component_newyear_dinner_food)[self._dataId]
+function UIN0CookMakeController:InitData()
+  self._foodCfg = Cfg.cfg_component_newyear_dinner_food[self._dataId]
   if not self._foodCfg then
-    (Log.error)("UIN0CookMakeController error , cfg_component_newyear_dinner_food can not find id : " .. self._dataId)
-    return 
+    Log.error("UIN0CookMakeController error , cfg_component_newyear_dinner_food can not find id : " .. self._dataId)
+    return
   end
-  local recipeCfg = (self._foodCfg).Recipe
-  self._foodId = (self._foodCfg).FoodID
+  local recipeCfg = self._foodCfg.Recipe
+  self._foodId = self._foodCfg.FoodID
   self._matNumLimit = 0
   self._recipeData = {}
-  for i,v in ipairs(recipeCfg) do
+  for i, v in ipairs(recipeCfg) do
     local recipe = {}
     recipe.num = 0
     recipe.bestNum = v[2]
     recipe.id = v[1]
     self._matNumLimit = self._matNumLimit + recipe.bestNum
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._recipeData)[i] = recipe
+    self._recipeData[i] = recipe
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local itemid = (self._cookData):GetCostId()
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local itemid = self._cookData:GetCostId()
   self._itemCount = itemModule:GetItemCount(itemid)
-  self._AllTip = (self._foodCfg).Tip
-  ;
-  (self.name1):SetText((StringTable.Get)((self._foodCfg).Name))
-  ;
-  (self.head):LoadImage((self._foodCfg).PetIcon)
-  local storys = (self._foodCfg).StoryId
-  for k,v in pairs(storys) do
+  self._AllTip = self._foodCfg.Tip
+  self.name1:SetText(StringTable.Get(self._foodCfg.Name))
+  self.head:LoadImage(self._foodCfg.PetIcon)
+  local storys = self._foodCfg.StoryId
+  for k, v in pairs(storys) do
     local storyType = v[1]
     if storyType == 1 then
       self.preStoryId = v[2]
-    else
-      if storyType == 2 then
-        self.afterStoryId = v[2]
-      end
+    elseif storyType == 2 then
+      self.afterStoryId = v[2]
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeController.Refresh = function(self, hide)
-  -- function num : 0_8 , upvalues : _ENV
-  (self.txtMatHave):SetText((StringTable.Get)("str_n0_cook_has_mat", self._itemCount))
+function UIN0CookMakeController:Refresh(hide)
+  self.txtMatHave:SetText(StringTable.Get("str_n0_cook_has_mat", self._itemCount))
   self:RefreshUseNum()
   local len = #self._recipeData
-  local items = (self.list):SpawnObjects("UIN0CookMatSelectItem", 4)
+  local items = self.list:SpawnObjects("UIN0CookMatSelectItem", 4)
   self.matItems = items
-  for i,v in ipairs(items) do
+  for i, v in ipairs(items) do
     if hide then
       v:SetVisible(false)
     end
     if i <= len then
-      local subData = (self._recipeData)[i]
-      do
-        v:SetData(subData, self._matNumLimit, function()
-    -- function num : 0_8_0 , upvalues : self
-    return self:GetSelectedMatCount()
-  end
-, function()
-    -- function num : 0_8_1 , upvalues : self
-    return self:GetRemianMatCount()
-  end
-, function(selNum)
-    -- function num : 0_8_2 , upvalues : subData, self
-    subData.num = selNum
-    self:RefreshUseNum()
-  end
-)
-      end
+      local subData = self._recipeData[i]
+      v:SetData(subData, self._matNumLimit, function()
+        return self:GetSelectedMatCount()
+      end, function()
+        return self:GetRemianMatCount()
+      end, function(selNum)
+        subData.num = selNum
+        self:RefreshUseNum()
+      end)
     else
-      do
-        do
-          v:SetAsEmpty()
-          -- DECOMPILER ERROR at PC42: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC42: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC42: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      v:SetAsEmpty()
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeController.RefreshUseNum = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN0CookMakeController:RefreshUseNum()
   local str = "<color=#fdd53e>" .. self:GetSelectedMatCount() .. "</color>"
-  ;
-  (self.txtMatUse):SetText((StringTable.Get)("str_n0_cook_use_mat", str, self._matNumLimit))
+  self.txtMatUse:SetText(StringTable.Get("str_n0_cook_use_mat", str, self._matNumLimit))
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeController.GetSelectedMatCount = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN0CookMakeController:GetSelectedMatCount()
   local num = 0
-  for i,v in ipairs(self._recipeData) do
+  for i, v in ipairs(self._recipeData) do
     num = num + v.num
   end
   return num
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeController.GetRemianMatCount = function(self)
-  -- function num : 0_11
+function UIN0CookMakeController:GetRemianMatCount()
   return self._itemCount - self:GetSelectedMatCount()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeController.LeftBtnOnClick = function(self)
-  -- function num : 0_12
+function UIN0CookMakeController:LeftBtnOnClick()
   if self.curTipsIndex > 1 then
     self.curTipsIndex = self.curTipsIndex - 1
     self:RefreshTips()
-    ;
-    (self.leftBtnAni):Play()
-    ;
-    (self.switchAni):Play("uieff_N0_CookMakeController_left_L")
+    self.leftBtnAni:Play()
+    self.switchAni:Play("uieff_N0_CookMakeController_left_L")
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeController.RightBtnOnClick = function(self)
-  -- function num : 0_13
+function UIN0CookMakeController:RightBtnOnClick()
   if self.curTipsIndex < self.tipsCount then
     self.curTipsIndex = self.curTipsIndex + 1
     self:RefreshTips()
-    ;
-    (self.rightBtnAni):Play()
-    ;
-    (self.switchAni):Play("uieff_N0_CookMakeController_left_R")
+    self.rightBtnAni:Play()
+    self.switchAni:Play("uieff_N0_CookMakeController_left_R")
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeController.InitTips = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN0CookMakeController:InitTips()
   local len = #self._AllTip
   local isChg = false
   if not self.tipsContent or len ~= #self.tipsContent then
     self.tipsContent = {}
-    local wrongTimes = (self._cookData):GetWrongTimes(self._dataId)
-    for k,v in pairs(self._AllTip) do
+    local wrongTimes = self._cookData:GetWrongTimes(self._dataId)
+    for k, v in pairs(self._AllTip) do
       local t = tonumber(v[1])
-      if t <= wrongTimes then
-        (table.insert)(self.tipsContent, v[2])
+      if wrongTimes >= t then
+        table.insert(self.tipsContent, v[2])
       end
     end
     isChg = true
   end
-  do
-    self.tipsCount = #self.tipsContent
-    local pointCount = 0
-    if self.tipsCount > 1 then
-      pointCount = self.tipsCount
-    end
-    self.allPointCont = self.allPointCont or 0
-    if self.allPointCont ~= pointCount then
-      self.allPointCont = pointCount
-    end
-    return isChg
+  self.tipsCount = #self.tipsContent
+  local pointCount = 0
+  if 1 < self.tipsCount then
+    pointCount = self.tipsCount
   end
+  self.allPointCont = self.allPointCont or 0
+  if self.allPointCont ~= pointCount then
+    self.allPointCont = pointCount
+  end
+  return isChg
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeController.RefreshTips = function(self, setIndexAsNew)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN0CookMakeController:RefreshTips(setIndexAsNew)
   self.curTipsIndex = #self.tipsContent
-  do
-    if self.tipsContent then
-      local tipsStr = (self.tipsContent)[self.curTipsIndex]
-      ;
-      (self.tips):SetText((StringTable.Get)(tipsStr))
-    end
-    ;
-    (self.leftBtn):SetActive(false)
-    ;
-    (self.rightBtn):SetActive(false)
+  if self.tipsContent then
+    local tipsStr = self.tipsContent[self.curTipsIndex]
+    self.tips:SetText(StringTable.Get(tipsStr))
   end
+  self.leftBtn:SetActive(false)
+  self.rightBtn:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeController.MakeBtnOnClick = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN0CookMakeController:MakeBtnOnClick()
   if self._matNumLimit ~= self:GetSelectedMatCount() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n0_cook_make_mat_err"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_n0_cook_make_mat_err"))
+    return
   end
-  do
-    if (self._cookData):IsActivityClose() then
-      local result = ((self._cookData):GetCampaign()):CheckComponentOpenClientError(ECCampaignInlandDinnerComponentID.ECAMPAIGN_INLAND_DINNER)
-      ;
-      ((self._cookData):GetCampaign()):CheckErrorCode(result)
-      return 
-    end
-    local err = nil
-    local diff = 0
-    local errRecipeId = 0
-    for i,v in ipairs(self._recipeData) do
-      if v.num ~= v.bestNum then
-        local d = v.num - v.bestNum
-        if diff < d then
-          diff = d
-          errRecipeId = v.id
-        end
-        err = true
+  if self._cookData:IsActivityClose() then
+    local result = self._cookData:GetCampaign():CheckComponentOpenClientError(ECCampaignInlandDinnerComponentID.ECAMPAIGN_INLAND_DINNER)
+    self._cookData:GetCampaign():CheckErrorCode(result)
+    return
+  end
+  local err
+  local diff = 0
+  local errRecipeId = 0
+  for i, v in ipairs(self._recipeData) do
+    if v.num ~= v.bestNum then
+      local d = v.num - v.bestNum
+      if diff < d then
+        diff = d
+        errRecipeId = v.id
       end
+      err = true
     end
-    self:StartTask(function(TT)
-    -- function num : 0_16_0 , upvalues : self, _ENV, err, errRecipeId
+  end
+  self:StartTask(function(TT)
     if self.matItems then
-      local pos = (self.cookPos).position
-      for i,v in ipairs(self.matItems) do
+      local pos = self.cookPos.position
+      for i, v in ipairs(self.matItems) do
         local num = v:GetMatCount()
         local template = v:GetIconTrans()
         for k = 1, num do
@@ -369,121 +263,86 @@ UIN0CookMakeController.MakeBtnOnClick = function(self)
         end
       end
     end
-    do
-      ;
-      (self.left):SetActive(false)
-      ;
-      (self.right):SetActive(false)
-      YIELD(TT, 1000)
-      if self._isHide then
-        return 
-      end
-      ;
-      (self.listGo):SetActive(false)
-      ;
-      (self._spine):SetAnimation(0, "splash", false)
-      YIELD(TT, 1000)
-      if self._isHide then
-        return 
-      end
-      ;
-      (self._spine):SetAnimation(0, "close", false)
-      YIELD(TT, 1000)
-      if self._isHide then
-        return 
-      end
-      ;
-      (self._spine):SetAnimation(0, "ripe", false)
-      YIELD(TT, 2000)
-      if self._isHide then
-        return 
-      end
-      ;
-      (self._spine):SetAnimation(0, "open", false)
-      YIELD(TT, 1000)
-      if self._isHide then
-        return 
-      end
-      if err then
-        local t = (self._cookData):GetWrongTimes(self._dataId)
-        ;
-        (self._cookData):SetWrongTimes(self._dataId, t + 1)
-        if self:InitTips() then
-          self:RefreshTips(true)
-        end
-        local name = (self._foodCfg).Name
-        local tips = ""
-        local cfg = (Cfg.cfg_dinner_food_material)[errRecipeId]
-        if cfg then
-          tips = (StringTable.Get)(cfg.Name)
-        else
-          ;
-          (Log.error)("UIN0CookMakeController cfg_dinner_food_material can\'t find id " .. errRecipeId)
-        end
-        local petIcon = (self._foodCfg).PetIcon
-        self:ShowDialog("UIN0CookMakeFailedController", name, tips, petIcon)
-        ;
-        (self.left):SetActive(true)
-        ;
-        (self.right):SetActive(true)
-        ;
-        (self.listGo):SetActive(true)
-        ;
-        (self._spine):SetAnimation(0, "idle", true)
-        return 
-      end
-      do
-        local lockName = "UIN0CookMakeController_RequestMakeFood"
-        self:Lock(lockName)
-        local res = (self._cookData):RequestMakeFood(TT, self._foodId)
-        if res and res:GetSucc() then
-          local res = AsyncRequestRes:New()
-          res:SetSucc(true)
-          ;
-          (self._cookData):LoadData(TT, res)
-          self:Refresh()
-          self:ShowDialog("UIN0CookMakeSuccController", self._dataId, self.afterStoryId)
-        else
-          do
-            self:Refresh()
-            self:UnLock(lockName)
-          end
-        end
-      end
+    self.left:SetActive(false)
+    self.right:SetActive(false)
+    YIELD(TT, 1000)
+    if self._isHide then
+      return
     end
-  end
-, self)
-  end
+    self.listGo:SetActive(false)
+    self._spine:SetAnimation(0, "splash", false)
+    YIELD(TT, 1000)
+    if self._isHide then
+      return
+    end
+    self._spine:SetAnimation(0, "close", false)
+    YIELD(TT, 1000)
+    if self._isHide then
+      return
+    end
+    self._spine:SetAnimation(0, "ripe", false)
+    YIELD(TT, 2000)
+    if self._isHide then
+      return
+    end
+    self._spine:SetAnimation(0, "open", false)
+    YIELD(TT, 1000)
+    if self._isHide then
+      return
+    end
+    if err then
+      local t = self._cookData:GetWrongTimes(self._dataId)
+      self._cookData:SetWrongTimes(self._dataId, t + 1)
+      if self:InitTips() then
+        self:RefreshTips(true)
+      end
+      local name = self._foodCfg.Name
+      local tips = ""
+      local cfg = Cfg.cfg_dinner_food_material[errRecipeId]
+      if cfg then
+        tips = StringTable.Get(cfg.Name)
+      else
+        Log.error("UIN0CookMakeController cfg_dinner_food_material can't find id " .. errRecipeId)
+      end
+      local petIcon = self._foodCfg.PetIcon
+      self:ShowDialog("UIN0CookMakeFailedController", name, tips, petIcon)
+      self.left:SetActive(true)
+      self.right:SetActive(true)
+      self.listGo:SetActive(true)
+      self._spine:SetAnimation(0, "idle", true)
+      return
+    end
+    local lockName = "UIN0CookMakeController_RequestMakeFood"
+    self:Lock(lockName)
+    local res = self._cookData:RequestMakeFood(TT, self._foodId)
+    if res and res:GetSucc() then
+      local res = AsyncRequestRes:New()
+      res:SetSucc(true)
+      self._cookData:LoadData(TT, res)
+      self:Refresh()
+      self:ShowDialog("UIN0CookMakeSuccController", self._dataId, self.afterStoryId)
+    else
+      self:Refresh()
+    end
+    self:UnLock(lockName)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeController.CopyObjAndFly = function(self, templateTrasnsform, pos, startDuration, duration)
-  -- function num : 0_17 , upvalues : _ENV
-  local obj = ((UnityEngine.Object).Instantiate)(templateTrasnsform, templateTrasnsform.parent)
+function UIN0CookMakeController:CopyObjAndFly(templateTrasnsform, pos, startDuration, duration)
+  local obj = UnityEngine.Object.Instantiate(templateTrasnsform, templateTrasnsform.parent)
   local startPos = obj.position
-  startPos.x = startPos.x + (math.random)() * 0.5
-  startPos.y = startPos.y + (math.random)() * 0.5
-  ;
-  (obj:DOMove(startPos, startDuration)):OnComplete(function()
-    -- function num : 0_17_0 , upvalues : obj, pos, duration, _ENV
-    (obj:DOMove(pos, duration)):OnComplete(function()
-      -- function num : 0_17_0_0 , upvalues : _ENV, obj
-      ((UnityEngine.Object).DestroyImmediate)(obj.gameObject)
-    end
-)
-  end
-)
+  startPos.x = startPos.x + math.random() * 0.5
+  startPos.y = startPos.y + math.random() * 0.5
+  obj:DOMove(startPos, startDuration):OnComplete(function()
+    obj:DOMove(pos, duration):OnComplete(function()
+      UnityEngine.Object.DestroyImmediate(obj.gameObject)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeController.OnActivityCloseEvent = function(self, campaignId)
-  -- function num : 0_18
-  local campaign = (self._cookData):GetCampaign()
+function UIN0CookMakeController:OnActivityCloseEvent(campaignId)
+  local campaign = self._cookData:GetCampaign()
   if campaign and campaign._id == campaignId then
     self:CloseDialog()
   end
 end
-
-

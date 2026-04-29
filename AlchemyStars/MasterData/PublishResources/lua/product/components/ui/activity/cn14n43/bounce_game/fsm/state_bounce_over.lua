@@ -1,31 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/fsm/state_bounce_over.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateBounceOver", StateBounceBase)
 StateBounceOver = StateBounceOver
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateBounceOver.OnEnter = function(self, TT, ...)
-  -- function num : 0_0
+function StateBounceOver:OnEnter(TT, ...)
   self:Init()
-  ;
-  (self.uiController):ShowResult()
-  local callback = function()
-    -- function num : 0_0_0 , upvalues : self
-    (self.uiController):QuickGame()
+  self.uiController:ShowResult()
+  
+  local function callback()
+    self.uiController:QuickGame()
   end
-
-  local killedBoss = (self.bounceData):GetKilledBoss()
-  ;
-  (self.uiController):BounceMissionSettle((self.bounceData):GetMissionId(), (self.bounceData):GetScore(), killedBoss and 1 or 0, (self.bounceData):GetLastTime(), callback)
+  
+  local killedBoss = self.bounceData:GetKilledBoss()
+  self.uiController:BounceMissionSettle(self.bounceData:GetMissionId(), self.bounceData:GetScore(), killedBoss and 1 or 0, self.bounceData:GetLastTime(), callback)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBounceOver.OnExit = function(self, TT)
-  -- function num : 0_1
+function StateBounceOver:OnExit(TT)
 end
-
-

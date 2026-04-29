@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/extension/ui_extension/data_structure/graph/digraph.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Digraph", Object)
 Digraph = Digraph
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Digraph.Constructor = function(self)
-  -- function num : 0_0
+function Digraph:Constructor()
   self.vertexCount = 0
   self.edgeCount = 0
   self.indegree = {}
@@ -16,87 +9,56 @@ Digraph.Constructor = function(self)
   self.marked = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Digraph.AddEdge = function(self, v, w)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self.adj)[v] then
-    (self.adj)[v] = {}
+function Digraph:AddEdge(v, w)
+  if not self.adj[v] then
+    self.adj[v] = {}
   end
-  ;
-  (table.insert)((self.adj)[v], w)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self.indegree)[w] then
-    (self.indegree)[w] = {}
+  table.insert(self.adj[v], w)
+  if not self.indegree[w] then
+    self.indegree[w] = {}
   end
-  ;
-  (table.insert)((self.indegree)[w], v)
+  table.insert(self.indegree[w], v)
   self.edgeCount = self.edgeCount + 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Digraph.Adj = function(self, v)
-  -- function num : 0_2
-  return (self.adj)[v]
+function Digraph:Adj(v)
+  return self.adj[v]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Digraph.Indegree = function(self, v)
-  -- function num : 0_3
-  return (self.indegree)[v]
+function Digraph:Indegree(v)
+  return self.indegree[v]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Digraph.IndegreeCount = function(self, v)
-  -- function num : 0_4 , upvalues : _ENV
+function Digraph:IndegreeCount(v)
   local indegree = self:Indegree(v)
-  return indegree and (table.count)(indegree) or 0
+  return indegree and table.count(indegree) or 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Digraph.DFTAll = function(self, callback)
-  -- function num : 0_5 , upvalues : _ENV
+function Digraph:DFTAll(callback)
   self.marked = {}
-  for v,vadj in pairs(self.adj) do
+  for v, vadj in pairs(self.adj) do
     self:InternalDFS(v, callback)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Digraph.DFT = function(self, v, callback)
-  -- function num : 0_6
+function Digraph:DFT(v, callback)
   self.marked = {}
   self:InternalDFS(v, callback)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Digraph.InternalDFS = function(self, v, callback)
-  -- function num : 0_7 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self.marked)[v] then
-    (self.marked)[v] = true
+function Digraph:InternalDFS(v, callback)
+  if not self.marked[v] then
+    self.marked[v] = true
     if callback then
       callback(v)
     end
   end
   local adj = self:Adj(v)
   if adj then
-    for _,w in pairs(adj) do
-      if not (self.marked)[w] then
+    for _, w in pairs(adj) do
+      if not self.marked[w] then
         self:InternalDFS(w)
       end
     end
   end
 end
-
-

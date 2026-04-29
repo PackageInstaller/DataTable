@@ -1,26 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/common/stn_common_wait_unscaled_time.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Common_WaitUnscaledTime", Common_AsyncBase)
 Common_WaitUnscaledTime = Common_WaitUnscaledTime
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Common_WaitUnscaledTime.Constructor = function(self, pManger, nWaitTime)
-  -- function num : 0_0
+function Common_WaitUnscaledTime:Constructor(pManger, nWaitTime)
   self.m_nWaitTime = nWaitTime
   self.m_nWaitStart = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Common_WaitUnscaledTime.TaskFunc = function(self, TT, outResult)
-  -- function num : 0_1 , upvalues : _ENV
-  self._beginUnscaledTimeMS = (UnityEngine.Time).unscaledTime * 1000
-  while (UnityEngine.Time).unscaledTime * 1000 - self._beginUnscaledTimeMS < self.m_nWaitTime do
+function Common_WaitUnscaledTime:TaskFunc(TT, outResult)
+  self._beginUnscaledTimeMS = UnityEngine.Time.unscaledTime * 1000
+  while UnityEngine.Time.unscaledTime * 1000 - self._beginUnscaledTimeMS < self.m_nWaitTime do
     YIELD(TT)
   end
 end
-
-

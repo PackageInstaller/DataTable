@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_sealed_curse.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_SealedCurse", SkillEffectResultBase)
 SkillEffectResult_SealedCurse = SkillEffectResult_SealedCurse
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_SealedCurse.Constructor = function(self, targetID, buffID, buffInsSeq, oldLeaderPstID, newLeaderPstID)
-  -- function num : 0_0
+function SkillEffectResult_SealedCurse:Constructor(targetID, buffID, buffInsSeq, oldLeaderPstID, newLeaderPstID)
   self._targetID = targetID
   self._buffID = buffID
   self._buffInsSeq = buffInsSeq
@@ -19,74 +12,42 @@ SkillEffectResult_SealedCurse.Constructor = function(self, targetID, buffID, buf
   self._newTeamOrder = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SealedCurse.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResult_SealedCurse:GetEffectType()
   return SkillEffectType.SealedCurse
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SealedCurse.GetTargetID = function(self)
-  -- function num : 0_2
+function SkillEffectResult_SealedCurse:GetTargetID()
   return self._targetID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SealedCurse.GetBuffID = function(self)
-  -- function num : 0_3
+function SkillEffectResult_SealedCurse:GetBuffID()
   return self._buffID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SealedCurse.GetBuffInsSeq = function(self)
-  -- function num : 0_4
+function SkillEffectResult_SealedCurse:GetBuffInsSeq()
   return self._buffInsSeq
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SealedCurse.GetOldLeaderPstID = function(self)
-  -- function num : 0_5
+function SkillEffectResult_SealedCurse:GetOldLeaderPstID()
   return self._oldLeaderPstID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SealedCurse.GetNewLeaderPstID = function(self)
-  -- function num : 0_6
+function SkillEffectResult_SealedCurse:GetNewLeaderPstID()
   return self._newLeaderPstID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SealedCurse.GetOldTeamOrder = function(self)
-  -- function num : 0_7
+function SkillEffectResult_SealedCurse:GetOldTeamOrder()
   return self._oldTeamOrder
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SealedCurse.GetNewTeamOrder = function(self)
-  -- function num : 0_8
+function SkillEffectResult_SealedCurse:GetNewTeamOrder()
   return self._newTeamOrder
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SealedCurse.SetOldTeamOrder = function(self, t)
-  -- function num : 0_9
+function SkillEffectResult_SealedCurse:SetOldTeamOrder(t)
   self._oldTeamOrder = t
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SealedCurse.SetNewTeamOrder = function(self, t)
-  -- function num : 0_10
+function SkillEffectResult_SealedCurse:SetNewTeamOrder(t)
   self._newTeamOrder = t
 end
-
-

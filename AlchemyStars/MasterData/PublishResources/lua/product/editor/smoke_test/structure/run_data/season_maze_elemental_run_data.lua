@@ -1,47 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/run_data/season_maze_elemental_run_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ElementalSeasonMazeRunData", TestRobotElementalRunData)
 ElementalSeasonMazeRunData = ElementalSeasonMazeRunData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ElementalSeasonMazeRunData.ParseLevelData = function(self, rawargs)
-  -- function num : 0_0 , upvalues : _ENV
-  local args = (string.split)(rawargs, ",")
+function ElementalSeasonMazeRunData:ParseLevelData(rawargs)
+  local args = string.split(rawargs, ",")
   self._missionID = tonumber(args[1])
   self._componentID = tonumber(args[2])
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalSeasonMazeRunData.GetMissionID = function(self)
-  -- function num : 0_1
+function ElementalSeasonMazeRunData:GetMissionID()
   return self._missionID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalSeasonMazeRunData.GetComponentID = function(self)
-  -- function num : 0_2
+function ElementalSeasonMazeRunData:GetComponentID()
   return self._componentID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalSeasonMazeRunData.GetComponentConfigID = function(self)
-  -- function num : 0_3
+function ElementalSeasonMazeRunData:GetComponentConfigID()
   return self._componentID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalSeasonMazeRunData.GeneratePetPstID = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local petPstIds = {0, 0, 0, 0, 0, 0, 0, 0}
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  for index,petBuildData in ipairs(self._currentTeamBuild) do
+function ElementalSeasonMazeRunData:GeneratePetPstID()
+  local petPstIds = {
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  }
+  local petModule = GameGlobal.GetModule(PetModule)
+  for index, petBuildData in ipairs(self._currentTeamBuild) do
     local matchPet = petModule:GetPetByTemplateId(petBuildData:GetTemplateID())
     local templateID = matchPet:GetTemplateID()
     petPstIds[index] = templateID
@@ -49,5 +39,3 @@ ElementalSeasonMazeRunData.GeneratePetPstID = function(self)
   self._petPstIDs = petPstIds
   return self._petPstIDs
 end
-
-

@@ -1,138 +1,98 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/game_fsm_state_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GameFsmStateNode", StateNode)
 GameFsmStateNode = GameFsmStateNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GameFsmStateNode.Constructor = function(self)
-  -- function num : 0_0
+function GameFsmStateNode:Constructor()
   self._finish = 0
   self._logTransition = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GameFsmStateNode.InitializeNode = function(self, cfg, context)
-  -- function num : 0_1 , upvalues : _ENV
-  ((self.super).InitializeNode)(self, cfg, context)
+function GameFsmStateNode:InitializeNode(cfg, context)
+  self.super.InitializeNode(self, cfg, context)
   self._cfg = cfg
-  self._entityId = (context.GenInfo).EntityID
-  self._callback = (GameHelper:GetInstance()):CreateCallback(self.OnFinish, self)
+  self._entityId = context.GenInfo.EntityID
+  self._callback = GameHelper:GetInstance():CreateCallback(self.OnFinish, self)
   local world = context.World
   self._world = world
   local runPos = world:GetRunningPosition()
   if runPos == WorldRunPostion.AtClient then
-    self._eventDispatcher = (GameGlobal.EventDispatcher)()
+    self._eventDispatcher = GameGlobal.EventDispatcher()
   else
     local serverWorld = world
     self._eventDispatcher = serverWorld:EventDispatcher()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GameFsmStateNode.Destroy = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._eventDispatcher):RemoveCallbackListener((self._cfg).Event, self._callback)
-  ;
-  ((GameFsmStateNode.super).Destroy)(self)
+function GameFsmStateNode:Destroy()
+  self._eventDispatcher:RemoveCallbackListener(self._cfg.Event, self._callback)
+  GameFsmStateNode.super.Destroy(self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GameFsmStateNode._LogFsmDebug = function(self, stType)
-  -- function num : 0_3 , upvalues : _ENV
-  if self._world and (self._world):IsDevelopEnv() and self._entityId == 0 then
-    (Log.info)("[GameFsm] NodeName = ", (string.format)("%02d.<%s> %s", (self._cfg).StateID, stType, (self._cfg).Name))
+function GameFsmStateNode:_LogFsmDebug(stType)
+  if self._world and self._world:IsDevelopEnv() and self._entityId == 0 then
+    Log.info("[GameFsm] NodeName = ", string.format("%02d.<%s> %s", self._cfg.StateID, stType, self._cfg.Name))
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GameFsmStateNode._DetailMatchLoggerFsmEnter = function(self)
-  -- function num : 0_4
-  if self._world and (self._world):IsDevelopEnv() and self._entityId == 0 then
-    local detailLogger = (self._world):GetDetailMatchLogger()
+function GameFsmStateNode:_DetailMatchLoggerFsmEnter()
+  if self._world and self._world:IsDevelopEnv() and self._entityId == 0 then
+    local detailLogger = self._world:GetDetailMatchLogger()
     if detailLogger then
-      detailLogger:GameFsmNodeEnter((self._cfg).StateID, (self._cfg).Name)
+      detailLogger:GameFsmNodeEnter(self._cfg.StateID, self._cfg.Name)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GameFsmStateNode._DetailMatchLoggerFsmExit = function(self)
-  -- function num : 0_5
-  if self._world and (self._world):IsDevelopEnv() and self._entityId == 0 then
-    local detailLogger = (self._world):GetDetailMatchLogger()
+function GameFsmStateNode:_DetailMatchLoggerFsmExit()
+  if self._world and self._world:IsDevelopEnv() and self._entityId == 0 then
+    local detailLogger = self._world:GetDetailMatchLogger()
     if detailLogger then
-      detailLogger:GameFsmNodeExit((self._cfg).StateID, (self._cfg).Name)
+      detailLogger:GameFsmNodeExit(self._cfg.StateID, self._cfg.Name)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GameFsmStateNode.Enter = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self._cfg).Event then
+function GameFsmStateNode:Enter()
+  if self._cfg.Event then
     if self._logTransition then
       self:_LogFsmDebug("Enter ")
       self:_DetailMatchLoggerFsmEnter()
     end
-    ;
-    (self._eventDispatcher):AddCallbackListener((self._cfg).Event, self._callback)
+    self._eventDispatcher:AddCallbackListener(self._cfg.Event, self._callback)
     if self._entityId == 0 then
-      (self._eventDispatcher):Dispatch(GameEventType.RefreshMainState, (self._cfg).StateID, (self._cfg).Name)
+      self._eventDispatcher:Dispatch(GameEventType.RefreshMainState, self._cfg.StateID, self._cfg.Name)
     end
   end
-  ;
-  ((self.super).Enter)(self)
+  self.super.Enter(self)
   self._finish = 0
-  ;
-  (self._eventDispatcher):Dispatch((self._cfg).Enter, self._entityId)
+  self._eventDispatcher:Dispatch(self._cfg.Enter, self._entityId)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-GameFsmStateNode.Exit = function(self)
-  -- function num : 0_7
+function GameFsmStateNode:Exit()
   self._finish = 0
-  ;
-  ((self.super).Exit)(self)
-  ;
-  (self._eventDispatcher):RemoveCallbackListener((self._cfg).Event, self._callback)
+  self.super.Exit(self)
+  self._eventDispatcher:RemoveCallbackListener(self._cfg.Event, self._callback)
   if self._logTransition then
     self:_LogFsmDebug("Exit  ")
     self:_DetailMatchLoggerFsmExit()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-GameFsmStateNode.CheckTransitions = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function GameFsmStateNode:CheckTransitions()
   if self._finish == 0 then
     return self.mStateID
   end
-  for i,s in ipairs((self._cfg).NextState) do
+  for i, s in ipairs(self._cfg.NextState) do
     if self._finish == i then
       return s
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-GameFsmStateNode.OnFinish = function(self, ...)
-  -- function num : 0_9
-  local args = {...}
+function GameFsmStateNode:OnFinish(...)
+  local args = {
+    ...
+  }
   if self._entityId == 0 or self._entityId == args[2] then
     self._finish = args[1]
   end
 end
-
-

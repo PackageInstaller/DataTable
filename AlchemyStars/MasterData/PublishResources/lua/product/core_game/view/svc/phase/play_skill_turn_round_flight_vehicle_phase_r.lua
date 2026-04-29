@@ -1,39 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_turn_round_flight_vehicle_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_flight_base_r")
 _class("PlaySkillTurnRoundFlightVehiclePhase", PlaySkillPhaseBase)
 PlaySkillTurnRoundFlightVehiclePhase = PlaySkillTurnRoundFlightVehiclePhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillTurnRoundFlightVehiclePhase.Constructor = function(self)
-  -- function num : 0_0
+function PlaySkillTurnRoundFlightVehiclePhase:Constructor()
   self._bBack = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillTurnRoundFlightVehiclePhase._GetGridList = function(self, pet_entity)
-  -- function num : 0_1
-  local skillEffectResultContainer = (pet_entity:SkillRoutine()):GetResultContainer()
+function PlaySkillTurnRoundFlightVehiclePhase:_GetGridList(pet_entity)
+  local skillEffectResultContainer = pet_entity:SkillRoutine():GetResultContainer()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local ret = scopeResult:GetAttackRange()
   return ret
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillTurnRoundFlightVehiclePhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySkillTurnRoundFlightVehiclePhase:PlayFlight(TT, casterEntity, phaseParam)
   local chainGrid = self:_GetGridList(casterEntity)
   if chainGrid == nil then
-    return 
+    return
   end
-  local playSkillService = (self._world):GetService("PlaySkill")
+  local playSkillService = self._world:GetService("PlaySkill")
   local castPos = casterEntity:GetRenderGridPosition()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local gridDataArray = scopeResult:GetAttackRange()
   self._bBack = false
@@ -41,162 +28,74 @@ PlaySkillTurnRoundFlightVehiclePhase.PlayFlight = function(self, TT, casterEntit
   for dir = 1, 8 do
     local targetGird = targetGirdList[dir]
     if #targetGird.gridList > 0 then
-      local nTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoCrossToGridEdges, self, casterEntity, targetGird, phaseParam)
+      local nTaskID = GameGlobal.TaskManager():CoreGameStartTask(self._DoCrossToGridEdges, self, casterEntity, targetGird, phaseParam)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillTurnRoundFlightVehiclePhase._DoCrossToGridEdges = function(self, TT, casterEntity, targetGird, phaseParam)
-  -- function num : 0_3 , upvalues : _ENV
-  local effectService = (self._world):GetService("Effect")
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local gridPosStart = (casterEntity:GridLocation()).Position
-  local gridPosEnd = (targetGird.gridList)[#targetGird.gridList]
-  local distance = (Vector2.Distance)(gridPosStart, gridPosEnd)
+function PlaySkillTurnRoundFlightVehiclePhase:_DoCrossToGridEdges(TT, casterEntity, targetGird, phaseParam)
+  local effectService = self._world:GetService("Effect")
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local gridPosStart = casterEntity:GridLocation().Position
+  local gridPosEnd = targetGird.gridList[#targetGird.gridList]
+  local distance = Vector2.Distance(gridPosStart, gridPosEnd)
   local flyTime = phaseParam:GetFlyTime()
   local flyBackTime = phaseParam:GetFlyBackTime()
   local flyOneGridTime = flyTime / distance
   local flyBackOneGridTime = flyBackTime / distance
   local hitAnimName = phaseParam:GetHitAnimName()
   local hitEffectID = phaseParam:GetHitEffectID()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local results1 = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, 1)
-  for _,result in pairs(results1) do
-    do
-      local targetEntityID = result:GetTargetID()
-      local pos = result:GetGridPos()
-      if (table.intable)(targetGird.gridList, pos) then
-        ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, pos, gridPosStart, flyOneGridTime, result, self, casterEntity, targetEntityID, hitAnimName, hitEffectID
-    local hitTime = (Vector2.Distance)(pos, gridPosStart) * flyOneGridTime
-    YIELD(TT, hitTime)
-    local targetDamage = result:GetDamageInfo(1)
-    self:_PlayAttackOnPos(TT, casterEntity, pos, targetEntityID, targetDamage, hitAnimName, hitEffectID)
-  end
-)
-      end
+  for _, result in pairs(results1) do
+    local targetEntityID = result:GetTargetID()
+    local pos = result:GetGridPos()
+    if table.intable(targetGird.gridList, pos) then
+      GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+        local hitTime = Vector2.Distance(pos, gridPosStart) * flyOneGridTime
+        YIELD(TT, hitTime)
+        local targetDamage = result:GetDamageInfo(1)
+        self:_PlayAttackOnPos(TT, casterEntity, pos, targetEntityID, targetDamage, hitAnimName, hitEffectID)
+      end)
     end
   end
-  local results2 = nil
-  for _,result in pairs(results2) do
-    local _, result = nil
-    _, result = l_0_3_28:GetTargetID, l_0_3_28
-    _ = _(result)
-    local targetEntityID = nil
-    result, targetEntityID = l_0_3_28:GetGridPos, l_0_3_28
-    result = result(targetEntityID)
-    local pos = nil
-    targetEntityID = table
-    targetEntityID = targetEntityID.intable
-    pos = targetGird.gridList
-    targetEntityID = targetEntityID(pos, result)
-    if targetEntityID then
-      targetEntityID = GameGlobal
-      targetEntityID = targetEntityID.TaskManager
-      targetEntityID = targetEntityID()
-      targetEntityID, pos = targetEntityID:CoreGameStartTask, targetEntityID
-      targetEntityID(pos, function(TT)
-    -- function num : 0_3_1 , upvalues : _ENV, pos, gridPosEnd, flyBackOneGridTime, phaseParam, flyTime, result, self, casterEntity, targetEntityID, hitAnimName, hitEffectID
-    local hitTime = (Vector2.Distance)(pos, gridPosEnd) * flyBackOneGridTime
-    local backWaitTime = phaseParam:GetFlyBackStartWaitTime() + flyTime
-    YIELD(TT, hitTime + backWaitTime)
-    local targetDamage = result:GetDamageInfo(1)
-    self:_PlayAttackOnPos(TT, casterEntity, pos, targetEntityID, targetDamage, hitAnimName, hitEffectID)
-  end
-)
+  local results2 = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, 2)
+  for _, result in pairs(results2) do
+    local targetEntityID = result:GetTargetID()
+    local pos = result:GetGridPos()
+    if table.intable(targetGird.gridList, pos) then
+      GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+        local hitTime = Vector2.Distance(pos, gridPosEnd) * flyBackOneGridTime
+        local backWaitTime = phaseParam:GetFlyBackStartWaitTime() + flyTime
+        YIELD(TT, hitTime + backWaitTime)
+        local targetDamage = result:GetDamageInfo(1)
+        self:_PlayAttackOnPos(TT, casterEntity, pos, targetEntityID, targetDamage, hitAnimName, hitEffectID)
+      end)
     end
   end
-  -- DECOMPILER ERROR at PC94: Overwrote pending register: R20 in 'AssignReg'
-
-  local entityEffect = nil
+  local entityEffect = effectService:CreateWorldPositionDirectionEffect(phaseParam:GetFlyEffectID(), gridPosStart, targetGird.direction)
   YIELD(TT)
-  local go = nil
-  local tran = nil
-  local gridWorldpos = nil
-  -- DECOMPILER ERROR at PC111: Overwrote pending register: R24 in 'AssignReg'
-
-  -- DECOMPILER ERROR at PC111: Overwrote pending register: R23 in 'AssignReg'
-
-  tran = boardServiceRender:GridPos2RenderPos(go)
-  gridWorldpos = gridWorldpos(phaseParam)
-  gridWorldpos = gridWorldpos / 1000
-  entityEffect = entityEffect(go, tran, gridWorldpos, false)
-  -- DECOMPILER ERROR at PC118: Overwrote pending register: R24 in 'AssignReg'
-
-  entityEffect = entityEffect:SetEase
-  tran = DG
-  tran = tran.Tweening
-  tran = tran.Ease
-  tran = tran.InOutSine
-  entityEffect(go, tran)
-  entityEffect = YIELD
-  -- DECOMPILER ERROR at PC125: Overwrote pending register: R24 in 'AssignReg'
-
-  tran, gridWorldpos = phaseParam:GetFlyTime, phaseParam
-  entityEffect(go, tran(gridWorldpos))
-  entityEffect = GameGlobal
-  entityEffect = entityEffect.TaskManager
-  entityEffect = entityEffect()
-  -- DECOMPILER ERROR at PC132: Overwrote pending register: R24 in 'AssignReg'
-
-  entityEffect = entityEffect:CoreGameStartTask
-  entityEffect(go, self._DestroyEffect, self, effectService:CreateWorldPositionDirectionEffect(phaseParam:GetFlyEffectID(), gridPosStart, targetGird.direction), phaseParam:GetFlyArriveDestory())
-  entityEffect = YIELD
-  -- DECOMPILER ERROR at PC140: Overwrote pending register: R24 in 'AssignReg'
-
-  entityEffect(go, phaseParam:GetFlyBackStartWaitTime())
+  local go = entityEffect:View():GetGameObject()
+  local tran = go.transform
+  local gridWorldpos = boardServiceRender:GridPos2RenderPos(gridPosEnd)
+  tran:DOMove(gridWorldpos, phaseParam:GetFlyTime() / 1000.0, false):SetEase(DG.Tweening.Ease.InOutSine)
+  YIELD(TT, phaseParam:GetFlyTime())
+  GameGlobal.TaskManager():CoreGameStartTask(self._DestroyEffect, self, entityEffect, phaseParam:GetFlyArriveDestory())
+  YIELD(TT, phaseParam:GetFlyBackStartWaitTime())
   self._bBack = true
-  -- DECOMPILER ERROR at PC145: Overwrote pending register: R24 in 'AssignReg'
-
-  entityEffect = effectService:CreateWorldPositionDirectionEffect
-  entityEffect = entityEffect(go, phaseParam:GetFlyBackEffectID(), gridPosEnd, -targetGird.direction)
-  local entityEffectBack = nil
-  -- DECOMPILER ERROR at PC152: Overwrote pending register: R24 in 'AssignReg'
-
-  go(TT)
-  -- DECOMPILER ERROR at PC155: Overwrote pending register: R24 in 'AssignReg'
-
-  go = go(entityEffect)
-  go = go(go)
-  local goBack = nil
-  local tranBack = nil
-  local gridWorldposBack = nil
-  -- DECOMPILER ERROR at PC163: Overwrote pending register: R28 in 'AssignReg'
-
-  -- DECOMPILER ERROR at PC163: Overwrote pending register: R27 in 'AssignReg'
-
-  tranBack = boardServiceRender:GridPos2RenderPos(goBack)
-  gridWorldposBack = gridWorldposBack(phaseParam)
-  gridWorldposBack = gridWorldposBack / 1000
-  entityEffectBack = entityEffectBack(goBack, tranBack, gridWorldposBack, false)
-  -- DECOMPILER ERROR at PC170: Overwrote pending register: R28 in 'AssignReg'
-
-  entityEffectBack = entityEffectBack:SetEase
-  tranBack = DG
-  tranBack = tranBack.Tweening
-  tranBack = tranBack.Ease
-  tranBack = tranBack.InOutSine
-  entityEffectBack(goBack, tranBack)
-  entityEffectBack = YIELD
-  -- DECOMPILER ERROR at PC177: Overwrote pending register: R28 in 'AssignReg'
-
-  tranBack, gridWorldposBack = phaseParam:GetFlyBackTime, phaseParam
-  entityEffectBack(goBack, tranBack(gridWorldposBack))
-  entityEffectBack = self._world
-  -- DECOMPILER ERROR at PC182: Overwrote pending register: R28 in 'AssignReg'
-
-  entityEffectBack = entityEffectBack:DestroyEntity
-  entityEffectBack(goBack, entityEffect)
+  local entityEffectBack = effectService:CreateWorldPositionDirectionEffect(phaseParam:GetFlyBackEffectID(), gridPosEnd, -targetGird.direction)
+  YIELD(TT)
+  local goBack = entityEffectBack:View():GetGameObject()
+  local tranBack = goBack.transform
+  local gridWorldposBack = boardServiceRender:GridPos2RenderPos(gridPosStart)
+  tranBack:DOMove(gridWorldposBack, phaseParam:GetFlyBackTime() / 1000.0, false):SetEase(DG.Tweening.Ease.InOutSine)
+  YIELD(TT, phaseParam:GetFlyBackTime())
+  self._world:DestroyEntity(entityEffectBack)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillTurnRoundFlightVehiclePhase._PlayAttackOnPos = function(self, TT, casterEntity, pos, targetEntityID, targetDamage, hitAnimName, hitEffectID)
-  -- function num : 0_4 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
-  local targetEntity = (self._world):GetEntityByID(targetEntityID)
+function PlaySkillTurnRoundFlightVehiclePhase:_PlayAttackOnPos(TT, casterEntity, pos, targetEntityID, targetDamage, hitAnimName, hitEffectID)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  local targetEntity = self._world:GetEntityByID(targetEntityID)
   if targetEntity ~= nil then
     local isFinalAttack = skillEffectResultContainer:IsFinalAttack()
     local finalAttackTargetID = skillEffectResultContainer:GetFinalAttackEntityID()
@@ -204,19 +103,12 @@ PlaySkillTurnRoundFlightVehiclePhase._PlayAttackOnPos = function(self, TT, caste
     if isFinalAttack == true and finalAttackTargetID == targetEntityID and self._bBack ~= nil and not self._bBack then
       isFinalAttack = false
     end
-    local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(hitAnimName)):SetHandleBeHitParam_HitEffectID(hitEffectID)):SetHandleBeHitParam_DamageInfo(targetDamage)):SetHandleBeHitParam_DamagePos(pos)):SetHandleBeHitParam_HitTurnTarget(TurnToTargetType.Caster)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(isFinalAttack)):SetHandleBeHitParam_SkillID(skillID)
-    ;
-    (self:SkillService()):HandleBeHit(TT, beHitParam)
+    local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(hitAnimName):SetHandleBeHitParam_HitEffectID(hitEffectID):SetHandleBeHitParam_DamageInfo(targetDamage):SetHandleBeHitParam_DamagePos(pos):SetHandleBeHitParam_HitTurnTarget(TurnToTargetType.Caster):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(isFinalAttack):SetHandleBeHitParam_SkillID(skillID)
+    self:SkillService():HandleBeHit(TT, beHitParam)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillTurnRoundFlightVehiclePhase._DestroyEffect = function(self, TT, effectEntity, waitTime)
-  -- function num : 0_5 , upvalues : _ENV
+function PlaySkillTurnRoundFlightVehiclePhase:_DestroyEffect(TT, effectEntity, waitTime)
   YIELD(TT, waitTime)
-  ;
-  (self._world):DestroyEntity(effectEntity)
+  self._world:DestroyEntity(effectEntity)
 end
-
-

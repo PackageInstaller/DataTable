@@ -1,40 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_overload_state.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetOverloadState", BuffLogicBase)
 BuffLogicSetOverloadState = BuffLogicSetOverloadState
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetOverloadState.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetOverloadState:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetOverloadState.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local cpt = ((self._buffInstance):Entity()):Attributes()
+function BuffLogicSetOverloadState:DoLogic(notify)
+  local cpt = self._buffInstance:Entity():Attributes()
   cpt:SetSimpleAttribute("BuffOverloadState", 1)
   return true
 end
 
 _class("BuffLogicResetOverloadState", BuffLogicBase)
 BuffLogicResetOverloadState = BuffLogicResetOverloadState
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetOverloadState.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetOverloadState:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetOverloadState.DoLogic = function(self, notify)
-  -- function num : 0_3
-  local cpt = ((self._buffInstance):Entity()):Attributes()
+function BuffLogicResetOverloadState:DoLogic(notify)
+  local cpt = self._buffInstance:Entity():Attributes()
   cpt:SetSimpleAttribute("BuffOverloadState", 0)
   return true
 end
-
-

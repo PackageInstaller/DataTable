@@ -1,30 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/find_treasure/ui/ui_find_treasure_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFindTreasureDetail", UIController)
 UIFindTreasureDetail = UIFindTreasureDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFindTreasureDetail.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIFindTreasureDetail:LoadDataOnEnter(TT, res, uiParams)
   local campaignType = uiParams[2]
   local componentType = uiParams[3]
-  if (HomelandFindTreasureConst.InitHomelandFindTreausreData)(TT, campaignType, componentType) == false then
+  if HomelandFindTreasureConst.InitHomelandFindTreausreData(TT, campaignType, componentType) == false then
     res:SetSucc(false)
-    return 
+    return
   end
-  self._campaign = (HomelandFindTreasureConst.GetActivityCampaign)()
-  self._singleDatas = (HomelandFindTreasureConst.GetFindTreasureSingleDatas)(TT)
-  self._gameData = (HomelandFindTreasureConst.GetGameData)()
+  self._campaign = HomelandFindTreasureConst.GetActivityCampaign()
+  self._singleDatas = HomelandFindTreasureConst.GetFindTreasureSingleDatas(TT)
+  self._gameData = HomelandFindTreasureConst.GetGameData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureDetail.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._onlyShow = not uiParams[1] or true
+function UIFindTreasureDetail:OnShow(uiParams)
+  self._onlyShow = uiParams[1] and true
   self._noSingle = self:GetGameObject("NoSingle")
   self._haveSingle = self:GetGameObject("HaveSingle")
   self._normalSingle = self:GetGameObject("NormalSingle")
@@ -36,228 +26,155 @@ UIFindTreasureDetail.OnShow = function(self, uiParams)
   self._specialSingleCountLabel = self:GetUIComponent("UILocalizationText", "SpecialSingleCount")
   self._rewardLoader = self:GetUIComponent("UISelectObjectPath", "Rewards")
   if self._onlyShow then
-    (self._btnStart):SetActive(false)
-    ;
-    (self._btnGoto):SetActive(true)
+    self._btnStart:SetActive(false)
+    self._btnGoto:SetActive(true)
   else
-    ;
-    (self._btnStart):SetActive(true)
-    ;
-    (self._btnGoto):SetActive(false)
-    local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+    self._btnStart:SetActive(true)
+    self._btnGoto:SetActive(false)
+    local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
     local homelandClient = homeLandModule:GetClient()
-    local characterController = (homelandClient:CharacterManager()):MainCharacterController()
+    local characterController = homelandClient:CharacterManager():MainCharacterController()
     local tran = characterController:Transform()
     local originalPosition = tran.position
     local originalRotation = tran.rotation
-    ;
-    (HomelandFindTreasureConst.SetOriginalPosition)(originalPosition)
-    ;
-    (HomelandFindTreasureConst.SetOriginalRotation)(originalRotation)
+    HomelandFindTreasureConst.SetOriginalPosition(originalPosition)
+    HomelandFindTreasureConst.SetOriginalRotation(originalRotation)
   end
-  do
-    if not (self._singleDatas):IsSingleFull() then
-      self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_1_0 , upvalues : self
-    self:Timer()
+  if not self._singleDatas:IsSingleFull() then
+    self._timerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+      self:Timer()
+    end)
   end
-)
-    end
-    self:RefreshUI()
-    if not (N18Data.HasPrefsMiniGame)() then
-      (N18Data.SetPrefsMiniGame)()
-    end
-    local localProcess = (self._campaign):GetLocalProcess()
-    if localProcess.OnOpenWeiSiExplore then
-      localProcess:OnOpenWeiSiExplore()
-    end
+  self:RefreshUI()
+  if not N18Data.HasPrefsMiniGame() then
+    N18Data.SetPrefsMiniGame()
+  end
+  local localProcess = self._campaign:GetLocalProcess()
+  if localProcess.OnOpenWeiSiExplore then
+    localProcess:OnOpenWeiSiExplore()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureDetail.RefreshUI = function(self)
-  -- function num : 0_2
-  local canUseSingleData = (self._singleDatas):GetCanUseSingleData()
+function UIFindTreasureDetail:RefreshUI()
+  local canUseSingleData = self._singleDatas:GetCanUseSingleData()
   if canUseSingleData == nil then
-    (self._noSingle):SetActive(true)
-    ;
-    (self._haveSingle):SetActive(false)
+    self._noSingle:SetActive(true)
+    self._haveSingle:SetActive(false)
   else
-    ;
-    (self._noSingle):SetActive(false)
-    ;
-    (self._haveSingle):SetActive(true)
+    self._noSingle:SetActive(false)
+    self._haveSingle:SetActive(true)
     if canUseSingleData:IsSpecialSingle() then
-      (self._normalSingle):SetActive(false)
-      ;
-      (self._specialSingle):SetActive(true)
+      self._normalSingle:SetActive(false)
+      self._specialSingle:SetActive(true)
     else
-      ;
-      (self._normalSingle):SetActive(true)
-      ;
-      (self._specialSingle):SetActive(false)
+      self._normalSingle:SetActive(true)
+      self._specialSingle:SetActive(false)
     end
-    local rewards = (self._gameData):GetRewards()
+    local rewards = self._gameData:GetRewards()
     local count = #rewards
-    ;
-    (self._rewardLoader):SpawnObjects("UIFindTreasureDetailRewardItem", count)
-    local items = (self._rewardLoader):GetAllSpawnList()
+    self._rewardLoader:SpawnObjects("UIFindTreasureDetailRewardItem", count)
+    local items = self._rewardLoader:GetAllSpawnList()
     for i = 1, count do
-      (items[i]):Refresh(rewards[i], function(id, go)
-    -- function num : 0_2_0 , upvalues : self
-    self:ShowItemTips(id, go)
-  end
-)
+      items[i]:Refresh(rewards[i], function(id, go)
+        self:ShowItemTips(id, go)
+      end)
     end
   end
-  do
-    ;
-    (self._normalSingleCountLabel):SetText((self._singleDatas):GetNormalSingleCount())
-    ;
-    (self._specialSingleCountLabel):SetText((self._singleDatas):GetSpecialSingleCount())
-    ;
-    (self._singleTimeLabel):SetText((self._singleDatas):GetSingleTimeStr())
-  end
+  self._normalSingleCountLabel:SetText(self._singleDatas:GetNormalSingleCount())
+  self._specialSingleCountLabel:SetText(self._singleDatas:GetSpecialSingleCount())
+  self._singleTimeLabel:SetText(self._singleDatas:GetSingleTimeStr())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureDetail.Timer = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._singleTimeLabel):SetText((self._singleDatas):GetSingleTimeStr())
-  if (self._singleDatas):GetNextSingleTime() <= 0 then
+function UIFindTreasureDetail:Timer()
+  self._singleTimeLabel:SetText(self._singleDatas:GetSingleTimeStr())
+  if self._singleDatas:GetNextSingleTime() <= 0 then
     if self._timerHandler then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+      GameGlobal.Timer():CancelEvent(self._timerHandler)
       self._timerHandler = nil
     end
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.RequestSingleData, self)
+    GameGlobal.TaskManager():StartTask(self.RequestSingleData, self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureDetail.RequestSingleData = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIFindTreasureDetail:RequestSingleData(TT)
   self:Lock("UIFindTreasureDetail_RequestSingleData")
-  ;
-  (Log.error)("请求数据")
-  self._singleDatas = (HomelandFindTreasureConst.GetFindTreasureSingleDatas)(TT)
-  self._gameData = (HomelandFindTreasureConst.GetGameData)()
+  Log.error("请求数据")
+  self._singleDatas = HomelandFindTreasureConst.GetFindTreasureSingleDatas(TT)
+  self._gameData = HomelandFindTreasureConst.GetGameData()
   self:RefreshUI()
-  if not (self._singleDatas):IsSingleFull() then
-    self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_4_0 , upvalues : self
-    self:Timer()
-  end
-)
+  if not self._singleDatas:IsSingleFull() then
+    self._timerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+      self:Timer()
+    end)
   end
   self:UnLock("UIFindTreasureDetail_RequestSingleData")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureDetail.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIFindTreasureDetail:OnHide()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureDetail.ShowItemTips = function(self, id, go)
-  -- function num : 0_6
+function UIFindTreasureDetail:ShowItemTips(id, go)
   self:ShowDialog("UIItemTipsHomeland", id, go)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureDetail.BtnCloseOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIFindTreasureDetail:BtnCloseOnClick()
   if not self._onlyShow then
-    local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+    local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
     local homelandClient = homeLandModule:GetClient()
-    local characterController = (homelandClient:CharacterManager()):MainCharacterController()
+    local characterController = homelandClient:CharacterManager():MainCharacterController()
   end
-  do
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetInteractPointUIStatus, true)
-    self:_CloseDialogWithAnim()
-  end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetInteractPointUIStatus, true)
+  self:_CloseDialogWithAnim()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureDetail.BtnPlotOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self:ShowDialog("UIStoryController", (HomelandFindTreasureConst.GetPlotId)())
+function UIFindTreasureDetail:BtnPlotOnClick()
+  self:ShowDialog("UIStoryController", HomelandFindTreasureConst.GetPlotId())
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureDetail.BtnInfoOnClick = function(self)
-  -- function num : 0_9
+function UIFindTreasureDetail:BtnInfoOnClick()
   self:ShowDialog("UIHomeHelpController", "UIFindTreasureDetail")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureDetail.BtnStartOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+function UIFindTreasureDetail:BtnStartOnClick()
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
-  local characterController = (homelandClient:CharacterManager()):MainCharacterController()
+  local characterController = homelandClient:CharacterManager():MainCharacterController()
   if characterController:IsInteracting() then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_invite_role_cannot_teleport_interact"))
-    return 
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_invite_role_cannot_teleport_interact"))
+    return
   end
   if characterController:IsWearingSwimsuit() then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_invite_role_cannot_teleport_swimsuit"))
-    return 
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_invite_role_cannot_teleport_swimsuit"))
+    return
   end
   self:StartTask(self.OnStartBattle, self)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureDetail.BtnGotoOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIFindTreasureDetail:BtnGotoOnClick()
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_HomeLand)
   if isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_homeland_function_lock_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_homeland_function_lock_tips"))
+    return
   end
-  ;
-  (((GameGlobal.GetModule)(HomelandModule)):GetUIModule()):LoadHomeland()
+  GameGlobal.GetModule(HomelandModule):GetUIModule():LoadHomeland()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureDetail.OnStartBattle = function(self, TT)
-  -- function num : 0_12 , upvalues : _ENV
-  (HomelandFindTreasureConst.StartGame)(TT, self._singleDatas, function()
-    -- function num : 0_12_0 , upvalues : self
+function UIFindTreasureDetail:OnStartBattle(TT)
+  HomelandFindTreasureConst.StartGame(TT, self._singleDatas, function()
     self:_CloseDialogWithAnim()
-  end
-, false)
+  end, false)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureDetail._CloseDialogWithAnim = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", "UIFindTreasureDetail_anim2", 667, function()
-    -- function num : 0_13_0 , upvalues : self, _ENV
+function UIFindTreasureDetail:_CloseDialogWithAnim()
+  UIWidgetHelper.PlayAnimation(self, "_anim", "UIFindTreasureDetail_anim2", 667, function()
     self:CloseDialog()
     if self._onlyShow then
-      (HomelandFindTreasureConst.Destroy)()
+      HomelandFindTreasureConst.Destroy()
     end
-  end
-)
+  end)
 end
-
-

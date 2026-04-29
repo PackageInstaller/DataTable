@@ -1,98 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/valentine/ui/ui_activity_valentine_letter_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityValentineLetterController", UIController)
 UIActivityValentineLetterController = UIActivityValentineLetterController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityValentineLetterController.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityValentineLetterController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineLetterController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityValentineLetterController:OnShow(uiParams)
   self._cfg = uiParams[1]
   self:_GetComponent()
   self:_InitLetterInfo()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineLetterController.OnHide = function(self)
-  -- function num : 0_2
+function UIActivityValentineLetterController:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineLetterController._GetComponent = function(self)
-  -- function num : 0_3
+function UIActivityValentineLetterController:_GetComponent()
   self._letterBg = self:GetUIComponent("RawImageLoader", "letterBg")
   self._letterInfo = self:GetUIComponent("UILocalizationText", "letterInfo")
   self._letterSign = self:GetUIComponent("UILocalizationText", "letterSign")
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineLetterController._InitLetterInfo = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._letterInfo):SetText(self:_SetName((StringTable.Get)((self._cfg).LetterInfo)))
-  ;
-  (self._letterSign):SetText((StringTable.Get)((self._cfg).LetterWriter))
-  ;
-  (self._letterBg):LoadImage((self._cfg).Paper)
-  local isDark = (self._cfg).IsDark
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIActivityValentineLetterController:_InitLetterInfo()
+  self._letterInfo:SetText(self:_SetName(StringTable.Get(self._cfg.LetterInfo)))
+  self._letterSign:SetText(StringTable.Get(self._cfg.LetterWriter))
+  self._letterBg:LoadImage(self._cfg.Paper)
+  local isDark = self._cfg.IsDark
   if not isDark then
-    (self._letterInfo).color = Color(0.32549019607843, 0.32156862745098, 0.31372549019608)
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._letterSign).color = Color(0.32549019607843, 0.32156862745098, 0.31372549019608)
+    self._letterInfo.color = Color(0.3254901960784314, 0.3215686274509804, 0.3137254901960784)
+    self._letterSign.color = Color(0.3254901960784314, 0.3215686274509804, 0.3137254901960784)
   else
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._letterInfo).color = Color(0.9843137254902, 0.97254901960784, 0.94117647058824)
-    -- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._letterSign).color = Color(0.9843137254902, 0.97254901960784, 0.94117647058824)
+    self._letterInfo.color = Color(0.984313725490196, 0.9725490196078431, 0.9411764705882353)
+    self._letterSign.color = Color(0.984313725490196, 0.9725490196078431, 0.9411764705882353)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineLetterController._SetName = function(self, strContent)
-  -- function num : 0_5 , upvalues : _ENV
-  local roleName = ((GameGlobal.GetModule)(RoleModule)):GetName()
-  local strRes = (string.gsub)(strContent, "PlayerName", roleName)
+function UIActivityValentineLetterController:_SetName(strContent)
+  local roleName = GameGlobal.GetModule(RoleModule):GetName()
+  local strRes = string.gsub(strContent, "PlayerName", roleName)
   return strRes
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineLetterController.LetterBtnOnClick = function(self)
-  -- function num : 0_6
-  local spineStr = (self._cfg).CloseSpine
+function UIActivityValentineLetterController:LetterBtnOnClick()
+  local spineStr = self._cfg.CloseSpine
   self:StartTask(self._Close, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineLetterController._Close = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityValentineLetterController:_Close(TT)
   self:Lock("UIActivityValentineLetterController_close")
-  ;
-  (self._anim):Play("uieff_UIActivityValentineLetterController_SafeArea_out")
+  self._anim:Play("uieff_UIActivityValentineLetterController_SafeArea_out")
   YIELD(TT, 500)
   self:UnLock("UIActivityValentineLetterController_close")
   self:CloseDialog()
 end
-
-

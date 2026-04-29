@@ -1,21 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_square_without_body_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_SquareWithoutBodyArea", SkillScopeCalculator_Base)
 SkillScopeCalculator_SquareWithoutBodyArea = SkillScopeCalculator_SquareWithoutBodyArea
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_SquareWithoutBodyArea.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_SquareWithoutBodyArea:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local squareBorder = scopeParam
   local includeCenter = 1
-  if not scopeParam[1] then
-    squareBorder = type(scopeParam) ~= "table" or 1
+  if type(scopeParam) == "table" then
+    squareBorder = scopeParam[1] or 1
+    includeCenter = scopeParam[2] or 1
   end
-  includeCenter = scopeParam[2] or 1
   local range = {}
   local wholeArea = {}
   local select_piece = {}
@@ -23,28 +16,21 @@ SkillScopeCalculator_SquareWithoutBodyArea.CalcRange = function(self, scopeType,
   if #centerPos == 0 then
     centerPosVec = {centerPos}
   end
-  for _,curCenterPos in ipairs(centerPosVec) do
+  for _, curCenterPos in ipairs(centerPosVec) do
     local x = curCenterPos.x
     local y = curCenterPos.y
-    for i = x - (squareBorder), x + (squareBorder) do
-      for j = y - (squareBorder), y + (squareBorder) do
+    for i = x - squareBorder, x + squareBorder do
+      for j = y - squareBorder, y + squareBorder do
         if includeCenter ~= 1 and i == curCenterPos.x and j == curCenterPos.y then
-          do
-            select_piece[#select_piece + 1] = Vector2(i, j)
-            -- DECOMPILER ERROR at PC56: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC56: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        else
+          select_piece[#select_piece + 1] = Vector2(i, j)
         end
       end
     end
-    for _,pos in ipairs(select_piece) do
+    for _, pos in ipairs(select_piece) do
       self:_InsertTargetGrid(range, pos, wholeArea)
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.SquareWithoutBodyArea, centerPos, range, wholeArea)
   return result
 end
-
-

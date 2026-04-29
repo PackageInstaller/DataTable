@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_tower/ui_pet_member_item_show.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetMemberItemShow", UICustomWidget)
 UIPetMemberItemShow = UIPetMemberItemShow
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetMemberItemShow.Constructor = function(self)
-  -- function num : 0_0
+function UIPetMemberItemShow:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetMemberItemShow.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPetMemberItemShow:OnShow()
   self._rawimage = self:GetUIComponent("RawImageLoader", "drawIcon")
   self._leaderGO = self:GetGameObject("leaderIcon")
   self._lvValueText = self:GetUIComponent("UILocalizationText", "lvValue")
@@ -27,100 +17,57 @@ UIPetMemberItemShow.OnShow = function(self)
   self._uiAtlas = self:GetAsset("UITeams.spriteatlas", LoadType.SpriteAtlas)
   self._petModule = self:GetModule(PetModule)
   self._elementBg = self:GetUIComponent("RectTransform", "element")
-  ;
-  (self:GetGameObject("detailBtnRect")):SetActive(false)
-  ;
-  (self:GetGameObject("guidewarn")):SetActive(false)
-  ;
-  (self:GetGameObject("power")):SetActive(false)
+  self:GetGameObject("detailBtnRect"):SetActive(false)
+  self:GetGameObject("guidewarn"):SetActive(false)
+  self:GetGameObject("power"):SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetMemberItemShow.OnHide = function(self)
-  -- function num : 0_2
+function UIPetMemberItemShow:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetMemberItemShow.SetData = function(self, slotId, data)
-  -- function num : 0_3 , upvalues : _ENV
+function UIPetMemberItemShow:SetData(slotId, data)
   self._slotId = slotId
   self._pet = data
   if data == nil then
-    (Log.fatal)("星灵数据为空！")
+    Log.fatal("星灵数据为空！")
   end
   self:SetDataPet()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetMemberItemShow.SetDataPet = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._rawimage):LoadImage((self._pet):GetPetTeamBody())
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._nameText).text = (StringTable.Get)((self._pet):Name())
-  ;
-  (self._lvValueText):SetText("LV." .. (self._pet):Level())
-  ;
-  (self._imgLogo):LoadImage((self._pet):Logo())
-  local cfg_pet_element = (Cfg.cfg_pet_element)({})
-  local _1stElement = (self._pet):Element()
+function UIPetMemberItemShow:SetDataPet()
+  self._rawimage:LoadImage(self._pet:GetPetTeamBody())
+  self._nameText.text = StringTable.Get(self._pet:Name())
+  self._lvValueText:SetText("LV." .. self._pet:Level())
+  self._imgLogo:LoadImage(self._pet:Logo())
+  local cfg_pet_element = Cfg.cfg_pet_element({})
+  local _1stElement = self._pet:Element()
   if _1stElement then
-    ((self._attrMain).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._attrMain).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[_1stElement]).Icon))
+    self._attrMain.gameObject:SetActive(true)
+    self._attrMain.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[_1stElement].Icon))
   else
-    ;
-    ((self._attrMain).gameObject):SetActive(false)
+    self._attrMain.gameObject:SetActive(false)
   end
-  local _2ndElement = (self._pet):ViceElement()
-  -- DECOMPILER ERROR at PC70: Confused about usage of register: R4 in 'UnsetPending'
-
+  local _2ndElement = self._pet:ViceElement()
   if _2ndElement then
-    (self._elementBg).sizeDelta = Vector2(118, 52)
-    ;
-    ((self._attrVice).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC87: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._attrVice).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[_2ndElement]).Icon))
+    self._elementBg.sizeDelta = Vector2(118, 52)
+    self._attrVice.gameObject:SetActive(true)
+    self._attrVice.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[_2ndElement].Icon))
   else
-    -- DECOMPILER ERROR at PC94: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._elementBg).sizeDelta = Vector2(80, 52)
-    ;
-    ((self._attrVice).gameObject):SetActive(false)
+    self._elementBg.sizeDelta = Vector2(80, 52)
+    self._attrVice.gameObject:SetActive(false)
   end
-  local petStar = (self._pet):Star()
+  local petStar = self._pet:Star()
   for starLevel = 1, 6 do
-    local starGo = self:GetGameObject("star" .. R12_PC110)
+    local starGo = self:GetGameObject("star" .. starLevel)
     if starLevel <= petStar then
-      starGo:SetActive(R12_PC110)
+      starGo:SetActive(true)
     else
-      -- DECOMPILER ERROR at PC119: Overwrote pending register: R12 in 'AssignReg'
-
-      starGo:SetActive(R12_PC110)
+      starGo:SetActive(false)
     end
   end
-  ;
-  (self._leaderGO):SetActive(self._slotId == 1)
-  -- DECOMPILER ERROR at PC140: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._imgGrade).sprite = (self._uiAtlas):GetSprite("spirit_jie" .. (self._pet):Awake() .. "_frame")
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._leaderGO:SetActive(self._slotId == 1)
+  self._imgGrade.sprite = self._uiAtlas:GetSprite("spirit_jie" .. self._pet:Awake() .. "_frame")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetMemberItemShow.detailBtnOnClick = function(self)
-  -- function num : 0_5
+function UIPetMemberItemShow:detailBtnOnClick()
 end
-
-

@@ -1,35 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/shop/ui_homeland_shop_tab_sell_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandShopTabSellItem", UICustomWidget)
 UIHomelandShopTabSellItem = UIHomelandShopTabSellItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandShopTabSellItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandShopTabSellItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSellItem.OnHide = function(self, stamp)
-  -- function num : 0_1
+function UIHomelandShopTabSellItem:OnHide(stamp)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSellItem.SetData = function(self, roleAsset, funcClick, notShowTips, showNew, newState)
-  -- function num : 0_2 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_item", "UIItemHomeland")
+function UIHomelandShopTabSellItem:SetData(roleAsset, funcClick, notShowTips, showNew, newState)
+  local obj = UIWidgetHelper.SpawnObject(self, "_item", "UIItemHomeland")
   obj:Flush(roleAsset, funcClick, notShowTips, showNew, newState)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSellItem.SetSelected = function(self, isOn)
-  -- function num : 0_3
-  (self:GetGameObject("_selectBg")):SetActive(isOn)
+function UIHomelandShopTabSellItem:SetSelected(isOn)
+  self:GetGameObject("_selectBg"):SetActive(isOn)
 end
-
-

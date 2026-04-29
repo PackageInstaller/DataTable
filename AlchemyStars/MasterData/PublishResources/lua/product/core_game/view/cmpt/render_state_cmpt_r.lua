@@ -1,138 +1,85 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/render_state_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-RenderStateType = {None = 0, PlayingSkill = 1, WaitPlayTask = 2}
+RenderStateType = {
+  None = 0,
+  PlayingSkill = 1,
+  WaitPlayTask = 2
+}
 _enum("RenderStateType", RenderStateType)
 _class("RenderStateComponent", Object)
 RenderStateComponent = RenderStateComponent
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-RenderStateComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function RenderStateComponent:Constructor()
   self._renderState = RenderStateType.None
   self._param = nil
   self._previewIndex = 0
   self._skillTipsEntityID = -1
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderStateComponent.SetRenderState = function(self, renderState)
-  -- function num : 0_1
+function RenderStateComponent:SetRenderState(renderState)
   self._renderState = renderState
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderStateComponent.SetRenderStateAndParam = function(self, renderState, param)
-  -- function num : 0_2
+function RenderStateComponent:SetRenderStateAndParam(renderState, param)
   self._renderState = renderState
   self._param = param
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderStateComponent.GetRenderStateType = function(self)
-  -- function num : 0_3
+function RenderStateComponent:GetRenderStateType()
   return self._renderState
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderStateComponent.GetRenderStateParam = function(self)
-  -- function num : 0_4
+function RenderStateComponent:GetRenderStateParam()
   return self._param
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderStateComponent.NewPreviewRoutine = function(self)
-  -- function num : 0_5
+function RenderStateComponent:NewPreviewRoutine()
   self._previewIndex = self._previewIndex + 1
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderStateComponent.GetPreviewRoutineIndex = function(self)
-  -- function num : 0_6
+function RenderStateComponent:GetPreviewRoutineIndex()
   return self._previewIndex
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderStateComponent.ResetPreviewRoutine = function(self)
-  -- function num : 0_7
+function RenderStateComponent:ResetPreviewRoutine()
   self._previewIndex = self._previewIndex + 1
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderStateComponent.SetSkillTipsEntityID = function(self, entityID)
-  -- function num : 0_8
+function RenderStateComponent:SetSkillTipsEntityID(entityID)
   self._skillTipsEntityID = entityID
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderStateComponent.GetSkillTipsEntityID = function(self)
-  -- function num : 0_9
+function RenderStateComponent:GetSkillTipsEntityID()
   return self._skillTipsEntityID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderStateComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_10
+function RenderStateComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderStateComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_11
+function RenderStateComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RenderState = function(self)
-  -- function num : 0_12
-  return self:GetComponent((self.WEComponentsEnum).RenderState)
+function Entity:RenderState()
+  return self:GetComponent(self.WEComponentsEnum.RenderState)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasRenderState = function(self)
-  -- function num : 0_13
-  return self:HasComponent((self.WEComponentsEnum).RenderState)
+function Entity:HasRenderState()
+  return self:HasComponent(self.WEComponentsEnum.RenderState)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddRenderState = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderState
+function Entity:AddRenderState()
+  local index = self.WEComponentsEnum.RenderState
   local component = RenderStateComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceRenderState = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderState
+function Entity:ReplaceRenderState()
+  local index = self.WEComponentsEnum.RenderState
   local component = RenderStateComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveRenderState = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  (Log.fatal)("1111 Trace:", (Log.traceback)())
+function Entity:RemoveRenderState()
+  Log.fatal("1111 Trace:", Log.traceback())
   if self:HasRenderState() then
-    self:RemoveComponent((self.WEComponentsEnum).RenderState)
+    self:RemoveComponent(self.WEComponentsEnum.RenderState)
   end
 end
-
-

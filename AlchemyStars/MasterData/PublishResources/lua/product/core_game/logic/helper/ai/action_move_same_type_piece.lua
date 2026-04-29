@@ -1,46 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_same_type_piece.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_move_base")
 _class("ActionMoveSameTypePiece", ActionMoveBase)
 ActionMoveSameTypePiece = ActionMoveSameTypePiece
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMoveSameTypePiece.Constructor = function(self)
-  -- function num : 0_0
+function ActionMoveSameTypePiece:Constructor()
   self.m_targetPos = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveSameTypePiece.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionMoveSameTypePiece.super).Reset)(self)
+function ActionMoveSameTypePiece:Reset()
+  ActionMoveSameTypePiece.super.Reset(self)
   self.m_targetPos = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveSameTypePiece.InitTargetPosList = function(self, listPosTarget)
-  -- function num : 0_2 , upvalues : _ENV
-  local posSelf = (self.m_entityOwn):GetGridPosition()
-  local aiCmpt = (self.m_entityOwn):AI()
+function ActionMoveSameTypePiece:InitTargetPosList(listPosTarget)
+  local posSelf = self.m_entityOwn:GetGridPosition()
+  local aiCmpt = self.m_entityOwn:AI()
   local remainMobility = aiCmpt:GetMobilityValid()
   if remainMobility <= 0 then
     self.m_targetPos = posSelf
-    return 
+    return
   end
   local targetPosList = self:ComputeWalkRange(posSelf, remainMobility, true)
   if targetPosList == nil or #targetPosList <= 0 then
     self.m_targetPos = posSelf
-    return 
+    return
   end
-  local element = ((self.m_entityOwn):Element()):GetPrimaryType()
+  local element = self.m_entityOwn:Element():GetPrimaryType()
   local count = 0
-  local targetPos = nil
-  for _,v in ipairs(targetPosList) do
+  local targetPos
+  for _, v in ipairs(targetPosList) do
     local pos = v:GetPos()
     local c = self:_GetSamePieceCount(pos, element)
     if count < c then
@@ -50,9 +37,9 @@ ActionMoveSameTypePiece.InitTargetPosList = function(self, listPosTarget)
   end
   if targetPos then
     self.m_targetPos = targetPos
-    return 
+    return
   end
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local area = boardServiceLogic.AIArea
   for x = area.minX, area.maxX do
     for y = area.minY, area.maxY do
@@ -62,13 +49,11 @@ ActionMoveSameTypePiece.InitTargetPosList = function(self, listPosTarget)
         if count < c then
           count = c
           targetPos = pos
-        else
-          if c == count and targetPos then
-            local length1 = (Vector2.Distance)(targetPos, posSelf)
-            local length2 = (Vector2.Distance)(pos, posSelf)
-            if length2 < length1 then
-              targetPos = pos
-            end
+        elseif c == count and targetPos then
+          local length1 = Vector2.Distance(targetPos, posSelf)
+          local length2 = Vector2.Distance(pos, posSelf)
+          if length1 > length2 then
+            targetPos = pos
           end
         end
       end
@@ -81,12 +66,9 @@ ActionMoveSameTypePiece.InitTargetPosList = function(self, listPosTarget)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveSameTypePiece._GetSamePieceCount = function(self, pos, element)
-  -- function num : 0_3 , upvalues : _ENV
-  local posSelf = (self.m_entityOwn):GetGridPosition()
-  local utilData = (self._world):GetService("UtilData")
+function ActionMoveSameTypePiece:_GetSamePieceCount(pos, element)
+  local posSelf = self.m_entityOwn:GetGridPosition()
+  local utilData = self._world:GetService("UtilData")
   if not utilData:IsValidPiecePos(pos) then
     return 0
   end
@@ -102,11 +84,6 @@ ActionMoveSameTypePiece._GetSamePieceCount = function(self, pos, element)
   return count
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveSameTypePiece.FindNewTargetPos = function(self)
-  -- function num : 0_4
+function ActionMoveSameTypePiece:FindNewTargetPos()
   return self.m_targetPos
 end
-
-

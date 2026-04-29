@@ -1,83 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/medal/medal_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local medalMessageDef = {CLSID_CEventApplySaveMedalBoardReq = 42000, CLSID_CEventApplySaveMedalBoardRes = 42001, CLSID_CEventTakeMedalRewardReq = 42002, CLSID_CEventTakeMedalRewardRes = 42003, CLSID_CEventPushUpdateMedal = 42004}
-;
-(table.append)(MessageDef, medalMessageDef)
+local medalMessageDef = {
+  CLSID_CEventApplySaveMedalBoardReq = 42000,
+  CLSID_CEventApplySaveMedalBoardRes = 42001,
+  CLSID_CEventTakeMedalRewardReq = 42002,
+  CLSID_CEventTakeMedalRewardRes = 42003,
+  CLSID_CEventPushUpdateMedal = 42004
+}
+table.append(MessageDef, medalMessageDef)
 _class("CEventApplySaveMedalBoardReq", CCallRequestEvent)
 CEventApplySaveMedalBoardReq = CEventApplySaveMedalBoardReq
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventApplySaveMedalBoardReq.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CEventApplySaveMedalBoardReq:Constructor()
   self.req_medal_board_info = medal_placement_info:New()
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventApplySaveMedalBoardReq._proto = {
-[1] = {"req_medal_board_info", "medal_placement_info"}
+  [1] = {
+    "req_medal_board_info",
+    "medal_placement_info"
+  }
 }
 _class("CEventApplySaveMedalBoardRes", CCallReplyEvent)
 CEventApplySaveMedalBoardRes = CEventApplySaveMedalBoardRes
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventApplySaveMedalBoardRes.Constructor = function(self)
-  -- function num : 0_1
+function CEventApplySaveMedalBoardRes:Constructor()
   self.n_ret = 0
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventApplySaveMedalBoardRes._proto = {
-[1] = {"n_ret", "int"}
+  [1] = {"n_ret", "int"}
 }
 _class("CEventTakeMedalRewardReq", CCallRequestEvent)
 CEventTakeMedalRewardReq = CEventTakeMedalRewardReq
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventTakeMedalRewardReq.Constructor = function(self)
-  -- function num : 0_2
+function CEventTakeMedalRewardReq:Constructor()
   self.item_id = 0
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventTakeMedalRewardReq._proto = {
-[1] = {"item_id", "int"}
+  [1] = {"item_id", "int"}
 }
 _class("CEventTakeMedalRewardRes", CCallReplyEvent)
 CEventTakeMedalRewardRes = CEventTakeMedalRewardRes
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventTakeMedalRewardRes.Constructor = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CEventTakeMedalRewardRes:Constructor()
   self.n_ret = 0
   self.reward_info = client_medal:New()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventTakeMedalRewardRes._proto = {
-[1] = {"n_ret", "int"}
-, 
-[2] = {"reward_info", "client_medal"}
+  [1] = {"n_ret", "int"},
+  [2] = {
+    "reward_info",
+    "client_medal"
+  }
 }
 _class("CEventPushUpdateMedal", CSvrPushEvent)
 CEventPushUpdateMedal = CEventPushUpdateMedal
--- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushUpdateMedal.Constructor = function(self)
-  -- function num : 0_4
+function CEventPushUpdateMedal:Constructor()
   self.medal_list = {}
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventPushUpdateMedal._proto = {
-[1] = {"medal_list", "list<client_medal>"}
+  [1] = {
+    "medal_list",
+    "list<client_medal>"
+  }
 }
-

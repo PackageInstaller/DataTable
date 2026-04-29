@@ -1,19 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/fishing/cfg_fishing_game_inner_guide.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, FishInfo = 2, OrderFishInfo = 3, TotalFish = 4, SkillSpine = 5, SupplyInterval = 6, RoleSpine = 7, RoleNormalAnimName = 8, SuccessAnim = 9, FailAnim = 10, OrderFailAnim = 11, OctopusAnim = 12, SuccessToNormalTime = 13, FailToNormalTime = 14, OrderFailToNormalTime = 15, SkillImage = 16}
+local key = {
+  ID = 1,
+  FishInfo = 2,
+  OrderFishInfo = 3,
+  TotalFish = 4,
+  SkillSpine = 5,
+  SupplyInterval = 6,
+  RoleSpine = 7,
+  RoleNormalAnimName = 8,
+  SuccessAnim = 9,
+  FailAnim = 10,
+  OrderFailAnim = 11,
+  OctopusAnim = 12,
+  SuccessToNormalTime = 13,
+  FailToNormalTime = 14,
+  OrderFailToNormalTime = 15,
+  SkillImage = 16
+}
 local config = {
-{1, 
-{
-{5, 1, 1}
-}
-, 
-{
-{1, 99999999}
-}
-, 1, nil, 2, "n14_g_3_spine_idle", "yao_norm", "yao_happy", "yao_helpless", "yao_pain", "yao_mozhi", 2000, 2000, 2000, "n14_fish_niang"}
+  {
+    1,
+    {
+      {
+        5,
+        1,
+        1
+      }
+    },
+    {
+      {1, 99999999}
+    },
+    1,
+    nil,
+    2,
+    "n14_g_3_spine_idle",
+    "yao_norm",
+    "yao_happy",
+    "yao_helpless",
+    "yao_pain",
+    "yao_mozhi",
+    2000,
+    2000,
+    2000,
+    "n14_fish_niang"
+  }
 }
 return config, "ID", key
-

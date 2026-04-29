@@ -1,93 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_recharge/cls/ui_shop_recharge_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RechargeShopData", Object)
 RechargeShopData = RechargeShopData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RechargeShopData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function RechargeShopData:Constructor()
   self._monthCardGoods = nil
   self._goods = {}
-  self._mPay = (GameGlobal.GetModule)(PayModule)
+  self._mPay = GameGlobal.GetModule(PayModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopData.UpdateByServerData = function(self, TT, marketInfo, cfgs, monthCardInfoList, cfgGiftMarket)
-  -- function num : 0_1 , upvalues : _ENV
+function RechargeShopData:UpdateByServerData(TT, marketInfo, cfgs, monthCardInfoList, cfgGiftMarket)
   if not marketInfo then
-    (Log.fatal)("### marketInfo nil.")
-    return 
+    Log.fatal("### marketInfo nil.")
+    return
   end
-  local goodPriceList = (self._mPay):GetGoodPriceList()
+  local goodPriceList = self._mPay:GetGoodPriceList()
   local productList = {}
   self._goods = {}
   local serGoods = marketInfo.goods
-  for i,good in ipairs(serGoods) do
+  for i, good in ipairs(serGoods) do
     local goodsId = good.goods_id
     local cfgv = cfgs[goodsId]
     if cfgv then
       local item = RechargeShopItem:New(goodsId)
-      local cfg_shop_paymarket_goods_v = (Cfg.cfg_shop_paymarket_goods)[goodsId]
+      local cfg_shop_paymarket_goods_v = Cfg.cfg_shop_paymarket_goods[goodsId]
       local midasId = cfgv[ConfigKey.ConfigKey_MidasItemId]
       item:SetMidasId(midasId)
       local keyName = cfg_shop_paymarket_goods_v.Name
-      item:SetName((StringTable.Get)(keyName))
+      item:SetName(StringTable.Get(keyName))
       local keyLabel = cfg_shop_paymarket_goods_v.Tag
-      item:SetLabel((StringTable.Get)(keyLabel))
+      item:SetLabel(StringTable.Get(keyLabel))
       local icon = cfg_shop_paymarket_goods_v.Icon or ""
       item:SetIcon(icon)
       item:SetCount(tonumber(cfgv[ConfigKey.ConfigKey_ItemCount]))
       if goodPriceList[midasId] then
-        local price = (goodPriceList[midasId]).price
+        local price = goodPriceList[midasId].price
         item:SetPrice(price)
       else
-        do
-          do
-            do
-              ;
-              (table.insert)(productList, midasId)
-              ;
-              (table.insert)(self._goods, item)
-              ;
-              (Log.fatal)("### no goods in cfgs. goodsId = ", goodsId)
-              -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
+        table.insert(productList, midasId)
       end
+      table.insert(self._goods, item)
+    else
+      Log.fatal("### no goods in cfgs. goodsId = ", goodsId)
     end
   end
-  if productList and (table.count)(productList) > 0 then
-    ((GameGlobal.GetModule)(ShopModule)):GetLocalPrice()
+  if productList and table.count(productList) > 0 then
+    GameGlobal.GetModule(ShopModule):GetLocalPrice()
   end
   self:UpdateMonthCardByServerData(monthCardInfoList, cfgGiftMarket)
   self:UpdateGoodsPresent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopData.UpdateMonthCardByServerData = function(self, monthCardInfoList, cfgGiftMarket)
-  -- function num : 0_2 , upvalues : _ENV
+function RechargeShopData:UpdateMonthCardByServerData(monthCardInfoList, cfgGiftMarket)
   local goods = monthCardInfoList[1]
   if goods then
     local id = goods.gift_id
     local cfgServer = cfgGiftMarket[id]
-    local cfgClient = (Cfg.cfg_shop_giftmarket_goods)[id]
+    local cfgClient = Cfg.cfg_shop_giftmarket_goods[id]
     if cfgServer and cfgClient then
       local item = GiftPackShopItem:New(id)
       local midasId = cfgServer[ConfigKey.ConfigKey_MidasItemId]
@@ -95,11 +62,11 @@ RechargeShopData.UpdateMonthCardByServerData = function(self, monthCardInfoList,
       item:SetBuyCount(goods.selled_num)
       item:SetMaxBuyCount(tonumber(cfgServer[ConfigKey.ConfigKey_SaleNum]))
       local strOneTime = cfgServer[ConfigKey.ConfigKey_DirectAssetList]
-      local lstOneTime = (GiftPackShopData.ItemString2List)(strOneTime)
+      local lstOneTime = GiftPackShopData.ItemString2List(strOneTime)
       local awardsImmediately = self:Lst2GiftPackShopItemAward(lstOneTime)
       item:SetAwardsImmediately(awardsImmediately)
       local strCycle = cfgServer[ConfigKey.ConfigKey_CycleAcceptAssetList]
-      local lstCycle = (GiftPackShopData.ItemString2List)(strCycle)
+      local lstCycle = GiftPackShopData.ItemString2List(strCycle)
       local awardsDaily = self:Lst2GiftPackShopItemAward(lstCycle)
       item:SetAwardsDaily(awardsDaily)
       local strShopGiftType = cfgServer[ConfigKey.ConfigKey_ShopGiftType]
@@ -118,7 +85,7 @@ RechargeShopData.UpdateMonthCardByServerData = function(self, monthCardInfoList,
         item:SetType(GiftPackType.Currency)
         item:SetPriceIcon(nil)
         item:SetPriceItemId(nil)
-        local mPay = (GameGlobal.GetModule)(PayModule)
+        local mPay = GameGlobal.GetModule(PayModule)
         local goodPriceList = mPay:GetGoodPriceList()
         local goodPrice = goodPriceList[cfgServer[ConfigKey.ConfigKey_MidasItemId]]
         if goodPrice then
@@ -129,90 +96,66 @@ RechargeShopData.UpdateMonthCardByServerData = function(self, monthCardInfoList,
         item:SetPrice(priceNotCash)
       end
       item._discount = tonumber(cfgServer[ConfigKey.ConfigKey_Discount])
-      item:SetName((StringTable.Get)(cfgClient.Name))
+      item:SetName(StringTable.Get(cfgClient.Name))
       item:SetIcon(cfgClient.Icon)
       item:SetIconDetail(cfgClient.IconDetail)
       self._monthCardGoods = item
     end
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopData.Lst2GiftPackShopItemAward = function(self, lst)
-  -- function num : 0_3 , upvalues : _ENV
+function RechargeShopData:Lst2GiftPackShopItemAward(lst)
   local items = {}
-  for i,item in ipairs(lst) do
+  for i, item in ipairs(lst) do
     local item = GiftPackShopItemAward:New(item.templateId, item.count)
-    ;
-    (table.insert)(items, item)
+    table.insert(items, item)
   end
   return items
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopData.UpdateGoodsPrice = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local goodPriceList = (self._mPay):GetGoodPriceList()
-  if goodPriceList and (table.count)(goodPriceList) > 0 then
-    for i,item in ipairs(self._goods) do
+function RechargeShopData:UpdateGoodsPrice()
+  local goodPriceList = self._mPay:GetGoodPriceList()
+  if goodPriceList and table.count(goodPriceList) > 0 then
+    for i, item in ipairs(self._goods) do
       local midasId = item:GetMidasId()
       if goodPriceList[midasId] then
-        local price = (goodPriceList[midasId]).price
+        local price = goodPriceList[midasId].price
         item:SetPrice(price)
       end
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateRechargeItemPrice)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateRechargeItemPrice)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopData.UpdateGoodsPresent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local presents = (self._mPay):GetGoodPresents()
-  if presents and (table.count)(presents) > 0 then
-    for i,item in ipairs(self._goods) do
+function RechargeShopData:UpdateGoodsPresent()
+  local presents = self._mPay:GetGoodPresents()
+  if presents and table.count(presents) > 0 then
+    for i, item in ipairs(self._goods) do
       local count = item:GetCount()
       local present = presents[count]
       if present then
         item:SetHasBuy(present.hasBuy)
         item:SetCountFree(present.send_num)
       else
-        ;
-        (Log.fatal)("### [Pay][GetInfo] no good present in Midas json. midasId=[" .. item:GetMidasId() .. "] num=" .. count)
+        Log.fatal("### [Pay][GetInfo] no good present in Midas json. midasId=[" .. item:GetMidasId() .. "] num=" .. count)
       end
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateRechargeItemPresent)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateRechargeItemPresent)
   else
-    ;
-    (self._mPay):GetInfo("mp")
+    self._mPay:GetInfo("mp")
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopData.GetGoods = function(self)
-  -- function num : 0_6
+function RechargeShopData:GetGoods()
   return self._goods
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopData.GetMonthCardGoods = function(self)
-  -- function num : 0_7
+function RechargeShopData:GetMonthCardGoods()
   return self._monthCardGoods
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopData.GetGoodBuyId = function(self, id)
-  -- function num : 0_8 , upvalues : _ENV
-  for index,good in ipairs(self._goods) do
+function RechargeShopData:GetGoodBuyId(id)
+  for index, good in ipairs(self._goods) do
     if good:GetId() == id then
       return good
     end
@@ -221,10 +164,8 @@ end
 
 _class("RechargeShopItem", Object)
 RechargeShopItem = RechargeShopItem
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
 
-RechargeShopItem.Constructor = function(self, goodsId)
-  -- function num : 0_9
+function RechargeShopItem:Constructor(goodsId)
   self._id = goodsId
   self._midasId = ""
   self._name = ""
@@ -236,132 +177,76 @@ RechargeShopItem.Constructor = function(self, goodsId)
   self._countFree = 0
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopItem.GetId = function(self)
-  -- function num : 0_10
+function RechargeShopItem:GetId()
   return self._id
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopItem.GetMidasId = function(self)
-  -- function num : 0_11
+function RechargeShopItem:GetMidasId()
   return self._midasId
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopItem.SetMidasId = function(self, midasId)
-  -- function num : 0_12
+function RechargeShopItem:SetMidasId(midasId)
   self._midasId = midasId
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopItem.GetName = function(self)
-  -- function num : 0_13
+function RechargeShopItem:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopItem.SetName = function(self, name)
-  -- function num : 0_14
+function RechargeShopItem:SetName(name)
   self._name = name
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopItem.GetLabel = function(self)
-  -- function num : 0_15
+function RechargeShopItem:GetLabel()
   return self._label
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopItem.SetLabel = function(self, label)
-  -- function num : 0_16
+function RechargeShopItem:SetLabel(label)
   self._label = label
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopItem.GetPrice = function(self)
-  -- function num : 0_17
+function RechargeShopItem:GetPrice()
   return self._price
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopItem.SetPrice = function(self, price)
-  -- function num : 0_18 , upvalues : _ENV
-  price = (RechargeShopItem.RemoveDot00)(price)
+function RechargeShopItem:SetPrice(price)
+  price = RechargeShopItem.RemoveDot00(price)
   self._price = price
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopItem.RemoveDot00 = function(str)
-  -- function num : 0_19 , upvalues : _ENV
-  local newStr, num = (string.gsub)(str, "%.00", "")
+function RechargeShopItem.RemoveDot00(str)
+  local newStr, num = string.gsub(str, "%.00", "")
   return newStr
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopItem.GetIcon = function(self)
-  -- function num : 0_20
+function RechargeShopItem:GetIcon()
   return self._icon
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopItem.SetIcon = function(self, icon)
-  -- function num : 0_21
+function RechargeShopItem:SetIcon(icon)
   self._icon = icon
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopItem.GetHasBuy = function(self)
-  -- function num : 0_22
+function RechargeShopItem:GetHasBuy()
   return self._hasBuy
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopItem.SetHasBuy = function(self, hasBuy)
-  -- function num : 0_23
+function RechargeShopItem:SetHasBuy(hasBuy)
   self._hasBuy = hasBuy
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopItem.GetCount = function(self)
-  -- function num : 0_24
+function RechargeShopItem:GetCount()
   return self._count
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopItem.SetCount = function(self, count)
-  -- function num : 0_25
+function RechargeShopItem:SetCount(count)
   self._count = count
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopItem.GetCountFree = function(self)
-  -- function num : 0_26
+function RechargeShopItem:GetCountFree()
   return self._countFree
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-RechargeShopItem.SetCountFree = function(self, countFree)
-  -- function num : 0_27
+function RechargeShopItem:SetCountFree(countFree)
   self._countFree = countFree
 end
-
-

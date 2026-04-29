@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_rand_damage_same_half.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalcRandDamageSameHalf", Object)
 SkillEffectCalcRandDamageSameHalf = SkillEffectCalcRandDamageSameHalf
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalcRandDamageSameHalf.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalcRandDamageSameHalf:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcRandDamageSameHalf.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalcRandDamageSameHalf:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local skillDamageParam = skillEffectCalcParam.skillEffectParam
   local percents = skillDamageParam:GetDamagePercent()
   local damageFormulaID = skillDamageParam:GetDamageFormulaID()
-  local attacker = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local attacker = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
   local damageDampList = {}
   local damageCount = skillDamageParam:GetDamageCount()
@@ -30,86 +20,77 @@ SkillEffectCalcRandDamageSameHalf.DoSkillEffectCalculator = function(self, skill
   local isSelTargetLoop = skillDamageParam:GetIsSelTargetLoop()
   local isKeepDamageList = skillDamageParam:IsKeepDampList()
   local isFakeRandom = skillDamageParam:GetIsFakeRandom()
-  do
-    if isFakeRandom then
-      local randomSeed = skillDamageParam:GetFakeRandomSeed()
-      self:_InitFakeRandomGenerator(randomSeed)
+  if isFakeRandom then
+    local randomSeed = skillDamageParam:GetFakeRandomSeed()
+    self:_InitFakeRandomGenerator(randomSeed)
+  end
+  local randomSvc = self._world:GetService("RandomLogic")
+  local svcCalcDamage = self._world:GetService("CalcDamage")
+  local curDamageIndex = 1
+  local lastIndex = 0
+  if isKeepDamageList then
+    local super = attacker
+    if attacker:HasSuperEntity() then
+      super = attacker:GetSuperEntity() or attacker
     end
-    local randomSvc = (self._world):GetService("RandomLogic")
-    local svcCalcDamage = (self._world):GetService("CalcDamage")
-    local curDamageIndex = 1
-    local lastIndex = 0
-    do
-      if isKeepDamageList then
-        local super = attacker
-        super = not attacker:HasSuperEntity() or attacker:GetSuperEntity() or attacker
-        if super:SkillContext() then
-          damageDampList = (super:SkillContext()):GetDamageDampList()
-        end
-      end
-      local damageRandomCount = skillDamageParam:GetDamageRandomCount()
-      if damageRandomCount and type(damageRandomCount) == "table" then
-        local randomSvc = (self._world):GetService("RandomLogic")
-        local randomCount = randomSvc:LogicRand(damageRandomCount[1], damageRandomCount[2])
-        damageCount = randomCount
-      end
-      do
-        local preCalTargetPer = self:_CalcPreRepeatTargetDmgPer(skillDamageParam, targets, damageCount)
-        while #results < damageCount do
-          local index = nil
-          if isSelTargetLoop then
-            index = lastIndex + 1
-            if #targets < index then
-              index = 1
-            end
-            lastIndex = index
-          else
-            if isFakeRandom then
-              index = self:_CalcFakeRandomIndex(targets, damageDampList)
-            else
-              index = randomSvc:LogicRand(1, #targets)
-            end
-          end
-          local targetID = targets[index]
-          if not damageDampList[targetID] then
-            damageDampList[targetID] = 1
-          end
-          if preCalTargetPer and preCalTargetPer[targetID] then
-            damageDampList[targetID] = preCalTargetPer[targetID]
-          end
-          local multiDamageInfo = {}
-          local totalDamage = 0
-          local target = (self._world):GetEntityByID(targetID)
-          if target then
-            local targetPos = (target:GridLocation()):GetGridPos()
-            for _,percent in ipairs(percents) do
-              (self._skillEffectService):NotifyDamageBegin(attacker, target, attacker:GetGridPosition(), targetPos, skillEffectCalcParam.skillID, nil, nil, curDamageIndex)
-              local damageInfo = svcCalcDamage:DoCalcDamage(attacker, target, {percent = (percent + percentAddParam) * damageDampList[targetID], skillID = skillEffectCalcParam.skillID, formulaID = damageFormulaID})
-              damageInfo:SetRandHalfDamageIndex(curDamageIndex)
-              curDamageIndex = curDamageIndex + 1
-              damageDampList[targetID] = damageDampList[targetID] * dampPer
-              totalDamage = totalDamage + damageInfo:GetDamageValue()
-              ;
-              (table.insert)(multiDamageInfo, damageInfo)
-              ;
-              (self._skillEffectService):NotifyDamageEnd(attacker, target, skillEffectCalcParam.attackPos, targetPos, skillEffectCalcParam.skillID, damageInfo)
-            end
-            local skillResult = SkillDamageEffectResult:New(targetPos, targetID, totalDamage, multiDamageInfo)
-            results[#results + 1] = skillResult
-          end
-        end
-        do
-          return results
-        end
-      end
+    if super:SkillContext() then
+      damageDampList = super:SkillContext():GetDamageDampList()
     end
   end
+  local damageRandomCount = skillDamageParam:GetDamageRandomCount()
+  if damageRandomCount and type(damageRandomCount) == "table" then
+    local randomSvc = self._world:GetService("RandomLogic")
+    local randomCount = randomSvc:LogicRand(damageRandomCount[1], damageRandomCount[2])
+    damageCount = randomCount
+  end
+  local preCalTargetPer = self:_CalcPreRepeatTargetDmgPer(skillDamageParam, targets, damageCount)
+  while damageCount > #results do
+    local index
+    if isSelTargetLoop then
+      index = lastIndex + 1
+      if index > #targets then
+        index = 1
+      end
+      lastIndex = index
+    elseif isFakeRandom then
+      index = self:_CalcFakeRandomIndex(targets, damageDampList)
+    else
+      index = randomSvc:LogicRand(1, #targets)
+    end
+    local targetID = targets[index]
+    if not damageDampList[targetID] then
+      damageDampList[targetID] = 1
+    end
+    if preCalTargetPer and preCalTargetPer[targetID] then
+      damageDampList[targetID] = preCalTargetPer[targetID]
+    end
+    local multiDamageInfo = {}
+    local totalDamage = 0
+    local target = self._world:GetEntityByID(targetID)
+    if target then
+      local targetPos = target:GridLocation():GetGridPos()
+      for _, percent in ipairs(percents) do
+        self._skillEffectService:NotifyDamageBegin(attacker, target, attacker:GetGridPosition(), targetPos, skillEffectCalcParam.skillID, nil, nil, curDamageIndex)
+        local damageInfo = svcCalcDamage:DoCalcDamage(attacker, target, {
+          percent = (percent + percentAddParam) * damageDampList[targetID],
+          skillID = skillEffectCalcParam.skillID,
+          formulaID = damageFormulaID
+        })
+        damageInfo:SetRandHalfDamageIndex(curDamageIndex)
+        curDamageIndex = curDamageIndex + 1
+        damageDampList[targetID] = damageDampList[targetID] * dampPer
+        totalDamage = totalDamage + damageInfo:GetDamageValue()
+        table.insert(multiDamageInfo, damageInfo)
+        self._skillEffectService:NotifyDamageEnd(attacker, target, skillEffectCalcParam.attackPos, targetPos, skillEffectCalcParam.skillID, damageInfo)
+      end
+      local skillResult = SkillDamageEffectResult:New(targetPos, targetID, totalDamage, multiDamageInfo)
+      results[#results + 1] = skillResult
+    end
+  end
+  return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcRandDamageSameHalf._CalcPreRepeatTargetDmgPer = function(self, skillDamageParam, targets, damageCount)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalcRandDamageSameHalf:_CalcPreRepeatTargetDmgPer(skillDamageParam, targets, damageCount)
   local dampPer = skillDamageParam:GetDampPercent()
   local isSelTargetLoop = skillDamageParam:GetIsSelTargetLoop()
   local isRepeatAllSameHalf = skillDamageParam:IsRepeatAllSameHalf()
@@ -118,15 +99,14 @@ SkillEffectCalcRandDamageSameHalf._CalcPreRepeatTargetDmgPer = function(self, sk
     local index = 0
     for i = 1, damageCount do
       index = index + 1
-      if #targets < index then
+      if index > #targets then
         index = 1
       end
       local targetID = targets[index]
-      ;
-      (table.insert)(attackTargetArray, targetID)
+      table.insert(attackTargetArray, targetID)
     end
     local targetCountDic = {}
-    for _,targetID in ipairs(attackTargetArray) do
+    for _, targetID in ipairs(attackTargetArray) do
       if targetCountDic[targetID] then
         targetCountDic[targetID] = targetCountDic[targetID] + 1
       else
@@ -134,8 +114,8 @@ SkillEffectCalcRandDamageSameHalf._CalcPreRepeatTargetDmgPer = function(self, sk
       end
     end
     local preCalTargetPer = {}
-    for _,targetID in ipairs(targets) do
-      if targetCountDic[targetID] and targetCountDic[targetID] > 1 then
+    for _, targetID in ipairs(targets) do
+      if targetCountDic[targetID] and 1 < targetCountDic[targetID] then
         preCalTargetPer[targetID] = dampPer
       end
     end
@@ -143,35 +123,28 @@ SkillEffectCalcRandDamageSameHalf._CalcPreRepeatTargetDmgPer = function(self, sk
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcRandDamageSameHalf._InitFakeRandomGenerator = function(self, randomSeed)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectCalcRandDamageSameHalf:_InitFakeRandomGenerator(randomSeed)
   self._randomGenerator = lcg(randomSeed)
   if EDITOR then
-    (Log.debug)("RandDamageSameHalf:_CalcFakeRandomIndex, initSeed=", randomSeed)
+    Log.debug("RandDamageSameHalf:_CalcFakeRandomIndex, initSeed=", randomSeed)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcRandDamageSameHalf._CalcFakeRandomIndex = function(self, targets, damageDampList)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillEffectCalcRandDamageSameHalf:_CalcFakeRandomIndex(targets, damageDampList)
   if self._randomGenerator then
     local targetInfos = {}
-    for index,targetID in ipairs(targets) do
+    for index, targetID in ipairs(targets) do
       local targetInfo = {id = targetID, oriIndex = index}
-      ;
-      (table.insert)(targetInfos, targetInfo)
+      table.insert(targetInfos, targetInfo)
     end
     local aliveTargetInfos = {}
-    for index,targetInfo in ipairs(targetInfos) do
+    for index, targetInfo in ipairs(targetInfos) do
       local targetID = targetInfo.id
-      local targetEntity = (self._world):GetEntityByID(targetID)
+      local targetEntity = self._world:GetEntityByID(targetID)
       if targetEntity then
-        local currentHP = (targetEntity:Attributes()):GetCurrentHP()
-        if currentHP > 0 then
-          (table.insert)(aliveTargetInfos, targetInfo)
+        local currentHP = targetEntity:Attributes():GetCurrentHP()
+        if 0 < currentHP then
+          table.insert(aliveTargetInfos, targetInfo)
         end
       end
     end
@@ -179,10 +152,10 @@ SkillEffectCalcRandDamageSameHalf._CalcFakeRandomIndex = function(self, targets,
       aliveTargetInfos = targetInfos
     end
     local firstLevelTargetInfos = {}
-    for index,targetInfo in ipairs(aliveTargetInfos) do
+    for index, targetInfo in ipairs(aliveTargetInfos) do
       local targetID = targetInfo.id
       if not damageDampList[targetID] then
-        (table.insert)(firstLevelTargetInfos, targetInfo)
+        table.insert(firstLevelTargetInfos, targetInfo)
       end
     end
     if #firstLevelTargetInfos == 0 then
@@ -192,47 +165,35 @@ SkillEffectCalcRandDamageSameHalf._CalcFakeRandomIndex = function(self, targets,
     if validIndex < 0 then
       return 1
     end
-    local index = (firstLevelTargetInfos[validIndex]).oriIndex
-    do
-      do
-        if EDITOR then
-          local targetCount = #targets
-          ;
-          (Log.debug)("RandDamageSameHalf:_CalcFakeRandomIndex,targetCount=", targetCount, " index:", index)
-        end
-        do return index end
-        do return 1 end
-      end
+    local index = firstLevelTargetInfos[validIndex].oriIndex
+    if EDITOR then
+      local targetCount = #targets
+      Log.debug("RandDamageSameHalf:_CalcFakeRandomIndex,targetCount=", targetCount, " index:", index)
     end
+    return index
+  else
+    return 1
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcRandDamageSameHalf.LocalLogicRand = function(self, m, n)
-  -- function num : 0_5
+function SkillEffectCalcRandDamageSameHalf:LocalLogicRand(m, n)
   if not self._randomGenerator then
     return -1
   end
   local randomNum = -1
   if m == nil and n == nil then
-    randomNum = (self._randomGenerator):random()
+    randomNum = self._randomGenerator:random()
   else
-    randomNum = self:Rounding((self._randomGenerator):random(m, n))
+    randomNum = self:Rounding(self._randomGenerator:random(m, n))
   end
   return randomNum
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcRandDamageSameHalf.Rounding = function(self, value)
-  -- function num : 0_6 , upvalues : _ENV
-  local f = (math.floor)(value)
+function SkillEffectCalcRandDamageSameHalf:Rounding(value)
+  local f = math.floor(value)
   if f == value then
     return f
   else
-    return (math.floor)(value + 0.5)
+    return math.floor(value + 0.5)
   end
 end
-
-

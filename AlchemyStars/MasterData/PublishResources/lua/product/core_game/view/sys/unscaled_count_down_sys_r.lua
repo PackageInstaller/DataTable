@@ -1,39 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/unscaled_count_down_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UnscaledCountDownSystem_Render", Object)
 UnscaledCountDownSystem_Render = UnscaledCountDownSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UnscaledCountDownSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function UnscaledCountDownSystem_Render:Constructor(world)
   self._world = world
-  self._unscaledCountDownGroup = world:GetGroup((world.BW_WEMatchers).UnscaledCountDownRender)
-  self._timeService = (self._world):GetService("Time")
-  self._utilDataSvc = (self._world):GetService("UtilData")
+  self._unscaledCountDownGroup = world:GetGroup(world.BW_WEMatchers.UnscaledCountDownRender)
+  self._timeService = self._world:GetService("Time")
+  self._utilDataSvc = self._world:GetService("UtilData")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownSystem_Render.Execute = function(self)
-  -- function num : 0_1
-  self:ExecuteEntities((self._unscaledCountDownGroup):GetEntities())
+function UnscaledCountDownSystem_Render:Execute()
+  self:ExecuteEntities(self._unscaledCountDownGroup:GetEntities())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_2 , upvalues : _ENV
-  for i,e in ipairs(entities) do
+function UnscaledCountDownSystem_Render:ExecuteEntities(entities)
+  for i, e in ipairs(entities) do
     local cdCmpt = e:UnscaledCountDownRender()
     local isActive = cdCmpt:GetIsActive()
     if isActive then
       if cdCmpt:GetIsRunning() then
         local curRestTimeMs = cdCmpt:GetCurRestTimeMs()
-        if curRestTimeMs and curRestTimeMs > 0 then
-          local deltaTime = (GameGlobal:GetInstance()):GetUnscaledDeltaTime()
+        if curRestTimeMs and 0 < curRestTimeMs then
+          local deltaTime = GameGlobal:GetInstance():GetUnscaledDeltaTime()
           curRestTimeMs = curRestTimeMs - deltaTime
           cdCmpt:SetCurRestTimeMs(curRestTimeMs)
           if curRestTimeMs <= 0 then
@@ -42,75 +29,45 @@ UnscaledCountDownSystem_Render.ExecuteEntities = function(self, entities)
             self:_CountDownFinish(cdCmpt)
           end
         end
-      else
-        do
-          do
-            if cdCmpt:GetIsWaitTrigger() then
-              self:_CountDownFinish(cdCmpt)
-            end
-            -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+      elseif cdCmpt:GetIsWaitTrigger() then
+        self:_CountDownFinish(cdCmpt)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownSystem_Render.PlayNotify = function(self, TT, flagID)
-  -- function num : 0_3 , upvalues : _ENV
+function UnscaledCountDownSystem_Render:PlayNotify(TT, flagID)
   local notify = NTClientUnscaledCountDownFinish:New(flagID)
-  ;
-  ((self._world):GetService("PlayBuff")):PlayBuffView(TT, notify)
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, notify)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownSystem_Render._CountDownFinish = function(self, cdCmpt)
-  -- function num : 0_4 , upvalues : _ENV
+function UnscaledCountDownSystem_Render:_CountDownFinish(cdCmpt)
   local flagID = cdCmpt:GetFlagID()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local gameFsmStateID = utilDataSvc:GetCurMainStateID()
   if gameFsmStateID == GameStateID.WaitInput then
-    if (self._utilDataSvc):GetStatAutoFight() then
-      return 
+    if self._utilDataSvc:GetStatAutoFight() then
+      return
     end
-    local gridTouchCmpt = (self._world):GridTouch()
-    do
-      if gridTouchCmpt then
-        local isTouchPlayer = gridTouchCmpt:IsTouchPlayer()
-        if isTouchPlayer then
-          return 
-        end
-      end
-      do
-        if self._utilDataSvc then
-          local isInputEnable = (self._utilDataSvc):GetMainStateInputEnable()
-          if not isInputEnable then
-            return 
-          end
-        end
-        do return  end
-        local state = 1
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SyncClientUnscaledCountDownFinish, flagID, state)
-        cdCmpt:SetIsWaitTrigger(false)
-        cdCmpt:SetWaitPlayNotify(true)
-        ;
-        (Log.info)("UnscaledCD _CountDownFinish, flagID:", flagID)
+    local gridTouchCmpt = self._world:GridTouch()
+    if gridTouchCmpt then
+      local isTouchPlayer = gridTouchCmpt:IsTouchPlayer()
+      if isTouchPlayer then
+        return
       end
     end
+    if self._utilDataSvc then
+      local isInputEnable = self._utilDataSvc:GetMainStateInputEnable()
+      if not isInputEnable then
+        return
+      end
+    end
+  else
+    return
   end
+  local state = 1
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SyncClientUnscaledCountDownFinish, flagID, state)
+  cdCmpt:SetIsWaitTrigger(false)
+  cdCmpt:SetWaitPlayNotify(true)
+  Log.info("UnscaledCD _CountDownFinish, flagID:", flagID)
 end
-
-

@@ -1,108 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/side_enter/cls/ui_side_enter_item_fixed_time.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_base")
 _class("UISideEnterItem_FixedTime", UISideEnterItem_Base)
 UISideEnterItem_FixedTime = UISideEnterItem_FixedTime
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISideEnterItem_FixedTime.CheckOpen = function(beginTime, endTime)
-  -- function num : 0_0 , upvalues : _ENV
+function UISideEnterItem_FixedTime.CheckOpen(beginTime, endTime)
   if beginTime == nil or endTime == nil then
-    (Log.exception)("UISideEnterItem_FixedTime.CheckOpen() time = nil", (debug.traceback)())
+    Log.exception("UISideEnterItem_FixedTime.CheckOpen() time = nil", debug.traceback())
     return false
   end
-  local svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+  local svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local beginTime = loginModule:GetTimeStampByTimeStr(beginTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
   local endTime = loginModule:GetTimeStampByTimeStr(endTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  if beginTime <= curTime and curTime < endTime then
+  if curTime >= beginTime and curTime < endTime then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_FixedTime.CheckServerTimeOpen = function(beginTime, endTime)
-  -- function num : 0_1 , upvalues : _ENV
+function UISideEnterItem_FixedTime.CheckServerTimeOpen(beginTime, endTime)
   if beginTime == nil or endTime == nil then
-    (Log.exception)("UISideEnterItem_FixedTime.CheckOpen() time = nil", (debug.traceback)())
+    Log.exception("UISideEnterItem_FixedTime.CheckOpen() time = nil", debug.traceback())
     return false
   end
-  local svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+  local svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local beginTime = loginModule:GetTimeStampByTimeStr(beginTime, Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone)
   local endTime = loginModule:GetTimeStampByTimeStr(endTime, Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone)
-  if beginTime <= curTime and curTime < endTime then
+  if curTime >= beginTime and curTime < endTime then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_FixedTime.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UISideEnterItem_FixedTime:OnShow(uiParams)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_FixedTime.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISideEnterItem_FixedTime:OnHide()
   self:DetachEvent(GameEventType.AfterUILayerChanged, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_FixedTime._CheckOpen = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  local bg, ed = (self._btnCfg).BeginTime, (self._btnCfg).EndTime
-  return (UISideEnterItem_FixedTime.CheckOpen)(bg, ed)
+function UISideEnterItem_FixedTime:_CheckOpen(TT)
+  local bg, ed = self._btnCfg.BeginTime, self._btnCfg.EndTime
+  return UISideEnterItem_FixedTime.CheckOpen(bg, ed)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_FixedTime.GetSideEnterRawImage = function(self)
-  -- function num : 0_5
-  return (self._btnCfg).SideEnterIcon
+function UISideEnterItem_FixedTime:GetSideEnterRawImage()
+  return self._btnCfg.SideEnterIcon
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_FixedTime.DoShow = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (UIWidgetHelper.SetRawImage)(self, "bg", self:GetSideEnterRawImage())
+function UISideEnterItem_FixedTime:DoShow()
+  UIWidgetHelper.SetRawImage(self, "bg", self:GetSideEnterRawImage())
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_FixedTime._CalcNew = function(self)
-  -- function num : 0_7
+function UISideEnterItem_FixedTime:_CalcNew()
   return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_FixedTime._CalcRed = function(self)
-  -- function num : 0_8
+function UISideEnterItem_FixedTime:_CalcRed()
   return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_FixedTime._Refresh = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local bg, ed = (self._btnCfg).BeginTime, (self._btnCfg).EndTime
-  local isOpen = (UISideEnterItem_FixedTime.CheckOpen)(bg, ed)
-  ;
-  (self._setShowCallback)(isOpen)
+function UISideEnterItem_FixedTime:_Refresh()
+  local bg, ed = self._btnCfg.BeginTime, self._btnCfg.EndTime
+  local isOpen = UISideEnterItem_FixedTime.CheckOpen(bg, ed)
+  self._setShowCallback(isOpen)
   self:_CheckPoint()
 end
-
-

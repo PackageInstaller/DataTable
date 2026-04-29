@@ -1,61 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_compare_monster_dis_from_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCompareMonsterDisFromTeam", AINewNode)
 ActionCompareMonsterDisFromTeam = ActionCompareMonsterDisFromTeam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCompareMonsterDisFromTeam.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionCompareMonsterDisFromTeam:OnUpdate()
   local monsterClassID = self:GetLogicData(-1)
   local compareType = self:GetLogicData(-2)
   local casterEntity = self.m_entityOwn
-  local targetEntity = nil
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+  local targetEntity
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   if monsterGroup then
-    for _,monsterEntity in ipairs(monsterGroup:GetEntities()) do
-      if not monsterEntity:HasDeadMark() and monsterClassID == (monsterEntity:MonsterID()):GetMonsterClassID() then
+    for _, monsterEntity in ipairs(monsterGroup:GetEntities()) do
+      if not monsterEntity:HasDeadMark() and monsterClassID == monsterEntity:MonsterID():GetMonsterClassID() then
         targetEntity = monsterEntity
         break
       end
     end
   end
-  do
-    if not targetEntity then
-      return AINewNodeStatus.Failure
-    end
-    local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-    local teamPos = teamEntity:GetGridPosition()
-    local distanceCaster = (Vector2.Distance)(casterEntity:GetGridPosition(), teamPos)
-    local distanceTarget = (Vector2.Distance)(targetEntity:GetGridPosition(), teamPos)
-    local satisfied = false
-    if distanceCaster ~= distanceTarget then
-      satisfied = compareType ~= ComparisonOperator.EQ
-      if distanceCaster == distanceTarget then
-        satisfied = compareType ~= ComparisonOperator.NE
-        if distanceTarget >= distanceCaster then
-          satisfied = compareType ~= ComparisonOperator.GT
-          if distanceTarget > distanceCaster then
-            satisfied = compareType ~= ComparisonOperator.GE
-            if distanceCaster >= distanceTarget then
-              satisfied = compareType ~= ComparisonOperator.LT
-              if distanceCaster > distanceTarget then
-                satisfied = compareType ~= ComparisonOperator.LE
-                if satisfied == true then
-                  return AINewNodeStatus.Success
-                end
-                do return AINewNodeStatus.Failure end
-                -- DECOMPILER ERROR: 13 unprocessed JMP targets
-              end
-            end
-          end
-        end
-      end
-    end
+  if not targetEntity then
+    return AINewNodeStatus.Failure
   end
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  local teamPos = teamEntity:GetGridPosition()
+  local distanceCaster = Vector2.Distance(casterEntity:GetGridPosition(), teamPos)
+  local distanceTarget = Vector2.Distance(targetEntity:GetGridPosition(), teamPos)
+  local satisfied = false
+  if compareType == ComparisonOperator.EQ then
+    satisfied = distanceCaster == distanceTarget
+  elseif compareType == ComparisonOperator.NE then
+    satisfied = distanceCaster ~= distanceTarget
+  elseif compareType == ComparisonOperator.GT then
+    satisfied = distanceCaster > distanceTarget
+  elseif compareType == ComparisonOperator.GE then
+    satisfied = distanceCaster >= distanceTarget
+  elseif compareType == ComparisonOperator.LT then
+    satisfied = distanceCaster < distanceTarget
+  elseif compareType == ComparisonOperator.LE then
+    satisfied = distanceCaster <= distanceTarget
+  end
+  if satisfied == true then
+    return AINewNodeStatus.Success
+  end
+  return AINewNodeStatus.Failure
 end
-
-

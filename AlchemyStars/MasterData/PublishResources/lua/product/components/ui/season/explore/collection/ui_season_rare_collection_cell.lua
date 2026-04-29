@@ -1,66 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/explore/collection/ui_season_rare_collection_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonRareCollectionCell", UICustomWidget)
 UISeasonRareCollectionCell = UISeasonRareCollectionCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonRareCollectionCell.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonRareCollectionCell:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonRareCollectionCell.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonRareCollectionCell:InitWidget()
   self.item = self:GetUIComponent("RawImageLoader", "item")
   self.select = self:GetGameObject("select")
   self.new = self:GetGameObject("new")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonRareCollectionCell.SetData = function(self, itemInfo, index, selectIndex, clickCb)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonRareCollectionCell:SetData(itemInfo, index, selectIndex, clickCb)
   self.clickCb = clickCb
   self.itemInfo = itemInfo
   self.index = index
   local itemCfg = itemInfo:GetTemplate()
   if not itemCfg then
-    (Log.error)("err UISeasonRareCollectionCell can\'t find cfg_item with id = " .. templateId)
-    return 
+    Log.error("err UISeasonRareCollectionCell can't find cfg_item with id = " .. templateId)
+    return
   end
   self:SetSelect(index == selectIndex)
-  ;
-  (self.item):LoadImage(itemCfg.Icon)
-  self.isNew = not (UISeasonExploreHelper.IsRareItemHasClicked)(itemInfo:GetID())
-  ;
-  (self.new):SetActive(self.isNew)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self.item:LoadImage(itemCfg.Icon)
+  self.isNew = not UISeasonExploreHelper.IsRareItemHasClicked(itemInfo:GetID())
+  self.new:SetActive(self.isNew)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonRareCollectionCell.SetSelect = function(self, bSelect)
-  -- function num : 0_3
-  (self.select):SetActive(bSelect)
+function UISeasonRareCollectionCell:SetSelect(bSelect)
+  self.select:SetActive(bSelect)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonRareCollectionCell.ItemOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonRareCollectionCell:ItemOnClick(go)
   if self.clickCb then
-    (self.clickCb)(self)
+    self.clickCb(self)
   end
   if self.isNew then
-    (UISeasonExploreHelper.SetRareItemAsClicked)((self.itemInfo):GetID())
-    ;
-    (self.new):SetActive(false)
+    UISeasonExploreHelper.SetRareItemAsClicked(self.itemInfo:GetID())
+    self.new:SetActive(false)
   end
 end
-
-

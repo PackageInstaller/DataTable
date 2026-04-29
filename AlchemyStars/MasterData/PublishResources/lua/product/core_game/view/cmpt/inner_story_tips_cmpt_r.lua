@@ -1,112 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/inner_story_tips_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("InnerStoryTipsComponent", Object)
 InnerStoryTipsComponent = InnerStoryTipsComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-InnerStoryTipsComponent.Constructor = function(self, entityID, offset, tipsID)
-  -- function num : 0_0
+function InnerStoryTipsComponent:Constructor(entityID, offset, tipsID)
   self._entityID = entityID
   self._offSet = offset
   self._tipsID = tipsID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerStoryTipsComponent.SetParam = function(self, entityID, offset, tipsID)
-  -- function num : 0_1
+function InnerStoryTipsComponent:SetParam(entityID, offset, tipsID)
   self._entityID = entityID
   self._offSet = offset
   self._tipsID = tipsID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerStoryTipsComponent.GetEntityID = function(self)
-  -- function num : 0_2
+function InnerStoryTipsComponent:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerStoryTipsComponent.GetOffset = function(self)
-  -- function num : 0_3
+function InnerStoryTipsComponent:GetOffset()
   return self._offSet
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerStoryTipsComponent.GetTipsID = function(self)
-  -- function num : 0_4
+function InnerStoryTipsComponent:GetTipsID()
   return self._tipsID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.InnerStoryTipsComponent = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).InnerStoryTips)
+function Entity:InnerStoryTipsComponent()
+  return self:GetComponent(self.WEComponentsEnum.InnerStoryTips)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasInnerStoryTipsComponent = function(self)
-  -- function num : 0_6
-  return self:HasComponent((self.WEComponentsEnum).InnerStoryTips)
+function Entity:HasInnerStoryTipsComponent()
+  return self:HasComponent(self.WEComponentsEnum.InnerStoryTips)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddInnerStoryTipsComponent = function(self, entityID, offset, tipsID)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).InnerStoryTips
+function Entity:AddInnerStoryTipsComponent(entityID, offset, tipsID)
+  local index = self.WEComponentsEnum.InnerStoryTips
   local component = InnerStoryTipsComponent:New(entityID, offset, tipsID)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceInnerStoryTipsComponent = function(self, entityID, offset, tipsID)
-  -- function num : 0_8 , upvalues : _ENV
+function Entity:ReplaceInnerStoryTipsComponent(entityID, offset, tipsID)
   local storyTips = self:InnerStoryTipsComponent()
   if storyTips == nil then
     storyTips = InnerStoryTipsComponent:New(entityID, offset, tipsID)
   else
     storyTips:SetParam(entityID, offset, tipsID)
   end
-  self:ReplaceComponent((self.WEComponentsEnum).InnerStoryTips, storyTips)
+  self:ReplaceComponent(self.WEComponentsEnum.InnerStoryTips, storyTips)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveInnerStoryTipsComponent = function(self)
-  -- function num : 0_9
+function Entity:RemoveInnerStoryTipsComponent()
   if self:HasInnerStoryTipsComponent() then
-    self:RemoveComponent((self.WEComponentsEnum).InnerStoryTips)
+    self:RemoveComponent(self.WEComponentsEnum.InnerStoryTips)
   end
 end
 
 _class("InnerStoryShowUpData", Object)
 InnerStoryShowUpData = InnerStoryShowUpData
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-InnerStoryShowUpData.Constructor = function(self, type, showType, waveNum, roundNum)
-  -- function num : 0_10
+function InnerStoryShowUpData:Constructor(type, showType, waveNum, roundNum)
   self._type = type
   self._showType = showType
   self._waveNum = waveNum
   self._roundNum = roundNum
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerStoryShowUpData.IsMe = function(self, type, showType, waveNum, roundNum)
-  -- function num : 0_11
-  do return self._type == type and self._showType == showType and self._waveNum == waveNum and self._roundNum == roundNum end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function InnerStoryShowUpData:IsMe(type, showType, waveNum, roundNum)
+  return self._type == type and self._showType == showType and self._waveNum == waveNum and self._roundNum == roundNum
 end
-
-

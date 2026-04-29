@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_record_pet_power_and_watch_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewRecordPetPowerAndWatch", BuffViewBase)
 BuffViewRecordPetPowerAndWatch = BuffViewRecordPetPowerAndWatch
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewRecordPetPowerAndWatch.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewRecordPetPowerAndWatch:PlayView(TT)
   local result = self._buffResult
   local entityID = result:GetEntityID()
   local petPstID = result:GetPetPstID()
@@ -16,20 +9,14 @@ BuffViewRecordPetPowerAndWatch.PlayView = function(self, TT)
   local ready = result:GetReady()
   local grayWatch = result:GetGrayWatch()
   local notifyView = result:GetNotifyView()
-  ;
-  (Log.debug)("BuffViewRecordPetPowerAndWatch() pet entity=", entityID, " power=", curPower, " ready=", ready, " grayWatch=", grayWatch)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetPowerAndWatchChange, petPstID, curPower, ready, grayWatch)
+  Log.debug("BuffViewRecordPetPowerAndWatch() pet entity=", entityID, " power=", curPower, " ready=", ready, " grayWatch=", grayWatch)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PetPowerAndWatchChange, petPstID, curPower, ready, grayWatch)
   if ready then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, ready)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, ready)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetPowerChange, petPstID, curPower, false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PetPowerChange, petPstID, curPower, false)
   if notifyView then
-    local notify = NTPowerReady:New((self._world):GetEntityByID(entityID))
-    ;
-    ((self._world):GetService("PlayBuff")):PlayBuffView(TT, notify)
+    local notify = NTPowerReady:New(self._world:GetEntityByID(entityID))
+    self._world:GetService("PlayBuff"):PlayBuffView(TT, notify)
   end
 end
-
-

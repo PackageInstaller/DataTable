@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_backpack/ui_pet_backpack/ui_pet_backpack_star_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetBackpackStarItem", UICustomWidget)
 UIPetBackpackStarItem = UIPetBackpackStarItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetBackpackStarItem.Constructor = function(self)
-  -- function num : 0_0
+function UIPetBackpackStarItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetBackpackStarItem.SetData = function(self, showLight)
-  -- function num : 0_1
+function UIPetBackpackStarItem:SetData(showLight)
   self._backImg = self:GetUIComponent("Image", "Image")
   self._lightImg = self:GetUIComponent("Image", "Image (1)")
   if showLight then
-    ((self._lightImg).gameObject):SetActive(true)
+    self._lightImg.gameObject:SetActive(true)
   else
-    ;
-    ((self._lightImg).gameObject):SetActive(false)
+    self._lightImg.gameObject:SetActive(false)
   end
 end
-
-

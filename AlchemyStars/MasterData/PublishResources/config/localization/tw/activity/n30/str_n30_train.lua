@@ -1,8 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/tw/activity/n30/str_n30_train.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_n30_train_day = "{1}天", str_n30_train_hour = "{1}小時", str_n30_train_minus = "{1}分鐘", str_n30_train_less_one_minus = "<1分鐘", str_n30_train_activity_end = "活動已結束", str_n30_train_activity_remain_time = "活動剩餘時間：", str_n30_train_main_title = "閱後即焚", str_n30_train_activity_hadchall = "已完成", str_n30_train_locked_prev_popup = "完成前置關卡解鎖", str_n30_train_rule_description = "活動說明", str_n30_train_activity_intro_title = "【閱後即焚】活動說明", str_n30_train_activity_intro_head_1 = "<size=32><color=#80623b> 【閱後即焚】玩法說明</color></size>", str_n30_train_activity_intro_body_1 = "活動開放期間，導航員可以擊敗暗鬼獲得豐厚的獎勵。\n前置關卡破關後可解鎖後續關卡。", str_n30_train_1_name = "N1-熱身", str_n30_train_2_name = "N2-試探", str_n30_train_3_name = "N3-沉迷", str_n30_train_4_name = "N4-放縱", str_n30_train_5_name = "N5-狂歡", str_n30_train_1_name_desc = "「歡迎來到為你特別準備的考驗，導航員。」", str_n30_train_2_name_desc = "「繼續吧，讓我們探索戰鬥的全新可能。」", str_n30_train_3_name_desc = "「感受如何？這樣的契機可不是每天都有。」", str_n30_train_4_name_desc = "「不要感到惶恐，遵從內心的欲望，真理就在前方。」", str_n30_train_5_name_desc = "「讓最終考驗在絢爛的色彩中落下帷幕，世界將煥然一新。」"}
+local config = {
+  str_n30_train_day = "{1}天",
+  str_n30_train_hour = "{1}小時",
+  str_n30_train_minus = "{1}分鐘",
+  str_n30_train_less_one_minus = "<1分鐘",
+  str_n30_train_activity_end = "活動已結束",
+  str_n30_train_activity_remain_time = "活動剩餘時間：",
+  str_n30_train_main_title = "閱後即焚",
+  str_n30_train_activity_hadchall = "已完成",
+  str_n30_train_locked_prev_popup = "完成前置關卡解鎖",
+  str_n30_train_rule_description = "活動說明",
+  str_n30_train_activity_intro_title = "【閱後即焚】活動說明",
+  str_n30_train_activity_intro_head_1 = "<size=32><color=#80623b> 【閱後即焚】玩法說明</color></size>",
+  str_n30_train_activity_intro_body_1 = "活動開放期間，導航員可以擊敗暗鬼獲得豐厚的獎勵。\n前置關卡破關後可解鎖後續關卡。",
+  str_n30_train_1_name = "N1-熱身",
+  str_n30_train_2_name = "N2-試探",
+  str_n30_train_3_name = "N3-沉迷",
+  str_n30_train_4_name = "N4-放縱",
+  str_n30_train_5_name = "N5-狂歡",
+  str_n30_train_1_name_desc = "「歡迎來到為你特別準備的考驗，導航員。」",
+  str_n30_train_2_name_desc = "「繼續吧，讓我們探索戰鬥的全新可能。」",
+  str_n30_train_3_name_desc = "「感受如何？這樣的契機可不是每天都有。」",
+  str_n30_train_4_name_desc = "「不要感到惶恐，遵從內心的欲望，真理就在前方。」",
+  str_n30_train_5_name_desc = "「讓最終考驗在絢爛的色彩中落下帷幕，世界將煥然一新。」"
+}
 return config
-

@@ -1,33 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity_review/ui_review_progress_award_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIReviewProgressAwardDetail", UIController)
 UIReviewProgressAwardDetail = UIReviewProgressAwardDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIReviewProgressAwardDetail.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  if uiParams then
-    local campaignType = uiParams[1]
-  end
-  if uiParams then
-    local cfg = uiParams[2]
-  end
-  ;
-  (Log.info)("UIReviewProgressAwardDetail:OnShow() cfg_activity_review_ui_progress[", cfg and cfg.ID or 0, "]")
+function UIReviewProgressAwardDetail:OnShow(uiParams)
+  local campaignType = uiParams and uiParams[1]
+  local cfg = uiParams and uiParams[2]
+  Log.info("UIReviewProgressAwardDetail:OnShow() cfg_activity_review_ui_progress[", cfg and cfg.ID or 0, "]")
   local contentClassName = cfg and cfg.ClassContent or "UIReviewProgressAwardDetailContent"
   local contentPrefabName = cfg and cfg.PrefabContent or "UIReviewProgressAwardDetailContent.prefab"
   local itemClassName = cfg and cfg.ClassContentItem or "UIReviewProgressAwardDetailItem"
   local itemPrefabName = cfg and cfg.PrefabContentItem or "UIReviewProgressAwardDetailItem.prefab"
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_pool", contentClassName, contentPrefabName)
+  local obj = UIWidgetHelper.SpawnObject(self, "_pool", contentClassName, contentPrefabName)
   obj:SetData(self, function(id, go)
-    -- function num : 0_0_0 , upvalues : _ENV, self
-    local obj = (UIWidgetHelper.SpawnObject)(self, "selectInfo", "UISelectInfo")
-    obj:SetData(id, (go.transform).position)
-  end
-, campaignType, itemClassName, itemPrefabName)
+    local obj = UIWidgetHelper.SpawnObject(self, "selectInfo", "UISelectInfo")
+    obj:SetData(id, go.transform.position)
+  end, campaignType, itemClassName, itemPrefabName)
 end
-
-

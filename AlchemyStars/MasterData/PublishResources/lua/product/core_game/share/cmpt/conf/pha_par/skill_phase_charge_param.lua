@@ -1,57 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_charge_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseChargeParam", SkillPhaseParamBase)
 SkillPhaseChargeParam = SkillPhaseChargeParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseChargeParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseChargeParam:Constructor(t)
   self._anim = t.anim
   self._delay = t.delay or 0
   self._effIds = t.effIds
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseChargeParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseChargeParam:GetCacheTable()
   local t = {}
-  for i,v in ipairs(self._effIds) do
-    (table.insert)(t, {((Cfg.cfg_effect)[v]).ResPath, 1})
+  for i, v in ipairs(self._effIds) do
+    table.insert(t, {
+      Cfg.cfg_effect[v].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseChargeParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseChargeParam:GetPhaseType()
   return SkillViewPhaseType.Charge
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseChargeParam.GetAnim = function(self)
-  -- function num : 0_3
+function SkillPhaseChargeParam:GetAnim()
   return self._anim
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseChargeParam.GetDelay = function(self)
-  -- function num : 0_4
+function SkillPhaseChargeParam:GetDelay()
   return self._delay
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseChargeParam.GetEffIds = function(self)
-  -- function num : 0_5
+function SkillPhaseChargeParam:GetEffIds()
   return self._effIds
 end
-
-

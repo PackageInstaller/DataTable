@@ -1,20 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_we_chat/we_chat_state_machine.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("fsm_state_machine")
 require("we_chat_state")
 _class("WeChatStateMachine", FSMStateMachine)
 WeChatStateMachine = WeChatStateMachine
-local WeChatState = {Empty = -1, Normal = 1, Reply = 2, AddAnswer = 3, Wait = 4, WaitEnd = 5, Voice = 6}
+local WeChatState = {
+  Empty = -1,
+  Normal = 1,
+  Reply = 2,
+  AddAnswer = 3,
+  Wait = 4,
+  WaitEnd = 5,
+  Voice = 6
+}
 _enum("WeChatState", WeChatState)
-local WeChatStateName = {[WeChatState.Empty] = "Empty", [WeChatState.Normal] = "Normal", [WeChatState.Reply] = "Reply", [WeChatState.AddAnswer] = "AddAnswer", [WeChatState.Wait] = "Wait", [WeChatState.WaitEnd] = "WaitEnd", [WeChatState.Voice] = "Voice"}
+local WeChatStateName = {
+  [WeChatState.Empty] = "Empty",
+  [WeChatState.Normal] = "Normal",
+  [WeChatState.Reply] = "Reply",
+  [WeChatState.AddAnswer] = "AddAnswer",
+  [WeChatState.Wait] = "Wait",
+  [WeChatState.WaitEnd] = "WaitEnd",
+  [WeChatState.Voice] = "Voice"
+}
 _enum("WeChatStateName", WeChatStateName)
--- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
 
-WeChatStateMachine.OnInit = function(self)
-  -- function num : 0_0 , upvalues : _ENV, WeChatState
+function WeChatStateMachine:OnInit()
   self:Add(WeChatEmptyState:New(WeChatState.Empty, self))
   self:Add(WeChatNormalState:New(WeChatState.Normal, self))
   self:Add(WeChatReplyState:New(WeChatState.Reply, self))
@@ -23,5 +32,3 @@ WeChatStateMachine.OnInit = function(self)
   self:Add(WeChatWaitEndState:New(WeChatState.WaitEnd), self)
   self:Add(WeChatVoiceState:New(WeChatState.Voice, self))
 end
-
-

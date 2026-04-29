@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/level_par/monster_dead_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MonsterDeadParam", Object)
 MonsterDeadParam = MonsterDeadParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterDeadParam.Constructor = function(self, monsterID, deadWave, deadRound)
-  -- function num : 0_0
+function MonsterDeadParam:Constructor(monsterID, deadWave, deadRound)
   self._monsterID = monsterID
   self._deadWave = deadWave
   self._deadRound = deadRound
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterDeadParam.GetMonsterID = function(self)
-  -- function num : 0_1
+function MonsterDeadParam:GetMonsterID()
   return self._monsterID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterDeadParam.GetDeadWave = function(self)
-  -- function num : 0_2
+function MonsterDeadParam:GetDeadWave()
   return self._deadWave
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterDeadParam.GetDeadRound = function(self)
-  -- function num : 0_3
+function MonsterDeadParam:GetDeadRound()
   return self._deadRound
 end
-
-

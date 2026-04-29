@@ -1,34 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/common_line_mission/ui_common_line_mission_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICommonLineMissionConst", Object)
 UICommonLineMissionConst = UICommonLineMissionConst
--- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
 UICommonLineMissionConst.CampaignID = 0
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
 
-UICommonLineMissionConst.InitCampaignID = function(id)
-  -- function num : 0_0 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function UICommonLineMissionConst.InitCampaignID(id)
   UICommonLineMissionConst.CampaignID = id
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionConst.LineMissionDBID = function()
-  -- function num : 0_1 , upvalues : _ENV
+function UICommonLineMissionConst.LineMissionDBID()
   return UICommonLineMissionConst.CampaignID * 100 + ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_MISSION
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionConst.TaskDBID = function()
-  -- function num : 0_2 , upvalues : _ENV
+function UICommonLineMissionConst.TaskDBID()
   return UICommonLineMissionConst.CampaignID * 100 + ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_TASK
 end
-
-

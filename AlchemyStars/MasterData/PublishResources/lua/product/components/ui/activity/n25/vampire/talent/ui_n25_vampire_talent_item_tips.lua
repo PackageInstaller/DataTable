@@ -1,29 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/vampire/talent/ui_n25_vampire_talent_item_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25VampireTalentItemTips", UIController)
 UIN25VampireTalentItemTips = UIN25VampireTalentItemTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25VampireTalentItemTips.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN25VampireTalentItemTips:Constructor()
   self.mCampaign = self:GetModule(CampaignModule)
-  self.data = (self.mCampaign):GetN25Data()
+  self.data = self.mCampaign:GetN25Data()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentItemTips.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self.atc = (self:GetGameObject()):GetComponent(typeof(ATransitionComponent))
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.atc).enabled = true
-  ;
-  (self.atc):PlayEnterAnimation(true)
+function UIN25VampireTalentItemTips:OnShow(uiParams)
+  self.atc = self:GetGameObject():GetComponent(typeof(ATransitionComponent))
+  self.atc.enabled = true
+  self.atc:PlayEnterAnimation(true)
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self.txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
@@ -31,48 +17,28 @@ UIN25VampireTalentItemTips.OnShow = function(self, uiParams)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentItemTips.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgIcon):DestoryLastImage()
+function UIN25VampireTalentItemTips:OnHide()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentItemTips.Flush = function(self)
-  -- function num : 0_3
-  local icon, name, desc = (self.relic):IconNameDesc()
-  ;
-  (self.imgIcon):LoadImage(icon)
-  ;
-  (self.txtName):SetText(name)
-  ;
-  (self.txtDesc):SetText(desc)
+function UIN25VampireTalentItemTips:Flush()
+  local icon, name, desc = self.relic:IconNameDesc()
+  self.imgIcon:LoadImage(icon)
+  self.txtName:SetText(name)
+  self.txtDesc:SetText(desc)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentItemTips.BgOnClick = function(self, go)
-  -- function num : 0_4
+function UIN25VampireTalentItemTips:BgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentItemTips.PlayAnimClose = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN25VampireTalentItemTips:PlayAnimClose()
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
     local key = "UIN25VampireTalentItemTipsPlayAnimClose"
     self:Lock(key)
-    ;
-    (self.atc):PlayLeaveAnimation(true)
+    self.atc:PlayLeaveAnimation(true)
     YIELD(TT, 140)
     self:CloseDialog()
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
-
-

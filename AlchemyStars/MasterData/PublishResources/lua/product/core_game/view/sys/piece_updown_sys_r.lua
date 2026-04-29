@@ -1,64 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/piece_updown_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PieceUpdownSystem_Render", ReactiveSystem)
 PieceUpdownSystem_Render = PieceUpdownSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PieceUpdownSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function PieceUpdownSystem_Render:Constructor(world)
   self._world = world
-  self._pieceMaterials = {[PieceType.Any] = (ResourceManager:GetInstance()):SyncLoadAsset("eff_gezi_xiachen_Rainbow.mat", LoadType.Mat), [PieceType.Blue] = (ResourceManager:GetInstance()):SyncLoadAsset("eff_gezi_xiachen_Blue.mat", LoadType.Mat), [PieceType.Green] = (ResourceManager:GetInstance()):SyncLoadAsset("eff_gezi_xiachen_Green.mat", LoadType.Mat), [PieceType.Red] = (ResourceManager:GetInstance()):SyncLoadAsset("eff_gezi_xiachen_Red.mat", LoadType.Mat), [PieceType.Yellow] = (ResourceManager:GetInstance()):SyncLoadAsset("eff_gezi_xiachen_Yellow.mat", LoadType.Mat)}
+  self._pieceMaterials = {
+    [PieceType.Any] = ResourceManager:GetInstance():SyncLoadAsset("eff_gezi_xiachen_Rainbow.mat", LoadType.Mat),
+    [PieceType.Blue] = ResourceManager:GetInstance():SyncLoadAsset("eff_gezi_xiachen_Blue.mat", LoadType.Mat),
+    [PieceType.Green] = ResourceManager:GetInstance():SyncLoadAsset("eff_gezi_xiachen_Green.mat", LoadType.Mat),
+    [PieceType.Red] = ResourceManager:GetInstance():SyncLoadAsset("eff_gezi_xiachen_Red.mat", LoadType.Mat),
+    [PieceType.Yellow] = ResourceManager:GetInstance():SyncLoadAsset("eff_gezi_xiachen_Yellow.mat", LoadType.Mat)
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceUpdownSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local c = Collector:New({world:GetGroup((world.BW_WEMatchers).PieceUpdown)}, {"Added"})
+function PieceUpdownSystem_Render:GetTrigger(world)
+  local c = Collector:New({
+    world:GetGroup(world.BW_WEMatchers.PieceUpdown)
+  }, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceUpdownSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2
+function PieceUpdownSystem_Render:Filter(entity)
   return entity:HasView()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceUpdownSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function PieceUpdownSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     self:Apply(entities[i])
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceUpdownSystem_Render.Apply = function(self, e)
-  -- function num : 0_4 , upvalues : _ENV
-  local pos = (e:PieceUpdown()):GetPos()
-  local utilData = (self._world):GetService("UtilData")
+function PieceUpdownSystem_Render:Apply(e)
+  local pos = e:PieceUpdown():GetPos()
+  local utilData = self._world:GetService("UtilData")
   local pieceType = utilData:FindPieceElement(pos)
-  local mat = (self._pieceMaterials)[pieceType]
+  local mat = self._pieceMaterials[pieceType]
   if not mat then
-    (Log.error)("PieceUpdownSystem_Render not find piece type material type=", pieceType)
-    return 
+    Log.error("PieceUpdownSystem_Render not find piece type material type=", pieceType)
+    return
   end
-  local isdown = (e:PieceUpdown()):IsDown()
-  local go = ((e:View()).ViewWrapper).GameObject
+  local isdown = e:PieceUpdown():IsDown()
+  local go = e:View().ViewWrapper.GameObject
   local render = go:GetComponentInChildren(typeof(UnityEngine.MeshRenderer))
-  render.sharedMaterials = {mat.Obj}
+  render.sharedMaterials = {
+    mat.Obj
+  }
   local anim = go:GetComponent(typeof(UnityEngine.Animation))
   if isdown then
-    anim:Play("eff_gezi_xiachen", (UnityEngine.PlayMode).StopAll)
+    anim:Play("eff_gezi_xiachen", UnityEngine.PlayMode.StopAll)
   else
-    anim:Play("eff_gezi_shangsheng", (UnityEngine.PlayMode).StopAll)
+    anim:Play("eff_gezi_shangsheng", UnityEngine.PlayMode.StopAll)
   end
 end
-
-

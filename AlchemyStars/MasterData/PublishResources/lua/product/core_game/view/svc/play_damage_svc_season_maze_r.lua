@@ -1,96 +1,94 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/play_damage_svc_season_maze_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_damage_svc_r")
 _class("PlayDamageService_SeasonMaze", PlayDamageService)
 PlayDamageService_SeasonMaze = PlayDamageService_SeasonMaze
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayDamageService_SeasonMaze._RefreshTeamHP = function(self, TT, defenderEntity, damageInfo)
-  -- function num : 0_0 , upvalues : _ENV
-  local teamEntity = nil
+function PlayDamageService_SeasonMaze:_RefreshTeamHP(TT, defenderEntity, damageInfo)
+  local teamEntity
   if defenderEntity:HasTeam() then
     teamEntity = defenderEntity
+  elseif defenderEntity:PetPstID() then
+    teamEntity = defenderEntity:Pet():GetOwnerTeamEntity()
   else
-    if defenderEntity:PetPstID() then
-      teamEntity = (defenderEntity:Pet()):GetOwnerTeamEntity()
-    else
-      return 
-    end
+    return
   end
-  local petList = (teamEntity:Team()):GetTeamPetEntities()
-  local battleRenderCmpt = (self._world):BattleRenderConfig()
-  for id,entity in ipairs(petList) do
+  local petList = teamEntity:Team():GetTeamPetEntities()
+  local battleRenderCmpt = self._world:BattleRenderConfig()
+  for id, entity in ipairs(petList) do
     if not entity:HasPetDeadMark() then
       local curDamageInfo = damageInfo:GetMazeTeamMemberDamageInfo(entity:GetID())
-      -- DECOMPILER ERROR at PC47: Unhandled construct in 'MakeBoolean' P1
-
-      if defenderEntity:PetPstID() and defenderEntity:GetID() == entity:GetID() then
-        curDamageInfo = damageInfo
-      end
-      if not curDamageInfo:GetChangeHP() then
-        local changeValue = not curDamageInfo or 0
-      end
-      local renderCurMaxHP = (entity:HP()):GetMaxHP()
-      local renderCurHP = (entity:HP()):GetRedHP()
-      renderCurHP = renderCurHP + changeValue
-      if renderCurMaxHP < renderCurHP then
-        renderCurHP = renderCurMaxHP
-      end
-      if renderCurHP < 0 then
-        renderCurHP = 0
-      end
-      entity:ReplaceRedHP(renderCurHP)
-      local petPstIDComponent = entity:PetPstID()
-      local pstID = petPstIDComponent:GetPstID()
-      local is_dead = false
-      if renderCurHP <= 0 then
-        is_dead = true
-        battleRenderCmpt:AddDeadPet((entity:PetPstID()):GetTemplateID())
-      end
-      ;
-      (Log.notice)("_RefreshTeamHP() entityID:", entity:GetID(), "CurHP:", renderCurHP, "MaxHP:", renderCurMaxHP)
-      if changeValue ~= 0 then
-        self:_OnHpChangeNotifyBuff(TT, entity, changeValue, curDamageInfo)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPetHpChangedInMaze, {pet_pstid = pstID, cur_hp = renderCurHP, max_hp = renderCurMaxHP, is_dead = is_dead, change_value = changeValue})
+      if defenderEntity:PetPstID() then
+        if defenderEntity:GetID() == entity:GetID() then
+          curDamageInfo = damageInfo
+          goto lbl_51
+        end
+      else
+        ::lbl_51::
+        if curDamageInfo then
+          local changeValue = curDamageInfo:GetChangeHP() or 0
+          local renderCurMaxHP = entity:HP():GetMaxHP()
+          local renderCurHP = entity:HP():GetRedHP()
+          renderCurHP = renderCurHP + changeValue
+          if renderCurMaxHP < renderCurHP then
+            renderCurHP = renderCurMaxHP
+          end
+          if renderCurHP < 0 then
+            renderCurHP = 0
+          end
+          entity:ReplaceRedHP(renderCurHP)
+          local petPstIDComponent = entity:PetPstID()
+          local pstID = petPstIDComponent:GetPstID()
+          local is_dead = false
+          if renderCurHP <= 0 then
+            is_dead = true
+            battleRenderCmpt:AddDeadPet(entity:PetPstID():GetTemplateID())
+          end
+          Log.notice("_RefreshTeamHP() entityID:", entity:GetID(), "CurHP:", renderCurHP, "MaxHP:", renderCurMaxHP)
+          if changeValue ~= 0 then
+            self:_OnHpChangeNotifyBuff(TT, entity, changeValue, curDamageInfo)
+            GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPetHpChangedInMaze, {
+              pet_pstid = pstID,
+              cur_hp = renderCurHP,
+              max_hp = renderCurMaxHP,
+              is_dead = is_dead,
+              change_value = changeValue
+            })
+          end
+        end
       end
     end
   end
   local curTeamHP, maxTeamHP = 0, 0
-  for _,entity in ipairs(petList) do
-    local renderCurHP = (entity:HP()):GetRedHP()
-    local renderCurMaxHP = (entity:HP()):GetMaxHP()
+  for _, entity in ipairs(petList) do
+    local renderCurHP = entity:HP():GetRedHP()
+    local renderCurMaxHP = entity:HP():GetMaxHP()
     curTeamHP = curTeamHP + renderCurHP
     maxTeamHP = maxTeamHP + renderCurMaxHP
   end
   local hpCmpt = teamEntity:HP()
   local shieldPoint = hpCmpt:GetShieldValue()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TeamHPChange, {isLocalTeam = true, currentHP = curTeamHP, hitpoint = curTeamHP, maxHP = maxTeamHP, shield = shieldPoint, entityID = teamEntity:GetID(), showCurseHp = hpCmpt:GetShowCurseHp(), curseHpVal = hpCmpt:GetCurseHpValue()})
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.TeamHPChange, {
+    isLocalTeam = true,
+    currentHP = curTeamHP,
+    hitpoint = curTeamHP,
+    maxHP = maxTeamHP,
+    shield = shieldPoint,
+    entityID = teamEntity:GetID(),
+    showCurseHp = hpCmpt:GetShowCurseHp(),
+    curseHpVal = hpCmpt:GetCurseHpValue()
+  })
   teamEntity:ReplaceRedHPAndWhitHP(curTeamHP)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDamageService_SeasonMaze.OnTeamOrderChangeRefresh = function(self)
-  -- function num : 0_1
+function PlayDamageService_SeasonMaze:OnTeamOrderChangeRefresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDamageService_SeasonMaze.GetAlivePetCount = function(self, teamEntity)
-  -- function num : 0_2 , upvalues : _ENV
-  local petEntityList = (teamEntity:Team()):GetTeamPetEntities()
+function PlayDamageService_SeasonMaze:GetAlivePetCount(teamEntity)
+  local petEntityList = teamEntity:Team():GetTeamPetEntities()
   local count = 0
-  for _,entity in ipairs(petEntityList) do
+  for _, entity in ipairs(petEntityList) do
     if not entity:HasPetDeadMark() then
       count = count + 1
     end
   end
   return count
 end
-
-

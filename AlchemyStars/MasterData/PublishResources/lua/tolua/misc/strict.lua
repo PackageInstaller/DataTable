@@ -1,13 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/misc/strict.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local getinfo, error, rawset, rawget = debug.getinfo, error, rawset, rawget
+local getinfo, error, rawset, rawget = debug.getinfo, error, rawset, _ENV.rawget
 local mt = getmetatable(_G)
 if mt == nil then
   mt = {}
   setmetatable(_G, mt)
 end
 mt.__declared = {}
-

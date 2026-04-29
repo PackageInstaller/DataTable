@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_global_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIGlobalModule", UIModule)
 UIGlobalModule = UIGlobalModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGlobalModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIGlobalModule:Constructor()
   self:AttachEvent(GameEventType.AppHome, self.OnAppHome)
   self:AttachEvent(GameEventType.AppResume, self.OnAppResume)
   self:AttachEvent(GameEventType.AppReturn, self.OnAppReturn)
@@ -25,99 +18,80 @@ UIGlobalModule.Constructor = function(self)
   self._quitTips = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGlobalModule.Dispose = function(self)
-  -- function num : 0_1
+function UIGlobalModule:Dispose()
 end
 
 local homeTime = 0
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-UIGlobalModule.OnAppHome = function(self)
-  -- function num : 0_2 , upvalues : homeTime, _ENV
-  homeTime = (GameGlobal:GetInstance()):GetCurrentRealTime()
+function UIGlobalModule:OnAppHome()
+  homeTime = GameGlobal:GetInstance():GetCurrentRealTime()
   self.networkType = GetInternetReachability()
   if APPVER1140 then
-    ((HotUpdate.ActivityLuaProxy).SaveManifestImmediately)()
+    HotUpdate.ActivityLuaProxy.SaveManifestImmediately()
   end
-  ;
-  (Log.debug)("UIGlobalModule:OnAppHome 游戏暂停 一切中止 unityTime ", homeTime, " current networkType ", self.networkType)
+  Log.debug("UIGlobalModule:OnAppHome 游戏暂停 一切中止 unityTime ", homeTime, " current networkType ", self.networkType)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIGlobalModule.OnAppResume = function(self)
-  -- function num : 0_3 , upvalues : _ENV, homeTime
-  (Log.debug)("UIGlobalModule:OnAppHome 游戏开始 准备万物生机")
+function UIGlobalModule:OnAppResume()
+  Log.debug("UIGlobalModule:OnAppHome 游戏开始 准备万物生机")
   local moduleMain = self:GetModule(LoginModule)
   if not moduleMain:IsLogin() then
-    return 
+    return
   end
-  local waitTime = (GameGlobal:GetInstance()):GetCurrentRealTime() - homeTime
+  local waitTime = GameGlobal:GetInstance():GetCurrentRealTime() - homeTime
   local new_nettype = GetInternetReachability()
-  ;
-  (Log.debug)("UIGlobalModule:OnAppResume 游戏开始 万物生机 current= ", (GameGlobal:GetInstance()):GetCurrentRealTime(), ", unity wait= ", waitTime, "old neworktype ", self.networkType, " new networkType ", new_nettype)
+  Log.debug("UIGlobalModule:OnAppResume 游戏开始 万物生机 current= ", GameGlobal:GetInstance():GetCurrentRealTime(), ", unity wait= ", waitTime, "old neworktype ", self.networkType, " new networkType ", new_nettype)
   if new_nettype ~= self.networkType then
     self.networkType = new_nettype
-    ;
-    (moduleMain.caller):LostAuth()
-    ;
-    (moduleMain.caller):Connect()
-    ;
-    (moduleMain.caller):DisconnectLink("network change")
+    moduleMain.caller:LostAuth()
+    moduleMain.caller:Connect()
+    moduleMain.caller:DisconnectLink("network change")
     moduleMain:Retry("network change")
-  else
-    if self.appHomeTipTime < waitTime then
-      (moduleMain.caller):LostAuth()
-      moduleMain:Retry("wait time too long " .. tostring(waitTime))
-    end
+  elseif waitTime > self.appHomeTipTime then
+    moduleMain.caller:LostAuth()
+    moduleMain:Retry("wait time too long " .. tostring(waitTime))
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIGlobalModule.OnAppReturn = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.debug)("UIGlobalModule:OnAppReturn")
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+function UIGlobalModule:OnAppReturn()
+  Log.debug("UIGlobalModule:OnAppReturn")
+  local loginModule = GameGlobal.GetModule(LoginModule)
   if not loginModule:EnableEscKey() then
-    return 
+    return
   end
-  if ((GameGlobal.UIStateManager)()):IsLocked() then
-    (Log.debug)("UIGlobalModule:OnAppReturn, UI is Lock Now.")
-    return 
+  if GameGlobal.UIStateManager():IsLocked() then
+    Log.debug("UIGlobalModule:OnAppReturn, UI is Lock Now.")
+    return
   end
   if self._quitTips then
-    ((GameGlobal.UIStateManager)()):ClosePopup(self._quitTips)
+    GameGlobal.UIStateManager():ClosePopup(self._quitTips)
     self._quitTips = nil
-    return 
+    return
   end
-  local uiStateManager = (GameGlobal.UIStateManager)()
+  local uiStateManager = GameGlobal.UIStateManager()
   local currentState = uiStateManager.curState
   if not currentState then
-    return 
+    return
   end
-  local curUIStateType = ((GameGlobal.UIStateManager)()):CurUIStateType()
+  local curUIStateType = GameGlobal.UIStateManager():CurUIStateType()
   if curUIStateType == UIStateType.LoginEmpty then
-    return 
+    return
   end
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+  local guideModule = GameGlobal.GetModule(GuideModule)
   if guideModule:GuideInProgress() then
     self:ShowQuitUI()
   else
     if curUIStateType == UIStateType.UIAircraft then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftLeaveAircraft)
-      ;
-      ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Aircraft_Exit, "UI")
-      return 
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftLeaveAircraft)
+      GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Aircraft_Exit, "UI")
+      return
     end
     if curUIStateType == UIStateType.UIHomeland or curUIStateType == UIStateType.UIHomelandBuild or curUIStateType == UIStateType.UIHomeStoryController then
-      return 
+      return
     end
     if curUIStateType == UIStateType.UIDrawCardAnim then
       self:ShowQuitUI()
-      return 
+      return
     end
     local uiControllerManager = currentState.uiControllerManager
     local visibleUIList = uiControllerManager:VisibleUIList()
@@ -127,251 +101,172 @@ UIGlobalModule.OnAppReturn = function(self)
       else
         local name = visibleUIList:GetAt(visibleUIList:Size())
         if name == "UIPetIntimacyMainController" then
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PlayInOutAnimation, true)
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.PlayInOutAnimation, true)
         end
-        ;
-        ((GameGlobal.UIStateManager)()):CloseDialog(name)
+        GameGlobal.UIStateManager():CloseDialog(name)
       end
+    elseif curUIStateType == UIStateType.UICommonLoading or curUIStateType == UIStateType.BattleLoading or curUIStateType == UIStateType.UIBattle or curUIStateType == UIStateType.UIMain or curUIStateType == UIStateType.UIDrawCardAnim then
+      self:ShowQuitUI()
     else
-      do
-        if curUIStateType == UIStateType.UICommonLoading or curUIStateType == UIStateType.BattleLoading or curUIStateType == UIStateType.UIBattle or curUIStateType == UIStateType.UIMain or curUIStateType == UIStateType.UIDrawCardAnim then
-          self:ShowQuitUI()
-        else
-          ;
-          ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
-        end
-      end
+      GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
     end
   end
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIGlobalModule.ShowQuitUI = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._quitTips = (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_common_quit_application"), function(param)
-    -- function num : 0_5_0 , upvalues : _ENV, self
-    (EngineGameHelper.QuitApp)()
+function UIGlobalModule:ShowQuitUI()
+  self._quitTips = PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_common_quit_application"), function(param)
+    EngineGameHelper.QuitApp()
     self._quitTips = nil
-  end
-, nil, function(param)
-    -- function num : 0_5_1 , upvalues : _ENV, self
-    (Log.debug)("sale cancel. .")
+  end, nil, function(param)
+    Log.debug("sale cancel. .")
     self._quitTips = nil
-  end
-, nil)
+  end, nil)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIGlobalModule.OnAskPopupReset = function(self, txt, func1, func2)
-  -- function num : 0_6 , upvalues : _ENV
+function UIGlobalModule:OnAskPopupReset(txt, func1, func2)
   if self.networkMonitorPopup then
-    (Log.warn)("UIGlobalModule:OnAskPopupReset return, 已经出现弹框了 return")
-    return 
+    Log.warn("UIGlobalModule:OnAskPopupReset return, 已经出现弹框了 return")
+    return
   end
-  self.networkMonitorPopup = (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Network, PopupMsgBoxType.OkCancel, "", txt, function()
-    -- function num : 0_6_0 , upvalues : self, func1
+  self.networkMonitorPopup = PopupManager.Alert("UICommonMessageBox", PopupPriority.Network, PopupMsgBoxType.OkCancel, "", txt, function()
     self.networkMonitorPopup = nil
     if func1 then
       func1()
     end
-  end
-, nil, function()
-    -- function num : 0_6_1 , upvalues : self, func2
+  end, nil, function()
     self.networkMonitorPopup = nil
     if func2 then
       func2()
     end
-  end
-, nil)
+  end, nil)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIGlobalModule.OnPopupReset = function(self, txt, func)
-  -- function num : 0_7 , upvalues : _ENV
+function UIGlobalModule:OnPopupReset(txt, func)
   if self.networkMonitorPopup then
-    (Log.warn)("UIGlobalModule:OnPopupReset return, 已经出现弹框了 return")
-    return 
+    Log.warn("UIGlobalModule:OnPopupReset return, 已经出现弹框了 return")
+    return
   end
-  self.networkMonitorPopup = (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Network, PopupMsgBoxType.Ok, "", txt, function()
-    -- function num : 0_7_0 , upvalues : self, func
+  self.networkMonitorPopup = PopupManager.Alert("UICommonMessageBox", PopupPriority.Network, PopupMsgBoxType.Ok, "", txt, function()
     self.networkMonitorPopup = nil
     if func then
       func()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIGlobalModule.SetCSUICameraStatus = function(self, status)
-  -- function num : 0_8 , upvalues : _ENV
-  local csui = ((UnityEngine.GameObject).Find)("CSUI")
+function UIGlobalModule:SetCSUICameraStatus(status)
+  local csui = UnityEngine.GameObject.Find("CSUI")
   if csui then
     local csuiTran = csui.transform
     local cameraFrameworkTran = csuiTran:Find("FrameworkUI/CameraFramework")
-    do
-      if cameraFrameworkTran then
-        local cameraFramework = cameraFrameworkTran:GetComponent("Camera")
-        if cameraFramework then
-          cameraFramework.enabled = status
-        end
+    if cameraFrameworkTran then
+      local cameraFramework = cameraFrameworkTran:GetComponent("Camera")
+      if cameraFramework then
+        cameraFramework.enabled = status
       end
-      local cameraTran = csuiTran:Find("UI/Camera")
-      if cameraTran then
-        local camera = cameraTran:GetComponent("Camera")
-        if camera then
-          camera.enabled = status
-        end
+    end
+    local cameraTran = csuiTran:Find("UI/Camera")
+    if cameraTran then
+      local camera = cameraTran:GetComponent("Camera")
+      if camera then
+        camera.enabled = status
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-UIGlobalModule.GoBackCallback = function(self, cb, ...)
-  -- function num : 0_9 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowBusy(false)
-  local goBackFunc = nil
+function UIGlobalModule:GoBackCallback(cb, ...)
+  GameGlobal.UIStateManager():ShowBusy(false)
+  local goBackFunc
   local uistate = cb(...)
-  ;
-  (Log.debug)("UIGlobalModule:GoBackCallback uistate", uistate, (Log.traceback)())
-  if uistate == ((GameGlobal.UIStateManager)()):CurUIStateType() then
-    goBackFunc = function()
-    -- function num : 0_9_0 , upvalues : _ENV, uistate
-    ((GameGlobal.TaskManager)()):KillCoreGameTasks()
-    ;
-    (GameGlobal:GetInstance()):ExitCoreGame()
-    if uistate == UIStateType.Login or uistate == UIStateType.LoginEmpty then
-      if ((GameGlobal.UIStateManager)()):IsShow("UIStoryController") then
-        ((GameGlobal.UIStateManager)()):CloseDialog("UIStoryController")
+  Log.debug("UIGlobalModule:GoBackCallback uistate", uistate, Log.traceback())
+  if uistate == GameGlobal.UIStateManager():CurUIStateType() then
+    function goBackFunc()
+      GameGlobal.TaskManager():KillCoreGameTasks()
+      
+      GameGlobal:GetInstance():ExitCoreGame()
+      if uistate == UIStateType.Login or uistate == UIStateType.LoginEmpty then
+        if GameGlobal.UIStateManager():IsShow("UIStoryController") then
+          GameGlobal.UIStateManager():CloseDialog("UIStoryController")
+        end
+        if GameGlobal.UIStateManager():IsShow("UICommonLoading") then
+          GameGlobal.UIStateManager():CloseDialog("UICommonLoading")
+        end
       end
-      if ((GameGlobal.UIStateManager)()):IsShow("UICommonLoading") then
-        ((GameGlobal.UIStateManager)()):CloseDialog("UICommonLoading")
-      end
+      GameGlobal.RealTimer():AddEvent(0, function()
+        GameGlobal.GameLogic():Init("GoBackCallback")
+        LogoutGameNew()
+      end)
     end
-    ;
-    ((GameGlobal.RealTimer)()):AddEvent(0, function()
-      -- function num : 0_9_0_0 , upvalues : _ENV
-      ((GameGlobal.GameLogic)()):Init("GoBackCallback")
-      LogoutGameNew()
-    end
-)
-  end
-
-  else
-    if uistate ~= UIStateType.Invalid and (UIHelper.GameStartType)() == EGameStartType.Normal then
-      local args = {...}
-      do
-        goBackFunc = function()
-    -- function num : 0_9_1 , upvalues : _ENV, self, uistate, args
-    ((GameGlobal.UIStateManager)()):PopupPriorityFilter(PopupPriority.Network, true)
-    ;
-    ((GameGlobal.TaskManager)()):KillCoreGameTasks()
-    ;
-    (GameGlobal:GetInstance()):ExitCoreGame()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BeforeRelogin)
-    ;
-    ((GameGlobal.UIStateManager)()):Reset()
-    self:StartTask(UIStateManager.ForceSwitchState, (GameGlobal.UIStateManager)(), uistate, (table.unpack)(args))
-    if uistate == UIStateType.Login or uistate == UIStateType.LoginEmpty then
-      ((GameGlobal.RealTimer)()):AddEvent(0, function()
-      -- function num : 0_9_1_0 , upvalues : _ENV
-      ((GameGlobal.GameLogic)()):Init("GoBackCallback")
-      LogoutGameNew()
-    end
-)
-    end
-  end
-
+  elseif uistate ~= UIStateType.Invalid and UIHelper.GameStartType() == EGameStartType.Normal then
+    local args = {
+      ...
+    }
+    
+    function goBackFunc()
+      GameGlobal.UIStateManager():PopupPriorityFilter(PopupPriority.Network, true)
+      GameGlobal.TaskManager():KillCoreGameTasks()
+      GameGlobal:GetInstance():ExitCoreGame()
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.BeforeRelogin)
+      GameGlobal.UIStateManager():Reset()
+      self:StartTask(UIStateManager.ForceSwitchState, GameGlobal.UIStateManager(), uistate, table.unpack(args))
+      if uistate == UIStateType.Login or uistate == UIStateType.LoginEmpty then
+        GameGlobal.RealTimer():AddEvent(0, function()
+          GameGlobal.GameLogic():Init("GoBackCallback")
+          LogoutGameNew()
+        end)
       end
     end
   end
-  do
-    if ((GameGlobal.LoadingManager)()):IsLoading() then
-      ((GameGlobal.LoadingManager)()):Interrupt(goBackFunc)
-    else
-      if goBackFunc then
-        goBackFunc()
-      end
-    end
+  if GameGlobal.LoadingManager():IsLoading() then
+    GameGlobal.LoadingManager():Interrupt(goBackFunc)
+  elseif goBackFunc then
+    goBackFunc()
   end
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-UIGlobalModule.OnSwitchUIStateFinish = function(self, uiStateType)
-  -- function num : 0_10 , upvalues : _ENV
-  if (uiStateType == UIStateType.Login or uiStateType == UIStateType.LoginEmpty) and ((GameGlobal.UIStateManager)()):IsLogouting() then
-    ((GameGlobal.UIStateManager)()):UnLockAll()
-    ;
-    ((GameGlobal.UIStateManager)()):ClearBusy()
-    ;
-    ((GameGlobal.UIStateManager)()):SetIsLogouting(false)
+function UIGlobalModule:OnSwitchUIStateFinish(uiStateType)
+  if (uiStateType == UIStateType.Login or uiStateType == UIStateType.LoginEmpty) and GameGlobal.UIStateManager():IsLogouting() then
+    GameGlobal.UIStateManager():UnLockAll()
+    GameGlobal.UIStateManager():ClearBusy()
+    GameGlobal.UIStateManager():SetIsLogouting(false)
   end
-  if self.forceShutting and not ((GameGlobal.LoadingManager)()):IsLoading() and uiStateType ~= UIStateType.UIBattle then
+  if self.forceShutting and not GameGlobal.LoadingManager():IsLoading() and uiStateType ~= UIStateType.UIBattle then
     self:ShowShutDialog()
   end
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-UIGlobalModule.OnStartNetRetry = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("NetRetry")
-  ;
-  ((GameGlobal.UIStateManager)()):ShowBusy(true)
+function UIGlobalModule:OnStartNetRetry()
+  GameGlobal.UIStateManager():Lock("NetRetry")
+  GameGlobal.UIStateManager():ShowBusy(true)
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-UIGlobalModule.OnEndNetRetry = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):UnLock("NetRetry")
-  ;
-  ((GameGlobal.UIStateManager)()):ClearBusy()
+function UIGlobalModule:OnEndNetRetry()
+  GameGlobal.UIStateManager():UnLock("NetRetry")
+  GameGlobal.UIStateManager():ClearBusy()
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-UIGlobalModule.OnPushNotification = function(self, notification_type, notification_res_ver)
-  -- function num : 0_13 , upvalues : _ENV
+function UIGlobalModule:OnPushNotification(notification_type, notification_res_ver)
   if notification_type == MOBILE_NOTIFICATION_TYPE.MOBILE_NOTIFICATION_FORCE_CLIENT_UPDATE then
     self.forceShutting = true
-  else
-    if notification_type == MOBILE_NOTIFICATION_TYPE.MOBILE_NOTIFICATION_FORCE_RESVER_UPDATE then
-      local cur_res_ver = (EngineGameHelper.CurrentResVersion)()
-      if notification_res_ver and cur_res_ver ~= notification_res_ver then
-        self.forceShutting = true
-      end
+  elseif notification_type == MOBILE_NOTIFICATION_TYPE.MOBILE_NOTIFICATION_FORCE_RESVER_UPDATE then
+    local cur_res_ver = EngineGameHelper.CurrentResVersion()
+    if notification_res_ver and cur_res_ver ~= notification_res_ver then
+      self.forceShutting = true
     end
   end
-  do
-    if not self.forceShutting then
-      return 
-    end
-    local curUIState = ((GameGlobal.UIStateManager)()):CurUIStateType()
-    if ((GameGlobal.LoadingManager)()):IsLoading() or curUIState == UIStateType.UIBattle then
-      return 
-    end
-    self:ShowShutDialog()
+  if not self.forceShutting then
+    return
   end
+  local curUIState = GameGlobal.UIStateManager():CurUIStateType()
+  if GameGlobal.LoadingManager():IsLoading() or curUIState == UIStateType.UIBattle then
+    return
+  end
+  self:ShowShutDialog()
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-UIGlobalModule.ShowShutDialog = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_common_force_shut"), function()
-    -- function num : 0_14_0 , upvalues : _ENV
-    ((UnityEngine.Application).Quit)()
-  end
-)
+function UIGlobalModule:ShowShutDialog()
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_common_force_shut"), function()
+    UnityEngine.Application.Quit()
+  end)
 end
-
-

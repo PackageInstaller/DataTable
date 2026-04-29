@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/buff/llb_increase_production_tag.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("llb_logic_base")
 _class("LLBuffLogicIncreaseProductionTag", LLBuffLogicBase)
 LLBuffLogicIncreaseProductionTag = LLBuffLogicIncreaseProductionTag
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuffLogicIncreaseProductionTag.Constructor = function(self, buffObj, logicParam)
-  -- function num : 0_0
+function LLBuffLogicIncreaseProductionTag:Constructor(buffObj, logicParam)
   self._tagType = logicParam.tagType
   self._tagParam = logicParam.tagParam
   self._containSelf = logicParam.containSelf
@@ -18,61 +11,46 @@ LLBuffLogicIncreaseProductionTag.Constructor = function(self, buffObj, logicPara
   self._perVal = logicParam.perVal
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicIncreaseProductionTag.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function LLBuffLogicIncreaseProductionTag:DoLogic(notify)
   local notifyEntity = notify:GetNotifyEntity()
   local petCount = 0
-  local entityMgr = ((LuckLandInnerGameHelper.GetEntityMgr)())
-  local pets = nil
+  local entityMgr = LuckLandInnerGameHelper.GetEntityMgr()
+  local pets
   if self._tagType == LLPetTagType.Element then
     pets = entityMgr:GetFightPetsByElement(self._tagParam)
-  else
-    if self._tagType == LLPetTagType.Camp then
-      pets = entityMgr:GetFightPetsByCamp(self._tagParam)
-    else
-      if self._tagType == LLPetTagType.Level then
-        pets = entityMgr:GetFightPetsByLevel(self._tagParam)
-      else
-        if self._tagType == LLPetTagType.Res then
-          pets = entityMgr:GetFightPetsByResType(self._tagParam)
-        end
-      end
-    end
+  elseif self._tagType == LLPetTagType.Camp then
+    pets = entityMgr:GetFightPetsByCamp(self._tagParam)
+  elseif self._tagType == LLPetTagType.Level then
+    pets = entityMgr:GetFightPetsByLevel(self._tagParam)
+  elseif self._tagType == LLPetTagType.Res then
+    pets = entityMgr:GetFightPetsByResType(self._tagParam)
   end
   if pets then
     if self._containSelf then
       petCount = #pets
-    else
-      if notifyEntity:GetEntityType() == LuckLandEntityType.Pet then
-        local result = {}
-        for _,pet in pairs(pets) do
-          if pet:ID() ~= notifyEntity:ID() then
-            (table.insert)(result, pet)
-          end
+    elseif notifyEntity:GetEntityType() == LuckLandEntityType.Pet then
+      local result = {}
+      for _, pet in pairs(pets) do
+        if pet:ID() ~= notifyEntity:ID() then
+          table.insert(result, pet)
         end
-        petCount = #result
       end
+      petCount = #result
     end
   end
-  do
-    local targets = (self._buffObj):GetTargets()
-    for _,target in ipairs(targets) do
-      self:DoLogicSingle(target, petCount)
-    end
+  local targets = self._buffObj:GetTargets()
+  for _, target in ipairs(targets) do
+    self:DoLogicSingle(target, petCount)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicIncreaseProductionTag.DoLogicSingle = function(self, target, petCount)
-  -- function num : 0_2 , upvalues : _ENV
-  if target:GetEntityType() == LuckLandEntityType.Pet and target:HasDeleteFlag() then
-    return 
-  end
-  if target:GetEntityType() == LuckLandEntityType.Monster and target:IsDead() then
-    return 
+function LLBuffLogicIncreaseProductionTag:DoLogicSingle(target, petCount)
+  if target:GetEntityType() == LuckLandEntityType.Pet then
+    if target:HasDeleteFlag() then
+      return
+    end
+  elseif target:GetEntityType() == LuckLandEntityType.Monster and target:IsDead() then
+    return
   end
   if self._incType == LuckLandIncType.Accumulate then
     if self._fixVal then
@@ -81,16 +59,12 @@ LLBuffLogicIncreaseProductionTag.DoLogicSingle = function(self, target, petCount
     if self._perVal then
       target:AddAccPerValue(self._perVal * petCount)
     end
-  else
-    if self._incType == LuckLandIncType.Temp then
-      if self._fixVal then
-        target:AddTempFixValue(self._fixVal * petCount)
-      end
-      if self._perVal then
-        target:AddTempPerValue(self._perVal * petCount)
-      end
+  elseif self._incType == LuckLandIncType.Temp then
+    if self._fixVal then
+      target:AddTempFixValue(self._fixVal * petCount)
+    end
+    if self._perVal then
+      target:AddTempPerValue(self._perVal * petCount)
     end
   end
 end
-
-

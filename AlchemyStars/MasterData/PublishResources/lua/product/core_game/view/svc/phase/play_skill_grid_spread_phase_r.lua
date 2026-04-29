@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_grid_spread_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillGridSpreadPhase", PlaySkillPhaseBase)
 PlaySkillGridSpreadPhase = PlaySkillGridSpreadPhase
 local SkillPhaseGridSpreadShapeType = {diamond = 1, square = 2}
 _enum("SkillPhaseGridSpreadShapeType", SkillPhaseGridSpreadShapeType)
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
 
-PlaySkillGridSpreadPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillGridSpreadPhase:PlayFlight(TT, casterEntity, phaseParam)
   local gridSpreadParam = phaseParam
   local gridEffectID = gridSpreadParam:GetGridEffectID()
   local hitEffectID = gridSpreadParam:GetHitEffectID()
@@ -19,8 +12,8 @@ PlaySkillGridSpreadPhase.PlayFlight = function(self, TT, casterEntity, phasePara
   local spreadIntervalTime = gridSpreadParam:GetSpreadIntervalTime()
   local spreadLayerCount = gridSpreadParam:GetSpreadLayerCount()
   local spreadShape = gridSpreadParam:GetSpreadShape()
-  local castPos = (casterEntity:GridLocation()).Position
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local castPos = casterEntity:GridLocation().Position
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local gridDataArray = scopeResult:GetWholeGridRange()
@@ -31,52 +24,42 @@ PlaySkillGridSpreadPhase.PlayFlight = function(self, TT, casterEntity, phasePara
     local targetEntityID = self:_SortDistanceForFinalAttack(castPos, damageResultArray)
     skillEffectResultContainer:SetFinalAttackEntityID(targetEntityID)
   end
-  do
-    for i = 1, #layerGridList do
-      local gridList = layerGridList[i]
-      for j = 1, #gridList do
-        local gridPos = gridList[j]
-        local dirX = gridPos.x - castPos.x
-        local dirY = gridPos.y - castPos.y
-        if dirX > 0 then
-          dirX = 1
-        else
-          if dirX < 0 then
-            dirX = -1
-          end
-        end
-        if dirY > 0 then
-          dirY = 1
-        else
-          if dirY < 0 then
-            dirY = -1
-          end
-        end
-        local dir = Vector2(dirX, dirY)
-        ;
-        ((self._world):GetService("Effect")):CreateWorldPositionDirectionEffect(gridEffectID, gridPos, dir)
-        local damageResult = skillEffectResultContainer:GetEffectResultByPos(SkillEffectType.Damage, gridPos)
-        if damageResult then
-          self:_ShowDamage(damageResult, skillEffectResultContainer, hitAnimationName, hitEffectID, casterEntity, gridPos, gridSpreadParam:HitTurnToTarget(), skillID)
-        end
+  for i = 1, #layerGridList do
+    local gridList = layerGridList[i]
+    for j = 1, #gridList do
+      local gridPos = gridList[j]
+      local dirX = gridPos.x - castPos.x
+      local dirY = gridPos.y - castPos.y
+      if 0 < dirX then
+        dirX = 1
+      elseif dirX < 0 then
+        dirX = -1
       end
-      YIELD(TT, spreadIntervalTime)
+      if 0 < dirY then
+        dirY = 1
+      elseif dirY < 0 then
+        dirY = -1
+      end
+      local dir = Vector2(dirX, dirY)
+      self._world:GetService("Effect"):CreateWorldPositionDirectionEffect(gridEffectID, gridPos, dir)
+      local damageResult = skillEffectResultContainer:GetEffectResultByPos(SkillEffectType.Damage, gridPos)
+      if damageResult then
+        self:_ShowDamage(damageResult, skillEffectResultContainer, hitAnimationName, hitEffectID, casterEntity, gridPos, gridSpreadParam:HitTurnToTarget(), skillID)
+      end
     end
+    YIELD(TT, spreadIntervalTime)
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-PlaySkillGridSpreadPhase._SortGrid = function(self, gridList, casterPos, spreadLayerCount, spreadShape)
-  -- function num : 0_1 , upvalues : SkillPhaseGridSpreadShapeType, _ENV
+function PlaySkillGridSpreadPhase:_SortGrid(gridList, casterPos, spreadLayerCount, spreadShape)
   if spreadShape == SkillPhaseGridSpreadShapeType.diamond then
     local res = {}
     local maxLayer = 1
     for i = 1, #gridList do
       local grid = gridList[i]
-      local layerIndex = (math.abs)(grid.x - casterPos.x) + (math.abs)(grid.y - casterPos.y)
-      if spreadLayerCount > 1 then
-        layerIndex = (math.ceil)(layerIndex / spreadLayerCount)
+      local layerIndex = math.abs(grid.x - casterPos.x) + math.abs(grid.y - casterPos.y)
+      if 1 < spreadLayerCount then
+        layerIndex = math.ceil(layerIndex / spreadLayerCount)
       end
       if not res[layerIndex] then
         res[layerIndex] = {}
@@ -93,51 +76,36 @@ PlaySkillGridSpreadPhase._SortGrid = function(self, gridList, casterPos, spreadL
       end
     end
     return res
-  else
-    do
-      if spreadShape == SkillPhaseGridSpreadShapeType.square then
-        return {}
-      end
-    end
+  elseif spreadShape == SkillPhaseGridSpreadShapeType.square then
+    return {}
   end
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-PlaySkillGridSpreadPhase._ShowDamage = function(self, damageResult, skillEffectResultContainer, hitAnimName, hitEffectID, casterEntity, gridPos, hitTurnToTarget, skillID)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySkillGridSpreadPhase:_ShowDamage(damageResult, skillEffectResultContainer, hitAnimName, hitEffectID, casterEntity, gridPos, hitTurnToTarget, skillID)
   local targetEntityID = damageResult:GetTargetID()
-  local targetEntity = (self._world):GetEntityByID(targetEntityID)
+  local targetEntity = self._world:GetEntityByID(targetEntityID)
   if targetEntity ~= nil then
     local targetDamage = damageResult:GetDamageInfo(1)
-    local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(hitAnimName)):SetHandleBeHitParam_HitEffectID(hitEffectID)):SetHandleBeHitParam_DamageInfo(targetDamage)):SetHandleBeHitParam_DamagePos(gridPos)):SetHandleBeHitParam_HitTurnTarget(hitTurnToTarget)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(skillEffectResultContainer:IsFinalAttack())):SetHandleBeHitParam_SkillID(skillID)
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask((self:SkillService()).HandleBeHit, self:SkillService(), beHitParam)
+    local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(hitAnimName):SetHandleBeHitParam_HitEffectID(hitEffectID):SetHandleBeHitParam_DamageInfo(targetDamage):SetHandleBeHitParam_DamagePos(gridPos):SetHandleBeHitParam_HitTurnTarget(hitTurnToTarget):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(skillEffectResultContainer:IsFinalAttack()):SetHandleBeHitParam_SkillID(skillID)
+    GameGlobal.TaskManager():CoreGameStartTask(self:SkillService().HandleBeHit, self:SkillService(), beHitParam)
   end
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-PlaySkillGridSpreadPhase._SortDistanceForFinalAttack = function(self, castPos, damageResultArray)
-  -- function num : 0_3 , upvalues : _ENV
-  local CmpDistancefunc = function(res1, res2)
-    -- function num : 0_3_0 , upvalues : _ENV, castPos
-    local dis1 = (math.abs)(castPos.x - (res1:GetGridPos()).x) + (math.abs)(castPos.y - (res1:GetGridPos()).y)
-    local dis2 = (math.abs)(castPos.x - (res2:GetGridPos()).x) + (math.abs)(castPos.y - (res2:GetGridPos()).y)
-    do return dis2 < dis1 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function PlaySkillGridSpreadPhase:_SortDistanceForFinalAttack(castPos, damageResultArray)
+  local function CmpDistancefunc(res1, res2)
+    local dis1 = math.abs(castPos.x - res1:GetGridPos().x) + math.abs(castPos.y - res1:GetGridPos().y)
+    
+    local dis2 = math.abs(castPos.x - res2:GetGridPos().x) + math.abs(castPos.y - res2:GetGridPos().y)
+    return dis1 > dis2
   end
-
-  ;
-  (table.sort)(damageResultArray, CmpDistancefunc)
-  for _,v in ipairs(damageResultArray) do
+  
+  table.sort(damageResultArray, CmpDistancefunc)
+  for _, v in ipairs(damageResultArray) do
     local result = v
     local targetEntityID = result:GetTargetID()
-    local targetEntity = (self._world):GetEntityByID(targetEntityID)
+    local targetEntity = self._world:GetEntityByID(targetEntityID)
     if targetEntity:HasDeadFlag() then
       return targetEntityID
     end
   end
 end
-
-

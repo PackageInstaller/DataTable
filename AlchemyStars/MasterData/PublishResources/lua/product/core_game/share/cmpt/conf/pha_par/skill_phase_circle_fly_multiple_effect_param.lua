@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_circle_fly_multiple_effect_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseCircleFlyMultipleEffectParam", SkillPhaseParamBase)
 SkillPhaseCircleFlyMultipleEffectParam = SkillPhaseCircleFlyMultipleEffectParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseCircleFlyMultipleEffectParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseCircleFlyMultipleEffectParam:Constructor(t)
   self._radius = t.radius
   self._high = t.high
   self._angle = t.angle
@@ -20,84 +13,61 @@ SkillPhaseCircleFlyMultipleEffectParam.Constructor = function(self, t)
   self._flyTime = t.flyTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircleFlyMultipleEffectParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseCircleFlyMultipleEffectParam:GetCacheTable()
   local t = {}
   if self._gridEffectID and self._gridEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._gridEffectID]).ResPath, 3})
+    table.insert(t, {
+      Cfg.cfg_effect[self._gridEffectID].ResPath,
+      3
+    })
   end
-  if self._flyEffectID and self._flyEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._flyEffectID]).ResPath, 3})
+  if self._flyEffectID and 0 < self._flyEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._flyEffectID].ResPath,
+      3
+    })
   end
-  if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 3})
+  if self._hitEffectID and 0 < self._hitEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      3
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircleFlyMultipleEffectParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseCircleFlyMultipleEffectParam:GetPhaseType()
   return SkillViewPhaseType.CircleFlyMultipleEffect
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircleFlyMultipleEffectParam.GetRadius = function(self)
-  -- function num : 0_3
+function SkillPhaseCircleFlyMultipleEffectParam:GetRadius()
   return self._radius
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircleFlyMultipleEffectParam.GetHigh = function(self)
-  -- function num : 0_4
+function SkillPhaseCircleFlyMultipleEffectParam:GetHigh()
   return self._high
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircleFlyMultipleEffectParam.GetAngle = function(self)
-  -- function num : 0_5
+function SkillPhaseCircleFlyMultipleEffectParam:GetAngle()
   return self._angle
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircleFlyMultipleEffectParam.GetGridEffectID = function(self)
-  -- function num : 0_6
+function SkillPhaseCircleFlyMultipleEffectParam:GetGridEffectID()
   return self._gridEffectID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircleFlyMultipleEffectParam.GetFlyEffectID = function(self)
-  -- function num : 0_7
+function SkillPhaseCircleFlyMultipleEffectParam:GetFlyEffectID()
   return self._flyEffectID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircleFlyMultipleEffectParam.GetHitEffectID = function(self)
-  -- function num : 0_8
+function SkillPhaseCircleFlyMultipleEffectParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircleFlyMultipleEffectParam.GetWaitFlyTime = function(self)
-  -- function num : 0_9
+function SkillPhaseCircleFlyMultipleEffectParam:GetWaitFlyTime()
   return self._waitFlyTime
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircleFlyMultipleEffectParam.GetFlyTime = function(self)
-  -- function num : 0_10
+function SkillPhaseCircleFlyMultipleEffectParam:GetFlyTime()
   return self._flyTime
 end
-
-

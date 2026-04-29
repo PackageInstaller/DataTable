@@ -1,32 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/entrust/level/ui_n22_entrust_level_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22EntrustLevelNode", UICustomWidget)
 UIN22EntrustLevelNode = UIN22EntrustLevelNode
 local EUIN22EntrustLevelNodeState = {Open = 1, Pass = 2}
 _enum("EUIN22EntrustLevelNodeState", EUIN22EntrustLevelNodeState)
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN22EntrustLevelNode.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN22EntrustLevelNode:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN22EntrustLevelNode.PlayAnim = function(self, id, animName, delay, duration, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN22EntrustLevelNode:PlayAnim(id, animName, delay, duration, callback)
   local widgetName = "_anim"
   local hideWidget = "_anim"
-  ;
-  (UIWidgetHelper.PlayAnimationInSequence)(self, widgetName, hideWidget, animName, delay, duration, callback)
+  UIWidgetHelper.PlayAnimationInSequence(self, widgetName, hideWidget, animName, delay, duration, callback)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN22EntrustLevelNode.SetData = function(self, campaign, component, levelId, nodeId, setPlayerCallback, eventCloseCallback)
-  -- function num : 0_2
+function UIN22EntrustLevelNode:SetData(campaign, component, levelId, nodeId, setPlayerCallback, eventCloseCallback)
   self._campaign = campaign
   self._component = component
   self._levelId = levelId
@@ -41,139 +27,96 @@ UIN22EntrustLevelNode.SetData = function(self, campaign, component, levelId, nod
   self:SetDebugText(self._eventId)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN22EntrustLevelNode._SetAnim = function(self)
-  -- function num : 0_3
+function UIN22EntrustLevelNode:_SetAnim()
   local anim1 = self:GetGameObject("anim1")
   local anim2 = self:GetGameObject("anim2")
   local anim1active = false
   local anim2active = false
-  local type, subType = (self._component):GetEventType(self._eventId)
-  do
-    if type == 3 then
-      local pass = (self._component):IsEventPass(self._levelId, self._eventId)
-      if not pass then
-        if subType == 1 then
-          anim1active = true
-        else
-          if subType == 2 then
-            anim2active = true
-          end
-        end
+  local type, subType = self._component:GetEventType(self._eventId)
+  if type == 3 then
+    local pass = self._component:IsEventPass(self._levelId, self._eventId)
+    if not pass then
+      if subType == 1 then
+        anim1active = true
+      elseif subType == 2 then
+        anim2active = true
       end
     end
-    anim1:SetActive(anim1active)
-    anim2:SetActive(anim2active)
   end
+  anim1:SetActive(anim1active)
+  anim2:SetActive(anim2active)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN22EntrustLevelNode._SetPos = function(self, nodeId)
-  -- function num : 0_4 , upvalues : _ENV
-  local pos = (self._component):GetEventPointPos(nodeId)
-  local rect = (self:GetGameObject()):GetComponent("RectTransform")
+function UIN22EntrustLevelNode:_SetPos(nodeId)
+  local pos = self._component:GetEventPointPos(nodeId)
+  local rect = self:GetGameObject():GetComponent("RectTransform")
   rect.anchorMax = Vector2(0, 0.5)
   rect.anchorMin = Vector2(0, 0.5)
   rect.sizeDelta = Vector2.zero
   rect.anchoredPosition = pos
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN22EntrustLevelNode._SetType = function(self, nodeId)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN22EntrustLevelNode:_SetType(nodeId)
   local groupName = {"state_open", "state_pass"}
-  local trans = (self:GetGameObject(groupName[self._state])).transform
+  local trans = self:GetGameObject(groupName[self._state]).transform
   local widgetName = {
-[EntrustEventType.EntrustEventType_Start] = {"type1"}
-, 
-[EntrustEventType.EntrustEventType_End] = {"type2"}
-, 
-[EntrustEventType.EntrustEventType_Fight] = {"type3", "type3b"}
-, 
-[EntrustEventType.EntrustEventType_Story] = {"type4"}
-, 
-[EntrustEventType.EntrustEventType_MissionOccupy] = {"type5"}
-, 
-[EntrustEventType.EntrustEventType_MissionSubmit] = {"type6"}
-, 
-[EntrustEventType.EntrustEventType_Box] = {"type7"}
-, 
-[EntrustEventType.EntrustEventType_Transfer] = {"type8"}
-}
-  local type, subType = (self._component):GetEventType(nodeId)
-  local name = (widgetName[type])[subType]
-  for _,v in ipairs(widgetName) do
-    for __,vv in ipairs(v) do
+    [EntrustEventType.EntrustEventType_Start] = {"type1"},
+    [EntrustEventType.EntrustEventType_End] = {"type2"},
+    [EntrustEventType.EntrustEventType_Fight] = {"type3", "type3b"},
+    [EntrustEventType.EntrustEventType_Story] = {"type4"},
+    [EntrustEventType.EntrustEventType_MissionOccupy] = {"type5"},
+    [EntrustEventType.EntrustEventType_MissionSubmit] = {"type6"},
+    [EntrustEventType.EntrustEventType_Box] = {"type7"},
+    [EntrustEventType.EntrustEventType_Transfer] = {"type8"}
+  }
+  local type, subType = self._component:GetEventType(nodeId)
+  local name = widgetName[type][subType]
+  for _, v in ipairs(widgetName) do
+    for __, vv in ipairs(v) do
       local obj = trans:Find(vv)
-      ;
-      (obj.gameObject):SetActive(name == vv)
+      obj.gameObject:SetActive(name == vv)
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN22EntrustLevelNode._SetState = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN22EntrustLevelNode:_SetState()
   self._state = self:_CheckState()
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, self._state)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, self._state)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN22EntrustLevelNode._CheckState = function(self)
-  -- function num : 0_7 , upvalues : EUIN22EntrustLevelNodeState
-  return (self._component):IsEventPass(self._levelId, self._eventId) and EUIN22EntrustLevelNodeState.Pass or EUIN22EntrustLevelNodeState.Open
+function UIN22EntrustLevelNode:_CheckState()
+  return self._component:IsEventPass(self._levelId, self._eventId) and EUIN22EntrustLevelNodeState.Pass or EUIN22EntrustLevelNodeState.Open
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN22EntrustLevelNode._SetObjGroup = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN22EntrustLevelNode:_SetObjGroup()
   local widgetNameGroup = {
-{"state_open"}
-, 
-{"state_pass"}
-}
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, widgetNameGroup)
+    {"state_open"},
+    {"state_pass"}
+  }
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, widgetNameGroup)
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN22EntrustLevelNode.BtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.info)("UIN22EntrustLevelNode:BtnOnClick")
-  local player = (self._component):GetPlayerPos()
-  local path = (self._component):GetPath_BFS(self._levelId, player, self._eventId)
-  if (table.count)(path) == 0 then
-    return 
+function UIN22EntrustLevelNode:BtnOnClick()
+  Log.info("UIN22EntrustLevelNode:BtnOnClick")
+  local player = self._component:GetPlayerPos()
+  local path = self._component:GetPath_BFS(self._levelId, player, self._eventId)
+  if table.count(path) == 0 then
+    return
   end
   if self._setPlayerCallback then
-    (self._setPlayerCallback)(self._eventId)
+    self._setPlayerCallback(self._eventId)
   end
   local lockName = "UIN22EntrustLevelNode:BtnOnClick"
   self:Lock(lockName)
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : _ENV, self, lockName
     YIELD(TT, 400)
     self:UnLock(lockName)
     self:ShowDialog("UIN22EntrustEventController", self._campaign, self._component, self._levelId, self._eventId, self._eventCloseCallback, self._setPlayerCallback)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN22EntrustLevelNode.SetDebugText = function(self, txt)
-  -- function num : 0_10 , upvalues : _ENV
-  (self:GetGameObject("_debug")):SetActive((UIActivityHelper.CheckDebugOpen)())
+function UIN22EntrustLevelNode:SetDebugText(txt)
+  self:GetGameObject("_debug"):SetActive(UIActivityHelper.CheckDebugOpen())
   local obj = self:GetUIComponent("UILocalizationText", "_debug")
   obj:SetText(txt)
 end
-
-

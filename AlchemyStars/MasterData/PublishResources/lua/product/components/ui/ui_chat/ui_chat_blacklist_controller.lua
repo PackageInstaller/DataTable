@@ -1,94 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chat/ui_chat_blacklist_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChatBlackListController", UIController)
 UIChatBlackListController = UIChatBlackListController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChatBlackListController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIChatBlackListController:LoadDataOnEnter(TT, res, uiParams)
   self._chatFriendManager = uiParams[1]
   self:_RequestData(TT)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatBlackListController._RequestData = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  self._maxBlackListCount = (self._chatFriendManager):GetMaxBlackListCount()
-  self._blackListData = (self._chatFriendManager):GetBlackListData(TT)
-  self._blackListCount = (table.count)(self._blackListData)
+function UIChatBlackListController:_RequestData(TT)
+  self._maxBlackListCount = self._chatFriendManager:GetMaxBlackListCount()
+  self._blackListData = self._chatFriendManager:GetBlackListData(TT)
+  self._blackListCount = table.count(self._blackListData)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatBlackListController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIChatBlackListController:OnShow(uiParams)
   self._blackList = self:GetUIComponent("UIDynamicScrollView", "BlackList")
   self._countLabel = self:GetUIComponent("UILocalizationText", "Count")
   self:AttachEvent(GameEventType.UpdateChatBlackList, self._Refresh)
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatBlackListController.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIChatBlackListController:OnHide()
   self:DetachEvent(GameEventType.UpdateChatBlackList, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatBlackListController._Init = function(self)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._countLabel).text = self._blackListCount .. "/" .. self._maxBlackListCount
+function UIChatBlackListController:_Init()
+  self._countLabel.text = self._blackListCount .. "/" .. self._maxBlackListCount
   self:_InitScrollView()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatBlackListController._InitScrollView = function(self)
-  -- function num : 0_5
-  (self._blackList):InitListView(self._blackListCount, function(scrollview, index)
-    -- function num : 0_5_0 , upvalues : self
+function UIChatBlackListController:_InitScrollView()
+  self._blackList:InitListView(self._blackListCount, function(scrollview, index)
     return self:_OnGetBlackListItem(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatBlackListController._Refresh = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIChatBlackListController:_Refresh()
   self:Lock("_Refresh")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._RefreshCoro, self)
+  GameGlobal.TaskManager():StartTask(self._RefreshCoro, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatBlackListController._RefreshCoro = function(self, TT)
-  -- function num : 0_7
+function UIChatBlackListController:_RefreshCoro(TT)
   self:_RequestData(TT)
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._countLabel).text = self._blackListCount .. "/" .. self._maxBlackListCount
-  ;
-  (self._blackList):SetListItemCount(self._blackListCount, false)
-  ;
-  (self._blackList):RefreshAllShownItem()
+  self._countLabel.text = self._blackListCount .. "/" .. self._maxBlackListCount
+  self._blackList:SetListItemCount(self._blackListCount, false)
+  self._blackList:RefreshAllShownItem()
   self:UnLock("_Refresh")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatBlackListController._OnGetBlackListItem = function(self, scrollView, index)
-  -- function num : 0_8 , upvalues : _ENV
+function UIChatBlackListController:_OnGetBlackListItem(scrollView, index)
   local item = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -97,35 +56,23 @@ UIChatBlackListController._OnGetBlackListItem = function(self, scrollView, index
   end
   local rowList = rowPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      if self._blackListCount < itemIndex then
-        (itemWidget:GetGameObject()):SetActive(false)
-      else
-        self:_RefreshBlackListItemInfo(itemWidget, itemIndex)
-        ;
-        (itemWidget:GetGameObject()):SetActive(true)
-      end
+  if itemWidget then
+    local itemIndex = index + 1
+    if itemIndex > self._blackListCount then
+      itemWidget:GetGameObject():SetActive(false)
+    else
+      self:_RefreshBlackListItemInfo(itemWidget, itemIndex)
+      itemWidget:GetGameObject():SetActive(true)
     end
-    ;
-    (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
-    return item
   end
+  UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
+  return item
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatBlackListController._RefreshBlackListItemInfo = function(self, itemWidget, index)
-  -- function num : 0_9
-  itemWidget:Refresh((self._blackListData)[index], self._chatFriendManager)
+function UIChatBlackListController:_RefreshBlackListItemInfo(itemWidget, index)
+  itemWidget:Refresh(self._blackListData[index], self._chatFriendManager)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatBlackListController.MaskOnClick = function(self, go)
-  -- function num : 0_10
+function UIChatBlackListController:MaskOnClick(go)
   self:CloseDialog()
 end
-
-

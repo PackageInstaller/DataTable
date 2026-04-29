@@ -1,194 +1,141 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_close_to_teammate.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_move_base")
 _class("ActionMoveCloseToTeammate", ActionMoveBase)
 ActionMoveCloseToTeammate = ActionMoveCloseToTeammate
 _class("ActionMoveCloseToTeammate_SortedPosElement", Object)
 ActionMoveCloseToTeammate_SortedPosElement = ActionMoveCloseToTeammate_SortedPosElement
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMoveCloseToTeammate_SortedPosElement.Constructor = function(self, teammateCount, centerPos, distance, pieceIndex)
-  -- function num : 0_0
+function ActionMoveCloseToTeammate_SortedPosElement:Constructor(teammateCount, centerPos, distance, pieceIndex)
   self._teammateCount = teammateCount
   self._centerPos = centerPos
   self._distance = distance
   self._pieceIndex = pieceIndex
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveCloseToTeammate_SortedPosElement.GetTeammateCount = function(self)
-  -- function num : 0_1
+function ActionMoveCloseToTeammate_SortedPosElement:GetTeammateCount()
   return self._teammateCount
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveCloseToTeammate_SortedPosElement.GetCenterPos = function(self)
-  -- function num : 0_2
+function ActionMoveCloseToTeammate_SortedPosElement:GetCenterPos()
   return self._centerPos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveCloseToTeammate_SortedPosElement.GetDistance = function(self)
-  -- function num : 0_3
+function ActionMoveCloseToTeammate_SortedPosElement:GetDistance()
   return self._distance
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveCloseToTeammate_SortedPosElement.GetPieceIndex = function(self)
-  -- function num : 0_4
+function ActionMoveCloseToTeammate_SortedPosElement:GetPieceIndex()
   return self._pieceIndex
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveCloseToTeammate_SortedPosElement.ComparerByTeammateCount = function(a, b)
-  -- function num : 0_5
+function ActionMoveCloseToTeammate_SortedPosElement.ComparerByTeammateCount(a, b)
   local teammateCountA = a:GetTeammateCount()
   local teammateCountB = b:GetTeammateCount()
-  if teammateCountB < teammateCountA then
+  if teammateCountA > teammateCountB then
     return 1
+  elseif teammateCountA < teammateCountB then
+    return -1
   else
-    if teammateCountA < teammateCountB then
+    local distanceA = a:GetDistance()
+    local distanceB = b:GetDistance()
+    if distanceA < distanceB then
+      return 1
+    elseif distanceA > distanceB then
       return -1
     else
-      local distanceA = a:GetDistance()
-      local distanceB = b:GetDistance()
-      if distanceA < distanceB then
-        return 1
-      else
-        if distanceB < distanceA then
-          return -1
-        else
-          local indexA = a:GetPieceIndex()
-          local indexB = b:GetPieceIndex()
-          return indexB - indexA
-        end
-      end
+      local indexA = a:GetPieceIndex()
+      local indexB = b:GetPieceIndex()
+      return indexB - indexA
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveCloseToTeammate.FindNewTargetPos = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function ActionMoveCloseToTeammate:FindNewTargetPos()
   local targetType = SkillTargetType.Monster
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalc = utilScopeSvc:GetSkillScopeCalc()
   local nSkillID = self:GetLogicData(1)
-  local svcCfg = (self._world):GetService("Config")
+  local svcCfg = self._world:GetService("Config")
   local cfgSkill = svcCfg:GetSkillConfigData(nSkillID)
   local testBlockFlag = BlockFlag.MonsterLand
-  do
-    if (self.m_entityOwn):HasMonsterID() then
-      local cMonsterID = (self.m_entityOwn):MonsterID()
-      testBlockFlag = cMonsterID:GetMonsterBlockData()
-    end
-    local casterGridPos = (self.m_entityOwn):GetGridPosition()
-    local casterDir = (self.m_entityOwn):GetGridDirection()
-    local bodyAreaArray = ((self.m_entityOwn):BodyArea()):GetArea()
-    local targetSelector = (self._world):GetSkillScopeTargetSelector()
-    local utilData = (self._world):GetService("UtilData")
-    local sortedArray = SortedArray:New(Algorithm.COMPARE_CUSTOM, ActionMoveCloseToTeammate_SortedPosElement.ComparerByTeammateCount)
-    local boardEntity = (self._world):GetBoardEntity()
-    local boardCmpt = boardEntity:Board()
-    local boardPosList = boardCmpt:CloneBoardPosList()
-    for index,gridPos in ipairs(boardPosList) do
-      local isPosGoodToGo = true
-      for _,relativeBodyPos in ipairs(bodyAreaArray) do
-        if isPosGoodToGo ~= false then
-          local absBodyPos = gridPos + relativeBodyPos
-          if not utilData:IsValidPiecePos(absBodyPos) then
-            isPosGoodToGo = false
-            break
-          end
-          local isBlockMoveWithTrapWall = utilData:IsBlockMoveWithTrapWall(casterGridPos, absBodyPos, self.m_entityOwn)
-          if isBlockMoveWithTrapWall then
-            isPosGoodToGo = false
-            break
-          end
-          local pieceBlock = utilData:FindBlockByPos(absBodyPos)
-          if pieceBlock then
-            for entityID,blockData in pairs(pieceBlock.m_listBlock) do
-              if entityID ~= (self.m_entityOwn):GetID() and blockData & testBlockFlag ~= 0 then
-                isPosGoodToGo = false
-                break
-              end
-            end
-          else
-            do
-              do
-                isPosGoodToGo = false
-                -- DECOMPILER ERROR at PC114: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC114: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC114: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC114: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC114: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
-          end
-        end
-      end
-      if isPosGoodToGo then
-        local scopeResult = scopeCalc:CalcSkillScope(cfgSkill, gridPos, casterDir, bodyAreaArray)
-        if not targetSelector:DoSelectSkillTarget(self.m_entityOwn, targetType, scopeResult, nSkillID) then
-          local targetArray = {}
-        end
-        local tids = {}
-        for _,targetID in ipairs(targetArray) do
-          if targetID ~= (self.m_entityOwn):GetID() and not (table.icontains)(tids, targetID) then
-            (table.insert)(tids, targetID)
-          end
-        end
-        local targetCount = #tids
-        local distance = (Vector2.Distance)(gridPos, casterGridPos)
-        local element = ActionMoveCloseToTeammate_SortedPosElement:New(targetCount, gridPos, distance, index)
-        sortedArray:Insert(element)
-      end
-    end
-    local first = sortedArray:GetAt(1)
-    local second = sortedArray:GetAt(2)
-    if first:GetDistance() == 0 and first:GetTeammateCount() == 0 then
-      first = second
-    end
-    local mobility = (((self.m_entityOwn):AI()):GetMobilityValid())
-    local elementInMobility = nil
-    for i = 1, sortedArray:Size() do
-      local element = sortedArray:GetAt(i)
-      local targetPos = first:GetCenterPos()
-      local curPosToTargetDis = (Vector2.Distance)(casterGridPos, targetPos)
-      local workPosToTargetDis = (Vector2.Distance)(element:GetCenterPos(), targetPos)
-      if element:GetDistance() == 1 and workPosToTargetDis <= curPosToTargetDis then
-        elementInMobility = element
+  if self.m_entityOwn:HasMonsterID() then
+    local cMonsterID = self.m_entityOwn:MonsterID()
+    testBlockFlag = cMonsterID:GetMonsterBlockData()
+  end
+  local casterGridPos = self.m_entityOwn:GetGridPosition()
+  local casterDir = self.m_entityOwn:GetGridDirection()
+  local bodyAreaArray = self.m_entityOwn:BodyArea():GetArea()
+  local targetSelector = self._world:GetSkillScopeTargetSelector()
+  local utilData = self._world:GetService("UtilData")
+  local sortedArray = SortedArray:New(Algorithm.COMPARE_CUSTOM, ActionMoveCloseToTeammate_SortedPosElement.ComparerByTeammateCount)
+  local boardEntity = self._world:GetBoardEntity()
+  local boardCmpt = boardEntity:Board()
+  local boardPosList = boardCmpt:CloneBoardPosList()
+  for index, gridPos in ipairs(boardPosList) do
+    local isPosGoodToGo = true
+    for _, relativeBodyPos in ipairs(bodyAreaArray) do
+      if isPosGoodToGo == false then
         break
       end
-    end
-    do
-      if elementInMobility == nil then
-        return casterGridPos
+      local absBodyPos = gridPos + relativeBodyPos
+      if not utilData:IsValidPiecePos(absBodyPos) then
+        isPosGoodToGo = false
+        break
       end
-      return elementInMobility:GetCenterPos()
+      local isBlockMoveWithTrapWall = utilData:IsBlockMoveWithTrapWall(casterGridPos, absBodyPos, self.m_entityOwn)
+      if isBlockMoveWithTrapWall then
+        isPosGoodToGo = false
+        break
+      end
+      local pieceBlock = utilData:FindBlockByPos(absBodyPos)
+      if pieceBlock then
+        for entityID, blockData in pairs(pieceBlock.m_listBlock) do
+          if entityID ~= self.m_entityOwn:GetID() and blockData & testBlockFlag ~= 0 then
+            isPosGoodToGo = false
+            break
+          end
+        end
+      else
+        isPosGoodToGo = false
+      end
+    end
+    if isPosGoodToGo then
+      local scopeResult = scopeCalc:CalcSkillScope(cfgSkill, gridPos, casterDir, bodyAreaArray)
+      local targetArray = targetSelector:DoSelectSkillTarget(self.m_entityOwn, targetType, scopeResult, nSkillID) or {}
+      local tids = {}
+      for _, targetID in ipairs(targetArray) do
+        if targetID ~= self.m_entityOwn:GetID() and not table.icontains(tids, targetID) then
+          table.insert(tids, targetID)
+        end
+      end
+      local targetCount = #tids
+      local distance = Vector2.Distance(gridPos, casterGridPos)
+      local element = ActionMoveCloseToTeammate_SortedPosElement:New(targetCount, gridPos, distance, index)
+      sortedArray:Insert(element)
     end
   end
+  local first = sortedArray:GetAt(1)
+  local second = sortedArray:GetAt(2)
+  if first:GetDistance() == 0 and first:GetTeammateCount() == 0 then
+    first = second
+  end
+  local mobility = self.m_entityOwn:AI():GetMobilityValid()
+  local elementInMobility
+  for i = 1, sortedArray:Size() do
+    local element = sortedArray:GetAt(i)
+    local targetPos = first:GetCenterPos()
+    local curPosToTargetDis = Vector2.Distance(casterGridPos, targetPos)
+    local workPosToTargetDis = Vector2.Distance(element:GetCenterPos(), targetPos)
+    if element:GetDistance() == 1 and curPosToTargetDis >= workPosToTargetDis then
+      elementInMobility = element
+      break
+    end
+  end
+  if elementInMobility == nil then
+    return casterGridPos
+  end
+  return elementInMobility:GetCenterPos()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveCloseToTeammate.FindNewWalkPos = function(self, posWalkList, posTarget, posSelf)
-  -- function num : 0_7
+function ActionMoveCloseToTeammate:FindNewWalkPos(posWalkList, posTarget, posSelf)
   return posTarget
 end
-
-

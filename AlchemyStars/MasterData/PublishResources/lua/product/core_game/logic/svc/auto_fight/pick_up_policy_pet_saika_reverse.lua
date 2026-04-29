@@ -1,31 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_pet_saika_reverse.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_PetSaiKaReverse", PickUpPolicy_Base)
 PickUpPolicy_PetSaiKaReverse = PickUpPolicy_PetSaiKaReverse
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_PetSaiKaReverse.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PickUpPolicy_PetSaiKaReverse:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
   local activeSkillID = calcParam.activeSkillID
   local policyParam = calcParam.policyParam
-  local casterPos = (petEntity:GridLocation()).Position
+  local casterPos = petEntity:GridLocation().Position
   local pickPosList = {}
   local attackPosList = {}
   local targetIdList = {}
   local validPosIdxList, validPosList = self:_CalcPickUpValidGridList(petEntity, activeSkillID)
-  local validResults = (self:_CalcValidResultByPickUpType_PickUpPolicy(petEntity, activeSkillID, validPosList))
-  local minPos = nil
+  local validResults = self:_CalcValidResultByPickUpType_PickUpPolicy(petEntity, activeSkillID, validPosList)
+  local minPos
   local minHP = -1
-  for _,v in ipairs(validResults) do
-    for _,id in ipairs(v[2]) do
-      local e = (self._world):GetEntityByID(id)
-      local hp = (e:Attributes()):GetCurrentHP()
-      if hp > 0 and (minHP < 0 or hp < minHP) then
+  for _, v in ipairs(validResults) do
+    for _, id in ipairs(v[2]) do
+      local e = self._world:GetEntityByID(id)
+      local hp = e:Attributes():GetCurrentHP()
+      if 0 < hp and (minHP < 0 or minHP > hp) then
         minHP = hp
         minPos = v[1]
         targetIdList = v[2]
@@ -35,5 +28,3 @@ PickUpPolicy_PetSaiKaReverse.CalcAutoFightPickUpPolicy = function(self, calcPara
   end
   return {minPos}, attackPosList, targetIdList
 end
-
-

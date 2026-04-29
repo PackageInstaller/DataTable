@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/cls/movie_prepare_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MoviePrepareData", Singleton)
 MoviePrepareData = MoviePrepareData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MoviePrepareData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function MoviePrepareData:Constructor()
   self.movieId = 101
   self.prepareTarget = nil
   self.pstId = 0
@@ -16,55 +9,37 @@ MoviePrepareData.Constructor = function(self)
   self.arch_list = nil
   self._isRoast = true
   self._playbackData = nil
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.mUIHomeland = (self.mHomeland):GetUIModule()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.mUIHomeland = self.mHomeland:GetUIModule()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MoviePrepareData.Clear = function(self)
-  -- function num : 0_1
+function MoviePrepareData:Clear()
   self.movieId = 0
   self.prepareTarget = nil
   self._build = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MoviePrepareData.EnsurePrepareArchList = function(self)
-  -- function num : 0_2
-  self.arch_list = (self.mUIHomeland):GetFreeChildren(self._build)
+function MoviePrepareData:EnsurePrepareArchList()
+  self.arch_list = self.mUIHomeland:GetFreeChildren(self._build)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MoviePrepareData.ClearData = function(self, prepareType)
-  -- function num : 0_3 , upvalues : _ENV
+function MoviePrepareData:ClearData(prepareType)
   if prepareType == MoviePrepareType.PT_Scene then
-    (self.mUIHomeland):ClearWallAndFloorInScene(self._build)
-  else
-  end
-  if prepareType ~= MoviePrepareType.PT_Prop or prepareType == MoviePrepareType.PT_Furniture then
-    (self.mUIHomeland):ClearFreeChildrenInScene(self._build)
-  else
-  end
-  if prepareType == MoviePrepareType.PT_Actor then
+    self.mUIHomeland:ClearWallAndFloorInScene(self._build)
+  elseif prepareType == MoviePrepareType.PT_Prop then
+  elseif prepareType == MoviePrepareType.PT_Furniture then
+    self.mUIHomeland:ClearFreeChildrenInScene(self._build)
+  elseif prepareType == MoviePrepareType.PT_Actor then
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MoviePrepareData.SetMovieData = function(self, movieId, pstId, build)
-  -- function num : 0_4
+function MoviePrepareData:SetMovieData(movieId, pstId, build)
   self.movieId = movieId
   self.pstId = pstId
   self._build = build
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MoviePrepareData.SetReplayData = function(self, fatherBuilding, isRoast, arch_list, playbackData)
-  -- function num : 0_5
+function MoviePrepareData:SetReplayData(fatherBuilding, isRoast, arch_list, playbackData)
   self._build = fatherBuilding
   self._isRoast = isRoast
   self._playbackData = playbackData
@@ -73,53 +48,30 @@ MoviePrepareData.SetReplayData = function(self, fatherBuilding, isRoast, arch_li
   self.pstId = playbackData.pstid
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MoviePrepareData.SetOpenTease = function(self, isRoast)
-  -- function num : 0_6
+function MoviePrepareData:SetOpenTease(isRoast)
   self._isRoast = isRoast
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MoviePrepareData.GetFatherBuild = function(self)
-  -- function num : 0_7
+function MoviePrepareData:GetFatherBuild()
   return self._build
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MoviePrepareData.GetPstId = function(self)
-  -- function num : 0_8
+function MoviePrepareData:GetPstId()
   return self.pstId
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MoviePrepareData.GetMovieId = function(self)
-  -- function num : 0_9
+function MoviePrepareData:GetMovieId()
   return self.movieId
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MoviePrepareData.GetPlayBackData = function(self)
-  -- function num : 0_10
+function MoviePrepareData:GetPlayBackData()
   return self._playbackData
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MoviePrepareData.GetPrepareArchList = function(self)
-  -- function num : 0_11
+function MoviePrepareData:GetPrepareArchList()
   return self.arch_list
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MoviePrepareData.GetOpenTease = function(self)
-  -- function num : 0_12
+function MoviePrepareData:GetOpenTease()
   return self._isRoast
 end
-
-

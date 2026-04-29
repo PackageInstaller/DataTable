@@ -1,52 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/wishing/collect/ui_build_collect_coin_task.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBuildCollectCoinTask", UIController)
 UIBuildCollectCoinTask = UIBuildCollectCoinTask
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBuildCollectCoinTask.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIBuildCollectCoinTask:OnShow(uiParams)
   self._collectCoinRewards = uiParams[1]
   self._taskLoader = self:GetUIComponent("UISelectObjectPath", "TaskList")
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinTask.ShowItemTips = function(self, id, go)
-  -- function num : 0_1
+function UIBuildCollectCoinTask:ShowItemTips(id, go)
   self:ShowDialog("UIItemTipsHomeland", id, go)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinTask.RefreshUI = function(self)
-  -- function num : 0_2
-  local tasks = (self._collectCoinRewards):GetCollectCoinRewardDatas()
+function UIBuildCollectCoinTask:RefreshUI()
+  local tasks = self._collectCoinRewards:GetCollectCoinRewardDatas()
   if not tasks then
-    return 
+    return
   end
-  ;
-  (self._taskLoader):SpawnObjects("UIBuildCollectCoinTaskItem", #tasks)
-  local items = (self._taskLoader):GetAllSpawnList()
+  self._taskLoader:SpawnObjects("UIBuildCollectCoinTaskItem", #tasks)
+  local items = self._taskLoader:GetAllSpawnList()
   for i = 1, #items do
-    (items[i]):Refresh(tasks[i], i == 1, function(id, pos)
-    -- function num : 0_2_0 , upvalues : self
-    self:ShowItemTips(id, pos)
+    items[i]:Refresh(tasks[i], i == 1, function(id, pos)
+      self:ShowItemTips(id, pos)
+    end)
   end
-)
-  end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinTask.BtnCloseOnClick = function(self, go)
-  -- function num : 0_3
+function UIBuildCollectCoinTask:BtnCloseOnClick(go)
   self:CloseDialog()
 end
-
-

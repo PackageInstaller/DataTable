@@ -1,69 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/editor_info_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("EditorInfoComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-EditorInfoComponent.Constructor = function(self)
-  -- function num : 0_0
+function EditorInfoComponent:Constructor()
   self.ownerEntityId = 0
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-EditorInfoComponent.SetOwnerEntityId = function(self, entityId)
-  -- function num : 0_1
+function EditorInfoComponent:SetOwnerEntityId(entityId)
   self.ownerEntityId = entityId
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-EditorInfoComponent.GetOwnerEntityId = function(self)
-  -- function num : 0_2
+function EditorInfoComponent:GetOwnerEntityId()
   return self.ownerEntityId
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.EditorInfo = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).EditorInfo)
+function Entity:EditorInfo()
+  return self:GetComponent(self.WEComponentsEnum.EditorInfo)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasEditorInfo = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).EditorInfo)
+function Entity:HasEditorInfo()
+  return self:HasComponent(self.WEComponentsEnum.EditorInfo)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddEditorInfo = function(self, newPath)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).EditorInfo
+function Entity:AddEditorInfo(newPath)
+  local index = self.WEComponentsEnum.EditorInfo
   local component = EditorInfoComponent:New(newPath)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceEditorInfo = function(self)
-  -- function num : 0_6
-  local index = (self.WEComponentsEnum).EditorInfo
+function Entity:ReplaceEditorInfo()
+  local index = self.WEComponentsEnum.EditorInfo
   local cmpt = self:EditorInfo()
   self:ReplaceComponent(index, cmpt)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveEditorInfo = function(self)
-  -- function num : 0_7
+function Entity:RemoveEditorInfo()
   if self:HasEditorInfo() then
-    self:RemoveComponent((self.WEComponentsEnum).EditorInfo)
+    self:RemoveComponent(self.WEComponentsEnum.EditorInfo)
   end
 end
-
-

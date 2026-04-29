@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_select_target_by_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSelectTargetByLayer", BuffLogicBase)
 BuffLogicSelectTargetByLayer = BuffLogicSelectTargetByLayer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSelectTargetByLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSelectTargetByLayer:Constructor(buffInstance, logicParam)
   self._layerType = logicParam.layerType
   self._saveDataName = logicParam.saveDataName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSelectTargetByLayer.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicSelectTargetByLayer:DoLogic(notify)
   local resultIDs = {}
   if notify:GetScopeResult() ~= nil then
     local scopeResult = notify:GetScopeResult()
@@ -26,41 +16,28 @@ BuffLogicSelectTargetByLayer.DoLogic = function(self, notify)
     for i = 1, #tmp do
       targetIDs[i] = tmp[i]
     end
-    local svc = (self._world):GetService("BuffLogic")
+    local svc = self._world:GetService("BuffLogic")
     local count = svc:GetBuffLayer(self._entity, self._layerType)
-    local randomSvc = (self._world):GetService("RandomLogic")
-    while count > 0 and targetIDs and #targetIDs > 0 do
+    local randomSvc = self._world:GetService("RandomLogic")
+    while 0 < count and targetIDs and 0 < #targetIDs do
       local index = randomSvc:LogicRand(1, #targetIDs)
       local targetID = targetIDs[index]
-      ;
-      (table.insert)(resultIDs, targetID)
-      ;
-      (table.remove)(targetIDs, index)
+      table.insert(resultIDs, targetID)
+      table.remove(targetIDs, index)
       count = count - 1
     end
   end
-  do
-    ;
-    (self._buffComponent):SetBuffValue(self._saveDataName, resultIDs)
-    do return #resultIDs ~= 0 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
+  self._buffComponent:SetBuffValue(self._saveDataName, resultIDs)
+  return #resultIDs ~= 0
 end
 
 _class("BuffLogicRemoveSelectTargetByLayer", BuffLogicBase)
 BuffLogicRemoveSelectTargetByLayer = BuffLogicRemoveSelectTargetByLayer
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveSelectTargetByLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveSelectTargetByLayer:Constructor(buffInstance, logicParam)
   self._saveDataName = logicParam.saveDataName
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveSelectTargetByLayer.DoLogic = function(self, notify)
-  -- function num : 0_3
-  (self._buffComponent):SetBuffValue(self._saveDataName, nil)
+function BuffLogicRemoveSelectTargetByLayer:DoLogic(notify)
+  self._buffComponent:SetBuffValue(self._saveDataName, nil)
 end
-
-

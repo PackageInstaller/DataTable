@@ -1,24 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/season_config.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("season_enum")
 require("ui_season_id_enum")
 local SeasonKey = {Mode = 1, Trigger = 2}
 _enum("SeasonKey", SeasonKey)
 local SeasonEnvironmentConfig = {
-[UISeasonID.S1] = {
-[1] = {value = "SeasonSceneGiantLizard", param = nil}
-, 
-[2] = {value = "SeasonSceneSmallLizard", 
-param = {1}
-}
-, 
-[3] = {value = "SeasonSceneSmallLizard", 
-param = {2}
-}
-}
+  [UISeasonID.S1] = {
+    [1] = {
+      value = "SeasonSceneGiantLizard",
+      param = nil
+    },
+    [2] = {
+      value = "SeasonSceneSmallLizard",
+      param = {1}
+    },
+    [3] = {
+      value = "SeasonSceneSmallLizard",
+      param = {2}
+    }
+  }
 }
 _enum("SeasonEnvironmentConfig", SeasonEnvironmentConfig)
-

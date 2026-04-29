@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_absorbpiece_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayAbsorbPieceEffectInstruction", BaseInstruction)
 PlayAbsorbPieceEffectInstruction = PlayAbsorbPieceEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayAbsorbPieceEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayAbsorbPieceEffectInstruction:Constructor(paramList)
   self._gridEffectID = 0
   if paramList.gridEffectID then
     self._gridEffectID = tonumber(paramList.gridEffectID)
@@ -48,130 +41,94 @@ PlayAbsorbPieceEffectInstruction.Constructor = function(self, paramList)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAbsorbPieceEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayAbsorbPieceEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local absorbResult = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AbsorbPiece)
   if not absorbResult then
-    return 
+    return
   end
   local absorbPieceList = {}
   local newPieceList = {}
-  for _,v in pairs(absorbResult) do
+  for _, v in pairs(absorbResult) do
     local list = v:GetAbsorbPieceList()
     local newList = v:GetNewPieceList()
     if list then
-      do
-        for _,p in pairs(list) do
-          absorbPieceList[#absorbPieceList + 1] = p
-        end
+      for _, p in pairs(list) do
+        absorbPieceList[#absorbPieceList + 1] = p
       end
     end
-    do
-      if newList then
-        for _,p in pairs(newList) do
-          newPieceList[#newPieceList + 1] = p
-        end
-      end
-      do
-        -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out DO_STMT
-
+    if newList then
+      for _, p in pairs(newList) do
+        newPieceList[#newPieceList + 1] = p
       end
     end
   end
   if not absorbPieceList or #absorbPieceList == 0 then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
   local boardServiceRender = world:GetService("BoardRender")
   if self._gridEffectID ~= 0 then
-    for _,pos in pairs(absorbPieceList) do
+    for _, pos in pairs(absorbPieceList) do
       local renderPos = boardServiceRender:GridPos2RenderPos(pos)
       local effectEntity = effectService:CreatePositionEffect(self._gridEffectID, renderPos)
     end
   end
-  do
-    YIELD(TT, self._delayTime)
-    if self._flyEffectID ~= 0 then
-      local waitTime = 0
-      local targetPos = (casterEntity:Location()).Position
-      if self._targetPos and self._targetPos ~= "" then
-        local tran = ((casterEntity:View()):GetGameObject()).transform
-        local targetTrans = (GameObjectHelper.FindChild)(tran, self._targetPos)
-        targetPos = targetTrans.position
+  YIELD(TT, self._delayTime)
+  if self._flyEffectID ~= 0 then
+    local waitTime = 0
+    local targetPos = casterEntity:Location().Position
+    if self._targetPos and self._targetPos ~= "" then
+      local tran = casterEntity:View():GetGameObject().transform
+      local targetTrans = GameObjectHelper.FindChild(tran, self._targetPos)
+      targetPos = targetTrans.position
+    end
+    local effectList = {}
+    for _, pos in pairs(absorbPieceList) do
+      local renderPos = boardServiceRender:GridPos2RenderPos(pos)
+      renderPos = renderPos + Vector3(self._offsetX, self._offsetY, self._offsetZ)
+      local dir = targetPos - renderPos
+      local effectEntity = world:GetService("Effect"):CreatePositionEffect(self._flyEffectID, renderPos)
+      effectEntity:SetDirection(dir)
+      local distance = Vector3.Distance(renderPos, targetPos)
+      local flyTime = 0
+      if self._flySpeed then
+        flyTime = distance * self._flySpeed / 1000
       end
-      do
-        local effectList = {}
-        for _,pos in pairs(absorbPieceList) do
-          local renderPos = boardServiceRender:GridPos2RenderPos(pos)
-          renderPos = renderPos + Vector3(self._offsetX, self._offsetY, self._offsetZ)
-          local dir = targetPos - (renderPos)
-          local effectEntity = (world:GetService("Effect")):CreatePositionEffect(self._flyEffectID, renderPos)
-          effectEntity:SetDirection(dir)
-          local distance = (Vector3.Distance)(renderPos, targetPos)
-          local flyTime = 0
-          if self._flySpeed then
-            flyTime = distance * self._flySpeed / 1000
-          end
-          local effect = {}
-          effect.entity = effectEntity
-          effect.flyTime = flyTime
-          effectList[#effectList + 1] = effect
-          if waitTime < flyTime then
-            waitTime = flyTime
-          end
-        end
-        YIELD(TT)
-        YIELD(TT, self._waitFlyEffectTime)
-        for _,effect in pairs(effectList) do
-          local go = ((effect.entity):View()):GetGameObject()
-          local dotween = (go.transform):DOMove(targetPos, effect.flyTime, false)
-          if dotween then
-            (dotween:SetEase(((DG.Tweening).Ease).InExpo)):OnComplete(function()
-    -- function num : 0_1_0 , upvalues : go, world, effect
-    go:SetActive(false)
-    world:DestroyEntity(effect.entity)
-  end
-)
-          else
-            world:DestroyEntity(effect.entity)
-          end
-        end
-        YIELD(TT, waitTime)
-        -- DECOMPILER ERROR at PC196: Confused about usage of register R15 for local variables in 'ReleaseLocals'
-
-        waitTime, targetPos = world:GetService, world
-        effectList = "BoardRender"
-        waitTime = waitTime(targetPos, effectList)
-        local boardServiceR = nil
-        targetPos = pairs
-        effectList = absorbPieceList
-        targetPos = targetPos(effectList)
-        for boardServiceR,pos in targetPos do
-          local l_0_1_60, l_0_1_61, _, pos = nil
-          l_0_1_60, l_0_1_61 = self:_GetPieceType, self
-          _ = newPieceList
-          pos = l_0_1_59
-          l_0_1_60 = l_0_1_60(l_0_1_61, _, pos)
-          local newPieceType = nil
-          l_0_1_61, _ = waitTime:ReCreateGridEntity, waitTime
-          pos = l_0_1_60
-          newPieceType = l_0_1_59
-          l_0_1_61(_, pos, newPieceType, false, true)
-        end
+      local effect = {}
+      effect.entity = effectEntity
+      effect.flyTime = flyTime
+      effectList[#effectList + 1] = effect
+      if waitTime < flyTime then
+        waitTime = flyTime
       end
     end
+    YIELD(TT)
+    YIELD(TT, self._waitFlyEffectTime)
+    for _, effect in pairs(effectList) do
+      local go = effect.entity:View():GetGameObject()
+      local dotween = go.transform:DOMove(targetPos, effect.flyTime, false)
+      if dotween then
+        dotween:SetEase(DG.Tweening.Ease.InExpo):OnComplete(function()
+          go:SetActive(false)
+          world:DestroyEntity(effect.entity)
+        end)
+      else
+        world:DestroyEntity(effect.entity)
+      end
+    end
+    YIELD(TT, waitTime)
+  end
+  local boardServiceR = world:GetService("BoardRender")
+  for _, pos in pairs(absorbPieceList) do
+    local newPieceType = self:_GetPieceType(newPieceList, pos)
+    boardServiceR:ReCreateGridEntity(newPieceType, pos, false, true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAbsorbPieceEffectInstruction._GetPieceType = function(self, newPieceList, gridPos)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,grid in pairs(newPieceList) do
+function PlayAbsorbPieceEffectInstruction:_GetPieceType(newPieceList, gridPos)
+  for _, grid in pairs(newPieceList) do
     if grid.x == gridPos.x and grid.y == gridPos.y then
       return grid.color
     end
@@ -179,18 +136,19 @@ PlayAbsorbPieceEffectInstruction._GetPieceType = function(self, newPieceList, gr
   return nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAbsorbPieceEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayAbsorbPieceEffectInstruction:GetCacheResource()
   local t = {}
   if self._gridEffectID and self._gridEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._gridEffectID]).ResPath, 8})
+    table.insert(t, {
+      Cfg.cfg_effect[self._gridEffectID].ResPath,
+      8
+    })
   end
-  if self._flyEffectID and self._flyEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._flyEffectID]).ResPath, 8})
+  if self._flyEffectID and 0 < self._flyEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._flyEffectID].ResPath,
+      8
+    })
   end
   return t
 end
-
-

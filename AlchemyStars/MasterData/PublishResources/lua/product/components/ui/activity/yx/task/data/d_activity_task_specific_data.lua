@@ -1,13 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/yx/task/data/d_activity_task_specific_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DActivityTaskSpecificData", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-DActivityTaskSpecificData.Constructor = function(self)
-  -- function num : 0_0
+function DActivityTaskSpecificData:Constructor()
   self.shopBtnScriptName = ""
   self.campaignType = 0
   self.progressCmptId = 0
@@ -31,158 +24,93 @@ DActivityTaskSpecificData.Constructor = function(self)
   self.closeAnimTb = {}
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.GetShopBtnScriptName = function(self)
-  -- function num : 0_1
+function DActivityTaskSpecificData:GetShopBtnScriptName()
   return self.shopBtnScriptName
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.GetCampaignType = function(self)
-  -- function num : 0_2
+function DActivityTaskSpecificData:GetCampaignType()
   return self.campaignType
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.GetProgressCmptId = function(self)
-  -- function num : 0_3
+function DActivityTaskSpecificData:GetProgressCmptId()
   return self.progressCmptId
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.GetQuestCmptId = function(self)
-  -- function num : 0_4
+function DActivityTaskSpecificData:GetQuestCmptId()
   return self.questCmptId
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.GetQuestNumSpecialColor = function(self)
-  -- function num : 0_5
+function DActivityTaskSpecificData:GetQuestNumSpecialColor()
   return self.progressNumSpecialColor
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.GetQuestGotStr = function(self)
-  -- function num : 0_6
+function DActivityTaskSpecificData:GetQuestGotStr()
   return self.progressGotStr
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.GetQuestCanGetStr = function(self)
-  -- function num : 0_7
+function DActivityTaskSpecificData:GetQuestCanGetStr()
   return self.progressCanGetStr
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.GetQuestBgNotFinish = function(self)
-  -- function num : 0_8
+function DActivityTaskSpecificData:GetQuestBgNotFinish()
   return self.questBgNotFinish
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.GetQuestBgFinish = function(self)
-  -- function num : 0_9
+function DActivityTaskSpecificData:GetQuestBgFinish()
   return self.questBgFinish
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.GetSpriteAtlasName = function(self)
-  -- function num : 0_10
+function DActivityTaskSpecificData:GetSpriteAtlasName()
   return self.spriteAtlasName
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.IsProgressImgNeedChange = function(self)
-  -- function num : 0_11
+function DActivityTaskSpecificData:IsProgressImgNeedChange()
   return self.isProgressImgNeedChange
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.GetTopProgressImg = function(self)
-  -- function num : 0_12
+function DActivityTaskSpecificData:GetTopProgressImg()
   return self.topProgressImg
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.GetTopProgressBgImg = function(self)
-  -- function num : 0_13
+function DActivityTaskSpecificData:GetTopProgressBgImg()
   return self.topProgressBgImg
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.GetBottomProgressImg = function(self)
-  -- function num : 0_14
+function DActivityTaskSpecificData:GetBottomProgressImg()
   return self.bottomProgressImg
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.GetBottomProgressBgImg = function(self)
-  -- function num : 0_15
+function DActivityTaskSpecificData:GetBottomProgressBgImg()
   return self.bottomProgressBgImg
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.GetNormalProgressImg = function(self)
-  -- function num : 0_16
+function DActivityTaskSpecificData:GetNormalProgressImg()
   return self.normalProgressImg
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.GetNormalProgressBgImg = function(self)
-  -- function num : 0_17
+function DActivityTaskSpecificData:GetNormalProgressBgImg()
   return self.normalProgressBgImg
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.GetProgressFirstCellImgHeight = function(self)
-  -- function num : 0_18
+function DActivityTaskSpecificData:GetProgressFirstCellImgHeight()
   return self.progressFirstCellImgHeight
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.GetProgressNormalCellImgHeight = function(self)
-  -- function num : 0_19
+function DActivityTaskSpecificData:GetProgressNormalCellImgHeight()
   return self.progressNormalCellImgHeight
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.IsCloseWithAnim = function(self)
-  -- function num : 0_20
+function DActivityTaskSpecificData:IsCloseWithAnim()
   return self.isCloseWithAnim
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTaskSpecificData.GetCloseAnimTb = function(self)
-  -- function num : 0_21
+function DActivityTaskSpecificData:GetCloseAnimTb()
   return self.closeAnimTb
 end
 
 _class("DActivityTaskSpecificData_EveSinsa", DActivityTaskSpecificData)
--- DECOMPILER ERROR at PC76: Confused about usage of register: R0 in 'UnsetPending'
 
-DActivityTaskSpecificData_EveSinsa.Constructor = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function DActivityTaskSpecificData_EveSinsa:Constructor()
   self.shopBtnScriptName = "UIActivityEveSinsaShopBtn"
   self.campaignType = ECampaignType.CAMPAIGN_TYPE_EVERESCUEPLAN
   self.progressCmptId = ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_PERSON_PROGRESS
@@ -204,17 +132,12 @@ DActivityTaskSpecificData_EveSinsa.Constructor = function(self)
   self.progressNormalCellImgHeight = 0
   self.isCloseWithAnim = true
   self.closeAnimTb = {}
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.closeAnimTb).uiCloseAnim = "uieff_Activity_Eve_Task_Out"
+  self.closeAnimTb.uiCloseAnim = "uieff_Activity_Eve_Task_Out"
 end
 
 _class("DActivityTaskSpecificData_Sakura", DActivityTaskSpecificData)
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
 
-DActivityTaskSpecificData_Sakura.Constructor = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function DActivityTaskSpecificData_Sakura:Constructor()
   self.shopBtnScriptName = "UISakuraDrawShopBtn"
   self.campaignType = ECampaignType.CAMPAIGN_TYPE_HIIRO
   self.progressCmptId = ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_PERSON_PROGRESS
@@ -236,14 +159,6 @@ DActivityTaskSpecificData_Sakura.Constructor = function(self)
   self.progressNormalCellImgHeight = 220
   self.isCloseWithAnim = true
   self.closeAnimTb = {}
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.closeAnimTb).bgCloseAnim = "uieff_UISakuraTaskController_b_out"
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.closeAnimTb).uiCloseAnim = "uieff_UISakuraTaskController_u_out"
+  self.closeAnimTb.bgCloseAnim = "uieff_UISakuraTaskController_b_out"
+  self.closeAnimTb.uiCloseAnim = "uieff_UISakuraTaskController_u_out"
 end
-
-

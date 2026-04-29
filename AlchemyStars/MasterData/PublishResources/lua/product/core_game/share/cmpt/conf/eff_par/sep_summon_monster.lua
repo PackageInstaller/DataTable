@@ -1,40 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_summon_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_summon_everything")
 local SummonMonsterFindPosType = {RangRandom = 1, RangeFixed4 = 2}
 _enum("SummonMonsterFindPosType", SummonMonsterFindPosType)
 _class("SkillEffectParam_SummonMonster", SkillEffectParam_SummonEverything)
 SkillEffectParam_SummonMonster = SkillEffectParam_SummonMonster
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillEffectParam_SummonMonster.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParam_SummonMonster:GetEffectType()
   return SkillEffectType.SummonMonster
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_SummonMonster.Constructor = function(self, t)
-  -- function num : 0_1
+function SkillEffectParam_SummonMonster:Constructor(t)
   self._monsterID = t.monsterID
   self._findPosType = t.findPosType
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_SummonMonster.GetMonsterID = function(self)
-  -- function num : 0_2
+function SkillEffectParam_SummonMonster:GetMonsterID()
   return self._monsterID
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_SummonMonster.GetFindPosType = function(self)
-  -- function num : 0_3
+function SkillEffectParam_SummonMonster:GetFindPosType()
   return self._findPosType
 end
-
-

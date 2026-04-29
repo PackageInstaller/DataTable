@@ -1,79 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/cast_chess_pet_end_turn_cmd.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CastChessPetEndTurnCommand", IEntityCommand)
 CastChessPetEndTurnCommand = CastChessPetEndTurnCommand
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CastChessPetEndTurnCommand.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CastChessPetEndTurnCommand:Constructor()
   self._commandType = "CastChessPetEndTurn"
   self._turnType = ChessTurnEndType.Single
   self._turnEndEntityID = -1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetEndTurnCommand.GetCommandType = function(self)
-  -- function num : 0_1
+function CastChessPetEndTurnCommand:GetCommandType()
   return self._commandType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetEndTurnCommand.GetExecStateID = function(self, runAtClient)
-  -- function num : 0_2
+function CastChessPetEndTurnCommand:GetExecStateID(runAtClient)
   return 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetEndTurnCommand.IsExecExcluded = function(self)
-  -- function num : 0_3
+function CastChessPetEndTurnCommand:IsExecExcluded()
   return 1
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetEndTurnCommand.DependRoundCount = function(self)
-  -- function num : 0_4
+function CastChessPetEndTurnCommand:DependRoundCount()
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetEndTurnCommand.GetCmdTurnType = function(self)
-  -- function num : 0_5
+function CastChessPetEndTurnCommand:GetCmdTurnType()
   return self._turnType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetEndTurnCommand.GetCmdTurnEndEntityID = function(self)
-  -- function num : 0_6
+function CastChessPetEndTurnCommand:GetCmdTurnEndEntityID()
   return self._turnEndEntityID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetEndTurnCommand.SetCmdTurnType = function(self, type)
-  -- function num : 0_7
+function CastChessPetEndTurnCommand:SetCmdTurnType(type)
   self._turnType = type
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetEndTurnCommand.SetTurnEndEntityID = function(self, entityID)
-  -- function num : 0_8
+function CastChessPetEndTurnCommand:SetTurnEndEntityID(entityID)
   self._turnEndEntityID = entityID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetEndTurnCommand.ToNetMessage = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function CastChessPetEndTurnCommand:ToNetMessage()
   local msg = CEventCastChessPetEndTurnCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
@@ -85,10 +51,7 @@ CastChessPetEndTurnCommand.ToNetMessage = function(self)
   return msg
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetEndTurnCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_10
+function CastChessPetEndTurnCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
@@ -97,5 +60,3 @@ CastChessPetEndTurnCommand.FromNetMessage = function(self, msg)
   self._turnEndEntityID = msg.turnEndEntityID
   self._turnType = msg.turnType
 end
-
-

@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_camera_effect_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayCameraEffectInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayCameraEffectInstruction = SkillPreviewPlayCameraEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayCameraEffectInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayCameraEffectInstruction:Constructor(params)
   self._effectID = tonumber(params.EffectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayCameraEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function SkillPreviewPlayCameraEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if self._effectID and self._effectID > 0 then
     local world = casterEntity:GetOwnerWorld()
     local serEffect = world:GetService("Effect")
@@ -30,5 +20,3 @@ SkillPreviewPlayCameraEffectInstruction.DoInstruction = function(self, TT, caste
     end
   end
 end
-
-

@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/th/activity/summongift/str_activity_summon_gift.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_activity_summon_gift_main_title = "โบนัสการอัญเชิญ", str_activity_summon_gift_intro = "ลงชื่อเข้าใช้เกมและรับการรับสมัครฟรี 10 เท่าสำหรับการสรรหาบุคลากรหลักในแต่ละสัปดาห์\nระยะเวลากิจกรรม:\n09:00 น. 15 มิถุนายน 2023 - 09:00 น. 20 กรกฎาคม 2023 (UTC +0)\n04:00 น. 15 มิถุนายน 2566 - 04:00 น. 20 กรกฎาคม 2566 (UTC -5) รีเซ็ตทุกวันพฤหัสบดี เวลา 09:00 น. (UTC +0)\nรีเซ็ตทุกวันพฤหัสบดี เวลา 04:00 น. (UTC -5) โอกาสการรับสมัครจะไม่สะสม\nการเกณฑ์ทหารที่ไม่ได้ใช้จะถูกลบออกเมื่อกิจกรรมสิ้นสุดลง\nเราขอให้นักเดินเรือทุกคนโชคดีในการสรรหา Aurorians ที่พวกเขาชื่นชอบ!", str_activity_summon_gift_time_main = "เหลือเวลา", str_activity_summon_gift_btn = "อัญเชิญเลย"}
+local config = {
+  str_activity_summon_gift_main_title = "โบนัสการอัญเชิญ",
+  str_activity_summon_gift_intro = "ลงชื่อเข้าใช้เกมและรับการรับสมัครฟรี 10 เท่าสำหรับการสรรหาบุคลากรหลักในแต่ละสัปดาห์\nระยะเวลากิจกรรม:\n09:00 น. 15 มิถุนายน 2023 - 09:00 น. 20 กรกฎาคม 2023 (UTC +0)\n04:00 น. 15 มิถุนายน 2566 - 04:00 น. 20 กรกฎาคม 2566 (UTC -5) รีเซ็ตทุกวันพฤหัสบดี เวลา 09:00 น. (UTC +0)\nรีเซ็ตทุกวันพฤหัสบดี เวลา 04:00 น. (UTC -5) โอกาสการรับสมัครจะไม่สะสม\nการเกณฑ์ทหารที่ไม่ได้ใช้จะถูกลบออกเมื่อกิจกรรมสิ้นสุดลง\nเราขอให้นักเดินเรือทุกคนโชคดีในการสรรหา Aurorians ที่พวกเขาชื่นชอบ!",
+  str_activity_summon_gift_time_main = "เหลือเวลา",
+  str_activity_summon_gift_btn = "อัญเชิญเลย"
+}
 return config
-

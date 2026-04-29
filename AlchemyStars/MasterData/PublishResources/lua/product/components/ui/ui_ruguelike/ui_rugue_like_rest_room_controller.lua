@@ -1,44 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_ruguelike/ui_rugue_like_rest_room_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIRugueLikeRestRoomController", UIController)
 UIRugueLikeRestRoomController = UIRugueLikeRestRoomController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIRugueLikeRestRoomController.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UIRugueLikeRestRoomController:OnShow(uiParam)
   self._roomInfo = uiParam[1]
   self._isLife = 0
   self._rested = false
   self._rest_pets = {}
   if self._roomInfo == nil then
-    (Log.fatal)("[error] maze --> _roomInfo == nil !")
-    return 
+    Log.fatal("[error] maze --> _roomInfo == nil !")
+    return
   end
-  self._module = (GameGlobal.GetModule)(MazeModule)
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._module = GameGlobal.GetModule(MazeModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
   self._original = Vector2(0, 300)
   self.powerAddValue = 0
   self:GetComponents()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeRestRoomController.OnHide = function(self)
-  -- function num : 0_1
-  if self._tweener and (self._tweener):IsPlaying() then
-    (self._tweener):Kill()
+function UIRugueLikeRestRoomController:OnHide()
+  if self._tweener and self._tweener:IsPlaying() then
+    self._tweener:Kill()
   end
   self._tweener = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeRestRoomController.GetComponents = function(self)
-  -- function num : 0_2
+function UIRugueLikeRestRoomController:GetComponents()
   self._toastRootHp = self:GetUIComponent("RectTransform", "toastHp")
   self._toastTextHp = self:GetUIComponent("UILocalizationText", "toastMsgHp")
   self._toastRootPower = self:GetUIComponent("RectTransform", "toastPower")
@@ -49,250 +36,173 @@ UIRugueLikeRestRoomController.GetComponents = function(self)
   self._relpyTex = self:GetUIComponent("UILocalizationText", "relpyTex")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeRestRoomController.OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIRugueLikeRestRoomController:OnValue()
   local atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._toastPowerIcon).sprite = atlas:GetSprite(((Cfg.cfg_top_tips)[RoleAssetID.RoleAssetLight]).Icon)
-  local roomid = (self._roomInfo).room_id
-  local cfg_rest_room = (Cfg.cfg_maze_room)[roomid]
+  self._toastPowerIcon.sprite = atlas:GetSprite(Cfg.cfg_top_tips[RoleAssetID.RoleAssetLight].Icon)
+  local roomid = self._roomInfo.room_id
+  local cfg_rest_room = Cfg.cfg_maze_room[roomid]
   if cfg_rest_room then
-    local hpTex = (cfg_rest_room.Param)[1]
-    local petCountTex = (cfg_rest_room.Param)[4]
-    local replyMS = (cfg_rest_room.Param)[2]
-    ;
-    (self._relpyTex):SetText((StringTable.Get)("str_maze_rest_room_btn_tex_health", petCountTex, hpTex) .. "\n" .. (StringTable.Get)("str_maze_rest_room_btn_tex_light", replyMS))
-    local lifeCount = (cfg_rest_room.Param)[5]
-    ;
-    (self._lifeTex):SetText((StringTable.Get)("str_maze_rest_room_btn_tex_life", lifeCount) .. "\n" .. (StringTable.Get)("str_maze_rest_room_btn_tex_light", replyMS))
+    local hpTex = cfg_rest_room.Param[1]
+    local petCountTex = cfg_rest_room.Param[4]
+    local replyMS = cfg_rest_room.Param[2]
+    self._relpyTex:SetText(StringTable.Get("str_maze_rest_room_btn_tex_health", petCountTex, hpTex) .. "\n" .. StringTable.Get("str_maze_rest_room_btn_tex_light", replyMS))
+    local lifeCount = cfg_rest_room.Param[5]
+    self._lifeTex:SetText(StringTable.Get("str_maze_rest_room_btn_tex_life", lifeCount) .. "\n" .. StringTable.Get("str_maze_rest_room_btn_tex_light", replyMS))
   else
-    do
-      ;
-      (Log.fatal)("###[Maze] 进入了休息室，cfg_maze_room is nil ! id - ", roomid)
-      self._timeLine = EZTL_Sequence:New({EZTL_Callback:New(function()
-    -- function num : 0_3_0 , upvalues : _ENV, self
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundLevelUp)
-    self:PlayVideo()
+    Log.fatal("###[Maze] 进入了休息室，cfg_maze_room is nil ! id - ", roomid)
   end
-, "播视频"), EZTL_Wait:New(1000, "等1秒刷新路点"), EZTL_Callback:New(function()
-    -- function num : 0_3_1 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPassRestRoom)
-  end
-, "发消息，刷新路点"), EZTL_Wait:New(2100, "再等2.1秒视频播完"), EZTL_Callback:New(function()
-    -- function num : 0_3_2 , upvalues : self, _ENV
-    self:StopVideo()
-    local textContentPower = (StringTable.Get)("str_maze_rest_room_reply_power") .. self.powerAddValue
-    ;
-    ((self._toastRootPower).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._toastRootPower).anchoredPosition = self._original
-    ;
-    (self._toastTextPower):SetText(textContentPower)
-    ;
-    (((self._toastRootPower).transform):DOLocalMoveY((((self._toastRootPower).transform).localPosition).y + 100, 1.5)):OnComplete(function()
-      -- function num : 0_3_2_0
-    end
-)
-  end
-, "弹toast"), EZTL_Wait:New(500, "再等0.5秒再谈一个"), EZTL_Callback:New(function()
-    -- function num : 0_3_3 , upvalues : self, _ENV
-    local textContentPower = ""
-    if self._isLife == 2 then
-      if self._rest_pets and #self._rest_pets > 0 then
+  self._timeLine = EZTL_Sequence:New({
+    EZTL_Callback:New(function()
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundLevelUp)
+      self:PlayVideo()
+    end, "播视频"),
+    EZTL_Wait:New(1000, "等1秒刷新路点"),
+    EZTL_Callback:New(function()
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPassRestRoom)
+    end, "发消息，刷新路点"),
+    EZTL_Wait:New(2100, "再等2.1秒视频播完"),
+    EZTL_Callback:New(function()
+      self:StopVideo()
+      local textContentPower = StringTable.Get("str_maze_rest_room_reply_power") .. self.powerAddValue
+      self._toastRootPower.gameObject:SetActive(true)
+      self._toastRootPower.anchoredPosition = self._original
+      self._toastTextPower:SetText(textContentPower)
+      self._toastRootPower.transform:DOLocalMoveY(self._toastRootPower.transform.localPosition.y + 100, 1.5):OnComplete(function()
+      end)
+    end, "弹toast"),
+    EZTL_Wait:New(500, "再等0.5秒再谈一个"),
+    EZTL_Callback:New(function()
+      local textContentPower = ""
+      if self._isLife == 2 then
+        if self._rest_pets and #self._rest_pets > 0 then
+          local showStr = ""
+          for i = 1, #self._rest_pets do
+            local pstid = self._rest_pets[i]
+            local pet = self._petModule:GetPet(pstid)
+            local petName = pet:GetPetName()
+            if i == 1 then
+              showStr = StringTable.Get(petName)
+            elseif i == #self._rest_pets then
+              showStr = StringTable.Get("str_maze_rest_room_show_tex_and", showStr, StringTable.Get(petName))
+            else
+              showStr = StringTable.Get("str_maze_rest_room_show_tex_append_point", showStr, StringTable.Get(petName))
+            end
+          end
+          textContentPower = StringTable.Get("str_maze_rest_room_show_tex_reply", showStr)
+        else
+          textContentPower = StringTable.Get("str_maze_rest_room_all_pet_full_hp")
+        end
+      elseif self._rest_pets and #self._rest_pets > 0 then
         local showStr = ""
         for i = 1, #self._rest_pets do
-          local pstid = (self._rest_pets)[i]
-          local pet = (self._petModule):GetPet(pstid)
+          local pstid = self._rest_pets[i]
+          local pet = self._petModule:GetPet(pstid)
           local petName = pet:GetPetName()
           if i == 1 then
-            showStr = (StringTable.Get)(petName)
+            showStr = StringTable.Get(petName)
+          elseif i == #self._rest_pets then
+            showStr = StringTable.Get("str_maze_rest_room_show_tex_and", showStr, StringTable.Get(petName))
           else
-            if i == #self._rest_pets then
-              showStr = (StringTable.Get)("str_maze_rest_room_show_tex_and", showStr, (StringTable.Get)(petName))
-            else
-              showStr = (StringTable.Get)("str_maze_rest_room_show_tex_append_point", showStr, (StringTable.Get)(petName))
-            end
+            showStr = StringTable.Get("str_maze_rest_room_show_tex_append_point", showStr, StringTable.Get(petName))
           end
         end
-        textContentPower = (StringTable.Get)("str_maze_rest_room_show_tex_reply", showStr)
-      else
-        do
-          textContentPower = (StringTable.Get)("str_maze_rest_room_all_pet_full_hp")
-          do
-            if self._rest_pets and #self._rest_pets > 0 then
-              local showStr = ""
-              for i = 1, #self._rest_pets do
-                local pstid = (self._rest_pets)[i]
-                local pet = (self._petModule):GetPet(pstid)
-                local petName = pet:GetPetName()
-                if i == 1 then
-                  showStr = (StringTable.Get)(petName)
-                else
-                  if i == #self._rest_pets then
-                    showStr = (StringTable.Get)("str_maze_rest_room_show_tex_and", showStr, (StringTable.Get)(petName))
-                  else
-                    showStr = (StringTable.Get)("str_maze_rest_room_show_tex_append_point", showStr, (StringTable.Get)(petName))
-                  end
-                end
-              end
-              textContentPower = (StringTable.Get)("str_maze_rest_room_show_tex_life", showStr)
-            end
-            ;
-            ((self._toastRootHp).gameObject):SetActive(true)
-            -- DECOMPILER ERROR at PC145: Confused about usage of register: R1 in 'UnsetPending'
-
-            ;
-            (self._toastRootHp).anchoredPosition = self._original - Vector2(0, 100)
-            ;
-            (self._toastTextHp):SetText(textContentPower)
-            ;
-            (((self._toastRootHp).transform):DOLocalMoveY((((self._toastRootHp).transform).localPosition).y + 100, 1.5)):OnComplete(function()
-      -- function num : 0_3_3_0
-    end
-)
-          end
-        end
+        textContentPower = StringTable.Get("str_maze_rest_room_show_tex_life", showStr)
       end
-    end
-  end
-, "弹toast"), EZTL_Wait:New(2000, "等toast,看清楚是复活还是恢复"), EZTL_Callback:New(function()
-    -- function num : 0_3_4 , upvalues : self
-    self:UnLock(self:GetName())
-    self:CloseDialog()
-  end
-, "关闭界面")}, "休息室动画")
-    end
-  end
+      self._toastRootHp.gameObject:SetActive(true)
+      self._toastRootHp.anchoredPosition = self._original - Vector2(0, 100)
+      self._toastTextHp:SetText(textContentPower)
+      self._toastRootHp.transform:DOLocalMoveY(self._toastRootHp.transform.localPosition.y + 100, 1.5):OnComplete(function()
+      end)
+    end, "弹toast"),
+    EZTL_Wait:New(2000, "等toast,看清楚是复活还是恢复"),
+    EZTL_Callback:New(function()
+      self:UnLock(self:GetName())
+      self:CloseDialog()
+    end, "关闭界面")
+  }, "休息室动画")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeRestRoomController.RequestRest = function(self, TT, roomIndex)
-  -- function num : 0_4 , upvalues : _ENV
-  local param = nil
+function UIRugueLikeRestRoomController:RequestRest(TT, roomIndex)
+  local param
   if self._isLife == 0 then
-    (Log.fatal)("###休息信息不对，islife为0")
+    Log.fatal("###休息信息不对，islife为0")
     self:LockBusy(false)
-    return 
-  else
-    if self._isLife == 1 then
-      param = true
-    else
-      if self._isLife == 2 then
-        param = false
-      end
-    end
+    return
+  elseif self._isLife == 1 then
+    param = true
+  elseif self._isLife == 2 then
+    param = false
   end
-  local res, msg = (self._module):RequestEnterRoom(TT, roomIndex, param)
+  local res, msg = self._module:RequestEnterRoom(TT, roomIndex, param)
   self:SetShowBusy(false)
   if res:GetSucc() then
-    (Log.notice)("###UIRugueLikeRestRoomController:LifeBtnOnClick--reply")
+    Log.notice("###UIRugueLikeRestRoomController:LifeBtnOnClick--reply")
     self.powerAddValue = msg.add_light
     self._rest_pets = msg.effect_pstid
-    ;
-    (self._timeLine):Start()
+    self._timeLine:Start()
     self._rested = true
   else
-    ;
-    (Log.fatal)("###休息失败，错误代码：", res:GetResult())
+    Log.fatal("###休息失败，错误代码：", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeRestRoomController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_5
-  if not (self._timeLine):Over() then
-    (self._timeLine):Update(deltaTimeMS)
+function UIRugueLikeRestRoomController:OnUpdate(deltaTimeMS)
+  if not self._timeLine:Over() then
+    self._timeLine:Update(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeRestRoomController.PlayVideo = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local url = (ResourceManager:GetInstance()):GetAssetPath("mijing_xiuxishi.mp4", LoadType.VideoClip)
-  ;
-  ((self._videoPlayer).gameObject):SetActive(true)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._videoPlayer).url = url
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._videoPlayer).targetCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
-  ;
-  (self._videoPlayer):Play()
+function UIRugueLikeRestRoomController:PlayVideo()
+  local url = ResourceManager:GetInstance():GetAssetPath("mijing_xiuxishi.mp4", LoadType.VideoClip)
+  self._videoPlayer.gameObject:SetActive(true)
+  self._videoPlayer.url = url
+  self._videoPlayer.targetCamera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
+  self._videoPlayer:Play()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeRestRoomController.StopVideo = function(self)
-  -- function num : 0_7
-  ((self._videoPlayer).gameObject):SetActive(false)
+function UIRugueLikeRestRoomController:StopVideo()
+  self._videoPlayer.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeRestRoomController.LifeBtnOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIRugueLikeRestRoomController:LifeBtnOnClick()
   if self._rested then
-    (Log.notice)("###UIRugueLikeRestRoomController:LifeBtnOnClick--rested")
-    return 
+    Log.notice("###UIRugueLikeRestRoomController:LifeBtnOnClick--rested")
+    return
   end
-  ;
-  (Log.notice)("###UIRugueLikeRestRoomController:LifeBtnOnClick--task")
+  Log.notice("###UIRugueLikeRestRoomController:LifeBtnOnClick--task")
   local hasDie = false
   local petModule = self:GetModule(PetModule)
   local pets = petModule:GetPets()
-  if pets and (table.count)(pets) > 0 then
-    for key,value in pairs(pets) do
+  if pets and table.count(pets) > 0 then
+    for key, value in pairs(pets) do
       local pet = value
       local pstid = pet:GetPstID()
-      local mazePetInfo = (self._module):GetMazePetInfoByPstId(pstid)
+      local mazePetInfo = self._module:GetMazePetInfoByPstId(pstid)
       if mazePetInfo.is_dead then
         hasDie = true
         break
       end
     end
-    do
-      if hasDie then
-        self._isLife = 1
-        self:LockBusy(true)
-        ;
-        ((GameGlobal.TaskManager)()):StartTask(self.RequestRest, self, (self._roomInfo).room_index)
-      else
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)("str_maze_rest_room_has_not_pet_die"))
-      end
+    if hasDie then
+      self._isLife = 1
+      self:LockBusy(true)
+      GameGlobal.TaskManager():StartTask(self.RequestRest, self, self._roomInfo.room_index)
+    else
+      ToastManager.ShowToast(StringTable.Get("str_maze_rest_room_has_not_pet_die"))
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeRestRoomController.ReplyBtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIRugueLikeRestRoomController:ReplyBtnOnClick()
   if self._rested then
-    return 
+    return
   end
   self._isLife = 2
   self:LockBusy(true)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.RequestRest, self, (self._roomInfo).room_index)
+  GameGlobal.TaskManager():StartTask(self.RequestRest, self, self._roomInfo.room_index)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeRestRoomController.LockBusy = function(self, isLock)
-  -- function num : 0_10
+function UIRugueLikeRestRoomController:LockBusy(isLock)
   if isLock then
     self:Lock(self:GetName())
     self:SetShowBusy(true)
@@ -302,17 +212,10 @@ UIRugueLikeRestRoomController.LockBusy = function(self, isLock)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeRestRoomController.BtnOnClickByParam = function(self, nParam)
-  -- function num : 0_11
-  if nParam == 1 then
+function UIRugueLikeRestRoomController:BtnOnClickByParam(nParam)
+  if 1 == nParam then
     self:ReplyBtnOnClick()
-  else
-    if nParam == 2 then
-      self:LifeBtnOnClick()
-    end
+  elseif 2 == nParam then
+    self:LifeBtnOnClick()
   end
 end
-
-

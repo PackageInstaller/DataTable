@@ -1,96 +1,63 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/manager/aircraft_whisper_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftWhisperManager", Object)
 AircraftWhisperManager = AircraftWhisperManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftWhisperManager.Constructor = function(self, aircraftMain)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftWhisperManager:Constructor(aircraftMain)
   self._main = aircraftMain
   self._nextWaitTime = 0
-  self._whisperActionGaps = ((Cfg.cfg_global).AircraftWhisperActionGaps).IntValue
-  self._onePetWhisperTimeGaps = ((Cfg.cfg_aircraft_const).AircraftWhisperSeamPetGaps).IntValue or 10000
+  self._whisperActionGaps = Cfg.cfg_global.AircraftWhisperActionGaps.IntValue
+  self._onePetWhisperTimeGaps = Cfg.cfg_aircraft_const.AircraftWhisperSeamPetGaps.IntValue or 10000
   self._startTime = 0
-  local nextTimeCfg = ((Cfg.cfg_global).AircraftWhisperNextWaitTime).ArrayValue
+  local nextTimeCfg = Cfg.cfg_global.AircraftWhisperNextWaitTime.ArrayValue
   self._minNextTime = nextTimeCfg[1]
   self._maxNextTime = nextTimeCfg[2]
-  local whisperPetCount = ((Cfg.cfg_global).AircraftWhisperRandomPetCount).ArrayValue
+  local whisperPetCount = Cfg.cfg_global.AircraftWhisperRandomPetCount.ArrayValue
   self._minWhisperCount = whisperPetCount[1]
   self._maxWhisperCount = whisperPetCount[2]
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftWhisperManager.Init = function(self)
-  -- function num : 0_1
+function AircraftWhisperManager:Init()
   self._nextWaitTime = self:RandomNextWaitTime()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftWhisperManager.RandomNextWaitTime = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  return (math.random)(self._minNextTime, self._maxNextTime)
+function AircraftWhisperManager:RandomNextWaitTime()
+  return math.random(self._minNextTime, self._maxNextTime)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftWhisperManager.ResetNextWaitTime = function(self)
-  -- function num : 0_3
+function AircraftWhisperManager:ResetNextWaitTime()
   self._nextWaitTime = self:RandomNextWaitTime()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftWhisperManager.RandomWhisperPetCount = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  return (math.random)(self._minWhisperCount, self._maxWhisperCount)
+function AircraftWhisperManager:RandomWhisperPetCount()
+  return math.random(self._minWhisperCount, self._maxWhisperCount)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftWhisperManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_5
+function AircraftWhisperManager:Update(deltaTimeMS)
   self._startTime = self._startTime + deltaTimeMS
-  if self._nextWaitTime <= self._startTime then
+  if self._startTime >= self._nextWaitTime then
     self._startTime = 0
     self:ResetNextWaitTime()
     self:PlayBubble()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftWhisperManager.Dispose = function(self)
-  -- function num : 0_6
+function AircraftWhisperManager:Dispose()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftWhisperManager.PlayBubble = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local time = (self._main):Time()
+function AircraftWhisperManager:PlayBubble()
+  local time = self._main:Time()
   local actionPets = {}
-  local pets = (self._main):GetPets(function(_pet)
-    -- function num : 0_7_0 , upvalues : _ENV, time, self
+  local pets = self._main:GetPets(function(_pet)
     local pet = _pet
     local state = pet:GetState()
-    do
-      if state == AirPetState.Wandering or state == AirPetState.OnFurniture or state == AirPetState.WaitingElevator then
-        local wisperTime = pet:GetWisperTime()
-        return self._onePetWhisperTimeGaps < time - wisperTime
-      end
-      do return false end
-      -- DECOMPILER ERROR: 2 unprocessed JMP targets
+    if state == AirPetState.Wandering or state == AirPetState.OnFurniture or state == AirPetState.WaitingElevator then
+      local wisperTime = pet:GetWisperTime()
+      return time - wisperTime > self._onePetWhisperTimeGaps
     end
-  end
-, true)
+    return false
+  end, true)
   if #pets < 1 then
     AirLog("没有可进行自言自语的星灵")
-    return 
+    return
   end
   local count = self:RandomWhisperPetCount()
   if count < #pets then
@@ -98,9 +65,9 @@ AircraftWhisperManager.PlayBubble = function(self)
   else
     actionPets = pets
   end
-  if (table.count)(actionPets) <= 0 then
-    (Log.debug)("###AircraftWhisperManager pets is nil !")
-    return 
+  if table.count(actionPets) <= 0 then
+    Log.debug("###AircraftWhisperManager pets is nil !")
+    return
   end
   for i = 1, #actionPets do
     local pet = actionPets[i]
@@ -110,13 +77,13 @@ AircraftWhisperManager.PlayBubble = function(self)
       wid = pet:GetFurnitureType()
     end
     if wid == 0 then
-      (Log.fatal)("###星灵行为为空--", pet:TemplateID())
+      Log.fatal("###星灵行为为空--", pet:TemplateID())
     else
       local bubble = self:GetBubbleId(pet, wid)
-      local cfg = (Cfg.cfg_aircraft_pet_face)[bubble]
+      local cfg = Cfg.cfg_aircraft_pet_face[bubble]
       if not cfg then
-        (Log.fatal)("###找不到配置表情配置：", bubble)
-        return 
+        Log.fatal("###找不到配置表情配置：", bubble)
+        return
       else
         local gapTime = self._whisperActionGaps * (i - 1)
         local tempPetID = pet:TemplateID()
@@ -129,14 +96,11 @@ AircraftWhisperManager.PlayBubble = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftWhisperManager.RandomActionPets = function(self, pets, count)
-  -- function num : 0_8 , upvalues : _ENV
+function AircraftWhisperManager:RandomActionPets(pets, count)
   local actionPets = {}
   for i = 1, count do
     local all = 0
-    local outpet = nil
+    local outpet
     local weightTab = {}
     for j = 1, #pets do
       local pet = pets[j]
@@ -146,57 +110,39 @@ AircraftWhisperManager.RandomActionPets = function(self, pets, count)
         local weightTabItem = {}
         weightTabItem.pet = pet
         weightTabItem.weight = all
-        ;
-        (table.insert)(weightTab, weightTabItem)
+        table.insert(weightTab, weightTabItem)
       end
     end
-    local randomNumber = (math.random)(1, all)
+    local randomNumber = math.random(1, all)
     for i = 1, #weightTab do
-      if randomNumber <= (weightTab[i]).weight then
-        outpet = (weightTab[i]).pet
+      if randomNumber <= weightTab[i].weight then
+        outpet = weightTab[i].pet
         break
       end
     end
-    do
-      do
-        actionPets[i] = outpet
-        ;
-        (table.removev)(pets, outpet)
-        -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    actionPets[i] = outpet
+    table.removev(pets, outpet)
   end
   return actionPets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftWhisperManager.GetBubbleId = function(self, pet, wid)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg_whisper = (Cfg.cfg_aircraft_furniture_bubble)[wid]
+function AircraftWhisperManager:GetBubbleId(pet, wid)
+  local cfg_whisper = Cfg.cfg_aircraft_furniture_bubble[wid]
   if cfg_whisper then
     local bubbles = cfg_whisper.BubbleIDs
-    local showId = nil
+    local showId
     if not bubbles then
-      local cfg_pet = (Cfg.cfg_aircraft_pet)[pet:TemplateID()]
+      local cfg_pet = Cfg.cfg_aircraft_pet[pet:TemplateID()]
       if cfg_pet then
         showId = pet:GetIDWithRandomWeight(cfg_pet.CharactorFace)
       else
-        ;
-        (Log.fatal)("###[AircraftWhisperManager] cfg_aircraft_pet is nil ! id -> ", pet:TemplateID())
+        Log.fatal("###[AircraftWhisperManager] cfg_aircraft_pet is nil ! id -> ", pet:TemplateID())
       end
     else
-      do
-        do
-          showId = pet:GetIDWithRandomWeight(bubbles)
-          do return showId end
-          ;
-          (Log.fatal)("###[AircraftWhisperManager] cfg_whisper is nil ! id -> ", wid)
-        end
-      end
+      showId = pet:GetIDWithRandomWeight(bubbles)
     end
+    return showId
+  else
+    Log.fatal("###[AircraftWhisperManager] cfg_whisper is nil ! id -> ", wid)
   end
 end
-
-

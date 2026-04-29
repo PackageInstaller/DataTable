@@ -1,65 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/sakura/ui_sakura_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISakuraRewardItem", UICustomWidget)
 UISakuraRewardItem = UISakuraRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISakuraRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISakuraRewardItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraRewardItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISakuraRewardItem:InitWidget()
   self._uiItem = self:GetUIComponent("UISelectObjectPath", "uiitem")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraRewardItem.SetData = function(self, data, callback)
-  -- function num : 0_2 , upvalues : _ENV
-  self._item = (self._uiItem):SpawnObject("UIItem")
-  ;
-  (self._item):SetForm(UIItemForm.Base, UIItemScale.Level3)
-  ;
-  (self._item):SetClickCallBack(function(go)
-    -- function num : 0_2_0 , upvalues : self
+function UISakuraRewardItem:SetData(data, callback)
+  self._item = self._uiItem:SpawnObject("UIItem")
+  self._item:SetForm(UIItemForm.Base, UIItemScale.Level3)
+  self._item:SetClickCallBack(function(go)
     self:ShowTips(go)
-  end
-)
+  end)
   self._itemid = data.id
   self._itemCount = data.count
   self._callback = callback
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraRewardItem._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[self._itemid]
+function UISakuraRewardItem:_OnValue()
+  local cfg = Cfg.cfg_item[self._itemid]
   if cfg == nil then
-    (Log.fatal)("cfg_item is nil." .. self._itemid)
+    Log.fatal("cfg_item is nil." .. self._itemid)
   end
   local icon = cfg.Icon
   local quality = cfg.Color
   local text1 = self._itemCount
-  ;
-  (self._item):SetData({icon = icon, quality = quality, text1 = text1, itemId = self._itemid})
+  self._item:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = text1,
+    itemId = self._itemid
+  })
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraRewardItem.ShowTips = function(self, go)
-  -- function num : 0_4
+function UISakuraRewardItem:ShowTips(go)
   if self._callback then
-    (self._callback)(self._itemid, (go.transform).position)
+    self._callback(self._itemid, go.transform.position)
   end
 end
-
-

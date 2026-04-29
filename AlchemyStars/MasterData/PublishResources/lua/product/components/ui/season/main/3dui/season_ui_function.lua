@@ -1,150 +1,85 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/3dui/season_ui_function.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonUIFunction", Object)
 SeasonUIFunction = SeasonUIFunction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonUIFunction.Constructor = function(self, gameObject, atlas)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonUIFunction:Constructor(gameObject, atlas)
   self._gameObject = gameObject
   self._atlas = atlas
   self._eventPoint = nil
   self._express = nil
-  self._view = (self._gameObject):GetComponent(typeof(UIView))
+  self._view = self._gameObject:GetComponent(typeof(UIView))
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIFunction._GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._rootTransform = (self._view):GetUIComponent("Transform", "Root")
-  self._function = (self._view):GetUIComponent("Image", "Function")
-  self._functionGO = (self._function).gameObject
-  self._functionBox = (self._functionGO):GetComponent(typeof(UnityEngine.BoxCollider))
+function SeasonUIFunction:_GetComponents()
+  self._rootTransform = self._view:GetUIComponent("Transform", "Root")
+  self._function = self._view:GetUIComponent("Image", "Function")
+  self._functionGO = self._function.gameObject
+  self._functionBox = self._functionGO:GetComponent(typeof(UnityEngine.BoxCollider))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIFunction.SetData = function(self, eventPoint, express)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonUIFunction:SetData(eventPoint, express)
   if eventPoint then
     self._eventPoint = eventPoint
-    local spriteName = nil
+    local spriteName
     self._express = express
-    do
-      if self._express then
-        local content = (self._express):Content()
-        if content then
-          spriteName = content.sprite
-          -- DECOMPILER ERROR at PC23: Confused about usage of register: R5 in 'UnsetPending'
-
-          if content.functionType and content.functionType == SeasonFunctionType.PlayExpress then
-            (self._functionBox).enabled = true
-          else
-            -- DECOMPILER ERROR at PC26: Confused about usage of register: R5 in 'UnsetPending'
-
-            ;
-            (self._functionBox).enabled = false
-          end
-        end
-      end
-      if spriteName then
-        local sprite = (self._atlas):GetSprite(spriteName)
-        -- DECOMPILER ERROR at PC36: Confused about usage of register: R5 in 'UnsetPending'
-
-        if sprite then
-          (self._function).sprite = sprite
-          -- DECOMPILER ERROR at PC38: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._function).enabled = true
-          ;
-          (self._function):SetNativeSize()
-          -- DECOMPILER ERROR at PC58: Confused about usage of register: R5 in 'UnsetPending'
-
-          if (self._functionBox).enabled then
-            (self._functionBox).size = Vector3((((self._function).sprite).rect).width, (((self._function).sprite).rect).height, 0)
-            -- DECOMPILER ERROR at PC69: Confused about usage of register: R5 in 'UnsetPending'
-
-            ;
-            (self._functionBox).center = Vector3(0, (((self._function).sprite).rect).height * 0.5, 0)
-          end
+    if self._express then
+      local content = self._express:Content()
+      if content then
+        spriteName = content.sprite
+        if content.functionType and content.functionType == SeasonFunctionType.PlayExpress then
+          self._functionBox.enabled = true
         else
-          -- DECOMPILER ERROR at PC72: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._function).enabled = false
-        end
-      else
-        do
-          -- DECOMPILER ERROR at PC75: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (self._function).enabled = false
-          do
-            local cfg = (self._eventPoint):GetEventPointCfg()
-            -- DECOMPILER ERROR at PC93: Confused about usage of register: R5 in 'UnsetPending'
-
-            if cfg and cfg.UIFunctionOffset then
-              (self._rootTransform).localPosition = Vector3((cfg.UIFunctionOffset)[1], (cfg.UIFunctionOffset)[2], (cfg.UIFunctionOffset)[3])
-            end
-            self:RefreshPosition()
-            self:Clear()
-          end
+          self._functionBox.enabled = false
         end
       end
     end
+    if spriteName then
+      local sprite = self._atlas:GetSprite(spriteName)
+      if sprite then
+        self._function.sprite = sprite
+        self._function.enabled = true
+        self._function:SetNativeSize()
+        if self._functionBox.enabled then
+          self._functionBox.size = Vector3(self._function.sprite.rect.width, self._function.sprite.rect.height, 0)
+          self._functionBox.center = Vector3(0, self._function.sprite.rect.height * 0.5, 0)
+        end
+      else
+        self._function.enabled = false
+      end
+    else
+      self._function.enabled = false
+    end
+    local cfg = self._eventPoint:GetEventPointCfg()
+    if cfg and cfg.UIFunctionOffset then
+      self._rootTransform.localPosition = Vector3(cfg.UIFunctionOffset[1], cfg.UIFunctionOffset[2], cfg.UIFunctionOffset[3])
+    end
+    self:RefreshPosition()
+  else
+    self:Clear()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIFunction.RefreshPosition = function(self)
-  -- function num : 0_3
+function SeasonUIFunction:RefreshPosition()
   if self._eventPoint then
-    local show = (self._eventPoint):IsShow()
-    ;
-    (self._gameObject):SetActive(show)
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self._gameObject).transform).position = (self._eventPoint):Position()
+    local show = self._eventPoint:IsShow()
+    self._gameObject:SetActive(show)
+    self._gameObject.transform.position = self._eventPoint:Position()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIFunction.EventPoint = function(self)
-  -- function num : 0_4
+function SeasonUIFunction:EventPoint()
   return self._eventPoint
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIFunction.Function = function(self)
-  -- function num : 0_5
+function SeasonUIFunction:Function()
   return self._functionGO
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIFunction.IsFree = function(self)
-  -- function num : 0_6
-  do return self._eventPoint == nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SeasonUIFunction:IsFree()
+  return self._eventPoint == nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIFunction.Clear = function(self)
-  -- function num : 0_7
+function SeasonUIFunction:Clear()
   self._eventPoint = nil
-  ;
-  (self._gameObject):SetActive(false)
+  self._gameObject:SetActive(false)
 end
-
-

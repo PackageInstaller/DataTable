@@ -1,45 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/sync_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 _class("SyncLogicService", BaseService)
 SyncLogicService = SyncLogicService
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SyncLogicService.Initialize = function(self)
-  -- function num : 0_0
+function SyncLogicService:Initialize()
   self:OnInitialize()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncLogicService.OnInitialize = function(self)
-  -- function num : 0_1
+function SyncLogicService:OnInitialize()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncLogicService.DoBattleSync = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SyncLogicService:DoBattleSync()
   if not _G.ENABLE_SYNC_LOG then
-    return 
+    return
   end
   self:ServerSendSyncCommand()
   self:ClientCheckBattleSync()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncLogicService.ServerSendSyncCommand = function(self)
-  -- function num : 0_3
+function SyncLogicService:ServerSendSyncCommand()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncLogicService.ClientCheckBattleSync = function(self)
-  -- function num : 0_4
+function SyncLogicService:ClientCheckBattleSync()
 end
-
-

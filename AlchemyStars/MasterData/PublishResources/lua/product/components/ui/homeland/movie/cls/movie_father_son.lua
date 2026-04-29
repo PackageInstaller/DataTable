@@ -1,41 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/cls/movie_father_son.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MovieFatherSon", Object)
 MovieFatherSon = MovieFatherSon
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MovieFatherSon.Constructor = function(self)
-  -- function num : 0_0
+function MovieFatherSon:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieFatherSon.Dispose = function(self)
-  -- function num : 0_1
+function MovieFatherSon:Dispose()
   self.testID = 1
   self.homeBuildManager = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieFatherSon.GetBuildManager = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function MovieFatherSon:GetBuildManager()
   if self.homeBuildManager == nil then
-    self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-    self.mUIHomeland = (self.mHomeland):GetUIModule()
-    self.homelandClient = (self.mUIHomeland):GetClient()
-    self.homeBuildManager = (self.homelandClient):BuildManager()
+    self.mHomeland = GameGlobal.GetModule(HomelandModule)
+    self.mUIHomeland = self.mHomeland:GetUIModule()
+    self.homelandClient = self.mUIHomeland:GetClient()
+    self.homeBuildManager = self.homelandClient:BuildManager()
   end
   return self.homeBuildManager
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieFatherSon.TestFn = function(self)
-  -- function num : 0_3
+function MovieFatherSon:TestFn()
   local buildMgr = self:GetBuildManager()
   local fatherBuilding = buildMgr:FindBuildingByCfgID(5271001)
   if self.testID == nil then
@@ -43,26 +27,19 @@ MovieFatherSon.TestFn = function(self)
   end
   if self.testID == 1 then
     self.dataList = self:OnSavePlayback(fatherBuilding)
-  else
-    if self.testID == 2 then
-      self:OnClearFreeArea(fatherBuilding)
-      self:OnClearMovie(fatherBuilding)
-    else
-      if self.testID == 3 then
-        self:OnRestoreHomeBuilding(fatherBuilding)
-      end
-    end
+  elseif self.testID == 2 then
+    self:OnClearFreeArea(fatherBuilding)
+    self:OnClearMovie(fatherBuilding)
+  elseif self.testID == 3 then
+    self:OnRestoreHomeBuilding(fatherBuilding)
   end
   self.testID = self.testID + 1
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieFatherSon.OnEnterMovie = function(self, fatherBuilding)
-  -- function num : 0_4 , upvalues : _ENV
+function MovieFatherSon:OnEnterMovie(fatherBuilding)
   local restoreList = {}
   local children = fatherBuilding:GetAllChildren()
-  for k,v in pairs(children) do
+  for k, v in pairs(children) do
     if fatherBuilding:GetFreeChild(k) == nil then
       restoreList[k] = v
       v:ShowBuilding(false)
@@ -72,39 +49,33 @@ MovieFatherSon.OnEnterMovie = function(self, fatherBuilding)
   return restoreList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieFatherSon.OnExitMovie = function(self, fatherBuilding, restoreList)
-  -- function num : 0_5 , upvalues : _ENV
+function MovieFatherSon:OnExitMovie(fatherBuilding, restoreList)
   local clearList = {}
   local children = fatherBuilding:GetAllChildren()
-  for k,v in pairs(children) do
+  for k, v in pairs(children) do
     if fatherBuilding:GetFreeChild(k) == nil then
       clearList[k] = v
     end
   end
   local buildMgr = self:GetBuildManager()
-  for k,v in pairs(clearList) do
+  for k, v in pairs(clearList) do
   end
-  for k,v in pairs(restoreList) do
+  for k, v in pairs(restoreList) do
     v:ShowBuilding(true)
     fatherBuilding:AddChild(v)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieFatherSon.AddFixedBuilding = function(self, fatherBuilding, id)
-  -- function num : 0_6 , upvalues : _ENV
-  local childBuildingCfg = (Cfg.cfg_item_son_architecture)[id]
+function MovieFatherSon:AddFixedBuilding(fatherBuilding, id)
+  local childBuildingCfg = Cfg.cfg_item_son_architecture[id]
   local fatherSlot = childBuildingCfg.FatherSlot
-  local cfg_fixed_position = ((Cfg.cfg_homeland_building_fixed_position)({}))[fatherSlot]
+  local cfg_fixed_position = Cfg.cfg_homeland_building_fixed_position({})[fatherSlot]
   if cfg_fixed_position == nil then
     BuildError("拍电影找不到固定家具位置cfg_homeland_building_fixed_position ：" .. fatherSlot)
-    return 
+    return
   end
   local theNearestFather = fatherBuilding
-  local fixedTransform = nil
+  local fixedTransform
   local fatherTransform = theNearestFather:Transform()
   local fatherPosition = fatherTransform.position
   if cfg_fixed_position.FixedPosition ~= nil then
@@ -114,8 +85,8 @@ MovieFatherSon.AddFixedBuilding = function(self, fatherBuilding, id)
     fixedTransform = fatherTransform
   end
   local relationPosition = fixedTransform.position - fatherPosition
-  local fatherYaw = (fatherTransform.eulerAngles).y
-  local relationYaw = (fixedTransform.eulerAngles).y - fatherYaw
+  local fatherYaw = fatherTransform.eulerAngles.y
+  local relationYaw = fixedTransform.eulerAngles.y - fatherYaw
   local replacedBuilding = theNearestFather:GetFixedChild(fatherSlot)
   if replacedBuilding ~= nil then
     replacedBuilding:Delete()
@@ -125,25 +96,22 @@ MovieFatherSon.AddFixedBuilding = function(self, fatherBuilding, id)
   local data = Architecture:New()
   data.asset_id = id
   data.parent = theNearestFather:GetBuildId()
-  data.pos_x = (BuildHelper.ToInt)(worldPosition.x)
-  data.pos_y = (BuildHelper.ToInt)(worldPosition.y)
-  data.pos_z = (BuildHelper.ToInt)(worldPosition.z)
-  data.rot = (math.floor)(worldYaw)
+  data.pos_x = BuildHelper.ToInt(worldPosition.x)
+  data.pos_y = BuildHelper.ToInt(worldPosition.y)
+  data.pos_z = BuildHelper.ToInt(worldPosition.z)
+  data.rot = math.floor(worldYaw)
   data.pstid = 0
   local buildMgr = self:GetBuildManager()
   local building = buildMgr:_CreateBuilding(data)
   return building
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieFatherSon.RemoveBuilding = function(self, fatherBuilding, building)
-  -- function num : 0_7
+function MovieFatherSon:RemoveBuilding(fatherBuilding, building)
   if fatherBuilding == nil then
-    return 
+    return
   end
   if building == nil then
-    return 
+    return
   end
   local buildMgr = self:GetBuildManager()
   fatherBuilding:RemoveChild(building)
@@ -151,92 +119,72 @@ MovieFatherSon.RemoveBuilding = function(self, fatherBuilding, building)
   building:Dispose()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieFatherSon.OnShowFreeArea = function(self, fatherBuilding, isShow)
-  -- function num : 0_8 , upvalues : _ENV
+function MovieFatherSon:OnShowFreeArea(fatherBuilding, isShow)
   local allFreeArea = fatherBuilding:GetAllFreeArea()
   local areaID = -1
-  for k,v in pairs(allFreeArea) do
+  for k, v in pairs(allFreeArea) do
     areaID = v
-    do break end
+    break
   end
-  do
-    fatherBuilding:ShowBuildingArea(areaID, isShow, true)
-  end
+  fatherBuilding:ShowBuildingArea(areaID, isShow, true)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieFatherSon.OnClearFreeArea = function(self, fatherBuilding)
-  -- function num : 0_9 , upvalues : _ENV
+function MovieFatherSon:OnClearFreeArea(fatherBuilding)
   local restoreList = {}
   local children = fatherBuilding:GetAllFreeChildren()
-  for k,v in pairs(children) do
+  for k, v in pairs(children) do
     restoreList[k] = v
   end
   local buildMgr = self:GetBuildManager()
-  for k,v in pairs(restoreList) do
+  for k, v in pairs(restoreList) do
     fatherBuilding:RemoveChild(v)
     buildMgr:RemoveBuilding(v)
     v:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieFatherSon.OnClearMovie = function(self, fatherBuilding)
-  -- function num : 0_10 , upvalues : _ENV
+function MovieFatherSon:OnClearMovie(fatherBuilding)
   local restoreList = {}
   local children = fatherBuilding:GetAllChildren()
-  for k,v in pairs(children) do
+  for k, v in pairs(children) do
     if fatherBuilding:GetFreeChild(k) == nil then
       restoreList[k] = v
     end
   end
   local buildMgr = self:GetBuildManager()
-  for k,v in pairs(restoreList) do
+  for k, v in pairs(restoreList) do
     fatherBuilding:RemoveChild(v)
     buildMgr:RemoveBuilding(v)
     v:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieFatherSon.OnRestoreHomeBuilding = function(self, fatherBuilding)
-  -- function num : 0_11
+function MovieFatherSon:OnRestoreHomeBuilding(fatherBuilding)
   local buildMgr = self:GetBuildManager()
   buildMgr:refreshBuilding()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieFatherSon.GetArchitecture = function(self, building)
-  -- function num : 0_12 , upvalues : _ENV
+function MovieFatherSon:GetArchitecture(building)
   local archServer = building:GetArchitecture()
   local arch = Architecture:New()
-  for k,v in pairs(archServer) do
+  for k, v in pairs(archServer) do
     arch[k] = v
   end
   local buildingPos = building:Pos()
   local buildingYaw = building:RotY()
-  arch.pos_x = (BuildHelper.ToInt)(buildingPos.x)
-  arch.pos_y = (BuildHelper.ToInt)(buildingPos.y)
-  arch.pos_z = (BuildHelper.ToInt)(buildingPos.z)
+  arch.pos_x = BuildHelper.ToInt(buildingPos.x)
+  arch.pos_y = BuildHelper.ToInt(buildingPos.y)
+  arch.pos_z = BuildHelper.ToInt(buildingPos.z)
   arch.rot = buildingYaw
   arch.parent = building:GetParentAssetID()
   return arch
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieFatherSon.OnSavePlayback = function(self, fatherBuilding)
-  -- function num : 0_13 , upvalues : _ENV
+function MovieFatherSon:OnSavePlayback(fatherBuilding)
   local dataList = {}
   local father = self:GetArchitecture(fatherBuilding)
   local children = fatherBuilding:GetAllChildren()
-  for k,v in pairs(children) do
+  for k, v in pairs(children) do
     if not v:IsDelete() then
       local child = self:GetArchitecture(v)
       local data = Architecture:New()
@@ -249,23 +197,19 @@ MovieFatherSon.OnSavePlayback = function(self, fatherBuilding)
       data.pstid = child.pstid
       data.status = child.status
       data.parent = child.parent
-      ;
-      (table.insert)(dataList, data)
+      table.insert(dataList, data)
     end
   end
-  ;
-  (table.insert)(dataList, father)
+  table.insert(dataList, father)
   return dataList
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieFatherSon.OnEnterPlayback = function(self, fatherBuilding, dataList)
-  -- function num : 0_14 , upvalues : _ENV
+function MovieFatherSon:OnEnterPlayback(fatherBuilding, dataList)
   local buildMgr = self:GetBuildManager()
   local father = self:GetArchitecture(fatherBuilding)
-  for k,v in pairs(dataList) do
+  for k, v in pairs(dataList) do
     if v.asset_id == fatherBuilding:GetBuildId() then
+    else
       local child = v
       local data = Architecture:New()
       data.asset_id = child.asset_id
@@ -277,21 +221,10 @@ MovieFatherSon.OnEnterPlayback = function(self, fatherBuilding, dataList)
       data.pstid = child.pstid
       data.status = child.status
       data.parent = child.parent
-      do
-        local building = buildMgr:_CreateBuilding(data)
-        -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+      local building = buildMgr:_CreateBuilding(data)
     end
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieFatherSon.OnExitPlayback = function(self, fatherBuilding)
-  -- function num : 0_15
+function MovieFatherSon:OnExitPlayback(fatherBuilding)
 end
-
-

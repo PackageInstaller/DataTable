@@ -1,137 +1,102 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/hit_back_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HitbackSystem_Render", Object)
 HitbackSystem_Render = HitbackSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HitbackSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function HitbackSystem_Render:Constructor(world)
   self._world = world
-  self._timeService = (self._world):GetService("Time")
-  self._group = world:GetGroup((world.BW_WEMatchers).Hitback)
+  self._timeService = self._world:GetService("Time")
+  self._group = world:GetGroup(world.BW_WEMatchers.Hitback)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HitbackSystem_Render.Execute = function(self)
-  -- function num : 0_1
-  (self._group):HandleForeach(self, self.UpdateHitback)
+function HitbackSystem_Render:Execute()
+  self._group:HandleForeach(self, self.UpdateHitback)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HitbackSystem_Render.UpdateHitback = function(self, e)
-  -- function num : 0_2
+function HitbackSystem_Render:UpdateHitback(e)
   self:_DoHitback(e)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HitbackSystem_Render._DoHitback = function(self, e)
-  -- function num : 0_3 , upvalues : _ENV
+function HitbackSystem_Render:_DoHitback(e)
   local hitbackCmpt = e:Hitback()
   if not hitbackCmpt then
-    (Log.debug)("[HitBack] 发现非法的击退数据", e:GetID())
-    return 
+    Log.debug("[HitBack] 发现非法的击退数据", e:GetID())
+    return
   end
   if hitbackCmpt:IsHitbackEnd() then
-    return 
+    return
   end
   local v2Begin = hitbackCmpt:GetHitbackStartPos()
   local v2Dest = hitbackCmpt:GetHitbackTargetPos()
   local fSpeed = hitbackCmpt:GetHitbackSpeed()
   if v2Begin == v2Dest then
-    (Log.debug)(self._className, "eid:", e:GetID(), " - 原地击退")
+    Log.debug(self._className, "eid:", e:GetID(), " - 原地击退")
     self:_OnEventHitback_End(e)
-    return 
+    return
   end
   local cLocation = e:Location()
-  do
-    if not cLocation then
-      local v2TargetPos = v2Dest:Clone()
-      e:SetLocation(v2TargetPos, Vector2.down)
-      self:_OnEventHitback_End(e)
-      return 
-    end
-    if not hitbackCmpt:IsStartMoving() then
-      self:_OnEventHitback_Start(e, hitbackCmpt)
-    end
-    local boardServiceRender = (self._world):GetService("BoardRender")
-    local position = boardServiceRender:GetRealEntityGridPos(e)
-    local distance = (Vector2.Distance)(v2Dest, v2Begin)
-    local fullTime = distance / fSpeed * 1000
-    local deltaTimeMS = (self._timeService):GetDeltaTimeMs()
-    hitbackCmpt:AppendDeltaTime(deltaTimeMS)
-    local time = hitbackCmpt:GetDeltaTime()
-    local fProgress = time / fullTime
-    local currentPos = (Vector2.Lerp)(v2Begin, v2Dest, fProgress)
-    e:SetLocation(currentPos)
-    if fProgress >= 1 then
-      self:_TryMovePetMemeber(e, v2Dest)
-      self:_OnEventHitback_End(e)
-    end
+  if not cLocation then
+    local v2TargetPos = v2Dest:Clone()
+    e:SetLocation(v2TargetPos, Vector2.down)
+    self:_OnEventHitback_End(e)
+    return
+  end
+  if not hitbackCmpt:IsStartMoving() then
+    self:_OnEventHitback_Start(e, hitbackCmpt)
+  end
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local position = boardServiceRender:GetRealEntityGridPos(e)
+  local distance = Vector2.Distance(v2Dest, v2Begin)
+  local fullTime = distance / fSpeed * 1000
+  local deltaTimeMS = self._timeService:GetDeltaTimeMs()
+  hitbackCmpt:AppendDeltaTime(deltaTimeMS)
+  local time = hitbackCmpt:GetDeltaTime()
+  local fProgress = time / fullTime
+  local currentPos = Vector2.Lerp(v2Begin, v2Dest, fProgress)
+  e:SetLocation(currentPos)
+  if 1 <= fProgress then
+    self:_TryMovePetMemeber(e, v2Dest)
+    self:_OnEventHitback_End(e)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HitbackSystem_Render._TryMovePetMemeber = function(self, hitbackTarget, targetPos)
-  -- function num : 0_4 , upvalues : _ENV
+function HitbackSystem_Render:_TryMovePetMemeber(hitbackTarget, targetPos)
   if not hitbackTarget:HasPetPstID() then
-    return 
+    return
   end
-  local teamEntity = (hitbackTarget:Pet()):GetOwnerTeamEntity()
+  local teamEntity = hitbackTarget:Pet():GetOwnerTeamEntity()
   teamEntity:SetPosition(targetPos)
-  local utilDataSvc = (self._world):GetService("UtilData")
-  do
-    if utilDataSvc:CanChangePieceToGray() then
-      local boardService = (self._world):GetService("BoardRender")
-      boardService:ReCreateGridEntity(PieceType.None, targetPos)
-    end
-    local pets = (teamEntity:Team()):GetTeamPetEntities()
-    for _,e in ipairs(pets) do
-      e:SetPosition(targetPos)
-    end
+  local utilDataSvc = self._world:GetService("UtilData")
+  if utilDataSvc:CanChangePieceToGray() then
+    local boardService = self._world:GetService("BoardRender")
+    boardService:ReCreateGridEntity(PieceType.None, targetPos)
+  end
+  local pets = teamEntity:Team():GetTeamPetEntities()
+  for _, e in ipairs(pets) do
+    e:SetPosition(targetPos)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HitbackSystem_Render._OnEventHitback_Start = function(self, entityWork, cmptHitback)
-  -- function num : 0_5 , upvalues : _ENV
+function HitbackSystem_Render:_OnEventHitback_Start(entityWork, cmptHitback)
   cmptHitback:SetStartMoving(true)
   local posNow = cmptHitback:GetHitbackStartPos()
-  if not cmptHitback:GetGridOffset() then
-    local gridOffset = Vector2(0, 0)
-  end
+  local gridOffset = cmptHitback:GetGridOffset() or Vector2(0, 0)
   local posCenter = posNow - gridOffset
-  local trapServiceRender = (self._world):GetService("TrapRender")
+  local trapServiceRender = self._world:GetService("TrapRender")
   if entityWork:HasBodyArea() then
-    local bodyArea = (entityWork:BodyArea()):GetArea()
-    for _,areaPos in ipairs(bodyArea) do
+    local bodyArea = entityWork:BodyArea():GetArea()
+    for _, areaPos in ipairs(bodyArea) do
       trapServiceRender:ShowHideTrapAtPos(areaPos + posCenter, true)
     end
   else
-    do
-      trapServiceRender:ShowHideTrapAtPos(posNow, true)
-      local entityRenderService = (self._world):GetService("RenderEntity")
-      if entityWork:HasMonsterID() then
-        entityRenderService:DestroyMonsterAreaOutLineEntity(entityWork)
-      end
-      cmptHitback:ResetDeltaTime()
-    end
+    trapServiceRender:ShowHideTrapAtPos(posNow, true)
   end
+  local entityRenderService = self._world:GetService("RenderEntity")
+  if entityWork:HasMonsterID() then
+    entityRenderService:DestroyMonsterAreaOutLineEntity(entityWork)
+  end
+  cmptHitback:ResetDeltaTime()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HitbackSystem_Render._OnEventHitback_End = function(self, entityWork)
-  -- function num : 0_6
+function HitbackSystem_Render:_OnEventHitback_End(entityWork)
   local hitbackCmpt = entityWork:Hitback()
   hitbackCmpt:SetHitbackEnd()
 end
-
-

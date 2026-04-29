@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/wishing/collect/ui_build_collect_coin_task_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBuildCollectCoinTaskItem", UICustomWidget)
 UIBuildCollectCoinTaskItem = UIBuildCollectCoinTaskItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBuildCollectCoinTaskItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIBuildCollectCoinTaskItem:OnShow(uiParams)
   self._desLabel = self:GetUIComponent("UILocalizationText", "Des")
   self._countLabel = self:GetUIComponent("UILocalizationText", "Count")
   self._rewardLoader = self:GetUIComponent("UISelectObjectPath", "Content")
@@ -17,43 +10,27 @@ UIBuildCollectCoinTaskItem.OnShow = function(self, uiParams)
   self._unStartGo = self:GetGameObject("UnStart")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinTaskItem.Refresh = function(self, taskData, isFirst, clickCallback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBuildCollectCoinTaskItem:Refresh(taskData, isFirst, clickCallback)
   self._taskData = taskData
-  ;
-  (self._countLabel):SetText((self._taskData):GetWishingCoinCount())
-  ;
-  (self._desLabel):SetText((StringTable.Get)("str_homeland_collect_coin_reward_des1", (self._taskData):GetWishingCoinCount()))
-  local rewards = (self._taskData):GetRewards()
+  self._countLabel:SetText(self._taskData:GetWishingCoinCount())
+  self._desLabel:SetText(StringTable.Get("str_homeland_collect_coin_reward_des1", self._taskData:GetWishingCoinCount()))
+  local rewards = self._taskData:GetRewards()
   local count = #rewards
-  ;
-  (self._rewardLoader):SpawnObjects("UIBuildCollectRewardItem", count)
-  local items = (self._rewardLoader):GetAllSpawnList()
+  self._rewardLoader:SpawnObjects("UIBuildCollectRewardItem", count)
+  local items = self._rewardLoader:GetAllSpawnList()
   for i = 1, count do
-    (items[i]):Refresh(rewards[i], function(id, go)
-    -- function num : 0_1_0 , upvalues : clickCallback
-    clickCallback(id, go)
+    items[i]:Refresh(rewards[i], function(id, go)
+      clickCallback(id, go)
+    end)
   end
-)
-  end
-  ;
-  (self._completeGo):SetActive(false)
-  ;
-  (self._doingGo):SetActive(false)
-  ;
-  (self._unStartGo):SetActive(false)
-  if (self._taskData):IsComplete() then
-    (self._completeGo):SetActive(true)
+  self._completeGo:SetActive(false)
+  self._doingGo:SetActive(false)
+  self._unStartGo:SetActive(false)
+  if self._taskData:IsComplete() then
+    self._completeGo:SetActive(true)
+  elseif isFirst then
+    self._doingGo:SetActive(true)
   else
-    if isFirst then
-      (self._doingGo):SetActive(true)
-    else
-      ;
-      (self._unStartGo):SetActive(true)
-    end
+    self._unStartGo:SetActive(true)
   end
 end
-
-

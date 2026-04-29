@@ -1,62 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/story/ui_n20_avg_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20AVGReview", UIController)
 UIN20AVGReview = UIN20AVGReview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20AVGReview.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN20AVGData()
-  self._storyManager = (self.data):StoryManager()
+function UIN20AVGReview:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN20AVGData()
+  self._storyManager = self.data:StoryManager()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGReview.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN20AVGReview:OnShow(uiParams)
   self._dialogReviewScrollView = self:GetUIComponent("UIDynamicScrollView", "sv")
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGReview.OnHide = function(self)
-  -- function num : 0_2
+function UIN20AVGReview:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGReview.Flush = function(self)
-  -- function num : 0_3
-  (self._dialogReviewScrollView):InitListView(0, function(scrollview, index)
-    -- function num : 0_3_0 , upvalues : self
+function UIN20AVGReview:Flush()
+  self._dialogReviewScrollView:InitListView(0, function(scrollview, index)
     return self:_OnGetReviewDialogItem(scrollview, index)
-  end
-)
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._dialogReviewScrollView).mOnDragingAction = function()
-    -- function num : 0_3_1 , upvalues : self
+  end)
+  
+  function self._dialogReviewScrollView.mOnDragingAction()
     self._reviewDragged = true
   end
-
-  local dialogRecord = (self._storyManager):GetDialogRecord()
-  ;
-  (self._dialogReviewScrollView):SetListItemCount(#dialogRecord, true)
-  ;
-  (self._dialogReviewScrollView):MovePanelToItemIndex(#dialogRecord - 1, 0)
+  
+  local dialogRecord = self._storyManager:GetDialogRecord()
+  self._dialogReviewScrollView:SetListItemCount(#dialogRecord, true)
+  self._dialogReviewScrollView:MovePanelToItemIndex(#dialogRecord - 1, 0)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGReview._OnGetReviewDialogItem = function(self, scrollview, index)
-  -- function num : 0_4 , upvalues : _ENV
-  local dialogRecord = (self._storyManager):GetDialogRecord()
+function UIN20AVGReview:_OnGetReviewDialogItem(scrollview, index)
+  local dialogRecord = self._storyManager:GetDialogRecord()
   local item = scrollview:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -67,32 +41,22 @@ UIN20AVGReview._OnGetReviewDialogItem = function(self, scrollview, index)
   if luaIndex <= #dialogRecord then
     local rowList = rowPool:GetAllSpawnList()
     local itemWidget = rowList[1]
-    local speakerName = (dialogRecord[luaIndex])[1]
-    local content = (dialogRecord[luaIndex])[2]
+    local speakerName = dialogRecord[luaIndex][1]
+    local content = dialogRecord[luaIndex][2]
     local isPlayer = false
-    if (dialogRecord[luaIndex])[4] then
+    if dialogRecord[luaIndex][4] then
       isPlayer = true
     end
     itemWidget:Flush(speakerName, content, isPlayer, function()
-    -- function num : 0_4_0 , upvalues : self
-    self:imgCloseOnClick()
-  end
-)
-    ;
-    (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
+      self:imgCloseOnClick()
+    end)
+    UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
     return item
   else
-    do
-      do return nil end
-    end
+    return nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGReview.imgCloseOnClick = function(self, go)
-  -- function num : 0_5
+function UIN20AVGReview:imgCloseOnClick(go)
   self:CloseDialog()
 end
-
-

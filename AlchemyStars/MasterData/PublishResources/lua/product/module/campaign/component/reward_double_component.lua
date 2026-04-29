@@ -1,48 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/reward_double_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RewardDoubleComponent", ICampaignComponent)
 RewardDoubleComponent = RewardDoubleComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RewardDoubleComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function RewardDoubleComponent:Constructor()
   self.m_component_info = RewardDoubleComponentInfo:New()
   self.m_local_next_refresh_time = -1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RewardDoubleComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function RewardDoubleComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = RewardDoubleComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RewardDoubleComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function RewardDoubleComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RewardDoubleComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function RewardDoubleComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_REWARD_DOUBLE
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RewardDoubleComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function RewardDoubleComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
-
-

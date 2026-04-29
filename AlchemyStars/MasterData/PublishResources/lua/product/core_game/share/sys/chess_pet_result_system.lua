@@ -1,46 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/chess_pet_result_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("ChessPetResultSystem", MainStateSystem)
 ChessPetResultSystem = ChessPetResultSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ChessPetResultSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ChessPetResultSystem:_GetMainStateID()
   return GameStateID.ChessPetResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetResultSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function ChessPetResultSystem:_OnMainStateEnter(TT)
   self:_DoLogicMonsterDead()
   self:_DoRenderMonsterDead(TT)
   self:_DoLogicChessPetDead()
   self:_DoRenderChessPetDead(TT)
-  local chessSvc = (self._world):GetService("ChessLogic")
+  local chessSvc = self._world:GetService("ChessLogic")
   local isAllChessPetTurnEnd = chessSvc:IsAllChessPetTurnFinish()
   local isWaveEnded = self:IsBattleEnded()
   self:_DoRenderHandleChessPetResult(TT, isAllChessPetTurnEnd, isWaveEnded)
   if self:_IsBattleEnd() then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.ChessPetResultFinish, 3)
+    self._world:EventDispatcher():Dispatch(GameEventType.ChessPetResultFinish, 3)
+  elseif isAllChessPetTurnEnd then
+    self._world:EventDispatcher():Dispatch(GameEventType.ChessPetResultFinish, 2)
   else
-    if isAllChessPetTurnEnd then
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.ChessPetResultFinish, 2)
-    else
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.ChessPetResultFinish, 1)
-    end
+    self._world:EventDispatcher():Dispatch(GameEventType.ChessPetResultFinish, 1)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetResultSystem._DoRenderHandleChessPetResult = function(self, TT, isAllChessPetTurnEnd, isWaveEnded)
-  -- function num : 0_2
+function ChessPetResultSystem:_DoRenderHandleChessPetResult(TT, isAllChessPetTurnEnd, isWaveEnded)
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cookgame/cook/make/ui_n0_cook_mat_select_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN0CookMatSelectItem", UICustomWidget)
 UIN0CookMatSelectItem = UIN0CookMatSelectItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN0CookMatSelectItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN0CookMatSelectItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatSelectItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIN0CookMatSelectItem:InitWidget()
   self.matNameTxt = self:GetUIComponent("UILocalizationText", "matNameTxt")
   self.matNumTxt = self:GetUIComponent("UILocalizationText", "matNumTxt")
   self.iconLoader = self:GetUIComponent("RawImageLoader", "icon")
@@ -26,112 +16,76 @@ UIN0CookMatSelectItem.InitWidget = function(self)
   self.animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatSelectItem.AddNumBtnOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self.selectMatFun)() == self.matLimit then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n0_cook_mat_limit"))
-    return 
+function UIN0CookMatSelectItem:AddNumBtnOnClick()
+  if self.selectMatFun() == self.matLimit then
+    ToastManager.ShowToast(StringTable.Get("str_n0_cook_mat_limit"))
+    return
   end
-  if (self.remainMatFun)() == 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n0_cook_mat_empty"))
-    return 
+  if self.remainMatFun() == 0 then
+    ToastManager.ShowToast(StringTable.Get("str_n0_cook_mat_empty"))
+    return
   end
   self.curMatCount = self.curMatCount + 1
   self:RefreshSelectText()
   if self.onChangeFun then
-    (self.onChangeFun)(self.curMatCount)
+    self.onChangeFun(self.curMatCount)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatSelectItem.SubNumBtnOnClick = function(self)
-  -- function num : 0_3
+function UIN0CookMatSelectItem:SubNumBtnOnClick()
   if self.curMatCount == 0 then
-    return 
+    return
   end
   self.curMatCount = self.curMatCount - 1
   self:RefreshSelectText()
   if self.onChangeFun then
-    (self.onChangeFun)(self.curMatCount)
+    self.onChangeFun(self.curMatCount)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatSelectItem.RefreshSelectText = function(self)
-  -- function num : 0_4
+function UIN0CookMatSelectItem:RefreshSelectText()
   if self.curMatCount > 0 then
-    (self.matNumTxt):SetText("x" .. self.curMatCount)
-    ;
-    (self.subNumBtn):SetActive(true)
+    self.matNumTxt:SetText("x" .. self.curMatCount)
+    self.subNumBtn:SetActive(true)
   else
-    ;
-    (self.matNumTxt):SetText("")
-    ;
-    (self.subNumBtn):SetActive(false)
+    self.matNumTxt:SetText("")
+    self.subNumBtn:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatSelectItem.SetData = function(self, data, matLimit, selectMatFun, remainMatFun, onChangeFun)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN0CookMatSelectItem:SetData(data, matLimit, selectMatFun, remainMatFun, onChangeFun)
   self.curMatCount = 0
   self.matLimit = matLimit
   self.selectMatFun = selectMatFun
   self.remainMatFun = remainMatFun
   self.onChangeFun = onChangeFun
   self:RefreshSelectText()
-  local cfg = (Cfg.cfg_dinner_food_material)[data.id]
+  local cfg = Cfg.cfg_dinner_food_material[data.id]
   if cfg then
-    (self.iconLoader):LoadImage(cfg.Icon)
+    self.iconLoader:LoadImage(cfg.Icon)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatSelectItem.SetAsEmpty = function(self)
-  -- function num : 0_6
-  (self.iconGo):SetActive(false)
-  ;
-  (self.matNumTxt):SetText("")
-  ;
-  (self.subNumBtn):SetActive(false)
-  ;
-  (self.addNumBtn):SetActive(false)
+function UIN0CookMatSelectItem:SetAsEmpty()
+  self.iconGo:SetActive(false)
+  self.matNumTxt:SetText("")
+  self.subNumBtn:SetActive(false)
+  self.addNumBtn:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatSelectItem.GetIconTrans = function(self)
-  -- function num : 0_7
+function UIN0CookMatSelectItem:GetIconTrans()
   return self.iconTrans
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatSelectItem.GetMatCount = function(self)
-  -- function num : 0_8
+function UIN0CookMatSelectItem:GetMatCount()
   return self.curMatCount or 0
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatSelectItem.PlayEnterAni = function(self)
-  -- function num : 0_9
+function UIN0CookMatSelectItem:PlayEnterAni()
   self:SetVisible(true)
-  ;
-  (self.animation):Play()
+  self.animation:Play()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatSelectItem.SetVisible = function(self, visible)
-  -- function num : 0_10
-  (self:GetGameObject()):SetActive(visible)
+function UIN0CookMatSelectItem:SetVisible(visible)
+  self:GetGameObject():SetActive(visible)
 end
-
-

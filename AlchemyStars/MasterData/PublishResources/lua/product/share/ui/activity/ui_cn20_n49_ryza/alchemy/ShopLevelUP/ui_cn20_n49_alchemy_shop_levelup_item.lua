@@ -1,153 +1,88 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/alchemy/ShopLevelUP/ui_cn20_n49_alchemy_shop_levelup_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49AlchemyShopLevelUPItem", UICustomWidget)
 UICN20N49AlchemyShopLevelUPItem = UICN20N49AlchemyShopLevelUPItem
-local UICN20N49AlchemyShopLevelUPItemState = {CanBuy = 1, CanNotBuy = 2, Complete = 3}
+local UICN20N49AlchemyShopLevelUPItemState = {
+  CanBuy = 1,
+  CanNotBuy = 2,
+  Complete = 3
+}
 _enum("UICN20N49AlchemyShopLevelUPItemState", UICN20N49AlchemyShopLevelUPItemState)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UICN20N49AlchemyShopLevelUPItem.Contructor = function(self)
-  -- function num : 0_0
+function UICN20N49AlchemyShopLevelUPItem:Contructor()
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN20N49AlchemyShopLevelUPItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : UICN20N49AlchemyShopLevelUPItemState
+function UICN20N49AlchemyShopLevelUPItem:OnShow(uiParams)
   self._bgImage = {}
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bgImage)[UICN20N49AlchemyShopLevelUPItemState.CanBuy] = "cn20_dpzx_di03"
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bgImage)[UICN20N49AlchemyShopLevelUPItemState.CanNotBuy] = "cn20_dpzx_mask01"
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bgImage)[UICN20N49AlchemyShopLevelUPItemState.Complete] = "cn20_dpzx_di04"
+  self._bgImage[UICN20N49AlchemyShopLevelUPItemState.CanBuy] = "cn20_dpzx_di03"
+  self._bgImage[UICN20N49AlchemyShopLevelUPItemState.CanNotBuy] = "cn20_dpzx_mask01"
+  self._bgImage[UICN20N49AlchemyShopLevelUPItemState.Complete] = "cn20_dpzx_di04"
   self._buttonImage = {}
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._buttonImage)[UICN20N49AlchemyShopLevelUPItemState.CanBuy] = "cn20_dpzx_button01"
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._buttonImage)[UICN20N49AlchemyShopLevelUPItemState.CanNotBuy] = "cn20_dpzx_mask02"
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._buttonImage)[UICN20N49AlchemyShopLevelUPItemState.Complete] = "cn20_dpzx_button02"
+  self._buttonImage[UICN20N49AlchemyShopLevelUPItemState.CanBuy] = "cn20_dpzx_button01"
+  self._buttonImage[UICN20N49AlchemyShopLevelUPItemState.CanNotBuy] = "cn20_dpzx_mask02"
+  self._buttonImage[UICN20N49AlchemyShopLevelUPItemState.Complete] = "cn20_dpzx_button02"
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN20N49AlchemyShopLevelUPItem.SetData = function(self, cfg, isFinish, shopLevelUP)
-  -- function num : 0_2 , upvalues : _ENV, UICN20N49AlchemyShopLevelUPItemState
+function UICN20N49AlchemyShopLevelUPItem:SetData(cfg, isFinish, shopLevelUP)
   self.shopLevelUP = shopLevelUP
   self._canBuy = false
-  ;
-  (self.formulaText):SetText((StringTable.Get)(cfg.Desc))
+  self.formulaText:SetText(StringTable.Get(cfg.Desc))
   self.cfg = cfg
-  ;
-  (self.costText):SetText(tostring(cfg.Money))
-  ;
-  (self.bgMaskGO):SetActive(false)
-  ;
-  (self.buyBtnMaskGO):SetActive(false)
+  self.costText:SetText(tostring(cfg.Money))
+  self.bgMaskGO:SetActive(false)
+  self.buyBtnMaskGO:SetActive(false)
   self._noMoney = false
   self._noLevel = false
   if isFinish then
-    (self.costGO):SetActive(false)
-    ;
-    (self.cantBuyImageGO):SetActive(false)
-    ;
-    (self.completeIconGO):SetActive(true)
-    ;
-    (self.buyTextGO):SetActive(false)
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.bgImage).sprite = (self._atlas):GetSprite((self._bgImage)[UICN20N49AlchemyShopLevelUPItemState.Complete])
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.buyBtnImage).sprite = (self._atlas):GetSprite((self._buttonImage)[UICN20N49AlchemyShopLevelUPItemState.Complete])
+    self.costGO:SetActive(false)
+    self.cantBuyImageGO:SetActive(false)
+    self.completeIconGO:SetActive(true)
+    self.buyTextGO:SetActive(false)
+    self.bgImage.sprite = self._atlas:GetSprite(self._bgImage[UICN20N49AlchemyShopLevelUPItemState.Complete])
+    self.buyBtnImage.sprite = self._atlas:GetSprite(self._buttonImage[UICN20N49AlchemyShopLevelUPItemState.Complete])
     if cfg.Type == EAlchemyShopItemType.EAlchemyShopItemType_BuyFormula then
-      (self.titleText):SetText((StringTable.Get)("str_cn20_n49_shop_levelup_buyComplete"))
+      self.titleText:SetText(StringTable.Get("str_cn20_n49_shop_levelup_buyComplete"))
     else
-      ;
-      (self.titleText):SetText((StringTable.Get)("str_cn20_n49_shop_levelup_UPComplete"))
+      self.titleText:SetText(StringTable.Get("str_cn20_n49_shop_levelup_UPComplete"))
     end
   else
-    ;
-    (self.costGO):SetActive(true)
-    ;
-    (self.completeIconGO):SetActive(false)
-    ;
-    (self.buyTextGO):SetActive(true)
-    if shopLevelUP._curProgress < cfg.UnlockLevel then
+    self.costGO:SetActive(true)
+    self.completeIconGO:SetActive(false)
+    self.buyTextGO:SetActive(true)
+    if cfg.UnlockLevel > shopLevelUP._curProgress then
       self._noLevel = true
-      ;
-      (self.cantBuyImageGO):SetActive(true)
-      ;
-      (self.bgMaskGO):SetActive(true)
-      ;
-      (self.buyBtnMaskGO):SetActive(true)
+      self.cantBuyImageGO:SetActive(true)
+      self.bgMaskGO:SetActive(true)
+      self.buyBtnMaskGO:SetActive(true)
       if cfg.Type == EAlchemyShopItemType.EAlchemyShopItemType_BuyFormula then
-        (self.titleText):SetText((StringTable.Get)("str_cn20_n49_shop_levelup_cantbuy", cfg.UnlockLevel))
+        self.titleText:SetText(StringTable.Get("str_cn20_n49_shop_levelup_cantbuy", cfg.UnlockLevel))
       else
-        ;
-        (self.titleText):SetText((StringTable.Get)("str_cn20_n49_shop_levelup_cantUP", cfg.UnlockLevel))
+        self.titleText:SetText(StringTable.Get("str_cn20_n49_shop_levelup_cantUP", cfg.UnlockLevel))
       end
-      ;
-      (self.buyText):SetText((StringTable.Get)("str_cn20_n49_shop_levelup_noLevel"))
+      self.buyText:SetText((StringTable.Get("str_cn20_n49_shop_levelup_noLevel")))
     else
       if cfg.Type == EAlchemyShopItemType.EAlchemyShopItemType_BuyFormula then
-        (self.titleText):SetText((StringTable.Get)("str_cn20_n49_shop_levelup_canbuy"))
+        self.titleText:SetText(StringTable.Get("str_cn20_n49_shop_levelup_canbuy"))
       else
-        ;
-        (self.titleText):SetText((StringTable.Get)("str_cn20_n49_shop_levelup_canUP"))
+        self.titleText:SetText(StringTable.Get("str_cn20_n49_shop_levelup_canUP"))
       end
-      if shopLevelUP._gold < cfg.Money then
+      if cfg.Money > shopLevelUP._gold then
         self._noMoney = true
-        ;
-        (self.cantBuyImageGO):SetActive(true)
-        ;
-        (self.bgMaskGO):SetActive(true)
-        ;
-        (self.buyBtnMaskGO):SetActive(true)
-        ;
-        (self.buyText):SetText((StringTable.Get)("str_cn20_n49_shop_levelup_noMoney"))
+        self.cantBuyImageGO:SetActive(true)
+        self.bgMaskGO:SetActive(true)
+        self.buyBtnMaskGO:SetActive(true)
+        self.buyText:SetText((StringTable.Get("str_cn20_n49_shop_levelup_noMoney")))
       else
         self._canBuy = true
-        ;
-        (self.cantBuyImageGO):SetActive(false)
-        -- DECOMPILER ERROR at PC197: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self.bgImage).sprite = (self._atlas):GetSprite((self._bgImage)[UICN20N49AlchemyShopLevelUPItemState.CanBuy])
-        -- DECOMPILER ERROR at PC205: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self.buyBtnImage).sprite = (self._atlas):GetSprite((self._buttonImage)[UICN20N49AlchemyShopLevelUPItemState.CanBuy])
-        ;
-        (self.buyText):SetText((StringTable.Get)("str_cn20_n49_shop_levelup_canbuyBtn"))
+        self.cantBuyImageGO:SetActive(false)
+        self.bgImage.sprite = self._atlas:GetSprite(self._bgImage[UICN20N49AlchemyShopLevelUPItemState.CanBuy])
+        self.buyBtnImage.sprite = self._atlas:GetSprite(self._buttonImage[UICN20N49AlchemyShopLevelUPItemState.CanBuy])
+        self.buyText:SetText((StringTable.Get("str_cn20_n49_shop_levelup_canbuyBtn")))
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN20N49AlchemyShopLevelUPItem.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN20N49AlchemyShopLevelUPItem:InitWidget()
   self._atlas = self:GetAsset("UICN20N49_Ryza.spriteatlas", LoadType.SpriteAtlas)
   self.costGO = self:GetGameObject("Cost")
   self.buyBtnGO = self:GetGameObject("ButBtn")
@@ -164,43 +99,27 @@ UICN20N49AlchemyShopLevelUPItem.InitWidget = function(self)
   self.bgImage = self:GetUIComponent("Image", "bg")
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN20N49AlchemyShopLevelUPItem.BuyBtnOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  do
-    if ((self.shopLevelUP).alchemyComponent):ComponentIsClose() then
-      local tips = (StringTable.Get)("str_activity_error_107")
-      ;
-      (ToastManager.ShowToast)(tips)
-      self:SwitchState(UIStateType.UIMain)
-      return 
-    end
-    if self._canBuy then
-      self:Lock("UICN20N49AlchemyShopLevelUPItem:BuyBtn")
-      ;
-      ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self
-    local res = AsyncRequestRes:New()
-    local ret = ((self.shopLevelUP).alchemyComponent):HandleAlchemyShopBuy(TT, res, (self.cfg).Type, (self.cfg).ID)
-    if ret then
-      (self.shopLevelUP):ShowBonus(self.cfg)
-    end
-    ;
-    (self.shopLevelUP):RefreshWidgetData()
-    self:UnLock("UICN20N49AlchemyShopLevelUPItem:BuyBtn")
+function UICN20N49AlchemyShopLevelUPItem:BuyBtnOnClick()
+  if self.shopLevelUP.alchemyComponent:ComponentIsClose() then
+    local tips = StringTable.Get("str_activity_error_107")
+    ToastManager.ShowToast(tips)
+    self:SwitchState(UIStateType.UIMain)
+    return
   end
-)
-    else
-      if self._noMoney then
-        (ToastManager.ShowToast)((StringTable.Get)("str_cn20_n49_ryza_tips_2"))
-      else
-        if self._noLevel then
-          (ToastManager.ShowToast)((StringTable.Get)("str_cn20_n49_ryza_tips_4"))
-        end
+  if self._canBuy then
+    self:Lock("UICN20N49AlchemyShopLevelUPItem:BuyBtn")
+    GameGlobal.TaskManager():StartTask(function(TT)
+      local res = AsyncRequestRes:New()
+      local ret = self.shopLevelUP.alchemyComponent:HandleAlchemyShopBuy(TT, res, self.cfg.Type, self.cfg.ID)
+      if ret then
+        self.shopLevelUP:ShowBonus(self.cfg)
       end
-    end
+      self.shopLevelUP:RefreshWidgetData()
+      self:UnLock("UICN20N49AlchemyShopLevelUPItem:BuyBtn")
+    end)
+  elseif self._noMoney then
+    ToastManager.ShowToast(StringTable.Get("str_cn20_n49_ryza_tips_2"))
+  elseif self._noLevel then
+    ToastManager.ShowToast(StringTable.Get("str_cn20_n49_ryza_tips_4"))
   end
 end
-
-

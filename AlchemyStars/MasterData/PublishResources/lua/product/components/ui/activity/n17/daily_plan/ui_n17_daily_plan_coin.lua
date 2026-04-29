@@ -1,49 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n17/daily_plan/ui_n17_daily_plan_coin.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN17DailyPlanCoin", UICustomWidget)
 UIN17DailyPlanCoin = UIN17DailyPlanCoin
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN17DailyPlanCoin.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN17DailyPlanCoin:OnShow(uiParams)
   self._isOpen = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanCoin.OnHide = function(self)
-  -- function num : 0_1
+function UIN17DailyPlanCoin:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanCoin.SetData = function(self, component)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN17DailyPlanCoin:SetData(component)
   local url = component:GetKeyRewardIcon()
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "_coinIcon", url)
+  UIWidgetHelper.SetRawImage(self, "_coinIcon", url)
   local cur, max = component:GetKeyRewardCount()
   local c1 = "#faaa28"
   local c2 = "#ffffff"
-  local text = (UIActivityHelper.GetColorText)(c1, cur, c2, "/" .. max)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_coinNum", text)
+  local text = UIActivityHelper.GetColorText(c1, cur, c2, "/" .. max)
+  UIWidgetHelper.SetLocalizationText(self, "_coinNum", text)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanCoin.AddCoinBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIN17DailyPlanCoin:AddCoinBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanCoin.CoinIconOnClick = function(self, go)
-  -- function num : 0_4
+function UIN17DailyPlanCoin:CoinIconOnClick(go)
 end
-
-

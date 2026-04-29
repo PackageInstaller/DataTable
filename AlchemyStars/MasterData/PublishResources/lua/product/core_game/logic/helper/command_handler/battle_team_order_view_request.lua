@@ -1,70 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/command_handler/battle_team_order_view_request.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-BattleTeamOrderViewType = {Exchange_ChangeTeamLeader = 1, FillVacancies_MazePetDead = 2, FillVacancies_Skill = 3, Exchange_SwapTeamOrder = 4, ShuffleTeamOrder = 5}
+BattleTeamOrderViewType = {
+  Exchange_ChangeTeamLeader = 1,
+  FillVacancies_MazePetDead = 2,
+  FillVacancies_Skill = 3,
+  Exchange_SwapTeamOrder = 4,
+  ShuffleTeamOrder = 5
+}
 _enum("BattleTeamOrderViewType", BattleTeamOrderViewType)
 _class("BattleTeamOrderViewRequest", Object)
 BattleTeamOrderViewRequest = BattleTeamOrderViewRequest
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
 
-BattleTeamOrderViewRequest.Constructor = function(self, oldTeamOrder, newTeamOrder, viewType)
-  -- function num : 0_0
+function BattleTeamOrderViewRequest:Constructor(oldTeamOrder, newTeamOrder, viewType)
   self._oldTeamOrder = oldTeamOrder
   self._newTeamOrder = newTeamOrder
   self._viewType = viewType
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleTeamOrderViewRequest.GetViewType = function(self)
-  -- function num : 0_1
+function BattleTeamOrderViewRequest:GetViewType()
   return self._viewType
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleTeamOrderViewRequest.GetOldTeamOrder = function(self)
-  -- function num : 0_2
+function BattleTeamOrderViewRequest:GetOldTeamOrder()
   return self._oldTeamOrder
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleTeamOrderViewRequest.GetNewTeamOrder = function(self)
-  -- function num : 0_3
+function BattleTeamOrderViewRequest:GetNewTeamOrder()
   return self._newTeamOrder
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleTeamOrderViewRequest.SetRequestSequenceNo = function(self, val)
-  -- function num : 0_4
+function BattleTeamOrderViewRequest:SetRequestSequenceNo(val)
   self._sequenceNo = val
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleTeamOrderViewRequest.GetRequestSequenceNo = function(self)
-  -- function num : 0_5
+function BattleTeamOrderViewRequest:GetRequestSequenceNo()
   return self._sequenceNo
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleTeamOrderViewRequest.CalSwapPstID = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function BattleTeamOrderViewRequest:CalSwapPstID()
   local oldOrder = self._oldTeamOrder
   local newOrder = self._newTeamOrder
   local newOrderCount = #newOrder
   local diffIndexs = {}
-  for index,value in ipairs(oldOrder) do
+  for index, value in ipairs(oldOrder) do
     local oldPstID = value
     if index <= newOrderCount then
       local newPstID = newOrder[index]
       if oldPstID ~= newPstID then
-        (table.insert)(diffIndexs, index)
+        table.insert(diffIndexs, index)
       end
     end
   end
@@ -74,5 +55,3 @@ BattleTeamOrderViewRequest.CalSwapPstID = function(self)
     return pstIdA, pstIdB
   end
 end
-
-

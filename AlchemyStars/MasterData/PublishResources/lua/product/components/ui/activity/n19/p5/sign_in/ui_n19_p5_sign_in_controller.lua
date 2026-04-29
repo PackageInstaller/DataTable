@@ -1,108 +1,90 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n19/p5/sign_in/ui_n19_p5_sign_in_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_n19_p5_sign_in_cls")
 _class("UIN19P5SignInController", UIController)
 UIN19P5SignInController = UIN19P5SignInController
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN19P5SignInController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN19P5SignInController:LoadDataOnEnter(TT, res, uiParams)
   if uiParams[1] then
     self.isAutoPopShow = uiParams[1]
   else
     self.isAutoPopShow = false
   end
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  self._uiModule = ((GameGlobal.GetModule)(RoleModule)).uiModule
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
+  self._uiModule = GameGlobal.GetModule(RoleModule).uiModule
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N19_P5, ECampaignN19P5ComponentID.CUMULATIVE_LOGIN)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N19_P5, ECampaignN19P5ComponentID.CUMULATIVE_LOGIN)
   if not res:GetSucc() then
     if not self.isAutoPopShow then
-      (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+      self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
     end
     self:OnAutoPopOpenFail()
-    return 
+    return
   end
   if self.isAutoPopShow then
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+    self._campaign:ReLoadCampaignInfo_Force(TT, res)
     if not res:GetSucc() then
       if not self.isAutoPopShow then
-        (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+        self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
       end
       self:OnAutoPopOpenFail()
-      return 
+      return
     end
   end
-  self._component = (self._campaign):GetComponent(ECampaignN19P5ComponentID.CUMULATIVE_LOGIN)
-  self._componentInfo = (self._campaign):GetComponentInfo(ECampaignN19P5ComponentID.CUMULATIVE_LOGIN)
+  self._component = self._campaign:GetComponent(ECampaignN19P5ComponentID.CUMULATIVE_LOGIN)
+  self._componentInfo = self._campaign:GetComponentInfo(ECampaignN19P5ComponentID.CUMULATIVE_LOGIN)
   self._nextRefreshTime = 0
   if res:GetSucc() then
-    local componentInfo = (self._component):GetComponentInfo()
-    local sampleInfo = (self._campaign):GetSample()
-    local sampleInfo = (self._campaign):GetSample()
+    local componentInfo = self._component:GetComponentInfo()
+    local sampleInfo = self._campaign:GetSample()
+    local sampleInfo = self._campaign:GetSample()
     if sampleInfo then
-      self._nextRefreshTime = (sampleInfo.m_extend_info_time)[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_NEXT_REFRESH_TIME]
+      self._nextRefreshTime = sampleInfo.m_extend_info_time[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_NEXT_REFRESH_TIME]
     end
     if self._component then
-      local cmptInfo = (self._component):GetComponentInfo()
+      local cmptInfo = self._component:GetComponentInfo()
       if cmptInfo then
         local openTime = cmptInfo.m_unlock_time
         local closeTime = cmptInfo.m_close_time
-        local now = (self._svrTimeModule):GetServerTime() * 0.001
-        if now < openTime then
+        local now = self._svrTimeModule:GetServerTime() * 0.001
+        if openTime > now then
           if not self.isAutoPopShow then
-            (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_110"))
+            ToastManager.ShowToast(StringTable.Get("str_activity_error_110"))
           end
           res:SetSucc(false)
           self:OnAutoPopOpenFail()
-          return 
-        else
-          if closeTime < now then
-            if not self.isAutoPopShow then
-              (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_107"))
-            end
-            res:SetSucc(false)
-            self:OnAutoPopOpenFail()
-            return 
+          return
+        elseif closeTime < now then
+          if not self.isAutoPopShow then
+            ToastManager.ShowToast(StringTable.Get("str_activity_error_107"))
           end
+          res:SetSucc(false)
+          self:OnAutoPopOpenFail()
+          return
         end
       end
     end
   else
-    do
-      if not self.isAutoPopShow then
-        (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-      end
-      self:OnAutoPopOpenFail()
-      do return  end
-      self._cmptCloseTime = (self._componentInfo).m_close_time or 0
-      self:CreateDdata()
-      self.currentIdx = self:GetCurrentIdx()
+    if not self.isAutoPopShow then
+      self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
     end
+    self:OnAutoPopOpenFail()
+    return
   end
+  self._cmptCloseTime = self._componentInfo.m_close_time or 0
+  self:CreateDdata()
+  self.currentIdx = self:GetCurrentIdx()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.OnAutoPopOpenFail = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN19P5SignInController:OnAutoPopOpenFail()
   if self.isAutoPopShow then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MainLobbyAutoOpenTryFail)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.MainLobbyAutoOpenTryFail)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.CreateDdata = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local info = (self._componentInfo).m_cumulative_info
+function UIN19P5SignInController:CreateDdata()
+  local info = self._componentInfo.m_cumulative_info
   self.data = {}
-  for key,value in pairs(info) do
+  for key, value in pairs(info) do
     local reward = value
     local awards = reward.m_rewards
     local day = reward.m_login_days
@@ -113,44 +95,33 @@ UIN19P5SignInController.CreateDdata = function(self)
     data.day = day
     data.status = status
     data.special = special
-    ;
-    (table.insert)(self.data, data)
+    table.insert(self.data, data)
   end
-  ;
-  (table.sort)(self.data, function(e1, e2)
-    -- function num : 0_2_0
-    do return e1.day < e2.day end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self.data, function(e1, e2)
+    return e1.day < e2.day
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN19P5SignInController:OnHide()
   if self._refreshTaskID then
-    ((GameGlobal.TaskManager)()):KillTask(self._refreshTaskID)
+    GameGlobal.TaskManager():KillTask(self._refreshTaskID)
     self._refreshTaskID = nil
   end
   if self._event then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._event)
+    GameGlobal.RealTimer():CancelEvent(self._event)
     self._event = nil
   end
   if self._nextRefreshEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._nextRefreshEvent)
+    GameGlobal.RealTimer():CancelEvent(self._nextRefreshEvent)
     self._nextRefreshEvent = nil
   end
   if self.contentTweener then
-    (self.contentTweener):Kill()
+    self.contentTweener:Kill()
     self.contentTweener = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.OnShow = function(self)
-  -- function num : 0_4
+function UIN19P5SignInController:OnShow()
   self:GetComponents()
   self:AddListener()
   self.tweenerTime = 0.3
@@ -163,10 +134,7 @@ UIN19P5SignInController.OnShow = function(self)
   self:LastAwards()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.N19P5SignInRefresh = function(self)
-  -- function num : 0_5
+function UIN19P5SignInController:N19P5SignInRefresh()
   self:CreateDdata()
   self.currentIdx = self:GetCurrentIdx()
   self:InitList()
@@ -174,239 +142,182 @@ UIN19P5SignInController.N19P5SignInRefresh = function(self)
   self:CalcOffsetX()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.AddListener = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN19P5SignInController:AddListener()
   self:AttachEvent(GameEventType.OnUIN19P5SignInGet, self.OnUIN19P5SignInGet)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.OnUIN19P5SignInGet = function(self, day)
-  -- function num : 0_7
+function UIN19P5SignInController:OnUIN19P5SignInGet(day)
   self:Lock("UIActivityTotalLoginAwardController:GetTotalAward(id)")
   self:StartTask(self.OnGetTotalAward, self, day)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.OnGetTotalAward = function(self, TT, day)
-  -- function num : 0_8 , upvalues : _ENV
-  local component = (self._campaign):GetComponent(ECampaignN19P5ComponentID.CUMULATIVE_LOGIN)
+function UIN19P5SignInController:OnGetTotalAward(TT, day)
+  local component = self._campaign:GetComponent(ECampaignN19P5ComponentID.CUMULATIVE_LOGIN)
   if component then
     local res = AsyncRequestRes:New()
     local awards = component:HandleReceiveCumulativeLoginReward(TT, res, day)
     self:UnLock("UIActivityTotalLoginAwardController:GetTotalAward(id)")
     if res == nil then
-      return 
+      return
     end
     if res:GetSucc() then
-      if awards ~= nil and #awards > 0 then
+      if awards ~= nil and 0 < #awards then
         self:_ShowAwards(awards, day)
       end
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.N19P5SignInRed)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.N19P5SignInRed)
     else
-      local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-      campaignModule:CheckErrorCode(res:GetResult(), (self._campaign)._id, function()
-    -- function num : 0_8_0 , upvalues : self
-    self:_ForceRefresh()
-  end
-, function()
-    -- function num : 0_8_1 , upvalues : self
-    self:CloseDialog()
-  end
-)
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      campaignModule:CheckErrorCode(res:GetResult(), self._campaign._id, function()
+        self:_ForceRefresh()
+      end, function()
+        self:CloseDialog()
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController._ShowAwards = function(self, awards, day)
-  -- function num : 0_9 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
+function UIN19P5SignInController:_ShowAwards(awards, day)
+  local petModule = GameGlobal.GetModule(PetModule)
   local tempPets = {}
-  if #awards > 0 then
+  if 0 < #awards then
     for i = 1, #awards do
-      local ispet = petModule:IsPetID((awards[i]).assetid)
+      local ispet = petModule:IsPetID(awards[i].assetid)
       if ispet then
-        (table.insert)(tempPets, awards[i])
+        table.insert(tempPets, awards[i])
       end
     end
   end
-  do
-    local cbFunc = function()
-    -- function num : 0_9_0 , upvalues : self
+  
+  local function cbFunc()
     self:N19P5SignInRefresh()
   end
-
-    if #tempPets > 0 then
-      self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_9_1 , upvalues : _ENV, self, awards, cbFunc
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    self:ShowDialog("UIGetItemController", awards, cbFunc)
-  end
-)
-    else
+  
+  if 0 < #tempPets then
+    self:ShowDialog("UIPetObtain", tempPets, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
       self:ShowDialog("UIGetItemController", awards, cbFunc)
-    end
+    end)
+  else
+    self:ShowDialog("UIGetItemController", awards, cbFunc)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.LastAwards = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local lastAwards = ((self.data)[#self.data]).awards
-  ;
-  (self.lastAwardsPool):SpawnObjects("UIN19P5SignInAward", #lastAwards)
-  local pool = (self.lastAwardsPool):GetAllSpawnList()
+function UIN19P5SignInController:LastAwards()
+  local lastAwards = self.data[#self.data].awards
+  self.lastAwardsPool:SpawnObjects("UIN19P5SignInAward", #lastAwards)
+  local pool = self.lastAwardsPool:GetAllSpawnList()
   for i = 1, #pool do
     local item = pool[i]
     local award = lastAwards[i]
     item:Flush(i, award, function(id, go)
-    -- function num : 0_10_0 , upvalues : _ENV, self
-    local awardInfo = AwardInfo:New()
-    awardInfo.m_item_id = id
-    self:ShowDialog("UIN19P5Tip", awardInfo, true)
-  end
-)
+      local awardInfo = AwardInfo:New()
+      awardInfo.m_item_id = id
+      self:ShowDialog("UIN19P5Tip", awardInfo, true)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController._IsAllRewardUnlocked = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  for index,value in ipairs(self.data) do
+function UIN19P5SignInController:_IsAllRewardUnlocked()
+  for index, value in ipairs(self.data) do
     local unlock = value.status == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV or value.status == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED
     if not unlock then
       return false
     end
   end
-  do return true end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return true
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController._OnValueNextRefreshRemainingTime = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN19P5SignInController:_OnValueNextRefreshRemainingTime()
   local isAllUnlocked = self:_IsAllRewardUnlocked()
   local isNotEnoughTime = false
   if not isAllUnlocked then
     local stopTime = self._cmptCloseTime
-    local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
+    local nowTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
     local remainingTime = stopTime - nowTime
     local nextTime = self._nextRefreshTime
-  end
-  if nextTime and nextTime < stopTime then
-    do
+    if nextTime and stopTime > nextTime then
+    else
       isNotEnoughTime = true
-      if isAllUnlocked or isNotEnoughTime then
-        if self._nextRefreshEvent then
-          ((GameGlobal.RealTimer)()):CancelEvent(self._nextRefreshEvent)
-          self._nextRefreshEvent = nil
-        end
-        ;
-        (self._nextTimeAreaGo):SetActive(false)
-        return 
-      end
-      self:_ShowNextRefreshRemainingTime()
-      if self._nextRefreshEvent then
-        ((GameGlobal.RealTimer)()):CancelEvent(self._nextRefreshEvent)
-        self._nextRefreshEvent = nil
-      end
-      self._nextRefreshEvent = ((GameGlobal.RealTimer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_12_0 , upvalues : self
-    self:_ShowNextRefreshRemainingTime()
-  end
-)
     end
   end
+  if isAllUnlocked or isNotEnoughTime then
+    if self._nextRefreshEvent then
+      GameGlobal.RealTimer():CancelEvent(self._nextRefreshEvent)
+      self._nextRefreshEvent = nil
+    end
+    self._nextTimeAreaGo:SetActive(false)
+    return
+  end
+  self:_ShowNextRefreshRemainingTime()
+  if self._nextRefreshEvent then
+    GameGlobal.RealTimer():CancelEvent(self._nextRefreshEvent)
+    self._nextRefreshEvent = nil
+  end
+  self._nextRefreshEvent = GameGlobal.RealTimer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+    self:_ShowNextRefreshRemainingTime()
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController._ShowNextRefreshRemainingTime = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIN19P5SignInController:_ShowNextRefreshRemainingTime()
   if not self._nextRefreshTime then
-    (self._nextTimeAreaGo):SetActive(false)
-    return 
+    self._nextTimeAreaGo:SetActive(false)
+    return
   end
   local nextTime = self._nextRefreshTime
-  local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
+  local nowTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
   local remainingTime = nextTime - nowTime
   local isNotEnoughTime = false
   local stopTime = self._cmptCloseTime
   local stopRemainTime = stopTime - nowTime
-  if stopTime <= nextTime then
+  if nextTime >= stopTime then
     isNotEnoughTime = true
   end
   if remainingTime <= 0 or isNotEnoughTime then
     if self._nextRefreshEvent then
-      ((GameGlobal.RealTimer)()):CancelEvent(self._nextRefreshEvent)
+      GameGlobal.RealTimer():CancelEvent(self._nextRefreshEvent)
       self._nextRefreshEvent = nil
     end
-    ;
-    (self._nextTimeAreaGo):SetActive(false)
+    self._nextTimeAreaGo:SetActive(false)
     remainingTime = 0
-    if nextTime > 0 and remainingTime <= 0 then
+    if 0 < nextTime and remainingTime <= 0 then
       self:_ForceRefresh()
     end
-    return 
+    return
   else
-    ;
-    (self._nextTimeAreaGo):SetActive(true)
+    self._nextTimeAreaGo:SetActive(true)
   end
-  ;
-  (self._nextTimeText):SetText(self:_GetNextRefreshFormatString(remainingTime))
+  self._nextTimeText:SetText(self:_GetNextRefreshFormatString(remainingTime))
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController._InitCmpt = function(self, TT, res, forceSend)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN19P5SignInController:_InitCmpt(TT, res, forceSend)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N19_P5, ECampaignN19P5ComponentID.CUMULATIVE_LOGIN)
-  self._component = (self._campaign):GetComponent(ECampaignN19P5ComponentID.CUMULATIVE_LOGIN)
-  self._componentInfo = (self._campaign):GetComponentInfo(ECampaignN19P5ComponentID.CUMULATIVE_LOGIN)
-  local sampleInfo = (self._campaign):GetSample()
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N19_P5, ECampaignN19P5ComponentID.CUMULATIVE_LOGIN)
+  self._component = self._campaign:GetComponent(ECampaignN19P5ComponentID.CUMULATIVE_LOGIN)
+  self._componentInfo = self._campaign:GetComponentInfo(ECampaignN19P5ComponentID.CUMULATIVE_LOGIN)
+  local sampleInfo = self._campaign:GetSample()
   if sampleInfo then
-    self._nextRefreshTime = (sampleInfo.m_extend_info_time)[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_NEXT_REFRESH_TIME]
+    self._nextRefreshTime = sampleInfo.m_extend_info_time[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_NEXT_REFRESH_TIME]
   else
     self._nextRefreshTime = 0
   end
-  self._cmptCloseTime = (self._componentInfo).m_close_time or 0
+  self._cmptCloseTime = self._componentInfo.m_close_time or 0
   self:CreateDdata()
   self.currentIdx = self:GetCurrentIdx()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.GetCurrentIdx = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN19P5SignInController:GetCurrentIdx()
   local idx = 1
-  for i,data in ipairs(self.data) do
+  for i, data in ipairs(self.data) do
     if data.status == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV or data.status == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK then
       idx = i
       break
     end
   end
-  do
-    return idx
-  end
+  return idx
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController._ForceRefresh = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN19P5SignInController:_ForceRefresh()
   self._refreshTaskID = self:StartTask(function(TT)
-    -- function num : 0_16_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
     self:_InitCmpt(TT, res, true)
@@ -415,156 +326,113 @@ UIN19P5SignInController._ForceRefresh = function(self)
       self:_OnValueRemainingTime()
       self:_OnValueNextRefreshRemainingTime()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController._GetNextRefreshFormatString = function(self, stamp)
-  -- function num : 0_17 , upvalues : _ENV
+function UIN19P5SignInController:_GetNextRefreshFormatString(stamp)
   local formatStr = "%s %s"
-  local descStr = (StringTable.Get)("str_activity_common_login_reward_next_remain_time")
-  local timeStr = (UIActivityHelper.GetFormatTimerStr)(stamp)
-  local showStr = (string.format)(formatStr, descStr, timeStr)
+  local descStr = StringTable.Get("str_activity_common_login_reward_next_remain_time")
+  local timeStr = UIActivityHelper.GetFormatTimerStr(stamp)
+  local showStr = string.format(formatStr, descStr, timeStr)
   return showStr
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController._OnValueRemainingTime = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIN19P5SignInController:_OnValueRemainingTime()
   self:_ShowRemainingTime()
   if self._event then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._event)
+    GameGlobal.RealTimer():CancelEvent(self._event)
     self._event = nil
   end
-  self._event = ((GameGlobal.RealTimer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_18_0 , upvalues : self
+  self._event = GameGlobal.RealTimer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:_ShowRemainingTime()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController._ShowRemainingTime = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIN19P5SignInController:_ShowRemainingTime()
   local stopTime = self._cmptCloseTime
-  local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
+  local nowTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
   local remainingTime = stopTime - nowTime
   if remainingTime <= 0 then
     if self._event then
-      ((GameGlobal.RealTimer)()):CancelEvent(self._event)
+      GameGlobal.RealTimer():CancelEvent(self._event)
       self._event = nil
     end
     remainingTime = 0
   end
-  ;
-  (self.lessTime):SetText(self:_GetFormatString(remainingTime))
+  self.lessTime:SetText(self:_GetFormatString(remainingTime))
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController._GetFormatString = function(self, stamp)
-  -- function num : 0_20 , upvalues : _ENV
+function UIN19P5SignInController:_GetFormatString(stamp)
   local formatStr = "%s %s"
-  local descStr = (StringTable.Get)("str_activity_common_login_reward_remainingtime")
-  local timeStr = (UIActivityHelper.GetFormatTimerStr)(stamp)
-  local showStr = (string.format)(formatStr, descStr, timeStr)
+  local descStr = StringTable.Get("str_activity_common_login_reward_remainingtime")
+  local timeStr = UIActivityHelper.GetFormatTimerStr(stamp)
+  local showStr = string.format(formatStr, descStr, timeStr)
   return showStr
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.AddScrollEvent = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  ((UIEventTriggerListener.Get)(self.scroll)).onDrag = function(PointerEventData)
-    -- function num : 0_21_0 , upvalues : self
+function UIN19P5SignInController:AddScrollEvent()
+  UIEventTriggerListener.Get(self.scroll).onDrag = function(PointerEventData)
     self:_OnDrag(PointerEventData)
   end
-
-  ;
-  ((UIEventTriggerListener.Get)(self.scroll)).onBeginDrag = function(PointerEventData)
-    -- function num : 0_21_1 , upvalues : self
+  UIEventTriggerListener.Get(self.scroll).onBeginDrag = function(PointerEventData)
     self:_BeginDrag(PointerEventData)
   end
-
-  ;
-  ((UIEventTriggerListener.Get)(self.scroll)).onEndDrag = function(PointerEventData)
-    -- function num : 0_21_2 , upvalues : self
+  UIEventTriggerListener.Get(self.scroll).onEndDrag = function(PointerEventData)
     self:_EndDrag(PointerEventData)
   end
-
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController._OnDrag = function(self, PointerEventData)
-  -- function num : 0_22
+function UIN19P5SignInController:_OnDrag(PointerEventData)
   if self.moving then
-    return 
+    return
   end
   local data = PointerEventData
   if self._draging then
     local posv2 = data.position
-    do
-      local deltaY = posv2.y - (self.beginPos).y
-      local dir = nil
-      if self.scrollDelta < deltaY then
-        dir = 1
-        if #self.data <= self.currentIdx then
-          return 
-        end
-      else
-        if deltaY < -1 * self.scrollDelta then
-          dir = -1
-          if self.currentIdx <= 1 then
-            return 
-          end
-        end
+    local deltaY = posv2.y - self.beginPos.y
+    local dir
+    if deltaY > self.scrollDelta then
+      dir = 1
+      if self.currentIdx >= #self.data then
+        return
       end
-      if dir then
-        self._draging = false
+    elseif deltaY < -1 * self.scrollDelta then
+      dir = -1
+      if 1 >= self.currentIdx then
+        return
+      end
+    end
+    if dir then
+      self._draging = false
+      do
         local toIdx = self.currentIdx + dir
         self:MoveToIndex(toIdx, self.tweenerTime, function()
-    -- function num : 0_22_0 , upvalues : self, posv2
-    self.beginPos = posv2
-    self._draging = true
-  end
-)
+          self.beginPos = posv2
+          self._draging = true
+        end)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController._BeginDrag = function(self, PointerEventData)
-  -- function num : 0_23
+function UIN19P5SignInController:_BeginDrag(PointerEventData)
   if self.moving then
-    return 
+    return
   end
   self.beginPos = PointerEventData.position
   self._draging = true
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController._EndDrag = function(self, PointerEventData)
-  -- function num : 0_24
+function UIN19P5SignInController:_EndDrag(PointerEventData)
   if self.moving then
-    return 
+    return
   end
   self._draging = false
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.GetComponents = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIN19P5SignInController:GetComponents()
   self.ori = self:GetUIComponent("RectTransform", "ori")
-  self._ori = (self.ori).anchoredPosition
+  self._ori = self.ori.anchoredPosition
   self._nextTimeAreaGo = self:GetGameObject("nextTimeAreaGo")
   self.scroll = self:GetGameObject("scroll")
   self.lessTime = self:GetUIComponent("UILocalizationText", "lessTime")
@@ -572,116 +440,89 @@ UIN19P5SignInController.GetComponents = function(self)
   self.lastAwardsPool = self:GetUIComponent("UISelectObjectPath", "pool")
   self.Pool = self:GetUIComponent("UISelectObjectPath", "Content")
   self.ScrollRect = self:GetUIComponent("ScrollRect", "ScrollView")
-  self.ViewPortRect = (self.ScrollRect).viewport
-  self.ContentRect = (self.ScrollRect).content
-  ;
-  ((self.ScrollRect).onValueChanged):AddListener(function(value)
-    -- function num : 0_25_0 , upvalues : self
+  self.ViewPortRect = self.ScrollRect.viewport
+  self.ContentRect = self.ScrollRect.content
+  self.ScrollRect.onValueChanged:AddListener(function(value)
     self:OnValueChanged(value)
-  end
-)
+  end)
   self.itemSize = Vector2(650, 230)
   self.bigItemSize = Vector2(650, 350)
   self:AddScrollEvent()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.MoveToIndex = function(self, idx, duration, callback)
-  -- function num : 0_26 , upvalues : _ENV
+function UIN19P5SignInController:MoveToIndex(idx, duration, callback)
   self.moving = true
   self._tweenCallback = callback
-  local y = (idx - 1) * (self.itemSize).y
+  local y = (idx - 1) * self.itemSize.y
   local pos = Vector2(0, y)
   if duration then
     if self.contentTweener then
-      (self.contentTweener):Kill()
+      self.contentTweener:Kill()
     end
-    self.contentTweener = ((self.ContentRect):DOAnchorPos(pos, duration)):OnComplete(function()
-    -- function num : 0_26_0 , upvalues : self, idx
-    if self._tweenCallback then
-      (self._tweenCallback)()
-      self._tweenCallback = nil
-    end
-    self.currentIdx = idx
-    self.moving = false
-  end
-)
+    self.contentTweener = self.ContentRect:DOAnchorPos(pos, duration):OnComplete(function()
+      if self._tweenCallback then
+        self._tweenCallback()
+        self._tweenCallback = nil
+      end
+      self.currentIdx = idx
+      self.moving = false
+    end)
   else
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.ContentRect).anchoredPosition = pos
+    self.ContentRect.anchoredPosition = pos
     if self._tweenCallback then
-      (self._tweenCallback)()
+      self._tweenCallback()
       self._tweenCallback = nil
     end
     self.currentIdx = idx
     self.moving = false
   end
   for i = 1, #self.uiWidgets do
-    local widget = (self.uiWidgets)[i]
-    local type = nil
+    local widget = self.uiWidgets[i]
+    local type
     if i == idx then
       type = UIN19P5SignInPosType.Current
-    else
-      if idx < i then
-        type = UIN19P5SignInPosType.Down
-      else
-        if i < idx then
-          type = UIN19P5SignInPosType.Up
-        end
-      end
+    elseif idx < i then
+      type = UIN19P5SignInPosType.Down
+    elseif idx > i then
+      type = UIN19P5SignInPosType.Up
     end
     widget:RefreshType(type)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.OnValueChanged = function(self, value)
-  -- function num : 0_27
+function UIN19P5SignInController:OnValueChanged(value)
   if self.moving then
     self:CalcOffsetX()
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.CalcOffsetX = function(self)
-  -- function num : 0_28
-  local contentPosY = ((self.ContentRect).anchoredPosition).y
+function UIN19P5SignInController:CalcOffsetX()
+  local contentPosY = self.ContentRect.anchoredPosition.y
   if self.uiWidgets and #self.uiWidgets > 0 then
     for i = 1, #self.uiWidgets do
-      local item = (self.uiWidgets)[i]
+      local item = self.uiWidgets[i]
       local x = self:CalcItemX(i, contentPosY)
       item:SetOffsetX(x)
     end
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.CalcItemX = function(self, i, contentPosY)
-  -- function num : 0_29 , upvalues : _ENV
-  local y = nil
+function UIN19P5SignInController:CalcItemX(i, contentPosY)
+  local y
   if i < self.currentIdx then
-    y = contentPosY - (i - 1) * (self.itemSize).y + (self.itemSize).y * 0.5
+    y = contentPosY - (i - 1) * self.itemSize.y + self.itemSize.y * 0.5
   else
-    y = contentPosY - (i - 1) * (self.itemSize).y + (self.bigItemSize).y * 0.5
+    y = contentPosY - (i - 1) * self.itemSize.y + self.bigItemSize.y * 0.5
   end
-  local sqrt = (328 - (self._ori).x) * (328 - (self._ori).x) + (175 - (self._ori).y) * (175 - (self._ori).y) - (y - (self._ori).y) * (y - (self._ori).y)
+  local sqrt = (328 - self._ori.x) * (328 - self._ori.x) + (175 - self._ori.y) * (175 - self._ori.y) - (y - self._ori.y) * (y - self._ori.y)
   if sqrt < 0 then
     sqrt = 0
   end
-  local x = (math.sqrt)(sqrt) + (self._ori).x
+  local x = math.sqrt(sqrt) + self._ori.x
   return x
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.Offset = function(self, x)
-  -- function num : 0_30
+function UIN19P5SignInController:Offset(x)
   local x1 = -175
   local y1 = -328
   local x2 = -478
@@ -692,80 +533,51 @@ UIN19P5SignInController.Offset = function(self, x)
   return y
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.InitList = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  (self.Pool):SpawnObjects("UIN19P5SignInItem", #self.data)
-  self.uiWidgets = (self.Pool):GetAllSpawnList()
+function UIN19P5SignInController:InitList()
+  self.Pool:SpawnObjects("UIN19P5SignInItem", #self.data)
+  self.uiWidgets = self.Pool:GetAllSpawnList()
   for i = 1, #self.uiWidgets do
-    local item = (self.uiWidgets)[i]
-    local data = (self.data)[i]
+    local item = self.uiWidgets[i]
+    local data = self.data[i]
     local awards = data.awards
     local status = UIN19P5SignInStatus.Lock
     if data.status == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV then
       status = UIN19P5SignInStatus.Get
-    else
-      if data.status == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK then
-        status = UIN19P5SignInStatus.Lock
-      else
-        if data.status == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED then
-          status = UIN19P5SignInStatus.Finish
-        end
-      end
+    elseif data.status == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK then
+      status = UIN19P5SignInStatus.Lock
+    elseif data.status == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED then
+      status = UIN19P5SignInStatus.Finish
     end
-    local type = nil
+    local type
     if i == self.currentIdx then
       type = UIN19P5SignInPosType.Current
-    else
-      if i < self.currentIdx then
-        type = UIN19P5SignInPosType.Up
-      else
-        if self.currentIdx < i then
-          type = UIN19P5SignInPosType.Down
-        end
-      end
+    elseif i < self.currentIdx then
+      type = UIN19P5SignInPosType.Up
+    elseif i > self.currentIdx then
+      type = UIN19P5SignInPosType.Down
     end
     item:Flush(i, awards, status, type, function(idx)
-    -- function num : 0_31_0 , upvalues : self
-    self:ItemClick(idx)
-  end
-, function(pData)
-    -- function num : 0_31_1 , upvalues : self
-    self:_BeginDrag(pData)
-  end
-, function(pData)
-    -- function num : 0_31_2 , upvalues : self
-    self:_OnDrag(pData)
-  end
-, function(pData)
-    -- function num : 0_31_3 , upvalues : self
-    self:_EndDrag(pData)
-  end
-)
+      self:ItemClick(idx)
+    end, function(pData)
+      self:_BeginDrag(pData)
+    end, function(pData)
+      self:_OnDrag(pData)
+    end, function(pData)
+      self:_EndDrag(pData)
+    end)
   end
   self:CalcOffsetX()
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.ItemClick = function(self, idx)
-  -- function num : 0_32
+function UIN19P5SignInController:ItemClick(idx)
   local abs = 1
   local length = abs * self.tweenerTime
   self:Lock("UIN19P5SignInController:ItemClick")
   self:MoveToIndex(idx, length, function()
-    -- function num : 0_32_0 , upvalues : self
     self:UnLock("UIN19P5SignInController:ItemClick")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInController.CloseBtnOnClick = function(self, go)
-  -- function num : 0_33
+function UIN19P5SignInController:CloseBtnOnClick(go)
   self:CloseDialog()
 end
-
-

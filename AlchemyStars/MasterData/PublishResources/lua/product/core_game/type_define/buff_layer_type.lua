@@ -1,7 +1,5 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/buff_layer_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-BuffLayerType = {Burn = 2, Poison = 3, Bleed = 4}
-
+BuffLayerType = {
+  Burn = 2,
+  Poison = 3,
+  Bleed = 4
+}

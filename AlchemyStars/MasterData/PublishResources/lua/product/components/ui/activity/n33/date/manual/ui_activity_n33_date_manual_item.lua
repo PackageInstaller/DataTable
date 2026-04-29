@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/date/manual/ui_activity_n33_date_manual_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN33DateManualItem", UICustomWidget)
 UIActivityN33DateManualItem = UIActivityN33DateManualItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN33DateManualItem.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityN33DateManualItem:Constructor()
   self._isSelect = false
   self._isInMap = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN33DateManualItem:OnShow()
   self._atlas = self:GetAsset("UIN33Date.spriteatlas", LoadType.SpriteAtlas)
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualItem._GetComponent = function(self)
-  -- function num : 0_2
+function UIActivityN33DateManualItem:_GetComponent()
   self._petImg = self:GetUIComponent("RawImageLoader", "petImg")
   self._processNum = self:GetUIComponent("UILocalizationText", "processNum")
   self._processNum2 = self:GetUIComponent("UILocalizationText", "processNum2")
@@ -36,127 +23,85 @@ UIActivityN33DateManualItem._GetComponent = function(self)
   self._lockObj = self:GetGameObject("lock")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualItem.SetData = function(self, cfgs, data, callback)
-  -- function num : 0_3
+function UIActivityN33DateManualItem:SetData(cfgs, data, callback)
   self._cfgs = cfgs
   self._activityConst = data
   self._callback = callback
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualItem._Init = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (self._cfgs)[1]
-  ;
-  (self._petImg):LoadImage(cfg.ManualIcon)
+function UIActivityN33DateManualItem:_Init()
+  local cfg = self._cfgs[1]
+  self._petImg:LoadImage(cfg.ManualIcon)
   local hasRed = false
   local allOver = true
   local readNum = 0
   local isOneOver = false
-  for i,v in pairs(self._cfgs) do
-    if i <= 2 then
-      local isOver = (self._activityConst):CheckStoryConditionIsOver(v.ID)
-      do
-        local isRead = (self._activityConst):CheckStoryIsRead(v.ID)
-        if not isOneOver then
-          isOneOver = isOver
-        end
-        if isOver then
-          if not isRead then
-            hasRed = true
-            allOver = false
-          else
-            readNum = readNum + 1
-          end
-        else
-          allOver = false
-        end
-        -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_STMT
-
+  for i, v in pairs(self._cfgs) do
+    if 2 < i then
+      break
+    end
+    local isOver = self._activityConst:CheckStoryConditionIsOver(v.ID)
+    local isRead = self._activityConst:CheckStoryIsRead(v.ID)
+    isOneOver = isOneOver or isOver
+    if isOver then
+      if not isRead then
+        hasRed = true
+        allOver = false
+      else
+        readNum = readNum + 1
       end
+    else
+      allOver = false
     end
   end
   self._isInMap = isOneOver
   if allOver then
-    (self._doneObj):SetActive(true)
-    ;
-    (self._processObj):SetActive(true)
-    ;
-    (self._lockObj):SetActive(false)
-    ;
-    (self._processNum):SetText("2/2")
-    ;
-    (self._processNum2):SetText("2/2")
+    self._doneObj:SetActive(true)
+    self._processObj:SetActive(true)
+    self._lockObj:SetActive(false)
+    self._processNum:SetText("2/2")
+    self._processNum2:SetText("2/2")
   else
-    ;
-    (self._doneObj):SetActive(false)
+    self._doneObj:SetActive(false)
     if not isOneOver then
-      (self._processObj):SetActive(false)
-      ;
-      (self._lockObj):SetActive(true)
-      -- DECOMPILER ERROR at PC82: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._needBuilding).sprite = (self._atlas):GetSprite(cfg.ConditionImg)
+      self._processObj:SetActive(false)
+      self._lockObj:SetActive(true)
+      self._needBuilding.sprite = self._atlas:GetSprite(cfg.ConditionImg)
     else
-      ;
-      (self._processObj):SetActive(true)
-      ;
-      (self._lockObj):SetActive(false)
-      ;
-      (self._processNum):SetText(readNum .. "/" .. readNum + 1)
-      ;
-      (self._processNum2):SetText(readNum .. "/" .. readNum + 1)
+      self._processObj:SetActive(true)
+      self._lockObj:SetActive(false)
+      self._processNum:SetText(readNum .. "/" .. readNum + 1)
+      self._processNum2:SetText(readNum .. "/" .. readNum + 1)
     end
   end
-  ;
-  (self._signObj):SetActive(hasRed)
+  self._signObj:SetActive(hasRed)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualItem.GetCfgs = function(self)
-  -- function num : 0_5
+function UIActivityN33DateManualItem:GetCfgs()
   return self._cfgs
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualItem.SetSelect = function(self, isSelect)
-  -- function num : 0_6
-  (self._selectObj):SetActive(isSelect)
+function UIActivityN33DateManualItem:SetSelect(isSelect)
+  self._selectObj:SetActive(isSelect)
   self._isSelect = isSelect
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualItem.IsInMap = function(self)
-  -- function num : 0_7
+function UIActivityN33DateManualItem:IsInMap()
   return self._isInMap
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualItem.ItemBtnOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  if (self._activityConst):CheckSimulationOperationIsOver() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+function UIActivityN33DateManualItem:ItemBtnOnClick()
+  if self._activityConst:CheckSimulationOperationIsOver() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     self:SwitchState(UIStateType.UIActivityN33MainController)
-    return 
+    return
   end
   if self._isSelect then
-    return 
+    return
   end
   self:SetSelect(true)
   if self._callback then
-    (self._callback)(self)
+    self._callback(self)
   end
 end
-
-

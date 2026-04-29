@@ -1,79 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/ui_choose_bg_second_tab_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChooseBgSecondTabItem", UICustomWidget)
 UIChooseBgSecondTabItem = UIChooseBgSecondTabItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChooseBgSecondTabItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChooseBgSecondTabItem:OnShow()
   self:_GetComponents()
-  self._type2tips = {[BookCGType.Main] = "str_book_main_cg_active", [BookCGType.Ext] = "str_book_ext_cg_active", [BookCGType.Season] = "str_book_season_cg_active", [BookCGType.Pet] = "str_book_pet_skin_cg_active"}
-  self._names = {[BookCGType.Main] = "str_book_cg_main", [BookCGType.Ext] = "str_book_cg_ext", [BookCGType.Season] = "str_book_cg_season", [BookCGType.Pet] = "str_book_cg_pet_skin"}
+  self._type2tips = {
+    [BookCGType.Main] = "str_book_main_cg_active",
+    [BookCGType.Ext] = "str_book_ext_cg_active",
+    [BookCGType.Season] = "str_book_season_cg_active",
+    [BookCGType.Pet] = "str_book_pet_skin_cg_active"
+  }
+  self._names = {
+    [BookCGType.Main] = "str_book_cg_main",
+    [BookCGType.Ext] = "str_book_cg_ext",
+    [BookCGType.Season] = "str_book_cg_season",
+    [BookCGType.Pet] = "str_book_cg_pet_skin"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseBgSecondTabItem._GetComponents = function(self)
-  -- function num : 0_1
+function UIChooseBgSecondTabItem:_GetComponents()
   self._sceneSelectObj = self:GetGameObject("sceneSelect")
   self._title = self:GetUIComponent("UILocalizationText", "title")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseBgSecondTabItem.SetData = function(self, type, data, callback)
-  -- function num : 0_2
+function UIChooseBgSecondTabItem:SetData(type, data, callback)
   self._type = type
   self._data = data
   self._callback = callback
   self:InitComponent()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseBgSecondTabItem.InitComponent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._title):SetText((StringTable.Get)((self._names)[self._type]))
+function UIChooseBgSecondTabItem:InitComponent()
+  self._title:SetText(StringTable.Get(self._names[self._type]))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseBgSecondTabItem.SetSelect = function(self, isSelect)
-  -- function num : 0_4
+function UIChooseBgSecondTabItem:SetSelect(isSelect)
   self._isSelect = isSelect
-  ;
-  (self._sceneSelectObj):SetActive(isSelect)
+  self._sceneSelectObj:SetActive(isSelect)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseBgSecondTabItem.GetData = function(self)
-  -- function num : 0_5
+function UIChooseBgSecondTabItem:GetData()
   return self._data
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseBgSecondTabItem.BtnOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIChooseBgSecondTabItem:BtnOnClick()
   if self._isSelect then
-    return 
+    return
   end
-  do
-    if (table.count)(self._data) < 1 then
-      local tipsStr = (StringTable.Get)((self._type2tips)[self._type])
-      ;
-      (ToastManager.ShowToast)(tipsStr)
-      return 
-    end
-    self:SetSelect(true)
-    if self._callback then
-      (self._callback)(self)
-    end
+  if table.count(self._data) < 1 then
+    local tipsStr = StringTable.Get(self._type2tips[self._type])
+    ToastManager.ShowToast(tipsStr)
+    return
+  end
+  self:SetSelect(true)
+  if self._callback then
+    self._callback(self)
   end
 end
-
-

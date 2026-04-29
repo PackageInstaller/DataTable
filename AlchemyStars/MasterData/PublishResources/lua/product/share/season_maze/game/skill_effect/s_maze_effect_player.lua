@@ -1,58 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/skill_effect/s_maze_effect_player.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SMazeEffectPlayer", Object)
 SMazeEffectPlayer = SMazeEffectPlayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeEffectPlayer.Constructor = function(self)
-  -- function num : 0_0
+function SMazeEffectPlayer:Constructor()
   self._timelines = {}
   self._needDelete = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeEffectPlayer.Play = function(self, tl)
-  -- function num : 0_1 , upvalues : _ENV
-  local idx = (table.ikey)(self._timelines, tl)
-  if idx and idx > 0 and not tl:Over() then
-    (Log.exception)("timeline 正在播放:", idx)
+function SMazeEffectPlayer:Play(tl)
+  local idx = table.ikey(self._timelines, tl)
+  if idx and 0 < idx and not tl:Over() then
+    Log.exception("timeline 正在播放:", idx)
   end
   tl:Start()
-  ;
-  (table.insert)(self._timelines, tl)
+  table.insert(self._timelines, tl)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeEffectPlayer.Update = function(self, dt)
-  -- function num : 0_2 , upvalues : _ENV
-  for idx,tl in ipairs(self._timelines) do
+function SMazeEffectPlayer:Update(dt)
+  for idx, tl in ipairs(self._timelines) do
     tl:Update(dt)
     if tl:Over() then
-      (table.insert)(self._needDelete, idx)
+      table.insert(self._needDelete, idx)
     end
   end
   if #self._needDelete > 0 then
-    for _,idx in ipairs(self._needDelete) do
-      (table.remove)(self._timelines, idx)
+    for _, idx in ipairs(self._needDelete) do
+      table.remove(self._timelines, idx)
     end
     self._needDelete = {}
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeEffectPlayer.Dispose = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for idx,tl in ipairs(self._timelines) do
+function SMazeEffectPlayer:Dispose()
+  for idx, tl in ipairs(self._timelines) do
     tl:Stop()
   end
   self._timelines = nil
   self._needDelete = nil
 end
-
-

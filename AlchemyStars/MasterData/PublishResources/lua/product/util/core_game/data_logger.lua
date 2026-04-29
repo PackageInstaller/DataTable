@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/data_logger.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataLogger", Object)
 DataLogger = DataLogger
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataLogger.Constructor = function(self, world)
-  -- function num : 0_0
+function DataLogger:Constructor(world)
   self._world = world
   self._enabled = false
   self._logger = {}
@@ -23,138 +16,130 @@ DataLogger.Constructor = function(self, world)
   self._alwaysAutoFight = 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.EnableDataLog = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    return 
+function DataLogger:EnableDataLog()
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    return
   end
   self._enabled = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.Dispose = function(self)
-  -- function num : 0_2
+function DataLogger:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.GetLog = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function DataLogger:GetLog()
   if not self._enabled then
     return ""
   end
-  local t = (table.toArray)(DataPointType)
-  ;
-  (table.sort)(t)
+  local t = table.toArray(DataPointType)
+  table.sort(t)
   local logtb = {}
-  for i,k in ipairs(t) do
-    logtb[#logtb + 1] = self:_MakeLogString(k, (self._logger)[k])
+  for i, k in ipairs(t) do
+    logtb[#logtb + 1] = self:_MakeLogString(k, self._logger[k])
   end
-  local log = (table.concat)(logtb, ",")
-  ;
-  (Log.debug)("[DataLogger] ", log)
+  local log = table.concat(logtb, ",")
+  Log.debug("[DataLogger] ", log)
   return log
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger._MakeLogString = function(self, key, value)
-  -- function num : 0_4 , upvalues : _ENV
+function DataLogger:_MakeLogString(key, value)
   if value == nil then
     return 0
   end
   local log = ""
   if type(value) == "table" then
     local t = {}
-    for k,v in pairs(value) do
-      local n1, n2 = (math.modf)(v)
+    for k, v in pairs(value) do
+      local n1, n2 = math.modf(v)
       if n2 ~= 0 then
-        v = v - v % 0.0001
+        v = v - v % 1.0E-4
       end
       t[#t + 1] = v
     end
-    log = (table.concat)(t, "|")
-  else
-    do
-      if type(value) == "number" then
-        local n1, n2 = (math.modf)(value)
-        if n2 ~= 0 then
-          value = value - value % 0.01
-        end
-        log = value
-      else
-        do
-          log = value
-          return log
-        end
-      end
+    log = table.concat(t, "|")
+  elseif type(value) == "number" then
+    local n1, n2 = math.modf(value)
+    if n2 ~= 0 then
+      value = value - value % 0.01
     end
+    log = value
+  else
+    log = value
   end
+  return log
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.AddDataLog = function(self, funcname, ...)
-  -- function num : 0_5
+function DataLogger:AddDataLog(funcname, ...)
   if not self._enabled then
-    return 
+    return
   end
-  ;
-  (self[funcname])(self, ...)
+  self[funcname](self, ...)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.OnMatchEnd = function(self, teamid, loopid)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._logger)[DataPointType.TeamId] = teamid
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.LoopId] = loopid
+function DataLogger:OnMatchEnd(teamid, loopid)
+  self._logger[DataPointType.TeamId] = teamid
+  self._logger[DataPointType.LoopId] = loopid
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.OnBattleStart = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._battleStartTime = (os.clock)()
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.BattleStartTime] = (os.date)("%Y-%m-%d %H:%M:%S", (os.time)())
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.LevelId] = ((self._world).BW_WorldInfo).level_id
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.PlayerId] = tostring(((self._world).BW_WorldInfo):GetPlayerPstID())
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.PlayerLevel] = ((self._world).BW_WorldInfo):GetPlayerLevel()
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.MatchType] = (self._world):MatchType()
-  local pets = (self._world):GetLocalMatchPetList()
-  local petIds = {0, 0, 0, 0, 0}
-  local petAttacks = {0, 0, 0, 0, 0}
+function DataLogger:OnBattleStart()
+  self._battleStartTime = os.clock()
+  self._logger[DataPointType.BattleStartTime] = os.date("%Y-%m-%d %H:%M:%S", os.time())
+  self._logger[DataPointType.LevelId] = self._world.BW_WorldInfo.level_id
+  self._logger[DataPointType.PlayerId] = tostring(self._world.BW_WorldInfo:GetPlayerPstID())
+  self._logger[DataPointType.PlayerLevel] = self._world.BW_WorldInfo:GetPlayerLevel()
+  self._logger[DataPointType.MatchType] = self._world:MatchType()
+  local pets = self._world:GetLocalMatchPetList()
+  local petIds = {
+    0,
+    0,
+    0,
+    0,
+    0
+  }
+  local petAttacks = {
+    0,
+    0,
+    0,
+    0,
+    0
+  }
   local petDefenses = 0
   local petHealths = 0
-  local petAwakes = {0, 0, 0, 0, 0}
-  local petGrades = {0, 0, 0, 0, 0}
-  local petEquips = {0, 0, 0, 0, 0}
-  local petAffinitys = {0, 0, 0, 0, 0}
-  local petLevels = {0, 0, 0, 0, 0}
-  for i,pet in ipairs(pets) do
+  local petAwakes = {
+    0,
+    0,
+    0,
+    0,
+    0
+  }
+  local petGrades = {
+    0,
+    0,
+    0,
+    0,
+    0
+  }
+  local petEquips = {
+    0,
+    0,
+    0,
+    0,
+    0
+  }
+  local petAffinitys = {
+    0,
+    0,
+    0,
+    0,
+    0
+  }
+  local petLevels = {
+    0,
+    0,
+    0,
+    0,
+    0
+  }
+  for i, pet in ipairs(pets) do
     petIds[i] = pet:GetTemplateID()
     petAttacks[i] = pet:GetPetAttack()
     petDefenses = petDefenses + pet:GetPetDefence()
@@ -165,56 +150,28 @@ DataLogger.OnBattleStart = function(self)
     petAffinitys[i] = pet:GetPetAffinityLevel()
     petLevels[i] = pet:GetPetLevel()
   end
-  -- DECOMPILER ERROR at PC137: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.PetId] = petIds
-  -- DECOMPILER ERROR at PC141: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.PetAttack] = petAttacks
-  -- DECOMPILER ERROR at PC145: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.PetDefense] = petDefenses
-  -- DECOMPILER ERROR at PC149: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.PetHP] = petHealths
-  -- DECOMPILER ERROR at PC153: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.PetAwake] = petAwakes
-  -- DECOMPILER ERROR at PC157: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.PetGrade] = petGrades
-  -- DECOMPILER ERROR at PC161: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.PetEquip] = petEquips
-  -- DECOMPILER ERROR at PC165: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.PetAffinity] = petAffinitys
-  -- DECOMPILER ERROR at PC169: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.PetLevel] = petLevels
+  self._logger[DataPointType.PetId] = petIds
+  self._logger[DataPointType.PetAttack] = petAttacks
+  self._logger[DataPointType.PetDefense] = petDefenses
+  self._logger[DataPointType.PetHP] = petHealths
+  self._logger[DataPointType.PetAwake] = petAwakes
+  self._logger[DataPointType.PetGrade] = petGrades
+  self._logger[DataPointType.PetEquip] = petEquips
+  self._logger[DataPointType.PetAffinity] = petAffinitys
+  self._logger[DataPointType.PetLevel] = petLevels
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.OnBattleEnd = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
-  local pass = {0, 0, 0}
-  if not ((self._world):BattleWorldEnterData()):GetBonusCondition() then
-    local allStarConditions = {}
-  end
+function DataLogger:OnBattleEnd()
+  local battleStatCmpt = self._world:BattleStat()
+  local pass = {
+    0,
+    0,
+    0
+  }
+  local allStarConditions = self._world:BattleWorldEnterData():GetBonusCondition() or {}
   local cur3StarMatchResult = battleStatCmpt:GetBonusMatchResult()
   for i = 1, #allStarConditions do
-    for _,conditionId in ipairs(cur3StarMatchResult) do
+    for _, conditionId in ipairs(cur3StarMatchResult) do
       if conditionId == allStarConditions[i] then
         pass[i] = 1
         break
@@ -223,155 +180,91 @@ DataLogger.OnBattleEnd = function(self)
   end
   local victory = battleStatCmpt:GetBattleLevelResult()
   local isFirstPass = 0
-  if victory and not ((self._world).BW_WorldInfo).level_is_pass then
+  if victory and not self._world.BW_WorldInfo.level_is_pass then
     isFirstPass = 1
   end
   if battleStatCmpt:GetAutoFight() == false then
     self._alwaysAutoFight = 0
   end
-  -- DECOMPILER ERROR at PC59: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.MatchResult] = victory and 1 or 0
-  -- DECOMPILER ERROR at PC64: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.OneStarPass] = pass[1]
-  -- DECOMPILER ERROR at PC69: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.TwoStarPass] = pass[2]
-  -- DECOMPILER ERROR at PC74: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.ThreeStarPass] = pass[3]
-  -- DECOMPILER ERROR at PC82: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.BattleEndTime] = (os.date)("%Y-%m-%d %H:%M:%S")
-  -- DECOMPILER ERROR at PC91: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.BattleTotalTime] = (os.clock)() - self._battleStartTime
-  -- DECOMPILER ERROR at PC96: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.BattleRoundCount] = self._round
-  -- DECOMPILER ERROR at PC100: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.IsFirstPassLevel] = isFirstPass
-  -- DECOMPILER ERROR at PC105: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.AlwaysAutoFight] = self._alwaysAutoFight
+  self._logger[DataPointType.MatchResult] = victory and 1 or 0
+  self._logger[DataPointType.OneStarPass] = pass[1]
+  self._logger[DataPointType.TwoStarPass] = pass[2]
+  self._logger[DataPointType.ThreeStarPass] = pass[3]
+  self._logger[DataPointType.BattleEndTime] = os.date("%Y-%m-%d %H:%M:%S")
+  self._logger[DataPointType.BattleTotalTime] = os.clock() - self._battleStartTime
+  self._logger[DataPointType.BattleRoundCount] = self._round
+  self._logger[DataPointType.IsFirstPassLevel] = isFirstPass
+  self._logger[DataPointType.AlwaysAutoFight] = self._alwaysAutoFight
   local sumRoundTime = 0
   local sumLinkTime = 0
   local sumShowTime = 0
   local lowChainCount = 0
-  for i,t in ipairs(self._roundData) do
+  for i, t in ipairs(self._roundData) do
     sumRoundTime = sumRoundTime + t.roundtime
     sumLinkTime = sumLinkTime + t.linktime
     sumShowTime = sumShowTime + t.showtime
-    if t.chain and t.chain <= 3 then
+    if t.chain and 3 >= t.chain then
       lowChainCount = lowChainCount + 1
     end
   end
-  local avgRoundTime = (sumRoundTime) / self._round
-  local avgLinkTime = (sumLinkTime) / self._round
-  local avgShowTime = (sumShowTime) / self._round
-  local lowChainRate = (lowChainCount) / self._round
+  local avgRoundTime = sumRoundTime / self._round
+  local avgLinkTime = sumLinkTime / self._round
+  local avgShowTime = sumShowTime / self._round
+  local lowChainRate = lowChainCount / self._round
   local varRoundTime = self:_Var(self._roundData, "roundtime")
-  -- DECOMPILER ERROR at PC144: Confused about usage of register: R16 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.AvgRoundTime] = avgRoundTime
-  -- DECOMPILER ERROR at PC148: Confused about usage of register: R16 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.AvgLinkTime] = avgLinkTime
-  -- DECOMPILER ERROR at PC152: Confused about usage of register: R16 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.AvgShowTime] = avgShowTime
-  -- DECOMPILER ERROR at PC156: Confused about usage of register: R16 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.LowChainRate] = lowChainRate
-  -- DECOMPILER ERROR at PC160: Confused about usage of register: R16 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.VarRoundTime] = varRoundTime
-  -- DECOMPILER ERROR at PC166: Confused about usage of register: R16 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.AuroraTimeCount] = #self._auroraData
+  self._logger[DataPointType.AvgRoundTime] = avgRoundTime
+  self._logger[DataPointType.AvgLinkTime] = avgLinkTime
+  self._logger[DataPointType.AvgShowTime] = avgShowTime
+  self._logger[DataPointType.LowChainRate] = lowChainRate
+  self._logger[DataPointType.VarRoundTime] = varRoundTime
+  self._logger[DataPointType.AuroraTimeCount] = #self._auroraData
   local maxChain = self:_Max(self._roundData, "chain")
   local avgChain = self:_Avg(self._roundData, "chain")
   local stdChain = self:_Std(self._roundData, "chain")
-  -- DECOMPILER ERROR at PC182: Confused about usage of register: R19 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.ChainMax] = maxChain
-  -- DECOMPILER ERROR at PC186: Confused about usage of register: R19 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.ChainAvg] = avgChain
-  -- DECOMPILER ERROR at PC190: Confused about usage of register: R19 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.ChainStd] = stdChain
+  self._logger[DataPointType.ChainMax] = maxChain
+  self._logger[DataPointType.ChainAvg] = avgChain
+  self._logger[DataPointType.ChainStd] = stdChain
   local maxCombo = self:_Max(self._roundData, "combo")
   local sumCombo = self:_Sum(self._roundData, "combo")
   local avgCombo = self:_Avg(self._roundData, "combo")
-  -- DECOMPILER ERROR at PC206: Confused about usage of register: R22 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.ComboMax] = maxCombo
-  -- DECOMPILER ERROR at PC210: Confused about usage of register: R22 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.ComboSum] = sumCombo
-  -- DECOMPILER ERROR at PC214: Confused about usage of register: R22 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.ComboAvg] = avgCombo
+  self._logger[DataPointType.ComboMax] = maxCombo
+  self._logger[DataPointType.ComboSum] = sumCombo
+  self._logger[DataPointType.ComboAvg] = avgCombo
   local avgAuroraChain = self:_Avg(self._auroraData, "chain")
-  -- DECOMPILER ERROR at PC222: Confused about usage of register: R23 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.AuroraChainAvg] = avgAuroraChain
+  self._logger[DataPointType.AuroraChainAvg] = avgAuroraChain
   local avgAuroraCombo = self:_Avg(self._auroraData, "combo")
-  -- DECOMPILER ERROR at PC230: Confused about usage of register: R24 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.AuroraComboAvg] = avgAuroraCombo
+  self._logger[DataPointType.AuroraComboAvg] = avgAuroraCombo
   local initConnectRate = 0
-  initConnectRate = #self._roundData <= 0 or ((self._roundData)[1]).connectrate or 0
-  -- DECOMPILER ERROR at PC245: Confused about usage of register: R25 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.InitConnectRate] = initConnectRate
+  if 0 < #self._roundData then
+    initConnectRate = self._roundData[1].connectrate or 0
+  end
+  self._logger[DataPointType.InitConnectRate] = initConnectRate
   local avgConnectRate = self:_Avg(self._roundData, "connectrate")
-  -- DECOMPILER ERROR at PC253: Confused about usage of register: R26 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.ConnectRateAvg] = avgConnectRate
+  self._logger[DataPointType.ConnectRateAvg] = avgConnectRate
   local stdConnectRate = self:_Std(self._roundData, "connectrate")
-  -- DECOMPILER ERROR at PC261: Confused about usage of register: R27 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.ConnectRateStd] = stdConnectRate
+  self._logger[DataPointType.ConnectRateStd] = stdConnectRate
   local normalSkillCount = 0
   local petNormalDamageSum = 0
-  local petNormalSkillCount = {0, 0, 0, 0, 0}
-  local petNormalDamage = {0, 0, 0, 0, 0}
-  for i,t in ipairs(self._roundData) do
+  local petNormalSkillCount = {
+    0,
+    0,
+    0,
+    0,
+    0
+  }
+  local petNormalDamage = {
+    0,
+    0,
+    0,
+    0,
+    0
+  }
+  for i, t in ipairs(self._roundData) do
     t.sumNormalDamage = 0
     if t.normalskill then
       for i = 1, 5 do
-        local d = (t.normalskill)[i]
-        if d > 0 then
+        local d = t.normalskill[i]
+        if 0 < d then
           normalSkillCount = normalSkillCount + 1
           petNormalSkillCount[i] = petNormalSkillCount[i] + 1
           petNormalDamage[i] = petNormalDamage[i] + d
@@ -383,107 +276,93 @@ DataLogger.OnBattleEnd = function(self)
   end
   local petNormalDamageRate = {}
   for i = 1, 5 do
-    petNormalDamageRate[i] = petNormalDamage[i] / (petNormalDamageSum)
+    petNormalDamageRate[i] = petNormalDamage[i] / petNormalDamageSum
   end
   local avgRoundNormalDamage = self:_Avg(self._roundData, "sumNormalDamage")
   local stdRoundNormalDamage = self:_Std(self._roundData, "sumNormalDamage")
-  -- DECOMPILER ERROR at PC328: Confused about usage of register: R34 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.PetNormalDamage] = petNormalDamage
-  -- DECOMPILER ERROR at PC332: Confused about usage of register: R34 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.PetNormalDamageRate] = petNormalDamageRate
-  -- DECOMPILER ERROR at PC336: Confused about usage of register: R34 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.SumNormalDamage] = petNormalDamageSum
-  -- DECOMPILER ERROR at PC340: Confused about usage of register: R34 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.AvgRoundNormalDamage] = avgRoundNormalDamage
-  -- DECOMPILER ERROR at PC344: Confused about usage of register: R34 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.StdRoundNormalDamage] = stdRoundNormalDamage
+  self._logger[DataPointType.PetNormalDamage] = petNormalDamage
+  self._logger[DataPointType.PetNormalDamageRate] = petNormalDamageRate
+  self._logger[DataPointType.SumNormalDamage] = petNormalDamageSum
+  self._logger[DataPointType.AvgRoundNormalDamage] = avgRoundNormalDamage
+  self._logger[DataPointType.StdRoundNormalDamage] = stdRoundNormalDamage
   local chainSkillCount = 0
   local chainSkillLevelSum = 0
-  local chainSkillLevel = {0, 0, 0}
-  local petChainSkillCount = {0, 0, 0, 0, 0}
-  local petChainDamage = {0, 0, 0, 0, 0}
+  local chainSkillLevel = {
+    0,
+    0,
+    0
+  }
+  local petChainSkillCount = {
+    0,
+    0,
+    0,
+    0,
+    0
+  }
+  local petChainDamage = {
+    0,
+    0,
+    0,
+    0,
+    0
+  }
   local petChainDamageSum = 0
-  for i,t in ipairs(self._roundData) do
+  for i, t in ipairs(self._roundData) do
     t.sumChainDamage = 0
     if t.chainskill then
       for i = 1, 5 do
-        local d = (t.chainskill)[i]
-        local v = (t.chainlevel)[i]
-        if d > 0 then
+        local d = t.chainskill[i]
+        local v = t.chainlevel[i]
+        if 0 < d then
           chainSkillCount = chainSkillCount + 1
           petChainSkillCount[i] = petChainSkillCount[i] + 1
           petChainDamage[i] = petChainDamage[i] + d
           petChainDamageSum = petChainDamageSum + d
           t.sumChainDamage = t.sumChainDamage + d
         end
-        if v > 0 then
+        if 0 < v then
           chainSkillLevel[v] = chainSkillLevel[v] + 1
           chainSkillLevelSum = chainSkillLevelSum + v
         end
       end
     end
   end
-  -- DECOMPILER ERROR at PC410: Confused about usage of register: R40 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.ChainSkillFrequency] = (chainSkillCount) / self._round
-  -- DECOMPILER ERROR at PC415: Confused about usage of register: R40 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.ChainSkillStrength] = (chainSkillLevelSum) / (chainSkillCount)
-  -- DECOMPILER ERROR at PC419: Confused about usage of register: R40 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.ChainComboRealFrequency] = chainSkillLevel
-  -- DECOMPILER ERROR at PC423: Confused about usage of register: R40 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.PetChainSkillCount] = petChainSkillCount
-  -- DECOMPILER ERROR at PC427: Confused about usage of register: R40 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.PetChainSkillDamage] = petChainDamage
-  -- DECOMPILER ERROR at PC431: Confused about usage of register: R40 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.SumChainDamage] = petChainDamageSum
+  self._logger[DataPointType.ChainSkillFrequency] = chainSkillCount / self._round
+  self._logger[DataPointType.ChainSkillStrength] = chainSkillLevelSum / chainSkillCount
+  self._logger[DataPointType.ChainComboRealFrequency] = chainSkillLevel
+  self._logger[DataPointType.PetChainSkillCount] = petChainSkillCount
+  self._logger[DataPointType.PetChainSkillDamage] = petChainDamage
+  self._logger[DataPointType.SumChainDamage] = petChainDamageSum
   local petChainDamageRate = {}
   for i = 1, 5 do
-    petChainDamageRate[i] = petChainDamage[i] / (petChainDamageSum)
+    petChainDamageRate[i] = petChainDamage[i] / petChainDamageSum
   end
-  -- DECOMPILER ERROR at PC444: Confused about usage of register: R41 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.PetChainSkillDamageRate] = petChainDamageRate
+  self._logger[DataPointType.PetChainSkillDamageRate] = petChainDamageRate
   local avgRoundChainDamage = self:_Avg(self._roundData, "sumChainDamage")
   local stdRoundChainDamage = self:_Std(self._roundData, "sumChainDamage")
-  -- DECOMPILER ERROR at PC456: Confused about usage of register: R43 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.AvgRoundChainDamage] = avgRoundChainDamage
-  -- DECOMPILER ERROR at PC460: Confused about usage of register: R43 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.StdRoundChainDamage] = stdRoundChainDamage
+  self._logger[DataPointType.AvgRoundChainDamage] = avgRoundChainDamage
+  self._logger[DataPointType.StdRoundChainDamage] = stdRoundChainDamage
   local activeSkillCount = 0
   local petActiveDamageSum = 0
-  local petActiveSkillCount = {0, 0, 0, 0, 0}
-  local petActiveDamage = {0, 0, 0, 0, 0}
-  for i,t in ipairs(self._roundData) do
+  local petActiveSkillCount = {
+    0,
+    0,
+    0,
+    0,
+    0
+  }
+  local petActiveDamage = {
+    0,
+    0,
+    0,
+    0,
+    0
+  }
+  for i, t in ipairs(self._roundData) do
     t.sumActiveDamage = 0
     if t.activeskill then
       for i = 1, 5 do
-        local d = (t.activeskill)[i]
+        local d = t.activeskill[i]
         if d then
           activeSkillCount = activeSkillCount + 1
           petActiveSkillCount[i] = petActiveSkillCount[i] + 1
@@ -494,384 +373,245 @@ DataLogger.OnBattleEnd = function(self)
       end
     end
   end
-  -- DECOMPILER ERROR at PC510: Confused about usage of register: R47 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.TeamActiveSkillDamage] = petActiveDamage
-  -- DECOMPILER ERROR at PC514: Confused about usage of register: R47 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.TeamActiveSkillCount] = petActiveSkillCount
-  -- DECOMPILER ERROR at PC518: Confused about usage of register: R47 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.ActiveSkillDamageSum] = petActiveDamageSum
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-  local teamMaxHP = (teamEntity:Attributes()):CalcMaxHp()
-  -- DECOMPILER ERROR at PC533: Confused about usage of register: R49 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.MaxPetBehitDamage] = self._maxPetBehitDamage / teamMaxHP
+  self._logger[DataPointType.TeamActiveSkillDamage] = petActiveDamage
+  self._logger[DataPointType.TeamActiveSkillCount] = petActiveSkillCount
+  self._logger[DataPointType.ActiveSkillDamageSum] = petActiveDamageSum
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  local teamMaxHP = teamEntity:Attributes():CalcMaxHp()
+  self._logger[DataPointType.MaxPetBehitDamage] = self._maxPetBehitDamage / teamMaxHP
   local maxRoundPetBehitDamage = self:_Max(self._roundData, "petbehitval")
-  -- DECOMPILER ERROR at PC542: Confused about usage of register: R50 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.MaxRoundPetBehitDamage] = maxRoundPetBehitDamage / teamMaxHP
+  self._logger[DataPointType.MaxRoundPetBehitDamage] = maxRoundPetBehitDamage / teamMaxHP
   local avgRoundPetBehitCount = self:_Avg(self._roundData, "petbehitcount")
-  -- DECOMPILER ERROR at PC550: Confused about usage of register: R51 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.AvgRoundPetBehitCount] = avgRoundPetBehitCount
+  self._logger[DataPointType.AvgRoundPetBehitCount] = avgRoundPetBehitCount
   local avgRoundPetBehitVal = self:_Avg(self._roundData, "petbehitval")
-  -- DECOMPILER ERROR at PC559: Confused about usage of register: R52 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.AvgRoundPetBehitVal] = avgRoundPetBehitVal / teamMaxHP
-  local totalDamage = petNormalDamageSum + (petChainDamageSum) + (petActiveDamageSum)
-  local skillTypeRate = {(petNormalDamageSum) / totalDamage, (petChainDamageSum) / totalDamage, (petActiveDamageSum) / totalDamage}
-  -- DECOMPILER ERROR at PC570: Confused about usage of register: R54 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.DamageTypeRate] = skillTypeRate
-  local petTotalDamageRate = {0, 0, 0, 0, 0}
+  self._logger[DataPointType.AvgRoundPetBehitVal] = avgRoundPetBehitVal / teamMaxHP
+  local totalDamage = petNormalDamageSum + petChainDamageSum + petActiveDamageSum
+  local skillTypeRate = {
+    petNormalDamageSum / totalDamage,
+    petChainDamageSum / totalDamage,
+    petActiveDamageSum / totalDamage
+  }
+  self._logger[DataPointType.DamageTypeRate] = skillTypeRate
+  local petTotalDamageRate = {
+    0,
+    0,
+    0,
+    0,
+    0
+  }
   for i = 1, 5 do
     petTotalDamageRate[i] = (petNormalDamage[i] + petChainDamage[i] + petActiveDamage[i]) / totalDamage
   end
-  -- DECOMPILER ERROR at PC593: Confused about usage of register: R55 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.PetDamageRate] = petTotalDamageRate
-  -- DECOMPILER ERROR at PC599: Confused about usage of register: R55 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.AvgRoundPetDamage] = totalDamage / self._round
+  self._logger[DataPointType.PetDamageRate] = petTotalDamageRate
+  self._logger[DataPointType.AvgRoundPetDamage] = totalDamage / self._round
   local skillAddBlood = 0
-  if self._totalAddBlood > 0 then
+  if 0 < self._totalAddBlood then
     skillAddBlood = self._chainSkillAddBlood / self._totalAddBlood
   end
-  -- DECOMPILER ERROR at PC612: Confused about usage of register: R56 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.AddBloodTotal] = self._totalAddBlood / teamMaxHP
-  -- DECOMPILER ERROR at PC616: Confused about usage of register: R56 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.ChainSkillAddBlood] = skillAddBlood
-  -- DECOMPILER ERROR at PC622: Confused about usage of register: R56 in 'UnsetPending'
-
-  ;
-  (self._logger)[DataPointType.AddBloodSpilled] = self._overflowAddBlood / teamMaxHP
-  if (self._world):MatchType() == MatchType.MT_Maze then
-    local mazePetBloods = {0, 0, 0, 0, 0}
-    local mazePetPower = {0, 0, 0, 0, 0}
-    local es = ((((self._world):Player()):GetLocalTeamEntity()):Team()):GetTeamPetEntities()
-    for _,e in ipairs(es) do
-      local slot = ((e:MatchPet()):GetMatchPet()):GetTeamSlot()
-      mazePetPower[slot] = (e:Attributes()):GetAttribute("Power")
-      local hp = (e:Attributes()):GetCurrentHP()
-      mazePetBloods[slot] = hp / (e:Attributes()):CalcMaxHp()
+  self._logger[DataPointType.AddBloodTotal] = self._totalAddBlood / teamMaxHP
+  self._logger[DataPointType.ChainSkillAddBlood] = skillAddBlood
+  self._logger[DataPointType.AddBloodSpilled] = self._overflowAddBlood / teamMaxHP
+  if self._world:MatchType() == MatchType.MT_Maze then
+    local mazePetBloods = {
+      0,
+      0,
+      0,
+      0,
+      0
+    }
+    local mazePetPower = {
+      0,
+      0,
+      0,
+      0,
+      0
+    }
+    local es = self._world:Player():GetLocalTeamEntity():Team():GetTeamPetEntities()
+    for _, e in ipairs(es) do
+      local slot = e:MatchPet():GetMatchPet():GetTeamSlot()
+      mazePetPower[slot] = e:Attributes():GetAttribute("Power")
+      local hp = e:Attributes():GetCurrentHP()
+      mazePetBloods[slot] = hp / e:Attributes():CalcMaxHp()
     end
-    local mazeCreateInfo = ((self._world).BW_WorldInfo).mazeCreateInfo
-    -- DECOMPILER ERROR at PC693: Confused about usage of register: R60 in 'UnsetPending'
-
-    ;
-    (self._logger)[DataPointType.MazeLight] = ((self._world):GetService("Maze")):GetLightCount()
-    -- DECOMPILER ERROR at PC698: Confused about usage of register: R60 in 'UnsetPending'
-
-    ;
-    (self._logger)[DataPointType.MazeLayer] = mazeCreateInfo.maze_layer
-    -- DECOMPILER ERROR at PC703: Confused about usage of register: R60 in 'UnsetPending'
-
-    ;
-    (self._logger)[DataPointType.MazeVersion] = mazeCreateInfo.maze_version
-    -- DECOMPILER ERROR at PC708: Confused about usage of register: R60 in 'UnsetPending'
-
-    ;
-    (self._logger)[DataPointType.MazeRoomIndex] = mazeCreateInfo.maze_room_index
-    -- DECOMPILER ERROR at PC712: Confused about usage of register: R60 in 'UnsetPending'
-
-    ;
-    (self._logger)[DataPointType.MazePetBlood] = mazePetBloods
-    -- DECOMPILER ERROR at PC716: Confused about usage of register: R60 in 'UnsetPending'
-
-    ;
-    (self._logger)[DataPointType.MazePetPower] = mazePetPower
+    local mazeCreateInfo = self._world.BW_WorldInfo.mazeCreateInfo
+    self._logger[DataPointType.MazeLight] = self._world:GetService("Maze"):GetLightCount()
+    self._logger[DataPointType.MazeLayer] = mazeCreateInfo.maze_layer
+    self._logger[DataPointType.MazeVersion] = mazeCreateInfo.maze_version
+    self._logger[DataPointType.MazeRoomIndex] = mazeCreateInfo.maze_room_index
+    self._logger[DataPointType.MazePetBlood] = mazePetBloods
+    self._logger[DataPointType.MazePetPower] = mazePetPower
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.OnRoundStart = function(self, connectRate)
-  -- function num : 0_9 , upvalues : _ENV
+function DataLogger:OnRoundStart(connectRate)
   self._round = self._round + 1
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._roundData)[self._round] = {}
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._roundData)[self._round]).roundtime = 0
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._roundData)[self._round]).connectrate = connectRate
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._roundData)[self._round]).chain = 0
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._roundData)[self._round]).combo = 0
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._roundData)[self._round]).petbehitval = 0
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._roundData)[self._round]).petbehitcount = 0
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._roundData)[self._round]).linktime = 0
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._roundData)[self._round]).showtime = 0
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._roundData)[self._round]).roundstart = (os.clock)()
+  self._roundData[self._round] = {}
+  self._roundData[self._round].roundtime = 0
+  self._roundData[self._round].connectrate = connectRate
+  self._roundData[self._round].chain = 0
+  self._roundData[self._round].combo = 0
+  self._roundData[self._round].petbehitval = 0
+  self._roundData[self._round].petbehitcount = 0
+  self._roundData[self._round].linktime = 0
+  self._roundData[self._round].showtime = 0
+  self._roundData[self._round].roundstart = os.clock()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.OnRoundEnd = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local deltatime = (os.clock)() - ((self._roundData)[self._round]).roundstart
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._roundData)[self._round]).roundtime = deltatime
+function DataLogger:OnRoundEnd()
+  local deltatime = os.clock() - self._roundData[self._round].roundstart
+  self._roundData[self._round].roundtime = deltatime
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.OnLinkStart = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ((self._roundData)[self._round]).linkstart = (os.clock)()
+function DataLogger:OnLinkStart()
+  self._roundData[self._round].linkstart = os.clock()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.OnLinkEnd = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function DataLogger:OnLinkEnd()
   if self._round == 0 then
-    return 
+    return
   end
-  if not ((self._roundData)[self._round]).linkstart then
-    return 
+  if not self._roundData[self._round].linkstart then
+    return
   end
-  local deltatime = (os.clock)() - ((self._roundData)[self._round]).linkstart
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._roundData)[self._round]).linktime = deltatime
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._roundData)[self._round]).linkstart = nil
+  local deltatime = os.clock() - self._roundData[self._round].linkstart
+  self._roundData[self._round].linktime = deltatime
+  self._roundData[self._round].linkstart = nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.OnChainPath = function(self, chain, combo)
-  -- function num : 0_13 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ((self._roundData)[self._round]).chain = chain
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._roundData)[self._round]).combo = combo
+function DataLogger:OnChainPath(chain, combo)
+  self._roundData[self._round].chain = chain
+  self._roundData[self._round].combo = combo
   if self._isAuroraTime then
-    (table.insert)(self._auroraData, {chain = chain, combo = combo})
+    table.insert(self._auroraData, {chain = chain, combo = combo})
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.OnShowStart = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ((self._roundData)[self._round]).showstart = (os.clock)()
+function DataLogger:OnShowStart()
+  self._roundData[self._round].showstart = os.clock()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.OnShowEnd = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function DataLogger:OnShowEnd()
   if self._round == 0 then
-    return 
+    return
   end
-  if not ((self._roundData)[self._round]).showstart then
-    return 
+  if not self._roundData[self._round].showstart then
+    return
   end
-  local deltatime = (os.clock)() - ((self._roundData)[self._round]).showstart
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._roundData)[self._round]).showtime = ((self._roundData)[self._round]).showtime + deltatime
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._roundData)[self._round]).showstart = nil
+  local deltatime = os.clock() - self._roundData[self._round].showstart
+  self._roundData[self._round].showtime = self._roundData[self._round].showtime + deltatime
+  self._roundData[self._round].showstart = nil
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.OnAuroraStart = function(self)
-  -- function num : 0_16
+function DataLogger:OnAuroraStart()
   self._isAuroraTime = true
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.OnAuroraEnd = function(self)
-  -- function num : 0_17
+function DataLogger:OnAuroraEnd()
   self._isAuroraTime = false
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.OnNormalSkillEnd = function(self, petEntity, skillId, totalDamage)
-  -- function num : 0_18
-  local data = (self._roundData)[self._round]
+function DataLogger:OnNormalSkillEnd(petEntity, skillId, totalDamage)
+  local data = self._roundData[self._round]
   if not data.normalskill then
-    data.normalskill = {0, 0, 0, 0, 0}
+    data.normalskill = {
+      0,
+      0,
+      0,
+      0,
+      0
+    }
   end
-  local matchPet = (petEntity:MatchPet()):GetMatchPet()
+  local matchPet = petEntity:MatchPet():GetMatchPet()
   local slot = matchPet:GetTeamSlot()
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (data.normalskill)[slot] = (data.normalskill)[slot] + totalDamage
+  data.normalskill[slot] = data.normalskill[slot] + totalDamage
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.OnChainSkillEnd = function(self, petEntity, skillId, totalDamage)
-  -- function num : 0_19
-  local data = (self._roundData)[self._round]
+function DataLogger:OnChainSkillEnd(petEntity, skillId, totalDamage)
+  local data = self._roundData[self._round]
   if not data.chainskill then
-    data.chainskill = {0, 0, 0, 0, 0}
-    data.chainlevel = {0, 0, 0, 0, 0}
+    data.chainskill = {
+      0,
+      0,
+      0,
+      0,
+      0
+    }
+    data.chainlevel = {
+      0,
+      0,
+      0,
+      0,
+      0
+    }
   end
-  local matchPet = (petEntity:MatchPet()):GetMatchPet()
+  local matchPet = petEntity:MatchPet():GetMatchPet()
   local slot = matchPet:GetTeamSlot()
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (data.chainskill)[slot] = (data.chainskill)[slot] + totalDamage
-  local lv = (petEntity:SkillInfo()):GetChainSkillLevel(skillId)
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (data.chainlevel)[slot] = lv
+  data.chainskill[slot] = data.chainskill[slot] + totalDamage
+  local lv = petEntity:SkillInfo():GetChainSkillLevel(skillId)
+  data.chainlevel[slot] = lv
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.OnActiveSkillEnd = function(self, petEntity, skillId, totalDamage)
-  -- function num : 0_20
-  local data = (self._roundData)[self._round]
+function DataLogger:OnActiveSkillEnd(petEntity, skillId, totalDamage)
+  local data = self._roundData[self._round]
   if not data.activeskill then
     data.activeskill = {}
   end
-  local matchPet = (petEntity:MatchPet()):GetMatchPet()
+  local matchPet = petEntity:MatchPet():GetMatchPet()
   local slot = matchPet:GetTeamSlot()
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (data.activeskill)[slot] = ((data.activeskill)[slot] or 0) + totalDamage
+  data.activeskill[slot] = (data.activeskill[slot] or 0) + totalDamage
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.OnPetBehit = function(self, petEntity, totalDamage)
-  -- function num : 0_21
+function DataLogger:OnPetBehit(petEntity, totalDamage)
   if self._round == 0 then
-    return 
+    return
   end
-  local data = (self._roundData)[self._round]
+  local data = self._roundData[self._round]
   data.petbehitval = data.petbehitval + totalDamage
   data.petbehitcount = data.petbehitcount + 1
-  if self._maxPetBehitDamage < totalDamage then
+  if totalDamage > self._maxPetBehitDamage then
     self._maxPetBehitDamage = totalDamage
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.OnPetAddBlood = function(self, addValue, overflowValue)
-  -- function num : 0_22
+function DataLogger:OnPetAddBlood(addValue, overflowValue)
   if self._round == 0 then
-    return 
+    return
   end
   self._totalAddBlood = self._totalAddBlood + addValue
   self._overflowAddBlood = self._overflowAddBlood + overflowValue
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.OnSkillAddBlood = function(self, skillType, entity, addValue)
-  -- function num : 0_23 , upvalues : _ENV
+function DataLogger:OnSkillAddBlood(skillType, entity, addValue)
   if skillType == SkillType.Chain then
     self._chainSkillAddBlood = self._chainSkillAddBlood + addValue
-  else
-    if skillType == SkillType.Active then
-      self._activeSkillAddBlood = self._activeSkillAddBlood + addValue
-    end
+  elseif skillType == SkillType.Active then
+    self._activeSkillAddBlood = self._activeSkillAddBlood + addValue
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger.OnCancelAutoFight = function(self)
-  -- function num : 0_24
+function DataLogger:OnCancelAutoFight()
   self._alwaysAutoFight = 0
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger._Min = function(self, t, field)
-  -- function num : 0_25 , upvalues : _ENV
+function DataLogger:_Min(t, field)
   if #t == 0 then
     return 0
   end
   local min = 0
-  for i,v in ipairs(t) do
-    if v[field] < min then
+  for i, v in ipairs(t) do
+    if min > v[field] then
       min = v[field]
     end
   end
   return min
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger._Max = function(self, t, field)
-  -- function num : 0_26 , upvalues : _ENV
+function DataLogger:_Max(t, field)
   if #t == 0 then
     return 0
   end
   local max = 0
-  for i,v in ipairs(t) do
+  for i, v in ipairs(t) do
     if max < v[field] then
       max = v[field]
     end
@@ -879,61 +619,47 @@ DataLogger._Max = function(self, t, field)
   return max
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger._Sum = function(self, t, field)
-  -- function num : 0_27 , upvalues : _ENV
+function DataLogger:_Sum(t, field)
   if #t == 0 then
     return 0
   end
   local sum = 0
-  for i,v in ipairs(t) do
+  for i, v in ipairs(t) do
     sum = sum + v[field]
   end
   return sum
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger._Avg = function(self, t, field)
-  -- function num : 0_28 , upvalues : _ENV
+function DataLogger:_Avg(t, field)
   local n = #t
   if n == 0 then
     return 0
   end
   local sum = 0
-  for i,v in ipairs(t) do
+  for i, v in ipairs(t) do
     sum = sum + v[field]
   end
-  local avg = (sum) / n
+  local avg = sum / n
   return avg
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger._Var = function(self, t, field)
-  -- function num : 0_29 , upvalues : _ENV
+function DataLogger:_Var(t, field)
   local n = #t
   if n == 0 then
     return 0
   end
   local avg = self:_Avg(t, field)
   local sum = 0
-  for i,v in ipairs(t) do
-    sum = sum + v[field] - avg ^ 2
+  for i, v in ipairs(t) do
+    sum = sum + (v[field] - avg) ^ 2
   end
-  local var = (sum) / n
+  local var = sum / n
   return var
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-DataLogger._Std = function(self, t, field)
-  -- function num : 0_30 , upvalues : _ENV
+function DataLogger:_Std(t, field)
   if #t == 0 then
     return 0
   end
-  return (math.sqrt)(self:_Var(t, field))
+  return math.sqrt(self:_Var(t, field))
 end
-
-

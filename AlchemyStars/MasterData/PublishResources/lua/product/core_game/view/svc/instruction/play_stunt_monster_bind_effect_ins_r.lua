@@ -1,51 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_stunt_monster_bind_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayStuntMonsterBindEffectInstruction", BaseInstruction)
 PlayStuntMonsterBindEffectInstruction = PlayStuntMonsterBindEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayStuntMonsterBindEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayStuntMonsterBindEffectInstruction:Constructor(paramList)
   self._stuntTag = paramList.tag or "default"
   self._effectID = tonumber(paramList.effectID)
   self._scale = tonumber(paramList.scale) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayStuntMonsterBindEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayStuntMonsterBindEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if not casterEntity:HasStuntOwnerComponent() then
-    return 
+    return
   end
-  local e = (casterEntity:StuntOwnerComponent()):GetStuntByTag(self._stuntTag)
+  local e = casterEntity:StuntOwnerComponent():GetStuntByTag(self._stuntTag)
   if not e then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
-  local effect = (world:GetService("Effect")):CreateEffect(self._effectID, e)
+  local effect = world:GetService("Effect"):CreateEffect(self._effectID, e)
   if effect and self._scale ~= 1 then
     YIELD(TT)
-    local trajectoryObject = (effect:View()):GetGameObject()
+    local trajectoryObject = effect:View():GetGameObject()
     local transWork = trajectoryObject.transform
-    local scaleData = (Vector3.New)(self._scale, self._scale, self._scale)
+    local scaleData = Vector3.New(self._scale, self._scale, self._scale)
     local sequence = transWork:DOScale(scaleData, 0)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayStuntMonsterBindEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayStuntMonsterBindEffectInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

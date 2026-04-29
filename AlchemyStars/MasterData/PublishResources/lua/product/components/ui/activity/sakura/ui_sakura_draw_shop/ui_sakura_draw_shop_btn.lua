@@ -1,122 +1,77 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/sakura/ui_sakura_draw_shop/ui_sakura_draw_shop_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISakuraDrawShopBtn", UICustomWidget)
 UISakuraDrawShopBtn = UISakuraDrawShopBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISakuraDrawShopBtn._GetComponents = function(self)
-  -- function num : 0_0
+function UISakuraDrawShopBtn:_GetComponents()
   self._icon = self:GetUIComponent("RawImageLoader", "_icon")
   self._numText = self:GetUIComponent("UILocalizationText", "_numText")
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "_main")
   self._red = self:GetGameObject("_red")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopBtn.OnShow = function(self)
-  -- function num : 0_1
+function UISakuraDrawShopBtn:OnShow()
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopBtn.OnHide = function(self)
-  -- function num : 0_2
+function UISakuraDrawShopBtn:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopBtn.SetData = function(self, campaign, currencyId, redFlag, disableClick)
-  -- function num : 0_3 , upvalues : _ENV
+function UISakuraDrawShopBtn:SetData(campaign, currencyId, redFlag, disableClick)
   self._campaign = campaign
   self._redFlag = redFlag
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R5 in 'UnsetPending'
-
   if disableClick then
-    (self._canvasGroup).blocksRaycasts = false
+    self._canvasGroup.blocksRaycasts = false
   else
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._canvasGroup).blocksRaycasts = true
+    self._canvasGroup.blocksRaycasts = true
   end
   self:_AttachEvents()
   self._currencyId = currencyId
-  do
-    if not self._currencyId then
-      local shopCfg = (Cfg.cfg_activity_draw_shop_client)[(self._campaign)._id]
-      if shopCfg then
-        self._currencyId = shopCfg.CurrencyId
-      end
+  if not self._currencyId then
+    local shopCfg = Cfg.cfg_activity_draw_shop_client[self._campaign._id]
+    if shopCfg then
+      self._currencyId = shopCfg.CurrencyId
     end
-    local totalNum = (ClientCampaignDrawShop.GetMoney)(self._currencyId)
-    ;
-    (self._numText):SetText(totalNum)
-    ;
-    (self._icon):LoadImage((ClientCampaignDrawShop.GetCurrencyImageName)(self._currencyId))
-    self:_CheckActivityShopRedPoint()
   end
+  local totalNum = ClientCampaignDrawShop.GetMoney(self._currencyId)
+  self._numText:SetText(totalNum)
+  self._icon:LoadImage(ClientCampaignDrawShop.GetCurrencyImageName(self._currencyId))
+  self:_CheckActivityShopRedPoint()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopBtn.btnOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.info)("UISakuraDrawShopBtn:btnOnClick")
+function UISakuraDrawShopBtn:btnOnClick()
+  Log.info("UISakuraDrawShopBtn:btnOnClick")
   self:ShowDialog("UISakuraDrawShopController")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopBtn._AttachEvents = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISakuraDrawShopBtn:_AttachEvents()
   if self._redFlag then
     self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   end
   self:AttachEvent(GameEventType.ItemCountChanged, self._OnItemCountChanged)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopBtn._DetachEvents = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISakuraDrawShopBtn:_DetachEvents()
   if self._redFlag then
     self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   end
   self:DetachEvent(GameEventType.ItemCountChanged, self._OnItemCountChanged)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopBtn._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_7
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UISakuraDrawShopBtn:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:_CheckActivityShopRedPoint()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopBtn._OnItemCountChanged = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local totalNum = (ClientCampaignDrawShop.GetMoney)(self._currencyId)
-  ;
-  (self._numText):SetText(totalNum)
+function UISakuraDrawShopBtn:_OnItemCountChanged()
+  local totalNum = ClientCampaignDrawShop.GetMoney(self._currencyId)
+  self._numText:SetText(totalNum)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopBtn._CheckActivityShopRedPoint = function(self)
-  -- function num : 0_9
+function UISakuraDrawShopBtn:_CheckActivityShopRedPoint()
   if self._redFlag then
-    (self._red):SetActive(false)
-    return 
+  else
+    self._red:SetActive(false)
   end
+  return
 end
-
-

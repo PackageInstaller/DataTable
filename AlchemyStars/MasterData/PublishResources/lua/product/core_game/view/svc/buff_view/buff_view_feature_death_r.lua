@@ -1,34 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_feature_death_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewFeatureDeath", BuffViewBase)
 BuffViewFeatureDeath = BuffViewFeatureDeath
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewFeatureDeath.PlayView = function(self, TT)
-  -- function num : 0_0
+function BuffViewFeatureDeath:PlayView(TT)
   local entity = self._entity
   local result = self._buffResult
   if entity:HasMonsterID() then
-    local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
+    local sMonsterShowRender = self._world:GetService("MonsterShowRender")
     sMonsterShowRender:DoOneMonsterFeatureDead(TT, entity)
-  else
-    do
-      if entity:HasTrapID() then
-        local trapServiceRender = (self._world):GetService("TrapRender")
-        trapServiceRender:DestroyTrap(TT, entity)
-      end
-    end
+  elseif entity:HasTrapID() then
+    local trapServiceRender = self._world:GetService("TrapRender")
+    trapServiceRender:DestroyTrap(TT, entity)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewFeatureDeath.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewFeatureDeath:IsNotifyMatch(notify)
   return true
 end
-
-

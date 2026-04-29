@@ -1,57 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/wishing/raise/ui_build_raise_fish_wish_fish_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBuildRaiseFishWishFishItem", UICustomWidget)
 UIBuildRaiseFishWishFishItem = UIBuildRaiseFishWishFishItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBuildRaiseFishWishFishItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIBuildRaiseFishWishFishItem:OnShow(uiParams)
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._qualityLoader = self:GetUIComponent("RawImageLoader", "Quality")
   self._backGround = self:GetGameObject("BackGround")
   self._isEmpty = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishWishFishItem.Refresh = function(self, raiseFish, raiseFishData)
-  -- function num : 0_1
+function UIBuildRaiseFishWishFishItem:Refresh(raiseFish, raiseFishData)
   self._isEmpty = false
-  ;
-  (self._iconLoader):LoadImage(raiseFishData:GetIcon())
-  ;
-  (self._qualityLoader):LoadImage("n17_xxc_yangyu_kuang0" .. raiseFishData:GetColor())
+  self._iconLoader:LoadImage(raiseFishData:GetIcon())
+  self._qualityLoader:LoadImage("n17_xxc_yangyu_kuang0" .. raiseFishData:GetColor())
   self._raiseFishData = raiseFishData
   self._raiseFish = raiseFish
   self:ShowBackGround(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishWishFishItem.ShowBackGround = function(self, visible)
-  -- function num : 0_2
+function UIBuildRaiseFishWishFishItem:ShowBackGround(visible)
   if self._backGround then
-    (self._backGround):SetActive(visible)
+    self._backGround:SetActive(visible)
   end
-  ;
-  ((self._iconLoader).gameObject):SetActive(not visible)
-  ;
-  ((self._qualityLoader).gameObject):SetActive(not visible)
+  self._iconLoader.gameObject:SetActive(not visible)
+  self._qualityLoader.gameObject:SetActive(not visible)
   self._isEmpty = visible
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishWishFishItem.BtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIBuildRaiseFishWishFishItem:BtnOnClick(go)
   if self._isEmpty then
-    return 
+    return
   end
-  ;
-  (self._raiseFish):UnRaiseFish(self._raiseFishData)
+  self._raiseFish:UnRaiseFish(self._raiseFishData)
 end
-
-

@@ -1,65 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_pet_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionPetEnter", AirActionBase)
 AirActionPetEnter = AirActionPetEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionPetEnter.Constructor = function(self, pet, enterPos, delayTime)
-  -- function num : 0_0
+function AirActionPetEnter:Constructor(pet, enterPos, delayTime)
   self._pet = pet
   self._delayTime = delayTime
-  ;
-  (self._pet):SetPosition(enterPos)
-  ;
-  ((self._pet):GameObject()):SetActive(false)
+  self._pet:SetPosition(enterPos)
+  self._pet:GameObject():SetActive(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionPetEnter.Start = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function AirActionPetEnter:Start()
   if self._delayTime <= 0 then
-    ((self._pet):GameObject()):SetActive(true)
+    self._pet:GameObject():SetActive(true)
     self._running = false
   else
     self._curTime = 0
     self._running = true
-    ;
-    (self._pet):SetState(AirPetState.WaitForEnter)
+    self._pet:SetState(AirPetState.WaitForEnter)
   end
   self:LogStart()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionPetEnter.Update = function(self, deltaTimeMS)
-  -- function num : 0_2
+function AirActionPetEnter:Update(deltaTimeMS)
   if self._running then
     self._curTime = self._curTime + deltaTimeMS
-    if self._delayTime < self._curTime then
-      ((self._pet):GameObject()):SetActive(true)
+    if self._curTime > self._delayTime then
+      self._pet:GameObject():SetActive(true)
       self._running = false
       self:Stop()
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionPetEnter.IsOver = function(self)
-  -- function num : 0_3
+function AirActionPetEnter:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionPetEnter.Stop = function(self)
-  -- function num : 0_4
+function AirActionPetEnter:Stop()
   self._running = false
   self:LogStop()
 end
-
-

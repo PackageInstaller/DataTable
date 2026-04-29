@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_pet_1502151_render_jump_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayPet1502151RenderJumpInstruction", BaseInstruction)
 PlayPet1502151RenderJumpInstruction = PlayPet1502151RenderJumpInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayPet1502151RenderJumpInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayPet1502151RenderJumpInstruction:Constructor(paramList)
   self._casterAnim1 = paramList.casterAnim1
   self._casterAnim2 = paramList.casterAnim2
   self._casterAnim3 = paramList.casterAnim3
@@ -35,20 +28,17 @@ PlayPet1502151RenderJumpInstruction.Constructor = function(self, paramList)
   self._centerEffectDelayMs1 = tonumber(paramList.centerEffectDelayMs1)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPet1502151RenderJumpInstruction._CacheEff = function(self, t, effID, count)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayPet1502151RenderJumpInstruction:_CacheEff(t, effID, count)
   local cacheCount = count or 1
   if effID and effID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[effID]).ResPath, cacheCount})
+    table.insert(t, {
+      Cfg.cfg_effect[effID].ResPath,
+      cacheCount
+    })
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPet1502151RenderJumpInstruction.GetCacheResource = function(self)
-  -- function num : 0_2
+function PlayPet1502151RenderJumpInstruction:GetCacheResource()
   local t = {}
   self:_CacheEff(t, self._showHideEffectID1, 1)
   self:_CacheEff(t, self._showHideEffectID2, 1)
@@ -59,94 +49,77 @@ PlayPet1502151RenderJumpInstruction.GetCacheResource = function(self)
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPet1502151RenderJumpInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayPet1502151RenderJumpInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = ((casterEntity:SkillRoutine()):GetResultContainer())
-  local targetEntity, targetEntityID = nil, nil
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  local targetEntity, targetEntityID
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
-  if damageResultArray and #damageResultArray > 0 then
+  if damageResultArray and 0 < #damageResultArray then
     local damageIndex = 1
     local damageResult = damageResultArray[damageIndex]
     if damageResult then
       targetEntityID = damageResult:GetTargetID()
     end
   else
-    do
-      local forceMovementResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.ForceMovement)
-      if forceMovementResultArray and #forceMovementResultArray > 0 then
-        local forceMovementResult = forceMovementResultArray[1]
-        for _,moveResult in ipairs(forceMovementResult:GetMoveResult()) do
-          if moveResult.isMoved then
-            targetEntityID = moveResult.targetID
-          end
-        end
-      end
-      do
-        if targetEntityID then
-          targetEntity = world:GetEntityByID(targetEntityID)
-        end
-        local effectService = world:GetService("Effect")
-        local playSkillService = world:GetService("PlaySkill")
-        local playFinalAttack = playSkillService:GetFinalAttack(world, casterEntity, phaseContext)
-        local skillID = skillEffectResultContainer:GetSkillID()
-        local renderPickUpComponent = (casterEntity:RenderPickUpComponent())
-        local pickPos, pickDirPos = nil, nil
-        local scopeGridList = renderPickUpComponent:GetAllValidPickUpGridPos()
-        if scopeGridList and #scopeGridList == 2 then
-          pickPos = scopeGridList[1]
-          pickDirPos = scopeGridList[2]
-        else
-          return 
-        end
-        local showPos, showDir = self:CalcRoleShowPosAndDir(targetEntity, pickPos, pickDirPos)
-        local effectCenterPos = pickPos
-        local viewPosition = casterEntity:GetRenderGridPosition()
-        local viewDirection = casterEntity:GetRenderGridDirection()
-        local turnDir = effectCenterPos - viewPosition
-        casterEntity:SetDirection(turnDir)
-        local waitTaskList = {}
-        local roleAnimFlowTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._RoleAnimFlow, self, world, casterEntity)
-        ;
-        (table.insert)(waitTaskList, roleAnimFlowTaskID)
-        local roleEffectFlowTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._RoleEffectFlow, self, world, casterEntity)
-        ;
-        (table.insert)(waitTaskList, roleEffectFlowTaskID)
-        local effectFlowTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._EffectFlow, self, world, viewPosition, showPos)
-        ;
-        (table.insert)(waitTaskList, effectFlowTaskID)
-        local roleTeleportFlowTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._RoleTeleportFlow, self, world, casterEntity, viewPosition, turnDir, showPos, showDir)
-        ;
-        (table.insert)(waitTaskList, roleTeleportFlowTaskID)
-        local roleShowHideFlowTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._RoleShowHideFlow, self, world, casterEntity)
-        ;
-        (table.insert)(waitTaskList, roleShowHideFlowTaskID)
-        local centerEffectFlowTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._CenterEffectFlow, self, world, effectCenterPos)
-        ;
-        (table.insert)(waitTaskList, centerEffectFlowTaskID)
-        while #waitTaskList > 0 and not (TaskHelper:GetInstance()):IsAllTaskFinished(waitTaskList) do
-          YIELD(TT)
+    local forceMovementResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.ForceMovement)
+    if forceMovementResultArray and 0 < #forceMovementResultArray then
+      local forceMovementResult = forceMovementResultArray[1]
+      for _, moveResult in ipairs(forceMovementResult:GetMoveResult()) do
+        if moveResult.isMoved then
+          targetEntityID = moveResult.targetID
         end
       end
     end
   end
+  if targetEntityID then
+    targetEntity = world:GetEntityByID(targetEntityID)
+  end
+  local effectService = world:GetService("Effect")
+  local playSkillService = world:GetService("PlaySkill")
+  local playFinalAttack = playSkillService:GetFinalAttack(world, casterEntity, phaseContext)
+  local skillID = skillEffectResultContainer:GetSkillID()
+  local renderPickUpComponent = casterEntity:RenderPickUpComponent()
+  local pickPos, pickDirPos
+  local scopeGridList = renderPickUpComponent:GetAllValidPickUpGridPos()
+  if scopeGridList and #scopeGridList == 2 then
+    pickPos = scopeGridList[1]
+    pickDirPos = scopeGridList[2]
+  else
+    return
+  end
+  local showPos, showDir = self:CalcRoleShowPosAndDir(targetEntity, pickPos, pickDirPos)
+  local effectCenterPos = pickPos
+  local viewPosition = casterEntity:GetRenderGridPosition()
+  local viewDirection = casterEntity:GetRenderGridDirection()
+  local turnDir = effectCenterPos - viewPosition
+  casterEntity:SetDirection(turnDir)
+  local waitTaskList = {}
+  local roleAnimFlowTaskID = GameGlobal.TaskManager():CoreGameStartTask(self._RoleAnimFlow, self, world, casterEntity)
+  table.insert(waitTaskList, roleAnimFlowTaskID)
+  local roleEffectFlowTaskID = GameGlobal.TaskManager():CoreGameStartTask(self._RoleEffectFlow, self, world, casterEntity)
+  table.insert(waitTaskList, roleEffectFlowTaskID)
+  local effectFlowTaskID = GameGlobal.TaskManager():CoreGameStartTask(self._EffectFlow, self, world, viewPosition, showPos)
+  table.insert(waitTaskList, effectFlowTaskID)
+  local roleTeleportFlowTaskID = GameGlobal.TaskManager():CoreGameStartTask(self._RoleTeleportFlow, self, world, casterEntity, viewPosition, turnDir, showPos, showDir)
+  table.insert(waitTaskList, roleTeleportFlowTaskID)
+  local roleShowHideFlowTaskID = GameGlobal.TaskManager():CoreGameStartTask(self._RoleShowHideFlow, self, world, casterEntity)
+  table.insert(waitTaskList, roleShowHideFlowTaskID)
+  local centerEffectFlowTaskID = GameGlobal.TaskManager():CoreGameStartTask(self._CenterEffectFlow, self, world, effectCenterPos)
+  table.insert(waitTaskList, centerEffectFlowTaskID)
+  if 0 < #waitTaskList then
+    while not TaskHelper:GetInstance():IsAllTaskFinished(waitTaskList) do
+      YIELD(TT)
+    end
+  end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPet1502151RenderJumpInstruction._CenterEffectFlow = function(self, TT, world, effectCenterPos)
-  -- function num : 0_4 , upvalues : _ENV
+function PlayPet1502151RenderJumpInstruction:_CenterEffectFlow(TT, world, effectCenterPos)
   local effectService = world:GetService("Effect")
   YIELD(TT, self._centerEffectDelayMs1)
   effectService:CreateWorldPositionEffect(self._centerEffectID, effectCenterPos, true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPet1502151RenderJumpInstruction._EffectFlow = function(self, TT, world, startPos, showPos)
-  -- function num : 0_5 , upvalues : _ENV
+function PlayPet1502151RenderJumpInstruction:_EffectFlow(TT, world, startPos, showPos)
   local effectService = world:GetService("Effect")
   YIELD(TT, self._effectDelayMs1)
   effectService:CreateWorldPositionEffect(self._showHideEffectID1, startPos, true)
@@ -158,43 +131,37 @@ PlayPet1502151RenderJumpInstruction._EffectFlow = function(self, TT, world, star
   effectService:CreateWorldPositionEffect(self._showHideEffectID4, startPos, true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPet1502151RenderJumpInstruction._RoleAnimFlow = function(self, TT, world, casterEntity)
-  -- function num : 0_6 , upvalues : _ENV
+function PlayPet1502151RenderJumpInstruction:_RoleAnimFlow(TT, world, casterEntity)
   if self._casterAnimDelayMs1 and self._casterAnimDelayMs1 > 0 then
     YIELD(TT, self._casterAnimDelayMs1)
   end
-  casterEntity:SetAnimatorControllerTriggers({self._casterAnim1})
+  casterEntity:SetAnimatorControllerTriggers({
+    self._casterAnim1
+  })
   YIELD(TT, self._casterAnimDelayMs2)
-  casterEntity:SetAnimatorControllerTriggers({self._casterAnim2})
+  casterEntity:SetAnimatorControllerTriggers({
+    self._casterAnim2
+  })
   YIELD(TT, self._casterAnimDelayMs3)
-  casterEntity:SetAnimatorControllerTriggers({self._casterAnim3})
+  casterEntity:SetAnimatorControllerTriggers({
+    self._casterAnim3
+  })
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPet1502151RenderJumpInstruction._RoleEffectFlow = function(self, TT, world, casterEntity)
-  -- function num : 0_7 , upvalues : _ENV
+function PlayPet1502151RenderJumpInstruction:_RoleEffectFlow(TT, world, casterEntity)
   local effectService = world:GetService("Effect")
   YIELD(TT, self._casterEffectDelayMs1)
   effectService:CreateEffect(self._casterEffectID1, casterEntity)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPet1502151RenderJumpInstruction._RoleTeleportFlow = function(self, TT, world, casterEntity, startPos, startDir, showPos, showDir)
-  -- function num : 0_8 , upvalues : _ENV
+function PlayPet1502151RenderJumpInstruction:_RoleTeleportFlow(TT, world, casterEntity, startPos, startDir, showPos, showDir)
   YIELD(TT, self._casterTeleportDelayMs1)
   casterEntity:SetLocation(showPos, showDir)
   YIELD(TT, self._casterTeleportDelayMs2)
   casterEntity:SetLocation(startPos, startDir)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPet1502151RenderJumpInstruction._RoleShowHideFlow = function(self, TT, world, casterEntity)
-  -- function num : 0_9 , upvalues : _ENV
+function PlayPet1502151RenderJumpInstruction:_RoleShowHideFlow(TT, world, casterEntity)
   YIELD(TT, self._casterShowHideDelay1)
   casterEntity:SetViewVisible(false)
   YIELD(TT, self._casterShowHideDelay2)
@@ -205,81 +172,61 @@ PlayPet1502151RenderJumpInstruction._RoleShowHideFlow = function(self, TT, world
   casterEntity:SetViewVisible(true)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPet1502151RenderJumpInstruction.CalcRoleShowPosAndDir = function(self, targetEntity, pickPos, dirPos)
-  -- function num : 0_10 , upvalues : _ENV
-  local showPos, showDir = nil, nil
+function PlayPet1502151RenderJumpInstruction:CalcRoleShowPosAndDir(targetEntity, pickPos, dirPos)
+  local showPos, showDir
   if targetEntity then
     local v2Dir, maxStep = self:_ReCalcMoveDirByTargetAndPick(targetEntity, pickPos, dirPos, 1, true)
     showPos = pickPos + v2Dir
     showDir = v2Dir * -1
   else
-    do
-      showPos = pickPos + Vector2(-1, 0)
-      showDir = Vector2(1, 0)
-      return showPos, showDir
-    end
+    showPos = pickPos + Vector2(-1, 0)
+    showDir = Vector2(1, 0)
   end
+  return showPos, showDir
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPet1502151RenderJumpInstruction._ReCalcMoveDirByTargetAndPick = function(self, targetEntity, pickPos, dirPos, defaultStep, isCalcStepByPick)
-  -- function num : 0_11 , upvalues : _ENV
-  local dir = nil
+function PlayPet1502151RenderJumpInstruction:_ReCalcMoveDirByTargetAndPick(targetEntity, pickPos, dirPos, defaultStep, isCalcStepByPick)
+  local dir
   local step = defaultStep
   local targetPos = targetEntity:GetRenderGridPosition()
-  local bodyArea = (targetEntity:BodyArea()):GetArea()
+  local bodyArea = targetEntity:BodyArea():GetArea()
   if bodyArea then
     if #bodyArea == 1 then
       dir = dirPos - pickPos
-      step = (math.abs)(dir.x) + (math.abs)(dir.y)
+      step = math.abs(dir.x) + math.abs(dir.y)
       if dir.x > 0 then
         dir.x = 1
-      else
-        if dir.x < 0 then
-          dir.x = -1
-        end
+      elseif dir.x < 0 then
+        dir.x = -1
       end
       if dir.y > 0 then
         dir.y = 1
-      else
-        if dir.y < 0 then
-          dir.y = -1
-        end
+      elseif dir.y < 0 then
+        dir.y = -1
       end
     else
-      local upMaxY, downMinY, rightMaxX, leftMinX = nil, nil, nil, nil
-      for index,off in ipairs(bodyArea) do
+      local upMaxY, downMinY, rightMaxX, leftMinX
+      for index, off in ipairs(bodyArea) do
         local bodyPos = targetPos + off
         if not upMaxY then
           upMaxY = bodyPos.y
-        else
-          if upMaxY < bodyPos.y then
-            upMaxY = bodyPos.y
-          end
+        elseif upMaxY < bodyPos.y then
+          upMaxY = bodyPos.y
         end
         if not downMinY then
           downMinY = bodyPos.y
-        else
-          if bodyPos.y < downMinY then
-            downMinY = bodyPos.y
-          end
+        elseif downMinY > bodyPos.y then
+          downMinY = bodyPos.y
         end
         if not rightMaxX then
           rightMaxX = bodyPos.x
-        else
-          if rightMaxX < bodyPos.x then
-            rightMaxX = bodyPos.x
-          end
+        elseif rightMaxX < bodyPos.x then
+          rightMaxX = bodyPos.x
         end
         if not leftMinX then
           leftMinX = bodyPos.x
-        else
-          if bodyPos.x < leftMinX then
-            leftMinX = bodyPos.x
-          end
+        elseif leftMinX > bodyPos.x then
+          leftMinX = bodyPos.x
         end
       end
       if upMaxY < dirPos.y then
@@ -287,48 +234,34 @@ PlayPet1502151RenderJumpInstruction._ReCalcMoveDirByTargetAndPick = function(sel
         if isCalcStepByPick then
           step = dirPos.y - upMaxY
         end
-      else
-        if dirPos.y < downMinY then
-          dir = Vector2.down
-          if isCalcStepByPick then
-            step = downMinY - dirPos.y
-          end
-        else
-          if rightMaxX < dirPos.x then
-            dir = Vector2.right
-            if isCalcStepByPick then
-              step = dirPos.x - rightMaxX
-            end
-          else
-            if dirPos.x < leftMinX then
-              dir = Vector2.left
-              if isCalcStepByPick then
-                step = leftMinX - dirPos.x
-              end
-            end
-          end
+      elseif downMinY > dirPos.y then
+        dir = Vector2.down
+        if isCalcStepByPick then
+          step = downMinY - dirPos.y
+        end
+      elseif rightMaxX < dirPos.x then
+        dir = Vector2.right
+        if isCalcStepByPick then
+          step = dirPos.x - rightMaxX
+        end
+      elseif leftMinX > dirPos.x then
+        dir = Vector2.left
+        if isCalcStepByPick then
+          step = leftMinX - dirPos.x
         end
       end
     end
   end
-  do
-    if dir.x > 0 then
-      dir.x = 1
-    else
-      if dir.x < 0 then
-        dir.x = -1
-      end
-    end
-    if dir.y > 0 then
-      dir.y = 1
-    else
-      if dir.y < 0 then
-        dir.y = -1
-      end
-    end
-    dir = dir * -1
-    return dir, step
+  if dir.x > 0 then
+    dir.x = 1
+  elseif dir.x < 0 then
+    dir.x = -1
   end
+  if dir.y > 0 then
+    dir.y = 1
+  elseif dir.y < 0 then
+    dir.y = -1
+  end
+  dir = dir * -1
+  return dir, step
 end
-
-

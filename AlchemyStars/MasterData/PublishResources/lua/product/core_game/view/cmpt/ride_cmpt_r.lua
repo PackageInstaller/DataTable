@@ -1,71 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/ride_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RideRenderComponent", Object)
 RideRenderComponent = RideRenderComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RideRenderComponent.Constructor = function(self, riderID, mountID)
-  -- function num : 0_0
+function RideRenderComponent:Constructor(riderID, mountID)
   self._riderID = riderID
   self._mountID = mountID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RideRenderComponent.GetRiderID = function(self)
-  -- function num : 0_1
+function RideRenderComponent:GetRiderID()
   return self._riderID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RideRenderComponent.GetMountID = function(self)
-  -- function num : 0_2
+function RideRenderComponent:GetMountID()
   return self._mountID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RideRender = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).RideRender)
+function Entity:RideRender()
+  return self:GetComponent(self.WEComponentsEnum.RideRender)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasRideRender = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).RideRender)
+function Entity:HasRideRender()
+  return self:HasComponent(self.WEComponentsEnum.RideRender)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddRideRender = function(self, riderID, mountID)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RideRender
+function Entity:AddRideRender(riderID, mountID)
+  local index = self.WEComponentsEnum.RideRender
   local component = RideComponent:New(riderID, mountID)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceRideRender = function(self, riderID, mountID)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RideRender
+function Entity:ReplaceRideRender(riderID, mountID)
+  local index = self.WEComponentsEnum.RideRender
   local component = RideRenderComponent:New(riderID, mountID)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveRideRender = function(self)
-  -- function num : 0_7
+function Entity:RemoveRideRender()
   if self:HasRideRender() then
-    self:RemoveComponent((self.WEComponentsEnum).RideRender)
+    self:RemoveComponent(self.WEComponentsEnum.RideRender)
   end
 end
-
-

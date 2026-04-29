@@ -1,126 +1,86 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/indulge/ui_indulge_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIIndulgeModule", UIModule)
 UIIndulgeModule = UIIndulgeModule
 local eCode = 100
--- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
 
-UIIndulgeModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIIndulgeModule:Constructor()
   self._modal = false
   self._Module = self:GetModule(IndulgeModule)
   self:AttachEvent(GameEventType.IndulgeDataEvent, self.HandleData)
   self:AttachEvent(GameEventType.SwitchUIStateFinish, self.UIHandle)
-  self._NoticeRetEvent = function(ret)
-    -- function num : 0_0_0 , upvalues : self
+  
+  function self._NoticeRetEvent(ret)
     self:NoticeRetEvent(ret)
   end
-
-  ;
-  (SDKProxy:GetInstance()):WebViewRetEvent(self._NoticeRetEvent, true)
+  
+  SDKProxy:GetInstance():WebViewRetEvent(self._NoticeRetEvent, true)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-UIIndulgeModule.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (SDKProxy:GetInstance()):WebViewRetEvent(self._NoticeRetEvent, false)
+function UIIndulgeModule:Dispose()
+  SDKProxy:GetInstance():WebViewRetEvent(self._NoticeRetEvent, false)
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-UIIndulgeModule.NoticeRetEvent = function(self, ret)
-  -- function num : 0_2 , upvalues : _ENV, eCode
-  ;
-  (Log.debug)("[indulge] ", "NoticeRetEvent type:", ret.MsgType, ", modal", self._modal and "true" or "false")
+function UIIndulgeModule:NoticeRetEvent(ret)
+  Log.debug("[indulge] ", "NoticeRetEvent type:", ret.MsgType, ", modal", self._modal and "true" or "false")
   if self._modal == false then
-    return 
+    return
   end
   self._modal = false
   if ret.MsgType ~= eCode then
-    return 
+    return
   end
-  if ((GameGlobal.UIStateManager)()):CurUIStateType() == UIStateType.LoginEmpty then
-    ((GameGlobal.GameLogic)()):BackToLogin(false, LoginModule, "player logout", false)
+  if GameGlobal.UIStateManager():CurUIStateType() == UIStateType.LoginEmpty then
+  else
+    GameGlobal.GameLogic():BackToLogin(false, LoginModule, "player logout", false)
   end
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIIndulgeModule.HandleData = function(self)
-  -- function num : 0_3
+function UIIndulgeModule:HandleData()
   self:ShowUI()
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIIndulgeModule.UIHandle = function(self, uiStateType)
-  -- function num : 0_4
+function UIIndulgeModule:UIHandle(uiStateType)
   self:ShowUI()
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIIndulgeModule.ShowUI = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if self._Module == nil or (self._Module):IsIndulge() == false then
-    return 
+function UIIndulgeModule:ShowUI()
+  if self._Module == nil or self._Module:IsIndulge() == false then
+    return
   end
-  local curUIState = ((GameGlobal.UIStateManager)()):CurUIStateType()
+  local curUIState = GameGlobal.UIStateManager():CurUIStateType()
   if curUIState == UIStateType.BattleLoading or curUIState == UIStateType.UIBattle then
-    return 
+    return
   end
-  local info = (self._Module):GetAndClearInfo()
+  local info = self._Module:GetAndClearInfo()
   if info == nil then
-    return 
+    return
   end
   self._modal = false
-  ;
-  (Log.debug)("[indulge] ", "indulge type:", info.type, ", title:", info.title, ", msg:", info.msg, ", url:", info.url)
+  Log.debug("[indulge] ", "indulge type:", info.type, ", title:", info.title, ", msg:", info.msg, ", url:", info.url)
   if info.type == IndulgeRes.Tips then
     self:HandleTips(info)
+  elseif info.type == IndulgeRes.Logout then
+    self:HandleLogout(info)
+  elseif info.type == IndulgeRes.OpenUrl then
+    self._modal = info.modal == 1 and true or false
+    self:HandleOpenUrl(info)
   else
-    if info.type == IndulgeRes.Logout then
-      self:HandleLogout(info)
+    Log.error("UIIndulgeModule type error")
+  end
+end
+
+function UIIndulgeModule:HandleTips(info)
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, info.title, info.msg)
+end
+
+function UIIndulgeModule:HandleLogout(info)
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, info.title, info.msg, function()
+    if GameGlobal.UIStateManager():CurUIStateType() == UIStateType.LoginEmpty then
     else
-      if info.modal ~= 1 or not true then
-        self._modal = info.type ~= IndulgeRes.OpenUrl or false
-        self:HandleOpenUrl(info)
-        ;
-        (Log.error)("UIIndulgeModule type error")
-      end
+      GameGlobal.GameLogic():BackToLogin(false, LoginModule, "player logout", false)
     end
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIIndulgeModule.HandleTips = function(self, info)
-  -- function num : 0_6 , upvalues : _ENV
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, info.title, info.msg)
+function UIIndulgeModule:HandleOpenUrl(info)
+  SDKProxy:GetInstance():OpenUrl(info.url)
 end
-
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIIndulgeModule.HandleLogout = function(self, info)
-  -- function num : 0_7 , upvalues : _ENV
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, info.title, info.msg, function()
-    -- function num : 0_7_0 , upvalues : _ENV
-    if ((GameGlobal.UIStateManager)()):CurUIStateType() == UIStateType.LoginEmpty then
-      ((GameGlobal.GameLogic)()):BackToLogin(false, LoginModule, "player logout", false)
-    end
-  end
-)
-end
-
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIIndulgeModule.HandleOpenUrl = function(self, info)
-  -- function num : 0_8 , upvalues : _ENV
-  (SDKProxy:GetInstance()):OpenUrl(info.url)
-end
-
-

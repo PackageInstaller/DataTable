@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_dark_screen_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayDarkScreenInstruction", BaseInstruction)
 PlayDarkScreenInstruction = PlayDarkScreenInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayDarkScreenInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayDarkScreenInstruction:Constructor(paramList)
   local param = tonumber(paramList.enable)
   if param == 1 then
     self._enable = true
@@ -18,13 +11,8 @@ PlayDarkScreenInstruction.Constructor = function(self, paramList)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDarkScreenInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayDarkScreenInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local mainCameraCmpt = world:MainCamera()
   mainCameraCmpt:EnableDarkCamera(self._enable)
 end
-
-

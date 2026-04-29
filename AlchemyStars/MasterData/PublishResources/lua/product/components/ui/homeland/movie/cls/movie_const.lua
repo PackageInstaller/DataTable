@@ -1,14 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/cls/movie_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local MoviePrepareTarget = {PT_Maker = 1, PT_Playback = 2}
 _enum("MoviePrepareTarget", MoviePrepareTarget)
-local MoviePrepareType = {PT_Scene = 1, PT_Furniture = 2, PT_Prop = 3, PT_Actor = 4, PT_Result = 5}
+local MoviePrepareType = {
+  PT_Scene = 1,
+  PT_Furniture = 2,
+  PT_Prop = 3,
+  PT_Actor = 4,
+  PT_Result = 5
+}
 _enum("MoviePrepareType", MoviePrepareType)
-local MoviePrepareItemType = {PIT_Select = 3, PIT_Item = 2, PIT_BackGroup = 4}
+local MoviePrepareItemType = {
+  PIT_Select = 3,
+  PIT_Item = 2,
+  PIT_BackGroup = 4
+}
 _enum("MoviePrepareItemType", MoviePrepareItemType)
 local ActorPageType = {Actor = 1, Item = 2}
 _enum("ActorPageType", ActorPageType)
-

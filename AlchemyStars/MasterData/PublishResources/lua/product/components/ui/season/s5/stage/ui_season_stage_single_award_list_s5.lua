@@ -1,76 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s5/stage/ui_season_stage_single_award_list_s5.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonStageSingleAwardListS5", UICustomWidget)
 UISeasonStageSingleAwardListS5 = UISeasonStageSingleAwardListS5
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonStageSingleAwardListS5.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonStageSingleAwardListS5:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageSingleAwardListS5.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonStageSingleAwardListS5:InitWidget()
   self._awardsGen = self:GetUIComponent("UISelectObjectPath", "Awards")
   self._bgImg = self:GetUIComponent("Image", "BgImg")
   self._atlas = self:GetAsset("UIS1Main.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageSingleAwardListS5.OnHide = function(self)
-  -- function num : 0_2
+function UISeasonStageSingleAwardListS5:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageSingleAwardListS5.SetData = function(self, awardList)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonStageSingleAwardListS5:SetData(awardList)
   self._awardList = awardList
-  local levelDiff = (self._awardList).levelDiff
+  local levelDiff = self._awardList.levelDiff
   if levelDiff then
-    local count = #self._awardList
-    ;
-    (self._awardsGen):SpawnObjects("UISeasonStageAwardItemS5", count)
-    local list = (self._awardsGen):GetAllSpawnList()
-    self._list = list
-    for i,v in ipairs(list) do
-      v:Flush((self._awardList)[i], levelDiff)
-    end
+  end
+  local count = #self._awardList
+  self._awardsGen:SpawnObjects("UISeasonStageAwardItemS5", count)
+  local list = self._awardsGen:GetAllSpawnList()
+  self._list = list
+  for i, v in ipairs(list) do
+    v:Flush(self._awardList[i], levelDiff)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageSingleAwardListS5.SetWaitAnim = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonStageSingleAwardListS5:SetWaitAnim()
   if self._list then
-    for index,awardCell in ipairs(self._list) do
+    for index, awardCell in ipairs(self._list) do
       awardCell:SetWaitAnim()
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageSingleAwardListS5.PlayAnim = function(self, totalAnimDelay)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonStageSingleAwardListS5:PlayAnim(totalAnimDelay)
   if self._list then
     local curCellDelay = 50
     if totalAnimDelay then
       curCellDelay = curCellDelay + totalAnimDelay
     end
     local eachItemDelay = 50
-    for index,awardCell in ipairs(self._list) do
+    for index, awardCell in ipairs(self._list) do
       awardCell:PlayAnim(curCellDelay)
       curCellDelay = curCellDelay + eachItemDelay
     end
   end
 end
-
-

@@ -1,40 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/login/ui_demo_prepare.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDemoPrepare", UIController)
 UIDemoPrepare = UIDemoPrepare
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDemoPrepare.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDemoPrepare:OnShow(uiParams)
   local txtWp = self:GetUIComponent("UILocalizationText", "txtChangeWeapon")
   local txtName1 = self:GetUIComponent("UILocalizationText", "name1")
-  txtName1:SetText((StringTable.Get)("str_pet_config_name_narcissus"))
+  txtName1:SetText(StringTable.Get("str_pet_config_name_narcissus"))
   local txtName2 = self:GetUIComponent("UILocalizationText", "name2")
-  txtName2:SetText((StringTable.Get)("str_pet_config_name_nord"))
+  txtName2:SetText(StringTable.Get("str_pet_config_name_nord"))
   local txtName3 = self:GetUIComponent("UILocalizationText", "name3")
-  txtName3:SetText((StringTable.Get)("str_pet_config_name_erato"))
+  txtName3:SetText(StringTable.Get("str_pet_config_name_erato"))
   local txtName4 = self:GetUIComponent("UILocalizationText", "name4")
-  txtName4:SetText((StringTable.Get)("str_pet_config_name_castor"))
+  txtName4:SetText(StringTable.Get("str_pet_config_name_castor"))
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDemoPrepare.BtnBackOnClick = function(self, go)
-  -- function num : 0_1
+function UIDemoPrepare:BtnBackOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDemoPrepare.BtnStartOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  local game = (GameGlobal.GetModule)(GameMatchModule)
+function UIDemoPrepare:BtnStartOnClick(go)
+  local game = GameGlobal.GetModule(GameMatchModule)
   local info = MissionCreateInfo:New()
   info.mission_id = 4000001
   game:StartMatch(MatchType.MT_Mission, 1, info)
 end
-
-

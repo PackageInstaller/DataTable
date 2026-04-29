@@ -1,114 +1,87 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/breed/ui_homeland_breed_preview.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local HomelandBreedPreviewType = {Mutation = 1, StateChg = 2}
 _enum("HomelandBreedPreviewType", HomelandBreedPreviewType)
 _class("UIHomelandBreedPreview", UIController)
 UIHomelandBreedPreview = UIHomelandBreedPreview
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-UIHomelandBreedPreview.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandBreedPreview:Constructor()
   self._items = nil
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedPreview.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : HomelandBreedPreviewType, _ENV
+function UIHomelandBreedPreview:OnShow(uiParams)
   self._previewType = uiParams[1]
   self._mainSeedData = uiParams[2]
   self._mutationSeedData = uiParams[3]
   self:_GetComponents()
   if self._previewType == HomelandBreedPreviewType.Mutation then
     self:_FlushMutationPreview()
+  elseif self._previewType == HomelandBreedPreviewType.StateChg then
+    self:_FlushStateChgPreview()
   else
-    if self._previewType == HomelandBreedPreviewType.StateChg then
-      self:_FlushStateChgPreview()
-    else
-      ;
-      (Log.error)("can\'t support Previewtype :" .. self._previewType)
-    end
+    Log.error("can't support Previewtype :" .. self._previewType)
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedPreview._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandBreedPreview:_GetComponents()
   self._scrollView = self:GetUIComponent("Image", "ScrollView")
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._txtTips = self:GetUIComponent("UILocalizationText", "TxtTips")
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedPreview._FlushMutationPreview = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._txtTips):SetText("")
+function UIHomelandBreedPreview:_FlushMutationPreview()
+  self._txtTips:SetText("")
   self._data = self:_MutationDataFilter()
-  ;
-  (table.sort)(self._data, function(a, b)
-    -- function num : 0_3_0 , upvalues : self
+  table.sort(self._data, function(a, b)
     local aProbability = self:GetProbability(a.cfg)
     local bProbability = self:GetProbability(b.cfg)
-    if bProbability >= aProbability then
-      do return aProbability == bProbability end
-      do return (b.cfg).ID < (a.cfg).ID end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    if aProbability ~= bProbability then
+      return aProbability > bProbability
     end
-  end
-)
-  local count = (table.count)(self._data)
+    return a.cfg.ID > b.cfg.ID
+  end)
+  local count = table.count(self._data)
   if count <= 0 then
-    (Log.error)("Homeland Breed Directive Cfg Error.")
-    return 
+    Log.error("Homeland Breed Directive Cfg Error.")
+    return
   end
-  ;
-  (self._content):SpawnObjects("UIHomelandBreedPreviewItem", count)
-  self._items = (self._content):GetAllSpawnList()
+  self._content:SpawnObjects("UIHomelandBreedPreviewItem", count)
+  self._items = self._content:GetAllSpawnList()
   for i = 1, count do
-    ((self._items)[i]):SetData(self._previewType, self._mainSeedData, (self._data)[i])
+    self._items[i]:SetData(self._previewType, self._mainSeedData, self._data[i])
   end
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedPreview.CloseBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIHomelandBreedPreview:CloseBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedPreview._MutationDataFilter = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfgMainSeed = (Cfg.cfg_item_tree_seed)[(self._mainSeedData).ID]
-  local cfgMainTree = (Cfg.cfg_item_tree_attribute)[cfgMainSeed.TreeId]
-  local cfgMutationSeed = (Cfg.cfg_item_tree_seed)[(self._mutationSeedData).ID]
-  local cfgMutationTree = (Cfg.cfg_item_tree_attribute)[cfgMutationSeed.TreeId]
-  local cfgTree = (Cfg.cfg_item_tree_attribute)({})
-  local rarityCfg = ((Cfg.cfg_homeland_rarity)({Species = cfgMainTree.Species, Rarity = cfgMainTree.Rarity}))
-  local advancedPro = nil
+function UIHomelandBreedPreview:_MutationDataFilter()
+  local cfgMainSeed = Cfg.cfg_item_tree_seed[self._mainSeedData.ID]
+  local cfgMainTree = Cfg.cfg_item_tree_attribute[cfgMainSeed.TreeId]
+  local cfgMutationSeed = Cfg.cfg_item_tree_seed[self._mutationSeedData.ID]
+  local cfgMutationTree = Cfg.cfg_item_tree_attribute[cfgMutationSeed.TreeId]
+  local cfgTree = Cfg.cfg_item_tree_attribute({})
+  local rarityCfg = Cfg.cfg_homeland_rarity({
+    Species = cfgMainTree.Species,
+    Rarity = cfgMainTree.Rarity
+  })
+  local advancedPro
   if rarityCfg and rarityCfg[1] then
-    advancedPro = (rarityCfg[1]).AdvancedPro
+    advancedPro = rarityCfg[1].AdvancedPro
   end
   local data = {}
-  for _,tree in pairs(cfgTree) do
-    if tree.Species == cfgMainTree.Species and (tree.Pedigree == cfgMainTree.Pedigree or tree.Pedigree == cfgMutationTree.Pedigree) and cfgMainTree.Rarity <= tree.Rarity and tree.IsMutation > 0 and (tree.Rarity ~= cfgMainTree.Rarity or tree.ID == cfgMainTree.ID or tree.ID == cfgMutationTree.ID or advancedPro) then
+  for _, tree in pairs(cfgTree) do
+    if not (tree.Species == cfgMainTree.Species and (tree.Pedigree == cfgMainTree.Pedigree or tree.Pedigree == cfgMutationTree.Pedigree) and tree.Rarity >= cfgMainTree.Rarity and tree.IsMutation > 0) or tree.Rarity == cfgMainTree.Rarity and tree.ID ~= cfgMainTree.ID and tree.ID ~= cfgMutationTree.ID then
+    elseif advancedPro then
       for i = 1, #advancedPro do
-        if (advancedPro[i])[1] == tree.Rarity and (advancedPro[i])[2] ~= 0 then
+        if advancedPro[i][1] == tree.Rarity and advancedPro[i][2] ~= 0 then
           local t = {}
           t.cfg = tree
-          t.getProbalilityFunc = function(cfg)
-    -- function num : 0_5_0 , upvalues : self
-    return self:GetProbability(cfg)
-  end
-
-          ;
-          (table.insert)(data, t)
+          
+          function t.getProbalilityFunc(cfg)
+            return self:GetProbability(cfg)
+          end
+          
+          table.insert(data, t)
         end
       end
     end
@@ -116,121 +89,96 @@ UIHomelandBreedPreview._MutationDataFilter = function(self)
   return data
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedPreview.GetProbability = function(self, cfg)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfgMainSeed = (Cfg.cfg_item_tree_seed)[(self._mainSeedData).ID]
-  local cfgMainTree = (Cfg.cfg_item_tree_attribute)[cfgMainSeed.TreeId]
-  local cfgMutationSeed = (Cfg.cfg_item_tree_seed)[(self._mutationSeedData).ID]
-  local cfgMutationTree = (Cfg.cfg_item_tree_attribute)[cfgMutationSeed.TreeId]
-  local rarityCfgs = (Cfg.cfg_homeland_rarity)({Species = cfgMainTree.Species, Rarity = cfgMainTree.Rarity})
+function UIHomelandBreedPreview:GetProbability(cfg)
+  local cfgMainSeed = Cfg.cfg_item_tree_seed[self._mainSeedData.ID]
+  local cfgMainTree = Cfg.cfg_item_tree_attribute[cfgMainSeed.TreeId]
+  local cfgMutationSeed = Cfg.cfg_item_tree_seed[self._mutationSeedData.ID]
+  local cfgMutationTree = Cfg.cfg_item_tree_attribute[cfgMutationSeed.TreeId]
+  local rarityCfgs = Cfg.cfg_homeland_rarity({
+    Species = cfgMainTree.Species,
+    Rarity = cfgMainTree.Rarity
+  })
   local rarityCfg = rarityCfgs[1]
   local rarity = cfg.Rarity
   local result = 0
   if cfg.ID == cfgMainTree.ID then
-    result = self:UIHomelandGetPro(rarity) * rarityCfg.MainSeedPro / 100
+    result = self:UIHomelandGetPro(rarity) * rarityCfg.MainSeedPro / 100.0
+  elseif cfg.ID == cfgMutationTree.ID then
+    result = self:UIHomelandGetPro(rarity) * (1.0 - rarityCfg.MainSeedPro / 100.0)
+  elseif cfgMainTree.Pedigree == cfgMutationTree.Pedigree then
+    result = self:UIHomelandGetPro(rarity) / self:UIHomelandGetRarityNum(rarity)
+  elseif cfg.Pedigree == cfgMainTree.Pedigree then
+    result = self:UIHomelandGetPro(rarity) / self:UIHomelandGetRarityNum(rarity) * rarityCfg.MainSeedPro / 100.0 * 2.0
   else
-    if cfg.ID == cfgMutationTree.ID then
-      result = self:UIHomelandGetPro(rarity) * (1 - rarityCfg.MainSeedPro / 100)
-    else
-      if cfgMainTree.Pedigree == cfgMutationTree.Pedigree then
-        result = self:UIHomelandGetPro(rarity) / self:UIHomelandGetRarityNum(rarity)
-      else
-        if cfg.Pedigree == cfgMainTree.Pedigree then
-          result = self:UIHomelandGetPro(rarity) / self:UIHomelandGetRarityNum(rarity) * rarityCfg.MainSeedPro / 100 * 2
-        else
-          result = self:UIHomelandGetPro(rarity) / self:UIHomelandGetRarityNum(rarity) * (1 - rarityCfg.MainSeedPro / 100) * 2
-        end
-      end
-    end
+    result = self:UIHomelandGetPro(rarity) / self:UIHomelandGetRarityNum(rarity) * (1.0 - rarityCfg.MainSeedPro / 100.0) * 2.0
   end
   return result
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedPreview.UIHomelandGetPro = function(self, ratity)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfgMainSeed = (Cfg.cfg_item_tree_seed)[(self._mainSeedData).ID]
-  local cfgMainTree = (Cfg.cfg_item_tree_attribute)[cfgMainSeed.TreeId]
-  local rarityCfg = ((Cfg.cfg_homeland_rarity)({Species = cfgMainTree.Species, Rarity = cfgMainTree.Rarity}))
-  local advancedPro = nil
+function UIHomelandBreedPreview:UIHomelandGetPro(ratity)
+  local cfgMainSeed = Cfg.cfg_item_tree_seed[self._mainSeedData.ID]
+  local cfgMainTree = Cfg.cfg_item_tree_attribute[cfgMainSeed.TreeId]
+  local rarityCfg = Cfg.cfg_homeland_rarity({
+    Species = cfgMainTree.Species,
+    Rarity = cfgMainTree.Rarity
+  })
+  local advancedPro
   if rarityCfg and rarityCfg[1] then
-    advancedPro = (rarityCfg[1]).AdvancedPro
+    advancedPro = rarityCfg[1].AdvancedPro
   end
   if advancedPro then
     for i = 1, #advancedPro do
-      if (advancedPro[i])[1] == ratity then
-        return (advancedPro[i])[2] / 100
+      if advancedPro[i][1] == ratity then
+        return advancedPro[i][2] / 100.0
       end
     end
   end
-  do
-    return 0
-  end
+  return 0
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedPreview.UIHomelandGetRarityNum = function(self, rarity)
-  -- function num : 0_8 , upvalues : _ENV
+function UIHomelandBreedPreview:UIHomelandGetRarityNum(rarity)
   local result = self:_MutationDataFilter()
   local num = 0
-  for _,tree in pairs(result) do
-    if (tree.cfg).Rarity == rarity then
+  for _, tree in pairs(result) do
+    if tree.cfg.Rarity == rarity then
       num = num + 1
     end
   end
   return num
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedPreview._FlushStateChgPreview = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self._txtTips):SetText((StringTable.Get)("str_homeland_breed_statechg_preview_tips2"))
+function UIHomelandBreedPreview:_FlushStateChgPreview()
+  self._txtTips:SetText(StringTable.Get("str_homeland_breed_statechg_preview_tips2"))
   self._data = self:_StateChgDataFilter()
-  ;
-  (table.sort)(self._data, function(a, b)
-    -- function num : 0_9_0
-    do return (b.cfg).ID < (a.cfg).ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  local count = (table.count)(self._data)
+  table.sort(self._data, function(a, b)
+    return a.cfg.ID > b.cfg.ID
+  end)
+  local count = table.count(self._data)
   if count <= 0 then
-    (Log.error)("Homeland Breed Attribute preview Cfg Error.")
-    return 
+    Log.error("Homeland Breed Attribute preview Cfg Error.")
+    return
   end
-  ;
-  (self._content):SpawnObjects("UIHomelandBreedPreviewItem", count)
-  self._items = (self._content):GetAllSpawnList()
+  self._content:SpawnObjects("UIHomelandBreedPreviewItem", count)
+  self._items = self._content:GetAllSpawnList()
   for i = 1, count do
-    ((self._items)[i]):SetData(self._previewType, self._mainSeedData, (self._data)[i])
+    self._items[i]:SetData(self._previewType, self._mainSeedData, self._data[i])
   end
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedPreview._StateChgDataFilter = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local cfgMainTree = (Cfg.cfg_item_tree_attribute)[(self._mainSeedData).ID]
+function UIHomelandBreedPreview:_StateChgDataFilter()
+  local cfgMainTree = Cfg.cfg_item_tree_attribute[self._mainSeedData.ID]
   local rarity = cfgMainTree.Rarity
   local species = cfgMainTree.Species
   local pedigree = cfgMainTree.Pedigree
   local serialNum = cfgMainTree.SerialNum
-  local cfgTrees = (Cfg.cfg_item_tree_attribute)({})
+  local cfgTrees = Cfg.cfg_item_tree_attribute({})
   local data = {}
-  for _,tree in pairs(cfgTrees) do
+  for _, tree in pairs(cfgTrees) do
     if tree.IsMutation == 1 and tree.SerialNum ~= serialNum and tree.Rarity == rarity and tree.Species == species and tree.Pedigree == pedigree then
       local t = {}
       t.cfg = tree
-      ;
-      (table.insert)(data, t)
+      table.insert(data, t)
     end
   end
   return data
 end
-
-

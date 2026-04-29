@@ -1,67 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cutscene_player_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CutscenePlayerComponent", Object)
 CutscenePlayerComponent = CutscenePlayerComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CutscenePlayerComponent.Constructor = function(self)
-  -- function num : 0_0
+function CutscenePlayerComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CutscenePlayerComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_1
+function CutscenePlayerComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutscenePlayerComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_2
+function CutscenePlayerComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.CutscenePlayer = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).CutscenePlayer)
+function Entity:CutscenePlayer()
+  return self:GetComponent(self.WEComponentsEnum.CutscenePlayer)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasCutscenePlayer = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).CutscenePlayer)
+function Entity:HasCutscenePlayer()
+  return self:HasComponent(self.WEComponentsEnum.CutscenePlayer)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddCutscenePlayer = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).CutscenePlayer
+function Entity:AddCutscenePlayer()
+  local index = self.WEComponentsEnum.CutscenePlayer
   local component = CutscenePlayerComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceCutscenePlayer = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).CutscenePlayer
+function Entity:ReplaceCutscenePlayer()
+  local index = self.WEComponentsEnum.CutscenePlayer
   local component = CutscenePlayerComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveCutscenePlayer = function(self)
-  -- function num : 0_7
+function Entity:RemoveCutscenePlayer()
   if self:HasCutscenePlayer() then
-    self:RemoveComponent((self.WEComponentsEnum).CutscenePlayer)
+    self:RemoveComponent(self.WEComponentsEnum.CutscenePlayer)
   end
 end
-
-

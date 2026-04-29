@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_face.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionFace", AirActionBase)
 AirActionFace = AirActionFace
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionFace.Constructor = function(self, pet, cfgID, waitTime, duration)
-  -- function num : 0_0 , upvalues : _ENV
+function AirActionFace:Constructor(pet, cfgID, waitTime, duration)
   self._pet = pet
   self._waitTime = waitTime
-  local cfg = (Cfg.cfg_aircraft_pet_face)[cfgID]
+  local cfg = Cfg.cfg_aircraft_pet_face[cfgID]
   if not cfg then
-    (Log.fatal)("###找不到配置表情配置：", cfgID)
-    return 
+    Log.fatal("###找不到配置表情配置：", cfgID)
+    return
   end
   self._faceSeq = {}
   self._faceIdx = 1
@@ -27,7 +20,7 @@ AirActionFace.Constructor = function(self, pet, cfgID, waitTime, duration)
   if duration then
     self._duration = duration
   end
-  for i,value in ipairs(cfg.FaceSeq) do
+  for i, value in ipairs(cfg.FaceSeq) do
     local face = {}
     face.frame = value[1]
     local time = value[2]
@@ -36,84 +29,70 @@ AirActionFace.Constructor = function(self, pet, cfgID, waitTime, duration)
     if not duration then
       self._duration = self._duration + time
     end
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R14 in 'UnsetPending'
-
-    ;
-    (self._faceSeq)[#self._faceSeq + 1] = face
+    self._faceSeq[#self._faceSeq + 1] = face
   end
-  do
-    if cfg.BubbleEffect then
-      local req = (ResourceManager:GetInstance()):SyncLoadAsset(cfg.BubbleEffect, LoadType.GameObject)
-      self._bubble = req.Obj
-      self._bubbleReq = req
-      self._cfgOffset = Vector3((cfg.BubbleOffset)[1], (cfg.BubbleOffset)[2], (cfg.BubbleOffset)[3])
-      if not duration then
-        if self._duration < cfg.Length then
-          self._duration = cfg.Length
-        end
-        self._bubbleDuration = cfg.Length
-      else
-        self._bubbleDuration = duration
+  if cfg.BubbleEffect then
+    local req = ResourceManager:GetInstance():SyncLoadAsset(cfg.BubbleEffect, LoadType.GameObject)
+    self._bubble = req.Obj
+    self._bubbleReq = req
+    self._cfgOffset = Vector3(cfg.BubbleOffset[1], cfg.BubbleOffset[2], cfg.BubbleOffset[3])
+    if not duration then
+      if self._duration < cfg.Length then
+        self._duration = cfg.Length
       end
-      self:_updateBubblePos()
+      self._bubbleDuration = cfg.Length
+    else
+      self._bubbleDuration = duration
     end
-    if self._waitTime then
-      self._duration = self._duration + self._waitTime
-    end
+    self:_updateBubblePos()
+  end
+  if self._waitTime then
+    self._duration = self._duration + self._waitTime
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionFace.Start = function(self)
-  -- function num : 0_1
+function AirActionFace:Start()
   if self._faceSeq == nil then
     self._running = false
-    return 
+    return
   end
-  self:_setFace(((self._faceSeq)[1]).frame)
+  self:_setFace(self._faceSeq[1].frame)
   self._curTime = 0
   self._running = true
   self._faceIdx = 1
   if self._bubble and not self._waitTime then
-    (self._bubble):SetActive(true)
+    self._bubble:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionFace.IsOver = function(self)
-  -- function num : 0_2
+function AirActionFace:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionFace.Update = function(self, deltaTimeMS)
-  -- function num : 0_3
+function AirActionFace:Update(deltaTimeMS)
   if self._running then
     self._curTime = self._curTime + deltaTimeMS
     if self._waitTime then
       if self._curTime < self._waitTime then
-        return 
+        return
       end
       self._waitTime = nil
       if self._bubble then
-        (self._bubble):SetActive(true)
+        self._bubble:SetActive(true)
       end
     end
-    if self._duration < self._curTime then
+    if self._curTime > self._duration then
       self:Stop()
     else
-      if self._faceIdx <= #self._faceSeq and ((self._faceSeq)[self._faceIdx]).time < self._curTime then
+      if self._faceIdx <= #self._faceSeq and self._curTime > self._faceSeq[self._faceIdx].time then
         self._faceIdx = self._faceIdx + 1
         if self._faceIdx <= #self._faceSeq then
-          self:_setFace(((self._faceSeq)[self._faceIdx]).frame)
+          self:_setFace(self._faceSeq[self._faceIdx].frame)
         end
       end
       if self._bubble then
-        if self._bubbleDuration < self._curTime then
-          (self._bubble):SetActive(false)
+        if self._curTime > self._bubbleDuration then
+          self._bubble:SetActive(false)
           self._bubble = nil
         else
           self:_updateBubblePos()
@@ -123,63 +102,40 @@ AirActionFace.Update = function(self, deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionFace.Stop = function(self)
-  -- function num : 0_4
+function AirActionFace:Stop()
   self._running = false
   self._curTime = 0
   self:Dispose()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionFace.Dispose = function(self)
-  -- function num : 0_5
+function AirActionFace:Dispose()
   if self._bubbleReq then
-    (self._bubbleReq):Dispose()
+    self._bubbleReq:Dispose()
     self._bubbleReq = nil
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionFace.GetPets = function(self)
-  -- function num : 0_6
-  return {self._pet}
+function AirActionFace:GetPets()
+  return {
+    self._pet
+  }
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionFace._setFace = function(self, frame)
-  -- function num : 0_7
-  local mat = (self._pet):GetFaceMat()
+function AirActionFace:_setFace(frame)
+  local mat = self._pet:GetFaceMat()
   if mat then
     mat:SetInt("_Frame", frame)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionFace._updateBubblePos = function(self)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ((self._bubble).transform).position = (self._pet):HeadPos() + self._cfgOffset
+function AirActionFace:_updateBubblePos()
+  self._bubble.transform.position = self._pet:HeadPos() + self._cfgOffset
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionFace.GetBubbleGameObject = function(self)
-  -- function num : 0_9
+function AirActionFace:GetBubbleGameObject()
   return self._bubble
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionFace.GetActionType = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function AirActionFace:GetActionType()
   return AircraftActionType.Face
 end
-
-

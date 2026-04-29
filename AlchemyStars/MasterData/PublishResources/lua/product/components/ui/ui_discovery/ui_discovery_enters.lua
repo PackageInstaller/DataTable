@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_enters.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiscoveryEnters", UICustomWidget)
 UIDiscoveryEnters = UIDiscoveryEnters
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiscoveryEnters.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDiscoveryEnters:Constructor()
   self._data = nil
   self._scaleMax = nil
   self._uiCanvasGroup = nil
   self._strLockBtnResEctypeOnClick = "btnResEctypeOnClick"
-  self._loginModule = (GameGlobal.GetModule)(LoginModule)
+  self._loginModule = GameGlobal.GetModule(LoginModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDiscoveryEnters:OnShow()
   self._animTime = 1
-  self._txtLockColor = Color(0.65490196078431, 0.65490196078431, 0.65490196078431, 1)
+  self._txtLockColor = Color(0.6549019607843137, 0.6549019607843137, 0.6549019607843137, 1)
   self._txtColor = Color(1, 1, 1, 1)
   self._atlas = self:GetAsset("UIDiscovery.spriteatlas", LoadType.SpriteAtlas)
   self._imgRedPetStory = self:GetGameObject("imgRedPetStory")
@@ -29,35 +19,24 @@ UIDiscoveryEnters.OnShow = function(self)
   self._towerRedPoint = self:GetGameObject("TowerRedPoint")
   self._eliminateRedPoint = self:GetGameObject("eliminateRedPoint")
   self._imgSailingRedPoint = self:GetGameObject("sailingRedPoint")
-  ;
-  (self._imgRedPetStory):SetActive(false)
-  ;
-  (self._imgRedWorldBoss):SetActive(false)
-  ;
-  (self._towerRedPoint):SetActive(false)
-  ;
-  (self._imgSailingRedPoint):SetActive(false)
-  ;
-  (self._eliminateRedPoint):SetActive(false)
+  self._imgRedPetStory:SetActive(false)
+  self._imgRedWorldBoss:SetActive(false)
+  self._towerRedPoint:SetActive(false)
+  self._imgSailingRedPoint:SetActive(false)
+  self._eliminateRedPoint:SetActive(false)
   self:ShowBtns()
   self:AttachEvent(GameEventType.CloseResInstance, self.CloseResInstance)
   self:AttachEvent(GameEventType.GuideUnLock, self.PlayUnlockAnim)
   self:AttachEvent(GameEventType.ModuleUnlocked, self.OnModuleUnlocked)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDiscoveryEnters:OnHide()
   self:UnLock(self._strLockBtnResEctypeOnClick)
   self:DetachEvent(GameEventType.CloseResInstance, self.CloseResInstance)
   self:DetachEvent(GameEventType.GuideUnLock, self.PlayUnlockAnim)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.Flush = function(self, data, scaleMax, uiCanvasGroup, latestCampObj)
-  -- function num : 0_3
+function UIDiscoveryEnters:Flush(data, scaleMax, uiCanvasGroup, latestCampObj)
   self._data = data
   self._scaleMax = scaleMax
   self._uiCanvasGroup = uiCanvasGroup
@@ -68,10 +47,7 @@ UIDiscoveryEnters.Flush = function(self, data, scaleMax, uiCanvasGroup, latestCa
   self:_CheckSailingMissionRed()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.ShowBtns = function(self)
-  -- function num : 0_4
+function UIDiscoveryEnters:ShowBtns()
   self._unLockData = {}
   self:ResBtn()
   self:MazeBtn()
@@ -82,10 +58,7 @@ UIDiscoveryEnters.ShowBtns = function(self)
   self:EliminateBtn()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.ResBtn = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIDiscoveryEnters:ResBtn()
   self._resImg = self:GetUIComponent("Image", "resImg")
   self._resTxt = self:GetUIComponent("UILocalizationText", "resTxt")
   local go = self:GetGameObject("resImgLock")
@@ -93,7 +66,7 @@ UIDiscoveryEnters.ResBtn = function(self)
   local tex = self._resTxt
   local data = UIDiscoveryEnterUnlockClsBase:New(GameModuleID.MD_ResDungeon, go, tex, img)
   local isLock = not data:IsUnlock()
-  local sprite, txtColor = nil, nil
+  local sprite, txtColor
   if isLock then
     sprite = "map_ditu_hei01"
     txtColor = self._txtLockColor
@@ -101,24 +74,12 @@ UIDiscoveryEnters.ResBtn = function(self)
     sprite = "map_ditu_icon4"
     txtColor = self._txtColor
   end
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._resImg).sprite = (self._atlas):GetSprite(sprite)
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._resTxt).color = txtColor
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._unLockData)[GameModuleID.MD_ResDungeon] = data
+  self._resImg.sprite = self._atlas:GetSprite(sprite)
+  self._resTxt.color = txtColor
+  self._unLockData[GameModuleID.MD_ResDungeon] = data
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.MazeBtn = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIDiscoveryEnters:MazeBtn()
   self._mazeImg = self:GetUIComponent("Image", "mazeImg")
   self._mazeTxt = self:GetUIComponent("UILocalizationText", "mazeTxt")
   local go = self:GetGameObject("mazeImgLock")
@@ -126,7 +87,7 @@ UIDiscoveryEnters.MazeBtn = function(self)
   local tex = self._mazeTxt
   local data = UIDiscoveryEnterUnlockClsBase:New(GameModuleID.MD_Maze, go, tex, img)
   local isLock = not data:IsUnlock()
-  local sprite, txtColor = nil, nil
+  local sprite, txtColor
   if isLock then
     sprite = "map_ditu_hei05"
     txtColor = self._txtLockColor
@@ -134,24 +95,12 @@ UIDiscoveryEnters.MazeBtn = function(self)
     sprite = "map_ditu_icon3"
     txtColor = self._txtColor
   end
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._mazeImg).sprite = (self._atlas):GetSprite(sprite)
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._mazeTxt).color = txtColor
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._unLockData)[GameModuleID.MD_Maze] = data
+  self._mazeImg.sprite = self._atlas:GetSprite(sprite)
+  self._mazeTxt.color = txtColor
+  self._unLockData[GameModuleID.MD_Maze] = data
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.ExtraBtn = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIDiscoveryEnters:ExtraBtn()
   self._extraImg = self:GetUIComponent("Image", "extraImg")
   self._extTxt = self:GetUIComponent("UILocalizationText", "extTxt")
   local go = self:GetGameObject("extraImgLock")
@@ -159,7 +108,7 @@ UIDiscoveryEnters.ExtraBtn = function(self)
   local tex = self._extTxt
   local data = UIDiscoveryEnterUnlockClsExtra:New(nil, go, tex, img)
   local isLock = not data:IsUnlock()
-  local sprite, txtColor = nil, nil
+  local sprite, txtColor
   if isLock then
     sprite = "map_ditu_hei07"
     txtColor = self._txtLockColor
@@ -167,28 +116,13 @@ UIDiscoveryEnters.ExtraBtn = function(self)
     sprite = "map_ditu_icon10"
     txtColor = self._txtColor
   end
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._extraImg).sprite = (self._atlas):GetSprite(sprite)
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._extTxt).color = txtColor
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._unLockData)[GameModuleID.MD_ExtMission] = data
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._unLockData)[GameModuleID.MD_CAMPAIGNREVIEW] = data
+  self._extraImg.sprite = self._atlas:GetSprite(sprite)
+  self._extTxt.color = txtColor
+  self._unLockData[GameModuleID.MD_ExtMission] = data
+  self._unLockData[GameModuleID.MD_CAMPAIGNREVIEW] = data
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.TowerBtn = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIDiscoveryEnters:TowerBtn()
   self._towerImg = self:GetUIComponent("Image", "towerImg")
   self._towerTxt = self:GetUIComponent("UILocalizationText", "towerTxt")
   local go = self:GetGameObject("towerImgLock")
@@ -199,7 +133,7 @@ UIDiscoveryEnters.TowerBtn = function(self)
   local showRedPoint = false
   local allQuests = questModule:GetQuestByQuestType(QuestType.QT_Tower)
   if allQuests then
-    for _,quest in pairs(allQuests) do
+    for _, quest in pairs(allQuests) do
       local questInfo = quest:QuestInfo()
       if questInfo.status == QuestStatus.QUEST_Completed then
         showRedPoint = true
@@ -207,85 +141,55 @@ UIDiscoveryEnters.TowerBtn = function(self)
       end
     end
   end
-  do
-    ;
-    (self._towerRedPoint):SetActive(showRedPoint)
-    local isLock = not data:IsUnlock()
-    local sprite, txtColor = nil, nil
-    if isLock then
-      sprite = "map_ditu_hei03"
-      txtColor = self._txtLockColor
-    else
-      sprite = "map_ditu_icon8"
-      txtColor = self._txtColor
-    end
-    -- DECOMPILER ERROR at PC71: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._towerImg).sprite = (self._atlas):GetSprite(sprite)
-    -- DECOMPILER ERROR at PC73: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._towerTxt).color = txtColor
-    -- DECOMPILER ERROR at PC77: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._unLockData)[GameModuleID.MD_Tower] = data
+  self._towerRedPoint:SetActive(showRedPoint)
+  local isLock = not data:IsUnlock()
+  local sprite, txtColor
+  if isLock then
+    sprite = "map_ditu_hei03"
+    txtColor = self._txtLockColor
+  else
+    sprite = "map_ditu_icon8"
+    txtColor = self._txtColor
   end
+  self._towerImg.sprite = self._atlas:GetSprite(sprite)
+  self._towerTxt.color = txtColor
+  self._unLockData[GameModuleID.MD_Tower] = data
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.WorldBtn = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIDiscoveryEnters:WorldBtn()
   self._worldImg = self:GetUIComponent("Image", "worldImg")
   self._worldTxt = self:GetUIComponent("UILocalizationText", "worldTxt")
   local worldBossModule = self:GetModule(WorldBossModule)
   local str = ""
   if not worldBossModule:AwardMultiOpen() or not isLock then
-    self._awardMulti = self:GetUIComponent("UILocalizationText", "AwardMulti")
-    ;
-    (self._awardMulti):SetText(str)
-    local go = self:GetGameObject("worldImgLock")
-    local img = self:GetUIComponent("Image", "worldImgLock")
-    local tex = self._worldTxt
-    local data = UIDiscoveryEnterUnlockClsBase:New(GameModuleID.MD_WorldBoss, go, tex, img)
-    local isLock = not data:IsUnlock()
-    local sprite, txtColor = nil, nil
-    if isLock then
-      sprite = "map_ditu_hei06"
-      txtColor = self._txtLockColor
-    else
-      sprite = "world_tiaozhan_icon7"
-      txtColor = self._txtColor
-    end
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._worldImg).sprite = (self._atlas):GetSprite(sprite)
-    -- DECOMPILER ERROR at PC64: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._worldTxt).color = txtColor
-    -- DECOMPILER ERROR at PC68: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._unLockData)[GameModuleID.MD_WorldBoss] = data
   end
+  self._awardMulti = self:GetUIComponent("UILocalizationText", "AwardMulti")
+  self._awardMulti:SetText(str)
+  local go = self:GetGameObject("worldImgLock")
+  local img = self:GetUIComponent("Image", "worldImgLock")
+  local tex = self._worldTxt
+  local data = UIDiscoveryEnterUnlockClsBase:New(GameModuleID.MD_WorldBoss, go, tex, img)
+  local isLock = not data:IsUnlock()
+  local sprite, txtColor
+  if isLock then
+    sprite = "map_ditu_hei06"
+    txtColor = self._txtLockColor
+  else
+    sprite = "world_tiaozhan_icon7"
+    txtColor = self._txtColor
+  end
+  self._worldImg.sprite = self._atlas:GetSprite(sprite)
+  self._worldTxt.color = txtColor
+  self._unLockData[GameModuleID.MD_WorldBoss] = data
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.SailingBtn = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIDiscoveryEnters:SailingBtn()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local unlock = roleModule:CheckModuleUnlock(GameModuleID.MD_SAILINGMISSION)
   local imgSailingTr = self:GetUIComponent("RectTransform", "sailingImg")
-  ;
-  (imgSailingTr.gameObject):SetActive(unlock)
+  imgSailingTr.gameObject:SetActive(unlock)
   local imgSailingLockTr = self:GetUIComponent("RectTransform", "sailingImgLock")
-  ;
-  (imgSailingLockTr.gameObject):SetActive(not unlock)
+  imgSailingLockTr.gameObject:SetActive(not unlock)
   local txtSailingTxt = self:GetUIComponent("UILocalizationText", "sailingTxt")
   if unlock then
     txtSailingTxt.color = self._txtColor
@@ -294,44 +198,31 @@ UIDiscoveryEnters.SailingBtn = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.btnPetStoryOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  local data = (self._unLockData)[GameModuleID.MD_ExtMission]
+function UIDiscoveryEnters:btnPetStoryOnClick(go)
+  local data = self._unLockData[GameModuleID.MD_ExtMission]
   if not data:IsUnlock() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_fanwaijuben_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_fanwaijuben_tips"))
+    return
   end
   self:SwitchState(UIStateType.UIExtraSelect)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.EliminateBtn = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIDiscoveryEnters:EliminateBtn()
   self._eliminateImg = self:GetUIComponent("Image", "eliminateImg")
-  local module = (GameGlobal.GetModule)(RoleModule)
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_ANIPOP)
-  local sprite, txtColor = nil, nil
+  local sprite, txtColor
   if isLock then
     sprite = "map_ditu_hei09"
     txtColor = self._txtLockColor
   else
-    ;
-    (self._eliminateRedPoint):SetActive((EliminateHelper.CheckAwardRed)())
+    self._eliminateRedPoint:SetActive(EliminateHelper.CheckAwardRed())
     sprite = "map_ditu_icon12"
     txtColor = self._txtColor
   end
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._eliminateImg).sprite = (self._atlas):GetSprite(sprite)
+  self._eliminateImg.sprite = self._atlas:GetSprite(sprite)
   self._eliminateTxt = self:GetUIComponent("UILocalizationText", "eliminateTxt")
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._eliminateTxt).color = txtColor
+  self._eliminateTxt.color = txtColor
   local go = self:GetGameObject("eliminateImgLock")
   local img = self:GetUIComponent("Image", "eliminateImgLock")
   local tex = self._eliminateTxt
@@ -339,289 +230,212 @@ UIDiscoveryEnters.EliminateBtn = function(self)
   data.go = go
   data.img = img
   data.tex = tex
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self._unLockData)[GameModuleID.MD_ANIPOP] = data
+  self._unLockData[GameModuleID.MD_ANIPOP] = data
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.btnFairyLandOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIDiscoveryClick", {"FairyLand"}, true)
-  local data = (self._unLockData)[GameModuleID.MD_Maze]
+function UIDiscoveryEnters:btnFairyLandOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("UIDiscoveryClick", {"FairyLand"}, true)
+  local data = self._unLockData[GameModuleID.MD_Maze]
   if not data:IsUnlock() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_mijingtansuo_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_mijingtansuo_tips"))
+    return
   end
   self:CloseUIStage()
   self:ShowDialog("UIMazeEnter")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.CloseUIStage = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  if ((GameGlobal.UIStateManager)()):IsShow("UIStage") then
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIStage")
+function UIDiscoveryEnters:CloseUIStage()
+  if GameGlobal.UIStateManager():IsShow("UIStage") then
+    GameGlobal.UIStateManager():CloseDialog("UIStage")
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.btnResEctypeOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIDiscoveryClick", {"ResEctype"}, true)
-  local data = (self._unLockData)[GameModuleID.MD_ResDungeon]
+function UIDiscoveryEnters:btnResEctypeOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("UIDiscoveryClick", {"ResEctype"}, true)
+  local data = self._unLockData[GameModuleID.MD_ResDungeon]
   if not data:IsUnlock() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_ziyuanben_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_ziyuanben_tips"))
+    return
   end
   self:CloseUIStage()
   self:StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : self, _ENV
     local resDungeonModule = self:GetModule(ResDungeonModule)
     local result = resDungeonModule:GetOpenStatus(TT)
     if result ~= {} then
       self:Lock(self._strLockBtnResEctypeOnClick)
       local duration = 0.5
-      self.openResScale = (self._data).mapScale
+      self.openResScale = self._data.mapScale
       self:TglShowHideOnClick()
-      ;
-      (self._uiCanvasGroup):DOFade(0, duration)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryCameraMove, Vector2(0, 0), 0.3, 0.394, function()
-      -- function num : 0_15_0_0
-    end
-, nil, true, true)
+      self._uiCanvasGroup:DOFade(0, duration)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryCameraMove, Vector2(0, 0), 0.3, 0.394, function()
+      end, nil, true, true)
       YIELD(TT, duration * 500)
       self:UnLock(self._strLockBtnResEctypeOnClick)
       self:ShowDialog("UIResEntryController")
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.TglShowHideOnClick = function(self)
-  -- function num : 0_16
+function UIDiscoveryEnters:TglShowHideOnClick()
   self:FlushRedExtMission()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.CloseResInstance = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._uiCanvasGroup).alpha = 1
-  local node = (self._data):GetCurPosNode()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryCameraMove, node.pos, 1, self.openResScale)
+function UIDiscoveryEnters:CloseResInstance()
+  self._uiCanvasGroup.alpha = 1
+  local node = self._data:GetCurPosNode()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryCameraMove, node.pos, 1, self.openResScale)
   self:TglShowHideOnClick()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.btnTowerOnClick = function(self, go)
-  -- function num : 0_18 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIDiscoveryClick", {"Tower"}, true)
-  local module = (GameGlobal.GetModule)(RoleModule)
-  local data = (self._unLockData)[GameModuleID.MD_Tower]
+function UIDiscoveryEnters:btnTowerOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("UIDiscoveryClick", {"Tower"}, true)
+  local module = GameGlobal.GetModule(RoleModule)
+  local data = self._unLockData[GameModuleID.MD_Tower]
   if not data:IsUnlock() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_jianta_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_jianta_tips"))
+    return
   end
   self:SwitchState(UIStateType.UITower)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.btnActivityEntryOnClick = function(self, go)
-  -- function num : 0_19
+function UIDiscoveryEnters:btnActivityEntryOnClick(go)
   if self._activityEntryFunc then
-    (self._activityEntryFunc)()
+    self._activityEntryFunc()
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.FlushRedExtMission = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIDiscoveryEnters:FlushRedExtMission()
   local petStoryModule = self:GetModule(ExtMissionModule)
   local awardRed = petStoryModule:UI_IsExtAwardRed()
   local newChapter = petStoryModule:UI_IsExtNewChapter()
   local isRedPetStory = newChapter or awardRed
-  local uiModule = (GameGlobal.GetUIModule)(CampaignModule)
+  local uiModule = GameGlobal.GetUIModule(CampaignModule)
   local reviewData = uiModule:GetReviewData()
-  local isRedReview = (reviewData:IsLocked() or not reviewData:HasCollectableItem()) and reviewData:HasUnlockableItem()
-  ;
-  (self._imgRedPetStory):SetActive(isRedPetStory or isRedReview)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  local isRedReview = not reviewData:IsLocked() and (reviewData:HasCollectableItem() or reviewData:HasUnlockableItem())
+  self._imgRedPetStory:SetActive(isRedPetStory or isRedReview)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters._CheckWorldBossRed = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIDiscoveryEnters:_CheckWorldBossRed()
   self:Lock("UIDiscoveryEnters:_CheckWorldBossRed")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._OnCheckWorldBossRed, self)
+  GameGlobal.TaskManager():StartTask(self._OnCheckWorldBossRed, self)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters._OnCheckWorldBossRed = function(self, TT)
-  -- function num : 0_22 , upvalues : _ENV
+function UIDiscoveryEnters:_OnCheckWorldBossRed(TT)
   local worldBossModule = self:GetModule(WorldBossModule)
   if worldBossModule:CurSeasonEnd() then
-    (self._imgRedWorldBoss):SetActive(false)
+    self._imgRedWorldBoss:SetActive(false)
     self:UnLock("UIDiscoveryEnters:_CheckWorldBossRed")
-    return 
+    return
   end
-  local missionId = (worldBossModule.m_world_boss_data).boss_mission_id
-  local recordMissionId = (LocalDB.GetInt)("UIWorldBossMissionId" .. (self._loginModule):GetRoleShowID(), 0)
+  local missionId = worldBossModule.m_world_boss_data.boss_mission_id
+  local recordMissionId = LocalDB.GetInt("UIWorldBossMissionId" .. self._loginModule:GetRoleShowID(), 0)
   local redPointData = worldBossModule:GetWorldBossRedPoint()
   local show = redPointData:MainLobbyHaveRedPoint()
   show = show or missionId ~= recordMissionId
-  if not show then
-    show = worldBossModule:QuestHaveRedPoint()
-  end
-  ;
-  (self._imgRedWorldBoss):SetActive(show)
+  show = show or worldBossModule:QuestHaveRedPoint()
+  self._imgRedWorldBoss:SetActive(show)
   self:UnLock("UIDiscoveryEnters:_CheckWorldBossRed")
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters._RefreshFunctionActive = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIDiscoveryEnters:_RefreshFunctionActive()
   local btn = self:GetGameObject("btnActivityEntry")
   btn:SetActive(false)
   if self._latestCampObj then
-    local sampleInfo = (self._latestCampObj):GetSampleInfo()
-    do
-      local campConfig = (Cfg.cfg_campaign)[sampleInfo.id]
-      if campConfig and campConfig.EntranceIcon2 then
-        self._activityEntryFunc = function()
-    -- function num : 0_23_0 , upvalues : _ENV, sampleInfo, self, campConfig
-    local campaign = UIActivityCampaign:New()
-    campaign._id = sampleInfo.id
-    ;
-    (UIActivityHelper.PlayFirstPlot_Campaign)(campaign, function()
-      -- function num : 0_23_0_0 , upvalues : self, sampleInfo, _ENV, campConfig
-      if self:_IsSwitchStateWithCutscene(sampleInfo.camp_type) then
-        (CutsceneManager.ExcuteCutsceneIn)(campConfig.MainUI, function()
-        -- function num : 0_23_0_0_0 , upvalues : self, campConfig
-        self:SwitchState(campConfig.MainUI, true)
-      end
-)
-      else
-        if self:_IsSwitchStateWithCacheRT(sampleInfo.camp_type) then
-          self:_GetRenderTexture(function(cache_rt)
-        -- function num : 0_23_0_0_1 , upvalues : self, campConfig
-        self:SwitchState(campConfig.MainUI, cache_rt, true)
-      end
-)
-        else
-          self:SwitchState(campConfig.MainUI, true)
-        end
-      end
-    end
-)
-  end
-
-        local img = self:GetUIComponent("RawImageLoader", "imgCampaign")
-        img:LoadImage(campConfig.EntranceIcon2)
-        local iconSize = campConfig.EntranceIcon2Size
-        do
-          do
-            if iconSize then
-              local layout = self:GetUIComponent("LayoutElement", "btnActivityEntry")
-              layout.preferredWidth = iconSize[1]
-              layout.preferredHeight = iconSize[2]
-              -- DECOMPILER ERROR at PC46: Confused about usage of register: R7 in 'UnsetPending'
-
-              ;
-              (img.transform).sizeDelta = Vector2(iconSize[3], iconSize[4])
-            end
-            btn:SetActive(true)
-            if not campConfig then
-              (Log.fatal)("[Campaign] can\'t find campaign config by id:", sampleInfo.id)
-            end
+    local sampleInfo = self._latestCampObj:GetSampleInfo()
+    local campConfig = Cfg.cfg_campaign[sampleInfo.id]
+    if campConfig and campConfig.EntranceIcon2 then
+      function self._activityEntryFunc()
+        local campaign = UIActivityCampaign:New()
+        
+        campaign._id = sampleInfo.id
+        UIActivityHelper.PlayFirstPlot_Campaign(campaign, function()
+          if self:_IsSwitchStateWithCutscene(sampleInfo.camp_type) then
+            CutsceneManager.ExcuteCutsceneIn(campConfig.MainUI, function()
+              self:SwitchState(campConfig.MainUI, true)
+            end)
+          elseif self:_IsSwitchStateWithCacheRT(sampleInfo.camp_type) then
+            self:_GetRenderTexture(function(cache_rt)
+              self:SwitchState(campConfig.MainUI, cache_rt, true)
+            end)
+          else
+            self:SwitchState(campConfig.MainUI, true)
           end
-        end
+        end)
       end
+      
+      local img = self:GetUIComponent("RawImageLoader", "imgCampaign")
+      img:LoadImage(campConfig.EntranceIcon2)
+      local iconSize = campConfig.EntranceIcon2Size
+      if iconSize then
+        local layout = self:GetUIComponent("LayoutElement", "btnActivityEntry")
+        layout.preferredWidth = iconSize[1]
+        layout.preferredHeight = iconSize[2]
+        img.transform.sizeDelta = Vector2(iconSize[3], iconSize[4])
+      end
+      btn:SetActive(true)
+    elseif not campConfig then
+      Log.fatal("[Campaign] can't find campaign config by id:", sampleInfo.id)
     end
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters._IsSwitchStateWithCacheRT = function(self, campType)
-  -- function num : 0_24 , upvalues : _ENV
-  local tb = {[ECampaignType.CAMPAIGN_TYPE_SUMMER_I] = true, [ECampaignType.CAMPAIGN_TYPE_N8] = true, [ECampaignType.CAMPAIGN_TYPE_N9] = true, [ECampaignType.CAMPAIGN_TYPE_N11] = true, [ECampaignType.CAMPAIGN_TYPE_N12] = true, [ECampaignType.CAMPAIGN_TYPE_N13] = true, [ECampaignType.CAMPAIGN_TYPE_N17] = true, [ECampaignType.CAMPAIGN_TYPE_N18] = true, [ECampaignType.CAMPAIGN_TYPE_INLAND_N12] = true, [ECampaignType.CAMPAIGN_TYPE_MAIN_MISSION] = true, [ECampaignType.CAMPAIGN_TYPE_N43] = true}
+function UIDiscoveryEnters:_IsSwitchStateWithCacheRT(campType)
+  local tb = {
+    [ECampaignType.CAMPAIGN_TYPE_SUMMER_I] = true,
+    [ECampaignType.CAMPAIGN_TYPE_N8] = true,
+    [ECampaignType.CAMPAIGN_TYPE_N9] = true,
+    [ECampaignType.CAMPAIGN_TYPE_N11] = true,
+    [ECampaignType.CAMPAIGN_TYPE_N12] = true,
+    [ECampaignType.CAMPAIGN_TYPE_N13] = true,
+    [ECampaignType.CAMPAIGN_TYPE_N17] = true,
+    [ECampaignType.CAMPAIGN_TYPE_N18] = true,
+    [ECampaignType.CAMPAIGN_TYPE_INLAND_N12] = true,
+    [ECampaignType.CAMPAIGN_TYPE_MAIN_MISSION] = true,
+    [ECampaignType.CAMPAIGN_TYPE_N43] = true
+  }
   return tb[campType]
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters._IsSwitchStateWithCutscene = function(self, campType)
-  -- function num : 0_25 , upvalues : _ENV
-  local tb = {[ECampaignType.CAMPAIGN_TYPE_N7] = true, [ECampaignType.CAMPAIGN_TYPE_N16] = true, [ECampaignType.CAMPAIGN_TYPE_N26] = true}
+function UIDiscoveryEnters:_IsSwitchStateWithCutscene(campType)
+  local tb = {
+    [ECampaignType.CAMPAIGN_TYPE_N7] = true,
+    [ECampaignType.CAMPAIGN_TYPE_N16] = true,
+    [ECampaignType.CAMPAIGN_TYPE_N26] = true
+  }
   return tb[campType]
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters._GetRenderTexture = function(self, callback)
-  -- function num : 0_26 , upvalues : _ENV
+function UIDiscoveryEnters:_GetRenderTexture(callback)
   local uiDiscovery = self:RootUIOwner()
   local shot = uiDiscovery._shot
-  shot.OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(uiDiscovery:GetName())
+  shot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(uiDiscovery:GetName())
   local rt = shot:RefreshBlurTexture()
-  local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
+  local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
   self:StartTask(function(TT)
-    -- function num : 0_26_0 , upvalues : _ENV, rt, cache_rt, callback
     YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cache_rt)
+    UnityEngine.Graphics.Blit(rt, cache_rt)
     if callback then
       callback(cache_rt)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.PlayUnlockAnim = function(self, functionId, type)
-  -- function num : 0_27 , upvalues : _ENV
-  local data = (self._unLockData)[functionId]
+function UIDiscoveryEnters:PlayUnlockAnim(functionId, type)
+  local data = self._unLockData[functionId]
   if data then
     if type == 0 then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.UnLock)
-    else
-      if data:IsUnlock() then
-        self:Lock("PlayUnLockAnim")
-        self:PlayViewUnlock(data, function()
-    -- function num : 0_27_0 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.UnLock)
-    self:UnLock("PlayUnLockAnim")
-  end
-)
-      end
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.UnLock)
+    elseif data:IsUnlock() then
+      self:Lock("PlayUnLockAnim")
+      self:PlayViewUnlock(data, function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.UnLock)
+        self:UnLock("PlayUnLockAnim")
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.PlayViewUnlock = function(self, data, endCallBack)
-  -- function num : 0_28 , upvalues : _ENV
+function UIDiscoveryEnters:PlayViewUnlock(data, endCallBack)
   local go = data:GameObject()
   local tex = data:Text()
   tex.color = self._txtLockColor
@@ -629,109 +443,78 @@ UIDiscoveryEnters.PlayViewUnlock = function(self, data, endCallBack)
   local img = data:Image()
   img.color = Color(1, 1, 1, 1)
   self:StartTask(function(TT)
-    -- function num : 0_28_0 , upvalues : _ENV, self, img, tex, go, endCallBack
-    if not ((GameGlobal.UIStateManager)()):IsShow("UIDiscoveryUnlock") then
+    if not GameGlobal.UIStateManager():IsShow("UIDiscoveryUnlock") then
       self:ShowDialog("UIDiscoveryUnlock")
     end
     YIELD(TT, UIConst.UIDiscoveryUnlockShowTime)
-    ;
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIDiscoveryUnlock")
+    GameGlobal.UIStateManager():CloseDialog("UIDiscoveryUnlock")
     img:DOColor(Color(1, 1, 1, 0), self._animTime)
-    ;
-    (tex:DOColor(self._txtColor, self._animTime)):OnComplete(function()
-      -- function num : 0_28_0_0 , upvalues : go, endCallBack
+    tex:DOColor(self._txtColor, self._animTime):OnComplete(function()
       go:SetActive(false)
       if endCallBack then
         endCallBack()
       end
-    end
-)
-  end
-, self)
+    end)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.OnModuleUnlocked = function(self, functionId)
-  -- function num : 0_29 , upvalues : _ENV
+function UIDiscoveryEnters:OnModuleUnlocked(functionId)
   if functionId == GameModuleID.MD_SAILINGMISSION then
     self:SailingBtn()
     self:_CheckSailingMissionRed()
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.btnWorldBossOnClick = function(self, go)
-  -- function num : 0_30 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIDiscoveryClick", {"WorldBoss"}, true)
-  local data = (self._unLockData)[GameModuleID.MD_WorldBoss]
+function UIDiscoveryEnters:btnWorldBossOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("UIDiscoveryClick", {"WorldBoss"}, true)
+  local data = self._unLockData[GameModuleID.MD_WorldBoss]
   if not data:IsUnlock() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_worldboss_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_worldboss_tips"))
+    return
   end
   self:_SwitchWorldBoss()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters._SwitchWorldBoss = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  local screenShot = (self:RootUIOwner()):GetScreenShotView()
-  screenShot.OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIDiscovery")
+function UIDiscoveryEnters:_SwitchWorldBoss()
+  local screenShot = self:RootUIOwner():GetScreenShotView()
+  screenShot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera("UIDiscovery")
   local rt = screenShot:RefreshBlurTexture()
-  local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-  cache_rt.format = (UnityEngine.RenderTextureFormat).RGB111110Float
+  local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+  cache_rt.format = UnityEngine.RenderTextureFormat.RGB111110Float
   self:StartTask(function(TT)
-    -- function num : 0_31_0 , upvalues : _ENV, rt, cache_rt, self
     YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cache_rt)
+    UnityEngine.Graphics.Blit(rt, cache_rt)
     self:SwitchState(UIStateType.UIWorldBoss, cache_rt)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters._CheckSailingMissionRed = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIDiscoveryEnters:_CheckSailingMissionRed()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   if not roleModule:CheckModuleUnlock(GameModuleID.MD_SAILINGMISSION) then
-    return 
+    return
   end
-  local fnChkRed = function()
-    -- function num : 0_32_0 , upvalues : self, _ENV
+  
+  local function fnChkRed()
     local sailingModule = self:GetModule(SailingMissionModule)
     local showRetPoint = sailingModule:IsShowRewardRedPoint()
-    local firstUnlock = (LocalDB.GetInt)(UISailing:EnterKey(), 0) == 0
-    ;
-    (self._imgSailingRedPoint):SetActive(showRetPoint or firstUnlock)
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+    local firstUnlock = LocalDB.GetInt(UISailing:EnterKey(), 0) == 0
+    self._imgSailingRedPoint:SetActive(showRetPoint or firstUnlock)
   end
-
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.HandleGetSailingMissionData, self, fnChkRed)
+  
+  GameGlobal.TaskManager():StartTask(self.HandleGetSailingMissionData, self, fnChkRed)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.btnSailingMissionOnClick = function(self, go)
-  -- function num : 0_33 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIDiscoveryEnters:btnSailingMissionOnClick(go)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   if not roleModule:CheckModuleUnlock(GameModuleID.MD_SAILINGMISSION) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_sailing_mission_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_sailing_mission_tips"))
+    return
   end
-  ;
-  (LocalDB.SetInt)(UISailing:EnterKey(), 1)
+  LocalDB.SetInt(UISailing:EnterKey(), 1)
   self:SwitchState(UIStateType.UISailingMain)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.HandleGetSailingMissionData = function(self, TT, callback)
-  -- function num : 0_34 , upvalues : _ENV
+function UIDiscoveryEnters:HandleGetSailingMissionData(TT, callback)
   self:Lock("UISailing_GetSailingMissionData")
   local sailingModule = self:GetModule(SailingMissionModule)
   local asyncRes = sailingModule:HandleGetSailingMissionData(TT)
@@ -742,17 +525,12 @@ UIDiscoveryEnters.HandleGetSailingMissionData = function(self, TT, callback)
   self:UnLock("UISailing_GetSailingMissionData")
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnters.BtnEliminateOnClick = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIDiscoveryEnters:BtnEliminateOnClick()
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_ANIPOP)
   if isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_qidihulian_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_qidihulian_tips"))
+    return
   end
   self:SwitchState(UIStateType.UIEliminateController)
 end
-
-

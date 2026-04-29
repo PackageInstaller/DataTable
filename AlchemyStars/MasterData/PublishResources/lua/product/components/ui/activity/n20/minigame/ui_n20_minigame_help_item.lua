@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/minigame/ui_n20_minigame_help_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20MiniGameHelpItem", UICustomWidget)
 UIN20MiniGameHelpItem = UIN20MiniGameHelpItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20MiniGameHelpItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN20MiniGameHelpItem:OnShow(uiParams)
   self:GetUIComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameHelpItem.GetUIComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN20MiniGameHelpItem:GetUIComponents()
   self._titleBig = self:GetUIComponent("UILocalizationText", "titleBig")
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._msg = self:GetUIComponent("UILocalizationText", "msg")
@@ -23,103 +13,64 @@ UIN20MiniGameHelpItem.GetUIComponents = function(self)
   self._scrollRect = self:GetUIComponent("ScrollRect", "ScrollView")
   self._viewPort = self:GetUIComponent("Image", "Viewport")
   self._uiDrag = self:GetUIComponent("UIDrag", "bg")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self._scrollRect).gameObject), UIEvent.BeginDrag, function(pointData)
-    -- function num : 0_1_0 , upvalues : self
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._scrollRect.gameObject), UIEvent.BeginDrag, function(pointData)
     self:OnBeginDrag(pointData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self._scrollRect).gameObject), UIEvent.Drag, function(pointData)
-    -- function num : 0_1_1 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._scrollRect.gameObject), UIEvent.Drag, function(pointData)
     self:OnDragEvent(pointData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self._scrollRect).gameObject), UIEvent.EndDrag, function(pointData)
-    -- function num : 0_1_2 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._scrollRect.gameObject), UIEvent.EndDrag, function(pointData)
     self:OnEndDrag(pointData)
-  end
-)
+  end)
   self._dragState = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameHelpItem.OnBeginDrag = function(self, pointData)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN20MiniGameHelpItem:OnBeginDrag(pointData)
   local delta = pointData.delta
   local d_x = delta.x
   local d_y = delta.y
-  if (math.abs)(d_y) < (math.abs)(d_x) then
+  if math.abs(d_x) > math.abs(d_y) then
     self._dragState = 2
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._scrollRect).enabled = false
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._viewPort).raycastTarget = false
-    ;
-    (self._uiDrag):OnBeginDrag(pointData)
+    self._scrollRect.enabled = false
+    self._viewPort.raycastTarget = false
+    self._uiDrag:OnBeginDrag(pointData)
   else
     self._dragState = 1
   end
-  ;
-  (self._callBack)(true)
+  self._callBack(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameHelpItem.OnDragEvent = function(self, pointData)
-  -- function num : 0_3
-  if self._dragState == 1 and self._scrollRect then
-    (self._scrollRect):OnDrag(pointData)
-  end
-  if self._dragState == 2 and self._uiDrag then
-    (self._uiDrag):OnDrag(pointData)
+function UIN20MiniGameHelpItem:OnDragEvent(pointData)
+  if self._dragState == 1 then
+    if self._scrollRect then
+      self._scrollRect:OnDrag(pointData)
+    end
+  elseif self._dragState == 2 and self._uiDrag then
+    self._uiDrag:OnDrag(pointData)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameHelpItem.OnEndDrag = function(self, pointData)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIN20MiniGameHelpItem:OnEndDrag(pointData)
   if self._scrollRect then
-    (self._scrollRect).enabled = true
+    self._scrollRect.enabled = true
   end
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
   if self._viewPort then
-    (self._viewPort).raycastTarget = true
+    self._viewPort.raycastTarget = true
   end
   if self._dragState == 2 and self._uiDrag then
-    (self._uiDrag):OnEndDrag(pointData)
+    self._uiDrag:OnEndDrag(pointData)
   end
   self._dragState = 0
-  ;
-  (self._callBack)(false)
+  self._callBack(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameHelpItem.SetData = function(self, titleSmall, icon, msg, callback)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._titleBig):SetText((StringTable.Get)(titleSmall))
-  ;
-  (self._icon):LoadImage(icon)
-  ;
-  (self._msg):SetText((StringTable.Get)(msg))
+function UIN20MiniGameHelpItem:SetData(titleSmall, icon, msg, callback)
+  self._titleBig:SetText(StringTable.Get(titleSmall))
+  self._icon:LoadImage(icon)
+  self._msg:SetText(StringTable.Get(msg))
   self._callBack = callback
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameHelpItem.ResetPos = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._msgRect).anchoredPosition = Vector2.zero
+function UIN20MiniGameHelpItem:ResetPos()
+  self._msgRect.anchoredPosition = Vector2.zero
 end
-
-

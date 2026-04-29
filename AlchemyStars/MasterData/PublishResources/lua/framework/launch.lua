@@ -1,32 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/launch.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local Launch = function()
-  -- function num : 0_0 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
+local function Launch()
   _G.CLIENT = true
-  print("lua launch start,", (debug.traceback)())
+  
+  print("lua launch start,", debug.traceback())
   dofile("start")
 end
 
 local HotUpdateVersionCheckResult = HotUpdate.HotUpdateVersionCheckResult
 local UpdateResCallbackType = HotUpdate.UpdateResCallbackType
-local versionCheckRes = (HotUpdateLuaProxy.GetVersionCheckRes)()
+local versionCheckRes = HotUpdateLuaProxy.GetVersionCheckRes()
 if versionCheckRes == HotUpdateVersionCheckResult.CloseHotUpdate then
   Launch()
-  return 
+  return
 end
-if (HotUpdateLuaProxy.IsHotUpdateFinish)() then
-  print("没有普通资源更新,直接launch,", (debug.traceback)())
+if HotUpdateLuaProxy.IsHotUpdateFinish() then
+  print("没有普通资源更新,直接launch,", debug.traceback())
   Launch()
-  return 
+  return
 end
 local _, t_str_hot_update = dofile("str_hotupdate")
 local HotUpdateStringTable = {}
-for id,tb in pairs(t_str_hot_update) do
+for id, tb in pairs(t_str_hot_update) do
   HotUpdateStringTable[id] = tb
 end
 local TitleKey = "str_hotupdate_title"
@@ -36,44 +29,54 @@ local CheckUpdateKey = "str_hotupdate_check"
 local UpdatePatchCompleteKey = "str_hotupdate_patch_complete"
 local NetErrorKey = "str_hotupdate_net_err"
 local progressInfoConfig = {
-{progress = 20, info = "str_hotupdate_progress_info_20"}
-, 
-{progress = 40, info = "str_hotupdate_progress_info_40"}
-, 
-{progress = 60, info = "str_hotupdate_progress_info_60"}
-, 
-{progress = 80, info = "str_hotupdate_progress_info_80"}
-, 
-{progress = 100, info = "str_hotupdate_progress_info_100"}
+  {
+    progress = 20,
+    info = "str_hotupdate_progress_info_20"
+  },
+  {
+    progress = 40,
+    info = "str_hotupdate_progress_info_40"
+  },
+  {
+    progress = 60,
+    info = "str_hotupdate_progress_info_60"
+  },
+  {
+    progress = 80,
+    info = "str_hotupdate_progress_info_80"
+  },
+  {
+    progress = 100,
+    info = "str_hotupdate_progress_info_100"
+  }
 }
-local launchRoot, updateInfoPanel, progressPanel, progressBar, percentLabel, launchLabel, downloadedSizeLabel, totalSizeLabel, progressInfoLabel, speedLabel, checkTipsLabel, leftBrackets, rightBrackets, SpliteBrackets, messageBoxPanel, leftButtonGo, leftButtonNameLabel, rightButtonGo, rightButtonNameLabel, mesTitleLabel, mesContentLabel, showTips, nLastUAReportProgress = nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil
-local InitUIComponent = function()
-  -- function num : 0_1 , upvalues : launchRoot, _ENV, updateInfoPanel, progressPanel, progressBar, percentLabel, launchLabel, downloadedSizeLabel, totalSizeLabel, checkTipsLabel, speedLabel, leftBrackets, rightBrackets, SpliteBrackets, messageBoxPanel, mesTitleLabel, mesContentLabel, leftButtonGo, rightButtonGo, leftButtonNameLabel, rightButtonNameLabel, nLastUAReportProgress
-  launchRoot = (((UnityEngine.GameObject).Find)("LaunchUI")).transform
-  updateInfoPanel = (launchRoot:Find("UI")).gameObject
-  progressPanel = (launchRoot:Find("UI/Progress")).gameObject
-  progressBar = (launchRoot:Find("UI/Progress/Bar")):GetComponent("Image")
-  percentLabel = (launchRoot:Find("UI/txtProgress")):GetComponent("UILocalizationText")
-  launchLabel = (launchRoot:Find("UI/InfoPanel/txtLaunch")):GetComponent("UILocalizationText")
-  downloadedSizeLabel = (launchRoot:Find("UI/InfoPanel/DownloadSize")):GetComponent("UILocalizationText")
-  totalSizeLabel = (launchRoot:Find("UI/InfoPanel/TotalSize")):GetComponent("UILocalizationText")
-  checkTipsLabel = (launchRoot:Find("UI/CheckTips")):GetComponent("UILocalizationText")
-  speedLabel = (launchRoot:Find("UI/InfoPanel/Speed")):GetComponent("UILocalizationText")
-  leftBrackets = (launchRoot:Find("UI/InfoPanel/LeftBrackets")).gameObject
-  rightBrackets = (launchRoot:Find("UI/InfoPanel/RightBrackets")).gameObject
-  SpliteBrackets = (launchRoot:Find("UI/InfoPanel/Splite")).gameObject
-  messageBoxPanel = (launchRoot:Find("MessageBox")).gameObject
-  mesTitleLabel = (launchRoot:Find("MessageBox/Title")):GetComponent("UILocalizationText")
-  mesContentLabel = (launchRoot:Find("MessageBox/Content")):GetComponent("UILocalizationText")
-  leftButtonGo = (launchRoot:Find("MessageBox/ButtonGroup/LeftButton")).gameObject
-  rightButtonGo = (launchRoot:Find("MessageBox/ButtonGroup/RightButton")).gameObject
-  leftButtonNameLabel = (launchRoot:Find("MessageBox/ButtonGroup/LeftButton/ButtonName")):GetComponent("UILocalizationText")
-  rightButtonNameLabel = (launchRoot:Find("MessageBox/ButtonGroup/RightButton/ButtonName")):GetComponent("UILocalizationText")
+local launchRoot, updateInfoPanel, progressPanel, progressBar, percentLabel, launchLabel, downloadedSizeLabel, totalSizeLabel, progressInfoLabel, speedLabel, checkTipsLabel, leftBrackets, rightBrackets, SpliteBrackets, messageBoxPanel, leftButtonGo, leftButtonNameLabel, rightButtonGo, rightButtonNameLabel, mesTitleLabel, mesContentLabel, showTips, nLastUAReportProgress
+
+local function InitUIComponent()
+  launchRoot = UnityEngine.GameObject.Find("LaunchUI").transform
+  updateInfoPanel = launchRoot:Find("UI").gameObject
+  progressPanel = launchRoot:Find("UI/Progress").gameObject
+  progressBar = launchRoot:Find("UI/Progress/Bar"):GetComponent("Image")
+  percentLabel = launchRoot:Find("UI/txtProgress"):GetComponent("UILocalizationText")
+  launchLabel = launchRoot:Find("UI/InfoPanel/txtLaunch"):GetComponent("UILocalizationText")
+  downloadedSizeLabel = launchRoot:Find("UI/InfoPanel/DownloadSize"):GetComponent("UILocalizationText")
+  totalSizeLabel = launchRoot:Find("UI/InfoPanel/TotalSize"):GetComponent("UILocalizationText")
+  checkTipsLabel = launchRoot:Find("UI/CheckTips"):GetComponent("UILocalizationText")
+  speedLabel = launchRoot:Find("UI/InfoPanel/Speed"):GetComponent("UILocalizationText")
+  leftBrackets = launchRoot:Find("UI/InfoPanel/LeftBrackets").gameObject
+  rightBrackets = launchRoot:Find("UI/InfoPanel/RightBrackets").gameObject
+  SpliteBrackets = launchRoot:Find("UI/InfoPanel/Splite").gameObject
+  messageBoxPanel = launchRoot:Find("MessageBox").gameObject
+  mesTitleLabel = launchRoot:Find("MessageBox/Title"):GetComponent("UILocalizationText")
+  mesContentLabel = launchRoot:Find("MessageBox/Content"):GetComponent("UILocalizationText")
+  leftButtonGo = launchRoot:Find("MessageBox/ButtonGroup/LeftButton").gameObject
+  rightButtonGo = launchRoot:Find("MessageBox/ButtonGroup/RightButton").gameObject
+  leftButtonNameLabel = launchRoot:Find("MessageBox/ButtonGroup/LeftButton/ButtonName"):GetComponent("UILocalizationText")
+  rightButtonNameLabel = launchRoot:Find("MessageBox/ButtonGroup/RightButton/ButtonName"):GetComponent("UILocalizationText")
   nLastUAReportProgress = nil
 end
 
-local ClearUIRef = function()
-  -- function num : 0_2 , upvalues : launchRoot, updateInfoPanel, progressPanel, progressBar, percentLabel, launchLabel, downloadedSizeLabel, totalSizeLabel, speedLabel, checkTipsLabel, leftBrackets, rightBrackets, SpliteBrackets, messageBoxPanel, leftButtonGo, leftButtonNameLabel, rightButtonGo, rightButtonNameLabel, mesTitleLabel, mesContentLabel, nLastUAReportProgress
+local function ClearUIRef()
   launchRoot = nil
   updateInfoPanel = nil
   progressPanel = nil
@@ -97,119 +100,97 @@ local ClearUIRef = function()
   nLastUAReportProgress = nil
 end
 
-local SetProgressInfoVisible = function(visible)
-  -- function num : 0_3 , upvalues : downloadedSizeLabel, totalSizeLabel, leftBrackets, rightBrackets, SpliteBrackets
-  (downloadedSizeLabel.gameObject):SetActive(visible)
-  ;
-  (totalSizeLabel.gameObject):SetActive(visible)
+local function SetProgressInfoVisible(visible)
+  downloadedSizeLabel.gameObject:SetActive(visible)
+  totalSizeLabel.gameObject:SetActive(visible)
   leftBrackets:SetActive(visible)
   rightBrackets:SetActive(visible)
   SpliteBrackets:SetActive(visible)
 end
 
-local _ReportCustomEvent = function(strEventName, strCustomEventName, paramsList, extraJson)
-  -- function num : 0_4 , upvalues : _ENV
-  local l_paramList = (UAReportHelper.GetParamsList)()
+local function _ReportCustomEvent(strEventName, strCustomEventName, paramsList, extraJson)
+  local l_paramList = UAReportHelper.GetParamsList()
   l_paramList:Clear()
   if paramsList ~= nil then
-    for index,value in ipairs(paramsList) do
+    for index, value in ipairs(paramsList) do
       l_paramList:Add(value)
     end
   end
-  do
-    ;
-    (UAReportHelper.ReportCustomEvent)(strEventName, strCustomEventName, l_paramList, extraJson or "")
-  end
+  UAReportHelper.ReportCustomEvent(strEventName, strCustomEventName, l_paramList, extraJson or "")
 end
 
-local _UAReportEvent = function(uaEventName, paramsDic, extraJson, isRealTime)
-  -- function num : 0_5 , upvalues : _ENV
+local function _UAReportEvent(uaEventName, paramsDic, extraJson, isRealTime)
   if isRealTime == nil then
     isRealTime = true
   end
-  local l_paramDic = (UAReportHelper.GetParamsDic)()
+  local l_paramDic = UAReportHelper.GetParamsDic()
   l_paramDic:Clear()
   if paramsDic ~= nil then
-    for key,value in pairs(paramsDic) do
+    for key, value in pairs(paramsDic) do
       l_paramDic:Add(key, value)
     end
   end
-  do
-    ;
-    (UAReportHelper.UAReportEvent)(uaEventName, l_paramDic, extraJson or "", isRealTime)
-  end
+  UAReportHelper.UAReportEvent(uaEventName, l_paramDic, extraJson or "", isRealTime)
 end
 
-do
-  local UpdateUIProgress = function(value, downloadSize, totalSize, progressInfo)
-  -- function num : 0_6 , upvalues : showTips, checkTipsLabel, progressPanel, SetProgressInfoVisible, progressBar, _ENV, percentLabel, downloadedSizeLabel, totalSizeLabel, launchLabel, nLastUAReportProgress, _ReportCustomEvent
+local function UpdateUIProgress(value, downloadSize, totalSize, progressInfo)
   if showTips then
-    (checkTipsLabel.gameObject):SetActive(false)
+    checkTipsLabel.gameObject:SetActive(false)
     progressPanel:SetActive(true)
     SetProgressInfoVisible(true)
     showTips = false
   end
   progressBar.fillAmount = value
-  local l_strProgress = (math.floor)(value * 100) .. "%"
+  local l_strProgress = math.floor(value * 100) .. "%"
   percentLabel.text = l_strProgress
   downloadedSizeLabel.text = downloadSize
   totalSizeLabel.text = totalSize
   launchLabel.text = progressInfo
-  local l_nCurProgress = (math.floor)(value * 10)
+  local l_nCurProgress = math.floor(value * 10)
   if l_nCurProgress ~= nLastUAReportProgress then
     nLastUAReportProgress = l_nCurProgress
     _ReportCustomEvent("HotUpdate", "HotUpdateProgress", {Progress = l_strProgress})
   end
 end
 
-  local ShowCheckUpdateUI = function(info)
-  -- function num : 0_7 , upvalues : showTips, updateInfoPanel, SetProgressInfoVisible, progressPanel, checkTipsLabel, launchLabel, speedLabel
+local function ShowCheckUpdateUI(info)
   showTips = true
   updateInfoPanel:SetActive(true)
   SetProgressInfoVisible(false)
   progressPanel:SetActive(false)
-  ;
-  (checkTipsLabel.gameObject):SetActive(true)
+  checkTipsLabel.gameObject:SetActive(true)
   checkTipsLabel.text = info
   launchLabel.text = ""
   speedLabel.text = ""
 end
 
-  local ShowMessageBox = function(titleInfo, contentInfo, leftButtonCallback, leftButtonName, rightButtonCallback, rightButtonName)
-  -- function num : 0_8 , upvalues : messageBoxPanel, mesTitleLabel, mesContentLabel, leftButtonGo, leftButtonNameLabel, _ENV, rightButtonGo, rightButtonNameLabel
+local function ShowMessageBox(titleInfo, contentInfo, leftButtonCallback, leftButtonName, rightButtonCallback, rightButtonName)
   messageBoxPanel:SetActive(true)
   mesTitleLabel.text = titleInfo
   mesContentLabel.text = contentInfo
   if leftButtonCallback then
     leftButtonGo:SetActive(true)
     leftButtonNameLabel.text = leftButtonName
-    ;
-    ((UIEventTriggerListener.Get)(leftButtonGo)).onClick = function()
-    -- function num : 0_8_0 , upvalues : leftButtonCallback, messageBoxPanel
-    leftButtonCallback()
-    messageBoxPanel:SetActive(false)
-  end
-
+    UIEventTriggerListener.Get(leftButtonGo).onClick = function()
+      leftButtonCallback()
+      messageBoxPanel:SetActive(false)
+    end
   else
     leftButtonGo:SetActive(false)
   end
   if rightButtonCallback then
     rightButtonGo:SetActive(true)
     rightButtonNameLabel.text = rightButtonName
-    ;
-    ((UIEventTriggerListener.Get)(rightButtonGo)).onClick = function()
-    -- function num : 0_8_1 , upvalues : rightButtonCallback, messageBoxPanel
-    rightButtonCallback()
-    messageBoxPanel:SetActive(false)
-  end
-
+    UIEventTriggerListener.Get(rightButtonGo).onClick = function()
+      rightButtonCallback()
+      messageBoxPanel:SetActive(false)
+    end
   else
     rightButtonGo:SetActive(false)
   end
 end
 
-  local GetProgressInfo = function(progress)
-  -- function num : 0_9 , upvalues : progressInfoConfig, HotUpdateStringTable
+local function GetProgressInfo(progress)
   if #progressInfoConfig < 0 then
     return ""
   end
@@ -225,59 +206,43 @@ end
       break
     end
   end
-  do
-    return HotUpdateStringTable[(progressInfoConfig[index]).info]
-  end
+  return HotUpdateStringTable[progressInfoConfig[index].info]
 end
 
-  InitUIComponent()
-  ShowCheckUpdateUI(HotUpdateStringTable[CheckUpdateKey])
-  if versionCheckRes == HotUpdateVersionCheckResult.UpdatePatch then
-    ShowMessageBox(HotUpdateStringTable[TitleKey], HotUpdateStringTable[UpdatePatchCompleteKey], function()
-  -- function num : 0_10 , upvalues : _ENV
-  ((UnityEngine.Application).Quit)()
-end
-, HotUpdateStringTable[QuitKey])
-  else
-    if versionCheckRes == HotUpdateVersionCheckResult.UpdateRes then
-      local hotUpdateType = false
-      local OnHotUpdateCallback = function(type, ...)
-  -- function num : 0_11 , upvalues : hotUpdateType, _ENV, UpdateResCallbackType, UpdateUIProgress, GetProgressInfo, ClearUIRef, Launch, launchLabel, checkTipsLabel
-  hotUpdateType = type
-  print("OnHotUpdateCallback ", tostring(type))
-  if type == UpdateResCallbackType.Finish then
-    local totalSize = (HotUpdateLuaProxy.GetTotalSize)()
-    local progress = (HotUpdateLuaProxy.GetProgress)()
-    local downloadSize = (HotUpdateLuaProxy.GetDownloadedSize)()
-    UpdateUIProgress(progress, downloadSize, totalSize, GetProgressInfo(progress))
-    ClearUIRef()
-    Launch()
-  else
-    do
-      if type == UpdateResCallbackType.Downloading then
-        launchLabel.text = GetProgressInfo((HotUpdateLuaProxy.GetProgress)())
-        if checkTipsLabel then
-          (checkTipsLabel.gameObject):SetActive(false)
-        end
+InitUIComponent()
+ShowCheckUpdateUI(HotUpdateStringTable[CheckUpdateKey])
+if versionCheckRes == HotUpdateVersionCheckResult.UpdatePatch then
+  ShowMessageBox(HotUpdateStringTable[TitleKey], HotUpdateStringTable[UpdatePatchCompleteKey], function()
+    UnityEngine.Application.Quit()
+  end, HotUpdateStringTable[QuitKey])
+elseif versionCheckRes == HotUpdateVersionCheckResult.UpdateRes then
+  local hotUpdateType = false
+  
+  local function OnHotUpdateCallback(type, ...)
+    hotUpdateType = type
+    print("OnHotUpdateCallback ", tostring(type))
+    if type == UpdateResCallbackType.Finish then
+      local totalSize = HotUpdateLuaProxy.GetTotalSize()
+      local progress = HotUpdateLuaProxy.GetProgress()
+      local downloadSize = HotUpdateLuaProxy.GetDownloadedSize()
+      UpdateUIProgress(progress, downloadSize, totalSize, GetProgressInfo(progress))
+      ClearUIRef()
+      Launch()
+    elseif type == UpdateResCallbackType.Downloading then
+      launchLabel.text = GetProgressInfo(HotUpdateLuaProxy.GetProgress())
+      if checkTipsLabel then
+        checkTipsLabel.gameObject:SetActive(false)
       end
     end
   end
-end
-
-      ;
-      (AppLuaProxy.OnUpdate)(function(e, unscaled, curTimeMS)
-  -- function num : 0_12 , upvalues : hotUpdateType, UpdateResCallbackType, _ENV, UpdateUIProgress, GetProgressInfo
-  if hotUpdateType == UpdateResCallbackType.Downloading then
-    local totalSize = (HotUpdateLuaProxy.GetTotalSize)()
-    local progress = (HotUpdateLuaProxy.GetProgress)()
-    local downloadSize = (HotUpdateLuaProxy.GetDownloadedSize)()
-    UpdateUIProgress(progress, downloadSize, totalSize, GetProgressInfo(progress))
-  end
-end
-)
-      ;
-      (HotUpdateLuaProxy.AddListener)(OnHotUpdateCallback)
+  
+  AppLuaProxy.OnUpdate(function(e, unscaled, curTimeMS)
+    if hotUpdateType == UpdateResCallbackType.Downloading then
+      local totalSize = HotUpdateLuaProxy.GetTotalSize()
+      local progress = HotUpdateLuaProxy.GetProgress()
+      local downloadSize = HotUpdateLuaProxy.GetDownloadedSize()
+      UpdateUIProgress(progress, downloadSize, totalSize, GetProgressInfo(progress))
     end
-  end
+  end)
+  HotUpdateLuaProxy.AddListener(OnHotUpdateCallback)
 end
-

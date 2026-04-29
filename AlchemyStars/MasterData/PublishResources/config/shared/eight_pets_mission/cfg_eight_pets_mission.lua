@@ -1,70 +1,320 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/eight_pets_mission/cfg_eight_pets_mission.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {MissionID = 1, LevelID = 2, Type = 3, EnableSerialAutoFight = 4, EnableAutoFight = 5, RecommendAwaken = 6, RecommendLV = 7, FastFightEnable = 8, BaseWordBuff = 9, FirstDropId = 10, PassFixDropId = 11, Name = 12, Title = 13, Desc = 14, NameAbbre = 15, OpenTime = 16}
+local key = {
+  MissionID = 1,
+  LevelID = 2,
+  Type = 3,
+  EnableSerialAutoFight = 4,
+  EnableAutoFight = 5,
+  RecommendAwaken = 6,
+  RecommendLV = 7,
+  FastFightEnable = 8,
+  BaseWordBuff = 9,
+  FirstDropId = 10,
+  PassFixDropId = 11,
+  Name = 12,
+  Title = 13,
+  Desc = 14,
+  NameAbbre = 15,
+  OpenTime = 16
+}
 local common = {
-{53350051, 53350052}
-, "str_n33_ep_1_name", "str_n33_ep_1_name_desc", "str_n33_ep_2_name", "str_n33_ep_2_name_desc", "str_n33_ep_3_name", "str_n33_ep_3_name_desc", "str_n33_ep_4_name", "str_n33_ep_4_name_desc", "str_n33_ep_5_name", "str_n33_ep_5_name_desc", "str_n33_ep_6_name", "str_n33_ep_6_name_desc", "str_n33_ep_7_name", "str_n33_ep_7_name_desc", "str_n33_ep_8_name", "str_n33_ep_8_name_desc", "2023-12-29 09:00:00", "2023-12-30 09:00:00", "2023-12-31 09:00:00", "2024-01-01 09:00:00"}
+  {53350051, 53350052},
+  "str_n33_ep_1_name",
+  "str_n33_ep_1_name_desc",
+  "str_n33_ep_2_name",
+  "str_n33_ep_2_name_desc",
+  "str_n33_ep_3_name",
+  "str_n33_ep_3_name_desc",
+  "str_n33_ep_4_name",
+  "str_n33_ep_4_name_desc",
+  "str_n33_ep_5_name",
+  "str_n33_ep_5_name_desc",
+  "str_n33_ep_6_name",
+  "str_n33_ep_6_name_desc",
+  "str_n33_ep_7_name",
+  "str_n33_ep_7_name_desc",
+  "str_n33_ep_8_name",
+  "str_n33_ep_8_name_desc",
+  "2023-12-29 09:00:00",
+  "2023-12-30 09:00:00",
+  "2023-12-31 09:00:00",
+  "2024-01-01 09:00:00"
+}
 local config = {
-[5335001] = {5335001, 5335001, 1, 2, 2, 3, 1, 0, 
-{53350011}
-, 10330009, 41000, common[2], nil, common[3]}
-, 
-[5335002] = {5335002, 5335002, 1, 2, 2, 3, 1, 0, 
-{53350021, 53350022}
-, 10330010, 41000, common[4], nil, common[5]}
-, 
-[5335003] = {5335003, 5335003, 1, 2, 2, 3, 10, 0, 
-{53350031}
-, 10330009, 41000, common[6], nil, common[7]}
-, 
-[5335004] = {5335004, 5335004, 2, 2, 2, 3, 10, 0, 
-{53350041}
-, 10330010, 41000, common[8], nil, common[9]}
-, 
-[5335005] = {5335005, 5335005, 1, 2, 2, 3, 20, 0, common[1], 10330009, 41000, common[10], nil, common[11]}
-, 
-[5335006] = {5335006, 5335006, 1, 2, 2, 3, 20, 0, common[1], 10330010, 41000, common[12], nil, common[13]}
-, 
-[5335007] = {5335007, 5335007, 1, 2, 2, 3, 30, 0, 
-{53350051, 53350071, 53350052}
-, 10330009, 41000, common[14], nil, common[15]}
-, 
-[5335008] = {5335008, 5335008, 2, 2, 2, 3, 30, 0, common[1], 10330010, 41000, common[16], nil, common[17]}
-, 
-[5395001] = {5395001, 5395001, 1, 2, 1, 3, 1, 0, 
-{5395001}
-, 10330009, 41000, common[2], nil, common[3], nil, common[18]}
-, 
-[5395002] = {5395002, 5395002, 1, 2, 1, 3, 1, 0, 
-{5395002, 5395003}
-, 10330010, 41000, common[4], nil, common[5], nil, common[18]}
-, 
-[5395003] = {5395003, 5395003, 1, 2, 1, 3, 10, 0, 
-{5395004}
-, 10330009, 41000, common[6], nil, common[7], nil, common[19]}
-, 
-[5395004] = {5395004, 5395004, 2, 2, 2, 3, 10, 0, 
-{5395005}
-, 10330010, 41000, common[8], nil, common[9], nil, common[19]}
-, 
-[5395005] = {5395005, 5395005, 1, 2, 1, 3, 20, 0, 
-{5395006}
-, 10330009, 41000, common[10], nil, common[11], nil, common[20]}
-, 
-[5395006] = {5395006, 5395006, 1, 2, 1, 3, 20, 0, 
-{5395007}
-, 10330010, 41000, common[12], nil, common[13], nil, common[20]}
-, 
-[5395007] = {5395007, 5395007, 1, 2, 1, 3, 30, 0, 
-{5395008}
-, 10330009, 41000, common[14], nil, common[15], nil, common[21]}
-, 
-[5395008] = {5395008, 5395008, 2, 2, 2, 3, 30, 0, 
-{5395009, 5395010}
-, 10330010, 41000, common[16], nil, common[17], nil, common[21]}
+  [5335001] = {
+    5335001,
+    5335001,
+    1,
+    2,
+    2,
+    3,
+    1,
+    0,
+    {53350011},
+    10330009,
+    41000,
+    common[2],
+    nil,
+    common[3]
+  },
+  [5335002] = {
+    5335002,
+    5335002,
+    1,
+    2,
+    2,
+    3,
+    1,
+    0,
+    {53350021, 53350022},
+    10330010,
+    41000,
+    common[4],
+    nil,
+    common[5]
+  },
+  [5335003] = {
+    5335003,
+    5335003,
+    1,
+    2,
+    2,
+    3,
+    10,
+    0,
+    {53350031},
+    10330009,
+    41000,
+    common[6],
+    nil,
+    common[7]
+  },
+  [5335004] = {
+    5335004,
+    5335004,
+    2,
+    2,
+    2,
+    3,
+    10,
+    0,
+    {53350041},
+    10330010,
+    41000,
+    common[8],
+    nil,
+    common[9]
+  },
+  [5335005] = {
+    5335005,
+    5335005,
+    1,
+    2,
+    2,
+    3,
+    20,
+    0,
+    common[1],
+    10330009,
+    41000,
+    common[10],
+    nil,
+    common[11]
+  },
+  [5335006] = {
+    5335006,
+    5335006,
+    1,
+    2,
+    2,
+    3,
+    20,
+    0,
+    common[1],
+    10330010,
+    41000,
+    common[12],
+    nil,
+    common[13]
+  },
+  [5335007] = {
+    5335007,
+    5335007,
+    1,
+    2,
+    2,
+    3,
+    30,
+    0,
+    {
+      53350051,
+      53350071,
+      53350052
+    },
+    10330009,
+    41000,
+    common[14],
+    nil,
+    common[15]
+  },
+  [5335008] = {
+    5335008,
+    5335008,
+    2,
+    2,
+    2,
+    3,
+    30,
+    0,
+    common[1],
+    10330010,
+    41000,
+    common[16],
+    nil,
+    common[17]
+  },
+  [5395001] = {
+    5395001,
+    5395001,
+    1,
+    2,
+    1,
+    3,
+    1,
+    0,
+    {5395001},
+    10330009,
+    41000,
+    common[2],
+    nil,
+    common[3],
+    nil,
+    common[18]
+  },
+  [5395002] = {
+    5395002,
+    5395002,
+    1,
+    2,
+    1,
+    3,
+    1,
+    0,
+    {5395002, 5395003},
+    10330010,
+    41000,
+    common[4],
+    nil,
+    common[5],
+    nil,
+    common[18]
+  },
+  [5395003] = {
+    5395003,
+    5395003,
+    1,
+    2,
+    1,
+    3,
+    10,
+    0,
+    {5395004},
+    10330009,
+    41000,
+    common[6],
+    nil,
+    common[7],
+    nil,
+    common[19]
+  },
+  [5395004] = {
+    5395004,
+    5395004,
+    2,
+    2,
+    2,
+    3,
+    10,
+    0,
+    {5395005},
+    10330010,
+    41000,
+    common[8],
+    nil,
+    common[9],
+    nil,
+    common[19]
+  },
+  [5395005] = {
+    5395005,
+    5395005,
+    1,
+    2,
+    1,
+    3,
+    20,
+    0,
+    {5395006},
+    10330009,
+    41000,
+    common[10],
+    nil,
+    common[11],
+    nil,
+    common[20]
+  },
+  [5395006] = {
+    5395006,
+    5395006,
+    1,
+    2,
+    1,
+    3,
+    20,
+    0,
+    {5395007},
+    10330010,
+    41000,
+    common[12],
+    nil,
+    common[13],
+    nil,
+    common[20]
+  },
+  [5395007] = {
+    5395007,
+    5395007,
+    1,
+    2,
+    1,
+    3,
+    30,
+    0,
+    {5395008},
+    10330009,
+    41000,
+    common[14],
+    nil,
+    common[15],
+    nil,
+    common[21]
+  },
+  [5395008] = {
+    5395008,
+    5395008,
+    2,
+    2,
+    2,
+    3,
+    30,
+    0,
+    {5395009, 5395010},
+    10330010,
+    41000,
+    common[16],
+    nil,
+    common[17],
+    nil,
+    common[21]
+  }
 }
 return config, "MissionID", key
-

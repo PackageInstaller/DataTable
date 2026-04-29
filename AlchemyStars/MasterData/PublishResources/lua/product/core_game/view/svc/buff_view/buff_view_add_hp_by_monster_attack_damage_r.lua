@@ -1,53 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_add_hp_by_monster_attack_damage_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddHPByMonsterAttackDamage", BuffViewBase)
 BuffViewAddHPByMonsterAttackDamage = BuffViewAddHPByMonsterAttackDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddHPByMonsterAttackDamage.Constructor = function(self)
-  -- function num : 0_0
+function BuffViewAddHPByMonsterAttackDamage:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddHPByMonsterAttackDamage.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewAddHPByMonsterAttackDamage:IsNotifyMatch(notify)
   if notify and notify:GetNotifyType() == NotifyType.MonsterAttackOrSkillDamageEnd then
     local n = notify
     local notifyEntity = n:GetNotifyEntity()
     if notifyEntity then
       local notifyEntityID = notifyEntity:GetID()
-      local sourceEntityID = (self._buffResult):GetSourceEntityID()
+      local sourceEntityID = self._buffResult:GetSourceEntityID()
       if notifyEntityID and sourceEntityID and notifyEntityID == sourceEntityID then
         return true
       end
     end
-    do
-      do
-        do return false end
-        return true
-      end
-    end
+    return false
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddHPByMonsterAttackDamage.PlayView = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffViewAddHPByMonsterAttackDamage:PlayView(TT)
   local res = self._buffResult
   local damageInfo = res:GetDamageInfo()
-  local entity = (self._world):GetEntityByID(res:GetEntityID())
+  local entity = self._world:GetEntityByID(res:GetEntityID())
   YIELD(TT)
   local materialAnimationComponent = entity:MaterialAnimationComponent()
   if materialAnimationComponent then
     materialAnimationComponent:PlayCure()
   end
-  local playDamageService = (self._world):GetService("PlayDamage")
+  local playDamageService = self._world:GetService("PlayDamage")
   playDamageService:AsyncUpdateHPAndDisplayDamage(entity, damageInfo)
 end
-
-

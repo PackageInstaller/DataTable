@@ -1,249 +1,158 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/player/bounce_player.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("bounce_player_behavior_animation")
 _class("BouncePlayer", BehaviorMgr)
 BouncePlayer = BouncePlayer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BouncePlayer.Constructor = function(self)
-  -- function num : 0_0
+function BouncePlayer:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayer.Init = function(self, coreController, palyerPrefabName, parentRt)
-  -- function num : 0_1 , upvalues : _ENV
+function BouncePlayer:Init(coreController, palyerPrefabName, parentRt)
   self._coreController = coreController
   self._bounceData = coreController:GetData()
   self.playerData = BouncePlayerData:New()
-  ;
-  (self.playerData):Init()
-  self.viewBehavior = BouncePlayerBeHaviorView:New(palyerPrefabName, parentRt, (self.playerData):GetInitPos())
+  self.playerData:Init()
+  self.viewBehavior = BouncePlayerBeHaviorView:New(palyerPrefabName, parentRt, self.playerData:GetInitPos())
   self:AddBehavior(self.viewBehavior)
   self:AddBehavior(BouncePlayerBeHaviorAnimation:New())
-  self.playerStateFsm = (StateMachineManager:GetInstance()):CreateStateMachine("StateBouncePlayer", StateBouncePlayer)
-  ;
-  (self.playerStateFsm):SetData(self)
-  ;
-  (self.playerStateFsm):Init(StateBouncePlayer.Init)
+  self.playerStateFsm = StateMachineManager:GetInstance():CreateStateMachine("StateBouncePlayer", StateBouncePlayer)
+  self.playerStateFsm:SetData(self)
+  self.playerStateFsm:Init(StateBouncePlayer.Init)
   self:Reset()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayer.Destroy = function(self)
-  -- function num : 0_2
+function BouncePlayer:Destroy()
   self:Release()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayer.Reset = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.playerData):Reset()
+function BouncePlayer:Reset()
+  self.playerData:Reset()
   self:SetVisible(false)
   self.state = BounceObjState.Alive
-  ;
-  (self.viewBehavior):SetPosition((self.playerData):GetInitPos())
+  self.viewBehavior:SetPosition(self.playerData:GetInitPos())
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayer.AddBehavior = function(self, behavior)
-  -- function num : 0_4
-  ((self.super).AddBehavior)(self, behavior)
+function BouncePlayer:AddBehavior(behavior)
+  self.super.AddBehavior(self, behavior)
   behavior:SetPlayer(self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayer.GetBouncePlayerData = function(self)
-  -- function num : 0_5
+function BouncePlayer:GetBouncePlayerData()
   return self.playerData
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayer.ChgPlayerState = function(self, newState, params)
-  -- function num : 0_6 , upvalues : _ENV
+function BouncePlayer:ChgPlayerState(newState, params)
   local lastType = self:GetPlayerStateType()
   if lastType and lastType == StateBouncePlayer.Dead and newState ~= StateBouncePlayer.Init then
-    (Log.debug)("[bounce] BouncePlayer chgPlayerfsmState failed for player is dead , newState =  " .. newState .. "  -- " .. (self._bounceData).durationMs)
-    return 
+    Log.debug("[bounce] BouncePlayer chgPlayerfsmState failed for player is dead , newState =  " .. newState .. "  -- " .. self._bounceData.durationMs)
+    return
   end
-  ;
-  (Log.debug)("[bounce] BouncePlayer chgPlayerfsmState " .. newState .. "  -- " .. (self._bounceData).durationMs)
-  ;
-  (self.playerStateFsm):ChangeState(newState)
-  ;
-  (self._coreController):PlayerChangeState(newState == StateBouncePlayer.Jump or newState == StateBouncePlayer.Down or newState == StateBouncePlayer.JumpAttack)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  Log.debug("[bounce] BouncePlayer chgPlayerfsmState " .. newState .. "  -- " .. self._bounceData.durationMs)
+  self.playerStateFsm:ChangeState(newState)
+  self._coreController:PlayerChangeState(newState == StateBouncePlayer.Jump or newState == StateBouncePlayer.Down or newState == StateBouncePlayer.JumpAttack)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayer.GetBounceData = function(self)
-  -- function num : 0_7
+function BouncePlayer:GetBounceData()
   return self._bounceData
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayer.OnJump = function(self)
-  -- function num : 0_8
-  local curState = (self.playerStateFsm):GetCurState()
+function BouncePlayer:OnJump()
+  local curState = self.playerStateFsm:GetCurState()
   curState:OnJump()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayer.OnAttack = function(self)
-  -- function num : 0_9
-  local curState = (self.playerStateFsm):GetCurState()
+function BouncePlayer:OnAttack()
+  local curState = self.playerStateFsm:GetCurState()
   curState:OnAttack()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayer.OnUpdate = function(self, deltaMS)
-  -- function num : 0_10 , upvalues : _ENV
+function BouncePlayer:OnUpdate(deltaMS)
   if self.playerStateFsm then
-    (self.playerStateFsm):OnUpdate(deltaMS)
+    self.playerStateFsm:OnUpdate(deltaMS)
   end
   if not self._aniBehavior then
     self._aniBehavior = self:GetBehavior(BouncePlayerBeHaviorAnimation:Name())
   end
-  ;
-  (self._aniBehavior):OnUpdate(deltaMS)
+  self._aniBehavior:OnUpdate(deltaMS)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayer.HandleMove = function(self, deltaMS, chgState)
-  -- function num : 0_11 , upvalues : _ENV
+function BouncePlayer:HandleMove(deltaMS, chgState)
   if self.viewBehavior then
-    local pos = (self.viewBehavior):GetPosition()
-    pos.y = pos.y + (self.playerData).curSpeed * deltaMS / 1000
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.playerData).curSpeed = (self.playerData).curSpeed - (self.playerData).gSpeed * deltaMS / 1000
-    local nextState = nil
+    local pos = self.viewBehavior:GetPosition()
+    pos.y = pos.y + self.playerData.curSpeed * deltaMS / 1000
+    self.playerData.curSpeed = self.playerData.curSpeed - self.playerData.gSpeed * deltaMS / 1000
+    local nextState
     if pos.y <= 0 then
       pos.y = 0
-      -- DECOMPILER ERROR at PC28: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self.playerData).curSpeed = 0
+      self.playerData.curSpeed = 0
       nextState = StateBouncePlayer.Walk
     end
-    ;
-    (self.viewBehavior):SetPosition(pos)
+    self.viewBehavior:SetPosition(pos)
     if nextState and chgState then
       self:ChgPlayerState(StateBouncePlayer.Walk)
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayer.IsPlayerOnBoard = function(self)
-  -- function num : 0_12
+function BouncePlayer:IsPlayerOnBoard()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayer.SetVisible = function(self, bVisible)
-  -- function num : 0_13
-  (self.viewBehavior):SetVisible(bVisible)
+function BouncePlayer:SetVisible(bVisible)
+  self.viewBehavior:SetVisible(bVisible)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayer.GetRect = function(self)
-  -- function num : 0_14
-  local curState = (self.playerStateFsm):GetCurState()
+function BouncePlayer:GetRect()
+  local curState = self.playerStateFsm:GetCurState()
   local baseRectName, weaponRectName = curState:GetRectNames()
   if not baseRectName then
     return nil
   end
-  local baseRect = ((self.viewBehavior):GetRect(baseRectName))
-  local weaponRect = nil
+  local baseRect = self.viewBehavior:GetRect(baseRectName)
+  local weaponRect
   if weaponRectName then
-    weaponRect = (self.viewBehavior):GetRect(weaponRectName)
+    weaponRect = self.viewBehavior:GetRect(weaponRectName)
   end
   return baseRect, weaponRect
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayer.SetState = function(self, state)
-  -- function num : 0_15
+function BouncePlayer:SetState(state)
   self.state = state
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayer.OnHurt = function(self, ap)
-  -- function num : 0_16 , upvalues : _ENV
+function BouncePlayer:OnHurt(ap)
   if BounceDebug.PlayerLiveForever then
-    return 
+    return
   end
-  if ((self._coreController).bounceData):GetIsGuiding() then
-    return 
+  if self._coreController.bounceData:GetIsGuiding() then
+    return
   end
   self:ChgPlayerState(StateBouncePlayer.Dead)
-  ;
-  (self._coreController):StartOver()
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BouncePlayerDead)
+  self._coreController:StartOver()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BouncePlayerDead)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayer.IsDown = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function BouncePlayer:IsDown()
   local stateType = self:GetPlayerStateType()
   if not stateType then
     return false
   end
-  do return stateType == StateBouncePlayer.AccDown or stateType == StateBouncePlayer.Down end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return stateType == StateBouncePlayer.AccDown or stateType == StateBouncePlayer.Down
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayer.GetPlayerStateType = function(self)
-  -- function num : 0_18
-  local curState = (self.playerStateFsm):GetCurState()
+function BouncePlayer:GetPlayerStateType()
+  local curState = self.playerStateFsm:GetCurState()
   local stateType = curState:GetStateType()
   return stateType
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayer.OnHurtMonsterWhenDown = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function BouncePlayer:OnHurtMonsterWhenDown()
   local stateType = self:GetPlayerStateType()
   if not stateType then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
   if stateType == StateBouncePlayer.Down then
-    (self.playerData).curSpeed = (self.playerData).speedWhenAttackAtDown
+    self.playerData.curSpeed = self.playerData.speedWhenAttackAtDown
     self:ChgPlayerState(StateBouncePlayer.Jump)
-  else
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-    if stateType == StateBouncePlayer.AccDown then
-      (self.playerData).curSpeed = (self.playerData).speedWhenAttackAtAccDown
-      self:ChgPlayerState(StateBouncePlayer.Jump)
-    end
+  elseif stateType == StateBouncePlayer.AccDown then
+    self.playerData.curSpeed = self.playerData.speedWhenAttackAtAccDown
+    self:ChgPlayerState(StateBouncePlayer.Jump)
   end
 end
-
-

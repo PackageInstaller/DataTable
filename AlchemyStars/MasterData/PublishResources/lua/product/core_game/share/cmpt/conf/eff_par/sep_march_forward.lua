@@ -1,67 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_march_forward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectMarchForwardParam", SkillEffectParamBase)
 SkillEffectMarchForwardParam = SkillEffectMarchForwardParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectMarchForwardParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectMarchForwardParam:Constructor(t)
   self._step = t.step or 0
   self._dir = Vector2(0, 1)
   if t.dir then
-    self._dir = Vector2((t.dir)[1], (t.dir)[2])
+    self._dir = Vector2(t.dir[1], t.dir[2])
   end
   self._maxStep = t.maxStep or 0
   self._marchBuffValueKey = t.marchBuffValueKey or "MarchStep"
-  if not t.destroyTrapBlockIDs then
-    self._destroyTrapBlockIDs = {}
-  end
+  self._destroyTrapBlockIDs = t.destroyTrapBlockIDs or {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMarchForwardParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectMarchForwardParam:GetEffectType()
   return SkillEffectType.MarchForward
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMarchForwardParam.GetDir = function(self)
-  -- function num : 0_2
+function SkillEffectMarchForwardParam:GetDir()
   return self._dir
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMarchForwardParam.GetStep = function(self)
-  -- function num : 0_3
+function SkillEffectMarchForwardParam:GetStep()
   return self._step
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMarchForwardParam.GetMaxMarchStep = function(self)
-  -- function num : 0_4
+function SkillEffectMarchForwardParam:GetMaxMarchStep()
   return self._maxStep
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMarchForwardParam.GetMarchBuffValueKey = function(self)
-  -- function num : 0_5
+function SkillEffectMarchForwardParam:GetMarchBuffValueKey()
   return self._marchBuffValueKey
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMarchForwardParam.GetDestroyTrapBlockIDs = function(self)
-  -- function num : 0_6
+function SkillEffectMarchForwardParam:GetDestroyTrapBlockIDs()
   return self._destroyTrapBlockIDs
 end
-
-

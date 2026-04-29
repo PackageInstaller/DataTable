@@ -1,30 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/cutscene/cutscene_jump_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("cutscene_base_ins_r")
 _class("CutsceneJumpInstruction", BaseInstruction)
 CutsceneJumpInstruction = CutsceneJumpInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneJumpInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function CutsceneJumpInstruction:Constructor(paramList)
   self._condition = paramList.condition
   self._gotoLabel = paramList["goto"]
   local strResult = paramList.result
-  if tonumber(strResult) ~= 1 then
-    self._result = not strResult
+  if strResult then
+    self._result = tonumber(strResult) == 1
+  else
     self._result = true
-    self._conditionParam = paramList.param
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
   end
+  self._conditionParam = paramList.param
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneJumpInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function CutsceneJumpInstruction:DoInstruction(TT, casterEntity, phaseContext)
 end
-
-

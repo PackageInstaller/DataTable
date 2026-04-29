@@ -1,138 +1,88 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/shop/ui_homeland_shop_buy_confirm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandShopBuyConfirm", UIController)
 UIHomelandShopBuyConfirm = UIHomelandShopBuyConfirm
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandShopBuyConfirm.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandShopBuyConfirm:OnShow(uiParams)
   self._itemId = uiParams[1]
   self._cost = uiParams[2]
   self._limit = uiParams[3]
   self._limitOnce = uiParams[4]
   self._callback = uiParams[5]
   self.sldCount = self:GetUIComponent("Slider", "sldCount")
-  self.OnSldCountValueChange = function(value)
-    -- function num : 0_0_0 , upvalues : self, _ENV
-    self._count = (math.modf)(value)
+  
+  function self.OnSldCountValueChange(value)
+    self._count, _ = math.modf(value)
     self:_ChangeCount(0)
   end
-
-  ;
-  ((self.sldCount).onValueChanged):AddListener(self.OnSldCountValueChange)
+  
+  self.sldCount.onValueChanged:AddListener(self.OnSldCountValueChange)
   self._count = 1
   self:_ChangeCount(0)
   self:_Init(self._itemId)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopBuyConfirm.OnHide = function(self)
-  -- function num : 0_1
-  ((self.sldCount).onValueChanged):RemoveListener(self.OnSldCountValueChange)
+function UIHomelandShopBuyConfirm:OnHide()
+  self.sldCount.onValueChanged:RemoveListener(self.OnSldCountValueChange)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopBuyConfirm._Init = function(self, itemId)
-  -- function num : 0_2 , upvalues : _ENV
-  (UIWidgetHelper.SetItemIcon)(self, itemId, "itemIcon")
-  ;
-  (UIWidgetHelper.SetItemText)(self, itemId, "itemName")
-  local coinId = (UIHomelandShopHelper.GetCoinItemId)()
-  ;
-  (UIWidgetHelper.SetItemIcon)(self, coinId, "costIcon")
-  ;
-  (UIWidgetHelper.SetItemText)(self, coinId, "costName")
-  ;
-  (self:GetGameObject("result")):SetActive(self._limit ~= 0)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIHomelandShopBuyConfirm:_Init(itemId)
+  UIWidgetHelper.SetItemIcon(self, itemId, "itemIcon")
+  UIWidgetHelper.SetItemText(self, itemId, "itemName")
+  local coinId = UIHomelandShopHelper.GetCoinItemId()
+  UIWidgetHelper.SetItemIcon(self, coinId, "costIcon")
+  UIWidgetHelper.SetItemText(self, coinId, "costName")
+  self:GetGameObject("result"):SetActive(self._limit ~= 0)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopBuyConfirm._ChangeCount = function(self, n)
-  -- function num : 0_3 , upvalues : _ENV
-  local have = (UIHomelandShopHelper.GetCoinItemCount)()
-  local max = (math.floor)(have / self._cost)
-  max = (math.min)(self._limitOnce, max)
+function UIHomelandShopBuyConfirm:_ChangeCount(n)
+  local have = UIHomelandShopHelper.GetCoinItemCount()
+  local max = math.floor(have / self._cost)
+  max = math.min(self._limitOnce, max)
   if self._limit ~= 0 then
-    max = (math.min)(max, self._limit)
+    max = math.min(max, self._limit)
   end
   local min = 1
-  self._count = (Mathf.Clamp)(self._count + n, min, max)
+  self._count = Mathf.Clamp(self._count + n, min, max)
   if self._limit ~= 0 then
-    (UIWidgetHelper.SetLocalizationText)(self, "txtResultL", self._limit)
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, "txtResultR", self._limit - self._count)
+    UIWidgetHelper.SetLocalizationText(self, "txtResultL", self._limit)
+    UIWidgetHelper.SetLocalizationText(self, "txtResultR", self._limit - self._count)
   end
-  local formatL = (HelperProxy:GetInstance()):FormatItemCount(have)
-  local formatR = (HelperProxy:GetInstance()):FormatItemCount(have - self._cost * self._count)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "txtCostL", formatL)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "txtCostR", formatR)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "txtCount", self._count)
-  ;
-  (UIWidgetHelper.SetSliderValue)(self, "sldCount", self._count, max)
+  local formatL = HelperProxy:GetInstance():FormatItemCount(have)
+  local formatR = HelperProxy:GetInstance():FormatItemCount(have - self._cost * self._count)
+  UIWidgetHelper.SetLocalizationText(self, "txtCostL", formatL)
+  UIWidgetHelper.SetLocalizationText(self, "txtCostR", formatR)
+  UIWidgetHelper.SetLocalizationText(self, "txtCount", self._count)
+  UIWidgetHelper.SetSliderValue(self, "sldCount", self._count, max)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopBuyConfirm.MinBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIHomelandShopBuyConfirm:MinBtnOnClick(go)
   self._count = 1
   self:_ChangeCount(0)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopBuyConfirm.DecBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIHomelandShopBuyConfirm:DecBtnOnClick(go)
   self:_ChangeCount(-1)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopBuyConfirm.AddBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIHomelandShopBuyConfirm:AddBtnOnClick(go)
   self:_ChangeCount(1)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopBuyConfirm.MaxBtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  local max = (UIHomelandShopHelper.GetItemCount)(self:_GetMainItemId())
+function UIHomelandShopBuyConfirm:MaxBtnOnClick(go)
+  local max = UIHomelandShopHelper.GetItemCount(self:_GetMainItemId())
   self:_ChangeCount(max)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopBuyConfirm.BgOnClick = function(self, go)
-  -- function num : 0_8
+function UIHomelandShopBuyConfirm:BgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopBuyConfirm.CloseBtnOnClick = function(self, go)
-  -- function num : 0_9
+function UIHomelandShopBuyConfirm:CloseBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopBuyConfirm.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_10
+function UIHomelandShopBuyConfirm:ConfirmBtnOnClick(go)
   if self._callback then
-    (self._callback)(self._itemId, self._count)
+    self._callback(self._itemId, self._count)
   end
   self:CloseDialog()
 end
-
-

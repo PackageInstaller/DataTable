@@ -1,147 +1,99 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/simulation_operation_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("SimulationOperation", ICampaignComponent)
 SimulationOperation = SimulationOperation
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SimulationOperation.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SimulationOperation:Constructor()
   self.m_component_info = SimulationOperationComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SimulationOperation.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SimulationOperation:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = SimulationOperationComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SimulationOperation.GetComponentInfo = function(self)
-  -- function num : 0_2
+function SimulationOperation:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SimulationOperation.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SimulationOperation:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_SIMULATION_OPERATION
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SimulationOperation.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function SimulationOperation:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SimulationOperation.HandlePickUpCoin = function(self, TT, asyncRes, arch_id)
-  -- function num : 0_5 , upvalues : _ENV
+function SimulationOperation:HandlePickUpCoin(TT, asyncRes, arch_id)
   local request = PickUpComponentReq:New()
   request.arch_id = arch_id
   local response = PickUpComponentRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][SimulationOperation] HandleSubmitMissionInfo ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SimulationOperation] HandleSubmitMissionInfo ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R7 in 'UnsetPending'
-
   if response.ret == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    ((self.m_component_info).arch_infos)[(response.info).arch_id] = response.info
+    self.m_component_info.arch_infos[response.info.arch_id] = response.info
   end
   return response.ret, response.suc
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SimulationOperation.HandleSubmitSimulationOperationStory = function(self, TT, asyncRes, arch_id, story_id, final_story)
-  -- function num : 0_6 , upvalues : _ENV
+function SimulationOperation:HandleSubmitSimulationOperationStory(TT, asyncRes, arch_id, story_id, final_story)
   local request = SubmitStoryComponentReq:New()
   request.arch_id = arch_id
   request.story_id = story_id
   request.final_story = final_story
   local response = SubmitStoryComponentRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][SimulationOperation] HandleStory ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SimulationOperation] HandleStory ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R9 in 'UnsetPending'
-
   if response.ret == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
     if final_story == true then
-      (self.m_component_info).final_story = response.final_story
+      self.m_component_info.final_story = response.final_story
     else
-      -- DECOMPILER ERROR at PC44: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self.m_component_info).story_list = response.story_list
+      self.m_component_info.story_list = response.story_list
     end
   end
   return response.ret, response.rewards
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SimulationOperation.HandleUpgradeArch = function(self, TT, asyncRes, arch_id)
-  -- function num : 0_7 , upvalues : _ENV
+function SimulationOperation:HandleUpgradeArch(TT, asyncRes, arch_id)
   local request = UpgradeComponentReq:New()
   request.arch_id = arch_id
   local response = UpgradeComponentRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][SimulationOperation] HandleGetTargetReward ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SimulationOperation] HandleGetTargetReward ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R7 in 'UnsetPending'
-
   if response.ret == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    ((self.m_component_info).arch_infos)[(response.info).arch_id] = response.info
+    self.m_component_info.arch_infos[response.info.arch_id] = response.info
   end
   return response.ret, response.rewards
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SimulationOperation.HandleGetArchInfos = function(self, TT, asyncRes)
-  -- function num : 0_8 , upvalues : _ENV
+function SimulationOperation:HandleGetArchInfos(TT, asyncRes)
   local request = GetArchInfosComponentReq:New()
   local response = GetArchInfosComponentRep:New()
-  if not self.m_campaign_com_module or not (self.m_campaign_com_module):GetCampaignManager() then
+  if not self.m_campaign_com_module or not self.m_campaign_com_module:GetCampaignManager() then
     return asyncRes
   end
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][SimulationOperation] HandleGetTargetReward ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SimulationOperation] HandleGetTargetReward ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R6 in 'UnsetPending'
-
   if response.ret == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    (self.m_component_info).arch_infos = response.arch_infos
+    self.m_component_info.arch_infos = response.arch_infos
   end
   return response.ret
 end
-
-

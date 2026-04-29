@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/collection/ui_n28_avg_badge_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGBadgeItem", UICustomWidget)
 UIN28AVGBadgeItem = UIN28AVGBadgeItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGBadgeItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN28AVGData()
+function UIN28AVGBadgeItem:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN28AVGData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGBadgeItem.OnShow = function(self)
-  -- function num : 0_1
+function UIN28AVGBadgeItem:OnShow()
   self.root = self:GetUIComponent("RectTransform", "root")
   self.imgIconObj = self:GetGameObject("imgIcon")
   self.btn = self:GetUIComponent("RectTransform", "btn")
@@ -25,105 +15,56 @@ UIN28AVGBadgeItem.OnShow = function(self)
   self.select = self:GetGameObject("select")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGBadgeItem.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgIcon):DestoryLastImage()
+function UIN28AVGBadgeItem:OnHide()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGBadgeItem.Flush = function(self, id, clickCallback)
-  -- function num : 0_3
+function UIN28AVGBadgeItem:Flush(id, clickCallback)
   self.id = id
-  local badge = (self.data):GetBadgeById(id)
-  ;
-  (self.imgIcon):LoadImage(badge.icon)
-  if badge:HasGot() then
-    local show = not badge:HasNew()
-  end
-  ;
-  (self.got):SetActive(show)
+  local badge = self.data:GetBadgeById(id)
+  self.imgIcon:LoadImage(badge.icon)
+  local show = badge:HasGot() and not badge:HasNew()
+  self.got:SetActive(show)
   self.clickCallback = clickCallback
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGBadgeItem.FlushPos = function(self, pos)
-  -- function num : 0_4
+function UIN28AVGBadgeItem:FlushPos(pos)
   self._pos = pos
   self:_Move(self._pos, self._pos)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGBadgeItem.FlushSelect = function(self, id)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN28AVGBadgeItem:FlushSelect(id)
   local select = id == self.id
-  ;
-  (self.select):SetActive(select)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not select or not Vector3(1.1, 1.1, 1.1) then
-    ((self.imgIconObj).transform).localScale = Vector3.one
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
-  end
+  self.select:SetActive(select)
+  self.imgIconObj.transform.localScale = select and Vector3(1.1, 1.1, 1.1) or Vector3.one
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGBadgeItem.BtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIN28AVGBadgeItem:BtnOnClick(go)
   if self.clickCallback then
     self:clickCallback()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGBadgeItem.FlushNewEffect = function(self)
-  -- function num : 0_7
-  (self.got):SetActive(true)
+function UIN28AVGBadgeItem:FlushNewEffect()
+  self.got:SetActive(true)
   self:_PlayAnim_1(function()
-    -- function num : 0_7_0 , upvalues : self
     self:BtnOnClick()
     self:_PlayAnim_2()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGBadgeItem._PlayAnim_1 = function(self, callback)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN28AVGBadgeItem:_PlayAnim_1(callback)
   self:_Move(self._pos, Vector2(235, 0))
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "anim", "uieff_UIN28AVGBadgeItem_01", 800, callback)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N20GetBadge)
+  UIWidgetHelper.PlayAnimation(self, "anim", "uieff_UIN28AVGBadgeItem_01", 800, callback)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N20GetBadge)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGBadgeItem._PlayAnim_2 = function(self, callback)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN28AVGBadgeItem:_PlayAnim_2(callback)
   self:_Move(self._pos, self._pos)
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "anim", "uieff_UIN28AVGBadgeItem_02", 700, callback)
+  UIWidgetHelper.PlayAnimation(self, "anim", "uieff_UIN28AVGBadgeItem_02", 700, callback)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGBadgeItem._Move = function(self, pos1, pos2)
-  -- function num : 0_10
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self.btn).anchoredPosition = pos1
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.root).anchoredPosition = pos2
+function UIN28AVGBadgeItem:_Move(pos1, pos2)
+  self.btn.anchoredPosition = pos1
+  self.root.anchoredPosition = pos2
 end
-
-

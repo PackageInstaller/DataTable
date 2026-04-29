@@ -1,58 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_auto_bead_need_energy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeAutoBeadNeedEnergy", BuffLogicBase)
 BuffLogicChangeAutoBeadNeedEnergy = BuffLogicChangeAutoBeadNeedEnergy
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeAutoBeadNeedEnergy.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeAutoBeadNeedEnergy:Constructor(buffInstance, logicParam)
   self._autoBeadTagList = logicParam.autoBeadTagList
   self._mulValue = logicParam.mulValue or 0
   self._addValue = logicParam.addValue or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAutoBeadNeedEnergy.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local autoBeadServiceLogic = (self._world):GetService("AutoBeadLogic")
+function BuffLogicChangeAutoBeadNeedEnergy:DoLogic(notify)
+  local autoBeadServiceLogic = self._world:GetService("AutoBeadLogic")
   local holderEntity = self._entity
-  if (self._entity):HasTeam() then
+  if self._entity:HasTeam() then
     local teamEntity = self._entity
-    local autoBeadServiceLogic = (self._world):GetService("AutoBeadLogic")
+    local autoBeadServiceLogic = self._world:GetService("AutoBeadLogic")
     holderEntity = autoBeadServiceLogic:GetAutoBeadSkillHolder(teamEntity)
   end
-  do
-    if not holderEntity then
-      return 
-    end
-    local oldTotalNeed = 0
-    local curTotalNeed = 0
-    local tagList = self._autoBeadTagList
-    local autoBeadCmpt = holderEntity:LogicAutoBead()
-    if autoBeadCmpt then
-      oldTotalNeed = autoBeadCmpt:GetAutoBeadPointEachPower()
-      local dataList = autoBeadCmpt:GetAutoBeadInnerDataListByTag(tagList)
-      for index,data in ipairs(data) do
-        local innerData = data
-        local oldEnergy = innerData:GetAutoBeadAttr(ESeasonMazeAutoBeadAttr.ESeasonMazeAutoBeadAttr_Energy)
-        if oldEnergy then
-          local mulAddVal = (math.ceil)(oldEnergy * self._mulValue)
-          local curEnergy = oldEnergy + mulAddVal + self._addValue
-          innerData:SetAutoBeadAttr(ESeasonMazeAutoBeadAttr.ESeasonMazeAutoBeadAttr_Energy, curEnergy)
-        end
-      end
-      autoBeadServiceLogic:CalcAutoBeadNeedEnergy(teamEntity)
-      curTotalNeed = autoBeadCmpt:GetAutoBeadPointEachPower()
-    end
-    do
-      local result = BuffResultChangeAutoBeadNeedEnergy:New(curTotalNeed, oldTotalNeed)
-      return result
-    end
+  if not holderEntity then
+    return
   end
+  local oldTotalNeed = 0
+  local curTotalNeed = 0
+  local tagList = self._autoBeadTagList
+  local autoBeadCmpt = holderEntity:LogicAutoBead()
+  if autoBeadCmpt then
+    oldTotalNeed = autoBeadCmpt:GetAutoBeadPointEachPower()
+    local dataList = autoBeadCmpt:GetAutoBeadInnerDataListByTag(tagList)
+    for index, data in ipairs(data) do
+      local innerData = data
+      local oldEnergy = innerData:GetAutoBeadAttr(ESeasonMazeAutoBeadAttr.ESeasonMazeAutoBeadAttr_Energy)
+      if oldEnergy then
+        local mulAddVal = math.ceil(oldEnergy * self._mulValue)
+        local curEnergy = oldEnergy + mulAddVal + self._addValue
+        innerData:SetAutoBeadAttr(ESeasonMazeAutoBeadAttr.ESeasonMazeAutoBeadAttr_Energy, curEnergy)
+      end
+    end
+    autoBeadServiceLogic:CalcAutoBeadNeedEnergy(teamEntity)
+    curTotalNeed = autoBeadCmpt:GetAutoBeadPointEachPower()
+  end
+  local result = BuffResultChangeAutoBeadNeedEnergy:New(curTotalNeed, oldTotalNeed)
+  return result
 end
-
-

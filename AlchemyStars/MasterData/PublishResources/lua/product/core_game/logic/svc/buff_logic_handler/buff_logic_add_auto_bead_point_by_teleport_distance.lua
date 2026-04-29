@@ -1,31 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_auto_bead_point_by_teleport_distance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAddAutoBeadPointByTeleportDistance", BuffLogicBase)
 BuffLogicAddAutoBeadPointByTeleportDistance = BuffLogicAddAutoBeadPointByTeleportDistance
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddAutoBeadPointByTeleportDistance.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddAutoBeadPointByTeleportDistance:Constructor(buffInstance, logicParam)
   self._addValue = logicParam.addValue
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddAutoBeadPointByTeleportDistance.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
-  local currentRingNum = utilCalcSvc:GetGridRingNum(notify:GetPosNew(), notify:GetPosOld(), ((notify:GetNotifyEntity()):BodyArea()):GetArea())
+function BuffLogicAddAutoBeadPointByTeleportDistance:DoLogic(notify)
+  local utilCalcSvc = self._world:GetService("UtilCalc")
+  local currentRingNum = utilCalcSvc:GetGridRingNum(notify:GetPosNew(), notify:GetPosOld(), notify:GetNotifyEntity():BodyArea():GetArea())
   local addPoint = self._addValue * currentRingNum
-  addPoint = (math.floor)(addPoint)
-  local autoBeadServiceLogic = (self._world):GetService("AutoBeadLogic")
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  addPoint = math.floor(addPoint)
+  local autoBeadServiceLogic = self._world:GetService("AutoBeadLogic")
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local pointEachPower = autoBeadServiceLogic:GetAutoBeadPointEachPower(teamEntity)
   if not pointEachPower then
-    return 
+    return
   end
   local oldVal = autoBeadServiceLogic:GetAutoBeadPoint(teamEntity)
   autoBeadServiceLogic:AddAutoBeadPoint(teamEntity, addPoint)
@@ -33,5 +23,3 @@ BuffLogicAddAutoBeadPointByTeleportDistance.DoLogic = function(self, notify)
   local result = BuffResultAddAutoBeadPointByTeleportDistance:New(curVal, oldVal)
   return result
 end
-
-

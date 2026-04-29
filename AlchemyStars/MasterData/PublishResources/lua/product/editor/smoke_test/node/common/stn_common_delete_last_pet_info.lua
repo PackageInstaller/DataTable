@@ -1,22 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/common/stn_common_delete_last_pet_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("Common_DeleteLastPetInfo", Common_AsyncBase)
 Common_DeleteLastPetInfo = Common_DeleteLastPetInfo
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Common_DeleteLastPetInfo.TaskFunc = function(self, TT, status)
-  -- function num : 0_0 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function Common_DeleteLastPetInfo:TaskFunc(TT, status)
+  local runData = self.m_pManager:GetMissionRunData()
   local currentTemplateID = runData:GetCurrentTeamBuildFormationTemplateID()
-  for _,petTemplateID in ipairs(currentTemplateID) do
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R10 in 'UnsetPending'
-
-    (runData._petInfo)[petTemplateID] = nil
+  for _, petTemplateID in ipairs(currentTemplateID) do
+    runData._petInfo[petTemplateID] = nil
   end
 end
-
-

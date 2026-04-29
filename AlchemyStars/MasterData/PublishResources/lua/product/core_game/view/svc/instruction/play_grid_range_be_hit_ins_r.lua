@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_grid_range_be_hit_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayGridRangeBeHitInstruction", BaseInstruction)
 PlayGridRangeBeHitInstruction = PlayGridRangeBeHitInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayGridRangeBeHitInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayGridRangeBeHitInstruction:Constructor(paramList)
   self._hitAnimName = paramList.hitAnimName
   self._hitEffectID = tonumber(paramList.hitEffectID)
   self._turnToTarget = tonumber(paramList.turnToTarget)
@@ -22,71 +15,52 @@ PlayGridRangeBeHitInstruction.Constructor = function(self, paramList)
   self._hitBackUseDamageIndex = tonumber(paramList.hitBackUseDamageIndex) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridRangeBeHitInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayGridRangeBeHitInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local scopeGridRange = phaseContext:GetScopeGridRange()
   if not scopeGridRange then
-    return 
+    return
   end
   local maxScopeRangeCount = phaseContext:GetMaxRangeCount()
   if not maxScopeRangeCount then
-    return 
+    return
   end
   local curScopeGridRangeIndex = phaseContext:GetCurScopeGridRangeIndex()
   if maxScopeRangeCount < curScopeGridRangeIndex then
-    return 
+    return
   end
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
   local visited = {}
   local taskIds = {}
-  for _,range in pairs(scopeGridRange) do
+  for _, range in pairs(scopeGridRange) do
     if range then
       local posList = range[curScopeGridRangeIndex]
       if posList then
-        for _,pos in pairs(posList) do
+        for _, pos in pairs(posList) do
           if self._bodyArea == 1 then
             local t = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, self._damageStageIndex)
-            for damageIndex,result in ipairs(t) do
+            for damageIndex, result in ipairs(t) do
               if result:GetGridPos() == pos then
                 local taskid = self:_CommonBeHit(TT, casterEntity, phaseContext, result, damageIndex)
                 taskIds[#taskIds + 1] = taskid
               end
             end
-          else
-            do
-              if self._bodyArea == 4 then
-                local bodyAreaFix = {}
-                ;
-                (table.insert)(bodyAreaFix, Vector2(0.5, 0.5))
-                ;
-                (table.insert)(bodyAreaFix, Vector2(0.5, -0.5))
-                ;
-                (table.insert)(bodyAreaFix, Vector2(-0.5, 0.5))
-                ;
-                (table.insert)(bodyAreaFix, Vector2(-0.5, -0.5))
-                for _,bodyArea in pairs(bodyAreaFix) do
-                  local workPos = bodyArea + pos
-                  local t = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, self._damageStageIndex)
-                  for damageIndex,result in ipairs(t) do
-                    if result:GetGridPos() == workPos and not (table.icontains)(visited, workPos) then
-                      visited[#visited + 1] = workPos
-                      local taskid = self:_CommonBeHit(TT, casterEntity, phaseContext, result, damageIndex)
-                      taskIds[#taskIds + 1] = taskid
-                    end
-                  end
+          elseif self._bodyArea == 4 then
+            local bodyAreaFix = {}
+            table.insert(bodyAreaFix, Vector2(0.5, 0.5))
+            table.insert(bodyAreaFix, Vector2(0.5, -0.5))
+            table.insert(bodyAreaFix, Vector2(-0.5, 0.5))
+            table.insert(bodyAreaFix, Vector2(-0.5, -0.5))
+            for _, bodyArea in pairs(bodyAreaFix) do
+              local workPos = bodyArea + pos
+              local t = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, self._damageStageIndex)
+              for damageIndex, result in ipairs(t) do
+                if result:GetGridPos() == workPos and not table.icontains(visited, workPos) then
+                  visited[#visited + 1] = workPos
+                  local taskid = self:_CommonBeHit(TT, casterEntity, phaseContext, result, damageIndex)
+                  taskIds[#taskIds + 1] = taskid
                 end
-              end
-              do
-                -- DECOMPILER ERROR at PC146: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC146: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC146: LeaveBlock: unexpected jumping out IF_STMT
-
               end
             end
           end
@@ -94,17 +68,12 @@ PlayGridRangeBeHitInstruction.DoInstruction = function(self, TT, casterEntity, p
       end
     end
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIds) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIds) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridRangeBeHitInstruction._CommonBeHit = function(self, TT, casterEntity, phaseContext, damageResult, damageIndex)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayGridRangeBeHitInstruction:_CommonBeHit(TT, casterEntity, phaseContext, damageResult, damageIndex)
   local targetID = damageResult:GetTargetID()
   if not targetID then
     return 0
@@ -112,7 +81,7 @@ PlayGridRangeBeHitInstruction._CommonBeHit = function(self, TT, casterEntity, ph
   local world = casterEntity:GetOwnerWorld()
   local playSkillService = world:GetService("PlaySkill")
   local targetEntity = world:GetEntityByID(targetID)
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local curDamageIndex = phaseContext:GetCurDamageResultIndex()
   local curDamageInfoIndex = phaseContext:GetCurDamageInfoIndex()
@@ -124,30 +93,23 @@ PlayGridRangeBeHitInstruction._CommonBeHit = function(self, TT, casterEntity, ph
   if skillEffectResultContainer:IsFinalAttack() and damageResultArray[#damageResultArray] == damageResult then
     playFinalAttack = true
   end
-  local taskid = ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, casterEntity, targetEntity, self, damageInfo, damageGridPos, playFinalAttack, skillID, damageIndex, playSkillService
-    local beHitParam = (((((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(self._hitAnimName)):SetHandleBeHitParam_HitEffectID(self._hitEffectID)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damageGridPos)):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget)):SetHandleBeHitParam_DeathClear(self._deathClear)):SetHandleBeHitParam_IsFinalHit(playFinalAttack)):SetHandleBeHitParam_SkillID(skillID)):SetHandleBeHitParam_DamageIndex(damageIndex)):SetHandleBeHitParam_HitBackSpeed(self._hitBackSpeed)):SetHandleBeHitParam_HitBackUseDamageIndex(self._hitBackUseDamageIndex)
+  local taskid = GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+    local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(self._hitAnimName):SetHandleBeHitParam_HitEffectID(self._hitEffectID):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damageGridPos):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget):SetHandleBeHitParam_DeathClear(self._deathClear):SetHandleBeHitParam_IsFinalHit(playFinalAttack):SetHandleBeHitParam_SkillID(skillID):SetHandleBeHitParam_DamageIndex(damageIndex):SetHandleBeHitParam_HitBackSpeed(self._hitBackSpeed):SetHandleBeHitParam_HitBackUseDamageIndex(self._hitBackUseDamageIndex)
     playSkillService:HandleBeHit(TT, beHitParam)
-  end
-)
+  end)
   return taskid
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridRangeBeHitInstruction._GetFinalAttackIndex = function(self, damageResultArray)
-  -- function num : 0_3
+function PlayGridRangeBeHitInstruction:_GetFinalAttackIndex(damageResultArray)
   if not damageResultArray then
     return -1
   end
   for i = #damageResultArray, 1, -1 do
     local result = damageResultArray[i]
     local targetId = result:GetTargetID()
-    if targetId ~= nil and targetId > 0 then
+    if targetId ~= nil and 0 < targetId then
       return i
     end
   end
   return -1
 end
-
-

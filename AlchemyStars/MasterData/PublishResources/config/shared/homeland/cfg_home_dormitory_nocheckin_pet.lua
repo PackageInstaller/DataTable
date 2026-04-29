@@ -1,35 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/homeland/cfg_home_dormitory_nocheckin_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {ID = 1, PetID = 2}
 local config = {
-{1, 1601331}
-, 
-{2, 1601341}
-, 
-{3, 1401371}
-, 
-{4, 1501351}
-, 
-{5, 1501361}
-, 
-{6, 1601581}
-, 
-{7, 1601591}
-, 
-{8, 1501601}
-, 
-{9, 1501611}
-, 
-{10, 1501621}
-, 
-{11, 1602331}
-, 
-{12, 1602341}
-, 
-{13, 1502351}
+  {1, 1601331},
+  {2, 1601341},
+  {3, 1401371},
+  {4, 1501351},
+  {5, 1501361},
+  {6, 1601581},
+  {7, 1601591},
+  {8, 1501601},
+  {9, 1501611},
+  {10, 1501621},
+  {11, 1602331},
+  {12, 1602341},
+  {13, 1502351}
 }
 return config, "ID", key
-

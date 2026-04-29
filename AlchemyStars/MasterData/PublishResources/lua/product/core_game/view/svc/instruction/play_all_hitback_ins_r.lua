@@ -1,23 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_all_hitback_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayAllHitBackInstruction", BaseInstruction)
 PlayAllHitBackInstruction = PlayAllHitBackInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayAllHitBackInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayAllHitBackInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local tResults = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.HitBack)
   if not tResults or #tResults == 0 then
-    return 
+    return
   end
   local playSkillService = world:GetService("PlaySkill")
   local taskArray = {}
-  for _,result in ipairs(tResults) do
+  for _, result in ipairs(tResults) do
     if not result:GetHadPlay() then
       local beHitbackEntityID = result:GetTargetID()
       local targetEntity = world:GetEntityByID(beHitbackEntityID)
@@ -25,15 +18,11 @@ PlayAllHitBackInstruction.DoInstruction = function(self, TT, casterEntity, phase
       resvc:TurnToTarget(targetEntity, casterEntity, nil, nil, 1)
       local processHitTaskID = playSkillService:ProcessHit(casterEntity, targetEntity, result)
       if processHitTaskID then
-        (table.insert)(taskArray, processHitTaskID)
+        table.insert(taskArray, processHitTaskID)
       end
     end
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskArray) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskArray) do
+    YIELD(TT)
   end
 end
-
-

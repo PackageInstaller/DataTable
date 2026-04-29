@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n17/get_item/ui_n17_get_item_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN17GetItemController", UIGetItemController)
 UIN17GetItemController = UIN17GetItemController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN17GetItemController._ShowItem = function(self, giftItem, index, tweenIdx)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN17GetItemController:_ShowItem(giftItem, index, tweenIdx)
   local beforeTime = 0
   if not self._inited then
     beforeTime = self._beforeTime
@@ -16,16 +9,10 @@ UIN17GetItemController._ShowItem = function(self, giftItem, index, tweenIdx)
   local item_data = self:_GetItemDataByIndex(index)
   if item_data then
     giftItem:SetData(item_data, index, function(id, pos)
-    -- function num : 0_0_0 , upvalues : self
-    self:OnItemSelect(id, pos)
-  end
-, Color(0.4078431372549, 0.4078431372549, 0.4078431372549, 1), tweenIdx, beforeTime)
-    ;
-    (giftItem:GetGameObject()):SetActive(true)
+      self:OnItemSelect(id, pos)
+    end, Color(0.40784313725490196, 0.40784313725490196, 0.40784313725490196, 1), tweenIdx, beforeTime)
+    giftItem:GetGameObject():SetActive(true)
   else
-    ;
-    (giftItem:GetGameObject()):SetActive(false)
+    giftItem:GetGameObject():SetActive(false)
   end
 end
-
-

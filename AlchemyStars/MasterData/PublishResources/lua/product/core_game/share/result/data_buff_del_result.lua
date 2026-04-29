@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_buff_del_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataBuffDelResult", Object)
 DataBuffDelResult = DataBuffDelResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataBuffDelResult.Constructor = function(self, entityID, buffSeq, buffID, notifyType)
-  -- function num : 0_0
+function DataBuffDelResult:Constructor(entityID, buffSeq, buffID, notifyType)
   self._entityID = entityID
   self._buffSeq = buffSeq
   self._buffID = buffID
   self._notifyType = notifyType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBuffDelResult.GetEntityID = function(self)
-  -- function num : 0_1
+function DataBuffDelResult:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBuffDelResult.GetBuffSeq = function(self)
-  -- function num : 0_2
+function DataBuffDelResult:GetBuffSeq()
   return self._buffSeq
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBuffDelResult.GetBuffID = function(self)
-  -- function num : 0_3
+function DataBuffDelResult:GetBuffID()
   return self._buffID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBuffDelResult.GetNotifyType = function(self)
-  -- function num : 0_4
+function DataBuffDelResult:GetNotifyType()
   return self._notifyType
 end
-
-

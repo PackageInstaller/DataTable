@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/mini_maze/stn_mini_maze_wait_wave_award_or_game_over.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("MiniMazeWaitWaveAwardOrGameOver", CTestRobot_Base)
 MiniMazeWaitWaveAwardOrGameOver = MiniMazeWaitWaveAwardOrGameOver
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MiniMazeWaitWaveAwardOrGameOver.Constructor = function(self, pManger, nEventType1, nEventType2, timeout)
-  -- function num : 0_0
+function MiniMazeWaitWaveAwardOrGameOver:Constructor(pManger, nEventType1, nEventType2, timeout)
   self.m_nEventType1 = nEventType1
   self.m_nEventType2 = nEventType2
   self.m_callback1 = nil
@@ -20,75 +13,48 @@ MiniMazeWaitWaveAwardOrGameOver.Constructor = function(self, pManger, nEventType
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniMazeWaitWaveAwardOrGameOver.OnBegin = function(self, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  self.m_nWaitStart = (os.clock)()
+function MiniMazeWaitWaveAwardOrGameOver:OnBegin(...)
+  self.m_nWaitStart = os.clock()
   self.m_bEventTrigger = false
   self:_AddListener()
-  return ((MiniMazeWaitWaveAwardOrGameOver.super).OnBegin)(self, ...)
+  return MiniMazeWaitWaveAwardOrGameOver.super.OnBegin(self, ...)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniMazeWaitWaveAwardOrGameOver.OnWorking = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC12: Unhandled construct in 'MakeBoolean' P3
-
-  local isTimeout = (self._maxTimeoutMS and self._maxTimeoutMS < (os.clock)() - self.m_nWaitStart)
+function MiniMazeWaitWaveAwardOrGameOver:OnWorking()
+  local isTimeout = self._maxTimeoutMS and os.clock() - self.m_nWaitStart > self._maxTimeoutMS or false
   if not self.m_bEventTrigger and not isTimeout then
     return false
   end
-  do return ((MiniMazeWaitWaveAwardOrGameOver.super).OnWorking)(self) end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return MiniMazeWaitWaveAwardOrGameOver.super.OnWorking(self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniMazeWaitWaveAwardOrGameOver.OnEnd = function(self, ...)
-  -- function num : 0_3 , upvalues : _ENV
+function MiniMazeWaitWaveAwardOrGameOver:OnEnd(...)
   self:_RemoveListener()
-  return ((MiniMazeWaitWaveAwardOrGameOver.super).OnEnd)(self, ...)
+  return MiniMazeWaitWaveAwardOrGameOver.super.OnEnd(self, ...)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniMazeWaitWaveAwardOrGameOver._AddListener = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self.m_callback1 = (GameHelper:GetInstance()):CreateCallback(self._OnEvent1, self)
-  ;
-  (((self.m_pGameCenter).EventDispatcher)()):AddCallbackListener(self.m_nEventType1, self.m_callback1)
-  self.m_callback2 = (GameHelper:GetInstance()):CreateCallback(self._OnEvent2, self)
-  ;
-  (((self.m_pGameCenter).EventDispatcher)()):AddCallbackListener(self.m_nEventType2, self.m_callback2)
+function MiniMazeWaitWaveAwardOrGameOver:_AddListener()
+  self.m_callback1 = GameHelper:GetInstance():CreateCallback(self._OnEvent1, self)
+  self.m_pGameCenter.EventDispatcher():AddCallbackListener(self.m_nEventType1, self.m_callback1)
+  self.m_callback2 = GameHelper:GetInstance():CreateCallback(self._OnEvent2, self)
+  self.m_pGameCenter.EventDispatcher():AddCallbackListener(self.m_nEventType2, self.m_callback2)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniMazeWaitWaveAwardOrGameOver._RemoveListener = function(self)
-  -- function num : 0_5
-  (((self.m_pGameCenter).EventDispatcher)()):RemoveCallbackListener(self.m_nEventType1, self.m_callback1)
-  ;
-  (((self.m_pGameCenter).EventDispatcher)()):RemoveCallbackListener(self.m_nEventType2, self.m_callback2)
+function MiniMazeWaitWaveAwardOrGameOver:_RemoveListener()
+  self.m_pGameCenter.EventDispatcher():RemoveCallbackListener(self.m_nEventType1, self.m_callback1)
+  self.m_pGameCenter.EventDispatcher():RemoveCallbackListener(self.m_nEventType2, self.m_callback2)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniMazeWaitWaveAwardOrGameOver._OnEvent1 = function(self, ...)
-  -- function num : 0_6
+function MiniMazeWaitWaveAwardOrGameOver:_OnEvent1(...)
   self.m_bEventTrigger = true
   self.m_nLogicResult = 0
   self:Log(self, "WaitEvent Trigger Event = ", self.m_nEventType1)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniMazeWaitWaveAwardOrGameOver._OnEvent2 = function(self, matchResult)
-  -- function num : 0_7
+function MiniMazeWaitWaveAwardOrGameOver:_OnEvent2(matchResult)
   self.m_bEventTrigger = true
   local bVictory = matchResult.victory
-  local runData = (self.m_pManager):GetMissionRunData()
+  local runData = self.m_pManager:GetMissionRunData()
   runData:SetLastBattleResult(bVictory)
   if bVictory then
     self.m_nLogicResult = 2
@@ -99,5 +65,3 @@ MiniMazeWaitWaveAwardOrGameOver._OnEvent2 = function(self, matchResult)
   end
   self:Log(self, "WaitEvent Trigger Event = ", self.m_nEventType2)
 end
-
-

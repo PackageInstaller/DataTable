@@ -1,146 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/entity_pool_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 _class("EntityPoolServiceRender", BaseService)
 EntityPoolServiceRender = EntityPoolServiceRender
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-EntityPoolServiceRender.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function EntityPoolServiceRender:Constructor(world)
   self._world = world
   self._entityCacheConfig = {}
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.SkillRangeOutline] = 20
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.MonsterAreaOutLine] = 10
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.LinkNum_Any] = 5
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.LinkNum_Red] = 5
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.LinkNum_Green] = 5
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.LinkNum_Blue] = 5
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.LinkNum_Yellow] = 5
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.LinkNumStep] = 5
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.LinkGridDot_Any] = 5
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.LinkGridDot_Red] = 5
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.LinkGridDot_Green] = 5
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.LinkGridDot_Blue] = 5
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.LinkGridDot_Yellow] = 5
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.LinkLine_Any] = 5
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.LinkLine_Red] = 5
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.LinkLine_Green] = 5
-  -- DECOMPILER ERROR at PC70: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.LinkLine_Blue] = 5
-  -- DECOMPILER ERROR at PC74: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.LinkLine_Yellow] = 5
-  -- DECOMPILER ERROR at PC78: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.MoveRange] = 5
-  -- DECOMPILER ERROR at PC82: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.MoveRangePro] = 5
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.MoveRangeArrow] = 5
-  -- DECOMPILER ERROR at PC90: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.MoveRangeGrid] = 5
-  -- DECOMPILER ERROR at PC94: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.WarningArea] = 5
-  -- DECOMPILER ERROR at PC98: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.DeathArea] = 5
-  -- DECOMPILER ERROR at PC102: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.WaringDeathArea] = 1
-  -- DECOMPILER ERROR at PC106: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.TrapAurasArea] = 1
-  -- DECOMPILER ERROR at PC110: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._entityCacheConfig)[EntityConfigIDRender.TrapAreaOutline] = 10
-  self._lineRenderEntityList = {EntityConfigIDRender.LinkLine_Any, EntityConfigIDRender.LinkLine_Yellow, EntityConfigIDRender.LinkLine_Blue, EntityConfigIDRender.LinkLine_Green, EntityConfigIDRender.LinkLine_Red}
+  self._entityCacheConfig[EntityConfigIDRender.SkillRangeOutline] = 20
+  self._entityCacheConfig[EntityConfigIDRender.MonsterAreaOutLine] = 10
+  self._entityCacheConfig[EntityConfigIDRender.LinkNum_Any] = 5
+  self._entityCacheConfig[EntityConfigIDRender.LinkNum_Red] = 5
+  self._entityCacheConfig[EntityConfigIDRender.LinkNum_Green] = 5
+  self._entityCacheConfig[EntityConfigIDRender.LinkNum_Blue] = 5
+  self._entityCacheConfig[EntityConfigIDRender.LinkNum_Yellow] = 5
+  self._entityCacheConfig[EntityConfigIDRender.LinkNumStep] = 5
+  self._entityCacheConfig[EntityConfigIDRender.LinkGridDot_Any] = 5
+  self._entityCacheConfig[EntityConfigIDRender.LinkGridDot_Red] = 5
+  self._entityCacheConfig[EntityConfigIDRender.LinkGridDot_Green] = 5
+  self._entityCacheConfig[EntityConfigIDRender.LinkGridDot_Blue] = 5
+  self._entityCacheConfig[EntityConfigIDRender.LinkGridDot_Yellow] = 5
+  self._entityCacheConfig[EntityConfigIDRender.LinkLine_Any] = 5
+  self._entityCacheConfig[EntityConfigIDRender.LinkLine_Red] = 5
+  self._entityCacheConfig[EntityConfigIDRender.LinkLine_Green] = 5
+  self._entityCacheConfig[EntityConfigIDRender.LinkLine_Blue] = 5
+  self._entityCacheConfig[EntityConfigIDRender.LinkLine_Yellow] = 5
+  self._entityCacheConfig[EntityConfigIDRender.MoveRange] = 5
+  self._entityCacheConfig[EntityConfigIDRender.MoveRangePro] = 5
+  self._entityCacheConfig[EntityConfigIDRender.MoveRangeArrow] = 5
+  self._entityCacheConfig[EntityConfigIDRender.MoveRangeGrid] = 5
+  self._entityCacheConfig[EntityConfigIDRender.WarningArea] = 5
+  self._entityCacheConfig[EntityConfigIDRender.DeathArea] = 5
+  self._entityCacheConfig[EntityConfigIDRender.WaringDeathArea] = 1
+  self._entityCacheConfig[EntityConfigIDRender.TrapAurasArea] = 1
+  self._entityCacheConfig[EntityConfigIDRender.TrapAreaOutline] = 10
+  self._lineRenderEntityList = {
+    EntityConfigIDRender.LinkLine_Any,
+    EntityConfigIDRender.LinkLine_Yellow,
+    EntityConfigIDRender.LinkLine_Blue,
+    EntityConfigIDRender.LinkLine_Green,
+    EntityConfigIDRender.LinkLine_Red
+  }
   self._entityCacheTable = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityPoolServiceRender.CacheEntities = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local linkageRenderService = (self._world):GetService("LinkageRender")
-  for cacheID,cahceNum in pairs(self._entityCacheConfig) do
+function EntityPoolServiceRender:CacheEntities()
+  local linkageRenderService = self._world:GetService("LinkageRender")
+  for cacheID, cahceNum in pairs(self._entityCacheConfig) do
     for cacheIndex = 1, cahceNum do
       local cacheEntity = self:_CreateCahceEntity(cacheID)
-      local cacheList = (self._entityCacheTable)[cacheID]
+      local cacheList = self._entityCacheTable[cacheID]
       if cacheList == nil then
         cacheList = {}
-        -- DECOMPILER ERROR at PC22: Confused about usage of register: R13 in 'UnsetPending'
-
-        ;
-        (self._entityCacheTable)[cacheID] = cacheList
+        self._entityCacheTable[cacheID] = cacheList
       end
-      if (table.icontains)(self._lineRenderEntityList, cacheID) then
+      if table.icontains(self._lineRenderEntityList, cacheID) then
         linkageRenderService:ResetLinkLineEntity(cacheEntity)
       end
       cacheList[#cacheList + 1] = cacheEntity
@@ -148,96 +60,70 @@ EntityPoolServiceRender.CacheEntities = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityPoolServiceRender.HideCacheEntities = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,entityList in pairs(self._entityCacheTable) do
-    for _,entity in pairs(entityList) do
+function EntityPoolServiceRender:HideCacheEntities()
+  for _, entityList in pairs(self._entityCacheTable) do
+    for _, entity in pairs(entityList) do
       local viewCmpt = entity:View()
-      -- DECOMPILER ERROR at PC21: Confused about usage of register: R12 in 'UnsetPending'
-
       if viewCmpt ~= nil then
-        ((viewCmpt:GetGameObject()).transform).position = Vector3(0, BattleConst.CacheHeight, 0)
+        viewCmpt:GetGameObject().transform.position = Vector3(0, BattleConst.CacheHeight, 0)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityPoolServiceRender._CreateCahceEntity = function(self, cacheID)
-  -- function num : 0_3
-  local sEntity = (self._world):GetService("RenderEntity")
+function EntityPoolServiceRender:_CreateCahceEntity(cacheID)
+  local sEntity = self._world:GetService("RenderEntity")
   local cacheEntity = sEntity:CreateRenderEntity(cacheID)
   cacheEntity:SetViewVisible(true)
   return cacheEntity
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityPoolServiceRender.GetCacheEntityCountByID = function(self, cacheID)
-  -- function num : 0_4 , upvalues : _ENV
-  local entityList = (self._entityCacheTable)[cacheID]
+function EntityPoolServiceRender:GetCacheEntityCountByID(cacheID)
+  local entityList = self._entityCacheTable[cacheID]
   if entityList == nil then
-    (Log.notice)("has not cache entity,which config id is:", cacheID)
+    Log.notice("has not cache entity,which config id is:", cacheID)
     return nil
   end
   local curCount = #entityList
   return curCount
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityPoolServiceRender.GetCacheEntityByConfigID = function(self, cacheID)
-  -- function num : 0_5 , upvalues : _ENV
-  local entityList = (self._entityCacheTable)[cacheID]
+function EntityPoolServiceRender:GetCacheEntityByConfigID(cacheID)
+  local entityList = self._entityCacheTable[cacheID]
   if entityList == nil then
-    (Log.fatal)("has not cache entity,which config id is:", cacheID)
+    Log.fatal("has not cache entity,which config id is:", cacheID)
     return nil
   end
   local curCount = #entityList
-  do
-    if curCount <= 0 then
-      local cacheEntity = self:_CreateCahceEntity(cacheID)
-      return cacheEntity
-    end
-    local cacheIndex = 1
-    local curEntity = entityList[cacheIndex]
-    ;
-    (table.remove)(entityList, cacheIndex)
-    return curEntity
+  if curCount <= 0 then
+    local cacheEntity = self:_CreateCahceEntity(cacheID)
+    return cacheEntity
   end
+  local cacheIndex = 1
+  local curEntity = entityList[cacheIndex]
+  table.remove(entityList, cacheIndex)
+  return curEntity
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityPoolServiceRender.DestroyCacheEntity = function(self, cacheEntity, entityConfigID)
-  -- function num : 0_6 , upvalues : _ENV
-  local entityList = (self._entityCacheTable)[entityConfigID]
+function EntityPoolServiceRender:DestroyCacheEntity(cacheEntity, entityConfigID)
+  local entityList = self._entityCacheTable[entityConfigID]
   if entityList == nil then
-    (Log.fatal)("DestroyCacheEntity,has not cache entity,which config id is:", entityConfigID)
+    Log.fatal("DestroyCacheEntity,has not cache entity,which config id is:", entityConfigID)
     return nil
   end
   self:_HideCacheEntity(cacheEntity)
   entityList[#entityList + 1] = cacheEntity
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityPoolServiceRender._HideCacheEntity = function(self, cacheEntity)
-  -- function num : 0_7 , upvalues : _ENV
+function EntityPoolServiceRender:_HideCacheEntity(cacheEntity)
   local viewCmpt = cacheEntity:View()
   if viewCmpt == nil then
-    (Log.fatal)("cache entity has no view")
-    return 
+    Log.fatal("cache entity has no view")
+    return
   end
   local gameObj = viewCmpt:GetGameObject()
-  local curPos = (gameObj.transform).position
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (gameObj.transform).position = Vector3(curPos.x, BattleConst.CacheHeight, curPos.z)
+  local curPos = gameObj.transform.position
+  gameObj.transform.position = Vector3(curPos.x, BattleConst.CacheHeight, curPos.z)
   cacheEntity:SetLocationHeight(BattleConst.CacheHeight)
   local lineRender = gameObj:GetComponent("LineRenderer")
   if lineRender == nil then
@@ -250,5 +136,3 @@ EntityPoolServiceRender._HideCacheEntity = function(self, cacheEntity)
     end
   end
 end
-
-

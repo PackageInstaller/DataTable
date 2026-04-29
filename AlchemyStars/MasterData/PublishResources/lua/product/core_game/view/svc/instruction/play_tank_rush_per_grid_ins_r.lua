@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_tank_rush_per_grid_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTankRushPerGridInstruction", BaseInstruction)
 PlayTankRushPerGridInstruction = PlayTankRushPerGridInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTankRushPerGridInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTankRushPerGridInstruction:Constructor(paramList)
   self._rotateTime = tonumber(paramList.rotateTime) or 1
   self._rushEffectID = tonumber(paramList.rushEffectID)
   self._rushEffectDestroyDelay = tonumber(paramList.rushEffectDestroyDelay)
@@ -22,34 +15,32 @@ PlayTankRushPerGridInstruction.Constructor = function(self, paramList)
   self._deathClear = tonumber(paramList.deathClear)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTankRushPerGridInstruction.GetCacheResource = function(self)
-  -- function num : 0_1
-  return {self:GetEffectResCacheInfo(self._rushEffectID), self:GetEffectResCacheInfo(self._rushEndEffectID), self:GetEffectResCacheInfo(self._hitEffectID)}
+function PlayTankRushPerGridInstruction:GetCacheResource()
+  return {
+    self:GetEffectResCacheInfo(self._rushEffectID),
+    self:GetEffectResCacheInfo(self._rushEndEffectID),
+    self:GetEffectResCacheInfo(self._hitEffectID)
+  }
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTankRushPerGridInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayTankRushPerGridInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local result = routineComponent:GetEffectResultByArray(SkillEffectType.TankRushPerGrid)
   if not result then
-    return 
+    return
   end
   local walkResArray = result:GetWalkResArray()
   local isCasterDead = result:IsCasterDead()
   local lastWalkRes = walkResArray[#walkResArray]
   local lastWalkPos = lastWalkRes:GetWalkPos()
   local casterPos = casterEntity:GetRenderGridPosition()
-  local bodyArea = (casterEntity:BodyArea()):GetArea()
+  local bodyArea = casterEntity:BodyArea():GetArea()
   local dis = 2147483647
   local comparePos = casterPos
-  for _,body in ipairs(bodyArea) do
+  for _, body in ipairs(bodyArea) do
     local v2 = body + casterPos
-    local d = (Vector2.Distance)(v2, lastWalkPos)
-    if d < dis then
+    local d = Vector2.Distance(v2, lastWalkPos)
+    if dis > d then
       dis = d
       comparePos = v2
     end
@@ -57,87 +48,63 @@ PlayTankRushPerGridInstruction.DoInstruction = function(self, TT, casterEntity, 
   local dir = lastWalkPos - comparePos
   if dir.x > 0 then
     dir.x = 1
-  else
-    if dir.x < 0 then
-      dir.x = -1
-    end
+  elseif dir.x < 0 then
+    dir.x = -1
   end
-  if dir.y > 0 then
+  if 0 < dir.y then
     dir.y = 1
-  else
-    if dir.y < 0 then
-      dir.y = -1
-    end
+  elseif 0 > dir.y then
+    dir.y = -1
   end
   if dir ~= casterEntity:GetRenderGridDirection() then
     local world = casterEntity:GetOwnerWorld()
     local BoardServiceRender = world:GetService("BoardRender")
-    local v3Forward = BoardServiceRender:GridPos2RenderPos(lastWalkPos + (casterEntity:GridLocation()):GetDamageOffset())
-    local go = (casterEntity:View()):GetGameObject()
-    local tween = (go.transform):DOLookAt(v3Forward, self._rotateTime * 0.001)
+    local v3Forward = BoardServiceRender:GridPos2RenderPos(lastWalkPos + casterEntity:GridLocation():GetDamageOffset())
+    local go = casterEntity:View():GetGameObject()
+    local tween = go.transform:DOLookAt(v3Forward, self._rotateTime * 0.001)
     YIELD(TT, self._rotateTime)
     if not tween:IsComplete() then
       tween:Complete()
     end
   end
-  do
-    local world = casterEntity:GetOwnerWorld()
-    local fxsvc = world:GetService("Effect")
-    local rushEffectEntity = fxsvc:CreateEffect(self._rushEffectID, casterEntity)
-    self:_PlayRush(TT, casterEntity, walkResArray, isCasterDead)
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(function(subTT)
-    -- function num : 0_2_0 , upvalues : _ENV, self, world, rushEffectEntity
+  local world = casterEntity:GetOwnerWorld()
+  local fxsvc = world:GetService("Effect")
+  local rushEffectEntity = fxsvc:CreateEffect(self._rushEffectID, casterEntity)
+  self:_PlayRush(TT, casterEntity, walkResArray, isCasterDead)
+  GameGlobal.TaskManager():CoreGameStartTask(function(subTT)
     YIELD(subTT, self._rushEffectDestroyDelay)
     world:DestroyEntity(rushEffectEntity)
+  end)
+  local damageResultArray = result:GetDamageResultArray() or {}
+  local damageResult = damageResultArray[1]
+  if damageResult then
+    local rushEndEffectEntity = fxsvc:CreateEffect(self._rushEndEffectID, casterEntity)
+    self:_PlayDamage(TT, casterEntity, phaseContext, damageResult)
   end
-)
-    if not result:GetDamageResultArray() then
-      local damageResultArray = {}
-    end
-    local damageResult = damageResultArray[1]
-    do
-      if damageResult then
-        local rushEndEffectEntity = fxsvc:CreateEffect(self._rushEndEffectID, casterEntity)
-        self:_PlayDamage(TT, casterEntity, phaseContext, damageResult)
-      end
-      if not result:GetHitBackResultArray() then
-        local hitBackResultArray = {}
-      end
-      local hitBackResult = hitBackResultArray[1]
-      if hitBackResult then
-        self:_PlayHitBack(TT, casterEntity, phaseContext, hitBackResult)
-      end
-    end
+  local hitBackResultArray = result:GetHitBackResultArray() or {}
+  local hitBackResult = hitBackResultArray[1]
+  if hitBackResult then
+    self:_PlayHitBack(TT, casterEntity, phaseContext, hitBackResult)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTankRushPerGridInstruction._PlayRush = function(self, TT, casterEntity, walkResultList, isCasterDead)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayTankRushPerGridInstruction:_PlayRush(TT, casterEntity, walkResultList, isCasterDead)
   local world = casterEntity:GetOwnerWorld()
   local boardServiceRender = world:GetService("BoardRender")
-  for _,result in ipairs(walkResultList) do
+  for _, result in ipairs(walkResultList) do
     local walkPos = result:GetWalkPos()
     local curPos = boardServiceRender:GetRealEntityGridPos(casterEntity)
     casterEntity:AddGridMove(self._rushSpeed, walkPos, curPos)
     local walkDir = walkPos - curPos
     local bodyAreaCmpt = casterEntity:BodyArea()
     local areaCount = bodyAreaCmpt:GetAreaCount()
-    do
-      do
-        if areaCount == 4 then
-          local leftDownPos = Vector2(curPos.x - 0.5, curPos.y - 0.5)
-          walkDir = walkPos - leftDownPos
-        end
-        casterEntity:SetDirection(walkDir)
-        while casterEntity:HasGridMove() do
-          YIELD(TT)
-        end
-        -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if areaCount == 4 then
+      local leftDownPos = Vector2(curPos.x - 0.5, curPos.y - 0.5)
+      walkDir = walkPos - leftDownPos
+    end
+    casterEntity:SetDirection(walkDir)
+    while casterEntity:HasGridMove() do
+      YIELD(TT)
     end
   end
   if isCasterDead then
@@ -146,29 +113,22 @@ PlayTankRushPerGridInstruction._PlayRush = function(self, TT, casterEntity, walk
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTankRushPerGridInstruction._PlayRushArrivePos = function(self, TT, casterEntity, walkRes)
-  -- function num : 0_4 , upvalues : _ENV
+function PlayTankRushPerGridInstruction:_PlayRushArrivePos(TT, casterEntity, walkRes)
   local world = casterEntity:GetOwnerWorld()
   local trapResList = walkRes:GetWalkTrapResultList()
-  for _,v in ipairs(trapResList) do
+  for _, v in ipairs(trapResList) do
     local walkTrapRes = v
     local trapEntityID = walkTrapRes:GetTrapEntityID()
     local trapEntity = world:GetEntityByID(trapEntityID)
     local trapSkillRes = walkTrapRes:GetTrapResult()
     local skillEffectResultContainer = trapSkillRes:GetResultContainer()
-    ;
-    (trapEntity:SkillRoutine()):SetResultContainer(skillEffectResultContainer)
+    trapEntity:SkillRoutine():SetResultContainer(skillEffectResultContainer)
     local trapSvc = world:GetService("TrapRender")
     trapSvc:PlayTrapTriggerSkill(TT, trapEntity, false, casterEntity)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTankRushPerGridInstruction._PlayDamage = function(self, TT, casterEntity, phaseContext, damageResult)
-  -- function num : 0_5 , upvalues : _ENV
+function PlayTankRushPerGridInstruction:_PlayDamage(TT, casterEntity, phaseContext, damageResult)
   local world = casterEntity:GetOwnerWorld()
   local playSkillService = world:GetService("PlaySkill")
   local damageGridPos = damageResult:GetGridPos()
@@ -176,24 +136,21 @@ PlayTankRushPerGridInstruction._PlayDamage = function(self, TT, casterEntity, ph
   local targetEntity = world:GetEntityByID(damageResult:GetTargetID())
   local curDamageInfoIndex = phaseContext:GetCurDamageInfoIndex()
   local damageInfo = damageResult:GetDamageInfo(curDamageInfoIndex)
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
-  local beHitParam = (((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(self._hitAnimName)):SetHandleBeHitParam_HitEffectID(self._hitEffectID)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damageGridPos)):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget)):SetHandleBeHitParam_DeathClear(self._deathClear)):SetHandleBeHitParam_IsFinalHit(playFinalAttack)):SetHandleBeHitParam_SkillID(skillID)):SetHandleBeHitParam_DamageIndex(1)
+  local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(self._hitAnimName):SetHandleBeHitParam_HitEffectID(self._hitEffectID):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damageGridPos):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget):SetHandleBeHitParam_DeathClear(self._deathClear):SetHandleBeHitParam_IsFinalHit(playFinalAttack):SetHandleBeHitParam_SkillID(skillID):SetHandleBeHitParam_DamageIndex(1)
   playSkillService:HandleBeHit(TT, beHitParam)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTankRushPerGridInstruction._PlayHitBack = function(self, TT, casterEntity, phaseContext, hitBackResult)
-  -- function num : 0_6 , upvalues : _ENV
+function PlayTankRushPerGridInstruction:_PlayHitBack(TT, casterEntity, phaseContext, hitBackResult)
   local world = casterEntity:GetOwnerWorld()
   local targetEntity = world:GetEntityByID(hitBackResult:GetTargetID())
-  local playSkillService = (world:GetService("PlaySkill"))
-  local processHitTaskID = nil
+  local playSkillService = world:GetService("PlaySkill")
+  local processHitTaskID
   processHitTaskID = playSkillService:ProcessHit(casterEntity, targetEntity, hitBackResult)
-  while processHitTaskID and not (TaskHelper:GetInstance()):IsTaskFinished(processHitTaskID) do
-    YIELD(TT)
+  if processHitTaskID then
+    while not TaskHelper:GetInstance():IsTaskFinished(processHitTaskID) do
+      YIELD(TT)
+    end
   end
 end
-
-

@@ -1,121 +1,93 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/UIN5Progress/ui_n5_progress_item_player_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN5ProgressItemPlayerDetail", UIN5ProgressItem)
 UIN5ProgressItemPlayerDetail = UIN5ProgressItemPlayerDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN5ProgressItemPlayerDetail.Constructor = function(self)
-  -- function num : 0_0
+function UIN5ProgressItemPlayerDetail:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItemPlayerDetail._FillRewardArea = function(self)
-  -- function num : 0_1
+function UIN5ProgressItemPlayerDetail:_FillRewardArea()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItemPlayerDetail._FillInfoArea = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local curCfg = (Cfg.cfg_activity_person_progress_ui)[self._cmptCfgId]
+function UIN5ProgressItemPlayerDetail:_FillInfoArea()
+  local curCfg = Cfg.cfg_activity_person_progress_ui[self._cmptCfgId]
   if curCfg and self.atlas then
     local bShowDetail = false
-    local titleStr = curCfg.RankTitle
     do
-      local rankIndex = (self._itemInfo).rank
+      local titleStr = curCfg.RankTitle
+      local rankIndex = self._itemInfo.rank
       if rankIndex then
         if self._rankTitleText1 then
-          (self._rankTitleText1):SetText((StringTable.Get)(titleStr, rankIndex))
+          self._rankTitleText1:SetText(StringTable.Get(titleStr, rankIndex))
         end
         if self._rankTitleText2 then
-          (self._rankTitleText2):SetText((StringTable.Get)(titleStr, rankIndex))
-        end
-      end
-      do
-        if self._playerNameText then
-          local oriStr = ((GameGlobal.GetModule)(RoleModule)):GetName()
-          if not (string.isnullorempty)(oriStr) then
-            (self._playerNameText):RefreshText(oriStr)
-          end
-        end
-        do
-          if self._playerTitleText then
-            local oriStr = curCfg.PlayerTitle
-            if not (string.isnullorempty)(oriStr) then
-              (self._playerTitleText):SetText((StringTable.Get)(oriStr))
-            end
-          end
-          if self._rewardBgImg then
-            local cardImgCfg = {}
-            local cardImgDefaultCfg = nil
-            local cardImgVec = curCfg.CardImg
-            if cardImgVec then
-              for index,value in ipairs(cardImgVec) do
-                local cfgStr = value
-                local rank, res = nil, nil
-                local params = (string.split)(cfgStr, ",")
-                if #params == 2 then
-                  rank = tonumber(params[1])
-                  res = params[2]
-                  cardImgCfg[rank] = res
-                end
-              end
-            end
-            do
-              cardImgDefaultCfg = curCfg.CardImgDefault
-              local rank = (self._itemInfo).rank
-              do
-                local bgRes = cardImgDefaultCfg
-                if cardImgCfg[rank] then
-                  bgRes = cardImgCfg[rank]
-                end
-                -- DECOMPILER ERROR at PC122: Confused about usage of register: R8 in 'UnsetPending'
-
-                if not (string.isnullorempty)(bgRes) then
-                  (self._rewardBgImg).sprite = (self.atlas):GetSprite(bgRes)
-                end
-                if self._rankInfoText then
-                  local detailStr = curCfg.DetailInfo
-                end
-                if (string.isnullorempty)(detailStr) then
-                  (self._rankInfoText):SetText((StringTable.Get)(detailStr))
-                  do
-                    local height = (self._rankInfoText).preferredHeight
-                    if height > 120 then
-                      (self._openDetailAreaGo):SetActive(true)
-                    end
-                    bShowDetail = true
-                    ;
-                    (self._detailArea):SetActive(bShowDetail)
-                  end
-                end
-              end
-            end
-          end
+          self._rankTitleText2:SetText(StringTable.Get(titleStr, rankIndex))
         end
       end
     end
+    if self._playerNameText then
+      local oriStr = GameGlobal.GetModule(RoleModule):GetName()
+      if not string.isnullorempty(oriStr) then
+        self._playerNameText:RefreshText(oriStr)
+      end
+    end
+    if self._playerTitleText then
+      local oriStr = curCfg.PlayerTitle
+      if not string.isnullorempty(oriStr) then
+        self._playerTitleText:SetText(StringTable.Get(oriStr))
+      end
+    end
+    if self._rewardBgImg then
+      local cardImgCfg = {}
+      local cardImgDefaultCfg
+      local cardImgVec = curCfg.CardImg
+      if cardImgVec then
+        for index, value in ipairs(cardImgVec) do
+          local cfgStr = value
+          local rank, res
+          local params = string.split(cfgStr, ",")
+          if #params == 2 then
+            rank = tonumber(params[1])
+            res = params[2]
+            cardImgCfg[rank] = res
+          end
+        end
+      end
+      cardImgDefaultCfg = curCfg.CardImgDefault
+      local rank = self._itemInfo.rank
+      local bgRes = cardImgDefaultCfg
+      if cardImgCfg[rank] then
+        bgRes = cardImgCfg[rank]
+      end
+      if not string.isnullorempty(bgRes) then
+        self._rewardBgImg.sprite = self.atlas:GetSprite(bgRes)
+      end
+    end
+    if self._rankInfoText then
+      local detailStr = curCfg.DetailInfo
+      if string.isnullorempty(detailStr) then
+      else
+        self._rankInfoText:SetText(StringTable.Get(detailStr))
+        local height = self._rankInfoText.preferredHeight
+        if 120 < height then
+          self._openDetailAreaGo:SetActive(true)
+        end
+        bShowDetail = true
+      end
+    end
+    self._detailArea:SetActive(bShowDetail)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItemPlayerDetail._SetUIByRank = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN5ProgressItemPlayerDetail:_SetUIByRank()
   local rankInfoStyleCfg = {}
-  local rankInfoStyleDefaultCfg = nil
-  local curCfg = (Cfg.cfg_activity_person_progress_ui)[self._cmptCfgId]
+  local rankInfoStyleDefaultCfg
+  local curCfg = Cfg.cfg_activity_person_progress_ui[self._cmptCfgId]
   if curCfg then
     local rankInfoStyleVec = curCfg.RankInfoStyle
     if rankInfoStyleVec then
-      for index,value in ipairs(rankInfoStyleVec) do
+      for index, value in ipairs(rankInfoStyleVec) do
         local cfgStr = value
-        local rank, res = nil, nil
-        local params = (string.split)(cfgStr, ",")
+        local rank, res
+        local params = string.split(cfgStr, ",")
         if #params == 2 then
           rank = tonumber(params[1])
           res = tonumber(params[2])
@@ -123,25 +95,18 @@ UIN5ProgressItemPlayerDetail._SetUIByRank = function(self)
         end
       end
     end
-    do
-      do
-        rankInfoStyleDefaultCfg = tonumber(curCfg.RankInfoStyleDefault)
-        local cellType = (self._itemInfo).cellType
-        local rank = (self._itemInfo).rank
-        local rankStyle = rankInfoStyleDefaultCfg
-        if rankInfoStyleCfg[rank] then
-          rankStyle = rankInfoStyleCfg[rank]
-        end
-        if rankStyle ~= 1 then
-          (self._rankInfoAreaGo1):SetActive(not self._rankInfoAreaGo1)
-          if rankStyle ~= 2 then
-            (self._rankInfoAreaGo2):SetActive(not self._rankInfoAreaGo2)
-            -- DECOMPILER ERROR: 4 unprocessed JMP targets
-          end
-        end
-      end
-    end
+    rankInfoStyleDefaultCfg = tonumber(curCfg.RankInfoStyleDefault)
+  end
+  local cellType = self._itemInfo.cellType
+  local rank = self._itemInfo.rank
+  local rankStyle = rankInfoStyleDefaultCfg
+  if rankInfoStyleCfg[rank] then
+    rankStyle = rankInfoStyleCfg[rank]
+  end
+  if self._rankInfoAreaGo1 then
+    self._rankInfoAreaGo1:SetActive(rankStyle == 1)
+  end
+  if self._rankInfoAreaGo2 then
+    self._rankInfoAreaGo2:SetActive(rankStyle == 2)
   end
 end
-
-

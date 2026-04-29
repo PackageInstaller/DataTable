@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/date/arch/ui_activity_n33_building_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN33BuildingItem", UICustomWidget)
 UIActivityN33BuildingItem = UIActivityN33BuildingItem
 local ARCH_LEVEL_MIN_CONST = 1
 local ARCH_LEVEL_MAX_CONST = 4
--- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
 
-UIActivityN33BuildingItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityN33BuildingItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN33BuildingItem:InitWidget()
   self.iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self.icon_item_3000328Loader = self:GetUIComponent("RawImageLoader", "icon_item_3000328")
   self.bubbleNode = self:GetGameObject("BubbleNode")
@@ -40,10 +30,10 @@ UIActivityN33BuildingItem.InitWidget = function(self)
   self.bubbleBG2 = self:GetUIComponent("Image", "BubbleBG2")
   self.effNode = self:GetGameObject("eff")
   self._atlas = self:GetAsset("UIN33Date.spriteatlas", LoadType.SpriteAtlas)
-  self.rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
-  self.nameRectTransform = (self.infoNode):GetComponent("RectTransform")
-  self.bubbleRectTransform = (self.bubbleNode):GetComponent("RectTransform")
-  self.receiveRectTransform = (self.receiveCDNode):GetComponent("RectTransform")
+  self.rectTransform = self:GetGameObject():GetComponent("RectTransform")
+  self.nameRectTransform = self.infoNode:GetComponent("RectTransform")
+  self.bubbleRectTransform = self.bubbleNode:GetComponent("RectTransform")
+  self.receiveRectTransform = self.receiveCDNode:GetComponent("RectTransform")
   self.starNumMax = 4
   self.v2_0_5 = Vector2(0.5, 0.5)
   self.allLvBuildingCfg = nil
@@ -51,428 +41,281 @@ UIActivityN33BuildingItem.InitWidget = function(self)
   self.receiveCoinCD = 0
   self.serverData = nil
   self.currArchID = 0
-  self._currentTimeEvent = ((GameGlobal.RealTimer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, self.OnOneMinusUpdate, self)
+  self._currentTimeEvent = GameGlobal.RealTimer():AddEventTimes(1000, TimerTriggerCount.Infinite, self.OnOneMinusUpdate, self)
   self:AttachEvent(GameEventType.OnDateFilterClick, self._OnDateFilterClick)
   self.currArchServerData = nil
   self.isAllArchFullLv = false
-  self._anim = (self:GetGameObject()):GetComponent("Animation")
+  self._anim = self:GetGameObject():GetComponent("Animation")
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem.SetData = function(self, archID, serverData, archCfg, isAllArchFullLv, activityConst)
-  -- function num : 0_2
+function UIActivityN33BuildingItem:SetData(archID, serverData, archCfg, isAllArchFullLv, activityConst)
   self.activityConst = activityConst
   self.currArchID = archID
   self.allLvBuildingCfg = archCfg
   self.isAllArchFullLv = isAllArchFullLv
   self:_RefreshShow(archID, serverData, true)
-  ;
-  ((self.fullCoinTipsText).gameObject):SetActive(false)
+  self.fullCoinTipsText.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem.RefreshData = function(self, serverData, isAllArchFullLv)
-  -- function num : 0_3
+function UIActivityN33BuildingItem:RefreshData(serverData, isAllArchFullLv)
   self.isAllArchFullLv = isAllArchFullLv
   self:_RefreshShow(self.currArchID, serverData, false)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem._RefreshShow = function(self, archID, serverData, isInit)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN33BuildingItem:_RefreshShow(archID, serverData, isInit)
   self.serverData = serverData
-  local currArchServerData = nil
-  for key,value in pairs(serverData) do
+  local currArchServerData
+  for key, value in pairs(serverData) do
     if value.arch_id == archID then
       currArchServerData = value
       break
     end
   end
-  do
-    self.currArchServerData = currArchServerData
-    local conf = (self.allLvBuildingCfg)[currArchServerData.level]
-    if not self.iconLoader then
-      return 
+  self.currArchServerData = currArchServerData
+  local conf = self.allLvBuildingCfg[currArchServerData.level]
+  if not self.iconLoader then
+    return
+  end
+  self.iconLoader:LoadImage(conf.Icon)
+  self.icon_item_3000328Loader:LoadImage("icon_item_3000328")
+  self.nameText:SetText(StringTable.Get(conf.MapName))
+  self.nameText2:SetText(StringTable.Get(conf.MapName))
+  for i = 1, self.starNumMax do
+    if not self["starNode_" .. i] then
+      return
     end
-    ;
-    (self.iconLoader):LoadImage(conf.Icon)
-    ;
-    (self.icon_item_3000328Loader):LoadImage("icon_item_3000328")
-    ;
-    (self.nameText):SetText((StringTable.Get)(conf.MapName))
-    ;
-    (self.nameText2):SetText((StringTable.Get)(conf.MapName))
-    for i = 1, self.starNumMax do
-      if not self["starNode_" .. R11_PC49] then
-        return 
-      end
-      -- DECOMPILER ERROR at PC59: Overwrote pending register: R11 in 'AssignReg'
-
-      ;
-      ((self["starNode_" .. R11_PC49]).gameObject):SetActive(i == conf.Level)
-    end
-    if isInit then
-      local mapPos = conf.MapPos
-      if not mapPos then
-        mapPos = ((self.allLvBuildingCfg)[1]).MapPos
-      end
-      -- DECOMPILER ERROR at PC77: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self.rectTransform).anchorMax = self.v2_0_5
-      -- DECOMPILER ERROR at PC80: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self.rectTransform).anchorMin = self.v2_0_5
-      -- DECOMPILER ERROR at PC84: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self.rectTransform).sizeDelta = Vector2.zero
-      -- DECOMPILER ERROR at PC86: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self.rectTransform).anchoredPosition = mapPos
-      self:SetVisible(true)
-      local isReverse = conf.BubbleReverse
-      if not isReverse then
-        isReverse = ((self.allLvBuildingCfg)[1]).BubbleReverse
-      end
-      ;
-      ((self.bubbleBG1).gameObject):SetActive(not isReverse)
-      ;
-      ((self.bubbleBG2).gameObject):SetActive(isReverse)
-      local NamePos = conf.NamePos
-      if not NamePos then
-        NamePos = ((self.allLvBuildingCfg)[1]).NamePos
-      end
-      -- DECOMPILER ERROR at PC113: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self.nameRectTransform).anchoredPosition = NamePos
-      local BubbleNodePos = conf.BubbleNodePos
-      if not BubbleNodePos then
-        BubbleNodePos = ((self.allLvBuildingCfg)[1]).BubbleNodePos
-      end
-      -- DECOMPILER ERROR at PC121: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self.bubbleRectTransform).anchoredPosition = BubbleNodePos
-      -- DECOMPILER ERROR at PC123: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self.receiveRectTransform).anchoredPosition = BubbleNodePos
-    end
-    if self.isAllArchFullLv then
-      self:AllArchFullLvRefreshUI()
-    else
-      local all_coin = currArchServerData.coin_num + currArchServerData.default_coin
-      self:_RefreshReceiveCD(currArchServerData.cd)
-      ;
-      (self.coinNumText):SetText(tostring(all_coin))
-      ;
-      (self.coinNumTextMax):SetText(all_coin)
-      self:_RefreshUpState(currArchServerData.level)
-      local isMax = conf.LimitNum <= all_coin
-      ;
-      ((self.coinNumText).gameObject):SetActive(not isMax)
-      ;
-      ((self.coinNumTextMax).gameObject):SetActive(isMax)
-      -- DECOMPILER ERROR at PC166: Overwrote pending register: R11 in 'AssignReg'
-
-      self:RefreshFullCoinTips(all_coin, R11_PC49, conf.Rate)
-    end
-    -- DECOMPILER ERROR: 9 unprocessed JMP targets
+    self["starNode_" .. i].gameObject:SetActive(i == conf.Level)
+  end
+  if isInit then
+    local mapPos = conf.MapPos
+    mapPos = mapPos or self.allLvBuildingCfg[1].MapPos
+    self.rectTransform.anchorMax = self.v2_0_5
+    self.rectTransform.anchorMin = self.v2_0_5
+    self.rectTransform.sizeDelta = Vector2.zero
+    self.rectTransform.anchoredPosition = mapPos
+    self:SetVisible(true)
+    local isReverse = conf.BubbleReverse
+    isReverse = isReverse or self.allLvBuildingCfg[1].BubbleReverse
+    self.bubbleBG1.gameObject:SetActive(not isReverse)
+    self.bubbleBG2.gameObject:SetActive(isReverse)
+    local NamePos = conf.NamePos
+    NamePos = NamePos or self.allLvBuildingCfg[1].NamePos
+    self.nameRectTransform.anchoredPosition = NamePos
+    local BubbleNodePos = conf.BubbleNodePos
+    BubbleNodePos = BubbleNodePos or self.allLvBuildingCfg[1].BubbleNodePos
+    self.bubbleRectTransform.anchoredPosition = BubbleNodePos
+    self.receiveRectTransform.anchoredPosition = BubbleNodePos
+  end
+  if self.isAllArchFullLv then
+    self:AllArchFullLvRefreshUI()
+  else
+    local all_coin = currArchServerData.coin_num + currArchServerData.default_coin
+    self:_RefreshReceiveCD(currArchServerData.cd)
+    self.coinNumText:SetText(tostring(all_coin))
+    self.coinNumTextMax:SetText(all_coin)
+    self:_RefreshUpState(currArchServerData.level)
+    local isMax = all_coin >= conf.LimitNum
+    self.coinNumText.gameObject:SetActive(not isMax)
+    self.coinNumTextMax.gameObject:SetActive(isMax)
+    self:RefreshFullCoinTips(all_coin, conf.LimitNum, conf.Rate)
   end
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem._RefreshReceiveCD = function(self, nextReceiveTime)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN33BuildingItem:_RefreshReceiveCD(nextReceiveTime)
   self.nextReceiveTime = nextReceiveTime
-  self.receiveCoinCD = ((Cfg.cfg_global).simulation_operation_pickup_cd).IntValue
+  self.receiveCoinCD = Cfg.cfg_global.simulation_operation_pickup_cd.IntValue
   self:_OneMinusUpdateReceiveCD()
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem.RefreshFullCoinTips = function(self, currCoinNum, CoinMax, rate)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityN33BuildingItem:RefreshFullCoinTips(currCoinNum, CoinMax, rate)
   if CoinMax <= currCoinNum then
-    (self.fullCoinTipsText):SetText((StringTable.Get)("str_n33_date_arch_info_key12"))
-    return 
+    self.fullCoinTipsText:SetText(StringTable.Get("str_n33_date_arch_info_key12"))
+    return
   end
   local t = (CoinMax - currCoinNum) / rate
-  ;
-  (self.fullCoinTipsText):SetText(self:GetFormatTimerStr(t))
+  self.fullCoinTipsText:SetText(self:GetFormatTimerStr(t))
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem._RefreshUpState = function(self, archLv)
-  -- function num : 0_7 , upvalues : ARCH_LEVEL_MAX_CONST, _ENV
-  (self.lvUpNode):SetActive(false)
-  ;
-  ((self.nameText).gameObject):SetActive(true)
+function UIActivityN33BuildingItem:_RefreshUpState(archLv)
+  self.lvUpNode:SetActive(false)
+  self.nameText.gameObject:SetActive(true)
   local isCanUp = archLv < ARCH_LEVEL_MAX_CONST
   if not isCanUp then
-    return 
+    return
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local coinCount = itemModule:GetItemCount(RoleAssetID.RoleAssetSimulationOperationCoin)
-  local conf = (self.allLvBuildingCfg)[archLv]
-  isCanUp = conf.UpgradeCost <= coinCount
+  local conf = self.allLvBuildingCfg[archLv]
+  isCanUp = coinCount >= conf.UpgradeCost
   if not isCanUp then
-    return 
+    return
   end
-  for key,value in pairs(conf.PreCondition) do
+  for key, value in pairs(conf.PreCondition) do
     local isPreOk = self:CheckUpPreCond(value)
     if not isPreOk then
-      return 
+      return
     end
   end
-  ;
-  ((self.nameText).gameObject):SetActive(false)
-  ;
-  (self.lvUpNode):SetActive(true)
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  self.nameText.gameObject:SetActive(false)
+  self.lvUpNode:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem.CheckUpPreCond = function(self, condition)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityN33BuildingItem:CheckUpPreCond(condition)
   local archID = condition[1]
   local archLv = condition[2]
-  for key,value in pairs(self.serverData) do
-    if archLv > value.level then
-      do
-        do return value.arch_id ~= archID end
-        -- DECOMPILER ERROR at PC15: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC15: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  for key, value in pairs(self.serverData) do
+    if value.arch_id == archID then
+      return archLv <= value.level
     end
   end
-  do return false end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem._OneMinusUpdateReceiveCD = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local mSvrTime = (GameGlobal.GetModule)(SvrTimeModule)
+function UIActivityN33BuildingItem:_OneMinusUpdateReceiveCD()
+  local mSvrTime = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = mSvrTime:GetServerTime() / 1000
   local cd = self.nextReceiveTime - nowTime
-  local isShowCD = cd > 0
-  ;
-  (self.receiveCDNode):SetActive(false)
-  ;
-  (self.bubbleNode):SetActive(not isShowCD)
+  local isShowCD = 0 < cd
+  self.receiveCDNode:SetActive(false)
+  self.bubbleNode:SetActive(not isShowCD)
   if not isShowCD then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.receiveCDImage).fillAmount = (self.receiveCoinCD - cd) / self.receiveCoinCD
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self.receiveCDImage.fillAmount = (self.receiveCoinCD - cd) / self.receiveCoinCD
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem.OpenInfoBtnOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
-  if (self.activityConst):CheckSimulationOperationIsOver() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+function UIActivityN33BuildingItem:OpenInfoBtnOnClick(go)
+  if self.activityConst:CheckSimulationOperationIsOver() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     self:SwitchState(UIStateType.UIActivityN33MainController)
-    return 
+    return
   end
   local key = "UIActivityN33BuildingItem_InfoBtnOnClick"
   self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self, key, _ENV
     self:Lock(key)
-    ;
-    (self._anim):Play("uieffanim_UIActivityN33BuildingItem_click_Build")
+    self._anim:Play("uieffanim_UIActivityN33BuildingItem_click_Build")
     YIELD(TT, 500)
     self:UnLock(key)
-    local rect = (self:GetGameObject()):GetComponent(typeof(UnityEngine.RectTransform))
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN33FocusTag, rect.anchoredPosition)
+    local rect = self:GetGameObject():GetComponent(typeof(UnityEngine.RectTransform))
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN33FocusTag, rect.anchoredPosition)
     self:ShowDialog(UIStateType.UIActivityN33BuildingInfo, self.activityConst, self.currArchID, self.serverData, self.allLvBuildingCfg, self.isAllArchFullLv, function()
-      -- function num : 0_10_0_0 , upvalues : self, _ENV
-      ((self.fullCoinTipsText).gameObject):SetActive(false)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN33FocusTag)
-    end
-)
-  end
-, self)
+      self.fullCoinTipsText.gameObject:SetActive(false)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN33FocusTag)
+    end)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem.ReceiveCoinBtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  if (self.activityConst):CheckSimulationOperationIsOver() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+function UIActivityN33BuildingItem:ReceiveCoinBtnOnClick(go)
+  if self.activityConst:CheckSimulationOperationIsOver() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     self:SwitchState(UIStateType.UIActivityN33MainController)
-    return 
+    return
   end
-  ;
-  (self.effNode):SetActive(true)
+  self.effNode:SetActive(true)
   local key = "UIActivityN33BuildingItem_InfoBtnOnClick"
   self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : self, key, _ENV
     self:Lock(key)
-    ;
-    (self._anim):Play("uieffanim_UIActivityN33BuildingItem_gather")
+    self._anim:Play("uieffanim_UIActivityN33BuildingItem_gather")
     YIELD(TT, 500)
     self:UnLock(key)
-    ;
-    (self.effNode):SetActive(false)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN33PickUpCoin, (self.currArchServerData).arch_id)
-  end
-, self)
+    self.effNode:SetActive(false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN33PickUpCoin, self.currArchServerData.arch_id)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem.SetVisible = function(self, status)
-  -- function num : 0_12
-  (self:GetGameObject()):SetActive(status)
+function UIActivityN33BuildingItem:SetVisible(status)
+  self:GetGameObject():SetActive(status)
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem.OnOneMinusUpdate = function(self)
-  -- function num : 0_13
+function UIActivityN33BuildingItem:OnOneMinusUpdate()
   if not self.isAllArchFullLv then
     self:_OneMinusUpdateReceiveCD()
   end
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem._OnDateFilterClick = function(self, type)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityN33BuildingItem:_OnDateFilterClick(type)
   if type == UIActivityN33DateMainFilterType.Pet then
+  else
   end
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem.AllArchFullLvRefreshUI = function(self)
-  -- function num : 0_15
-  (self.bubbleNode):SetActive(false)
-  ;
-  (self.receiveCDNode):SetActive(false)
-  ;
-  (self.lvUpNode):SetActive(false)
-  ;
-  (self.lvUpNode):SetActive(false)
-  ;
-  ((self.nameText).gameObject):SetActive(true)
+function UIActivityN33BuildingItem:AllArchFullLvRefreshUI()
+  self.bubbleNode:SetActive(false)
+  self.receiveCDNode:SetActive(false)
+  self.lvUpNode:SetActive(false)
+  self.lvUpNode:SetActive(false)
+  self.nameText.gameObject:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem.GetFormatTimerStr = function(self, time, id)
-  -- function num : 0_16 , upvalues : _ENV
-  local default_id = {day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_error_107"}
-  if not id then
-    id = default_id
-  end
-  local timeStr = (StringTable.Get)(id.over)
+function UIActivityN33BuildingItem:GetFormatTimerStr(time, id)
+  local default_id = {
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_error_107"
+  }
+  id = id or default_id
+  local timeStr = StringTable.Get(id.over)
   if time < 0 then
     return timeStr
   end
-  local day, hour, min, second = (UIActivityHelper.Time2Str)(time)
-  if day > 0 then
-    timeStr = day .. (StringTable.Get)(id.day) .. hour .. (StringTable.Get)(id.hour)
+  local day, hour, min, second = UIActivityHelper.Time2Str(time)
+  if 0 < day then
+    timeStr = day .. StringTable.Get(id.day) .. hour .. StringTable.Get(id.hour)
+  elseif 0 < hour then
+    timeStr = hour .. StringTable.Get(id.hour) .. min .. StringTable.Get(id.min)
+  elseif 0 < min then
+    timeStr = min .. StringTable.Get(id.min)
   else
-    if hour > 0 then
-      timeStr = hour .. (StringTable.Get)(id.hour) .. min .. (StringTable.Get)(id.min)
-    else
-      if min > 0 then
-        timeStr = min .. (StringTable.Get)(id.min)
-      else
-        timeStr = (StringTable.Get)(id.zero)
-      end
-    end
+    timeStr = StringTable.Get(id.zero)
   end
-  return (StringTable.Get)("str_n33_date_arch_info_key11", timeStr)
+  return StringTable.Get("str_n33_date_arch_info_key11", timeStr)
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem.PlayAnim = function(self, isIn)
-  -- function num : 0_17
+function UIActivityN33BuildingItem:PlayAnim(isIn)
   if isIn then
     self:StartTask(function(TT)
-    -- function num : 0_17_0 , upvalues : self
-    (self._anim):Play("uieffanim_UIActivityN33BuildingItem_in_01")
-  end
-, self)
+      self._anim:Play("uieffanim_UIActivityN33BuildingItem_in_01")
+    end, self)
   else
     self:StartTask(function(TT)
-    -- function num : 0_17_1 , upvalues : self
-    (self._anim):Play("uieffanim_UIActivityN33BuildingItem_out_02")
-  end
-, self)
+      self._anim:Play("uieffanim_UIActivityN33BuildingItem_out_02")
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem.PlayAnim_InfoBubble = function(self, isShow)
-  -- function num : 0_18
+function UIActivityN33BuildingItem:PlayAnim_InfoBubble(isShow)
   if isShow then
     self:StartTask(function(TT)
-    -- function num : 0_18_0 , upvalues : self
-    (self._anim):Play("uieffanim_UIActivityN33BuildingItem_in_02")
-  end
-, self)
+      self._anim:Play("uieffanim_UIActivityN33BuildingItem_in_02")
+    end, self)
   else
     self:StartTask(function(TT)
-    -- function num : 0_18_1 , upvalues : self
-    (self._anim):Play("uieffanim_UIActivityN33BuildingItem_out_01")
-  end
-, self)
+      self._anim:Play("uieffanim_UIActivityN33BuildingItem_out_01")
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem.OnHide = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIActivityN33BuildingItem:OnHide()
   if self._currentTimeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._currentTimeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._currentTimeEvent)
     self._currentTimeEvent = nil
   end
   self:DetachEvent(GameEventType.OnDateFilterClick, self._OnDateFilterClick)
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem.GetOpenInfoBtn = function(self)
-  -- function num : 0_20
+function UIActivityN33BuildingItem:GetOpenInfoBtn()
   return self:GetGameObject("OpenInfoBtn")
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R2 in 'UnsetPending'
-
-UIActivityN33BuildingItem.GetReceiveCoinBtn = function(self)
-  -- function num : 0_21
+function UIActivityN33BuildingItem:GetReceiveCoinBtn()
   return self:GetGameObject("ReceiveCoinBtn")
 end
 
-local ArchAnimType = {TypeIn = 1, TypeOut = 2, TypeOutIn = 3}
+local ArchAnimType = {
+  TypeIn = 1,
+  TypeOut = 2,
+  TypeOutIn = 3
+}
 _enum("ArchAnimType", ArchAnimType)
-

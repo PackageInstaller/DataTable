@@ -1,17 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/role/1400731/cfg_skill_view_200731.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 66, 1, 0, 0, 
-{atkAnim = "AtkChain", atkGridCenterEffectID = 1079, atkShandowCenterEffectID = 1082, centerHitDelay = 2050, atkGridEffectID = 1078, centerDelay = 2150, otherGridHitDelay = 800, hitAnim = "Hit", hitEffectID = 0, finishDelayTime = 2500}
-}
-, 
-{2, 2, 0, 1, 0, 0, 
-{" PlayCasterBindEffect,effectID=1612; PlayAudio,audioID = 3017,audioType=1; "}
-}
+  {
+    1,
+    1,
+    66,
+    1,
+    0,
+    0,
+    {
+      atkAnim = "AtkChain",
+      atkGridCenterEffectID = 1079,
+      atkShandowCenterEffectID = 1082,
+      centerHitDelay = 2050,
+      atkGridEffectID = 1078,
+      centerDelay = 2150,
+      otherGridHitDelay = 800,
+      hitAnim = "Hit",
+      hitEffectID = 0,
+      finishDelayTime = 2500
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterBindEffect,effectID=1612; PlayAudio,audioID = 3017,audioType=1; "
+    }
+  }
 }
 return config, "ID", key
-

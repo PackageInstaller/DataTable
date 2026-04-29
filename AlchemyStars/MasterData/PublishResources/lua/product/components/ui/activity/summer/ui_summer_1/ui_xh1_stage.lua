@@ -1,25 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/ui_summer_1/ui_xh1_stage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXH1Stage", UIController)
 UIXH1Stage = UIXH1Stage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXH1Stage._GetComponents = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIXH1Stage:_GetComponents()
   self._chapter_normal = self:GetUIComponent("UISelectObjectPath", "chapter_normal")
   self._chapter_activity_line = self:GetUIComponent("UISelectObjectPath", "chapter_activity_line")
   self._chapter_activity_tree = self:GetUIComponent("UISelectObjectPath", "chapter_activity_tree")
   self._chapterPool = self._chapter_activity_line
-  if (self._campComp):GetComponentType() == CampaignComType.E_CAMPAIGN_COM_TREE_MISSION then
+  if self._campComp:GetComponentType() == CampaignComType.E_CAMPAIGN_COM_TREE_MISSION then
     self._chapterPool = self._chapter_activity_tree
   end
   self._enemy_normal = self:GetUIComponent("UISelectObjectPath", "enemy_normal")
   self._enemy_activity_tree = self:GetUIComponent("UISelectObjectPath", "enemy_activity_tree")
   self._enemyPool = self._enemy_normal
-  if (self._campComp):GetComponentType() == CampaignComType.E_CAMPAIGN_COM_TREE_MISSION then
+  if self._campComp:GetComponentType() == CampaignComType.E_CAMPAIGN_COM_TREE_MISSION then
     self._enemyPool = self._enemy_activity_tree
   end
   self._sop = self:GetUIComponent("UISelectObjectPath", "conditions")
@@ -45,19 +38,13 @@ UIXH1Stage._GetComponents = function(self)
   self._buffTips = buffTips:SpawnObject("UIResBuffDetail")
   local btns = self:GetUIComponent("UISelectObjectPath", "btns")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_0_0 , upvalues : self
+  self._backBtn:SetData(function()
     self:CloseDialog()
-  end
-)
+  end)
   self._btnIcon = self:GetUIComponent("Image", "powerIcon")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIXH1Stage:OnShow(uiParams)
   self._atlas = self:GetAsset("UIStage.spriteatlas", LoadType.SpriteAtlas)
   self._module = self:GetModule(MissionModule)
   self._missionID = uiParams[1]
@@ -77,81 +64,56 @@ UIXH1Stage.OnShow = function(self, uiParams)
   local deltaY = (size.y - maskSize.y) / 2
   local xMin, xMax, yMin, yMax = -deltaX, deltaX, -deltaY, deltaY
   offset = offset * scale
-  offset.x = (Mathf.Clamp)(offset.x, xMin, xMax)
-  offset.y = (Mathf.Clamp)(offset.y, yMin, yMax)
-  -- DECOMPILER ERROR at PC64: Confused about usage of register: R15 in 'UnsetPending'
-
-  ;
-  (self._rtRect).sizeDelta = size
-  -- DECOMPILER ERROR at PC68: Confused about usage of register: R15 in 'UnsetPending'
-
-  ;
-  (self._rtRect).localScale = Vector3.one
-  -- DECOMPILER ERROR at PC70: Confused about usage of register: R15 in 'UnsetPending'
-
-  ;
-  (self._rtRect).anchoredPosition = offset
-  -- DECOMPILER ERROR at PC72: Confused about usage of register: R15 in 'UnsetPending'
-
-  ;
-  (self._rt).texture = rt
+  offset.x = Mathf.Clamp(offset.x, xMin, xMax)
+  offset.y = Mathf.Clamp(offset.y, yMin, yMax)
+  self._rtRect.sizeDelta = size
+  self._rtRect.localScale = Vector3.one
+  self._rtRect.anchoredPosition = offset
+  self._rt.texture = rt
   self:Init()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryShowHideChapter, false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryShowHideChapter, false)
   self:InitAutoBtnState()
   self:_SetStoryBtn()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage._SetStoryBtn = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIXH1Stage:_SetStoryBtn()
   self._activityGroupObj = self:GetGameObject("ActivityGroup")
   self._imgBlack = self:GetGameObject("imgBlack")
   local storyList = DiscoveryStoryList:New()
   storyList:Init(self._missionID)
   local flag = self._missionFinishInfo and storyList:Count() ~= 0 and true or false
-  ;
-  (self._activityGroupObj):SetActive(flag)
+  self._activityGroupObj:SetActive(flag)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage.GetAutoOpenState = function(matchType, stageId)
-  -- function num : 0_3 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIXH1Stage.GetAutoOpenState(matchType, stageId)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local playerPrefsKey = pstId .. "AutoOpenState" .. matchType
   if stageId then
     playerPrefsKey = playerPrefsKey .. "_" .. stageId
   end
-  return ((UnityEngine.PlayerPrefs).HasKey)(playerPrefsKey)
+  return UnityEngine.PlayerPrefs.HasKey(playerPrefsKey)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage.SetAutoOpenState = function(matchType, stageId, isOpen)
-  -- function num : 0_4 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIXH1Stage.SetAutoOpenState(matchType, stageId, isOpen)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local playerPrefsKey = pstId .. "AutoOpenState" .. matchType
   if stageId then
     playerPrefsKey = playerPrefsKey .. "_" .. stageId
   end
   if isOpen then
-    ((UnityEngine.PlayerPrefs).SetInt)(playerPrefsKey, 1)
+    UnityEngine.PlayerPrefs.SetInt(playerPrefsKey, 1)
   else
-    ;
-    ((UnityEngine.PlayerPrefs).DeleteKey)(playerPrefsKey)
+    UnityEngine.PlayerPrefs.DeleteKey(playerPrefsKey)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage.InitAutoBtnState = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIXH1Stage:InitAutoBtnState()
   local matchType = MatchType.MT_Campaign
-  local param = {self._missionID}
+  local param = {
+    self._missionID
+  }
   local enable, msg = self:_CanAutoFight()
   self._autoBtnEnable = enable
   self._autoBtnMsg = msg
@@ -162,14 +124,10 @@ UIXH1Stage.InitAutoBtnState = function(self)
   autoFight_lock:SetActive(not self._autoBtnEnable)
   self.btnWord = self:GetGameObject("btnUnknown")
   local show = self:_CheckShowWordBuff()
-  ;
-  (self.btnWord):SetActive(show)
+  self.btnWord:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage.autoFightBtnOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIXH1Stage:autoFightBtnOnClick()
   if self._autoBtnEnable then
     if self._powerID == RoleAssetID.RoleAssetPhyPoint then
       self:ShowDialog("UISetAutoFightCount", MatchType.MT_Campaign, self._needPower, 0)
@@ -177,319 +135,228 @@ UIXH1Stage.autoFightBtnOnClick = function(self)
       self:ShowDialog("UISetAutoFightCount", MatchType.MT_Campaign, self._needPower, 0, nil, self._pointComp)
     end
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)(self._autoBtnMsg))
+    ToastManager.ShowToast(StringTable.Get(self._autoBtnMsg))
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage.OnHide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIXH1Stage:OnHide()
   self:DetachEvent(GameEventType.ShowItemTips, self.ShowTips)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryShowHideChapter, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryShowHideChapter, true)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage.InitAwards = function(self, missionCfg)
-  -- function num : 0_8 , upvalues : _ENV
+function UIXH1Stage:InitAwards(missionCfg)
   local awards = self:ProcessAward(missionCfg)
   if not awards then
-    return 
+    return
   end
-  local count = (table.count)(awards)
+  local count = table.count(awards)
   local grid = self:GetUIComponent("GridLayoutGroup", "Content")
   local contentSizeFilter = self:GetUIComponent("ContentSizeFitter", "Content")
   local contentRect = self:GetUIComponent("RectTransform", "Content")
-  if count > 6 then
-    grid.childAlignment = (UnityEngine.TextAnchor).MiddleLeft
+  if 6 < count then
+    grid.childAlignment = UnityEngine.TextAnchor.MiddleLeft
     contentSizeFilter.enabled = true
   else
-    grid.childAlignment = (UnityEngine.TextAnchor).MiddleCenter
+    grid.childAlignment = UnityEngine.TextAnchor.MiddleCenter
     contentSizeFilter.enabled = false
   end
   contentRect.localPosition = Vector3(0, 0, 0)
   local sop = self:GetUIComponent("UISelectObjectPath", "Content")
   sop:SpawnObjects("UIAwardItem", count)
   local list = sop:GetAllSpawnList()
-  for i,v in ipairs(list) do
+  for i, v in ipairs(list) do
     v:Flush(awards[i])
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage.ProcessAward = function(self, missionCfg)
-  -- function num : 0_9 , upvalues : _ENV
+function UIXH1Stage:ProcessAward(missionCfg)
   local awards = {}
   if not self:HasPassThreeStar(missionCfg) then
     local awardsStar = self:GetSortedArr(AwardType.ThreeStar, missionCfg, StageAwardType.Star)
     if awardsStar then
-      for i,v in ipairs(awardsStar) do
+      for i, v in ipairs(awardsStar) do
         awards[#awards + 1] = v
       end
     end
   end
-  do
-    if not self._missionFinishInfo then
-      local awardsFirst = self:GetSortedArr(AwardType.First, missionCfg, StageAwardType.First)
-      if awardsFirst then
-        for i,v in ipairs(awardsFirst) do
-          awards[#awards + 1] = v
-        end
-      end
-    end
-    do
-      local normalArr = self:GetSortedArr(AwardType.Pass, missionCfg, StageAwardType.Normal)
-      if normalArr then
-        for i,v in ipairs(normalArr) do
-          awards[#awards + 1] = v
-        end
-      end
-      do
-        return awards
+  if not self._missionFinishInfo then
+    local awardsFirst = self:GetSortedArr(AwardType.First, missionCfg, StageAwardType.First)
+    if awardsFirst then
+      for i, v in ipairs(awardsFirst) do
+        awards[#awards + 1] = v
       end
     end
   end
+  local normalArr = self:GetSortedArr(AwardType.Pass, missionCfg, StageAwardType.Normal)
+  if normalArr then
+    for i, v in ipairs(normalArr) do
+      awards[#awards + 1] = v
+    end
+  end
+  return awards
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage.HasPassThreeStar = function(self, missionCfg)
-  -- function num : 0_10
+function UIXH1Stage:HasPassThreeStar(missionCfg)
   if not self._missionFinishInfo then
     return false
   end
-  if missionCfg.ThreeStarCondition1 and (self._missionFinishInfo).star & 1 == 0 then
+  if missionCfg.ThreeStarCondition1 and self._missionFinishInfo.star & 1 == 0 then
     return false
   end
-  if missionCfg.ThreeStarCondition2 and (self._missionFinishInfo).star & 2 == 0 then
+  if missionCfg.ThreeStarCondition2 and self._missionFinishInfo.star & 2 == 0 then
     return false
   end
-  if missionCfg.ThreeStarCondition3 and (self._missionFinishInfo).star & 4 == 0 then
+  if missionCfg.ThreeStarCondition3 and self._missionFinishInfo.star & 4 == 0 then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage.GetSortedArr = function(self, awardType, cfg, stageAwardType)
-  -- function num : 0_11 , upvalues : _ENV
-  local list = (UICommonHelper:GetInstance()):GetDropByAwardType(awardType, cfg)
+function UIXH1Stage:GetSortedArr(awardType, cfg, stageAwardType)
+  local list = UICommonHelper:GetInstance():GetDropByAwardType(awardType, cfg)
   local vecSort = SortedArray:New(Algorithm.COMPARE_CUSTOM, DiscoveryStage._LessComparer)
   if list then
-    for i,v in ipairs(list) do
+    for i, v in ipairs(list) do
       local award = Award:New()
       award:InitWithCount(v.ItemID, v.Count, v.Type)
       award:FlushType(stageAwardType)
       vecSort:Insert(award)
     end
   end
-  do
-    return vecSort.elements
-  end
+  return vecSort.elements
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage.Init = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+function UIXH1Stage:Init()
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   self._powerID = RoleAssetID.RoleAssetPhyPoint
   self._needPower = missionCfg.NeedPower
   if missionCfg.NeedAP then
-    self._powerID = (missionCfg.NeedAP)[1]
-    self._needPower = (missionCfg.NeedAP)[2]
+    self._powerID = missionCfg.NeedAP[1]
+    self._needPower = missionCfg.NeedAP[2]
   end
   if self._powerID == RoleAssetID.RoleAssetPhyPoint then
     self._powerPool = self:GetUIComponent("UISelectObjectPath", "powerpool")
-    local powerPool = (self._powerPool):SpawnObject("UIPowerInfo")
+    local powerPool = self._powerPool:SpawnObject("UIPowerInfo")
     powerPool:SetData(self._power)
   else
-    do
-      self._pointPool = self:GetUIComponent("UISelectObjectPath", "pointpool")
-      local pointPool = (self._pointPool):SpawnObject("UIXH1PointInfo")
-      pointPool:SetData(self._pointComp, self._needPower)
-      local cmpID = (self._pointComp):GetComponentCfgId()
-      local pointCfg = (self._pointComp):GetActionPointConfig()
-      do
-        local itemCfg = (Cfg.cfg_top_tips)[pointCfg.ItemID]
-        -- DECOMPILER ERROR at PC68: Confused about usage of register: R6 in 'UnsetPending'
-
-        ;
-        (self._btnIcon).sprite = (self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)):GetSprite(itemCfg.Icon)
-        ;
-        (self._txtCost):SetText(self._needPower)
-        ;
-        (Color(1, 1, 1, 1))
-        local color = nil
-        local enemyTitleBgSprite, enemyTitleBg2Sprite = nil, nil
-        -- DECOMPILER ERROR at PC90: Confused about usage of register: R5 in 'UnsetPending'
-
-        if missionCfg.Type == ActivityMissionType.FightBoss then
-          (self._awardTitleBg).sprite = (self._atlas):GetSprite("map_guanqia_tiao7")
-          -- DECOMPILER ERROR at PC96: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._awardTitleBg2).sprite = (self._atlas):GetSprite("map_guanqia_tiao8")
-          -- DECOMPILER ERROR at PC102: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._conditionTitleBg).sprite = (self._atlas):GetSprite("map_guanqia_tiao3")
-          -- DECOMPILER ERROR at PC108: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._conditionTitleBg2).sprite = (self._atlas):GetSprite("map_guanqia_tiao4")
-          enemyTitleBgSprite = (self._atlas):GetSprite("map_guanqia_tiao3")
-          enemyTitleBg2Sprite = (self._atlas):GetSprite("map_guanqia_tiao4")
-          ;
-          (self._redBg):SetActive(true)
-        else
-          color = Color(0.3921568627451, 0.3921568627451, 0.3921568627451, 1)
-          -- DECOMPILER ERROR at PC136: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._awardTitleBg).sprite = (self._atlas):GetSprite("map_guanqia_tiao5")
-          -- DECOMPILER ERROR at PC142: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._awardTitleBg2).sprite = (self._atlas):GetSprite("map_guanqia_tiao6")
-          -- DECOMPILER ERROR at PC148: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._conditionTitleBg).sprite = (self._atlas):GetSprite("map_bantou4_frame")
-          -- DECOMPILER ERROR at PC154: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._conditionTitleBg2).sprite = (self._atlas):GetSprite("map_bantou15_frame")
-          enemyTitleBgSprite = (self._atlas):GetSprite("map_bantou4_frame")
-          enemyTitleBg2Sprite = (self._atlas):GetSprite("map_bantou15_frame")
-          ;
-          (self._redBg):SetActive(false)
-        end
-        -- DECOMPILER ERROR at PC170: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._awardTitleTex).color = color
-        -- DECOMPILER ERROR at PC172: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._conditionTitleTex).color = color
-        self:Flush(missionCfg)
-        self:InitAwards(missionCfg)
-        self._reachGo = self:GetGameObject("reachGo")
-        ;
-        (self._reachGo):SetActive(false)
-        self._enemyObj = (self._enemyPool):SpawnObject("UIStageEnemy")
-        local recommendAwaken = missionCfg.RecommendAwaken and missionCfg.RecommendAwaken or 0
-        local recommendLV = missionCfg.RecommendLV and missionCfg.RecommendLV or 0
-        ;
-        (self._enemyObj):Flush(recommendAwaken, recommendLV, missionCfg.FightLevel, color, enemyTitleBgSprite, enemyTitleBg2Sprite)
-      end
-    end
+    self._pointPool = self:GetUIComponent("UISelectObjectPath", "pointpool")
+    local pointPool = self._pointPool:SpawnObject("UIXH1PointInfo")
+    pointPool:SetData(self._pointComp, self._needPower)
+    local cmpID = self._pointComp:GetComponentCfgId()
+    local pointCfg = self._pointComp:GetActionPointConfig()
+    local itemCfg = Cfg.cfg_top_tips[pointCfg.ItemID]
+    self._btnIcon.sprite = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas):GetSprite(itemCfg.Icon)
   end
+  self._txtCost:SetText(self._needPower)
+  local color = Color(1, 1, 1, 1)
+  local enemyTitleBgSprite, enemyTitleBg2Sprite
+  if missionCfg.Type == ActivityMissionType.FightBoss then
+    self._awardTitleBg.sprite = self._atlas:GetSprite("map_guanqia_tiao7")
+    self._awardTitleBg2.sprite = self._atlas:GetSprite("map_guanqia_tiao8")
+    self._conditionTitleBg.sprite = self._atlas:GetSprite("map_guanqia_tiao3")
+    self._conditionTitleBg2.sprite = self._atlas:GetSprite("map_guanqia_tiao4")
+    enemyTitleBgSprite = self._atlas:GetSprite("map_guanqia_tiao3")
+    enemyTitleBg2Sprite = self._atlas:GetSprite("map_guanqia_tiao4")
+    self._redBg:SetActive(true)
+  else
+    color = Color(0.39215686274509803, 0.39215686274509803, 0.39215686274509803, 1)
+    self._awardTitleBg.sprite = self._atlas:GetSprite("map_guanqia_tiao5")
+    self._awardTitleBg2.sprite = self._atlas:GetSprite("map_guanqia_tiao6")
+    self._conditionTitleBg.sprite = self._atlas:GetSprite("map_bantou4_frame")
+    self._conditionTitleBg2.sprite = self._atlas:GetSprite("map_bantou15_frame")
+    enemyTitleBgSprite = self._atlas:GetSprite("map_bantou4_frame")
+    enemyTitleBg2Sprite = self._atlas:GetSprite("map_bantou15_frame")
+    self._redBg:SetActive(false)
+  end
+  self._awardTitleTex.color = color
+  self._conditionTitleTex.color = color
+  self:Flush(missionCfg)
+  self:InitAwards(missionCfg)
+  self._reachGo = self:GetGameObject("reachGo")
+  self._reachGo:SetActive(false)
+  self._enemyObj = self._enemyPool:SpawnObject("UIStageEnemy")
+  local recommendAwaken = missionCfg.RecommendAwaken and missionCfg.RecommendAwaken or 0
+  local recommendLV = missionCfg.RecommendLV and missionCfg.RecommendLV or 0
+  self._enemyObj:Flush(recommendAwaken, recommendLV, missionCfg.FightLevel, color, enemyTitleBgSprite, enemyTitleBg2Sprite)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage.Flush = function(self, missionCfg)
-  -- function num : 0_13 , upvalues : _ENV
-  local chapterObj = (self._chapterPool):SpawnObject("UIStageChapter")
-  chapterObj:Flush((StringTable.Get)(missionCfg.Title), (StringTable.Get)(missionCfg.Name), (StringTable.Get)(missionCfg.Desc))
+function UIXH1Stage:Flush(missionCfg)
+  local chapterObj = self._chapterPool:SpawnObject("UIStageChapter")
+  chapterObj:Flush(StringTable.Get(missionCfg.Title), StringTable.Get(missionCfg.Name), StringTable.Get(missionCfg.Desc))
   local threeStarConditions = {}
   if missionCfg.IgnoreThreeStar == 0 then
-    local ids = {missionCfg.ThreeStarCondition1, missionCfg.ThreeStarCondition2, missionCfg.ThreeStarCondition3}
-    for i,v in ipairs(ids) do
+    local ids = {
+      missionCfg.ThreeStarCondition1,
+      missionCfg.ThreeStarCondition2,
+      missionCfg.ThreeStarCondition3
+    }
+    for i, v in ipairs(ids) do
       local cond = StageCondition:New()
-      cond:Init(R13_PC37, v)
-      ;
-      (table.insert)(threeStarConditions, R13_PC37)
+      cond:Init(i, v)
+      table.insert(threeStarConditions, cond)
     end
     if self._missionFinishInfo then
-      local starCount, completeStarList = (self._module):ParseStarInfo((self._missionFinishInfo).star)
+      local starCount, completeStarList = self._module:ParseStarInfo(self._missionFinishInfo.star)
       self:UpdateCondition(threeStarConditions, completeStarList)
     end
   end
-  do
-    if (self._campComp):GetComponentType() == CampaignComType.E_CAMPAIGN_COM_TREE_MISSION then
-      (self._conditionGo):SetActive(false)
-      ;
-      (self._conditionsGo):SetActive(false)
-      ;
-      (self._conditionNo):SetActive(false)
-    else
-      if #threeStarConditions > 0 then
-        (self._conditionGo):SetActive(true)
-        ;
-        (self._conditionsGo):SetActive(true)
-        ;
-        (self._conditionNo):SetActive(false)
-        ;
-        (self._sop):SpawnObjects("UIConditionItem", #threeStarConditions)
-        self._conditions = (self._sop):GetAllSpawnList()
-        for i,v in ipairs(self._conditions) do
-          v:Flush(threeStarConditions[i], i)
-        end
-      else
-        do
-          ;
-          (self._conditionGo):SetActive(false)
-          ;
-          (self._conditionNo):SetActive(true)
-          -- DECOMPILER ERROR at PC121: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (self._sr).horizontalNormalizedPosition = 0
-        end
-      end
+  if self._campComp:GetComponentType() == CampaignComType.E_CAMPAIGN_COM_TREE_MISSION then
+    self._conditionGo:SetActive(false)
+    self._conditionsGo:SetActive(false)
+    self._conditionNo:SetActive(false)
+  elseif 0 < #threeStarConditions then
+    self._conditionGo:SetActive(true)
+    self._conditionsGo:SetActive(true)
+    self._conditionNo:SetActive(false)
+    self._sop:SpawnObjects("UIConditionItem", #threeStarConditions)
+    self._conditions = self._sop:GetAllSpawnList()
+    for i, v in ipairs(self._conditions) do
+      v:Flush(threeStarConditions[i], i)
     end
+  else
+    self._conditionGo:SetActive(false)
+    self._conditionNo:SetActive(true)
   end
+  self._sr.horizontalNormalizedPosition = 0
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage.btnFightOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
+function UIXH1Stage:btnFightOnClick(go)
   local enough = false
   local roleModule = self:GetModule(RoleModule)
   local leftPower = roleModule:GetAssetCount(self._powerID)
-  local enough = self._needPower <= leftPower
+  local enough = leftPower >= self._needPower
   if not enough then
     if self._powerID == RoleAssetID.RoleAssetPhyPoint then
       self:ShowDialog("UIGetPhyPointController")
     else
-      local itemName = (StringTable.Get)(((Cfg.cfg_item)[self._powerID]).Name)
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_mission_error_power_not_enough", itemName))
+      local itemName = StringTable.Get(Cfg.cfg_item[self._powerID].Name)
+      ToastManager.ShowToast(StringTable.Get("str_mission_error_power_not_enough", itemName))
     end
-    return 
+    return
   end
-  local ctx = (self._module):TeamCtx()
-  ctx:Init(TeamOpenerType.Campaign, {self._missionID, (self._campComp):GetCampaignMissionComponentId(), (self._campComp):GetCampaignMissionParamKeyMap()})
+  local ctx = self._module:TeamCtx()
+  ctx:Init(TeamOpenerType.Campaign, {
+    self._missionID,
+    self._campComp:GetCampaignMissionComponentId(),
+    self._campComp:GetCampaignMissionParamKeyMap()
+  })
   self:Lock("DoEnterTeam")
   ctx:ShowDialogUITeams()
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage.UpdateCondition = function(self, three_star_condition, conditions)
-  -- function num : 0_15 , upvalues : _ENV
+function UIXH1Stage:UpdateCondition(three_star_condition, conditions)
   local l_cur_star_num = 0
-  for index,value in ipairs(three_star_condition) do
+  for index, value in ipairs(three_star_condition) do
     if value.satisfy == true then
       l_cur_star_num = l_cur_star_num + 1
     end
   end
   local l_finish_star_num = #conditions
-  for index,value in ipairs(three_star_condition) do
+  for index, value in ipairs(three_star_condition) do
     if l_finish_star_num == l_cur_star_num then
       value:FlushSatisfy(false)
     end
-    for i,v in ipairs(conditions) do
+    for i, v in ipairs(conditions) do
       if v == index then
         value:FlushSatisfy(true)
       end
@@ -497,91 +364,65 @@ UIXH1Stage.UpdateCondition = function(self, three_star_condition, conditions)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage.ShowTips = function(self, itemId, pos)
-  -- function num : 0_16
-  (self._tips):SetData(itemId, pos)
+function UIXH1Stage:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage.bgOnClick = function(self)
-  -- function num : 0_17
+function UIXH1Stage:bgOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage.threeStarTipsBtnOnClick = function(self, go)
-  -- function num : 0_18
+function UIXH1Stage:threeStarTipsBtnOnClick(go)
   self:ShowDialog("UIThreeStarTips")
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage.btnUnknownOnClick = function(self, go)
-  -- function num : 0_19 , upvalues : _ENV
+function UIXH1Stage:btnUnknownOnClick(go)
   local buffData = {}
   buffData.name = ""
   buffData.des = ""
   local buffId = BattleConst.WordBuffForMission
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   if missionCfg and missionCfg.WordBuff and missionCfg.WordBuff ~= 0 then
     buffId = missionCfg.WordBuff
   end
-  local word = (Cfg.cfg_word_buff)[buffId]
-  do
-    if word and word.BuffID and (word.BuffID)[1] then
-      local buff = (Cfg.cfg_buff)[(word.BuffID)[1]]
-      if buff then
-        buffData.name = (StringTable.Get)(buff.Name)
-        buffData.des = (StringTable.Get)(buff.Desc)
-      end
+  local word = Cfg.cfg_word_buff[buffId]
+  if word and word.BuffID and word.BuffID[1] then
+    local buff = Cfg.cfg_buff[word.BuffID[1]]
+    if buff then
+      buffData.name = StringTable.Get(buff.Name)
+      buffData.des = StringTable.Get(buff.Desc)
     end
-    local pos = (go.transform).position
-    ;
-    (self._buffTips):SetData(buffData, pos, Vector3(-250, 160, 0))
   end
+  local pos = go.transform.position
+  self._buffTips:SetData(buffData, pos, Vector3(-250, 160, 0))
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage.btnPlotOnClick = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIXH1Stage:btnPlotOnClick()
   local storyList = DiscoveryStoryList:New()
   storyList:Init(self._missionID)
   if storyList then
     if storyList:Count() == 1 then
-      local story = (storyList.list)[1]
-      do
-        self:ShowDialog("UIStoryController", story.id)
-      end
+      local story = storyList.list[1]
+      self:ShowDialog("UIStoryController", story.id)
     else
-      do
-        local before = storyList:GetStoryByStoryType(StoryTriggerType.BeforeFight)
-        local after = storyList:GetStoryByStoryType(StoryTriggerType.AfterFight)
-        if not before and not after then
-          (Log.warn)("### no story in curStage", storyList.stageId)
-        end
-        if before and after then
-          (self._imgBlack):SetActive(true)
-          self:ShowDialog("UIStoryController", before.id, function()
-    -- function num : 0_20_0 , upvalues : self, _ENV, after
-    self:StartTask(function()
-      -- function num : 0_20_0_0 , upvalues : _ENV, self, after
-      YIELD(TT)
-      self:ShowDialog("UIStoryController", after.id, function()
-        -- function num : 0_20_0_0_0 , upvalues : self
-        (self._imgBlack):SetActive(false)
+      local before = storyList:GetStoryByStoryType(StoryTriggerType.BeforeFight)
+      local after = storyList:GetStoryByStoryType(StoryTriggerType.AfterFight)
+      if not before and not after then
+        Log.warn("### no story in curStage", storyList.stageId)
       end
-)
-    end
-)
-  end
-)
-        else
-          local story = (storyList.list)[1]
+      if before and after then
+        self._imgBlack:SetActive(true)
+        self:ShowDialog("UIStoryController", before.id, function()
+          self:StartTask(function()
+            YIELD(TT)
+            self:ShowDialog("UIStoryController", after.id, function()
+              self._imgBlack:SetActive(false)
+            end)
+          end)
+        end)
+      else
+        do
+          local story = storyList.list[1]
           self:ShowDialog("UIStoryController", story.id)
         end
       end
@@ -589,16 +430,13 @@ UIXH1Stage.btnPlotOnClick = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage._CanAutoFight = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIXH1Stage:_CanAutoFight()
   local tipsStr = ""
-  local cfg = (Cfg.cfg_global).auto_fight_need_pass
+  local cfg = Cfg.cfg_global.auto_fight_need_pass
   if cfg and cfg.StrValue then
     tipsStr = cfg.StrValue
   end
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   if not missionCfg then
     return false, tipsStr
   end
@@ -619,25 +457,21 @@ UIXH1Stage._CanAutoFight = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Stage._CheckShowWordBuff = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+function UIXH1Stage:_CheckShowWordBuff()
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   if not missionCfg then
     return false
   end
   if missionCfg.WordBuff and missionCfg.WordBuff > 0 then
-    do return false end
-    if not self._missionFinishInfo then
-      return false
-    end
-    local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
-    if not self:HasPassThreeStar(missionCfg) then
-      return false
-    end
-    return true
+  else
+    return false
   end
+  if not self._missionFinishInfo then
+    return false
+  end
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
+  if not self:HasPassThreeStar(missionCfg) then
+    return false
+  end
+  return true
 end
-
-

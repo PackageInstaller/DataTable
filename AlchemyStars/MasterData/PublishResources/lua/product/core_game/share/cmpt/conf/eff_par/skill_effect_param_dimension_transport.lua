@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_dimension_transport.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParam_DimensionTransport", SkillEffectParamBase)
 SkillEffectParam_DimensionTransport = SkillEffectParam_DimensionTransport
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_DimensionTransport.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_DimensionTransport:Constructor(t)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DimensionTransport.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_DimensionTransport:GetEffectType()
   return SkillEffectType.DimensionTransport
 end
-
-

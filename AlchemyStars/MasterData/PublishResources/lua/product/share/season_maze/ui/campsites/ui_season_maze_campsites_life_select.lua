@@ -1,40 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/campsites/ui_season_maze_campsites_life_select.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMaze_Campsites_Life_Select", UIController)
 UISeasonMaze_Campsites_Life_Select = UISeasonMaze_Campsites_Life_Select
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMaze_Campsites_Life_Select.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMaze_Campsites_Life_Select:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
   self._module = self:GetModule(MissionModule)
-  self._ctx = (self._module):TeamCtx()
-  self._teams = (self._ctx):Teams()
+  self._ctx = self._module:TeamCtx()
+  self._teams = self._ctx:Teams()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMaze_Campsites_Life_Select:OnShow(uiParams)
   self._cost = uiParams[1]
   self._selectCb = uiParams[2]
-  self._cfg = (Cfg.cfg_item)({})
+  self._cfg = Cfg.cfg_item({})
   if self._cfg == nil then
-    (Log.fatal)("[error] maze --> _cfg == nil !")
+    Log.fatal("[error] maze --> _cfg == nil !")
   end
-  self.petCondition = function(pet)
-    -- function num : 0_1_0
+  
+  function self.petCondition(pet)
     if pet.cur_blood_prcent <= 0 then
       return true
     end
   end
-
-  self.seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self.uiSeasonMazeModule = (self.seasonMazeModule):UIModule()
-  self.mazePets = (self.uiSeasonMazeModule):GetSeasonMazePets(self.petCondition)
+  
+  self.seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self.uiSeasonMazeModule = self.seasonMazeModule:UIModule()
+  self.mazePets = self.uiSeasonMazeModule:GetSeasonMazePets(self.petCondition)
   self._itemCountPerRow = 5
   self._listShowItemCount = 0
   self._TaskList = {}
@@ -43,55 +33,57 @@ UISeasonMaze_Campsites_Life_Select.OnShow = function(self, uiParams)
   self._firstIn = true
   self._uiHeartAtlas = self:GetAsset("UIHeartItem.spriteatlas", LoadType.SpriteAtlas)
   self._items = {}
-  self._elementSortTypeOrder = {[1] = PetSortType.WaterFirst, [2] = PetSortType.FireFirst, [3] = PetSortType.SenFirst, [4] = PetSortType.ElectricityFirst}
+  self._elementSortTypeOrder = {
+    [1] = PetSortType.WaterFirst,
+    [2] = PetSortType.FireFirst,
+    [3] = PetSortType.SenFirst,
+    [4] = PetSortType.ElectricityFirst
+  }
   self._currentElementSortTypeOrder = 0
   self._sortFilterActiveStatus = false
   self._petHeartItemList = {}
   self._isFilterRedPoint = false
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
   local sortFilterCfg = UISortFilterCfg.SeasonMazeTeam
   local sortCfg = {}
-  for idx,value in ipairs(sortFilterCfg.Sort) do
-    sortCfg[idx] = (Cfg.cfg_client_pet_sort)[value]
+  for idx, value in ipairs(sortFilterCfg.Sort) do
+    sortCfg[idx] = Cfg.cfg_client_pet_sort[value]
   end
   local filterCfg = {}
-  for tag,filters in pairs(sortFilterCfg.Filter) do
+  for tag, filters in pairs(sortFilterCfg.Filter) do
     local cfgs = {}
-    for idx,value in ipairs(filters) do
-      cfgs[idx] = (Cfg.cfg_client_pet_filter)[value]
+    for idx, value in ipairs(filters) do
+      cfgs[idx] = Cfg.cfg_client_pet_filter[value]
     end
     filterCfg[tag] = cfgs
   end
   self._sortCfg = sortCfg
   self._filterCfg = filterCfg
-  if (self._petModule).PetSortType ~= nil then
-    self._sortType = (self._petModule).PetSortType
+  if self._petModule.PetSortType ~= nil then
+    self._sortType = self._petModule.PetSortType
   else
     self._sortType = PetSortType.Level
   end
-  if (self._petModule).PetSortOrder ~= nil then
-    self._sortOrder = (self._petModule).PetSortOrder
+  if self._petModule.PetSortOrder ~= nil then
+    self._sortOrder = self._petModule.PetSortOrder
   else
     self._sortOrder = PetSortOrder.Descending
   end
-  if (self._petModule).PetSortFilter ~= nil then
-    self._filterParams = (self._petModule).PetSortFilter
+  if self._petModule.PetSortFilter ~= nil then
+    self._filterParams = self._petModule.PetSortFilter
   else
     self._filterParams = {}
   end
-  local sortParams = (PetDefaulSort[self._sortType])[self._sortOrder]
-  self._pets = (self.uiSeasonMazeModule):GetSeasonMazeTablePets(self.petCondition)
-  self._petCount = (table.count)(self._pets)
-  self._listShowItemCount = (math.ceil)(self._petCount / self._itemCountPerRow)
+  local sortParams = PetDefaulSort[self._sortType][self._sortOrder]
+  self._pets = self.uiSeasonMazeModule:GetSeasonMazeTablePets(self.petCondition)
+  self._petCount = table.count(self._pets)
+  self._listShowItemCount = math.ceil(self._petCount / self._itemCountPerRow)
   self._backClose = false
   self:InitWidget()
   self:InitUI()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonMaze_Campsites_Life_Select:InitWidget()
   self.petScrollView = self:GetUIComponent("UIDynamicScrollView", "PetScrollView")
   self._emptyDataTip = self:GetGameObject("EmptyTip")
   local pool = self:GetUIComponent("UISelectObjectPath", "backBtns")
@@ -100,166 +92,119 @@ UISeasonMaze_Campsites_Life_Select.InitWidget = function(self)
   self._curSortStateIcon = self:GetUIComponent("Image", "btnFiltrate")
   self._sortFilterLoader = self:GetUIComponent("UISelectObjectPath", "sortFilter")
   self._clearFilterBtn = self:GetGameObject("clearFilterBtn")
-  ;
-  (self._clearFilterBtn):SetActive(false)
+  self._clearFilterBtn:SetActive(false)
   self.topRightAnchor = self:GetGameObject("TopRightAnchor")
   self._filterRedImg = self:GetUIComponent("Image", "FilterRedBtn")
   self._filterRedIGo = self:GetGameObject("FilterRedBtn")
-  ;
-  (self._filterRedIGo):SetActive(false)
+  self._filterRedIGo:SetActive(false)
   self.petView = self:GetGameObject("PetView")
-  self._filterRedSp1 = (self._uiHeartAtlas):GetSprite("spirit_jiantou_b_4_frame")
-  self._filterRedSp2 = (self._uiHeartAtlas):GetSprite("spirit_jiantou_b_3_frame")
+  self._filterRedSp1 = self._uiHeartAtlas:GetSprite("spirit_jiantou_b_4_frame")
+  self._filterRedSp2 = self._uiHeartAtlas:GetSprite("spirit_jiantou_b_3_frame")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select.InitUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self.whiteTextColor = (Color.New)(1, 1, 1)
-  self.yellowTextColor = (Color.New)(0.8352941, 0.7215686, 0.4705882)
+function UISeasonMaze_Campsites_Life_Select:InitUI()
+  self.whiteTextColor = Color.New(1, 1, 1)
+  self.yellowTextColor = Color.New(0.8352941, 0.7215686, 0.4705882)
   self:_InitBackBtn()
   self:RefreshPetView()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select._InitBackBtn = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self.backBtns):SetData(function()
-    -- function num : 0_4_0 , upvalues : self, _ENV
+function UISeasonMaze_Campsites_Life_Select:_InitBackBtn()
+  self.backBtns:SetData(function()
     self._backClose = true
     for i = 1, #self._TaskList do
-      local taskId = (self._TaskList)[i]
+      local taskId = self._TaskList[i]
       if taskId ~= nil then
-        ((GameGlobal.TaskManager)()):KillTask(taskId)
+        GameGlobal.TaskManager():KillTask(taskId)
       end
     end
     self:CloseDialog()
-  end
-, nil, nil, true, nil, false, nil)
+  end, nil, nil, true, nil, false, nil)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select.RefreshPetView = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonMaze_Campsites_Life_Select:RefreshPetView()
   self._module = self:GetModule(MissionModule)
-  ;
-  (self.petScrollView):InitListView(self._listShowItemCount, function(scrollView, index)
-    -- function num : 0_5_0 , upvalues : self
+  self.petScrollView:InitListView(self._listShowItemCount, function(scrollView, index)
     return self:InitSpritListInfo(scrollView, index)
-  end
-, self:GetScrollViewParam())
-  ;
-  (self._sortBtns):SpawnObjects("UITopSortBtnItem", self._btnCount)
-  self._sortBtnsPool = (self._sortBtns):GetAllSpawnList()
+  end, self:GetScrollViewParam())
+  self._sortBtns:SpawnObjects("UITopSortBtnItem", self._btnCount)
+  self._sortBtnsPool = self._sortBtns:GetAllSpawnList()
   for i = 1, self._btnCount do
-    ((self._sortBtnsPool)[i]):SetData(i, (self._sortCfg)[i], self._sortType, self._sortOrder, function(idx)
-    -- function num : 0_5_1 , upvalues : self
-    self:ChangeSortParams(idx)
-  end
-, self._currentElementSortTypeOrder)
+    self._sortBtnsPool[i]:SetData(i, self._sortCfg[i], self._sortType, self._sortOrder, function(idx)
+      self:ChangeSortParams(idx)
+    end, self._currentElementSortTypeOrder)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select.InitSpritListInfo = function(self, scrollView, index)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonMaze_Campsites_Life_Select:InitSpritListInfo(scrollView, index)
   if index < 0 then
     return nil
   end
   local item = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
-    if (self._TaskList)[item] then
+    if self._TaskList[item] then
       return item
     end
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._TaskList)[item] = self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : index, self, _ENV, item, rowPool
-    while index > 0 and self:GetHasItemAsyncLoading() do
-      YIELD(TT)
-    end
-    if self._backClose then
-      return 
-    end
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._AsyncLoadFlagMap)[item] = 1
-    rowPool:AsyncSpawnObjects(TT, "UISeasonMazeBagPetStateItem", self._itemCountPerRow)
-    local rowList = rowPool:GetAllSpawnList()
-    self._petHeartItemList = rowList
-    for i = 1, self._itemCountPerRow do
-      local heartItem = rowList[i]
-      ;
-      (heartItem:GetGameObject()):SetActive(false)
-    end
-    for i = 1, self._itemCountPerRow do
-      local heartItem = rowList[i]
-      local itemIndex = index * self._itemCountPerRow + i
-      if self._petCount < itemIndex then
-        (heartItem:GetGameObject()):SetActive(false)
-      else
-        self:ShowHeartItem(TT, heartItem, itemIndex)
-        heartItem:PlayFadeInAnim()
-        -- DECOMPILER ERROR at PC67: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._items)[itemIndex] = heartItem
+    self._TaskList[item] = self:StartTask(function(TT)
+      if 0 < index then
+        while self:GetHasItemAsyncLoading() do
+          YIELD(TT)
+        end
       end
-    end
-    -- DECOMPILER ERROR at PC74: Confused about usage of register: R2 in 'UnsetPending'
-
-    if itemIndex % 2 == 0 then
-      (self._AsyncLoadFlagMap)[item] = 2
+      if self._backClose then
+        return
+      end
+      self._AsyncLoadFlagMap[item] = 1
+      rowPool:AsyncSpawnObjects(TT, "UISeasonMazeBagPetStateItem", self._itemCountPerRow)
+      local rowList = rowPool:GetAllSpawnList()
+      self._petHeartItemList = rowList
+      for i = 1, self._itemCountPerRow do
+        local heartItem = rowList[i]
+        heartItem:GetGameObject():SetActive(false)
+      end
+      for i = 1, self._itemCountPerRow do
+        local heartItem = rowList[i]
+        local itemIndex = index * self._itemCountPerRow + i
+        if itemIndex > self._petCount then
+          heartItem:GetGameObject():SetActive(false)
+        else
+          self:ShowHeartItem(TT, heartItem, itemIndex)
+          heartItem:PlayFadeInAnim()
+          self._items[itemIndex] = heartItem
+          if itemIndex % 2 == 0 then
+          end
+        end
+      end
+      self._AsyncLoadFlagMap[item] = 2
       item.IsInitHandlerCalled = true
-      -- DECOMPILER ERROR at PC78: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._TaskList)[item] = nil
-    end
-  end
-)
+      self._TaskList[item] = nil
+    end)
   else
     local rowList = rowPool:GetAllSpawnList()
     self._petHeartItemList = rowList
     for i = 1, self._itemCountPerRow do
       local heartItem = rowList[i]
-      ;
-      (heartItem:GetGameObject()):SetActive(false)
+      heartItem:GetGameObject():SetActive(false)
     end
     for i = 1, self._itemCountPerRow do
       local heartItem = rowList[i]
       local itemIndex = index * self._itemCountPerRow + i
-      if self._petCount < itemIndex then
+      if itemIndex > self._petCount then
         heartItem:SetInVisible()
-        ;
-        (heartItem:GetGameObject()):SetActive(false)
+        heartItem:GetGameObject():SetActive(false)
       else
         self:ShowHeartItem(TT, heartItem, itemIndex)
         heartItem:ResetInAnim()
-        -- DECOMPILER ERROR at PC66: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (self._items)[itemIndex] = heartItem
+        self._items[itemIndex] = heartItem
       end
     end
   end
-  do
-    return item
-  end
+  return item
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select.GetHasItemAsyncLoading = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  for _,v in pairs(self._AsyncLoadFlagMap) do
+function UISeasonMaze_Campsites_Life_Select:GetHasItemAsyncLoading()
+  for _, v in pairs(self._AsyncLoadFlagMap) do
     if v == 1 then
       return true
     end
@@ -267,46 +212,31 @@ UISeasonMaze_Campsites_Life_Select.GetHasItemAsyncLoading = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select.ShowHeartItem = function(self, TT, heartItem, index)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonMaze_Campsites_Life_Select:ShowHeartItem(TT, heartItem, index)
   if heartItem == nil or heartItem.view == nil or heartItem:GetGameObject() == nil then
-    return 
+    return
   end
-  local config = (self._pets)[index]
+  local config = self._pets[index]
   if config ~= nil then
     heartItem:SetData(config, function(id)
-    -- function num : 0_8_0 , upvalues : _ENV, self
-    local desc = (StringTable.Get)("str_season_maze_camp_life_heal_cost_desc", self._cost)
-    ;
-    (UISeasonMazeModule.PopMsgBox)((StringTable.Get)("str_season_maze_camp_tips"), desc, SeasonMazeMsgBoxType.OkCancel, function()
-      -- function num : 0_8_0_0 , upvalues : self, id
-      if self._selectCb then
-        self:CloseDialog()
-        ;
-        (self._selectCb)(id)
-      end
-    end
-)
-  end
-, true, self._firstIn, TeamOpenerType.SeasonMaze, PetSkinEffectPath.CARD_PET_LIST, index)
+      local desc = StringTable.Get("str_season_maze_camp_life_heal_cost_desc", self._cost)
+      UISeasonMazeModule.PopMsgBox(StringTable.Get("str_season_maze_camp_tips"), desc, SeasonMazeMsgBoxType.OkCancel, function()
+        if self._selectCb then
+          self:CloseDialog()
+          self._selectCb(id)
+        end
+      end)
+    end, true, self._firstIn, TeamOpenerType.SeasonMaze, PetSkinEffectPath.CARD_PET_LIST, index)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select.GetScrollViewParam = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonMaze_Campsites_Life_Select:GetScrollViewParam()
   local param = UIDynamicScrollViewInitParam:New()
   param.mItemDefaultWithPaddingSize = 333
   return param
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select.OnSortFilterChanged = function(self, sortType, sortOrder, filterParams)
-  -- function num : 0_10
+function UISeasonMaze_Campsites_Life_Select:OnSortFilterChanged(sortType, sortOrder, filterParams)
   self._sortType = sortType
   self._sortOrder = sortOrder
   self._filterParams = filterParams
@@ -314,27 +244,19 @@ UISeasonMaze_Campsites_Life_Select.OnSortFilterChanged = function(self, sortType
   self:RefrenshPetList()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select.FlushTopBtnState = function(self)
-  -- function num : 0_11
+function UISeasonMaze_Campsites_Life_Select:FlushTopBtnState()
   for i = 1, self._btnCount do
-    ((self._sortBtnsPool)[i]):Flush(self._sortType, self._sortOrder, (self._petModule).PetSortElementIndex)
+    self._sortBtnsPool[i]:Flush(self._sortType, self._sortOrder, self._petModule.PetSortElementIndex)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select.ChangeSortParams = function(self, idx)
-  -- function num : 0_12 , upvalues : _ENV
-  local tp = ((self._sortCfg)[idx]).Type
+function UISeasonMaze_Campsites_Life_Select:ChangeSortParams(idx)
+  local tp = self._sortCfg[idx].Type
   if self._sortType == tp then
     if self._sortOrder == PetSortOrder.Ascending then
       self._sortOrder = PetSortOrder.Descending
-    else
-      if self._sortOrder == PetSortOrder.Descending then
-        self._sortOrder = PetSortOrder.Ascending
-      end
+    elseif self._sortOrder == PetSortOrder.Descending then
+      self._sortOrder = PetSortOrder.Ascending
     end
   else
     self._sortType = tp
@@ -343,142 +265,88 @@ UISeasonMaze_Campsites_Life_Select.ChangeSortParams = function(self, idx)
   self:RefrenshPetList()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select.RefrenshPetList = function(self, pstid, stay)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonMaze_Campsites_Life_Select:RefrenshPetList(pstid, stay)
   self._items = {}
-  local sortParams = nil
+  local sortParams
   if self._sortType == PetSortType.Element then
-    self._currentElementSortTypeOrder = (self._petModule).PetSortElementIndex
-    sortParams = (PetDefaulSort[(self._elementSortTypeOrder)[self._currentElementSortTypeOrder]])[PetSortOrder.Descending]
+    self._currentElementSortTypeOrder = self._petModule.PetSortElementIndex
+    sortParams = PetDefaulSort[self._elementSortTypeOrder[self._currentElementSortTypeOrder]][PetSortOrder.Descending]
   else
-    sortParams = (PetDefaulSort[self._sortType])[self._sortOrder]
+    sortParams = PetDefaulSort[self._sortType][self._sortOrder]
   end
-  self._pets = (self._petModule):_SortPets((self.uiSeasonMazeModule):GetSeasonMazeTablePets(self.petCondition), self._filterParams, sortParams, (self._petModule).PetSortChooseSecondAttribute)
-  ;
-  (self._petModule):SavePetSortInfo(self._filterParams, self._sortOrder, self._sortType)
+  self._pets = self._petModule:_SortPets(self.uiSeasonMazeModule:GetSeasonMazeTablePets(self.petCondition), self._filterParams, sortParams, self._petModule.PetSortChooseSecondAttribute)
+  self._petModule:SavePetSortInfo(self._filterParams, self._sortOrder, self._sortType)
   self:CalcPetScrollViewCount()
-  ;
-  (self.petScrollView):SetListItemCount(self._listShowItemCount)
+  self.petScrollView:SetListItemCount(self._listShowItemCount)
   if not stay then
-    (self.petScrollView):MovePanelToItemIndex(0, 0)
+    self.petScrollView:MovePanelToItemIndex(0, 0)
   else
-    ;
-    (self.petScrollView):RefreshAllShownItem()
+    self.petScrollView:RefreshAllShownItem()
   end
-  ;
-  (self._filterRedIGo):SetActive(false)
+  self._filterRedIGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select.CalcPetScrollViewCount = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  self._petCount = (table.count)(self._pets)
-  self._listShowItemCount = (math.ceil)(self._petCount / self._itemCountPerRow)
-  ;
-  (self._emptyDataTip):SetActive(false)
+function UISeasonMaze_Campsites_Life_Select:CalcPetScrollViewCount()
+  self._petCount = table.count(self._pets)
+  self._listShowItemCount = math.ceil(self._petCount / self._itemCountPerRow)
+  self._emptyDataTip:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select.CloseFiterCallBack = function(self)
-  -- function num : 0_15
+function UISeasonMaze_Campsites_Life_Select:CloseFiterCallBack()
   self._sortFilterActiveStatus = false
   self:SetClearBtnStatus()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select.SetClearBtnStatus = function(self)
-  -- function num : 0_16
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-  if not (self._petModule):CheckHasCachePetSortInfo() then
-    (self._curSortStateIcon).sprite = (self._uiHeartAtlas):GetSprite("spirit_jiantou_b_1_frame")
-    ;
-    (self._clearFilterBtn):SetActive(false)
+function UISeasonMaze_Campsites_Life_Select:SetClearBtnStatus()
+  if not self._petModule:CheckHasCachePetSortInfo() then
+    self._curSortStateIcon.sprite = self._uiHeartAtlas:GetSprite("spirit_jiantou_b_1_frame")
+    self._clearFilterBtn:SetActive(false)
   else
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._curSortStateIcon).sprite = (self._uiHeartAtlas):GetSprite("spirit_jiantou_b_2_frame")
-    ;
-    (self._clearFilterBtn):SetActive(true)
+    self._curSortStateIcon.sprite = self._uiHeartAtlas:GetSprite("spirit_jiantou_b_2_frame")
+    self._clearFilterBtn:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select.SetFilterImgActive = function(self)
-  -- function num : 0_17
-  local sp = nil
+function UISeasonMaze_Campsites_Life_Select:SetFilterImgActive()
+  local sp
   if self._isFilterRedPoint then
     sp = self._filterRedSp1
   else
     sp = self._filterRedSp2
   end
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._filterRedImg).sprite = sp
+  self._filterRedImg.sprite = sp
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select.BtnFiltrateOnClick = function(self, go)
-  -- function num : 0_18
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._curSortStateIcon).sprite = (self._uiHeartAtlas):GetSprite("spirit_jiantou_b_2_frame")
+function UISeasonMaze_Campsites_Life_Select:BtnFiltrateOnClick(go)
+  self._curSortStateIcon.sprite = self._uiHeartAtlas:GetSprite("spirit_jiantou_b_2_frame")
   self._sortFilterActiveStatus = true
   if self._sortFilter == nil then
-    self._sortFilter = (self._sortFilterLoader):SpawnObject("UISortFilterItem")
+    self._sortFilter = self._sortFilterLoader:SpawnObject("UISortFilterItem")
   end
-  ;
-  (self._sortFilter):SetData(self._sortType, self._sortOrder, self._filterParams, self._sortCfg, self._filterCfg, function(sortType, sortOrder, filterParams)
-    -- function num : 0_18_0 , upvalues : self
+  self._sortFilter:SetData(self._sortType, self._sortOrder, self._filterParams, self._sortCfg, self._filterCfg, function(sortType, sortOrder, filterParams)
     self:OnSortFilterChanged(sortType, sortOrder, filterParams)
-  end
-, function()
-    -- function num : 0_18_1 , upvalues : self
+  end, function()
     self:CloseFiterCallBack()
-  end
-)
-  ;
-  (self._clearFilterBtn):SetActive(true)
-  ;
-  ((self._sortFilter):GetGameObject()):SetActive(true)
+  end)
+  self._clearFilterBtn:SetActive(true)
+  self._sortFilter:GetGameObject():SetActive(true)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select.ClearFilterBtnOnClick = function(self, go)
-  -- function num : 0_19
+function UISeasonMaze_Campsites_Life_Select:ClearFilterBtnOnClick(go)
   if self._sortFilterActiveStatus == false then
-    (self._clearFilterBtn):SetActive(false)
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._curSortStateIcon).sprite = (self._uiHeartAtlas):GetSprite("spirit_jiantou_b_1_frame")
+    self._clearFilterBtn:SetActive(false)
+    self._curSortStateIcon.sprite = self._uiHeartAtlas:GetSprite("spirit_jiantou_b_1_frame")
   end
-  ;
-  (self._petModule):ClearPetSortFilterInfo()
+  self._petModule:ClearPetSortFilterInfo()
   self._filterParams = {}
   self._isFilterRedPoint = false
   self:SetFilterImgActive()
   self:FlushTopBtnState()
   self:RefrenshPetList()
   if self._sortFilter then
-    (self._sortFilter):ClearFilters()
+    self._sortFilter:ClearFilters()
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Life_Select.FilterRedBtnOnClick = function(self, go)
-  -- function num : 0_20
+function UISeasonMaze_Campsites_Life_Select:FilterRedBtnOnClick(go)
 end
-
-

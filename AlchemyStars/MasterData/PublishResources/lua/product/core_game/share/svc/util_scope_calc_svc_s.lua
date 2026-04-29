@@ -1,441 +1,282 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/svc/util_scope_calc_svc_s.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("switch_body_area_dir_type")
 _class("UtilScopeCalcServiceShare", Object)
 UtilScopeCalcServiceShare = UtilScopeCalcServiceShare
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UtilScopeCalcServiceShare.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function UtilScopeCalcServiceShare:Constructor(world)
   self._world = world
   self._skillScopeCalc = SkillScopeCalculator:New(self)
   self._gridFilter = SkillScopeDefaultFilter:New()
   self._chainPathTargetSelector = ChainPathTargetSelector:New(self._world)
-  self._skillScopeTargetSelector = (self._world):GetSkillScopeTargetSelector()
+  self._skillScopeTargetSelector = self._world:GetSkillScopeTargetSelector()
   self._skillEffectTargetSorter = SkillEffectTargetSorter:New(self._world)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.SortHitbackTargetByDirType = function(self, enemyIDList, hitbackDirType, casterPos)
-  -- function num : 0_1
-  (self._skillEffectTargetSorter):_SortHitbackTargetByDirType(enemyIDList, hitbackDirType, casterPos)
+function UtilScopeCalcServiceShare:SortHitbackTargetByDirType(enemyIDList, hitbackDirType, casterPos)
+  self._skillEffectTargetSorter:_SortHitbackTargetByDirType(enemyIDList, hitbackDirType, casterPos)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare._GetRandomNumber = function(self, m, n)
-  -- function num : 0_2
-  local randomService = (self._world):GetService("RandomLogic")
+function UtilScopeCalcServiceShare:_GetRandomNumber(m, n)
+  local randomService = self._world:GetService("RandomLogic")
   return randomService:LogicRand(m, n)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.CalcCenterPosAndBodyArea = function(self, centerType, casterPos, PlayerBodyArea, scopeParam, casterEntity)
-  -- function num : 0_3 , upvalues : _ENV
+function UtilScopeCalcServiceShare:CalcCenterPosAndBodyArea(centerType, casterPos, PlayerBodyArea, scopeParam, casterEntity)
   local centerPos = casterPos
   local bodyArea = PlayerBodyArea
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  if centerType then
-    if centerType ~= SkillScopeCenterType.CasterPos or centerType == SkillScopeCenterType.Component then
-      centerPos = self:GetComponentCenterPos()
-    else
-      if centerType == SkillScopeCenterType.PickUpGridPos then
-        local retPos = self:GetPickUpGridPosCenterPos()
-        if retPos then
-          centerPos = retPos
-        end
-      else
-        do
-          if centerType == SkillScopeCenterType.PickUpMultiGridPos then
-            local retPos = self:GetPickUpMultiGridPosCenterPos()
-            if retPos then
-              centerPos = retPos
-            end
-          else
-            do
-              if centerType == SkillScopeCenterType.SelectNeareat2Pet then
-                centerPos = self:_SelectNeareat2Pet(casterPos, scopeParam, teamEntity)
-              else
-                if centerType == SkillScopeCenterType.ChainSkillPickUpGridPos then
-                  local logicPickUpCmpt = teamEntity:LogicPickUp()
-                  centerPos = logicPickUpCmpt:GetLogicCurPickUpGridSafePos()
-                else
-                  do
-                    if centerType == SkillScopeCenterType.FirstPickUpGridPos then
-                      local retPos = self:GetFirstPickUpGridPosCenterPos()
-                      if retPos then
-                        centerPos = retPos
-                      end
-                    else
-                      do
-                        if centerType == SkillScopeCenterType.CastBombPos then
-                          centerPos = self:_CalcBombPos(teamEntity, casterPos, scopeParam)
-                        else
-                          if centerType == SkillScopeCenterType.RoundBeginPlayerPos then
-                            centerPos = ((self._world):BattleStat()):GetRoundBeginPlayerPos()
-                          else
-                            if centerType == SkillScopeCenterType.PlayerPos then
-                              local playerPos = teamEntity:GetGridPosition()
-                              centerPos = playerPos
-                            else
-                              do
-                                if centerType == SkillScopeCenterType.NearestPetChessPos then
-                                  centerPos = self:GetNearestPetChessPosCenterPos(casterPos)
-                                else
-                                  if centerType == SkillScopeCenterType.NearestPosToCasterInPickMonster then
-                                    local retPos = self:GetNearestPosToCasterInPickMonster()
-                                    if retPos then
-                                      centerPos = retPos
-                                    end
-                                  else
-                                    do
-                                      if centerType == SkillScopeCenterType.PickUpMonsterPos then
-                                        local retPos = self:GetPickUpMonsterPosCenterPos()
-                                        if retPos then
-                                          centerPos = retPos
-                                        end
-                                      else
-                                        do
-                                          if centerType == SkillScopeCenterType.PickUpMonsterPosAndCasterPos then
-                                            local retPos = self:GetPickUpMonsterPosAndCasterPosCenterPos()
-                                            if retPos then
-                                              centerPos = retPos
-                                            end
-                                          else
-                                            do
-                                              if centerType == SkillScopeCenterType.MonsterBodyAreaIndex then
-                                                centerPos = bodyArea[2] + casterPos
-                                              else
-                                                if centerType == SkillScopeCenterType.NearestMonsterGrid then
-                                                  local retPos = self:GetNearestMonsterGridCenterPos(casterPos)
-                                                  if retPos then
-                                                    centerPos = retPos
-                                                  end
-                                                else
-                                                  do
-                                                    if centerType == SkillScopeCenterType.NearestMonsterGridForChainSubScope then
-                                                      if casterEntity then
-                                                        local petBuffCmpt = casterEntity:BuffComponent()
-                                                        if petBuffCmpt then
-                                                          local replaceChainEntityID = petBuffCmpt:GetBuffValue("ReplaceEntityID")
-                                                          local replaceChainEntity = (self._world):GetEntityByID(replaceChainEntityID)
-                                                          if replaceChainEntity and not replaceChainEntity:HasDeadMark() then
-                                                            casterPos = (replaceChainEntity:GridLocation()).Position
-                                                          end
-                                                        end
-                                                      end
-                                                      do
-                                                        do
-                                                          local retPos = self:GetNearestMonsterGridCenterPos(casterPos)
-                                                          if retPos then
-                                                            centerPos = retPos
-                                                          end
-                                                          if centerType == SkillScopeCenterType.PlayerPosAndFarthestMonsterGridPos then
-                                                            local retPosArray = self:GetPlayerPosAndFarthestMonsterGridPos()
-                                                            if retPosArray then
-                                                              centerPos = retPosArray
-                                                            end
-                                                          else
-                                                            do
-                                                              do
-                                                                if centerType == SkillScopeCenterType.FarthestMonsterGridPos then
-                                                                  local retPos = self:GetFarthestMonsterGridPos(casterPos)
-                                                                  if retPos then
-                                                                    centerPos = retPos
-                                                                  end
-                                                                end
-                                                                return centerPos, bodyArea
-                                                              end
-                                                            end
-                                                          end
-                                                        end
-                                                      end
-                                                    end
-                                                  end
-                                                end
-                                              end
-                                            end
-                                          end
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  if not centerType or centerType == SkillScopeCenterType.CasterPos then
+  elseif centerType == SkillScopeCenterType.Component then
+    centerPos = self:GetComponentCenterPos()
+  elseif centerType == SkillScopeCenterType.PickUpGridPos then
+    local retPos = self:GetPickUpGridPosCenterPos()
+    if retPos then
+      centerPos = retPos
+    end
+  elseif centerType == SkillScopeCenterType.PickUpMultiGridPos then
+    local retPos = self:GetPickUpMultiGridPosCenterPos()
+    if retPos then
+      centerPos = retPos
+    end
+  elseif centerType == SkillScopeCenterType.SelectNeareat2Pet then
+    centerPos = self:_SelectNeareat2Pet(casterPos, scopeParam, teamEntity)
+  elseif centerType == SkillScopeCenterType.ChainSkillPickUpGridPos then
+    local logicPickUpCmpt = teamEntity:LogicPickUp()
+    centerPos = logicPickUpCmpt:GetLogicCurPickUpGridSafePos()
+  elseif centerType == SkillScopeCenterType.FirstPickUpGridPos then
+    local retPos = self:GetFirstPickUpGridPosCenterPos()
+    if retPos then
+      centerPos = retPos
+    end
+  elseif centerType == SkillScopeCenterType.CastBombPos then
+    centerPos = self:_CalcBombPos(teamEntity, casterPos, scopeParam)
+  elseif centerType == SkillScopeCenterType.RoundBeginPlayerPos then
+    centerPos = self._world:BattleStat():GetRoundBeginPlayerPos()
+  elseif centerType == SkillScopeCenterType.PlayerPos then
+    local playerPos = teamEntity:GetGridPosition()
+    centerPos = playerPos
+  elseif centerType == SkillScopeCenterType.NearestPetChessPos then
+    centerPos = self:GetNearestPetChessPosCenterPos(casterPos)
+  elseif centerType == SkillScopeCenterType.NearestPosToCasterInPickMonster then
+    local retPos = self:GetNearestPosToCasterInPickMonster()
+    if retPos then
+      centerPos = retPos
+    end
+  elseif centerType == SkillScopeCenterType.PickUpMonsterPos then
+    local retPos = self:GetPickUpMonsterPosCenterPos()
+    if retPos then
+      centerPos = retPos
+    end
+  elseif centerType == SkillScopeCenterType.PickUpMonsterPosAndCasterPos then
+    local retPos = self:GetPickUpMonsterPosAndCasterPosCenterPos()
+    if retPos then
+      centerPos = retPos
+    end
+  elseif centerType == SkillScopeCenterType.MonsterBodyAreaIndex then
+    centerPos = bodyArea[2] + casterPos
+  elseif centerType == SkillScopeCenterType.NearestMonsterGrid then
+    local retPos = self:GetNearestMonsterGridCenterPos(casterPos)
+    if retPos then
+      centerPos = retPos
+    end
+  elseif centerType == SkillScopeCenterType.NearestMonsterGridForChainSubScope then
+    if casterEntity then
+      local petBuffCmpt = casterEntity:BuffComponent()
+      if petBuffCmpt then
+        local replaceChainEntityID = petBuffCmpt:GetBuffValue("ReplaceEntityID")
+        local replaceChainEntity = self._world:GetEntityByID(replaceChainEntityID)
+        if replaceChainEntity and not replaceChainEntity:HasDeadMark() then
+          casterPos = replaceChainEntity:GridLocation().Position
         end
       end
     end
+    local retPos = self:GetNearestMonsterGridCenterPos(casterPos)
+    if retPos then
+      centerPos = retPos
+    end
+  elseif centerType == SkillScopeCenterType.PlayerPosAndFarthestMonsterGridPos then
+    local retPosArray = self:GetPlayerPosAndFarthestMonsterGridPos()
+    if retPosArray then
+      centerPos = retPosArray
+    end
+  elseif centerType == SkillScopeCenterType.FarthestMonsterGridPos then
+    local retPos = self:GetFarthestMonsterGridPos(casterPos)
+    if retPos then
+      centerPos = retPos
+    end
   end
+  return centerPos, bodyArea
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetFirstPickUpGridPosCenterPos = function(self)
-  -- function num : 0_4
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function UtilScopeCalcServiceShare:GetFirstPickUpGridPosCenterPos()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local logicPickUpCmpt = teamEntity:LogicPickUp()
   local petPstID = logicPickUpCmpt:GetLogicPetPstid()
   local entityID = logicPickUpCmpt:GetEntityID()
-  do
-    if entityID == -1 then
-      local utilDataSvc = (self._world):GetService("UtilData")
-      entityID = utilDataSvc:GetEntityIDByPstID(petPstID)
-    end
-    local casterEntity = (self._world):GetEntityByID(entityID)
-    if casterEntity then
-      local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
-      if activeSkillPickUpComponent then
-        local centerPos = activeSkillPickUpComponent:GetFirstValidPickUpGridPos()
-        return centerPos
-      end
+  if entityID == -1 then
+    local utilDataSvc = self._world:GetService("UtilData")
+    entityID = utilDataSvc:GetEntityIDByPstID(petPstID)
+  else
+  end
+  local casterEntity = self._world:GetEntityByID(entityID)
+  if casterEntity then
+    local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
+    if activeSkillPickUpComponent then
+      local centerPos = activeSkillPickUpComponent:GetFirstValidPickUpGridPos()
+      return centerPos
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetPickUpMultiGridPosCenterPos = function(self)
-  -- function num : 0_5
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function UtilScopeCalcServiceShare:GetPickUpMultiGridPosCenterPos()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local logicPickUpCmpt = teamEntity:LogicPickUp()
   local petPstID = logicPickUpCmpt:GetLogicPetPstid()
   local entityID = logicPickUpCmpt:GetEntityID()
-  do
-    if entityID == -1 then
-      local utilDataSvc = (self._world):GetService("UtilData")
-      entityID = utilDataSvc:GetEntityIDByPstID(petPstID)
-    end
-    local utilDataSvc = (self._world):GetService("UtilData")
-    local petEntityId = utilDataSvc:GetEntityIDByPstID(petPstID)
-    local casterEntity = (self._world):GetEntityByID(entityID)
-    if casterEntity then
-      local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
-      if activeSkillPickUpComponent then
-        local centerPos = activeSkillPickUpComponent:GetAllValidPickUpGridPos()
-        return centerPos
-      end
+  if entityID == -1 then
+    local utilDataSvc = self._world:GetService("UtilData")
+    entityID = utilDataSvc:GetEntityIDByPstID(petPstID)
+  else
+  end
+  local utilDataSvc = self._world:GetService("UtilData")
+  local petEntityId = utilDataSvc:GetEntityIDByPstID(petPstID)
+  local casterEntity = self._world:GetEntityByID(entityID)
+  if casterEntity then
+    local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
+    if activeSkillPickUpComponent then
+      local centerPos = activeSkillPickUpComponent:GetAllValidPickUpGridPos()
+      return centerPos
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetPickUpGridPosCenterPos = function(self)
-  -- function num : 0_6
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function UtilScopeCalcServiceShare:GetPickUpGridPosCenterPos()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local logicPickUpCmpt = teamEntity:LogicPickUp()
   local petPstID = logicPickUpCmpt:GetLogicPetPstid()
   local entityID = logicPickUpCmpt:GetEntityID()
-  do
-    if entityID == -1 then
-      local utilDataSvc = (self._world):GetService("UtilData")
-      entityID = utilDataSvc:GetEntityIDByPstID(petPstID)
-    end
-    local casterEntity = (self._world):GetEntityByID(entityID)
-    if casterEntity then
-      local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
-      if activeSkillPickUpComponent then
-        local centerPos = activeSkillPickUpComponent:GetLastPickUpGridPos()
-        return centerPos
-      end
+  if entityID == -1 then
+    local utilDataSvc = self._world:GetService("UtilData")
+    entityID = utilDataSvc:GetEntityIDByPstID(petPstID)
+  else
+  end
+  local casterEntity = self._world:GetEntityByID(entityID)
+  if casterEntity then
+    local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
+    if activeSkillPickUpComponent then
+      local centerPos = activeSkillPickUpComponent:GetLastPickUpGridPos()
+      return centerPos
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetComponentCenterPos = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UtilScopeCalcServiceShare:GetComponentCenterPos()
   local posList = {}
-  local g = (self._world):GetGroup(((self._world).BW_WEMatchers).ScopeCenter)
-  for _,e in ipairs(g:GetEntities()) do
+  local g = self._world:GetGroup(self._world.BW_WEMatchers.ScopeCenter)
+  for _, e in ipairs(g:GetEntities()) do
     if not e:HasDeadMark() then
-      local area = (e:BodyArea()):GetArea()
-      for _,posArea in ipairs(area) do
-        local pos = (e:GridLocation()):GetGridPos() + posArea
-        ;
-        (table.insert)(posList, pos)
+      local area = e:BodyArea():GetArea()
+      for _, posArea in ipairs(area) do
+        local pos = e:GridLocation():GetGridPos() + posArea
+        table.insert(posList, pos)
       end
     end
   end
   return posList
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetNearestPetChessPosCenterPos = function(self, casterPos)
-  -- function num : 0_8
+function UtilScopeCalcServiceShare:GetNearestPetChessPosCenterPos(casterPos)
   local petEntityIDList = self:GetSortChessPetByMonsterPos(casterPos)
-  local entity = (self._world):GetEntityByID(petEntityIDList[1])
+  local entity = self._world:GetEntityByID(petEntityIDList[1])
   local pos = entity:GetGridPosition()
   return pos
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.CalcPreviewCenterPosAndBodyArea = function(self, centerType, casterPos, PlayerBodyArea, scopeParam, casterEntity)
-  -- function num : 0_9 , upvalues : _ENV
+function UtilScopeCalcServiceShare:CalcPreviewCenterPosAndBodyArea(centerType, casterPos, PlayerBodyArea, scopeParam, casterEntity)
   local centerPos = casterPos
   local bodyArea = PlayerBodyArea
-  if centerType then
-    if centerType ~= SkillScopeCenterType.CasterPos or centerType == SkillScopeCenterType.Component then
-      local posList = {}
-      local g = (self._world):GetGroup(((self._world).BW_WEMatchers).ScopeCenter)
-      for _,e in ipairs(g:GetEntities()) do
-        if not e:HasDeadMark() then
-          local area = (e:BodyArea()):GetArea()
-          for _,posArea in ipairs(area) do
-            local pos = (e:GridLocation()):GetGridPos() + posArea
-            ;
-            (table.insert)(posList, pos)
-          end
-        end
-      end
-      centerPos = posList
-    else
-      do
-        if centerType == SkillScopeCenterType.PickUpGridPos then
-          local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
-          if previewPickUpComponent then
-            centerPos = previewPickUpComponent:GetLastPickUpGridPos()
-          end
-        else
-          do
-            if centerType == SkillScopeCenterType.PickUpMultiGridPos then
-              local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
-              if previewPickUpComponent then
-                centerPos = previewPickUpComponent:GetAllValidPickUpGridPos()
-              end
-            else
-              do
-                if centerType == SkillScopeCenterType.SelectNeareat2Pet then
-                  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-                  centerPos = self:_SelectNeareat2Pet(casterPos, scopeParam, teamEntity)
-                else
-                  do
-                    if centerType == SkillScopeCenterType.ChainSkillPickUpGridPos then
-                      local renderBoardEntity = (self._world):GetRenderBoardEntity()
-                      local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
-                      centerPos = pickUpTargetCmpt:GetCurPickUpGridSafePos()
-                    else
-                      do
-                        if centerType == SkillScopeCenterType.CastBombPos then
-                          centerPos = self:_PreviewCalcBombPos(casterPos, scopeParam)
-                        else
-                          if centerType == SkillScopeCenterType.FirstPickUpGridPos then
-                            local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
-                            if previewPickUpComponent then
-                              centerPos = previewPickUpComponent:GetFirstValidPickUpGridPos()
-                            end
-                          else
-                            do
-                              if centerType == SkillScopeCenterType.NearestPetChessPos then
-                                centerPos = self:GetNearestPetChessPosCenterPos(centerPos)
-                              else
-                                if centerType == SkillScopeCenterType.NearestPosToCasterInPickMonster then
-                                  local retPos = self:PreviewGetNearestPosToCasterInPickMonster(casterEntity)
-                                  if retPos then
-                                    centerPos = retPos
-                                  end
-                                else
-                                  do
-                                    if centerType == SkillScopeCenterType.PickUpMonsterPos then
-                                      local retPos = self:PreviewGetPickUpMonsterPosCenterPos(casterEntity)
-                                      if retPos then
-                                        centerPos = retPos
-                                      end
-                                    else
-                                      do
-                                        if centerType == SkillScopeCenterType.PickUpMonsterPosAndCasterPos then
-                                          local retPos = self:PreviewGetPickUpMonsterPosAndCasterPosCenterPos(casterEntity)
-                                          if retPos then
-                                            centerPos = retPos
-                                          end
-                                        else
-                                          do
-                                            if centerType == SkillScopeCenterType.MonsterBodyAreaIndex then
-                                              centerPos = bodyArea[2] + casterPos
-                                            else
-                                              if centerType == SkillScopeCenterType.NearestMonsterGrid then
-                                                local retPos = self:PreviewGetNearestMonsterGridCenterPos(casterEntity)
-                                                if retPos then
-                                                  centerPos = retPos
-                                                end
-                                              else
-                                                do
-                                                  if centerType == SkillScopeCenterType.NearestMonsterGridForChainSubScope then
-                                                    local retPos = self:PreviewGetNearestMonsterGridCenterPos(casterEntity)
-                                                    if retPos then
-                                                      centerPos = retPos
-                                                    end
-                                                  else
-                                                    do
-                                                      if centerType == SkillScopeCenterType.PlayerPosAndFarthestMonsterGridPos then
-                                                        local retPos = self:GetPlayerPosAndFarthestMonsterGridPos()
-                                                        if retPos then
-                                                          centerPos = retPos
-                                                        end
-                                                      else
-                                                        do
-                                                          do
-                                                            if centerType == SkillScopeCenterType.FarthestMonsterGridPos then
-                                                              local retPos = self:PreviewGetFarthestMonsterGridCenterPos(casterEntity)
-                                                              if retPos then
-                                                                centerPos = retPos
-                                                              end
-                                                            end
-                                                            return centerPos, bodyArea
-                                                          end
-                                                        end
-                                                      end
-                                                    end
-                                                  end
-                                                end
-                                              end
-                                            end
-                                          end
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
+  if not centerType or centerType == SkillScopeCenterType.CasterPos then
+  elseif centerType == SkillScopeCenterType.Component then
+    local posList = {}
+    local g = self._world:GetGroup(self._world.BW_WEMatchers.ScopeCenter)
+    for _, e in ipairs(g:GetEntities()) do
+      if not e:HasDeadMark() then
+        local area = e:BodyArea():GetArea()
+        for _, posArea in ipairs(area) do
+          local pos = e:GridLocation():GetGridPos() + posArea
+          table.insert(posList, pos)
         end
       end
     end
+    centerPos = posList
+  elseif centerType == SkillScopeCenterType.PickUpGridPos then
+    local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
+    if previewPickUpComponent then
+      centerPos = previewPickUpComponent:GetLastPickUpGridPos()
+    end
+  elseif centerType == SkillScopeCenterType.PickUpMultiGridPos then
+    local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
+    if previewPickUpComponent then
+      centerPos = previewPickUpComponent:GetAllValidPickUpGridPos()
+    end
+  elseif centerType == SkillScopeCenterType.SelectNeareat2Pet then
+    local teamEntity = self._world:Player():GetCurrentTeamEntity()
+    centerPos = self:_SelectNeareat2Pet(casterPos, scopeParam, teamEntity)
+  elseif centerType == SkillScopeCenterType.ChainSkillPickUpGridPos then
+    local renderBoardEntity = self._world:GetRenderBoardEntity()
+    local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
+    centerPos = pickUpTargetCmpt:GetCurPickUpGridSafePos()
+  elseif centerType == SkillScopeCenterType.CastBombPos then
+    centerPos = self:_PreviewCalcBombPos(casterPos, scopeParam)
+  elseif centerType == SkillScopeCenterType.FirstPickUpGridPos then
+    local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
+    if previewPickUpComponent then
+      centerPos = previewPickUpComponent:GetFirstValidPickUpGridPos()
+    end
+  elseif centerType == SkillScopeCenterType.NearestPetChessPos then
+    centerPos = self:GetNearestPetChessPosCenterPos(centerPos)
+  elseif centerType == SkillScopeCenterType.NearestPosToCasterInPickMonster then
+    local retPos = self:PreviewGetNearestPosToCasterInPickMonster(casterEntity)
+    if retPos then
+      centerPos = retPos
+    end
+  elseif centerType == SkillScopeCenterType.PickUpMonsterPos then
+    local retPos = self:PreviewGetPickUpMonsterPosCenterPos(casterEntity)
+    if retPos then
+      centerPos = retPos
+    end
+  elseif centerType == SkillScopeCenterType.PickUpMonsterPosAndCasterPos then
+    local retPos = self:PreviewGetPickUpMonsterPosAndCasterPosCenterPos(casterEntity)
+    if retPos then
+      centerPos = retPos
+    end
+  elseif centerType == SkillScopeCenterType.MonsterBodyAreaIndex then
+    centerPos = bodyArea[2] + casterPos
+  elseif centerType == SkillScopeCenterType.NearestMonsterGrid then
+    local retPos = self:PreviewGetNearestMonsterGridCenterPos(casterEntity)
+    if retPos then
+      centerPos = retPos
+    end
+  elseif centerType == SkillScopeCenterType.NearestMonsterGridForChainSubScope then
+    local retPos = self:PreviewGetNearestMonsterGridCenterPos(casterEntity)
+    if retPos then
+      centerPos = retPos
+    end
+  elseif centerType == SkillScopeCenterType.PlayerPosAndFarthestMonsterGridPos then
+    local retPos = self:GetPlayerPosAndFarthestMonsterGridPos()
+    if retPos then
+      centerPos = retPos
+    end
+  elseif centerType == SkillScopeCenterType.FarthestMonsterGridPos then
+    local retPos = self:PreviewGetFarthestMonsterGridCenterPos(casterEntity)
+    if retPos then
+      centerPos = retPos
+    end
   end
+  return centerPos, bodyArea
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.AutoFightCalcBombPos = function(self, casterPos, pickUpGridPos)
-  -- function num : 0_10 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function UtilScopeCalcServiceShare:AutoFightCalcBombPos(casterPos, pickUpGridPos)
+  local utilDataSvc = self._world:GetService("UtilData")
   local dir = pickUpGridPos - casterPos
   if dir.x > 0 then
     dir.x = 1
@@ -443,16 +284,16 @@ UtilScopeCalcServiceShare.AutoFightCalcBombPos = function(self, casterPos, pickU
   if dir.x < 0 then
     dir.x = -1
   end
-  if dir.y > 0 then
+  if 0 < dir.y then
     dir.y = 1
   end
-  if dir.y < 0 then
+  if 0 > dir.y then
     dir.y = -1
   end
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local maxX = boardServiceLogic:GetCurBoardMaxX()
   local maxY = boardServiceLogic:GetCurBoardMaxY()
-  local max = (math.max)(maxX, maxY)
+  local max = math.max(maxX, maxY)
   local centerPos = casterPos
   for i = 1, max do
     local pos = casterPos + dir * i
@@ -465,23 +306,18 @@ UtilScopeCalcServiceShare.AutoFightCalcBombPos = function(self, casterPos, pickU
       break
     end
   end
-  do
-    return centerPos
-  end
+  return centerPos
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare._PreviewCalcBombPos = function(self, casterPos, scopeParam)
-  -- function num : 0_11 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function UtilScopeCalcServiceShare:_PreviewCalcBombPos(casterPos, scopeParam)
+  local utilDataSvc = self._world:GetService("UtilData")
+  local env = self._world:GetPreviewEntity():PreviewEnv()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   local petPstID = pickUpTargetCmpt:GetPetPstid()
   local petEntityId = utilDataSvc:GetEntityIDByPstID(petPstID)
-  local petEntity = (self._world):GetEntityByID(petEntityId)
-  local targetSelector = (self._world):GetSkillScopeTargetSelector()
+  local petEntity = self._world:GetEntityByID(petEntityId)
+  local targetSelector = self._world:GetSkillScopeTargetSelector()
   local pickUpGridPos = pickUpTargetCmpt:GetCurPickUpGridPos()
   local dir = pickUpGridPos - casterPos
   if dir.x > 0 then
@@ -490,16 +326,16 @@ UtilScopeCalcServiceShare._PreviewCalcBombPos = function(self, casterPos, scopeP
   if dir.x < 0 then
     dir.x = -1
   end
-  if dir.y > 0 then
+  if 0 < dir.y then
     dir.y = 1
   end
-  if dir.y < 0 then
+  if 0 > dir.y then
     dir.y = -1
   end
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local maxX = boardServiceLogic:GetCurBoardMaxX()
   local maxY = boardServiceLogic:GetCurBoardMaxY()
-  local max = (math.max)(maxX, maxY)
+  local max = math.max(maxX, maxY)
   local centerPos = casterPos
   for i = 1, max do
     local pos = casterPos + dir * i
@@ -512,21 +348,16 @@ UtilScopeCalcServiceShare._PreviewCalcBombPos = function(self, casterPos, scopeP
       break
     end
   end
-  do
-    return centerPos
-  end
+  return centerPos
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare._CalcBombPos = function(self, teamEntity, casterPos, scopeParam)
-  -- function num : 0_12 , upvalues : _ENV
+function UtilScopeCalcServiceShare:_CalcBombPos(teamEntity, casterPos, scopeParam)
   local centerPos = casterPos
   local logicPickUpCmpt = teamEntity:LogicPickUp()
   local petPstID = logicPickUpCmpt:GetLogicPetPstid()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local petEntityId = utilDataSvc:GetEntityIDByPstID(petPstID)
-  local petEntity = (self._world):GetEntityByID(petEntityId)
+  local petEntity = self._world:GetEntityByID(petEntityId)
   local activeSkillPickUpComponent = petEntity:ActiveSkillPickUpComponent()
   if activeSkillPickUpComponent then
     local pickUpPos = activeSkillPickUpComponent:GetLastPickUpGridPos()
@@ -537,16 +368,16 @@ UtilScopeCalcServiceShare._CalcBombPos = function(self, teamEntity, casterPos, s
     if dir.x < 0 then
       dir.x = -1
     end
-    if dir.y > 0 then
+    if 0 < dir.y then
       dir.y = 1
     end
-    if dir.y < 0 then
+    if 0 > dir.y then
       dir.y = -1
     end
-    local boardServiceLogic = (self._world):GetService("BoardLogic")
+    local boardServiceLogic = self._world:GetService("BoardLogic")
     local maxX = boardServiceLogic:GetCurBoardMaxX()
     local maxY = boardServiceLogic:GetCurBoardMaxY()
-    local max = (math.max)(maxX, maxY)
+    local max = math.max(maxX, maxY)
     for i = 1, max do
       local pos = casterPos + dir * i
       if not self:IsValidPiecePos(pos) then
@@ -559,697 +390,541 @@ UtilScopeCalcServiceShare._CalcBombPos = function(self, teamEntity, casterPos, s
       end
     end
   end
-  do
-    return centerPos
-  end
+  return centerPos
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare._SelectNeareat2Pet = function(self, casterPos, scopeParam, teamEntity)
-  -- function num : 0_13 , upvalues : _ENV
+function UtilScopeCalcServiceShare:_SelectNeareat2Pet(casterPos, scopeParam, teamEntity)
   if scopeParam then
     local tPos = scopeParam:GetScopeCenterParam()
     if tPos then
-      local posTeam = (teamEntity:GridLocation()):GetGridPos()
+      local posTeam = teamEntity:GridLocation():GetGridPos()
       local distance = 999
-      local pos = nil
-      for i,p in ipairs(tPos) do
+      local pos
+      for i, p in ipairs(tPos) do
         local posParam = Vector2(p[1], p[2])
-        local dis = (Vector2.Distance)(posParam, posTeam)
-        if dis < distance then
+        local dis = Vector2.Distance(posParam, posTeam)
+        if distance > dis then
           distance = dis
           pos = posParam
         end
       end
       local posArr = tPos[1]
-      if not pos then
-        do
-          do return Vector2(posArr[1], posArr[2]) end
-          return casterPos
-        end
-      end
+      return pos or Vector2(posArr[1], posArr[2])
     end
   end
+  return casterPos
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.CalcSkillScope = function(self, skillConfigData, casterPos, casterEntity, casterDir)
-  -- function num : 0_14
-  local playerBodyArea = (casterEntity:BodyArea()):GetArea()
-  if not casterDir then
-    local dir = (casterEntity:GridLocation()):GetGridDir()
-  end
-  local scopeResult = (self._skillScopeCalc):CalcSkillScope(skillConfigData, casterPos, dir, playerBodyArea, casterEntity)
+function UtilScopeCalcServiceShare:CalcSkillScope(skillConfigData, casterPos, casterEntity, casterDir)
+  local playerBodyArea = casterEntity:BodyArea():GetArea()
+  local dir = casterDir or casterEntity:GridLocation():GetGridDir()
+  local scopeResult = self._skillScopeCalc:CalcSkillScope(skillConfigData, casterPos, dir, playerBodyArea, casterEntity)
   return scopeResult
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.CalcSkillScopeForChainSkillPreview = function(self, skillConfigData, playerGridPos, casterEntity)
-  -- function num : 0_15
-  return (self._skillScopeCalc):CalcSkillScopeForChainSkillPreview(skillConfigData, playerGridPos, casterEntity)
+function UtilScopeCalcServiceShare:CalcSkillScopeForChainSkillPreview(skillConfigData, playerGridPos, casterEntity)
+  return self._skillScopeCalc:CalcSkillScopeForChainSkillPreview(skillConfigData, playerGridPos, casterEntity)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.CalcScopeResult = function(self, scopeParam, casterEntity)
-  -- function num : 0_16
-  local casterPos = (casterEntity:GridLocation()):CenterNoOffset()
+function UtilScopeCalcServiceShare:CalcScopeResult(scopeParam, casterEntity)
+  local casterPos = casterEntity:GridLocation():CenterNoOffset()
   local scopeResult = self:CalcSKillPreviewScopeResult(scopeParam, casterPos, casterEntity)
   return scopeResult
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.CalcSKillPreviewScopeResult = function(self, skillPreviewScopeParam, casterPos, casterEntity)
-  -- function num : 0_17
-  local casterBodyArea = (casterEntity:BodyArea()):GetArea()
-  local dir = (casterEntity:GridLocation()):GetGridDir()
-  local scopeResult = (self._skillScopeCalc):CalcSkillPreviewScope(casterPos, dir, casterBodyArea, skillPreviewScopeParam, casterEntity)
+function UtilScopeCalcServiceShare:CalcSKillPreviewScopeResult(skillPreviewScopeParam, casterPos, casterEntity)
+  local casterBodyArea = casterEntity:BodyArea():GetArea()
+  local dir = casterEntity:GridLocation():GetGridDir()
+  local scopeResult = self._skillScopeCalc:CalcSkillPreviewScope(casterPos, dir, casterBodyArea, skillPreviewScopeParam, casterEntity)
   return scopeResult
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.CalcSkillEffectScopeResult = function(self, skillEffectParam, casterPos, casterEntity)
-  -- function num : 0_18
-  local casterBodyArea = (casterEntity:BodyArea()):GetArea()
-  local dir = (casterEntity:GridLocation()):GetGridDir()
-  return (self._skillScopeCalc):CalcSkillEffectScope(casterPos, dir, casterBodyArea, skillEffectParam, casterEntity)
+function UtilScopeCalcServiceShare:CalcSkillEffectScopeResult(skillEffectParam, casterPos, casterEntity)
+  local casterBodyArea = casterEntity:BodyArea():GetArea()
+  local dir = casterEntity:GridLocation():GetGridDir()
+  return self._skillScopeCalc:CalcSkillEffectScope(casterPos, dir, casterBodyArea, skillEffectParam, casterEntity)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetSkillScopeCalc = function(self)
-  -- function num : 0_19
+function UtilScopeCalcServiceShare:GetSkillScopeCalc()
   return self._skillScopeCalc
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.IsValidPiecePos = function(self, pos)
-  -- function num : 0_20
-  local utilData = (self._world):GetService("UtilData")
+function UtilScopeCalcServiceShare:IsValidPiecePos(pos)
+  local utilData = self._world:GetService("UtilData")
   local isValidGrid = utilData:IsValidPiecePos(pos)
   return isValidGrid
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.IsPosBlock = function(self, pos, blockFlag)
-  -- function num : 0_21
-  local utilData = (self._world):GetService("UtilData")
+function UtilScopeCalcServiceShare:IsPosBlock(pos, blockFlag)
+  local utilData = self._world:GetService("UtilData")
   local isBlocked = utilData:IsPosBlock(pos, blockFlag)
   return isBlocked
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetBlockGridTrapPosList = function(self, blockType)
-  -- function num : 0_22 , upvalues : _ENV
-  if not blockType then
-    blockType = BlockFlag.Skill
-  end
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilScopeCalcServiceShare:GetBlockGridTrapPosList(blockType)
+  blockType = blockType or BlockFlag.Skill
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local posList = boardServiceLogic:GetPosListByFlag(blockType)
   return posList
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetBlockMovePosList = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilScopeCalcServiceShare:GetBlockMovePosList()
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local posList = boardServiceLogic:GetPosListByFlag(BlockFlag.MonsterLand)
   return posList
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.SelectAllMonster = function(self, casterEntity, limit)
-  -- function num : 0_24 , upvalues : _ENV
+function UtilScopeCalcServiceShare:SelectAllMonster(casterEntity, limit)
   local monsters = {}
   local monsters_pos = {}
-  if casterEntity and (self._world):MatchType() == MatchType.MT_BlackFist then
+  if casterEntity and self._world:MatchType() == MatchType.MT_BlackFist then
     if casterEntity:HasSuperEntity() then
       casterEntity = casterEntity:GetSuperEntity()
-    else
-      if casterEntity:HasSummoner() then
-        casterEntity = casterEntity:GetSummonerEntity()
-      end
+    elseif casterEntity:HasSummoner() then
+      casterEntity = casterEntity:GetSummonerEntity()
     end
     if casterEntity:HasPet() then
-      local teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-      local enemyEntity = (teamEntity:Team()):GetEnemyTeamEntity()
+      local teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
+      local enemyEntity = teamEntity:Team():GetEnemyTeamEntity()
       monsters[1] = enemyEntity
       monsters_pos[1] = enemyEntity:GetGridPosition()
     end
-    do
-      do return monsters, monsters_pos end
-      local monster_group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-      for _,e in ipairs(monster_group:GetEntities()) do
-        if not e:HasDeadMark() then
-          local buffComponent = e:BuffComponent()
-          if buffComponent and not buffComponent:HasBuffEffect(BuffEffectType.NotBeSelectedAsSkillTarget) then
-            local monster_grid_location_cmpt = e:GridLocation()
-            local bodyAreaList = (e:BodyArea()):GetArea()
-            if not limit or #monsters < limit then
-              (table.insert)(monsters, e)
-              for _,bodyArea in ipairs(bodyAreaList) do
-                local pos = monster_grid_location_cmpt.Position + bodyArea
-                ;
-                (table.insert)(monsters_pos, pos)
-              end
-            end
+    return monsters, monsters_pos
+  end
+  local monster_group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(monster_group:GetEntities()) do
+    if not e:HasDeadMark() then
+      local buffComponent = e:BuffComponent()
+      if buffComponent and not buffComponent:HasBuffEffect(BuffEffectType.NotBeSelectedAsSkillTarget) then
+        local monster_grid_location_cmpt = e:GridLocation()
+        local bodyAreaList = e:BodyArea():GetArea()
+        if not limit or limit > #monsters then
+          table.insert(monsters, e)
+          for _, bodyArea in ipairs(bodyAreaList) do
+            local pos = monster_grid_location_cmpt.Position + bodyArea
+            table.insert(monsters_pos, pos)
           end
         end
       end
-      return monsters, monsters_pos
     end
   end
+  return monsters, monsters_pos
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.SelectMonsterWithBuff = function(self, buffEffectType, casterEntity, have)
-  -- function num : 0_25 , upvalues : _ENV
+function UtilScopeCalcServiceShare:SelectMonsterWithBuff(buffEffectType, casterEntity, have)
   local monsters = {}
   local monsters_pos = {}
   local targets = {}
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    targets = {(((casterEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()}
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    targets = {
+      casterEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
+    }
   else
-    local monster_group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+    local monster_group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
     targets = monster_group:GetEntities()
   end
-  do
-    for _,e in ipairs(targets) do
-      local monster_grid_location_cmpt = e:GridLocation()
-      if (e:BuffComponent() and have == 1 and (e:BuffComponent()):HasBuffEffect(buffEffectType)) or have == 0 and not (e:BuffComponent()):HasBuffEffect(buffEffectType) then
-        (table.insert)(monsters, e)
-        ;
-        (table.insert)(monsters_pos, monster_grid_location_cmpt.Position)
-      end
+  for _, e in ipairs(targets) do
+    local monster_grid_location_cmpt = e:GridLocation()
+    if e:BuffComponent() and have == 1 and e:BuffComponent():HasBuffEffect(buffEffectType) or have == 0 and not e:BuffComponent():HasBuffEffect(buffEffectType) then
+      table.insert(monsters, e)
+      table.insert(monsters_pos, monster_grid_location_cmpt.Position)
     end
-    return monsters, monsters_pos
   end
+  return monsters, monsters_pos
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.SelectNearestMonsterInRangeOnPos = function(self, casterEntity, caster_pos, limit, range)
-  -- function num : 0_26 , upvalues : _ENV
+function UtilScopeCalcServiceShare:SelectNearestMonsterInRangeOnPos(casterEntity, caster_pos, limit, range)
   local targetIDArray = {}
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
+  if self._world:MatchType() == MatchType.MT_BlackFist then
     if casterEntity:HasSuperEntity() then
-      casterEntity = (casterEntity:SuperEntityComponent()):GetSuperEntity()
+      casterEntity = casterEntity:SuperEntityComponent():GetSuperEntity()
     end
     if casterEntity:HasSummoner() then
       casterEntity = casterEntity:GetSummonerEntity()
       if casterEntity:HasSuperEntity() then
-        casterEntity = (casterEntity:SuperEntityComponent()):GetSuperEntity()
+        casterEntity = casterEntity:SuperEntityComponent():GetSuperEntity()
       end
     end
-    local teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-    local enemy = (teamEntity:Team()):GetEnemyTeamEntity()
-    if (table.icontains)(range, enemy:GetGridPosition()) then
+    local teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
+    local enemy = teamEntity:Team():GetEnemyTeamEntity()
+    if table.icontains(range, enemy:GetGridPosition()) then
       targetIDArray[#targetIDArray + 1] = enemy:GetID()
     end
     return targetIDArray
   end
-  do
-    if limit == -1 then
-      local boardService = (self._world):GetService("BoardLogic")
-      local distance_monster = {}
-      local monster_group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-      limit = #monster_group:GetEntities()
-    end
-    do
-      local skillScopeTargetSelector = (self._world):GetSkillScopeTargetSelector()
-      local selectedMonsterIds = {}
-      for _,skillRangePos in ipairs(range) do
-        local targetIDInSkillRangeList = skillScopeTargetSelector:_CalcMonsterInSkillRange(skillRangePos)
-        for _,v in ipairs(targetIDInSkillRangeList) do
-          if v > 0 then
-            selectedMonsterIds[#selectedMonsterIds + 1] = v
-          end
-        end
-      end
-      selectedMonsterIds = (table.unique)(selectedMonsterIds)
-      local sortMonsterList = self:SortMonstersListByPos(caster_pos, selectedMonsterIds)
-      for i,id in ipairs(sortMonsterList) do
-        if limit >= i then
-          do
-            (table.insert)(targetIDArray, (id.monster_e):GetID())
-            -- DECOMPILER ERROR at PC117: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC117: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
-      return targetIDArray
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.SelectNearestMonsterOnPos = function(self, caster_pos, limit, includeDead)
-  -- function num : 0_27 , upvalues : _ENV
   if limit == -1 then
-    local boardService = (self._world):GetService("BoardLogic")
+    local boardService = self._world:GetService("BoardLogic")
     local distance_monster = {}
-    local monster_group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+    local monster_group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
     limit = #monster_group:GetEntities()
   end
-  do
-    local monsters = {}
-    local monsters_pos = {}
-    local distance_monster = self:SortMonstersByPos(caster_pos, true)
-    local skillScopeTargetSelector = (self._world):GetSkillScopeTargetSelector()
-    for _,element in ipairs(distance_monster) do
-      local monsterEntity = element.monster_e
-      local curHP = (monsterEntity:Attributes()):GetCurrentHP()
-      local deadChekPass = false
-      if includeDead then
-        deadChekPass = true
-      else
-        deadChekPass = not monsterEntity:HasDeadMark() and curHP > 0
-      end
-      if #monsters < limit and deadChekPass and skillScopeTargetSelector:SelectConditionFilter(monsterEntity) then
-        (table.insert)(monsters, element.monster_e)
-        ;
-        (table.insert)(monsters_pos, element.pos)
+  local skillScopeTargetSelector = self._world:GetSkillScopeTargetSelector()
+  local selectedMonsterIds = {}
+  for _, skillRangePos in ipairs(range) do
+    local targetIDInSkillRangeList = skillScopeTargetSelector:_CalcMonsterInSkillRange(skillRangePos)
+    for _, v in ipairs(targetIDInSkillRangeList) do
+      if 0 < v then
+        selectedMonsterIds[#selectedMonsterIds + 1] = v
       end
     end
-    do return monsters, monsters_pos end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
   end
+  selectedMonsterIds = table.unique(selectedMonsterIds)
+  local sortMonsterList = self:SortMonstersListByPos(caster_pos, selectedMonsterIds)
+  for i, id in ipairs(sortMonsterList) do
+    if i > limit then
+      break
+    end
+    table.insert(targetIDArray, id.monster_e:GetID())
+  end
+  return targetIDArray
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
+function UtilScopeCalcServiceShare:SelectNearestMonsterOnPos(caster_pos, limit, includeDead)
+  if limit == -1 then
+    local boardService = self._world:GetService("BoardLogic")
+    local distance_monster = {}
+    local monster_group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+    limit = #monster_group:GetEntities()
+  end
+  local monsters = {}
+  local monsters_pos = {}
+  local distance_monster = self:SortMonstersByPos(caster_pos, true)
+  local skillScopeTargetSelector = self._world:GetSkillScopeTargetSelector()
+  for _, element in ipairs(distance_monster) do
+    local monsterEntity = element.monster_e
+    local curHP = monsterEntity:Attributes():GetCurrentHP()
+    local deadChekPass = false
+    if includeDead then
+      deadChekPass = true
+    else
+      deadChekPass = not monsterEntity:HasDeadMark() and 0 < curHP
+    end
+    if limit > #monsters and deadChekPass and skillScopeTargetSelector:SelectConditionFilter(monsterEntity) then
+      table.insert(monsters, element.monster_e)
+      table.insert(monsters_pos, element.pos)
+    end
+  end
+  return monsters, monsters_pos
+end
 
-UtilScopeCalcServiceShare.SortMonstersListByPos = function(self, target_pos, monsterIDList, nearestForMultiGridMonster)
-  -- function num : 0_28 , upvalues : _ENV
-  local utilData = (self._world):GetService("UtilData")
+function UtilScopeCalcServiceShare:SortMonstersListByPos(target_pos, monsterIDList, nearestForMultiGridMonster)
+  local utilData = self._world:GetService("UtilData")
   local distance_monster = {}
-  for _,entityID in ipairs(monsterIDList) do
-    local e = (self._world):GetEntityByID(entityID)
-    local position = (e:GridLocation()).Position
+  for _, entityID in ipairs(monsterIDList) do
+    local e = self._world:GetEntityByID(entityID)
+    local position = e:GridLocation().Position
     if utilData:IsValidPiecePos(position) then
       if nearestForMultiGridMonster then
         local pos = position
-        local distance = (Vector2.Distance)(pos, target_pos)
-        local tBodyArea = (e:BodyArea()):GetArea()
-        for _,v2RelativeBody in ipairs(tBodyArea) do
+        local distance = Vector2.Distance(pos, target_pos)
+        local tBodyArea = e:BodyArea():GetArea()
+        for _, v2RelativeBody in ipairs(tBodyArea) do
           local v2 = v2RelativeBody + position
-          local newDis = (Vector2.Distance)(v2, target_pos)
-          if newDis < distance then
+          local newDis = Vector2.Distance(v2, target_pos)
+          if distance > newDis then
             distance = newDis
             pos = v2
           end
         end
-        ;
-        (table.insert)(distance_monster, {dis = distance, monster_e = e, pos = pos})
+        table.insert(distance_monster, {
+          dis = distance,
+          monster_e = e,
+          pos = pos
+        })
       else
-        do
-          do
-            local distance = (Vector2.Distance)(position, target_pos)
-            ;
-            (table.insert)(distance_monster, {dis = distance, monster_e = e, pos = position})
-            -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        local distance = Vector2.Distance(position, target_pos)
+        table.insert(distance_monster, {
+          dis = distance,
+          monster_e = e,
+          pos = position
+        })
       end
     end
   end
-  local get_index = function(c, p)
-    -- function num : 0_28_0
-    if p.x - c.x == 0 and p.y - c.y > 0 then
+  
+  local function get_index(c, p)
+    if p.x - c.x == 0 and 0 < p.y - c.y then
       return 1
     end
-    if p.x - c.x > 0 and p.y - c.y > 0 then
+    if p.x - c.x > 0 and 0 < p.y - c.y then
       return 2
     end
     if p.x - c.x > 0 and p.y - c.y == 0 then
       return 3
     end
-    if p.x - c.x > 0 and p.y - c.y < 0 then
+    if p.x - c.x > 0 and 0 > p.y - c.y then
       return 4
     end
-    if p.x - c.x == 0 and p.y - c.y < 0 then
+    if p.x - c.x == 0 and 0 > p.y - c.y then
       return 5
     end
-    if p.x - c.x < 0 and p.y - c.y < 0 then
+    if p.x - c.x < 0 and 0 > p.y - c.y then
       return 6
     end
     if p.x - c.x < 0 and p.y - c.y == 0 then
       return 7
     end
-    if p.x - c.x < 0 and p.y - c.y > 0 then
+    if p.x - c.x < 0 and 0 < p.y - c.y then
       return 8
     end
     return 1
   end
-
-  local cmp_fun = function(ele1, ele2)
-    -- function num : 0_28_1 , upvalues : get_index, target_pos
-    if get_index(target_pos, ele1.pos) >= get_index(target_pos, ele2.pos) then
-      do return ele1.dis ~= ele2.dis end
-      do return ele1.dis < ele2.dis end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  
+  local function cmp_fun(ele1, ele2)
+    if ele1.dis == ele2.dis then
+      return get_index(target_pos, ele1.pos) < get_index(target_pos, ele2.pos)
+    else
+      return ele1.dis < ele2.dis
     end
   end
-
-  ;
-  (table.sort)(distance_monster, cmp_fun)
+  
+  table.sort(distance_monster, cmp_fun)
   return distance_monster
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.SortMonstersListByBodyAreaAndPos = function(self, target_pos, monsterIDList, nearestForMultiGridMonster)
-  -- function num : 0_29 , upvalues : _ENV
-  local utilData = (self._world):GetService("UtilData")
+function UtilScopeCalcServiceShare:SortMonstersListByBodyAreaAndPos(target_pos, monsterIDList, nearestForMultiGridMonster)
+  local utilData = self._world:GetService("UtilData")
   local distance_monster = {}
-  for _,entityID in ipairs(monsterIDList) do
-    local e = (self._world):GetEntityByID(entityID)
-    local position = (e:GridLocation()).Position
+  for _, entityID in ipairs(monsterIDList) do
+    local e = self._world:GetEntityByID(entityID)
+    local position = e:GridLocation().Position
     if utilData:IsValidPiecePos(position) then
-      local tBodyArea = (e:BodyArea()):GetArea()
+      local tBodyArea = e:BodyArea():GetArea()
       local bodyAreaSize = #tBodyArea
       if nearestForMultiGridMonster then
         local pos = position
-        local distance = (Vector2.Distance)(pos, target_pos)
-        for _,v2RelativeBody in ipairs(tBodyArea) do
+        local distance = Vector2.Distance(pos, target_pos)
+        for _, v2RelativeBody in ipairs(tBodyArea) do
           local v2 = v2RelativeBody + position
-          local newDis = (Vector2.Distance)(v2, target_pos)
-          if newDis < distance then
+          local newDis = Vector2.Distance(v2, target_pos)
+          if distance > newDis then
             distance = newDis
             pos = v2
           end
         end
-        ;
-        (table.insert)(distance_monster, {dis = distance, monster_e = e, pos = pos, size = bodyAreaSize})
+        table.insert(distance_monster, {
+          dis = distance,
+          monster_e = e,
+          pos = pos,
+          size = bodyAreaSize
+        })
       else
-        do
-          do
-            local distance = (Vector2.Distance)(position, target_pos)
-            ;
-            (table.insert)(distance_monster, {dis = distance, monster_e = e, pos = position, size = bodyAreaSize})
-            -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        local distance = Vector2.Distance(position, target_pos)
+        table.insert(distance_monster, {
+          dis = distance,
+          monster_e = e,
+          pos = position,
+          size = bodyAreaSize
+        })
       end
     end
   end
-  local get_index = function(c, p)
-    -- function num : 0_29_0
-    if p.x - c.x == 0 and p.y - c.y > 0 then
+  
+  local function get_index(c, p)
+    if p.x - c.x == 0 and 0 < p.y - c.y then
       return 1
     end
-    if p.x - c.x > 0 and p.y - c.y > 0 then
+    if p.x - c.x > 0 and 0 < p.y - c.y then
       return 2
     end
     if p.x - c.x > 0 and p.y - c.y == 0 then
       return 3
     end
-    if p.x - c.x > 0 and p.y - c.y < 0 then
+    if p.x - c.x > 0 and 0 > p.y - c.y then
       return 4
     end
-    if p.x - c.x == 0 and p.y - c.y < 0 then
+    if p.x - c.x == 0 and 0 > p.y - c.y then
       return 5
     end
-    if p.x - c.x < 0 and p.y - c.y < 0 then
+    if p.x - c.x < 0 and 0 > p.y - c.y then
       return 6
     end
     if p.x - c.x < 0 and p.y - c.y == 0 then
       return 7
     end
-    if p.x - c.x < 0 and p.y - c.y > 0 then
+    if p.x - c.x < 0 and 0 < p.y - c.y then
       return 8
     end
     return 1
   end
-
-  local cmp_fun = function(ele1, ele2)
-    -- function num : 0_29_1 , upvalues : get_index, target_pos
-    if ele1.dis == ele2.dis then
-      if get_index(target_pos, ele1.pos) >= get_index(target_pos, ele2.pos) then
-        do return ele1.size ~= ele2.size end
-        do return ele1.dis < ele2.dis end
-        do return ele1.size < ele2.size end
-        -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  
+  local function cmp_fun(ele1, ele2)
+    if ele1.size == ele2.size then
+      if ele1.dis == ele2.dis then
+        return get_index(target_pos, ele1.pos) < get_index(target_pos, ele2.pos)
+      else
+        return ele1.dis < ele2.dis
       end
+    else
+      return ele1.size < ele2.size
     end
   end
-
-  ;
-  (table.sort)(distance_monster, cmp_fun)
+  
+  table.sort(distance_monster, cmp_fun)
   return distance_monster
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.SortMonstersByPos = function(self, target_pos, nearestForMultiGridMonster)
-  -- function num : 0_30 , upvalues : _ENV
-  local monster_group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+function UtilScopeCalcServiceShare:SortMonstersByPos(target_pos, nearestForMultiGridMonster)
+  local monster_group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   local monsterIDList = {}
-  for _,e in ipairs(monster_group:GetEntities()) do
-    (table.insert)(monsterIDList, e:GetID())
+  for _, e in ipairs(monster_group:GetEntities()) do
+    table.insert(monsterIDList, e:GetID())
   end
   return self:SortMonstersListByPos(target_pos, monsterIDList, nearestForMultiGridMonster)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.FindPieceElementByTypeCountAndCenter = function(self, centerPos, pieceTypeList, maxCount, excludeTrap, excludePosList, canPlayerMove)
-  -- function num : 0_31
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
+function UtilScopeCalcServiceShare:FindPieceElementByTypeCountAndCenter(centerPos, pieceTypeList, maxCount, excludeTrap, excludePosList, canPlayerMove)
+  local utilCalcSvc = self._world:GetService("UtilCalc")
   return utilCalcSvc:FindPieceElementByTypeCountAndCenter(centerPos, pieceTypeList, maxCount, nil, nil, excludeTrap, excludePosList, canPlayerMove)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.FindPieceElementByTypeAndArea = function(self, areaGridList, pieceTypeList, excludeTrap)
-  -- function num : 0_32
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
+function UtilScopeCalcServiceShare:FindPieceElementByTypeAndArea(areaGridList, pieceTypeList, excludeTrap)
+  local utilCalcSvc = self._world:GetService("UtilCalc")
   return utilCalcSvc:FindPieceElementByTypeAndArea(areaGridList, pieceTypeList, excludeTrap)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.ChangeGameFSMState2PickUp = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  local gameFsmCmpt = (self._world):GameFSM()
+function UtilScopeCalcServiceShare:ChangeGameFSMState2PickUp()
+  local gameFsmCmpt = self._world:GameFSM()
   local gameFsmStateID = gameFsmCmpt:CurStateID()
   if gameFsmStateID == GameStateID.PreviewActiveSkill then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.PreviewActiveSkillFinish, 3)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.PickUPValidGridShowChooseTarget, true)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnClickWhenPickUp)
+    self._world:EventDispatcher():Dispatch(GameEventType.PreviewActiveSkillFinish, 3)
+    self._world:EventDispatcher():Dispatch(GameEventType.PickUPValidGridShowChooseTarget, true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnClickWhenPickUp)
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.IsPosHaveMonsterOrPet = function(self, pos)
-  -- function num : 0_34
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
+function UtilScopeCalcServiceShare:IsPosHaveMonsterOrPet(pos)
+  local boardCmpt = self._world:GetBoardEntity():Board()
   local es = boardCmpt:GetPieceEntities(pos, function(e)
-    -- function num : 0_34_0
-    if not e:HasTeam() then
-      return e:HasMonsterID()
-    end
-  end
-)
-  do return #es > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+    return e:HasTeam() or e:HasMonsterID()
+  end)
+  return 0 < #es
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetEmptyPieces = function(self, fixedRange)
-  -- function num : 0_35 , upvalues : _ENV
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilScopeCalcServiceShare:GetEmptyPieces(fixedRange)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local posTable = {}
-  local teamGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Team)
-  for i,e in ipairs(teamGroup:GetEntities()) do
-    local player_pos = (e:GridLocation()).Position
+  local teamGroup = self._world:GetGroup(self._world.BW_WEMatchers.Team)
+  for i, e in ipairs(teamGroup:GetEntities()) do
+    local player_pos = e:GridLocation().Position
     if not posTable[player_pos.x] then
       posTable[player_pos.x] = {}
     end
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (posTable[player_pos.x])[player_pos.y] = true
+    posTable[player_pos.x][player_pos.y] = true
   end
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-  for i,e in ipairs(trapGroup:GetEntities()) do
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  for i, e in ipairs(trapGroup:GetEntities()) do
     if not e:HasDeadMark() then
-      local trapPos = (e:GridLocation()).Position
+      local trapPos = e:GridLocation().Position
       if not posTable[trapPos.x] then
         posTable[trapPos.x] = {}
       end
-      -- DECOMPILER ERROR at PC60: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (posTable[trapPos.x])[trapPos.y] = true
+      posTable[trapPos.x][trapPos.y] = true
     end
   end
   local blockPosList = boardServiceLogic:GetPosListByFlag(BlockFlag.LinkLine)
   if blockPosList then
-    for i,pos in ipairs(blockPosList) do
+    for i, pos in ipairs(blockPosList) do
       if not posTable[pos.x] then
         posTable[pos.x] = {}
       end
-      -- DECOMPILER ERROR at PC83: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (posTable[pos.x])[pos.y] = true
+      posTable[pos.x][pos.y] = true
     end
   end
-  do
-    local validPos = nil
-    if fixedRange then
-      validPos = fixedRange
-    else
-      validPos = boardServiceLogic:GetPlayerAreaPosList()
-    end
-    local target_area_grid = {}
-    for i,pos in ipairs(validPos) do
-      if not posTable[pos.x] or not (posTable[pos.x])[pos.y] then
-        (table.insert)(target_area_grid, pos)
-      end
-    end
-    return target_area_grid
+  local validPos
+  if fixedRange then
+    validPos = fixedRange
+  else
+    validPos = boardServiceLogic:GetPlayerAreaPosList()
   end
+  local target_area_grid = {}
+  for i, pos in ipairs(validPos) do
+    if not posTable[pos.x] or not posTable[pos.x][pos.y] then
+      table.insert(target_area_grid, pos)
+    end
+  end
+  return target_area_grid
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetAllValidGridPosList = function(self)
-  -- function num : 0_36
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilScopeCalcServiceShare:GetAllValidGridPosList()
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   return boardServiceLogic:GetPlayerAreaPosList()
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.SelectTarget = function(self, actorEntity, pieceType)
-  -- function num : 0_37
-  (self._chainPathTargetSelector):DoSelectTarget(actorEntity, pieceType)
+function UtilScopeCalcServiceShare:SelectTarget(actorEntity, pieceType)
+  self._chainPathTargetSelector:DoSelectTarget(actorEntity, pieceType)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.SelectSkillTarget = function(self, castEntity, targetType, scopeResult, skillID, skillEffectTargetTypeParam)
-  -- function num : 0_38
-  return (self._skillScopeTargetSelector):DoSelectSkillTarget(castEntity, targetType, scopeResult, skillID, skillEffectTargetTypeParam)
+function UtilScopeCalcServiceShare:SelectSkillTarget(castEntity, targetType, scopeResult, skillID, skillEffectTargetTypeParam)
+  return self._skillScopeTargetSelector:DoSelectSkillTarget(castEntity, targetType, scopeResult, skillID, skillEffectTargetTypeParam)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.BuildScopeGridList_CheckPosFunc = function(self, onlyCanmove, notDoor, canConvert, pos, enemyTeamPos, boardServiceLogic, notExit)
-  -- function num : 0_39 , upvalues : _ENV
+function UtilScopeCalcServiceShare:BuildScopeGridList_CheckPosFunc(onlyCanmove, notDoor, canConvert, pos, enemyTeamPos, boardServiceLogic, notExit)
   if canConvert and self:IsPosBlock(pos, BlockFlag.ChangeElement) then
-    return 
+    return
   end
   if onlyCanmove and (self:IsPosBlock(pos, BlockFlag.LinkLine) or pos == enemyTeamPos) then
-    return 
+    return
   end
   if notDoor and boardServiceLogic:IsDoor(pos) then
-    return 
+    return
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   if notExit and utilDataSvc:IsPosExit(pos) then
-    return 
+    return
   end
   return true
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.BuildScopeGridList = function(self, scopeParamList, casterEntity, centerPos)
-  -- function num : 0_40 , upvalues : _ENV
-  local boardServiceLogic = ((self._world):GetService("BoardLogic"))
-  local enemyTeamPos = nil
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
+function UtilScopeCalcServiceShare:BuildScopeGridList(scopeParamList, casterEntity, centerPos)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local enemyTeamPos
+  if self._world:MatchType() == MatchType.MT_BlackFist then
     if casterEntity:HasPet() then
-      enemyTeamPos = ((((casterEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()):GetGridPosition()
-    else
-      if (casterEntity:Trap()):IsPetTrapCastSkill() and casterEntity:HasSummoner() then
-        local summonEntityID = (casterEntity:Summoner()):GetSummonerEntityID()
-        local summonEntity = casterEntity:GetSummonerEntity()
-        if summonEntity and summonEntity:HasSuperEntity() and summonEntity:GetSuperEntity() then
-          summonEntityID = (summonEntity:GetSuperEntity()):GetID()
-        end
-        summonEntity = (self._world):GetEntityByID(summonEntityID)
-        enemyTeamPos = ((((summonEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()):GetGridPosition()
+      enemyTeamPos = casterEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity():GetGridPosition()
+    elseif casterEntity:Trap():IsPetTrapCastSkill() and casterEntity:HasSummoner() then
+      local summonEntityID = casterEntity:Summoner():GetSummonerEntityID()
+      local summonEntity = casterEntity:GetSummonerEntity()
+      if summonEntity and summonEntity:HasSuperEntity() and summonEntity:GetSuperEntity() then
+        summonEntityID = summonEntity:GetSuperEntity():GetID()
       end
+      summonEntity = self._world:GetEntityByID(summonEntityID)
+      enemyTeamPos = summonEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity():GetGridPosition()
     end
   end
-  do
-    local casterPos = (casterEntity:GridLocation()):CenterNoOffset()
-    if centerPos then
-      casterPos = centerPos:Clone()
-    end
-    local scopeGirdList = {}
-    for _,scopeParam in ipairs(scopeParamList) do
-      local scopeResult = self:CalcSKillPreviewScopeResult(scopeParam, casterPos, casterEntity)
-      local scopeList = scopeResult:GetAttackRange()
-      local realScopeList = {}
-      for i,pos in ipairs(scopeList) do
-        if self:BuildScopeGridList_CheckPosFunc(scopeParam:GetOnlyCanMove(), scopeParam:GetNotDoor(), scopeParam:GetCanConvert(), pos, enemyTeamPos, boardServiceLogic, scopeParam:GetNotExit()) then
-          realScopeList[(Vector2.Pos2Index)(pos)] = true
-        end
-      end
-      for v2Idx,_ in pairs(realScopeList) do
-        local pos = (Vector2.Index2Pos)(v2Idx)
-        ;
-        (table.insert)(scopeGirdList, pos)
-      end
-    end
-    return scopeGirdList
+  local casterPos = casterEntity:GridLocation():CenterNoOffset()
+  if centerPos then
+    casterPos = centerPos:Clone()
   end
+  local scopeGirdList = {}
+  for _, scopeParam in ipairs(scopeParamList) do
+    local scopeResult = self:CalcSKillPreviewScopeResult(scopeParam, casterPos, casterEntity)
+    local scopeList = scopeResult:GetAttackRange()
+    local realScopeList = {}
+    for i, pos in ipairs(scopeList) do
+      if self:BuildScopeGridList_CheckPosFunc(scopeParam:GetOnlyCanMove(), scopeParam:GetNotDoor(), scopeParam:GetCanConvert(), pos, enemyTeamPos, boardServiceLogic, scopeParam:GetNotExit()) then
+        realScopeList[Vector2.Pos2Index(pos)] = true
+      end
+    end
+    for v2Idx, _ in pairs(realScopeList) do
+      local pos = Vector2.Index2Pos(v2Idx)
+      table.insert(scopeGirdList, pos)
+    end
+  end
+  return scopeGirdList
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.IsPosHasMonster = function(self, pos)
-  -- function num : 0_41 , upvalues : _ENV
+function UtilScopeCalcServiceShare:IsPosHasMonster(pos)
   if not pos then
     return false, nil
   end
-  local monsterEntityList = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).MonsterID)
-  for _,e in ipairs(monsterEntityList) do
+  local monsterEntityList = self._world:GetGroupEntities(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(monsterEntityList) do
     local monsterEntityID = e:GetID()
     local monsterPos = e:GetGridPosition()
     local monster_body_area_cmpt = e:BodyArea()
     local monster_body_area = monster_body_area_cmpt:GetArea()
-    for i,bodyArea in ipairs(monster_body_area) do
+    for i, bodyArea in ipairs(monster_body_area) do
       if monsterPos.x + bodyArea.x == pos.x and monsterPos.y + bodyArea.y == pos.y then
         return true, monsterEntityID
       end
@@ -1258,254 +933,211 @@ UtilScopeCalcServiceShare.IsPosHasMonster = function(self, pos)
   return false, nil
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.SortSkillRangeByDirectionAndDistance = function(self, casterPos, skillRangePos)
-  -- function num : 0_42 , upvalues : _ENV
+function UtilScopeCalcServiceShare:SortSkillRangeByDirectionAndDistance(casterPos, skillRangePos)
   local sortGridList = {}
-  for _,gridPos in ipairs(skillRangePos) do
+  for _, gridPos in ipairs(skillRangePos) do
     local direction = gridPos - casterPos
-    local directionName = nil
-    if direction.x == 0 and direction.y > 0 then
+    local directionName
+    if direction.x == 0 and 0 < direction.y then
       directionName = 1
-    else
-      if direction.x == 0 and direction.y < 0 then
-        directionName = 2
-      else
-        if direction.x > 0 and direction.y == 0 then
-          directionName = 3
-        else
-          if direction.x < 0 and direction.y == 0 then
-            directionName = 4
-          end
-        end
-      end
+    elseif direction.x == 0 and 0 > direction.y then
+      directionName = 2
+    elseif direction.x > 0 and direction.y == 0 then
+      directionName = 3
+    elseif direction.x < 0 and direction.y == 0 then
+      directionName = 4
     end
     if directionName then
       if not sortGridList[directionName] then
         sortGridList[directionName] = {}
       end
-      ;
-      (table.insert)(sortGridList[directionName], gridPos)
+      table.insert(sortGridList[directionName], gridPos)
     end
   end
-  if (table.count)(sortGridList) > 0 then
-    for _,gridPosList in pairs(sortGridList) do
-      (table.sort)(gridPosList, function(a, b)
-    -- function num : 0_42_0 , upvalues : _ENV, casterPos
-    local disA = (Vector2.Distance)(a, casterPos)
-    local disB = (Vector2.Distance)(b, casterPos)
-    do return disA < disB end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  if 0 < table.count(sortGridList) then
+    for _, gridPosList in pairs(sortGridList) do
+      table.sort(gridPosList, function(a, b)
+        local disA = Vector2.Distance(a, casterPos)
+        local disB = Vector2.Distance(b, casterPos)
+        return disA < disB
+      end)
     end
   end
-  do
-    return sortGridList
-  end
+  return sortGridList
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.CalcSkillResultByConfigData = function(self, skillConfigData, casterEntity)
-  -- function num : 0_43 , upvalues : _ENV
+function UtilScopeCalcServiceShare:CalcSkillResultByConfigData(skillConfigData, casterEntity)
   local targetType = skillConfigData:GetSkillTargetType()
   local targetTypeParam = skillConfigData:GetSkillTargetTypeParam()
-  local scopeParam = SkillPreviewScopeParam:New({TargetType = targetType, ScopeType = skillConfigData:GetSkillScopeType(), ScopeCenterType = skillConfigData:GetSkillScopeCenterType(), TargetTypeParam = targetTypeParam})
+  local scopeParam = SkillPreviewScopeParam:New({
+    TargetType = targetType,
+    ScopeType = skillConfigData:GetSkillScopeType(),
+    ScopeCenterType = skillConfigData:GetSkillScopeCenterType(),
+    TargetTypeParam = targetTypeParam
+  })
   scopeParam:SetScopeParamData(skillConfigData:GetSkillScopeParam())
   local scopeResult = self:CalcScopeResult(scopeParam, casterEntity)
   return scopeResult:GetAttackRange()
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetEntityDistanceInfoArray = function(self, entityIDs, v2CenterPos)
-  -- function num : 0_44 , upvalues : _ENV
+function UtilScopeCalcServiceShare:GetEntityDistanceInfoArray(entityIDs, v2CenterPos)
   local tTargetDistanceInfo = {}
-  for _,targetID in ipairs(entityIDs) do
-    local e = (self._world):GetEntityByID(targetID)
+  for _, targetID in ipairs(entityIDs) do
+    local e = self._world:GetEntityByID(targetID)
     if e then
       local v2GridPos = e:GetGridPosition()
-      local distance = (Vector2.Distance)(v2GridPos, v2CenterPos)
-      ;
-      (table.insert)(tTargetDistanceInfo, {targetID = targetID, gridPos = v2GridPos, distance = distance, entity = e})
+      local distance = Vector2.Distance(v2GridPos, v2CenterPos)
+      table.insert(tTargetDistanceInfo, {
+        targetID = targetID,
+        gridPos = v2GridPos,
+        distance = distance,
+        entity = e
+      })
     end
   end
   local scopeCalc = self:GetSkillScopeCalc()
-  ;
-  (table.sort)(tTargetDistanceInfo, function(a, b)
-    -- function num : 0_44_0 , upvalues : scopeCalc, v2CenterPos
-    if a.distance >= b.distance then
-      do return a.distance == b.distance end
-      local HBDTa = scopeCalc:GetDirection(a.gridPos, v2CenterPos)
-      local HBDTb = scopeCalc:GetDirection(b.gridPos, v2CenterPos)
-      if HBDTa >= HBDTb then
-        do return HBDTa == HBDTb end
-        do
-          if (a.entity):HasRide() then
-            local rideCmpt = (a.entity):Ride()
-            return a.targetID == rideCmpt:GetRiderID()
-          end
-          -- DECOMPILER ERROR: 6 unprocessed JMP targets
-        end
-      end
+  table.sort(tTargetDistanceInfo, function(a, b)
+    if a.distance ~= b.distance then
+      return a.distance < b.distance
     end
-  end
-)
+    local HBDTa = scopeCalc:GetDirection(a.gridPos, v2CenterPos)
+    local HBDTb = scopeCalc:GetDirection(b.gridPos, v2CenterPos)
+    if HBDTa ~= HBDTb then
+      return HBDTa < HBDTb
+    end
+    if a.entity:HasRide() then
+      local rideCmpt = a.entity:Ride()
+      return a.targetID == rideCmpt:GetRiderID()
+    end
+  end)
   return tTargetDistanceInfo
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetEntityDistanceInfoArrayByPosDic = function(self, entityIDs, v2CenterPos, posDic)
-  -- function num : 0_45 , upvalues : _ENV
+function UtilScopeCalcServiceShare:GetEntityDistanceInfoArrayByPosDic(entityIDs, v2CenterPos, posDic)
   local tTargetDistanceInfo = {}
-  for _,targetID in ipairs(entityIDs) do
-    local e = (self._world):GetEntityByID(targetID)
-    if not posDic[targetID] or not (table.remove)(posDic[targetID], 1) then
-      local v2GridPos = not e or nil
-    end
-    if v2GridPos then
-      local distance = (Vector2.Distance)(v2GridPos, v2CenterPos)
-      ;
-      (table.insert)(tTargetDistanceInfo, {targetID = targetID, gridPos = v2GridPos, distance = distance, entity = e})
-    end
-  end
-  local scopeCalc = self:GetSkillScopeCalc()
-  ;
-  (table.sort)(tTargetDistanceInfo, function(a, b)
-    -- function num : 0_45_0 , upvalues : scopeCalc, v2CenterPos
-    if a.distance >= b.distance then
-      do return a.distance == b.distance end
-      local HBDTa = scopeCalc:GetDirection(a.gridPos, v2CenterPos)
-      local HBDTb = scopeCalc:GetDirection(b.gridPos, v2CenterPos)
-      if HBDTa >= HBDTb then
-        do return HBDTa == HBDTb end
-        do
-          if (a.entity):HasRide() then
-            local rideCmpt = (a.entity):Ride()
-            return a.targetID == rideCmpt:GetRiderID()
-          end
-          -- DECOMPILER ERROR: 6 unprocessed JMP targets
-        end
+  for _, targetID in ipairs(entityIDs) do
+    local e = self._world:GetEntityByID(targetID)
+    if e then
+      local v2GridPos = posDic[targetID] and table.remove(posDic[targetID], 1) or nil
+      if v2GridPos then
+        local distance = Vector2.Distance(v2GridPos, v2CenterPos)
+        table.insert(tTargetDistanceInfo, {
+          targetID = targetID,
+          gridPos = v2GridPos,
+          distance = distance,
+          entity = e
+        })
       end
     end
   end
-)
+  local scopeCalc = self:GetSkillScopeCalc()
+  table.sort(tTargetDistanceInfo, function(a, b)
+    if a.distance ~= b.distance then
+      return a.distance < b.distance
+    end
+    local HBDTa = scopeCalc:GetDirection(a.gridPos, v2CenterPos)
+    local HBDTb = scopeCalc:GetDirection(b.gridPos, v2CenterPos)
+    if HBDTa ~= HBDTb then
+      return HBDTa < HBDTb
+    end
+    if a.entity:HasRide() then
+      local rideCmpt = a.entity:Ride()
+      return a.targetID == rideCmpt:GetRiderID()
+    end
+  end)
   return tTargetDistanceInfo
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetSpBlockRange = function(self, blockFlag)
-  -- function num : 0_46 , upvalues : _ENV
+function UtilScopeCalcServiceShare:GetSpBlockRange(blockFlag)
   local range = {}
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
-  local board = ((self._world):GetBoardEntity()):Board()
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local board = self._world:GetBoardEntity():Board()
   local arr = board:GetBlockFlagArray()
-  for x,col in pairs(arr) do
-    for y,block in pairs(col) do
+  for x, col in pairs(arr) do
+    for y, block in pairs(col) do
       local grid = Vector2(x, y)
       if not boardServiceLogic:IsPosBlock(grid, blockFlag) then
-        (table.insert)(range, grid)
+        table.insert(range, grid)
       end
     end
   end
   return range
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetFullScreenCanSummonTrapRange = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function UtilScopeCalcServiceShare:GetFullScreenCanSummonTrapRange()
   return self:GetSpBlockRange(BlockFlag.SummonTrap)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetFullScreenCanChangeElementRange = function(self)
-  -- function num : 0_48 , upvalues : _ENV
+function UtilScopeCalcServiceShare:GetFullScreenCanChangeElementRange()
   return self:GetSpBlockRange(BlockFlag.ChangeElement)
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetFullScreenNoBlockRange = function(self, blockFlag)
-  -- function num : 0_49
+function UtilScopeCalcServiceShare:GetFullScreenNoBlockRange(blockFlag)
   return self:GetSpBlockRange(blockFlag)
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetBoardQuadrantsByCenter = function(self, centerPos, casterEntity, excludeSelf)
-  -- function num : 0_50 , upvalues : _ENV
+function UtilScopeCalcServiceShare:GetBoardQuadrantsByCenter(centerPos, casterEntity, excludeSelf)
   local baseScopeCalc = SkillScopeCalculator:New(self)
   local fullScreenCalc = SkillScopeCalculator_FullScreen:New(baseScopeCalc)
-  local platformScopeResult = fullScreenCalc:CalcRange(SkillScopeType.FullScreen, excludeSelf and 1 or 0, centerPos, (casterEntity:BodyArea()):GetArea(), casterEntity:GetGridDirection(), SkillTargetType.Board, centerPos)
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
+  local platformScopeResult = fullScreenCalc:CalcRange(SkillScopeType.FullScreen, excludeSelf and 1 or 0, centerPos, casterEntity:BodyArea():GetArea(), casterEntity:GetGridDirection(), SkillTargetType.Board, centerPos)
+  local utilCalcSvc = self._world:GetService("UtilCalc")
   local rt, rb, lb, lt = utilCalcSvc:DivideGridsByQuadrant(platformScopeResult:GetAttackRange(), centerPos)
-  return {[BoardQuadrant.RightTop] = rt, [BoardQuadrant.RightBottom] = rb, [BoardQuadrant.LeftBottom] = lb, [BoardQuadrant.LeftTop] = lt}
+  return {
+    [BoardQuadrant.RightTop] = rt,
+    [BoardQuadrant.RightBottom] = rb,
+    [BoardQuadrant.LeftBottom] = lb,
+    [BoardQuadrant.LeftTop] = lt
+  }
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.BuildScopeGridListMultiPick = function(self, scopeParamList, casterEntity, pickPosList)
-  -- function num : 0_51 , upvalues : _ENV
-  local boardServiceLogic = ((self._world):GetService("BoardLogic"))
-  local enemyTeamPos = nil
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    enemyTeamPos = ((((casterEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()):GetGridPosition()
+function UtilScopeCalcServiceShare:BuildScopeGridListMultiPick(scopeParamList, casterEntity, pickPosList)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local enemyTeamPos
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    enemyTeamPos = casterEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity():GetGridPosition()
   end
   local casterPos = pickPosList
   local scopeGirdList = {}
-  for _,scopeParam in ipairs(scopeParamList) do
+  for _, scopeParam in ipairs(scopeParamList) do
     local scopeResult = self:CalcSKillPreviewScopeResult(scopeParam, casterPos, casterEntity)
     local scopeList = scopeResult:GetAttackRange()
     local realScopeList = {}
-    for i,pos in ipairs(scopeList) do
+    for i, pos in ipairs(scopeList) do
       if self:BuildScopeGridList_CheckPosFunc(scopeParam:GetOnlyCanMove(), scopeParam:GetNotDoor(), scopeParam:GetCanConvert(), pos, enemyTeamPos, boardServiceLogic, scopeParam:GetNotExit()) then
-        realScopeList[(Vector2.Pos2Index)(pos)] = true
+        realScopeList[Vector2.Pos2Index(pos)] = true
       end
     end
-    for v2Idx,_ in pairs(realScopeList) do
-      local pos = (Vector2.Index2Pos)(v2Idx)
-      ;
-      (table.insert)(scopeGirdList, pos)
+    for v2Idx, _ in pairs(realScopeList) do
+      local pos = Vector2.Index2Pos(v2Idx)
+      table.insert(scopeGirdList, pos)
     end
   end
   return scopeGirdList
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetTrapPiecesExceptTrapID = function(self, trapID, fixedRange)
-  -- function num : 0_52 , upvalues : _ENV
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilScopeCalcServiceShare:GetTrapPiecesExceptTrapID(trapID, fixedRange)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local trapPosList = self:_GetTrapPosList(fixedRange)
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local canSummonTrapPosList = {}
-  for _,pos in ipairs(trapPosList) do
+  for _, pos in ipairs(trapPosList) do
     if not utilDataSvc:IsPosBlock(pos, BlockFlag.SummonTrap) then
-      (table.insert)(canSummonTrapPosList, pos)
+      table.insert(canSummonTrapPosList, pos)
     end
   end
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
-  local configService = (self._world):GetService("Config")
+  local boardCmpt = self._world:GetBoardEntity():Board()
+  local configService = self._world:GetService("Config")
   local trapConfigData = configService:GetTrapConfigData()
   local trapData = trapConfigData:GetTrapData(trapID)
   local posList = {}
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   local onlyViewTrap = trapServiceLogic:IsViewTrapLevel(trapData.TrapLevel)
-  for _,pos in ipairs(canSummonTrapPosList) do
+  for _, pos in ipairs(canSummonTrapPosList) do
     local es = boardCmpt:GetPieceEntities(pos, function(e)
-    -- function num : 0_52_0 , upvalues : trapData, onlyViewTrap
-    do return e:HasTrap() and ((not e:HasDeadMark() and (e:Trap()):GetTrapLevel() == trapData.TrapLevel and not onlyViewTrap)) end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-)
+      return e:HasTrap() and not e:HasDeadMark() and e:Trap():GetTrapLevel() == trapData.TrapLevel and not onlyViewTrap
+    end)
     if #es == 0 then
-      (table.insert)(posList, pos)
+      table.insert(posList, pos)
     end
   end
   if #posList == 0 then
@@ -1514,106 +1146,93 @@ UtilScopeCalcServiceShare.GetTrapPiecesExceptTrapID = function(self, trapID, fix
   return posList
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare._GetTrapPosList = function(self, fixedRange)
-  -- function num : 0_53 , upvalues : _ENV
+function UtilScopeCalcServiceShare:_GetTrapPosList(fixedRange)
   local trapPosList = {}
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-  for i,e in ipairs(trapGroup:GetEntities()) do
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  for i, e in ipairs(trapGroup:GetEntities()) do
     if not e:HasDeadMark() then
-      local trapPos = (e:GridLocation()).Position
-      if not (table.icontains)(trapPosList, trapPos) and fixedRange and (table.icontains)(fixedRange, trapPos) then
-        (table.insert)(trapPosList, trapPos)
+      local trapPos = e:GridLocation().Position
+      if not table.icontains(trapPosList, trapPos) then
+        if fixedRange then
+          if table.icontains(fixedRange, trapPos) then
+            table.insert(trapPosList, trapPos)
+          end
+        else
+          table.insert(trapPosList, trapPos)
+        end
       end
     end
-    ;
-    (table.insert)(trapPosList, trapPos)
   end
   return trapPosList
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetSortChessPetByMonsterPos = function(self, monsterPos)
-  -- function num : 0_54 , upvalues : _ENV
-  local entityList = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).ChessPet)
+function UtilScopeCalcServiceShare:GetSortChessPetByMonsterPos(monsterPos)
+  local entityList = self._world:GetGroupEntities(self._world.BW_WEMatchers.ChessPet)
   local entityInfoList = {}
-  for i,entity in ipairs(entityList) do
-    local hp = (entity:Attributes()):GetCurrentHP()
-    local dis = (Vector2.Distance)(monsterPos, entity:GetGridPosition())
-    ;
-    (table.insert)(entityInfoList, {entity = entity, hp = hp, dis = dis, id = entity:GetID()})
+  for i, entity in ipairs(entityList) do
+    local hp = entity:Attributes():GetCurrentHP()
+    local dis = Vector2.Distance(monsterPos, entity:GetGridPosition())
+    table.insert(entityInfoList, {
+      entity = entity,
+      hp = hp,
+      dis = dis,
+      id = entity:GetID()
+    })
   end
-  ;
-  (table.sort)(entityInfoList, function(a, b)
-    -- function num : 0_54_0
-    if a.dis >= b.dis then
-      do return a.dis == b.dis end
-      if a.hp >= b.hp then
-        do return a.hp == b.hp end
-        do return a.id < b.id end
-        -- DECOMPILER ERROR: 6 unprocessed JMP targets
-      end
+  table.sort(entityInfoList, function(a, b)
+    if a.dis ~= b.dis then
+      return a.dis < b.dis
+    elseif a.hp ~= b.hp then
+      return a.hp < b.hp
+    else
+      return a.id < b.id
     end
-  end
-)
+  end)
   local retEntityIDList = {}
-  for i,v in ipairs(entityInfoList) do
-    (table.insert)(retEntityIDList, v.id)
+  for i, v in ipairs(entityInfoList) do
+    table.insert(retEntityIDList, v.id)
   end
   return retEntityIDList
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetTargetSquareRing = function(self, entityID, ringCount)
-  -- function num : 0_55 , upvalues : _ENV
-  local monsterEntity = (self._world):GetEntityByID(entityID)
+function UtilScopeCalcServiceShare:GetTargetSquareRing(entityID, ringCount)
+  local monsterEntity = self._world:GetEntityByID(entityID)
   local pos = monsterEntity:GetGridPosition()
-  local bodyArea = (monsterEntity:BodyArea()):GetArea()
-  local posList = (ComputeScopeRange.ComputeRange_SquareRing)(pos, #bodyArea, ringCount)
+  local bodyArea = monsterEntity:BodyArea():GetArea()
+  local posList = ComputeScopeRange.ComputeRange_SquareRing(pos, #bodyArea, ringCount)
   return posList
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetMonsterAroundCanMovePosList = function(self, entity, offset)
-  -- function num : 0_56 , upvalues : _ENV
-  if not offset then
-    offset = Offset8
-  end
+function UtilScopeCalcServiceShare:GetMonsterAroundCanMovePosList(entity, offset)
+  offset = offset or Offset8
   local ret = {}
   local pos = entity:GetGridPosition()
-  local raceType = (entity:MonsterID()):GetMonsterRaceType()
-  local effectCalcSvc = (self._world):GetService("SkillEffectCalc")
+  local raceType = entity:MonsterID():GetMonsterRaceType()
+  local effectCalcSvc = self._world:GetService("SkillEffectCalc")
   local blockFlag = effectCalcSvc:_TransBlockByRaceType(raceType)
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local boardSvc = (self._world):GetService("BoardLogic")
-  for i,v in ipairs(offset) do
+  local utilDataSvc = self._world:GetService("UtilData")
+  local boardSvc = self._world:GetService("BoardLogic")
+  for i, v in ipairs(offset) do
     local newPos = Vector2(pos.x + v[1], pos.y + v[2])
     if (newPos.x ~= pos.x or newPos.y ~= pos.y) and utilDataSvc:IsValidPiecePos(newPos) and not boardSvc:IsPosBlock(newPos, blockFlag) and not utilDataSvc:IsPosHasSpTrap(newPos, TrapType.BadGrid) then
-      (table.insert)(ret, newPos)
+      table.insert(ret, newPos)
     end
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetPosAroundSameTypePosList = function(self, pos, pieceType)
-  -- function num : 0_57 , upvalues : _ENV
+function UtilScopeCalcServiceShare:GetPosAroundSameTypePosList(pos, pieceType)
   local ret = {}
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local boardSvc = (self._world):GetService("BoardLogic")
-  local board = ((self._world):GetBoardEntity()):Board()
+  local utilDataSvc = self._world:GetService("UtilData")
+  local boardSvc = self._world:GetService("BoardLogic")
+  local board = self._world:GetBoardEntity():Board()
   for x = -1, 1 do
     for y = -1, 1 do
       local newPos = Vector2(pos.x + x, pos.y + y)
       if (newPos.x ~= pos.x or newPos.y ~= pos.y) and utilDataSvc:IsValidPiecePos(newPos) and not boardSvc:IsPosBlock(newPos, BlockFlag.LinkLine) and not utilDataSvc:IsPosHasSpTrap(newPos, TrapType.BadGrid) then
         local type = board:GetPieceType(newPos)
         if type == pieceType or type == PieceType.Any then
-          (table.insert)(ret, newPos)
+          table.insert(ret, newPos)
         end
       end
     end
@@ -1621,260 +1240,208 @@ UtilScopeCalcServiceShare.GetPosAroundSameTypePosList = function(self, pos, piec
   return ret
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.SelectAllChessPet = function(self)
-  -- function num : 0_58 , upvalues : _ENV
+function UtilScopeCalcServiceShare:SelectAllChessPet()
   local chessPets = {}
   local chessPets_pos = {}
-  local chessPet_group = (self._world):GetGroup(((self._world).BW_WEMatchers).ChessPet)
-  for _,e in ipairs(chessPet_group:GetEntities()) do
+  local chessPet_group = self._world:GetGroup(self._world.BW_WEMatchers.ChessPet)
+  for _, e in ipairs(chessPet_group:GetEntities()) do
     if not e:HasDeadMark() then
       local monster_grid_location_cmpt = e:GridLocation()
-      local bodyAreaList = (e:BodyArea()):GetArea()
-      ;
-      (table.insert)(chessPets, e)
-      for _,bodyArea in ipairs(bodyAreaList) do
+      local bodyAreaList = e:BodyArea():GetArea()
+      table.insert(chessPets, e)
+      for _, bodyArea in ipairs(bodyAreaList) do
         local pos = monster_grid_location_cmpt.Position + bodyArea
-        ;
-        (table.insert)(chessPets_pos, pos)
+        table.insert(chessPets_pos, pos)
       end
     end
   end
   return chessPets, chessPets_pos
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.IsTargetInScope = function(self, targetID, scopeList)
-  -- function num : 0_59 , upvalues : _ENV
-  local e = (self._world):GetEntityByID(targetID)
+function UtilScopeCalcServiceShare:IsTargetInScope(targetID, scopeList)
+  local e = self._world:GetEntityByID(targetID)
   local monster_grid_location_cmpt = e:GridLocation()
   local monster_body_area_cmpt = e:BodyArea()
   local monster_body_area = monster_body_area_cmpt:GetArea()
-  for i,bodyArea in ipairs(monster_body_area) do
+  for i, bodyArea in ipairs(monster_body_area) do
     local curMonsterBodyPos = monster_grid_location_cmpt.Position + bodyArea
-    if (table.Vector2Include)(scopeList, curMonsterBodyPos) then
+    if table.Vector2Include(scopeList, curMonsterBodyPos) then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.ChessMonsterSelectTarget = function(self, scopeList, targetCount)
-  -- function num : 0_60 , upvalues : _ENV
-  local entityList = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).ChessPet)
+function UtilScopeCalcServiceShare:ChessMonsterSelectTarget(scopeList, targetCount)
+  local entityList = self._world:GetGroupEntities(self._world.BW_WEMatchers.ChessPet)
   local inScopeTargetList = {}
-  for i,e in ipairs(entityList) do
+  for i, e in ipairs(entityList) do
     if self:IsTargetInScope(e:GetID(), scopeList) then
-      local hp = (e:Attributes()):GetCurrentHP()
+      local hp = e:Attributes():GetCurrentHP()
       local id = e:GetID()
-      ;
-      (table.insert)(inScopeTargetList, {id = id, hp = hp})
+      table.insert(inScopeTargetList, {id = id, hp = hp})
     end
   end
   if targetCount < #inScopeTargetList then
-    (table.sort)(inScopeTargetList, function(a, b)
-    -- function num : 0_60_0
-    if a.hp >= b.hp then
-      do return a.hp == b.hp end
-      do return a.id < b.id end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
-  end
-)
+    table.sort(inScopeTargetList, function(a, b)
+      if a.hp ~= b.hp then
+        return a.hp < b.hp
+      end
+      return a.id < b.id
+    end)
   end
   local retList = {}
-  for i,v in ipairs(inScopeTargetList) do
-    if targetCount >= i then
-      do
-        (table.insert)(retList, v.id)
-        -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  for i, v in ipairs(inScopeTargetList) do
+    if targetCount < i then
+      break
     end
+    table.insert(retList, v.id)
   end
   return retList
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetChessEntityGridDirWithPickUpPos = function(self, entity, pickUpPos, targetMovePos)
-  -- function num : 0_61 , upvalues : _ENV
-  if not targetMovePos then
-    targetMovePos = entity:GetGridPosition()
-  end
-  local bodyArea = (entity:BodyArea()):GetArea()
+function UtilScopeCalcServiceShare:GetChessEntityGridDirWithPickUpPos(entity, pickUpPos, targetMovePos)
+  targetMovePos = targetMovePos or entity:GetGridPosition()
+  local bodyArea = entity:BodyArea():GetArea()
   local dir = pickUpPos - targetMovePos
-  if (table.count)(bodyArea) == 4 or (Vector2.Distance)(targetMovePos, pickUpPos) > 1 then
+  if table.count(bodyArea) == 4 or Vector2.Distance(targetMovePos, pickUpPos) > 1 then
     local chessPetCmpt = entity:ChessPet()
     local attackSkill = chessPetCmpt:GetAttackSkillID()
-    local cfgSvc = (self._world):GetService("Config")
+    local cfgSvc = self._world:GetService("Config")
     local attackSkillConfigData = cfgSvc:GetSkillConfigData(attackSkill, entity)
-    local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-    local vectors = {Vector2(-1, 0), Vector2(1, 0), Vector2(0, -1), Vector2(0, 1)}
-    for i,dir in ipairs(vectors) do
-      local scopeResultSelect = utilScopeSvc:CalcSkillScope(attackSkillConfigData, targetMovePos, entity, R22_PC66)
+    local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+    local vectors = {
+      Vector2(-1, 0),
+      Vector2(1, 0),
+      Vector2(0, -1),
+      Vector2(0, 1)
+    }
+    for i, dir in ipairs(vectors) do
+      local scopeResultSelect = utilScopeSvc:CalcSkillScope(attackSkillConfigData, targetMovePos, entity, dir)
       local selectRange = scopeResultSelect:GetAttackRange()
-      if (table.intable)(selectRange, pickUpPos) then
+      if table.intable(selectRange, pickUpPos) then
         return dir
       end
     end
   end
-  do
-    return dir
-  end
+  return dir
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetDirectionTypeByVector2 = function(self, dir)
-  -- function num : 0_62 , upvalues : _ENV
+function UtilScopeCalcServiceShare:GetDirectionTypeByVector2(dir)
   if dir.x == 0 and dir.y == 1 then
     return DirectionType.Up
-  else
-    if dir.x == 0 and dir.y == -1 then
-      return DirectionType.Down
-    else
-      if dir.x == 1 and dir.y == 0 then
-        return DirectionType.Right
-      else
-        if dir.x == -1 and dir.y == 0 then
-          return DirectionType.Left
-        else
-          if dir.x == 1 and dir.y == 1 then
-            return DirectionType.RightUp
-          else
-            if dir.x == -1 and dir.y == 1 then
-              return DirectionType.LeftUp
-            else
-              if dir.x == -1 and dir.y == -1 then
-                return DirectionType.LeftDown
-              else
-                if dir.x == 1 and dir.y == -1 then
-                  return DirectionType.RightDown
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif dir.x == 0 and dir.y == -1 then
+    return DirectionType.Down
+  elseif dir.x == 1 and dir.y == 0 then
+    return DirectionType.Right
+  elseif dir.x == -1 and dir.y == 0 then
+    return DirectionType.Left
+  elseif dir.x == 1 and dir.y == 1 then
+    return DirectionType.RightUp
+  elseif dir.x == -1 and dir.y == 1 then
+    return DirectionType.LeftUp
+  elseif dir.x == -1 and dir.y == -1 then
+    return DirectionType.LeftDown
+  elseif dir.x == 1 and dir.y == -1 then
+    return DirectionType.RightDown
   end
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetEntityRenderDirType = function(self, entity)
-  -- function num : 0_63
+function UtilScopeCalcServiceShare:GetEntityRenderDirType(entity)
   local dir = entity:GetRenderGridDirection()
   return self:GetDirectionTypeByVector2(dir)
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetEntityDirType = function(self, entity)
-  -- function num : 0_64
+function UtilScopeCalcServiceShare:GetEntityDirType(entity)
   local dir = entity:GetGridDirection()
   return self:GetDirectionTypeByVector2(dir)
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetDirByDirType = function(self, dirType)
-  -- function num : 0_65 , upvalues : _ENV
+function UtilScopeCalcServiceShare:GetDirByDirType(dirType)
   if dirType == DirectionType.Up then
     return Vector2(0, 1)
-  else
-    if dirType == DirectionType.Down then
-      return Vector2(0, -1)
-    else
-      if dirType == DirectionType.Left then
-        return Vector2(-1, 0)
-      else
-        if dirType == DirectionType.Right then
-          return Vector2(1, 0)
-        end
-      end
-    end
+  elseif dirType == DirectionType.Down then
+    return Vector2(0, -1)
+  elseif dirType == DirectionType.Left then
+    return Vector2(-1, 0)
+  elseif dirType == DirectionType.Right then
+    return Vector2(1, 0)
   end
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetVectorDirByBodyArea = function(self, entity)
-  -- function num : 0_66 , upvalues : _ENV
+function UtilScopeCalcServiceShare:GetVectorDirByBodyArea(entity)
   local bodyAreaCmpt = entity:BodyArea()
   local bodyArea = bodyAreaCmpt:GetArea()
   local pos = bodyArea[2]
-  local dirType = nil
+  local dirType
   if pos == Vector2(0, -1) then
     dirType = DirectionType.Up
-  else
-    if pos == Vector2(1, 0) then
-      dirType = DirectionType.Left
-    else
-      if pos == Vector2(0, 1) then
-        dirType = DirectionType.Down
-      else
-        if pos == Vector2(-1, 0) then
-          dirType = DirectionType.Right
-        end
-      end
-    end
+  elseif pos == Vector2(1, 0) then
+    dirType = DirectionType.Left
+  elseif pos == Vector2(0, 1) then
+    dirType = DirectionType.Down
+  elseif pos == Vector2(-1, 0) then
+    dirType = DirectionType.Right
   end
   local dir = self:GetDirByDirType(dirType)
   return dir
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetNightKing_Skill1A = function(self, casterEntity, casterPos, dirType)
-  -- function num : 0_67 , upvalues : _ENV
+function UtilScopeCalcServiceShare:GetNightKing_Skill1A(casterEntity, casterPos, dirType)
   local addRangeList = {}
   if dirType == DirectionType.Up then
-    addRangeList = {Vector2(-1, 0), Vector2(-1, 1), Vector2(0, 1), Vector2(1, 1), Vector2(1, 0)}
-  else
-    if dirType == DirectionType.Down then
-      addRangeList = {Vector2(-1, 0), Vector2(-1, -1), Vector2(0, -1), Vector2(1, -1), Vector2(1, 0)}
-    else
-      if dirType == DirectionType.Left then
-        addRangeList = {Vector2(0, 1), Vector2(-1, 1), Vector2(-1, 0), Vector2(-1, -1), Vector2(0, -1)}
-      else
-        if dirType == DirectionType.Right then
-          addRangeList = {Vector2(0, 1), Vector2(1, 1), Vector2(1, 0), Vector2(1, -1), Vector2(0, -1)}
-        end
-      end
-    end
+    addRangeList = {
+      Vector2(-1, 0),
+      Vector2(-1, 1),
+      Vector2(0, 1),
+      Vector2(1, 1),
+      Vector2(1, 0)
+    }
+  elseif dirType == DirectionType.Down then
+    addRangeList = {
+      Vector2(-1, 0),
+      Vector2(-1, -1),
+      Vector2(0, -1),
+      Vector2(1, -1),
+      Vector2(1, 0)
+    }
+  elseif dirType == DirectionType.Left then
+    addRangeList = {
+      Vector2(0, 1),
+      Vector2(-1, 1),
+      Vector2(-1, 0),
+      Vector2(-1, -1),
+      Vector2(0, -1)
+    }
+  elseif dirType == DirectionType.Right then
+    addRangeList = {
+      Vector2(0, 1),
+      Vector2(1, 1),
+      Vector2(1, 0),
+      Vector2(1, -1),
+      Vector2(0, -1)
+    }
   end
   local rangList = {}
-  for i,p in ipairs(addRangeList) do
+  for i, p in ipairs(addRangeList) do
     local newPos = Vector2(p.x + casterPos.x, p.y + casterPos.y)
-    ;
-    (table.insert)(rangList, newPos)
+    table.insert(rangList, newPos)
   end
   return rangList
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetNightKing_SkillCScope = function(self, casterEntity, casterPos)
-  -- function num : 0_68 , upvalues : _ENV
+function UtilScopeCalcServiceShare:GetNightKing_SkillCScope(casterEntity, casterPos)
   local dirType = self:GetEntityDirType(casterEntity)
   local leftScope = {}
   local rightScope = {}
-  local utilDataCalcSvc = (self._world):GetService("UtilData")
+  local utilDataCalcSvc = self._world:GetService("UtilData")
   if dirType == DirectionType.Up or dirType == DirectionType.Down then
     local range1, range2 = {}, {}
     for y = -1, 1 do
       for x = -2, BattleConst.BoardMaxLen * -1, -1 do
         local newPos = Vector2(x + casterPos.x, y + casterPos.y)
         if utilDataCalcSvc:IsValidPiecePos(newPos) then
-          (table.insert)(range1, newPos)
+          table.insert(range1, newPos)
         end
       end
     end
@@ -1882,60 +1449,47 @@ UtilScopeCalcServiceShare.GetNightKing_SkillCScope = function(self, casterEntity
       for x = 2, BattleConst.BoardMaxLen do
         local newPos = Vector2(x + casterPos.x, y + casterPos.y)
         if utilDataCalcSvc:IsValidPiecePos(newPos) then
-          (table.insert)(range2, newPos)
+          table.insert(range2, newPos)
         end
       end
     end
     if dirType == DirectionType.Up then
       leftScope = range1
       rightScope = range2
-    else
-      if dirType == DirectionType.Down then
-        leftScope = range2
-        rightScope = range1
+    elseif dirType == DirectionType.Down then
+      leftScope = range2
+      rightScope = range1
+    end
+  elseif dirType == DirectionType.Left or dirType == DirectionType.Right then
+    local range1, range2 = {}, {}
+    for x = -1, 1 do
+      for y = -2, BattleConst.BoardMaxLen * -1, -1 do
+        local newPos = Vector2(x + casterPos.x, y + casterPos.y)
+        if utilDataCalcSvc:IsValidPiecePos(newPos) then
+          table.insert(range1, newPos)
+        end
       end
     end
-  else
-    do
-      do
-        if dirType == DirectionType.Left or dirType == DirectionType.Right then
-          local range1, range2 = {}, {}
-          for x = -1, 1 do
-            for y = -2, BattleConst.BoardMaxLen * -1, -1 do
-              local newPos = Vector2(x + casterPos.x, y + casterPos.y)
-              if utilDataCalcSvc:IsValidPiecePos(newPos) then
-                (table.insert)(range1, newPos)
-              end
-            end
-          end
-          for x = -1, 1 do
-            for y = 2, BattleConst.BoardMaxLen do
-              local newPos = Vector2(x + casterPos.x, y + casterPos.y)
-              if utilDataCalcSvc:IsValidPiecePos(newPos) then
-                (table.insert)(range2, newPos)
-              end
-            end
-          end
-          if dirType == DirectionType.Left then
-            leftScope = range1
-            rightScope = range2
-          else
-            if dirType == DirectionType.Right then
-              leftScope = range2
-              rightScope = range1
-            end
-          end
+    for x = -1, 1 do
+      for y = 2, BattleConst.BoardMaxLen do
+        local newPos = Vector2(x + casterPos.x, y + casterPos.y)
+        if utilDataCalcSvc:IsValidPiecePos(newPos) then
+          table.insert(range2, newPos)
         end
-        return leftScope, rightScope
       end
+    end
+    if dirType == DirectionType.Left then
+      leftScope = range1
+      rightScope = range2
+    elseif dirType == DirectionType.Right then
+      leftScope = range2
+      rightScope = range1
     end
   end
+  return leftScope, rightScope
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetTailFlickSwitchBodyArea = function(self, casterEntity, targetEntity)
-  -- function num : 0_69
+function UtilScopeCalcServiceShare:GetTailFlickSwitchBodyArea(casterEntity, targetEntity)
   local casterPos = casterEntity:GetGridPosition()
   local switchDirType = self:GetNightKingTailFlickSwitchBodyAreaDirType(casterEntity, casterPos, targetEntity)
   local dirType = self:GetEntityDirType(casterEntity)
@@ -1943,20 +1497,13 @@ UtilScopeCalcServiceShare.GetTailFlickSwitchBodyArea = function(self, casterEnti
   return newDir, newBodyArea, switchDirType
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.IsNightKingCanCounterAttack = function(self, casterEntity, targetEntity)
-  -- function num : 0_70 , upvalues : _ENV
+function UtilScopeCalcServiceShare:IsNightKingCanCounterAttack(casterEntity, targetEntity)
   local casterPos = casterEntity:GetGridPosition()
   local switchDirType = self:GetNightKingCounterAttackSwitchBodyAreaDirType(casterEntity, casterPos, targetEntity)
-  do return switchDirType ~= SwitchBodyAreaDirType.None end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return switchDirType ~= SwitchBodyAreaDirType.None
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetCounterAttackSwitchBodyArea = function(self, casterEntity, targetEntity)
-  -- function num : 0_71
+function UtilScopeCalcServiceShare:GetCounterAttackSwitchBodyArea(casterEntity, targetEntity)
   local casterPos = casterEntity:GetGridPosition()
   local switchDirType = self:GetNightKingCounterAttackSwitchBodyAreaDirType(casterEntity, casterPos, targetEntity)
   local dirType = self:GetEntityDirType(casterEntity)
@@ -1964,20 +1511,14 @@ UtilScopeCalcServiceShare.GetCounterAttackSwitchBodyArea = function(self, caster
   return newDir, newBodyArea, switchDirType
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.ValidPosInsertList = function(self, list, pos)
-  -- function num : 0_72 , upvalues : _ENV
-  local utilDataCalcSvc = (self._world):GetService("UtilData")
+function UtilScopeCalcServiceShare:ValidPosInsertList(list, pos)
+  local utilDataCalcSvc = self._world:GetService("UtilData")
   if utilDataCalcSvc:IsValidPiecePos(pos) then
-    (table.insert)(list, pos)
+    table.insert(list, pos)
   end
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetNightKingCounterAttackScope = function(self, casterEntity, casterPos)
-  -- function num : 0_73 , upvalues : _ENV
+function UtilScopeCalcServiceShare:GetNightKingCounterAttackScope(casterEntity, casterPos)
   local dirType = self:GetEntityDirType(casterEntity)
   local leftScopeList, rightScopeList, downScopeList = {}, {}, {}
   local symbol = 1
@@ -2015,228 +1556,155 @@ UtilScopeCalcServiceShare.GetNightKingCounterAttackScope = function(self, caster
   return leftScopeList, rightScopeList, downScopeList
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetNightKingCounterAttackSwitchBodyAreaDirType = function(self, casterEntity, casterPos, targetEntity)
-  -- function num : 0_74 , upvalues : _ENV
+function UtilScopeCalcServiceShare:GetNightKingCounterAttackSwitchBodyAreaDirType(casterEntity, casterPos, targetEntity)
   local leftScopeList, rightScopeList, downScopeList = self:GetNightKingCounterAttackScope(casterEntity, casterPos)
   local targetPos = targetEntity:GetGridPosition()
-  if (table.Vector2Include)(leftScopeList, targetPos) then
+  if table.Vector2Include(leftScopeList, targetPos) then
     return SwitchBodyAreaDirType.Left
+  elseif table.Vector2Include(rightScopeList, targetPos) then
+    return SwitchBodyAreaDirType.Right
+  elseif table.Vector2Include(downScopeList, targetPos) then
+    return SwitchBodyAreaDirType.Turn
   else
-    if (table.Vector2Include)(rightScopeList, targetPos) then
-      return SwitchBodyAreaDirType.Right
-    else
-      if (table.Vector2Include)(downScopeList, targetPos) then
-        return SwitchBodyAreaDirType.Turn
-      else
-        return SwitchBodyAreaDirType.None
-      end
-    end
+    return SwitchBodyAreaDirType.None
   end
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetNightKingTailFlickSwitchBodyAreaDirType = function(self, casterEntity, casterPos, targetEntity)
-  -- function num : 0_75 , upvalues : _ENV
+function UtilScopeCalcServiceShare:GetNightKingTailFlickSwitchBodyAreaDirType(casterEntity, casterPos, targetEntity)
   local leftScopeList, rightScopeList = self:GetNightKing_SkillCScope(casterEntity, casterPos)
   local targetPos = targetEntity:GetGridPosition()
-  if (table.Vector2Include)(leftScopeList, targetPos) then
+  if table.Vector2Include(leftScopeList, targetPos) then
     return SwitchBodyAreaDirType.Left
+  elseif table.Vector2Include(rightScopeList, targetPos) then
+    return SwitchBodyAreaDirType.Right
   else
-    if (table.Vector2Include)(rightScopeList, targetPos) then
-      return SwitchBodyAreaDirType.Right
-    else
-      return SwitchBodyAreaDirType.Turn
-    end
+    return SwitchBodyAreaDirType.Turn
   end
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetNewDirBySwitchDirType = function(self, switchDirType, casterDirType)
-  -- function num : 0_76 , upvalues : _ENV
-  local newDir, newBodyArea = nil, nil
+function UtilScopeCalcServiceShare:GetNewDirBySwitchDirType(switchDirType, casterDirType)
+  local newDir, newBodyArea
   if casterDirType == DirectionType.Up then
     if switchDirType == SwitchBodyAreaDirType.Right then
       newDir = Vector2(1, 0)
       newBodyArea = Vector2(-1, 0)
-    else
-      if switchDirType == SwitchBodyAreaDirType.Left then
-        newDir = Vector2(-1, 0)
-        newBodyArea = Vector2(1, 0)
-      else
-        if switchDirType == SwitchBodyAreaDirType.Turn then
-          newDir = Vector2(0, -1)
-          newBodyArea = Vector2(0, 1)
-        end
-      end
+    elseif switchDirType == SwitchBodyAreaDirType.Left then
+      newDir = Vector2(-1, 0)
+      newBodyArea = Vector2(1, 0)
+    elseif switchDirType == SwitchBodyAreaDirType.Turn then
+      newDir = Vector2(0, -1)
+      newBodyArea = Vector2(0, 1)
     end
-  else
-    if casterDirType == DirectionType.Down then
-      if switchDirType == SwitchBodyAreaDirType.Right then
-        newDir = Vector2(-1, 0)
-        newBodyArea = Vector2(1, 0)
-      else
-        if switchDirType == SwitchBodyAreaDirType.Left then
-          newDir = Vector2(1, 0)
-          newBodyArea = Vector2(-1, 0)
-        else
-          if switchDirType == SwitchBodyAreaDirType.Turn then
-            newDir = Vector2(0, 1)
-            newBodyArea = Vector2(0, -1)
-          end
-        end
-      end
-    else
-      if casterDirType == DirectionType.Left then
-        if switchDirType == SwitchBodyAreaDirType.Right then
-          newDir = Vector2(0, 1)
-          newBodyArea = Vector2(0, -1)
-        else
-          if switchDirType == SwitchBodyAreaDirType.Left then
-            newDir = Vector2(0, -1)
-            newBodyArea = Vector2(0, 1)
-          else
-            if switchDirType == SwitchBodyAreaDirType.Turn then
-              newDir = Vector2(1, 0)
-              newBodyArea = Vector2(-1, 0)
-            end
-          end
-        end
-      else
-        if casterDirType == DirectionType.Right then
-          if switchDirType == SwitchBodyAreaDirType.Right then
-            newDir = Vector2(0, -1)
-            newBodyArea = Vector2(0, 1)
-          else
-            if switchDirType == SwitchBodyAreaDirType.Left then
-              newDir = Vector2(0, 1)
-              newBodyArea = Vector2(0, -1)
-            else
-              if switchDirType == SwitchBodyAreaDirType.Turn then
-                newDir = Vector2(-1, 0)
-                newBodyArea = Vector2(1, 0)
-              end
-            end
-          end
-        end
-      end
+  elseif casterDirType == DirectionType.Down then
+    if switchDirType == SwitchBodyAreaDirType.Right then
+      newDir = Vector2(-1, 0)
+      newBodyArea = Vector2(1, 0)
+    elseif switchDirType == SwitchBodyAreaDirType.Left then
+      newDir = Vector2(1, 0)
+      newBodyArea = Vector2(-1, 0)
+    elseif switchDirType == SwitchBodyAreaDirType.Turn then
+      newDir = Vector2(0, 1)
+      newBodyArea = Vector2(0, -1)
+    end
+  elseif casterDirType == DirectionType.Left then
+    if switchDirType == SwitchBodyAreaDirType.Right then
+      newDir = Vector2(0, 1)
+      newBodyArea = Vector2(0, -1)
+    elseif switchDirType == SwitchBodyAreaDirType.Left then
+      newDir = Vector2(0, -1)
+      newBodyArea = Vector2(0, 1)
+    elseif switchDirType == SwitchBodyAreaDirType.Turn then
+      newDir = Vector2(1, 0)
+      newBodyArea = Vector2(-1, 0)
+    end
+  elseif casterDirType == DirectionType.Right then
+    if switchDirType == SwitchBodyAreaDirType.Right then
+      newDir = Vector2(0, -1)
+      newBodyArea = Vector2(0, 1)
+    elseif switchDirType == SwitchBodyAreaDirType.Left then
+      newDir = Vector2(0, 1)
+      newBodyArea = Vector2(0, -1)
+    elseif switchDirType == SwitchBodyAreaDirType.Turn then
+      newDir = Vector2(-1, 0)
+      newBodyArea = Vector2(1, 0)
     end
   end
-  ;
-  (Log.fatal)("SwitchType:", switchDirType, "DirType:", casterDirType, "NewDir:", newDir, "NewBodyArea:", newBodyArea)
-  return newDir, {Vector2(0, 0), newBodyArea}
+  Log.fatal("SwitchType:", switchDirType, "DirType:", casterDirType, "NewDir:", newDir, "NewBodyArea:", newBodyArea)
+  return newDir, {
+    Vector2(0, 0),
+    newBodyArea
+  }
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetNightKingForwardSkillPos = function(self, casterEntity, casterPos)
-  -- function num : 0_77 , upvalues : _ENV
-  local dirType = (self:GetEntityDirType(casterEntity))
-  -- DECOMPILER ERROR at PC3: Overwrote pending register: R4 in 'AssignReg'
-
-  local leftPos, rightPos = .end, nil
+function UtilScopeCalcServiceShare:GetNightKingForwardSkillPos(casterEntity, casterPos)
+  local dirType = self:GetEntityDirType(casterEntity)
+  local leftPos, rightPos
   if dirType == DirectionType.Up then
     leftPos = Vector2(casterPos.x - 1, casterPos.y + 2)
     rightPos = Vector2(casterPos.x + 1, casterPos.y + 2)
-  else
-    if dirType == DirectionType.Down then
-      leftPos = Vector2(casterPos.x + 1, casterPos.y - 2)
-      rightPos = Vector2(casterPos.x - 1, casterPos.y - 2)
-    else
-      if dirType == DirectionType.Left then
-        leftPos = Vector2(casterPos.x - 2, casterPos.y - 1)
-        rightPos = Vector2(casterPos.x - 2, casterPos.y + 1)
-      else
-        if dirType == DirectionType.Right then
-          leftPos = Vector2(casterPos.x + 2, casterPos.y + 1)
-          rightPos = Vector2(casterPos.x + 2, casterPos.y - 1)
-        end
-      end
-    end
+  elseif dirType == DirectionType.Down then
+    leftPos = Vector2(casterPos.x + 1, casterPos.y - 2)
+    rightPos = Vector2(casterPos.x - 1, casterPos.y - 2)
+  elseif dirType == DirectionType.Left then
+    leftPos = Vector2(casterPos.x - 2, casterPos.y - 1)
+    rightPos = Vector2(casterPos.x - 2, casterPos.y + 1)
+  elseif dirType == DirectionType.Right then
+    leftPos = Vector2(casterPos.x + 2, casterPos.y + 1)
+    rightPos = Vector2(casterPos.x + 2, casterPos.y - 1)
   end
   return leftPos, rightPos
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetNewBodyAreaByDirType = function(self, dirType)
-  -- function num : 0_78 , upvalues : _ENV
-  local bodyArea = nil
+function UtilScopeCalcServiceShare:GetNewBodyAreaByDirType(dirType)
+  local bodyArea
   if dirType == DirectionType.Up then
     bodyArea = Vector2(0, -1)
-  else
-    if dirType == DirectionType.Left then
-      bodyArea = Vector2(1, 0)
-    else
-      if dirType == DirectionType.Down then
-        bodyArea = Vector2(0, 1)
-      else
-        if dirType == DirectionType.Right then
-          bodyArea = Vector2(-1, 0)
-        end
-      end
-    end
+  elseif dirType == DirectionType.Left then
+    bodyArea = Vector2(1, 0)
+  elseif dirType == DirectionType.Down then
+    bodyArea = Vector2(0, 1)
+  elseif dirType == DirectionType.Right then
+    bodyArea = Vector2(-1, 0)
   end
   return bodyArea
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.IsNewBodyAreaPosValidByDirType = function(self, casterPos, dirType)
-  -- function num : 0_79 , upvalues : _ENV
+function UtilScopeCalcServiceShare:IsNewBodyAreaPosValidByDirType(casterPos, dirType)
   local bodyAreaPos = casterPos + self:GetNewBodyAreaByDirType(dirType)
   return not self:IsPosBlock(bodyAreaPos, BlockFlag.MonsterLand)
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetCurBoardMaxX = function(self)
-  -- function num : 0_80
-  local svc = (self._world):GetService("BoardLogic")
+function UtilScopeCalcServiceShare:GetCurBoardMaxX()
+  local svc = self._world:GetService("BoardLogic")
   return svc:GetCurBoardMaxX()
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetCurBoardMaxY = function(self)
-  -- function num : 0_81
-  local svc = (self._world):GetService("BoardLogic")
+function UtilScopeCalcServiceShare:GetCurBoardMaxY()
+  local svc = self._world:GetService("BoardLogic")
   return svc:GetCurBoardMaxY()
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetMinMaxGridXByGridY = function(self, y)
-  -- function num : 0_82
-  local cBoard = ((self._world):GetBoardEntity()):Board()
+function UtilScopeCalcServiceShare:GetMinMaxGridXByGridY(y)
+  local cBoard = self._world:GetBoardEntity():Board()
   return cBoard:GetMinMaxGridXByGridY(y)
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetMinMaxGridYByGridX = function(self, x)
-  -- function num : 0_83
-  local cBoard = ((self._world):GetBoardEntity()):Board()
+function UtilScopeCalcServiceShare:GetMinMaxGridYByGridX(x)
+  local cBoard = self._world:GetBoardEntity():Board()
   return cBoard:GetMinMaxGridYByGridX(x)
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetGridPossessedByTrapType = function(self, trapType)
-  -- function num : 0_84 , upvalues : _ENV
+function UtilScopeCalcServiceShare:GetGridPossessedByTrapType(trapType)
   local tv2Grids = {}
-  local globalTrapEntities = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).Trap)
-  for _,e in ipairs(globalTrapEntities) do
+  local globalTrapEntities = self._world:GetGroupEntities(self._world.BW_WEMatchers.Trap)
+  for _, e in ipairs(globalTrapEntities) do
     if not e:HasDeadMark() then
       local cTrap = e:Trap()
       if cTrap:GetTrapType() == trapType then
-        local bodyArea = (e:BodyArea()):GetArea()
+        local bodyArea = e:BodyArea():GetArea()
         local v2GridPos = e:GetGridPosition()
-        for _,v2Body in ipairs(bodyArea) do
-          (table.insert)(tv2Grids, v2GridPos + v2Body)
+        for _, v2Body in ipairs(bodyArea) do
+          table.insert(tv2Grids, v2GridPos + v2Body)
         end
       end
     end
@@ -2244,29 +1712,23 @@ UtilScopeCalcServiceShare.GetGridPossessedByTrapType = function(self, trapType)
   return tv2Grids
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.IsPosHasTrapByTrapID = function(self, pos, trapID)
-  -- function num : 0_85
-  local utilData = (self._world):GetService("UtilData")
+function UtilScopeCalcServiceShare:IsPosHasTrapByTrapID(pos, trapID)
+  local utilData = self._world:GetService("UtilData")
   return utilData:IsPosHasTrapByTrapID(pos, trapID)
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.MonsterGetPosAroundSameTypePosList = function(self, pos, pieceType)
-  -- function num : 0_86 , upvalues : _ENV
+function UtilScopeCalcServiceShare:MonsterGetPosAroundSameTypePosList(pos, pieceType)
   local ret = {}
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local boardSvc = (self._world):GetService("BoardLogic")
-  local board = ((self._world):GetBoardEntity()):Board()
+  local utilDataSvc = self._world:GetService("UtilData")
+  local boardSvc = self._world:GetService("BoardLogic")
+  local board = self._world:GetBoardEntity():Board()
   for x = -1, 1 do
     for y = -1, 1 do
       local newPos = Vector2(pos.x + x, pos.y + y)
       if (newPos.x ~= pos.x or newPos.y ~= pos.y) and utilDataSvc:IsValidPiecePos(newPos) and not boardSvc:IsPosBlock(newPos, BlockFlag.MonsterLand) and not utilDataSvc:IsPosHasSpTrap(newPos, TrapType.BadGrid) then
         local type = board:GetPieceType(newPos)
         if type == pieceType or type == PieceType.Any then
-          (table.insert)(ret, newPos)
+          table.insert(ret, newPos)
         end
       end
     end
@@ -2274,71 +1736,52 @@ UtilScopeCalcServiceShare.MonsterGetPosAroundSameTypePosList = function(self, po
   return ret
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetStandardDirection8D = function(self, v2)
-  -- function num : 0_87
+function UtilScopeCalcServiceShare:GetStandardDirection8D(v2)
   local v = v2:Clone()
   if v.x > 0 then
     v.x = 1
-  else
-    if v.x < 0 then
-      v.x = -1
-    end
+  elseif v.x < 0 then
+    v.x = -1
   end
-  if v.y > 0 then
+  if 0 < v.y then
     v.y = 1
-  else
-    if v.y < 0 then
-      v.y = -1
-    end
+  elseif 0 > v.y then
+    v.y = -1
   end
   return v
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.IsPosCanConvertGridElement = function(self, pos)
-  -- function num : 0_88
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilScopeCalcServiceShare:IsPosCanConvertGridElement(pos)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   return boardServiceLogic:GetCanConvertGridElement(pos)
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.CalcRangeByPickUpPosList = function(self, pickUpPosList)
-  -- function num : 0_89 , upvalues : _ENV
+function UtilScopeCalcServiceShare:CalcRangeByPickUpPosList(pickUpPosList)
   if #pickUpPosList < 2 then
     return nil
   end
   local centerPos = pickUpPosList[1]
   local dirPos = pickUpPosList[2]
-  local dirType = nil
+  local dirType
   local step = 1
-  local max, reverseMax = nil, nil
+  local max, reverseMax
   if centerPos.x ~= dirPos.x then
     max = self:GetCurBoardMaxX()
     reverseMax = self:GetCurBoardMaxY()
-    if dirPos.x < centerPos.x then
+    if centerPos.x > dirPos.x then
       dirType = DirectionType.Left
       step = -1
-    else
-      if centerPos.x < dirPos.x then
-        dirType = DirectionType.Right
-      end
+    elseif centerPos.x < dirPos.x then
+      dirType = DirectionType.Right
     end
-  else
-    if centerPos.y ~= dirPos.y then
-      max = self:GetCurBoardMaxY()
-      reverseMax = self:GetCurBoardMaxX()
-      if dirPos.y < centerPos.y then
-        dirType = DirectionType.Down
-        step = -1
-      else
-        if centerPos.y < dirPos.y then
-          dirType = DirectionType.Up
-        end
-      end
+  elseif centerPos.y ~= dirPos.y then
+    max = self:GetCurBoardMaxY()
+    reverseMax = self:GetCurBoardMaxX()
+    if centerPos.y > dirPos.y then
+      dirType = DirectionType.Down
+      step = -1
+    elseif centerPos.y < dirPos.y then
+      dirType = DirectionType.Up
     end
   end
   local ret = {}
@@ -2347,27 +1790,24 @@ UtilScopeCalcServiceShare.CalcRangeByPickUpPosList = function(self, pickUpPosLis
   local totalRange = {}
   for i = 0, max do
     for j = 1, reverseMax do
-      local pos, prePos = nil, nil
+      local pos, prePos
       if dirType == DirectionType.Left or dirType == DirectionType.Right then
         pos = Vector2(centerPos.x + i * step, j)
         prePos = Vector2(centerPos.x + (i - 1) * step, j)
-      else
-        if dirType == DirectionType.Up or dirType == DirectionType.Down then
-          pos = Vector2(j, centerPos.y + i * step)
-          prePos = Vector2(j, centerPos.y + i * step)
-        end
+      elseif dirType == DirectionType.Up or dirType == DirectionType.Down then
+        pos = Vector2(j, centerPos.y + i * step)
+        prePos = Vector2(j, centerPos.y + i * step)
       end
       if self:IsValidPiecePos(pos) then
         if i == 0 then
-          (table.insert)(edgeBegin, pos)
+          table.insert(edgeBegin, pos)
         end
-        ;
-        (table.insert)(totalRange, pos)
+        table.insert(totalRange, pos)
       end
       if self:IsValidPiecePos(pos) ~= PieceType.None and self:IsValidPiecePos(pos) ~= nil and self:IsPosCanConvertGridElement(pos) then
-        (table.insert)(ret, pos)
+        table.insert(ret, pos)
         if self:IsValidPiecePos(prePos) == nil and i ~= 0 then
-          (table.insert)(invalidPos, pos)
+          table.insert(invalidPos, pos)
         end
       end
     end
@@ -2375,42 +1815,34 @@ UtilScopeCalcServiceShare.CalcRangeByPickUpPosList = function(self, pickUpPosLis
   return ret, dirType, edgeBegin, invalidPos, totalRange
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.CalcRangeByTrapCenter = function(self, param, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_90 , upvalues : _ENV
+function UtilScopeCalcServiceShare:CalcRangeByTrapCenter(param, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local tarpID = param[1]
   local scopeType = param[2]
-  local trapServerLogic = (self._world):GetService("TrapLogic")
+  local trapServerLogic = self._world:GetService("TrapLogic")
   local centerPosList = trapServerLogic:FindTrapPosByTrapID(tarpID, false)
   local calc = SkillScopeCalculator:New(self)
-  if (table.count)(centerPosList) == 0 then
+  if table.count(centerPosList) == 0 then
     return SkillScopeResult:New(SkillScopeType.TrapCenterWithScope, casterPos, {}, {})
   end
   local scpoe_param = {}
-  if (table.count)(param) >= 3 then
-    scpoe_param = (table.sub)(param, 3, #param)
+  if table.count(param) >= 3 then
+    scpoe_param = table.sub(param, 3, #param)
   end
   local attackRange, wholeRange = {}, {}
-  for _,pos in ipairs(centerPosList) do
+  for _, pos in ipairs(centerPosList) do
     local result = calc:ComputeScopeRange(scopeType, scpoe_param, pos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-    ;
-    (table.Vector2Append)(attackRange, result:GetAttackRange(), attackRange)
-    ;
-    (table.Vector2Append)(wholeRange, result:GetWholeGridRange(), wholeRange)
+    table.Vector2Append(attackRange, result:GetAttackRange(), attackRange)
+    table.Vector2Append(wholeRange, result:GetWholeGridRange(), wholeRange)
   end
   local result = SkillScopeResult:New(SkillScopeType.TrapsCenterWithScope, casterPos, attackRange, wholeRange)
   return result
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.Monster2903501FindPlayer = function(self, dirType, casterPos, bodyArea)
-  -- function num : 0_91 , upvalues : _ENV
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilScopeCalcServiceShare:Monster2903501FindPlayer(dirType, casterPos, bodyArea)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local boardMaxX = boardServiceLogic:GetCurBoardMaxX()
-  local boardMaxY = (boardServiceLogic:GetCurBoardMaxY())
-  local maxLen, edgeLen = nil, nil
+  local boardMaxY = boardServiceLogic:GetCurBoardMaxY()
+  local maxLen, edgeLen
   local retRange = {}
   local off = 1
   if dirType == DirectionType.Up or dirType == DirectionType.Down then
@@ -2419,48 +1851,41 @@ UtilScopeCalcServiceShare.Monster2903501FindPlayer = function(self, dirType, cas
     if dirType == DirectionType.Down then
       off = -1
     end
-  else
-    if dirType == DirectionType.Left or dirType == DirectionType.Right then
-      maxLen = boardMaxX
-      edgeLen = boardMaxY
-      if dirType == DirectionType.Left then
-        off = -1
-      end
+  elseif dirType == DirectionType.Left or dirType == DirectionType.Right then
+    maxLen = boardMaxX
+    edgeLen = boardMaxY
+    if dirType == DirectionType.Left then
+      off = -1
     end
   end
   local bodyAreaOffSet = {}
-  for _,v in ipairs(bodyArea) do
+  for _, v in ipairs(bodyArea) do
     local offset = Vector2(v.x + casterPos.x, v.y + casterPos.y)
-    ;
-    (table.insert)(bodyAreaOffSet, offset)
+    table.insert(bodyAreaOffSet, offset)
   end
   local j = 0
   for i = 2, maxLen, 2 do
-    for _,v in ipairs(bodyAreaOffSet) do
-      local newPos = nil
+    for _, v in ipairs(bodyAreaOffSet) do
+      local newPos
       if dirType == DirectionType.Up or dirType == DirectionType.Down then
         newPos = Vector2(v.x, v.y + i * off)
-      else
-        if dirType == DirectionType.Left or dirType == DirectionType.Right then
-          newPos = Vector2(v.x + i * off, v.y)
-        end
+      elseif dirType == DirectionType.Left or dirType == DirectionType.Right then
+        newPos = Vector2(v.x + i * off, v.y)
       end
-      if boardServiceLogic:IsValidPiecePos(newPos) and not (table.Vector2Include)(retRange, newPos) then
-        (table.insert)(retRange, newPos)
+      if boardServiceLogic:IsValidPiecePos(newPos) and not table.Vector2Include(retRange, newPos) then
+        table.insert(retRange, newPos)
       end
     end
     for o = -1 * j, j do
-      for _,v in ipairs(bodyAreaOffSet) do
-        local newPos = nil
+      for _, v in ipairs(bodyAreaOffSet) do
+        local newPos
         if dirType == DirectionType.Up or dirType == DirectionType.Down then
           newPos = Vector2(v.x + o, v.y + i * off)
-        else
-          if dirType == DirectionType.Left or dirType == DirectionType.Right then
-            newPos = Vector2(v.x + i * off, v.y + o)
-          end
+        elseif dirType == DirectionType.Left or dirType == DirectionType.Right then
+          newPos = Vector2(v.x + i * off, v.y + o)
         end
-        if boardServiceLogic:IsValidPiecePos(newPos) and not (table.Vector2Include)(retRange, newPos) then
-          (table.insert)(retRange, newPos)
+        if boardServiceLogic:IsValidPiecePos(newPos) and not table.Vector2Include(retRange, newPos) then
+          table.insert(retRange, newPos)
         end
       end
     end
@@ -2469,28 +1894,25 @@ UtilScopeCalcServiceShare.Monster2903501FindPlayer = function(self, dirType, cas
   return retRange
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.P2PAngleFreeLineRange = function(self, pos1, pos2, attackRange, wholeRange, bNoExtend, widthThreshold, forceSE)
-  -- function num : 0_92 , upvalues : _ENV
-  local pieceXYMap = ((self._world):GetService("BoardLogic")).GridTiles
+function UtilScopeCalcServiceShare:P2PAngleFreeLineRange(pos1, pos2, attackRange, wholeRange, bNoExtend, widthThreshold, forceSE)
+  local pieceXYMap = self._world:GetService("BoardLogic").GridTiles
   local posOnLine = {}
   local casterX = pos1.x
   local casterY = pos1.y
-  local pickupDistance = (Vector2.Distance)(pos2, pos1)
+  local pickupDistance = Vector2.Distance(pos2, pos1)
   local relativePickupPos = pos2 - pos1
   local relativePickupX = relativePickupPos.x
   local relativePickupY = relativePickupPos.y
   local a = relativePickupPos.x
   local b = relativePickupPos.y
-  for x,tableY in pairs(pieceXYMap) do
+  for x, tableY in pairs(pieceXYMap) do
     local relativeX = x - casterX
-    for y,_ in pairs(tableY) do
+    for y, _ in pairs(tableY) do
       local relativeY = y - casterY
       local v2 = Vector2(x, y)
       local isPosValid = b * relativeX == a * relativeY
-      isPosValid = not isPosValid or (relativeX * relativePickupX >= 0 and relativeY * relativePickupY >= 0)
-      isPosValid = not isPosValid or not bNoExtend or (Vector2.Distance)(v2, pos1) <= pickupDistance
+      isPosValid = isPosValid and 0 <= relativeX * relativePickupX and 0 <= relativeY * relativePickupY
+      isPosValid = isPosValid and (not bNoExtend or pickupDistance >= Vector2.Distance(v2, pos1))
       if isPosValid then
         self:_P2PAFLR_InsertPos(v2, attackRange, wholeRange, posOnLine)
       end
@@ -2500,267 +1922,194 @@ UtilScopeCalcServiceShare.P2PAngleFreeLineRange = function(self, pos1, pos2, att
     self:_P2PAFLR_InsertPos(pos1, attackRange, wholeRange, posOnLine)
     self:_P2PAFLR_InsertPos(pos2, attackRange, wholeRange, posOnLine)
   end
-  for _,linePos in ipairs(posOnLine) do
-    local disThreshold = (Vector2.Distance)(linePos, pos1) + widthThreshold
+  for _, linePos in ipairs(posOnLine) do
+    local disThreshold = Vector2.Distance(linePos, pos1) + widthThreshold
     local relativeLinePos = pos1 - linePos
     local a = relativeLinePos.x
     local b = relativeLinePos.y
-    local sqrtLinePos = (math.sqrt)(a * a + b * b)
+    local sqrtLinePos = math.sqrt(a * a + b * b)
     local sqrt = sqrtLinePos * widthThreshold
-    for x,tableY in pairs(pieceXYMap) do
+    for x, tableY in pairs(pieceXYMap) do
       local relativeX = casterX - x
-      for y,_ in pairs(tableY) do
+      for y, _ in pairs(tableY) do
         local relativeY = casterY - y
         local v2 = Vector2(x, y)
-        local isPosValid = (math.abs)(b * relativeX - a * relativeY) < sqrt
-        isPosValid = not isPosValid or (relativeX * a >= 0 and relativeY * b >= 0)
-        isPosValid = not isPosValid or not bNoExtend or (Vector2.Distance)(v2, pos1) < disThreshold
+        local isPosValid = sqrt > math.abs(b * relativeX - a * relativeY)
+        isPosValid = isPosValid and 0 <= relativeX * a and 0 <= relativeY * b
+        isPosValid = isPosValid and (not bNoExtend or disThreshold > Vector2.Distance(v2, pos1))
         if isPosValid then
-          if not (table.Vector2Include)(attackRange, v2) then
-            (table.insert)(attackRange, v2)
+          if not table.Vector2Include(attackRange, v2) then
+            table.insert(attackRange, v2)
           end
-          if not (table.Vector2Include)(wholeRange, v2) then
-            (table.insert)(wholeRange, v2)
+          if not table.Vector2Include(wholeRange, v2) then
+            table.insert(wholeRange, v2)
           end
         end
       end
     end
   end
-  -- DECOMPILER ERROR: 19 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare._P2PAFLR_InsertPos = function(self, pos, attackRange, wholeRange, posOnLine)
-  -- function num : 0_93 , upvalues : _ENV
-  if not (table.icontains)(attackRange, pos) then
-    (table.insert)(attackRange, pos)
+function UtilScopeCalcServiceShare:_P2PAFLR_InsertPos(pos, attackRange, wholeRange, posOnLine)
+  if not table.icontains(attackRange, pos) then
+    table.insert(attackRange, pos)
   end
-  if not (table.icontains)(wholeRange, pos) then
-    (table.insert)(wholeRange, pos)
+  if not table.icontains(wholeRange, pos) then
+    table.insert(wholeRange, pos)
   end
-  if not (table.icontains)(posOnLine, pos) then
-    (table.insert)(posOnLine, pos)
+  if not table.icontains(posOnLine, pos) then
+    table.insert(posOnLine, pos)
   end
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.SortTrapsByPos = function(self, checkIDList, target_pos, nearestForMultiGrid)
-  -- function num : 0_94 , upvalues : _ENV
-  local trap_group = (self._world):GetGroup(((self._world).BW_WEMatchers).TrapID)
+function UtilScopeCalcServiceShare:SortTrapsByPos(checkIDList, target_pos, nearestForMultiGrid)
+  local trap_group = self._world:GetGroup(self._world.BW_WEMatchers.TrapID)
   local trapIDList = {}
-  for _,e in ipairs(trap_group:GetEntities()) do
-    local trapID = (e:TrapID()):GetTrapID()
-    if checkIDList and (table.icontains)(checkIDList, trapID) then
-      (table.insert)(trapIDList, e:GetID())
+  for _, e in ipairs(trap_group:GetEntities()) do
+    local trapID = e:TrapID():GetTrapID()
+    if checkIDList then
+      if table.icontains(checkIDList, trapID) then
+        table.insert(trapIDList, e:GetID())
+      end
+    else
+      table.insert(trapIDList, e:GetID())
     end
-    ;
-    (table.insert)(trapIDList, e:GetID())
   end
   return self:SortTrapsListByPos(target_pos, trapIDList, nearestForMultiGrid)
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.SortTrapsListByPos = function(self, target_pos, trapIDList, nearestForMultiGrid)
-  -- function num : 0_95 , upvalues : _ENV
-  local utilData = (self._world):GetService("UtilData")
+function UtilScopeCalcServiceShare:SortTrapsListByPos(target_pos, trapIDList, nearestForMultiGrid)
+  local utilData = self._world:GetService("UtilData")
   local distance_trap = {}
-  for _,entityID in ipairs(trapIDList) do
-    local e = (self._world):GetEntityByID(entityID)
-    local position = (e:GridLocation()).Position
+  for _, entityID in ipairs(trapIDList) do
+    local e = self._world:GetEntityByID(entityID)
+    local position = e:GridLocation().Position
     if utilData:IsValidPiecePos(position) then
       if nearestForMultiGrid then
         local pos = position
-        local distance = (Vector2.Distance)(pos, target_pos)
-        local tBodyArea = (e:BodyArea()):GetArea()
-        for _,v2RelativeBody in ipairs(tBodyArea) do
+        local distance = Vector2.Distance(pos, target_pos)
+        local tBodyArea = e:BodyArea():GetArea()
+        for _, v2RelativeBody in ipairs(tBodyArea) do
           local v2 = v2RelativeBody + position
-          local newDis = (Vector2.Distance)(v2, target_pos)
-          if newDis < distance then
+          local newDis = Vector2.Distance(v2, target_pos)
+          if distance > newDis then
             distance = newDis
             pos = v2
           end
         end
-        ;
-        (table.insert)(distance_trap, {dis = distance, trap_e = e, pos = pos})
+        table.insert(distance_trap, {
+          dis = distance,
+          trap_e = e,
+          pos = pos
+        })
       else
-        do
-          do
-            local distance = (Vector2.Distance)(position, target_pos)
-            ;
-            (table.insert)(distance_trap, {dis = distance, trap_e = e, pos = position})
-            -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        local distance = Vector2.Distance(position, target_pos)
+        table.insert(distance_trap, {
+          dis = distance,
+          trap_e = e,
+          pos = position
+        })
       end
     end
   end
-  local get_index = function(c, p)
-    -- function num : 0_95_0
-    if p.x - c.x == 0 and p.y - c.y > 0 then
+  
+  local function get_index(c, p)
+    if p.x - c.x == 0 and 0 < p.y - c.y then
       return 1
     end
-    if p.x - c.x > 0 and p.y - c.y > 0 then
+    if p.x - c.x > 0 and 0 < p.y - c.y then
       return 2
     end
     if p.x - c.x > 0 and p.y - c.y == 0 then
       return 3
     end
-    if p.x - c.x > 0 and p.y - c.y < 0 then
+    if p.x - c.x > 0 and 0 > p.y - c.y then
       return 4
     end
-    if p.x - c.x == 0 and p.y - c.y < 0 then
+    if p.x - c.x == 0 and 0 > p.y - c.y then
       return 5
     end
-    if p.x - c.x < 0 and p.y - c.y < 0 then
+    if p.x - c.x < 0 and 0 > p.y - c.y then
       return 6
     end
     if p.x - c.x < 0 and p.y - c.y == 0 then
       return 7
     end
-    if p.x - c.x < 0 and p.y - c.y > 0 then
+    if p.x - c.x < 0 and 0 < p.y - c.y then
       return 8
     end
     return 1
   end
-
-  local cmp_fun = function(ele1, ele2)
-    -- function num : 0_95_1 , upvalues : get_index, target_pos
-    if get_index(target_pos, ele1.pos) >= get_index(target_pos, ele2.pos) then
-      do return ele1.dis ~= ele2.dis end
-      do return ele1.dis < ele2.dis end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  
+  local function cmp_fun(ele1, ele2)
+    if ele1.dis == ele2.dis then
+      return get_index(target_pos, ele1.pos) < get_index(target_pos, ele2.pos)
+    else
+      return ele1.dis < ele2.dis
     end
   end
-
-  ;
-  (table.sort)(distance_trap, cmp_fun)
+  
+  table.sort(distance_trap, cmp_fun)
   return distance_trap
 end
 
--- DECOMPILER ERROR at PC299: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.SelectNearestTrapsOnPos = function(self, checkIDList, caster_pos, limit)
-  -- function num : 0_96 , upvalues : _ENV
-  do
-    if limit == -1 then
-      local trap_group = (self._world):GetGroup(((self._world).BW_WEMatchers).TrapID)
-      limit = #trap_group:GetEntities()
-    end
-    local traps = {}
-    local trapIDs = {}
-    local traps_pos = {}
-    local distance_trap = self:SortTrapsByPos(checkIDList, caster_pos, true)
-    local skillScopeTargetSelector = (self._world):GetSkillScopeTargetSelector()
-    for _,element in ipairs(distance_trap) do
-      local trapEntity = element.trap_e
-      if #traps < limit and not trapEntity:HasDeadMark() and skillScopeTargetSelector:SelectConditionFilter(trapEntity) then
-        (table.insert)(traps, element.trap_e)
-        ;
-        (table.insert)(trapIDs, (element.trap_e):GetID())
-        ;
-        (table.insert)(traps_pos, element.pos)
-      end
-    end
-    return traps, traps_pos, trapIDs
+function UtilScopeCalcServiceShare:SelectNearestTrapsOnPos(checkIDList, caster_pos, limit)
+  if limit == -1 then
+    local trap_group = self._world:GetGroup(self._world.BW_WEMatchers.TrapID)
+    limit = #trap_group:GetEntities()
   end
+  local traps = {}
+  local trapIDs = {}
+  local traps_pos = {}
+  local distance_trap = self:SortTrapsByPos(checkIDList, caster_pos, true)
+  local skillScopeTargetSelector = self._world:GetSkillScopeTargetSelector()
+  for _, element in ipairs(distance_trap) do
+    local trapEntity = element.trap_e
+    if limit > #traps and not trapEntity:HasDeadMark() and skillScopeTargetSelector:SelectConditionFilter(trapEntity) then
+      table.insert(traps, element.trap_e)
+      table.insert(trapIDs, element.trap_e:GetID())
+      table.insert(traps_pos, element.pos)
+    end
+  end
+  return traps, traps_pos, trapIDs
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetNearestPosToCasterInPickMonster = function(self)
-  -- function num : 0_97 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function UtilScopeCalcServiceShare:GetNearestPosToCasterInPickMonster()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local logicPickUpCmpt = teamEntity:LogicPickUp()
   local petPstID = logicPickUpCmpt:GetLogicPetPstid()
   local entityID = logicPickUpCmpt:GetEntityID()
-  do
-    if entityID == -1 then
-      local utilDataSvc = (self._world):GetService("UtilData")
-      entityID = utilDataSvc:GetEntityIDByPstID(petPstID)
-    end
-    local casterEntity = (self._world):GetEntityByID(entityID)
-    if casterEntity then
-      local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
-      if activeSkillPickUpComponent then
-        local pickPos = activeSkillPickUpComponent:GetLastPickUpGridPos()
-        local gridPosList = {pickPos}
-        local targetSelector = (self._world):GetSkillScopeTargetSelector()
-        local skillScopeResult = SkillScopeResult:New(SkillScopeType.None, pickPos, gridPosList, gridPosList)
-        local targetEntityIDList = targetSelector:DoSelectSkillTarget(casterEntity, SkillTargetType.Monster, skillScopeResult)
-        if #targetEntityIDList > 0 then
-          local targetID = targetEntityIDList[1]
-          local monsterEntity = (self._world):GetEntityByID(targetID)
-          if monsterEntity then
-            local area = (monsterEntity:BodyArea()):GetArea()
-            local monsterPos = monsterEntity:GetGridPosition()
-            local posList = {}
-            for _,posArea in ipairs(area) do
-              local pos = monsterPos + posArea
-              ;
-              (table.insert)(posList, pos)
-            end
-            local casterPos = (casterEntity:GetGridPosition())
-            local nearestPos = nil
-            local nearestDis = -1
-            for index,checkPos in ipairs(posList) do
-              local dis = (math.abs)(checkPos.x - casterPos.x) + (math.abs)(checkPos.y - casterPos.y)
-              if nearestDis < 0 or dis < nearestDis then
-                nearestDis = dis
-                nearestPos = checkPos
-              end
-            end
-            if nearestPos then
-              return nearestPos
-            end
-          end
-        end
-      end
-    end
+  if entityID == -1 then
+    local utilDataSvc = self._world:GetService("UtilData")
+    entityID = utilDataSvc:GetEntityIDByPstID(petPstID)
+  else
   end
-end
-
--- DECOMPILER ERROR at PC305: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.PreviewGetNearestPosToCasterInPickMonster = function(self, casterEntity)
-  -- function num : 0_98 , upvalues : _ENV
+  local casterEntity = self._world:GetEntityByID(entityID)
   if casterEntity then
-    local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
-    if previewPickUpComponent then
-      local pickPos = previewPickUpComponent:GetLastPickUpGridPos()
+    local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
+    if activeSkillPickUpComponent then
+      local pickPos = activeSkillPickUpComponent:GetLastPickUpGridPos()
       local gridPosList = {pickPos}
-      local targetSelector = (self._world):GetSkillScopeTargetSelector()
+      local targetSelector = self._world:GetSkillScopeTargetSelector()
       local skillScopeResult = SkillScopeResult:New(SkillScopeType.None, pickPos, gridPosList, gridPosList)
       local targetEntityIDList = targetSelector:DoSelectSkillTarget(casterEntity, SkillTargetType.Monster, skillScopeResult)
-      if #targetEntityIDList > 0 then
+      if 0 < #targetEntityIDList then
         local targetID = targetEntityIDList[1]
-        local monsterEntity = (self._world):GetEntityByID(targetID)
+        local monsterEntity = self._world:GetEntityByID(targetID)
         if monsterEntity then
-          local area = (monsterEntity:BodyArea()):GetArea()
+          local area = monsterEntity:BodyArea():GetArea()
           local monsterPos = monsterEntity:GetGridPosition()
           local posList = {}
-          for _,posArea in ipairs(area) do
+          for _, posArea in ipairs(area) do
             local pos = monsterPos + posArea
-            ;
-            (table.insert)(posList, pos)
+            table.insert(posList, pos)
           end
-          local casterPos = (casterEntity:GetGridPosition())
-          local nearestPos = nil
+          local casterPos = casterEntity:GetGridPosition()
+          local nearestPos
           local nearestDis = -1
-          for index,checkPos in ipairs(posList) do
-            local dis = (math.abs)(checkPos.x - casterPos.x) + (math.abs)(checkPos.y - casterPos.y)
-            if nearestDis < 0 or dis < nearestDis then
+          for index, checkPos in ipairs(posList) do
+            local dis = math.abs(checkPos.x - casterPos.x) + math.abs(checkPos.y - casterPos.y)
+            if nearestDis < 0 or nearestDis > dis then
               nearestDis = dis
               nearestPos = checkPos
             end
@@ -2774,43 +2123,38 @@ UtilScopeCalcServiceShare.PreviewGetNearestPosToCasterInPickMonster = function(s
   end
 end
 
--- DECOMPILER ERROR at PC308: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetPickUpMonsterPosCenterPos = function(self)
-  -- function num : 0_99 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local logicPickUpCmpt = teamEntity:LogicPickUp()
-  local petPstID = logicPickUpCmpt:GetLogicPetPstid()
-  local entityID = logicPickUpCmpt:GetEntityID()
-  do
-    if entityID == -1 then
-      local utilDataSvc = (self._world):GetService("UtilData")
-      entityID = utilDataSvc:GetEntityIDByPstID(petPstID)
-    end
-    local utilDataSvc = (self._world):GetService("UtilData")
-    local petEntityId = utilDataSvc:GetEntityIDByPstID(petPstID)
-    local casterEntity = (self._world):GetEntityByID(entityID)
-    if casterEntity then
-      local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
-      if activeSkillPickUpComponent then
-        local pickPosList = activeSkillPickUpComponent:GetAllValidPickUpGridPos()
-        if #pickPosList == 1 then
-          local firstCenterPos = self:_GetPickUpMonsterPos(casterEntity, pickPosList[1])
-          if firstCenterPos then
-            return {firstCenterPos}
+function UtilScopeCalcServiceShare:PreviewGetNearestPosToCasterInPickMonster(casterEntity)
+  if casterEntity then
+    local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
+    if previewPickUpComponent then
+      local pickPos = previewPickUpComponent:GetLastPickUpGridPos()
+      local gridPosList = {pickPos}
+      local targetSelector = self._world:GetSkillScopeTargetSelector()
+      local skillScopeResult = SkillScopeResult:New(SkillScopeType.None, pickPos, gridPosList, gridPosList)
+      local targetEntityIDList = targetSelector:DoSelectSkillTarget(casterEntity, SkillTargetType.Monster, skillScopeResult)
+      if 0 < #targetEntityIDList then
+        local targetID = targetEntityIDList[1]
+        local monsterEntity = self._world:GetEntityByID(targetID)
+        if monsterEntity then
+          local area = monsterEntity:BodyArea():GetArea()
+          local monsterPos = monsterEntity:GetGridPosition()
+          local posList = {}
+          for _, posArea in ipairs(area) do
+            local pos = monsterPos + posArea
+            table.insert(posList, pos)
           end
-        else
-          do
-            if #pickPosList > 1 then
-              local centerPos = {}
-              for index,pickPos in ipairs(pickPosList) do
-                local pickMonsterCenterPos = self:_GetPickUpMonsterPos(casterEntity, pickPos)
-                if pickMonsterCenterPos then
-                  (table.insert)(centerPos, pickMonsterCenterPos)
-                end
-              end
-              return centerPos
+          local casterPos = casterEntity:GetGridPosition()
+          local nearestPos
+          local nearestDis = -1
+          for index, checkPos in ipairs(posList) do
+            local dis = math.abs(checkPos.x - casterPos.x) + math.abs(checkPos.y - casterPos.y)
+            if nearestDis < 0 or nearestDis > dis then
+              nearestDis = dis
+              nearestPos = checkPos
             end
+          end
+          if nearestPos then
+            return nearestPos
           end
         end
       end
@@ -2818,10 +2162,43 @@ UtilScopeCalcServiceShare.GetPickUpMonsterPosCenterPos = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC311: Confused about usage of register: R0 in 'UnsetPending'
+function UtilScopeCalcServiceShare:GetPickUpMonsterPosCenterPos()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local logicPickUpCmpt = teamEntity:LogicPickUp()
+  local petPstID = logicPickUpCmpt:GetLogicPetPstid()
+  local entityID = logicPickUpCmpt:GetEntityID()
+  if entityID == -1 then
+    local utilDataSvc = self._world:GetService("UtilData")
+    entityID = utilDataSvc:GetEntityIDByPstID(petPstID)
+  else
+  end
+  local utilDataSvc = self._world:GetService("UtilData")
+  local petEntityId = utilDataSvc:GetEntityIDByPstID(petPstID)
+  local casterEntity = self._world:GetEntityByID(entityID)
+  if casterEntity then
+    local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
+    if activeSkillPickUpComponent then
+      local pickPosList = activeSkillPickUpComponent:GetAllValidPickUpGridPos()
+      if #pickPosList == 1 then
+        local firstCenterPos = self:_GetPickUpMonsterPos(casterEntity, pickPosList[1])
+        if firstCenterPos then
+          return {firstCenterPos}
+        end
+      elseif 1 < #pickPosList then
+        local centerPos = {}
+        for index, pickPos in ipairs(pickPosList) do
+          local pickMonsterCenterPos = self:_GetPickUpMonsterPos(casterEntity, pickPos)
+          if pickMonsterCenterPos then
+            table.insert(centerPos, pickMonsterCenterPos)
+          end
+        end
+        return centerPos
+      end
+    end
+  end
+end
 
-UtilScopeCalcServiceShare.PreviewGetPickUpMonsterPosCenterPos = function(self, casterEntity)
-  -- function num : 0_100 , upvalues : _ENV
+function UtilScopeCalcServiceShare:PreviewGetPickUpMonsterPosCenterPos(casterEntity)
   if casterEntity then
     local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
     if previewPickUpComponent then
@@ -2831,73 +2208,58 @@ UtilScopeCalcServiceShare.PreviewGetPickUpMonsterPosCenterPos = function(self, c
         if firstCenterPos then
           return {firstCenterPos}
         end
-      else
-        do
-          if #pickPosList > 1 then
-            local centerPos = {}
-            for index,pickPos in ipairs(pickPosList) do
-              local pickMonsterCenterPos = self:_GetPickUpMonsterPos(casterEntity, pickPos)
-              if pickMonsterCenterPos then
-                (table.insert)(centerPos, pickMonsterCenterPos)
-              end
-            end
-            return centerPos
+      elseif 1 < #pickPosList then
+        local centerPos = {}
+        for index, pickPos in ipairs(pickPosList) do
+          local pickMonsterCenterPos = self:_GetPickUpMonsterPos(casterEntity, pickPos)
+          if pickMonsterCenterPos then
+            table.insert(centerPos, pickMonsterCenterPos)
           end
         end
+        return centerPos
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC314: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetPickUpMonsterPosAndCasterPosCenterPos = function(self)
-  -- function num : 0_101 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function UtilScopeCalcServiceShare:GetPickUpMonsterPosAndCasterPosCenterPos()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local logicPickUpCmpt = teamEntity:LogicPickUp()
   local petPstID = logicPickUpCmpt:GetLogicPetPstid()
   local entityID = logicPickUpCmpt:GetEntityID()
-  do
-    if entityID == -1 then
-      local utilDataSvc = (self._world):GetService("UtilData")
-      entityID = utilDataSvc:GetEntityIDByPstID(petPstID)
-    end
-    local utilDataSvc = (self._world):GetService("UtilData")
-    local petEntityId = utilDataSvc:GetEntityIDByPstID(petPstID)
-    local casterEntity = (self._world):GetEntityByID(entityID)
-    if casterEntity then
-      local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
-      if activeSkillPickUpComponent then
-        local pickPosList = activeSkillPickUpComponent:GetAllValidPickUpGridPos()
-        if #pickPosList == 1 then
-          local firstCenterPos = casterEntity:GetGridPosition()
-          local secondCenterPos = self:_GetPickUpMonsterPos(casterEntity, pickPosList[1])
-          if firstCenterPos and secondCenterPos then
-            return {firstCenterPos, secondCenterPos}
-          end
-        else
-          do
-            if #pickPosList > 1 then
-              local centerPos = {}
-              for index,pickPos in ipairs(pickPosList) do
-                local pickMonsterCenterPos = self:_GetPickUpMonsterPos(casterEntity, pickPos)
-                if pickMonsterCenterPos then
-                  (table.insert)(centerPos, pickMonsterCenterPos)
-                end
-              end
-              return centerPos
-            end
+  if entityID == -1 then
+    local utilDataSvc = self._world:GetService("UtilData")
+    entityID = utilDataSvc:GetEntityIDByPstID(petPstID)
+  else
+  end
+  local utilDataSvc = self._world:GetService("UtilData")
+  local petEntityId = utilDataSvc:GetEntityIDByPstID(petPstID)
+  local casterEntity = self._world:GetEntityByID(entityID)
+  if casterEntity then
+    local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
+    if activeSkillPickUpComponent then
+      local pickPosList = activeSkillPickUpComponent:GetAllValidPickUpGridPos()
+      if #pickPosList == 1 then
+        local firstCenterPos = casterEntity:GetGridPosition()
+        local secondCenterPos = self:_GetPickUpMonsterPos(casterEntity, pickPosList[1])
+        if firstCenterPos and secondCenterPos then
+          return {firstCenterPos, secondCenterPos}
+        end
+      elseif 1 < #pickPosList then
+        local centerPos = {}
+        for index, pickPos in ipairs(pickPosList) do
+          local pickMonsterCenterPos = self:_GetPickUpMonsterPos(casterEntity, pickPos)
+          if pickMonsterCenterPos then
+            table.insert(centerPos, pickMonsterCenterPos)
           end
         end
+        return centerPos
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC317: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.PreviewGetPickUpMonsterPosAndCasterPosCenterPos = function(self, casterEntity)
-  -- function num : 0_102 , upvalues : _ENV
+function UtilScopeCalcServiceShare:PreviewGetPickUpMonsterPosAndCasterPosCenterPos(casterEntity)
   if casterEntity then
     local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
     if previewPickUpComponent then
@@ -2908,35 +2270,28 @@ UtilScopeCalcServiceShare.PreviewGetPickUpMonsterPosAndCasterPosCenterPos = func
         if firstCenterPos and secondCenterPos then
           return {firstCenterPos, secondCenterPos}
         end
-      else
-        do
-          if #pickPosList > 1 then
-            local centerPos = {}
-            for index,pickPos in ipairs(pickPosList) do
-              local pickMonsterCenterPos = self:_GetPickUpMonsterPos(casterEntity, pickPos)
-              if pickMonsterCenterPos then
-                (table.insert)(centerPos, pickMonsterCenterPos)
-              end
-            end
-            return centerPos
+      elseif 1 < #pickPosList then
+        local centerPos = {}
+        for index, pickPos in ipairs(pickPosList) do
+          local pickMonsterCenterPos = self:_GetPickUpMonsterPos(casterEntity, pickPos)
+          if pickMonsterCenterPos then
+            table.insert(centerPos, pickMonsterCenterPos)
           end
         end
+        return centerPos
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC320: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare._GetPickUpMonsterPos = function(self, casterEntity, pickPos)
-  -- function num : 0_103 , upvalues : _ENV
+function UtilScopeCalcServiceShare:_GetPickUpMonsterPos(casterEntity, pickPos)
   local gridPosList = {pickPos}
-  local targetSelector = (self._world):GetSkillScopeTargetSelector()
+  local targetSelector = self._world:GetSkillScopeTargetSelector()
   local skillScopeResult = SkillScopeResult:New(SkillScopeType.None, pickPos, gridPosList, gridPosList)
   local targetEntityIDList = targetSelector:DoSelectSkillTarget(casterEntity, SkillTargetType.Monster, skillScopeResult)
-  if #targetEntityIDList > 0 then
+  if 0 < #targetEntityIDList then
     local targetID = targetEntityIDList[1]
-    local monsterEntity = (self._world):GetEntityByID(targetID)
+    local monsterEntity = self._world:GetEntityByID(targetID)
     if monsterEntity then
       local monsterPos = monsterEntity:GetGridPosition()
       return monsterPos
@@ -2944,60 +2299,44 @@ UtilScopeCalcServiceShare._GetPickUpMonsterPos = function(self, casterEntity, pi
   end
 end
 
--- DECOMPILER ERROR at PC323: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.SortScopeRangeWithDir = function(self, scopeRange, dir)
-  -- function num : 0_104 , upvalues : _ENV
-  if not scopeRange or (table.count)(scopeRange) == 0 then
-    return 
+function UtilScopeCalcServiceShare:SortScopeRangeWithDir(scopeRange, dir)
+  if not scopeRange or table.count(scopeRange) == 0 then
+    return
   end
-  ;
-  (table.sort)(scopeRange, function(a, b)
-    -- function num : 0_104_0 , upvalues : dir, _ENV
-    if a.y == b.y then
-      if a.x >= b.x then
-        do return dir ~= Vector2(0, -1) end
-        do return b.y < a.y end
-        if a.y == b.y then
-          if a.x >= b.x then
-            do return dir ~= Vector2(0, 1) end
-            do return a.y < b.y end
-            if a.x == b.x then
-              if a.y >= b.y then
-                do return dir ~= Vector2(-1, 0) end
-                do return a.x < b.x end
-                if a.x == b.x then
-                  if a.y >= b.y then
-                    do return dir ~= Vector2(-1, 0) end
-                    do return b.x < a.x end
-                    -- DECOMPILER ERROR: 16 unprocessed JMP targets
-                  end
-                end
-              end
-            end
-          end
-        end
+  table.sort(scopeRange, function(a, b)
+    if dir == Vector2(0, -1) then
+      if a.y == b.y then
+        return a.x < b.x
       end
+      return a.y > b.y
+    elseif dir == Vector2(0, 1) then
+      if a.y == b.y then
+        return a.x < b.x
+      end
+      return a.y < b.y
+    elseif dir == Vector2(-1, 0) then
+      if a.x == b.x then
+        return a.y < b.y
+      end
+      return a.x < b.x
+    elseif dir == Vector2(-1, 0) then
+      if a.x == b.x then
+        return a.y < b.y
+      end
+      return a.x > b.x
     end
-  end
-)
+  end)
   return scopeRange
 end
 
--- DECOMPILER ERROR at PC326: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.InsertValidPos = function(self, posList, pos)
-  -- function num : 0_105 , upvalues : _ENV
-  if self:IsValidPiecePos(pos) and not (table.Vector2Include)(posList, pos) then
-    (table.insert)(posList, pos)
+function UtilScopeCalcServiceShare:InsertValidPos(posList, pos)
+  if self:IsValidPiecePos(pos) and not table.Vector2Include(posList, pos) then
+    table.insert(posList, pos)
   end
 end
 
--- DECOMPILER ERROR at PC329: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.CalcPickUpSingleLine = function(self, pickUpDir, casterPos)
-  -- function num : 0_106 , upvalues : _ENV
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UtilScopeCalcServiceShare:CalcPickUpSingleLine(pickUpDir, casterPos)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local maxLen = boardServiceLogic:GetCurBoardMaxLen()
   local length = maxLen
   local pickDirScope = {}
@@ -3006,60 +2345,43 @@ UtilScopeCalcServiceShare.CalcPickUpSingleLine = function(self, pickUpDir, caste
     if pickUpDir == HitBackDirectionType.RightDown then
       self:InsertValidPos(pickDirScope, Vector2(casterPos.x + i, casterPos.y - i))
       self:InsertValidPos(pickNEGDirScope, Vector2(casterPos.x - i, casterPos.y + i))
-    else
-      if pickUpDir == HitBackDirectionType.LeftUp then
-        self:InsertValidPos(pickDirScope, Vector2(casterPos.x - i, casterPos.y + i))
-        self:InsertValidPos(pickNEGDirScope, Vector2(casterPos.x + i, casterPos.y - i))
-      else
-        if pickUpDir == HitBackDirectionType.LeftDown then
-          self:InsertValidPos(pickDirScope, Vector2(casterPos.x - i, casterPos.y - i))
-          self:InsertValidPos(pickNEGDirScope, Vector2(casterPos.x + i, casterPos.y + i))
-        else
-          if pickUpDir == HitBackDirectionType.RightUp then
-            self:InsertValidPos(pickDirScope, Vector2(casterPos.x + i, casterPos.y + i))
-            self:InsertValidPos(pickNEGDirScope, Vector2(casterPos.x - i, casterPos.y - i))
-          else
-            if pickUpDir == HitBackDirectionType.Right then
-              self:InsertValidPos(pickDirScope, Vector2(casterPos.x + i, casterPos.y))
-              self:InsertValidPos(pickNEGDirScope, Vector2(casterPos.x - i, casterPos.y))
-            else
-              if pickUpDir == HitBackDirectionType.Left then
-                self:InsertValidPos(pickDirScope, Vector2(casterPos.x - i, casterPos.y))
-                self:InsertValidPos(pickNEGDirScope, Vector2(casterPos.x + i, casterPos.y))
-              else
-                if pickUpDir == HitBackDirectionType.Down then
-                  self:InsertValidPos(pickDirScope, Vector2(casterPos.x, casterPos.y - i))
-                  self:InsertValidPos(pickNEGDirScope, Vector2(casterPos.x, casterPos.y + i))
-                else
-                  if pickUpDir == HitBackDirectionType.Up then
-                    self:InsertValidPos(pickDirScope, Vector2(casterPos.x, casterPos.y + i))
-                    self:InsertValidPos(pickNEGDirScope, Vector2(casterPos.x, casterPos.y - i))
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+    elseif pickUpDir == HitBackDirectionType.LeftUp then
+      self:InsertValidPos(pickDirScope, Vector2(casterPos.x - i, casterPos.y + i))
+      self:InsertValidPos(pickNEGDirScope, Vector2(casterPos.x + i, casterPos.y - i))
+    elseif pickUpDir == HitBackDirectionType.LeftDown then
+      self:InsertValidPos(pickDirScope, Vector2(casterPos.x - i, casterPos.y - i))
+      self:InsertValidPos(pickNEGDirScope, Vector2(casterPos.x + i, casterPos.y + i))
+    elseif pickUpDir == HitBackDirectionType.RightUp then
+      self:InsertValidPos(pickDirScope, Vector2(casterPos.x + i, casterPos.y + i))
+      self:InsertValidPos(pickNEGDirScope, Vector2(casterPos.x - i, casterPos.y - i))
+    elseif pickUpDir == HitBackDirectionType.Right then
+      self:InsertValidPos(pickDirScope, Vector2(casterPos.x + i, casterPos.y))
+      self:InsertValidPos(pickNEGDirScope, Vector2(casterPos.x - i, casterPos.y))
+    elseif pickUpDir == HitBackDirectionType.Left then
+      self:InsertValidPos(pickDirScope, Vector2(casterPos.x - i, casterPos.y))
+      self:InsertValidPos(pickNEGDirScope, Vector2(casterPos.x + i, casterPos.y))
+    elseif pickUpDir == HitBackDirectionType.Down then
+      self:InsertValidPos(pickDirScope, Vector2(casterPos.x, casterPos.y - i))
+      self:InsertValidPos(pickNEGDirScope, Vector2(casterPos.x, casterPos.y + i))
+    elseif pickUpDir == HitBackDirectionType.Up then
+      self:InsertValidPos(pickDirScope, Vector2(casterPos.x, casterPos.y + i))
+      self:InsertValidPos(pickNEGDirScope, Vector2(casterPos.x, casterPos.y - i))
     end
   end
   return pickDirScope, pickNEGDirScope
 end
 
--- DECOMPILER ERROR at PC332: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.PreviewGetNearestMonsterGridCenterPos = function(self, casterEntity)
-  -- function num : 0_107 , upvalues : _ENV
+function UtilScopeCalcServiceShare:PreviewGetNearestMonsterGridCenterPos(casterEntity)
   if not casterEntity then
-    return 
+    return
   end
-  local retPos = nil
+  local retPos
   local casterPos = casterEntity:GetGridPosition()
-  if (self._world):MatchType() ~= MatchType.MT_BlackFist then
-    local tMonsters, tMonsterPos = nil, nil
+  if self._world:MatchType() ~= MatchType.MT_BlackFist then
+    local tMonsters, tMonsterPos
     local includeDead = true
-    tMonsters = self:SelectNearestMonsterOnPos(casterPos, 1, includeDead)
-    if tMonsters and #tMonsters > 0 then
+    tMonsters, tMonsterPos = self:SelectNearestMonsterOnPos(casterPos, 1, includeDead)
+    if tMonsters and 0 < #tMonsters then
       local targetEntity = tMonsters[1]
       local targetPos = tMonsterPos[1]
       if targetEntity then
@@ -3067,38 +2389,27 @@ UtilScopeCalcServiceShare.PreviewGetNearestMonsterGridCenterPos = function(self,
       end
     end
   else
-    do
-      -- DECOMPILER ERROR at PC33: Overwrote pending register: R5 in 'AssignReg'
-
-      if casterEntity:HasSuperEntity() then
-        casterEntity = casterEntity:GetSuperEntity()
-      else
-        if casterEntity:HasSummoner() then
-          casterEntity = casterEntity:GetSummonerEntity()
-        end
-      end
-      if casterEntity:HasPet() then
-        local teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-        local enemyEntity = (teamEntity:Team()):GetEnemyTeamEntity()
-        retPos = enemyEntity:GetGridPosition()
-      end
-      do
-        return retPos
-      end
+    if casterEntity:HasSuperEntity() then
+      casterEntity = casterEntity:GetSuperEntity()
+    elseif casterEntity:HasSummoner() then
+      casterEntity = casterEntity:GetSummonerEntity()
+    end
+    if casterEntity:HasPet() then
+      local teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
+      local enemyEntity = teamEntity:Team():GetEnemyTeamEntity()
+      retPos = enemyEntity:GetGridPosition()
     end
   end
+  return retPos
 end
 
--- DECOMPILER ERROR at PC335: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetNearestMonsterGridCenterPos = function(self, casterPos)
-  -- function num : 0_108 , upvalues : _ENV
-  local retPos = nil
-  if (self._world):MatchType() ~= MatchType.MT_BlackFist then
-    local tMonsters, tMonsterPos = nil, nil
+function UtilScopeCalcServiceShare:GetNearestMonsterGridCenterPos(casterPos)
+  local retPos
+  if self._world:MatchType() ~= MatchType.MT_BlackFist then
+    local tMonsters, tMonsterPos
     local includeDead = true
-    tMonsters = self:SelectNearestMonsterOnPos(casterPos, 1, includeDead)
-    if tMonsters and #tMonsters > 0 then
+    tMonsters, tMonsterPos = self:SelectNearestMonsterOnPos(casterPos, 1, includeDead)
+    if tMonsters and 0 < #tMonsters then
       local targetEntity = tMonsters[1]
       local targetPos = tMonsterPos[1]
       if targetEntity then
@@ -3106,232 +2417,170 @@ UtilScopeCalcServiceShare.GetNearestMonsterGridCenterPos = function(self, caster
       end
     end
   else
-    do
-      -- DECOMPILER ERROR at PC29: Overwrote pending register: R4 in 'AssignReg'
-
-      do
-        local enemyEntity = ((self._world):Player()):GetCurrentEnemyTeamEntity()
-        retPos = enemyEntity:GetGridPosition()
-        return retPos
-      end
-    end
+    local enemyEntity = self._world:Player():GetCurrentEnemyTeamEntity()
+    retPos = enemyEntity:GetGridPosition()
   end
+  return retPos
 end
 
--- DECOMPILER ERROR at PC338: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetGridListCenterPos = function(self, gridList)
-  -- function num : 0_109 , upvalues : _ENV
-  (table.sort)(gridList, function(a, b)
-    -- function num : 0_109_0
-    if b.y >= a.y then
-      do return a.x ~= b.x end
-      if b.x >= a.x then
-        do return a.y ~= b.y end
-        do return b.x < a.x end
-        -- DECOMPILER ERROR: 6 unprocessed JMP targets
-      end
+function UtilScopeCalcServiceShare:GetGridListCenterPos(gridList)
+  table.sort(gridList, function(a, b)
+    if a.x == b.x then
+      return a.y > b.y
+    elseif a.y == b.y then
+      return a.x > b.x
+    else
+      return a.x > b.x
     end
-  end
-)
+  end)
   local centerIndex = #gridList / 2
-  local centerPos = nil
-  if centerIndex == (math.floor)(centerIndex) then
+  local centerPos
+  if centerIndex == math.floor(centerIndex) then
     local pos1 = gridList[centerIndex]
     local pos2 = gridList[centerIndex + 1]
     centerPos = Vector2((pos1.x + pos2.x) / 2, (pos1.y + pos2.y) / 2)
   else
-    do
-      centerIndex = (math.floor)(centerIndex + 0.5)
-      centerPos = gridList[centerIndex]
-      return centerPos
-    end
+    centerIndex = math.floor(centerIndex + 0.5)
+    centerPos = gridList[centerIndex]
   end
+  return centerPos
 end
 
--- DECOMPILER ERROR at PC341: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetPiecesExcludeBlockID = function(self, blockID)
-  -- function num : 0_110 , upvalues : _ENV
-  local boardSvc = (self._world):GetService("BoardLogic")
-  local utilDataSvc = (self._world):GetService("UtilData")
+function UtilScopeCalcServiceShare:GetPiecesExcludeBlockID(blockID)
+  local boardSvc = self._world:GetService("BoardLogic")
+  local utilDataSvc = self._world:GetService("UtilData")
   local posTable = {}
   local validPosList = self:GetAllValidGridPosList()
   local blockFlag = boardSvc:GetBlockFlagByBlockId(blockID)
-  for _,pos in ipairs(validPosList) do
+  for _, pos in ipairs(validPosList) do
     if not utilDataSvc:IsPosBlock(pos, blockFlag) then
-      (table.insert)(posTable, pos)
+      table.insert(posTable, pos)
     end
   end
   return posTable
 end
 
--- DECOMPILER ERROR at PC344: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.ExpandMaxChainSkillScope = function(self, casterEntity, skillID, scopeResult, playerGridPos)
-  -- function num : 0_111 , upvalues : _ENV
-  if (casterEntity:SkillInfo()):GetMaxChainSkillID() == skillID and (casterEntity:BuffComponent()):GetBuffValue("ExpandMaxChainSkillScope") then
-    local playerBodyArea = (casterEntity:BodyArea()):GetArea()
-    local dir = (casterEntity:GridLocation()):GetGridDir()
-    local scopeType = (casterEntity:BuffComponent()):GetBuffValue("ExpandMaxChainSkillScopeType")
-    local scopeParam = (casterEntity:BuffComponent()):GetBuffValue("ExpandMaxChainSkillScopeParam")
+function UtilScopeCalcServiceShare:ExpandMaxChainSkillScope(casterEntity, skillID, scopeResult, playerGridPos)
+  if casterEntity:SkillInfo():GetMaxChainSkillID() == skillID and casterEntity:BuffComponent():GetBuffValue("ExpandMaxChainSkillScope") then
+    local playerBodyArea = casterEntity:BodyArea():GetArea()
+    local dir = casterEntity:GridLocation():GetGridDir()
+    local scopeType = casterEntity:BuffComponent():GetBuffValue("ExpandMaxChainSkillScopeType")
+    local scopeParam = casterEntity:BuffComponent():GetBuffValue("ExpandMaxChainSkillScopeParam")
     local centerType = SkillScopeCenterType.CasterPos
     local nTargetType = SkillTargetType.Monster
-    local scopeFilterParam = (SkillScopeFilterParam.GenerateDefaultParam)()
-    local newScopeResult = (self._skillScopeCalc):CalcSkillScopeWithParams(scopeType, scopeParam, centerType, nTargetType, scopeFilterParam, playerGridPos, dir, playerBodyArea, casterEntity)
+    local scopeFilterParam = SkillScopeFilterParam.GenerateDefaultParam()
+    local newScopeResult = self._skillScopeCalc:CalcSkillScopeWithParams(scopeType, scopeParam, centerType, nTargetType, scopeFilterParam, playerGridPos, dir, playerBodyArea, casterEntity)
     local expandRange = newScopeResult:GetAttackRange()
-    ;
-    (table.Vector2Append)(scopeResult._attackGridRange, expandRange, scopeResult._attackGridRange)
-    ;
-    (table.Vector2Append)(scopeResult._wholeGridRange, expandRange, scopeResult._wholeGridRange)
+    table.Vector2Append(scopeResult._attackGridRange, expandRange, scopeResult._attackGridRange)
+    table.Vector2Append(scopeResult._wholeGridRange, expandRange, scopeResult._wholeGridRange)
   end
 end
 
--- DECOMPILER ERROR at PC347: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetPlayerPosAndFarthestMonsterGridPos = function(self)
-  -- function num : 0_112 , upvalues : _ENV
+function UtilScopeCalcServiceShare:GetPlayerPosAndFarthestMonsterGridPos()
   local retPosArray = {}
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local playerPos = teamEntity:GetGridPosition()
   retPosArray[#retPosArray + 1] = playerPos
   local monsterPosArray = {}
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    local enemyEntity = (teamEntity:Team()):GetEnemyTeamEntity()
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    local enemyEntity = teamEntity:Team():GetEnemyTeamEntity()
     monsterPosArray[1] = enemyEntity:GetGridPosition()
   else
-    do
-      local skillScopeTargetSelector = (self._world):GetSkillScopeTargetSelector()
-      local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-      for _,monsterEntity in ipairs(monsterGroup:GetEntities()) do
-        if not monsterEntity:HasDeadMark() and skillScopeTargetSelector:SelectConditionFilter(monsterEntity) then
-          local pos = monsterEntity:GetGridPosition()
-          local bodyAreaList = (monsterEntity:BodyArea()):GetArea()
-          for _,offset in ipairs(bodyAreaList) do
-            local tmpPos = pos + offset
-            ;
-            (table.insert)(monsterPosArray, tmpPos)
-          end
-        end
-      end
-      do
-        do
-          if #monsterPosArray > 0 then
-            local fun = function(ele1, ele2)
-    -- function num : 0_112_0 , upvalues : _ENV, playerPos
-    local dis1 = (Vector2.Distance)(playerPos, ele1)
-    local dis2 = (Vector2.Distance)(playerPos, ele2)
-    do return dis2 < dis1 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-            ;
-            (table.sort)(monsterPosArray, fun)
-            retPosArray[#retPosArray + 1] = monsterPosArray[1]
-          end
-          return retPosArray
-        end
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC350: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.GetFarthestMonsterGridPos = function(self, casterPos)
-  -- function num : 0_113 , upvalues : _ENV
-  local monsterPosArray = {}
-  local retPos = nil
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    local enemyEntity = ((self._world):Player()):GetCurrentEnemyTeamEntity()
-    retPos = enemyEntity:GetGridPosition()
-  else
-    do
-      local skillScopeTargetSelector = (self._world):GetSkillScopeTargetSelector()
-      local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-      for _,monsterEntity in ipairs(monsterGroup:GetEntities()) do
-        if not monsterEntity:HasDeadMark() and skillScopeTargetSelector:SelectConditionFilter(monsterEntity) then
-          local pos = monsterEntity:GetGridPosition()
-          ;
-          (table.insert)(monsterPosArray, pos)
-        end
-      end
-      do
-        do
-          if #monsterPosArray > 0 then
-            local fun = function(ele1, ele2)
-    -- function num : 0_113_0 , upvalues : _ENV, casterPos
-    local dis1 = (Vector2.Distance)(casterPos, ele1)
-    local dis2 = (Vector2.Distance)(casterPos, ele2)
-    do return dis2 < dis1 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-            ;
-            (table.sort)(monsterPosArray, fun)
-            retPos = monsterPosArray[1]
-          end
-          return retPos
-        end
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC353: Confused about usage of register: R0 in 'UnsetPending'
-
-UtilScopeCalcServiceShare.PreviewGetFarthestMonsterGridCenterPos = function(self, casterEntity)
-  -- function num : 0_114 , upvalues : _ENV
-  if not casterEntity then
-    return 
-  end
-  local retPos = nil
-  local monsterPosArray = {}
-  local casterPos = casterEntity:GetGridPosition()
-  if (self._world):MatchType() ~= MatchType.MT_BlackFist then
-    local skillScopeTargetSelector = (self._world):GetSkillScopeTargetSelector()
-    local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-    for _,monsterEntity in ipairs(monsterGroup:GetEntities()) do
+    local skillScopeTargetSelector = self._world:GetSkillScopeTargetSelector()
+    local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+    for _, monsterEntity in ipairs(monsterGroup:GetEntities()) do
       if not monsterEntity:HasDeadMark() and skillScopeTargetSelector:SelectConditionFilter(monsterEntity) then
         local pos = monsterEntity:GetGridPosition()
-        ;
-        (table.insert)(monsterPosArray, pos)
+        local bodyAreaList = monsterEntity:BodyArea():GetArea()
+        for _, offset in ipairs(bodyAreaList) do
+          local tmpPos = pos + offset
+          table.insert(monsterPosArray, tmpPos)
+        end
+      end
+    end
+  end
+  if 0 < #monsterPosArray then
+    local function fun(ele1, ele2)
+      local dis1 = Vector2.Distance(playerPos, ele1)
+      
+      local dis2 = Vector2.Distance(playerPos, ele2)
+      return dis1 > dis2
+    end
+    
+    table.sort(monsterPosArray, fun)
+    retPosArray[#retPosArray + 1] = monsterPosArray[1]
+  end
+  return retPosArray
+end
+
+function UtilScopeCalcServiceShare:GetFarthestMonsterGridPos(casterPos)
+  local monsterPosArray = {}
+  local retPos
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    local enemyEntity = self._world:Player():GetCurrentEnemyTeamEntity()
+    retPos = enemyEntity:GetGridPosition()
+  else
+    local skillScopeTargetSelector = self._world:GetSkillScopeTargetSelector()
+    local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+    for _, monsterEntity in ipairs(monsterGroup:GetEntities()) do
+      if not monsterEntity:HasDeadMark() and skillScopeTargetSelector:SelectConditionFilter(monsterEntity) then
+        local pos = monsterEntity:GetGridPosition()
+        table.insert(monsterPosArray, pos)
+      end
+    end
+  end
+  if 0 < #monsterPosArray then
+    local function fun(ele1, ele2)
+      local dis1 = Vector2.Distance(casterPos, ele1)
+      
+      local dis2 = Vector2.Distance(casterPos, ele2)
+      return dis1 > dis2
+    end
+    
+    table.sort(monsterPosArray, fun)
+    retPos = monsterPosArray[1]
+  end
+  return retPos
+end
+
+function UtilScopeCalcServiceShare:PreviewGetFarthestMonsterGridCenterPos(casterEntity)
+  if not casterEntity then
+    return
+  end
+  local retPos
+  local monsterPosArray = {}
+  local casterPos = casterEntity:GetGridPosition()
+  if self._world:MatchType() ~= MatchType.MT_BlackFist then
+    local skillScopeTargetSelector = self._world:GetSkillScopeTargetSelector()
+    local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+    for _, monsterEntity in ipairs(monsterGroup:GetEntities()) do
+      if not monsterEntity:HasDeadMark() and skillScopeTargetSelector:SelectConditionFilter(monsterEntity) then
+        local pos = monsterEntity:GetGridPosition()
+        table.insert(monsterPosArray, pos)
       end
     end
   else
-    do
-      if casterEntity:HasSuperEntity() then
-        casterEntity = casterEntity:GetSuperEntity()
-      else
-        if casterEntity:HasSummoner() then
-          casterEntity = casterEntity:GetSummonerEntity()
-        end
-      end
-      if casterEntity:HasPet() then
-        local teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-        local enemyEntity = (teamEntity:Team()):GetEnemyTeamEntity()
-        retPos = enemyEntity:GetGridPosition()
-      end
-      do
-        do
-          if #monsterPosArray > 0 then
-            local fun = function(ele1, ele2)
-    -- function num : 0_114_0 , upvalues : _ENV, casterPos
-    local dis1 = (Vector2.Distance)(casterPos, ele1)
-    local dis2 = (Vector2.Distance)(casterPos, ele2)
-    do return dis2 < dis1 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-            ;
-            (table.sort)(monsterPosArray, fun)
-            retPos = monsterPosArray[1]
-          end
-          return retPos
-        end
-      end
+    if casterEntity:HasSuperEntity() then
+      casterEntity = casterEntity:GetSuperEntity()
+    elseif casterEntity:HasSummoner() then
+      casterEntity = casterEntity:GetSummonerEntity()
+    end
+    if casterEntity:HasPet() then
+      local teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
+      local enemyEntity = teamEntity:Team():GetEnemyTeamEntity()
+      retPos = enemyEntity:GetGridPosition()
     end
   end
+  if 0 < #monsterPosArray then
+    local function fun(ele1, ele2)
+      local dis1 = Vector2.Distance(casterPos, ele1)
+      
+      local dis2 = Vector2.Distance(casterPos, ele2)
+      return dis1 > dis2
+    end
+    
+    table.sort(monsterPosArray, fun)
+    retPos = monsterPosArray[1]
+  end
+  return retPos
 end
-
-

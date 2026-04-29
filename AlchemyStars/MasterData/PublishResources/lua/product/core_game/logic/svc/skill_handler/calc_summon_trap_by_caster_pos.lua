@@ -1,88 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_summon_trap_by_caster_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SummonTrapByCasterPos", Object)
 SkillEffectCalc_SummonTrapByCasterPos = SkillEffectCalc_SummonTrapByCasterPos
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SummonTrapByCasterPos.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SummonTrapByCasterPos:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
+  self._configService = self._world:GetService("Config")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrapByCasterPos.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_SummonTrapByCasterPos:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillRange = skillEffectCalcParam.skillRange
-  if not skillRange or (table.count)(skillRange) == 0 then
-    return 
+  if not skillRange or table.count(skillRange) == 0 then
+    return
   end
   local casterID = skillEffectCalcParam.casterEntityID
-  local casterEntity = (self._world):GetEntityByID(casterID)
+  local casterEntity = self._world:GetEntityByID(casterID)
   local casterPos = casterEntity:GetGridPosition()
   local effectParam = skillEffectCalcParam.skillEffectParam
   local trapMaxCount = effectParam:GetMaxCount()
   local rangeAndCount = effectParam:GetRangeAndCount()
   local trapID = effectParam:GetTrapID()
-  local bodyArea = (casterEntity:BodyArea()):GetArea()
+  local bodyArea = casterEntity:BodyArea():GetArea()
   local casterBodyArea = {}
-  for i,p in ipairs(bodyArea) do
+  for i, p in ipairs(bodyArea) do
     local newPos = Vector2(p.x + casterPos.x, p.y + casterPos.y)
-    ;
-    (table.insert)(casterBodyArea, newPos)
+    table.insert(casterBodyArea, newPos)
   end
-  local trapSvc = (self._world):GetService("TrapLogic")
+  local trapSvc = self._world:GetService("TrapLogic")
   local resultList = {}
-  for i,param in ipairs(rangeAndCount) do
-    local range = (table.clone)(param.vectorRange)
+  for i, param in ipairs(rangeAndCount) do
+    local range = table.clone(param.vectorRange)
     local inRangeCount = self:RangeInRangeCount(range, casterBodyArea)
     local maxCount = param.maxCount
-    if (param.casterInRange)[inRangeCount] then
-      maxCount = maxCount - (param.casterInRange)[inRangeCount]
+    if param.casterInRange[inRangeCount] then
+      maxCount = maxCount - param.casterInRange[inRangeCount]
     end
     local trapList = trapSvc:FindTrapByTrapIDAndRange(trapID, range)
-    if #trapList < maxCount then
+    if maxCount > #trapList then
       self:SummonTrapInRange(range, trapID, maxCount - #trapList, resultList)
     end
   end
   return resultList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrapByCasterPos.SummonTrapInRange = function(self, range, trapID, count, resultList)
-  -- function num : 0_2 , upvalues : _ENV
-  local randomSvc = (self._world):GetService("RandomLogic")
-  local trapSvc = (self._world):GetService("TrapLogic")
-  while #range > 0 and count > 0 do
+function SkillEffectCalc_SummonTrapByCasterPos:SummonTrapInRange(range, trapID, count, resultList)
+  local randomSvc = self._world:GetService("RandomLogic")
+  local trapSvc = self._world:GetService("TrapLogic")
+  while 0 < #range and 0 < count do
     local index = randomSvc:BoardLogicRand(1, #range)
     local pos = range[index]
-    ;
-    (table.remove)(range, index)
+    table.remove(range, index)
     if trapSvc:CanSummonTrapOnPos(pos, trapID) then
       local result = SkillSummonTrapEffectResult:New(trapID, Vector2(pos.x, pos.y))
-      ;
-      (table.insert)(resultList, result)
+      table.insert(resultList, result)
       count = count - 1
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrapByCasterPos.RangeInRangeCount = function(self, range1, range2)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectCalc_SummonTrapByCasterPos:RangeInRangeCount(range1, range2)
   local count = 0
-  for _,pos in ipairs(range1) do
-    if (table.Vector2Include)(range2, pos) then
+  for _, pos in ipairs(range1) do
+    if table.Vector2Include(range2, pos) then
       count = count + 1
     end
   end
   return count
 end
-
-

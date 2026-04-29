@@ -1,31 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/ani_pop_star/stn_ani_pop_star_init_teamctx.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("AniPopStar_InitTeamctx", CTestRobot_Base)
 AniPopStar_InitTeamctx = AniPopStar_InitTeamctx
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AniPopStar_InitTeamctx.OnWorking = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function AniPopStar_InitTeamctx:OnWorking()
   local aniPopInfo = self.m_pRunData
   local curSeason = aniPopInfo.cur_season
   local roundInfo = aniPopInfo.round_info
-  local levelInfo = (roundInfo.level_list)[roundInfo.mission_index]
-  local missionCfg = (Cfg.cfg_anipop_fight_level)[levelInfo.level_id]
+  local levelInfo = roundInfo.level_list[roundInfo.mission_index]
+  local missionCfg = Cfg.cfg_anipop_fight_level[levelInfo.level_id]
   local missionID = missionCfg.LevelID
   local mission_index = roundInfo.mission_index
-  local anipopModule = (GameGlobal.GetModule)(AnipopModule)
+  local anipopModule = GameGlobal.GetModule(AnipopModule)
   local formationInfo = anipopModule:GetFormationInfo()
   local missionModule = self:GetModule(MissionModule)
   local ctx = missionModule:TeamCtx()
-  ctx:Init(TeamOpenerType.AniPopStar, {missionID, nil, mission_index, curSeason})
+  ctx:Init(TeamOpenerType.AniPopStar, {
+    missionID,
+    nil,
+    mission_index,
+    curSeason
+  })
   ctx:InitAniPopStarTeam(formationInfo)
   self.m_nLogicResult = 1
   self.m_pReturnData = self.m_pRunData
-  return ((AniPopStar_InitTeamctx.super).OnWorking)(self)
+  return AniPopStar_InitTeamctx.super.OnWorking(self)
 end
-
-

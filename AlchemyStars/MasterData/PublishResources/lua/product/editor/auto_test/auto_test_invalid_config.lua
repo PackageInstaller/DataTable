@@ -1,11 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/auto_test_invalid_config.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 InvalidAutoTestConfig = {
-invalidNode = {[1] = "词缀", [2] = "爬塔房间词缀", [3] = "国服屏蔽"}
-, 
-invalidSuite = {[1] = "AutoTest_221028_175334"}
+  invalidNode = {
+    [1] = "词缀",
+    [2] = "爬塔房间词缀",
+    [3] = "国服屏蔽"
+  },
+  invalidSuite = {
+    [1] = "AutoTest_221028_175334"
+  }
 }
-

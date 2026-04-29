@@ -1,72 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/ui_world_boss_diffculty_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorldBossDiffcultyItem", UICustomWidget)
 UIWorldBossDiffcultyItem = UIWorldBossDiffcultyItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossDiffcultyItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWorldBossDiffcultyItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDiffcultyItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIWorldBossDiffcultyItem:InitWidget()
   self.selectObj = self:GetGameObject("selectObj")
-  ;
-  (self.selectObj):SetActive(true)
+  self.selectObj:SetActive(true)
   self.title = self:GetUIComponent("UILocalizationText", "title")
   self.desc = self:GetUIComponent("UILocalizationText", "desc")
   self.animaiton = self:GetUIComponent("Animation", "animation")
   self.itemBg = self:GetUIComponent("RawImageLoader", "itemBg")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDiffcultyItem.SetData = function(self, index, cfg, descKey, clickCall)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWorldBossDiffcultyItem:SetData(index, cfg, descKey, clickCall)
   self.index = index
   self.clickCall = clickCall
-  ;
-  (self.title):SetText((StringTable.Get)(cfg.name))
-  ;
-  (self.desc):SetText((StringTable.Get)(descKey))
-  ;
-  (self.itemBg):LoadImage(cfg.bg)
+  self.title:SetText(StringTable.Get(cfg.name))
+  self.desc:SetText(StringTable.Get(descKey))
+  self.itemBg:LoadImage(cfg.bg)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDiffcultyItem.SetSelect = function(self, bSelect)
-  -- function num : 0_3
+function UIWorldBossDiffcultyItem:SetSelect(bSelect)
   if bSelect then
-    (self.animaiton):Play("UIWorldBossDiffcultyItem_in")
+    self.animaiton:Play("UIWorldBossDiffcultyItem_in")
   else
-    ;
-    (self.animaiton):Play("UIWorldBossDiffcultyItem_out")
+    self.animaiton:Play("UIWorldBossDiffcultyItem_out")
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDiffcultyItem.ItemBgOnClick = function(self, go)
-  -- function num : 0_4
+function UIWorldBossDiffcultyItem:ItemBgOnClick(go)
   if self.clickCall then
-    (self.clickCall)(self, self.index)
+    self.clickCall(self, self.index)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDiffcultyItem.DescScrollViewOnClick = function(self, go)
-  -- function num : 0_5
+function UIWorldBossDiffcultyItem:DescScrollViewOnClick(go)
   if self.clickCall then
-    (self.clickCall)(self, self.index)
+    self.clickCall(self, self.index)
   end
 end
-
-

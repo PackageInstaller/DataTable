@@ -1,83 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/pet_enhance/ui_activity_pet_enhance_pet_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityPetEnhancePetItem", UICustomWidget)
 UIActivityPetEnhancePetItem = UIActivityPetEnhancePetItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityPetEnhancePetItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityPetEnhancePetItem:Constructor()
   self._pet_pstid = 0
   self._atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetEnhancePetItem.OnShow = function(self)
-  -- function num : 0_1
+function UIActivityPetEnhancePetItem:OnShow()
   self._headImage = self:GetUIComponent("RawImageLoader", "headImage")
   self._attribute1 = self:GetUIComponent("Image", "attribute1")
   self._attribute2 = self:GetUIComponent("Image", "attribute2")
   self._petAreaGo = self:GetGameObject("PetArea")
   self._emptyAreaGo = self:GetGameObject("EmptyArea")
-  ;
-  (self._petAreaGo):SetActive(false)
-  ;
-  (self._emptyAreaGo):SetActive(true)
+  self._petAreaGo:SetActive(false)
+  self._emptyAreaGo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetEnhancePetItem.OnHide = function(self)
-  -- function num : 0_2
+function UIActivityPetEnhancePetItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetEnhancePetItem.HeadBgOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityPetEnhancePetItem:HeadBgOnClick()
   if not self._cfgCorrect then
-    return 
+    return
   end
-  local petId = (self._cfgCorrect).PetId
+  local petId = self._cfgCorrect.PetId
   local petInfo = MatchPetInfo:New()
   petInfo.pet_pstid = 0
   petInfo.pet_power = -1
-  petInfo.template_id = (self._cfgCorrect).PetId
-  petInfo.level = (self._cfgCorrect).Level
-  petInfo.grade = (self._cfgCorrect).GradeLv
-  petInfo.awakening = (self._cfgCorrect).AwakeningLv
-  petInfo.equip_lv = (self._cfgCorrect).EquipLv
-  petInfo.equip_refine_lv = (self._cfgCorrect).EquipRefineLv
+  petInfo.template_id = self._cfgCorrect.PetId
+  petInfo.level = self._cfgCorrect.Level
+  petInfo.grade = self._cfgCorrect.GradeLv
+  petInfo.awakening = self._cfgCorrect.AwakeningLv
+  petInfo.equip_lv = self._cfgCorrect.EquipLv
+  petInfo.equip_refine_lv = self._cfgCorrect.EquipRefineLv
   petInfo.affinity_level = 1
   petInfo.m_nHelpPetKey = 0
   self._matchPet = Pet:New(petInfo)
-  ;
-  (self._matchPet):CalAttr()
+  self._matchPet:CalAttr()
   local customPetData = UICustomPetData:New()
   customPetData:SetPetId(petId)
-  customPetData:SetAttack((self._matchPet):GetPetAttack())
-  customPetData:SetHP((self._matchPet):GetPetHealth())
-  customPetData:SetDef((self._matchPet):GetPetDefence())
-  customPetData:SetAwakeing((self._matchPet):GetPetAwakening())
-  customPetData:SetGrade((self._matchPet):GetPetGrade())
-  customPetData:SetEquip((self._matchPet):GetEquipLv())
+  customPetData:SetAttack(self._matchPet:GetPetAttack())
+  customPetData:SetHP(self._matchPet:GetPetHealth())
+  customPetData:SetDef(self._matchPet:GetPetDefence())
+  customPetData:SetAwakeing(self._matchPet:GetPetAwakening())
+  customPetData:SetGrade(self._matchPet:GetPetGrade())
+  customPetData:SetEquip(self._matchPet:GetEquipLv())
   customPetData:SetDetailTitleText("str_activity_pet_enhance_detail_titile")
   customPetData:SetShowLevelArea(true)
-  customPetData:SetCustomLevel((self._cfgCorrect).Level)
+  customPetData:SetCustomLevel(self._cfgCorrect.Level)
   customPetData:SetAffinityLevel(1)
-  customPetData:SetEquipRefineLevel((self._matchPet):GetEquipRefineLv())
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIShopPetDetailController", customPetData:GetPetId(), 1, 0, customPetData, 0, 1)
+  customPetData:SetEquipRefineLevel(self._matchPet:GetEquipRefineLv())
+  GameGlobal.UIStateManager():ShowDialog("UIShopPetDetailController", customPetData:GetPetId(), 1, 0, customPetData, 0, 1)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetEnhancePetItem.InitByCfg = function(self, cfgCorrect)
-  -- function num : 0_4 , upvalues : _ENV
-  local petData = nil
+function UIActivityPetEnhancePetItem:InitByCfg(cfgCorrect)
+  local petData
   self._cfgCorrect = cfgCorrect
   if cfgCorrect ~= nil then
     local pet_data = _G.pet_data
@@ -92,48 +69,32 @@ UIActivityPetEnhancePetItem.InitByCfg = function(self, cfgCorrect)
     petIndo.current_skin = 0
     petData = Pet:New(petIndo)
   end
-  do
-    self:UpdatePetItem(petData)
-  end
+  self:UpdatePetItem(petData)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetEnhancePetItem.UpdatePetItem = function(self, petData)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._petAreaGo):SetActive(petData ~= nil)
-  ;
-  (self._emptyAreaGo):SetActive(petData == nil)
-  ;
-  ((self._headImage).gameObject):SetActive(petData ~= nil)
-  ;
-  ((self._attribute1).gameObject):SetActive(petData ~= nil)
-  ;
-  ((self._attribute2).gameObject):SetActive(petData ~= nil)
+function UIActivityPetEnhancePetItem:UpdatePetItem(petData)
+  self._petAreaGo:SetActive(petData ~= nil)
+  self._emptyAreaGo:SetActive(petData == nil)
+  self._headImage.gameObject:SetActive(petData ~= nil)
+  self._attribute1.gameObject:SetActive(petData ~= nil)
+  self._attribute2.gameObject:SetActive(petData ~= nil)
   if petData ~= nil then
-    (self._headImage):LoadImage(petData:GetPetTeamBody(PetSkinEffectPath.CARD_TEAM))
+    self._headImage:LoadImage(petData:GetPetTeamBody(PetSkinEffectPath.CARD_TEAM))
     self:SetAtlasProperty(self._attribute1, petData:GetPetFirstElement())
     self:SetAtlasProperty(self._attribute2, petData:GetPetSecondElement())
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetEnhancePetItem.SetAtlasProperty = function(self, img, idProperty)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfgSingle = nil
-  local cfg_pet_element = (Cfg.cfg_pet_element)({})
+function UIActivityPetEnhancePetItem:SetAtlasProperty(img, idProperty)
+  local cfgSingle
+  local cfg_pet_element = Cfg.cfg_pet_element({})
   if cfg_pet_element then
     cfgSingle = cfg_pet_element[idProperty]
   end
   if cfgSingle then
-    (img.gameObject):SetActive(true)
-    img.sprite = (self._atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(cfgSingle.Icon))
+    img.gameObject:SetActive(true)
+    img.sprite = self._atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfgSingle.Icon))
   else
-    ;
-    (img.gameObject):SetActive(false)
+    img.gameObject:SetActive(false)
   end
 end
-
-

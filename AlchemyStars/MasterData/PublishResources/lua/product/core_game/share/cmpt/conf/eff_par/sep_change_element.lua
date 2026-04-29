@@ -1,48 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_change_element.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
-local EffectChangeElementType = {Normal = 1, ByCurrentTeamLeader = 2, RestoreMonsterCfgElement = 3, MAX = 99}
+local EffectChangeElementType = {
+  Normal = 1,
+  ByCurrentTeamLeader = 2,
+  RestoreMonsterCfgElement = 3,
+  MAX = 99
+}
 _enum("EffectChangeElementType", EffectChangeElementType)
 _class("SkillEffectChangeElementParam", SkillEffectParamBase)
 SkillEffectChangeElementParam = SkillEffectChangeElementParam
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillEffectChangeElementParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : EffectChangeElementType
+function SkillEffectChangeElementParam:Constructor(t)
   self._element = t.element
   self._type = t.type or EffectChangeElementType.Normal
   self._changeSuperElement = t.changeSuperElement or false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectChangeElementParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectChangeElementParam:GetEffectType()
   return SkillEffectType.ChangeElement
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectChangeElementParam.GetElement = function(self)
-  -- function num : 0_2
+function SkillEffectChangeElementParam:GetElement()
   return self._element
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectChangeElementParam.GetType = function(self)
-  -- function num : 0_3
+function SkillEffectChangeElementParam:GetType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectChangeElementParam.IsChangeSuperElement = function(self)
-  -- function num : 0_4
+function SkillEffectChangeElementParam:IsChangeSuperElement()
   return self._changeSuperElement
 end
-
-

@@ -1,55 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_detail/ui_chain_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChainItem", UICustomWidget)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChainItem.Constructor = function(self)
-  -- function num : 0_0
+function UIChainItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChainItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIChainItem:OnShow(uiParams)
   self._brightGo = self:GetGameObject("imgSelect")
   self._chainNumText = self:GetUIComponent("UILocalizationText", "txtId")
-  ;
-  (self._brightGo):SetActive(false)
+  self._brightGo:SetActive(false)
   self._index = 0
   self._itemIndex = 0
   self._isMoreThanOne = false
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChainItem.SetData = function(self, skillID, curIndex, itemIndex, isMoreThanOne)
-  -- function num : 0_2 , upvalues : _ENV
+function UIChainItem:SetData(skillID, curIndex, itemIndex, isMoreThanOne)
   self._itemIndex = itemIndex
   self._index = curIndex
   self._isMoreThanOne = isMoreThanOne
   local cfg = BattleSkillCfg(skillID)
   if cfg ~= nil then
-    (self._chainNumText):SetText(cfg.TriggerParam)
+    self._chainNumText:SetText(cfg.TriggerParam)
     self:HideBright(curIndex)
   end
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChainItem.HideBright = function(self, curIndex)
-  -- function num : 0_3
+function UIChainItem:HideBright(curIndex)
   self._index = curIndex
   if self._isMoreThanOne then
     if curIndex ~= self._itemIndex then
-      (self._brightGo):SetActive(false)
+      self._brightGo:SetActive(false)
     else
-      ;
-      (self._brightGo):SetActive(true)
+      self._brightGo:SetActive(true)
     end
   end
 end
-
-

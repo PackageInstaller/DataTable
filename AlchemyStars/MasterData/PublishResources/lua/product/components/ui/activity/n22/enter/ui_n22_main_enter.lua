@@ -1,155 +1,100 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/enter/ui_n22_main_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22MainEnter", UICustomWidget)
 UIN22MainEnter = UIN22MainEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22MainEnter.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN22MainEnter:OnShow(uiParams)
   self.new = self:GetGameObject("new")
   self.red = self:GetGameObject("red")
   self.second = self:GetGameObject("second")
   self.rlt2nd = self:GetUIComponent("RollingText", "txt2nd")
   self:_AttachEvents()
   self.mCampaign = self:GetModule(CampaignModule)
-  self.data = (self.mCampaign):GetN22Data()
+  self.data = self.mCampaign:GetN22Data()
   self:RequestCampaign()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MainEnter.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN22MainEnter:OnHide()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MainEnter._AttachEvents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN22MainEnter:_AttachEvents()
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:AttachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MainEnter._DetachEvents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN22MainEnter:_DetachEvents()
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:DetachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MainEnter.SetData_uiMainLobbyController = function(self, controller)
-  -- function num : 0_4
+function UIN22MainEnter:SetData_uiMainLobbyController(controller)
   self._uiMainLobbyController = controller
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MainEnter.RequestCampaign = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN22MainEnter:RequestCampaign()
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
     local lockName = "UIN22MainEnterRequestCampaign"
     self:Lock(lockName)
-    ;
-    (self.data):RequestCampaign(TT, ECampaignType.CAMPAIGN_TYPE_N22)
+    self.data:RequestCampaign(TT, ECampaignType.CAMPAIGN_TYPE_N22)
     self:Flush()
     self:FlushNewRed()
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MainEnter.BtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIN22MainEnter:BtnOnClick(go)
   if self._uiMainLobbyController then
-    ((self._uiMainLobbyController)._screenShot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera((self._uiMainLobbyController):GetName())
-    local rt = ((self._uiMainLobbyController)._screenShot):RefreshBlurTexture()
-    do
-      local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-      self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, rt, cache_rt, self
-    YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cache_rt)
-    self:SwitchState(UIStateType.UIActivityN22MainController, cache_rt, true)
-  end
-)
-    end
+    self._uiMainLobbyController._screenShot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self._uiMainLobbyController:GetName())
+    local rt = self._uiMainLobbyController._screenShot:RefreshBlurTexture()
+    local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+    self:StartTask(function(TT)
+      YIELD(TT)
+      UnityEngine.Graphics.Blit(rt, cache_rt)
+      self:SwitchState(UIStateType.UIActivityN22MainController, cache_rt, true)
+    end)
   else
-    do
-      self:SwitchState(UIStateType.UIActivityN22MainController, nil, true)
-    end
+    self:SwitchState(UIStateType.UIActivityN22MainController, nil, true)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MainEnter._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_7
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UIN22MainEnter:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:FlushNewRed()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MainEnter._OnQuestUpdate = function(self)
-  -- function num : 0_8
+function UIN22MainEnter:_OnQuestUpdate()
   self:FlushNewRed()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MainEnter.Flush = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local state = (self.data):GetStateEntrust()
+function UIN22MainEnter:Flush()
+  local state = self.data:GetStateEntrust()
   if state == UISummerOneEnterBtnState.Locked or state == UISummerOneEnterBtnState.Normal then
-    (self.second):SetActive(true)
-    ;
-    (self.rlt2nd):RefreshText((StringTable.Get)("str_n22_trust_unlock"))
+    self.second:SetActive(true)
+    self.rlt2nd:RefreshText(StringTable.Get("str_n22_trust_unlock"))
   else
-    ;
-    (self.second):SetActive(false)
+    self.second:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MainEnter.FlushNewRed = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local notEnterMain = not (N22Data.HasPrefsMain)()
-  local notEnterHard = not (N22Data.HasPrefsHard)()
-  local notEnterMission = not (N22Data.HasPrefsMission)()
-  local component = (self.data):GetComponentEntrust()
+function UIN22MainEnter:FlushNewRed()
+  local notEnterMain = not N22Data.HasPrefsMain()
+  local notEnterHard = not N22Data.HasPrefsHard()
+  local notEnterMission = not N22Data.HasPrefsMission()
+  local component = self.data:GetComponentEntrust()
   local notEnterEntrust = false
   if component ~= nil then
     notEnterEntrust = component:HasNew()
   end
-  local hasHardOpen = (self.data):GetStateHard() == UISummerOneEnterBtnState.Normal
-  local hasEntrustOpen = (self.data):GetStateEntrust() == UISummerOneEnterBtnState.Normal
-  local new = notEnterMain or (hasHardOpen and notEnterHard) or notEnterMission or not hasEntrustOpen or notEnterEntrust
+  local hasHardOpen = self.data:GetStateHard() == UISummerOneEnterBtnState.Normal
+  local hasEntrustOpen = self.data:GetStateEntrust() == UISummerOneEnterBtnState.Normal
+  local new = notEnterMain or hasHardOpen and notEnterHard or notEnterMission or hasEntrustOpen and notEnterEntrust
   local red = false
-  if not new and not (self.data):CheckRedAward() then
-    red = (self.data):CheckRedNormal()
+  if not new then
+    red = self.data:CheckRedAward() or self.data:CheckRedNormal()
   end
-  ;
-  (UIActivityHelper.SetWidgetNewAndRed)(self.new, new, self.red, red)
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  UIActivityHelper.SetWidgetNewAndRed(self.new, new, self.red, red)
 end
-
-

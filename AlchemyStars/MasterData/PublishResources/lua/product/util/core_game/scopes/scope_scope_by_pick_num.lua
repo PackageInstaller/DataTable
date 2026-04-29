@@ -1,37 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_scope_by_pick_num.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_ScopeByPickNum", SkillScopeCalculator_Base)
 SkillScopeCalculator_ScopeByPickNum = SkillScopeCalculator_ScopeByPickNum
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_ScopeByPickNum.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_ScopeByPickNum:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local curPickNum = 0
   if type(centerPos) == "table" then
     curPickNum = #centerPos
+  elseif centerPos then
+    centerPos = {centerPos}
+    curPickNum = 1
   else
-    if centerPos then
-      centerPos = {centerPos}
-      curPickNum = 1
-    else
-      centerPos = {}
-    end
+    centerPos = {}
   end
   local bodyAreaArray = bodyArea
   local param = scopeParam
-  local world = (self._gridFilter)._world
+  local world = self._gridFilter._world
   local attackRangeList = {}
   local wholeRangeList = {}
   local scopeIndex = curPickNum + 1
   local useLastAsDefault = scopeParam.useLastAsDefault
-  if useLastAsDefault and #scopeParam < scopeIndex then
+  if useLastAsDefault and scopeIndex > #scopeParam then
     scopeIndex = #scopeParam
   end
-  local calc = SkillScopeCalculator:New((self._hub)._gridFilter)
+  local calc = SkillScopeCalculator:New(self._hub._gridFilter)
   if scopeIndex <= #scopeParam then
     local scope = scopeParam[scopeIndex]
     local _scopeType = scope.scopeType
@@ -42,17 +33,13 @@ SkillScopeCalculator_ScopeByPickNum.CalcRange = function(self, scopeType, scopeP
       local transCenterPos = centerPos
       if useCasterPos then
         transCenterPos = casterPos
-      else
-        if _scope_centerPosIndex then
-          if _scope_centerPosIndex == 0 then
-            transCenterPos = centerPos
-          else
-            if _scope_centerPosIndex == -1 then
-              transCenterPos = centerPos[#centerPos]
-            else
-              transCenterPos = centerPos[_scope_centerPosIndex]
-            end
-          end
+      elseif _scope_centerPosIndex then
+        if _scope_centerPosIndex == 0 then
+          transCenterPos = centerPos
+        elseif _scope_centerPosIndex == -1 then
+          transCenterPos = centerPos[#centerPos]
+        else
+          transCenterPos = centerPos[_scope_centerPosIndex]
         end
       end
       local checkOk = true
@@ -67,30 +54,21 @@ SkillScopeCalculator_ScopeByPickNum.CalcRange = function(self, scopeType, scopeP
       end
     end
   end
-  do
-    local result = SkillScopeResult:New(SkillScopeType.ScopeByPickNum, centerPos, attackRangeList, wholeRangeList)
-    return result
-  end
+  local result = SkillScopeResult:New(SkillScopeType.ScopeByPickNum, centerPos, attackRangeList, wholeRangeList)
+  return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_ScopeByPickNum._CheckPosHasTrap = function(self, pos, trapID)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeCalculator_ScopeByPickNum:_CheckPosHasTrap(pos, trapID)
   local bFindTrap = false
-  local world = (self._gridFilter)._world
+  local world = self._gridFilter._world
   local utilSvc = world:GetService("UtilData")
   local array = utilSvc:GetTrapsAtPos(pos)
-  for _,eTrap in ipairs(array) do
+  for _, eTrap in ipairs(array) do
     local cTrap = eTrap:Trap()
     if cTrap and not eTrap:HasDeadMark() and cTrap:GetTrapID() == trapID then
       bFindTrap = true
       break
     end
   end
-  do
-    return bFindTrap
-  end
+  return bFindTrap
 end
-
-

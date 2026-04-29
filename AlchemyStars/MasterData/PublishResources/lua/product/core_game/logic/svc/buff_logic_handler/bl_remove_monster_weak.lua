@@ -1,21 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_remove_monster_weak.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicRemoveMonsterWeak", BuffLogicBase)
 BuffLogicRemoveMonsterWeak = BuffLogicRemoveMonsterWeak
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveMonsterWeak.DoLogic = function(self, notify)
-  -- function num : 0_0
+function BuffLogicRemoveMonsterWeak:DoLogic(notify)
   local ownerEntity = self:GetEntity()
   if not ownerEntity:HasMonsterWeak() then
-    return 
+    return
   end
   ownerEntity:RemoveMonsterWeak()
   return true
 end
-
-

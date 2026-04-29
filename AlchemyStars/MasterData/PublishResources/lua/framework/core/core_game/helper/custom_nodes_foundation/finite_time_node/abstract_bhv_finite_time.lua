@@ -1,53 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/helper/custom_nodes_foundation/finite_time_node/abstract_bhv_finite_time.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FiniteTimeBhv", CustomNode)
 FiniteTimeBhv = FiniteTimeBhv
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FiniteTimeBhv.Constructor = function(self)
-  -- function num : 0_0
+function FiniteTimeBhv:Constructor()
   self.mDuration = 0
   self.mIsEnd = false
   self.mHasStart = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FiniteTimeBhv.Reset = function(self)
-  -- function num : 0_1
+function FiniteTimeBhv:Reset()
   self.mDuration = 0
   self.mIsEnd = false
   self.mHasStart = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FiniteTimeBhv.Update = function(self, dt)
-  -- function num : 0_2
-  do
-    if not self:IsDurationEnd() then
-      local duration = self.mDuration
-      if duration > 0 and duration < dt then
-        self:innerUpdate(duration)
-      else
-        self:innerUpdate(dt)
-      end
-      self.mDuration = duration - dt
+function FiniteTimeBhv:Update(dt)
+  if not self:IsDurationEnd() then
+    local duration = self.mDuration
+    if 0 < duration and dt > duration then
+      self:innerUpdate(duration)
+    else
+      self:innerUpdate(dt)
     end
-    if self:IsDurationEnd() and self.mIsEnd == false then
-      self.mIsEnd = true
-      self:OnDurationEnd()
-    end
+    self.mDuration = duration - dt
+  end
+  if self:IsDurationEnd() and self.mIsEnd == false then
+    self.mIsEnd = true
+    self:OnDurationEnd()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FiniteTimeBhv.innerUpdate = function(self, dt)
-  -- function num : 0_3
+function FiniteTimeBhv:innerUpdate(dt)
   if not self.mHasStart then
     self.mHasStart = true
     self:OnBegin()
@@ -55,63 +37,36 @@ FiniteTimeBhv.innerUpdate = function(self, dt)
   self:OnUpdate(dt)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FiniteTimeBhv.Destroy = function(self)
-  -- function num : 0_4
+function FiniteTimeBhv:Destroy()
   self.mDuration = 0
   self.mIsEnd = false
   self.mHasStart = false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FiniteTimeBhv.OnBegin = function(self)
-  -- function num : 0_5
+function FiniteTimeBhv:OnBegin()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FiniteTimeBhv.OnUpdate = function(self, dt)
-  -- function num : 0_6
+function FiniteTimeBhv:OnUpdate(dt)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FiniteTimeBhv.OnDurationEnd = function(self)
-  -- function num : 0_7
+function FiniteTimeBhv:OnDurationEnd()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FiniteTimeBhv.IsDurationEnd = function(self)
-  -- function num : 0_8
-  do return self.mDuration < 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function FiniteTimeBhv:IsDurationEnd()
+  return self.mDuration < 0
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-FiniteTimeBhv.GetDuration = function(self)
-  -- function num : 0_9
+function FiniteTimeBhv:GetDuration()
   if self.mDuration < 0 then
     return 0
   end
   return self.mDuration
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-FiniteTimeBhv.InitDuration = function(self, duration)
-  -- function num : 0_10
+function FiniteTimeBhv:InitDuration(duration)
   self.mDuration = duration
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-FiniteTimeBhv.CanStop = function(self)
-  -- function num : 0_11
+function FiniteTimeBhv:CanStop()
   return self.mIsEnd
 end
-
-

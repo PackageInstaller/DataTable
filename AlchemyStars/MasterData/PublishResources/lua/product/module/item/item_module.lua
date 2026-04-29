@@ -1,125 +1,82 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/item/item_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ItemModule", GameModule)
 ItemModule = ItemModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ItemModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ItemModule:Constructor()
   self.m_items = ItemContainer:New()
   self.m_fac = ItemExtFactory:New()
   self.m_local_update_list = {}
   self.m_chess = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self.caller):RegisterPushHandler(CEventMobileNotifyItemInfoChange, self.HandleItemInfoChange, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventMobileNotifyItemConverChange, self.HandleItemConverChange, self)
+function ItemModule:Init()
+  self.caller:RegisterPushHandler(CEventMobileNotifyItemInfoChange, self.HandleItemInfoChange, self)
+  self.caller:RegisterPushHandler(CEventMobileNotifyItemConverChange, self.HandleItemConverChange, self)
   if EDITOR then
-    local drop_cfgs = (Cfg.cfg_drop)({})
-    local item_cfg = (Cfg.cfg_item)({})
-    for k,v in pairs(drop_cfgs) do
+    local drop_cfgs = Cfg.cfg_drop({})
+    local item_cfg = Cfg.cfg_item({})
+    for k, v in pairs(drop_cfgs) do
       if v.AssetID ~= 0 then
-        local itemtemplate = (Cfg.cfg_item)[v.AssetID]
+        local itemtemplate = Cfg.cfg_item[v.AssetID]
         if itemtemplate == nil then
-          (Log.error)("cfg_drop asset cant find ", v.AssetID)
+          Log.error("cfg_drop asset cant find ", v.AssetID)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.FindItem = function(self, pst_id)
-  -- function num : 0_2
-  return (self.m_items):FindItem(pst_id)
+function ItemModule:FindItem(pst_id)
+  return self.m_items:FindItem(pst_id)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.GetItemCount = function(self, tempId)
-  -- function num : 0_3 , upvalues : _ENV
+function ItemModule:GetItemCount(tempId)
   local items = {}
-  ;
-  (self.m_items):GetAllItemInfo(items, function(item)
-    -- function num : 0_3_0 , upvalues : tempId
-    do return item:GetTemplateID() == tempId end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  self.m_items:GetAllItemInfo(items, function(item)
+    return item:GetTemplateID() == tempId
+  end)
   if #items == 0 then
     local cnt = 0
-    local role_module = (GameGlobal.GetModule)(RoleModule)
+    local role_module = GameGlobal.GetModule(RoleModule)
     local info = role_module:GetNotEnough()
     if info ~= nil and info[tempId] ~= nil then
       cnt = cnt - info[tempId]
     end
     return cnt
   end
-  do
-    local cnt = 0
-    for _,item in ipairs(items) do
-      cnt = cnt + item:GetCount()
-    end
-    return cnt
+  local cnt = 0
+  for _, item in ipairs(items) do
+    cnt = cnt + item:GetCount()
   end
+  return cnt
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.GetItemByTempId = function(self, tempId)
-  -- function num : 0_4
+function ItemModule:GetItemByTempId(tempId)
   local items = {}
-  ;
-  (self.m_items):FindItems(tempId, items)
+  self.m_items:FindItems(tempId, items)
   return items
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.InitItemInfos = function(self, list)
-  -- function num : 0_5 , upvalues : _ENV
-  local itemcount = (table.count)(list)
-  ;
-  (Log.debug)("ItemModule time count ", itemcount)
-  for _,v in pairs(list) do
+function ItemModule:InitItemInfos(list)
+  local itemcount = table.count(list)
+  Log.debug("ItemModule time count ", itemcount)
+  for _, v in pairs(list) do
     local item = Item:New(self.m_fac, v)
-    ;
-    (self.m_items):AddItem(item)
+    self.m_items:AddItem(item)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.GetAllItemInfos = function(self)
-  -- function num : 0_6
+function ItemModule:GetAllItemInfos()
   local items = {}
-  ;
-  (self.m_items):GetAllItemInfo(items)
+  self.m_items:GetAllItemInfo(items)
   return items
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.UIHomePhotoHasNew = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function ItemModule:UIHomePhotoHasNew()
   local items = {}
-  ;
-  (self.m_items):GetAllItemInfo(items, function(v)
-    -- function num : 0_7_0 , upvalues : _ENV
-    do return (v:GetTemplate()).ItemSubType == ItemSubType.ItemSubType_Photo end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  for key,item in pairs(items) do
+  self.m_items:GetAllItemInfo(items, function(v)
+    return v:GetTemplate().ItemSubType == ItemSubType.ItemSubType_Photo
+  end)
+  for key, item in pairs(items) do
     local isNew = item:IsNew()
     if isNew then
       return true
@@ -128,15 +85,12 @@ ItemModule.UIHomePhotoHasNew = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.HasNew = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function ItemModule:HasNew()
   local items = self:GetAllItemInfos()
-  for key,item in pairs(items) do
+  for key, item in pairs(items) do
     local isNew = item:IsNew()
     if isNew then
-      local cfg_item = (Cfg.cfg_item)[(item:GetTemplate()).ID]
+      local cfg_item = Cfg.cfg_item[item:GetTemplate().ID]
       if cfg_item and cfg_item.ItemSubType ~= ItemSubType.ItemSubType_Photo and cfg_item.ItemSubType ~= ItemSubType.ItemSubType_Medal and cfg_item.ItemSubType ~= ItemSubType.ItemSubType_Medal_Board and cfg_item.ShowType ~= 2 and cfg_item.ShowNew and cfg_item.ShowNew == 1 then
         return true
       end
@@ -145,17 +99,12 @@ ItemModule.HasNew = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.HasNewSubTypeItem = function(self, itemType, overlay)
-  -- function num : 0_9 , upvalues : _ENV
+function ItemModule:HasNewSubTypeItem(itemType, overlay)
   local items = self:GetItemListBySubType(itemType)
-  for key,item in pairs(items) do
-    if not overlay or not item:IsNewOverlay() then
-      local isNew = item:IsNew()
-    end
+  for key, item in pairs(items) do
+    local isNew = overlay and item:IsNewOverlay() or item:IsNew()
     if isNew then
-      local cfg_item = (Cfg.cfg_item)[(item:GetTemplate()).ID]
+      local cfg_item = Cfg.cfg_item[item:GetTemplate().ID]
       if cfg_item.ShowNew and cfg_item.ShowNew == 1 then
         return true
       end
@@ -164,215 +113,136 @@ ItemModule.HasNewSubTypeItem = function(self, itemType, overlay)
   return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.GetAllInBagItemInfos = function(self)
-  -- function num : 0_10
+function ItemModule:GetAllInBagItemInfos()
   local items = {}
-  ;
-  (self.m_items):GetAllItemInfo(items, function(v)
-    -- function num : 0_10_0
-    do return (v:GetTemplate()).InBag == true end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  self.m_items:GetAllItemInfo(items, function(v)
+    return v:GetTemplate().InBag == true
+  end)
   return items
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.GetItemInfosByType = function(self, itemType)
-  -- function num : 0_11 , upvalues : _ENV
+function ItemModule:GetItemInfosByType(itemType)
   local items = {}
-  ;
-  (self.m_items):GetAllItemInfo(items, function(v)
-    -- function num : 0_11_0 , upvalues : itemType, _ENV
-    do return itemType == ItemType.ItemType_None or (v:GetTemplate()).ItemType == itemType end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  self.m_items:GetAllItemInfo(items, function(v)
+    return itemType == ItemType.ItemType_None or v:GetTemplate().ItemType == itemType
+  end)
   self:SortItems(items)
   return items
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.GetInBagItemInfosByType = function(self, itemType)
-  -- function num : 0_12 , upvalues : _ENV
+function ItemModule:GetInBagItemInfosByType(itemType)
   local items = {}
-  ;
-  (self.m_items):GetAllItemInfo(items, function(v)
-    -- function num : 0_12_0 , upvalues : itemType, _ENV
-    do return (itemType == ItemType.ItemType_None or (v:GetTemplate()).ItemType == itemType) and (v:GetTemplate()).InBag == true end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  self.m_items:GetAllItemInfo(items, function(v)
+    return (itemType == ItemType.ItemType_None or v:GetTemplate().ItemType == itemType) and v:GetTemplate().InBag == true
+  end)
   self:SortItems(items)
   return items
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.SortItems = function(self, items)
-  -- function num : 0_13 , upvalues : _ENV
-  (table.sort)(items, function(a, b)
-    -- function num : 0_13_0
+function ItemModule:SortItems(items)
+  table.sort(items, function(a, b)
     local ta = a:GetTemplate()
     local tb = b:GetTemplate()
-    if ta.Color == tb.Color then
-      if ta.ID >= tb.ID then
-        do return ta.BagSortIndex ~= tb.BagSortIndex end
-        do return tb.Color < ta.Color end
-        do return tb.BagSortIndex < ta.BagSortIndex end
-        -- DECOMPILER ERROR: 5 unprocessed JMP targets
+    if ta.BagSortIndex == tb.BagSortIndex then
+      if ta.Color == tb.Color then
+        return ta.ID < tb.ID
       end
+      return ta.Color > tb.Color
     end
-  end
-)
+    return ta.BagSortIndex > tb.BagSortIndex
+  end)
   return items
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.SortRoleAsset = function(self, assets)
-  -- function num : 0_14 , upvalues : _ENV
-  (table.sort)(assets, function(a, b)
-    -- function num : 0_14_0 , upvalues : _ENV
-    local ta = (Cfg.cfg_item)[a.assetid]
+function ItemModule:SortRoleAsset(assets)
+  table.sort(assets, function(a, b)
+    local ta = Cfg.cfg_item[a.assetid]
     if ta == nil then
-      (Log.error)("SortRoleAsset error cfg_item catn find ", a.assetid)
+      Log.error("SortRoleAsset error cfg_item catn find ", a.assetid)
       return true
     end
-    local tb = (Cfg.cfg_item)[b.assetid]
+    local tb = Cfg.cfg_item[b.assetid]
     if tb == nil then
-      (Log.error)("SortRoleAsset error cfg_item catn find ", a.assetid)
+      Log.error("SortRoleAsset error cfg_item catn find ", a.assetid)
       return true
+    end
+    if ta.BagSortIndex == tb.BagSortIndex then
+      if ta.Color == tb.Color then
+        return ta.ID < tb.ID
+      end
+      return ta.Color > tb.Color
+    end
+    return ta.BagSortIndex > tb.BagSortIndex
+  end)
+  return assets
+end
+
+function ItemModule:BattleResultSortAsset(assets)
+  table.sort(assets, function(a, b)
+    local ta = Cfg.cfg_item[a.assetid]
+    local tb = Cfg.cfg_item[b.assetid]
+    if ta == nil then
+      Log.error(" Cfg.cfg_item cant find assetid ", a.assetid)
+    end
+    if tb == nil then
+      Log.error(" Cfg.cfg_item cant find assetid ", b.assetid)
     end
     if ta.Color == tb.Color then
-      if ta.ID >= tb.ID then
-        do return ta.BagSortIndex ~= tb.BagSortIndex end
-        do return tb.Color < ta.Color end
-        do return tb.BagSortIndex < ta.BagSortIndex end
-        -- DECOMPILER ERROR: 5 unprocessed JMP targets
-      end
+      return ta.ID < tb.ID
     end
-  end
-)
+    return ta.Color > tb.Color
+  end)
   return assets
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.BattleResultSortAsset = function(self, assets)
-  -- function num : 0_15 , upvalues : _ENV
-  (table.sort)(assets, function(a, b)
-    -- function num : 0_15_0 , upvalues : _ENV
-    local ta = (Cfg.cfg_item)[a.assetid]
-    local tb = (Cfg.cfg_item)[b.assetid]
-    if ta == nil then
-      (Log.error)(" Cfg.cfg_item cant find assetid ", a.assetid)
-    end
-    if tb == nil then
-      (Log.error)(" Cfg.cfg_item cant find assetid ", b.assetid)
-    end
-    if ta.ID >= tb.ID then
-      do return ta.Color ~= tb.Color end
-      do return tb.Color < ta.Color end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
-  end
-)
-  return assets
-end
-
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.GetItemListBySubType = function(self, subtype)
-  -- function num : 0_16
+function ItemModule:GetItemListBySubType(subtype)
   local items = {}
-  ;
-  (self.m_items):GetAllItemInfo(items, function(v)
-    -- function num : 0_16_0 , upvalues : subtype
-    do return (v:GetTemplate()).ItemSubType == subtype end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  self.m_items:GetAllItemInfo(items, function(v)
+    return v:GetTemplate().ItemSubType == subtype
+  end)
   return items
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.GetItemGiftType = function(self, itemGiftID)
-  -- function num : 0_17 , upvalues : _ENV
-  local cfgGift = (Cfg.cfg_item_gift)[itemGiftID]
+function ItemModule:GetItemGiftType(itemGiftID)
+  local cfgGift = Cfg.cfg_item_gift[itemGiftID]
   if cfgGift then
     return cfgGift.ItemGiftType
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.GetPhyGiftData = function(self, itemGiftID)
-  -- function num : 0_18 , upvalues : _ENV
-  local cfgItemGift = (Cfg.cfg_item_gift)[itemGiftID]
-  if cfgItemGift == nil then
+function ItemModule:GetPhyGiftData(itemGiftID)
+  local cfgItemGift = Cfg.cfg_item_gift[itemGiftID]
+  if nil == cfgItemGift then
     return 0
   end
   local nPhyEffect = 0
-  for _,value in pairs(cfgItemGift.ItemList) do
+  for _, value in pairs(cfgItemGift.ItemList) do
     if value[1] == RoleAssetID.RoleAssetPhyPoint then
       nPhyEffect = value[2]
       break
     end
   end
-  do
-    return nPhyEffect
-  end
+  return nPhyEffect
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.GetItemToPetExp = function(self, itemTID)
-  -- function num : 0_19 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item_pet_exp)[itemTID]
+function ItemModule:GetItemToPetExp(itemTID)
+  local cfg = Cfg.cfg_item_pet_exp[itemTID]
   if cfg then
     return cfg.Exp
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.UseItem = function(self, TT, param)
-  -- function num : 0_20 , upvalues : _ENV
-  (Log.fatal)(" param.item_pstid=", param.item_pstid)
-  ;
-  (Log.fatal)(" param.item_template_id=", param.item_template_id)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventMobileUseItem)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (request.use_param).item_pstid = param.item_pstid or 0
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (request.use_param).item_tempid = param.item_template_id or 0
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (request.use_param).use_count = param.use_count or 0
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (request.use_param).param1 = param.param1 or 0
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (request.use_param).param2 = param.param2 or 0
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (request.use_param).param3 = param.param3 or 0
+function ItemModule:UseItem(TT, param)
+  Log.fatal(" param.item_pstid=", param.item_pstid)
+  Log.fatal(" param.item_template_id=", param.item_template_id)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventMobileUseItem)
+  request.use_param.item_pstid = param.item_pstid or 0
+  request.use_param.item_tempid = param.item_template_id or 0
+  request.use_param.use_count = param.use_count or 0
+  request.use_param.param1 = param.param1 or 0
+  request.use_param.param2 = param.param2 or 0
+  request.use_param.param3 = param.param3 or 0
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -385,42 +255,45 @@ ItemModule.UseItem = function(self, TT, param)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.RequestUseItemByPstID = function(self, TT, item_pstid, count, param1, param2, param3)
-  -- function num : 0_21 , upvalues : _ENV
-  (Log.debug)("ItemModule:RequestUseItemByPstID()")
-  local itemUseParameter = {item_pstid = item_pstid, use_count = count, param1 = param1, param2 = param2, param3 = param3}
+function ItemModule:RequestUseItemByPstID(TT, item_pstid, count, param1, param2, param3)
+  Log.debug("ItemModule:RequestUseItemByPstID()")
+  local itemUseParameter = {
+    item_pstid = item_pstid,
+    use_count = count,
+    param1 = param1,
+    param2 = param2,
+    param3 = param3
+  }
   return self:UseItem(TT, itemUseParameter)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.RequestUseItemByTemplateID = function(self, TT, item_template_id, count, param1, param2, param3)
-  -- function num : 0_22 , upvalues : _ENV
-  (Log.debug)("ItemModule:RequestUseItemByTemplateID()")
-  local itemUseParameter = {item_template_id = item_template_id, use_count = count, param1 = param1, param2 = param2, param3 = param3}
+function ItemModule:RequestUseItemByTemplateID(TT, item_template_id, count, param1, param2, param3)
+  Log.debug("ItemModule:RequestUseItemByTemplateID()")
+  local itemUseParameter = {
+    item_template_id = item_template_id,
+    use_count = count,
+    param1 = param1,
+    param2 = param2,
+    param3 = param3
+  }
   return self:UseItem(TT, itemUseParameter)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.RequestSellItem = function(self, TT, item_pstid, num)
-  -- function num : 0_23 , upvalues : _ENV
+function ItemModule:RequestSellItem(TT, item_pstid, num)
   local res = AsyncRequestRes:New()
   if not item_pstid or not num then
-    (Log.fatal)("RequestSellItem no item_pstid or num")
+    Log.fatal("RequestSellItem no item_pstid or num")
     res:SetSucc(false)
     res:SetResult(-1)
     return res
   end
   if item_pstid <= 0 or num <= 0 then
-    (Log.fatal)("RequestSellItem args err", item_pstid, num)
+    Log.fatal("RequestSellItem args err", item_pstid, num)
     res:SetSucc(false)
     res:SetResult(-2)
     return res
   end
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventMobileSellItem)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventMobileSellItem)
   request.m_item_pstid = item_pstid
   request.m_num = num
   local reply = self:Call(TT, request)
@@ -435,25 +308,22 @@ ItemModule.RequestSellItem = function(self, TT, item_pstid, num)
   return res, replyEvent.m_reward_list
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.RequestChooseGift = function(self, TT, item_pstid, choose_id, use_count)
-  -- function num : 0_24 , upvalues : _ENV
-  (Log.debug)("ItemModule:RequestChooseGift()")
+function ItemModule:RequestChooseGift(TT, item_pstid, choose_id, use_count)
+  Log.debug("ItemModule:RequestChooseGift()")
   local res = AsyncRequestRes:New()
   if not item_pstid or not choose_id then
-    (Log.fatal)("RequestChooseGift no item_pstid or num")
+    Log.fatal("RequestChooseGift no item_pstid or num")
     res:SetSucc(false)
     res:SetResult(-1)
     return res
   end
   if item_pstid <= 0 or choose_id < 0 then
-    (Log.fatal)("RequestChooseGift args err", item_pstid, choose_id)
+    Log.fatal("RequestChooseGift args err", item_pstid, choose_id)
     res:SetSucc(false)
     res:SetResult(-2)
     return res
   end
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventChooseGift)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventChooseGift)
   request.m_item_pstid = item_pstid
   request.m_choose_id = choose_id
   request.m_use_count = use_count
@@ -469,74 +339,45 @@ ItemModule.RequestChooseGift = function(self, TT, item_pstid, choose_id, use_cou
   return res
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.HandleItemInfoChange = function(self, msg)
-  -- function num : 0_25 , upvalues : _ENV
-  for _,item_info in pairs(msg.m_update_list) do
+function ItemModule:HandleItemInfoChange(msg)
+  for _, item_info in pairs(msg.m_update_list) do
     local item = self:FindItem(item_info.item_pstid)
     if not item then
       local new_item = Item:New(self.m_fac, item_info)
       if not new_item then
-        (Log.fatal)("new item error ---------")
-        return 
+        Log.fatal("new item error ---------")
+        return
       end
-      ;
-      (self.m_items):AddItem(new_item)
+      self.m_items:AddItem(new_item)
     else
-      do
-        do
-          item:SetData(item_info)
-          -- DECOMPILER ERROR at PC29: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC29: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC29: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      item:SetData(item_info)
     end
   end
-  for _,v in pairs(msg.m_delete_list) do
-    (self.m_items):DelItem(v)
+  for _, v in pairs(msg.m_delete_list) do
+    self.m_items:DelItem(v)
   end
-  do
-    if msg.not_enough ~= nil and (table.count)(msg.not_enough) >= 0 then
-      local role_module = (GameGlobal.GetModule)(RoleModule)
-      role_module:SetNotEnough(msg.not_enough)
-    end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ItemCountChanged)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBookRedPointStatus)
+  if msg.not_enough ~= nil and table.count(msg.not_enough) >= 0 then
+    local role_module = GameGlobal.GetModule(RoleModule)
+    role_module:SetNotEnough(msg.not_enough)
   end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ItemCountChanged)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBookRedPointStatus)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.HandleItemConverChange = function(self, msg)
-  -- function num : 0_26 , upvalues : _ENV
+function ItemModule:HandleItemConverChange(msg)
   if self._autoConverOpen then
-    (Log.debug)("###[CommonConver] 下发转化消息")
-    for i,v in pairs(msg.m_update_list) do
-      -- DECOMPILER ERROR at PC16: Confused about usage of register: R7 in 'UnsetPending'
-
-      if not (self.m_local_update_list)[i] then
-        (self.m_local_update_list)[i] = v
+    Log.debug("###[CommonConver] 下发转化消息")
+    for i, v in pairs(msg.m_update_list) do
+      if not self.m_local_update_list[i] then
+        self.m_local_update_list[i] = v
       else
-        -- DECOMPILER ERROR at PC22: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (self.m_local_update_list)[i] = (self.m_local_update_list)[i] + v
+        self.m_local_update_list[i] = self.m_local_update_list[i] + v
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.GameSingleAddItem = function(self, itemId)
-  -- function num : 0_27 , upvalues : _ENV
+function ItemModule:GameSingleAddItem(itemId)
   local info = item_data_info:New()
   info.item_pstid = itemId
   info.owner_pstid = 0
@@ -550,24 +391,18 @@ ItemModule.GameSingleAddItem = function(self, itemId)
   if not item then
     local new_item = Item:New(self.m_fac, info)
     if not new_item then
-      (Log.fatal)("new item error ---------")
-      return 
+      Log.fatal("new item error ---------")
+      return
     end
-    ;
-    (self.m_items):AddItem(new_item)
+    self.m_items:AddItem(new_item)
   else
-    do
-      item:SetData(info)
-    end
+    item:SetData(info)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.ReqTaskSubmitItem = function(self, TT, items)
-  -- function num : 0_28 , upvalues : _ENV
+function ItemModule:ReqTaskSubmitItem(TT, items)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventTaskSubmitItem)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventTaskSubmitItem)
   request.items = items
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -581,64 +416,45 @@ ItemModule.ReqTaskSubmitItem = function(self, TT, items)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.HandleOpenGift = function(self, msg)
-  -- function num : 0_29 , upvalues : _ENV
+function ItemModule:HandleOpenGift(msg)
   local gift_id = msg.m_gift_id
   local reward_list = msg.m_reward_list
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OpenGiftReward, gift_id, reward_list)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OpenGiftReward, gift_id, reward_list)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.SetItemUnnew = function(self, TT, item_pstid)
-  -- function num : 0_30 , upvalues : _ENV
+function ItemModule:SetItemUnnew(TT, item_pstid)
   self:_RequestItemFlag(TT, item_pstid, ItemDataFlags.Item_Flag_Is_New_Obtain, false)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.SetItemUnnewOverlay = function(self, TT, item_pstid)
-  -- function num : 0_31 , upvalues : _ENV
+function ItemModule:SetItemUnnewOverlay(TT, item_pstid)
   self:_RequestItemOverlayFlag(TT, item_pstid, ItemDataFlags.Item_Flag_Is_New_Overlay, false)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.SetItemListUnnew = function(self, TT, item_list)
-  -- function num : 0_32 , upvalues : _ENV
+function ItemModule:SetItemListUnnew(TT, item_list)
   self:_RequestClearItemListFlag(TT, item_list, ItemDataFlags.Item_Flag_Is_New_Obtain)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.SetItemListUnnewOverlay = function(self, TT, item_list)
-  -- function num : 0_33 , upvalues : _ENV
+function ItemModule:SetItemListUnnewOverlay(TT, item_list)
   self:_RequestClearItemListFlag(TT, item_list, ItemDataFlags.Item_Flag_Is_New_Overlay)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule._RequestItemFlag = function(self, TT, item_pstid, flag, value)
-  -- function num : 0_34 , upvalues : _ENV
-  (Log.debug)("ItemModule:RequestItemFlag()")
+function ItemModule:_RequestItemFlag(TT, item_pstid, flag, value)
+  Log.debug("ItemModule:RequestItemFlag()")
   local res = AsyncRequestRes:New()
   if not item_pstid then
-    (Log.fatal)("RequestSellItem no item_pstid")
+    Log.fatal("RequestSellItem no item_pstid")
     res:SetSucc(false)
     res:SetResult(-1)
   end
   if item_pstid <= 0 then
-    (Log.fatal)("RequestSellItem item_pstid err", item_pstid)
+    Log.fatal("RequestSellItem item_pstid err", item_pstid)
     res:SetSucc(false)
     res:SetResult(-2)
   end
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventMobileItemObtainFlag)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventMobileItemObtainFlag)
   request.item_pstid = item_pstid
   request.flag = flag
-  if value and value == true then
+  if value and true == value then
     request.value = 1
   else
     request.value = 0
@@ -655,26 +471,23 @@ ItemModule._RequestItemFlag = function(self, TT, item_pstid, flag, value)
   return res
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule._RequestItemOverlayFlag = function(self, TT, item_pstid, flag, value)
-  -- function num : 0_35 , upvalues : _ENV
-  (Log.debug)("ItemModule:_RequestItemOverlayFlag()")
+function ItemModule:_RequestItemOverlayFlag(TT, item_pstid, flag, value)
+  Log.debug("ItemModule:_RequestItemOverlayFlag()")
   local res = AsyncRequestRes:New()
   if not item_pstid then
-    (Log.fatal)("_RequestItemOverlayFlag no item_pstid")
+    Log.fatal("_RequestItemOverlayFlag no item_pstid")
     res:SetSucc(false)
     res:SetResult(-1)
   end
   if item_pstid <= 0 then
-    (Log.fatal)("_RequestItemOverlayFlag item_pstid err", item_pstid)
+    Log.fatal("_RequestItemOverlayFlag item_pstid err", item_pstid)
     res:SetSucc(false)
     res:SetResult(-2)
   end
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventItemNewOverlayFlag)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventItemNewOverlayFlag)
   request.item_pstid = item_pstid
   request.flag = flag
-  if value and value == true then
+  if value and true == value then
     request.value = 1
   else
     request.value = 0
@@ -691,18 +504,15 @@ ItemModule._RequestItemOverlayFlag = function(self, TT, item_pstid, flag, value)
   return res
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule._RequestClearItemListFlag = function(self, TT, item_pstid_list, flag)
-  -- function num : 0_36 , upvalues : _ENV
-  (Log.debug)("ItemModule:_RequestClearItemListFlag()")
+function ItemModule:_RequestClearItemListFlag(TT, item_pstid_list, flag)
+  Log.debug("ItemModule:_RequestClearItemListFlag()")
   local res = AsyncRequestRes:New()
   if not item_pstid_list then
-    (Log.fatal)("_RequestClearItemListFlag no item_pstid")
+    Log.fatal("_RequestClearItemListFlag no item_pstid")
     res:SetSucc(false)
     res:SetResult(-1)
   end
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventMobileItemListClearFlag)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventMobileItemListClearFlag)
   request.item_psitd_list = item_pstid_list
   request.flag = flag
   local reply = self:Call(TT, request)
@@ -717,19 +527,18 @@ ItemModule._RequestClearItemListFlag = function(self, TT, item_pstid_list, flag)
   return res
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.HasNewBook = function(self)
-  -- function num : 0_37 , upvalues : _ENV
-  local bookCfg = (Cfg.cfg_book)({})
-  local bookCount = (table.count)(bookCfg)
+function ItemModule:HasNewBook()
+  local bookCfg = Cfg.cfg_book({})
+  local bookCount = table.count(bookCfg)
   if bookCount <= 0 then
     return false
   end
-  for _,v in pairs(bookCfg) do
-    local chapterCfgs = (Cfg.cfg_book_chapter)({BookId = v.BookId})
+  for _, v in pairs(bookCfg) do
+    local chapterCfgs = Cfg.cfg_book_chapter({
+      BookId = v.BookId
+    })
     if chapterCfgs then
-      for _,v1 in pairs(chapterCfgs) do
+      for _, v1 in pairs(chapterCfgs) do
         if self:IsNewBookChapter(v1.ItemId) then
           return true
         end
@@ -739,44 +548,35 @@ ItemModule.HasNewBook = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.IsNewBookChapter = function(self, itemId)
-  -- function num : 0_38 , upvalues : _ENV
+function ItemModule:IsNewBookChapter(itemId)
   if itemId == nil or itemId <= 0 then
     return false
   end
   local items = self:GetItemByTempId(itemId)
   local isnil = true
-  for key,value in pairs(items) do
+  for key, value in pairs(items) do
     isnil = false
-    do return value:IsNewOverlay() end
+    return value:IsNewOverlay()
   end
   return false
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.SetBookChapterStatus = function(self, TT, itemId)
-  -- function num : 0_39 , upvalues : _ENV
+function ItemModule:SetBookChapterStatus(TT, itemId)
   if itemId == nil or itemId <= 0 then
-    return 
+    return
   end
   local items = self:GetItemByTempId(itemId)
-  for key,value in pairs(items) do
+  for key, value in pairs(items) do
     self:SetItemUnnewOverlay(TT, value:GetID())
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.IsChoosePetGift = function(self, itemId)
-  -- function num : 0_40 , upvalues : _ENV
+function ItemModule:IsChoosePetGift(itemId)
   local giftType = self:GetItemGiftType(itemId)
   if giftType ~= ItemGiftType.ItemGiftType_Choose then
     return false
   end
-  local cfgGift = (Cfg.cfg_item_gift)[itemId]
+  local cfgGift = Cfg.cfg_item_gift[itemId]
   if not cfgGift then
     return false
   end
@@ -784,9 +584,9 @@ ItemModule.IsChoosePetGift = function(self, itemId)
   if itemList == nil or #itemList <= 0 then
     return false
   end
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  local petModule = GameGlobal.GetModule(PetModule)
   for i = 1, #itemList do
-    local giftId = (itemList[i])[1]
+    local giftId = itemList[i][1]
     if not petModule:IsPetID(giftId) then
       return false
     end
@@ -794,12 +594,9 @@ ItemModule.IsChoosePetGift = function(self, itemId)
   return true
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.ItemUpgradeByTemplate = function(self, TT, template_id)
-  -- function num : 0_41 , upvalues : _ENV
+function ItemModule:ItemUpgradeByTemplate(TT, template_id)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventItemUpgradeReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventItemUpgradeReq)
   request.item_id = template_id
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -810,17 +607,13 @@ ItemModule.ItemUpgradeByTemplate = function(self, TT, template_id)
   res:SetSucc(true)
   local replyEvent = reply.msg
   res:SetResult(replyEvent.ret)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnItemUpgrade, template_id)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnItemUpgrade, template_id)
   return res
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.ItemDecomposeByTemplate = function(self, TT, template_id, count)
-  -- function num : 0_42 , upvalues : _ENV
+function ItemModule:ItemDecomposeByTemplate(TT, template_id, count)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventItemDecomposeReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventItemDecomposeReq)
   request.item_id = template_id
   request.item_count = count
   local reply = self:Call(TT, request)
@@ -835,11 +628,8 @@ ItemModule.ItemDecomposeByTemplate = function(self, TT, template_id, count)
   return res
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.ExchangeBreakThoughItem = function(self, TT, src_id, src_count, dest_id, dest_count)
-  -- function num : 0_43 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventCommonBreakThoughExchangeReq)
+function ItemModule:ExchangeBreakThoughItem(TT, src_id, src_count, dest_id, dest_count)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventCommonBreakThoughExchangeReq)
   request.src_item_id = src_id
   request.src_item_count = src_count
   request.dest_item_id = dest_id
@@ -856,20 +646,17 @@ ItemModule.ExchangeBreakThoughItem = function(self, TT, src_id, src_count, dest_
   return res
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.GetAvailableLimitDrawcardCoupon = function(self, type)
-  -- function num : 0_44 , upvalues : _ENV
+function ItemModule:GetAvailableLimitDrawcardCoupon(type)
   local items = self:GetItemListBySubType(type)
   if not next(items) then
     return nil
   end
   local now = GetSvrTimeNow()
-  local loginMd = (GameGlobal.GetModule)(LoginModule)
-  for _,item in pairs(items) do
+  local loginMd = GameGlobal.GetModule(LoginModule)
+  for _, item in pairs(items) do
     local cfg = item:GetTemplate()
-    if (string.isnullorempty)(cfg.CompulsiveDeadTime) then
-      (Log.exception)("限时抽卡券没有配强制失效时间:", cfg.ID)
+    if string.isnullorempty(cfg.CompulsiveDeadTime) then
+      Log.exception("限时抽卡券没有配强制失效时间:", cfg.ID)
     end
     if now < loginMd:GetTimeStampByTimeStr(cfg.CompulsiveDeadTime, Enum_DateTimeZoneType.E_ZoneType_GMT) then
       return item
@@ -877,59 +664,44 @@ ItemModule.GetAvailableLimitDrawcardCoupon = function(self, type)
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.GetErrorMsg = function(self, code)
-  -- function num : 0_45 , upvalues : _ENV
+function ItemModule:GetErrorMsg(code)
   if not code then
-    return 
+    return
   else
     if code == ITEM_RESULT_CODE.ITEM_NOT_EXIST then
-      return (StringTable.Get)("str_item_public_item_not_exist")
+      return StringTable.Get("str_item_public_item_not_exist")
+    else
     end
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.CommonAutoConversionEventOpen = function(self, value)
-  -- function num : 0_46 , upvalues : _ENV
-  (Log.debug)("###[CommonConver] 开关转化消息接受:", value)
+function ItemModule:CommonAutoConversionEventOpen(value)
+  Log.debug("###[CommonConver] 开关转化消息接受:", value)
   if value then
     self.m_local_update_list = {}
   end
   self._autoConverOpen = value
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.GetConverList = function(self)
-  -- function num : 0_47 , upvalues : _ENV
-  (Log.debug)("###[CommonConver] 获取转化道具")
+function ItemModule:GetConverList()
+  Log.debug("###[CommonConver] 获取转化道具")
   local retList = {}
-  for key,value in pairs(self.m_local_update_list) do
-    (Log.debug)("###[CommonConver] 获取转化道具,id:", key, "|count:", value)
+  for key, value in pairs(self.m_local_update_list) do
+    Log.debug("###[CommonConver] 获取转化道具,id:", key, "|count:", value)
     retList[key] = value
   end
-  ;
-  (Log.debug)("###[CommonConver] 获取转化结束，清空缓存")
+  Log.debug("###[CommonConver] 获取转化结束，清空缓存")
   self.m_local_update_list = {}
   return retList
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.GetChessItemId = function(self)
-  -- function num : 0_48
+function ItemModule:GetChessItemId()
   return self.m_chess
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.HandleCEventChessData = function(self, TT)
-  -- function num : 0_49 , upvalues : _ENV
+function ItemModule:HandleCEventChessData(TT)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventChessDataReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventChessDataReq)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     res:SetSucc(false)
@@ -943,12 +715,9 @@ ItemModule.HandleCEventChessData = function(self, TT)
   return res
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemModule.HandleCEventChessItem = function(self, TT, template_id)
-  -- function num : 0_50 , upvalues : _ENV
+function ItemModule:HandleCEventChessItem(TT, template_id)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventChessItemReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventChessItemReq)
   request.cfg_id = template_id
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -964,5 +733,3 @@ ItemModule.HandleCEventChessItem = function(self, TT, template_id)
   end
   return res
 end
-
-

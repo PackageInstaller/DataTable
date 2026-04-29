@@ -1,33 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21_crisis_contract/ui_activity_n21cc_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN21CCMainController", UIController)
 UIActivityN21CCMainController = UIActivityN21CCMainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN21CCMainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIActivityN21CCMainController:LoadDataOnEnter(TT, res, uiParams)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
   self._activityConst = UIActivityN21CCConst:New()
-  ;
-  (self._activityConst):LoadData(TT, res)
-  local challengeComponent, challengeCompInfo = (self._activityConst):GetChallengeComponent()
+  self._activityConst:LoadData(TT, res)
+  local challengeComponent, challengeCompInfo = self._activityConst:GetChallengeComponent()
   if challengeComponent == nil or challengeCompInfo == nil then
     res:SetSucc(false)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
+    return
   end
   self._levelGroupsData = UIActivityN21CCLevelGroupsData:New(challengeComponent:GetComponentCfgId(), challengeCompInfo)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN21CCMainController:OnShow()
   self:AttachEvent(GameEventType.N21CCGetScoreReward, self.ForceUpdate)
   self:AttachEvent(GameEventType.N21CCRefreshLevelStatus, self.RefreshLevelStatus)
   self:AttachEvent(GameEventType.N21CCPlayMainFocusAnim, self.PlayFocusAnim)
@@ -42,92 +30,106 @@ UIActivityN21CCMainController.OnShow = function(self)
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   local backBtn = btns:SpawnObject("UICommonTopButton")
   backBtn:SetData(function()
-    -- function num : 0_1_0 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(self.CloseCoro, self)
-  end
-, function()
-    -- function num : 0_1_1 , upvalues : self
+    GameGlobal.TaskManager():StartTask(self.CloseCoro, self)
+  end, function()
     self:ShowDialog("UIActivityN21CCIntro", "UIActivityN21CCMainController")
-  end
-, nil, false)
+  end, nil, false)
   self:InitUI()
-  ;
-  (UIActivityN21CCConst.ClearEnterNewStatus)()
+  UIActivityN21CCConst.ClearEnterNewStatus()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN21CCMainController:OnHide()
   self:DetachEvent(GameEventType.N21CCRefreshLevelStatus, self.RefreshLevelStatus)
   self:DetachEvent(GameEventType.N21CCGetScoreReward, self.ForceUpdate)
   self:DetachEvent(GameEventType.N21CCPlayMainFocusAnim, self.PlayFocusAnim)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_3
+function UIActivityN21CCMainController:OnUpdate(deltaTimeMS)
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.CloseCoro = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN21CCMainController:CloseCoro(TT)
   self:Lock("UIActivityN21CCMainController_CloseCoro")
   self:SwitchState(UIStateType.UIMain)
   self:UnLock("UIActivityN21CCMainController_CloseCoro")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.GetPositionAndRotation = function(self, count, index)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN21CCMainController:GetPositionAndRotation(count, index)
   if not self._positionConfig then
     self._positionConfig = {
-[1] = {
-[1] = {position = Vector3(21.07, -75.8, 0), angle = -7.94}
-}
-, 
-[2] = {
-[1] = {position = Vector3(-129.53, -36, 0), angle = -7.94}
-, 
-[2] = {position = Vector3(168.97, -84.7, 0), angle = 1.75}
-}
-, 
-[3] = {
-[1] = {position = Vector3(-297.53, -36.9, 0), angle = -7.94}
-, 
-[2] = {position = Vector3(2.97, -86.8, 0), angle = 1.75}
-, 
-[3] = {position = Vector3(302.97, -73.8, 0), angle = -4.59}
-}
-, 
-[4] = {
-[1] = {position = Vector3(-442.23, -36.3, 0), angle = -7.94}
-, 
-[2] = {position = Vector3(-137.53, -86, 0), angle = 1.75}
-, 
-[3] = {position = Vector3(159.67, -73.9, 0), angle = -4.59}
-, 
-[4] = {position = Vector3(475.97, -69.6, 0), angle = 4.01}
-}
-, 
-[5] = {
-[1] = {position = Vector3(-573.7, -42.1, 0), angle = -7.94}
-, 
-[2] = {position = Vector3(-274.93, -92.6, 0), angle = 1.75}
-, 
-[3] = {position = Vector3(28.97, -80.7, 0), angle = -4.59}
-, 
-[4] = {position = Vector3(346, -76, 0), angle = 4.01}
-, 
-[5] = {position = Vector3(635.27, -28.9, 0), angle = 7.18}
-}
-}
+      [1] = {
+        [1] = {
+          position = Vector3(21.07, -75.8, 0),
+          angle = -7.94
+        }
+      },
+      [2] = {
+        [1] = {
+          position = Vector3(-129.53, -36, 0),
+          angle = -7.94
+        },
+        [2] = {
+          position = Vector3(168.97, -84.7, 0),
+          angle = 1.75
+        }
+      },
+      [3] = {
+        [1] = {
+          position = Vector3(-297.53, -36.9, 0),
+          angle = -7.94
+        },
+        [2] = {
+          position = Vector3(2.97, -86.8, 0),
+          angle = 1.75
+        },
+        [3] = {
+          position = Vector3(302.97, -73.8, 0),
+          angle = -4.59
+        }
+      },
+      [4] = {
+        [1] = {
+          position = Vector3(-442.23, -36.3, 0),
+          angle = -7.94
+        },
+        [2] = {
+          position = Vector3(-137.53, -86, 0),
+          angle = 1.75
+        },
+        [3] = {
+          position = Vector3(159.67, -73.9, 0),
+          angle = -4.59
+        },
+        [4] = {
+          position = Vector3(475.97, -69.6, 0),
+          angle = 4.01
+        }
+      },
+      [5] = {
+        [1] = {
+          position = Vector3(-573.7, -42.1, 0),
+          angle = -7.94
+        },
+        [2] = {
+          position = Vector3(-274.93, -92.6, 0),
+          angle = 1.75
+        },
+        [3] = {
+          position = Vector3(28.97, -80.7, 0),
+          angle = -4.59
+        },
+        [4] = {
+          position = Vector3(346, -76, 0),
+          angle = 4.01
+        },
+        [5] = {
+          position = Vector3(635.27, -28.9, 0),
+          angle = 7.18
+        }
+      }
+    }
   end
-  local config = (self._positionConfig)[count]
+  local config = self._positionConfig[count]
   if not config then
     return Vector3(0, 0, 0), 0
   end
@@ -135,26 +137,19 @@ UIActivityN21CCMainController.GetPositionAndRotation = function(self, count, ind
   return result.position, result.angle
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.PlayEnterAnim = function(self)
-  -- function num : 0_6
-  local lockLevelGroups = (self._levelGroupsData):GetLockLevelGroups()
+function UIActivityN21CCMainController:PlayEnterAnim()
+  local lockLevelGroups = self._levelGroupsData:GetLockLevelGroups()
   if #lockLevelGroups <= 0 then
-    (self._anim):Play("UIActivityN21CCMainController_in_2")
+    self._anim:Play("UIActivityN21CCMainController_in_2")
   else
-    ;
-    (self._anim):Play("UIActivityN21CCMainController_in")
+    self._anim:Play("UIActivityN21CCMainController_in")
   end
   self:StartTask(self.PlayEnterAnimCoro, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.PlayEnterAnimCoro = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityN21CCMainController:PlayEnterAnimCoro(TT)
   self:Lock("UIActivityN21CCMainController_PlayEnterAnimCoro")
-  local levelItems = (self._levelLoader):GetAllSpawnList()
+  local levelItems = self._levelLoader:GetAllSpawnList()
   for i = 1, #levelItems do
     local item = levelItems[i]
     item:PlayAnim()
@@ -163,191 +158,129 @@ UIActivityN21CCMainController.PlayEnterAnimCoro = function(self, TT)
   self:UnLock("UIActivityN21CCMainController_PlayEnterAnimCoro")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.PlayFocusAnim = function(self)
-  -- function num : 0_8
-  (self._anim):Play("UIActivityN21CCMainController_in_1")
+function UIActivityN21CCMainController:PlayFocusAnim()
+  self._anim:Play("UIActivityN21CCMainController_in_1")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.InitUI = function(self)
-  -- function num : 0_9
+function UIActivityN21CCMainController:InitUI()
   self:InitLevels()
   self:RefreshUI()
   self:RefreshRedAndNew()
   self:PlayEnterAnim()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.InitLevels = function(self)
-  -- function num : 0_10
-  if not (self._activityConst):IsChallengeEnable() then
-    return 
+function UIActivityN21CCMainController:InitLevels()
+  if not self._activityConst:IsChallengeEnable() then
+    return
   end
   self:RefreshLevelStatus()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.RefreshLevelStatus = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  (self._levelGroupsData):Refresh()
-  local openLevelGroups = (self._levelGroupsData):GetOpenLevelGroups()
-  ;
-  (self._levelLoader):SpawnObjects("UIActivityN21CCItem", #openLevelGroups)
-  local levelItems = (self._levelLoader):GetAllSpawnList()
+function UIActivityN21CCMainController:RefreshLevelStatus()
+  self._levelGroupsData:Refresh()
+  local openLevelGroups = self._levelGroupsData:GetOpenLevelGroups()
+  self._levelLoader:SpawnObjects("UIActivityN21CCItem", #openLevelGroups)
+  local levelItems = self._levelLoader:GetAllSpawnList()
   for i = 1, #levelItems do
-    do
-      local item = levelItems[i]
-      item:Refresh(openLevelGroups[i], false, function(levelGroupData)
-    -- function num : 0_11_0 , upvalues : self, item, levelItems, i
-    self:OpenLevelGroup(item, levelGroupData, #levelItems, i)
+    local item = levelItems[i]
+    item:Refresh(openLevelGroups[i], false, function(levelGroupData)
+      self:OpenLevelGroup(item, levelGroupData, #levelItems, i)
+    end)
+    local pos, angle = self:GetPositionAndRotation(#levelItems, i)
+    item:SetTransform(pos, angle, 0.65)
   end
-)
-      local pos, angle = self:GetPositionAndRotation(#levelItems, i)
-      item:SetTransform(pos, angle, 0.65)
-    end
-  end
-  local lockLevelGroups = nil
-  if #(self._levelGroupsData):GetLockLevelGroups() <= 0 then
-    (self._unOpenLevels):SetActive(lockLevelGroups)
+  local lockLevelGroups = self._levelGroupsData:GetLockLevelGroups()
+  if #lockLevelGroups <= 0 then
+    self._unOpenLevels:SetActive(false)
     self._unlockLevelGroup = nil
   else
-    self._unlockLevelGroup = ((self._levelGroupsData):GetLockLevelGroups())[#(self._levelGroupsData):GetLockLevelGroups()]
-    -- DECOMPILER ERROR at PC53: Overwrote pending register: R6 in 'AssignReg'
-
-    ;
-    (self._unOpenLevels):SetActive(lockLevelGroups)
-    -- DECOMPILER ERROR at PC57: Overwrote pending register: R6 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC58: Overwrote pending register: R6 in 'AssignReg'
-
-    ;
-    (self._remainLevelsLabel):SetText(lockLevelGroups("str_n20_crisis_contract_remain_boss_count", #(self._levelGroupsData):GetLockLevelGroups()))
+    self._unlockLevelGroup = lockLevelGroups[#lockLevelGroups]
+    self._unOpenLevels:SetActive(true)
+    self._remainLevelsLabel:SetText(StringTable.Get("str_n20_crisis_contract_remain_boss_count", #lockLevelGroups))
     self:RefreshUnOpenLevelStatus()
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.RefreshUI = function(self)
-  -- function num : 0_12
+function UIActivityN21CCMainController:RefreshUI()
   self:RefreshActivityRemainTime()
   self:RefreshUnOpenLevelStatus()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.RefreshUnOpenLevelStatus = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityN21CCMainController:RefreshUnOpenLevelStatus()
   if not self._unlockLevelGroup then
-    return 
+    return
   end
-  local seconds = (self._unlockLevelGroup):GetUnlockSeconds()
-  local timeStr = (UIActivityN21CCConst.GetTimeString)(seconds)
-  ;
-  (self._remainTimeLabel):SetText((StringTable.Get)("str_n20_crisis_contract_level_unlock_time", timeStr))
+  local seconds = self._unlockLevelGroup:GetUnlockSeconds()
+  local timeStr = UIActivityN21CCConst.GetTimeString(seconds)
+  self._remainTimeLabel:SetText(StringTable.Get("str_n20_crisis_contract_level_unlock_time", timeStr))
   if seconds <= 0 then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.N21CCRefreshLevelStatus)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.N21CCRefreshLevelStatus)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.RefreshActivityRemainTime = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local endTime = (self._activityConst):GetActiveEndTime()
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  local seconds = (math.floor)(endTime - nowTime)
+function UIActivityN21CCMainController:RefreshActivityRemainTime()
+  local endTime = self._activityConst:GetActiveEndTime()
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  local seconds = math.floor(endTime - nowTime)
   if seconds < 0 then
     seconds = 0
   end
-  if (self._activityConst):IsActivityEnd() then
-    (self._timeLabel):SetText((StringTable.Get)("str_n20_crisis_contract_activity_end"))
-    return 
+  if self._activityConst:IsActivityEnd() then
+    self._timeLabel:SetText(StringTable.Get("str_n20_crisis_contract_activity_end"))
+    return
   end
-  local timeStr = (UIActivityN21CCConst.GetTimeString)(seconds)
-  ;
-  (self._timeLabel):SetText((StringTable.Get)("str_n20_crisis_contract_activity_remain_time", timeStr))
+  local timeStr = UIActivityN21CCConst.GetTimeString(seconds)
+  self._timeLabel:SetText(StringTable.Get("str_n20_crisis_contract_activity_remain_time", timeStr))
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.RefreshRedAndNew = function(self)
-  -- function num : 0_15
+function UIActivityN21CCMainController:RefreshRedAndNew()
   self:RefreshEventRedAndNew()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.RefreshEventRedAndNew = function(self)
-  -- function num : 0_16
-  (self._tasklRed):SetActive((self._activityConst):IsShowEventnRed())
+function UIActivityN21CCMainController:RefreshEventRedAndNew()
+  self._tasklRed:SetActive(self._activityConst:IsShowEventnRed())
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.OpenLevelGroup = function(self, item, levelGroupData, count, index)
-  -- function num : 0_17 , upvalues : _ENV
-  if (self._activityConst):IsActivityEnd() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+function UIActivityN21CCMainController:OpenLevelGroup(item, levelGroupData, count, index)
+  if self._activityConst:IsActivityEnd() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
   self:ShowDialog("UIActivityN21CCShowCardController", levelGroupData, self._activityConst, item, count, index)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.ForceUpdate = function(self)
-  -- function num : 0_18
+function UIActivityN21CCMainController:ForceUpdate()
   self:StartTask(self.ReLoadData, self)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.ReLoadData = function(self, TT)
-  -- function num : 0_19 , upvalues : _ENV
+function UIActivityN21CCMainController:ReLoadData(TT)
   self:Lock("UIActivityN21CCMainController_ReLoadData")
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (self._activityConst):LoadData(TT, res)
+  self._activityConst:LoadData(TT, res)
   self:RefreshRedAndNew()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.N21CCRefreshRedAndNew)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.N21CCRefreshRedAndNew)
   self:UnLock("UIActivityN21CCMainController_ReLoadData")
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.BtnTaskOnClick = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  if (self._activityConst):IsActivityEnd() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+function UIActivityN21CCMainController:BtnTaskOnClick()
+  if self._activityConst:IsActivityEnd() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
-  if not (self._activityConst):IsProgressEnable() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
-    return 
+  if not self._activityConst:IsProgressEnable() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
+    return
   end
   self:ShowDialog("UIActivityN21CCShop")
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCMainController.UnOpenBtnOnClick = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIActivityN21CCMainController:UnOpenBtnOnClick()
   if not self._unlockLevelGroup then
-    return 
+    return
   end
-  local timeStr = (UIActivityN21CCConst.GetTimeString)((self._unlockLevelGroup):GetUnlockSeconds())
-  ;
-  (ToastManager.ShowToast)((StringTable.Get)("str_n20_crisis_contract_level_unlock_tips", timeStr))
+  local timeStr = UIActivityN21CCConst.GetTimeString(self._unlockLevelGroup:GetUnlockSeconds())
+  ToastManager.ShowToast(StringTable.Get("str_n20_crisis_contract_level_unlock_tips", timeStr))
 end
-
-

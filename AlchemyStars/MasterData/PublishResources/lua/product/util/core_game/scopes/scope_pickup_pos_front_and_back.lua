@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_pickup_pos_front_and_back.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_PickupPosFrontAndBack", SkillScopeCalculator_Base)
 SkillScopeCalculator_PickupPosFrontAndBack = SkillScopeCalculator_PickupPosFrontAndBack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_PickupPosFrontAndBack.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local activeSkillPickUpComponent = (casterEntity:ActiveSkillPickUpComponent())
-  local pickUpCenterPos = nil
+function SkillScopeCalculator_PickupPosFrontAndBack:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
+  local pickUpCenterPos
   if activeSkillPickUpComponent then
     pickUpCenterPos = activeSkillPickUpComponent:GetFirstValidPickUpGridPos()
   else
@@ -20,39 +13,28 @@ SkillScopeCalculator_PickupPosFrontAndBack.CalcRange = function(self, scopeType,
       pickUpCenterPos = previewPickUpComponent:GetFirstValidPickUpGridPos()
     end
   end
-  do
-    local dir = self:_GetSimplifiedV2Direction(pickUpCenterPos - casterPos)
-    local attackRange = {}
-    local wholeArea = {}
-    local posForward = pickUpCenterPos + dir
-    self:_InsertTargetGrid(attackRange, posForward, wholeArea)
-    local posBackward = pickUpCenterPos - dir
-    self:_InsertTargetGrid(attackRange, posBackward, wholeArea)
-    local result = SkillScopeResult:New(SkillScopeType.TeleportTargetPosFrontAndBack, casterPos, attackRange, wholeArea)
-    return result
-  end
+  local dir = self:_GetSimplifiedV2Direction(pickUpCenterPos - casterPos)
+  local attackRange = {}
+  local wholeArea = {}
+  local posForward = pickUpCenterPos + dir
+  self:_InsertTargetGrid(attackRange, posForward, wholeArea)
+  local posBackward = pickUpCenterPos - dir
+  self:_InsertTargetGrid(attackRange, posBackward, wholeArea)
+  local result = SkillScopeResult:New(SkillScopeType.TeleportTargetPosFrontAndBack, casterPos, attackRange, wholeArea)
+  return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_PickupPosFrontAndBack._GetSimplifiedV2Direction = function(self, v2)
-  -- function num : 0_1
+function SkillScopeCalculator_PickupPosFrontAndBack:_GetSimplifiedV2Direction(v2)
   local v = v2:Clone()
   if v.x > 0 then
     v.x = 1
-  else
-    if v.x < 0 then
-      v.x = -1
-    end
+  elseif v.x < 0 then
+    v.x = -1
   end
-  if v.y > 0 then
+  if 0 < v.y then
     v.y = 1
-  else
-    if v.y < 0 then
-      v.y = -1
-    end
+  elseif 0 > v.y then
+    v.y = -1
   end
   return v
 end
-
-

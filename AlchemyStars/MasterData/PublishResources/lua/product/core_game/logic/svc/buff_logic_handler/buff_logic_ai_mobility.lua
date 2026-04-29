@@ -1,95 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_ai_mobility.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddAIMobility", BuffLogicBase)
 BuffLogicAddAIMobility = BuffLogicAddAIMobility
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddAIMobility.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddAIMobility:Constructor(buffInstance, logicParam)
   self._addValue = logicParam.addValue or 0
   self._mulValue = logicParam.mulValue or 1
   self._runCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddAIMobility.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicAddAIMobility:DoLogic()
   self._runCount = self._runCount + 1
-  local e = (self._buffInstance):Entity()
+  local e = self._buffInstance:Entity()
   if not e:HasMonsterID() then
-    return 
+    return
   end
   local mulVal = self._mulValue * self._runCount
   if mulVal ~= 1 then
-    (e:Attributes()):Modify("Mobility", mulVal, (self._buffInstance):BuffSeq(), MultModifyOperator.MULTIPLY)
+    e:Attributes():Modify("Mobility", mulVal, self._buffInstance:BuffSeq(), MultModifyOperator.MULTIPLY)
   end
   local addVal = self._addValue * self._runCount
   if addVal ~= 0 then
-    (e:Attributes()):Modify("Mobility", addVal, (self._buffInstance):BuffSeq(), MultModifyOperator.PLUS)
+    e:Attributes():Modify("Mobility", addVal, self._buffInstance:BuffSeq(), MultModifyOperator.PLUS)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddAIMobility.DoOverlap = function(self)
-  -- function num : 0_2
+function BuffLogicAddAIMobility:DoOverlap()
   self:DoLogic()
 end
 
 _class("BuffLogicRemoveAIMobility", BuffLogicBase)
 BuffLogicRemoveAIMobility = BuffLogicRemoveAIMobility
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveAIMobility.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicRemoveAIMobility:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveAIMobility.DoLogic = function(self)
-  -- function num : 0_4
-  local e = (self._buffInstance):Entity()
+function BuffLogicRemoveAIMobility:DoLogic()
+  local e = self._buffInstance:Entity()
   if not e:HasMonsterID() then
-    return 
+    return
   end
-  ;
-  (e:Attributes()):RemoveModify("Mobility", (self._buffInstance):BuffSeq())
+  e:Attributes():RemoveModify("Mobility", self._buffInstance:BuffSeq())
 end
 
 _class("BuffLogicChangeAIMobility", BuffLogicBase)
 BuffLogicChangeAIMobility = BuffLogicChangeAIMobility
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeAIMobility.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_5
+function BuffLogicChangeAIMobility:Constructor(buffInstance, logicParam)
   self._value = logicParam.value or 0
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAIMobility.DoLogic = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicChangeAIMobility:DoLogic()
+  local e = self._buffInstance:Entity()
   if not e:HasMonsterID() then
-    return 
+    return
   end
-  local changeValue = self._value - (e:Attributes()):GetAIMobility()
-  ;
-  (e:Attributes()):Modify("Mobility", changeValue, (self._buffInstance):BuffSeq(), MultModifyOperator.PLUS)
-  local value = (e:Attributes()):GetAIMobility()
-  ;
-  (Log.info)("BuffLogicChangeAIMobility ConfigValue:", self._value, "ChangeValue:", changeValue, "FinalValue = ", value)
+  local changeValue = self._value - e:Attributes():GetAIMobility()
+  e:Attributes():Modify("Mobility", changeValue, self._buffInstance:BuffSeq(), MultModifyOperator.PLUS)
+  local value = e:Attributes():GetAIMobility()
+  Log.info("BuffLogicChangeAIMobility ConfigValue:", self._value, "ChangeValue:", changeValue, "FinalValue = ", value)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAIMobility.DoOverlap = function(self)
-  -- function num : 0_7
+function BuffLogicChangeAIMobility:DoOverlap()
   self:DoLogic()
 end
-
-

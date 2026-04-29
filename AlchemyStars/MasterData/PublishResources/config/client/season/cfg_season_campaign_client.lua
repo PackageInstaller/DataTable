@@ -1,28 +1,146 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/season/cfg_season_campaign_client.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, OvalTipPadding = 2, MissionCptCloseTime = 3, MainLobbyBG = 4, MainLobbyTex = 5, MedalGroupID = 6, Theme = 7, ItemID = 8, FinalStoryQuestID = 9, FinalStoryID = 10, FinalStoryUnlockTime = 11, FinalStoryCg = 12, FinalStorySourceCg = 13, FinalStoryShareStoryID = 14, EnterVideo = 15, EnterVideoBG = 16, EnterStory = 17}
-local common = {"main_zjm_new_wenzi7", "exp_zjm_event_tit1", "exp_s1_book_di_12", 
-{200, 250}
+local key = {
+  ID = 1,
+  OvalTipPadding = 2,
+  MissionCptCloseTime = 3,
+  MainLobbyBG = 4,
+  MainLobbyTex = 5,
+  MedalGroupID = 6,
+  Theme = 7,
+  ItemID = 8,
+  FinalStoryQuestID = 9,
+  FinalStoryID = 10,
+  FinalStoryUnlockTime = 11,
+  FinalStoryCg = 12,
+  FinalStorySourceCg = 13,
+  FinalStoryShareStoryID = 14,
+  EnterVideo = 15,
+  EnterVideoBG = 16,
+  EnterStory = 17
+}
+local common = {
+  "main_zjm_new_wenzi7",
+  "exp_zjm_event_tit1",
+  "exp_s1_book_di_12",
+  {200, 250}
 }
 local config = {
-[8001] = {8001, common[4], "2023-09-27 04:00:00", "main_zjm_new_di42", common[1], 101, common[2], 3001003, 800155, 50551901, nil, common[3], "CGyongbao2", 50150007}
-, 
-[8002] = {8002, common[4], "2023-11-15 05:00:00", "main_zjm_new_s2", common[1], 102, common[2], 3001007, 900276, 50651701, "2023-11-14 05:00:00", common[3]}
-, 
-[8003] = {8003, common[4], "2024-01-10 04:00:00", "main_zjm_new_s3", common[1], 103, common[2], 3001012, nil, nil, nil, nil, nil, nil, "s3_enter_pv"}
-, 
-[8004] = {8004, common[4], "2024-03-06 05:00:00", "main_zjm_new_s4", common[1], 104, common[2], 3001016, nil, nil, nil, nil, nil, nil, "s4_enter_pv"}
-, 
-[8005] = {8005, common[4], "2024-05-08 05:00:00", "main_zjm_new_s5", common[1], 105, common[2], 3001023, nil, nil, nil, nil, nil, nil, "s5_enter_pv"}
-, 
-[8006] = {8006, common[4], "2024-07-03 05:00:00", "main_zjm_new_s6", common[1], 106, common[2], 3001028, nil, nil, nil, nil, nil, nil, "s6_enter_pv"}
-, 
-[8007] = {8007, common[4], "2024-09-04 05:00:00", "main_zjm_new_s7", common[1], 107, common[2], 3001033}
-, 
-[8008] = {8008, common[4], "2024-10-23 05:00:00", "main_zjm_new_s8", common[1], 108, common[2], 3001038}
+  [8001] = {
+    8001,
+    common[4],
+    "2023-09-27 04:00:00",
+    "main_zjm_new_di42",
+    common[1],
+    101,
+    common[2],
+    3001003,
+    800155,
+    50551901,
+    nil,
+    common[3],
+    "CGyongbao2",
+    50150007
+  },
+  [8002] = {
+    8002,
+    common[4],
+    "2023-11-15 05:00:00",
+    "main_zjm_new_s2",
+    common[1],
+    102,
+    common[2],
+    3001007,
+    900276,
+    50651701,
+    "2023-11-14 05:00:00",
+    common[3]
+  },
+  [8003] = {
+    8003,
+    common[4],
+    "2024-01-10 04:00:00",
+    "main_zjm_new_s3",
+    common[1],
+    103,
+    common[2],
+    3001012,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "s3_enter_pv"
+  },
+  [8004] = {
+    8004,
+    common[4],
+    "2024-03-06 05:00:00",
+    "main_zjm_new_s4",
+    common[1],
+    104,
+    common[2],
+    3001016,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "s4_enter_pv"
+  },
+  [8005] = {
+    8005,
+    common[4],
+    "2024-05-08 05:00:00",
+    "main_zjm_new_s5",
+    common[1],
+    105,
+    common[2],
+    3001023,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "s5_enter_pv"
+  },
+  [8006] = {
+    8006,
+    common[4],
+    "2024-07-03 05:00:00",
+    "main_zjm_new_s6",
+    common[1],
+    106,
+    common[2],
+    3001028,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "s6_enter_pv"
+  },
+  [8007] = {
+    8007,
+    common[4],
+    "2024-09-04 05:00:00",
+    "main_zjm_new_s7",
+    common[1],
+    107,
+    common[2],
+    3001033
+  },
+  [8008] = {
+    8008,
+    common[4],
+    "2024-10-23 05:00:00",
+    "main_zjm_new_s8",
+    common[1],
+    108,
+    common[2],
+    3001038
+  }
 }
 return config, "ID", key
-

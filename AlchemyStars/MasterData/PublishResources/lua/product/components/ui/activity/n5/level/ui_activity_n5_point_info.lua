@@ -1,62 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/level/ui_activity_n5_point_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN5PointInfo", UICustomWidget)
 UIActivityN5PointInfo = UIActivityN5PointInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN5PointInfo.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityN5PointInfo:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5PointInfo.InitWidget = function(self)
-  -- function num : 0_1
+function UIActivityN5PointInfo:InitWidget()
   self.icon = self:GetUIComponent("Image", "icon")
   self.text = self:GetUIComponent("UILocalizationText", "text")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5PointInfo.SetData = function(self, camCpt, needCount)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN5PointInfo:SetData(camCpt, needCount)
   self._campComponent = camCpt
-  local cmpID = (self._campComponent):GetComponentCfgId()
-  local cfg = (self._campComponent):GetActionPointConfig()
+  local cmpID = self._campComponent:GetComponentCfgId()
+  local cfg = self._campComponent:GetActionPointConfig()
   if cfg == nil then
-    (Log.exception)("cfg_component_action_point中找不到组件ID:", cmpID)
+    Log.exception("cfg_component_action_point中找不到组件ID:", cmpID)
   end
   self._pointID = cfg.ItemID
   local module = self:GetModule(ItemModule)
   local count = module:GetItemCount(self._pointID)
-  if not count then
-    count = 0
-  end
+  count = count or 0
   local ceiling = cfg.RegainMax
-  local text = nil
-  if count < needCount then
+  local text
+  if needCount > count then
     text = "<color=#00ffea>" .. count .. "</color>" .. " /" .. ceiling
   else
     text = count .. " /" .. ceiling
   end
-  ;
-  (self.text):SetText(text)
-  local itemCfg = (Cfg.cfg_item)[self._pointID]
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self.icon).sprite = (self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)):GetSprite(itemCfg.Icon)
+  self.text:SetText(text)
+  local itemCfg = Cfg.cfg_item[self._pointID]
+  self.icon.sprite = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas):GetSprite(itemCfg.Icon)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5PointInfo.itemOnClick = function(self, go)
-  -- function num : 0_3
+function UIActivityN5PointInfo:itemOnClick(go)
   self:ShowDialog("UIActivityN5PointDetail")
 end
-
-

@@ -1,40 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/skill_range_outline_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillRangeOutlineSystem_Render", ReactiveSystem)
 SkillRangeOutlineSystem_Render = SkillRangeOutlineSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillRangeOutlineSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillRangeOutlineSystem_Render:Constructor(world)
   self.world = world
-  self._tranRenderSvc = (self.world):GetService("TransformRenderer")
+  self._tranRenderSvc = self.world:GetService("TransformRenderer")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRangeOutlineSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local c = Collector:New({world:GetGroup((world.BW_WEMatchers).SkillRangeOutline)}, {"Added"})
+function SkillRangeOutlineSystem_Render:GetTrigger(world)
+  local c = Collector:New({
+    world:GetGroup(world.BW_WEMatchers.SkillRangeOutline)
+  }, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRangeOutlineSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2
+function SkillRangeOutlineSystem_Render:Filter(entity)
   return entity:HasView()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRangeOutlineSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,e in pairs(entities) do
-    (self._tranRenderSvc):PlaySkillRangeAnim(e)
+function SkillRangeOutlineSystem_Render:ExecuteEntities(entities)
+  for _, e in pairs(entities) do
+    self._tranRenderSvc:PlaySkillRangeAnim(e)
   end
 end
-
-

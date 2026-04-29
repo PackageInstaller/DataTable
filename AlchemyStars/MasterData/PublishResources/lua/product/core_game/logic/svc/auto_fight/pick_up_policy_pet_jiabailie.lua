@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_pet_jiabailie.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_PetJiaBaiLie", PickUpPolicy_Base)
 PickUpPolicy_PetJiaBaiLie = PickUpPolicy_PetJiaBaiLie
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_PetJiaBaiLie.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PickUpPolicy_PetJiaBaiLie:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
   local activeSkillID = calcParam.activeSkillID
   local policyParam = calcParam.policyParam
@@ -18,24 +11,28 @@ PickUpPolicy_PetJiaBaiLie.CalcAutoFightPickUpPolicy = function(self, calcParam)
   local targetIdList = {}
   local validPosIdxList, validPosList = self:_CalcPickUpValidGridList(petEntity, activeSkillID)
   local env = self:_GetPickUpPolicyEnv()
-  local pieceCnt = {0, 0, 0, 0, 0}
+  local pieceCnt = {
+    0,
+    0,
+    0,
+    0,
+    0
+  }
   local pickPos = {}
-  for _,pos in ipairs(validPosList) do
+  for _, pos in ipairs(validPosList) do
     local posIdx = self:_Pos2Index(pos)
-    local color = (env.BoardPosPieces)[posIdx]
+    local color = env.BoardPosPieces[posIdx]
     if color and color ~= PieceType.Green then
       pieceCnt[color] = pieceCnt[color] + 1
       pickPos[color] = pos
     end
   end
-  local maxCnt, maxPos = 0, nil
-  for color,cnt in ipairs(pieceCnt) do
-    if maxCnt < cnt then
+  local maxCnt, maxPos = 0
+  for color, cnt in ipairs(pieceCnt) do
+    if cnt > maxCnt then
       maxCnt = cnt
       maxPos = pickPos[color]
     end
   end
   return {maxPos}, {maxPos}, targetIdList
 end
-
-

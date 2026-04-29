@@ -1,78 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/tree/ui_cn20_n49_tree_state_mechine.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local TalentTree_FSM_State_Type = {None = 0, Select_Skill = 1, Empty = 2, Select_Slot = 3, Drag_In_Begin = 4, Drag_In_End = 5, Drag_Out_Begin = 6, Drag_Out_End = 7}
+local TalentTree_FSM_State_Type = {
+  None = 0,
+  Select_Skill = 1,
+  Empty = 2,
+  Select_Slot = 3,
+  Drag_In_Begin = 4,
+  Drag_In_End = 5,
+  Drag_Out_Begin = 6,
+  Drag_Out_End = 7
+}
 _enum("TalentTree_FSM_State_Type", TalentTree_FSM_State_Type)
-local TalentTree_FSM_Event_Type = {None = 0, Drag_In_Begin = 1, Drag_In_Drag = 2, Drag_In_End = 3, Drag_Out_Begin = 4, Drag_Out_Drag = 5, Drag_Out_End = 6}
+local TalentTree_FSM_Event_Type = {
+  None = 0,
+  Drag_In_Begin = 1,
+  Drag_In_Drag = 2,
+  Drag_In_End = 3,
+  Drag_Out_Begin = 4,
+  Drag_Out_Drag = 5,
+  Drag_Out_End = 6
+}
 _enum("TalentTree_FSM_Event_Type", TalentTree_FSM_Event_Type)
 _class("TalentTree_FSM_Machine", Object)
 TalentTree_FSM_Machine = TalentTree_FSM_Machine
--- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
 
-TalentTree_FSM_Machine.Constructor = function(self)
-  -- function num : 0_0 , upvalues : TalentTree_FSM_State_Type
+function TalentTree_FSM_Machine:Constructor()
   self._currentState = TalentTree_FSM_State_Type.None
   self._stateMap = {}
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-TalentTree_FSM_Machine.CurrentState = function(self)
-  -- function num : 0_1
+function TalentTree_FSM_Machine:CurrentState()
   return self._currentState
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R2 in 'UnsetPending'
-
-TalentTree_FSM_Machine.AddState = function(self, state, stateObj)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._stateMap)[state] = stateObj
+function TalentTree_FSM_Machine:AddState(state, stateObj)
+  self._stateMap[state] = stateObj
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-TalentTree_FSM_Machine.ChangeState = function(self, state, params)
-  -- function num : 0_3 , upvalues : TalentTree_FSM_State_Type, _ENV
+function TalentTree_FSM_Machine:ChangeState(state, params)
   if self._currentState ~= TalentTree_FSM_State_Type.None then
-    ((self._stateMap)[self._currentState]):Exit()
-    ;
-    (Log.fatal)("###[UICN20N49TreeController] state [" .. self._currentState .. "] exit !")
+    self._stateMap[self._currentState]:Exit()
+    Log.fatal("###[UICN20N49TreeController] state [" .. self._currentState .. "] exit !")
   end
   self._currentState = state
   if self._currentState ~= TalentTree_FSM_State_Type.None then
-    ((self._stateMap)[self._currentState]):Enter(params)
-    ;
-    (Log.fatal)("###[UICN20N49TreeController] state [" .. self._currentState .. "] enter !")
+    self._stateMap[self._currentState]:Enter(params)
+    Log.fatal("###[UICN20N49TreeController] state [" .. self._currentState .. "] enter !")
   end
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-TalentTree_FSM_Machine.Update = function(self, params)
-  -- function num : 0_4 , upvalues : TalentTree_FSM_State_Type
+function TalentTree_FSM_Machine:Update(params)
   if self._currentState ~= TalentTree_FSM_State_Type.None then
-    ((self._stateMap)[self._currentState]):Update(params)
+    self._stateMap[self._currentState]:Update(params)
   end
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R2 in 'UnsetPending'
-
-TalentTree_FSM_Machine.Dispose = function(self)
-  -- function num : 0_5 , upvalues : TalentTree_FSM_State_Type
+function TalentTree_FSM_Machine:Dispose()
   self._currentState = TalentTree_FSM_State_Type.None
   self._stateMap = {}
 end
 
 _class("TalentTree_FSM_State", Object)
 TalentTree_FSM_State = TalentTree_FSM_State
--- DECOMPILER ERROR at PC57: Confused about usage of register: R2 in 'UnsetPending'
 
-TalentTree_FSM_State.Constructor = function(self, stateType, enterFn, exitFn, updateFn)
-  -- function num : 0_6
+function TalentTree_FSM_State:Constructor(stateType, enterFn, exitFn, updateFn)
   self.stateType = stateType
   self.enterFn = enterFn
   self.exitFn = exitFn
@@ -80,41 +69,27 @@ TalentTree_FSM_State.Constructor = function(self, stateType, enterFn, exitFn, up
   self.context = nil
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R2 in 'UnsetPending'
-
-TalentTree_FSM_State.Enter = function(self, params)
-  -- function num : 0_7
+function TalentTree_FSM_State:Enter(params)
   self.context = params
   if self.enterFn then
-    (self.enterFn)(params)
+    self.enterFn(params)
   end
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R2 in 'UnsetPending'
-
-TalentTree_FSM_State.Exit = function(self)
-  -- function num : 0_8
+function TalentTree_FSM_State:Exit()
   if self.exitFn then
-    (self.exitFn)(self.context)
+    self.exitFn(self.context)
   end
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R2 in 'UnsetPending'
-
-TalentTree_FSM_State.Update = function(self, params)
-  -- function num : 0_9
+function TalentTree_FSM_State:Update(params)
   if self.updateFn then
-    (self.updateFn)(params, self.context)
+    self.updateFn(params, self.context)
   end
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R2 in 'UnsetPending'
-
-TalentTree_FSM_State.Dispose = function(self)
-  -- function num : 0_10
+function TalentTree_FSM_State:Dispose()
   self.enterFn = nil
   self.exitFn = nil
   self.updateFn = nil
 end
-
-

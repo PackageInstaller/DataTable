@@ -1,102 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/world_boss/ui_season_maze_world_boss_ranking_list.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeWorldBossRankingList", UIController)
 UISeasonMazeWorldBossRankingList = UISeasonMazeWorldBossRankingList
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeWorldBossRankingList.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
-  self._seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self._seasonMazeObj = (self._seasonMazeModule):CurSeasonObj()
-  self._component = (self._seasonMazeObj):GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
-  self._componentInfo = (self._component):GetComponentInfo()
-  self._comCfgID = (self._component):GetComponentCfgId()
-  self._cfg_global = (Cfg.cfg_component_season_maze_global)[self._comCfgID]
-  local subKey = (self._cfg_global).WorldBossMissionID
-  self._rank_info = (self._component):HandleCampaignLoadComponentRank(TT, res, subKey)
+function UISeasonMazeWorldBossRankingList:LoadDataOnEnter(TT, res)
+  self._seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self._seasonMazeObj = self._seasonMazeModule:CurSeasonObj()
+  self._component = self._seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+  self._componentInfo = self._component:GetComponentInfo()
+  self._comCfgID = self._component:GetComponentCfgId()
+  self._cfg_global = Cfg.cfg_component_season_maze_global[self._comCfgID]
+  local subKey = self._cfg_global.WorldBossMissionID
+  self._rank_info = self._component:HandleCampaignLoadComponentRank(TT, res, subKey)
   if not res:GetSucc() then
-    (Log.error)("赛季秘境荒典排行榜数据异常:", res:GetResult())
-    if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-      return 
+    Log.error("赛季秘境荒典排行榜数据异常:", res:GetResult())
+    if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+      return
     end
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossRankingList.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISeasonMazeWorldBossRankingList:OnShow(uiParams)
   self._itemCountPerRow = 1
-  if #(self._rank_info).infos <= 100 or not 100 then
-    self._dynamicListRowSize = #(self._rank_info).infos
-    self.worldBossInfo = (self._componentInfo).m_world_boss_info
-    self.selfRankIndex = self:GetSelfRank()
-    self:InitWidget()
-    self:InitRankingData()
-    self:InitSelfRanking()
-  end
+  self._dynamicListRowSize = #self._rank_info.infos > 100 and 100 or #self._rank_info.infos
+  self.worldBossInfo = self._componentInfo.m_world_boss_info
+  self.selfRankIndex = self:GetSelfRank()
+  self:InitWidget()
+  self:InitRankingData()
+  self:InitSelfRanking()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossRankingList.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonMazeWorldBossRankingList:InitWidget()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "closeBtn")
   self._backBtns = backBtns:SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, function()
-    -- function num : 0_2_1 , upvalues : self
+  end, function()
     self:ShowDialog("UISeasonMazeWorldBossTipsPopUp", "str_season_maze_world_boss_rank_help_title", "str_season_maze_world_boss_rank_help_detail")
-  end
-, nil, true, nil, false, nil)
+  end, nil, true, nil, false, nil)
   self._selfRankPool = self:GetUIComponent("UISelectObjectPath", "selfRank")
   self._dynamicList = self:GetUIComponent("UIDynamicScrollView", "dynamicList")
-  ;
-  (self._dynamicList):InitListView(self._dynamicListRowSize + 1, function(scrollView, index)
-    -- function num : 0_2_2 , upvalues : self
+  self._dynamicList:InitListView(self._dynamicListRowSize + 1, function(scrollView, index)
     return self:_SpawnListItem(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossRankingList.InitSelfRanking = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local damage = ((self._componentInfo).m_world_boss_info).total_damage
+function UISeasonMazeWorldBossRankingList:InitSelfRanking()
+  local damage = self._componentInfo.m_world_boss_info.total_damage
   if damage == 0 then
+  else
     local roleModule = self:GetModule(RoleModule)
     local playerInfo = roleModule:UI_GetPlayerInfo()
     local headid = playerInfo.m_nHeadImageID
     local headbgid = playerInfo.m_nHeadColorID
     local nick = playerInfo.m_stRoleName
     local frameid = playerInfo.m_nHeadFrameID
-    local pool = (self._selfRankPool):SpawnObject("UISeasonMazeWorldBossRankingListItem")
+    local pool = self._selfRankPool:SpawnObject("UISeasonMazeWorldBossRankingListItem")
     pool:SetData(self.selfRankIndex, nick, damage, headbgid, headid, frameid, true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossRankingList.InitRankingData = function(self)
-  -- function num : 0_4
+function UISeasonMazeWorldBossRankingList:InitRankingData()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossRankingList.GetSelfRank = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UISeasonMazeWorldBossRankingList:GetSelfRank()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
-  for rank,v in pairs((self._rank_info).infos) do
+  for rank, v in pairs(self._rank_info.infos) do
     if v.pstid == pstId then
       return rank
     end
@@ -104,10 +73,7 @@ UISeasonMazeWorldBossRankingList.GetSelfRank = function(self)
   return 101
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossRankingList._SpawnListItem = function(self, scrollView, index)
-  -- function num : 0_6
+function UISeasonMazeWorldBossRankingList:_SpawnListItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -118,35 +84,25 @@ UISeasonMazeWorldBossRankingList._SpawnListItem = function(self, scrollView, ind
     rowPool:SpawnObjects("UISeasonMazeWorldBossRankingListItem", self._itemCountPerRow)
   end
   local rowList = rowPool:GetAllSpawnList()
-  if self._dynamicListRowSize <= index then
+  if index >= self._dynamicListRowSize then
     for i = 1, self._itemCountPerRow do
       local listItem = rowList[i]
       local itemIndex = index * self._itemCountPerRow + i
       listItem:SetNull()
     end
   else
-    do
-      for i = 1, self._itemCountPerRow do
-        local listItem = rowList[i]
-        local itemIndex = index * self._itemCountPerRow + i
-        self:_SetListItemData(listItem, itemIndex)
-      end
-      do
-        return item
-      end
+    for i = 1, self._itemCountPerRow do
+      local listItem = rowList[i]
+      local itemIndex = index * self._itemCountPerRow + i
+      self:_SetListItemData(listItem, itemIndex)
     end
   end
+  return item
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossRankingList._SetListItemData = function(self, listItem, index)
-  -- function num : 0_7
-  local info = ((self._rank_info).infos)[index]
-  if info.pstid == 0 then
-    listItem:SetData(index, info.nick, info.damage, info.head_bg, info.head, info.frame_id, info == nil)
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UISeasonMazeWorldBossRankingList:_SetListItemData(listItem, index)
+  local info = self._rank_info.infos[index]
+  if info ~= nil then
+    listItem:SetData(index, info.nick, info.damage, info.head_bg, info.head, info.frame_id, info.pstid ~= 0)
   end
 end
-
-

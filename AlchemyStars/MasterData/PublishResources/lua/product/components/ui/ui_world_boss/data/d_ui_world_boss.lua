@@ -1,140 +1,98 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/data/d_ui_world_boss.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DUIWorldBossDanDetailCell", Object)
 DUIWorldBossDanDetailCell = DUIWorldBossDanDetailCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DUIWorldBossDanDetailCell.Constructor = function(self, cfg, danInfo)
-  -- function num : 0_0
+function DUIWorldBossDanDetailCell:Constructor(cfg, danInfo)
   self._danCfg = cfg
   self._danInfo = danInfo
   self._danId = -1
   if self._danCfg then
-    self._danId = (self._danCfg).ID
+    self._danId = self._danCfg.ID
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DUIWorldBossDanDetailCell.GetDanId = function(self)
-  -- function num : 0_1
+function DUIWorldBossDanDetailCell:GetDanId()
   return self._danId
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DUIWorldBossDanDetailCell.GetDanRankLevel = function(self)
-  -- function num : 0_2
+function DUIWorldBossDanDetailCell:GetDanRankLevel()
   if self._danCfg then
-    return (self._danCfg).RankLevel
+    return self._danCfg.RankLevel
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DUIWorldBossDanDetailCell.GetDanCondition = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function DUIWorldBossDanDetailCell:GetDanCondition()
   if self._danCfg then
-    if (self._danCfg).RankLevel > 0 then
-      local topDanName = (UIWorldBossHelper.GetDanName)(self._danId - 1, 0)
-      local outStr = (StringTable.Get)("str_world_boss_dan_detail_lengend_condition", (StringTable.Get)(topDanName), (self._danCfg).RankLevel)
+    if self._danCfg.RankLevel > 0 then
+      local topDanName = UIWorldBossHelper.GetDanName(self._danId - 1, 0)
+      local outStr = StringTable.Get("str_world_boss_dan_detail_lengend_condition", StringTable.Get(topDanName), self._danCfg.RankLevel)
       return outStr
     else
-      do
-        local outStr = self:_FormatNeedDamageNumStr((self._danCfg).NeedDamage)
-        do return outStr end
-      end
+      local outStr = self:_FormatNeedDamageNumStr(self._danCfg.NeedDamage)
+      return outStr
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DUIWorldBossDanDetailCell._FormatNeedDamageNumStr = function(self, num)
-  -- function num : 0_4 , upvalues : _ENV
-  local preZero = (UIActivityHelper.GetZeroStrFrontNum)(7, num)
-  local fmtStr = (string.format)("<color=#696969>%s</color><color=#e7d3ac>%s</color>", preZero, tostring(num))
+function DUIWorldBossDanDetailCell:_FormatNeedDamageNumStr(num)
+  local preZero = UIActivityHelper.GetZeroStrFrontNum(7, num)
+  local fmtStr = string.format("<color=#696969>%s</color><color=#e7d3ac>%s</color>", preZero, tostring(num))
   return fmtStr
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DUIWorldBossDanDetailCell.GetDanExtraInfo = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if self._danCfg and (self._danCfg).RankLevel > 0 and self._danInfo and (self._danInfo).rank_first_damage > 0 then
-    return (StringTable.Get)("str_world_boss_dan_detail_top_one_score", (self._danInfo).rank_first_damage)
+function DUIWorldBossDanDetailCell:GetDanExtraInfo()
+  if self._danCfg and self._danCfg.RankLevel > 0 and self._danInfo and 0 < self._danInfo.rank_first_damage then
+    return StringTable.Get("str_world_boss_dan_detail_top_one_score", self._danInfo.rank_first_damage)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DUIWorldBossDanDetailCell.GetDanBadgeBase = function(self)
-  -- function num : 0_6
+function DUIWorldBossDanDetailCell:GetDanBadgeBase()
   if self._danCfg then
-    return (self._danCfg).DanBadgeBase
+    return self._danCfg.DanBadgeBase
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DUIWorldBossDanDetailCell.GetDanRewards = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function DUIWorldBossDanDetailCell:GetDanRewards()
   if self._danCfg then
-    local rewardVec = (self._danCfg).Rewards
+    local rewardVec = self._danCfg.Rewards
     if rewardVec then
       local roleAssetList = {}
-      for index,value in ipairs(rewardVec) do
+      for index, value in ipairs(rewardVec) do
         local asset = RoleAsset:New()
         asset.assetid = value[1]
         asset.count = value[2]
-        ;
-        (table.insert)(roleAssetList, asset)
+        table.insert(roleAssetList, asset)
       end
       return roleAssetList
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DUIWorldBossDanDetailCell.GetDanName = function(self)
-  -- function num : 0_8
+function DUIWorldBossDanDetailCell:GetDanName()
   if self._danCfg then
-    return (self._danCfg).DanName
+    return self._danCfg.DanName
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DUIWorldBossDanDetailCell.IsPlusDan = function(self)
-  -- function num : 0_9
+function DUIWorldBossDanDetailCell:IsPlusDan()
   local bPlus = false
-  if self._danCfg and (self._danCfg).IsPlusDan and (self._danCfg).IsPlusDan == 1 then
+  if self._danCfg and self._danCfg.IsPlusDan and self._danCfg.IsPlusDan == 1 then
     bPlus = true
   end
   return bPlus
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DUIWorldBossDanDetailCell.IsPlayerCurDanData = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local curDan = (self._danInfo).cur_dan
-  local curRank = (self._danInfo).my_rank
-  if (UIWorldBossHelper.IsNoDan)(curDan, curRank) then
+function DUIWorldBossDanDetailCell:IsPlayerCurDanData()
+  local curDan = self._danInfo.cur_dan
+  local curRank = self._danInfo.my_rank
+  if UIWorldBossHelper.IsNoDan(curDan, curRank) then
     return false
   end
-  if curRank > 0 and (self._danCfg).RankLevel > 0 then
+  if 0 < curRank and 0 < self._danCfg.RankLevel then
     return true
   end
-  if curDan ~= (self._danCfg).ID then
-    do return curRank ~= 0 or (self._danCfg).RankLevel ~= 0 end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  if curRank == 0 and self._danCfg.RankLevel == 0 then
+    return curDan == self._danCfg.ID
+  else
+    return false
   end
 end
-
-

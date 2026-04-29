@@ -1,13 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/role/1501301/cfg_skill_view_200130.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7, PhasePosDir = 8}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{"PlayCasterAnimation,animName = AtkChain; PlayCasterBindEffect,effectID =3897; PlayAudio,audioID = 2530; PlayLevelTrapCommonSummon,destroyEffectID=3902,maxLevelCamEffectID=3899,summonDelay=401,lvUpEffectID=3898,destroyDelay=400,maxLevelAudioID=2531; Wait,waitTime=2000; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7,
+  PhasePosDir = 8
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      "PlayCasterAnimation,animName = AtkChain; PlayCasterBindEffect,effectID =3897; PlayAudio,audioID = 2530; PlayLevelTrapCommonSummon,destroyEffectID=3902,maxLevelCamEffectID=3899,summonDelay=401,lvUpEffectID=3898,destroyDelay=400,maxLevelAudioID=2531; Wait,waitTime=2000; "
+    }
+  }
 }
 return config, "ID", key
-

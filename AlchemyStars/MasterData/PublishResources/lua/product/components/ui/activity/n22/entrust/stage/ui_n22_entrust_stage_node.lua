@@ -1,62 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/entrust/stage/ui_n22_entrust_stage_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22EntrustStageNode", UICustomWidget)
 UIN22EntrustStageNode = UIN22EntrustStageNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22EntrustStageNode._SetRemainingTime = function(self, widgetName, extraId, descId, endTime, customTimeStr)
-  -- function num : 0_0 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UIN22EntrustStageNode:_SetRemainingTime(widgetName, extraId, descId, endTime, customTimeStr)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   if customTimeStr then
     obj:SetCustomTimeStr_Common_1()
   end
   obj:SetExtraText("txtDesc", nil, extraId)
   obj:SetAdvanceText(descId)
   obj:SetData(endTime, nil, function()
-    -- function num : 0_0_0 , upvalues : self
     self:_Refresh()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageNode.PlayAnim = function(self, id, animName, delay, duration, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN22EntrustStageNode:PlayAnim(id, animName, delay, duration, callback)
   local widgetName = "_anim"
   local hideWidget = "_anim"
-  ;
-  (UIWidgetHelper.PlayAnimationInSequence)(self, widgetName, hideWidget, animName, delay, duration, callback)
+  UIWidgetHelper.PlayAnimationInSequence(self, widgetName, hideWidget, animName, delay, duration, callback)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageNode.SetData = function(self, campaignType, componentId, campaign, levelId, switchCallback)
-  -- function num : 0_2
+function UIN22EntrustStageNode:SetData(campaignType, componentId, campaign, levelId, switchCallback)
   self._campaignType = campaignType
   self._componentId = componentId
   self._campaign = campaign
   self._levelId = levelId
   self._switchCallback = switchCallback
-  self._component = (self._campaign):GetComponent(self._componentId)
+  self._component = self._campaign:GetComponent(self._componentId)
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageNode.SetPos = function(self, pos)
-  -- function num : 0_3
-  local rect = (self:GetGameObject()):GetComponent("RectTransform")
+function UIN22EntrustStageNode:SetPos(pos)
+  local rect = self:GetGameObject():GetComponent("RectTransform")
   rect.anchoredPosition = pos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageNode._Refresh = function(self)
-  -- function num : 0_4
+function UIN22EntrustStageNode:_Refresh()
   self._state = self:_CheckState()
   self:_SetObjGroup(self._state)
   self:_SetLockTime()
@@ -65,112 +43,73 @@ UIN22EntrustStageNode._Refresh = function(self)
   self:_SetEffectImage()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageNode._CheckState = function(self)
-  -- function num : 0_5
-  return (self._component):CheckStageState(self._levelId)
+function UIN22EntrustStageNode:_CheckState()
+  return self._component:CheckStageState(self._levelId)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageNode._SetObjGroup = function(self, state)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN22EntrustStageNode:_SetObjGroup(state)
   local widgetNameGroup = {
-{"_bg_lock", "_remainingTimePool_lock"}
-, 
-{"_bg_lock"}
-, 
-{"_bg_unlock", "_explor"}
-, 
-{"_bg_pass", "_explor"}
-}
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, widgetNameGroup, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+    {
+      "_bg_lock",
+      "_remainingTimePool_lock"
+    },
+    {"_bg_lock"},
+    {"_bg_unlock", "_explor"},
+    {"_bg_pass", "_explor"}
+  }
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, widgetNameGroup, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageNode._SetLockTime = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN22EntrustStageNode:_SetLockTime()
   if self._state == EEntrustStageNodeState.LockWithTime then
-    local time = (self._component):GetStageOpenTime(self._levelId)
+    local time = self._component:GetStageOpenTime(self._levelId)
     self:_SetRemainingTime("_remainingTimePool_lock", nil, nil, time, true)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageNode._SetTitleText = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local strTitle, strDesc = (self._component):GetStageTitleDesc(self._levelId)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtTitle", (StringTable.Get)(strTitle))
+function UIN22EntrustStageNode:_SetTitleText()
+  local strTitle, strDesc = self._component:GetStageTitleDesc(self._levelId)
+  UIWidgetHelper.SetLocalizationText(self, "_txtTitle", StringTable.Get(strTitle))
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageNode._SetExplorText_Once = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local num = (self._component):GetExplorNum(self._levelId)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtExplor", num .. "%")
+function UIN22EntrustStageNode:_SetExplorText_Once()
+  local num = self._component:GetExplorNum(self._levelId)
+  UIWidgetHelper.SetLocalizationText(self, "_txtExplor", num .. "%")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageNode._SetEffectImage = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (UIN22EntrustHelper.GetLevelIndex)(self._component, self._levelId) or 0
+function UIN22EntrustStageNode:_SetEffectImage()
+  local index = UIN22EntrustHelper.GetLevelIndex(self._component, self._levelId) or 0
   local widgetNameGroup = {
-[1] = {"01"}
-, 
-[2] = {"02"}
-, 
-[3] = {"03"}
-, 
-[4] = {"04"}
-, 
-[5] = {"05"}
-, 
-[6] = {"06"}
-}
+    [1] = {"01"},
+    [2] = {"02"},
+    [3] = {"03"},
+    [4] = {"04"},
+    [5] = {"05"},
+    [6] = {"06"}
+  }
   local trans = self:GetUIComponent("RectTransform", "_eff")
-  self._effObj = (UIWidgetHelper.GetObjGroupByTransformFind)(trans, widgetNameGroup, self._effObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._effObj, index)
+  self._effObj = UIWidgetHelper.GetObjGroupByTransformFind(trans, widgetNameGroup, self._effObj)
+  UIWidgetHelper.SetObjGroupShow(self._effObj, index)
   local trans2 = self:GetUIComponent("RectTransform", "_effect")
-  self._effObj2 = (UIWidgetHelper.GetObjGroupByTransformFind)(trans2, widgetNameGroup, self._effObj2)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._effObj2, index)
+  self._effObj2 = UIWidgetHelper.GetObjGroupByTransformFind(trans2, widgetNameGroup, self._effObj2)
+  UIWidgetHelper.SetObjGroupShow(self._effObj2, index)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustStageNode.BtnOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  (Log.info)("UIN22EntrustStageNode:BtnOnClick")
+function UIN22EntrustStageNode:BtnOnClick()
+  Log.info("UIN22EntrustStageNode:BtnOnClick")
   if self._state == EEntrustStageNodeState.LockWithTime then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n22_entrust_stage_lock_tips"))
+    ToastManager.ShowToast(StringTable.Get("str_n22_entrust_stage_lock_tips"))
+  elseif self._state == EEntrustStageNodeState.Lock then
+    ToastManager.ShowToast(StringTable.Get("str_n22_entrust_stage_lock_tips"))
   else
-    if self._state == EEntrustStageNodeState.Lock then
-      (ToastManager.ShowToast)((StringTable.Get)("str_n22_entrust_stage_lock_tips"))
-    else
-      self:ShowDialog("UIN22EntrustStageDetailController", self._campaign, self._componentId, self._levelId, function()
-    -- function num : 0_11_0 , upvalues : self
-    (self._component):SetCurLevelId(self._levelId)
-    ;
-    (self._component):SetPlayerPos(0)
-    ;
-    (self._component):SetBannerState(0)
-    if self._switchCallback then
-      (self._switchCallback)(self._levelId)
-    end
-  end
-)
-    end
+    self:ShowDialog("UIN22EntrustStageDetailController", self._campaign, self._componentId, self._levelId, function()
+      self._component:SetCurLevelId(self._levelId)
+      self._component:SetPlayerPos(0)
+      self._component:SetBannerState(0)
+      if self._switchCallback then
+        self._switchCallback(self._levelId)
+      end
+    end)
   end
 end
-
-

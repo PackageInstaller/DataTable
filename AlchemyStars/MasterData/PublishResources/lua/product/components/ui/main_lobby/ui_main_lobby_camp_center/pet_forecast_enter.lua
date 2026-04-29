@@ -1,89 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_camp_center/pet_forecast_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PetForecastEnter", Object)
 PetForecastEnter = PetForecastEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PetForecastEnter.Constructor = function(self, cfg)
-  -- function num : 0_0
+function PetForecastEnter:Constructor(cfg)
   self._cfg = cfg
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastEnter.GetCfgID = function(self)
-  -- function num : 0_1
-  return (self._cfg).ID
+function PetForecastEnter:GetCfgID()
+  return self._cfg.ID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastEnter.LoadData = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  local mSignIn = (GameGlobal.GetModule)(SignInModule)
+function PetForecastEnter:LoadData(TT)
+  local mSignIn = GameGlobal.GetModule(SignInModule)
   self.data = mSignIn:GetPredictionData()
   local res, replyEvent = mSignIn:PredictionReq(TT)
-  if (PetForecastData.CheckCode)(res:GetResult(), false) then
-    (Log.debug)("###[PetForecastEnter] load info succ")
-    ;
-    (self.data):Init(replyEvent.info)
+  if PetForecastData.CheckCode(res:GetResult(), false) then
+    Log.debug("###[PetForecastEnter] load info succ")
+    self.data:Init(replyEvent.info)
   else
-    ;
-    (Log.debug)("###[PetForecastEnter] load info fail,result=", res:GetResult())
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.data).id = 0
+    Log.debug("###[PetForecastEnter] load info fail,result=", res:GetResult())
+    self.data.id = 0
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastEnter.CheckOpen = function(self)
-  -- function num : 0_3
-  do return not self.data or (self.data).id > 0 end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function PetForecastEnter:CheckOpen()
+  return self.data and self.data.id > 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastEnter.CheckNew = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function PetForecastEnter:CheckNew()
   local val = false
-  if self.data and (self.data).id > 0 then
-    local id = (self.data).id
-    local key = nil
-    if ((self.data).cfg).cg then
-      key = (UIPetForecastEnter.GetLocalDBKey)(id)
+  if self.data and self.data.id > 0 then
+    local id = self.data.id
+    local key
+    if self.data.cfg.cg then
+      key = UIPetForecastEnter.GetLocalDBKey(id)
     else
-      key = (UIPetForecastEnterNew.GetLocalDBKey)(id)
+      key = UIPetForecastEnterNew.GetLocalDBKey(id)
     end
-    val = not (LocalDB.HasKey)(key)
+    val = not LocalDB.HasKey(key)
   end
-  do
-    return val and 1 or 0
-  end
+  return val and 1 or 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastEnter.CheckRed = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function PetForecastEnter:CheckRed()
   local red = false
-  if self.data and (self.data).pieces then
-    for i,p in ipairs((self.data).pieces) do
+  if self.data and self.data.pieces then
+    for i, p in ipairs(self.data.pieces) do
       if p.state == PredictionStatus.PRES_UnAccept then
         red = true
         break
       end
     end
   end
-  do
-    return red and 1 or 0
-  end
+  return red and 1 or 0
 end
-
-

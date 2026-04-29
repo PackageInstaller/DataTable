@@ -1,79 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_damage_based_on_sector_angle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParam_DamageBasedOnSectorAngle", SkillEffectParamBase)
 SkillEffectParam_DamageBasedOnSectorAngle = SkillEffectParam_DamageBasedOnSectorAngle
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_DamageBasedOnSectorAngle.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParam_DamageBasedOnSectorAngle:Constructor(t)
   self._percent = t.percent
   self._formulaID = t.formulaID
   self._maxAngle = t.maxAngle
   self._minDamageRate = t.minDamageRate
-  if not t.skillIncreaseType then
-    self._skillIncreaseType = ModifySkillIncreaseParamType.ActiveSkill
-    self._angleDamageRate = 1
-  end
+  self._skillIncreaseType = t.skillIncreaseType or ModifySkillIncreaseParamType.ActiveSkill
+  self._angleDamageRate = 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DamageBasedOnSectorAngle.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_DamageBasedOnSectorAngle:GetEffectType()
   return SkillEffectType.DamageBasedOnSectorAngle
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DamageBasedOnSectorAngle.GetMaxAngle = function(self)
-  -- function num : 0_2
+function SkillEffectParam_DamageBasedOnSectorAngle:GetMaxAngle()
   return self._maxAngle
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DamageBasedOnSectorAngle.GetMinDamageRate = function(self)
-  -- function num : 0_3
+function SkillEffectParam_DamageBasedOnSectorAngle:GetMinDamageRate()
   return self._minDamageRate
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DamageBasedOnSectorAngle.GetDamagePercent = function(self)
-  -- function num : 0_4
+function SkillEffectParam_DamageBasedOnSectorAngle:GetDamagePercent()
   return self._percent
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DamageBasedOnSectorAngle.GetDamageFormulaID = function(self)
-  -- function num : 0_5
+function SkillEffectParam_DamageBasedOnSectorAngle:GetDamageFormulaID()
   return self._formulaID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DamageBasedOnSectorAngle.GetSkillIncreaseType = function(self)
-  -- function num : 0_6
+function SkillEffectParam_DamageBasedOnSectorAngle:GetSkillIncreaseType()
   return self._skillIncreaseType
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DamageBasedOnSectorAngle.SetAngleDamageRate = function(self, rate)
-  -- function num : 0_7
+function SkillEffectParam_DamageBasedOnSectorAngle:SetAngleDamageRate(rate)
   self._angleDamageRate = rate
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DamageBasedOnSectorAngle.GetAngleDamageRate = function(self)
-  -- function num : 0_8
+function SkillEffectParam_DamageBasedOnSectorAngle:GetAngleDamageRate()
   return self._angleDamageRate
 end
-
-

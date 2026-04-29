@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/module_manifest.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("test_robot_module")
 require("trm_tool")
 require("trm_log")
@@ -13,4 +8,3 @@ require("trm_progress")
 require("trm_team_build")
 require("trm_startup")
 require("trm_node_env")
-

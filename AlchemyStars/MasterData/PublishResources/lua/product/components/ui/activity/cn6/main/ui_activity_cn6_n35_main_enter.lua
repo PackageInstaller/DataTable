@@ -1,43 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn6/main/ui_activity_cn6_n35_main_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN6N35MainEnter", UICustomWidget)
 UICN6N35MainEnter = UICN6N35MainEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN6N35MainEnter.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN6N35MainEnter:OnShow(uiParams)
   self._new = self:GetGameObject("new")
   self._red = self:GetGameObject("red")
   self._tipspanel1 = self:GetGameObject("tipspanel1")
   self._tipspanel2 = self:GetGameObject("tipspanel2")
   self._tipspanel3 = self:GetGameObject("tipspanel3")
-  ;
-  (self._tipspanel1):SetActive(false)
-  ;
-  (self._tipspanel2):SetActive(false)
-  ;
-  (self._tipspanel3):SetActive(false)
-  ;
-  (self._red):SetActive(false)
+  self._tipspanel1:SetActive(false)
+  self._tipspanel2:SetActive(false)
+  self._tipspanel3:SetActive(false)
+  self._red:SetActive(false)
   self:AttachEvent(GameEventType.OnCN6N35MainQuit, self.FlushNewRed)
   self._activityConst = UIActivityCustomConst:New(self:GetCampaignType(), self:GetComponentIds())
   self:RequestCampaign()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35MainEnter.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN6N35MainEnter:OnHide()
   self:DetachEvent(GameEventType.OnCN6N35MainQuit, self.FlushNewRed)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35MainEnter.GetEntryNewIgnore = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN6N35MainEnter:GetEntryNewIgnore()
   local componentIds = {}
   componentIds[#componentIds + 1] = ECampaignCN6ComponentID.ECAMPAIGN_N6_CUMULATIVE_LOGIN
   componentIds[#componentIds + 1] = ECampaignCN6ComponentID.ECAMPAIGN_N6_LINE_MISSION
@@ -45,26 +28,17 @@ UICN6N35MainEnter.GetEntryNewIgnore = function(self)
   return componentIds
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35MainEnter.GetEntryRedIgnore = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN6N35MainEnter:GetEntryRedIgnore()
   local componentIds = {}
   componentIds[#componentIds + 1] = ECampaignCN6ComponentID.ECAMPAIGN_N6_HEIXIA
   return componentIds
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35MainEnter.GetCampaignType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UICN6N35MainEnter:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_INLAND_N6
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35MainEnter.GetComponentIds = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UICN6N35MainEnter:GetComponentIds()
   local componentIds = {}
   componentIds[#componentIds + 1] = ECampaignCN6ComponentID.ECAMPAIGN_N6_CUMULATIVE_LOGIN
   componentIds[#componentIds + 1] = ECampaignCN6ComponentID.ECAMPAIGN_N6_SHOP
@@ -76,133 +50,88 @@ UICN6N35MainEnter.GetComponentIds = function(self)
   return componentIds
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35MainEnter.SetData = function(self, sampleInfo, controller)
-  -- function num : 0_6
+function UICN6N35MainEnter:SetData(sampleInfo, controller)
   local sampleInfo = sampleInfo
   self:SetData_uiMainLobbyController(controller)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35MainEnter.SetData_uiMainLobbyController = function(self, controller)
-  -- function num : 0_7
+function UICN6N35MainEnter:SetData_uiMainLobbyController(controller)
   self._uiMainLobbyController = controller
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35MainEnter.RequestCampaign = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UICN6N35MainEnter:RequestCampaign()
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV
     local lockName = "UICN6N35MainEnterRequestCampaign"
     self:Lock(lockName)
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    ;
-    (self._activityConst):LoadData(TT, res)
+    self._activityConst:LoadData(TT, res)
     self:Flush()
     self:FlushNewRed()
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35MainEnter.Flush = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self._tipspanel1):SetActive(false)
-  ;
-  (self._tipspanel2):SetActive(false)
-  ;
-  (self._tipspanel3):SetActive(false)
-  local status, time = nil, nil
-  status = (self._activityConst):GetComponentStatus(ECampaignCN6ComponentID.ECAMPAIGN_N6_HEIXIA)
+function UICN6N35MainEnter:Flush()
+  self._tipspanel1:SetActive(false)
+  self._tipspanel2:SetActive(false)
+  self._tipspanel3:SetActive(false)
+  local status, time
+  status, time = self._activityConst:GetComponentStatus(ECampaignCN6ComponentID.ECAMPAIGN_N6_HEIXIA)
   if status == ActivityComponentStatus.Open then
-    (self._tipspanel3):SetActive(true)
-    return 
+    self._tipspanel3:SetActive(true)
+    return
   end
-  -- DECOMPILER ERROR at PC34: Overwrote pending register: R2 in 'AssignReg'
-
-  status = (self._activityConst):GetComponentStatus(ECampaignCN6ComponentID.ECAMPAIGN_N6_DIFFICULT_MISSION)
+  status, time = self._activityConst:GetComponentStatus(ECampaignCN6ComponentID.ECAMPAIGN_N6_DIFFICULT_MISSION)
   if status == ActivityComponentStatus.Open then
-    (self._tipspanel2):SetActive(true)
-    return 
+    self._tipspanel2:SetActive(true)
+    return
   end
-  -- DECOMPILER ERROR at PC50: Overwrote pending register: R2 in 'AssignReg'
-
-  status = (self._activityConst):GetComponentStatus(ECampaignCN6ComponentID.ECAMPAIGN_N6_SHOP)
+  status, time = self._activityConst:GetComponentStatus(ECampaignCN6ComponentID.ECAMPAIGN_N6_SHOP)
   if status == ActivityComponentStatus.Open then
-    (self._tipspanel1):SetActive(true)
-    return 
+    self._tipspanel1:SetActive(true)
+    return
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35MainEnter.FlushNewRed = function(self)
-  -- function num : 0_10
-  (self._new):SetActive(false)
-  ;
-  (self._red):SetActive(false)
-  if (self._activityConst):IsShowEntryNew(self:GetEntryNewIgnore()) then
-    (self._new):SetActive(true)
-    return 
+function UICN6N35MainEnter:FlushNewRed()
+  self._new:SetActive(false)
+  self._red:SetActive(false)
+  if self._activityConst:IsShowEntryNew(self:GetEntryNewIgnore()) then
+    self._new:SetActive(true)
+    return
   end
-  if (self._activityConst):IsShowEntryRed(self:GetEntryRedIgnore()) then
-    (self._red):SetActive(true)
+  if self._activityConst:IsShowEntryRed(self:GetEntryRedIgnore()) then
+    self._red:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35MainEnter.BtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.Enter, self)
+function UICN6N35MainEnter:BtnOnClick(go)
+  GameGlobal.TaskManager():StartTask(self.Enter, self)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35MainEnter.Enter = function(self, TT)
-  -- function num : 0_12 , upvalues : _ENV
+function UICN6N35MainEnter:Enter(TT)
   self:Lock("UICN6N35MainEnter_Enter")
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (self._activityConst):LoadData(TT, res)
-  do
-    if res and not res:GetSucc() then
-      local campModule = (GameGlobal.GetModule)(CampaignModule)
-      do
-        campModule:CheckErrorCode(res.m_result, ((self._activityConst):GetCampaignId()), nil, nil)
-        self:UnLock("UICN6N35MainEnter_Enter")
-        return 
-      end
-    end
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R3 in 'UnsetPending'
-
-    if self._uiMainLobbyController then
-      ((self._uiMainLobbyController)._screenShot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera((self._uiMainLobbyController):GetName())
-      local rt = ((self._uiMainLobbyController)._screenShot):RefreshBlurTexture()
-      local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-      self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : _ENV, rt, cache_rt, self
-    YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cache_rt)
-    self:ShowDialog("UIActivityCN6N35MainController", cache_rt, true)
+  self._activityConst:LoadData(TT, res)
+  if res and not res:GetSucc() then
+    local campModule = GameGlobal.GetModule(CampaignModule)
+    campModule:CheckErrorCode(res.m_result, self._activityConst:GetCampaignId(), nil, nil)
+    self:UnLock("UICN6N35MainEnter_Enter")
+    return
   end
-)
-    else
-      do
-        self:ShowDialog("UIActivityCN6N35MainController", nil, true)
-        self:UnLock("UICN6N35MainEnter_Enter")
-      end
-    end
+  if self._uiMainLobbyController then
+    self._uiMainLobbyController._screenShot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self._uiMainLobbyController:GetName())
+    local rt = self._uiMainLobbyController._screenShot:RefreshBlurTexture()
+    local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+    self:StartTask(function(TT)
+      YIELD(TT)
+      UnityEngine.Graphics.Blit(rt, cache_rt)
+      self:ShowDialog("UIActivityCN6N35MainController", cache_rt, true)
+    end)
+  else
+    self:ShowDialog("UIActivityCN6N35MainController", nil, true)
   end
+  self:UnLock("UICN6N35MainEnter_Enter")
 end
-
-

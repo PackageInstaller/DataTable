@@ -1,30 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/act_check_has_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCheckHasTrap", AINewNode)
 ActionCheckHasTrap = ActionCheckHasTrap
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckHasTrap.InitializeNode = function(self, cfg, context, parentNode, configData)
-  -- function num : 0_0 , upvalues : _ENV
-  ((ActionCheckHasTrap.super).InitializeNode)(self, cfg, context, parentNode, configData)
+function ActionCheckHasTrap:InitializeNode(cfg, context, parentNode, configData)
+  ActionCheckHasTrap.super.InitializeNode(self, cfg, context, parentNode, configData)
   self._trapID = configData[1]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionCheckHasTrap.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local trapLogicSvc = (self._world):GetService("TrapLogic")
+function ActionCheckHasTrap:OnUpdate()
+  local trapLogicSvc = self._world:GetService("TrapLogic")
   local trapPosList = trapLogicSvc:FindTrapPosByTrapID(self._trapID)
-  if #trapPosList > 0 then
+  if 0 < #trapPosList then
     return AINewNodeStatus.Success
   else
     return AINewNodeStatus.Failure
   end
 end
-
-

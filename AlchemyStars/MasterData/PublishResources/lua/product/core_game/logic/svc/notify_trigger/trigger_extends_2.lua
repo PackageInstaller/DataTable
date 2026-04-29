@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/notify_trigger/trigger_extends_2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TTRoundFirstActiveSkill", TriggerBase)
 TTRoundFirstActiveSkill = TTRoundFirstActiveSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TTRoundFirstActiveSkill.IsSatisfied = function(self, notify)
-  -- function num : 0_0
+function TTRoundFirstActiveSkill:IsSatisfied(notify)
   local attacker = notify:GetAttackerEntity()
-  local petPstID = (attacker:PetPstID()):GetPstID()
-  local battleStatComponent = (self._world):BattleStat()
+  local petPstID = attacker:PetPstID():GetPstID()
+  local battleStatComponent = self._world:BattleStat()
   local curRound = battleStatComponent:GetLevelTotalRoundCount()
   local curRoundRecord = battleStatComponent:GetPetDoActiveSkillRecord(petPstID, curRound)
   if not curRoundRecord or #curRoundRecord == 1 then
@@ -22,27 +15,22 @@ end
 
 _class("TTPetSex", TriggerBase)
 TTPetSex = TTPetSex
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-TTPetSex.IsSatisfied = function(self)
-  -- function num : 0_1
-  local battleSvc = (self._world):GetService("Battle")
+function TTPetSex:IsSatisfied()
+  local battleSvc = self._world:GetService("Battle")
   local owner = self:GetOwnerEntity()
   local petSexType = battleSvc:GetPetSexType(owner)
-  do return self._x == petSexType end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return self._x == petSexType
 end
 
 _class("TTPetSexUpAndDown", TriggerBase)
 TTPetSexUpAndDown = TTPetSexUpAndDown
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-TTPetSexUpAndDown.IsSatisfied = function(self, notify)
-  -- function num : 0_2
-  local battleSvc = (self._world):GetService("Battle")
+function TTPetSexUpAndDown:IsSatisfied(notify)
+  local battleSvc = self._world:GetService("Battle")
   local owner = self:GetOwnerEntity()
-  local ownerPetPstID = (owner:PetPstID()):GetPstID()
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local ownerPetPstID = owner:PetPstID():GetPstID()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   local teamCmpt = teamEntity:Team()
   local teamOrder = teamCmpt:GetTeamOrder()
   if #teamOrder < 3 or ownerPetPstID == teamOrder[1] or ownerPetPstID == teamOrder[#teamOrder] then
@@ -51,23 +39,20 @@ TTPetSexUpAndDown.IsSatisfied = function(self, notify)
   local ownerIndex = teamCmpt:GetTeamIndexByPetPstID(ownerPetPstID)
   local upPet = teamCmpt:GetPetEntityByTeamIndex(ownerIndex - 1)
   local downPet = teamCmpt:GetPetEntityByTeamIndex(ownerIndex + 1)
-  do return battleSvc:GetPetSexType(upPet) == self._x and battleSvc:GetPetSexType(downPet) == self._x end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return battleSvc:GetPetSexType(upPet) == self._x and battleSvc:GetPetSexType(downPet) == self._x
 end
 
 _class("TTAllMonsterHaveCampType", TriggerBase)
 TTAllMonsterHaveCampType = TTAllMonsterHaveCampType
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-TTAllMonsterHaveCampType.IsSatisfied = function(self, notify)
-  -- function num : 0_3 , upvalues : _ENV
+function TTAllMonsterHaveCampType:IsSatisfied(notify)
   local owner = self:GetOwnerEntity()
   local onwerID = owner:GetID()
-  local battleSvc = (self._world):GetService("Battle")
-  local MonsterEntityArray = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).MonsterID)
+  local battleSvc = self._world:GetService("Battle")
+  local MonsterEntityArray = self._world:GetGroupEntities(self._world.BW_WEMatchers.MonsterID)
   local liveCount = 0
-  for k,entity in ipairs(MonsterEntityArray) do
-    if not entity:HasDeadMark() and entity:GetID() ~= onwerID and (table.icontains)(self._param, (entity:MonsterID()):GetCampType()) then
+  for k, entity in ipairs(MonsterEntityArray) do
+    if not entity:HasDeadMark() and entity:GetID() ~= onwerID and table.icontains(self._param, entity:MonsterID():GetCampType()) then
       return true
     end
   end
@@ -76,17 +61,15 @@ end
 
 _class("TTAllMonsterNotHaveCampType", TriggerBase)
 TTAllMonsterNotHaveCampType = TTAllMonsterNotHaveCampType
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-TTAllMonsterNotHaveCampType.IsSatisfied = function(self, notify)
-  -- function num : 0_4 , upvalues : _ENV
+function TTAllMonsterNotHaveCampType:IsSatisfied(notify)
   local owner = self:GetOwnerEntity()
   local onwerID = owner:GetID()
-  local battleSvc = (self._world):GetService("Battle")
-  local MonsterEntityArray = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).MonsterID)
+  local battleSvc = self._world:GetService("Battle")
+  local MonsterEntityArray = self._world:GetGroupEntities(self._world.BW_WEMatchers.MonsterID)
   local liveCount = 0
-  for k,entity in ipairs(MonsterEntityArray) do
-    if not entity:HasDeadMark() and entity:GetID() ~= onwerID and (table.icontains)(self._param, (entity:MonsterID()):GetCampType()) then
+  for k, entity in ipairs(MonsterEntityArray) do
+    if not entity:HasDeadMark() and entity:GetID() ~= onwerID and table.icontains(self._param, entity:MonsterID():GetCampType()) then
       return false
     end
   end
@@ -95,32 +78,28 @@ end
 
 _class("TTCheckConvertGridSkillType", TriggerBase)
 TTCheckConvertGridSkillType = TTCheckConvertGridSkillType
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
 
-TTCheckConvertGridSkillType.IsSatisfied = function(self, notify)
-  -- function num : 0_5 , upvalues : _ENV
+function TTCheckConvertGridSkillType:IsSatisfied(notify)
   if notify:GetNotifyType() ~= NotifyType.GridConvert then
     return false
   end
   if not notify:GetSkillType() or notify:GetSkillType() == nil then
     return false
   end
-  return (table.icontains)(self._param, notify:GetSkillType())
+  return table.icontains(self._param, notify:GetSkillType())
 end
 
 _class("TTCheckConvertGridHasGridType", TriggerBase)
 TTCheckConvertGridHasGridType = TTCheckConvertGridHasGridType
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
 
-TTCheckConvertGridHasGridType.IsSatisfied = function(self, notify)
-  -- function num : 0_6 , upvalues : _ENV
+function TTCheckConvertGridHasGridType:IsSatisfied(notify)
   if notify:GetNotifyType() ~= NotifyType.GridConvert then
     return false
   end
   local convertInfoList = notify:GetConvertInfoArray()
-  for i,v in ipairs(convertInfoList) do
+  for i, v in ipairs(convertInfoList) do
     local pieceType = v:GetAfterPieceType()
-    if (table.icontains)(self._param, pieceType) then
+    if table.icontains(self._param, pieceType) then
       return true
     end
   end
@@ -129,10 +108,8 @@ end
 
 _class("TTNotifyMeOrSuperMe", TriggerBase)
 TTNotifyMeOrSuperMe = TTNotifyMeOrSuperMe
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
 
-TTNotifyMeOrSuperMe.IsSatisfied = function(self, notify)
-  -- function num : 0_7
+function TTNotifyMeOrSuperMe:IsSatisfied(notify)
   local owner = self:GetOwnerEntity()
   local entity = notify:GetNotifyEntity()
   if entity:HasSuperEntity() then
@@ -141,64 +118,50 @@ TTNotifyMeOrSuperMe.IsSatisfied = function(self, notify)
   else
     return owner:GetID() == entity:GetID()
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
 _class("TTMultiHPStage", TriggerBase)
 TTMultiHPStage = TTMultiHPStage
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
 
-TTMultiHPStage.IsSatisfied = function(self, notify)
-  -- function num : 0_8 , upvalues : _ENV
+function TTMultiHPStage:IsSatisfied(notify)
   if notify:GetNotifyType() ~= NotifyType.MultiHPSwitch then
     return false
   end
-  do return notify:GetMultiHPStage() == self._x end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return notify:GetMultiHPStage() == self._x
 end
 
 _class("TTCompareComboCount", TriggerBase)
 TTCompareComboCount = TTCompareComboCount
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
 
-TTCompareComboCount.IsSatisfied = function(self, notify)
-  -- function num : 0_9 , upvalues : _ENV
-  local battleSvc = (self._world):GetService("Battle")
+function TTCompareComboCount:IsSatisfied(notify)
+  local battleSvc = self._world:GetService("Battle")
   local comboNum = battleSvc:GetLogicComboNum()
   local comboExpect = self:GetTriggerParamByIndex(1)
   local compareFlag = self:GetTriggerParamByIndex(2)
   local satisfied = false
-  if comboNum ~= comboExpect then
-    satisfied = compareFlag ~= ComparisonOperator.EQ
-    if comboNum == comboExpect then
-      satisfied = compareFlag ~= ComparisonOperator.NE
-      if comboExpect >= comboNum then
-        satisfied = compareFlag ~= ComparisonOperator.GT
-        if comboExpect > comboNum then
-          satisfied = compareFlag ~= ComparisonOperator.GE
-          if comboNum >= comboExpect then
-            satisfied = compareFlag ~= ComparisonOperator.LT
-            if comboNum > comboExpect then
-              satisfied = compareFlag ~= ComparisonOperator.LE
-              do return satisfied end
-              -- DECOMPILER ERROR: 12 unprocessed JMP targets
-            end
-          end
-        end
-      end
-    end
+  if compareFlag == ComparisonOperator.EQ then
+    satisfied = comboNum == comboExpect
+  elseif compareFlag == ComparisonOperator.NE then
+    satisfied = comboNum ~= comboExpect
+  elseif compareFlag == ComparisonOperator.GT then
+    satisfied = comboNum > comboExpect
+  elseif compareFlag == ComparisonOperator.GE then
+    satisfied = comboNum >= comboExpect
+  elseif compareFlag == ComparisonOperator.LT then
+    satisfied = comboNum < comboExpect
+  elseif compareFlag == ComparisonOperator.LE then
+    satisfied = comboNum <= comboExpect
   end
+  return satisfied
 end
 
 _class("TTUnscaledCountDownIsFinish", TriggerBase)
 TTUnscaledCountDownIsFinish = TTUnscaledCountDownIsFinish
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
 
-TTUnscaledCountDownIsFinish.IsSatisfied = function(self, notify)
-  -- function num : 0_10 , upvalues : _ENV
+function TTUnscaledCountDownIsFinish:IsSatisfied(notify)
   local flagID = self:GetTriggerParamByIndex(1)
-  local group = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).UnscaledCountDownLogic)
-  for k,entity in ipairs(group) do
+  local group = self._world:GetGroupEntities(self._world.BW_WEMatchers.UnscaledCountDownLogic)
+  for k, entity in ipairs(group) do
     local cmpt = entity:UnscaledCountDownLogic()
     if cmpt:GetFlagID() == flagID then
       local isActive = cmpt:GetIsActive()
@@ -209,57 +172,49 @@ TTUnscaledCountDownIsFinish.IsSatisfied = function(self, notify)
       break
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
 _class("TTHitBackEdge", TriggerBase)
 TTHitBackEdge = TTHitBackEdge
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
 
-TTHitBackEdge.IsSatisfied = function(self, notify)
-  -- function num : 0_11 , upvalues : _ENV
+function TTHitBackEdge:IsSatisfied(notify)
   if notify:GetNotifyType() ~= NotifyType.HitBackEnd then
     return false
   end
   local hitbackDir = notify:GetHitBackDir()
   local defenderID = notify:GetDefenderId()
-  local defendeEntity = (self._world):GetEntityByID(defenderID)
-  local bodyArea = (defendeEntity:BodyArea()):GetArea()
+  local defendeEntity = self._world:GetEntityByID(defenderID)
+  local bodyArea = defendeEntity:BodyArea():GetArea()
   local startPos = notify:GetPosStart()
   local endPos = notify:GetPosEnd()
-  local boardSvc = (self._world):GetService("BoardLogic")
+  local boardSvc = self._world:GetService("BoardLogic")
   local isEdge = false
-  for _,body in ipairs(bodyArea) do
+  for _, body in ipairs(bodyArea) do
     local bodyPos = endPos + body
     if not boardSvc:IsValidPiecePos(Vector2(bodyPos.x + hitbackDir.x, bodyPos.y + hitbackDir.y)) then
       isEdge = true
       break
     end
   end
-  do
-    if startPos == endPos then
-      if isEdge and self._x == 1 then
-        return true
-      else
-        return false
-      end
+  if startPos == endPos then
+    if isEdge and self._x == 1 then
+      return true
+    else
+      return false
     end
-    return isEdge
   end
+  return isEdge
 end
 
 _class("TTComparePopGridCount", TriggerBase)
 TTComparePopGridCount = TTComparePopGridCount
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
 
-TTComparePopGridCount.IsSatisfied = function(self, notify)
-  -- function num : 0_12 , upvalues : _ENV
-  local popStarSvc = (self._world):GetService("PopStarProLogic")
-  local popNum = (popStarSvc:GetLastPopGridNum())
-  local modifyCount = nil
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+function TTComparePopGridCount:IsSatisfied(notify)
+  local popStarSvc = self._world:GetService("PopStarProLogic")
+  local popNum = popStarSvc:GetLastPopGridNum()
+  local modifyCount
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   local buffComp = teamEntity:BuffComponent()
   local keyVal = buffComp:GetBuffValue(PopStarConst.ModifyPopGridCountKey)
   if keyVal then
@@ -278,7 +233,7 @@ TTComparePopGridCount.IsSatisfied = function(self, notify)
       popMax = 0
     end
   end
-  if popMin <= popNum and popNum < popMax then
+  if popNum >= popMin and popNum < popMax then
     return true
   end
   return false
@@ -286,14 +241,10 @@ end
 
 _class("TTRealOwnerGridPosChange", TriggerBase)
 TTRealOwnerGridPosChange = TTRealOwnerGridPosChange
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
 
-TTRealOwnerGridPosChange.IsSatisfied = function(self, notify)
-  -- function num : 0_13 , upvalues : _ENV
-  local ownerEntity = (self:GetOwnerEntity())
-  -- DECOMPILER ERROR at PC2: Overwrote pending register: R3 in 'AssignReg'
-
-  local pos = .end
+function TTRealOwnerGridPosChange:IsSatisfied(notify)
+  local ownerEntity = self:GetOwnerEntity()
+  local pos
   if notify:GetNotifyType() == NotifyType.Teleport then
     pos = notify:GetPosNew()
     local oldPos = notify:GetPosOld()
@@ -302,127 +253,102 @@ TTRealOwnerGridPosChange.IsSatisfied = function(self, notify)
       return true
     end
   end
-  do
-    if notify:GetNotifyType() == NotifyType.HitBackEnd then
-      pos = notify:GetPosEnd()
-      local oldPos = notify:GetPosStart()
-      local defenderID = notify:GetDefenderId()
-      if defenderID == ownerEntity:GetID() and pos ~= oldPos then
-        return true
-      end
-    end
-    do
-      if notify:GetNotifyType() == NotifyType.TractionEnd then
-        pos = notify:GetPosEnd()
-        local oldPos = notify:GetPosStart()
-        local defenderID = notify:GetDefenderId()
-        if defenderID == ownerEntity:GetID() and pos ~= oldPos then
-          return true
-        end
-      end
-      do
-        if notify:GetNotifyType() == NotifyType.ForceMovement then
-          pos = notify:GetPosNew()
-          local oldPos = notify:GetPosOld()
-          local notifyEntity = notify:GetNotifyEntity()
-          if notifyEntity:GetID() == ownerEntity:GetID() and pos ~= oldPos then
-            return true
-          end
-        end
-        do
-          return false
-        end
-      end
+  if notify:GetNotifyType() == NotifyType.HitBackEnd then
+    pos = notify:GetPosEnd()
+    local oldPos = notify:GetPosStart()
+    local defenderID = notify:GetDefenderId()
+    if defenderID == ownerEntity:GetID() and pos ~= oldPos then
+      return true
     end
   end
+  if notify:GetNotifyType() == NotifyType.TractionEnd then
+    pos = notify:GetPosEnd()
+    local oldPos = notify:GetPosStart()
+    local defenderID = notify:GetDefenderId()
+    if defenderID == ownerEntity:GetID() and pos ~= oldPos then
+      return true
+    end
+  end
+  if notify:GetNotifyType() == NotifyType.ForceMovement then
+    pos = notify:GetPosNew()
+    local oldPos = notify:GetPosOld()
+    local notifyEntity = notify:GetNotifyEntity()
+    if notifyEntity:GetID() == ownerEntity:GetID() and pos ~= oldPos then
+      return true
+    end
+  end
+  return false
 end
 
 _class("TTCumulativeTriggerByPopNum", TriggerCount)
 TTCumulativeTriggerByPopNum = TTCumulativeTriggerByPopNum
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
 
-TTCumulativeTriggerByPopNum.OnNotify = function(self, notify)
-  -- function num : 0_14 , upvalues : _ENV
+function TTCumulativeTriggerByPopNum:OnNotify(notify)
   if notify:GetNotifyType() ~= NotifyType.PopStarScoreChange then
-    return 
+    return
   end
   local changeNum = notify:GetPopChangeNum() or 0
   self:AddCount(changeNum)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-TTCumulativeTriggerByPopNum.IsSatisfied = function(self, notify)
-  -- function num : 0_15 , upvalues : _ENV
+function TTCumulativeTriggerByPopNum:IsSatisfied(notify)
   if notify:GetNotifyType() ~= NotifyType.PopStarScoreChange then
     return false
   end
   local expectNum = self:GetTriggerParamByIndex(1)
   local satisfied = expectNum <= self._count
   if satisfied then
-    local count = (math.fmod)(self._count, expectNum)
-    local cumulativeNum = (math.floor)(self._count / expectNum)
+    local count = math.fmod(self._count, expectNum)
+    local cumulativeNum = math.floor(self._count / expectNum)
     self:SetCount(count)
     notify:SetCumulativeTriggerNum(cumulativeNum)
   end
-  do return satisfied end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return satisfied
 end
 
 _class("TTMyPosInAuraRange", TriggerBase)
 TTMyPosInAuraRange = TTMyPosInAuraRange
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
 
-TTMyPosInAuraRange.IsSatisfied = function(self, notify)
-  -- function num : 0_16 , upvalues : _ENV
-  local auraGroupID = (self._param)[1]
-  local layerCount = (self._param)[2]
-  local inSide = (self._param)[3] or 1
-  local compareType = (self._param)[4] or 1
+function TTMyPosInAuraRange:IsSatisfied(notify)
+  local auraGroupID = self._param[1]
+  local layerCount = self._param[2]
+  local inSide = self._param[3] or 1
+  local compareType = self._param[4] or 1
   local ownerEntity = self:GetOwnerEntity()
   if ownerEntity:HasDeadMark() then
     return false
   end
-  local posSelf = (ownerEntity:GridLocation()):GetGridPos()
-  local bodyArea = (ownerEntity:BodyArea()):GetArea()
+  local posSelf = ownerEntity:GridLocation():GetGridPos()
+  local bodyArea = ownerEntity:BodyArea():GetArea()
   local curMovePos = posSelf
-  local battleSvc = (self._world):GetService("Battle")
+  local battleSvc = self._world:GetService("Battle")
   local match = false
-  for _,value in ipairs(bodyArea) do
+  for _, value in ipairs(bodyArea) do
     local newPos = curMovePos + value
     local count = battleSvc:GetAuraSuperposedCount(auraGroupID, newPos)
-    if not count then
-      count = -1
-    end
-    -- DECOMPILER ERROR at PC52: Unhandled construct in 'MakeBoolean' P1
-
-    if compareType == 1 and layerCount <= count then
-      match = true
-      break
-    end
-    if compareType == 0 and count == layerCount then
-      match = true
-      break
-    end
-  end
-  do
-    if inSide == 1 then
-      return match
-    else
-      if inSide == 0 then
-        return not match
+    count = count or -1
+    if compareType == 1 then
+      if layerCount <= count then
+        match = true
+        break
       end
+    elseif compareType == 0 and count == layerCount then
+      match = true
+      break
     end
-    return false
   end
+  if inSide == 1 then
+    return match
+  elseif inSide == 0 then
+    return not match
+  end
+  return false
 end
 
 _class("TTNotPetNotify", TriggerBase)
 TTNotPetNotify = TTNotPetNotify
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
 
-TTNotPetNotify.IsSatisfied = function(self, notify)
-  -- function num : 0_17
+function TTNotPetNotify:IsSatisfied(notify)
   local notifyEntity = notify:GetNotifyEntity()
   if not notifyEntity then
     return true
@@ -430,18 +356,16 @@ TTNotPetNotify.IsSatisfied = function(self, notify)
   if notifyEntity:PetPstID() then
     return false
   end
-  if notifyEntity:HasSuperEntity() and (notifyEntity:EntityType()):IsSkillHolder() then
-    return not (notifyEntity:GetSuperEntity()):HasPetPstID()
+  if notifyEntity:HasSuperEntity() and notifyEntity:EntityType():IsSkillHolder() then
+    return not notifyEntity:GetSuperEntity():HasPetPstID()
   end
   return true
 end
 
 _class("TTOwnerIsDead", TriggerBase)
 TTOwnerIsDead = TTOwnerIsDead
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
 
-TTOwnerIsDead.IsSatisfied = function(self)
-  -- function num : 0_18
+function TTOwnerIsDead:IsSatisfied()
   local owner = self:GetOwnerEntity()
   local param = self._x
   if param == 1 then
@@ -453,12 +377,10 @@ end
 
 _class("TTCumulativeTriggerByOwnerCostHP", TriggerCount)
 TTCumulativeTriggerByOwnerCostHP = TTCumulativeTriggerByOwnerCostHP
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
 
-TTCumulativeTriggerByOwnerCostHP.OnNotify = function(self, notify)
-  -- function num : 0_19 , upvalues : _ENV
+function TTCumulativeTriggerByOwnerCostHP:OnNotify(notify)
   if notify:GetNotifyType() ~= NotifyType.MonsterHPCChange then
-    return 
+    return
   end
   local owner = self:GetOwnerEntity()
   local onwerID = owner:GetID()
@@ -468,21 +390,18 @@ TTCumulativeTriggerByOwnerCostHP.OnNotify = function(self, notify)
     notifyEntityID = notifyEntity:GetID()
   end
   if onwerID ~= notifyEntityID then
-    return 
+    return
   end
   local changeNum = 0
   local notifyChangeHP = notify:GetChangeHP()
   if notifyChangeHP and notifyChangeHP < 0 then
     changeNum = notifyChangeHP * -1
-    changeNum = (math.floor)(changeNum)
+    changeNum = math.floor(changeNum)
   end
   self:AddCount(changeNum)
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-TTCumulativeTriggerByOwnerCostHP.IsSatisfied = function(self, notify)
-  -- function num : 0_20 , upvalues : _ENV
+function TTCumulativeTriggerByOwnerCostHP:IsSatisfied(notify)
   if notify:GetNotifyType() ~= NotifyType.MonsterHPCChange then
     return false
   end
@@ -494,52 +413,44 @@ TTCumulativeTriggerByOwnerCostHP.IsSatisfied = function(self, notify)
     local attrCmpt = owner:Attributes()
     if attrCmpt then
       local maxHP = attrCmpt:CalcMaxHp()
-      if maxHP > 0 then
-        expectNum = (math.floor)(maxHP * expectNum)
+      if 0 < maxHP then
+        expectNum = math.floor(maxHP * expectNum)
       end
     end
   end
-  do
-    local satisfied = expectNum <= self._count
-    if satisfied then
-      local count = (math.fmod)(self._count, expectNum)
-      local cumulativeNum = (math.floor)(self._count / expectNum)
-      self:SetCount(count)
-      local key = recordKey
-      notify:SetCumulativeTriggerNum(cumulativeNum, key)
-    end
-    do return satisfied end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local satisfied = expectNum <= self._count
+  if satisfied then
+    local count = math.fmod(self._count, expectNum)
+    local cumulativeNum = math.floor(self._count / expectNum)
+    self:SetCount(count)
+    local key = recordKey
+    notify:SetCumulativeTriggerNum(cumulativeNum, key)
   end
+  return satisfied
 end
 
 _class("TTCheckNotifyPosHasTargetTrap", TriggerBase)
 TTCheckNotifyPosHasTargetTrap = TTCheckNotifyPosHasTargetTrap
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
 
-TTCheckNotifyPosHasTargetTrap.IsSatisfied = function(self, notify)
-  -- function num : 0_21 , upvalues : _ENV
-  local trapID = (self._param)[1]
-  local checkHas = (self._param)[2] or 0
+function TTCheckNotifyPosHasTargetTrap:IsSatisfied(notify)
+  local trapID = self._param[1]
+  local checkHas = self._param[2] or 0
   local ownerEntity = self:GetOwnerEntity()
-  local checkPosList = {ownerEntity:GetGridPosition()}
+  local checkPosList = {
+    ownerEntity:GetGridPosition()
+  }
   if notify:GetNotifyType() == NotifyType.MonsterMoveOneFinish then
     checkPosList = notify:GetCreateTrapGrids()
   end
-  for _,checkPos in ipairs(checkPosList) do
-    local boardCmpt = ((self._world):GetBoardEntity()):Board()
+  for _, checkPos in ipairs(checkPosList) do
+    local boardCmpt = self._world:GetBoardEntity():Board()
     local es = boardCmpt:GetPieceEntities(checkPos, function(e)
-    -- function num : 0_21_0 , upvalues : trapID
-    do return e:HasTrapID() and (((e:TrapID()):GetTrapID() == trapID and not e:HasDeadMark())) end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-)
-    if #es > 0 and checkHas == 0 then
+      return e:HasTrapID() and e:TrapID():GetTrapID() == trapID and not e:HasDeadMark()
+    end)
+    if 0 < #es and checkHas == 0 then
       return false
-    else
-      if #es == 0 and checkHas == 1 then
-        return false
-      end
+    elseif #es == 0 and checkHas == 1 then
+      return false
     end
   end
   return true
@@ -547,62 +458,50 @@ end
 
 _class("TTCumulativeTriggerByEnergy", TriggerCount)
 TTCumulativeTriggerByEnergy = TTCumulativeTriggerByEnergy
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
 
-TTCumulativeTriggerByEnergy.OnNotify = function(self, notify)
-  -- function num : 0_22 , upvalues : _ENV
+function TTCumulativeTriggerByEnergy:OnNotify(notify)
   if notify:GetNotifyType() ~= NotifyType.PopStarProAddFeatureEnergy then
-    return 
+    return
   end
   local num = notify:GetAddNum() or 0
   self:AddCount(num)
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-TTCumulativeTriggerByEnergy.IsSatisfied = function(self, notify)
-  -- function num : 0_23 , upvalues : _ENV
+function TTCumulativeTriggerByEnergy:IsSatisfied(notify)
   if notify:GetNotifyType() ~= NotifyType.PopStarProAddFeatureEnergy then
     return false
   end
   local expectNum = self:GetTriggerParamByIndex(1)
   local satisfied = expectNum <= self._count
   if satisfied then
-    local count = (math.fmod)(self._count, expectNum)
-    local cumulativeNum = (math.floor)(self._count / expectNum)
+    local count = math.fmod(self._count, expectNum)
+    local cumulativeNum = math.floor(self._count / expectNum)
     self:SetCount(count)
     notify:SetCumulativeTriggerNum(cumulativeNum)
   end
-  do return satisfied end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return satisfied
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-TTCumulativeTriggerByEnergy.IsSatisfied = function(self, notify)
-  -- function num : 0_24 , upvalues : _ENV
+function TTCumulativeTriggerByEnergy:IsSatisfied(notify)
   if notify:GetNotifyType() ~= NotifyType.PopStarProAddFeatureEnergy then
     return false
   end
   local expectNum = self:GetTriggerParamByIndex(1)
   local satisfied = expectNum <= self._count
   if satisfied then
-    local count = (math.fmod)(self._count, expectNum)
-    local cumulativeNum = (math.floor)(self._count / expectNum)
+    local count = math.fmod(self._count, expectNum)
+    local cumulativeNum = math.floor(self._count / expectNum)
     self:SetCount(count)
     notify:SetCumulativeTriggerNum(cumulativeNum)
   end
-  do return satisfied end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return satisfied
 end
 
 _class("TTPetFetters", TriggerBase)
 TTPetFetters = TTPetFetters
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
 
-TTPetFetters.IsSatisfied = function(self, notify)
-  -- function num : 0_25
-  local fettersCmpt = (self:GetOwnerEntity()):Fetters()
+function TTPetFetters:IsSatisfied(notify)
+  local fettersCmpt = self:GetOwnerEntity():Fetters()
   if fettersCmpt then
     return true
   end
@@ -611,58 +510,46 @@ end
 
 _class("TTIsCampSkill", TriggerBase)
 TTIsCampSkill = TTIsCampSkill
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
 
-TTIsCampSkill.IsSatisfied = function(self, notify)
-  -- function num : 0_26 , upvalues : _ENV
+function TTIsCampSkill:IsSatisfied(notify)
   local id = notify:GetSkillID()
-  do
-    if id then
-      local cfg = (Cfg.cfg_camp_skill)({SkillID = id})
-      if cfg and cfg[1] then
-        return true
-      end
+  if id then
+    local cfg = Cfg.cfg_camp_skill({SkillID = id})
+    if cfg and cfg[1] then
+      return true
     end
-    return false
   end
+  return false
 end
 
 _class("TTCheckConvertGridSkillTypeOrLinkLine", TriggerBase)
 TTCheckConvertGridSkillTypeOrLinkLine = TTCheckConvertGridSkillTypeOrLinkLine
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
 
-TTCheckConvertGridSkillTypeOrLinkLine.IsSatisfied = function(self, notify)
-  -- function num : 0_27 , upvalues : _ENV
+function TTCheckConvertGridSkillTypeOrLinkLine:IsSatisfied(notify)
   if notify:GetNotifyType() ~= NotifyType.GridConvert then
     return false
   end
   if (not notify:GetSkillType() or notify:GetSkillType() == nil) and not notify:IsLinkLine() then
     return false
   end
-  if not (table.icontains)(self._param, notify:GetSkillType()) then
-    return notify:IsLinkLine()
-  end
+  return table.icontains(self._param, notify:GetSkillType()) or notify:IsLinkLine()
 end
 
 _class("TTPetJobMatch", TriggerBase)
 TTPetJobMatch = TTPetJobMatch
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
 
-TTPetJobMatch.IsSatisfied = function(self, notify)
-  -- function num : 0_28 , upvalues : _ENV
+function TTPetJobMatch:IsSatisfied(notify)
   if notify:GetNotifyType() ~= NotifyType.PetCreate then
     return false
   end
-  return (table.icontains)(self._param, notify:GetPetJob())
+  return table.icontains(self._param, notify:GetPetJob())
 end
 
 _class("TTIsFeatureAUOEValueMax", TriggerBase)
 TTIsFeatureAUOEValueMax = TTIsFeatureAUOEValueMax
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
 
-TTIsFeatureAUOEValueMax.IsSatisfied = function(self, notify)
-  -- function num : 0_29 , upvalues : _ENV
-  local featureLSvc = (self._world):GetService("FeatureLogic")
+function TTIsFeatureAUOEValueMax:IsSatisfied(notify)
+  local featureLSvc = self._world:GetService("FeatureLogic")
   if featureLSvc and featureLSvc:HasFeatureType(FeatureType.AlgorithmUpgrade) then
     local maxValue = featureLSvc:GetMaxAUOEValue()
     local curValue = featureLSvc:GetAUOEValue()
@@ -670,43 +557,35 @@ TTIsFeatureAUOEValueMax.IsSatisfied = function(self, notify)
       return true
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
 _class("TTNotifySkillEffectTypeMatch", TriggerBase)
 TTNotifySkillEffectTypeMatch = TTNotifySkillEffectTypeMatch
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
 
-TTNotifySkillEffectTypeMatch.IsSatisfied = function(self, notify)
-  -- function num : 0_30 , upvalues : _ENV
+function TTNotifySkillEffectTypeMatch:IsSatisfied(notify)
   if notify.GetSkillID and notify:GetSkillID() and #self._param > 0 then
     local casterEntity = notify:GetAttackerEntity()
     local skillID = notify:GetSkillID()
-    local configSvc = (self._world):GetService("Config")
+    local configSvc = self._world:GetService("Config")
     local skillConfigData = configSvc:GetSkillConfigData(skillID, casterEntity)
-    local svcCfgDeco = (self._world):GetService("ConfigDecoration")
+    local svcCfgDeco = self._world:GetService("ConfigDecoration")
     local skillEffectArray = svcCfgDeco:GetLatestEffectParamArray(casterEntity:GetID(), skillID)
-    for _,v in ipairs(skillEffectArray) do
+    for _, v in ipairs(skillEffectArray) do
       local skillEffectParam = v
       local skillEffectType = skillEffectParam:GetEffectType()
-      if (table.intable)(self._param, skillEffectType) then
+      if table.intable(self._param, skillEffectType) then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
 _class("TTNormalAttackCanDetonateMonsterWeak", TriggerBase)
 TTNormalAttackCanDetonateMonsterWeak = TTNormalAttackCanDetonateMonsterWeak
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
 
-TTNormalAttackCanDetonateMonsterWeak.IsSatisfied = function(self, notify)
-  -- function num : 0_31 , upvalues : _ENV
+function TTNormalAttackCanDetonateMonsterWeak:IsSatisfied(notify)
   if notify:GetNotifyType() ~= NotifyType.NormalAttackCalcEnd then
     return false
   end
@@ -720,25 +599,19 @@ TTNormalAttackCanDetonateMonsterWeak.IsSatisfied = function(self, notify)
     return false
   end
   local activeWeakList = monsterWeakComponent:GetMonsterWeakDataList()
-  if (table.count)(activeWeakList) == 0 then
+  if table.count(activeWeakList) == 0 then
     return false
   end
-  local targetWeakKey = nil
+  local targetWeakKey
   local attakDir = Vector2(attackPos.x - targetPos.x, attackPos.y - targetPos.y)
   if attakDir == Vector2(0, 1) then
     targetWeakKey = WeakEdgeType.WeakUp
-  else
-    if attakDir == Vector2(0, -1) then
-      targetWeakKey = WeakEdgeType.WeakDown
-    else
-      if attakDir == Vector2(1, 0) then
-        targetWeakKey = WeakEdgeType.WeakRight
-      else
-        if attakDir == Vector2(-1, 0) then
-          targetWeakKey = WeakEdgeType.WeakLeft
-        end
-      end
-    end
+  elseif attakDir == Vector2(0, -1) then
+    targetWeakKey = WeakEdgeType.WeakDown
+  elseif attakDir == Vector2(1, 0) then
+    targetWeakKey = WeakEdgeType.WeakRight
+  elseif attakDir == Vector2(-1, 0) then
+    targetWeakKey = WeakEdgeType.WeakLeft
   end
   local bodyAreaPos = targetPos - defenderGridPosition
   local targetWeakData = monsterWeakComponent:GetMonsterWeakDataByKeyAndBodyPos(targetWeakKey, bodyAreaPos)
@@ -750,23 +623,21 @@ end
 
 _class("TTNotifyAutoBeadTagMatch", TriggerBase)
 TTNotifyAutoBeadTagMatch = TTNotifyAutoBeadTagMatch
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
 
-TTNotifyAutoBeadTagMatch.IsSatisfied = function(self, notify)
-  -- function num : 0_32 , upvalues : _ENV
+function TTNotifyAutoBeadTagMatch:IsSatisfied(notify)
   if notify.GetAutoBeadID and notify:GetAutoBeadID() and #self._param > 0 then
     local casterEntity = notify:GetAttackerEntity()
     local autoBeadID = notify:GetAutoBeadID()
     local autoBeadCmpt = casterEntity:LogicAutoBead()
     if autoBeadCmpt then
       local autoBeadAttackDataCmpt = casterEntity:SkillAutoBeadAttackData()
-      if autoBeadAttackDataCmpt and autoBeadID and autoBeadID > 0 then
+      if autoBeadAttackDataCmpt and autoBeadID and 0 < autoBeadID then
         local autoBeadData = autoBeadCmpt:GetAutoBeadInnerDataByID(autoBeadID)
         if autoBeadData then
           local autoBeadTag = autoBeadData:GetAutoBeadTag()
           if autoBeadTag then
-            for index,checkTag in ipairs(self._param) do
-              if (table.icontains)(autoBeadTag, checkTag) then
+            for index, checkTag in ipairs(self._param) do
+              if table.icontains(autoBeadTag, checkTag) then
                 return true
               end
             end
@@ -775,64 +646,55 @@ TTNotifyAutoBeadTagMatch.IsSatisfied = function(self, notify)
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
 _class("TTMovePieceTypeMatchToTeamLeader", TriggerBase)
 TTMovePieceTypeMatchToTeamLeader = TTMovePieceTypeMatchToTeamLeader
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
 
-TTMovePieceTypeMatchToTeamLeader.IsSatisfied = function(self, notify)
-  -- function num : 0_33 , upvalues : _ENV
+function TTMovePieceTypeMatchToTeamLeader:IsSatisfied(notify)
   local entityID = notify:GetEntityID()
-  local entity = (self._world):GetEntityByID(entityID)
+  local entity = self._world:GetEntityByID(entityID)
   if entity and entity:HasPet() then
-    do return false end
-    local teamEntity = (entity:Pet()):GetOwnerTeamEntity()
-    if not teamEntity then
-      return false
-    end
-    local teamEntityLeader = teamEntity:GetTeamLeaderPetEntity()
-    if not teamEntityLeader then
-      return false
-    end
-    local elementCmpt = teamEntityLeader:Element()
-    if not elementCmpt then
-      return false
-    end
-    local teamLeaderElementType = elementCmpt:GetPrimaryType()
-    local logicChainPathCmpt = teamEntity:LogicChainPath()
-    local chainPieceType = logicChainPathCmpt:GetLogicPieceType()
-    do
-      if chainPieceType then
-        local pieceType = notify:GetPosPieceType()
-        -- DECOMPILER ERROR at PC54: Unhandled construct in 'MakeBoolean' P1
-
-        if chainPieceType == PieceType.Any and pieceType == PieceType.Any then
-          return true
-        end
-      end
-      -- DECOMPILER ERROR at PC65: Unhandled construct in 'MakeBoolean' P1
-
-      if chainPieceType == teamLeaderElementType and (pieceType == teamLeaderElementType or pieceType == PieceType.Any) then
+  else
+    return false
+  end
+  local teamEntity = entity:Pet():GetOwnerTeamEntity()
+  if not teamEntity then
+    return false
+  end
+  local teamEntityLeader = teamEntity:GetTeamLeaderPetEntity()
+  if not teamEntityLeader then
+    return false
+  end
+  local elementCmpt = teamEntityLeader:Element()
+  if not elementCmpt then
+    return false
+  end
+  local teamLeaderElementType = elementCmpt:GetPrimaryType()
+  local logicChainPathCmpt = teamEntity:LogicChainPath()
+  local chainPieceType = logicChainPathCmpt:GetLogicPieceType()
+  if chainPieceType then
+    local pieceType = notify:GetPosPieceType()
+    if chainPieceType == PieceType.Any then
+      if pieceType == PieceType.Any then
         return true
       end
-      if pieceType == teamLeaderElementType then
+    elseif chainPieceType == teamLeaderElementType then
+      if pieceType == teamLeaderElementType or pieceType == PieceType.Any then
         return true
       end
-      return false
+    elseif pieceType == teamLeaderElementType then
+      return true
     end
   end
+  return false
 end
 
 _class("TTNotifyMeOrTeamPetOrTeam", TriggerBase)
 TTNotifyMeOrTeamPetOrTeam = TTNotifyMeOrTeamPetOrTeam
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
 
-TTNotifyMeOrTeamPetOrTeam.IsSatisfied = function(self, notify)
-  -- function num : 0_34
+function TTNotifyMeOrTeamPetOrTeam:IsSatisfied(notify)
   local notifyEntity = notify:GetNotifyEntity()
   if not notifyEntity then
     return false
@@ -841,13 +703,13 @@ TTNotifyMeOrTeamPetOrTeam.IsSatisfied = function(self, notify)
   if ownerEntity:GetID() == notifyEntity:GetID() then
     return true
   end
-  if ownerEntity:HasPet() and notifyEntity:GetID() == ((ownerEntity:Pet()):GetOwnerTeamEntity()):GetID() then
+  if ownerEntity:HasPet() and notifyEntity:GetID() == ownerEntity:Pet():GetOwnerTeamEntity():GetID() then
     return true
   end
-  if ownerEntity:HasPet() and notifyEntity:HasPet() and ((notifyEntity:Pet()):GetOwnerTeamEntity()):GetID() == ((ownerEntity:Pet()):GetOwnerTeamEntity()):GetID() then
+  if ownerEntity:HasPet() and notifyEntity:HasPet() and notifyEntity:Pet():GetOwnerTeamEntity():GetID() == ownerEntity:Pet():GetOwnerTeamEntity():GetID() then
     return true
   end
-  if ownerEntity:HasTeam() and notifyEntity:HasPet() and ownerEntity:GetID() and ownerEntity:GetID() == ((notifyEntity:Pet()):GetOwnerTeamEntity()):GetID() then
+  if ownerEntity:HasTeam() and notifyEntity:HasPet() and ownerEntity:GetID() and ownerEntity:GetID() == notifyEntity:Pet():GetOwnerTeamEntity():GetID() then
     return true
   end
   return false
@@ -855,10 +717,8 @@ end
 
 _class("TTInPetSkillScope", TriggerBase)
 TTInPetSkillScope = TTInPetSkillScope
--- DECOMPILER ERROR at PC299: Confused about usage of register: R0 in 'UnsetPending'
 
-TTInPetSkillScope.IsSatisfied = function(self, notify)
-  -- function num : 0_35 , upvalues : _ENV
+function TTInPetSkillScope:IsSatisfied(notify)
   local notifyEntity = notify:GetNotifyEntity()
   if not notifyEntity:HasPet() then
     return false
@@ -868,54 +728,46 @@ TTInPetSkillScope.IsSatisfied = function(self, notify)
     return false
   end
   local skillID = notify:GetSkillID()
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID)
   local skillEffectTypes = self._param
   if skillEffectTypes then
     local vaild = false
     local skillEffects = skillConfigData:GetSkillEffect()
-    for _,effectParam in ipairs(skillEffects) do
-      if (table.icontains)(skillEffectTypes, effectParam:GetEffectType()) then
+    for _, effectParam in ipairs(skillEffects) do
+      if table.icontains(skillEffectTypes, effectParam:GetEffectType()) then
         vaild = true
         break
       end
     end
-    do
-      do
-        if not vaild then
-          return false
-        end
-        local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-        local skillCalculater = SkillScopeCalculator:New(utilScopeSvc)
-        local petPosition = (notifyEntity:GridLocation()):GetGridPos()
-        local petBodyArea = (notifyEntity:BodyArea()):GetArea()
-        local skillResult = skillCalculater:CalcSkillScope(skillConfigData, petPosition, Vector2(0, 1), petBodyArea)
-        local ownerPosition = (ownerEntity:GridLocation()):GetGridPos()
-        local inScope = (table.icontains)(skillResult:GetAttackRange(), ownerPosition)
-        return inScope
-      end
+    if not vaild then
+      return false
     end
   end
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local skillCalculater = SkillScopeCalculator:New(utilScopeSvc)
+  local petPosition = notifyEntity:GridLocation():GetGridPos()
+  local petBodyArea = notifyEntity:BodyArea():GetArea()
+  local skillResult = skillCalculater:CalcSkillScope(skillConfigData, petPosition, Vector2(0, 1), petBodyArea)
+  local ownerPosition = ownerEntity:GridLocation():GetGridPos()
+  local inScope = table.icontains(skillResult:GetAttackRange(), ownerPosition)
+  return inScope
 end
 
 _class("TTAbsorbTrapElementMatch", TriggerBase)
 TTAbsorbTrapElementMatch = TTAbsorbTrapElementMatch
--- DECOMPILER ERROR at PC308: Confused about usage of register: R0 in 'UnsetPending'
 
-TTAbsorbTrapElementMatch.IsSatisfied = function(self, notify)
-  -- function num : 0_36 , upvalues : _ENV
+function TTAbsorbTrapElementMatch:IsSatisfied(notify)
   local pos = notify:GetNotifyPos()
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local pieceType = boardServiceLogic:GetPieceType(pos)
-  return (table.insert)(self._param, pieceType)
+  return table.insert(self._param, pieceType)
 end
 
 _class("TTNotifyEntitySameMoveGroupID", TriggerBase)
 TTNotifyEntitySameMoveGroupID = TTNotifyEntitySameMoveGroupID
--- DECOMPILER ERROR at PC317: Confused about usage of register: R0 in 'UnsetPending'
 
-TTNotifyEntitySameMoveGroupID.IsSatisfied = function(self, notify)
-  -- function num : 0_37
+function TTNotifyEntitySameMoveGroupID:IsSatisfied(notify)
   local notifyEntity = notify:GetNotifyEntity()
   local ownerEntity = self:GetOwnerEntity()
   if not notifyEntity:MonsterID() or not ownerEntity:MonsterID() then
@@ -926,16 +778,13 @@ TTNotifyEntitySameMoveGroupID.IsSatisfied = function(self, notify)
   if not ownerEntityMonsterIDCmpt:GetMoveGroupID() or not notifyEntityMonsterIDCmpt:GetMoveGroupID() then
     return false
   end
-  do return ownerEntityMonsterIDCmpt:GetMoveGroupID() == notifyEntityMonsterIDCmpt:GetMoveGroupID() end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return ownerEntityMonsterIDCmpt:GetMoveGroupID() == notifyEntityMonsterIDCmpt:GetMoveGroupID()
 end
 
 _class("TTSummonSameMoveGroupID", TriggerBase)
 TTSummonSameMoveGroupID = TTSummonSameMoveGroupID
--- DECOMPILER ERROR at PC326: Confused about usage of register: R0 in 'UnsetPending'
 
-TTSummonSameMoveGroupID.IsSatisfied = function(self, notify)
-  -- function num : 0_38
+function TTSummonSameMoveGroupID:IsSatisfied(notify)
   local groupID = notify:GetGroupID()
   local ownerEntity = self:GetOwnerEntity()
   if not ownerEntity:MonsterID() then
@@ -945,20 +794,17 @@ TTSummonSameMoveGroupID.IsSatisfied = function(self, notify)
   if not ownerEntityMonsterIDCmpt:GetMoveGroupID() or not groupID then
     return false
   end
-  do return ownerEntityMonsterIDCmpt:GetMoveGroupID() == groupID end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return ownerEntityMonsterIDCmpt:GetMoveGroupID() == groupID
 end
 
 _class("TTSanValueInversion", TriggerBase)
 TTSanValueInversion = TTSanValueInversion
--- DECOMPILER ERROR at PC335: Confused about usage of register: R0 in 'UnsetPending'
 
-TTSanValueInversion.IsSatisfied = function(self, notify)
-  -- function num : 0_39
-  local midValue = (self._param)[1]
+function TTSanValueInversion:IsSatisfied(notify)
+  local midValue = self._param[1]
   local curValue = notify:GetCurValue()
   local oldValue = notify:GetOldValue()
-  if (midValue <= oldValue and curValue < midValue) or oldValue < midValue and midValue <= curValue then
+  if midValue <= oldValue and midValue > curValue or midValue > oldValue and midValue <= curValue then
     return true
   end
   return false
@@ -966,167 +812,121 @@ end
 
 _class("TTAttackerHaveBuff", TriggerBase)
 TTAttackerHaveBuff = TTAttackerHaveBuff
--- DECOMPILER ERROR at PC344: Confused about usage of register: R0 in 'UnsetPending'
 
-TTAttackerHaveBuff.IsSatisfied = function(self, notify)
-  -- function num : 0_40 , upvalues : _ENV
+function TTAttackerHaveBuff:IsSatisfied(notify)
   local attacker = notify:GetAttackerEntity()
   if attacker:HasDeadMark() then
     return false
   end
   local buffCmp = attacker:BuffComponent()
   if buffCmp then
-    for _,buffEffect in ipairs(self._param) do
+    for _, buffEffect in ipairs(self._param) do
       if buffCmp:HasBuffEffect(buffEffect) then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
 _class("TTCompareLegendEnergy", TriggerBase)
 TTCompareLegendEnergy = TTCompareLegendEnergy
--- DECOMPILER ERROR at PC353: Confused about usage of register: R0 in 'UnsetPending'
 
-TTCompareLegendEnergy.IsSatisfied = function(self, notify)
-  -- function num : 0_41 , upvalues : _ENV
+function TTCompareLegendEnergy:IsSatisfied(notify)
   local ownerEntity = self:GetOwnerEntity()
   if not ownerEntity:HasPet() then
     return false
   end
-  local legendPower = (ownerEntity:Attributes()):GetAttribute("LegendPower")
+  local legendPower = ownerEntity:Attributes():GetAttribute("LegendPower")
   local compareFlag = self:GetTriggerParamByIndex(1)
   local comboExpect = self:GetTriggerParamByIndex(2)
   local satisfied = false
-  if legendPower ~= comboExpect then
-    satisfied = compareFlag ~= ComparisonOperator.EQ
-    if legendPower == comboExpect then
-      satisfied = compareFlag ~= ComparisonOperator.NE
-      if comboExpect >= legendPower then
-        satisfied = compareFlag ~= ComparisonOperator.GT
-        if comboExpect > legendPower then
-          satisfied = compareFlag ~= ComparisonOperator.GE
-          if legendPower >= comboExpect then
-            satisfied = compareFlag ~= ComparisonOperator.LT
-            if legendPower > comboExpect then
-              satisfied = compareFlag ~= ComparisonOperator.LE
-              do return satisfied end
-              -- DECOMPILER ERROR: 12 unprocessed JMP targets
-            end
-          end
-        end
-      end
-    end
+  if compareFlag == ComparisonOperator.EQ then
+    satisfied = legendPower == comboExpect
+  elseif compareFlag == ComparisonOperator.NE then
+    satisfied = legendPower ~= comboExpect
+  elseif compareFlag == ComparisonOperator.GT then
+    satisfied = legendPower > comboExpect
+  elseif compareFlag == ComparisonOperator.GE then
+    satisfied = legendPower >= comboExpect
+  elseif compareFlag == ComparisonOperator.LT then
+    satisfied = legendPower < comboExpect
+  elseif compareFlag == ComparisonOperator.LE then
+    satisfied = legendPower <= comboExpect
   end
+  return satisfied
 end
 
 _class("TTBloodLessEqualThan", TriggerBase)
 TTBloodLessEqualThan = TTBloodLessEqualThan
--- DECOMPILER ERROR at PC362: Confused about usage of register: R0 in 'UnsetPending'
 
-TTBloodLessEqualThan.IsSatisfied = function(self, notify)
-  -- function num : 0_42
+function TTBloodLessEqualThan:IsSatisfied(notify)
   local owner = self:GetOwnerEntity()
   local entity = notify:GetNotifyEntity()
-  local curhp = (owner:Attributes()):GetCurrentHP()
-  local maxhp = (owner:Attributes()):CalcMaxHp()
-  local battleSvc = (self._world):GetService("Battle")
+  local curhp = owner:Attributes():GetCurrentHP()
+  local maxhp = owner:Attributes():CalcMaxHp()
+  local battleSvc = self._world:GetService("Battle")
   if not self._y then
-    curhp = battleSvc:GetCasterHP(owner)
-  else
-    if owner:HasPetPstID() then
-      local teamEntity = (owner:Pet()):GetOwnerTeamEntity()
-      local cAttr = teamEntity:Attributes()
-      curhp = cAttr:GetCurrentHP()
-      -- DECOMPILER ERROR at PC40: Overwrote pending register: R5 in 'AssignReg'
-
-    end
+    curhp, maxhp = battleSvc:GetCasterHP(owner)
+  elseif owner:HasPetPstID() then
+    local teamEntity = owner:Pet():GetOwnerTeamEntity()
+    local cAttr = teamEntity:Attributes()
+    curhp = cAttr:GetCurrentHP()
+    maxhp = cAttr:CalcMaxHp()
   end
-  do
-    if (owner:HasTeam() or entity:HasTeam()) and not owner:HasPetPstID() then
-      local isOwnerAndNotifierPlayer = entity:HasPetPstID()
-    end
-    local blood = curhp / maxhp
-    -- DECOMPILER ERROR at PC66: Unhandled construct in 'MakeBoolean' P3
-
-    do return (blood <= self._x and owner:GetID() == entity:GetID()) end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
-  end
+  local isOwnerAndNotifierPlayer = not (owner:HasTeam() or entity:HasTeam()) or owner:HasPetPstID() or entity:HasPetPstID()
+  local blood = curhp / maxhp
+  return blood <= self._x and (owner:GetID() == entity:GetID() or isOwnerAndNotifierPlayer)
 end
 
 _class("TTBloodMoreEqualThan", TriggerBase)
 TTBloodMoreEqualThan = TTBloodMoreEqualThan
--- DECOMPILER ERROR at PC371: Confused about usage of register: R0 in 'UnsetPending'
 
-TTBloodMoreEqualThan.IsSatisfied = function(self, notify)
-  -- function num : 0_43 , upvalues : _ENV
+function TTBloodMoreEqualThan:IsSatisfied(notify)
   local owner = self:GetOwnerEntity()
   local entity = notify:GetNotifyEntity()
-  local curhp = (owner:Attributes()):GetCurrentHP()
-  local maxhp = (owner:Attributes()):CalcMaxHp()
-  local battleSvc = (self._world):GetService("Battle")
+  local curhp = owner:Attributes():GetCurrentHP()
+  local maxhp = owner:Attributes():CalcMaxHp()
+  local battleSvc = self._world:GetService("Battle")
   if not self._y then
-    curhp = battleSvc:GetCasterHP(owner)
-  else
-    if owner:HasPetPstID() then
-      local teamEntity = (owner:Pet()):GetOwnerTeamEntity()
-      local cAttr = teamEntity:Attributes()
-      curhp = cAttr:GetCurrentHP()
-      -- DECOMPILER ERROR at PC40: Overwrote pending register: R5 in 'AssignReg'
-
-    end
+    curhp, maxhp = battleSvc:GetCasterHP(owner)
+  elseif owner:HasPetPstID() then
+    local teamEntity = owner:Pet():GetOwnerTeamEntity()
+    local cAttr = teamEntity:Attributes()
+    curhp = cAttr:GetCurrentHP()
+    maxhp = cAttr:CalcMaxHp()
   end
-  do
-    do
-      if notify:GetNotifyType() == NotifyType.PlayerMoveStart then
-        local curBlood = curhp / maxhp
-        return self._x < curBlood
-      end
-      if (owner:HasTeam() or entity:HasTeam()) and not owner:HasPetPstID() then
-        local isOwnerAndNotifierPlayer = entity:HasPetPstID()
-      end
-      local blood = curhp / maxhp
-      -- DECOMPILER ERROR at PC79: Unhandled construct in 'MakeBoolean' P3
-
-      do return (self._x <= blood and owner:GetID() == entity:GetID()) end
-      -- DECOMPILER ERROR: 7 unprocessed JMP targets
-    end
+  if notify:GetNotifyType() == NotifyType.PlayerMoveStart then
+    local curBlood = curhp / maxhp
+    return curBlood > self._x
   end
+  local isOwnerAndNotifierPlayer = not (owner:HasTeam() or entity:HasTeam()) or owner:HasPetPstID() or entity:HasPetPstID()
+  local blood = curhp / maxhp
+  return blood >= self._x and (owner:GetID() == entity:GetID() or isOwnerAndNotifierPlayer)
 end
 
 _class("TTCheckIsPetActiveLinkLine", TriggerBase)
 TTCheckIsPetActiveLinkLine = TTCheckIsPetActiveLinkLine
--- DECOMPILER ERROR at PC380: Confused about usage of register: R0 in 'UnsetPending'
 
-TTCheckIsPetActiveLinkLine.IsSatisfied = function(self, notify)
-  -- function num : 0_44
+function TTCheckIsPetActiveLinkLine:IsSatisfied(notify)
   if not notify.IsPetActiveLinkLine then
     return false
   end
   local flag = self:GetTriggerParamByIndex(1)
-  if notify:IsPetActiveLinkLine() ~= true then
-    do return flag ~= 1 end
-    if notify:IsPetActiveLinkLine() == true then
-      do return flag ~= 0 end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
-    end
+  if flag == 1 then
+    return notify:IsPetActiveLinkLine() == true
+  elseif flag == 0 then
+    return notify:IsPetActiveLinkLine() ~= true
   end
 end
 
 _class("TTCheckTeamAlivePetCount", TriggerBase)
 TTCheckTeamAlivePetCount = TTCheckTeamAlivePetCount
--- DECOMPILER ERROR at PC389: Confused about usage of register: R0 in 'UnsetPending'
 
-TTCheckTeamAlivePetCount.IsSatisfied = function(self, notify)
-  -- function num : 0_45
-  local battleSvc = (self._world):GetService("Battle")
+function TTCheckTeamAlivePetCount:IsSatisfied(notify)
+  local battleSvc = self._world:GetService("Battle")
   local count = battleSvc:GetAlivePetCount()
   local compareFlag = self:GetTriggerParamByIndex(1)
   local comboExpect = self:GetTriggerParamByIndex(2)
   return battleSvc:Compare2Num(count, comboExpect, compareFlag)
 end
-
-

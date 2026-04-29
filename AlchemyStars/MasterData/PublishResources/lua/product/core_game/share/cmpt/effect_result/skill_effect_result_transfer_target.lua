@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_transfer_target.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultTransferTarget", SkillEffectResultBase)
 SkillEffectResultTransferTarget = SkillEffectResultTransferTarget
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultTransferTarget.Constructor = function(self, targetID, gridPos)
-  -- function num : 0_0
+function SkillEffectResultTransferTarget:Constructor(targetID, gridPos)
   self._targetID = targetID
   self._gridPos = gridPos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTransferTarget.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultTransferTarget:GetEffectType()
   return SkillEffectType.TransferTarget
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTransferTarget.GetTargetEntityID = function(self)
-  -- function num : 0_2
+function SkillEffectResultTransferTarget:GetTargetEntityID()
   return self._targetID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTransferTarget.GetTargetGridPos = function(self)
-  -- function num : 0_3
+function SkillEffectResultTransferTarget:GetTargetGridPos()
   return self._gridPos
 end
-
-

@@ -1,51 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/season_maze/stn_season_maze_build_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("SeasonMaze_BuildTeam", Common_AsyncBase)
 SeasonMaze_BuildTeam = SeasonMaze_BuildTeam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMaze_BuildTeam.Constructor = function(self, _, teamIndex)
-  -- function num : 0_0 , upvalues : _ENV
-  if not teamIndex then
-    self._teamIndex = TestConst.MissionTeamIndex
-  end
+function SeasonMaze_BuildTeam:Constructor(_, teamIndex)
+  self._teamIndex = teamIndex or TestConst.MissionTeamIndex
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMaze_BuildTeam.TaskFunc = function(self, TT, result)
-  -- function num : 0_1 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function SeasonMaze_BuildTeam:TaskFunc(TT, result)
+  local runData = self.m_pManager:GetMissionRunData()
   local componentID = runData:GetComponentID()
   local petPoolOptions = SmokeTestTeamBuildPoolOptions:New()
   for i = 1, 3 do
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R10 in 'UnsetPending'
-
-    (petPoolOptions.seatStarWeight)[#petPoolOptions.seatStarWeight + 1] = (petPoolOptions.seatStarWeight)[#petPoolOptions.seatStarWeight]
+    petPoolOptions.seatStarWeight[#petPoolOptions.seatStarWeight + 1] = petPoolOptions.seatStarWeight[#petPoolOptions.seatStarWeight]
   end
-  if runData:IsRandomTeam() and not (self._manager):BuildRandomTeam(runData, petPoolOptions) then
-    self.m_nLogicResult = 2
-    return 
-  end
-  ;
-  (self._manager):AsyncBuildTeamByRunData(TT, self._teamIndex, result)
-  if result:IsErrorOccured() then
-    self.m_nLogicResult = 3
-    return 
+  if runData:IsRandomTeam() then
+    if not self._manager:BuildRandomTeam(runData, petPoolOptions) then
+      self.m_nLogicResult = 2
+      return
+    end
   else
-    self.m_nLogicResult = 1
-    return 
+    self._manager:AsyncBuildTeamByRunData(TT, self._teamIndex, result)
+    if result:IsErrorOccured() then
+      self.m_nLogicResult = 3
+      return
+    else
+      self.m_nLogicResult = 1
+      return
+    end
   end
   local currentTeamPetBuildData = runData:GetCurrentTeamBuild()
-  ;
-  (self._manager):PreparePetsByBuildDataList(TT, currentTeamPetBuildData, result)
+  self._manager:PreparePetsByBuildDataList(TT, currentTeamPetBuildData, result)
   if result:IsErrorOccured() then
     self.m_nLogicResult = 3
-    return 
+    return
   end
   local petPstIds = runData:GeneratePetPstID()
   local itemType = 4
@@ -53,8 +40,7 @@ SeasonMaze_BuildTeam.TaskFunc = function(self, TT, result)
     local petID = petPstIds[i]
     if petID then
       local status = AsyncOperationStatusData:New()
-      ;
-      (self._manager):AsyncGM_SeasonMazeAddItem(TT, status, componentID, itemType, petID, 1)
+      self._manager:AsyncGM_SeasonMazeAddItem(TT, status, componentID, itemType, petID, 1)
     end
   end
   for i = 1, 8 do
@@ -66,13 +52,13 @@ SeasonMaze_BuildTeam.TaskFunc = function(self, TT, result)
   team.teamSlotCount = 8
   team:Init(1, "", petPstIds)
   for i = 1, 3 do
-    local seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
+    local seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
     local res = seasonMazeModule:ReqSeasonMazeChangeFormationInfo(TT, 1, "", petPstIds)
     if res:GetSucc() then
       result:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
       result:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
       self.m_nLogicResult = 1
-      return 
+      return
     else
       result:SetCustomData("result", res.m_result)
     end
@@ -81,5 +67,3 @@ SeasonMaze_BuildTeam.TaskFunc = function(self, TT, result)
   result:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
   self.m_nLogicResult = 3
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/aircraft/aircraft_room/aircraft_tower_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("aircraft_room_base")
 _class("AircraftTowerRoom", AircraftRoomBase)
 AircraftTowerRoom = AircraftTowerRoom
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftTowerRoom.Constructor = function(self)
-  -- function num : 0_0
+function AircraftTowerRoom:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTowerRoom.SetClientData = function(self, client_data)
-  -- function num : 0_1
+function AircraftTowerRoom:SetClientData(client_data)
   self._room_cd = client_data[1]
   self._pet_cd = client_data[2]
   self._room_limit = client_data[3]
@@ -24,108 +14,71 @@ AircraftTowerRoom.SetClientData = function(self, client_data)
   self._total_cd = self._pet_cd + self._room_cd
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTowerRoom.GetTowerRoomConfig = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_tower_room)[self._roomid]
+function AircraftTowerRoom:GetTowerRoomConfig()
+  local cfg = Cfg.cfg_aircraft_tower_room[self._roomid]
   return cfg
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTowerRoom.CanCollect = function(self)
-  -- function num : 0_3
-  do return self._room_limit + self._pet_limit < self:GetHeartAmberCount() * 3 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftTowerRoom:CanCollect()
+  return self:GetHeartAmberCount() * 3 > self._room_limit + self._pet_limit
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTowerRoom.AwardID = function(self)
-  -- function num : 0_4
+function AircraftTowerRoom:AwardID()
   return 3220000
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTowerRoom.GetDrawCardCount = function(self)
-  -- function num : 0_5
-  return (self._module):GetDrawCardCount()
+function AircraftTowerRoom:GetDrawCardCount()
+  return self._module:GetDrawCardCount()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTowerRoom.GetHeartAmberCount = function(self)
-  -- function num : 0_6
-  return (self._module):GetHeartAmberCount()
+function AircraftTowerRoom:GetHeartAmberCount()
+  return self._module:GetHeartAmberCount()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTowerRoom.GetDrawCardCD = function(self)
-  -- function num : 0_7
+function AircraftTowerRoom:GetDrawCardCD()
   return self._room_cd, self._pet_cd
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTowerRoom.GetOutputLimit = function(self)
-  -- function num : 0_8
+function AircraftTowerRoom:GetOutputLimit()
   return self._room_limit, self._pet_limit
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTowerRoom.GetRoomPetCD = function(self)
-  -- function num : 0_9
+function AircraftTowerRoom:GetRoomPetCD()
   return self._room_cd, self._pet_cd
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTowerRoom.GetDrawCardSpeed = function(self)
-  -- function num : 0_10
+function AircraftTowerRoom:GetDrawCardSpeed()
   local total_speed = 3600 / (self._room_cd + self._pet_cd)
   local room_speed = 3600 / self._room_cd
   local pet_work_speed = total_speed - room_speed
   return room_speed, pet_work_speed
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTowerRoom.GetNextLevelDrawcardSpeed = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function AircraftTowerRoom:GetNextLevelDrawcardSpeed()
   local cfg = self:GetConfig()
-  local next_cfg = (Cfg.cfg_aircraft_tower_room)[cfg.NextLevelID]
+  local next_cfg = Cfg.cfg_aircraft_tower_room[cfg.NextLevelID]
   if next_cfg == nil then
     return nil
   end
   return 3600 / next_cfg.RecoverCD
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTowerRoom.GetLastLevelDrawcardSpeed = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function AircraftTowerRoom:GetLastLevelDrawcardSpeed()
   local cfg = self:GetConfig()
-  local last_cfg = (Cfg.cfg_aircraft_tower_room)[cfg.PrevLevelID]
+  local last_cfg = Cfg.cfg_aircraft_tower_room[cfg.PrevLevelID]
   if last_cfg == nil then
     return nil
   end
   return 3600 / last_cfg.RecoverCD
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTowerRoom.GetDrawCardLeftCDTime = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  if (self._module):GetDrawCardCount() == self._total_limit then
+function AircraftTowerRoom:GetDrawCardLeftCDTime()
+  if self._module:GetDrawCardCount() == self._total_limit then
     return -1
   end
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local now = timeModule:GetServerTime() / 1000
-  local start = (self._module):GetDrawCardCDTime()
+  local start = self._module:GetDrawCardCDTime()
   local left = start + self._total_cd - now
   if left <= 0 then
     left = 0
@@ -133,54 +86,62 @@ AircraftTowerRoom.GetDrawCardLeftCDTime = function(self)
   return left
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTowerRoom.CanCollectOutside = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local target = (math.floor)(self._total_limit / 3)
-  local cur = (self._module):GetHeartAmberCount()
-  do return cur >= 1 and target < cur end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftTowerRoom:CanCollectOutside()
+  local target = math.floor(self._total_limit / 3)
+  local cur = self._module:GetHeartAmberCount()
+  return 1 <= cur and target < cur
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTowerRoom.GetUpgradeInfo = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function AircraftTowerRoom:GetUpgradeInfo()
   local room_cfg = self:GetConfig()
-  local cur_cfg = (Cfg.cfg_aircraft_tower_room)[room_cfg.ID]
-  local next_cfg = (Cfg.cfg_aircraft_tower_room)[room_cfg.NextLevelID]
+  local cur_cfg = Cfg.cfg_aircraft_tower_room[room_cfg.ID]
+  local next_cfg = Cfg.cfg_aircraft_tower_room[room_cfg.NextLevelID]
   if next_cfg == nil then
     return nil
   end
   local cur_resource_count = cur_cfg.ResourceLimit
   local nxt_resource_count = next_cfg.ResourceLimit
   return {
-{AirLevelInfoTitle.DrawCardCount, AirRoomChangeLevelDataType.NumberInt, cur_resource_count, nxt_resource_count}
-, 
-{AirLevelInfoTitle.DrawcardAssetRocoverSpeed, AirRoomChangeLevelDataType.NumberFloat}
-, 
-{AirLevelInfoTitle.DrawcardAssetRocoverSpeed, AirRoomChangeLevelDataType.NumberFloat, self:GetDrawCardSpeed(), self:GetNextLevelDrawcardSpeed()}
-}
+    {
+      AirLevelInfoTitle.DrawCardCount,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_resource_count,
+      nxt_resource_count
+    },
+    {
+      AirLevelInfoTitle.DrawcardAssetRocoverSpeed,
+      AirRoomChangeLevelDataType.NumberFloat
+    },
+    {
+      AirLevelInfoTitle.DrawcardAssetRocoverSpeed,
+      AirRoomChangeLevelDataType.NumberFloat,
+      self:GetDrawCardSpeed(),
+      self:GetNextLevelDrawcardSpeed()
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTowerRoom.GetDegradeInfo = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function AircraftTowerRoom:GetDegradeInfo()
   local room_cfg = self:GetConfig()
-  local cur_cfg = (Cfg.cfg_aircraft_tower_room)[room_cfg.ID]
-  local next_cfg = (Cfg.cfg_aircraft_tower_room)[room_cfg.PrevLevelID]
+  local cur_cfg = Cfg.cfg_aircraft_tower_room[room_cfg.ID]
+  local next_cfg = Cfg.cfg_aircraft_tower_room[room_cfg.PrevLevelID]
   if next_cfg == nil then
     return nil
   end
   local cur_resource_count = cur_cfg.ResourceLimit
   local nxt_resource_count = next_cfg.ResourceLimit
   return {
-{AirLevelInfoTitle.DrawCardCount, AirRoomChangeLevelDataType.NumberInt, cur_resource_count, nxt_resource_count}
-, 
-{AirLevelInfoTitle.DrawcardAssetRocoverSpeed, AirRoomChangeLevelDataType.NumberFloat, self:GetDrawCardSpeed(), self:GetLastLevelDrawcardSpeed()}
-}
+    {
+      AirLevelInfoTitle.DrawCardCount,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_resource_count,
+      nxt_resource_count
+    },
+    {
+      AirLevelInfoTitle.DrawcardAssetRocoverSpeed,
+      AirRoomChangeLevelDataType.NumberFloat,
+      self:GetDrawCardSpeed(),
+      self:GetLastLevelDrawcardSpeed()
+    }
+  }
 end
-
-

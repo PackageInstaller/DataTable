@@ -1,812 +1,513 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/notify_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("notify_type")
 _class("NotifyAttackBase", INotifyBase)
 NotifyAttackBase = NotifyAttackBase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-NotifyAttackBase.Constructor = function(self, attacker, defender, attackPos, targetPos)
-  -- function num : 0_0
+function NotifyAttackBase:Constructor(attacker, defender, attackPos, targetPos)
   self._defender = defender
   self._attacker = attacker
   self._attackPos = attackPos
   self._targetPos = targetPos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.GetNotifyEntity = function(self)
-  -- function num : 0_1
+function NotifyAttackBase:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.NeedCheckGameTurn = function(self)
-  -- function num : 0_2
+function NotifyAttackBase:NeedCheckGameTurn()
   return true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.GetAttackerEntity = function(self)
-  -- function num : 0_3
+function NotifyAttackBase:GetAttackerEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.GetDefenderEntity = function(self)
-  -- function num : 0_4
+function NotifyAttackBase:GetDefenderEntity()
   return self._defender
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.GetAttackPos = function(self)
-  -- function num : 0_5
+function NotifyAttackBase:GetAttackPos()
   return self._attackPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.GetTargetPos = function(self)
-  -- function num : 0_6
+function NotifyAttackBase:GetTargetPos()
   return self._targetPos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.GetNotifyPos = function(self)
-  -- function num : 0_7
+function NotifyAttackBase:GetNotifyPos()
   return self._attackPos
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.SetDamageValue = function(self, damage)
-  -- function num : 0_8
+function NotifyAttackBase:SetDamageValue(damage)
   self._damage = damage
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.GetDamageValue = function(self)
-  -- function num : 0_9
+function NotifyAttackBase:GetDamageValue()
   return self._damage
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.SetDamageType = function(self, damageType)
-  -- function num : 0_10
+function NotifyAttackBase:SetDamageType(damageType)
   self._damageType = damageType
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.GetDamageType = function(self)
-  -- function num : 0_11
+function NotifyAttackBase:GetDamageType()
   return self._damageType
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.SetSkillID = function(self, skillID)
-  -- function num : 0_12
+function NotifyAttackBase:SetSkillID(skillID)
   self._skillID = skillID
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.GetSkillID = function(self)
-  -- function num : 0_13
+function NotifyAttackBase:GetSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.SetSkillType = function(self, skillType)
-  -- function num : 0_14
+function NotifyAttackBase:SetSkillType(skillType)
   self._skillType = skillType
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.GetSkillType = function(self)
-  -- function num : 0_15
+function NotifyAttackBase:GetSkillType()
   return self._skillType
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.SetEffectType = function(self, effectType)
-  -- function num : 0_16
+function NotifyAttackBase:SetEffectType(effectType)
   self._effectType = effectType
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.GetEffectType = function(self)
-  -- function num : 0_17
+function NotifyAttackBase:GetEffectType()
   return self._effectType
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.SetSkillStageIndex = function(self, stageIndex)
-  -- function num : 0_18
+function NotifyAttackBase:SetSkillStageIndex(stageIndex)
   self._stageIndex = stageIndex
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.GetSkillStageIndex = function(self)
-  -- function num : 0_19
+function NotifyAttackBase:GetSkillStageIndex()
   return self._stageIndex
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.GetNormalAttackIndex = function(self)
-  -- function num : 0_20
+function NotifyAttackBase:GetNormalAttackIndex()
   return self._normalAttackIndex
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.SetNormalAttackIndex = function(self, index)
-  -- function num : 0_21
+function NotifyAttackBase:SetNormalAttackIndex(index)
   self._normalAttackIndex = index
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.GetDefenderEntityIDList = function(self)
-  -- function num : 0_22
-  return {(self._defender):GetID()}
+function NotifyAttackBase:GetDefenderEntityIDList()
+  return {
+    self._defender:GetID()
+  }
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.SetMatchBuffViewLayer = function(self, layer, buffID)
-  -- function num : 0_23
+function NotifyAttackBase:SetMatchBuffViewLayer(layer, buffID)
   if not self._matchBuffViewLayer then
     self._matchBuffViewLayer = {}
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._matchBuffViewLayer)[buffID] = layer
+  self._matchBuffViewLayer[buffID] = layer
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyAttackBase.GetMatchBuffViewLayer = function(self, buffID)
-  -- function num : 0_24
+function NotifyAttackBase:GetMatchBuffViewLayer(buffID)
   if not self._matchBuffViewLayer then
     return nil
   end
-  return (self._matchBuffViewLayer)[buffID]
+  return self._matchBuffViewLayer[buffID]
 end
 
 _class("NotifyChainAttackBase", INotifyBase)
 NotifyChainAttackBase = NotifyChainAttackBase
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
 
-NotifyChainAttackBase.Constructor = function(self)
-  -- function num : 0_25
+function NotifyChainAttackBase:Constructor()
   self._chainCount = 0
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyChainAttackBase.SetChainCount = function(self, chainCount)
-  -- function num : 0_26
+function NotifyChainAttackBase:SetChainCount(chainCount)
   self._chainCount = chainCount
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-NotifyChainAttackBase.GetChainCount = function(self)
-  -- function num : 0_27
+function NotifyChainAttackBase:GetChainCount()
   return self._chainCount
 end
 
 _class("NTNormalEachAttackStart", NotifyAttackBase)
 NTNormalEachAttackStart = NTNormalEachAttackStart
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
 
-NTNormalEachAttackStart.GetNotifyType = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function NTNormalEachAttackStart:GetNotifyType()
   return NotifyType.NormalEachAttackStart
 end
 
 _class("NTNormalEachAttackEnd", NotifyAttackBase)
 NTNormalEachAttackEnd = NTNormalEachAttackEnd
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
 
-NTNormalEachAttackEnd.GetNotifyType = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function NTNormalEachAttackEnd:GetNotifyType()
   return NotifyType.NormalEachAttackEnd
 end
 
 _class("NTNormalAttackCalcStart", INotifyBase)
--- DECOMPILER ERROR at PC123: Confused about usage of register: R0 in 'UnsetPending'
 
-NTNormalAttackCalcStart.Constructor = function(self, entity, attackGridData)
-  -- function num : 0_30
+function NTNormalAttackCalcStart:Constructor(entity, attackGridData)
   self._notifier = entity
   self._attackGridData = attackGridData
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R0 in 'UnsetPending'
-
-NTNormalAttackCalcStart.GetNotifyType = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function NTNormalAttackCalcStart:GetNotifyType()
   return NotifyType.NormalAttackCalcStart
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R0 in 'UnsetPending'
-
-NTNormalAttackCalcStart.GetTargetCount = function(self)
-  -- function num : 0_32
-  return #(self._attackGridData):GetTargetIdList()
+function NTNormalAttackCalcStart:GetTargetCount()
+  return #self._attackGridData:GetTargetIdList()
 end
 
--- DECOMPILER ERROR at PC132: Confused about usage of register: R0 in 'UnsetPending'
-
-NTNormalAttackCalcStart.GetNotifyEntity = function(self)
-  -- function num : 0_33
+function NTNormalAttackCalcStart:GetNotifyEntity()
   return self._notifier
 end
 
 _class("NTNormalAttackCalcEnd", NotifyAttackBase)
 NTNormalAttackCalcEnd = NTNormalAttackCalcEnd
--- DECOMPILER ERROR at PC141: Confused about usage of register: R0 in 'UnsetPending'
 
-NTNormalAttackCalcEnd.GetNotifyType = function(self)
-  -- function num : 0_34 , upvalues : _ENV
+function NTNormalAttackCalcEnd:GetNotifyType()
   return NotifyType.NormalAttackCalcEnd
 end
 
 _class("NTNormalAttackCalcEndUseOriPos", NotifyAttackBase)
 NTNormalAttackCalcEndUseOriPos = NTNormalAttackCalcEndUseOriPos
--- DECOMPILER ERROR at PC150: Confused about usage of register: R0 in 'UnsetPending'
 
-NTNormalAttackCalcEndUseOriPos.GetNotifyType = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function NTNormalAttackCalcEndUseOriPos:GetNotifyType()
   return NotifyType.NormalAttackCalcEndUseOriPos
 end
 
 _class("NTNormalAttackChangeBefore", INotifyBase)
--- DECOMPILER ERROR at PC157: Confused about usage of register: R0 in 'UnsetPending'
 
-NTNormalAttackChangeBefore.Constructor = function(self, entity, attackPos, beAttackPos)
-  -- function num : 0_36
+function NTNormalAttackChangeBefore:Constructor(entity, attackPos, beAttackPos)
   self._entity = entity
   self._attackPos = attackPos
   self._beAttackPos = beAttackPos
 end
 
--- DECOMPILER ERROR at PC160: Confused about usage of register: R0 in 'UnsetPending'
-
-NTNormalAttackChangeBefore.GetNotifyType = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function NTNormalAttackChangeBefore:GetNotifyType()
   return NotifyType.NormalAttackChangeBefore
 end
 
--- DECOMPILER ERROR at PC163: Confused about usage of register: R0 in 'UnsetPending'
-
-NTNormalAttackChangeBefore.GetNotifyEntity = function(self)
-  -- function num : 0_38
+function NTNormalAttackChangeBefore:GetNotifyEntity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC166: Confused about usage of register: R0 in 'UnsetPending'
-
-NTNormalAttackChangeBefore.GetAttackPos = function(self)
-  -- function num : 0_39
+function NTNormalAttackChangeBefore:GetAttackPos()
   return self._attackPos
 end
 
--- DECOMPILER ERROR at PC169: Confused about usage of register: R0 in 'UnsetPending'
-
-NTNormalAttackChangeBefore.GetTargetPos = function(self)
-  -- function num : 0_40
+function NTNormalAttackChangeBefore:GetTargetPos()
   return self._beAttackPos
 end
 
--- DECOMPILER ERROR at PC172: Confused about usage of register: R0 in 'UnsetPending'
-
-NTNormalAttackChangeBefore.GetNotifyPos = function(self)
-  -- function num : 0_41
+function NTNormalAttackChangeBefore:GetNotifyPos()
   return self._attackPos
 end
 
--- DECOMPILER ERROR at PC175: Confused about usage of register: R0 in 'UnsetPending'
-
-NTNormalAttackChangeBefore.GetPos = function(self)
-  -- function num : 0_42
+function NTNormalAttackChangeBefore:GetPos()
   return self._attackPos
 end
 
 _class("NTMonsterEachAttackStart", NotifyAttackBase)
 NTMonsterEachAttackStart = NTMonsterEachAttackStart
--- DECOMPILER ERROR at PC184: Confused about usage of register: R0 in 'UnsetPending'
 
-NTMonsterEachAttackStart.GetNotifyType = function(self)
-  -- function num : 0_43 , upvalues : _ENV
+function NTMonsterEachAttackStart:GetNotifyType()
   return NotifyType.MonsterEachAttackStart
 end
 
 _class("NTMonsterEachAttackEnd", NotifyAttackBase)
 NTMonsterEachAttackEnd = NTMonsterEachAttackEnd
--- DECOMPILER ERROR at PC193: Confused about usage of register: R0 in 'UnsetPending'
 
-NTMonsterEachAttackEnd.GetNotifyType = function(self)
-  -- function num : 0_44 , upvalues : _ENV
+function NTMonsterEachAttackEnd:GetNotifyType()
   return NotifyType.MonsterEachAttackEnd
 end
 
 _class("NTMonsterEachDamageEnd", NotifyAttackBase)
 NTMonsterEachDamageEnd = NTMonsterEachDamageEnd
--- DECOMPILER ERROR at PC202: Confused about usage of register: R0 in 'UnsetPending'
 
-NTMonsterEachDamageEnd.GetNotifyType = function(self)
-  -- function num : 0_45 , upvalues : _ENV
+function NTMonsterEachDamageEnd:GetNotifyType()
   return NotifyType.MonsterEachDamageEnd
 end
 
 _class("NTTrapEachAttackStart", NotifyAttackBase)
 NTTrapEachAttackStart = NTTrapEachAttackStart
--- DECOMPILER ERROR at PC211: Confused about usage of register: R0 in 'UnsetPending'
 
-NTTrapEachAttackStart.GetNotifyType = function(self)
-  -- function num : 0_46 , upvalues : _ENV
+function NTTrapEachAttackStart:GetNotifyType()
   return NotifyType.TrapEachAttackStart
 end
 
 _class("NTTrapEachAttackEnd", NotifyAttackBase)
 NTTrapEachAttackEnd = NTTrapEachAttackEnd
--- DECOMPILER ERROR at PC220: Confused about usage of register: R0 in 'UnsetPending'
 
-NTTrapEachAttackEnd.GetNotifyType = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function NTTrapEachAttackEnd:GetNotifyType()
   return NotifyType.TrapEachAttackEnd
 end
 
 _class("NTChainSkillEachAttackStart", NotifyAttackBase)
 NTChainSkillEachAttackStart = NTChainSkillEachAttackStart
--- DECOMPILER ERROR at PC229: Confused about usage of register: R0 in 'UnsetPending'
 
-NTChainSkillEachAttackStart.GetNotifyType = function(self)
-  -- function num : 0_48 , upvalues : _ENV
+function NTChainSkillEachAttackStart:GetNotifyType()
   return NotifyType.ChainSkillEachAttackStart
 end
 
--- DECOMPILER ERROR at PC232: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillEachAttackStart.SetChainSkillTimeIndex = function(self, idx)
-  -- function num : 0_49
+function NTChainSkillEachAttackStart:SetChainSkillTimeIndex(idx)
   self._chainTimeIndex = idx
 end
 
--- DECOMPILER ERROR at PC235: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillEachAttackStart.GetChainSkillTimeIndex = function(self)
-  -- function num : 0_50
+function NTChainSkillEachAttackStart:GetChainSkillTimeIndex()
   return self._chainTimeIndex
 end
 
--- DECOMPILER ERROR at PC238: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillEachAttackStart.SetChainSkillStageIndex = function(self, idx)
-  -- function num : 0_51
+function NTChainSkillEachAttackStart:SetChainSkillStageIndex(idx)
   self._chainStageIndex = idx
 end
 
--- DECOMPILER ERROR at PC241: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillEachAttackStart.GetChainSkillStageIndex = function(self)
-  -- function num : 0_52
+function NTChainSkillEachAttackStart:GetChainSkillStageIndex()
   return self._chainStageIndex
 end
 
--- DECOMPILER ERROR at PC244: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillEachAttackStart.SetRandHalfDamageIndex = function(self, idx)
-  -- function num : 0_53
+function NTChainSkillEachAttackStart:SetRandHalfDamageIndex(idx)
   self._randHalfDamageIndex = idx
 end
 
--- DECOMPILER ERROR at PC247: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillEachAttackStart.GetRandHalfDamageIndex = function(self)
-  -- function num : 0_54
+function NTChainSkillEachAttackStart:GetRandHalfDamageIndex()
   return self._randHalfDamageIndex
 end
 
 _class("NTChainSkillEachAttackEnd", NotifyAttackBase)
 NTChainSkillEachAttackEnd = NTChainSkillEachAttackEnd
--- DECOMPILER ERROR at PC256: Confused about usage of register: R0 in 'UnsetPending'
 
-NTChainSkillEachAttackEnd.GetNotifyType = function(self)
-  -- function num : 0_55 , upvalues : _ENV
+function NTChainSkillEachAttackEnd:GetNotifyType()
   return NotifyType.ChainSkillEachAttackEnd
 end
 
--- DECOMPILER ERROR at PC259: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillEachAttackEnd.SetDamageValue = function(self, val)
-  -- function num : 0_56
+function NTChainSkillEachAttackEnd:SetDamageValue(val)
   self._damageValue = val
 end
 
--- DECOMPILER ERROR at PC262: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillEachAttackEnd.GetDamageValue = function(self)
-  -- function num : 0_57
+function NTChainSkillEachAttackEnd:GetDamageValue()
   return self._damageValue
 end
 
--- DECOMPILER ERROR at PC265: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillEachAttackEnd.SetChainSkillTimeIndex = function(self, idx)
-  -- function num : 0_58
+function NTChainSkillEachAttackEnd:SetChainSkillTimeIndex(idx)
   self._chainTimeIndex = idx
 end
 
--- DECOMPILER ERROR at PC268: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillEachAttackEnd.GetChainSkillTimeIndex = function(self)
-  -- function num : 0_59
+function NTChainSkillEachAttackEnd:GetChainSkillTimeIndex()
   return self._chainTimeIndex
 end
 
--- DECOMPILER ERROR at PC271: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillEachAttackEnd.SetChainSkillStageIndex = function(self, idx)
-  -- function num : 0_60
+function NTChainSkillEachAttackEnd:SetChainSkillStageIndex(idx)
   self._chainStageIndex = idx
 end
 
--- DECOMPILER ERROR at PC274: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillEachAttackEnd.GetChainSkillStageIndex = function(self)
-  -- function num : 0_61
+function NTChainSkillEachAttackEnd:GetChainSkillStageIndex()
   return self._chainStageIndex
 end
 
--- DECOMPILER ERROR at PC277: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillEachAttackEnd.SetRandHalfDamageIndex = function(self, idx)
-  -- function num : 0_62
+function NTChainSkillEachAttackEnd:SetRandHalfDamageIndex(idx)
   self._randHalfDamageIndex = idx
 end
 
--- DECOMPILER ERROR at PC280: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillEachAttackEnd.GetRandHalfDamageIndex = function(self)
-  -- function num : 0_63
+function NTChainSkillEachAttackEnd:GetRandHalfDamageIndex()
   return self._randHalfDamageIndex
 end
 
--- DECOMPILER ERROR at PC283: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillEachAttackEnd.GetDamage = function(self)
-  -- function num : 0_64
+function NTChainSkillEachAttackEnd:GetDamage()
   return self._damageValue
 end
 
 _class("NTActiveSkillEachAttackStart", NotifyAttackBase)
 NTActiveSkillEachAttackStart = NTActiveSkillEachAttackStart
--- DECOMPILER ERROR at PC292: Confused about usage of register: R0 in 'UnsetPending'
 
-NTActiveSkillEachAttackStart.GetNotifyType = function(self)
-  -- function num : 0_65 , upvalues : _ENV
+function NTActiveSkillEachAttackStart:GetNotifyType()
   return NotifyType.ActiveSkillEachAttackStart
 end
 
 _class("NTActiveSkillEachAttackEnd", NotifyAttackBase)
 NTActiveSkillEachAttackEnd = NTActiveSkillEachAttackEnd
--- DECOMPILER ERROR at PC301: Confused about usage of register: R0 in 'UnsetPending'
 
-NTActiveSkillEachAttackEnd.GetNotifyType = function(self)
-  -- function num : 0_66 , upvalues : _ENV
+function NTActiveSkillEachAttackEnd:GetNotifyType()
   return NotifyType.ActiveSkillEachAttackEnd
 end
 
--- DECOMPILER ERROR at PC304: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillEachAttackEnd.SetChainSkillTimeIndex = function(self, idx)
-  -- function num : 0_67
+function NTActiveSkillEachAttackEnd:SetChainSkillTimeIndex(idx)
   self._chainTimeIndex = idx
 end
 
--- DECOMPILER ERROR at PC307: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillEachAttackEnd.GetChainSkillTimeIndex = function(self)
-  -- function num : 0_68
+function NTActiveSkillEachAttackEnd:GetChainSkillTimeIndex()
   return self._chainTimeIndex
 end
 
--- DECOMPILER ERROR at PC310: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillEachAttackEnd.SetChainSkillStageIndex = function(self, idx)
-  -- function num : 0_69
+function NTActiveSkillEachAttackEnd:SetChainSkillStageIndex(idx)
   self._chainStageIndex = idx
 end
 
--- DECOMPILER ERROR at PC313: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillEachAttackEnd.GetChainSkillStageIndex = function(self)
-  -- function num : 0_70
+function NTActiveSkillEachAttackEnd:GetChainSkillStageIndex()
   return self._chainStageIndex
 end
 
 _class("NTPlayerBeHit", NotifyAttackBase)
 NTPlayerBeHit = NTPlayerBeHit
--- DECOMPILER ERROR at PC322: Confused about usage of register: R0 in 'UnsetPending'
 
-NTPlayerBeHit.GetNotifyType = function(self)
-  -- function num : 0_71 , upvalues : _ENV
+function NTPlayerBeHit:GetNotifyType()
   return NotifyType.PlayerBeHit
 end
 
--- DECOMPILER ERROR at PC325: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerBeHit.NeedCheckGameTurn = function(self)
-  -- function num : 0_72
+function NTPlayerBeHit:NeedCheckGameTurn()
   return false
 end
 
--- DECOMPILER ERROR at PC328: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerBeHit.GetNotifyEntity = function(self)
-  -- function num : 0_73
+function NTPlayerBeHit:GetNotifyEntity()
   return self._defender
 end
 
--- DECOMPILER ERROR at PC331: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerBeHit.SetDamageIndex = function(self, idx)
-  -- function num : 0_74
+function NTPlayerBeHit:SetDamageIndex(idx)
   self._damageIndex = idx
 end
 
--- DECOMPILER ERROR at PC334: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerBeHit.GetDamageIndex = function(self)
-  -- function num : 0_75
+function NTPlayerBeHit:GetDamageIndex()
   return self._damageIndex
 end
 
 _class("NTMonsterBeHit", NotifyAttackBase)
 NTMonsterBeHit = NTMonsterBeHit
--- DECOMPILER ERROR at PC343: Confused about usage of register: R0 in 'UnsetPending'
 
-NTMonsterBeHit.GetNotifyType = function(self)
-  -- function num : 0_76 , upvalues : _ENV
+function NTMonsterBeHit:GetNotifyType()
   return NotifyType.MonsterBeHit
 end
 
--- DECOMPILER ERROR at PC346: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterBeHit.NeedCheckGameTurn = function(self)
-  -- function num : 0_77
+function NTMonsterBeHit:NeedCheckGameTurn()
   return false
 end
 
--- DECOMPILER ERROR at PC349: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterBeHit.GetNotifyEntity = function(self)
-  -- function num : 0_78
+function NTMonsterBeHit:GetNotifyEntity()
   return self._defender
 end
 
--- DECOMPILER ERROR at PC352: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterBeHit.SetDamageStageIndex = function(self, idx)
-  -- function num : 0_79
+function NTMonsterBeHit:SetDamageStageIndex(idx)
   self._damageStageIndex = idx
 end
 
--- DECOMPILER ERROR at PC355: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterBeHit.GetDamageStageIndex = function(self)
-  -- function num : 0_80
+function NTMonsterBeHit:GetDamageStageIndex()
   return self._damageStageIndex
 end
 
--- DECOMPILER ERROR at PC358: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterBeHit.SetCurSkillDamageIndex = function(self, val)
-  -- function num : 0_81
+function NTMonsterBeHit:SetCurSkillDamageIndex(val)
   self._curSkillDamageIndex = val
 end
 
--- DECOMPILER ERROR at PC361: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterBeHit.GetCurSkillDamageIndex = function(self)
-  -- function num : 0_82
+function NTMonsterBeHit:GetCurSkillDamageIndex()
   return self._curSkillDamageIndex
 end
 
 _class("NTPlayerBeHitStart", NotifyAttackBase)
 NTPlayerBeHitStart = NTPlayerBeHitStart
--- DECOMPILER ERROR at PC370: Confused about usage of register: R0 in 'UnsetPending'
 
-NTPlayerBeHitStart.GetNotifyType = function(self)
-  -- function num : 0_83 , upvalues : _ENV
+function NTPlayerBeHitStart:GetNotifyType()
   return NotifyType.PlayerBeHitStart
 end
 
--- DECOMPILER ERROR at PC373: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerBeHitStart.NeedCheckGameTurn = function(self)
-  -- function num : 0_84
+function NTPlayerBeHitStart:NeedCheckGameTurn()
   return false
 end
 
--- DECOMPILER ERROR at PC376: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerBeHitStart.GetNotifyEntity = function(self)
-  -- function num : 0_85
+function NTPlayerBeHitStart:GetNotifyEntity()
   return self._defender
 end
 
--- DECOMPILER ERROR at PC379: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerBeHitStart.SetDamageIndex = function(self, idx)
-  -- function num : 0_86
+function NTPlayerBeHitStart:SetDamageIndex(idx)
   self._damageIndex = idx
 end
 
--- DECOMPILER ERROR at PC382: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerBeHitStart.GetDamageIndex = function(self)
-  -- function num : 0_87
+function NTPlayerBeHitStart:GetDamageIndex()
   return self._damageIndex
 end
 
 _class("NTMonsterBeHitStart", NotifyAttackBase)
 NTMonsterBeHitStart = NTMonsterBeHitStart
--- DECOMPILER ERROR at PC391: Confused about usage of register: R0 in 'UnsetPending'
 
-NTMonsterBeHitStart.GetNotifyType = function(self)
-  -- function num : 0_88 , upvalues : _ENV
+function NTMonsterBeHitStart:GetNotifyType()
   return NotifyType.MonsterBeHitStart
 end
 
--- DECOMPILER ERROR at PC394: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterBeHitStart.NeedCheckGameTurn = function(self)
-  -- function num : 0_89
+function NTMonsterBeHitStart:NeedCheckGameTurn()
   return false
 end
 
--- DECOMPILER ERROR at PC397: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterBeHitStart.GetNotifyEntity = function(self)
-  -- function num : 0_90
+function NTMonsterBeHitStart:GetNotifyEntity()
   return self._defender
 end
 
 _class("NTNormalAttackStart", INotifyBase)
 NTNormalAttackStart = NTNormalAttackStart
--- DECOMPILER ERROR at PC406: Confused about usage of register: R0 in 'UnsetPending'
 
-NTNormalAttackStart.Constructor = function(self, attacker, chainPathType, chainPath)
-  -- function num : 0_91
+function NTNormalAttackStart:Constructor(attacker, chainPathType, chainPath)
   self._attacker = attacker
   self._chainPathType = chainPathType
   self._chainPath = chainPath
 end
 
--- DECOMPILER ERROR at PC409: Confused about usage of register: R0 in 'UnsetPending'
-
-NTNormalAttackStart.GetNotifyType = function(self)
-  -- function num : 0_92 , upvalues : _ENV
+function NTNormalAttackStart:GetNotifyType()
   return NotifyType.NormalAttackStart
 end
 
--- DECOMPILER ERROR at PC412: Confused about usage of register: R0 in 'UnsetPending'
-
-NTNormalAttackStart.GetNotifyEntity = function(self)
-  -- function num : 0_93
+function NTNormalAttackStart:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC415: Confused about usage of register: R0 in 'UnsetPending'
-
-NTNormalAttackStart.GetAttackerEntity = function(self)
-  -- function num : 0_94
+function NTNormalAttackStart:GetAttackerEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC418: Confused about usage of register: R0 in 'UnsetPending'
-
-NTNormalAttackStart.GetChainPathType = function(self)
-  -- function num : 0_95
+function NTNormalAttackStart:GetChainPathType()
   return self._chainPathType
 end
 
--- DECOMPILER ERROR at PC421: Confused about usage of register: R0 in 'UnsetPending'
-
-NTNormalAttackStart.GetChainPath = function(self)
-  -- function num : 0_96
+function NTNormalAttackStart:GetChainPath()
   return self._chainPath
 end
 
 _class("NTNormalAttackEnd", INotifyBase)
 NTNormalAttackEnd = NTNormalAttackEnd
--- DECOMPILER ERROR at PC430: Confused about usage of register: R0 in 'UnsetPending'
 
-NTNormalAttackEnd.Constructor = function(self, attacker)
-  -- function num : 0_97
+function NTNormalAttackEnd:Constructor(attacker)
   self._attacker = attacker
 end
 
--- DECOMPILER ERROR at PC433: Confused about usage of register: R0 in 'UnsetPending'
-
-NTNormalAttackEnd.GetNotifyType = function(self)
-  -- function num : 0_98 , upvalues : _ENV
+function NTNormalAttackEnd:GetNotifyType()
   return NotifyType.NormalAttackEnd
 end
 
--- DECOMPILER ERROR at PC436: Confused about usage of register: R0 in 'UnsetPending'
-
-NTNormalAttackEnd.GetNotifyEntity = function(self)
-  -- function num : 0_99
+function NTNormalAttackEnd:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC439: Confused about usage of register: R0 in 'UnsetPending'
-
-NTNormalAttackEnd.GetAttackerEntity = function(self)
-  -- function num : 0_100
+function NTNormalAttackEnd:GetAttackerEntity()
   return self._attacker
 end
 
 _class("NTBeforeCalcChainSkill", INotifyBase)
 NTBeforeCalcChainSkill = NTBeforeCalcChainSkill
--- DECOMPILER ERROR at PC448: Confused about usage of register: R0 in 'UnsetPending'
 
-NTBeforeCalcChainSkill.Constructor = function(self)
-  -- function num : 0_101
+function NTBeforeCalcChainSkill:Constructor()
 end
 
--- DECOMPILER ERROR at PC451: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBeforeCalcChainSkill.GetNotifyType = function(self)
-  -- function num : 0_102 , upvalues : _ENV
+function NTBeforeCalcChainSkill:GetNotifyType()
   return NotifyType.BeforeCalcChainSkill
 end
 
--- DECOMPILER ERROR at PC454: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBeforeCalcChainSkill.SetChainCount = function(self, chainCount)
-  -- function num : 0_103
+function NTBeforeCalcChainSkill:SetChainCount(chainCount)
   self._chainCount = chainCount
 end
 
--- DECOMPILER ERROR at PC457: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBeforeCalcChainSkill.GetChainCount = function(self)
-  -- function num : 0_104
+function NTBeforeCalcChainSkill:GetChainCount()
   return self._chainCount
 end
 
 _class("NTChainSkillAttackStart", INotifyBase)
 NTChainSkillAttackStart = NTChainSkillAttackStart
--- DECOMPILER ERROR at PC466: Confused about usage of register: R0 in 'UnsetPending'
 
-NTChainSkillAttackStart.Constructor = function(self, attacker, defenderList, attackPos, defenerPosList, defendMonsterList)
-  -- function num : 0_105
+function NTChainSkillAttackStart:Constructor(attacker, defenderList, attackPos, defenerPosList, defendMonsterList)
   self._attacker = attacker
   self._defenderList = defenderList
   self._attackPos = attackPos
@@ -814,55 +515,34 @@ NTChainSkillAttackStart.Constructor = function(self, attacker, defenderList, att
   self._defendMonsterList = defendMonsterList
 end
 
--- DECOMPILER ERROR at PC469: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackStart.GetNotifyType = function(self)
-  -- function num : 0_106 , upvalues : _ENV
+function NTChainSkillAttackStart:GetNotifyType()
   return NotifyType.ChainSkillAttackStart
 end
 
--- DECOMPILER ERROR at PC472: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackStart.GetNotifyEntity = function(self)
-  -- function num : 0_107
+function NTChainSkillAttackStart:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC475: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackStart.GetAttackerEntity = function(self)
-  -- function num : 0_108
+function NTChainSkillAttackStart:GetAttackerEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC478: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackStart.GetAttackerPos = function(self)
-  -- function num : 0_109
+function NTChainSkillAttackStart:GetAttackerPos()
   return self._attackPos
 end
 
--- DECOMPILER ERROR at PC481: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackStart.GetDefenderEntityIDList = function(self)
-  -- function num : 0_110
+function NTChainSkillAttackStart:GetDefenderEntityIDList()
   return self._defenderList
 end
 
--- DECOMPILER ERROR at PC484: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackStart.GetDefenderPosList = function(self)
-  -- function num : 0_111
+function NTChainSkillAttackStart:GetDefenderPosList()
   return self._defenderPosList
 end
 
--- DECOMPILER ERROR at PC487: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackStart.GetTargetCount = function(self)
-  -- function num : 0_112 , upvalues : _ENV
+function NTChainSkillAttackStart:GetTargetCount()
   local count = 0
   local t = {}
-  for _,id in ipairs(self._defendMonsterList) do
+  for _, id in ipairs(self._defendMonsterList) do
     if not t[id] then
       count = count + 1
       t[id] = true
@@ -871,75 +551,46 @@ NTChainSkillAttackStart.GetTargetCount = function(self)
   return count
 end
 
--- DECOMPILER ERROR at PC490: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackStart.SetChainSkillTimeIndex = function(self, idx)
-  -- function num : 0_113
+function NTChainSkillAttackStart:SetChainSkillTimeIndex(idx)
   self._chainTimeIndex = idx
 end
 
--- DECOMPILER ERROR at PC493: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackStart.GetChainSkillTimeIndex = function(self)
-  -- function num : 0_114
+function NTChainSkillAttackStart:GetChainSkillTimeIndex()
   return self._chainTimeIndex
 end
 
--- DECOMPILER ERROR at PC496: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackStart.SetChainSkillStageIndex = function(self, idx)
-  -- function num : 0_115
+function NTChainSkillAttackStart:SetChainSkillStageIndex(idx)
   self._chainStageIndex = idx
 end
 
--- DECOMPILER ERROR at PC499: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackStart.GetChainSkillStageIndex = function(self)
-  -- function num : 0_116
+function NTChainSkillAttackStart:GetChainSkillStageIndex()
   return self._chainStageIndex
 end
 
--- DECOMPILER ERROR at PC502: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackStart.SetChainSkillId = function(self, chainSkillId)
-  -- function num : 0_117
+function NTChainSkillAttackStart:SetChainSkillId(chainSkillId)
   self._chainSkillId = chainSkillId
 end
 
--- DECOMPILER ERROR at PC505: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackStart.GetChainSkillId = function(self)
-  -- function num : 0_118
+function NTChainSkillAttackStart:GetChainSkillId()
   return self._chainSkillId
 end
 
--- DECOMPILER ERROR at PC508: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackStart.SetChainSkillStage = function(self, chainSkillStage)
-  -- function num : 0_119
+function NTChainSkillAttackStart:SetChainSkillStage(chainSkillStage)
   self._chainSkillStage = chainSkillStage
 end
 
--- DECOMPILER ERROR at PC511: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackStart.GetChainSkillStage = function(self)
-  -- function num : 0_120
+function NTChainSkillAttackStart:GetChainSkillStage()
   return self._chainSkillStage
 end
 
--- DECOMPILER ERROR at PC514: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackStart.GetSkillID = function(self)
-  -- function num : 0_121
+function NTChainSkillAttackStart:GetSkillID()
   return self._chainSkillId
 end
 
 _class("NTSecondChainSkillAttackStart", INotifyBase)
 NTSecondChainSkillAttackStart = NTSecondChainSkillAttackStart
--- DECOMPILER ERROR at PC523: Confused about usage of register: R0 in 'UnsetPending'
 
-NTSecondChainSkillAttackStart.Constructor = function(self, attacker, defenderList, attackPos, defenerPosList, defendMonsterList)
-  -- function num : 0_122
+function NTSecondChainSkillAttackStart:Constructor(attacker, defenderList, attackPos, defenerPosList, defendMonsterList)
   self._attacker = attacker
   self._defenderList = defenderList
   self._attackPos = attackPos
@@ -947,55 +598,34 @@ NTSecondChainSkillAttackStart.Constructor = function(self, attacker, defenderLis
   self._defendMonsterList = defendMonsterList
 end
 
--- DECOMPILER ERROR at PC526: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSecondChainSkillAttackStart.GetNotifyType = function(self)
-  -- function num : 0_123 , upvalues : _ENV
+function NTSecondChainSkillAttackStart:GetNotifyType()
   return NotifyType.SecondChainSkillAttackStart
 end
 
--- DECOMPILER ERROR at PC529: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSecondChainSkillAttackStart.GetNotifyEntity = function(self)
-  -- function num : 0_124
+function NTSecondChainSkillAttackStart:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC532: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSecondChainSkillAttackStart.GetAttackerEntity = function(self)
-  -- function num : 0_125
+function NTSecondChainSkillAttackStart:GetAttackerEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC535: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSecondChainSkillAttackStart.GetAttackerPos = function(self)
-  -- function num : 0_126
+function NTSecondChainSkillAttackStart:GetAttackerPos()
   return self._attackPos
 end
 
--- DECOMPILER ERROR at PC538: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSecondChainSkillAttackStart.GetDefenderEntityIDList = function(self)
-  -- function num : 0_127
+function NTSecondChainSkillAttackStart:GetDefenderEntityIDList()
   return self._defenderList
 end
 
--- DECOMPILER ERROR at PC541: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSecondChainSkillAttackStart.GetDefenderPosList = function(self)
-  -- function num : 0_128
+function NTSecondChainSkillAttackStart:GetDefenderPosList()
   return self._defenderPosList
 end
 
--- DECOMPILER ERROR at PC544: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSecondChainSkillAttackStart.GetTargetCount = function(self)
-  -- function num : 0_129 , upvalues : _ENV
+function NTSecondChainSkillAttackStart:GetTargetCount()
   local count = 0
   local t = {}
-  for _,id in ipairs(self._defendMonsterList) do
+  for _, id in ipairs(self._defendMonsterList) do
     if not t[id] then
       count = count + 1
       t[id] = true
@@ -1006,64 +636,42 @@ end
 
 _class("NTChainSkillAttack", INotifyBase)
 NTChainSkillAttack = NTChainSkillAttack
--- DECOMPILER ERROR at PC553: Confused about usage of register: R0 in 'UnsetPending'
 
-NTChainSkillAttack.Constructor = function(self, attacker, defenderList, attackPos, defenerPosList)
-  -- function num : 0_130
+function NTChainSkillAttack:Constructor(attacker, defenderList, attackPos, defenerPosList)
   self._attacker = attacker
   self._defenderList = defenderList
   self._attackPos = attackPos
   self._defenerPosList = defenerPosList
 end
 
--- DECOMPILER ERROR at PC556: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttack.GetNotifyType = function(self)
-  -- function num : 0_131 , upvalues : _ENV
+function NTChainSkillAttack:GetNotifyType()
   return NotifyType.ChainSkillAttack
 end
 
--- DECOMPILER ERROR at PC559: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttack.GetNotifyEntity = function(self)
-  -- function num : 0_132
+function NTChainSkillAttack:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC562: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttack.GetAttackerEntity = function(self)
-  -- function num : 0_133
+function NTChainSkillAttack:GetAttackerEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC565: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttack.GetAttackerPos = function(self)
-  -- function num : 0_134
+function NTChainSkillAttack:GetAttackerPos()
   return self._attackPos
 end
 
--- DECOMPILER ERROR at PC568: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttack.GetDefenderEntityIDList = function(self)
-  -- function num : 0_135
+function NTChainSkillAttack:GetDefenderEntityIDList()
   return self._defenderList
 end
 
--- DECOMPILER ERROR at PC571: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttack.GetDefenderPosList = function(self)
-  -- function num : 0_136
+function NTChainSkillAttack:GetDefenderPosList()
   return self._defenderPosList
 end
 
 _class("NTChainSkillAttackEnd", NotifyChainAttackBase)
 NTChainSkillAttackEnd = NTChainSkillAttackEnd
--- DECOMPILER ERROR at PC580: Confused about usage of register: R0 in 'UnsetPending'
 
-NTChainSkillAttackEnd.Constructor = function(self, attacker, defenderList, attackPos, defenerPosList)
-  -- function num : 0_137
+function NTChainSkillAttackEnd:Constructor(attacker, defenderList, attackPos, defenerPosList)
   self._attacker = attacker
   self._defenderList = defenderList
   self._attackPos = attackPos
@@ -1071,247 +679,156 @@ NTChainSkillAttackEnd.Constructor = function(self, attacker, defenderList, attac
   self._isPetActiveLinkLine = nil
 end
 
--- DECOMPILER ERROR at PC583: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.SetPetActiveLinkLineState = function(self, state)
-  -- function num : 0_138
+function NTChainSkillAttackEnd:SetPetActiveLinkLineState(state)
   self._isPetActiveLinkLine = state
 end
 
--- DECOMPILER ERROR at PC586: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.IsPetActiveLinkLine = function(self)
-  -- function num : 0_139
+function NTChainSkillAttackEnd:IsPetActiveLinkLine()
   return self._isPetActiveLinkLine
 end
 
--- DECOMPILER ERROR at PC589: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.GetNotifyType = function(self)
-  -- function num : 0_140 , upvalues : _ENV
+function NTChainSkillAttackEnd:GetNotifyType()
   return NotifyType.ChainSkillAttackEnd
 end
 
--- DECOMPILER ERROR at PC592: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.GetNotifyEntity = function(self)
-  -- function num : 0_141
+function NTChainSkillAttackEnd:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC595: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.GetAttackerEntity = function(self)
-  -- function num : 0_142
+function NTChainSkillAttackEnd:GetAttackerEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC598: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.GetAttackerPos = function(self)
-  -- function num : 0_143
+function NTChainSkillAttackEnd:GetAttackerPos()
   return self._attackPos
 end
 
--- DECOMPILER ERROR at PC601: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.GetDefenderEntityIDList = function(self)
-  -- function num : 0_144
+function NTChainSkillAttackEnd:GetDefenderEntityIDList()
   return self._defenderList
 end
 
--- DECOMPILER ERROR at PC604: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.GetDefenderPosList = function(self)
-  -- function num : 0_145
+function NTChainSkillAttackEnd:GetDefenderPosList()
   return self._defenderPosList
 end
 
--- DECOMPILER ERROR at PC607: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.GetTargetMap = function(self)
-  -- function num : 0_146 , upvalues : _ENV
+function NTChainSkillAttackEnd:GetTargetMap()
   if not self._defenderList then
     return {}
   end
   local map = {}
-  for _,eid in ipairs(self._defenderList) do
-    if not (table.icontains)(map, eid) then
+  for _, eid in ipairs(self._defenderList) do
+    if not table.icontains(map, eid) then
       map[eid] = true
     end
   end
   return map
 end
 
--- DECOMPILER ERROR at PC610: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.SetChainSkillTimeIndex = function(self, idx)
-  -- function num : 0_147
+function NTChainSkillAttackEnd:SetChainSkillTimeIndex(idx)
   self._chainTimeIndex = idx
 end
 
--- DECOMPILER ERROR at PC613: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.GetChainSkillTimeIndex = function(self)
-  -- function num : 0_148
+function NTChainSkillAttackEnd:GetChainSkillTimeIndex()
   return self._chainTimeIndex
 end
 
--- DECOMPILER ERROR at PC616: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.SetChainSkillStageIndex = function(self, idx)
-  -- function num : 0_149
+function NTChainSkillAttackEnd:SetChainSkillStageIndex(idx)
   self._chainStageIndex = idx
 end
 
--- DECOMPILER ERROR at PC619: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.GetChainSkillStageIndex = function(self)
-  -- function num : 0_150
+function NTChainSkillAttackEnd:GetChainSkillStageIndex()
   return self._chainStageIndex
 end
 
--- DECOMPILER ERROR at PC622: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.SetChainSkillId = function(self, chainSkillId)
-  -- function num : 0_151
+function NTChainSkillAttackEnd:SetChainSkillId(chainSkillId)
   self._chainSkillId = chainSkillId
 end
 
--- DECOMPILER ERROR at PC625: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.GetChainSkillId = function(self)
-  -- function num : 0_152
+function NTChainSkillAttackEnd:GetChainSkillId()
   return self._chainSkillId
 end
 
--- DECOMPILER ERROR at PC628: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.SetChainSkillStage = function(self, chainSkillStage)
-  -- function num : 0_153
+function NTChainSkillAttackEnd:SetChainSkillStage(chainSkillStage)
   self._chainSkillStage = chainSkillStage
 end
 
--- DECOMPILER ERROR at PC631: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.GetChainSkillStage = function(self)
-  -- function num : 0_154
+function NTChainSkillAttackEnd:GetChainSkillStage()
   return self._chainSkillStage
 end
 
--- DECOMPILER ERROR at PC634: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.GetSkillID = function(self)
-  -- function num : 0_155
+function NTChainSkillAttackEnd:GetSkillID()
   return self._chainSkillId
 end
 
--- DECOMPILER ERROR at PC637: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.SetSkillDamageTargetCount = function(self, targetCount)
-  -- function num : 0_156
+function NTChainSkillAttackEnd:SetSkillDamageTargetCount(targetCount)
   self._skillDamageTargetCount = targetCount
 end
 
--- DECOMPILER ERROR at PC640: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillAttackEnd.GetSkillDamageTargetCount = function(self)
-  -- function num : 0_157
+function NTChainSkillAttackEnd:GetSkillDamageTargetCount()
   return self._skillDamageTargetCount
 end
 
 _class("NTSecondChainSkillAttackEnd", INotifyBase)
 NTSecondChainSkillAttackEnd = NTSecondChainSkillAttackEnd
--- DECOMPILER ERROR at PC649: Confused about usage of register: R0 in 'UnsetPending'
 
-NTSecondChainSkillAttackEnd.Constructor = function(self, attacker)
-  -- function num : 0_158
+function NTSecondChainSkillAttackEnd:Constructor(attacker)
   self._attacker = attacker
 end
 
--- DECOMPILER ERROR at PC652: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSecondChainSkillAttackEnd.GetNotifyType = function(self)
-  -- function num : 0_159 , upvalues : _ENV
+function NTSecondChainSkillAttackEnd:GetNotifyType()
   return NotifyType.SecondChainSkillAttackEnd
 end
 
--- DECOMPILER ERROR at PC655: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSecondChainSkillAttackEnd.GetNotifyEntity = function(self)
-  -- function num : 0_160
+function NTSecondChainSkillAttackEnd:GetNotifyEntity()
   return self._attacker
 end
 
 _class("NTActiveSkillAttackStart", INotifyBase)
 NTActiveSkillAttackStart = NTActiveSkillAttackStart
--- DECOMPILER ERROR at PC664: Confused about usage of register: R0 in 'UnsetPending'
 
-NTActiveSkillAttackStart.Constructor = function(self, attacker)
-  -- function num : 0_161
+function NTActiveSkillAttackStart:Constructor(attacker)
   self._attacker = attacker
   self.m_nSkillID = nil
   self.m_scopeResult = nil
 end
 
--- DECOMPILER ERROR at PC667: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillAttackStart.GetNotifyType = function(self)
-  -- function num : 0_162 , upvalues : _ENV
+function NTActiveSkillAttackStart:GetNotifyType()
   return NotifyType.ActiveSkillAttackStart
 end
 
--- DECOMPILER ERROR at PC670: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillAttackStart.GetNotifyEntity = function(self)
-  -- function num : 0_163
+function NTActiveSkillAttackStart:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC673: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillAttackStart.GetAttackerEntity = function(self)
-  -- function num : 0_164
+function NTActiveSkillAttackStart:GetAttackerEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC676: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillAttackStart.InitSkillResult = function(self, nSkillID, scopeResult)
-  -- function num : 0_165
+function NTActiveSkillAttackStart:InitSkillResult(nSkillID, scopeResult)
   self.m_nSkillID = nSkillID
   self.m_scopeResult = scopeResult
 end
 
--- DECOMPILER ERROR at PC679: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillAttackStart.GetScopeResult = function(self)
-  -- function num : 0_166
+function NTActiveSkillAttackStart:GetScopeResult()
   return self.m_scopeResult
 end
 
--- DECOMPILER ERROR at PC682: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillAttackStart.GetDefenderEntityIDList = function(self)
-  -- function num : 0_167
+function NTActiveSkillAttackStart:GetDefenderEntityIDList()
   if not self.m_scopeResult then
     return {}
   end
-  return (self.m_scopeResult):GetTargetIDs()
+  return self.m_scopeResult:GetTargetIDs()
 end
 
--- DECOMPILER ERROR at PC685: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillAttackStart.GetTargetCount = function(self)
-  -- function num : 0_168
+function NTActiveSkillAttackStart:GetTargetCount()
   if not self.m_scopeResult then
     return 0
   end
-  local targetIDs = (self.m_scopeResult):GetTargetIDs()
+  local targetIDs = self.m_scopeResult:GetTargetIDs()
   if not targetIDs then
     return 0
   end
-  local world = (self._attacker):GetOwnerWorld()
+  local world = self._attacker:GetOwnerWorld()
   local targetCount = 0
   for i = 1, #targetIDs do
     local targetEntity = world:GetEntityByID(targetIDs[i])
@@ -1322,500 +839,322 @@ NTActiveSkillAttackStart.GetTargetCount = function(self)
   return targetCount
 end
 
--- DECOMPILER ERROR at PC688: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillAttackStart.GetSkillID = function(self)
-  -- function num : 0_169
+function NTActiveSkillAttackStart:GetSkillID()
   return self.m_nSkillID
 end
 
 _class("NTActiveSkillAttackEnd", INotifyBase)
 NTActiveSkillAttackEnd = NTActiveSkillAttackEnd
--- DECOMPILER ERROR at PC697: Confused about usage of register: R0 in 'UnsetPending'
 
-NTActiveSkillAttackEnd.Constructor = function(self, attacker, skillID)
-  -- function num : 0_170
+function NTActiveSkillAttackEnd:Constructor(attacker, skillID)
   self._attacker = attacker
   self._skillID = skillID
 end
 
--- DECOMPILER ERROR at PC700: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillAttackEnd.GetNotifyType = function(self)
-  -- function num : 0_171 , upvalues : _ENV
+function NTActiveSkillAttackEnd:GetNotifyType()
   return NotifyType.ActiveSkillAttackEnd
 end
 
--- DECOMPILER ERROR at PC703: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillAttackEnd.GetNotifyEntity = function(self)
-  -- function num : 0_172
+function NTActiveSkillAttackEnd:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC706: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillAttackEnd.GetAttackerEntity = function(self)
-  -- function num : 0_173
+function NTActiveSkillAttackEnd:GetAttackerEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC709: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillAttackEnd.SetSkillID = function(self, skillID)
-  -- function num : 0_174
+function NTActiveSkillAttackEnd:SetSkillID(skillID)
   self._skillID = skillID
 end
 
--- DECOMPILER ERROR at PC712: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillAttackEnd.GetSkillID = function(self)
-  -- function num : 0_175
+function NTActiveSkillAttackEnd:GetSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC715: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillAttackEnd.InitSkillResult = function(self, nSkillID, scopeResult)
-  -- function num : 0_176
+function NTActiveSkillAttackEnd:InitSkillResult(nSkillID, scopeResult)
   self._skillID = nSkillID
   self.m_scopeResult = scopeResult
 end
 
--- DECOMPILER ERROR at PC718: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillAttackEnd.GetScopeResult = function(self)
-  -- function num : 0_177
+function NTActiveSkillAttackEnd:GetScopeResult()
   return self.m_scopeResult
 end
 
--- DECOMPILER ERROR at PC721: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillAttackEnd.GetDefenderEntityIDList = function(self)
-  -- function num : 0_178
+function NTActiveSkillAttackEnd:GetDefenderEntityIDList()
   if not self.m_scopeResult then
     return {}
   end
-  return (self.m_scopeResult):GetTargetIDs()
+  return self.m_scopeResult:GetTargetIDs()
 end
 
--- DECOMPILER ERROR at PC724: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillAttackEnd.SetSkillDamageTargetCount = function(self, targetCount)
-  -- function num : 0_179
+function NTActiveSkillAttackEnd:SetSkillDamageTargetCount(targetCount)
   self._skillDamageTargetCount = targetCount
 end
 
--- DECOMPILER ERROR at PC727: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillAttackEnd.GetSkillDamageTargetCount = function(self)
-  -- function num : 0_180
+function NTActiveSkillAttackEnd:GetSkillDamageTargetCount()
   return self._skillDamageTargetCount
 end
 
 _class("NTBeforeActiveSkillAttackStart", INotifyBase)
 NTBeforeActiveSkillAttackStart = NTBeforeActiveSkillAttackStart
--- DECOMPILER ERROR at PC736: Confused about usage of register: R0 in 'UnsetPending'
 
-NTBeforeActiveSkillAttackStart.Constructor = function(self, attacker)
-  -- function num : 0_181
+function NTBeforeActiveSkillAttackStart:Constructor(attacker)
   self._attacker = attacker
 end
 
--- DECOMPILER ERROR at PC739: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBeforeActiveSkillAttackStart.GetNotifyType = function(self)
-  -- function num : 0_182 , upvalues : _ENV
+function NTBeforeActiveSkillAttackStart:GetNotifyType()
   return NotifyType.BeforeActiveSkillAttackStart
 end
 
--- DECOMPILER ERROR at PC742: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBeforeActiveSkillAttackStart.GetNotifyEntity = function(self)
-  -- function num : 0_183
+function NTBeforeActiveSkillAttackStart:GetNotifyEntity()
   return self._attacker
 end
 
 _class("NTChainSkillTurnStart", INotifyBase)
 NTChainSkillTurnStart = NTChainSkillTurnStart
--- DECOMPILER ERROR at PC751: Confused about usage of register: R0 in 'UnsetPending'
 
-NTChainSkillTurnStart.Constructor = function(self, teamEntity)
-  -- function num : 0_184
+function NTChainSkillTurnStart:Constructor(teamEntity)
   self._teamEntity = teamEntity
 end
 
--- DECOMPILER ERROR at PC754: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillTurnStart.GetNotifyType = function(self)
-  -- function num : 0_185 , upvalues : _ENV
+function NTChainSkillTurnStart:GetNotifyType()
   return NotifyType.ChainSkillTurnStart
 end
 
--- DECOMPILER ERROR at PC757: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillTurnStart.GetNotifyEntity = function(self)
-  -- function num : 0_186
+function NTChainSkillTurnStart:GetNotifyEntity()
   return self._teamEntity
 end
 
 _class("NTChainSkillTurnStartSkipped", INotifyBase)
 NTChainSkillTurnStartSkipped = NTChainSkillTurnStartSkipped
--- DECOMPILER ERROR at PC766: Confused about usage of register: R0 in 'UnsetPending'
 
-NTChainSkillTurnStartSkipped.Constructor = function(self, teamEntity)
-  -- function num : 0_187
+function NTChainSkillTurnStartSkipped:Constructor(teamEntity)
   self._teamEntity = teamEntity
 end
 
--- DECOMPILER ERROR at PC769: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillTurnStartSkipped.GetNotifyType = function(self)
-  -- function num : 0_188 , upvalues : _ENV
+function NTChainSkillTurnStartSkipped:GetNotifyType()
   return NotifyType.ChainSkillTurnStartSkipped
 end
 
--- DECOMPILER ERROR at PC772: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillTurnStartSkipped.GetNotifyEntity = function(self)
-  -- function num : 0_189
+function NTChainSkillTurnStartSkipped:GetNotifyEntity()
   return self._teamEntity
 end
 
 _class("NTChainSkillTurnEnd", INotifyBase)
 NTChainSkillTurnEnd = NTChainSkillTurnEnd
--- DECOMPILER ERROR at PC781: Confused about usage of register: R0 in 'UnsetPending'
 
-NTChainSkillTurnEnd.Constructor = function(self, chainSkillCount)
-  -- function num : 0_190
+function NTChainSkillTurnEnd:Constructor(chainSkillCount)
   self._cnt = chainSkillCount
 end
 
--- DECOMPILER ERROR at PC784: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillTurnEnd.GetNotifyType = function(self)
-  -- function num : 0_191 , upvalues : _ENV
+function NTChainSkillTurnEnd:GetNotifyType()
   return NotifyType.ChainSkillTurnEnd
 end
 
--- DECOMPILER ERROR at PC787: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainSkillTurnEnd.GetChainSkillCount = function(self)
-  -- function num : 0_192
+function NTChainSkillTurnEnd:GetChainSkillCount()
   return self._cnt
 end
 
 _class("NTBuffCastSkillEachAttackBegin", NotifyAttackBase)
 NTBuffCastSkillEachAttackBegin = NTBuffCastSkillEachAttackBegin
--- DECOMPILER ERROR at PC796: Confused about usage of register: R0 in 'UnsetPending'
 
-NTBuffCastSkillEachAttackBegin.Constructor = function(self)
-  -- function num : 0_193
+function NTBuffCastSkillEachAttackBegin:Constructor()
 end
 
--- DECOMPILER ERROR at PC799: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffCastSkillEachAttackBegin.GetNotifyType = function(self)
-  -- function num : 0_194 , upvalues : _ENV
+function NTBuffCastSkillEachAttackBegin:GetNotifyType()
   return NotifyType.BuffCastSkillEachAttackBegin
 end
 
 _class("NTBuffCastSkillEachAttackEnd", NotifyAttackBase)
 NTBuffCastSkillEachAttackEnd = NTBuffCastSkillEachAttackEnd
--- DECOMPILER ERROR at PC808: Confused about usage of register: R0 in 'UnsetPending'
 
-NTBuffCastSkillEachAttackEnd.Constructor = function(self)
-  -- function num : 0_195
+function NTBuffCastSkillEachAttackEnd:Constructor()
 end
 
--- DECOMPILER ERROR at PC811: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffCastSkillEachAttackEnd.GetNotifyType = function(self)
-  -- function num : 0_196 , upvalues : _ENV
+function NTBuffCastSkillEachAttackEnd:GetNotifyType()
   return NotifyType.BuffCastSkillEachAttackEnd
 end
 
 _class("NTActiveSkillAttackEndBeforeMonsterDead", NTActiveSkillAttackEnd)
--- DECOMPILER ERROR at PC818: Confused about usage of register: R0 in 'UnsetPending'
 
-NTActiveSkillAttackEndBeforeMonsterDead.GetNotifyType = function(self)
-  -- function num : 0_197 , upvalues : _ENV
+function NTActiveSkillAttackEndBeforeMonsterDead:GetNotifyType()
   return NotifyType.ActiveSkillAttackEndBeforeMonsterDead
 end
 
--- DECOMPILER ERROR at PC821: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillAttackEndBeforeMonsterDead.NeedCheckGameTurn = function(self)
-  -- function num : 0_198
+function NTActiveSkillAttackEndBeforeMonsterDead:NeedCheckGameTurn()
   return true
 end
 
 _class("NTChessPetSkillAttackStart", INotifyBase)
 NTChessPetSkillAttackStart = NTChessPetSkillAttackStart
--- DECOMPILER ERROR at PC830: Confused about usage of register: R0 in 'UnsetPending'
 
-NTChessPetSkillAttackStart.Constructor = function(self, attacker, skillID)
-  -- function num : 0_199
+function NTChessPetSkillAttackStart:Constructor(attacker, skillID)
   self._attacker = attacker
   self._skillID = skillID
 end
 
--- DECOMPILER ERROR at PC833: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessPetSkillAttackStart.GetNotifyType = function(self)
-  -- function num : 0_200 , upvalues : _ENV
+function NTChessPetSkillAttackStart:GetNotifyType()
   return NotifyType.ChessPetSkillAttackStart
 end
 
--- DECOMPILER ERROR at PC836: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessPetSkillAttackStart.GetNotifyEntity = function(self)
-  -- function num : 0_201
+function NTChessPetSkillAttackStart:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC839: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessPetSkillAttackStart.GetAttackerEntity = function(self)
-  -- function num : 0_202
+function NTChessPetSkillAttackStart:GetAttackerEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC842: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessPetSkillAttackStart.GetSkillID = function(self)
-  -- function num : 0_203
+function NTChessPetSkillAttackStart:GetSkillID()
   return self._skillID
 end
 
 _class("NTChessPetSkillAttackEnd", INotifyBase)
 NTChessPetSkillAttackEnd = NTChessPetSkillAttackEnd
--- DECOMPILER ERROR at PC851: Confused about usage of register: R0 in 'UnsetPending'
 
-NTChessPetSkillAttackEnd.Constructor = function(self, attacker, skillID)
-  -- function num : 0_204
+function NTChessPetSkillAttackEnd:Constructor(attacker, skillID)
   self._attacker = attacker
   self._skillID = skillID
 end
 
--- DECOMPILER ERROR at PC854: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessPetSkillAttackEnd.GetNotifyType = function(self)
-  -- function num : 0_205 , upvalues : _ENV
+function NTChessPetSkillAttackEnd:GetNotifyType()
   return NotifyType.ChessPetSkillAttackEnd
 end
 
--- DECOMPILER ERROR at PC857: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessPetSkillAttackEnd.GetNotifyEntity = function(self)
-  -- function num : 0_206
+function NTChessPetSkillAttackEnd:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC860: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessPetSkillAttackEnd.GetAttackerEntity = function(self)
-  -- function num : 0_207
+function NTChessPetSkillAttackEnd:GetAttackerEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC863: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessPetSkillAttackEnd.GetSkillID = function(self)
-  -- function num : 0_208
+function NTChessPetSkillAttackEnd:GetSkillID()
   return self._skillID
 end
 
 _class("NTSingleChainSkillAttackFinish", INotifyBase)
 NTSingleChainSkillAttackFinish = NTSingleChainSkillAttackFinish
--- DECOMPILER ERROR at PC872: Confused about usage of register: R0 in 'UnsetPending'
 
-NTSingleChainSkillAttackFinish.Constructor = function(self, attacker, chainTimeIndex, chainStageIndex)
-  -- function num : 0_209
+function NTSingleChainSkillAttackFinish:Constructor(attacker, chainTimeIndex, chainStageIndex)
   self._attacker = attacker
   self._chainTimeIndex = chainTimeIndex
   self._chainStageIndex = chainStageIndex
 end
 
--- DECOMPILER ERROR at PC875: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSingleChainSkillAttackFinish.GetNotifyType = function(self)
-  -- function num : 0_210 , upvalues : _ENV
+function NTSingleChainSkillAttackFinish:GetNotifyType()
   return NotifyType.SingleChainSkillAttackFinish
 end
 
--- DECOMPILER ERROR at PC878: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSingleChainSkillAttackFinish.GetNotifyEntity = function(self)
-  -- function num : 0_211
+function NTSingleChainSkillAttackFinish:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC881: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSingleChainSkillAttackFinish.GetAttackerEntity = function(self)
-  -- function num : 0_212
+function NTSingleChainSkillAttackFinish:GetAttackerEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC884: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSingleChainSkillAttackFinish.GetChainSkillTimeIndex = function(self)
-  -- function num : 0_213
+function NTSingleChainSkillAttackFinish:GetChainSkillTimeIndex()
   return self._chainTimeIndex
 end
 
--- DECOMPILER ERROR at PC887: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSingleChainSkillAttackFinish.GetChainSkillStageIndex = function(self)
-  -- function num : 0_214
+function NTSingleChainSkillAttackFinish:GetChainSkillStageIndex()
   return self._chainStageIndex or 1
 end
 
 _class("NTFeatureSkillAttackEnd", INotifyBase)
 NTFeatureSkillAttackEnd = NTFeatureSkillAttackEnd
--- DECOMPILER ERROR at PC896: Confused about usage of register: R0 in 'UnsetPending'
 
-NTFeatureSkillAttackEnd.Constructor = function(self, featureType, featureSkillID)
-  -- function num : 0_215
+function NTFeatureSkillAttackEnd:Constructor(featureType, featureSkillID)
   self.m_nFeatureType = featureType
   self.m_nSkillID = featureSkillID
 end
 
--- DECOMPILER ERROR at PC899: Confused about usage of register: R0 in 'UnsetPending'
-
-NTFeatureSkillAttackEnd.GetNotifyType = function(self)
-  -- function num : 0_216 , upvalues : _ENV
+function NTFeatureSkillAttackEnd:GetNotifyType()
   return NotifyType.FeatureSkillAttackEnd
 end
 
--- DECOMPILER ERROR at PC902: Confused about usage of register: R0 in 'UnsetPending'
-
-NTFeatureSkillAttackEnd.GetFeatureType = function(self)
-  -- function num : 0_217
+function NTFeatureSkillAttackEnd:GetFeatureType()
   return self.m_nFeatureType
 end
 
--- DECOMPILER ERROR at PC905: Confused about usage of register: R0 in 'UnsetPending'
-
-NTFeatureSkillAttackEnd.GetSkillID = function(self)
-  -- function num : 0_218
+function NTFeatureSkillAttackEnd:GetSkillID()
   return self.m_nSkillID
 end
 
 _class("NTBuffCastSkillAttackEnd", INotifyBase)
 NTBuffCastSkillAttackEnd = NTBuffCastSkillAttackEnd
--- DECOMPILER ERROR at PC914: Confused about usage of register: R0 in 'UnsetPending'
 
-NTBuffCastSkillAttackEnd.Constructor = function(self, attacker, skillID)
-  -- function num : 0_219
+function NTBuffCastSkillAttackEnd:Constructor(attacker, skillID)
   self._attacker = attacker
   self._skillID = skillID
 end
 
--- DECOMPILER ERROR at PC917: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffCastSkillAttackEnd.GetNotifyType = function(self)
-  -- function num : 0_220 , upvalues : _ENV
+function NTBuffCastSkillAttackEnd:GetNotifyType()
   return NotifyType.BuffCastSkillAttackEnd
 end
 
--- DECOMPILER ERROR at PC920: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffCastSkillAttackEnd.GetNotifyEntity = function(self)
-  -- function num : 0_221
+function NTBuffCastSkillAttackEnd:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC923: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffCastSkillAttackEnd.GetAttackerEntity = function(self)
-  -- function num : 0_222
+function NTBuffCastSkillAttackEnd:GetAttackerEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC926: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffCastSkillAttackEnd.GetSkillID = function(self)
-  -- function num : 0_223
+function NTBuffCastSkillAttackEnd:GetSkillID()
   return self._skillID
 end
 
 _class("NTBuffCastSkillAttackBegin", INotifyBase)
 NTBuffCastSkillAttackBegin = NTBuffCastSkillAttackBegin
--- DECOMPILER ERROR at PC935: Confused about usage of register: R0 in 'UnsetPending'
 
-NTBuffCastSkillAttackBegin.Constructor = function(self, attacker, skillID)
-  -- function num : 0_224
+function NTBuffCastSkillAttackBegin:Constructor(attacker, skillID)
   self._attacker = attacker
   self._skillID = skillID
   self._scopeResult = nil
 end
 
--- DECOMPILER ERROR at PC938: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffCastSkillAttackBegin.GetNotifyType = function(self)
-  -- function num : 0_225 , upvalues : _ENV
+function NTBuffCastSkillAttackBegin:GetNotifyType()
   return NotifyType.BuffCastSkillAttackBegin
 end
 
--- DECOMPILER ERROR at PC941: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffCastSkillAttackBegin.GetNotifyEntity = function(self)
-  -- function num : 0_226
+function NTBuffCastSkillAttackBegin:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC944: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffCastSkillAttackBegin.GetAttackerEntity = function(self)
-  -- function num : 0_227
+function NTBuffCastSkillAttackBegin:GetAttackerEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC947: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffCastSkillAttackBegin.GetSkillID = function(self)
-  -- function num : 0_228
+function NTBuffCastSkillAttackBegin:GetSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC950: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffCastSkillAttackBegin.InitSkillScopeResult = function(self, scopeResult)
-  -- function num : 0_229
+function NTBuffCastSkillAttackBegin:InitSkillScopeResult(scopeResult)
   self._scopeResult = scopeResult
 end
 
--- DECOMPILER ERROR at PC953: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffCastSkillAttackBegin.GetScopeResult = function(self)
-  -- function num : 0_230
+function NTBuffCastSkillAttackBegin:GetScopeResult()
   return self._scopeResult
 end
 
--- DECOMPILER ERROR at PC956: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffCastSkillAttackBegin.GetDefenderEntityIDList = function(self)
-  -- function num : 0_231
+function NTBuffCastSkillAttackBegin:GetDefenderEntityIDList()
   if not self._scopeResult then
     return {}
   end
-  return (self._scopeResult):GetTargetIDs()
+  return self._scopeResult:GetTargetIDs()
 end
 
--- DECOMPILER ERROR at PC959: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffCastSkillAttackBegin.GetTargetCount = function(self)
-  -- function num : 0_232
+function NTBuffCastSkillAttackBegin:GetTargetCount()
   if not self._scopeResult then
     return 0
   end
-  local targetIDs = (self._scopeResult):GetTargetIDs()
+  local targetIDs = self._scopeResult:GetTargetIDs()
   if not targetIDs then
     return 0
   end
-  local world = (self._attacker):GetOwnerWorld()
+  local world = self._attacker:GetOwnerWorld()
   local targetCount = 0
   for i = 1, #targetIDs do
     local targetEntity = world:GetEntityByID(targetIDs[i])
@@ -1828,348 +1167,222 @@ end
 
 _class("NTTeamNormalAttackStart", INotifyBase)
 NTTeamNormalAttackStart = NTTeamNormalAttackStart
--- DECOMPILER ERROR at PC968: Confused about usage of register: R0 in 'UnsetPending'
 
-NTTeamNormalAttackStart.Constructor = function(self, chainPathType, chainPath)
-  -- function num : 0_233
+function NTTeamNormalAttackStart:Constructor(chainPathType, chainPath)
   self._chainPathType = chainPathType
   self._chainPath = chainPath
 end
 
--- DECOMPILER ERROR at PC971: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeamNormalAttackStart.GetNotifyType = function(self)
-  -- function num : 0_234 , upvalues : _ENV
+function NTTeamNormalAttackStart:GetNotifyType()
   return NotifyType.TeamNormalAttackStart
 end
 
--- DECOMPILER ERROR at PC974: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeamNormalAttackStart.GetChainPathType = function(self)
-  -- function num : 0_235
+function NTTeamNormalAttackStart:GetChainPathType()
   return self._chainPathType
 end
 
--- DECOMPILER ERROR at PC977: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeamNormalAttackStart.GetChainPath = function(self)
-  -- function num : 0_236
+function NTTeamNormalAttackStart:GetChainPath()
   return self._chainPath
 end
 
 _class("NTBuffLogicCastSkillCalcEffectEnd", INotifyBase)
 NTBuffLogicCastSkillCalcEffectEnd = NTBuffLogicCastSkillCalcEffectEnd
--- DECOMPILER ERROR at PC986: Confused about usage of register: R0 in 'UnsetPending'
 
-NTBuffLogicCastSkillCalcEffectEnd.Constructor = function(self, attacker, skillID)
-  -- function num : 0_237
+function NTBuffLogicCastSkillCalcEffectEnd:Constructor(attacker, skillID)
   self._attacker = attacker
   self._skillID = skillID
 end
 
--- DECOMPILER ERROR at PC989: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffLogicCastSkillCalcEffectEnd.GetNotifyType = function(self)
-  -- function num : 0_238 , upvalues : _ENV
+function NTBuffLogicCastSkillCalcEffectEnd:GetNotifyType()
   return NotifyType.BuffLogicCastSkillCalcEffectEnd
 end
 
--- DECOMPILER ERROR at PC992: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffLogicCastSkillCalcEffectEnd.GetNotifyEntity = function(self)
-  -- function num : 0_239
+function NTBuffLogicCastSkillCalcEffectEnd:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC995: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffLogicCastSkillCalcEffectEnd.GetAttackerEntity = function(self)
-  -- function num : 0_240
+function NTBuffLogicCastSkillCalcEffectEnd:GetAttackerEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC998: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffLogicCastSkillCalcEffectEnd.GetSkillID = function(self)
-  -- function num : 0_241
+function NTBuffLogicCastSkillCalcEffectEnd:GetSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC1001: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffLogicCastSkillCalcEffectEnd.SetSkillDamageTargetCount = function(self, targetCount)
-  -- function num : 0_242
+function NTBuffLogicCastSkillCalcEffectEnd:SetSkillDamageTargetCount(targetCount)
   self._skillDamageTargetCount = targetCount
 end
 
--- DECOMPILER ERROR at PC1004: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBuffLogicCastSkillCalcEffectEnd.GetSkillDamageTargetCount = function(self)
-  -- function num : 0_243
+function NTBuffLogicCastSkillCalcEffectEnd:GetSkillDamageTargetCount()
   return self._skillDamageTargetCount
 end
 
 _class("NTSingleChainSkillAttackBegin", INotifyBase)
 NTSingleChainSkillAttackBegin = NTSingleChainSkillAttackBegin
--- DECOMPILER ERROR at PC1013: Confused about usage of register: R0 in 'UnsetPending'
 
-NTSingleChainSkillAttackBegin.Constructor = function(self, attacker, chainIndex, isShadow)
-  -- function num : 0_244
+function NTSingleChainSkillAttackBegin:Constructor(attacker, chainIndex, isShadow)
   self._attacker = attacker
   self._chainSkillIndex = chainIndex
   self._isShadow = isShadow or false
 end
 
--- DECOMPILER ERROR at PC1016: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSingleChainSkillAttackBegin.GetNotifyType = function(self)
-  -- function num : 0_245 , upvalues : _ENV
+function NTSingleChainSkillAttackBegin:GetNotifyType()
   return NotifyType.SingleChainSkillAttackBegin
 end
 
--- DECOMPILER ERROR at PC1019: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSingleChainSkillAttackBegin.GetNotifyEntity = function(self)
-  -- function num : 0_246
+function NTSingleChainSkillAttackBegin:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC1022: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSingleChainSkillAttackBegin.GetAttackerEntity = function(self)
-  -- function num : 0_247
+function NTSingleChainSkillAttackBegin:GetAttackerEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC1025: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSingleChainSkillAttackBegin.GetChainSkillTimeIndex = function(self)
-  -- function num : 0_248
+function NTSingleChainSkillAttackBegin:GetChainSkillTimeIndex()
   return self._chainSkillIndex
 end
 
--- DECOMPILER ERROR at PC1028: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSingleChainSkillAttackBegin.IsShadow = function(self)
-  -- function num : 0_249
+function NTSingleChainSkillAttackBegin:IsShadow()
   return self._isShadow
 end
 
 _class("NTSinglePetChainSkillAttackBegin", INotifyBase)
 NTSinglePetChainSkillAttackBegin = NTSinglePetChainSkillAttackBegin
--- DECOMPILER ERROR at PC1037: Confused about usage of register: R0 in 'UnsetPending'
 
-NTSinglePetChainSkillAttackBegin.Constructor = function(self, attacker, chainIndex)
-  -- function num : 0_250
+function NTSinglePetChainSkillAttackBegin:Constructor(attacker, chainIndex)
   self._attacker = attacker
   self._chainSkillIndex = chainIndex
 end
 
--- DECOMPILER ERROR at PC1040: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSinglePetChainSkillAttackBegin.GetNotifyType = function(self)
-  -- function num : 0_251 , upvalues : _ENV
+function NTSinglePetChainSkillAttackBegin:GetNotifyType()
   return NotifyType.SinglePetChainSkillAttackBegin
 end
 
--- DECOMPILER ERROR at PC1043: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSinglePetChainSkillAttackBegin.GetNotifyEntity = function(self)
-  -- function num : 0_252
+function NTSinglePetChainSkillAttackBegin:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC1046: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSinglePetChainSkillAttackBegin.GetAttackerEntity = function(self)
-  -- function num : 0_253
+function NTSinglePetChainSkillAttackBegin:GetAttackerEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC1049: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSinglePetChainSkillAttackBegin.GetChainSkillTimeIndex = function(self)
-  -- function num : 0_254
+function NTSinglePetChainSkillAttackBegin:GetChainSkillTimeIndex()
   return self._chainSkillIndex
 end
 
 _class("NTExtraChainSkillAttackBegin", NTSingleChainSkillAttackBegin)
 NTExtraChainSkillAttackBegin = NTExtraChainSkillAttackBegin
--- DECOMPILER ERROR at PC1058: Confused about usage of register: R0 in 'UnsetPending'
 
-NTExtraChainSkillAttackBegin.GetNotifyType = function(self)
-  -- function num : 0_255 , upvalues : _ENV
+function NTExtraChainSkillAttackBegin:GetNotifyType()
   return NotifyType.ExtraChainSkillAttackBegin
 end
 
 _class("NTExtraChainSkillAttackFinish", NTSingleChainSkillAttackFinish)
 NTExtraChainSkillAttackFinish = NTExtraChainSkillAttackFinish
--- DECOMPILER ERROR at PC1067: Confused about usage of register: R0 in 'UnsetPending'
 
-NTExtraChainSkillAttackFinish.GetNotifyType = function(self)
-  -- function num : 0_256 , upvalues : _ENV
+function NTExtraChainSkillAttackFinish:GetNotifyType()
   return NotifyType.ExtraChainSkillAttackFinish
 end
 
 _class("NTNormalAttackChangeAfter", NTNormalAttackChangeBefore)
 NTNormalAttackChangeAfter = NTNormalAttackChangeAfter
--- DECOMPILER ERROR at PC1076: Confused about usage of register: R0 in 'UnsetPending'
 
-NTNormalAttackChangeAfter.GetNotifyType = function(self)
-  -- function num : 0_257 , upvalues : _ENV
+function NTNormalAttackChangeAfter:GetNotifyType()
   return NotifyType.NormalAttackChangeAfter
 end
 
 _class("NTAutoBeadSkillEachAttackStart", NotifyAttackBase)
 NTAutoBeadSkillEachAttackStart = NTAutoBeadSkillEachAttackStart
--- DECOMPILER ERROR at PC1085: Confused about usage of register: R0 in 'UnsetPending'
 
-NTAutoBeadSkillEachAttackStart.GetNotifyType = function(self)
-  -- function num : 0_258 , upvalues : _ENV
+function NTAutoBeadSkillEachAttackStart:GetNotifyType()
   return NotifyType.AutoBeadSkillEachAttackStart
 end
 
 _class("NTAutoBeadSkillEachAttackEnd", NotifyAttackBase)
 NTAutoBeadSkillEachAttackEnd = NTAutoBeadSkillEachAttackEnd
--- DECOMPILER ERROR at PC1094: Confused about usage of register: R0 in 'UnsetPending'
 
-NTAutoBeadSkillEachAttackEnd.GetNotifyType = function(self)
-  -- function num : 0_259 , upvalues : _ENV
+function NTAutoBeadSkillEachAttackEnd:GetNotifyType()
   return NotifyType.AutoBeadSkillEachAttackEnd
 end
 
--- DECOMPILER ERROR at PC1097: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAutoBeadSkillEachAttackEnd.SetDamageValue = function(self, val)
-  -- function num : 0_260
+function NTAutoBeadSkillEachAttackEnd:SetDamageValue(val)
   self._damageValue = val
 end
 
--- DECOMPILER ERROR at PC1100: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAutoBeadSkillEachAttackEnd.GetDamageValue = function(self)
-  -- function num : 0_261
+function NTAutoBeadSkillEachAttackEnd:GetDamageValue()
   return self._damageValue
 end
 
--- DECOMPILER ERROR at PC1103: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAutoBeadSkillEachAttackEnd.SetAutoBeadSkillIndex = function(self, skillIndex)
-  -- function num : 0_262
+function NTAutoBeadSkillEachAttackEnd:SetAutoBeadSkillIndex(skillIndex)
   self._autoBeadSkillIndex = skillIndex
 end
 
--- DECOMPILER ERROR at PC1106: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAutoBeadSkillEachAttackEnd.GetAutoBeadSkillIndex = function(self)
-  -- function num : 0_263
+function NTAutoBeadSkillEachAttackEnd:GetAutoBeadSkillIndex()
   return self._autoBeadSkillIndex
 end
 
 _class("NTAutoBeadSkillEachStart", INotifyBase)
 NTAutoBeadSkillEachStart = NTAutoBeadSkillEachStart
--- DECOMPILER ERROR at PC1115: Confused about usage of register: R0 in 'UnsetPending'
 
-NTAutoBeadSkillEachStart.Constructor = function(self, attacker, skillID, autoBeadID)
-  -- function num : 0_264
+function NTAutoBeadSkillEachStart:Constructor(attacker, skillID, autoBeadID)
   self._attacker = attacker
   self._skillID = skillID
   self._autoBeadID = autoBeadID
 end
 
--- DECOMPILER ERROR at PC1118: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAutoBeadSkillEachStart.GetNotifyType = function(self)
-  -- function num : 0_265 , upvalues : _ENV
+function NTAutoBeadSkillEachStart:GetNotifyType()
   return NotifyType.AutoBeadSkillEachStart
 end
 
--- DECOMPILER ERROR at PC1121: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAutoBeadSkillEachStart.GetNotifyEntity = function(self)
-  -- function num : 0_266
+function NTAutoBeadSkillEachStart:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC1124: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAutoBeadSkillEachStart.GetAttackerEntity = function(self)
-  -- function num : 0_267
+function NTAutoBeadSkillEachStart:GetAttackerEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC1127: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAutoBeadSkillEachStart.GetSkillID = function(self)
-  -- function num : 0_268
+function NTAutoBeadSkillEachStart:GetSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC1130: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAutoBeadSkillEachStart.GetAutoBeadID = function(self)
-  -- function num : 0_269
+function NTAutoBeadSkillEachStart:GetAutoBeadID()
   return self._autoBeadID
 end
 
 _class("NTAutoBeadSkillEachEnd", INotifyBase)
 NTAutoBeadSkillEachEnd = NTAutoBeadSkillEachEnd
--- DECOMPILER ERROR at PC1139: Confused about usage of register: R0 in 'UnsetPending'
 
-NTAutoBeadSkillEachEnd.Constructor = function(self, attacker, skillID, autoBeadID)
-  -- function num : 0_270
+function NTAutoBeadSkillEachEnd:Constructor(attacker, skillID, autoBeadID)
   self._attacker = attacker
   self._skillID = skillID
   self._autoBeadID = autoBeadID
 end
 
--- DECOMPILER ERROR at PC1142: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAutoBeadSkillEachEnd.GetNotifyType = function(self)
-  -- function num : 0_271 , upvalues : _ENV
+function NTAutoBeadSkillEachEnd:GetNotifyType()
   return NotifyType.AutoBeadSkillEachEnd
 end
 
--- DECOMPILER ERROR at PC1145: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAutoBeadSkillEachEnd.GetNotifyEntity = function(self)
-  -- function num : 0_272
+function NTAutoBeadSkillEachEnd:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC1148: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAutoBeadSkillEachEnd.GetAttackerEntity = function(self)
-  -- function num : 0_273
+function NTAutoBeadSkillEachEnd:GetAttackerEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC1151: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAutoBeadSkillEachEnd.GetSkillID = function(self)
-  -- function num : 0_274
+function NTAutoBeadSkillEachEnd:GetSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC1154: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAutoBeadSkillEachEnd.GetAutoBeadID = function(self)
-  -- function num : 0_275
+function NTAutoBeadSkillEachEnd:GetAutoBeadID()
   return self._autoBeadID
 end
 
--- DECOMPILER ERROR at PC1157: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAutoBeadSkillEachEnd.SetAutoBeadSkillIndex = function(self, skillIndex)
-  -- function num : 0_276
+function NTAutoBeadSkillEachEnd:SetAutoBeadSkillIndex(skillIndex)
   self._autoBeadSkillIndex = skillIndex
 end
 
--- DECOMPILER ERROR at PC1160: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAutoBeadSkillEachEnd.GetAutoBeadSkillIndex = function(self)
-  -- function num : 0_277
+function NTAutoBeadSkillEachEnd:GetAutoBeadSkillIndex()
   return self._autoBeadSkillIndex
 end
-
-

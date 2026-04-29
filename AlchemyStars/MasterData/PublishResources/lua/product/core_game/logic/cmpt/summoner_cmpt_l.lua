@@ -1,60 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/summoner_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SummonerComponent", Object)
 SummonerComponent = SummonerComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SummonerComponent.Constructor = function(self, entityID)
-  -- function num : 0_0
+function SummonerComponent:Constructor(entityID)
   self._summonerEntityID = entityID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SummonerComponent.GetSummonerEntityID = function(self)
-  -- function num : 0_1
+function SummonerComponent:GetSummonerEntityID()
   return self._summonerEntityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Summoner = function(self)
-  -- function num : 0_2
-  return self:GetComponent((self.WEComponentsEnum).Summoner)
+function Entity:Summoner()
+  return self:GetComponent(self.WEComponentsEnum.Summoner)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddSummoner = function(self, entityID)
-  -- function num : 0_3 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Summoner
+function Entity:AddSummoner(entityID)
+  local index = self.WEComponentsEnum.Summoner
   local component = SummonerComponent:New(entityID)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetSummonerEntity = function(self)
-  -- function num : 0_4
-  local index = (self.WEComponentsEnum).Summoner
+function Entity:GetSummonerEntity()
+  local index = self.WEComponentsEnum.Summoner
   local cmpt = self:GetComponent(index)
   if not cmpt then
-    return 
+    return
   end
   local entityID = cmpt:GetSummonerEntityID()
-  local entity = (self._world):GetEntityByID(entityID)
+  local entity = self._world:GetEntityByID(entityID)
   return entity
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasSummoner = function(self)
-  -- function num : 0_5
-  local index = (self.WEComponentsEnum).Summoner
+function Entity:HasSummoner()
+  local index = self.WEComponentsEnum.Summoner
   return self:HasComponent(index)
 end
-
-

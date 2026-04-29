@@ -1,36 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_boss_speak_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayBossSpeakInstruction", BaseInstruction)
 PlayBossSpeakInstruction = PlayBossSpeakInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayBossSpeakInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayBossSpeakInstruction:Constructor(paramList)
   self._bossCardImage = paramList.bossCardImage
   self._bossName = paramList.bossName
   self._prob = tonumber(paramList.prob)
   self._speakList = {}
   self._audioList = {}
   local paramStr = paramList.speakList
-  local splitStrArray = (string.split)(paramStr, "|")
-  for _,v in ipairs(splitStrArray) do
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R9 in 'UnsetPending'
-
-    (self._speakList)[#self._speakList + 1] = v
+  local splitStrArray = string.split(paramStr, "|")
+  for _, v in ipairs(splitStrArray) do
+    self._speakList[#self._speakList + 1] = v
   end
   paramStr = paramList.audioList
-  splitStrArray = (string.split)(paramStr, "|")
-  for _,v in ipairs(splitStrArray) do
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R9 in 'UnsetPending'
-
-    (self._audioList)[#self._audioList + 1] = tonumber(v)
+  splitStrArray = string.split(paramStr, "|")
+  for _, v in ipairs(splitStrArray) do
+    self._audioList[#self._audioList + 1] = tonumber(v)
   end
   if #self._speakList ~= #self._audioList then
-    (Log.error)("PlayBossSpeak speak and audio size error!")
+    Log.error("PlayBossSpeak speak and audio size error!")
   end
   self._duration = tonumber(paramList.duration)
   self._inAnimName = paramList.inAnimName
@@ -38,38 +27,32 @@ PlayBossSpeakInstruction.Constructor = function(self, paramList)
   self._outAnimName = paramList.outAnimName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayBossSpeakInstruction.GetCacheAudio = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayBossSpeakInstruction:GetCacheAudio()
   local t = {}
-  for _,v in ipairs(self._audioList) do
-    if v and v > 0 then
+  for _, v in ipairs(self._audioList) do
+    if v and 0 < v then
       t[#t + 1] = v
     end
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayBossSpeakInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
-  if ((GameGlobal.GetModule)(SkillPerfModule)):IsBeginPerf() then
-    return 
+function PlayBossSpeakInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  if GameGlobal.GetModule(SkillPerfModule):IsBeginPerf() then
+    return
   end
   local world = casterEntity:GetOwnerWorld()
-  local rand = (Mathf.Random)(1, 100)
+  local rand = Mathf.Random(1, 100)
   if rand <= self._prob then
-    local index = (Mathf.Random)(1, #self._speakList)
-    local curSpeak = (self._speakList)[index]
-    ;
-    (world:EventDispatcher()):Dispatch(GameEventType.UIShowBossSpeak, {self._inAnimName, self._loopAnimName}, self._bossCardImage, self._bossName, curSpeak, self._duration, self._outAnimName)
-    local curAudioID = (self._audioList)[index]
-    if curAudioID and curAudioID > 0 then
-      (InnerGameHelperRender.InnerGamePlayPetVoid)(curAudioID, casterEntity)
+    local index = Mathf.Random(1, #self._speakList)
+    local curSpeak = self._speakList[index]
+    world:EventDispatcher():Dispatch(GameEventType.UIShowBossSpeak, {
+      self._inAnimName,
+      self._loopAnimName
+    }, self._bossCardImage, self._bossName, curSpeak, self._duration, self._outAnimName)
+    local curAudioID = self._audioList[index]
+    if curAudioID and 0 < curAudioID then
+      InnerGameHelperRender.InnerGamePlayPetVoid(curAudioID, casterEntity)
     end
   end
 end
-
-

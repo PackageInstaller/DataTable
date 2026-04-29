@@ -1,174 +1,156 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/sailing_mission/sailing_mission_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local sailing_missionMessageDef = {CLSID_CEventApplySailingMissionInfoReq = 41000, CLSID_CEventApplySailingMissionInfoRes = 41001, CLSID_CEventApplySMChangeFormationReq = 41002, CLSID_CEventApplySMChangeFormationRes = 41003, CLSID_CEventResetSailingMissionRecordReq = 41004, CLSID_CEventResetSailingMissionRecordRes = 41005, CLSID_SailingPushOneLayerInfoChange = 41006, CLSID_SailingPushCurFormationChange = 41007, CLSID_CEventReceiveRewardReq = 41008, CLSID_CEventReceiveRewardRes = 41009}
-;
-(table.append)(MessageDef, sailing_missionMessageDef)
+local sailing_missionMessageDef = {
+  CLSID_CEventApplySailingMissionInfoReq = 41000,
+  CLSID_CEventApplySailingMissionInfoRes = 41001,
+  CLSID_CEventApplySMChangeFormationReq = 41002,
+  CLSID_CEventApplySMChangeFormationRes = 41003,
+  CLSID_CEventResetSailingMissionRecordReq = 41004,
+  CLSID_CEventResetSailingMissionRecordRes = 41005,
+  CLSID_SailingPushOneLayerInfoChange = 41006,
+  CLSID_SailingPushCurFormationChange = 41007,
+  CLSID_CEventReceiveRewardReq = 41008,
+  CLSID_CEventReceiveRewardRes = 41009
+}
+table.append(MessageDef, sailing_missionMessageDef)
 _class("CEventApplySailingMissionInfoReq", CCallRequestEvent)
 CEventApplySailingMissionInfoReq = CEventApplySailingMissionInfoReq
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventApplySailingMissionInfoReq.Constructor = function(self)
-  -- function num : 0_0
+function CEventApplySailingMissionInfoReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventApplySailingMissionInfoReq._proto = {}
 _class("CEventApplySailingMissionInfoRes", CCallReplyEvent)
 CEventApplySailingMissionInfoRes = CEventApplySailingMissionInfoRes
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventApplySailingMissionInfoRes.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CEventApplySailingMissionInfoRes:Constructor()
   self.nRet = 0
   self.Data = ClientSailingMissionInfo:New()
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventApplySailingMissionInfoRes._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"Data", "ClientSailingMissionInfo"}
+  [1] = {"nRet", "int"},
+  [2] = {
+    "Data",
+    "ClientSailingMissionInfo"
+  }
 }
 _class("CEventApplySMChangeFormationReq", CCallRequestEvent)
 CEventApplySMChangeFormationReq = CEventApplySMChangeFormationReq
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventApplySMChangeFormationReq.Constructor = function(self)
-  -- function num : 0_2
+function CEventApplySMChangeFormationReq:Constructor()
   self.formation_pet_list = {}
   self.layer_id = 0
   self.mission_id = 0
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventApplySMChangeFormationReq._proto = {
-[1] = {"formation_pet_list", "list<int64>"}
-, 
-[2] = {"layer_id", "int"}
-, 
-[3] = {"mission_id", "int"}
+  [1] = {
+    "formation_pet_list",
+    "list<int64>"
+  },
+  [2] = {"layer_id", "int"},
+  [3] = {"mission_id", "int"}
 }
 _class("CEventApplySMChangeFormationRes", CCallReplyEvent)
 CEventApplySMChangeFormationRes = CEventApplySMChangeFormationRes
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventApplySMChangeFormationRes.Constructor = function(self)
-  -- function num : 0_3
+function CEventApplySMChangeFormationRes:Constructor()
   self.nFormationRet = 0
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventApplySMChangeFormationRes._proto = {
-[1] = {"nFormationRet", "int"}
+  [1] = {
+    "nFormationRet",
+    "int"
+  }
 }
 _class("CEventResetSailingMissionRecordReq", CCallRequestEvent)
 CEventResetSailingMissionRecordReq = CEventResetSailingMissionRecordReq
--- DECOMPILER ERROR at PC105: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventResetSailingMissionRecordReq.Constructor = function(self)
-  -- function num : 0_4
+function CEventResetSailingMissionRecordReq:Constructor()
   self.layer_id = 0
   self.mission_id = 0
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventResetSailingMissionRecordReq._proto = {
-[1] = {"layer_id", "int"}
-, 
-[2] = {"mission_id", "int"}
+  [1] = {"layer_id", "int"},
+  [2] = {"mission_id", "int"}
 }
 _class("CEventResetSailingMissionRecordRes", CCallReplyEvent)
 CEventResetSailingMissionRecordRes = CEventResetSailingMissionRecordRes
--- DECOMPILER ERROR at PC127: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventResetSailingMissionRecordRes.Constructor = function(self)
-  -- function num : 0_5
+function CEventResetSailingMissionRecordRes:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventResetSailingMissionRecordRes._proto = {
-[1] = {"nRet", "int"}
+  [1] = {"nRet", "int"}
 }
 _class("SailingPushOneLayerInfoChange", CSvrPushEvent)
 SailingPushOneLayerInfoChange = SailingPushOneLayerInfoChange
--- DECOMPILER ERROR at PC144: Confused about usage of register: R1 in 'UnsetPending'
 
-SailingPushOneLayerInfoChange.Constructor = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function SailingPushOneLayerInfoChange:Constructor()
   self.info = SailingLayerInfo:New()
   self.max_layer_id = 0
   self.cur_exploration_progress = 0
   self.history_exploration_progress = 0
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R1 in 'UnsetPending'
-
 SailingPushOneLayerInfoChange._proto = {
-[1] = {"info", "SailingLayerInfo"}
-, 
-[2] = {"max_layer_id", "int"}
-, 
-[3] = {"cur_exploration_progress", "int"}
-, 
-[4] = {"history_exploration_progress", "int"}
+  [1] = {
+    "info",
+    "SailingLayerInfo"
+  },
+  [2] = {
+    "max_layer_id",
+    "int"
+  },
+  [3] = {
+    "cur_exploration_progress",
+    "int"
+  },
+  [4] = {
+    "history_exploration_progress",
+    "int"
+  }
 }
 _class("SailingPushCurFormationChange", CSvrPushEvent)
 SailingPushCurFormationChange = SailingPushCurFormationChange
--- DECOMPILER ERROR at PC176: Confused about usage of register: R1 in 'UnsetPending'
 
-SailingPushCurFormationChange.Constructor = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function SailingPushCurFormationChange:Constructor()
   self.team_cache = TeamCache:New()
 end
 
--- DECOMPILER ERROR at PC184: Confused about usage of register: R1 in 'UnsetPending'
-
 SailingPushCurFormationChange._proto = {
-[1] = {"team_cache", "TeamCache"}
+  [1] = {"team_cache", "TeamCache"}
 }
 _class("CEventReceiveRewardReq", CCallRequestEvent)
 CEventReceiveRewardReq = CEventReceiveRewardReq
--- DECOMPILER ERROR at PC193: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReceiveRewardReq.Constructor = function(self)
-  -- function num : 0_8
+function CEventReceiveRewardReq:Constructor()
   self.id_list = {}
 end
 
--- DECOMPILER ERROR at PC201: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReceiveRewardReq._proto = {
-[1] = {"id_list", "list<int>"}
+  [1] = {"id_list", "list<int>"}
 }
 _class("CEventReceiveRewardRes", CCallReplyEvent)
 CEventReceiveRewardRes = CEventReceiveRewardRes
--- DECOMPILER ERROR at PC210: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReceiveRewardRes.Constructor = function(self)
-  -- function num : 0_9
+function CEventReceiveRewardRes:Constructor()
   self.ret = 0
   self.rewards = {}
   self.received_exploration_reward = {}
 end
 
--- DECOMPILER ERROR at PC228: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReceiveRewardRes._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
-, 
-[3] = {"received_exploration_reward", "list<int>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [3] = {
+    "received_exploration_reward",
+    "list<int>"
+  }
 }
-

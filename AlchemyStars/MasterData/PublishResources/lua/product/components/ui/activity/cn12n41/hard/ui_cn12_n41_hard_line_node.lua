@@ -1,106 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn12n41/hard/ui_cn12_n41_hard_line_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN12N41HardLineNode", UICustomWidget)
 UICN12N41HardLineNode = UICN12N41HardLineNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN12N41HardLineNode.PlayAnim = function(self, index)
-  -- function num : 0_0
+function UICN12N41HardLineNode:PlayAnim(index)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN12N41HardLineNode.SetData = function(self, lineCfg, passInfo, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN12N41HardLineNode:SetData(lineCfg, passInfo, callback)
   self._missionId = lineCfg.CampaignMissionId
-  local missionCfg = (UIActivityHardLineHelper.GetMissionCfg)(self._missionId)
+  local missionCfg = UIActivityHardLineHelper.GetMissionCfg(self._missionId)
   self._isStory = missionCfg.Type == DiscoveryStageType.Plot
-  self._name = (UIActivityHardLineHelper.GetMissionName)(self._missionId)
-  self._needName = (UIActivityHardLineHelper.GetMissionName)(lineCfg.NeedMissionId)
+  self._name = UIActivityHardLineHelper.GetMissionName(self._missionId)
+  self._needName = UIActivityHardLineHelper.GetMissionName(lineCfg.NeedMissionId)
   self._callback = callback
-  local state = (UIActivityHardLineHelper.CheckNodeState)(lineCfg, passInfo)
+  local state = UIActivityHardLineHelper.CheckNodeState(lineCfg, passInfo)
   self._state = state
   self:_SetRectTransform(lineCfg)
   self:_SetState(state)
   self:_SetIcon(state)
   self:_SetComplete()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN12N41HardLineNode._SetState = function(self, state)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN12N41HardLineNode:_SetState(state)
   local widgetGroup = {
-[UIActivityHardLineNodeState.Lock] = {"_lock"}
-, 
-[UIActivityHardLineNodeState.Open] = {}
-, 
-[UIActivityHardLineNodeState.Pass] = {"_pass"}
-}
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, widgetGroup, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+    [UIActivityHardLineNodeState.Lock] = {"_lock"},
+    [UIActivityHardLineNodeState.Open] = {},
+    [UIActivityHardLineNodeState.Pass] = {"_pass"}
+  }
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, widgetGroup, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN12N41HardLineNode._SetIcon = function(self, state)
-  -- function num : 0_3 , upvalues : _ENV
-  local raw = (UIActivityHardLineHelper.GetIconByState)(self._missionId, state)
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "_icon", raw)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_name", self._name)
+function UICN12N41HardLineNode:_SetIcon(state)
+  local raw = UIActivityHardLineHelper.GetIconByState(self._missionId, state)
+  UIWidgetHelper.SetRawImage(self, "_icon", raw)
+  UIWidgetHelper.SetLocalizationText(self, "_name", self._name)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN12N41HardLineNode._SetRectTransform = function(self, lineCfg)
-  -- function num : 0_4 , upvalues : _ENV
-  local rect = (self:GetGameObject()):GetComponent("RectTransform")
+function UICN12N41HardLineNode:_SetRectTransform(lineCfg)
+  local rect = self:GetGameObject():GetComponent("RectTransform")
   rect.anchorMax = Vector2(0, 0.5)
   rect.anchorMin = Vector2(0, 0.5)
   rect.sizeDelta = Vector2.zero
   rect.anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN12N41HardLineNode._SetComplete = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UICN12N41HardLineNode:_SetComplete()
   local isComplete = false
   if self._state == UIActivityHardLineNodeState.Pass then
     isComplete = true
   end
   if self._state ~= UIActivityHardLineNodeState.Lock then
-    (self:GetGameObject("_pass")):SetActive(isComplete)
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, "_passText", (Cfg.str_cn12_n41).str_cn12_n41_diff_pass_level)
+    self:GetGameObject("_pass"):SetActive(isComplete)
+    UIWidgetHelper.SetLocalizationText(self, "_passText", Cfg.str_cn12_n41.str_cn12_n41_diff_pass_level)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN12N41HardLineNode.BtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UICN12N41HardLineNode:BtnOnClick(go)
   if self._state == UIActivityHardLineNodeState.Lock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_cn12_n41_hard_lock_tips", self._needName))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_cn12_n41_hard_lock_tips", self._needName))
+    return
   end
-  ;
-  (self._callback)(self._missionId, self._isStory)
+  self._callback(self._missionId, self._isStory)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN12N41HardLineNode.PlayAnime_In = function(self)
-  -- function num : 0_7
+function UICN12N41HardLineNode:PlayAnime_In()
   local animation = self:GetUIComponent("Animation", "_anim")
   animation:Play("uieff_UINCN12N41DiffLevelNode_in")
 end
-
-

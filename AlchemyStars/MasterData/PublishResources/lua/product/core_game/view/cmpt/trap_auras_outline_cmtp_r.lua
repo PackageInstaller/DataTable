@@ -1,55 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/trap_auras_outline_cmtp_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TrapAurasOutlineComponent", Object)
 TrapAurasOutlineComponent = TrapAurasOutlineComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TrapAurasOutlineComponent.Constructor = function(self)
-  -- function num : 0_0
+function TrapAurasOutlineComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.TrapAurasOutlineComponent = function(self)
-  -- function num : 0_1
-  return self:GetComponent((self.WEComponentsEnum).TrapAurasOutline)
+function Entity:TrapAurasOutlineComponent()
+  return self:GetComponent(self.WEComponentsEnum.TrapAurasOutline)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasTrapAurasOutline = function(self)
-  -- function num : 0_2
-  return self:HasComponent((self.WEComponentsEnum).TrapAurasOutline)
+function Entity:HasTrapAurasOutline()
+  return self:HasComponent(self.WEComponentsEnum.TrapAurasOutline)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddTrapAurasOutline = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).TrapAurasOutline
+function Entity:AddTrapAurasOutline()
+  local index = self.WEComponentsEnum.TrapAurasOutline
   local component = TrapAurasOutlineComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceTrapAurasOutline = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).TrapAurasOutline
+function Entity:ReplaceTrapAurasOutline()
+  local index = self.WEComponentsEnum.TrapAurasOutline
   local component = TrapAurasOutlineComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveTrapAurasOutline = function(self)
-  -- function num : 0_5
+function Entity:RemoveTrapAurasOutline()
   if self:HasTrapAurasOutline() then
-    self:RemoveComponent((self.WEComponentsEnum).TrapAurasOutline)
+    self:RemoveComponent(self.WEComponentsEnum.TrapAurasOutline)
   end
 end
-
-

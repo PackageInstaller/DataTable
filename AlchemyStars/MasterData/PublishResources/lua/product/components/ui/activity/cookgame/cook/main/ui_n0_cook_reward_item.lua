@@ -1,48 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cookgame/cook/main/ui_n0_cook_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN0CookRewardItem", UICustomWidget)
 UIN0CookRewardItem = UIN0CookRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN0CookRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN0CookRewardItem:OnShow(uiParams)
   self._atlas = self:GetAsset("CookGame.spriteatlas", LoadType.SpriteAtlas)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookRewardItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIN0CookRewardItem:InitWidget()
   self.num = self:GetUIComponent("UILocalizationText", "num")
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookRewardItem.SetData = function(self, tplId, num, clickCall)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.num):SetText(num)
-  local cfg = (Cfg.cfg_item)[tplId]
+function UIN0CookRewardItem:SetData(tplId, num, clickCall)
+  self.num:SetText(num)
+  local cfg = Cfg.cfg_item[tplId]
   if cfg then
-    (self.icon):LoadImage(cfg.Icon)
+    self.icon:LoadImage(cfg.Icon)
   end
   self.tplId = tplId
   self.clickCall = clickCall
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookRewardItem.RootOnClick = function(self, go)
-  -- function num : 0_3
+function UIN0CookRewardItem:RootOnClick(go)
   if self.clickCall then
-    local pos = (go.transform).position
-    ;
-    (self.clickCall)(self.tplId, pos)
+    local pos = go.transform.position
+    self.clickCall(self.tplId, pos)
   end
 end
-
-

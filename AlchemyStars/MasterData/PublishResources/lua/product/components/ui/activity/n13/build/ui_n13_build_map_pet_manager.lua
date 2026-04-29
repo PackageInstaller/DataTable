@@ -1,21 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n13/build/ui_n13_build_map_pet_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN13BuildMapPetManager", Object)
 UIN13BuildMapPetManager = UIN13BuildMapPetManager
-local EUIN13MapPetState = {Fixed = 1, Unfixed = 2, Leave = 3, Spare = 4}
+local EUIN13MapPetState = {
+  Fixed = 1,
+  Unfixed = 2,
+  Leave = 3,
+  Spare = 4
+}
 _enum("EUIN13MapPetState", EUIN13MapPetState)
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN13BuildMapPetManager.Constructor = function(self, petData, nodeData, nodeObjs, spawnCallback, fixedCallback, picnicNodesCallback, btnCallback)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN13BuildMapPetManager:Constructor(petData, nodeData, nodeObjs, spawnCallback, fixedCallback, picnicNodesCallback, btnCallback)
   self._petData = petData
   self._nodeData = nodeData
   self._nodeObjs = nodeObjs
-  local petSetting = (Cfg.cfg_n13_map_pet_setting)[1]
-  self._petCount = (table.count)(self._petData)
+  local petSetting = Cfg.cfg_n13_map_pet_setting[1]
+  self._petCount = table.count(self._petData)
   self._petActiveCount = petSetting.PetActiveCount
   self._petStepLimit = petSetting.PetStepLimit
   self._nodePicnicPointList = {}
@@ -31,272 +29,200 @@ UIN13BuildMapPetManager.Constructor = function(self, petData, nodeData, nodeObjs
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager._Refresh = function(self)
-  -- function num : 0_1
+function UIN13BuildMapPetManager:_Refresh()
   self:_SetDebugState()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager._InitNode = function(self, picnicNodesCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN13BuildMapPetManager:_InitNode(picnicNodesCallback)
   local picnicNodes = picnicNodesCallback()
-  local nodeIdList = (self._nodeData):GetNodeIdList()
-  for _,v in ipairs(nodeIdList) do
-    local node = (self._nodeData):GetNode(v)
+  local nodeIdList = self._nodeData:GetNodeIdList()
+  for _, v in ipairs(nodeIdList) do
+    local node = self._nodeData:GetNode(v)
     if picnicNodes[node.ID] then
-      (table.insert)(self._nodePicnicPointList, v)
+      table.insert(self._nodePicnicPointList, v)
+    elseif node.Type == 1 then
+      table.insert(self._nodeStartPointList, v)
     else
-      if node.Type == 1 then
-        (table.insert)(self._nodeStartPointList, v)
-      else
-        ;
-        (table.insert)(self._nodeNormalPointList, v)
-        -- DECOMPILER ERROR at PC38: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._nodeUsedMap)[v] = 0
-      end
+      table.insert(self._nodeNormalPointList, v)
+      self._nodeUsedMap[v] = 0
     end
   end
   if #self._nodeStartPointList == 0 then
-    (Log.exception)("UIN13BuildMapPetManager:_InitNode() self._nodeStartPointList == 0")
+    Log.exception("UIN13BuildMapPetManager:_InitNode() self._nodeStartPointList == 0")
   end
   if #self._nodeNormalPointList < self._petActiveCount then
-    (Log.exception)("UIN13BuildMapPetManager:_InitNode() #self._nodeNormalPointList < self._petActiveCount")
+    Log.exception("UIN13BuildMapPetManager:_InitNode() #self._nodeNormalPointList < self._petActiveCount")
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager._InitPetObjMap = function(self, spawnCallback)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN13BuildMapPetManager:_InitPetObjMap(spawnCallback)
   local tb = {}
   local petIdList = self:_GetSortedIDList(self._petData)
   local objs = spawnCallback(#petIdList)
-  for i,v in ipairs(petIdList) do
+  for i, v in ipairs(petIdList) do
     tb[v] = objs[i]
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager._InitPetIdList = function(self, objMap)
-  -- function num : 0_4 , upvalues : _ENV, EUIN13MapPetState
+function UIN13BuildMapPetManager:_InitPetIdList(objMap)
   local fixedPetIdList = self:_GetFixedPetIdList()
   local unfixedPetIdList, sparePetIdList = self:_GetUnfixedPetIDList(fixedPetIdList)
-  for _,v in ipairs(fixedPetIdList) do
+  for _, v in ipairs(fixedPetIdList) do
     self:_PetObj_Init(objMap[v], v)
   end
-  for _,v in ipairs(unfixedPetIdList) do
+  for _, v in ipairs(unfixedPetIdList) do
     self:_PetObj_Init(objMap[v], v)
   end
-  for _,v in ipairs(sparePetIdList) do
+  for _, v in ipairs(sparePetIdList) do
     self:_PetObj_Init(objMap[v], v, true)
   end
-  local tb = {[EUIN13MapPetState.Fixed] = fixedPetIdList, [EUIN13MapPetState.Unfixed] = unfixedPetIdList, 
-[EUIN13MapPetState.Leave] = {}
-, [EUIN13MapPetState.Spare] = sparePetIdList}
+  local tb = {
+    [EUIN13MapPetState.Fixed] = fixedPetIdList,
+    [EUIN13MapPetState.Unfixed] = unfixedPetIdList,
+    [EUIN13MapPetState.Leave] = {},
+    [EUIN13MapPetState.Spare] = sparePetIdList
+  }
   return tb
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager._GetFixedPetIdList = function(self)
-  -- function num : 0_5
+function UIN13BuildMapPetManager:_GetFixedPetIdList()
   if self._fixedCallback then
-    return (self._fixedCallback)()
+    return self._fixedCallback()
   end
   return {}
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager._GetUnfixedPetIDList = function(self, fixedList)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN13BuildMapPetManager:_GetUnfixedPetIDList(fixedList)
   local petIdList = self:_GetSortedIDList(self._petData)
-  ;
-  (table.shuffle)(petIdList)
-  local fixed = (table.reverse)(fixedList)
+  table.shuffle(petIdList)
+  local fixed = table.reverse(fixedList)
   local count = self._petActiveCount - #fixedList
   local unfixed = {}
-  while #unfixed < count and petIdList[1] do
+  while count > #unfixed and petIdList[1] do
     if not fixed[petIdList[1]] then
-      (table.insert)(unfixed, petIdList[1])
+      table.insert(unfixed, petIdList[1])
     end
-    ;
-    (table.remove)(petIdList, 1)
+    table.remove(petIdList, 1)
   end
   local spare = {}
   while petIdList[1] do
     if not fixed[petIdList[1]] then
-      (table.insert)(spare, petIdList[1])
+      table.insert(spare, petIdList[1])
     end
-    ;
-    (table.remove)(petIdList, 1)
+    table.remove(petIdList, 1)
   end
   return unfixed, spare
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager.Start = function(self)
-  -- function num : 0_7 , upvalues : _ENV, EUIN13MapPetState
-  for _,v in ipairs((self._petIdList)[EUIN13MapPetState.Fixed]) do
+function UIN13BuildMapPetManager:Start()
+  for _, v in ipairs(self._petIdList[EUIN13MapPetState.Fixed]) do
     self:_PetObj_Start(v)
   end
-  for _,v in ipairs((self._petIdList)[EUIN13MapPetState.Unfixed]) do
+  for _, v in ipairs(self._petIdList[EUIN13MapPetState.Unfixed]) do
     self:_PetObj_Start(v)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager.ChangeFixedPet = function(self)
-  -- function num : 0_8
+function UIN13BuildMapPetManager:ChangeFixedPet()
   local newFixedPetIdList = self:_GetFixedPetIdList()
   return self:_ChangePet(newFixedPetIdList)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager._ChangePet = function(self, newFixedPetIdList)
-  -- function num : 0_9 , upvalues : _ENV, EUIN13MapPetState
-  local oldFixedPetIdList = (table.collect)((self._petIdList)[EUIN13MapPetState.Fixed])
-  for _,v in ipairs(oldFixedPetIdList) do
-    if not (table.icontains)(newFixedPetIdList, v) then
-      (table.removev)((self._petIdList)[EUIN13MapPetState.Fixed], v)
-      ;
-      (table.insert)((self._petIdList)[EUIN13MapPetState.Unfixed], v)
+function UIN13BuildMapPetManager:_ChangePet(newFixedPetIdList)
+  local oldFixedPetIdList = table.collect(self._petIdList[EUIN13MapPetState.Fixed])
+  for _, v in ipairs(oldFixedPetIdList) do
+    if not table.icontains(newFixedPetIdList, v) then
+      table.removev(self._petIdList[EUIN13MapPetState.Fixed], v)
+      table.insert(self._petIdList[EUIN13MapPetState.Unfixed], v)
     end
   end
-  for _,v in ipairs(newFixedPetIdList) do
-    if not (table.icontains)(oldFixedPetIdList, v) then
-      if (table.icontains)((self._petIdList)[EUIN13MapPetState.Unfixed], v) then
-        (table.removev)((self._petIdList)[EUIN13MapPetState.Unfixed], v)
+  for _, v in ipairs(newFixedPetIdList) do
+    if not table.icontains(oldFixedPetIdList, v) then
+      if table.icontains(self._petIdList[EUIN13MapPetState.Unfixed], v) then
+        table.removev(self._petIdList[EUIN13MapPetState.Unfixed], v)
+      elseif table.icontains(self._petIdList[EUIN13MapPetState.Leave], v) then
+        table.removev(self._petIdList[EUIN13MapPetState.Leave], v)
+      elseif table.icontains(self._petIdList[EUIN13MapPetState.Spare], v) then
+        table.removev(self._petIdList[EUIN13MapPetState.Spare], v)
+        self:_PetObj_Start(v)
       else
-        if (table.icontains)((self._petIdList)[EUIN13MapPetState.Leave], v) then
-          (table.removev)((self._petIdList)[EUIN13MapPetState.Leave], v)
-        else
-          if (table.icontains)((self._petIdList)[EUIN13MapPetState.Spare], v) then
-            (table.removev)((self._petIdList)[EUIN13MapPetState.Spare], v)
-            self:_PetObj_Start(v)
-          else
-            ;
-            (Log.exception)("UIN13BuildMapPetManager:ChangeFixedPet() pet can not find, id = ", v)
-          end
-        end
+        Log.exception("UIN13BuildMapPetManager:ChangeFixedPet() pet can not find, id = ", v)
       end
-      ;
-      (table.insert)((self._petIdList)[EUIN13MapPetState.Fixed], v)
+      table.insert(self._petIdList[EUIN13MapPetState.Fixed], v)
     end
   end
-  local fixedCount = #(self._petIdList)[EUIN13MapPetState.Fixed]
-  local unfixedCount = #(self._petIdList)[EUIN13MapPetState.Unfixed]
+  local fixedCount = #self._petIdList[EUIN13MapPetState.Fixed]
+  local unfixedCount = #self._petIdList[EUIN13MapPetState.Unfixed]
   for i = 1, fixedCount + unfixedCount - self._petActiveCount do
-    local v = ((self._petIdList)[EUIN13MapPetState.Unfixed])[1]
-    ;
-    (table.remove)((self._petIdList)[EUIN13MapPetState.Unfixed], 1)
-    ;
-    (table.insert)((self._petIdList)[EUIN13MapPetState.Leave], v)
+    local v = self._petIdList[EUIN13MapPetState.Unfixed][1]
+    table.remove(self._petIdList[EUIN13MapPetState.Unfixed], 1)
+    table.insert(self._petIdList[EUIN13MapPetState.Leave], v)
     self:_PetObj_Leave(v)
   end
   self:_Refresh()
   return newFixedPetIdList
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager.SetPetPicnic = function(self, petId, nodeId, story, callback)
-  -- function num : 0_10
-  local v = (self._petObjMap)[petId]
+function UIN13BuildMapPetManager:SetPetPicnic(petId, nodeId, story, callback)
+  local v = self._petObjMap[petId]
   v:SetPetPicnic(nodeId, story, callback)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager.SetPetBtnShow = function(self, petId)
-  -- function num : 0_11 , upvalues : _ENV
-  for k,v in pairs(self._petObjMap) do
+function UIN13BuildMapPetManager:SetPetBtnShow(petId)
+  for k, v in pairs(self._petObjMap) do
     v:SetBtnShow(petId == k)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager._PetObj_Init = function(self, obj, id, isSpare)
-  -- function num : 0_12 , upvalues : _ENV
-  local petSpine = ((self._petData)[id]).Spine
-  if not isSpare or not self._nodeStartPointList then
-    local nodeIdList = self._nodeNormalPointList
-  end
-  local list = (table.collect)(nodeIdList)
-  ;
-  (table.shuffle)(list)
-  for _,v in ipairs(list) do
+function UIN13BuildMapPetManager:_PetObj_Init(obj, id, isSpare)
+  local petSpine = self._petData[id].Spine
+  local nodeIdList = isSpare and self._nodeStartPointList or self._nodeNormalPointList
+  local list = table.collect(nodeIdList)
+  table.shuffle(list)
+  for _, v in ipairs(list) do
     if isSpare or not self:_CheckNodeUsed(v) then
       obj:Init(self._nodeData, id, petSpine, v, self._nodeStartPointList, function(id, isLeave)
-    -- function num : 0_12_0 , upvalues : self
-    return self:_PetObj_On_Move(id, isLeave)
-  end
-, function(id)
-    -- function num : 0_12_1 , upvalues : self
-    return self:_PetObj_On_Stop(id)
-  end
-, self._btnCallback)
+        return self:_PetObj_On_Move(id, isLeave)
+      end, function(id)
+        return self:_PetObj_On_Stop(id)
+      end, self._btnCallback)
       if not isSpare then
         self:_SetNodeUsed(v, id)
       end
-      return 
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager._PetObj_GetPos = function(self, id)
-  -- function num : 0_13
-  local obj = (self._petObjMap)[id]
+function UIN13BuildMapPetManager:_PetObj_GetPos(id)
+  local obj = self._petObjMap[id]
   return obj:GetNodeId()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager._PetObj_Start = function(self, id)
-  -- function num : 0_14
-  local obj = (self._petObjMap)[id]
+function UIN13BuildMapPetManager:_PetObj_Start(id)
+  local obj = self._petObjMap[id]
   obj:Start()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager._PetObj_Leave = function(self, id)
-  -- function num : 0_15
-  local obj = (self._petObjMap)[id]
+function UIN13BuildMapPetManager:_PetObj_Leave(id)
+  local obj = self._petObjMap[id]
   obj:Leave(self._PetObj_On_Stop)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager._PetObj_On_Move = function(self, id, isLeave)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN13BuildMapPetManager:_PetObj_On_Move(id, isLeave)
   local from = self:_PetObj_GetPos(id)
   if not isLeave then
-    local allPath = (self._nodeData):GetAllPathsInLimitStep(from, self._petStepLimit)
-    local targets = (table.keys)(allPath)
-    for _,v in ipairs(self._nodeStartPointList) do
-      (table.removev)(targets, v)
+    local allPath = self._nodeData:GetAllPathsInLimitStep(from, self._petStepLimit)
+    local targets = table.keys(allPath)
+    for _, v in ipairs(self._nodeStartPointList) do
+      table.removev(targets, v)
     end
-    for _,v in ipairs(self._nodePicnicPointList) do
-      (table.removev)(targets, v)
+    for _, v in ipairs(self._nodePicnicPointList) do
+      table.removev(targets, v)
     end
-    ;
-    (table.shuffle)(targets)
-    for _,v in ipairs(targets) do
+    table.shuffle(targets)
+    for _, v in ipairs(targets) do
       if not self:_CheckNodeUsed(v) then
         self:_SetNodeUsed(from, 0)
         self:_SetNodeUsed(v, id)
@@ -306,36 +232,31 @@ UIN13BuildMapPetManager._PetObj_On_Move = function(self, id, isLeave)
     end
     return {}
   else
-    do
-      local targetIds = self._nodeStartPointList
-      local path = (self._nodeData):GetAPathToTarget(from, targetIds)
-      do
-        if #path == 0 then
-          local t = "id = " .. id .. "\nfrom = " .. from .. "\ntargetIds = {"
-          for _,v in ipairs(targetIds) do
-            t = t .. v .. ", "
-          end
-          t = t .. "}"
-          ;
-          (Log.error)("UIN13BuildMapPetManager:_PetObj_On_Move() No way out\n" .. t)
-        end
-        self:_SetNodeUsed(from, 0)
-        self:_Refresh()
-        do return path end
+    local targetIds = self._nodeStartPointList
+    local path = self._nodeData:GetAPathToTarget(from, targetIds)
+    if #path == 0 then
+      local t = "id = " .. id .. [[
+
+from = ]] .. from .. [[
+
+targetIds = {]]
+      for _, v in ipairs(targetIds) do
+        t = t .. v .. ", "
       end
+      t = t .. "}"
+      Log.error("UIN13BuildMapPetManager:_PetObj_On_Move() No way out\n" .. t)
     end
+    self:_SetNodeUsed(from, 0)
+    self:_Refresh()
+    return path
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager._PetObj_On_Stop = function(self, id)
-  -- function num : 0_17 , upvalues : _ENV, EUIN13MapPetState
+function UIN13BuildMapPetManager:_PetObj_On_Stop(id)
   local succ = true
-  if (table.icontains)((self._petIdList)[EUIN13MapPetState.Leave], id) then
-    (table.removev)((self._petIdList)[EUIN13MapPetState.Leave], id)
-    ;
-    (table.insert)((self._petIdList)[EUIN13MapPetState.Spare], id)
+  if table.icontains(self._petIdList[EUIN13MapPetState.Leave], id) then
+    table.removev(self._petIdList[EUIN13MapPetState.Leave], id)
+    table.insert(self._petIdList[EUIN13MapPetState.Spare], id)
   else
     succ = false
   end
@@ -343,114 +264,81 @@ UIN13BuildMapPetManager._PetObj_On_Stop = function(self, id)
   return succ
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager._GetSortedIDList = function(self, tb_in)
-  -- function num : 0_18 , upvalues : _ENV
+function UIN13BuildMapPetManager:_GetSortedIDList(tb_in)
   local tb = {}
-  for k,v in pairs(tb_in) do
-    (table.insert)(tb, k)
+  for k, v in pairs(tb_in) do
+    table.insert(tb, k)
   end
-  ;
-  (table.sort)(tb)
+  table.sort(tb)
   return tb
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager._CheckNodeUsed = function(self, node)
-  -- function num : 0_19
-  do return (self._nodeUsedMap)[node] ~= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIN13BuildMapPetManager:_CheckNodeUsed(node)
+  return self._nodeUsedMap[node] ~= 0
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager._SetNodeUsed = function(self, node, id)
-  -- function num : 0_20
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._nodeUsedMap)[node] = id
+function UIN13BuildMapPetManager:_SetNodeUsed(node, id)
+  self._nodeUsedMap[node] = id
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager.DebugChangeFixedPet = function(self)
-  -- function num : 0_21
+function UIN13BuildMapPetManager:DebugChangeFixedPet()
   local petIdList = self:_GetSortedIDList(self._petData)
   self._debugPetIndex = self._debugPetIndex or -1
   self._debugPetIndex = (self._debugPetIndex + 1) % #petIdList
   local index = self._debugPetIndex + 1
-  local newFixedPetIdList = {petIdList[index]}
+  local newFixedPetIdList = {
+    petIdList[index]
+  }
   return self:_ChangePet(newFixedPetIdList)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager._GetDebugFixedPetIdList = function(self)
-  -- function num : 0_22
+function UIN13BuildMapPetManager:_GetDebugFixedPetIdList()
   local test = {
-{1500991, 1501001}
-, 
-{1600961, 1601121}
-, 
-{1501141, 1601121}
-}
+    {1500991, 1501001},
+    {1600961, 1601121},
+    {1501141, 1601121}
+  }
   self._testTurn = self._testTurn or 0
   self._testTurn = self._testTurn + 1
-  if #test >= self._testTurn or not 1 then
-    self._testTurn = self._testTurn
-    return test[self._testTurn]
-  end
+  self._testTurn = self._testTurn > #test and 1 or self._testTurn
+  return test[self._testTurn]
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager.SetShowDebug = function(self, show)
-  -- function num : 0_23 , upvalues : _ENV
+function UIN13BuildMapPetManager:SetShowDebug(show)
   self._flagShowDebug = show
-  for k,v in pairs(self._petObjMap) do
+  for k, v in pairs(self._petObjMap) do
     v:SetShowDebug(show)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager._SetDebugState = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIN13BuildMapPetManager:_SetDebugState()
   if not self._flagShowDebug then
-    return 
+    return
   end
   self:_NodeObj_SetHighlight()
   local tb_check = {}
-  for k,v in pairs(self._petIdList) do
-    for _,vv in ipairs(v) do
-      ((self._petObjMap)[vv]):SetDebugState(k)
+  for k, v in pairs(self._petIdList) do
+    for _, vv in ipairs(v) do
+      self._petObjMap[vv]:SetDebugState(k)
       if not tb_check[vv] then
         tb_check[vv] = true
       else
-        ;
-        (Log.exception)("UIN13BuildMapPetManager:_SetDebugState() repeat key = " .. vv)
+        Log.exception("UIN13BuildMapPetManager:_SetDebugState() repeat key = " .. vv)
       end
     end
   end
   local petIdList = self:_GetSortedIDList(self._petData)
-  if (table.count)(tb_check) ~= #petIdList then
-    (Log.exception)("UIN13BuildMapPetManager:_SetDebugState() lost key = ")
+  if table.count(tb_check) ~= #petIdList then
+    Log.exception("UIN13BuildMapPetManager:_SetDebugState() lost key = ")
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN13BuildMapPetManager._NodeObj_SetHighlight = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  for _,v in ipairs(self._nodeObjs) do
+function UIN13BuildMapPetManager:_NodeObj_SetHighlight()
+  for _, v in ipairs(self._nodeObjs) do
     local nodeId = v._nodeId
-    local flagStart = (table.icontains)(self._nodeStartPointList, nodeId)
+    local flagStart = table.icontains(self._nodeStartPointList, nodeId)
     if not flagStart then
       v:SetHighlight(self:_CheckNodeUsed(nodeId))
     end
   end
 end
-
-

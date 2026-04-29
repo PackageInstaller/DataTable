@@ -1,41 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_enhance_occupied_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamEnhanceOccupiedGrid", SkillEffectParamBase)
 SkillEffectParamEnhanceOccupiedGrid = SkillEffectParamEnhanceOccupiedGrid
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamEnhanceOccupiedGrid.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
-  if not tonumber(t.trapID) then
-    self._trapID = BattleConst.DefaultEnhanceGridTrapID
-    self._maxCountPerTarget = tonumber(t.maxCountPerTarget)
-    assert(self._maxCountPerTarget, "EnhanceOccupiedGrid requires [maxCountPerTarget]")
-  end
+function SkillEffectParamEnhanceOccupiedGrid:Constructor(t)
+  self._trapID = tonumber(t.trapID) or BattleConst.DefaultEnhanceGridTrapID
+  self._maxCountPerTarget = tonumber(t.maxCountPerTarget)
+  assert(self._maxCountPerTarget, "EnhanceOccupiedGrid requires [maxCountPerTarget]")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamEnhanceOccupiedGrid.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamEnhanceOccupiedGrid:GetEffectType()
   return SkillEffectType.EnhanceOccupiedGrid
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamEnhanceOccupiedGrid.GetTrapID = function(self)
-  -- function num : 0_2
+function SkillEffectParamEnhanceOccupiedGrid:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamEnhanceOccupiedGrid.GetMaxCountPerTarget = function(self)
-  -- function num : 0_3
+function SkillEffectParamEnhanceOccupiedGrid:GetMaxCountPerTarget()
   return self._maxCountPerTarget
 end
-
-

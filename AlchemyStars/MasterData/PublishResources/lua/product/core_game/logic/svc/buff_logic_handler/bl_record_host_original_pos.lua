@@ -1,29 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_record_host_original_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicRecordHostOriginalPos", BuffLogicBase)
 BuffLogicRecordHostOriginalPos = BuffLogicRecordHostOriginalPos
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRecordHostOriginalPos.DoLogic = function(self, notify)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicRecordHostOriginalPos:DoLogic(notify)
   local notifyType = notify:GetNotifyType()
   if notifyType ~= NotifyType.HitBackEnd and notifyType ~= NotifyType.TractionEnd then
-    return 
+    return
   end
-  local buffComponent = (self._entity):BuffComponent()
+  local buffComponent = self._entity:BuffComponent()
   if not buffComponent then
-    return 
+    return
   end
   if not notify.GetPosStart then
-    return 
+    return
   end
   local pos = notify:GetPosStart()
   if pos then
     buffComponent:SetBuffValue("HostOriginalPos", pos)
   end
 end
-
-

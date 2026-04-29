@@ -1,58 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/score/ui_summer_activity_two_score_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummerActivityTwoScoreController", UIController)
 UISummerActivityTwoScoreController = UISummerActivityTwoScoreController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummerActivityTwoScoreController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISummerActivityTwoScoreController:LoadDataOnEnter(TT, res, uiParams)
   self._yieldGapTime = 70
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SUMMER_II, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_STORY, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_CUMULATIVE_LOGIN, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SUMMER_II, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_STORY, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_CUMULATIVE_LOGIN, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
   if not self._campaign then
-    return 
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  self._personProgress1CompInfo = (self._localProcess):GetComponentInfo(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1)
-  self._personProgress1Component = (self._localProcess):GetComponent(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1)
+  self._personProgress1CompInfo = self._localProcess:GetComponentInfo(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1)
+  self._personProgress1Component = self._localProcess:GetComponent(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1)
   self._scoreDatas = UISummerActivityTwoScoreData:New(self._personProgress1CompInfo)
-  self._missionComInfo = (self._localProcess):GetComponentInfo(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
-  self._current_value = (self._personProgress1CompInfo).m_current_progress
-  self._item_id = (self._personProgress1CompInfo).m_item_id
+  self._missionComInfo = self._localProcess:GetComponentInfo(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
+  self._current_value = self._personProgress1CompInfo.m_current_progress
+  self._item_id = self._personProgress1CompInfo.m_item_id
   local levelDatas = campaignModule:GetSummerTwoLevelData(TT)
   self._levelDatas = levelDatas:GetEntryLevelData()
   self._rewardItemCount = 0
   self._rewardDatas = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreController.SortRewardDatas = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.sort)(self._rewardDatas, function(a, b)
-    -- function num : 0_1_0
-    do return a:GetPriority() < b:GetPriority() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+function UISummerActivityTwoScoreController:SortRewardDatas()
+  table.sort(self._rewardDatas, function(a, b)
+    return a:GetPriority() < b:GetPriority()
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreController.RefreshScoreData = function(self)
-  -- function num : 0_2
-  self._rewardDatas = (self._scoreDatas):GetRewardDatas()
+function UISummerActivityTwoScoreController:RefreshScoreData()
+  self._rewardDatas = self._scoreDatas:GetRewardDatas()
   if not self._rewardDatas then
     self._rewardDatas = {}
   end
@@ -60,10 +43,7 @@ UISummerActivityTwoScoreController.RefreshScoreData = function(self)
   self:SortRewardDatas()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreController.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UISummerActivityTwoScoreController:OnShow(uiParams)
   self._inited = false
   self._scoreIcon = self:GetUIComponent("RawImageLoader", "scoreIcon")
   self._currentValueTex = self:GetUIComponent("UILocalizationText", "currentValue")
@@ -71,73 +51,49 @@ UISummerActivityTwoScoreController.OnShow = function(self, uiParams)
   self._tips = s:SpawnObject("UISelectInfo")
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_3_0 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(self.CloseCoro, self)
-  end
-, nil, nil, true)
-  ;
-  (self._currentValueTex):SetText(self._current_value)
-  local cfg_item = (Cfg.cfg_item)[self._item_id]
+  self._backBtn:SetData(function()
+    GameGlobal.TaskManager():StartTask(self.CloseCoro, self)
+  end, nil, nil, true)
+  self._currentValueTex:SetText(self._current_value)
+  local cfg_item = Cfg.cfg_item[self._item_id]
   self._itemIcon = ""
   if cfg_item then
     self._itemIcon = cfg_item.Icon
   else
-    ;
-    (Log.error)("###[UISummerActivityTwoScoreController] cfg_item is nil ! id --> ", self._item_id)
+    Log.error("###[UISummerActivityTwoScoreController] cfg_item is nil ! id --> ", self._item_id)
   end
-  ;
-  (self._scoreIcon):LoadImage(cfg_item.Icon)
+  self._scoreIcon:LoadImage(cfg_item.Icon)
   self:InitTypeMissionInfo()
   self:InitRewardList()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreController.CloseCoro = function(self, TT)
-  -- function num : 0_4
+function UISummerActivityTwoScoreController:CloseCoro(TT)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreController.ShowTips = function(self, itemId, pos)
-  -- function num : 0_5
-  (self._tips):SetData(itemId, pos)
+function UISummerActivityTwoScoreController:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreController.InitTypeMissionInfo = function(self)
-  -- function num : 0_6
+function UISummerActivityTwoScoreController:InitTypeMissionInfo()
   local loader = self:GetUIComponent("UISelectObjectPath", "ScoreInfo")
   loader:SpawnObjects("UISummerActivityTwoTypeMissionInfoItem", 6)
   local list = loader:GetAllSpawnList()
   for i = 1, #list do
-    (list[i]):Refresh(i, (self._levelDatas)[i], self._itemIcon)
+    list[i]:Refresh(i, self._levelDatas[i], self._itemIcon)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreController.InitRewardList = function(self)
-  -- function num : 0_7
+function UISummerActivityTwoScoreController:InitRewardList()
   self:RefreshScoreData()
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "RewardList")
-  ;
-  (self._scrollView):InitListView(self._rewardItemCount, function(scrollview, index)
-    -- function num : 0_7_0 , upvalues : self
+  self._scrollView:InitListView(self._rewardItemCount, function(scrollview, index)
     return self:OnGetRewardItem(scrollview, index)
-  end
-)
+  end)
   self._inited = true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreController.OnGetRewardItem = function(self, scrollView, index)
-  -- function num : 0_8 , upvalues : _ENV
+function UISummerActivityTwoScoreController:OnGetRewardItem(scrollView, index)
   local item = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -146,97 +102,65 @@ UISummerActivityTwoScoreController.OnGetRewardItem = function(self, scrollView, 
   end
   local rowList = rowPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      if self._rewardItemCount < itemIndex then
-        (itemWidget:GetGameObject()):SetActive(false)
-      else
-        self:RefreshRewardItemInfo(itemWidget, itemIndex)
-      end
+  if itemWidget then
+    local itemIndex = index + 1
+    if itemIndex > self._rewardItemCount then
+      itemWidget:GetGameObject():SetActive(false)
+    else
+      self:RefreshRewardItemInfo(itemWidget, itemIndex)
     end
-    ;
-    (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
-    return item
   end
+  UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
+  return item
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreController.RefreshRewardItemInfo = function(self, itemWidget, index)
-  -- function num : 0_9
+function UISummerActivityTwoScoreController:RefreshRewardItemInfo(itemWidget, index)
   local anim = not self._inited
   local yieldTime = (index - 1) * self._yieldGapTime
-  itemWidget:Refresh(index, (self._rewardDatas)[index], self._itemIcon, function(idx)
-    -- function num : 0_9_0 , upvalues : self
+  itemWidget:Refresh(index, self._rewardDatas[index], self._itemIcon, function(idx)
     self:CanGet(idx)
-  end
-, function(itemId, pos)
-    -- function num : 0_9_1 , upvalues : self
+  end, function(itemId, pos)
     self:ShowTips(itemId, pos)
-  end
-, anim, yieldTime)
+  end, anim, yieldTime)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreController.CanGet = function(self, idx)
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.debug)("###[UISummerActivityTwoScoreController] CanGet idx --> ", idx)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.GetReward, self, idx)
+function UISummerActivityTwoScoreController:CanGet(idx)
+  Log.debug("###[UISummerActivityTwoScoreController] CanGet idx --> ", idx)
+  GameGlobal.TaskManager():StartTask(self.GetReward, self, idx)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreController.GetReward = function(self, TT, idx)
-  -- function num : 0_11 , upvalues : _ENV
+function UISummerActivityTwoScoreController:GetReward(TT, idx)
   self:Lock("UISummerActivityTwoScoreItem_GetRewarda")
   local res = AsyncRequestRes:New()
-  ;
-  (self._personProgress1Component):HandleReceiveReward(TT, res, ((self._rewardDatas)[idx]):GetScoreValue())
+  self._personProgress1Component:HandleReceiveReward(TT, res, self._rewardDatas[idx]:GetScoreValue())
   if res:GetSucc() then
-    local rewards = ((self._rewardDatas)[idx]):GetRewards()
-    ;
-    ((self._rewardDatas)[idx]):SetStatus(UISummerActivityTwoScoreRewardStatus.HasGet)
+    local rewards = self._rewardDatas[idx]:GetRewards()
+    self._rewardDatas[idx]:SetStatus(UISummerActivityTwoScoreRewardStatus.HasGet)
     self:SortRewardDatas()
-    ;
-    (self._scrollView):RefreshAllShownItem()
+    self._scrollView:RefreshAllShownItem()
     self:ShowRewards(rewards, idx)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SummerTwoRewardRefresh, idx)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.SummerTwoRewardRefresh, idx)
   else
-    do
-      do
-        local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-        campaignModule:CheckErrorCode(res.m_result)
-        self:UnLock("UISummerActivityTwoScoreItem_GetRewarda")
-      end
-    end
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    campaignModule:CheckErrorCode(res.m_result)
   end
+  self:UnLock("UISummerActivityTwoScoreItem_GetRewarda")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreController.ShowRewards = function(self, rewards, idx)
-  -- function num : 0_12 , upvalues : _ENV
+function UISummerActivityTwoScoreController:ShowRewards(rewards, idx)
   local petIdList = {}
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  for _,reward in pairs(rewards) do
+  local petModule = GameGlobal.GetModule(PetModule)
+  for _, reward in pairs(rewards) do
     if petModule:IsPetID(reward.assetid) then
-      (table.insert)(petIdList, reward)
+      table.insert(petIdList, reward)
     end
   end
-  if (table.count)(petIdList) > 0 then
+  if table.count(petIdList) > 0 then
     self:ShowDialog("UIPetObtain", petIdList, function()
-    -- function num : 0_12_0 , upvalues : _ENV, self, rewards
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    self:ShowDialog("UIGetItemController", rewards)
-  end
-)
-    return 
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      self:ShowDialog("UIGetItemController", rewards)
+    end)
+    return
   end
   self:ShowDialog("UIGetItemController", rewards)
 end
-
-

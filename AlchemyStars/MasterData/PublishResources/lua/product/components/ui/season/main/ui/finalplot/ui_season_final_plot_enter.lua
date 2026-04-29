@@ -1,240 +1,164 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/finalplot/ui_season_final_plot_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonFinalPlotEnter", UICustomWidget)
 UISeasonFinalPlotEnter = UISeasonFinalPlotEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonFinalPlotEnter.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonFinalPlotEnter:OnShow(uiParams)
   self.rootGo = self:GetGameObject("Root")
-  ;
-  (self.rootGo):SetActive(false)
+  self.rootGo:SetActive(false)
   self.baseGo = self:GetGameObject("BaseImage")
   self.canTakeGo = self:GetGameObject("CanTakeImage")
   self.firstShowGo = self:GetGameObject("FirstShowImage")
   self:AttachEvents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotEnter.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonFinalPlotEnter:OnHide()
   if self._firstShowTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._firstShowTask)
+    GameGlobal.TaskManager():KillTask(self._firstShowTask)
     self._firstShowTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotEnter.AttachEvents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonFinalPlotEnter:AttachEvents()
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotEnter.SetData = function(self, obj)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonFinalPlotEnter:SetData(obj)
   self._seasonObj = obj
   self._story = 0
-  self.seasonId = (self._seasonObj):GetSeasonID()
-  local cfg = (Cfg.cfg_season_campaign_client)[self.seasonId]
+  self.seasonId = self._seasonObj:GetSeasonID()
+  local cfg = Cfg.cfg_season_campaign_client[self.seasonId]
   if cfg then
     self._story = cfg.FinalStoryID
   else
-    ;
-    (self.rootGo):SetActive(false)
-    return 
+    self.rootGo:SetActive(false)
+    return
   end
-  self.questCmpt = (self._seasonObj):GetComponent(ECCampaignSeasonComponentID.QUEST_STORY)
+  self.questCmpt = self._seasonObj:GetComponent(ECCampaignSeasonComponentID.QUEST_STORY)
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotEnter.OnUIGetItemCloseInQuest = function(self, type)
-  -- function num : 0_4
+function UISeasonFinalPlotEnter:OnUIGetItemCloseInQuest(type)
   self:Refresh()
   if self._finalPlotCg then
     self:_OnCollectAwardFinish()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotEnter.BtnGoOnClick = function(self)
-  -- function num : 0_5
+function UISeasonFinalPlotEnter:BtnGoOnClick()
   self:EnterPlot()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotEnter.EnterPlot = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonFinalPlotEnter:EnterPlot()
   if not self._story then
-    return 
+    return
   end
   if self._story == 0 then
-    return 
+    return
   end
   if self._firstShowTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._firstShowTask)
+    GameGlobal.TaskManager():KillTask(self._firstShowTask)
     self._firstShowTask = nil
   end
-  ;
-  (UISeasonLocalDBHelper.SeasonFinalPlotBtnShowed_Set)(self.seasonId)
+  UISeasonLocalDBHelper.SeasonFinalPlotBtnShowed_Set(self.seasonId)
   self:Refresh()
-  local cb = function()
-    -- function num : 0_6_0 , upvalues : self
+  
+  local function cb()
     self:OnPlotEnd()
   end
-
-  ;
-  (UISeasonHelper.PlayStoryInSeasonScence)(self._story, cb)
+  
+  UISeasonHelper.PlayStoryInSeasonScence(self._story, cb)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotEnter.OnPlotEndTmp = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonFinalPlotEnter:OnPlotEndTmp()
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   local rewards = {}
   local roleAsset = RoleAsset:New()
   roleAsset.assetid = 7000110
   roleAsset.count = 1
-  ;
-  (table.insert)(rewards, roleAsset)
+  table.insert(rewards, roleAsset)
   self:_OnRecvRewardsWithAnim(res, rewards)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotEnter.OnPlotEnd = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonFinalPlotEnter:OnPlotEnd()
   if not self.questCmpt then
-    return 
+    return
   end
-  local questStatus = (self.questCmpt):CheckCampaignQuestStatus((self._quest)._questInfo)
+  local questStatus = self.questCmpt:CheckCampaignQuestStatus(self._quest._questInfo)
   if questStatus == CampaignQuestStatus.CQS_Completed then
-    self:ReqTakeAwards((self._quest)._questInfo)
+    self:ReqTakeAwards(self._quest._questInfo)
   else
     self:Refresh()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotEnter._RefreshByQuestStatus = function(self, questStatus)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonFinalPlotEnter:_RefreshByQuestStatus(questStatus)
   if questStatus == CampaignQuestStatus.CQS_Completed then
-    (self.rootGo):SetActive(true)
-    ;
-    (self.baseGo):SetActive(true)
+    self.rootGo:SetActive(true)
+    self.baseGo:SetActive(true)
+  elseif questStatus == CampaignQuestStatus.CQS_Taken then
+    self.rootGo:SetActive(false)
   else
-    if questStatus == CampaignQuestStatus.CQS_Taken then
-      (self.rootGo):SetActive(false)
-    else
-      ;
-      (self.rootGo):SetActive(false)
-    end
+    self.rootGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotEnter.Refresh = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonFinalPlotEnter:Refresh()
   if not self.questCmpt then
-    return 
+    return
   end
   if self.questCmpt then
-    self._questList = (self.questCmpt):GetQuestInfo()
-    ;
-    ((self._seasonObj):GetSeasonID())
-    local seasonId = nil
-    local finalStoryQuestId = nil
-    local seasonClientCfg = (Cfg.cfg_season_campaign_client)[seasonId]
+    self._questList = self.questCmpt:GetQuestInfo()
+    local seasonId = self._seasonObj:GetSeasonID()
+    local finalStoryQuestId
+    local seasonClientCfg = Cfg.cfg_season_campaign_client[seasonId]
     if seasonClientCfg then
       finalStoryQuestId = seasonClientCfg.FinalStoryQuestID
     end
-    for i,quest in ipairs(self._questList) do
+    for i, quest in ipairs(self._questList) do
       if quest:ID() == finalStoryQuestId then
         self._quest = quest
         break
       end
     end
   end
-  do
-    if not self._quest then
-      return 
-    end
-    local questStatus = (self.questCmpt):CheckCampaignQuestStatus((self._quest)._questInfo)
-    self:_RefreshByQuestStatus(questStatus)
+  if not self._quest then
+    return
   end
+  local questStatus = self.questCmpt:CheckCampaignQuestStatus(self._quest._questInfo)
+  self:_RefreshByQuestStatus(questStatus)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotEnter.ReqTakeAwards = function(self, questInfo)
-  -- function num : 0_11
-  (self.questCmpt):Start_HandleQuestTake(questInfo.quest_id, function(res, rewards)
-    -- function num : 0_11_0 , upvalues : self
+function UISeasonFinalPlotEnter:ReqTakeAwards(questInfo)
+  self.questCmpt:Start_HandleQuestTake(questInfo.quest_id, function(res, rewards)
     self:_OnRecvRewardsWithAnim(res, rewards)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotEnter._OnRecvRewardsWithAnim = function(self, res, rewards)
-  -- function num : 0_12 , upvalues : _ENV
+function UISeasonFinalPlotEnter:_OnRecvRewardsWithAnim(res, rewards)
   if not self.view then
-    return 
+    return
   end
   if res and res:GetSucc() then
-    local cfg = (Cfg.cfg_season_campaign_client)[self.seasonId]
+    local cfg = Cfg.cfg_season_campaign_client[self.seasonId]
     if cfg.FinalStoryCg then
       self._finalPlotCg = true
     end
-    ;
-    (UISeasonHelper.ShowUIGetRewards)(rewards)
+    UISeasonHelper.ShowUIGetRewards(rewards)
     self:Refresh()
   else
-    do
-      ;
-      (self._seasonObj):CheckErrorCode(res.m_result, function()
-    -- function num : 0_12_0 , upvalues : self
-    self:Refresh()
-  end
-, function()
-    -- function num : 0_12_1
-  end
-)
-    end
+    self._seasonObj:CheckErrorCode(res.m_result, function()
+      self:Refresh()
+    end, function()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotEnter._OnCollectAwardFinish = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  self:ShowDialog("UISeasonFinalPlotShare", self.seasonId, (self._seasonObj):GetComponent(ECCampaignSeasonComponentID.STORY), function()
-    -- function num : 0_13_0 , upvalues : self
+function UISeasonFinalPlotEnter:_OnCollectAwardFinish()
+  self:ShowDialog("UISeasonFinalPlotShare", self.seasonId, self._seasonObj:GetComponent(ECCampaignSeasonComponentID.STORY), function()
     self:_OnShareFinish()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotEnter._OnShareFinish = function(self)
-  -- function num : 0_14
+function UISeasonFinalPlotEnter:_OnShareFinish()
   self._finalPlotCg = false
 end
-
-

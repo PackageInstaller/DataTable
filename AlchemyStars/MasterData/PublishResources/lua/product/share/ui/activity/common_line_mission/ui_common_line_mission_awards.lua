@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/common_line_mission/ui_common_line_mission_awards.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICommonLineMissionAwards", UIController)
 UICommonLineMissionAwards = UICommonLineMissionAwards
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICommonLineMissionAwards.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UICommonLineMissionAwards:OnShow(uiParams)
   self._questCmpt = uiParams[1]
   self._checkCampaignCloseFunc = uiParams[2]
   self._questsUIPool = self:GetUIComponent("UISelectObjectPath", "Content")
@@ -16,83 +9,56 @@ UICommonLineMissionAwards.OnShow = function(self, uiParams)
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
   self._starCountTxt = self:GetUIComponent("UILocalizationText", "starCountTxt")
   self._starCountTitle = self:GetUIComponent("UILocalizationText", "starCountTitle")
-  ;
-  (self._starCountTxt):SetText(uiParams[3])
-  local campaignID = ((self._questCmpt):ComponentInfo()).m_campaign_id
-  ;
-  (self._starCountTitle):SetText((StringTable.Get)("str_activity_story_star_" .. campaignID))
+  self._starCountTxt:SetText(uiParams[3])
+  local campaignID = self._questCmpt:ComponentInfo().m_campaign_id
+  self._starCountTitle:SetText(StringTable.Get("str_activity_story_star_" .. campaignID))
   self:RefreshUI()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self.OnActivityClose)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionAwards.RefreshUI = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local questList = (self._questCmpt):GetQuestInfo()
-  local questUIList = (self._questsUIPool):SpawnObjects("UICommonLineMissionAwardsItem", #questList)
+function UICommonLineMissionAwards:RefreshUI()
+  local questList = self._questCmpt:GetQuestInfo()
+  local questUIList = self._questsUIPool:SpawnObjects("UICommonLineMissionAwardsItem", #questList)
   local widgetHeight = 231
   local spacing = 0
   local yComplete = 0
   local yAccepted = 0
   for i = 1, #questUIList do
-    (questUIList[i]):SetData(self._questCmpt, questList[i], self._checkCampaignCloseFunc)
-    local status = (questList[i]):Status()
+    questUIList[i]:SetData(self._questCmpt, questList[i], self._checkCampaignCloseFunc)
+    local status = questList[i]:Status()
     if status == QuestStatus.QUEST_Completed and yComplete == 0 then
       yComplete = i
-    else
-      if status == QuestStatus.QUEST_Accepted and yAccepted == 0 then
-        yAccepted = i
-      end
+    elseif status == QuestStatus.QUEST_Accepted and yAccepted == 0 then
+      yAccepted = i
     end
   end
-  local y = nil
+  local y
   if yComplete ~= 0 then
     y = yComplete
+  elseif yAccepted ~= 0 then
+    y = yAccepted
   else
-    if yAccepted ~= 0 then
-      y = yAccepted
-    else
-      y = #questUIList
-    end
+    y = #questUIList
   end
   local yLength = (y - 1) * (widgetHeight + spacing)
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self._contentRect).anchoredPosition = Vector2(((self._contentRect).anchoredPosition).x, yLength)
+  self._contentRect.anchoredPosition = Vector2(self._contentRect.anchoredPosition.x, yLength)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionAwards.CloseBtnOnClick = function(self)
-  -- function num : 0_2
+function UICommonLineMissionAwards:CloseBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionAwards.BGOnClick = function(self)
-  -- function num : 0_3
+function UICommonLineMissionAwards:BGOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionAwards.OnActivityClose = function(self, id)
-  -- function num : 0_4
+function UICommonLineMissionAwards:OnActivityClose(id)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionAwards.ShowAssetTips = function(self, id, pos)
-  -- function num : 0_5
+function UICommonLineMissionAwards:ShowAssetTips(id, pos)
   if not self._assetTips then
-    self._assetTips = (self._itemTipsPool):SpawnObject("UISelectInfo")
+    self._assetTips = self._itemTipsPool:SpawnObject("UISelectInfo")
   end
-  ;
-  (self._assetTips):SetData(id, pos)
+  self._assetTips:SetData(id, pos)
 end
-
-

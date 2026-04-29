@@ -1,47 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/scene/layer/season_scene_layer_building.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonSceneLayerBuilding", SeasonSceneLayerBase)
 SeasonSceneLayerBuilding = SeasonSceneLayerBuilding
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonSceneLayerBuilding.Constructor = function(self, sceneRoot)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonSceneLayerBuilding:Constructor(sceneRoot)
   self._time = 1
   self._zoneMask = nil
-  self._buildingLayer = (self._sceneRootTransform):Find(SeasonSceneLayer.Building)
+  self._buildingLayer = self._sceneRootTransform:Find(SeasonSceneLayer.Building)
   self._animationRenders = {}
-  local seasonManager = ((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()
+  local seasonManager = GameGlobal.GetUIModule(SeasonModule):SeasonManager()
   self._coverManager = seasonManager:SeasonCoverManager()
   self._coverByNavManager = seasonManager:SeasonCoverByNavManager()
   self._showByNavManager = seasonManager:SeasonShowByNavManager()
   self:_CreateBuildingCover()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerBuilding.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((SeasonSceneLayerBuilding.super).Dispose)(self)
+function SeasonSceneLayerBuilding:Dispose()
+  SeasonSceneLayerBuilding.super.Dispose(self)
   if self._tweenTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._tweenTask)
+    GameGlobal.TaskManager():KillTask(self._tweenTask)
     self._tweenTask = nil
   end
-  ;
-  (table.clear)(self._animationRenders)
+  table.clear(self._animationRenders)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerBuilding.UnLock = function(self, zoneMask, zoneID2Animation)
-  -- function num : 0_2 , upvalues : _ENV
-  local v4 = (SeasonTool:GetInstance()):GetV4ByZoneMask(zoneMask, zoneID2Animation)
-  for zoneID,zoneRenderers in pairs(self._renderers) do
-    for _,renderer in pairs(zoneRenderers) do
+function SeasonSceneLayerBuilding:UnLock(zoneMask, zoneID2Animation)
+  local v4 = SeasonTool:GetInstance():GetV4ByZoneMask(zoneMask, zoneID2Animation)
+  for zoneID, zoneRenderers in pairs(self._renderers) do
+    for _, renderer in pairs(zoneRenderers) do
       if renderer.material then
-        (renderer.material):SetVector("_AreaUnlockMask", v4)
+        renderer.material:SetVector("_AreaUnlockMask", v4)
       end
     end
   end
@@ -49,59 +35,42 @@ SeasonSceneLayerBuilding.UnLock = function(self, zoneMask, zoneID2Animation)
   self:TweenV4()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerBuilding._CreateBuildingCover = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonSceneLayerBuilding:_CreateBuildingCover()
   if self._buildingLayer then
-    local zoneCount = (self._buildingLayer).childCount
-    if zoneCount > 0 then
+    local zoneCount = self._buildingLayer.childCount
+    if 0 < zoneCount then
       for i = 0, zoneCount - 1 do
-        local zone = (self._buildingLayer):GetChild(i)
+        local zone = self._buildingLayer:GetChild(i)
         if zone then
           local zoneid = i + 1
           local childCount = zone.childCount
           for j = 0, childCount - 1 do
             local building = zone:GetChild(j)
-            if (string.find)((string.lower)(building.name), (self._coverManager):CoverFlag()) then
-              (SeasonTool:GetInstance()):TryAddCover(zone, building)
+            if string.find(string.lower(building.name), self._coverManager:CoverFlag()) then
+              SeasonTool:GetInstance():TryAddCover(zone, building)
+            elseif string.find(string.lower(building.name), self._coverByNavManager:CoverFlag()) then
+              self:_AddCoverByNav(building)
+            elseif string.find(string.lower(building.name), self._showByNavManager:CoverFlag()) then
+              self:_AddShowByNav(building)
             else
-              if (string.find)((string.lower)(building.name), (self._coverByNavManager):CoverFlag()) then
-                self:_AddCoverByNav(building)
-              else
-                if (string.find)((string.lower)(building.name), (self._showByNavManager):CoverFlag()) then
-                  self:_AddShowByNav(building)
-                else
-                  local renderers = (building.gameObject):GetComponentsInChildren(typeof(UnityEngine.Renderer))
-                  if renderers.Length > 0 then
-                    for k = 0, renderers.Length - 1 do
-                      self:InsertMeshRender(zoneid, renderers[k])
-                    end
-                  end
+              local renderers = building.gameObject:GetComponentsInChildren(typeof(UnityEngine.Renderer))
+              if 0 < renderers.Length then
+                for k = 0, renderers.Length - 1 do
+                  self:InsertMeshRender(zoneid, renderers[k])
                 end
               end
             end
-            do
-              local grandChildCount = building.childCount
-              if grandChildCount > 0 then
-                for k = 0, grandChildCount - 1 do
-                  local grandChild = building:GetChild(k)
-                  if (string.find)((string.lower)(grandChild.name), (self._coverManager):CoverFlag()) then
-                    (SeasonTool:GetInstance()):TryAddCover(building, grandChild)
-                  else
-                    if (string.find)((string.lower)(grandChild.name), (self._coverByNavManager):CoverFlag()) then
-                      self:_AddCoverByNav(grandChild)
-                    else
-                      if (string.find)((string.lower)(grandChild.name), (self._showByNavManager):CoverFlag()) then
-                        self:_AddShowByNav(grandChild)
-                      end
-                    end
-                  end
+            local grandChildCount = building.childCount
+            if 0 < grandChildCount then
+              for k = 0, grandChildCount - 1 do
+                local grandChild = building:GetChild(k)
+                if string.find(string.lower(grandChild.name), self._coverManager:CoverFlag()) then
+                  SeasonTool:GetInstance():TryAddCover(building, grandChild)
+                elseif string.find(string.lower(grandChild.name), self._coverByNavManager:CoverFlag()) then
+                  self:_AddCoverByNav(grandChild)
+                elseif string.find(string.lower(grandChild.name), self._showByNavManager:CoverFlag()) then
+                  self:_AddShowByNav(grandChild)
                 end
-              end
-              do
-                -- DECOMPILER ERROR at PC160: LeaveBlock: unexpected jumping out DO_STMT
-
               end
             end
           end
@@ -111,50 +80,35 @@ SeasonSceneLayerBuilding._CreateBuildingCover = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerBuilding.TweenV4 = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._tweenTask = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self
+function SeasonSceneLayerBuilding:TweenV4()
+  self._tweenTask = GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT)
-    local v4 = (SeasonTool:GetInstance()):GetV4ByZoneMask(self._zoneMask)
-    for zoneID,zoneRenderers in pairs(self._renderers) do
-      for _,renderer in pairs(zoneRenderers) do
+    local v4 = SeasonTool:GetInstance():GetV4ByZoneMask(self._zoneMask)
+    for zoneID, zoneRenderers in pairs(self._renderers) do
+      for _, renderer in pairs(zoneRenderers) do
         if renderer.material then
-          (renderer.material):DOVector(v4, "_AreaUnlockMask", self._time)
+          renderer.material:DOVector(v4, "_AreaUnlockMask", self._time)
         end
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerBuilding._AddCoverByNav = function(self, coverTrans)
-  -- function num : 0_5 , upvalues : _ENV
+function SeasonSceneLayerBuilding:_AddCoverByNav(coverTrans)
   local name = coverTrans.name
-  local sArray = (string.split)(name, "|")
+  local sArray = string.split(name, "|")
   if #sArray == 2 then
     local areaName = sArray[2]
-    ;
-    (self._coverByNavManager):AddCover(coverTrans.parent, areaName)
+    self._coverByNavManager:AddCover(coverTrans.parent, areaName)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerBuilding._AddShowByNav = function(self, coverTrans)
-  -- function num : 0_6 , upvalues : _ENV
+function SeasonSceneLayerBuilding:_AddShowByNav(coverTrans)
   local name = coverTrans.name
-  local sArray = (string.split)(name, "|")
+  local sArray = string.split(name, "|")
   if #sArray == 3 then
     local areaName = sArray[2]
     local showOrHide = sArray[3]
-    ;
-    (self._showByNavManager):AddCover(coverTrans.parent, areaName, showOrHide)
+    self._showByNavManager:AddCover(coverTrans.parent, areaName, showOrHide)
   end
 end
-
-

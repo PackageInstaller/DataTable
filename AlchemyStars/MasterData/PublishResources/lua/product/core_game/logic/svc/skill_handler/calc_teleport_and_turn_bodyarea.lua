@@ -1,34 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_teleport_and_turn_bodyarea.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_TeleportAndTurnBodyArea", Object)
 SkillEffectCalc_TeleportAndTurnBodyArea = SkillEffectCalc_TeleportAndTurnBodyArea
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_TeleportAndTurnBodyArea.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_TeleportAndTurnBodyArea:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TeleportAndTurnBodyArea.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_TeleportAndTurnBodyArea:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
-  local utilData = (self._world):GetService("UtilData")
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+  local utilData = self._world:GetService("UtilData")
   local sourcePos = casterEntity:GetGridPosition()
-  local stageIndex = (skillEffectCalcParam.skillEffectParam):GetSkillEffectDamageStageIndex()
+  local stageIndex = skillEffectCalcParam.skillEffectParam:GetSkillEffectDamageStageIndex()
   local param = skillEffectCalcParam:GetSkillEffectParam()
   local ignoreBlock = param:IsIgnoreBlock()
   local fixedPos = param:GetFixedPosList()
   local targetID = targets[1]
-  local targetEntity = (self._world):GetEntityByID(targetID)
-  local boardSvc = (self._world):GetService("BoardLogic")
+  local targetEntity = self._world:GetEntityByID(targetID)
+  local boardSvc = self._world:GetService("BoardLogic")
   boardSvc:RemovePosBlock(casterEntity, sourcePos, BlockFlag.MonsterLand)
   local pos, dir = self:FindPosAndDir(targetEntity, fixedPos, ignoreBlock)
   local newBodyArea = self:ChangeBodyAreaByDir(dir)
@@ -38,36 +28,31 @@ SkillEffectCalc_TeleportAndTurnBodyArea.DoSkillEffectCalculator = function(self,
   local colorOld = utilData:FindPieceElement(sourcePos)
   local vDir = self:GetDirByDirType(dir)
   local skillEffectResultChangeBodyArea = SkillEffectResultChangeBodyArea:New(casterEntity:GetID(), newBodyArea)
-  ;
-  (table.insert)(results, skillEffectResultChangeBodyArea)
+  table.insert(results, skillEffectResultChangeBodyArea)
   local result = SkillEffectResult_Teleport:New(skillEffectCalcParam.casterEntityID, sourcePos, colorOld, pos, vDir, stageIndex)
-  ;
-  (table.insert)(results, result)
+  table.insert(results, result)
   return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TeleportAndTurnBodyArea.FindPosAndDir = function(self, targetEntity, fixedPosData, ignoreBlock)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_TeleportAndTurnBodyArea:FindPosAndDir(targetEntity, fixedPosData, ignoreBlock)
   local pos = targetEntity:GetGridPosition()
   local dir = targetEntity:GetGridDirection()
-  local bodyArea = (targetEntity:BodyArea()):GetArea()
-  local boardSvc = (self._world):GetService("BoardLogic")
+  local bodyArea = targetEntity:BodyArea():GetArea()
+  local boardSvc = self._world:GetService("BoardLogic")
   local minDisCount = 1
   local newPos = pos
   local newDir = dir
-  for index,v in ipairs(fixedPosData) do
+  for index, v in ipairs(fixedPosData) do
     local disCount = 0
     local vPos = v.pos
     local vDir = v.dir
     local vBodyArea = self:GetBodyAreaByDir(vDir)
-    for _,body in ipairs(vBodyArea) do
+    for _, body in ipairs(vBodyArea) do
       local tPos = vPos + body
       if boardSvc:IsPosBlock(tPos, BlockFlag.MonsterLand) and not ignoreBlock then
         disCount = disCount - 10000
       else
-        disCount = disCount + (Vector2.Distance)(tPos, pos)
+        disCount = disCount + Vector2.Distance(tPos, pos)
       end
     end
     if minDisCount < disCount then
@@ -79,67 +64,40 @@ SkillEffectCalc_TeleportAndTurnBodyArea.FindPosAndDir = function(self, targetEnt
   return newPos, newDir
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TeleportAndTurnBodyArea.GetBodyAreaByDir = function(self, dir)
-  -- function num : 0_3 , upvalues : _ENV
-  return ((_G.DirectionalRelativePosMap)[DirectionalRelativePosMapType.Classical6Grid])[dir]
+function SkillEffectCalc_TeleportAndTurnBodyArea:GetBodyAreaByDir(dir)
+  return _G.DirectionalRelativePosMap[DirectionalRelativePosMapType.Classical6Grid][dir]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TeleportAndTurnBodyArea.GetOffsetByDirType = function(self, dir)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillEffectCalc_TeleportAndTurnBodyArea:GetOffsetByDirType(dir)
   if dir == 1 then
     return Vector2(1, 0), Vector2(1, 0)
-  else
-    if dir == 2 then
-      return Vector2(0, 1), Vector2(0, 1)
-    else
-      if dir == 3 then
-        return Vector2(1, 1), Vector2(1, 1)
-      else
-        if dir == 4 then
-          return Vector2(1, 1), Vector2(1, 1)
-        end
-      end
-    end
+  elseif dir == 2 then
+    return Vector2(0, 1), Vector2(0, 1)
+  elseif dir == 3 then
+    return Vector2(1, 1), Vector2(1, 1)
+  elseif dir == 4 then
+    return Vector2(1, 1), Vector2(1, 1)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TeleportAndTurnBodyArea.GetDirByDirType = function(self, dir)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillEffectCalc_TeleportAndTurnBodyArea:GetDirByDirType(dir)
   if dir == 1 then
     return Vector2(0, -1)
-  else
-    if dir == 2 then
-      return Vector2(-1, 0)
-    else
-      if dir == 3 then
-        return Vector2(0, 1)
-      else
-        if dir == 4 then
-          return Vector2(1, 0)
-        end
-      end
-    end
+  elseif dir == 2 then
+    return Vector2(-1, 0)
+  elseif dir == 3 then
+    return Vector2(0, 1)
+  elseif dir == 4 then
+    return Vector2(1, 0)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TeleportAndTurnBodyArea.ChangeBodyAreaByDir = function(self, dir)
-  -- function num : 0_6 , upvalues : _ENV
-  local bodyAreaList = ((_G.DirectionalRelativePosMap)[DirectionalRelativePosMapType.Classical6Grid])[dir]
+function SkillEffectCalc_TeleportAndTurnBodyArea:ChangeBodyAreaByDir(dir)
+  local bodyAreaList = _G.DirectionalRelativePosMap[DirectionalRelativePosMapType.Classical6Grid][dir]
   local ret = {}
-  for i,pos in ipairs(bodyAreaList) do
+  for i, pos in ipairs(bodyAreaList) do
     local n = Vector2(pos.x, pos.y)
-    ;
-    (table.insert)(ret, n)
+    table.insert(ret, n)
   end
   return ret
 end
-
-

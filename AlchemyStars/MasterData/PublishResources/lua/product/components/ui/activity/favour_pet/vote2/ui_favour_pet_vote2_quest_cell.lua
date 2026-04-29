@@ -1,120 +1,73 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/favour_pet/vote2/ui_favour_pet_vote2_quest_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFavourPetVote2QuestCell", UICustomWidget)
 UIFavourPetVote2QuestCell = UIFavourPetVote2QuestCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFavourPetVote2QuestCell.SetData = function(self, campaign, tipsCallback)
-  -- function num : 0_0 , upvalues : _ENV
+function UIFavourPetVote2QuestCell:SetData(campaign, tipsCallback)
   self._campaign = campaign
-  self._cmptId = (UIFavourPetHelper.Component_Quest)(self._campaign, 2)
+  self._cmptId, self._component, self._componentInfo = UIFavourPetHelper.Component_Quest(self._campaign, 2)
   self._tipsCallback = tipsCallback
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2QuestCell._Refresh = function(self)
-  -- function num : 0_1
-  self._quest = self:_GetQuestInfo(1)
+function UIFavourPetVote2QuestCell:_Refresh()
+  self._quest, self._state = self:_GetQuestInfo(1)
   self:_AutoTake(self._state)
   self:_SetItems(self._state)
   self:_SetState(self._state)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2QuestCell._GetQuestInfo = function(self, index)
-  -- function num : 0_2 , upvalues : _ENV
-  local questInfo = (self._component):GetQuestInfo()
-  local questStatus = (self._component):GetCampaignQuestStatus(questInfo)
+function UIFavourPetVote2QuestCell:_GetQuestInfo(index)
+  local questInfo = self._component:GetQuestInfo()
+  local questStatus = self._component:GetCampaignQuestStatus(questInfo)
   local quest = questInfo[index]
   local q = quest:QuestInfo()
-  if not questStatus[quest] then
-    local s = CampaignQuestStatus.CQS_Over
-  end
+  local s = questStatus[quest] or CampaignQuestStatus.CQS_Over
   return q, s
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2QuestCell._AutoTake = function(self, state)
-  -- function num : 0_3 , upvalues : _ENV
+function UIFavourPetVote2QuestCell:_AutoTake(state)
   if state == CampaignQuestStatus.CQS_Completed then
     local questInfo = self._quest
-    ;
-    (self._component):Start_HandleQuestTake(questInfo.quest_id, function(res, rewards)
-    -- function num : 0_3_0 , upvalues : self
-    self:_OnGetRewards(res, rewards)
-  end
-)
+    self._component:Start_HandleQuestTake(questInfo.quest_id, function(res, rewards)
+      self:_OnGetRewards(res, rewards)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2QuestCell._OnGetRewards = function(self, res, rewards)
-  -- function num : 0_4 , upvalues : _ENV
+function UIFavourPetVote2QuestCell:_OnGetRewards(res, rewards)
   if res:GetSucc() then
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
+    UIActivityHelper.ShowUIGetRewards(rewards)
     self:_Refresh()
   else
-    ;
-    (self._campaign):CheckErrorCode(res.m_result)
+    self._campaign:CheckErrorCode(res.m_result)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2QuestCell._SetItems = function(self, state)
-  -- function num : 0_5 , upvalues : _ENV
-  if not (self._quest).rewards then
-    local items = {}
-  end
+function UIFavourPetVote2QuestCell:_SetItems(state)
+  local items = self._quest.rewards or {}
   if #items == 0 then
-    return 
+    return
   end
   local isFin = state == CampaignQuestStatus.CQS_Taken
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_rewards", "UIFavourPetVote2QuestItem", #items)
-  for i,v in ipairs(objs) do
+  local objs = UIWidgetHelper.SpawnObjects(self, "_rewards", "UIFavourPetVote2QuestItem", #items)
+  for i, v in ipairs(objs) do
     v:SetData(items[i], isFin, self._tipsCallback)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2QuestCell._SetState = function(self, state)
-  -- function num : 0_6 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-[CampaignQuestStatus.CQS_NotStart] = {}
-, 
-[CampaignQuestStatus.CQS_Accepted] = {"_txtNormal"}
-, 
-[CampaignQuestStatus.CQS_Completed] = {"_txtNormal"}
-, 
-[CampaignQuestStatus.CQS_Taken] = {"_txtFin"}
-, 
-[CampaignQuestStatus.CQS_Over] = {}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+function UIFavourPetVote2QuestCell:_SetState(state)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    [CampaignQuestStatus.CQS_NotStart] = {},
+    [CampaignQuestStatus.CQS_Accepted] = {"_txtNormal"},
+    [CampaignQuestStatus.CQS_Completed] = {"_txtNormal"},
+    [CampaignQuestStatus.CQS_Taken] = {"_txtFin"},
+    [CampaignQuestStatus.CQS_Over] = {}
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2QuestCell.RewardOnClick = function(self, go)
-  -- function num : 0_7
+function UIFavourPetVote2QuestCell:RewardOnClick(go)
   if self._tipsCallback then
-    if (self._quest).rewards then
-      local roleAsset = ((self._quest).rewards)[1]
-    end
-    ;
-    (self._tipsCallback)(roleAsset.assetid, (go.transform).position)
+    local roleAsset = self._quest.rewards and self._quest.rewards[1]
+    self._tipsCallback(roleAsset.assetid, go.transform.position)
   end
 end
-
-

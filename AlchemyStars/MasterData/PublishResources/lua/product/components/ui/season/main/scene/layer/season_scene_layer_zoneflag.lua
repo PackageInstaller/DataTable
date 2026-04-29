@@ -1,76 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/scene/layer/season_scene_layer_zoneflag.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonSceneLayerZoneFlag", SeasonSceneLayerBase)
 SeasonSceneLayerZoneFlag = SeasonSceneLayerZoneFlag
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonSceneLayerZoneFlag.Constructor = function(self, sceneRoot)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonSceneLayerZoneFlag:Constructor(sceneRoot)
   self._transforms = {}
-  self._zoneFlagLayer = (self._sceneRootTransform):Find(SeasonSceneLayer.ZoneFlag)
+  self._zoneFlagLayer = self._sceneRootTransform:Find(SeasonSceneLayer.ZoneFlag)
   self:_CacheTransform()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerZoneFlag.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.clear)(self._renderers)
+function SeasonSceneLayerZoneFlag:Dispose()
+  table.clear(self._renderers)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerZoneFlag.UnLock = function(self, zoneMask, zoneID2Animation)
-  -- function num : 0_2
+function SeasonSceneLayerZoneFlag:UnLock(zoneMask, zoneID2Animation)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerZoneFlag.GetZoneID = function(self, gameObject)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonSceneLayerZoneFlag:GetZoneID(gameObject)
   if gameObject then
-    for zoneID,transform in pairs(self._transforms) do
-      for _,t in pairs(transform) do
+    for zoneID, transform in pairs(self._transforms) do
+      for _, t in pairs(transform) do
         if gameObject.transform == t then
           return true, zoneID
         end
       end
     end
   end
-  do
-    return false, nil
-  end
+  return false, nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerZoneFlag._CacheTransform = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SeasonSceneLayerZoneFlag:_CacheTransform()
   if self._zoneFlagLayer then
-    local zoneCount = (self._zoneFlagLayer).childCount
-    if zoneCount > 0 then
+    local zoneCount = self._zoneFlagLayer.childCount
+    if 0 < zoneCount then
       for i = 0, zoneCount - 1 do
-        local zone = (self._zoneFlagLayer):GetChild(i)
+        local zone = self._zoneFlagLayer:GetChild(i)
         if zone then
           local zoneid = i + 1
           local childCount = zone.childCount
           for j = 0, childCount - 1 do
             local trans = zone:GetChild(j)
-            -- DECOMPILER ERROR at PC32: Confused about usage of register: R14 in 'UnsetPending'
-
-            if not (self._transforms)[zoneid] then
-              (self._transforms)[zoneid] = {}
+            if not self._transforms[zoneid] then
+              self._transforms[zoneid] = {}
             end
-            ;
-            (table.insert)((self._transforms)[zoneid], trans)
+            table.insert(self._transforms[zoneid], trans)
           end
         end
       end
     end
   end
 end
-
-

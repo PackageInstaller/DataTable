@@ -1,63 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/old/camera/aircraft_camera_controller_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-AircraftCameraType = {FixedField = 1, BezierPath = 2, Sphere = 3, Strange = 4}
+AircraftCameraType = {
+  FixedField = 1,
+  BezierPath = 2,
+  Sphere = 3,
+  Strange = 4
+}
 _enum("AircraftCameraType", AircraftCameraType)
 _class("AircraftCameraControllerBase", Object)
 AircraftCameraControllerBase = AircraftCameraControllerBase
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftCameraControllerBase.Constructor = function(self)
-  -- function num : 0_0
+function AircraftCameraControllerBase:Constructor()
   self._pos = nil
   self._rot = nil
   self._input = nil
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraControllerBase.Init = function(self, camera, input)
-  -- function num : 0_1
+function AircraftCameraControllerBase:Init(camera, input)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraControllerBase.GetType = function(self)
-  -- function num : 0_2
+function AircraftCameraControllerBase:GetType()
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraControllerBase.Update = function(self, deltaTimeMS)
-  -- function num : 0_3
+function AircraftCameraControllerBase:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraControllerBase.GetPos = function(self)
-  -- function num : 0_4
+function AircraftCameraControllerBase:GetPos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraControllerBase.GetRot = function(self)
-  -- function num : 0_5
+function AircraftCameraControllerBase:GetRot()
   return self._rot
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraControllerBase.Dispose = function(self)
-  -- function num : 0_6
+function AircraftCameraControllerBase:Dispose()
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraControllerBase.Reset = function(self)
-  -- function num : 0_7
+function AircraftCameraControllerBase:Reset()
 end
-
-

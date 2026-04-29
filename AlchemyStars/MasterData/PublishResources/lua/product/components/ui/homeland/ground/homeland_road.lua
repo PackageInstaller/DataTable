@@ -1,116 +1,79 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ground/homeland_road.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandRoad", Object)
 HomelandRoad = HomelandRoad
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandRoad.Constructor = function(self)
-  -- function num : 0_0
+function HomelandRoad:Constructor()
   self._brick = {}
   self._connect = {}
   self:Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandRoad.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandRoad:Init()
   for i = 1, 10 do
-    local go = ((UnityEngine.GameObject).Instantiate)(((UnityEngine.Resources).Load)("Brick"))
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (go.transform).position = Vector3(i, 0, 0)
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R6 in 'UnsetPending'
-
+    local go = UnityEngine.GameObject.Instantiate(UnityEngine.Resources.Load("Brick"))
+    go.transform.position = Vector3(i, 0, 0)
     if i < 4 then
-      (go.transform).eulerAngles = Vector3(0, 1, 0)
+      go.transform.eulerAngles = Vector3(0, 1, 0)
     end
-    local left = HomelandBrickEdge:New(((go.transform):Find("Left")).gameObject)
-    local right = HomelandBrickEdge:New(((go.transform):Find("Right")).gameObject)
-    local forward = HomelandBrickEdge:New(((go.transform):Find("Forward")).gameObject)
-    local after = HomelandBrickEdge:New(((go.transform):Find("After")).gameObject)
+    local left = HomelandBrickEdge:New(go.transform:Find("Left").gameObject)
+    local right = HomelandBrickEdge:New(go.transform:Find("Right").gameObject)
+    local forward = HomelandBrickEdge:New(go.transform:Find("Forward").gameObject)
+    local after = HomelandBrickEdge:New(go.transform:Find("After").gameObject)
     local brick = HomelandBrick:New(go, forward, after, left, right)
     self:AddBrick(brick)
   end
-  local brick = (self._brick)[7]
-  self:RemoveBrick((self._brick)[7])
-  ;
-  ((UnityEngine.GameObject).Destroy)(brick._build)
+  local brick = self._brick[7]
+  self:RemoveBrick(self._brick[7])
+  UnityEngine.GameObject.Destroy(brick._build)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandRoad.AddBrick = function(self, brick)
-  -- function num : 0_2 , upvalues : _ENV
+function HomelandRoad:AddBrick(brick)
   for i = 1, #self._brick do
-    if brick:Equal((self._brick)[i]) then
-      return 
+    if brick:Equal(self._brick[i]) then
+      return
     end
   end
   for i = 1, #self._brick do
-    local tmp = (self._brick)[i]
+    local tmp = self._brick[i]
     local isConnect, firstEdge, secondEdge = tmp:IsConnect(brick)
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R10 in 'UnsetPending'
-
     if isConnect then
-      (self._connect)[#self._connect + 1] = HomelandBrickConnect:New(tmp, firstEdge, brick, secondEdge)
+      self._connect[#self._connect + 1] = HomelandBrickConnect:New(tmp, firstEdge, brick, secondEdge)
     end
   end
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._brick)[#self._brick + 1] = brick
+  self._brick[#self._brick + 1] = brick
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandRoad.RemoveBrick = function(self, brick)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandRoad:RemoveBrick(brick)
   for i = #self._connect, 1, -1 do
-    local connect = (self._connect)[i]
+    local connect = self._connect[i]
     if connect:Contain(brick) then
       connect:Destroy()
-      ;
-      (table.remove)(self._connect, i)
+      table.remove(self._connect, i)
     end
   end
   for i = 1, #self._brick do
-    if brick:Equal((self._brick)[i]) then
+    if brick:Equal(self._brick[i]) then
       brick:Destroy()
-      ;
-      (table.remove)(self._brick, i)
-      return 
+      table.remove(self._brick, i)
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandRoad.ChangeBrick = function(self, brick)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandRoad:ChangeBrick(brick)
   for i = #self._connect, 1, -1 do
-    local connect = (self._connect)[i]
+    local connect = self._connect[i]
     if connect:Contain(brick) then
       connect:Destroy()
-      ;
-      (table.remove)(self._connect, i)
+      table.remove(self._connect, i)
     end
   end
   for i = 1, #self._brick do
-    local tmp = (self._brick)[i]
+    local tmp = self._brick[i]
     if not tmp:Equal(brick) then
       local isConnect, firstEdge, secondEdge = tmp:IsConnect(brick)
-      -- DECOMPILER ERROR at PC48: Confused about usage of register: R10 in 'UnsetPending'
-
       if isConnect then
-        (self._connect)[#self._connect + 1] = HomelandBrickConnect:New(tmp, firstEdge, brick, secondEdge)
+        self._connect[#self._connect + 1] = HomelandBrickConnect:New(tmp, firstEdge, brick, secondEdge)
       end
     end
   end
 end
-
-

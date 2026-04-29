@@ -1,72 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_intr_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipIntrController", UIController)
 UIPetEquipIntrController = UIPetEquipIntrController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipIntrController.Constructor = function(self)
-  -- function num : 0_0
+function UIPetEquipIntrController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipIntrController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIPetEquipIntrController:OnShow(uiParams)
   self:_GetComponents()
   self._petId = uiParams[1]
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipIntrController._GetComponents = function(self)
-  -- function num : 0_2
+function UIPetEquipIntrController:_GetComponents()
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._desc = self:GetUIComponent("UILocalizationText", "desc")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipIntrController._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet_equip_view)[self._petId]
+function UIPetEquipIntrController:_OnValue()
+  local cfg = Cfg.cfg_pet_equip_view[self._petId]
   if cfg then
     local icon = cfg.Icon
     local name = cfg.Name
     local desc = cfg.Intr
-    ;
-    (self._icon):LoadImage(icon)
-    ;
-    (self._name):SetText((StringTable.Get)(name))
-    ;
-    (self._desc):SetText((StringTable.Get)(desc))
+    self._icon:LoadImage(icon)
+    self._name:SetText(StringTable.Get(name))
+    self._desc:SetText(StringTable.Get(desc))
   else
-    do
-      ;
-      (Log.error)("###[UIPetEquipIntrController]cfg is nil ! id --> ", self._petId)
-    end
+    Log.error("###[UIPetEquipIntrController]cfg is nil ! id --> ", self._petId)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipIntrController.OnHide = function(self)
-  -- function num : 0_4
+function UIPetEquipIntrController:OnHide()
   self._icon = nil
   self._name = nil
   self._desc = nil
   self._petId = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipIntrController.bgOnClick = function(self, go)
-  -- function num : 0_5
+function UIPetEquipIntrController:bgOnClick(go)
   self:CloseDialog()
 end
-
-

@@ -1,48 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_summon_on_pickup_pos_if_empty_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlaySummonOnPickupPosIfEmptyInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlaySummonOnPickupPosIfEmptyInstruction = SkillPreviewPlaySummonOnPickupPosIfEmptyInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlaySummonOnPickupPosIfEmptyInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlaySummonOnPickupPosIfEmptyInstruction:Constructor(params)
   self._trapID = tonumber(params.trapID)
   self._effectID = tonumber(params.effectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlaySummonOnPickupPosIfEmptyInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlaySummonOnPickupPosIfEmptyInstruction:GetCacheResource()
   return {
-{((Cfg.cfg_effect)[self._effectID]).ResPath, 1}
-}
+    {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlaySummonOnPickupPosIfEmptyInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPreviewPlaySummonOnPickupPosIfEmptyInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = casterEntity:GetOwnerWorld()
   local entitySvc = world:GetService("RenderEntity")
   local pickUpPos = previewContext:GetPickUpPos()
-  local boardCmpt = (world:GetBoardEntity()):Board()
+  local boardCmpt = world:GetBoardEntity():Board()
   local traps = boardCmpt:GetPieceEntities(pickUpPos, function(e)
-    -- function num : 0_2_0 , upvalues : casterEntity, _ENV, self
     local isOwner = false
     if e:HasSummoner() then
-      if (e:Summoner()):GetSummonerEntityID() == casterEntity:GetID() then
+      if e:Summoner():GetSummonerEntityID() == casterEntity:GetID() then
         isOwner = true
       else
-        local summonerID = (e:Summoner()):GetSummonerEntityID()
+        local summonerID = e:Summoner():GetSummonerEntityID()
         if casterEntity:HasPet() then
-          local cTeam = ((casterEntity:Pet()):GetOwnerTeamEntity()):Team()
+          local cTeam = casterEntity:Pet():GetOwnerTeamEntity():Team()
           local entities = cTeam:GetTeamPetEntities()
-          for _,petEntity in ipairs(entities) do
+          for _, petEntity in ipairs(entities) do
             if summonerID == petEntity:GetID() then
               isOwner = true
               break
@@ -51,16 +40,12 @@ SkillPreviewPlaySummonOnPickupPosIfEmptyInstruction.DoInstruction = function(sel
         end
       end
     else
-      do
-        isOwner = true
-        do return isOwner and (((e:TrapRender()):GetTrapID() == self._trapID and not e:HasDeadMark())) end
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
-      end
+      isOwner = true
     end
-  end
-)
+    return isOwner and e:HasTrapRender() and e:TrapRender():GetTrapID() == self._trapID and not e:HasDeadMark()
+  end)
   if #traps == 0 then
-    local effectEntity = (world:GetService("Effect")):CreateWorldPositionEffect(self._effectID, pickUpPos)
+    local effectEntity = world:GetService("Effect"):CreateWorldPositionEffect(self._effectID, pickUpPos)
     local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
     previewPickUpComponent:AddPickUpEffectEntityID(effectEntity:GetID())
     previewContext:SetScopeResult(nil)
@@ -68,5 +53,3 @@ SkillPreviewPlaySummonOnPickupPosIfEmptyInstruction.DoInstruction = function(sel
     previewContext:SetTargetEntityIDList(targetList)
   end
 end
-
-

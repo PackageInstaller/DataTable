@@ -1,59 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_target_snipe_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayTargetSnipeEffectInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayTargetSnipeEffectInstruction = SkillPreviewPlayTargetSnipeEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayTargetSnipeEffectInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewPlayTargetSnipeEffectInstruction:Constructor(params)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayTargetSnipeEffectInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayTargetSnipeEffectInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = previewContext:GetWorld()
   local targetIDList = previewContext:GetTargetEntityIDList()
-  targetIDList = (table.unique)(targetIDList)
+  targetIDList = table.unique(targetIDList)
   local effectEntityList = {}
   local effectSvc = world:GetService("Effect")
   local renderBattleService = world:GetService("RenderBattle")
-  local element = (casterEntity:Element()):GetPrimaryType()
+  local element = casterEntity:Element():GetPrimaryType()
   local previewIndex = previewContext:_GetPreviewIndex()
-  for _,id in pairs(targetIDList) do
+  for _, id in pairs(targetIDList) do
     local entity = world:GetEntityByID(id)
     if entity and entity:HasTeam() then
       entity = entity:GetTeamLeaderPetEntity()
     end
     local effectEntity = effectSvc:CreateEffect(BattleConst.ChainSkillSnipeEffectID, entity, true)
     renderBattleService:PlaySnipeEffectAnimation(effectEntity, element)
-    ;
-    (table.insert)(effectEntityList, effectEntity)
+    table.insert(effectEntityList, effectEntity)
   end
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(self._PlaySnipeEffect, self, effectEntityList, element, world, previewIndex)
+  GameGlobal.TaskManager():CoreGameStartTask(self._PlaySnipeEffect, self, effectEntityList, element, world, previewIndex)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayTargetSnipeEffectInstruction._PlaySnipeEffect = function(self, TT, effectList, element, world, previewIndex)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPreviewPlayTargetSnipeEffectInstruction:_PlaySnipeEffect(TT, effectList, element, world, previewIndex)
   local renderBattleService = world:GetService("RenderBattle")
   local previewActiveSkillService = world:GetService("PreviewActiveSkill")
-  while 1 do
+  while true do
     YIELD(TT, 1000)
     local newPreviewIndex = previewActiveSkillService:GetPreviewIndex()
     if newPreviewIndex ~= previewIndex then
-      return 
+      return
     end
-    for i,effectEntity in ipairs(effectList) do
+    for i, effectEntity in ipairs(effectList) do
       renderBattleService:PlaySnipeEffectAnimation(effectEntity, element)
     end
   end
 end
-
-

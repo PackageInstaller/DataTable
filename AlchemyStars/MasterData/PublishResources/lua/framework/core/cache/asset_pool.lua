@@ -1,160 +1,105 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/cache/asset_pool.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_pool")
 _class("AssetPool", BasePool)
 AssetPool = AssetPool
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AssetPool.Constructor = function(self, poolType, limit)
-  -- function num : 0_0
+function AssetPool:Constructor(poolType, limit)
   self.nameToCache = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AssetPool.Dispose = function(self)
-  -- function num : 0_1
+function AssetPool:Dispose()
   self:Clear()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AssetPool.Clear = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((AssetPool.super).Clear)(self)
-  ;
-  (table.clear)(self.nameToCache)
+function AssetPool:Clear()
+  AssetPool.super.Clear(self)
+  table.clear(self.nameToCache)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AssetPool.GetCount = function(self, name)
-  -- function num : 0_3
-  local resRequest = (self.nameToCache)[name]
+function AssetPool:GetCount(name)
+  local resRequest = self.nameToCache[name]
   if resRequest then
     return 1
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AssetPool.Use = function(self, name)
-  -- function num : 0_4
+function AssetPool:Use(name)
   self.curUseCount = self.curUseCount + 1
-  if self.maxUsedCount < self.curUseCount then
+  if self.curUseCount > self.maxUsedCount then
     self.maxUsedCount = self.curUseCount
   end
-  local t = (self.nameToMaxUsedCount)[name]
+  local t = self.nameToMaxUsedCount[name]
   if not t then
     t = {curUseCount = 0, maxUsedCount = 0}
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.nameToMaxUsedCount)[name] = t
+    self.nameToMaxUsedCount[name] = t
     t.curUseCount = t.curUseCount + 1
-    if t.maxUsedCount < t.curUseCount then
+    if t.curUseCount > t.maxUsedCount then
       t.maxUsedCount = t.curUseCount
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AssetPool.UnUse = function(self, name)
-  -- function num : 0_5 , upvalues : _ENV
+function AssetPool:UnUse(name)
   self.curUseCount = self.curUseCount - 1
-  local t = (self.nameToMaxUsedCount)[name]
+  local t = self.nameToMaxUsedCount[name]
   if t then
     local cnt = t.curUseCount - 1
     t.curUseCount = cnt < 0 and 0 or cnt
   else
-    do
-      ;
-      (Log.fatal)("[Pool] UnUse, cannot find name=", name, " in self.nameToMaxUsedCount")
-    end
+    Log.fatal("[Pool] UnUse, cannot find name=", name, " in self.nameToMaxUsedCount")
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AssetPool.Move = function(self, name, moveCount)
-  -- function num : 0_6 , upvalues : _ENV
-  local cacheObj = (self.nameToCache)[name]
+function AssetPool:Move(name, moveCount)
+  local cacheObj = self.nameToCache[name]
   if not cacheObj then
-    (Log.fatal)("[Pool] AssetPool:Move Error, cannot find name,", name)
-    return 
+    Log.fatal("[Pool] AssetPool:Move Error, cannot find name,", name)
+    return
   end
   if moveCount ~= 1 then
-    (Log.fatal)("[Pool] AssetPool:Move Error, moveCount ,", moveCount)
-    return 
+    Log.fatal("[Pool] AssetPool:Move Error, moveCount ,", moveCount)
+    return
   end
-  local index = (table.ikey)(self.queue, cacheObj)
+  local index = table.ikey(self.queue, cacheObj)
   if index < #self.queue then
-    (table.remove)(self.queue, index)
-    ;
-    (table.insert)(self.queue, cacheObj)
+    table.remove(self.queue, index)
+    table.insert(self.queue, cacheObj)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AssetPool.Pop = function(self, name)
-  -- function num : 0_7 , upvalues : _ENV
+function AssetPool:Pop(name)
   self.total = self.total + 1
-  local cacheObj = (self.nameToCache)[name]
+  local cacheObj = self.nameToCache[name]
   if not cacheObj then
     return nil
   end
   self.hit = self.hit + 1
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.nameToCache)[name] = nil
-  local index = (table.ikey)(self.queue, cacheObj)
-  ;
-  (table.remove)(self.queue, index)
+  self.nameToCache[name] = nil
+  local index = table.ikey(self.queue, cacheObj)
+  table.remove(self.queue, index)
   return cacheObj
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AssetPool.Push = function(self, name, resRequest)
-  -- function num : 0_8 , upvalues : _ENV
-  local cacheObj = (self.nameToCache)[name]
+function AssetPool:Push(name, resRequest)
+  local cacheObj = self.nameToCache[name]
   if cacheObj then
-    (Log.warn)("[Pool] AssetPool:Push, had same asset in cache,", name)
+    Log.warn("[Pool] AssetPool:Push, had same asset in cache,", name)
     resRequest:Dispose()
     resRequest = nil
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.nameToCache)[name] = resRequest
-  ;
-  (table.insert)(self.queue, resRequest)
-  if self.limitn > -1 and self.limitn < #self.queue then
-    local oldestCache = (table.remove)(self.queue, 1)
+  self.nameToCache[name] = resRequest
+  table.insert(self.queue, resRequest)
+  if self.limitn > -1 and #self.queue > self.limitn then
+    local oldestCache = table.remove(self.queue, 1)
     self:RemoveFromCacheTable(oldestCache.m_Name)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AssetPool.RemoveFromCacheTable = function(self, name)
-  -- function num : 0_9 , upvalues : _ENV
-  local cacheObj = (self.nameToCache)[name]
+function AssetPool:RemoveFromCacheTable(name)
+  local cacheObj = self.nameToCache[name]
   assert(cacheObj)
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.nameToCache)[name] = nil
+  self.nameToCache[name] = nil
   cacheObj:Dispose()
   cacheObj = nil
 end
-
-

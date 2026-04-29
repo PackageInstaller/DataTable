@@ -1,61 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/item/ui_season_maze_active_item_unit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeActiveItemUnit", UICustomWidget)
 UISeasonMazeActiveItemUnit = UISeasonMazeActiveItemUnit
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeActiveItemUnit.InitWidget = function(self)
-  -- function num : 0_0
+function UISeasonMazeActiveItemUnit:InitWidget()
   self._iconImg = self:GetUIComponent("RawImageLoader", "Icon")
   self._countTex = self:GetUIComponent("UILocalizationText", "Count")
   self._selectGo = self:GetGameObject("Select")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActiveItemUnit.OnShow = function(self)
-  -- function num : 0_1
+function UISeasonMazeActiveItemUnit:OnShow()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActiveItemUnit.SetData = function(self, idx, id, count, icon, callback)
-  -- function num : 0_2
+function UISeasonMazeActiveItemUnit:SetData(idx, id, count, icon, callback)
   self._idx = idx
   self._id = id
   self._count = count
   self._callback = callback
-  ;
-  (self._iconImg):LoadImage(icon)
-  ;
-  (self._countTex):SetText(self._count)
+  self._iconImg:LoadImage(icon)
+  self._countTex:SetText(self._count)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActiveItemUnit.OnHide = function(self)
-  -- function num : 0_3
+function UISeasonMazeActiveItemUnit:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActiveItemUnit.BtnOnClick = function(self, go)
-  -- function num : 0_4
+function UISeasonMazeActiveItemUnit:BtnOnClick(go)
   if self._callback then
-    (self._callback)(self._id, self._count, (go.transform).position)
+    self._callback(self._id, self._count, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActiveItemUnit.Select = function(self, id)
-  -- function num : 0_5
-  (self._selectGo):SetActive(id == self._id)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UISeasonMazeActiveItemUnit:Select(id)
+  self._selectGo:SetActive(id == self._id)
 end
-
-

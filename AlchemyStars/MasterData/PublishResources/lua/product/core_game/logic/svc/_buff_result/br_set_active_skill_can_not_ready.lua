@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_set_active_skill_can_not_ready.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultSetActiveSkillCanNotReady", BuffResultBase)
 BuffResultSetActiveSkillCanNotReady = BuffResultSetActiveSkillCanNotReady
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultSetActiveSkillCanNotReady.Constructor = function(self, buffSeq, isSetCanNotReady, isReady, extraSkillID)
-  -- function num : 0_0
+function BuffResultSetActiveSkillCanNotReady:Constructor(buffSeq, isSetCanNotReady, isReady, extraSkillID)
   self._buffseq = buffSeq
   self._isSetCanNotReady = isSetCanNotReady
   self._isReady = isReady
   self._extraSkillID = extraSkillID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetActiveSkillCanNotReady.IsCanNotReady = function(self)
-  -- function num : 0_1
+function BuffResultSetActiveSkillCanNotReady:IsCanNotReady()
   return self._isSetCanNotReady
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetActiveSkillCanNotReady.GetBuffSeq = function(self)
-  -- function num : 0_2
+function BuffResultSetActiveSkillCanNotReady:GetBuffSeq()
   return self._buffseq
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetActiveSkillCanNotReady.IsReady = function(self)
-  -- function num : 0_3
+function BuffResultSetActiveSkillCanNotReady:IsReady()
   return self._isReady
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetActiveSkillCanNotReady.GetExtraSkillID = function(self)
-  -- function num : 0_4
+function BuffResultSetActiveSkillCanNotReady:GetExtraSkillID()
   return self._extraSkillID
 end
-
-

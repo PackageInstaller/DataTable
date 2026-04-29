@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/entity_svc_season_maze_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("entity_svc_l")
 _class("LogicEntityService_SeasonMaze", LogicEntityService)
 LogicEntityService_SeasonMaze = LogicEntityService_SeasonMaze
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LogicEntityService_SeasonMaze._InitPetAttributes = function(self, entity, petData, maxCastPower)
-  -- function num : 0_0 , upvalues : _ENV
+function LogicEntityService_SeasonMaze:_InitPetAttributes(entity, petData, maxCastPower)
   local maxhp = petData:GetPetHealth()
   local hp = petData:GetPetCurHealth()
   local attack = petData:GetPetAttack()
@@ -38,11 +31,11 @@ LogicEntityService_SeasonMaze._InitPetAttributes = function(self, entity, petDat
   attributeComponent:Modify("MaxHP", maxhp)
   attributeComponent:Modify("AfterDamage", afterDamage)
   attributeComponent:Modify("ExElementParam", exElementParam)
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local extraActiveSkill = petData:GetPetExtraActiveSkill()
-  if extraActiveSkill and #extraActiveSkill > 0 then
+  if extraActiveSkill and 0 < #extraActiveSkill then
     local configService = self._configService
-    for index,extraSkillID in ipairs(extraActiveSkill) do
+    for index, extraSkillID in ipairs(extraActiveSkill) do
       local activeSkillConfigData = configService:GetSkillConfigData(extraSkillID)
       if activeSkillConfigData then
         local skillTriggerType = activeSkillConfigData:GetSkillTriggerType()
@@ -59,20 +52,15 @@ LogicEntityService_SeasonMaze._InitPetAttributes = function(self, entity, petDat
       end
     end
   end
-  do
-    hp = self:_HandleOutsideAttributes(entity)
-    return hp, maxhp, defense
-  end
+  hp, maxhp, defense = self:_HandleOutsideAttributes(entity)
+  return hp, maxhp, defense
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicEntityService_SeasonMaze._HandleOutsideAttributes = function(self, petEntity)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._world):HasSeasonMazeLogic() then
-    local seasonMazeComponent = (self._world):SeasonMazeLogic()
+function LogicEntityService_SeasonMaze:_HandleOutsideAttributes(petEntity)
+  if self._world:HasSeasonMazeLogic() then
+    local seasonMazeComponent = self._world:SeasonMazeLogic()
     local modifyID = BattleConst.AttributesModifierIDBySeasonMaze
-    local buffLSvc = (self._world):GetService("BuffLogic")
+    local buffLSvc = self._world:GetService("BuffLogic")
     local atkRatio = seasonMazeComponent:GetOutsideAttributeByType(SeasonMazeAttrType.SMET_PetAttackRatio)
     if atkRatio then
       atkRatio = atkRatio * 0.001
@@ -99,13 +87,9 @@ LogicEntityService_SeasonMaze._HandleOutsideAttributes = function(self, petEntit
       buffLSvc:ChangeSkillIncrease(petEntity, modifyID, ModifySkillIncreaseParamType.ActiveSkill, activeParam)
     end
   end
-  do
-    local attributesCmpt = petEntity:Attributes()
-    local curHP = attributesCmpt:GetAttribute("HP")
-    local maxHP = attributesCmpt:CalcMaxHp()
-    local defence = attributesCmpt:GetDefence()
-    return curHP, maxHP, defence
-  end
+  local attributesCmpt = petEntity:Attributes()
+  local curHP = attributesCmpt:GetAttribute("HP")
+  local maxHP = attributesCmpt:CalcMaxHp()
+  local defence = attributesCmpt:GetDefence()
+  return curHP, maxHP, defence
 end
-
-

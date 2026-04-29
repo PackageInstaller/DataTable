@@ -1,38 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_pet_luoyi.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_PetLuoYi", PickUpPolicy_Base)
 PickUpPolicy_PetLuoYi = PickUpPolicy_PetLuoYi
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_PetLuoYi.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0
+function PickUpPolicy_PetLuoYi:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
   local activeSkillID = calcParam.activeSkillID
   local policyParam = calcParam.policyParam
-  local casterPos = (petEntity:GridLocation()).Position
+  local casterPos = petEntity:GridLocation().Position
   local validPosIdxList, validPosList = self:_CalcPickUpValidGridList(petEntity, activeSkillID)
   local pickPosList, atkPosList, targetIds, extraParam = self:_CalPickPosPolicy_PetLuoYi(petEntity, activeSkillID, casterPos, validPosIdxList)
   return pickPosList, atkPosList, targetIds, extraParam
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetLuoYi._CalPickPosPolicy_PetLuoYi = function(self, petEntity, activeSkillID, casterPos, validPosIdxList)
-  -- function num : 0_1 , upvalues : _ENV
+function PickUpPolicy_PetLuoYi:_CalPickPosPolicy_PetLuoYi(petEntity, activeSkillID, casterPos, validPosIdxList)
   local env = self:_GetPickUpPolicyEnv()
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local boardService = (self._world):GetService("BoardLogic")
-  local configService = (self._world):GetService("Config")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local boardService = self._world:GetService("BoardLogic")
+  local configService = self._world:GetService("Config")
   local ringMax = boardService:GetCurBoardRingMax()
-  local udsvc = (self._world):GetService("UtilData")
+  local udsvc = self._world:GetService("UtilData")
   local skillConfigData = configService:GetSkillConfigData(activeSkillID)
   local casterPosIndex = self:_Pos2Index(casterPos)
   local needCheckPower = false
-  local powerIfNoTrap, tarTrapId = nil, nil
+  local powerIfNoTrap, tarTrapId
   local extraParam = skillConfigData:GetSkillTriggerExtraParam()
   if extraParam and extraParam[SkillTriggerTypeExtraParam.PickPosNoCfgTrap] then
     needCheckPower = true
@@ -43,75 +33,47 @@ PickUpPolicy_PetLuoYi._CalPickPosPolicy_PetLuoYi = function(self, petEntity, act
       tarTrapId = pickParams[3]
     end
   end
-  do
-    local legendPower = 0
-    do
-      if needCheckPower then
-        local attributeCmpt = petEntity:Attributes()
-        if attributeCmpt then
-          legendPower = attributeCmpt:GetAttribute("LegendPower")
-        end
-      end
-      local pickExtraParam = {}
-      local firstPickPos = nil
-      for _,off in ipairs(ringMax) do
-        local posIdx = self:_PosIndexAddOffset(casterPosIndex, off)
-        if validPosIdxList[posIdx] then
-          local pos = self:_Index2Pos(posIdx)
-          local color = (env.BoardPosPieces)[posIdx]
-          if color and color ~= PieceType.Yellow then
-            if needCheckPower then
-              local bPickTrap = false
-              local traps = udsvc:GetTrapsAtPos(pos)
-              if traps then
-                for index,e in ipairs(traps) do
-                  if tarTrapId == (e:Trap()):GetTrapID() then
-                    bPickTrap = true
-                    break
-                  end
-                end
-              end
-              do
-                do
-                  do
-                    if not bPickTrap and powerIfNoTrap <= legendPower then
-                      firstPickPos = pos
-                      ;
-                      (table.insert)(pickExtraParam, SkillTriggerTypeExtraParam.PickPosNoCfgTrap)
-                      break
-                    end
-                    firstPickPos = pos
-                    do break end
-                    -- DECOMPILER ERROR at PC122: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC122: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC122: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC122: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC122: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC122: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC122: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC122: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
-                end
+  local legendPower = 0
+  if needCheckPower then
+    local attributeCmpt = petEntity:Attributes()
+    if attributeCmpt then
+      legendPower = attributeCmpt:GetAttribute("LegendPower")
+    end
+  end
+  local pickExtraParam = {}
+  local firstPickPos
+  for _, off in ipairs(ringMax) do
+    local posIdx = self:_PosIndexAddOffset(casterPosIndex, off)
+    if validPosIdxList[posIdx] then
+      local pos = self:_Index2Pos(posIdx)
+      local color = env.BoardPosPieces[posIdx]
+      if color and color ~= PieceType.Yellow then
+        if needCheckPower then
+          local bPickTrap = false
+          local traps = udsvc:GetTrapsAtPos(pos)
+          if traps then
+            for index, e in ipairs(traps) do
+              if tarTrapId == e:Trap():GetTrapID() then
+                bPickTrap = true
+                break
               end
             end
           end
+          if not bPickTrap and powerIfNoTrap <= legendPower then
+            firstPickPos = pos
+            table.insert(pickExtraParam, SkillTriggerTypeExtraParam.PickPosNoCfgTrap)
+            break
+          end
+        else
+          firstPickPos = pos
+          break
         end
-      end
-      if firstPickPos then
-        return {firstPickPos}, {firstPickPos}, {}, pickExtraParam
-      else
-        return {}, {}, {}, {}
       end
     end
   end
+  if firstPickPos then
+    return {firstPickPos}, {firstPickPos}, {}, pickExtraParam
+  else
+    return {}, {}, {}, {}
+  end
 end
-
-

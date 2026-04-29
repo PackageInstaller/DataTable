@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/material_flash_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MaterialFlashSystem_Render", ReactiveSystem)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-MaterialFlashSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function MaterialFlashSystem_Render:Constructor(world)
   self.world = world
-  self.group = world:GetGroup((world.BW_WEMatchers).MaterialFlash)
-  self.timeService = (self.world):GetService("Time")
+  self.group = world:GetGroup(world.BW_WEMatchers.MaterialFlash)
+  self.timeService = self.world:GetService("Time")
   self.matDic = {}
   self.OrgColrDic = {}
   self.FlashShaderColorNameDic = {}
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.FlashShaderColorNameDic)["H3D/Actor/Matcap-Standard"] = "_Color"
+  self.FlashShaderColorNameDic["H3D/Actor/Matcap-Standard"] = "_Color"
   self._useDetail = "DETAIL_ON"
   self.flashColor = Color.white
   self.flashColorRatio = 1
@@ -26,118 +16,88 @@ MaterialFlashSystem_Render.Constructor = function(self, world)
   self.flashColorRatioMin = 0.9
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialFlashSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local c = Collector:New({world:GetGroup((world.BW_WEMatchers).MaterialFlash)}, {"AddedOrRemoved"})
+function MaterialFlashSystem_Render:GetTrigger(world)
+  local c = Collector:New({
+    world:GetGroup(world.BW_WEMatchers.MaterialFlash)
+  }, {
+    "AddedOrRemoved"
+  })
   return c
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialFlashSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2
+function MaterialFlashSystem_Render:Filter(entity)
   return true
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialFlashSystem_Render.Execute = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((MaterialFlashSystem_Render.super).Execute)(self)
+function MaterialFlashSystem_Render:Execute()
+  MaterialFlashSystem_Render.super.Execute(self)
   if self.towardMax then
-    self.flashColorRatio = self.flashColorRatio + (self.timeService):GetDeltaTime()
-    if self.flashColorRatioMax <= self.flashColorRatio then
+    self.flashColorRatio = self.flashColorRatio + self.timeService:GetDeltaTime()
+    if self.flashColorRatio >= self.flashColorRatioMax then
       self.flashColorRatio = self.flashColorRatioMax
       self.towardMax = false
     end
   else
-    self.flashColorRatio = self.flashColorRatio - (self.timeService):GetDeltaTime()
+    self.flashColorRatio = self.flashColorRatio - self.timeService:GetDeltaTime()
     if self.flashColorRatio <= self.flashColorRatioMin then
       self.flashColorRatio = self.flashColorRatioMin
       self.towardMax = true
     end
   end
-  ;
-  (self.group):HandleForeach(self, self.HandleUpdateFlash)
+  self.group:HandleForeach(self, self.HandleUpdateFlash)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialFlashSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_4
+function MaterialFlashSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     local e = entities[i]
     self:HandleEntity(e)
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialFlashSystem_Render.HandleEntity = function(self, e)
-  -- function num : 0_5
+function MaterialFlashSystem_Render:HandleEntity(e)
   if e:HasMaterialFlash() then
     local matList = {}
     if e:HasView() then
       self:GetMatList(e, matList)
     end
-    if matList and #matList > 0 then
+    if matList and 0 < #matList then
       for i = 1, #matList do
-        -- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
-        (self.OrgColrDic)[matList[i]] = (matList[i]):GetColor((self.FlashShaderColorNameDic)[((matList[i]).shader).name])
+        self.OrgColrDic[matList[i]] = matList[i]:GetColor(self.FlashShaderColorNameDic[matList[i].shader.name])
       end
-      -- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.matDic)[e] = matList
+      self.matDic[e] = matList
     end
   else
-    do
-      local matList = (self.matDic)[e]
-      if matList then
-        for i = 1, #matList do
-          local mat = matList[i]
-          mat:SetColor((self.FlashShaderColorNameDic)[(mat.shader).name], (self.OrgColrDic)[mat])
-          -- DECOMPILER ERROR at PC55: Confused about usage of register: R8 in 'UnsetPending'
-
-          ;
-          (self.OrgColrDic)[mat] = nil
-          mat:DisableKeyword(self._useDetail)
-        end
-      end
-      do
-        self:EnableBoundView(e, false)
-        -- DECOMPILER ERROR at PC65: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self.matDic)[e] = nil
+    local matList = self.matDic[e]
+    if matList then
+      for i = 1, #matList do
+        local mat = matList[i]
+        mat:SetColor(self.FlashShaderColorNameDic[mat.shader.name], self.OrgColrDic[mat])
+        self.OrgColrDic[mat] = nil
+        mat:DisableKeyword(self._useDetail)
       end
     end
+    self:EnableBoundView(e, false)
+    self.matDic[e] = nil
   end
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialFlashSystem_Render.GetMatList = function(self, e, matList)
-  -- function num : 0_6 , upvalues : _ENV
-  local rendererList = (((e:View()).ViewWrapper).GameObject):GetComponentsInChildren(typeof(UnityEngine.SkinnedMeshRenderer), true)
+function MaterialFlashSystem_Render:GetMatList(e, matList)
+  local rendererList = e:View().ViewWrapper.GameObject:GetComponentsInChildren(typeof(UnityEngine.SkinnedMeshRenderer), true)
   for i = 0, rendererList.Length - 1 do
-    local childMatList = nil
+    local childMatList
     local renderer = rendererList[i]
     local mat = self:GetMaterial(renderer)
-    if (string.find)(mat.name, "Instance") then
+    if string.find(mat.name, "Instance") then
       childMatList = renderer.sharedMaterials
     else
-      childMatList = (rendererList[i]).materials
+      childMatList = rendererList[i].materials
       renderer.sharedMaterials = childMatList
     end
     for j = 0, childMatList.Length - 1 do
       local matj = childMatList[j]
       if matj then
-        local shaderName = (matj.shader).name
-        if (self.FlashShaderColorNameDic)[shaderName] then
+        local shaderName = matj.shader.name
+        if self.FlashShaderColorNameDic[shaderName] then
           matList[#matList + 1] = matj
         end
       end
@@ -145,51 +105,38 @@ MaterialFlashSystem_Render.GetMatList = function(self, e, matList)
   end
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialFlashSystem_Render.GetMaterial = function(self, render)
-  -- function num : 0_7
+function MaterialFlashSystem_Render:GetMaterial(render)
   if render.sharedMaterial then
     return render.sharedMaterial
   end
   return render.material
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialFlashSystem_Render.HandleUpdateFlash = function(self, e)
-  -- function num : 0_8
+function MaterialFlashSystem_Render:HandleUpdateFlash(e)
   if not e:HasView() then
-    return 
+    return
   end
-  local matList = (self.matDic)[e]
+  local matList = self.matDic[e]
   if matList then
     for i = 1, #matList do
       local mat = matList[i]
       if mat then
-        mat:SetColor((self.FlashShaderColorNameDic)[((matList[i]).shader).name], self.flashColor * self.flashColorRatio)
+        mat:SetColor(self.FlashShaderColorNameDic[matList[i].shader.name], self.flashColor * self.flashColorRatio)
         mat:EnableKeyword(self._useDetail)
       end
     end
   end
-  do
-    self:EnableBoundView(e, true)
-  end
+  self:EnableBoundView(e, true)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialFlashSystem_Render.EnableBoundView = function(self, e, isEnable)
-  -- function num : 0_9 , upvalues : _ENV
+function MaterialFlashSystem_Render:EnableBoundView(e, isEnable)
   local view = e:View()
   if not view then
-    return 
+    return
   end
-  local go = (view.ViewWrapper).GameObject
-  local boundView = (BoundView.Get)(go)
+  local go = view.ViewWrapper.GameObject
+  local boundView = BoundView.Get(go)
   if boundView and boundView.enabled ~= isEnable then
     boundView.enabled = isEnable
   end
 end
-
-

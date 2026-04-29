@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/monster_move_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("MonsterMoveSystem", MainStateSystem)
 MonsterMoveSystem = MonsterMoveSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterMoveSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function MonsterMoveSystem:_GetMainStateID()
   return GameStateID.MonsterTurn
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function MonsterMoveSystem:_OnMainStateEnter(TT)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   self:_DoLogicCloseAuroraTime()
   self:_DoRenderCloseAuroraTime(TT)
   self:_DoRenderHideBesiegedTips(TT)
@@ -42,7 +32,7 @@ MonsterMoveSystem._OnMainStateEnter = function(self, TT)
   if self:_IsBattleEnd() then
     self:_DoLogicChangeGameState(teamEntity)
     self:_DoRenderShowPetInfo(TT)
-    return 
+    return
   end
   local traps, monsters = self:_DoLogicSpawnInWaveMonsters(MonsterWaveInternalTime.MonsterTurn)
   self:_DoRenderInWave(TT, traps, monsters)
@@ -69,7 +59,7 @@ MonsterMoveSystem._OnMainStateEnter = function(self, TT)
   self:_DoRenderMonsterDead(TT)
   local ntTeamOrderChange = self:_DoLogicPetDead(teamEntity)
   self:_DoRenderPetDead(TT, teamEntity, ntTeamOrderChange)
-  if (self._world):MatchType() == MatchType.MT_Chess then
+  if self._world:MatchType() == MatchType.MT_Chess then
     self:_DoLogicChessPetDead()
     self:_DoRenderChessPetDead(TT)
   end
@@ -80,101 +70,69 @@ MonsterMoveSystem._OnMainStateEnter = function(self, TT)
   self:_DoLogicChangeGameState(teamEntity)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoLogicCalcTrapState = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function MonsterMoveSystem:_DoLogicCalcTrapState()
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   return trapServiceLogic:CalcTrapState(TrapDestroyType.DestroyByRound)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoLogicChangeGameState = function(self, teamEntity)
-  -- function num : 0_3 , upvalues : _ENV
-  local mirageSvc = (self._world):GetService("MirageLogic")
+function MonsterMoveSystem:_DoLogicChangeGameState(teamEntity)
+  local mirageSvc = self._world:GetService("MirageLogic")
   local isMirageOpen = mirageSvc:IsMirageOpen()
   if isMirageOpen then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.MonsterTurnFinish, 3)
-    return 
+    self._world:EventDispatcher():Dispatch(GameEventType.MonsterTurnFinish, 3)
+    return
   end
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local isTriggerDimension = boardServiceLogic:IsPlayerOnDimension(teamEntity)
   if isTriggerDimension then
-    ((self._world):BattleStat()):SetTriggerDimensionFlag(TriggerDimensionFlag.RoundResult)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.MonsterTurnFinish, 2)
+    self._world:BattleStat():SetTriggerDimensionFlag(TriggerDimensionFlag.RoundResult)
+    self._world:EventDispatcher():Dispatch(GameEventType.MonsterTurnFinish, 2)
   else
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.MonsterTurnFinish, 1)
+    self._world:EventDispatcher():Dispatch(GameEventType.MonsterTurnFinish, 1)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoLogicMonsterBuff = function(self, teamEntity)
-  -- function num : 0_4
-  local buffLogicService = (self._world):GetService("BuffLogic")
+function MonsterMoveSystem:_DoLogicMonsterBuff(teamEntity)
+  local buffLogicService = self._world:GetService("BuffLogic")
   buffLogicService:CalcMonsterBuffTurn(teamEntity)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoLogicMonsterBuffDelayed = function(self)
-  -- function num : 0_5
-  local buffLogicService = (self._world):GetService("BuffLogic")
+function MonsterMoveSystem:_DoLogicMonsterBuffDelayed()
+  local buffLogicService = self._world:GetService("BuffLogic")
   buffLogicService:CalcMonsterBuffDelayedTurn()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoLogicNotifyMonsterTurnEnd = function(self, teamEntity)
-  -- function num : 0_6 , upvalues : _ENV
-  ((self._world):GetService("Trigger")):Notify(NTMonsterTurnEnd:New(teamEntity))
+function MonsterMoveSystem:_DoLogicNotifyMonsterTurnEnd(teamEntity)
+  self._world:GetService("Trigger"):Notify(NTMonsterTurnEnd:New(teamEntity))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoCalcMonsterLockHPState = function(self)
-  -- function num : 0_7
-  local buffLogicService = (self._world):GetService("BuffLogic")
+function MonsterMoveSystem:_DoCalcMonsterLockHPState()
+  local buffLogicService = self._world:GetService("BuffLogic")
   buffLogicService:RefreshLockHPLogic()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoLogicCalcMonsterAction = function(self)
-  -- function num : 0_8
-  local monsterMoveServiceLogic = (self.world):GetService("MonsterMoveLogic")
+function MonsterMoveSystem:_DoLogicCalcMonsterAction()
+  local monsterMoveServiceLogic = self.world:GetService("MonsterMoveLogic")
   monsterMoveServiceLogic:_DoLogicCalcMonsterAction()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoLogicTrapBeforeMonster = function(self)
-  -- function num : 0_9
-  local monsterMoveServiceLogic = (self.world):GetService("MonsterMoveLogic")
+function MonsterMoveSystem:_DoLogicTrapBeforeMonster()
+  local monsterMoveServiceLogic = self.world:GetService("MonsterMoveLogic")
   monsterMoveServiceLogic:_DoLogicTrapBeforeMonster()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoLogicTrapAfterMonster = function(self)
-  -- function num : 0_10
-  local monsterMoveServiceLogic = (self.world):GetService("MonsterMoveLogic")
+function MonsterMoveSystem:_DoLogicTrapAfterMonster()
+  local monsterMoveServiceLogic = self.world:GetService("MonsterMoveLogic")
   monsterMoveServiceLogic:_DoLogicTrapAfterMonster()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoLogicWorldBossStageBuff = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  if (self.world):MatchType(GetMatchTypeType.WorldBossBattle) == MatchType.MT_WorldBoss then
-    local battleSvc = (self.world):GetService("Battle")
-    local buffLogicSvc = (self.world):GetService("BuffLogic")
-    local affixService = (self.world):GetService("Affix")
+function MonsterMoveSystem:_DoLogicWorldBossStageBuff()
+  if self.world:MatchType(GetMatchTypeType.WorldBossBattle) == MatchType.MT_WorldBoss then
+    local battleSvc = self.world:GetService("Battle")
+    local buffLogicSvc = self.world:GetService("BuffLogic")
+    local affixService = self.world:GetService("Affix")
     local entityArray = battleSvc:GetWorldBossEntityArray()
-    for index,entity in ipairs(entityArray) do
+    for index, entity in ipairs(entityArray) do
       local monsterIDCmpt = entity:MonsterID()
       local monsterID = monsterIDCmpt:GetMonsterID()
       local addBuffList, newAttrData = monsterIDCmpt:WorldBossSwitchStage()
@@ -191,154 +149,83 @@ MonsterMoveSystem._DoLogicWorldBossStageBuff = function(self)
           attributeCmpt:Modify("Defense", newDef)
         end
       end
-      do
-        for i,buffID in ipairs(addBuffList) do
-          buffLogicSvc:AddBuff(buffID, entity)
-        end
-        do
-          local changeStageCount = monsterIDCmpt:GetCurRoundChangeStageCount()
-          for i = 1, changeStageCount do
-            ((self.world):GetService("Trigger")):Notify(NTWorldBossStageSwitch:New(monsterIDCmpt:GetCurStage()))
-          end
-          monsterIDCmpt:ResetCurRoundChangeStageCount()
-          -- DECOMPILER ERROR at PC95: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+      for i, buffID in ipairs(addBuffList) do
+        buffLogicSvc:AddBuff(buffID, entity)
       end
+      local changeStageCount = monsterIDCmpt:GetCurRoundChangeStageCount()
+      for i = 1, changeStageCount do
+        self.world:GetService("Trigger"):Notify(NTWorldBossStageSwitch:New(monsterIDCmpt:GetCurStage()))
+      end
+      monsterIDCmpt:ResetCurRoundChangeStageCount()
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoClearMonsterActionResult = function(self)
-  -- function num : 0_12
-  local boardEntity = (self._world):GetBoardEntity()
-  local recorderCmpt = ((self._world):GetBoardEntity()):AIRecorder()
+function MonsterMoveSystem:_DoClearMonsterActionResult()
+  local boardEntity = self._world:GetBoardEntity()
+  local recorderCmpt = self._world:GetBoardEntity():AIRecorder()
   recorderCmpt:ClearAIRecorder()
   boardEntity:ReplaceShareSkillResult()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoLogicBuffBeforeTrapRoundCount = function(self, teamEntity)
-  -- function num : 0_13 , upvalues : _ENV
-  local triggerSvc = (self._world):GetService("Trigger")
+function MonsterMoveSystem:_DoLogicBuffBeforeTrapRoundCount(teamEntity)
+  local triggerSvc = self._world:GetService("Trigger")
   triggerSvc:Notify(NTMonsterRoundBeforeTrapRoundCount:New(teamEntity))
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoRenderHidePetInfo = function(self, TT)
-  -- function num : 0_14
+function MonsterMoveSystem:_DoRenderHidePetInfo(TT)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoRenderShowPetInfo = function(self, TT)
-  -- function num : 0_15
+function MonsterMoveSystem:_DoRenderShowPetInfo(TT)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoRenderInnerStoryMonsterTurn = function(self, TT)
-  -- function num : 0_16
+function MonsterMoveSystem:_DoRenderInnerStoryMonsterTurn(TT)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoRenderMonsterBuff = function(self, TT)
-  -- function num : 0_17
+function MonsterMoveSystem:_DoRenderMonsterBuff(TT)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoRenderMonsterBuffDelayed = function(self, TT)
-  -- function num : 0_18
+function MonsterMoveSystem:_DoRenderMonsterBuffDelayed(TT)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoRenderNotifyMonsterTurnEnd = function(self, TT)
-  -- function num : 0_19
+function MonsterMoveSystem:_DoRenderNotifyMonsterTurnEnd(TT)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoRenderShowInnerStory = function(self, TT)
-  -- function num : 0_20
+function MonsterMoveSystem:_DoRenderShowInnerStory(TT)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._WaitBeHitSkillFinish = function(self, TT)
-  -- function num : 0_21
+function MonsterMoveSystem:_WaitBeHitSkillFinish(TT)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoRenderTrapState = function(self, TT, calcStateTraps)
-  -- function num : 0_22
+function MonsterMoveSystem:_DoRenderTrapState(TT, calcStateTraps)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._UpdateTrapGridRound = function(self, TT)
-  -- function num : 0_23
+function MonsterMoveSystem:_UpdateTrapGridRound(TT)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoRenderPlayMonsterAction = function(self, TT)
-  -- function num : 0_24
+function MonsterMoveSystem:_DoRenderPlayMonsterAction(TT)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoRenderTrapBeforeMonster = function(self, TT)
-  -- function num : 0_25
+function MonsterMoveSystem:_DoRenderTrapBeforeMonster(TT)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoRenderTrapAfterMonster = function(self, TT)
-  -- function num : 0_26
+function MonsterMoveSystem:_DoRenderTrapAfterMonster(TT)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoRenderHideBesiegedTips = function(self, TT)
-  -- function num : 0_27
+function MonsterMoveSystem:_DoRenderHideBesiegedTips(TT)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoRenderInWave = function(self, TT, traps, monsters)
-  -- function num : 0_28
+function MonsterMoveSystem:_DoRenderInWave(TT, traps, monsters)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoRenderMonsterLockHPState = function(self, TT)
-  -- function num : 0_29
+function MonsterMoveSystem:_DoRenderMonsterLockHPState(TT)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoRenderWorldBossStageBuff = function(self, TT)
-  -- function num : 0_30
+function MonsterMoveSystem:_DoRenderWorldBossStageBuff(TT)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoPrintAIDebugInfo = function(self, TT)
-  -- function num : 0_31
+function MonsterMoveSystem:_DoPrintAIDebugInfo(TT)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSystem._DoRenderBuffBeforeTrapRoundCount = function(self, TT, teamEntity)
-  -- function num : 0_32
+function MonsterMoveSystem:_DoRenderBuffBeforeTrapRoundCount(TT, teamEntity)
 end
-
-

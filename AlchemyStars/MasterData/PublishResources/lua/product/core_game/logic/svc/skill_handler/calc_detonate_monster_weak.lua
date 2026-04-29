@@ -1,217 +1,173 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_detonate_monster_weak.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_DetonateMonsterWeak", SkillEffectCalc_Base)
 SkillEffectCalc_DetonateMonsterWeak = SkillEffectCalc_DetonateMonsterWeak
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_DetonateMonsterWeak.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_DetonateMonsterWeak:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DetonateMonsterWeak.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_DetonateMonsterWeak:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
     if result then
-      (table.insert)(results, result)
+      table.insert(results, result)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DetonateMonsterWeak._CalculateSingleTarget = function(self, skillEffectCalcParam, targetID)
-  -- function num : 0_2 , upvalues : _ENV
-  local targetEntity = (self._world):GetEntityByID(targetID)
+function SkillEffectCalc_DetonateMonsterWeak:_CalculateSingleTarget(skillEffectCalcParam, targetID)
+  local targetEntity = self._world:GetEntityByID(targetID)
   if not targetEntity then
-    return 
+    return
   end
   local monsterWeakComponent = targetEntity:MonsterWeak()
   if not monsterWeakComponent then
-    return 
+    return
   end
   local activeWeakList = monsterWeakComponent:GetMonsterWeakDataList()
-  if not activeWeakList or (table.count)(activeWeakList) == 0 then
-    return 
+  if not activeWeakList or table.count(activeWeakList) == 0 then
+    return
   end
-  local targetBodyArea = (targetEntity:BodyArea()):GetArea()
+  local targetBodyArea = targetEntity:BodyArea():GetArea()
   local targetDirection = targetEntity:GetGridDirection()
   local targetGridPos = targetEntity:GetGridPosition()
-  local targetPosCenter = (targetEntity:GridLocation()):Center()
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local targetPosCenter = targetEntity:GridLocation():Center()
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local casterPos = casterEntity:GetGridPosition()
   local skillParam = skillEffectCalcParam.skillEffectParam
   local detonateMonsterWeakType = skillParam:GetDetonateMonsterWeakType()
   local count = skillParam:GetDetonateMonsterWeakCount()
-  if not skillEffectCalcParam.skillRange then
-    local skillRange = {}
-  end
+  local skillRange = skillEffectCalcParam.skillRange or {}
   local targetArray = {targetID}
   local attackRangeCenter = skillRange[#skillRange]
   local damageCenters = {}
   local weakResult = {}
   local damageResults = {}
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   if detonateMonsterWeakType == DetonateMonsterWeakType.NormalAttack then
-    local targetWeakKey = nil
+    local targetWeakKey
     local attakDir = Vector2(casterPos.x - attackRangeCenter.x, casterPos.y - attackRangeCenter.y)
     if attakDir == Vector2(0, 1) then
       targetWeakKey = WeakEdgeType.WeakUp
-    else
-      if attakDir == Vector2(0, -1) then
-        targetWeakKey = WeakEdgeType.WeakDown
-      else
-        if attakDir == Vector2(1, 0) then
-          targetWeakKey = WeakEdgeType.WeakRight
-        else
-          if attakDir == Vector2(-1, 0) then
-            targetWeakKey = WeakEdgeType.WeakLeft
-          end
-        end
-      end
+    elseif attakDir == Vector2(0, -1) then
+      targetWeakKey = WeakEdgeType.WeakDown
+    elseif attakDir == Vector2(1, 0) then
+      targetWeakKey = WeakEdgeType.WeakRight
+    elseif attakDir == Vector2(-1, 0) then
+      targetWeakKey = WeakEdgeType.WeakLeft
     end
     local bodyAreaPos = attackRangeCenter - targetGridPos
     local targetWeakData = monsterWeakComponent:GetMonsterWeakDataByKeyAndBodyPos(targetWeakKey, bodyAreaPos)
     if targetWeakData then
-      (table.insert)(weakResult, targetWeakData)
-      ;
-      (table.insert)(damageCenters, attackRangeCenter)
+      table.insert(weakResult, targetWeakData)
+      table.insert(damageCenters, attackRangeCenter)
     end
-  else
-    do
-      if detonateMonsterWeakType == DetonateMonsterWeakType.ChainInScope then
-        if (table.count)(activeWeakList) == 0 then
-          return 
-        end
-        local filterWeakList = {}
-        for k,v in pairs(activeWeakList) do
-          filterWeakList[k] = v
-        end
-        local detonateDir = targetPosCenter - casterPos
-        if detonateDir.y > 0 then
-          filterWeakList[WeakEdgeType.WeakUp] = nil
-        end
-        if detonateDir.y < 0 then
-          filterWeakList[WeakEdgeType.WeakDown] = nil
-        end
-        if detonateDir.x > 0 then
-          filterWeakList[WeakEdgeType.WeakRight] = nil
-        end
-        if detonateDir.x < 0 then
-          filterWeakList[WeakEdgeType.WeakLeft] = nil
-        end
-        if (table.count)(filterWeakList) == 0 then
-          return 
-        end
-        local bodyAreaInSkillRangePosList = {}
-        for _,bodyPos in ipairs(targetBodyArea) do
-          local posWork = targetGridPos + bodyPos
-          if (table.icontains)(skillRange, posWork) then
-            (table.insert)(bodyAreaInSkillRangePosList, posWork)
-          end
-        end
-        ;
-        (table.sort)(bodyAreaInSkillRangePosList, function(a, b)
-    -- function num : 0_2_0 , upvalues : _ENV, casterPos
-    local disA = (Vector2.Distance)(casterPos, a)
-    local disB = (Vector2.Distance)(casterPos, b)
-    do return disA < disB end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-        local hadDetonateWeakData = {}
-        local hadDetonateWeakKey = {}
-        for _,pos in ipairs(bodyAreaInSkillRangePosList) do
-          for _,v in pairs(filterWeakList) do
-            local monsterWeakData = v
-            local key = monsterWeakData:GetKey()
-            if not (table.icontains)(hadDetonateWeakKey, key) then
-              local bodyPosList = monsterWeakData:GetBodyPosList()
-              local bodtPosFinal = {}
-              for _,body in ipairs(bodyPosList) do
-                local posWork = targetGridPos + body
-                ;
-                (table.insert)(bodtPosFinal, posWork)
-              end
-              if (table.icontains)(bodtPosFinal, pos) then
-                local disNearest = 99
-                local nearestWeakEdgePos = (monsterWeakData:GetEdgePosList())[1]
-                local edgePosList = monsterWeakData:GetEdgePosList()
-                for _,edgePos in ipairs(edgePosList) do
-                  local edgePosWithTarget = targetPosCenter + edgePos
-                  local disCur = (Vector2.Distance)(casterPos, edgePosWithTarget)
-                  if disCur < disNearest then
-                    disNearest = disCur
-                    nearestWeakEdgePos = edgePos
-                  end
-                end
-                ;
-                (table.insert)(hadDetonateWeakKey, key)
-                ;
-                (table.insert)(hadDetonateWeakData, {pos = pos, key = key, disNearest = disNearest, nearestWeakEdgePos = nearestWeakEdgePos})
-              end
-            end
-          end
-        end
-        if (table.count)(hadDetonateWeakData) == 0 then
-          return 
-        end
-        ;
-        (table.sort)(hadDetonateWeakData, function(a, b)
-    -- function num : 0_2_1
-    do return a.disNearest < b.disNearest end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-        for i = 1, count do
-          local WeakTable = hadDetonateWeakData[i]
-          if WeakTable then
-            local targetWeakData = monsterWeakComponent:GetMonsterWeakDataByKey(WeakTable.key)
-            if targetWeakData then
-              (table.insert)(weakResult, targetWeakData)
-              ;
-              (table.insert)(damageCenters, WeakTable.pos)
-            end
-          end
-        end
-      else
+  elseif detonateMonsterWeakType == DetonateMonsterWeakType.ChainInScope then
+    if table.count(activeWeakList) == 0 then
+      return
+    end
+    local filterWeakList = {}
+    for k, v in pairs(activeWeakList) do
+      filterWeakList[k] = v
+    end
+    local detonateDir = targetPosCenter - casterPos
+    if 0 < detonateDir.y then
+      filterWeakList[WeakEdgeType.WeakUp] = nil
+    end
+    if 0 > detonateDir.y then
+      filterWeakList[WeakEdgeType.WeakDown] = nil
+    end
+    if 0 < detonateDir.x then
+      filterWeakList[WeakEdgeType.WeakRight] = nil
+    end
+    if 0 > detonateDir.x then
+      filterWeakList[WeakEdgeType.WeakLeft] = nil
+    end
+    if table.count(filterWeakList) == 0 then
+      return
+    end
+    local bodyAreaInSkillRangePosList = {}
+    for _, bodyPos in ipairs(targetBodyArea) do
+      local posWork = targetGridPos + bodyPos
+      if table.icontains(skillRange, posWork) then
+        table.insert(bodyAreaInSkillRangePosList, posWork)
       end
-      do
-        if detonateMonsterWeakType == DetonateMonsterWeakType.ActivePick then
-          for _,pos in ipairs(damageCenters) do
-            local skillDamageEffectResults = self:_CalculateDamageResult(skillEffectCalcParam, pos, targetArray)
-            ;
-            (table.appendArray)(damageResults, skillDamageEffectResults)
+    end
+    table.sort(bodyAreaInSkillRangePosList, function(a, b)
+      local disA = Vector2.Distance(casterPos, a)
+      local disB = Vector2.Distance(casterPos, b)
+      return disA < disB
+    end)
+    local hadDetonateWeakData = {}
+    local hadDetonateWeakKey = {}
+    for _, pos in ipairs(bodyAreaInSkillRangePosList) do
+      for _, v in pairs(filterWeakList) do
+        local monsterWeakData = v
+        local key = monsterWeakData:GetKey()
+        if not table.icontains(hadDetonateWeakKey, key) then
+          local bodyPosList = monsterWeakData:GetBodyPosList()
+          local bodtPosFinal = {}
+          for _, body in ipairs(bodyPosList) do
+            local posWork = targetGridPos + body
+            table.insert(bodtPosFinal, posWork)
           end
-          local skillResult = SkillEffectResultDetonateMonsterWeak:New(targetID, weakResult, damageResults, damageCenters)
-          return skillResult
+          if table.icontains(bodtPosFinal, pos) then
+            local disNearest = 99
+            local nearestWeakEdgePos = monsterWeakData:GetEdgePosList()[1]
+            local edgePosList = monsterWeakData:GetEdgePosList()
+            for _, edgePos in ipairs(edgePosList) do
+              local edgePosWithTarget = targetPosCenter + edgePos
+              local disCur = Vector2.Distance(casterPos, edgePosWithTarget)
+              if disNearest > disCur then
+                disNearest = disCur
+                nearestWeakEdgePos = edgePos
+              end
+            end
+            table.insert(hadDetonateWeakKey, key)
+            table.insert(hadDetonateWeakData, {
+              pos = pos,
+              key = key,
+              disNearest = disNearest,
+              nearestWeakEdgePos = nearestWeakEdgePos
+            })
+          end
         end
       end
     end
+    if table.count(hadDetonateWeakData) == 0 then
+      return
+    end
+    table.sort(hadDetonateWeakData, function(a, b)
+      return a.disNearest < b.disNearest
+    end)
+    for i = 1, count do
+      local WeakTable = hadDetonateWeakData[i]
+      if WeakTable then
+        local targetWeakData = monsterWeakComponent:GetMonsterWeakDataByKey(WeakTable.key)
+        if targetWeakData then
+          table.insert(weakResult, targetWeakData)
+          table.insert(damageCenters, WeakTable.pos)
+        end
+      end
+    end
+  elseif detonateMonsterWeakType == DetonateMonsterWeakType.ActivePick then
   end
+  for _, pos in ipairs(damageCenters) do
+    local skillDamageEffectResults = self:_CalculateDamageResult(skillEffectCalcParam, pos, targetArray)
+    table.appendArray(damageResults, skillDamageEffectResults)
+  end
+  local skillResult = SkillEffectResultDetonateMonsterWeak:New(targetID, weakResult, damageResults, damageCenters)
+  return skillResult
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DetonateMonsterWeak._CalculateDetonateEdge = function(self, skillEffectCalcParam, attackRange, targetArray)
-  -- function num : 0_3
+function SkillEffectCalc_DetonateMonsterWeak:_CalculateDetonateEdge(skillEffectCalcParam, attackRange, targetArray)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DetonateMonsterWeak._CalculateDamageResult = function(self, skillEffectCalcParam, attackRangeCenter, targetArray)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillEffectCalc_DetonateMonsterWeak:_CalculateDamageResult(skillEffectCalcParam, attackRangeCenter, targetArray)
   local resultArray = {}
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
   local attackerPos = casterEntity:GetGridPosition()
   local attackRange = {attackRangeCenter}
   local skillParam = skillEffectCalcParam.skillEffectParam
@@ -223,83 +179,57 @@ SkillEffectCalc_DetonateMonsterWeak._CalculateDamageResult = function(self, skil
     local scopeParam = skillParam:GetSplashScopeParam()
     local parser = SkillScopeParamParser:New()
     scopeParam = parser:ParseScopeParam(scopeType, scopeParam)
-    local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+    local utilScopeSvc = self._world:GetService("UtilScopeCalc")
     local calcScope = utilScopeSvc:GetSkillScopeCalc()
-    local splashScopeResult = calcScope:ComputeScopeRange(scopeType, scopeParam, attackRangeCenter, {Vector2.zero})
-    local targetSelector = (self._world):GetSkillScopeTargetSelector()
+    local splashScopeResult = calcScope:ComputeScopeRange(scopeType, scopeParam, attackRangeCenter, {
+      Vector2.zero
+    })
+    local targetSelector = self._world:GetSkillScopeTargetSelector()
     targetArray = targetSelector:DoSelectSkillTarget(casterEntity, targetType, splashScopeResult)
     attackRange = splashScopeResult:GetAttackRange()
   end
-  do
-    local skillDamageParam = skillParam
-    local damageStageIndex = skillDamageParam:GetSkillEffectDamageStageIndex()
-    local effectCalcSvc = self._skillEffectService
-    local targetGridAreaMap = self:_GetTargetAreaMap(targetArray)
-    for _,damagePos in ipairs(attackRange) do
-      if targetGridAreaMap[damagePos.x] and (targetGridAreaMap[damagePos.x])[damagePos.y] then
-        local defenderEntityID = (targetGridAreaMap[damagePos.x])[damagePos.y]
-        local defender = (self._world):GetEntityByID(defenderEntityID)
-        if damagePos ~= attackRangeCenter then
-          skillDamageParam = SkillDamageEffectParam:New({percent = splashPercent, formulaID = splashFormulaID})
-        end
-        local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(casterEntity, attackerPos, defender, damagePos, skillEffectCalcParam.skillID, skillDamageParam, SkillEffectType.Damage, damageStageIndex)
-        local skillResult = effectCalcSvc:NewSkillDamageEffectResult(damagePos, defenderEntityID, nTotalDamage, listDamageInfo, damageStageIndex)
-        ;
-        (table.insert)(resultArray, skillResult)
+  local skillDamageParam = skillParam
+  local damageStageIndex = skillDamageParam:GetSkillEffectDamageStageIndex()
+  local effectCalcSvc = self._skillEffectService
+  local targetGridAreaMap = self:_GetTargetAreaMap(targetArray)
+  for _, damagePos in ipairs(attackRange) do
+    if targetGridAreaMap[damagePos.x] and targetGridAreaMap[damagePos.x][damagePos.y] then
+      local defenderEntityID = targetGridAreaMap[damagePos.x][damagePos.y]
+      local defender = self._world:GetEntityByID(defenderEntityID)
+      if damagePos ~= attackRangeCenter then
+        skillDamageParam = SkillDamageEffectParam:New({percent = splashPercent, formulaID = splashFormulaID})
       end
+      local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(casterEntity, attackerPos, defender, damagePos, skillEffectCalcParam.skillID, skillDamageParam, SkillEffectType.Damage, damageStageIndex)
+      local skillResult = effectCalcSvc:NewSkillDamageEffectResult(damagePos, defenderEntityID, nTotalDamage, listDamageInfo, damageStageIndex)
+      table.insert(resultArray, skillResult)
     end
-    return resultArray
   end
+  return resultArray
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DetonateMonsterWeak._GetTargetAreaMap = function(self, targetArray)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillEffectCalc_DetonateMonsterWeak:_GetTargetAreaMap(targetArray)
   local targetGridAreaMap = {}
-  for _,targetEntityID in ipairs(targetArray) do
-    local targetEntity = (self._world):GetEntityByID(targetEntityID)
+  for _, targetEntityID in ipairs(targetArray) do
+    local targetEntity = self._world:GetEntityByID(targetEntityID)
     if targetEntity then
       local targetCenterPos = targetEntity:GetGridPosition()
       local bodyAreaComponent = targetEntity:BodyArea()
       if bodyAreaComponent then
         local bodyAreaArray = bodyAreaComponent:GetArea()
-        for _,areaPos in ipairs(bodyAreaArray) do
+        for _, areaPos in ipairs(bodyAreaArray) do
           local absAreaPos = areaPos + targetCenterPos
           if not targetGridAreaMap[absAreaPos.x] then
             targetGridAreaMap[absAreaPos.x] = {}
           end
-          -- DECOMPILER ERROR at PC34: Confused about usage of register: R18 in 'UnsetPending'
-
-          ;
-          (targetGridAreaMap[absAreaPos.x])[absAreaPos.y] = targetEntityID
+          targetGridAreaMap[absAreaPos.x][absAreaPos.y] = targetEntityID
         end
       else
-        do
-          do
-            if not targetGridAreaMap[targetCenterPos.x] then
-              targetGridAreaMap[targetCenterPos.x] = {}
-            end
-            -- DECOMPILER ERROR at PC48: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            (targetGridAreaMap[targetCenterPos.x])[targetCenterPos.y] = targetEntityID
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        if not targetGridAreaMap[targetCenterPos.x] then
+          targetGridAreaMap[targetCenterPos.x] = {}
         end
+        targetGridAreaMap[targetCenterPos.x][targetCenterPos.y] = targetEntityID
       end
     end
   end
   return targetGridAreaMap
 end
-
-

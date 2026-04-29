@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/helper/h3d_real_timer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("h3d_timer")
 _class("H3DRealTimer", H3DTimer)
 H3DRealTimer = H3DRealTimer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-H3DRealTimer.Constructor = function(self)
-  -- function num : 0_0
+function H3DRealTimer:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DRealTimer._GetCurrentTime = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  return (GameGlobal:GetInstance()):GetCurrentRealTime()
+function H3DRealTimer:_GetCurrentTime()
+  return GameGlobal:GetInstance():GetCurrentRealTime()
 end
-
-

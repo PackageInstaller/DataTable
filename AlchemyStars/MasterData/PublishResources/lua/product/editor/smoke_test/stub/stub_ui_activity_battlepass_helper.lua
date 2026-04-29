@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/stub/stub_ui_activity_battlepass_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 if not SMOKE_TEST_ENABLED then
-  return 
+  return
 end
 if not _G.UIActivityBattlePassHelper then
-  return 
+  return
 end
-;
-(Log.warn)("TestRobotModule: UIActivityBattlePassHelper stub!")
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
+Log.warn("TestRobotModule: UIActivityBattlePassHelper stub!")
 
-UIActivityBattlePassHelper.CheckComponentRedPoint = function(campaign, ...)
-  -- function num : 0_0
+function UIActivityBattlePassHelper.CheckComponentRedPoint(campaign, ...)
   return false
 end
-
-

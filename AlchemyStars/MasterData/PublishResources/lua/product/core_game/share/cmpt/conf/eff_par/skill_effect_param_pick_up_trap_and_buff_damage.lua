@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_pick_up_trap_and_buff_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamPickUpTrapAndBuffDamage", SkillEffectParamBase)
 SkillEffectParamPickUpTrapAndBuffDamage = SkillEffectParamPickUpTrapAndBuffDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamPickUpTrapAndBuffDamage.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamPickUpTrapAndBuffDamage:Constructor(t)
   self._trapIDList = t.trapIDList
   self._buffID = t.buffID
   self._formulaID = t.formulaID
@@ -17,46 +10,26 @@ SkillEffectParamPickUpTrapAndBuffDamage.Constructor = function(self, t)
   self._skillList = t.skillList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamPickUpTrapAndBuffDamage.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamPickUpTrapAndBuffDamage:GetEffectType()
   return SkillEffectType.PickUpTrapAndBuffDamage
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamPickUpTrapAndBuffDamage.GetTrapIDList = function(self)
-  -- function num : 0_2
+function SkillEffectParamPickUpTrapAndBuffDamage:GetTrapIDList()
   return self._trapIDList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamPickUpTrapAndBuffDamage.GetBuffID = function(self)
-  -- function num : 0_3
+function SkillEffectParamPickUpTrapAndBuffDamage:GetBuffID()
   return self._buffID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamPickUpTrapAndBuffDamage.GetFormulaID = function(self)
-  -- function num : 0_4
+function SkillEffectParamPickUpTrapAndBuffDamage:GetFormulaID()
   return self._formulaID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamPickUpTrapAndBuffDamage.GetPercentList = function(self)
-  -- function num : 0_5
+function SkillEffectParamPickUpTrapAndBuffDamage:GetPercentList()
   return self._percentList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamPickUpTrapAndBuffDamage.GetSkillList = function(self)
-  -- function num : 0_6
+function SkillEffectParamPickUpTrapAndBuffDamage:GetSkillList()
   return self._skillList
 end
-
-

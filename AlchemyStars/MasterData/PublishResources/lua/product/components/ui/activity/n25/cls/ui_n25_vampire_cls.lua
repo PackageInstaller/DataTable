@@ -1,217 +1,146 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/cls/ui_n25_vampire_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
--- DECOMPILER ERROR at PC2: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetComponentId = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function N25Data:GetComponentId()
   return ECampaignN25ComponentID.ECAMPAIGN_N25_BLOODSUCKER
 end
 
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetComponentCfgId = function(self)
-  -- function num : 0_1
+function N25Data:GetComponentCfgId()
   local c = self:GetComponentVampire()
   return c:GetComponentCfgId()
 end
 
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetComponentVampire = function(self)
-  -- function num : 0_2
-  local c = (self.activityCampaign):GetComponent(self:GetComponentId())
+function N25Data:GetComponentVampire()
+  local c = self.activityCampaign:GetComponent(self:GetComponentId())
   return c
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetComponentInfoVampire = function(self)
-  -- function num : 0_3
-  local cInfo = (self.activityCampaign):GetComponentInfo(self:GetComponentId())
+function N25Data:GetComponentInfoVampire()
+  local cInfo = self.activityCampaign:GetComponentInfo(self:GetComponentId())
   return cInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetTalentTreeInfo = function(self)
-  -- function num : 0_4
+function N25Data:GetTalentTreeInfo()
   local cInfo = self:GetComponentInfoVampire()
   return cInfo.talent_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetCfgComponentBloodsuckerTalentSkill = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_bloodsucker_talent_skill)({ComponentID = self:GetComponentCfgId()})
+function N25Data:GetCfgComponentBloodsuckerTalentSkill()
+  local cfgs = Cfg.cfg_component_bloodsucker_talent_skill({
+    ComponentID = self:GetComponentCfgId()
+  })
   return cfgs
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetCfgComponentBloodsuckerTalentLevel = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_bloodsucker_talent_level)({ComponentID = self:GetComponentCfgId()})
+function N25Data:GetCfgComponentBloodsuckerTalentLevel()
+  local cfgs = Cfg.cfg_component_bloodsucker_talent_level({
+    ComponentID = self:GetComponentCfgId()
+  })
   return cfgs
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.CheckCode = function(res)
-  -- function num : 0_7 , upvalues : _ENV
+function N25Data.CheckCode(res)
   local result = res:GetResult()
   if result == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
     return true
   end
-  ;
-  (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_" .. result))
+  ToastManager.ShowToast(StringTable.Get("str_activity_error_" .. result))
   if result == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED or result == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN then
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
-  else
-    if result == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_CLOSE then
-      ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIActivityN25MainController)
-    end
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
+  elseif result == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_CLOSE then
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIActivityN25MainController)
   end
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.InitVampire = function(self)
-  -- function num : 0_8
+function N25Data:InitVampire()
   self:InitVampirePets()
   self:InitVampireTiers()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.InitVampirePets = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function N25Data:InitVampirePets()
   self.pets = {}
-  if not (UIN25VampireUtil.GetTryPetList)(self:GetComponentCfgId()) then
-    local petIds = {}
-  end
-  for index,petId in ipairs(petIds) do
+  local petIds = UIN25VampireUtil.GetTryPetList(self:GetComponentCfgId()) or {}
+  for index, petId in ipairs(petIds) do
     local pet = VampirePet:New(petId)
-    ;
-    (table.insert)(self.pets, pet)
+    table.insert(self.pets, pet)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.InitVampireTiers = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function N25Data:InitVampireTiers()
   self.tiers = {}
   local talentTreeInfo = self:GetTalentTreeInfo()
   local leftTalent = self:GetTalentLeft()
-  local cfgs = (self:GetCfgComponentBloodsuckerTalentSkill())
-  local prevTier = nil
-  for key,cfgv in pairs(cfgs) do
+  local cfgs = self:GetCfgComponentBloodsuckerTalentSkill()
+  local prevTier
+  for key, cfgv in pairs(cfgs) do
     local tier = VampireTalentTier:New()
     tier.id = cfgv.ID
     tier.row = cfgv.Row
     tier.unlockTalent = cfgv.NeedTalentPoint or 0
-    local info = (talentTreeInfo.infos)[cfgv.Row]
+    local info = talentTreeInfo.infos[cfgv.Row]
     tier.skills = {}
-    for i,cfgvSkill in ipairs(cfgv.Skill) do
+    for i, cfgvSkill in ipairs(cfgv.Skill) do
       local skill = VampireTalentSkill:New()
-      if cfgvSkill[1] ~= 0 or not VampireTalentSkillType.Talent then
-        skill.skillType = VampireTalentSkillType.Role
-        local skillId = cfgvSkill[2]
-        skill.skillId = skillId
-        skill.index = i - 1
-        do
-          do
-            if info then
-              local skillNode = (info.skill_nodes)[skill.index]
-              if skillNode then
-                skill.level = skillNode.level
-              end
-            end
-            skill.maxLevel = cfgvSkill[3]
-            tier.prev = prevTier
-            prevTier = tier
-            ;
-            (table.insert)(tier.skills, skill)
-            -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+      skill.skillType = cfgvSkill[1] == 0 and VampireTalentSkillType.Talent or VampireTalentSkillType.Role
+      local skillId = cfgvSkill[2]
+      skill.skillId = skillId
+      skill.index = i - 1
+      if info then
+        local skillNode = info.skill_nodes[skill.index]
+        if skillNode then
+          skill.level = skillNode.level
         end
       end
+      skill.maxLevel = cfgvSkill[3]
+      tier.prev = prevTier
+      prevTier = tier
+      table.insert(tier.skills, skill)
     end
     if cfgv.RelicId then
       tier.relic = VampireTalentRelic:New(cfgv.RelicId)
     end
-    ;
-    (table.insert)(self.tiers, tier)
+    table.insert(self.tiers, tier)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetPetByTplId = function(self, tplId)
-  -- function num : 0_11 , upvalues : _ENV
-  for index,pet in ipairs(self.pets) do
+function N25Data:GetPetByTplId(tplId)
+  for index, pet in ipairs(self.pets) do
     if pet:TplId() == tplId then
       return pet
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetVimpireEndTime = function(self)
-  -- function num : 0_12
+function N25Data:GetVimpireEndTime()
   local cInfo = self:GetComponentInfoVampire()
   return cInfo.m_close_time
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetTalentLevelExp = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function N25Data:GetTalentLevelExp()
   local talentTreeInfo = self:GetTalentTreeInfo()
   local talent_level = talentTreeInfo.talent_level
   local upgradeExp = 0
   local cfg = self:GetCfgComponentBloodsuckerTalentLevel()
   if cfg then
-    for key,cfgv in pairs(cfg) do
+    for key, cfgv in pairs(cfg) do
       if cfgv.Level == talent_level then
         upgradeExp = cfgv.Exp
         break
       end
     end
   end
-  do
-    return talent_level, talentTreeInfo.cur_exp, upgradeExp
-  end
+  return talent_level, talentTreeInfo.cur_exp, upgradeExp
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetTierById = function(self, id)
-  -- function num : 0_14 , upvalues : _ENV
-  for index,tier in ipairs(self.tiers) do
+function N25Data:GetTierById(id)
+  for index, tier in ipairs(self.tiers) do
     if tier.id == id then
       return tier
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetTierBySkillId = function(self, skillId)
-  -- function num : 0_15 , upvalues : _ENV
-  for _,tier in ipairs(self.tiers) do
-    for _,skill in ipairs(tier.skills) do
+function N25Data:GetTierBySkillId(skillId)
+  for _, tier in ipairs(self.tiers) do
+    for _, skill in ipairs(tier.skills) do
       if skill.skillId == skillId then
         return tier
       end
@@ -219,23 +148,17 @@ N25Data.GetTierBySkillId = function(self, skillId)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetTierByRow = function(self, row)
-  -- function num : 0_16 , upvalues : _ENV
-  for index,tier in ipairs(self.tiers) do
+function N25Data:GetTierByRow(row)
+  for index, tier in ipairs(self.tiers) do
     if tier.row == row then
       return tier
     end
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetSkillBySkillId = function(self, skillId)
-  -- function num : 0_17 , upvalues : _ENV
-  for index,tier in ipairs(self.tiers) do
-    for index,skill in ipairs(tier.skills) do
+function N25Data:GetSkillBySkillId(skillId)
+  for index, tier in ipairs(self.tiers) do
+    for index, skill in ipairs(tier.skills) do
       if skill.skillId == skillId then
         return skill
       end
@@ -243,27 +166,21 @@ N25Data.GetSkillBySkillId = function(self, skillId)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetRoleSkills = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function N25Data:GetRoleSkills()
   local t = {}
-  for index,tier in ipairs(self.tiers) do
-    for index,skill in ipairs(tier.skills) do
+  for index, tier in ipairs(self.tiers) do
+    for index, skill in ipairs(tier.skills) do
       if skill.skillType == VampireTalentSkillType.Role then
-        (table.insert)(t, skill)
+        table.insert(t, skill)
       end
     end
   end
   return t
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetFstRoleSkill = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  for index,tier in ipairs(self.tiers) do
-    for index,skill in ipairs(tier.skills) do
+function N25Data:GetFstRoleSkill()
+  for index, tier in ipairs(self.tiers) do
+    for index, skill in ipairs(tier.skills) do
       if skill.skillType == VampireTalentSkillType.Role then
         return skill
       end
@@ -271,16 +188,13 @@ N25Data.GetFstRoleSkill = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetCurRoleSkill = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function N25Data:GetCurRoleSkill()
   local talentTreeInfo = self:GetTalentTreeInfo()
   local row = talentTreeInfo.select_row
   local index = talentTreeInfo.select_index
-  for _,tier in ipairs(self.tiers) do
+  for _, tier in ipairs(self.tiers) do
     if row == tier.row then
-      for _,skill in ipairs(tier.skills) do
+      for _, skill in ipairs(tier.skills) do
         if index == skill.index then
           return skill
         end
@@ -289,34 +203,23 @@ N25Data.GetCurRoleSkill = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.IsRoleSkillActive = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  for index,tier in ipairs(self.tiers) do
-    if not tier:IsLock() then
-      for index,skill in ipairs(tier.skills) do
-        if skill.skillType == VampireTalentSkillType.Role and skill.level > 0 then
-          return true
-        end
-      end
-      do
-        -- DECOMPILER ERROR at PC24: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC24: LeaveBlock: unexpected jumping out IF_STMT
-
+function N25Data:IsRoleSkillActive()
+  for index, tier in ipairs(self.tiers) do
+    if tier:IsLock() then
+      break
+    end
+    for index, skill in ipairs(tier.skills) do
+      if skill.skillType == VampireTalentSkillType.Role and skill.level > 0 then
+        return true
       end
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetSkillRowIndexBySkillId = function(self, skillId)
-  -- function num : 0_22 , upvalues : _ENV
-  for _,tier in ipairs(self.tiers) do
-    for _,skill in ipairs(tier.skills) do
+function N25Data:GetSkillRowIndexBySkillId(skillId)
+  for _, tier in ipairs(self.tiers) do
+    for _, skill in ipairs(tier.skills) do
       if skill.skillId == skillId then
         return tier.row, skill.index
       end
@@ -324,116 +227,84 @@ N25Data.GetSkillRowIndexBySkillId = function(self, skillId)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetTalentUsed = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function N25Data:GetTalentUsed()
   local used = 0
-  for _,tier in ipairs(self.tiers) do
-    for _,skill in ipairs(tier.skills) do
+  for _, tier in ipairs(self.tiers) do
+    for _, skill in ipairs(tier.skills) do
       used = used + skill.level
     end
   end
   return used
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetTalentLeft = function(self)
-  -- function num : 0_24
+function N25Data:GetTalentLeft()
   local talentTreeInfo = self:GetTalentTreeInfo()
   return talentTreeInfo.cur_talent_point
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.CheckRedTalentTree = function(self)
-  -- function num : 0_25
+function N25Data:CheckRedTalentTree()
   local talent = self:GetTalentLeft()
-  do return talent > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return 0 < talent
 end
 
 _class("VampireTalentTier", Object)
 VampireTalentTier = VampireTalentTier
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
 
-VampireTalentTier.Constructor = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  local mCampaign = (GameGlobal.GetModule)(CampaignModule)
+function VampireTalentTier:Constructor()
+  local mCampaign = GameGlobal.GetModule(CampaignModule)
   self.data = mCampaign:GetN25Data()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-VampireTalentTier.IsLock = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function VampireTalentTier:IsLock()
   if self.row == 1 then
     return false
   end
   local isUnlock = false
-  local tiers = (self.data).tiers
+  local tiers = self.data.tiers
   local prevCost = 0
-  for i,tier in ipairs(tiers) do
-    if self.row > tier.row then
-      do
-        local tierCostPoint = tier:GetTotalSkillLevel()
-        prevCost = prevCost + tierCostPoint
-        -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  for i, tier in ipairs(tiers) do
+    if tier.row >= self.row then
+      break
     end
+    local tierCostPoint = tier:GetTotalSkillLevel()
+    prevCost = prevCost + tierCostPoint
   end
-  local costGECur = self.unlockTalent <= prevCost
-  if self:IsPrevTierExistSkills(self.row) and costGECur and self:GetPrevTierCost(self.row) > 0 then
+  local costGECur = prevCost >= self.unlockTalent
+  if self:IsPrevTierExistSkills(self.row) then
+    if costGECur and 0 < self:GetPrevTierCost(self.row) then
+      isUnlock = true
+    end
+  elseif costGECur then
     isUnlock = true
   end
-  if costGECur then
-    isUnlock = true
-  end
-  do return not isUnlock end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return not isUnlock
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-VampireTalentTier.GetTotalSkillLevel = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function VampireTalentTier:GetTotalSkillLevel()
   local level = 0
-  for index,skill in ipairs(self.skills) do
+  for index, skill in ipairs(self.skills) do
     level = level + skill.level
   end
   return level
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-VampireTalentTier.GetPrevTier = function(self, row)
-  -- function num : 0_29
+function VampireTalentTier:GetPrevTier(row)
   if row <= 1 then
     return nil
   end
-  local tier = (self.data):GetTierByRow(row - 1)
+  local tier = self.data:GetTierByRow(row - 1)
   return tier
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-VampireTalentTier.IsPrevTierExistSkills = function(self, row)
-  -- function num : 0_30 , upvalues : _ENV
+function VampireTalentTier:IsPrevTierExistSkills(row)
   local tier = self:GetPrevTier(row)
-  if tier and tier.skills and (table.count)(tier.skills) > 0 then
+  if tier and tier.skills and table.count(tier.skills) > 0 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-VampireTalentTier.GetPrevTierCost = function(self, row)
-  -- function num : 0_31
+function VampireTalentTier:GetPrevTierCost(row)
   local tier = self:GetPrevTier(row)
   if tier then
     return tier:GetTotalSkillLevel()
@@ -443,115 +314,78 @@ end
 
 _class("VampireTalentSkill", Object)
 VampireTalentSkill = VampireTalentSkill
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
 
-VampireTalentSkill.Constructor = function(self)
-  -- function num : 0_32
+function VampireTalentSkill:Constructor()
   self.level = 0
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-VampireTalentSkill.IconNameDesc = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  local cfgv = (Cfg.cfg_mini_maze_talent)[self.skillId]
+function VampireTalentSkill:IconNameDesc()
+  local cfgv = Cfg.cfg_mini_maze_talent[self.skillId]
   if not cfgv then
-    (Log.fatal)("### no data in cfg_mini_maze_talent.", self.skillId)
-    return 
+    Log.fatal("### no data in cfg_mini_maze_talent.", self.skillId)
+    return
   end
-  return cfgv.Icon, (StringTable.Get)(cfgv.Name), (StringTable.Get)(cfgv.Desc)
+  return cfgv.Icon, StringTable.Get(cfgv.Name), StringTable.Get(cfgv.Desc)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-VampireTalentSkill.CurMaxLevel = function(self)
-  -- function num : 0_34
+function VampireTalentSkill:CurMaxLevel()
   return self.level, self.maxLevel
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-VampireTalentSkill.IsActive = function(self)
-  -- function num : 0_35
-  do return self.level > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function VampireTalentSkill:IsActive()
+  return self.level > 0
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-VampireTalentSkill.IsLevelMax = function(self)
-  -- function num : 0_36
-  do return self.maxLevel <= self.level end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function VampireTalentSkill:IsLevelMax()
+  return self.level >= self.maxLevel
 end
 
 _enum("VampireTalentSkillType", {Talent = 0, Role = 1})
 VampireTalentSkillType = VampireTalentSkillType
 _class("VampireTalentRelic", Object)
 VampireTalentRelic = VampireTalentRelic
--- DECOMPILER ERROR at PC139: Confused about usage of register: R0 in 'UnsetPending'
 
-VampireTalentRelic.Constructor = function(self, itemId)
-  -- function num : 0_37
+function VampireTalentRelic:Constructor(itemId)
   self.itemId = itemId
 end
 
--- DECOMPILER ERROR at PC142: Confused about usage of register: R0 in 'UnsetPending'
-
-VampireTalentRelic.GetItemCfg = function(self)
-  -- function num : 0_38 , upvalues : _ENV
-  local cfgv = (Cfg.cfg_item)[self.itemId]
+function VampireTalentRelic:GetItemCfg()
+  local cfgv = Cfg.cfg_item[self.itemId]
   if not cfgv then
-    (Log.fatal)("### no data in cfg_item", self.itemId)
-    return 
+    Log.fatal("### no data in cfg_item", self.itemId)
+    return
   end
   return cfgv
 end
 
--- DECOMPILER ERROR at PC145: Confused about usage of register: R0 in 'UnsetPending'
-
-VampireTalentRelic.IconNameDesc = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function VampireTalentRelic:IconNameDesc()
   local cfg = self:GetItemCfg()
   if cfg then
-    return cfg.Icon, (StringTable.Get)(cfg.Name), (StringTable.Get)(cfg.Intro)
+    return cfg.Icon, StringTable.Get(cfg.Name), StringTable.Get(cfg.Intro)
   end
 end
 
 _class("VampirePet", Object)
 VampirePet = VampirePet
--- DECOMPILER ERROR at PC154: Confused about usage of register: R0 in 'UnsetPending'
 
-VampirePet.Constructor = function(self, tplId)
-  -- function num : 0_40
+function VampirePet:Constructor(tplId)
   self.tplId = tplId
 end
 
--- DECOMPILER ERROR at PC157: Confused about usage of register: R0 in 'UnsetPending'
-
-VampirePet.TplId = function(self)
-  -- function num : 0_41
+function VampirePet:TplId()
   return self.tplId
 end
 
--- DECOMPILER ERROR at PC160: Confused about usage of register: R0 in 'UnsetPending'
-
-VampirePet.CfgPet = function(self)
-  -- function num : 0_42 , upvalues : _ENV
-  local cfgv = (Cfg.cfg_pet)[self.tplId]
+function VampirePet:CfgPet()
+  local cfgv = Cfg.cfg_pet[self.tplId]
   if not cfgv then
-    (Log.fatal)("### no data in cfg_pet", self.tplId)
+    Log.fatal("### no data in cfg_pet", self.tplId)
   end
   return cfgv
 end
 
--- DECOMPILER ERROR at PC163: Confused about usage of register: R0 in 'UnsetPending'
-
-VampirePet.Icon = function(self)
-  -- function num : 0_43 , upvalues : _ENV
+function VampirePet:Icon()
   local cfgv = self:CfgPet()
-  local icon = (HelperProxy:GetInstance()):GetPetTeamBody(self:TplId())
+  local icon = HelperProxy:GetInstance():GetPetTeamBody(self:TplId())
   return icon
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n19/p5/sign_in/ui_n19_p5_sign_in_award.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN19P5SignInAward", UICustomWidget)
 UIN19P5SignInAward = UIN19P5SignInAward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN19P5SignInAward.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN19P5SignInAward:OnShow()
   self._iconRectDefaultSize = Vector2(175, 175)
   self.Icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._iconRect = self:GetUIComponent("RectTransform", "Icon")
@@ -17,43 +10,29 @@ UIN19P5SignInAward.OnShow = function(self)
   self.count = self:GetUIComponent("UILocalizationText", "count")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInAward.Flush = function(self, idx, roleAsset, callback)
-  -- function num : 0_1 , upvalues : _ENV
-  local countPos = nil
+function UIN19P5SignInAward:Flush(idx, roleAsset, callback)
+  local countPos
   if idx == 1 then
     countPos = Vector2(65, -68)
   else
     countPos = Vector2(47, -55)
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.countPos).anchoredPosition = countPos
+  self.countPos.anchoredPosition = countPos
   local pos = (idx - 1) * 18
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.pos).anchoredPosition = Vector2(0, pos)
+  self.pos.anchoredPosition = Vector2(0, pos)
   self.callback = callback
   self.id = roleAsset.assetid
   local count = roleAsset.count
-  ;
-  (self.count):SetText(count)
-  local cfg = (Cfg.cfg_item)[self.id]
+  self.count:SetText(count)
+  local cfg = Cfg.cfg_item[self.id]
   if not cfg then
-    (Log.error)("###[UIN19P5SignInAward] cfg is nil ! id --> ", self.id)
+    Log.error("###[UIN19P5SignInAward] cfg is nil ! id --> ", self.id)
   end
-  ;
-  (self.Icon):LoadImage(cfg.Icon)
+  self.Icon:LoadImage(cfg.Icon)
   self:SetIcon()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInAward.SetIcon = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN19P5SignInAward:SetIcon()
   local isHead = false
   if self.id >= 3750000 and self.id <= 3759999 then
     isHead = true
@@ -61,37 +40,20 @@ UIN19P5SignInAward.SetIcon = function(self)
   if isHead then
     local whRate = 1
     if self.id >= 3751000 and self.id <= 3751999 then
-      whRate = 0.84210526315789
-    else
-      if self.id >= 3752000 and self.id <= 3752999 then
-        whRate = 0.63888888888889
-      else
-        if self.id >= 3753000 and self.id <= 3753999 then
-          whRate = 0.63888888888889
-        end
-      end
+      whRate = 0.8421052631578947
+    elseif self.id >= 3752000 and self.id <= 3752999 then
+      whRate = 0.6388888888888888
+    elseif self.id >= 3753000 and self.id <= 3753999 then
+      whRate = 0.6388888888888888
     end
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._iconRect).sizeDelta = Vector2(((self._iconRect).sizeDelta).x, ((self._iconRect).sizeDelta).x * whRate)
+    self._iconRect.sizeDelta = Vector2(self._iconRect.sizeDelta.x, self._iconRect.sizeDelta.x * whRate)
   else
-    do
-      -- DECOMPILER ERROR at PC48: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._iconRect).sizeDelta = self._iconRectDefaultSize
-    end
+    self._iconRect.sizeDelta = self._iconRectDefaultSize
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInAward.IconOnClick = function(self, go)
-  -- function num : 0_3
+function UIN19P5SignInAward:IconOnClick(go)
   if self.callback then
-    (self.callback)(self.id, go)
+    self.callback(self.id, go)
   end
 end
-
-

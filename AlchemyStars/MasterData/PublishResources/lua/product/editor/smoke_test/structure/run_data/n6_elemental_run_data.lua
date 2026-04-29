@@ -1,15 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/run_data/n6_elemental_run_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("elemental_run_data")
 _class("ElementalN6EventRunData", TestRobotElementalRunData)
 ElementalN6EventRunData = ElementalN6EventRunData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ElementalN6EventRunData.ParseLevelData = function(self, rawargs)
-  -- function num : 0_0
+function ElementalN6EventRunData:ParseLevelData(rawargs)
 end
-
-

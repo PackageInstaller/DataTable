@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/show_hide_trap_head_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("ShowHideTrapHeadInstruction", BaseInstruction)
 ShowHideTrapHeadInstruction = ShowHideTrapHeadInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ShowHideTrapHeadInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function ShowHideTrapHeadInstruction:Constructor(paramList)
   local str = paramList.isShow or "0"
   self._isShow = tonumber(str) == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ShowHideTrapHeadInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function ShowHideTrapHeadInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   if not casterEntity:HasTrapRoundInfoRender() then
-    return 
+    return
   end
   local trapRound = casterEntity:TrapRoundInfoRender()
   trapRound:SetIsShow(self._isShow)
 end
-
-

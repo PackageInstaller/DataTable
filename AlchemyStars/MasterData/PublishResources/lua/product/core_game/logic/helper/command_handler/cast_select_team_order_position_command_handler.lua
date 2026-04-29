@@ -1,25 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/command_handler/cast_select_team_order_position_command_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("command_base_handler")
 _class("CastSelectTeamOrderPositionCommandHandler", CommandBaseHandler)
 CastSelectTeamOrderPositionCommandHandler = CastSelectTeamOrderPositionCommandHandler
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CastSelectTeamOrderPositionCommandHandler.DoHandleCommand = function(self, cmd)
-  -- function num : 0_0 , upvalues : _ENV
+function CastSelectTeamOrderPositionCommandHandler:DoHandleCommand(cmd)
   local teamEntityID = cmd:GetEntityID()
   local casterPstID = cmd:GetCasterPstID()
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local cTeam = teamEntity:Team()
   local eCaster = cTeam:GetPetEntityByPetPstID(casterPstID)
   if not eCaster then
-    (Log.error)("invalid pet pstid? ", tostring(casterPstID))
-    return 
+    Log.error("invalid pet pstid? ", tostring(casterPstID))
+    return
   end
   cTeam:SetSelectedTeamOrderPosition(cmd:GetTargetPos())
 end
-
-

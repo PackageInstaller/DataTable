@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_n7.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaingN7", ICampaignComponentLocalProcessBase)
 CCampaingN7 = CCampaingN7
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaingN7.Constructor = function(self)
-  -- function num : 0_0
+function CCampaingN7:Constructor()
   self._cumulativeLoginComponent = nil
   self._cumulativeLoginCompInfo = nil
   self._lineMissionComponet = nil
@@ -22,24 +15,15 @@ CCampaingN7.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN7.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaingN7:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N7
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN7.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaingN7:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN7.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaingN7:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetCumulativeLoginComponent()
   self:_GetLineMissionComponent()
@@ -48,65 +32,47 @@ CCampaingN7.InitComponent = function(self, campaignObj)
   self:_GetBlackfistComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN7._GetCumulativeLoginComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._cumulativeLoginComponent = (self._campaignObj):GetComponent(ECampaignN7ComponentID.ECAMPAIGN_N7_CUMULATIVE_LOGIN)
+function CCampaingN7:_GetCumulativeLoginComponent()
+  self._cumulativeLoginComponent = self._campaignObj:GetComponent(ECampaignN7ComponentID.ECAMPAIGN_N7_CUMULATIVE_LOGIN)
   if not self._cumulativeLoginComponent then
-    return 
+    return
   end
-  self._cumulativeLoginCompInfo = (self._cumulativeLoginComponent):ComponentInfo()
+  self._cumulativeLoginCompInfo = self._cumulativeLoginComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN7._GetLineMissionComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._lineMissionComponet = (self._campaignObj):GetComponent(ECampaignN7ComponentID.ECAMPAIGN_N7_LINE_MISSION)
+function CCampaingN7:_GetLineMissionComponent()
+  self._lineMissionComponet = self._campaignObj:GetComponent(ECampaignN7ComponentID.ECAMPAIGN_N7_LINE_MISSION)
   if not self._lineMissionComponet then
-    return 
+    return
   end
-  self._lineMissionCompInfo = (self._lineMissionComponet):ComponentInfo()
+  self._lineMissionCompInfo = self._lineMissionComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN7._GetFixTeamLineMissionComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._lineMissionComponet1 = (self._campaignObj):GetComponent(ECampaignN7ComponentID.ECAMPAIGN_N7_LINE_MISSION_FIXTEAM)
+function CCampaingN7:_GetFixTeamLineMissionComponent()
+  self._lineMissionComponet1 = self._campaignObj:GetComponent(ECampaignN7ComponentID.ECAMPAIGN_N7_LINE_MISSION_FIXTEAM)
   if not self._lineMissionComponet1 then
-    return 
+    return
   end
-  self._lineMissionCompInfo1 = (self._lineMissionComponet1):ComponentInfo()
+  self._lineMissionCompInfo1 = self._lineMissionComponet1:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN7._GetprestigeComponent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._personProgressComponet = (self._campaignObj):GetComponent(ECampaignN7ComponentID.ECAMPAIGN_N7_LINE_PRESTIGE)
+function CCampaingN7:_GetprestigeComponent()
+  self._personProgressComponet = self._campaignObj:GetComponent(ECampaignN7ComponentID.ECAMPAIGN_N7_LINE_PRESTIGE)
   if not self._personProgressComponet then
-    return 
+    return
   end
-  self._personProgressComponetInfo = (self._personProgressComponet):ComponentInfo()
+  self._personProgressComponetInfo = self._personProgressComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN7._GetBlackfistComponent = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._blackfistComponet = (self._campaignObj):GetComponent(ECampaignN7ComponentID.ECAMPAIGN_N7_BLACKFIST)
+function CCampaingN7:_GetBlackfistComponent()
+  self._blackfistComponet = self._campaignObj:GetComponent(ECampaignN7ComponentID.ECAMPAIGN_N7_BLACKFIST)
   if not self._blackfistComponet then
-    return 
+    return
   end
-  self._blackfistComponetInfo = (self._blackfistComponet):ComponentInfo()
+  self._blackfistComponetInfo = self._blackfistComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN7.GetComponent = function(self, componentID)
-  -- function num : 0_9 , upvalues : _ENV
+function CCampaingN7:GetComponent(componentID)
   if ECampaignN7ComponentID.ECAMPAIGN_N7_CUMULATIVE_LOGIN == componentID then
     return self._cumulativeLoginComponent
   end
@@ -125,10 +91,7 @@ CCampaingN7.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN7.GetComponentInfo = function(self, componentID)
-  -- function num : 0_10 , upvalues : _ENV
+function CCampaingN7:GetComponentInfo(componentID)
   if ECampaignN7ComponentID.ECAMPAIGN_N7_CUMULATIVE_LOGIN == componentID then
     return self._cumulativeLoginCompInfo
   end
@@ -147,50 +110,36 @@ CCampaingN7.GetComponentInfo = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN7.GetEntryRedDot = function(self)
-  -- function num : 0_11
-  if not self:GetBlackFistRedDot() and not self:GetShadowTownRedDot() and not self:GetPrestigeRedDot() then
-    return self:GetLoginAwardRedDot()
-  end
+function CCampaingN7:GetEntryRedDot()
+  return self:GetBlackFistRedDot() or self:GetShadowTownRedDot() or self:GetPrestigeRedDot() or self:GetLoginAwardRedDot()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN7.GetBlackFistRedDot = function(self)
-  -- function num : 0_12
+function CCampaingN7:GetBlackFistRedDot()
   if self._blackfistComponet then
-    return (self._blackfistComponet):ShowRedDot()
+    return self._blackfistComponet:ShowRedDot()
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN7.GetShadowTownRedDot = function(self)
-  -- function num : 0_13
+function CCampaingN7:GetShadowTownRedDot()
   if self._lineMissionComponet1 == nil then
     return false
   end
-  return (self._lineMissionComponet1):HaveRedPoint()
+  return self._lineMissionComponet1:HaveRedPoint()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN7.GetPrestigeRedDot = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function CCampaingN7:GetPrestigeRedDot()
   if not self._personProgressComponetInfo then
     return false
   end
   local complate = {}
   local received = {}
-  local curProgress = (self._personProgressComponetInfo).m_current_progress
-  local receivedProgress = (self._personProgressComponetInfo).m_received_progress
-  for _,progress in pairs(receivedProgress) do
+  local curProgress = self._personProgressComponetInfo.m_current_progress
+  local receivedProgress = self._personProgressComponetInfo.m_received_progress
+  for _, progress in pairs(receivedProgress) do
     received[progress] = true
   end
-  local cfg = (self._personProgressComponetInfo).m_progress_rewards
-  for progress,_ in pairs(cfg) do
+  local cfg = self._personProgressComponetInfo.m_progress_rewards
+  for progress, _ in pairs(cfg) do
     if progress <= curProgress then
       complate[#complate + 1] = progress
     end
@@ -203,17 +152,12 @@ CCampaingN7.GetPrestigeRedDot = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN7.GetLoginAwardRedDot = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local info = (self._cumulativeLoginCompInfo).m_cumulative_info
-  for k,v in pairs(info) do
+function CCampaingN7:GetLoginAwardRedDot()
+  local info = self._cumulativeLoginCompInfo.m_cumulative_info
+  for k, v in pairs(info) do
     if v.m_reward_status == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV then
       return true
     end
   end
   return false
 end
-
-

@@ -1,48 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_show_boss_hp_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewShowBossHp", BuffViewBase)
 BuffViewShowBossHp = BuffViewShowBossHp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewShowBossHp.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewShowBossHp:PlayView(TT)
   local entityWork = self._entity
   local bossIds = SortedArray:New(Algorithm.COMPARE_CUSTOM, self.SortBosses)
   local cMonsterId = entityWork:MonsterID()
   local templateId = cMonsterId:GetMonsterID()
-  local sepHPList = (entityWork:HP()):GetHPLockSepList()
-  local redHp = (entityWork:HP()):GetRedHP()
-  local maxHP = (entityWork:HP()):GetMaxHP()
+  local sepHPList = entityWork:HP():GetHPLockSepList()
+  local redHp = entityWork:HP():GetRedHP()
+  local maxHP = entityWork:HP():GetMaxHP()
   local percent = redHp / maxHP
   local buffView = entityWork:BuffView()
   if not buffView:HasBuffEffect(BuffEffectType.NotShowBossHP) then
-    local hpBarType = nil
-    if (entityWork:MonsterID()):IsEliteMonster() then
+    local hpBarType
+    if entityWork:MonsterID():IsEliteMonster() then
       hpBarType = HPBarType.EliteBoss
     else
       hpBarType = HPBarType.Boss
     end
-    local id = {pstId = entityWork:GetID(), tplId = templateId, isVice = false, sepHPList = sepHPList, percent = percent, entity = entityWork, HPBarType = hpBarType, hpEnergyVal = 0, maxHPEnergyVal = 0}
+    local id = {
+      pstId = entityWork:GetID(),
+      tplId = templateId,
+      isVice = false,
+      sepHPList = sepHPList,
+      percent = percent,
+      entity = entityWork,
+      HPBarType = hpBarType,
+      hpEnergyVal = 0,
+      maxHPEnergyVal = 0
+    }
     bossIds:Insert(id)
   end
-  do
-    if bossIds:Size() == 1 then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowBossHp, bossIds)
-    end
+  if bossIds:Size() == 1 then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowBossHp, bossIds)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewShowBossHp.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewShowBossHp:IsNotifyMatch(notify)
   local result = self._buffResult
-  local isMatch = result:GetEntityID() == (self._entity):GetID()
-  do return isMatch end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local isMatch = result:GetEntityID() == self._entity:GetID()
+  return isMatch
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_backpack/ui_homeland_sale_and_use_with_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandSaleAndUseWithCount", UIController)
 UIHomelandSaleAndUseWithCount = UIHomelandSaleAndUseWithCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandSaleAndUseWithCount.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandSaleAndUseWithCount:Constructor()
   self.curCount = 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandSaleAndUseWithCount.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandSaleAndUseWithCount:OnShow(uiParams)
   self.item = uiParams[1]
   self.openType = uiParams[2]
   self.callBack = uiParams[3]
@@ -28,55 +18,34 @@ UIHomelandSaleAndUseWithCount.OnShow = function(self, uiParams)
   self.txtSaleMoney = self:GetUIComponent("UILocalizationText", "txtSaleMoney")
   self.sale = self:GetGameObject("sale")
   self.use = self:GetGameObject("use")
-  self.OnSldCountValueChange = function(value)
-    -- function num : 0_1_0 , upvalues : self
+  
+  function self.OnSldCountValueChange(value)
     self:SetCurCount(value)
     self:Flush()
   end
-
-  ;
-  ((self.sldCount).onValueChanged):AddListener(self.OnSldCountValueChange)
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.sldCount).value = self.curCount
+  
+  self.sldCount.onValueChanged:AddListener(self.OnSldCountValueChange)
+  self.sldCount.value = self.curCount
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandSaleAndUseWithCount.OnHide = function(self)
-  -- function num : 0_2
-  ((self.sldCount).onValueChanged):RemoveListener(self.OnSldCountValueChange)
+function UIHomelandSaleAndUseWithCount:OnHide()
+  self.sldCount.onValueChanged:RemoveListener(self.OnSldCountValueChange)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandSaleAndUseWithCount.SetCurCount = function(self, curCount)
-  -- function num : 0_3 , upvalues : _ENV
-  self.curCount = (math.modf)(curCount)
+function UIHomelandSaleAndUseWithCount:SetCurCount(curCount)
+  self.curCount, _ = math.modf(curCount)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandSaleAndUseWithCount.Flush = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local tpl = (self.item):GetTemplate()
-  local count = (self.item):GetCount()
-  ;
-  (self.icon):LoadImage(tpl.Icon)
-  ;
-  (self.txtName):SetText((StringTable.Get)(tpl.Name))
+function UIHomelandSaleAndUseWithCount:Flush()
+  local tpl = self.item:GetTemplate()
+  local count = self.item:GetCount()
+  self.icon:LoadImage(tpl.Icon)
+  self.txtName:SetText(StringTable.Get(tpl.Name))
   local max = self:GetMaxLimitCount()
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.sldCount).maxValue = (math.min)(count, max)
-  ;
-  (self.txtCount):SetText(self.curCount)
-  ;
-  (self.txtOwnCount):SetText(count)
-  ;
-  (self.txtLeftCount):SetText(count - self.curCount)
+  self.sldCount.maxValue = math.min(count, max)
+  self.txtCount:SetText(self.curCount)
+  self.txtOwnCount:SetText(count)
+  self.txtLeftCount:SetText(count - self.curCount)
   if self.openType == EnumItemSaleAndUseState.Sale then
     self:FlushSale()
   else
@@ -85,147 +54,101 @@ UIHomelandSaleAndUseWithCount.Flush = function(self)
   self:SetInputText()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandSaleAndUseWithCount.FlushSale = function(self)
-  -- function num : 0_5
-  (self.use):SetActive(false)
+function UIHomelandSaleAndUseWithCount:FlushSale()
+  self.use:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandSaleAndUseWithCount.FlushUse = function(self)
-  -- function num : 0_6
-  (self.sale):SetActive(false)
+function UIHomelandSaleAndUseWithCount:FlushUse()
+  self.sale:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandSaleAndUseWithCount.SetInputText = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local tpl = (self.item):GetTemplate()
-  local itemCount = (self.item):GetCount()
+function UIHomelandSaleAndUseWithCount:SetInputText()
+  local tpl = self.item:GetTemplate()
+  local itemCount = self.item:GetCount()
   if self.curCount < 1 then
     self.curCount = 1
-  else
-    if itemCount < self.curCount then
-      self.curCount = itemCount
-    end
+  elseif itemCount < self.curCount then
+    self.curCount = itemCount
   end
   if self.openType == EnumItemSaleAndUseState.Sale then
-    local allPrice = nil
+    local allPrice
     local itemPerPiece = tpl.SaleGold
     if self.curCount * itemPerPiece > 99999999 then
-      allPrice = "9999" .. (StringTable.Get)("str_item_public_unit")
+      allPrice = "9999" .. StringTable.Get("str_item_public_unit")
     else
       allPrice = tostring(self.curCount * itemPerPiece)
     end
-    ;
-    (self.txtSaleMoney):SetText(tostring(allPrice))
+    self.txtSaleMoney:SetText(tostring(allPrice))
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandSaleAndUseWithCount.GetMaxLimitCount = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local itemData = (self.item):GetTemplate()
+function UIHomelandSaleAndUseWithCount:GetMaxLimitCount()
+  local itemData = self.item:GetTemplate()
   local nMaxLimitCount = 99
   if itemData.UseEffect == "PhyGift" then
     nMaxLimitCount = 1
     local roleModule = self:GetModule(RoleModule)
     local itemModule = self:GetModule(ItemModule)
     local nPhyData = roleModule:GetHealthPoint()
-    local cfgRoleLevel = (Cfg.cfg_role_level)[roleModule:GetLevel()]
-    if not cfgRoleLevel.TotalMaxPhyPoint then
-      local nPhyMaxLevel = not cfgRoleLevel or 100
-    end
-    local nPhyMaxLimit = ((Cfg.cfg_global).role_phy_max_limit).IntValue or 999
-    local nPhyMax = 0
-    if nPhyMaxLevel < nPhyMaxLimit then
-      nPhyMax = nPhyMaxLevel
-    else
-      nPhyMax = nPhyMaxLimit
-    end
-    if nPhyData < nPhyMax then
-      local nPhyEffect = itemModule:GetPhyGiftData(itemData.ID)
-      if nPhyEffect > 0 then
-        local nMaxCount = (nPhyMax - nPhyData) / nPhyEffect
-        nMaxLimitCount = (math.floor)(nMaxCount)
+    local cfgRoleLevel = Cfg.cfg_role_level[roleModule:GetLevel()]
+    if cfgRoleLevel then
+      local nPhyMaxLevel = cfgRoleLevel.TotalMaxPhyPoint or 100
+      local nPhyMaxLimit = Cfg.cfg_global.role_phy_max_limit.IntValue or 999
+      local nPhyMax = 0
+      if nPhyMaxLevel < nPhyMaxLimit then
+        nPhyMax = nPhyMaxLevel
+      else
+        nPhyMax = nPhyMaxLimit
+      end
+      if nPhyData < nPhyMax then
+        local nPhyEffect = itemModule:GetPhyGiftData(itemData.ID)
+        if 0 < nPhyEffect then
+          local nMaxCount = (nPhyMax - nPhyData) / nPhyEffect
+          nMaxLimitCount = math.floor(nMaxCount)
+        end
       end
     end
   end
-  do
-    return nMaxLimitCount
-  end
+  return nMaxLimitCount
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandSaleAndUseWithCount.bgOnClick = function(self)
-  -- function num : 0_9
+function UIHomelandSaleAndUseWithCount:bgOnClick()
   self:ClosePanel()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandSaleAndUseWithCount.btnCloseOnClick = function(self)
-  -- function num : 0_10
+function UIHomelandSaleAndUseWithCount:btnCloseOnClick()
   self:ClosePanel()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandSaleAndUseWithCount.btnAddOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
-  if self.curCount < (self.sldCount).maxValue then
+function UIHomelandSaleAndUseWithCount:btnAddOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
+  if self.curCount < self.sldCount.maxValue then
     self:SetCurCount(self.curCount + 1)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.sldCount).value = self.curCount
+    self.sldCount.value = self.curCount
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandSaleAndUseWithCount.btnSubOnClick = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+function UIHomelandSaleAndUseWithCount:btnSubOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   if self.curCount > 1 then
     self:SetCurCount(self.curCount - 1)
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.sldCount).value = self.curCount
+    self.sldCount.value = self.curCount
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandSaleAndUseWithCount.btnSaleOnClick = function(self)
-  -- function num : 0_13
+function UIHomelandSaleAndUseWithCount:btnSaleOnClick()
   if self.curCount ~= 0 then
-    (self.callBack)(self.item, self.curCount)
+    self.callBack(self.item, self.curCount)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandSaleAndUseWithCount.btnUseOnClick = function(self)
-  -- function num : 0_14
+function UIHomelandSaleAndUseWithCount:btnUseOnClick()
   if self.curCount ~= 0 then
-    (self.callBack)(self.item, self.curCount)
+    self.callBack(self.item, self.curCount)
   end
   self:ClosePanel()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandSaleAndUseWithCount.ClosePanel = function(self)
-  -- function num : 0_15
+function UIHomelandSaleAndUseWithCount:ClosePanel()
   self:CloseDialog()
 end
-
-

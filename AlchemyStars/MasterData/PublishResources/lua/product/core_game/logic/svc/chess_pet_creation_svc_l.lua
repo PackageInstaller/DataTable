@@ -1,29 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/chess_pet_creation_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChessPetCreationServiceLogic", BaseService)
 ChessPetCreationServiceLogic = ChessPetCreationServiceLogic
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChessPetCreationServiceLogic.GenerateChessPetCreationResult = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).ChessPet)
+function ChessPetCreationServiceLogic:GenerateChessPetCreationResult()
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.ChessPet)
   local chessPetList = group:GetEntities()
   local creationResultList = {}
-  for _,v in ipairs(chessPetList) do
+  for _, v in ipairs(chessPetList) do
     local res = self:GenerateOneChessPetResult(v)
     creationResultList[#creationResultList + 1] = res
   end
   return creationResultList
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetCreationServiceLogic.GenerateOneChessPetResult = function(self, chessPetEntity)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfgSvc = (self._world):GetService("Config")
+function ChessPetCreationServiceLogic:GenerateOneChessPetResult(chessPetEntity)
+  local cfgSvc = self._world:GetService("Config")
   local chessPetConfigData = cfgSvc:GetChessPetConfigData()
   local res = DataChessPetCreationResult:New()
   local eid = chessPetEntity:GetID()
@@ -49,10 +39,7 @@ ChessPetCreationServiceLogic.GenerateOneChessPetResult = function(self, chessPet
   return res
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetCreationServiceLogic.GetChessPetCreationGridLocResult = function(self, chessPetEntity)
-  -- function num : 0_2 , upvalues : _ENV
+function ChessPetCreationServiceLogic:GetChessPetCreationGridLocResult(chessPetEntity)
   local gridLocCmpt = chessPetEntity:GridLocation()
   local gridLocRes = DataGridLocationResult:New()
   gridLocRes:SetGridLocResultBornPos(gridLocCmpt:GetGridPos())
@@ -63,10 +50,7 @@ ChessPetCreationServiceLogic.GetChessPetCreationGridLocResult = function(self, c
   return gridLocRes
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetCreationServiceLogic.GetCreateADH = function(self, monsterID)
-  -- function num : 0_3
+function ChessPetCreationServiceLogic:GetCreateADH(monsterID)
   local cfgService = self._configService
   local monsterConfigData = cfgService:GetMonsterConfigData()
   local attack = monsterConfigData:GetMonsterAttack(monsterID)
@@ -75,37 +59,36 @@ ChessPetCreationServiceLogic.GetCreateADH = function(self, monsterID)
   return attack, defense, hp
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetCreationServiceLogic.CreateMonster = function(self, monsterTransform)
-  -- function num : 0_4
+function ChessPetCreationServiceLogic:CreateMonster(monsterTransform)
   return self:__createMonster(monsterTransform, nil)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetCreationServiceLogic.CreateMonsterWithInitADH = function(self, monsterTransform, attack, defense, maxhp, curhp, airt, bindeff, buffrt)
-  -- function num : 0_5 , upvalues : _ENV
-  attack = attack ~= nil and (math.floor)(attack) or nil
-  defense = defense ~= nil and (math.floor)(defense) or nil
-  maxhp = maxhp ~= nil and (math.floor)(maxhp) or nil
-  curhp = curhp ~= nil and (math.floor)(curhp) or nil
-  return self:__createMonster(monsterTransform, {attack = attack, defense = defense, maxhp = maxhp, curhp = curhp, airt = airt, bindeff = bindeff, buffrt = buffrt})
+function ChessPetCreationServiceLogic:CreateMonsterWithInitADH(monsterTransform, attack, defense, maxhp, curhp, airt, bindeff, buffrt)
+  attack = attack ~= nil and math.floor(attack) or nil
+  defense = defense ~= nil and math.floor(defense) or nil
+  maxhp = maxhp ~= nil and math.floor(maxhp) or nil
+  curhp = curhp ~= nil and math.floor(curhp) or nil
+  return self:__createMonster(monsterTransform, {
+    attack = attack,
+    defense = defense,
+    maxhp = maxhp,
+    curhp = curhp,
+    airt = airt,
+    bindeff = bindeff,
+    buffrt = buffrt
+  })
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetCreationServiceLogic.__createMonster = function(self, monsterTransform, _InitMonsterAttributes)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfgSvc = (self._world):GetService("Config")
+function ChessPetCreationServiceLogic:__createMonster(monsterTransform, _InitMonsterAttributes)
+  local cfgSvc = self._world:GetService("Config")
   local chessPetConfigData = cfgSvc:GetChessPetConfigData()
   local chessPetID = monsterTransform:GetMonsterID()
   local chessPetPosition = monsterTransform:GetPosition()
   local dir = monsterTransform:GetForward()
-  local chessPetConfig = (Cfg.cfg_chesspet)[chessPetID]
+  local chessPetConfig = Cfg.cfg_chesspet[chessPetID]
   if not chessPetConfig then
-    (Log.fatal)("Cfg chessPetConfig Not Find ID:", chessPetID)
-    return 
+    Log.fatal("Cfg chessPetConfig Not Find ID:", chessPetID)
+    return
   end
   local chessPetClassID = chessPetConfigData:GetChessPetClassID(chessPetID)
   local areaArray = chessPetConfigData:GetChessPetArea(chessPetID)
@@ -119,14 +102,14 @@ ChessPetCreationServiceLogic.__createMonster = function(self, monsterTransform, 
   local maxhp = chessPetConfigData:GetChessPetHealth(chessPetID)
   local curhp = maxhp
   local elementType = chessPetConfigData:GetChessPetElementType(chessPetID)
-  local sEntity = (self._world):GetService("LogicEntity")
+  local sEntity = self._world:GetService("LogicEntity")
   local chessPetEntity = sEntity:CreateLogicEntity(EntityConfigIDConst.ChessPet)
   chessPetEntity:ReplaceChessPet(chessPetID, chessPetClassID, chessPetRaceType)
   local chessPetComponent = chessPetEntity:ChessPet()
   chessPetComponent:SetSkillID(chessPetSkillIDs)
   chessPetEntity:ReplaceBodyArea(areaArray)
   chessPetEntity:SetGridLocationAndOffset(chessPetPosition, dir, positionOffset, damageOffset)
-  local boardService = (self._world):GetService("BoardLogic")
+  local boardService = self._world:GetService("BoardLogic")
   local blockFlag = boardService:GetBlockFlagByBlockId(block)
   chessPetEntity:ReplaceBlockFlag(blockFlag)
   boardService:UpdateEntityBlockFlag(chessPetEntity, chessPetPosition, chessPetPosition)
@@ -141,143 +124,118 @@ ChessPetCreationServiceLogic.__createMonster = function(self, monsterTransform, 
   attributeCmpt:SetSimpleAttribute("Element", elementType)
   local monsterBornBuffContext = {isMonsterBornBuff = true}
   local buffList = chessPetConfigData:GetBornBuffList(chessPetID)
-  if buffList and #buffList > 0 then
-    local buffLogic = (self._world):GetService("BuffLogic")
+  if buffList and 0 < #buffList then
+    local buffLogic = self._world:GetService("BuffLogic")
     if not chessPetEntity:HasBuff() then
       chessPetEntity:AddBuffComponent()
     end
-    for _,buffId in ipairs(buffList) do
+    for _, buffId in ipairs(buffList) do
       buffLogic:AddBuff(buffId, chessPetEntity, monsterBornBuffContext)
     end
   end
-  do
-    return chessPetEntity, chessPetID
-  end
+  return chessPetEntity, chessPetID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetCreationServiceLogic.CreateInternalRefreshMonsterLogic = function(self, monsterRefreshParamArray)
-  -- function num : 0_7 , upvalues : _ENV
-  local entityService = (self._world):GetService("LogicEntity")
+function ChessPetCreationServiceLogic:CreateInternalRefreshMonsterLogic(monsterRefreshParamArray)
+  local entityService = self._world:GetService("LogicEntity")
   local eMonsterList = {}
-  for _,monsterRefreshParam in ipairs(monsterRefreshParamArray) do
+  for _, monsterRefreshParam in ipairs(monsterRefreshParamArray) do
     local monsterPosList = self:_CalcInternalRefreshMonsterPos(monsterRefreshParam)
     local eMonsters, monsterIds = self:CreateMonsters(monsterPosList)
-    ;
-    (table.appendArray)(eMonsterList, eMonsters)
+    table.appendArray(eMonsterList, eMonsters)
   end
   return eMonsterList
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetCreationServiceLogic._GetInternalRefreshConfigData = function(self)
-  -- function num : 0_8
-  local levelConfigData = (self._configService):GetLevelConfigData()
-  local waveNum = (self:_GetBattleStatComponent()):GetCurWaveIndex()
+function ChessPetCreationServiceLogic:_GetInternalRefreshConfigData()
+  local levelConfigData = self._configService:GetLevelConfigData()
+  local waveNum = self:_GetBattleStatComponent():GetCurWaveIndex()
   local monsterConfigDataArray = levelConfigData:GetLevelWaveInternalRefreshData(waveNum)
   return monsterConfigDataArray
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetCreationServiceLogic._CalcInternalRefreshMonsterPos = function(self, monsterRefreshParam)
-  -- function num : 0_9 , upvalues : _ENV
-  local createMonsterPosService = (self._world):GetService("CreateMonsterPos")
+function ChessPetCreationServiceLogic:_CalcInternalRefreshMonsterPos(monsterRefreshParam)
+  local createMonsterPosService = self._world:GetService("CreateMonsterPos")
   local chessPetArray = {}
   local chessPetIDArray = monsterRefreshParam:GetChessPetIDArray()
   local chessPetPosArray = monsterRefreshParam:GetChessPetPosArray()
   local chessPetRotationArray = monsterRefreshParam:GetChessPetRotationArray()
-  for i,monsterID in ipairs(chessPetIDArray) do
+  for i, monsterID in ipairs(chessPetIDArray) do
     local monsterPosition = chessPetPosArray[i]
     local monsterDir = Vector2(0, 0)
     if chessPetRotationArray then
-      do
-        local monsterTransformParam = MonsterTransformParam:New(monsterID)
-        monsterTransformParam:SetPosition(monsterPosition)
-        monsterTransformParam:SetRotation(monsterDir)
-        monsterTransformParam:SetForward(monsterDir)
-        chessPetArray[#chessPetArray + 1] = monsterTransformParam
-        -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
     end
+    local monsterTransformParam = MonsterTransformParam:New(monsterID)
+    monsterTransformParam:SetPosition(monsterPosition)
+    monsterTransformParam:SetRotation(monsterDir)
+    monsterTransformParam:SetForward(monsterDir)
+    chessPetArray[#chessPetArray + 1] = monsterTransformParam
   end
   return chessPetArray
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetCreationServiceLogic.CreateMonsters = function(self, monsterArray)
-  -- function num : 0_10 , upvalues : _ENV
+function ChessPetCreationServiceLogic:CreateMonsters(monsterArray)
   local eMonsters = {}
   local monsterIds = {}
-  for _,v in ipairs(monsterArray) do
+  for _, v in ipairs(monsterArray) do
     local eMonster, monsterId = self:CreateMonster(v)
-    ;
-    (table.insert)(eMonsters, eMonster)
-    ;
-    (table.insert)(monsterIds, monsterId)
-    ;
-    ((self._world):GetSyncLogger()):Trace({key = "CreateInternalMonsters", monsterID = monsterId, entityID = eMonster:GetID(), pos = tostring(v:GetPosition())})
+    table.insert(eMonsters, eMonster)
+    table.insert(monsterIds, monsterId)
+    self._world:GetSyncLogger():Trace({
+      key = "CreateInternalMonsters",
+      monsterID = monsterId,
+      entityID = eMonster:GetID(),
+      pos = tostring(v:GetPosition())
+    })
   end
   return eMonsters, monsterIds
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetCreationServiceLogic.CalcAppearSkill = function(self, e)
-  -- function num : 0_11
-  local sSkillLogic = (self._world):GetService("SkillLogic")
-  local utilDataSvc = (self._world):GetService("UtilData")
+function ChessPetCreationServiceLogic:CalcAppearSkill(e)
+  local sSkillLogic = self._world:GetService("SkillLogic")
+  local utilDataSvc = self._world:GetService("UtilData")
   local appearSkillId = utilDataSvc:GetAppearSkillId(e)
-  if appearSkillId and appearSkillId > 0 then
+  if appearSkillId and 0 < appearSkillId then
     sSkillLogic:CalcSkillEffect(e, appearSkillId)
     sSkillLogic:UpdateRenderSkillRoutine(e)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetCreationServiceLogic._DoRefreshBoardGapTiles = function(self, fillPieceList)
-  -- function num : 0_12 , upvalues : _ENV
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
-  local boardServiceRender = (self._world):GetService("BoardRender")
+function ChessPetCreationServiceLogic:_DoRefreshBoardGapTiles(fillPieceList)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local boardServiceRender = self._world:GetService("BoardRender")
   local oldGapTiles = boardServiceLogic:GetGapTiles()
   local newGapTiles = {}
   for i = 1, #oldGapTiles do
     local bFind = false
     for j = 1, #fillPieceList do
-      if (fillPieceList[j])[1] == (oldGapTiles[i])[1] and (fillPieceList[j])[2] == (oldGapTiles[i])[2] then
+      if fillPieceList[j][1] == oldGapTiles[i][1] and fillPieceList[j][2] == oldGapTiles[i][2] then
         bFind = true
       end
     end
     if bFind ~= true then
-      (table.insert)(newGapTiles, {(oldGapTiles[i])[1], (oldGapTiles[i])[2]})
+      table.insert(newGapTiles, {
+        oldGapTiles[i][1],
+        oldGapTiles[i][2]
+      })
     end
   end
   boardServiceLogic:ChangeGapTiles(newGapTiles)
   local addPiecePos = {}
   for i = 1, #fillPieceList do
-    (table.insert)(addPiecePos, Vector2((fillPieceList[i])[1], (fillPieceList[i])[2]))
+    table.insert(addPiecePos, Vector2(fillPieceList[i][1], fillPieceList[i][2]))
   end
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local pieceFillTable = boardServiceLogic:SupplyPieceList(addPiecePos)
   local boardCmpt = boardEntity:Board()
   boardCmpt:FillPieces(pieceFillTable)
-  for i,grid in ipairs(pieceFillTable) do
+  for i, grid in ipairs(pieceFillTable) do
     local gridPos = Vector2(grid.x, grid.y)
     boardServiceRender:CreateGridEntity(grid.color, gridPos, false)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetCreationServiceLogic.MakePhantomLogic = function(self, result)
-  -- function num : 0_13 , upvalues : _ENV
+function ChessPetCreationServiceLogic:MakePhantomLogic(result)
   local monsterTransformParam = MonsterTransformParam:New(result:GetTargetID())
   monsterTransformParam:SetPosition(result:GetBornPos())
   monsterTransformParam:SetRotation(result:GetBornRot())
@@ -285,21 +243,16 @@ ChessPetCreationServiceLogic.MakePhantomLogic = function(self, result)
   phantomEntity:AddPhantomComponent(result:GetOwnerID())
   local attributeCmpt = phantomEntity:Attributes()
   local maxHp = attributeCmpt:CalcMaxHp()
-  local hp = (math.floor)(maxHp * result:GetHPPercent())
+  local hp = math.floor(maxHp * result:GetHPPercent())
   attributeCmpt:SetSimpleAttribute("MaxHP", hp)
   attributeCmpt:SetSimpleAttribute("HP", hp)
   return phantomEntity
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetCreationServiceLogic.InitWorldBossHPData = function(self, entity, monsterID)
-  -- function num : 0_14
-  local monsterConfigData = (self._configService):GetMonsterConfigData()
+function ChessPetCreationServiceLogic:InitWorldBossHPData(entity, monsterID)
+  local monsterConfigData = self._configService:GetMonsterConfigData()
   local stage = monsterConfigData:GetWorldBossConfig(monsterID)
   local monsterIDCmpt = entity:MonsterID()
   monsterIDCmpt:InitWorldBossStageData(stage)
   monsterIDCmpt:SetWorldBossState(true)
 end
-
-

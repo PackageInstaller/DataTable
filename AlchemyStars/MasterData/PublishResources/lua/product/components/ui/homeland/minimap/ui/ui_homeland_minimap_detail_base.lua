@@ -1,62 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/ui_homeland_minimap_detail_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapDetailBase", UICustomWidget)
 UIHomelandMinimapDetailBase = UIHomelandMinimapDetailBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapDetailBase.InternalInitialize = function(self, iconData)
-  -- function num : 0_0
+function UIHomelandMinimapDetailBase:InternalInitialize(iconData)
   self.anim = self:GetUIComponent("Animation", "Anim")
   self._iconData = iconData
   self:OnInitDone()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBase.GetIconData = function(self)
-  -- function num : 0_1
+function UIHomelandMinimapDetailBase:GetIconData()
   return self._iconData
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBase.OnInitDone = function(self)
-  -- function num : 0_2
+function UIHomelandMinimapDetailBase:OnInitDone()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBase.OnClose = function(self)
-  -- function num : 0_3
+function UIHomelandMinimapDetailBase:OnClose()
   local animation = self:GetAnimation()
   if not animation then
-    (self:GetGameObject()):SetActive(false)
+    self:GetGameObject():SetActive(false)
   else
     local animName = self:GetCloseAnimtionName()
     if animName ~= nil and animName ~= "" then
       animation:Play(animName)
     else
-      ;
-      (self:GetGameObject()):SetActive(false)
+      self:GetGameObject():SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBase.GetAnimation = function(self)
-  -- function num : 0_4
+function UIHomelandMinimapDetailBase:GetAnimation()
   return self.anim
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBase.GetCloseAnimtionName = function(self)
-  -- function num : 0_5
+function UIHomelandMinimapDetailBase:GetCloseAnimtionName()
   return ""
 end
-
-

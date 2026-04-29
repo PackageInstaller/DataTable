@@ -1,21 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_phase_rand_attack_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillPhase_RandAttack", PlaySkillPhaseBase)
 PlaySkillPhase_RandAttack = PlaySkillPhase_RandAttack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillPhase_RandAttack.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillPhase_RandAttack:PlayFlight(TT, casterEntity, phaseParam)
   local param = phaseParam
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local results = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.RandAttack)
   local buffView = casterEntity:BuffView()
   local soulCount = buffView:GetBuffValue("SoulCount") or 0
-  if soulCount > 0 and results:GetListAliveCount() > 0 then
+  if 0 < soulCount and 0 < results:GetListAliveCount() then
     self:_DelayTime(TT, param:GetTargetWaitTime())
     local isFinalHit = skillEffectResultContainer:IsFinalAttack()
     local attackIntervalTime = param:GetAttackIntervalTime()
@@ -23,7 +16,7 @@ PlaySkillPhase_RandAttack.PlayFlight = function(self, TT, casterEntity, phasePar
     local nSkillID = skillEffectResultContainer:GetSkillID()
     for i = 1, nDefenterCount do
       local randAttackData = results:GetDefenderData(i)
-      local targetEntity = (self._world):GetEntityByID(randAttackData.m_entityDefenter)
+      local targetEntity = self._world:GetEntityByID(randAttackData.m_entityDefenter)
       if targetEntity then
         if isFinalHit and i == nDefenterCount then
           skillEffectResultContainer:SetFinalAttackEntityID(targetEntity:GetID())
@@ -36,23 +29,17 @@ PlaySkillPhase_RandAttack.PlayFlight = function(self, TT, casterEntity, phasePar
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhase_RandAttack._PlayHitEffect = function(self, TT, entityCast, entityTarget, phaseParam, damageData, isFinalHit, nSkillID)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillPhase_RandAttack:_PlayHitEffect(TT, entityCast, entityTarget, phaseParam, damageData, isFinalHit, nSkillID)
   local posCast = self:_GetEntityBasePos(entityCast)
   local posTarget = self:_GetEntityBasePos(entityTarget)
   local hitAnimationName = phaseParam:GetHitAnimation()
   local hitEffectID = phaseParam:GetHitEffectID()
-  local attackPos = (entityCast:GridLocation()):GetGridPos()
-  local beAttackPos = (entityTarget:GridLocation()):GetGridPos()
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+  local attackPos = entityCast:GridLocation():GetGridPos()
+  local beAttackPos = entityTarget:GridLocation():GetGridPos()
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayBuffView(TT, NTRandAttackEnd:New(entityCast, entityTarget, attackPos, beAttackPos))
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask((self._skillService).PlayCastAudio, self._skillService, phaseParam:GetAudioID(), phaseParam:GetAudioWaitTime())
+  GameGlobal.TaskManager():CoreGameStartTask(self._skillService.PlayCastAudio, self._skillService, phaseParam:GetAudioID(), phaseParam:GetAudioWaitTime())
   local skillService = self:SkillService()
-  local beHitParam = (((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(entityCast)):SetHandleBeHitParam_TargetEntity(entityTarget)):SetHandleBeHitParam_HitAnimName(hitAnimationName)):SetHandleBeHitParam_HitEffectID(hitEffectID)):SetHandleBeHitParam_DamageInfo(damageData)):SetHandleBeHitParam_DamagePos(posTarget)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(isFinalHit)):SetHandleBeHitParam_SkillID(nSkillID)
+  local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(entityCast):SetHandleBeHitParam_TargetEntity(entityTarget):SetHandleBeHitParam_HitAnimName(hitAnimationName):SetHandleBeHitParam_HitEffectID(hitEffectID):SetHandleBeHitParam_DamageInfo(damageData):SetHandleBeHitParam_DamagePos(posTarget):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(isFinalHit):SetHandleBeHitParam_SkillID(nSkillID)
   skillService:HandleBeHit(TT, beHitParam)
 end
-
-

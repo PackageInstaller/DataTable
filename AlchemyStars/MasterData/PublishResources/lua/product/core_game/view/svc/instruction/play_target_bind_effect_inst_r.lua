@@ -1,50 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_target_bind_effect_inst_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTargetBindEffectInstruction", BaseInstruction)
 PlayTargetBindEffectInstruction = PlayTargetBindEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTargetBindEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTargetBindEffectInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._scale = tonumber(paramList.scale) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTargetBindEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTargetBindEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local targetID = phaseContext:GetCurTargetEntityID()
   local targetEntity = world:GetEntityByID(targetID)
   if not targetEntity then
-    (Log.fatal)("")
-    return 
+    Log.fatal("")
+    return
   end
   local e = targetEntity
-  local effect = (world:GetService("Effect")):CreateEffect(self._effectID, e)
+  local effect = world:GetService("Effect"):CreateEffect(self._effectID, e)
   if effect and self._scale ~= 1 then
     YIELD(TT)
-    local trajectoryObject = (effect:View()):GetGameObject()
+    local trajectoryObject = effect:View():GetGameObject()
     local transWork = trajectoryObject.transform
-    local scaleData = (Vector3.New)(self._scale, self._scale, self._scale)
+    local scaleData = Vector3.New(self._scale, self._scale, self._scale)
     local sequence = transWork:DOScale(scaleData, 0)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTargetBindEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayTargetBindEffectInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

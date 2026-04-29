@@ -1,50 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/common_line_mission/ui_common_line_mission_main_share.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICommonLineMissionMainShare", UIController)
 UICommonLineMissionMainShare = UICommonLineMissionMainShare
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICommonLineMissionMainShare.Constructor = function(self)
-  -- function num : 0_0
+function UICommonLineMissionMainShare:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMainShare.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UICommonLineMissionMainShare:OnShow(uiParams)
   self._closeCallback = uiParams[1]
   self:Share()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMainShare.OnHide = function(self)
-  -- function num : 0_2
+function UICommonLineMissionMainShare:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMainShare.Share = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICommonLineMissionMainShare:Share()
   self:Lock("UICommonLineMissionMainShare")
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, self
     YIELD(TT)
     YIELD(TT)
     self:ShowDialog("UIShare", self:GetName(), ShareAnchorType.BottomRight, function()
-      -- function num : 0_3_0_0 , upvalues : self
       if self._closeCallback then
-        (self._closeCallback)()
+        self._closeCallback()
       end
       self:CloseDialog()
-    end
-, nil, nil, nil, ShareSceneType.CampaignKV)
+    end, nil, nil, nil, ShareSceneType.CampaignKV)
     self:UnLock("UICommonLineMissionMainShare")
-  end
-, self)
+  end, self)
 end
-
-

@@ -1,49 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/main_btns/ui_homeland_main_btns_campaign_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMainBtnsCampaignItem", UICustomWidget)
 UIHomelandMainBtnsCampaignItem = UIHomelandMainBtnsCampaignItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMainBtnsCampaignItem.SetData = function(self, campaign, cfg, callback)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandMainBtnsCampaignItem:SetData(campaign, cfg, callback)
   self._campaign = campaign
   self._cfg = cfg
   self._enter = _createInstance(cfg.ClassName, campaign, cfg)
   if not self._enter then
-    (Log.exception)("UIHomelandMainBtnsCampaignItem:SetData() self._enter = nil, cfg.ID = ", cfg.ID)
+    Log.exception("UIHomelandMainBtnsCampaignItem:SetData() self._enter = nil, cfg.ID = ", cfg.ID)
   end
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "_bg", cfg.Bg)
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "_head", cfg.Head)
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "_left", cfg.Left)
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "_icon", cfg.Icon)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_title", (StringTable.Get)(cfg.Title))
+  UIWidgetHelper.SetRawImage(self, "_bg", cfg.Bg)
+  UIWidgetHelper.SetRawImage(self, "_head", cfg.Head)
+  UIWidgetHelper.SetRawImage(self, "_left", cfg.Left)
+  UIWidgetHelper.SetRawImage(self, "_icon", cfg.Icon)
+  UIWidgetHelper.SetLocalizationText(self, "_title", StringTable.Get(cfg.Title))
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtnsCampaignItem.SetNewAndReds = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local new = (self._enter):GetNew()
-  new = type(new) ~= "boolean" or (new and 1) or 0
-  local red = (self._enter):GetRedCount()
-  ;
-  (UIWidgetHelper.SetNewAndReds)(self, new, red, "_new", nil, "_redCount", "_redCountTxt")
+function UIHomelandMainBtnsCampaignItem:SetNewAndReds()
+  local new = self._enter:GetNew()
+  if type(new) == "boolean" then
+    new = new and 1 or 0
+  end
+  local red = self._enter:GetRedCount()
+  UIWidgetHelper.SetNewAndReds(self, new, red, "_new", nil, "_redCount", "_redCountTxt")
   return new, red
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtnsCampaignItem.BtnOnClick = function(self, go)
-  -- function num : 0_2
-  (self._enter):OpenUI()
+function UIHomelandMainBtnsCampaignItem:BtnOnClick(go)
+  self._enter:OpenUI()
 end
-
-

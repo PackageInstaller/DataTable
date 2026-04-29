@@ -1,36 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/backpack/ui_season_backpack_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBackpackLine", UICustomWidget)
 UISeasonBackpackLine = UISeasonBackpackLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBackpackLine.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonBackpackLine:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackLine.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonBackpackLine:InitWidget()
   self._line1 = self:GetGameObject("Line1")
   self._line2 = self:GetGameObject("Line2")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackLine.SetData = function(self, index)
-  -- function num : 0_2
+function UISeasonBackpackLine:SetData(index)
   self._index = index
   local show = self._index % 2 == 1
-  ;
-  (self._line1):SetActive(show)
-  ;
-  (self._line2):SetActive(not show)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._line1:SetActive(show)
+  self._line2:SetActive(not show)
 end
-
-

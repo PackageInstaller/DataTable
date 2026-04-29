@@ -1,60 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/world/unique_battle_damage_statistics_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BattleDamageStatisticsComponent", Object)
 BattleDamageStatisticsComponent = BattleDamageStatisticsComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BattleDamageStatisticsComponent.Constructor = function(self, world)
-  -- function num : 0_0
+function BattleDamageStatisticsComponent:Constructor(world)
   self._world = world
   self._damageStatisticsInfo = {}
   self._allPetDamageValue = 0
   self._allMonsterHPMax = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleDamageStatisticsComponent.GetDamageStatisticsDataList = function(self)
-  -- function num : 0_1
+function BattleDamageStatisticsComponent:GetDamageStatisticsDataList()
   return self._damageStatisticsInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleDamageStatisticsComponent.GetDamageStatisticsInfoByCasterID = function(self, casterID)
-  -- function num : 0_2
-  return (self._damageStatisticsInfo)[casterID]
+function BattleDamageStatisticsComponent:GetDamageStatisticsInfoByCasterID(casterID)
+  return self._damageStatisticsInfo[casterID]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleDamageStatisticsComponent.GetAllPetDamageValue = function(self)
-  -- function num : 0_3
+function BattleDamageStatisticsComponent:GetAllPetDamageValue()
   return self._allPetDamageValue
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleDamageStatisticsComponent.AddMonsterHPMaxStatistics = function(self, hpMax)
-  -- function num : 0_4
+function BattleDamageStatisticsComponent:AddMonsterHPMaxStatistics(hpMax)
   self._allMonsterHPMax = self._allMonsterHPMax + hpMax
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleDamageStatisticsComponent.GetMonsterHPMaxStatistics = function(self)
-  -- function num : 0_5
+function BattleDamageStatisticsComponent:GetMonsterHPMaxStatistics()
   return self._allMonsterHPMax
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleDamageStatisticsComponent.AddDamageStatisticsInfo = function(self, casterID, defenderID, damage, damageStatisticsType)
-  -- function num : 0_6 , upvalues : _ENV
-  local casterEntity = (self._world):GetEntityByID(casterID)
+function BattleDamageStatisticsComponent:AddDamageStatisticsInfo(casterID, defenderID, damage, damageStatisticsType)
+  local casterEntity = self._world:GetEntityByID(casterID)
   local petTemplateID = -1
   if casterEntity then
     if casterEntity:HasSummoner() and casterEntity:GetSummonerEntity() then
@@ -65,39 +40,36 @@ BattleDamageStatisticsComponent.AddDamageStatisticsInfo = function(self, casterI
     end
     local cPetPstID = casterEntity:PetPstID()
     if cPetPstID then
-      petTemplateID = (casterEntity:PetPstID()):GetTemplateID()
+      petTemplateID = casterEntity:PetPstID():GetTemplateID()
       casterID = casterEntity:GetID()
     else
-      ;
-      (Log.info)("[AddDamageStatisticsInfo] caster is not pet")
+      Log.info("[AddDamageStatisticsInfo] caster is not pet")
       casterID = -1
     end
-  else
-    do
-      if casterID ~= -1 then
-        (Log.info)("[AddDamageStatisticsInfo] casterID is nil. casterID=" .. casterID .. " defenderID=" .. defenderID .. " damage=" .. damage)
-        casterID = -1
-      end
-      -- DECOMPILER ERROR at PC71: Confused about usage of register: R7 in 'UnsetPending'
-
-      if not (self._damageStatisticsInfo)[casterID] then
-        (self._damageStatisticsInfo)[casterID] = BattleDamageStatisticsData:New(casterID, petTemplateID)
-      end
-      local curBattleDamageStatisticsData = (self._damageStatisticsInfo)[casterID]
-      curBattleDamageStatisticsData:AddDamageStatistics(defenderID, damage, damageStatisticsType)
-      self._allPetDamageValue = self._allPetDamageValue + damage
-    end
+  elseif casterID ~= -1 then
+    Log.info("[AddDamageStatisticsInfo] casterID is nil. casterID=" .. casterID .. " defenderID=" .. defenderID .. " damage=" .. damage)
+    casterID = -1
   end
+  if not self._damageStatisticsInfo[casterID] then
+    self._damageStatisticsInfo[casterID] = BattleDamageStatisticsData:New(casterID, petTemplateID)
+  end
+  local curBattleDamageStatisticsData = self._damageStatisticsInfo[casterID]
+  curBattleDamageStatisticsData:AddDamageStatistics(defenderID, damage, damageStatisticsType)
+  self._allPetDamageValue = self._allPetDamageValue + damage
 end
 
-local DamageStatisticsType = {PetNormalSkill = 1, PetChainSkill = 2, PetActiveSkill = 3, PetBuff = 4, MAX = 9}
+local DamageStatisticsType = {
+  PetNormalSkill = 1,
+  PetChainSkill = 2,
+  PetActiveSkill = 3,
+  PetBuff = 4,
+  MAX = 9
+}
 _enum("DamageStatisticsType", DamageStatisticsType)
 _class("BattleDamageStatisticsData", Object)
 BattleDamageStatisticsData = BattleDamageStatisticsData
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
 
-BattleDamageStatisticsData.Constructor = function(self, casterID, petTemplateID)
-  -- function num : 0_7
+function BattleDamageStatisticsData:Constructor(casterID, petTemplateID)
   self._casterID = casterID
   self._petTemplateID = petTemplateID
   self._petNormalDamageList = {}
@@ -113,145 +85,87 @@ BattleDamageStatisticsData.Constructor = function(self, casterID, petTemplateID)
   self._petBuffDamageValue = 0
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-BattleDamageStatisticsData.AddDamageStatistics = function(self, defenderID, damage, damageStatisticsType)
-  -- function num : 0_8 , upvalues : DamageStatisticsType, _ENV
+function BattleDamageStatisticsData:AddDamageStatistics(defenderID, damage, damageStatisticsType)
   local curStatisticsInfo = {defenderID = defenderID, damage = damage}
   if damageStatisticsType == DamageStatisticsType.PetNormalSkill then
-    (table.insert)(self._petNormalDamageList, curStatisticsInfo)
+    table.insert(self._petNormalDamageList, curStatisticsInfo)
     self._petNormalDamageValue = self._petNormalDamageValue + damage
+  elseif damageStatisticsType == DamageStatisticsType.PetChainSkill then
+    table.insert(self._petChainDamageList, curStatisticsInfo)
+    self._petChainDamageValue = self._petChainDamageValue + damage
+  elseif damageStatisticsType == DamageStatisticsType.PetActiveSkill then
+    table.insert(self._petActiveDamageList, curStatisticsInfo)
+    self._petActiveDamageValue = self._petActiveDamageValue + damage
+  elseif damageStatisticsType == DamageStatisticsType.PetBuff then
+    table.insert(self._petBuffDamageList, curStatisticsInfo)
+    self._petBuffDamageValue = self._petBuffDamageValue + damage
   else
-    if damageStatisticsType == DamageStatisticsType.PetChainSkill then
-      (table.insert)(self._petChainDamageList, curStatisticsInfo)
-      self._petChainDamageValue = self._petChainDamageValue + damage
-    else
-      if damageStatisticsType == DamageStatisticsType.PetActiveSkill then
-        (table.insert)(self._petActiveDamageList, curStatisticsInfo)
-        self._petActiveDamageValue = self._petActiveDamageValue + damage
-      else
-        if damageStatisticsType == DamageStatisticsType.PetBuff then
-          (table.insert)(self._petBuffDamageList, curStatisticsInfo)
-          self._petBuffDamageValue = self._petBuffDamageValue + damage
-        else
-          ;
-          (table.insert)(self._petBuffDamageList, curStatisticsInfo)
-          self._petBuffDamageValue = self._petBuffDamageValue + damage
-        end
-      end
-    end
+    table.insert(self._petBuffDamageList, curStatisticsInfo)
+    self._petBuffDamageValue = self._petBuffDamageValue + damage
   end
   self._allDamageValue = self._allDamageValue + damage
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-BattleDamageStatisticsData.GetCasterID = function(self)
-  -- function num : 0_9
+function BattleDamageStatisticsData:GetCasterID()
   return self._casterID
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-BattleDamageStatisticsData.GetPetTemplateID = function(self)
-  -- function num : 0_10
+function BattleDamageStatisticsData:GetPetTemplateID()
   return self._petTemplateID
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-BattleDamageStatisticsData.GetAllDamageValue = function(self)
-  -- function num : 0_11
+function BattleDamageStatisticsData:GetAllDamageValue()
   return self._allDamageValue
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-BattleDamageStatisticsData.GetPercentage = function(self)
-  -- function num : 0_12
+function BattleDamageStatisticsData:GetPercentage()
   return self._percentage
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-BattleDamageStatisticsData.SetPercentage = function(self, percentage)
-  -- function num : 0_13
+function BattleDamageStatisticsData:SetPercentage(percentage)
   self._percentage = percentage
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-BattleDamageStatisticsData.GetPercentageInt = function(self)
-  -- function num : 0_14
+function BattleDamageStatisticsData:GetPercentageInt()
   return self._percentageInt
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-BattleDamageStatisticsData.SetPercentageInt = function(self, percentageInt)
-  -- function num : 0_15
+function BattleDamageStatisticsData:SetPercentageInt(percentageInt)
   self._percentageInt = percentageInt
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-BattleDamageStatisticsData.GetPetNormalDamageValue = function(self)
-  -- function num : 0_16
+function BattleDamageStatisticsData:GetPetNormalDamageValue()
   return self._petNormalDamageValue
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R1 in 'UnsetPending'
-
-BattleDamageStatisticsData.GetPetChainDamageValue = function(self)
-  -- function num : 0_17
+function BattleDamageStatisticsData:GetPetChainDamageValue()
   return self._petChainDamageValue
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R1 in 'UnsetPending'
-
-BattleDamageStatisticsData.GetPetActiveDamageValue = function(self)
-  -- function num : 0_18
+function BattleDamageStatisticsData:GetPetActiveDamageValue()
   return self._petActiveDamageValue
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-BattleDamageStatisticsData.GetPetBuffDamageValue = function(self)
-  -- function num : 0_19
+function BattleDamageStatisticsData:GetPetBuffDamageValue()
   return self._petBuffDamageValue
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R1 in 'UnsetPending'
-
-MainWorld.BattleDamageStatistics = function(self)
-  -- function num : 0_20
-  return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).BattleDamageStatistics)
+function MainWorld:BattleDamageStatistics()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.BattleDamageStatistics)
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R1 in 'UnsetPending'
-
-MainWorld.HasBattleDamageStatistics = function(self)
-  -- function num : 0_21
-  do return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).BattleDamageStatistics) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MainWorld:HasBattleDamageStatistics()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.BattleDamageStatistics) ~= nil
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R1 in 'UnsetPending'
-
-MainWorld.AddBattleDamageStatistics = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).BattleDamageStatistics
+function MainWorld:AddBattleDamageStatistics()
+  local index = self.BW_UniqueComponentsEnum.BattleDamageStatistics
   local component = BattleDamageStatisticsComponent:New(self)
   self:SetUniqueComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R1 in 'UnsetPending'
-
-MainWorld.RemoveBattleDamageStatistics = function(self)
-  -- function num : 0_23
+function MainWorld:RemoveBattleDamageStatistics()
   if self:HasBattleDamageStatistics() then
-    self:SetUniqueComponent((self.BW_UniqueComponentsEnum).BattleDamageStatistics, nil)
+    self:SetUniqueComponent(self.BW_UniqueComponentsEnum.BattleDamageStatistics, nil)
   end
 end
-
-

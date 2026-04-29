@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_transport_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectTransportResult", SkillEffectResultBase)
 SkillEffectTransportResult = SkillEffectTransportResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectTransportResult.Constructor = function(self)
-  -- function num : 0_0
+function SkillEffectTransportResult:Constructor()
   self._convertColors = {}
   self._transportPieces = {}
   self._transportEntities = {}
@@ -18,95 +11,71 @@ SkillEffectTransportResult.Constructor = function(self)
   self._isLoop = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTransportResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectTransportResult:GetEffectType()
   return SkillEffectType.Transport
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTransportResult.AddTransportPiece = function(self, oldPos, newPos)
-  -- function num : 0_2 , upvalues : _ENV
-  (table.insert)(self._transportPieces, {oldPos, newPos})
+function SkillEffectTransportResult:AddTransportPiece(oldPos, newPos)
+  table.insert(self._transportPieces, {oldPos, newPos})
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTransportResult.GetTransportPieceResult = function(self)
-  -- function num : 0_3
+function SkillEffectTransportResult:GetTransportPieceResult()
   return self._transportPieces
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTransportResult.AddConvertColor = function(self, pos, oldColor, newColor)
-  -- function num : 0_4 , upvalues : _ENV
-  (table.insert)(self._convertColors, {pos, oldColor, newColor})
+function SkillEffectTransportResult:AddConvertColor(pos, oldColor, newColor)
+  table.insert(self._convertColors, {
+    pos,
+    oldColor,
+    newColor
+  })
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTransportResult.GetConvertColors = function(self)
-  -- function num : 0_5
+function SkillEffectTransportResult:GetConvertColors()
   return self._convertColors
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTransportResult.AddTransportEntity = function(self, eid, oldPos, newPos)
-  -- function num : 0_6 , upvalues : _ENV
-  (table.insert)(self._transportEntities, {eid, oldPos, newPos})
+function SkillEffectTransportResult:AddTransportEntity(eid, oldPos, newPos)
+  table.insert(self._transportEntities, {
+    eid,
+    oldPos,
+    newPos
+  })
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTransportResult.GetTransportEntities = function(self)
-  -- function num : 0_7
+function SkillEffectTransportResult:GetTransportEntities()
   return self._transportEntities
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTransportResult.AddTrapSkillResult = function(self, eid, skillResult, triggerEid)
-  -- function num : 0_8 , upvalues : _ENV
-  (table.insert)(self._trapSkillResults, {eid, skillResult, triggerEid})
+function SkillEffectTransportResult:AddTrapSkillResult(eid, skillResult, triggerEid)
+  table.insert(self._trapSkillResults, {
+    eid,
+    skillResult,
+    triggerEid
+  })
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTransportResult.GetTrapSkillResults = function(self)
-  -- function num : 0_9
+function SkillEffectTransportResult:GetTrapSkillResults()
   return self._trapSkillResults
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTransportResult.AddTransportPrism = function(self, oldPos, newPos, prismEntityID, pieceEffectType)
-  -- function num : 0_10 , upvalues : _ENV
-  (table.insert)(self._transportPrisms, {oldPos, newPos, prismEntityID, pieceEffectType})
+function SkillEffectTransportResult:AddTransportPrism(oldPos, newPos, prismEntityID, pieceEffectType)
+  table.insert(self._transportPrisms, {
+    oldPos,
+    newPos,
+    prismEntityID,
+    pieceEffectType
+  })
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTransportResult.GetTransportPrisms = function(self)
-  -- function num : 0_11
+function SkillEffectTransportResult:GetTransportPrisms()
   return self._transportPrisms
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTransportResult.SetIsLoop = function(self, isLoop)
-  -- function num : 0_12
+function SkillEffectTransportResult:SetIsLoop(isLoop)
   self._isLoop = isLoop
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTransportResult.IsLoop = function(self)
-  -- function num : 0_13
+function SkillEffectTransportResult:IsLoop()
   return self._isLoop
 end
-
-

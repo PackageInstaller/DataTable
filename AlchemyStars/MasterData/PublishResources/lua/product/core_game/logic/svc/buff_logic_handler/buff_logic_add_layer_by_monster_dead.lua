@@ -1,57 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_layer_by_monster_dead.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAddLayerByMonsterDead", BuffLogicBase)
 BuffLogicAddLayerByMonsterDead = BuffLogicAddLayerByMonsterDead
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddLayerByMonsterDead.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._buffInstance)._buffLayerName = ((self._buffInstance)._buffsvc):GetBuffLayerName(self._layerType)
-    self._dontDisplay = logicParam.dontDisplay
-  end
+function BuffLogicAddLayerByMonsterDead:Constructor(buffInstance, logicParam)
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._buffInstance._buffLayerName = self._buffInstance._buffsvc:GetBuffLayerName(self._layerType)
+  self._dontDisplay = logicParam.dontDisplay
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddLayerByMonsterDead.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local svc = (self._world):GetService("BuffLogic")
+function BuffLogicAddLayerByMonsterDead:DoLogic(notify)
+  local svc = self._world:GetService("BuffLogic")
   local addLayer = 0
   local casterEntity = notify:GetAttackerEntity()
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   if not damageResultArray or #damageResultArray == 0 then
-    return 
+    return
   end
   local targetEntityList = {}
-  for _,v in ipairs(damageResultArray) do
+  for _, v in ipairs(damageResultArray) do
     local damageResult = v
     local targetEntityID = damageResult:GetTargetID()
-    local targetEntity = (self._world):GetEntityByID(targetEntityID)
-    if targetEntity and targetEntity:HasMonsterID() and not (table.intable)(targetEntityList, targetEntity) then
-      (table.insert)(targetEntityList, targetEntity)
+    local targetEntity = self._world:GetEntityByID(targetEntityID)
+    if targetEntity and targetEntity:HasMonsterID() and not table.intable(targetEntityList, targetEntity) then
+      table.insert(targetEntityList, targetEntity)
     end
   end
-  for _,entity in ipairs(targetEntityList) do
-    if (entity:Attributes()):GetCurrentHP() == 0 then
+  for _, entity in ipairs(targetEntityList) do
+    if entity:Attributes():GetCurrentHP() == 0 then
       addLayer = addLayer + 1
     end
   end
   if addLayer == 0 then
-    return 
+    return
   end
   local curMarkLayer = svc:AddBuffLayer(self._entity, self._layerType, addLayer)
   local buffResult = BuffResultAddLayer:New(curMarkLayer, self._dontDisplay)
   return buffResult
 end
-
-

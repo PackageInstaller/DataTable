@@ -1,34 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cookgame/cook/cookbook/ui_n0_cookbook_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN0CookBookItem", UICustomWidget)
 UIN0CookBookItem = UIN0CookBookItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN0CookBookItem.Constructor = function(self)
-  -- function num : 0_0
+function UIN0CookBookItem:Constructor()
   self._foodData = nil
   self._callback = nil
   self._isSelected = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN0CookBookItem:OnShow(uiParams)
   self._atlas = self:GetAsset("CookGame.spriteatlas", LoadType.SpriteAtlas)
-  self._lockColor = Color(0.14117647058824, 0.12156862745098, 0.11372549019608)
-  self._unLockColor = Color(0.31372549019608, 0.13333333333333, 0.062745098039216)
+  self._lockColor = Color(0.1411764705882353, 0.12156862745098039, 0.11372549019607843)
+  self._unLockColor = Color(0.3137254901960784, 0.13333333333333333, 0.06274509803921569)
   self._index = 1
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIN0CookBookItem:_GetComponents()
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._selectObj = self:GetGameObject("Selected")
@@ -41,159 +28,83 @@ UIN0CookBookItem._GetComponents = function(self)
   self._delay = 50
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookItem.SetData = function(self, data, status, callback, index)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN0CookBookItem:SetData(data, status, callback, index)
   self._foodData = data
   self._status = status
   self._callback = callback
   self._index = index
-  local delayTime = self._delay * (math.floor)((index - 1) / 3)
+  local delayTime = self._delay * math.floor((index - 1) / 3)
   self:_SetAnimation(delayTime)
   self:_InitData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookItem._InitData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._icon):LoadImage((self._foodData).Icon)
-  ;
-  (self._name):SetText((StringTable.Get)((self._foodData).Name))
+function UIN0CookBookItem:_InitData()
+  self._icon:LoadImage(self._foodData.Icon)
+  self._name:SetText(StringTable.Get(self._foodData.Name))
   local isGet = false
   local isLock = false
   if self._status == NewYearDinner_Status.E_NewYearDinner_Status_LOCK then
     isLock = true
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._nameBg).sprite = (self._atlas):GetSprite("n0_food_di03")
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._circleOutline).effectColor = self._lockColor
-  else
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-    if self._status == NewYearDinner_Status.E_NewYearDinner_Status_UN_FINISH then
-      (self._nameBg).sprite = (self._atlas):GetSprite("n0_food_di04")
-      -- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._circleOutline).effectColor = self._unLockColor
-    else
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R3 in 'UnsetPending'
-
-      if self._status == NewYearDinner_Status.E_NewYearDinner_Status_CAN_RECV then
-        (self._nameBg).sprite = (self._atlas):GetSprite("n0_food_di04")
-        -- DECOMPILER ERROR at PC59: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._circleOutline).effectColor = self._unLockColor
-        isGet = true
-      else
-        -- DECOMPILER ERROR at PC72: Confused about usage of register: R3 in 'UnsetPending'
-
-        if self._status == NewYearDinner_Status.E_NewYearDinner_Status_RECVED then
-          (self._nameBg).sprite = (self._atlas):GetSprite("n0_food_di04")
-          -- DECOMPILER ERROR at PC75: Confused about usage of register: R3 in 'UnsetPending'
-
-          ;
-          (self._circleOutline).effectColor = self._unLockColor
-          isGet = true
-        end
-      end
-    end
+    self._nameBg.sprite = self._atlas:GetSprite("n0_food_di03")
+    self._circleOutline.effectColor = self._lockColor
+  elseif self._status == NewYearDinner_Status.E_NewYearDinner_Status_UN_FINISH then
+    self._nameBg.sprite = self._atlas:GetSprite("n0_food_di04")
+    self._circleOutline.effectColor = self._unLockColor
+  elseif self._status == NewYearDinner_Status.E_NewYearDinner_Status_CAN_RECV then
+    self._nameBg.sprite = self._atlas:GetSprite("n0_food_di04")
+    self._circleOutline.effectColor = self._unLockColor
+    isGet = true
+  elseif self._status == NewYearDinner_Status.E_NewYearDinner_Status_RECVED then
+    self._nameBg.sprite = self._atlas:GetSprite("n0_food_di04")
+    self._circleOutline.effectColor = self._unLockColor
+    isGet = true
   end
-  ;
-  (self._isGetObj):SetActive(isGet)
-  ;
-  (self._lockObj):SetActive(isLock)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._SetNameBgSize, self)
+  self._isGetObj:SetActive(isGet)
+  self._lockObj:SetActive(isLock)
+  GameGlobal.TaskManager():StartTask(self._SetNameBgSize, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookItem.SetSelect = function(self, isSelected)
-  -- function num : 0_5
+function UIN0CookBookItem:SetSelect(isSelected)
   self._isSelected = isSelected
-  ;
-  (self._selectObj):SetActive(isSelected)
+  self._selectObj:SetActive(isSelected)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookItem._SetAnimation = function(self, delay)
-  -- function num : 0_6 , upvalues : _ENV
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "anim", "anim", "uieff_N0_CookBookItem", delay, 500, nil)
+function UIN0CookBookItem:_SetAnimation(delay)
+  UIWidgetHelper.PlayAnimationInSequence(self, "anim", "anim", "uieff_N0_CookBookItem", delay, 500, nil)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookItem.GetInfo = function(self)
-  -- function num : 0_7
+function UIN0CookBookItem:GetInfo()
   return self._foodData
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookItem.GetID = function(self)
-  -- function num : 0_8
-  return (self._foodData).ID
+function UIN0CookBookItem:GetID()
+  return self._foodData.ID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookItem.GetStatus = function(self)
-  -- function num : 0_9
+function UIN0CookBookItem:GetStatus()
   return self._status
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookItem.SetDone = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN0CookBookItem:SetDone()
   self._status = NewYearDinner_Status.E_NewYearDinner_Status_RECVED
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._nameBg).sprite = (self._atlas):GetSprite("n0_food_di04")
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._circleOutline).effectColor = self._unLockColor
-  ;
-  (self._isGetObj):SetActive(true)
+  self._nameBg.sprite = self._atlas:GetSprite("n0_food_di04")
+  self._circleOutline.effectColor = self._unLockColor
+  self._isGetObj:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookItem._SetNameBgSize = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN0CookBookItem:_SetNameBgSize(TT)
   self:Lock("UIN0CookBookItem")
   YIELD(TT, 10)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  if ((self._nameBgRect).sizeDelta).x > 208 then
-    (self._nameBgSizeFitter).enabled = false
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._nameBgRect).sizeDelta = Vector2(208, 42)
+  if self._nameBgRect.sizeDelta.x > 208 then
+    self._nameBgSizeFitter.enabled = false
+    self._nameBgRect.sizeDelta = Vector2(208, 42)
   end
   self:UnLock("UIN0CookBookItem")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookItem.ItemBtnOnClick = function(self)
-  -- function num : 0_12
+function UIN0CookBookItem:ItemBtnOnClick()
   self:SetSelect(true)
   if self._callback then
-    (self._callback)(self)
+    self._callback(self)
   end
 end
-
-

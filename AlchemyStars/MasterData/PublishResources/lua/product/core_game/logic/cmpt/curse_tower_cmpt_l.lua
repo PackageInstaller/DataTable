@@ -1,99 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/curse_tower_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local CurseTowerState = {Idle = -1, Deactive = 0, Active = 1}
+local CurseTowerState = {
+  Idle = -1,
+  Deactive = 0,
+  Active = 1
+}
 _enum("CurseTowerState", CurseTowerState)
 _class("CurseTowerComponent", Object)
 CurseTowerComponent = CurseTowerComponent
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-CurseTowerComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : CurseTowerState
+function CurseTowerComponent:Constructor()
   self._towerIndex = 0
   self._towerState = CurseTowerState.Idle
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-CurseTowerComponent.SetTowerIndex = function(self, index)
-  -- function num : 0_1
+function CurseTowerComponent:SetTowerIndex(index)
   self._towerIndex = index
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-CurseTowerComponent.GetTowerIndex = function(self)
-  -- function num : 0_2
+function CurseTowerComponent:GetTowerIndex()
   return self._towerIndex
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-CurseTowerComponent.SetTowerState = function(self, state)
-  -- function num : 0_3
+function CurseTowerComponent:SetTowerState(state)
   self._towerState = state
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-CurseTowerComponent.GetTowerState = function(self)
-  -- function num : 0_4
+function CurseTowerComponent:GetTowerState()
   return self._towerState
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-CurseTowerComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_5
+function CurseTowerComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-CurseTowerComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_6
+function CurseTowerComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-Entity.CurseTower = function(self)
-  -- function num : 0_7
-  return self:GetComponent((self.WEComponentsEnum).CurseTower)
+function Entity:CurseTower()
+  return self:GetComponent(self.WEComponentsEnum.CurseTower)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-Entity.HasCurseTower = function(self)
-  -- function num : 0_8
-  return self:HasComponent((self.WEComponentsEnum).CurseTower)
+function Entity:HasCurseTower()
+  return self:HasComponent(self.WEComponentsEnum.CurseTower)
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-Entity.AddCurseTower = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).CurseTower
+function Entity:AddCurseTower()
+  local index = self.WEComponentsEnum.CurseTower
   local component = CurseTowerComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-Entity.ReplaceCurseTower = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).CurseTower
+function Entity:ReplaceCurseTower()
+  local index = self.WEComponentsEnum.CurseTower
   local component = CurseTowerComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-Entity.RemoveCurseTower = function(self)
-  -- function num : 0_11
+function Entity:RemoveCurseTower()
   if self:HasCurseTower() then
-    self:RemoveComponent((self.WEComponentsEnum).CurseTower)
+    self:RemoveComponent(self.WEComponentsEnum.CurseTower)
   end
 end
-
-

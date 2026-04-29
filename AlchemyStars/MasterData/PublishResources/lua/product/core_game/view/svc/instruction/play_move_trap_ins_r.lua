@@ -1,55 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_move_trap_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayMoveTrapInstruction", BaseInstruction)
 PlayMoveTrapInstruction = PlayMoveTrapInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayMoveTrapInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayMoveTrapInstruction:Constructor(paramList)
   self._visible = true
   local str = paramList.disappearLegacyAnimNames
-  self._disappearLegacyAnimNames = (string.split)(str, "|")
+  self._disappearLegacyAnimNames = string.split(str, "|")
   self._disappearEffID = tonumber(paramList.disappearEffID)
   self._moveDelayTime = tonumber(paramList.moveDelayTime) or 0
   str = paramList.appearLegacyAnimNames
-  self._appearLegacyAnimNames = (string.split)(str, "|")
+  self._appearLegacyAnimNames = string.split(str, "|")
   self._appearEffID = tonumber(paramList.appearEffID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMoveTrapInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayMoveTrapInstruction:GetCacheResource()
   local t = {}
   if self._disappearEffID and self._disappearEffID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._disappearEffID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._disappearEffID].ResPath,
+      1
+    })
   end
-  if self._appearEffID and self._appearEffID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._appearEffID]).ResPath, 1})
+  if self._appearEffID and 0 < self._appearEffID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._appearEffID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMoveTrapInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayMoveTrapInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.MoveTrap)
-  if not resultArray or (table.count)(resultArray) == 0 then
-    return 
+  if not resultArray or table.count(resultArray) == 0 then
+    return
   end
   local playBuffSvc = world:GetService("PlayBuff")
-  for _,result in ipairs(resultArray) do
+  for _, result in ipairs(resultArray) do
     local entity = world:GetEntityByID(result:GetEntityID())
     if entity then
       self:_DoTrapDisappear(entity)
-      if self._moveDelayTime > 0 then
+      if 0 < self._moveDelayTime then
         YIELD(TT, self._moveDelayTime)
       end
       local gridWorldPos = result:GetPosNew()
@@ -59,30 +52,17 @@ PlayMoveTrapInstruction.DoInstruction = function(self, TT, casterEntity, phaseCo
       end
       self:_DoTrapAppear(entity)
     end
-    do
-      local replaceTrap = world:GetEntityByID(result:GetReplaceTrapEntityID())
-      do
-        if replaceTrap then
-          local trapServiceRender = world:GetService("TrapRender")
-          trapServiceRender:PlayTrapDieSkill(TT, {replaceTrap})
-        end
-        do
-          local NTMoveTrap = NTMoveTrap:New()
-          playBuffSvc:PlayBuffView(TT, NTMoveTrap)
-          -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
-      end
+    local replaceTrap = world:GetEntityByID(result:GetReplaceTrapEntityID())
+    if replaceTrap then
+      local trapServiceRender = world:GetService("TrapRender")
+      trapServiceRender:PlayTrapDieSkill(TT, {replaceTrap})
     end
+    local NTMoveTrap = NTMoveTrap:New()
+    playBuffSvc:PlayBuffView(TT, NTMoveTrap)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMoveTrapInstruction._DoTrapDisappear = function(self, entity)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayMoveTrapInstruction:_DoTrapDisappear(entity)
   if self._disappearEffID then
     local world = entity:GetOwnerWorld()
     local boardSvc = world:GetService("BoardRender")
@@ -90,67 +70,54 @@ PlayMoveTrapInstruction._DoTrapDisappear = function(self, entity)
     local effectSvc = world:GetService("Effect")
     effectSvc:CreateWorldPositionEffect(self._disappearEffID, pos)
   end
-  do
-    if self._disappearLegacyAnimNames == nil then
-      (Log.fatal)("Legacy animation params is nil!")
-      return 
+  if self._disappearLegacyAnimNames == nil then
+    Log.fatal("Legacy animation params is nil!")
+    return
+  end
+  if not entity:HasView() then
+    return
+  end
+  local go = entity:View():GetGameObject()
+  local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
+  if anim == nil then
+    Log.fatal("Cant play legacy animation, animation not found in ", go.name)
+    return
+  end
+  if table.count(self._disappearLegacyAnimNames) > 1 then
+    anim:Stop()
+    for i = 1, #self._disappearLegacyAnimNames do
+      anim:PlayQueued(self._disappearLegacyAnimNames[i])
     end
-    if not entity:HasView() then
-      return 
-    end
-    local go = (entity:View()):GetGameObject()
-    local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
-    if anim == nil then
-      (Log.fatal)("Cant play legacy animation, animation not found in ", go.name)
-      return 
-    end
-    if (table.count)(self._disappearLegacyAnimNames) > 1 then
-      anim:Stop()
-      for i = 1, #self._disappearLegacyAnimNames do
-        anim:PlayQueued((self._disappearLegacyAnimNames)[i])
-      end
-    else
-      do
-        anim:Play((self._disappearLegacyAnimNames)[1])
-      end
-    end
+  else
+    anim:Play(self._disappearLegacyAnimNames[1])
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMoveTrapInstruction._DoTrapAppear = function(self, entity)
-  -- function num : 0_4 , upvalues : _ENV
+function PlayMoveTrapInstruction:_DoTrapAppear(entity)
   if self._appearLegacyAnimNames then
     if not entity:HasView() then
-      return 
+      return
     end
-    local go = (entity:View()):GetGameObject()
+    local go = entity:View():GetGameObject()
     local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
     if anim == nil then
-      (Log.fatal)("Cant play legacy animation, animation not found in ", go.name)
-      return 
+      Log.fatal("Cant play legacy animation, animation not found in ", go.name)
+      return
     end
-    if (table.count)(self._appearLegacyAnimNames) > 1 then
+    if table.count(self._appearLegacyAnimNames) > 1 then
       anim:Stop()
       for i = 1, #self._appearLegacyAnimNames do
-        anim:PlayQueued((self._appearLegacyAnimNames)[i])
+        anim:PlayQueued(self._appearLegacyAnimNames[i])
       end
     else
-      do
-        do
-          anim:Play((self._appearLegacyAnimNames)[1])
-          if self._appearEffID then
-            local world = entity:GetOwnerWorld()
-            local boardSvc = world:GetService("BoardRender")
-            local pos = boardSvc:GetRealEntityGridPos(entity)
-            local effectSvc = world:GetService("Effect")
-            effectSvc:CreateWorldPositionEffect(self._appearEffID, pos)
-          end
-        end
-      end
+      anim:Play(self._appearLegacyAnimNames[1])
     end
   end
+  if self._appearEffID then
+    local world = entity:GetOwnerWorld()
+    local boardSvc = world:GetService("BoardRender")
+    local pos = boardSvc:GetRealEntityGridPos(entity)
+    local effectSvc = world:GetService("Effect")
+    effectSvc:CreateWorldPositionEffect(self._appearEffID, pos)
+  end
 end
-
-

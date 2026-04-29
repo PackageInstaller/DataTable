@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_rotate_effect_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillRotateEffectParam", SkillEffectParamBase)
 SkillRotateEffectParam = SkillRotateEffectParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillRotateEffectParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillRotateEffectParam:Constructor(t)
   self._isClockwise = t.isClockwise or false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRotateEffectParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillRotateEffectParam:GetEffectType()
   return SkillEffectType.Rotate
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRotateEffectParam.IsClockwise = function(self)
-  -- function num : 0_2
+function SkillRotateEffectParam:IsClockwise()
   return self._isClockwise
 end
-
-

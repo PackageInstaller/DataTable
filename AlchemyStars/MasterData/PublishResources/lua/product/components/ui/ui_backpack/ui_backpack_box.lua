@@ -1,97 +1,63 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_backpack/ui_backpack_box.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBackPackBox", UIController)
 UIBackPackBox = UIBackPackBox
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBackPackBox.Constructor = function(self)
-  -- function num : 0_0
+function UIBackPackBox:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackBox.Dispose = function(self)
-  -- function num : 0_1
+function UIBackPackBox:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackBox.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBackPackBox:OnShow(uiParams)
   self:AttachEvent(GameEventType.CloseUIBackPackBox, self.bgOnClick)
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   local Content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._item = uiParams[1]
   self._count = uiParams[2]
-  ;
-  (self._txtName):SetText((StringTable.Get)(((self._item):GetTemplate()).Name))
-  local lst = self:GetItemList((self._item):GetTemplateID())
+  self._txtName:SetText(StringTable.Get(self._item:GetTemplate().Name))
+  local lst = self:GetItemList(self._item:GetTemplateID())
   self._itemList = {}
-  for i,item in ipairs(lst) do
+  for i, item in ipairs(lst) do
     local tplId = item[1]
     local count = item[2]
-    do
-      -- DECOMPILER ERROR at PC47: Confused about usage of register: R11 in 'UnsetPending'
-
-      (self._itemList)[i] = BackPackBoxItem:New(tplId, count)
-    end
+    self._itemList[i] = BackPackBoxItem:New(tplId, count)
   end
-  local len = (table.count)(self._itemList)
+  local len = table.count(self._itemList)
   local lenShow = 0
   if len <= 8 then
     lenShow = 8
   else
-    lenShow = 8 + (math.ceil)((len - 8) / 4)
+    lenShow = 8 + math.ceil((len - 8) / 4)
   end
   Content:SpawnObjects("UIBackPackBoxItem", lenShow)
   local uiItems = Content:GetAllSpawnList()
-  for i,uiItem in ipairs(uiItems) do
+  for i, uiItem in ipairs(uiItems) do
     if i <= len then
-      uiItem:Flush((self._itemList)[i], i, self._count, function()
-    -- function num : 0_2_0 , upvalues : self, i
-    self:ShowUIBackPackBoxGain(i)
-  end
-)
+      uiItem:Flush(self._itemList[i], i, self._count, function()
+        self:ShowUIBackPackBoxGain(i)
+      end)
     else
       uiItem:FlushEmpty()
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackBox.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIBackPackBox:OnHide()
   self:DetachEvent(GameEventType.CloseUIBackPackBox, self.bgOnClick)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackBox.bgOnClick = function(self)
-  -- function num : 0_4
+function UIBackPackBox:bgOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackBox.ShowUIBackPackBoxGain = function(self, idx)
-  -- function num : 0_5
-  self:ShowDialog("UIBackPackBoxGain", (self._item):GetID(), self._count, (self._itemList)[idx], idx - 1)
+function UIBackPackBox:ShowUIBackPackBoxGain(idx)
+  self:ShowDialog("UIBackPackBoxGain", self._item:GetID(), self._count, self._itemList[idx], idx - 1)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackBox.GetItemList = function(self, itemGiftID)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfgItemGift = (Cfg.cfg_item_gift)[itemGiftID]
+function UIBackPackBox:GetItemList(itemGiftID)
+  local cfgItemGift = Cfg.cfg_item_gift[itemGiftID]
   if not cfgItemGift then
     return 0
   end
   local lst = cfgItemGift.ItemList
   return lst
 end
-
-

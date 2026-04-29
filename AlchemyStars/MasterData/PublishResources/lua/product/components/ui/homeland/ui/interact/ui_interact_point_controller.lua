@@ -1,198 +1,151 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/interact/ui_interact_point_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIInteractPointController", UICustomWidget)
 UIInteractPointController = UIInteractPointController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIInteractPointController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._guideModule = (GameGlobal.GetModule)(GuideModule)
+function UIInteractPointController:Constructor()
+  self._guideModule = GameGlobal.GetModule(GuideModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPointController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIInteractPointController:OnShow(uiParams)
   self._anim = self:GetUIComponent("Animation", "Anim")
   self._root = self:GetGameObject("Root")
   self._interactPointLoader = self:GetUIComponent("UISelectObjectPath", "InteractPoints")
   self._interactPoints = {}
   self._status = false
   self._go = self:GetGameObject()
-  ;
-  (self._go):SetActive(true)
+  self._go:SetActive(true)
   self:AttachEvent(GameEventType.SetInteractPointUIStatus, self.SetStatusInternal)
   self:AttachEvent(GameEventType.EnterBuildInteract, self.EnterBuildInteractEventHandle)
   self:AttachEvent(GameEventType.LeaveBuildInteract, self.LeaveBuildInteractEventHandle)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPointController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIInteractPointController:OnHide()
   self:DetachEvent(GameEventType.EnterBuildInteract, self.EnterBuildInteractEventHandle)
   self:DetachEvent(GameEventType.LeaveBuildInteract, self.LeaveBuildInteractEventHandle)
   self:DetachEvent(GameEventType.SetInteractPointUIStatus, self.SetStatusInternal)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPointController.SetStatusInternal = function(self, status)
-  -- function num : 0_3
-  (self._root):SetActive(status)
+function UIInteractPointController:SetStatusInternal(status)
+  self._root:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPointController.SetStatus = function(self, status, clearDatas)
-  -- function num : 0_4
+function UIInteractPointController:SetStatus(status, clearDatas)
   if self._status ~= status then
     if status then
       self:_RefreshInteractPoint()
-      ;
-      (self._go):SetActive(true)
+      self._go:SetActive(true)
     else
       if clearDatas then
         self._interactPoints = {}
       end
-      ;
-      (self._go):SetActive(false)
+      self._go:SetActive(false)
     end
   end
   self._status = status
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPointController.EnterBuildInteractEventHandle = function(self, interactPoint)
-  -- function num : 0_5
+function UIInteractPointController:EnterBuildInteractEventHandle(interactPoint)
   self:_AddInteractPoint(interactPoint)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPointController.LeaveBuildInteractEventHandle = function(self, interactPoint)
-  -- function num : 0_6
+function UIInteractPointController:LeaveBuildInteractEventHandle(interactPoint)
   self:_RemoveInteractPoint(interactPoint)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPointController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_7 , upvalues : _ENV
-  if not self._go or not (self._go).activeInHierarchy then
-    return 
+function UIInteractPointController:OnUpdate(deltaTimeMS)
+  if not self._go or not self._go.activeInHierarchy then
+    return
   end
   if not self.items then
-    return 
+    return
   end
-  for _,interactPoint in pairs(self.items) do
+  for _, interactPoint in pairs(self.items) do
     if interactPoint then
       interactPoint:OnUpdate(deltaTimeMS)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPointController._AddInteractPoint = function(self, interactPoint)
-  -- function num : 0_8 , upvalues : _ENV
+function UIInteractPointController:_AddInteractPoint(interactPoint)
   if not self:_CheckPointAvailable(interactPoint) then
-    return 
+    return
   end
   for i = 1, #self._interactPoints do
-    if (self._interactPoints)[i] == interactPoint then
-      return 
+    if self._interactPoints[i] == interactPoint then
+      return
     end
   end
   local isSameType = false
-  for _,v in pairs(self._interactPoints) do
+  for _, v in pairs(self._interactPoints) do
     local type = interactPoint:GetPointType()
     local oldType = v:GetPointType()
     if oldType == type then
       isSameType = true
-      local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+      local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
       local homelandClient = homeLandModule:GetClient()
-      local characterController = (homelandClient:CharacterManager()):MainCharacterController()
+      local characterController = homelandClient:CharacterManager():MainCharacterController()
       local characterPos = characterController:Position()
       local oldDistance = v:GetDistance(characterPos)
       local newDistance = interactPoint:GetDistance(characterPos)
-      if newDistance < oldDistance then
+      if oldDistance > newDistance then
         self:_RemoveInteractPoint(v)
-        -- DECOMPILER ERROR at PC56: Confused about usage of register: R16 in 'UnsetPending'
-
-        ;
-        (self._interactPoints)[#self._interactPoints + 1] = interactPoint
+        self._interactPoints[#self._interactPoints + 1] = interactPoint
         self:_RefreshInteractPoint()
       end
       break
     end
   end
-  do
-    -- DECOMPILER ERROR at PC68: Confused about usage of register: R3 in 'UnsetPending'
-
-    if not isSameType then
-      (self._interactPoints)[#self._interactPoints + 1] = interactPoint
-      self:_RefreshInteractPoint()
-    end
+  if not isSameType then
+    self._interactPoints[#self._interactPoints + 1] = interactPoint
+    self:_RefreshInteractPoint()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPointController._RemoveInteractPoint = function(self, interactPoint)
-  -- function num : 0_9 , upvalues : _ENV
+function UIInteractPointController:_RemoveInteractPoint(interactPoint)
   if not interactPoint then
-    return 
+    return
   end
   for i = 1, #self._interactPoints do
-    if (self._interactPoints)[i] == interactPoint then
-      (table.remove)(self._interactPoints, i)
+    if self._interactPoints[i] == interactPoint then
+      table.remove(self._interactPoints, i)
       self:_RefreshInteractPoint()
-      return 
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPointController._RefreshInteractPoint = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (self._interactPointLoader):SpawnObjects("UIInteractPoint", #self._interactPoints)
-  self.items = (self._interactPointLoader):GetAllSpawnList()
+function UIInteractPointController:_RefreshInteractPoint()
+  self._interactPointLoader:SpawnObjects("UIInteractPoint", #self._interactPoints)
+  self.items = self._interactPointLoader:GetAllSpawnList()
   local tmpPoints = {}
-  local targetType = {InteractPointType.PetCommunication, InteractPointType.Invite, InteractPointType.RoleInteract, InteractPointType.Build}
-  for _,targetType in pairs(targetType) do
-    for i,v in pairs(self._interactPoints) do
+  local targetType = {
+    InteractPointType.PetCommunication,
+    InteractPointType.Invite,
+    InteractPointType.RoleInteract,
+    InteractPointType.Build
+  }
+  for _, targetType in pairs(targetType) do
+    for i, v in pairs(self._interactPoints) do
       local type = v:GetPointType()
       if type == targetType then
-        (table.insert)(tmpPoints, v)
-        ;
-        (table.remove)(self._interactPoints, i)
+        table.insert(tmpPoints, v)
+        table.remove(self._interactPoints, i)
         break
       end
     end
   end
-  for _,v in pairs(self._interactPoints) do
-    (table.insert)(tmpPoints, v)
+  for _, v in pairs(self._interactPoints) do
+    table.insert(tmpPoints, v)
   end
   self._interactPoints = tmpPoints
   local index = 1
-  for _,v in pairs(self._interactPoints) do
-    ((self.items)[index]):Refresh(v)
+  for _, v in pairs(self._interactPoints) do
+    self.items[index]:Refresh(v)
     index = index + 1
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandInteractPointUIRefresh)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandInteractPointUIRefresh)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPointController._CheckPointAvailable = function(self, interactPoint)
-  -- function num : 0_11 , upvalues : _ENV
+function UIInteractPointController:_CheckPointAvailable(interactPoint)
   if not interactPoint then
     return false
   end
@@ -201,34 +154,27 @@ UIInteractPointController._CheckPointAvailable = function(self, interactPoint)
     return false
   end
   if interactPoint:GetPointType() == InteractPointType.RoleInteract then
-    local relatedPetInteractingTarget = (interactPoint:GetBuild()):GetInteractPoint(interactPoint:GetIndex())
+    local relatedPetInteractingTarget = interactPoint:GetBuild():GetInteractPoint(interactPoint:GetIndex())
     local interactingTarget = relatedPetInteractingTarget:GetInteractObject()
     if not interactingTarget then
       return true
+    elseif not HomelandPet:IsInstanceOfType(interactingTarget) or not interactingTarget:IsAlive() then
+      return false
     else
-      if not HomelandPet:IsInstanceOfType(interactingTarget) or not interactingTarget:IsAlive() then
-        return false
+      local moveComponent = interactingTarget:GetPetBehavior():GetCurBehavior():GetComponent(HomelandPetComponentType.Move)
+      if moveComponent and moveComponent.state == HomelandPetComponentState.Running then
+        return true
       else
-        local moveComponent = ((interactingTarget:GetPetBehavior()):GetCurBehavior()):GetComponent(HomelandPetComponentType.Move)
-        if moveComponent and moveComponent.state == HomelandPetComponentState.Running then
-          return true
-        else
-          return false
-        end
+        return false
       end
     end
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPointController.GetInteractBtn = function(self, param)
-  -- function num : 0_12 , upvalues : _ENV
-  if (self._guideModule):GuideInProgress() and self.items then
-    for _,interactPoint in pairs(self.items) do
+function UIInteractPointController:GetInteractBtn(param)
+  if self._guideModule:GuideInProgress() and self.items then
+    for _, interactPoint in pairs(self.items) do
       local interactObjID = 0
       local interactObj = interactPoint:GetBuild()
       if HomelandTaskNPC:IsInstanceOfType(interactObj) then
@@ -248,5 +194,3 @@ UIInteractPointController.GetInteractBtn = function(self, param)
     end
   end
 end
-
-

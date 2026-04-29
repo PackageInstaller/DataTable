@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/scan_feature_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("match_message")
 _class("ScanFeatureComponent", Object)
 ScanFeatureComponent = ScanFeatureComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ScanFeatureComponent.Constructor = function(self, summonTrapSkillID, forceMovementSkillID)
-  -- function num : 0_0
+function ScanFeatureComponent:Constructor(summonTrapSkillID, forceMovementSkillID)
   self._summonTrapTemplateSkillID = summonTrapSkillID
   self._forceMovementTemplateSkillID = forceMovementSkillID
   self._skillConfigData = nil
@@ -17,97 +10,59 @@ ScanFeatureComponent.Constructor = function(self, summonTrapSkillID, forceMoveme
   self._scanTrapID = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ScanFeatureComponent.GetSummonTrapTemplateSkillID = function(self)
-  -- function num : 0_1
+function ScanFeatureComponent:GetSummonTrapTemplateSkillID()
   return self._summonTrapTemplateSkillID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ScanFeatureComponent.GetForceMovementTemplateSkillID = function(self)
-  -- function num : 0_2
+function ScanFeatureComponent:GetForceMovementTemplateSkillID()
   return self._forceMovementTemplateSkillID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ScanFeatureComponent.ClearLastScan = function(self)
-  -- function num : 0_3
+function ScanFeatureComponent:ClearLastScan()
   self._skillConfigData = nil
   self._scanActiveSkillType = nil
   self._scanTrapID = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ScanFeatureComponent.SetActiveSkillConfigData = function(self, data)
-  -- function num : 0_4
+function ScanFeatureComponent:SetActiveSkillConfigData(data)
   self._skillConfigData = data
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ScanFeatureComponent.SetScanResult = function(self, skillType, trapID)
-  -- function num : 0_5
+function ScanFeatureComponent:SetScanResult(skillType, trapID)
   self._scanActiveSkillType = skillType
   self._scanTrapID = trapID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ScanFeatureComponent.GetScanActiveSkillType = function(self)
-  -- function num : 0_6
+function ScanFeatureComponent:GetScanActiveSkillType()
   return self._scanActiveSkillType
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ScanFeatureComponent.GetScanTrapID = function(self)
-  -- function num : 0_7
+function ScanFeatureComponent:GetScanTrapID()
   return self._scanTrapID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ScanFeature = function(self)
-  -- function num : 0_8
-  return self:GetComponent((self.WEComponentsEnum).ScanFeature)
+function Entity:ScanFeature()
+  return self:GetComponent(self.WEComponentsEnum.ScanFeature)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasScanFeature = function(self)
-  -- function num : 0_9
-  return self:HasComponent((self.WEComponentsEnum).ScanFeature)
+function Entity:HasScanFeature()
+  return self:HasComponent(self.WEComponentsEnum.ScanFeature)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddScanFeature = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ScanFeature
+function Entity:AddScanFeature()
+  local index = self.WEComponentsEnum.ScanFeature
   local component = ScanFeatureComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceScanFeature = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ScanFeature
+function Entity:ReplaceScanFeature()
+  local index = self.WEComponentsEnum.ScanFeature
   local component = ScanFeatureComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveScanFeature = function(self)
-  -- function num : 0_12
+function Entity:RemoveScanFeature()
   if self:HasScanFeature() then
-    self:RemoveComponent((self.WEComponentsEnum).ScanFeature)
+    self:RemoveComponent(self.WEComponentsEnum.ScanFeature)
   end
 end
-
-

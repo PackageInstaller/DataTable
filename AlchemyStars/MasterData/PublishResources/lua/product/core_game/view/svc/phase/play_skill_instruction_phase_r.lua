@@ -1,55 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_instruction_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillInstructionPhase", PlaySkillPhaseBase)
 PlaySkillInstructionPhase = PlaySkillInstructionPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillInstructionPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillInstructionPhase:PlayFlight(TT, casterEntity, phaseParam)
   local world = casterEntity:GetOwnerWorld()
   local phaseContext = SkillPhaseContext:New(world, casterEntity)
   local instructionParam = phaseParam
   local insArray = instructionParam:GetInstructionSet()
   local insIndex = 1
-  local insSetCount = (table.count)(insArray)
-  while 1 do
-    while 1 do
-      if insIndex > 0 and insIndex <= insSetCount then
-        local instruction = insArray[insIndex]
-        ;
-        (Log.debug)("play skill instruction start:", instruction._className, " cast=", casterEntity:GetID())
-        local nextInsLabel = instruction:DoInstruction(TT, casterEntity, phaseContext)
-        if nextInsLabel then
-          insIndex = self:_CalcNextLabel(insArray, nextInsLabel)
-          -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  local insSetCount = table.count(insArray)
+  while 0 < insIndex and insIndex <= insSetCount do
+    local instruction = insArray[insIndex]
+    Log.debug("play skill instruction start:", instruction._className, " cast=", casterEntity:GetID())
+    local nextInsLabel = instruction:DoInstruction(TT, casterEntity, phaseContext)
+    if nextInsLabel then
+      insIndex = self:_CalcNextLabel(insArray, nextInsLabel)
+    else
+      insIndex = insIndex + 1
     end
-    insIndex = insIndex + 1
   end
-  do
-    local phaseTaskList = phaseContext:GetPhaseTaskList()
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(phaseTaskList) do
-      YIELD(TT)
-    end
+  local phaseTaskList = phaseContext:GetPhaseTaskList()
+  while not TaskHelper:GetInstance():IsAllTaskFinished(phaseTaskList) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillInstructionPhase.PrepareToPlay = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_1
+function PlaySkillInstructionPhase:PrepareToPlay(TT, casterEntity, phaseParam)
   local insArray = phaseParam:GetInstructionSet()
   for i = 1, #insArray do
     local instruction = insArray[i]
@@ -59,14 +35,11 @@ PlaySkillInstructionPhase.PrepareToPlay = function(self, TT, casterEntity, phase
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillInstructionPhase._CalcNextLabel = function(self, insArray, nextInsLabel)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySkillInstructionPhase:_CalcNextLabel(insArray, nextInsLabel)
   if nextInsLabel == InstructionConst.PhaseEnd then
     return -1
   else
-    for k,v in ipairs(insArray) do
+    for k, v in ipairs(insArray) do
       local ins = v
       local insLabel = ins:GetInstructionLabel()
       if insLabel ~= nil and insLabel == nextInsLabel then
@@ -74,11 +47,6 @@ PlaySkillInstructionPhase._CalcNextLabel = function(self, insArray, nextInsLabel
       end
     end
   end
-  do
-    ;
-    (Log.fatal)("instruction label not match:", nextInsLabel)
-    return -1
-  end
+  Log.fatal("instruction label not match:", nextInsLabel)
+  return -1
 end
-
-

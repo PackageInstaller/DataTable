@@ -1,90 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n32/multi_line/map/ui_n32_multi_line_map_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN32MultiLineMapController", UIController)
 UIN32MultiLineMapController = UIN32MultiLineMapController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN32MultiLineMapController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN32MultiLineMapController:Constructor()
   self.mCampaignModule = self:GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN32MultiLineMapController:LoadDataOnEnter(TT, res)
   local comType = ECampaignType.CAMPAIGN_TYPE_N32
   local comId = ECampaignN32ComponentID.ECAMPAIGN_N32_MULTILINE_MISSION
   self.multiLineData = UIMultiLineData:New()
-  if not (self.multiLineData):LoadData(TT, res, comType, comId) then
-    (self.mCampaignModule):CheckErrorCode(res.m_result, (self.mCampaignModule)._id, nil, nil)
-    return 
+  if not self.multiLineData:LoadData(TT, res, comType, comId) then
+    self.mCampaignModule:CheckErrorCode(res.m_result, self.mCampaignModule._id, nil, nil)
+    return
   end
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN32MultiLineMapController:OnShow(uiParams)
   self._multilineFolerIndex = uiParams[1]
   self._isMatch = uiParams[2]
   self._isWin = uiParams[3]
   self._shotScreenTexture = uiParams[4]
-  self._cfg = (self.multiLineData):GetMultiLineFolderCfgByIndex(self._multilineFolerIndex)
-  self._multilineComponent = (self.multiLineData):GetComponent()
+  self._cfg = self.multiLineData:GetMultiLineFolderCfgByIndex(self._multilineFolerIndex)
+  self._multilineComponent, self._multilineComInfo = self.multiLineData:GetComponent()
   self._timerHolder = UITimerHolder:New()
   self:InitWidget()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapController.OnHide = function(self)
-  -- function num : 0_3
-  (self._timerHolder):Dispose()
+function UIN32MultiLineMapController:OnHide()
+  self._timerHolder:Dispose()
   if self._shot then
-    (self._shot):CleanRenderTexture()
+    self._shot:CleanRenderTexture()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapController.RefreshAfterPlot = function(self)
-  -- function num : 0_4
+function UIN32MultiLineMapController:RefreshAfterPlot()
   self._isMatch = true
   self._isWin = true
   self:RefreshDocRed()
-  ;
-  (self._contentMap):SetData(self._multilineFolerIndex, self._cfg, self.multiLineData, self._isMatch, self._isWin)
+  self._contentMap:SetData(self._multilineFolerIndex, self._cfg, self.multiLineData, self._isMatch, self._isWin)
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self
     local lockName = "UIN32MultiLineMapController_check_unlockAni"
     self:Lock(lockName)
-    ;
-    (self._contentMap):CheckAndPlayUnlockAni(TT)
+    self._contentMap:CheckAndPlayUnlockAni(TT)
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapController.RefreshAfterDialog = function(self)
-  -- function num : 0_5
+function UIN32MultiLineMapController:RefreshAfterDialog()
   self:RefreshDocRed()
-  ;
-  (self._contentMap):SetData(self._multilineFolerIndex, self._cfg, self.multiLineData)
+  self._contentMap:SetData(self._multilineFolerIndex, self._cfg, self.multiLineData)
   self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapController.InitWidget = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN32MultiLineMapController:InitWidget()
   self.mapContent = self:GetGameObject("mapContent")
   self.map1 = self:GetUIComponent("UISelectObjectPath", "map1")
   self.map2 = self:GetUIComponent("UISelectObjectPath", "map2")
@@ -98,73 +68,49 @@ UIN32MultiLineMapController.InitWidget = function(self)
   self._shot = self:GetUIComponent("H3DUIBlurHelper", "screenshot")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "topBtn")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_6_0 , upvalues : self, _ENV
+  self._backBtns:SetData(function()
     if self:CheckComponentTime() then
       self:StartTask(function(TT)
-      -- function num : 0_6_0_0 , upvalues : self, _ENV
-      self:GetRenderTexture(function(textrue)
-        -- function num : 0_6_0_0_0 , upvalues : self, _ENV
-        (self.mCampaignModule):CampaignSwitchState(true, UIStateType.UIN32MultiLineMain, UIStateType.UIMain, {true, textrue}, (self.multiLineData):GetCampaignId())
-      end
-)
+        self:GetRenderTexture(function(textrue)
+          self.mCampaignModule:CampaignSwitchState(true, UIStateType.UIN32MultiLineMain, UIStateType.UIMain, {true, textrue}, self.multiLineData:GetCampaignId())
+        end)
+      end)
     end
-)
-    end
-  end
-, function()
-    -- function num : 0_6_1 , upvalues : self
+  end, function()
     if self:CheckComponentTime() then
       self:ShowDialog("UIIntroLoader", "UIN32MultilineMapIntro")
     end
-  end
-, nil, true)
+  end, nil, true)
   self._petEnhanceAreaGo = self:GetGameObject("PetEnhanceAreaGen")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapController.BtnDocOnClick = function(self, go)
-  -- function num : 0_7
+function UIN32MultiLineMapController:BtnDocOnClick(go)
   if self:CheckComponentTime() then
     self:ShowDialog("UIN32MultiLineArchive", self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapController.OnValue = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local mapPool = nil
+function UIN32MultiLineMapController:OnValue()
+  local mapPool
   if self._multilineFolerIndex == 1 then
     mapPool = self.map1
+  elseif self._multilineFolerIndex == 2 then
+    mapPool = self.map2
+  elseif self._multilineFolerIndex == 3 then
+    mapPool = self.map3
   else
-    if self._multilineFolerIndex == 2 then
-      mapPool = self.map2
-    else
-      if self._multilineFolerIndex == 3 then
-        mapPool = self.map3
-      else
-        mapPool = self.map3
-        ;
-        (Log.fatal)("err: UIN32MultiLineMapController self._multilineFolerIndex max is 3, cur is " .. self._multilineFolerIndex)
-      end
-    end
+    mapPool = self.map3
+    Log.fatal("err: UIN32MultiLineMapController self._multilineFolerIndex max is 3, cur is " .. self._multilineFolerIndex)
   end
-  local cfg = (Cfg.cfg_component_multiline_mission_main)[self._multilineFolerIndex]
-  ;
-  (self.mapBg):LoadImage(cfg.MapBg)
+  local cfg = Cfg.cfg_component_multiline_mission_main[self._multilineFolerIndex]
+  self.mapBg:LoadImage(cfg.MapBg)
   self._contentMap = mapPool:SpawnObject("UIN32MultiLineMapContent")
-  ;
-  (self._contentMap):SetData(self._multilineFolerIndex, self._cfg, self.multiLineData, self._isMatch, self._isWin)
+  self._contentMap:SetData(self._multilineFolerIndex, self._cfg, self.multiLineData, self._isMatch, self._isWin)
   self:RefreshCountdown()
   self:RefreshDocRed()
-  local enterAni, aniLen, wayEnterLen = nil, nil, nil
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R6 in 'UnsetPending'
-
+  local enterAni, aniLen, wayEnterLen
   if self._shotScreenTexture then
-    (self.screeShotImage).texture = self._shotScreenTexture
+    self.screeShotImage.texture = self._shotScreenTexture
     enterAni = "uieff_UIN32MultiLineMapController_clickin"
     aniLen = 1533
     wayEnterLen = 800
@@ -173,146 +119,100 @@ UIN32MultiLineMapController.OnValue = function(self)
     aniLen = 700
     wayEnterLen = 100
   end
-  local componentCfgId = (self._multilineComponent):GetComponentCfgId()
-  ;
-  (UIActivityHelper.SpawnPetEnhanceArea)(self, "PetEnhanceAreaGen", componentCfgId, UIActivityPetEnhanceAreaUIStyle.N32_MULTI_LINE)
+  local componentCfgId = self._multilineComponent:GetComponentCfgId()
+  UIActivityHelper.SpawnPetEnhanceArea(self, "PetEnhanceAreaGen", componentCfgId, UIActivityPetEnhanceAreaUIStyle.N32_MULTI_LINE)
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, enterAni, _ENV, wayEnterLen, aniLen
     local lockName = "UIN32MultiLineMapController_enterAni"
     self:Lock(lockName)
-    ;
-    (self.animation):Play(enterAni)
+    self.animation:Play(enterAni)
     YIELD(TT, wayEnterLen)
-    ;
-    (self._contentMap):PlayEnterAni()
+    self._contentMap:PlayEnterAni()
     YIELD(TT, aniLen - wayEnterLen)
-    ;
-    (self._contentMap):CheckAndPlayUnlockAni(TT)
+    self._contentMap:CheckAndPlayUnlockAni(TT)
     self:UnLock(lockName)
     self:_CheckGuide()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapController.RefreshCountdown = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local closeTime = (self._multilineComInfo).m_close_time
+function UIN32MultiLineMapController:RefreshCountdown()
+  local closeTime = self._multilineComInfo.m_close_time
   self._isValid = true
   local timerName = "CountDown"
-  local countDown = function()
-    -- function num : 0_9_0 , upvalues : self, _ENV, closeTime, timerName
-    local now = (self:GetModule(SvrTimeModule)):GetServerTime() / 1000
-    local time = (math.ceil)(closeTime - now)
+  
+  local function countDown()
+    local now = self:GetModule(SvrTimeModule):GetServerTime() / 1000
+    local time = math.ceil(closeTime - now)
     local timeStr = self:GetFormatTimerStr(time)
     if self._timeString ~= timeStr then
-      (self.countDownTxt):SetText(timeStr)
+      self.countDownTxt:SetText(timeStr)
       self._timeString = timeStr
     end
     if time < 0 then
       self._isValid = false
-      ;
-      (self._timerHolder):StopTimer(timerName)
+      self._timerHolder:StopTimer(timerName)
     end
   end
-
+  
   countDown()
-  ;
-  (self._timerHolder):StartTimerInfinite(timerName, 1000, countDown)
+  self._timerHolder:StartTimerInfinite(timerName, 1000, countDown)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapController.GetFormatTimerStr = function(self, time, id)
-  -- function num : 0_10 , upvalues : _ENV
-  local timeStr = (StringTable.Get)("str_activity_error_107")
+function UIN32MultiLineMapController:GetFormatTimerStr(time, id)
+  local timeStr = StringTable.Get("str_activity_error_107")
   if time < 0 then
     return timeStr
   end
   local dayStr, hourStr, minusStr, lessOneMinusStr = self:GetCustomTimeStr()
-  timeStr = (UIActivityCustomHelper.GetTimeString)(time, dayStr, hourStr, minusStr, lessOneMinusStr)
-  return (StringTable.Get)(self:GetCustomTimeTipsStr(), timeStr)
+  timeStr = UIActivityCustomHelper.GetTimeString(time, dayStr, hourStr, minusStr, lessOneMinusStr)
+  return StringTable.Get(self:GetCustomTimeTipsStr(), timeStr)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapController.GetCustomTimeStr = function(self)
-  -- function num : 0_11
+function UIN32MultiLineMapController:GetCustomTimeStr()
   return "str_n32_multiline_day", "str_n32_multiline_hour", "str_n32_multiline_minus", "str_n32_multiline_less_one_minus"
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapController.GetCustomTimeTipsStr = function(self)
-  -- function num : 0_12
+function UIN32MultiLineMapController:GetCustomTimeTipsStr()
   return "str_n32_multiline_activity_remain_time"
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapController.RefreshDocRed = function(self)
-  -- function num : 0_13
-  (self.docRedPoint):SetActive((self.multiLineData):CheckDocRedPoint())
+function UIN32MultiLineMapController:RefreshDocRed()
+  self.docRedPoint:SetActive(self.multiLineData:CheckDocRedPoint())
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapController.CheckComponentTime = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  if (self.multiLineData):IsComponentTimeEnd() then
-    (self.mCampaignModule):CampaignSwitchState(true, UIStateType.UIActivityN32MainController, UIStateType.UIMain, nil, (self.multiLineData):GetCampaignId())
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_107"))
+function UIN32MultiLineMapController:CheckComponentTime()
+  if self.multiLineData:IsComponentTimeEnd() then
+    self.mCampaignModule:CampaignSwitchState(true, UIStateType.UIActivityN32MainController, UIStateType.UIMain, nil, self.multiLineData:GetCampaignId())
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_107"))
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapController.GetRenderTexture = function(self, callback)
-  -- function num : 0_15 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._shot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
-  local rt = (self._shot):RefreshBlurTexture()
-  local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-  cache_rt.format = (UnityEngine.RenderTextureFormat).RGB111110Float
+function UIN32MultiLineMapController:GetRenderTexture(callback)
+  self._shot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
+  local rt = self._shot:RefreshBlurTexture()
+  local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+  cache_rt.format = UnityEngine.RenderTextureFormat.RGB111110Float
   self:StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : _ENV, rt, cache_rt, callback
     YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cache_rt)
+    UnityEngine.Graphics.Blit(rt, cache_rt)
     if callback then
       callback(cache_rt)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapController.GetName = function(self)
-  -- function num : 0_16
+function UIN32MultiLineMapController:GetName()
   return "UIN32MultiLineMapController"
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapController.GetFirstDialogBtn = function(self)
-  -- function num : 0_17
-  return (self._contentMap):GetFirstDialogBtn()
+function UIN32MultiLineMapController:GetFirstDialogBtn()
+  return self._contentMap:GetFirstDialogBtn()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapController._CheckGuide = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local petFiles = (self.multiLineData):GetPetFiles()
-  if petFiles and #petFiles > 0 then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN32MultiLineMapController_Doc)
+function UIN32MultiLineMapController:_CheckGuide()
+  local petFiles = self.multiLineData:GetPetFiles()
+  if petFiles and 0 < #petFiles then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN32MultiLineMapController_Doc)
   end
 end
-
-

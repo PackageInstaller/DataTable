@@ -1,44 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_suicide_effect_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillSuicideEffectResult", SkillEffectResultBase)
 SkillSuicideEffectResult = SkillSuicideEffectResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillSuicideEffectResult.Constructor = function(self, targetid)
-  -- function num : 0_0
+function SkillSuicideEffectResult:Constructor(targetid)
   self._targetID = targetid
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSuicideEffectResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillSuicideEffectResult:GetEffectType()
   return SkillEffectType.Suicide
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSuicideEffectResult.GetTargetID = function(self)
-  -- function num : 0_2
+function SkillSuicideEffectResult:GetTargetID()
   return self._targetID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSuicideEffectResult.SetOtherDeadMonsterList = function(self, deadIDList)
-  -- function num : 0_3
+function SkillSuicideEffectResult:SetOtherDeadMonsterList(deadIDList)
   self._otherDeadMonsterList = deadIDList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSuicideEffectResult.GetOtherDeadMonsterList = function(self)
-  -- function num : 0_4
+function SkillSuicideEffectResult:GetOtherDeadMonsterList()
   return self._otherDeadMonsterList
 end
-
-

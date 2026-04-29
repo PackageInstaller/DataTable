@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_serial_killer_effect_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillSerialKillerEffectParam", SkillEffectParamBase)
 SkillSerialKillerEffectParam = SkillSerialKillerEffectParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillSerialKillerEffectParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillSerialKillerEffectParam:Constructor(t)
   self._percent = t.percent
   self._formulaID = t.formulaID
   self._killCount = t.count
@@ -21,74 +14,42 @@ SkillSerialKillerEffectParam.Constructor = function(self, t)
   self._multiple = t.multiple or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSerialKillerEffectParam.GetSerialScopeType = function(self)
-  -- function num : 0_1
+function SkillSerialKillerEffectParam:GetSerialScopeType()
   return self._serialScopeType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSerialKillerEffectParam.GetRadius = function(self)
-  -- function num : 0_2
+function SkillSerialKillerEffectParam:GetRadius()
   return self._radius
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSerialKillerEffectParam.GetPieceType = function(self)
-  -- function num : 0_3
+function SkillSerialKillerEffectParam:GetPieceType()
   return self._pieceType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSerialKillerEffectParam.GetOnePieceAddAttackCount = function(self)
-  -- function num : 0_4
+function SkillSerialKillerEffectParam:GetOnePieceAddAttackCount()
   return self._onePieceAddAttackCount
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSerialKillerEffectParam.GetEffectType = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillSerialKillerEffectParam:GetEffectType()
   return SkillEffectType.SerialKiller
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSerialKillerEffectParam.GetPercent = function(self)
-  -- function num : 0_6
+function SkillSerialKillerEffectParam:GetPercent()
   return self._percent
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSerialKillerEffectParam.GetFormulaID = function(self)
-  -- function num : 0_7
+function SkillSerialKillerEffectParam:GetFormulaID()
   return self._formulaID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSerialKillerEffectParam.GetKillCount = function(self)
-  -- function num : 0_8
+function SkillSerialKillerEffectParam:GetKillCount()
   return self._killCount
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSerialKillerEffectParam.GetPureDamage = function(self)
-  -- function num : 0_9
+function SkillSerialKillerEffectParam:GetPureDamage()
   return self._pureDamage
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSerialKillerEffectParam.GetMultiple = function(self)
-  -- function num : 0_10
+function SkillSerialKillerEffectParam:GetMultiple()
   return self._multiple
 end
-
-

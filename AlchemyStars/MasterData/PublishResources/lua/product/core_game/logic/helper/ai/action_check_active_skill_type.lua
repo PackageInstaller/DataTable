@@ -1,35 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_check_active_skill_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCheckActiveSkillType", AINewNode)
 ActionCheckActiveSkillType = ActionCheckActiveSkillType
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckActiveSkillType.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function ActionCheckActiveSkillType:OnUpdate()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local activeSkillCmpt = teamEntity:ActiveSkill()
   local activeSkillID = activeSkillCmpt:GetActiveSkillID()
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(activeSkillID)
   local skillTags = skillConfigData:GetSkillTag()
-  local attributeCmpt = (self.m_entityOwn):Attributes()
+  local attributeCmpt = self.m_entityOwn:Attributes()
   local checkActiveSkillType = attributeCmpt:GetAttribute("AntiActiveSkillType")
   if not checkActiveSkillType then
     return AINewNodeStatus.Success
   end
-  for i,v in ipairs(checkActiveSkillType) do
+  for i, v in ipairs(checkActiveSkillType) do
     if v == -1 then
       return AINewNodeStatus.Success
     end
-    if (table.icontains)(skillTags, v) then
+    if table.icontains(skillTags, v) then
       return AINewNodeStatus.Success
     end
   end
   return AINewNodeStatus.Failure
 end
-
-

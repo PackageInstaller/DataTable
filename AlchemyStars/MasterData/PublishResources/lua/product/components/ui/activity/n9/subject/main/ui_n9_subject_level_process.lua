@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n9/subject/main/ui_n9_subject_level_process.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN9SubjectLevelProcess", UICustomWidget)
 UIN9SubjectLevelProcess = UIN9SubjectLevelProcess
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN9SubjectLevelProcess.OnShow = function(self)
-  -- function num : 0_0
+function UIN9SubjectLevelProcess:OnShow()
   self._complete = self:GetGameObject("Complete")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelProcess.Refresh = function(self, isComplete)
-  -- function num : 0_1
-  (self._complete):SetActive(isComplete)
+function UIN9SubjectLevelProcess:Refresh(isComplete)
+  self._complete:SetActive(isComplete)
 end
-
-

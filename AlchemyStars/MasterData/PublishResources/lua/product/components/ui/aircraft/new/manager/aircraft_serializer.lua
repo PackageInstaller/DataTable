@@ -1,60 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/manager/aircraft_serializer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftSerializer", Object)
 AircraftSerializer = AircraftSerializer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftSerializer.Constructor = function(self, main)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftSerializer:Constructor(main)
   self._main = main
-  self._playerID = ((GameGlobal.GetModule)(RoleModule)):GetPstId()
+  self._playerID = GameGlobal.GetModule(RoleModule):GetPstId()
   self.AIRCRAFTKEY = "AircraftActionKey"
   self.FLUSHTIME = 1200000
   self.saveTimeDelta = 10000
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSerializer.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function AircraftSerializer:Init()
   AirLog("AircraftSerializer Init Start")
-  if ((UnityEngine.PlayerPrefs).HasKey)(self.AIRCRAFTKEY) then
-    local s = ((UnityEngine.PlayerPrefs).GetString)(self.AIRCRAFTKEY)
-    local tt = ((string.totable)(s))[1]
+  if UnityEngine.PlayerPrefs.HasKey(self.AIRCRAFTKEY) then
+    local s = UnityEngine.PlayerPrefs.GetString(self.AIRCRAFTKEY)
+    local tt = string.totable(s)[1]
     if tt.playerID ~= self._playerID then
-      (self._main):ResetPet()
+      self._main:ResetPet()
     else
       local time = tt.time
       local deltaTime = self:now() - time
-      if self.FLUSHTIME < deltaTime then
-        (self._main):ResetPet()
+      if deltaTime > self.FLUSHTIME then
+        self._main:ResetPet()
       else
         local have = {}
         local queue = AircraftQueue:New()
-        for _,id in ipairs(tt.queue) do
-          if (self._main):IsRestPet(id) then
+        for _, id in ipairs(tt.queue) do
+          if self._main:IsRestPet(id) then
             local pets = {}
-            for petid,value in pairs(have) do
-              (table.insert)(pets, petid)
+            for petid, value in pairs(have) do
+              table.insert(pets, petid)
             end
-            local sp = (HelperProxy:GetInstance()):CheckBinderID(pets, id)
+            local sp = HelperProxy:GetInstance():CheckBinderID(pets, id)
             if not sp then
               queue:Enqueue(id)
               have[id] = true
             end
           end
         end
-        for _,t in ipairs(tt.pets) do
-          if t.data and (t.data).state == AirPetState.Social then
+        for _, t in ipairs(tt.pets) do
+          if t.data and t.data.state == AirPetState.Social then
             local pets = {}
-            for petid,value in pairs(have) do
-              (table.insert)(pets, petid)
+            for petid, value in pairs(have) do
+              table.insert(pets, petid)
             end
-            local sp = (HelperProxy:GetInstance()):CheckBinderID(pets, t.pet)
+            local sp = HelperProxy:GetInstance():CheckBinderID(pets, t.pet)
             if not sp then
               local success = self:Decode(t, deltaTime)
               have[t.pet] = true
@@ -64,13 +54,13 @@ AircraftSerializer.Init = function(self)
             end
           end
         end
-        for _,t in ipairs(tt.pets) do
-          if t.data and (t.data).state ~= AirPetState.Social then
+        for _, t in ipairs(tt.pets) do
+          if t.data and t.data.state ~= AirPetState.Social then
             local pets = {}
-            for petid,value in pairs(have) do
-              (table.insert)(pets, petid)
+            for petid, value in pairs(have) do
+              table.insert(pets, petid)
             end
-            local sp = (HelperProxy:GetInstance()):CheckBinderID(pets, t.pet)
+            local sp = HelperProxy:GetInstance():CheckBinderID(pets, t.pet)
             if not sp then
               local success = self:Decode(t, deltaTime)
               have[t.pet] = true
@@ -80,100 +70,77 @@ AircraftSerializer.Init = function(self)
             end
           end
         end
-        local airPetCfg = (Cfg.cfg_aircraft_pet)({})
+        local airPetCfg = Cfg.cfg_aircraft_pet({})
         local airPet = {}
-        for _,cfg in pairs(airPetCfg) do
+        for _, cfg in pairs(airPetCfg) do
           local id = cfg.ID
           airPet[id] = true
         end
-        local petModule = (GameGlobal.GetModule)(PetModule)
+        local petModule = GameGlobal.GetModule(PetModule)
         local bagPets = petModule:GetPetTabs()
-        for id,pet in pairs(bagPets) do
-          if not have[id] and airPet[id] == true and (self._main):IsRestPet(id) then
+        for id, pet in pairs(bagPets) do
+          if not have[id] and airPet[id] == true and self._main:IsRestPet(id) then
             local pets = {}
-            for petid,value in pairs(have) do
-              (table.insert)(pets, petid)
+            for petid, value in pairs(have) do
+              table.insert(pets, petid)
             end
-            local sp = (HelperProxy:GetInstance()):CheckBinderID(pets, id)
+            local sp = HelperProxy:GetInstance():CheckBinderID(pets, id)
             if not sp then
               queue:Enqueue(id)
               have[id] = true
             end
           end
         end
-        ;
-        (self._main):SetQueueAndInit(queue)
-        ;
-        (self._main):NoticeSocialDecodeFinish()
+        self._main:SetQueueAndInit(queue)
+        self._main:NoticeSocialDecodeFinish()
       end
     end
   else
-    do
-      ;
-      (self._main):ResetPet()
-      self._saveTime = self:now() + self.saveTimeDelta
-      AirLog("AircraftSerializer Init Done")
-    end
+    self._main:ResetPet()
   end
+  self._saveTime = self:now() + self.saveTimeDelta
+  AirLog("AircraftSerializer Init Done")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSerializer.Decode = function(self, t, deltaTime, queue)
-  -- function num : 0_2
+function AircraftSerializer:Decode(t, deltaTime, queue)
   local id = t.pet
-  if (self._main):IsRestPet(id) then
-    local time = (t.data).remainTime - deltaTime
+  if self._main:IsRestPet(id) then
+    local time = t.data.remainTime - deltaTime
     if time <= 0 then
       return false
     else
-      local pet = (self._main):AddPet(id)
+      local pet = self._main:AddPet(id)
       if not pet then
         return false
       end
       local success = pet:Decode(t.data, time, self._main)
       if not success then
-        (self._main):DestroyPet(pet)
+        self._main:DestroyPet(pet)
         return false
       end
     end
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSerializer.GetSerializedTime = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).GetFloat)(self.TIMEKEY)
+function AircraftSerializer:GetSerializedTime()
+  return UnityEngine.PlayerPrefs.GetFloat(self.TIMEKEY)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSerializer.Update = function(self, deltaTimeMS)
-  -- function num : 0_4
-  if self._saveTime < self:now() then
+function AircraftSerializer:Update(deltaTimeMS)
+  if self:now() > self._saveTime then
     self._saveTime = self._saveTime + self.saveTimeDelta
     self:SaveOnce()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSerializer.Reset = function(self)
-  -- function num : 0_5
+function AircraftSerializer:Reset()
   self._saveTime = self:now() + self.saveTimeDelta
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSerializer.SaveOnce = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function AircraftSerializer:SaveOnce()
   AirLog("风船开始序列化")
-  local pets = (self._main):GetPets(function(p)
-    -- function num : 0_6_0 , upvalues : _ENV
+  local pets = self._main:GetPets(function(p)
     local pet = p
     local state = pet:GetState()
     if not pet:IsWorkingPet() and (state == AirPetState.OnFurniture or state == AirPetState.Social or state == AirPetState.Wandering or state == AirPetState.Transiting or state == AirPetState.InElevator or state == AirPetState.Selected or state == AirPetState.WaitingElevator) then
@@ -181,10 +148,9 @@ AircraftSerializer.SaveOnce = function(self)
     else
       return false
     end
-  end
-)
+  end)
   local p = {}
-  for _,pet in ipairs(pets) do
+  for _, pet in ipairs(pets) do
     local e = pet:Encode()
     if e then
       local t = {}
@@ -193,31 +159,22 @@ AircraftSerializer.SaveOnce = function(self)
       p[#p + 1] = t
     end
   end
-  local q = (self._main):GetScheduleQueue()
+  local q = self._main:GetScheduleQueue()
   local tt = {}
   tt.pets = p
   tt.queue = q
   tt.playerID = self._playerID
   tt.time = self:now()
-  local s = (table.tostring)(tt)
-  ;
-  ((UnityEngine.PlayerPrefs).SetString)(self.AIRCRAFTKEY, s)
+  local s = table.tostring(tt)
+  UnityEngine.PlayerPrefs.SetString(self.AIRCRAFTKEY, s)
   AirLog("风船序列化完成")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSerializer.Dispose = function(self)
-  -- function num : 0_7
+function AircraftSerializer:Dispose()
   self:SaveOnce()
   self._timeModule = nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSerializer.now = function(self)
-  -- function num : 0_8
-  return (self._main):Time()
+function AircraftSerializer:now()
+  return self._main:Time()
 end
-
-

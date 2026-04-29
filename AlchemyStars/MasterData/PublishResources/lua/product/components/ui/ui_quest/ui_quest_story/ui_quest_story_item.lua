@@ -1,53 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_story/ui_quest_story_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestStoryItem", UICustomWidget)
 UIQuestStoryItem = UIQuestStoryItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestStoryItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIQuestStoryItem:OnShow(uiParams)
   self._transition = self:GetUIComponent("ATransitionComponent", "UIQuestStoryItem")
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "UIQuestStoryItem")
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).blocksRaycasts = false
+  self._canvasGroup.blocksRaycasts = false
   self._tweenAnim = self:GetUIComponent("Animation", "rect")
   self._detailIsOpen = false
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
+  self._questModule = GameGlobal.GetModule(QuestModule)
   if self._questModule == nil then
-    (Log.fatal)("[quest] questModule is nil !")
-    return 
+    Log.fatal("[quest] questModule is nil !")
+    return
   end
   self._itemCountPerRow = 1
   self._isFirst = true
   self.items = {}
   local mMission = self:GetModule(MissionModule)
   self.discoveryData = mMission:GetDiscoveryData()
-  self.chapters = (self.discoveryData):GetChapters()
+  self.chapters = self.discoveryData:GetChapters()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem.SetDetailReference = function(self, pool, poolGo, poolGrid)
-  -- function num : 0_1
+function UIQuestStoryItem:SetDetailReference(pool, poolGo, poolGrid)
   self._detailPool = pool
   self._detailPoolGo = poolGo
   self._detailPoolGrid = poolGrid
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem.SetData = function(self, taskType, cellSizeX, cellSizeY)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._transition):PlayEnterAnimation(true)
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).blocksRaycasts = true
+function UIQuestStoryItem:SetData(taskType, cellSizeX, cellSizeY)
+  self._transition:PlayEnterAnimation(true)
+  self._canvasGroup.blocksRaycasts = true
   self._isOpen = true
   self:_GetComponents()
   self._taskType = taskType
@@ -55,109 +36,76 @@ UIQuestStoryItem.SetData = function(self, taskType, cellSizeX, cellSizeY)
     self._cellSize = Vector2(cellSizeX, cellSizeY)
   end
   self._currentChapterIndex = 1
-  self._currentChapterIndex = (self._questModule):GetMainQuestChapterID()
+  self._currentChapterIndex = self._questModule:GetMainQuestChapterID()
   if not self._currentChapterIndex then
-    self._currentChapterIndex = (table.count)(self.chapters) + 1
+    self._currentChapterIndex = table.count(self.chapters) + 1
   end
-  local chapter_index = (self._questModule):GetLocalChapterQuestIndex()
-  if self._currentChapterIndex < chapter_index then
+  local chapter_index = self._questModule:GetLocalChapterQuestIndex()
+  if chapter_index > self._currentChapterIndex then
     self._currentChapterIndex = chapter_index
   end
   self:_OnValue()
-  ;
-  (self._detailPoolGo):SetActive(true)
+  self._detailPoolGo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem._GetChapterList = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIQuestStoryItem:_GetChapterList()
   if not self.chapters then
-    (Log.fatal)("[quest] self.chapters is nil !")
-    return 
+    Log.fatal("[quest] self.chapters is nil !")
+    return
   end
   self._chapterList = {}
-  for _,chapter in pairs(self.chapters) do
+  for _, chapter in pairs(self.chapters) do
     if chapter then
-      (table.insert)(self._chapterList, chapter.id)
+      table.insert(self._chapterList, chapter.id)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem.RefrenshList = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIQuestStoryItem:RefrenshList()
   self.items = {}
-  self._currentChapterIndex = (self._questModule):GetMainQuestChapterID()
+  self._currentChapterIndex = self._questModule:GetMainQuestChapterID()
   if not self._currentChapterIndex then
-    self._currentChapterIndex = (table.count)(self.chapters) + 1
+    self._currentChapterIndex = table.count(self.chapters) + 1
   end
   self:_GetChapterList()
-  ;
-  (self._list):SetListItemCount((table.count)(self.chapters))
-  ;
-  (self._list):MovePanelToItemIndex(0, 0)
+  self._list:SetListItemCount(table.count(self.chapters))
+  self._list:MovePanelToItemIndex(0, 0)
   self:_ChangeScrollViewContentPosition()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem.OnHide = function(self)
-  -- function num : 0_5
+function UIQuestStoryItem:OnHide()
   self._detailIsOpen = false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem._GetComponents = function(self)
-  -- function num : 0_6
+function UIQuestStoryItem:_GetComponents()
   self._list = self:GetUIComponent("UIDynamicScrollView", "taskList")
   self._content = self:GetUIComponent("RectTransform", "Content")
   self._rectGo = self:GetGameObject("rect")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem.OnClose = function(self)
-  -- function num : 0_7
+function UIQuestStoryItem:OnClose()
   self._isOpen = false
-  ;
-  (self._transition):PlayLeaveAnimation(true)
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).blocksRaycasts = false
+  self._transition:PlayLeaveAnimation(true)
+  self._canvasGroup.blocksRaycasts = false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem._OnValue = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIQuestStoryItem:_OnValue()
   self:_GetChapterList()
   if self._isFirst == true then
     self._isFirst = false
-    ;
-    (self._list):InitListView((table.count)(self.chapters), function(scrollView, index)
-    -- function num : 0_8_0 , upvalues : self
-    return self:_InitStoryTaskList(scrollView, index)
-  end
-)
+    self._list:InitListView(table.count(self.chapters), function(scrollView, index)
+      return self:_InitStoryTaskList(scrollView, index)
+    end)
     self:_ChangeScrollViewContentPosition()
   else
     self:RefrenshList()
   end
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
   if self._cellSize then
-    (self._detailPoolGrid).cellSize = self._cellSize
+    self._detailPoolGrid.cellSize = self._cellSize
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem._InitStoryTaskList = function(self, scrollView, index)
-  -- function num : 0_9
+function UIQuestStoryItem:_InitStoryTaskList(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -172,175 +120,109 @@ UIQuestStoryItem._InitStoryTaskList = function(self, scrollView, index)
     local heartItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
     self:_ShowChapterItem(heartItem, itemIndex)
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self.items)[itemIndex] = heartItem
+    self.items[itemIndex] = heartItem
   end
   return item
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem._ShowChapterItem = function(self, heartItem, index)
-  -- function num : 0_10
+function UIQuestStoryItem:_ShowChapterItem(heartItem, index)
   if heartItem ~= nil then
-    (heartItem:GetGameObject()):SetActive(true)
+    heartItem:GetGameObject():SetActive(true)
     heartItem:SetData(index, self._currentChapterIndex, function(idx, status)
-    -- function num : 0_10_0 , upvalues : self
-    self:_StoryTaskItemClick(idx, status)
-  end
-)
+      self:_StoryTaskItemClick(idx, status)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem._StoryTaskItemClick = function(self, index, status)
-  -- function num : 0_11 , upvalues : _ENV
-  if QuestStatus.QUEST_NotStart < status then
+function UIQuestStoryItem:_StoryTaskItemClick(index, status)
+  if status > QuestStatus.QUEST_NotStart then
     self:_OpenDetail(index)
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_quest_base_story_click_lock_chapter"))
+    ToastManager.ShowToast(StringTable.Get("str_quest_base_story_click_lock_chapter"))
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem._ChangeScrollViewContentPosition = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  if (table.count)(self.chapters) <= self._currentChapterIndex then
-    (self._list):MovePanelToItemIndex(self._currentChapterIndex, 0)
-    return 
+function UIQuestStoryItem:_ChangeScrollViewContentPosition()
+  if self._currentChapterIndex >= table.count(self.chapters) then
+    self._list:MovePanelToItemIndex(self._currentChapterIndex, 0)
+    return
   end
-  if (table.count)(self.chapters) > 2 and self._currentChapterIndex > 2 then
+  if table.count(self.chapters) > 2 and self._currentChapterIndex > 2 then
     local moveIdx = self._currentChapterIndex
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._content).anchoredPosition = Vector2((moveIdx - 3) * -780 - 500, 0)
+    self._content.anchoredPosition = Vector2((moveIdx - 3) * -780 - 500, 0)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem._OpenDetail = function(self, index)
-  -- function num : 0_13
+function UIQuestStoryItem:_OpenDetail(index)
   self._detailIsOpen = true
-  local chapter = (self._chapterList)[index]
+  local chapter = self._chapterList[index]
   if self._detailPanel == nil then
-    self._detailPanel = (self._detailPool):SpawnObject("UIQuestStoryDetailItem")
+    self._detailPanel = self._detailPool:SpawnObject("UIQuestStoryDetailItem")
   end
-  ;
-  (self._detailPanel):SetData(chapter, self._currentChapterIndex, function(idx)
-    -- function num : 0_13_0 , upvalues : self
+  self._detailPanel:SetData(chapter, self._currentChapterIndex, function(idx)
     self:_FinishTween(idx)
-  end
-, function()
-    -- function num : 0_13_1 , upvalues : self
+  end, function()
     self:RefrenshList()
-  end
-, function()
-    -- function num : 0_13_2 , upvalues : self
+  end, function()
     self:OnDetailClose()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem._FinishTween = function(self, idx)
-  -- function num : 0_14 , upvalues : _ENV
+function UIQuestStoryItem:_FinishTween(idx)
   self:Lock("UIQusetStoryChapterFinishTween")
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.StoryQuestLock, idx + 1)
-  ;
-  ((GameGlobal.Timer)()):AddEvent(167, function()
-    -- function num : 0_14_0 , upvalues : idx, _ENV, self
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.StoryQuestLock, idx + 1)
+  GameGlobal.Timer():AddEvent(167, function()
     local unLockIdx = idx + 1
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnNewStoryQuestUnLock, unLockIdx)
-    ;
-    ((GameGlobal.Timer)()):AddEvent(1000, function()
-      -- function num : 0_14_0_0 , upvalues : self
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnNewStoryQuestUnLock, unLockIdx)
+    GameGlobal.Timer():AddEvent(1000, function()
       self:RefrenshList()
-    end
-)
-  end
-)
-  ;
-  (self._tweenAnim):Play("uieff_Quest_Story_Back")
-  ;
-  ((GameGlobal.Timer)()):AddEvent(1300, function()
-    -- function num : 0_14_1 , upvalues : self
+    end)
+  end)
+  self._tweenAnim:Play("uieff_Quest_Story_Back")
+  GameGlobal.Timer():AddEvent(1300, function()
     self:UnLock("UIQusetStoryChapterFinishTween")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem.CloseDetail = function(self)
-  -- function num : 0_15
+function UIQuestStoryItem:CloseDetail()
   if self._detailIsOpen and self._detailPanel then
-    (self._detailPanel):AnimatedHide()
+    self._detailPanel:AnimatedHide()
   end
   self._detailIsOpen = false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem.OnDetailClose = function(self)
-  -- function num : 0_16
+function UIQuestStoryItem:OnDetailClose()
   self._detailIsOpen = false
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem.CheckDetailOpen = function(self)
-  -- function num : 0_17
+function UIQuestStoryItem:CheckDetailOpen()
   return self._detailIsOpen
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem.GetQuestStoryListItem = function(self, index)
-  -- function num : 0_18
-  if (self.items)[index] then
-    return ((self.items)[index]):GetGameObject("bg")
+function UIQuestStoryItem:GetQuestStoryListItem(index)
+  if self.items[index] then
+    return self.items[index]:GetGameObject("bg")
   else
     return nil
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem.GetQuestStoryScroll = function(self)
-  -- function num : 0_19
+function UIQuestStoryItem:GetQuestStoryScroll()
   return self:GetUIComponent("ScrollRect", "taskList")
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem.GetQuestStoryDetailItemGet = function(self)
-  -- function num : 0_20
+function UIQuestStoryItem:GetQuestStoryDetailItemGet()
   if self._detailPanel then
-    return (self._detailPanel):GetGameObject("taskGet")
+    return self._detailPanel:GetGameObject("taskGet")
   else
     return nil
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryItem.GetQuestStoryDetailItemGoto = function(self)
-  -- function num : 0_21
+function UIQuestStoryItem:GetQuestStoryDetailItemGoto()
   if self._detailPanel then
-    return (self._detailPanel):GetGameObject("taskStateImgGoto")
+    return self._detailPanel:GetGameObject("taskStateImgGoto")
   else
     return nil
   end
 end
-
-

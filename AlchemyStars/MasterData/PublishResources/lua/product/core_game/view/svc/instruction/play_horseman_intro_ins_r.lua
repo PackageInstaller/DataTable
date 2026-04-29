@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_horseman_intro_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayHorsemanIntroInstruction", BaseInstruction)
 PlayHorsemanIntroInstruction = PlayHorsemanIntroInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayHorsemanIntroInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayHorsemanIntroInstruction:Constructor(paramList)
   self._introModelAssetName = paramList.introModel
   self._introAnimateTrigger = paramList.introAnimateTrigger
   self._introMaterialAnimateName = paramList.introMaterialAnimateName
@@ -21,69 +14,56 @@ PlayHorsemanIntroInstruction.Constructor = function(self, paramList)
   self._realStateTimeMs = tonumber(paramList.realStateTimeMs)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayHorsemanIntroInstruction.GetCacheResource = function(self)
-  -- function num : 0_1
-  return {self:GetEffectResCacheInfo(self._introEffectID), self:GetEffectResCacheInfo(self._realIntroEffectID), 
-{self._introModelAssetName, 1}
-}
+function PlayHorsemanIntroInstruction:GetCacheResource()
+  return {
+    self:GetEffectResCacheInfo(self._introEffectID),
+    self:GetEffectResCacheInfo(self._realIntroEffectID),
+    {
+      self._introModelAssetName,
+      1
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayHorsemanIntroInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayHorsemanIntroInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local env = self:CreateInstructionEnv(casterEntity)
   self:_ShowHideRootRenderer(casterEntity, false)
-  if not casterEntity:HasEffectHolder() then
-    env.nul = casterEntity:AddEffectHolder()
-    local cEffectHolder = casterEntity:EffectHolder()
-    local introModelEntity = (env.effectService):CreateEffectEntity()
-    cEffectHolder:AttachPermanentEffect(introModelEntity:GetID())
-    introModelEntity:ReplaceAsset(NativeUnityPrefabAsset:New(self._introModelAssetName))
-    introModelEntity:SetViewVisible(true)
-    introModelEntity:SetLocation(casterEntity:GetRenderGridPosition(), casterEntity:GetRenderGridDirection())
-    introModelEntity:SetAnimatorControllerTriggers({self._introAnimateTrigger})
-    ;
-    (env.effectService):CreateEffect(self._introEffectID, introModelEntity)
-    local csgoIntroModel = (introModelEntity:View()):GetGameObject()
-    local resServ = ((env.world).BW_Services).ResourcesPool
-    local container = resServ:LoadAsset("globalShaderEffects.asset")
-    local csMaterialAnimation = csgoIntroModel:GetComponent(typeof(MaterialAnimation))
-    if not csMaterialAnimation or tostring(csMaterialAnimation) == "null" then
-      csMaterialAnimation = csgoIntroModel:AddComponent(typeof(MaterialAnimation))
-    end
-    local shaderEffectAsset = resServ:LoadAsset(self._introShaderEffectAssetName)
-    introModelEntity:AddMaterialAnimationComponent(container, csMaterialAnimation)
-    ;
-    (introModelEntity:MaterialAnimationComponent()):LoadContainer(shaderEffectAsset)
-    ;
-    (introModelEntity:MaterialAnimationComponent()):Play(self._introMaterialAnimateName)
-    YIELD(TT, self._introStateTimeMs)
-    ;
-    (env.effectService):CreateEffect(self._realIntroEffectID, casterEntity)
-    YIELD(TT, self._realStateTimeMs)
-    introModelEntity:SetViewVisible(false)
-    self:_ShowHideRootRenderer(casterEntity, true)
-    ;
-    (casterEntity:MaterialAnimationComponent()):Play(self._realMaterialAnimateName)
+  env.nul = casterEntity:HasEffectHolder() or casterEntity:AddEffectHolder()
+  local cEffectHolder = casterEntity:EffectHolder()
+  local introModelEntity = env.effectService:CreateEffectEntity()
+  cEffectHolder:AttachPermanentEffect(introModelEntity:GetID())
+  introModelEntity:ReplaceAsset(NativeUnityPrefabAsset:New(self._introModelAssetName))
+  introModelEntity:SetViewVisible(true)
+  introModelEntity:SetLocation(casterEntity:GetRenderGridPosition(), casterEntity:GetRenderGridDirection())
+  introModelEntity:SetAnimatorControllerTriggers({
+    self._introAnimateTrigger
+  })
+  env.effectService:CreateEffect(self._introEffectID, introModelEntity)
+  local csgoIntroModel = introModelEntity:View():GetGameObject()
+  local resServ = env.world.BW_Services.ResourcesPool
+  local container = resServ:LoadAsset("globalShaderEffects.asset")
+  local csMaterialAnimation = csgoIntroModel:GetComponent(typeof(MaterialAnimation))
+  if not csMaterialAnimation or tostring(csMaterialAnimation) == "null" then
+    csMaterialAnimation = csgoIntroModel:AddComponent(typeof(MaterialAnimation))
   end
+  local shaderEffectAsset = resServ:LoadAsset(self._introShaderEffectAssetName)
+  introModelEntity:AddMaterialAnimationComponent(container, csMaterialAnimation)
+  introModelEntity:MaterialAnimationComponent():LoadContainer(shaderEffectAsset)
+  introModelEntity:MaterialAnimationComponent():Play(self._introMaterialAnimateName)
+  YIELD(TT, self._introStateTimeMs)
+  env.effectService:CreateEffect(self._realIntroEffectID, casterEntity)
+  YIELD(TT, self._realStateTimeMs)
+  introModelEntity:SetViewVisible(false)
+  self:_ShowHideRootRenderer(casterEntity, true)
+  casterEntity:MaterialAnimationComponent():Play(self._realMaterialAnimateName)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayHorsemanIntroInstruction._ShowHideRootRenderer = function(self, entity, renderEnabled)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayHorsemanIntroInstruction:_ShowHideRootRenderer(entity, renderEnabled)
   local cView = entity:View()
   local CSGameObject = cView:GetGameObject()
-  local CSGameObjectRoot = (CSGameObject.transform):Find("Root")
-  local tSkinnedMeshRender = (CSGameObjectRoot.transform):GetComponentsInChildren(typeof(UnityEngine.SkinnedMeshRenderer))
+  local CSGameObjectRoot = CSGameObject.transform:Find("Root")
+  local tSkinnedMeshRender = CSGameObjectRoot.transform:GetComponentsInChildren(typeof(UnityEngine.SkinnedMeshRenderer))
   for i = 0, tSkinnedMeshRender.Length - 1 do
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R11 in 'UnsetPending'
-
-    (tSkinnedMeshRender[i]).enabled = renderEnabled
+    tSkinnedMeshRender[i].enabled = renderEnabled
   end
 end
-
-

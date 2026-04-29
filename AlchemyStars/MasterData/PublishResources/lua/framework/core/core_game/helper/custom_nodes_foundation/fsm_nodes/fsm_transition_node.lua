@@ -1,36 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/helper/custom_nodes_foundation/fsm_nodes/fsm_transition_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
--- DECOMPILER ERROR at PC2: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomNodeConfigStatic.Check_FsmTransitionNode = function(cfg)
-  -- function num : 0_0
+function CustomNodeConfigStatic.Check_FsmTransitionNode(cfg)
   if cfg.TrueState and cfg.Condition then
     return true
   end
   return false
 end
 
-;
-(CustomNodeConfigStatic.AddChecker)("FsmTransitionNode", CustomNodeConfigStatic.Check_FsmTransitionNode)
+CustomNodeConfigStatic.AddChecker("FsmTransitionNode", CustomNodeConfigStatic.Check_FsmTransitionNode)
 _class("FsmTransitionNode", CustomNode)
 FsmTransitionNode = FsmTransitionNode
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-FsmTransitionNode.Constructor = function(self)
-  -- function num : 0_1
+function FsmTransitionNode:Constructor()
   self.TrueState = nil
   self.FalseState = nil
   self.Condition = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FsmTransitionNode.InitializeNode = function(self, cfg, context)
-  -- function num : 0_2 , upvalues : _ENV
-  ((FsmTransitionNode.super).InitializeNode)(self, cfg, context)
+function FsmTransitionNode:InitializeNode(cfg, context)
+  FsmTransitionNode.super.InitializeNode(self, cfg, context)
   self.TrueState = cfg.TrueState
   self.FalseState = cfg.FalseState
   self.CheckInterval = self:Parse(cfg.CheckInterval)
@@ -38,53 +24,34 @@ FsmTransitionNode.InitializeNode = function(self, cfg, context)
   local cnd_node = cfg.Condition
   local logic = context.Logic
   self.Condition = logic:CreateNode(cnd_node, context)
-  ;
-  (self.Condition):Deactivate()
+  self.Condition:Deactivate()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FsmTransitionNode.Destroy = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.Condition):Destroy()
-  ;
-  ((FsmTransitionNode.super).Destroy)(self)
+function FsmTransitionNode:Destroy()
+  self.Condition:Destroy()
+  FsmTransitionNode.super.Destroy(self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FsmTransitionNode.Reset = function(self)
-  -- function num : 0_4
-  (self.Condition):Reset()
+function FsmTransitionNode:Reset()
+  self.Condition:Reset()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FsmTransitionNode.Activate = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((FsmTransitionNode.super).Activate)(self)
-  ;
-  (self.Condition):Activate()
+function FsmTransitionNode:Activate()
+  FsmTransitionNode.super.Activate(self)
+  self.Condition:Activate()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FsmTransitionNode.Deactivate = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  ((FsmTransitionNode.super).Deactivate)(self)
-  ;
-  (self.Condition):Deactivate()
+function FsmTransitionNode:Deactivate()
+  FsmTransitionNode.super.Deactivate(self)
+  self.Condition:Deactivate()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-FsmTransitionNode.CheckTransitions = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function FsmTransitionNode:CheckTransitions()
   if not self.CheckInterval then
     return self:_InnerCheckTransition()
   else
-    local now = (TimeService:GetInstance()).CurTime
-    if not self.LastCheckTime or self.CheckInterval <= now - self.LastCheckTime then
+    local now = TimeService:GetInstance().CurTime
+    if not self.LastCheckTime or now - self.LastCheckTime >= self.CheckInterval then
       self.LastCheckTime = now
       return self:_InnerCheckTransition()
     else
@@ -93,34 +60,23 @@ FsmTransitionNode.CheckTransitions = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-FsmTransitionNode._InnerCheckTransition = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local next_state = nil
-  if (self.Condition):IsConditionReached() then
+function FsmTransitionNode:_InnerCheckTransition()
+  local next_state
+  if self.Condition:IsConditionReached() then
     next_state = self.TrueState
   else
     next_state = self.FalseState
   end
   if next_state then
-    (Log.debug)("Condition Reached :", (self.Condition)._className)
+    Log.debug("Condition Reached :", self.Condition._className)
   end
   return next_state
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-FsmTransitionNode.Update = function(self, dt)
-  -- function num : 0_9
-  (self.Condition):Update(dt)
+function FsmTransitionNode:Update(dt)
+  self.Condition:Update(dt)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-FsmTransitionNode.CollectInterfaceInChildren = function(self, interfaceList, funcName)
-  -- function num : 0_10 , upvalues : _ENV
-  (CustomNodeStatic.TraverseCollectInterface)(interfaceList, funcName, self.Condition)
+function FsmTransitionNode:CollectInterfaceInChildren(interfaceList, funcName)
+  CustomNodeStatic.TraverseCollectInterface(interfaceList, funcName, self.Condition)
 end
-
-

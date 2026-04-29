@@ -1,64 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_conduct_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParam_ConductDamage", SkillEffectParamBase)
 SkillEffectParam_ConductDamage = SkillEffectParam_ConductDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_ConductDamage.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParam_ConductDamage:Constructor(paramList)
   self._conductScopeType = paramList.conductScopeType
   self._conductScopeParam = paramList.conductScopeParam
-  if not paramList.conductTargetType then
-    self._conductTargetType = SkillTargetType.MonsterTrap
-    self._formulaID = paramList.formulaID or 110
-    self._conductRate = paramList.conductRate
-  end
+  self._conductTargetType = paramList.conductTargetType or SkillTargetType.MonsterTrap
+  self._formulaID = paramList.formulaID or 110
+  self._conductRate = paramList.conductRate
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ConductDamage.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_ConductDamage:GetEffectType()
   return SkillEffectType.ConductDamage
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ConductDamage.GetConductScopeType = function(self)
-  -- function num : 0_2
+function SkillEffectParam_ConductDamage:GetConductScopeType()
   return self._conductScopeType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ConductDamage.GetConductScopeParam = function(self)
-  -- function num : 0_3
+function SkillEffectParam_ConductDamage:GetConductScopeParam()
   return self._conductScopeParam
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ConductDamage.GetConductTargetType = function(self)
-  -- function num : 0_4
+function SkillEffectParam_ConductDamage:GetConductTargetType()
   return self._conductTargetType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ConductDamage.GetFormulaID = function(self)
-  -- function num : 0_5
+function SkillEffectParam_ConductDamage:GetFormulaID()
   return self._formulaID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ConductDamage.GetConductRateList = function(self)
-  -- function num : 0_6
+function SkillEffectParam_ConductDamage:GetConductRateList()
   return self._conductRate
 end
-
-

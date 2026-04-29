@@ -1,35 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_change_pet_alchemy_power_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangePetAlchemyPower", BuffViewBase)
 BuffViewChangePetAlchemyPower = BuffViewChangePetAlchemyPower
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangePetAlchemyPower.IsNotifyMatch = function(self, notify)
-  -- function num : 0_0
-  if (self._buffResult).attackPos ~= notify:GetAttackPos() or (self._buffResult).targetPos ~= notify:GetTargetPos() then
-    do return not notify.GetAttackPos or not notify.GetTargetPos or not (self._buffResult).attackPos or not (self._buffResult).targetPos end
-    do return true end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function BuffViewChangePetAlchemyPower:IsNotifyMatch(notify)
+  if notify.GetAttackPos and notify.GetTargetPos and self._buffResult.attackPos and self._buffResult.targetPos then
+    return self._buffResult.attackPos == notify:GetAttackPos() and self._buffResult.targetPos == notify:GetTargetPos()
+  else
+    return true
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewChangePetAlchemyPower.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local petPowerStateList = (self._buffResult):GetPetPowerList()
-  for _,petPowerState in pairs(petPowerStateList) do
+function BuffViewChangePetAlchemyPower:PlayView(TT)
+  local petPowerStateList = self._buffResult:GetPetPowerList()
+  for _, petPowerState in pairs(petPowerStateList) do
     self:_PlayView(TT, petPowerState)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewChangePetAlchemyPower._PlayView = function(self, TT, petPowerState)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffViewChangePetAlchemyPower:_PlayView(TT, petPowerState)
   local entityID = petPowerState.petEntityID
   local petPstID = petPowerState.petPstID
   local curPower = petPowerState.power
@@ -38,28 +25,20 @@ BuffViewChangePetAlchemyPower._PlayView = function(self, TT, petPowerState)
   local maxValue = petPowerState.maxValue
   local extraSkillID = petPowerState.extraSkillID
   local previouslyReady = petPowerState.previouslyReady
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetAlchemyPowerChange, petPstID, curPower, true, false, maxValue)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PetAlchemyPowerChange, petPstID, curPower, true, false, maxValue)
   if ready then
     if extraSkillID and extraSkillID ~= 0 then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetExtraActiveSkillGetReady, petPstID, extraSkillID, ready, previouslyReady)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.PetExtraActiveSkillGetReady, petPstID, extraSkillID, ready, previouslyReady)
     else
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, ready, previouslyReady)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, ready, previouslyReady)
     end
+  elseif extraSkillID and extraSkillID ~= 0 then
+    GameGlobal:EventDispatcher():Dispatch(GameEventType.PetExtraActiveSkillCancelReady, petPstID, extraSkillID)
   else
-    if extraSkillID and extraSkillID ~= 0 then
-      (GameGlobal:EventDispatcher()):Dispatch(GameEventType.PetExtraActiveSkillCancelReady, petPstID, extraSkillID)
-    else
-      ;
-      (GameGlobal:EventDispatcher()):Dispatch(GameEventType.PetActiveSkillCancelReady, petPstID)
-    end
+    GameGlobal:EventDispatcher():Dispatch(GameEventType.PetActiveSkillCancelReady, petPstID)
   end
   if requireNTPowerReady then
-    local notify = NTPowerReady:New((self._world):GetEntityByID(entityID))
-    ;
-    ((self._world):GetService("PlayBuff")):PlayBuffView(TT, notify)
+    local notify = NTPowerReady:New(self._world:GetEntityByID(entityID))
+    self._world:GetService("PlayBuff"):PlayBuffView(TT, notify)
   end
 end
-
-

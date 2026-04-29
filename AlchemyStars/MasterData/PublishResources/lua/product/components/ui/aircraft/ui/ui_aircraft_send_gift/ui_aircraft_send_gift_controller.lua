@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_send_gift/ui_aircraft_send_gift_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftSendGiftController", UIController)
 UIAircraftSendGiftController = UIAircraftSendGiftController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftSendGiftController.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftSendGiftController:OnShow(uiParam)
   self._petModule = self:GetModule(PetModule)
   self._petData = uiParam[1]
   self._hasFavorableGift = false
@@ -19,17 +12,11 @@ UIAircraftSendGiftController.OnShow = function(self, uiParam)
   self:AttachEvent(GameEventType.ClosePetAudio, self._StopPlayVoicePlayAnim)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController.OnValue = function(self)
-  -- function num : 0_1
+function UIAircraftSendGiftController:OnValue()
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController.GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftSendGiftController:GetComponents()
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "GiftListScrollView")
   self._affinityLevelLabel = self:GetUIComponent("UILocalizationText", "AffinityLevel")
   self._curExpLabel = self:GetUIComponent("UILocalizationText", "CurrExp")
@@ -55,115 +42,80 @@ UIAircraftSendGiftController.GetComponents = function(self)
   self:AttachEvent(GameEventType.ItemCountChanged, self.OnItemCountChanged)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController.ShowAttackValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local propertyConfig = (Cfg.cfg_pet_affinity)({PetID = (self._petData):GetTemplateID()})
+function UIAircraftSendGiftController:ShowAttackValue()
+  local propertyConfig = Cfg.cfg_pet_affinity({
+    PetID = self._petData:GetTemplateID()
+  })
   local attack = 0
   local defend = 0
   local hp = 0
   if propertyConfig then
-    local petAffinityConfig = nil
-    for k,v in pairs(propertyConfig) do
+    local petAffinityConfig
+    for k, v in pairs(propertyConfig) do
       if v.AffinityLevel == self._curLevel then
         petAffinityConfig = v
         break
       end
     end
-    do
-      do
-        if petAffinityConfig then
-          attack = petAffinityConfig.Attack
-          defend = petAffinityConfig.Defence
-          hp = petAffinityConfig.Health
-        end
-        ;
-        (self._attackValueLabel):SetText("+" .. attack)
-        ;
-        (self._defendValueLabel):SetText("+" .. defend)
-        ;
-        (self._hpValueLabel):SetText("+" .. hp)
-      end
+    if petAffinityConfig then
+      attack = petAffinityConfig.Attack
+      defend = petAffinityConfig.Defence
+      hp = petAffinityConfig.Health
     end
   end
+  self._attackValueLabel:SetText("+" .. attack)
+  self._defendValueLabel:SetText("+" .. defend)
+  self._hpValueLabel:SetText("+" .. hp)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController.ShowExp = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local curExp = self._curExp - ((Cfg.cfg_pet_affinity_exp)[self._curLevel]).NeedAffintyExp
+function UIAircraftSendGiftController:ShowExp()
+  local curExp = self._curExp - Cfg.cfg_pet_affinity_exp[self._curLevel].NeedAffintyExp
   local percent = curExp / self._curMaxExp
   if self._maxAffinityMaxLevel <= self._curLevel then
-    (self._affinityLevelMaxGo):SetActive(false)
-    ;
-    (self._curExpLabel):SetText(self._curMaxExp)
-    ;
-    (self._maxExpLabel):SetText(self._curMaxExp)
+    self._affinityLevelMaxGo:SetActive(false)
+    self._curExpLabel:SetText(self._curMaxExp)
+    self._maxExpLabel:SetText(self._curMaxExp)
     percent = 1
   else
-    ;
-    (self._affinityLevelMaxGo):SetActive(false)
-    ;
-    (self._curExpLabel):SetText(curExp)
-    ;
-    (self._maxExpLabel):SetText(self._curMaxExp)
+    self._affinityLevelMaxGo:SetActive(false)
+    self._curExpLabel:SetText(curExp)
+    self._maxExpLabel:SetText(self._curMaxExp)
   end
-  if self._maxAffinityMaxLevel <= self._realLevel then
-    (self._addExpGo):SetActive(false)
+  if self._realLevel >= self._maxAffinityMaxLevel then
+    self._addExpGo:SetActive(false)
+  elseif self._addExp ~= 0 then
+    self._addExpGo:SetActive(true)
+    self._addExpLabel:SetText("+" .. self._addExp)
   else
-    if self._addExp ~= 0 then
-      (self._addExpGo):SetActive(true)
-      ;
-      (self._addExpLabel):SetText("+" .. self._addExp)
-    else
-      ;
-      (self._addExpGo):SetActive(false)
+    self._addExpGo:SetActive(false)
+  end
+  self._affinityLevelLabel:SetText(self._curLevel)
+  self._affinityExpBar1.fillAmount = percent
+  self._affinityExpBar2.value = percent
+  local cfg = Cfg.cfg_pet_affinity_exp[self._curLevel]
+  if 0 < self._affinityTr.childCount then
+    for i = 1, self._affinityTr.childCount do
+      local cloneText = self._affinityTr:GetChild(i - 1).gameObject:GetComponent("UILocalizationText")
+      cloneText:SetText(StringTable.Get(cfg.Desc))
     end
   end
-  ;
-  (self._affinityLevelLabel):SetText(self._curLevel)
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._affinityExpBar1).fillAmount = percent
-  -- DECOMPILER ERROR at PC73: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._affinityExpBar2).value = percent
-  local cfg = (Cfg.cfg_pet_affinity_exp)[self._curLevel]
-  if (self._affinityTr).childCount > 0 then
-    for i = 1, (self._affinityTr).childCount do
-      local cloneText = (((self._affinityTr):GetChild(i - 1)).gameObject):GetComponent("UILocalizationText")
-      cloneText:SetText((StringTable.Get)(cfg.Desc))
-    end
-  end
-  do
-    if self._maxAffinityMaxLevel <= self._realLevel then
-      (self._giveAwayGiftButtonPanelGo):SetActive(true)
-      ;
-      (self._affinityMaxPanelGo):SetActive(false)
-    else
-      ;
-      (self._giveAwayGiftButtonPanelGo):SetActive(true)
-      ;
-      (self._affinityMaxPanelGo):SetActive(false)
-    end
+  if self._realLevel >= self._maxAffinityMaxLevel then
+    self._giveAwayGiftButtonPanelGo:SetActive(true)
+    self._affinityMaxPanelGo:SetActive(false)
+  else
+    self._giveAwayGiftButtonPanelGo:SetActive(true)
+    self._affinityMaxPanelGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController.GetPetValue = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._maxAffinityMaxLevel = (self._petData):GetPetAffinityMaxLevel()
-  local petConfig = (Cfg.cfg_pet)[(self._petData):GetTemplateID()]
+function UIAircraftSendGiftController:GetPetValue()
+  self._maxAffinityMaxLevel = self._petData:GetPetAffinityMaxLevel()
+  local petConfig = Cfg.cfg_pet[self._petData:GetTemplateID()]
   self._functionType = petConfig.FunctionType
   self._tags = petConfig.Tags
-  self._realLevel = (self._petData):GetPetAffinityLevel()
-  self._realExp = (self._petData):GetPetAffinityExp()
-  self._realMaxExp = (self._petData):GetPetAffinityMaxExp(self._realLevel)
+  self._realLevel = self._petData:GetPetAffinityLevel()
+  self._realExp = self._petData:GetPetAffinityExp()
+  self._realMaxExp = self._petData:GetPetAffinityMaxExp(self._realLevel)
   self._lvChanged = false
   if self._realLevel ~= self._lastLv then
     self._lvChanged = true
@@ -174,76 +126,57 @@ UIAircraftSendGiftController.GetPetValue = function(self)
   self._addExp = 0
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController.OnItemCountChanged = function(self)
-  -- function num : 0_6
+function UIAircraftSendGiftController:OnItemCountChanged()
   self:InitScrollView()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController.InitScrollView = function(self)
-  -- function num : 0_7
+function UIAircraftSendGiftController:InitScrollView()
   self:_CalRow()
   if self._scrollViewInited then
-    (self._scrollView):SetListItemCount(self._giftRow)
-    ;
-    (self._scrollView):ResetListView()
-    ;
-    (self._scrollView):RefreshAllShownItem()
+    self._scrollView:SetListItemCount(self._giftRow)
+    self._scrollView:ResetListView()
+    self._scrollView:RefreshAllShownItem()
   else
     self._scrollViewInited = true
-    ;
-    (self._scrollView):InitListView(self._giftRow, function(scrollview, index)
-    -- function num : 0_7_0 , upvalues : self
-    return self:_OnGeGiftItem(scrollview, index)
-  end
-)
+    self._scrollView:InitListView(self._giftRow, function(scrollview, index)
+      return self:_OnGeGiftItem(scrollview, index)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController.GetGiftData = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
-  local itemDatas = (self._itemModule):GetItemListBySubType(ItemSubType.ItemSubType_PetPresent)
+function UIAircraftSendGiftController:GetGiftData()
+  self._itemModule = GameGlobal.GetModule(ItemModule)
+  local itemDatas = self._itemModule:GetItemListBySubType(ItemSubType.ItemSubType_PetPresent)
   self._giftDatas = {}
-  do
-    if itemDatas then
-      local giftDatas = {}
-      for i = 1, #itemDatas do
-        local giftData = {}
-        giftData.giftData = itemDatas[i]
-        giftData.isSelected = false
-        giftData.selectedCount = 0
-        local templateId = (itemDatas[i]):GetTemplateID()
-        local cfg = (Cfg.cfg_item_pet_present)[templateId]
-        if cfg then
-          giftData.baseAffinity = cfg.BaseAffinity
-          giftData.extAffinity = cfg.ExtAffinity
-          giftData.forceFavorType = cfg.ForceFavorType
-          giftData.functionFavorType = cfg.FunctionFavorType
-          giftData.des = cfg.Desc
-        end
-        giftData.index = 0
-        if self:IsFavorableGift(giftData) then
-          giftData.index = 1
-        end
-        giftDatas[i] = giftData
+  if itemDatas then
+    local giftDatas = {}
+    for i = 1, #itemDatas do
+      local giftData = {}
+      giftData.giftData = itemDatas[i]
+      giftData.isSelected = false
+      giftData.selectedCount = 0
+      local templateId = itemDatas[i]:GetTemplateID()
+      local cfg = Cfg.cfg_item_pet_present[templateId]
+      if cfg then
+        giftData.baseAffinity = cfg.BaseAffinity
+        giftData.extAffinity = cfg.ExtAffinity
+        giftData.forceFavorType = cfg.ForceFavorType
+        giftData.functionFavorType = cfg.FunctionFavorType
+        giftData.des = cfg.Desc
       end
-      self._giftDatas = giftDatas
+      giftData.index = 0
+      if self:IsFavorableGift(giftData) then
+        giftData.index = 1
+      end
+      giftDatas[i] = giftData
     end
-    self._giftDatas = self:_SortGiftDatas(self._giftDatas)
-    self._giftCount = (table.count)(self._giftDatas)
+    self._giftDatas = giftDatas
   end
+  self._giftDatas = self:_SortGiftDatas(self._giftDatas)
+  self._giftCount = table.count(self._giftDatas)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController.Refresh = function(self)
-  -- function num : 0_9
+function UIAircraftSendGiftController:Refresh()
   self:GetPetValue()
   self:ShowExp()
   self:ShowAttackValue()
@@ -251,183 +184,114 @@ UIAircraftSendGiftController.Refresh = function(self)
   self:InitScrollView()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController.OnHide = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftChangeGiftSending, false)
+function UIAircraftSendGiftController:OnHide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftChangeGiftSending, false)
   self:DetachEvent(GameEventType.ItemCountChanged, self.OnItemCountChanged)
   self:_StopPlayVoice()
-  local pm = (GameGlobal.GetModule)(PetAudioModule)
+  local pm = GameGlobal.GetModule(PetAudioModule)
   pm:StopAll()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController._LoadVoiceRes = function(self)
-  -- function num : 0_11
+function UIAircraftSendGiftController:_LoadVoiceRes()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController._StopPlayVoicePlayAnim = function(self)
-  -- function num : 0_12
+function UIAircraftSendGiftController:_StopPlayVoicePlayAnim()
   self:_StopPlayVoice()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController._StopPlayVoice = function(self)
-  -- function num : 0_13
+function UIAircraftSendGiftController:_StopPlayVoice()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController._PlayVoice = function(self, isLove)
-  -- function num : 0_14 , upvalues : _ENV
+function UIAircraftSendGiftController:_PlayVoice(isLove)
   self:_StopPlayVoice()
-  local pm = ((GameGlobal.GetModule)(PetAudioModule))
-  -- DECOMPILER ERROR at PC6: Overwrote pending register: R3 in 'AssignReg'
-
-  local l_play_audio_id = .end
+  local pm = GameGlobal.GetModule(PetAudioModule)
+  local l_play_audio_id
   if isLove then
-    l_play_audio_id = pm:PlayPetAudio("ReceiveLoveGift", (self._petData):GetTemplateID(), true)
-    ;
-    (self._normalVoiceIconGo):SetActive(false)
-    ;
-    (self._inteimacyVoiceIconGo):SetActive(true)
+    l_play_audio_id = pm:PlayPetAudio("ReceiveLoveGift", self._petData:GetTemplateID(), true)
+    self._normalVoiceIconGo:SetActive(false)
+    self._inteimacyVoiceIconGo:SetActive(true)
   else
-    l_play_audio_id = pm:PlayPetAudio("ReceiveGift", (self._petData):GetTemplateID(), true)
-    ;
-    (self._normalVoiceIconGo):SetActive(true)
-    ;
-    (self._inteimacyVoiceIconGo):SetActive(false)
+    l_play_audio_id = pm:PlayPetAudio("ReceiveGift", self._petData:GetTemplateID(), true)
+    self._normalVoiceIconGo:SetActive(true)
+    self._inteimacyVoiceIconGo:SetActive(false)
   end
-  local l_config = (AudioHelperController.GetCfgAudio)(l_play_audio_id)
-  ;
-  (self._voiceContent):SetText((HelperProxy:GetInstance()):ReplacePlayerName((StringTable.Get)(l_config.Content)))
+  local l_config = AudioHelperController.GetCfgAudio(l_play_audio_id)
+  self._voiceContent:SetText(HelperProxy:GetInstance():ReplacePlayerName(StringTable.Get(l_config.Content)))
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController._SortGiftDatas = function(self, giftDatas)
-  -- function num : 0_15 , upvalues : _ENV
-  do
-    if not giftDatas then
-      local emptyTable = {}
-      return emptyTable
-    end
-    ;
-    (table.sort)(giftDatas, function(a, b)
-    -- function num : 0_15_0
-    if b.index >= a.index then
-      do return a.index == b.index end
-      do return (b.giftData):GetTemplateID() < (a.giftData):GetTemplateID() end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
+function UIAircraftSendGiftController:_SortGiftDatas(giftDatas)
+  if not giftDatas then
+    local emptyTable = {}
+    return emptyTable
   end
-)
-    return giftDatas
-  end
+  table.sort(giftDatas, function(a, b)
+    if a.index ~= b.index then
+      return a.index > b.index
+    end
+    return a.giftData:GetTemplateID() > b.giftData:GetTemplateID()
+  end)
+  return giftDatas
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController._RefreshPetAniffityInfo = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local curExp = self._curExp - ((Cfg.cfg_pet_affinity_exp)[self._curLevel]).NeedAffintyExp
+function UIAircraftSendGiftController:_RefreshPetAniffityInfo()
+  local curExp = self._curExp - Cfg.cfg_pet_affinity_exp[self._curLevel].NeedAffintyExp
   local percent = curExp / self._curMaxExp
   if self._maxAffinityMaxLevel <= self._curLevel then
-    (self._affinityLevelMaxGo):SetActive(false)
-    ;
-    (self._curExpLabel):SetText(self._curMaxExp)
-    ;
-    (self._maxExpLabel):SetText(self._curMaxExp)
+    self._affinityLevelMaxGo:SetActive(false)
+    self._curExpLabel:SetText(self._curMaxExp)
+    self._maxExpLabel:SetText(self._curMaxExp)
     percent = 1
   else
-    ;
-    (self._affinityLevelMaxGo):SetActive(false)
-    ;
-    (self._curExpLabel):SetText(curExp)
-    ;
-    (self._maxExpLabel):SetText(self._curMaxExp)
+    self._affinityLevelMaxGo:SetActive(false)
+    self._curExpLabel:SetText(curExp)
+    self._maxExpLabel:SetText(self._curMaxExp)
   end
-  if self._maxAffinityMaxLevel <= self._realLevel then
-    (self._addExpGo):SetActive(false)
+  if self._realLevel >= self._maxAffinityMaxLevel then
+    self._addExpGo:SetActive(false)
+  elseif self._addExp ~= 0 then
+    self._addExpGo:SetActive(true)
+    self._addExpLabel:SetText("+" .. self._addExp)
   else
-    if self._addExp ~= 0 then
-      (self._addExpGo):SetActive(true)
-      ;
-      (self._addExpLabel):SetText("+" .. self._addExp)
-    else
-      ;
-      (self._addExpGo):SetActive(false)
+    self._addExpGo:SetActive(false)
+  end
+  self._affinityLevelLabel:SetText(self._curLevel)
+  self._affinityExpBar1.fillAmount = percent
+  self._affinityExpBar2.value = percent
+  local cfg = Cfg.cfg_pet_affinity_exp[self._curLevel]
+  if 0 < self._affinityTr.childCount then
+    for i = 1, self._affinityTr.childCount do
+      local cloneText = self._affinityTr:GetChild(i - 1).gameObject:GetComponent("UILocalizationText")
+      cloneText:SetText(StringTable.Get(cfg.Desc))
     end
   end
-  ;
-  (self._affinityLevelLabel):SetText(self._curLevel)
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._affinityExpBar1).fillAmount = percent
-  -- DECOMPILER ERROR at PC73: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._affinityExpBar2).value = percent
-  local cfg = (Cfg.cfg_pet_affinity_exp)[self._curLevel]
-  if (self._affinityTr).childCount > 0 then
-    for i = 1, (self._affinityTr).childCount do
-      local cloneText = (((self._affinityTr):GetChild(i - 1)).gameObject):GetComponent("UILocalizationText")
-      cloneText:SetText((StringTable.Get)(cfg.Desc))
-    end
+  if self._realLevel >= self._maxAffinityMaxLevel then
+    self._giveAwayGiftButtonPanelGo:SetActive(true)
+    self._affinityMaxPanelGo:SetActive(false)
+  else
+    self._giveAwayGiftButtonPanelGo:SetActive(true)
+    self._affinityMaxPanelGo:SetActive(false)
   end
-  do
-    if self._maxAffinityMaxLevel <= self._realLevel then
-      (self._giveAwayGiftButtonPanelGo):SetActive(true)
-      ;
-      (self._affinityMaxPanelGo):SetActive(false)
-    else
-      ;
-      (self._giveAwayGiftButtonPanelGo):SetActive(true)
-      ;
-      (self._affinityMaxPanelGo):SetActive(false)
-    end
-    self:ShowAttackValue()
-  end
+  self:ShowAttackValue()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController._CalRow = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  self._giftRow = (math.ceil)(self._giftCount / self._itemCountPerRow)
+function UIAircraftSendGiftController:_CalRow()
+  self._giftRow = math.ceil(self._giftCount / self._itemCountPerRow)
   if self._giftRow < 4 then
     self._giftRow = 4
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController._InitScrollView = function(self)
-  -- function num : 0_18
-  (self._scrollView):InitListView(self._giftRow, function(scrollview, index)
-    -- function num : 0_18_0 , upvalues : self
+function UIAircraftSendGiftController:_InitScrollView()
+  self._scrollView:InitListView(self._giftRow, function(scrollview, index)
     return self:_OnGeGiftItem(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController._SetListItemCount = function(self)
-  -- function num : 0_19
-  (self._scrollView):SetListItemCount(self._giftRow)
+function UIAircraftSendGiftController:_SetListItemCount()
+  self._scrollView:SetListItemCount(self._giftRow)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController._OnGeGiftItem = function(self, scrollView, index)
-  -- function num : 0_20
+function UIAircraftSendGiftController:_OnGeGiftItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -446,37 +310,23 @@ UIAircraftSendGiftController._OnGeGiftItem = function(self, scrollView, index)
   return item
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController._RefreshGiftItemInfo = function(self, itemWidget, index)
-  -- function num : 0_21
-  itemWidget:Refresh(self._petData, (self._giftDatas)[index], function(giftData, isAdd)
-    -- function num : 0_21_0 , upvalues : self
+function UIAircraftSendGiftController:_RefreshGiftItemInfo(itemWidget, index)
+  itemWidget:Refresh(self._petData, self._giftDatas[index], function(giftData, isAdd)
     return self:OnItemClicked(giftData, isAdd)
-  end
-, function(itemId, pos)
-    -- function num : 0_21_1 , upvalues : self
+  end, function(itemId, pos)
     self:ShowItemTips(itemId, pos)
-  end
-, function()
-    -- function num : 0_21_2 , upvalues : self
+  end, function()
     self:CloseItemTips()
-  end
-, function(giftData)
-    -- function num : 0_21_3 , upvalues : self
+  end, function(giftData)
     return self:IsFavorableGift(giftData)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController.OnItemClicked = function(self, giftData, isAdd)
-  -- function num : 0_22
+function UIAircraftSendGiftController:OnItemClicked(giftData, isAdd)
   if giftData == nil then
     return false
   end
-  if self._realLevel < self._maxAffinityMaxLevel and isAdd and self._maxAffinityMaxLevel <= self._curLevel then
+  if self._realLevel < self._maxAffinityMaxLevel and isAdd and self._curLevel >= self._maxAffinityMaxLevel then
     return false
   end
   local affinityValue = 0
@@ -487,24 +337,21 @@ UIAircraftSendGiftController.OnItemClicked = function(self, giftData, isAdd)
     affinityValue = affinityValue + giftData.extAffinity
   end
   if isAdd then
-    self._addExp = self._addExp + (affinityValue)
-    self._curExp = self._curExp + (affinityValue)
+    self._addExp = self._addExp + affinityValue
+    self._curExp = self._curExp + affinityValue
   else
-    self._addExp = self._addExp - (affinityValue)
-    self._curExp = self._curExp - (affinityValue)
+    self._addExp = self._addExp - affinityValue
+    self._curExp = self._curExp - affinityValue
   end
   self:_CalPetData()
   self:_RefreshPetAniffityInfo()
   return true
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController._CalPetData = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIAircraftSendGiftController:_CalPetData()
   for i = 1, self._maxAffinityMaxLevel do
-    local expCfg = (Cfg.cfg_pet_affinity_exp)[i]
-    if self._curExp < expCfg.NeedAffintyExp then
+    local expCfg = Cfg.cfg_pet_affinity_exp[i]
+    if expCfg.NeedAffintyExp > self._curExp then
       self._curLevel = i - 1
       break
     end
@@ -512,83 +359,59 @@ UIAircraftSendGiftController._CalPetData = function(self)
       self._curLevel = self._maxAffinityMaxLevel
     end
   end
-  do
-    self._curMaxExp = (self._petData):GetPetAffinityMaxExp(self._curLevel)
-  end
+  self._curMaxExp = self._petData:GetPetAffinityMaxExp(self._curLevel)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController.ButtonClearOnClick = function(self)
-  -- function num : 0_24
+function UIAircraftSendGiftController:ButtonClearOnClick()
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController.ButtonSendOnClick = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIAircraftSendGiftController:ButtonSendOnClick()
   local items = self:_GetSelectedGiftItems()
-  if (table.count)(items) <= 0 then
-    return 
+  if table.count(items) <= 0 then
+    return
   end
   if self._maxAffinityMaxLevel <= self._realLevel then
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_affinity_level_has_reachmax"), function(param)
-    -- function num : 0_25_0 , upvalues : self, _ENV, items
-    self:Lock("ButtonSendOnClick")
-    self._lastLv = (self._petData):GetPetAffinityLevel()
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self._SendGiftMsg, self, items)
-  end
-, nil, function(param)
-    -- function num : 0_25_1
-  end
-, nil)
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_affinity_level_has_reachmax"), function(param)
+      self:Lock("ButtonSendOnClick")
+      self._lastLv = self._petData:GetPetAffinityLevel()
+      GameGlobal.TaskManager():StartTask(self._SendGiftMsg, self, items)
+    end, nil, function(param)
+    end, nil)
   else
     self:Lock("ButtonSendOnClick")
-    self._lastLv = (self._petData):GetPetAffinityLevel()
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self._SendGiftMsg, self, items)
+    self._lastLv = self._petData:GetPetAffinityLevel()
+    GameGlobal.TaskManager():StartTask(self._SendGiftMsg, self, items)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController._SendGiftMsg = function(self, TT, items)
-  -- function num : 0_26 , upvalues : _ENV
-  local res, replay = (self._petModule):RequestGivePetPresent(TT, (self._petData):GetPstID(), items)
+function UIAircraftSendGiftController:_SendGiftMsg(TT, items)
+  local res, replay = self._petModule:RequestGivePetPresent(TT, self._petData:GetPstID(), items)
   self:UnLock("ButtonSendOnClick")
   if res:GetSucc() then
     self:Refresh()
     if replay.trigger_story_event_id and replay.trigger_story_event_id ~= 0 then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SendGiftRandomStory, replay.trigger_story_event_id)
-      return 
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.SendGiftRandomStory, replay.trigger_story_event_id)
+      return
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftOnSendGiftSuccess, self._lvChanged, self._hasFavorableGift)
-    ;
-    (Log.debug)("###UIAircraftSendGiftController send success !")
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftOnSendGiftSuccess, self._lvChanged, self._hasFavorableGift)
+    Log.debug("###UIAircraftSendGiftController send success !")
   else
-    ;
-    (Log.fatal)("###UIAircraftSendGiftController:_SendGiftMsg err:", res.m_result)
+    Log.fatal("###UIAircraftSendGiftController:_SendGiftMsg err:", res.m_result)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController._GetSelectedGiftItems = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UIAircraftSendGiftController:_GetSelectedGiftItems()
   self._hasFavorableGift = false
   local items = {}
-  local giftCount = (table.count)(self._giftDatas)
+  local giftCount = table.count(self._giftDatas)
   for i = 1, giftCount do
-    local giftData = (self._giftDatas)[i]
+    local giftData = self._giftDatas[i]
     if giftData.isSelected then
       local item = ItemAsset:New()
-      item.assetid = (giftData.giftData):GetID()
+      item.assetid = giftData.giftData:GetID()
       item.count = giftData.selectedCount
-      ;
-      (table.insert)(items, item)
+      table.insert(items, item)
       if self:IsFavorableGift(giftData) then
         self._hasFavorableGift = true
       end
@@ -597,69 +420,47 @@ UIAircraftSendGiftController._GetSelectedGiftItems = function(self)
   return items
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController._PickPetTaskReward = function(self, storyIds)
-  -- function num : 0_28 , upvalues : _ENV
+function UIAircraftSendGiftController:_PickPetTaskReward(storyIds)
   local s = storyIds
   local idx = 1
-  if s and #s > 0 then
-    local cfg_pet_story = (Cfg.cfg_pet_story)[s[idx]]
+  if s and 0 < #s then
+    local cfg_pet_story = Cfg.cfg_pet_story[s[idx]]
     if cfg_pet_story == nil then
-      (Log.fatal)("#######UIAircraftSendGiftController:_PickPetTaskReward -- cfg_pet_story == nil", s[idx])
+      Log.fatal("#######UIAircraftSendGiftController:_PickPetTaskReward -- cfg_pet_story == nil", s[idx])
     end
     local storyid = cfg_pet_story.StoryID
     self:ShowDialog("UIStoryController", storyid, function()
-    -- function num : 0_28_0 , upvalues : idx, s, _ENV
-    idx = idx + 1
-    if s[idx] then
-      (Log.debug)("##该星灵还有一个剧情，先把星灵移到触发点，然后关闭送礼")
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AirStartOneRandomEvent, s[idx])
-    end
-  end
-)
+      idx = idx + 1
+      if s[idx] then
+        Log.debug("##该星灵还有一个剧情，先把星灵移到触发点，然后关闭送礼")
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.AirStartOneRandomEvent, s[idx])
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController.ShowItemTips = function(self, itemId, pos)
-  -- function num : 0_29
-  (self._tips):SetData(itemId, pos)
+function UIAircraftSendGiftController:ShowItemTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController.CloseItemTips = function(self)
-  -- function num : 0_30
-  (self._tips):closeOnClick()
+function UIAircraftSendGiftController:CloseItemTips()
+  self._tips:closeOnClick()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController.IsFavorableGift = function(self, giftData)
-  -- function num : 0_31
+function UIAircraftSendGiftController:IsFavorableGift(giftData)
   if giftData.forceFavorType and self._tags then
     for i = 1, #self._tags do
-      if (self._tags)[i] == giftData.forceFavorType then
+      if self._tags[i] == giftData.forceFavorType then
         return true
       end
     end
   end
-  do
-    if giftData.functionFavorType and self._functionType and giftData.functionFavorType == self._functionType then
-      return true
-    end
-    return false
+  if giftData.functionFavorType and self._functionType and giftData.functionFavorType == self._functionType then
+    return true
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftController.bgOnClick = function(self)
-  -- function num : 0_32
+function UIAircraftSendGiftController:bgOnClick()
   self:CloseDialog()
 end
-
-

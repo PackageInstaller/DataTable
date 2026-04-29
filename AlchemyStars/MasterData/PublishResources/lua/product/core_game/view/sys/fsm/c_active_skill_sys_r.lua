@@ -1,83 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_active_skill_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("active_skill_system")
 _class("ClientActiveSkillSystem_Render", ActiveSkillSystem)
 ClientActiveSkillSystem_Render = ClientActiveSkillSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientActiveSkillSystem_Render._DoRenderCheckNoGhost = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function ClientActiveSkillSystem_Render:_DoRenderCheckNoGhost(TT, teamEntity, casterEntity)
   if not EDITOR then
-    return 
+    return
   end
-  local ghostEntities = ((self._world):GetGroup(((self._world).BW_WEMatchers).Ghost)):GetEntities()
-  if #ghostEntities > 0 then
-    (Log.exception)("[GhostDestroyCheck] Ghost still alive. current skillID: ")
+  local ghostEntities = self._world:GetGroup(self._world.BW_WEMatchers.Ghost):GetEntities()
+  if 0 < #ghostEntities then
+    Log.exception("[GhostDestroyCheck] Ghost still alive. current skillID: ")
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderPreActiveSkillStart = function(self, TT)
-  -- function num : 0_1
-  ((self._world):MainCamera()):EnableEffectCamera(true)
-  local playSkillService = (self._world):GetService("PlaySkill")
+function ClientActiveSkillSystem_Render:_DoRenderPreActiveSkillStart(TT)
+  self._world:MainCamera():EnableEffectCamera(true)
+  local playSkillService = self._world:GetService("PlaySkill")
   playSkillService:ResetWaitFreeList()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderNotifyActiveSkillStart = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_2 , upvalues : _ENV
+function ClientActiveSkillSystem_Render:_DoRenderNotifyActiveSkillStart(TT, teamEntity, casterEntity)
   local isPetActiveSkill = self:_IsPetCastActiveSkill(teamEntity)
   if isPetActiveSkill then
-    local playBuffService = (self._world):GetService("PlayBuff")
+    local playBuffService = self._world:GetService("PlayBuff")
     playBuffService:PlayBuffView(TT, NTBeforePetActiveSkillClearPower:New(casterEntity))
     playBuffService:PlayBuffView(TT, NTActiveSkillAttackStart:New(casterEntity))
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderGuidActiveSkill = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_3 , upvalues : _ENV
-  local guideService = (self._world):GetService("Guide")
+function ClientActiveSkillSystem_Render:_DoRenderGuidActiveSkill(TT, teamEntity, casterEntity)
+  local guideService = self._world:GetService("Guide")
   guideService:FinishGuideWeakLine()
   local guideTaskId = guideService:Trigger(GameEventType.GuidePlayerHandleFinish, GuidePlayerHandle.MainSkillFinish, casterEntity)
   return guideTaskId
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderWaitPlaySkillTaskFinish = function(self, TT)
-  -- function num : 0_4
-  local playSkillService = (self._world):GetService("PlaySkill")
+function ClientActiveSkillSystem_Render:_DoRenderWaitPlaySkillTaskFinish(TT)
+  local playSkillService = self._world:GetService("PlaySkill")
   local listWaitTask = playSkillService:GetWaitFreeList()
   self:_WaitTasksEnd(TT, listWaitTask)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderWaitTeleportFinish = function(self, TT, listTrapTrigger, teamEntity, casterEntity)
-  -- function num : 0_5
-  local sPlaySkillInstruction = (self._world):GetService("PlaySkillInstruction")
+function ClientActiveSkillSystem_Render:_DoRenderWaitTeleportFinish(TT, listTrapTrigger, teamEntity, casterEntity)
+  local sPlaySkillInstruction = self._world:GetService("PlaySkillInstruction")
   local listTrapTask = sPlaySkillInstruction:PlayTrapTrigger(TT, casterEntity, listTrapTrigger)
   self:_WaitTasksEnd(TT, listTrapTask)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderResetPieceAnim = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_6 , upvalues : _ENV
-  local pieceService = (self._world):GetService("Piece")
+function ClientActiveSkillSystem_Render:_DoRenderResetPieceAnim(TT, teamEntity, casterEntity)
+  local pieceService = self._world:GetService("Piece")
   pieceService:RefreshPieceAnim()
   pieceService:RefreshMonsterAreaOutLine(TT)
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local result = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.ResetGridElement)
-  local playBuffService = (self._world):GetService("PlayBuff")
+  local playBuffService = self._world:GetService("PlayBuff")
   if result then
     local array = result:GetResetGridData()
     playBuffService:PlayBuffView(TT, NTResetGridElement:New(array, casterEntity))
@@ -85,98 +60,71 @@ ClientActiveSkillSystem_Render._DoRenderResetPieceAnim = function(self, TT, team
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderResetPreview = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_7 , upvalues : _ENV
+function ClientActiveSkillSystem_Render:_DoRenderResetPreview(TT, teamEntity, casterEntity)
   local previewConvertElementCmpt = casterEntity:PreviewConvertElement()
   if previewConvertElementCmpt ~= nil then
     previewConvertElementCmpt:SetTempConvertElementDic({})
   else
-    ;
-    (Log.notice)("Clear Convert Element no cmpt")
+    Log.notice("Clear Convert Element no cmpt")
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderNotifyActiveSkillFinish = function(self, TT, teamEntity, casterEntity, activeSkillID)
-  -- function num : 0_8 , upvalues : _ENV
+function ClientActiveSkillSystem_Render:_DoRenderNotifyActiveSkillFinish(TT, teamEntity, casterEntity, activeSkillID)
   local isPetActiveSkill = self:_IsPetCastActiveSkill(teamEntity)
   if isPetActiveSkill then
-    ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTActiveSkillAttackEnd:New(casterEntity))
-    ;
-    ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTActiveSkillDamageEnd:New(casterEntity))
-    ;
-    ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTActiveSkillCostCasterHPEnd:New(casterEntity))
+    self._world:GetService("PlayBuff"):PlayBuffView(TT, NTActiveSkillAttackEnd:New(casterEntity))
+    self._world:GetService("PlayBuff"):PlayBuffView(TT, NTActiveSkillDamageEnd:New(casterEntity))
+    self._world:GetService("PlayBuff"):PlayBuffView(TT, NTActiveSkillCostCasterHPEnd:New(casterEntity))
   end
   if casterEntity:HasTrapID() then
-    ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTTrapActiveSkillEnd:New(casterEntity, activeSkillID))
+    self._world:GetService("PlayBuff"):PlayBuffView(TT, NTTrapActiveSkillEnd:New(casterEntity, activeSkillID))
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderNotifyActiveFinishBeforeMonsterDead = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_9 , upvalues : _ENV
+function ClientActiveSkillSystem_Render:_DoRenderNotifyActiveFinishBeforeMonsterDead(TT, teamEntity, casterEntity)
   local isPetActiveSkill = self:_IsPetCastActiveSkill(teamEntity)
   if isPetActiveSkill then
-    ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTActiveSkillDamageEnd:New(casterEntity))
-    ;
-    ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTActiveSkillAttackEndBeforeMonsterDead:New(casterEntity))
+    self._world:GetService("PlayBuff"):PlayBuffView(TT, NTActiveSkillDamageEnd:New(casterEntity))
+    self._world:GetService("PlayBuff"):PlayBuffView(TT, NTActiveSkillAttackEndBeforeMonsterDead:New(casterEntity))
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderGuideActiveSkillEnd = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_10 , upvalues : _ENV
-  local guideService = (self._world):GetService("Guide")
+function ClientActiveSkillSystem_Render:_DoRenderGuideActiveSkillEnd(TT, teamEntity, casterEntity)
+  local guideService = self._world:GetService("Guide")
   local guideTaskId = guideService:Trigger(GameEventType.GuidePlayerSkillFinish, GuidePlaySkillFinish.MainSkillFinish, casterEntity)
-  while not (TaskHelper:GetInstance()):IsTaskFinished(guideTaskId, true) do
+  while not TaskHelper:GetInstance():IsTaskFinished(guideTaskId, true) do
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderGuideActiveSkillRealEnd = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_11 , upvalues : _ENV
-  local guideService = (self._world):GetService("Guide")
+function ClientActiveSkillSystem_Render:_DoRenderGuideActiveSkillRealEnd(TT, teamEntity, casterEntity)
+  local guideService = self._world:GetService("Guide")
   local guideTaskId = guideService:Trigger(GameEventType.GuidePlayerSkillRealFinish, GuidePlaySkillFinish.MainSkillFinish, casterEntity)
-  while not (TaskHelper:GetInstance()):IsTaskFinished(guideTaskId, true) do
+  while not TaskHelper:GetInstance():IsTaskFinished(guideTaskId, true) do
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderShowAfterActiveSkill = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_12 , upvalues : _ENV
+function ClientActiveSkillSystem_Render:_DoRenderShowAfterActiveSkill(TT, teamEntity, casterEntity)
   local isPetActiveSkill = self:_IsPetCastActiveSkill(teamEntity)
   if not isPetActiveSkill then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowCanMoveArrow)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TrapPowerVisible, true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowCanMoveArrow)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.TrapPowerVisible, true)
   end
-  local playSkillService = (self._world):GetService("PlaySkill")
+  local playSkillService = self._world:GetService("PlaySkill")
   playSkillService:ShowPlayerEntity(teamEntity)
-  ;
-  ((self._world):MainCamera()):EnableEffectCamera(false)
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+  self._world:MainCamera():EnableEffectCamera(false)
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
   previewActiveSkillService:StopDarkScreenImmediately()
   self:_RefreshAllHpPos()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._RefreshAllHpPos = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local hpGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).HP)
+function ClientActiveSkillSystem_Render:_RefreshAllHpPos()
+  local hpGroup = self._world:GetGroup(self._world.BW_WEMatchers.HP)
   if hpGroup then
     local targetEntitys = hpGroup:GetEntities()
     if targetEntitys then
-      for i,e in ipairs(targetEntitys) do
+      for i, e in ipairs(targetEntitys) do
         local hpCmpt = e:HP()
         if hpCmpt then
           hpCmpt:SetHPPosDirty(true)
@@ -186,82 +134,71 @@ ClientActiveSkillSystem_Render._RefreshAllHpPos = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderPlayActiveSkill = function(self, isFinalAttack, teamEntity, casterEntity)
-  -- function num : 0_14 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local result = (renderBoardEntity:LogicResult()):GetLogicResult(LogicStepType.ActiveAttack)
+function ClientActiveSkillSystem_Render:_DoRenderPlayActiveSkill(isFinalAttack, teamEntity, casterEntity)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local result = renderBoardEntity:LogicResult():GetLogicResult(LogicStepType.ActiveAttack)
   local skillResult = result:GetSkillResult()
   local activeSkillID = result:GetL2RActiveAttackResult_SkillID()
   if casterEntity:HasPetPstID() then
-    (GameGlobal.UAReportForceGuideEvent)("FightSpellMainSkill", {activeSkillID, (casterEntity:PetPstID()):GetTemplateID()}, false, true)
+    GameGlobal.UAReportForceGuideEvent("FightSpellMainSkill", {
+      activeSkillID,
+      casterEntity:PetPstID():GetTemplateID()
+    }, false, true)
   end
-  local playSkillService = (self._world):GetService("PlaySkill")
-  local configService = (self._world):GetService("Config")
+  local playSkillService = self._world:GetService("PlaySkill")
+  local configService = self._world:GetService("Config")
   local skinId = 1
   if casterEntity:MatchPet() then
-    skinId = ((casterEntity:MatchPet()):GetMatchPet()):GetSkinId()
+    skinId = casterEntity:MatchPet():GetMatchPet():GetSkinId()
   end
   local skillConfigData = configService:GetSkillConfigData(activeSkillID, casterEntity)
   local skillPhaseArray = skillConfigData:GetSkillPhaseArray(skinId)
-  if not (table.icontains)(BattleConst.NoShowCasterEntityOnPreview, activeSkillID) then
+  if not table.icontains(BattleConst.NoShowCasterEntityOnPreview, activeSkillID) then
     playSkillService:ShowCasterEntity(casterEntity:GetID())
   end
-  ;
-  (casterEntity:SkillRoutine()):ClearSkillRoutine()
-  ;
-  (casterEntity:SkillRoutine()):SetResultContainer(skillResult)
+  casterEntity:SkillRoutine():ClearSkillRoutine()
+  casterEntity:SkillRoutine():SetResultContainer(skillResult)
   self:_CheckFreezeTime(casterEntity, isFinalAttack)
   if skillResult:GetIsInvalidated() then
     casterEntity:SetViewVisible(false)
     casterEntity:SetViewVisible(true)
-    return 
+    return
   end
   local waitTaskID = playSkillService:StartSkillRoutine(casterEntity, skillPhaseArray, activeSkillID)
   return waitTaskID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._CheckFreezeTime = function(self, casterEntity, isFinalAttack)
-  -- function num : 0_15 , upvalues : _ENV
+function ClientActiveSkillSystem_Render:_CheckFreezeTime(casterEntity, isFinalAttack)
   if not casterEntity:HasPetPstID() then
-    return 
+    return
   end
   if not isFinalAttack then
-    return 
+    return
   end
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local targetIDArray = scopeResult:GetTargetIDs()
-  if (table.count)(targetIDArray) <= 0 then
-    return 
+  if table.count(targetIDArray) <= 0 then
+    return
   end
   skillEffectResultContainer:SetFinalAttack(true)
   self:_SelectFinalAttackEntityID(skillEffectResultContainer)
   self:_PatchFinalAttackForSpecificPet(casterEntity, skillEffectResultContainer)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._SelectFinalAttackEntityID = function(self, skillEffectResultContainer)
-  -- function num : 0_16 , upvalues : _ENV
+function ClientActiveSkillSystem_Render:_SelectFinalAttackEntityID(skillEffectResultContainer)
   local results = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.RandAttack)
   if results ~= nil then
     local count = results:GetListDefenderCount()
-    if count > 0 then
+    if 0 < count then
       skillEffectResultContainer:SetFinalAttackEntityID(-1)
     end
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._PatchFinalAttackForSpecificPet = function(self, casterEntity, container)
-  -- function num : 0_17 , upvalues : _ENV
+function ClientActiveSkillSystem_Render:_PatchFinalAttackForSpecificPet(casterEntity, container)
   if not casterEntity:HasPetPstID() then
-    return 
+    return
   end
   local cPetPstID = casterEntity:PetPstID()
   if cPetPstID:GetTemplateID() == 1600271 then
@@ -269,138 +206,109 @@ ClientActiveSkillSystem_Render._PatchFinalAttackForSpecificPet = function(self, 
     if buffViewCmpt:HasBuffByID(4300271) or buffViewCmpt:HasBuffByID(4300272) then
       local skillHolderName = "default"
       local skillHolderID = casterEntity:GetSkillHolder(skillHolderName)
-      local skillHolder = (self._world):GetEntityByID(skillHolderID)
+      local skillHolder = self._world:GetEntityByID(skillHolderID)
       if not skillHolder then
-        return 
+        return
       end
-      local skillEffectResultContainer = (skillHolder:SkillRoutine()):GetResultContainer()
+      local skillEffectResultContainer = skillHolder:SkillRoutine():GetResultContainer()
       local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
       local hasTargetDamageResultArray = {}
       if damageResultArray then
-        for _,v in ipairs(damageResultArray) do
+        for _, v in ipairs(damageResultArray) do
           local damageResult = v
           local targetEntityID = damageResult:GetTargetID()
-          local targetEntity = (self._world):GetEntityByID(targetEntityID)
+          local targetEntity = self._world:GetEntityByID(targetEntityID)
           if targetEntity then
-            (table.insert)(hasTargetDamageResultArray, damageResult)
+            table.insert(hasTargetDamageResultArray, damageResult)
           end
         end
       end
-      do
-        if (table.count)(hasTargetDamageResultArray) > 0 then
-          container:SetFinalAttack(false)
-        end
+      if table.count(hasTargetDamageResultArray) > 0 then
+        container:SetFinalAttack(false)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderInWave = function(self, TT, traps, monsters)
-  -- function num : 0_18
-  local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
+function ClientActiveSkillSystem_Render:_DoRenderInWave(TT, traps, monsters)
+  local sMonsterShowRender = self._world:GetService("MonsterShowRender")
   sMonsterShowRender:PlaySpawnInWave(TT, traps, monsters)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderMonsterDead = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_19 , upvalues : _ENV
-  local monsterDeadGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).DeadFlag)
-  for i,e in ipairs(monsterDeadGroup:GetEntities()) do
+function ClientActiveSkillSystem_Render:_DoRenderMonsterDead(TT, teamEntity, casterEntity)
+  local monsterDeadGroup = self._world:GetGroup(self._world.BW_WEMatchers.DeadFlag)
+  for i, e in ipairs(monsterDeadGroup:GetEntities()) do
     if e:HasMonsterID() and not e:HasShowDeath() then
-      ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTCollectSouls:New(casterEntity, 1, {e}))
+      self._world:GetService("PlayBuff"):PlayBuffView(TT, NTCollectSouls:New(casterEntity, 1, {e}))
     end
   end
-  local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
+  local sMonsterShowRender = self._world:GetService("MonsterShowRender")
   sMonsterShowRender:DoAllMonsterDeadRender(TT)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderPlayAntiAttack = function(self, TT, monsterEntityIDArray)
-  -- function num : 0_20 , upvalues : _ENV
-  local playAISvc = (self._world):GetService("PlayAI")
+function ClientActiveSkillSystem_Render:_DoRenderPlayAntiAttack(TT, monsterEntityIDArray)
+  local playAISvc = self._world:GetService("PlayAI")
   if playAISvc == nil then
-    return 
+    return
   end
   local refreshAntiEntityIDList = {}
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local recorderCmpt = renderBoardEntity:AIRecorder()
   local orderList = recorderCmpt:GetOrderList()
   playAISvc:PlayParallelSpellResult(TT)
-  for i,order in ipairs(orderList) do
+  for i, order in ipairs(orderList) do
     recorderCmpt:SetCurrentOrder(order)
     local entityIDList = recorderCmpt:GetAICasterIDList()
-    for _,entityID in ipairs(entityIDList) do
-      (table.insert)(refreshAntiEntityIDList, entityID)
+    for _, entityID in ipairs(entityIDList) do
+      table.insert(refreshAntiEntityIDList, entityID)
     end
   end
-  for _,entityID in ipairs(monsterEntityIDArray) do
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateAntiActiveSkill, entityID)
+  for _, entityID in ipairs(monsterEntityIDArray) do
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateAntiActiveSkill, entityID)
   end
   playAISvc:DoCommonRountine(TT)
-  local playBuffSvc = (self._world):GetService("PlayBuff")
-  for _,id in ipairs(monsterEntityIDArray) do
-    local nt = NTMonsterPostAntiAttack:New((self._world):GetEntityByID(id))
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  for _, id in ipairs(monsterEntityIDArray) do
+    local nt = NTMonsterPostAntiAttack:New(self._world:GetEntityByID(id))
     playBuffSvc:PlayBuffView(TT, nt)
   end
   return refreshAntiEntityIDList
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderResetPickUp = function(self)
-  -- function num : 0_21
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function ClientActiveSkillSystem_Render:_DoRenderResetPickUp()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   pickUpTargetCmpt:Reset()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderPlayBuffAntiAttack = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_22 , upvalues : _ENV
+function ClientActiveSkillSystem_Render:_DoRenderPlayBuffAntiAttack(TT, teamEntity, casterEntity)
   local isPetActiveSkill = self:_IsPetCastActiveSkill(teamEntity)
   if isPetActiveSkill then
     local ntActiveSkillAntiAttack = NTActiveSkillAntiAttack:New(casterEntity)
-    ;
-    ((self._world):GetService("PlayBuff")):PlayBuffView(TT, ntActiveSkillAntiAttack)
+    self._world:GetService("PlayBuff"):PlayBuffView(TT, ntActiveSkillAntiAttack)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderRefreshAntiAttackParam = function(self, TT, refreshAntiEntityIDList)
-  -- function num : 0_23 , upvalues : _ENV
-  if not refreshAntiEntityIDList or (table.count)(refreshAntiEntityIDList) == 0 then
-    return 
+function ClientActiveSkillSystem_Render:_DoRenderRefreshAntiAttackParam(TT, refreshAntiEntityIDList)
+  if not refreshAntiEntityIDList or table.count(refreshAntiEntityIDList) == 0 then
+    return
   end
-  for _,entityID in ipairs(refreshAntiEntityIDList) do
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateAntiActiveSkill, entityID)
+  for _, entityID in ipairs(refreshAntiEntityIDList) do
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateAntiActiveSkill, entityID)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderActiveSkillEnd = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_24
+function ClientActiveSkillSystem_Render:_DoRenderActiveSkillEnd(TT, teamEntity, casterEntity)
   if casterEntity then
     casterEntity:RemoveRenderPickUpComponent()
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientActiveSkillSystem_Render._DoRenderPopStarHideCasterEntity = function(self, TT, casterEntity)
-  -- function num : 0_25 , upvalues : _ENV
-  if (self._world):MatchType() ~= MatchType.MT_PopStar then
-    return 
+function ClientActiveSkillSystem_Render:_DoRenderPopStarHideCasterEntity(TT, casterEntity)
+  if self._world:MatchType() ~= MatchType.MT_PopStar then
+    return
   end
   if casterEntity:HasPetPstID() then
     casterEntity:SetViewVisible(false)
   end
 end
-
-

@@ -1,31 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/intr/ui_n27_intr_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN27IntrItem", UICustomWidget)
 UIN27IntrItem = UIN27IntrItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN27IntrItem.OnShow = function(self)
-  -- function num : 0_0
+function UIN27IntrItem:OnShow()
   self.SubTitle = self:GetUIComponent("UILocalizationText", "SubTitle")
   self.Des = self:GetUIComponent("UILocalizationText", "Des")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27IntrItem.OnHide = function(self)
-  -- function num : 0_1
+function UIN27IntrItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27IntrItem.Flush = function(self, head, body)
-  -- function num : 0_2
-  (self.SubTitle):SetText(head)
-  ;
-  (self.Des):SetText(body)
+function UIN27IntrItem:Flush(head, body)
+  self.SubTitle:SetText(head)
+  self.Des:SetText(body)
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_feature_tetris.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetFeatureTetris", UICustomWidget)
 UIWidgetFeatureTetris = UIWidgetFeatureTetris
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetFeatureTetris.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetFeatureTetris:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTetris.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWidgetFeatureTetris:InitWidget()
   self._tetrisIconAtlas = self:GetAsset("UIFeatureSkill.spriteatlas", LoadType.SpriteAtlas)
   self._tetrisIconGo = self:GetGameObject("TetrisIcon")
   self._curEnergyGo = self:GetGameObject("CurEnergy")
@@ -24,62 +14,38 @@ UIWidgetFeatureTetris.InitWidget = function(self)
   self:RegisterEvent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTetris.RegisterEvent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetFeatureTetris:RegisterEvent()
   self:AttachEvent(GameEventType.TetrisFeatureRandom, self._OnTetrisRandom)
   self:AttachEvent(GameEventType.TetrisFeatureChangePower, self._OnTetrisPowerChange)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTetris._OnTetrisRandom = function(self, newTetrisIndex, newTetrisType)
-  -- function num : 0_3
+function UIWidgetFeatureTetris:_OnTetrisRandom(newTetrisIndex, newTetrisType)
   self:SetTetrisIcon(newTetrisIndex)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTetris.SetData = function(self, initData)
-  -- function num : 0_4
+function UIWidgetFeatureTetris:SetData(initData)
   self._initData = initData
-  ;
-  (self._curEnergyGo):SetActive((self._initData):GetPowerEnable())
-  self:SetTetrisIcon((self._initData):GetDefaultTetris())
+  self._curEnergyGo:SetActive(self._initData:GetPowerEnable())
+  self:SetTetrisIcon(self._initData:GetDefaultTetris())
   self:_OnTetrisPowerChange(0)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTetris.SetTetrisIcon = function(self, tetrisIndex)
-  -- function num : 0_5
-  local icon = (self._initData):GetTetrisSmallIconByIndex(tetrisIndex)
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._imageTetrisIcon).sprite = (self._tetrisIconAtlas):GetSprite(icon)
+function UIWidgetFeatureTetris:SetTetrisIcon(tetrisIndex)
+  local icon = self._initData:GetTetrisSmallIconByIndex(tetrisIndex)
+  self._imageTetrisIcon.sprite = self._tetrisIconAtlas:GetSprite(icon)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTetris._OnTetrisPowerChange = function(self, power)
-  -- function num : 0_6
-  (self._curEnergyValue):SetText(power)
+function UIWidgetFeatureTetris:_OnTetrisPowerChange(power)
+  self._curEnergyValue:SetText(power)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTetris.UIWidgetFeatureTetrisOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  if (InnerGameHelperRender.IsPuzzleState)() or (InnerGameHelperRender.IsPet1702361ActiveSkillPreview)() then
-    return 
+function UIWidgetFeatureTetris:UIWidgetFeatureTetrisOnClick(go)
+  if InnerGameHelperRender.IsPuzzleState() or InnerGameHelperRender.IsPet1702361ActiveSkillPreview() then
+    return
   end
-  local coreGameStateID = (GameGlobal:GetInstance()):CoreGameStateID()
+  local coreGameStateID = GameGlobal:GetInstance():CoreGameStateID()
   if coreGameStateID ~= GameStateID.WaitInput then
-    return 
+    return
   end
   self:ShowDialog("UIFeatureTetrisInfo", self._initData)
 end
-
-

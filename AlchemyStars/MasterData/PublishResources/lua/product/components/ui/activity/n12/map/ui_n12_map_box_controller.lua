@@ -1,43 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/map/ui_n12_map_box_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_n12_map_controller")
 _class("UIN12MapBoxController", UIN12MapController)
 UIN12MapBoxController = UIN12MapBoxController
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12MapBoxController.GetComponents = function(self)
-  -- function num : 0_0
+function UIN12MapBoxController:GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapBoxController.OnValue = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN12MapBoxController:OnValue()
   local got = self:CheckFinish()
   if got then
-    local tips = (StringTable.Get)("str_n12_map_box_got_tips")
-    ;
-    (ToastManager.ShowToast)(tips)
+    local tips = StringTable.Get("str_n12_map_box_got_tips")
+    ToastManager.ShowToast(tips)
     self:CloseDialog()
   else
-    do
-      self:RequestFinishEvent()
-    end
+    self:RequestFinishEvent()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapBoxController.OnFinishEvent = function(self, rewards)
-  -- function num : 0_2 , upvalues : _ENV
-  self:ShowDialog("UIN12MapGetRewardsController", (StringTable.Get)("str_activity_battlepass_buy_deluxe_claim"), rewards, function()
-    -- function num : 0_2_0 , upvalues : self
+function UIN12MapBoxController:OnFinishEvent(rewards)
+  self:ShowDialog("UIN12MapGetRewardsController", StringTable.Get("str_activity_battlepass_buy_deluxe_claim"), rewards, function()
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

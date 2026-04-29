@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/run_data/elemental_run_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_base_run_data")
 _class("TestRobotElementalRunData", TestRobotRunData)
 TestRobotElementalRunData = TestRobotElementalRunData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotElementalRunData.Constructor = function(self)
-  -- function num : 0_0
+function TestRobotElementalRunData:Constructor()
   self._randomTeam = false
   self._currentTestTeamBuildID = 0
   self._finishedTestTeamBuildIDs = {}
@@ -19,71 +12,59 @@ TestRobotElementalRunData.Constructor = function(self)
   self._permanentlyDisabledPetTemplateIDs = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalRunData.IsRandomTeam = function(self)
-  -- function num : 0_1
+function TestRobotElementalRunData:IsRandomTeam()
   return self._randomTeam
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalRunData.GetPetPstIDs = function(self)
-  -- function num : 0_2
+function TestRobotElementalRunData:GetPetPstIDs()
   return self._petPstIDs
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalRunData.ParseLevelData = function(self)
-  -- function num : 0_3
+function TestRobotElementalRunData:ParseLevelData()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalRunData.ParseTeamData = function(self, rawargs)
-  -- function num : 0_4 , upvalues : _ENV
-  local queryCfg = (Cfg.cfg_level_test_team_build)({MissionID = self:GetMissionID()})
+function TestRobotElementalRunData:ParseTeamData(rawargs)
+  local queryCfg = Cfg.cfg_level_test_team_build({
+    MissionID = self:GetMissionID()
+  })
   local config = queryCfg and queryCfg[1] or nil
-  if not config then
-    config = (Cfg.cfg_level_test_team_build)[-1]
+  config = config or Cfg.cfg_level_test_team_build[-1]
+  if config then
+    local tmodule = GameGlobal.GetModule(TestRobotModule)
+    tmodule:Log("select test team build ID: ", config.ID)
+    self._currentTestTeamBuildID = config.ID
   end
-  do
-    if config then
-      local tmodule = (GameGlobal.GetModule)(TestRobotModule)
-      tmodule:Log("select test team build ID: ", config.ID)
-      self._currentTestTeamBuildID = config.ID
+  if rawargs == "*" then
+    self._randomTeam = true
+    return
+  end
+  local split = string.split(rawargs, "%$")
+  for index, rawPet in ipairs(split) do
+    local petSplit = string.split(rawPet, ",")
+    if #petSplit ~= 7 then
+      Log.exception(self._className, "bad pet status: ", rawPet)
+      self._manager:PrintLog(self._className, "bad pet status: ", rawPet)
+      return
     end
-    if rawargs == "*" then
-      self._randomTeam = true
-      return 
+    local param = {}
+    for _, s in ipairs(petSplit) do
+      table.insert(param, tonumber(s))
     end
-    local split = (string.split)(rawargs, "%$")
-    for index,rawPet in ipairs(split) do
-      local petSplit = (string.split)(rawPet, ",")
-      if #petSplit ~= 7 then
-        (Log.exception)(self._className, "bad pet status: ", rawPet)
-        ;
-        (self._manager):PrintLog(self._className, "bad pet status: ", rawPet)
-        return 
-      end
-      local param = {}
-      for _,s in ipairs(petSplit) do
-        (table.insert)(param, tonumber(s))
-      end
-      local petBuildData = TestRobotPetBuildData:New((table.unpack)(param))
-      self:AddPet(petBuildData)
-    end
+    local petBuildData = TestRobotPetBuildData:New(table.unpack(param))
+    self:AddPet(petBuildData)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalRunData.GeneratePetPstID = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local petPstIds = {0, 0, 0, 0, 0}
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  for index,petBuildData in ipairs(self._currentTeamBuild) do
+function TestRobotElementalRunData:GeneratePetPstID()
+  local petPstIds = {
+    0,
+    0,
+    0,
+    0,
+    0
+  }
+  local petModule = GameGlobal.GetModule(PetModule)
+  for index, petBuildData in ipairs(self._currentTeamBuild) do
     local matchPet = petModule:GetPetByTemplateId(petBuildData:GetTemplateID())
     local pstId = matchPet:GetPstID()
     petPstIds[index] = pstId
@@ -92,241 +73,175 @@ TestRobotElementalRunData.GeneratePetPstID = function(self)
   return self._petPstIDs
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalRunData.GeneratePetTemplateID = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local petTemplateIds = {0, 0, 0, 0, 0}
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  for index,petBuildData in ipairs(self._currentTeamBuild) do
+function TestRobotElementalRunData:GeneratePetTemplateID()
+  local petTemplateIds = {
+    0,
+    0,
+    0,
+    0,
+    0
+  }
+  local petModule = GameGlobal.GetModule(PetModule)
+  for index, petBuildData in ipairs(self._currentTeamBuild) do
     petTemplateIds[index] = petBuildData:GetTemplateID()
   end
   return petTemplateIds
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalRunData.SetPermanentlyTestPet = function(self, t)
-  -- function num : 0_7 , upvalues : _ENV
-  for _,templateID in ipairs(t) do
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._isPetRequired)[templateID] = true
-    if not (table.icontains)(self._permanentlyTestPetTemplateIDs, templateID) then
-      (table.insert)(self._permanentlyTestPetTemplateIDs, templateID)
+function TestRobotElementalRunData:SetPermanentlyTestPet(t)
+  for _, templateID in ipairs(t) do
+    self._isPetRequired[templateID] = true
+    if not table.icontains(self._permanentlyTestPetTemplateIDs, templateID) then
+      table.insert(self._permanentlyTestPetTemplateIDs, templateID)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalRunData.GetPermanentlyRequiredPetList = function(self)
-  -- function num : 0_8
+function TestRobotElementalRunData:GetPermanentlyRequiredPetList()
   return self._permanentlyTestPetTemplateIDs
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalRunData.IsPetRequired = function(self, templateID)
-  -- function num : 0_9
-  return (self._isPetRequired)[templateID]
+function TestRobotElementalRunData:IsPetRequired(templateID)
+  return self._isPetRequired[templateID]
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalRunData.SetPermanentlyDisabledPet = function(self, t)
-  -- function num : 0_10 , upvalues : _ENV
-  for _,templateID in ipairs(t) do
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._isPetDisabled)[templateID] = true
-    if not (table.icontains)(self._permanentlyDisabledPetTemplateIDs, templateID) then
-      (table.insert)(self._permanentlyDisabledPetTemplateIDs, templateID)
+function TestRobotElementalRunData:SetPermanentlyDisabledPet(t)
+  for _, templateID in ipairs(t) do
+    self._isPetDisabled[templateID] = true
+    if not table.icontains(self._permanentlyDisabledPetTemplateIDs, templateID) then
+      table.insert(self._permanentlyDisabledPetTemplateIDs, templateID)
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalRunData.GetPermanentlyDisabledPetList = function(self)
-  -- function num : 0_11
+function TestRobotElementalRunData:GetPermanentlyDisabledPetList()
   return self._permanentlyDisabledPetTemplateIDs
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalRunData.IsPetDisabled = function(self, templateID)
-  -- function num : 0_12 , upvalues : _ENV
-  if not (self._isPetDisabled)[templateID] then
-    return (TestConst.TemperoryDisabledPet)[templateID]
-  end
+function TestRobotElementalRunData:IsPetDisabled(templateID)
+  return self._isPetDisabled[templateID] or TestConst.TemperoryDisabledPet[templateID]
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalRunData.SetPetPoolOptions = function(self, v)
-  -- function num : 0_13
+function TestRobotElementalRunData:SetPetPoolOptions(v)
   self._petPoolOptions = v
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalRunData.GetPetPoolOptions = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  if not self._petPoolOptions then
-    return SmokeTestTeamBuildPoolOptions:New()
-  end
+function TestRobotElementalRunData:GetPetPoolOptions()
+  return self._petPoolOptions or SmokeTestTeamBuildPoolOptions:New()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalRunData.GetUntestedPets = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function TestRobotElementalRunData:GetUntestedPets()
   local queryCondition = {Formal = 1}
   local petPoolOptions = self:GetPetPoolOptions()
   if petPoolOptions.forcePetMainElement then
     queryCondition.FirstElement = petPoolOptions.forcePetMainElement
   end
-  local rawEnabledPets = (Cfg.cfg_pet)(queryCondition)
+  local rawEnabledPets = Cfg.cfg_pet(queryCondition)
   local filteredEnabledPets = {}
   local bindGroupInfo = {}
   local currentTeamBuild = self:GetCurrentTeamBuild()
   local skipPetID = {}
-  for _,data in ipairs(currentTeamBuild) do
+  for _, data in ipairs(currentTeamBuild) do
     local tid = data:GetTemplateID()
-    ;
-    (table.insert)(skipPetID, tid)
-    local conf = (Cfg.cfg_pet)[tid]
+    table.insert(skipPetID, tid)
+    local conf = Cfg.cfg_pet[tid]
     if conf.BinderPetID then
-      bindGroupInfo[conf.BinderPetID] = {conf.BinderIndex}
+      bindGroupInfo[conf.BinderPetID] = {
+        conf.BinderIndex
+      }
     end
   end
-  for _,petConfig in ipairs(rawEnabledPets) do
+  for _, petConfig in ipairs(rawEnabledPets) do
     if self:IsPetDisabled(petConfig.ID) then
-      (Log.info)(self._className, "pet disabled: ", petConfig.ID)
-    else
-      if not self:GetPetBuildData(petConfig.ID) and petConfig.BinderPetID and not bindGroupInfo[petConfig.BinderPetID] then
-        bindGroupInfo[petConfig.BinderPetID] = {petConfig.BinderIndex}
-        ;
-        (table.insert)(filteredEnabledPets, petConfig)
+      Log.info(self._className, "pet disabled: ", petConfig.ID)
+    elseif not self:GetPetBuildData(petConfig.ID) then
+      if petConfig.BinderPetID then
+        if bindGroupInfo[petConfig.BinderPetID] then
+          goto lbl_81
+        end
+        bindGroupInfo[petConfig.BinderPetID] = {
+          petConfig.BinderIndex
+        }
       end
+      table.insert(filteredEnabledPets, petConfig)
     end
+    ::lbl_81::
   end
   return filteredEnabledPets
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalRunData.GetCurrentTestTeamBuildID = function(self)
-  -- function num : 0_16
+function TestRobotElementalRunData:GetCurrentTestTeamBuildID()
   return self._currentTestTeamBuildID
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalRunData.IsTestBuildIDFinished = function(self, val)
-  -- function num : 0_17 , upvalues : _ENV
-  return (table.icontains)(self._finishedTestTeamBuildIDs, val)
+function TestRobotElementalRunData:IsTestBuildIDFinished(val)
+  return table.icontains(self._finishedTestTeamBuildIDs, val)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalRunData.MarkCurrentTestTeamBuildIDFinished = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  (table.insert)(self._finishedTestTeamBuildIDs, self._currentTestTeamBuildID)
+function TestRobotElementalRunData:MarkCurrentTestTeamBuildIDFinished()
+  table.insert(self._finishedTestTeamBuildIDs, self._currentTestTeamBuildID)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalRunData.ChangeCurrentTestTeamBuildID = function(self, val)
-  -- function num : 0_19 , upvalues : _ENV
-  (table.insert)(self._finishedTestTeamBuildIDs, self._currentTestTeamBuildID)
+function TestRobotElementalRunData:ChangeCurrentTestTeamBuildID(val)
+  table.insert(self._finishedTestTeamBuildIDs, self._currentTestTeamBuildID)
   self._currentTestTeamBuildID = val
 end
 
 _class("TestRobotElementalMissionRunData", TestRobotElementalRunData)
 TestRobotElementalMissionRunData = TestRobotElementalMissionRunData
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotElementalMissionRunData.ParseLevelData = function(self, rawargs)
-  -- function num : 0_20 , upvalues : _ENV
+function TestRobotElementalMissionRunData:ParseLevelData(rawargs)
   local missionID = tonumber(rawargs)
-  if not (Cfg.cfg_mission)[missionID] then
-    (Log.exception)(self._className, "bad mission id: ", tostring(rawargs))
-    ;
-    (self._manager):PrintLog(self._className, "bad mission id: ", tostring(rawargs))
-    return 
+  if not Cfg.cfg_mission[missionID] then
+    Log.exception(self._className, "bad mission id: ", tostring(rawargs))
+    self._manager:PrintLog(self._className, "bad mission id: ", tostring(rawargs))
+    return
   end
-  local c = (Cfg.cfg_mission)[missionID]
+  local c = Cfg.cfg_mission[missionID]
   if c.Type == 3 then
-    (Log.exception)(self._className, "mission is not a battle", tostring(rawargs))
-    ;
-    (self._manager):PrintLog(self._className, "mission is not a battle", tostring(rawargs))
-    return 
+    Log.exception(self._className, "mission is not a battle", tostring(rawargs))
+    self._manager:PrintLog(self._className, "mission is not a battle", tostring(rawargs))
+    return
   end
   self._missionID = missionID
 end
 
 _class("TestRobotElementalMazeRunData", TestRobotElementalRunData)
 TestRobotElementalMazeRunData = TestRobotElementalMazeRunData
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotElementalMazeRunData.SetCurrentTeamPstIDList = function(self, petPstIds)
-  -- function num : 0_21
+function TestRobotElementalMazeRunData:SetCurrentTeamPstIDList(petPstIds)
   self._currentTeamPstIDList = petPstIds
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalMazeRunData.GetCurrentTeamPstIDList = function(self)
-  -- function num : 0_22
+function TestRobotElementalMazeRunData:GetCurrentTeamPstIDList()
   return self._currentTeamPstIDList
 end
 
 _class("TestRobotElementalAniPopStarRunData", TestRobotElementalRunData)
 TestRobotElementalAniPopStarRunData = TestRobotElementalAniPopStarRunData
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotElementalAniPopStarRunData.SetCurrentTeamPstIDList = function(self, petPstIds)
-  -- function num : 0_23
+function TestRobotElementalAniPopStarRunData:SetCurrentTeamPstIDList(petPstIds)
   self._currentTeamPstIDList = petPstIds
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalAniPopStarRunData.ParseLevelData = function(self, rawarg)
-  -- function num : 0_24 , upvalues : _ENV
-  local s = (string.split)(rawarg, ",")
+function TestRobotElementalAniPopStarRunData:ParseLevelData(rawarg)
+  local s = string.split(rawarg, ",")
   self:SetHardID(tonumber(s[1]))
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalAniPopStarRunData.GetCurrentTeamPstIDList = function(self)
-  -- function num : 0_25
+function TestRobotElementalAniPopStarRunData:GetCurrentTeamPstIDList()
   return self._currentTeamPstIDList
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalAniPopStarRunData.SetHardID = function(self, id)
-  -- function num : 0_26
+function TestRobotElementalAniPopStarRunData:SetHardID(id)
   self._hardId = id
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalAniPopStarRunData.GetHardID = function(self)
-  -- function num : 0_27
+function TestRobotElementalAniPopStarRunData:GetHardID()
   return self._hardId
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalAniPopStarRunData.GetMissionID = function(self)
-  -- function num : 0_28
+function TestRobotElementalAniPopStarRunData:GetMissionID()
   local prefix = 27000
   return prefix + self._hardId
 end
-
-

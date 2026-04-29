@@ -1,93 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/card/s_maze_card.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SMazeCard", Object)
 SMazeCard = SMazeCard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeCard.Constructor = function(self, id)
-  -- function num : 0_0 , upvalues : _ENV
+function SMazeCard:Constructor(id)
   self._id = id
-  self._cfg = (Cfg.cfg_component_season_maze_hand)[id]
+  self._cfg = Cfg.cfg_component_season_maze_hand[id]
   if not self._cfg then
-    (Log.fatal)("SMazeCard cfg_component_season_maze_hand nil.", id)
+    Log.fatal("SMazeCard cfg_component_season_maze_hand nil.", id)
   end
   self._actPoint = nil
   self._resValue = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeCard.ID = function(self)
-  -- function num : 0_1
+function SMazeCard:ID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeCard.ActPoint = function(self)
-  -- function num : 0_2
+function SMazeCard:ActPoint()
   return self._actPoint
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeCard.ResValue = function(self)
-  -- function num : 0_3
-  return self._awardAsset and (self._awardAsset):Count() or 0
+function SMazeCard:ResValue()
+  return self._awardAsset and self._awardAsset:Count() or 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeCard.SetData = function(self, svrData, actPoint)
-  -- function num : 0_4 , upvalues : _ENV
+function SMazeCard:SetData(svrData, actPoint)
   if self._id ~= svrData.id then
-    (Log.exception)("行动牌id不一致:", self._id, svrData.id)
+    Log.exception("行动牌id不一致:", self._id, svrData.id)
   end
   self._actPoint = actPoint
   if svrData.effct then
-    local effect = nil
-    local result, eft = (SeasonMazeTool:GetInstance()):TryMergeBeadEft(svrData.effct)
+    local effect
+    local result, eft = SeasonMazeTool:GetInstance():TryMergeBeadEft(svrData.effct)
     if result then
       effect = eft
     else
-      effect = (svrData.effct)[1]
+      effect = svrData.effct[1]
     end
-    if not effect.value_min then
-      self._awardAsset = (SeasonMazeTool:GetInstance()):Effect2Asset(effect, not effect or 0)
+    if effect then
+      self._awardAsset = SeasonMazeTool:GetInstance():Effect2Asset(effect, effect.value_min or 0)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeCard.AwardAsset = function(self)
-  -- function num : 0_5
+function SMazeCard:AwardAsset()
   return self._awardAsset
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeCard.PlayCard = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSeasonMazeCardSettle, self)
+function SMazeCard:PlayCard(TT)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSeasonMazeCardSettle, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeCard.CfgActPoint = function(self)
-  -- function num : 0_7
-  return ((self._cfg).Steps)[1], ((self._cfg).Steps)[2]
+function SMazeCard:CfgActPoint()
+  return self._cfg.Steps[1], self._cfg.Steps[2]
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeCard.CopyedCard = function(self)
-  -- function num : 0_8
-  do return not (self._cfg).CopyLast or (self._cfg).CopyLast == 1 end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function SMazeCard:CopyedCard()
+  return self._cfg.CopyLast and self._cfg.CopyLast == 1
 end
-
-

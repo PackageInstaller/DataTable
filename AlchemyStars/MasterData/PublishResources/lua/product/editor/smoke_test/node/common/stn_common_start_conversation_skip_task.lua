@@ -1,31 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/common/stn_common_start_conversation_skip_task.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("Common_StartConversationSkipTask", CTestRobot_Base)
 Common_StartConversationSkipTask = Common_StartConversationSkipTask
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Common_StartConversationSkipTask.OnWorking = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local testRobotModule = (GameGlobal.GetModule)(TestRobotModule)
+function Common_StartConversationSkipTask:OnWorking()
+  local testRobotModule = GameGlobal.GetModule(TestRobotModule)
   if testRobotModule:GetConversationTaskID() then
-    return ((Common_StartConversationSkipTask.super).OnWorking)(self)
+    return Common_StartConversationSkipTask.super.OnWorking(self)
   end
-  local tid = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : _ENV
-    while 1 do
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = "UIStoryBanner", input = "bgOnClick", 
-args = {}
-})
+  local tid = GameGlobal.TaskManager():StartTask(function(TT)
+    while true do
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+        ui = "UIStoryBanner",
+        input = "bgOnClick",
+        args = {}
+      })
       YIELD(TT, 500)
     end
-  end
-)
+  end)
   testRobotModule:SetConversationTaskID(tid)
-  return ((Common_StartConversationSkipTask.super).OnWorking)(self)
+  return Common_StartConversationSkipTask.super.OnWorking(self)
 end
-
-

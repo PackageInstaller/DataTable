@@ -1,67 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/edit/change_board/ui_n22_medal_change_board_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22MedalChangeBoardItem", UICustomWidget)
 UIN22MedalChangeBoardItem = UIN22MedalChangeBoardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22MedalChangeBoardItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mMedal = (GameGlobal.GetModule)(MedalModule)
-  self.mItem = (GameGlobal.GetModule)(ItemModule)
-  self.data = (self.mMedal):GetN22MedalEditData()
+function UIN22MedalChangeBoardItem:Constructor()
+  self.mMedal = GameGlobal.GetModule(MedalModule)
+  self.mItem = GameGlobal.GetModule(ItemModule)
+  self.data = self.mMedal:GetN22MedalEditData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalChangeBoardItem.OnShow = function(self)
-  -- function num : 0_1
+function UIN22MedalChangeBoardItem:OnShow()
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.goBtnReplace = self:GetGameObject("BtnReplace")
   self.goUsing = self:GetGameObject("using")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalChangeBoardItem.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgIcon):DestoryLastImage()
+function UIN22MedalChangeBoardItem:OnHide()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalChangeBoardItem.Flush = function(self, board, curId, callback)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN22MedalChangeBoardItem:Flush(board, curId, callback)
   self.id = board.medal_id
   self.callback = callback
   if self.id == curId then
-    (self.goBtnReplace):SetActive(false)
-    ;
-    (self.goUsing):SetActive(true)
+    self.goBtnReplace:SetActive(false)
+    self.goUsing:SetActive(true)
   else
-    ;
-    (self.goUsing):SetActive(false)
+    self.goUsing:SetActive(false)
     if board.status == RewardStatus.E_MEDAL_REWARD_LOCK then
-      (self.goBtnReplace):SetActive(false)
+      self.goBtnReplace:SetActive(false)
     else
-      ;
-      (self.goBtnReplace):SetActive(true)
+      self.goBtnReplace:SetActive(true)
     end
   end
-  local boardIconHD = (UIN22MedalEdit.GetMedalBoardBgHd)(self.id)
-  ;
-  (self.imgIcon):LoadImage(boardIconHD)
+  local boardIconHD = UIN22MedalEdit.GetMedalBoardBgHd(self.id)
+  self.imgIcon:LoadImage(boardIconHD)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalChangeBoardItem.BtnReplaceOnClick = function(self, go)
-  -- function num : 0_4
+function UIN22MedalChangeBoardItem:BtnReplaceOnClick(go)
   if self.callback then
-    (self.callback)()
+    self.callback()
   end
 end
-
-

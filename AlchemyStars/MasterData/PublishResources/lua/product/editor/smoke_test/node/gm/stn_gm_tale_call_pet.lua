@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/gm/stn_gm_tale_call_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("GM_TaleCallPet", Common_AsyncBase)
 GM_TaleCallPet = GM_TaleCallPet
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GM_TaleCallPet.Constructor = function(self, _manager, id)
-  -- function num : 0_0
+function GM_TaleCallPet:Constructor(_manager, id)
   self._talePetID = id
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GM_TaleCallPet.TaskFunc = function(self, TT, status)
-  -- function num : 0_1
-  (self._manager):AsyncGM_TaleCallPet(TT, status, self._talePetID)
+function GM_TaleCallPet:TaskFunc(TT, status)
+  self._manager:AsyncGM_TaleCallPet(TT, status, self._talePetID)
 end
-
-

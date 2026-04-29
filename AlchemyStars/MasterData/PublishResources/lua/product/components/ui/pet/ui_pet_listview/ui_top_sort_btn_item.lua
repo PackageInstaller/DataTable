@@ -1,29 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_listview/ui_top_sort_btn_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITopSortBtnItem", UICustomWidget)
 UITopSortBtnItem = UITopSortBtnItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITopSortBtnItem.Constructor = function(self)
-  -- function num : 0_0
-  self.ElementSpriteName = {[1] = "bing_color", [2] = "huo_color", [3] = "sen_color", [4] = "lei_color", [5] = "wu_color"}
+function UITopSortBtnItem:Constructor()
+  self.ElementSpriteName = {
+    [1] = "bing_color",
+    [2] = "huo_color",
+    [3] = "sen_color",
+    [4] = "lei_color",
+    [5] = "wu_color"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopSortBtnItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UITopSortBtnItem:OnShow(uiParams)
   self._uiHeartAtlas = self:GetAsset("UIHeartItem.spriteatlas", LoadType.SpriteAtlas)
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopSortBtnItem.GetComponents = function(self)
-  -- function num : 0_2
+function UITopSortBtnItem:GetComponents()
   self._arrow = self:GetUIComponent("Image", "arrow")
   self._arrowGo = self:GetGameObject("arrow")
   self._name = self:GetUIComponent("UILocalizationText", "name")
@@ -31,10 +24,7 @@ UITopSortBtnItem.GetComponents = function(self)
   self._elementTypeImg = self:GetUIComponent("Image", "eleImage")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopSortBtnItem.SetData = function(self, index, cfg, currentSortParams, currentSortOrder, callback, eleType)
-  -- function num : 0_3
+function UITopSortBtnItem:SetData(index, cfg, currentSortParams, currentSortOrder, callback, eleType)
   self:GetComponents()
   self._index = index
   self._cfg = cfg
@@ -45,78 +35,46 @@ UITopSortBtnItem.SetData = function(self, index, cfg, currentSortParams, current
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopSortBtnItem.OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._name):SetText((StringTable.Get)((self._cfg).Name))
-  ;
-  ((self._elementTypeImg).gameObject):SetActive(false)
+function UITopSortBtnItem:OnValue()
+  self._name:SetText(StringTable.Get(self._cfg.Name))
+  self._elementTypeImg.gameObject:SetActive(false)
   self:Flush(self._currSortParams, self._currentSortOrder, self._eleType)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopSortBtnItem.bgOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._cfg).Type == PetSortType.Element then
+function UITopSortBtnItem:bgOnClick()
+  if self._cfg.Type == PetSortType.Element then
     local petModule = self:GetModule(PetModule)
     local currentElementSortTypeOrder = petModule.PetSortElementIndex
     petModule:SavePetSortElementIndex(currentElementSortTypeOrder % 5 + 1)
   end
-  do
-    if self._callback then
-      (self._callback)(self._index)
-    end
+  if self._callback then
+    self._callback(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopSortBtnItem.Flush = function(self, params, order, eleType)
-  -- function num : 0_6 , upvalues : _ENV
+function UITopSortBtnItem:Flush(params, order, eleType)
   self._eleType = eleType
-  if params == (self._cfg).Type then
-    (self._arrowGo):SetActive(true)
-    ;
-    (self._selectImgGo):SetActive(true)
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._name).color = Color(0.98823529411765, 0.90980392156863, 0.007843137254902, 1)
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R4 in 'UnsetPending'
-
+  if params == self._cfg.Type then
+    self._arrowGo:SetActive(true)
+    self._selectImgGo:SetActive(true)
+    self._name.color = Color(0.9882352941176471, 0.9098039215686274, 0.00784313725490196, 1)
     if order == PetSortOrder.Ascending then
-      (self._arrow).sprite = (self._uiHeartAtlas):GetSprite("spirit_jiantou_y_2_frame")
+      self._arrow.sprite = self._uiHeartAtlas:GetSprite("spirit_jiantou_y_2_frame")
     else
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._arrow).sprite = (self._uiHeartAtlas):GetSprite("spirit_jiantou_y_1_frame")
+      self._arrow.sprite = self._uiHeartAtlas:GetSprite("spirit_jiantou_y_1_frame")
     end
   else
-    ;
-    (self._arrowGo):SetActive(false)
-    ;
-    (self._selectImgGo):SetActive(false)
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._name).color = Color(1, 1, 1, 1)
+    self._arrowGo:SetActive(false)
+    self._selectImgGo:SetActive(false)
+    self._name.color = Color(1, 1, 1, 1)
   end
-  if (self._cfg).ID == PetSortType.Element then
-    (self._arrowGo):SetActive(false)
-    ;
-    ((self._elementTypeImg).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC80: Confused about usage of register: R4 in 'UnsetPending'
-
+  if self._cfg.ID == PetSortType.Element then
+    self._arrowGo:SetActive(false)
+    self._elementTypeImg.gameObject:SetActive(true)
     if self._eleType ~= 0 then
-      (self._elementTypeImg).sprite = (self.atlasProperty):GetSprite((self.ElementSpriteName)[self._eleType])
+      self._elementTypeImg.sprite = self.atlasProperty:GetSprite(self.ElementSpriteName[self._eleType])
     end
   else
-    ;
-    ((self._elementTypeImg).gameObject):SetActive(false)
+    self._elementTypeImg.gameObject:SetActive(false)
   end
 end
-
-

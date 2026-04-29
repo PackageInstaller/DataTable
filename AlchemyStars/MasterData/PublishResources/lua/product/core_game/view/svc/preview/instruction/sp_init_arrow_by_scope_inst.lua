@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_init_arrow_by_scope_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewInitArrowByScopeInstruction", SkillPreviewBaseInstruction)
 SkillPreviewInitArrowByScopeInstruction = SkillPreviewInitArrowByScopeInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewInitArrowByScopeInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewInitArrowByScopeInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = previewContext:GetWorld()
   local utilScopeSvc = world:GetService("UtilScopeCalc")
   local renderBoardEntity = world:GetRenderBoardEntity()
@@ -20,55 +13,43 @@ SkillPreviewInitArrowByScopeInstruction.DoInstruction = function(self, TT, caste
   local validGridList = utilScopeSvc:BuildScopeGridList(skillConfigData._pickUpValidScopeList, casterEntity)
   local invalidGridList = utilScopeSvc:BuildScopeGridList(skillConfigData._pickUpInvalidScopeList, casterEntity)
   local finalGridList = {}
-  for _,v2 in ipairs(validGridList) do
-    if not (table.icontains)(invalidGridList, v2) then
-      (table.insert)(finalGridList, v2)
+  for _, v2 in ipairs(validGridList) do
+    if not table.icontains(invalidGridList, v2) then
+      table.insert(finalGridList, v2)
     end
   end
   local v2Center = previewContext:GetCasterPos()
   local previewActiveSkillService = world:GetService("PreviewActiveSkill")
   local tmpDirMap = {}
-  for _,v2 in ipairs(finalGridList) do
+  for _, v2 in ipairs(finalGridList) do
     local v2Relative = v2 - v2Center
     local relativeX = v2Relative.x
     local relativeY = v2Relative.y
-    if relativeX > 0 then
-      if relativeY > 0 then
+    if 0 < relativeX then
+      if 0 < relativeY then
         tmpDirMap[2] = 2
+      elseif relativeY < 0 then
+        tmpDirMap[4] = 4
       else
-        if relativeY < 0 then
-          tmpDirMap[4] = 4
-        else
-          tmpDirMap[3] = 3
-        end
+        tmpDirMap[3] = 3
       end
-    else
-      if relativeX < 0 then
-        if relativeY > 0 then
-          tmpDirMap[8] = 8
-        else
-          if relativeY < 0 then
-            tmpDirMap[6] = 6
-          else
-            tmpDirMap[7] = 7
-          end
-        end
+    elseif relativeX < 0 then
+      if 0 < relativeY then
+        tmpDirMap[8] = 8
+      elseif relativeY < 0 then
+        tmpDirMap[6] = 6
       else
-        if relativeY > 0 then
-          tmpDirMap[1] = 1
-        else
-          if relativeY < 0 then
-            tmpDirMap[5] = 5
-          end
-        end
+        tmpDirMap[7] = 7
       end
+    elseif 0 < relativeY then
+      tmpDirMap[1] = 1
+    elseif relativeY < 0 then
+      tmpDirMap[5] = 5
     end
   end
   local tDirection = {}
-  for _,directionIndex in pairs(tmpDirMap) do
-    (table.insert)(tDirection, directionIndex)
+  for _, directionIndex in pairs(tmpDirMap) do
+    table.insert(tDirection, directionIndex)
   end
   previewActiveSkillService:ShowPickUpArrow(tDirection, nil, casterEntity:GetGridPosition())
 end
-
-

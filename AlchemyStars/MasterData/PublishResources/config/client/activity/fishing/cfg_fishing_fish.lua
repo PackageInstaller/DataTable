@@ -1,28 +1,158 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/fishing/cfg_fishing_fish.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Sprite = 2, SpineName = 3, Layer = 4, Scale = 5, Speed = 6, RotateInterval = 7, RotateProbability = 8, ChangeSpeedInterval = 9, ChangeSpeedProbability = 10, CatchedFishSpine = 11, FishShadow = 12, ShadowScale = 13, FishLength = 14, CatchedTime = 15, FishNetResetTime = 16}
-local common = {"1", "2", "3", "4", "5", "6", "7", 
-{1, 5}
-, 
-{1, 6}
+local key = {
+  ID = 1,
+  Sprite = 2,
+  SpineName = 3,
+  Layer = 4,
+  Scale = 5,
+  Speed = 6,
+  RotateInterval = 7,
+  RotateProbability = 8,
+  ChangeSpeedInterval = 9,
+  ChangeSpeedProbability = 10,
+  CatchedFishSpine = 11,
+  FishShadow = 12,
+  ShadowScale = 13,
+  FishLength = 14,
+  CatchedTime = 15,
+  FishNetResetTime = 16
+}
+local common = {
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  {1, 5},
+  {1, 6}
 }
 local config = {
-{1, "n14_fish_icon_fish_1", common[1], 1, 0.6, common[8], 2, 50, 2, 50, common[1], "n14_fish_shadow_fish_1", 1, 60, 0.5, 0.5}
-, 
-{2, "n14_fish_icon_fish_2", common[2], 2, 0.5, common[8], 2, 50, 2, 50, common[2], "n14_fish_shadow_fish_2", 2, 70, 0.5, 0.5}
-, 
-{3, "n14_fish_icon_fish_3", common[3], 3, 0.6, common[8], 2, 50, 2, 50, common[3], "n14_fish_shadow_fish_3", 2, 80, 0.5, 0.5}
-, 
-{4, "n14_fish_icon_fish_4", common[4], 4, 0.4, common[9], 2, 50, 2, 50, common[4], "n14_fish_shadow_fish_4", 2, 80, 0.5, 0.5}
-, 
-{5, "n14_fish_icon_fish_5", common[5], 5, 0.4, common[9], 2, 50, 2, 50, common[5], "n14_fish_shadow_fish_5", 3, 120, 0.5, 0.5}
-, 
-{6, "n14_fish_icon_fish_6", common[6], 6, 0.35, common[9], 2, 50, 2, 50, common[6], "n14_fish_shadow_hetun", 3, 120, 2, 0.5}
-, 
-{7, "n14_fish_icon_fish_7", common[7], 7, 0.4, common[9], 2, 50, 2, 50, common[7], "n14_fish_shadow_zhangyu", 3, 120, 1, 0.5}
+  {
+    1,
+    "n14_fish_icon_fish_1",
+    common[1],
+    1,
+    0.6,
+    common[8],
+    2,
+    50,
+    2,
+    50,
+    common[1],
+    "n14_fish_shadow_fish_1",
+    1,
+    60,
+    0.5,
+    0.5
+  },
+  {
+    2,
+    "n14_fish_icon_fish_2",
+    common[2],
+    2,
+    0.5,
+    common[8],
+    2,
+    50,
+    2,
+    50,
+    common[2],
+    "n14_fish_shadow_fish_2",
+    2,
+    70,
+    0.5,
+    0.5
+  },
+  {
+    3,
+    "n14_fish_icon_fish_3",
+    common[3],
+    3,
+    0.6,
+    common[8],
+    2,
+    50,
+    2,
+    50,
+    common[3],
+    "n14_fish_shadow_fish_3",
+    2,
+    80,
+    0.5,
+    0.5
+  },
+  {
+    4,
+    "n14_fish_icon_fish_4",
+    common[4],
+    4,
+    0.4,
+    common[9],
+    2,
+    50,
+    2,
+    50,
+    common[4],
+    "n14_fish_shadow_fish_4",
+    2,
+    80,
+    0.5,
+    0.5
+  },
+  {
+    5,
+    "n14_fish_icon_fish_5",
+    common[5],
+    5,
+    0.4,
+    common[9],
+    2,
+    50,
+    2,
+    50,
+    common[5],
+    "n14_fish_shadow_fish_5",
+    3,
+    120,
+    0.5,
+    0.5
+  },
+  {
+    6,
+    "n14_fish_icon_fish_6",
+    common[6],
+    6,
+    0.35,
+    common[9],
+    2,
+    50,
+    2,
+    50,
+    common[6],
+    "n14_fish_shadow_hetun",
+    3,
+    120,
+    2,
+    0.5
+  },
+  {
+    7,
+    "n14_fish_icon_fish_7",
+    common[7],
+    7,
+    0.4,
+    common[9],
+    2,
+    50,
+    2,
+    50,
+    common[7],
+    "n14_fish_shadow_zhangyu",
+    3,
+    120,
+    1,
+    0.5
+  }
 }
 return config, "ID", key
-

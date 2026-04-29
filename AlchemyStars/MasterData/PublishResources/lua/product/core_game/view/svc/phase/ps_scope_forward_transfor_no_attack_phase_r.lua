@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/ps_scope_forward_transfor_no_attack_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillScopeForwardTransformNoAttackPhase", PlaySkillPhaseBase)
 PlaySkillScopeForwardTransformNoAttackPhase = PlaySkillScopeForwardTransformNoAttackPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillScopeForwardTransformNoAttackPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillScopeForwardTransformNoAttackPhase:PlayFlight(TT, casterEntity, phaseParam)
   local scopeForwardParam = phaseParam
   local gridEffectIDs = scopeForwardParam:GetGridEffectIDs()
   local bestEffectTime = scopeForwardParam:GetBestEffectTime()
@@ -20,7 +13,7 @@ PlaySkillScopeForwardTransformNoAttackPhase.PlayFlight = function(self, TT, cast
   local hitEffectID = scopeForwardParam:GetHitEffectID()
   local effectDirection = scopeForwardParam:GetEffectDirection()
   local effectIgnore = scopeForwardParam:GetEffectIgnore()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local convertResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.ConvertGridElement)
   local targetGridType = convertResult:GetTargetElementType()
@@ -32,41 +25,35 @@ PlaySkillScopeForwardTransformNoAttackPhase.PlayFlight = function(self, TT, cast
   local bottom = 0
   local top = 0
   local castPos = pickUpGridPos
-  for _,_gridPos in ipairs(gridDataArray) do
+  for _, _gridPos in ipairs(gridDataArray) do
     local deltaY = _gridPos.y - castPos.y
-    if deltaY > 0 and top < deltaY then
+    if 0 < deltaY and top < deltaY then
       top = deltaY
-    else
-      if deltaY < 0 and deltaY < bottom then
-        bottom = deltaY
-      end
+    elseif deltaY < 0 and bottom > deltaY then
+      bottom = deltaY
     end
   end
-  local pieceService = (self._world):GetService("Piece")
+  local pieceService = self._world:GetService("Piece")
   local tConvertInfo = {}
   local tidHitTask = {}
   for i = 1, maxGridCount do
     for dir = 1, 9 do
       local t = targetGirdList[dir]
       if i <= #t.gridList then
-        local gridPos = (t.gridList)[i]
+        local gridPos = t.gridList[i]
         if effectIgnore < i then
           local effID, dir, scale = self:_CalculateEffect(castPos, gridPos, scopeForwardParam, top, bottom)
-          if gridDataArray then
-            local needConvert = (table.icontains)(gridDataArray, gridPos)
-          end
+          local needConvert = gridDataArray and table.icontains(gridDataArray, gridPos)
           if not scopeForwardParam:IsNeedRotateEff() then
             dir = nil
           end
-          ;
-          ((GameGlobal.TaskManager)()):CoreGameStartTask(self._SingleGridEffectTranform, self, effID, gridPos, bestEffectTime, targetGridType, dir, scale, needConvert)
+          GameGlobal.TaskManager():CoreGameStartTask(self._SingleGridEffectTranform, self, effID, gridPos, bestEffectTime, targetGridType, dir, scale, needConvert)
           local nOldGridType = PieceType.None
           local gridEntity = pieceService:FindPieceEntity(gridPos)
           local pieceCmpt = gridEntity:Piece()
           nOldGridType = pieceCmpt:GetPieceType()
           local convertInfo = NTGridConvert_ConvertInfo:New(gridPos, nOldGridType, targetGridType)
-          ;
-          (table.insert)(tConvertInfo, convertInfo)
+          table.insert(tConvertInfo, convertInfo)
         end
       end
     end
@@ -76,8 +63,8 @@ PlaySkillScopeForwardTransformNoAttackPhase.PlayFlight = function(self, TT, cast
   end
   local finishDelayTime = scopeForwardParam:GetFinishDelayTime()
   YIELD(TT, finishDelayTime)
-  if #tConvertInfo > 0 then
-    local svcPlayBuff = (self._world):GetService("PlayBuff")
+  if 0 < #tConvertInfo then
+    local svcPlayBuff = self._world:GetService("PlayBuff")
     local notify = NTGridConvert:New(casterEntity, tConvertInfo)
     notify:SetConvertEffectType(SkillEffectType.ConvertGridElement)
     notify.__attackPosMatchRequired = true
@@ -85,60 +72,48 @@ PlaySkillScopeForwardTransformNoAttackPhase.PlayFlight = function(self, TT, cast
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillScopeForwardTransformNoAttackPhase._CalculateEffect = function(self, castPos, gridPos, phaseParam, topEdge, bottomEdge)
-  -- function num : 0_1 , upvalues : _ENV
-  local effID, dir, scale = nil, nil, nil
+function PlaySkillScopeForwardTransformNoAttackPhase:_CalculateEffect(castPos, gridPos, phaseParam, topEdge, bottomEdge)
+  local effID, dir, scale
   local deltaPos = gridPos - castPos
-  dir = (Vector2.Normalize)(deltaPos)
-  local layer = (math.max)((math.abs)(deltaPos.x), (math.abs)(deltaPos.y))
+  dir = Vector2.Normalize(deltaPos)
+  local layer = math.max(math.abs(deltaPos.x), math.abs(deltaPos.y))
   local scaleStart = phaseParam:GetEffectStart()
   local scaleDefault = phaseParam:GetDefaultScale()
   local layerScale = phaseParam:GetLayerScale()
   local scaleN = 0
-  if scaleStart <= layer then
+  if layer >= scaleStart then
     scaleN = scaleDefault + (layer - scaleStart) * layerScale
   else
     scaleN = scaleDefault
   end
   scale = Vector3(scaleN, scaleN, scaleN)
-  if deltaPos.y == topEdge and topEdge > 0 then
+  if deltaPos.y == topEdge and 0 < topEdge then
+    effID = phaseParam:GetGridEdgeEffect()
+  elseif deltaPos.y == bottomEdge and bottomEdge < 0 then
     effID = phaseParam:GetGridEdgeEffect()
   else
-    if deltaPos.y == bottomEdge and bottomEdge < 0 then
-      effID = phaseParam:GetGridEdgeEffect()
-    else
-      local effs = phaseParam:GetGridEffectIDs()
-      local gridCount = #effs
-      local effIdx = deltaPos.y % gridCount
-      if effIdx == 0 then
-        effIdx = gridCount
-      end
-      effID = effs[effIdx]
+    local effs = phaseParam:GetGridEffectIDs()
+    local gridCount = #effs
+    local effIdx = deltaPos.y % gridCount
+    if effIdx == 0 then
+      effIdx = gridCount
     end
+    effID = effs[effIdx]
   end
-  do
-    return effID, dir, scale
-  end
+  return effID, dir, scale
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillScopeForwardTransformNoAttackPhase._SingleGridEffectTranform = function(self, TT, gridEffectID, gridPos, bestEffectTime, targetGridType, dir, scale, needConvert)
-  -- function num : 0_2 , upvalues : _ENV
-  local effEntity = ((self._world):GetService("Effect")):CreateTransformEffect(gridEffectID, gridPos, dir, scale)
+function PlaySkillScopeForwardTransformNoAttackPhase:_SingleGridEffectTranform(TT, gridEffectID, gridPos, bestEffectTime, targetGridType, dir, scale, needConvert)
+  local effEntity = self._world:GetService("Effect"):CreateTransformEffect(gridEffectID, gridPos, dir, scale)
   if not needConvert then
-    return 
+    return
   end
   YIELD(TT, bestEffectTime)
-  local boardService = (self._world):GetService("BoardRender")
+  local boardService = self._world:GetService("BoardRender")
   boardService:ReCreateGridEntity(targetGridType, gridPos, false)
   YIELD(TT)
-  local piece_service = (self._world):GetService("Piece")
+  local piece_service = self._world:GetService("Piece")
   if piece_service then
     piece_service:RefreshPieceAnim()
   end
 end
-
-

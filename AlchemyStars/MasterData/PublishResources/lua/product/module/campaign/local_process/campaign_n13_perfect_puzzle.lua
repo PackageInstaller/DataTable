@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_n13_perfect_puzzle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignN13PerfectPuzzle", ICampaignComponentLocalProcessBase)
 CCampaignN13PerfectPuzzle = CCampaignN13PerfectPuzzle
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignN13PerfectPuzzle.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignN13PerfectPuzzle:Constructor()
   self._perfectPuzzleComponent = nil
   self._perfectPuzzleComponentInfo = nil
   self._questComponent = nil
@@ -18,67 +11,46 @@ CCampaignN13PerfectPuzzle.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN13PerfectPuzzle.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignN13PerfectPuzzle:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_INLAND_PERFECT_PUZZLE
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN13PerfectPuzzle.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignN13PerfectPuzzle:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN13PerfectPuzzle.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignN13PerfectPuzzle:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetPerfectPuzzleComponent()
   self:_GetQuestComponent()
   self:_GetPersonProgressComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN13PerfectPuzzle._GetPerfectPuzzleComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._perfectPuzzleComponent = (self._campaignObj):GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE)
+function CCampaignN13PerfectPuzzle:_GetPerfectPuzzleComponent()
+  self._perfectPuzzleComponent = self._campaignObj:GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE)
   if not self._perfectPuzzleComponent then
-    return 
+    return
   end
-  self._perfectPuzzleComponentInfo = (self._perfectPuzzleComponent):ComponentInfo()
+  self._perfectPuzzleComponentInfo = self._perfectPuzzleComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN13PerfectPuzzle._GetQuestComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._questComponent = (self._campaignObj):GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST)
+function CCampaignN13PerfectPuzzle:_GetQuestComponent()
+  self._questComponent = self._campaignObj:GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST)
   if not self._questComponent then
-    return 
+    return
   end
-  self._questComponentInfo = (self._questComponent):ComponentInfo()
+  self._questComponentInfo = self._questComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN13PerfectPuzzle._GetPersonProgressComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._personProgressScoreComponent = (self._campaignObj):GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
+function CCampaignN13PerfectPuzzle:_GetPersonProgressComponent()
+  self._personProgressScoreComponent = self._campaignObj:GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
   if not self._personProgressScoreComponent then
-    return 
+    return
   end
-  self._personProgressScoreCompInfo = (self._personProgressScoreComponent):ComponentInfo()
+  self._personProgressScoreCompInfo = self._personProgressScoreComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN13PerfectPuzzle.GetComponent = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignN13PerfectPuzzle:GetComponent(componentID)
   if ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE == componentID then
     return self._perfectPuzzleComponent
   end
@@ -91,10 +63,7 @@ CCampaignN13PerfectPuzzle.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN13PerfectPuzzle.GetComponentInfo = function(self, componentID)
-  -- function num : 0_8 , upvalues : _ENV
+function CCampaignN13PerfectPuzzle:GetComponentInfo(componentID)
   if ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE == componentID then
     return self._perfectPuzzleComponentInfo
   end
@@ -107,31 +76,16 @@ CCampaignN13PerfectPuzzle.GetComponentInfo = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN13PerfectPuzzle.GetEntryNew = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignN13PerfectPuzzle:GetEntryNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_INLAND_PERFECT_PUZZLE)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN13PerfectPuzzle.GetEntryRedDot = function(self)
-  -- function num : 0_10
+function CCampaignN13PerfectPuzzle:GetEntryRedDot()
   return self:PerfectPuzzleReddot()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN13PerfectPuzzle.PerfectPuzzleReddot = function(self)
-  -- function num : 0_11
-  if self._perfectPuzzleComponent then
-    return (self._perfectPuzzleComponent):HaveRedPoint()
-  end
+function CCampaignN13PerfectPuzzle:PerfectPuzzleReddot()
+  return self._perfectPuzzleComponent and self._perfectPuzzleComponent:HaveRedPoint()
 end
-
-

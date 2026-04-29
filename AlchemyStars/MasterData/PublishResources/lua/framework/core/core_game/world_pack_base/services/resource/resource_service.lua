@@ -1,31 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/services/resource/resource_service.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ResourceService", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-ResourceService.Constructor = function(self)
-  -- function num : 0_0
+function ResourceService:Constructor()
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourceService.Initialize = function(self)
-  -- function num : 0_1
+function ResourceService:Initialize()
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourceService.Destructor = function(self)
-  -- function num : 0_2
+function ResourceService:Destructor()
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourceService.DestroyView = function(self, view)
-  -- function num : 0_3
+function ResourceService:DestroyView(view)
 end
-
-

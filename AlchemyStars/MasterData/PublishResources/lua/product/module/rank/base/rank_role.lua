@@ -1,68 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/rank/base/rank_role.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RankRole", Rank)
 RankRole = RankRole
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RankRole.Constructor = function(self)
-  -- function num : 0_0
+function RankRole:Constructor()
   self.m_rank_data = {}
   self.m_rank_player = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RankRole.GetTotalData = function(self)
-  -- function num : 0_1
+function RankRole:GetTotalData()
   return self.m_rank_data
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RankRole.UnSeriaData = function(self, buff)
-  -- function num : 0_2 , upvalues : _ENV
+function RankRole:UnSeriaData(buff)
   local data = self:CreateRankData()
   if not data then
-    (Log.fatal)("RankDataType is nil")
+    Log.fatal("RankDataType is nil")
     return nil
   end
-  local ret, msg = (lua_dc.LoadStream)(data._className, buff, data)
+  local ret, msg = lua_dc.LoadStream(data._className, buff, data)
   if not ret then
-    (Log.fatal)("lua_dc.LoadStream fail, class = ", data._classname, ", msg = ", msg)
+    Log.fatal("lua_dc.LoadStream fail, class = ", data._classname, ", msg = ", msg)
     return nil
   end
   return data
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RankRole.UnSeriaBufVec = function(self, buf_vec)
-  -- function num : 0_3 , upvalues : _ENV
+function RankRole:UnSeriaBufVec(buf_vec)
   local data_vec = {}
-  if #buf_vec == 0 then
+  if 0 == #buf_vec then
     return data_vec
   end
-  for k,buf in pairs(buf_vec) do
+  for k, buf in pairs(buf_vec) do
     local data = self:UnSeriaData(buf)
     if not data then
-      (Log.fatal)("FillDataTotal fail, aUnSeriaData errr")
+      Log.fatal("FillDataTotal fail, aUnSeriaData errr")
       return nil
     end
-    ;
-    (table.insert)(data_vec, k, data)
+    table.insert(data_vec, k, data)
   end
   return data_vec
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RankRole.GetDataByPage = function(self, index, count)
-  -- function num : 0_4 , upvalues : _ENV
+function RankRole:GetDataByPage(index, count)
   if index < 0 or count <= 0 then
-    (Log.fatal)("GetDataByPage fail, index = ", index, ", count = ", count)
+    Log.fatal("GetDataByPage fail, index = ", index, ", count = ", count)
     return nil
   end
   if #self.m_rank_data == 0 then
@@ -71,26 +51,21 @@ RankRole.GetDataByPage = function(self, index, count)
   local begin = index + 1
   local over = index + count
   local data_ret = {}
-  for _,v in pairs(self.m_rank_data) do
+  for _, v in pairs(self.m_rank_data) do
     local rank_base = v.rank_base
     local player = self:GetPlayer(rank_base.pstid)
     if not player then
-      (Log.fatal)("not player pstid = ", rank_base.pstid)
-    else
-      if begin <= player.rank and player.rank <= over then
-        (table.insert)(data_ret, v)
-      end
+      Log.fatal("not player pstid = ", rank_base.pstid)
+    elseif begin <= player.rank and over >= player.rank then
+      table.insert(data_ret, v)
     end
   end
   return data_ret
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RankRole.FillDataTotal = function(self, buf_vec)
-  -- function num : 0_5 , upvalues : _ENV
+function RankRole:FillDataTotal(buf_vec)
   if not buf_vec then
-    (Log.fatal)("FillDataTotal fail, arg data_vec is nil")
+    Log.fatal("FillDataTotal fail, arg data_vec is nil")
     return nil
   end
   local data_vec = self:UnSeriaBufVec(buf_vec)
@@ -99,28 +74,18 @@ RankRole.FillDataTotal = function(self, buf_vec)
   end
   self.m_rank_data = data_vec
   self.m_rank_player = {}
-  for i,v in pairs(self.m_rank_data) do
+  for i, v in pairs(self.m_rank_data) do
     local rank_base = v.rank_base
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.m_rank_player)[rank_base.pstid] = v
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    ((self.m_rank_player)[rank_base.pstid]).rank = i
+    self.m_rank_player[rank_base.pstid] = v
+    self.m_rank_player[rank_base.pstid].rank = i
   end
-  ;
-  (Log.debug)("rank fill total = ", #self.m_rank_data)
+  Log.debug("rank fill total = ", #self.m_rank_data)
   return true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RankRole.FillDataByPage = function(self, index, count, buf_vec)
-  -- function num : 0_6 , upvalues : _ENV
+function RankRole:FillDataByPage(index, count, buf_vec)
   if index < 0 or count <= 0 then
-    (Log.fatal)("FillDataByPage fail, index = ", index, ", count = ", count)
+    Log.fatal("FillDataByPage fail, index = ", index, ", count = ", count)
     return nil
   end
   local data_vec = self:UnSeriaBufVec(buf_vec)
@@ -132,45 +97,26 @@ RankRole.FillDataByPage = function(self, index, count, buf_vec)
   local over = index + count
   local clean_end = over
   for i = clean_end, begin, -1 do
-    if (self.m_rank_data)[i] then
-      local data = (self.m_rank_data)[i]
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self.m_rank_player)[(data.rank_base).pstid] = nil
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self.m_rank_data)[i] = nil
+    if self.m_rank_data[i] then
+      local data = self.m_rank_data[i]
+      self.m_rank_player[data.rank_base.pstid] = nil
+      self.m_rank_data[i] = nil
     end
   end
   local index = begin
   for i = 1, data_num do
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R14 in 'UnsetPending'
-
-    (self.m_rank_data)[index] = data_vec[i]
-    local data = (self.m_rank_data)[index]
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R15 in 'UnsetPending'
-
-    ;
-    (self.m_rank_player)[(data.rank_base).pstid] = data
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R15 in 'UnsetPending'
-
-    ;
-    ((self.m_rank_player)[(data.rank_base).pstid]).rank = index
+    self.m_rank_data[index] = data_vec[i]
+    local data = self.m_rank_data[index]
+    self.m_rank_player[data.rank_base.pstid] = data
+    self.m_rank_player[data.rank_base.pstid].rank = index
     index = begin + i
   end
   return true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RankRole.GetPlayer = function(self, pstid)
-  -- function num : 0_7
-  if not (self.m_rank_player)[pstid] then
+function RankRole:GetPlayer(pstid)
+  if not self.m_rank_player[pstid] then
     return nil
   end
-  return (self.m_rank_player)[pstid]
+  return self.m_rank_player[pstid]
 end
-
-

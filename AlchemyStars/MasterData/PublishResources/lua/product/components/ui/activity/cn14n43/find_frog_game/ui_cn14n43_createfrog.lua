@@ -1,171 +1,121 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/find_frog_game/ui_cn14n43_createfrog.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN14N43CreateFrog", Object)
 UICN14N43CreateFrog = UICN14N43CreateFrog
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN14N43CreateFrog.Constructor = function(self)
-  -- function num : 0_0
+function UICN14N43CreateFrog:Constructor()
   self.CollectFrogData = {}
   self.RecycleFrogNum = 0
   self.FrogNumMax = 0
   self.FrogItems = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43CreateFrog.CreateFrog = function(self, uiName)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN14N43CreateFrog:CreateFrog(uiName)
   local infos = self:_GetFrogInfos(uiName)
-  if (table.count)(infos) == 0 then
-    return 
+  if table.count(infos) == 0 then
+    return
   end
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, self, infos
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  GameGlobal.TaskManager():StartTask(function(TT)
     local res = UIStateSwitchReq:New()
     res:SetSucc(true)
-    local campaign = (UIActivityCampaign.New)()
+    local campaign = UIActivityCampaign.New()
     campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_COLLECT_FROG, ECampaignCollectFrogComponentID.ECAMPAIGN_COLLECT_FROG_PERSON_PROCESS)
     self._localProcess = campaign:GetLocalProcess()
-    self._personProgressComponent = (self._localProcess):GetComponent(ECampaignCollectFrogComponentID.ECAMPAIGN_COLLECT_FROG_PERSON_PROCESS)
-    self.cmpInfo = (self._personProgressComponent):ComponentInfo()
+    self._personProgressComponent = self._localProcess:GetComponent(ECampaignCollectFrogComponentID.ECAMPAIGN_COLLECT_FROG_PERSON_PROCESS)
+    self.cmpInfo = self._personProgressComponent:ComponentInfo()
     local sample = campaign:GetSample()
     self._endTime = sample.end_time
     self:_CollectFrogFormatData()
-    self.RecycleFrogNum = (self.cmpInfo).m_mark_else
-    ;
-    (Log.debug)("[Frog] [CreateFrog]  mark:", (self.cmpInfo).m_mark, ", self.RecycleFrogNum:", self.RecycleFrogNum)
+    self.RecycleFrogNum = self.cmpInfo.m_mark_else
+    Log.debug("[Frog] [CreateFrog]  mark:", self.cmpInfo.m_mark, ", self.RecycleFrogNum:", self.RecycleFrogNum)
     self.FrogItems = {}
-    for k,v in pairs(infos) do
-      if (self.CollectFrogData)[v.ID] == 0 then
+    for k, v in pairs(infos) do
+      if self.CollectFrogData[v.ID] == 0 then
         self:_CreateFrogByInfo(v)
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43CreateFrog._GetFrogInfos = function(self, uiName)
-  -- function num : 0_2 , upvalues : _ENV
-  self.FrogNumMax = (table.count)((Cfg.cfg_frog_info)())
-  local infos = (Cfg.cfg_frog_info)({UIName = uiName})
+function UICN14N43CreateFrog:_GetFrogInfos(uiName)
+  self.FrogNumMax = table.count(Cfg.cfg_frog_info())
+  local infos = Cfg.cfg_frog_info({UIName = uiName})
   local formatInfos = {}
   if not infos then
     return formatInfos
   end
-  for k,v in pairs(infos) do
+  for k, v in pairs(infos) do
     local o = CfgFrogInfo:New(v)
-    ;
-    (table.insert)(formatInfos, o)
+    table.insert(formatInfos, o)
   end
   return formatInfos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43CreateFrog._CreateFrogByInfo = function(self, info)
-  -- function num : 0_3 , upvalues : _ENV
-  local frogNode = ((GameGlobal.UIStateManager)()):CallUIMethod(info.UIName, "GetUIComponent", "UISelectObjectPath", info.UINodeName)
+function UICN14N43CreateFrog:_CreateFrogByInfo(info)
+  local frogNode = GameGlobal.UIStateManager():CallUIMethod(info.UIName, "GetUIComponent", "UISelectObjectPath", info.UINodeName)
   if not frogNode then
-    return 
+    return
   end
   local items = frogNode:SpawnObjects("UICN14N43Frog", 1)
   local item = items[1]
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.FrogItems)[info.ID] = item
+  self.FrogItems[info.ID] = item
   item:SetData(false, info.ID, function()
-    -- function num : 0_3_0 , upvalues : self, info
     self:_ClickFrog(info)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43CreateFrog._ClickFrog = function(self, info)
-  -- function num : 0_4 , upvalues : _ENV
+function UICN14N43CreateFrog:_ClickFrog(info)
   if self:_CheckActivityOver() then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog(UIStateType.UICN14N43FrogCollect, info, function(frogID)
-    -- function num : 0_4_0 , upvalues : self
+  GameGlobal.UIStateManager():ShowDialog(UIStateType.UICN14N43FrogCollect, info, function(frogID)
     if self:_CheckActivityOver() then
-      return 
+      return
     end
-    self.cmpInfo = (self._personProgressComponent):ComponentInfo()
+    self.cmpInfo = self._personProgressComponent:ComponentInfo()
     self:_CollectFrogFormatData()
     self:_CollectFrog(frogID)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43CreateFrog._CollectFrog = function(self, frogID)
-  -- function num : 0_5 , upvalues : _ENV
-  local item = (self.FrogItems)[frogID]
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.CollectFrogData)[frogID] = 1
+function UICN14N43CreateFrog:_CollectFrog(frogID)
+  local item = self.FrogItems[frogID]
+  self.CollectFrogData[frogID] = 1
   local mark = 0
   for i = 1, self.FrogNumMax do
-    local t = (self.CollectFrogData)[i]
+    local t = self.CollectFrogData[i]
     if t == 1 then
       mark = mark << 1 | 1
     else
-      mark = (mark) << 1
+      mark = mark << 1
     end
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self, mark, item
+  GameGlobal.TaskManager():StartTask(function(TT)
     local res = UIStateSwitchReq:New()
     res:SetSucc(true)
-    local response = (self._personProgressComponent):HandlePersonProgressCollect(TT, res, 0, mark, self.RecycleFrogNum)
-    ;
-    (Log.debug)("[Frog] [HandlePersonProgressCollect]  mark:", mark, ", self.RecycleFrogNum:", self.RecycleFrogNum)
+    local response = self._personProgressComponent:HandlePersonProgressCollect(TT, res, 0, mark, self.RecycleFrogNum)
+    Log.debug("[Frog] [HandlePersonProgressCollect]  mark:", mark, ", self.RecycleFrogNum:", self.RecycleFrogNum)
     if item and response and response.ret == 0 then
-      (Log.debug)("[Frog] [HandlePersonProgressCollect]  response.ret == 0")
+      Log.debug("[Frog] [HandlePersonProgressCollect]  response.ret == 0")
       item:PlayCollectOver()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43CreateFrog._CollectFrogFormatData = function(self)
-  -- function num : 0_6
+function UICN14N43CreateFrog:_CollectFrogFormatData()
   self.CollectFrogData = {}
-  local mark = (self.cmpInfo).m_mark
+  local mark = self.cmpInfo.m_mark
   for i = self.FrogNumMax, 1, -1 do
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self.CollectFrogData)[i] = mark & 1
+    self.CollectFrogData[i] = mark & 1
     mark = mark >> 1
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43CreateFrog._CheckActivityOver = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UICN14N43CreateFrog:_CheckActivityOver()
   local closeTime = self._endTime
-  local nowtime = (self._svrTimeModule):GetServerTime() * 0.001
+  local nowtime = self._svrTimeModule:GetServerTime() * 0.001
   if closeTime < nowtime then
-    ((GameGlobal.GetModule)(CampaignModule)):ShowErrorToast(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED, true)
-    for key,value in pairs(self.FrogItems) do
+    GameGlobal.GetModule(CampaignModule):ShowErrorToast(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED, true)
+    for key, value in pairs(self.FrogItems) do
       value:SetActive(false)
     end
     return true
@@ -175,15 +125,11 @@ end
 
 _class("CfgFrogInfo", Object)
 CfgFrogInfo = CfgFrogInfo
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
 
-CfgFrogInfo.Constructor = function(self, info)
-  -- function num : 0_8 , upvalues : _ENV
+function CfgFrogInfo:Constructor(info)
   self.ID = info.ID
   self.UIName = info.UIName
   self.UINodeName = info.UINodeName
-  self.PopPos = Vector3((info.PopPos)[1], (info.PopPos)[2], 0)
+  self.PopPos = Vector3(info.PopPos[1], info.PopPos[2], 0)
   self.PopTxtKey = info.PopTxtKey
 end
-
-

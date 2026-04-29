@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/ui_xiaolinjia_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXiaoLinJiaReview", UIController)
 UIXiaoLinJiaReview = UIXiaoLinJiaReview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXiaoLinJiaReview.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIXiaoLinJiaReview:OnShow(uiParams)
   self._dialogReviewScrollView = self:GetUIComponent("UIDynamicScrollView", "sv")
   self.anim = self:GetUIComponent("Animation", "anim")
   self.curSession = uiParams[1]
@@ -19,52 +12,27 @@ UIXiaoLinJiaReview.OnShow = function(self, uiParams)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaReview.OnHide = function(self)
-  -- function num : 0_1
+function UIXiaoLinJiaReview:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaReview.Flush = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIXiaoLinJiaReview:Flush()
   local startSession = self.recordPos
-  while 1 do
-    while 1 do
-      if startSession ~= self.curSession then
-        (table.insert)(self.record, (self.dialogList)[startSession])
-        if ((self.dialogList)[startSession]).Jump then
-          startSession = (self.dialogList)[startSession]
-          -- DECOMPILER ERROR at PC17: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC17: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC17: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC17: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  while startSession ~= self.curSession do
+    table.insert(self.record, self.dialogList[startSession])
+    if self.dialogList[startSession].Jump then
+      startSession = self.dialogList[startSession]
+    else
+      startSession = startSession + 1
     end
-    startSession = startSession + 1
   end
-  ;
-  (self._dialogReviewScrollView):InitListView(0, function(scrollview, index)
-    -- function num : 0_2_0 , upvalues : self
+  self._dialogReviewScrollView:InitListView(0, function(scrollview, index)
     return self:_OnGetReviewDialogItem(scrollview, index)
-  end
-)
-  ;
-  (self._dialogReviewScrollView):SetListItemCount(#self.record, true)
-  ;
-  (self._dialogReviewScrollView):MovePanelToItemIndex(#self.record - 1, 0)
+  end)
+  self._dialogReviewScrollView:SetListItemCount(#self.record, true)
+  self._dialogReviewScrollView:MovePanelToItemIndex(#self.record - 1, 0)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaReview._OnGetReviewDialogItem = function(self, scrollview, index)
-  -- function num : 0_3 , upvalues : _ENV
+function UIXiaoLinJiaReview:_OnGetReviewDialogItem(scrollview, index)
   local item = scrollview:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -75,36 +43,24 @@ UIXiaoLinJiaReview._OnGetReviewDialogItem = function(self, scrollview, index)
   if luaIndex <= #self.record then
     local rowList = rowPool:GetAllSpawnList()
     local itemWidget = rowList[1]
-    local speakerIdx = ((self.record)[luaIndex]).Speaker
-    local icon = (((self.record)[luaIndex]).FaceIcon)[speakerIdx]
-    local content = ((self.record)[luaIndex]).Content
+    local speakerIdx = self.record[luaIndex].Speaker
+    local icon = self.record[luaIndex].FaceIcon[speakerIdx]
+    local content = self.record[luaIndex].Content
     itemWidget:Flush(speakerIdx, icon, content)
-    ;
-    (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
+    UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
     return item
   else
-    do
-      do return nil end
-    end
+    return nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaReview.ImgCloseOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIXiaoLinJiaReview:ImgCloseOnClick(go)
   self:Lock("UIXiaoLinJiaReview_Close")
-  ;
-  (self.anim):Play("uieffanim_UIXiaoLinJiaReview_out")
+  self.anim:Play("uieffanim_UIXiaoLinJiaReview_out")
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self
     YIELD(TT, 333)
     self:CloseDialog()
-    ;
-    (self.callback)()
+    self.callback()
     self:UnLock("UIXiaoLinJiaReview_Close")
-  end
-)
+  end)
 end
-
-

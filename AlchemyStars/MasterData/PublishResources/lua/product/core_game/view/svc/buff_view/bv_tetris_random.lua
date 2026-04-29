@@ -1,16 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_tetris_random.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewTetrisRandom", BuffViewBase)
 BuffViewTetrisRandom = BuffViewTetrisRandom
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewTetrisRandom.PlayView = function(self, TT, notify, trace)
-  -- function num : 0_0
-  local featureSvcR = (self._world):GetService("FeatureRender")
-  featureSvcR:NotifyTetrisRandom(TT, (self._buffResult):GetNewTetrisIndex(), (self._buffResult):GetNewTetrisType())
+function BuffViewTetrisRandom:PlayView(TT, notify, trace)
+  local featureSvcR = self._world:GetService("FeatureRender")
+  featureSvcR:NotifyTetrisRandom(TT, self._buffResult:GetNewTetrisIndex(), self._buffResult:GetNewTetrisType())
 end
-
-

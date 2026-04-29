@@ -1,11 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/sailing_mission/cfg_sailing_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, WayHeight = 2, BackGroundHeight = 3, AutoAdsorbPeriod = 4, ButtonScrollPeriod = 5}
+local key = {
+  ID = 1,
+  WayHeight = 2,
+  BackGroundHeight = 3,
+  AutoAdsorbPeriod = 4,
+  ButtonScrollPeriod = 5
+}
 local config = {
-{1, 360, 340, 200, 350}
+  {
+    1,
+    360,
+    340,
+    200,
+    350
+  }
 }
 return config, "ID", key
-

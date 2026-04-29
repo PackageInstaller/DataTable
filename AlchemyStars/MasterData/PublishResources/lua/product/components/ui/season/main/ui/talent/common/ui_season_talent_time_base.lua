@@ -1,136 +1,91 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/talent/common/ui_season_talent_time_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTalentTimeBase", UICustomWidget)
 UISeasonTalentTimeBase = UISeasonTalentTimeBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTalentTimeBase.SetData = function(self, endTime, callback)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonTalentTimeBase:SetData(endTime, callback)
   self._timeTex = self:GetUIComponent("UILocalizationText", "txtTime")
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   self._endTime = endTime
   self._callback = callback
   self:ShowTex()
   self:AddTimer()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTimeBase.ShowTex = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local nowTime = (math.ceil)((self._svrTimeModule):GetServerTime() * 0.001)
+function UISeasonTalentTimeBase:ShowTex()
+  local nowTime = math.ceil(self._svrTimeModule:GetServerTime() * 0.001)
   local gap = self._endTime - nowTime
   local timeTex = ""
-  if gap >= 0 then
+  if 0 <= gap then
     local minAll = gap // 60
     local min = minAll % 60
     local hourAll = minAll // 60
     local hour = hourAll % 24
     local day = hourAll // 24
-    if day and day > 0 then
-      if hour and hour > 0 then
-        timeTex = (StringTable.Get)("str_week_tower_reset_time_day_and_hour", day, hour)
+    if day and 0 < day then
+      if hour and 0 < hour then
+        timeTex = StringTable.Get("str_week_tower_reset_time_day_and_hour", day, hour)
       else
-        timeTex = (StringTable.Get)("str_week_tower_reset_time_day", day)
+        timeTex = StringTable.Get("str_week_tower_reset_time_day", day)
       end
+    elseif hour and 0 < hour then
+      if min and 0 < min then
+        timeTex = StringTable.Get("str_week_tower_reset_time_hour_and_min", hour, min)
+      else
+        timeTex = StringTable.Get("str_week_tower_reset_time_hour", hour)
+      end
+    elseif min and 0 < min then
+      timeTex = StringTable.Get("str_week_tower_reset_time_only_min", min)
     else
-      if hour and hour > 0 then
-        if min and min > 0 then
-          timeTex = (StringTable.Get)("str_week_tower_reset_time_hour_and_min", hour, min)
-        else
-          timeTex = (StringTable.Get)("str_week_tower_reset_time_hour", hour)
-        end
-      else
-        if min and min > 0 then
-          timeTex = (StringTable.Get)("str_week_tower_reset_time_only_min", min)
-        else
-          timeTex = (StringTable.Get)("str_week_tower_reset_time_only_sec")
-        end
-      end
+      timeTex = StringTable.Get("str_week_tower_reset_time_only_sec")
     end
   else
-    do
-      timeTex = (StringTable.Get)("str_week_tower_reset_time_only_sec")
-      if self._callback then
-        (self._callback)()
-        self._callback = nil
-      end
-      local showTex = (StringTable.Get)(self:Time_Tex(), timeTex)
-      ;
-      (self._timeTex):SetText(showTex)
+    timeTex = StringTable.Get("str_week_tower_reset_time_only_sec")
+    if self._callback then
+      self._callback()
+      self._callback = nil
     end
   end
+  local showTex = StringTable.Get(self:Time_Tex(), timeTex)
+  self._timeTex:SetText(showTex)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTimeBase.AddTimer = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonTalentTimeBase:AddTimer()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
-  self._timer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_2_0 , upvalues : self
+  self._timer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:ShowTex()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTimeBase.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonTalentTimeBase:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTimeBase.RichTextTag_Out_Left = function(self)
-  -- function num : 0_4
+function UISeasonTalentTimeBase:RichTextTag_Out_Left()
   return ""
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTimeBase.RichTextTag_Out_Right = function(self)
-  -- function num : 0_5
+function UISeasonTalentTimeBase:RichTextTag_Out_Right()
   return ""
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTimeBase.RichTextTag_Num_Left = function(self)
-  -- function num : 0_6
+function UISeasonTalentTimeBase:RichTextTag_Num_Left()
   return ""
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTimeBase.RichTextTag_Num_Right = function(self)
-  -- function num : 0_7
+function UISeasonTalentTimeBase:RichTextTag_Num_Right()
   return ""
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTimeBase.Set_Time_Tex = function(self, texStr)
-  -- function num : 0_8
+function UISeasonTalentTimeBase:Set_Time_Tex(texStr)
   self._timeTexStr = texStr
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTimeBase.Time_Tex = function(self)
-  -- function num : 0_9
+function UISeasonTalentTimeBase:Time_Tex()
   if self._timeTexStr then
     return self._timeTexStr
   end
   return "str_season_talent_tree_line_time_tex"
 end
-
-

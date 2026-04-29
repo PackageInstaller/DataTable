@@ -1,44 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_auto_bead_attack_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataAutoBeadAttackResult", Object)
 DataAutoBeadAttackResult = DataAutoBeadAttackResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataAutoBeadAttackResult.Constructor = function(self)
-  -- function num : 0_0
+function DataAutoBeadAttackResult:Constructor()
   self._deadEntityIDList = {}
   self._autoBeadAttackDataList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataAutoBeadAttackResult.SetDeadEntityIDList = function(self, ids)
-  -- function num : 0_1
+function DataAutoBeadAttackResult:SetDeadEntityIDList(ids)
   self._deadEntityIDList = ids
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataAutoBeadAttackResult.GetDeadEntityIDList = function(self)
-  -- function num : 0_2
+function DataAutoBeadAttackResult:GetDeadEntityIDList()
   return self._deadEntityIDList
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataAutoBeadAttackResult.SetAutoBeadAttackResultAtkDataList = function(self, dataList)
-  -- function num : 0_3
+function DataAutoBeadAttackResult:SetAutoBeadAttackResultAtkDataList(dataList)
   self._autoBeadAttackDataList = dataList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataAutoBeadAttackResult.GetAutoBeadAttackResultAtkDataList = function(self)
-  -- function num : 0_4
+function DataAutoBeadAttackResult:GetAutoBeadAttackResultAtkDataList()
   return self._autoBeadAttackDataList
 end
-
-

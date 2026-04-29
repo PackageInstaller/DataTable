@@ -1,296 +1,218 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_diff_mission/ui_diff_mission_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local DiffMissionChapterStatus = {Lock = 0, Open = 1, Finish = 2}
+local DiffMissionChapterStatus = {
+  Lock = 0,
+  Open = 1,
+  Finish = 2
+}
 _enum("DiffMissionChapterStatus", DiffMissionChapterStatus)
-local DiffMissionNodeStatus = {Lock = 0, Open = 1, Finish = 2}
+local DiffMissionNodeStatus = {
+  Lock = 0,
+  Open = 1,
+  Finish = 2
+}
 _enum("DiffMissionNodeStatus", DiffMissionNodeStatus)
-local DiffMissionType = {Normal = 0, Boss = 1, Next = 2}
+local DiffMissionType = {
+  Normal = 0,
+  Boss = 1,
+  Next = 2
+}
 _enum("DiffMissionType", DiffMissionType)
-local EntiesType = {ElementType_None = 3001, ElementType_Prof = 3002, ElementType_Force = 3004, ElementType_Star = 3005, ElementType_Elem = 3006, ElementType_Level_Count = 3007, ElementType_Round_Count = 3008}
+local EntiesType = {
+  ElementType_None = 3001,
+  ElementType_Prof = 3002,
+  ElementType_Force = 3004,
+  ElementType_Star = 3005,
+  ElementType_Elem = 3006,
+  ElementType_Level_Count = 3007,
+  ElementType_Round_Count = 3008
+}
 _enum("EntiesType", EntiesType)
-local EntiesCompareType = {ElementCompareType_All = 1, ElementCompareType_No = 2, ElementCompareType_Less = 3, ElementCompareType_More = 4, ElementCompareType_Equal = 5}
+local EntiesCompareType = {
+  ElementCompareType_All = 1,
+  ElementCompareType_No = 2,
+  ElementCompareType_Less = 3,
+  ElementCompareType_More = 4,
+  ElementCompareType_Equal = 5
+}
 _enum("EntiesCompareType", EntiesCompareType)
 _class("DiffMissionNode", Object)
 DiffMissionNode = DiffMissionNode
--- DECOMPILER ERROR at PC54: Confused about usage of register: R5 in 'UnsetPending'
 
-DiffMissionNode.Constructor = function(self, nodeID, chapterID, wayPointID, info, next)
-  -- function num : 0_0 , upvalues : _ENV, DiffMissionNodeStatus
+function DiffMissionNode:Constructor(nodeID, chapterID, wayPointID, info, next)
   self._wayPointID = wayPointID
   self._chapterID = chapterID
   if next then
     self._isNext = true
-    return 
+    return
   else
     self._isNext = false
   end
   self._nodeID = nodeID
   self._info = info
   self._bossCg = ""
-  self._cfg = (Cfg.cfg_difficulty_parent_mission)[nodeID]
+  self._cfg = Cfg.cfg_difficulty_parent_mission[nodeID]
   if not self._cfg then
-    (Log.error)("###[DiffMissionNode] cfg is nil ! id --> ", nodeID)
+    Log.error("###[DiffMissionNode] cfg is nil ! id --> ", nodeID)
   end
-  self._cups = (self._info).complete_enties
-  self._allCups = (self._cfg).Enties
+  self._cups = self._info.complete_enties
+  self._allCups = self._cfg.Enties
   self._lock = DiffMissionNodeStatus.Lock
   self._stages = {}
-  for i = 1, #(self._cfg).SubMissionList do
-    local stageid = ((self._cfg).SubMissionList)[i]
-    local data = nil
+  for i = 1, #self._cfg.SubMissionList do
+    local stageid = self._cfg.SubMissionList[i]
+    local data
     if info and info.sub_mission_infos then
       for j = 1, #info.sub_mission_infos do
-        if ((info.sub_mission_infos)[j]).mission_id == stageid then
-          data = (info.sub_mission_infos)[j]
+        if info.sub_mission_infos[j].mission_id == stageid then
+          data = info.sub_mission_infos[j]
           break
         end
       end
     end
-    do
-      do
-        local stage = DiffMissionStage:New(stageid, data)
-        -- DECOMPILER ERROR at PC68: Confused about usage of register: R13 in 'UnsetPending'
-
-        ;
-        (self._stages)[i] = stage
-        -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    local stage = DiffMissionStage:New(stageid, data)
+    self._stages[i] = stage
   end
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionNode.ChapterID = function(self)
-  -- function num : 0_1
+function DiffMissionNode:ChapterID()
   return self._chapterID
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionNode.Boss = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_diff_mission_way_point)[self._wayPointID]
+function DiffMissionNode:Boss()
+  local cfg = Cfg.cfg_diff_mission_way_point[self._wayPointID]
   if cfg.BossCg then
     return cfg.BossCg
   end
   return self._bossCg
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionNode.SetNext = function(self, next)
-  -- function num : 0_3
+function DiffMissionNode:SetNext(next)
   self._isNext = next
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionNode.Next = function(self)
-  -- function num : 0_4
+function DiffMissionNode:Next()
   return self._isNext
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionNode.SetLockState = function(self, state)
-  -- function num : 0_5
+function DiffMissionNode:SetLockState(state)
   self._lock = state
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionNode.Status = function(self)
-  -- function num : 0_6
-  return (self._info).status
+function DiffMissionNode:Status()
+  return self._info.status
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionNode.ID = function(self)
-  -- function num : 0_7
+function DiffMissionNode:ID()
   return self._nodeID
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionNode.WayPointID = function(self)
-  -- function num : 0_8
+function DiffMissionNode:WayPointID()
   return self._wayPointID
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionNode.PreMission = function(self)
-  -- function num : 0_9
-  return (self._cfg).PreMission
+function DiffMissionNode:PreMission()
+  return self._cfg.PreMission
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionNode.CupNum = function(self)
-  -- function num : 0_10
+function DiffMissionNode:CupNum()
   return #self._cups, #self._allCups
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionNode.AllCups = function(self)
-  -- function num : 0_11
-  if not self._allCups then
-    return {}
-  end
+function DiffMissionNode:AllCups()
+  return self._allCups or {}
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionNode.Cups = function(self)
-  -- function num : 0_12
-  if not self._cups then
-    return {}
-  end
+function DiffMissionNode:Cups()
+  return self._cups or {}
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionNode.Idx = function(self)
-  -- function num : 0_13
+function DiffMissionNode:Idx()
   return "idx tmp"
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionNode.Name = function(self)
-  -- function num : 0_14
-  return (self._cfg).Name
+function DiffMissionNode:Name()
+  return self._cfg.Name
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionNode.NodeName = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local cfg = (Cfg.cfg_diff_mission_way_point)[self._wayPointID]
+function DiffMissionNode:NodeName()
+  local cfg = Cfg.cfg_diff_mission_way_point[self._wayPointID]
   if cfg and cfg.Name then
     return cfg.Name
   end
   return ""
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionNode.StageList = function(self)
-  -- function num : 0_16
+function DiffMissionNode:StageList()
   return self._stages
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionNode.Lock = function(self)
-  -- function num : 0_17
+function DiffMissionNode:Lock()
   return self._lock
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionNode.Type = function(self)
-  -- function num : 0_18
-  return (self._cfg).Type
+function DiffMissionNode:Type()
+  return self._cfg.Type
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionNode.Pos = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local cfg = (Cfg.cfg_diff_mission_way_point)[self._wayPointID]
+function DiffMissionNode:Pos()
+  local cfg = Cfg.cfg_diff_mission_way_point[self._wayPointID]
   if cfg.Pos then
-    return Vector2((cfg.Pos)[1], (cfg.Pos)[2])
+    return Vector2(cfg.Pos[1], cfg.Pos[2])
   end
 end
 
 _class("DiffMissionChapter", Object)
 DiffMissionChapter = DiffMissionChapter
--- DECOMPILER ERROR at PC120: Confused about usage of register: R5 in 'UnsetPending'
 
-DiffMissionChapter.Constructor = function(self, id, missionChapterID)
-  -- function num : 0_20 , upvalues : _ENV
+function DiffMissionChapter:Constructor(id, missionChapterID)
   self._id = id
   self._missionid = missionChapterID
   self._nodes = {}
-  local cfg = (Cfg.cfg_difficulty_mission_chapter)({DifficultyChapterID = id})
+  local cfg = Cfg.cfg_difficulty_mission_chapter({DifficultyChapterID = id})
   if cfg then
     for i = 1, #cfg do
-      -- DECOMPILER ERROR at PC21: Confused about usage of register: R8 in 'UnsetPending'
-
-      (self._nodes)[#self._nodes + 1] = (cfg[i]).ParentMissionID
+      self._nodes[#self._nodes + 1] = cfg[i].ParentMissionID
     end
   end
 end
 
--- DECOMPILER ERROR at PC123: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionChapter.ID = function(self)
-  -- function num : 0_21
+function DiffMissionChapter:ID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionChapter.MissionChapterID = function(self)
-  -- function num : 0_22
+function DiffMissionChapter:MissionChapterID()
   return self._missionid
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionChapter.Name = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local cfg = (Cfg.cfg_difficulty_mission_chapter_desc)[self._id]
+function DiffMissionChapter:Name()
+  local cfg = Cfg.cfg_difficulty_mission_chapter_desc[self._id]
   return cfg.Name
 end
 
--- DECOMPILER ERROR at PC132: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionChapter.Icon = function(self)
-  -- function num : 0_24
+function DiffMissionChapter:Icon()
   return ""
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionChapter.Nodes = function(self)
-  -- function num : 0_25
+function DiffMissionChapter:Nodes()
   return self._nodes
 end
 
--- DECOMPILER ERROR at PC138: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionChapter.SetLock = function(self, lock)
-  -- function num : 0_26
+function DiffMissionChapter:SetLock(lock)
   self._lock = lock
 end
 
--- DECOMPILER ERROR at PC141: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionChapter.Lock = function(self)
-  -- function num : 0_27
+function DiffMissionChapter:Lock()
   return self._lock
 end
 
 _class("DiffMissionStage", Object)
 DiffMissionStage = DiffMissionStage
--- DECOMPILER ERROR at PC150: Confused about usage of register: R5 in 'UnsetPending'
 
-DiffMissionStage.Constructor = function(self, stageID, info)
-  -- function num : 0_28 , upvalues : DiffMissionNodeStatus, _ENV, DiffMissionType
+function DiffMissionStage:Constructor(stageID, info)
   self._status = DiffMissionNodeStatus.Lock
   self._stageID = stageID
-  local cfg = (Cfg.cfg_difficulty_sub_mission)[self._stageID]
+  local cfg = Cfg.cfg_difficulty_sub_mission[self._stageID]
   if not cfg then
-    (Log.error)("###[DiffMissionStage] cfg is nil ! id --> ", self._stageID)
+    Log.error("###[DiffMissionStage] cfg is nil ! id --> ", self._stageID)
   end
   self._levelID = cfg.FightLevel
   self._stageName = cfg.MissionName
@@ -304,68 +226,40 @@ DiffMissionStage.Constructor = function(self, stageID, info)
     team = info.pet_list
   end
   self._team = Team:New()
-  ;
-  (self._team):Init(1, "", team)
+  self._team:Init(1, "", team)
   self._RecommendAwaken = cfg.RecommendAwaken or 0
   self._RecommendLV = cfg.RecommendLV or 0
 end
 
--- DECOMPILER ERROR at PC153: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionStage.ID = function(self)
-  -- function num : 0_29
+function DiffMissionStage:ID()
   return self._stageID
 end
 
--- DECOMPILER ERROR at PC156: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionStage.Team = function(self)
-  -- function num : 0_30
+function DiffMissionStage:Team()
   return self._team
 end
 
--- DECOMPILER ERROR at PC159: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionStage.ClearTeam = function(self)
-  -- function num : 0_31
+function DiffMissionStage:ClearTeam()
   local team = {}
-  ;
-  (self._team):Init(1, "", team)
+  self._team:Init(1, "", team)
 end
 
--- DECOMPILER ERROR at PC162: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionStage.Type = function(self)
-  -- function num : 0_32
+function DiffMissionStage:Type()
   return self._type
 end
 
--- DECOMPILER ERROR at PC165: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionStage.Name = function(self)
-  -- function num : 0_33
+function DiffMissionStage:Name()
   return self._stageName
 end
 
--- DECOMPILER ERROR at PC168: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionStage.LevelID = function(self)
-  -- function num : 0_34
+function DiffMissionStage:LevelID()
   return self._levelID
 end
 
--- DECOMPILER ERROR at PC171: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionStage.RecommendLV = function(self)
-  -- function num : 0_35
+function DiffMissionStage:RecommendLV()
   return self._RecommendLV
 end
 
--- DECOMPILER ERROR at PC174: Confused about usage of register: R5 in 'UnsetPending'
-
-DiffMissionStage.RecommendAwaken = function(self)
-  -- function num : 0_36
+function DiffMissionStage:RecommendAwaken()
   return self._RecommendAwaken
 end
-
-

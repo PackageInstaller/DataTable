@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_attribute_compare_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAttributeCompareItem", UICustomWidget)
 UIAttributeCompareItem = UIAttributeCompareItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAttributeCompareItem.Constructor = function(self)
-  -- function num : 0_0
+function UIAttributeCompareItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAttributeCompareItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIAttributeCompareItem:OnShow(uiParams)
   self._uiPetElementAtlas = self:GetAsset("UIPetUpLevel.spriteatlas", LoadType.SpriteAtlas)
   self._attIcon = self:GetUIComponent("Image", "attIcon")
   self._attName = self:GetUIComponent("UILocalizationText", "attName")
@@ -34,12 +24,19 @@ UIAttributeCompareItem.OnShow = function(self, uiParams)
   self._addedValueGo = self:GetGameObject("addedValue")
   self._changed = false
   self.attInfos = {
-[1] = {name = "str_pet_config_attack_full", icon = "spirit_xiangqing_icon5"}
-, 
-[2] = {name = "str_pet_config_defence_full", icon = "spirit_xiangqing_icon3"}
-, 
-[3] = {name = "str_pet_config_health_full", icon = "spirit_xiangqing_icon4"}
-}
+    [1] = {
+      name = "str_pet_config_attack_full",
+      icon = "spirit_xiangqing_icon5"
+    },
+    [2] = {
+      name = "str_pet_config_defence_full",
+      icon = "spirit_xiangqing_icon3"
+    },
+    [3] = {
+      name = "str_pet_config_health_full",
+      icon = "spirit_xiangqing_icon4"
+    }
+  }
   self._animFirstName = "uieff_UpLevel_1"
   self._animSecondName = "uieff_UpLevel_2"
   self._animThirdName = "uieff_UpLevel_3"
@@ -49,146 +46,78 @@ UIAttributeCompareItem.OnShow = function(self, uiParams)
   self._animTime = 0.5
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAttributeCompareItem.OnLevelUpAttValueChanged = function(self, rate)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAttributeCompareItem:OnLevelUpAttValueChanged(rate)
   local curValue = (self._nextValue - self._lastValue) * rate + self._lastValue
-  local showValue = (math.floor)(curValue)
-  ;
-  (self._nextAttValue):SetText(showValue)
+  local showValue = math.floor(curValue)
+  self._nextAttValue:SetText(showValue)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAttributeCompareItem.StartPlayAttributeAmin = function(self)
-  -- function num : 0_3
+function UIAttributeCompareItem:StartPlayAttributeAmin()
   self._timer = 0
   self:SetAddAttributePanelStatus(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAttributeCompareItem.UpdateAttributeAnim = function(self, deltTime)
-  -- function num : 0_4 , upvalues : _ENV
+function UIAttributeCompareItem:UpdateAttributeAnim(deltTime)
   local changeValue = self._nextValue - self._lastValue
   if changeValue <= 0 then
     return true
   end
   local speed = changeValue / self._timer
   self._timer = self._timer + deltTime
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-  if self._animTime <= self._timer then
-    (self._attValue).text = self._nextValue
+  if self._timer >= self._animTime then
+    self._attValue.text = self._nextValue
     return true
   end
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._attValue).text = (math.floor)(self._lastValue + changeValue * self._timer / self._animTime)
+  self._attValue.text = math.floor(self._lastValue + changeValue * self._timer / self._animTime)
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAttributeCompareItem.SetAddAttributePanelStatus = function(self, status)
-  -- function num : 0_5
-  (self._arrowGo):SetActive(status)
-  ;
-  (self._nextAttValueGo):SetActive(status)
-  ;
-  (self._addedValueGo):SetActive(status)
+function UIAttributeCompareItem:SetAddAttributePanelStatus(status)
+  self._arrowGo:SetActive(status)
+  self._nextAttValueGo:SetActive(status)
+  self._addedValueGo:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAttributeCompareItem.ResetUIPostion = function(self)
-  -- function num : 0_6
+function UIAttributeCompareItem:ResetUIPostion()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAttributeCompareItem.SetData = function(self, attInfo)
-  -- function num : 0_7 , upvalues : _ENV
+function UIAttributeCompareItem:SetData(attInfo)
   self:SetAddAttributePanelStatus(true)
-  if self._player and (self._player):IsPlaying() then
-    (self._player):Stop()
+  if self._player and self._player:IsPlaying() then
+    self._player:Stop()
   end
-  local info = (self.attInfos)[attInfo.attType]
-  local name = (StringTable.Get)(info.name)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._attName).text = name
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._nextAttName).text = name
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._attIcon).sprite = (self._uiPetElementAtlas):GetSprite(info.icon)
+  local info = self.attInfos[attInfo.attType]
+  local name = StringTable.Get(info.name)
+  self._attName.text = name
+  self._nextAttName.text = name
+  self._attIcon.sprite = self._uiPetElementAtlas:GetSprite(info.icon)
   self._lastValue = attInfo.CurAttValue
   self._nextValue = attInfo.NextAttValue
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._attValue).text = attInfo.CurAttValue
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._nextAttValue).text = attInfo.NextAttValue
+  self._attValue.text = attInfo.CurAttValue
+  self._nextAttValue.text = attInfo.NextAttValue
   local added = attInfo.NextAttValue - attInfo.CurAttValue
-  if added > 0 then
+  if 0 < added then
     self._changed = true
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._nextAttValue).color = Color(1, 0.94117647058824, 0.24705882352941, 1)
-    ;
-    (self._addedValue):SetText("+" .. added)
-    ;
-    ((self._addedValue).gameObject):SetActive(true)
+    self._nextAttValue.color = Color(1, 0.9411764705882353, 0.24705882352941178, 1)
+    self._addedValue:SetText("+" .. added)
+    self._addedValue.gameObject:SetActive(true)
   else
     self._changed = false
-    -- DECOMPILER ERROR at PC75: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._nextAttValue).color = Color(1, 1, 1, 1)
-    ;
-    ((self._addedValue).gameObject):SetActive(false)
+    self._nextAttValue.color = Color(1, 1, 1, 1)
+    self._addedValue.gameObject:SetActive(false)
   end
   self._nextAtt = attInfo.CurAttValue
   if self._reseted == false then
     self._reseted = true
-    -- DECOMPILER ERROR at PC92: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._nextAttValueRect).anchoredPosition = Vector2(602.5, -16)
-    -- DECOMPILER ERROR at PC98: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._addedValueRect).anchoredPosition = Vector2(842, -23)
-    -- DECOMPILER ERROR at PC106: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._arrowImg).color = Color(1, 1, 1, 1)
-    -- DECOMPILER ERROR at PC108: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._nextValueAlpha).alpha = 1
-    -- DECOMPILER ERROR at PC110: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._addValueAlpha).alpha = 1
+    self._nextAttValueRect.anchoredPosition = Vector2(602.5, -16)
+    self._addedValueRect.anchoredPosition = Vector2(842, -23)
+    self._arrowImg.color = Color(1, 1, 1, 1)
+    self._nextValueAlpha.alpha = 1
+    self._addValueAlpha.alpha = 1
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAttributeCompareItem.PlayAnimFirst = function(self, yieldTime)
-  -- function num : 0_8 , upvalues : _ENV
+function UIAttributeCompareItem:PlayAnimFirst(yieldTime)
   if self._changed then
     self._reseted = false
     local tls = {}
@@ -197,23 +126,19 @@ UIAttributeCompareItem.PlayAnimFirst = function(self, yieldTime)
     end
     tls[#tls + 1] = EZTL_PlayAnimation:New(self._anim, self._animFirstName, "升级增加值move")
     self._tl = EZTL_Sequence:New(tls, "升级总时间线-UIAttributeCompareItem-first")
-    ;
-    (self._player):Play(self._tl)
+    self._player:Play(self._tl)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAttributeCompareItem.PlayAnimSecond = function(self, yieldTime)
-  -- function num : 0_9 , upvalues : _ENV
+function UIAttributeCompareItem:PlayAnimSecond(yieldTime)
   if self._changed then
     local tls = {}
     local lastYieldTime = 200 - yieldTime
-    if yieldTime and yieldTime > 0 then
+    if yieldTime and 0 < yieldTime then
       tls[#tls + 1] = EZTL_Wait:New(yieldTime, "等待动画" .. yieldTime .. "毫秒")
     end
     tls[#tls + 1] = EZTL_PlayAnimation:New(self._anim, self._animSecondName, "下级数据抖动")
-    if lastYieldTime and lastYieldTime > 0 then
+    if lastYieldTime and 0 < lastYieldTime then
       tls[#tls + 1] = EZTL_Wait:New(lastYieldTime, "等待动画2" .. lastYieldTime .. "毫秒")
     end
     local tls2 = {}
@@ -221,18 +146,13 @@ UIAttributeCompareItem.PlayAnimSecond = function(self, yieldTime)
     local tls3 = {}
     tls3[#tls3 + 1] = EZTL_Wait:New(400, "等待时间刷新left值")
     tls3[#tls3 + 1] = EZTL_Callback:New(function()
-    -- function num : 0_9_0 , upvalues : self
-    (self._attValue):SetText(self._nextValue)
-  end
-, "刷新left值")
+      self._attValue:SetText(self._nextValue)
+    end, "刷新left值")
     local tls_changeValue = EZTL_Sequence:New(tls3)
     tls2[#tls2 + 1] = tls_changeValue
     local tls_par = EZTL_Parallel:New(tls2, EZTL_EndTag.All, nil, "三阶并行动画")
     tls[#tls + 1] = tls_par
     self._tl = EZTL_Sequence:New(tls, "升级总时间线-UIAttributeCompareItem-second")
-    ;
-    (self._player):Play(self._tl)
+    self._player:Play(self._tl)
   end
 end
-
-

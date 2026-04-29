@@ -1,50 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_award_conversion_one_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardAwardConversionOneItem", UICustomWidget)
 UIDrawCardAwardConversionOneItem = UIDrawCardAwardConversionOneItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardAwardConversionOneItem.OnShow = function(self)
-  -- function num : 0_0
-  self._drawCardAwardConversionRefMap = {[1] = "one", [2] = "two", [3] = "three", [4] = "four", [5] = "five"}
+function UIDrawCardAwardConversionOneItem:OnShow()
+  self._drawCardAwardConversionRefMap = {
+    [1] = "one",
+    [2] = "two",
+    [3] = "three",
+    [4] = "four",
+    [5] = "five"
+  }
   self.detail = self:GetUIComponent("UISelectObjectPath", "detail")
   self.detailLayout = self:GetUIComponent("GridLayoutGroup", "detail")
   self.topText = self:GetGameObject("topText")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardConversionOneItem.SetData = function(self, data, index, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDrawCardAwardConversionOneItem:SetData(data, index, callback)
   local conversecfg = Cfg.cfg_drawcard_conversion_data
-  local key = (self._drawCardAwardConversionRefMap)[index]
+  local key = self._drawCardAwardConversionRefMap[index]
   local itemdata = data[key]
   local count = #itemdata
-  ;
-  (self.detail):SpawnObjects("UIDrawCardAwardConversionOneDetailItem", count)
+  self.detail:SpawnObjects("UIDrawCardAwardConversionOneDetailItem", count)
   if count == 2 then
-    (self.topText):SetActive(false)
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((self.detailLayout).padding).top = 0
+    self.topText:SetActive(false)
+    self.detailLayout.padding.top = 0
   else
-    ;
-    (self.topText):SetActive(true)
+    self.topText:SetActive(true)
   end
-  local items = (self.detail):GetAllSpawnList()
-  for index,value in ipairs(items) do
+  local items = self.detail:GetAllSpawnList()
+  for index, value in ipairs(items) do
     value:SetData(itemdata[index])
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardConversionOneItem.OnHide = function(self)
-  -- function num : 0_2
+function UIDrawCardAwardConversionOneItem:OnHide()
 end
-
-

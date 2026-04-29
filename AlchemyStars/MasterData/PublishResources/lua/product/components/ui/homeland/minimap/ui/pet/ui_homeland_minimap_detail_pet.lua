@@ -1,77 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/pet/ui_homeland_minimap_detail_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapDetailPet", UIHomelandMinimapDetailBase)
 UIHomelandMinimapDetailPet = UIHomelandMinimapDetailPet
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapDetailPet.OnShow = function(self)
-  -- function num : 0_0
+function UIHomelandMinimapDetailPet:OnShow()
   self._iconLoader = self:GetUIComponent("RawImageLoader", "HeadIcon")
   self._nameTxt = self:GetUIComponent("UILocalizationText", "NameTxt")
   self._contentTxt = self:GetUIComponent("UILocalizationText", "ContentTxt")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailPet.OnInitDone = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self.pet = (self:GetIconData()):GetParam()
-  local skinID = (self.pet):ClothSkinID()
-  local skinCfg = (Cfg.cfg_pet_skin)[skinID]
-  local petCfg = (Cfg.cfg_pet)[(self.pet):TemplateID()]
-  ;
-  (self._iconLoader):LoadImage(skinCfg.Head)
-  local petName = (StringTable.Get)(petCfg.Name)
-  ;
-  (self._nameTxt):SetText(petName)
-  local behaviorType = ((self.pet):GetPetBehavior()):GetCurBehaviorType()
+function UIHomelandMinimapDetailPet:OnInitDone()
+  self.pet = self:GetIconData():GetParam()
+  local skinID = self.pet:ClothSkinID()
+  local skinCfg = Cfg.cfg_pet_skin[skinID]
+  local petCfg = Cfg.cfg_pet[self.pet:TemplateID()]
+  self._iconLoader:LoadImage(skinCfg.Head)
+  local petName = StringTable.Get(petCfg.Name)
+  self._nameTxt:SetText(petName)
+  local behaviorType = self.pet:GetPetBehavior():GetCurBehaviorType()
   if behaviorType == HomelandPetBehaviorType.TreasureIdle then
-    (self._contentTxt):SetText((StringTable.Get)("str_homeland_minimap_pet_treasure", petName))
+    self._contentTxt:SetText(StringTable.Get("str_homeland_minimap_pet_treasure", petName))
+  elseif behaviorType == HomelandPetBehaviorType.StoryWaitingBuild or behaviorType == HomelandPetBehaviorType.StoryWaitingBuildStand or behaviorType == HomelandPetBehaviorType.StoryWaitingStand or behaviorType == HomelandPetBehaviorType.StoryWaitingWalk then
+    self._contentTxt:SetText(StringTable.Get("str_homeland_minimap_pet_event", petName))
   else
-    if behaviorType == HomelandPetBehaviorType.StoryWaitingBuild or behaviorType == HomelandPetBehaviorType.StoryWaitingBuildStand or behaviorType == HomelandPetBehaviorType.StoryWaitingStand or behaviorType == HomelandPetBehaviorType.StoryWaitingWalk then
-      (self._contentTxt):SetText((StringTable.Get)("str_homeland_minimap_pet_event", petName))
-    else
-      ;
-      (self._contentTxt):SetText((StringTable.Get)(petCfg.Desc))
-    end
+    self._contentTxt:SetText(StringTable.Get(petCfg.Desc))
   end
   self._titleRect = self:GetUIComponent("RectTransform", "Title")
   if self._titleRect then
-    local titleWidth = (self._nameTxt).preferredWidth
-    if titleWidth > 350 then
+    local titleWidth = self._nameTxt.preferredWidth
+    if 350 < titleWidth then
       titleWidth = 350
     end
-    -- DECOMPILER ERROR at PC99: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._titleRect).sizeDelta = Vector2(titleWidth, ((self._titleRect).sizeDelta).y)
+    self._titleRect.sizeDelta = Vector2(titleWidth, self._titleRect.sizeDelta.y)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailPet.ExitOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapCloseDetailUI)
+function UIHomelandMinimapDetailPet:ExitOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapCloseDetailUI)
   self:OnClose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailPet.BtnBGOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapCloseDetailUI)
+function UIHomelandMinimapDetailPet:BtnBGOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapCloseDetailUI)
   self:OnClose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailPet.GetCloseAnimtionName = function(self)
-  -- function num : 0_4
+function UIHomelandMinimapDetailPet:GetCloseAnimtionName()
   return "UIHomelandMinimapDetailPet_out"
 end
-
-

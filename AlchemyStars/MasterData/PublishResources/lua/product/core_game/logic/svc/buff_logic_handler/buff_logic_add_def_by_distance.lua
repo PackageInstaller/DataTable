@@ -1,85 +1,63 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_def_by_distance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddDefByDistance", BuffLogicBase)
 BuffLogicAddDefByDistance = BuffLogicAddDefByDistance
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddDefByDistance.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddDefByDistance:Constructor(buffInstance, logicParam)
   self._mul = logicParam.mul
   self._referenceTrapID = logicParam.referenceTrapID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddDefByDistance.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local gridPos = nil
-  if type(notify.GetPos) == "function" then
+function BuffLogicAddDefByDistance:DoLogic(notify)
+  local gridPos
+  if "function" == type(notify.GetPos) then
     gridPos = notify:GetPos()
-  else
-    if type(notify.GetNotifyEntity) == "function" then
-      local eNotifier = notify:GetNotifyEntity()
-      gridPos = eNotifier:GetGridPosition()
+  elseif "function" == type(notify.GetNotifyEntity) then
+    local eNotifier = notify:GetNotifyEntity()
+    gridPos = eNotifier:GetGridPosition()
+  end
+  local trapServiceLogic = self._world:GetService("TrapLogic")
+  local group = trapServiceLogic:GetTrapGroup()
+  local referenceTrapCmpt, referenceTrapEntity
+  local traps = group:GetEntities()
+  for _, entity in ipairs(traps) do
+    local cTrap = entity:Trap()
+    if not entity:HasDeadMark() and cTrap:GetTrapID() == self._referenceTrapID then
+      referenceTrapCmpt = cTrap
+      referenceTrapEntity = entity
+      break
     end
   end
-  do
-    local trapServiceLogic = (self._world):GetService("TrapLogic")
-    local group = (trapServiceLogic:GetTrapGroup())
-    local referenceTrapCmpt, referenceTrapEntity = nil, nil
-    local traps = group:GetEntities()
-    for _,entity in ipairs(traps) do
-      local cTrap = entity:Trap()
-      if not entity:HasDeadMark() and cTrap:GetTrapID() == self._referenceTrapID then
-        referenceTrapCmpt = cTrap
-        referenceTrapEntity = entity
-        break
-      end
+  if referenceTrapCmpt then
+    local gridLocation = referenceTrapEntity:GetGridPosition()
+    local distance = Vector2.Distance(gridLocation, gridPos)
+    local intDistance = math.floor(distance + 0.5)
+    local mulVal = self._mul[intDistance]
+    if not mulVal then
+      return
     end
-    do
-      if referenceTrapCmpt then
-        local gridLocation = referenceTrapEntity:GetGridPosition()
-        local distance = (Vector2.Distance)(gridLocation, gridPos)
-        local intDistance = (math.floor)(distance + 0.5)
-        local mulVal = (self._mul)[intDistance]
-        if not mulVal then
-          return 
-        end
-        local cAttribute = (self._entity):Attributes()
-        local def = cAttribute:GetAttribute("Defense")
-        local buffLogicService = (self._world):GetService("BuffLogic")
-        local buffSeqID = self:GetBuffSeq()
-        buffLogicService:RemoveBaseDefence(self._entity, buffSeqID, ModifyBaseDefenceType.DefenceConstantFix)
-        local defAdded = (math.floor)(mulVal * def)
-        buffLogicService:ChangeBaseDefence(self._entity, buffSeqID, ModifyBaseDefenceType.DefenceConstantFix, defAdded)
-        do
-          if (self._entity):HasPet() then
-            local teamEntity = ((self._entity):Pet()):GetOwnerTeamEntity()
-            self:UpdateTeamDefenceLogic(teamEntity)
-          end
-          local result = {defAdded = defAdded}
-        end
-      end
+    local cAttribute = self._entity:Attributes()
+    local def = cAttribute:GetAttribute("Defense")
+    local buffLogicService = self._world:GetService("BuffLogic")
+    local buffSeqID = self:GetBuffSeq()
+    buffLogicService:RemoveBaseDefence(self._entity, buffSeqID, ModifyBaseDefenceType.DefenceConstantFix)
+    local defAdded = math.floor(mulVal * def)
+    buffLogicService:ChangeBaseDefence(self._entity, buffSeqID, ModifyBaseDefenceType.DefenceConstantFix, defAdded)
+    if self._entity:HasPet() then
+      local teamEntity = self._entity:Pet():GetOwnerTeamEntity()
+      self:UpdateTeamDefenceLogic(teamEntity)
     end
+    local result = {defAdded = defAdded}
   end
 end
 
 _class("BuffLogicUndoAddDefByDistance", BuffLogicBase)
 BuffLogicUndoAddDefByDistance = BuffLogicUndoAddDefByDistance
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUndoAddDefByDistance.DoLogic = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffLogicUndoAddDefByDistance:DoLogic()
   local buffSeqID = self:GetBuffSeq()
-  local buffLogicService = (self._world):GetService("BuffLogic")
+  local buffLogicService = self._world:GetService("BuffLogic")
   buffLogicService:RemoveBaseDefence(self._entity, buffSeqID, ModifyBaseDefenceType.DefenceConstantFix)
-  if (self._entity):HasPet() then
-    local teamEntity = ((self._entity):Pet()):GetOwnerTeamEntity()
+  if self._entity:HasPet() then
+    local teamEntity = self._entity:Pet():GetOwnerTeamEntity()
     self:UpdateTeamDefenceLogic(teamEntity)
   end
 end
-
-

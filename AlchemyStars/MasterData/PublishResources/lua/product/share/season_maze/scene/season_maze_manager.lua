@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/scene/season_maze_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeManager", Object)
 SeasonMazeManager = SeasonMazeManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeManager.Constructor = function(self, mazeID)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMazeManager:Constructor(mazeID)
   self._seasonMazeID = mazeID
-  self._module = (GameGlobal.GetModule)(SeasonMazeModule)
+  self._module = GameGlobal.GetModule(SeasonMazeModule)
   self._factory = SMazeFactory:New(self)
   self._seasonMazeRelicManager = SMazeRelicManager:New(self)
   self._seasonMazeCoverManager = SeasonMazeCoverManager:New()
@@ -24,300 +17,185 @@ SeasonMazeManager.Constructor = function(self, mazeID)
   self._seasonEftPlayer = SMazeEffectPlayer:New(self)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.Init = function(self)
-  -- function num : 0_1
-  (self._seasonMazeRelicManager):Init(self._seasonMazeID)
-  ;
-  (self._seasonMazeCoverManager):OnInit()
-  ;
-  (self._seasonMazeSceneManager):OnInit()
-  ;
-  (self._mazeMapManager):OnInit(self._seasonMazeSceneManager)
-  ;
-  (self._seasonMazeCameraManager):OnInit(self._seasonMazeID)
-  ;
-  (self._seasonMazeInputManager):OnInit()
-  ;
-  (self._seasonMazeAudioManager):OnInit()
-  ;
-  (self._seasonMazePlayer):OnInit(self._seasonMazeID)
-  ;
-  (self._stateMachine):Init()
+function SeasonMazeManager:Init()
+  self._seasonMazeRelicManager:Init(self._seasonMazeID)
+  self._seasonMazeCoverManager:OnInit()
+  self._seasonMazeSceneManager:OnInit()
+  self._mazeMapManager:OnInit(self._seasonMazeSceneManager)
+  self._seasonMazeCameraManager:OnInit(self._seasonMazeID)
+  self._seasonMazeInputManager:OnInit()
+  self._seasonMazeAudioManager:OnInit()
+  self._seasonMazePlayer:OnInit(self._seasonMazeID)
+  self._stateMachine:Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.GetCurState = function(self)
-  -- function num : 0_2
-  return (self._stateMachine):CurState()
+function SeasonMazeManager:GetCurState()
+  return self._stateMachine:CurState()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.Update = function(self, dt)
-  -- function num : 0_3
-  (self._seasonMazeCoverManager):Update(dt)
-  ;
-  (self._seasonMazeSceneManager):Update(dt)
-  ;
-  (self._seasonMazeCameraManager):Update(dt)
-  ;
-  (self._seasonMazeInputManager):Update(dt)
-  ;
-  (self._seasonMazeAudioManager):Update(dt)
-  ;
-  (self._mazeMapManager):Update(dt)
-  ;
-  (self._stateMachine):Update(dt)
-  ;
-  (self._seasonMazePlayer):Update(dt)
-  ;
-  (self._seasonEftPlayer):Update(dt)
+function SeasonMazeManager:Update(dt)
+  self._seasonMazeCoverManager:Update(dt)
+  self._seasonMazeSceneManager:Update(dt)
+  self._seasonMazeCameraManager:Update(dt)
+  self._seasonMazeInputManager:Update(dt)
+  self._seasonMazeAudioManager:Update(dt)
+  self._mazeMapManager:Update(dt)
+  self._stateMachine:Update(dt)
+  self._seasonMazePlayer:Update(dt)
+  self._seasonEftPlayer:Update(dt)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.Dispose = function(self)
-  -- function num : 0_4
-  (self._seasonEftPlayer):Dispose()
-  ;
-  (self._seasonMazePlayer):Dispose(true)
-  ;
-  (self._stateMachine):Dispose()
-  ;
-  (self._mazeMapManager):Dispose()
-  ;
-  (self._seasonMazeAudioManager):Dispose()
-  ;
-  (self._seasonMazeInputManager):Dispose()
-  ;
-  (self._seasonMazeCameraManager):Dispose()
-  ;
-  (self._seasonMazeSceneManager):Dispose()
-  ;
-  (self._seasonMazeCoverManager):Dispose()
-  ;
-  (self._seasonMazeRelicManager):Dispose()
-  ;
-  (self._factory):Dispose()
+function SeasonMazeManager:Dispose()
+  self._seasonEftPlayer:Dispose()
+  self._seasonMazePlayer:Dispose(true)
+  self._stateMachine:Dispose()
+  self._mazeMapManager:Dispose()
+  self._seasonMazeAudioManager:Dispose()
+  self._seasonMazeInputManager:Dispose()
+  self._seasonMazeCameraManager:Dispose()
+  self._seasonMazeSceneManager:Dispose()
+  self._seasonMazeCoverManager:Dispose()
+  self._seasonMazeRelicManager:Dispose()
+  self._factory:Dispose()
   self._seasonMazeID = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.GetCurState = function(self)
-  -- function num : 0_5
-  return (self._stateMachine):CurState()
+function SeasonMazeManager:GetCurState()
+  return self._stateMachine:CurState()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.SeasonMazeCoverManager = function(self)
-  -- function num : 0_6
+function SeasonMazeManager:SeasonMazeCoverManager()
   return self._seasonMazeCoverManager
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.SeasonMazeSceneManager = function(self)
-  -- function num : 0_7
+function SeasonMazeManager:SeasonMazeSceneManager()
   return self._seasonMazeSceneManager
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.SeasonMazeCameraManager = function(self)
-  -- function num : 0_8
+function SeasonMazeManager:SeasonMazeCameraManager()
   return self._seasonMazeCameraManager
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.SeasonMazeInputManager = function(self)
-  -- function num : 0_9
+function SeasonMazeManager:SeasonMazeInputManager()
   return self._seasonMazeInputManager
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.SeasonMazeAudioManager = function(self)
-  -- function num : 0_10
+function SeasonMazeManager:SeasonMazeAudioManager()
   return self._seasonMazeAudioManager
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.MapManager = function(self)
-  -- function num : 0_11
+function SeasonMazeManager:MapManager()
   return self._mazeMapManager
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.Factory = function(self)
-  -- function num : 0_12
+function SeasonMazeManager:Factory()
   return self._factory
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.Player = function(self)
-  -- function num : 0_13
+function SeasonMazeManager:Player()
   return self._seasonMazePlayer
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.GetSeasonID = function(self)
-  -- function num : 0_14
+function SeasonMazeManager:GetSeasonID()
   return self._seasonID
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.OnClickArrow = function(self, go)
-  -- function num : 0_15 , upvalues : _ENV
-  local state = (self._stateMachine):CurState()
+function SeasonMazeManager:OnClickArrow(go)
+  local state = self._stateMachine:CurState()
   if state:StateID() == SMazeStateID.PlayerMove then
     state:OnChooseFork(go)
   else
-    ;
-    (Log.error)("严重错误 当前不是移动状态 不可选择岔路:", state:StateID())
+    Log.error("严重错误 当前不是移动状态 不可选择岔路:", state:StateID())
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.OnClickRoom = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
-  (Log.info)("点击路点:", go.name)
-  local node = (self._mazeMapManager):GetRoomByGameObject(go)
-  do
-    if not node then
-      local transpointNode = (self._mazeMapManager):GetTransportPointByGameObject(go)
-      if transpointNode then
-        return self:OnClickTransportPointNode(transpointNode)
-      else
-        ;
-        (Log.error)("找不到房间对象")
-        return 
-      end
-    end
-    if not self._selectBomb and node:Reachable() then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSeasonMazeClickRoom, (node:Room()):Type(), (node:Room()):ID(), node:Position())
-    end
-    do return  end
-    if (node:Room()):Type() == SeasonMazeRoomType.SMRT_PVE then
-      local battleRoom = node:Room()
-      if battleRoom:IsDestroyedByBomb() then
-        (Log.info)("战斗房已经被炸掉了:", node:ID())
-      else
-        ;
-        (Log.info)("选择炸弹目标:", node:ID())
-        local canReach = true
-        if canReach then
-          (SMazeAdaptor.OnUseBombSelect)(node)
-        else
-          ;
-          (Log.info)("选择的是不可到达的战斗房 不处理:", node:ID())
-        end
-      end
+function SeasonMazeManager:OnClickRoom(go)
+  Log.info("点击路点:", go.name)
+  local node = self._mazeMapManager:GetRoomByGameObject(go)
+  if not node then
+    local transpointNode = self._mazeMapManager:GetTransportPointByGameObject(go)
+    if transpointNode then
+      return self:OnClickTransportPointNode(transpointNode)
     else
-      do
-        ;
-        (Log.info)("选择的不是战斗房 不处理:", node:ID())
-      end
+      Log.error("找不到房间对象")
+      return
     end
   end
+  if not self._selectBomb then
+    if node:Reachable() then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSeasonMazeClickRoom, node:Room():Type(), node:Room():ID(), node:Position())
+    end
+    return
+  end
+  if node:Room():Type() == SeasonMazeRoomType.SMRT_PVE then
+    local battleRoom = node:Room()
+    if battleRoom:IsDestroyedByBomb() then
+      Log.info("战斗房已经被炸掉了:", node:ID())
+    else
+      Log.info("选择炸弹目标:", node:ID())
+      local canReach = true
+      if canReach then
+        SMazeAdaptor.OnUseBombSelect(node)
+      else
+        Log.info("选择的是不可到达的战斗房 不处理:", node:ID())
+      end
+    end
+  else
+    Log.info("选择的不是战斗房 不处理:", node:ID())
+  end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.OnClickTransportPointNode = function(self, node)
-  -- function num : 0_17 , upvalues : _ENV
+function SeasonMazeManager:OnClickTransportPointNode(node)
   if node:ReachableForTranspoint() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSeasonMazeClickTransportPoint, node:Position())
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSeasonMazeClickTransportPoint, node:Position())
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.GetMazeComponent = function(self)
-  -- function num : 0_18
-  return ((self._module):CurSeasonObj()):GetMazeComponent()
+function SeasonMazeManager:GetMazeComponent()
+  return self._module:CurSeasonObj():GetMazeComponent()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.GetAttrsDeltaByReason = function(self, reason)
-  -- function num : 0_19
-  return (self._module):GetAttrsByReason(reason)
+function SeasonMazeManager:GetAttrsDeltaByReason(reason)
+  return self._module:GetAttrsByReason(reason)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.Lock = function(self, name)
-  -- function num : 0_20 , upvalues : _ENV
-  if (string.isnullorempty)(name) then
-    (Log.error)("Lock key is nil:", (debug.traceback)())
-    return 
+function SeasonMazeManager:Lock(name)
+  if string.isnullorempty(name) then
+    Log.error("Lock key is nil:", debug.traceback())
+    return
   end
-  ;
-  (Log.info)("[SMazeClient] 锁定:", name)
-  ;
-  (self._seasonMazeInputManager):LockInput(name)
+  Log.info("[SMazeClient] 锁定:", name)
+  self._seasonMazeInputManager:LockInput(name)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.UnLock = function(self, name)
-  -- function num : 0_21 , upvalues : _ENV
-  if (string.isnullorempty)(name) then
-    (Log.error)("UnLock key is nil:", (debug.traceback)())
-    return 
+function SeasonMazeManager:UnLock(name)
+  if string.isnullorempty(name) then
+    Log.error("UnLock key is nil:", debug.traceback())
+    return
   end
-  ;
-  (Log.info)("[SMazeClient] 解锁:", name)
-  ;
-  (self._seasonMazeInputManager):UnlockInput(name)
+  Log.info("[SMazeClient] 解锁:", name)
+  self._seasonMazeInputManager:UnlockInput(name)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.SeasonMazeID = function(self)
-  -- function num : 0_22
+function SeasonMazeManager:SeasonMazeID()
   return self._seasonMazeID
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.StartSelectBombTarget = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function SeasonMazeManager:StartSelectBombTarget()
   self._selectBomb = true
-  local nodes = (self._mazeMapManager):GetNodes(function(node)
-    -- function num : 0_23_0 , upvalues : _ENV
-    do return ((node:Room()):Type() == SeasonMazeRoomType.SMRT_PVE and node:Reachable()) end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-)
-  for _,node in ipairs(nodes) do
+  local nodes = self._mazeMapManager:GetNodes(function(node)
+    return node:Room():Type() == SeasonMazeRoomType.SMRT_PVE and node:Reachable()
+  end)
+  for _, node in ipairs(nodes) do
     node:SetHighLight(true)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.SelectBombTarget = function(self, target)
-  -- function num : 0_24 , upvalues : _ENV
-  local nodes = (self._mazeMapManager):GetNodes(function(node)
-    -- function num : 0_24_0 , upvalues : _ENV
-    do return ((node:Room()):Type() == SeasonMazeRoomType.SMRT_PVE and node:Reachable()) end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-)
-  for _,node in ipairs(nodes) do
+function SeasonMazeManager:SelectBombTarget(target)
+  local nodes = self._mazeMapManager:GetNodes(function(node)
+    return node:Room():Type() == SeasonMazeRoomType.SMRT_PVE and node:Reachable()
+  end)
+  for _, node in ipairs(nodes) do
     if node:ID() ~= target:ID() then
       node:SetHighLight(false)
     else
@@ -326,61 +204,37 @@ SeasonMazeManager.SelectBombTarget = function(self, target)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.CancelSelectBombTarget = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function SeasonMazeManager:CancelSelectBombTarget()
   self._selectBomb = false
-  local nodes = (self._mazeMapManager):GetNodes(function(p)
-    -- function num : 0_25_0 , upvalues : _ENV
+  local nodes = self._mazeMapManager:GetNodes(function(p)
     local node = p
-    do return ((node:Room()):Type() == SeasonMazeRoomType.SMRT_PVE and node:Reachable()) end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-)
-  for _,node in ipairs(nodes) do
+    return node:Room():Type() == SeasonMazeRoomType.SMRT_PVE and node:Reachable()
+  end)
+  for _, node in ipairs(nodes) do
     node:SetHighLight(false)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.PlayToast = function(self, assets)
-  -- function num : 0_26 , upvalues : _ENV
-  local controller = ((GameGlobal.UIStateManager)()):GetController("UISeasonMazeScene")
+function SeasonMazeManager:PlayToast(assets)
+  local controller = GameGlobal.UIStateManager():GetController("UISeasonMazeScene")
   controller:GetToastTimeline(assets)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.PlayEZTL = function(self, tl)
-  -- function num : 0_27
+function SeasonMazeManager:PlayEZTL(tl)
   if tl and self._seasonEftPlayer then
-    (self._seasonEftPlayer):Play(tl)
+    self._seasonEftPlayer:Play(tl)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.GetCurNode = function(self)
-  -- function num : 0_28
-  return (self._stateMachine):GetCurNode()
+function SeasonMazeManager:GetCurNode()
+  return self._stateMachine:GetCurNode()
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.RelicManager = function(self)
-  -- function num : 0_29
+function SeasonMazeManager:RelicManager()
   return self._seasonMazeRelicManager
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManager.PlayGetGold = function(self, TT, goldCount)
-  -- function num : 0_30
-  local pos = (self:Player()):Position()
-  ;
-  (self:Player()):PlayEffectWithParent("GetGold", (self:Player()):AgentTansform())
+function SeasonMazeManager:PlayGetGold(TT, goldCount)
+  local pos = self:Player():Position()
+  self:Player():PlayEffectWithParent("GetGold", self:Player():AgentTansform())
 end
-
-

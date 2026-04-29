@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_detail/ui_active_var_tip.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActiveVarTip", UICustomWidget)
 UIActiveVarTip = UIActiveVarTip
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActiveVarTip.OnShow = function(self)
-  -- function num : 0_0
+function UIActiveVarTip:OnShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveVarTip.OnHide = function(self)
-  -- function num : 0_1
+function UIActiveVarTip:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveVarTip.BgOnClick = function(self)
-  -- function num : 0_2
+function UIActiveVarTip:BgOnClick()
   if not self._pos then
     self._pos = self:GetUIComponent("RectTransform", "Bg")
   end
-  self:ShowDialog("UIActiveVarInfo", (self._pos).position)
+  self:ShowDialog("UIActiveVarInfo", self._pos.position)
 end
-
-

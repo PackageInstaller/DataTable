@@ -1,25 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/tale_pet/ui_trial_level/ui_trail_level_buff_pet_star.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITrailLevelBuffPetStar", UICustomWidget)
 UITrailLevelBuffPetStar = UITrailLevelBuffPetStar
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITrailLevelBuffPetStar.OnShow = function(self)
-  -- function num : 0_0
+function UITrailLevelBuffPetStar:OnShow()
   self._starUnOpen = self:GetGameObject("StarUnOpen")
   self._starOpen = self:GetGameObject("StarOpen")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffPetStar.Refresh = function(self, isOpen)
-  -- function num : 0_1
-  (self._starOpen):SetActive(isOpen)
-  ;
-  (self._starUnOpen):SetActive(not isOpen)
+function UITrailLevelBuffPetStar:Refresh(isOpen)
+  self._starOpen:SetActive(isOpen)
+  self._starUnOpen:SetActive(not isOpen)
 end
-
-

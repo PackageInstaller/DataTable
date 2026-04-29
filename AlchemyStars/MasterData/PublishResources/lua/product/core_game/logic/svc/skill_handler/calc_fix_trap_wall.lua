@@ -1,89 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_fix_trap_wall.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_FixTrapWall", SkillEffectCalc_Base)
 SkillEffectCalc_FixTrapWall = SkillEffectCalc_FixTrapWall
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_FixTrapWall.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_FixTrapWall:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_FixTrapWall.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_FixTrapWall:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillParam = skillEffectCalcParam.skillEffectParam
-  if not skillEffectCalcParam.skillRange then
-    local skillRange = {}
-  end
+  local skillRange = skillEffectCalcParam.skillRange or {}
   local stageIndex = skillParam:GetSkillEffectDamageStageIndex()
   local fixTrapWallType = skillParam:GetFixTrapWallType()
   local skillParamPosList = skillParam:GetFixTrapWallPosList()
   local skillRangePosList = {}
   if skillParamPosList then
-    for i,v in ipairs(skillParamPosList) do
+    for i, v in ipairs(skillParamPosList) do
       local pos = Vector2(v[1], v[2])
-      ;
-      (table.insert)(skillRangePosList, pos)
+      table.insert(skillRangePosList, pos)
     end
   end
-  do
-    local boardEntity = (self._world):GetBoardEntity()
-    local logicTrapWallComponent = boardEntity:LogicTrapWall()
-    if not logicTrapWallComponent then
-      return 
-    end
-    local utilData = (self._world):GetService("UtilData")
-    local isAdd = true
-    if FixTrapWallType.DeleteSelectPos <= fixTrapWallType then
-      isAdd = false
-    end
-    local allTrapWallPosList = {}
-    if fixTrapWallType == FixTrapWallType.AddSelectPos or fixTrapWallType == FixTrapWallType.DeleteSelectPos then
-      allTrapWallPosList = skillRangePosList
-    else
-      if fixTrapWallType == FixTrapWallType.AddSelectRange or fixTrapWallType == FixTrapWallType.DeleteSelectRange then
-        allTrapWallPosList = utilData:CalcTrapWallPosEdgeAll(skillRangePosList)
-      else
-        if fixTrapWallType == FixTrapWallType.AddSelectRangeOut then
-          allTrapWallPosList = utilData:CalcTrapWallPosEdgeOut(skillRangePosList)
-        else
-          if fixTrapWallType == FixTrapWallType.AddSkillRange or fixTrapWallType == FixTrapWallType.DeleteSkillRange then
-            skillRangePosList = skillRange
-            allTrapWallPosList = utilData:CalcTrapWallPosEdgeAll(skillRangePosList)
-          else
-            if fixTrapWallType == FixTrapWallType.AddSkillRangeOut then
-              skillRangePosList = skillRange
-              allTrapWallPosList = utilData:CalcTrapWallPosEdgeOut(skillRangePosList)
-            else
-              if fixTrapWallType == FixTrapWallType.DeleteSelectRangeIn then
-                allTrapWallPosList = utilData:CalcTrapWallPosEdgeIn(skillRangePosList)
-              else
-                if fixTrapWallType == FixTrapWallType.DeleteSkillRangeIn then
-                  skillRangePosList = skillRange
-                  allTrapWallPosList = utilData:CalcTrapWallPosEdgeIn(skillRangePosList)
-                end
-              end
-            end
-          end
-        end
-      end
-    end
-    if fixTrapWallType < FixTrapWallType.DeleteSelectPos then
-      local invalidPosList = utilData:OnGetInvalidCreateTrapWallPosList()
-      for _,pos in ipairs(invalidPosList) do
-        (table.removev)(allTrapWallPosList, pos)
-      end
-    end
-    do
-      local skillResult = SkillEffectResultFixTrapWall:New(isAdd, allTrapWallPosList, stageIndex)
-      return skillResult
+  local boardEntity = self._world:GetBoardEntity()
+  local logicTrapWallComponent = boardEntity:LogicTrapWall()
+  if not logicTrapWallComponent then
+    return
+  end
+  local utilData = self._world:GetService("UtilData")
+  local isAdd = true
+  if fixTrapWallType >= FixTrapWallType.DeleteSelectPos then
+    isAdd = false
+  end
+  local allTrapWallPosList = {}
+  if fixTrapWallType == FixTrapWallType.AddSelectPos or fixTrapWallType == FixTrapWallType.DeleteSelectPos then
+    allTrapWallPosList = skillRangePosList
+  elseif fixTrapWallType == FixTrapWallType.AddSelectRange or fixTrapWallType == FixTrapWallType.DeleteSelectRange then
+    allTrapWallPosList = utilData:CalcTrapWallPosEdgeAll(skillRangePosList)
+  elseif fixTrapWallType == FixTrapWallType.AddSelectRangeOut then
+    allTrapWallPosList = utilData:CalcTrapWallPosEdgeOut(skillRangePosList)
+  elseif fixTrapWallType == FixTrapWallType.AddSkillRange or fixTrapWallType == FixTrapWallType.DeleteSkillRange then
+    skillRangePosList = skillRange
+    allTrapWallPosList = utilData:CalcTrapWallPosEdgeAll(skillRangePosList)
+  elseif fixTrapWallType == FixTrapWallType.AddSkillRangeOut then
+    skillRangePosList = skillRange
+    allTrapWallPosList = utilData:CalcTrapWallPosEdgeOut(skillRangePosList)
+  elseif fixTrapWallType == FixTrapWallType.DeleteSelectRangeIn then
+    allTrapWallPosList = utilData:CalcTrapWallPosEdgeIn(skillRangePosList)
+  elseif fixTrapWallType == FixTrapWallType.DeleteSkillRangeIn then
+    skillRangePosList = skillRange
+    allTrapWallPosList = utilData:CalcTrapWallPosEdgeIn(skillRangePosList)
+  end
+  if fixTrapWallType < FixTrapWallType.DeleteSelectPos then
+    local invalidPosList = utilData:OnGetInvalidCreateTrapWallPosList()
+    for _, pos in ipairs(invalidPosList) do
+      table.removev(allTrapWallPosList, pos)
     end
   end
+  local skillResult = SkillEffectResultFixTrapWall:New(isAdd, allTrapWallPosList, stageIndex)
+  return skillResult
 end
-
-

@@ -1,38 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_change_feature_coin_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangeFeatureCoinCount", BuffViewBase)
 BuffViewChangeFeatureCoinCount = BuffViewChangeFeatureCoinCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeFeatureCoinCount.IsNotifyMatch = function(self, notify)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewChangeFeatureCoinCount:IsNotifyMatch(notify)
   if notify:GetNotifyType() == NotifyType.PlayerEachMoveStart or notify:GetNotifyType() == NotifyType.PlayerEachMoveEnd or notify:GetNotifyType() == NotifyType.TeamLeaderEachMoveEnd then
-    local movePos = (self._buffResult):GetMovePos()
+    local movePos = self._buffResult:GetMovePos()
     return movePos == notify:GetPos()
   elseif notify:GetNotifyType() == NotifyType.TrapSkillStart then
-    local movePos = (self._buffResult):GetMovePos()
+    local movePos = self._buffResult:GetMovePos()
     return movePos == notify:GetPos()
   else
     return true
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewChangeFeatureCoinCount.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewChangeFeatureCoinCount:PlayView(TT)
   local result = self._buffResult
-  local featureSvcRender = (self._world):GetService("FeatureRender")
+  local featureSvcRender = self._world:GetService("FeatureRender")
   if featureSvcRender then
     featureSvcRender:NotifyShopCoinCountChange(result:GetCurCount(), result:GetOldCount(), result:GetModifyValue())
   end
   local ntCoinCountChange = NTFeatureShopCoinCountChange:New(result:GetCurCount(), result:GetOldCount())
-  ;
-  ((self._world):GetService("PlayBuff")):PlayBuffView(TT, ntCoinCountChange)
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, ntCoinCountChange)
 end
-
-

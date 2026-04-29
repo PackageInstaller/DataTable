@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/final_attack_stage_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-_enum("FinalAttackStageType", {Invalid = 0, NormalAttackStage = 1, ChainAttackStage = 2, ActiveSkillAttackStage = 3})
+_enum("FinalAttackStageType", {
+  Invalid = 0,
+  NormalAttackStage = 1,
+  ChainAttackStage = 2,
+  ActiveSkillAttackStage = 3
+})
 FinalAttackStageType = FinalAttackStageType
-

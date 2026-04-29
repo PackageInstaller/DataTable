@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_layer_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILayerManager", GameEventListener)
 local MAX_DEPTH = 8
--- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
 
-UILayerManager.Constructor = function(self, resRequest, uiControllerManager)
-  -- function num : 0_0 , upvalues : _ENV, MAX_DEPTH
+function UILayerManager:Constructor(resRequest, uiControllerManager)
   self.topDepth = 0
   self.layerManagerHelper = UILayerManagerHelper:New(MAX_DEPTH, resRequest)
   self.uiControllerManager = uiControllerManager
@@ -18,115 +11,67 @@ UILayerManager.Constructor = function(self, resRequest, uiControllerManager)
   self.uiRootObj = resRequest.Obj
   for i = 0, MAX_DEPTH - 1 do
     local name = "depth_" .. i
-    local depth_trans = ((self.uiRootObj).transform):Find("UICameras/" .. name)
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R9 in 'UnsetPending'
-
+    local depth_trans = self.uiRootObj.transform:Find("UICameras/" .. name)
     if depth_trans then
-      (self.depthCameraList)[i] = {}
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      ((self.depthCameraList)[i]).root_obj = depth_trans.gameObject
-      -- DECOMPILER ERROR at PC44: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      ((self.depthCameraList)[i]).camera_obj = (depth_trans:Find("Camera")).gameObject
-      -- DECOMPILER ERROR at PC51: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      ((self.depthCameraList)[i]).back_obj = (depth_trans:Find("BG_Camera")).gameObject
+      self.depthCameraList[i] = {}
+      self.depthCameraList[i].root_obj = depth_trans.gameObject
+      self.depthCameraList[i].camera_obj = depth_trans:Find("Camera").gameObject
+      self.depthCameraList[i].back_obj = depth_trans:Find("BG_Camera").gameObject
     end
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):AddListener(GameEventType.UpdateLayerTopDepth, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddListener(GameEventType.AfterUILayerChanged, self)
+  GameGlobal.EventDispatcher():AddListener(GameEventType.UpdateLayerTopDepth, self)
+  GameGlobal.EventDispatcher():AddListener(GameEventType.AfterUILayerChanged, self)
 end
 
--- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):RemoveListener(GameEventType.UpdateLayerTopDepth, self.listenerID)
-  ;
-  ((GameGlobal.EventDispatcher)()):RemoveListener(GameEventType.AfterUILayerChanged, self.listenerID)
-  ;
-  (self.layerManagerHelper):Dispose()
+function UILayerManager:Dispose()
+  GameGlobal.EventDispatcher():RemoveListener(GameEventType.UpdateLayerTopDepth, self.listenerID)
+  GameGlobal.EventDispatcher():RemoveListener(GameEventType.AfterUILayerChanged, self.listenerID)
+  self.layerManagerHelper:Dispose()
   self.lastBlurMaskDepth = 0
   self.lastBlurControllerName = nil
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.SetInVisibleParent = function(self, view, uiName)
-  -- function num : 0_2
-  (self.layerManagerHelper):SetInVisibleParent(view, uiName)
+function UILayerManager:SetInVisibleParent(view, uiName)
+  self.layerManagerHelper:SetInVisibleParent(view, uiName)
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.SetMessageBoxParent = function(self, view, uiName)
-  -- function num : 0_3
-  (self.layerManagerHelper):SetMessageBoxParent(view, uiName)
+function UILayerManager:SetMessageBoxParent(view, uiName)
+  self.layerManagerHelper:SetMessageBoxParent(view, uiName)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.SetGuideMessageBoxParent = function(self, view, uiName)
-  -- function num : 0_4
-  (self.layerManagerHelper):SetGuideMessageBoxParent(view, uiName)
+function UILayerManager:SetGuideMessageBoxParent(view, uiName)
+  self.layerManagerHelper:SetGuideMessageBoxParent(view, uiName)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.GetMessageBoxCamera = function(self)
-  -- function num : 0_5
-  return (self.layerManagerHelper):GetMessageBoxCamera()
+function UILayerManager:GetMessageBoxCamera()
+  return self.layerManagerHelper:GetMessageBoxCamera()
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.SetTopParent = function(self, view, uiName)
-  -- function num : 0_6
-  (self.layerManagerHelper):SetTopParent(view, uiName)
+function UILayerManager:SetTopParent(view, uiName)
+  self.layerManagerHelper:SetTopParent(view, uiName)
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.SetHighParent = function(self, view, uiName)
-  -- function num : 0_7
-  (self.layerManagerHelper):SetHighParent(view, uiName)
+function UILayerManager:SetHighParent(view, uiName)
+  self.layerManagerHelper:SetHighParent(view, uiName)
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.ShowLayer = function(self, depth, flag)
-  -- function num : 0_8
-  (self.layerManagerHelper):ShowLayer(depth, flag)
+function UILayerManager:ShowLayer(depth, flag)
+  self.layerManagerHelper:ShowLayer(depth, flag)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.ShowAllLayers = function(self)
-  -- function num : 0_9 , upvalues : MAX_DEPTH
+function UILayerManager:ShowAllLayers()
   for i = 0, MAX_DEPTH - 1 do
-    (self.layerManagerHelper):ShowLayer(i, true)
+    self.layerManagerHelper:ShowLayer(i, true)
   end
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.OnShowUI = function(self, uiController, depth)
-  -- function num : 0_10 , upvalues : _ENV
+function UILayerManager:OnShowUI(uiController, depth)
   if not uiController then
-    (Log.fatal)("[UI] UILayerManager:OnShowUI Error uiController is Null")
-    return 
+    Log.fatal("[UI] UILayerManager:OnShowUI Error uiController is Null")
+    return
   end
-  ;
-  (Log.debug)("[UI] UILayerManager:OnShowUI,", uiController:GetName())
-  if not depth then
-    depth = -1
-  end
+  Log.debug("[UI] UILayerManager:OnShowUI,", uiController:GetName())
+  depth = depth or -1
   if depth == 0 then
     self:ChangeUIDepth(uiController, 0)
   else
@@ -136,182 +81,121 @@ UILayerManager.OnShowUI = function(self, uiController, depth)
   end
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.GetLowestShowingBGCamera = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  for i = 0, (table.count)(self.depthCameraList) - 1 do
-    local bgcamera = (((self.depthCameraList)[i]).back_obj):GetComponent("Camera")
-    if (((self.depthCameraList)[i]).root_obj).activeSelf and bgcamera.enabled then
+function UILayerManager:GetLowestShowingBGCamera()
+  for i = 0, table.count(self.depthCameraList) - 1 do
+    local bgcamera = self.depthCameraList[i].back_obj:GetComponent("Camera")
+    if self.depthCameraList[i].root_obj.activeSelf and bgcamera.enabled then
       return bgcamera
     end
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.ChangeUIDepth = function(self, uiController, newDepth, needChangeRootActive)
-  -- function num : 0_12
+function UILayerManager:ChangeUIDepth(uiController, newDepth, needChangeRootActive)
   if needChangeRootActive then
     local oldLayerRoot = self:GetUIRootByDepth(uiController:GetDepth())
     local newLayerRoot = self:GetUIRootByDepth(newDepth)
     newLayerRoot:SetActive(oldLayerRoot.activeSelf)
     oldLayerRoot:SetActive(true)
   end
-  do
-    uiController:SetDepth(newDepth)
-    ;
-    (self.layerManagerHelper):ChangeUIDepth(uiController:View(), uiController:GetName(), uiController:GetMaskType(), uiController:GetDepth())
-  end
+  uiController:SetDepth(newDepth)
+  self.layerManagerHelper:ChangeUIDepth(uiController:View(), uiController:GetName(), uiController:GetMaskType(), uiController:GetDepth())
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.IsLayerShow = function(self, depth)
-  -- function num : 0_13
-  return (self.layerManagerHelper):IsLayerShow(depth)
+function UILayerManager:IsLayerShow(depth)
+  return self.layerManagerHelper:IsLayerShow(depth)
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.SetVisibleParent = function(self, view, uiName)
-  -- function num : 0_14
-  (self.layerManagerHelper):SetVisibleParent(view, uiName)
+function UILayerManager:SetVisibleParent(view, uiName)
+  self.layerManagerHelper:SetVisibleParent(view, uiName)
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.SetParentOfMsgBox = function(self)
-  -- function num : 0_15
+function UILayerManager:SetParentOfMsgBox()
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.IsFull = function(self)
-  -- function num : 0_16 , upvalues : MAX_DEPTH
-  do return MAX_DEPTH - 1 <= self.topDepth end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UILayerManager:IsFull()
+  return self.topDepth >= MAX_DEPTH - 1
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.IsTopUI = function(self, depth)
-  -- function num : 0_17
-  do return self.topDepth == depth end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UILayerManager:IsTopUI(depth)
+  return self.topDepth == depth
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.TopDepth = function(self)
-  -- function num : 0_18
+function UILayerManager:TopDepth()
   return self.topDepth
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.SetTopDepth = function(self, newTopDepth)
-  -- function num : 0_19 , upvalues : MAX_DEPTH, _ENV
-  if newTopDepth < 0 or MAX_DEPTH < newTopDepth then
-    (Log.fatal)("[UI] UILayerManager Set TopDepth Error, value=", newTopDepth, (Log.traceback)())
-    return 
+function UILayerManager:SetTopDepth(newTopDepth)
+  if newTopDepth < 0 or newTopDepth > MAX_DEPTH then
+    Log.fatal("[UI] UILayerManager Set TopDepth Error, value=", newTopDepth, Log.traceback())
+    return
   end
   self.topDepth = newTopDepth
-  ;
-  (self.layerManagerHelper):SetTopDepth(self.topDepth)
+  self.layerManagerHelper:SetTopDepth(self.topDepth)
   self:ResetLowBGCameraClearFlag()
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.ResetLowBGCameraClearFlag = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UILayerManager:ResetLowBGCameraClearFlag()
   local lowestBGCamera = self:GetLowestShowingBGCamera()
   if lowestBGCamera then
-    lowestBGCamera.clearFlags = (UnityEngine.CameraClearFlags).Depth
+    lowestBGCamera.clearFlags = UnityEngine.CameraClearFlags.Depth
   end
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.GetUICameraByDepth = function(self, depth)
-  -- function num : 0_21 , upvalues : _ENV
+function UILayerManager:GetUICameraByDepth(depth)
   if depth < 0 then
-    return (((self.depthCameraList)[0]).camera_obj):GetComponent("Camera")
-  else
-    if depth < (table.count)(self.depthCameraList) then
-      return (((self.depthCameraList)[depth]).camera_obj):GetComponent("Camera")
-    end
+    return self.depthCameraList[0].camera_obj:GetComponent("Camera")
+  elseif depth < table.count(self.depthCameraList) then
+    return self.depthCameraList[depth].camera_obj:GetComponent("Camera")
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.ResetAllUIRoot = function(self)
-  -- function num : 0_22 , upvalues : MAX_DEPTH
+function UILayerManager:ResetAllUIRoot()
   for i = 1, MAX_DEPTH do
     local root = self:GetUIRootByDepth(i - 1)
     root:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.GetUIRootByDepth = function(self, depth)
-  -- function num : 0_23 , upvalues : _ENV
+function UILayerManager:GetUIRootByDepth(depth)
   if depth < 0 then
-    return ((self.depthCameraList)[0]).root_obj
-  else
-    if depth < (table.count)(self.depthCameraList) then
-      return ((self.depthCameraList)[depth]).root_obj
-    end
+    return self.depthCameraList[0].root_obj
+  elseif depth < table.count(self.depthCameraList) then
+    return self.depthCameraList[depth].root_obj
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.OnGameEvent = function(self, gameEventType, ...)
-  -- function num : 0_24 , upvalues : _ENV
+function UILayerManager:OnGameEvent(gameEventType, ...)
   if gameEventType == GameEventType.UpdateLayerTopDepth then
     local depth = self.topDepth
     local length = select("#", ...)
-    if length > 0 then
+    if 0 < length then
       local v = select(1, ...)
       if v and type(v) == "number" then
         depth = depth + v
       else
-        ;
-        (Log.fatal)("[UI] UILayerManager:OnGameEvent parameters error")
+        Log.fatal("[UI] UILayerManager:OnGameEvent parameters error")
       end
     else
-      do
-        do
-          depth = 0
-          self:SetTopDepth(depth)
-          self:CheckUpdateBlurMask()
-          if gameEventType == GameEventType.AfterUILayerChanged then
-            self:CheckUpdateBlurMask()
-          end
-        end
-      end
+      depth = 0
     end
+    self:SetTopDepth(depth)
+    self:CheckUpdateBlurMask()
+  elseif gameEventType == GameEventType.AfterUILayerChanged then
+    self:CheckUpdateBlurMask()
   end
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-UILayerManager.CheckUpdateBlurMask = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  local blurMaskLayer, blurControllorName = 0, nil
-  local visibleUIList = (self.uiControllerManager):VisibleUIList()
+function UILayerManager:CheckUpdateBlurMask()
+  local blurMaskLayer, blurControllorName = 0
+  local visibleUIList = self.uiControllerManager:VisibleUIList()
   for i = 1, visibleUIList:Size() do
     local name = visibleUIList:GetAt(i)
-    local uiRegisterInfo = (self.uiControllerManager):GetUIRegisterInfo(name)
+    local uiRegisterInfo = self.uiControllerManager:GetUIRegisterInfo(name)
     if uiRegisterInfo and uiRegisterInfo.maskType == MaskType.MT_BlurMask then
-      local uiController = (self.uiControllerManager):GetController(name)
+      local uiController = self.uiControllerManager:GetController(name)
       local depth = uiController:GetDepth()
       if uiController and blurMaskLayer < depth then
         blurMaskLayer = depth
@@ -320,16 +204,12 @@ UILayerManager.CheckUpdateBlurMask = function(self)
     end
   end
   if blurMaskLayer == self.lastBlurMaskDepth and blurControllorName == self.lastBlurControllerName then
-    (Log.debug)("[UI] UILayerManager模糊层级未发生变化 return, blurMaskLayer=", blurMaskLayer, ",self.lastBlurMaskDepth=", self.lastBlurMaskDepth)
-    return 
+    Log.debug("[UI] UILayerManager模糊层级未发生变化 return, blurMaskLayer=", blurMaskLayer, ",self.lastBlurMaskDepth=", self.lastBlurMaskDepth)
+    return
   end
-  ;
-  (Log.debug)("[UI] UILayerManager刷新模糊,", self.lastBlurMaskDepth, ",", self.lastBlurControllerName, " => ", blurMaskLayer, ",", blurControllorName)
+  Log.debug("[UI] UILayerManager刷新模糊,", self.lastBlurMaskDepth, ",", self.lastBlurControllerName, " => ", blurMaskLayer, ",", blurControllorName)
   self.lastBlurMaskDepth = blurMaskLayer
   self.lastBlurControllerName = blurControllorName
-  ;
-  (self.layerManagerHelper):RefreshBlurMask(blurMaskLayer)
+  self.layerManagerHelper:RefreshBlurMask(blurMaskLayer)
   self:ResetLowBGCameraClearFlag()
 end
-
-

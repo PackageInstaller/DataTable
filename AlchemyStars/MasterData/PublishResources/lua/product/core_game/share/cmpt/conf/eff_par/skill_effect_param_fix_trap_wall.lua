@@ -1,40 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_fix_trap_wall.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamFixTrapWall", SkillEffectParamBase)
 SkillEffectParamFixTrapWall = SkillEffectParamFixTrapWall
-local FixTrapWallType = {AddSelectPos = 1, AddSelectRange = 2, AddSelectRangeOut = 3, AddSkillRange = 4, AddSkillRangeOut = 5, DeleteSelectPos = 101, DeleteSelectRange = 102, DeleteSelectRangeIn = 103, DeleteSkillRange = 104, DeleteSkillRangeIn = 105, MAX = 9}
+local FixTrapWallType = {
+  AddSelectPos = 1,
+  AddSelectRange = 2,
+  AddSelectRangeOut = 3,
+  AddSkillRange = 4,
+  AddSkillRangeOut = 5,
+  DeleteSelectPos = 101,
+  DeleteSelectRange = 102,
+  DeleteSelectRangeIn = 103,
+  DeleteSkillRange = 104,
+  DeleteSkillRangeIn = 105,
+  MAX = 9
+}
 _enum("FixTrapWallType", FixTrapWallType)
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillEffectParamFixTrapWall.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamFixTrapWall:Constructor(t)
   self._type = t.type
   self._posList = t.pos
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamFixTrapWall.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamFixTrapWall:GetEffectType()
   return SkillEffectType.FixTrapWall
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamFixTrapWall.GetFixTrapWallType = function(self)
-  -- function num : 0_2
+function SkillEffectParamFixTrapWall:GetFixTrapWallType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamFixTrapWall.GetFixTrapWallPosList = function(self)
-  -- function num : 0_3
+function SkillEffectParamFixTrapWall:GetFixTrapWallPosList()
   return self._posList
 end
-
-

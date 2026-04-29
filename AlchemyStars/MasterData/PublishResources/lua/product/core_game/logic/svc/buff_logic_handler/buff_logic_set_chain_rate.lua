@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_chain_rate.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetChainRate", BuffLogicBase)
 BuffLogicSetChainRate = BuffLogicSetChainRate
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetChainRate.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetChainRate:Constructor(buffInstance, logicParam)
   self._chainRate = logicParam.chainRate or 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetChainRate.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function BuffLogicSetChainRate:DoLogic(notify)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local buffCmpt = teamEntity:BuffComponent()
   buffCmpt:SetBuffValue("ChainRate", self._chainRate)
 end
-
-

@@ -1,50 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/ui_haute_couture_draw_rules_v2_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawRulesV2Controller", UIController)
 UIHauteCoutureDrawRulesV2Controller = UIHauteCoutureDrawRulesV2Controller
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawRulesV2Controller.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawRulesV2Controller:Constructor()
   self.main = nil
   self.bg = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesV2Controller.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHauteCoutureDrawRulesV2Controller:OnShow(uiParams)
   local bg = self:GetUIComponent("UISelectObjectPath", "bgRoot")
   local main = self:GetUIComponent("UISelectObjectPath", "uiRoot")
   self.CtxData = uiParams[1]
-  self.hcType = (self.CtxData):HC_Type()
+  self.hcType = self.CtxData:HC_Type()
   if self.hcType == HauteCoutureType.HC_GL then
-    (bg.dynamicInfoOfEngine):SetObjectName("UIHauteCoutureDrawRulesBgGL.prefab")
-    ;
-    (main.dynamicInfoOfEngine):SetObjectName("UIHauteCoutureDrawRulesMainGL.prefab")
+    bg.dynamicInfoOfEngine:SetObjectName("UIHauteCoutureDrawRulesBgGL.prefab")
+    main.dynamicInfoOfEngine:SetObjectName("UIHauteCoutureDrawRulesMainGL.prefab")
     self.bg = bg:SpawnObject("UIHauteCoutureDrawRulesBgGL")
     self.main = main:SpawnObject("UIHauteCoutureDrawRulesMainGL")
+  elseif self.hcType == HauteCoutureType.HC_KR then
+    bg.dynamicInfoOfEngine:SetObjectName("UIHauteCoutureDrawRulesBgKR.prefab")
+    main.dynamicInfoOfEngine:SetObjectName("UIHauteCoutureDrawRulesMainKR.prefab")
+    self.bg = bg:SpawnObject("UIHauteCoutureDrawRulesBgKR")
+    self.main = main:SpawnObject("UIHauteCoutureDrawRulesMainKR")
   else
-    if self.hcType == HauteCoutureType.HC_KR then
-      (bg.dynamicInfoOfEngine):SetObjectName("UIHauteCoutureDrawRulesBgKR.prefab")
-      ;
-      (main.dynamicInfoOfEngine):SetObjectName("UIHauteCoutureDrawRulesMainKR.prefab")
-      self.bg = bg:SpawnObject("UIHauteCoutureDrawRulesBgKR")
-      self.main = main:SpawnObject("UIHauteCoutureDrawRulesMainKR")
-    else
-      local bgPrefab, bgClass = (self.CtxData):GetRulesUIBgInfo()
-      local prefab, class = (self.CtxData):GetRulesUIInfo()
-      ;
-      (bg.dynamicInfoOfEngine):SetObjectName(bgPrefab)
-      ;
-      (main.dynamicInfoOfEngine):SetObjectName(prefab)
-      self.bg = bg:SpawnObject(bgClass._className)
-      self.main = main:SpawnObject(class._className)
-    end
+    local bgPrefab, bgClass = self.CtxData:GetRulesUIBgInfo()
+    local prefab, class = self.CtxData:GetRulesUIInfo()
+    bg.dynamicInfoOfEngine:SetObjectName(bgPrefab)
+    main.dynamicInfoOfEngine:SetObjectName(prefab)
+    self.bg = bg:SpawnObject(bgClass._className)
+    self.main = main:SpawnObject(class._className)
   end
 end
-
-

@@ -1,29 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/skill_pickup_gird_together_inst_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPickUpGridTogetherInstructionSystem_Render", ReactiveSystem)
 SkillPickUpGridTogetherInstructionSystem_Render = SkillPickUpGridTogetherInstructionSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPickUpGridTogetherInstructionSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillPickUpGridTogetherInstructionSystem_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpGridTogetherInstructionSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local c = Collector:New({world:GetGroup((world.BW_WEMatchers).PickUpTarget)}, {"Added"})
+function SkillPickUpGridTogetherInstructionSystem_Render:GetTrigger(world)
+  local c = Collector:New({
+    world:GetGroup(world.BW_WEMatchers.PickUpTarget)
+  }, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpGridTogetherInstructionSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPickUpGridTogetherInstructionSystem_Render:Filter(entity)
   local pickUpTargetCmpt = entity:PickUpTarget()
   local skillHandleType = pickUpTargetCmpt:GetPickUpTargetType()
   if skillHandleType == SkillPickUpType.PickUpGridTogether then
@@ -32,161 +21,122 @@ SkillPickUpGridTogetherInstructionSystem_Render.Filter = function(self, entity)
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpGridTogetherInstructionSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3 , upvalues : _ENV
-  local previewActiveSkill = (self._world):GetService("PreviewActiveSkill")
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function SkillPickUpGridTogetherInstructionSystem_Render:ExecuteEntities(entities)
+  local previewActiveSkill = self._world:GetService("PreviewActiveSkill")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   local activeSkillID = pickUpTargetCmpt:GetCurActiveSkillID()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local petEntityId = utilDataSvc:GetEntityIDByPstID(pickUpTargetCmpt:GetPetPstid())
-  local petEntity = (self._world):GetEntityByID(petEntityId)
-  local configService = (self._world):GetService("Config")
+  local petEntity = self._world:GetEntityByID(petEntityId)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(activeSkillID, petEntity)
   local pickUpGridPos = pickUpTargetCmpt:GetCurPickUpGridPos()
   local petPstID = pickUpTargetCmpt:GetPetPstid()
   local validGirdList = utilScopeSvc:BuildScopeGridList(skillConfigData._pickUpValidScopeList, petEntity)
   local invalidGridList = utilScopeSvc:BuildScopeGridList(skillConfigData._pickUpInvalidScopeList, petEntity)
-  local pickUpNum = tonumber((skillConfigData._pickUpParam)[1])
+  local pickUpNum = tonumber(skillConfigData._pickUpParam[1])
   if not petEntity:HasPreviewPickUpComponent() then
     petEntity:AddPreviewPickUpComponent()
   end
   local previewPickUpComponent = petEntity:PreviewPickUpComponent()
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
   local alreadyPickUpGrid = previewPickUpComponent:GetAllValidPickUpGridPos()
-  local guideService = (self._world):GetService("Guide")
-  if guideService and guideService:IsValidGuidePiecePos(pickUpGridPos.x, pickUpGridPos.y) then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.FinishGuideStep, GuideType.Piece)
-  else
-    return 
+  local guideService = self._world:GetService("Guide")
+  if guideService then
+    if guideService:IsValidGuidePiecePos(pickUpGridPos.x, pickUpGridPos.y) then
+      self._world:EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.Piece)
+    else
+      return
+    end
   end
-  if (table.icontains)(validGirdList, pickUpGridPos) then
-    if #alreadyPickUpGrid > 0 then
+  if table.icontains(validGirdList, pickUpGridPos) then
+    if 0 < #alreadyPickUpGrid then
       if pickUpNum == 1 then
-        if (table.Vector2Include)(alreadyPickUpGrid, pickUpGridPos) then
-          (Log.debug)("只可点选一次,重复点选，坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
+        if table.Vector2Include(alreadyPickUpGrid, pickUpGridPos) then
+          Log.debug("只可点选一次,重复点选，坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
           previewPickUpComponent:RemoveGridPos(pickUpGridPos)
-          ;
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.RefreshPickUpNum, 1)
-          ;
-          ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoPickUpInstruction, self, PickUpInstructionType.Empty, skillConfigData, petEntity, pickUpGridPos)
+          self._world:EventDispatcher():Dispatch(GameEventType.RefreshPickUpNum, 1)
+          GameGlobal.TaskManager():CoreGameStartTask(self._DoPickUpInstruction, self, PickUpInstructionType.Empty, skillConfigData, petEntity, pickUpGridPos)
         else
-          ;
-          (Log.debug)("只可点选一次，换坐标，坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
-          ;
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.RefreshPickUpNum, 0)
+          Log.debug("只可点选一次，换坐标，坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
+          self._world:EventDispatcher():Dispatch(GameEventType.RefreshPickUpNum, 0)
           previewPickUpComponent:ClearGridPos()
           previewPickUpComponent:AddGridPos(pickUpGridPos)
-          ;
-          ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoPickUpInstruction, self, PickUpInstructionType.Valid, skillConfigData, petEntity, pickUpGridPos)
+          GameGlobal.TaskManager():CoreGameStartTask(self._DoPickUpInstruction, self, PickUpInstructionType.Valid, skillConfigData, petEntity, pickUpGridPos)
         end
-        ;
-        ((self._world):EventDispatcher()):Dispatch(GameEventType.EnablePickUpSkillCast, true)
-        ;
-        ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangePickUpText, SkillPickUpTextStateType.Normal)
-      else
-        if (table.Vector2Include)(alreadyPickUpGrid, pickUpGridPos) then
-          if #alreadyPickUpGrid == 1 then
-            (Log.debug)("点选两次，同一个格子点选第二次，坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
-            previewPickUpComponent:AddGridPos(pickUpGridPos)
-          else
-            ;
-            (Log.debug)("点选两次，同一个格子点选奇数次，换坐标，坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
-            previewPickUpComponent:RemoveGridPos(pickUpGridPos)
-          end
-          ;
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.RefreshPickUpNum, 0)
-          ;
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.EnablePickUpSkillCast, true)
-          ;
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangePickUpText, SkillPickUpTextStateType.ColOrRow)
-          ;
-          ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoPickUpInstruction, self, PickUpInstructionType.Valid, skillConfigData, petEntity, pickUpGridPos)
+        self._world:EventDispatcher():Dispatch(GameEventType.EnablePickUpSkillCast, true)
+        self._world:EventDispatcher():Dispatch(GameEventType.ChangePickUpText, SkillPickUpTextStateType.Normal)
+      elseif table.Vector2Include(alreadyPickUpGrid, pickUpGridPos) then
+        if #alreadyPickUpGrid == 1 then
+          Log.debug("点选两次，同一个格子点选第二次，坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
+          previewPickUpComponent:AddGridPos(pickUpGridPos)
         else
-          ;
-          (Log.debug)("点选两次，已经点选格子情况下点选新格子，换坐标，坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
-          local alreadyPickUpCount = previewPickUpComponent:GetAllValidPickUpGridPosCount()
-          previewPickUpComponent:ClearGridPos()
-          if alreadyPickUpCount == 1 then
-            previewPickUpComponent:AddGridPos(pickUpGridPos)
-          else
-            if alreadyPickUpCount == 2 then
-              previewPickUpComponent:AddGridPos(pickUpGridPos)
-              previewPickUpComponent:AddGridPos(pickUpGridPos)
-            end
-          end
-          ;
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.RefreshPickUpNum, 0)
-          ;
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.EnablePickUpSkillCast, true)
-          ;
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangePickUpText, SkillPickUpTextStateType.ColOrRow)
-          ;
-          ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoPickUpInstruction, self, PickUpInstructionType.Valid, skillConfigData, petEntity, pickUpGridPos)
+          Log.debug("点选两次，同一个格子点选奇数次，换坐标，坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
+          previewPickUpComponent:RemoveGridPos(pickUpGridPos)
         end
+        self._world:EventDispatcher():Dispatch(GameEventType.RefreshPickUpNum, 0)
+        self._world:EventDispatcher():Dispatch(GameEventType.EnablePickUpSkillCast, true)
+        self._world:EventDispatcher():Dispatch(GameEventType.ChangePickUpText, SkillPickUpTextStateType.ColOrRow)
+        GameGlobal.TaskManager():CoreGameStartTask(self._DoPickUpInstruction, self, PickUpInstructionType.Valid, skillConfigData, petEntity, pickUpGridPos)
+      else
+        Log.debug("点选两次，已经点选格子情况下点选新格子，换坐标，坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
+        local alreadyPickUpCount = previewPickUpComponent:GetAllValidPickUpGridPosCount()
+        previewPickUpComponent:ClearGridPos()
+        if alreadyPickUpCount == 1 then
+          previewPickUpComponent:AddGridPos(pickUpGridPos)
+        elseif alreadyPickUpCount == 2 then
+          previewPickUpComponent:AddGridPos(pickUpGridPos)
+          previewPickUpComponent:AddGridPos(pickUpGridPos)
+        end
+        self._world:EventDispatcher():Dispatch(GameEventType.RefreshPickUpNum, 0)
+        self._world:EventDispatcher():Dispatch(GameEventType.EnablePickUpSkillCast, true)
+        self._world:EventDispatcher():Dispatch(GameEventType.ChangePickUpText, SkillPickUpTextStateType.ColOrRow)
+        GameGlobal.TaskManager():CoreGameStartTask(self._DoPickUpInstruction, self, PickUpInstructionType.Valid, skillConfigData, petEntity, pickUpGridPos)
       end
     else
-      do
-        ;
-        (Log.debug)("第一次点选，坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
-        previewPickUpComponent:AddGridPos(pickUpGridPos)
-        utilScopeSvc:ChangeGameFSMState2PickUp()
-        ;
-        ((self._world):EventDispatcher()):Dispatch(GameEventType.RefreshPickUpNum, 0)
-        ;
-        ((self._world):EventDispatcher()):Dispatch(GameEventType.EnablePickUpSkillCast, true)
-        if pickUpNum == 1 then
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangePickUpText, SkillPickUpTextStateType.Normal)
-        else
-          ;
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangePickUpText, SkillPickUpTextStateType.ColOrRow)
-        end
-        ;
-        ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoPickUpInstruction, self, PickUpInstructionType.Valid, skillConfigData, petEntity, pickUpGridPos)
-        if (table.Vector2Include)(invalidGridList, pickUpGridPos) then
-          ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoPickUpInstruction, self, PickUpInstructionType.Invalid, skillConfigData, petEntity, pickUpGridPos)
-        else
-          previewActiveSkill:PickUpInvalidGridCancelPreview(activeSkillID, pickUpTargetCmpt:GetPetPstid())
-        end
+      Log.debug("第一次点选，坐标：", tostring(pickUpGridPos), "SkillID:", activeSkillID)
+      previewPickUpComponent:AddGridPos(pickUpGridPos)
+      utilScopeSvc:ChangeGameFSMState2PickUp()
+      self._world:EventDispatcher():Dispatch(GameEventType.RefreshPickUpNum, 0)
+      self._world:EventDispatcher():Dispatch(GameEventType.EnablePickUpSkillCast, true)
+      if pickUpNum == 1 then
+        self._world:EventDispatcher():Dispatch(GameEventType.ChangePickUpText, SkillPickUpTextStateType.Normal)
+      else
+        self._world:EventDispatcher():Dispatch(GameEventType.ChangePickUpText, SkillPickUpTextStateType.ColOrRow)
       end
+      GameGlobal.TaskManager():CoreGameStartTask(self._DoPickUpInstruction, self, PickUpInstructionType.Valid, skillConfigData, petEntity, pickUpGridPos)
     end
+  elseif table.Vector2Include(invalidGridList, pickUpGridPos) then
+    GameGlobal.TaskManager():CoreGameStartTask(self._DoPickUpInstruction, self, PickUpInstructionType.Invalid, skillConfigData, petEntity, pickUpGridPos)
+  else
+    previewActiveSkill:PickUpInvalidGridCancelPreview(activeSkillID, pickUpTargetCmpt:GetPetPstid())
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpGridTogetherInstructionSystem_Render._DoPickUpInstruction = function(self, TT, type, skillConfigData, casterEntity, pickUpGirdPos)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillPickUpGridTogetherInstructionSystem_Render:_DoPickUpInstruction(TT, type, skillConfigData, casterEntity, pickUpGirdPos)
   local taskIDList = {}
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
-  for i,v in ipairs(skillConfigData._previewParamList) do
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
+  for i, v in ipairs(skillConfigData._previewParamList) do
     if v:GetPreviewType() == SkillPreviewType.Instruction then
       local instructionParam = v
-      for _,skillPreviewConfigData in ipairs(instructionParam._previewList) do
+      for _, skillPreviewConfigData in ipairs(instructionParam._previewList) do
         local instructionSet = self:_GetInstructSet(type, skillPreviewConfigData)
         if instructionSet then
           local previewContext = self:_GetPreviewContext(type, skillPreviewConfigData, casterEntity, skillPreviewConfigData:GetID(), pickUpGirdPos)
-          local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(previewActiveSkillService.DoPreviewInstruction, previewActiveSkillService, instructionSet, casterEntity, previewContext)
-          ;
-          (table.insert)(taskIDList, taskID)
+          local taskID = GameGlobal.TaskManager():CoreGameStartTask(previewActiveSkillService.DoPreviewInstruction, previewActiveSkillService, instructionSet, casterEntity, previewContext)
+          table.insert(taskIDList, taskID)
         end
       end
     end
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDList) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDList) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpGridTogetherInstructionSystem_Render._GetInstructSet = function(self, type, skillPreviewConfigData)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillPickUpGridTogetherInstructionSystem_Render:_GetInstructSet(type, skillPreviewConfigData)
   if type == PickUpInstructionType.Repeat then
     return skillPreviewConfigData:GetOnSelectCancelInstructionSet()
   end
@@ -205,11 +155,8 @@ SkillPickUpGridTogetherInstructionSystem_Render._GetInstructSet = function(self,
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpGridTogetherInstructionSystem_Render._GetPreviewContext = function(self, type, skillPreviewConfigData, casterEntity, id, pickUpGridPos)
-  -- function num : 0_6 , upvalues : _ENV
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+function SkillPickUpGridTogetherInstructionSystem_Render:_GetPreviewContext(type, skillPreviewConfigData, casterEntity, id, pickUpGridPos)
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
   local context = previewPickUpComponent:GetPreviewContext(id)
   if not context then
@@ -221,5 +168,3 @@ SkillPickUpGridTogetherInstructionSystem_Render._GetPreviewContext = function(se
   end
   return context
 end
-
-

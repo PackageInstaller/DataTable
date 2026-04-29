@@ -1,115 +1,89 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_pick_trap_buff_damage_or_summon_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayPickTrapBuffDamageOrSummonInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayPickTrapBuffDamageOrSummonInstruction = SkillPreviewPlayPickTrapBuffDamageOrSummonInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayPickTrapBuffDamageOrSummonInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayPickTrapBuffDamageOrSummonInstruction:Constructor(params)
   self._trapIDList = {}
   local trapList = params.trapIDList
   if trapList then
-    local strIDs = (string.split)(trapList, "|")
-    for i,v in ipairs(strIDs) do
-      (table.insert)(self._trapIDList, tonumber(v))
+    local strIDs = string.split(trapList, "|")
+    for i, v in ipairs(strIDs) do
+      table.insert(self._trapIDList, tonumber(v))
     end
   end
-  do
-    self._effectIDDic = {}
-    if params.effectIDDic then
-      local strIDs = (string.split)(params.effectIDDic, "|")
-      for k,effectID in ipairs(strIDs) do
-        -- DECOMPILER ERROR at PC41: Confused about usage of register: R9 in 'UnsetPending'
-
-        (self._effectIDDic)[k] = tonumber(effectID)
-      end
-    end
-    do
-      self._summonEffectID = tonumber(params.summonEffectID)
-      self._checkBuffEffectType = tonumber(params.checkBuffEffectType)
+  self._effectIDDic = {}
+  if params.effectIDDic then
+    local strIDs = string.split(params.effectIDDic, "|")
+    for k, effectID in ipairs(strIDs) do
+      self._effectIDDic[k] = tonumber(effectID)
     end
   end
+  self._summonEffectID = tonumber(params.summonEffectID)
+  self._checkBuffEffectType = tonumber(params.checkBuffEffectType)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayPickTrapBuffDamageOrSummonInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayPickTrapBuffDamageOrSummonInstruction:GetCacheResource()
   local res = {}
-  for i,effectID in pairs(self._effectIDDic) do
-    local effRes = {((Cfg.cfg_effect)[effectID]).ResPath, 1}
-    ;
-    (table.insert)(res, effRes)
+  for i, effectID in pairs(self._effectIDDic) do
+    local effRes = {
+      Cfg.cfg_effect[effectID].ResPath,
+      1
+    }
+    table.insert(res, effRes)
   end
-  local effRes = {((Cfg.cfg_effect)[self._summonEffectID]).ResPath, 1}
-  ;
-  (table.insert)(res, effRes)
+  local effRes = {
+    Cfg.cfg_effect[self._summonEffectID].ResPath,
+    1
+  }
+  table.insert(res, effRes)
   return res
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayPickTrapBuffDamageOrSummonInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPreviewPlayPickTrapBuffDamageOrSummonInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = casterEntity:GetOwnerWorld()
   local entitySvc = world:GetService("RenderEntity")
   local pickUpPos = previewContext:GetPickUpPos()
-  local boardCmpt = (world:GetBoardEntity()):Board()
+  local boardCmpt = world:GetBoardEntity():Board()
   local traps = boardCmpt:GetPieceEntities(pickUpPos, function(e)
-    -- function num : 0_2_0 , upvalues : casterEntity, _ENV, self
     local isOwner = false
     local casterEntityID = casterEntity:GetID()
     if e:HasSummoner() then
-      local summonEntityID = (e:Summoner()):GetSummonerEntityID()
+      local summonEntityID = e:Summoner():GetSummonerEntityID()
       local summonEntity = e:GetSummonerEntity()
       if summonEntity and summonEntity:HasSuperEntity() and summonEntity:GetSuperEntity() then
-        summonEntityID = (summonEntity:GetSuperEntity()):GetID()
+        summonEntityID = summonEntity:GetSuperEntity():GetID()
       end
       if summonEntityID == casterEntityID then
         isOwner = true
       end
     else
-      do
-        isOwner = true
-        if isOwner and e:HasTrapRender() and (table.icontains)(self._trapIDList, (e:TrapRender()):GetTrapID()) then
-          return not e:HasDeadMark()
-        end
-      end
+      isOwner = true
     end
-  end
-)
-  if #traps > 0 then
+    return isOwner and e:HasTrapRender() and table.icontains(self._trapIDList, e:TrapRender():GetTrapID()) and not e:HasDeadMark()
+  end)
+  if 0 < #traps then
     local scopeResult, buffState = self:_GetScopeResultAndBuffState(previewContext, pickUpPos, traps[1], casterEntity)
     previewContext:SetScopeResult(scopeResult:GetAttackRange())
     local utilScopeSvc = world:GetService("UtilScopeCalc")
     local targetIDList = scopeResult:GetTargetIDs()
     previewContext:SetTargetEntityIDList(targetIDList)
-    local effectID = (self._effectIDDic)[buffState]
-    if effectID and effectID > 0 then
-      local effectEntity = (world:GetService("Effect")):CreateWorldPositionEffect(effectID, previewContext:GetPickUpPos())
+    local effectID = self._effectIDDic[buffState]
+    if effectID and 0 < effectID then
+      local effectEntity = world:GetService("Effect"):CreateWorldPositionEffect(effectID, previewContext:GetPickUpPos())
       local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
       previewPickUpComponent:AddPickUpEffectEntityID(effectEntity:GetID())
     end
   else
-    do
-      local effectEntity = (world:GetService("Effect")):CreateWorldPositionEffect(self._summonEffectID, pickUpPos)
-      local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
-      previewPickUpComponent:AddPickUpEffectEntityID(effectEntity:GetID())
-      previewContext:SetScopeResult(nil)
-      local targetList = {}
-      previewContext:SetTargetEntityIDList(targetList)
-    end
+    local effectEntity = world:GetService("Effect"):CreateWorldPositionEffect(self._summonEffectID, pickUpPos)
+    local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
+    previewPickUpComponent:AddPickUpEffectEntityID(effectEntity:GetID())
+    previewContext:SetScopeResult(nil)
+    local targetList = {}
+    previewContext:SetTargetEntityIDList(targetList)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayPickTrapBuffDamageOrSummonInstruction._GetScopeResultAndBuffState = function(self, previewContext, pickUpPos, trap, casterEntity)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillPreviewPlayPickTrapBuffDamageOrSummonInstruction:_GetScopeResultAndBuffState(previewContext, pickUpPos, trap, casterEntity)
   local world = casterEntity:GetOwnerWorld()
   local previewEffectCalcService = world:GetService("PreviewCalcEffect")
   local effect = previewContext:GetEffect(SkillEffectType.PickUpTrapAndBuffDamage)
@@ -124,8 +98,8 @@ SkillPreviewPlayPickTrapBuffDamageOrSummonInstruction._GetScopeResultAndBuffStat
   if state == 0 then
     return {}, state
   end
-  if (table.count)(skillList) < state then
-    state = (table.count)(skillList)
+  if state > table.count(skillList) then
+    state = table.count(skillList)
   end
   local skillID = skillList[state]
   local configService = world:GetService("Config")
@@ -136,10 +110,8 @@ SkillPreviewPlayPickTrapBuffDamageOrSummonInstruction._GetScopeResultAndBuffStat
   local targetType = skillConfigData:GetSkillTargetType()
   local utilScopeSvc = world:GetService("UtilScopeCalc")
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
-  local casterBodyArea = (casterEntity:BodyArea()):GetArea()
+  local casterBodyArea = casterEntity:BodyArea():GetArea()
   local casterDirection = casterEntity:GetGridDirection()
   local scopeResult = scopeCalculator:ComputeScopeRange(scopeType, scopeParam, attackPos, casterBodyArea, casterDirection, targetType, attackPos, casterEntity)
   return scopeResult, state
 end
-
-

@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/once_mission/ui_season_once_mission_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonOnceMissionItem", UICustomWidget)
 UISeasonOnceMissionItem = UISeasonOnceMissionItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonOnceMissionItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._atlas = (self:RootUIOwner()):GetAsset("UISeasonOnceMission.spriteatlas", LoadType.SpriteAtlas)
+function UISeasonOnceMissionItem:OnShow(uiParams)
+  self._atlas = self:RootUIOwner():GetAsset("UISeasonOnceMission.spriteatlas", LoadType.SpriteAtlas)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonOnceMissionItem:InitWidget()
   self.rootImg = self:GetUIComponent("Image", "Root")
   self.noneStarts = self:GetGameObject("NoneStarts")
   self.unFinish = self:GetGameObject("unFinish")
@@ -26,92 +16,73 @@ UISeasonOnceMissionItem.InitWidget = function(self)
   self.stars = self:GetUIComponent("Transform", "Stars")
   self._root = self:GetUIComponent("RectTransform", "Root")
   self._itemRect = self:GetUIComponent("RectTransform", "_anim")
-  self._stars = {((self.stars):GetChild(0)).gameObject, ((self.stars):GetChild(1)).gameObject, ((self.stars):GetChild(2)).gameObject}
+  self._stars = {
+    self.stars:GetChild(0).gameObject,
+    self.stars:GetChild(1).gameObject,
+    self.stars:GetChild(2).gameObject
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionItem.SetData = function(self, lineCfg, passInfo, cb)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonOnceMissionItem:SetData(lineCfg, passInfo, cb)
   self._missionID = lineCfg.CampaignMissionId
   self._callback = cb
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   if not missionCfg then
-    (Log.exception)("cfg_campaign_mission中找不到配置:", self._missionID)
+    Log.exception("cfg_campaign_mission中找不到配置:", self._missionID)
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._itemRect).anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
-  ;
-  (self.title):SetText((StringTable.Get)(missionCfg.Name))
+  self._itemRect.anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
+  self.title:SetText(StringTable.Get(missionCfg.Name))
   self._bHasThreeStar = false
   if missionCfg.ThreeStarCondition3 then
     self._bHasThreeStar = true
   end
-  ;
-  (self.starsGo):SetActive(self._bHasThreeStar)
-  ;
-  (self.noneStarts):SetActive(not self._bHasThreeStar)
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R5 in 'UnsetPending'
-
+  self.starsGo:SetActive(self._bHasThreeStar)
+  self.noneStarts:SetActive(not self._bHasThreeStar)
   if self._bHasThreeStar then
-    (self.rootImg).sprite = (self._atlas):GetSprite("cn12_zdg_di01")
+    self.rootImg.sprite = self._atlas:GetSprite("cn12_zdg_di01")
     local starCount = 0
-    starCount = not passInfo or not passInfo.star or ((GameGlobal.GetModule)(MissionModule)):ParseStarInfo(passInfo.star) or 0
+    if passInfo and passInfo.star then
+      starCount = GameGlobal.GetModule(MissionModule):ParseStarInfo(passInfo.star) or 0
+    end
     for i = 1, 3 do
       local pass = i <= starCount
-      ;
-      ((self._stars)[i]):SetActive(pass)
+      self._stars[i]:SetActive(pass)
     end
   else
-    -- DECOMPILER ERROR at PC86: Confused about usage of register: R5 in 'UnsetPending'
-
-    (self.rootImg).sprite = (self._atlas):GetSprite("cn12_zdg_di02")
-    if passInfo then
-      local bFinsh = passInfo.star
-    end
-    ;
-    (self.finish):SetActive(bFinsh)
-    ;
-    (self.unFinish):SetActive(not bFinsh)
+    self.rootImg.sprite = self._atlas:GetSprite("cn12_zdg_di02")
+    local bFinsh = passInfo and passInfo.star
+    self.finish:SetActive(bFinsh)
+    self.unFinish:SetActive(not bFinsh)
     if bFinsh then
       self:_PlayAnim("finish")
     end
   end
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "unFinish", "uieff_UISeasonOnceMissionItem_eye")
+  UIWidgetHelper.PlayAnimation(self, "unFinish", "uieff_UISeasonOnceMissionItem_eye")
   self._isStoryNode = missionCfg.Type == DiscoveryStageType.Plot
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionItem.RootOnClick = function(self, go)
-  -- function num : 0_3
-  (self._callback)(self._missionID, self._isStoryNode)
+function UISeasonOnceMissionItem:RootOnClick(go)
+  self._callback(self._missionID, self._isStoryNode)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionItem._PlayAnim = function(self, idx, callback)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonOnceMissionItem:_PlayAnim(idx, callback)
   local tb = {
-["in"] = {animName = "uieff_UISeasonOnceMissionItem_in"}
-, 
-up = {animName = "uieff_UISeasonOnceMissionItem_up"}
-, 
-down = {animName = "uieff_UISeasonOnceMissionItem_down"}
-, 
-finish = {animName = "uieff_UISeasonOnceMissionItem_finish"}
-}
+    ["in"] = {
+      animName = "uieff_UISeasonOnceMissionItem_in"
+    },
+    up = {
+      animName = "uieff_UISeasonOnceMissionItem_up"
+    },
+    down = {
+      animName = "uieff_UISeasonOnceMissionItem_down"
+    },
+    finish = {
+      animName = "uieff_UISeasonOnceMissionItem_finish"
+    }
+  }
   if tb[idx] ~= nil then
-    (UIWidgetHelper.PlayAnimation)(self, "_anim", (tb[idx]).animName, (tb[idx]).duration, callback)
-  else
-    if callback ~= nil then
-      callback()
-    end
+    UIWidgetHelper.PlayAnimation(self, "_anim", tb[idx].animName, tb[idx].duration, callback)
+  elseif callback ~= nil then
+    callback()
   end
 end
-
-

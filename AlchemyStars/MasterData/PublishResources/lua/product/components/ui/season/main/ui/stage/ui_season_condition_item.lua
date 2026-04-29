@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/stage/ui_season_condition_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonConditionItem", UICustomWidget)
 UISeasonConditionItem = UISeasonConditionItem
 local ATLAS_NAME = "UIStage.spriteatlas"
 local BG_NAME = "map_guanqia_tiao"
--- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
 
-UISeasonConditionItem.OnShow = function(self)
-  -- function num : 0_0
+function UISeasonConditionItem:OnShow()
   self._imgStar = self:GetGameObject("imgStar")
   self._grayImgStar = self:GetGameObject("imgGrayStar")
   self._txt = self:GetUIComponent("RollingText", "txt")
@@ -20,84 +13,54 @@ UISeasonConditionItem.OnShow = function(self)
   self._rootGo = self:GetGameObject("root")
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-UISeasonConditionItem.Flush = function(self, v, index)
-  -- function num : 0_1
+function UISeasonConditionItem:Flush(v, index)
   self._index = index
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._title).text = index
-  ;
-  (self._txt):RefreshText(v.content)
-  ;
-  ((self._imgStar).gameObject):SetActive(v.satisfy)
-  ;
-  ((self._grayImgStar).gameObject):SetActive(not v.satisfy)
+  self._title.text = index
+  self._txt:RefreshText(v.content)
+  self._imgStar.gameObject:SetActive(v.satisfy)
+  self._grayImgStar.gameObject:SetActive(not v.satisfy)
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-UISeasonConditionItem.PlayAnim = function(self, totalDelay)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonConditionItem:PlayAnim(totalDelay)
   local curAnimDelay = 0
   if totalDelay then
     curAnimDelay = totalDelay
   end
   if self._animTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._animTimer)
+    GameGlobal.Timer():CancelEvent(self._animTimer)
     self._animTimer = nil
   end
-  self._animTimer = ((GameGlobal.Timer)()):AddEvent(curAnimDelay, function()
-    -- function num : 0_2_0 , upvalues : self
+  self._animTimer = GameGlobal.Timer():AddEvent(curAnimDelay, function()
     self:_PlayInAnim()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-UISeasonConditionItem.RefreshBg = function(self, atlas, index)
-  -- function num : 0_3 , upvalues : BG_NAME
+function UISeasonConditionItem:RefreshBg(atlas, index)
   local spriteName = BG_NAME .. index
   local sprite = atlas:GetSprite(spriteName)
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R5 in 'UnsetPending'
-
   if sprite then
-    (self._bgImage).sprite = sprite
+    self._bgImage.sprite = sprite
   end
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-UISeasonConditionItem.SetWaitAnim = function(self)
-  -- function num : 0_4
+function UISeasonConditionItem:SetWaitAnim()
   if self._rootGo then
-    (self._rootGo):SetActive(false)
+    self._rootGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-UISeasonConditionItem._PlayInAnim = function(self)
-  -- function num : 0_5
+function UISeasonConditionItem:_PlayInAnim()
   if self._anim then
-    (self._anim):Play("uieff_UISeasonConditionItem_in")
+    self._anim:Play("uieff_UISeasonConditionItem_in")
     if self._rootGo then
-      (self._rootGo):SetActive(true)
+      self._rootGo:SetActive(true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-UISeasonConditionItem.OnHide = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonConditionItem:OnHide()
   if self._animTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._animTimer)
+    GameGlobal.Timer():CancelEvent(self._animTimer)
     self._animTimer = nil
   end
 end
-
-

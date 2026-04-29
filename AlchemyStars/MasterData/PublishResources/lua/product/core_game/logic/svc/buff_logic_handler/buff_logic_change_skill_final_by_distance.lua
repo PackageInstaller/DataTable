@@ -1,41 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_skill_final_by_distance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillFinalByDistance", BuffLogicBase)
 BuffLogicChangeSkillFinalByDistance = BuffLogicChangeSkillFinalByDistance
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillFinalByDistance.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.ratesByDis then
-    self._ratesByDis = {}
-    self._entity = buffInstance:Entity()
-    self._disToPick = logicParam.disToPick
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._buffInstance)._effectList = logicParam.effectList
-  end
+function BuffLogicChangeSkillFinalByDistance:Constructor(buffInstance, logicParam)
+  self._ratesByDis = logicParam.ratesByDis or {}
+  self._entity = buffInstance:Entity()
+  self._disToPick = logicParam.disToPick
+  self._buffInstance._effectList = logicParam.effectList
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillFinalByDistance.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeSkillFinalByDistance:DoLogic(notify)
   if notify == nil then
-    return 
+    return
   end
   local attacker = notify:GetNotifyEntity()
   if self._entity ~= attacker then
-    return 
+    return
   end
   local notifyType = notify:GetNotifyType()
-  local attackerPos = ((self._entity):GridLocation()).Position
+  local attackerPos = self._entity:GridLocation().Position
   if self._disToPick then
     local pickIndex = tonumber(self._disToPick)
-    local component = (self._entity):ActiveSkillPickUpComponent()
+    local component = self._entity:ActiveSkillPickUpComponent()
     if component then
       local pickVec = component:GetAllValidPickUpGridPos()
       if pickIndex <= #pickVec then
@@ -43,119 +28,84 @@ BuffLogicChangeSkillFinalByDistance.DoLogic = function(self, notify)
       end
     end
   end
-  do
-    if notifyType == NotifyType.ChainSkillEachAttackStart then
-      if (self._world):SubMatchType() == MatchType.MT_PopStarPro then
-        local teamEntity = ((self._entity):Pet()):GetOwnerTeamEntity()
-        local logicChainPathCmpt = teamEntity:LogicChainPath()
-        do
-          local chainPath = logicChainPathCmpt:GetLogicChainPath()
-          if chainPath and #chainPath >= 1 then
-            attackerPos = chainPath[#chainPath]
-          end
-          local dis = 100
-          local skillID = notify:GetSkillID()
-          local configsvc = (self._world):GetService("Config")
-          local skillConfig = configsvc:GetSkillConfigData(skillID)
-          local filter = skillConfig:GetScopeFilterParam()
-          local targetMode = filter:GetTargetSelectionMode()
-          if targetMode == SkillTargetSelectionMode.Grid then
-            local defenderPos = notify:GetTargetPos()
-            local offsetX = (math.abs)(defenderPos.x - attackerPos.x)
-            local offsetY = (math.abs)(defenderPos.y - attackerPos.y)
-            dis = offsetY < offsetX and offsetX or offsetY
-          else
-            do
-              if targetMode == SkillTargetSelectionMode.Entity then
-                local defender = notify:GetDefenderEntity()
-                local defenderPos = (defender:GridLocation()).Position
-                local defenderArea = (defender:BodyArea()):GetArea()
-                for i,v in ipairs(defenderArea) do
-                  local pos = defenderPos + v
-                  local offsetX = (math.abs)(pos.x - attackerPos.x)
-                  local offsetY = (math.abs)(pos.y - attackerPos.y)
-                  local d = offsetY < offsetX and offsetX or offsetY
-                end
-              end
-              do
-                if d >= dis or not d then
-                  local changeValue = (self._ratesByDis)[dis]
-                  if not changeValue then
-                    return 
-                  end
-                  if notifyType == NotifyType.ChainSkillEachAttackStart then
-                    (self._buffLogicService):ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillIncreaseParamType.ChainSkill, changeValue)
-                  else
-                    if notifyType == NotifyType.ActiveSkillEachAttackStart then
-                      (self._buffLogicService):ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillIncreaseParamType.ActiveSkill, changeValue)
-                    else
-                      if notifyType == NotifyType.MonsterEachAttackStart then
-                        (self._buffLogicService):ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillIncreaseParamType.MonsterDamage, changeValue)
-                      else
-                        if notifyType == NotifyType.AutoBeadSkillEachAttackStart then
-                          (self._buffLogicService):ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillIncreaseParamType.AutoBeadSkill, changeValue)
-                        else
-                          if (self._buffInstance)._effectList then
-                            for _,paramType in ipairs((self._buffInstance)._effectList) do
-                              (self._buffLogicService):ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, changeValue)
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+  if notifyType ~= NotifyType.ChainSkillEachAttackStart or self._world:SubMatchType() == MatchType.MT_PopStarPro then
+  else
+    local teamEntity = self._entity:Pet():GetOwnerTeamEntity()
+    local logicChainPathCmpt = teamEntity:LogicChainPath()
+    local chainPath = logicChainPathCmpt:GetLogicChainPath()
+    if chainPath and 1 <= #chainPath then
+      attackerPos = chainPath[#chainPath]
+    end
+  end
+  local dis = 100
+  local skillID = notify:GetSkillID()
+  local configsvc = self._world:GetService("Config")
+  local skillConfig = configsvc:GetSkillConfigData(skillID)
+  local filter = skillConfig:GetScopeFilterParam()
+  local targetMode = filter:GetTargetSelectionMode()
+  if targetMode == SkillTargetSelectionMode.Grid then
+    local defenderPos = notify:GetTargetPos()
+    local offsetX = math.abs(defenderPos.x - attackerPos.x)
+    local offsetY = math.abs(defenderPos.y - attackerPos.y)
+    dis = offsetX > offsetY and offsetX or offsetY
+  elseif targetMode == SkillTargetSelectionMode.Entity then
+    local defender = notify:GetDefenderEntity()
+    local defenderPos = defender:GridLocation().Position
+    local defenderArea = defender:BodyArea():GetArea()
+    for i, v in ipairs(defenderArea) do
+      local pos = defenderPos + v
+      local offsetX = math.abs(pos.x - attackerPos.x)
+      local offsetY = math.abs(pos.y - attackerPos.y)
+      local d = offsetX > offsetY and offsetX or offsetY
+      dis = dis > d and d or dis
+    end
+  end
+  local changeValue = self._ratesByDis[dis]
+  if not changeValue then
+    return
+  end
+  if notifyType == NotifyType.ChainSkillEachAttackStart then
+    self._buffLogicService:ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillIncreaseParamType.ChainSkill, changeValue)
+  elseif notifyType == NotifyType.ActiveSkillEachAttackStart then
+    self._buffLogicService:ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillIncreaseParamType.ActiveSkill, changeValue)
+  elseif notifyType == NotifyType.MonsterEachAttackStart then
+    self._buffLogicService:ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillIncreaseParamType.MonsterDamage, changeValue)
+  elseif notifyType == NotifyType.AutoBeadSkillEachAttackStart then
+    self._buffLogicService:ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillIncreaseParamType.AutoBeadSkill, changeValue)
+  elseif self._buffInstance._effectList then
+    for _, paramType in ipairs(self._buffInstance._effectList) do
+      self._buffLogicService:ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, changeValue)
     end
   end
 end
 
 _class("BuffLogicRemoveSkillFinalByDistance", BuffLogicBase)
 BuffLogicRemoveSkillFinalByDistance = BuffLogicRemoveSkillFinalByDistance
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveSkillFinalByDistance.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveSkillFinalByDistance:Constructor(buffInstance, logicParam)
   self._entity = buffInstance:Entity()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveSkillFinalByDistance.DoLogic = function(self, data)
-  -- function num : 0_3 , upvalues : _ENV
+function BuffLogicRemoveSkillFinalByDistance:DoLogic(data)
   if data == nil then
-    return 
+    return
   end
   local attacker = data:GetNotifyEntity()
   if self._entity ~= attacker then
-    return 
+    return
   end
   local notifyType = data:GetNotifyType()
   if notifyType == NotifyType.ChainSkillEachAttackEnd then
-    (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillIncreaseParamType.ChainSkill)
-  else
-    if notifyType == NotifyType.ActiveSkillEachAttackEnd then
-      (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillIncreaseParamType.ActiveSkill)
-    else
-      if notifyType == NotifyType.MonsterEachAttackEnd then
-        (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillIncreaseParamType.MonsterDamage)
-      else
-        if notifyType == NotifyType.AutoBeadSkillEachAttackEnd then
-          (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillIncreaseParamType.AutoBeadSkill)
-        else
-          if (self._buffInstance)._effectList then
-            for _,paramType in ipairs((self._buffInstance)._effectList) do
-              (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
-            end
-          end
-        end
-      end
+    self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillIncreaseParamType.ChainSkill)
+  elseif notifyType == NotifyType.ActiveSkillEachAttackEnd then
+    self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillIncreaseParamType.ActiveSkill)
+  elseif notifyType == NotifyType.MonsterEachAttackEnd then
+    self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillIncreaseParamType.MonsterDamage)
+  elseif notifyType == NotifyType.AutoBeadSkillEachAttackEnd then
+    self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillIncreaseParamType.AutoBeadSkill)
+  elseif self._buffInstance._effectList then
+    for _, paramType in ipairs(self._buffInstance._effectList) do
+      self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
     end
   end
 end
-
-

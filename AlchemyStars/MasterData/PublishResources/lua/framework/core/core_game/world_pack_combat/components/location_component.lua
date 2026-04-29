@@ -1,252 +1,156 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_combat/components/location_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LocationComponent", Object)
 LocationComponent = LocationComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LocationComponent.Constructor = function(self, pos, dir)
-  -- function num : 0_0 , upvalues : _ENV
-  if not pos then
-    self.Position = Vector3(0, 0, 0)
-    if not dir then
-      self.Direction = Vector3(0, 0, 1)
-      self.Scale = Vector3(1, 1, 1)
-      self.height = 0
-      self._modifyLocationCallback = nil
-      self._syncToHPBar = true
-    end
-  end
+function LocationComponent:Constructor(pos, dir)
+  self.Position = pos or Vector3(0, 0, 0)
+  self.Direction = dir or Vector3(0, 0, 1)
+  self.Scale = Vector3(1, 1, 1)
+  self.height = 0
+  self._modifyLocationCallback = nil
+  self._syncToHPBar = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LocationComponent.SetPosition = function(self, pos)
-  -- function num : 0_1
+function LocationComponent:SetPosition(pos)
   self.Position = pos
   self:CallBackModify()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LocationComponent.SetDirection = function(self, dir)
-  -- function num : 0_2
+function LocationComponent:SetDirection(dir)
   self.Direction = dir
   self:CallBackModify()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LocationComponent.GetPosition = function(self)
-  -- function num : 0_3
-  return (self.Position):Clone()
+function LocationComponent:GetPosition()
+  return self.Position:Clone()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LocationComponent.GetDirection = function(self)
-  -- function num : 0_4
-  return (self.Direction):Clone()
+function LocationComponent:GetDirection()
+  return self.Direction:Clone()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LocationComponent.GetScale = function(self)
-  -- function num : 0_5
-  return (self.Scale):Clone()
+function LocationComponent:GetScale()
+  return self.Scale:Clone()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LocationComponent.GetRenderGridDirection = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function LocationComponent:GetRenderGridDirection()
   local dir = self:GetDirection()
-  return Vector2((math.floor)(dir.x), (math.floor)(dir.z))
+  return Vector2(math.floor(dir.x), math.floor(dir.z))
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LocationComponent.Height = function(self)
-  -- function num : 0_7
+function LocationComponent:Height()
   return self.height
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LocationComponent.SetModifyLocationCallback = function(self, callback)
-  -- function num : 0_8
+function LocationComponent:SetModifyLocationCallback(callback)
   self._modifyLocationCallback = callback
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LocationComponent.CallBackModify = function(self)
-  -- function num : 0_9
+function LocationComponent:CallBackModify()
   if self._modifyLocationCallback then
-    (self._modifyLocationCallback)(self:GetPosition(), self:GetDirection())
+    self._modifyLocationCallback(self:GetPosition(), self:GetDirection())
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LocationComponent.CallBackModifyLocation = function(self, pos, dir, entity)
-  -- function num : 0_10
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R4 in 'UnsetPending'
-
-  (self.Position).x = pos.x
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.Position).z = pos.z
+function LocationComponent:CallBackModifyLocation(pos, dir, entity)
+  self.Position.x = pos.x
+  self.Position.z = pos.z
   self.Direction = dir
   self:SyncLocation(entity)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LocationComponent.SyncLocation = function(self, entity)
-  -- function num : 0_11
-  do
-    if self.tranRenderSvc == nil then
-      local world = entity:GetOwnerWorld()
-      self.tranRenderSvc = world:GetService("TransformRenderer")
-    end
-    ;
-    (self.tranRenderSvc):SimpleSyncLocation(entity)
+function LocationComponent:SyncLocation(entity)
+  if self.tranRenderSvc == nil then
+    local world = entity:GetOwnerWorld()
+    self.tranRenderSvc = world:GetService("TransformRenderer")
   end
+  self.tranRenderSvc:SimpleSyncLocation(entity)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LocationComponent.SetSyncToHPBarState = function(self, state)
-  -- function num : 0_12
+function LocationComponent:SetSyncToHPBarState(state)
   self._syncToHPBar = state
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LocationComponent.IsSyncToHPBar = function(self)
-  -- function num : 0_13
+function LocationComponent:IsSyncToHPBar()
   return self._syncToHPBar
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Location = function(self)
-  -- function num : 0_14
-  return self:GetComponent((self.WEComponentsEnum).Location)
+function Entity:Location()
+  return self:GetComponent(self.WEComponentsEnum.Location)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasLocation = function(self)
-  -- function num : 0_15
-  return self:HasComponent((self.WEComponentsEnum).Location)
+function Entity:HasLocation()
+  return self:HasComponent(self.WEComponentsEnum.Location)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveLocation = function(self)
-  -- function num : 0_16
+function Entity:RemoveLocation()
   if self:HasLocation() then
-    self:RemoveComponent((self.WEComponentsEnum).Location)
+    self:RemoveComponent(self.WEComponentsEnum.Location)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetPosition = function(self)
-  -- function num : 0_17
-  do
-    if self:HasLocation() then
-      local cmpt = self:Location()
-      return cmpt:GetPosition()
-    end
-    return nil
+function Entity:GetPosition()
+  if self:HasLocation() then
+    local cmpt = self:Location()
+    return cmpt:GetPosition()
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetDirection = function(self)
-  -- function num : 0_18
-  do
-    if self:HasLocation() then
-      local cmpt = self:Location()
-      return cmpt:GetDirection()
-    end
-    return nil
+function Entity:GetDirection()
+  if self:HasLocation() then
+    local cmpt = self:Location()
+    return cmpt:GetDirection()
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetRenderGridDirection = function(self)
-  -- function num : 0_19
-  do
-    if self:HasLocation() then
-      local cmpt = self:Location()
-      return cmpt:GetRenderGridDirection()
-    end
-    return nil
+function Entity:GetRenderGridDirection()
+  if self:HasLocation() then
+    local cmpt = self:Location()
+    return cmpt:GetRenderGridDirection()
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetRenderGridPosition = function(self)
-  -- function num : 0_20
-  do
-    if self:HasLocation() then
-      local boardServiceRender = (self:GetOwnerWorld()):GetService("BoardRender")
-      return boardServiceRender:GetEntityRealTimeGridPos(self)
-    end
-    return nil
+function Entity:GetRenderGridPosition()
+  if self:HasLocation() then
+    local boardServiceRender = self:GetOwnerWorld():GetService("BoardRender")
+    return boardServiceRender:GetEntityRealTimeGridPos(self)
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetLocation = function(self, pos, dir, forceDirection)
-  -- function num : 0_21 , upvalues : _ENV
+function Entity:SetLocation(pos, dir, forceDirection)
   local logicPos = pos
   local logicDir = dir
-  local boardServiceRender = (self:GetOwnerWorld()):GetService("BoardRender")
+  local boardServiceRender = self:GetOwnerWorld():GetService("BoardRender")
   pos = boardServiceRender:GridPosition2LocationPos(pos, self)
   if not forceDirection or dir._className ~= "Vector3" then
     dir = boardServiceRender:GridDir2LocationDir(dir)
   end
-  local locationCmp = nil
-  local index = (self.WEComponentsEnum).Location
+  local locationCmp
+  local index = self.WEComponentsEnum.Location
   if self:HasLocation() then
     locationCmp = self:Location()
-    if not pos then
-      locationCmp.Position = locationCmp.Position
-      if not dir then
-        locationCmp.Direction = locationCmp.Direction
-        locationCmp:CallBackModify()
-        locationCmp = LocationComponent:New(pos, dir)
-        self:ReplaceComponent(index, locationCmp)
-        locationCmp:SyncLocation(self)
-      end
-    end
+    locationCmp.Position = pos or locationCmp.Position
+    locationCmp.Direction = dir or locationCmp.Direction
+    locationCmp:CallBackModify()
+  else
+    locationCmp = LocationComponent:New(pos, dir)
+    self:ReplaceComponent(index, locationCmp)
   end
+  locationCmp:SyncLocation(self)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetPosition = function(self, pos)
-  -- function num : 0_22 , upvalues : _ENV
-  local boardServiceRender = (self:GetOwnerWorld()):GetService("BoardRender")
+function Entity:SetPosition(pos)
+  local boardServiceRender = self:GetOwnerWorld():GetService("BoardRender")
   pos = boardServiceRender:GridPosition2LocationPos(pos, self)
   if not pos then
-    (Log.fatal)("SetPosition Invalid ", (Log.traceback)())
-    return 
+    Log.fatal("SetPosition Invalid ", Log.traceback())
+    return
   end
-  local locationCmp = nil
-  local index = (self.WEComponentsEnum).Location
+  local locationCmp
+  local index = self.WEComponentsEnum.Location
   if self:HasLocation() then
     locationCmp = self:Location()
     locationCmp:SetPosition(pos)
@@ -257,20 +161,17 @@ Entity.SetPosition = function(self, pos)
   locationCmp:SyncLocation(self)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetDirection = function(self, dir, offset)
-  -- function num : 0_23 , upvalues : _ENV
-  local BoardServiceRender = (self:GetOwnerWorld()):GetService("BoardRender")
+function Entity:SetDirection(dir, offset)
+  local BoardServiceRender = self:GetOwnerWorld():GetService("BoardRender")
   dir = BoardServiceRender:GridDir2LocationDir(dir)
   if not dir then
-    return 
+    return
   end
   if offset then
     dir.y = dir.y + offset
   end
-  local locationCmp = nil
-  local index = (self.WEComponentsEnum).Location
+  local locationCmp
+  local index = self.WEComponentsEnum.Location
   if self:HasLocation() then
     locationCmp = self:Location()
     locationCmp:SetDirection(dir)
@@ -282,16 +183,13 @@ Entity.SetDirection = function(self, dir, offset)
   locationCmp:SyncLocation(self)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetScale = function(self, scale)
-  -- function num : 0_24 , upvalues : _ENV
+function Entity:SetScale(scale)
   if scale and scale._className ~= "Vector3" then
-    (Log.fatal)("Param Invalid ", (Log.traceback)())
-    return 
+    Log.fatal("Param Invalid ", Log.traceback())
+    return
   end
-  local locationCmp = nil
-  local index = (self.WEComponentsEnum).Location
+  local locationCmp
+  local index = self.WEComponentsEnum.Location
   if self:HasLocation() then
     locationCmp = self:Location()
     locationCmp.Scale = scale
@@ -304,19 +202,13 @@ Entity.SetScale = function(self, scale)
   locationCmp:SyncLocation(self)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetLocationHeight = function(self, height)
-  -- function num : 0_25 , upvalues : _ENV
-  local locationCmp = nil
-  local index = (self.WEComponentsEnum).Location
+function Entity:SetLocationHeight(height)
+  local locationCmp
+  local index = self.WEComponentsEnum.Location
   if self:HasLocation() then
     locationCmp = self:Location()
     locationCmp.height = height
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (locationCmp.Position).y = height
+    locationCmp.Position.y = height
     self:ReplaceComponent(index, locationCmp)
   else
     locationCmp = LocationComponent:New(nil, nil)
@@ -326,11 +218,8 @@ Entity.SetLocationHeight = function(self, height)
   locationCmp:SyncLocation(self)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetDamageCenter = function(self)
-  -- function num : 0_26
-  local posReturn = nil
+function Entity:GetDamageCenter()
+  local posReturn
   if self:HasGridLocation() then
     local cmpt = self:GridLocation()
     local posOffSet = cmpt:GetDamageOffset()
@@ -339,9 +228,5 @@ Entity.GetDamageCenter = function(self)
       posReturn = entityGridPos + posOffSet
     end
   end
-  do
-    return posReturn
-  end
+  return posReturn
 end
-
-

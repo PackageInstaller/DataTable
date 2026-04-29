@@ -1,80 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_damage_base_on_pick_up_rect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_DamageBasedOnPickUpRect", SkillEffectCalc_Base)
 SkillEffectCalc_DamageBasedOnPickUpRect = SkillEffectCalc_DamageBasedOnPickUpRect
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_DamageBasedOnPickUpRect.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_DamageBasedOnPickUpRect:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DamageBasedOnPickUpRect.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_DamageBasedOnPickUpRect:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local skillEffectParam = skillEffectCalcParam.skillEffectParam
   local rectX = {}
   local rectY = {}
-  for k,pos in ipairs(skillEffectCalcParam.skillRange) do
-    if not (table.intable)(rectX, pos.x) then
-      (table.insert)(rectX, pos.x)
+  for k, pos in ipairs(skillEffectCalcParam.skillRange) do
+    if not table.intable(rectX, pos.x) then
+      table.insert(rectX, pos.x)
     end
-    if not (table.intable)(rectY, pos.y) then
-      (table.insert)(rectY, pos.y)
+    if not table.intable(rectY, pos.y) then
+      table.insert(rectY, pos.y)
     end
   end
-  skillEffectParam:SetSkillRangeRectParam((table.count)(rectX), (table.count)(rectY))
+  skillEffectParam:SetSkillRangeRectParam(table.count(rectX), table.count(rectY))
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
     if result then
-      (table.appendArray)(results, result)
+      table.appendArray(results, result)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DamageBasedOnPickUpRect._CalculateSingleTarget = function(self, skillEffectCalcParam, defenderEntityID)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_DamageBasedOnPickUpRect:_CalculateSingleTarget(skillEffectCalcParam, defenderEntityID)
   local skillDamageParam = skillEffectCalcParam.skillEffectParam
-  local defender = (self._world):GetEntityByID(defenderEntityID)
+  local defender = self._world:GetEntityByID(defenderEntityID)
   if defender == nil then
-    (Log.notice)("CalculationForeachTarget defender is null ", defenderEntityID)
-    local skillResult = (self._skillEffectService):NewSkillDamageEffectResult(nil, -1, 0, nil, nil)
+    Log.notice("CalculationForeachTarget defender is null ", defenderEntityID)
+    local skillResult = self._skillEffectService:NewSkillDamageEffectResult(nil, -1, 0, nil, nil)
     return {skillResult}
   end
-  do
-    if skillEffectCalcParam.skillRange == nil then
-      skillEffectCalcParam.skillRange = {skillEffectCalcParam.gridPos}
-    end
-    local attacker = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-    local attackPos = skillEffectCalcParam.attackPos
-    local damageStageIndex = skillDamageParam:GetSkillEffectDamageStageIndex()
-    local effectCalcSvc = self._skillEffectService
-    local skillResultList = {}
-    local area = (defender:BodyArea()):GetArea()
-    local locationPos = (defender:GridLocation()):GetGridPos()
-    for i,bodyArea in ipairs(area) do
-      local workPos = locationPos + bodyArea
-      if (table.intable)(skillEffectCalcParam.skillRange, workPos) then
-        local gridPos = workPos
-        local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(attacker, attackPos, defender, gridPos, skillEffectCalcParam.skillID, skillDamageParam, SkillEffectType.Damage, damageStageIndex)
-        local skillResult = effectCalcSvc:NewSkillDamageEffectResult(gridPos, defenderEntityID, nTotalDamage, listDamageInfo, damageStageIndex)
-        ;
-        (table.insert)(skillResultList, skillResult)
-      end
-    end
-    return skillResultList
+  if skillEffectCalcParam.skillRange == nil then
+    skillEffectCalcParam.skillRange = {
+      skillEffectCalcParam.gridPos
+    }
   end
+  local attacker = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local attackPos = skillEffectCalcParam.attackPos
+  local damageStageIndex = skillDamageParam:GetSkillEffectDamageStageIndex()
+  local effectCalcSvc = self._skillEffectService
+  local skillResultList = {}
+  local area = defender:BodyArea():GetArea()
+  local locationPos = defender:GridLocation():GetGridPos()
+  for i, bodyArea in ipairs(area) do
+    local workPos = locationPos + bodyArea
+    if table.intable(skillEffectCalcParam.skillRange, workPos) then
+      local gridPos = workPos
+      local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(attacker, attackPos, defender, gridPos, skillEffectCalcParam.skillID, skillDamageParam, SkillEffectType.Damage, damageStageIndex)
+      local skillResult = effectCalcSvc:NewSkillDamageEffectResult(gridPos, defenderEntityID, nTotalDamage, listDamageInfo, damageStageIndex)
+      table.insert(skillResultList, skillResult)
+    end
+  end
+  return skillResultList
 end
-
-

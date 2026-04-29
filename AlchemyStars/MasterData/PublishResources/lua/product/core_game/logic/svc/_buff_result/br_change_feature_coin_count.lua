@@ -1,52 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_change_feature_coin_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultChangeFeatureCoinCount", BuffResultBase)
 BuffResultChangeFeatureCoinCount = BuffResultChangeFeatureCoinCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeFeatureCoinCount.Constructor = function(self, curCount, oldCount, modifyValue)
-  -- function num : 0_0
+function BuffResultChangeFeatureCoinCount:Constructor(curCount, oldCount, modifyValue)
   self._curCount = curCount
   self._oldCount = oldCount
   self._modifyValue = modifyValue
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureCoinCount.GetCurCount = function(self)
-  -- function num : 0_1
+function BuffResultChangeFeatureCoinCount:GetCurCount()
   return self._curCount
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureCoinCount.GetOldCount = function(self)
-  -- function num : 0_2
+function BuffResultChangeFeatureCoinCount:GetOldCount()
   return self._oldCount
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureCoinCount.GetModifyValue = function(self)
-  -- function num : 0_3
+function BuffResultChangeFeatureCoinCount:GetModifyValue()
   return self._modifyValue
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureCoinCount.SetMovePos = function(self, pos)
-  -- function num : 0_4
+function BuffResultChangeFeatureCoinCount:SetMovePos(pos)
   self._movePos = pos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureCoinCount.GetMovePos = function(self)
-  -- function num : 0_5
+function BuffResultChangeFeatureCoinCount:GetMovePos()
   return self._movePos
 end
-
-

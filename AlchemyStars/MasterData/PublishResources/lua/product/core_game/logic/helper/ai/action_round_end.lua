@@ -1,21 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_round_end.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionRoundEnd", AINewNode)
 ActionRoundEnd = ActionRoundEnd
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionRoundEnd.OnBegin = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local aiCmpt = (self.m_entityOwn):AI()
+function ActionRoundEnd:OnBegin()
+  local aiCmpt = self.m_entityOwn:AI()
   if aiCmpt then
     aiCmpt:SetAIRoundEnd(true)
     aiCmpt:SetMoveState(AIMoveState.MoveEnd)
     self:PrintLog(" 本次回合结束")
   end
 end
-
-

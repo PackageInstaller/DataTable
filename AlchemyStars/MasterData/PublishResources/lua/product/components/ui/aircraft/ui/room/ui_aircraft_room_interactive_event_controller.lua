@@ -1,28 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/room/ui_aircraft_room_interactive_event_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftRoomInteractiveEventController", UIController)
 UIAircraftRoomInteractiveEventController = UIAircraftRoomInteractiveEventController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftRoomInteractiveEventController.Constructor = function(self)
-  -- function num : 0_0
+function UIAircraftRoomInteractiveEventController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveEventController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIAircraftRoomInteractiveEventController:OnShow(uiParams)
   self._petData = uiParams[1]
   self._eventInfo = self:_GetEventInfo(uiParams[2])
   self._closeCallback = uiParams[3]
   self._timer = 0
   self._remaindTime = 0
   self._rawImageLoaderHelper = RawImageLoaderHelper:New()
-  ;
-  (self._rawImageLoaderHelper):Init(1)
+  self._rawImageLoaderHelper:Init(1)
   self._itemCountPerRow = 1
   self._petModeLoader = self:GetUIComponent("RawImageLoader", "PetModel")
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
@@ -34,17 +23,13 @@ UIAircraftRoomInteractiveEventController.OnShow = function(self, uiParams)
   self._affinityAddDesLabel = self:GetUIComponent("UILocalizationText", "AffinityAddDes")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "BackBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_1_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
     if self._closeCallback then
-      (self._closeCallback)()
+      self._closeCallback()
     end
-  end
-, nil)
-  ;
-  (self._backBtns):HideHomeBtn()
+  end, nil)
+  self._backBtns:HideHomeBtn()
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self._eventDesLabel = self:GetUIComponent("UILocalizationText", "EventDes")
   self._eventConditionLabel = self:GetUIComponent("UIRichText", "EventCondition")
@@ -55,41 +40,29 @@ UIAircraftRoomInteractiveEventController.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.AircraftInteractiveEventRewardShowItemTips, self._ShowTips)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveEventController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftRoomInteractiveEventController:OnHide()
   self._scrollView = nil
   self:DetachEvent(GameEventType.AircraftInteractiveEventRewardShowItemTips, self._ShowTips)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveEventController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_3 , upvalues : _ENV
+function UIAircraftRoomInteractiveEventController:OnUpdate(deltaTimeMS)
   if self._remaindTime and self._remaindTime > 0 then
     self._timer = self._timer + deltaTimeMS
     if self._timer >= 1000 then
       self._timer = self._timer - 1000
       self._remaindTime = self._remaindTime - 1
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._timeLabel).text = (StringTable.Get)("str_aircraft_room_time_down") .. self:_GetTimeStr(self._remaindTime)
+      self._timeLabel.text = StringTable.Get("str_aircraft_room_time_down") .. self:_GetTimeStr(self._remaindTime)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveEventController._GetTimeStr = function(self, seconds)
-  -- function num : 0_4 , upvalues : _ENV
+function UIAircraftRoomInteractiveEventController:_GetTimeStr(seconds)
   if seconds <= 0 then
     return "00:00:00"
   end
-  local h = (math.floor)(seconds / 3600)
+  local h = math.floor(seconds / 3600)
   seconds = seconds - h * 3600
-  local m = (math.floor)((seconds) / 60)
+  local m = math.floor(seconds / 60)
   seconds = seconds - m * 60
   local timeStr = ""
   if h < 10 then
@@ -107,44 +80,30 @@ UIAircraftRoomInteractiveEventController._GetTimeStr = function(self, seconds)
   return timeStr
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveEventController._ShowTips = function(self, itemId, pos)
-  -- function num : 0_5
-  (self._tips):SetData(itemId, pos)
+function UIAircraftRoomInteractiveEventController:_ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveEventController._RefreshPetInfo = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local matName = (self._petData):GetPetStaticBody(PetSkinEffectPath.BODY_AIRCRAFT_ROOM_INTERACT)
-  local mat = (self._rawImageLoaderHelper):GetMat(matName)
-  ;
-  (self._petModeLoader):SetMat(matName, mat, false)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._nameLabel).text = (StringTable.Get)((self._petData):GetPetName())
-  ;
-  (UICG.SetTransform)((self._petModeLoader).transform, self:GetName(), matName)
+function UIAircraftRoomInteractiveEventController:_RefreshPetInfo()
+  local matName = self._petData:GetPetStaticBody(PetSkinEffectPath.BODY_AIRCRAFT_ROOM_INTERACT)
+  local mat = self._rawImageLoaderHelper:GetMat(matName)
+  self._petModeLoader:SetMat(matName, mat, false)
+  self._nameLabel.text = StringTable.Get(self._petData:GetPetName())
+  UICG.SetTransform(self._petModeLoader.transform, self:GetName(), matName)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveEventController._GetEventInfo = function(self, info)
-  -- function num : 0_7 , upvalues : _ENV
+function UIAircraftRoomInteractiveEventController:_GetEventInfo(info)
   if not info then
-    return 
+    return
   end
   local taskInfo = {}
   taskInfo.reward = info.reward
-  taskInfo.taskId = (info.m_pet_task_info).task_id
-  taskInfo.remainTime = (info.m_pet_task_info).end_time
-  taskInfo.state = (info.m_pet_task_info).state
+  taskInfo.taskId = info.m_pet_task_info.task_id
+  taskInfo.remainTime = info.m_pet_task_info.end_time
+  taskInfo.state = info.m_pet_task_info.state
   taskInfo.addAffinity = info.affinity
-  taskInfo.uid = (info.m_pet_task_info).uid
-  local taskCfg = (Cfg.cfg_pet_task)[taskInfo.taskId]
+  taskInfo.uid = info.m_pet_task_info.uid
+  local taskCfg = Cfg.cfg_pet_task[taskInfo.taskId]
   taskInfo.taskType = taskCfg.Type
   taskInfo.title = taskCfg.TaskTitle
   taskInfo.des = taskCfg.TaskDesc
@@ -153,138 +112,93 @@ UIAircraftRoomInteractiveEventController._GetEventInfo = function(self, info)
     taskInfo.petTemplateId = taskContent[1]
     taskInfo.itemTemplateId = taskContent[2]
     taskInfo.itemCount = taskContent[3]
-  else
-    if taskInfo.taskType == 2 then
-      taskInfo.missionType = taskContent[1]
-      taskInfo.missionId = taskContent[2]
-      taskInfo.battleCount = taskContent[3]
-      if taskInfo.missionType == 1 or taskInfo.missionType == 3 then
-        taskInfo.missionId = (info.m_pet_task_info).param2
-      end
+  elseif taskInfo.taskType == 2 then
+    taskInfo.missionType = taskContent[1]
+    taskInfo.missionId = taskContent[2]
+    taskInfo.battleCount = taskContent[3]
+    if taskInfo.missionType == 1 or taskInfo.missionType == 3 then
+      taskInfo.missionId = info.m_pet_task_info.param2
     end
   end
   return taskInfo
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveEventController._RefreshEventInfo = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIAircraftRoomInteractiveEventController:_RefreshEventInfo()
   if not self._eventInfo then
-    return 
+    return
   end
-  if (self._eventInfo).state == PetTaskState.PetTS_Finish then
-    (self._btnGotoGo):SetActive(false)
-    ;
-    (self._btnGetRewardGo):SetActive(true)
+  if self._eventInfo.state == PetTaskState.PetTS_Finish then
+    self._btnGotoGo:SetActive(false)
+    self._btnGetRewardGo:SetActive(true)
   else
-    ;
-    (self._btnGotoGo):SetActive(true)
-    ;
-    (self._btnGetRewardGo):SetActive(false)
+    self._btnGotoGo:SetActive(true)
+    self._btnGetRewardGo:SetActive(false)
   end
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._eventDesLabel).text = (StringTable.Get)((self._eventInfo).des)
+  self._eventDesLabel.text = StringTable.Get(self._eventInfo.des)
   self._rewardCount = 0
-  if (self._eventInfo).reward then
-    self._rewardCount = #(self._eventInfo).reward
+  if self._eventInfo.reward then
+    self._rewardCount = #self._eventInfo.reward
   end
-  self._remaindTime = (self._eventInfo).remainTime - self:GetServerTime()
+  self._remaindTime = self._eventInfo.remainTime - self:GetServerTime()
   local conditionStr = ""
-  local taskType = (self._eventInfo).taskType
+  local taskType = self._eventInfo.taskType
   if taskType == 1 then
-    local petName = (StringTable.Get)(((Cfg.cfg_pet)[(self._eventInfo).petTemplateId]).Name)
-    local count = (self._eventInfo).itemCount
-    local itemId = (self._eventInfo).itemTemplateId
+    local petName = StringTable.Get(Cfg.cfg_pet[self._eventInfo.petTemplateId].Name)
+    local count = self._eventInfo.itemCount
+    local itemId = self._eventInfo.itemTemplateId
     if itemId or itemId == 0 then
-      conditionStr = (string.format)((StringTable.Get)((self._eventInfo).title), petName, count)
+      conditionStr = string.format(StringTable.Get(self._eventInfo.title), petName, count)
     else
-      local giftName = (StringTable.Get)(((Cfg.cfg_item)[itemId]).Name)
-      conditionStr = (string.format)((StringTable.Get)((self._eventInfo).title), petName, count, giftName)
+      local giftName = StringTable.Get(Cfg.cfg_item[itemId].Name)
+      conditionStr = string.format(StringTable.Get(self._eventInfo.title), petName, count, giftName)
     end
-  else
-    do
-      if taskType == 2 then
-        local petName = ((StringTable.Get)((self._petData):GetPetName()))
-        local missionName = nil
-        local missionType = (self._eventInfo).missionType
-        local missionId = (self._eventInfo).missionId
-        if missionType == 1 then
-          missionName = (StringTable.Get)(((Cfg.cfg_mission)[missionId]).Title)
-        else
-          if missionType == 2 then
-            missionName = (StringTable.Get)(((Cfg.cfg_extra_mission_task)[missionId]).TaskName)
-          else
-            if missionType == 3 then
-              missionName = (StringTable.Get)(((Cfg.cfg_res_instance_detail)[missionId]).Name)
-            else
-            end
-          end
-        end
-        if ((missionType == 4 and missionType ~= 5)) or missionName then
-          conditionStr = (string.format)((StringTable.Get)((self._eventInfo).title), petName, missionName)
-        else
-          conditionStr = (string.format)((StringTable.Get)((self._eventInfo).title), petName)
-        end
-      end
-      do
-        -- DECOMPILER ERROR at PC179: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._eventConditionLabel).text = conditionStr
-        -- DECOMPILER ERROR at PC189: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._timeLabel).text = (StringTable.Get)("str_aircraft_room_time_down") .. self:_GetTimeStr(self._remaindTime)
-        ;
-        (self._affinityAddPanel):SetActive(false)
-        if (self._eventInfo).addAffinity and (self._eventInfo).addAffinity > 0 then
-          (self._affinityAddPanel):SetActive(true)
-          -- DECOMPILER ERROR at PC213: Confused about usage of register: R3 in 'UnsetPending'
-
-          ;
-          (self._affinityAddPetNameLabel).text = (StringTable.Get)((self._petData):GetPetName())
-          -- DECOMPILER ERROR at PC224: Confused about usage of register: R3 in 'UnsetPending'
-
-          ;
-          (self._affinityAddDesLabel).text = (string.format)((StringTable.Get)("str_aircraft_room_affinity_add_value"), (self._eventInfo).addAffinity)
-        end
-        self:_InitSrollView()
-      end
+  elseif taskType == 2 then
+    local petName = StringTable.Get(self._petData:GetPetName())
+    local missionName
+    local missionType = self._eventInfo.missionType
+    local missionId = self._eventInfo.missionId
+    if missionType == 1 then
+      missionName = StringTable.Get(Cfg.cfg_mission[missionId].Title)
+    elseif missionType == 2 then
+      missionName = StringTable.Get(Cfg.cfg_extra_mission_task[missionId].TaskName)
+    elseif missionType == 3 then
+      missionName = StringTable.Get(Cfg.cfg_res_instance_detail[missionId].Name)
+    elseif missionType == 4 then
+    elseif missionType == 5 then
+    end
+    if missionName then
+      conditionStr = string.format(StringTable.Get(self._eventInfo.title), petName, missionName)
+    else
+      conditionStr = string.format(StringTable.Get(self._eventInfo.title), petName)
     end
   end
+  self._eventConditionLabel.text = conditionStr
+  self._timeLabel.text = StringTable.Get("str_aircraft_room_time_down") .. self:_GetTimeStr(self._remaindTime)
+  self._affinityAddPanel:SetActive(false)
+  if self._eventInfo.addAffinity and 0 < self._eventInfo.addAffinity then
+    self._affinityAddPanel:SetActive(true)
+    self._affinityAddPetNameLabel.text = StringTable.Get(self._petData:GetPetName())
+    self._affinityAddDesLabel.text = string.format(StringTable.Get("str_aircraft_room_affinity_add_value"), self._eventInfo.addAffinity)
+  end
+  self:_InitSrollView()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveEventController.GetServerTime = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local tmSecond, nMilliSecond = (math.modf)(time_mod:GetServerTime() / 1000)
+function UIAircraftRoomInteractiveEventController:GetServerTime()
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local tmSecond, nMilliSecond = math.modf(time_mod:GetServerTime() / 1000)
   return tmSecond
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveEventController._InitSrollView = function(self)
-  -- function num : 0_10
+function UIAircraftRoomInteractiveEventController:_InitSrollView()
   if self._scrollView == nil then
-    return 
+    return
   end
-  ;
-  (self._scrollView):InitListView(self._rewardCount, function(scrollView, index)
-    -- function num : 0_10_0 , upvalues : self
+  self._scrollView:InitListView(self._rewardCount, function(scrollView, index)
     return self:_InitRewardListInfo(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveEventController._InitRewardListInfo = function(self, scrollView, index)
-  -- function num : 0_11
+function UIAircraftRoomInteractiveEventController:_InitRewardListInfo(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -298,8 +212,8 @@ UIAircraftRoomInteractiveEventController._InitRewardListInfo = function(self, sc
   for i = 1, self._itemCountPerRow do
     local itemWidget = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._rewardCount < itemIndex then
-      (itemWidget:GetGameObject()):SetActive(false)
+    if itemIndex > self._rewardCount then
+      itemWidget:GetGameObject():SetActive(false)
     else
       self:_ShowRewardItem(itemWidget, itemIndex)
     end
@@ -307,88 +221,61 @@ UIAircraftRoomInteractiveEventController._InitRewardListInfo = function(self, sc
   return item
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveEventController._ShowRewardItem = function(self, rewardItem, index)
-  -- function num : 0_12
-  local id = (((self._eventInfo).reward)[index]).assetid
-  local count = (((self._eventInfo).reward)[index]).count
+function UIAircraftRoomInteractiveEventController:_ShowRewardItem(rewardItem, index)
+  local id = self._eventInfo.reward[index].assetid
+  local count = self._eventInfo.reward[index].count
   rewardItem:SetData(id, count)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveEventController.BtnGotoOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  local taskType = (self._eventInfo).taskType
+function UIAircraftRoomInteractiveEventController:BtnGotoOnClick(go)
+  local taskType = self._eventInfo.taskType
   if taskType == 1 then
     self:CloseDialog()
     if self._closeCallback then
-      (self._closeCallback)()
+      self._closeCallback()
     end
     self:ShowDialog("UIPetIntimacyMainController", self._petData, PetIntimacyWindowType.GiftPanel)
-  else
-    if taskType == 2 then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftLeaveAircraft)
-      ;
-      ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Aircraft_Room_Exit, "UI", (self._eventInfo).missionType, (self._eventInfo).missionId)
-    end
+  elseif taskType == 2 then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftLeaveAircraft)
+    GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Aircraft_Room_Exit, "UI", self._eventInfo.missionType, self._eventInfo.missionId)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveEventController.BtnGetRewardOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
+function UIAircraftRoomInteractiveEventController:BtnGetRewardOnClick(go)
   self:Lock("BtnGetRewardOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.GetRewardProgress, self)
+  GameGlobal.TaskManager():StartTask(self.GetRewardProgress, self)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveEventController.GetRewardProgress = function(self, TT)
-  -- function num : 0_15 , upvalues : _ENV
+function UIAircraftRoomInteractiveEventController:GetRewardProgress(TT)
   if not self._petModule then
-    self._petModule = (GameGlobal.GetModule)(PetModule)
+    self._petModule = GameGlobal.GetModule(PetModule)
   end
-  local res, replyEvent = (self._petModule):RequestCEventRequestPetTaskReward(TT, (self._petData):GetPstID(), (self._eventInfo).uid)
+  local res, replyEvent = self._petModule:RequestCEventRequestPetTaskReward(TT, self._petData:GetPstID(), self._eventInfo.uid)
   self:UnLock("BtnGetRewardOnClick")
   self:CloseDialog()
   if self._closeCallback then
-    (self._closeCallback)()
+    self._closeCallback()
   end
   if res.m_result == 0 then
     self:_GetRewards(TT, replyEvent.reward, replyEvent.affinity)
   else
-    ;
-    (Log.error)("RequestCEventRequestPetTaskReward error")
+    Log.error("RequestCEventRequestPetTaskReward error")
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveEventController._GetRewards = function(self, TT, reward, addedAffinity)
-  -- function num : 0_16 , upvalues : _ENV
-  if addedAffinity and addedAffinity > 0 then
+function UIAircraftRoomInteractiveEventController:_GetRewards(TT, reward, addedAffinity)
+  if addedAffinity and 0 < addedAffinity then
     local info = ""
-    local maxLevel = (self._petData):GetPetAffinityMaxLevel()
-    local level = (self._petData):GetPetAffinityLevel()
+    local maxLevel = self._petData:GetPetAffinityMaxLevel()
+    local level = self._petData:GetPetAffinityLevel()
     if level == maxLevel then
-      info = (StringTable.Get)("str_aircraft_room_affinity_add_value_max")
+      info = StringTable.Get("str_aircraft_room_affinity_add_value_max")
     else
-      local petName = (StringTable.Get)((self._petData):GetPetName())
-      info = (string.format)((StringTable.Get)("str_aircraft_room_pet_affinity_add_value"), petName, addedAffinity)
+      local petName = StringTable.Get(self._petData:GetPetName())
+      info = string.format(StringTable.Get("str_aircraft_room_pet_affinity_add_value"), petName, addedAffinity)
     end
-    do
-      do
-        ;
-        (ToastManager.ShowToast)(info)
-        YIELD(TT, 1500)
-        self:ShowDialog("UIGetItemController", reward)
-      end
-    end
+    ToastManager.ShowToast(info)
+    YIELD(TT, 1500)
   end
+  self:ShowDialog("UIGetItemController", reward)
 end
-
-

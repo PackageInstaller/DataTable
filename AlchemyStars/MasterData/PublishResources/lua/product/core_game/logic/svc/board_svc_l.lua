@@ -1,163 +1,135 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/board_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 _class("BoardServiceLogic", BaseService)
 BoardServiceLogic = BoardServiceLogic
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BoardServiceLogic.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function BoardServiceLogic:Constructor(world)
   self.GapTiles = {}
-  self.AIArea = {minX = 0, maxX = BattleConst.DefaultAIAreaSize, minY = 0, maxY = BattleConst.DefaultAIAreaSize}
+  self.AIArea = {
+    minX = 0,
+    maxX = BattleConst.DefaultAIAreaSize,
+    minY = 0,
+    maxY = BattleConst.DefaultAIAreaSize
+  }
   self.BoardCenterPos = BattleConst.BoardCenterPos
-  self.PlayerArea = {minX = 1, maxX = BattleConst.DefaultPlayerAreaSize, minY = 1, maxY = BattleConst.DefaultPlayerAreaSize}
+  self.PlayerArea = {
+    minX = 1,
+    maxX = BattleConst.DefaultPlayerAreaSize,
+    minY = 1,
+    maxY = BattleConst.DefaultPlayerAreaSize
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.IsValidPiecePos = function(self, pos)
-  -- function num : 0_1
+function BoardServiceLogic:IsValidPiecePos(pos)
   local x, y = pos.x, pos.y
   if x == nil or y == nil then
-    return 
+    return
   end
-  if (self.GridTiles)[x] and ((self.GridTiles)[x])[y] then
+  if self.GridTiles[x] and self.GridTiles[x][y] then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.IsPosEmptyExceptConveyor = function(self, pos)
-  -- function num : 0_2 , upvalues : _ENV
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
-  local filter = function(e)
-    -- function num : 0_2_0 , upvalues : _ENV
+function BoardServiceLogic:IsPosEmptyExceptConveyor(pos)
+  local boardCmpt = self._world:GetBoardEntity():Board()
+  
+  local function filter(e)
     if e:HasTeam() or e:HasMonsterID() then
       return true
     end
-    if e:HasTrapID() and (e:Trap()):GetTrapType() ~= TrapType.Conveyor then
+    if e:HasTrapID() and e:Trap():GetTrapType() ~= TrapType.Conveyor then
       return true
     end
     return false
   end
-
+  
   local es = boardCmpt:GetPieceEntities(pos, filter)
-  do return #es == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return #es == 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.IsPosEmptyExceptConveyorNoDeadMark = function(self, pos)
-  -- function num : 0_3 , upvalues : _ENV
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
-  local filter = function(e)
-    -- function num : 0_3_0 , upvalues : _ENV
+function BoardServiceLogic:IsPosEmptyExceptConveyorNoDeadMark(pos)
+  local boardCmpt = self._world:GetBoardEntity():Board()
+  
+  local function filter(e)
     if e:HasDeadMark() then
       return false
     end
     if e:HasTeam() or e:HasMonsterID() then
       return true
     end
-    if e:HasTrapID() and (e:Trap()):GetTrapType() ~= TrapType.Conveyor then
+    if e:HasTrapID() and e:Trap():GetTrapType() ~= TrapType.Conveyor then
       return true
     end
     return false
   end
-
+  
   local es = boardCmpt:GetPieceEntities(pos, filter)
-  do return #es == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return #es == 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetMultiBodyAreaMonster = function(self, pos)
-  -- function num : 0_4
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
-  local filter = function(e)
-    -- function num : 0_4_0
-    do
-      if e:HasMonsterID() then
-        local arr = (e:BodyArea()):GetArea()
-        if #arr > 1 then
-          return true
-        end
+function BoardServiceLogic:GetMultiBodyAreaMonster(pos)
+  local boardCmpt = self._world:GetBoardEntity():Board()
+  
+  local function filter(e)
+    if e:HasMonsterID() then
+      local arr = e:BodyArea():GetArea()
+      if 1 < #arr then
+        return true
       end
-      return false
     end
+    return false
   end
-
+  
   local es = boardCmpt:GetPieceEntities(pos, filter)
   return es[1]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetFlyMonster = function(self, pos)
-  -- function num : 0_5 , upvalues : _ENV
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
-  local filter = function(e)
-    -- function num : 0_5_0 , upvalues : _ENV
-    do
-      if e:HasMonsterID() then
-        local raceType = (e:MonsterID()):GetMonsterRaceType()
-        if raceType == MonsterRaceType.Fly then
-          return true
-        end
+function BoardServiceLogic:GetFlyMonster(pos)
+  local boardCmpt = self._world:GetBoardEntity():Board()
+  
+  local function filter(e)
+    if e:HasMonsterID() then
+      local raceType = e:MonsterID():GetMonsterRaceType()
+      if raceType == MonsterRaceType.Fly then
+        return true
       end
-      return false
     end
+    return false
   end
-
+  
   local es = boardCmpt:GetPieceEntities(pos, filter)
   return es[1]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetValidSummonPos = function(self, posTable, bodyArea, posArrayHaveDown, nBlockFlag, searchRing9, noRandom)
-  -- function num : 0_6 , upvalues : _ENV
+function BoardServiceLogic:GetValidSummonPos(posTable, bodyArea, posArrayHaveDown, nBlockFlag, searchRing9, noRandom)
   local posList = {}
-  ;
-  (table.appendArray)(posList, posTable)
-  for i,v in ipairs(posArrayHaveDown) do
-    (table.removev)(posList, v)
+  table.appendArray(posList, posTable)
+  for i, v in ipairs(posArrayHaveDown) do
+    table.removev(posList, v)
   end
-  do
-    if not noRandom then
-      local randSvc = (self._world):GetService("RandomLogic")
-      randSvc:Shuffle(posList)
-    end
-    for i,pos in ipairs(posList) do
-      local pos = self:_GetOneValidSummonPos(pos, nBlockFlag, bodyArea, posArrayHaveDown, searchRing9)
-      if pos then
-        for i = 1, #bodyArea do
-          local posCheck = pos + bodyArea[i]
-          ;
-          (table.insert)(posArrayHaveDown, posCheck)
-        end
-        return pos
+  if not noRandom then
+    local randSvc = self._world:GetService("RandomLogic")
+    randSvc:Shuffle(posList)
+  end
+  for i, pos in ipairs(posList) do
+    local pos = self:_GetOneValidSummonPos(pos, nBlockFlag, bodyArea, posArrayHaveDown, searchRing9)
+    if pos then
+      for i = 1, #bodyArea do
+        local posCheck = pos + bodyArea[i]
+        table.insert(posArrayHaveDown, posCheck)
       end
+      return pos
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic._GetOneValidSummonPos = function(self, centerPos, nBlockFlag, bodyArea, posArrayHaveDown, searchRing9)
-  -- function num : 0_7 , upvalues : _ENV
+function BoardServiceLogic:_GetOneValidSummonPos(centerPos, nBlockFlag, bodyArea, posArrayHaveDown, searchRing9)
   if self:_IsValidSummonPos(centerPos, nBlockFlag, bodyArea, posArrayHaveDown) then
     return centerPos
   end
   if searchRing9 then
     local ringMax = self:GetCurBoardRingMax()
-    for i,v in ipairs(ringMax) do
+    for i, v in ipairs(ringMax) do
       local pos = centerPos + Vector2(v[1], v[2])
       if self:_IsValidSummonPos(pos, nBlockFlag, bodyArea, posArrayHaveDown) then
         return pos
@@ -166,13 +138,10 @@ BoardServiceLogic._GetOneValidSummonPos = function(self, centerPos, nBlockFlag, 
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic._IsValidSummonPos = function(self, centerPos, nBlockFlag, bodyArea, posArrayHaveDown)
-  -- function num : 0_8 , upvalues : _ENV
+function BoardServiceLogic:_IsValidSummonPos(centerPos, nBlockFlag, bodyArea, posArrayHaveDown)
   for i = 1, #bodyArea do
     local posCheck = centerPos + bodyArea[i]
-    if (table.icontains)(posArrayHaveDown, posCheck) then
+    if table.icontains(posArrayHaveDown, posCheck) then
       return false
     end
   end
@@ -182,116 +151,73 @@ BoardServiceLogic._IsValidSummonPos = function(self, centerPos, nBlockFlag, body
   return true
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.IsInAIArea = function(self, pos)
-  -- function num : 0_9
+function BoardServiceLogic:IsInAIArea(pos)
   local x, y = pos.x, pos.y
   if x == nil or y == nil then
-    return 
+    return
   end
-  do return (self.AIArea).minX <= x and x <= (self.AIArea).maxX and (self.AIArea).minY <= y and y <= (self.AIArea).maxY end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return x >= self.AIArea.minX and x <= self.AIArea.maxX and y >= self.AIArea.minY and y <= self.AIArea.maxY
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetPieceType = function(self, pos)
-  -- function num : 0_10
-  local boardEntity = (self._world):GetBoardEntity()
-  return (boardEntity:Board()):GetPieceType(pos)
+function BoardServiceLogic:GetPieceType(pos)
+  local boardEntity = self._world:GetBoardEntity()
+  return boardEntity:Board():GetPieceType(pos)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetPieceTypeMapList = function(self, pos)
-  -- function num : 0_11
-  local boardEntity = (self._world):GetBoardEntity()
+function BoardServiceLogic:GetPieceTypeMapList(pos)
+  local boardEntity = self._world:GetBoardEntity()
   local boardCmpt = boardEntity:Board()
   return boardCmpt:GetPieceTypeMapList(pos)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetPieceTypeMapListByPosIndex = function(self, posIndex)
-  -- function num : 0_12
-  local boardEntity = (self._world):GetBoardEntity()
+function BoardServiceLogic:GetPieceTypeMapListByPosIndex(posIndex)
+  local boardEntity = self._world:GetBoardEntity()
   local boardCmpt = boardEntity:Board()
   return boardCmpt:GetPieceTypeMapListByPosIndex(posIndex)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.ChangeGapTiles = function(self, GapTilesList)
-  -- function num : 0_13
+function BoardServiceLogic:ChangeGapTiles(GapTilesList)
   self.GapTiles = GapTilesList
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetGapTiles = function(self)
-  -- function num : 0_14
+function BoardServiceLogic:GetGapTiles()
   return self.GapTiles
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.IsPosDimensionDoor = function(self, pos)
-  -- function num : 0_15
-  local boardEntity = (self._world):GetBoardEntity()
+function BoardServiceLogic:IsPosDimensionDoor(pos)
+  local boardEntity = self._world:GetBoardEntity()
   local cBoard = boardEntity:Board()
   return cBoard:IsPosDimensionDoor(pos)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.IsPosExit = function(self, pos)
-  -- function num : 0_16
-  local boardEntity = (self._world):GetBoardEntity()
+function BoardServiceLogic:IsPosExit(pos)
+  local boardEntity = self._world:GetBoardEntity()
   local cBoard = boardEntity:Board()
   return cBoard:IsPosExit(pos)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.IsObstacleTrapTile = function(self, pos)
-  -- function num : 0_17 , upvalues : _ENV
-  if (self._world):GetRunningPosition() == WorldRunPostion.Performance then
+function BoardServiceLogic:IsObstacleTrapTile(pos)
+  if self._world:GetRunningPosition() == WorldRunPostion.Performance then
     return false
   end
-  local listTrap = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).Trap)
-  for _,e in ipairs(listTrap) do
+  local listTrap = self._world:GetGroupEntities(self._world.BW_WEMatchers.Trap)
+  for _, e in ipairs(listTrap) do
     local trapCmpt = e:Trap()
     local trapType = trapCmpt:GetTrapType()
     if trapType == TrapType.Obstacle or trapType == TrapType.BlockGrid then
       local trapPosList = {}
-      local trapPos = (e:GridLocation()).Position
+      local trapPos = e:GridLocation().Position
       if e:BodyArea() then
-        local bodyArea = (e:BodyArea()):GetArea()
-        for i,v in ipairs(bodyArea) do
-          (table.insert)(trapPosList, Vector2(trapPos.x + v.x, trapPos.y + v.y))
+        local bodyArea = e:BodyArea():GetArea()
+        for i, v in ipairs(bodyArea) do
+          table.insert(trapPosList, Vector2(trapPos.x + v.x, trapPos.y + v.y))
         end
       else
-        do
-          ;
-          (table.insert)(trapPosList, trapPos)
-          for i,v in ipairs(trapPosList) do
-            if v.x == pos.x and v.y == pos.y then
-              return true
-            end
-          end
-          do
-            -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        table.insert(trapPosList, trapPos)
+      end
+      for i, v in ipairs(trapPosList) do
+        if v.x == pos.x and v.y == pos.y then
+          return true
         end
       end
     end
@@ -299,30 +225,21 @@ BoardServiceLogic.IsObstacleTrapTile = function(self, pos)
   return false
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetBoardCenterPos = function(self)
-  -- function num : 0_18
+function BoardServiceLogic:GetBoardCenterPos()
   return self.BoardCenterPos
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.SetBoardCenterPos = function(self, boardCenterPos)
-  -- function num : 0_19
+function BoardServiceLogic:SetBoardCenterPos(boardCenterPos)
   self.BoardCenterPos = boardCenterPos
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.CanCreateMonsterAtPos = function(self, posList, monsterRaceType)
-  -- function num : 0_20 , upvalues : _ENV
+function BoardServiceLogic:CanCreateMonsterAtPos(posList, monsterRaceType)
   if not monsterRaceType then
-    (Log.fatal)("function Param monsterRaceType is Nil ")
+    Log.fatal("function Param monsterRaceType is Nil ")
     return false
   end
-  local utilData = (self._world):GetService("UtilData")
-  for _,pos in ipairs(posList) do
+  local utilData = self._world:GetService("UtilData")
+  for _, pos in ipairs(posList) do
     if not utilData:IsValidPiecePos(pos) then
       return false
     end
@@ -336,67 +253,43 @@ BoardServiceLogic.CanCreateMonsterAtPos = function(self, posList, monsterRaceTyp
   return true
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetTrapPosList = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function BoardServiceLogic:GetTrapPosList()
   local posTable = {}
-  if (self._world):GetRunningPosition() == WorldRunPostion.Performance then
+  if self._world:GetRunningPosition() == WorldRunPostion.Performance then
     return {}
   end
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-  for _,e in ipairs(trapGroup:GetEntities()) do
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  for _, e in ipairs(trapGroup:GetEntities()) do
     local trapCmpt = e:Trap()
     local trapType = trapCmpt:GetTrapType()
     if trapType ~= TrapType.Conveyor then
-      local trapPos = (e:GridLocation()).Position
+      local trapPos = e:GridLocation().Position
       if e:BodyArea() then
-        local bodyArea = (e:BodyArea()):GetArea()
-        for i,v in ipairs(bodyArea) do
-          (table.insert)(posTable, Vector2(trapPos.x + v.x, trapPos.y + v.y))
+        local bodyArea = e:BodyArea():GetArea()
+        for i, v in ipairs(bodyArea) do
+          table.insert(posTable, Vector2(trapPos.x + v.x, trapPos.y + v.y))
         end
       else
-        do
-          do
-            ;
-            (table.insert)(posTable, trapPos)
-            -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        table.insert(posTable, trapPos)
       end
     end
   end
   return posTable
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.IsPosListHaveTrap = function(self, posList)
-  -- function num : 0_22 , upvalues : _ENV
+function BoardServiceLogic:IsPosListHaveTrap(posList)
   local trapPosList = self:GetTrapPosList()
-  for k,v in ipairs(posList) do
-    if (table.icontains)(trapPosList, v) then
+  for k, v in ipairs(posList) do
+    if table.icontains(trapPosList, v) then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.IsBoardPositionsEmpty = function(self, posList, extendMonsterAreaPosList, monsterRaceType)
-  -- function num : 0_23 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
-  local utilDataSvc = (self._world):GetService("UtilData")
+function BoardServiceLogic:IsBoardPositionsEmpty(posList, extendMonsterAreaPosList, monsterRaceType)
+  local boardEntity = self._world:GetBoardEntity()
+  local utilDataSvc = self._world:GetService("UtilData")
   if boardEntity and (utilDataSvc:IsPosListHaveMonster(posList) or self:IsPosListHaveTrap(posList)) then
     return false
   end
@@ -407,223 +300,144 @@ BoardServiceLogic.IsBoardPositionsEmpty = function(self, posList, extendMonsterA
     return false
   end
   local playerPosList = {}
-  if (self._world):GetRunningPosition() == WorldRunPostion.Performance then
-    local levelConfigData = (self._configService):GetLevelConfigData()
+  if self._world:GetRunningPosition() == WorldRunPostion.Performance then
+    local levelConfigData = self._configService:GetLevelConfigData()
     playerPosList[#playerPosList + 1] = levelConfigData:GetPlayerBornPos()
   else
-    do
-      local teamEntities = ((self._world):Player()):GetAllTeamEntities()
-      for _,teamEntity in ipairs(teamEntities) do
-        playerPosList[#playerPosList + 1] = teamEntity:GetGridPosition()
+    local teamEntities = self._world:Player():GetAllTeamEntities()
+    for _, teamEntity in ipairs(teamEntities) do
+      playerPosList[#playerPosList + 1] = teamEntity:GetGridPosition()
+    end
+  end
+  for _, pos in ipairs(posList) do
+    for _, v in ipairs(playerPosList) do
+      if v == pos then
+        return false
       end
-      do
-        for _,pos in ipairs(posList) do
-          for _,v in ipairs(playerPosList) do
-            if v == pos then
-              return false
-            end
-          end
-          if extendMonsterAreaPosList then
-            for k,v in ipairs(extendMonsterAreaPosList) do
-              if v == pos then
-                return false
-              end
-            end
-          end
+    end
+    if extendMonsterAreaPosList then
+      for k, v in ipairs(extendMonsterAreaPosList) do
+        if v == pos then
+          return false
         end
-        return true
       end
     end
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.CreateMonsterGetValidPos = function(self, posTable, bodyArea, monsterBodyPosArray, monsterRaceType)
-  -- function num : 0_24
+function BoardServiceLogic:CreateMonsterGetValidPos(posTable, bodyArea, monsterBodyPosArray, monsterRaceType)
   return self:_GetValidPos(posTable, bodyArea, monsterBodyPosArray, monsterRaceType)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetRandomPiecePos = function(self, bodyArea, monsterBodyPosArray, monsterRaceType)
-  -- function num : 0_25 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function BoardServiceLogic:GetRandomPiecePos(bodyArea, monsterBodyPosArray, monsterRaceType)
+  local boardEntity = self._world:GetBoardEntity()
   local piecePosTable = {}
   if boardEntity then
     local boardComponent = boardEntity:Board()
-    for x,piece in pairs(boardComponent.Pieces) do
-      for y,pieceType in pairs(piece) do
-        (table.insert)(piecePosTable, Vector2(x, y))
+    for x, piece in pairs(boardComponent.Pieces) do
+      for y, pieceType in pairs(piece) do
+        table.insert(piecePosTable, Vector2(x, y))
       end
     end
   else
-    do
-      local levelConfigData = (self._configService):GetLevelConfigData()
-      local playerPos = levelConfigData:GetPlayerBornPos()
-      local maxX = self:GetCurBoardMaxX()
-      local maxY = self:GetCurBoardMaxY()
-      for x = 1, maxX do
-        for y = 1, maxY do
-          (table.insert)(piecePosTable, Vector2(R21_PC52, y))
-        end
-      end
-      do
-        ;
-        (table.sort)(piecePosTable, function(a, b)
-    -- function num : 0_25_0
-    do return a.x * 100 + a.y < b.x * 100 + b.y end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-        return self:_GetValidPos(piecePosTable, bodyArea, monsterBodyPosArray, monsterRaceType)
+    local levelConfigData = self._configService:GetLevelConfigData()
+    local playerPos = levelConfigData:GetPlayerBornPos()
+    local maxX = self:GetCurBoardMaxX()
+    local maxY = self:GetCurBoardMaxY()
+    for x = 1, maxX do
+      for y = 1, maxY do
+        table.insert(piecePosTable, Vector2(x, y))
       end
     end
   end
+  table.sort(piecePosTable, function(a, b)
+    return a.x * 100 + a.y < b.x * 100 + b.y
+  end)
+  return self:_GetValidPos(piecePosTable, bodyArea, monsterBodyPosArray, monsterRaceType)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic._GetValidPos = function(self, posTable, bodyArea, monsterBodyPosArray, monsterRaceType, noRandom)
-  -- function num : 0_26 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function BoardServiceLogic:_GetValidPos(posTable, bodyArea, monsterBodyPosArray, monsterRaceType, noRandom)
+  local boardEntity = self._world:GetBoardEntity()
   local piecePosTable = {}
-  for k,p in ipairs(posTable) do
-    (table.insert)(piecePosTable, Vector2(p.x, p.y))
+  for k, p in ipairs(posTable) do
+    table.insert(piecePosTable, Vector2(p.x, p.y))
   end
   local blockedPieces = {}
   local trapPosTable = {}
   local playerPos = Vector2(0, 0)
-  if boardEntity and (self._world):GetRunningPosition() ~= WorldRunPostion.Performance then
-    local utilDataSvc = (self._world):GetService("UtilData")
+  if boardEntity and self._world:GetRunningPosition() ~= WorldRunPostion.Performance then
+    local utilDataSvc = self._world:GetService("UtilData")
     blockedPieces = utilDataSvc:GetAllMonsterPos()
-    for k,pos in ipairs(blockedPieces) do
-      (Log.notice)("[CreateMonsterPos] BlockPiece Pos:", tostring(R20_PC49))
-      ;
-      (table.removev)(piecePosTable, R19_PC55)
+    for k, pos in ipairs(blockedPieces) do
+      Log.notice("[CreateMonsterPos] BlockPiece Pos:", tostring(pos))
+      table.removev(piecePosTable, pos)
     end
     trapPosTable = self:GetTrapPosList()
-    for k,pos in ipairs(trapPosTable) do
-      (Log.notice)("[CreateMonsterPos] Trap Pos:", R19_PC55(R20_PC70))
-      ;
-      (table.removev)(piecePosTable, R19_PC76)
+    for k, pos in ipairs(trapPosTable) do
+      Log.notice("[CreateMonsterPos] Trap Pos:", tostring(pos))
+      table.removev(piecePosTable, pos)
     end
-    local teamGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Team)
-    for _,team in ipairs(teamGroup:GetEntities()) do
+    local teamGroup = self._world:GetGroup(self._world.BW_WEMatchers.Team)
+    for _, team in ipairs(teamGroup:GetEntities()) do
       local teamPos = team:GetGridPosition()
-      -- DECOMPILER ERROR at PC92: Overwrote pending register: R19 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC93: Overwrote pending register: R19 in 'AssignReg'
-
-      R19_PC76(piecePosTable, teamPos)
+      table.removev(piecePosTable, teamPos)
     end
   else
-    do
-      do
-        local levelConfigData = (self._configService):GetLevelConfigData()
-        playerPos = levelConfigData:GetPlayerBornPos()
-        ;
-        (Log.notice)("[CreateMonsterPos] Player Pos:", tostring(playerPos))
-        ;
-        (table.removev)(piecePosTable, playerPos)
-        while 1 do
-          while 1 do
-            while 1 do
-              if #piecePosTable ~= 0 then
-                local index = 1
-                if not noRandom then
-                  index = self:_GetRandomNumber(1, #piecePosTable)
-                end
-                local pos = piecePosTable[index]
-                local bodyPosTable = {}
-                if bodyArea then
-                  for k,p in ipairs(bodyArea) do
-                    -- DECOMPILER ERROR at PC137: Overwrote pending register: R19 in 'AssignReg'
-
-                    -- DECOMPILER ERROR at PC138: Overwrote pending register: R19 in 'AssignReg'
-
-                    R19_PC76(bodyPosTable, Vector2(pos.x + p.x, pos.y + p.y))
-                  end
-                end
-                do
-                  if self:IsBoardPositionsEmpty(bodyPosTable, nil, monsterRaceType) then
-                    local isFind = false
-                    if monsterBodyPosArray then
-                      for k,R19_PC76 in ipairs(bodyPosTable) do
-                        if (table.icontains)(monsterBodyPosArray, p) or (table.icontains)(blockedPieces, p) or (table.icontains)(trapPosTable, p) or p == playerPos then
-                          isFind = true
-                          break
-                        end
-                      end
-                    end
-                    do
-                      if isFind == false then
-                        (table.removev)(posTable, pos)
-                        ;
-                        (Log.notice)("Find Valid Pos:", tostring(pos))
-                        do return pos end
-                        -- DECOMPILER ERROR at PC207: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                        -- DECOMPILER ERROR at PC207: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC207: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC207: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                        -- DECOMPILER ERROR at PC207: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC207: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC207: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                        -- DECOMPILER ERROR at PC207: LeaveBlock: unexpected jumping out IF_STMT
-
-                      end
-                    end
-                  end
-                end
-              end
-            end
-            ;
-            (table.remove)(piecePosTable, index)
-          end
-          do
-            do
-              ;
-              (table.remove)(piecePosTable, index)
-              -- DECOMPILER ERROR at PC219: LeaveBlock: unexpected jumping out DO_STMT
-
-            end
-          end
-        end
-        return nil
+    local levelConfigData = self._configService:GetLevelConfigData()
+    playerPos = levelConfigData:GetPlayerBornPos()
+    Log.notice("[CreateMonsterPos] Player Pos:", tostring(playerPos))
+    table.removev(piecePosTable, playerPos)
+  end
+  while #piecePosTable ~= 0 do
+    local index = 1
+    if not noRandom then
+      index = self:_GetRandomNumber(1, #piecePosTable)
+    end
+    local pos = piecePosTable[index]
+    local bodyPosTable = {}
+    if bodyArea then
+      for k, p in ipairs(bodyArea) do
+        table.insert(bodyPosTable, Vector2(pos.x + p.x, pos.y + p.y))
       end
     end
+    if self:IsBoardPositionsEmpty(bodyPosTable, nil, monsterRaceType) then
+      local isFind = false
+      if monsterBodyPosArray then
+        for k, p in ipairs(bodyPosTable) do
+          if table.icontains(monsterBodyPosArray, p) or table.icontains(blockedPieces, p) or table.icontains(trapPosTable, p) or p == playerPos then
+            isFind = true
+            break
+          end
+        end
+      end
+      if isFind == false then
+        table.removev(posTable, pos)
+        Log.notice("Find Valid Pos:", tostring(pos))
+        return pos
+      else
+        table.remove(piecePosTable, index)
+      end
+    else
+      table.remove(piecePosTable, index)
+    end
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetPlayerArea = function(self)
-  -- function num : 0_27
+function BoardServiceLogic:GetPlayerArea()
   return self.PlayerArea
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetGridTiles = function(self)
-  -- function num : 0_28
+function BoardServiceLogic:GetGridTiles()
   return self.GridTiles
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetPlayerAreaPosList = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  local utilData = (self._world):GetService("UtilData")
+function BoardServiceLogic:GetPlayerAreaPosList()
+  local utilData = self._world:GetService("UtilData")
   local ret = {}
-  for x = (self.PlayerArea).minX, (self.PlayerArea).maxX do
-    for y = (self.PlayerArea).minY, (self.PlayerArea).maxY do
+  for x = self.PlayerArea.minX, self.PlayerArea.maxX do
+    for y = self.PlayerArea.minY, self.PlayerArea.maxY do
       local pos = Vector2(x, y)
       if utilData:IsValidPiecePos(pos) then
         ret[#ret + 1] = pos
@@ -633,23 +447,17 @@ BoardServiceLogic.GetPlayerAreaPosList = function(self)
   return ret
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetGridPosByPieceType = function(self, pieceTypeList)
-  -- function num : 0_30
-  local boardEntity = (self._world):GetBoardEntity()
+function BoardServiceLogic:GetGridPosByPieceType(pieceTypeList)
+  local boardEntity = self._world:GetBoardEntity()
   local boardComponent = boardEntity:Board()
   return boardComponent:GetPiecePosByType(pieceTypeList)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.IsPlayerOnDimension = function(self, eTeam)
-  -- function num : 0_31
+function BoardServiceLogic:IsPlayerOnDimension(eTeam)
   if eTeam == nil then
     return false
   end
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
+  local boardCmpt = self._world:GetBoardEntity():Board()
   if not boardCmpt:IsPosDimensionDoor(eTeam:GetGridPosition()) then
     eTeam:RemoveDimensionFlag()
   end
@@ -657,10 +465,7 @@ BoardServiceLogic.IsPlayerOnDimension = function(self, eTeam)
   return hasDimensionFlag
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.IsDoor = function(self, pos)
-  -- function num : 0_32
+function BoardServiceLogic:IsDoor(pos)
   local isDimensionDoor = self:IsPosDimensionDoor(pos)
   if isDimensionDoor then
     return true
@@ -668,10 +473,7 @@ BoardServiceLogic.IsDoor = function(self, pos)
   return false
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetCanConvertGridElement = function(self, pos)
-  -- function num : 0_33 , upvalues : _ENV
+function BoardServiceLogic:GetCanConvertGridElement(pos)
   if not pos then
     return false
   end
@@ -681,14 +483,11 @@ BoardServiceLogic.GetCanConvertGridElement = function(self, pos)
   return true
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetCanConvertGridElementForTeamPos = function(self, pos)
-  -- function num : 0_34 , upvalues : _ENV
+function BoardServiceLogic:GetCanConvertGridElementForTeamPos(pos)
   if not pos then
     return false
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   if not utilDataSvc:CanChangePieceToGray() then
     return false
   end
@@ -702,10 +501,7 @@ BoardServiceLogic.GetCanConvertGridElementForTeamPos = function(self, pos)
   return true
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.CanFallGrid = function(self, pos)
-  -- function num : 0_35 , upvalues : _ENV
+function BoardServiceLogic:CanFallGrid(pos)
   if not pos then
     return false
   end
@@ -715,27 +511,21 @@ BoardServiceLogic.CanFallGrid = function(self, pos)
   return true
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.SetPieceTypeLogic = function(self, pieceType, gridPos)
-  -- function num : 0_36
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
+function BoardServiceLogic:SetPieceTypeLogic(pieceType, gridPos)
+  local boardCmpt = self._world:GetBoardEntity():Board()
   boardCmpt:SetPieceElement(gridPos, pieceType)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.FindPieceElementByTypeCountAndCenterFromParam = function(self, centerPos, pieceTypeList, maxCount, pieceList)
-  -- function num : 0_37 , upvalues : _ENV
+function BoardServiceLogic:FindPieceElementByTypeCountAndCenterFromParam(centerPos, pieceTypeList, maxCount, pieceList)
   if type(pieceTypeList) ~= "table" then
     pieceTypeList = {pieceTypeList}
   end
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local board = boardEntity:Board()
   local retPieceList = {}
-  for k,pos in ipairs(pieceList) do
-    if (board.Pieces)[pos.x] and ((board.Pieces)[pos.x])[pos.y] and (table.icontains)(pieceTypeList, ((board.Pieces)[pos.x])[pos.y]) then
-      (table.insert)(retPieceList, Vector2(pos.x, pos.y))
+  for k, pos in ipairs(pieceList) do
+    if board.Pieces[pos.x] and board.Pieces[pos.x][pos.y] and table.icontains(pieceTypeList, board.Pieces[pos.x][pos.y]) then
+      table.insert(retPieceList, Vector2(pos.x, pos.y))
     end
   end
   HelperProxy:SortPosByCenterPosDistance(centerPos, retPieceList)
@@ -745,10 +535,7 @@ BoardServiceLogic.FindPieceElementByTypeCountAndCenterFromParam = function(self,
   return retPieceList
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.CheckBodyAreaInRange = function(self, entity, range)
-  -- function num : 0_38 , upvalues : _ENV
+function BoardServiceLogic:CheckBodyAreaInRange(entity, range)
   local cBodyArea = entity:BodyArea()
   if not cBodyArea then
     return false
@@ -759,41 +546,34 @@ BoardServiceLogic.CheckBodyAreaInRange = function(self, entity, range)
   end
   local tv2AbsolutePosInRange = {}
   local tv2RelativeBody = cBodyArea:GetArea()
-  for _,v2RelativeBodyPos in ipairs(tv2RelativeBody) do
+  for _, v2RelativeBodyPos in ipairs(tv2RelativeBody) do
     local v2AbsoluteBodyPos = v2RelativeBodyPos + v2GridPos
-    if (table.icontains)(range, v2AbsoluteBodyPos) then
-      (table.insert)(tv2AbsolutePosInRange, v2AbsoluteBodyPos)
+    if table.icontains(range, v2AbsoluteBodyPos) then
+      table.insert(tv2AbsolutePosInRange, v2AbsoluteBodyPos)
     end
   end
-  do return #tv2AbsolutePosInRange > 0, tv2AbsolutePosInRange end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return 0 < #tv2AbsolutePosInRange, tv2AbsolutePosInRange
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.CalcPieceEntities = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function BoardServiceLogic:CalcPieceEntities()
   local posEntities = {}
-  local teamGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Team)
-  for _,team in ipairs(teamGroup:GetEntities()) do
+  local teamGroup = self._world:GetGroup(self._world.BW_WEMatchers.Team)
+  for _, team in ipairs(teamGroup:GetEntities()) do
     local teamPos = team:GetGridPosition()
-    posEntities[(Vector2.Pos2Index)(teamPos)] = {team}
+    posEntities[Vector2.Pos2Index(teamPos)] = {team}
   end
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).TrapID)
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.TrapID)
   local es = monsterGroup:GetEntities()
-  ;
-  (table.appendArray)(es, trapGroup:GetEntities())
-  for i,e in ipairs(es) do
+  table.appendArray(es, trapGroup:GetEntities())
+  for i, e in ipairs(es) do
     if not e:HasOutsideRegion() then
-      local pos = (e:GridLocation()):GetGridPos()
-      local bodyArea = (e:BodyArea()):GetArea()
-      for i,area in ipairs(bodyArea) do
+      local pos = e:GridLocation():GetGridPos()
+      local bodyArea = e:BodyArea():GetArea()
+      for i, area in ipairs(bodyArea) do
         local posWork = pos + area
-        local posIndex = (Vector2.Pos2Index)(posWork)
-        if not posEntities[posIndex] then
-          local t = {}
-        end
+        local posIndex = Vector2.Pos2Index(posWork)
+        local t = posEntities[posIndex] or {}
         t[#t + 1] = e
         posEntities[posIndex] = t
       end
@@ -802,28 +582,20 @@ BoardServiceLogic.CalcPieceEntities = function(self)
   return posEntities
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetMonstersAtPos = function(self, pos)
-  -- function num : 0_40
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
+function BoardServiceLogic:GetMonstersAtPos(pos)
+  local boardCmpt = self._world:GetBoardEntity():Board()
   local es = boardCmpt:GetPieceEntities(pos, function(e)
-    -- function num : 0_40_0
     return e:HasMonsterID()
-  end
-)
+  end)
   return es
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetEntityMoveBlockFlag = function(self, entity)
-  -- function num : 0_41 , upvalues : _ENV
+function BoardServiceLogic:GetEntityMoveBlockFlag(entity)
   local blockVal = 0
   if entity:HasMonsterID() then
-    local configService = (self._world):GetService("Config")
+    local configService = self._world:GetService("Config")
     local monsterConfigData = configService:GetMonsterConfigData()
-    local monsterID = (entity:MonsterID()):GetMonsterID()
+    local monsterID = entity:MonsterID():GetMonsterID()
     local monsterRaceType = monsterConfigData:GetMonsterRaceType(monsterID)
     if monsterRaceType == MonsterRaceType.Fly then
       blockVal = BlockFlag.MonsterFly
@@ -831,60 +603,43 @@ BoardServiceLogic.GetEntityMoveBlockFlag = function(self, entity)
       blockVal = BlockFlag.MonsterLand
     end
   else
-    do
-      blockVal = BlockFlag.LinkLine
-      return blockVal
-    end
+    blockVal = BlockFlag.LinkLine
   end
+  return blockVal
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.SetExtraBoardPosList = function(self, ExtraBoard)
-  -- function num : 0_42
+function BoardServiceLogic:SetExtraBoardPosList(ExtraBoard)
   self._extraBoardPosList = ExtraBoard
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetExtraBoardPosList = function(self)
-  -- function num : 0_43
-  if not self._extraBoardPosList then
-    return {}
-  end
+function BoardServiceLogic:GetExtraBoardPosList()
+  return self._extraBoardPosList or {}
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.SaveMonsterIDCmptOffBoard = function(self)
-  -- function num : 0_44 , upvalues : _ENV
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+function BoardServiceLogic:SaveMonsterIDCmptOffBoard()
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   local removeList = {}
-  for i,e in ipairs(monsterGroup:GetEntities()) do
+  for i, e in ipairs(monsterGroup:GetEntities()) do
     local offBoardCmpt = e:OffBoardMonster()
     if offBoardCmpt then
       local monsterIDCmpt = e:MonsterID()
       offBoardCmpt:SetMonsterID(monsterIDCmpt)
-      ;
-      (table.insert)(removeList, e)
+      table.insert(removeList, e)
     end
   end
-  for i,e in ipairs(removeList) do
+  for i, e in ipairs(removeList) do
     e:RemoveMonsterID()
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.ApplyPrism = function(self, prePos, prismPos)
-  -- function num : 0_45 , upvalues : _ENV
-  local board = ((self._world):GetBoardEntity()):Board()
-  local posIdx = (Vector2.Pos2Index)(prismPos)
+function BoardServiceLogic:ApplyPrism(prePos, prismPos)
+  local board = self._world:GetBoardEntity():Board()
+  local posIdx = Vector2.Pos2Index(prismPos)
   if not board:IsPrismPiece(prismPos) then
-    return 
+    return
   end
-  local utilData = (self._world):GetService("UtilData")
-  local utilScope = (self._world):GetService("UtilScopeCalc")
+  local utilData = self._world:GetService("UtilData")
+  local utilScope = self._world:GetService("UtilScopeCalc")
   local mapByPosition = board:GetMapByPosition()
   local prismPieceType = board:GetPieceType(prismPos)
   local dir = prismPos - prePos
@@ -893,101 +648,90 @@ BoardServiceLogic.ApplyPrism = function(self, prePos, prismPos)
   local scopeType, scopeParam = utilData:GetPrismCustomScopeConfig(prismEntityID)
   if scopeType then
     local calc = SkillScopeCalculator:New(utilScope)
-    local result = calc:ComputeScopeRange(scopeType, scopeParam, prismPos, {Vector2.zero})
-    if not result:GetAttackRange() then
-      local range = {}
-    end
-    for _,v2 in ipairs(range) do
+    local result = calc:ComputeScopeRange(scopeType, scopeParam, prismPos, {
+      Vector2.zero
+    })
+    local range = result:GetAttackRange() or {}
+    for _, v2 in ipairs(range) do
       local canChange = not board:IsPosBlock(v2, BlockFlag.ChangeElement)
       if mapByPosition and mapByPosition[posIdx] == PieceType.Any and canChange then
-        (table.insert)(tTargetPieces, {pos = v2, pieceType = PieceType.Any, oriPieceType = board:GetPieceType(v2)})
+        table.insert(tTargetPieces, {
+          pos = v2,
+          pieceType = PieceType.Any,
+          oriPieceType = board:GetPieceType(v2)
+        })
       else
         local targetPieceType = board:GetPieceType(v2)
         if targetPieceType and targetPieceType ~= PieceType.None and canChange then
-          (table.insert)(tTargetPieces, {pos = v2, pieceType = prismPieceType, oriPieceType = targetPieceType})
+          table.insert(tTargetPieces, {
+            pos = v2,
+            pieceType = prismPieceType,
+            oriPieceType = targetPieceType
+          })
         end
       end
     end
   else
-    do
-      for i = 1, BattleConst.PrismEffectPieceCount do
-        local targetPos = prismPos + dir * i
-        local targetPieceType = board:GetPieceType(targetPos)
-        local canChange = not board:IsPosBlock(targetPos, BlockFlag.ChangeElement)
-        if mapByPosition and mapByPosition[posIdx] == PieceType.Any and canChange then
-          (table.insert)(tTargetPieces, {pos = targetPos, pieceType = PieceType.Any, oriPieceType = targetPieceType})
-        else
-          if targetPieceType and targetPieceType ~= PieceType.None and canChange then
-            (table.insert)(tTargetPieces, {pos = targetPos, pieceType = prismPieceType, oriPieceType = targetPieceType})
-          end
-        end
-      end
-      do
-        ;
-        ((self._world):GetService("Trigger")):Notify(NTCovCrystalPrism:New(tTargetPieces))
-        for _,data in ipairs(tTargetPieces) do
-          local targetPos = data.pos
-          local pieceType = data.pieceType
-          board:SetPieceElement(targetPos, pieceType)
-        end
-        board:RecordPrismChangeGrid(prismPos, tTargetPieces)
+    for i = 1, BattleConst.PrismEffectPieceCount do
+      local targetPos = prismPos + dir * i
+      local targetPieceType = board:GetPieceType(targetPos)
+      local canChange = not board:IsPosBlock(targetPos, BlockFlag.ChangeElement)
+      if mapByPosition and mapByPosition[posIdx] == PieceType.Any and canChange then
+        table.insert(tTargetPieces, {
+          pos = targetPos,
+          pieceType = PieceType.Any,
+          oriPieceType = targetPieceType
+        })
+      elseif targetPieceType and targetPieceType ~= PieceType.None and canChange then
+        table.insert(tTargetPieces, {
+          pos = targetPos,
+          pieceType = prismPieceType,
+          oriPieceType = targetPieceType
+        })
       end
     end
   end
+  self._world:GetService("Trigger"):Notify(NTCovCrystalPrism:New(tTargetPieces))
+  for _, data in ipairs(tTargetPieces) do
+    local targetPos = data.pos
+    local pieceType = data.pieceType
+    board:SetPieceElement(targetPos, pieceType)
+  end
+  board:RecordPrismChangeGrid(prismPos, tTargetPieces)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.UnapplyPrism = function(self, prismPos)
-  -- function num : 0_46
-  local board = ((self._world):GetBoardEntity()):Board()
+function BoardServiceLogic:UnapplyPrism(prismPos)
+  local board = self._world:GetBoardEntity():Board()
   board:UnapplyPrism(prismPos)
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.ResetPrismChangeRecord = function(self)
-  -- function num : 0_47
-  local board = ((self._world):GetBoardEntity()):Board()
+function BoardServiceLogic:ResetPrismChangeRecord()
+  local board = self._world:GetBoardEntity():Board()
   board:ResetPrismChangeRecord()
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.SetSpliceBoardPosList = function(self, spliceBoard)
-  -- function num : 0_48
+function BoardServiceLogic:SetSpliceBoardPosList(spliceBoard)
   self._spliceBoardPosList = spliceBoard
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.GetSpliceBoardPosList = function(self)
-  -- function num : 0_49
-  if not self._spliceBoardPosList then
-    return {}
-  end
+function BoardServiceLogic:GetSpliceBoardPosList()
+  return self._spliceBoardPosList or {}
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.CalcPosRing = function(self, pos1, pos2)
-  -- function num : 0_50 , upvalues : _ENV
+function BoardServiceLogic:CalcPosRing(pos1, pos2)
   if pos1 == pos2 then
     return 0
   end
-  local boardLen = (math.max)(self:GetCurBoardMaxX(), self:GetCurBoardMaxY())
+  local boardLen = math.max(self:GetCurBoardMaxX(), self:GetCurBoardMaxY())
   for i = 1, boardLen do
-    local range = (ComputeScopeRange.ComputeRange_SquareRing)(pos1, 1, i)
-    if (table.Vector2Include)(range, pos2) then
+    local range = ComputeScopeRange.ComputeRange_SquareRing(pos1, 1, i)
+    if table.Vector2Include(range, pos2) then
       return i
     end
   end
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.IsInBoardEdge = function(self, casterPos)
-  -- function num : 0_51
+function BoardServiceLogic:IsInBoardEdge(casterPos)
   local up = self:GetMinYOfColX(casterPos.x)
   local down = self:GetMaxYOfColX(casterPos.x)
   local left = self:GetMinXOfRowY(casterPos.y)
@@ -998,19 +742,13 @@ BoardServiceLogic.IsInBoardEdge = function(self, casterPos)
   return false
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.InsertListValidPos = function(self, posList, validPos)
-  -- function num : 0_52 , upvalues : _ENV
+function BoardServiceLogic:InsertListValidPos(posList, validPos)
   if self:IsValidPiecePos(validPos) then
-    (table.insert)(posList, validPos)
+    table.insert(posList, validPos)
   end
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceLogic.CalcScopeColOrRowByEdgePos = function(self, casterPos, needFinalPos)
-  -- function num : 0_53 , upvalues : _ENV
+function BoardServiceLogic:CalcScopeColOrRowByEdgePos(casterPos, needFinalPos)
   if not self:IsInBoardEdge(casterPos) then
     return {}
   end
@@ -1028,35 +766,27 @@ BoardServiceLogic.CalcScopeColOrRowByEdgePos = function(self, casterPos, needFin
     if needFinalPos then
       self:InsertListValidPos(ret, Vector2(casterPos.x, 1))
     end
-  else
-    if casterPos.y == 1 then
-      for i = 1, maxY - 1 do
-        self:InsertListValidPos(ret, Vector2(casterPos.x, i))
-      end
-      if needFinalPos then
-        self:InsertListValidPos(ret, Vector2(casterPos.x, maxY))
-      end
-    else
-      if casterPos.x == 1 then
-        for i = 1, maxX - 1 do
-          self:InsertListValidPos(ret, Vector2(i, casterPos.y))
-        end
-        if needFinalPos then
-          self:InsertListValidPos(ret, Vector2(maxX, casterPos.y))
-        end
-      else
-        if casterPos.x == maxX then
-          for i = maxX - 1, 2, -1 do
-            self:InsertListValidPos(ret, Vector2(i, casterPos.y))
-          end
-          if needFinalPos then
-            self:InsertListValidPos(ret, Vector2(1, casterPos.y))
-          end
-        end
-      end
+  elseif casterPos.y == 1 then
+    for i = 1, maxY - 1 do
+      self:InsertListValidPos(ret, Vector2(casterPos.x, i))
+    end
+    if needFinalPos then
+      self:InsertListValidPos(ret, Vector2(casterPos.x, maxY))
+    end
+  elseif casterPos.x == 1 then
+    for i = 1, maxX - 1 do
+      self:InsertListValidPos(ret, Vector2(i, casterPos.y))
+    end
+    if needFinalPos then
+      self:InsertListValidPos(ret, Vector2(maxX, casterPos.y))
+    end
+  elseif casterPos.x == maxX then
+    for i = maxX - 1, 2, -1 do
+      self:InsertListValidPos(ret, Vector2(i, casterPos.y))
+    end
+    if needFinalPos then
+      self:InsertListValidPos(ret, Vector2(1, casterPos.y))
     end
   end
   return ret
 end
-
-

@@ -1,45 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_remove_effect_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillRemoveEffectPhase", PlaySkillPhaseBase)
 PlaySkillRemoveEffectPhase = PlaySkillRemoveEffectPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillRemoveEffectPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillRemoveEffectPhase:PlayFlight(TT, casterEntity, phaseParam)
   local e = casterEntity
-  do
-    if casterEntity:HasSuperEntity() then
-      local cSuperEntity = casterEntity:SuperEntityComponent()
-      e = cSuperEntity:GetSuperEntity()
-    end
-    local holderCmp = e:EffectHolder()
-    if not holderCmp then
-      return 
-    end
-    local effectService = (self._world):GetService("Effect")
-    local effIds = phaseParam:GetEffectIDList()
-    local idDic = holderCmp:GetEffectIDEntityDic()
-    if effIds then
-      for _,id in pairs(effIds) do
-        local entityList = idDic[id]
-        if entityList then
-          for k,entityID in pairs(entityList) do
-            if entityID then
-              local entity = (self._world):GetEntityByID(entityID)
-              if entity then
-                (self._world):DestroyEntity(entity)
-              end
+  if casterEntity:HasSuperEntity() then
+    local cSuperEntity = casterEntity:SuperEntityComponent()
+    e = cSuperEntity:GetSuperEntity()
+  end
+  local holderCmp = e:EffectHolder()
+  if not holderCmp then
+    return
+  end
+  local effectService = self._world:GetService("Effect")
+  local effIds = phaseParam:GetEffectIDList()
+  local idDic = holderCmp:GetEffectIDEntityDic()
+  if effIds then
+    for _, id in pairs(effIds) do
+      local entityList = idDic[id]
+      if entityList then
+        for k, entityID in pairs(entityList) do
+          if entityID then
+            local entity = self._world:GetEntityByID(entityID)
+            if entity then
+              self._world:DestroyEntity(entity)
             end
           end
-          idDic[id] = nil
         end
+        idDic[id] = nil
       end
     end
   end
 end
-
-

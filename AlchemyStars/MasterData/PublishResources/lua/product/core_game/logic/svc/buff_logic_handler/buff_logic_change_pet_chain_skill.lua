@@ -1,15 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_pet_chain_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-ChangePetChainSkillCondition = {None = 0, TargetInScope = 1, BySkillID = 2, San = 3}
+ChangePetChainSkillCondition = {
+  None = 0,
+  TargetInScope = 1,
+  BySkillID = 2,
+  San = 3
+}
 _class("BuffLogicChangePetChainSkill", BuffLogicBase)
 BuffLogicChangePetChainSkill = BuffLogicChangePetChainSkill
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangePetChainSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangePetChainSkill:Constructor(buffInstance, logicParam)
   self._skillId = logicParam.skillId
   self._type = logicParam.type
   self._param = logicParam.param
@@ -17,116 +15,91 @@ BuffLogicChangePetChainSkill.Constructor = function(self, buffInstance, logicPar
   self._light = logicParam.light or 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangePetChainSkill.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicChangePetChainSkill:DoLogic(notify)
+  local e = self._buffInstance:Entity()
   local cSkillInfo = e:SkillInfo()
   if not cSkillInfo then
-    return 
+    return
   end
   local chainSkillIDSelector = cSkillInfo:GetChainSkillIDSelector()
   if self._type == ChangePetChainSkillCondition.TargetInScope then
     local rule = chainSkillIDSelector:GetRule()
     local newRule = table_to_class(rule)
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R7 in 'UnsetPending'
-
     if not self:IsConditionSatisfyTargetInScope(e, notify:GetChainCount()) then
-      (newRule[1]).Skill = self._skillId
+      newRule[1].Skill = self._skillId
     end
     chainSkillIDSelector:AddRule(self._key, newRule)
-  else
-    do
-      if self._type == ChangePetChainSkillCondition.BySkillID then
-        local configService = (self._world):GetService("Config")
-        local rule = chainSkillIDSelector:GetRule()
-        local newRule = table_to_class(rule)
-        for i,v in ipairs(newRule) do
-          local newSkillID = (self._param)[v.Skill]
-          if newSkillID then
-            v.Skill = newSkillID
-            local skillConfigData = configService:GetSkillConfigData(newSkillID)
-            v.Chain = skillConfigData:GetSkillTriggerParam()
-          end
-        end
-        chainSkillIDSelector:AddRule(self._key, newRule)
-      else
-        do
-          if self._type == ChangePetChainSkillCondition.San then
-            local featureLogicSvc = (self._world):GetService("FeatureLogic")
-            if not featureLogicSvc then
-              return 
-            end
-            if not featureLogicSvc:HasFeatureType(FeatureType.Sanity) then
-              return 
-            end
-            local skillList = {}
-            for k,v in pairs(self._param) do
-              local skill = {}
-              skill.chainCount = k
-              skill.skill = v
-              ;
-              (table.insert)(skillList, skill)
-            end
-            ;
-            (table.sort)(skillList, function(e1, e2)
-    -- function num : 0_1_0
-    do return e1.chainCount < e2.chainCount end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-            local curSanValue = featureLogicSvc:GetSanValue()
-            local newSkillList = {}
-            for i,v in pairs(skillList) do
-              if curSanValue < v.chainCount then
-                newSkillList = v.skill
-                break
-              end
-            end
-            do
-              local rule = chainSkillIDSelector:GetRule()
-              do
-                local newRule = table_to_class(rule)
-                for i,v in ipairs(newRule) do
-                  local newSkillID = newSkillList[i]
-                  if newSkillID then
-                    v.Skill = newSkillID
-                  end
-                end
-                chainSkillIDSelector:AddRule(self._key, newRule)
-                local ret = BuffResultChangePetChainSkill:New(self._light)
-                return ret
-              end
-            end
-          end
-        end
+  elseif self._type == ChangePetChainSkillCondition.BySkillID then
+    local configService = self._world:GetService("Config")
+    local rule = chainSkillIDSelector:GetRule()
+    local newRule = table_to_class(rule)
+    for i, v in ipairs(newRule) do
+      local newSkillID = self._param[v.Skill]
+      if newSkillID then
+        v.Skill = newSkillID
+        local skillConfigData = configService:GetSkillConfigData(newSkillID)
+        v.Chain = skillConfigData:GetSkillTriggerParam()
       end
     end
+    chainSkillIDSelector:AddRule(self._key, newRule)
+  elseif self._type == ChangePetChainSkillCondition.San then
+    local featureLogicSvc = self._world:GetService("FeatureLogic")
+    if not featureLogicSvc then
+      return
+    end
+    if not featureLogicSvc:HasFeatureType(FeatureType.Sanity) then
+      return
+    end
+    local skillList = {}
+    for k, v in pairs(self._param) do
+      local skill = {}
+      skill.chainCount = k
+      skill.skill = v
+      table.insert(skillList, skill)
+    end
+    table.sort(skillList, function(e1, e2)
+      return e1.chainCount < e2.chainCount
+    end)
+    local curSanValue = featureLogicSvc:GetSanValue()
+    local newSkillList = {}
+    for i, v in pairs(skillList) do
+      if curSanValue < v.chainCount then
+        newSkillList = v.skill
+        break
+      end
+    end
+    local rule = chainSkillIDSelector:GetRule()
+    local newRule = table_to_class(rule)
+    for i, v in ipairs(newRule) do
+      local newSkillID = newSkillList[i]
+      if newSkillID then
+        v.Skill = newSkillID
+      end
+    end
+    chainSkillIDSelector:AddRule(self._key, newRule)
   end
+  local ret = BuffResultChangePetChainSkill:New(self._light)
+  return ret
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangePetChainSkill.IsConditionSatisfyTargetInScope = function(self, e, chainCount)
-  -- function num : 0_2 , upvalues : _ENV
-  local teamEntiy = (e:Pet()):GetOwnerTeamEntity()
+function BuffLogicChangePetChainSkill:IsConditionSatisfyTargetInScope(e, chainCount)
+  local teamEntiy = e:Pet():GetOwnerTeamEntity()
   local logicChainPathCmpt = teamEntiy:LogicChainPath()
   local chainPosList = logicChainPathCmpt:GetLogicChainPath()
   local cSkillInfo = e:SkillInfo()
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local chainExtraFix = utilData:GetEntityBuffValue(e, "ChangeExtraChainSkillReleaseFixForSkill")
   local chainSkillIdConfig = utilData:GetChainSkillByChainCount(e, chainCount, chainExtraFix)
   if chainSkillIdConfig <= 0 then
     return false
   end
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local sConfig = (self._world):GetService("Config")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local sConfig = self._world:GetService("Config")
   local skillConfigData = sConfig:GetSkillConfigData(chainSkillIdConfig)
   local targetType = skillConfigData:GetSkillTargetType()
   local scopeResult = utilScopeSvc:CalcSkillScope(skillConfigData, chainPosList[#chainPosList], e, Vector2(0, 1))
   local targetIDList = utilScopeSvc:SelectSkillTarget(e, targetType, scopeResult)
-  if targetIDList and (table.count)(targetIDList) > 0 then
+  if targetIDList and 0 < table.count(targetIDList) then
     return true
   end
   return false
@@ -134,24 +107,17 @@ end
 
 _class("BuffLogicChangePetChainSkillUndo", BuffLogicBase)
 BuffLogicChangePetChainSkillUndo = BuffLogicChangePetChainSkillUndo
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangePetChainSkillUndo.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicChangePetChainSkillUndo:Constructor(buffInstance, logicParam)
   self._key = logicParam.key
   self._black = logicParam.black or 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangePetChainSkillUndo.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicChangePetChainSkillUndo:DoLogic()
+  local e = self._buffInstance:Entity()
   local cSkillInfo = e:SkillInfo()
   local chainSkillIDSelector = cSkillInfo:GetChainSkillIDSelector()
   chainSkillIDSelector:RemoveRule(self._key)
   local ret = BuffResultChangePetChainSkillUndo:New(self._black)
   return ret
 end
-
-

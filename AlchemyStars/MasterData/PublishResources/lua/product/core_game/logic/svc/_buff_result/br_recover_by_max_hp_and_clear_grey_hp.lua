@@ -1,31 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_recover_by_max_hp_and_clear_grey_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultRecoverByMaxHPAndClearGreyHP", BuffResultBase)
 BuffResultRecoverByMaxHPAndClearGreyHP = BuffResultRecoverByMaxHPAndClearGreyHP
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultRecoverByMaxHPAndClearGreyHP.Constructor = function(self, entityID, damageInfo)
-  -- function num : 0_0
+function BuffResultRecoverByMaxHPAndClearGreyHP:Constructor(entityID, damageInfo)
   self._entityID = entityID
   self._damageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRecoverByMaxHPAndClearGreyHP.GetEntityID = function(self)
-  -- function num : 0_1
+function BuffResultRecoverByMaxHPAndClearGreyHP:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRecoverByMaxHPAndClearGreyHP.GetDamageInfo = function(self)
-  -- function num : 0_2
+function BuffResultRecoverByMaxHPAndClearGreyHP:GetDamageInfo()
   return self._damageInfo
 end
-
-

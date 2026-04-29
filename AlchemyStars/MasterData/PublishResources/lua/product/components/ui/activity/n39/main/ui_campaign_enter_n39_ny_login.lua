@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n39/main/ui_campaign_enter_n39_ny_login.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICampaignEnterN39NYLogin", UIActivityCommonCampaignEnter)
 UICampaignEnterN39NYLogin = UICampaignEnterN39NYLogin
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICampaignEnterN39NYLogin._CheckPoint = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UICampaignEnterN39NYLogin:_CheckPoint()
   local newObj = self:GetGameObject("new")
   local redObj = self:GetGameObject("red")
-  local new = (UIN39Helper.CheckNew)("ny_login")
-  local red = (UIActivityHelper.CheckCampaignSampleRedPoint)(self._campaign)
-  ;
-  (UIActivityHelper.SetWidgetNewAndRed)(newObj, new, redObj, red)
+  local new = UIN39Helper.CheckNew("ny_login")
+  local red = UIActivityHelper.CheckCampaignSampleRedPoint(self._campaign)
+  UIActivityHelper.SetWidgetNewAndRed(newObj, new, redObj, red)
 end
-
-

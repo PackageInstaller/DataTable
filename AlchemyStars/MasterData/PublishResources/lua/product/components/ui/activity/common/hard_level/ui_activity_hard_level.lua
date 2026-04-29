@@ -1,35 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common/hard_level/ui_activity_hard_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityHardLevel", Object)
 UIActivityHardLevel = UIActivityHardLevel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityHardLevel.Constructor = function(self, controller)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityHardLevel:Constructor(controller)
   self._controller = controller
-  self._missionModule = (GameGlobal.GetModule)(MissionModule)
-  self._campModule = (GameGlobal.GetModule)(CampaignModule)
-  self._go = (self._controller):GetGameObject("Hard")
-  self._time = (self._controller):GetUIComponent("UILocalizationText", "HardTime")
+  self._missionModule = GameGlobal.GetModule(MissionModule)
+  self._campModule = GameGlobal.GetModule(CampaignModule)
+  self._go = self._controller:GetGameObject("Hard")
+  self._time = self._controller:GetUIComponent("UILocalizationText", "HardTime")
   self._timerHolder = UITimerHolder:New()
-  self._nodesPool = (self._controller):GetUIComponent("UISelectObjectPath", "HardNodes")
+  self._nodesPool = self._controller:GetUIComponent("UISelectObjectPath", "HardNodes")
   self:OnInit()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHardLevel.Destroy = function(self)
-  -- function num : 0_1
-  (self._timerHolder):Dispose()
+function UIActivityHardLevel:Destroy()
+  self._timerHolder:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHardLevel.SetData = function(self, campaign, component, componentInfo)
-  -- function num : 0_2
+function UIActivityHardLevel:SetData(campaign, component, componentInfo)
   self._campaign = campaign
   self._levelHardComponent = component
   self._levelHardCompInfo = componentInfo
@@ -37,223 +24,164 @@ UIActivityHardLevel.SetData = function(self, campaign, component, componentInfo)
   self:FlushNodes()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHardLevel.SetActive = function(self, status, playAnim)
-  -- function num : 0_3
-  (self._go):SetActive(status)
+function UIActivityHardLevel:SetActive(status, playAnim)
+  self._go:SetActive(status)
   if status and playAnim then
     self:FlushNodes()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHardLevel.RefreshCountdown = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local closeTime = (self._levelHardCompInfo).m_close_time
+function UIActivityHardLevel:RefreshCountdown()
+  local closeTime = self._levelHardCompInfo.m_close_time
   self._isValid = true
   local timerName = "CountDown"
-  local countDown = function()
-    -- function num : 0_4_0 , upvalues : _ENV, closeTime, self, timerName
-    local now = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() / 1000
-    local time = (math.ceil)(closeTime - now)
+  
+  local function countDown()
+    local now = GameGlobal.GetModule(SvrTimeModule):GetServerTime() / 1000
+    local time = math.ceil(closeTime - now)
     local timeStr = self:GetFormatTimerStr(time)
     if self._timeString ~= timeStr then
-      (self._time):SetText(timeStr)
+      self._time:SetText(timeStr)
       self._timeString = timeStr
     end
     if time < 0 then
       self._isValid = false
-      ;
-      (self._timerHolder):StopTimer(timerName)
+      self._timerHolder:StopTimer(timerName)
     end
   end
-
+  
   countDown()
-  ;
-  (self._timerHolder):StartTimerInfinite(timerName, 1000, countDown)
+  self._timerHolder:StartTimerInfinite(timerName, 1000, countDown)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHardLevel.GetFormatTimerStr = function(self, time, id)
-  -- function num : 0_5 , upvalues : _ENV
-  local default_id = {day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_error_107"}
-  if not id then
-    id = default_id
-  end
+function UIActivityHardLevel:GetFormatTimerStr(time, id)
+  local default_id = {
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_error_107"
+  }
+  id = id or default_id
   local timeStr = ""
   if time < 0 then
-    timeStr = (StringTable.Get)(id.over)
+    timeStr = StringTable.Get(id.over)
     return timeStr
   end
-  local day = (math.floor)(time / 3600 / 24)
-  if day > 0 then
+  local day = math.floor(time / 3600 / 24)
+  if 0 < day then
     time = time - day * 3600 * 24
-    local hour = (math.floor)((time) / 3600)
-    timeStr = day .. (StringTable.Get)(id.day)
-    if hour > 0 then
-      timeStr = timeStr .. hour .. (StringTable.Get)(id.hour)
+    local hour = math.floor(time / 3600)
+    timeStr = day .. StringTable.Get(id.day)
+    if 0 < hour then
+      timeStr = timeStr .. hour .. StringTable.Get(id.hour)
+    end
+  elseif 60 <= time then
+    local hour = math.floor(time / 3600)
+    time = time - hour * 3600
+    if 0 < hour then
+      timeStr = hour .. StringTable.Get(id.hour)
+    end
+    local minus = math.floor(time / 60)
+    if 0 < minus then
+      timeStr = timeStr .. minus .. StringTable.Get(id.min)
     end
   else
-    do
-      if time >= 60 then
-        local hour = (math.floor)((time) / 3600)
-        time = time - hour * 3600
-        if hour > 0 then
-          timeStr = hour .. (StringTable.Get)(id.hour)
-        end
-        local minus = (math.floor)((time) / 60)
-        if minus > 0 then
-          timeStr = timeStr .. minus .. (StringTable.Get)(id.min)
-        end
-      else
-        do
-          timeStr = (StringTable.Get)(id.zero)
-          return (StringTable.Get)(self:GetTimeDownString(), timeStr)
-        end
-      end
-    end
+    timeStr = StringTable.Get(id.zero)
   end
+  return StringTable.Get(self:GetTimeDownString(), timeStr)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHardLevel.FlushNodes = function(self)
-  -- function num : 0_6
-  (self._controller):StartTask(self.CreateItems, self)
+function UIActivityHardLevel:FlushNodes()
+  self._controller:StartTask(self.CreateItems, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHardLevel.CreateItems = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._controller):Lock("UIActivityN27HardLevel_CreateItems")
-  local cmpID = (self._levelHardComponent):GetComponentCfgId()
-  local missionCfgs = (Cfg.cfg_component_line_mission)({ComponentID = cmpID})
-  local count = (table.count)(missionCfgs)
+function UIActivityHardLevel:CreateItems(TT)
+  self._controller:Lock("UIActivityN27HardLevel_CreateItems")
+  local cmpID = self._levelHardComponent:GetComponentCfgId()
+  local missionCfgs = Cfg.cfg_component_line_mission({ComponentID = cmpID})
+  local count = table.count(missionCfgs)
   local nodeName = self:GetLevelNodeName()
-  ;
-  (self._nodesPool):SpawnObjects(nodeName, count)
-  local nodes = (self._nodesPool):GetAllSpawnList()
+  self._nodesPool:SpawnObjects(nodeName, count)
+  local nodes = self._nodesPool:GetAllSpawnList()
   for i = 1, #nodes do
-    (nodes[i]):SetVisible(false)
+    nodes[i]:SetVisible(false)
   end
   local index = 1
-  for idx,cfg in ipairs(missionCfgs) do
+  for idx, cfg in ipairs(missionCfgs) do
     local uiNode = nodes[index]
     index = index + 1
     local isOpen = false
-    local hasPass = ((self._levelHardCompInfo).m_pass_mission_info)[cfg.CampaignMissionId] ~= nil
-    -- DECOMPILER ERROR at PC63: Unhandled construct in 'MakeBoolean' P1
-
-    if cfg.NeedMissionId and cfg.NeedMissionId ~= 0 and ((self._levelHardCompInfo).m_pass_mission_info)[cfg.NeedMissionId] ~= nil then
+    local hasPass = self._levelHardCompInfo.m_pass_mission_info[cfg.CampaignMissionId] ~= nil
+    if cfg.NeedMissionId and cfg.NeedMissionId ~= 0 then
+      if self._levelHardCompInfo.m_pass_mission_info[cfg.NeedMissionId] ~= nil then
+        isOpen = true
+      end
+    else
       isOpen = true
     end
-    isOpen = true
     uiNode:SetData(cfg, isOpen, hasPass, function(stageId, isStory, worldPos)
-    -- function num : 0_7_0 , upvalues : self
-    self:OnNodeClick(stageId, isStory, worldPos)
-  end
-, idx)
+      self:OnNodeClick(stageId, isStory, worldPos)
+    end, idx)
     self:NodePlayAnimationInterval(TT)
   end
-  ;
-  (self._controller):UnLock("UIActivityN27HardLevel_CreateItems")
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  self._controller:UnLock("UIActivityN27HardLevel_CreateItems")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHardLevel.OnNodeClick = function(self, stageId, isStory, worldPos)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityHardLevel:OnNodeClick(stageId, isStory, worldPos)
   if isStory then
-    local missionCfg = (Cfg.cfg_campaign_mission)[stageId]
-    local titleId = (StringTable.Get)(missionCfg.Title)
-    local titleName = (StringTable.Get)(missionCfg.Name)
-    local storyId = (self._missionModule):GetStoryByStageIdStoryType(stageId, StoryTriggerType.Node)
+    local missionCfg = Cfg.cfg_campaign_mission[stageId]
+    local titleId = StringTable.Get(missionCfg.Title)
+    local titleName = StringTable.Get(missionCfg.Name)
+    local storyId = self._missionModule:GetStoryByStageIdStoryType(stageId, StoryTriggerType.Node)
     if not storyId then
-      (Log.exception)("配置错误,找不到剧情,关卡id:", stageId)
-      return 
+      Log.exception("配置错误,找不到剧情,关卡id:", stageId)
+      return
     end
-    ;
-    (self._controller):ShowDialog("UIActivityPlotEnter", titleId, titleName, storyId, function()
-    -- function num : 0_8_0 , upvalues : self, stageId
-    self:PlotEndCallback(stageId)
+    self._controller:ShowDialog("UIActivityPlotEnter", titleId, titleName, storyId, function()
+      self:PlotEndCallback(stageId)
+    end)
+    return
   end
-)
-    return 
-  end
-  do
-    self:EnterStage(stageId, worldPos)
-  end
+  self:EnterStage(stageId, worldPos)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHardLevel.EnterStage = function(self, stageId, worldPos)
-  -- function num : 0_9
+function UIActivityHardLevel:EnterStage(stageId, worldPos)
   local autoFightShow = false
-  ;
-  (self._controller):ShowDialog("UIActivityLevelStageNew", stageId, ((self._levelHardCompInfo).m_pass_mission_info)[stageId], self._levelHardComponent, autoFightShow, nil, nil, true, nil, nil, false, true)
+  self._controller:ShowDialog("UIActivityLevelStageNew", stageId, self._levelHardCompInfo.m_pass_mission_info[stageId], self._levelHardComponent, autoFightShow, nil, nil, true, nil, nil, false, true)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHardLevel.PlotEndCallback = function(self, stageId)
-  -- function num : 0_10 , upvalues : _ENV
-  local isActive = (self._levelHardComponent):IsPassCamMissionID(stageId)
+function UIActivityHardLevel:PlotEndCallback(stageId)
+  local isActive = self._levelHardComponent:IsPassCamMissionID(stageId)
   if isActive then
-    return 
+    return
   end
-  ;
-  (self._controller):StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self, stageId, _ENV
-    (self._levelHardComponent):SetMissionStoryActive(TT, stageId, ActiveStoryType.ActiveStoryType_BeforeBattle)
+  self._controller:StartTask(function(TT)
+    self._levelHardComponent:SetMissionStoryActive(TT, stageId, ActiveStoryType.ActiveStoryType_BeforeBattle)
     local res = AsyncRequestRes:New()
-    local award = (self._levelHardComponent):HandleCompleteStoryMission(TT, res, stageId)
+    local award = self._levelHardComponent:HandleCompleteStoryMission(TT, res, stageId)
     if not res:GetSucc() then
-      (self._campModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+      self._campModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    elseif table.count(award) ~= 0 then
+      self._controller:ShowDialog("UIGetItemController", award, function()
+        self:FlushNodes()
+      end)
     else
-      if (table.count)(award) ~= 0 then
-        (self._controller):ShowDialog("UIGetItemController", award, function()
-      -- function num : 0_10_0_0 , upvalues : self
       self:FlushNodes()
     end
-)
-      else
-        self:FlushNodes()
-      end
-    end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHardLevel.OnInit = function(self)
-  -- function num : 0_11
+function UIActivityHardLevel:OnInit()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHardLevel.GetTimeDownString = function(self)
-  -- function num : 0_12
+function UIActivityHardLevel:GetTimeDownString()
   return ""
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHardLevel.NodePlayAnimationInterval = function(self, TT)
-  -- function num : 0_13
+function UIActivityHardLevel:NodePlayAnimationInterval(TT)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHardLevel.GetLevelNodeName = function(self)
-  -- function num : 0_14
+function UIActivityHardLevel:GetLevelNodeName()
   return "UIActivityN29NHardLevelNode"
 end
-
-

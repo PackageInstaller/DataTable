@@ -1,30 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_turn_to_target_normal_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterTurnToTargetNormalInstruction", BaseInstruction)
 PlayCasterTurnToTargetNormalInstruction = PlayCasterTurnToTargetNormalInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterTurnToTargetNormalInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterTurnToTargetNormalInstruction:Constructor(paramList)
   self._stageIndex = tonumber(paramList.stageIndex) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterTurnToTargetNormalInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterTurnToTargetNormalInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   local world = casterEntity:GetOwnerWorld()
   local targetEntity = world:GetEntityByID(targetEntityID)
   if not targetEntity then
-    return 
+    return
   end
-  local dir = (targetEntity:Location()).Position - (casterEntity:Location()).Position
-  if (math.abs)(dir.z) < (math.abs)(dir.x) then
+  local dir = targetEntity:Location().Position - casterEntity:Location().Position
+  if math.abs(dir.x) > math.abs(dir.z) then
     dir.z = 0
   else
     dir.x = 0
@@ -32,5 +22,3 @@ PlayCasterTurnToTargetNormalInstruction.DoInstruction = function(self, TT, caste
   local gridDir = Vector2(dir.x, dir.z)
   casterEntity:SetDirection(dir)
 end
-
-

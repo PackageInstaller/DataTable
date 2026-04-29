@@ -1,33 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/nx_base/ui_nx_intr_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UINxIntrBase", UIController)
 UINxIntrBase = UINxIntrBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UINxIntrBase.Constructor = function(self)
-  -- function num : 0_0
+function UINxIntrBase:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UINxIntrBase.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UINxIntrBase:OnShow(uiParams)
   self._param = uiParams[1] or "nil"
-  self._cfg = (Cfg.cfg_activityintro)[self._param]
+  self._cfg = Cfg.cfg_activityintro[self._param]
   if self._cfg == nil then
-    (Log.fatal)("###[UINxIntrBase] self._cfg is nil. param --> ", self._param)
+    Log.fatal("###[UINxIntrBase] self._cfg is nil. param --> ", self._param)
   end
   self:GetComponents()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UINxIntrBase.GetComponents = function(self)
-  -- function num : 0_2
+function UINxIntrBase:GetComponents()
   self._title = self:GetUIComponent("UILocalizationText", "Title")
   self._pool = self:GetUIComponent("UISelectObjectPath", "Pool")
   self._poolGo = self:GetGameObject("Pool")
@@ -35,67 +22,49 @@ UINxIntrBase.GetComponents = function(self)
   self._desc = self:GetUIComponent("UILocalizationText", "desc")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UINxIntrBase.V_ItemName = function(self)
-  -- function num : 0_3
+function UINxIntrBase:V_ItemName()
   return "UINxIntrItemBase"
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UINxIntrBase.OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._title):SetText((StringTable.Get)((self._cfg).Title))
-  local content = (self._cfg).Intro
-  ;
-  (self._poolGo):SetActive(content == nil)
-  ;
-  (self._contentGo):SetActive(content ~= nil)
+function UINxIntrBase:OnValue()
+  self._title:SetText(StringTable.Get(self._cfg.Title))
+  local content = self._cfg.Intro
+  self._poolGo:SetActive(content == nil)
+  self._contentGo:SetActive(content ~= nil)
   if content then
-    (self._desc):SetText((StringTable.Get)((self._cfg).Intro))
+    self._desc:SetText(StringTable.Get(self._cfg.Intro))
   else
     local n = 0
-    local key = (self._cfg).Title
-    while 1 do
+    local key = self._cfg.Title
+    while true do
       n = n + 1
-      local keyHead = (StringTable.Has)(key .. "head_" .. n)
+      local keyHead = StringTable.Has(key .. "head_" .. n)
       if not keyHead then
         n = n - 1
         break
       end
     end
     if n <= 0 then
-      (Log.fatal)("###[UINxIntrBase] no [" .. key .. "head_n] in str_nx.xlsx")
-      return 
+      Log.fatal("###[UINxIntrBase] no [" .. key .. "head_n] in str_nx.xlsx")
+      return
     end
-    ;
-    (self._pool):SpawnObjects(self:V_ItemName(), n)
-    local pools = (self._pool):GetAllSpawnList()
+    self._pool:SpawnObjects(self:V_ItemName(), n)
+    local pools = self._pool:GetAllSpawnList()
     for i = 1, n do
       local item = pools[i]
       if item then
-        local head = (StringTable.Get)(key .. "head_" .. i)
-        local body = (StringTable.Get)(key .. "body_" .. i)
+        local head = StringTable.Get(key .. "head_" .. i)
+        local body = StringTable.Get(key .. "body_" .. i)
         item:Flush(head, body)
       end
     end
   end
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UINxIntrBase.BgOnClick = function(self, go)
-  -- function num : 0_5
+function UINxIntrBase:BgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UINxIntrBase.CloseBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UINxIntrBase:CloseBtnOnClick(go)
   self:CloseDialog()
 end
-
-

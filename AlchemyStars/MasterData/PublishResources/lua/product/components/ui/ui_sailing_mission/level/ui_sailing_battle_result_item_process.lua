@@ -1,31 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sailing_mission/level/ui_sailing_battle_result_item_process.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISailingBattleResultItemProcess", UICustomWidget)
 UISailingBattleResultItemProcess = UISailingBattleResultItemProcess
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISailingBattleResultItemProcess.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISailingBattleResultItemProcess:OnShow(uiParams)
   self._name1Label = self:GetUIComponent("UILocalizationText", "Name1")
   self._name2Label = self:GetUIComponent("UILocalizationText", "Name2")
   self._complete = self:GetGameObject("Complete")
   self._uncomplete = self:GetGameObject("UnComplete")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingBattleResultItemProcess.Refresh = function(self, name, complete)
-  -- function num : 0_1
-  (self._name1Label):SetText(name)
-  ;
-  (self._name2Label):SetText(name)
-  ;
-  (self._complete):SetActive(complete)
-  ;
-  (self._uncomplete):SetActive(not complete)
+function UISailingBattleResultItemProcess:Refresh(name, complete)
+  self._name1Label:SetText(name)
+  self._name2Label:SetText(name)
+  self._complete:SetActive(complete)
+  self._uncomplete:SetActive(not complete)
 end
-
-

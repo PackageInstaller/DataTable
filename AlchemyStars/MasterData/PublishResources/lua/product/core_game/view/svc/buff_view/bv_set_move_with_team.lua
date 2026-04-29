@@ -1,24 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_set_move_with_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewSetMoveWithTeam", BuffViewBase)
 BuffViewSetMoveWithTeam = BuffViewSetMoveWithTeam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewSetMoveWithTeam.PlayView = function(self, TT)
-  -- function num : 0_0
+function BuffViewSetMoveWithTeam:PlayView(TT)
   local entity = self._entity
-  local bSet = (self._buffResult):IsSet()
+  local bSet = self._buffResult:IsSet()
   if bSet then
-    local teamEntity = (self._buffResult):GetTargetTeamEntity()
+    local teamEntity = self._buffResult:GetTargetTeamEntity()
     entity:AddRenderSyncMoveWithTeam(teamEntity)
   else
-    do
-      entity:RemoveRenderSyncMoveWithTeam()
-    end
+    entity:RemoveRenderSyncMoveWithTeam()
   end
 end
-
-

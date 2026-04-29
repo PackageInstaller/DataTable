@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_modify_rest_round.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicModifyRestRound", BuffLogicBase)
 BuffLogicModifyRestRound = BuffLogicModifyRestRound
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicModifyRestRound.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicModifyRestRound:Constructor(buffInstance, logicParam)
   self._modifyRound = logicParam.modifyRound
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicModifyRestRound.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function BuffLogicModifyRestRound:DoLogic(notify)
+  local battleStatCmpt = self._world:BattleStat()
   local subValue = -1 * self._modifyRound
   local curWaveRound = battleStatCmpt:SubCurWaveRoundByEffect(subValue)
   local buffResult = BuffResultModifyRestRound:New(curWaveRound, self._modifyRound)
@@ -31,13 +21,9 @@ BuffLogicModifyRestRound.DoLogic = function(self, notify)
     buffResult.attackerEntity = notify:GetAttackerEntity()
     buffResult.defenderEntity = notify:GetDefenderEntity()
   end
-  do
-    if notify:GetNotifyType() == NotifyType.MonsterDead or notify:GetNotifyType() == NotifyType.MonsterDeadEnd or notify:GetNotifyType() == NotifyType.MonsterDeadStart then
-      local entity = notify:GetNotifyEntity()
-      buffResult.deadMonsterEntityID = entity:GetID()
-    end
-    return buffResult
+  if notify:GetNotifyType() == NotifyType.MonsterDead or notify:GetNotifyType() == NotifyType.MonsterDeadEnd or notify:GetNotifyType() == NotifyType.MonsterDeadStart then
+    local entity = notify:GetNotifyEntity()
+    buffResult.deadMonsterEntityID = entity:GetID()
   end
+  return buffResult
 end
-
-

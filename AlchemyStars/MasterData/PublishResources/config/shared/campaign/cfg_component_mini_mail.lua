@@ -1,23 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_mini_mail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, Type = 3, QuestId = 4}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  Type = 3,
+  QuestId = 4
+}
 local config = {
-{1, 108202702, 1, 3570028}
-, 
-{2, 108202702, 1, 3570032}
-, 
-{3, 108202702, 1, 3570036}
-, 
-{4, 108202702, 1, 3570040}
-, 
-{5, 108202702, 1, 3570044}
-, 
-{6, 108202702, 1, 3570048}
-, 
-{7, 108202702, 1, 3570052}
+  {
+    1,
+    108202702,
+    1,
+    3570028
+  },
+  {
+    2,
+    108202702,
+    1,
+    3570032
+  },
+  {
+    3,
+    108202702,
+    1,
+    3570036
+  },
+  {
+    4,
+    108202702,
+    1,
+    3570040
+  },
+  {
+    5,
+    108202702,
+    1,
+    3570044
+  },
+  {
+    6,
+    108202702,
+    1,
+    3570048
+  },
+  {
+    7,
+    108202702,
+    1,
+    3570052
+  }
 }
 return config, "ID", key
-

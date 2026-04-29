@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_preview_chain_damage_scope.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetPreviewChainDamageScope", BuffLogicBase)
 BuffLogicSetPreviewChainDamageScope = BuffLogicSetPreviewChainDamageScope
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetPreviewChainDamageScope.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetPreviewChainDamageScope:Constructor(buffInstance, logicParam)
   self._skillID = logicParam.skillID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetPreviewChainDamageScope.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local result = BuffResultSetPreviewChainDamageScope:New((self._entity):GetID(), self._skillID)
+function BuffLogicSetPreviewChainDamageScope:DoLogic(notify)
+  local result = BuffResultSetPreviewChainDamageScope:New(self._entity:GetID(), self._skillID)
   return result
 end
-
-

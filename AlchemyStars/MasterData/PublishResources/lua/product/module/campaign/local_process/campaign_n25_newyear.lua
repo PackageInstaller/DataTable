@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_n25_newyear.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignN25NewYear", ICampaignComponentLocalProcessBase)
 CCampaignN25NewYear = CCampaignN25NewYear
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignN25NewYear.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignN25NewYear:Constructor()
   self._cumulativeLoginComponent = nil
   self._cumulativeLoginComponentInfo = nil
   self._timeRewardComponent = nil
@@ -16,55 +9,37 @@ CCampaignN25NewYear.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN25NewYear.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignN25NewYear:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N25_NEW_YEAR
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN25NewYear.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignN25NewYear:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN25NewYear.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignN25NewYear:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetCumulativeLoginComponent()
   self:_GetTimeRewardComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN25NewYear._GetCumulativeLoginComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._cumulativeLoginComponent = (self._campaignObj):GetComponent(ECampaignN25NewYearComponentID.CUMULATIVE_LOGIN)
+function CCampaignN25NewYear:_GetCumulativeLoginComponent()
+  self._cumulativeLoginComponent = self._campaignObj:GetComponent(ECampaignN25NewYearComponentID.CUMULATIVE_LOGIN)
   if not self._cumulativeLoginComponent then
-    return 
+    return
   end
-  self._cumulativeLoginComponentInfo = (self._cumulativeLoginComponent):ComponentInfo()
+  self._cumulativeLoginComponentInfo = self._cumulativeLoginComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN25NewYear._GetTimeRewardComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._timeRewardComponent = (self._campaignObj):GetComponent(ECampaignN25NewYearComponentID.TIME_REWARD)
+function CCampaignN25NewYear:_GetTimeRewardComponent()
+  self._timeRewardComponent = self._campaignObj:GetComponent(ECampaignN25NewYearComponentID.TIME_REWARD)
   if not self._timeRewardComponent then
-    return 
+    return
   end
-  self._timeRewardComponentInfo = (self._timeRewardComponent):ComponentInfo()
+  self._timeRewardComponentInfo = self._timeRewardComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN25NewYear.GetComponent = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignN25NewYear:GetComponent(componentID)
   if ECampaignN25NewYearComponentID.CUMULATIVE_LOGIN == componentID then
     return self._cumulativeLoginComponent
   end
@@ -74,10 +49,7 @@ CCampaignN25NewYear.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN25NewYear.GetComponentInfo = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignN25NewYear:GetComponentInfo(componentID)
   if ECampaignN25NewYearComponentID.CUMULATIVE_LOGIN == componentID then
     return self._cumulativeLoginComponentInfo
   end
@@ -87,24 +59,12 @@ CCampaignN25NewYear.GetComponentInfo = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN25NewYear.GetEntryNew = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignN25NewYear:GetEntryNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_N25_NEW_YEAR)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN25NewYear.AccumulateLoginReddot = function(self)
-  -- function num : 0_9
-  if self._cumulativeLoginComponent then
-    return (self._cumulativeLoginComponent):HaveRedPoint()
-  end
+function CCampaignN25NewYear:AccumulateLoginReddot()
+  return self._cumulativeLoginComponent and self._cumulativeLoginComponent:HaveRedPoint()
 end
-
-

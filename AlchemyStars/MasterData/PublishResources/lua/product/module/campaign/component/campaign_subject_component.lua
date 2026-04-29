@@ -1,106 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/campaign_subject_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CampaignSubjectComponent", ICampaignComponent)
 CampaignSubjectComponent = CampaignSubjectComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CampaignSubjectComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CampaignSubjectComponent:Constructor()
   self.m_component_info = SubjectComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSubjectComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CampaignSubjectComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = SubjectComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSubjectComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function CampaignSubjectComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSubjectComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CampaignSubjectComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_SUBJECT
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSubjectComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
-  ;
-  (Log.debug)("test score:", (self.m_component_info).test_score)
+function CampaignSubjectComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
+  Log.debug("test score:", self.m_component_info.test_score)
   return ret
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSubjectComponent.GetRewardedLevels = function(self)
-  -- function num : 0_5
-  return (self.m_component_info).rewarded_levels
+function CampaignSubjectComponent:GetRewardedLevels()
+  return self.m_component_info.rewarded_levels
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSubjectComponent.GetTestScore = function(self)
-  -- function num : 0_6
-  return (self.m_component_info).test_score
+function CampaignSubjectComponent:GetTestScore()
+  return self.m_component_info.test_score
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSubjectComponent.HandleReward = function(self, TT, asyncRes, level_id, grade)
-  -- function num : 0_7 , upvalues : _ENV
+function CampaignSubjectComponent:HandleReward(TT, asyncRes, level_id, grade)
   local request = SubjectComponentRewardReq:New()
   request.level_id = level_id
   request.grade = grade
   local response = SubjectComponentRewardRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][CampaignSubjectComponent] HandleReward ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][CampaignSubjectComponent] HandleReward ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).rewarded_levels = response.rewarded_levels
+  self.m_component_info.rewarded_levels = response.rewarded_levels
   return asyncRes
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSubjectComponent.HandleTestScore = function(self, TT, asyncRes, score)
-  -- function num : 0_8 , upvalues : _ENV
+function CampaignSubjectComponent:HandleTestScore(TT, asyncRes, score)
   local request = SubjectComponentTestScoreReq:New()
   request.score = score
   local response = SubjectComponentTestScoreRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][CampaignSubjectComponent] HandleTestScore ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][CampaignSubjectComponent] HandleTestScore ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).test_score = score
+  self.m_component_info.test_score = score
   return asyncRes
 end
-
-

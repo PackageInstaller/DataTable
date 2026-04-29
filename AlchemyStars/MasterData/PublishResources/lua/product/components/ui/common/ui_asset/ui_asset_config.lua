@@ -1,16 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/common/ui_asset/ui_asset_config.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local normal = nil
+local normal
 UIAssetConfig = {}
--- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
 
-UIAssetConfig.GetComponentPrefab = function(type)
-  -- function num : 0_0 , upvalues : normal
+function UIAssetConfig.GetComponentPrefab(type)
   if not normal then
-    normal = {UIAssetComponentNew = "UIAssetComponentNew.prefab"}
+    normal = {
+      UIAssetComponentNew = "UIAssetComponentNew.prefab"
+    }
   end
   local prefab = normal[type]
   if prefab then
@@ -19,5 +14,3 @@ UIAssetConfig.GetComponentPrefab = function(type)
     return type._className .. ".prefab"
   end
 end
-
-

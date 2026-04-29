@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_overdraw.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSetOverdraw", BuffLogicBase)
 BuffLogicSetOverdraw = BuffLogicSetOverdraw
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetOverdraw.DoLogic = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetFlag(BuffFlags.Overdraw)
+function BuffLogicSetOverdraw:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetFlag(BuffFlags.Overdraw)
 end
 
 _class("BuffLogicResetOverdraw", BuffLogicBase)
 BuffLogicResetOverdraw = BuffLogicResetOverdraw
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetOverdraw.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):ResetFlag(BuffFlags.Overdraw)
+function BuffLogicResetOverdraw:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():ResetFlag(BuffFlags.Overdraw)
 end
-
-

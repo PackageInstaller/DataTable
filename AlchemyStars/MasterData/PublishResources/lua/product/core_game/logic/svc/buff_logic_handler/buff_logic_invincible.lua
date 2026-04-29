@@ -1,42 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_invincible.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetInvincible", BuffLogicBase)
 BuffLogicSetInvincible = BuffLogicSetInvincible
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetInvincible.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetInvincible:Constructor(buffInstance, logicParam)
   self._layerNum = logicParam.layerNum
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetInvincible.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetFlag(BuffFlags.Invincible)
+function BuffLogicSetInvincible:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetFlag(BuffFlags.Invincible)
 end
 
 _class("BuffLogicResetInvincible", BuffLogicBase)
 BuffLogicResetInvincible = BuffLogicResetInvincible
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetInvincible.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetInvincible:Constructor(buffInstance, logicParam)
   self._layerNum = logicParam.layerNum
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetInvincible.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):ResetFlag(BuffFlags.Invincible)
+function BuffLogicResetInvincible:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():ResetFlag(BuffFlags.Invincible)
 end
-
-

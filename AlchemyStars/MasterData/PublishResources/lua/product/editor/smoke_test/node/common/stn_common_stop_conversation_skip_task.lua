@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/common/stn_common_stop_conversation_skip_task.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("Common_StopConversationSkipTask", CTestRobot_Base)
 Common_StopConversationSkipTask = Common_StopConversationSkipTask
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Common_StopConversationSkipTask.OnWorking = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local testRobotModule = (GameGlobal.GetModule)(TestRobotModule)
+function Common_StopConversationSkipTask:OnWorking()
+  local testRobotModule = GameGlobal.GetModule(TestRobotModule)
   local tid = testRobotModule:GetConversationTaskID()
   if not tid then
-    return ((Common_StopConversationSkipTask.super).OnWorking)(self)
+    return Common_StopConversationSkipTask.super.OnWorking(self)
   end
   testRobotModule:SetConversationTaskID(nil)
-  ;
-  ((GameGlobal.TaskManager)()):KillTask(tid)
-  return ((Common_StopConversationSkipTask.super).OnWorking)(self)
+  GameGlobal.TaskManager():KillTask(tid)
+  return Common_StopConversationSkipTask.super.OnWorking(self)
 end
-
-

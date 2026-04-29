@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/ui_n25_idol_archive_fixed.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolArchiveFixed", UICustomWidget)
 UIN25IdolArchiveFixed = UIN25IdolArchiveFixed
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolArchiveFixed.Constructor = function(self)
-  -- function num : 0_0
+function UIN25IdolArchiveFixed:Constructor()
   self._parent = nil
   self._idArchive = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolArchiveFixed.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25IdolArchiveFixed:OnShow(uiParams)
   self._empty = self:GetUIComponent("RectTransform", "empty")
   self._nonempty = self:GetUIComponent("RectTransform", "nonempty")
   self._txtWeek = self:GetUIComponent("UILocalizationText", "txtWeek")
@@ -31,93 +21,62 @@ UIN25IdolArchiveFixed.OnShow = function(self, uiParams)
   self._txtPerform = self:GetUIComponent("UILocalizationText", "txtPerform")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolArchiveFixed.OnHide = function(self)
-  -- function num : 0_2
+function UIN25IdolArchiveFixed:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolArchiveFixed.Flush = function(self, parent, idArchive, processInfo)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN25IdolArchiveFixed:Flush(parent, idArchive, processInfo)
   self._parent = parent
   self._idArchive = idArchive
   local isEmpty = processInfo == nil
-  ;
-  ((self._empty).gameObject):SetActive(isEmpty)
-  ;
-  ((self._nonempty).gameObject):SetActive(not isEmpty)
+  self._empty.gameObject:SetActive(isEmpty)
+  self._nonempty.gameObject:SetActive(not isEmpty)
   if isEmpty then
+  else
     local weekValue = 0
     local musicValue = 0
     local danceValue = 0
     local performValue = 0
-    weekValue = (math.floor)((processInfo.round_index - 1) / 7) + 1
-    local weekTextValue = (StringTable.Get)("str_n25_idol_y_loading_week", weekValue)
-    do
-      if processInfo.train_data ~= nil then
-        local train_data = processInfo.train_data
-        if train_data[IdolTrainType.IdolTrainType_Music] ~= nil then
-          musicValue = train_data[IdolTrainType.IdolTrainType_Music]
-        end
-        if train_data[IdolTrainType.IdolTrainType_Dance] ~= nil then
-          danceValue = train_data[IdolTrainType.IdolTrainType_Dance]
-        end
-        if train_data[IdolTrainType.IdolTrainType_Perform] ~= nil then
-          performValue = train_data[IdolTrainType.IdolTrainType_Perform]
-        end
+    weekValue = math.floor((processInfo.round_index - 1) / 7) + 1
+    local weekTextValue = StringTable.Get("str_n25_idol_y_loading_week", weekValue)
+    if processInfo.train_data ~= nil then
+      local train_data = processInfo.train_data
+      if train_data[IdolTrainType.IdolTrainType_Music] ~= nil then
+        musicValue = train_data[IdolTrainType.IdolTrainType_Music]
       end
-      local timeValue = processInfo.note_time
-      if timeValue == 0 then
-        timeValue = (os.time)()
+      if train_data[IdolTrainType.IdolTrainType_Dance] ~= nil then
+        danceValue = train_data[IdolTrainType.IdolTrainType_Dance]
       end
-      do
-        local timeTextValue = TimeToDate3(timeValue, "min")
-        ;
-        (self._txtWeek):SetText(weekTextValue)
-        ;
-        (self._txtTime):SetText(timeTextValue)
-        ;
-        (self._txtFansGrey):SetText((string.format)("%.7d", processInfo.funs_num))
-        ;
-        (self._txtFans):SetText(processInfo.funs_num)
-        ;
-        (self._txtMusicGrey):SetText((string.format)("%.5d", musicValue))
-        ;
-        (self._txtMusic):SetText(musicValue)
-        ;
-        (self._txtDanceGrey):SetText((string.format)("%.5d", danceValue))
-        ;
-        (self._txtDance):SetText(danceValue)
-        ;
-        (self._txtPerformGrey):SetText((string.format)("%.5d", performValue))
-        ;
-        (self._txtPerform):SetText(performValue)
-        -- DECOMPILER ERROR: 7 unprocessed JMP targets
+      if train_data[IdolTrainType.IdolTrainType_Perform] ~= nil then
+        performValue = train_data[IdolTrainType.IdolTrainType_Perform]
       end
     end
+    local timeValue = processInfo.note_time
+    if timeValue == 0 then
+      timeValue = os.time()
+    end
+    local timeTextValue = TimeToDate3(timeValue, "min")
+    self._txtWeek:SetText(weekTextValue)
+    self._txtTime:SetText(timeTextValue)
+    self._txtFansGrey:SetText(string.format("%.7d", processInfo.funs_num))
+    self._txtFans:SetText(processInfo.funs_num)
+    self._txtMusicGrey:SetText(string.format("%.5d", musicValue))
+    self._txtMusic:SetText(musicValue)
+    self._txtDanceGrey:SetText(string.format("%.5d", danceValue))
+    self._txtDance:SetText(danceValue)
+    self._txtPerformGrey:SetText(string.format("%.5d", performValue))
+    self._txtPerform:SetText(performValue)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolArchiveFixed.BtnLoadingOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  local idolInfo = ((self._parent):IdolComponent()):GetComponentInfo()
+function UIN25IdolArchiveFixed:BtnLoadingOnClick(go)
+  local idolInfo = self._parent:IdolComponent():GetComponentInfo()
   local breakInfo = idolInfo.break_info
   if breakInfo.note_time ~= 0 then
     self:ShowDialog("UIN25IdolBreakTips", breakInfo, function()
-    -- function num : 0_4_0 , upvalues : self, _ENV
-    self:DispatchEvent(GameEventType.N25IdolStartPlayGame, IdolStartType.IdolStartType_Process, self._idArchive)
-  end
-, function()
-    -- function num : 0_4_1
-  end
-)
+      self:DispatchEvent(GameEventType.N25IdolStartPlayGame, IdolStartType.IdolStartType_Process, self._idArchive)
+    end, function()
+    end)
   else
     self:DispatchEvent(GameEventType.N25IdolStartPlayGame, IdolStartType.IdolStartType_Process, self._idArchive)
   end
 end
-
-

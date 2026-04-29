@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_buff_effect_trigger.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicBuffEffectTrigger", BuffLogicBase)
 BuffLogicBuffEffectTrigger = BuffLogicBuffEffectTrigger
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicBuffEffectTrigger.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicBuffEffectTrigger:Constructor(buffInstance, logicParam)
   self._buffEffectType = logicParam.buffEffectType
   self._buffID = logicParam.buffID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicBuffEffectTrigger.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local buffSvc = (self._world):GetService("BuffLogic")
-  local owner = (self._buffInstance):Entity()
+function BuffLogicBuffEffectTrigger:DoLogic(notify)
+  local buffSvc = self._world:GetService("BuffLogic")
+  local owner = self._buffInstance:Entity()
   local success = false
   local buffCount = 0
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,monsterEntity in ipairs(monsterGroup:GetEntities()) do
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, monsterEntity in ipairs(monsterGroup:GetEntities()) do
     local buffCom = monsterEntity:BuffComponent()
     if buffCom then
       local buffInstance = buffCom:GetSingleBuffByBuffEffect(self._buffEffectType)
@@ -34,10 +24,8 @@ BuffLogicBuffEffectTrigger.DoLogic = function(self, notify)
     end
   end
   if success then
-    ((self._world):GetService("Trigger")):Notify(NTNotifyTriggerBuff:New(owner))
+    self._world:GetService("Trigger"):Notify(NTNotifyTriggerBuff:New(owner))
   end
   local res = BuffResultBuffEffectTrigger:New(buffCount, success)
   return res
 end
-
-

@@ -1,97 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_boss_buff_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBossBuffItem", UICustomWidget)
 UIBossBuffItem = UIBossBuffItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBossBuffItem.OnShow = function(self)
-  -- function num : 0_0
+function UIBossBuffItem:OnShow()
   self._buffIcon = self:GetUIComponent("RawImageLoader", "buffIcon")
   self._describeText = self:GetUIComponent("UILocalizationText", "describeText")
   self._textRect = self:GetUIComponent("RectTransform", "describeText")
   self._go = self:GetGameObject()
-  self._layout = (self._go):GetComponent("HorizontalLayoutGroup")
+  self._layout = self._go:GetComponent("HorizontalLayoutGroup")
   self._countDownRoot = self:GetGameObject("countDownRoot")
   if self._countDownRoot then
     self._countDownNum = self:GetUIComponent("UILocalizationText", "countDownNum")
-    ;
-    (self._countDownRoot):SetActive(false)
+    self._countDownRoot:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossBuffItem.OnHide = function(self)
-  -- function num : 0_1
+function UIBossBuffItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossBuffItem.InitBuff = function(self, index, buffViewInstance)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBossBuffItem:InitBuff(index, buffViewInstance)
   if not buffViewInstance then
-    return 
+    return
   end
-  ;
-  ((self._buffIcon).gameObject):SetActive(true)
-  ;
-  (self._buffIcon):LoadImage(buffViewInstance:GetBuffIcon())
+  self._buffIcon.gameObject:SetActive(true)
+  self._buffIcon:LoadImage(buffViewInstance:GetBuffIcon())
   local strRound = buffViewInstance:GetRoundCountOrLayerText()
-  local strDesc = (StringTable.Get)(buffViewInstance:GetBuffDesc(), buffViewInstance:GetShowBuffDescParams())
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R5 in 'UnsetPending'
-
-  if (string.isnullorempty)(strRound) then
-    (self._describeText).text = strDesc
+  local strDesc = StringTable.Get(buffViewInstance:GetBuffDesc(), buffViewInstance:GetShowBuffDescParams())
+  if string.isnullorempty(strRound) then
+    self._describeText.text = strDesc
   else
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._describeText).text = strRound .. "·" .. strDesc
+    self._describeText.text = strRound .. "·" .. strDesc
   end
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._textRect).sizeDelta = Vector2(450, ((self._textRect).sizeDelta).y)
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self._layout).padding).left = 70
+  self._textRect.sizeDelta = Vector2(450, self._textRect.sizeDelta.y)
+  self._layout.padding.left = 70
   local countDown = buffViewInstance:GetCountDown()
-  if countDown <= 0 then
-    (self._countDownRoot):SetActive(not countDown or not self._countDownRoot)
-    -- DECOMPILER ERROR at PC63: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._countDownNum).text = countDown
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if countDown and self._countDownRoot then
+    self._countDownRoot:SetActive(0 < countDown)
+    self._countDownNum.text = countDown
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossBuffItem.InitElite = function(self, index, eliteID)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfgElite = (Cfg.cfg_monster_elite)[eliteID]
+function UIBossBuffItem:InitElite(index, eliteID)
+  local cfgElite = Cfg.cfg_monster_elite[eliteID]
   if not cfgElite then
-    return 
+    return
   end
-  ;
-  ((self._buffIcon).gameObject):SetActive(false)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._describeText).text = (StringTable.Get)(cfgElite.Name) .. " : " .. (StringTable.Get)(cfgElite.Desc)
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._textRect).sizeDelta = Vector2(580, ((self._textRect).sizeDelta).y)
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._layout).padding).left = -25
+  self._buffIcon.gameObject:SetActive(false)
+  self._describeText.text = StringTable.Get(cfgElite.Name) .. " : " .. StringTable.Get(cfgElite.Desc)
+  self._textRect.sizeDelta = Vector2(580, self._textRect.sizeDelta.y)
+  self._layout.padding.left = -25
 end
-
-

@@ -1,55 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/idol_ap/ui_n25_idol_ex_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolExItem", UICustomWidget)
 UIN25IdolExItem = UIN25IdolExItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolExItem.Constructor = function(self)
-  -- function num : 0_0
+function UIN25IdolExItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolExItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25IdolExItem:OnShow(uiParams)
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolExItem.SetData = function(self, data)
-  -- function num : 0_2
+function UIN25IdolExItem:SetData(data)
   self.data = data
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolExItem.OnHide = function(self)
-  -- function num : 0_3
+function UIN25IdolExItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolExItem.GetComponents = function(self)
-  -- function num : 0_4
+function UIN25IdolExItem:GetComponents()
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolExItem.OnValue = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local id = (self.data).id
-  local cfg = (Cfg.cfg_component_idol_event)[id]
+function UIN25IdolExItem:OnValue()
+  local id = self.data.id
+  local cfg = Cfg.cfg_component_idol_event[id]
   if cfg then
     local icon = cfg.Icon
-    ;
-    (self.icon):LoadImage(icon)
+    self.icon:LoadImage(icon)
   end
 end
-
-

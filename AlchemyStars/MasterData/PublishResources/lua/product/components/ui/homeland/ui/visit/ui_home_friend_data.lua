@@ -1,102 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/visit/ui_home_friend_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeFriendData", Object)
 UIHomeFriendData = UIHomeFriendData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeFriendData.Constructor = function(self, social_info, visit_info)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomeFriendData:Constructor(social_info, visit_info)
   self._socialInfo = social_info
   self._visitInfo = visit_info
   self._level = 0
-  local cfgs = (Cfg.cfg_homeland_level)({})
+  local cfgs = Cfg.cfg_homeland_level({})
   for i = #cfgs, 1, -1 do
-    if (cfgs[i]).UpgradeCondition <= (self._visitInfo).exp then
+    if self._visitInfo.exp >= cfgs[i].UpgradeCondition then
       self._level = i
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeFriendData.Name = function(self)
-  -- function num : 0_1
-  return ((self._socialInfo).simple_info).nick
+function UIHomeFriendData:Name()
+  return self._socialInfo.simple_info.nick
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeFriendData.Icon = function(self)
-  -- function num : 0_2
-  return ((self._socialInfo).simple_info).head
+function UIHomeFriendData:Icon()
+  return self._socialInfo.simple_info.head
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeFriendData.OnlineInfo = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if ((self._socialInfo).simple_info).is_online then
-    return (StringTable.Get)("str_chat_online")
+function UIHomeFriendData:OnlineInfo()
+  if self._socialInfo.simple_info.is_online then
+    return StringTable.Get("str_chat_online")
   end
   local now = GetSvrTimeNow()
-  local time = ((self._socialInfo).simple_info).last_logout_time
-  return (HelperProxy:GetInstance()):FormatTime_3(now - time)
+  local time = self._socialInfo.simple_info.last_logout_time
+  return HelperProxy:GetInstance():FormatTime_3(now - time)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeFriendData.Level = function(self)
-  -- function num : 0_4
+function UIHomeFriendData:Level()
   return self._level
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeFriendData.LivableValue = function(self)
-  -- function num : 0_5
-  return (self._visitInfo).livable
+function UIHomeFriendData:LivableValue()
+  return self._visitInfo.livable
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeFriendData.PstID = function(self)
-  -- function num : 0_6
-  return (self._visitInfo).pstid
+function UIHomeFriendData:PstID()
+  return self._visitInfo.pstid
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeFriendData.CanGetGift = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  do return (self._visitInfo).mask & HomelandVisitMask.HVM_Item > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIHomeFriendData:CanGetGift()
+  return self._visitInfo.mask & HomelandVisitMask.HVM_Item > 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeFriendData.CanSpeedup = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  do return (self._visitInfo).mask & HomelandVisitMask.HVM_Forge > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIHomeFriendData:CanSpeedup()
+  return self._visitInfo.mask & HomelandVisitMask.HVM_Forge > 0
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeFriendData.CanWater = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  do return (self._visitInfo).mask & HomelandVisitMask.HVM_Cultivation > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIHomeFriendData:CanWater()
+  return self._visitInfo.mask & HomelandVisitMask.HVM_Cultivation > 0
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeFriendData.HeadIcon = function(self)
-  -- function num : 0_10
-  return ((self._socialInfo).simple_info).head, ((self._socialInfo).simple_info).head_bg, ((self._socialInfo).simple_info).frame_id
+function UIHomeFriendData:HeadIcon()
+  return self._socialInfo.simple_info.head, self._socialInfo.simple_info.head_bg, self._socialInfo.simple_info.frame_id
 end
-
-

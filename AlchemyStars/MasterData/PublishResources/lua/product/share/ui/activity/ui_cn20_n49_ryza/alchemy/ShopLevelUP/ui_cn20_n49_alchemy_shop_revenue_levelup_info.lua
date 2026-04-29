@@ -1,130 +1,91 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/alchemy/ShopLevelUP/ui_cn20_n49_alchemy_shop_revenue_levelup_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49AlchemyShopRevenueLevelUpInfo", UIController)
 UICN20N49AlchemyShopRevenueLevelUpInfo = UICN20N49AlchemyShopRevenueLevelUpInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49AlchemyShopRevenueLevelUpInfo.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN20N49AlchemyShopRevenueLevelUpInfo:LoadDataOnEnter(TT, res)
   self._campaignModule = self:GetModule(CampaignModule)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_INLAND_N20
   self._svrTimeModule = self:GetModule(SvrTimeModule)
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
+  self._questModule = GameGlobal.GetModule(QuestModule)
   self._campaign = UIActivityCampaign:New()
-  local componentIds = {ECampaignCN20ComponentID.ECN20_ALCHEMY}
-  self._campaign = (UIActivityHelper.LoadDataOnEnter)(TT, res, self._campaignType, componentIds)
+  local componentIds = {
+    ECampaignCN20ComponentID.ECN20_ALCHEMY
+  }
+  self._campaign = UIActivityHelper.LoadDataOnEnter(TT, res, self._campaignType, componentIds)
   if res and res:GetSucc() then
-    self.personProcessInfo = (UICN20N49Helper.GetComponentInfo)(self._campaign, "alchemyShop")
-    self.personProcess = (UICN20N49Helper.GetComponent)(self._campaign, "alchemyShop")
+    self.personProcessInfo = UICN20N49Helper.GetComponentInfo(self._campaign, "alchemyShop")
+    self.personProcess = UICN20N49Helper.GetComponent(self._campaign, "alchemyShop")
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopRevenueLevelUpInfo.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._goldItemID = ((Cfg.cfg_global).AlchemyMoneyItemID).IntValue
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
+function UICN20N49AlchemyShopRevenueLevelUpInfo:OnShow(uiParams)
+  self._goldItemID = Cfg.cfg_global.AlchemyMoneyItemID.IntValue
+  self.itemModule = GameGlobal.GetModule(ItemModule)
   self:InitWidget()
   self:InitUI()
   self:_InitBackBtn()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopRevenueLevelUpInfo.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN20N49AlchemyShopRevenueLevelUpInfo:InitWidget()
   self._anim = self:GetGameObject("_anim")
   self.titleText = self:GetGameObject("TitleText")
   self.itemTips = self:GetUIComponent("UISelectObjectPath", "ItemTips")
   self.closeBtn = self:GetUIComponent("Image", "CloseBtn")
   self.questPool = self:GetUIComponent("UISelectObjectPath", "QuestPool")
-  self.backBtns = (UIWidgetHelper.SpawnObject)(self, "backBtns", "UINewCommonTopButton")
+  self.backBtns = UIWidgetHelper.SpawnObject(self, "backBtns", "UINewCommonTopButton")
   self.goldText = self:GetUIComponent("UILocalizationText", "GoldText")
   self.curLevelText = self:GetUIComponent("UILocalizationText", "TitleLevel")
   self.curNeedText = self:GetUIComponent("UILocalizationText", "NeedText")
   self.sliderImage = self:GetUIComponent("Image", "sliderImage")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopRevenueLevelUpInfo._InitBackBtn = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.backBtns):SetData(function()
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(200, TimerTriggerCount.Once, function()
-      -- function num : 0_3_0_0 , upvalues : self
+function UICN20N49AlchemyShopRevenueLevelUpInfo:_InitBackBtn()
+  self.backBtns:SetData(function()
+    self._timerHandler = GameGlobal.Timer():AddEventTimes(200, TimerTriggerCount.Once, function()
       self:CloseDialog()
-    end
-)
-  end
-, nil, nil, true, nil, false, nil)
+    end)
+  end, nil, nil, true, nil, false, nil)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopRevenueLevelUpInfo.InitUI = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._gold = (self.itemModule):GetItemCount(self._goldItemID)
-  ;
-  (self.goldText):SetText(tostring(self._gold))
-  ;
-  (self.curLevelText):SetText(tostring((self.personProcess):GetCurProgress()))
-  self._progressList = (self.personProcess):GetProgressList()
-  local curProgressLevel = (self.personProcess):GetCurProgress(1)
-  local needLevelUPGold = (self.personProcess):GetNextLevelNeedProgress()
+function UICN20N49AlchemyShopRevenueLevelUpInfo:InitUI()
+  self._gold = self.itemModule:GetItemCount(self._goldItemID)
+  self.goldText:SetText(tostring(self._gold))
+  self.curLevelText:SetText(tostring(self.personProcess:GetCurProgress()))
+  self._progressList = self.personProcess:GetProgressList()
+  local curProgressLevel = self.personProcess:GetCurProgress(1)
+  local needLevelUPGold = self.personProcess:GetNextLevelNeedProgress()
   if needLevelUPGold <= 0 then
-    (self.curNeedText):SetText("")
+    self.curNeedText:SetText("")
   else
-    ;
-    (self.curNeedText):SetText((StringTable.Get)("str_cn20_n49_shop_progress_cur_need_gold", needLevelUPGold))
+    self.curNeedText:SetText(StringTable.Get("str_cn20_n49_shop_progress_cur_need_gold", needLevelUPGold))
   end
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.sliderImage).fillAmount = (self.personProcess):GetCurLevelProgressRate()
-  local progress = (self.personProcess):GetProgressList()
+  self.sliderImage.fillAmount = self.personProcess:GetCurLevelProgressRate()
+  local progress = self.personProcess:GetProgressList()
   self._dynamicListInfo = progress
-  ;
-  (self.personProcess):SortProgressListByCampaignPersonProgressStatus(self._dynamicListInfo)
-  self._dynamicListSize = (table.count)(self._dynamicListInfo)
+  self.personProcess:SortProgressListByCampaignPersonProgressStatus(self._dynamicListInfo)
+  self._dynamicListSize = table.count(self._dynamicListInfo)
   self._itemCountPerRow = 1
-  self._dynamicListRowSize = (math.floor)((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
+  self._dynamicListRowSize = math.floor((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
   if not self._isDynamicInited then
     self._isDynamicInited = true
     self._taskList = self:GetUIComponent("UIDynamicScrollView", "taskList")
-    ;
-    (self._taskList):InitListView(self._dynamicListRowSize, function(scrollView, index)
-    -- function num : 0_4_0 , upvalues : self
-    return self:_SpawnListItem(scrollView, index)
-  end
-)
+    self._taskList:InitListView(self._dynamicListRowSize, function(scrollView, index)
+      return self:_SpawnListItem(scrollView, index)
+    end)
   else
     self:_RefreshList(self._dynamicListRowSize, self._taskList, nil)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopRevenueLevelUpInfo._RefreshList = function(self, count, list, resetPos)
-  -- function num : 0_5
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UICN20N49AlchemyShopRevenueLevelUpInfo:_RefreshList(count, list, resetPos)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(count)
   list:MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R5 in 'UnsetPending'
-
   if not resetPos then
-    ((list.ScrollRect).content).localPosition = contentPos
+    list.ScrollRect.content.localPosition = contentPos
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopRevenueLevelUpInfo._SpawnListItem = function(self, scrollView, index)
-  -- function num : 0_6
+function UICN20N49AlchemyShopRevenueLevelUpInfo:_SpawnListItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -138,98 +99,62 @@ UICN20N49AlchemyShopRevenueLevelUpInfo._SpawnListItem = function(self, scrollVie
   for i = 1, self._itemCountPerRow do
     local listItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._dynamicListSize < itemIndex then
-      (listItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._dynamicListSize then
+      listItem:GetGameObject():SetActive(false)
     else
-      ;
-      (listItem:GetGameObject()):SetActive(true)
+      listItem:GetGameObject():SetActive(true)
       self:_SetListItemData(listItem, itemIndex)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopRevenueLevelUpInfo._SetListItemData = function(self, listItem, index)
-  -- function num : 0_7 , upvalues : _ENV
-  local progress = (self._dynamicListInfo)[index]
-  local level = (self.personProcess):GetProgressLevel(progress)
+function UICN20N49AlchemyShopRevenueLevelUpInfo:_SetListItemData(listItem, index)
+  local progress = self._dynamicListInfo[index]
+  local level = self.personProcess:GetProgressLevel(progress)
   listItem:SetData(self._campaign, index, progress, function(v)
-    -- function num : 0_7_0 , upvalues : self
     self:ListItemOnClick(v)
-  end
-, function(matid, pos)
-    -- function num : 0_7_1 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "ItemTips", matid, pos)
-  end
-, level)
+  end, function(matid, pos)
+    UIWidgetHelper.SetAwardItemTips(self, "ItemTips", matid, pos)
+  end, level)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopRevenueLevelUpInfo.ListItemOnClick = function(self, progress)
-  -- function num : 0_8 , upvalues : _ENV
-  do
-    if (self.personProcess):ComponentIsClose() then
-      local tips = (StringTable.Get)("str_activity_error_107")
-      ;
-      (ToastManager.ShowToast)(tips)
-      self:SwitchState(UIStateType.UIMain)
-      return 
-    end
-    ;
-    (self.personProcess):Start_HandleReceiveReward(progress, function(res, rewards)
-    -- function num : 0_8_0 , upvalues : self
+function UICN20N49AlchemyShopRevenueLevelUpInfo:ListItemOnClick(progress)
+  if self.personProcess:ComponentIsClose() then
+    local tips = StringTable.Get("str_activity_error_107")
+    ToastManager.ShowToast(tips)
+    self:SwitchState(UIStateType.UIMain)
+    return
+  end
+  self.personProcess:Start_HandleReceiveReward(progress, function(res, rewards)
     self:_OnReceiveRewards(res, rewards)
-  end
-)
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopRevenueLevelUpInfo._OnReceiveRewards = function(self, res, rewards)
-  -- function num : 0_9 , upvalues : _ENV
+function UICN20N49AlchemyShopRevenueLevelUpInfo:_OnReceiveRewards(res, rewards)
   if self.view == nil then
-    return 
+    return
   end
   if res:GetSucc() then
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
+    UIActivityHelper.ShowUIGetRewards(rewards)
     self:_Refresh()
   else
-    ;
-    (self._campaign):CheckErrorCode(res.m_result, function()
-    -- function num : 0_9_0 , upvalues : self
-    self:_Refresh()
-  end
-, function()
-    -- function num : 0_9_1 , upvalues : self
-    self:CloseDialog()
-  end
-)
+    self._campaign:CheckErrorCode(res.m_result, function()
+      self:_Refresh()
+    end, function()
+      self:CloseDialog()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopRevenueLevelUpInfo._Refresh = function(self)
-  -- function num : 0_10
+function UICN20N49AlchemyShopRevenueLevelUpInfo:_Refresh()
   self:InitUI()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopRevenueLevelUpInfo.BgOnClick = function(self, go)
-  -- function num : 0_11
+function UICN20N49AlchemyShopRevenueLevelUpInfo:BgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopRevenueLevelUpInfo.CloseBtnOnClick = function(self, go)
-  -- function num : 0_12
+function UICN20N49AlchemyShopRevenueLevelUpInfo:CloseBtnOnClick(go)
   self:CloseDialog()
 end
-
-

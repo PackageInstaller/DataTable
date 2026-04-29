@@ -1,32 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/event_trailer_side_enter/ui_event_trailer_info_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEventTrailerInfoController", UIController)
 UIEventTrailerInfoController = UIEventTrailerInfoController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEventTrailerInfoController.Constructor = function(self)
-  -- function num : 0_0
+function UIEventTrailerInfoController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEventTrailerInfoController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIEventTrailerInfoController:OnShow(uiParams)
   self._data = uiParams[1]
-  self._cfg = (self._data).cfg
-  self._startTime = (self._data).startTime
-  self._endTime = (self._data).endTime
+  self._cfg = self._data.cfg
+  self._startTime = self._data.startTime
+  self._endTime = self._data.endTime
   self:GetComponents()
   self:InitComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEventTrailerInfoController.GetComponents = function(self)
-  -- function num : 0_2
+function UIEventTrailerInfoController:GetComponents()
   self._campaignPic = self:GetUIComponent("RawImageLoader", "campaignPic")
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._time1 = self:GetUIComponent("UILocalizationText", "time1")
@@ -35,34 +22,20 @@ UIEventTrailerInfoController.GetComponents = function(self)
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEventTrailerInfoController.InitComponents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self._cfg).Pic then
-    ((self._campaignPic).gameObject):SetActive(true)
-    ;
-    (self._campaignPic):LoadImage((self._cfg).Pic)
+function UIEventTrailerInfoController:InitComponents()
+  if self._cfg.Pic then
+    self._campaignPic.gameObject:SetActive(true)
+    self._campaignPic:LoadImage(self._cfg.Pic)
   else
-    ;
-    ((self._campaignPic).gameObject):SetActive(false)
+    self._campaignPic.gameObject:SetActive(false)
   end
-  ;
-  (self._name):SetText((StringTable.Get)((self._cfg).Name))
-  ;
-  (self._intro):SetText((StringTable.Get)((self._cfg).Intro))
+  self._name:SetText(StringTable.Get(self._cfg.Name))
+  self._intro:SetText(StringTable.Get(self._cfg.Intro))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEventTrailerInfoController.CloseBtnOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIEventTrailerInfoController:CloseBtnOnClick()
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self
     YIELD(TT, 500)
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

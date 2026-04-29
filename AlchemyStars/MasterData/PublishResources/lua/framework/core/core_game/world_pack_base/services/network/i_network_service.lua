@@ -1,31 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/services/network/i_network_service.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("INetworkService", Object)
 INetworkService = INetworkService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-INetworkService.ReceiveMessage = function(self, recMsg)
-  -- function num : 0_0 , upvalues : _ENV
+function INetworkService:ReceiveMessage(recMsg)
   error("Need Override INetworkService:ReceiveMessage")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-INetworkService.SendMessage = function(self, sendMsg)
-  -- function num : 0_1 , upvalues : _ENV
+function INetworkService:SendMessage(sendMsg)
   error("Need Override INetworkService:SendMessage")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-INetworkService.SendCommandsMessage = function(self, commands)
-  -- function num : 0_2 , upvalues : _ENV
+function INetworkService:SendCommandsMessage(commands)
   error("Need Override INetworkService:SendCommandsMessage")
 end
 
 NetworkMode = {StandAlone = 1, Networks = 2}
 _enum("NetworkMode", NetworkMode)
-

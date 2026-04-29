@@ -1,32 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/main_event_tips/ui_homeland_main_event_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMainEventTips", UICustomWidget)
 UIHomelandMainEventTips = UIHomelandMainEventTips
-local UIHomeEventTipsType = {Tex = 0, PetBody = 1, Dairy = 2}
+local UIHomeEventTipsType = {
+  Tex = 0,
+  PetBody = 1,
+  Dairy = 2
+}
 _enum("UIHomeEventTipsType", UIHomeEventTipsType)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIHomelandMainEventTips.OnShow = function(self)
-  -- function num : 0_0
+function UIHomelandMainEventTips:OnShow()
   self:GetComponent()
   self:OnValue()
   self:AddListener()
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMainEventTips.AddListener = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandMainEventTips:AddListener()
   self:AttachEvent(GameEventType.OnUIHomeEventTips, self.OnUIHomeEventTips)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMainEventTips.GetComponent = function(self)
-  -- function num : 0_2
+function UIHomelandMainEventTips:GetComponent()
   self._pos = self:GetUIComponent("RectTransform", "pos")
   self._alpha = self:GetUIComponent("CanvasGroup", "pos")
   self._petBody = self:GetGameObject("petBody")
@@ -46,10 +37,7 @@ UIHomelandMainEventTips.GetComponent = function(self)
   self._diary_layoutElement = self:GetUIComponent("LayoutElement", "diary_mask")
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMainEventTips.OnValue = function(self)
-  -- function num : 0_3
+function UIHomelandMainEventTips:OnValue()
   self._moveInTime = 0.5
   self._moveOutTime = 0.5
   self._texMaxWidh = 600
@@ -58,10 +46,7 @@ UIHomelandMainEventTips.OnValue = function(self)
   self._eventQueue = {}
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMainEventTips.RegisterComponents = function(self)
-  -- function num : 0_4 , upvalues : UIHomeEventTipsType
+function UIHomelandMainEventTips:RegisterComponents()
   self._type2components = {}
   local tex_data = {}
   local type = UIHomeEventTipsType.Tex
@@ -69,64 +54,44 @@ UIHomelandMainEventTips.RegisterComponents = function(self)
   tex_data.maskLayout = self._tex_maskLayout
   tex_data.layoutElement = self._tex_layoutElement
   tex_data.startPosX = 0
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._type2components)[type] = tex_data
+  self._type2components[type] = tex_data
   local petBody_data = {}
   local type = UIHomeEventTipsType.PetBody
   petBody_data.tex = self._petBody_tips
   petBody_data.maskLayout = self._petBody_maskLayout
   petBody_data.layoutElement = self._petBody_layoutElement
   petBody_data.startPosX = 0
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._type2components)[type] = petBody_data
+  self._type2components[type] = petBody_data
   local dairy_data = {}
   local type = UIHomeEventTipsType.Dairy
   dairy_data.tex = self._diary_tips
   dairy_data.maskLayout = self._diary_maskLayout
   dairy_data.layoutElement = self._diary_layoutElement
   dairy_data.startPosX = 0
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._type2components)[type] = dairy_data
+  self._type2components[type] = dairy_data
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMainEventTips.OnUIHomeEventTips = function(self, type, param)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandMainEventTips:OnUIHomeEventTips(type, param)
   local event = {}
   event.type = type
   event.param = param
-  ;
-  (table.insert)(self._eventQueue, event)
+  table.insert(self._eventQueue, event)
   self:ShowEvent()
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMainEventTips.ShowEvent = function(self)
-  -- function num : 0_6
+function UIHomelandMainEventTips:ShowEvent()
   if self._doing then
-    return 
+    return
   end
   self._doing = true
   self:PopEvent()
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMainEventTips.PopEvent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHomelandMainEventTips:PopEvent()
   if #self._eventQueue > 0 then
     self._yieldTime = 3000
-    local event = (self._eventQueue)[1]
-    ;
-    (table.remove)(self._eventQueue, 1)
+    local event = self._eventQueue[1]
+    table.remove(self._eventQueue, 1)
     local width = self:SetEventData(event)
     if width < self._texMaxWidh then
       self._posZeroX = -width - 300
@@ -135,179 +100,115 @@ UIHomelandMainEventTips.PopEvent = function(self)
     end
     self:MoveIn()
   else
-    do
-      self._doing = false
-    end
+    self._doing = false
   end
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMainEventTips.SetEventData = function(self, event)
-  -- function num : 0_8 , upvalues : UIHomeEventTipsType
+function UIHomelandMainEventTips:SetEventData(event)
   local type = event.type
-  ;
-  (self._petBody):SetActive(false)
-  ;
-  (self._tex):SetActive(false)
-  ;
-  (self._diary):SetActive(false)
+  self._petBody:SetActive(false)
+  self._tex:SetActive(false)
+  self._diary:SetActive(false)
   if type == UIHomeEventTipsType.Tex then
-    (self._tex):SetActive(true)
-    local content = (event.param)[1]
-    ;
-    (self._tex_tips):SetText(content)
-  else
-    do
-      if type == UIHomeEventTipsType.PetBody then
-        (self._petBody):SetActive(true)
-        local icon = (event.param)[1]
-        local content = (event.param)[2]
-        local showHeart = (event.param)[3] or false
-        ;
-        (self._petBody_icon):LoadImage(icon)
-        ;
-        (self._petBody_tips):SetText(content)
-        ;
-        (self._petBody_txt_icon):SetActive(not showHeart)
-        ;
-        (self._petBody_txt_icon_heart):SetActive(showHeart)
-      else
-        do
-          if type == UIHomeEventTipsType.Dairy then
-            (self._diary):SetActive(true)
-            local content = (event.param)[1]
-            ;
-            (self._diary_tips):SetText(content)
-          end
-          do
-            return self:CalcTexWidth(type)
-          end
-        end
-      end
-    end
+    self._tex:SetActive(true)
+    local content = event.param[1]
+    self._tex_tips:SetText(content)
+  elseif type == UIHomeEventTipsType.PetBody then
+    self._petBody:SetActive(true)
+    local icon = event.param[1]
+    local content = event.param[2]
+    local showHeart = event.param[3] or false
+    self._petBody_icon:LoadImage(icon)
+    self._petBody_tips:SetText(content)
+    self._petBody_txt_icon:SetActive(not showHeart)
+    self._petBody_txt_icon_heart:SetActive(showHeart)
+  elseif type == UIHomeEventTipsType.Dairy then
+    self._diary:SetActive(true)
+    local content = event.param[1]
+    self._diary_tips:SetText(content)
   end
+  return self:CalcTexWidth(type)
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMainEventTips.CalcTexWidth = function(self, type)
-  -- function num : 0_9 , upvalues : _ENV
-  local _width = nil
+function UIHomelandMainEventTips:CalcTexWidth(type)
+  local _width
   if type then
-    local tex = ((self._type2components)[type]).tex
+    local tex = self._type2components[type].tex
     self._moveTex = tex
-    local startPosX = ((self._type2components)[type]).startPosX
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (tex.rectTransform).anchoredPosition = Vector2(startPosX, ((tex.rectTransform).anchoredPosition).y)
-    local maskLayout = ((self._type2components)[type]).maskLayout
-    local layoutElement = ((self._type2components)[type]).layoutElement
+    local startPosX = self._type2components[type].startPosX
+    tex.rectTransform.anchoredPosition = Vector2(startPosX, tex.rectTransform.anchoredPosition.y)
+    local maskLayout = self._type2components[type].maskLayout
+    local layoutElement = self._type2components[type].layoutElement
     local texWidth = tex.preferredWidth
     _width = texWidth
-    if self._texMaxWidh < texWidth then
+    if texWidth > self._texMaxWidh then
       maskLayout.enabled = false
       layoutElement.enabled = true
       layoutElement.preferredWidth = self._texMaxWidh
       local gaps = texWidth - self._texMaxWidh
-      do
-        local tweenTime = gaps / self._texScrollSpeed
-        local costTime = tweenTime * 1000
-        if self._yieldTime < costTime then
-          self._yieldTime = costTime
-        end
-        self._yieldTime = self._yieldTime + 500
-        if self._rollingEvent then
-          ((GameGlobal.Timer)()):CancelEvent(self._rollingEvent)
-          self._rollingEvent = nil
-        end
-        self._rollingEvent = ((GameGlobal.Timer)()):AddEvent(500, function()
-    -- function num : 0_9_0 , upvalues : self, gaps, tweenTime, _ENV
-    if self._moveTex then
-      (((self._moveTex).rectTransform):DOAnchorPosX((((self._moveTex).rectTransform).anchoredPosition).x - gaps, tweenTime, false)):SetEase(((DG.Tweening).Ease).Linear)
-    end
-  end
-)
+      local tweenTime = gaps / self._texScrollSpeed
+      local costTime = tweenTime * 1000
+      if costTime > self._yieldTime then
+        self._yieldTime = costTime
       end
+      self._yieldTime = self._yieldTime + 500
+      if self._rollingEvent then
+        GameGlobal.Timer():CancelEvent(self._rollingEvent)
+        self._rollingEvent = nil
+      end
+      self._rollingEvent = GameGlobal.Timer():AddEvent(500, function()
+        if self._moveTex then
+          self._moveTex.rectTransform:DOAnchorPosX(self._moveTex.rectTransform.anchoredPosition.x - gaps, tweenTime, false):SetEase(DG.Tweening.Ease.Linear)
+        end
+      end)
     else
-      do
-        do
-          layoutElement.enabled = false
-          maskLayout.enabled = true
-          return _width
-        end
-      end
+      layoutElement.enabled = false
+      maskLayout.enabled = true
     end
   end
+  return _width
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMainEventTips.MoveIn = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._alpha).alpha = 0
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pos).anchoredPosition = Vector2(self._posZeroX, 0)
-  ;
-  (self._alpha):DOFade(1, self._moveInTime)
-  self._tweener = ((self._pos):DOAnchorPosX(0, self._moveInTime)):OnComplete(function()
-    -- function num : 0_10_0 , upvalues : self
+function UIHomelandMainEventTips:MoveIn()
+  self._alpha.alpha = 0
+  self._pos.anchoredPosition = Vector2(self._posZeroX, 0)
+  self._alpha:DOFade(1, self._moveInTime)
+  self._tweener = self._pos:DOAnchorPosX(0, self._moveInTime):OnComplete(function()
     self:StartTimeDown()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMainEventTips.OnHide = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHomelandMainEventTips:OnHide()
   if self._tweener then
-    (self._tweener):Kill()
+    self._tweener:Kill()
     self._tweener = nil
   end
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
   if self._rollingEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._rollingEvent)
+    GameGlobal.Timer():CancelEvent(self._rollingEvent)
     self._rollingEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMainEventTips.StartTimeDown = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHomelandMainEventTips:StartTimeDown()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
-  self._timer = ((GameGlobal.Timer)()):AddEvent(self._yieldTime, function()
-    -- function num : 0_12_0 , upvalues : self
+  self._timer = GameGlobal.Timer():AddEvent(self._yieldTime, function()
     self:MoveOut()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMainEventTips.MoveOut = function(self)
-  -- function num : 0_13
+function UIHomelandMainEventTips:MoveOut()
   if self._tweener then
-    (self._tweener):Kill(true)
+    self._tweener:Kill(true)
     self._tweener = nil
   end
-  self._tweener = ((self._alpha):DOFade(0, self._moveOutTime)):OnComplete(function()
-    -- function num : 0_13_0 , upvalues : self
+  self._tweener = self._alpha:DOFade(0, self._moveOutTime):OnComplete(function()
     self:PopEvent()
-  end
-)
+  end)
 end
-
-

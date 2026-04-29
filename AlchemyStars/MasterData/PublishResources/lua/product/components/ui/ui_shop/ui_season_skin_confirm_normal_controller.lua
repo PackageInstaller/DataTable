@@ -1,44 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_season_skin_confirm_normal_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonSkinConfirmNormalController", UIController)
 UISeasonSkinConfirmNormalController = UISeasonSkinConfirmNormalController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonSkinConfirmNormalController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonSkinConfirmNormalController:Constructor()
   self.atlas = self:GetAsset("UIShop.spriteatlas", LoadType.SpriteAtlas)
   self.uiCommonAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSkinConfirmNormalController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._seasonModule = (GameGlobal.GetModule)(SeasonModule)
-  if uiParams then
-    self._seasonId = uiParams[1]
-    if uiParams then
-      self._component = uiParams[2]
-      if uiParams then
-        self._info = uiParams[3]
-        self._buyCount = 1
-        if self._info == nil then
-          (Log.error)("UISeasonExchangeConfirm:LoadDataOnEnter() param = nil")
-          res:SetSucc(false)
-          return 
-        end
-      end
-    end
+function UISeasonSkinConfirmNormalController:LoadDataOnEnter(TT, res, uiParams)
+  self._seasonModule = GameGlobal.GetModule(SeasonModule)
+  self._seasonId = uiParams and uiParams[1]
+  self._component = uiParams and uiParams[2]
+  self._info = uiParams and uiParams[3]
+  self._buyCount = 1
+  if self._info == nil then
+    Log.error("UISeasonExchangeConfirm:LoadDataOnEnter() param = nil")
+    res:SetSucc(false)
+    return
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSkinConfirmNormalController.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UISeasonSkinConfirmNormalController:OnShow(uiParams)
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.nameTxt = self:GetUIComponent("UILocalizationText", "name")
   self._currentCount = self:GetUIComponent("UILocalizationText", "itemCount")
@@ -52,193 +33,122 @@ UISeasonSkinConfirmNormalController.OnShow = function(self, uiParams)
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSkinConfirmNormalController.SetTextColor = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonSkinConfirmNormalController:SetTextColor()
   local ownMoney = self:_CalcHaveCount()
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  if self.saleShowPrice <= ownMoney then
-    (self.priceTxt).color = Color.white
+  if ownMoney >= self.saleShowPrice then
+    self.priceTxt.color = Color.white
   else
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.priceTxt).color = Color.red
+    self.priceTxt.color = Color.red
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSkinConfirmNormalController.Refresh = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfgItem = (Cfg.cfg_item)[((self._info).m_reward).assetid]
+function UISeasonSkinConfirmNormalController:Refresh()
+  local cfgItem = Cfg.cfg_item[self._info.m_reward.assetid]
   if not cfgItem then
-    return 
+    return
   end
   self.isPet = false
   self.saleShowPrice = self:GetSaleTypePrice()
   local itemId = cfgItem.ID
   local icon = cfgItem.Icon
-  ;
-  (self.icon):LoadImage(icon)
-  ;
-  (self.nameTxt):SetText((StringTable.Get)(cfgItem.Name))
+  self.icon:LoadImage(icon)
+  self.nameTxt:SetText(StringTable.Get(cfgItem.Name))
   local itemCount = 0
-  -- DECOMPILER ERROR at PC38: Unhandled construct in 'MakeBoolean' P1
-
-  if self.isPet and (self:GetModule(PetModule)):GetPetByTemplateId(itemId) ~= nil then
-    itemCount = 1
+  if self.isPet then
+    if self:GetModule(PetModule):GetPetByTemplateId(itemId) ~= nil then
+      itemCount = 1
+    end
+  else
+    itemCount = self:GetModule(ItemModule):GetItemCount(itemId)
   end
-  itemCount = (self:GetModule(ItemModule)):GetItemCount(itemId)
-  ;
-  (self._currentCount):SetText((StringTable.Get)("str_shop_current_item_count", itemCount))
-  ;
-  (self.descTxt):SetText((StringTable.Get)(cfgItem.Intro))
-  ;
-  (self.priceTxt):SetText(self.saleShowPrice)
+  self._currentCount:SetText(StringTable.Get("str_shop_current_item_count", itemCount))
+  self.descTxt:SetText(StringTable.Get(cfgItem.Intro))
+  self.priceTxt:SetText(self.saleShowPrice)
   self:SetTextColor()
-  local itemId = (self._component):GetCostItemId((self._info).m_is_special)
+  local itemId = self._component:GetCostItemId(self._info.m_is_special)
   local atlasName = "UICommon.spriteatlas"
   local spriteName = "toptoon_" .. itemId
-  -- DECOMPILER ERROR at PC82: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.moneyIcon).sprite = (self.uiCommonAtlas):GetSprite(spriteName)
+  self.moneyIcon.sprite = self.uiCommonAtlas:GetSprite(spriteName)
   if self.isPet then
-    (self.btnStarGO):SetActive(true)
-    ;
-    (self.btnGo):SetActive(true)
+    self.btnStarGO:SetActive(true)
+    self.btnGo:SetActive(true)
   else
-    ;
-    (self.btnStarGO):SetActive(false)
-    ;
-    (self.btnGo):SetActive(false)
+    self.btnStarGO:SetActive(false)
+    self.btnGo:SetActive(false)
   end
   self:DoAnimation()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSkinConfirmNormalController.GetSaleTypePrice = function(self)
-  -- function num : 0_5
-  return (self._info).m_cost_count
+function UISeasonSkinConfirmNormalController:GetSaleTypePrice()
+  return self._info.m_cost_count
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSkinConfirmNormalController.DoAnimation = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonSkinConfirmNormalController:DoAnimation()
   self._cg = self:GetUIComponent("CanvasGroup", "UICanvas")
   self._panel = self:GetUIComponent("RectTransform", "panel")
   self._infoTrans = self:GetUIComponent("Transform", "info")
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._cg).alpha = 0
+  self._cg.alpha = 0
   self:Lock("UISeasonSkinConfirmNormalController:DoAnimation")
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
     YIELD(TT)
     YIELD(TT)
-    ;
-    (self._cg):DOFade(1, 0.3)
-    ;
-    ((GameGlobal.Timer)()):AddEvent(400, function()
-      -- function num : 0_6_0_0 , upvalues : self
+    self._cg:DOFade(1, 0.3)
+    GameGlobal.Timer():AddEvent(400, function()
       self:UnLock("UISeasonSkinConfirmNormalController:DoAnimation")
-    end
-)
-  end
-, self)
+    end)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSkinConfirmNormalController._CalcHaveCount = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local itemId = (self._info).m_cost_item_id
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function UISeasonSkinConfirmNormalController:_CalcHaveCount()
+  local itemId = self._info.m_cost_item_id
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local haveCount = itemModule:GetItemCount(itemId)
   return haveCount
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSkinConfirmNormalController._CalcTotalPrice = function(self, buyCount)
-  -- function num : 0_8
-  local price = (self._info).m_cost_count
+function UISeasonSkinConfirmNormalController:_CalcTotalPrice(buyCount)
+  local price = self._info.m_cost_count
   local total = price * buyCount
   return total
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSkinConfirmNormalController._CheckCoinEnough = function(self, buyCount)
-  -- function num : 0_9
+function UISeasonSkinConfirmNormalController:_CheckCoinEnough(buyCount)
   local haveCount = self:_CalcHaveCount()
   local total = self:_CalcTotalPrice(buyCount)
-  do return total <= haveCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return haveCount >= total
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSkinConfirmNormalController._OnReceiveRewards = function(self, res, rewards)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonSkinConfirmNormalController:_OnReceiveRewards(res, rewards)
   if self.view == nil then
-    return 
+    return
   end
   if res:GetSucc() then
     self:CloseDialog()
-    ;
-    (UISeasonHelper.ShowUIGetRewards)(rewards)
+    UISeasonHelper.ShowUIGetRewards(rewards)
   else
-    ;
-    (self._seasonModule):CheckErrorCode(res.m_result, self._seasonId)
+    self._seasonModule:CheckErrorCode(res.m_result, self._seasonId)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSkinConfirmNormalController.OnHide = function(self)
-  -- function num : 0_11
+function UISeasonSkinConfirmNormalController:OnHide()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSkinConfirmNormalController.btnstarOnClick = function(self, go)
-  -- function num : 0_12
-  self:ShowDialog("UIShopPetDetailController", (self.goodData):GetItemId())
+function UISeasonSkinConfirmNormalController:btnstarOnClick(go)
+  self:ShowDialog("UIShopPetDetailController", self.goodData:GetItemId())
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSkinConfirmNormalController.btnbuyOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonSkinConfirmNormalController:btnbuyOnClick(go)
   if self:_CheckCoinEnough(self._buyCount) then
-    local id = (self._info).m_id
+    local id = self._info.m_id
     local count = self._buyCount
-    ;
-    (self._component):Start_HandleExchangeItem(id, count, function(res, rewards)
-    -- function num : 0_13_0 , upvalues : self
-    self:_OnReceiveRewards(res, rewards)
-  end
-)
+    self._component:Start_HandleExchangeItem(id, count, function(res, rewards)
+      self:_OnReceiveRewards(res, rewards)
+    end)
   else
-    do
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_pay_item_not_enough"))
-    end
+    ToastManager.ShowToast(StringTable.Get("str_pay_item_not_enough"))
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSkinConfirmNormalController.btnbgOnClick = function(self, go)
-  -- function num : 0_14
+function UISeasonSkinConfirmNormalController:btnbgOnClick(go)
   self:CloseDialog()
 end
-
-

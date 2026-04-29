@@ -1,13 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/global_register/ui_module_register.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _staticClass("UIModuleRegister")
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
 
-UIModuleRegister.RegisterUIModules = function(self, global)
-  -- function num : 0_0 , upvalues : _ENV
+function UIModuleRegister:RegisterUIModules(global)
   global:AddUIModule(LoginModule, UIGlobalModule)
   global:AddUIModule(PetModule, UIPetModule)
   global:AddUIModule(GuideModule, UIGuideModule)
@@ -28,5 +21,3 @@ UIModuleRegister.RegisterUIModules = function(self, global)
   global:AddUIModule(SeasonModule, UISeasonModule)
   global:AddUIModule(SeasonMazeModule, UISeasonMazeModule)
 end
-
-

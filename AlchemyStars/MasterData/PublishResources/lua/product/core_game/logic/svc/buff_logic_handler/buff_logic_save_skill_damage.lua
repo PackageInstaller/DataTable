@@ -1,44 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_save_skill_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSaveSkillDamage", BuffLogicBase)
 BuffLogicSaveSkillDamage = BuffLogicSaveSkillDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSaveSkillDamage.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSaveSkillDamage:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSaveSkillDamage.DoOverlap = function(self, logicParam, context)
-  -- function num : 0_1
+function BuffLogicSaveSkillDamage:DoOverlap(logicParam, context)
   self:DoLogic()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSaveSkillDamage.DoLogic = function(self, notify)
-  -- function num : 0_2 , upvalues : _ENV
-  local context = (self._buffInstance):Context()
+function BuffLogicSaveSkillDamage:DoLogic(notify)
+  local context = self._buffInstance:Context()
   if not context then
-    return 
+    return
   end
-  local e = (self._buffInstance):Entity()
+  local e = self._buffInstance:Entity()
   if e:HasDeadMark() then
-    return 
+    return
   end
   local casterEntity = context.casterEntity
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   if not damageResultArray or #damageResultArray == 0 then
-    return 
+    return
   end
-  local curSaveSkillDamage = (e:BuffComponent()):GetBuffValue("SaveSkillDamage") or 0
-  for _,v in ipairs(damageResultArray) do
+  local curSaveSkillDamage = e:BuffComponent():GetBuffValue("SaveSkillDamage") or 0
+  for _, v in ipairs(damageResultArray) do
     local damageResult = v
     local targetEntityID = damageResult:GetTargetID()
     if targetEntityID == e:GetID() then
@@ -46,26 +33,17 @@ BuffLogicSaveSkillDamage.DoLogic = function(self, notify)
       curSaveSkillDamage = curSaveSkillDamage + damageInfo:GetDamageValue()
     end
   end
-  ;
-  (e:BuffComponent()):SetBuffValue("SaveSkillDamage", curSaveSkillDamage)
+  e:BuffComponent():SetBuffValue("SaveSkillDamage", curSaveSkillDamage)
   return true
 end
 
 _class("BuffLogicCleanSaveSkillDamage", BuffLogicBase)
 BuffLogicCleanSaveSkillDamage = BuffLogicCleanSaveSkillDamage
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicCleanSaveSkillDamage.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicCleanSaveSkillDamage:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicCleanSaveSkillDamage.DoLogic = function(self)
-  -- function num : 0_4
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("SaveSkillDamage", 0)
+function BuffLogicCleanSaveSkillDamage:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("SaveSkillDamage", 0)
 end
-
-

@@ -1,141 +1,91 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/valentine/cls/ui_activity_valentine_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ActivityValentineData", Object)
 ActivityValentineData = ActivityValentineData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ActivityValentineData.Constructor = function(self)
-  -- function num : 0_0
+function ActivityValentineData:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData.LoadData = function(self, TT, res)
-  -- function num : 0_1 , upvalues : _ENV
-  self._campaign = (UIActivityCampaign.New)()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N27_MINI_GAME, ECampaignN27MiniGameComponentID.QUEST, ECampaignN27MiniGameComponentID.MINI_MAIL)
+function ActivityValentineData:LoadData(TT, res)
+  self._campaign = UIActivityCampaign.New()
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N27_MINI_GAME, ECampaignN27MiniGameComponentID.QUEST, ECampaignN27MiniGameComponentID.MINI_MAIL)
   if res and not res:GetSucc() then
-    return 
+    return
   end
   if not self._campaign then
-    return 
+    return
   end
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData.GetCampaign = function(self)
-  -- function num : 0_2
+function ActivityValentineData:GetCampaign()
   return self._campaign
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData.GetCampaignLocalProgress = function(self)
-  -- function num : 0_3
+function ActivityValentineData:GetCampaignLocalProgress()
   local campaign = self:GetCampaign()
   if campaign then
     return campaign:GetLocalProcess()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData.GetCampaignSample = function(self)
-  -- function num : 0_4
+function ActivityValentineData:GetCampaignSample()
   local campaign = self:GetCampaign()
   if campaign then
     return campaign:GetSample()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData.GetCampaignID = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function ActivityValentineData:GetCampaignID()
   return ECampaignType.CAMPAIGN_TYPE_N27_MINI_GAME
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData.GetMailComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function ActivityValentineData:GetMailComponent()
   local localProcess = self:GetCampaignLocalProgress()
   if localProcess then
     return localProcess:GetComponent(ECampaignN27MiniGameComponentID.MINI_MAIL)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData.GetMailComponentInfo = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function ActivityValentineData:GetMailComponentInfo()
   local localProcess = self:GetCampaignLocalProgress()
   if localProcess then
     return localProcess:GetComponentInfo(ECampaignN27MiniGameComponentID.MINI_MAIL)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData.GetQuestComponent = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function ActivityValentineData:GetQuestComponent()
   local localProcess = self:GetCampaignLocalProgress()
   if localProcess then
     return localProcess:GetComponent(ECampaignN27MiniGameComponentID.QUEST)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData.GetQuestComponentInfo = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function ActivityValentineData:GetQuestComponentInfo()
   local localProcess = self:GetCampaignLocalProgress()
   if localProcess then
     return localProcess:GetComponentInfo(ECampaignN27MiniGameComponentID.QUEST)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData.GetEntryNew = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local campaign_module = (GameGlobal.GetModule)(CampaignModule)
-  do
-    if campaign_module.m_campaign_manager then
-      local new = (UIActivityHelper.CheckCampaignSampleNewPoint)(self._campaign)
-      return new
-    end
-    return false
+function ActivityValentineData:GetEntryNew()
+  local campaign_module = GameGlobal.GetModule(CampaignModule)
+  if campaign_module.m_campaign_manager then
+    local new = UIActivityHelper.CheckCampaignSampleNewPoint(self._campaign)
+    return new
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData.CancelEntryNew = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function ActivityValentineData:CancelEntryNew()
   if self:GetEntryNew() then
-    ((GameGlobal.TaskManager)()):StartTask(self._CancelEntryNew, self)
+    GameGlobal.TaskManager():StartTask(self._CancelEntryNew, self)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData._CancelEntryNew = function(self, TT)
-  -- function num : 0_12
-  (self._campaign):ClearCampaignNew(TT)
+function ActivityValentineData:_CancelEntryNew(TT)
+  self._campaign:ClearCampaignNew(TT)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData.GetEntryRed = function(self)
-  -- function num : 0_13
+function ActivityValentineData:GetEntryRed()
   if self:CheckMailIsOver() then
     return false
   end
@@ -144,10 +94,7 @@ ActivityValentineData.GetEntryRed = function(self)
   return hasCompRed or hasTaskRed
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData.GetMailRed = function(self)
-  -- function num : 0_14
+function ActivityValentineData:GetMailRed()
   local component = self:GetMailComponent()
   if component then
     local hasCompRed = component:HaveRedPoint()
@@ -155,118 +102,88 @@ ActivityValentineData.GetMailRed = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData.CheckTaskIsLock = function(self, taskId)
-  -- function num : 0_15 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+function ActivityValentineData:CheckTaskIsLock(taskId)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local questInfo = self:GetQuestComponentInfo()
-  local openTime = ((questInfo.m_quest_time_param_map)[taskId]).m_open_time
-  if openTime < curTime then
+  local openTime = questInfo.m_quest_time_param_map[taskId].m_open_time
+  if curTime > openTime then
     return false, openTime
   else
     return true, openTime
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData.CheckTaskIsOver = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+function ActivityValentineData:CheckTaskIsOver()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local questInfo = self:GetQuestComponentInfo()
   local closeTime = questInfo.m_close_time
-  if closeTime < curTime then
+  if curTime > closeTime then
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData.CheckMailIsOver = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+function ActivityValentineData:CheckMailIsOver()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local questInfo = self:GetMailComponentInfo()
   local closeTime = questInfo.m_close_time
-  if closeTime < curTime then
+  if curTime > closeTime then
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData.CheckSendTaskIsDone = function(self, questId)
-  -- function num : 0_18 , upvalues : _ENV
-  local questModule = (GameGlobal.GetModule)(QuestModule)
+function ActivityValentineData:CheckSendTaskIsDone(questId)
+  local questModule = GameGlobal.GetModule(QuestModule)
   local quest = questModule:GetQuest(questId)
   if not quest then
-    return 
+    return
   end
   local questComponent = self:GetQuestComponent()
   local status = questComponent:CheckCampaignQuestStatus(quest:QuestInfo())
   return status
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData._CheckTaskGroupRed = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local cfg = (Cfg.cfg_valentine_task_group)({})
-  for _,v in pairs(cfg) do
-    local taskId = (v.TaskIDGroup)[1]
+function ActivityValentineData:_CheckTaskGroupRed()
+  local cfg = Cfg.cfg_valentine_task_group({})
+  for _, v in pairs(cfg) do
+    local taskId = v.TaskIDGroup[1]
     local isLock = self:CheckTaskIsLock(taskId)
     if not isLock then
       local localID = self:_GetTaskLocalID(taskId)
-      local res = (LocalDB.GetInt)(localID)
+      local res = LocalDB.GetInt(localID)
       if res ~= 1 then
         return true
       end
     end
-    do
-      do
-        local sendTaskStatus = self:CheckSendTaskIsDone((v.TaskIDGroup)[4])
-        if sendTaskStatus == CampaignQuestStatus.CQS_Completed then
-          return true
-        end
-        -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    local sendTaskStatus = self:CheckSendTaskIsDone(v.TaskIDGroup[4])
+    if sendTaskStatus == CampaignQuestStatus.CQS_Completed then
+      return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData.ClearTaskGroupRed = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local cfg = (Cfg.cfg_valentine_task_group)({})
-  for _,v in pairs(cfg) do
-    local taskId = (v.TaskIDGroup)[1]
+function ActivityValentineData:ClearTaskGroupRed()
+  local cfg = Cfg.cfg_valentine_task_group({})
+  for _, v in pairs(cfg) do
+    local taskId = v.TaskIDGroup[1]
     local isLock = self:CheckTaskIsLock(taskId)
     if not isLock then
       local localID = self:_GetTaskLocalID(taskId)
-      ;
-      (LocalDB.SetInt)(localID, 1)
+      LocalDB.SetInt(localID, 1)
     end
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityValentineData._GetTaskLocalID = function(self, taskId)
-  -- function num : 0_21 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function ActivityValentineData:_GetTaskLocalID(taskId)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local openID = roleModule:GetPstId()
   local key = "ActivityValentineData" .. openID .. taskId
   return key
 end
-
-

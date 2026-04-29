@@ -1,39 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/ui_log_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILogHelper", Object)
 UILogHelper = UILogHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILogHelper.Exception_CheckClassFromBase = function(desc, className, baseName)
-  -- function num : 0_0 , upvalues : _ENV
+function UILogHelper.Exception_CheckClassFromBase(desc, className, baseName)
   local errStr = ""
   local type = Classes[className]
   if not type then
     errStr = className .. " 类型不存在"
-  else
-    if not (string.isnullorempty)(baseName) and type._className ~= baseName and not type:IsChildOf(baseName) then
-      errStr = className .. "不是 " .. baseName .. " 的子类"
-    end
+  elseif not string.isnullorempty(baseName) and type._className ~= baseName and not type:IsChildOf(baseName) then
+    errStr = className .. "不是 " .. baseName .. " 的子类"
   end
-  if not (string.isnullorempty)(errStr) then
-    (Log.exception)("UILogHelper.Exception_CheckClassFromBase() ", desc, " ", errStr)
+  if not string.isnullorempty(errStr) then
+    Log.exception("UILogHelper.Exception_CheckClassFromBase() ", desc, " ", errStr)
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILogHelper.ParamsFormatString = function(params)
-  -- function num : 0_1 , upvalues : _ENV
+function UILogHelper.ParamsFormatString(params)
   local str = ""
-  for k,v in pairs(params) do
-    str = str .. (string.format)("[%s]=%s ", k, v)
+  for k, v in pairs(params) do
+    str = str .. string.format("[%s]=%s ", k, v)
   end
   return str
 end
-
-

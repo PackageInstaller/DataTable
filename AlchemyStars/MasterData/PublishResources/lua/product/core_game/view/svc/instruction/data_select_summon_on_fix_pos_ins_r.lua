@@ -1,38 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/data_select_summon_on_fix_pos_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("DataSelectSummonOnFixPosInstruction", BaseInstruction)
 DataSelectSummonOnFixPosInstruction = DataSelectSummonOnFixPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSelectSummonOnFixPosInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function DataSelectSummonOnFixPosInstruction:Constructor(paramList)
   self._summonIndex = tonumber(paramList.index)
   assert(self._summonIndex, "DataSelectSummonOnFixPos需要配置index")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectSummonOnFixPosInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function DataSelectSummonOnFixPosInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   if not skillEffectResultContainer then
-    (Log.fatal)("DataSelectSummonOnFixPosInstruction error: no data result container.")
-    return 
+    Log.fatal("DataSelectSummonOnFixPosInstruction error: no data result container.")
+    return
   end
   local summonResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SummonOnFixPosLimit)
   if not summonResultArray then
-    (Log.error)("Get SummonOnFixPosLimit result failed.")
-    return 
+    Log.error("Get SummonOnFixPosLimit result failed.")
+    return
   end
   local result = summonResultArray[1]
   local trapIDList = result:GetTrapIDList()
   if not trapIDList then
-    (Log.error)("GetTrapIDList trap list is null.")
-    return 
+    Log.error("GetTrapIDList trap list is null.")
+    return
   end
   local trapID = trapIDList[self._summonIndex]
   local world = casterEntity:GetOwnerWorld()
@@ -40,12 +30,10 @@ DataSelectSummonOnFixPosInstruction.DoInstruction = function(self, TT, casterEnt
   if not eTrap then
     phaseContext:SetCurSummonOnFixPosIndex(-1)
     phaseContext:SetCurTargetEntityID(-1)
-    return 
+    return
   end
   phaseContext:SetCurSummonInEverythingIndex(self._summonIndex)
   if eTrap then
     phaseContext:SetCurTargetEntityID(trapID)
   end
 end
-
-

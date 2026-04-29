@@ -1,69 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/room/random/ui_season_maze_room_random_event_option.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRoomRandomEventOption", UICustomWidget)
 UISeasonMazeRoomRandomEventOption = UISeasonMazeRoomRandomEventOption
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoomRandomEventOption.OnShow = function(self)
-  -- function num : 0_0
+function UISeasonMazeRoomRandomEventOption:OnShow()
   self.mask = self:GetGameObject("Mask")
   self.descText = self:GetUIComponent("RollingText", "desc")
   self.anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomRandomEventOption.SetData = function(self, cfg, uiCtrl)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeRoomRandomEventOption:SetData(cfg, uiCtrl)
   self.cfg = cfg
   self.uiCtrl = uiCtrl
-  ;
-  (self.descText):RefreshText((StringTable.Get)(cfg.OptionDesc))
-  self.curGold = ((self.uiCtrl)._component):GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
-  self.curLv = ((self.uiCtrl)._component):GetAttrValue(SeasonMazeAttrType.SMAT_Lv)
+  self.descText:RefreshText(StringTable.Get(cfg.OptionDesc))
+  self.curGold = self.uiCtrl._component:GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
+  self.curLv = self.uiCtrl._component:GetAttrValue(SeasonMazeAttrType.SMAT_Lv)
   self.lock = false
   local goldCond = cfg.GoldCond
   local lvLess = cfg.LvLess
   local lvMore = cfg.LvMore
-  if goldCond and goldCond > 0 and self.curGold < goldCond then
+  if goldCond and 0 < goldCond and goldCond > self.curGold then
     self.lock = true
   end
-  if lvLess and lvLess > 0 and self.curLv < lvLess then
+  if lvLess and 0 < lvLess and lvLess > self.curLv then
     self.lock = true
   end
-  if lvMore and lvMore > 0 and lvMore < self.curLv then
+  if lvMore and 0 < lvMore and lvMore < self.curLv then
     self.lock = true
   end
-  ;
-  (self.mask):SetActive(self.lock)
+  self.mask:SetActive(self.lock)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomRandomEventOption.PlayShowAnim = function(self)
-  -- function num : 0_2
-  (self.anim):Play("uieffanim_UISeasonMazeRoomRandomEventOption_in")
+function UISeasonMazeRoomRandomEventOption:PlayShowAnim()
+  self.anim:Play("uieffanim_UISeasonMazeRoomRandomEventOption_in")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomRandomEventOption.PlayHideAnim = function(self)
-  -- function num : 0_3
-  (self.anim):Play("uieffanim_UISeasonMazeRoomRandomEventOption_out")
+function UISeasonMazeRoomRandomEventOption:PlayHideAnim()
+  self.anim:Play("uieffanim_UISeasonMazeRoomRandomEventOption_out")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomRandomEventOption.BtnOnClick = function(self)
-  -- function num : 0_4
+function UISeasonMazeRoomRandomEventOption:BtnOnClick()
   if self.lock then
-    return 
+    return
   end
-  ;
-  (self.uiCtrl):OnOptionSelect(self.cfg)
+  self.uiCtrl:OnOptionSelect(self.cfg)
 end
-
-

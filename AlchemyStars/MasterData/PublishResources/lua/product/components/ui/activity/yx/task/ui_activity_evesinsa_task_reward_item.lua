@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/yx/task/ui_activity_evesinsa_task_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityEveSinsaTaskRewardItem", UICustomWidget)
 UIActivityEveSinsaTaskRewardItem = UIActivityEveSinsaTaskRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityEveSinsaTaskRewardItem._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityEveSinsaTaskRewardItem:_GetComponents()
   self._iconImg = self:GetUIComponent("RawImageLoader", "_icon")
   self._iconRect = self:GetUIComponent("RectTransform", "_icon")
   self._iconObj = self:GetGameObject("_icon")
@@ -17,141 +10,89 @@ UIActivityEveSinsaTaskRewardItem._GetComponents = function(self)
   self._numTexBgObj = self:GetGameObject("_numTexBg")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityEveSinsaTaskRewardItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskRewardItem.SetData = function(self, index, cfg, callback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityEveSinsaTaskRewardItem:SetData(index, cfg, callback)
   self:_GetComponents()
   self._index = index
   self._cfg = cfg
   self._callback = callback
-  local cfg_item = (Cfg.cfg_item)[(self._cfg).assetid]
+  local cfg_item = Cfg.cfg_item[self._cfg.assetid]
   if cfg_item == nil then
-    (Log.fatal)("[quest] error --> cfg_item is nil ! id --> " .. (self._cfg).assetid)
-    return 
+    Log.fatal("[quest] error --> cfg_item is nil ! id --> " .. self._cfg.assetid)
+    return
   end
   self._cg = cfg_item.Icon
   self._colorEnum = cfg_item.Color
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskRewardItem.OnHide = function(self)
-  -- function num : 0_3
+function UIActivityEveSinsaTaskRewardItem:OnHide()
   self._cg = nil
   self._index = nil
   self._callback = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskRewardItem._OnValue = function(self)
-  -- function num : 0_4
+function UIActivityEveSinsaTaskRewardItem:_OnValue()
   local icon = self._cg
-  local num = (self._cfg).count
-  local itemId = (self._cfg).assetid
+  local num = self._cfg.count
+  local itemId = self._cfg.assetid
   self:SetIcon(icon, itemId)
   self:SetNumText(num, true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskRewardItem.iconOnClick = function(self, go)
-  -- function num : 0_5
+function UIActivityEveSinsaTaskRewardItem:iconOnClick(go)
   if self._callback then
-    (self._callback)((self._cfg).assetid, (go.transform).position)
+    self._callback(self._cfg.assetid, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskRewardItem.SetIcon = function(self, name, itemId)
-  -- function num : 0_6 , upvalues : _ENV
-  if not (string.isnullorempty)(name) then
+function UIActivityEveSinsaTaskRewardItem:SetIcon(name, itemId)
+  if not string.isnullorempty(name) then
     self:ShowIcon(true, itemId)
-    ;
-    (self._iconImg):LoadImage(name)
+    self._iconImg:LoadImage(name)
   else
     self:ShowIcon(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskRewardItem.ShowIcon = function(self, show, itemId)
-  -- function num : 0_7
-  (self._iconObj):SetActive(show)
+function UIActivityEveSinsaTaskRewardItem:ShowIcon(show, itemId)
+  self._iconObj:SetActive(show)
   self:SetIconOffset(itemId)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskRewardItem.SetIconOffset = function(self, itemId)
-  -- function num : 0_8 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIActivityEveSinsaTaskRewardItem:SetIconOffset(itemId)
   if self:_IsPet(itemId) then
-    (self._iconRect).anchoredPosition = Vector2(0, 0)
+    self._iconRect.anchoredPosition = Vector2(0, 0)
   else
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._iconRect).anchoredPosition = Vector2(0, 5)
+    self._iconRect.anchoredPosition = Vector2(0, 5)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskRewardItem._IsPet = function(self, id)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet)({ID = id})
+function UIActivityEveSinsaTaskRewardItem:_IsPet(id)
+  local cfg = Cfg.cfg_pet({ID = id})
   return cfg and true or false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskRewardItem.SetNumText = function(self, text, showNumber)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityEveSinsaTaskRewardItem:SetNumText(text, showNumber)
   if text ~= nil then
     local show = false
     if type(text) == "number" then
       local num = text
-      if num <= 0 then
-        do
-          do
-            show = showNumber
-            show = show
-            ;
-            (self._numTex):SetText((HelperProxy:GetInstance()):FormatItemCount(num))
-            if type(text) == "string" then
-              show = not (string.isnullorempty)(text)
-              ;
-              (self._numTex):SetText(text)
-            end
-            self:ShowNumText(show)
-            self:ShowNumText(false)
-            -- DECOMPILER ERROR: 6 unprocessed JMP targets
-          end
-        end
-      end
+      show = 0 < num or showNumber
+      self._numTex:SetText(HelperProxy:GetInstance():FormatItemCount(num))
+    elseif type(text) == "string" then
+      show = not string.isnullorempty(text)
+      self._numTex:SetText(text)
     end
+    self:ShowNumText(show)
+  else
+    self:ShowNumText(false)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskRewardItem.ShowNumText = function(self, show)
-  -- function num : 0_11
-  (self._numTexObj):SetActive(show)
-  ;
-  (self._numTexBgObj):SetActive(show)
+function UIActivityEveSinsaTaskRewardItem:ShowNumText(show)
+  self._numTexObj:SetActive(show)
+  self._numTexBgObj:SetActive(show)
 end
-
-

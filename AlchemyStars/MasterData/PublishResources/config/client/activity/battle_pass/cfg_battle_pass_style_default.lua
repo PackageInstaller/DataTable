@@ -1,308 +1,1576 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/battle_pass/cfg_battle_pass_style_default.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, uiName = 2, widgetName = 3, type = 4, atlasName = 5, spriteName = 6, imageColor = 7, rawImageName = 8, textStrId = 9, textColor = 10, outlineColor = 11, active = 12}
-local common = {"UIBattlePassCN1MainController", "RawImage", "bp_zjm_bg", "Image", "UIBattlePassCommon.spriteatlas", "bp_zjm_yeqian_btn", "UIBattlePassCN1ExpInfo", "LocalizationText", "#FFFFFF", "txtTitle2", "UIBattlePassCN1RewardMain", "bp_zjm_icon1", "UIBattlePassCN1RewardCell", "UIBattlePassCN1RewardCellFixed", "UIBattlePassCN1RewardMain_Time", "bg", "UIBattlePassCN1ItemIconReward_iconBg", "_standard", "_elite", "UIBattlePassCN1ItemIconReward_txtBg", "UIBattlePassCN1ItemIconReward_txt", "UIBattlePassCN1ItemIconReward", "GlobalUIRoot.spriteatlas", "UIBattlePassCN1QuestTabBtn_Extra", "#CA9654", "#898989", "#3A393A", "UIBattlePassCN1QuestCell", "_bg", "bp_common_task_over", "UIBattlePassCN1QuestCell_Progress", "#DAA25A", "#804D0B", "#4885D8", "UIBattlePassCN1QuestCell_Daily", "UIBattlePassCN1BuyLevelController", "#4C4B4B", "#D4B677", "_txtBuyBtn", "UIBattlePassCN1BuyGiftController", "UIBattlePassCN1GiftBoard_Bg", "_advanced", "_luxury", "bp_buy_di4", "_addition", "UIBattlePassCN1GiftBoard", "bp_buy_di1", "txtTitle", "#BDA774", "#A0651A", "bp_buy_di2", "#AC8B63", "#FFF6D1", "UIBattlePassCN1GiftBoard_mainImg", "n37bp_buy_head1", "bp_buy_head2", "UIBattlePassCN1GiftBoard_descImg", "#8C8C8C", "UIBattlePassCN1IconText", "UIBattlePassCN1BuyGiftResultController", "bp_yl_star1", "UIBattlePassCN1ItemIcon", "UIBattlePassCN1PreviewController"}
+local key = {
+  ID = 1,
+  uiName = 2,
+  widgetName = 3,
+  type = 4,
+  atlasName = 5,
+  spriteName = 6,
+  imageColor = 7,
+  rawImageName = 8,
+  textStrId = 9,
+  textColor = 10,
+  outlineColor = 11,
+  active = 12
+}
+local common = {
+  "UIBattlePassCN1MainController",
+  "RawImage",
+  "bp_zjm_bg",
+  "Image",
+  "UIBattlePassCommon.spriteatlas",
+  "bp_zjm_yeqian_btn",
+  "UIBattlePassCN1ExpInfo",
+  "LocalizationText",
+  "#FFFFFF",
+  "txtTitle2",
+  "UIBattlePassCN1RewardMain",
+  "bp_zjm_icon1",
+  "UIBattlePassCN1RewardCell",
+  "UIBattlePassCN1RewardCellFixed",
+  "UIBattlePassCN1RewardMain_Time",
+  "bg",
+  "UIBattlePassCN1ItemIconReward_iconBg",
+  "_standard",
+  "_elite",
+  "UIBattlePassCN1ItemIconReward_txtBg",
+  "UIBattlePassCN1ItemIconReward_txt",
+  "UIBattlePassCN1ItemIconReward",
+  "GlobalUIRoot.spriteatlas",
+  "UIBattlePassCN1QuestTabBtn_Extra",
+  "#CA9654",
+  "#898989",
+  "#3A393A",
+  "UIBattlePassCN1QuestCell",
+  "_bg",
+  "bp_common_task_over",
+  "UIBattlePassCN1QuestCell_Progress",
+  "#DAA25A",
+  "#804D0B",
+  "#4885D8",
+  "UIBattlePassCN1QuestCell_Daily",
+  "UIBattlePassCN1BuyLevelController",
+  "#4C4B4B",
+  "#D4B677",
+  "_txtBuyBtn",
+  "UIBattlePassCN1BuyGiftController",
+  "UIBattlePassCN1GiftBoard_Bg",
+  "_advanced",
+  "_luxury",
+  "bp_buy_di4",
+  "_addition",
+  "UIBattlePassCN1GiftBoard",
+  "bp_buy_di1",
+  "txtTitle",
+  "#BDA774",
+  "#A0651A",
+  "bp_buy_di2",
+  "#AC8B63",
+  "#FFF6D1",
+  "UIBattlePassCN1GiftBoard_mainImg",
+  "n37bp_buy_head1",
+  "bp_buy_head2",
+  "UIBattlePassCN1GiftBoard_descImg",
+  "#8C8C8C",
+  "UIBattlePassCN1IconText",
+  "UIBattlePassCN1BuyGiftResultController",
+  "bp_yl_star1",
+  "UIBattlePassCN1ItemIcon",
+  "UIBattlePassCN1PreviewController"
+}
 local config = {
-[1101] = {1101, common[1], "_mainBg", common[2], nil, nil, nil, common[3]}
-, 
-[1102] = {1102, common[1], "_tabBtns", common[4], common[5], "bp_zjm_yeqian_di"}
-, 
-[1103] = {1103, common[1], "_tabSelect1", common[4], common[5], common[6]}
-, 
-[1104] = {1104, common[1], "_tabSelect2", common[4], common[5], common[6]}
-, 
-[1201] = {1201, common[7], "Img", common[4], common[5], "bp_zjm_jindu3"}
-, 
-[1202] = {1202, common[7], "txtTitle1_zh", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[1203] = {1203, common[7], "txtTitle1", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[1204] = {1204, common[7], common[10], common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[1205] = {1205, common[7], "txtTitle3", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[1206] = {1206, common[7], "txtProgress", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[1207] = {1207, common[7], "max_zh", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[1208] = {1208, common[7], "max", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[1209] = {1209, common[7], "imgProgressBg", common[4], common[5], "bp_zjm_jindu2"}
-, 
-[1210] = {1210, common[7], "imgProgressValue", common[4], common[5], "bp_zjm_jindu1"}
-, 
-[1211] = {1211, common[7], "_buyLevelBtn", common[4], common[5], "bp_zjm_btn1"}
-, 
-[1212] = {1212, common[7], "_buyLevelBtnText", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[2101] = {2101, common[11], "_rewardListBg", common[2], nil, nil, nil, "bp_zjm_di1"}
-, 
-[2102] = {2102, common[11], "_rightItemImg", common[4], common[5], common[12]}
-, 
-[2103] = {2103, common[11], "_claimAllBtn", common[4], common[5], "bp_zjm_btn2"}
-, 
-[2104] = {2104, common[11], "_buyGiftBtn", common[4], common[5], "bp_zjm_btn3"}
-, 
-[2105] = {2105, common[11], "_txtBuyGift", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[2106] = {2106, common[13], "_bg_Gold", common[4], common[5], "bp_zjm_di4"}
-, 
-[2107] = {2107, common[13], "_lv", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[2108] = {2108, common[13], "_splite", common[4], common[5], "bp_zjm_line1"}
-, 
-[2109] = {2109, common[14], "_img_Standard", common[4], common[5], "bp_zjm_icon2"}
-, 
-[2110] = {2110, common[14], "_img_Deluxe", common[4], common[5], "bp_zjm_icon3"}
-, 
-[2111] = {2111, common[15], common[16], common[4], common[5], "bp_zjm_time1", "#E0CDA3"}
-, 
-[2112] = {2112, common[15], "icon", common[4], common[5], "bp_common_time2", common[9]}
-, 
-[2113] = {2113, common[15], "txtTime", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[2201] = {2201, common[17], common[18], common[4], common[5], "bp_zjm_kuang1"}
-, 
-[2202] = {2202, common[17], common[19], common[4], common[5], "bp_zjm_kuang2"}
-, 
-[2203] = {2203, common[20], common[18], common[4], nil, nil, "#D6AC51"}
-, 
-[2204] = {2204, common[20], common[19], common[4], nil, nil, "#F1C66B"}
-, 
-[2205] = {2205, common[21], common[18], common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[2206] = {2206, common[21], common[19], common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[2207] = {2207, common[22], "_imgTaken_Mask", common[4], common[5], "bp_zjm_mask1"}
-, 
-[2208] = {2208, common[22], "_imgTaken_quan", common[4], common[23], "task_chengjiu_icon13-2"}
-, 
-[2209] = {2209, common[22], "_imgTaken_shadow", common[4], common[23], "task_chengjiu_icon13-3"}
-, 
-[2210] = {2210, common[22], "_imgTaken_dui", common[4], common[23], "task_chengjiu_icon13-4"}
-, 
-[3101] = {3101, common[24], "_Img_Sprite_1", common[4], common[5], "bp_common_task_icon1"}
-, 
-[3102] = {3102, common[24], "_Img_Sprite_2", common[4], common[5], "bp_common_task_icon2"}
-, 
-[3103] = {3103, common[24], "_Img_Sprite_3", common[4], common[5], "bp_common_task_icon3"}
-, 
-[3104] = {3104, common[24], "_Txt_StrId_1", common[8], nil, nil, nil, nil, "str_activity_battlepass_tab_quest_group_title_1"}
-, 
-[3105] = {3105, common[24], "_Txt_StrId_2", common[8], nil, nil, nil, nil, "str_activity_battlepass_tab_quest_group_title_2"}
-, 
-[3106] = {3106, common[24], "_Txt_StrId_3", common[8], nil, nil, nil, nil, "str_activity_battlepass_tab_quest_group_title_3"}
-, 
-[3107] = {3107, common[24], "_Bg_Lock", common[4], common[5], "bp_common_task_btn_lock"}
-, 
-[3108] = {3108, common[24], "_Bg_Off", common[4], common[5], "bp_common_task_btn_off"}
-, 
-[3109] = {3109, common[24], "_Bg_On", common[4], common[5], "bp_common_task_btn_on", common[25]}
-, 
-[3110] = {3110, common[24], "_Img_Color_Lock", common[4], nil, nil, common[26]}
-, 
-[3111] = {3111, common[24], "_Img_Color_Off", common[4], nil, nil, common[27]}
-, 
-[3112] = {3112, common[24], "_Img_Color_On", common[4], nil, nil, common[25]}
-, 
-[3113] = {3113, common[24], "_Txt_Color_Lock", common[8], nil, nil, nil, nil, nil, common[26]}
-, 
-[3114] = {3114, common[24], "_Txt_Color_Off", common[8], nil, nil, nil, nil, nil, common[27]}
-, 
-[3115] = {3115, common[24], "_Txt_Color_On", common[8], nil, nil, nil, nil, nil, common[25]}
-, 
-[3201] = {3201, common[28], common[29], common[2], nil, nil, nil, "bp_task_di1"}
-, 
-[3202] = {3202, common[28], "_bg_Mask", common[2], nil, nil, nil, "bp_task_mask"}
-, 
-[3203] = {3203, common[28], "_bg_Taken", common[2], nil, nil, nil, "bp_task_tick"}
-, 
-[3204] = {3204, common[28], "state_NotStartImg", common[4], common[5], common[30]}
-, 
-[3205] = {3205, common[28], "state_OverImg", common[4], common[5], common[30]}
-, 
-[3206] = {3206, common[28], "_bg_item", common[4], common[5], "bp_task_di3"}
-, 
-[3207] = {3207, common[28], "_txt_item", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[3208] = {3208, common[31], "_txt_prg_Color1", common[8], nil, nil, nil, nil, nil, common[32]}
-, 
-[3209] = {3209, common[31], "_txt_prg_Color2", common[8], nil, nil, nil, nil, nil, "#8C7852"}
-, 
-[3210] = {3210, common[28], "_txt_title", common[8], nil, nil, nil, nil, nil, common[33]}
-, 
-[3211] = {3211, common[28], "state_NotStartTxt", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[3212] = {3212, common[28], "state_AcceptedTxt", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[3213] = {3213, common[28], "state_CompletedTxt", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[3214] = {3214, common[28], "state_TakenTxt", common[8], nil, nil, nil, nil, nil, common[34]}
-, 
-[3215] = {3215, common[28], "state_OverTxt", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[3216] = {3216, common[28], "state_Accepted", common[4], common[5], "bp_task_btn2"}
-, 
-[3217] = {3217, common[28], "state_Completed", common[4], common[5], "bp_task_btn1"}
-, 
-[3218] = {3218, common[35], "_bg_daily_Normal", common[4], nil, nil, "#CDB27F"}
-, 
-[3219] = {3219, common[35], "_bg_daily_Extra", common[4], nil, nil, common[34]}
-, 
-[3220] = {3220, common[35], "_bg_time_Normal", common[4], nil, nil, common[32]}
-, 
-[3221] = {3221, common[35], "_bg_time_Extra", common[4], nil, nil, common[32]}
-, 
-[3222] = {3222, common[35], "_bg_dateType_Normal", common[4], nil, nil, "#F8BA41"}
-, 
-[4101] = {4101, common[36], common[29], common[4], common[5], "bp_common_buylevel_bg"}
-, 
-[4102] = {4102, common[36], "_txtTitle", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[4103] = {4103, common[36], "_txtTitle2_l", common[8], nil, nil, nil, nil, nil, common[37]}
-, 
-[4104] = {4104, common[36], "_txtTitle2", common[8], nil, nil, nil, nil, nil, common[9], common[38]}
-, 
-[4105] = {4105, common[36], "_txtTitle2_r", common[8], nil, nil, nil, nil, nil, common[37]}
-, 
-[4106] = {4106, common[36], "_background", common[4], common[5], "bp_common_buylevel_huatiao3"}
-, 
-[4107] = {4107, common[36], "_fill", common[4], common[5], "bp_common_buylevel_huatiao2"}
-, 
-[4108] = {4108, common[36], "_handle", common[4], common[5], "bp_common_buylevel_huatiao1"}
-, 
-[4109] = {4109, common[36], "_decBtnBg", common[4], common[5], "bp_common_buylevel_btn2"}
-, 
-[4110] = {4110, common[36], "_incBtnBg", common[4], common[5], "bp_common_buylevel_btn1"}
-, 
-[4111] = {4111, common[36], "_txtDesc", common[8], nil, nil, nil, nil, nil, common[37]}
-, 
-[4112] = {4112, common[36], "_txtBuyCount", common[8], nil, nil, nil, nil, nil, common[9], common[38]}
-, 
-[4113] = {4113, common[36], "_txtBuyPrice", common[8], nil, nil, nil, nil, nil, "#464646"}
-, 
-[4114] = {4114, common[36], "_buyBtn", common[4], common[5], "bp_common_buylevel_btn"}
-, 
-[4115] = {4115, common[36], common[39], common[8], nil, nil, nil, nil, nil, "#E6E6E6"}
-, 
-[5101] = {5101, common[40], common[29], common[2], nil, nil, nil, common[3]}
-, 
-[5102] = {5102, common[40], "_previewBtn", common[4], common[5], "bp_buy_btn01"}
-, 
-[5103] = {5103, common[40], "_txtPreviewBtn", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[5104] = {5104, common[41], common[42], common[2], nil, nil, nil, "bp_buy_di3"}
-, 
-[5105] = {5105, common[41], common[43], common[2], nil, nil, nil, common[44]}
-, 
-[5106] = {5106, common[41], common[45], common[2], nil, nil, nil, common[44]}
-, 
-[5107] = {5107, common[46], "imgTitle1", common[4], common[5], "bp_buy_star1"}
-, 
-[5108] = {5108, common[46], "imgTitle2", common[4], common[5], common[47]}
-, 
-[5109] = {5109, common[46], common[48], common[8], nil, nil, nil, nil, nil, common[9], common[49]}
-, 
-[5110] = {5110, common[46], common[10], common[8], nil, nil, nil, nil, nil, common[50]}
-, 
-[5111] = {5111, common[46], "imgTitle1_Deluxe", common[4], common[5], "bp_buy_star2"}
-, 
-[5112] = {5112, common[46], "imgTitle2_Deluxe", common[4], common[5], common[51]}
-, 
-[5113] = {5113, common[46], "txtTitle_Deluxe", common[8], nil, nil, nil, nil, nil, common[52], common[53]}
-, 
-[5114] = {5114, common[46], "txtTitle2_Deluxe", common[8], nil, nil, nil, nil, nil, common[50]}
-, 
-[5115] = {5115, common[54], common[42], common[2], nil, nil, nil, common[55]}
-, 
-[5116] = {5116, common[54], common[43], common[2], nil, nil, nil, common[56]}
-, 
-[5117] = {5117, common[54], common[45], common[2], nil, nil, nil, common[56]}
-, 
-[5118] = {5118, common[57], common[42], common[4], common[5], common[12]}
-, 
-[5119] = {5119, common[57], common[43], common[4], common[5], common[12]}
-, 
-[5120] = {5120, common[57], common[45], common[4], common[5], common[12]}
-, 
-[5121] = {5121, common[46], "desc1", common[8], nil, nil, nil, nil, nil, "#BE8A48"}
-, 
-[5122] = {5122, common[46], "desc2", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[5123] = {5123, common[46], "desc3_Deluxe", common[8], nil, nil, nil, nil, nil, "#966323"}
-, 
-[5124] = {5124, "UIBattlePassCN1GiftBoard_deluxeDesc", "color", common[8], nil, nil, nil, nil, nil, "#FF5f10"}
-, 
-[5125] = {5125, common[46], "buyBtn", common[4], common[5], "bp_buy_btn02"}
-, 
-[5126] = {5126, common[46], common[39], common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[5127] = {5127, common[46], "txtPriceSign", common[8], nil, nil, nil, nil, nil, common[9], common[58]}
-, 
-[5128] = {5128, common[46], "txtPrice", common[8], nil, nil, nil, nil, nil, common[9], common[58]}
-, 
-[5129] = {5129, common[46], "txtPriceSign_Deluxe", common[8], nil, nil, nil, nil, nil, common[9], common[58]}
-, 
-[5130] = {5130, common[46], "txtPrice_Deluxe", common[8], nil, nil, nil, nil, nil, common[9], common[58]}
-, 
-[5131] = {5131, common[46], "Purchased", common[4], common[5], "bp_buy_di5"}
-, 
-[5132] = {5132, common[46], "txtPurchased", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[5201] = {5201, common[59], common[16], common[4], common[5], "bp_buy_kuang01"}
-, 
-[5202] = {5202, common[59], common[48], common[8], nil, nil, nil, nil, nil, common[33]}
-, 
-[6101] = {6101, common[60], "_bg_Elite", common[2], nil, nil, nil, "bp_unlock_di1"}
-, 
-[6102] = {6102, common[60], "_bgIcon_Elite", common[2], nil, nil, nil, common[55]}
-, 
-[6103] = {6103, common[60], "_bgTitle_Elite", common[4], common[5], common[47]}
-, 
-[6104] = {6104, common[60], "_bgStar_Elite", common[4], common[5], common[61]}
-, 
-[6105] = {6105, common[60], "_txtTitle_Elite", common[8], nil, nil, nil, nil, nil, common[9], "#C6B58A"}
-, 
-[6106] = {6106, common[60], "_txtDesc_Elite", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[6107] = {6107, common[60], "_bg_Deluxe", common[2], nil, nil, nil, "bp_unlock_di2"}
-, 
-[6108] = {6108, common[60], "_bgTitle_Deluxe", common[4], common[5], common[51]}
-, 
-[6109] = {6109, common[60], "_txtTitle_Deluxe", common[8], nil, nil, nil, nil, nil, common[52], common[53]}
-, 
-[6110] = {6110, common[60], "_txtDesc_Deluxe", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[6111] = {6111, common[60], "_imgUnlock_Deluxe", common[4], nil, nil, common[9]}
-, 
-[6112] = {6112, common[60], "_txtDescExtra", common[8], nil, nil, nil, nil, nil, "#4682D3"}
-, 
-[6201] = {6201, common[62], common[16], common[4], common[5], "bp_unlock_level"}
-, 
-[6202] = {6202, common[62], "txt", common[8], nil, nil, nil, nil, nil, "#FFFEED", "#FFE58F"}
-, 
-[6301] = {6301, common[63], common[29], common[2], nil, nil, nil, "bp_yl_di1"}
-, 
-[6302] = {6302, common[63], "_img_yuan", common[4], common[5], "bp_yl_yuan"}
-, 
-[6303] = {6303, common[63], "_img_star", common[4], common[5], common[61]}
-, 
-[6304] = {6304, common[63], "_rawCard", common[2], nil, nil, nil, "n37bp_yl_card"}
-, 
-[6305] = {6305, common[63], "_imgCardTitle", common[4], common[5], "bp_yl_di3"}
-, 
-[6306] = {6306, common[63], "_txtCardTitle", common[8], nil, nil, nil, nil, nil, common[9]}
-, 
-[6307] = {6307, common[63], "_imgTitleStandard", common[4], common[5], common[47]}
-, 
-[6308] = {6308, common[63], "_txtTitleStandard", common[8], nil, nil, nil, nil, nil, common[9], common[49]}
-, 
-[6309] = {6309, common[63], "_imgTitleElite", common[4], common[5], common[51]}
-, 
-[6310] = {6310, common[63], "_txtTitleElite", common[8], nil, nil, nil, nil, nil, common[9], common[49]}
+  [1101] = {
+    1101,
+    common[1],
+    "_mainBg",
+    common[2],
+    nil,
+    nil,
+    nil,
+    common[3]
+  },
+  [1102] = {
+    1102,
+    common[1],
+    "_tabBtns",
+    common[4],
+    common[5],
+    "bp_zjm_yeqian_di"
+  },
+  [1103] = {
+    1103,
+    common[1],
+    "_tabSelect1",
+    common[4],
+    common[5],
+    common[6]
+  },
+  [1104] = {
+    1104,
+    common[1],
+    "_tabSelect2",
+    common[4],
+    common[5],
+    common[6]
+  },
+  [1201] = {
+    1201,
+    common[7],
+    "Img",
+    common[4],
+    common[5],
+    "bp_zjm_jindu3"
+  },
+  [1202] = {
+    1202,
+    common[7],
+    "txtTitle1_zh",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [1203] = {
+    1203,
+    common[7],
+    "txtTitle1",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [1204] = {
+    1204,
+    common[7],
+    common[10],
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [1205] = {
+    1205,
+    common[7],
+    "txtTitle3",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [1206] = {
+    1206,
+    common[7],
+    "txtProgress",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [1207] = {
+    1207,
+    common[7],
+    "max_zh",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [1208] = {
+    1208,
+    common[7],
+    "max",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [1209] = {
+    1209,
+    common[7],
+    "imgProgressBg",
+    common[4],
+    common[5],
+    "bp_zjm_jindu2"
+  },
+  [1210] = {
+    1210,
+    common[7],
+    "imgProgressValue",
+    common[4],
+    common[5],
+    "bp_zjm_jindu1"
+  },
+  [1211] = {
+    1211,
+    common[7],
+    "_buyLevelBtn",
+    common[4],
+    common[5],
+    "bp_zjm_btn1"
+  },
+  [1212] = {
+    1212,
+    common[7],
+    "_buyLevelBtnText",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [2101] = {
+    2101,
+    common[11],
+    "_rewardListBg",
+    common[2],
+    nil,
+    nil,
+    nil,
+    "bp_zjm_di1"
+  },
+  [2102] = {
+    2102,
+    common[11],
+    "_rightItemImg",
+    common[4],
+    common[5],
+    common[12]
+  },
+  [2103] = {
+    2103,
+    common[11],
+    "_claimAllBtn",
+    common[4],
+    common[5],
+    "bp_zjm_btn2"
+  },
+  [2104] = {
+    2104,
+    common[11],
+    "_buyGiftBtn",
+    common[4],
+    common[5],
+    "bp_zjm_btn3"
+  },
+  [2105] = {
+    2105,
+    common[11],
+    "_txtBuyGift",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [2106] = {
+    2106,
+    common[13],
+    "_bg_Gold",
+    common[4],
+    common[5],
+    "bp_zjm_di4"
+  },
+  [2107] = {
+    2107,
+    common[13],
+    "_lv",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [2108] = {
+    2108,
+    common[13],
+    "_splite",
+    common[4],
+    common[5],
+    "bp_zjm_line1"
+  },
+  [2109] = {
+    2109,
+    common[14],
+    "_img_Standard",
+    common[4],
+    common[5],
+    "bp_zjm_icon2"
+  },
+  [2110] = {
+    2110,
+    common[14],
+    "_img_Deluxe",
+    common[4],
+    common[5],
+    "bp_zjm_icon3"
+  },
+  [2111] = {
+    2111,
+    common[15],
+    common[16],
+    common[4],
+    common[5],
+    "bp_zjm_time1",
+    "#E0CDA3"
+  },
+  [2112] = {
+    2112,
+    common[15],
+    "icon",
+    common[4],
+    common[5],
+    "bp_common_time2",
+    common[9]
+  },
+  [2113] = {
+    2113,
+    common[15],
+    "txtTime",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [2201] = {
+    2201,
+    common[17],
+    common[18],
+    common[4],
+    common[5],
+    "bp_zjm_kuang1"
+  },
+  [2202] = {
+    2202,
+    common[17],
+    common[19],
+    common[4],
+    common[5],
+    "bp_zjm_kuang2"
+  },
+  [2203] = {
+    2203,
+    common[20],
+    common[18],
+    common[4],
+    nil,
+    nil,
+    "#D6AC51"
+  },
+  [2204] = {
+    2204,
+    common[20],
+    common[19],
+    common[4],
+    nil,
+    nil,
+    "#F1C66B"
+  },
+  [2205] = {
+    2205,
+    common[21],
+    common[18],
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [2206] = {
+    2206,
+    common[21],
+    common[19],
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [2207] = {
+    2207,
+    common[22],
+    "_imgTaken_Mask",
+    common[4],
+    common[5],
+    "bp_zjm_mask1"
+  },
+  [2208] = {
+    2208,
+    common[22],
+    "_imgTaken_quan",
+    common[4],
+    common[23],
+    "task_chengjiu_icon13-2"
+  },
+  [2209] = {
+    2209,
+    common[22],
+    "_imgTaken_shadow",
+    common[4],
+    common[23],
+    "task_chengjiu_icon13-3"
+  },
+  [2210] = {
+    2210,
+    common[22],
+    "_imgTaken_dui",
+    common[4],
+    common[23],
+    "task_chengjiu_icon13-4"
+  },
+  [3101] = {
+    3101,
+    common[24],
+    "_Img_Sprite_1",
+    common[4],
+    common[5],
+    "bp_common_task_icon1"
+  },
+  [3102] = {
+    3102,
+    common[24],
+    "_Img_Sprite_2",
+    common[4],
+    common[5],
+    "bp_common_task_icon2"
+  },
+  [3103] = {
+    3103,
+    common[24],
+    "_Img_Sprite_3",
+    common[4],
+    common[5],
+    "bp_common_task_icon3"
+  },
+  [3104] = {
+    3104,
+    common[24],
+    "_Txt_StrId_1",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_activity_battlepass_tab_quest_group_title_1"
+  },
+  [3105] = {
+    3105,
+    common[24],
+    "_Txt_StrId_2",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_activity_battlepass_tab_quest_group_title_2"
+  },
+  [3106] = {
+    3106,
+    common[24],
+    "_Txt_StrId_3",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_activity_battlepass_tab_quest_group_title_3"
+  },
+  [3107] = {
+    3107,
+    common[24],
+    "_Bg_Lock",
+    common[4],
+    common[5],
+    "bp_common_task_btn_lock"
+  },
+  [3108] = {
+    3108,
+    common[24],
+    "_Bg_Off",
+    common[4],
+    common[5],
+    "bp_common_task_btn_off"
+  },
+  [3109] = {
+    3109,
+    common[24],
+    "_Bg_On",
+    common[4],
+    common[5],
+    "bp_common_task_btn_on",
+    common[25]
+  },
+  [3110] = {
+    3110,
+    common[24],
+    "_Img_Color_Lock",
+    common[4],
+    nil,
+    nil,
+    common[26]
+  },
+  [3111] = {
+    3111,
+    common[24],
+    "_Img_Color_Off",
+    common[4],
+    nil,
+    nil,
+    common[27]
+  },
+  [3112] = {
+    3112,
+    common[24],
+    "_Img_Color_On",
+    common[4],
+    nil,
+    nil,
+    common[25]
+  },
+  [3113] = {
+    3113,
+    common[24],
+    "_Txt_Color_Lock",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[26]
+  },
+  [3114] = {
+    3114,
+    common[24],
+    "_Txt_Color_Off",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[27]
+  },
+  [3115] = {
+    3115,
+    common[24],
+    "_Txt_Color_On",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[25]
+  },
+  [3201] = {
+    3201,
+    common[28],
+    common[29],
+    common[2],
+    nil,
+    nil,
+    nil,
+    "bp_task_di1"
+  },
+  [3202] = {
+    3202,
+    common[28],
+    "_bg_Mask",
+    common[2],
+    nil,
+    nil,
+    nil,
+    "bp_task_mask"
+  },
+  [3203] = {
+    3203,
+    common[28],
+    "_bg_Taken",
+    common[2],
+    nil,
+    nil,
+    nil,
+    "bp_task_tick"
+  },
+  [3204] = {
+    3204,
+    common[28],
+    "state_NotStartImg",
+    common[4],
+    common[5],
+    common[30]
+  },
+  [3205] = {
+    3205,
+    common[28],
+    "state_OverImg",
+    common[4],
+    common[5],
+    common[30]
+  },
+  [3206] = {
+    3206,
+    common[28],
+    "_bg_item",
+    common[4],
+    common[5],
+    "bp_task_di3"
+  },
+  [3207] = {
+    3207,
+    common[28],
+    "_txt_item",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [3208] = {
+    3208,
+    common[31],
+    "_txt_prg_Color1",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[32]
+  },
+  [3209] = {
+    3209,
+    common[31],
+    "_txt_prg_Color2",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "#8C7852"
+  },
+  [3210] = {
+    3210,
+    common[28],
+    "_txt_title",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[33]
+  },
+  [3211] = {
+    3211,
+    common[28],
+    "state_NotStartTxt",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [3212] = {
+    3212,
+    common[28],
+    "state_AcceptedTxt",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [3213] = {
+    3213,
+    common[28],
+    "state_CompletedTxt",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [3214] = {
+    3214,
+    common[28],
+    "state_TakenTxt",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[34]
+  },
+  [3215] = {
+    3215,
+    common[28],
+    "state_OverTxt",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [3216] = {
+    3216,
+    common[28],
+    "state_Accepted",
+    common[4],
+    common[5],
+    "bp_task_btn2"
+  },
+  [3217] = {
+    3217,
+    common[28],
+    "state_Completed",
+    common[4],
+    common[5],
+    "bp_task_btn1"
+  },
+  [3218] = {
+    3218,
+    common[35],
+    "_bg_daily_Normal",
+    common[4],
+    nil,
+    nil,
+    "#CDB27F"
+  },
+  [3219] = {
+    3219,
+    common[35],
+    "_bg_daily_Extra",
+    common[4],
+    nil,
+    nil,
+    common[34]
+  },
+  [3220] = {
+    3220,
+    common[35],
+    "_bg_time_Normal",
+    common[4],
+    nil,
+    nil,
+    common[32]
+  },
+  [3221] = {
+    3221,
+    common[35],
+    "_bg_time_Extra",
+    common[4],
+    nil,
+    nil,
+    common[32]
+  },
+  [3222] = {
+    3222,
+    common[35],
+    "_bg_dateType_Normal",
+    common[4],
+    nil,
+    nil,
+    "#F8BA41"
+  },
+  [4101] = {
+    4101,
+    common[36],
+    common[29],
+    common[4],
+    common[5],
+    "bp_common_buylevel_bg"
+  },
+  [4102] = {
+    4102,
+    common[36],
+    "_txtTitle",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [4103] = {
+    4103,
+    common[36],
+    "_txtTitle2_l",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[37]
+  },
+  [4104] = {
+    4104,
+    common[36],
+    "_txtTitle2",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9],
+    common[38]
+  },
+  [4105] = {
+    4105,
+    common[36],
+    "_txtTitle2_r",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[37]
+  },
+  [4106] = {
+    4106,
+    common[36],
+    "_background",
+    common[4],
+    common[5],
+    "bp_common_buylevel_huatiao3"
+  },
+  [4107] = {
+    4107,
+    common[36],
+    "_fill",
+    common[4],
+    common[5],
+    "bp_common_buylevel_huatiao2"
+  },
+  [4108] = {
+    4108,
+    common[36],
+    "_handle",
+    common[4],
+    common[5],
+    "bp_common_buylevel_huatiao1"
+  },
+  [4109] = {
+    4109,
+    common[36],
+    "_decBtnBg",
+    common[4],
+    common[5],
+    "bp_common_buylevel_btn2"
+  },
+  [4110] = {
+    4110,
+    common[36],
+    "_incBtnBg",
+    common[4],
+    common[5],
+    "bp_common_buylevel_btn1"
+  },
+  [4111] = {
+    4111,
+    common[36],
+    "_txtDesc",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[37]
+  },
+  [4112] = {
+    4112,
+    common[36],
+    "_txtBuyCount",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9],
+    common[38]
+  },
+  [4113] = {
+    4113,
+    common[36],
+    "_txtBuyPrice",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "#464646"
+  },
+  [4114] = {
+    4114,
+    common[36],
+    "_buyBtn",
+    common[4],
+    common[5],
+    "bp_common_buylevel_btn"
+  },
+  [4115] = {
+    4115,
+    common[36],
+    common[39],
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "#E6E6E6"
+  },
+  [5101] = {
+    5101,
+    common[40],
+    common[29],
+    common[2],
+    nil,
+    nil,
+    nil,
+    common[3]
+  },
+  [5102] = {
+    5102,
+    common[40],
+    "_previewBtn",
+    common[4],
+    common[5],
+    "bp_buy_btn01"
+  },
+  [5103] = {
+    5103,
+    common[40],
+    "_txtPreviewBtn",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [5104] = {
+    5104,
+    common[41],
+    common[42],
+    common[2],
+    nil,
+    nil,
+    nil,
+    "bp_buy_di3"
+  },
+  [5105] = {
+    5105,
+    common[41],
+    common[43],
+    common[2],
+    nil,
+    nil,
+    nil,
+    common[44]
+  },
+  [5106] = {
+    5106,
+    common[41],
+    common[45],
+    common[2],
+    nil,
+    nil,
+    nil,
+    common[44]
+  },
+  [5107] = {
+    5107,
+    common[46],
+    "imgTitle1",
+    common[4],
+    common[5],
+    "bp_buy_star1"
+  },
+  [5108] = {
+    5108,
+    common[46],
+    "imgTitle2",
+    common[4],
+    common[5],
+    common[47]
+  },
+  [5109] = {
+    5109,
+    common[46],
+    common[48],
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9],
+    common[49]
+  },
+  [5110] = {
+    5110,
+    common[46],
+    common[10],
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[50]
+  },
+  [5111] = {
+    5111,
+    common[46],
+    "imgTitle1_Deluxe",
+    common[4],
+    common[5],
+    "bp_buy_star2"
+  },
+  [5112] = {
+    5112,
+    common[46],
+    "imgTitle2_Deluxe",
+    common[4],
+    common[5],
+    common[51]
+  },
+  [5113] = {
+    5113,
+    common[46],
+    "txtTitle_Deluxe",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[52],
+    common[53]
+  },
+  [5114] = {
+    5114,
+    common[46],
+    "txtTitle2_Deluxe",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[50]
+  },
+  [5115] = {
+    5115,
+    common[54],
+    common[42],
+    common[2],
+    nil,
+    nil,
+    nil,
+    common[55]
+  },
+  [5116] = {
+    5116,
+    common[54],
+    common[43],
+    common[2],
+    nil,
+    nil,
+    nil,
+    common[56]
+  },
+  [5117] = {
+    5117,
+    common[54],
+    common[45],
+    common[2],
+    nil,
+    nil,
+    nil,
+    common[56]
+  },
+  [5118] = {
+    5118,
+    common[57],
+    common[42],
+    common[4],
+    common[5],
+    common[12]
+  },
+  [5119] = {
+    5119,
+    common[57],
+    common[43],
+    common[4],
+    common[5],
+    common[12]
+  },
+  [5120] = {
+    5120,
+    common[57],
+    common[45],
+    common[4],
+    common[5],
+    common[12]
+  },
+  [5121] = {
+    5121,
+    common[46],
+    "desc1",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "#BE8A48"
+  },
+  [5122] = {
+    5122,
+    common[46],
+    "desc2",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [5123] = {
+    5123,
+    common[46],
+    "desc3_Deluxe",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "#966323"
+  },
+  [5124] = {
+    5124,
+    "UIBattlePassCN1GiftBoard_deluxeDesc",
+    "color",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "#FF5f10"
+  },
+  [5125] = {
+    5125,
+    common[46],
+    "buyBtn",
+    common[4],
+    common[5],
+    "bp_buy_btn02"
+  },
+  [5126] = {
+    5126,
+    common[46],
+    common[39],
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [5127] = {
+    5127,
+    common[46],
+    "txtPriceSign",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9],
+    common[58]
+  },
+  [5128] = {
+    5128,
+    common[46],
+    "txtPrice",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9],
+    common[58]
+  },
+  [5129] = {
+    5129,
+    common[46],
+    "txtPriceSign_Deluxe",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9],
+    common[58]
+  },
+  [5130] = {
+    5130,
+    common[46],
+    "txtPrice_Deluxe",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9],
+    common[58]
+  },
+  [5131] = {
+    5131,
+    common[46],
+    "Purchased",
+    common[4],
+    common[5],
+    "bp_buy_di5"
+  },
+  [5132] = {
+    5132,
+    common[46],
+    "txtPurchased",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [5201] = {
+    5201,
+    common[59],
+    common[16],
+    common[4],
+    common[5],
+    "bp_buy_kuang01"
+  },
+  [5202] = {
+    5202,
+    common[59],
+    common[48],
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[33]
+  },
+  [6101] = {
+    6101,
+    common[60],
+    "_bg_Elite",
+    common[2],
+    nil,
+    nil,
+    nil,
+    "bp_unlock_di1"
+  },
+  [6102] = {
+    6102,
+    common[60],
+    "_bgIcon_Elite",
+    common[2],
+    nil,
+    nil,
+    nil,
+    common[55]
+  },
+  [6103] = {
+    6103,
+    common[60],
+    "_bgTitle_Elite",
+    common[4],
+    common[5],
+    common[47]
+  },
+  [6104] = {
+    6104,
+    common[60],
+    "_bgStar_Elite",
+    common[4],
+    common[5],
+    common[61]
+  },
+  [6105] = {
+    6105,
+    common[60],
+    "_txtTitle_Elite",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9],
+    "#C6B58A"
+  },
+  [6106] = {
+    6106,
+    common[60],
+    "_txtDesc_Elite",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [6107] = {
+    6107,
+    common[60],
+    "_bg_Deluxe",
+    common[2],
+    nil,
+    nil,
+    nil,
+    "bp_unlock_di2"
+  },
+  [6108] = {
+    6108,
+    common[60],
+    "_bgTitle_Deluxe",
+    common[4],
+    common[5],
+    common[51]
+  },
+  [6109] = {
+    6109,
+    common[60],
+    "_txtTitle_Deluxe",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[52],
+    common[53]
+  },
+  [6110] = {
+    6110,
+    common[60],
+    "_txtDesc_Deluxe",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [6111] = {
+    6111,
+    common[60],
+    "_imgUnlock_Deluxe",
+    common[4],
+    nil,
+    nil,
+    common[9]
+  },
+  [6112] = {
+    6112,
+    common[60],
+    "_txtDescExtra",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "#4682D3"
+  },
+  [6201] = {
+    6201,
+    common[62],
+    common[16],
+    common[4],
+    common[5],
+    "bp_unlock_level"
+  },
+  [6202] = {
+    6202,
+    common[62],
+    "txt",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "#FFFEED",
+    "#FFE58F"
+  },
+  [6301] = {
+    6301,
+    common[63],
+    common[29],
+    common[2],
+    nil,
+    nil,
+    nil,
+    "bp_yl_di1"
+  },
+  [6302] = {
+    6302,
+    common[63],
+    "_img_yuan",
+    common[4],
+    common[5],
+    "bp_yl_yuan"
+  },
+  [6303] = {
+    6303,
+    common[63],
+    "_img_star",
+    common[4],
+    common[5],
+    common[61]
+  },
+  [6304] = {
+    6304,
+    common[63],
+    "_rawCard",
+    common[2],
+    nil,
+    nil,
+    nil,
+    "n37bp_yl_card"
+  },
+  [6305] = {
+    6305,
+    common[63],
+    "_imgCardTitle",
+    common[4],
+    common[5],
+    "bp_yl_di3"
+  },
+  [6306] = {
+    6306,
+    common[63],
+    "_txtCardTitle",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9]
+  },
+  [6307] = {
+    6307,
+    common[63],
+    "_imgTitleStandard",
+    common[4],
+    common[5],
+    common[47]
+  },
+  [6308] = {
+    6308,
+    common[63],
+    "_txtTitleStandard",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9],
+    common[49]
+  },
+  [6309] = {
+    6309,
+    common[63],
+    "_imgTitleElite",
+    common[4],
+    common[5],
+    common[51]
+  },
+  [6310] = {
+    6310,
+    common[63],
+    "_txtTitleElite",
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[9],
+    common[49]
+  }
 }
 return config, "ID", key
-

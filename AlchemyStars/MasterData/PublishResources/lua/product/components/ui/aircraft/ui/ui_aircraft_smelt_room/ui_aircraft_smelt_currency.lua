@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_smelt_room/ui_aircraft_smelt_currency.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftSmeltCurrency", UICustomWidget)
 UIAircraftSmeltCurrency = UIAircraftSmeltCurrency
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftSmeltCurrency.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftSmeltCurrency:OnShow(uiParams)
   self:InitWidget()
   self.atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
-  self._waitTime = ((Cfg.cfg_global).shakeWaitTime).IntValue or 2000
-  self._shakeX = ((Cfg.cfg_global).shakeOffsetX).IntValue or 10
-  self._shakeY = ((Cfg.cfg_global).shakeOffsetY).IntValue or 10
-  self._color = Color(0.98039215686275, 0.92941176470588, 0.36078431372549)
-  self._shakeColor = Color(0.97647058823529, 0.21176470588235, 0.21176470588235)
+  self._waitTime = Cfg.cfg_global.shakeWaitTime.IntValue or 2000
+  self._shakeX = Cfg.cfg_global.shakeOffsetX.IntValue or 10
+  self._shakeY = Cfg.cfg_global.shakeOffsetY.IntValue or 10
+  self._color = Color(0.9803921568627451, 0.9294117647058824, 0.3607843137254902)
+  self._shakeColor = Color(0.9764705882352941, 0.21176470588235294, 0.21176470588235294)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSmeltCurrency.InitWidget = function(self)
-  -- function num : 0_1
+function UIAircraftSmeltCurrency:InitWidget()
   self.icon = self:GetUIComponent("Image", "icon")
   self.count = self:GetUIComponent("UILocalizationText", "count")
   self.root = self:GetUIComponent("RectTransform", "root")
@@ -29,121 +19,69 @@ UIAircraftSmeltCurrency.InitWidget = function(self)
   self.tip = self:GetGameObject("tip")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSmeltCurrency.SetCountStr = function(self, str)
-  -- function num : 0_2
-  (self.count):SetText(str)
+function UIAircraftSmeltCurrency:SetCountStr(str)
+  self.count:SetText(str)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSmeltCurrency.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIAircraftSmeltCurrency:OnHide()
   if self.shakeTweener then
-    (self.shakeTweener):Kill()
+    self.shakeTweener:Kill()
     self.shakeTweener = nil
   end
   if self._waitTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._waitTimer)
+    GameGlobal.Timer():CancelEvent(self._waitTimer)
     self._waitTimer = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSmeltCurrency.SetData = function(self, id, count, tipCB)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (Cfg.cfg_top_tips)[id]
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.icon).sprite = (self.atlas):GetSprite(cfg.Icon)
-  ;
-  (self.count):SetText(count)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.count).color = self._color
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R5 in 'UnsetPending'
-
+function UIAircraftSmeltCurrency:SetData(id, count, tipCB)
+  local cfg = Cfg.cfg_top_tips[id]
+  self.icon.sprite = self.atlas:GetSprite(cfg.Icon)
+  self.count:SetText(count)
+  self.count.color = self._color
   if id == RoleAssetID.RoleAssetAtom then
-    (self.item).preferredWidth = 261
-    ;
-    (self.tip):SetActive(true)
+    self.item.preferredWidth = 261
+    self.tip:SetActive(true)
     self._tipCB = tipCB
   else
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.item).preferredWidth = 214
-    ;
-    (self.tip):SetActive(false)
+    self.item.preferredWidth = 214
+    self.tip:SetActive(false)
     self._tipCB = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSmeltCurrency.Shake = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIAircraftSmeltCurrency:Shake()
   if self.shakeTweener then
-    (self.shakeTweener):Kill()
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.root).anchoredPosition = Vector2(0, 0)
+    self.shakeTweener:Kill()
+    self.root.anchoredPosition = Vector2(0, 0)
   end
   if self._waitTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._waitTimer)
+    GameGlobal.Timer():CancelEvent(self._waitTimer)
     self._waitTimer = nil
   end
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.count).color = self._shakeColor
-  self.shakeTweener = ((self.root):DOShakePosition(1, Vector3(self._shakeX, self._shakeY, 0))):OnComplete(function()
-    -- function num : 0_5_0 , upvalues : self, _ENV
+  self.count.color = self._shakeColor
+  self.shakeTweener = self.root:DOShakePosition(1, Vector3(self._shakeX, self._shakeY, 0)):OnComplete(function()
     self.shakeTweener = nil
-    self._waitTimer = ((GameGlobal.Timer)()):AddEvent(self._waitTime, function()
-      -- function num : 0_5_0_0 , upvalues : self
-      -- DECOMPILER ERROR at PC2: Confused about usage of register: R0 in 'UnsetPending'
-
-      (self.count).color = self._color
+    self._waitTimer = GameGlobal.Timer():AddEvent(self._waitTime, function()
+      self.count.color = self._color
       self._waitTimer = nil
-    end
-)
-  end
-)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSmeltCurrency.tipOnClick = function(self, go)
-  -- function num : 0_6
-  (self._tipCB)((go.transform).position)
+function UIAircraftSmeltCurrency:tipOnClick(go)
+  self._tipCB(go.transform.position)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSmeltCurrency.Reset = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIAircraftSmeltCurrency:Reset()
   if self.shakeTweener then
-    (self.shakeTweener):Kill()
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.root).anchoredPosition = Vector2(0, 0)
+    self.shakeTweener:Kill()
+    self.root.anchoredPosition = Vector2(0, 0)
     self.shakeTweener = nil
   end
   if self._waitTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._waitTimer)
+    GameGlobal.Timer():CancelEvent(self._waitTimer)
     self._waitTimer = nil
   end
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.count).color = self._color
+  self.count.color = self._color
 end
-
-

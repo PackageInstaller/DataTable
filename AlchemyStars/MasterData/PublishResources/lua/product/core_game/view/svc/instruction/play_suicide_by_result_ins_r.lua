@@ -1,37 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_suicide_by_result_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlaySuicideByResultInstruction", BaseInstruction)
 PlaySuicideByResultInstruction = PlaySuicideByResultInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySuicideByResultInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySuicideByResultInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = routineComponent:GetEffectResultByArrayAll(SkillEffectType.Suicide)
   if not resultArray then
-    return 
+    return
   end
   local svc = world:GetService("MonsterShowRender")
-  for _,result in ipairs(resultArray) do
+  for _, result in ipairs(resultArray) do
     local targetID = result:GetTargetID()
-    do
-      local e = world:GetEntityByID(targetID)
-      if e then
-        (TaskManager:GetInstance()):CoreGameStartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : svc, e
-    svc:_DoOneMonsterDead(TT, e)
-  end
-)
-      end
+    local e = world:GetEntityByID(targetID)
+    if e then
+      TaskManager:GetInstance():CoreGameStartTask(function(TT)
+        svc:_DoOneMonsterDead(TT, e)
+      end)
     end
   end
   local pieceService = world:GetService("Piece")
   pieceService:RefreshPieceAnim()
 end
-
-

@@ -1,132 +1,82 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s1/common/ui_s1_go_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS1GoBtn", UICustomWidget)
 UIS1GoBtn = UIS1GoBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS1GoBtn.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._constBtnName = ((GameGlobal.GetUIModule)(SeasonModule)):GetGoBtnKey()
+function UIS1GoBtn:OnShow()
+  self._constBtnName = GameGlobal.GetUIModule(SeasonModule):GetGoBtnKey()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1GoBtn.OnHide = function(self)
-  -- function num : 0_1
+function UIS1GoBtn:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1GoBtn.SetData = function(self, seasonId, component)
-  -- function num : 0_2
+function UIS1GoBtn:SetData(seasonId, component)
   self._seasonId = seasonId
   self._component = component
-  if component then
-    local isOpen = component:ComponentIsOpen()
-  end
+  local isOpen = component and component:ComponentIsOpen()
   self._state = isOpen and 1 or 2
   self:_SetState(self._state)
   self:_Refresh(component)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1GoBtn._Refresh = function(self, component)
-  -- function num : 0_3 , upvalues : _ENV
+function UIS1GoBtn:_Refresh(component)
   local isShow = component ~= nil
-  ;
-  (self:GetGameObject("_topTip")):SetActive(isShow)
+  self:GetGameObject("_topTip"):SetActive(isShow)
   if not isShow then
-    return 
+    return
   end
   local cur, ceil = component:GetItemCount()
-  local str = (string.format)("<color=#ff9d32>%s</color>/%s", cur, ceil)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_text", str)
+  local str = string.format("<color=#ff9d32>%s</color>/%s", cur, ceil)
+  UIWidgetHelper.SetLocalizationText(self, "_text", str)
   local itemId = component:GetItemId()
   local atlasName = "UICommon.spriteatlas"
   local spriteName = "toptoon_" .. itemId
-  ;
-  (UIWidgetHelper.SetImageSprite)(self, "_icon", atlasName, spriteName)
+  UIWidgetHelper.SetImageSprite(self, "_icon", atlasName, spriteName)
   self:_CheckPoint()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1GoBtn._SetState = function(self, state)
-  -- function num : 0_4
-  (self:GetGameObject("_lock")):SetActive(state == 2)
+function UIS1GoBtn:_SetState(state)
+  self:GetGameObject("_lock"):SetActive(state == 2)
   local alpha = state == 2 and 0.5 or 1
   local obj = self:GetUIComponent("CanvasGroup", "_alphaGroup")
   obj.alpha = alpha
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1GoBtn._CalcNew = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if self._component then
-    local isOpen = (self._component):ComponentIsOpen()
-  end
-  local isNew = not (UISeasonLocalDBHelper.SeasonBtn_Has)(self._constBtnName, "New")
-  return not isOpen or isNew
+function UIS1GoBtn:_CalcNew()
+  local isOpen = self._component and self._component:ComponentIsOpen()
+  local isNew = not UISeasonLocalDBHelper.SeasonBtn_Has(self._constBtnName, "New")
+  return isOpen and isNew
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1GoBtn._CalcRed = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if self._component then
-    local isOpen = (self._component):ComponentIsOpen()
-  end
+function UIS1GoBtn:_CalcRed()
+  local isOpen = self._component and self._component:ComponentIsOpen()
   if not isOpen then
     return isOpen
   end
-  local lastTime = (UISeasonLocalDBHelper.SeasonBtn_Get)(self._constBtnName, "Red")
-  ;
-  (Log.debug)("UIS1GoBtn:_CalcRed() lastTime = ", lastTime)
+  local lastTime = UISeasonLocalDBHelper.SeasonBtn_Get(self._constBtnName, "Red")
+  Log.debug("UIS1GoBtn:_CalcRed() lastTime = ", lastTime)
   local isRed = HelperProxy:IsCrossDayTo(lastTime)
-  local cur, ceil = (self._component):GetItemCount()
-  do return not isOpen or not isRed or cur > 0 end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local cur, ceil = self._component:GetItemCount()
+  return isOpen and isRed and 0 < cur
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1GoBtn._CheckPoint = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIS1GoBtn:_CheckPoint()
   local new = self:_CalcNew()
   local red = self:_CalcRed()
-  ;
-  (UIWidgetHelper.SetNewAndReds)(self, new, red, "_new", "_red")
+  UIWidgetHelper.SetNewAndReds(self, new, red, "_new", "_red")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1GoBtn.BtnOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (Log.info)("UIS1GoBtn:BtnOnClick")
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+function UIS1GoBtn:BtnOnClick()
+  Log.info("UIS1GoBtn:BtnOnClick")
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
   if seasonModule:CheckSeasonClose_ShowClientError(self._seasonId) then
-    return 
+    return
   end
   if self._state == 2 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_s1_main_btn_over"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_season_s1_main_btn_over"))
+    return
   end
-  ;
-  ((GameGlobal.GetUIModule)(SeasonModule)):EnterCurrentSeasonMainUI()
-  ;
-  (UISeasonLocalDBHelper.SeasonBtn_Set)(self._constBtnName, "New")
-  local now = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
-  ;
-  (UISeasonLocalDBHelper.SeasonBtn_Set)(self._constBtnName, "Red", now)
+  GameGlobal.GetUIModule(SeasonModule):EnterCurrentSeasonMainUI()
+  UISeasonLocalDBHelper.SeasonBtn_Set(self._constBtnName, "New")
+  local now = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
+  UISeasonLocalDBHelper.SeasonBtn_Set(self._constBtnName, "Red", now)
   self:_CheckPoint()
 end
-
-

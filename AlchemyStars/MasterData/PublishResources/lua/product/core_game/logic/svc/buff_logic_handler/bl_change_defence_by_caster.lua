@@ -1,29 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_defence_by_caster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeDefenceByCaster", BuffLogicBase)
 BuffLogicChangeDefenceByCaster = BuffLogicChangeDefenceByCaster
 local ChangeDefenceByCasterAttributeType = {Defence = 0}
 _enum("ChangeDefenceByCasterAttributeType", ChangeDefenceByCasterAttributeType)
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicChangeDefenceByCaster.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : ChangeDefenceByCasterAttributeType
+function BuffLogicChangeDefenceByCaster:Constructor(buffInstance, logicParam)
   self._baseAttrType = ChangeDefenceByCasterAttributeType.Defence
   self._mul = logicParam.mul or 0
   self._light = logicParam.light == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeDefenceByCaster.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : ChangeDefenceByCasterAttributeType, _ENV
-  local context = (self._buffInstance):Context()
+function BuffLogicChangeDefenceByCaster:DoLogic()
+  local context = self._buffInstance:Context()
   if not context then
-    return 
+    return
   end
   local eCaster = context.casterEntity
   local cAttrCaster = eCaster:Attributes()
@@ -32,51 +21,35 @@ BuffLogicChangeDefenceByCaster.DoLogic = function(self)
     base = cAttrCaster:GetAttribute("Defense")
   end
   if not base then
-    return 
+    return
   end
   local val = base * self._mul
-  local eBeneficiary = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):ChangeBaseDefence(eBeneficiary, self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix, val)
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._buffInstance)._ChangeDefenceType = ModifyBaseDefenceType.DefenceConstantFix
+  local eBeneficiary = self._buffInstance:Entity()
+  self._buffLogicService:ChangeBaseDefence(eBeneficiary, self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix, val)
+  self._buffInstance._ChangeDefenceType = ModifyBaseDefenceType.DefenceConstantFix
   local result = BuffResultChangeDefenceByCaster:New(eCaster:GetID(), self._light)
   return result
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeDefenceByCaster.DoOverlap = function(self, logicParam, context)
-  -- function num : 0_2
+function BuffLogicChangeDefenceByCaster:DoOverlap(logicParam, context)
   self._mul = self._mul + logicParam.mul
   return self:DoLogic()
 end
 
 _class("BuffLogicUndoChangeDefenceByCaster", BuffLogicBase)
 BuffLogicUndoChangeDefenceByCaster = BuffLogicUndoChangeDefenceByCaster
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicUndoChangeDefenceByCaster.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicUndoChangeDefenceByCaster:Constructor(buffInstance, logicParam)
   self._black = logicParam.black == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicUndoChangeDefenceByCaster.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local eBeneficiary = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):RemoveBaseDefence(eBeneficiary, self:GetBuffSeq(), (self._buffInstance)._ChangeDefenceType)
-  local context = (self._buffInstance):Context()
+function BuffLogicUndoChangeDefenceByCaster:DoLogic()
+  local eBeneficiary = self._buffInstance:Entity()
+  self._buffLogicService:RemoveBaseDefence(eBeneficiary, self:GetBuffSeq(), self._buffInstance._ChangeDefenceType)
+  local context = self._buffInstance:Context()
   if not context then
-    return 
+    return
   end
-  local result = BuffResultUndoChangeDefenceByCaster:New((context.casterEntity):GetID(), self._black)
+  local result = BuffResultUndoChangeDefenceByCaster:New(context.casterEntity:GetID(), self._black)
   return result
 end
-
-

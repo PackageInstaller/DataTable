@@ -1,47 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/svc/math_service.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("random")
 _class("MathService", BaseService)
 MathService = MathService
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MathService.Constructor = function(self, world)
-  -- function num : 0_0
+function MathService:Constructor(world)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MathService.ClampValue = function(self, value, min, max)
-  -- function num : 0_1
+function MathService:ClampValue(value, min, max)
   if value < min then
     value = min
-  else
-    if max < value then
-      value = max
-    end
+  elseif max < value then
+    value = max
   end
   return value
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MathService.Rounding = function(self, value)
-  -- function num : 0_2 , upvalues : _ENV
-  local f = (math.floor)(value)
+function MathService:Rounding(value)
+  local f = math.floor(value)
   if f == value then
     return f
   else
-    return (math.floor)(value + 0.5)
+    return math.floor(value + 0.5)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MathService.LerpGetY = function(self, v0, v1, x)
-  -- function num : 0_3
+function MathService:LerpGetY(v0, v1, x)
   local x0 = v0.x
   local y0 = v0.y
   local x1 = v1.x
@@ -49,11 +31,6 @@ MathService.LerpGetY = function(self, v0, v1, x)
   return y0 + (y1 - y0) / (x1 - x0) * (x - x0)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MathService.LerpGetX = function(self, v0, v1, y)
-  -- function num : 0_4 , upvalues : _ENV
-  return self:LerpGetY((Vector2.New)(v0.y, v0.x), (Vector2.New)(v1.y, v1.x), y)
+function MathService:LerpGetX(v0, v1, y)
+  return self:LerpGetY(Vector2.New(v0.y, v0.x), Vector2.New(v1.y, v1.x), y)
 end
-
-

@@ -1,24 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_smelt_room/ui_aircraft_smelt_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftSmeltItem", UICustomWidget)
 UIAircraftSmeltItem = UIAircraftSmeltItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftSmeltItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._selectNameColor = {[1] = Color(0.003921568627451, 0.003921568627451, 0.003921568627451, 1), [2] = Color(0.7843137254902, 0.7843137254902, 0.7843137254902, 1)}
-  self._selectBgSize = {[1] = Vector2(413, 124), [2] = Vector2(393, 84)}
+function UIAircraftSmeltItem:OnShow(uiParams)
+  self._selectNameColor = {
+    [1] = Color(0.00392156862745098, 0.00392156862745098, 0.00392156862745098, 1),
+    [2] = Color(0.7843137254901961, 0.7843137254901961, 0.7843137254901961, 1)
+  }
+  self._selectBgSize = {
+    [1] = Vector2(413, 124),
+    [2] = Vector2(393, 84)
+  }
   self._atlas = self:GetAsset("UIAircraftSmeltRoom.spriteatlas", LoadType.SpriteAtlas)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSmeltItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIAircraftSmeltItem:InitWidget()
   self.name = self:GetUIComponent("UILocalizationText", "name")
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.unlock = self:GetUIComponent("UILocalizationText", "unlock")
@@ -29,114 +25,66 @@ UIAircraftSmeltItem.InitWidget = function(self)
   self.colorGo = self:GetGameObject("color")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSmeltItem.SetData = function(self, idx, cfg, onClick, lockInfo, sp1, sp2)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftSmeltItem:SetData(idx, cfg, onClick, lockInfo, sp1, sp2)
   self._selectSprite = sp1
   self._unSelectSprite = sp2
   self._index = idx
-  local itemID = (cfg.Output)[1]
-  local itemCfg = (Cfg.cfg_item)[itemID]
+  local itemID = cfg.Output[1]
+  local itemCfg = Cfg.cfg_item[itemID]
   if lockInfo then
     self._lockType = lockInfo[1]
     self._lockParam = lockInfo[2]
   else
     self._lockType = nil
   end
-  ;
-  (self.name):SetText((StringTable.Get)(itemCfg.Name))
-  ;
-  (self.icon):LoadImage(itemCfg.Icon)
+  self.name:SetText(StringTable.Get(itemCfg.Name))
+  self.icon:LoadImage(itemCfg.Icon)
   self.quality = itemCfg.Color
   self._onClick = onClick
   if self._lockType == SmeltItemType.SIT_Mission then
-    local chapter = ((Cfg.cfg_mission)[self._lockParam]).Chapter
-    self._lockTip = (StringTable.Get)("str_aircraft_trunk_unlock", chapter[1], chapter[2])
-    ;
-    (self.unlock):SetText(self._lockTip)
-    ;
-    (self.lockGO):SetActive(true)
+    local chapter = Cfg.cfg_mission[self._lockParam].Chapter
+    self._lockTip = StringTable.Get("str_aircraft_trunk_unlock", chapter[1], chapter[2])
+    self.unlock:SetText(self._lockTip)
+    self.lockGO:SetActive(true)
+  elseif self._lockType == SmeltItemType.SIT_Lv then
+    self._lockTip = StringTable.Get("str_aircraft_smelt_room_unlock", self._lockParam)
+    self.unlock:SetText(self._lockTip)
+    self.lockGO:SetActive(true)
   else
-    do
-      if self._lockType == SmeltItemType.SIT_Lv then
-        self._lockTip = (StringTable.Get)("str_aircraft_smelt_room_unlock", self._lockParam)
-        ;
-        (self.unlock):SetText(self._lockTip)
-        ;
-        (self.lockGO):SetActive(true)
-      else
-        ;
-        (self.lockGO):SetActive(false)
-      end
-      self:Cancel()
-    end
+    self.lockGO:SetActive(false)
   end
+  self:Cancel()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSmeltItem.Select = function(self)
-  -- function num : 0_3
+function UIAircraftSmeltItem:Select()
   if self._lockType then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.select).sprite = self._selectSprite
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.selectRect).sizeDelta = (self._selectBgSize)[1]
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.name).color = (self._selectNameColor)[1]
+  self.select.sprite = self._selectSprite
+  self.selectRect.sizeDelta = self._selectBgSize[1]
+  self.name.color = self._selectNameColor[1]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSmeltItem.Cancel = function(self)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.select).sprite = self._unSelectSprite
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.selectRect).sizeDelta = (self._selectBgSize)[2]
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.name).color = (self._selectNameColor)[2]
+function UIAircraftSmeltItem:Cancel()
+  self.select.sprite = self._unSelectSprite
+  self.selectRect.sizeDelta = self._selectBgSize[2]
+  self.name.color = self._selectNameColor[2]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSmeltItem.itemOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIAircraftSmeltItem:itemOnClick(go)
   if self._lockType then
-    (ToastManager.ShowToast)(self._lockTip)
-    return 
+    ToastManager.ShowToast(self._lockTip)
+    return
   end
   if self._onClick then
-    (self._onClick)(self._index)
+    self._onClick(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSmeltItem.ShowColor = function(self)
-  -- function num : 0_6
+function UIAircraftSmeltItem:ShowColor()
   if self.colorGo then
-    (self.colorGo):SetActive(true)
-    local sp = (self._atlas):GetSprite("wind_ronglian_pinji" .. self.quality)
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.color).sprite = sp
+    self.colorGo:SetActive(true)
+    local sp = self._atlas:GetSprite("wind_ronglian_pinji" .. self.quality)
+    self.color.sprite = sp
   end
 end
-
-

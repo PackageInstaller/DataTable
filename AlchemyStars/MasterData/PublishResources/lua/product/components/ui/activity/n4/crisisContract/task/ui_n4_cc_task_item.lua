@@ -1,45 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n4/crisisContract/task/ui_n4_cc_task_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN4CCTaskItem", UICustomWidget)
 UIN4CCTaskItem = UIN4CCTaskItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN4CCTaskItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN4CCTaskItem:OnShow(uiParams)
   local iconRect = self:GetUIComponent("RectTransform", "_icon")
-  self._defaultSizeDelta = Vector2((iconRect.sizeDelta).x, (iconRect.sizeDelta).y)
+  self._defaultSizeDelta = Vector2(iconRect.sizeDelta.x, iconRect.sizeDelta.y)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskItem.SetData = function(self, roleAsset, tipsCallback)
-  -- function num : 0_1
+function UIN4CCTaskItem:SetData(roleAsset, tipsCallback)
   self._roleAsset = roleAsset
   self._tipsCallback = tipsCallback
   self:_SetIcon(self._roleAsset)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskItem._SetIcon = function(self, roleAsset)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN4CCTaskItem:_SetIcon(roleAsset)
   local itemId, itemText = roleAsset.assetid, roleAsset.count
-  ;
-  (UIWidgetHelper.SetItemIcon)(self, itemId, "_icon")
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txt", itemText)
+  UIWidgetHelper.SetItemIcon(self, itemId, "_icon")
+  UIWidgetHelper.SetLocalizationText(self, "_txt", itemText)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskItem.BtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIN4CCTaskItem:BtnOnClick(go)
   if self._tipsCallback then
-    (self._tipsCallback)((self._roleAsset).assetid, (go.transform).position)
+    self._tipsCallback(self._roleAsset.assetid, go.transform.position)
   end
 end
-
-

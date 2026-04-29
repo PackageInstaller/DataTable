@@ -1,102 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/player/season_maze_player_follower.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazePlayerFollower", Object)
 SeasonMazePlayerFollower = SeasonMazePlayerFollower
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazePlayerFollower.Constructor = function(self, player, mazeID)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMazePlayerFollower:Constructor(player, mazeID)
   self._player = player
-  self._req = (ResourceManager:GetInstance()):SyncLoadAsset("S1000012.prefab", LoadType.GameObject)
-  self._gameObject = (self._req).Obj
-  ;
-  (self._gameObject):SetActive(true)
-  self._transform = (self._gameObject).transform
-  local cfg = (Cfg.cfg_season_maze_client)[mazeID]
-  self._deltaPos = Vector3((cfg.FollowerOffset)[1], (cfg.FollowerOffset)[2], (cfg.FollowerOffset)[3])
+  self._req = ResourceManager:GetInstance():SyncLoadAsset("S1000012.prefab", LoadType.GameObject)
+  self._gameObject = self._req.Obj
+  self._gameObject:SetActive(true)
+  self._transform = self._gameObject.transform
+  local cfg = Cfg.cfg_season_maze_client[mazeID]
+  self._deltaPos = Vector3(cfg.FollowerOffset[1], cfg.FollowerOffset[2], cfg.FollowerOffset[3])
   self._followParam = cfg.FollowParam
-  self._targetPos = (self._player):Position() + self._deltaPos
+  self._targetPos = self._player:Position() + self._deltaPos
   self._curPos = self._targetPos
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._transform).position = self._curPos
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._transform).rotation = (Quaternion.Euler)(-43.6, 2.7, -2.4)
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._transform).localScale = Vector3.one * 1
-  self._anim = (self._gameObject):GetComponentInChildren(typeof(UnityEngine.Animation))
-  self._effectRes = (ResourceManager:GetInstance()):SyncLoadAsset("pfb_S1000012_main_Bone009S.prefab", LoadType.GameObject)
-  local effectObj = (self._effectRes).Obj
+  self._transform.position = self._curPos
+  self._transform.rotation = Quaternion.Euler(-43.6, 2.7, -2.4)
+  self._transform.localScale = Vector3.one * 1
+  self._anim = self._gameObject:GetComponentInChildren(typeof(UnityEngine.Animation))
+  self._effectRes = ResourceManager:GetInstance():SyncLoadAsset("pfb_S1000012_main_Bone009S.prefab", LoadType.GameObject)
+  local effectObj = self._effectRes.Obj
   effectObj:SetActive(true)
   local effectTr = effectObj.transform
-  effectTr:SetParent((GameObjectHelper.FindChild)(self._transform, "Bone009-S"))
+  effectTr:SetParent(GameObjectHelper.FindChild(self._transform, "Bone009-S"))
   effectTr.localPosition = Vector3.zero
   effectTr.localRotation = Quaternion.identity
   effectTr.localScale = Vector3.one
-  self._shadow = SeasonMazePlayerShadow:New((self._transform):Find("Root"), -0.35)
+  self._shadow = SeasonMazePlayerShadow:New(self._transform:Find("Root"), -0.35)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayerFollower.Update = function(self, dtMS)
-  -- function num : 0_1 , upvalues : _ENV
-  self._targetPos = (self._player):Position() + self._deltaPos
-  self._curPos = (Vector3.Lerp)(self._curPos, self._targetPos, dtMS / 1000 * self._followParam)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._transform).position = self._curPos
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._transform).rotation = (self._player):ModelRotation()
+function SeasonMazePlayerFollower:Update(dtMS)
+  self._targetPos = self._player:Position() + self._deltaPos
+  self._curPos = Vector3.Lerp(self._curPos, self._targetPos, dtMS / 1000 * self._followParam)
+  self._transform.position = self._curPos
+  self._transform.rotation = self._player:ModelRotation()
   if self._shadow then
-    (self._shadow):Update(dtMS)
+    self._shadow:Update(dtMS)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayerFollower.Dispose = function(self)
-  -- function num : 0_2
-  (self._effectRes):Dispose()
+function SeasonMazePlayerFollower:Dispose()
+  self._effectRes:Dispose()
   self._effectRes = nil
   self._transform = nil
   self._gameObject = nil
-  ;
-  (self._req):Dispose()
+  self._req:Dispose()
   self._req = nil
   if self._shadow then
-    (self._shadow):Dispose()
+    self._shadow:Dispose()
     self._shadow = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayerFollower.FollowImmidiately = function(self)
-  -- function num : 0_3
-  self._targetPos = (self._player):Position() + self._deltaPos
+function SeasonMazePlayerFollower:FollowImmidiately()
+  self._targetPos = self._player:Position() + self._deltaPos
   self._curPos = self._targetPos
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._transform).position = self._curPos
+  self._transform.position = self._curPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayerFollower.Animation = function(self)
-  -- function num : 0_4
+function SeasonMazePlayerFollower:Animation()
   return self._anim
 end
-
-

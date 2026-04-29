@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_rotate_to_pickup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParamRotateToPickup", SkillEffectParamBase)
 SkillEffectParamRotateToPickup = SkillEffectParamRotateToPickup
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamRotateToPickup.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParamRotateToPickup:GetEffectType()
   return SkillEffectType.RotateToPickup
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamRotateToPickup.Constructor = function(self, t)
-  -- function num : 0_1
+function SkillEffectParamRotateToPickup:Constructor(t)
   self._pickupIndex = t.pickupIndex or 1
   self._useOriDir = t.useOriDir or false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamRotateToPickup.GetPickupIndex = function(self)
-  -- function num : 0_2
+function SkillEffectParamRotateToPickup:GetPickupIndex()
   return self._pickupIndex
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamRotateToPickup.IsUseOriDir = function(self)
-  -- function num : 0_3
+function SkillEffectParamRotateToPickup:IsUseOriDir()
   return self._useOriDir
 end
-
-

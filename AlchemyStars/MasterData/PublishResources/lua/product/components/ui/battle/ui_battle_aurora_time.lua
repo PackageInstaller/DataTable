@@ -1,54 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_aurora_time.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleAuroraTime", UICustomWidget)
 UIBattleAuroraTime = UIBattleAuroraTime
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleAuroraTime.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBattleAuroraTime:OnShow()
   self._auroraTimeEff = self:GetGameObject("uieff_jgsk")
   self._leftText = self:GetUIComponent("UILocalizationText", "txt_left")
   self._rightText = self:GetUIComponent("UILocalizationText", "txt_right")
   self._leftTextLayoutElement = self:GetUIComponent("LayoutElement", "txt_left")
   self._rightTextLayoutElement = self:GetUIComponent("LayoutElement", "txt_right")
-  ;
-  (self._auroraTimeEff):SetActive(false)
+  self._auroraTimeEff:SetActive(false)
   self:AttachEvent(GameEventType.ShowHideAuroraTime, self.ShowHideAuroraTime)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleAuroraTime.ShowHideAuroraTime = function(self, isShow)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._auroraTimeEff):SetActive(isShow)
+function UIBattleAuroraTime:ShowHideAuroraTime(isShow)
+  self._auroraTimeEff:SetActive(isShow)
   if isShow then
-    (self._leftText):SetText((StringTable.Get)("str_battle_aurora_time_str_aurora"))
-    ;
-    (self._rightText):SetText((StringTable.Get)("str_battle_aurora_time_str_time"))
-    local leftWidth = (self._leftText).preferredWidth
-    local rightWidth = (self._rightText).preferredWidth
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-    if rightWidth < leftWidth then
-      (self._rightTextLayoutElement).minWidth = leftWidth
+    self._leftText:SetText(StringTable.Get("str_battle_aurora_time_str_aurora"))
+    self._rightText:SetText(StringTable.Get("str_battle_aurora_time_str_time"))
+    local leftWidth = self._leftText.preferredWidth
+    local rightWidth = self._rightText.preferredWidth
+    if leftWidth > rightWidth then
+      self._rightTextLayoutElement.minWidth = leftWidth
     else
-      -- DECOMPILER ERROR at PC30: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._leftTextLayoutElement).minWidth = rightWidth
+      self._leftTextLayoutElement.minWidth = rightWidth
     end
   end
-  do
-    if isShow then
-      (AudioHelperController.SetBGMMixerGroup)(AudioConstValue.AuroralTimeMixerGroupName, AudioConstValue.AuroralTimeMixerValue)
-    else
-      ;
-      (AudioHelperController.SetBGMMixerGroup)(AudioConstValue.AuroralTimeMixerGroupName, AudioConstValue.DefaultMixerValue)
-    end
+  if isShow then
+    AudioHelperController.SetBGMMixerGroup(AudioConstValue.AuroralTimeMixerGroupName, AudioConstValue.AuroralTimeMixerValue)
+  else
+    AudioHelperController.SetBGMMixerGroup(AudioConstValue.AuroralTimeMixerGroupName, AudioConstValue.DefaultMixerValue)
   end
 end
-
-

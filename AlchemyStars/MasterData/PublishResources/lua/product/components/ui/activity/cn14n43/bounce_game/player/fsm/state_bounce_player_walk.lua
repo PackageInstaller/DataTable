@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/player/fsm/state_bounce_player_walk.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateBouncePlayerWalk", StateBouncePlayerBase)
 StateBouncePlayerWalk = StateBouncePlayerWalk
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateBouncePlayerWalk.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
+function StateBouncePlayerWalk:OnEnter(TT, ...)
   self:Init()
   self:PlayAnim()
   if BounceDebug.ShowObjRect then
@@ -16,28 +9,14 @@ StateBouncePlayerWalk.OnEnter = function(self, TT, ...)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerWalk.OnExit = function(self, TT)
-  -- function num : 0_1
+function StateBouncePlayerWalk:OnExit(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerWalk.OnJump = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.playerData).curSpeed = (self.playerData).baseJumpSpeed
-  ;
-  (self.player):ChgPlayerState(StateBouncePlayer.Jump)
+function StateBouncePlayerWalk:OnJump()
+  self.playerData.curSpeed = self.playerData.baseJumpSpeed
+  self.player:ChgPlayerState(StateBouncePlayer.Jump)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerWalk.GetStateType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function StateBouncePlayerWalk:GetStateType()
   return StateBouncePlayer.Walk
 end
-
-

@@ -1,38 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_transfer_layer_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewTransferLayer", BuffViewBase)
 BuffViewTransferLayer = BuffViewTransferLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewTransferLayer.PlayView = function(self, TT, notify, trace)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewTransferLayer:PlayView(TT, notify, trace)
   local res = self._buffResult
   local curLayer = res:GetLayer()
   local buffseq = res:GetBuffSeq()
   local addLayer = res:GetAddLayer()
   local targetID = res:GetEntityID()
-  local targetEntity = (self._world):GetEntityByID(targetID)
+  local targetEntity = self._world:GetEntityByID(targetID)
   local buffView = targetEntity:BuffView()
   local viewInstance = buffView:GetBuffViewInstance(buffseq)
   if not viewInstance then
-    (Log.error)("BuffViewTransferLayer not find viewInstance! entity=", targetEntity:GetID(), " layer=", curLayer)
-    return 
+    Log.error("BuffViewTransferLayer not find viewInstance! entity=", targetEntity:GetID(), " layer=", curLayer)
+    return
   end
-  ;
-  (Log.debug)("BuffViewTransferLayer entity=", targetEntity:GetID(), " layer=", curLayer)
+  Log.debug("BuffViewTransferLayer entity=", targetEntity:GetID(), " layer=", curLayer)
   viewInstance:SetLayerCount(TT, curLayer)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewTransferLayer.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewTransferLayer:IsNotifyMatch(notify)
   return true
 end
-
-

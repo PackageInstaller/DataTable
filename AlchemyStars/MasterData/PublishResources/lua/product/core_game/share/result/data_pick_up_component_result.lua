@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_pick_up_component_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataPickUpComponentResult", Object)
 DataPickUpComponentResult = DataPickUpComponentResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataPickUpComponentResult.Constructor = function(self, entityID, pickUpGridList, directionPickupData, reflectDir, pickUpExtraParam)
-  -- function num : 0_0
+function DataPickUpComponentResult:Constructor(entityID, pickUpGridList, directionPickupData, reflectDir, pickUpExtraParam)
   self.entityID = entityID
   self.pickUpGridList = pickUpGridList
   self.directionPickupData = directionPickupData
@@ -16,39 +9,22 @@ DataPickUpComponentResult.Constructor = function(self, entityID, pickUpGridList,
   self.pickUpExtraParam = pickUpExtraParam
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPickUpComponentResult.GetEntityID = function(self)
-  -- function num : 0_1
+function DataPickUpComponentResult:GetEntityID()
   return self.entityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPickUpComponentResult.GetPickUpGridList = function(self)
-  -- function num : 0_2
+function DataPickUpComponentResult:GetPickUpGridList()
   return self.pickUpGridList
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPickUpComponentResult.GetDirectionPickupData = function(self)
-  -- function num : 0_3
+function DataPickUpComponentResult:GetDirectionPickupData()
   return self.directionPickupData
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPickUpComponentResult.GetReflectDir = function(self)
-  -- function num : 0_4
+function DataPickUpComponentResult:GetReflectDir()
   return self.reflectDir
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPickUpComponentResult.GetPickUpExtraParam = function(self)
-  -- function num : 0_5
+function DataPickUpComponentResult:GetPickUpExtraParam()
   return self.pickUpExtraParam
 end
-
-

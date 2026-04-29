@@ -1,92 +1,69 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_random_grids_and_type_size.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_RandomGridsAndTypeSize", SkillScopeCalculator_Base)
 SkillScopeCalculator_RandomGridsAndTypeSize = SkillScopeCalculator_RandomGridsAndTypeSize
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_RandomGridsAndTypeSize.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_RandomGridsAndTypeSize:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local size = scopeParam.size
-  local GetRandomPoints = function(rdmPoints)
-    -- function num : 0_0_0 , upvalues : self, _ENV, scopeParam, size
+  
+  local function GetRandomPoints(rdmPoints)
     if not rdmPoints then
-      return 
+      return
     end
     local filtered = {}
-    local blockGrids = (self._gridFilter):GetBlockGridTrapPosList()
-    for i,v in ipairs(rdmPoints) do
+    local blockGrids = self._gridFilter:GetBlockGridTrapPosList()
+    for i, v in ipairs(rdmPoints) do
       local tbl = {}
-      for j,vj in ipairs(v) do
-        if not (table.icontains)(blockGrids, vj) then
-          (table.insert)(tbl, vj)
+      for j, vj in ipairs(v) do
+        if not table.icontains(blockGrids, vj) then
+          table.insert(tbl, vj)
         end
       end
-      ;
-      (table.insert)(filtered, tbl)
+      table.insert(filtered, tbl)
     end
     local randomPeices = {}
-    for i,v in ipairs(filtered) do
-      local len = (table.count)(v)
+    for i, v in ipairs(filtered) do
+      local len = table.count(v)
       local idx = 1
-      if len > 0 then
-        idx = (self._gridFilter):_GetRandomNumber(1, len)
+      if 0 < len then
+        idx = self._gridFilter:_GetRandomNumber(1, len)
       end
       local posList = {}
       if scopeParam.type == 1 then
         posList = self:CalSquare(size, v[idx])
-      else
-        if scopeParam.type == 2 then
-          posList = self:CalCross(size, v[idx])
-        end
+      elseif scopeParam.type == 2 then
+        posList = self:CalCross(size, v[idx])
       end
-      ;
-      (table.appendArray)(randomPeices, posList)
+      table.appendArray(randomPeices, posList)
     end
     return randomPeices
   end
-
+  
   local grids = GetRandomPoints(scopeParam.posList)
   local result = SkillScopeResult:New(SkillScopeType.RandomGridsAndTypeSize, centerPos, grids, grids)
   return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_RandomGridsAndTypeSize.CalSquare = function(self, size, pos)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeCalculator_RandomGridsAndTypeSize:CalSquare(size, pos)
   local arr = {}
   local tmpSize = size - 1
   for j = 0, tmpSize do
     for k = 0, tmpSize do
       if pos then
-        (table.insert)(arr, pos + Vector2(j, k))
+        table.insert(arr, pos + Vector2(j, k))
       end
     end
   end
   return arr
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_RandomGridsAndTypeSize.CalCross = function(self, size, pos)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillScopeCalculator_RandomGridsAndTypeSize:CalCross(size, pos)
   local arr = {}
-  ;
-  (table.insert)(arr, pos)
+  table.insert(arr, pos)
   for i = 1, size do
-    (table.insert)(arr, pos + Vector2.up * i)
-    ;
-    (table.insert)(arr, pos + Vector2.right * i)
-    ;
-    (table.insert)(arr, pos + Vector2.down * i)
-    ;
-    (table.insert)(arr, pos + Vector2.left * i)
+    table.insert(arr, pos + Vector2.up * i)
+    table.insert(arr, pos + Vector2.right * i)
+    table.insert(arr, pos + Vector2.down * i)
+    table.insert(arr, pos + Vector2.left * i)
   end
   return arr
 end
-
-

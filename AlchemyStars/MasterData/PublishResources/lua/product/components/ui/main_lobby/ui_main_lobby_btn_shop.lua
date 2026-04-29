@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_btn_shop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyBtnShop", UICustomWidget)
 UIMainLobbyBtnShop = UIMainLobbyBtnShop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyBtnShop.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMainLobbyBtnShop:OnShow()
   self._active = true
   self.shopBtnBg = self:GetGameObject("shopBtnBg")
   self._shopImg = self:GetUIComponent("Image", "shopImg")
@@ -19,152 +12,97 @@ UIMainLobbyBtnShop.OnShow = function(self)
   self._shopRedpoint = self:GetGameObject("ShopRedpoint")
   self.imgNewShop = self:GetGameObject("imgNewShop")
   self._atlas = self:GetAsset("UIMainLobby.spriteatlas", LoadType.SpriteAtlas)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self._shopBtn).gameObject), UIEvent.Press, function(go)
-    -- function num : 0_0_0 , upvalues : self
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-    (self._shopImg).sprite = (self._atlas):GetSprite("main_zjm_icon27")
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self._shopBtn).gameObject), UIEvent.Release, function(go)
-    -- function num : 0_0_1 , upvalues : self
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-    (self._shopImg).sprite = (self._atlas):GetSprite("main_zjm_icon26")
-  end
-)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._shopBtn.gameObject), UIEvent.Press, function(go)
+    self._shopImg.sprite = self._atlas:GetSprite("main_zjm_icon27")
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._shopBtn.gameObject), UIEvent.Release, function(go)
+    self._shopImg.sprite = self._atlas:GetSprite("main_zjm_icon26")
+  end)
   self:AttachEvent(GameEventType.CheckMonthCardRedpoint, self.FlushMonthCardRedpoint)
   self:AttachEvent(GameEventType.ShopNew, self.CoFlushNew)
-  self.mRedDot = (GameGlobal.GetModule)(RedDotModule)
-  ;
-  (self.mRedDot):ListenRedDot({[RedDotType.RDT_SHOP_HOMEPAGE_NEW] = GameEventType.ShopNew})
-  self.mShop = (GameGlobal.GetModule)(ShopModule)
+  self.mRedDot = GameGlobal.GetModule(RedDotModule)
+  self.mRedDot:ListenRedDot({
+    [RedDotType.RDT_SHOP_HOMEPAGE_NEW] = GameEventType.ShopNew
+  })
+  self.mShop = GameGlobal.GetModule(ShopModule)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBtnShop.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMainLobbyBtnShop:OnHide()
   self:RemoveAllCustomEventListener()
   self:DetachEvent(GameEventType.CheckMonthCardRedpoint, self.FlushMonthCardRedpoint)
   self:DetachEvent(GameEventType.ShopNew, self.CoFlushNew)
-  ;
-  (self.mRedDot):UnListenRedDot({RedDotType.RDT_SHOP_HOMEPAGE_NEW})
+  self.mRedDot:UnListenRedDot({
+    RedDotType.RDT_SHOP_HOMEPAGE_NEW
+  })
   self.imgNewShop = nil
   self._active = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBtnShop.Flush = function(self)
-  -- function num : 0_2
+function UIMainLobbyBtnShop:Flush()
   self:FlushMonthCardRedpoint()
   self:CoFlushNew()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBtnShop.FlushLockStatus = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIMainLobbyBtnShop:FlushLockStatus()
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_Shop)
-  ;
-  (self.shopBtnBg):SetActive(not isLock)
-  local shopButtonFunction = (self._shopBtnPool):SpawnObject("UIFunctionLockButton")
+  self.shopBtnBg:SetActive(not isLock)
+  local shopButtonFunction = self._shopBtnPool:SpawnObject("UIFunctionLockButton")
   shopButtonFunction:SetFunctionType(GameModuleID.MD_Shop, ButtonLockType.MaskAndTips, nil, MaskShowType.Small, function()
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._storeNameEnLabel).color = Color(1, 1, 1, 0.08)
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._storeNameChLabel).color = Color(0.30980392156863, 0.30980392156863, 0.30980392156863, 1)
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._shopImg).color = Color(0.30980392156863, 0.30980392156863, 0.30980392156863, 1)
-  end
-, function()
-    -- function num : 0_3_1 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._storeNameEnLabel).color = Color(1, 1, 1, 0.2156862745098)
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._storeNameChLabel).color = Color(1, 1, 1, 1)
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._shopImg).color = Color(1, 1, 1, 1)
-  end
-)
+    self._storeNameEnLabel.color = Color(1, 1, 1, 0.08)
+    self._storeNameChLabel.color = Color(0.30980392156862746, 0.30980392156862746, 0.30980392156862746, 1)
+    self._shopImg.color = Color(0.30980392156862746, 0.30980392156862746, 0.30980392156862746, 1)
+  end, function()
+    self._storeNameEnLabel.color = Color(1, 1, 1, 0.21568627450980393)
+    self._storeNameChLabel.color = Color(1, 1, 1, 1)
+    self._shopImg.color = Color(1, 1, 1, 1)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBtnShop.FlushMonthCardRedpoint = function(self)
-  -- function num : 0_4
-  local show, tips, day = (self.mShop):ShowMonthCardRedPoint()
-  ;
-  (self._shopRedpoint):SetActive(show)
+function UIMainLobbyBtnShop:FlushMonthCardRedpoint()
+  local show, tips, day = self.mShop:ShowMonthCardRedPoint()
+  self._shopRedpoint:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBtnShop.CoFlushNew = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local limitedTimeRechargeOpen = (self:GetUIModule(SignInModule)):CheckEventOpen(CommonEventType.LimitedTimeRecharge)
-  do
-    if limitedTimeRechargeOpen then
-      local localDbKey = "LimitedTimeRechargeRead" .. (self:GetModule(RoleModule)):GetPstId()
-      if not (LocalDB.HasKey)(localDbKey) then
-        (self.imgNewShop):SetActive(true)
-        return 
-      end
+function UIMainLobbyBtnShop:CoFlushNew()
+  local limitedTimeRechargeOpen = self:GetUIModule(SignInModule):CheckEventOpen(CommonEventType.LimitedTimeRecharge)
+  if limitedTimeRechargeOpen then
+    local localDbKey = "LimitedTimeRechargeRead" .. self:GetModule(RoleModule):GetPstId()
+    if not LocalDB.HasKey(localDbKey) then
+      self.imgNewShop:SetActive(true)
+      return
     end
-    self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
-    local res = (self.mRedDot):RequestRedDotStatus(TT, {RedDotType.RDT_SHOP_HOMEPAGE_NEW})
+  end
+  self:StartTask(function(TT)
+    local res = self.mRedDot:RequestRedDotStatus(TT, {
+      RedDotType.RDT_SHOP_HOMEPAGE_NEW
+    })
     if not self.imgNewShop then
-      return 
+      return
     end
     if res and res[RedDotType.RDT_SHOP_HOMEPAGE_NEW] then
-      (self.imgNewShop):SetActive(true)
+      self.imgNewShop:SetActive(true)
     else
-      local showNew = (self.mShop):GetHomelandShopTabNew()
-      if not showNew then
-        showNew = (self.mShop):GetHomelandRechargeTabNew()
-      end
-      ;
-      (self.imgNewShop):SetActive(showNew)
+      local showNew = self.mShop:GetHomelandShopTabNew()
+      showNew = showNew or self.mShop:GetHomelandRechargeTabNew()
+      self.imgNewShop:SetActive(showNew)
     end
-  end
-, self)
-  end
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBtnShop.btnShopOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_ShopController"}, true)
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIMainLobbyBtnShop:btnShopOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+    "Click_ShopController"
+  }, true)
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_Shop)
   if isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_unlock"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_unlock"))
+    return
   end
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV
-    ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(TT, CLICKENTRANCE.CE_SHOP)
-  end
-)
-  ;
-  (ClientShop.OpenShop)(nil, nil, nil, nil, true)
+  TaskManager:GetInstance():StartTask(function(TT)
+    GameGlobal.GetModule(RoleModule):OnHomePageEnter(TT, CLICKENTRANCE.CE_SHOP)
+  end)
+  ClientShop.OpenShop(nil, nil, nil, nil, true)
 end
-
-

@@ -1,23 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_controller_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIControllerManager", Object)
 UIControllerManager = UIControllerManager
 local SHALLOW_COPY = table.shallowcopy
 local SWITCH_LOCK_NAME = "__framework_switch_lock__"
-local cacheUINames = {"UIMainLobbyController"}
--- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
+local cacheUINames = {
+  "UIMainLobbyController"
+}
 
-UIControllerManager.Constructor = function(self, request)
-  -- function num : 0_0 , upvalues : _ENV
+function UIControllerManager:Constructor(request)
   self.uiRegisterInfoTable = {}
   self.popupManager = PopupManager:GetInstance()
   self.layerManager = UILayerManager:New(request, self)
   self.lockManager = UILockManager:New(self.layerManager)
   self.uiResolution = UIResolution:New(self.layerManager)
-  local messageBoxCamera = (self.layerManager):GetMessageBoxCamera()
+  local messageBoxCamera = self.layerManager:GetMessageBoxCamera()
   if messageBoxCamera then
     messageBoxCamera.enabled = false
   end
@@ -31,10 +26,7 @@ UIControllerManager.Constructor = function(self, request)
   self.forceClearCache = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV, SHALLOW_COPY
+function UIControllerManager:Dispose()
   local visibleUIList = ArrayList:New()
   visibleUIList:Clone(self.visibleViews)
   for i = 1, visibleUIList:Size() do
@@ -46,264 +38,203 @@ UIControllerManager.Dispose = function(self)
     self.allName2ControllersDirty = false
   end
   local allName2Controllers = self.allName2ControllersCache
-  for k,v in pairs(allName2Controllers) do
+  for k, v in pairs(allName2Controllers) do
     self:ForceUnLoadUI(k)
   end
-  ;
-  (self.popupManager):Dispose()
-  ;
-  (self.layerManager):Dispose()
-  ;
-  (self.lockManager):Dispose()
-  ;
-  (self.uiResolution):Dispose()
+  self.popupManager:Dispose()
+  self.layerManager:Dispose()
+  self.lockManager:Dispose()
+  self.uiResolution:Dispose()
   self:ClearAllExtendManagers()
-  ;
-  (UIHelper.RemoveAllUI3DModules)()
+  UIHelper.RemoveAllUI3DModules()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.RegisterUI = function(self, uiName, strPrefab, maskType, hideUnderLayer, loadDataBeforeSwitch, uiComponents)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R7 in 'UnsetPending'
-
-  (self.uiRegisterInfoTable)[uiName] = UIRegisterInfo:New(strPrefab, maskType, hideUnderLayer, loadDataBeforeSwitch, uiComponents)
+function UIControllerManager:RegisterUI(uiName, strPrefab, maskType, hideUnderLayer, loadDataBeforeSwitch, uiComponents)
+  self.uiRegisterInfoTable[uiName] = UIRegisterInfo:New(strPrefab, maskType, hideUnderLayer, loadDataBeforeSwitch, uiComponents)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.GetUIRegisterInfo = function(self, ui_name)
-  -- function num : 0_3
-  return (self.uiRegisterInfoTable)[ui_name]
+function UIControllerManager:GetUIRegisterInfo(ui_name)
+  return self.uiRegisterInfoTable[ui_name]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.VisibleUIList = function(self)
-  -- function num : 0_4
+function UIControllerManager:VisibleUIList()
   return self.visibleViews
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.IsShow = function(self, uiName)
-  -- function num : 0_5
-  return (self.visibleViews):Contains(uiName)
+function UIControllerManager:IsShow(uiName)
+  return self.visibleViews:Contains(uiName)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.ForceUnLoadUI = function(self, uiName)
-  -- function num : 0_6
+function UIControllerManager:ForceUnLoadUI(uiName)
   self:UnLoadUIInternal(uiName)
   self:RemoveController(uiName)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.HideDialog = function(self, TT, uiName, setCache)
-  -- function num : 0_7 , upvalues : _ENV
-  if not setCache then
-    setCache = false
-  end
+function UIControllerManager:HideDialog(TT, uiName, setCache)
+  setCache = setCache or false
   self:BeforeHideUI(TT, uiName)
   self:HideUI(uiName, setCache)
   self:AfterHideUI(uiName)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateLayerTopDepth, -1)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateLayerTopDepth, -1)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.BeforeHideUI = function(self, TT, uiName)
-  -- function num : 0_8 , upvalues : _ENV
-  if not (self.visibleViews):Contains(uiName) then
-    (Log.fatal)("[UI] UIControllerManager:BeforeHideUI, ui is not visible, ", uiName)
-    return 
+function UIControllerManager:BeforeHideUI(TT, uiName)
+  if not self.visibleViews:Contains(uiName) then
+    Log.fatal("[UI] UIControllerManager:BeforeHideUI, ui is not visible, ", uiName)
+    return
   end
   if self:CheckHideUnderLayerUIType(uiName) == HideUnderLayerType.Auto_Hide then
     self:SetUnderLayerUIVisble(uiName, true)
   end
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("UIShowEvent", {uiName, 2, ""}, true)
+  GameGlobal.UAReportForceGuideEvent("UIShowEvent", {
+    uiName,
+    2,
+    ""
+  }, true)
   local uiController = self:GetController(uiName)
   if uiController then
     uiController:BeforeHide(TT)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.HideUI = function(self, uiName, setCache)
-  -- function num : 0_9 , upvalues : _ENV
-  if not setCache then
-    setCache = false
-  end
+function UIControllerManager:HideUI(uiName, setCache)
+  setCache = setCache or false
   if setCache then
     self:HideUIInternal(uiName)
   else
     self:UnLoadUIInternal(uiName)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIClose, uiName)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIClose, uiName)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.AfterHideUI = function(self, uiName, setCache)
-  -- function num : 0_10
-  if not setCache and (not (self.cacheViews):Contains(uiName) or self.forceClearCache) then
+function UIControllerManager:AfterHideUI(uiName, setCache)
+  if not setCache and (not self.cacheViews:Contains(uiName) or self.forceClearCache) then
     self:RemoveController(uiName)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.TryShowUI = function(self, TT, uiName, res, uiParams)
-  -- function num : 0_11 , upvalues : _ENV
-  (Log.prof)("[UIProf] UIControllerManager:TryShowUI, ", uiName)
-  local uiInfo = (self.uiRegisterInfoTable)[uiName]
+function UIControllerManager:TryShowUI(TT, uiName, res, uiParams)
+  Log.prof("[UIProf] UIControllerManager:TryShowUI, ", uiName)
+  local uiInfo = self.uiRegisterInfoTable[uiName]
   if not uiInfo then
-    (Log.fatal)("[UI] UIControllerManager:TryShowUI, UI is not registered: ", uiName)
+    Log.fatal("[UI] UIControllerManager:TryShowUI, UI is not registered: ", uiName)
     res:SetSucc(false)
-    return 
+    return
   end
-  if not (self.cacheViews):Contains(uiName) then
+  if not self.cacheViews:Contains(uiName) then
     self:LoadUI(TT, uiName, res)
   else
     res.loadFromDisk = false
   end
   if not res:GetSucc() then
-    return 
+    return
   end
   if uiInfo.loadDataBeforeSwitch then
     self:LoadDataOnEnter(TT, uiName, res, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.LoadUI = function(self, TT, uiName, res)
-  -- function num : 0_12 , upvalues : _ENV
-  (Log.prof)("[UIProf] UIControllerManager:LoadUI, ", uiName)
+function UIControllerManager:LoadUI(TT, uiName, res)
+  Log.prof("[UIProf] UIControllerManager:LoadUI, ", uiName)
   if uiName == "UIBattle" then
-    ((GameGlobal:GetInstance()):GetCollector("CoreGameLoading")):Sample("UIControllerManager:LoadUI() begin")
+    GameGlobal:GetInstance():GetCollector("CoreGameLoading"):Sample("UIControllerManager:LoadUI() begin")
   end
   local loadFromDisk = false
   local controller = self:CreateController(uiName)
   if not controller then
-    (Log.fatal)("[UI] UIControllerManager:LoadUI,UI Controller is null when load ui: ", uiName)
+    Log.fatal("[UI] UIControllerManager:LoadUI,UI Controller is null when load ui: ", uiName)
     res:SetSucc(false)
-    return 
+    return
   end
-  if (self.visibleViews):Contains(uiName) then
-    (Log.warn)("[UI] UIControllerManager:LoadUI, ", uiName, " already visible")
+  if self.visibleViews:Contains(uiName) then
+    Log.warn("[UI] UIControllerManager:LoadUI, ", uiName, " already visible")
     res:SetSucc(true)
-    return 
+    return
   end
-  if not (self.cacheViews):Contains(uiName) then
-    local uiRegisterInfo = (self.uiRegisterInfoTable)[uiName]
+  if not self.cacheViews:Contains(uiName) then
+    local uiRegisterInfo = self.uiRegisterInfoTable[uiName]
     if not uiRegisterInfo then
-      (Log.fatal)("[UI] UIControllerManager:LoadUI, Cannot find ui info when load: ", uiName)
+      Log.fatal("[UI] UIControllerManager:LoadUI, Cannot find ui info when load: ", uiName)
       res:SetSucc(false)
-      return 
+      return
     end
-    local view, resRequest = (UIResourceManager.GetViewAsync)(TT, uiName, uiRegisterInfo.uiPrefab)
+    local view, resRequest = UIResourceManager.GetViewAsync(TT, uiName, uiRegisterInfo.uiPrefab)
     if not view then
-      (Log.fatal)("[UI] UIControllerManager:LoadUI, Load Resources error: ", uiRegisterInfo.uiPrefab)
+      Log.fatal("[UI] UIControllerManager:LoadUI, Load Resources error: ", uiRegisterInfo.uiPrefab)
       res:SetSucc(false)
-      return 
+      return
     end
     loadFromDisk = true
     controller:Load(view, resRequest)
     self:OnUILoaded(controller, uiName, uiRegisterInfo)
   end
-  do
-    if not loadFromDisk then
-      res.loadFromDisk = loadFromDisk
-    end
-    if uiName == "UIBattle" then
-      ((GameGlobal:GetInstance()):GetCollector("CoreGameLoading")):Sample("UIControllerManager:LoadUI() end")
-    end
-    ;
-    (Log.prof)("[UIProf] UIControllerManager:LoadUI end, ", uiName)
+  if not loadFromDisk then
+    res.loadFromDisk = loadFromDisk
   end
+  if uiName == "UIBattle" then
+    GameGlobal:GetInstance():GetCollector("CoreGameLoading"):Sample("UIControllerManager:LoadUI() end")
+  end
+  Log.prof("[UIProf] UIControllerManager:LoadUI end, ", uiName)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.ShowAllUI = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIControllerManager:ShowAllUI()
   _ylw("*********ShowAllUI")
   _ylw("*********visibleViews")
-  for i = 1, (self.visibleViews):Size() do
-    local name = (self.visibleViews):GetAt(i)
+  for i = 1, self.visibleViews:Size() do
+    local name = self.visibleViews:GetAt(i)
     _ylw(name)
   end
   _ylw("*********cacheViews")
-  for i = 1, (self.cacheViews):Size() do
-    local name = (self.cacheViews):GetAt(i)
+  for i = 1, self.cacheViews:Size() do
+    local name = self.cacheViews:GetAt(i)
     _ylw(name)
   end
-  ;
-  (self.layerManager):ShowAllUI()
+  self.layerManager:ShowAllUI()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.ShowUI = function(self, uiName, res, uiParams, depth)
-  -- function num : 0_14 , upvalues : _ENV
-  if not depth then
-    depth = -1
-  end
+function UIControllerManager:ShowUI(uiName, res, uiParams, depth)
+  depth = depth or -1
   local uiController = self:GetController(uiName)
-  ;
-  (self.layerManager):OnShowUI(uiController, depth)
-  if (self.visibleViews):Contains(uiName) then
-    (Log.warn)("[UI] UIControllerManager:ShowUI, ", uiName, " already visible")
+  self.layerManager:OnShowUI(uiController, depth)
+  if self.visibleViews:Contains(uiName) then
+    Log.warn("[UI] UIControllerManager:ShowUI, ", uiName, " already visible")
     return true
   end
-  if not (self.cacheViews):Contains(uiName) then
-    (Log.fatal)("[UI] UIControllerManager:ShowUI, cache cannot find ", uiName)
+  if not self.cacheViews:Contains(uiName) then
+    Log.fatal("[UI] UIControllerManager:ShowUI, cache cannot find ", uiName)
     return false
   end
-  ;
-  (self.visibleViews):PushBack(uiName)
-  ;
-  (self.cacheViews):Remove(uiName)
-  ;
-  (Log.prof)("[UIProf] UIControllerManager:Show UI Controller, ", uiName)
+  self.visibleViews:PushBack(uiName)
+  self.cacheViews:Remove(uiName)
+  Log.prof("[UIProf] UIControllerManager:Show UI Controller, ", uiName)
   local l_reportParam = ""
   if uiParams and uiParams[1] then
     l_reportParam = tonumber(uiParams[1])
   end
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("UIShowEvent", {uiName, 1, l_reportParam}, true)
+  GameGlobal.UAReportForceGuideEvent("UIShowEvent", {
+    uiName,
+    1,
+    l_reportParam
+  }, true)
   uiController:Show(uiParams)
-  ;
-  (Log.prof)("[UIProf] UIControllerManager:Show UI Controller, end", uiName)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIOpen, uiName)
+  Log.prof("[UIProf] UIControllerManager:Show UI Controller, end", uiName)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIOpen, uiName)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.AfterShowUI = function(self, TT, uiName, res, uiParams)
-  -- function num : 0_15 , upvalues : _ENV
-  (Log.debug)("[UI] UIControllerManager:AfterShowUI, ", uiName)
-  if not (self.visibleViews):Contains(uiName) then
-    (Log.fatal)("[UI] UIControllerManager:AfterShowUI, ui is not visible ", uiName)
-    return 
+function UIControllerManager:AfterShowUI(TT, uiName, res, uiParams)
+  Log.debug("[UI] UIControllerManager:AfterShowUI, ", uiName)
+  if not self.visibleViews:Contains(uiName) then
+    Log.fatal("[UI] UIControllerManager:AfterShowUI, ui is not visible ", uiName)
+    return
   end
-  local uiRegisterInfo = (self.uiRegisterInfoTable)[uiName]
+  local uiRegisterInfo = self.uiRegisterInfoTable[uiName]
   if not uiRegisterInfo then
-    (Log.fatal)("[UI] UIControllerManager:AfterShowUI, Cannot find ui register info, ", uiName)
-    return 
+    Log.fatal("[UI] UIControllerManager:AfterShowUI, Cannot find ui register info, ", uiName)
+    return
   end
   local uiController = self:GetController(uiName)
   if not uiController then
-    return 
+    return
   end
   if uiRegisterInfo.loadDataBeforeSwitch then
     uiController:UpdateUIOnEnter()
@@ -311,7 +242,7 @@ UIControllerManager.AfterShowUI = function(self, TT, uiName, res, uiParams)
     uiController:UpdateUIOnEnterByDefaultData()
   end
   local subTaskList = {}
-  subTaskList[#subTaskList + 1] = ((GameGlobal.TaskManager)()):StartTask(UIController.AfterShow, uiController)
+  subTaskList[#subTaskList + 1] = GameGlobal.TaskManager():StartTask(UIController.AfterShow, uiController)
   if not uiRegisterInfo.loadDataBeforeSwitch then
     self:LoadDataOnEnter(TT, uiName, res, uiParams)
     if res:GetSucc() then
@@ -326,31 +257,25 @@ UIControllerManager.AfterShowUI = function(self, TT, uiName, res, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.GetUnderLayerUI = function(self, uiName)
-  -- function num : 0_16
-  for i = 1, (self.visibleViews):Size() do
-    if (self.visibleViews):GetAt(i) == uiName then
+function UIControllerManager:GetUnderLayerUI(uiName)
+  for i = 1, self.visibleViews:Size() do
+    if self.visibleViews:GetAt(i) == uiName then
       if i == 1 then
         return nil
       end
-      return (self.visibleViews):GetAt(i - 1)
+      return self.visibleViews:GetAt(i - 1)
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.SetUnderLayerUIVisble = function(self, uiName, visble)
-  -- function num : 0_17
+function UIControllerManager:SetUnderLayerUIVisble(uiName, visble)
   local uiController = self:GetController(uiName)
   if not uiController then
-    return 
+    return
   end
   if not uiController:GetHideUnderLayerFlag() then
     uiController:SetHideUnderLayerFlag(true)
-    return 
+    return
   end
   if visble then
     local underLayerUIName = self:GetUnderLayerUI(uiName)
@@ -359,200 +284,141 @@ UIControllerManager.SetUnderLayerUIVisble = function(self, uiName, visble)
       self:PrivateSetUnderLayerUIVisble(underLayerUIName, true)
     end
   else
-    do
-      self:PrivateSetUnderLayerUIVisble(uiName, false)
-    end
+    self:PrivateSetUnderLayerUIVisble(uiName, false)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.SetUIRootActive = function(self, uiName, flag)
-  -- function num : 0_18 , upvalues : _ENV
+function UIControllerManager:SetUIRootActive(uiName, flag)
   local uiController = self:GetController(uiName)
   local root = self:GetUIRootByDepth(uiController:GetDepth())
   uiController:OnRootActiveChange(flag)
   root:SetActive(flag)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AfterUIRootActive, flag, uiName)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AfterUIRootActive, flag, uiName)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.ResetAllLayerVisble = function(self)
-  -- function num : 0_19
-  (self.layerManager):ResetAllUIRoot()
+function UIControllerManager:ResetAllLayerVisble()
+  self.layerManager:ResetAllUIRoot()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.PrivateSetUnderLayerUIVisble = function(self, uiName, visble)
-  -- function num : 0_20 , upvalues : _ENV
+function UIControllerManager:PrivateSetUnderLayerUIVisble(uiName, visble)
   local visbleMap = {}
   local layer = 0
-  do
-    for i = 1, (self.visibleViews):Size() do
-      visbleMap[i] = true
-      if (self.visibleViews):GetAt(i) == uiName then
-        layer = i
-        break
+  for i = 1, self.visibleViews:Size() do
+    visbleMap[i] = true
+    if self.visibleViews:GetAt(i) == uiName then
+      layer = i
+      break
+    end
+  end
+  local checkAndSetLayerVisble
+  if visble then
+    function checkAndSetLayerVisble()
+      if layer < 1 then
+        return
       end
-    end
-  end
-  do
-    local checkAndSetLayerVisble = nil
-    if visble then
-      checkAndSetLayerVisble = function()
-    -- function num : 0_20_0 , upvalues : layer, self, visbleMap, _ENV, checkAndSetLayerVisble
-    if layer < 1 then
-      return 
-    end
-    local layerName = (self.visibleViews):GetAt(layer)
-    layer = layer - 1
-    for i = layer, 1, -1 do
-      visbleMap[i] = self:CheckHideUnderLayerUIType(layerName) == HideUnderLayerType.Dont_Hide
-    end
-    checkAndSetLayerVisble()
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-    else
-      local idx = 2
-      checkAndSetLayerVisble = function()
-    -- function num : 0_20_1 , upvalues : idx, layer, self, visbleMap, _ENV, checkAndSetLayerVisble
-    if layer < idx then
-      return 
-    end
-    local layerName = (self.visibleViews):GetAt(idx)
-    for i = 1, idx - 1 do
-      visbleMap[i] = self:CheckHideUnderLayerUIType(layerName) == HideUnderLayerType.Dont_Hide
-    end
-    idx = idx + 1
-    checkAndSetLayerVisble()
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-    end
-    do
+      local layerName = self.visibleViews:GetAt(layer)
+      layer = layer - 1
+      for i = layer, 1, -1 do
+        visbleMap[i] = self:CheckHideUnderLayerUIType(layerName) == HideUnderLayerType.Dont_Hide
+      end
       checkAndSetLayerVisble()
-      for k,v in pairs(visbleMap) do
-        local name = (self.visibleViews):GetAt(k)
-        local flag = v
-        if not APPVER_EXPLORE then
-          local ver120 = (UIHideUnderLayerControllerVER120.uiMap)[name]
-          local controller = self:GetController(name)
-          local isBlur = controller:GetMaskType() == MaskType.MT_BlurMask
-          if ver120 or isBlur then
-            flag = true
-          end
-        end
-        self:SetUIRootActive(name, flag)
+    end
+  else
+    local idx = 2
+    
+    function checkAndSetLayerVisble()
+      if idx > layer then
+        return
       end
-      ;
-      (self.layerManager):ResetLowBGCameraClearFlag()
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+      local layerName = self.visibleViews:GetAt(idx)
+      for i = 1, idx - 1 do
+        visbleMap[i] = self:CheckHideUnderLayerUIType(layerName) == HideUnderLayerType.Dont_Hide
+      end
+      idx = idx + 1
+      checkAndSetLayerVisble()
     end
   end
+  checkAndSetLayerVisble()
+  for k, v in pairs(visbleMap) do
+    local name = self.visibleViews:GetAt(k)
+    local flag = v
+    if not APPVER_EXPLORE then
+      local ver120 = UIHideUnderLayerControllerVER120.uiMap[name]
+      local controller = self:GetController(name)
+      local isBlur = controller:GetMaskType() == MaskType.MT_BlurMask
+      if ver120 or isBlur then
+        flag = true
+      end
+    end
+    self:SetUIRootActive(name, flag)
+  end
+  self.layerManager:ResetLowBGCameraClearFlag()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.CheckHideUnderLayerUIType = function(self, uiName)
-  -- function num : 0_21 , upvalues : _ENV
+function UIControllerManager:CheckHideUnderLayerUIType(uiName)
   local uiController = self:GetController(uiName)
   if uiController then
     return uiController:GetHideUnderLayer()
   else
-    ;
-    (Log.exception)("CheckHideUnderLayerUIType controller not exist ", uiName)
+    Log.exception("CheckHideUnderLayerUIType controller not exist ", uiName)
     return nil
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.SetForceClearCache = function(self, flag)
-  -- function num : 0_22
+function UIControllerManager:SetForceClearCache(flag)
   self.forceClearCache = flag
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.GetForceClearCache = function(self)
-  -- function num : 0_23
+function UIControllerManager:GetForceClearCache()
   return self.forceClearCache
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.IsLocked = function(self)
-  -- function num : 0_24
+function UIControllerManager:IsLocked()
   if self.lockManager then
-    return (self.lockManager):IsLocked()
+    return self.lockManager:IsLocked()
   end
   return false
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.LockedSize = function(self)
-  -- function num : 0_25
+function UIControllerManager:LockedSize()
   if self.lockManager then
-    return (self.lockManager):LockedSize()
+    return self.lockManager:LockedSize()
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.Lock = function(self, name)
-  -- function num : 0_26
+function UIControllerManager:Lock(name)
   if self.lockManager then
-    (self.lockManager):Lock(name)
+    self.lockManager:Lock(name)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.UnLock = function(self, name)
-  -- function num : 0_27
+function UIControllerManager:UnLock(name)
   if self.lockManager then
-    (self.lockManager):UnLock(name)
+    self.lockManager:UnLock(name)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.ExpirationLock = function(self, name, lockMs)
-  -- function num : 0_28
+function UIControllerManager:ExpirationLock(name, lockMs)
   if self.lockManager then
-    (self.lockManager):ExpirationLock(name, lockMs)
+    self.lockManager:ExpirationLock(name, lockMs)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.CancelExpirationLock = function(self, name)
-  -- function num : 0_29
+function UIControllerManager:CancelExpirationLock(name)
   if self.lockManager then
-    (self.lockManager):CancelExpirationLock(name)
+    self.lockManager:CancelExpirationLock(name)
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.GetSwitchLock = function(self)
-  -- function num : 0_30 , upvalues : SWITCH_LOCK_NAME
+function UIControllerManager:GetSwitchLock()
   if self.lockManager then
-    return (self.lockManager):HasLock(SWITCH_LOCK_NAME)
+    return self.lockManager:HasLock(SWITCH_LOCK_NAME)
   end
   return false
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.SetSwitchLock = function(self, value)
-  -- function num : 0_31 , upvalues : SWITCH_LOCK_NAME
+function UIControllerManager:SetSwitchLock(value)
   if value then
     self:Lock(SWITCH_LOCK_NAME)
   else
@@ -560,139 +426,93 @@ UIControllerManager.SetSwitchLock = function(self, value)
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.UnLockAll = function(self)
-  -- function num : 0_32
+function UIControllerManager:UnLockAll()
   if self.lockManager then
-    (self.lockManager):UnLockAll()
+    self.lockManager:UnLockAll()
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.ShowBusy = function(self, value)
-  -- function num : 0_33 , upvalues : _ENV
+function UIControllerManager:ShowBusy(value)
   if self.lockManager then
-    (Log.debug)("[UI] Show Busy: ", value)
-    ;
-    (self.lockManager):ShowBusy(value)
+    Log.debug("[UI] Show Busy: ", value)
+    self.lockManager:ShowBusy(value)
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.ClearBusy = function(self)
-  -- function num : 0_34
+function UIControllerManager:ClearBusy()
   if self.lockManager then
-    (self.lockManager):ClearBusy()
+    self.lockManager:ClearBusy()
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.GetUICameraByDepth = function(self, depth)
-  -- function num : 0_35
-  return (self.layerManager):GetUICameraByDepth(depth)
+function UIControllerManager:GetUICameraByDepth(depth)
+  return self.layerManager:GetUICameraByDepth(depth)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.GetUIRootByDepth = function(self, depth)
-  -- function num : 0_36
-  return (self.layerManager):GetUIRootByDepth(depth)
+function UIControllerManager:GetUIRootByDepth(depth)
+  return self.layerManager:GetUIRootByDepth(depth)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.TopDepth = function(self)
-  -- function num : 0_37
-  return (self.layerManager):TopDepth()
+function UIControllerManager:TopDepth()
+  return self.layerManager:TopDepth()
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.GetMessageBoxCamera = function(self)
-  -- function num : 0_38
-  return (self.layerManager):GetMessageBoxCamera()
+function UIControllerManager:GetMessageBoxCamera()
+  return self.layerManager:GetMessageBoxCamera()
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.ShowLayer = function(self, depth, flag)
-  -- function num : 0_39
-  (self.layerManager):ShowLayer(depth, flag)
+function UIControllerManager:ShowLayer(depth, flag)
+  self.layerManager:ShowLayer(depth, flag)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.ShowAllLayers = function(self)
-  -- function num : 0_40
-  (self.layerManager):ShowAllLayers()
+function UIControllerManager:ShowAllLayers()
+  self.layerManager:ShowAllLayers()
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.IsLayerShow = function(self, depth)
-  -- function num : 0_41
-  return (self.layerManager):IsLayerShow(depth)
+function UIControllerManager:IsLayerShow(depth)
+  return self.layerManager:IsLayerShow(depth)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.IsTopUI = function(self, uiName)
-  -- function num : 0_42
+function UIControllerManager:IsTopUI(uiName)
   local uiController = self:GetController(uiName)
-  return (self.layerManager):IsTopUI(uiController:GetDepth())
+  return self.layerManager:IsTopUI(uiController:GetDepth())
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.GetDepth = function(self, uiName)
-  -- function num : 0_43
+function UIControllerManager:GetDepth(uiName)
   local uiController = self:GetController(uiName)
   return uiController:GetDepth()
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.CloseDialogWhichIsNotToppest = function(self, TT, uiName, setCache)
-  -- function num : 0_44 , upvalues : _ENV
+function UIControllerManager:CloseDialogWhichIsNotToppest(TT, uiName, setCache)
   local uiController = self:GetController(uiName)
   if not uiController or uiController:GetDepth() < 1 then
-    (Log.fatal)("[UI] UIControllerManager:CloseDialogWhichIsNotToppest, uiController is nil or depth<1,", uiName)
-    return 
+    Log.fatal("[UI] UIControllerManager:CloseDialogWhichIsNotToppest, uiController is nil or depth<1,", uiName)
+    return
   end
-  for i = 1, (self.visibleViews):Size() do
-    local name = (self.visibleViews):GetAt(i)
+  for i = 1, self.visibleViews:Size() do
+    local name = self.visibleViews:GetAt(i)
     local upperUI = self:GetController(name)
-    if upperUI and upperUI:GetName() ~= uiController:GetName() and uiController:GetDepth() < upperUI:GetDepth() then
-      (self.layerManager):ChangeUIDepth(upperUI, upperUI:GetDepth() - 1, true)
+    if upperUI and upperUI:GetName() ~= uiController:GetName() and upperUI:GetDepth() > uiController:GetDepth() then
+      self.layerManager:ChangeUIDepth(upperUI, upperUI:GetDepth() - 1, true)
     end
   end
   self:HideDialog(TT, uiName, setCache)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.CheckLayerMax = function(self, TT)
-  -- function num : 0_45 , upvalues : _ENV
-  if not (self.layerManager):IsFull() then
-    return 
+function UIControllerManager:CheckLayerMax(TT)
+  if not self.layerManager:IsFull() then
+    return
   end
-  ;
-  (Log.debug)("[UI] UIControllerManager:CheckLayerMax, UI Layer Is Full, Correct Layer 1")
+  Log.debug("[UI] UIControllerManager:CheckLayerMax, UI Layer Is Full, Correct Layer 1")
   local needCloseUIList = {}
-  for i = 1, (self.visibleViews):Size() do
-    local name = (self.visibleViews):GetAt(i)
+  for i = 1, self.visibleViews:Size() do
+    local name = self.visibleViews:GetAt(i)
     local uiController = self:GetController(name)
     if uiController then
       if uiController:GetDepth() == 1 then
         needCloseUIList[#needCloseUIList + 1] = name
-      else
-        if uiController:GetDepth() > 1 then
-          (self.layerManager):ChangeUIDepth(uiController, uiController:GetDepth() - 1, true)
-        end
+      elseif 1 < uiController:GetDepth() then
+        self.layerManager:ChangeUIDepth(uiController, uiController:GetDepth() - 1, true)
       end
     end
   end
@@ -701,140 +521,97 @@ UIControllerManager.CheckLayerMax = function(self, TT)
   end
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_46 , upvalues : SHALLOW_COPY, _ENV
+function UIControllerManager:Update(deltaTimeMS)
   if self.allName2ControllersDirty then
     self.allName2ControllersCache = SHALLOW_COPY(self.allName2Controllers)
     self.allName2ControllersDirty = false
   end
   local allName2Controllers = self.allName2ControllersCache
   local visibleViews = self.visibleViews
-  for k,v in pairs(allName2Controllers) do
+  for k, v in pairs(allName2Controllers) do
     if visibleViews:Contains(k) then
       v:Update(deltaTimeMS)
     end
   end
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.RemoveController = function(self, uiName)
-  -- function num : 0_47
+function UIControllerManager:RemoveController(uiName)
   self.allName2ControllersDirty = true
-  local uiController = (self.allName2Controllers)[uiName]
+  local uiController = self.allName2Controllers[uiName]
   if uiController then
     uiController:Dispose()
   end
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.allName2Controllers)[uiName] = nil
+  self.allName2Controllers[uiName] = nil
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.GetController = function(self, uiName)
-  -- function num : 0_48
-  local controller = (self.allName2Controllers)[uiName]
+function UIControllerManager:GetController(uiName)
+  local controller = self.allName2Controllers[uiName]
   return controller
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.GetControllerCamera = function(self, uiName)
-  -- function num : 0_49
+function UIControllerManager:GetControllerCamera(uiName)
   local controller = self:GetController(uiName)
   local depth = controller:GetDepth()
   return self:GetUICameraByDepth(depth)
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.SetInVisibleParent = function(self, ui)
-  -- function num : 0_50
-  return (self.layerManager):SetInVisibleParent(ui:View())
+function UIControllerManager:SetInVisibleParent(ui)
+  return self.layerManager:SetInVisibleParent(ui:View())
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.SetTopParent = function(self, ui)
-  -- function num : 0_51
-  (self.layerManager):SetTopParent(ui:View(), ui:GetName())
+function UIControllerManager:SetTopParent(ui)
+  self.layerManager:SetTopParent(ui:View(), ui:GetName())
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.SetHighParent = function(self, ui)
-  -- function num : 0_52
-  (self.layerManager):SetHighParent(ui:View(), ui:GetName())
+function UIControllerManager:SetHighParent(ui)
+  self.layerManager:SetHighParent(ui:View(), ui:GetName())
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.CreateController = function(self, uiName)
-  -- function num : 0_53 , upvalues : _ENV
-  local controller = (self.allName2Controllers)[uiName]
+function UIControllerManager:CreateController(uiName)
+  local controller = self.allName2Controllers[uiName]
   if not controller then
     controller = _createInstance(uiName)
     if controller then
       if not controller:IsChildOf("UIController") then
-        (Log.fatal)("[UI] UIControllerManager:CreateController Fail, ", uiName, " is not inherited from UIController!")
-        return 
+        Log.fatal("[UI] UIControllerManager:CreateController Fail, ", uiName, " is not inherited from UIController!")
+        return
       end
-      controller:AddComponents(((self.uiRegisterInfoTable)[uiName]).uiComponents)
+      controller:AddComponents(self.uiRegisterInfoTable[uiName].uiComponents)
       self.allName2ControllersDirty = true
-      -- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.allName2Controllers)[uiName] = controller
+      self.allName2Controllers[uiName] = controller
     else
-      ;
-      (Log.fatal)("[UI] UIControllerManager:CreateController Error, ", uiName)
+      Log.fatal("[UI] UIControllerManager:CreateController Error, ", uiName)
     end
   end
   return controller
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.CallUIMethod = function(self, uiName, methodName, ...)
-  -- function num : 0_54 , upvalues : _ENV
-  if not (self.visibleViews):Contains(uiName) then
-    (Log.fatal)("[UI] UIControllerManager:CallUIMethod Error, ui is not visible, ", uiName)
+function UIControllerManager:CallUIMethod(uiName, methodName, ...)
+  if not self.visibleViews:Contains(uiName) then
+    Log.fatal("[UI] UIControllerManager:CallUIMethod Error, ui is not visible, ", uiName)
     return nil
   end
   local uiController = self:GetController(uiName)
-  do
-    if uiController then
-      local func = uiController[methodName]
-      if func then
-        return func(uiController, ...)
-      end
+  if uiController then
+    local func = uiController[methodName]
+    if func then
+      return func(uiController, ...)
     end
-    return nil
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.GetUIMessageBox = function(self, TT, uiMsgBoxName, isShow)
-  -- function num : 0_55
-  local isCache, uiMsgBox, uiView, resRequest = (self.popupManager):GetUIMessageBox(TT, uiMsgBoxName)
+function UIControllerManager:GetUIMessageBox(TT, uiMsgBoxName, isShow)
+  local isCache, uiMsgBox, uiView, resRequest = self.popupManager:GetUIMessageBox(TT, uiMsgBoxName)
   self:CheckMessageBoxCameraStatus(isShow)
   if not isCache then
-    (self.layerManager):SetMessageBoxParent(uiView, uiMsgBoxName)
-    ;
-    (self.popupManager):SetUIMessageBox(uiMsgBoxName, uiMsgBox, uiView, resRequest)
+    self.layerManager:SetMessageBoxParent(uiView, uiMsgBoxName)
+    self.popupManager:SetUIMessageBox(uiMsgBoxName, uiMsgBox, uiView, resRequest)
   end
   return uiMsgBox
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.CheckMessageBoxCameraStatus = function(self, isShow)
-  -- function num : 0_56
+function UIControllerManager:CheckMessageBoxCameraStatus(isShow)
   if not self._messageBoxCameraRefCount then
     self._messageBoxCameraRefCount = 0
   end
@@ -843,154 +620,106 @@ UIControllerManager.CheckMessageBoxCameraStatus = function(self, isShow)
   else
     self._messageBoxCameraRefCount = self._messageBoxCameraRefCount - 1
   end
-  local messageBoxCamera = (self.layerManager):GetMessageBoxCamera()
-  if self._messageBoxCameraRefCount <= 0 then
-    messageBoxCamera.enabled = not messageBoxCamera
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local messageBoxCamera = self.layerManager:GetMessageBoxCamera()
+  if messageBoxCamera then
+    messageBoxCamera.enabled = self._messageBoxCameraRefCount > 0
   end
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.SetGuideMessageBoxParent = function(self, view, uiName)
-  -- function num : 0_57
-  (self.layerManager):SetGuideMessageBoxParent(view, uiName)
+function UIControllerManager:SetGuideMessageBoxParent(view, uiName)
+  self.layerManager:SetGuideMessageBoxParent(view, uiName)
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.HasPopup = function(self)
-  -- function num : 0_58
-  return (self.popupManager):HasPopup()
+function UIControllerManager:HasPopup()
+  return self.popupManager:HasPopup()
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.GetCurShowingPriority = function(self)
-  -- function num : 0_59
-  return (self.popupManager):GetCurShowingPriority()
+function UIControllerManager:GetCurShowingPriority()
+  return self.popupManager:GetCurShowingPriority()
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.ClearPopup = function(self, TT)
-  -- function num : 0_60
-  (self.popupManager):Clear(TT)
+function UIControllerManager:ClearPopup(TT)
+  self.popupManager:Clear(TT)
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.SetPopupPriorityFilter = function(self, TT, value, bOnlyFilter)
-  -- function num : 0_61
-  (self.popupManager):SetPopupPriorityFilter(TT, value, bOnlyFilter)
+function UIControllerManager:SetPopupPriorityFilter(TT, value, bOnlyFilter)
+  self.popupManager:SetPopupPriorityFilter(TT, value, bOnlyFilter)
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.GetPopupPriorityFilter = function(self)
-  -- function num : 0_62
-  return (self.popupManager):GetPriorityFilter()
+function UIControllerManager:GetPopupPriorityFilter()
+  return self.popupManager:GetPriorityFilter()
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.SetBlackSideVisible = function(self, visible, force)
-  -- function num : 0_63
+function UIControllerManager:SetBlackSideVisible(visible, force)
   if force then
-    (self.uiResolution):SetBlackSideVisibleForce(visible)
+    self.uiResolution:SetBlackSideVisibleForce(visible)
   else
-    ;
-    (self.uiResolution):SetBlackSideVisible(visible)
+    self.uiResolution:SetBlackSideVisible(visible)
   end
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.SetForceCloseBlackSideVisible = function(self, visible)
-  -- function num : 0_64
-  (self.uiResolution):SetForceCloseBlackSideVisible(visible)
+function UIControllerManager:SetForceCloseBlackSideVisible(visible)
+  self.uiResolution:SetForceCloseBlackSideVisible(visible)
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.GetCacheUIList = function(self)
-  -- function num : 0_65 , upvalues : _ENV, cacheUINames
+function UIControllerManager:GetCacheUIList()
   local cacheList = FastArray:New()
-  for _,v in pairs(cacheUINames) do
-    if (self.cacheViews):Contains(v) then
+  for _, v in pairs(cacheUINames) do
+    if self.cacheViews:Contains(v) then
       cacheList:PushBack(v)
     end
   end
   return cacheList
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.LoadDataOnEnter = function(self, TT, uiName, res, uiParams)
-  -- function num : 0_66 , upvalues : _ENV
-  if not res then
-    res = UIStateSwitchReq:New()
-  end
+function UIControllerManager:LoadDataOnEnter(TT, uiName, res, uiParams)
+  res = res or UIStateSwitchReq:New()
   local uiController = self:GetController(uiName)
   if uiController then
-    (Log.prof)("[UIProf] UIControllerManager:LoadDataOnEnter, ", uiName)
+    Log.prof("[UIProf] UIControllerManager:LoadDataOnEnter, ", uiName)
     uiController:LoadDataOnEnter(TT, res, uiParams)
-    ;
-    (Log.prof)("[UIProf] UIControllerManager:LoadDataOnEnter end, ", uiName)
-    return 
+    Log.prof("[UIProf] UIControllerManager:LoadDataOnEnter end, ", uiName)
+    return
   end
-  ;
-  (Log.fatal)("[UI] UIControllerManager:LoadDataOnEnter, ui controller is null, ", uiName)
+  Log.fatal("[UI] UIControllerManager:LoadDataOnEnter, ui controller is null, ", uiName)
   res:SetSucc(false)
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.OnUILoaded = function(self, uiController, uiName, uiRegisterInfo)
-  -- function num : 0_67 , upvalues : _ENV
-  (Log.prof)("[UIProf] UIControllerManager:OnUILoaded, ", uiName)
-  ;
-  (self.layerManager):SetInVisibleParent(uiController:View(), uiName)
+function UIControllerManager:OnUILoaded(uiController, uiName, uiRegisterInfo)
+  Log.prof("[UIProf] UIControllerManager:OnUILoaded, ", uiName)
+  self.layerManager:SetInVisibleParent(uiController:View(), uiName)
   uiController:SetName(uiName)
   uiController:SetMaskType(uiRegisterInfo.maskType)
   uiController:SetHideUnderLayer(uiRegisterInfo.hideUnderLayer)
-  ;
-  (self.cacheViews):PushBack(uiName)
+  self.cacheViews:PushBack(uiName)
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.HideUIInternal = function(self, uiName)
-  -- function num : 0_68 , upvalues : _ENV
-  if not (self.visibleViews):Contains(uiName) then
-    (Log.warn)("[UI] UIControllerManager:HideUIInternal, already hide, ", uiName)
+function UIControllerManager:HideUIInternal(uiName)
+  if not self.visibleViews:Contains(uiName) then
+    Log.warn("[UI] UIControllerManager:HideUIInternal, already hide, ", uiName)
     return true
   end
   local uiController = self:GetController(uiName)
   if uiController then
-    (Log.debug)("[UI] UIControllerManager:Hide UI Controller, ", uiName)
+    Log.debug("[UI] UIControllerManager:Hide UI Controller, ", uiName)
     uiController:Hide()
   end
-  if not (self.cacheViews):Contains(uiName) then
-    (self.cacheViews):PushBack(uiName)
+  if not self.cacheViews:Contains(uiName) then
+    self.cacheViews:PushBack(uiName)
   end
-  ;
-  (self.visibleViews):Remove(uiName)
+  self.visibleViews:Remove(uiName)
   return true
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.UnLoadUIInternal = function(self, uiName)
-  -- function num : 0_69 , upvalues : _ENV
+function UIControllerManager:UnLoadUIInternal(uiName)
   self:HideUIInternal(uiName)
-  if not (self.cacheViews):Contains(uiName) then
-    (Log.warn)("[UI] UIControllerManager:UnLoadUIInternal, cannot find ui in cache, ", uiName)
+  if not self.cacheViews:Contains(uiName) then
+    Log.warn("[UI] UIControllerManager:UnLoadUIInternal, cannot find ui in cache, ", uiName)
     return true
   end
-  local uiRegisterInfo = (self.uiRegisterInfoTable)[uiName]
+  local uiRegisterInfo = self.uiRegisterInfoTable[uiName]
   if not uiRegisterInfo then
-    (Log.fatal)("[UI] UIControllerManager:UnLoadUIInternal, cannot find ui register info, ", uiName)
+    Log.fatal("[UI] UIControllerManager:UnLoadUIInternal, cannot find ui register info, ", uiName)
     return false
   end
   if not self:IsCacheUIName(uiName) or self.forceClearCache then
@@ -999,22 +728,16 @@ UIControllerManager.UnLoadUIInternal = function(self, uiName)
   return true
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.UnloadUICache = function(self, uiName)
-  -- function num : 0_70
-  (self.cacheViews):Remove(uiName)
+function UIControllerManager:UnloadUICache(uiName)
+  self.cacheViews:Remove(uiName)
   local uiController = self:GetController(uiName)
   if uiController then
     uiController:UnLoad()
   end
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.IsCacheUIName = function(self, uiName)
-  -- function num : 0_71 , upvalues : _ENV, cacheUINames
-  for k,v in pairs(cacheUINames) do
+function UIControllerManager:IsCacheUIName(uiName)
+  for k, v in pairs(cacheUINames) do
     if v == uiName then
       return true
     end
@@ -1022,11 +745,8 @@ UIControllerManager.IsCacheUIName = function(self, uiName)
   return false
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.IsTaskFinished = function(self, taskID)
-  -- function num : 0_72 , upvalues : _ENV
-  local task = ((GameGlobal.TaskManager)()):FindTask(taskID)
+function UIControllerManager:IsTaskFinished(taskID)
+  local task = GameGlobal.TaskManager():FindTask(taskID)
   if task == nil then
     return true
   else
@@ -1034,55 +754,39 @@ UIControllerManager.IsTaskFinished = function(self, taskID)
   end
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.AddExtendManager = function(self, type)
-  -- function num : 0_73
+function UIControllerManager:AddExtendManager(type)
   local mgr = type:New()
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.extendManagers)[type._className] = mgr
+  self.extendManagers[type._className] = mgr
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.GetExtendManager = function(self, type)
-  -- function num : 0_74
-  return (self.extendManagers)[type._className]
+function UIControllerManager:GetExtendManager(type)
+  return self.extendManagers[type._className]
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R3 in 'UnsetPending'
-
-UIControllerManager.ClearAllExtendManagers = function(self)
-  -- function num : 0_75 , upvalues : _ENV
-  for _,v in pairs(self.extendManagers) do
+function UIControllerManager:ClearAllExtendManagers()
+  for _, v in pairs(self.extendManagers) do
     if v then
       v:OnDestroy()
       v:Dispose()
     end
   end
-  ;
-  (table.clear)(self.extendManagers)
+  table.clear(self.extendManagers)
 end
 
 _class("UIRegisterInfo", Object)
 UIRegisterInfo = UIRegisterInfo
--- DECOMPILER ERROR at PC248: Confused about usage of register: R3 in 'UnsetPending'
 
-UIRegisterInfo.Constructor = function(self, uiPrefab, maskType, hideUnderLayer, loadDataBeforeSwitch, uiComponents)
-  -- function num : 0_76 , upvalues : _ENV
+function UIRegisterInfo:Constructor(uiPrefab, maskType, hideUnderLayer, loadDataBeforeSwitch, uiComponents)
   self.uiPrefab = uiPrefab
-  if not maskType then
-    self.maskType = MaskType.MT_Default
-    if not hideUnderLayer then
-      self.hideUnderLayer = HideUnderLayerType.Dont_Hide
-      self.loadDataBeforeSwitch = loadDataBeforeSwitch or true
-      self.uiComponents = uiComponents
-    end
-  end
+  self.maskType = maskType or MaskType.MT_Default
+  self.hideUnderLayer = hideUnderLayer or HideUnderLayerType.Dont_Hide
+  self.loadDataBeforeSwitch = loadDataBeforeSwitch or true
+  self.uiComponents = uiComponents
 end
 
-local HideUnderLayerType = {Dont_Hide = 0, Manual_Hide = 1, Auto_Hide = 2}
+local HideUnderLayerType = {
+  Dont_Hide = 0,
+  Manual_Hide = 1,
+  Auto_Hide = 2
+}
 _enum("HideUnderLayerType", HideUnderLayerType)
-

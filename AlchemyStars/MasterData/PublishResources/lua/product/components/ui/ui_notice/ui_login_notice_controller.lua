@@ -1,91 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_notice/ui_login_notice_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILoginNoticeController", UIController)
 UILoginNoticeController = UILoginNoticeController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILoginNoticeController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UILoginNoticeController:OnShow(uiParams)
   self._noticeInfo = uiParams[1]
   self._sureCallback = uiParams[2]
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILoginNoticeController.OnHide = function(self)
-  -- function num : 0_1
+function UILoginNoticeController:OnHide()
   self._noticeInfo = nil
   self._sureCallback = nil
   self._title = nil
   self._msg = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILoginNoticeController._GetComponents = function(self)
-  -- function num : 0_2
+function UILoginNoticeController:_GetComponents()
   self._title = self:GetUIComponent("UILocalizationText", "title")
   self._msg = self:GetUIComponent("UIRichText", "msg")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILoginNoticeController._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UILoginNoticeController:_OnValue()
   if self._noticeInfo then
-    local content = (self._noticeInfo).Text_NoticeContent
-    local str1 = (string.sub)(content, 1, 1)
-    local str2 = (string.sub)(content, -1)
-    do
-      if str1 == "{" and str2 == "}" and content then
-        local tab = (cjson.decode)((self._noticeInfo).Text_NoticeContent)
+    local content = self._noticeInfo.Text_NoticeContent
+    local str1 = string.sub(content, 1, 1)
+    local str2 = string.sub(content, -1)
+    if str1 == "{" and str2 == "}" then
+      if content then
+        local tab = cjson.decode(self._noticeInfo.Text_NoticeContent)
         if tab then
-          (self._msg):SetText(tab.content)
-          -- DECOMPILER ERROR at PC35: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._msg).onHrefClick = function(hrefName)
-    -- function num : 0_3_0 , upvalues : _ENV
-    (SDKProxy:GetInstance()):OpenUrl(hrefName)
-  end
-
+          self._msg:SetText(tab.content)
+          
+          function self._msg.onHrefClick(hrefName)
+            SDKProxy:GetInstance():OpenUrl(hrefName)
+          end
         else
-          ;
-          (Log.fatal)("###notice json decode fail ! content --> ", (self._noticeInfo).Text_NoticeContent)
+          Log.fatal("###notice json decode fail ! content --> ", self._noticeInfo.Text_NoticeContent)
         end
       end
-      if content then
-        (self._msg):SetText(content)
-        -- DECOMPILER ERROR at PC52: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._msg).onHrefClick = function(hrefName)
-    -- function num : 0_3_1 , upvalues : _ENV
-    (SDKProxy:GetInstance()):OpenUrl(hrefName)
-  end
-
+    elseif content then
+      self._msg:SetText(content)
+      
+      function self._msg.onHrefClick(hrefName)
+        SDKProxy:GetInstance():OpenUrl(hrefName)
       end
-      if (self._noticeInfo).Text_NoticeTitle then
-        (self._title):SetText((self._noticeInfo).Text_NoticeTitle)
-      end
+    end
+    if self._noticeInfo.Text_NoticeTitle then
+      self._title:SetText(self._noticeInfo.Text_NoticeTitle)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILoginNoticeController.sureOnClick = function(self, go)
-  -- function num : 0_4
+function UILoginNoticeController:sureOnClick(go)
   if self._sureCallback then
-    (self._sureCallback)()
+    self._sureCallback()
   else
     self:CloseDialog()
   end
 end
-
-

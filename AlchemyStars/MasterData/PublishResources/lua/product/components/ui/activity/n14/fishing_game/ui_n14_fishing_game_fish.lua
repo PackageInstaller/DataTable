@@ -1,269 +1,178 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n14/fishing_game/ui_n14_fishing_game_fish.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN14FishingGameFish", UICustomWidget)
 UIN14FishingGameFish = UIN14FishingGameFish
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN14FishingGameFish.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN14FishingGameFish:OnShow()
   self._spine = self:GetUIComponent("SpineLoader", "Spine")
   self.IsRotate = false
   self._currentRotateTime = 0
   self._rotateTime = 0.2
   self._bornNoRotateSwimTime = 3
   self._currentBornTime = 0
-  self._swimSpeedMult = ((Cfg.cfg_fishing_minigame)[1]).SkillFishSpeedMult
+  self._swimSpeedMult = Cfg.cfg_fishing_minigame[1].SkillFishSpeedMult
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameFish.Constructor = function(self)
-  -- function num : 0_1
+function UIN14FishingGameFish:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameFish.SetData = function(self, Id, originPos, originRot, shadow)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN14FishingGameFish:SetData(Id, originPos, originRot, shadow)
   self._fishId = Id
-  self._fishCfg = ((Cfg.cfg_fishing_fish)({ID = Id}))[1]
-  ;
-  (self._spine):SetAnimation(0, (self._fishCfg).SpineName, true)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self._spine).transform).localPosition = originPos
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self._spine).transform).localEulerAngles = originRot
-  self._startPos = ((self._spine).transform).localPosition
-  self._randomChangeRotationPercent = (self._fishCfg).RotateProbability
-  self._randomChangeRotationInterval = (self._fishCfg).RotateInterval
-  self._randomChangeSpeedPercent = (self._fishCfg).ChangeSpeedProbability
-  self._randomChangeSpeedInterval = (self._fishCfg).ChangeSpeedInterval
+  self._fishCfg = Cfg.cfg_fishing_fish({ID = Id})[1]
+  self._spine:SetAnimation(0, self._fishCfg.SpineName, true)
+  self._spine.transform.localPosition = originPos
+  self._spine.transform.localEulerAngles = originRot
+  self._startPos = self._spine.transform.localPosition
+  self._randomChangeRotationPercent = self._fishCfg.RotateProbability
+  self._randomChangeRotationInterval = self._fishCfg.RotateInterval
+  self._randomChangeSpeedPercent = self._fishCfg.ChangeSpeedProbability
+  self._randomChangeSpeedInterval = self._fishCfg.ChangeSpeedInterval
   self._currentChangeSpeedWait = 0
   self._currentChangeRotationWait = 0
-  self._swimSpeed = (math.random)(((self._fishCfg).Speed)[1], ((self._fishCfg).Speed)[2])
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (((self._spine).gameObject).transform).localScale = Vector3.one * (self._fishCfg).Scale
-  ;
-  ((((self._spine).transform).parent).gameObject):SetActive(true)
+  self._swimSpeed = math.random(self._fishCfg.Speed[1], self._fishCfg.Speed[2])
+  self._spine.gameObject.transform.localScale = Vector3.one * self._fishCfg.Scale
+  self._spine.transform.parent.gameObject:SetActive(true)
   self.state = FishingFishState.Born
   if shadow then
     self._shadow = shadow
   end
   if self._shadow then
-    (self._shadow):SetShadow((self._fishCfg).FishShadow, (self._fishCfg).ShadowScale)
-    ;
-    (self._shadow):UpdatePosAndAngle(originPos, originRot, 30)
-    ;
-    (self._shadow):SetVisible(true)
+    self._shadow:SetShadow(self._fishCfg.FishShadow, self._fishCfg.ShadowScale)
+    self._shadow:UpdatePosAndAngle(originPos, originRot, 30)
+    self._shadow:SetVisible(true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameFish.Swim = function(self, deltaTimeMS, state)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN14FishingGameFish:Swim(deltaTimeMS, state)
   if self.IsRotate == true then
     self._currentRotateTime = self._currentRotateTime + deltaTimeMS / 1000
-    if self._rotateTime < self._currentRotateTime then
+    if self._currentRotateTime > self._rotateTime then
       self.IsRotate = false
       self._currentRotateTime = 0
     end
   else
     self._currentChangeRotationWait = self._currentChangeRotationWait + deltaTimeMS / 1000
     self._currentChangeSpeedWait = self._currentChangeSpeedWait + deltaTimeMS / 1000
-    if (self.state == FishingFishState.Born and self:CheckSwimInScreen()) or state == FishingGameState.Skill then
+    if self.state == FishingFishState.Born and self:CheckSwimInScreen() or state == FishingGameState.Skill then
       self.state = FishingFishState.Swimming
     end
-    if self.state ~= FishingFishState.Born and self._randomChangeRotationInterval <= self._currentChangeRotationWait then
-      local r = (math.random)(1, 100)
-      do
-        do
-          if self._randomChangeRotationPercent <= r then
-            local angles = ((self._spine).transform).localEulerAngles
-            angles.z = angles.z + (math.random)(-10, 10)
-            -- DECOMPILER ERROR at PC68: Confused about usage of register: R5 in 'UnsetPending'
-
-            ;
-            ((self._spine).transform).localEulerAngles = angles
-          end
-          self._currentChangeRotationWait = 0
-          do
-            if self._randomChangeSpeedInterval <= self._currentChangeSpeedWait then
-              local r = (math.random)(1, 100)
-              if self._randomChangeSpeedPercent < r then
-                self._swimSpeed = (math.random)(((self._fishCfg).Speed)[1], ((self._fishCfg).Speed)[2])
-              end
-              self._currentChangeSpeedWait = 0
-            end
-            -- DECOMPILER ERROR at PC113: Confused about usage of register: R3 in 'UnsetPending'
-
-            if state == FishingGameState.Skill then
-              ((self._spine).transform).localPosition = ((self._spine).transform).localPosition + ((self._spine).transform).up * deltaTimeMS / 1000 * self._swimSpeed * 50 * self._swimSpeedMult
-            else
-              -- DECOMPILER ERROR at PC129: Confused about usage of register: R3 in 'UnsetPending'
-
-              ;
-              ((self._spine).transform).localPosition = ((self._spine).transform).localPosition + ((self._spine).transform).up * deltaTimeMS / 1000 * self._swimSpeed * 50
-            end
-            ;
-            (self._shadow):UpdatePosAndAngle(((self._spine).transform).localPosition, ((self._spine).transform).localEulerAngles, 30)
-          end
-        end
+    if self.state ~= FishingFishState.Born and self._currentChangeRotationWait >= self._randomChangeRotationInterval then
+      local r = math.random(1, 100)
+      if r >= self._randomChangeRotationPercent then
+        local angles = self._spine.transform.localEulerAngles
+        angles.z = angles.z + math.random(-10, 10)
+        self._spine.transform.localEulerAngles = angles
       end
+      self._currentChangeRotationWait = 0
+    end
+    if self._currentChangeSpeedWait >= self._randomChangeSpeedInterval then
+      local r = math.random(1, 100)
+      if r > self._randomChangeSpeedPercent then
+        self._swimSpeed = math.random(self._fishCfg.Speed[1], self._fishCfg.Speed[2])
+      end
+      self._currentChangeSpeedWait = 0
     end
   end
+  if state == FishingGameState.Skill then
+    self._spine.transform.localPosition = self._spine.transform.localPosition + self._spine.transform.up * deltaTimeMS / 1000 * self._swimSpeed * 50 * self._swimSpeedMult
+  else
+    self._spine.transform.localPosition = self._spine.transform.localPosition + self._spine.transform.up * deltaTimeMS / 1000 * self._swimSpeed * 50
+  end
+  self._shadow:UpdatePosAndAngle(self._spine.transform.localPosition, self._spine.transform.localEulerAngles, 30)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameFish.ForceSetPosition = function(self, position, originRot)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  ((self._spine).transform).localPosition = position
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._spine).transform).localEulerAngles = originRot
-  ;
-  (self._shadow):UpdatePosAndAngle(((self._spine).transform).localPosition, ((self._spine).transform).localEulerAngles, 30)
+function UIN14FishingGameFish:ForceSetPosition(position, originRot)
+  self._spine.transform.localPosition = position
+  self._spine.transform.localEulerAngles = originRot
+  self._shadow:UpdatePosAndAngle(self._spine.transform.localPosition, self._spine.transform.localEulerAngles, 30)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameFish.IsSwimmingState = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  do return self.state == FishingFishState.Swimming end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIN14FishingGameFish:IsSwimmingState()
+  return self.state == FishingFishState.Swimming
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameFish.IsDead = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  do return self.state == FishingFishState.Die end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIN14FishingGameFish:IsDead()
+  return self.state == FishingFishState.Die
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameFish.GetFishLength = function(self)
-  -- function num : 0_7
-  return (self._fishCfg).FishLength
+function UIN14FishingGameFish:GetFishLength()
+  return self._fishCfg.FishLength
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameFish.CheckReachedEdge = function(self, topEdgeY, bottomEdgeY, leftEdgeX, rightEdgeX, checkValue)
-  -- function num : 0_8 , upvalues : _ENV
-  local reachTop = (topEdgeY - (((self._spine).transform).localPosition).y) * (topEdgeY - (((self._spine).transform).localPosition).y) <= checkValue * checkValue
-  local reachBottom = reachTop and (bottomEdgeY - (((self._spine).transform).localPosition).y) * (bottomEdgeY - (((self._spine).transform).localPosition).y) <= checkValue * checkValue
-  local reachLeft = reachBottom and (leftEdgeX - (((self._spine).transform).localPosition).x) * (leftEdgeX - (((self._spine).transform).localPosition).y) <= checkValue * checkValue
-  local reachRight = reachLeft and (rightEdgeX - (((self._spine).transform).localPosition).x) * (rightEdgeX - (((self._spine).transform).localPosition).y) <= checkValue * checkValue
+function UIN14FishingGameFish:CheckReachedEdge(topEdgeY, bottomEdgeY, leftEdgeX, rightEdgeX, checkValue)
+  local reachTop = (topEdgeY - self._spine.transform.localPosition.y) * (topEdgeY - self._spine.transform.localPosition.y) <= checkValue * checkValue
+  if reachTop then
+  end
+  local reachBottom = (bottomEdgeY - self._spine.transform.localPosition.y) * (bottomEdgeY - self._spine.transform.localPosition.y) <= checkValue * checkValue
+  if reachBottom then
+  end
+  local reachLeft = (leftEdgeX - self._spine.transform.localPosition.x) * (leftEdgeX - self._spine.transform.localPosition.y) <= checkValue * checkValue
+  if reachLeft then
+  end
+  local reachRight = (rightEdgeX - self._spine.transform.localPosition.x) * (rightEdgeX - self._spine.transform.localPosition.y) <= checkValue * checkValue
   if reachRight then
-    local vec = Vector3(0, 0, 0)
-    if reachTop or reachBottom or reachLeft or reachRight then
+  end
+  local vec = Vector3(0, 0, 0)
+  if reachTop or reachBottom or reachLeft or reachRight then
+    if reachLeft then
+      vec = Vector3(0, 0, math.random(30, 150))
+    end
+    if reachRight then
+      vec = Vector3(0, 0, math.random(-150, -30))
+    end
+    if reachTop then
+      vec = Vector3(0, 0, math.random(120, 240))
       if reachLeft then
-        vec = Vector3(0, 0, (math.random)(30, 150))
+        vec = Vector3(0, 0, math.random(210, 240))
       end
       if reachRight then
-        vec = Vector3(0, 0, (math.random)(-150, -30))
+        vec = Vector3(0, 0, math.random(120, 150))
       end
-      if reachTop then
-        vec = Vector3(0, 0, (math.random)(120, 240))
-        if reachLeft then
-          vec = Vector3(0, 0, (math.random)(210, 240))
-        end
-        if reachRight then
-          vec = Vector3(0, 0, (math.random)(120, 150))
-        end
-      end
-      if reachBottom then
-        vec = Vector3(0, 0, (math.random)(-60, 60))
-        if reachLeft then
-          vec = Vector3(0, 0, (math.random)(-60, -30))
-        end
-        if reachRight then
-          vec = Vector3(0, 0, (math.random)(30, 60))
-        end
-      end
-      -- DECOMPILER ERROR at PC183: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      ((self._spine).transform).localEulerAngles = vec
-      self:ResetChangeSpeedAndRotationTime()
-      return true
     end
-    do return false end
-    -- DECOMPILER ERROR: 16 unprocessed JMP targets
+    if reachBottom then
+      vec = Vector3(0, 0, math.random(-60, 60))
+      if reachLeft then
+        vec = Vector3(0, 0, math.random(-60, -30))
+      end
+      if reachRight then
+        vec = Vector3(0, 0, math.random(30, 60))
+      end
+    end
+    self._spine.transform.localEulerAngles = vec
+    self:ResetChangeSpeedAndRotationTime()
+    return true
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameFish.ResetChangeSpeedAndRotationTime = function(self)
-  -- function num : 0_9
+function UIN14FishingGameFish:ResetChangeSpeedAndRotationTime()
   self._currentChangeRotationWait = 0
   self._currentChangeSpeedWait = 0
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameFish.CheckCatched = function(self, camera, netPos, netRadius)
-  -- function num : 0_10 , upvalues : _ENV
-  local screenPos = camera:WorldToScreenPoint(((self._spine).transform).position)
-  local dis = (Vector3.Distance)(netPos, screenPos)
-  do return dis < netRadius and screenPos.y > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIN14FishingGameFish:CheckCatched(camera, netPos, netRadius)
+  local screenPos = camera:WorldToScreenPoint(self._spine.transform.position)
+  local dis = Vector3.Distance(netPos, screenPos)
+  return netRadius > dis and screenPos.y > 0
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameFish.Die = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN14FishingGameFish:Die()
   self.state = FishingFishState.Die
-  ;
-  ((((self._spine).transform).parent).gameObject):SetActive(false)
-  ;
-  (self._shadow):SetVisible(false)
+  self._spine.transform.parent.gameObject:SetActive(false)
+  self._shadow:SetVisible(false)
   self._currentRotateTime = 0
   self._currentBornTime = 0
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameFish.CheckSwimInScreen = function(self)
-  -- function num : 0_12
-  do
-    if self._camera then
-      local screenPos = (self._camera):WorldToScreenPoint(((self._spine).transform).position)
-      return (self._fishCfg).FishLength < screenPos.y
-    end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIN14FishingGameFish:CheckSwimInScreen()
+  if self._camera then
+    local screenPos = self._camera:WorldToScreenPoint(self._spine.transform.position)
+    return screenPos.y > self._fishCfg.FishLength
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameFish.SetCamera = function(self, camera)
-  -- function num : 0_13
+function UIN14FishingGameFish:SetCamera(camera)
   self._camera = camera
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameFish.DoSkill = function(self)
-  -- function num : 0_14
+function UIN14FishingGameFish:DoSkill()
 end
-
-

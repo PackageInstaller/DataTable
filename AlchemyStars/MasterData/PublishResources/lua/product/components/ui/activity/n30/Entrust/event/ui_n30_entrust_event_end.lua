@@ -1,34 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n30/Entrust/event/ui_n30_entrust_event_end.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local e = require("ui_n30_entrust_event")
 e:Class("N30EntrustEventEnd", N30EntrustEvent, EntrustEventType.EntrustEventType_End)
--- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
 
-N30EntrustEventEnd.Constructor = function(self)
-  -- function num : 0_0
+function N30EntrustEventEnd:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventEnd.DebugName = function(self)
-  -- function num : 0_1
+function N30EntrustEventEnd:DebugName()
   return "End"
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventEnd.GetIconBgName = function(self)
-  -- function num : 0_2
+function N30EntrustEventEnd:GetIconBgName()
   return "n30_wt_ld_ico002"
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventEnd.GetIconName = function(self)
-  -- function num : 0_3
+function N30EntrustEventEnd:GetIconName()
   if self._isPass then
     return "n30_wt_ld_ico02"
   else
@@ -36,17 +20,11 @@ N30EntrustEventEnd.GetIconName = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventEnd.GetWidgetName = function(self)
-  -- function num : 0_4
+function N30EntrustEventEnd:GetWidgetName()
   return "UIN30EntrustEventEnd"
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventEnd.OnArrived = function(self, ui)
-  -- function num : 0_5
+function N30EntrustEventEnd:OnArrived(ui)
   if not self:IsPass() then
     ui:ShowDialog("UIN30EntrustEvent", self)
   end
@@ -54,65 +32,42 @@ end
 
 _class("UIN30EntrustEventEnd", UIN30EntrustEventWidget)
 UIN30EntrustEventEnd = UIN30EntrustEventEnd
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN30EntrustEventEnd.Constructor = function(self)
-  -- function num : 0_6
+function UIN30EntrustEventEnd:Constructor()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventEnd.GetTitle = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  return (StringTable.Get)("str_n30_entrust_event_end_title")
+function UIN30EntrustEventEnd:GetTitle()
+  return StringTable.Get("str_n30_entrust_event_end_title")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventEnd.OnShow = function(self, uiParams)
-  -- function num : 0_8
+function UIN30EntrustEventEnd:OnShow(uiParams)
   self._contentFinishReward = self:GetUIComponent("UISelectObjectPath", "contentFinishReward")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventEnd.OnHide = function(self)
-  -- function num : 0_9
+function UIN30EntrustEventEnd:OnHide()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventEnd.BtnConfirmOnClick = function(self, go)
-  -- function num : 0_10
-  self:CallUIMethod("UIN30EntrustLine", "CompleteEvent", (self._event):ID(), function()
-    -- function num : 0_10_0 , upvalues : self
-    (self:RootUIOwner()):CloseDialogAnimation(function()
-      -- function num : 0_10_0_0 , upvalues : self
-      local entrustData = (self._event):EntrustData()
-      local rewards = entrustData:EventRewardList((self._event):Cfg())
+function UIN30EntrustEventEnd:BtnConfirmOnClick(go)
+  self:CallUIMethod("UIN30EntrustLine", "CompleteEvent", self._event:ID(), function()
+    self:RootUIOwner():CloseDialogAnimation(function()
+      local entrustData = self._event:EntrustData()
+      local rewards = entrustData:EventRewardList(self._event:Cfg())
       self:ShowDialog("UIGetItemController", rewards, function()
-        -- function num : 0_10_0_0_0 , upvalues : self
-        self:CallUIMethod("UIN30EntrustLine", "OnEventFinish", {(self._event):ID()})
-      end
-)
-    end
-)
-  end
-)
+        self:CallUIMethod("UIN30EntrustLine", "OnEventFinish", {
+          self._event:ID()
+        })
+      end)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventEnd.Refresh = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local cfg = (self._event):Cfg()
-  local entrustData = (self._event):EntrustData()
+function UIN30EntrustEventEnd:Refresh()
+  local cfg = self._event:Cfg()
+  local entrustData = self._event:EntrustData()
   local rewardFinish = entrustData:EventRewardList(cfg)
-  local widgetFinish = (self._contentFinishReward):SpawnObjects("UIN30EntrustStageReward", #rewardFinish)
-  for k,v in pairs(rewardFinish) do
+  local widgetFinish = self._contentFinishReward:SpawnObjects("UIN30EntrustStageReward", #rewardFinish)
+  for k, v in pairs(rewardFinish) do
     local ui = widgetFinish[k]
     ui:Flush(v)
   end
 end
-
-

@@ -1,80 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n32/multi_line/map/ui_n32_multi_line_pet_unlock.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN32MultiLinePetUnlock", UIController)
 UIN32MultiLinePetUnlock = UIN32MultiLinePetUnlock
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN32MultiLinePetUnlock.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIN32MultiLinePetUnlock:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLinePetUnlock.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN32MultiLinePetUnlock:OnShow(uiParams)
   self._petRewardId = uiParams[1]
   self._finishCallback = uiParams[2]
   self:InitWidget()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLinePetUnlock.InitWidget = function(self)
-  -- function num : 0_2
+function UIN32MultiLinePetUnlock:InitWidget()
   self.desc = self:GetUIComponent("UILocalizationText", "desc")
   self.content = self:GetUIComponent("UILocalizationText", "content")
   self.petImage = self:GetUIComponent("RawImageLoader", "petImage")
   self.animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLinePetUnlock.OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local petfileCfg = (Cfg.cfg_component_multiline_mission_petfiles)[self._petRewardId]
+function UIN32MultiLinePetUnlock:OnValue()
+  local petfileCfg = Cfg.cfg_component_multiline_mission_petfiles[self._petRewardId]
   if not petfileCfg then
-    (Log.error)("err: UIN32MultiLinePetUnlock cfg_component_multiline_mission_petfiles can\'t find  " .. self._petRewardId)
-    return 
+    Log.error("err: UIN32MultiLinePetUnlock cfg_component_multiline_mission_petfiles can't find  " .. self._petRewardId)
+    return
   end
-  ;
-  (self.content):SetText((StringTable.Get)(petfileCfg.Title))
-  ;
-  (self.desc):SetText((StringTable.Get)(petfileCfg.Desc))
-  local cfgs = (Cfg.cfg_component_multiline_mission_pet)({ComponentID = petfileCfg.ComponentID})
+  self.content:SetText(StringTable.Get(petfileCfg.Title))
+  self.desc:SetText(StringTable.Get(petfileCfg.Desc))
+  local cfgs = Cfg.cfg_component_multiline_mission_pet({
+    ComponentID = petfileCfg.ComponentID
+  })
   if cfgs then
-    for k,subCfg in pairs(cfgs) do
-      for i,v in ipairs(subCfg.FilesID) do
+    for k, subCfg in pairs(cfgs) do
+      for i, v in ipairs(subCfg.FilesID) do
         if v == self._petRewardId then
-          (self.petImage):LoadImage(subCfg.HeadImg)
+          self.petImage:LoadImage(subCfg.HeadImg)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLinePetUnlock.ClsoeBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN32MultiLinePetUnlock:ClsoeBtnOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV
     local lockName = "UIN32MultiLinePetUnlock:ExitAni"
     self:Lock(lockName)
-    ;
-    (self.animation):Play("uieff_UIN32MultiLinePetUnlock_out")
+    self.animation:Play("uieff_UIN32MultiLinePetUnlock_out")
     YIELD(TT, 200)
     self:CloseDialog()
     self:UnLock(lockName)
     if self._finishCallback then
-      (self._finishCallback)()
+      self._finishCallback()
     end
-  end
-)
+  end)
 end
-
-

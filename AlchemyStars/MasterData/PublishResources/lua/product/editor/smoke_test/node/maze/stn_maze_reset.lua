@@ -1,21 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/maze/stn_maze_reset.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("Maze_Reset", CTestRobot_Base)
 Maze_Reset = Maze_Reset
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Maze_Reset.OnWorking = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local strcmd = (string.format)("reset_maze %s", (LocalDB.GetString)("OpenIdTest"))
-  ;
-  (self.m_pManager):SendCheatCommand(strcmd)
-  ;
-  (self.m_pManager):Log(self, "Command sent: ", strcmd)
-  return ((Maze_Reset.super).OnWorking)(self)
+function Maze_Reset:OnWorking()
+  local strcmd = string.format("reset_maze %s", LocalDB.GetString("OpenIdTest"))
+  self.m_pManager:SendCheatCommand(strcmd)
+  self.m_pManager:Log(self, "Command sent: ", strcmd)
+  return Maze_Reset.super.OnWorking(self)
 end
-
-

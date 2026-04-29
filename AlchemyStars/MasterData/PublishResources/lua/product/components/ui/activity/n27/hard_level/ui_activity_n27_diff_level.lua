@@ -1,38 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/hard_level/ui_activity_n27_diff_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN27DiffLevel", Object)
 UIActivityN27DiffLevel = UIActivityN27DiffLevel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN27DiffLevel.Constructor = function(self, main)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN27DiffLevel:Constructor(main)
   self._main = main
-  self._missionModule = (GameGlobal.GetModule)(MissionModule)
-  self._campModule = (GameGlobal.GetModule)(CampaignModule)
-  self._go = (self._main):GetGameObject("Diff")
-  self._time = (self._main):GetUIComponent("UILocalizationText", "DiffTime")
+  self._missionModule = GameGlobal.GetModule(MissionModule)
+  self._campModule = GameGlobal.GetModule(CampaignModule)
+  self._go = self._main:GetGameObject("Diff")
+  self._time = self._main:GetUIComponent("UILocalizationText", "DiffTime")
   self._timerHolder = UITimerHolder:New()
-  self._nodesPool = (self._main):GetUIComponent("UISelectObjectPath", "DiffNodes")
+  self._nodesPool = self._main:GetUIComponent("UISelectObjectPath", "DiffNodes")
   self._campaign = nil
   self._blackHardComponent = nil
   self._blackHardCompInfo = nil
   self._levelDatas = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27DiffLevel.Destroy = function(self)
-  -- function num : 0_1
-  (self._timerHolder):Dispose()
+function UIActivityN27DiffLevel:Destroy()
+  self._timerHolder:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27DiffLevel.SetData = function(self, campaign, component, componentInfo)
-  -- function num : 0_2
+function UIActivityN27DiffLevel:SetData(campaign, component, componentInfo)
   self._campaign = campaign
   self._blackHardComponent = component
   self._blackHardCompInfo = componentInfo
@@ -41,10 +28,7 @@ UIActivityN27DiffLevel.SetData = function(self, campaign, component, componentIn
   self:FlushNodes()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27DiffLevel.Refresh = function(self, campaign, component, componentInfo)
-  -- function num : 0_3
+function UIActivityN27DiffLevel:Refresh(campaign, component, componentInfo)
   self._campaign = campaign
   self._blackHardComponent = component
   self._blackHardCompInfo = componentInfo
@@ -53,152 +37,112 @@ UIActivityN27DiffLevel.Refresh = function(self, campaign, component, componentIn
   self:FlushNodes()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27DiffLevel.InitLevelData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_difficulty_parent_mission)({ComponentID = (self._blackHardComponent):GetComponentCfgId()})
+function UIActivityN27DiffLevel:InitLevelData()
+  local cfgs = Cfg.cfg_difficulty_parent_mission({
+    ComponentID = self._blackHardComponent:GetComponentCfgId()
+  })
   if cfgs ~= nil then
-    for k,cfg in pairs(cfgs) do
+    for k, cfg in pairs(cfgs) do
       local data = UIActivityN27DiffLevelData:New()
       data:InitParentLevel(self._blackHardComponent, self._blackHardCompInfo, cfg)
-      -- DECOMPILER ERROR at PC26: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._levelDatas)[#self._levelDatas + 1] = data
+      self._levelDatas[#self._levelDatas + 1] = data
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27DiffLevel.RefreshLevelData = function(self)
-  -- function num : 0_5
+function UIActivityN27DiffLevel:RefreshLevelData()
   for i = 1, #self._levelDatas do
-    ((self._levelDatas)[i]):RefreshParentLevel(self._blackHardComponent, self._blackHardCompInfo)
+    self._levelDatas[i]:RefreshParentLevel(self._blackHardComponent, self._blackHardCompInfo)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27DiffLevel.SetActive = function(self, status, playAnim)
-  -- function num : 0_6
-  (self._go):SetActive(status)
+function UIActivityN27DiffLevel:SetActive(status, playAnim)
+  self._go:SetActive(status)
   if status and playAnim then
     self:FlushNodes()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27DiffLevel.RefreshCountdown = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local closeTime = (self._blackHardCompInfo).m_close_time
+function UIActivityN27DiffLevel:RefreshCountdown()
+  local closeTime = self._blackHardCompInfo.m_close_time
   self._isValid = true
   local timerName = "CountDown"
-  local countDown = function()
-    -- function num : 0_7_0 , upvalues : _ENV, closeTime, self, timerName
-    local now = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() / 1000
-    local time = (math.ceil)(closeTime - now)
+  
+  local function countDown()
+    local now = GameGlobal.GetModule(SvrTimeModule):GetServerTime() / 1000
+    local time = math.ceil(closeTime - now)
     local timeStr = self:GetFormatTimerStr(time)
     if self._timeString ~= timeStr then
-      (self._time):SetText(timeStr)
+      self._time:SetText(timeStr)
       self._timeString = timeStr
     end
     if time < 0 then
       self._isValid = false
-      ;
-      (self._timerHolder):StopTimer(timerName)
+      self._timerHolder:StopTimer(timerName)
     end
   end
-
+  
   countDown()
-  ;
-  (self._timerHolder):StartTimerInfinite(timerName, 1000, countDown)
+  self._timerHolder:StartTimerInfinite(timerName, 1000, countDown)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27DiffLevel.GetFormatTimerStr = function(self, time, id)
-  -- function num : 0_8 , upvalues : _ENV
-  local default_id = {day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_error_107"}
-  if not id then
-    id = default_id
-  end
-  local timeStr = (StringTable.Get)(id.over)
+function UIActivityN27DiffLevel:GetFormatTimerStr(time, id)
+  local default_id = {
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_error_107"
+  }
+  id = id or default_id
+  local timeStr = StringTable.Get(id.over)
   if time < 0 then
     return timeStr
   end
-  local day, hour, min, second = (UIActivityHelper.Time2Str)(time)
-  if day > 0 then
-    timeStr = day .. (StringTable.Get)(id.day) .. hour .. (StringTable.Get)(id.hour)
+  local day, hour, min, second = UIActivityHelper.Time2Str(time)
+  if 0 < day then
+    timeStr = day .. StringTable.Get(id.day) .. hour .. StringTable.Get(id.hour)
+  elseif 0 < hour then
+    timeStr = hour .. StringTable.Get(id.hour) .. min .. StringTable.Get(id.min)
+  elseif 0 < min then
+    timeStr = min .. StringTable.Get(id.min)
   else
-    if hour > 0 then
-      timeStr = hour .. (StringTable.Get)(id.hour) .. min .. (StringTable.Get)(id.min)
-    else
-      if min > 0 then
-        timeStr = min .. (StringTable.Get)(id.min)
-      else
-        timeStr = (StringTable.Get)(id.zero)
-      end
-    end
+    timeStr = StringTable.Get(id.zero)
   end
-  return (StringTable.Get)("str_n27_level_remain_time_tips", timeStr)
+  return StringTable.Get("str_n27_level_remain_time_tips", timeStr)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27DiffLevel.BtnInfoOnClick = function(self)
-  -- function num : 0_9
-  (self._main):ShowDialog("UIIntroLoader", "UIN27DiffLevelIntro")
+function UIActivityN27DiffLevel:BtnInfoOnClick()
+  self._main:ShowDialog("UIIntroLoader", "UIN27DiffLevelIntro")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27DiffLevel.FlushNodes = function(self)
-  -- function num : 0_10
-  (self._main):StartTask(self.CreateItems, self)
+function UIActivityN27DiffLevel:FlushNodes()
+  self._main:StartTask(self.CreateItems, self)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27DiffLevel.CreateItems = function(self, TT)
-  -- function num : 0_11
-  (self._main):Lock("UIActivityN27DiffLevel_CreateItems")
-  ;
-  (self._nodesPool):SpawnObjects("UIActivityN27DiffLevelNode", #self._levelDatas)
-  local nodes = (self._nodesPool):GetAllSpawnList()
+function UIActivityN27DiffLevel:CreateItems(TT)
+  self._main:Lock("UIActivityN27DiffLevel_CreateItems")
+  self._nodesPool:SpawnObjects("UIActivityN27DiffLevelNode", #self._levelDatas)
+  local nodes = self._nodesPool:GetAllSpawnList()
   for i = 1, #nodes do
-    (nodes[i]):SetData((self._levelDatas)[i], function(data)
-    -- function num : 0_11_0 , upvalues : self
-    self:OnNodeClick(data)
+    nodes[i]:SetData(self._levelDatas[i], function(data)
+      self:OnNodeClick(data)
+    end)
   end
-)
-  end
-  ;
-  (self._main):UnLock("UIActivityN27DiffLevel_CreateItems")
+  self._main:UnLock("UIActivityN27DiffLevel_CreateItems")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27DiffLevel.OnNodeClick = function(self, data)
-  -- function num : 0_12
-  (self._main):ShowDialog("UIActivityN27DiffLevelDetail", data, self._blackHardComponent)
+function UIActivityN27DiffLevel:OnNodeClick(data)
+  self._main:ShowDialog("UIActivityN27DiffLevelDetail", data, self._blackHardComponent)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27DiffLevel.ClickNodeByID = function(self, id)
-  -- function num : 0_13 , upvalues : _ENV
-  for _,data in ipairs(self._levelDatas) do
+function UIActivityN27DiffLevel:ClickNodeByID(id)
+  for _, data in ipairs(self._levelDatas) do
     if data:GetMissionId() == id then
       self:OnNodeClick(data)
       return true
     end
   end
-  ;
-  (Log.error)("[N27DiffLevel]找不到目标id:", id)
+  Log.error("[N27DiffLevel]找不到目标id:", id)
   return false
 end
-
-

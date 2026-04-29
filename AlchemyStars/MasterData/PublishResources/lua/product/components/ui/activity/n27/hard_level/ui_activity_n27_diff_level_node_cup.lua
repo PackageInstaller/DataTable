@@ -1,32 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/hard_level/ui_activity_n27_diff_level_node_cup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN27DiffLevelNodeCup", UICustomWidget)
 UIActivityN27DiffLevelNodeCup = UIActivityN27DiffLevelNodeCup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN27DiffLevelNodeCup.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityN27DiffLevelNodeCup:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27DiffLevelNodeCup.InitWidget = function(self)
-  -- function num : 0_1
+function UIActivityN27DiffLevelNodeCup:InitWidget()
   self._complete = self:GetGameObject("Complete")
   self._uncomplete = self:GetGameObject("UnComplete")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27DiffLevelNodeCup.SetData = function(self, complete)
-  -- function num : 0_2
-  (self._complete):SetActive(complete)
-  ;
-  (self._uncomplete):SetActive(not complete)
+function UIActivityN27DiffLevelNodeCup:SetData(complete)
+  self._complete:SetActive(complete)
+  self._uncomplete:SetActive(not complete)
 end
-
-

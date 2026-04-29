@@ -1,54 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/test/ui_season_testfunc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTestFunc", UICustomWidget)
 UISeasonTestFunc = UISeasonTestFunc
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTestFunc._GetComponents = function(self)
-  -- function num : 0_0
+function UISeasonTestFunc:_GetComponents()
   self._window = self:GetGameObject("TestFuncWindow")
   self._gameobj = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTestFunc.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonTestFunc:OnShow()
   self:_GetComponents()
-  ;
-  (self._window):SetActive(false)
+  self._window:SetActive(false)
   self._btns = {}
   self:_PushBtns()
   local pool = self:GetUIComponent("UISelectObjectPath", "Group")
   local btns = pool:SpawnObjects("UISeasonTestBtn", #self._btns)
-  for i,tb in ipairs(self._btns) do
-    (btns[i]):SetData(tb[1], tb[2])
+  for i, tb in ipairs(self._btns) do
+    btns[i]:SetData(tb[1], tb[2])
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTestFunc._PushBtns = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonTestFunc:_PushBtns()
   self:_AddFunc("关卡详情", function()
-    -- function num : 0_2_0 , upvalues : _ENV
     local missionId = 8001001
-    ;
-    (UISeasonHelper.TestShowUIStage)(missionId)
-  end
-)
+    UISeasonHelper.TestShowUIStage(missionId)
+  end)
   self:_AddFunc("剧情关", function()
-    -- function num : 0_2_1 , upvalues : _ENV
     local stageId = 800103
-    ;
-    (UISeasonHelper.TriggerStoryNode)(stageId)
-  end
-)
+    UISeasonHelper.TriggerStoryNode(stageId)
+  end)
   self:_AddFunc("奖励弹窗", function()
-    -- function num : 0_2_2 , upvalues : self, _ENV
     local rewards = {}
     self:_AwardsTestAddAsset(rewards, 3210101, 10)
     self:_AwardsTestAddAsset(rewards, 3210302, 10)
@@ -58,97 +37,55 @@ UISeasonTestFunc._PushBtns = function(self)
     self:_AwardsTestAddAsset(rewards, 3753034, 1)
     self:_AwardsTestAddAsset(rewards, 7000101, 1)
     self:_AwardsTestAddAsset(rewards, 7000103, 1)
-    ;
-    (UISeasonHelper.ShowUIGetRewards)(rewards, false)
-  end
-)
+    UISeasonHelper.ShowUIGetRewards(rewards, false)
+  end)
   self:_AddFunc("帮助手册", function()
-    -- function num : 0_2_3 , upvalues : _ENV
-    (UISeasonHelper.ShowSeasonHelperBook)(1)
-  end
-)
+    UISeasonHelper.ShowSeasonHelperBook(1)
+  end)
   self:_AddFunc("收藏盒", function()
-    -- function num : 0_2_4 , upvalues : self
     self:ShowDialog("UISeasonS1Collages")
-  end
-)
+  end)
   self:_AddFunc("赛季任务", function()
-    -- function num : 0_2_5 , upvalues : self
     self:ShowDialog("UISeasonQuestController")
-  end
-)
+  end)
   self:_AddFunc("S1", function()
-    -- function num : 0_2_6 , upvalues : self
     self:ShowDialog("UIS1MainController")
-  end
-)
+  end)
   self:_AddFunc("强制进局开关", function()
-    -- function num : 0_2_7 , upvalues : _ENV
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
-
     if UISeasonHelper.TEST then
       UISeasonHelper.TEST = false
     else
-      -- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
       UISeasonHelper.TEST = true
     end
-    ;
-    (ToastManager.ShowToast)(UISeasonHelper.TEST and "已打开" or "已关闭")
-  end
-)
+    ToastManager.ShowToast(UISeasonHelper.TEST and "已打开" or "已关闭")
+  end)
   self:_AddFunc("一次性战斗关", function()
-    -- function num : 0_2_8 , upvalues : self
     self:ShowDialog("UISeasonOnceMission")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTestFunc._AddFunc = function(self, title, onClick)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._btns)[#self._btns + 1] = {title, onClick}
+function UISeasonTestFunc:_AddFunc(title, onClick)
+  self._btns[#self._btns + 1] = {title, onClick}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTestFunc.OnHide = function(self)
-  -- function num : 0_4
+function UISeasonTestFunc:OnHide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTestFunc.Switch = function(self, show)
-  -- function num : 0_5
-  (self._gameobj):SetActive(show)
+function UISeasonTestFunc:Switch(show)
+  self._gameobj:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTestFunc.TestFuncEntryOnClick = function(self)
-  -- function num : 0_6
-  (self._window):SetActive(true)
+function UISeasonTestFunc:TestFuncEntryOnClick()
+  self._window:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTestFunc.TestFuncWindowOnClick = function(self)
-  -- function num : 0_7
-  (self._window):SetActive(false)
+function UISeasonTestFunc:TestFuncWindowOnClick()
+  self._window:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTestFunc._AwardsTestAddAsset = function(self, tb, id, count)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonTestFunc:_AwardsTestAddAsset(tb, id, count)
   local roleAsset = RoleAsset:New()
   roleAsset.assetid = id
   roleAsset.count = count
-  ;
-  (table.insert)(tb, roleAsset)
+  table.insert(tb, roleAsset)
 end
-
-

@@ -1,202 +1,139 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/shop/ui_homeland_shop_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandShopHelper", Object)
 UIHomelandShopHelper = UIHomelandShopHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandShopHelper.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandShopHelper:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.ShowHomelandMessageBox_OK_Cancel = function(title, desc, callback)
-  -- function num : 0_1 , upvalues : _ENV
-  local btn1Data = {(StringTable.Get)("str_common_cancel"), function(param)
-    -- function num : 0_1_0
-  end
-}
-  local btn2Data = {(StringTable.Get)("str_common_ok"), callback}
+function UIHomelandShopHelper.ShowHomelandMessageBox_OK_Cancel(title, desc, callback)
+  local btn1Data = {
+    StringTable.Get("str_common_cancel"),
+    function(param)
+    end
+  }
+  local btn2Data = {
+    StringTable.Get("str_common_ok"),
+    callback
+  }
   local hideCloseBtn = true
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIHomelandMessageBox", title, desc, btn1Data, btn2Data, hideCloseBtn)
+  GameGlobal.UIStateManager():ShowDialog("UIHomelandMessageBox", title, desc, btn1Data, btn2Data, hideCloseBtn)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.CheckCoinOverflow = function(count, callback)
-  -- function num : 0_2 , upvalues : _ENV
-  local key = ((GameGlobal.GameLogic)()):GetOpenId() .. "_HomeReachCoinCeiling"
-  if (LocalDB.GetInt)(key, 0) > 0 then
+function UIHomelandShopHelper.CheckCoinOverflow(count, callback)
+  local key = GameGlobal.GameLogic():GetOpenId() .. "_HomeReachCoinCeiling"
+  if 0 < LocalDB.GetInt(key, 0) then
     if callback then
       callback()
     end
-    return 
+    return
   end
-  local cur = (UIHomelandShopHelper.GetCoinItemCount)()
-  local check = GameGlobal.MAX_ITEM_OVERLAY - count < cur
+  local cur = UIHomelandShopHelper.GetCoinItemCount()
+  local check = cur > GameGlobal.MAX_ITEM_OVERLAY - count
   if check then
-    local title = (StringTable.Get)("str_homeland_shop_check_overflo_title")
-    local desc = (StringTable.Get)("str_homeland_shop_check_overflo_desc")
-    local onconfirm = function()
-    -- function num : 0_2_0 , upvalues : _ENV, key, callback
-    (LocalDB.SetInt)(key, 1)
-    if callback then
-      callback()
-    end
-  end
-
-    ;
-    (UIHomelandShopHelper.ShowHomelandMessageBox_OK_Cancel)(title, desc, onconfirm)
-  elseif callback then
-    callback()
-  end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
-end
-
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.CheckSellRare = function(itemId, callback)
-  -- function num : 0_3 , upvalues : _ENV
-  local check = (UIHomelandShopHelper.GetItemSellRare)(itemId)
-  if check then
-    local title = (StringTable.Get)("str_homeland_shop_tab_sell_confirm_title")
-    local desc = (StringTable.Get)("str_homeland_shop_tab_sell_confirm_desc")
-    ;
-    (UIHomelandShopHelper.ShowHomelandMessageBox_OK_Cancel)(title, desc, callback)
-  else
-    do
+    local title = StringTable.Get("str_homeland_shop_check_overflo_title")
+    local desc = StringTable.Get("str_homeland_shop_check_overflo_desc")
+    
+    local function onconfirm()
+      LocalDB.SetInt(key, 1)
       if callback then
         callback()
       end
     end
+    
+    UIHomelandShopHelper.ShowHomelandMessageBox_OK_Cancel(title, desc, onconfirm)
+  elseif callback then
+    callback()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
+function UIHomelandShopHelper.CheckSellRare(itemId, callback)
+  local check = UIHomelandShopHelper.GetItemSellRare(itemId)
+  if check then
+    local title = StringTable.Get("str_homeland_shop_tab_sell_confirm_title")
+    local desc = StringTable.Get("str_homeland_shop_tab_sell_confirm_desc")
+    UIHomelandShopHelper.ShowHomelandMessageBox_OK_Cancel(title, desc, callback)
+  elseif callback then
+    callback()
+  end
+end
 
-UIHomelandShopHelper.GetCoinItemId = function()
-  -- function num : 0_4 , upvalues : _ENV
-  local itemId = (UIHomelandShopHelper._GetIdFromCfg)()
+function UIHomelandShopHelper.GetCoinItemId()
+  local itemId = UIHomelandShopHelper._GetIdFromCfg()
   return itemId
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper._GetIdFromCfg = function()
-  -- function num : 0_5 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_homeland_univalence)({})
-  for _,v in pairs(cfgs) do
-    do return v.GainItemId end
+function UIHomelandShopHelper._GetIdFromCfg()
+  local cfgs = Cfg.cfg_homeland_univalence({})
+  for _, v in pairs(cfgs) do
+    return v.GainItemId
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.GetCoinItemIconName = function()
-  -- function num : 0_6 , upvalues : _ENV
-  return (UIHomelandShopHelper.GetItemIconName)((UIHomelandShopHelper.GetCoinItemId)())
+function UIHomelandShopHelper.GetCoinItemIconName()
+  return UIHomelandShopHelper.GetItemIconName(UIHomelandShopHelper.GetCoinItemId())
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.GetCoinItemCount = function(format)
-  -- function num : 0_7 , upvalues : _ENV
-  local count = (UIHomelandShopHelper.GetItemCount)((UIHomelandShopHelper.GetCoinItemId)())
-  return format and (HelperProxy:GetInstance()):FormatItemCount(count) or count
+function UIHomelandShopHelper.GetCoinItemCount(format)
+  local count = UIHomelandShopHelper.GetItemCount(UIHomelandShopHelper.GetCoinItemId())
+  return format and HelperProxy:GetInstance():FormatItemCount(count) or count
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.GetItemName = function(itemId)
-  -- function num : 0_8 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[itemId]
-  if cfg then
-    return cfg.Name
-  end
+function UIHomelandShopHelper.GetItemName(itemId)
+  local cfg = Cfg.cfg_item[itemId]
+  return cfg and cfg.Name
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.GetItemIconName = function(itemId)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[itemId]
-  if cfg then
-    return cfg.Icon
-  end
+function UIHomelandShopHelper.GetItemIconName(itemId)
+  local cfg = Cfg.cfg_item[itemId]
+  return cfg and cfg.Icon
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.GetItemCount = function(itemId)
-  -- function num : 0_10 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIHomelandShopHelper.GetItemCount(itemId)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local itemCount = itemModule:GetItemCount(itemId)
   return itemCount
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.GetItemCount_ForSale = function(itemId)
-  -- function num : 0_11 , upvalues : _ENV
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
+function UIHomelandShopHelper.GetItemCount_ForSale(itemId)
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
   local fishInWishing = homelandModule:GetFishsInWishingBuilding()
   local count_NotForSale = fishInWishing[itemId] or 0
   local fishInAquarium = homelandModule:GetFishsInAquarium()
   local countInAquarium = 0
-  for buildPstID,fishs in pairs(fishInAquarium) do
+  for buildPstID, fishs in pairs(fishInAquarium) do
     local curCount = fishs[itemId] or 0
     countInAquarium = countInAquarium + curCount
   end
-  return (UIHomelandShopHelper.GetItemCount)(itemId) - count_NotForSale - (countInAquarium)
+  return UIHomelandShopHelper.GetItemCount(itemId) - count_NotForSale - countInAquarium
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.CalcItemSellPrice = function(itemId, count)
-  -- function num : 0_12 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_univalence)[itemId]
+function UIHomelandShopHelper.CalcItemSellPrice(itemId, count)
+  local cfg = Cfg.cfg_homeland_univalence[itemId]
   local price = cfg and cfg.Sell or 0
   local roleAsset = RoleAsset:New()
-  roleAsset.assetid = (UIHomelandShopHelper.GetCoinItemId)()
+  roleAsset.assetid = UIHomelandShopHelper.GetCoinItemId()
   roleAsset.count = price * count
   return roleAsset
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.GetItemSellRare = function(itemId)
-  -- function num : 0_13 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_univalence)[itemId]
-  -- DECOMPILER ERROR at PC9: Unhandled construct in 'MakeBoolean' P3
-
-  do return (cfg and cfg.Rare == 1) end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIHomelandShopHelper.GetItemSellRare(itemId)
+  local cfg = Cfg.cfg_homeland_univalence[itemId]
+  return cfg and cfg.Rare == 1 or false
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.CheckOrderSubmit = function()
-  -- function num : 0_14 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetModule)(HomelandModule)
-  local shop_info = (homeLandModule.m_homeland_info).shop_info
-  for i,v in pairs(shop_info.goods_info) do
-    if (UIHomelandShopHelper.CheckOrderRequire)(v.item_info) then
+function UIHomelandShopHelper.CheckOrderSubmit()
+  local homeLandModule = GameGlobal.GetModule(HomelandModule)
+  local shop_info = homeLandModule.m_homeland_info.shop_info
+  for i, v in pairs(shop_info.goods_info) do
+    if UIHomelandShopHelper.CheckOrderRequire(v.item_info) then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.CheckOrderRequire = function(good_info)
-  -- function num : 0_15 , upvalues : _ENV
-  for _,v in ipairs(good_info) do
-    local count = (UIHomelandShopHelper.GetItemCount_ForSale)(v.assetid)
+function UIHomelandShopHelper.CheckOrderRequire(good_info)
+  for _, v in ipairs(good_info) do
+    local count = UIHomelandShopHelper.GetItemCount_ForSale(v.assetid)
     if count < v.count then
       return false
     end
@@ -204,170 +141,113 @@ UIHomelandShopHelper.CheckOrderRequire = function(good_info)
   return true
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.GetGoodsRefreshCount = function()
-  -- function num : 0_16 , upvalues : _ENV
-  local itemId = ((Cfg.cfg_homeland_global).GoodsRefreshItemId).IntValue
-  local itemCount = (UIHomelandShopHelper.GetItemCount)(itemId)
-  local maxCount = ((Cfg.cfg_homeland_global).GoodsMaxRefreshCount).IntValue
+function UIHomelandShopHelper.GetGoodsRefreshCount()
+  local itemId = Cfg.cfg_homeland_global.GoodsRefreshItemId.IntValue
+  local itemCount = UIHomelandShopHelper.GetItemCount(itemId)
+  local maxCount = Cfg.cfg_homeland_global.GoodsMaxRefreshCount.IntValue
   return itemCount, maxCount
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.GetGoodsExtraColor = function(n)
-  -- function num : 0_17 , upvalues : _ENV
+function UIHomelandShopHelper.GetGoodsExtraColor(n)
   local color = "#FFFFFF"
-  local cfg = (Cfg.cfg_homeland_shop_order_color)({})
-  for _,v in ipairs(cfg) do
+  local cfg = Cfg.cfg_homeland_shop_order_color({})
+  for _, v in ipairs(cfg) do
     color = v.Color
-  end
-  do
-    if n >= v.Count then
-      return color
+    if n < v.Count then
+      break
     end
   end
+  return color
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.Hex2Color = function(hex)
-  -- function num : 0_18 , upvalues : _ENV
+function UIHomelandShopHelper.Hex2Color(hex)
   local default_color = Color.white
-  local len = (string.len)(hex)
-  if len ~= 7 or (string.sub)(hex, 1, 1) ~= "#" then
+  local len = string.len(hex)
+  if len ~= 7 or string.sub(hex, 1, 1) ~= "#" then
     return default_color
   end
-  local str_2_hex = function(str)
-    -- function num : 0_18_0 , upvalues : _ENV
+  
+  local function str_2_hex(str)
     return tonumber(str, 16) or 255
   end
-
-  local r = str_2_hex((string.sub)(hex, 2, 3))
-  local g = str_2_hex((string.sub)(hex, 4, 5))
-  local b = str_2_hex((string.sub)(hex, 6, 7))
+  
+  local r = str_2_hex(string.sub(hex, 2, 3))
+  local g = str_2_hex(string.sub(hex, 4, 5))
+  local b = str_2_hex(string.sub(hex, 6, 7))
   return Color(r / 255, g / 255, b / 255)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.ShowHomelandRewards = function(rewards)
-  -- function num : 0_19 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIHomeShowAwards", rewards, function()
-    -- function num : 0_19_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandShopUpdate)
-  end
-, true, nil)
+function UIHomelandShopHelper.ShowHomelandRewards(rewards)
+  GameGlobal.UIStateManager():ShowDialog("UIHomeShowAwards", rewards, function()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandShopUpdate)
+  end, true, nil)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.Start_HomelandShopReq = function(id, num, rewards)
-  -- function num : 0_20 , upvalues : _ENV
-  (Log.info)("UIHomelandShopHelper.Start_HomelandShopReq() id = ", id, " num = ", num)
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_20_0 , upvalues : _ENV, id, num, rewards
-    local homeLandModule = (GameGlobal.GetModule)(HomelandModule)
+function UIHomelandShopHelper.Start_HomelandShopReq(id, num, rewards)
+  Log.info("UIHomelandShopHelper.Start_HomelandShopReq() id = ", id, " num = ", num)
+  TaskManager:GetInstance():StartTask(function(TT)
+    local homeLandModule = GameGlobal.GetModule(HomelandModule)
     local res, shop_info = homeLandModule:HomelandShopReq(TT, id, num)
     if res and res:GetSucc() then
-      (Log.info)("HomelandModule:Start_HomelandShopReq() Succ")
-      ;
-      (UIHomelandShopHelper.ShowHomelandRewards)(rewards)
+      Log.info("HomelandModule:Start_HomelandShopReq() Succ")
+      UIHomelandShopHelper.ShowHomelandRewards(rewards)
     else
-      ;
-      (Log.error)("HomelandModule:Start_HomelandShopReq() Failed, ", res.m_result)
-      ;
-      (ToastManager.ShowHomeToast)("HomelandModule:Start_HomelandShopReq() Failed, " .. res.m_result)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandShopUpdate)
+      Log.error("HomelandModule:Start_HomelandShopReq() Failed, ", res.m_result)
+      ToastManager.ShowHomeToast("HomelandModule:Start_HomelandShopReq() Failed, " .. res.m_result)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandShopUpdate)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.Start_HomelandGoodReq = function(index, isSell, rewards)
-  -- function num : 0_21 , upvalues : _ENV
+function UIHomelandShopHelper.Start_HomelandGoodReq(index, isSell, rewards)
   index = index - 1
-  ;
-  (Log.info)("UIHomelandShopHelper.Start_HomelandGoodReq() index = ", index, " isSell = ", tostring(isSell))
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_21_0 , upvalues : _ENV, index, isSell, rewards
-    local homeLandModule = (GameGlobal.GetModule)(HomelandModule)
+  Log.info("UIHomelandShopHelper.Start_HomelandGoodReq() index = ", index, " isSell = ", tostring(isSell))
+  TaskManager:GetInstance():StartTask(function(TT)
+    local homeLandModule = GameGlobal.GetModule(HomelandModule)
     local res, shop_info = homeLandModule:HomelandGoodsReq(TT, index, isSell)
     if res and res:GetSucc() then
-      (Log.info)("UIHomelandShopHelper.Start_HomelandGoodReq() Succ")
+      Log.info("UIHomelandShopHelper.Start_HomelandGoodReq() Succ")
       if isSell then
-        (UIHomelandShopHelper.ShowHomelandRewards)(rewards)
+        UIHomelandShopHelper.ShowHomelandRewards(rewards)
       else
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandShopUpdate)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandShopUpdate)
       end
     else
-      ;
-      (Log.error)("UIHomelandShopHelper.Start_HomelandGoodReq() Failed, ", res.m_result)
-      ;
-      (ToastManager.ShowHomeToast)("UIHomelandShopHelper.Start_HomelandGoodReq() Failed, " .. res.m_result)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandShopUpdate)
+      Log.error("UIHomelandShopHelper.Start_HomelandGoodReq() Failed, ", res.m_result)
+      ToastManager.ShowHomeToast("UIHomelandShopHelper.Start_HomelandGoodReq() Failed, " .. res.m_result)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandShopUpdate)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.Start_HomelandSellReq = function(id_num, rewards)
-  -- function num : 0_22 , upvalues : _ENV
-  (Log.info)("UIHomelandShopHelper.Start_HomelandSellReq()")
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_22_0 , upvalues : _ENV, id_num, rewards
-    local homeLandModule = (GameGlobal.GetModule)(HomelandModule)
+function UIHomelandShopHelper.Start_HomelandSellReq(id_num, rewards)
+  Log.info("UIHomelandShopHelper.Start_HomelandSellReq()")
+  TaskManager:GetInstance():StartTask(function(TT)
+    local homeLandModule = GameGlobal.GetModule(HomelandModule)
     local res, shop_info = homeLandModule:HomelandSellReq(TT, id_num)
     if res and res:GetSucc() then
-      (Log.info)("HomelandModule:HomelandSellReq() Succ")
-      ;
-      (UIHomelandShopHelper.ShowHomelandRewards)(rewards)
+      Log.info("HomelandModule:HomelandSellReq() Succ")
+      UIHomelandShopHelper.ShowHomelandRewards(rewards)
     else
-      ;
-      (Log.error)("HomelandModule:HomelandSellReq() Failed, ", res.m_result)
-      ;
-      (ToastManager.ShowHomeToast)("HomelandModule:HomelandSellReq() Failed, " .. res.m_result)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandShopUpdate)
+      Log.error("HomelandModule:HomelandSellReq() Failed, ", res.m_result)
+      ToastManager.ShowHomeToast("HomelandModule:HomelandSellReq() Failed, " .. res.m_result)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandShopUpdate)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopHelper.Start_HomelandShopRefreshReq = function(delay)
-  -- function num : 0_23 , upvalues : _ENV
-  (Log.info)("UIHomelandShopHelper.Start_HomelandShopRefreshReq()")
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_23_0 , upvalues : _ENV, delay
+function UIHomelandShopHelper.Start_HomelandShopRefreshReq(delay)
+  Log.info("UIHomelandShopHelper.Start_HomelandShopRefreshReq()")
+  TaskManager:GetInstance():StartTask(function(TT)
     YIELD(TT, delay * 1000)
-    local homeLandModule = (GameGlobal.GetModule)(HomelandModule)
+    local homeLandModule = GameGlobal.GetModule(HomelandModule)
     local res, shop_info = homeLandModule:HomelandShopRefreshReq(TT)
     if res and res:GetSucc() then
-      (Log.info)("HomelandModule:Start_HomelandShopRefreshReq() Succ")
+      Log.info("HomelandModule:Start_HomelandShopRefreshReq() Succ")
     else
-      ;
-      (Log.error)("HomelandModule:Start_HomelandShopRefreshReq() Failed, ", res.m_result)
-      ;
-      (ToastManager.ShowHomeToast)("HomelandModule:Start_HomelandShopRefreshReq() Failed, " .. res.m_result)
+      Log.error("HomelandModule:Start_HomelandShopRefreshReq() Failed, ", res.m_result)
+      ToastManager.ShowHomeToast("HomelandModule:Start_HomelandShopRefreshReq() Failed, " .. res.m_result)
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandShopUpdate)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandShopUpdate)
+  end)
 end
-
-

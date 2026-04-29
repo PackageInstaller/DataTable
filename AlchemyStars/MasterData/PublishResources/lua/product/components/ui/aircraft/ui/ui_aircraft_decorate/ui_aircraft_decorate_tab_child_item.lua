@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_decorate/ui_aircraft_decorate_tab_child_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftDecorateTabChildItem", UICustomWidget)
 UIAircraftDecorateTabChildItem = UIAircraftDecorateTabChildItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftDecorateTabChildItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftDecorateTabChildItem:OnShow(uiParams)
   self._atlas = self:GetAsset("UIAircraftDecorate.spriteatlas", LoadType.SpriteAtlas)
   self:AttachEvent(GameEventType.UIAircraftDecorateSmallTabClick, self._OnUIAircraftDecorateSmallTabClick)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabChildItem.SetData = function(self, index, tabIndex, name, sprite, callback)
-  -- function num : 0_1
+function UIAircraftDecorateTabChildItem:SetData(index, tabIndex, name, sprite, callback)
   self:_GetComponents()
   self._index = index
   self._tabIndex = tabIndex
@@ -26,48 +16,27 @@ UIAircraftDecorateTabChildItem.SetData = function(self, index, tabIndex, name, s
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabChildItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIAircraftDecorateTabChildItem:_GetComponents()
   self._text = self:GetUIComponent("UILocalizationText", "Text")
   self._icon = self:GetUIComponent("Image", "Image")
   self._select = self:GetGameObject("Select")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabChildItem._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._text):SetText((StringTable.Get)(self._name))
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._icon).sprite = self._sprite
+function UIAircraftDecorateTabChildItem:_OnValue()
+  self._text:SetText(StringTable.Get(self._name))
+  self._icon.sprite = self._sprite
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabChildItem.BGOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+function UIAircraftDecorateTabChildItem:BGOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
   if self._callback then
-    (self._callback)(self._tabIndex)
+    self._callback(self._tabIndex)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabChildItem._OnUIAircraftDecorateSmallTabClick = function(self, tabIndex)
-  -- function num : 0_5
-  (self._select):SetActive(tabIndex == self._tabIndex)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIAircraftDecorateTabChildItem:_OnUIAircraftDecorateSmallTabClick(tabIndex)
+  self._select:SetActive(tabIndex == self._tabIndex)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabChildItem.OnHide = function(self)
-  -- function num : 0_6
+function UIAircraftDecorateTabChildItem:OnHide()
 end
-
-

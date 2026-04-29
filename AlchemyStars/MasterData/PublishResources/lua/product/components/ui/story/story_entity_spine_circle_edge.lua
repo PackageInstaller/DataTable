@@ -1,319 +1,228 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/story/story_entity_spine_circle_edge.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StoryEntitySpineCircleEdge", StoryEntityMovable)
 StoryEntitySpineCircleEdge = StoryEntitySpineCircleEdge
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StoryEntitySpineCircleEdge.Constructor = function(self, ID, gameObject, resRequest, storyManager, entityConfig)
-  -- function num : 0_0 , upvalues : _ENV
-  ((StoryEntitySpineCircleEdge.super).Constructor)(self, ID, gameObject, resRequest, storyManager)
+function StoryEntitySpineCircleEdge:Constructor(ID, gameObject, resRequest, storyManager, entityConfig)
+  StoryEntitySpineCircleEdge.super.Constructor(self, ID, gameObject, resRequest, storyManager)
   self._type = StoryEntityType.SpineCircleEdge
   self._spineGameObject = gameObject
-  self._spineSke = gameObject:GetComponentInChildren(typeof((Spine.Unity).SkeletonGraphic))
-  self._spineSkeMultipleTex = gameObject:GetComponentInChildren(typeof(((Spine.Unity).Modules).SkeletonGraphicMultiObject))
+  self._spineSke = gameObject:GetComponentInChildren(typeof(Spine.Unity.SkeletonGraphic))
+  self._spineSkeMultipleTex = gameObject:GetComponentInChildren(typeof(Spine.Unity.Modules.SkeletonGraphicMultiObject))
   self._entityConfig = entityConfig
   self._isSpeaking = false
   self._spineColor = nil
   self._matInsList = {}
   self._EMIMatResRequest = nil
   self._EMIMat = nil
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R6 in 'UnsetPending'
-
   if self._spineSke then
-    (self._spineSke).material = (UnityEngine.Material):New((self._spineSke).material)
+    self._spineSke.material = UnityEngine.Material:New(self._spineSke.material)
     if entityConfig.Effect == "EMI" then
-      self._EMIMatResRequest = (ResourceManager:GetInstance()):SyncLoadAsset("spine_graphic_dc.mat", LoadType.Mat)
-      self._EMIMat = (self._EMIMatResRequest).Obj
-      -- DECOMPILER ERROR at PC67: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      ((self._spineSke).material).shader = (self._EMIMat).shader
-      ;
-      ((self._spineSke).material):SetTexture("_NoiseTex", (self._EMIMat):GetTexture("_NoiseTex"))
+      self._EMIMatResRequest = ResourceManager:GetInstance():SyncLoadAsset("spine_graphic_dc.mat", LoadType.Mat)
+      self._EMIMat = self._EMIMatResRequest.Obj
+      self._spineSke.material.shader = self._EMIMat.shader
+      self._spineSke.material:SetTexture("_NoiseTex", self._EMIMat:GetTexture("_NoiseTex"))
     end
-    ;
-    ((self._spineSke).material):SetFloat("_StencilComp", 3)
-    -- DECOMPILER ERROR at PC86: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._matInsList)[1] = (self._spineSke).material
-    self._spineColor = (self._spineSke).color
-    ;
-    ((self._spineSke).AnimationState):SetAnimation(0, "Story_norm", true)
-  else
-    -- DECOMPILER ERROR at PC102: Confused about usage of register: R6 in 'UnsetPending'
-
-    if self._spineSkeMultipleTex then
-      (self._spineSkeMultipleTex).UseInstanceMaterials = true
-      if entityConfig.Effect == "EMI" then
-        self._EMIMatResRequest = (ResourceManager:GetInstance()):SyncLoadAsset("spine_dc.mat", LoadType.Mat)
-        self._EMIMat = (self._EMIMatResRequest).Obj
-      end
-      -- DECOMPILER ERROR at PC120: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._spineSkeMultipleTex).OnInstanceMaterialCreated = function(material)
-    -- function num : 0_0_0 , upvalues : self
-    self:HandleMultipleTexSpineMatCreated(material)
-  end
-
-      ;
-      (self._spineSkeMultipleTex):UpdateMesh()
-      if (self._spineSkeMultipleTex).Skeleton then
-        self._spineColor = Color(((self._spineSkeMultipleTex).Skeleton).R, ((self._spineSkeMultipleTex).Skeleton).G, ((self._spineSkeMultipleTex).Skeleton).B, ((self._spineSkeMultipleTex).Skeleton).A)
-      else
-        self._spineColor = Color.white
-      end
-      ;
-      ((self._spineSkeMultipleTex).AnimationState):SetAnimation(0, "Story_norm", true)
+    self._spineSke.material:SetFloat("_StencilComp", 3)
+    self._matInsList[1] = self._spineSke.material
+    self._spineColor = self._spineSke.color
+    self._spineSke.AnimationState:SetAnimation(0, "Story_norm", true)
+  elseif self._spineSkeMultipleTex then
+    self._spineSkeMultipleTex.UseInstanceMaterials = true
+    if entityConfig.Effect == "EMI" then
+      self._EMIMatResRequest = ResourceManager:GetInstance():SyncLoadAsset("spine_dc.mat", LoadType.Mat)
+      self._EMIMat = self._EMIMatResRequest.Obj
     end
+    
+    function self._spineSkeMultipleTex.OnInstanceMaterialCreated(material)
+      self:HandleMultipleTexSpineMatCreated(material)
+    end
+    
+    self._spineSkeMultipleTex:UpdateMesh()
+    if self._spineSkeMultipleTex.Skeleton then
+      self._spineColor = Color(self._spineSkeMultipleTex.Skeleton.R, self._spineSkeMultipleTex.Skeleton.G, self._spineSkeMultipleTex.Skeleton.B, self._spineSkeMultipleTex.Skeleton.A)
+    else
+      self._spineColor = Color.white
+    end
+    self._spineSkeMultipleTex.AnimationState:SetAnimation(0, "Story_norm", true)
   end
   if not self._spineColor then
     self._spineColor = Color.white
   end
-  local rootGO = (UnityEngine.GameObject):New(gameObject.name)
-  ;
-  (rootGO.transform):SetParent((gameObject.transform).parent, false)
-  -- DECOMPILER ERROR at PC174: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (rootGO.transform).localPosition = (gameObject.transform).localPosition
+  local rootGO = UnityEngine.GameObject:New(gameObject.name)
+  rootGO.transform:SetParent(gameObject.transform.parent, false)
+  rootGO.transform.localPosition = gameObject.transform.localPosition
   rootGO:SetActive(gameObject.activeSelf)
   self._gameObject = rootGO
-  self._spineMaskObject = ((UnityEngine.GameObject).Instantiate)(storyManager:GetSpineCircleMaskTemplate(), rootGO.transform)
-  ;
-  (self._spineMaskObject):SetActive(true)
-  -- DECOMPILER ERROR at PC195: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  ((self._spineMaskObject).transform).localPosition = Vector3.zero
-  ;
-  (gameObject.transform):SetParent((self._spineMaskObject).transform, false)
+  self._spineMaskObject = UnityEngine.GameObject.Instantiate(storyManager:GetSpineCircleMaskTemplate(), rootGO.transform)
+  self._spineMaskObject:SetActive(true)
+  self._spineMaskObject.transform.localPosition = Vector3.zero
+  gameObject.transform:SetParent(self._spineMaskObject.transform, false)
   gameObject:SetActive(true)
-  self._edgeResRequest = (ResourceManager:GetInstance()):SyncLoadAsset("StoryCircleEdge.prefab", LoadType.GameObject)
-  self._edgeObject = (self._edgeResRequest).Obj
+  self._edgeResRequest = ResourceManager:GetInstance():SyncLoadAsset("StoryCircleEdge.prefab", LoadType.GameObject)
+  self._edgeObject = self._edgeResRequest.Obj
   if self._edgeObject then
-    ((self._edgeObject).transform):SetParent(rootGO.transform, false)
-    ;
-    (self._edgeObject):SetActive(true)
+    self._edgeObject.transform:SetParent(rootGO.transform, false)
+    self._edgeObject:SetActive(true)
   end
-  self._edgeImg = (self._edgeObject):GetComponent("RawImage")
-  self._edgeImgColor = (self._edgeImg).color
+  self._edgeImg = self._edgeObject:GetComponent("RawImage")
+  self._edgeImgColor = self._edgeImg.color
   if entityConfig.FitSize then
     local canvasRect = storyManager:GetCanvasRect()
-    local edgeRect = (self._edgeObject):GetComponent("RectTransform")
+    local edgeRect = self._edgeObject:GetComponent("RectTransform")
     local targetWidth = canvasRect.width + 300
-    local targetHeight = (edgeRect.sizeDelta).y * targetWidth / (edgeRect.sizeDelta).x
+    local targetHeight = edgeRect.sizeDelta.y * targetWidth / edgeRect.sizeDelta.x
     edgeRect.sizeDelta = Vector2(targetWidth, targetHeight)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntitySpineCircleEdge.SectionStart = function(self, trackData)
-  -- function num : 0_1 , upvalues : _ENV
-  ((StoryEntitySpineCircleEdge.super).SectionStart)(self, trackData)
-  if (self._currentTrackData).IsSpeaking then
-    (self._storyManager):AddAudioPlayCallback(function(speaking)
-    -- function num : 0_1_0 , upvalues : self
-    local spineSke = nil
-    if self._spineSke then
-      spineSke = self._spineSke
-    else
-      if self._spineSkeMultipleTex then
+function StoryEntitySpineCircleEdge:SectionStart(trackData)
+  StoryEntitySpineCircleEdge.super.SectionStart(self, trackData)
+  if self._currentTrackData.IsSpeaking then
+    self._storyManager:AddAudioPlayCallback(function(speaking)
+      local spineSke
+      if self._spineSke then
+        spineSke = self._spineSke
+      elseif self._spineSkeMultipleTex then
         spineSke = self._spineSkeMultipleTex
       else
-        return 
+        return
       end
-    end
-    if speaking then
-      (spineSke.AnimationState):SetAnimation(1, "talk_start", true)
-    else
-      ;
-      (spineSke.AnimationState):SetEmptyAnimation(1, 0)
-    end
-  end
-)
+      if speaking then
+        spineSke.AnimationState:SetAnimation(1, "talk_start", true)
+      else
+        spineSke.AnimationState:SetEmptyAnimation(1, 0)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntitySpineCircleEdge._TriggerKeyframe = function(self, keyframeData)
-  -- function num : 0_2 , upvalues : _ENV
-  ((StoryEntitySpineCircleEdge.super)._TriggerKeyframe)(self, keyframeData)
-  local spineSke = nil
+function StoryEntitySpineCircleEdge:_TriggerKeyframe(keyframeData)
+  StoryEntitySpineCircleEdge.super._TriggerKeyframe(self, keyframeData)
+  local spineSke
   if self._spineSke then
     spineSke = self._spineSke
+  elseif self._spineSkeMultipleTex then
+    spineSke = self._spineSkeMultipleTex
   else
-    if self._spineSkeMultipleTex then
-      spineSke = self._spineSkeMultipleTex
-    else
-      return 
-    end
+    return
   end
   if not spineSke.AnimationState then
-    return 
+    return
   end
   local layer = 0
   if keyframeData.AnimationLayer then
     layer = keyframeData.AnimationLayer
   end
   if keyframeData.ClearAnimationLayer and spineSke then
-    (spineSke.AnimationState):SetEmptyAnimation(keyframeData.ClearAnimationLayer, 0)
+    spineSke.AnimationState:SetEmptyAnimation(keyframeData.ClearAnimationLayer, 0)
   end
   if keyframeData.LoopAnimation ~= nil and spineSke then
-    (spineSke.AnimationState):SetAnimation(layer, keyframeData.LoopAnimation, true)
+    spineSke.AnimationState:SetAnimation(layer, keyframeData.LoopAnimation, true)
   end
   if keyframeData.Animation ~= nil and spineSke then
-    (spineSke.AnimationState):SetAnimation(layer, keyframeData.Animation, false)
+    spineSke.AnimationState:SetAnimation(layer, keyframeData.Animation, false)
   end
   if keyframeData.SpineOffset then
-    self:_SetSpinePosition(Vector3((keyframeData.SpineOffset)[1], (keyframeData.SpineOffset)[2], 0))
+    self:_SetSpinePosition(Vector3(keyframeData.SpineOffset[1], keyframeData.SpineOffset[2], 0))
   end
   if keyframeData.SpineSkin ~= nil then
-    (spineSke.Skeleton):SetSkin(keyframeData.SpineSkin)
+    spineSke.Skeleton:SetSkin(keyframeData.SpineSkin)
   end
   if keyframeData.Scroll ~= nil then
     self._inScrolling = true
     self._scrollStartTime = keyframeData.Time
-    self._scrollStartFromCover = (keyframeData.Scroll).StartFromCover
-    self._scrollDuration = (keyframeData.Scroll).Duration
-    self._radius = (keyframeData.Scroll).Radius
-    if not (string.isnullorempty)(((keyframeData.Scroll).Background).Resource) then
-      self._backgroundReq = (ResourceManager:GetInstance()):SyncLoadAsset(((keyframeData.Scroll).Background).Resource, LoadType.GameObject)
-      if (self._backgroundReq).Obj then
-        self._backgroundObj = (self._backgroundReq).Obj
-        ;
-        ((self._backgroundObj).transform):SetParent((self._spineMaskObject).transform, false)
-        -- DECOMPILER ERROR at PC139: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        ((self._backgroundObj).transform).localPosition = Vector3((((keyframeData.Scroll).Background).Offset)[1], (((keyframeData.Scroll).Background).Offset)[2], 0)
-        ;
-        (self._backgroundObj):SetActive(true)
-        ;
-        ((self._backgroundObj).transform):SetAsFirstSibling()
+    self._scrollStartFromCover = keyframeData.Scroll.StartFromCover
+    self._scrollDuration = keyframeData.Scroll.Duration
+    self._radius = keyframeData.Scroll.Radius
+    if not string.isnullorempty(keyframeData.Scroll.Background.Resource) then
+      self._backgroundReq = ResourceManager:GetInstance():SyncLoadAsset(keyframeData.Scroll.Background.Resource, LoadType.GameObject)
+      if self._backgroundReq.Obj then
+        self._backgroundObj = self._backgroundReq.Obj
+        self._backgroundObj.transform:SetParent(self._spineMaskObject.transform, false)
+        self._backgroundObj.transform.localPosition = Vector3(keyframeData.Scroll.Background.Offset[1], keyframeData.Scroll.Background.Offset[2], 0)
+        self._backgroundObj:SetActive(true)
+        self._backgroundObj.transform:SetAsFirstSibling()
       end
     end
-    if ((keyframeData.Scroll).Shadow).ShowShadow then
-      self._shadowSpineGameObject = ((UnityEngine.GameObject).Instantiate)(self._spineGameObject, (self._spineMaskObject).transform)
-      -- DECOMPILER ERROR at PC174: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      ((self._shadowSpineGameObject).transform).localPosition = Vector3((((keyframeData.Scroll).Shadow).Offset)[1], (((keyframeData.Scroll).Shadow).Offset)[2], 0)
-      self._shadowSpineSke = (self._shadowSpineGameObject):GetComponentInChildren(typeof((Spine.Unity).SkeletonGraphic))
-      self._shadowSpineSkeMultipleTex = (self._shadowSpineGameObject):GetComponentInChildren(typeof(((Spine.Unity).Modules).SkeletonGraphicMultiObject))
-      ;
-      ((self._spineGameObject).transform):SetAsLastSibling()
-      -- DECOMPILER ERROR at PC204: Confused about usage of register: R4 in 'UnsetPending'
-
+    if keyframeData.Scroll.Shadow.ShowShadow then
+      self._shadowSpineGameObject = UnityEngine.GameObject.Instantiate(self._spineGameObject, self._spineMaskObject.transform)
+      self._shadowSpineGameObject.transform.localPosition = Vector3(keyframeData.Scroll.Shadow.Offset[1], keyframeData.Scroll.Shadow.Offset[2], 0)
+      self._shadowSpineSke = self._shadowSpineGameObject:GetComponentInChildren(typeof(Spine.Unity.SkeletonGraphic))
+      self._shadowSpineSkeMultipleTex = self._shadowSpineGameObject:GetComponentInChildren(typeof(Spine.Unity.Modules.SkeletonGraphicMultiObject))
+      self._spineGameObject.transform:SetAsLastSibling()
       if self._shadowSpineSke then
-        (self._shadowSpineSke).color = Color.black
+        self._shadowSpineSke.color = Color.black
       end
-      -- DECOMPILER ERROR at PC211: Confused about usage of register: R4 in 'UnsetPending'
-
       if self._shadowSpineSkeMultipleTex then
-        (self._shadowSpineSkeMultipleTex).color = Color.black
-        -- DECOMPILER ERROR at PC213: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._shadowSpineSkeMultipleTex).UseInstanceMaterials = true
-        -- DECOMPILER ERROR at PC216: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._shadowSpineSkeMultipleTex).OnInstanceMaterialCreated = function(material)
-    -- function num : 0_2_0 , upvalues : self
-    self:HandleMultipleTexSpineMatCreated(material)
-  end
-
-        ;
-        (self._shadowSpineSkeMultipleTex):UpdateMesh()
-        ;
-        ((self._shadowSpineSkeMultipleTex).AnimationState):SetAnimation(0, "Story_norm", true)
+        self._shadowSpineSkeMultipleTex.color = Color.black
+        self._shadowSpineSkeMultipleTex.UseInstanceMaterials = true
+        
+        function self._shadowSpineSkeMultipleTex.OnInstanceMaterialCreated(material)
+          self:HandleMultipleTexSpineMatCreated(material)
+        end
+        
+        self._shadowSpineSkeMultipleTex:UpdateMesh()
+        self._shadowSpineSkeMultipleTex.AnimationState:SetAnimation(0, "Story_norm", true)
       end
     end
-    ;
-    ((self._spineMaskObject):GetComponent("RawImage")).enabled = true
-    ;
-    ((self._spineMaskObject):GetComponent("Mask")).enabled = true
+    self._spineMaskObject:GetComponent("RawImage").enabled = true
+    self._spineMaskObject:GetComponent("Mask").enabled = true
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntitySpineCircleEdge.HandleMultipleTexSpineMatCreated = function(self, material)
-  -- function num : 0_3
+function StoryEntitySpineCircleEdge:HandleMultipleTexSpineMatCreated(material)
   material:SetFloat("_StencilComp", 3)
-  if (self._entityConfig).Effect == "EMI" then
-    material.shader = (self._EMIMat).shader
-    material:SetTexture("_NoiseTex", (self._EMIMat):GetTexture("_NoiseTex"))
+  if self._entityConfig.Effect == "EMI" then
+    material.shader = self._EMIMat.shader
+    material:SetTexture("_NoiseTex", self._EMIMat:GetTexture("_NoiseTex"))
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntitySpineCircleEdge.SetSpeak = function(self, speaking)
-  -- function num : 0_4 , upvalues : _ENV
-  local spineSke, shadowSpineSke = nil, nil
+function StoryEntitySpineCircleEdge:SetSpeak(speaking)
+  local spineSke, shadowSpineSke
   if self._spineSke then
     spineSke = self._spineSke
     shadowSpineSke = self._shadowSpineSke
+  elseif self._spineSkeMultipleTex then
+    spineSke = self._spineSkeMultipleTex
+    shadowSpineSke = self._shadowSpineSkeMultipleTex
   else
-    if self._spineSkeMultipleTex then
-      spineSke = self._spineSkeMultipleTex
-      shadowSpineSke = self._shadowSpineSkeMultipleTex
-    else
-      return 
-    end
+    return
   end
   self._isSpeaking = speaking
   local curAnimName = "normal"
   local loop = true
-  local track = (spineSke.AnimationState):GetCurrent(1)
+  local track = spineSke.AnimationState:GetCurrent(1)
   if track then
-    curAnimName = (track.Animation).Name
+    curAnimName = track.Animation.Name
     loop = track.Loop
   end
-  if self._isSpeaking ~= (string.equal_with_ignorecase)(curAnimName, "shoot") then
+  if self._isSpeaking ~= string.equal_with_ignorecase(curAnimName, "shoot") then
     if self._isSpeaking then
-      (spineSke.AnimationState):SetAnimation(1, "shoot", loop)
+      spineSke.AnimationState:SetAnimation(1, "shoot", loop)
       if shadowSpineSke then
-        (shadowSpineSke.AnimationState):SetAnimation(1, "shoot", loop)
+        shadowSpineSke.AnimationState:SetAnimation(1, "shoot", loop)
       end
     else
-      ;
-      (spineSke.AnimationState):SetAnimation(1, "aim", loop)
+      spineSke.AnimationState:SetAnimation(1, "aim", loop)
       if shadowSpineSke then
-        (shadowSpineSke.AnimationState):SetAnimation(1, "aim", loop)
+        shadowSpineSke.AnimationState:SetAnimation(1, "aim", loop)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntitySpineCircleEdge._SetSpinePosition = function(self, pos)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._spineGameObject).transform).localPosition = pos
+function StoryEntitySpineCircleEdge:_SetSpinePosition(pos)
+  self._spineGameObject.transform.localPosition = pos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntitySpineCircleEdge._UpdateAnimation = function(self, time)
-  -- function num : 0_6 , upvalues : _ENV
-  local baseAllEnd = ((StoryEntitySpineCircleEdge.super)._UpdateAnimation)(self, time)
+function StoryEntitySpineCircleEdge:_UpdateAnimation(time)
+  local baseAllEnd = StoryEntitySpineCircleEdge.super._UpdateAnimation(self, time)
   if self._inScrolling then
     local t = 1
     if self._scrollDuration > 0 then
       t = (time - self._scrollStartTime) / self._scrollDuration
     end
-    if t > 1 then
+    if 1 < t then
       t = 1
     end
     local effectT = t
@@ -321,140 +230,80 @@ StoryEntitySpineCircleEdge._UpdateAnimation = function(self, time)
       effectT = 1 - effectT
     end
     if not self._maskRect then
-      self._maskRect = (self._spineMaskObject):GetComponent("RectTransform")
+      self._maskRect = self._spineMaskObject:GetComponent("RectTransform")
     end
     if not self._edgeObjectRect then
-      self._edgeObjectRect = (self._edgeObject):GetComponent("RectTransform")
+      self._edgeObjectRect = self._edgeObject:GetComponent("RectTransform")
     end
-    if t >= 1 then
+    if 1 <= t then
       self._inScrolling = false
     end
-    local deltaRadius = (lmathext.lerp)(0, self._radius, effectT)
+    local deltaRadius = lmathext.lerp(0, self._radius, effectT)
     local sizeDelta = Vector2(deltaRadius, deltaRadius)
-    -- DECOMPILER ERROR at PC55: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._maskRect).sizeDelta = sizeDelta
-    -- DECOMPILER ERROR at PC58: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._edgeObjectRect).sizeDelta = sizeDelta * 1.23
+    self._maskRect.sizeDelta = sizeDelta
+    self._edgeObjectRect.sizeDelta = sizeDelta * 1.23
     return false
   else
-    do
-      do return baseAllEnd end
-    end
+    return baseAllEnd
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntitySpineCircleEdge._SetAlpha = function(self, alpha)
-  -- function num : 0_7
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._spineColor).a = alpha
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
+function StoryEntitySpineCircleEdge:_SetAlpha(alpha)
+  self._spineColor.a = alpha
   if self._spineSke then
-    (self._spineSke).color = self._spineColor
-  else
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-    if self._spineSkeMultipleTex and (self._spineSkeMultipleTex).Skeleton then
-      ((self._spineSkeMultipleTex).Skeleton).A = alpha
-    end
+    self._spineSke.color = self._spineColor
+  elseif self._spineSkeMultipleTex and self._spineSkeMultipleTex.Skeleton then
+    self._spineSkeMultipleTex.Skeleton.A = alpha
   end
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._edgeImgColor).a = alpha
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._edgeImg).color = self._edgeImgColor
+  self._edgeImgColor.a = alpha
+  self._edgeImg.color = self._edgeImgColor
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntitySpineCircleEdge._SetBrightness = function(self, brightness)
-  -- function num : 0_8
-  (self._spineColor):Set(brightness, brightness, brightness, (self._spineColor).a)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
+function StoryEntitySpineCircleEdge:_SetBrightness(brightness)
+  self._spineColor:Set(brightness, brightness, brightness, self._spineColor.a)
   if self._spineSke then
-    (self._spineSke).color = self._spineColor
-  else
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-    if self._spineSkeMultipleTex and (self._spineSkeMultipleTex).Skeleton then
-      ((self._spineSkeMultipleTex).Skeleton).R = brightness
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      ((self._spineSkeMultipleTex).Skeleton).G = brightness
-      -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      ((self._spineSkeMultipleTex).Skeleton).B = brightness
-    end
+    self._spineSke.color = self._spineColor
+  elseif self._spineSkeMultipleTex and self._spineSkeMultipleTex.Skeleton then
+    self._spineSkeMultipleTex.Skeleton.R = brightness
+    self._spineSkeMultipleTex.Skeleton.G = brightness
+    self._spineSkeMultipleTex.Skeleton.B = brightness
   end
-  ;
-  (self._edgeImgColor):Set(brightness, brightness, brightness, (self._edgeImgColor).a)
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._edgeImg).color = self._edgeImgColor
+  self._edgeImgColor:Set(brightness, brightness, brightness, self._edgeImgColor.a)
+  self._edgeImg.color = self._edgeImgColor
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntitySpineCircleEdge._SetRotation = function(self, rot)
-  -- function num : 0_9
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._spineGameObject).transform).localRotation = rot
+function StoryEntitySpineCircleEdge:_SetRotation(rot)
+  self._spineGameObject.transform.localRotation = rot
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntitySpineCircleEdge._SetScaling = function(self, scale)
-  -- function num : 0_10
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._spineGameObject).transform).localScale = scale
+function StoryEntitySpineCircleEdge:_SetScaling(scale)
+  self._spineGameObject.transform.localScale = scale
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntitySpineCircleEdge.Destroy = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  ((StoryEntitySpineCircleEdge.super).Destroy)(self)
+function StoryEntitySpineCircleEdge:Destroy()
+  StoryEntitySpineCircleEdge.super.Destroy(self)
   for i = 1, #self._matInsList do
-    ((UnityEngine.Object).Destroy)((self._matInsList)[i])
+    UnityEngine.Object.Destroy(self._matInsList[i])
   end
   self._matInsList = {}
   if self._EMIMatResRequest then
     self._EMIMat = nil
-    ;
-    (self._EMIMatResRequest):Dispose()
+    self._EMIMatResRequest:Dispose()
     self._EMIMatResRequest = nil
   end
   if self._edgeResRequest ~= nil then
-    (self._edgeResRequest):Dispose()
+    self._edgeResRequest:Dispose()
     self._edgeResRequest = nil
   end
   if self._shadowSpineGameObject then
-    (self._shadowSpineGameObject):Destroy()
+    self._shadowSpineGameObject:Destroy()
     self._shadowSpineGameObject = nil
   end
   if self._backgroundReq then
-    (self._backgroundReq):Dispose()
+    self._backgroundReq:Dispose()
   end
   if self._backgroundObj then
-    (self._backgroundObj):Destroy()
+    self._backgroundObj:Destroy()
     self._backgroundObj = nil
   end
 end
-
-

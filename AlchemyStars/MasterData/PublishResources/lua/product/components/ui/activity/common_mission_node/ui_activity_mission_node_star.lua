@@ -1,29 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_mission_node/ui_activity_mission_node_star.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityMissionNodeStar", UICustomWidget)
 UIActivityMissionNodeStar = UIActivityMissionNodeStar
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityMissionNodeStar.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityMissionNodeStar:OnShow()
   self._imgStar = self:GetGameObject("imgStar")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNodeStar.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityMissionNodeStar:OnHide()
   self._imgStar = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNodeStar.Flush = function(self, active)
-  -- function num : 0_2
-  (self._imgStar):SetActive(active)
+function UIActivityMissionNodeStar:Flush(active)
+  self._imgStar:SetActive(active)
 end
-
-

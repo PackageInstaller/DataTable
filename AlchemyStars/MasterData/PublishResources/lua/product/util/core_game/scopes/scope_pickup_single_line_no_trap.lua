@@ -1,35 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_pickup_single_line_no_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_PickUpSingleLineNearestNoTrap", SkillScopeCalculator_Base)
 SkillScopeCalculator_PickUpSingleLineNearestNoTrap = SkillScopeCalculator_PickUpSingleLineNearestNoTrap
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_PickUpSingleLineNearestNoTrap.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_PickUpSingleLineNearestNoTrap:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local trapID = scopeParam[1]
   local count = scopeParam[2]
-  local world = (self._gridFilter)._world
+  local world = self._gridFilter._world
   local dirType = self:GetDirection(centerPos, casterPos)
   local utilScopeSvc = world:GetService("UtilScopeCalc")
   local utilDataSvc = world:GetService("UtilData")
   local pickUpPos, pickUpNEGPos = utilScopeSvc:CalcPickUpSingleLine(dirType, casterPos)
   local ret = {}
-  for _,pos in ipairs(pickUpPos) do
-    if not utilDataSvc:IsHasTrapOnPos(pos, trapID) and #ret < count then
-      (table.insert)(ret, pos)
+  for _, pos in ipairs(pickUpPos) do
+    if not utilDataSvc:IsHasTrapOnPos(pos, trapID) and count > #ret then
+      table.insert(ret, pos)
     end
   end
-  for _,pos in ipairs(pickUpNEGPos) do
-    if not utilDataSvc:IsHasTrapOnPos(pos, trapID) and #ret < count then
-      (table.insert)(ret, pos)
+  for _, pos in ipairs(pickUpNEGPos) do
+    if not utilDataSvc:IsHasTrapOnPos(pos, trapID) and count > #ret then
+      table.insert(ret, pos)
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.PickUpSingleLineNearestNoTrap, centerPos, ret, ret)
   return result
 end
-
-

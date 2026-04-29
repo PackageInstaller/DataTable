@@ -1,83 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/hud_view_add_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HUDAddViewSystem_Render", ReactiveSystem)
 HUDAddViewSystem_Render = HUDAddViewSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HUDAddViewSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function HUDAddViewSystem_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HUDAddViewSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = world:GetGroup((world.BW_WEMatchers).HUD)
+function HUDAddViewSystem_Render:GetTrigger(world)
+  local group = world:GetGroup(world.BW_WEMatchers.HUD)
   local c = Collector:New({group}, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HUDAddViewSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2
+function HUDAddViewSystem_Render:Filter(entity)
   return entity:HasView()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HUDAddViewSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function HUDAddViewSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     self:OnHUDViewAdded(entities[i])
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HUDAddViewSystem_Render.OnHUDViewAdded = function(self, hudEntity)
-  -- function num : 0_4 , upvalues : _ENV
+function HUDAddViewSystem_Render:OnHUDViewAdded(hudEntity)
   local viewCmpt = hudEntity:View()
   if viewCmpt == nil then
-    return 
+    return
   end
   local viewObj = viewCmpt:GetGameObject()
   if viewObj == nil then
-    return 
+    return
   end
-  do
-    if hudEntity:HasLinkageInfo() then
-      local linkageInfoCmpt = hudEntity:LinkageInfo()
-      linkageInfoCmpt:SetRenderObject(viewObj)
-    end
-    local mainCameraCmpt = (self._world):MainCamera()
-    local hudCanvas = mainCameraCmpt:HUDCanvas()
-    if not hudCanvas then
-      return 
-    end
-    local parentTrans = hudCanvas.transform
-    local entityTypeCmpt = hudEntity:EntityType()
-    do
-      if entityTypeCmpt.Value == EntityType.HPSlider then
-        local hpGroup = (GameObjectHelper.FindChild)(hudCanvas.transform, "HPGroup")
-        if hpGroup ~= nil then
-          parentTrans = hpGroup
-        end
-      end
-      ;
-      (viewObj.transform):SetParent(parentTrans)
-      -- DECOMPILER ERROR at PC53: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (viewObj.transform).localScale = Vector3(1, 1, 1)
-      ;
-      (viewObj.transform):SetAsLastSibling()
+  if hudEntity:HasLinkageInfo() then
+    local linkageInfoCmpt = hudEntity:LinkageInfo()
+    linkageInfoCmpt:SetRenderObject(viewObj)
+  end
+  local mainCameraCmpt = self._world:MainCamera()
+  local hudCanvas = mainCameraCmpt:HUDCanvas()
+  if not hudCanvas then
+    return
+  end
+  local parentTrans = hudCanvas.transform
+  local entityTypeCmpt = hudEntity:EntityType()
+  if entityTypeCmpt.Value == EntityType.HPSlider then
+    local hpGroup = GameObjectHelper.FindChild(hudCanvas.transform, "HPGroup")
+    if hpGroup ~= nil then
+      parentTrans = hpGroup
     end
   end
+  viewObj.transform:SetParent(parentTrans)
+  viewObj.transform.localScale = Vector3(1, 1, 1)
+  viewObj.transform:SetAsLastSibling()
 end
-
-

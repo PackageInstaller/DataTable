@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/gm/stn_gm_open_all_campaign.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("GM_OpenAllCampaign", Common_AsyncBase)
 GM_OpenAllCampaign = GM_OpenAllCampaign
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GM_OpenAllCampaign.TaskFunc = function(self, TT, status)
-  -- function num : 0_0 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  local campaignID, _, __ = campaignModule:ParseCfgComponentID(((self._manager):GetMissionRunData()):GetComponentConfigID())
-  ;
-  (self._manager):AsyncGM_OpenAllCampaign(TT, status, campaignID)
+function GM_OpenAllCampaign:TaskFunc(TT, status)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
+  local campaignID, _, __ = campaignModule:ParseCfgComponentID(self._manager:GetMissionRunData():GetComponentConfigID())
+  self._manager:AsyncGM_OpenAllCampaign(TT, status, campaignID)
   local resLoadInfoList = AsyncRequestRes:New()
   campaignModule:CampaignLoadInfoList(TT, resLoadInfoList)
   local resProtoLoadInfo = AsyncRequestRes:New()
   campaignModule:CampaignComProtoLoadInfo(TT, resProtoLoadInfo, campaignID)
 end
-
-

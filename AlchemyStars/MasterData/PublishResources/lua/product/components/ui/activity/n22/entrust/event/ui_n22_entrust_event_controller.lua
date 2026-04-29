@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/entrust/event/ui_n22_entrust_event_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22EntrustEventController", UIController)
 UIN22EntrustEventController = UIN22EntrustEventController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22EntrustEventController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN22EntrustEventController:OnShow(uiParams)
   self._campaign = uiParams[1]
   self._component = uiParams[2]
   self._levelId = uiParams[3]
@@ -18,56 +11,46 @@ UIN22EntrustEventController.OnShow = function(self, uiParams)
   self:SetData(self._campaign, self._component, self._levelId, self._eventId)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventController.OnHide = function(self)
-  -- function num : 0_1
+function UIN22EntrustEventController:OnHide()
   self:OnEventClose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventController.OnEventClose = function(self)
-  -- function num : 0_2
+function UIN22EntrustEventController:OnEventClose()
   if self._eventCloseCallback then
-    (self._eventCloseCallback)(self._isExit)
+    self._eventCloseCallback(self._isExit)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventController.OnLevelClose = function(self, isExit)
-  -- function num : 0_3
+function UIN22EntrustEventController:OnLevelClose(isExit)
   self._isExit = isExit
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventController.SetPlayer = function(self, eventId)
-  -- function num : 0_4
+function UIN22EntrustEventController:SetPlayer(eventId)
   if self._setPlayerCallback then
-    (self._setPlayerCallback)(eventId)
+    self._setPlayerCallback(eventId)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventController.SetData = function(self, campaign, component, levelId, eventId)
-  -- function num : 0_5 , upvalues : _ENV
-  local eventType, subType = (self._component):GetEventType(self._eventId)
-  local tb = {[EntrustEventType.EntrustEventType_Start] = "", [EntrustEventType.EntrustEventType_End] = "UIN22EntrustEventEnd", [EntrustEventType.EntrustEventType_Fight] = "UIN22EntrustEventFight", [EntrustEventType.EntrustEventType_Story] = "UIN22EntrustEventStory", [EntrustEventType.EntrustEventType_MissionOccupy] = "UIN22EntrustEventQuest", [EntrustEventType.EntrustEventType_MissionSubmit] = "UIN22EntrustEventQuest", [EntrustEventType.EntrustEventType_Box] = "UIN22EntrustEventBox", [EntrustEventType.EntrustEventType_Transfer] = "UIN22EntrustEventTransfer"}
+function UIN22EntrustEventController:SetData(campaign, component, levelId, eventId)
+  local eventType, subType = self._component:GetEventType(self._eventId)
+  local tb = {
+    [EntrustEventType.EntrustEventType_Start] = "",
+    [EntrustEventType.EntrustEventType_End] = "UIN22EntrustEventEnd",
+    [EntrustEventType.EntrustEventType_Fight] = "UIN22EntrustEventFight",
+    [EntrustEventType.EntrustEventType_Story] = "UIN22EntrustEventStory",
+    [EntrustEventType.EntrustEventType_MissionOccupy] = "UIN22EntrustEventQuest",
+    [EntrustEventType.EntrustEventType_MissionSubmit] = "UIN22EntrustEventQuest",
+    [EntrustEventType.EntrustEventType_Box] = "UIN22EntrustEventBox",
+    [EntrustEventType.EntrustEventType_Transfer] = "UIN22EntrustEventTransfer"
+  }
   local className = tb[eventType]
   if not className then
-    (Log.error)("UIN22EntrustEventController:SetData() EventType Error, type = ", eventType)
+    Log.error("UIN22EntrustEventController:SetData() EventType Error, type = ", eventType)
   end
-  if not (string.isnullorempty)(className) then
-    local obj = (UIWidgetHelper.SpawnObject)(self, "_pool", className)
+  if not string.isnullorempty(className) then
+    local obj = UIWidgetHelper.SpawnObject(self, "_pool", className)
     obj:SetData(self, campaign, component, levelId, eventId)
   else
-    do
-      self:CloseDialog()
-    end
+    self:CloseDialog()
   end
 end
-
-

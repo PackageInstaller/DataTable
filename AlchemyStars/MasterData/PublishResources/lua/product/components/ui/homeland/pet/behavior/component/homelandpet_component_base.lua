@@ -1,91 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/component/homelandpet_component_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandPetComponentBase", Object)
 HomelandPetComponentBase = HomelandPetComponentBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetComponentBase.Constructor = function(self, componentType, pet, behavior)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandPetComponentBase:Constructor(componentType, pet, behavior)
   self._componentType = componentType
   self._pet = pet
   self.state = HomelandPetComponentState.Resting
   self._behavior = behavior
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentBase.ReLoadPetComponent = function(self)
-  -- function num : 0_1
+function HomelandPetComponentBase:ReLoadPetComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentBase.Init = function(self)
-  -- function num : 0_2
+function HomelandPetComponentBase:Init()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentBase.OnExcute = function(self)
-  -- function num : 0_3
+function HomelandPetComponentBase:OnExcute()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentBase.Update = function(self, deltaTime)
-  -- function num : 0_4
+function HomelandPetComponentBase:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentBase.Exit = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandPetComponentBase:Exit()
   self.state = HomelandPetComponentState.Resting
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentBase.Dispose = function(self)
-  -- function num : 0_6
+function HomelandPetComponentBase:Dispose()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentBase.Finish = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  do return self.state == HomelandPetComponentState.Success end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandPetComponentBase:Finish()
+  return self.state == HomelandPetComponentState.Success
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentBase.Failure = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  do return self.state == HomelandPetComponentState.Failure end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandPetComponentBase:Failure()
+  return self.state == HomelandPetComponentState.Failure
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentBase.Resting = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function HomelandPetComponentBase:Resting()
   self.state = HomelandPetComponentState.Resting
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentBase._OnUpdatePerFrameCallback = function(self)
-  -- function num : 0_10
+function HomelandPetComponentBase:_OnUpdatePerFrameCallback()
   self:OnUpdatePerFrame()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentBase.OnUpdatePerFrame = function(self)
-  -- function num : 0_11
+function HomelandPetComponentBase:OnUpdatePerFrame()
 end
-
-

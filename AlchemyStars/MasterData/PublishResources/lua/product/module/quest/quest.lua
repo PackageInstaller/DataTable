@@ -1,120 +1,81 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/quest/quest.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Quest", Object)
 Quest = Quest
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Quest.Constructor = function(self, qinfo)
-  -- function num : 0_0
+function Quest:Constructor(qinfo)
   self._questInfo = qinfo
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Quest.IsHomeLandQuestComplete = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._questInfo).status == QuestStatus.QUEST_Completed then
+function Quest:IsHomeLandQuestComplete()
+  if self._questInfo.status == QuestStatus.QUEST_Completed then
     return true
   end
-  if QuestType.QT_Homeland_Group_Rookie <= (self._questInfo).QuestType and (self._questInfo).QuestType < 120 then
-    return (self._questInfo).IsGroupTaskSatisfy
+  if self._questInfo.QuestType >= QuestType.QT_Homeland_Group_Rookie and self._questInfo.QuestType < 120 then
+    return self._questInfo.IsGroupTaskSatisfy
   end
   return false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Quest.Update = function(self, info)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._questInfo).status == QuestStatus.QUEST_Accepted and info.status == QuestStatus.QUEST_Completed and info.QuestType == QuestType.QT_Achieve then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.QuestAchiUpdate, {info.quest_id})
+function Quest:Update(info)
+  if self._questInfo.status == QuestStatus.QUEST_Accepted and info.status == QuestStatus.QUEST_Completed and info.QuestType == QuestType.QT_Achieve then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.QuestAchiUpdate, {
+      info.quest_id
+    })
   end
   self._questInfo = info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Quest.ID = function(self)
-  -- function num : 0_3
-  return (self._questInfo).quest_id
+function Quest:ID()
+  return self._questInfo.quest_id
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Quest.QuestInfo = function(self)
-  -- function num : 0_4
+function Quest:QuestInfo()
   return self._questInfo
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Quest.Status = function(self)
-  -- function num : 0_5
-  return (self._questInfo).status
+function Quest:Status()
+  return self._questInfo.status
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Quest.CondDesc = function(self)
-  -- function num : 0_6
+function Quest:CondDesc()
   return self._condDesc
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Quest.ShowType = function(self)
-  -- function num : 0_7
-  return (self._questInfo).ShowType
+function Quest:ShowType()
+  return self._questInfo.ShowType
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Quest.GrowthStage = function(self)
-  -- function num : 0_8
-  return (self._questInfo).GrowthStage
+function Quest:GrowthStage()
+  return self._questInfo.GrowthStage
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Quest.BuildDesc = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local cond_desc = nil
-  local s = (StringTable.Get)((self._questInfo).CondDesc)
+function Quest:BuildDesc()
+  local cond_desc
+  local s = StringTable.Get(self._questInfo.CondDesc)
   if s then
     cond_desc = s
   end
-  local paramList = self:ParseParams((self._questInfo).Cond)
+  local paramList = self:ParseParams(self._questInfo.Cond)
   if paramList then
-    for i,v in ipairs(paramList) do
-      cond_desc = (string.gsub)(cond_desc, "{" .. i - 1 .. "}", v)
+    for i, v in ipairs(paramList) do
+      cond_desc = string.gsub(cond_desc, "{" .. i - 1 .. "}", v)
     end
   end
-  do
-    return cond_desc
-  end
+  return cond_desc
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Quest.ParseParams = function(self, cond)
-  -- function num : 0_10 , upvalues : _ENV
+function Quest:ParseParams(cond)
   if cond == nil then
-    return 
+    return
   end
   local resList = {}
-  local paramList = (GameHelper.StringSplit)(cond, "[()&|,]")
-  for _,v in ipairs(paramList) do
-    local index = (string.find)(v, ":")
+  local paramList = GameHelper.StringSplit(cond, "[()&|,]")
+  for _, v in ipairs(paramList) do
+    local index = string.find(v, ":")
     if index then
-      resList[#resList + 1] = (string.sub)(v, index + 1)
+      resList[#resList + 1] = string.sub(v, index + 1)
     else
       resList[#resList + 1] = v
     end
   end
   return resList
 end
-
-

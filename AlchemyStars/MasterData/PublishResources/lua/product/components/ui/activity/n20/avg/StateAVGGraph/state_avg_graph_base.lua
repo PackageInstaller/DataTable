@@ -1,39 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/StateAVGGraph/state_avg_graph_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateAVGGraphBase", State)
 StateAVGGraphBase = StateAVGGraphBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateAVGGraphBase.Init = function(self)
-  -- function num : 0_0
+function StateAVGGraphBase:Init()
   self.fsm = self:GetFsm()
-  self.ui = (self.fsm):GetData()
-  self.data = (self.ui).data
+  self.ui = self.fsm:GetData()
+  self.data = self.ui.data
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGGraphBase.Destroy = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((StateAVGGraphBase.super).Destroy)(self)
+function StateAVGGraphBase:Destroy()
+  StateAVGGraphBase.super.Destroy(self)
   self.ui = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGGraphBase.GetScrollView = function(self)
-  -- function num : 0_2
-  return (self.ui).rtSV
+function StateAVGGraphBase:GetScrollView()
+  return self.ui.rtSV
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGGraphBase.GetContent = function(self)
-  -- function num : 0_3
-  return (self.ui).rtContent
+function StateAVGGraphBase:GetContent()
+  return self.ui.rtContent
 end
-
-

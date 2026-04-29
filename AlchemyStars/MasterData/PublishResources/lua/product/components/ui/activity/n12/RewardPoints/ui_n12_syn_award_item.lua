@@ -1,74 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/RewardPoints/ui_n12_syn_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12SynAwardItem", UICustomWidget)
 UIN12SynAwardItem = UIN12SynAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12SynAwardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN12SynAwardItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12SynAwardItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIN12SynAwardItem:InitWidget()
   self._lock1 = self:GetGameObject("_lock1")
   self._lock2 = self:GetGameObject("_lock2")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12SynAwardItem._SetShow = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN12SynAwardItem:_SetShow()
   local reward = self:GetUIComponent("UISelectObjectPath", "_item")
   self._reward = reward:SpawnObject("UIItem")
-  ;
-  (self._reward):SetForm(UIItemForm.Base, UIItemScale.Level3)
-  ;
-  (self._reward):ShowNodes(UIItemNode.Activity, false)
-  local cfg_item = (Cfg.cfg_item)[(self._rewardDate)[1]]
+  self._reward:SetForm(UIItemForm.Base, UIItemScale.Level3)
+  self._reward:ShowNodes(UIItemNode.Activity, false)
+  local cfg_item = Cfg.cfg_item[self._rewardDate[1]]
   if cfg_item == nil then
-    return 
+    return
   end
   self._cg = cfg_item.Icon
   self._colorEnum = cfg_item.Color
   local icon = self._cg
   local quality = self._colorEnum
-  local text1 = (self._rewardDate)[2]
-  ;
-  (self._reward):SetData({icon = icon, quality = quality, text1 = text1, itemId = (self._rewardDate)[1]})
-  ;
-  (self._reward):SetClickCallBack(function(go)
-    -- function num : 0_2_0 , upvalues : self
+  local text1 = self._rewardDate[2]
+  self._reward:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = text1,
+    itemId = self._rewardDate[1]
+  })
+  self._reward:SetClickCallBack(function(go)
     local tr = go.transform
     local pos = tr.position
-    ;
-    (self._callback)((self._rewardDate)[1], pos)
-  end
-)
+    self._callback(self._rewardDate[1], pos)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12SynAwardItem._SetState = function(self, isshow)
-  -- function num : 0_3
-  (self._lock1):SetActive(isshow)
-  ;
-  (self._lock2):SetActive(isshow)
+function UIN12SynAwardItem:_SetState(isshow)
+  self._lock1:SetActive(isshow)
+  self._lock2:SetActive(isshow)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12SynAwardItem.SetData = function(self, reward, state, callback)
-  -- function num : 0_4
+function UIN12SynAwardItem:SetData(reward, state, callback)
   self._rewardDate = reward
   self._callback = callback
   self:_SetShow()
   self:_SetState(state)
 end
-
-

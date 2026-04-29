@@ -1,17 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/common_shutdown_core_game.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("CTestRobot_Common_ShutdownCoreGame", CTestRobot_Base)
 CTestRobot_Common_ShutdownCoreGame = CTestRobot_Common_ShutdownCoreGame
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CTestRobot_Common_ShutdownCoreGame.OnWorking = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  (GameGlobal:GetInstance()):ExitCoreGame()
-  return ((CTestRobot_Common_ShutdownCoreGame.super).OnWorking)(self)
+function CTestRobot_Common_ShutdownCoreGame:OnWorking()
+  GameGlobal:GetInstance():ExitCoreGame()
+  return CTestRobot_Common_ShutdownCoreGame.super.OnWorking(self)
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_play_effect_with_chain_move_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewPlayEffectWithChainMove", BuffViewBase)
 BuffViewPlayEffectWithChainMove = BuffViewPlayEffectWithChainMove
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewPlayEffectWithChainMove.PlayView = function(self, TT, notify)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewPlayEffectWithChainMove:PlayView(TT, notify)
   local buffResult = self._buffResult
   local notifyType = buffResult:GetNotifyType()
   local notifyPos = buffResult:GetNotifyPos()
@@ -17,7 +10,7 @@ BuffViewPlayEffectWithChainMove.PlayView = function(self, TT, notify)
   local permanentEffectID = buffResult:GetPermanentEffectID()
   local moveEffectID = buffResult:GetMoveEffectID()
   local useType = buffResult:GetUseType()
-  local effectService = (self._world):GetService("Effect")
+  local effectService = self._world:GetService("Effect")
   local e = self._entity
   local effectHolderCmpt = e:EffectHolder()
   if not effectHolderCmpt then
@@ -26,130 +19,69 @@ BuffViewPlayEffectWithChainMove.PlayView = function(self, TT, notify)
   effectHolderCmpt = e:EffectHolder()
   if notifyType == NotifyType.PlayerEachMoveStart then
     self:_HandleEachMoveStartByType(e, buffResult, effectHolderCmpt, effectService)
-  else
-    if notifyType == NotifyType.PlayerEachMoveEnd then
-      if moveEffectID then
-        effectService:CreateWorldPositionEffect(moveEffectID, notifyPos)
-      end
-      if isEnd then
-        self:_HandleChainMoveEndByType(e, buffResult, effectHolderCmpt, effectService)
-      end
-    else
-      if notifyType == NotifyType.PetChainMoveBegin and isStart then
-        self:_HandleChainMoveBeginByType(e, buffResult, effectHolderCmpt, effectService)
-      end
+  elseif notifyType == NotifyType.PlayerEachMoveEnd then
+    if moveEffectID then
+      effectService:CreateWorldPositionEffect(moveEffectID, notifyPos)
     end
-  end
-  if notifyType == NotifyType.PlayerMoveStart then
+    if isEnd then
+      self:_HandleChainMoveEndByType(e, buffResult, effectHolderCmpt, effectService)
+    end
+  elseif notifyType == NotifyType.PetChainMoveBegin then
+    if isStart then
+      self:_HandleChainMoveBeginByType(e, buffResult, effectHolderCmpt, effectService)
+    end
+  elseif notifyType == NotifyType.PlayerMoveStart then
     self:_HandlePlayerMoveStartByType(TT, e, buffResult, effectHolderCmpt, effectService)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewPlayEffectWithChainMove.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewPlayEffectWithChainMove:IsNotifyMatch(notify)
   local buffResult = self._buffResult
   local notifyType = buffResult:GetNotifyType()
   local notifyPos = buffResult:GetNotifyPos()
   if not notify then
     return false
   end
-  do
-    if notifyType == NotifyType.PlayerMoveStart then
-      local useType = buffResult:GetUseType()
-      if useType == PlayEffectWithChainMoveType.Zhongxu then
-        return true
-      end
+  if notifyType == NotifyType.PlayerMoveStart then
+    local useType = buffResult:GetUseType()
+    if useType == PlayEffectWithChainMoveType.Zhongxu then
+      return true
     end
-    if notifyType ~= NotifyType.PlayerEachMoveStart and notifyType ~= NotifyType.PlayerEachMoveEnd and notifyType ~= NotifyType.PetChainMoveBegin then
+  end
+  if notifyType ~= NotifyType.PlayerEachMoveStart and notifyType ~= NotifyType.PlayerEachMoveEnd and notifyType ~= NotifyType.PetChainMoveBegin then
+    return false
+  end
+  if notifyType == NotifyType.PetChainMoveBegin then
+    local useType = buffResult:GetUseType()
+    if useType == PlayEffectWithChainMoveType.Zhongxu then
+    elseif notify:GetEntityID() ~= self._entity:GetID() then
       return false
     end
-    if notifyType == NotifyType.PetChainMoveBegin then
-      local useType = buffResult:GetUseType()
-      if useType ~= PlayEffectWithChainMoveType.Zhongxu or notify:GetEntityID() ~= (self._entity):GetID() then
-        return false
-      end
-    else
-      do
-        if notify:GetEntityID() ~= (self._entity):GetID() then
-          return false
-        end
-        if notify:GetNotifyType() ~= notifyType then
-          return false
-        end
-        if notify:GetPos() ~= notifyPos then
-          return false
-        end
-        return true
-      end
-    end
+  elseif notify:GetEntityID() ~= self._entity:GetID() then
+    return false
   end
+  if notify:GetNotifyType() ~= notifyType then
+    return false
+  end
+  if notify:GetPos() ~= notifyPos then
+    return false
+  end
+  return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewPlayEffectWithChainMove._HandleEachMoveStartByType = function(self, e, buffResult, effectHolderCmpt, effectService)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffViewPlayEffectWithChainMove:_HandleEachMoveStartByType(e, buffResult, effectHolderCmpt, effectService)
   local useType = buffResult:GetUseType()
   local typeParam = buffResult:GetTypeParam()
-  if not useType then
-    useType = PlayEffectWithChainMoveType.Normal
-  end
-  if useType ~= PlayEffectWithChainMoveType.Normal or useType == PlayEffectWithChainMoveType.Zhongxu then
-    local bvcmpt = (self._entity):BuffView()
-    local played = bvcmpt:GetBuffValue("ZhongxuTrasnToCatPlayed")
-  end
-  if played and played == 1 then
-    (Log.error)("PlayEffectWithChainMove,EachMoveStart,trans to cat not played")
-    local permanentEffectID = buffResult:GetPermanentEffectID()
-    if permanentEffectID then
-      local effect = effectService:CreateEffect(permanentEffectID, e)
-      self:_ZhongxuCatEffectAddMaterialAnimation(effect)
-      effectHolderCmpt:AttachPermanentEffect(effect:GetID())
-      effectHolderCmpt:AttachChainMovePermanentEffect(effect:GetID())
-      self:_ZhongxuShowHideModel(false)
-      bvcmpt:SetBuffValue("ZhongxuTrasnToCatPlayed", 1)
-      bvcmpt:SetBuffValue("ZhongxuCatEffectEntityID", effect:GetID())
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewPlayEffectWithChainMove._HandleChainMoveBeginByType = function(self, e, buffResult, effectHolderCmpt, effectService)
-  -- function num : 0_3 , upvalues : _ENV
-  local useType = buffResult:GetUseType()
-  local typeParam = buffResult:GetTypeParam()
-  if not useType then
-    useType = PlayEffectWithChainMoveType.Normal
-  end
-  local notifyPos = buffResult:GetNotifyPos()
-  local permanentEffectID = buffResult:GetPermanentEffectID()
-  local moveEffectID = buffResult:GetMoveEffectID()
+  useType = useType or PlayEffectWithChainMoveType.Normal
   if useType == PlayEffectWithChainMoveType.Normal then
-    if moveEffectID then
-      effectService:CreateWorldPositionEffect(moveEffectID, notifyPos)
-    end
-    if permanentEffectID then
-      local effect = effectService:CreateEffect(permanentEffectID, e)
-      effectHolderCmpt:AttachPermanentEffect(effect:GetID())
-      effectHolderCmpt:AttachChainMovePermanentEffect(effect:GetID())
-    end
-  else
-    do
-      if useType == PlayEffectWithChainMoveType.Zhongxu then
-        if moveEffectID then
-          effectService:CreateWorldPositionEffect(moveEffectID, notifyPos)
-        end
-        local bvcmpt = (self._entity):BuffView()
-        bvcmpt:SetBuffValue("ZhongxuCatTrasnToPetPlayed", 0)
-        local transTaskID = bvcmpt:GetBuffValue("ZhongxuTrasnToCatTaskID")
-        if transTaskID and transTaskID > 0 then
-          return 
-        end
-      end
-      if not typeParam or not typeParam.isTeamLeader or permanentEffectID then
+  elseif useType == PlayEffectWithChainMoveType.Zhongxu then
+    local bvcmpt = self._entity:BuffView()
+    local played = bvcmpt:GetBuffValue("ZhongxuTrasnToCatPlayed")
+    if played and played == 1 then
+    else
+      Log.error("PlayEffectWithChainMove,EachMoveStart,trans to cat not played")
+      local permanentEffectID = buffResult:GetPermanentEffectID()
+      if permanentEffectID then
         local effect = effectService:CreateEffect(permanentEffectID, e)
         self:_ZhongxuCatEffectAddMaterialAnimation(effect)
         effectHolderCmpt:AttachPermanentEffect(effect:GetID())
@@ -162,71 +94,96 @@ BuffViewPlayEffectWithChainMove._HandleChainMoveBeginByType = function(self, e, 
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewPlayEffectWithChainMove._HandleChainMoveEndByType = function(self, e, buffResult, effectHolderCmpt, effectService)
-  -- function num : 0_4 , upvalues : _ENV
+function BuffViewPlayEffectWithChainMove:_HandleChainMoveBeginByType(e, buffResult, effectHolderCmpt, effectService)
   local useType = buffResult:GetUseType()
   local typeParam = buffResult:GetTypeParam()
-  if not useType then
-    useType = PlayEffectWithChainMoveType.Normal
-  end
+  useType = useType or PlayEffectWithChainMoveType.Normal
+  local notifyPos = buffResult:GetNotifyPos()
+  local permanentEffectID = buffResult:GetPermanentEffectID()
+  local moveEffectID = buffResult:GetMoveEffectID()
   if useType == PlayEffectWithChainMoveType.Normal then
-    local permanentEffectList = effectHolderCmpt:GetChainMovePermanentEffect()
-    effectService:_DestroyEffectArray(permanentEffectList)
-    effectHolderCmpt:ClearChainMovePermanentEffectIDListAfterDestroy()
-  else
-    do
-      if useType == PlayEffectWithChainMoveType.Zhongxu then
-        local bvcmpt = (self._entity):BuffView()
-        local played = bvcmpt:GetBuffValue("ZhongxuCatTrasnToPetPlayed")
-        if played and played == 1 then
-          if typeParam and typeParam.isTeamLeader then
-            do
-              local permanentEffectList = effectHolderCmpt:GetChainMovePermanentEffect()
-              effectService:_DestroyEffectArray(permanentEffectList)
-              effectHolderCmpt:ClearChainMovePermanentEffectIDListAfterDestroy()
-              self:_ZhongxuShowHideModel(true)
-              bvcmpt:SetBuffValue("ZhongxuCatTrasnToPetPlayed", 1)
-              bvcmpt:SetBuffValue("ZhongxuTrasnToCatPlayed", 0)
-              do return  end
-              if typeParam and typeParam.isTeamLeader then
-                bvcmpt:SetBuffValue("ZhongxuCatTrasnToPetPlayed", 1)
-                bvcmpt:SetBuffValue("ZhongxuTrasnToCatPlayed", 0)
-                local transRevertTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._ZhongxuCatTransToPet, self, e, effectHolderCmpt, effectService)
-                local bvcmpt = (self._entity):BuffView()
-                bvcmpt:SetBuffValue("ZhongxuTrasnRevertTaskID", transRevertTaskID)
-              else
-                do
-                  local permanentEffectList = effectHolderCmpt:GetChainMovePermanentEffect()
-                  effectService:_DestroyEffectArray(permanentEffectList)
-                  effectHolderCmpt:ClearChainMovePermanentEffectIDListAfterDestroy()
-                  self:_ZhongxuShowHideModel(true)
-                  bvcmpt:SetBuffValue("ZhongxuCatTrasnToPetPlayed", 1)
-                  bvcmpt:SetBuffValue("ZhongxuTrasnToCatPlayed", 0)
-                end
-              end
-            end
-          end
-        end
-      end
+    if moveEffectID then
+      effectService:CreateWorldPositionEffect(moveEffectID, notifyPos)
+    end
+    if permanentEffectID then
+      local effect = effectService:CreateEffect(permanentEffectID, e)
+      effectHolderCmpt:AttachPermanentEffect(effect:GetID())
+      effectHolderCmpt:AttachChainMovePermanentEffect(effect:GetID())
+    end
+  elseif useType == PlayEffectWithChainMoveType.Zhongxu then
+    if moveEffectID then
+      effectService:CreateWorldPositionEffect(moveEffectID, notifyPos)
+    end
+    local bvcmpt = self._entity:BuffView()
+    bvcmpt:SetBuffValue("ZhongxuCatTrasnToPetPlayed", 0)
+    local transTaskID = bvcmpt:GetBuffValue("ZhongxuTrasnToCatTaskID")
+    if transTaskID and 0 < transTaskID then
+      return
+    end
+    if typeParam and typeParam.isTeamLeader then
+    elseif permanentEffectID then
+      local effect = effectService:CreateEffect(permanentEffectID, e)
+      self:_ZhongxuCatEffectAddMaterialAnimation(effect)
+      effectHolderCmpt:AttachPermanentEffect(effect:GetID())
+      effectHolderCmpt:AttachChainMovePermanentEffect(effect:GetID())
+      self:_ZhongxuShowHideModel(false)
+      bvcmpt:SetBuffValue("ZhongxuTrasnToCatPlayed", 1)
+      bvcmpt:SetBuffValue("ZhongxuCatEffectEntityID", effect:GetID())
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
+function BuffViewPlayEffectWithChainMove:_HandleChainMoveEndByType(e, buffResult, effectHolderCmpt, effectService)
+  local useType = buffResult:GetUseType()
+  local typeParam = buffResult:GetTypeParam()
+  useType = useType or PlayEffectWithChainMoveType.Normal
+  if useType == PlayEffectWithChainMoveType.Normal then
+    local permanentEffectList = effectHolderCmpt:GetChainMovePermanentEffect()
+    effectService:_DestroyEffectArray(permanentEffectList)
+    effectHolderCmpt:ClearChainMovePermanentEffectIDListAfterDestroy()
+  elseif useType == PlayEffectWithChainMoveType.Zhongxu then
+    local bvcmpt = self._entity:BuffView()
+    local played = bvcmpt:GetBuffValue("ZhongxuCatTrasnToPetPlayed")
+    if played and played == 1 then
+      if typeParam and typeParam.isTeamLeader then
+      else
+        local permanentEffectList = effectHolderCmpt:GetChainMovePermanentEffect()
+        effectService:_DestroyEffectArray(permanentEffectList)
+        effectHolderCmpt:ClearChainMovePermanentEffectIDListAfterDestroy()
+        self:_ZhongxuShowHideModel(true)
+        bvcmpt:SetBuffValue("ZhongxuCatTrasnToPetPlayed", 1)
+        bvcmpt:SetBuffValue("ZhongxuTrasnToCatPlayed", 0)
+      end
+      return
+    end
+    if typeParam and typeParam.isTeamLeader then
+      bvcmpt:SetBuffValue("ZhongxuCatTrasnToPetPlayed", 1)
+      bvcmpt:SetBuffValue("ZhongxuTrasnToCatPlayed", 0)
+      local transRevertTaskID = GameGlobal.TaskManager():CoreGameStartTask(self._ZhongxuCatTransToPet, self, e, effectHolderCmpt, effectService)
+      local bvcmpt = self._entity:BuffView()
+      bvcmpt:SetBuffValue("ZhongxuTrasnRevertTaskID", transRevertTaskID)
+    else
+      local permanentEffectList = effectHolderCmpt:GetChainMovePermanentEffect()
+      effectService:_DestroyEffectArray(permanentEffectList)
+      effectHolderCmpt:ClearChainMovePermanentEffectIDListAfterDestroy()
+      self:_ZhongxuShowHideModel(true)
+      bvcmpt:SetBuffValue("ZhongxuCatTrasnToPetPlayed", 1)
+      bvcmpt:SetBuffValue("ZhongxuTrasnToCatPlayed", 0)
+    end
+  end
+end
 
-BuffViewPlayEffectWithChainMove._ZhongxuPetTransToCat = function(self, TT, e, effectHolderCmpt, effectService, permanentEffectID)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.debug)("PlayEffectWithChainMove,play ZhongxuCatTransToPet task")
+function BuffViewPlayEffectWithChainMove:_ZhongxuPetTransToCat(TT, e, effectHolderCmpt, effectService, permanentEffectID)
+  Log.debug("PlayEffectWithChainMove,play ZhongxuCatTransToPet task")
   local buffResult = self._buffResult
   local typeParam = buffResult:GetTypeParam()
   local specialParam = typeParam.specialParam
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local chain_path = (renderBoardEntity:RenderChainPath()):GetRenderChainPath()
-  local audioID = (not chain_path or #chain_path > 1) and specialParam._transAudioID or 2585
-  ;
-  (AudioHelperController.PlayInnerGameSfx)(audioID)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local chain_path = renderBoardEntity:RenderChainPath():GetRenderChainPath()
+  if not chain_path or 1 < #chain_path then
+  end
+  local audioID = specialParam._transAudioID or 2585
+  AudioHelperController.PlayInnerGameSfx(audioID)
   local actEffID = specialParam._transEffectID or 160181102
   local matAnim = specialParam._transMatAnim or "effanim_1601811_atk_revolve1"
   local animName = specialParam._transAnim or "AttackMove1"
@@ -234,160 +191,137 @@ BuffViewPlayEffectWithChainMove._ZhongxuPetTransToCat = function(self, TT, e, ef
   effectService:CreateEffect(actEffID, e)
   e:PlayMaterialAnim(matAnim)
   YIELD(TT, 400)
-  local catEffEntity = nil
+  local catEffEntity
   if permanentEffectID then
     local effect = effectService:CreateEffect(permanentEffectID, e)
     self:_ZhongxuCatEffectAddMaterialAnimation(effect)
     effectHolderCmpt:AttachPermanentEffect(effect:GetID())
     effectHolderCmpt:AttachChainMovePermanentEffect(effect:GetID())
     catEffEntity = effect
-    local bvcmpt = (self._entity):BuffView()
+    local bvcmpt = self._entity:BuffView()
     bvcmpt:SetBuffValue("ZhongxuCatEffectEntityID", effect:GetID())
   end
-  do
-    local catEffID = specialParam._catShowEffectID or 160181106
-    effectService:CreateEffect(catEffID, e)
-    local catMatAnim = specialParam._catShowMatAnim or "effanim_1601811_atk_weapon02_in"
-    if catEffEntity then
-      catEffEntity:PlayMaterialAnim(catMatAnim)
-    end
-    self:_ZhongxuShowHideModel(false)
-    local bvcmpt = (self._entity):BuffView()
-    bvcmpt:SetBuffValue("ZhongxuTrasnToCatTaskID", 0)
+  local catEffID = specialParam._catShowEffectID or 160181106
+  effectService:CreateEffect(catEffID, e)
+  local catMatAnim = specialParam._catShowMatAnim or "effanim_1601811_atk_weapon02_in"
+  if catEffEntity then
+    catEffEntity:PlayMaterialAnim(catMatAnim)
   end
+  self:_ZhongxuShowHideModel(false)
+  local bvcmpt = self._entity:BuffView()
+  bvcmpt:SetBuffValue("ZhongxuTrasnToCatTaskID", 0)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewPlayEffectWithChainMove._ZhongxuCatEffectAddMaterialAnimation = function(self, effect)
-  -- function num : 0_6 , upvalues : _ENV
+function BuffViewPlayEffectWithChainMove:_ZhongxuCatEffectAddMaterialAnimation(effect)
   if not effect then
-    return 
+    return
   end
   local effView = effect:View()
   if not effView then
-    return 
+    return
   end
   local viewWrapper = effView.ViewWrapper
   if not viewWrapper then
-    return 
+    return
   end
-  local matAnimMonoCmpt = (viewWrapper.GameObject):GetComponent(typeof(MaterialAnimation))
+  local matAnimMonoCmpt = viewWrapper.GameObject:GetComponent(typeof(MaterialAnimation))
   if matAnimMonoCmpt then
-    ((UnityEngine.Object).Destroy)(matAnimMonoCmpt)
+    UnityEngine.Object.Destroy(matAnimMonoCmpt)
   end
-  matAnimMonoCmpt = (viewWrapper.GameObject):AddComponent(typeof(MaterialAnimation))
-  local resServ = ((self._world).BW_Services).ResourcesPool
+  matAnimMonoCmpt = viewWrapper.GameObject:AddComponent(typeof(MaterialAnimation))
+  local resServ = self._world.BW_Services.ResourcesPool
   local container = resServ:LoadAsset("globalShaderEffects.asset")
   effect:AddMaterialAnimationComponent(container, matAnimMonoCmpt)
   local shaderEffect = "1601811_shader_effects.asset"
   if shaderEffect then
     local containerShaderEffect = resServ:LoadAsset(shaderEffect)
     if containerShaderEffect then
-      (effect:MaterialAnimationComponent()):LoadContainer(containerShaderEffect)
+      effect:MaterialAnimationComponent():LoadContainer(containerShaderEffect)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewPlayEffectWithChainMove._ZhongxuCatTransToPet = function(self, TT, e, effectHolderCmpt, effectService)
-  -- function num : 0_7 , upvalues : _ENV
-  (Log.debug)("PlayEffectWithChainMove,play ZhongxuCatTransToPet task , enter")
-  local bvcmpt = (self._entity):BuffView()
+function BuffViewPlayEffectWithChainMove:_ZhongxuCatTransToPet(TT, e, effectHolderCmpt, effectService)
+  Log.debug("PlayEffectWithChainMove,play ZhongxuCatTransToPet task , enter")
+  local bvcmpt = self._entity:BuffView()
   local transToCatTaskID = bvcmpt:GetBuffValue("ZhongxuTrasnToCatTaskID")
-  do
-    if transToCatTaskID and transToCatTaskID > 0 then
-      local taskIDs = {transToCatTaskID}
-      while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDs) do
-        YIELD(TT)
-      end
+  if transToCatTaskID and 0 < transToCatTaskID then
+    local taskIDs = {transToCatTaskID}
+    while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDs) do
+      YIELD(TT)
     end
-    ;
-    (Log.debug)("PlayEffectWithChainMove,play ZhongxuCatTransToPet task")
-    local buffResult = self._buffResult
-    local typeParam = buffResult:GetTypeParam()
-    local specialParam = typeParam.specialParam
-    local audioID = specialParam._transAudioID or 2585
-    ;
-    (AudioHelperController.PlayInnerGameSfx)(audioID)
-    local catEffID = specialParam._catHideEffectID or 160181108
-    local catMatAnim = specialParam._catHideMatAnim or "effanim_1601811_atk_weapon02_out"
-    local catEffEntity = nil
-    local catEffectID = bvcmpt:GetBuffValue("ZhongxuCatEffectEntityID")
-    if catEffectID and catEffectID > 0 then
-      catEffEntity = (self._world):GetEntityByID(catEffectID)
-    end
-    effectService:CreateEffect(catEffID, e)
-    if catEffEntity then
-      catEffEntity:PlayMaterialAnim(catMatAnim)
-    end
-    local actEffID = specialParam._revertEffectID or 160181104
-    effectService:CreateEffect(actEffID, e)
-    YIELD(TT, 500)
-    local matAnim = specialParam._revertMatAnim or "effanim_1601811_atk_revolve2"
-    local animName = specialParam._revertAnim or "AttackMove2"
-    self:_ZhongxuShowHideModel(true)
-    e:SetAnimatorControllerTriggers({animName})
-    e:PlayMaterialAnim(matAnim)
-    YIELD(TT, 500)
-    local permanentEffectList = effectHolderCmpt:GetChainMovePermanentEffect()
-    effectService:_DestroyEffectArray(permanentEffectList)
-    effectHolderCmpt:ClearChainMovePermanentEffectIDListAfterDestroy()
-    YIELD(TT, 400)
-    bvcmpt:SetBuffValue("ZhongxuTrasnRevertTaskID", 0)
   end
+  Log.debug("PlayEffectWithChainMove,play ZhongxuCatTransToPet task")
+  local buffResult = self._buffResult
+  local typeParam = buffResult:GetTypeParam()
+  local specialParam = typeParam.specialParam
+  local audioID = specialParam._transAudioID or 2585
+  AudioHelperController.PlayInnerGameSfx(audioID)
+  local catEffID = specialParam._catHideEffectID or 160181108
+  local catMatAnim = specialParam._catHideMatAnim or "effanim_1601811_atk_weapon02_out"
+  local catEffEntity
+  local catEffectID = bvcmpt:GetBuffValue("ZhongxuCatEffectEntityID")
+  if catEffectID and 0 < catEffectID then
+    catEffEntity = self._world:GetEntityByID(catEffectID)
+  end
+  effectService:CreateEffect(catEffID, e)
+  if catEffEntity then
+    catEffEntity:PlayMaterialAnim(catMatAnim)
+  end
+  local actEffID = specialParam._revertEffectID or 160181104
+  effectService:CreateEffect(actEffID, e)
+  YIELD(TT, 500)
+  local matAnim = specialParam._revertMatAnim or "effanim_1601811_atk_revolve2"
+  local animName = specialParam._revertAnim or "AttackMove2"
+  self:_ZhongxuShowHideModel(true)
+  e:SetAnimatorControllerTriggers({animName})
+  e:PlayMaterialAnim(matAnim)
+  YIELD(TT, 500)
+  local permanentEffectList = effectHolderCmpt:GetChainMovePermanentEffect()
+  effectService:_DestroyEffectArray(permanentEffectList)
+  effectHolderCmpt:ClearChainMovePermanentEffectIDListAfterDestroy()
+  YIELD(TT, 400)
+  bvcmpt:SetBuffValue("ZhongxuTrasnRevertTaskID", 0)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewPlayEffectWithChainMove._ZhongxuShowHideModel = function(self, bShow)
-  -- function num : 0_8 , upvalues : _ENV
-  (Log.debug)("PlayEffectWithChainMove,ZhongxuShowHideModel,", bShow)
-  local cView = (self._entity):View()
+function BuffViewPlayEffectWithChainMove:_ZhongxuShowHideModel(bShow)
+  Log.debug("PlayEffectWithChainMove,ZhongxuShowHideModel,", bShow)
+  local cView = self._entity:View()
   local CSGameObject = cView:GetGameObject()
-  local CSGameObjectRoot = (CSGameObject.transform):Find("Root")
-  local tSkinnedMeshRender = (CSGameObjectRoot.transform):GetComponentsInChildren(typeof(UnityEngine.SkinnedMeshRenderer))
+  local CSGameObjectRoot = CSGameObject.transform:Find("Root")
+  local tSkinnedMeshRender = CSGameObjectRoot.transform:GetComponentsInChildren(typeof(UnityEngine.SkinnedMeshRenderer))
   for i = 0, tSkinnedMeshRender.Length - 1 do
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R10 in 'UnsetPending'
-
-    (tSkinnedMeshRender[i]).enabled = bShow
+    tSkinnedMeshRender[i].enabled = bShow
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewPlayEffectWithChainMove._HandlePlayerMoveStartByType = function(self, TT, e, buffResult, effectHolderCmpt, effectService)
-  -- function num : 0_9 , upvalues : _ENV
+function BuffViewPlayEffectWithChainMove:_HandlePlayerMoveStartByType(TT, e, buffResult, effectHolderCmpt, effectService)
   local useType = buffResult:GetUseType()
   local typeParam = buffResult:GetTypeParam()
-  if not useType then
-    useType = PlayEffectWithChainMoveType.Normal
-  end
+  useType = useType or PlayEffectWithChainMoveType.Normal
   local notifyPos = buffResult:GetNotifyPos()
   local permanentEffectID = buffResult:GetPermanentEffectID()
   local moveEffectID = buffResult:GetMoveEffectID()
-  if useType ~= PlayEffectWithChainMoveType.Normal or useType == PlayEffectWithChainMoveType.Zhongxu then
+  if useType == PlayEffectWithChainMoveType.Normal then
+  elseif useType == PlayEffectWithChainMoveType.Zhongxu then
     if moveEffectID then
       effectService:CreateWorldPositionEffect(moveEffectID, notifyPos)
     end
-    local bvcmpt = (self._entity):BuffView()
+    local bvcmpt = self._entity:BuffView()
     bvcmpt:SetBuffValue("ZhongxuCatTrasnToPetPlayed", 0)
     local transTaskID = bvcmpt:GetBuffValue("ZhongxuTrasnToCatTaskID")
-    if transTaskID and transTaskID > 0 then
-      return 
+    if transTaskID and 0 < transTaskID then
+      return
     end
-    local eTeam = ((self._entity):Pet()):GetOwnerTeamEntity()
-    local curIsTeamLeader = (self._entity):GetID() == (eTeam:Team()):GetTeamLeaderEntityID()
+    local eTeam = self._entity:Pet():GetOwnerTeamEntity()
+    local curIsTeamLeader = self._entity:GetID() == eTeam:Team():GetTeamLeaderEntityID()
     if typeParam and typeParam.isTeamLeader and curIsTeamLeader then
       local transToCatTaskID = 0
       self:_ZhongxuPetTransToCat(TT, e, effectHolderCmpt, effectService, permanentEffectID)
-      local bvcmpt = (self._entity):BuffView()
+      local bvcmpt = self._entity:BuffView()
       bvcmpt:SetBuffValue("ZhongxuTrasnToCatTaskID", transToCatTaskID)
       bvcmpt:SetBuffValue("ZhongxuTrasnToCatPlayed", 1)
+    else
     end
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
-
-

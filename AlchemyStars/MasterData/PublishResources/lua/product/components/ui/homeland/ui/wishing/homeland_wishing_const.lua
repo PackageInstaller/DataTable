@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/wishing/homeland_wishing_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandWishingConst", Object)
 HomelandWishingConst = HomelandWishingConst
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandWishingConst.Constructor = function(self)
-  -- function num : 0_0
+function HomelandWishingConst:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.IsCoinCollected = function(id)
-  -- function num : 0_1 , upvalues : _ENV
-  local collectCoins = (HomelandWishingConst.GetCollectedCoins)()
+function HomelandWishingConst.IsCoinCollected(id)
+  local collectCoins = HomelandWishingConst.GetCollectedCoins()
   for i = 1, #collectCoins do
     if collectCoins[i] == id then
       return true
@@ -24,162 +14,107 @@ HomelandWishingConst.IsCoinCollected = function(id)
   return false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.CanCollectCoin = function(id)
-  -- function num : 0_2 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function HomelandWishingConst.CanCollectCoin(id)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local items = itemModule:GetItemByTempId(id)
-  if items == nil or (table.count)(items) <= 0 then
+  if items == nil or table.count(items) <= 0 then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.GetCollectCoinCounts = function()
-  -- function num : 0_3 , upvalues : _ENV
-  return (table.count)((HomelandWishingConst.GetCollectedCoins)())
+function HomelandWishingConst.GetCollectCoinCounts()
+  return table.count(HomelandWishingConst.GetCollectedCoins())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.GetCollectedCoins = function()
-  -- function num : 0_4 , upvalues : _ENV
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
+function HomelandWishingConst.GetCollectedCoins()
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
   return homelandModule:GetWishingCoinList()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.GetDefaultCoinIcon = function()
-  -- function num : 0_5
+function HomelandWishingConst.GetDefaultCoinIcon()
   return "icon_item_default_coin_icon"
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.GetDefaultCoinGetWay = function()
-  -- function num : 0_6 , upvalues : _ENV
-  return (StringTable.Get)("str_homeland_collect_coin_item_getway_empty")
+function HomelandWishingConst.GetDefaultCoinGetWay()
+  return StringTable.Get("str_homeland_collect_coin_item_getway_empty")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.GetDefaultCoinGetWayIcon = function()
-  -- function num : 0_7
+function HomelandWishingConst.GetDefaultCoinGetWayIcon()
   return "collect_default_getway_icon"
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.GetDefaultCoinDes = function()
-  -- function num : 0_8 , upvalues : _ENV
-  return (StringTable.Get)("str_homeland_collect_coin_item_des_empty")
+function HomelandWishingConst.GetDefaultCoinDes()
+  return StringTable.Get("str_homeland_collect_coin_item_des_empty")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.GetDefaultCoinfName = function()
-  -- function num : 0_9 , upvalues : _ENV
-  return (StringTable.Get)("str_homeland_collect_coin_item_name_empty")
+function HomelandWishingConst.GetDefaultCoinfName()
+  return StringTable.Get("str_homeland_collect_coin_item_name_empty")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.Destroy = function()
-  -- function num : 0_10 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
+function HomelandWishingConst.Destroy()
   HomelandWishingConst.fish_in_wishing = nil
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R0 in 'UnsetPending'
-
   HomelandWishingConst.FishInstanceId = nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.GetRaiseFishList = function()
-  -- function num : 0_11 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function HomelandWishingConst.GetRaiseFishList()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
-  if HomelandWishingConst.fish_in_wishing == nil or (HomelandWishingConst.fish_in_wishing)[pstId] == nil then
-    (HomelandWishingConst.ForceUpdateRaiseFishData)()
+  if HomelandWishingConst.fish_in_wishing == nil or HomelandWishingConst.fish_in_wishing[pstId] == nil then
+    HomelandWishingConst.ForceUpdateRaiseFishData()
   end
-  return (HomelandWishingConst.fish_in_wishing)[pstId]
+  return HomelandWishingConst.fish_in_wishing[pstId]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.ForceUpdateRaiseFishData = function()
-  -- function num : 0_12 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
-
+function HomelandWishingConst.ForceUpdateRaiseFishData()
   if not HomelandWishingConst.fish_in_wishing then
     HomelandWishingConst.fish_in_wishing = {}
   end
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local t = {}
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (HomelandWishingConst.fish_in_wishing)[pstId] = t
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R5 in 'UnsetPending'
-
+  HomelandWishingConst.fish_in_wishing[pstId] = t
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   HomelandWishingConst.FishInstanceId = 0
   local fishs = homelandModule:GetFishsInWishingBuilding()
-  for k,v in pairs(fishs) do
+  for k, v in pairs(fishs) do
     local items = itemModule:GetItemByTempId(k)
     for i = 1, v do
       local t1 = {}
       t1.ID = k
-      t1.InstanceId = (HomelandWishingConst.GenFishInstanceId)()
+      t1.InstanceId = HomelandWishingConst.GenFishInstanceId()
       t[#t + 1] = t1
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.GenFishInstanceId = function()
-  -- function num : 0_13 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
-
+function HomelandWishingConst.GenFishInstanceId()
   if not HomelandWishingConst.FishInstanceId then
     HomelandWishingConst.FishInstanceId = 0
     return HomelandWishingConst.FishInstanceId
   end
-  local raisList = (HomelandWishingConst.GetRaiseFishList)()
-  while 1 do
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
+  local raisList = HomelandWishingConst.GetRaiseFishList()
+  while true do
     HomelandWishingConst.FishInstanceId = HomelandWishingConst.FishInstanceId + 1
     local find = false
     for i = 1, #raisList do
-      if (raisList[i]).InstanceId == HomelandWishingConst.FishInstanceId then
+      if raisList[i].InstanceId == HomelandWishingConst.FishInstanceId then
         find = true
       end
     end
-  end
-  do
-    if find ~= false then
-      return HomelandWishingConst.FishInstanceId
+    if find == false then
+      break
     end
   end
+  return HomelandWishingConst.FishInstanceId
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.RaiseFish = function(id, instanceId)
-  -- function num : 0_14 , upvalues : _ENV
-  local raisList = (HomelandWishingConst.GetRaiseFishList)()
+function HomelandWishingConst.RaiseFish(id, instanceId)
+  local raisList = HomelandWishingConst.GetRaiseFishList()
   for i = 1, #raisList do
-    if (raisList[i]).InstanceId == instanceId and (raisList[i]).ID == id then
-      return 
+    if raisList[i].InstanceId == instanceId and raisList[i].ID == id then
+      return
     end
   end
   local t = {}
@@ -188,54 +123,48 @@ HomelandWishingConst.RaiseFish = function(id, instanceId)
   raisList[#raisList + 1] = t
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.UnRaiseFish = function(id, instanceId)
-  -- function num : 0_15 , upvalues : _ENV
-  local raisList = (HomelandWishingConst.GetRaiseFishList)()
+function HomelandWishingConst.UnRaiseFish(id, instanceId)
+  local raisList = HomelandWishingConst.GetRaiseFishList()
   for i = 1, #raisList do
-    if (raisList[i]).InstanceId == instanceId and (raisList[i]).ID == id then
-      (table.remove)(raisList, i)
-      return 
+    if raisList[i].InstanceId == instanceId and raisList[i].ID == id then
+      table.remove(raisList, i)
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.GetRemainFishList = function()
-  -- function num : 0_16 , upvalues : _ENV
-  local fishInWishing = (HomelandWishingConst.GetRaiseFishList)()
-  local getWishingFishCount = function(id)
-    -- function num : 0_16_0 , upvalues : fishInWishing
+function HomelandWishingConst.GetRemainFishList()
+  local fishInWishing = HomelandWishingConst.GetRaiseFishList()
+  
+  local function getWishingFishCount(id)
     local count = 0
     for i = 1, #fishInWishing do
-      if (fishInWishing[i]).ID == id then
+      if fishInWishing[i].ID == id then
         count = count + 1
       end
     end
     return count
   end
-
+  
   local result = {}
-  local raiseFishList = (HomelandWishingConst.GetRaiseFishList)()
-  local aquariumFishList = (HomelandWishingConst.GetAquariumFishList)()
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local raiseFishList = HomelandWishingConst.GetRaiseFishList()
+  local aquariumFishList = HomelandWishingConst.GetAquariumFishList()
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local items = itemModule:GetItemListBySubType(ItemSubType.ItemSubType_Fish)
-  for k,v in pairs(items) do
-    local cfg = (Cfg.cfg_item_homeland_fish)[v:GetTemplateID()]
+  for k, v in pairs(items) do
+    local cfg = Cfg.cfg_item_homeland_fish[v:GetTemplateID()]
     if cfg and cfg.Type == 2 then
       local t = {}
       t.ID = v:GetTemplateID()
       t.Count = v:GetCount()
       for i = 1, #raiseFishList do
-        if t.ID == (raiseFishList[i]).ID then
+        if t.ID == raiseFishList[i].ID then
           t.Count = t.Count - 1
         end
       end
-      for buildPstId,fishs in pairs(aquariumFishList) do
+      for buildPstId, fishs in pairs(aquariumFishList) do
         for i = 1, #fishs do
-          if t.ID == (fishs[i]).ID then
+          if t.ID == fishs[i].ID then
             t.Count = t.Count - 1
           end
         end
@@ -248,131 +177,90 @@ HomelandWishingConst.GetRemainFishList = function()
   return result
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.GetMaxRaiseFishCount = function()
-  -- function num : 0_17 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_global).WishingPoolMaxFishNum
+function HomelandWishingConst.GetMaxRaiseFishCount()
+  local cfg = Cfg.cfg_homeland_global.WishingPoolMaxFishNum
   return cfg.IntValue
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.GetAquariumFishList = function()
-  -- function num : 0_18 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function HomelandWishingConst.GetAquariumFishList()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
-  if HomelandWishingConst.fish_in_aquarium == nil or (HomelandWishingConst.fish_in_aquarium)[pstId] == nil then
-    (HomelandWishingConst.ForceUpdateAquariumFishData)()
+  if HomelandWishingConst.fish_in_aquarium == nil or HomelandWishingConst.fish_in_aquarium[pstId] == nil then
+    HomelandWishingConst.ForceUpdateAquariumFishData()
   end
-  return (HomelandWishingConst.fish_in_aquarium)[pstId]
+  return HomelandWishingConst.fish_in_aquarium[pstId]
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.GetCurAquariumFishList = function(buildPstID)
-  -- function num : 0_19 , upvalues : _ENV
-  local aquariumFishList = (HomelandWishingConst.GetAquariumFishList)()
-  if not aquariumFishList[buildPstID] then
-    return {}
-  end
+function HomelandWishingConst.GetCurAquariumFishList(buildPstID)
+  local aquariumFishList = HomelandWishingConst.GetAquariumFishList()
+  return aquariumFishList[buildPstID] or {}
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.DeleteAquariumFish = function(buildPstID)
-  -- function num : 0_20 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function HomelandWishingConst.DeleteAquariumFish(buildPstID)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((HomelandWishingConst.fish_in_aquarium)[pstId])[buildPstID] = {}
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
+  HomelandWishingConst.fish_in_aquarium[pstId][buildPstID] = {}
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
   homelandModule:DeleteFishTankData(buildPstID)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.ForceUpdateAquariumFishData = function()
-  -- function num : 0_21 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
-
+function HomelandWishingConst.ForceUpdateAquariumFishData()
   if not HomelandWishingConst.fish_in_aquarium then
     HomelandWishingConst.fish_in_aquarium = {}
   end
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   if not roleModule then
-    return 
+    return
   end
   local pstId = roleModule:GetPstId()
   local t = {}
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (HomelandWishingConst.fish_in_aquarium)[pstId] = t
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R5 in 'UnsetPending'
-
+  HomelandWishingConst.fish_in_aquarium[pstId] = t
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   HomelandWishingConst.AquariumFishInstanceId = 0
   local fishMapList = homelandModule:GetFishsInAquarium()
-  for buildPstID,fishs in pairs(fishMapList) do
-    for k,v in pairs(fishs) do
+  for buildPstID, fishs in pairs(fishMapList) do
+    for k, v in pairs(fishs) do
       local items = itemModule:GetItemByTempId(k)
       for i = 1, v do
         local fish = {}
         fish.ID = k
-        fish.InstanceId = (HomelandWishingConst.GenAquariumFishInstanceId)(buildPstID)
+        fish.InstanceId = HomelandWishingConst.GenAquariumFishInstanceId(buildPstID)
         if not t[buildPstID] then
           t[buildPstID] = {}
         end
-        -- DECOMPILER ERROR at PC63: Confused about usage of register: R22 in 'UnsetPending'
-
-        ;
-        (t[buildPstID])[#t[buildPstID] + 1] = fish
+        t[buildPstID][#t[buildPstID] + 1] = fish
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.GenAquariumFishInstanceId = function(buildPstID)
-  -- function num : 0_22 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
+function HomelandWishingConst.GenAquariumFishInstanceId(buildPstID)
   if not HomelandWishingConst.AquariumFishInstanceId then
     HomelandWishingConst.AquariumFishInstanceId = 0
     return HomelandWishingConst.AquariumFishInstanceId
   end
-  local raisList = (HomelandWishingConst.GetCurAquariumFishList)(buildPstID)
-  while 1 do
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
+  local raisList = HomelandWishingConst.GetCurAquariumFishList(buildPstID)
+  while true do
     HomelandWishingConst.AquariumFishInstanceId = HomelandWishingConst.AquariumFishInstanceId + 1
     local find = false
     for i = 1, #raisList do
-      if (raisList[i]).InstanceId == HomelandWishingConst.AquariumFishInstanceId then
+      if raisList[i].InstanceId == HomelandWishingConst.AquariumFishInstanceId then
         find = true
       end
     end
-  end
-  do
-    if find ~= false then
-      return HomelandWishingConst.AquariumFishInstanceId
+    if find == false then
+      break
     end
   end
+  return HomelandWishingConst.AquariumFishInstanceId
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.AddAquariumFish = function(buildPstID, id, instanceId)
-  -- function num : 0_23 , upvalues : _ENV
-  local raisList = (HomelandWishingConst.GetCurAquariumFishList)(buildPstID)
+function HomelandWishingConst.AddAquariumFish(buildPstID, id, instanceId)
+  local raisList = HomelandWishingConst.GetCurAquariumFishList(buildPstID)
   for i = 1, #raisList do
-    if (raisList[i]).InstanceId == instanceId and (raisList[i]).ID == id then
-      return 
+    if raisList[i].InstanceId == instanceId and raisList[i].ID == id then
+      return
     end
   end
   local t = {}
@@ -381,17 +269,12 @@ HomelandWishingConst.AddAquariumFish = function(buildPstID, id, instanceId)
   raisList[#raisList + 1] = t
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandWishingConst.RemoveAquariumFish = function(buildPstID, id, instanceId)
-  -- function num : 0_24 , upvalues : _ENV
-  local raisList = (HomelandWishingConst.GetCurAquariumFishList)(buildPstID)
+function HomelandWishingConst.RemoveAquariumFish(buildPstID, id, instanceId)
+  local raisList = HomelandWishingConst.GetCurAquariumFishList(buildPstID)
   for i = 1, #raisList do
-    if (raisList[i]).InstanceId == instanceId and (raisList[i]).ID == id then
-      (table.remove)(raisList, i)
-      return 
+    if raisList[i].InstanceId == instanceId and raisList[i].ID == id then
+      table.remove(raisList, i)
+      return
     end
   end
 end
-
-

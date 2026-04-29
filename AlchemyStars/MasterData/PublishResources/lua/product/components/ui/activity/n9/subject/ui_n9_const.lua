@@ -1,96 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n9/subject/ui_n9_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN9Const", Object)
 UIN9Const = UIN9Const
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN9Const.Constructor = function(self)
-  -- function num : 0_0
+function UIN9Const:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9Const.GetGradeLevelStr = function(gradeLevel)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfg = (Cfg.cfg_subject_test_grade)({ID = gradeLevel})
+function UIN9Const.GetGradeLevelStr(gradeLevel)
+  local cfg = Cfg.cfg_subject_test_grade({ID = gradeLevel})
   if not cfg then
     return "--"
   end
-  if (table.count)(cfg) < 0 then
+  if table.count(cfg) < 0 then
     return "--"
   end
-  return (StringTable.Get)((cfg[1]).GradeName)
+  return StringTable.Get(cfg[1].GradeName)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9Const.GetGradeLevel = function(subjectCount)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_subject_test_grade)({})
+function UIN9Const.GetGradeLevel(subjectCount)
+  local cfg = Cfg.cfg_subject_test_grade({})
   local gradeLevel = 0
   local index = 0
   for i = 1, #cfg do
-    -- DECOMPILER ERROR at PC18: Unhandled construct in 'MakeBoolean' P1
-
-    if subjectCount < (cfg[i]).SubjectCount and i > 1 then
-      gradeLevel = (cfg[i - 1]).ID
+    if subjectCount < cfg[i].SubjectCount then
+      if 1 < i then
+        gradeLevel = cfg[i - 1].ID
+      end
+      break
     end
-    do break end
     index = index + 1
   end
-  do
-    if #cfg <= index then
-      gradeLevel = (cfg[#cfg]).ID
-    end
-    return gradeLevel
+  if index >= #cfg then
+    gradeLevel = cfg[#cfg].ID
   end
+  return gradeLevel
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9Const.GetGradeResult = function(self, subjectCount)
-  -- function num : 0_3
-  local level = (self.GetGradeLevel)(subjectCount)
-  return (self.GetGradeLevelStr)(level)
+function UIN9Const:GetGradeResult(subjectCount)
+  local level = self.GetGradeLevel(subjectCount)
+  return self.GetGradeLevelStr(level)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9Const.GetNewOpenSubjectLevelStatusKey = function()
-  -- function num : 0_4 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIN9Const.GetNewOpenSubjectLevelStatusKey()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. "NEWOPENSUBJECTLEVELSTATUS"
   return key
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9Const.HasNewOpenSubjectLevel = function(subjectComponentInfo)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfgs = (UIN9Const.GetLevelConfig)()
+function UIN9Const.HasNewOpenSubjectLevel(subjectComponentInfo)
+  local cfgs = UIN9Const.GetLevelConfig()
   if not cfgs then
     return false
   end
-  local key = (UIN9Const.GetNewOpenSubjectLevelStatusKey)()
+  local key = UIN9Const.GetNewOpenSubjectLevelStatusKey()
   local historyTime = 0
-  if ((UnityEngine.PlayerPrefs).HasKey)(key) then
-    historyTime = ((UnityEngine.PlayerPrefs).GetFloat)(key)
+  if UnityEngine.PlayerPrefs.HasKey(key) then
+    historyTime = UnityEngine.PlayerPrefs.GetFloat(key)
   end
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = timeModule:GetServerTime()
-  ;
-  (Log.info)("UIN9Const.ResetNewOpenSubjectLevelStatus() key = ", key, " nowTime = ", nowTime, " historyTime = ", historyTime)
+  Log.info("UIN9Const.ResetNewOpenSubjectLevelStatus() key = ", key, " nowTime = ", nowTime, " historyTime = ", historyTime)
   local levels = subjectComponentInfo.levels
-  for _,cfg in pairs(cfgs) do
+  for _, cfg in pairs(cfgs) do
     if cfg.OpenType == 2 and levels then
-      for _,level in pairs(levels) do
+      for _, level in pairs(levels) do
         if level.level_id == cfg.LevelId and level.grade == cfg.Grade then
           local openTime = level.opentime * 1000
-          if openTime <= nowTime and historyTime < openTime then
+          if nowTime >= openTime and historyTime < openTime then
             return true
           end
           break
@@ -101,24 +76,16 @@ UIN9Const.HasNewOpenSubjectLevel = function(subjectComponentInfo)
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9Const.ResetNewOpenSubjectLevelStatus = function()
-  -- function num : 0_6 , upvalues : _ENV
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIN9Const.ResetNewOpenSubjectLevelStatus()
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = timeModule:GetServerTime()
-  local key = (UIN9Const.GetNewOpenSubjectLevelStatusKey)()
-  ;
-  ((UnityEngine.PlayerPrefs).SetFloat)(key, nowTime)
-  ;
-  (Log.info)("UIN9Const.ResetNewOpenSubjectLevelStatus() key = ", key, " nowTime = ", nowTime)
+  local key = UIN9Const.GetNewOpenSubjectLevelStatusKey()
+  UnityEngine.PlayerPrefs.SetFloat(key, nowTime)
+  Log.info("UIN9Const.ResetNewOpenSubjectLevelStatus() key = ", key, " nowTime = ", nowTime)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9Const.GetAllSubject = function()
-  -- function num : 0_7 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_subject_library)({})
+function UIN9Const.GetAllSubject()
+  local cfgs = Cfg.cfg_subject_library({})
   local subject = {}
   for i = 1, #cfgs do
     subject[#subject + 1] = UIN9SubjectData:New(cfgs[i])
@@ -126,45 +93,28 @@ UIN9Const.GetAllSubject = function()
   return subject
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9Const.SetCheckIds = function(args)
-  -- function num : 0_8 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIN9Const.SetCheckIds(args)
   UIN9Const.CheckData = args
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9Const.GetAssiginedSubjects = function()
-  -- function num : 0_9 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_subject_library)({})
+function UIN9Const.GetAssiginedSubjects()
+  local cfgs = Cfg.cfg_subject_library({})
   local subject = {}
   if UIN9Const.CheckData then
     for i = 1, #cfgs do
-      for k,v in pairs(UIN9Const.CheckData) do
+      for k, v in pairs(UIN9Const.CheckData) do
         if i == v then
           subject[#subject + 1] = UIN9SubjectData:New(cfgs[i])
         end
       end
     end
   else
-    do
-      subject = (UIN9Const.GetAllSubject)()
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-      UIN9Const.CheckData = nil
-      return subject
-    end
+    subject = UIN9Const.GetAllSubject()
   end
+  UIN9Const.CheckData = nil
+  return subject
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9Const.GetLevelConfig = function()
-  -- function num : 0_10 , upvalues : _ENV
-  return (ConfigServiceHelper.GetConfigMessageByAttr)(Cfg.cfg_subject_level, "ComponentID", 101010208)
+function UIN9Const.GetLevelConfig()
+  return ConfigServiceHelper.GetConfigMessageByAttr(Cfg.cfg_subject_level, "ComponentID", 101010208)
 end
-
-

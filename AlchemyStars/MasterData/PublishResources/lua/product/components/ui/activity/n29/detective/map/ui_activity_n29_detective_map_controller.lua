@@ -1,40 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/map/ui_activity_n29_detective_map_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN29DetectiveMapController", UIController)
 UIActivityN29DetectiveMapController = UIActivityN29DetectiveMapController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN29DetectiveMapController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._campaign = (UIActivityCampaign.New)()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N29, ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE)
-  self._localProcess = (self._campaign):GetLocalProcess()
+function UIActivityN29DetectiveMapController:LoadDataOnEnter(TT, res, uiParams)
+  self._campaign = UIActivityCampaign.New()
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N29, ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE)
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-  self._comp = (self._localProcess):GetComponent(ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE)
-  self._info = (self._localProcess):GetComponentInfo(ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE)
-  self._curDetectiveInfo = (self._info).cur_info
-  self._psdId = (self._curDetectiveInfo).pstid
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
+  self._comp = self._localProcess:GetComponent(ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE)
+  self._info = self._localProcess:GetComponentInfo(ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE)
+  self._curDetectiveInfo = self._info.cur_info
+  self._psdId = self._curDetectiveInfo.pstid
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapController.OnShow = function(self, data)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN29DetectiveMapController:OnShow(data)
   self._data = data
   self._unLockQueue = {}
   self._moveSpeed = 2
   self._curStage = 1
   self._leftPoints = {}
   self._rightPoints = {}
-  self._screenWidth = (ResolutionManager.ScreenWidth)()
+  self._screenWidth = ResolutionManager.ScreenWidth()
   self._halfScreenWidth = self._screenWidth * 0.5
   self:CheckStage()
   self:_GetComponent()
@@ -45,22 +33,15 @@ UIActivityN29DetectiveMapController.OnShow = function(self, data)
   self:CheckGuide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityN29DetectiveMapController:OnHide()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local openID = roleModule:GetPstId()
   local key = self._psdId .. openID .. "UIActivityN29DetectiveMapController_MovePose"
-  local value = (self._srMemory).horizontalNormalizedPosition * 1000
-  ;
-  (LocalDB.SetInt)(key, value)
+  local value = self._srMemory.horizontalNormalizedPosition * 1000
+  LocalDB.SetInt(key, value)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapController._GetComponent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN29DetectiveMapController:_GetComponent()
   self._degree = self:GetUIComponent("UILocalizationText", "degree")
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
   self._pointContent = self:GetUIComponent("UISelectObjectPath", "pointContent")
@@ -70,138 +51,92 @@ UIActivityN29DetectiveMapController._GetComponent = function(self)
   self._rightPointBtnObj = self:GetGameObject("RightPointBtn")
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_3_0 , upvalues : self, _ENV
+  self._backBtn:SetData(function()
     self:SwitchState(UIStateType.UIN29DetectiveLogin)
+  end, nil, nil, true, nil)
+  local compCfgId = self._comp:GetComponentCfgId()
+  local wayPointCfgs = Cfg.cfg_component_detective_waypoint({ComponentID = compCfgId})
+  self._points = self._pointContent:SpawnObjects("UIActivityN29DetectiveMapPoint", #wayPointCfgs)
+  for _, v in pairs(wayPointCfgs) do
+    local infoCfg = Cfg.cfg_n29_detective_waypoint_info[v.ID]
+    self._points[v.ID]:SetData(infoCfg, self._campaign, self._psdId, self._curStage)
   end
-, nil, nil, true, nil)
-  local compCfgId = (self._comp):GetComponentCfgId()
-  local wayPointCfgs = (Cfg.cfg_component_detective_waypoint)({ComponentID = compCfgId})
-  self._points = (self._pointContent):SpawnObjects("UIActivityN29DetectiveMapPoint", #wayPointCfgs)
-  for _,v in pairs(wayPointCfgs) do
-    local infoCfg = (Cfg.cfg_n29_detective_waypoint_info)[v.ID]
-    ;
-    ((self._points)[v.ID]):SetData(infoCfg, self._campaign, self._psdId, self._curStage)
-  end
-  local hasClueNum = #((self._info).cur_info).clue_list
-  local totalNum = #(Cfg.cfg_component_detective_item)({Type = 1})
+  local hasClueNum = #self._info.cur_info.clue_list
+  local totalNum = #Cfg.cfg_component_detective_item({Type = 1})
   local precent = hasClueNum / totalNum
-  ;
-  (self._degree):SetText((math.floor)(precent * 100) .. "%")
-  -- DECOMPILER ERROR at PC102: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._explorFill).fillAmount = precent
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  self._degree:SetText(math.floor(precent * 100) .. "%")
+  self._explorFill.fillAmount = precent
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local openID = roleModule:GetPstId()
   local key = self._psdId .. openID .. "UIActivityN29DetectiveMapController_MovePose"
-  local hasKey = (LocalDB.HasKey)(key)
+  local hasKey = LocalDB.HasKey(key)
   if hasKey then
-    local value = (LocalDB.GetInt)(key)
-    -- DECOMPILER ERROR at PC125: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._srMemory).horizontalNormalizedPosition = value / 1000
+    local value = LocalDB.GetInt(key)
+    self._srMemory.horizontalNormalizedPosition = value / 1000
   else
-    do
-      for _,point in pairs(self._points) do
-        local isDefaultFocus = (point:GetCfg()).IsDefaultFocus
-        if isDefaultFocus then
-          self.defaultPointView = point
-          -- DECOMPILER ERROR at PC144: Confused about usage of register: R17 in 'UnsetPending'
-
-          ;
-          (self._srMemory).horizontalNormalizedPosition = point:GetContentXPos() / ((self._contentRect).sizeDelta).x
-          break
-        end
+    for _, point in pairs(self._points) do
+      local isDefaultFocus = point:GetCfg().IsDefaultFocus
+      if isDefaultFocus then
+        self.defaultPointView = point
+        self._srMemory.horizontalNormalizedPosition = point:GetContentXPos() / self._contentRect.sizeDelta.x
+        break
       end
-      do
-        ;
-        ((self._srMemory).onValueChanged):AddListener(function(ve2)
-    -- function num : 0_3_1 , upvalues : self
+    end
+  end
+  self._srMemory.onValueChanged:AddListener(function(ve2)
     self:_CheckPointsCanExplore()
-  end
-)
-      end
-    end
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapController.CheckHasUnLock = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN29DetectiveMapController:CheckHasUnLock()
   if #self._unLockQueue > 0 then
-    local point = (self._unLockQueue)[1]
-    do
-      (table.remove)(self._unLockQueue, 1)
-      self:Lock("UIActivityN29DetectiveMapController_CheckHasUnLock")
-      self:StartTask(self._RemoveToTarget, self, point, function()
-    -- function num : 0_4_0 , upvalues : point, self
-    point:SetUnLock(function()
-      -- function num : 0_4_0_0 , upvalues : self, point
-      self:ShowDialog("UIActivityN29DetectiveNewwayController", point:GetCfg(), function()
-        -- function num : 0_4_0_0_0 , upvalues : self
-        self:CheckHasUnLock()
-      end
-)
-      self:UnLock("UIActivityN29DetectiveMapController_CheckHasUnLock")
-    end
-)
-  end
-)
-    end
+    local point = self._unLockQueue[1]
+    table.remove(self._unLockQueue, 1)
+    self:Lock("UIActivityN29DetectiveMapController_CheckHasUnLock")
+    self:StartTask(self._RemoveToTarget, self, point, function()
+      point:SetUnLock(function()
+        self:ShowDialog("UIActivityN29DetectiveNewwayController", point:GetCfg(), function()
+          self:CheckHasUnLock()
+        end)
+        self:UnLock("UIActivityN29DetectiveMapController_CheckHasUnLock")
+      end)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapController._CheckPointsCanExplore = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN29DetectiveMapController:_CheckPointsCanExplore()
   self._leftPoints = {}
   self._rightPoints = {}
-  for _,point in pairs(self._points) do
+  for _, point in pairs(self._points) do
     local isOver = point:GetPointIsOver()
     if not isOver then
       local pointPos = point:GetContentXPos()
-      local curPos = (self._srMemory).horizontalNormalizedPosition * (((self._contentRect).sizeDelta).x - self._screenWidth) + self._halfScreenWidth
-      if curPos - pointPos > 1500 then
-        (table.insert)(self._leftPoints, point)
-      else
-        if pointPos - curPos > 650 then
-          (table.insert)(self._rightPoints, point)
-        end
+      local curPos = self._srMemory.horizontalNormalizedPosition * (self._contentRect.sizeDelta.x - self._screenWidth) + self._halfScreenWidth
+      if 1500 < curPos - pointPos then
+        table.insert(self._leftPoints, point)
+      elseif 650 < pointPos - curPos then
+        table.insert(self._rightPoints, point)
       end
     end
   end
-  ;
-  (self._leftPointBtnObj):SetActive(#self._leftPoints > 0)
-  ;
-  (self._rightPointBtnObj):SetActive(#self._rightPoints > 0)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._leftPointBtnObj:SetActive(#self._leftPoints > 0)
+  self._rightPointBtnObj:SetActive(#self._rightPoints > 0)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapController._RemoveToTarget = function(self, TT, point, callback)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityN29DetectiveMapController:_RemoveToTarget(TT, point, callback)
   self:Lock("UIActivityN29DetectiveMapController_RemoveToTarget")
   local posX = point:GetContentXPos()
-  local targetPercent = (posX - self._halfScreenWidth) / (((self._contentRect).sizeDelta).x - self._screenWidth)
-  local curPercent = (self._srMemory).horizontalNormalizedPosition
+  local targetPercent = (posX - self._halfScreenWidth) / (self._contentRect.sizeDelta.x - self._screenWidth)
+  local curPercent = self._srMemory.horizontalNormalizedPosition
   local diff = curPercent - targetPercent
   local step = 0.01
-  while (math.abs)(diff) >= 0.01 do
-    if diff > 0 then
+  while 0.01 <= math.abs(diff) do
+    if 0 < diff then
       curPercent = curPercent - step
     else
       curPercent = curPercent + step
     end
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._srMemory).horizontalNormalizedPosition = curPercent
+    self._srMemory.horizontalNormalizedPosition = curPercent
     diff = curPercent - targetPercent
     YIELD(TT, 1)
   end
@@ -211,43 +146,31 @@ UIActivityN29DetectiveMapController._RemoveToTarget = function(self, TT, point, 
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapController.CheckStage = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local list = (self._curDetectiveInfo).fragment_list
-  local stageCfg = (Cfg.cfg_component_detective_stage)({})
+function UIActivityN29DetectiveMapController:CheckStage()
+  local list = self._curDetectiveInfo.fragment_list
+  local stageCfg = Cfg.cfg_component_detective_stage({})
   self._curStage = 1
-  for i,v in pairs(stageCfg) do
+  for i, v in pairs(stageCfg) do
     local needFrament = v.NeedFragment
     if needFrament then
-      for _,frament in pairs(needFrament) do
-        if not (UIN29DetectiveHelper.Contain)(list, frament) then
-          return 
+      for _, frament in pairs(needFrament) do
+        if not UIN29DetectiveHelper.Contain(list, frament) then
+          return
         end
       end
     end
-    do
-      do
-        self._curStage = i
-        -- DECOMPILER ERROR at PC29: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    self._curStage = i
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapController.CheckPointShow = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  for _,v in pairs(self._points) do
+function UIActivityN29DetectiveMapController:CheckPointShow()
+  for _, v in pairs(self._points) do
     v:SetPointActive(false)
   end
-  local waypoint = ((Cfg.cfg_component_detective_stage)[self._curStage]).Waypoint
-  for i,v in pairs(waypoint) do
-    local point = (self._points)[v]
-    local pointCfg = (Cfg.cfg_component_detective_waypoint)[v]
+  local waypoint = Cfg.cfg_component_detective_stage[self._curStage].Waypoint
+  for i, v in pairs(waypoint) do
+    local point = self._points[v]
+    local pointCfg = Cfg.cfg_component_detective_waypoint[v]
     point:SetPointActive(true)
     local hasClue = self:_CheckPointHasClue(pointCfg)
     if hasClue then
@@ -258,38 +181,31 @@ UIActivityN29DetectiveMapController.CheckPointShow = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapController.CheckNewPoint = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local pointCfg = (Cfg.cfg_component_detective_waypoint)({})
-  for i,v in pairs(pointCfg) do
+function UIActivityN29DetectiveMapController:CheckNewPoint()
+  local pointCfg = Cfg.cfg_component_detective_waypoint({})
+  for i, v in pairs(pointCfg) do
     if v.NeedClue then
-      local hasOpenId = (UIN29DetectiveHelper.CheckOpenIdKey)(self._psdId, "UIActivityN29DetectiveMapControllerLock" .. v.ID)
+      local hasOpenId = UIN29DetectiveHelper.CheckOpenIdKey(self._psdId, "UIActivityN29DetectiveMapControllerLock" .. v.ID)
       if not hasOpenId then
         local hasClue = self:_CheckPointHasClue(v)
         if hasClue then
-          (UIN29DetectiveHelper.SetOpenIdKey)(self._psdId, "UIActivityN29DetectiveMapControllerLock" .. v.ID)
-          local point = (self._points)[i]
+          UIN29DetectiveHelper.SetOpenIdKey(self._psdId, "UIActivityN29DetectiveMapControllerLock" .. v.ID)
+          local point = self._points[i]
           point:SetLock(true, true)
-          ;
-          (table.insert)(self._unLockQueue, point)
+          table.insert(self._unLockQueue, point)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapController._CheckPointHasClue = function(self, pointCfg)
-  -- function num : 0_10 , upvalues : _ENV
-  local clueList = (self._curDetectiveInfo).clue_list
+function UIActivityN29DetectiveMapController:_CheckPointHasClue(pointCfg)
+  local clueList = self._curDetectiveInfo.clue_list
   if not pointCfg.NeedClue then
     return true
   end
-  for k,needClue in pairs(pointCfg.NeedClue) do
-    local isContain = (UIN29DetectiveHelper.Contain)(clueList, needClue)
+  for k, needClue in pairs(pointCfg.NeedClue) do
+    local isContain = UIN29DetectiveHelper.Contain(clueList, needClue)
     if not isContain then
       return false
     end
@@ -297,51 +213,31 @@ UIActivityN29DetectiveMapController._CheckPointHasClue = function(self, pointCfg
   return true
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapController.ClueBtnOnClick = function(self)
-  -- function num : 0_11
+function UIActivityN29DetectiveMapController:ClueBtnOnClick()
   self:ShowDialog("UIActivityN29DetectiveBagController", true, self._curDetectiveInfo)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapController.PieceBtnOnClick = function(self)
-  -- function num : 0_12
+function UIActivityN29DetectiveMapController:PieceBtnOnClick()
   self:ShowDialog("UIActivityN29DetectiveBagController", false, self._curDetectiveInfo)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapController.LeftPointBtnOnClick = function(self)
-  -- function num : 0_13
-  local point = (self._leftPoints)[1]
+function UIActivityN29DetectiveMapController:LeftPointBtnOnClick()
+  local point = self._leftPoints[1]
   self:StartTask(self._RemoveToTarget, self, point)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapController.RightPointBtnOnClick = function(self)
-  -- function num : 0_14
-  local point = (self._rightPoints)[1]
+function UIActivityN29DetectiveMapController:RightPointBtnOnClick()
+  local point = self._rightPoints[1]
   self:StartTask(self._RemoveToTarget, self, point)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapController.GetFirstGuidePerson = function(self)
-  -- function num : 0_15
+function UIActivityN29DetectiveMapController:GetFirstGuidePerson()
   if not self.defaultPointView then
     return nil
   end
-  return (self.defaultPointView):GetPointBtnGo()
+  return self.defaultPointView:GetPointBtnGo()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapController.CheckGuide = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN29DetectiveMapController)
+function UIActivityN29DetectiveMapController:CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN29DetectiveMapController)
 end
-
-

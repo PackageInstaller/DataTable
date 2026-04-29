@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_hud_effect_in_scope_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayHudEffectInScopeInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayHudEffectInScopeInstruction = SkillPreviewPlayHudEffectInScopeInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayHudEffectInScopeInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewPlayHudEffectInScopeInstruction:Constructor(params)
   self._effectPrefabName = params.effectPrefabName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayHudEffectInScopeInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayHudEffectInScopeInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
   local renderEntitySvc = world:GetService("RenderEntity")
@@ -24,7 +14,7 @@ SkillPreviewPlayHudEffectInScopeInstruction.DoInstruction = function(self, TT, c
   local scopeGridList = previewContext:GetScopeResult()
   local entityService = world:GetService("RenderEntity")
   local boardSvcR = world:GetService("BoardRender")
-  for index,pos in ipairs(scopeGridList) do
+  for index, pos in ipairs(scopeGridList) do
     local gridWorldPos = boardSvcR:GridPos2RenderPos(pos)
     local effectEntity = effectService:CreateEffectEntity()
     effectEntity:ReplaceAsset(NativeUnityPrefabAsset:New(self._effectPrefabName, true))
@@ -32,26 +22,15 @@ SkillPreviewPlayHudEffectInScopeInstruction.DoInstruction = function(self, TT, c
     effectEntity:AddHUD()
     activePickUpComponent:AddPickUpEffectEntityID(effectEntity:GetID())
     local num = index
-    local go = ((effectEntity:View()).ViewWrapper).GameObject
+    local go = effectEntity:View().ViewWrapper.GameObject
     local uiview = go:GetComponent("UIView")
-    do
-      if uiview and num then
-        local numText = uiview:GetUIComponent("UILocalizationText", "LevelNumText")
-        if numText then
-          numText:SetText(num)
-        end
-      end
-      do
-        local hudPos = entityService:_CalcGridHUDWorldPos(gridWorldPos)
-        -- DECOMPILER ERROR at PC67: Confused about usage of register: R22 in 'UnsetPending'
-
-        ;
-        (go.transform).position = hudPos
-        -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out DO_STMT
-
+    if uiview and num then
+      local numText = uiview:GetUIComponent("UILocalizationText", "LevelNumText")
+      if numText then
+        numText:SetText(num)
       end
     end
+    local hudPos = entityService:_CalcGridHUDWorldPos(gridWorldPos)
+    go.transform.position = hudPos
   end
 end
-
-

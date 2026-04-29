@@ -1,35 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_add_thaw_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddThawLayer", BuffLogicBase)
 BuffLogicAddThawLayer = BuffLogicAddThawLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddThawLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddThawLayer:Constructor(buffInstance, logicParam)
   self._value = logicParam.value or 1
   self._hpShieldPer = logicParam.hpShieldPer
   self._layerShieldCount = logicParam.layerShieldCount
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddThawLayer.DoLogic = function(self, notify)
-  -- function num : 0_1
-  ((self._entity):BuffComponent()):AddBuffValue("ThawLayer", self._value)
-  ;
-  ((self._entity):BuffComponent()):SetBuffValue("ThawCostHPShieldPer", self._hpShieldPer)
-  ;
-  ((self._entity):BuffComponent()):SetBuffValue("ThawLayerShieldCount", self._layerShieldCount)
+function BuffLogicAddThawLayer:DoLogic(notify)
+  self._entity:BuffComponent():AddBuffValue("ThawLayer", self._value)
+  self._entity:BuffComponent():SetBuffValue("ThawCostHPShieldPer", self._hpShieldPer)
+  self._entity:BuffComponent():SetBuffValue("ThawLayerShieldCount", self._layerShieldCount)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddThawLayer.DoOverlap = function(self)
-  -- function num : 0_2
+function BuffLogicAddThawLayer:DoOverlap()
   self:DoLogic()
 end
-
-

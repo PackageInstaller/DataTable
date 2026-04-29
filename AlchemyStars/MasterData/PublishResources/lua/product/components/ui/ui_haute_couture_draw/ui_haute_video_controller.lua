@@ -1,117 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw/ui_haute_video_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteVideoController", UIController)
 UIHauteVideoController = UIHauteVideoController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteVideoController.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteVideoController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteVideoController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHauteVideoController:OnShow(uiParams)
   self._cfg = uiParams[1]
-  self._VideoName = (self._cfg).VideoName
-  self._Bgm = (self._cfg).Bgm
+  self._VideoName = self._cfg.VideoName
+  self._Bgm = self._cfg.Bgm
   self._pause = self:GetGameObject("pause")
   self:_LoadVideo()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteVideoController._LoadVideo = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local url = (ResourceManager:GetInstance()):GetAssetPath(self._VideoName .. ".mp4", LoadType.VideoClip)
-  ;
-  (Log.debug)("[guide movie] move url ", url)
+function UIHauteVideoController:_LoadVideo()
+  local url = ResourceManager:GetInstance():GetAssetPath(self._VideoName .. ".mp4", LoadType.VideoClip)
+  Log.debug("[guide movie] move url ", url)
   self._vp = self:GetUIComponent("VideoPlayer", "VideoPlayer")
   self._rawImage = self:GetUIComponent("RawImage", "VideoPlayer")
-  self._rt = (UnityEngine.RenderTexture):New(1420, 805, 16)
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rawImage).texture = self._rt
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._vp).targetTexture = self._rt
-  ;
-  ((self._vp).gameObject):SetActive(true)
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._vp).url = url
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._vp).targetCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIHauteVideoController")
-  ;
-  (self._vp):Play()
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._vp).loopPointReached = (self._vp).loopPointReached + self._LoopPointReached
-  ;
-  (((GameGlobal.UIStateManager)()):GetControllerCamera("UIHauteVideoController")):Render()
+  self._rt = UnityEngine.RenderTexture:New(1420, 805, 16)
+  self._rawImage.texture = self._rt
+  self._vp.targetTexture = self._rt
+  self._vp.gameObject:SetActive(true)
+  self._vp.url = url
+  self._vp.targetCamera = GameGlobal.UIStateManager():GetControllerCamera("UIHauteVideoController")
+  self._vp:Play()
+  self._vp.loopPointReached = self._vp.loopPointReached + self._LoopPointReached
+  GameGlobal.UIStateManager():GetControllerCamera("UIHauteVideoController"):Render()
   if self._Bgm then
-    self._oldBgm = (AudioHelperController.GetCurrentBgm)()
-    ;
-    (AudioHelperController.PlayBGM)(self._Bgm, 0)
+    self._oldBgm = AudioHelperController.GetCurrentBgm()
+    AudioHelperController.PlayBGM(self._Bgm, 0)
   end
-  -- DECOMPILER ERROR at PC84: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._vp).frame = 0
+  self._vp.frame = 0
   self._playing = true
-  ;
-  (self._pause):SetActive(not self._playing)
+  self._pause:SetActive(not self._playing)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteVideoController.bgOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHauteVideoController:bgOnClick(go)
   self:CloseDialog()
   if self._rt then
-    (self._rt):Release()
+    self._rt:Release()
     self._rt = nil
   end
   if self._oldBgm then
-    (AudioHelperController.PlayBGM)(self._oldBgm)
+    AudioHelperController.PlayBGM(self._oldBgm)
   end
   if not self._playing then
-    (AudioHelperController.UnpauseBGM)()
+    AudioHelperController.UnpauseBGM()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteVideoController.VideoPlayerOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHauteVideoController:VideoPlayerOnClick(go)
   if self._playing then
     self._playing = false
   else
     self._playing = true
   end
   if self._playing then
-    (self._vp):Play()
+    self._vp:Play()
     if self._Bgm then
-      (AudioHelperController.UnpauseBGM)()
+      AudioHelperController.UnpauseBGM()
     end
   else
-    ;
-    (self._vp):Pause()
+    self._vp:Pause()
     if self._Bgm then
-      (AudioHelperController.PauseBGM)()
+      AudioHelperController.PauseBGM()
     end
   end
-  ;
-  (self._pause):SetActive(not self._playing)
+  self._pause:SetActive(not self._playing)
 end
-
-

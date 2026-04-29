@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n4/crisisContract/select/ui_activity_n4_cc_affix_select_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN4CCAffixSelectItem", UICustomWidget)
 UIActivityN4CCAffixSelectItem = UIActivityN4CCAffixSelectItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN4CCAffixSelectItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN4CCAffixSelectItem:OnShow(uiParams)
   self._atlas = self:GetAsset("UIN4CC.spriteatlas", LoadType.SpriteAtlas)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixSelectItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIActivityN4CCAffixSelectItem:InitWidget()
   self.txtEff1 = self:GetUIComponent("UILocalizedTMP", "txtEff1")
   self.txtEff2 = self:GetUIComponent("UILocalizedTMP", "txtEff2")
   self.txtEff3 = self:GetUIComponent("UILocalizedTMP", "txtEff3")
@@ -26,78 +16,46 @@ UIActivityN4CCAffixSelectItem.InitWidget = function(self)
   self.imgBg = self:GetUIComponent("Image", "imgBg")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixSelectItem.SetData = function(self, affixId, clickCb)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN4CCAffixSelectItem:SetData(affixId, clickCb)
   self._affixId = affixId
   self._clickCb = clickCb
-  local cfg = (Cfg.cfg_affix)[self._affixId]
+  local cfg = Cfg.cfg_affix[self._affixId]
   if cfg then
-    local lockStr = (UIActivityN4CCHelper.GetAffixDesc)(cfg, "42423f")
-    local unLockStr = (UIActivityN4CCHelper.GetAffixDesc)(cfg, "8d0707")
-    ;
-    (self.txtEff1):SetText(unLockStr)
-    ;
-    (self.txtEff2):SetText(unLockStr)
-    ;
-    (self.txtEff3):SetText(lockStr)
+    local lockStr = UIActivityN4CCHelper.GetAffixDesc(cfg, "42423f")
+    local unLockStr = UIActivityN4CCHelper.GetAffixDesc(cfg, "8d0707")
+    self.txtEff1:SetText(unLockStr)
+    self.txtEff2:SetText(unLockStr)
+    self.txtEff3:SetText(lockStr)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixSelectItem.SetState = function(self, bSelect, canSelect)
-  -- function num : 0_3
+function UIActivityN4CCAffixSelectItem:SetState(bSelect, canSelect)
   self._bSelect = bSelect
   self._canSelect = canSelect
-  local bLock = (not bSelect and not canSelect)
-  local bOpen = (not bSelect and canSelect)
-  ;
-  (self.select):SetActive(bSelect)
-  ;
-  (self.lock):SetActive(bLock)
-  ;
-  (self.open):SetActive(bOpen)
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R5 in 'UnsetPending'
-
+  local bLock = not bSelect and not canSelect
+  local bOpen = not bSelect and canSelect
+  self.select:SetActive(bSelect)
+  self.lock:SetActive(bLock)
+  self.open:SetActive(bOpen)
   if bLock then
-    (self.imgBg).sprite = (self._atlas):GetSprite("activity_wjyz_qh_btn03")
+    self.imgBg.sprite = self._atlas:GetSprite("activity_wjyz_qh_btn03")
+  elseif bSelect then
+    self.imgBg.sprite = self._atlas:GetSprite("activity_wjyz_qh_btn02")
   else
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R5 in 'UnsetPending'
-
-    if bSelect then
-      (self.imgBg).sprite = (self._atlas):GetSprite("activity_wjyz_qh_btn02")
-    else
-      -- DECOMPILER ERROR at PC49: Confused about usage of register: R5 in 'UnsetPending'
-
-      (self.imgBg).sprite = (self._atlas):GetSprite("activity_wjyz_qh_btn01")
-    end
+    self.imgBg.sprite = self._atlas:GetSprite("activity_wjyz_qh_btn01")
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixSelectItem.GetState = function(self)
-  -- function num : 0_4
+function UIActivityN4CCAffixSelectItem:GetState()
   return self._bSelect, self._canSelect
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixSelectItem.BtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIActivityN4CCAffixSelectItem:BtnOnClick(go)
   if self._clickCb then
-    (self._clickCb)(self)
+    self._clickCb(self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixSelectItem.GetAffixId = function(self)
-  -- function num : 0_6
+function UIActivityN4CCAffixSelectItem:GetAffixId()
   return self._affixId
 end
-
-

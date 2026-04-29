@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_angle_free_line_plus.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_AngleFreeLinePlus", SkillScopeCalculator_Base)
 SkillScopeCalculator_AngleFreeLinePlus = SkillScopeCalculator_AngleFreeLinePlus
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_AngleFreeLinePlus.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
-  local world = ((self._hub)._gridFilter)._world
+function SkillScopeCalculator_AngleFreeLinePlus:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
+  local world = self._hub._gridFilter._world
   if not world then
-    (Log.exception)(self._className, "AngleFreeLine无法用于没有world的环境下")
+    Log.exception(self._className, "AngleFreeLine无法用于没有world的环境下")
     return SkillScopeResult:New(SkillScopeType.AngleFreeLinePlus, casterPos, {}, {})
   end
   local centerPosArray = centerPos
@@ -36,20 +29,13 @@ SkillScopeCalculator_AngleFreeLinePlus.CalcRange = function(self, scopeType, sco
       trapList = trapID
     end
     local bFind = false
-    for _,vTrapID in ipairs(trapList) do
+    for _, vTrapID in ipairs(trapList) do
       local trapCenterPosList = trapServerLogic:FindTrapPosByTrapID(vTrapID)
-      do
-        if (table.count)(trapCenterPosList) == 0 then
-          do
-            casterPos = trapCenterPosList[1]
-            bFind = true
-            do break end
-            -- DECOMPILER ERROR at PC90: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC90: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+      if table.count(trapCenterPosList) == 0 then
+      else
+        casterPos = trapCenterPosList[1]
+        bFind = true
+        break
       end
     end
     if not bFind then
@@ -74,59 +60,51 @@ SkillScopeCalculator_AngleFreeLinePlus.CalcRange = function(self, scopeType, sco
     local aniAttackRange = {}
     local aniWholeRange = {}
     utilScope:P2PAngleFreeLineRange(desPos, oriPos, aniAttackRange, aniWholeRange, bNoAniExtend, widthThreshold)
-    ;
-    (table.Vector2Append)(attackRange, aniAttackRange)
-    ;
-    (table.Vector2Append)(wholeRange, aniWholeRange)
-    attackRange = (table.unique)(attackRange)
-    wholeRange = (table.unique)(wholeRange)
+    table.Vector2Append(attackRange, aniAttackRange)
+    table.Vector2Append(wholeRange, aniWholeRange)
+    attackRange = table.unique(attackRange)
+    wholeRange = table.unique(wholeRange)
   end
   local extendAList = {}
   local extendWList = {}
   if useBodyArea then
-    for _,body in ipairs(bodyArea) do
-      for _,v in ipairs(attackRange) do
+    for _, body in ipairs(bodyArea) do
+      for _, v in ipairs(attackRange) do
         local newPos = v + body
-        if not (table.Vector2Include)(attackRange, newPos) then
-          (table.insert)(extendAList, newPos)
+        if not table.Vector2Include(attackRange, newPos) then
+          table.insert(extendAList, newPos)
         end
       end
-      for _,v in ipairs(wholeRange) do
+      for _, v in ipairs(wholeRange) do
         local newPos = v + body
-        if not (table.Vector2Include)(wholeRange, newPos) then
-          (table.insert)(extendWList, newPos)
+        if not table.Vector2Include(wholeRange, newPos) then
+          table.insert(extendWList, newPos)
         end
       end
     end
   end
-  if #extendAList > 0 then
-    (table.Vector2Append)(attackRange, extendAList)
+  if 0 < #extendAList then
+    table.Vector2Append(attackRange, extendAList)
   end
-  if #extendWList > 0 then
-    (table.Vector2Append)(wholeRange, extendWList)
+  if 0 < #extendWList then
+    table.Vector2Append(wholeRange, extendWList)
   end
   local bSortFromBack = scopeParam.bSortFromBack == 1
   if bSortFromBack then
     local backDir = oriPos - desPos
     backDir = backDir.normalized
     local fakeAnchorPos = oriPos + backDir * 100
-    fakeAnchorPos = Vector2((math.floor)(fakeAnchorPos.x), (math.floor)(fakeAnchorPos.y))
-    local sortF = function(a, b)
-    -- function num : 0_0_0 , upvalues : _ENV, fakeAnchorPos
-    local da = (Vector2.Distance)(a, fakeAnchorPos)
-    local db = (Vector2.Distance)(b, fakeAnchorPos)
-    do return da < db end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-    ;
-    (table.sort)(attackRange, sortF)
-    ;
-    (table.sort)(wholeRange, sortF)
+    fakeAnchorPos = Vector2(math.floor(fakeAnchorPos.x), math.floor(fakeAnchorPos.y))
+    
+    local function sortF(a, b)
+      local da = Vector2.Distance(a, fakeAnchorPos)
+      local db = Vector2.Distance(b, fakeAnchorPos)
+      return da < db
+    end
+    
+    table.sort(attackRange, sortF)
+    table.sort(wholeRange, sortF)
   end
   local result = SkillScopeResult:New(SkillScopeType.AngleFreeLinePlus, centerPos, attackRange, wholeRange)
-  do return result end
-  -- DECOMPILER ERROR: 21 unprocessed JMP targets
+  return result
 end
-
-

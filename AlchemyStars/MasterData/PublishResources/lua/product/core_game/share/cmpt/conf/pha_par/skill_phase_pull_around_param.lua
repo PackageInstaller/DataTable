@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_pull_around_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhasePullAroundParam", SkillPhaseParamBase)
 SkillPhasePullAroundParam = SkillPhasePullAroundParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhasePullAroundParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhasePullAroundParam:Constructor(t)
   self._hitAnimationName = t.hitAnimationName
   self._moveSpeed = t.moveSpeed
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePullAroundParam.GetCacheTable = function(self)
-  -- function num : 0_1
+function SkillPhasePullAroundParam:GetCacheTable()
   local t = {}
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePullAroundParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhasePullAroundParam:GetPhaseType()
   return SkillViewPhaseType.PullAround
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePullAroundParam.GetHitAnimationName = function(self)
-  -- function num : 0_3
+function SkillPhasePullAroundParam:GetHitAnimationName()
   return self._hitAnimationName
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePullAroundParam.GetMoveSpeed = function(self)
-  -- function num : 0_4
+function SkillPhasePullAroundParam:GetMoveSpeed()
   return self._moveSpeed
 end
-
-

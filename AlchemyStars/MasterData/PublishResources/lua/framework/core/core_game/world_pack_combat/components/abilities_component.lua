@@ -1,97 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_combat/components/abilities_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("IEntityAbility", Object)
 IEntityAbility = IEntityAbility
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-IEntityAbility.Initialize = function(self, owner)
-  -- function num : 0_0
+function IEntityAbility:Initialize(owner)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-IEntityAbility.GetAbilityType = function(self)
-  -- function num : 0_1
+function IEntityAbility:GetAbilityType()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-IEntityAbility.IsEnable = function(self)
-  -- function num : 0_2
+function IEntityAbility:IsEnable()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-IEntityAbility.SetEnable = function(self)
-  -- function num : 0_3
+function IEntityAbility:SetEnable()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-IEntityAbility.SetDisable = function(self)
-  -- function num : 0_4
+function IEntityAbility:SetDisable()
 end
 
 _class("AbilitiesComponent", Object)
 AbilitiesComponent = AbilitiesComponent
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-AbilitiesComponent.Constructor = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function AbilitiesComponent:Constructor()
   self.abilities = SortedDictionary:New()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AbilitiesComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_6
+function AbilitiesComponent:WEC_PostInitialize(owner)
   self.WEC_OwnerEntity = owner
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AbilitiesComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_7
+function AbilitiesComponent:WEC_PostRemoved()
   local abilities = self.abilities
   for i = 1, abilities:Size() do
-    (abilities:GetAt(i)):OnDisable()
+    abilities:GetAt(i):OnDisable()
   end
   abilities:Clear()
   self.abilities = nil
   self.WEC_OwnerEntity = nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AbilitiesComponent.AddAbility = function(self, ability)
-  -- function num : 0_8
+function AbilitiesComponent:AddAbility(ability)
   ability:Initialize(self.WEC_OwnerEntity)
   local abilityType = ability:GetAbilityType()
-  ;
-  (self.abilities):Insert(abilityType, ability)
+  self.abilities:Insert(abilityType, ability)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AbilitiesComponent.RemoveAbility = function(self, abilityType)
-  -- function num : 0_9
-  (self.abilities):Remove(abilityType)
+function AbilitiesComponent:RemoveAbility(abilityType)
+  self.abilities:Remove(abilityType)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AbilitiesComponent.GetAbility = function(self, abilityType)
-  -- function num : 0_10
-  return (self.abilities):Find(abilityType)
+function AbilitiesComponent:GetAbility(abilityType)
+  return self.abilities:Find(abilityType)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AbilitiesComponent.HandleCommand = function(self, cmd)
-  -- function num : 0_11
+function AbilitiesComponent:HandleCommand(cmd)
   local abilities = self.abilities
   for i = 1, abilities:Size() do
     local ability = abilities:GetAt(i)
@@ -101,82 +61,53 @@ AbilitiesComponent.HandleCommand = function(self, cmd)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Abilities = function(self)
-  -- function num : 0_12
-  return self:GetComponent((self.WEComponentsEnum).Abilities)
+function Entity:Abilities()
+  return self:GetComponent(self.WEComponentsEnum.Abilities)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasAbilities = function(self)
-  -- function num : 0_13
-  return self:HasComponent((self.WEComponentsEnum).Abilities)
+function Entity:HasAbilities()
+  return self:HasComponent(self.WEComponentsEnum.Abilities)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddAbility = function(self, ability)
-  -- function num : 0_14 , upvalues : _ENV
+function Entity:AddAbility(ability)
   if not self:HasAbilities() then
-    local index = (self.WEComponentsEnum).Abilities
+    local index = self.WEComponentsEnum.Abilities
     local component = AbilitiesComponent:New()
     self:AddComponent(index, component)
   end
-  do
-    ;
-    (self:Abilities()):AddAbility(ability)
-  end
+  self:Abilities():AddAbility(ability)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveAbility = function(self, abilityType)
-  -- function num : 0_15
+function Entity:RemoveAbility(abilityType)
   local abilities = self:Abilities()
   if abilities then
     abilities:RemoveAbility(abilityType)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetAbility = function(self, abilityType)
-  -- function num : 0_16
+function Entity:GetAbility(abilityType)
   local abilities = self:Abilities()
   if abilities then
     return abilities:GetAbility(abilityType)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.EnableAbility = function(self, abilityType)
-  -- function num : 0_17
+function Entity:EnableAbility(abilityType)
   local ability = self:GetAbility(abilityType)
   if ability then
     return ability:SetEnable()
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.DisableAbility = function(self, abilityType)
-  -- function num : 0_18
+function Entity:DisableAbility(abilityType)
   local ability = self:GetAbility(abilityType)
   if ability then
     return ability:SetDisable()
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveAbilities = function(self)
-  -- function num : 0_19
+function Entity:RemoveAbilities()
   if self:HasAbilities() then
-    self:RemoveComponent((self.WEComponentsEnum).Abilities)
+    self:RemoveComponent(self.WEComponentsEnum.Abilities)
   end
 end
-
-

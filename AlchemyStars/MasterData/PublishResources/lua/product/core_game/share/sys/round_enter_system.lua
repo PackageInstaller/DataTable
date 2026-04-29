@@ -1,31 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/round_enter_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("RoundEnterSystem", MainStateSystem)
 RoundEnterSystem = RoundEnterSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-RoundEnterSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function RoundEnterSystem:_GetMainStateID()
   return GameStateID.RoundEnter
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  ;
-  (Log.debug)("RoundEnterSystem GameTurn=", GetEnumKey("GameTurnType", (self._world):GetGameTurn()))
+function RoundEnterSystem:_OnMainStateEnter(TT)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  Log.debug("RoundEnterSystem GameTurn=", GetEnumKey("GameTurnType", self._world:GetGameTurn()))
   local incRound, curWaveRound = self:_DoLogicIncRoundCount()
   local damageInfo, isWarnRound = self:_DoLogicTryPunishmentRoundEnter()
   self:_DoRenderPunishmentRoundEnter(TT, damageInfo, isWarnRound)
   if self:_ShouldGotoNextStateForPunishmentRound() then
     self:_DoLogicGotoNextStateForPunishmentRound()
-    return 
+    return
   end
   self:_DoLogicFeatureOnRoundEnterEarly(incRound)
   self:_DoRenderFeatureOnRoundEnterEarly(TT)
@@ -36,299 +25,254 @@ RoundEnterSystem._OnMainStateEnter = function(self, TT)
   self:_DoRenderShowPetUI(TT, curWaveRound)
   self:_DoRenderShowPetTurnTips(TT)
   local calcBuff = false
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    calcBuff = not ((self._world):BattleStat()):IsRoundAuroraTime()
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    calcBuff = not self._world:BattleStat():IsRoundAuroraTime()
   else
     calcBuff = incRound
   end
-  do
-    if calcBuff then
-      local formerTeamOrder = self:_DoLogicPlayerTurnBuff(teamEntity)
-      self:_DoRenderPlayerTurnBuff(TT, teamEntity, formerTeamOrder)
-    end
-    if (self._world):MatchType() == MatchType.MT_Chess then
-      self:_DoLogicChessTurnBuff()
-      self:_DoRenderChessTurnBuff(TT)
-    end
-    self:_DoLogicMonsterDead()
-    self:_DoRenderMonsterDead(TT)
-    self:_DoLogicTrapDie()
-    self:_DoRenderTrapDie(TT)
-    local ntTeamOrderChange = self:_DoLogicPetDead(teamEntity)
-    self:_DoRenderPetDead(TT, teamEntity, ntTeamOrderChange)
-    self:_DoRenderWaitDeathEnd(TT)
-    self:_DoLogicClearDeadEntity()
-    do
-      if incRound then
-        local tAllNotifyArray = self:_DoLogicUpdatePetPower(teamEntity, incRound)
-        self:_DoRenderUpdatePetPower(TT, tAllNotifyArray)
-      end
-      self:_DoLogicSaveRoundBeginPlayerPos(teamEntity)
-      self:_DoRenderSaveRoundBeginPlayerPos(TT, teamEntity)
-      if (self._world):MatchType() == MatchType.MT_Chess then
-        self:_DoLogicResetChessPetFinishState()
-        self:_DoRenderResetChessPetFinishState(TT)
-      end
-      self:_DoLogicFeatureOnRoundEnter(incRound)
-      self:_DoRenderFeatureOnRoundEnter(TT)
-      self:_DoRenderFeatureShowBanPetSkill(TT)
-      if incRound then
-        self:_DoLogicRefreshMonsterAntiActiveSkill()
-        self:_DoRenderRefreshMonsterAntiActiveSkill(TT)
-      end
-      self:_DoLogicTakeSnapshot()
-      self:_DoLogicGotoNextState()
-    end
+  if calcBuff then
+    local formerTeamOrder = self:_DoLogicPlayerTurnBuff(teamEntity)
+    self:_DoRenderPlayerTurnBuff(TT, teamEntity, formerTeamOrder)
   end
+  if self._world:MatchType() == MatchType.MT_Chess then
+    self:_DoLogicChessTurnBuff()
+    self:_DoRenderChessTurnBuff(TT)
+  end
+  self:_DoLogicMonsterDead()
+  self:_DoRenderMonsterDead(TT)
+  self:_DoLogicTrapDie()
+  self:_DoRenderTrapDie(TT)
+  local ntTeamOrderChange = self:_DoLogicPetDead(teamEntity)
+  self:_DoRenderPetDead(TT, teamEntity, ntTeamOrderChange)
+  self:_DoRenderWaitDeathEnd(TT)
+  self:_DoLogicClearDeadEntity()
+  if incRound then
+    local tAllNotifyArray = self:_DoLogicUpdatePetPower(teamEntity, incRound)
+    self:_DoRenderUpdatePetPower(TT, tAllNotifyArray)
+  end
+  self:_DoLogicSaveRoundBeginPlayerPos(teamEntity)
+  self:_DoRenderSaveRoundBeginPlayerPos(TT, teamEntity)
+  if self._world:MatchType() == MatchType.MT_Chess then
+    self:_DoLogicResetChessPetFinishState()
+    self:_DoRenderResetChessPetFinishState(TT)
+  end
+  self:_DoLogicFeatureOnRoundEnter(incRound)
+  self:_DoRenderFeatureOnRoundEnter(TT)
+  self:_DoRenderFeatureShowBanPetSkill(TT)
+  if incRound then
+    self:_DoLogicRefreshMonsterAntiActiveSkill()
+    self:_DoRenderRefreshMonsterAntiActiveSkill(TT)
+  end
+  self:_DoLogicTakeSnapshot()
+  self:_DoLogicGotoNextState()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoLogicGotoNextState = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function RoundEnterSystem:_DoLogicGotoNextState()
   local isBattleEnd = self:_IsBattleEnd()
   if isBattleEnd then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.RoundEnterFinish, 2)
-    return 
+    self._world:EventDispatcher():Dispatch(GameEventType.RoundEnterFinish, 2)
+    return
   end
   local isChooseRelic = self:_NeedChooseRelicInOpening()
   if isChooseRelic then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.RoundEnterFinish, 3)
-    return 
+    self._world:EventDispatcher():Dispatch(GameEventType.RoundEnterFinish, 3)
+    return
   end
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.RoundEnterFinish, 1)
+  self._world:EventDispatcher():Dispatch(GameEventType.RoundEnterFinish, 1)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoLogicIncRoundCount = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function RoundEnterSystem:_DoLogicIncRoundCount()
+  local battleStatCmpt = self._world:BattleStat()
   local curRound = battleStatCmpt:GetLevelTotalRoundCount()
   local curWaveRound = battleStatCmpt:GetCurWaveRound()
   local followRound = battleStatCmpt:GetGameRoundCount()
   if curRound == followRound then
     return false, curWaveRound
   end
-  if (self._world):GetGameTurn() ~= GameTurnType.LocalPlayerTurn then
+  if self._world:GetGameTurn() ~= GameTurnType.LocalPlayerTurn then
     return false, curWaveRound
   end
   local cnt = battleStatCmpt:IncGameRoundCount()
   battleStatCmpt:ClearCurRoundDoActiveSkillTimes()
   battleStatCmpt:AffixClearAllSkillDamageRecord()
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local connectRate = boardServiceLogic:GetConnectRate()
-  ;
-  ((self._world):GetDataLogger()):AddDataLog("OnRoundStart", connectRate)
+  self._world:GetDataLogger():AddDataLog("OnRoundStart", connectRate)
   return true, curWaveRound
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoLogicPlayerTurnBuff = function(self, teamEntiy)
-  -- function num : 0_4
+function RoundEnterSystem:_DoLogicPlayerTurnBuff(teamEntiy)
   if teamEntiy == nil then
-    return 
+    return
   end
-  local formerTeamOrder = (teamEntiy:Team()):CloneTeamOrder()
-  local buffLogicService = (self._world):GetService("BuffLogic")
+  local formerTeamOrder = teamEntiy:Team():CloneTeamOrder()
+  local buffLogicService = self._world:GetService("BuffLogic")
   buffLogicService:RefreshLockHPLogic()
   buffLogicService:CalcPlayerBuffTurn(teamEntiy)
   return formerTeamOrder
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoLogicChessTurnBuff = function(self)
-  -- function num : 0_5
-  local buffLogicService = (self._world):GetService("BuffLogic")
+function RoundEnterSystem:_DoLogicChessTurnBuff()
+  local buffLogicService = self._world:GetService("BuffLogic")
   buffLogicService:CalcChessBuffTurn()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoLogicUpdatePetPower = function(self, teamEntiy, incread)
-  -- function num : 0_6
-  local battleStatCmpt = (self._world):BattleStat()
+function RoundEnterSystem:_DoLogicUpdatePetPower(teamEntiy, incread)
+  local battleStatCmpt = self._world:BattleStat()
   if not battleStatCmpt:IsFirstRound() then
     return self:_UpdateAllPetPower(teamEntiy, incread)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._UpdateAllPetPower = function(self, teamEntity, incread)
-  -- function num : 0_7 , upvalues : _ENV
+function RoundEnterSystem:_UpdateAllPetPower(teamEntity, incread)
   local tAllNotifyArray = {}
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).Pet)
-  for _,e in ipairs(group:GetEntities()) do
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.Pet)
+  for _, e in ipairs(group:GetEntities()) do
     local tNotify = self:_UpdatePetPower(teamEntity, e, incread)
-    ;
-    (table.appendArray)(tAllNotifyArray, tNotify)
+    table.appendArray(tAllNotifyArray, tNotify)
   end
   return tAllNotifyArray
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._UpdatePetPower = function(self, teamEntity, e, incread)
-  -- function num : 0_8 , upvalues : _ENV
+function RoundEnterSystem:_UpdatePetPower(teamEntity, e, incread)
   if e:HasPetDeadMark() then
-    return 
+    return
   end
   local petPstIDComponent = e:PetPstID()
   local petPstID = petPstIDComponent:GetPstID()
   local attributesComponent = e:Attributes()
-  local localSkillID = (e:SkillInfo()):GetActiveSkillID()
-  do
-    if not localSkillID then
-      local petData = (self._world):GetPetData(petPstID)
-      localSkillID = petData:GetPetActiveSkill()
+  local localSkillID = e:SkillInfo():GetActiveSkillID()
+  if not localSkillID then
+    local petData = self._world:GetPetData(petPstID)
+    localSkillID = petData:GetPetActiveSkill()
+  end
+  local extraSkillIDList = e:SkillInfo():GetExtraActiveSkillIDList()
+  if not extraSkillIDList or 0 < #extraSkillIDList then
+  end
+  local configService = self._world:GetService("Config")
+  local skillConfigData = configService:GetSkillConfigData(localSkillID, e)
+  local previousReady = attributesComponent:GetAttribute("Ready") == 1
+  local ready = 0
+  if skillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
+    local legendPower = attributesComponent:GetAttribute("LegendPower")
+    if legendPower >= skillConfigData:GetSkillTriggerParam() then
+      ready = 1
     end
-    local extraSkillIDList = (e:SkillInfo()):GetExtraActiveSkillIDList()
-    if not extraSkillIDList or #extraSkillIDList > 0 then
-      local configService = (self._world):GetService("Config")
-      local skillConfigData = configService:GetSkillConfigData(localSkillID, e)
-      local previousReady = attributesComponent:GetAttribute("Ready") == 1
-      local ready = 0
-      if skillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
-        local legendPower = attributesComponent:GetAttribute("LegendPower")
-        if skillConfigData:GetSkillTriggerParam() <= legendPower then
-          ready = 1
+    self._world:GetSyncLogger():Trace({
+      key = "Update LegendPet Power",
+      entityID = e:GetID(),
+      legendPower = legendPower,
+      ready = ready
+    })
+    if legendPower > BattleConst.LegendPowerMax then
+      legendPower = BattleConst.LegendPowerMax
+    end
+    attributesComponent:Modify("LegendPower", legendPower)
+    self._world:EventDispatcher():Dispatch(GameEventType.PetLegendPowerChange, petPstID, legendPower, false)
+  elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.BuffLayer then
+    ready = attributesComponent:GetAttribute("Ready")
+  elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.AlchemyEnergy then
+    local alchemyPower = attributesComponent:GetAttribute("AlchemyPower")
+    if alchemyPower >= skillConfigData:GetSkillTriggerParam() then
+      ready = 1
+    end
+    if alchemyPower > BattleConst.AlchemyPowerMax then
+      alchemyPower = BattleConst.AlchemyPowerMax
+    end
+    attributesComponent:Modify("AlchemyPower", alchemyPower)
+    self._world:EventDispatcher():Dispatch(GameEventType.PetAlchemyPowerChange, petPstID, alchemyPower, false)
+  elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.ColorPalette then
+    if not e:HasColorPalette() then
+      e:AddColorPalette()
+    end
+    local component = e:ColorPalette()
+    if component:IsSatisfy() then
+      ready = 1
+    end
+  else
+    local power = attributesComponent:GetAttribute("Power")
+    local maxPower = skillConfigData:GetSkillTriggerParam()
+    if maxPower == 0 then
+      local battleStatComponent = self._world:BattleStat()
+      local lastDoActiveSkillRound = battleStatComponent:GetLastDoActiveSkillRound(petPstID)
+      local curRound = battleStatComponent:GetLevelTotalRoundCount()
+      previousReady = previousReady and curRound - 1 ~= lastDoActiveSkillRound
+    end
+    local delayChangePowerValue = e:BuffComponent():GetBuffValue("DelayChangePowerValue")
+    if delayChangePowerValue and delayChangePowerValue ~= 0 then
+      power = power + delayChangePowerValue
+      e:BuffComponent():SetBuffValue("DelayChangePowerValue", 0)
+    end
+    local battleStatComponent = self._world:BattleStat()
+    if 0 < power then
+      local lastDoActiveSkillRound = battleStatComponent:GetLastDoActiveSkillRound(petPstID)
+      local curRound = battleStatComponent:GetLevelTotalRoundCount()
+      if lastDoActiveSkillRound then
+        if 1 < curRound - lastDoActiveSkillRound then
+          power = power - 1
         end
-        ;
-        ((self._world):GetSyncLogger()):Trace({key = "Update LegendPet Power", entityID = e:GetID(), legendPower = legendPower, ready = ready})
-        if BattleConst.LegendPowerMax < legendPower then
-          legendPower = BattleConst.LegendPowerMax
-        end
-        attributesComponent:Modify("LegendPower", legendPower)
-        ;
-        ((self._world):EventDispatcher()):Dispatch(GameEventType.PetLegendPowerChange, petPstID, legendPower, false)
-      elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.BuffLayer then
-        ready = attributesComponent:GetAttribute("Ready")
-      elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.AlchemyEnergy then
-        local alchemyPower = attributesComponent:GetAttribute("AlchemyPower")
-        if skillConfigData:GetSkillTriggerParam() <= alchemyPower then
-          ready = 1
-        end
-        if BattleConst.AlchemyPowerMax < alchemyPower then
-          alchemyPower = BattleConst.AlchemyPowerMax
-        end
-        attributesComponent:Modify("AlchemyPower", alchemyPower)
-        ;
-        ((self._world):EventDispatcher()):Dispatch(GameEventType.PetAlchemyPowerChange, petPstID, alchemyPower, false)
-      elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.ColorPalette then
-        if not e:HasColorPalette() then
-          e:AddColorPalette()
-        end
-        local component = e:ColorPalette()
-        if component:IsSatisfy() then
-          ready = 1
-        end
-      else
-        local power = attributesComponent:GetAttribute("Power")
-        local maxPower = skillConfigData:GetSkillTriggerParam()
-        if maxPower == 0 then
-          local battleStatComponent = (self._world):BattleStat()
-          local lastDoActiveSkillRound = battleStatComponent:GetLastDoActiveSkillRound(petPstID)
-          local curRound = battleStatComponent:GetLevelTotalRoundCount()
-          previousReady = not previousReady or curRound - 1 ~= lastDoActiveSkillRound
-        end
-        local delayChangePowerValue = (e:BuffComponent()):GetBuffValue("DelayChangePowerValue")
-        if delayChangePowerValue and delayChangePowerValue ~= 0 then
-          power = power + delayChangePowerValue
-          ;
-          (e:BuffComponent()):SetBuffValue("DelayChangePowerValue", 0)
-        end
-        local battleStatComponent = (self._world):BattleStat()
-        if power > 0 then
-          local lastDoActiveSkillRound = battleStatComponent:GetLastDoActiveSkillRound(petPstID)
-          local curRound = battleStatComponent:GetLevelTotalRoundCount()
-          -- DECOMPILER ERROR at PC215: Unhandled construct in 'MakeBoolean' P1
-
-          if lastDoActiveSkillRound and curRound - lastDoActiveSkillRound > 1 then
-            power = power - 1
-          end
-        end
-        do
-          if incread then
-            power = power - 1
-          end
-          if power <= 0 then
-            power = 0
-            ready = 1
-          end
-          ;
-          ((self._world):GetSyncLogger()):Trace({key = "UpdatePetPower", entityID = e:GetID(), power = power, ready = ready})
-          attributesComponent:Modify("Power", power)
-          ;
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.PetPowerChange, petPstID, power, false)
-          do
-            local isAddPetPower = (e:BuffComponent()):GetBuffValue("AddPetPower") or 0
-            if isAddPetPower == 1 then
-              ((self._world):EventDispatcher()):Dispatch(GameEventType.PetActiveSkillCancelReady, petPstID)
-              ;
-              (e:BuffComponent()):SetBuffValue("AddPetPower", 0)
-            end
-            local blsvc = (self._world):GetService("BuffLogic")
-            blsvc:ChangePetActiveSkillReady(e, ready)
-            local tNotifyArray = {}
-            if ready == 1 then
-              (teamEntity:ActiveSkill()):AddPowerfullRoundCount(e:GetID(), 1)
-              if previousReady then
-                (teamEntity:ActiveSkill()):AddPreviousReadyRoundCount(e:GetID(), 1)
-                ;
-                ((self._world):EventDispatcher()):Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, false)
-                local notify = NTPetActiveSkillPreviousReady:New(e)
-                ;
-                (table.insert)(tNotifyArray, notify)
-                ;
-                ((self._world):GetService("Trigger")):Notify(notify)
-              else
-                ((self._world):EventDispatcher()):Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, true)
-                local guideService = (self._world):GetService("Guide")
-                do
-                  if guideService ~= nil then
-                    local guideTaskId = guideService:Trigger(GameEventType.ShowGuidePowerReady, e)
-                  end
-                  do
-                    local notify = NTPowerReady:New(e)
-                    ;
-                    (table.insert)(tNotifyArray, notify)
-                    ;
-                    ((self._world):GetService("Trigger")):Notify(notify)
-                    self:_UpdatePetExtraSkillPower(teamEntity, e, incread, tNotifyArray)
-                    do return tNotifyArray end
-                    -- DECOMPILER ERROR: 21 unprocessed JMP targets
-                  end
-                end
-              end
-            end
-          end
-        end
+      elseif incread then
+        power = power - 1
       end
     end
+    if power <= 0 then
+      power = 0
+      ready = 1
+    end
+    self._world:GetSyncLogger():Trace({
+      key = "UpdatePetPower",
+      entityID = e:GetID(),
+      power = power,
+      ready = ready
+    })
+    attributesComponent:Modify("Power", power)
+    self._world:EventDispatcher():Dispatch(GameEventType.PetPowerChange, petPstID, power, false)
+    local isAddPetPower = e:BuffComponent():GetBuffValue("AddPetPower") or 0
+    if isAddPetPower == 1 then
+      self._world:EventDispatcher():Dispatch(GameEventType.PetActiveSkillCancelReady, petPstID)
+      e:BuffComponent():SetBuffValue("AddPetPower", 0)
+    end
   end
+  local blsvc = self._world:GetService("BuffLogic")
+  blsvc:ChangePetActiveSkillReady(e, ready)
+  local tNotifyArray = {}
+  if ready == 1 then
+    teamEntity:ActiveSkill():AddPowerfullRoundCount(e:GetID(), 1)
+    if previousReady then
+      teamEntity:ActiveSkill():AddPreviousReadyRoundCount(e:GetID(), 1)
+      self._world:EventDispatcher():Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, false)
+      local notify = NTPetActiveSkillPreviousReady:New(e)
+      table.insert(tNotifyArray, notify)
+      self._world:GetService("Trigger"):Notify(notify)
+    else
+      self._world:EventDispatcher():Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, true)
+      local guideService = self._world:GetService("Guide")
+      if guideService ~= nil then
+        local guideTaskId = guideService:Trigger(GameEventType.ShowGuidePowerReady, e)
+      end
+      local notify = NTPowerReady:New(e)
+      table.insert(tNotifyArray, notify)
+      self._world:GetService("Trigger"):Notify(notify)
+    end
+  end
+  self:_UpdatePetExtraSkillPower(teamEntity, e, incread, tNotifyArray)
+  return tNotifyArray
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._UpdatePetExtraSkillPower = function(self, teamEntity, e, incread, tNotifyArray)
-  -- function num : 0_9 , upvalues : _ENV
+function RoundEnterSystem:_UpdatePetExtraSkillPower(teamEntity, e, incread, tNotifyArray)
   if e:HasPetDeadMark() then
-    return 
+    return
   end
-  local blsvc = (self._world):GetService("BuffLogic")
-  local utilData = (self._world):GetService("UtilData")
-  local configService = (self._world):GetService("Config")
+  local blsvc = self._world:GetService("BuffLogic")
+  local utilData = self._world:GetService("UtilData")
+  local configService = self._world:GetService("Config")
   local petPstIDComponent = e:PetPstID()
   local petPstID = petPstIDComponent:GetPstID()
   local attributesComponent = e:Attributes()
-  local extraSkillIDList = (e:SkillInfo()):GetExtraActiveSkillIDList()
+  local extraSkillIDList = e:SkillInfo():GetExtraActiveSkillIDList()
   local skillInfoCmpt = e:SkillInfo()
-  if extraSkillIDList and #extraSkillIDList > 0 then
-    for index,localSkillID in ipairs(extraSkillIDList) do
+  if extraSkillIDList and 0 < #extraSkillIDList then
+    for index, localSkillID in ipairs(extraSkillIDList) do
       local ignoreUpdate = skillInfoCmpt:IsExtraSkillIgnoreCdUpdate(index)
       if not ignoreUpdate then
         local skillConfigData = configService:GetSkillConfigData(localSkillID, e)
@@ -338,15 +282,14 @@ RoundEnterSystem._UpdatePetExtraSkillPower = function(self, teamEntity, e, incre
         if skillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
           local legendPower = attributesComponent:GetAttribute("LegendPower")
           local minCost = blsvc:CalcMinCostByExtraParam(e, localSkillID)
-          if minCost <= legendPower then
+          if legendPower >= minCost then
             ready = 1
           end
-          if BattleConst.LegendPowerMax < legendPower then
+          if legendPower > BattleConst.LegendPowerMax then
             legendPower = BattleConst.LegendPowerMax
           end
           attributesComponent:Modify("LegendPower", legendPower)
-          ;
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.PetLegendPowerChange, petPstID, legendPower, false)
+          self._world:EventDispatcher():Dispatch(GameEventType.PetLegendPowerChange, petPstID, legendPower, false)
         elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.BuffLayer then
           ready = attributesComponent:GetAttribute("Ready")
         elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.ColorPalette then
@@ -361,159 +304,116 @@ RoundEnterSystem._UpdatePetExtraSkillPower = function(self, teamEntity, e, incre
           local power = utilData:GetPetPowerAttr(e, localSkillID)
           local maxPower = utilData:GetPetMaxPowerAttr(e, localSkillID)
           if maxPower == 0 then
-            local battleStatComponent = (self._world):BattleStat()
+            local battleStatComponent = self._world:BattleStat()
             local lastDoActiveSkillRound = battleStatComponent:GetLastDoActiveSkillRound(petPstID, index)
             local curRound = battleStatComponent:GetLevelTotalRoundCount()
-            previousReady = not previousReady or curRound - 1 ~= lastDoActiveSkillRound
+            previousReady = previousReady and curRound - 1 ~= lastDoActiveSkillRound
           end
-          local battleStatComponent = (self._world):BattleStat()
-          if power > 0 then
+          local battleStatComponent = self._world:BattleStat()
+          if 0 < power then
             local lastDoActiveSkillRound = battleStatComponent:GetLastDoActiveSkillRound(petPstID, index)
             local curRound = battleStatComponent:GetLevelTotalRoundCount()
-            -- DECOMPILER ERROR at PC166: Unhandled construct in 'MakeBoolean' P1
-
-            if lastDoActiveSkillRound and curRound - lastDoActiveSkillRound > 1 then
+            if lastDoActiveSkillRound then
+              if 1 < curRound - lastDoActiveSkillRound then
+                power = power - 1
+              end
+            elseif incread then
               power = power - 1
             end
           end
-          do
-            do
-              if incread then
-                power = power - 1
-              end
-              if power <= 0 then
-                power = 0
-                ready = 1
-              end
-              ;
-              ((self._world):GetSyncLogger()):Trace({key = "UpdatePetPower", entityID = e:GetID(), power = power, ready = ready})
-              utilData:SetPetPowerAttr(e, power, localSkillID)
-              ;
-              ((self._world):EventDispatcher()):Dispatch(GameEventType.PetExtraPowerChange, petPstID, localSkillID, power, false)
-              do
-                local blsvc = (self._world):GetService("BuffLogic")
-                blsvc:ChangePetActiveSkillReady(e, ready, localSkillID)
-                if ready == 1 then
-                  if previousReady then
-                    ((self._world):EventDispatcher()):Dispatch(GameEventType.PetExtraActiveSkillGetReady, petPstID, localSkillID, false)
-                  else
-                    ((self._world):EventDispatcher()):Dispatch(GameEventType.PetExtraActiveSkillGetReady, petPstID, localSkillID, true)
-                  end
-                end
-                -- DECOMPILER ERROR at PC237: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC237: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC237: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC237: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC237: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC237: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC237: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC237: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC237: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC237: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
+          if power <= 0 then
+            power = 0
+            ready = 1
+          end
+          self._world:GetSyncLogger():Trace({
+            key = "UpdatePetPower",
+            entityID = e:GetID(),
+            power = power,
+            ready = ready
+          })
+          utilData:SetPetPowerAttr(e, power, localSkillID)
+          self._world:EventDispatcher():Dispatch(GameEventType.PetExtraPowerChange, petPstID, localSkillID, power, false)
+        end
+        local blsvc = self._world:GetService("BuffLogic")
+        blsvc:ChangePetActiveSkillReady(e, ready, localSkillID)
+        if ready == 1 then
+          if previousReady then
+            self._world:EventDispatcher():Dispatch(GameEventType.PetExtraActiveSkillGetReady, petPstID, localSkillID, false)
+          else
+            self._world:EventDispatcher():Dispatch(GameEventType.PetExtraActiveSkillGetReady, petPstID, localSkillID, true)
           end
         end
       end
     end
   end
-  -- DECOMPILER ERROR: 16 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoLogicTakeSnapshot = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local logger = (self._world):GetMatchLogger()
+function RoundEnterSystem:_DoLogicTakeSnapshot()
+  local logger = self._world:GetMatchLogger()
   logger:TakeSnapshot()
   if not _G.ENABLE_SYNC_LOG then
-    return 
+    return
   end
-  local boardEntity = (self._world):GetBoardEntity()
-  local blockFlags = (boardEntity:Board()):GetBlockFlagArray()
-  local pieceTypes = (boardEntity:Board()).Pieces
+  local boardEntity = self._world:GetBoardEntity()
+  local blockFlags = boardEntity:Board():GetBlockFlagArray()
+  local pieceTypes = boardEntity:Board().Pieces
   local blockLog = {}
-  for x,row in pairs(blockFlags) do
-    for y,v in pairs(row) do
+  for x, row in pairs(blockFlags) do
+    for y, v in pairs(row) do
       local block = v:GetBlock()
-      if block > 0 then
+      if 0 < block then
         blockLog[x * 100 + y] = block
       end
     end
   end
-  ;
-  ((self._world):GetSyncLogger()):Trace({key = "BlockFlags", blockFlags = blockLog})
+  self._world:GetSyncLogger():Trace({key = "BlockFlags", blockFlags = blockLog})
   local pieceLog = {}
-  for x,row in pairs(pieceTypes) do
-    for y,v in pairs(row) do
+  for x, row in pairs(pieceTypes) do
+    for y, v in pairs(row) do
       pieceLog[x * 100 + y] = v
     end
   end
-  ;
-  ((self._world):GetSyncLogger()):Trace({key = "PieceTypes", pieceTypes = pieceLog})
-  if self._world and (self._world):IsDevelopEnv() then
-    (Log.debug)("RoundEnterSystem BoardPieceTypes:", echo_one_line(ELogLevel.Debug, pieceLog))
+  self._world:GetSyncLogger():Trace({key = "PieceTypes", pieceTypes = pieceLog})
+  if self._world and self._world:IsDevelopEnv() then
+    Log.debug("RoundEnterSystem BoardPieceTypes:", echo_one_line(ELogLevel.Debug, pieceLog))
   end
   local hpLog = {}
-  local attrGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Attributes)
-  for i,e in ipairs(attrGroup:GetEntities()) do
-    local val = (e:Attributes()):GetCurrentHP()
+  local attrGroup = self._world:GetGroup(self._world.BW_WEMatchers.Attributes)
+  for i, e in ipairs(attrGroup:GetEntities()) do
+    local val = e:Attributes():GetCurrentHP()
     if val then
       hpLog[e:GetID()] = val
     end
   end
-  ;
-  ((self._world):GetSyncLogger()):Trace({key = "EntityHP", entityHP = hpLog})
+  self._world:GetSyncLogger():Trace({key = "EntityHP", entityHP = hpLog})
   local posLog = {}
-  local posGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).GridLocation)
-  for i,e in ipairs(posGroup:GetEntities()) do
-    local pos = (e:GridLocation()):GetGridPos()
+  local posGroup = self._world:GetGroup(self._world.BW_WEMatchers.GridLocation)
+  for i, e in ipairs(posGroup:GetEntities()) do
+    local pos = e:GridLocation():GetGridPos()
     if e:GetID() < 100000000 and not e:Piece() then
-      posLog[e:GetID()] = (math.floor)(pos.x * 100 + pos.y)
+      posLog[e:GetID()] = math.floor(pos.x * 100 + pos.y)
     end
   end
-  ;
-  ((self._world):GetSyncLogger()):Trace({key = "EntityPos", entityPos = posLog})
+  self._world:GetSyncLogger():Trace({key = "EntityPos", entityPos = posLog})
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoLogicTrapBeforePlayer = function(self)
-  -- function num : 0_11
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function RoundEnterSystem:_DoLogicTrapBeforePlayer()
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   trapServiceLogic:TrapActionBeforePlayer()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoLogicSaveRoundBeginPlayerPos = function(self, teamEntity)
-  -- function num : 0_12 , upvalues : _ENV
+function RoundEnterSystem:_DoLogicSaveRoundBeginPlayerPos(teamEntity)
   if teamEntity == nil then
-    return 
+    return
   end
   local playerPos = teamEntity:GetGridPosition()
-  ;
-  ((self._world):BattleStat()):SetRoundBeginPlayerPos(playerPos)
-  ;
-  ((self._world):GetService("Trigger")):Notify(NTSaveRoundBeginPlayerPosEnd:New(teamEntity))
+  self._world:BattleStat():SetRoundBeginPlayerPos(playerPos)
+  self._world:GetService("Trigger"):Notify(NTSaveRoundBeginPlayerPosEnd:New(teamEntity))
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoLogicResetChessPetFinishState = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).ChessPet)
-  for i,v in ipairs(group:GetEntities()) do
+function RoundEnterSystem:_DoLogicResetChessPetFinishState()
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.ChessPet)
+  for i, v in ipairs(group:GetEntities()) do
     local chessPetCmpt = v:ChessPet()
     local buffCmpt = v:BuffComponent()
     local isSkipTurn = buffCmpt:HasFlag(BuffFlags.SkipTurn)
@@ -523,42 +423,33 @@ RoundEnterSystem._DoLogicResetChessPetFinishState = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoLogicFeatureOnRoundEnter = function(self, incRound)
-  -- function num : 0_14
-  local featureLogicSvc = (self._world):GetService("FeatureLogic")
+function RoundEnterSystem:_DoLogicFeatureOnRoundEnter(incRound)
+  local featureLogicSvc = self._world:GetService("FeatureLogic")
   if featureLogicSvc and featureLogicSvc:CanEnableFeature() then
     featureLogicSvc:DoFeatureOnRoundEnter(incRound)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoLogicFeatureOnRoundEnterEarly = function(self, incRound)
-  -- function num : 0_15
-  local featureLogicSvc = (self._world):GetService("FeatureLogic")
+function RoundEnterSystem:_DoLogicFeatureOnRoundEnterEarly(incRound)
+  local featureLogicSvc = self._world:GetService("FeatureLogic")
   if featureLogicSvc and featureLogicSvc:CanEnableFeature() then
     featureLogicSvc:DoFeatureOnRoundEnterEarly(incRound)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoLogicTryPunishmentRoundEnter = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function RoundEnterSystem:_DoLogicTryPunishmentRoundEnter()
+  local configService = self._world:GetService("Config")
   local levelConfigData = configService:GetLevelConfigData()
   if levelConfigData:GetOutOfRoundType() == 0 then
-    return 
+    return
   end
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local punishmentRoundCount = battleStatCmpt:GetCurWavePunishmentRoundCount()
   if punishmentRoundCount == 0 then
-    return 
+    return
   end
   if battleStatCmpt:IsPunishmentRoundExecuted(punishmentRoundCount) then
-    return 
+    return
   end
   if punishmentRoundCount == 1 then
     battleStatCmpt:MarkPunishmentRoundExecuted(punishmentRoundCount)
@@ -566,32 +457,33 @@ RoundEnterSystem._DoLogicTryPunishmentRoundEnter = function(self)
   end
   local realPunishmentRoundCount = punishmentRoundCount - 1
   local punishPercent = 0
-  for round,percent in pairs(BattleConst.PunishmentRoundHPPercent) do
+  for round, percent in pairs(BattleConst.PunishmentRoundHPPercent) do
     if round <= realPunishmentRoundCount then
       punishPercent = percent
     end
   end
   if punishPercent <= 0 then
-    return 
+    return
   end
-  local eTeam = ((self._world):Player()):GetLocalTeamEntity()
-  local maxHP = (eTeam:Attributes()):CalcMaxHp()
+  local eTeam = self._world:Player():GetLocalTeamEntity()
+  local maxHP = eTeam:Attributes():CalcMaxHp()
   local val = maxHP * punishPercent
-  local lsvcCalcDamage = (self._world):GetService("CalcDamage")
-  local damageInfo = lsvcCalcDamage:DoCalcDamage(eTeam, eTeam, {formulaID = 130, hp = val, skillID = 0}, true)
+  local lsvcCalcDamage = self._world:GetService("CalcDamage")
+  local damageInfo = lsvcCalcDamage:DoCalcDamage(eTeam, eTeam, {
+    formulaID = 130,
+    hp = val,
+    skillID = 0
+  }, true)
   battleStatCmpt:MarkPunishmentRoundExecuted(punishmentRoundCount)
   return damageInfo
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoLogicRefreshMonsterAntiActiveSkill = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function RoundEnterSystem:_DoLogicRefreshMonsterAntiActiveSkill()
+  local configService = self._world:GetService("Config")
   local monsterConfigData = configService:GetMonsterConfigData()
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,e in ipairs(monsterGroup:GetEntities()) do
-    local monsterID = (e:MonsterID()):GetMonsterID()
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(monsterGroup:GetEntities()) do
+    local monsterID = e:MonsterID():GetMonsterID()
     local attributeCmpt = e:Attributes()
     local originalMax = attributeCmpt:GetAttribute("OriginalMaxAntiSkillCountPerRound")
     if originalMax ~= 0 then
@@ -602,115 +494,65 @@ RoundEnterSystem._DoLogicRefreshMonsterAntiActiveSkill = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._ShouldGotoNextStateForPunishmentRound = function(self)
-  -- function num : 0_18
-  local configService = (self._world):GetService("Config")
+function RoundEnterSystem:_ShouldGotoNextStateForPunishmentRound()
+  local configService = self._world:GetService("Config")
   local levelConfigData = configService:GetLevelConfigData()
   if levelConfigData:GetOutOfRoundType() == 0 then
     return false
   end
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   if teamEntity and self:IsPlayerDead(teamEntity) then
     return true
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoLogicGotoNextStateForPunishmentRound = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.RoundEnterFinish, 2)
+function RoundEnterSystem:_DoLogicGotoNextStateForPunishmentRound()
+  self._world:EventDispatcher():Dispatch(GameEventType.RoundEnterFinish, 2)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._NeedChooseRelicInOpening = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  if (self._world):MatchType() ~= MatchType.MT_MiniMaze then
+function RoundEnterSystem:_NeedChooseRelicInOpening()
+  if self._world:MatchType() ~= MatchType.MT_MiniMaze then
     return false
   end
-  local talentSvc = (self._world):GetService("Talent")
+  local talentSvc = self._world:GetService("Talent")
   return talentSvc:NeedChooseOpeningRelic()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoRenderShowPetUI = function(self, TT, curWaveRound)
-  -- function num : 0_21
+function RoundEnterSystem:_DoRenderShowPetUI(TT, curWaveRound)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoRenderShowPetTurnTips = function(self, TT)
-  -- function num : 0_22
+function RoundEnterSystem:_DoRenderShowPetTurnTips(TT)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoRenderPlayerTurnBuff = function(self, TT)
-  -- function num : 0_23
+function RoundEnterSystem:_DoRenderPlayerTurnBuff(TT)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoRenderChessTurnBuff = function(self, TT)
-  -- function num : 0_24
+function RoundEnterSystem:_DoRenderChessTurnBuff(TT)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoRenderUpdatePetPower = function(self, TT, tNotifyArray)
-  -- function num : 0_25
+function RoundEnterSystem:_DoRenderUpdatePetPower(TT, tNotifyArray)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoRenderTrapBeforePlayer = function(self, TT)
-  -- function num : 0_26
+function RoundEnterSystem:_DoRenderTrapBeforePlayer(TT)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoRenderResetChessPetFinishState = function(self, TT)
-  -- function num : 0_27
+function RoundEnterSystem:_DoRenderResetChessPetFinishState(TT)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoRenderFeatureOnRoundEnter = function(self, TT)
-  -- function num : 0_28
+function RoundEnterSystem:_DoRenderFeatureOnRoundEnter(TT)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoRenderFeatureOnRoundEnterEarly = function(self, TT)
-  -- function num : 0_29
+function RoundEnterSystem:_DoRenderFeatureOnRoundEnterEarly(TT)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoRenderFeatureShowBanPetSkill = function(self, TT)
-  -- function num : 0_30
+function RoundEnterSystem:_DoRenderFeatureShowBanPetSkill(TT)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoRenderSaveRoundBeginPlayerPos = function(self, TT, teamEntity)
-  -- function num : 0_31
+function RoundEnterSystem:_DoRenderSaveRoundBeginPlayerPos(TT, teamEntity)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoRenderPunishmentRoundEnter = function(self)
-  -- function num : 0_32
+function RoundEnterSystem:_DoRenderPunishmentRoundEnter()
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem._DoRenderRefreshMonsterAntiActiveSkill = function(self, TT)
-  -- function num : 0_33
+function RoundEnterSystem:_DoRenderRefreshMonsterAntiActiveSkill(TT)
 end
-
-

@@ -1,8 +1,2 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/skill_target_selection_mode.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 SkillTargetSelectionMode = {Grid = 0, Entity = 1}
 _enum("SkillTargetSelectionMode", SkillTargetSelectionMode)
-

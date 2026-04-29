@@ -1,21 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summon_gift/ui_activity_summon_gift_side_data_loader.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivitySummonGiftSideDataLoader", Object)
 UIActivitySummonGiftSideDataLoader = UIActivitySummonGiftSideDataLoader
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivitySummonGiftSideDataLoader.SetData = function(self, params)
-  -- function num : 0_0
+function UIActivitySummonGiftSideDataLoader:SetData(params)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySummonGiftSideDataLoader.LoadData = function(self, TT)
-  -- function num : 0_1
+function UIActivitySummonGiftSideDataLoader:LoadData(TT)
   return true
 end
-
-

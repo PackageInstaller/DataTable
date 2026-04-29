@@ -1,37 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn13/perfect_puzzle/ui_cn13_perfect_puzzle_main_game_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN13PerfectPuzzleMainGameController", UIController)
 UICN13PerfectPuzzleMainGameController = UICN13PerfectPuzzleMainGameController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN13PerfectPuzzleMainGameController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UICN13PerfectPuzzleMainGameController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleMainGameController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN13PerfectPuzzleMainGameController:OnShow(uiParams)
   self.missionId = uiParams[1]
-  self.missionCfg = (Cfg.cfg_cn13_client_mission)[self.missionId]
+  self.missionCfg = Cfg.cfg_cn13_client_mission[self.missionId]
   self._component = uiParams[2]
-  self._componentInfo = (self._component):GetComponentInfo()
+  self._componentInfo = self._component:GetComponentInfo()
   self._cfg = uiParams[3]
   self._campaign = uiParams[4]
   self:InitWidget()
   self:InitUI()
-  ;
-  (self.anim):Play("uianim_UICN13PerfectPuzzleMainGameController_unlock")
+  self.anim:Play("uianim_UICN13PerfectPuzzleMainGameController_unlock")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleMainGameController.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN13PerfectPuzzleMainGameController:InitWidget()
   self.anim = self:GetUIComponent("Animation", "Anim")
   self.roadPointGuide = self:GetGameObject("RoadPointGuide")
   self.totalPieceCountText = self:GetUIComponent("UILocalizationText", "TotalPieceCountText")
@@ -41,263 +27,180 @@ UICN13PerfectPuzzleMainGameController.InitWidget = function(self)
   self.needPieceText = self:GetUIComponent("UILocalizationText", "NeedPieceText")
   self.needPiece = self:GetGameObject("NeedPiece")
   self.lockObj = self:GetGameObject("Lock")
-  ;
-  (self.lockObj):SetActive(false)
+  self.lockObj:SetActive(false)
   self.puzzlePieceRoot = self:GetUIComponent("UISelectObjectPath", "PuzzlePieceRoot")
   self.puzzlePieceRootObj = self:GetGameObject("PuzzlePieceRoot")
-  ;
-  (self.puzzlePieceRootObj):SetActive(true)
+  self.puzzlePieceRootObj:SetActive(true)
   self.successTitleText = self:GetUIComponent("UILocalizationText", "SuccessTitleText")
   self.successRoot = self:GetGameObject("SuccessRoot")
-  ;
-  (self.successRoot):SetActive(false)
-  self.backBtns = (UIWidgetHelper.SpawnObject)(self, "backBtns", "UINewCommonTopButton")
+  self.successRoot:SetActive(false)
+  self.backBtns = UIWidgetHelper.SpawnObject(self, "backBtns", "UINewCommonTopButton")
   self.closeSuccRootBtnObj = self:GetGameObject("CloseSuccRootBtn")
-  ;
-  (self.closeSuccRootBtnObj):SetActive(false)
+  self.closeSuccRootBtnObj:SetActive(false)
   self.successfulObj = self:GetGameObject("successful")
-  ;
-  (self.successfulObj):SetActive(false)
+  self.successfulObj:SetActive(false)
   self.rightTop = self:GetUIComponent("RectTransform", "RightTop")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleMainGameController.InitUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.backBtns):SetData(function()
-    -- function num : 0_3_0 , upvalues : self, _ENV
+function UICN13PerfectPuzzleMainGameController:InitUI()
+  self.backBtns:SetData(function()
     if self.missionStateType ~= 1 then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PerfectPuzzleEntryRefresh)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.PerfectPuzzleEntryRefresh)
       self:CloseDialog()
-      return 
+      return
     end
-    ;
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_luckland_back_tips"), function(param)
-      -- function num : 0_3_0_0 , upvalues : _ENV, self
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PerfectPuzzleEntryRefresh)
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_luckland_back_tips"), function(param)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.PerfectPuzzleEntryRefresh)
       self:CloseDialog()
-    end
-, nil, nil, nil)
-  end
-, nil, nil, true, nil, false, nil)
-  local originPieces = (self._cfg).OriginPiecePos
+    end, nil, nil, nil)
+  end, nil, nil, true, nil, false, nil)
+  local originPieces = self._cfg.OriginPiecePos
   local veCount = #originPieces
   local hoCount = #originPieces[1]
   local totalCount = veCount * hoCount
   self.pieceDataList = {}
   for i = 1, veCount do
     for j = 1, hoCount do
-      local pieceName = (originPieces[i])[j]
+      local pieceName = originPieces[i][j]
       local data = CN13PerfectPuzzlePieceItemData:New()
       data:Init(pieceName, i, j, veCount, hoCount)
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R15 in 'UnsetPending'
-
-      ;
-      (self.pieceDataList)[#self.pieceDataList + 1] = data
+      self.pieceDataList[#self.pieceDataList + 1] = data
     end
   end
-  local puzzleList = (self._cfg).PuzzlePiece
+  local puzzleList = self._cfg.PuzzlePiece
   local vePuzzleCount = #puzzleList
   local hoPuzzleCount = #puzzleList[1]
   self.sucPieceDataList = {}
   for i = 1, vePuzzleCount do
     for j = 1, hoPuzzleCount do
-      local pieceName = (puzzleList[i])[j]
+      local pieceName = puzzleList[i][j]
       local data = CN13PerfectPuzzlePieceItemData:New()
       data:Init(pieceName, i, j, veCount, hoCount)
-      -- DECOMPILER ERROR at PC75: Confused about usage of register: R18 in 'UnsetPending'
-
-      ;
-      (self.sucPieceDataList)[#self.sucPieceDataList + 1] = data
+      self.sucPieceDataList[#self.sucPieceDataList + 1] = data
     end
   end
   self:InitBaseUI()
   self.selectComboPiece = {}
   self.pieceItemList = {}
-  self._pieceGameArea = (UIWidgetHelper.SpawnObjects)(self, "PuzzlePieceRoot", "UICN13PuzzlePieceItem", totalCount)
+  self._pieceGameArea = UIWidgetHelper.SpawnObjects(self, "PuzzlePieceRoot", "UICN13PuzzlePieceItem", totalCount)
   for i = 1, #self._pieceGameArea do
-    local uiitem = (self._pieceGameArea)[i]
-    -- DECOMPILER ERROR at PC103: Confused about usage of register: R13 in 'UnsetPending'
-
-    ;
-    (self.pieceItemList)[#self.pieceItemList + 1] = uiitem
-    local data = (self.pieceDataList)[i]
+    local uiitem = self._pieceGameArea[i]
+    self.pieceItemList[#self.pieceItemList + 1] = uiitem
+    local data = self.pieceDataList[i]
     uiitem:SetData(i, data, function(uiitem)
-    -- function num : 0_3_1 , upvalues : self
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-    if #self.selectComboPiece == 0 then
-      (self.selectComboPiece)[1] = uiitem
-    else
-      if #self.selectComboPiece == 1 then
-        if ((self.selectComboPiece)[1]).pieceData ~= uiitem.pieceData then
-          local datax = (((self.selectComboPiece)[1]).pieceData).hoIndex
-          local datay = (((self.selectComboPiece)[1]).pieceData).verIndex
-          local data2x = (uiitem.pieceData).hoIndex
-          local data2y = (uiitem.pieceData).verIndex
-          local index1 = ((self.selectComboPiece)[1]).index
+      if #self.selectComboPiece == 0 then
+        self.selectComboPiece[1] = uiitem
+      elseif #self.selectComboPiece == 1 then
+        if self.selectComboPiece[1].pieceData ~= uiitem.pieceData then
+          local datax = self.selectComboPiece[1].pieceData.hoIndex
+          local datay = self.selectComboPiece[1].pieceData.verIndex
+          local data2x = uiitem.pieceData.hoIndex
+          local data2y = uiitem.pieceData.verIndex
+          local index1 = self.selectComboPiece[1].index
           local index2 = uiitem.index
-          local itemPer1 = (self.pieceItemList)[index1]
-          local itemPer2 = (self.pieceItemList)[index2]
-          -- DECOMPILER ERROR at PC38: Confused about usage of register: R9 in 'UnsetPending'
-
-          ;
-          (self.pieceItemList)[index1] = itemPer2
-          -- DECOMPILER ERROR at PC40: Confused about usage of register: R9 in 'UnsetPending'
-
-          ;
-          (self.pieceItemList)[index2] = itemPer1
-          ;
-          ((self.selectComboPiece)[1]):TransPiece(data2x, data2y, index2)
+          local itemPer1 = self.pieceItemList[index1]
+          local itemPer2 = self.pieceItemList[index2]
+          self.pieceItemList[index1] = itemPer2
+          self.pieceItemList[index2] = itemPer1
+          self.selectComboPiece[1]:TransPiece(data2x, data2y, index2)
           uiitem:TransPiece(datax, datay, index1)
-          -- DECOMPILER ERROR at PC54: Confused about usage of register: R9 in 'UnsetPending'
-
-          ;
-          (self.selectComboPiece)[1] = nil
+          self.selectComboPiece[1] = nil
           self:CheckGameSuc()
         else
-          do
-            -- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-            ;
-            (self.selectComboPiece)[1] = nil
-            uiitem:CancleCurPiece()
-            if #self.selectComboPiece > 1 then
-            end
-          end
+          self.selectComboPiece[1] = nil
+          uiitem:CancleCurPiece()
         end
+      elseif #self.selectComboPiece > 1 then
       end
-    end
-  end
-)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleMainGameController.InitBaseUI = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UICN13PerfectPuzzleMainGameController:InitBaseUI()
   self.costId = 3000386
   self.missionStateType = -1
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
-  local curCount = (self.itemModule):GetItemCount(self.costId)
+  self.itemModule = GameGlobal.GetModule(ItemModule)
+  local curCount = self.itemModule:GetItemCount(self.costId)
   local notLockItem = true
-  local unlockItem = (self._cfg).UnlockItem
+  local unlockItem = self._cfg.UnlockItem
   if unlockItem ~= nil and #unlockItem ~= 0 then
-    local needCount = (unlockItem[1])[2]
-    if needCount <= curCount then
-      (self.needPieceText):SetText(needCount)
+    local needCount = unlockItem[1][2]
+    if curCount >= needCount then
+      self.needPieceText:SetText(needCount)
     else
       local str = "<color=#FF0000>" .. needCount .. "</color>"
-      ;
-      (self.needPieceText):SetText(str)
+      self.needPieceText:SetText(str)
     end
-    do
-      do
-        notLockItem = false
-        ;
-        (self.totalPieceCountText):SetText(curCount)
-        ;
-        (self.titleText):SetText((StringTable.Get)((self._cfg).Name))
-        ;
-        (self.successTitleText):SetText((StringTable.Get)((self._cfg).Name))
-        if self:CheckLock() and not notLockItem then
-          (self.lockObj):SetActive(true)
-          ;
-          (self.successRoot):SetActive(false)
-          ;
-          (self.needPiece):SetActive(true)
-          ;
-          ((self.unLockPuzzleBtn).gameObject):SetActive(true)
-          ;
-          ((self.originViewBtn).gameObject):SetActive(false)
-          self.missionStateType = 0
-        else
-          if self:CheckComplete() then
-            (self.lockObj):SetActive(false)
-            ;
-            (self.successRoot):SetActive(true)
-            ;
-            (self.needPiece):SetActive(false)
-            ;
-            ((self.unLockPuzzleBtn).gameObject):SetActive(false)
-            ;
-            ((self.originViewBtn).gameObject):SetActive(false)
-            ;
-            ((self.titleText).gameObject):SetActive(false)
-            ;
-            (self.puzzlePieceRootObj):SetActive(false)
-            ;
-            (self.successRoot):SetActive(true)
-            ;
-            (self.successfulObj):SetActive(true)
-            self._pieceGameArea_suc = (UIWidgetHelper.SpawnObjects)(self, "SuccessRoot", "UICN13PuzzlePieceItem", #self.sucPieceDataList)
-            for i = 1, #self._pieceGameArea_suc do
-              local uiitem = (self._pieceGameArea_suc)[i]
-              local data = (self.sucPieceDataList)[i]
-              uiitem:SetData(i, data)
-            end
-            self.missionStateType = 2
-          else
-            ;
-            (self.lockObj):SetActive(false)
-            ;
-            (self.successRoot):SetActive(false)
-            ;
-            (self.needPiece):SetActive(false)
-            ;
-            ((self.unLockPuzzleBtn).gameObject):SetActive(false)
-            ;
-            ((self.originViewBtn).gameObject):SetActive(true)
-            self.missionStateType = 1
-          end
-        end
-      end
+    notLockItem = false
+  end
+  self.totalPieceCountText:SetText(curCount)
+  self.titleText:SetText(StringTable.Get(self._cfg.Name))
+  self.successTitleText:SetText(StringTable.Get(self._cfg.Name))
+  if self:CheckLock() and not notLockItem then
+    self.lockObj:SetActive(true)
+    self.successRoot:SetActive(false)
+    self.needPiece:SetActive(true)
+    self.unLockPuzzleBtn.gameObject:SetActive(true)
+    self.originViewBtn.gameObject:SetActive(false)
+    self.missionStateType = 0
+  elseif self:CheckComplete() then
+    self.lockObj:SetActive(false)
+    self.successRoot:SetActive(true)
+    self.needPiece:SetActive(false)
+    self.unLockPuzzleBtn.gameObject:SetActive(false)
+    self.originViewBtn.gameObject:SetActive(false)
+    self.titleText.gameObject:SetActive(false)
+    self.puzzlePieceRootObj:SetActive(false)
+    self.successRoot:SetActive(true)
+    self.successfulObj:SetActive(true)
+    self._pieceGameArea_suc = UIWidgetHelper.SpawnObjects(self, "SuccessRoot", "UICN13PuzzlePieceItem", #self.sucPieceDataList)
+    for i = 1, #self._pieceGameArea_suc do
+      local uiitem = self._pieceGameArea_suc[i]
+      local data = self.sucPieceDataList[i]
+      uiitem:SetData(i, data)
     end
+    self.missionStateType = 2
+  else
+    self.lockObj:SetActive(false)
+    self.successRoot:SetActive(false)
+    self.needPiece:SetActive(false)
+    self.unLockPuzzleBtn.gameObject:SetActive(false)
+    self.originViewBtn.gameObject:SetActive(true)
+    self.missionStateType = 1
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleMainGameController.CheckLock = function(self)
-  -- function num : 0_5
+function UICN13PerfectPuzzleMainGameController:CheckLock()
   local lock = true
-  if (self._componentInfo).m_unlock_missions == nil then
+  if self._componentInfo.m_unlock_missions == nil then
     return true
   end
-  for i = 1, #(self._componentInfo).m_unlock_missions do
-    local id = ((self._componentInfo).m_unlock_missions)[i]
-    if id == (self._cfg).MissionID then
+  for i = 1, #self._componentInfo.m_unlock_missions do
+    local id = self._componentInfo.m_unlock_missions[i]
+    if id == self._cfg.MissionID then
       lock = false
     end
   end
   return lock
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleMainGameController.CheckComplete = function(self)
-  -- function num : 0_6
+function UICN13PerfectPuzzleMainGameController:CheckComplete()
   local complete = false
-  if (self._componentInfo).m_pass_mission_info == nil then
+  if self._componentInfo.m_pass_mission_info == nil then
     return false
   end
-  local passInfo = ((self._componentInfo).m_pass_mission_info)[(self._cfg).MissionID]
+  local passInfo = self._componentInfo.m_pass_mission_info[self._cfg.MissionID]
   if passInfo ~= nil then
     complete = true
   end
   return complete
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleMainGameController.CheckGameSuc = function(self)
-  -- function num : 0_7
+function UICN13PerfectPuzzleMainGameController:CheckGameSuc()
   local suc = true
   for i = 1, #self.pieceItemList do
-    local res = (((self.pieceItemList)[i]).pieceData).resName
-    local sucRes = ((self.sucPieceDataList)[i]).resName
+    local res = self.pieceItemList[i].pieceData.resName
+    local sucRes = self.sucPieceDataList[i].resName
     if res ~= sucRes then
       suc = false
     end
@@ -307,159 +210,110 @@ UICN13PerfectPuzzleMainGameController.CheckGameSuc = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleMainGameController.Task_TrasnPieceShow = function(self, TT)
-  -- function num : 0_8
+function UICN13PerfectPuzzleMainGameController:Task_TrasnPieceShow(TT)
   self:Lock("UICN13PerfectPuzzleMainGameController:Task_TrasnPieceShow")
   self:UnLock("UICN13PerfectPuzzleMainGameController:Task_TrasnPieceShow")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleMainGameController.Task_GameSuc = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
+function UICN13PerfectPuzzleMainGameController:Task_GameSuc(TT)
   self:Lock("UICN13PerfectPuzzleMainGameController:Task_GameSuc")
   local res = AsyncRequestRes:New()
-  ;
-  (self._component):HandleCompletePerfectPuzzle(TT, res, self.missionId, 0)
-  ;
-  (self.anim):Play("uianim_UICN13PerfectPuzzleMainGameController_succesfull")
+  self._component:HandleCompletePerfectPuzzle(TT, res, self.missionId, 0)
+  self.anim:Play("uianim_UICN13PerfectPuzzleMainGameController_succesfull")
   YIELD(TT, 1000)
-  ;
-  (self.successRoot):SetActive(true)
-  self._pieceGameArea_suc = (UIWidgetHelper.SpawnObjects)(self, "SuccessRoot", "UICN13PuzzlePieceItem", #self.sucPieceDataList)
+  self.successRoot:SetActive(true)
+  self._pieceGameArea_suc = UIWidgetHelper.SpawnObjects(self, "SuccessRoot", "UICN13PuzzlePieceItem", #self.sucPieceDataList)
   for i = 1, #self._pieceGameArea_suc do
-    local uiitem = (self._pieceGameArea_suc)[i]
-    local data = (self.sucPieceDataList)[i]
+    local uiitem = self._pieceGameArea_suc[i]
+    local data = self.sucPieceDataList[i]
     uiitem:SetData(i, data)
   end
-  ;
-  (self.anim):Play("uianim_UICN13PerfectPuzzleMainGameController_midlle_in")
+  self.anim:Play("uianim_UICN13PerfectPuzzleMainGameController_midlle_in")
   if res:GetSucc() then
     YIELD(TT, 1000)
     self:UnLock("UICN13PerfectPuzzleMainGameController:Task_GameSuc")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PerfectPuzzleEntryRefresh)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.PerfectPuzzleEntryRefresh)
     self:CloseDialog()
-    return 
+    return
   else
     self:UnLock("UICN13PerfectPuzzleMainGameController:Task_GameSuc")
     self:CloseDialog()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleMainGameController.Task_UnLockMission = function(self, TT)
-  -- function num : 0_10 , upvalues : _ENV
-  (self.anim):Play("uianim_UICN13PerfectPuzzleMainGameController_unlock_click")
+function UICN13PerfectPuzzleMainGameController:Task_UnLockMission(TT)
+  self.anim:Play("uianim_UICN13PerfectPuzzleMainGameController_unlock_click")
   self:Lock("UICN13PerfectPuzzleMainGameController:Task_UnLockMission")
   local res = AsyncRequestRes:New()
-  ;
-  (self._component):HandleUnlockPerfectPuzzle(TT, res, self.missionId)
+  self._component:HandleUnlockPerfectPuzzle(TT, res, self.missionId)
   YIELD(TT, 250)
   if res:GetSucc() then
     self:UnLock("UICN13PerfectPuzzleMainGameController:Task_UnLockMission")
     self:RefreshUnlockMission()
-    return 
+    return
   else
-    ;
-    (Log.error)("解锁失败")
+    Log.error("解锁失败")
     self:UnLock("UICN13PerfectPuzzleMainGameController:Task_UnLockMission")
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleMainGameController.RefreshUnlockMission = function(self)
-  -- function num : 0_11
-  (self.lockObj):SetActive(false)
-  ;
-  (self.successRoot):SetActive(false)
-  ;
-  (self.needPiece):SetActive(false)
-  ;
-  ((self.unLockPuzzleBtn).gameObject):SetActive(false)
-  ;
-  ((self.originViewBtn).gameObject):SetActive(true)
-  local curCount = (self.itemModule):GetItemCount(self.costId)
-  ;
-  (self.totalPieceCountText):SetText(curCount)
+function UICN13PerfectPuzzleMainGameController:RefreshUnlockMission()
+  self.lockObj:SetActive(false)
+  self.successRoot:SetActive(false)
+  self.needPiece:SetActive(false)
+  self.unLockPuzzleBtn.gameObject:SetActive(false)
+  self.originViewBtn.gameObject:SetActive(true)
+  local curCount = self.itemModule:GetItemCount(self.costId)
+  self.totalPieceCountText:SetText(curCount)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleMainGameController.ActivityTipsbtnOnClick = function(self, go)
-  -- function num : 0_12
+function UICN13PerfectPuzzleMainGameController:ActivityTipsbtnOnClick(go)
   self:ShowDialog("UICN13PerfectPuzzleIntro")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleMainGameController.UnLockPuzzleBtnOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  if not (self._campaign):CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._campaign)._id)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
+function UICN13PerfectPuzzleMainGameController:UnLockPuzzleBtnOnClick(go)
+  if not self._campaign:CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaign._id)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
     self:CloseDialog()
-    return 
+    return
   end
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
-  local curCount = (self.itemModule):GetItemCount(self.costId)
-  local unlockItem = (self._cfg).UnlockItem
+  self.itemModule = GameGlobal.GetModule(ItemModule)
+  local curCount = self.itemModule:GetItemCount(self.costId)
+  local unlockItem = self._cfg.UnlockItem
   if unlockItem ~= nil and #unlockItem ~= 0 then
-    local needCount = (unlockItem[1])[2]
-    if needCount <= curCount then
+    local needCount = unlockItem[1][2]
+    if curCount >= needCount then
       self.gameUnLockTaskID = self:StartTask(self.Task_UnLockMission, self)
     else
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_cn13_PerfectPuzzle_cost_uncan"))
+      ToastManager.ShowToast(StringTable.Get("str_cn13_PerfectPuzzle_cost_uncan"))
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleMainGameController.OriginViewBtnOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
-  (self.successRoot):SetActive(true)
-  ;
-  (self.closeSuccRootBtnObj):SetActive(true)
-  self._pieceGameArea_suc = (UIWidgetHelper.SpawnObjects)(self, "SuccessRoot", "UICN13PuzzlePieceItem", #self.sucPieceDataList)
+function UICN13PerfectPuzzleMainGameController:OriginViewBtnOnClick(go)
+  self.successRoot:SetActive(true)
+  self.closeSuccRootBtnObj:SetActive(true)
+  self._pieceGameArea_suc = UIWidgetHelper.SpawnObjects(self, "SuccessRoot", "UICN13PuzzlePieceItem", #self.sucPieceDataList)
   for i = 1, #self._pieceGameArea_suc do
-    local uiitem = (self._pieceGameArea_suc)[i]
-    local data = (self.sucPieceDataList)[i]
+    local uiitem = self._pieceGameArea_suc[i]
+    local data = self.sucPieceDataList[i]
     uiitem:SetData(i, data)
   end
-  ;
-  (self.anim):Play("uianim_UICN13PerfectPuzzleMainGameController_midlle_in")
+  self.anim:Play("uianim_UICN13PerfectPuzzleMainGameController_midlle_in")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleMainGameController.CloseSuccRootBtnOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : _ENV
-  if ((self.successRoot).gameObject).activeSelf then
-    (self.anim):Play("uianim_UICN13PerfectPuzzleMainGameController_midlle_out")
-    ;
-    ((GameGlobal.Timer)()):AddEvent(400, function()
-    -- function num : 0_15_0 , upvalues : self
-    (self.successRoot):SetActive(false)
-    ;
-    (self.closeSuccRootBtnObj):SetActive(false)
-  end
-)
+function UICN13PerfectPuzzleMainGameController:CloseSuccRootBtnOnClick(go)
+  if self.successRoot.gameObject.activeSelf then
+    self.anim:Play("uianim_UICN13PerfectPuzzleMainGameController_midlle_out")
+    GameGlobal.Timer():AddEvent(400, function()
+      self.successRoot:SetActive(false)
+      self.closeSuccRootBtnObj:SetActive(false)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleMainGameController.PieceCountRootOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
-  local pos = (go.transform).position - ((self.rightTop).transform).position
+function UICN13PerfectPuzzleMainGameController:PieceCountRootOnClick(go)
+  local pos = go.transform.position - self.rightTop.transform.position
   UITopTipsContext:PopupTips(self.costId, Vector2(-120, 30), pos)
 end
-
-

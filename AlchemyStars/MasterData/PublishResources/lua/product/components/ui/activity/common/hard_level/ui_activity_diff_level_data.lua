@@ -1,140 +1,143 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common/hard_level/ui_activity_diff_level_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityDiffLevelCupData", Object)
 UIActivityDiffLevelCupData = UIActivityDiffLevelCupData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityDiffLevelCupData.Constructor = function(self, complete, id)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityDiffLevelCupData:Constructor(complete, id)
   self._isComplete = complete
-  local cfg = (Cfg.cfg_difficulty_mission_enties)[id]
+  local cfg = Cfg.cfg_difficulty_mission_enties[id]
   if not cfg then
-    (Log.error)("###[UIDiffStageCupItem] cfg is nil ! id --> ", id)
+    Log.error("###[UIDiffStageCupItem] cfg is nil ! id --> ", id)
   end
   self._des = ""
   local cond = cfg.Cond
-  do
-    if cond then
-      local desc = cfg.Desc
-      if desc then
-        self._des = (UIActivityDiffLevelCupData.GetDiffMissionEnties)(desc)
-      end
+  if cond then
+    local desc = cfg.Desc
+    if desc then
+      self._des = UIActivityDiffLevelCupData.GetDiffMissionEnties(desc)
     end
-    self._rewardCount = 0
-    self._rewardIcon = ""
-    local awards = cfg.Rewards
-    if awards then
-      self._rewardCount = (awards[1])[2]
-      local itemId = (awards[1])[1]
-      local cfg_item = (Cfg.cfg_item)[itemId]
-      if not cfg_item then
-        (Log.error)("###[UIDiffStageCupItem] cfg_item is nil ! id --> ", (self._award).id)
-      end
-      self._rewardIcon = cfg_item.Icon
+  end
+  self._rewardCount = 0
+  self._rewardIcon = ""
+  local awards = cfg.Rewards
+  if awards then
+    self._rewardCount = awards[1][2]
+    local itemId = awards[1][1]
+    local cfg_item = Cfg.cfg_item[itemId]
+    if not cfg_item then
+      Log.error("###[UIDiffStageCupItem] cfg_item is nil ! id --> ", self._award.id)
     end
+    self._rewardIcon = cfg_item.Icon
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelCupData.IsComplete = function(self)
-  -- function num : 0_1
+function UIActivityDiffLevelCupData:IsComplete()
   return self._isComplete
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelCupData.GetDes = function(self)
-  -- function num : 0_2
+function UIActivityDiffLevelCupData:GetDes()
   return self._des
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelCupData.GetRewardIcon = function(self)
-  -- function num : 0_3
+function UIActivityDiffLevelCupData:GetRewardIcon()
   return self._rewardIcon
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelCupData.GetRewardCount = function(self)
-  -- function num : 0_4
+function UIActivityDiffLevelCupData:GetRewardCount()
   return self._rewardCount
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelCupData.CreateEntiesDesc = function()
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
+function UIActivityDiffLevelCupData.CreateEntiesDesc()
   UIActivityDiffLevelCupData._entiesType2paramTex = {
-[EntiesType.ElementType_Prof] = {[PetProfType.PetProf_Color] = "str_pet_tag_job_name_color_change", [PetProfType.PetProf_Blood] = "str_pet_tag_job_name_return_blood", [PetProfType.PetProf_Attack] = "str_pet_tag_job_name_attack", [PetProfType.PetProf_Function] = "str_pet_tag_job_name_function"}
-, 
-[EntiesType.ElementType_Force] = {[PetForceType.PetForce_BaiYeCheng] = "str_pet_tag_faction_name_1", [PetForceType.PetForce_BaiYeXiaCheng] = "str_pet_tag_faction_name_2", [PetForceType.PetForce_QiGuang] = "str_pet_tag_faction_name_3", [PetForceType.PetForce_BeiJing] = "str_pet_tag_faction_name_4", [PetForceType.PetForce_HongYouBanShou] = "str_pet_tag_faction_name_5", [PetForceType.PetForce_TaiYangJiaoTuan] = "str_pet_tag_faction_name_6", [PetForceType.PetForce_YouMin] = "str_pet_tag_faction_name_7", [PetForceType.PetForce_RiShi] = "str_pet_tag_faction_name_8"}
-, 
-[EntiesType.ElementType_Elem] = {[ElementType.ElementType_Blue] = "str_pet_filter_water_element", [ElementType.ElementType_Red] = "str_pet_filter_fire_element", [ElementType.ElementType_Green] = "str_pet_filter_sen_element", [ElementType.ElementType_Yellow] = "str_pet_filter_electricity_element", [ElementType.ElementType_AnyNone] = "str_tale_pet_att_none"}
-}
-  -- DECOMPILER ERROR at PC153: Confused about usage of register: R0 in 'UnsetPending'
-
-  UIActivityDiffLevelCupData._entiesType2tex = {[EntiesType.ElementType_None] = "str_diff_mission_enties_desc_3001", [EntiesType.ElementType_Level_Count] = "str_diff_mission_enties_desc_3007", [EntiesType.ElementType_Round_Count] = "str_diff_mission_enties_desc_3008", 
-[EntiesType.ElementType_Prof] = {[EntiesCompareType.ElementCompareType_All] = "str_diff_mission_enties_desc_3002_1", [EntiesCompareType.ElementCompareType_No] = "str_diff_mission_enties_desc_3002_2", [EntiesCompareType.ElementCompareType_Less] = "str_diff_mission_enties_desc_3002_3", [EntiesCompareType.ElementCompareType_More] = "str_diff_mission_enties_desc_3002_4", [EntiesCompareType.ElementCompareType_Equal] = "str_diff_mission_enties_desc_3002_5"}
-, 
-[EntiesType.ElementType_Force] = {[EntiesCompareType.ElementCompareType_All] = "str_diff_mission_enties_desc_3004_1", [EntiesCompareType.ElementCompareType_No] = "str_diff_mission_enties_desc_3004_2", [EntiesCompareType.ElementCompareType_Less] = "str_diff_mission_enties_desc_3004_3", [EntiesCompareType.ElementCompareType_More] = "str_diff_mission_enties_desc_3004_4", [EntiesCompareType.ElementCompareType_Equal] = "str_diff_mission_enties_desc_3004_5"}
-, 
-[EntiesType.ElementType_Star] = {[EntiesCompareType.ElementCompareType_All] = "str_diff_mission_enties_desc_3005_1", [EntiesCompareType.ElementCompareType_No] = "str_diff_mission_enties_desc_3005_2", [EntiesCompareType.ElementCompareType_Less] = "str_diff_mission_enties_desc_3005_3", [EntiesCompareType.ElementCompareType_More] = "str_diff_mission_enties_desc_3005_4", [EntiesCompareType.ElementCompareType_Equal] = "str_diff_mission_enties_desc_3005_5"}
-, 
-[EntiesType.ElementType_Elem] = {[EntiesCompareType.ElementCompareType_All] = "str_diff_mission_enties_desc_3006_1", [EntiesCompareType.ElementCompareType_No] = "str_diff_mission_enties_desc_3006_2", [EntiesCompareType.ElementCompareType_Less] = "str_diff_mission_enties_desc_3006_3", [EntiesCompareType.ElementCompareType_More] = "str_diff_mission_enties_desc_3006_4", [EntiesCompareType.ElementCompareType_Equal] = "str_diff_mission_enties_desc_3006_6"}
-}
+    [EntiesType.ElementType_Prof] = {
+      [PetProfType.PetProf_Color] = "str_pet_tag_job_name_color_change",
+      [PetProfType.PetProf_Blood] = "str_pet_tag_job_name_return_blood",
+      [PetProfType.PetProf_Attack] = "str_pet_tag_job_name_attack",
+      [PetProfType.PetProf_Function] = "str_pet_tag_job_name_function"
+    },
+    [EntiesType.ElementType_Force] = {
+      [PetForceType.PetForce_BaiYeCheng] = "str_pet_tag_faction_name_1",
+      [PetForceType.PetForce_BaiYeXiaCheng] = "str_pet_tag_faction_name_2",
+      [PetForceType.PetForce_QiGuang] = "str_pet_tag_faction_name_3",
+      [PetForceType.PetForce_BeiJing] = "str_pet_tag_faction_name_4",
+      [PetForceType.PetForce_HongYouBanShou] = "str_pet_tag_faction_name_5",
+      [PetForceType.PetForce_TaiYangJiaoTuan] = "str_pet_tag_faction_name_6",
+      [PetForceType.PetForce_YouMin] = "str_pet_tag_faction_name_7",
+      [PetForceType.PetForce_RiShi] = "str_pet_tag_faction_name_8"
+    },
+    [EntiesType.ElementType_Elem] = {
+      [ElementType.ElementType_Blue] = "str_pet_filter_water_element",
+      [ElementType.ElementType_Red] = "str_pet_filter_fire_element",
+      [ElementType.ElementType_Green] = "str_pet_filter_sen_element",
+      [ElementType.ElementType_Yellow] = "str_pet_filter_electricity_element",
+      [ElementType.ElementType_AnyNone] = "str_tale_pet_att_none"
+    }
+  }
+  UIActivityDiffLevelCupData._entiesType2tex = {
+    [EntiesType.ElementType_None] = "str_diff_mission_enties_desc_3001",
+    [EntiesType.ElementType_Level_Count] = "str_diff_mission_enties_desc_3007",
+    [EntiesType.ElementType_Round_Count] = "str_diff_mission_enties_desc_3008",
+    [EntiesType.ElementType_Prof] = {
+      [EntiesCompareType.ElementCompareType_All] = "str_diff_mission_enties_desc_3002_1",
+      [EntiesCompareType.ElementCompareType_No] = "str_diff_mission_enties_desc_3002_2",
+      [EntiesCompareType.ElementCompareType_Less] = "str_diff_mission_enties_desc_3002_3",
+      [EntiesCompareType.ElementCompareType_More] = "str_diff_mission_enties_desc_3002_4",
+      [EntiesCompareType.ElementCompareType_Equal] = "str_diff_mission_enties_desc_3002_5"
+    },
+    [EntiesType.ElementType_Force] = {
+      [EntiesCompareType.ElementCompareType_All] = "str_diff_mission_enties_desc_3004_1",
+      [EntiesCompareType.ElementCompareType_No] = "str_diff_mission_enties_desc_3004_2",
+      [EntiesCompareType.ElementCompareType_Less] = "str_diff_mission_enties_desc_3004_3",
+      [EntiesCompareType.ElementCompareType_More] = "str_diff_mission_enties_desc_3004_4",
+      [EntiesCompareType.ElementCompareType_Equal] = "str_diff_mission_enties_desc_3004_5"
+    },
+    [EntiesType.ElementType_Star] = {
+      [EntiesCompareType.ElementCompareType_All] = "str_diff_mission_enties_desc_3005_1",
+      [EntiesCompareType.ElementCompareType_No] = "str_diff_mission_enties_desc_3005_2",
+      [EntiesCompareType.ElementCompareType_Less] = "str_diff_mission_enties_desc_3005_3",
+      [EntiesCompareType.ElementCompareType_More] = "str_diff_mission_enties_desc_3005_4",
+      [EntiesCompareType.ElementCompareType_Equal] = "str_diff_mission_enties_desc_3005_5"
+    },
+    [EntiesType.ElementType_Elem] = {
+      [EntiesCompareType.ElementCompareType_All] = "str_diff_mission_enties_desc_3006_1",
+      [EntiesCompareType.ElementCompareType_No] = "str_diff_mission_enties_desc_3006_2",
+      [EntiesCompareType.ElementCompareType_Less] = "str_diff_mission_enties_desc_3006_3",
+      [EntiesCompareType.ElementCompareType_More] = "str_diff_mission_enties_desc_3006_4",
+      [EntiesCompareType.ElementCompareType_Equal] = "str_diff_mission_enties_desc_3006_6"
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelCupData.GetDiffMissionEnties = function(enties)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityDiffLevelCupData.GetDiffMissionEnties(enties)
   if not enties or not next(enties) then
     return ""
   end
   local entiesType = enties[1]
   if entiesType == EntiesType.ElementType_None then
-    return (StringTable.Get)((UIActivityDiffLevelCupData._entiesType2tex)[entiesType])
+    return StringTable.Get(UIActivityDiffLevelCupData._entiesType2tex[entiesType])
+  elseif entiesType == EntiesType.ElementType_Level_Count then
+    return StringTable.Get(UIActivityDiffLevelCupData._entiesType2tex[entiesType], enties[2])
+  elseif entiesType == EntiesType.ElementType_Round_Count then
+    return StringTable.Get(UIActivityDiffLevelCupData._entiesType2tex[entiesType], enties[2])
   else
-    if entiesType == EntiesType.ElementType_Level_Count then
-      return (StringTable.Get)((UIActivityDiffLevelCupData._entiesType2tex)[entiesType], enties[2])
+    local paramType = enties[2]
+    local compareType = enties[3]
+    local paramNum = enties[4]
+    local typeStr = UIActivityDiffLevelCupData._entiesType2tex[entiesType][compareType]
+    local paramStr
+    if entiesType == EntiesType.ElementType_Star then
+      paramStr = paramType
     else
-      if entiesType == EntiesType.ElementType_Round_Count then
-        return (StringTable.Get)((UIActivityDiffLevelCupData._entiesType2tex)[entiesType], enties[2])
-      else
-        local paramType = enties[2]
-        local compareType = enties[3]
-        local paramNum = enties[4]
-        local typeStr = ((UIActivityDiffLevelCupData._entiesType2tex)[entiesType])[compareType]
-        local paramStr = nil
-        if entiesType == EntiesType.ElementType_Star then
-          paramStr = paramType
-        else
-          paramStr = (StringTable.Get)(((UIActivityDiffLevelCupData._entiesType2paramTex)[entiesType])[paramType])
-        end
-        local desc = (StringTable.Get)(typeStr, paramStr, paramNum)
-        return desc
-      end
+      paramStr = StringTable.Get(UIActivityDiffLevelCupData._entiesType2paramTex[entiesType][paramType])
     end
+    local desc = StringTable.Get(typeStr, paramStr, paramNum)
+    return desc
   end
-  do
-    return ""
-  end
+  return ""
 end
 
 _class("UIActivityDiffLevelData", Object)
 UIActivityDiffLevelData = UIActivityDiffLevelData
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityDiffLevelData.Constructor = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityDiffLevelData:Constructor()
   self._name = ""
   self._nodeName = ""
   self._position = Vector2(0, 0)
@@ -156,16 +159,13 @@ UIActivityDiffLevelData.Constructor = function(self)
   self._compInfo = nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.InitParentLevel = function(self, component, componentInfo, cfg)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityDiffLevelData:InitParentLevel(component, componentInfo, cfg)
   self._cfg = cfg
   self._missionId = cfg.ID
   self._levelId = 0
-  self._nodeName = (StringTable.Get)(cfg.Name)
+  self._nodeName = StringTable.Get(cfg.Name)
   local chapterTitleTxt = "请填表：cfg_difficulty_parent_mission,ID:" .. self._missionId
-  self._lastNodeName = cfg.PreMission and (StringTable.Get)(((Cfg.cfg_difficulty_parent_mission)[cfg.PreMission]).Name) or ""
+  self._lastNodeName = cfg.PreMission and StringTable.Get(Cfg.cfg_difficulty_parent_mission[cfg.PreMission].Name) or ""
   self._isParentLevel = true
   self._recommendAwaken = 0
   self._recommendLV = 0
@@ -174,65 +174,45 @@ UIActivityDiffLevelData.InitParentLevel = function(self, component, componentInf
   self._comp = component
   self._compInfo = componentInfo
   local pointId = cfg.WayPointId
-  do
-    if pointId then
-      local pointCfg = (Cfg.cfg_diff_mission_way_point)[pointId]
-      if pointCfg then
-        self._position = Vector2((pointCfg.Pos)[1], (pointCfg.Pos)[2])
-      end
-    end
-    if not (self._cfg).Chapter or not (self._cfg).Chapter then
-      self._name = (StringTable.Get)(chapterTitleTxt)
-      self._childLevels = {}
-      local subMissionList = cfg.SubMissionList
-      if subMissionList then
-        for i = 1, #subMissionList do
-          local level = UIActivityDiffLevelData:New()
-          level:InitChildLevel(component, componentInfo, self._missionId, subMissionList[i])
-          -- DECOMPILER ERROR at PC89: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          (self._childLevels)[#self._childLevels + 1] = level
-        end
-      end
-      do
-        self:RefreshParentLevel(component, componentInfo)
-      end
+  if pointId then
+    local pointCfg = Cfg.cfg_diff_mission_way_point[pointId]
+    if pointCfg then
+      self._position = Vector2(pointCfg.Pos[1], pointCfg.Pos[2])
     end
   end
+  chapterTitleTxt = self._cfg.Chapter and self._cfg.Chapter or chapterTitleTxt
+  self._name = StringTable.Get(chapterTitleTxt)
+  self._childLevels = {}
+  local subMissionList = cfg.SubMissionList
+  if subMissionList then
+    for i = 1, #subMissionList do
+      local level = UIActivityDiffLevelData:New()
+      level:InitChildLevel(component, componentInfo, self._missionId, subMissionList[i])
+      self._childLevels[#self._childLevels + 1] = level
+    end
+  end
+  self:RefreshParentLevel(component, componentInfo)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.GetLevelCfg = function(self)
-  -- function num : 0_9
+function UIActivityDiffLevelData:GetLevelCfg()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.GetDiffLevelComp = function(self)
-  -- function num : 0_10
+function UIActivityDiffLevelData:GetDiffLevelComp()
   return self._comp
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.GetDiffLevelCompInfo = function(self)
-  -- function num : 0_11
+function UIActivityDiffLevelData:GetDiffLevelCompInfo()
   return self._compInfo
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.RefreshParentLevel = function(self, component, componentInfo)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityDiffLevelData:RefreshParentLevel(component, componentInfo)
   for i = 1, #self._childLevels do
-    ((self._childLevels)[i]):RefreshChildLevel(component, componentInfo, self._missionId)
+    self._childLevels[i]:RefreshChildLevel(component, componentInfo, self._missionId)
   end
   self._cupDatas = {}
-  local parentMissionInfo = (componentInfo.infos)[self._missionId]
-  local enties = (self._cfg).Enties
+  local parentMissionInfo = componentInfo.infos[self._missionId]
+  local enties = self._cfg.Enties
   for i = 1, #enties do
     local complete = false
     if parentMissionInfo then
@@ -246,17 +226,8 @@ UIActivityDiffLevelData.RefreshParentLevel = function(self, component, component
         end
       end
     end
-    do
-      do
-        local cup = UIActivityDiffLevelCupData:New(complete, enties[i])
-        -- DECOMPILER ERROR at PC50: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (self._cupDatas)[#self._cupDatas + 1] = cup
-        -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    local cup = UIActivityDiffLevelCupData:New(complete, enties[i])
+    self._cupDatas[#self._cupDatas + 1] = cup
   end
   if parentMissionInfo and parentMissionInfo.status == 1 then
     self._isComplete = true
@@ -264,42 +235,32 @@ UIActivityDiffLevelData.RefreshParentLevel = function(self, component, component
     self._isComplete = false
   end
   self._isOpen = false
-  local diffCfg = (Cfg.cfg_component_difficulty_mission)({ComponentID = component:GetComponentCfgId(), CampaignMissionId = self._missionId})
+  local diffCfg = Cfg.cfg_component_difficulty_mission({
+    ComponentID = component:GetComponentCfgId(),
+    CampaignMissionId = self._missionId
+  })
   if diffCfg then
-    for k,v in pairs(diffCfg) do
+    for k, v in pairs(diffCfg) do
       if v.NeedMissionId and v.NeedMissionId > 0 then
-        local preMissionInfo = (componentInfo.infos)[v.NeedMissionId]
+        local preMissionInfo = componentInfo.infos[v.NeedMissionId]
         if preMissionInfo and preMissionInfo.status and preMissionInfo.status > 0 then
           self._isOpen = true
         end
       else
-        do
-          do
-            self._isOpen = true
-            self._openIcon = v.OpenIcon
-            self._unOpenIcon = v.UnOpenIcon
-            self._lockTips = v.LockTips
-            do break end
-            -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        self._isOpen = true
       end
+      self._openIcon = v.OpenIcon
+      self._unOpenIcon = v.UnOpenIcon
+      self._lockTips = v.LockTips
+      break
     end
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.InitChildLevel = function(self, component, componentInfo, parentMissionid, missionId)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityDiffLevelData:InitChildLevel(component, componentInfo, parentMissionid, missionId)
   self._missionId = missionId
-  local cfg = (Cfg.cfg_difficulty_sub_mission)[missionId]
-  self._name = (StringTable.Get)(cfg.MissionName)
+  local cfg = Cfg.cfg_difficulty_sub_mission[missionId]
+  self._name = StringTable.Get(cfg.MissionName)
   self._nodeName = self._name
   self._isParentLevel = false
   self._childLevels = {}
@@ -309,7 +270,7 @@ UIActivityDiffLevelData.InitChildLevel = function(self, component, componentInfo
   self._levelId = cfg.FightLevel
   self._position = Vector2(0, 0)
   if cfg.Position then
-    self._position = Vector2((cfg.Position)[1], (cfg.Position)[2])
+    self._position = Vector2(cfg.Position[1], cfg.Position[2])
   end
   if cfg.type == 1 then
     self._levelType = DiffMissionType.Normal
@@ -322,11 +283,8 @@ UIActivityDiffLevelData.InitChildLevel = function(self, component, componentInfo
   self:RefreshChildLevel(component, componentInfo, parentMissionid)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.RefreshChildLevel = function(self, component, componentInfo, parentMissionid)
-  -- function num : 0_14 , upvalues : _ENV
-  local subMissionInfo = (UIActivityDiffLevelData.SubLevelInfo)(componentInfo, parentMissionid, self._missionId)
+function UIActivityDiffLevelData:RefreshChildLevel(component, componentInfo, parentMissionid)
+  local subMissionInfo = UIActivityDiffLevelData.SubLevelInfo(componentInfo, parentMissionid, self._missionId)
   if subMissionInfo then
     self._isComplete = true
     self._team = subMissionInfo.pet_list
@@ -336,96 +294,57 @@ UIActivityDiffLevelData.RefreshChildLevel = function(self, component, componentI
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.GetOpenIcon = function(self)
-  -- function num : 0_15
+function UIActivityDiffLevelData:GetOpenIcon()
   return self._openIcon
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.GetUnOpenIcon = function(self)
-  -- function num : 0_16
+function UIActivityDiffLevelData:GetUnOpenIcon()
   return self._unOpenIcon
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.GetLockTips = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  return (StringTable.Get)(self._lockTips)
+function UIActivityDiffLevelData:GetLockTips()
+  return StringTable.Get(self._lockTips)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.GetLockTipsNoST = function(self)
-  -- function num : 0_18
+function UIActivityDiffLevelData:GetLockTipsNoST()
   return self._lockTips
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.GetLevelType = function(self)
-  -- function num : 0_19
+function UIActivityDiffLevelData:GetLevelType()
   return self._levelType
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.GetMissionId = function(self)
-  -- function num : 0_20
+function UIActivityDiffLevelData:GetMissionId()
   return self._missionId
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.GetName = function(self)
-  -- function num : 0_21
+function UIActivityDiffLevelData:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.GetNodeName = function(self)
-  -- function num : 0_22
+function UIActivityDiffLevelData:GetNodeName()
   return self._nodeName
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.GetLastNodeName = function(self)
-  -- function num : 0_23
+function UIActivityDiffLevelData:GetLastNodeName()
   return self._lastNodeName
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.GetPosition = function(self)
-  -- function num : 0_24
+function UIActivityDiffLevelData:GetPosition()
   return self._position
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.IsParentLevel = function(self)
-  -- function num : 0_25
+function UIActivityDiffLevelData:IsParentLevel()
   return self._isParentLevel
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.GetChildLevels = function(self)
-  -- function num : 0_26
+function UIActivityDiffLevelData:GetChildLevels()
   return self._childLevels
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.GetCompleteLevelCount = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UIActivityDiffLevelData:GetCompleteLevelCount()
   local count = 0
-  for k,v in pairs(self._childLevels) do
+  for k, v in pairs(self._childLevels) do
     if v:IsComplete() then
       count = count + 1
     end
@@ -433,33 +352,21 @@ UIActivityDiffLevelData.GetCompleteLevelCount = function(self)
   return count
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.IsComplete = function(self)
-  -- function num : 0_28
+function UIActivityDiffLevelData:IsComplete()
   return self._isComplete
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.IsOpen = function(self)
-  -- function num : 0_29
+function UIActivityDiffLevelData:IsOpen()
   return self._isOpen
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.GetCupDatas = function(self)
-  -- function num : 0_30
+function UIActivityDiffLevelData:GetCupDatas()
   return self._cupDatas
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.GetCompleteCupCount = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function UIActivityDiffLevelData:GetCompleteCupCount()
   local count = 0
-  for k,v in pairs(self._cupDatas) do
+  for k, v in pairs(self._cupDatas) do
     if v:IsComplete() then
       count = count + 1
     end
@@ -467,49 +374,32 @@ UIActivityDiffLevelData.GetCompleteCupCount = function(self)
   return count
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.GetTeam = function(self)
-  -- function num : 0_32
+function UIActivityDiffLevelData:GetTeam()
   return self._team
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.RecommendAwaken = function(self)
-  -- function num : 0_33
+function UIActivityDiffLevelData:RecommendAwaken()
   return self._recommendAwaken
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.RecommendLV = function(self)
-  -- function num : 0_34
+function UIActivityDiffLevelData:RecommendLV()
   return self._recommendLV
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.GetLevelId = function(self)
-  -- function num : 0_35
+function UIActivityDiffLevelData:GetLevelId()
   return self._levelId
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelData.SubLevelInfo = function(componentInfo, parentMissionId, missionId)
-  -- function num : 0_36
-  local parentMissionInfo = (componentInfo.infos)[parentMissionId]
+function UIActivityDiffLevelData.SubLevelInfo(componentInfo, parentMissionId, missionId)
+  local parentMissionInfo = componentInfo.infos[parentMissionId]
   if not parentMissionInfo then
     return nil
   end
   for i = 1, #parentMissionInfo.sub_mission_infos do
-    local missionInfo = (parentMissionInfo.sub_mission_infos)[i]
+    local missionInfo = parentMissionInfo.sub_mission_infos[i]
     if missionInfo.mission_id == missionId then
       return missionInfo
     end
   end
   return nil
 end
-
-

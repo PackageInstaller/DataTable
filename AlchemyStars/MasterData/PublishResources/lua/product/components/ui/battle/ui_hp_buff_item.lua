@@ -1,170 +1,99 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_hp_buff_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHPBuffItem", UICustomWidget)
 UIHPBuffItem = UIHPBuffItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHPBuffItem.Constructor = function(self)
-  -- function num : 0_0
+function UIHPBuffItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
-  self._transform = (self:GetGameObject()):GetComponent("Transform")
+function UIHPBuffItem:OnShow(uiParams)
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
+  self._transform = self:GetGameObject():GetComponent("Transform")
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "canvasGroup")
   self._image = self:GetUIComponent("RawImageLoader", "image")
   self._num = self:GetUIComponent("UILocalizationText", "num")
   self._countDownRoot = self:GetGameObject("countDownRoot")
   if self._countDownRoot then
     self._countDownNum = self:GetUIComponent("UILocalizationText", "countDownNum")
-    ;
-    (self._countDownRoot):SetActive(false)
+    self._countDownRoot:SetActive(false)
   end
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
   if self._canvasGroup then
-    (self._canvasGroup).alpha = 0
+    self._canvasGroup.alpha = 0
   end
   self._inMoeTween = false
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMin = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC60: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMax = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).sizeDelta = Vector2(39, 39)
+  self._rectTransform.anchorMin = Vector2(0.5, 0.5)
+  self._rectTransform.anchorMax = Vector2(0.5, 0.5)
+  self._rectTransform.sizeDelta = Vector2(39, 39)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffItem.OnHide = function(self)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIHPBuffItem:OnHide()
   if self._canvasGroup then
-    (self._canvasGroup).alpha = 0
+    self._canvasGroup.alpha = 0
   end
   self._buffViewInstance = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffItem.Dispose = function(self)
-  -- function num : 0_3
+function UIHPBuffItem:Dispose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffItem.SetTargetData = function(self, buffViewInstance)
-  -- function num : 0_4
+function UIHPBuffItem:SetTargetData(buffViewInstance)
   self._buffViewInstance = buffViewInstance
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffItem.SetData = function(self, buffViewInstance)
-  -- function num : 0_5
+function UIHPBuffItem:SetData(buffViewInstance)
   self._buffViewInstance = buffViewInstance
   self:RefreshData()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffItem.RefreshData = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHPBuffItem:RefreshData()
   if self._buffViewInstance == nil then
-    return 
+    return
   end
   if not self._image then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._num).text = (self._buffViewInstance):GetLayerText()
-  local countDown = (self._buffViewInstance):GetCountDown()
-  if countDown <= 0 then
-    (self._countDownRoot):SetActive(not countDown or not self._countDownRoot)
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._countDownNum).text = countDown
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-    if self._canvasGroup and (self._canvasGroup).alpha == 0 then
-      (self._canvasGroup).alpha = 1
-    end
-    ;
-    (self._transform):DOKill()
-    local buffIcon = (self._buffViewInstance):GetBuffIcon()
-    if not self._iconName then
-      self._iconName = buffIcon
-    elseif self._iconName == buffIcon then
-      return 
-    else
-      self._iconName = buffIcon
-    end
-    if buffIcon == nil then
-      (Log.exception)("buffIcon is nil or empty! buffID:", (self._buffViewInstance):BuffID())
-    end
-    ;
-    (self._image):LoadImage(buffIcon)
-    -- DECOMPILER ERROR: 7 unprocessed JMP targets
+  self._num.text = self._buffViewInstance:GetLayerText()
+  local countDown = self._buffViewInstance:GetCountDown()
+  if countDown and self._countDownRoot then
+    self._countDownRoot:SetActive(0 < countDown)
+    self._countDownNum.text = countDown
   end
+  if self._canvasGroup and self._canvasGroup.alpha == 0 then
+    self._canvasGroup.alpha = 1
+  end
+  self._transform:DOKill()
+  local buffIcon = self._buffViewInstance:GetBuffIcon()
+  if not self._iconName then
+    self._iconName = buffIcon
+  elseif self._iconName == buffIcon then
+    return
+  else
+    self._iconName = buffIcon
+  end
+  if buffIcon == nil then
+    Log.exception("buffIcon is nil or empty! buffID:", self._buffViewInstance:BuffID())
+  end
+  self._image:LoadImage(buffIcon)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffItem.IsInMoveTween = function(self)
-  -- function num : 0_7
+function UIHPBuffItem:IsInMoveTween()
   return self._inMoeTween
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffItem.DoMoveTween = function(self, buffViewInstance, startPos, endPos, duration)
-  -- function num : 0_8
+function UIHPBuffItem:DoMoveTween(buffViewInstance, startPos, endPos, duration)
   self:SetData(buffViewInstance)
   self._inMoeTween = true
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._transform).localPosition = startPos
-  self._tweener = ((self._transform):DOLocalMove(endPos, duration)):OnComplete(function()
-    -- function num : 0_8_0 , upvalues : self
+  self._transform.localPosition = startPos
+  self._tweener = self._transform:DOLocalMove(endPos, duration):OnComplete(function()
     self._inMoeTween = false
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
-
     if self._canvasGroup then
-      (self._canvasGroup).alpha = 0
+      self._canvasGroup.alpha = 0
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHPBuffItem.DoFadeTween = function(self, targetFade, duration)
-  -- function num : 0_9
+function UIHPBuffItem:DoFadeTween(targetFade, duration)
   if self._buffViewInstance == nil then
-    return 
+    return
   end
-  ;
-  ((self._canvasGroup):DOFade(targetFade, duration)):OnComplete(function()
-    -- function num : 0_9_0
-  end
-)
+  self._canvasGroup:DOFade(targetFade, duration):OnComplete(function()
+  end)
 end
-
-

@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_entity_turn_to_target_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayEntityTurnToTargetInstruction", BaseInstruction)
 PlayEntityTurnToTargetInstruction = PlayEntityTurnToTargetInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayEntityTurnToTargetInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayEntityTurnToTargetInstruction:Constructor(paramList)
   self._force = tonumber(paramList.force)
   self._petTemplateID = tonumber(paramList.petTemplateID) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEntityTurnToTargetInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayEntityTurnToTargetInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   local world = casterEntity:GetOwnerWorld()
   local targetEntity = world:GetEntityByID(targetEntityID)
   if not targetEntity then
-    return 
+    return
   end
   if self._petTemplateID and self._petTemplateID > 0 then
-    local petGroup = world:GetGroup((world.BW_WEMatchers).PetPstID)
-    for _,e in ipairs(petGroup:GetEntities()) do
+    local petGroup = world:GetGroup(world.BW_WEMatchers.PetPstID)
+    for _, e in ipairs(petGroup:GetEntities()) do
       local cPetPstID = e:PetPstID()
       local petTemplateID = cPetPstID:GetTemplateID()
       if self._petTemplateID == petTemplateID then
@@ -35,10 +25,6 @@ PlayEntityTurnToTargetInstruction.DoInstruction = function(self, TT, casterEntit
       end
     end
   end
-  do
-    local resvc = world:GetService("RenderEntity")
-    resvc:TurnToTarget(casterEntity, targetEntity, self._force)
-  end
+  local resvc = world:GetService("RenderEntity")
+  resvc:TurnToTarget(casterEntity, targetEntity, self._force)
 end
-
-

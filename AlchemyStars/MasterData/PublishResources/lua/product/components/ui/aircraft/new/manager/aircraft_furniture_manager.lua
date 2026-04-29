@@ -1,39 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/manager/aircraft_furniture_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftFurnitureManager", Object)
 AircraftFurnitureManager = AircraftFurnitureManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftFurnitureManager.Constructor = function(self, main)
-  -- function num : 0_0
+function AircraftFurnitureManager:Constructor(main)
   self._main = main
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurnitureManager.Init = function(self)
-  -- function num : 0_1
+function AircraftFurnitureManager:Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurnitureManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_2
+function AircraftFurnitureManager:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurnitureManager.Dispose = function(self)
-  -- function num : 0_3
+function AircraftFurnitureManager:Dispose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFurnitureManager.GetFurniture = function(self, id)
-  -- function num : 0_4
+function AircraftFurnitureManager:GetFurniture(id)
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/backpack/ui_season_maze_action_card_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeActionCardItem", UICustomWidget)
 UISeasonMazeActionCardItem = UISeasonMazeActionCardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeActionCardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMazeActionCardItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActionCardItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMazeActionCardItem:InitWidget()
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.name = self:GetUIComponent("UILocalizationText", "name")
   self.msg1 = self:GetUIComponent("UILocalizationText", "msg1")
@@ -32,73 +22,50 @@ UISeasonMazeActionCardItem.InitWidget = function(self)
   self.effect2Text = self:GetUIComponent("UILocalizationText", "Effect2Text")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActionCardItem.SetData = function(self, index, cfgid, clickCb)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeActionCardItem:SetData(index, cfgid, clickCb)
   self.index = index
   self.cfgid = cfgid
   self.clickCb = clickCb
-  self._cfg = (Cfg.cfg_component_season_maze_hand)[cfgid]
+  self._cfg = Cfg.cfg_component_season_maze_hand[cfgid]
   if not self._cfg then
-    (Log.fatal)("SMazeCard cfg_component_season_maze_hand nil.", cfgid)
+    Log.fatal("SMazeCard cfg_component_season_maze_hand nil.", cfgid)
   end
   self._actPoint = 0
   self._resValue = 0
-  local value1 = ((self._cfg).Steps)[1]
-  local value2 = ((self._cfg).Steps)[2]
+  local value1 = self._cfg.Steps[1]
+  local value2 = self._cfg.Steps[2]
   if value1 == value2 then
-    (self.effect1Text):SetText("" .. value1)
+    self.effect1Text:SetText("" .. value1)
   else
-    ;
-    (self.effect1Text):SetText("" .. value1 .. "~" .. value2)
+    self.effect1Text:SetText("" .. value1 .. "~" .. value2)
   end
-  if (self._cfg).EffectIDs == nil or #(self._cfg).EffectIDs == 0 then
-    ((self.effect2Text).gameObject):SetActive(false)
+  if self._cfg.EffectIDs == nil or #self._cfg.EffectIDs == 0 then
+    self.effect2Text.gameObject:SetActive(false)
   else
-    ;
-    ((self.effect2Text).gameObject):SetActive(true)
-    local effId = ((self._cfg).EffectIDs)[1]
-    local effCfg = (Cfg.cfg_component_season_maze_effect)[effId]
-    local value3 = (effCfg.EffectList)[3]
-    local value4 = (effCfg.EffectList)[4]
+    self.effect2Text.gameObject:SetActive(true)
+    local effId = self._cfg.EffectIDs[1]
+    local effCfg = Cfg.cfg_component_season_maze_effect[effId]
+    local value3 = effCfg.EffectList[3]
+    local value4 = effCfg.EffectList[4]
     if value3 ~= nil and value4 ~= nil then
       if value3 == value4 then
-        (self.effect2Text):SetText("" .. value3)
+        self.effect2Text:SetText("" .. value3)
       else
-        ;
-        (self.effect2Text):SetText("" .. value3 .. "~" .. value4)
+        self.effect2Text:SetText("" .. value3 .. "~" .. value4)
       end
     end
   end
-  do
-    -- DECOMPILER ERROR at PC103: Confused about usage of register: R6 in 'UnsetPending'
-
-    if (self._cfg).Lv == SMazeCardQualityType.Blue then
-      (self.colorBg).color = Color(0.65490196078431, 1, 0.97254901960784)
-    else
-      -- DECOMPILER ERROR at PC117: Confused about usage of register: R6 in 'UnsetPending'
-
-      if (self._cfg).Lv == SMazeCardQualityType.Purple then
-        (self.colorBg).color = Color(1, 0.65490196078431, 1)
-      else
-        -- DECOMPILER ERROR at PC131: Confused about usage of register: R6 in 'UnsetPending'
-
-        if (self._cfg).Lv == SMazeCardQualityType.Orange then
-          (self.colorBg).color = Color(0.97254901960784, 0.91372549019608, 0.65490196078431)
-        end
-      end
-    end
+  if self._cfg.Lv == SMazeCardQualityType.Blue then
+    self.colorBg.color = Color(0.6549019607843137, 1.0, 0.9725490196078431)
+  elseif self._cfg.Lv == SMazeCardQualityType.Purple then
+    self.colorBg.color = Color(1.0, 0.6549019607843137, 1.0)
+  elseif self._cfg.Lv == SMazeCardQualityType.Orange then
+    self.colorBg.color = Color(0.9725490196078431, 0.9137254901960784, 0.6549019607843137)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActionCardItem.BgOnClick = function(self, go)
-  -- function num : 0_3
+function UISeasonMazeActionCardItem:BgOnClick(go)
   if self.clickCb then
-    (self.clickCb)(self._cfg)
+    self.clickCb(self._cfg)
   end
 end
-
-

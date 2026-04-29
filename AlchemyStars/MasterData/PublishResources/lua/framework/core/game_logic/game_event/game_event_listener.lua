@@ -1,29 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/game_logic/game_event/game_event_listener.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GameEventListener", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-GameEventListener.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function GameEventListener:Constructor(world)
   if GameGlobal and GameGlobal.GameEventListenerIDGenerator then
-    self.listenerID = ((GameGlobal.GameEventListenerIDGenerator)()):GenID()
+    self.listenerID = GameGlobal.GameEventListenerIDGenerator():GenID()
   end
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-GameEventListener.GetListenerID = function(self)
-  -- function num : 0_1
+function GameEventListener:GetListenerID()
   return self.listenerID
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-GameEventListener.OnGameEvent = function(self, gameEventType, ...)
-  -- function num : 0_2
+function GameEventListener:OnGameEvent(gameEventType, ...)
 end
-
-

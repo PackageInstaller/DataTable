@@ -1,66 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/svr_time/svr_time_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SvrTimeModule", GameModule)
 SvrTimeModule = SvrTimeModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SvrTimeModule.Constructor = function(self)
-  -- function num : 0_0
+function SvrTimeModule:Constructor()
   self.tmServerBase = 0
   self.tmClientBase = 0
   self.bHaveInit = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SvrTimeModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self:_InitServerTime((os.time)())
+function SvrTimeModule:Init()
+  self:_InitServerTime(os.time())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SvrTimeModule._InitServerTime = function(self, serverTime)
-  -- function num : 0_2 , upvalues : _ENV
+function SvrTimeModule:_InitServerTime(serverTime)
   self.tmServerBase = serverTime * 1000
-  self.tmClientBase = (GameGlobal:GetInstance()):GetCurrentRealTime()
+  self.tmClientBase = GameGlobal:GetInstance():GetCurrentRealTime()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SvrTimeModule.InitServerTime = function(self, serverTime)
-  -- function num : 0_3 , upvalues : _ENV
+function SvrTimeModule:InitServerTime(serverTime)
   self.nTimeIndex = 0
-  local l_utc_time = (os.date)("!*%Y-%m-%d %H:%M:%S", t)
-  ;
-  (Log.info)("SvrTimeModule:InitServerTime Cur TimeStamp : ", serverTime, ", DateTime == ", l_utc_time)
+  local l_utc_time = os.date("!*%Y-%m-%d %H:%M:%S", t)
+  Log.info("SvrTimeModule:InitServerTime Cur TimeStamp : ", serverTime, ", DateTime == ", l_utc_time)
   self:_InitServerTime(serverTime)
   self.bHaveInit = true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SvrTimeModule.UpdateServerTime = function(self, serverTime)
-  -- function num : 0_4
+function SvrTimeModule:UpdateServerTime(serverTime)
   self:_InitServerTime(serverTime)
   self.bHaveInit = true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SvrTimeModule.GetServerTime = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local tmNow = (GameGlobal:GetInstance()):GetCurrentRealTime()
+function SvrTimeModule:GetServerTime()
+  local tmNow = GameGlobal:GetInstance():GetCurrentRealTime()
   return self.tmServerBase + (tmNow - self.tmClientBase)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SvrTimeModule.Update = function(self, deltaTimeMS)
-  -- function num : 0_6
+function SvrTimeModule:Update(deltaTimeMS)
 end
-
-

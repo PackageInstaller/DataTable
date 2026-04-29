@@ -1,44 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sailing_mission/level/ui_sailing_battle_result_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISailingBattleResultTips", UIController)
 UISailingBattleResultTips = UISailingBattleResultTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISailingBattleResultTips.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISailingBattleResultTips:OnShow(uiParams)
   local matchResult = uiParams[1]
-  local sailingMissionModule = (GameGlobal.GetModule)(SailingMissionModule)
+  local sailingMissionModule = GameGlobal.GetModule(SailingMissionModule)
   self._layerLabel = self:GetUIComponent("UILocalizationText", "Layer")
   self._histroyLabel = self:GetUIComponent("UILocalizationText", "Histroy")
   self._currentLabel = self:GetUIComponent("UILocalizationText", "Current")
   self._historyMissionMaxValue = UISailingImageNumber:New(self, "n22_dhh_num2_%d")
-  ;
-  (self._historyMissionMaxValue):AddDigitImage(self:GetUIComponent("Image", "historyMissionMaxValue0"))
-  ;
-  (self._historyMissionMaxValue):AddDigitImage(self:GetUIComponent("Image", "historyMissionMaxValue1"))
-  ;
-  (self._historyMissionMaxValue):AddDigitImage(self:GetUIComponent("Image", "historyMissionMaxValue2"))
+  self._historyMissionMaxValue:AddDigitImage(self:GetUIComponent("Image", "historyMissionMaxValue0"))
+  self._historyMissionMaxValue:AddDigitImage(self:GetUIComponent("Image", "historyMissionMaxValue1"))
+  self._historyMissionMaxValue:AddDigitImage(self:GetUIComponent("Image", "historyMissionMaxValue2"))
   local layerId = matchResult.m_parent_mission_id
-  ;
-  (self._layerLabel):SetText((StringTable.Get)("str_sailing_mission_level_result_layer_tips", layerId))
+  self._layerLabel:SetText(StringTable.Get("str_sailing_mission_level_result_layer_tips", layerId))
   self._historyCount = sailingMissionModule:GetCacheHistoryMissionCount()
   self._currentCount = matchResult.history_exploration_progress
-  ;
-  (self._histroyLabel):SetText(self._historyCount)
-  ;
-  (self._currentLabel):SetText(self._currentCount)
-  ;
-  (self._historyMissionMaxValue):SetValue(self._currentCount)
+  self._histroyLabel:SetText(self._historyCount)
+  self._currentLabel:SetText(self._currentCount)
+  self._historyMissionMaxValue:SetValue(self._currentCount)
   self:StartTask(self.PlayAnim, self)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingBattleResultTips.PlayAnim = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function UISailingBattleResultTips:PlayAnim(TT)
   self:Lock("UISailingBattleResultTips_PlayAnim")
   local number1 = UISailingImageNumber:New(self, "n22_dhh_num2_%d")
   number1:AddDigitImage(self:GetUIComponent("Image", "single_number_3"))
@@ -56,7 +39,7 @@ UISailingBattleResultTips.PlayAnim = function(self, TT)
   local anim = self:GetUIComponent("Animation", "Anim")
   local cur = self._currentCount - self._currentCount % 10
   local his = self._historyCount - self._historyCount % 10
-  if his < cur then
+  if cur > his then
     anim:Play("uieff_UISailingBattleResultTips_number_double")
   else
     anim:Play("uieff_UISailingBattleResultTips_number_right")
@@ -64,11 +47,6 @@ UISailingBattleResultTips.PlayAnim = function(self, TT)
   self:UnLock("UISailingBattleResultTips_PlayAnim")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingBattleResultTips.MashOnClick = function(self)
-  -- function num : 0_2
+function UISailingBattleResultTips:MashOnClick()
   self:CloseDialog()
 end
-
-

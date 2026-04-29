@@ -1,74 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/services/network/dummy_network_service.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("i_network_service")
 _class("DummyNetworkService", INetworkService)
 DummyNetworkService = DummyNetworkService
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DummyNetworkService.Constructor = function(self, world)
-  -- function num : 0_0
+function DummyNetworkService:Constructor(world)
   self.world = world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DummyNetworkService.SetDummyServer = function(self, dummyServer)
-  -- function num : 0_1
+function DummyNetworkService:SetDummyServer(dummyServer)
   self.DummyServer = dummyServer
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DummyNetworkService.ReceiveMessage = function(self, recMsg)
-  -- function num : 0_2
+function DummyNetworkService:ReceiveMessage(recMsg)
   local world = self.world
   if world.WorldHandleCommands and recMsg.Commands then
     world:WorldHandleCommands(recMsg.Commands)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DummyNetworkService.SendMessage = function(self, sendMsg)
-  -- function num : 0_3
+function DummyNetworkService:SendMessage(sendMsg)
   self:ReceiveMessage(sendMsg)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DummyNetworkService.SendCommandsMessage = function(self, commands)
-  -- function num : 0_4 , upvalues : _ENV
+function DummyNetworkService:SendCommandsMessage(commands)
   if commands:Size() == 0 then
-    return 
+    return
   end
   local sendMsg = DummyNetworkMessages_SyncCommands:New()
   for i = 1, commands:Size() do
     local cmd = commands:GetAt(i)
     sendMsg:AddCommand(cmd)
   end
-  if (self.world).SyncWork ~= nil then
-    sendMsg.SyncFrame = ((self.world).SyncWork):CurrFrame()
+  if self.world.SyncWork ~= nil then
+    sendMsg.SyncFrame = self.world.SyncWork:CurrFrame()
   end
   self:SendMessage(sendMsg)
 end
 
 _class("DummyNetworkMessages_SyncCommands", Object)
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
 
-DummyNetworkMessages_SyncCommands.Constructor = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function DummyNetworkMessages_SyncCommands:Constructor()
   self.Commands = ArrayList:New()
   self.CLSID = 0
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-DummyNetworkMessages_SyncCommands.AddCommand = function(self, cmd)
-  -- function num : 0_6
-  (self.Commands):PushBack(cmd)
+function DummyNetworkMessages_SyncCommands:AddCommand(cmd)
+  self.Commands:PushBack(cmd)
 end
-
-

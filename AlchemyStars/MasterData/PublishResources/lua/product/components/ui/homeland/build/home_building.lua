@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/build/home_building.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeBuilding", BuildBase)
 HomeBuilding = HomeBuilding
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeBuilding.Constructor = function(self, insID, architecture, cfg)
-  -- function num : 0_0 , upvalues : _ENV
+function HomeBuilding:Constructor(insID, architecture, cfg)
   self._insID = insID
   self._aabb = BuildAABB:New()
   self._npcRes = nil
@@ -27,424 +20,310 @@ HomeBuilding.Constructor = function(self, insID, architecture, cfg)
   self._holdlinkBuildingList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.Reset = function(self, architecture)
-  -- function num : 0_1 , upvalues : _ENV
+function HomeBuilding:Reset(architecture)
   self._architecture = architecture
   if self._cfgID ~= architecture.asset_id then
     self._cfgID = architecture.asset_id
-    self._cfg = (Cfg.cfg_item_architecture)[self._cfgID]
-    self._buildingName = (StringTable.Get)((self._cfg).Name)
-    self._buildType = (self._cfg).SubType
-    self._locateLayer = (self._cfg).BuildLayer
+    self._cfg = Cfg.cfg_item_architecture[self._cfgID]
+    self._buildingName = StringTable.Get(self._cfg.Name)
+    self._buildType = self._cfg.SubType
+    self._locateLayer = self._cfg.BuildLayer
     self._isFreePos = false
-    local defaultBuildingCfgs = (Cfg.cfg_default_architecture)({ArchitectureId = self._cfgID})
-    if defaultBuildingCfgs and #defaultBuildingCfgs > 0 and (defaultBuildingCfgs[1]).Slot then
+    local defaultBuildingCfgs = Cfg.cfg_default_architecture({
+      ArchitectureId = self._cfgID
+    })
+    if defaultBuildingCfgs and 0 < #defaultBuildingCfgs and defaultBuildingCfgs[1].Slot then
       self._isFreePos = true
     end
   end
-  do
-    self._isLock = ((self._homelandClient):BuildManager()):CheckBuildingLock(self._buildType)
-    self._parent = 0
-    if self._isFreePos then
-      local slotName = (((Cfg.cfg_default_architecture)({ArchitectureId = self._cfgID}))[1]).Slot
-      local slot = ((UnityEngine.GameObject).Find)(slotName)
-      if not slot then
-        BuildError("场景中找不到默认建筑的挂点:", slotName, "，建筑id:", self._cfgID)
-      end
-      local pos = ((slot.transform).position):Clone()
-      self._pos = Vector3((BuildHelper.ToFloat)((BuildHelper.ToInt)(pos.x)), pos.y, (BuildHelper.ToFloat)((BuildHelper.ToInt)(pos.z)))
-      self._rotY = ((slot.transform).eulerAngles).y
-    else
-      do
-        do
-          local posY = nil
-          if (self._architecture).parent ~= 0 then
-            self._parent = (self._architecture).parent
-            posY = (BuildHelper.ToFloat)((self._architecture).pos_y)
-          else
-            posY = ((self._homelandClient):BuildManager()):GetBuildHeight()
-          end
-          self._pos = Vector3((BuildHelper.ToFloat)((self._architecture).pos_x), posY, (BuildHelper.ToFloat)((self._architecture).pos_z))
-          self._rotY = architecture.rot
-          local prefab = nil
-          local skinID = (self._architecture).skin
-          if skinID and skinID > 0 then
-            prefab = skinID
-          else
-            prefab = self:GetBuildId()
-          end
-          if self:IsShabby() then
-            prefab = prefab .. "_ps.prefab"
-          else
-            prefab = prefab .. ".prefab"
-          end
-          if self._prefabName ~= prefab then
-            self:_DestroyView()
-            self._skinID = architecture.skin
-            self._req = (ResourceManager:GetInstance()):SyncLoadAsset(prefab, LoadType.GameObject)
-            if not self._req then
-              BuildError("建筑资源不存在:", prefab)
-            end
-            self._prefabName = prefab
-            self._go = (self._req).Obj
-            self:OnModelChanged()
-          else
-            -- DECOMPILER ERROR at PC192: Confused about usage of register: R4 in 'UnsetPending'
-
-            ;
-            (self._transform).position = self._pos
-            -- DECOMPILER ERROR at PC199: Confused about usage of register: R4 in 'UnsetPending'
-
-            ;
-            (self._transform).eulerAngles = Vector3(0, self._rotY, 0)
-            self:UpdateAABB()
-          end
-          local cfg = (Cfg.cfg_item_architecture_link)[self._cfgID]
-          self._linkCfg = cfg
-          self:ShowBuilding(true)
-        end
-      end
+  self._isLock = self._homelandClient:BuildManager():CheckBuildingLock(self._buildType)
+  self._parent = 0
+  if self._isFreePos then
+    local slotName = Cfg.cfg_default_architecture({
+      ArchitectureId = self._cfgID
+    })[1].Slot
+    local slot = UnityEngine.GameObject.Find(slotName)
+    if not slot then
+      BuildError("场景中找不到默认建筑的挂点:", slotName, "，建筑id:", self._cfgID)
     end
+    local pos = slot.transform.position:Clone()
+    self._pos = Vector3(BuildHelper.ToFloat(BuildHelper.ToInt(pos.x)), pos.y, BuildHelper.ToFloat(BuildHelper.ToInt(pos.z)))
+    self._rotY = slot.transform.eulerAngles.y
+  else
+    local posY
+    if self._architecture.parent ~= 0 then
+      self._parent = self._architecture.parent
+      posY = BuildHelper.ToFloat(self._architecture.pos_y)
+    else
+      posY = self._homelandClient:BuildManager():GetBuildHeight()
+    end
+    self._pos = Vector3(BuildHelper.ToFloat(self._architecture.pos_x), posY, BuildHelper.ToFloat(self._architecture.pos_z))
+    self._rotY = architecture.rot
   end
+  local prefab
+  local skinID = self._architecture.skin
+  if skinID and 0 < skinID then
+    prefab = skinID
+  else
+    prefab = self:GetBuildId()
+  end
+  if self:IsShabby() then
+    prefab = prefab .. "_ps.prefab"
+  else
+    prefab = prefab .. ".prefab"
+  end
+  if self._prefabName ~= prefab then
+    self:_DestroyView()
+    self._skinID = architecture.skin
+    self._req = ResourceManager:GetInstance():SyncLoadAsset(prefab, LoadType.GameObject)
+    if not self._req then
+      BuildError("建筑资源不存在:", prefab)
+    end
+    self._prefabName = prefab
+    self._go = self._req.Obj
+    self:OnModelChanged()
+  else
+    self._transform.position = self._pos
+    self._transform.eulerAngles = Vector3(0, self._rotY, 0)
+    self:UpdateAABB()
+  end
+  local cfg = Cfg.cfg_item_architecture_link[self._cfgID]
+  self._linkCfg = cfg
+  self:ShowBuilding(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.OnModelChanged = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._transform = (self._go).transform
-  ;
-  (self._transform):SetParent(((self._homelandClient):SceneManager()):BuildingRootTrans())
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._go).layer = HomeBuildLayer.Building
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._transform).position = self._pos
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._transform).eulerAngles = Vector3(0, self._rotY, 0)
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._go).name = (self._go).name .. "," .. self._insID
-  self._animation = (self._go):GetComponentInChildren(typeof(UnityEngine.Animation))
+function HomeBuilding:OnModelChanged()
+  self._transform = self._go.transform
+  self._transform:SetParent(self._homelandClient:SceneManager():BuildingRootTrans())
+  self._go.layer = HomeBuildLayer.Building
+  self._transform.position = self._pos
+  self._transform.eulerAngles = Vector3(0, self._rotY, 0)
+  self._go.name = self._go.name .. "," .. self._insID
+  self._animation = self._go:GetComponentInChildren(typeof(UnityEngine.Animation))
   self._colliders = {}
   self._sides = {}
   if self:IsDefaultBuilding() then
     self._size = Vector2.zero
   else
-    local colliders = (self._go):GetComponents(typeof(UnityEngine.BoxCollider))
+    local colliders = self._go:GetComponents(typeof(UnityEngine.BoxCollider))
     local count = colliders.Length
     if count == 0 then
       BuildError("建筑没有碰撞盒:", self:GetBuildId())
     end
     for i = 0, count - 1 do
-      -- DECOMPILER ERROR at PC76: Confused about usage of register: R7 in 'UnsetPending'
-
-      (self._colliders)[#self._colliders + 1] = colliders[i]
-      -- DECOMPILER ERROR at PC93: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._sides)[i + 1] = {BuildRectSide:New(), BuildRectSide:New(), BuildRectSide:New(), BuildRectSide:New()}
+      self._colliders[#self._colliders + 1] = colliders[i]
+      self._sides[i + 1] = {
+        BuildRectSide:New(),
+        BuildRectSide:New(),
+        BuildRectSide:New(),
+        BuildRectSide:New()
+      }
     end
-    local size = ((self._colliders)[1]).size
+    local size = self._colliders[1].size
     self._size = Vector2(size.x, size.z)
   end
-  do
-    self:UpdateAABB()
-    self:InitArrow()
-    self:ShowArrow(false)
-    if (self._cfg).SubType == ArchitectureSubType.Land then
-      self:InitBreedLand(self._architecture)
-    else
-      if (self._cfg).SubType == ArchitectureSubType.FishTank then
-        self:InitAquarium(self._architecture)
-      else
-        if (Cfg.cfg_homeland_swimming_pool)[self:GetBuildId()] then
-          self:InitSwimmingPool(self._architecture)
-        else
-          if (self._cfg).SubType == ArchitectureSubType.Medal_Wall then
-            self:InitMedalWall(self._architecture)
-          end
-        end
-      end
-    end
-    self:ResetInteractPoint()
-    self:RefreshInteractPoint()
-    self:InitNpc()
-    if (Cfg.cfg_homeland_building_water_depth)[self:GetBuildId()] then
-      ((self._homelandClient):SceneManager()):AddWaterDepthTarget(self._go)
-    end
-    if self._buildType == ArchitectureSubType.Wishing_Pool then
-      if (self._homelandClient):IsVisit() then
-        self:RefreshWishingFish()
-      else
-        self:ClearWishing()
-        self:InitWishing()
-      end
-    end
-    local focusPoint = (GameObjectHelper.FindChild)(self._transform, "ChangeSkinCamera")
-    if focusPoint then
-      self._changeSkinFocusPoint = focusPoint.transform
-    end
-    if self._isFreePos and not self._changeSkinFocusPoint then
-      BuildError("换肤建筑找不到像机聚焦点:", self._cfgID)
-    end
-    self:InitLinkPoint()
+  self:UpdateAABB()
+  self:InitArrow()
+  self:ShowArrow(false)
+  if self._cfg.SubType == ArchitectureSubType.Land then
+    self:InitBreedLand(self._architecture)
+  elseif self._cfg.SubType == ArchitectureSubType.FishTank then
+    self:InitAquarium(self._architecture)
+  elseif Cfg.cfg_homeland_swimming_pool[self:GetBuildId()] then
+    self:InitSwimmingPool(self._architecture)
+  elseif self._cfg.SubType == ArchitectureSubType.Medal_Wall then
+    self:InitMedalWall(self._architecture)
   end
+  self:ResetInteractPoint()
+  self:RefreshInteractPoint()
+  self:InitNpc()
+  if Cfg.cfg_homeland_building_water_depth[self:GetBuildId()] then
+    self._homelandClient:SceneManager():AddWaterDepthTarget(self._go)
+  end
+  if self._buildType == ArchitectureSubType.Wishing_Pool then
+    if self._homelandClient:IsVisit() then
+      self:RefreshWishingFish()
+    else
+      self:ClearWishing()
+      self:InitWishing()
+    end
+  end
+  local focusPoint = GameObjectHelper.FindChild(self._transform, "ChangeSkinCamera")
+  if focusPoint then
+    self._changeSkinFocusPoint = focusPoint.transform
+  end
+  if self._isFreePos and not self._changeSkinFocusPoint then
+    BuildError("换肤建筑找不到像机聚焦点:", self._cfgID)
+  end
+  self:InitLinkPoint()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.InitBreedLand = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (Log.exception)("HomelandBreedLand必须重写该方法")
+function HomeBuilding:InitBreedLand()
+  Log.exception("HomelandBreedLand必须重写该方法")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.InitAquarium = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.exception)("HomelandAquarium必须重写该方法")
+function HomeBuilding:InitAquarium()
+  Log.exception("HomelandAquarium必须重写该方法")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.InitMedalWall = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.exception)("HomelandMedalWall必须重写该方法")
+function HomeBuilding:InitMedalWall()
+  Log.exception("HomelandMedalWall必须重写该方法")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.InitWishing = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function HomeBuilding:InitWishing()
   if self._buildType ~= ArchitectureSubType.Wishing_Pool then
-    return 
+    return
   end
   self:InitWishingFish()
   self:InitCoin()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.ClearWishing = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function HomeBuilding:ClearWishing()
   if self._buildType ~= ArchitectureSubType.Wishing_Pool then
-    return 
+    return
   end
   if self._wishingFishs then
-    for k,v in pairs(self._wishingFishs) do
+    for k, v in pairs(self._wishingFishs) do
       v:Destroy()
     end
   end
-  do
-    self._coinTrans = {}
-    self._currentCoinIndex = 1
-    self._coinObjs = {}
-    self:RemoveEvents()
-  end
+  self._coinTrans = {}
+  self._currentCoinIndex = 1
+  self._coinObjs = {}
+  self:RemoveEvents()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetBuildType = function(self)
-  -- function num : 0_8
+function HomeBuilding:GetBuildType()
   return self._buildType
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.RemoveEvents = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function HomeBuilding:RemoveEvents()
   if self._addCoinCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.WishingAddCollectCoin, self._addCoinCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.WishingAddCollectCoin, self._addCoinCallback)
     self._addCoinCallback = nil
   end
   if self._addWashingFishCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.WishingAddFish, self._addWashingFishCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.WishingAddFish, self._addWashingFishCallback)
     self._addWashingFishCallback = nil
   end
   if self._removeWahsingFishCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.WishingRemoveFish, self._removeWahsingFishCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.WishingRemoveFish, self._removeWahsingFishCallback)
     self._removeWahsingFishCallback = nil
   end
   if self._refreshWashingFishCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.WishingRefreshFish, self._refreshWashingFishCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.WishingRefreshFish, self._refreshWashingFishCallback)
     self._refreshWashingFishCallback = nil
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.InitWishingFish = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function HomeBuilding:InitWishingFish()
   if self._addWashingFishCallback == nil then
-    self._addWashingFishCallback = (GameHelper:GetInstance()):CreateCallback(self.AddWishingFish, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.WishingAddFish, self._addWashingFishCallback)
+    self._addWashingFishCallback = GameHelper:GetInstance():CreateCallback(self.AddWishingFish, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.WishingAddFish, self._addWashingFishCallback)
   end
   if self._removeWahsingFishCallback == nil then
-    self._removeWahsingFishCallback = (GameHelper:GetInstance()):CreateCallback(self.RemoveWishingFish, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.WishingRemoveFish, self._removeWahsingFishCallback)
+    self._removeWahsingFishCallback = GameHelper:GetInstance():CreateCallback(self.RemoveWishingFish, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.WishingRemoveFish, self._removeWahsingFishCallback)
   end
   if self._refreshWashingFishCallback == nil then
-    self._refreshWashingFishCallback = (GameHelper:GetInstance()):CreateCallback(self.RefreshWishingFish, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.WishingRefreshFish, self._refreshWashingFishCallback)
+    self._refreshWashingFishCallback = GameHelper:GetInstance():CreateCallback(self.RefreshWishingFish, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.WishingRefreshFish, self._refreshWashingFishCallback)
   end
   self:RefreshWishingFish()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.AddWishingFish = function(self, id, fishInstanceId)
-  -- function num : 0_11 , upvalues : _ENV
-  if (self._wishingFishs)[fishInstanceId] then
-    return 
+function HomeBuilding:AddWishingFish(id, fishInstanceId)
+  if self._wishingFishs[fishInstanceId] then
+    return
   end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._wishingFishs)[fishInstanceId] = UIBuildRaiseFishModel:New(self._transform, id, fishInstanceId)
+  self._wishingFishs[fishInstanceId] = UIBuildRaiseFishModel:New(self._transform, id, fishInstanceId)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.RemoveWishingFish = function(self, fishInstanceId)
-  -- function num : 0_12
-  if (self._wishingFishs)[fishInstanceId] then
-    ((self._wishingFishs)[fishInstanceId]):Destroy()
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._wishingFishs)[fishInstanceId] = nil
+function HomeBuilding:RemoveWishingFish(fishInstanceId)
+  if self._wishingFishs[fishInstanceId] then
+    self._wishingFishs[fishInstanceId]:Destroy()
+    self._wishingFishs[fishInstanceId] = nil
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.RefreshWishingFish = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function HomeBuilding:RefreshWishingFish()
   if self._wishingFishs then
-    for k,v in pairs(self._wishingFishs) do
+    for k, v in pairs(self._wishingFishs) do
       v:Destroy()
     end
   end
-  do
-    self._wishingFishs = {}
-    if not (self._homelandClient):IsVisit() or not (HomelandVisitHelper.GetRaiseFishList)() then
-      local raiseFishs = (HomelandWishingConst.GetRaiseFishList)()
-    end
-    for i = 1, #raiseFishs do
-      local raiseFish = raiseFishs[i]
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._wishingFishs)[raiseFish.InstanceId] = UIBuildRaiseFishModel:New(self._transform, raiseFish.ID, raiseFish.InstanceId)
-    end
+  self._wishingFishs = {}
+  local raiseFishs = self._homelandClient:IsVisit() and HomelandVisitHelper.GetRaiseFishList() or HomelandWishingConst.GetRaiseFishList()
+  for i = 1, #raiseFishs do
+    local raiseFish = raiseFishs[i]
+    self._wishingFishs[raiseFish.InstanceId] = UIBuildRaiseFishModel:New(self._transform, raiseFish.ID, raiseFish.InstanceId)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.InitCoin = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function HomeBuilding:InitCoin()
   if self._addCoinCallback == nil then
-    self._addCoinCallback = (GameHelper:GetInstance()):CreateCallback(self.AddCoin, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.WishingAddCollectCoin, self._addCoinCallback)
+    self._addCoinCallback = GameHelper:GetInstance():CreateCallback(self.AddCoin, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.WishingAddCollectCoin, self._addCoinCallback)
   end
-  local root = (self._transform):Find("CoinRoot")
+  local root = self._transform:Find("CoinRoot")
   self._coinTrans = {}
   if not root then
-    return 
+    return
   end
   for i = 0, root.childCount - 1 do
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._coinTrans)[#self._coinTrans + 1] = root:GetChild(i)
+    self._coinTrans[#self._coinTrans + 1] = root:GetChild(i)
   end
   self._coinObjs = {}
   self._currentCoinIndex = 1
-  local coins = (HomelandWishingConst.GetCollectedCoins)()
+  local coins = HomelandWishingConst.GetCollectedCoins()
   for i = 1, #coins do
     self:AddCoin(coins[i])
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.AddCoin = function(self, coinId)
-  -- function num : 0_15 , upvalues : _ENV
-  if #self._coinTrans < self._currentCoinIndex then
-    (Log.error)("位置不足")
-    return 
+function HomeBuilding:AddCoin(coinId)
+  if self._currentCoinIndex > #self._coinTrans then
+    Log.error("位置不足")
+    return
   end
-  local coinCfg = (Cfg.cfg_item_wishing_coin)[coinId]
+  local coinCfg = Cfg.cfg_item_wishing_coin[coinId]
   local prefabName = coinCfg.Model .. ".prefab"
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset(prefabName, LoadType.GameObject)
+  local req = ResourceManager:GetInstance():SyncLoadAsset(prefabName, LoadType.GameObject)
   if not req then
     BuildError("找不到硬币:" .. prefabName)
-    return 
+    return
   end
-  local parent = (self._coinTrans)[self._currentCoinIndex]
+  local parent = self._coinTrans[self._currentCoinIndex]
   self._currentCoinIndex = self._currentCoinIndex + 1
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._coinObjs)[#self._coinObjs + 1] = req
-  ;
-  (req.Obj):SetActive(true)
-  local tran = (req.Obj).transform
+  self._coinObjs[#self._coinObjs + 1] = req
+  req.Obj:SetActive(true)
+  local tran = req.Obj.transform
   tran:SetParent(parent)
   tran.localPosition = Vector3(0, 0, 0)
   tran.localRotation = Quaternion.identity
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.InitArrow = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local arrow = (self._transform):Find("Arrow")
+function HomeBuilding:InitArrow()
+  local arrow = self._transform:Find("Arrow")
   if not arrow then
-    return 
+    return
   end
   self._arrowParent = arrow
   self._arrows = {}
   for i = 0, arrow.childCount - 1 do
     local child = arrow:GetChild(i)
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._arrows)[i + 1] = child
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (child.gameObject).layer = HomeBuildLayer.Arrow
+    self._arrows[i + 1] = child
+    child.gameObject.layer = HomeBuildLayer.Arrow
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetSize = function(self)
-  -- function num : 0_17
+function HomeBuilding:GetSize()
   return self._size
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.Dispose = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function HomeBuilding:Dispose()
   if self.Parent then
-    (self.Parent):RemoveChild(self)
+    self.Parent:RemoveChild(self)
   end
   self:ShowBuilding(false)
   self:ClearWishing()
@@ -456,124 +335,75 @@ HomeBuilding.Dispose = function(self)
   self._architecture = nil
   self._areaMRs = nil
   self._coinObjs = nil
-  ;
-  (table.clear)(self._interactObjects)
+  table.clear(self._interactObjects)
   if self._switchAnimationTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._switchAnimationTask)
+    GameGlobal.TaskManager():KillTask(self._switchAnimationTask)
     self._switchAnimationTask = nil
   end
   self:ClearLinkPointObj()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetCfg = function(self)
-  -- function num : 0_19
+function HomeBuilding:GetCfg()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetArchitecture = function(self)
-  -- function num : 0_20
+function HomeBuilding:GetArchitecture()
   return self._architecture
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetParentAssetID = function(self)
-  -- function num : 0_21
+function HomeBuilding:GetParentAssetID()
   return self._parent
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.SetParentAssetID = function(self, assetID)
-  -- function num : 0_22
+function HomeBuilding:SetParentAssetID(assetID)
   self._parent = assetID
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.InsID = function(self)
-  -- function num : 0_23
+function HomeBuilding:InsID()
   return self._insID
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.Pos = function(self)
-  -- function num : 0_24
+function HomeBuilding:Pos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.RotY = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  return (math.floor)(self._rotY)
+function HomeBuilding:RotY()
+  return math.floor(self._rotY)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.SkinID = function(self)
-  -- function num : 0_26
+function HomeBuilding:SkinID()
   return self._skinID
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.Transform = function(self)
-  -- function num : 0_27
+function HomeBuilding:Transform()
   return self._transform
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.SetPos = function(self, pos)
-  -- function num : 0_28
+function HomeBuilding:SetPos(pos)
   self._pos = pos
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._transform).position = pos
+  self._transform.position = pos
   self:UpdateAABB()
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.UpdatePos = function(self)
-  -- function num : 0_29
-  self._pos = (self._transform).position
+function HomeBuilding:UpdatePos()
+  self._pos = self._transform.position
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.SetRotY = function(self, y)
-  -- function num : 0_30 , upvalues : _ENV
+function HomeBuilding:SetRotY(y)
   self._rotY = y
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._transform).eulerAngles = Vector3(0, y, 0)
+  self._transform.eulerAngles = Vector3(0, y, 0)
   self:UpdateAABB()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.UpdateRotY = function(self)
-  -- function num : 0_31
-  self._rotY = ((self._transform).eulerAngles).y
+function HomeBuilding:UpdateRotY()
+  self._rotY = self._transform.eulerAngles.y
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.ShowBuilding = function(self, show)
-  -- function num : 0_32
-  (self._go):SetActive(show)
+function HomeBuilding:ShowBuilding(show)
+  self._go:SetActive(show)
   self._active = show
   if self.Parent ~= nil then
-    (self.Parent):FlushFixedReplaceNode()
+    self.Parent:FlushFixedReplaceNode()
   end
   if show then
     self:RefreshMinimapIcon()
@@ -582,323 +412,236 @@ HomeBuilding.ShowBuilding = function(self, show)
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.Delete = function(self)
-  -- function num : 0_33
+function HomeBuilding:Delete()
   self:HideOutline()
   self:ShowArea(false)
   self:ShowBuilding(false)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.Active = function(self, active)
-  -- function num : 0_34
-  (self._go):SetActive(active)
+function HomeBuilding:Active(active)
+  self._go:SetActive(active)
   self:ShowEffectGo(active)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.RefreshMinimapIcon = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  local type2Icon = {[ArchitectureSubType.Museum] = HomelandMapIconType.CommonBuild, [ArchitectureSubType.Wishing_Pool] = HomelandMapIconType.CommonBuild, [ArchitectureSubType.Storage_Box] = HomelandMapIconType.StorageBox, [ArchitectureSubType.White_Tower] = HomelandMapIconType.WhiteTower, [ArchitectureSubType.Land] = HomelandMapIconType.BreedLand, [ArchitectureSubType.Shop] = HomelandMapIconType.Shop, [ArchitectureSubType.Dormitory] = HomelandMapIconType.Domitory, [ArchitectureSubType.Album] = HomelandMapIconType.CommonBuild, [ArchitectureSubType.Medal_Wall] = HomelandMapIconType.CommonBuild}
-  local iconType = type2Icon[(self._cfg).SubType]
+function HomeBuilding:RefreshMinimapIcon()
+  local type2Icon = {
+    [ArchitectureSubType.Museum] = HomelandMapIconType.CommonBuild,
+    [ArchitectureSubType.Wishing_Pool] = HomelandMapIconType.CommonBuild,
+    [ArchitectureSubType.Storage_Box] = HomelandMapIconType.StorageBox,
+    [ArchitectureSubType.White_Tower] = HomelandMapIconType.WhiteTower,
+    [ArchitectureSubType.Land] = HomelandMapIconType.BreedLand,
+    [ArchitectureSubType.Shop] = HomelandMapIconType.Shop,
+    [ArchitectureSubType.Dormitory] = HomelandMapIconType.Domitory,
+    [ArchitectureSubType.Album] = HomelandMapIconType.CommonBuild,
+    [ArchitectureSubType.Medal_Wall] = HomelandMapIconType.CommonBuild
+  }
+  local iconType = type2Icon[self._cfg.SubType]
   if iconType then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapRemoveIcon, iconType, self._insID)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapAddIcon, iconType, self._insID, self._transform, self)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapRemoveIcon, iconType, self._insID)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapAddIcon, iconType, self._insID, self._transform, self)
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.DeleteMinimapIcon = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  local type2Icon = {[ArchitectureSubType.Museum] = HomelandMapIconType.CommonBuild, [ArchitectureSubType.Wishing_Pool] = HomelandMapIconType.CommonBuild, [ArchitectureSubType.Storage_Box] = HomelandMapIconType.StorageBox, [ArchitectureSubType.White_Tower] = HomelandMapIconType.WhiteTower, [ArchitectureSubType.Land] = HomelandMapIconType.BreedLand, [ArchitectureSubType.Shop] = HomelandMapIconType.Shop, [ArchitectureSubType.Dormitory] = HomelandMapIconType.Domitory, [ArchitectureSubType.Album] = HomelandMapIconType.CommonBuild, [ArchitectureSubType.Medal_Wall] = HomelandMapIconType.CommonBuild}
-  local iconType = type2Icon[(self._cfg).SubType]
+function HomeBuilding:DeleteMinimapIcon()
+  local type2Icon = {
+    [ArchitectureSubType.Museum] = HomelandMapIconType.CommonBuild,
+    [ArchitectureSubType.Wishing_Pool] = HomelandMapIconType.CommonBuild,
+    [ArchitectureSubType.Storage_Box] = HomelandMapIconType.StorageBox,
+    [ArchitectureSubType.White_Tower] = HomelandMapIconType.WhiteTower,
+    [ArchitectureSubType.Land] = HomelandMapIconType.BreedLand,
+    [ArchitectureSubType.Shop] = HomelandMapIconType.Shop,
+    [ArchitectureSubType.Dormitory] = HomelandMapIconType.Domitory,
+    [ArchitectureSubType.Album] = HomelandMapIconType.CommonBuild,
+    [ArchitectureSubType.Medal_Wall] = HomelandMapIconType.CommonBuild
+  }
+  local iconType = type2Icon[self._cfg.SubType]
   if iconType then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapRemoveIcon, iconType, self._insID)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapRemoveIcon, iconType, self._insID)
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.SetMeshVisible = function(self, status)
-  -- function num : 0_37
-  for i = 0, (self._transform).childCount - 1 do
-    local child = (self._transform):GetChild(i)
-    ;
-    (child.gameObject):SetActive(status)
+function HomeBuilding:SetMeshVisible(status)
+  for i = 0, self._transform.childCount - 1 do
+    local child = self._transform:GetChild(i)
+    child.gameObject:SetActive(status)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.IsDelete = function(self)
-  -- function num : 0_38
+function HomeBuilding:IsDelete()
   return not self._active
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.UpdateAABB = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function HomeBuilding:UpdateAABB()
   self._points = {}
-  do
-    if not self:IsDefaultBuilding() then
-      local angle = self:RotY()
-      for i,colli in ipairs(self._colliders) do
-        local p1, p2, p3, p4 = (BuildHelper.GetColliderPoints)(colli, (self._transform).position, angle)
-        -- DECOMPILER ERROR at PC23: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (self._points)[#self._points + 1] = p1
-        -- DECOMPILER ERROR at PC28: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (self._points)[#self._points + 1] = p2
-        -- DECOMPILER ERROR at PC33: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (self._points)[#self._points + 1] = p3
-        -- DECOMPILER ERROR at PC38: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (self._points)[#self._points + 1] = p4
-        ;
-        (((self._sides)[i])[1]):Reset(p1, p2, angle + 0)
-        ;
-        (((self._sides)[i])[2]):Reset(p2, p3, angle + 90)
-        ;
-        (((self._sides)[i])[3]):Reset(p3, p4, angle + 180)
-        ;
-        (((self._sides)[i])[4]):Reset(p4, p1, angle + 270)
-      end
-      ;
-      (self._aabb):OnChange(self._points)
+  if not self:IsDefaultBuilding() then
+    local angle = self:RotY()
+    for i, colli in ipairs(self._colliders) do
+      local p1, p2, p3, p4 = BuildHelper.GetColliderPoints(colli, self._transform.position, angle)
+      self._points[#self._points + 1] = p1
+      self._points[#self._points + 1] = p2
+      self._points[#self._points + 1] = p3
+      self._points[#self._points + 1] = p4
+      self._sides[i][1]:Reset(p1, p2, angle + 0)
+      self._sides[i][2]:Reset(p2, p3, angle + 90)
+      self._sides[i][3]:Reset(p3, p4, angle + 180)
+      self._sides[i][4]:Reset(p4, p1, angle + 270)
     end
-    local stepLength = 3
-    self._extendPoints = {}
-    if #self._points == 4 then
-      self:UpdateExtendAABB((self._points)[1], (self._points)[4], stepLength)
-      self:UpdateExtendAABB((self._points)[1], (self._points)[2], stepLength)
-      self:UpdateExtendAABB((self._points)[2], (self._points)[3], stepLength)
-      self:UpdateExtendAABB((self._points)[3], (self._points)[4], stepLength)
-    end
+    self._aabb:OnChange(self._points)
+  end
+  local stepLength = 3
+  self._extendPoints = {}
+  if #self._points == 4 then
+    self:UpdateExtendAABB(self._points[1], self._points[4], stepLength)
+    self:UpdateExtendAABB(self._points[1], self._points[2], stepLength)
+    self:UpdateExtendAABB(self._points[2], self._points[3], stepLength)
+    self:UpdateExtendAABB(self._points[3], self._points[4], stepLength)
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.UpdateExtendAABB = function(self, pt1, pt2, stepLength)
-  -- function num : 0_40 , upvalues : _ENV
-  local segmentLength = (Vector2.Distance)(pt1, pt2)
-  if segmentLength <= stepLength then
-    return 
+function HomeBuilding:UpdateExtendAABB(pt1, pt2, stepLength)
+  local segmentLength = Vector2.Distance(pt1, pt2)
+  if stepLength >= segmentLength then
+    return
   end
-  local splitCount = (math.ceil)(segmentLength / stepLength)
+  local splitCount = math.ceil(segmentLength / stepLength)
   for i = 1, splitCount - 1 do
     local dt = i / splitCount
     local pt = pt1 + (pt2 - pt1) * dt
-    ;
-    (table.insert)(self._extendPoints, pt)
+    table.insert(self._extendPoints, pt)
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetServerData = function(self)
-  -- function num : 0_41 , upvalues : _ENV
-  local arch = nil
+function HomeBuilding:GetServerData()
+  local arch
   local isNew = false
   local isDelete = false
   if self._active then
     local data = Architecture:New()
     data.asset_id = self:GetBuildId()
     if self._isFreePos then
-      data.pos_x = (self._architecture).pos_x
-      data.pos_z = (self._architecture).pos_z
-      data.rot = (self._architecture).rot
+      data.pos_x = self._architecture.pos_x
+      data.pos_z = self._architecture.pos_z
+      data.rot = self._architecture.rot
     else
-      data.pos_x = (BuildHelper.ToInt)((self._pos).x)
-      data.pos_z = (BuildHelper.ToInt)((self._pos).z)
+      data.pos_x = BuildHelper.ToInt(self._pos.x)
+      data.pos_z = BuildHelper.ToInt(self._pos.z)
       data.rot = self:RotY()
     end
     local parent = self:GetParentAssetID()
     if parent ~= 0 then
       data.parent = parent
-      data.pos_y = (BuildHelper.ToInt)((self._pos).y)
+      data.pos_y = BuildHelper.ToInt(self._pos.y)
     end
-    data.pstid = (self._architecture).pstid
+    data.pstid = self._architecture.pstid
     data.skin = self._skinID
-    if data.pos_x ~= (self._architecture).pos_x or data.pos_z ~= (self._architecture).pos_z or data.rot ~= (self._architecture).rot or data.pstid == 0 or data.skin ~= (self._architecture).skin or data.parent ~= (self._architecture).parent or data.parent ~= 0 and data.pos_y ~= (self._architecture).pos_y then
+    if data.pos_x ~= self._architecture.pos_x or data.pos_z ~= self._architecture.pos_z or data.rot ~= self._architecture.rot or data.pstid == 0 or data.skin ~= self._architecture.skin or data.parent ~= self._architecture.parent or data.parent ~= 0 and data.pos_y ~= self._architecture.pos_y then
       arch = data
     end
     isNew = data.pstid == 0
     isDelete = false
   else
-    isNew = (self._architecture).pstid == 0
+    isNew = self._architecture.pstid == 0
     isDelete = true
   end
-  do return arch, isNew, isDelete end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  return arch, isNew, isDelete
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.CanShowArea = function(self)
-  -- function num : 0_42
+function HomeBuilding:CanShowArea()
   if self.Parent == nil then
     return true
   end
   return not self:IsFixedChild()
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.ShowArea = function(self, show, illegal)
-  -- function num : 0_43 , upvalues : _ENV
+function HomeBuilding:ShowArea(show, illegal)
   if not self:CanShowArea() then
-    return 
+    return
   end
   if show then
     if not self._areaReqs then
       self._areaReqs = {}
       self._areaMRs = {}
-      for i,collider in ipairs(self._colliders) do
-        local req = (ResourceManager:GetInstance()):SyncLoadAsset("HomeBuildingArea.prefab", LoadType.GameObject)
+      for i, collider in ipairs(self._colliders) do
+        local req = ResourceManager:GetInstance():SyncLoadAsset("HomeBuildingArea.prefab", LoadType.GameObject)
         local go = req.Obj
         local tr = go.transform
         tr:SetParent(self._transform)
-        tr.localPosition = Vector3((collider.center).x, 0, (collider.center).z)
+        tr.localPosition = Vector3(collider.center.x, 0, collider.center.z)
         tr.localRotation = Quaternion.identity
-        tr.localScale = Vector3((collider.size).x, 1, (collider.size).z)
+        tr.localScale = Vector3(collider.size.x, 1, collider.size.z)
         local mr = go:GetComponentInChildren(typeof(UnityEngine.MeshRenderer))
-        -- DECOMPILER ERROR at PC57: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (self._areaReqs)[i] = req
-        -- DECOMPILER ERROR at PC59: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (self._areaMRs)[i] = mr
+        self._areaReqs[i] = req
+        self._areaMRs[i] = mr
       end
     end
-    do
-      for i,mr in ipairs(self._areaMRs) do
-        -- DECOMPILER ERROR at PC75: Confused about usage of register: R8 in 'UnsetPending'
-
-        if illegal then
-          (mr.material).color = Color(0.23137254901961, 0.23137254901961, 0.72549019607843, 0.20392156862745)
-        else
-          -- DECOMPILER ERROR at PC84: Confused about usage of register: R8 in 'UnsetPending'
-
-          ;
-          (mr.material).color = Color(0.8, 0.17647058823529, 0.17647058823529, 0.20392156862745)
-        end
-        ;
-        (((self._areaReqs)[i]).Obj):SetActive(true)
+    for i, mr in ipairs(self._areaMRs) do
+      if illegal then
+        mr.material.color = Color(0.23137254901960785, 0.23137254901960785, 0.7254901960784313, 0.20392156862745098)
+      else
+        mr.material.color = Color(0.8, 0.17647058823529413, 0.17647058823529413, 0.20392156862745098)
       end
-      do
-        if self._areaReqs then
-          for _,req in ipairs(self._areaReqs) do
-            (req.Obj):SetActive(false)
-          end
-        end
-      end
+      self._areaReqs[i].Obj:SetActive(true)
+    end
+  elseif self._areaReqs then
+    for _, req in ipairs(self._areaReqs) do
+      req.Obj:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetPoints = function(self)
-  -- function num : 0_44
+function HomeBuilding:GetPoints()
   return self._points
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetExtendPoints = function(self)
-  -- function num : 0_45
+function HomeBuilding:GetExtendPoints()
   return self._extendPoints
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetColliders = function(self)
-  -- function num : 0_46
+function HomeBuilding:GetColliders()
   return self._colliders
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.IsNewAdd = function(self)
-  -- function num : 0_47
-  do return (self._architecture).pstid == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomeBuilding:IsNewAdd()
+  return self._architecture.pstid == 0
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetSides = function(self)
-  -- function num : 0_48
+function HomeBuilding:GetSides()
   return self._sides
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.MaxDiagonal = function(self)
-  -- function num : 0_49
-  return (self._aabb):DiagonalLength()
+function HomeBuilding:MaxDiagonal()
+  return self._aabb:DiagonalLength()
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.ShowArrow = function(self, arrowList)
-  -- function num : 0_50 , upvalues : _ENV
+function HomeBuilding:ShowArrow(arrowList)
   if not self._arrowParent then
-    return 
+    return
   end
   if not arrowList then
-    ((self._arrowParent).gameObject):SetActive(false)
-    return 
+    self._arrowParent.gameObject:SetActive(false)
+    return
   end
-  ;
-  ((self._arrowParent).gameObject):SetActive(true)
-  for k,v in pairs(self._arrows) do
-    (v.gameObject):SetActive(arrowList[k] == true)
+  self._arrowParent.gameObject:SetActive(true)
+  for k, v in pairs(self._arrows) do
+    v.gameObject:SetActive(arrowList[k] == true)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.HaveArrow = function(self)
-  -- function num : 0_51
-  do return self._arrowParent ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomeBuilding:HaveArrow()
+  return self._arrowParent ~= nil
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.CanMove = function(self)
-  -- function num : 0_52
+function HomeBuilding:CanMove()
   if self._cfg == nil then
     return false
   end
   if self:IsFixedChild() then
     return false
   end
-  return (self._cfg).CanMove
+  return self._cfg.CanMove
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.CanRotate = function(self)
-  -- function num : 0_53
+function HomeBuilding:CanRotate()
   if self._cfg == nil then
     return false
   end
@@ -908,76 +651,53 @@ HomeBuilding.CanRotate = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.InteractPointOccupyRange = function(self)
-  -- function num : 0_54
-  if self._cfg and (self._cfg).InteractPointOccupyRange then
-    return (self._cfg).InteractPointOccupyRange
+function HomeBuilding:InteractPointOccupyRange()
+  if self._cfg and self._cfg.InteractPointOccupyRange then
+    return self._cfg.InteractPointOccupyRange
   else
     return 0
   end
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.PlayInteractEffect = function(self, name, holder)
-  -- function num : 0_55 , upvalues : _ENV
+function HomeBuilding:PlayInteractEffect(name, holder)
   if not name then
-    return 
+    return
   end
   local bone = self:GetBoneNode(holder)
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset(name .. ".prefab", LoadType.GameObject)
+  local req = ResourceManager:GetInstance():SyncLoadAsset(name .. ".prefab", LoadType.GameObject)
   if req then
     local effect = req.Obj
     effect:SetActive(true)
-    ;
-    (effect.transform):SetParent(bone)
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (effect.transform).localPosition = Vector3.zero
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (effect.transform).localRotation = (Quaternion.Euler)(0, 0, 0)
-    ;
-    (table.insert)(self._interactEffectReq, req)
-    ;
-    (table.insert)(self._interactEffectObj, req.Obj)
+    effect.transform:SetParent(bone)
+    effect.transform.localPosition = Vector3.zero
+    effect.transform.localRotation = Quaternion.Euler(0, 0, 0)
+    table.insert(self._interactEffectReq, req)
+    table.insert(self._interactEffectObj, req.Obj)
   end
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.StopInteractEffect = function(self)
-  -- function num : 0_56 , upvalues : _ENV
+function HomeBuilding:StopInteractEffect()
   if self._interactEffectReq then
-    for _,_req in pairs(self._interactEffectReq) do
+    for _, _req in pairs(self._interactEffectReq) do
       _req:Dispose()
     end
-    ;
-    (table.clear)(self._interactEffectReq)
-    ;
-    (table.clear)(self._interactEffectObj)
+    table.clear(self._interactEffectReq)
+    table.clear(self._interactEffectObj)
   end
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.SetInteractVisible = function(self, visible)
-  -- function num : 0_57 , upvalues : _ENV
+function HomeBuilding:SetInteractVisible(visible)
   self._interactVisible = visible
   if self._interactEffectObj then
-    for _,gameObject in pairs(self._interactEffectObj) do
+    for _, gameObject in pairs(self._interactEffectObj) do
       gameObject:SetActive(self._interactVisible)
     end
   end
-  do
-    for _,animationState in pairs(self._animationStates) do
-      if animationState and self._interactVisible then
-        if animationState.name == self._curAnimationName and not (self._animation).isPlaying then
-          (self._animation):Play(self._curAnimationName)
+  for _, animationState in pairs(self._animationStates) do
+    if animationState then
+      if self._interactVisible then
+        if animationState.name == self._curAnimationName and not self._animation.isPlaying then
+          self._animation:Play(self._curAnimationName)
         end
         animationState.speed = 1
       else
@@ -987,96 +707,64 @@ HomeBuilding.SetInteractVisible = function(self, visible)
   end
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.PlayAnimation = function(self, name, petID, interactAnimationType)
-  -- function num : 0_58
+function HomeBuilding:PlayAnimation(name, petID, interactAnimationType)
   if not name or not self._animation then
-    return 
+    return
   end
   self:_HandleInteractAnim(petID)
-  ;
-  (self._animation):Play(name)
+  self._animation:Play(name)
   self._curAnimationName = name
   if not self._firstAnimationName then
     self._firstAnimationName = name
   end
   self._homelandInteractAnimationType = interactAnimationType
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._animationStates)[name] = (self._animation):get_Item(name)
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R4 in 'UnsetPending'
-
-  if (self._animationStates)[name] then
+  self._animationStates[name] = self._animation:get_Item(name)
+  if self._animationStates[name] then
     if self._interactVisible then
-      ((self._animationStates)[name]).speed = 1
+      self._animationStates[name].speed = 1
     else
-      -- DECOMPILER ERROR at PC38: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      ((self._animationStates)[name]).speed = 0
+      self._animationStates[name].speed = 0
     end
   end
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetCurAnimationState = function(self)
-  -- function num : 0_59
-  if self._curAnimationName then
-    return (self._animation):get_Item(self._curAnimationName)
-  end
+function HomeBuilding:GetCurAnimationState()
+  return self._curAnimationName and self._animation:get_Item(self._curAnimationName)
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetCurAnimationType = function(self)
-  -- function num : 0_60
+function HomeBuilding:GetCurAnimationType()
   return self._homelandInteractAnimationType
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.StopAnimation = function(self, id)
-  -- function num : 0_61 , upvalues : _ENV
+function HomeBuilding:StopAnimation(id)
   if self._animation and #self._interactObjects <= 0 then
-    (self._animation):Stop()
+    self._animation:Stop()
     self._curAnimationName = nil
     self._firstAnimationName = nil
     self._interactVisible = true
-    for _,animationState in pairs(self._animationStates) do
-      if animationState and not (tolua.isnull)(animationState) then
+    for _, animationState in pairs(self._animationStates) do
+      if animationState and not tolua.isnull(animationState) then
         animationState.speed = 1
       end
     end
-    ;
-    (table.clear)(self._animationStates)
+    table.clear(self._animationStates)
   end
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.SetAnimTime = function(self, anim, normalizedTime)
-  -- function num : 0_62
+function HomeBuilding:SetAnimTime(anim, normalizedTime)
   if self._animation then
-    local animState = (self._animation):get_Item(anim)
+    local animState = self._animation:get_Item(anim)
     if animState then
-      (self._animation):Play(anim)
-      ;
-      (self._animation):Rewind()
+      self._animation:Play(anim)
+      self._animation:Rewind()
       animState.normalizedTime = normalizedTime
-      ;
-      (self._animation):Sample()
+      self._animation:Sample()
     end
   end
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.TryStopAnimation = function(self)
-  -- function num : 0_63
-  if not (self._interactObjects)[1] then
+function HomeBuilding:TryStopAnimation()
+  if not self._interactObjects[1] then
     if self._firstAnimationName then
       self:SetAnimTime(self._firstAnimationName, 0)
     end
@@ -1085,384 +773,244 @@ HomeBuilding.TryStopAnimation = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetBoneNode = function(self, name)
-  -- function num : 0_64 , upvalues : _ENV
-  if not (GameObjectHelper.FindChild)(self._transform, name) then
-    return self._transform
-  end
+function HomeBuilding:GetBoneNode(name)
+  return GameObjectHelper.FindChild(self._transform, name) or self._transform
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetBoneNodeNoRoot = function(self, name)
-  -- function num : 0_65 , upvalues : _ENV
-  return (GameObjectHelper.FindChild)(self._transform, name)
+function HomeBuilding:GetBoneNodeNoRoot(name)
+  return GameObjectHelper.FindChild(self._transform, name)
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.ShowOutline = function(self)
-  -- function num : 0_66 , upvalues : _ENV
-  do
-    if self._outline == nil then
-      local meshroot = (GameObjectHelper.FindChild)(self._transform, "meshroot")
-      self._outline = nil
-      if meshroot then
-        self._outline = (meshroot.gameObject):AddComponent(typeof(OutlineComponent))
-      else
-        BuildError("建筑没有meshroot节点:" .. (self._go).name)
-        self._outline = (self._go):AddComponent(typeof(OutlineComponent))
-      end
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._outline).downSample = 1
-      -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._outline).blurNum = 3
-      -- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._outline).outlinColor = Color(0.23921568627451, 0.58823529411765, 1, 1)
-      -- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._outline).intensity = 3.5
-      -- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._outline).outlineSize = 1.93
-      -- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._outline).blendType = (OutlineComponent.BlendType).Blend
+function HomeBuilding:ShowOutline()
+  if self._outline == nil then
+    local meshroot = GameObjectHelper.FindChild(self._transform, "meshroot")
+    self._outline = nil
+    if meshroot then
+      self._outline = meshroot.gameObject:AddComponent(typeof(OutlineComponent))
+    else
+      BuildError("建筑没有meshroot节点:" .. self._go.name)
+      self._outline = self._go:AddComponent(typeof(OutlineComponent))
     end
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._outline).enabled = true
+    self._outline.downSample = 1
+    self._outline.blurNum = 3
+    self._outline.outlinColor = Color(0.23921568627450981, 0.5882352941176471, 1.0, 1)
+    self._outline.intensity = 3.5
+    self._outline.outlineSize = 1.93
+    self._outline.blendType = OutlineComponent.BlendType.Blend
   end
+  self._outline.enabled = true
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.SetOutlineColor = function(self, color)
-  -- function num : 0_67
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._outline).outlinColor = color
+function HomeBuilding:SetOutlineColor(color)
+  self._outline.outlinColor = color
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.HideOutline = function(self)
-  -- function num : 0_68
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
+function HomeBuilding:HideOutline()
   if self._outline then
-    (self._outline).enabled = false
+    self._outline.enabled = false
   end
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.RevertSkin = function(self, skinID)
-  -- function num : 0_69
+function HomeBuilding:RevertSkin(skinID)
   self:ChangeSkin(skinID)
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.ChangeSkin = function(self, skinID)
-  -- function num : 0_70 , upvalues : _ENV
+function HomeBuilding:ChangeSkin(skinID)
   if self._skinID == skinID then
-    return 
+    return
   end
   self._skinID = skinID
   self._prefabName = self._skinID .. ".prefab"
-  ;
-  (self._go):SetActive(false)
+  self._go:SetActive(false)
   self:_DestroyView()
-  self._req = (ResourceManager:GetInstance()):SyncLoadAsset(self._prefabName, LoadType.GameObject)
-  self._go = (self._req).Obj
+  self._req = ResourceManager:GetInstance():SyncLoadAsset(self._prefabName, LoadType.GameObject)
+  self._go = self._req.Obj
   self:OnModelChanged()
-  ;
-  (self._go):SetActive(true)
+  self._go:SetActive(true)
   self._active = true
   self:RefreshMinimapIcon()
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.PstID = function(self)
-  -- function num : 0_71
-  return (self._architecture).pstid
+function HomeBuilding:PstID()
+  return self._architecture.pstid
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.LocateLayer = function(self)
-  -- function num : 0_72
+function HomeBuilding:LocateLayer()
   return self._locateLayer
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.ChangeSkinFocusPoint = function(self)
-  -- function num : 0_73
+function HomeBuilding:ChangeSkinFocusPoint()
   return self._changeSkinFocusPoint
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.InitNpc = function(self)
-  -- function num : 0_74 , upvalues : _ENV
-  if (self._homelandClient):IsVisit() and self:IsShabby() then
-    return 
+function HomeBuilding:InitNpc()
+  if self._homelandClient:IsVisit() and self:IsShabby() then
+    return
   end
   if not self._transform then
-    return 
+    return
   end
-  local npcParent = (self._transform):Find("npc")
+  local npcParent = self._transform:Find("npc")
   if not npcParent then
-    return 
+    return
   end
   local npcRoot = npcParent:GetChild(0)
   if npcRoot then
-    self._npcRes = (ResourceManager:GetInstance()):SyncLoadAsset(npcRoot.name .. ".prefab", LoadType.GameObject)
-    self._npcGO = (self._npcRes).Obj
-    ;
-    ((self._npcGO).transform):SetParent(npcRoot, false)
-    ;
-    (self._npcGO):SetActive(not self._isLock)
-    ;
-    ((self._homelandClient):CharacterManager()):RegisterNpc(self._npcGO)
+    self._npcRes = ResourceManager:GetInstance():SyncLoadAsset(npcRoot.name .. ".prefab", LoadType.GameObject)
+    self._npcGO = self._npcRes.Obj
+    self._npcGO.transform:SetParent(npcRoot, false)
+    self._npcGO:SetActive(not self._isLock)
+    self._homelandClient:CharacterManager():RegisterNpc(self._npcGO)
     if self._buildType == ArchitectureSubType.White_Tower then
-      local rootBoard = ((self._npcGO).transform):Find("NameRoot")
-      self._nameBoardGO = ((self._homelandClient):Home3DUIManager()):AddNameBoard(rootBoard, "N17_base_npc_tower", "str_homeland_npc_white_tower")
-      if not (self._homelandClient):IsVisit() then
-        self._interactGO = ((self._homelandClient):Home3DUIManager()):AddInteractBoard(rootBoard)
-        ;
-        ((self._homelandClient):BuildManager()):RefreshWhiteTowerHeadBoard()
+      local rootBoard = self._npcGO.transform:Find("NameRoot")
+      self._nameBoardGO = self._homelandClient:Home3DUIManager():AddNameBoard(rootBoard, "N17_base_npc_tower", "str_homeland_npc_white_tower")
+      if not self._homelandClient:IsVisit() then
+        self._interactGO = self._homelandClient:Home3DUIManager():AddInteractBoard(rootBoard)
+        self._homelandClient:BuildManager():RefreshWhiteTowerHeadBoard()
       end
-    else
-      do
-        if self._buildType == ArchitectureSubType.Museum then
-          ((self._homelandClient):Home3DUIManager()):AddNameBoard(((self._npcGO).transform):Find("NameRoot"), "N17_base_npc_museum", "str_homeland_npc_museum")
-        else
-          if self._buildType == ArchitectureSubType.Shop then
-            ((self._homelandClient):Home3DUIManager()):AddNameBoard(((self._npcGO).transform):Find("NameRoot"), "N17_base_npc_shop", "str_homeland_npc_shop")
-          end
-        end
-      end
+    elseif self._buildType == ArchitectureSubType.Museum then
+      self._homelandClient:Home3DUIManager():AddNameBoard(self._npcGO.transform:Find("NameRoot"), "N17_base_npc_museum", "str_homeland_npc_museum")
+    elseif self._buildType == ArchitectureSubType.Shop then
+      self._homelandClient:Home3DUIManager():AddNameBoard(self._npcGO.transform:Find("NameRoot"), "N17_base_npc_shop", "str_homeland_npc_shop")
     end
   end
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.ShowInteractBoard = function(self, inShow)
-  -- function num : 0_75
+function HomeBuilding:ShowInteractBoard(inShow)
   if self._nameBoardGO == nil or self._interactGO == nil then
-    return 
+    return
   end
-  if (self._nameBoardGO).activeSelf ~= not inShow then
-    (self._nameBoardGO):SetActive(not inShow)
+  if self._nameBoardGO.activeSelf ~= not inShow then
+    self._nameBoardGO:SetActive(not inShow)
   end
-  if (self._interactGO).activeSelf ~= inShow then
-    (self._interactGO):SetActive(inShow)
+  if self._interactGO.activeSelf ~= inShow then
+    self._interactGO:SetActive(inShow)
   end
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.NpcTurn = function(self)
-  -- function num : 0_76
+function HomeBuilding:NpcTurn()
   if not self._npcGO then
-    return 
+    return
   end
-  local charPos = (((self._homelandClient):CharacterManager()):MainCharacterController()):Position()
-  local toward = charPos - ((self._npcGO).transform).position
+  local charPos = self._homelandClient:CharacterManager():MainCharacterController():Position()
+  local toward = charPos - self._npcGO.transform.position
   toward.y = 0
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._npcGO).transform).forward = toward
+  self._npcGO.transform.forward = toward
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.OnInteract = function(self, interactType)
-  -- function num : 0_77 , upvalues : _ENV
+function HomeBuilding:OnInteract(interactType)
   if self._buildType == ArchitectureSubType.White_Tower then
     self:NpcTurn()
-  else
-    if self._buildType == ArchitectureSubType.Museum then
-      self:NpcTurn()
-    else
-      if self._buildType == ArchitectureSubType.Shop then
-        self:NpcTurn()
-      end
-    end
+  elseif self._buildType == ArchitectureSubType.Museum then
+    self:NpcTurn()
+  elseif self._buildType == ArchitectureSubType.Shop then
+    self:NpcTurn()
   end
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.SetShowDeleteBtn = function(self, show)
-  -- function num : 0_78
+function HomeBuilding:SetShowDeleteBtn(show)
   self._showDeleteBtn = show
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.ShowDeleteBtn = function(self)
-  -- function num : 0_79
+function HomeBuilding:ShowDeleteBtn()
   return self._showDeleteBtn
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.IsShabby = function(self)
-  -- function num : 0_80 , upvalues : _ENV
-  do return (self._architecture).status == ArchitectureStatus.AS_Shabby end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomeBuilding:IsShabby()
+  return self._architecture.status == ArchitectureStatus.AS_Shabby
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.IsDefaultBuilding = function(self)
-  -- function num : 0_81
+function HomeBuilding:IsDefaultBuilding()
   return self._isFreePos
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetName = function(self)
-  -- function num : 0_82
+function HomeBuilding:GetName()
   return self._buildingName
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding._DestroyView = function(self)
-  -- function num : 0_83 , upvalues : _ENV
+function HomeBuilding:_DestroyView()
   if self._npcRes then
-    ((self._homelandClient):CharacterManager()):UnRegisterNpc(self._npcGO)
+    self._homelandClient:CharacterManager():UnRegisterNpc(self._npcGO)
     self._npcGO = nil
-    ;
-    (self._npcRes):Dispose()
+    self._npcRes:Dispose()
     self._npcRes = nil
   end
   if self._interatAnimReq then
-    (self._interatAnimReq):Dispose()
+    self._interatAnimReq:Dispose()
     self._interatAnimReq = nil
     self._withPet = nil
   end
   self._outline = nil
   if self._areaReqs then
-    for _,req in ipairs(self._areaReqs) do
+    for _, req in ipairs(self._areaReqs) do
       req:Dispose()
     end
     self._areaReqs = nil
   end
   if self._req then
-    if (Cfg.cfg_homeland_building_water_depth)[self:GetBuildId()] then
-      ((self._homelandClient):SceneManager()):RemoveWaterDepthTarget(self._go)
+    if Cfg.cfg_homeland_building_water_depth[self:GetBuildId()] then
+      self._homelandClient:SceneManager():RemoveWaterDepthTarget(self._go)
     end
-    ;
-    (self._req):Dispose()
+    self._req:Dispose()
     self._req = nil
   end
   self:ClearLinkPointObj()
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.Unlock = function(self)
-  -- function num : 0_84
+function HomeBuilding:Unlock()
   self._isLock = false
   if self._npcGO then
-    (self._npcGO):SetActive(true)
+    self._npcGO:SetActive(true)
   end
   self:RefreshInteractPoint()
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding._HandleInteractAnim = function(self, petID)
-  -- function num : 0_85 , upvalues : _ENV
+function HomeBuilding:_HandleInteractAnim(petID)
   if petID and self._withPet ~= petID then
-    do
+    if self._interatAnimReq then
+      local anim = self._interatAnimReq.Obj:GetComponent(typeof(UnityEngine.Animation))
+      HelperProxy:GetInstance():RemoveAnimTo(anim, self._animation)
+      self._interatAnimReq:Dispose()
+      self._interatAnimReq = nil
+    end
+    local name = self:GetBuildId() .. "_" .. petID .. ".prefab"
+    local req = ResourceManager:GetInstance():SyncLoadAsset(name, LoadType.GameObject)
+    if req then
       if self._interatAnimReq then
-        local anim = ((self._interatAnimReq).Obj):GetComponent(typeof(UnityEngine.Animation))
-        ;
-        (HelperProxy:GetInstance()):RemoveAnimTo(anim, self._animation)
-        ;
-        (self._interatAnimReq):Dispose()
-        self._interatAnimReq = nil
+        self._interatAnimReq:Dispose()
       end
-      local name = self:GetBuildId() .. "_" .. petID .. ".prefab"
-      local req = (ResourceManager:GetInstance()):SyncLoadAsset(name, LoadType.GameObject)
-      if req then
-        if self._interatAnimReq then
-          (self._interatAnimReq):Dispose()
-        end
-        local anim = (req.Obj):GetComponent(typeof(UnityEngine.Animation))
-        ;
-        (HelperProxy:GetInstance()):AddAnimTo(anim, self._animation)
-        self._interatAnimReq = req
-        self._withPet = petID
-      else
-        do
-          ;
-          (Log.fatal)("找不到建筑与星灵对应的动作资源:", name)
-        end
-      end
+      local anim = req.Obj:GetComponent(typeof(UnityEngine.Animation))
+      HelperProxy:GetInstance():AddAnimTo(anim, self._animation)
+      self._interatAnimReq = req
+      self._withPet = petID
+    else
+      Log.fatal("找不到建筑与星灵对应的动作资源:", name)
     end
   end
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetInteractingPetList = function(self)
-  -- function num : 0_86
+function HomeBuilding:GetInteractingPetList()
   return self._interactingPetList
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.AddInteractingPet = function(self, pet)
-  -- function num : 0_87 , upvalues : _ENV
-  (table.insert)(self._interactingPetList, pet)
+function HomeBuilding:AddInteractingPet(pet)
+  table.insert(self._interactingPetList, pet)
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.RemoveInteractingPet = function(self, pet)
-  -- function num : 0_88 , upvalues : _ENV
-  (table.removev)(self._interactingPetList, pet)
+function HomeBuilding:RemoveInteractingPet(pet)
+  table.removev(self._interactingPetList, pet)
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetInteractingPetCount = function(self)
-  -- function num : 0_89 , upvalues : _ENV
-  return (table.count)(self._interactingPetList)
+function HomeBuilding:GetInteractingPetCount()
+  return table.count(self._interactingPetList)
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.InitInteractingPetCountMax = function(self)
-  -- function num : 0_90 , upvalues : _ENV
+function HomeBuilding:InitInteractingPetCountMax()
   self._interactingPetCountMax = 0
-  local interact = (self._transform):Find("Interact")
+  local interact = self._transform:Find("Interact")
   for i = 0, interact.childCount - 1 do
     local child = interact:GetChild(i)
-    if (string.find)(child.name, "pet_interact") then
+    if string.find(child.name, "pet_interact") then
       self._interactingPetCountMax = self._interactingPetCountMax + 1
     end
   end
@@ -1471,163 +1019,116 @@ HomeBuilding.InitInteractingPetCountMax = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetInteractingPetCountMax = function(self)
-  -- function num : 0_91
+function HomeBuilding:GetInteractingPetCountMax()
   if not self._interactingPetCountMax then
     self:InitInteractingPetCountMax()
   end
   return self._interactingPetCountMax
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.Interactable = function(self)
-  -- function num : 0_92
-  if (self._interactObjects)[1] ~= nil then
-    do return not self._cfg or not (self._cfg).SingleInteract end
-    do return true end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function HomeBuilding:Interactable()
+  if self._cfg and self._cfg.SingleInteract then
+    return self._interactObjects[1] == nil
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.IsFirstInteractObject = function(self, id)
-  -- function num : 0_93
-  do return not (self._interactObjects)[1] or ((self._interactObjects)[1]).id == id end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function HomeBuilding:IsFirstInteractObject(id)
+  return self._interactObjects[1] and self._interactObjects[1].id == id
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.IsLastInteractObject = function(self, id)
-  -- function num : 0_94
+function HomeBuilding:IsLastInteractObject(id)
   local length = #self._interactObjects
-  -- DECOMPILER ERROR at PC15: Unhandled construct in 'MakeBoolean' P1
-
-  if (self._interactObjects)[length] and ((self._interactObjects)[length]).id ~= id then
-    do return length ~= 1 end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  if length == 1 then
+    return self._interactObjects[length] and self._interactObjects[length].id == id
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.AddInteractObject = function(self, id, animationName)
-  -- function num : 0_95 , upvalues : _ENV
-  for _,value in pairs(self._interactObjects) do
+function HomeBuilding:AddInteractObject(id, animationName)
+  for _, value in pairs(self._interactObjects) do
     if value.id == id then
-      return 
+      return
     end
   end
   local t = {}
   t.id = id
   t.animationName = animationName
-  ;
-  (table.insert)(self._interactObjects, t)
+  table.insert(self._interactObjects, t)
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.UpdateInteractObject = function(self, id, animationName)
-  -- function num : 0_96 , upvalues : _ENV
-  for _,value in pairs(self._interactObjects) do
+function HomeBuilding:UpdateInteractObject(id, animationName)
+  for _, value in pairs(self._interactObjects) do
     if value.id == id then
       value.animationName = animationName
     end
   end
 end
 
--- DECOMPILER ERROR at PC299: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.RemoveInteractObject = function(self, id)
-  -- function num : 0_97 , upvalues : _ENV
+function HomeBuilding:RemoveInteractObject(id)
   if not id then
-    return 
+    return
   end
   local isFirst = false
   local removeSuccess = false
-  for key,value in pairs(self._interactObjects) do
+  for key, value in pairs(self._interactObjects) do
     if value.id == id then
       if key == 1 then
         isFirst = true
       end
-      ;
-      (table.remove)(self._interactObjects, key)
+      table.remove(self._interactObjects, key)
       removeSuccess = true
       break
     end
   end
-  do
-    if not (self._interactObjects)[1] and self._switchAnimationTask then
-      ((GameGlobal.TaskManager)()):KillTask(self._switchAnimationTask)
-      self._switchAnimationTask = nil
-    end
-    if removeSuccess and isFirst and (self._interactObjects)[1] then
-      self._switchAnimationTask = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_97_0 , upvalues : self, _ENV
-    if not self._curAnimationName or not self._animation then
-      return 
-    end
-    self._homelandInteractAnimationType = HomelandInteractAnimationType.Loop
-    local animationState = (self._animation):get_Item(self._curAnimationName)
-    local offset = 0
-    if animationState then
-      offset = animationState.time
-    end
-    self:_HandleInteractAnim(((self._interactObjects)[1]).id)
-    YIELD(TT)
-    local deltaTime = (GameGlobal:GetInstance()):GetDeltaTime()
-    self._curAnimationName = ((self._interactObjects)[1]).animationName
-    if self._curAnimationName then
-      (self._animation):Play(self._curAnimationName)
-      -- DECOMPILER ERROR at PC49: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._animationStates)[self._curAnimationName] = (self._animation):get_Item(self._curAnimationName)
-      -- DECOMPILER ERROR at PC61: Confused about usage of register: R4 in 'UnsetPending'
-
-      if (self._animationStates)[self._curAnimationName] then
-        if self._interactVisible then
-          ((self._animationStates)[self._curAnimationName]).speed = 1
-        else
-          -- DECOMPILER ERROR at PC66: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          ((self._animationStates)[self._curAnimationName]).speed = 0
+  if not self._interactObjects[1] and self._switchAnimationTask then
+    GameGlobal.TaskManager():KillTask(self._switchAnimationTask)
+    self._switchAnimationTask = nil
+  end
+  if removeSuccess and isFirst and self._interactObjects[1] then
+    self._switchAnimationTask = GameGlobal.TaskManager():StartTask(function(TT)
+      if not self._curAnimationName or not self._animation then
+        return
+      end
+      self._homelandInteractAnimationType = HomelandInteractAnimationType.Loop
+      local animationState = self._animation:get_Item(self._curAnimationName)
+      local offset = 0
+      if animationState then
+        offset = animationState.time
+      end
+      self:_HandleInteractAnim(self._interactObjects[1].id)
+      YIELD(TT)
+      local deltaTime = GameGlobal:GetInstance():GetDeltaTime()
+      self._curAnimationName = self._interactObjects[1].animationName
+      if self._curAnimationName then
+        self._animation:Play(self._curAnimationName)
+        self._animationStates[self._curAnimationName] = self._animation:get_Item(self._curAnimationName)
+        if self._animationStates[self._curAnimationName] then
+          if self._interactVisible then
+            self._animationStates[self._curAnimationName].speed = 1
+          else
+            self._animationStates[self._curAnimationName].speed = 0
+          end
         end
       end
-    end
-    YIELD(TT)
-    if self._curAnimationName then
-      animationState = (self._animation):get_Item(self._curAnimationName)
-      if animationState then
-        deltaTime = deltaTime + (GameGlobal:GetInstance()):GetDeltaTime()
-        animationState.time = offset + (deltaTime) * 0.001
+      YIELD(TT)
+      if self._curAnimationName then
+        animationState = self._animation:get_Item(self._curAnimationName)
+        if animationState then
+          deltaTime = deltaTime + GameGlobal:GetInstance():GetDeltaTime()
+          animationState.time = offset + deltaTime * 0.001
+        end
       end
-    end
-  end
-)
-    end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.IsMultiInteract = function(self)
-  -- function num : 0_98
-  do return #self._interactObjects > 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomeBuilding:IsMultiInteract()
+  return #self._interactObjects > 1
 end
 
--- DECOMPILER ERROR at PC305: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.ContainInteractObject = function(self, id)
-  -- function num : 0_99 , upvalues : _ENV
-  for _,value in pairs(self._interactObjects) do
+function HomeBuilding:ContainInteractObject(id)
+  for _, value in pairs(self._interactObjects) do
     if value.id == id then
       return true
     end
@@ -1635,10 +1136,7 @@ HomeBuilding.ContainInteractObject = function(self, id)
   return false
 end
 
--- DECOMPILER ERROR at PC308: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.FindRecursively = function(self, findName, trRoot)
-  -- function num : 0_100 , upvalues : _ENV
+function HomeBuilding:FindRecursively(findName, trRoot)
   if self ~= nil then
     trRoot = self:Transform()
   end
@@ -1652,214 +1150,146 @@ HomeBuilding.FindRecursively = function(self, findName, trRoot)
   local childCount = trRoot.childCount
   for i = 0, childCount - 1 do
     local trFind = trRoot:GetChild(i)
-    trFind = (HomeBuilding.FindRecursively)(nil, findName, trFind)
+    trFind = HomeBuilding.FindRecursively(nil, findName, trFind)
     if trFind ~= nil then
       return trFind
     end
   end
 end
 
--- DECOMPILER ERROR at PC311: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.StartShakeAnimation = function(self, start)
-  -- function num : 0_101 , upvalues : _ENV
+function HomeBuilding:StartShakeAnimation(start)
   if self:GetBuildType() ~= ArchitectureSubType.Son_Architecture then
-    return 
+    return
   end
-  local sonCfg = (Cfg.cfg_item_son_architecture)[self:GetBuildId()]
-  if not sonCfg.Areas or (sonCfg.Areas)[1] ~= 52710011 then
-    return 
+  local sonCfg = Cfg.cfg_item_son_architecture[self:GetBuildId()]
+  if not sonCfg.Areas or sonCfg.Areas[1] ~= 52710011 then
+    return
   end
-  self._trans = ((self._go).transform):Find("model")
-  do
-    if not self._moveUp or not 0.01 then
-      local to = not start or -0.01
-    end
-    ;
-    ((self._trans):DOLocalMoveY(to, 0.8)):OnComplete(function()
-    -- function num : 0_101_0 , upvalues : self
-    self:_ShakeComplete()
-  end
-)
-    ;
-    (self._trans):DOPause()
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._go).transform = Vector3(0, 0, 0)
+  self._trans = self._go.transform:Find("model")
+  if start then
+    local to = self._moveUp and 0.01 or -0.01
+    self._trans:DOLocalMoveY(to, 0.8):OnComplete(function()
+      self:_ShakeComplete()
+    end)
+  else
+    self._trans:DOPause()
+    self._go.transform = Vector3(0, 0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC314: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding._ShakeComplete = function(self)
-  -- function num : 0_102
+function HomeBuilding:_ShakeComplete()
   self._moveUp = not self._moveUp
   self:StartShakeAnimation(true)
 end
 
--- DECOMPILER ERROR at PC317: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.InitLinkPoint = function(self)
-  -- function num : 0_103 , upvalues : _ENV
-  self._linkPoint = (GameObjectHelper.FindChild)(self._transform, "linkpoint")
+function HomeBuilding:InitLinkPoint()
+  self._linkPoint = GameObjectHelper.FindChild(self._transform, "linkpoint")
   self._linkTargets = {}
 end
 
--- DECOMPILER ERROR at PC320: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetLinkPoint = function(self)
-  -- function num : 0_104
+function HomeBuilding:GetLinkPoint()
   return self._linkPoint
 end
 
--- DECOMPILER ERROR at PC323: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.CheckCanLink = function(self)
-  -- function num : 0_105
-  if (self._linkCfg).LinkCount <= 0 then
-    do return not self._linkPoint or not self._linkCfg end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function HomeBuilding:CheckCanLink()
+  if self._linkPoint and self._linkCfg then
+    return self._linkCfg.LinkCount > 0
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC326: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetLinkCount = function(self)
-  -- function num : 0_106
-  local count = self._linkCfg and (self._linkCfg).LinkCount or 0
+function HomeBuilding:GetLinkCount()
+  local count = self._linkCfg and self._linkCfg.LinkCount or 0
   return count
 end
 
--- DECOMPILER ERROR at PC329: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetCheckLinkDistance = function(self)
-  -- function num : 0_107
-  local distance = self._linkCfg and (self._linkCfg).Distance or 10
+function HomeBuilding:GetCheckLinkDistance()
+  local distance = self._linkCfg and self._linkCfg.Distance or 10
   return distance
 end
 
--- DECOMPILER ERROR at PC332: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetLinkingCount = function(self)
-  -- function num : 0_108
+function HomeBuilding:GetLinkingCount()
   return #self._holdlinkBuildingList
 end
 
--- DECOMPILER ERROR at PC335: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.SetLinkPointObj = function(self, building)
-  -- function num : 0_109 , upvalues : _ENV
+function HomeBuilding:SetLinkPointObj(building)
   if not self:CheckCanLink() then
-    return 
+    return
   end
-  ;
-  (table.insert)(self._holdlinkBuildingList, building)
+  table.insert(self._holdlinkBuildingList, building)
 end
 
--- DECOMPILER ERROR at PC338: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.ShowEffectGo = function(self, show)
-  -- function num : 0_110 , upvalues : _ENV
+function HomeBuilding:ShowEffectGo(show)
   if self._effectList and next(self._effectList) then
-    for key,value in pairs(self._effectList) do
+    for key, value in pairs(self._effectList) do
       value:SetActive(show)
     end
   end
 end
 
--- DECOMPILER ERROR at PC341: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.SetLinkPointTransform = function(self, tar)
-  -- function num : 0_111 , upvalues : _ENV
+function HomeBuilding:SetLinkPointTransform(tar)
   if not self._linkListReq then
     self._linkListReq = {}
   end
   if not self._effectList then
     self._effectList = {}
   end
-  local effectReq = (ResourceManager:GetInstance()):SyncLoadAsset("hl_pfb_5241020_line.prefab", LoadType.GameObject)
+  local effectReq = ResourceManager:GetInstance():SyncLoadAsset("hl_pfb_5241020_line.prefab", LoadType.GameObject)
   local effectObj = effectReq.Obj
-  ;
-  (table.insert)(self._linkListReq, effectReq)
-  ;
-  (table.insert)(self._effectList, effectObj)
+  table.insert(self._linkListReq, effectReq)
+  table.insert(self._effectList, effectObj)
   effectObj:SetActive(true)
   self:SetLinkPointObj(tar)
   tar:SetLinkPointObj(self)
   local renderers = effectObj:GetComponentsInChildren(typeof(UnityEngine.LineRenderer), true)
   for i = 0, renderers.Length - 1 do
-    (renderers[i]):SetPosition(0, ((self:GetLinkPoint()).transform).position)
-    ;
-    (renderers[i]):SetPosition(1, ((tar:GetLinkPoint()).transform).position)
+    renderers[i]:SetPosition(0, self:GetLinkPoint().transform.position)
+    renderers[i]:SetPosition(1, tar:GetLinkPoint().transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC344: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.ClearLinkPointObj = function(self)
-  -- function num : 0_112 , upvalues : _ENV
+function HomeBuilding:ClearLinkPointObj()
   self._effectList = {}
   if self._linkListReq then
-    for _,req in ipairs(self._linkListReq) do
+    for _, req in ipairs(self._linkListReq) do
       req:Dispose()
     end
   end
-  do
-    self._linkListReq = {}
-    self._holdlinkBuildingList = {}
-  end
+  self._linkListReq = {}
+  self._holdlinkBuildingList = {}
 end
 
--- DECOMPILER ERROR at PC347: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.IsFreeChild = function(self)
-  -- function num : 0_113
+function HomeBuilding:IsFreeChild()
   if self.Parent == nil then
     return false
   end
-  local freeChild = (self.Parent):GetFreeChild(self:InsID())
-  do return freeChild == self end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local freeChild = self.Parent:GetFreeChild(self:InsID())
+  return freeChild == self
 end
 
--- DECOMPILER ERROR at PC350: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.IsFixedChild = function(self)
-  -- function num : 0_114 , upvalues : _ENV
+function HomeBuilding:IsFixedChild()
   if self.Parent == nil then
     return false
   end
   if self:GetBuildType() ~= ArchitectureSubType.Son_Architecture then
     return false
   end
-  local sonCfg = (Cfg.cfg_item_son_architecture)[self:GetBuildId()]
+  local sonCfg = Cfg.cfg_item_son_architecture[self:GetBuildId()]
   if sonCfg.FatherSlot == nil then
     return false
   end
-  local fixedChild = (self.Parent):GetFixedChild(sonCfg.FatherSlot)
-  do return fixedChild == self end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local fixedChild = self.Parent:GetFixedChild(sonCfg.FatherSlot)
+  return fixedChild == self
 end
 
--- DECOMPILER ERROR at PC353: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.IsMaxInteractable = function(self)
-  -- function num : 0_115
-  do return self:GetInteractableCount() <= #self._interactObjects end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomeBuilding:IsMaxInteractable()
+  return #self._interactObjects >= self:GetInteractableCount()
 end
 
--- DECOMPILER ERROR at PC356: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuilding.GetNpcHangPointTransform = function(self, index)
-  -- function num : 0_116
-  local tran = (self._transform):Find("NpcPath/" .. index .. "/HangPoint")
+function HomeBuilding:GetNpcHangPointTransform(index)
+  local tran = self._transform:Find("NpcPath/" .. index .. "/HangPoint")
   if not tran then
     return nil
   end
   return tran
 end
-
-

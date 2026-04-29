@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/ui_activity_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityHelper", Object)
 UIActivityHelper = UIActivityHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityHelper.LoadCampaign = function(TT, res, campaignType, campaignId)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityHelper.LoadCampaign(TT, res, campaignType, campaignId)
   local campaign = UIActivityCampaign:New()
   if campaignId then
     campaign:LoadCampaignInfo_Id(TT, res, campaignId)
@@ -18,10 +11,7 @@ UIActivityHelper.LoadCampaign = function(TT, res, campaignType, campaignId)
   return campaign
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.LoadCampaign_Local = function(campaignType, campaignId)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityHelper.LoadCampaign_Local(campaignType, campaignId)
   local campaign = UIActivityCampaign:New()
   if campaignId then
     campaign:LoadCampaignInfo_Id_Local(campaignId)
@@ -31,14 +21,11 @@ UIActivityHelper.LoadCampaign_Local = function(campaignType, campaignId)
   return campaign
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.LoadDataOnEnter = function(TT, res, campaignType, componentIds)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityHelper.LoadDataOnEnter(TT, res, campaignType, componentIds)
   local campaign = UIActivityCampaign:New()
-  campaign:LoadCampaignInfo(TT, res, campaignType, (table.unpack)(componentIds))
-  if res and res:GetSucc() and not campaign:CheckComponentOpen((table.unpack)(componentIds)) then
-    res.m_result = campaign:CheckComponentOpenClientError((table.unpack)(componentIds))
+  campaign:LoadCampaignInfo(TT, res, campaignType, table.unpack(componentIds))
+  if res and res:GetSucc() and not campaign:CheckComponentOpen(table.unpack(componentIds)) then
+    res.m_result = campaign:CheckComponentOpenClientError(table.unpack(componentIds))
   end
   if res and not res:GetSucc() then
     campaign:CheckErrorCode(res.m_result, nil, nil)
@@ -46,816 +33,608 @@ UIActivityHelper.LoadDataOnEnter = function(TT, res, campaignType, componentIds)
   return campaign
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.StartTimerEvent = function(timerEvent, timerCallback, tick)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityHelper.StartTimerEvent(timerEvent, timerCallback, tick)
   local t = tick or 1000
   local stopSign = timerCallback()
-  timerEvent = (UIActivityHelper.CancelTimerEvent)(timerEvent)
+  timerEvent = UIActivityHelper.CancelTimerEvent(timerEvent)
   if not stopSign then
-    timerEvent = ((GameGlobal.Timer)()):AddEventTimes(t, TimerTriggerCount.Infinite, timerCallback)
+    timerEvent = GameGlobal.Timer():AddEventTimes(t, TimerTriggerCount.Infinite, timerCallback)
   end
   return timerEvent
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.CancelTimerEvent = function(timerEvent)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityHelper.CancelTimerEvent(timerEvent)
   if timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(timerEvent)
+    GameGlobal.Timer():CancelEvent(timerEvent)
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.GetFormatTimerStr = function(time, id)
-  -- function num : 0_5 , upvalues : _ENV
-  local default_id = {day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_error_107"}
-  if not id then
-    id = default_id
-  end
-  local timeStr = (StringTable.Get)(id.over)
+function UIActivityHelper.GetFormatTimerStr(time, id)
+  local default_id = {
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_error_107"
+  }
+  id = id or default_id
+  local timeStr = StringTable.Get(id.over)
   if time < 0 then
     return timeStr
   end
-  local day, hour, min, second = (UIActivityHelper.Time2Str)(time)
-  if day > 0 then
-    timeStr = day .. (StringTable.Get)(id.day)
+  local day, hour, min, second = UIActivityHelper.Time2Str(time)
+  if 0 < day then
+    timeStr = day .. StringTable.Get(id.day)
     if hour ~= 0 then
-      timeStr = timeStr .. hour .. (StringTable.Get)(id.hour)
+      timeStr = timeStr .. hour .. StringTable.Get(id.hour)
     end
+  elseif 0 < hour then
+    timeStr = hour .. StringTable.Get(id.hour)
+    if min ~= 0 then
+      timeStr = timeStr .. min .. StringTable.Get(id.min)
+    end
+  elseif 0 < min then
+    timeStr = min .. StringTable.Get(id.min)
   else
-    if hour > 0 then
-      timeStr = hour .. (StringTable.Get)(id.hour)
-      if min ~= 0 then
-        timeStr = timeStr .. min .. (StringTable.Get)(id.min)
-      end
-    else
-      if min > 0 then
-        timeStr = min .. (StringTable.Get)(id.min)
-      else
-        timeStr = (StringTable.Get)(id.zero)
-      end
-    end
+    timeStr = StringTable.Get(id.zero)
   end
   return timeStr
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.GetFormatIntlTimeStr = function(time)
-  -- function num : 0_6 , upvalues : _ENV
-  local id = {day_hour = "str_activity_day_hour", day = "str_activity_day", hour_min = "str_activity_hour_minute", hour = "str_activity_hour", min = "str_activity_minus", sec = "str_activity_less_one_minus"}
+function UIActivityHelper.GetFormatIntlTimeStr(time)
+  local id = {
+    day_hour = "str_activity_day_hour",
+    day = "str_activity_day",
+    hour_min = "str_activity_hour_minute",
+    hour = "str_activity_hour",
+    min = "str_activity_minus",
+    sec = "str_activity_less_one_minus"
+  }
   if time < 0 then
-    return (StringTable.Get)(id.sec)
+    return StringTable.Get(id.sec)
   end
-  local timeStr = nil
-  local day, hour, min = (UIActivityHelper.Time2Str)(time)
-  if day > 0 then
+  local timeStr
+  local day, hour, min = UIActivityHelper.Time2Str(time)
+  if 0 < day then
     if hour == 0 then
-      timeStr = (StringTable.Get)(id.day, day)
+      timeStr = StringTable.Get(id.day, day)
     else
-      timeStr = (StringTable.Get)(id.day_hour, day, hour)
+      timeStr = StringTable.Get(id.day_hour, day, hour)
     end
+  elseif 0 < hour then
+    if min == 0 then
+      timeStr = StringTable.Get(id.hour, hour)
+    else
+      timeStr = StringTable.Get(id.hour_min, hour, min)
+    end
+  elseif 0 < min then
+    timeStr = StringTable.Get(id.min, min)
   else
-    if hour > 0 then
-      if min == 0 then
-        timeStr = (StringTable.Get)(id.hour, hour)
-      else
-        timeStr = (StringTable.Get)(id.hour_min, hour, min)
-      end
-    else
-      if min > 0 then
-        timeStr = (StringTable.Get)(id.min, min)
-      else
-        timeStr = (StringTable.Get)(id.sec)
-      end
-    end
+    timeStr = StringTable.Get(id.sec)
   end
   return timeStr
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.Time2Str = function(time)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityHelper.Time2Str(time)
   local second = time % 60
-  local min = (math.floor)(time / 60) % 60
-  local hour = (math.floor)(time / 60 / 60) % 24
-  local day = (math.floor)(time / 60 / 60 / 24)
+  local min = math.floor(time / 60) % 60
+  local hour = math.floor(time / 60 / 60) % 24
+  local day = math.floor(time / 60 / 60 / 24)
   return day, hour, min, second
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.GetActivityLeftTimeStr = function(timeStamp)
-  -- function num : 0_8 , upvalues : _ENV
-  return (UIActivityHelper.GetFormatIntlTimeStrWithParam)("str_activity_mission_remaining_time", (UICommonHelper.CalcLeftSeconds)(timeStamp))
+function UIActivityHelper.GetActivityLeftTimeStr(timeStamp)
+  return UIActivityHelper.GetFormatIntlTimeStrWithParam("str_activity_mission_remaining_time", UICommonHelper.CalcLeftSeconds(timeStamp))
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.GetActivityUICloseTimeStr = function(timeStamp)
-  -- function num : 0_9 , upvalues : _ENV
-  return (UIActivityHelper.GetFormatIntlTimeStrWithParam)("str_activity_time_tips2", (UICommonHelper.CalcLeftSeconds)(timeStamp))
+function UIActivityHelper.GetActivityUICloseTimeStr(timeStamp)
+  return UIActivityHelper.GetFormatIntlTimeStrWithParam("str_activity_time_tips2", UICommonHelper.CalcLeftSeconds(timeStamp))
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.GetActivityCmptOpenTimeStr = function(timeStamp)
-  -- function num : 0_10 , upvalues : _ENV
-  return (UIActivityHelper.GetFormatIntlTimeStrWithParam)("str_activity_start_in", (UICommonHelper.CalcLeftSeconds)(timeStamp))
+function UIActivityHelper.GetActivityCmptOpenTimeStr(timeStamp)
+  return UIActivityHelper.GetFormatIntlTimeStrWithParam("str_activity_start_in", UICommonHelper.CalcLeftSeconds(timeStamp))
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.GetActivityCmptOpenLevelStr = function(stageStr)
-  -- function num : 0_11 , upvalues : _ENV
-  return (StringTable.Get)("str_activity_common_will_open_after_clearance", (StringTable.Get)(stageStr))
+function UIActivityHelper.GetActivityCmptOpenLevelStr(stageStr)
+  return StringTable.Get("str_activity_common_will_open_after_clearance", StringTable.Get(stageStr))
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.GetFormatIntlTimeStrWithParam = function(strKey, timeSeconds)
-  -- function num : 0_12 , upvalues : _ENV
-  local timeStr = (UIActivityHelper.GetFormatIntlTimeStr)(timeSeconds)
-  return (StringTable.Get)(strKey, timeStr)
+function UIActivityHelper.GetFormatIntlTimeStrWithParam(strKey, timeSeconds)
+  local timeStr = UIActivityHelper.GetFormatIntlTimeStr(timeSeconds)
+  return StringTable.Get(strKey, timeStr)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.StartLockEvent = function(lockName, timerEvent, callback, tick)
-  -- function num : 0_13 , upvalues : _ENV
-  if (string.isnullorempty)(lockName) then
+function UIActivityHelper.StartLockEvent(lockName, timerEvent, callback, tick)
+  if string.isnullorempty(lockName) then
     return nil
   end
   local t = tick or 1000
-  ;
-  (UIActivityHelper.CancelLockEvent)(lockName, timerEvent)
-  timerEvent = ((GameGlobal.Timer)()):AddEventTimes(t, TimerTriggerCount.Once, function()
-    -- function num : 0_13_0 , upvalues : _ENV, lockName, timerEvent, callback
-    (UIActivityHelper.CancelLockEvent)(lockName, timerEvent)
+  UIActivityHelper.CancelLockEvent(lockName, timerEvent)
+  timerEvent = GameGlobal.Timer():AddEventTimes(t, TimerTriggerCount.Once, function()
+    UIActivityHelper.CancelLockEvent(lockName, timerEvent)
     if callback then
       callback()
     end
-  end
-)
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
+  end)
+  GameGlobal.UIStateManager():Lock(lockName)
   return timerEvent
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.CancelLockEvent = function(lockName, timerEvent)
-  -- function num : 0_14 , upvalues : _ENV
-  if (string.isnullorempty)(lockName) then
+function UIActivityHelper.CancelLockEvent(lockName, timerEvent)
+  if string.isnullorempty(lockName) then
     return nil
   end
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock(lockName)
+  GameGlobal.UIStateManager():UnLock(lockName)
   if timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(timerEvent)
+    GameGlobal.Timer():CancelEvent(timerEvent)
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.GetCampaignMainBg = function(campaign, idx)
-  -- function num : 0_15 , upvalues : _ENV
-  local cfg_campaign = (Cfg.cfg_campaign)[campaign._id]
+function UIActivityHelper.GetCampaignMainBg(campaign, idx)
+  local cfg_campaign = Cfg.cfg_campaign[campaign._id]
   if cfg_campaign then
     local url = cfg_campaign.BGImage
-    if url then
-      do return url[idx] end
-    end
+    return url and url[idx]
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.GetCampaignFirstEnterStoryID = function(campaign, idx)
-  -- function num : 0_16 , upvalues : _ENV
-  local cfg_campaign = (Cfg.cfg_campaign)[campaign._id]
+function UIActivityHelper.GetCampaignFirstEnterStoryID(campaign, idx)
+  local cfg_campaign = Cfg.cfg_campaign[campaign._id]
   if cfg_campaign then
     local id = cfg_campaign.FirstEnterStoryID
-    if id then
-      do return id[idx] end
+    return id and id[idx]
+  end
+end
+
+function UIActivityHelper.PlayFirstPlot_Campaign(campaign, callback, autoCloseStoryUI)
+  if not campaign:CheckCampaignOpen() then
+    if callback then
+      callback()
     end
+    return
   end
+  local storyId = UIActivityHelper.GetCampaignFirstEnterStoryID(campaign, 1)
+  UIActivityHelper._PlayFirstPlot("PlayFirstPlot_Campaign_" .. campaign._id, storyId, callback, autoCloseStoryUI)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.PlayFirstPlot_Campaign = function(campaign, callback, autoCloseStoryUI)
-  -- function num : 0_17 , upvalues : _ENV
-  if not campaign:CheckCampaignOpen() and callback then
-    callback()
+function UIActivityHelper.PlayFirstPlot_Component(campaign, componentId, callback, autoCloseStoryUI)
+  if not campaign:CheckComponentOpen(componentId) then
+    if callback then
+      callback()
+    end
+    return
   end
-  do return  end
-  local storyId = (UIActivityHelper.GetCampaignFirstEnterStoryID)(campaign, 1)
-  ;
-  (UIActivityHelper._PlayFirstPlot)("PlayFirstPlot_Campaign_" .. campaign._id, storyId, callback, autoCloseStoryUI)
-end
-
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.PlayFirstPlot_Component = function(campaign, componentId, callback, autoCloseStoryUI)
-  -- function num : 0_18 , upvalues : _ENV
-  if not campaign:CheckComponentOpen(componentId) and callback then
-    callback()
-  end
-  do return  end
   local component = campaign:GetComponent(componentId)
-  local storyId = (component:GetComponentInfo()).m_first_story_id
-  ;
-  (UIActivityHelper._PlayFirstPlot)("PlayFirstPlot_Component_" .. campaign._id .. "_" .. componentId, storyId, callback, autoCloseStoryUI)
+  local storyId = component:GetComponentInfo().m_first_story_id
+  UIActivityHelper._PlayFirstPlot("PlayFirstPlot_Component_" .. campaign._id .. "_" .. componentId, storyId, callback, autoCloseStoryUI)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper._PlayFirstPlot = function(keyStr, storyId, callback, autoCloseStoryUI)
-  -- function num : 0_19 , upvalues : _ENV
-  if not keyStr or not storyId or storyId == 0 then
-    (Log.info)("UIActivityHelper._PlayFirstPlot() keyStr == ", keyStr, ", storyId == ", storyId)
+function UIActivityHelper._PlayFirstPlot(keyStr, storyId, callback, autoCloseStoryUI)
+  if not (keyStr and storyId) or storyId == 0 then
+    Log.info("UIActivityHelper._PlayFirstPlot() keyStr == ", keyStr, ", storyId == ", storyId)
     if callback then
       callback()
     end
-    return 
+    return
   end
-  keyStr = (UIActivityHelper.GetLocalDBKeyWithPstId)(keyStr .. "_")
-  if (LocalDB.HasKey)(keyStr) then
-    (Log.info)("UIActivityHelper._PlayFirstPlot() HasKey! keyStr == ", keyStr)
+  keyStr = UIActivityHelper.GetLocalDBKeyWithPstId(keyStr .. "_")
+  if LocalDB.HasKey(keyStr) then
+    Log.info("UIActivityHelper._PlayFirstPlot() HasKey! keyStr == ", keyStr)
     if callback then
       callback()
     end
-    return 
+    return
   else
-    ;
-    (Log.info)("UIActivityHelper._PlayFirstPlot() SetKey! keyStr == ", keyStr)
-    ;
-    (LocalDB.SetInt)(keyStr, 1)
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIStoryController", storyId, callback, autoCloseStoryUI)
+    Log.info("UIActivityHelper._PlayFirstPlot() SetKey! keyStr == ", keyStr)
+    LocalDB.SetInt(keyStr, 1)
+    GameGlobal.UIStateManager():ShowDialog("UIStoryController", storyId, callback, autoCloseStoryUI)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.OpenCampaignShop = function(campaign)
-  -- function num : 0_20 , upvalues : _ENV
+function UIActivityHelper.OpenCampaignShop(campaign)
   local campaignType = campaign._type
-  local cfgs = (Cfg.cfg_shop_campaign_secret_tab)({CampaignType = campaignType})
-  if cfgs then
-    local cfg = cfgs[1]
-  end
+  local cfgs = Cfg.cfg_shop_campaign_secret_tab({CampaignType = campaignType})
+  local cfg = cfgs and cfgs[1]
   if not cfg then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIShopController", nil, ShopMainTabType.Secret, cfg.ID, campaign)
+  GameGlobal.UIStateManager():ShowDialog("UIShopController", nil, ShopMainTabType.Secret, cfg.ID, campaign)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.IsYJEnough = function(cost)
-  -- function num : 0_21 , upvalues : _ENV
-  local mShop = (GameGlobal.GetModule)(ShopModule)
+function UIActivityHelper.IsYJEnough(cost)
+  local mShop = GameGlobal.GetModule(ShopModule)
   local count, countFree = mShop:GetDiamondCount()
   local total = count
   local isEnough = cost <= total
   local diff = cost - total
-  do return isEnough, diff end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return isEnough, diff
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.CheckCampaignSampleNewPoint = function(campaign)
-  -- function num : 0_22 , upvalues : _ENV
-  local nonuse = (UIActivityHelper.CheckCampaignSampleNewPoint_Nonuse)(campaign._type)
-  local customFunc = (UIActivityHelper.CheckCampaignSampleNewPoint_CustomFunc)(campaign._type)
+function UIActivityHelper.CheckCampaignSampleNewPoint(campaign)
+  local nonuse = UIActivityHelper.CheckCampaignSampleNewPoint_Nonuse(campaign._type)
+  local customFunc = UIActivityHelper.CheckCampaignSampleNewPoint_CustomFunc(campaign._type)
   if nonuse then
     return false
+  elseif customFunc then
+    return customFunc(campaign)
   else
-    if customFunc then
-      return customFunc(campaign)
-    else
-      return campaign:CheckCampaignNew()
-    end
+    return campaign:CheckCampaignNew()
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.CheckCampaignSampleNewPoint_CustomFunc = function(campaignType)
-  -- function num : 0_23 , upvalues : _ENV
-  local tb = {[ECampaignType.CAMPAIGN_TYPE_N19_COMMON] = UIN19Helper.GetNewPoint}
+function UIActivityHelper.CheckCampaignSampleNewPoint_CustomFunc(campaignType)
+  local tb = {
+    [ECampaignType.CAMPAIGN_TYPE_N19_COMMON] = UIN19Helper.GetNewPoint
+  }
   return tb[campaignType]
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.CheckCampaignSampleNewPoint_Nonuse = function(campaignType)
-  -- function num : 0_24 , upvalues : _ENV
-  local tb = {[ECampaignType.CAMPAIGN_TYPE_SENIOR_SKIN] = true, [ECampaignType.CAMPAIGN_TYPE_HAVESTTIME] = true, [ECampaignType.CAMPAIGN_TYPE_INLAND_FIRSTPET] = true, [ECampaignType.CAMPAIGN_TYPE_SENIOR_SKIN_COPY] = true}
+function UIActivityHelper.CheckCampaignSampleNewPoint_Nonuse(campaignType)
+  local tb = {
+    [ECampaignType.CAMPAIGN_TYPE_SENIOR_SKIN] = true,
+    [ECampaignType.CAMPAIGN_TYPE_HAVESTTIME] = true,
+    [ECampaignType.CAMPAIGN_TYPE_INLAND_FIRSTPET] = true,
+    [ECampaignType.CAMPAIGN_TYPE_SENIOR_SKIN_COPY] = true
+  }
   return tb[campaignType]
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.CheckCampaignSampleRedPoint = function(campaign)
-  -- function num : 0_25 , upvalues : _ENV
-  local nonuse = (UIActivityHelper.CheckCampaignSampleRedPoint_Nonuse)(campaign._type)
-  local customFunc = (UIActivityHelper.CheckCampaignSampleRedPoint_CustomFunc)(campaign._type)
+function UIActivityHelper.CheckCampaignSampleRedPoint(campaign)
+  local nonuse = UIActivityHelper.CheckCampaignSampleRedPoint_Nonuse(campaign._type)
+  local customFunc = UIActivityHelper.CheckCampaignSampleRedPoint_CustomFunc(campaign._type)
   if nonuse then
     return false
+  elseif customFunc then
+    return customFunc(campaign)
   else
-    if customFunc then
-      return customFunc(campaign)
-    else
-      return campaign:CheckCampaignRed()
-    end
+    return campaign:CheckCampaignRed()
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.CheckCampaignSampleRedPoint_CustomFunc = function(campaignType)
-  -- function num : 0_26 , upvalues : _ENV
-  local tb = {[ECampaignType.CAMPAIGN_TYPE_BATTLEPASS] = UIActivityBattlePassHelper.CheckCampaignRedPoint, [ECampaignType.CAMPAIGN_TYPE_BACK_PHASE_II] = UIActivityReturnSystemHelper.CheckCampaignRedPoint, [ECampaignType.CAMPAIGN_TYPE_SENIOR_SKIN] = UIActivityHelper.CheckSeniorSkinRedPoint, [ECampaignType.CAMPAIGN_TYPE_ANNIVERSARY] = UIActivityAnniversaryLoginHelper.CheckCampaignRedPoint, [ECampaignType.CAMPAIGN_TYPE_N31_ANNIVERSARY] = UIN31SecondAnniversaryContent.CheckCampaignRedPoint, [ECampaignType.CAMPAIGN_TYPE_SENIOR_SKIN_COPY] = UIActivityHelper.CheckSeniorSkinRedPoint, [ECampaignType.CAMPAIGN_TYPE_INLAND_FIRSTPET] = UIActivityPetTryHelper.CheckCampaignRedPoint}
+function UIActivityHelper.CheckCampaignSampleRedPoint_CustomFunc(campaignType)
+  local tb = {
+    [ECampaignType.CAMPAIGN_TYPE_BATTLEPASS] = UIActivityBattlePassHelper.CheckCampaignRedPoint,
+    [ECampaignType.CAMPAIGN_TYPE_BACK_PHASE_II] = UIActivityReturnSystemHelper.CheckCampaignRedPoint,
+    [ECampaignType.CAMPAIGN_TYPE_SENIOR_SKIN] = UIActivityHelper.CheckSeniorSkinRedPoint,
+    [ECampaignType.CAMPAIGN_TYPE_ANNIVERSARY] = UIActivityAnniversaryLoginHelper.CheckCampaignRedPoint,
+    [ECampaignType.CAMPAIGN_TYPE_N31_ANNIVERSARY] = UIN31SecondAnniversaryContent.CheckCampaignRedPoint,
+    [ECampaignType.CAMPAIGN_TYPE_SENIOR_SKIN_COPY] = UIActivityHelper.CheckSeniorSkinRedPoint,
+    [ECampaignType.CAMPAIGN_TYPE_INLAND_FIRSTPET] = UIActivityPetTryHelper.CheckCampaignRedPoint
+  }
   return tb[campaignType]
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.CheckCampaignSampleRedPoint_Nonuse = function(campaignType)
-  -- function num : 0_27 , upvalues : _ENV
-  local tb = {[ECampaignType.CAMPAIGN_TYPE_HAVESTTIME] = true}
+function UIActivityHelper.CheckCampaignSampleRedPoint_Nonuse(campaignType)
+  local tb = {
+    [ECampaignType.CAMPAIGN_TYPE_HAVESTTIME] = true
+  }
   return tb[campaignType]
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.SetWidgetNewAndRed = function(newObj, new, redObj, red)
-  -- function num : 0_28
+function UIActivityHelper.SetWidgetNewAndRed(newObj, new, redObj, red)
   if not newObj and not redObj then
-    return 
+    return
   end
-  if redObj ~= newObj then
-    local same = not newObj or not redObj
-    if not new then
-      do
-        newObj:SetActive(not same or red)
-        newObj:SetActive(new)
-        redObj:SetActive((not new and red))
-        if newObj then
-          newObj:SetActive(new)
-        elseif redObj then
-          redObj:SetActive(red)
-        end
-        -- DECOMPILER ERROR: 8 unprocessed JMP targets
-      end
+  if newObj and redObj then
+    local same = redObj == newObj
+    if same then
+      newObj:SetActive(new or red)
+    else
+      newObj:SetActive(new)
+      redObj:SetActive(not new and red)
     end
+  elseif newObj then
+    newObj:SetActive(new)
+  elseif redObj then
+    redObj:SetActive(red)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.SetCmptRedViewed = function(cmptKey)
-  -- function num : 0_29 , upvalues : _ENV
-  local nextFive = ((GameGlobal.GetModule)(LoginModule)):GetNextTimeStampByHMS(5, 0, 0)
+function UIActivityHelper.SetCmptRedViewed(cmptKey)
+  local nextFive = GameGlobal.GetModule(LoginModule):GetNextTimeStampByHMS(5, 0, 0)
   local key = "UIActivityRed" .. cmptKey
-  ;
-  (LocalDB.SetInt)((UIActivityHelper.GetLocalDBKeyWithPstId)(key), nextFive)
+  LocalDB.SetInt(UIActivityHelper.GetLocalDBKeyWithPstId(key), nextFive)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.HasCmptRedViewed = function(cmptKey)
-  -- function num : 0_30 , upvalues : _ENV
+function UIActivityHelper.HasCmptRedViewed(cmptKey)
   local key = "UIActivityRed" .. cmptKey
-  local val = (LocalDB.GetInt)((UIActivityHelper.GetLocalDBKeyWithPstId)(key))
+  local val = LocalDB.GetInt(UIActivityHelper.GetLocalDBKeyWithPstId(key))
   if val == 0 then
     return false
   else
-    local svrTime = (math.modf)(((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001)
-    return svrTime < val
+    local svrTime = math.modf(GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001)
+    return val > svrTime
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.ShowUIGetRewards = function(rewards, doNotSort)
-  -- function num : 0_31 , upvalues : _ENV
+function UIActivityHelper.ShowUIGetRewards(rewards, doNotSort)
   if not rewards then
-    return 
+    return
   end
   local itemList = {}
   local petList = {}
   local petSkinList = {}
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  for _,v in pairs(rewards) do
+  local petModule = GameGlobal.GetModule(PetModule)
+  for _, v in pairs(rewards) do
     if petModule:IsPetID(v.assetid) then
-      (table.insert)(petList, v)
+      table.insert(petList, v)
+    elseif petModule:IsPetSkinID(v.assetid) then
+      local roleAsset = RoleAsset:New()
+      roleAsset.assetid = petModule:GetSkinIDFromItemID(v.assetid)
+      roleAsset.count = v.count
+      table.insert(petSkinList, roleAsset)
     else
-      if petModule:IsPetSkinID(v.assetid) then
-        local roleAsset = RoleAsset:New()
-        roleAsset.assetid = petModule:GetSkinIDFromItemID(v.assetid)
-        roleAsset.count = v.count
-        ;
-        (table.insert)(petSkinList, roleAsset)
-      else
-        do
-          do
-            ;
-            (table.insert)(itemList, v)
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
+      table.insert(itemList, v)
     end
   end
-  ;
-  (UIActivityHelper.ShowUIGetRewards_Pet)(petList, petSkinList, itemList, doNotSort)
+  UIActivityHelper.ShowUIGetRewards_Pet(petList, petSkinList, itemList, doNotSort)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.ShowUIGetRewards_Pet = function(petList, petSkinList, itemList, doNotSort)
-  -- function num : 0_32 , upvalues : _ENV
-  if (table.count)(petList) <= 0 then
-    (UIActivityHelper.ShowUIGetRewards_PetSkin)(petSkinList, itemList, doNotSort)
-    return 
+function UIActivityHelper.ShowUIGetRewards_Pet(petList, petSkinList, itemList, doNotSort)
+  if table.count(petList) <= 0 then
+    UIActivityHelper.ShowUIGetRewards_PetSkin(petSkinList, itemList, doNotSort)
+    return
   end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIPetObtain", petList, function()
-    -- function num : 0_32_0 , upvalues : _ENV, petSkinList, itemList, doNotSort
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    (UIActivityHelper.ShowUIGetRewards_PetSkin)(petSkinList, itemList, doNotSort)
-  end
-)
-  return 
+  GameGlobal.UIStateManager():ShowDialog("UIPetObtain", petList, function()
+    GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+    UIActivityHelper.ShowUIGetRewards_PetSkin(petSkinList, itemList, doNotSort)
+  end)
+  return
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.ShowUIGetRewards_PetSkin = function(petSkinList, itemList, doNotSort)
-  -- function num : 0_33 , upvalues : _ENV
-  if (table.count)(petSkinList) <= 0 then
-    (UIActivityHelper.ShowUIGetRewards_Item)(itemList, doNotSort)
-    return 
+function UIActivityHelper.ShowUIGetRewards_PetSkin(petSkinList, itemList, doNotSort)
+  if table.count(petSkinList) <= 0 then
+    UIActivityHelper.ShowUIGetRewards_Item(itemList, doNotSort)
+    return
   end
   local index = 0
-  local showNextFunc = function()
-    -- function num : 0_33_0 , upvalues : index, petSkinList
+  
+  local function showNextFunc()
     index = index + 1
     if index <= #petSkinList then
       return petSkinList[index]
     end
     return nil
   end
-
-  local callBackFunc = nil
-  callBackFunc = function()
-    -- function num : 0_33_1 , upvalues : _ENV, showNextFunc, callBackFunc, itemList, doNotSort
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetSkinObtainController")
+  
+  local callBackFunc
+  
+  function callBackFunc()
+    GameGlobal.UIStateManager():CloseDialog("UIPetSkinObtainController")
     local nextAsset = showNextFunc()
     if nextAsset then
-      (UIActivityHelper.ShowUIGetRewards_PetSkin_Single)(nextAsset, callBackFunc)
+      UIActivityHelper.ShowUIGetRewards_PetSkin_Single(nextAsset, callBackFunc)
     else
-      ;
-      (UIActivityHelper.ShowUIGetRewards_Item)(itemList, doNotSort)
+      UIActivityHelper.ShowUIGetRewards_Item(itemList, doNotSort)
     end
   end
-
-  ;
-  (UIActivityHelper.ShowUIGetRewards_PetSkin_Single)(showNextFunc(), callBackFunc)
+  
+  UIActivityHelper.ShowUIGetRewards_PetSkin_Single(showNextFunc(), callBackFunc)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.ShowUIGetRewards_PetSkin_Single = function(roleAsset, callBackFunc)
-  -- function num : 0_34 , upvalues : _ENV
-  if not roleAsset and callBackFunc then
-    callBackFunc()
+function UIActivityHelper.ShowUIGetRewards_PetSkin_Single(roleAsset, callBackFunc)
+  if not roleAsset then
+    if callBackFunc then
+      callBackFunc()
+    end
+    return
   end
-  do return  end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIPetSkinObtainController", roleAsset, callBackFunc)
+  GameGlobal.UIStateManager():ShowDialog("UIPetSkinObtainController", roleAsset, callBackFunc)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.ShowUIGetRewards_Item = function(itemList, doNotSort)
-  -- function num : 0_35 , upvalues : _ENV
-  if (table.count)(itemList) <= 0 then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
-    return 
+function UIActivityHelper.ShowUIGetRewards_Item(itemList, doNotSort)
+  if table.count(itemList) <= 0 then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
+    return
   end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", itemList, function()
-    -- function num : 0_35_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
-  end
-, doNotSort)
+  GameGlobal.UIStateManager():ShowDialog("UIGetItemController", itemList, function()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
+  end, doNotSort)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.GetLocalDBKeyWithPstId = function(keyStr)
-  -- function num : 0_36 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityHelper.GetLocalDBKeyWithPstId(keyStr)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   return keyStr .. roleModule:GetPstId()
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.GetDebugOpenKey = function()
-  -- function num : 0_37 , upvalues : _ENV
-  return (UIActivityHelper.GetLocalDBKeyWithPstId)("UIActivityHelper_GetDebugOpenKey_")
+function UIActivityHelper.GetDebugOpenKey()
+  return UIActivityHelper.GetLocalDBKeyWithPstId("UIActivityHelper_GetDebugOpenKey_")
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.CheckDebugOpen = function()
-  -- function num : 0_38 , upvalues : _ENV
-  local show = (EngineGameHelper.IsDevelopmentBuild)() or (HelperProxy:GetInstance()):GetConfig("EnableTestFunc", "false") == "true"
-  if show then
-    do return (LocalDB.HasKey)((UIActivityHelper.GetDebugOpenKey)()) end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
-  end
+function UIActivityHelper.CheckDebugOpen()
+  local show = EngineGameHelper.IsDevelopmentBuild() or HelperProxy:GetInstance():GetConfig("EnableTestFunc", "false") == "true"
+  return show and LocalDB.HasKey(UIActivityHelper.GetDebugOpenKey())
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.GetStringTableArray = function(key)
-  -- function num : 0_39 , upvalues : _ENV
+function UIActivityHelper.GetStringTableArray(key)
   local tb = {}
   local n = 0
-  while 1 do
-    while 1 do
-      n = n + 1
-      local b = (StringTable.Has)(key .. n)
-      if b then
-        (table.insert)(tb, key .. n)
-        -- DECOMPILER ERROR at PC18: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC18: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  while true do
+    n = n + 1
+    local b = StringTable.Has(key .. n)
+    if b then
+      table.insert(tb, key .. n)
+    else
+      n = n - 1
+      break
     end
-    n = n - 1
-    break
   end
-  do
-    if n <= 0 then
-      (Log.fatal)("UIActivityHelper.GetStringTableArray() no [", key, n, "] in str_xxx.xlsx")
-    end
-    return tb
+  if n <= 0 then
+    Log.fatal("UIActivityHelper.GetStringTableArray() no [", key, n, "] in str_xxx.xlsx")
   end
+  return tb
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.GetColorText = function(...)
-  -- function num : 0_40 , upvalues : _ENV
+function UIActivityHelper.GetColorText(...)
   local str = ""
-  local tb = {...}
+  local tb = {
+    ...
+  }
   for i = 1, #tb, 2 do
-    str = (string.format)("%s<color=%s>%s</color>", str, tb[i], tb[i + 1])
+    str = string.format("%s<color=%s>%s</color>", str, tb[i], tb[i + 1])
   end
   return str
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.GetRichText = function(...)
-  -- function num : 0_41 , upvalues : _ENV
+function UIActivityHelper.GetRichText(...)
   local str = ""
-  local tb = {...}
+  local tb = {
+    ...
+  }
   for i = 1, #tb, 2 do
     local p = tb[i]
     local t = tb[i + 1]
-    for k,v in pairs(p) do
-      t = (string.format)("<%s=%s>%s</%s>", k, v, t, k)
+    for k, v in pairs(p) do
+      t = string.format("<%s=%s>%s</%s>", k, v, t, k)
     end
     str = str .. t
   end
   return str
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper._GetRichText = function(param, text)
-  -- function num : 0_42 , upvalues : _ENV
-  return (string.format)("<%s=%s>%s</%s>")
+function UIActivityHelper._GetRichText(param, text)
+  return string.format("<%s=%s>%s</%s>")
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper._DightNum = function(inNum)
-  -- function num : 0_43 , upvalues : _ENV
+function UIActivityHelper._DightNum(inNum)
   local num = tonumber(inNum)
   if not num then
     return -1
   end
-  if (math.floor)(num) ~= num or num < 0 then
+  if math.floor(num) ~= num or num < 0 then
     return -1
+  elseif 0 == num then
+    return 1
   else
-    if num == 0 then
-      return 1
-    else
-      local tmp_dight = 0
-      while num > 0 do
-        num = (math.floor)(num / 10)
-        tmp_dight = tmp_dight + 1
-      end
-      return tmp_dight
+    local tmp_dight = 0
+    while 0 < num do
+      num = math.floor(num / 10)
+      tmp_dight = tmp_dight + 1
     end
+    return tmp_dight
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.GetZeroStrFrontNum = function(dest_dight, num)
-  -- function num : 0_44 , upvalues : _ENV
-  local num_dight = (UIActivityHelper._DightNum)(num)
-  if num_dight == -1 then
+function UIActivityHelper.GetZeroStrFrontNum(dest_dight, num)
+  local num_dight = UIActivityHelper._DightNum(num)
+  if -1 == num_dight then
+    return ""
+  elseif dest_dight <= num_dight then
     return ""
   else
-    if dest_dight <= num_dight then
-      return ""
-    else
-      local str_e = ""
-      for var = 1, dest_dight - num_dight do
-        str_e = str_e .. "0"
-      end
-      return str_e
+    local str_e = ""
+    for var = 1, dest_dight - num_dight do
+      str_e = str_e .. "0"
     end
+    return str_e
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.FormatNumber_PreZero = function(dest_dight, num, c1, c2)
-  -- function num : 0_45 , upvalues : _ENV
-  local preZero = (UIActivityHelper.GetZeroStrFrontNum)(dest_dight, num)
+function UIActivityHelper.FormatNumber_PreZero(dest_dight, num, c1, c2)
+  local preZero = UIActivityHelper.GetZeroStrFrontNum(dest_dight, num)
   if c1 and c2 then
-    return (UIActivityHelper.GetColorText)(c1, preZero, c2, num)
+    return UIActivityHelper.GetColorText(c1, preZero, c2, num)
   else
     return preZero .. num
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.AddZeroFrontNum = function(dest_dight, num)
-  -- function num : 0_46 , upvalues : _ENV
-  local num_dight = (UIActivityHelper._DightNum)(num)
-  if num_dight == -1 then
+function UIActivityHelper.AddZeroFrontNum(dest_dight, num)
+  local num_dight = UIActivityHelper._DightNum(num)
+  if -1 == num_dight then
     return num
+  elseif dest_dight <= num_dight then
+    return tostring(num)
   else
-    if dest_dight <= num_dight then
-      return tostring(num)
-    else
-      local str_e = ""
-      for var = 1, dest_dight - num_dight do
-        str_e = str_e .. "0"
-      end
-      return str_e .. tostring(num)
+    local str_e = ""
+    for var = 1, dest_dight - num_dight do
+      str_e = str_e .. "0"
     end
+    return str_e .. tostring(num)
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.CalPlayerPersonProgressRank = function(cmptCfgId, progress)
-  -- function num : 0_47 , upvalues : _ENV
+function UIActivityHelper.CalPlayerPersonProgressRank(cmptCfgId, progress)
   local rank = 1
-  local cfgGroup = (Cfg.cfg_activity_person_progress_extra_client)({ComponentID = cmptCfgId})
-  if cfgGroup and #cfgGroup > 0 then
-    for index,value in ipairs(cfgGroup) do
+  local cfgGroup = Cfg.cfg_activity_person_progress_extra_client({ComponentID = cmptCfgId})
+  if cfgGroup and 0 < #cfgGroup then
+    for index, value in ipairs(cfgGroup) do
       if value.NpcName and progress < value.ItemCount then
         rank = rank + 1
       end
     end
   end
-  do
-    return rank
-  end
+  return rank
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.ShowActivityIntro = function(activityIntroKey)
-  -- function num : 0_48 , upvalues : _ENV
-  local introCfg = (Cfg.cfg_activityintro)[activityIntroKey]
+function UIActivityHelper.ShowActivityIntro(activityIntroKey)
+  local introCfg = Cfg.cfg_activityintro[activityIntroKey]
   if introCfg then
     local uiName = "UIActivityIntroController"
-    if (string.isnullorempty)(introCfg.SpecialUi) then
+    if string.isnullorempty(introCfg.SpecialUi) then
+    else
       uiName = introCfg.SpecialUi
-      ;
-      ((GameGlobal.UIStateManager)()):ShowDialog(uiName, activityIntroKey)
     end
+    GameGlobal.UIStateManager():ShowDialog(uiName, activityIntroKey)
   end
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.NoRed = function()
-  -- function num : 0_49
+function UIActivityHelper.NoRed()
   return false
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.GetComponentID = function(info)
-  -- function num : 0_50 , upvalues : _ENV
+function UIActivityHelper.GetComponentID(info)
   local componentId = info.m_campaign_id * CampaignConfigDefine.CONFIG_CAMPAIGN_ID_MOD + info.m_component_type * CampaignConfigDefine.CONFIG_COMPONENT_TYPE_MOD + info.m_component_id
   return componentId
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.CheckSeniorSkinRedPoint = function(campaign)
-  -- function num : 0_51 , upvalues : _ENV
+function UIActivityHelper.CheckSeniorSkinRedPoint(campaign)
   local info = campaign:GetComponentInfo(ECampaignSeniorSkinComponentID.ECAMPAIGN_SENIOR_SKIN)
   if not info then
     return false
   end
   local componentId = info.m_campaign_id * CampaignConfigDefine.CONFIG_CAMPAIGN_ID_MOD + info.m_component_type * CampaignConfigDefine.CONFIG_COMPONENT_TYPE_MOD + info.m_component_id
   local nextShake = info.shake_num + 1
-  local cost = (Cfg.cfg_component_senior_skin_cost)({ComponentID = componentId, SeqID = nextShake})
-  if (cost[1]).CostItemCount ~= 0 then
-    do return not cost end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local cost = Cfg.cfg_component_senior_skin_cost({ComponentID = componentId, SeqID = nextShake})
+  if cost then
+    return cost[1].CostItemCount == 0
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.Snap = function(blurHelper, safeAreaSize, camera, callback)
-  -- function num : 0_52 , upvalues : _ENV
+function UIActivityHelper.Snap(blurHelper, safeAreaSize, camera, callback)
   blurHelper.width = safeAreaSize.x
   blurHelper.height = safeAreaSize.y
   blurHelper.OwnerCamera = camera
   blurHelper:CleanRenderTexture()
   local rt = blurHelper:RefreshBlurTexture()
-  local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_52_0 , upvalues : _ENV, rt, cache_rt, callback
+  local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+  GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cache_rt)
+    UnityEngine.Graphics.Blit(rt, cache_rt)
     if callback then
       callback(cache_rt)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.Snap_SetImgRt = function(imgRT, uiView, widgetName, callback)
-  -- function num : 0_53
+function UIActivityHelper.Snap_SetImgRt(imgRT, uiView, widgetName, callback)
   local setImgRt = imgRT ~= nil
-  do
-    if setImgRt then
-      local rt = uiView:GetUIComponent("RawImage", widgetName)
-      rt.texture = imgRT
-    end
-    if callback then
-      callback(setImgRt)
-    end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  if setImgRt then
+    local rt = uiView:GetUIComponent("RawImage", widgetName)
+    rt.texture = imgRT
+  end
+  if callback then
+    callback(setImgRt)
   end
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.SpawnPetEnhanceArea = function(uiView, widgetName, componentCfgId, uiStyle)
-  -- function num : 0_54 , upvalues : _ENV
+function UIActivityHelper.SpawnPetEnhanceArea(uiView, widgetName, componentCfgId, uiStyle)
   local petEnhanceAreaGen = uiView:GetUIComponent("UISelectObjectPath", widgetName)
   if petEnhanceAreaGen then
-    local cfgGroup = (Cfg.cfg_campaign_mission_pet_correct)({ComponentID = componentCfgId})
+    local cfgGroup = Cfg.cfg_campaign_mission_pet_correct({ComponentID = componentCfgId})
     local petEnhanceArea = petEnhanceAreaGen:SpawnObject("UIActivityPetEnhanceAreaWidget")
     if petEnhanceArea then
       petEnhanceArea:SetData(componentCfgId, uiStyle)
@@ -863,26 +642,15 @@ UIActivityHelper.SpawnPetEnhanceArea = function(uiView, widgetName, componentCfg
   end
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.GetLocalDBKeyWithPstId = function(keyStr)
-  -- function num : 0_55 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityHelper.GetLocalDBKeyWithPstId(keyStr)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   return keyStr .. roleModule:GetPstId()
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.HasLocalDB = function(key)
-  -- function num : 0_56 , upvalues : _ENV
-  return (LocalDB.HasKey)((UIActivityHelper.GetLocalDBKeyWithPstId)("UIActivity" .. key))
+function UIActivityHelper.HasLocalDB(key)
+  return LocalDB.HasKey(UIActivityHelper.GetLocalDBKeyWithPstId("UIActivity" .. key))
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityHelper.SetLocalDB = function(key)
-  -- function num : 0_57 , upvalues : _ENV
-  (LocalDB.SetInt)((UIActivityHelper.GetLocalDBKeyWithPstId)("UIActivity" .. key), 1)
+function UIActivityHelper.SetLocalDB(key)
+  LocalDB.SetInt(UIActivityHelper.GetLocalDBKeyWithPstId("UIActivity" .. key), 1)
 end
-
-

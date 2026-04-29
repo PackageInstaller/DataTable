@@ -1,31 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_transfer_monster_weak.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 require("skill_damage_effect_param")
 _class("SkillEffectParamTransferMonsterWeak", SkillDamageEffectParam)
 SkillEffectParamTransferMonsterWeak = SkillEffectParamTransferMonsterWeak
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamTransferMonsterWeak.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamTransferMonsterWeak:Constructor(t)
   self._petTemplateID = t.petTemplateID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTransferMonsterWeak.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamTransferMonsterWeak:GetEffectType()
   return SkillEffectType.TransferMonsterWeak
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTransferMonsterWeak.GetPetTemplateID = function(self)
-  -- function num : 0_2
+function SkillEffectParamTransferMonsterWeak:GetPetTemplateID()
   return self._petTemplateID
 end
-
-

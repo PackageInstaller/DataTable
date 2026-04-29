@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/camera/aircraft_camera_sphere.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftCameraSphere", Object)
 AircraftCameraSphere = AircraftCameraSphere
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftCameraSphere.Constructor = function(self, input, far)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftCameraSphere:Constructor(input, far)
   self._input = input
-  self._scaleParam = ((Cfg.cfg_aircraft_camera).decorateScaleParam).Value
-  self._rotateSpeed = ((Cfg.cfg_aircraft_camera).decorateDragParam).Value
+  self._scaleParam = Cfg.cfg_aircraft_camera.decorateScaleParam.Value
+  self._rotateSpeed = Cfg.cfg_aircraft_camera.decorateDragParam.Value
   self._farPoint = far
   self._target = nil
   self._xRange = nil
@@ -19,108 +12,81 @@ AircraftCameraSphere.Constructor = function(self, input, far)
   self._scaleRange = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraSphere.Dispose = function(self)
-  -- function num : 0_1
+function AircraftCameraSphere:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraSphere.Reset = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function AircraftCameraSphere:Reset()
   self._pos = self._farPoint
   self._rot = Quaternion.identity
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraSphere.ChangeView = function(self, cfg)
-  -- function num : 0_3 , upvalues : _ENV
-  self._pos = Vector3((cfg.Dpos)[1], (cfg.Dpos)[2], (cfg.Dpos)[3])
-  self._target = Vector3((cfg.Tpos)[1], (cfg.Tpos)[2], (cfg.Tpos)[3])
-  self._xRange = Vector2((cfg.Xr)[1], (cfg.Xr)[2])
-  self._yRange = Vector2((cfg.Yr)[1], (cfg.Yr)[2])
-  self._scaleRange = Vector2((cfg.Sr)[1], (cfg.Sr)[2])
-  self._rot = (Quaternion.LookRotation)(self._target - self._pos, Vector3.up)
-  self.x = self:clampAngle(((self._rot).eulerAngles).y)
-  if self.x < (self._xRange).x or (self._xRange).y < self.x then
-    (Log.exception)("相机默认位置的水平旋转超出旋转范围：", cfg.ID, "，水平角度：", self.x, "，限制范围为：", (self._xRange).x, ",", (self._xRange).y)
-    self.x = (Mathf.Clamp)(self.x, (self._xRange).x, (self._xRange).y)
+function AircraftCameraSphere:ChangeView(cfg)
+  self._pos = Vector3(cfg.Dpos[1], cfg.Dpos[2], cfg.Dpos[3])
+  self._target = Vector3(cfg.Tpos[1], cfg.Tpos[2], cfg.Tpos[3])
+  self._xRange = Vector2(cfg.Xr[1], cfg.Xr[2])
+  self._yRange = Vector2(cfg.Yr[1], cfg.Yr[2])
+  self._scaleRange = Vector2(cfg.Sr[1], cfg.Sr[2])
+  self._rot = Quaternion.LookRotation(self._target - self._pos, Vector3.up)
+  self.x = self:clampAngle(self._rot.eulerAngles.y)
+  if self.x < self._xRange.x or self.x > self._xRange.y then
+    Log.exception("相机默认位置的水平旋转超出旋转范围：", cfg.ID, "，水平角度：", self.x, "，限制范围为：", self._xRange.x, ",", self._xRange.y)
+    self.x = Mathf.Clamp(self.x, self._xRange.x, self._xRange.y)
   end
-  self.y = self:clampAngle(((self._rot).eulerAngles).x)
-  if (self._pos).y < (self._yRange).x or (self._yRange).y < (self._pos).y then
-    (Log.exception)("相机的默认位置高度超出范围：", cfg.ID)
-    -- DECOMPILER ERROR at PC119: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._pos).y = (Mathf.Clamp)((self._pos).y, (self._yRange).x, (self._yRange).y)
+  self.y = self:clampAngle(self._rot.eulerAngles.x)
+  if self._pos.y < self._yRange.x or self._pos.y > self._yRange.y then
+    Log.exception("相机的默认位置高度超出范围：", cfg.ID)
+    self._pos.y = Mathf.Clamp(self._pos.y, self._yRange.x, self._yRange.y)
   end
-  self._distance = (Vector3.Distance)(self._pos, self._target)
-  if self._distance < (self._scaleRange).x or (self._scaleRange).y < self._distance then
-    self._distance = (Mathf.Clamp)(self._distance, (self._scaleRange).x, (self._scaleRange).y)
+  self._distance = Vector3.Distance(self._pos, self._target)
+  if self._distance < self._scaleRange.x or self._distance > self._scaleRange.y then
+    self._distance = Mathf.Clamp(self._distance, self._scaleRange.x, self._scaleRange.y)
     local forward = self._rot * Vector3(0, 0, 1)
     self._pos = -forward * self._distance + self._target
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraSphere.ChangeTarget = function(self, cfg, useFloorTarget)
-  -- function num : 0_4 , upvalues : _ENV
+function AircraftCameraSphere:ChangeTarget(cfg, useFloorTarget)
   if useFloorTarget then
     if cfg.FloorPos then
-      self._target = Vector3((cfg.FloorPos)[1], (cfg.FloorPos)[2], (cfg.FloorPos)[3])
+      self._target = Vector3(cfg.FloorPos[1], cfg.FloorPos[2], cfg.FloorPos[3])
     else
-      self._target = Vector3((cfg.Tpos)[1], (cfg.Tpos)[2], (cfg.Tpos)[3])
+      self._target = Vector3(cfg.Tpos[1], cfg.Tpos[2], cfg.Tpos[3])
     end
   else
-    self._target = Vector3((cfg.Tpos)[1], (cfg.Tpos)[2], (cfg.Tpos)[3])
+    self._target = Vector3(cfg.Tpos[1], cfg.Tpos[2], cfg.Tpos[3])
   end
-  self._rot = (Quaternion.LookRotation)(self._target - self._pos, Vector3.up)
-  self._distance = (Vector3.Distance)(self._pos, self._target)
+  self._rot = Quaternion.LookRotation(self._target - self._pos, Vector3.up)
+  self._distance = Vector3.Distance(self._pos, self._target)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraSphere.Pos = function(self)
-  -- function num : 0_5
+function AircraftCameraSphere:Pos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraSphere.Rot = function(self)
-  -- function num : 0_6
+function AircraftCameraSphere:Rot()
   return self._rot
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraSphere.clampAngle = function(self, angle)
-  -- function num : 0_7
+function AircraftCameraSphere:clampAngle(angle)
   if angle < -180 then
     return angle + 360
   end
-  if angle > 180 then
+  if 180 < angle then
     return angle - 360
   end
   return angle
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraSphere.OnDrag = function(self, delta)
-  -- function num : 0_8 , upvalues : _ENV
+function AircraftCameraSphere:OnDrag(delta)
   local rotVec = delta * self._rotateSpeed
   local x = self.x + rotVec.x
   x = self:_HandleX(x)
   local y = self.y - rotVec.y
-  local rotation = (Quaternion.Euler)(y, x, 0)
+  local rotation = Quaternion.Euler(y, x, 0)
   local target = self._target + rotation * Vector3(0, 0, -self._distance)
-  if (self._yRange).y < target.y or target.y < (self._yRange).x then
+  if target.y > self._yRange.y or target.y < self._yRange.x then
     y = self.y
-    rotation = (Quaternion.Euler)(y, x, 0)
+    rotation = Quaternion.Euler(y, x, 0)
     target = self._target + rotation * Vector3(0, 0, -self._distance)
   end
   self.x = x
@@ -129,26 +95,18 @@ AircraftCameraSphere.OnDrag = function(self, delta)
   self._rot = rotation
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraSphere.OnScale = function(self, length)
-  -- function num : 0_9 , upvalues : _ENV
+function AircraftCameraSphere:OnScale(length)
   local forward = self._rot * Vector3(0, 0, 1)
   self._pos = self._pos + forward * (length * self._scaleParam)
-  self._distance = (Vector3.Distance)(self._target, self._pos)
-  if self._distance < (self._scaleRange).x or (self._scaleRange).y < self._distance then
-    self._distance = (Mathf.Clamp)(self._distance, (self._scaleRange).x, (self._scaleRange).y)
+  self._distance = Vector3.Distance(self._target, self._pos)
+  if self._distance < self._scaleRange.x or self._distance > self._scaleRange.y then
+    self._distance = Mathf.Clamp(self._distance, self._scaleRange.x, self._scaleRange.y)
     self._pos = -forward * self._distance + self._target
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraSphere._HandleX = function(self, x)
-  -- function num : 0_10 , upvalues : _ENV
+function AircraftCameraSphere:_HandleX(x)
   x = self:clampAngle(x)
-  x = (Mathf.Clamp)(x, (self._xRange).x, (self._xRange).y)
+  x = Mathf.Clamp(x, self._xRange.x, self._xRange.y)
   return x
 end
-
-

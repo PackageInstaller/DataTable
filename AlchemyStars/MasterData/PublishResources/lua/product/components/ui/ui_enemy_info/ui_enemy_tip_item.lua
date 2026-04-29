@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_enemy_info/ui_enemy_tip_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEnemyTipItem", UICustomWidget)
 UIEnemyTipItem = UIEnemyTipItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEnemyTipItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIEnemyTipItem:OnShow()
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   self._imgIcon = self:GetUIComponent("RawImageLoader", "head")
   self._imgElement = self:GetUIComponent("Image", "element")
@@ -16,35 +9,19 @@ UIEnemyTipItem.OnShow = function(self)
   self._select = self:GetGameObject("select")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEnemyTipItem.Flush = function(self, idx, v, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIEnemyTipItem:Flush(idx, v, callback)
   self._idx = idx
   self._callback = callback
-  ;
-  (self._imgIcon):LoadImage(v.head)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._imgElement).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((v.prop).icon))
+  self._imgIcon:LoadImage(v.head)
+  self._imgElement.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(v.prop.icon))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEnemyTipItem.Select = function(self, idx)
-  -- function num : 0_2
-  (self._select):SetActive(idx == self._idx)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIEnemyTipItem:Select(idx)
+  self._select:SetActive(idx == self._idx)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEnemyTipItem.headOnClick = function(self, go)
-  -- function num : 0_3
+function UIEnemyTipItem:headOnClick(go)
   if self._callback then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   end
 end
-
-

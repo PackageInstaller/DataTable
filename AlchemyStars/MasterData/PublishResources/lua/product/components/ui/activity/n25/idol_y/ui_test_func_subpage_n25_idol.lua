@@ -1,65 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/ui_test_func_subpage_n25_idol.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITestFuncSubpageN25Idol", UITestFuncSubpageBase)
 UITestFuncSubpageN25Idol = UITestFuncSubpageN25Idol
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITestFuncSubpageN25Idol._FillData = function(self, btnManager)
-  -- function num : 0_0 , upvalues : _ENV
+function UITestFuncSubpageN25Idol:_FillData(btnManager)
   self:_Start_GetCampaignInfo()
   btnManager:_AddFunSwitchState("N25Main", UIStateType.UIActivityN25MainController)
   btnManager:_AddFunSwitchState("Login", UIStateType.UIN25IdolLogin)
   btnManager:_AddFunShowDialog("Game", "UIN25IdolGame")
   btnManager:_AddFunShowDialog("训练", "UIN25IdolGameTraining")
-  btnManager:_AddFunShowDialog("突发事件", "UIN25IdolGamePuppy", {16, 1, nil, nil, true})
+  btnManager:_AddFunShowDialog("突发事件", "UIN25IdolGamePuppy", {
+    16,
+    1,
+    nil,
+    nil,
+    true
+  })
   btnManager:_AddFunShowDialog("约定事件", "UIN25IdolApController", {50371401})
   btnManager:_AddFunShowDialog("偶像活动", "UIN25IdolAct", true)
   btnManager:_AddCallback("下一个状态", function()
-    -- function num : 0_0_0 , upvalues : self
     self:_Debug_NextState()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncSubpageN25Idol._Start_GetCampaignInfo = function(self)
-  -- function num : 0_1
+function UITestFuncSubpageN25Idol:_Start_GetCampaignInfo()
   self:StartTask(self._LoadData, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncSubpageN25Idol._LoadData = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function UITestFuncSubpageN25Idol:_LoadData(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_N25
   self._componentId = ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL
-  self._campaign = (UIActivityHelper.LoadDataOnEnter)(TT, res, self._campaignType, {self._componentId})
-  self._component = (self._campaign):GetComponent(self._componentId)
-  self._componentInfo = (self._campaign):GetComponentInfo(self._componentId)
+  self._campaign = UIActivityHelper.LoadDataOnEnter(TT, res, self._campaignType, {
+    self._componentId
+  })
+  self._component = self._campaign:GetComponent(self._componentId)
+  self._componentInfo = self._campaign:GetComponentInfo(self._componentId)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncSubpageN25Idol._Debug_NextState = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local tb = {[IdolRoundState.IdolRoundState_None] = 0, [IdolRoundState.IdolRoundState_Begin] = 0, [IdolRoundState.IdolRoundState_Play] = 0, [IdolRoundState.IdolRoundState_End] = 1}
-  local roundState = ((self._componentInfo).break_info).round_state
+function UITestFuncSubpageN25Idol:_Debug_NextState()
+  local tb = {
+    [IdolRoundState.IdolRoundState_None] = 0,
+    [IdolRoundState.IdolRoundState_Begin] = 0,
+    [IdolRoundState.IdolRoundState_Play] = 0,
+    [IdolRoundState.IdolRoundState_End] = 1
+  }
+  local roundState = self._componentInfo.break_info.round_state
   local t = tb[roundState]
   if t then
-    local nextIndex = ((self._componentInfo).break_info).round_index + t
+    local nextIndex = self._componentInfo.break_info.round_index + t
     local nextState = roundState % IdolRoundState.IdolRoundState_End + 1
-    if nextState ~= IdolRoundState.IdolRoundState_Play or not IdolTrainType.IdolTrainType_Music then
-      local trainType = IdolTrainType.IdolTrainType_None
-    end
-    ;
-    (self._component):Start_HandleIdolTrain(nextIndex, nextState, trainType)
+    local trainType = nextState == IdolRoundState.IdolRoundState_Play and IdolTrainType.IdolTrainType_Music or IdolTrainType.IdolTrainType_None
+    self._component:Start_HandleIdolTrain(nextIndex, nextState, trainType)
   end
 end
-
-

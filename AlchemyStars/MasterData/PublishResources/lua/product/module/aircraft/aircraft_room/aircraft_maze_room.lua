@@ -1,129 +1,82 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/aircraft/aircraft_room/aircraft_maze_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("aircraft_room_base")
 _class("AircraftMazeRoom", AircraftRoomBase)
 AircraftMazeRoom = AircraftMazeRoom
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftMazeRoom.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._mazeModule = (GameGlobal.GetModule)(MazeModule)
+function AircraftMazeRoom:Constructor()
+  self._mazeModule = GameGlobal.GetModule(MazeModule)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMazeRoom.SetClientData = function(self, client_data)
-  -- function num : 0_1
+function AircraftMazeRoom:SetClientData(client_data)
   self._light_room_rate = client_data[1]
   self._light_pet_rate = client_data[2]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMazeRoom.GetMazeRoomConfig = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_maze_room)[self._roomid]
+function AircraftMazeRoom:GetMazeRoomConfig()
+  local cfg = Cfg.cfg_aircraft_maze_room[self._roomid]
   return cfg
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMazeRoom.AwardID = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function AircraftMazeRoom:AwardID()
   return RoleAssetID.RoleAssetLight
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMazeRoom.GetBaseLightCount = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_maze_room)[self._roomid]
+function AircraftMazeRoom:GetBaseLightCount()
+  local cfg = Cfg.cfg_aircraft_maze_room[self._roomid]
   return cfg.BaseLightCount
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMazeRoom.GetLightStorage = function(self)
-  -- function num : 0_5
-  return (self._module):GetLightStorage()
+function AircraftMazeRoom:GetLightStorage()
+  return self._module:GetLightStorage()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMazeRoom.CanCollect = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_maze_room)[self._roomid]
+function AircraftMazeRoom:CanCollect()
+  local cfg = Cfg.cfg_aircraft_maze_room[self._roomid]
   local need_count = cfg.MainCollectNeedNum or 1
   local l_storage_value = self:GetLightStorage()
-  if l_storage_value >= 1 and need_count < l_storage_value then
+  if 1 <= l_storage_value and need_count < l_storage_value then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMazeRoom.GetLightRate = function(self)
-  -- function num : 0_7
+function AircraftMazeRoom:GetLightRate()
   return self._light_room_rate, self._light_pet_rate
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMazeRoom.GetLightSpeed = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local l_rate = (math.max)(self._light_room_rate + self._light_pet_rate, 1)
+function AircraftMazeRoom:GetLightSpeed()
+  local l_rate = math.max(self._light_room_rate + self._light_pet_rate, 1)
   local total_speed = 3600 / l_rate
   local room_speed = 3600 / self._light_room_rate
   local pet_work_speed = total_speed - room_speed
   return room_speed, pet_work_speed
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMazeRoom.GetResetTime = function(self)
-  -- function num : 0_9
-  return (self._mazeModule):GetSecToFinish()
+function AircraftMazeRoom:GetResetTime()
+  return self._mazeModule:GetSecToFinish()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMazeRoom.GetRoomTypeAndRelicType = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_maze_room)[self._roomid]
+function AircraftMazeRoom:GetRoomTypeAndRelicType()
+  local cfg = Cfg.cfg_aircraft_maze_room[self._roomid]
   local room_cnt = #cfg.UnlockRoomType
   return room_cnt, cfg.UnlockRelicCount
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMazeRoom.CanCollectOutside = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_maze_room)[self._roomid]
+function AircraftMazeRoom:CanCollectOutside()
+  local cfg = Cfg.cfg_aircraft_maze_room[self._roomid]
   local target = cfg.MainCollectNeedNum or 1
-  local cur = (self._module):GetLightStorage()
-  do return cur >= 1 and target < cur end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local cur = self._module:GetLightStorage()
+  return 1 <= cur and target < cur
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMazeRoom.GetMazeCoinIncrease = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_maze_room)[self._roomid]
+function AircraftMazeRoom:GetMazeCoinIncrease()
+  local cfg = Cfg.cfg_aircraft_maze_room[self._roomid]
   return cfg.CoinIncrease
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMazeRoom.GetUpgradeInfo = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function AircraftMazeRoom:GetUpgradeInfo()
   local room_cfg = self:GetConfig()
-  local cur_cfg = (Cfg.cfg_aircraft_maze_room)[room_cfg.ID]
-  local next_cfg = (Cfg.cfg_aircraft_maze_room)[room_cfg.NextLevelID]
+  local cur_cfg = Cfg.cfg_aircraft_maze_room[room_cfg.ID]
+  local next_cfg = Cfg.cfg_aircraft_maze_room[room_cfg.NextLevelID]
   if next_cfg == nil then
     return nil
   end
@@ -132,21 +85,29 @@ AircraftMazeRoom.GetUpgradeInfo = function(self)
   local cur_room_coin = cur_cfg.CoinIncrease
   local nxt_room_coin = next_cfg.CoinIncrease
   return {
-{AirLevelInfoTitle.LightInitCount, AirRoomChangeLevelDataType.NumberInt, cur_light_base, nxt_light_base}
-, 
-{AirLevelInfoTitle.MazeProduct, AirRoomChangeLevelDataType.NumberPercent, cur_room_coin, nxt_room_coin}
-, 
-{AirLevelInfoTitle.MazeAssetIncrease, AirRoomChangeLevelDataType.TextData}
-}
+    {
+      AirLevelInfoTitle.LightInitCount,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_light_base,
+      nxt_light_base
+    },
+    {
+      AirLevelInfoTitle.MazeProduct,
+      AirRoomChangeLevelDataType.NumberPercent,
+      cur_room_coin,
+      nxt_room_coin
+    },
+    {
+      AirLevelInfoTitle.MazeAssetIncrease,
+      AirRoomChangeLevelDataType.TextData
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMazeRoom.GetDegradeInfo = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function AircraftMazeRoom:GetDegradeInfo()
   local room_cfg = self:GetConfig()
-  local cur_cfg = (Cfg.cfg_aircraft_maze_room)[room_cfg.ID]
-  local next_cfg = (Cfg.cfg_aircraft_maze_room)[room_cfg.PrevLevelID]
+  local cur_cfg = Cfg.cfg_aircraft_maze_room[room_cfg.ID]
+  local next_cfg = Cfg.cfg_aircraft_maze_room[room_cfg.PrevLevelID]
   if next_cfg == nil then
     return nil
   end
@@ -155,12 +116,21 @@ AircraftMazeRoom.GetDegradeInfo = function(self)
   local cur_room_coin = cur_cfg.CoinIncrease
   local nxt_room_coin = next_cfg.CoinIncrease
   return {
-{AirLevelInfoTitle.LightInitCount, AirRoomChangeLevelDataType.NumberInt, cur_light_base, nxt_light_base}
-, 
-{AirLevelInfoTitle.MazeProduct, AirRoomChangeLevelDataType.NumberPercent, cur_room_coin, nxt_room_coin}
-, 
-{AirLevelInfoTitle.MazeAssetDecrease, AirRoomChangeLevelDataType.TextData}
-}
+    {
+      AirLevelInfoTitle.LightInitCount,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_light_base,
+      nxt_light_base
+    },
+    {
+      AirLevelInfoTitle.MazeProduct,
+      AirRoomChangeLevelDataType.NumberPercent,
+      cur_room_coin,
+      nxt_room_coin
+    },
+    {
+      AirLevelInfoTitle.MazeAssetDecrease,
+      AirRoomChangeLevelDataType.TextData
+    }
+  }
 end
-
-

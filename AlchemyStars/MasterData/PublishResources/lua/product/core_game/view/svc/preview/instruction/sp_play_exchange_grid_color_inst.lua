@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_exchange_grid_color_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayExchangeGridColorInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayExchangeGridColorInstruction = SkillPreviewPlayExchangeGridColorInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayExchangeGridColorInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayExchangeGridColorInstruction:Constructor(params)
   self._effectID = tonumber(params.EffectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayExchangeGridColorInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayExchangeGridColorInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = previewContext:GetWorld()
   local previewActiveSkillService = world:GetService("PreviewActiveSkill")
   local utilDataSvc = world:GetService("UtilData")
@@ -24,20 +14,19 @@ SkillPreviewPlayExchangeGridColorInstruction.DoInstruction = function(self, TT, 
   local allPickUpGrid = previewPickUpComponent:GetAllValidPickUpGridPos()
   local pickUpCount = previewPickUpComponent:GetAllValidPickUpGridPosCount()
   if pickUpCount == 1 then
-    previewActiveSkillService:DoConvert({allPickUpGrid[1]}, "Normal", "Dark")
+    previewActiveSkillService:DoConvert({
+      allPickUpGrid[1]
+    }, "Normal", "Dark")
+  elseif pickUpCount == 2 then
+    local gridType1 = utilDataSvc:GetPieceType(allPickUpGrid[1])
+    local gridType2 = utilDataSvc:GetPieceType(allPickUpGrid[2])
+    previewActiveSkillService:DoConvertElement(TT, {
+      allPickUpGrid[1]
+    }, gridType2, casterEntity)
+    previewActiveSkillService:DoConvertElement(TT, {
+      allPickUpGrid[2]
+    }, gridType1, casterEntity)
   else
-    if pickUpCount == 2 then
-      local gridType1 = utilDataSvc:GetPieceType(allPickUpGrid[1])
-      local gridType2 = utilDataSvc:GetPieceType(allPickUpGrid[2])
-      previewActiveSkillService:DoConvertElement(TT, {allPickUpGrid[1]}, gridType2, casterEntity)
-      previewActiveSkillService:DoConvertElement(TT, {allPickUpGrid[2]}, gridType1, casterEntity)
-    else
-      do
-        ;
-        (Log.fatal)("NoPickUpGrid")
-      end
-    end
+    Log.fatal("NoPickUpGrid")
   end
 end
-
-

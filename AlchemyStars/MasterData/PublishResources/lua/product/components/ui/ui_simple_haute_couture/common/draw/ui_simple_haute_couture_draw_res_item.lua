@@ -1,27 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_simple_haute_couture/common/draw/ui_simple_haute_couture_draw_res_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISimpleHauteCoutureDrawResItem", UICustomWidget)
 UISimpleHauteCoutureDrawResItem = UISimpleHauteCoutureDrawResItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISimpleHauteCoutureDrawResItem.Constructor = function(self)
-  -- function num : 0_0
+function UISimpleHauteCoutureDrawResItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawResItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISimpleHauteCoutureDrawResItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawResItem._GetComponents = function(self)
-  -- function num : 0_2
+function UISimpleHauteCoutureDrawResItem:_GetComponents()
   self._num = self:GetUIComponent("UILocalizationText", "num")
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._name = self:GetUIComponent("UILocalizationText", "name")
@@ -30,82 +17,42 @@ UISimpleHauteCoutureDrawResItem._GetComponents = function(self)
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "anim")
   self._rect = self:GetUIComponent("RectTransform", "bg")
   self._drawEff = {}
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._drawEff)[1] = self:GetGameObject("eff_01")
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._drawEff)[2] = self:GetGameObject("eff_02")
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._drawEff)[3] = self:GetGameObject("eff_03")
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._drawEff)[4] = self:GetGameObject("eff_04")
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._drawEff)[5] = self:GetGameObject("eff_05")
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._drawEff)[6] = self:GetGameObject("eff_06")
+  self._drawEff[1] = self:GetGameObject("eff_01")
+  self._drawEff[2] = self:GetGameObject("eff_02")
+  self._drawEff[3] = self:GetGameObject("eff_03")
+  self._drawEff[4] = self:GetGameObject("eff_04")
+  self._drawEff[5] = self:GetGameObject("eff_05")
+  self._drawEff[6] = self:GetGameObject("eff_06")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawResItem.SetData = function(self, data, index, bigDrawPic)
-  -- function num : 0_3 , upvalues : _ENV
+function UISimpleHauteCoutureDrawResItem:SetData(data, index, bigDrawPic)
   self._data = data
   self._bigDrawPic = bigDrawPic
   self:_Init()
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rect).localScale = Vector3(0.98, 0.98, 1)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).alpha = 0
+  self._rect.localScale = Vector3(0.98, 0.98, 1)
+  self._canvasGroup.alpha = 0
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, index, self
     YIELD(TT, index * 45)
-    if not (tolua.isnull)(self._anim) then
-      (self._anim):Play("uieffanim_UISimpleHauteCoutureDrawResItem")
+    if not tolua.isnull(self._anim) then
+      self._anim:Play("uieffanim_UISimpleHauteCoutureDrawResItem")
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawResItem._Init = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,effObj in pairs(self._drawEff) do
+function UISimpleHauteCoutureDrawResItem:_Init()
+  for _, effObj in pairs(self._drawEff) do
     effObj:SetActive(false)
   end
-  do
-    local isSkin = (self._data).assetid < 4999999 and (self._data).assetid > 4000000
-    local item = (Cfg.cfg_item)[(self._data).assetid]
-    ;
-    (self._num):SetText((self._data).count)
-    ;
-    ((self._skinImg).gameObject):SetActive(isSkin)
-    ;
-    (self._skinImg):LoadImage(self._bigDrawPic)
-    local probabilityCfg = ((Cfg.cfg_junior_skin_draw_probablity)({ItemID = (self._data).assetid, Count = (self._data).count}))[1]
-    ;
-    ((self._drawEff)[probabilityCfg.Color]):SetActive(true)
-    ;
-    (self._icon):LoadImage(item.Icon)
-    ;
-    (self._name):SetText((StringTable.Get)(item.Name))
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
+  local isSkin = self._data.assetid < 4999999 and self._data.assetid > 4000000
+  local item = Cfg.cfg_item[self._data.assetid]
+  self._num:SetText(self._data.count)
+  self._skinImg.gameObject:SetActive(isSkin)
+  self._skinImg:LoadImage(self._bigDrawPic)
+  local probabilityCfg = Cfg.cfg_junior_skin_draw_probablity({
+    ItemID = self._data.assetid,
+    Count = self._data.count
+  })[1]
+  self._drawEff[probabilityCfg.Color]:SetActive(true)
+  self._icon:LoadImage(item.Icon)
+  self._name:SetText(StringTable.Get(item.Name))
 end
-
-

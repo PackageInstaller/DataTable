@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_grid_location_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataGridLocationResult", Object)
 DataGridLocationResult = DataGridLocationResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataGridLocationResult.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function DataGridLocationResult:Constructor()
   self._bornPos = Vector2(0, 0)
   self._bornDir = Vector2(0, 0)
   self._bornOffset = Vector2(0, 0)
@@ -16,74 +9,42 @@ DataGridLocationResult.Constructor = function(self)
   self._damageOffset = Vector2(0, 0)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataGridLocationResult.SetGridLocResultBornPos = function(self, pos)
-  -- function num : 0_1
+function DataGridLocationResult:SetGridLocResultBornPos(pos)
   self._bornPos = pos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataGridLocationResult.GetGridLocResultBornPos = function(self)
-  -- function num : 0_2
+function DataGridLocationResult:GetGridLocResultBornPos()
   return self._bornPos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataGridLocationResult.SetGridLocResultBornDir = function(self, dir)
-  -- function num : 0_3
+function DataGridLocationResult:SetGridLocResultBornDir(dir)
   self._bornDir = dir
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataGridLocationResult.GetGridLocResultBornDir = function(self)
-  -- function num : 0_4
+function DataGridLocationResult:GetGridLocResultBornDir()
   return self._bornDir
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DataGridLocationResult.SetGridLocResultBornOffset = function(self, offset)
-  -- function num : 0_5
+function DataGridLocationResult:SetGridLocResultBornOffset(offset)
   self._bornOffset = offset
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DataGridLocationResult.GetGridLocResultBornOffset = function(self)
-  -- function num : 0_6
+function DataGridLocationResult:GetGridLocResultBornOffset()
   return self._bornOffset
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DataGridLocationResult.SetGridLocResultBornHeight = function(self, height)
-  -- function num : 0_7
+function DataGridLocationResult:SetGridLocResultBornHeight(height)
   self._bornHeight = height
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DataGridLocationResult.GetGridLocResultBornHeight = function(self)
-  -- function num : 0_8
+function DataGridLocationResult:GetGridLocResultBornHeight()
   return self._bornHeight
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DataGridLocationResult.SetGridLocResultDamageOffset = function(self, offset)
-  -- function num : 0_9
+function DataGridLocationResult:SetGridLocResultDamageOffset(offset)
   self._damageOffset = offset
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DataGridLocationResult.GetGridLocResultDamageOffset = function(self)
-  -- function num : 0_10
+function DataGridLocationResult:GetGridLocResultDamageOffset()
   return self._damageOffset
 end
-
-

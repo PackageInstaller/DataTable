@@ -1,41 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_absorb_target_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAbsorbTargetAttack", BuffLogicBase)
 BuffLogicAbsorbTargetAttack = BuffLogicAbsorbTargetAttack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAbsorbTargetAttack.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAbsorbTargetAttack:Constructor(buffInstance, logicParam)
   self._absorbAttackPercent = logicParam.absorbAttackPercent
   self._absorbAttackType = logicParam.absorbAttackType
   self._absorbValue = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAbsorbTargetAttack.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicAbsorbTargetAttack:DoLogic(notify)
   local notifyType = notify:GetNotifyType()
-  if (table.icontains)(self._absorbAttackType, notifyType) then
-    local attacker = (self._buffInstance):Entity()
+  if table.icontains(self._absorbAttackType, notifyType) then
+    local attacker = self._buffInstance:Entity()
     local defenderEntity = notify:GetDefenderEntity()
-    if not attacker or not defenderEntity or not attacker:Attributes() or not defenderEntity:Attributes() then
+    if not (attacker and defenderEntity and attacker:Attributes()) or not defenderEntity:Attributes() then
       return false
     end
     if not defenderEntity:MonsterID() then
       return false
     end
-    local baseAttackValue = (attacker:Attributes()):GetAttribute("Attack")
+    local baseAttackValue = attacker:Attributes():GetAttribute("Attack")
     if baseAttackValue <= self._absorbValue then
       return false
     end
-    local defenderAttackRealValue = (self._buffLogicService):GetEntityAttackValue(defenderEntity)
-    local defenderAttackValue = (defenderEntity:Attributes()):GetAttribute("Attack")
-    local absorbValue = (math.floor)(defenderAttackValue * self._absorbAttackPercent)
+    local defenderAttackRealValue = self._buffLogicService:GetEntityAttackValue(defenderEntity)
+    local defenderAttackValue = defenderEntity:Attributes():GetAttribute("Attack")
+    local absorbValue = math.floor(defenderAttackValue * self._absorbAttackPercent)
     if defenderAttackRealValue == 0 then
       return false
     end
@@ -45,21 +35,15 @@ BuffLogicAbsorbTargetAttack.DoLogic = function(self, notify)
     if baseAttackValue < self._absorbValue + absorbValue then
       absorbValue = baseAttackValue - self._absorbValue
     end
-    self._absorbValue = self._absorbValue + (absorbValue)
-    local defenderModifier = (self._buffLogicService):_GetAttributeModifier(defenderEntity, "AttackConstantFix")
+    self._absorbValue = self._absorbValue + absorbValue
+    local defenderModifier = self._buffLogicService:_GetAttributeModifier(defenderEntity, "AttackConstantFix")
     local alreadyAbsorbValue = defenderModifier:GetModifyValue(self:GetBuffSeq())
     if alreadyAbsorbValue then
       absorbValue = absorbValue + alreadyAbsorbValue * -1
     end
-    ;
-    (self._buffLogicService):ChangeBaseAttack(defenderEntity, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, (absorbValue) * -1)
-    ;
-    (self._buffLogicService):ChangeBaseAttack(attacker, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, self._absorbValue)
+    self._buffLogicService:ChangeBaseAttack(defenderEntity, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, absorbValue * -1)
+    self._buffLogicService:ChangeBaseAttack(attacker, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, self._absorbValue)
     return true
   end
-  do
-    return false
-  end
+  return false
 end
-
-

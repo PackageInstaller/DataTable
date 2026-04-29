@@ -1,44 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/prepare/selectItem/ui_homeland_movie_prepare_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMoviePrepareItem", UICustomWidget)
 UIHomelandMoviePrepareItem = UIHomelandMoviePrepareItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMoviePrepareItem.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIHomelandMoviePrepareItem:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandMoviePrepareItem:OnShow(uiParams)
   self:InitWidget()
-  local etl = (UICustomUIEventListener.Get)(self._touchArea)
+  local etl = UICustomUIEventListener.Get(self._touchArea)
   self:AddUICustomEventListener(etl, UIEvent.Press, function(go)
-    -- function num : 0_1_0 , upvalues : self
     self:OnDown(go)
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Release, function(go)
-    -- function num : 0_1_1 , upvalues : self
     self:OnUp(go)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareItem.OnHide = function(self)
-  -- function num : 0_2
+function UIHomelandMoviePrepareItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareItem.InitWidget = function(self)
-  -- function num : 0_3
+function UIHomelandMoviePrepareItem:InitWidget()
   self._state = self:GetGameObject("state")
   self._select = self:GetGameObject("select")
   self._stateImg = self:GetUIComponent("Image", "state")
@@ -50,13 +30,14 @@ UIHomelandMoviePrepareItem.InitWidget = function(self)
   self._itemBg = self:GetGameObject("itemBg")
   self._headBg = self:GetGameObject("headBg")
   self._touchArea = self:GetGameObject("btn")
-  self._stateSp = {[0] = "dy_kxyy_bq03", [1] = "dy_kxyy_bq01", [2] = "dy_kxyy_bq02"}
+  self._stateSp = {
+    [0] = "dy_kxyy_bq03",
+    [1] = "dy_kxyy_bq01",
+    [2] = "dy_kxyy_bq02"
+  }
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareItem.SetData = function(self, index, data, prepareType, selectItemId, selectTilleId, cfgHelper, atlas)
-  -- function num : 0_4
+function UIHomelandMoviePrepareItem:SetData(index, data, prepareType, selectItemId, selectTilleId, cfgHelper, atlas)
   self._index = index
   self._prepareType = prepareType
   self._data = data
@@ -67,98 +48,61 @@ UIHomelandMoviePrepareItem.SetData = function(self, index, data, prepareType, se
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareItem.RefreshUI = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandMoviePrepareItem:RefreshUI()
   if not self._data then
-    return 
+    return
   end
-  ;
-  (self._headBg):SetActive(self._prepareType == MoviePrepareType.PT_Actor)
-  ;
-  (self._itemBg):SetActive(self._prepareType ~= MoviePrepareType.PT_Actor)
+  self._headBg:SetActive(self._prepareType == MoviePrepareType.PT_Actor)
+  self._itemBg:SetActive(self._prepareType ~= MoviePrepareType.PT_Actor)
   if self._prepareType == MoviePrepareType.PT_Actor then
-    local cfg = (self._cfgHelper):GetSkinByPrefabId((self._data)[1])
-    ;
-    (self._headImg):LoadImage((cfg[1]).Head)
+    local cfg = self._cfgHelper:GetSkinByPrefabId(self._data[1])
+    self._headImg:LoadImage(cfg[1].Head)
   else
-    local cfg = (self._cfgHelper):GetArchitectureItemCfg((self._data)[1])
-    ;
-    (self._itemImg):LoadImage(cfg.Icon)
+    local cfg = self._cfgHelper:GetArchitectureItemCfg(self._data[1])
+    self._itemImg:LoadImage(cfg.Icon)
   end
-  ;
-  (self._state):SetActive(false)
+  self._state:SetActive(false)
   if self._data then
-    local movieId = (MoviePrepareData:GetInstance()):GetMovieId()
-    local hadUsed = (MovieDataManager:GetInstance()):CheckHadUse(movieId, self._prepareType, (self._data)[1])
-    ;
-    (self._state):SetActive(hadUsed)
+    local movieId = MoviePrepareData:GetInstance():GetMovieId()
+    local hadUsed = MovieDataManager:GetInstance():CheckHadUse(movieId, self._prepareType, self._data[1])
+    self._state:SetActive(hadUsed)
   end
-  local sp = (self._stateSp)[(self._data)[2]]
-  -- DECOMPILER ERROR at PC83: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._stateImg).sprite = (self._atlas):GetSprite(sp)
-  local selecting = (HomelandMoviePrepareManager:GetInstance()):CheckItemUsing(self._prepareType, (self._data)[1])
-  ;
-  (self._remove):SetActive(selecting)
-  ;
-  (self._select):SetActive(selecting)
-  ;
-  (self._txt):SetText((StringTable.Get)("str_movie_using"))
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  local sp = self._stateSp[self._data[2]]
+  self._stateImg.sprite = self._atlas:GetSprite(sp)
+  local selecting = HomelandMoviePrepareManager:GetInstance():CheckItemUsing(self._prepareType, self._data[1])
+  self._remove:SetActive(selecting)
+  self._select:SetActive(selecting)
+  self._txt:SetText(StringTable.Get("str_movie_using"))
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareItem.CheckIsSelected = function(self)
-  -- function num : 0_6
-  do return self._selectingItemId == (self._data)[1] end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIHomelandMoviePrepareItem:CheckIsSelected()
+  return self._selectingItemId == self._data[1]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareItem.OnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIHomelandMoviePrepareItemBtnClick, true, self._prepareType, self._selectTilleId, self._data)
+function UIHomelandMoviePrepareItem:OnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIHomelandMoviePrepareItemBtnClick, true, self._prepareType, self._selectTilleId, self._data)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareItem.RemoveOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIHomelandMoviePrepareItemBtnClick, false, self._prepareType, self._selectTilleId, self._data)
+function UIHomelandMoviePrepareItem:RemoveOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIHomelandMoviePrepareItemBtnClick, false, self._prepareType, self._selectTilleId, self._data)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareItem.OnDown = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHomelandMoviePrepareItem:OnDown(go)
   self._isPress = false
-  self._timerEvent = ((GameGlobal.Timer)()):AddEvent(500, function()
-    -- function num : 0_9_0 , upvalues : self, go
-    self:ShowDialog("UIItemTipsHomeland", (self._data)[1], go)
+  self._timerEvent = GameGlobal.Timer():AddEvent(500, function()
+    self:ShowDialog("UIItemTipsHomeland", self._data[1], go)
     self._isPress = true
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareItem.OnUp = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
+function UIHomelandMoviePrepareItem:OnUp(go)
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
     self._timerEvent = nil
   end
   if self._isPress then
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIItemTipsHomeland")
+    GameGlobal.UIStateManager():CloseDialog("UIItemTipsHomeland")
   else
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIHomelandMoviePrepareItemBtnClick, true, self._prepareType, self._selectTilleId, self._data)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIHomelandMoviePrepareItemBtnClick, true, self._prepareType, self._selectTilleId, self._data)
   end
 end
-
-

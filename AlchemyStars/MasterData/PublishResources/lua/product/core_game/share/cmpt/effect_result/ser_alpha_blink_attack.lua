@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_alpha_blink_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectAlphaBlinkAttackResult", SkillEffectResultBase)
 SkillEffectAlphaBlinkAttackResult = SkillEffectAlphaBlinkAttackResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectAlphaBlinkAttackResult.Constructor = function(self, oldPos, attackPos, attackDir, teleportPos, height, trapID, summonPosList)
-  -- function num : 0_0
+function SkillEffectAlphaBlinkAttackResult:Constructor(oldPos, attackPos, attackDir, teleportPos, height, trapID, summonPosList)
   self._attackPos = attackPos
   self._attackDir = attackDir
   self._teleportPos = teleportPos
@@ -19,74 +12,42 @@ SkillEffectAlphaBlinkAttackResult.Constructor = function(self, oldPos, attackPos
   self._oldPos = oldPos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaBlinkAttackResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectAlphaBlinkAttackResult:GetEffectType()
   return SkillEffectType.AlphaBlinkAttack
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaBlinkAttackResult.GetAttackPos = function(self)
-  -- function num : 0_2
+function SkillEffectAlphaBlinkAttackResult:GetAttackPos()
   return self._attackPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaBlinkAttackResult.GetAttackDir = function(self)
-  -- function num : 0_3
+function SkillEffectAlphaBlinkAttackResult:GetAttackDir()
   return self._attackDir
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaBlinkAttackResult.GetOldPos = function(self)
-  -- function num : 0_4
+function SkillEffectAlphaBlinkAttackResult:GetOldPos()
   return self._oldPos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaBlinkAttackResult.GetTeleportPos = function(self)
-  -- function num : 0_5
+function SkillEffectAlphaBlinkAttackResult:GetTeleportPos()
   return self._teleportPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaBlinkAttackResult.GetHeight = function(self)
-  -- function num : 0_6
+function SkillEffectAlphaBlinkAttackResult:GetHeight()
   return self._height
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaBlinkAttackResult.GetTrapID = function(self)
-  -- function num : 0_7
+function SkillEffectAlphaBlinkAttackResult:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaBlinkAttackResult.GetSummonPosList = function(self)
-  -- function num : 0_8
+function SkillEffectAlphaBlinkAttackResult:GetSummonPosList()
   return self._summonPosList
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaBlinkAttackResult.SetTrapIDList = function(self, trapIDList)
-  -- function num : 0_9
+function SkillEffectAlphaBlinkAttackResult:SetTrapIDList(trapIDList)
   self._trapIDList = trapIDList
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaBlinkAttackResult.GetTrapIDList = function(self)
-  -- function num : 0_10
+function SkillEffectAlphaBlinkAttackResult:GetTrapIDList()
   return self._trapIDList
 end
-
-

@@ -1,145 +1,77 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/OneAndHalfAnniversary/ui_activity_one_and_half_anniversary_video_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityOneAndHalfAnniversaryVideoController", UIController)
 UIActivityOneAndHalfAnniversaryVideoController = UIActivityOneAndHalfAnniversaryVideoController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityOneAndHalfAnniversaryVideoController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._orgBgm = (AudioHelperController.GetCurrentBgm)()
-  ;
-  (AudioHelperController.StopBGM)()
+function UIActivityOneAndHalfAnniversaryVideoController:OnShow(uiParams)
+  self._orgBgm = AudioHelperController.GetCurrentBgm()
+  AudioHelperController.StopBGM()
   self._isFirstPlay = uiParams[1]
   self:_LoadVideo()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityOneAndHalfAnniversaryVideoController._LoadVideo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local url = (ResourceManager:GetInstance()):GetAssetPath("Byakuya_VerB_ProRes4444_1121_x264.mp4", LoadType.VideoClip)
+function UIActivityOneAndHalfAnniversaryVideoController:_LoadVideo()
+  local url = ResourceManager:GetInstance():GetAssetPath("Byakuya_VerB_ProRes4444_1121_x264.mp4", LoadType.VideoClip)
   self:LoadVideo(url)
   self._playing = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityOneAndHalfAnniversaryVideoController.LoadVideo = function(self, url)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityOneAndHalfAnniversaryVideoController:LoadVideo(url)
   self._vp = self:GetUIComponent("VideoPlayer", "VideoPlayer")
   self._rawImage = self:GetUIComponent("RawImage", "VideoPlayer")
-  self._rt = (UnityEngine.RenderTexture):New(1920, 1080, 16)
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rawImage).texture = self._rt
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._vp).targetTexture = self._rt
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._vp).targetCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIActivityOneAndHalfAnniversaryVideoController")
-  ;
-  ((self._vp).gameObject):SetActive(true)
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._vp).url = url
-  ;
-  (self._vp):Play()
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._vp).loopPointReached = (self._vp).loopPointReached + function()
-    -- function num : 0_2_0 , upvalues : self
+  self._rt = UnityEngine.RenderTexture:New(1920, 1080, 16)
+  self._rawImage.texture = self._rt
+  self._vp.targetTexture = self._rt
+  self._vp.targetCamera = GameGlobal.UIStateManager():GetControllerCamera("UIActivityOneAndHalfAnniversaryVideoController")
+  self._vp.gameObject:SetActive(true)
+  self._vp.url = url
+  self._vp:Play()
+  self._vp.loopPointReached = self._vp.loopPointReached + function()
     self:_LoopPointReached()
   end
-
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._vp).prepareCompleted = (self._vp).prepareCompleted + function()
-    -- function num : 0_2_1 , upvalues : self
+  self._vp.prepareCompleted = self._vp.prepareCompleted + function()
     self:_PrepareCompleted()
   end
-
-  ;
-  (((GameGlobal.UIStateManager)()):GetControllerCamera("UIActivityOneAndHalfAnniversaryVideoController")):Render()
-  -- DECOMPILER ERROR at PC63: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._vp).frame = 0
+  GameGlobal.UIStateManager():GetControllerCamera("UIActivityOneAndHalfAnniversaryVideoController"):Render()
+  self._vp.frame = 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityOneAndHalfAnniversaryVideoController.SkipAudioBtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._vp):Pause()
-  ;
-  (AudioHelperController.PauseBGM)()
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_story_skip_confirm"), function()
-    -- function num : 0_3_0 , upvalues : self
+function UIActivityOneAndHalfAnniversaryVideoController:SkipAudioBtnOnClick()
+  self._vp:Pause()
+  AudioHelperController.PauseBGM()
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_story_skip_confirm"), function()
     self:CloseVideo()
-  end
-, nil, function()
-    -- function num : 0_3_1 , upvalues : self, _ENV
-    (self._vp):Play()
-    ;
-    (AudioHelperController.UnpauseBGM)()
-  end
-)
+  end, nil, function()
+    self._vp:Play()
+    AudioHelperController.UnpauseBGM()
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityOneAndHalfAnniversaryVideoController.CloseVideo = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (AudioHelperController.StopBGM)()
-  ;
-  (self._vp):Stop()
+function UIActivityOneAndHalfAnniversaryVideoController:CloseVideo()
+  AudioHelperController.StopBGM()
+  self._vp:Stop()
   self:CloseDialog()
   if self._isFirstPlay then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnOneAndHalfAnniversaryFinish)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnOneAndHalfAnniversaryFinish)
   else
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
+    local roleModule = GameGlobal.GetModule(RoleModule)
     local pstId = roleModule:GetPstId()
-    if (LocalDB.GetInt)("OneAndHalfAnniversary_" .. pstId, 0) == 0 then
-      (LocalDB.SetInt)("OneAndHalfAnniversary_" .. pstId, 1)
+    if LocalDB.GetInt("OneAndHalfAnniversary_" .. pstId, 0) == 0 then
+      LocalDB.SetInt("OneAndHalfAnniversary_" .. pstId, 1)
     end
-    ;
-    (AudioHelperController.PlayBGM)(self._orgBgm)
+    AudioHelperController.PlayBGM(self._orgBgm)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityOneAndHalfAnniversaryVideoController._LoopPointReached = function(self)
-  -- function num : 0_5
+function UIActivityOneAndHalfAnniversaryVideoController:_LoopPointReached()
   self:CloseVideo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityOneAndHalfAnniversaryVideoController._PrepareCompleted = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (AudioHelperController.PlayBGM)(CriAudioIDConst.BGMN25ANNIVERSARY)
+function UIActivityOneAndHalfAnniversaryVideoController:_PrepareCompleted()
+  AudioHelperController.PlayBGM(CriAudioIDConst.BGMN25ANNIVERSARY)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityOneAndHalfAnniversaryVideoController.OnHide = function(self)
-  -- function num : 0_7
+function UIActivityOneAndHalfAnniversaryVideoController:OnHide()
   if self._rt then
-    (self._rt):Release()
+    self._rt:Release()
     self._rt = nil
   end
 end
-
-

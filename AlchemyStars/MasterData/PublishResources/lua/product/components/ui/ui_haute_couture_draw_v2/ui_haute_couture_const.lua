@@ -1,18 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/ui_haute_couture_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local HauteCoutureType = {HC_None = 0, HC_GL = 1, HC_KR = 2, HC_BLH = 3, HC_PLM = 4, HC_KL_Re = 1001, HC_GL_Re = 1002, HC_KR_Re = 1003, HC_BLH_Re = 1004, HC_QT_Re = 1005, HC_PLM_Re = 1006, END = 9999}
+local HauteCoutureType = {
+  HC_None = 0,
+  HC_GL = 1,
+  HC_KR = 2,
+  HC_BLH = 3,
+  HC_PLM = 4,
+  HC_KL_Re = 1001,
+  HC_GL_Re = 1002,
+  HC_KR_Re = 1003,
+  HC_BLH_Re = 1004,
+  HC_QT_Re = 1005,
+  HC_PLM_Re = 1006,
+  END = 9999
+}
 _enum("HauteCoutureType", HauteCoutureType)
 _class("HauteCouture", Singleton)
 HauteCouture = HauteCouture
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
 
-HauteCouture.Constructor = function(self)
-  -- function num : 0_0 , upvalues : HauteCoutureType
+function HauteCouture:Constructor()
   self.HcType = HauteCoutureType.HC_None
   self.CostCoinId = 0
 end
-
-

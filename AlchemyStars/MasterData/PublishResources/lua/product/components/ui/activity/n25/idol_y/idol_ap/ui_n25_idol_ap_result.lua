@@ -1,47 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/idol_ap/ui_n25_idol_ap_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolApResult", UIController)
 UIN25IdolApResult = UIN25IdolApResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolApResult.Constructor = function(self)
-  -- function num : 0_0
+function UIN25IdolApResult:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApResult.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25IdolApResult:OnShow(uiParams)
   self._type = uiParams[1]
   self._value = uiParams[2]
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApResult.OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if ((self._type == IdolTrainType.IdolTrainType_Music and self._type ~= IdolTrainType.IdolTrainType_Dance) or self._type == IdolTrainType.IdolTrainType_Perform) then
-    local yieldTime = 2000
-    self._event = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_2_0 , upvalues : self
+function UIN25IdolApResult:OnValue()
+  if self._type == IdolTrainType.IdolTrainType_Music then
+  elseif self._type == IdolTrainType.IdolTrainType_Dance then
+  elseif self._type == IdolTrainType.IdolTrainType_Perform then
+  end
+  local yieldTime = 2000
+  self._event = GameGlobal.Timer():AddEvent(yieldTime, function()
     self:CloseDialog()
-  end
-)
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApResult.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN25IdolApResult:OnHide()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
 end
-
-

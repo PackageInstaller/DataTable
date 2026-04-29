@@ -1,92 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_widget/ui_activity_common_campaign_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityCommonCampaignEnter", UICustomWidget)
 UIActivityCommonCampaignEnter = UIActivityCommonCampaignEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityCommonCampaignEnter.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityCommonCampaignEnter:OnShow(uiParams)
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonCampaignEnter.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityCommonCampaignEnter:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonCampaignEnter.SetData = function(self, campaign, useStateUI, callback)
-  -- function num : 0_2
+function UIActivityCommonCampaignEnter:SetData(campaign, useStateUI, callback)
   self._campaign = campaign
   self._useStateUI = useStateUI
   self._callback = callback
   self:_CheckPoint()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonCampaignEnter.BtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityCommonCampaignEnter:BtnOnClick()
   if self._callback then
-    (self._callback)()
+    self._callback()
   else
-    ;
-    (UIActivityHelper.PlayFirstPlot_Campaign)(self._campaign, function()
-    -- function num : 0_3_0 , upvalues : self
-    (self._campaign):OpenMainUI(self._useStateUI)
-  end
-, false)
+    UIActivityHelper.PlayFirstPlot_Campaign(self._campaign, function()
+      self._campaign:OpenMainUI(self._useStateUI)
+    end, false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonCampaignEnter._AttachEvents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityCommonCampaignEnter:_AttachEvents()
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:AttachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonCampaignEnter._DetachEvents = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityCommonCampaignEnter:_DetachEvents()
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:DetachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonCampaignEnter._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_6
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UIActivityCommonCampaignEnter:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonCampaignEnter._OnQuestUpdate = function(self)
-  -- function num : 0_7
+function UIActivityCommonCampaignEnter:_OnQuestUpdate()
   self:_CheckPoint()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonCampaignEnter._CheckPoint = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityCommonCampaignEnter:_CheckPoint()
   local newObj = self:GetGameObject("new")
   local redObj = self:GetGameObject("red")
-  local new = (UIActivityHelper.CheckCampaignSampleNewPoint)(self._campaign)
-  local red = (UIActivityHelper.CheckCampaignSampleRedPoint)(self._campaign)
-  ;
-  (UIActivityHelper.SetWidgetNewAndRed)(newObj, new, redObj, red)
+  local new = UIActivityHelper.CheckCampaignSampleNewPoint(self._campaign)
+  local red = UIActivityHelper.CheckCampaignSampleRedPoint(self._campaign)
+  UIActivityHelper.SetWidgetNewAndRed(newObj, new, redObj, red)
 end
-
-

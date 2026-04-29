@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_destroy_trap_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayDestroyTrapInstruction", BaseInstruction)
 PlayDestroyTrapInstruction = PlayDestroyTrapInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayDestroyTrapInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayDestroyTrapInstruction:Constructor(paramList)
   self._donotPlayDie = paramList.donotPlayDie
   self._noResult = paramList.noResult
   self._delay = 1
@@ -18,46 +11,37 @@ PlayDestroyTrapInstruction.Constructor = function(self, paramList)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDestroyTrapInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayDestroyTrapInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local eTrap = casterEntity
   if eTrap:HasSuperEntity() then
     eTrap = eTrap:GetSuperEntity()
   end
   if not self._noResult then
-    local routineCmpt = (casterEntity:SkillRoutine()):GetResultContainer()
+    local routineCmpt = casterEntity:SkillRoutine():GetResultContainer()
     if not routineCmpt then
-      return 
+      return
     end
     local resultArray = routineCmpt:GetEffectResultsAsArray(SkillEffectType.DestroyTrap)
     if not resultArray then
-      return 
+      return
     end
     local index = phaseContext:GetCurResultIndexByType(SkillEffectType.DestroyTrap)
     local result = resultArray[index]
     if not result then
-      return 
+      return
     end
     local eID = result:GetEntityID()
     eTrap = world:GetEntityByID(eID)
     if not eTrap then
-      return 
+      return
     end
   end
-  do
-    local trapServiceRender = world:GetService("TrapRender")
-    if self._delay == 1 then
-      trapServiceRender:PlayTrapDieSkill(TT, {eTrap}, self._donotPlayDie)
-    else
-      if self._delay == 0 then
-        local dieTaskID = (TaskManager:GetInstance()):CoreGameStartTask(trapServiceRender.PlayTrapDieSkill, trapServiceRender, {eTrap}, self._donotPlayDie)
-        phaseContext:AddPhaseTask(dieTaskID)
-      end
-    end
+  local trapServiceRender = world:GetService("TrapRender")
+  if self._delay == 1 then
+    trapServiceRender:PlayTrapDieSkill(TT, {eTrap}, self._donotPlayDie)
+  elseif self._delay == 0 then
+    local dieTaskID = TaskManager:GetInstance():CoreGameStartTask(trapServiceRender.PlayTrapDieSkill, trapServiceRender, {eTrap}, self._donotPlayDie)
+    phaseContext:AddPhaseTask(dieTaskID)
   end
 end
-
-

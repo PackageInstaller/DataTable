@@ -1,76 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_n5/buy/ui_activity_battlepass_n5_buy_level_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBattlePassN5BuyLevelController", UIController)
 UIActivityBattlePassN5BuyLevelController = UIActivityBattlePassN5BuyLevelController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBattlePassN5BuyLevelController._GetLVRewardComponent = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityBattlePassN5BuyLevelController:_GetLVRewardComponent()
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD
-  return (self._campaign):GetComponent(cmptId)
+  return self._campaign:GetComponent(cmptId)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._GetLVRewardComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityBattlePassN5BuyLevelController:_GetLVRewardComponentInfo()
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD
-  return (self._campaign):GetComponentInfo(cmptId)
+  return self._campaign:GetComponentInfo(cmptId)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._GetBuyGiftComponent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityBattlePassN5BuyLevelController:_GetBuyGiftComponent()
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT
-  return (self._campaign):GetComponent(cmptId)
+  return self._campaign:GetComponent(cmptId)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._GetBuyGiftComponentInfo = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityBattlePassN5BuyLevelController:_GetBuyGiftComponentInfo()
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT
-  return (self._campaign):GetComponentInfo(cmptId)
+  return self._campaign:GetComponentInfo(cmptId)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._GetComponents = function(self)
-  -- function num : 0_4
+function UIActivityBattlePassN5BuyLevelController:_GetComponents()
   self._txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
   self._txtTitle2 = self:GetUIComponent("UILocalizationText", "txtTitle2")
   self._rollingText = self:GetUIComponent("RollingText", "txtTitle2")
   self._txtNum = self:GetUIComponent("UILocalizationText", "txtNum")
   self._icon = self:GetUIComponent("Image", "imgBuyBtn")
-  self._txtPrice = {self:GetUIComponent("UILocalizationText", "txtPrice_Normal"), self:GetUIComponent("UILocalizationText", "txtPrice_Press")}
+  self._txtPrice = {
+    self:GetUIComponent("UILocalizationText", "txtPrice_Normal"),
+    self:GetUIComponent("UILocalizationText", "txtPrice_Press")
+  }
   self._pressObj = {
-{self:GetGameObject("state_BuyBtnNormal")}
-, 
-{self:GetGameObject("state_BuyBtnPress")}
-}
+    {
+      self:GetGameObject("state_BuyBtnNormal")
+    },
+    {
+      self:GetGameObject("state_BuyBtnPress")
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_5 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIActivityBattlePassN5BuyLevelController:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController.OnShow = function(self, uiParams)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityBattlePassN5BuyLevelController:OnShow(uiParams)
   self:_AttachEvents()
   self:_SetPressEvent()
   self._isOpen = true
@@ -83,18 +63,12 @@ UIActivityBattlePassN5BuyLevelController.OnShow = function(self, uiParams)
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController.OnHide = function(self)
-  -- function num : 0_7
+function UIActivityBattlePassN5BuyLevelController:OnHide()
   self:_DetachEvents()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._Refresh = function(self)
-  -- function num : 0_8
+function UIActivityBattlePassN5BuyLevelController:_Refresh()
   if self._isOpen then
     self:_SetTitle()
     self:_SetBuyNum()
@@ -104,79 +78,53 @@ UIActivityBattlePassN5BuyLevelController._Refresh = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._SetTitle = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityBattlePassN5BuyLevelController:_SetTitle()
   local componentInfo = self:_GetLVRewardComponentInfo()
   local _max = componentInfo.m_max_level - componentInfo.m_current_level
-  local content = (StringTable.Get)("str_activity_battlepass_tab_reward_buy_level_btn")
+  local content = StringTable.Get("str_activity_battlepass_tab_reward_buy_level_btn")
   local colorStr = "FFFFFF"
   local formatStr = "<color=#%s>%s</color>"
-  local showStr = (string.format)(formatStr, colorStr, content)
-  ;
-  (self._txtTitle):SetText(showStr)
-  ;
-  (self._txtTitle2):SetText((StringTable.Get)("str_activity_battlepass_n5_buy_level_desc", componentInfo.m_current_level, componentInfo.m_current_level + self._giftNum))
-  ;
-  (self._rollingText):RefreshText(nil)
+  local showStr = string.format(formatStr, colorStr, content)
+  self._txtTitle:SetText(showStr)
+  self._txtTitle2:SetText(StringTable.Get("str_activity_battlepass_n5_buy_level_desc", componentInfo.m_current_level, componentInfo.m_current_level + self._giftNum))
+  self._rollingText:RefreshText(nil)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._SetBuyNum = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (self._txtNum):SetText(tostring(self._giftNum))
+function UIActivityBattlePassN5BuyLevelController:_SetBuyNum()
+  self._txtNum:SetText(tostring(self._giftNum))
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._SetBuyBtnIcon = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityBattlePassN5BuyLevelController:_SetBuyBtnIcon()
   self.uiCommonAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._icon).sprite = (self.uiCommonAtlas):GetSprite((ClientShop.GetCurrencyImageName)(self.saleType))
+  self._icon.sprite = self.uiCommonAtlas:GetSprite(ClientShop.GetCurrencyImageName(self.saleType))
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._SetBuyBtnPrice = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityBattlePassN5BuyLevelController:_SetBuyBtnPrice()
   local component = self:_GetBuyGiftComponent()
   local giftType = CampaignGiftType.ECGT_BPLEVEL
   local giftId = component:GetFirstGiftIDByType(giftType)
-  local gift = (Cfg.cfg_shop_common_goods)[giftId]
+  local gift = Cfg.cfg_shop_common_goods[giftId]
   self._price = gift.NewPrice * self._giftNum
-  for _,v in pairs(self._txtPrice) do
+  for _, v in pairs(self._txtPrice) do
     v:SetText(tostring(self._price))
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._UpdateBuyNum = function(self, n)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityBattlePassN5BuyLevelController:_UpdateBuyNum(n)
   local componentInfo = self:_GetLVRewardComponentInfo()
   local _max = componentInfo.m_max_level - componentInfo.m_current_level
   local _min = 1
   local next = self._giftNum + n
-  next = (math.max)(next, _min)
-  next = (math.min)(next, _max)
+  next = math.max(next, _min)
+  next = math.min(next, _max)
   self._giftNum = next
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._SetDynamicListData = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityBattlePassN5BuyLevelController:_SetDynamicListData()
   local component = self:_GetLVRewardComponent()
-  local componentInfo = (self:_GetLVRewardComponentInfo())
-  -- DECOMPILER ERROR at PC4: Overwrote pending register: R3 in 'AssignReg'
-
-  local rewards = .end
+  local componentInfo = self:_GetLVRewardComponentInfo()
+  local rewards
   local curLv = componentInfo.m_current_level
   if componentInfo.m_unlock_advanced_reward then
     rewards = component:GetSortAdvancedRewards(curLv + 1, curLv + self._giftNum)
@@ -185,50 +133,35 @@ UIActivityBattlePassN5BuyLevelController._SetDynamicListData = function(self)
   end
   self._dynamicListInfo = {}
   for i = 1, #rewards do
-    (table.insert)(self._dynamicListInfo, rewards[i])
+    table.insert(self._dynamicListInfo, rewards[i])
   end
-  self._dynamicListSize = (table.count)(self._dynamicListInfo)
+  self._dynamicListSize = table.count(self._dynamicListInfo)
   self._itemCountPerRow = 7
-  self._dynamicListRowSize = (math.floor)((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
+  self._dynamicListRowSize = math.floor((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._SetDynamicList = function(self)
-  -- function num : 0_15
+function UIActivityBattlePassN5BuyLevelController:_SetDynamicList()
   self:_SetDynamicListData()
   if not self._isDynamicInited then
     self._isDynamicInited = true
     self._dynamicList = self:GetUIComponent("UIDynamicScrollView", "dynamicList")
-    ;
-    (self._dynamicList):InitListView(self._dynamicListRowSize, function(scrollView, index)
-    -- function num : 0_15_0 , upvalues : self
-    return self:_SpawnListItem(scrollView, index)
-  end
-)
+    self._dynamicList:InitListView(self._dynamicListRowSize, function(scrollView, index)
+      return self:_SpawnListItem(scrollView, index)
+    end)
   else
     self:_RefreshList(self._dynamicListRowSize, self._dynamicList)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._RefreshList = function(self, count, list)
-  -- function num : 0_16
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UIActivityBattlePassN5BuyLevelController:_RefreshList(count, list)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(count)
   list:RefreshAllShownItem()
   list:MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((list.ScrollRect).content).localPosition = contentPos
+  list.ScrollRect.content.localPosition = contentPos
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._SpawnListItem = function(self, scrollView, index)
-  -- function num : 0_17
+function UIActivityBattlePassN5BuyLevelController:_SpawnListItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -242,182 +175,121 @@ UIActivityBattlePassN5BuyLevelController._SpawnListItem = function(self, scrollV
   for i = 1, self._itemCountPerRow do
     local listItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._dynamicListSize < itemIndex then
-      (listItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._dynamicListSize then
+      listItem:GetGameObject():SetActive(false)
     else
-      ;
-      (listItem:GetGameObject()):SetActive(true)
+      listItem:GetGameObject():SetActive(true)
       self:_SetListItemData(listItem, itemIndex)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._SetListItemData = function(self, listItem, index)
-  -- function num : 0_18 , upvalues : _ENV
-  local info = (self._dynamicListInfo)[index]
+function UIActivityBattlePassN5BuyLevelController:_SetListItemData(listItem, index)
+  local info = self._dynamicListInfo[index]
   if info ~= nil then
     listItem:SetData(i, info, function(matid, pos)
-    -- function num : 0_18_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "itemInfoPool", matid, pos)
-  end
-, UIItemScale.Level2)
+      UIWidgetHelper.SetAwardItemTips(self, "itemInfoPool", matid, pos)
+    end, UIItemScale.Level2)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._ShowBuyConfirm = function(self, price, giftNum)
-  -- function num : 0_19 , upvalues : _ENV
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_activity_battlepass_pay_gb_2_lv_gift", price, giftNum), function(param)
-    -- function num : 0_19_0 , upvalues : _ENV, self, price
-    if not (ClientShop.CheckBuy)(self.saleType, price) then
-      return 
+function UIActivityBattlePassN5BuyLevelController:_ShowBuyConfirm(price, giftNum)
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_activity_battlepass_pay_gb_2_lv_gift", price, giftNum), function(param)
+    if not ClientShop.CheckBuy(self.saleType, price) then
+      return
     end
     self:_Start_HandleApplyBuyGiftReq()
-  end
-, nil, nil, nil)
+  end, nil, nil, nil)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._Start_HandleApplyBuyGiftReq = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
+function UIActivityBattlePassN5BuyLevelController:_Start_HandleApplyBuyGiftReq()
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
   local component = self:_GetBuyGiftComponent()
   local giftId = component:GetFirstGiftIDByType(CampaignGiftType.ECGT_BPLEVEL)
   component:BuyGift(giftId, self._giftNum)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController.Dec10BtnOnClick = function(self, go)
-  -- function num : 0_21 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDecDown)
-  ;
-  (Log.info)("UIActivityBattlePassN5BuyLevelController:Dec10BtnOnClick")
+function UIActivityBattlePassN5BuyLevelController:Dec10BtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDecDown)
+  Log.info("UIActivityBattlePassN5BuyLevelController:Dec10BtnOnClick")
   self:_UpdateBuyNum(-10)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController.DecBtnOnClick = function(self, go)
-  -- function num : 0_22 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDecDown)
-  ;
-  (Log.info)("UIActivityBattlePassN5BuyLevelController:DecBtnBtnOnClick")
+function UIActivityBattlePassN5BuyLevelController:DecBtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDecDown)
+  Log.info("UIActivityBattlePassN5BuyLevelController:DecBtnBtnOnClick")
   self:_UpdateBuyNum(-1)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController.IncBtnOnClick = function(self, go)
-  -- function num : 0_23 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundAddUp)
-  ;
-  (Log.info)("UIActivityBattlePassN5BuyLevelController:IncBtnOnClick")
+function UIActivityBattlePassN5BuyLevelController:IncBtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundAddUp)
+  Log.info("UIActivityBattlePassN5BuyLevelController:IncBtnOnClick")
   self:_UpdateBuyNum(1)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController.Inc10BtnOnClick = function(self, go)
-  -- function num : 0_24 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundAddUp)
-  ;
-  (Log.info)("UIActivityBattlePassN5BuyLevelController:Inc10BtnOnClick")
+function UIActivityBattlePassN5BuyLevelController:Inc10BtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundAddUp)
+  Log.info("UIActivityBattlePassN5BuyLevelController:Inc10BtnOnClick")
   self:_UpdateBuyNum(10)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController.BuyBtnOnClick = function(self, go)
-  -- function num : 0_25 , upvalues : _ENV
-  (Log.info)("UIActivityBattlePassN5BuyLevelController:BuyBtnOnClick")
+function UIActivityBattlePassN5BuyLevelController:BuyBtnOnClick(go)
+  Log.info("UIActivityBattlePassN5BuyLevelController:BuyBtnOnClick")
   self:_ShowBuyConfirm(self._price, self._giftNum)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController.CancelBtnOnClick = function(self, go)
-  -- function num : 0_26 , upvalues : _ENV
-  (Log.info)("UIActivityBattlePassN5BuyLevelController:CancelBtnOnClick")
+function UIActivityBattlePassN5BuyLevelController:CancelBtnOnClick(go)
+  Log.info("UIActivityBattlePassN5BuyLevelController:CancelBtnOnClick")
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._AttachEvents = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UIActivityBattlePassN5BuyLevelController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.ActivityNormalBuyResult, self._OnNormalBuyResult)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._DetachEvents = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UIActivityBattlePassN5BuyLevelController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.ActivityNormalBuyResult, self._OnNormalBuyResult)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._CheckActivityClose = function(self, id)
-  -- function num : 0_29 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIActivityBattlePassN5BuyLevelController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._OnNormalBuyResult = function(self, gift_id, res)
-  -- function num : 0_30 , upvalues : _ENV
+function UIActivityBattlePassN5BuyLevelController:_OnNormalBuyResult(gift_id, res)
   if self.view == nil then
-    return 
+    return
   end
   local component = self:_GetBuyGiftComponent()
   local giftId = component:GetFirstGiftIDByType(CampaignGiftType.ECGT_BPLEVEL)
   if giftId ~= gift_id then
-    return 
+    return
   end
   if res:GetSucc() then
     if self.callback then
-      (self.callback)()
+      self.callback()
     end
     self:CloseDialog()
   else
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, function()
-    -- function num : 0_30_0 , upvalues : self
-    self:_Refresh()
-  end
-, function()
-    -- function num : 0_30_1 , upvalues : self, _ENV
-    self:SwitchState(UIStateType.UIMain)
-  end
-)
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, function()
+      self:_Refresh()
+    end, function()
+      self:SwitchState(UIStateType.UIMain)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5BuyLevelController._SetPressEvent = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function UIActivityBattlePassN5BuyLevelController:_SetPressEvent()
   local obj = self:GetGameObject("BuyBtn")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(obj), UIEvent.Press, function(go)
-    -- function num : 0_31_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetObjGroupShow)(self._pressObj, 2)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(obj), UIEvent.Release, function(go)
-    -- function num : 0_31_1 , upvalues : _ENV, self
-    (UIWidgetHelper.SetObjGroupShow)(self._pressObj, 1)
-  end
-)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(obj), UIEvent.Press, function(go)
+    UIWidgetHelper.SetObjGroupShow(self._pressObj, 2)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(obj), UIEvent.Release, function(go)
+    UIWidgetHelper.SetObjGroupShow(self._pressObj, 1)
+  end)
 end
-
-

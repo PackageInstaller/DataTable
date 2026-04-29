@@ -1,41 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n38/main/ui_n38_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN38MainController", UIController)
 UIN38MainController = UIN38MainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN38MainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIN38MainController:LoadDataOnEnter(TT, res, uiParams)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
   self._activityConst = UIN38Const:New()
-  ;
-  (self._activityConst):LoadData(TT, res)
-  self._campaign = (self._activityConst):GetCampaign()
+  self._activityConst:LoadData(TT, res)
+  self._campaign = self._activityConst:GetCampaign()
   if res and not res:GetSucc() then
-    local campModule = (GameGlobal.GetModule)(CampaignModule)
-    campModule:CheckErrorCode(res.m_result, ((self._activityConst):GetCampaignId()), nil, nil)
+    local campModule = GameGlobal.GetModule(CampaignModule)
+    campModule:CheckErrorCode(res.m_result, self._activityConst:GetCampaignId(), nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN38MainController:OnShow()
   self._interval = 0
   self._anim = self:GetUIComponent("Animation", "Anim")
   self._showBtnGO = self:GetGameObject("ShowBtn")
   self:_OnValue()
-  ;
-  (CutsceneManager.ExcuteCutsceneOut)(function()
-    -- function num : 0_1_0 , upvalues : _ENV, self
-    (UIActivityHelper.PlayFirstPlot_Campaign)((self._activityConst):GetCampaign())
-  end
-)
-  ;
-  (self._activityConst):ClearEnterNew()
+  CutsceneManager.ExcuteCutsceneOut(function()
+    UIActivityHelper.PlayFirstPlot_Campaign(self._activityConst:GetCampaign())
+  end)
+  self._activityConst:ClearEnterNew()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
   self:AttachEvent(GameEventType.OnActivityTotalAwardGot, self.RefreshData)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self.RefreshData)
@@ -43,10 +28,7 @@ UIN38MainController.OnShow = function(self)
   self:PlayEnterAnim()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController._OnValue = function(self)
-  -- function num : 0_2
+function UIN38MainController:_OnValue()
   self:_SetCommonTopButton()
   self:_SetTitle()
   self:_SetLoginBtn()
@@ -57,240 +39,170 @@ UIN38MainController._OnValue = function(self)
   self:RefreshRemainTime()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController.AfterUILayerChanged = function(self)
-  -- function num : 0_3
+function UIN38MainController:AfterUILayerChanged()
   if self._loginWidget then
-    (self._loginWidget):_CheckPoint()
+    self._loginWidget:_CheckPoint()
   end
   if self._bpWidget then
-    (self._bpWidget):_CheckPoint()
+    self._bpWidget:_CheckPoint()
   end
   if self._exchangeWidget then
-    (self._exchangeWidget):SetNewRedPoint()
-    ;
-    (self._exchangeWidget):SetData(self._activityConst)
+    self._exchangeWidget:SetNewRedPoint()
+    self._exchangeWidget:SetData(self._activityConst)
   end
   if self._lineWidget then
-    (self._lineWidget):SetNewRedPoint()
+    self._lineWidget:SetNewRedPoint()
   end
   if self._hardWidget then
-    (self._hardWidget):SetNewRedPoint()
+    self._hardWidget:SetNewRedPoint()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController._SetCommonTopButton = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local closeCallback = function()
-    -- function num : 0_4_0 , upvalues : self
+function UIN38MainController:_SetCommonTopButton()
+  local function closeCallback()
     self:_Back()
   end
-
-  local hideCallback = function()
-    -- function num : 0_4_1 , upvalues : self, _ENV
+  
+  local function hideCallback()
     self:StartTask(function(TT)
-      -- function num : 0_4_1_0 , upvalues : self, _ENV
       self:Lock("UIN38MainControllerHide")
       self:StartTask(function(TT)
-        -- function num : 0_4_1_0_0 , upvalues : self, _ENV
-        (self._anim):Play("uianim_UIN38MainController_hide")
+        self._anim:Play("uianim_UIN38MainController_hide")
         YIELD(TT, 567)
-        ;
-        (self._showBtnGO):SetActive(true)
+        self._showBtnGO:SetActive(true)
         self:UnLock("UIN38MainControllerHide")
-      end
-)
-    end
-)
+      end)
+    end)
   end
-
-  local obj = (UIWidgetHelper.SpawnObject)(self, "BackBtns", "UINewCommonTopButton")
+  
+  local obj = UIWidgetHelper.SpawnObject(self, "BackBtns", "UINewCommonTopButton")
   obj:SetData(closeCallback, nil, nil, false, hideCallback)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController._Back = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self:Manager()):CurUIStateType() == UIStateType.UIN38MainController then
+function UIN38MainController:_Back()
+  if self:Manager():CurUIStateType() == UIStateType.UIN38MainController then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController._SetExchange = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._exchangeWidget = (UIWidgetHelper.SpawnObject)(self, "ExchangeBtn", "UIN38_ExchangeBtn")
-  ;
-  (self._exchangeWidget):SetData(self._activityConst)
-  ;
-  (self._exchangeWidget):SetNewRedPoint()
+function UIN38MainController:_SetExchange()
+  self._exchangeWidget = UIWidgetHelper.SpawnObject(self, "ExchangeBtn", "UIN38_ExchangeBtn")
+  self._exchangeWidget:SetData(self._activityConst)
+  self._exchangeWidget:SetNewRedPoint()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController._SetTitle = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._titleWidget = (UIWidgetHelper.SpawnObject)(self, "Title", "UIN38_Main_Title")
+function UIN38MainController:_SetTitle()
+  self._titleWidget = UIWidgetHelper.SpawnObject(self, "Title", "UIN38_Main_Title")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController._SetLineLevelBtn = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._lineWidget = (UIWidgetHelper.SpawnObject)(self, "LineLevelBtn", "UIN38_LineLevelBtn")
-  ;
-  (self._lineWidget):SetData(self._activityConst)
-  ;
-  (self._lineWidget):SetNewRedPoint()
+function UIN38MainController:_SetLineLevelBtn()
+  self._lineWidget = UIWidgetHelper.SpawnObject(self, "LineLevelBtn", "UIN38_LineLevelBtn")
+  self._lineWidget:SetData(self._activityConst)
+  self._lineWidget:SetNewRedPoint()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController._SetHardLevelBtn = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  self._hardWidget = (UIWidgetHelper.SpawnObject)(self, "HardLevelBtn", "UIN38_HardLevelBtn")
-  ;
-  (self._hardWidget):SetData(self._activityConst)
-  ;
-  (self._hardWidget):SetNewRedPoint()
+function UIN38MainController:_SetHardLevelBtn()
+  self._hardWidget = UIWidgetHelper.SpawnObject(self, "HardLevelBtn", "UIN38_HardLevelBtn")
+  self._hardWidget:SetData(self._activityConst)
+  self._hardWidget:SetNewRedPoint()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController._SetLoginBtn = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local cmptId, component, componentInfo = (UIN38Helper.GetComponent)(self._campaign, "login")
-  self._loginWidget = (UIWidgetHelper.SpawnObject)(self, "LoginBtn", "UIActivityCommonComponentEnter")
+function UIN38MainController:_SetLoginBtn()
+  local cmptId, component, componentInfo = UIN38Helper.GetComponent(self._campaign, "login")
+  self._loginWidget = UIWidgetHelper.SpawnObject(self, "LoginBtn", "UIActivityCommonComponentEnter")
   local btnName = "LoginBtn"
-  local newCallback = function()
-    -- function num : 0_10_0 , upvalues : _ENV, btnName
-    local new = not (UIN38Helper.LocalDB_Has)(btnName, "New")
+  
+  local function newCallback()
+    local new = not UIN38Helper.LocalDB_Has(btnName, "New")
     return new
   end
-
-  ;
-  (self._loginWidget):SetNew("New", newCallback)
-  local redCallback = function()
-    -- function num : 0_10_1 , upvalues : self, cmptId
-    if (self._campaign):CheckComponentOpen(cmptId) then
-      return (self._campaign):CheckComponentRed(cmptId)
-    end
+  
+  self._loginWidget:SetNew("New", newCallback)
+  
+  local function redCallback()
+    return self._campaign:CheckComponentOpen(cmptId) and self._campaign:CheckComponentRed(cmptId)
   end
-
-  ;
-  (self._loginWidget):SetRed("Red", redCallback)
-  local clickCallback = function()
-    -- function num : 0_10_2 , upvalues : _ENV, btnName, self, cmptId
-    (UIN38Helper.LocalDB_Set)(btnName, "New")
-    local campaignType = (UIN38Helper.GetCampaignType)()
+  
+  self._loginWidget:SetRed("Red", redCallback)
+  
+  local function clickCallback()
+    UIN38Helper.LocalDB_Set(btnName, "New")
+    local campaignType = UIN38Helper.GetCampaignType()
     self:ShowDialog("UIActivityTotalLoginAwardController", false, campaignType, cmptId)
   end
-
-  ;
-  (self._loginWidget):SetData(self._campaign, clickCallback)
+  
+  self._loginWidget:SetData(self._campaign, clickCallback)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController._SetBPBtn = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  self._bpWidget = (UIWidgetHelper.SpawnObject)(self, "BattlePassBtn", "UIActivityCommonComponentEnter")
+function UIN38MainController:_SetBPBtn()
+  self._bpWidget = UIWidgetHelper.SpawnObject(self, "BattlePassBtn", "UIActivityCommonComponentEnter")
   local btnName = "BattlePassBtn"
-  local newCallback = function()
-    -- function num : 0_11_0 , upvalues : _ENV, btnName
-    local new = not (UIN38Helper.LocalDB_Has)(btnName, "New")
+  
+  local function newCallback()
+    local new = not UIN38Helper.LocalDB_Has(btnName, "New")
     return new
   end
-
-  ;
-  (self._bpWidget):SetNew("New", newCallback)
-  local redCallback = function()
-    -- function num : 0_11_1 , upvalues : _ENV, self
-    return (UIActivityHelper.CheckCampaignSampleRedPoint)((self._activityConst)._battlepassCampaign)
+  
+  self._bpWidget:SetNew("New", newCallback)
+  
+  local function redCallback()
+    return UIActivityHelper.CheckCampaignSampleRedPoint(self._activityConst._battlepassCampaign)
   end
-
-  ;
-  (self._bpWidget):SetRed("Red", redCallback)
-  local clickCallback = function()
-    -- function num : 0_11_2 , upvalues : _ENV, btnName
-    (UIActivityBattlePassHelper.OpenMainController)()
-    ;
-    (UIN38Helper.LocalDB_Set)(btnName, "New")
+  
+  self._bpWidget:SetRed("Red", redCallback)
+  
+  local function clickCallback()
+    UIActivityBattlePassHelper.OpenMainController()
+    UIN38Helper.LocalDB_Set(btnName, "New")
   end
-
-  ;
-  (self._bpWidget):SetData((self._activityConst)._battlepassCampaign, clickCallback)
+  
+  self._bpWidget:SetData(self._activityConst._battlepassCampaign, clickCallback)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController.PlayEnterAnim = function(self)
-  -- function num : 0_12
+function UIN38MainController:PlayEnterAnim()
   self:StartTask(self.PlayEnterAnimCoro, self)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController.PlayEnterAnimCoro = function(self, TT)
-  -- function num : 0_13 , upvalues : _ENV
+function UIN38MainController:PlayEnterAnimCoro(TT)
   self:Lock("UIN38MainController_PlayEnterAnimCoro")
-  ;
-  (self._anim):Play("uianim_UIN38MainController_in")
+  self._anim:Play("uianim_UIN38MainController_in")
   YIELD(TT, 1000)
   self:UnLock("UIN38MainController_PlayEnterAnimCoro")
   self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController._CheckGuide = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN38MainController)
+function UIN38MainController:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN38MainController)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN38MainController:OnUpdate(deltaTimeMS)
   self._interval = self._interval + deltaTimeMS
   if self._interval >= 1000 then
     self._interval = 0
     self:RefreshRemainTime()
     if self._lineWidget then
-      (self._lineWidget):SetData(self._activityConst)
+      self._lineWidget:SetData(self._activityConst)
     end
     if self._hardWidget then
-      local componentInfo = (self._activityConst)._hardLineMissionompInfo
+      local componentInfo = self._activityConst._hardLineMissionompInfo
       if componentInfo then
         local openTime = componentInfo.m_unlock_time
         local closeTime = componentInfo.m_close_time
-        local nowTime = (self:GetModule(SvrTimeModule)):GetServerTime() / 1000
+        local nowTime = self:GetModule(SvrTimeModule):GetServerTime() / 1000
         if openTime <= nowTime and not self.refreshHard then
           self:RefreshData()
           self.refreshHard = true
         else
-          ;
-          (self._hardWidget):SetData(self._activityConst)
+          self._hardWidget:SetData(self._activityConst)
         end
       else
-        do
-          ;
-          (self._hardWidget):SetData(self._activityConst)
-        end
+        self._hardWidget:SetData(self._activityConst)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController.OnHide = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN38MainController:OnHide()
   self:DetachEvent(GameEventType.OnActivityTotalAwardGot, self.RefreshData)
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self.RefreshData)
   self:DetachEvent(GameEventType.ActivityMainStatusRefreshEvent, self.RefreshData)
@@ -299,72 +211,48 @@ UIN38MainController.OnHide = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController.ReLoadData = function(self, TT, key)
-  -- function num : 0_17 , upvalues : _ENV
+function UIN38MainController:ReLoadData(TT, key)
   self:Lock("UIN38MainController_ReLoadData" .. key)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (self._activityConst):LoadData(TT, res)
+  self._activityConst:LoadData(TT, res)
   self:UnLock("UIN38MainController_ReLoadData" .. key)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController.RefreshRemainTime = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIN38MainController:RefreshRemainTime()
   if self._titleWidget then
-    if (self._activityConst):IsActivityEnd() then
-      (self._titleWidget):SetRemainTime((StringTable.Get)("str_n26_activity_end"))
-      return 
+    if self._activityConst:IsActivityEnd() then
+      self._titleWidget:SetRemainTime(StringTable.Get("str_n26_activity_end"))
+      return
     end
-    local endTime = (self._activityConst):GetActiveEndTime()
-    local nowTime = (self._timeModule):GetServerTime() / 1000
-    local seconds = (math.floor)(endTime - nowTime)
+    local endTime = self._activityConst:GetActiveEndTime()
+    local nowTime = self._timeModule:GetServerTime() / 1000
+    local seconds = math.floor(endTime - nowTime)
     if seconds <= 0 then
       seconds = 0
     end
-    local timeStr = (UIN38Helper.GetTimeString)(seconds)
-    local timeTips = (StringTable.Get)("str_n26_activity_remain_time", timeStr)
-    ;
-    (self._titleWidget):SetRemainTime(timeTips)
+    local timeStr = UIN38Helper.GetTimeString(seconds)
+    local timeTips = StringTable.Get("str_n26_activity_remain_time", timeStr)
+    self._titleWidget:SetRemainTime(timeTips)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController.IntroBtnOnClick = function(self)
-  -- function num : 0_19
+function UIN38MainController:IntroBtnOnClick()
   self:ShowDialog("UIIntroLoader", "UIN38Intro")
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController.ShowBtnOnClick = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIN38MainController:ShowBtnOnClick()
   self:Lock("UIN38MainControllerShow")
   self:StartTask(function(TT)
-    -- function num : 0_20_0 , upvalues : self, _ENV
-    (self._anim):Play("uianim_UIN38MainController_show")
+    self._anim:Play("uianim_UIN38MainController_show")
     YIELD(TT, 667)
-    ;
-    (self._showBtnGO):SetActive(false)
+    self._showBtnGO:SetActive(false)
     self:UnLock("UIN38MainControllerShow")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38MainController.RefreshData = function(self)
-  -- function num : 0_21
+function UIN38MainController:RefreshData()
   self._taskIdMainBaseRefreshData = self:StartTask(function(TT)
-    -- function num : 0_21_0 , upvalues : self
     self:ReLoadData(TT, "Refresh")
-  end
-)
+  end)
 end
-
-

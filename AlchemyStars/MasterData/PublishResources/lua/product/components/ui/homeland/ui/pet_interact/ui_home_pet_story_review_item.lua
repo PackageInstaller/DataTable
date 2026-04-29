@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/pet_interact/ui_home_pet_story_review_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomePetStoryReviewItem", UICustomWidget)
 UIHomePetStoryReviewItem = UIHomePetStoryReviewItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomePetStoryReviewItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomePetStoryReviewItem:OnShow(uiParams)
   self._pet = self:GetGameObject("pet")
   self._player = self:GetGameObject("player")
   self._name1 = self:GetUIComponent("UILocalizationText", "name1")
@@ -24,35 +17,28 @@ UIHomePetStoryReviewItem.OnShow = function(self, uiParams)
   self._layout = self:GetUIComponent("RectTransform", "UIHomePetStoryReviewItem")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetStoryReviewItem.SetData = function(self, data, showLine, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomePetStoryReviewItem:SetData(data, showLine, callback)
   self._data = data
   self._callback = callback
-  local name = (self._data)[1]
-  local content = (self._data)[2]
-  local icon = (self._data)[4]
-  local isPlayer = (self._data)[3]
-  ;
-  (self._pet):SetActive(false)
-  ;
-  (self._player):SetActive(false)
-  local nameTex, contentTex, iconImg, iconGo = nil, nil, nil, nil
+  local name = self._data[1]
+  local content = self._data[2]
+  local icon = self._data[4]
+  local isPlayer = self._data[3]
+  self._pet:SetActive(false)
+  self._player:SetActive(false)
+  local nameTex, contentTex, iconImg, iconGo
   if not isPlayer then
     nameTex = self._name1
     contentTex = self._content1
     iconImg = self._icon1
     iconGo = self._iconGo1
-    ;
-    (self._pet):SetActive(true)
+    self._pet:SetActive(true)
   else
     nameTex = self._name2
     contentTex = self._content2
     iconImg = self._icon2
     iconGo = self._iconGo2
-    ;
-    (self._player):SetActive(true)
+    self._player:SetActive(true)
   end
   nameTex:SetText(name)
   contentTex:SetText(content)
@@ -66,26 +52,16 @@ UIHomePetStoryReviewItem.SetData = function(self, data, showLine, callback)
   if not showLine then
     show = false
   end
-  ;
-  (self._xian):SetActive(show)
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._layout)
+  self._xian:SetActive(show)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._layout)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetStoryReviewItem.Active = function(self, active)
-  -- function num : 0_2
-  (self._go):SetActive(active)
+function UIHomePetStoryReviewItem:Active(active)
+  self._go:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetStoryReviewItem.BgOnClick = function(self, go)
-  -- function num : 0_3
+function UIHomePetStoryReviewItem:BgOnClick(go)
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
-
-

@@ -1,37 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity_review/helper/ui_review_activity_n18.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIReviewActivityN18", UIReviewActivityBase)
 UIReviewActivityN18 = UIReviewActivityN18
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIReviewActivityN18.Constructor = function(self, id, sample)
-  -- function num : 0_0
+function UIReviewActivityN18:Constructor(id, sample)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN18.AssetPackageID = function(self)
-  -- function num : 0_1
+function UIReviewActivityN18:AssetPackageID()
   return 18
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN18.ActivityOnOpen = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIN18MainController_Review)
+function UIReviewActivityN18:ActivityOnOpen()
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIN18MainController_Review)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN18.GetBattleExitParam = function(self, comID, missionCreateInfo, isWin, battleresultRt)
-  -- function num : 0_3 , upvalues : _ENV
+function UIReviewActivityN18:GetBattleExitParam(comID, missionCreateInfo, isWin, battleresultRt)
   if comID == ECampaignReviewN18ComponentID.ECAMPAIGN_REVIEW_ReviewN18_LINE_MISSION then
     return UIStateType.UIN18LineMissionController_Review, nil
   end
 end
-
-

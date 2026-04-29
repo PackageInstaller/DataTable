@@ -1,50 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/main/ui_activity_returnsystem_tab_login_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReturnSystemTabLoginAwardItem", UICustomWidget)
 UIActivityReturnSystemTabLoginAwardItem = UIActivityReturnSystemTabLoginAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReturnSystemTabLoginAwardItem.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityReturnSystemTabLoginAwardItem:OnShow()
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabLoginAwardItem.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityReturnSystemTabLoginAwardItem:OnHide()
   if self.imgIcon then
-    (self.imgIcon):DestoryLastImage()
+    self.imgIcon:DestoryLastImage()
     self.imgIcon = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabLoginAwardItem.Flush = function(self, award, tipsCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityReturnSystemTabLoginAwardItem:Flush(award, tipsCallback)
   self.award = award
   self._tipsCallback = tipsCallback
-  local cfgv = (Cfg.cfg_item)[award.assetid]
-  ;
-  (self.imgIcon):DestoryLastImage()
-  ;
-  (self.imgIcon):LoadImage(cfgv.Icon)
-  ;
-  (self.txtCount):SetText(award.count)
+  local cfgv = Cfg.cfg_item[award.assetid]
+  self.imgIcon:DestoryLastImage()
+  self.imgIcon:LoadImage(cfgv.Icon)
+  self.txtCount:SetText(award.count)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabLoginAwardItem.imgIconOnClick = function(self, go)
-  -- function num : 0_3
+function UIActivityReturnSystemTabLoginAwardItem:imgIconOnClick(go)
   if self._tipsCallback then
-    (self._tipsCallback)((self.award).assetid, (go.transform).position)
+    self._tipsCallback(self.award.assetid, go.transform.position)
   end
 end
-
-

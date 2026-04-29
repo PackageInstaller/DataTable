@@ -1,162 +1,154 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/difficulty_mission/difficulty_mission_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local difficulty_missionMessageDef = {CLSID_CEventApplyDifficultyMissionInfoReq = 39000, CLSID_CEventApplyDifficultyMissionInfoRes = 39001, CLSID_CEventApplyChangeFormationReq = 39002, CLSID_CEventApplyChangeFormationRes = 39003, CLSID_CEventResetSubMissionRecordReq = 39004, CLSID_CEventResetSubMissionRecordRes = 39005, CLSID_PushOneParentInfoChange = 39006, CLSID_PushCurFormationChange = 39007, CLSID_CEventApplyParentMissionPassDataReq = 39008, CLSID_CEventApplyParentMissionPassDataRes = 39009}
-;
-(table.append)(MessageDef, difficulty_missionMessageDef)
+local difficulty_missionMessageDef = {
+  CLSID_CEventApplyDifficultyMissionInfoReq = 39000,
+  CLSID_CEventApplyDifficultyMissionInfoRes = 39001,
+  CLSID_CEventApplyChangeFormationReq = 39002,
+  CLSID_CEventApplyChangeFormationRes = 39003,
+  CLSID_CEventResetSubMissionRecordReq = 39004,
+  CLSID_CEventResetSubMissionRecordRes = 39005,
+  CLSID_PushOneParentInfoChange = 39006,
+  CLSID_PushCurFormationChange = 39007,
+  CLSID_CEventApplyParentMissionPassDataReq = 39008,
+  CLSID_CEventApplyParentMissionPassDataRes = 39009
+}
+table.append(MessageDef, difficulty_missionMessageDef)
 _class("CEventApplyDifficultyMissionInfoReq", CCallRequestEvent)
 CEventApplyDifficultyMissionInfoReq = CEventApplyDifficultyMissionInfoReq
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventApplyDifficultyMissionInfoReq.Constructor = function(self)
-  -- function num : 0_0
+function CEventApplyDifficultyMissionInfoReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventApplyDifficultyMissionInfoReq._proto = {}
 _class("CEventApplyDifficultyMissionInfoRes", CCallReplyEvent)
 CEventApplyDifficultyMissionInfoRes = CEventApplyDifficultyMissionInfoRes
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventApplyDifficultyMissionInfoRes.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CEventApplyDifficultyMissionInfoRes:Constructor()
   self.nRet = 0
   self.Data = ClientDifficultyMissionInfo:New()
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventApplyDifficultyMissionInfoRes._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"Data", "ClientDifficultyMissionInfo"}
+  [1] = {"nRet", "int"},
+  [2] = {
+    "Data",
+    "ClientDifficultyMissionInfo"
+  }
 }
 _class("CEventApplyChangeFormationReq", CCallRequestEvent)
 CEventApplyChangeFormationReq = CEventApplyChangeFormationReq
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventApplyChangeFormationReq.Constructor = function(self)
-  -- function num : 0_2
+function CEventApplyChangeFormationReq:Constructor()
   self.formation_pet_list = {}
   self.parent_mission_id = 0
   self.sub_mission_id = 0
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventApplyChangeFormationReq._proto = {
-[1] = {"formation_pet_list", "list<int64>"}
-, 
-[2] = {"parent_mission_id", "int"}
-, 
-[3] = {"sub_mission_id", "int"}
+  [1] = {
+    "formation_pet_list",
+    "list<int64>"
+  },
+  [2] = {
+    "parent_mission_id",
+    "int"
+  },
+  [3] = {
+    "sub_mission_id",
+    "int"
+  }
 }
 _class("CEventApplyChangeFormationRes", CCallReplyEvent)
 CEventApplyChangeFormationRes = CEventApplyChangeFormationRes
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventApplyChangeFormationRes.Constructor = function(self)
-  -- function num : 0_3
+function CEventApplyChangeFormationRes:Constructor()
   self.nFormationRet = 0
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventApplyChangeFormationRes._proto = {
-[1] = {"nFormationRet", "int"}
+  [1] = {
+    "nFormationRet",
+    "int"
+  }
 }
 _class("CEventResetSubMissionRecordReq", CCallRequestEvent)
 CEventResetSubMissionRecordReq = CEventResetSubMissionRecordReq
--- DECOMPILER ERROR at PC105: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventResetSubMissionRecordReq.Constructor = function(self)
-  -- function num : 0_4
+function CEventResetSubMissionRecordReq:Constructor()
   self.parent_mission_id = 0
   self.sub_mission_id = 0
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventResetSubMissionRecordReq._proto = {
-[1] = {"parent_mission_id", "int"}
-, 
-[2] = {"sub_mission_id", "int"}
+  [1] = {
+    "parent_mission_id",
+    "int"
+  },
+  [2] = {
+    "sub_mission_id",
+    "int"
+  }
 }
 _class("CEventResetSubMissionRecordRes", CCallReplyEvent)
 CEventResetSubMissionRecordRes = CEventResetSubMissionRecordRes
--- DECOMPILER ERROR at PC127: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventResetSubMissionRecordRes.Constructor = function(self)
-  -- function num : 0_5
+function CEventResetSubMissionRecordRes:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventResetSubMissionRecordRes._proto = {
-[1] = {"nRet", "int"}
+  [1] = {"nRet", "int"}
 }
 _class("PushOneParentInfoChange", CSvrPushEvent)
 PushOneParentInfoChange = PushOneParentInfoChange
--- DECOMPILER ERROR at PC144: Confused about usage of register: R1 in 'UnsetPending'
 
-PushOneParentInfoChange.Constructor = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function PushOneParentInfoChange:Constructor()
   self.info = ParentMissionInfo:New()
   self.cur_mission_id = 0
 end
 
--- DECOMPILER ERROR at PC157: Confused about usage of register: R1 in 'UnsetPending'
-
 PushOneParentInfoChange._proto = {
-[1] = {"info", "ParentMissionInfo"}
-, 
-[2] = {"cur_mission_id", "int"}
+  [1] = {
+    "info",
+    "ParentMissionInfo"
+  },
+  [2] = {
+    "cur_mission_id",
+    "int"
+  }
 }
 _class("PushCurFormationChange", CSvrPushEvent)
 PushCurFormationChange = PushCurFormationChange
--- DECOMPILER ERROR at PC166: Confused about usage of register: R1 in 'UnsetPending'
 
-PushCurFormationChange.Constructor = function(self)
-  -- function num : 0_7
+function PushCurFormationChange:Constructor()
   self.formation_pet_list = {}
 end
 
--- DECOMPILER ERROR at PC174: Confused about usage of register: R1 in 'UnsetPending'
-
 PushCurFormationChange._proto = {
-[1] = {"formation_pet_list", "list<int64>"}
+  [1] = {
+    "formation_pet_list",
+    "list<int64>"
+  }
 }
 _class("CEventApplyParentMissionPassDataReq", CCallRequestEvent)
 CEventApplyParentMissionPassDataReq = CEventApplyParentMissionPassDataReq
--- DECOMPILER ERROR at PC183: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventApplyParentMissionPassDataReq.Constructor = function(self)
-  -- function num : 0_8
+function CEventApplyParentMissionPassDataReq:Constructor()
   self.nMissionId = 0
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventApplyParentMissionPassDataReq._proto = {
-[1] = {"nMissionId", "int"}
+  [1] = {"nMissionId", "int"}
 }
 _class("CEventApplyParentMissionPassDataRes", CCallReplyEvent)
 CEventApplyParentMissionPassDataRes = CEventApplyParentMissionPassDataRes
--- DECOMPILER ERROR at PC200: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventApplyParentMissionPassDataRes.Constructor = function(self)
-  -- function num : 0_9
+function CEventApplyParentMissionPassDataRes:Constructor()
   self.info = {}
 end
 
--- DECOMPILER ERROR at PC208: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventApplyParentMissionPassDataRes._proto = {
-[1] = {"info", "list<parent_mission_pass_info>"}
+  [1] = {
+    "info",
+    "list<parent_mission_pass_info>"
+  }
 }
-

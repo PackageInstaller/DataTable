@@ -1,138 +1,87 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/activity_n_plus_six/level/ui_np6_lobby_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UINP6LobbyEntry", UICustomWidget)
 UINP6LobbyEntry = UINP6LobbyEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UINP6LobbyEntry.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UINP6LobbyEntry:OnShow(uiParams)
   self:InitWidget()
-  local playerID = ((GameGlobal.GameLogic)()):GetOpenId()
+  local playerID = GameGlobal.GameLogic():GetOpenId()
   self._localkey = "UINP6LobbyEntry_" .. playerID
-  self._isNew = (LocalDB.GetInt)(self._localkey, 0) ~= 1
+  self._isNew = LocalDB.GetInt(self._localkey, 0) ~= 1
   if self._isNew then
-    (self.new):SetActive(true)
-    ;
-    (self.red):SetActive(false)
+    self.new:SetActive(true)
+    self.red:SetActive(false)
   else
-    (self.new):SetActive(false)
+    self.new:SetActive(false)
     self:StartTask(self.SetRed, self)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UINP6LobbyEntry.InitWidget = function(self)
-  -- function num : 0_1
+function UINP6LobbyEntry:InitWidget()
   self.new = self:GetGameObject("new")
   self.red = self:GetGameObject("red")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UINP6LobbyEntry.SetData = function(self)
-  -- function num : 0_2
+function UINP6LobbyEntry:SetData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UINP6LobbyEntry.clickAreaOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UINP6LobbyEntry:clickAreaOnClick(go)
   if self._isNew then
-    (LocalDB.SetInt)(self._localkey, 1)
+    LocalDB.SetInt(self._localkey, 1)
   end
   self:Shot(function(rt)
-    -- function num : 0_3_0 , upvalues : self, _ENV
     self:SwitchState(UIStateType.UIActivityN6, rt)
-  end
-)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N6Switch)
+  end)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N6Switch)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UINP6LobbyEntry.Dispose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UINP6LobbyEntry:Dispose()
   if self._shot then
-    (self._shot):CleanRenderTexture()
+    self._shot:CleanRenderTexture()
     self._shot = nil
   end
-  ;
-  (UINP6LobbyEntry.super):Dispose()
+  UINP6LobbyEntry.super:Dispose()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UINP6LobbyEntry.Shot = function(self, callback)
-  -- function num : 0_5 , upvalues : _ENV
+function UINP6LobbyEntry:Shot(callback)
   self._shot = self:GetUIComponent("H3DUIBlurHelper", "screenShot")
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._shot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIMainLobbyController")
+  self._shot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera("UIMainLobbyController")
   local shotRect = self:GetUIComponent("RectTransform", "screenShot")
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._shot).width = (shotRect.rect).width
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._shot).height = (shotRect.rect).height
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._shot).blurTimes = 0
-  ;
-  (self._shot):CleanRenderTexture()
-  self._rt = (self._shot):RefreshBlurTexture()
-  local cacheRt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-  local rt = (self._shot):RefreshBlurTexture()
+  self._shot.width = shotRect.rect.width
+  self._shot.height = shotRect.rect.height
+  self._shot.blurTimes = 0
+  self._shot:CleanRenderTexture()
+  self._rt = self._shot:RefreshBlurTexture()
+  local cacheRt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+  local rt = self._shot:RefreshBlurTexture()
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV, rt, cacheRt, callback
     self:Lock("UINP6LobbyEntry_Shot")
     YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cacheRt)
+    UnityEngine.Graphics.Blit(rt, cacheRt)
     if callback then
       callback(cacheRt)
     end
     self:UnLock("UINP6LobbyEntry_Shot")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UINP6LobbyEntry.SetRed = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  (self.red):SetActive(false)
+function UINP6LobbyEntry:SetRed(TT)
+  self.red:SetActive(false)
   local module = self:GetModule(CampaignModule)
   local res = AsyncRequestRes:New()
   if not self._battlepassCampaign then
     self._battlepassCampaign = UIActivityCampaign:New()
-    ;
-    (self._battlepassCampaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
+    self._battlepassCampaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
   end
-  if (UIActivityHelper.CheckCampaignSampleRedPoint)(self._battlepassCampaign) then
-    (self.red):SetActive(true)
-    return 
+  if UIActivityHelper.CheckCampaignSampleRedPoint(self._battlepassCampaign) then
+    self.red:SetActive(true)
+    return
   end
   if not self._np6 then
     self._np6 = UIActivityCampaign:New()
-    ;
-    (self._np6):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_HALLOWEEN, ECampaignN6ComponentID.ECAMPAIGN_N6_QUEST, ECampaignN6ComponentID.ECAMPAIGN_N6_CUMULATIVE_LOGIN, ECampaignN6ComponentID.ECAMPAIGN_N6_LINE_MISSION, ECampaignN6ComponentID.ECAMPAIGN_N6_LINE_MISSION_FIXTEAM, ECampaignN6ComponentID.ECAMPAIGN_N6_STORY)
+    self._np6:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_HALLOWEEN, ECampaignN6ComponentID.ECAMPAIGN_N6_QUEST, ECampaignN6ComponentID.ECAMPAIGN_N6_CUMULATIVE_LOGIN, ECampaignN6ComponentID.ECAMPAIGN_N6_LINE_MISSION, ECampaignN6ComponentID.ECAMPAIGN_N6_LINE_MISSION_FIXTEAM, ECampaignN6ComponentID.ECAMPAIGN_N6_STORY)
   end
-  local red = (self._np6):CheckComponentRed(ECampaignN6ComponentID.ECAMPAIGN_N6_BUILD, ECampaignN6ComponentID.ECAMPAIGN_N6_QUEST, ECampaignN6ComponentID.ECAMPAIGN_N6_CUMULATIVE_LOGIN, ECampaignN6ComponentID.ECAMPAIGN_N6_LINE_MISSION_FIXTEAM, ECampaignN6ComponentID.ECAMPAIGN_N6_STORY)
+  local red = self._np6:CheckComponentRed(ECampaignN6ComponentID.ECAMPAIGN_N6_BUILD, ECampaignN6ComponentID.ECAMPAIGN_N6_QUEST, ECampaignN6ComponentID.ECAMPAIGN_N6_CUMULATIVE_LOGIN, ECampaignN6ComponentID.ECAMPAIGN_N6_LINE_MISSION_FIXTEAM, ECampaignN6ComponentID.ECAMPAIGN_N6_STORY)
   if red then
-    (self.red):SetActive(true)
-    return 
+    self.red:SetActive(true)
+    return
   end
 end
-
-

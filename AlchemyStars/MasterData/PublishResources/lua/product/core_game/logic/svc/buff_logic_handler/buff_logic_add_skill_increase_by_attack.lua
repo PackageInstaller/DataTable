@@ -1,66 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_skill_increase_by_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddSkillIncreaseByAttack", BuffLogicBase)
 BuffLogicAddSkillIncreaseByAttack = BuffLogicAddSkillIncreaseByAttack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddSkillIncreaseByAttack.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._buffInstance)._layer = 0
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffInstance)._effectList = logicParam.effectList
-  self._buffComp = (buffInstance:Entity()):BuffComponent()
+function BuffLogicAddSkillIncreaseByAttack:Constructor(buffInstance, logicParam)
+  self._buffInstance._layer = 0
+  self._buffInstance._effectList = logicParam.effectList
+  self._buffComp = buffInstance:Entity():BuffComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddSkillIncreaseByAttack.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._buffInstance)._layer = (self._buffInstance)._layer + 1
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    local addPercent = (self._buffInstance)._layer * paramType.addPercentPerLayer
+function BuffLogicAddSkillIncreaseByAttack:DoLogic()
+  local e = self._buffInstance:Entity()
+  self._buffInstance._layer = self._buffInstance._layer + 1
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    local addPercent = self._buffInstance._layer * paramType.addPercentPerLayer
     local attackType = paramType.attackType
-    ;
-    (self:GetBuffLogicService()):ChangeSkillIncrease(e, self:GetBuffSeq(), attackType, addPercent)
+    self:GetBuffLogicService():ChangeSkillIncrease(e, self:GetBuffSeq(), attackType, addPercent)
   end
-  local result = BuffResultAddSkillIncreaseByAttack:New((self._buffInstance)._layer)
+  local result = BuffResultAddSkillIncreaseByAttack:New(self._buffInstance._layer)
   return result
 end
 
 _class("BuffLogicAddSkillIncreaseByAttackUndo", BuffLogicBase)
 BuffLogicAddSkillIncreaseByAttackUndo = BuffLogicAddSkillIncreaseByAttackUndo
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddSkillIncreaseByAttackUndo.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicAddSkillIncreaseByAttackUndo:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddSkillIncreaseByAttackUndo.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._buffInstance)._layer = 0
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
+function BuffLogicAddSkillIncreaseByAttackUndo:DoLogic()
+  local e = self._buffInstance:Entity()
+  self._buffInstance._layer = 0
+  for _, paramType in ipairs(self._buffInstance._effectList) do
     local attackType = paramType.attackType
-    ;
-    (self:GetBuffLogicService()):RemoveSkillIncrease(e, self:GetBuffSeq(), attackType)
+    self:GetBuffLogicService():RemoveSkillIncrease(e, self:GetBuffSeq(), attackType)
   end
   return true
 end
-
-

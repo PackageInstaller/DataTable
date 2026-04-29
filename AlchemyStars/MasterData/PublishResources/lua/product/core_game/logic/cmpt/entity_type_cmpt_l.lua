@@ -1,79 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/entity_type_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("EntityTypeComponent", Object)
 EntityTypeComponent = EntityTypeComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-EntityTypeComponent.Constructor = function(self, value)
-  -- function num : 0_0
+function EntityTypeComponent:Constructor(value)
   self.Value = value
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityTypeComponent.IsSkillHolder = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  do return self.Value == EntityType.SkillHolder end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function EntityTypeComponent:IsSkillHolder()
+  return self.Value == EntityType.SkillHolder
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityTypeComponent.IsPetShadow = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  do return self.Value == EntityType.PetShadow end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function EntityTypeComponent:IsPetShadow()
+  return self.Value == EntityType.PetShadow
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityTypeComponent.IsPersonaSkillHolder = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  do return self.Value == EntityType.PersonaSkillHolder end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function EntityTypeComponent:IsPersonaSkillHolder()
+  return self.Value == EntityType.PersonaSkillHolder
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityTypeComponent.IsAutoBeadSkillHolder = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  do return self.Value == EntityType.AutoBeadSkillHolder end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function EntityTypeComponent:IsAutoBeadSkillHolder()
+  return self.Value == EntityType.AutoBeadSkillHolder
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.EntityType = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).EntityType)
+function Entity:EntityType()
+  return self:GetComponent(self.WEComponentsEnum.EntityType)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasEntityType = function(self)
-  -- function num : 0_6
-  return self:HasComponent((self.WEComponentsEnum).EntityType)
+function Entity:HasEntityType()
+  return self:HasComponent(self.WEComponentsEnum.EntityType)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddEntityType = function(self, value)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).EntityType
+function Entity:AddEntityType(value)
+  local index = self.WEComponentsEnum.EntityType
   local component = EntityTypeComponent:New(value)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveEntityType = function(self)
-  -- function num : 0_8
+function Entity:RemoveEntityType()
   if self:HasEntityType() then
-    self:RemoveComponent((self.WEComponentsEnum).EntityType)
+    self:RemoveComponent(self.WEComponentsEnum.EntityType)
   end
 end
-
-

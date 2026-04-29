@@ -1,242 +1,221 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/pet/pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("match_pet")
 _class("Pet", MatchPet)
 Pet = Pet
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Pet.Constructor = function(self, data)
-  -- function num : 0_0 , upvalues : _ENV
-  ((Pet.super).Constructor)(self, data)
+function Pet:Constructor(data)
+  Pet.super.Constructor(self, data)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Pet.GetPetAirRoom = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local airMD = (GameGlobal.GetModule)(AircraftModule)
+function Pet:GetPetAirRoom()
+  local airMD = GameGlobal.GetModule(AircraftModule)
   local room = airMD:GetPetAirRoom(self)
   return room
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Pet.GetPetAttack = function(self)
-  -- function num : 0_2
+function Pet:GetPetAttack()
   return self:getAttr("Attack")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Pet.GetPetDefence = function(self)
-  -- function num : 0_3
+function Pet:GetPetDefence()
   return self:getAttr("Defence")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Pet.GetPetHealth = function(self)
-  -- function num : 0_4
+function Pet:GetPetHealth()
   return self:getAttr("Health")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Pet.GetSkinId = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._data).current_skin then
-    return (self._data).current_skin
+function Pet:GetSkinId()
+  if self._data.current_skin then
+    return self._data.current_skin
   end
   local skinId = 0
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  local petModule = GameGlobal.GetModule(PetModule)
   if petModule then
     skinId = petModule:GetCurrentSkinId(self:GetTemplateID())
   end
-  if skinId > 1 then
+  if 1 < skinId then
     return skinId
   end
   if self:GetPetGrade() == 0 then
-    skinId = (self._cfg_pet).SkinId
+    skinId = self._cfg_pet.SkinId
   else
-    skinId = (self._cfg_grade).SkinId
+    skinId = self._cfg_grade.SkinId
   end
   return skinId or 1
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Pet.GetUpgradeChangeWithSkillIDNew = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function Pet:GetUpgradeChangeWithSkillIDNew()
   local grade = self:GetPetGrade()
-  if self:GetMaxGrade() <= grade then
+  if grade >= self:GetMaxGrade() then
     return nil
   end
   local next_grade_skills = self:GetSkillsByGrade(grade + 1)
   local cur_grade_skills = self:GetSkillsByGrade(grade)
   local change_data = {
-active = {}
-, 
-extra = {}
-, 
-chain = {}
-, 
-work = {}
-, 
-passive = {}
-, 
-body = {}
-}
-  local activeChangeData = nil
+    active = {},
+    extra = {},
+    chain = {},
+    work = {},
+    passive = {},
+    body = {}
+  }
+  local activeChangeData
   if cur_grade_skills.active_skill ~= next_grade_skills.active_skill then
-    local from = {cur_grade_skills.active_skill}
-    local to = {next_grade_skills.active_skill}
+    local from = {
+      cur_grade_skills.active_skill
+    }
+    local to = {
+      next_grade_skills.active_skill
+    }
     activeChangeData = UIFightSkillChangeData:New("active", PetSkillChangeState.Improved, from, to)
   else
-    do
-      local from = {cur_grade_skills.active_skill}
-      local to = {next_grade_skills.active_skill}
-      local awaken = self:GetPetAwakening()
-      local lastCfg = self:GetPetVariantActiveSkill(grade, awaken)
-      local nextCfg = self:GetPetVariantActiveSkill(grade + 1, awaken)
-      if not lastCfg and not nextCfg then
-        activeChangeData = UIFightSkillChangeData:New("active", PetSkillChangeState.NoChange, from, to)
+    local from = {
+      cur_grade_skills.active_skill
+    }
+    local to = {
+      next_grade_skills.active_skill
+    }
+    local awaken = self:GetPetAwakening()
+    local lastCfg = self:GetPetVariantActiveSkill(grade, awaken)
+    local nextCfg = self:GetPetVariantActiveSkill(grade + 1, awaken)
+    if not lastCfg and not nextCfg then
+      activeChangeData = UIFightSkillChangeData:New("active", PetSkillChangeState.NoChange, from, to)
+    elseif not lastCfg and nextCfg then
+      activeChangeData = UIFightSkillChangeData:New("active", PetSkillChangeState.Improved, from, to, {}, nextCfg)
+    elseif lastCfg and nextCfg then
+      local var_last = lastCfg[cur_grade_skills.active_skill]
+      local var_next = nextCfg[next_grade_skills.active_skill]
+      local diff = table.getTableDiffIndex(var_last, var_next)
+      if diff then
+        activeChangeData = UIFightSkillChangeData:New("active", PetSkillChangeState.Improved, from, to, lastCfg, nextCfg)
       else
-        if not lastCfg and nextCfg then
-          activeChangeData = UIFightSkillChangeData:New("active", PetSkillChangeState.Improved, from, to, {}, nextCfg)
-        else
-          if lastCfg and nextCfg then
-            local var_last = lastCfg[cur_grade_skills.active_skill]
-            local var_next = nextCfg[next_grade_skills.active_skill]
-            local diff = (table.getTableDiffIndex)(var_last, var_next)
-            if diff then
-              activeChangeData = UIFightSkillChangeData:New("active", PetSkillChangeState.Improved, from, to, lastCfg, nextCfg)
-            else
-              activeChangeData = UIFightSkillChangeData:New("active", PetSkillChangeState.NoChange, from, to)
-            end
-          else
-            do
-              do
-                activeChangeData = UIFightSkillChangeData:New("active", PetSkillChangeState.NoChange, from, to)
-                change_data.active = activeChangeData
-                local extraChangeData = nil
-                if cur_grade_skills.extra_skill ~= next_grade_skills.extra_skill then
-                  if cur_grade_skills.extra_skill == 0 then
-                    extraChangeData = UIFightSkillChangeData:New("extra", PetSkillChangeState.NewGain, {cur_grade_skills.extra_skill}, {next_grade_skills.extra_skill})
-                  else
-                    extraChangeData = UIFightSkillChangeData:New("extra", PetSkillChangeState.Improved, {cur_grade_skills.extra_skill}, {next_grade_skills.extra_skill})
-                  end
-                else
-                  extraChangeData = UIFightSkillChangeData:New("extra", PetSkillChangeState.NoChange, {cur_grade_skills.extra_skill}, {next_grade_skills.extra_skill})
-                end
-                change_data.extra = extraChangeData
-                local bodyChangeData = nil
-                if cur_grade_skills.body ~= next_grade_skills.body then
-                  bodyChangeData = UIFightSkillChangeData:New("body", PetSkillChangeState.NewGain, {cur_grade_skills.body}, {next_grade_skills.body})
-                else
-                  bodyChangeData = UIFightSkillChangeData:New("body", PetSkillChangeState.NoChange, {cur_grade_skills.body}, {next_grade_skills.body})
-                end
-                change_data.body = bodyChangeData
-                local chainChangeData = nil
-                if #cur_grade_skills.chain_skills ~= #next_grade_skills.chain_skills then
-                  chainChangeData = UIFightSkillChangeData:New("chain", PetSkillChangeState.NewGain, cur_grade_skills.chain_skills, next_grade_skills.chain_skills)
-                else
-                  local same = true
-                  for i = 1, #cur_grade_skills.chain_skills do
-                    local val_a = (cur_grade_skills.chain_skills)[i]
-                    local val_b = (next_grade_skills.chain_skills)[i]
-                    if val_a ~= val_b then
-                      same = false
-                      break
-                    end
-                  end
-                  do
-                    do
-                      if same then
-                        chainChangeData = UIFightSkillChangeData:New("chain", PetSkillChangeState.NoChange, cur_grade_skills.chain_skills, next_grade_skills.chain_skills)
-                      else
-                        chainChangeData = UIFightSkillChangeData:New("chain", PetSkillChangeState.Improved, cur_grade_skills.chain_skills, next_grade_skills.chain_skills)
-                      end
-                      change_data.chain = chainChangeData
-                      local workChangeData = nil
-                      if #cur_grade_skills.work_skills ~= #next_grade_skills.work_skills then
-                        workChangeData = UIFightSkillChangeData:New("work", PetSkillChangeState.NewGain, cur_grade_skills.work_skills, next_grade_skills.work_skills)
-                      else
-                        local same = true
-                        for i = 1, #cur_grade_skills.work_skills do
-                          local val_a = (cur_grade_skills.work_skills)[i]
-                          local val_b = (next_grade_skills.work_skills)[i]
-                          if val_a ~= val_b then
-                            same = false
-                            break
-                          end
-                        end
-                        do
-                          do
-                            if same then
-                              workChangeData = UIFightSkillChangeData:New("work", PetSkillChangeState.NoChange, cur_grade_skills.work_skills, next_grade_skills.work_skills)
-                            else
-                              workChangeData = UIFightSkillChangeData:New("work", PetSkillChangeState.Improved, cur_grade_skills.work_skills, next_grade_skills.work_skills)
-                            end
-                            change_data.work = workChangeData
-                            local passiveChangeData = nil
-                            if cur_grade_skills.passive_skills ~= next_grade_skills.passive_skills then
-                              if cur_grade_skills.passive_skills == 0 then
-                                passiveChangeData = UIFightSkillChangeData:New("passive", PetSkillChangeState.NewGain, {cur_grade_skills.passive_skills}, {next_grade_skills.passive_skills})
-                              else
-                                passiveChangeData = UIFightSkillChangeData:New("passive", PetSkillChangeState.Improved, {cur_grade_skills.passive_skills}, {next_grade_skills.passive_skills})
-                              end
-                            else
-                              passiveChangeData = UIFightSkillChangeData:New("passive", PetSkillChangeState.NoChange, {cur_grade_skills.passive_skills}, {next_grade_skills.passive_skills})
-                            end
-                            change_data.passive = passiveChangeData
-                            return change_data
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+        activeChangeData = UIFightSkillChangeData:New("active", PetSkillChangeState.NoChange, from, to)
       end
+    else
+      activeChangeData = UIFightSkillChangeData:New("active", PetSkillChangeState.NoChange, from, to)
     end
   end
+  change_data.active = activeChangeData
+  local extraChangeData
+  if cur_grade_skills.extra_skill ~= next_grade_skills.extra_skill then
+    if cur_grade_skills.extra_skill == 0 then
+      extraChangeData = UIFightSkillChangeData:New("extra", PetSkillChangeState.NewGain, {
+        cur_grade_skills.extra_skill
+      }, {
+        next_grade_skills.extra_skill
+      })
+    else
+      extraChangeData = UIFightSkillChangeData:New("extra", PetSkillChangeState.Improved, {
+        cur_grade_skills.extra_skill
+      }, {
+        next_grade_skills.extra_skill
+      })
+    end
+  else
+    extraChangeData = UIFightSkillChangeData:New("extra", PetSkillChangeState.NoChange, {
+      cur_grade_skills.extra_skill
+    }, {
+      next_grade_skills.extra_skill
+    })
+  end
+  change_data.extra = extraChangeData
+  local bodyChangeData
+  if cur_grade_skills.body ~= next_grade_skills.body then
+    bodyChangeData = UIFightSkillChangeData:New("body", PetSkillChangeState.NewGain, {
+      cur_grade_skills.body
+    }, {
+      next_grade_skills.body
+    })
+  else
+    bodyChangeData = UIFightSkillChangeData:New("body", PetSkillChangeState.NoChange, {
+      cur_grade_skills.body
+    }, {
+      next_grade_skills.body
+    })
+  end
+  change_data.body = bodyChangeData
+  local chainChangeData
+  if #cur_grade_skills.chain_skills ~= #next_grade_skills.chain_skills then
+    chainChangeData = UIFightSkillChangeData:New("chain", PetSkillChangeState.NewGain, cur_grade_skills.chain_skills, next_grade_skills.chain_skills)
+  else
+    local same = true
+    for i = 1, #cur_grade_skills.chain_skills do
+      local val_a = cur_grade_skills.chain_skills[i]
+      local val_b = next_grade_skills.chain_skills[i]
+      if val_a ~= val_b then
+        same = false
+        break
+      end
+    end
+    if same then
+      chainChangeData = UIFightSkillChangeData:New("chain", PetSkillChangeState.NoChange, cur_grade_skills.chain_skills, next_grade_skills.chain_skills)
+    else
+      chainChangeData = UIFightSkillChangeData:New("chain", PetSkillChangeState.Improved, cur_grade_skills.chain_skills, next_grade_skills.chain_skills)
+    end
+  end
+  change_data.chain = chainChangeData
+  local workChangeData
+  if #cur_grade_skills.work_skills ~= #next_grade_skills.work_skills then
+    workChangeData = UIFightSkillChangeData:New("work", PetSkillChangeState.NewGain, cur_grade_skills.work_skills, next_grade_skills.work_skills)
+  else
+    local same = true
+    for i = 1, #cur_grade_skills.work_skills do
+      local val_a = cur_grade_skills.work_skills[i]
+      local val_b = next_grade_skills.work_skills[i]
+      if val_a ~= val_b then
+        same = false
+        break
+      end
+    end
+    if same then
+      workChangeData = UIFightSkillChangeData:New("work", PetSkillChangeState.NoChange, cur_grade_skills.work_skills, next_grade_skills.work_skills)
+    else
+      workChangeData = UIFightSkillChangeData:New("work", PetSkillChangeState.Improved, cur_grade_skills.work_skills, next_grade_skills.work_skills)
+    end
+  end
+  change_data.work = workChangeData
+  local passiveChangeData
+  if cur_grade_skills.passive_skills ~= next_grade_skills.passive_skills then
+    if cur_grade_skills.passive_skills == 0 then
+      passiveChangeData = UIFightSkillChangeData:New("passive", PetSkillChangeState.NewGain, {
+        cur_grade_skills.passive_skills
+      }, {
+        next_grade_skills.passive_skills
+      })
+    else
+      passiveChangeData = UIFightSkillChangeData:New("passive", PetSkillChangeState.Improved, {
+        cur_grade_skills.passive_skills
+      }, {
+        next_grade_skills.passive_skills
+      })
+    end
+  else
+    passiveChangeData = UIFightSkillChangeData:New("passive", PetSkillChangeState.NoChange, {
+      cur_grade_skills.passive_skills
+    }, {
+      next_grade_skills.passive_skills
+    })
+  end
+  change_data.passive = passiveChangeData
+  return change_data
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Pet.FastTeamMemID = function(self)
-  -- function num : 0_7
+function Pet:FastTeamMemID()
   return self._fastTeamMemID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Pet.SetFastTeamMemID = function(self, memId)
-  -- function num : 0_8
+function Pet:SetFastTeamMemID(memId)
   self._fastTeamMemID = memId
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Pet.GetAwakeMatch = function(self)
-  -- function num : 0_9
-  if (self._data).awake_lock <= 0 or not (self._data).awake_lock then
-    return (self._data).awakening
-  end
+function Pet:GetAwakeMatch()
+  return self._data.awake_lock > 0 and self._data.awake_lock or self._data.awakening
 end
 
 _class("UIFightSkillChangeData", Object)
 UIFightSkillChangeData = UIFightSkillChangeData
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFightSkillChangeData.Constructor = function(self, type, changeType, from, to, fParam, tParam)
-  -- function num : 0_10
+function UIFightSkillChangeData:Constructor(type, changeType, from, to, fParam, tParam)
   self.type = type
   self.changeType = changeType
   self.from = from
@@ -244,5 +223,3 @@ UIFightSkillChangeData.Constructor = function(self, type, changeType, from, to, 
   self.fromParam = fParam
   self.toParam = tParam
 end
-
-

@@ -1,40 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/spine_loader_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SpineLoaderHelper", Object)
 SpineLoaderHelper = SpineLoaderHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SpineLoaderHelper.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SpineLoaderHelper:Constructor()
   self._spines = ArrayList:New()
   self._root = nil
   self.isOpen = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SpineLoaderHelper.Init = function(self, root, count)
-  -- function num : 0_1
+function SpineLoaderHelper:Init(root, count)
   self._maxCount = count
   self._root = root
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SpineLoaderHelper.LoadSpine = function(self, spineName, isAsync)
-  -- function num : 0_2
+function SpineLoaderHelper:LoadSpine(spineName, isAsync)
   self:_LoadSpine(spineName, isAsync)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SpineLoaderHelper._LoadSpine = function(self, spineName, isAsync)
-  -- function num : 0_3
+function SpineLoaderHelper:_LoadSpine(spineName, isAsync)
   if self:_ContainKey(spineName) then
-    return 
+    return
   end
   if isAsync then
     self:_LoadSpineAsync(spineName)
@@ -43,67 +27,38 @@ SpineLoaderHelper._LoadSpine = function(self, spineName, isAsync)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SpineLoaderHelper._LoadSpineSync = function(self, spineName)
-  -- function num : 0_4 , upvalues : _ENV
+function SpineLoaderHelper:_LoadSpineSync(spineName)
   local tempTab = {}
   tempTab.spineName = spineName
-  tempTab.spine = (ResourceManager:GetInstance()):SyncLoadAsset(spineName .. ".prefab", LoadType.GameObject)
+  tempTab.spine = ResourceManager:GetInstance():SyncLoadAsset(spineName .. ".prefab", LoadType.GameObject)
   if tempTab.spine then
-    (((tempTab.spine).Obj).transform):SetParent(self._root)
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (((tempTab.spine).Obj).transform).localPosition = Vector3(0, 0, 0)
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (((tempTab.spine).Obj).transform).localScale = Vector3(1, 1, 1)
-    ;
-    ((tempTab.spine).Obj):SetActive(false)
-    ;
-    (self._spines):PushBack(tempTab)
+    tempTab.spine.Obj.transform:SetParent(self._root)
+    tempTab.spine.Obj.transform.localPosition = Vector3(0, 0, 0)
+    tempTab.spine.Obj.transform.localScale = Vector3(1, 1, 1)
+    tempTab.spine.Obj:SetActive(false)
+    self._spines:PushBack(tempTab)
     self:_Delete()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SpineLoaderHelper._LoadSpineAsync = function(self, spineName, cb)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self._OnLoadSpineAsync, self, spineName, cb)
+function SpineLoaderHelper:_LoadSpineAsync(spineName, cb)
+  GameGlobal.TaskManager():StartTask(self._OnLoadSpineAsync, self, spineName, cb)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SpineLoaderHelper._OnLoadSpineAsync = function(self, TT, spineName, cb)
-  -- function num : 0_6 , upvalues : _ENV
+function SpineLoaderHelper:_OnLoadSpineAsync(TT, spineName, cb)
   local _tempTab = {}
-  _tempTab.spine = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, spineName .. ".prefab", LoadType.GameObject)
+  _tempTab.spine = ResourceManager:GetInstance():AsyncLoadAsset(TT, spineName .. ".prefab", LoadType.GameObject)
   if self.isOpen == false then
-    return 
+    return
   end
   if not self:_ContainKey(spineName) then
     _tempTab.spineName = spineName
-    ;
-    (((_tempTab.spine).Obj).transform):SetParent(self._root)
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (((_tempTab.spine).Obj).transform).localPosition = Vector3(0, 0, 0)
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (((_tempTab.spine).Obj).transform).localScale = Vector3(1, 1, 1)
-    -- DECOMPILER ERROR at PC56: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (((_tempTab.spine).Obj).transform).localRotation = Quaternion(0, 0, 0, 0)
-    ;
-    ((_tempTab.spine).Obj):SetActive(false)
-    ;
-    (self._spines):PushBack(_tempTab)
+    _tempTab.spine.Obj.transform:SetParent(self._root)
+    _tempTab.spine.Obj.transform.localPosition = Vector3(0, 0, 0)
+    _tempTab.spine.Obj.transform.localScale = Vector3(1, 1, 1)
+    _tempTab.spine.Obj.transform.localRotation = Quaternion(0, 0, 0, 0)
+    _tempTab.spine.Obj:SetActive(false)
+    self._spines:PushBack(_tempTab)
     self:_Delete()
   end
   if cb then
@@ -111,89 +66,62 @@ SpineLoaderHelper._OnLoadSpineAsync = function(self, TT, spineName, cb)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SpineLoaderHelper._ContainKey = function(self, spineName)
-  -- function num : 0_7 , upvalues : _ENV
-  if self._spines and (self._spines).elements then
-    for i = 1, (table.count)((self._spines).elements) do
-      local n = (((self._spines).elements)[i]).spineName
+function SpineLoaderHelper:_ContainKey(spineName)
+  if self._spines and self._spines.elements then
+    for i = 1, table.count(self._spines.elements) do
+      local n = self._spines.elements[i].spineName
       if n and n == spineName then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SpineLoaderHelper.GetSpine = function(self, spineName)
-  -- function num : 0_8 , upvalues : _ENV
-  for i = 1, (table.count)((self._spines).elements) do
-    local n = (((self._spines).elements)[i]).spineName
+function SpineLoaderHelper:GetSpine(spineName)
+  for i = 1, table.count(self._spines.elements) do
+    local n = self._spines.elements[i].spineName
     if n == spineName then
-      return (((self._spines).elements)[i]).spine
+      return self._spines.elements[i].spine
     end
   end
   self:_LoadSpineAsync(spineName, function()
-    -- function num : 0_8_0 , upvalues : _ENV, self, spineName
-    for i = 1, (table.count)((self._spines).elements) do
-      local n = (((self._spines).elements)[i]).spineName
+    for i = 1, table.count(self._spines.elements) do
+      local n = self._spines.elements[i].spineName
       if n == spineName then
-        return (((self._spines).elements)[i]).spine
+        return self._spines.elements[i].spine
       end
     end
-  end
-)
+  end)
   local tempTab = {}
   tempTab.spineName = spineName
-  tempTab.spine = (ResourceManager:GetInstance()):SyncLoadAsset(spineName .. ".prefab", LoadType.GameObject)
+  tempTab.spine = ResourceManager:GetInstance():SyncLoadAsset(spineName .. ".prefab", LoadType.GameObject)
   if tempTab.spine then
-    (((tempTab.spine).Obj).transform):SetParent(self._root)
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (((tempTab.spine).Obj).transform).localPosition = Vector3(0, 0, 0)
-    -- DECOMPILER ERROR at PC63: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (((tempTab.spine).Obj).transform).localScale = Vector3(1, 1, 1)
-    ;
-    ((tempTab.spine).Obj):SetActive(false)
-    ;
-    (self._spines):PushBack(tempTab)
+    tempTab.spine.Obj.transform:SetParent(self._root)
+    tempTab.spine.Obj.transform.localPosition = Vector3(0, 0, 0)
+    tempTab.spine.Obj.transform.localScale = Vector3(1, 1, 1)
+    tempTab.spine.Obj:SetActive(false)
+    self._spines:PushBack(tempTab)
     self:_Delete()
     return tempTab.spine
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SpineLoaderHelper._Delete = function(self)
-  -- function num : 0_9
-  if self._maxCount < (self._spines):Size() then
-    (self._spines):RemoveByIndex(1)
+function SpineLoaderHelper:_Delete()
+  if self._spines:Size() > self._maxCount then
+    self._spines:RemoveByIndex(1)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SpineLoaderHelper.Dispose = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  for i = 1, (table.count)((self._spines).elements) do
-    local res = (((self._spines).elements)[i]).spine
+function SpineLoaderHelper:Dispose()
+  for i = 1, table.count(self._spines.elements) do
+    local res = self._spines.elements[i].spine
     res:Dispose()
   end
   self._root = nil
-  ;
-  (self._spines):Clear()
+  self._spines:Clear()
   self._spines = nil
   self.isOpen = false
   self._maxCount = 0
 end
-
-

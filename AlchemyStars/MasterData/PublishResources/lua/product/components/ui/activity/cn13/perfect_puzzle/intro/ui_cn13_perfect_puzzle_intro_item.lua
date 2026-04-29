@@ -1,29 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn13/perfect_puzzle/intro/ui_cn13_perfect_puzzle_intro_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN13PerfectPuzzleIntroItem", UICustomWidget)
 UICN13PerfectPuzzleIntroItem = UICN13PerfectPuzzleIntroItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN13PerfectPuzzleIntroItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN13PerfectPuzzleIntroItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleIntroItem.InitWidget = function(self)
-  -- function num : 0_1
+function UICN13PerfectPuzzleIntroItem:InitWidget()
   self.txtHead = self:GetUIComponent("UILocalizationText", "txtHead")
   self.txtBody = self:GetUIComponent("UILocalizationText", "txtBody")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleIntroItem.SetData = function(self)
-  -- function num : 0_2
+function UICN13PerfectPuzzleIntroItem:SetData()
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/find_treasure_npc/ui_homeland_minimap_icon_find_treasure_npc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapIconFindTreasureNPC", UIHomelandMinimapIconBase)
 UIHomelandMinimapIconFindTreasureNPC = UIHomelandMinimapIconFindTreasureNPC
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapIconFindTreasureNPC.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandMinimapIconFindTreasureNPC:OnShow(uiParams)
   self._rawImageLoader = self:GetUIComponent("RawImageLoader", "RawImage")
   self._selectGO = self:GetGameObject("Selected")
   self._eventBubble = self:GetGameObject("EventBubble")
@@ -16,93 +9,47 @@ UIHomelandMinimapIconFindTreasureNPC.OnShow = function(self, uiParams)
   self._headBGGo = self:GetGameObject("HeadBG")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconFindTreasureNPC.OnInitDone = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._rawImageLoader):LoadImage((HomelandFindTreasureConst.GetNPCMinimapIcon)())
-  ;
-  (self._eventBubble):SetActive(false)
-  ;
-  (self._treasureBubble):SetActive(false)
+function UIHomelandMinimapIconFindTreasureNPC:OnInitDone()
+  self._rawImageLoader:LoadImage(HomelandFindTreasureConst.GetNPCMinimapIcon())
+  self._eventBubble:SetActive(false)
+  self._treasureBubble:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconFindTreasureNPC.OnHide = function(self)
-  -- function num : 0_2
+function UIHomelandMinimapIconFindTreasureNPC:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconFindTreasureNPC.OnSelected = function(self)
-  -- function num : 0_3
-  (self._selectGO):SetActive(true)
+function UIHomelandMinimapIconFindTreasureNPC:OnSelected()
+  self._selectGO:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconFindTreasureNPC.OnUnSelected = function(self)
-  -- function num : 0_4
-  (self._selectGO):SetActive(false)
+function UIHomelandMinimapIconFindTreasureNPC:OnUnSelected()
+  self._selectGO:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconFindTreasureNPC.GetShowIconOffset = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandMinimapIconFindTreasureNPC:GetShowIconOffset()
   return Vector2(0, -30)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconFindTreasureNPC.GetIconMultiSelectPositionOffset = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandMinimapIconFindTreasureNPC:GetIconMultiSelectPositionOffset()
   return Vector2(0, 30)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconFindTreasureNPC.GetShowName = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  return (StringTable.Get)((HomelandFindTreasureConst.GetNPCName)())
+function UIHomelandMinimapIconFindTreasureNPC:GetShowName()
+  return StringTable.Get(HomelandFindTreasureConst.GetNPCName())
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconFindTreasureNPC.GetMutilSelectedPosition = function(self)
-  -- function num : 0_8
-  return ((self._headBGGo).transform).position
+function UIHomelandMinimapIconFindTreasureNPC:GetMutilSelectedPosition()
+  return self._headBGGo.transform.position
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconFindTreasureNPC.GetAnimationName = function(self, animType)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHomelandMinimapIconFindTreasureNPC:GetAnimationName(animType)
   if not self._animationNames then
     self._animationNames = {}
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.IN] = "UIHomelandMinimapPetIcon_in"
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.OUT] = "UIHomelandMinimapPetIcon_out"
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.SELECT] = "UIHomelandMinimapPetIcon_Selected_in"
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.UNSELECT] = "UIHomelandMinimapPetIcon_Selected_out"
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.EXPANSION] = "UIHomelandMinimapPetIcon_blue"
+    self._animationNames[MinimapIconAnimationType.IN] = "UIHomelandMinimapPetIcon_in"
+    self._animationNames[MinimapIconAnimationType.OUT] = "UIHomelandMinimapPetIcon_out"
+    self._animationNames[MinimapIconAnimationType.SELECT] = "UIHomelandMinimapPetIcon_Selected_in"
+    self._animationNames[MinimapIconAnimationType.UNSELECT] = "UIHomelandMinimapPetIcon_Selected_out"
+    self._animationNames[MinimapIconAnimationType.EXPANSION] = "UIHomelandMinimapPetIcon_blue"
   end
-  return (self._animationNames)[animType]
+  return self._animationNames[animType]
 end
-
-

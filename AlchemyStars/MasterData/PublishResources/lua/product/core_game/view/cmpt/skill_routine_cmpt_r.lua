@@ -1,86 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/skill_routine_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillRoutineComponent", Object)
 SkillRoutineComponent = SkillRoutineComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillRoutineComponent.Constructor = function(self)
-  -- function num : 0_0
+function SkillRoutineComponent:Constructor()
   self._effectResultContainer = nil
   self._resultDict = {}
   self._damageDampList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRoutineComponent.GetResultContainer = function(self, key)
-  -- function num : 0_1
-  do
-    if key then
-      local v = (self._resultDict)[key]
-      -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._resultDict)[key] = nil
-      return v
-    end
-    return self._effectResultContainer
+function SkillRoutineComponent:GetResultContainer(key)
+  if key then
+    local v = self._resultDict[key]
+    self._resultDict[key] = nil
+    return v
   end
+  return self._effectResultContainer
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRoutineComponent.SetResultContainer = function(self, res, key)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
+function SkillRoutineComponent:SetResultContainer(res, key)
   if key then
-    (self._resultDict)[key] = res
+    self._resultDict[key] = res
   else
     self._effectResultContainer = res
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRoutineComponent.ClearSkillRoutine = function(self)
-  -- function num : 0_3
+function SkillRoutineComponent:ClearSkillRoutine()
   self._effectResultContainer = nil
   self._resultDict = {}
   self._damageDampList = {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRoutineComponent.GetDamageDampList = function(self)
-  -- function num : 0_4
+function SkillRoutineComponent:GetDamageDampList()
   return self._damageDampList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRoutineComponent.SetDamageDampList = function(self, t)
-  -- function num : 0_5
+function SkillRoutineComponent:SetDamageDampList(t)
   self._damageDampList = t
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SkillRoutine = function(self)
-  -- function num : 0_6
-  return self:GetComponent((self.WEComponentsEnum).SkillRoutine)
+function Entity:SkillRoutine()
+  return self:GetComponent(self.WEComponentsEnum.SkillRoutine)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddSkillRoutine = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).SkillRoutine
+function Entity:AddSkillRoutine()
+  local index = self.WEComponentsEnum.SkillRoutine
   local component = SkillRoutineComponent:New()
   self:AddComponent(index, component)
 end
-
-

@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_fire_animation_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillFireAnimationPhase", PlaySkillPhaseBase)
 PlaySkillFireAnimationPhase = PlaySkillFireAnimationPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillFireAnimationPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillFireAnimationPhase:PlayFlight(TT, casterEntity, phaseParam)
   local phaseParam = phaseParam
-  local effectService = (self._world):GetService("Effect")
+  local effectService = self._world:GetService("Effect")
   local attackAnimName = phaseParam:GetAnimationName()
   casterEntity:SetAnimatorControllerTriggers({attackAnimName})
   local effFire = phaseParam:GetEffectFireID()
@@ -19,29 +12,27 @@ PlaySkillFireAnimationPhase.PlayFlight = function(self, TT, casterEntity, phaseP
   local effBomb = phaseParam:GetEffectBombID()
   effectService:CreateEffect(effBomb, casterEntity)
   local castGridLocation = casterEntity:GridLocation()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local posArr = {}
   local resultSummonArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SummonEverything)
-  for i,v in ipairs(resultSummonArray) do
+  for i, v in ipairs(resultSummonArray) do
     local pos = v:GetGridPos()
-    ;
-    (table.insert)(posArr, pos)
+    table.insert(posArr, pos)
   end
   local effFire = {}
-  for i,v in ipairs(posArr) do
+  for i, v in ipairs(posArr) do
     local e = effectService:CreateWorldPositionEffect(32, castGridLocation.Position, false)
-    ;
-    (table.insert)(effFire, e)
+    table.insert(effFire, e)
   end
   local delay = phaseParam:GetBombDelayMS()
-  if delay > 0 then
+  if 0 < delay then
     YIELD(TT, delay)
   end
   local attackEffectCount = phaseParam:GetCastEffectCount()
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   YIELD(TT)
   local flyTime = phaseParam:GetFlyTime()
-  for i,v in ipairs(posArr) do
+  for i, v in ipairs(posArr) do
     local eff = effFire[i]
     eff:SetViewVisible(true)
     local view = eff:View()
@@ -50,13 +41,10 @@ PlaySkillFireAnimationPhase.PlayFlight = function(self, TT, casterEntity, phaseP
     tran.position = tran.position + Vector3.up * 2
     local startPos = tran.position
     local endPos = boardServiceRender:GridPos2RenderPos(v)
-    ;
-    (tran:DOJump(endPos, 10, 1, flyTime * 0.001)):SetEase(((DG.Tweening).Ease).InOutSine)
+    tran:DOJump(endPos, 10, 1, flyTime * 0.001):SetEase(DG.Tweening.Ease.InOutSine)
   end
   YIELD(TT, flyTime)
-  for i,v in ipairs(effFire) do
-    (self._world):DestroyEntity(v)
+  for i, v in ipairs(effFire) do
+    self._world:DestroyEntity(v)
   end
 end
-
-

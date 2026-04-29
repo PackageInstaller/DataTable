@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_coffin_musume_set_candle_light.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultCoffinMusumeSetCandleLight", BuffResultBase)
 BuffResultCoffinMusumeSetCandleLight = BuffResultCoffinMusumeSetCandleLight
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultCoffinMusumeSetCandleLight.Constructor = function(self, isLightBefore, isLightAfter)
-  -- function num : 0_0
+function BuffResultCoffinMusumeSetCandleLight:Constructor(isLightBefore, isLightAfter)
   self._isLightBefore = isLightBefore
   self._isLightAfter = isLightAfter
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCoffinMusumeSetCandleLight.IsLightAfter = function(self)
-  -- function num : 0_1
+function BuffResultCoffinMusumeSetCandleLight:IsLightAfter()
   return self._isLightAfter
 end
-
-

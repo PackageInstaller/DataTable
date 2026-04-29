@@ -1,47 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_component/ui_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UIComponent.Constructor = function(self)
-  -- function num : 0_0
+function UIComponent:Constructor()
   self.uiController = nil
   self.registerInfo = nil
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UIComponent.Init = function(self, uiController, registerInfo)
-  -- function num : 0_1
+function UIComponent:Init(uiController, registerInfo)
   self.uiController = uiController
   self.registerInfo = registerInfo
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UIComponent.Show = function(self, uiParams)
-  -- function num : 0_2
+function UIComponent:Show(uiParams)
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-UIComponent.AfterShow = function(self, TT)
-  -- function num : 0_3
+function UIComponent:AfterShow(TT)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-UIComponent.BeforeHide = function(self, TT)
-  -- function num : 0_4
+function UIComponent:BeforeHide(TT)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-UIComponent.Hide = function(self)
-  -- function num : 0_5
+function UIComponent:Hide()
 end
-
-

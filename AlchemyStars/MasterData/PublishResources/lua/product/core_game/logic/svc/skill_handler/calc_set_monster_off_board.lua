@@ -1,53 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_set_monster_off_board.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SetMonsterOffBoard", Object)
 SkillEffectCalc_SetMonsterOffBoard = SkillEffectCalc_SetMonsterOffBoard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SetMonsterOffBoard.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SetMonsterOffBoard:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SetMonsterOffBoard.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_SetMonsterOffBoard:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillEffectParam = skillEffectCalcParam.skillEffectParam
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local battleCmpt = (self._world):BattleStat()
-  local boardEntity = (self._world):GetBoardEntity()
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local battleCmpt = self._world:BattleStat()
+  local boardEntity = self._world:GetBoardEntity()
   local boardComponent = boardEntity:Board()
   local results = {}
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local bSetOff = skillEffectParam:GetIsSetOff()
-  for _,targetID in ipairs(targets) do
-    local e = (self._world):GetEntityByID(targetID)
+  for _, targetID in ipairs(targets) do
+    local e = self._world:GetEntityByID(targetID)
     if e then
       local offBoardMonsterCmpt = e:OffBoardMonster()
       local buffComponent = e:BuffComponent()
-      if not bSetOff and offBoardMonsterCmpt then
-        local monsterID = offBoardMonsterCmpt:GetMonsterID()
-        if monsterID then
-          e:ReplaceComponent(e:GetMonsterIDComponentEnum(), monsterID)
+      if not bSetOff then
+        if offBoardMonsterCmpt then
+          local monsterID = offBoardMonsterCmpt:GetMonsterID()
+          if monsterID then
+            e:ReplaceComponent(e:GetMonsterIDComponentEnum(), monsterID)
+          end
+          e:RemoveOffBoardMonster()
+          buffComponent:SetBuffValue("Freeze", nil)
+          local result = SkillEffectResultSetMonsterOffBoard:New()
+          result:SetIsSetOff(bSetOff)
+          result:SetTargetEntityID(e:GetID())
+          table.insert(results, result)
         end
-        e:RemoveOffBoardMonster()
-        buffComponent:SetBuffValue("Freeze", nil)
-        local result = SkillEffectResultSetMonsterOffBoard:New()
-        result:SetIsSetOff(bSetOff)
-        result:SetTargetEntityID(e:GetID())
-        ;
-        (table.insert)(results, result)
-      end
-    end
-    do
-      if e:HasMonsterID() then
+      elseif e:HasMonsterID() then
         local monsterID = e:MonsterID()
         if not offBoardMonsterCmpt then
           e:AddOffBoardMonster(monsterID)
@@ -57,16 +45,9 @@ SkillEffectCalc_SetMonsterOffBoard.DoSkillEffectCalculator = function(self, skil
         local result = SkillEffectResultSetMonsterOffBoard:New()
         result:SetIsSetOff(bSetOff)
         result:SetTargetEntityID(e:GetID())
-        ;
-        (table.insert)(results, result)
-      end
-      do
-        -- DECOMPILER ERROR at PC114: LeaveBlock: unexpected jumping out DO_STMT
-
+        table.insert(results, result)
       end
     end
   end
   return results
 end
-
-

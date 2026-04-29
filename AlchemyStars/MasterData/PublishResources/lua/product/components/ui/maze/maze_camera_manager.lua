@@ -1,55 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/maze/maze_camera_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MazeCameraManager", Object)
 MazeCameraManager = MazeCameraManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MazeCameraManager.Constructor = function(self)
-  -- function num : 0_0
+function MazeCameraManager:Constructor()
   self._enabled = false
   self._currentPos = nil
   self._reportError = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeCameraManager.Dispose = function(self)
-  -- function num : 0_1
+function MazeCameraManager:Dispose()
   self._enabled = false
   self._inputManager = nil
   self._camera = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeCameraManager.Init = function(self, _3dmanager, camera, petStart, petEnd)
-  -- function num : 0_2 , upvalues : _ENV
+function MazeCameraManager:Init(_3dmanager, camera, petStart, petEnd)
   self._inputManager = _3dmanager:GetInputManager()
   self._3dManager = _3dmanager
   self._enabled = true
   self._camera = camera
-  self._cameraOriginPos = (camera.transform).position
+  self._cameraOriginPos = camera.transform.position
   self.petStart = petStart
   self.petEnd = petEnd
   self.startDelta = -7
   self.endDelta = -17
-  self.cameraStart = Vector3(petStart.x + self.startDelta, (self._cameraOriginPos).y, (self._cameraOriginPos).z)
-  self.cameraEnd = Vector3(petEnd.x + self.endDelta, (self._cameraOriginPos).y, (self._cameraOriginPos).z)
-  self._currentPos = self:_CalculateCameraPos(((self._3dManager):GetActorManager()):ActorPosition())
+  self.cameraStart = Vector3(petStart.x + self.startDelta, self._cameraOriginPos.y, self._cameraOriginPos.z)
+  self.cameraEnd = Vector3(petEnd.x + self.endDelta, self._cameraOriginPos.y, self._cameraOriginPos.z)
+  self._currentPos = self:_CalculateCameraPos(self._3dManager:GetActorManager():ActorPosition())
   self.pixel2Distance = 0.015
   self.smoothRate = 0.8
   self._actorMoving = false
   self._dragged = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeCameraManager.FocusWayPoint = function(self, actorPos, onFinish, MoveTime)
-  -- function num : 0_3 , upvalues : _ENV
-  local moveTime = nil
+function MazeCameraManager:FocusWayPoint(actorPos, onFinish, MoveTime)
+  local moveTime
   if MoveTime then
     moveTime = MoveTime
   else
@@ -58,98 +42,63 @@ MazeCameraManager.FocusWayPoint = function(self, actorPos, onFinish, MoveTime)
   if self._dragged then
     self._enabled = false
     local target = self:_CalculateCameraPos(actorPos)
-    do
-      ((((self._camera).transform):DOMove(target, moveTime)):SetEase(((DG.Tweening).Ease).Linear)):OnComplete(function()
-    -- function num : 0_3_0 , upvalues : self, target, onFinish
-    self._currentPos = target
-    onFinish(true)
-    self._enabled = true
-    self._dragged = false
-  end
-)
-    end
+    self._camera.transform:DOMove(target, moveTime):SetEase(DG.Tweening.Ease.Linear):OnComplete(function()
+      self._currentPos = target
+      onFinish(true)
+      self._enabled = true
+      self._dragged = false
+    end)
   else
-    do
-      onFinish(false)
-    end
+    onFinish(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeCameraManager.SetActorMove = function(self, moving)
-  -- function num : 0_4
+function MazeCameraManager:SetActorMove(moving)
   self._actorMoving = moving
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeCameraManager._CalculateCameraPos = function(self, pointPos)
-  -- function num : 0_5 , upvalues : _ENV
-  local percent = (math.abs)(pointPos.x - (self.petStart).x) / (math.abs)((self.petEnd).x - (self.petStart).x)
-  local x = (self.cameraStart).x + (math.abs)((self.cameraStart).x - (self.cameraEnd).x) * percent
-  return Vector3(x, (self._cameraOriginPos).y, (self._cameraOriginPos).z)
+function MazeCameraManager:_CalculateCameraPos(pointPos)
+  local percent = math.abs(pointPos.x - self.petStart.x) / math.abs(self.petEnd.x - self.petStart.x)
+  local x = self.cameraStart.x + math.abs(self.cameraStart.x - self.cameraEnd.x) * percent
+  return Vector3(x, self._cameraOriginPos.y, self._cameraOriginPos.z)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeCameraManager.TryClickRoom = function(self, clickPos)
-  -- function num : 0_6 , upvalues : _ENV
-  local clickRay = (self._camera):ScreenPointToRay(clickPos)
-  local castRes, hitInfo = ((UnityEngine.Physics).Raycast)(clickRay, nil)
+function MazeCameraManager:TryClickRoom(clickPos)
+  local clickRay = self._camera:ScreenPointToRay(clickPos)
+  local castRes, hitInfo = UnityEngine.Physics.Raycast(clickRay, nil)
   if castRes then
-    return (hitInfo.transform).gameObject
+    return hitInfo.transform.gameObject
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeCameraManager.OnDrag = function(self, dragStart, dragEnd)
-  -- function num : 0_7 , upvalues : _ENV
+function MazeCameraManager:OnDrag(dragStart, dragEnd)
   self._dragged = true
   local delta = dragEnd - dragStart
   local horiDis = -delta.x * self.pixel2Distance
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._currentPos).x = (self._currentPos).x + horiDis
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._currentPos).x = (Mathf.Clamp)((self._currentPos).x, (self.cameraStart).x, (self.cameraEnd).x)
+  self._currentPos.x = self._currentPos.x + horiDis
+  self._currentPos.x = Mathf.Clamp(self._currentPos.x, self.cameraStart.x, self.cameraEnd.x)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeCameraManager.Update = function(self, deltaTime)
-  -- function num : 0_8 , upvalues : _ENV
+function MazeCameraManager:Update(deltaTime)
   if not self._enabled then
-    return 
+    return
   end
   if self._actorMoving then
-    self._currentPos = self:_CalculateCameraPos(((self._3dManager):GetActorManager()):ActorPosition())
+    self._currentPos = self:_CalculateCameraPos(self._3dManager:GetActorManager():ActorPosition())
+  else
   end
   if self._reportError then
-    return 
+    return
   end
-  do
-    if (tolua.isnull)(self._camera) then
-      local loadingHandler = ((GameGlobal.LoadingManager)())._latestHandler
-      ;
-      (Log.fatal)("场景像机被销毁，最近一次的loading为：", loadingHandler)
-      ;
-      (HelperProxy:GetInstance()):ReportException("[Maze_Error]" .. loadingHandler)
-      self._reportError = true
-      return 
-    end
-    local cameraPos = ((self._camera).transform).position
-    cameraPos = (Vector3.Lerp)(cameraPos, self._currentPos, self.smoothRate)
-    -- DECOMPILER ERROR at PC57: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((self._camera).transform).position = cameraPos
+  if tolua.isnull(self._camera) then
+    local loadingHandler = GameGlobal.LoadingManager()._latestHandler
+    Log.fatal("场景像机被销毁，最近一次的loading为：", loadingHandler)
+    HelperProxy:GetInstance():ReportException("[Maze_Error]" .. loadingHandler)
+    self._reportError = true
+    return
   end
+  local cameraPos = self._camera.transform.position
+  cameraPos = Vector3.Lerp(cameraPos, self._currentPos, self.smoothRate)
+  self._camera.transform.position = cameraPos
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/aircraft/aircraft_room_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftRoomBase", Object)
 AircraftRoomBase = AircraftRoomBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftRoomBase.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._module = (GameGlobal.GetModule)(AircraftModule)
+function AircraftRoomBase:Constructor()
+  self._module = GameGlobal.GetModule(AircraftModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.SetData = function(self, space_info)
-  -- function num : 0_1 , upvalues : _ENV
+function AircraftRoomBase:SetData(space_info)
   self._space_info = space_info
   self._spaceid = space_info.space_id
   self._roomid = space_info.room_id
@@ -24,98 +14,63 @@ AircraftRoomBase.SetData = function(self, space_info)
   self._pets = {}
   self._pet_infos = {}
   self._pets_id = {}
-  local pet_module = (GameGlobal.GetModule)(PetModule)
-  for i,pstid in ipairs(space_info.pets) do
-    do
-      do
-        if pstid ~= 0 then
-          local pet = pet_module:GetPet(pstid)
-          if not pet then
-            (Log.error)("not find pet ", pstid)
-            return 
-          end
-          ;
-          (table.insert)(self._pets, pet)
-        end
-        -- DECOMPILER ERROR at PC45: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._pets_id)[#self._pets_id + 1] = pstid
-        -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out DO_STMT
-
+  local pet_module = GameGlobal.GetModule(PetModule)
+  for i, pstid in ipairs(space_info.pets) do
+    if pstid ~= 0 then
+      local pet = pet_module:GetPet(pstid)
+      if not pet then
+        Log.error("not find pet ", pstid)
+        return
       end
+      table.insert(self._pets, pet)
     end
+    self._pets_id[#self._pets_id + 1] = pstid
   end
   self:SetClientData(space_info.client_data)
   self:SetExtData(space_info.ext_data)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.SetExtData = function(self, ext_data)
-  -- function num : 0_2
+function AircraftRoomBase:SetExtData(ext_data)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.SetClientData = function(self, client_data)
-  -- function num : 0_3
+function AircraftRoomBase:SetClientData(client_data)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetSpaceStatus = function(self)
-  -- function num : 0_4
+function AircraftRoomBase:GetSpaceStatus()
   return self._space_status
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.SetSpaceStatus = function(self, eSpaceStatus)
-  -- function num : 0_5
+function AircraftRoomBase:SetSpaceStatus(eSpaceStatus)
   self._space_status = eSpaceStatus
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.RoomId = function(self)
-  -- function num : 0_6
+function AircraftRoomBase:RoomId()
   return self._roomid
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.SpaceId = function(self)
-  -- function num : 0_7
+function AircraftRoomBase:SpaceId()
   return self._spaceid
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.Level = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function AircraftRoomBase:Level()
   if self._space_status == SpaceState.SpaceStateBuilding then
     return 0
   end
-  local cfg = (Cfg.cfg_aircraft_room)[self._roomid]
+  local cfg = Cfg.cfg_aircraft_room[self._roomid]
   return cfg.Level
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.NextLevel = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_room)[self._roomid]
+function AircraftRoomBase:NextLevel()
+  local cfg = Cfg.cfg_aircraft_room[self._roomid]
   return cfg.NextLevelID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.MaxLevel = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_aircraft_room)({RoomType = self:GetRoomType()})
+function AircraftRoomBase:MaxLevel()
+  local cfgs = Cfg.cfg_aircraft_room({
+    RoomType = self:GetRoomType()
+  })
   local max = 1
-  for _,c in pairs(cfgs) do
+  for _, c in pairs(cfgs) do
     if max < c.Level then
       max = c.Level
     end
@@ -123,272 +78,184 @@ AircraftRoomBase.MaxLevel = function(self)
   return max
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetConfig = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_room)[self._roomid]
+function AircraftRoomBase:GetConfig()
+  local cfg = Cfg.cfg_aircraft_room[self._roomid]
   if cfg == nil then
-    (Log.error)("[aircraft] cfg is nil, roomid=", self._roomid)
+    Log.error("[aircraft] cfg is nil, roomid=", self._roomid)
   end
   return cfg
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetSpaceConfig = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_space)[self._spaceid]
+function AircraftRoomBase:GetSpaceConfig()
+  local cfg = Cfg.cfg_aircraft_space[self._spaceid]
   return cfg
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetCfgById = function(self, room_id)
-  -- function num : 0_13 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_room)[room_id]
+function AircraftRoomBase:GetCfgById(room_id)
+  local cfg = Cfg.cfg_aircraft_room[room_id]
   if cfg == nil then
-    (Log.error)("[aircraft] cfg is nil, roomid=", room_id)
+    Log.error("[aircraft] cfg is nil, roomid=", room_id)
   end
   return cfg
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetPets = function(self)
-  -- function num : 0_14
+function AircraftRoomBase:GetPets()
   return self._pets
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetPetsId = function(self)
-  -- function num : 0_15
+function AircraftRoomBase:GetPetsId()
   return self._pets_id
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetPet = function(self, pstid)
-  -- function num : 0_16 , upvalues : _ENV
+function AircraftRoomBase:GetPet(pstid)
   if self._pets then
-    for index,pet in pairs(self._pets) do
+    for index, pet in pairs(self._pets) do
       if pet:GetPstID() == pstid then
         return pet
       end
     end
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetPetCount = function(self)
-  -- function num : 0_17
+function AircraftRoomBase:GetPetCount()
   return #self._pets
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetPetCountLimit = function(self)
-  -- function num : 0_18
+function AircraftRoomBase:GetPetCountLimit()
   local cfg = self:GetConfig()
   return cfg.PetNum
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetRoomType = function(self)
-  -- function num : 0_19
+function AircraftRoomBase:GetRoomType()
   local cfg = self:GetConfig()
   return cfg.RoomType
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetRoomName = function(self)
-  -- function num : 0_20
+function AircraftRoomBase:GetRoomName()
   local cfg = self:GetConfig()
   return cfg.Name
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetRoomEnglishName = function(self)
-  -- function num : 0_21
+function AircraftRoomBase:GetRoomEnglishName()
   local cfg = self:GetConfig()
   return cfg.EnglishName
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetRoomIcon1 = function(self)
-  -- function num : 0_22
+function AircraftRoomBase:GetRoomIcon1()
   local cfg = self:GetConfig()
   return cfg.RoomIcon1
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetRoomIcon2 = function(self)
-  -- function num : 0_23
+function AircraftRoomBase:GetRoomIcon2()
   local cfg = self:GetConfig()
   return cfg.RoomIcon2
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetRoomTypeIcon1 = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function AircraftRoomBase:GetRoomTypeIcon1()
   local room_cfg = Cfg.cfg_aircraft_room
-  for id,room_cfg in pairs(room_cfg) do
+  for id, room_cfg in pairs(room_cfg) do
     if room_cfg.Level == 1 and room_cfg.RoomType == self:GetRoomType() then
       return room_cfg.RoomTypeIcon1
     end
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetRoomTypeIcon2 = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  local room_cfg = (Cfg.cfg_aircraft_room)({})
-  for id,room_cfg in pairs(room_cfg) do
+function AircraftRoomBase:GetRoomTypeIcon2()
+  local room_cfg = Cfg.cfg_aircraft_room({})
+  for id, room_cfg in pairs(room_cfg) do
     if room_cfg.Level == 1 and room_cfg.RoomType == self:GetRoomType() then
       return room_cfg.RoomTypeIcon2
     end
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetRoomIcon3 = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  local room_cfg = (Cfg.cfg_aircraft_room)({})
-  for id,room_cfg in pairs(room_cfg) do
+function AircraftRoomBase:GetRoomIcon3()
+  local room_cfg = Cfg.cfg_aircraft_room({})
+  for id, room_cfg in pairs(room_cfg) do
     if room_cfg.Level == 1 and room_cfg.RoomType == self:GetRoomType() then
       return room_cfg.RoomTypeIcon3
     end
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetMaxFireflyToBuild = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  local timemd = (GameGlobal.GetModule)(SvrTimeModule)
+function AircraftRoomBase:GetMaxFireflyToBuild()
+  local timemd = GameGlobal.GetModule(SvrTimeModule)
   local now = timemd:GetServerTime() / 1000
   local left = self._build_finish_time - now
-  local unit_time = ((Cfg.cfg_aircraft_values)[AirValueID.FireflyToTimeRate]).IntValue
-  local count = (math.floor)(left / unit_time)
+  local unit_time = Cfg.cfg_aircraft_values[AirValueID.FireflyToTimeRate].IntValue
+  local count = math.floor(left / unit_time)
   return count
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetRoomDescription = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function AircraftRoomBase:GetRoomDescription()
   local cfg = self:GetConfig()
-  return (StringTable.Get)(cfg.Description)
+  return StringTable.Get(cfg.Description)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetUpgradeNeed = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function AircraftRoomBase:GetUpgradeNeed()
   local next_level = self:NextLevel()
   if next_level == 0 then
-    (Log.fatal)("[aircraft] room was max level")
+    Log.fatal("[aircraft] room was max level")
     return {}
   end
   local room_cfg = self:GetCfgById(next_level)
   return room_cfg.Need
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetDegradeRecycle = function(self)
-  -- function num : 0_30
+function AircraftRoomBase:GetDegradeRecycle()
   local room_cfg = self:GetConfig()
   return room_cfg.Recycle
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetNeedRooms = function(self)
-  -- function num : 0_31
+function AircraftRoomBase:GetNeedRooms()
   local room_cfg = self:GetConfig()
   return room_cfg.NeedRoom
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetUpgradeNeedTime = function(self)
-  -- function num : 0_32
+function AircraftRoomBase:GetUpgradeNeedTime()
   local room_cfg = self:GetConfig()
   return room_cfg.LevelUpTime
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetCurrentPower = function(self)
-  -- function num : 0_33
-  return (self:GetConfig()).NeedPower
+function AircraftRoomBase:GetCurrentPower()
+  return self:GetConfig().NeedPower
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetUpgradeNeedPower = function(self)
-  -- function num : 0_34 , upvalues : _ENV
+function AircraftRoomBase:GetUpgradeNeedPower()
   local room_cfg = self:GetConfig()
-  local next_level_cfg = (Cfg.cfg_aircraft_room)[room_cfg.NextLevelID]
+  local next_level_cfg = Cfg.cfg_aircraft_room[room_cfg.NextLevelID]
   return next_level_cfg.NeedPower
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.GetDegradeNeedPower = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function AircraftRoomBase:GetDegradeNeedPower()
   local room_cfg = self:GetConfig()
-  local prev_level_cfg = (Cfg.cfg_aircraft_room)[room_cfg.PrevLevelID]
+  local prev_level_cfg = Cfg.cfg_aircraft_room[room_cfg.PrevLevelID]
   return prev_level_cfg.NeedPower
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.EnoughPowerToUpgrade = function(self)
-  -- function num : 0_36
-  local power_leave = (self._module):GetPower()
+function AircraftRoomBase:EnoughPowerToUpgrade()
+  local power_leave = self._module:GetPower()
   local next_level_need_power = self:GetUpgradeNeedPower()
-  local current_level_need_power = (self:GetConfig()).NeedPower
-  if next_level_need_power - current_level_need_power <= power_leave then
+  local current_level_need_power = self:GetConfig().NeedPower
+  if power_leave >= next_level_need_power - current_level_need_power then
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.BuildRemainTime = function(self)
-  -- function num : 0_37 , upvalues : _ENV
-  local timemd = (GameGlobal.GetModule)(SvrTimeModule)
+function AircraftRoomBase:BuildRemainTime()
+  local timemd = GameGlobal.GetModule(SvrTimeModule)
   local now = timemd:GetServerTime() / 1000
-  local remain_time = (self._space_info).build_finish_time - now
-  if remain_time > 0 then
+  local remain_time = self._space_info.build_finish_time - now
+  if 0 < remain_time then
     return remain_time
   else
     return 0
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomBase.CanCollect = function(self)
-  -- function num : 0_38
+function AircraftRoomBase:CanCollect()
   return false
 end
-
-

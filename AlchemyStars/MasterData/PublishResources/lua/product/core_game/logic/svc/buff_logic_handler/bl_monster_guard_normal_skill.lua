@@ -1,54 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_monster_guard_normal_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicMaxMonsterGuardNormalSkill", BuffLogicBase)
 BuffLogicMaxMonsterGuardNormalSkill = BuffLogicMaxMonsterGuardNormalSkill
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicMaxMonsterGuardNormalSkill.Constructor = function(self, _buffIns, logicParam)
-  -- function num : 0_0
+function BuffLogicMaxMonsterGuardNormalSkill:Constructor(_buffIns, logicParam)
   self._maxCount = logicParam.maxCount
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicMaxMonsterGuardNormalSkill.DoLogic = function(self, notify)
-  -- function num : 0_1
-  (self._buffComponent):SetBuffValue("MaxNormalAtkCount", self._maxCount)
+function BuffLogicMaxMonsterGuardNormalSkill:DoLogic(notify)
+  self._buffComponent:SetBuffValue("MaxNormalAtkCount", self._maxCount)
   return self._maxCount
 end
 
 _class("BuffLogicRemoveMaxMonsterGuardNormalSkill", BuffLogicBase)
 BuffLogicRemoveMaxMonsterGuardNormalSkill = BuffLogicRemoveMaxMonsterGuardNormalSkill
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveMaxMonsterGuardNormalSkill.DoLogic = function(self, notify)
-  -- function num : 0_2
-  (self._buffComponent):SetBuffValue("MaxNormalAtkCount", nil)
+function BuffLogicRemoveMaxMonsterGuardNormalSkill:DoLogic(notify)
+  self._buffComponent:SetBuffValue("MaxNormalAtkCount", nil)
 end
 
 _class("BuffLogicAddMonsterGuardNormalSkillCount", BuffLogicBase)
 BuffLogicAddMonsterGuardNormalSkillCount = BuffLogicAddMonsterGuardNormalSkillCount
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddMonsterGuardNormalSkillCount.DoLogic = function(self, notify)
-  -- function num : 0_3
-  local val = (self._buffComponent):GetBuffValue("CurrentNormalAtkCount") or 0
+function BuffLogicAddMonsterGuardNormalSkillCount:DoLogic(notify)
+  local val = self._buffComponent:GetBuffValue("CurrentNormalAtkCount") or 0
   val = val + 1
-  ;
-  (self._buffComponent):SetBuffValue("CurrentNormalAtkCount", val)
+  self._buffComponent:SetBuffValue("CurrentNormalAtkCount", val)
 end
 
 _class("BuffLogicClearMonsterGuardNormalSkillCount", BuffLogicBase)
 BuffLogicClearMonsterGuardNormalSkillCount = BuffLogicClearMonsterGuardNormalSkillCount
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicClearMonsterGuardNormalSkillCount.DoLogic = function(self, notify)
-  -- function num : 0_4
-  (self._buffComponent):SetBuffValue("CurrentNormalAtkCount", nil)
+function BuffLogicClearMonsterGuardNormalSkillCount:DoLogic(notify)
+  self._buffComponent:SetBuffValue("CurrentNormalAtkCount", nil)
 end
-
-

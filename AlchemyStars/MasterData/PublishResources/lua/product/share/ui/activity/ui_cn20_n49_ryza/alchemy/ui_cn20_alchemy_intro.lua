@@ -1,84 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/alchemy/ui_cn20_alchemy_intro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20AlchemyIntro", UIController)
 UICN20AlchemyIntro = UICN20AlchemyIntro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20AlchemyIntro.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN20AlchemyIntro:OnShow(uiParams)
   self._param = uiParams[1] or "nil"
-  self._cfg = (Cfg.cfg_activityintro)[self._param]
+  self._cfg = Cfg.cfg_activityintro[self._param]
   if self._cfg == nil then
-    (Log.fatal)("###[UICN20AlchemyIntro] self._cfg is nil. param --> ", self._param)
+    Log.fatal("###[UICN20AlchemyIntro] self._cfg is nil. param --> ", self._param)
   end
-  self.anim = (self:GetGameObject()):GetComponent("Animation")
+  self.anim = self:GetGameObject():GetComponent("Animation")
   self.Content = self:GetUIComponent("UILocalizationText", "Content")
   self._TitleText = self:GetUIComponent("UILocalizationText", "txtTitle")
   self:Flush()
   self:PlayAnim(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyIntro.OnHide = function(self)
-  -- function num : 0_1
+function UICN20AlchemyIntro:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyIntro.Flush = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.Content):SetText((StringTable.Get)((self._cfg).Intro))
-  ;
-  (self._TitleText):SetText((StringTable.Get)((self._cfg).Title))
+function UICN20AlchemyIntro:Flush()
+  self.Content:SetText(StringTable.Get(self._cfg.Intro))
+  self._TitleText:SetText(StringTable.Get(self._cfg.Title))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyIntro.CloseBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UICN20AlchemyIntro:CloseBtnOnClick(go)
   self:PlayAnim(false, function()
-    -- function num : 0_3_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyIntro.BgOnClick = function(self, go)
-  -- function num : 0_4
+function UICN20AlchemyIntro:BgOnClick(go)
   self:PlayAnim(false, function()
-    -- function num : 0_4_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20AlchemyIntro.PlayAnim = function(self, isIn, callback)
-  -- function num : 0_5 , upvalues : _ENV
+function UICN20AlchemyIntro:PlayAnim(isIn, callback)
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, isIn, _ENV, callback
     self:Lock("UICN10IntroPlayAnim")
     if isIn then
-      (self.anim):Play("uieff_Activity_UISummer1Intro_In")
+      self.anim:Play("uieff_Activity_UISummer1Intro_In")
       YIELD(TT, 500)
     else
-      ;
-      (self.anim):Play("uieff_Activity_UISummer1Intro_Out")
+      self.anim:Play("uieff_Activity_UISummer1Intro_Out")
       YIELD(TT, 500)
     end
     self:UnLock("UICN10IntroPlayAnim")
     if callback then
       callback()
     end
-  end
-, self)
+  end, self)
 end
-
-

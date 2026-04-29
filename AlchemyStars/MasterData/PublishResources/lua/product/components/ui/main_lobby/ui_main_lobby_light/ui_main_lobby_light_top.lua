@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_light/ui_main_lobby_light_top.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyLightTop", UICustomWidget)
 UIMainLobbyLightTop = UIMainLobbyLightTop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyLightTop.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMainLobbyLightTop:OnShow()
   self._lights = {}
   self._anim_in = "uieff_MainLight_2_On"
   self._anim_loop = "uieff_MainLight_2_Loop"
@@ -17,55 +10,45 @@ UIMainLobbyLightTop.OnShow = function(self)
   local l3 = self:GetUIComponent("Animation", "l3")
   local l4 = self:GetUIComponent("Animation", "l4")
   if l1 then
-    (table.insert)(self._lights, l1)
+    table.insert(self._lights, l1)
   end
   if l2 then
-    (table.insert)(self._lights, l2)
+    table.insert(self._lights, l2)
   end
   if l3 then
-    (table.insert)(self._lights, l3)
+    table.insert(self._lights, l3)
   end
   if l4 then
-    (table.insert)(self._lights, l4)
+    table.insert(self._lights, l4)
   end
   if self._lights and #self._lights > 0 then
     for i = 1, #self._lights do
-      local anim = (self._lights)[i]
+      local anim = self._lights[i]
       anim:Play(self._anim_in)
     end
     if self._event then
-      ((GameGlobal.Timer)()):CancelEvent(self._event)
+      GameGlobal.Timer():CancelEvent(self._event)
       self._event = nil
     end
-    self._event = ((GameGlobal.Timer)()):AddEvent(2100, function()
-    -- function num : 0_0_0 , upvalues : self
-    self:PlayLoopAnim()
-  end
-)
+    self._event = GameGlobal.Timer():AddEvent(2100, function()
+      self:PlayLoopAnim()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyLightTop.PlayLoopAnim = function(self)
-  -- function num : 0_1
+function UIMainLobbyLightTop:PlayLoopAnim()
   if self._lights and #self._lights > 0 then
     for i = 1, #self._lights do
-      local anim = (self._lights)[i]
+      local anim = self._lights[i]
       anim:Play(self._anim_loop)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyLightTop.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMainLobbyLightTop:OnHide()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
   self._lights = nil
 end
-
-

@@ -1,72 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/pet_dead_mark_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PetDeadMarkComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-PetDeadMarkComponent.Constructor = function(self)
-  -- function num : 0_0
+function PetDeadMarkComponent:Constructor()
   self._hasUnLoad = false
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-PetDeadMarkComponent.IsUnLoad = function(self)
-  -- function num : 0_1
+function PetDeadMarkComponent:IsUnLoad()
   return self._hasUnLoad
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-PetDeadMarkComponent.SetUnLoadState = function(self, state)
-  -- function num : 0_2
+function PetDeadMarkComponent:SetUnLoadState(state)
   self._hasUnLoad = state
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PetDeadMark = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).PetDeadMark)
+function Entity:PetDeadMark()
+  return self:GetComponent(self.WEComponentsEnum.PetDeadMark)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPetDeadMark = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).PetDeadMark)
+function Entity:HasPetDeadMark()
+  return self:HasComponent(self.WEComponentsEnum.PetDeadMark)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPetDeadMark = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if ((self._world):BattleStat()):GetFirstDeadPetEntity() == nil then
-    ((self._world):BattleStat()):SetFirstDeadPetEntity(self)
+function Entity:AddPetDeadMark()
+  if self._world:BattleStat():GetFirstDeadPetEntity() == nil then
+    self._world:BattleStat():SetFirstDeadPetEntity(self)
   end
-  local index = (self.WEComponentsEnum).PetDeadMark
+  local index = self.WEComponentsEnum.PetDeadMark
   local component = PetDeadMarkComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePetDeadMark = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PetDeadMark
+function Entity:ReplacePetDeadMark()
+  local index = self.WEComponentsEnum.PetDeadMark
   local component = PetDeadMarkComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePetDeadMark = function(self)
-  -- function num : 0_7
+function Entity:RemovePetDeadMark()
   if self:HasPetDeadMark() then
-    self:RemoveComponent((self.WEComponentsEnum).PetDeadMark)
+    self:RemoveComponent(self.WEComponentsEnum.PetDeadMark)
   end
 end
-
-

@@ -1,25 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_forecast/StatePetForecast/state_pet_forecast_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StatePetForecast", State)
 StatePetForecast = StatePetForecast
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StatePetForecast.Init = function(self)
-  -- function num : 0_0
+function StatePetForecast:Init()
   self.fsm = self:GetFsm()
-  self.ui = (self.fsm):GetData()
-  self.data = (self.ui)._forecastData
+  self.ui = self.fsm:GetData()
+  self.data = self.ui._forecastData
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StatePetForecast.Destroy = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (StatePetForecast.super):Destroy()
+function StatePetForecast:Destroy()
+  StatePetForecast.super:Destroy()
   self.ui = nil
 end
-
-

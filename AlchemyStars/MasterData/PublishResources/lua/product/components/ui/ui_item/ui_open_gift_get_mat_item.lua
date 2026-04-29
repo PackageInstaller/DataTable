@@ -1,68 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_item/ui_open_gift_get_mat_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIOpenGiftGetMatItem", UICustomWidget)
 UIOpenGiftGetMatItem = UIOpenGiftGetMatItem
 local maxNumCount = 5
--- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
 
-UIOpenGiftGetMatItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIOpenGiftGetMatItem:OnShow(uiParams)
   self._rect = self:GetUIComponent("RectTransform", "rect")
   self._index = -1
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base)
-  ;
-  (self.uiItem):SetClickCallBack(function(go)
-    -- function num : 0_0_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.Base)
+  self.uiItem:SetClickCallBack(function(go)
     self:itemOnClick(go)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-UIOpenGiftGetMatItem.SetData = function(self, index, itemid, itemcount, clickCallback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIOpenGiftGetMatItem:SetData(index, itemid, itemcount, clickCallback)
   self._index = index
   local itemCount = itemcount
   self._itemId = itemid
-  local cfg = (Cfg.cfg_item)[self._itemId]
+  local cfg = Cfg.cfg_item[self._itemId]
   if not cfg then
-    (Log.error)("###[UIOpenGiftGetMatItem] cfg is nil ! id --> ", self._itemId)
+    Log.error("###[UIOpenGiftGetMatItem] cfg is nil ! id --> ", self._itemId)
   end
-  local text2 = (StringTable.Get)(cfg.Name)
+  local text2 = StringTable.Get(cfg.Name)
   local quality = cfg.Color
   local icon = cfg.Icon
   local text1 = self:FormatItemCount(itemCount)
   local des = cfg.Des
   self._clickCallback = clickCallback
-  ;
-  (self.uiItem):SetData({icon = icon, quality = quality, text1 = text1, text2 = text2, itemId = self._itemId, des = des})
+  self.uiItem:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = text1,
+    text2 = text2,
+    itemId = self._itemId,
+    des = des
+  })
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-UIOpenGiftGetMatItem.itemOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+function UIOpenGiftGetMatItem:itemOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   if self._clickCallback then
-    (self._rect):DOPunchScale(Vector3(0.1, 0.1, 0.1), 0.2)
-    ;
-    (self._clickCallback)(self._itemId, (go.transform).position)
+    self._rect:DOPunchScale(Vector3(0.1, 0.1, 0.1), 0.2)
+    self._clickCallback(self._itemId, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIOpenGiftGetMatItem.FormatItemCount = function(self, count)
-  -- function num : 0_3 , upvalues : _ENV
-  local tex = (HelperProxy:GetInstance()):FormatItemCount(count)
+function UIOpenGiftGetMatItem:FormatItemCount(count)
+  local tex = HelperProxy:GetInstance():FormatItemCount(count)
   return tex
 end
-
-

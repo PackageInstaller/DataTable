@@ -1,96 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/choose_mini_maze_wave_award_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChooseMiniMazeWaveAwardCommand", IEntityCommand)
 ChooseMiniMazeWaveAwardCommand = ChooseMiniMazeWaveAwardCommand
--- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
 ChooseMiniMazeWaveAwardCommand.CommandType = "ChooseMiniMazeWaveAward"
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
 
-ChooseMiniMazeWaveAwardCommand.Constructor = function(self)
-  -- function num : 0_0
+function ChooseMiniMazeWaveAwardCommand:Constructor()
   self._partnerID = 0
   self._relicID = 0
   self._isBattleOpening = false
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseMiniMazeWaveAwardCommand.GetCommandType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ChooseMiniMazeWaveAwardCommand:GetCommandType()
   return ChooseMiniMazeWaveAwardCommand.CommandType
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseMiniMazeWaveAwardCommand.GetExecStateID = function(self)
-  -- function num : 0_2
+function ChooseMiniMazeWaveAwardCommand:GetExecStateID()
   return 0
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseMiniMazeWaveAwardCommand.IsExecExcluded = function(self)
-  -- function num : 0_3
+function ChooseMiniMazeWaveAwardCommand:IsExecExcluded()
   return 0
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseMiniMazeWaveAwardCommand.DependRoundCount = function(self)
-  -- function num : 0_4
+function ChooseMiniMazeWaveAwardCommand:DependRoundCount()
   return true
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseMiniMazeWaveAwardCommand.GetChoosePartnerID = function(self)
-  -- function num : 0_5
+function ChooseMiniMazeWaveAwardCommand:GetChoosePartnerID()
   return self._partnerID
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseMiniMazeWaveAwardCommand.SetChoosePartnerID = function(self, partnerID)
-  -- function num : 0_6
+function ChooseMiniMazeWaveAwardCommand:SetChoosePartnerID(partnerID)
   self._partnerID = partnerID
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseMiniMazeWaveAwardCommand.GetChooseRelicID = function(self)
-  -- function num : 0_7
+function ChooseMiniMazeWaveAwardCommand:GetChooseRelicID()
   return self._relicID
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseMiniMazeWaveAwardCommand.SetChooseRelicID = function(self, relicID)
-  -- function num : 0_8
+function ChooseMiniMazeWaveAwardCommand:SetChooseRelicID(relicID)
   self._relicID = relicID
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseMiniMazeWaveAwardCommand.IsBattleOpening = function(self)
-  -- function num : 0_9
+function ChooseMiniMazeWaveAwardCommand:IsBattleOpening()
   return self._isBattleOpening
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseMiniMazeWaveAwardCommand.SetIsBattleOpening = function(self, isOpening)
-  -- function num : 0_10
+function ChooseMiniMazeWaveAwardCommand:SetIsBattleOpening(isOpening)
   self._isBattleOpening = isOpening
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseMiniMazeWaveAwardCommand.ToNetMessage = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function ChooseMiniMazeWaveAwardCommand:ToNetMessage()
   local msg = CEventChooseMiniMazeWaveAwardCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
@@ -103,10 +61,7 @@ ChooseMiniMazeWaveAwardCommand.ToNetMessage = function(self)
   return msg
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseMiniMazeWaveAwardCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_12
+function ChooseMiniMazeWaveAwardCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
@@ -116,5 +71,3 @@ ChooseMiniMazeWaveAwardCommand.FromNetMessage = function(self, msg)
   self._partnerID = msg.partnerID
   self._isBattleOpening = msg.isBattleOpening
 end
-
-

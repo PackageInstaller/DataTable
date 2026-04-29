@@ -1,40 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_result_revive.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleResultRevive", UIController)
 UIBattleResultRevive = UIBattleResultRevive
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleResultRevive.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIBattleResultRevive:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultRevive.OnHide = function(self)
-  -- function num : 0_1
+function UIBattleResultRevive:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultRevive.OKOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIBattleResultRevive", input = "OKOnClick", 
-args = {}
-})
-  ;
-  (GameGlobal:GetInstance()):ExitCoreGame()
+function UIBattleResultRevive:OKOnClick()
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIBattleResultRevive",
+    input = "OKOnClick",
+    args = {}
+  })
+  GameGlobal:GetInstance():ExitCoreGame()
   local matchResult = self:_GetMatchResult()
   if MatchType.MT_ExtMission == matchResult.m_nMatchType then
-    local matchModule = (GameGlobal.GetModule)(MatchModule)
+    local matchModule = GameGlobal.GetModule(MatchModule)
     local enterData = matchModule:GetMatchEnterData()
     local missionInfo = enterData:GetMissionCreateInfo()
-    local extMissionModule = ((GameGlobal.GetModule)(ExtMissionModule))
-    local stageid = nil
+    local extMissionModule = GameGlobal.GetModule(ExtMissionModule)
+    local stageid
     local extState = extMissionModule:UI_GetExtMissionState(missionInfo.m_nExtMissionID)
-    local cfg_ext_mission = (Cfg.cfg_extra_mission)[missionInfo.m_nExtMissionID]
+    local cfg_ext_mission = Cfg.cfg_extra_mission[missionInfo.m_nExtMissionID]
     if cfg_ext_mission then
       local stagelist = cfg_ext_mission.ExtTaskList
       if extState == EnumExtMissionState.Down then
@@ -43,44 +31,34 @@ args = {}
         for i = 1, #stagelist do
           stageid = stagelist[i]
           local star = extMissionModule:UI_GetExtTaskState(missionInfo.m_nExtMissionID, stageid)
+          if star <= 0 then
+            break
+          end
         end
       end
     else
-      do
-        do
-          if star > 0 then
-            stageid = missionInfo.m_nExtTaskID
-          end
-          ;
-          (Log.debug)("[match] UIBattleResultRevive:OnExitCoreGame SwitchState UIExtraMissionStage")
-          self:SwitchState(UIStateType.UIExtraMissionStage, missionInfo.m_nExtMissionID, stageid)
-          self:SwitchState(UIStateType.UIDiscovery)
-        end
-      end
+      stageid = missionInfo.m_nExtTaskID
     end
+    Log.debug("[match] UIBattleResultRevive:OnExitCoreGame SwitchState UIExtraMissionStage")
+    self:SwitchState(UIStateType.UIExtraMissionStage, missionInfo.m_nExtMissionID, stageid)
+  else
+    self:SwitchState(UIStateType.UIDiscovery)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultRevive.CancelOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIBattleResultRevive", input = "CancelOnClick", 
-args = {}
-})
+function UIBattleResultRevive:CancelOnClick()
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIBattleResultRevive",
+    input = "CancelOnClick",
+    args = {}
+  })
   self:CloseDialog()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CancelReborn)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CancelReborn)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultRevive._GetMatchResult = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIBattleResultRevive:_GetMatchResult()
   local gameMatchModule = self:GetModule(GameMatchModule)
   local matchResult = UI_MatchResult:New()
   matchResult = gameMatchModule:GetMachResult()
   return matchResult
 end
-
-

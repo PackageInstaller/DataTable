@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/mini_maze/ui_mini_maze_partner_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMiniMazePartnerItem", UICustomWidget)
 UIMiniMazePartnerItem = UIMiniMazePartnerItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMiniMazePartnerItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMiniMazePartnerItem:Constructor()
   self._heartItemInfo = nil
   self._heartItemData = nil
   self._maxStarLevel = 6
@@ -16,14 +9,11 @@ UIMiniMazePartnerItem.Constructor = function(self)
   self._slotId = 0
   self._height = 0
   self._callBack = nil
-  self._dialLine2Hp = ((Cfg.cfg_global).UIWidgetBattlePet_dialLine2Hp).IntValue or 200
-  self._bigDiaLine = ((Cfg.cfg_global).UIWidgetBattlePet_bigDiaLine).IntValue or 5
+  self._dialLine2Hp = Cfg.cfg_global.UIWidgetBattlePet_dialLine2Hp.IntValue or 200
+  self._bigDiaLine = Cfg.cfg_global.UIWidgetBattlePet_bigDiaLine.IntValue or 5
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazePartnerItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMiniMazePartnerItem:OnShow()
   self._rawimage = self:GetUIComponent("RawImageLoader", "drawIcon")
   self._leaderGO = self:GetGameObject("leaderIcon")
   self._lvValueText = self:GetUIComponent("UILocalizationText", "lvValue")
@@ -35,27 +25,23 @@ UIMiniMazePartnerItem.OnShow = function(self)
   self._powerValue = self:GetUIComponent("UILocalizationText", "powerValue")
   self._imgGrade = self:GetUIComponent("Image", "imgGrade")
   self._uiAtlas = self:GetAsset("UIAwake.spriteatlas", LoadType.SpriteAtlas)
-  self._petModule = ((GameGlobal.GameLogic)()):GetModule(PetModule)
-  self.selfRect = ((self:GetGameObject()).transform):GetComponent("RectTransform")
+  self._petModule = GameGlobal.GameLogic():GetModule(PetModule)
+  self.selfRect = self:GetGameObject().transform:GetComponent("RectTransform")
   self._guideWarnGO = self:GetGameObject("guidewarn")
-  ;
-  (self._guideWarnGO):SetActive(false)
+  self._guideWarnGO:SetActive(false)
   self._guideWarnImage = self:GetUIComponent("Image", "guidewarn")
   self._guideWarnRect = self:GetUIComponent("RectTransform", "guidewarn")
   self._guideTxt1Rect = self:GetUIComponent("RectTransform", "guidetxt1")
   self._guideTxt2Rect = self:GetUIComponent("RectTransform", "guidetxt2")
   self._guideTxt1 = self:GetUIComponent("UILocalizationText", "guidetxt1")
   self._guideTxt2 = self:GetUIComponent("UILocalizationText", "guidetxt2")
-  ;
-  (self._guideTxt1):SetText((StringTable.Get)("str_guide_warn_level_speed"))
-  ;
-  (self._guideTxt2):SetText((StringTable.Get)("str_guide_warn_level_speed"))
+  self._guideTxt1:SetText(StringTable.Get("str_guide_warn_level_speed"))
+  self._guideTxt2:SetText(StringTable.Get("str_guide_warn_level_speed"))
   self._elementBg = self:GetUIComponent("RectTransform", "element")
   self._elementPos = self:GetUIComponent("RectTransform", "elementPos")
   self._detailBtnRect = self:GetGameObject("detailBtnRect")
   self._imgPetDetail = self:GetGameObject("imgPetDetail")
-  ;
-  (self._imgPetDetail):SetActive(false)
+  self._imgPetDetail:SetActive(false)
   self._hp = self:GetGameObject("hp")
   self._hpvalue = self:GetUIComponent("Image", "hpvalue")
   self._hpUhp = self:GetUIComponent("UILocalizationText", "hpUhp")
@@ -67,10 +53,7 @@ UIMiniMazePartnerItem.OnShow = function(self)
   self:AttachEvent(GameEventType.OnPetSkinChange, self.SetDataPet)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazePartnerItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMiniMazePartnerItem:OnHide()
   self._hide = true
   self._heartItemInfo = nil
   self._heartItemData = nil
@@ -85,10 +68,7 @@ UIMiniMazePartnerItem.OnHide = function(self)
   self:DetachEvent(GameEventType.PetDataChangeEvent, self.SetDataPet)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazePartnerItem.SetData = function(self, partnerID, index, callBack, slotId)
-  -- function num : 0_3
+function UIMiniMazePartnerItem:SetData(partnerID, index, callBack, slotId)
   self._callBack = callBack
   self._partnerID = partnerID
   self._index = index
@@ -97,21 +77,21 @@ UIMiniMazePartnerItem.SetData = function(self, partnerID, index, callBack, slotI
   self:SetDataPet()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazePartnerItem.MakeTmpMatchPet = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local partnerCfg = (Cfg.cfg_mini_maze_partner_info)[self._partnerID]
+function UIMiniMazePartnerItem:MakeTmpMatchPet()
+  local partnerCfg = Cfg.cfg_mini_maze_partner_info[self._partnerID]
   if not partnerCfg then
-    return 
+    return
   end
-  local partnerAttrCfg = nil
-  local cfgGroup = (Cfg.cfg_component_bloodsucker_pet_attribute)({ComponentID = (UIN25VampireUtil.GetComponentConfigId)(), PetId = partnerCfg.PetID})
-  if cfgGroup and #cfgGroup > 0 then
+  local partnerAttrCfg
+  local cfgGroup = Cfg.cfg_component_bloodsucker_pet_attribute({
+    ComponentID = UIN25VampireUtil.GetComponentConfigId(),
+    PetId = partnerCfg.PetID
+  })
+  if cfgGroup and 0 < #cfgGroup then
     partnerAttrCfg = cfgGroup[1]
   end
   if not partnerAttrCfg then
-    return 
+    return
   end
   local petInfo = MatchPetInfo:New()
   petInfo.pet_pstid = 0
@@ -132,17 +112,13 @@ UIMiniMazePartnerItem.MakeTmpMatchPet = function(self)
   self._matchPet = MatchPet:New(petInfo)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazePartnerItem.SetDataPet = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIMiniMazePartnerItem:SetDataPet()
   local petInfo = self._matchPet
   if petInfo == nil then
-    return 
+    return
   end
   self._heartItemInfo = petInfo
-  ;
-  (self._rawimage):LoadImage(petInfo:GetPetTeamBody(PetSkinEffectPath.CARD_TEAM))
+  self._rawimage:LoadImage(petInfo:GetPetTeamBody(PetSkinEffectPath.CARD_TEAM))
   self:ShowName()
   self:ShowLevel()
   self:ShowLogo()
@@ -153,99 +129,61 @@ UIMiniMazePartnerItem.SetDataPet = function(self)
   self:ShowPetDetailBtn()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazePartnerItem.ShowPetDetailBtn = function(self)
-  -- function num : 0_6
-  (self._detailBtnRect):SetActive(true)
+function UIMiniMazePartnerItem:ShowPetDetailBtn()
+  self._detailBtnRect:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazePartnerItem.ShowName = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIMiniMazePartnerItem:ShowName()
   if self._heartItemInfo == nil then
-    return 
+    return
   end
-  ;
-  (self._nameText):SetText((StringTable.Get)((self._heartItemInfo):GetPetName()))
+  self._nameText:SetText(StringTable.Get(self._heartItemInfo:GetPetName()))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazePartnerItem.ShowLevel = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local petLevel = (self._heartItemInfo):GetPetLevel()
-  ;
-  (self._lvValueText):SetText((StringTable.Get)("str_common_LV_dot_en") .. " " .. petLevel)
+function UIMiniMazePartnerItem:ShowLevel()
+  local petLevel = self._heartItemInfo:GetPetLevel()
+  self._lvValueText:SetText(StringTable.Get("str_common_LV_dot_en") .. " " .. petLevel)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazePartnerItem.ShowLogo = function(self)
-  -- function num : 0_9
+function UIMiniMazePartnerItem:ShowLogo()
   if self._heartItemInfo == nil then
-    return 
+    return
   end
-  ;
-  (self._imgLogo):LoadImage((self._heartItemInfo):GetPetLogo())
+  self._imgLogo:LoadImage(self._heartItemInfo:GetPetLogo())
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazePartnerItem.ShowElement = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIMiniMazePartnerItem:ShowElement()
   if self._heartItemInfo == nil then
-    return 
+    return
   end
   local elemPosY = 0
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._elementPos).anchoredPosition = Vector2(0, elemPosY)
-  local cfg_pet_element = (Cfg.cfg_pet_element)({})
+  self._elementPos.anchoredPosition = Vector2(0, elemPosY)
+  local cfg_pet_element = Cfg.cfg_pet_element({})
   if cfg_pet_element then
-    local firstElement = (self._heartItemInfo):GetPetFirstElement()
+    local firstElement = self._heartItemInfo:GetPetFirstElement()
     if firstElement then
-      ((self._attrMain).gameObject):SetActive(true)
-      -- DECOMPILER ERROR at PC38: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._attrMain).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[firstElement]).Icon))
+      self._attrMain.gameObject:SetActive(true)
+      self._attrMain.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[firstElement].Icon))
     else
-      ;
-      ((self._attrMain).gameObject):SetActive(false)
+      self._attrMain.gameObject:SetActive(false)
     end
-    local secondElement = (self._heartItemInfo):GetPetSecondElement()
-    -- DECOMPILER ERROR at PC55: Confused about usage of register: R5 in 'UnsetPending'
-
+    local secondElement = self._heartItemInfo:GetPetSecondElement()
     if secondElement then
-      (self._elementBg).sizeDelta = Vector2(116, 62)
-      ;
-      ((self._attrVice).gameObject):SetActive(true)
-      -- DECOMPILER ERROR at PC72: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._attrVice).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[secondElement]).Icon))
+      self._elementBg.sizeDelta = Vector2(116, 62)
+      self._attrVice.gameObject:SetActive(true)
+      self._attrVice.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[secondElement].Icon))
     else
-      -- DECOMPILER ERROR at PC79: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._elementBg).sizeDelta = Vector2(74, 62)
-      ;
-      ((self._attrVice).gameObject):SetActive(false)
+      self._elementBg.sizeDelta = Vector2(74, 62)
+      self._attrVice.gameObject:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazePartnerItem.ShowStarLevel = function(self)
-  -- function num : 0_11
+function UIMiniMazePartnerItem:ShowStarLevel()
   if self._heartItemInfo == nil then
-    return 
+    return
   end
-  local petStar = (self._heartItemInfo):GetPetStar()
+  local petStar = self._heartItemInfo:GetPetStar()
   for starLevel = 1, self._maxStarLevel do
     local starGo = self:GetGameObject("star" .. starLevel)
     if starLevel <= petStar then
@@ -256,66 +194,44 @@ UIMiniMazePartnerItem.ShowStarLevel = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazePartnerItem.ShowLeaderMask = function(self)
-  -- function num : 0_12
-  (self._leaderGO):SetActive(false)
+function UIMiniMazePartnerItem:ShowLeaderMask()
+  self._leaderGO:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazePartnerItem.ShowGrade = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local petId = (self._heartItemInfo):GetTemplateID()
-  local petGradeLevel = (self._heartItemInfo):GetPetGrade()
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._imgGrade).sprite = (self._uiAtlas):GetSprite((UIPetModule.GetAwakeSpriteName)(petId, petGradeLevel))
+function UIMiniMazePartnerItem:ShowGrade()
+  local petId = self._heartItemInfo:GetTemplateID()
+  local petGradeLevel = self._heartItemInfo:GetPetGrade()
+  self._imgGrade.sprite = self._uiAtlas:GetSprite(UIPetModule.GetAwakeSpriteName(petId, petGradeLevel))
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazePartnerItem.BtnDetailOnClick = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_14_0 , upvalues : self, _ENV
-    (self._imgPetDetail):SetActive(true)
+function UIMiniMazePartnerItem:BtnDetailOnClick()
+  GameGlobal.TaskManager():StartTask(function(TT)
+    self._imgPetDetail:SetActive(true)
     YIELD(TT, 200)
     if self and self._imgPetDetail then
-      (self._imgPetDetail):SetActive(false)
+      self._imgPetDetail:SetActive(false)
     end
-  end
-, self)
-  local petId = (self._matchPet):GetTemplateID()
+  end, self)
+  local petId = self._matchPet:GetTemplateID()
   local customPetData = UICustomPetData:New()
   customPetData:SetPetId(petId)
-  customPetData:SetAttack((self._matchPet):GetPetAttack())
-  customPetData:SetHP((self._matchPet):GetPetHealth())
-  customPetData:SetDef((self._matchPet):GetPetDefence())
-  customPetData:SetAwakeing((self._matchPet):GetPetAwakening())
-  customPetData:SetGrade((self._matchPet):GetPetGrade())
-  customPetData:SetEquip((self._matchPet):GetEquipLv())
+  customPetData:SetAttack(self._matchPet:GetPetAttack())
+  customPetData:SetHP(self._matchPet:GetPetHealth())
+  customPetData:SetDef(self._matchPet:GetPetDefence())
+  customPetData:SetAwakeing(self._matchPet:GetPetAwakening())
+  customPetData:SetGrade(self._matchPet:GetPetGrade())
+  customPetData:SetEquip(self._matchPet:GetEquipLv())
   customPetData:SetShowBtnStatus(true)
   customPetData:SetBtnInfoCallback(function()
-    -- function num : 0_14_1 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIN25VampireTips")
-  end
-)
+    GameGlobal.UIStateManager():ShowDialog("UIN25VampireTips")
+  end)
   customPetData:SetBtnInfoName("N25_mcwf_btn6")
   customPetData:SetHideHomeBtn(true)
-  ;
-  (UIShopPetDetailController.ShowCustomPetDetail)(customPetData)
+  UIShopPetDetailController.ShowCustomPetDetail(customPetData)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazePartnerItem.BgOnClick = function(self)
-  -- function num : 0_15
+function UIMiniMazePartnerItem:BgOnClick()
   if self._callBack then
-    (self._callBack)()
+    self._callBack()
   end
 end
-
-

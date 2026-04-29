@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_island_convert.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParamIslandConvert", SkillDamageEffectParam)
 SkillEffectParamIslandConvert = SkillEffectParamIslandConvert
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamIslandConvert.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamIslandConvert:Constructor(t)
   self._islandPattern = t.pattern
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamIslandConvert.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamIslandConvert:GetEffectType()
   return SkillEffectType.IslandConvert
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamIslandConvert.GetPattern = function(self)
-  -- function num : 0_2
+function SkillEffectParamIslandConvert:GetPattern()
   return self._islandPattern
 end
-
-

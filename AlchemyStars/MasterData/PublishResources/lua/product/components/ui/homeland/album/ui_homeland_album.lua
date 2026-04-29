@@ -1,181 +1,131 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/album/ui_homeland_album.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandAlbum", UIController)
 UIHomelandAlbum = UIHomelandAlbum
-local alog = nil
--- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
+local alog
 
-UIHomelandAlbum.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandAlbum:Constructor()
   self._eulerAngles = Vector3(0, 0, 0)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : alog, _ENV
-  alog = function(...)
-    -- function num : 0_1_0 , upvalues : _ENV
-    (Log.debug)("[Album] ", ...)
+function UIHomelandAlbum:OnShow(uiParams)
+  function alog(...)
+    Log.debug("[Album] ", ...)
   end
-
+  
   self:_GetComponents()
-  self._development = (EngineGameHelper.IsDevelopmentBuild)()
+  self._development = EngineGameHelper.IsDevelopmentBuild()
   self._development = false
   self._roleModule = self:GetModule(RoleModule)
-  local allCfg = (Cfg.cfg_role_music)({})
+  local allCfg = Cfg.cfg_role_music({})
   local musics = {}
   local counts = {}
   local lockInfo = {}
-  for _,cfg in pairs(allCfg) do
+  for _, cfg in pairs(allCfg) do
     if cfg.IsShow then
-      local lock = (self._roleModule):UI_CheckMusicLock(cfg)
+      local lock = self._roleModule:UI_CheckMusicLock(cfg)
       local show = true
-      do
-        do
-          if lock then
-            local unlockunshow = cfg.UnLockUnShow
-            if unlockunshow then
-              show = false
-            end
-          end
-          if show then
-            if not musics[cfg.Tag] then
-              musics[cfg.Tag] = {}
-              counts[cfg.Tag] = {0, 0}
-            end
-            ;
-            (table.insert)(musics[cfg.Tag], cfg)
-            -- DECOMPILER ERROR at PC65: Confused about usage of register: R13 in 'UnsetPending'
-
-            ;
-            (counts[cfg.Tag])[1] = (counts[cfg.Tag])[1] + 1
-            -- DECOMPILER ERROR at PC74: Confused about usage of register: R13 in 'UnsetPending'
-
-            if not lock then
-              (counts[cfg.Tag])[2] = (counts[cfg.Tag])[2] + 1
-            end
-            lockInfo[cfg.ID] = lock
-          end
-          -- DECOMPILER ERROR at PC77: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC77: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC77: LeaveBlock: unexpected jumping out IF_STMT
-
+      if lock then
+        local unlockunshow = cfg.UnLockUnShow
+        if unlockunshow then
+          show = false
         end
+      end
+      if show then
+        if not musics[cfg.Tag] then
+          musics[cfg.Tag] = {}
+          counts[cfg.Tag] = {0, 0}
+        end
+        table.insert(musics[cfg.Tag], cfg)
+        counts[cfg.Tag][1] = counts[cfg.Tag][1] + 1
+        if not lock then
+          counts[cfg.Tag][2] = counts[cfg.Tag][2] + 1
+        end
+        lockInfo[cfg.ID] = lock
       end
     end
   end
-  ;
-  (self.tab1Count):SetText((counts[1])[2] .. "/" .. (counts[1])[1])
-  ;
-  (self.tab2Count):SetText((counts[2])[2] .. "/" .. (counts[2])[1])
-  ;
-  (self.tab3Count):SetText((counts[3])[2] .. "/" .. (counts[3])[1])
-  self._isLock = function(id)
-    -- function num : 0_1_1 , upvalues : lockInfo
+  self.tab1Count:SetText(counts[1][2] .. "/" .. counts[1][1])
+  self.tab2Count:SetText(counts[2][2] .. "/" .. counts[2][1])
+  self.tab3Count:SetText(counts[3][2] .. "/" .. counts[3][1])
+  
+  function self._isLock(id)
     return lockInfo[id]
   end
-
-  local sorter = function(a, b)
-    -- function num : 0_1_2 , upvalues : self
-    if a.ID >= b.ID then
-      do return (self._isLock)(a.ID) ~= (self._isLock)(b.ID) end
-      do return not (self._isLock)(a.ID) end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  
+  local function sorter(a, b)
+    if self._isLock(a.ID) == self._isLock(b.ID) then
+      return a.ID < b.ID
+    else
+      return not self._isLock(a.ID)
     end
   end
-
-  ;
-  (table.sort)(musics[1], sorter)
-  ;
-  (table.sort)(musics[2], sorter)
-  ;
-  (table.sort)(musics[3], sorter)
+  
+  table.sort(musics[1], sorter)
+  table.sort(musics[2], sorter)
+  table.sort(musics[3], sorter)
   self._music = musics
-  self._curHomelandMusic = (self._roleModule):UI_GetMusic(EnumBgmType.E_Bgm_Homeland)
-  local playing = (AudioHelperController.GetCurrentBgm)()
-  local cfgs = (Cfg.cfg_role_music)({AudioID = playing})
+  self._curHomelandMusic = self._roleModule:UI_GetMusic(EnumBgmType.E_Bgm_Homeland)
+  local playing = AudioHelperController.GetCurrentBgm()
+  local cfgs = Cfg.cfg_role_music({AudioID = playing})
   local curMainID = -1
   if cfgs and next(cfgs) then
-    curMainID = (cfgs[1]).ID
+    curMainID = cfgs[1].ID
   end
-  if ((Cfg.cfg_role_music)[curMainID]).AudioID ~= playing then
-    (Log.exception)("当前的背景音不正确：", playing, "，应该播放：", curMainID)
+  if Cfg.cfg_role_music[curMainID].AudioID ~= playing then
+    Log.exception("当前的背景音不正确：", playing, "，应该播放：", curMainID)
   end
-  local onClickItem = function(idx)
-    -- function num : 0_1_3 , upvalues : self
+  
+  local function onClickItem(idx)
     self:onClickItem(idx)
   end
-
-  local getItem = function(scrollView, index)
-    -- function num : 0_1_4 , upvalues : self, onClickItem
+  
+  local function getItem(scrollView, index)
     if index < 0 then
       return nil
     end
     local item = scrollView:NewListViewItem("item")
     local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
     local m = rowPool:SpawnObject("UIHomelandAlbumItem")
-    local cfg = ((self._music)[self._curTab])[index + 1]
-    m:SetData(cfg, index + 1, (self._isLock)(cfg.ID), onClickItem, self._curSelectCfgID == cfg.ID, self._curPlaying == cfg.ID, self._isPause)
-    do return item end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+    local cfg = self._music[self._curTab][index + 1]
+    m:SetData(cfg, index + 1, self._isLock(cfg.ID), onClickItem, self._curSelectCfgID == cfg.ID, self._curPlaying == cfg.ID, self._isPause)
+    return item
   end
-
-  ;
-  (self.scrollList):InitListView(0, getItem)
+  
+  self.scrollList:InitListView(0, getItem)
   self._curPlaying = curMainID
   self._isPause = false
   self._curSelectCfgID = nil
   self._curTab = nil
-  self._curPlayingTab = ((Cfg.cfg_role_music)[self._curPlaying]).Tag
+  self._curPlayingTab = Cfg.cfg_role_music[self._curPlaying].Tag
   self:changeTab(1)
-  for idx,cfg in ipairs((self._music)[self._curPlayingTab]) do
+  for idx, cfg in ipairs(self._music[self._curPlayingTab]) do
     if cfg.ID == curMainID then
       self._curPlayingIndex = idx
       break
     end
   end
-  do
-    self:refreshBtmBar((Cfg.cfg_role_music)[self._curPlaying])
-    self:refreshSetBtn()
-    self:_ChangeBlurBgBegin(((Cfg.cfg_role_music)[self._curPlaying]).Icon)
-    self._timerEvent = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_1_5 , upvalues : self
+  self:refreshBtmBar(Cfg.cfg_role_music[self._curPlaying])
+  self:refreshSetBtn()
+  self:_ChangeBlurBgBegin(Cfg.cfg_role_music[self._curPlaying].Icon)
+  self._timerEvent = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:musicTimeTick()
-  end
-)
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV, alog
-  ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
-  do
-    if self._curHomelandMusic ~= self._curPlaying then
-      local cfg = nil
-      if self._curHomelandMusic <= 0 then
-        cfg = (Cfg.cfg_role_music)[CriAudioIDConst.BGMEnterHomeland]
-      else
-        cfg = (Cfg.cfg_role_music)[self._curHomelandMusic]
-      end
-      ;
-      (AudioHelperController.PlayBGM)(cfg.AudioID)
+function UIHomelandAlbum:OnHide()
+  GameGlobal.Timer():CancelEvent(self._timerEvent)
+  if self._curHomelandMusic ~= self._curPlaying then
+    local cfg
+    if self._curHomelandMusic <= 0 then
+      cfg = Cfg.cfg_role_music[CriAudioIDConst.BGMEnterHomeland]
+    else
+      cfg = Cfg.cfg_role_music[self._curHomelandMusic]
     end
-    alog = nil
+    AudioHelperController.PlayBGM(cfg.AudioID)
   end
+  alog = nil
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum._GetComponents = function(self)
-  -- function num : 0_3
+function UIHomelandAlbum:_GetComponents()
   self.topButtons = self:GetUIComponent("UISelectObjectPath", "TopButtons")
   self.tab1Count = self:GetUIComponent("UILocalizationText", "Tab1Count")
   self.tab2Count = self:GetUIComponent("UILocalizationText", "Tab2Count")
@@ -192,8 +142,16 @@ UIHomelandAlbum._GetComponents = function(self)
   self.mainMusicText = self:GetUIComponent("RollingText", "MainMusicText")
   self.aircraftMusicText = self:GetUIComponent("RollingText", "AircraftMusicText")
   self.homelandMusicText = self:GetUIComponent("RollingText", "HomelandMusicText")
-  self._tabBtns = {self:GetUIComponent("Button", "Tab1"), self:GetUIComponent("Button", "Tab2"), self:GetUIComponent("Button", "Tab3")}
-  self._tabTexts = {self.tab1Count, self.tab2Count, self.tab3Count}
+  self._tabBtns = {
+    self:GetUIComponent("Button", "Tab1"),
+    self:GetUIComponent("Button", "Tab2"),
+    self:GetUIComponent("Button", "Tab3")
+  }
+  self._tabTexts = {
+    self.tab1Count,
+    self.tab2Count,
+    self.tab3Count
+  }
   self._blurBg = self:GetUIComponent("RawImageLoader", "blurBg")
   self._blurBgNew = self:GetUIComponent("RawImageLoader", "blurBgNew")
   self._blurBgNewImg = self:GetUIComponent("RawImage", "blurBgNew")
@@ -201,255 +159,168 @@ UIHomelandAlbum._GetComponents = function(self)
   self._disc = self:GetUIComponent("RectTransform", "disc")
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum.changeTab = function(self, tab)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandAlbum:changeTab(tab)
   if self._curTab == tab then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
   if self._curTab then
-    ((self._tabBtns)[self._curTab]).interactable = true
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self._tabTexts)[self._curTab]).color = Color(0.51372549019608, 0.51372549019608, 0.51372549019608)
-    ;
-    (self._anim):Play("uieff_Album_Switch")
+    self._tabBtns[self._curTab].interactable = true
+    self._tabTexts[self._curTab].color = Color(0.5137254901960784, 0.5137254901960784, 0.5137254901960784)
+    self._anim:Play("uieff_Album_Switch")
   end
   self._curTab = tab
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._tabBtns)[self._curTab]).interactable = false
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._tabTexts)[self._curTab]).color = Color(0.98823529411765, 0.70980392156863, 0.34117647058824)
-  ;
-  (self.scrollList):SetListItemCount(#(self._music)[self._curTab], true)
+  self._tabBtns[self._curTab].interactable = false
+  self._tabTexts[self._curTab].color = Color(0.9882352941176471, 0.7098039215686275, 0.3411764705882353)
+  self.scrollList:SetListItemCount(#self._music[self._curTab], true)
   self:onClickItem(1)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum.onClickItem = function(self, idx)
-  -- function num : 0_5 , upvalues : alog, _ENV
-  local cfgID = (((self._music)[self._curTab])[idx]).ID
+function UIHomelandAlbum:onClickItem(idx)
+  local cfgID = self._music[self._curTab][idx].ID
   if self._curSelectCfgID == cfgID then
     if self._curPlaying == cfgID then
       if self._isPause then
         alog("当前暂停，继续播:", idx)
-        ;
-        (AudioHelperController.UnpauseBGM)()
-        ;
-        (self.pauseBtn):SetActive(true)
-        ;
-        (self.resumeBtn):SetActive(false)
+        AudioHelperController.UnpauseBGM()
+        self.pauseBtn:SetActive(true)
+        self.resumeBtn:SetActive(false)
         self._isPause = false
       else
         alog("当前正在播，暂停:", idx)
-        ;
-        (AudioHelperController.PauseBGM)()
-        ;
-        (self.pauseBtn):SetActive(false)
-        ;
-        (self.resumeBtn):SetActive(true)
+        AudioHelperController.PauseBGM()
+        self.pauseBtn:SetActive(false)
+        self.resumeBtn:SetActive(true)
         self._isPause = true
       end
     else
       alog("切音乐，开始播:", idx)
-      local cfg = (Cfg.cfg_role_music)[cfgID]
+      local cfg = Cfg.cfg_role_music[cfgID]
       self._curPlaying = cfgID
       self._isPause = false
       self._curPlayingIndex = idx
       self._curPlayingTab = cfg.Tag
-      ;
-      (AudioHelperController.PlayBGM)(cfg.AudioID)
+      AudioHelperController.PlayBGM(cfg.AudioID)
       self:refreshBtmBar(cfg)
       self:_ChangeBlurBgBegin(cfg.Icon)
     end
   else
-    do
-      alog("点了不同的音乐，切换:", idx)
-      do
-        local cfg = (Cfg.cfg_role_music)[cfgID]
-        self._curSelectCfgID = cfgID
-        self:changeSelect(cfg)
-        ;
-        (self.scrollList):RefreshAllShownItem()
-      end
-    end
+    alog("点了不同的音乐，切换:", idx)
+    local cfg = Cfg.cfg_role_music[cfgID]
+    self._curSelectCfgID = cfgID
+    self:changeSelect(cfg)
   end
+  self.scrollList:RefreshAllShownItem()
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum.refreshBtmBar = function(self, cfg)
-  -- function num : 0_6 , upvalues : alog, _ENV
+function UIHomelandAlbum:refreshBtmBar(cfg)
   alog("刷新底条信息")
-  ;
-  (self.cover_small):LoadImage(cfg.Icon)
-  ;
-  (self.pauseBtn):SetActive(not self._isPause)
-  ;
-  (self.resumeBtn):SetActive(self._isPause)
+  self.cover_small:LoadImage(cfg.Icon)
+  self.pauseBtn:SetActive(not self._isPause)
+  self.resumeBtn:SetActive(self._isPause)
   self:musicTimeTick()
-  ;
-  (self.nameText):RefreshText((StringTable.Get)(cfg.Name))
-  ;
-  (self.authorText):RefreshText((StringTable.Get)(cfg.Author))
+  self.nameText:RefreshText(StringTable.Get(cfg.Name))
+  self.authorText:RefreshText(StringTable.Get(cfg.Author))
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum.refreshSetBtn = function(self, type)
-  -- function num : 0_7 , upvalues : alog, _ENV
+function UIHomelandAlbum:refreshSetBtn(type)
   alog("刷新底部按钮")
   if self._curHomelandMusic == 0 then
-    (self.homelandMusicText):RefreshText((StringTable.Get)("str_album_homeland"))
+    self.homelandMusicText:RefreshText(StringTable.Get("str_album_homeland"))
   else
-    local cfg = (Cfg.cfg_role_music)[self._curHomelandMusic]
-    ;
-    (self.homelandMusicText):RefreshText((StringTable.Get)(cfg.Name))
+    local cfg = Cfg.cfg_role_music[self._curHomelandMusic]
+    self.homelandMusicText:RefreshText(StringTable.Get(cfg.Name))
   end
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum.changeSelect = function(self, cfg)
-  -- function num : 0_8
-  (self.cover):LoadImage(cfg.Icon)
+function UIHomelandAlbum:changeSelect(cfg)
+  self.cover:LoadImage(cfg.Icon)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum.musicTimeTick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  if (AudioHelperController.BGMPlayerIsPlaying)() then
-    local time = (AudioHelperController.GetPlayingBGMTimeSyncedWithAudio)()
+function UIHomelandAlbum:musicTimeTick()
+  if AudioHelperController.BGMPlayerIsPlaying() then
+    local time = AudioHelperController.GetPlayingBGMTimeSyncedWithAudio()
     if time < 0 then
       time = 0
     end
-    local duration = ((Cfg.cfg_role_music)[self._curPlaying]).Duration
-    do
-      if self._development then
-        local realDua = (AudioHelperController.GetPlayingBGMTotalTimeMs)()
-        if realDua > 0 and (math.abs)(realDua / 1000 - duration) > 0.5 then
-          (ToastManager.ShowToast)("音乐配置时长错误！ID:" .. self._curPlaying .. "，真实时长:" .. realDua / 1000)
-        end
+    local duration = Cfg.cfg_role_music[self._curPlaying].Duration
+    if self._development then
+      local realDua = AudioHelperController.GetPlayingBGMTotalTimeMs()
+      if 0 < realDua and math.abs(realDua / 1000 - duration) > 0.5 then
+        ToastManager.ShowToast("音乐配置时长错误！ID:" .. self._curPlaying .. "，真实时长:" .. realDua / 1000)
       end
-      time = (math.floor)(time / 1000 % duration)
-      ;
-      (self.time):SetText("<color=#fcb557>" .. (UIHomelandBgmHelper.FormatTime)(time) .. "</color><color=#838383>/" .. (UIHomelandBgmHelper.FormatTime)(duration) .. "</color>")
-      -- DECOMPILER ERROR at PC62: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.progress).fillAmount = time / duration
     end
+    time = math.floor(time / 1000 % duration)
+    self.time:SetText("<color=#fcb557>" .. UIHomelandBgmHelper.FormatTime(time) .. "</color><color=#838383>/" .. UIHomelandBgmHelper.FormatTime(duration) .. "</color>")
+    self.progress.fillAmount = time / duration
   end
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum.Tab1OnClick = function(self, go)
-  -- function num : 0_10 , upvalues : alog
+function UIHomelandAlbum:Tab1OnClick(go)
   alog("切换tab1")
   self:changeTab(1)
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum.Tab2OnClick = function(self, go)
-  -- function num : 0_11 , upvalues : alog
+function UIHomelandAlbum:Tab2OnClick(go)
   alog("切换tab2")
   self:changeTab(2)
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum.Tab3OnClick = function(self, go)
-  -- function num : 0_12 , upvalues : alog
+function UIHomelandAlbum:Tab3OnClick(go)
   alog("切换tab3")
   self:changeTab(3)
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum.PauseBtnOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : alog, _ENV
+function UIHomelandAlbum:PauseBtnOnClick(go)
   alog("暂停")
   self._isPause = true
-  ;
-  (self.pauseBtn):SetActive(false)
-  ;
-  (self.resumeBtn):SetActive(true)
-  ;
-  (AudioHelperController.PauseBGM)()
-  ;
-  (self.scrollList):RefreshAllShownItem()
+  self.pauseBtn:SetActive(false)
+  self.resumeBtn:SetActive(true)
+  AudioHelperController.PauseBGM()
+  self.scrollList:RefreshAllShownItem()
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum.ResumeBtnOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : alog, _ENV
+function UIHomelandAlbum:ResumeBtnOnClick(go)
   alog("继续播放")
   self._isPause = false
-  ;
-  (self.pauseBtn):SetActive(true)
-  ;
-  (self.resumeBtn):SetActive(false)
-  ;
-  (AudioHelperController.UnpauseBGM)()
-  ;
-  (self.scrollList):RefreshAllShownItem()
+  self.pauseBtn:SetActive(true)
+  self.resumeBtn:SetActive(false)
+  AudioHelperController.UnpauseBGM()
+  self.scrollList:RefreshAllShownItem()
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum.LastBtnOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : alog, _ENV
+function UIHomelandAlbum:LastBtnOnClick(go)
   alog("上一首")
   local index = self._curPlayingIndex - 1
-  do
-    if index < 1 then
-      local count = #(self._music)[self._curPlayingTab]
-      index = count
-    end
-    local lastCfgID = (((self._music)[self._curPlayingTab])[index]).ID
-    if self._curPlayingTab == self._curTab then
-      if self._curSelectCfgID == lastCfgID then
-        self:onClickItem(index)
-      else
-        self:onClickItem(index)
-        self:onClickItem(index)
-      end
+  if index < 1 then
+    local count = #self._music[self._curPlayingTab]
+    index = count
+  end
+  local lastCfgID = self._music[self._curPlayingTab][index].ID
+  if self._curPlayingTab == self._curTab then
+    if self._curSelectCfgID == lastCfgID then
+      self:onClickItem(index)
     else
-      local cfg = ((self._music)[self._curPlayingTab])[index]
-      self._curPlaying = cfg.ID
-      self._curPlayingIndex = index
-      ;
-      (AudioHelperController.PlayBGM)(cfg.AudioID)
-      self:refreshBtmBar(cfg)
-      self:_ChangeBlurBgBegin(cfg.Icon)
+      self:onClickItem(index)
+      self:onClickItem(index)
     end
+  else
+    local cfg = self._music[self._curPlayingTab][index]
+    self._curPlaying = cfg.ID
+    self._curPlayingIndex = index
+    AudioHelperController.PlayBGM(cfg.AudioID)
+    self:refreshBtmBar(cfg)
+    self:_ChangeBlurBgBegin(cfg.Icon)
   end
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum.NextBtnOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : alog, _ENV
+function UIHomelandAlbum:NextBtnOnClick(go)
   alog("下一首")
   local index = self._curPlayingIndex + 1
-  local count = #(self._music)[self._curPlayingTab]
-  if count < index then
+  local count = #self._music[self._curPlayingTab]
+  if index > count then
     index = 1
   end
-  local nextCfgID = (((self._music)[self._curPlayingTab])[index]).ID
+  local nextCfgID = self._music[self._curPlayingTab][index].ID
   if self._curPlayingTab == self._curTab then
     if self._curSelectCfgID == nextCfgID then
       self:onClickItem(index)
@@ -458,115 +329,75 @@ UIHomelandAlbum.NextBtnOnClick = function(self, go)
       self:onClickItem(index)
     end
   else
-    local cfg = ((self._music)[self._curPlayingTab])[index]
+    local cfg = self._music[self._curPlayingTab][index]
     self._curPlaying = cfg.ID
     self._curPlayingIndex = index
-    ;
-    (AudioHelperController.PlayBGM)(cfg.AudioID)
+    AudioHelperController.PlayBGM(cfg.AudioID)
     self:refreshBtmBar(cfg)
     self:_ChangeBlurBgBegin(cfg.Icon)
   end
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum.SetHomelandOnClick = function(self)
-  -- function num : 0_17 , upvalues : alog, _ENV
+function UIHomelandAlbum:SetHomelandOnClick()
   alog("设置家园背景音")
   local id = 0
   if self._curHomelandMusic == 0 then
     id = self._curPlaying
+  elseif self._curHomelandMusic == self._curPlaying then
+    id = 0
   else
-    if self._curHomelandMusic == self._curPlaying then
-      id = 0
-    else
-      id = self._curPlaying
-    end
+    id = self._curPlaying
   end
   self:StartTask(self.reqChangeBgm, self, EnumBgmType.E_Bgm_Homeland, id)
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum.reqChangeBgm = function(self, TT, type, id)
-  -- function num : 0_18 , upvalues : _ENV
+function UIHomelandAlbum:reqChangeBgm(TT, type, id)
   self:Lock(self:GetName())
-  local res = (self._roleModule):RequestRole_Music(TT, type, id)
+  local res = self._roleModule:RequestRole_Music(TT, type, id)
   if res:GetSucc() then
-    self._curHomelandMusic = (self._roleModule):UI_GetMusic(EnumBgmType.E_Bgm_Homeland)
+    self._curHomelandMusic = self._roleModule:UI_GetMusic(EnumBgmType.E_Bgm_Homeland)
     self:refreshSetBtn(type)
     if id == 0 then
-      (ToastManager.ShowToast)((StringTable.Get)("str_album_homeland_default"))
+      ToastManager.ShowToast(StringTable.Get("str_album_homeland_default"))
     else
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_album_homeland_changed"))
+      ToastManager.ShowToast(StringTable.Get("str_album_homeland_changed"))
     end
   else
-    ;
-    (ToastManager.ShowToast)("unkown error:", res:GetResult())
+    ToastManager.ShowToast("unkown error:", res:GetResult())
   end
   self:UnLock(self:GetName())
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum._ChangeBlurBgBegin = function(self, icon)
-  -- function num : 0_19
-  (self._blurBgNew):LoadImage(icon)
-  ;
-  ((self._blurBgNew).gameObject):SetActive(false)
-  ;
-  ((self._blurBgNew).gameObject):SetActive(true)
+function UIHomelandAlbum:_ChangeBlurBgBegin(icon)
+  self._blurBgNew:LoadImage(icon)
+  self._blurBgNew.gameObject:SetActive(false)
+  self._blurBgNew.gameObject:SetActive(true)
   local lockId = "UIHomelandAlbum:_ChangeBlurBg"
   self:Lock(lockId)
-  ;
-  (self._blurBgNewImg):DOFade(0, 0)
+  self._blurBgNewImg:DOFade(0, 0)
   local targetFade = 1
   local duration = 0.5
-  ;
-  ((self._blurBgNewImg):DOFade(targetFade, duration)):OnComplete(function()
-    -- function num : 0_19_0 , upvalues : self, icon, lockId
+  self._blurBgNewImg:DOFade(targetFade, duration):OnComplete(function()
     self:_ChangeBlurBgEnd(icon)
     self:UnLock(lockId)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum._ChangeBlurBgEnd = function(self, icon)
-  -- function num : 0_20
-  (self._blurBg):LoadImage(icon)
-  ;
-  ((self._blurBg).gameObject):SetActive(false)
-  ;
-  ((self._blurBg).gameObject):SetActive(true)
-  ;
-  ((self._blurBgNew).gameObject):SetActive(false)
+function UIHomelandAlbum:_ChangeBlurBgEnd(icon)
+  self._blurBg:LoadImage(icon)
+  self._blurBg.gameObject:SetActive(false)
+  self._blurBg.gameObject:SetActive(true)
+  self._blurBgNew.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum.BackBtnOnClick = function(self, go)
-  -- function num : 0_21
+function UIHomelandAlbum:BackBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandAlbum.OnUpdate = function(self, ms)
-  -- function num : 0_22
+function UIHomelandAlbum:OnUpdate(ms)
   if self._isPause then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._eulerAngles).z = ((self._disc).eulerAngles).z - ms / 50
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._disc).eulerAngles = self._eulerAngles
+  self._eulerAngles.z = self._disc.eulerAngles.z - ms / 50
+  self._disc.eulerAngles = self._eulerAngles
 end
-
-

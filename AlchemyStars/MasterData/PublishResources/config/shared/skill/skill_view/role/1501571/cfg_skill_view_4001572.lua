@@ -1,17 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/role/1501571/cfg_skill_view_4001572.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7, PhasePosDir = 8}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7,
+  PhasePosDir = 8
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayDeleteCasterEffect,effectIDList=3702; PlayAudio,audioID = 2483,audioType=1; PlayTrapAsMoving,time=100,summonOffset=0.5,moveAni=dash,moveEffID=3703,jumpAni=ult01,jumpEffID=0,jumpTime=166,fallAni=ult02,fallEffID=0,fallTime=500; DataSelectDamage,damageIndex = 1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0,label=doAgain1; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain1; Wait,waitTime=100; "}
-}
-, 
-{2, 2, 0, 2, 1, 0, 
-{" DataSelectBuff,buffIndex=1; PlayTargetAddBuff,buffEffectType =4101571,label=doAgain; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=doAgain; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayDeleteCasterEffect,effectIDList=3702; PlayAudio,audioID = 2483,audioType=1; PlayTrapAsMoving,time=100,summonOffset=0.5,moveAni=dash,moveEffID=3703,jumpAni=ult01,jumpEffID=0,jumpTime=166,fallAni=ult02,fallEffID=0,fallTime=500; DataSelectDamage,damageIndex = 1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0,label=doAgain1; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain1; Wait,waitTime=100; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    2,
+    1,
+    0,
+    {
+      " DataSelectBuff,buffIndex=1; PlayTargetAddBuff,buffEffectType =4101571,label=doAgain; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=doAgain; "
+    }
+  }
 }
 return config, "ID", key
-

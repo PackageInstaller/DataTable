@@ -1,107 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_widget/ui_activity_common_text_tab_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityCommonTextTabBtn", UICustomWidget)
 UIActivityCommonTextTabBtn = UIActivityCommonTextTabBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityCommonTextTabBtn.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityCommonTextTabBtn:OnShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonTextTabBtn.SetData = function(self, index, onoffWidgets, indexWidgets, titleWidgets, titleText, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityCommonTextTabBtn:SetData(index, onoffWidgets, indexWidgets, titleWidgets, titleText, callback)
   self._index = index
-  self._onoffGroup = (UIWidgetHelper.GetObjGroupByWidgetName)(self, onoffWidgets)
-  self._indexGroup = (UIWidgetHelper.GetObjGroupByWidgetName)(self, indexWidgets)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._indexGroup, index)
+  self._onoffGroup = UIWidgetHelper.GetObjGroupByWidgetName(self, onoffWidgets)
+  self._indexGroup = UIWidgetHelper.GetObjGroupByWidgetName(self, indexWidgets)
+  UIWidgetHelper.SetObjGroupShow(self._indexGroup, index)
   self:_SetText(titleWidgets, titleText)
   self._callback = callback
   self:SetSelected(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonTextTabBtn.SetData = function(self, index, params)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityCommonTextTabBtn:SetData(index, params)
   self._index = index
-  self:_SetText({}, not params.titleWidgets and params.titleText or "")
-  if not params.indexWidgets then
-    self._indexGroup = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {})
-    ;
-    (UIWidgetHelper.SetObjGroupShow)(self._indexGroup, index)
-    if not params.onoffWidgets then
-      self._onoffGroup = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {})
-      self:SetSelected(false)
-      if not params.lockWidgets then
-        self._lockGroup = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {})
-        self:SetLock(false)
-        self._callback = params.callback
-        self._lockCallback = params.lockCallback
-      end
-    end
-  end
+  self:_SetText(params.titleWidgets or {}, params.titleText or "")
+  self._indexGroup = UIWidgetHelper.GetObjGroupByWidgetName(self, params.indexWidgets or {})
+  UIWidgetHelper.SetObjGroupShow(self._indexGroup, index)
+  self._onoffGroup = UIWidgetHelper.GetObjGroupByWidgetName(self, params.onoffWidgets or {})
+  self:SetSelected(false)
+  self._lockGroup = UIWidgetHelper.GetObjGroupByWidgetName(self, params.lockWidgets or {})
+  self:SetLock(false)
+  self._callback = params.callback
+  self._lockCallback = params.lockCallback
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonTextTabBtn.SetSelected = function(self, isOn)
-  -- function num : 0_3 , upvalues : _ENV
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._onoffGroup, isOn and 1 or 2)
+function UIActivityCommonTextTabBtn:SetSelected(isOn)
+  UIWidgetHelper.SetObjGroupShow(self._onoffGroup, isOn and 1 or 2)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonTextTabBtn.SetLock = function(self, isLock)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityCommonTextTabBtn:SetLock(isLock)
   self._isLock = isLock
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._lockGroup, isLock and 1 or 2)
+  UIWidgetHelper.SetObjGroupShow(self._lockGroup, isLock and 1 or 2)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonTextTabBtn._SetText = function(self, group, titleText)
-  -- function num : 0_5 , upvalues : _ENV
-  for _,v in ipairs(group) do
+function UIActivityCommonTextTabBtn:_SetText(group, titleText)
+  for _, v in ipairs(group) do
     local text = self:GetUIComponent("UILocalizationText", v)
     text:SetText(titleText)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonTextTabBtn.BtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIActivityCommonTextTabBtn:BtnOnClick(go)
   self:OffBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonTextTabBtn.OffBtnOnClick = function(self, go)
-  -- function num : 0_7
-  if self._isLock and self._lockCallback then
-    (self._lockCallback)(self._index)
+function UIActivityCommonTextTabBtn:OffBtnOnClick(go)
+  if self._isLock then
+    if self._lockCallback then
+      self._lockCallback(self._index)
+    end
+    return
   end
-  do return  end
   if self._callback then
-    (self._callback)(self._index, true)
+    self._callback(self._index, true)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonTextTabBtn.OnBtnOnClick = function(self, go)
-  -- function num : 0_8
+function UIActivityCommonTextTabBtn:OnBtnOnClick(go)
   if self._callback then
-    (self._callback)(self._index, false)
+    self._callback(self._index, false)
   end
 end
-
-

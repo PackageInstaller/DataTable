@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/wait_input_chain_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("WaitInputChainSystem", MainStateSystem)
 WaitInputChainSystem = WaitInputChainSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-WaitInputChainSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function WaitInputChainSystem:_GetMainStateID()
   return GameStateID.WaitInputChain
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputChainSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function WaitInputChainSystem:_OnMainStateEnter(TT)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   self:_DoRenderPieceAnimation(TT)
   self:_DoLogicEnalbeInput()
   self:_ShowUI(TT)
@@ -27,59 +17,33 @@ WaitInputChainSystem._OnMainStateEnter = function(self, TT)
   self:_DoGotoPickupTarget()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputChainSystem._RemoveDimensionFlag = function(self, teamEntity)
-  -- function num : 0_2
+function WaitInputChainSystem:_RemoveDimensionFlag(teamEntity)
   teamEntity:RemoveDimensionFlag()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputChainSystem._DoGotoPickupTarget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.WaitInputChainFinish, 1)
+function WaitInputChainSystem:_DoGotoPickupTarget()
+  self._world:EventDispatcher():Dispatch(GameEventType.WaitInputChainFinish, 1)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputChainSystem._DoLogicEnalbeInput = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local gameFsmCmpt = (self._world):GameFSM()
+function WaitInputChainSystem:_DoLogicEnalbeInput()
+  local gameFsmCmpt = self._world:GameFSM()
   local gameFsmStateID = gameFsmCmpt:CurStateID()
   if gameFsmStateID == GameStateID.WaitInputChain then
     gameFsmCmpt:EnableHandleInput(true)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputChainSystem._DoRenderPieceAnimation = function(self, TT)
-  -- function num : 0_5
+function WaitInputChainSystem:_DoRenderPieceAnimation(TT)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputChainSystem._DoEnableInput = function(self, TT)
-  -- function num : 0_6
+function WaitInputChainSystem:_DoEnableInput(TT)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputChainSystem._ShowUI = function(self, TT)
-  -- function num : 0_7
+function WaitInputChainSystem:_ShowUI(TT)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputChainSystem._PlayPreview = function(self, TT)
-  -- function num : 0_8
+function WaitInputChainSystem:_PlayPreview(TT)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputChainSystem._DoRenderBeforePickUp = function(self)
-  -- function num : 0_9
+function WaitInputChainSystem:_DoRenderBeforePickUp()
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/dantang/ui_activity_dantang_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_campaign")
 _class("UIActivityDanTangEnter", UISideEnterItem_Campaign)
 UIActivityDanTangEnter = UIActivityDanTangEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityDanTangEnter._CalcRed = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityDanTangEnter:_CalcRed()
   local module = self:GetModule(CampaignModule)
   local preSample = module:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_INLAND_S0)
   local preRed = false
@@ -20,5 +13,3 @@ UIActivityDanTangEnter._CalcRed = function(self)
   local red = (preRed or mainRed) and 1 or 0
   return red
 end
-
-

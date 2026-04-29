@@ -1,29 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/cutscene/cutscene_hit_back_player_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("cutscene_base_ins_r")
 _class("CutsceneHitbackPlayerInstruction", CutsceneBaseInstruction)
 CutsceneHitbackPlayerInstruction = CutsceneHitbackPlayerInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneHitbackPlayerInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function CutsceneHitbackPlayerInstruction:Constructor(paramList)
   self._dis = tonumber(paramList.dis)
   self._dirX = tonumber(paramList.dirX) or 0
   self._dirY = tonumber(paramList.dirY) or 1
   self._speed = tonumber(paramList.speed) or 10
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneHitbackPlayerInstruction.DoInstruction = function(self, TT, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function CutsceneHitbackPlayerInstruction:DoInstruction(TT, phaseContext)
   local world = phaseContext:GetCutsceneWorld()
   local cutsceneServiceRender = world:GetService("Cutscene")
   local dir = Vector2(self._dirX, self._dirY)
   cutsceneServiceRender:PlayCutsceneHitbackPlayer(TT, self._dis, dir, self._speed)
 end
-
-

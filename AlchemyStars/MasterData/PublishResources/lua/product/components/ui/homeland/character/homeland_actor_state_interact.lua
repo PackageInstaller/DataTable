@@ -1,44 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/character/homeland_actor_state_interact.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homeland_actor_state")
 _class("HomelandActorStateInteract", HomelandActorState)
 HomelandActorStateInteract = HomelandActorStateInteract
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandActorStateInteract.Constructor = function(self)
-  -- function num : 0_0
+function HomelandActorStateInteract:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateInteract.GetType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandActorStateInteract:GetType()
   return HomelandActorStateType.Interact
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateInteract.HandleEventDash = function(self)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  if (self._mcc):IsInteracting() then
-    ((self._mcc)._interactContext).InterruptInteraction = true
+function HomelandActorStateInteract:HandleEventDash()
+  if self._mcc:IsInteracting() then
+    self._mcc._interactContext.InterruptInteraction = true
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateInteract.HandleEventMove = function(self)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  if (self._mcc):IsInteracting() then
-    ((self._mcc)._interactContext).InterruptInteraction = true
+function HomelandActorStateInteract:HandleEventMove()
+  if self._mcc:IsInteracting() then
+    self._mcc._interactContext.InterruptInteraction = true
   end
 end
-
-

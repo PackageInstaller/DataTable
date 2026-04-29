@@ -1,51 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_splash_damage_and_add_buff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_SplashDamageAndAddBuff", SkillEffectCalc_Base)
 SkillEffectCalc_SplashDamageAndAddBuff = SkillEffectCalc_SplashDamageAndAddBuff
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SplashDamageAndAddBuff.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SplashDamageAndAddBuff:Constructor(world)
   self._world = world
-  self._skillEffectCalcSvc = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectCalcSvc = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SplashDamageAndAddBuff.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_SplashDamageAndAddBuff:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targetIDs = skillEffectCalcParam:GetTargetEntityIDs()
   if targetIDs and #targetIDs == 1 and targetIDs[1] == -1 then
     local result = self:_CalculateNoTarget(skillEffectCalcParam)
     if result then
-      (table.appendArray)(results, result)
+      table.appendArray(results, result)
     end
   else
-    do
-      for _,targetID in ipairs(targetIDs) do
-        local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
-        if result then
-          (table.appendArray)(results, result)
-        end
-      end
-      do
-        return results
+    for _, targetID in ipairs(targetIDs) do
+      local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
+      if result then
+        table.appendArray(results, result)
       end
     end
   end
+  return results
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SplashDamageAndAddBuff._CalculateNoTarget = function(self, skillEffectCalcParam)
-  -- function num : 0_2
+function SkillEffectCalc_SplashDamageAndAddBuff:_CalculateNoTarget(skillEffectCalcParam)
   local casterID = skillEffectCalcParam:GetCasterEntityID()
-  local caster = (self._world):GetEntityByID(casterID)
+  local caster = self._world:GetEntityByID(casterID)
   local casterPos = caster:GetGridPosition()
   local casterDir = caster:GetGridDirection()
   local param = skillEffectCalcParam:GetSkillEffectParam()
@@ -54,20 +37,14 @@ SkillEffectCalc_SplashDamageAndAddBuff._CalculateNoTarget = function(self, skill
   return self:_CalculateDamageAndAddBuff(skillEffectCalcParam, splashCenterPos)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SplashDamageAndAddBuff._CalculateSingleTarget = function(self, skillEffectCalcParam, targetID)
-  -- function num : 0_3
-  local defender = (self._world):GetEntityByID(targetID)
+function SkillEffectCalc_SplashDamageAndAddBuff:_CalculateSingleTarget(skillEffectCalcParam, targetID)
+  local defender = self._world:GetEntityByID(targetID)
   local splashCenterPos = defender:GetGridPosition()
   return self:_CalculateDamageAndAddBuff(skillEffectCalcParam, splashCenterPos)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SplashDamageAndAddBuff._CalculateDamageAndAddBuff = function(self, skillEffectCalcParam, centerPos)
-  -- function num : 0_4 , upvalues : _ENV
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+function SkillEffectCalc_SplashDamageAndAddBuff:_CalculateDamageAndAddBuff(skillEffectCalcParam, centerPos)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local calcScope = utilScopeSvc:GetSkillScopeCalc()
   local param = skillEffectCalcParam:GetSkillEffectParam()
   local targetType = param:GetSplashTargetType()
@@ -75,129 +52,95 @@ SkillEffectCalc_SplashDamageAndAddBuff._CalculateDamageAndAddBuff = function(sel
   local scopeParam = param:GetSplashScopeParam()
   local parser = SkillScopeParamParser:New()
   scopeParam = parser:ParseScopeParam(scopeType, scopeParam)
-  local caster = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
-  local casterBodyArea = (caster:BodyArea()):GetArea()
+  local caster = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+  local casterBodyArea = caster:BodyArea():GetArea()
   local casterDirection = caster:GetGridDirection()
   local casterPos = caster:GetGridDirection()
   local splashScopeResult = calcScope:ComputeScopeRange(scopeType, scopeParam, centerPos, casterBodyArea, casterDirection, targetType, casterPos, caster)
-  local targetSelector = (self._world):GetSkillScopeTargetSelector()
+  local targetSelector = self._world:GetSkillScopeTargetSelector()
   local targetArray = targetSelector:DoSelectSkillTarget(caster, targetType, splashScopeResult)
-  ;
-  (table.unique)(targetArray)
-  ;
-  (table.removev)(targetArray, caster:GetID())
+  table.unique(targetArray)
+  table.removev(targetArray, caster:GetID())
   local attackRange = splashScopeResult:GetAttackRange()
-  ;
-  (table.removev)(attackRange, centerPos)
+  table.removev(attackRange, centerPos)
   local damageResults = self:_CalculateDamageResult(skillEffectCalcParam, attackRange, targetArray)
   local buffResults = self:_CalculateAddBuffResult(skillEffectCalcParam, targetArray)
-  return {SkillEffectSplashDamageAndAddBuffResult:New(centerPos, damageResults, buffResults)}
+  return {
+    SkillEffectSplashDamageAndAddBuffResult:New(centerPos, damageResults, buffResults)
+  }
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SplashDamageAndAddBuff._GetTargetAreaMap = function(self, targetArray)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillEffectCalc_SplashDamageAndAddBuff:_GetTargetAreaMap(targetArray)
   local targetGridAreaMap = {}
-  for _,targetEntityID in ipairs(targetArray) do
-    local targetEntity = (self._world):GetEntityByID(targetEntityID)
+  for _, targetEntityID in ipairs(targetArray) do
+    local targetEntity = self._world:GetEntityByID(targetEntityID)
     if targetEntity then
       local targetCenterPos = targetEntity:GetGridPosition()
       local bodyAreaComponent = targetEntity:BodyArea()
       if bodyAreaComponent then
         local bodyAreaArray = bodyAreaComponent:GetArea()
-        for _,areaPos in ipairs(bodyAreaArray) do
+        for _, areaPos in ipairs(bodyAreaArray) do
           local absAreaPos = areaPos + targetCenterPos
           if not targetGridAreaMap[absAreaPos.x] then
             targetGridAreaMap[absAreaPos.x] = {}
           end
-          -- DECOMPILER ERROR at PC34: Confused about usage of register: R18 in 'UnsetPending'
-
-          ;
-          (targetGridAreaMap[absAreaPos.x])[absAreaPos.y] = targetEntityID
+          targetGridAreaMap[absAreaPos.x][absAreaPos.y] = targetEntityID
         end
       else
-        do
-          do
-            if not targetGridAreaMap[targetCenterPos.x] then
-              targetGridAreaMap[targetCenterPos.x] = {}
-            end
-            -- DECOMPILER ERROR at PC48: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            (targetGridAreaMap[targetCenterPos.x])[targetCenterPos.y] = targetEntityID
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        if not targetGridAreaMap[targetCenterPos.x] then
+          targetGridAreaMap[targetCenterPos.x] = {}
         end
+        targetGridAreaMap[targetCenterPos.x][targetCenterPos.y] = targetEntityID
       end
     end
   end
   return targetGridAreaMap
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SplashDamageAndAddBuff._CalculateDamageResult = function(self, param, attackRange, targetArray)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillEffectCalc_SplashDamageAndAddBuff:_CalculateDamageResult(param, attackRange, targetArray)
   local resultArray = {}
   local skillDamageParam = param:GetSkillEffectParam()
   local skillID = param:GetSkillID()
-  local caster = (self._world):GetEntityByID(param:GetCasterEntityID())
+  local caster = self._world:GetEntityByID(param:GetCasterEntityID())
   local attackPos = caster:GetGridPosition()
   local damageStageIndex = skillDamageParam:GetSkillEffectDamageStageIndex()
   local targetGridAreaMap = self:_GetTargetAreaMap(targetArray)
-  for _,damagePos in ipairs(attackRange) do
-    if targetGridAreaMap[damagePos.x] and (targetGridAreaMap[damagePos.x])[damagePos.y] then
-      local defenderEntityID = (targetGridAreaMap[damagePos.x])[damagePos.y]
-      local defender = (self._world):GetEntityByID(defenderEntityID)
-      local nTotalDamage, listDamageInfo = (self._skillEffectCalcSvc):ComputeSkillDamage(caster, attackPos, defender, damagePos, skillID, skillDamageParam, SkillEffectType.SplashDamageAndAddBuff, damageStageIndex)
-      local skillResult = (self._skillEffectCalcSvc):NewSkillDamageEffectResult(damagePos, defenderEntityID, nTotalDamage, listDamageInfo, damageStageIndex)
-      ;
-      (table.insert)(resultArray, skillResult)
+  for _, damagePos in ipairs(attackRange) do
+    if targetGridAreaMap[damagePos.x] and targetGridAreaMap[damagePos.x][damagePos.y] then
+      local defenderEntityID = targetGridAreaMap[damagePos.x][damagePos.y]
+      local defender = self._world:GetEntityByID(defenderEntityID)
+      local nTotalDamage, listDamageInfo = self._skillEffectCalcSvc:ComputeSkillDamage(caster, attackPos, defender, damagePos, skillID, skillDamageParam, SkillEffectType.SplashDamageAndAddBuff, damageStageIndex)
+      local skillResult = self._skillEffectCalcSvc:NewSkillDamageEffectResult(damagePos, defenderEntityID, nTotalDamage, listDamageInfo, damageStageIndex)
+      table.insert(resultArray, skillResult)
     end
   end
   return resultArray
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SplashDamageAndAddBuff._CalculateAddBuffResult = function(self, skillEffectCalcParam, targetArray)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillEffectCalc_SplashDamageAndAddBuff:_CalculateAddBuffResult(skillEffectCalcParam, targetArray)
   local skillID = skillEffectCalcParam:GetSkillID()
   local attackRange = skillEffectCalcParam:GetSkillRange()
   local param = skillEffectCalcParam:GetSkillEffectParam()
   local buffID = param:GetBuffID()
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-  local buffLogicService = (self._world):GetService("BuffLogic")
-  local triggerSvc = (self._world):GetService("Trigger")
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local buffLogicService = self._world:GetService("BuffLogic")
+  local triggerSvc = self._world:GetService("Trigger")
   local buffResultArray = {}
-  for _,targetID in ipairs(targetArray) do
-    local defenderEntity = (self._world):GetEntityByID(targetID)
+  for _, targetID in ipairs(targetArray) do
+    local defenderEntity = self._world:GetEntityByID(targetID)
     local buffResult = SkillBuffEffectResult:New(defenderEntity:GetID())
-    local cfgNewBuff = (Cfg.cfg_buff)[buffID]
+    local cfgNewBuff = Cfg.cfg_buff[buffID]
     if cfgNewBuff then
       triggerSvc:Notify(NTEachAddBuffStart:New(skillID, casterEntity, defenderEntity, attackRange))
-      local buff = (buffLogicService:AddBuff(buffID, defenderEntity, {casterEntity = casterEntity}))
-      local seqID = nil
+      local buff = buffLogicService:AddBuff(buffID, defenderEntity, {casterEntity = casterEntity})
+      local seqID
       if buff then
         seqID = buff:BuffSeq()
         buffResult:AddBuffResult(seqID)
-        ;
-        (table.insert)(buffResultArray, buffResult)
+        table.insert(buffResultArray, buffResult)
       end
       triggerSvc:Notify(NTEachAddBuffEnd:New(skillID, casterEntity, defenderEntity, attackRange, buffID, seqID))
     end
   end
   return buffResultArray
 end
-
-

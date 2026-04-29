@@ -1,48 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_pet_minos_ghost_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_PetMinosGhostDamage", Object)
 SkillEffectCalc_PetMinosGhostDamage = SkillEffectCalc_PetMinosGhostDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_PetMinosGhostDamage.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_PetMinosGhostDamage:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PetMinosGhostDamage.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_PetMinosGhostDamage:DoSkillEffectCalculator(skillEffectCalcParam)
   local param = skillEffectCalcParam.skillEffectParam
-  local utilSvc = (self._world):GetService("UtilData")
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local utilSvc = self._world:GetService("UtilData")
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local logicChainPathCmpt = teamEntity:LogicChainPath()
   local logicPath = logicChainPathCmpt:GetLogicChainPath()
   local casterEntityID = skillEffectCalcParam:GetCasterEntityID()
-  local casterEntity = (self._world):GetEntityByID(casterEntityID)
+  local casterEntity = self._world:GetEntityByID(casterEntityID)
   self.skillID = skillEffectCalcParam.skillID
   local damageResults = {}
   local centerPos = skillEffectCalcParam:GetCenterPos()
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local dmgResult = self:_CalculateSingleTarget(skillEffectCalcParam, casterEntity, targetID)
     if dmgResult then
-      (table.insert)(damageResults, dmgResult)
+      table.insert(damageResults, dmgResult)
     end
   end
   local result = SkillEffectResultPetMinosGhostDamage:New(centerPos, damageResults, logicPath)
   return {result}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PetMinosGhostDamage._CalculateSingleTarget = function(self, skillEffectCalcParam, casterEntity, defenderEntityID)
-  -- function num : 0_2
-  local targetEntity = (self._world):GetEntityByID(defenderEntityID)
+function SkillEffectCalc_PetMinosGhostDamage:_CalculateSingleTarget(skillEffectCalcParam, casterEntity, defenderEntityID)
+  local targetEntity = self._world:GetEntityByID(defenderEntityID)
   if targetEntity then
     local dmgResult = self:_Attack(casterEntity, targetEntity, skillEffectCalcParam.skillEffectParam)
     if dmgResult then
@@ -51,19 +38,18 @@ SkillEffectCalc_PetMinosGhostDamage._CalculateSingleTarget = function(self, skil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PetMinosGhostDamage._Attack = function(self, casterEntity, targetEntity, param)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectCalc_PetMinosGhostDamage:_Attack(casterEntity, targetEntity, param)
   local effectCalcSvc = self._skillEffectService
   local damageStageIndex = param:GetSkillEffectDamageStageIndex()
   local attackPos = casterEntity:GetGridPosition()
   local targetPos = targetEntity:GetGridPosition()
   local percent = param:GetDamagePercent()
-  local tmpParam = SkillDamageEffectParam:New({percent = percent, formulaID = param:GetDamageFormulaID(), damageStageIndex = damageStageIndex})
+  local tmpParam = SkillDamageEffectParam:New({
+    percent = percent,
+    formulaID = param:GetDamageFormulaID(),
+    damageStageIndex = damageStageIndex
+  })
   local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(casterEntity, attackPos, targetEntity, targetPos, self.skillID, tmpParam, SkillEffectType.PetMinosGhostDamage, damageStageIndex)
   local skillResult = effectCalcSvc:NewSkillDamageEffectResult(targetPos, targetEntity:GetID(), nTotalDamage, listDamageInfo, damageStageIndex)
   return skillResult
 end
-
-

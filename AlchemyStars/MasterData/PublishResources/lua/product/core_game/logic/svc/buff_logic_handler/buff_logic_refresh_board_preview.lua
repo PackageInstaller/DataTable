@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_refresh_board_preview.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicRefreshBoardPreview", BuffLogicBase)
 BuffLogicRefreshBoardPreview = BuffLogicRefreshBoardPreview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRefreshBoardPreview.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicRefreshBoardPreview:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRefreshBoardPreview.DoLogic = function(self)
-  -- function num : 0_1
-  local svc = (self._world):GetService("L2R")
+function BuffLogicRefreshBoardPreview:DoLogic()
+  local svc = self._world:GetService("L2R")
   svc:L2RBoardLogicData()
 end
-
-

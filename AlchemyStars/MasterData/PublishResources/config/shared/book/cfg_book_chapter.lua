@@ -1,198 +1,957 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/book/cfg_book_chapter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ChapterId = 2, BookId = 3, ItemId = 4, Name = 5, Content = 6, Des = 7, GetDes = 8}
-local common = {"str_dispatch_book_chapter_get_des", "str_dispatch_book_chapter_get_des1"}
+local key = {
+  ID = 1,
+  ChapterId = 2,
+  BookId = 3,
+  ItemId = 4,
+  Name = 5,
+  Content = 6,
+  Des = 7,
+  GetDes = 8
+}
+local common = {
+  "str_dispatch_book_chapter_get_des",
+  "str_dispatch_book_chapter_get_des1"
+}
 local config = {
-{1, 1, 1000, 3701001, "str_dispatch_book_chaptername_1000_1", "str_dispatch_book_chaptercont_1000_1", "str_dispatch_book_chapterdes_1000_1", common[1]}
-, 
-{2, 2, 1000, 3701002, "str_dispatch_book_chaptername_1000_2", "str_dispatch_book_chaptercont_1000_2", "str_dispatch_book_chapterdes_1000_2", common[1]}
-, 
-{3, 3, 1000, 3701003, "str_dispatch_book_chaptername_1000_3", "str_dispatch_book_chaptercont_1000_3", "str_dispatch_book_chapterdes_1000_3", common[1]}
-, 
-{4, 4, 1000, 3701004, "str_dispatch_book_chaptername_1000_4", "str_dispatch_book_chaptercont_1000_4", "str_dispatch_book_chapterdes_1000_4", common[1]}
-, 
-{5, 1, 2000, 3702001, "str_dispatch_book_chaptername_2000_1", "str_dispatch_book_chaptercont_2000_1", "str_dispatch_book_chapterdes_2000_1", common[1]}
-, 
-{6, 2, 2000, 3702002, "str_dispatch_book_chaptername_2000_2", "str_dispatch_book_chaptercont_2000_2", "str_dispatch_book_chapterdes_2000_2", common[1]}
-, 
-{7, 3, 2000, 3702003, "str_dispatch_book_chaptername_2000_3", "str_dispatch_book_chaptercont_2000_3", "str_dispatch_book_chapterdes_2000_3", common[1]}
-, 
-{8, 4, 2000, 3702004, "str_dispatch_book_chaptername_2000_4", "str_dispatch_book_chaptercont_2000_4", "str_dispatch_book_chapterdes_2000_4", common[1]}
-, 
-{9, 1, 3000, 3703001, "str_dispatch_book_chaptername_3000_1", "str_dispatch_book_chaptercont_3000_1", "str_dispatch_book_chapterdes_3000_1", common[1]}
-, 
-{10, 2, 3000, 3703002, "str_dispatch_book_chaptername_3000_2", "str_dispatch_book_chaptercont_3000_2", "str_dispatch_book_chapterdes_3000_2", common[1]}
-, 
-{11, 3, 3000, 3703003, "str_dispatch_book_chaptername_3000_3", "str_dispatch_book_chaptercont_3000_3", "str_dispatch_book_chapterdes_3000_3", common[1]}
-, 
-{12, 4, 3000, 3703004, "str_dispatch_book_chaptername_3000_4", "str_dispatch_book_chaptercont_3000_4", "str_dispatch_book_chapterdes_3000_4", common[1]}
-, 
-{13, 1, 4000, 3704001, "str_dispatch_book_chaptername_4000_1", "str_dispatch_book_chaptercont_4000_1", "str_dispatch_book_chapterdes_4000_1", common[1]}
-, 
-{14, 2, 4000, 3704002, "str_dispatch_book_chaptername_4000_2", "str_dispatch_book_chaptercont_4000_2", "str_dispatch_book_chapterdes_4000_2", common[1]}
-, 
-{15, 3, 4000, 3704003, "str_dispatch_book_chaptername_4000_3", "str_dispatch_book_chaptercont_4000_3", "str_dispatch_book_chapterdes_4000_3", common[1]}
-, 
-{16, 4, 4000, 3704004, "str_dispatch_book_chaptername_4000_4", "str_dispatch_book_chaptercont_4000_4", "str_dispatch_book_chapterdes_4000_4", common[1]}
-, 
-{17, 1, 5000, 3705001, "str_dispatch_book_chaptername_5000_1", "str_dispatch_book_chaptercont_5000_1", "str_dispatch_book_chapterdes_5000_1", common[1]}
-, 
-{18, 2, 5000, 3705002, "str_dispatch_book_chaptername_5000_2", "str_dispatch_book_chaptercont_5000_2", "str_dispatch_book_chapterdes_5000_2", common[1]}
-, 
-{19, 3, 5000, 3705003, "str_dispatch_book_chaptername_5000_3", "str_dispatch_book_chaptercont_5000_3", "str_dispatch_book_chapterdes_5000_3", common[1]}
-, 
-{20, 4, 5000, 3705004, "str_dispatch_book_chaptername_5000_4", "str_dispatch_book_chaptercont_5000_4", "str_dispatch_book_chapterdes_5000_4", common[1]}
-, 
-{21, 5, 5000, 3705005, "str_dispatch_book_chaptername_5000_5", "str_dispatch_book_chaptercont_5000_5", "str_dispatch_book_chapterdes_5000_5", common[1]}
-, 
-{22, 1, 6000, 3706001, "str_dispatch_book_chaptername_6000_1", "str_dispatch_book_chaptercont_6000_1", "str_dispatch_book_chapterdes_6000_1", common[1]}
-, 
-{23, 2, 6000, 3706002, "str_dispatch_book_chaptername_6000_2", "str_dispatch_book_chaptercont_6000_2", "str_dispatch_book_chapterdes_6000_2", common[1]}
-, 
-{24, 3, 6000, 3706003, "str_dispatch_book_chaptername_6000_3", "str_dispatch_book_chaptercont_6000_3", "str_dispatch_book_chapterdes_6000_3", common[1]}
-, 
-{25, 4, 6000, 3706004, "str_dispatch_book_chaptername_6000_4", "str_dispatch_book_chaptercont_6000_4", "str_dispatch_book_chapterdes_6000_4", common[1]}
-, 
-{26, 1, 7000, 3707001, "str_dispatch_book_chaptername_7000_1", "str_dispatch_book_chaptercont_7000_1", "str_dispatch_book_chapterdes_7000_1", common[1]}
-, 
-{27, 2, 7000, 3707002, "str_dispatch_book_chaptername_7000_2", "str_dispatch_book_chaptercont_7000_2", "str_dispatch_book_chapterdes_7000_2", common[1]}
-, 
-{28, 3, 7000, 3707003, "str_dispatch_book_chaptername_7000_3", "str_dispatch_book_chaptercont_7000_3", "str_dispatch_book_chapterdes_7000_3", common[1]}
-, 
-{29, 1, 8000, 3708001, "str_dispatch_book_chaptername_8000_1", "str_dispatch_book_chaptercont_8000_1", "str_dispatch_book_chapterdes_8000_1", common[1]}
-, 
-{30, 2, 8000, 3708002, "str_dispatch_book_chaptername_8000_2", "str_dispatch_book_chaptercont_8000_2", "str_dispatch_book_chapterdes_8000_2", common[1]}
-, 
-{31, 3, 8000, 3708003, "str_dispatch_book_chaptername_8000_3", "str_dispatch_book_chaptercont_8000_3", "str_dispatch_book_chapterdes_8000_3", common[1]}
-, 
-{32, 4, 8000, 3708004, "str_dispatch_book_chaptername_8000_4", "str_dispatch_book_chaptercont_8000_4", "str_dispatch_book_chapterdes_8000_4", common[1]}
-, 
-{33, 1, 9000, 3709001, "str_dispatch_book_chaptername_9000_1", "str_dispatch_book_chaptercont_9000_1", "str_dispatch_book_chapterdes_9000_1", common[1]}
-, 
-{34, 2, 9000, 3709002, "str_dispatch_book_chaptername_9000_2", "str_dispatch_book_chaptercont_9000_2", "str_dispatch_book_chapterdes_9000_2", common[1]}
-, 
-{35, 3, 9000, 3709003, "str_dispatch_book_chaptername_9000_3", "str_dispatch_book_chaptercont_9000_3", "str_dispatch_book_chapterdes_9000_3", common[1]}
-, 
-{36, 4, 9000, 3709004, "str_dispatch_book_chaptername_9000_4", "str_dispatch_book_chaptercont_9000_4", "str_dispatch_book_chapterdes_9000_4", common[1]}
-, 
-{37, 1, 10000, 3710001, "str_dispatch_book_chaptername_10000_1", "str_dispatch_book_chaptercont_10000_1", "str_dispatch_book_chapterdes_10000_1", common[1]}
-, 
-{38, 2, 10000, 3710002, "str_dispatch_book_chaptername_10000_2", "str_dispatch_book_chaptercont_10000_2", "str_dispatch_book_chapterdes_10000_2", common[1]}
-, 
-{39, 3, 10000, 3710003, "str_dispatch_book_chaptername_10000_3", "str_dispatch_book_chaptercont_10000_3", "str_dispatch_book_chapterdes_10000_3", common[1]}
-, 
-{40, 4, 10000, 3710004, "str_dispatch_book_chaptername_10000_4", "str_dispatch_book_chaptercont_10000_4", "str_dispatch_book_chapterdes_10000_4", common[1]}
-, 
-{41, 5, 10000, 3710005, "str_dispatch_book_chaptername_10000_5", "str_dispatch_book_chaptercont_10000_5", "str_dispatch_book_chapterdes_10000_5", common[1]}
-, 
-{42, 1, 11000, 3711001, "str_dispatch_book_chaptername_11000_1", "str_dispatch_book_chaptercont_11000_1", "str_dispatch_book_chapterdes_11000_1", common[1]}
-, 
-{43, 2, 11000, 3711002, "str_dispatch_book_chaptername_11000_2", "str_dispatch_book_chaptercont_11000_2", "str_dispatch_book_chapterdes_11000_2", common[1]}
-, 
-{44, 3, 11000, 3711003, "str_dispatch_book_chaptername_11000_3", "str_dispatch_book_chaptercont_11000_3", "str_dispatch_book_chapterdes_11000_3", common[1]}
-, 
-{45, 4, 11000, 3711004, "str_dispatch_book_chaptername_11000_4", "str_dispatch_book_chaptercont_11000_4", "str_dispatch_book_chapterdes_11000_4", common[1]}
-, 
-{46, 5, 11000, 3711005, "str_dispatch_book_chaptername_11000_5", "str_dispatch_book_chaptercont_11000_5", "str_dispatch_book_chapterdes_11000_5", common[1]}
-, 
-{47, 1, 12000, 3712001, "str_dispatch_book_chaptername_12000_1", "str_dispatch_book_chaptercont_12000_1", "str_dispatch_book_chapterdes_12000_1", common[2]}
-, 
-{48, 2, 12000, 3712002, "str_dispatch_book_chaptername_12000_2", "str_dispatch_book_chaptercont_12000_2", "str_dispatch_book_chapterdes_12000_2", common[2]}
-, 
-{49, 3, 12000, 3712003, "str_dispatch_book_chaptername_12000_3", "str_dispatch_book_chaptercont_12000_3", "str_dispatch_book_chapterdes_12000_3", common[2]}
-, 
-{50, 4, 12000, 3712004, "str_dispatch_book_chaptername_12000_4", "str_dispatch_book_chaptercont_12000_4", "str_dispatch_book_chapterdes_12000_4", common[2]}
-, 
-{51, 5, 12000, 3712005, "str_dispatch_book_chaptername_12000_5", "str_dispatch_book_chaptercont_12000_5", "str_dispatch_book_chapterdes_12000_5", common[2]}
-, 
-{52, 6, 12000, 3712006, "str_dispatch_book_chaptername_12000_6", "str_dispatch_book_chaptercont_12000_6", "str_dispatch_book_chapterdes_12000_6", common[2]}
-, 
-{53, 7, 12000, 3712007, "str_dispatch_book_chaptername_12000_7", "str_dispatch_book_chaptercont_12000_7", "str_dispatch_book_chapterdes_12000_7", common[2]}
-, 
-{54, 8, 12000, 3712008, "str_dispatch_book_chaptername_12000_8", "str_dispatch_book_chaptercont_12000_8", "str_dispatch_book_chapterdes_12000_8", common[2]}
-, 
-{55, 9, 12000, 3712009, "str_dispatch_book_chaptername_12000_9", "str_dispatch_book_chaptercont_12000_9", "str_dispatch_book_chapterdes_12000_9", common[2]}
-, 
-{56, 10, 12000, 3712010, "str_dispatch_book_chaptername_12000_10", "str_dispatch_book_chaptercont_12000_10", "str_dispatch_book_chapterdes_12000_10", common[2]}
-, 
-{57, 11, 12000, 3712011, "str_dispatch_book_chaptername_12000_11", "str_dispatch_book_chaptercont_12000_11", "str_dispatch_book_chapterdes_12000_11", common[2]}
-, 
-{58, 12, 12000, 3712012, "str_dispatch_book_chaptername_12000_12", "str_dispatch_book_chaptercont_12000_12", "str_dispatch_book_chapterdes_12000_12", common[2]}
-, 
-{59, 1, 13000, 3713001, "str_dispatch_book_chaptername_13000_1", "str_dispatch_book_chaptercont_13000_1", "str_dispatch_book_chapterdes_13000_1", common[2]}
-, 
-{60, 2, 13000, 3713002, "str_dispatch_book_chaptername_13000_2", "str_dispatch_book_chaptercont_13000_2", "str_dispatch_book_chapterdes_13000_2", common[2]}
-, 
-{61, 3, 13000, 3713003, "str_dispatch_book_chaptername_13000_3", "str_dispatch_book_chaptercont_13000_3", "str_dispatch_book_chapterdes_13000_3", common[2]}
-, 
-{62, 4, 13000, 3713004, "str_dispatch_book_chaptername_13000_4", "str_dispatch_book_chaptercont_13000_4", "str_dispatch_book_chapterdes_13000_4", common[2]}
-, 
-{63, 5, 13000, 3713005, "str_dispatch_book_chaptername_13000_5", "str_dispatch_book_chaptercont_13000_5", "str_dispatch_book_chapterdes_13000_5", common[2]}
-, 
-{64, 6, 13000, 3713006, "str_dispatch_book_chaptername_13000_6", "str_dispatch_book_chaptercont_13000_6", "str_dispatch_book_chapterdes_13000_6", common[2]}
-, 
-{65, 7, 13000, 3713007, "str_dispatch_book_chaptername_13000_7", "str_dispatch_book_chaptercont_13000_7", "str_dispatch_book_chapterdes_13000_7", common[2]}
-, 
-{66, 8, 13000, 3713008, "str_dispatch_book_chaptername_13000_8", "str_dispatch_book_chaptercont_13000_8", "str_dispatch_book_chapterdes_13000_8", common[2]}
-, 
-{67, 9, 13000, 3713009, "str_dispatch_book_chaptername_13000_9", "str_dispatch_book_chaptercont_13000_9", "str_dispatch_book_chapterdes_13000_9", common[2]}
-, 
-{68, 10, 13000, 3713010, "str_dispatch_book_chaptername_13000_10", "str_dispatch_book_chaptercont_13000_10", "str_dispatch_book_chapterdes_13000_10", common[2]}
-, 
-{69, 11, 13000, 3713011, "str_dispatch_book_chaptername_13000_11", "str_dispatch_book_chaptercont_13000_11", "str_dispatch_book_chapterdes_13000_11", common[2]}
-, 
-{70, 12, 13000, 3713012, "str_dispatch_book_chaptername_13000_12", "str_dispatch_book_chaptercont_13000_12", "str_dispatch_book_chapterdes_13000_12", common[2]}
-, 
-{71, 1, 14000, 3714001, "str_dispatch_book_chaptername_14000_1", "str_dispatch_book_chaptercont_14000_1", "str_dispatch_book_chapterdes_14000_1", common[2]}
-, 
-{72, 2, 14000, 3714002, "str_dispatch_book_chaptername_14000_2", "str_dispatch_book_chaptercont_14000_2", "str_dispatch_book_chapterdes_14000_2", common[2]}
-, 
-{73, 3, 14000, 3714003, "str_dispatch_book_chaptername_14000_3", "str_dispatch_book_chaptercont_14000_3", "str_dispatch_book_chapterdes_14000_3", common[2]}
-, 
-{74, 4, 14000, 3714004, "str_dispatch_book_chaptername_14000_4", "str_dispatch_book_chaptercont_14000_4", "str_dispatch_book_chapterdes_14000_4", common[2]}
-, 
-{75, 5, 14000, 3714005, "str_dispatch_book_chaptername_14000_5", "str_dispatch_book_chaptercont_14000_5", "str_dispatch_book_chapterdes_14000_5", common[2]}
-, 
-{76, 6, 14000, 3714006, "str_dispatch_book_chaptername_14000_6", "str_dispatch_book_chaptercont_14000_6", "str_dispatch_book_chapterdes_14000_6", common[2]}
-, 
-{77, 7, 14000, 3714007, "str_dispatch_book_chaptername_14000_7", "str_dispatch_book_chaptercont_14000_7", "str_dispatch_book_chapterdes_14000_7", common[2]}
-, 
-{78, 8, 14000, 3714008, "str_dispatch_book_chaptername_14000_8", "str_dispatch_book_chaptercont_14000_8", "str_dispatch_book_chapterdes_14000_8", common[2]}
-, 
-{79, 9, 14000, 3714009, "str_dispatch_book_chaptername_14000_9", "str_dispatch_book_chaptercont_14000_9", "str_dispatch_book_chapterdes_14000_9", common[2]}
-, 
-{80, 10, 14000, 3714010, "str_dispatch_book_chaptername_14000_10", "str_dispatch_book_chaptercont_14000_10", "str_dispatch_book_chapterdes_14000_10", common[2]}
-, 
-{81, 11, 14000, 3714011, "str_dispatch_book_chaptername_14000_11", "str_dispatch_book_chaptercont_14000_11", "str_dispatch_book_chapterdes_14000_11", common[2]}
-, 
-{82, 12, 14000, 3714012, "str_dispatch_book_chaptername_14000_12", "str_dispatch_book_chaptercont_14000_12", "str_dispatch_book_chapterdes_14000_12", common[2]}
-, 
-{83, 1, 15000, 3715001, "str_dispatch_book_chaptername_15000_1", "str_dispatch_book_chaptercont_15000_1", "str_dispatch_book_chapterdes_15000_1", common[2]}
-, 
-{84, 2, 15000, 3715002, "str_dispatch_book_chaptername_15000_2", "str_dispatch_book_chaptercont_15000_2", "str_dispatch_book_chapterdes_15000_2", common[2]}
-, 
-{85, 3, 15000, 3715003, "str_dispatch_book_chaptername_15000_3", "str_dispatch_book_chaptercont_15000_3", "str_dispatch_book_chapterdes_15000_3", common[2]}
-, 
-{86, 4, 15000, 3715004, "str_dispatch_book_chaptername_15000_4", "str_dispatch_book_chaptercont_15000_4", "str_dispatch_book_chapterdes_15000_4", common[2]}
-, 
-{87, 5, 15000, 3715005, "str_dispatch_book_chaptername_15000_5", "str_dispatch_book_chaptercont_15000_5", "str_dispatch_book_chapterdes_15000_5", common[2]}
-, 
-{88, 6, 15000, 3715006, "str_dispatch_book_chaptername_15000_6", "str_dispatch_book_chaptercont_15000_6", "str_dispatch_book_chapterdes_15000_6", common[2]}
-, 
-{89, 7, 15000, 3715007, "str_dispatch_book_chaptername_15000_7", "str_dispatch_book_chaptercont_15000_7", "str_dispatch_book_chapterdes_15000_7", common[2]}
-, 
-{90, 8, 15000, 3715008, "str_dispatch_book_chaptername_15000_8", "str_dispatch_book_chaptercont_15000_8", "str_dispatch_book_chapterdes_15000_8", common[2]}
-, 
-{91, 9, 15000, 3715009, "str_dispatch_book_chaptername_15000_9", "str_dispatch_book_chaptercont_15000_9", "str_dispatch_book_chapterdes_15000_9", common[2]}
-, 
-{92, 10, 15000, 3715010, "str_dispatch_book_chaptername_15000_10", "str_dispatch_book_chaptercont_15000_10", "str_dispatch_book_chapterdes_15000_10", common[2]}
-, 
-{93, 11, 15000, 3715011, "str_dispatch_book_chaptername_15000_11", "str_dispatch_book_chaptercont_15000_11", "str_dispatch_book_chapterdes_15000_11", common[2]}
-, 
-{94, 12, 15000, 3715012, "str_dispatch_book_chaptername_15000_12", "str_dispatch_book_chaptercont_15000_12", "str_dispatch_book_chapterdes_15000_12", common[2]}
+  {
+    1,
+    1,
+    1000,
+    3701001,
+    "str_dispatch_book_chaptername_1000_1",
+    "str_dispatch_book_chaptercont_1000_1",
+    "str_dispatch_book_chapterdes_1000_1",
+    common[1]
+  },
+  {
+    2,
+    2,
+    1000,
+    3701002,
+    "str_dispatch_book_chaptername_1000_2",
+    "str_dispatch_book_chaptercont_1000_2",
+    "str_dispatch_book_chapterdes_1000_2",
+    common[1]
+  },
+  {
+    3,
+    3,
+    1000,
+    3701003,
+    "str_dispatch_book_chaptername_1000_3",
+    "str_dispatch_book_chaptercont_1000_3",
+    "str_dispatch_book_chapterdes_1000_3",
+    common[1]
+  },
+  {
+    4,
+    4,
+    1000,
+    3701004,
+    "str_dispatch_book_chaptername_1000_4",
+    "str_dispatch_book_chaptercont_1000_4",
+    "str_dispatch_book_chapterdes_1000_4",
+    common[1]
+  },
+  {
+    5,
+    1,
+    2000,
+    3702001,
+    "str_dispatch_book_chaptername_2000_1",
+    "str_dispatch_book_chaptercont_2000_1",
+    "str_dispatch_book_chapterdes_2000_1",
+    common[1]
+  },
+  {
+    6,
+    2,
+    2000,
+    3702002,
+    "str_dispatch_book_chaptername_2000_2",
+    "str_dispatch_book_chaptercont_2000_2",
+    "str_dispatch_book_chapterdes_2000_2",
+    common[1]
+  },
+  {
+    7,
+    3,
+    2000,
+    3702003,
+    "str_dispatch_book_chaptername_2000_3",
+    "str_dispatch_book_chaptercont_2000_3",
+    "str_dispatch_book_chapterdes_2000_3",
+    common[1]
+  },
+  {
+    8,
+    4,
+    2000,
+    3702004,
+    "str_dispatch_book_chaptername_2000_4",
+    "str_dispatch_book_chaptercont_2000_4",
+    "str_dispatch_book_chapterdes_2000_4",
+    common[1]
+  },
+  {
+    9,
+    1,
+    3000,
+    3703001,
+    "str_dispatch_book_chaptername_3000_1",
+    "str_dispatch_book_chaptercont_3000_1",
+    "str_dispatch_book_chapterdes_3000_1",
+    common[1]
+  },
+  {
+    10,
+    2,
+    3000,
+    3703002,
+    "str_dispatch_book_chaptername_3000_2",
+    "str_dispatch_book_chaptercont_3000_2",
+    "str_dispatch_book_chapterdes_3000_2",
+    common[1]
+  },
+  {
+    11,
+    3,
+    3000,
+    3703003,
+    "str_dispatch_book_chaptername_3000_3",
+    "str_dispatch_book_chaptercont_3000_3",
+    "str_dispatch_book_chapterdes_3000_3",
+    common[1]
+  },
+  {
+    12,
+    4,
+    3000,
+    3703004,
+    "str_dispatch_book_chaptername_3000_4",
+    "str_dispatch_book_chaptercont_3000_4",
+    "str_dispatch_book_chapterdes_3000_4",
+    common[1]
+  },
+  {
+    13,
+    1,
+    4000,
+    3704001,
+    "str_dispatch_book_chaptername_4000_1",
+    "str_dispatch_book_chaptercont_4000_1",
+    "str_dispatch_book_chapterdes_4000_1",
+    common[1]
+  },
+  {
+    14,
+    2,
+    4000,
+    3704002,
+    "str_dispatch_book_chaptername_4000_2",
+    "str_dispatch_book_chaptercont_4000_2",
+    "str_dispatch_book_chapterdes_4000_2",
+    common[1]
+  },
+  {
+    15,
+    3,
+    4000,
+    3704003,
+    "str_dispatch_book_chaptername_4000_3",
+    "str_dispatch_book_chaptercont_4000_3",
+    "str_dispatch_book_chapterdes_4000_3",
+    common[1]
+  },
+  {
+    16,
+    4,
+    4000,
+    3704004,
+    "str_dispatch_book_chaptername_4000_4",
+    "str_dispatch_book_chaptercont_4000_4",
+    "str_dispatch_book_chapterdes_4000_4",
+    common[1]
+  },
+  {
+    17,
+    1,
+    5000,
+    3705001,
+    "str_dispatch_book_chaptername_5000_1",
+    "str_dispatch_book_chaptercont_5000_1",
+    "str_dispatch_book_chapterdes_5000_1",
+    common[1]
+  },
+  {
+    18,
+    2,
+    5000,
+    3705002,
+    "str_dispatch_book_chaptername_5000_2",
+    "str_dispatch_book_chaptercont_5000_2",
+    "str_dispatch_book_chapterdes_5000_2",
+    common[1]
+  },
+  {
+    19,
+    3,
+    5000,
+    3705003,
+    "str_dispatch_book_chaptername_5000_3",
+    "str_dispatch_book_chaptercont_5000_3",
+    "str_dispatch_book_chapterdes_5000_3",
+    common[1]
+  },
+  {
+    20,
+    4,
+    5000,
+    3705004,
+    "str_dispatch_book_chaptername_5000_4",
+    "str_dispatch_book_chaptercont_5000_4",
+    "str_dispatch_book_chapterdes_5000_4",
+    common[1]
+  },
+  {
+    21,
+    5,
+    5000,
+    3705005,
+    "str_dispatch_book_chaptername_5000_5",
+    "str_dispatch_book_chaptercont_5000_5",
+    "str_dispatch_book_chapterdes_5000_5",
+    common[1]
+  },
+  {
+    22,
+    1,
+    6000,
+    3706001,
+    "str_dispatch_book_chaptername_6000_1",
+    "str_dispatch_book_chaptercont_6000_1",
+    "str_dispatch_book_chapterdes_6000_1",
+    common[1]
+  },
+  {
+    23,
+    2,
+    6000,
+    3706002,
+    "str_dispatch_book_chaptername_6000_2",
+    "str_dispatch_book_chaptercont_6000_2",
+    "str_dispatch_book_chapterdes_6000_2",
+    common[1]
+  },
+  {
+    24,
+    3,
+    6000,
+    3706003,
+    "str_dispatch_book_chaptername_6000_3",
+    "str_dispatch_book_chaptercont_6000_3",
+    "str_dispatch_book_chapterdes_6000_3",
+    common[1]
+  },
+  {
+    25,
+    4,
+    6000,
+    3706004,
+    "str_dispatch_book_chaptername_6000_4",
+    "str_dispatch_book_chaptercont_6000_4",
+    "str_dispatch_book_chapterdes_6000_4",
+    common[1]
+  },
+  {
+    26,
+    1,
+    7000,
+    3707001,
+    "str_dispatch_book_chaptername_7000_1",
+    "str_dispatch_book_chaptercont_7000_1",
+    "str_dispatch_book_chapterdes_7000_1",
+    common[1]
+  },
+  {
+    27,
+    2,
+    7000,
+    3707002,
+    "str_dispatch_book_chaptername_7000_2",
+    "str_dispatch_book_chaptercont_7000_2",
+    "str_dispatch_book_chapterdes_7000_2",
+    common[1]
+  },
+  {
+    28,
+    3,
+    7000,
+    3707003,
+    "str_dispatch_book_chaptername_7000_3",
+    "str_dispatch_book_chaptercont_7000_3",
+    "str_dispatch_book_chapterdes_7000_3",
+    common[1]
+  },
+  {
+    29,
+    1,
+    8000,
+    3708001,
+    "str_dispatch_book_chaptername_8000_1",
+    "str_dispatch_book_chaptercont_8000_1",
+    "str_dispatch_book_chapterdes_8000_1",
+    common[1]
+  },
+  {
+    30,
+    2,
+    8000,
+    3708002,
+    "str_dispatch_book_chaptername_8000_2",
+    "str_dispatch_book_chaptercont_8000_2",
+    "str_dispatch_book_chapterdes_8000_2",
+    common[1]
+  },
+  {
+    31,
+    3,
+    8000,
+    3708003,
+    "str_dispatch_book_chaptername_8000_3",
+    "str_dispatch_book_chaptercont_8000_3",
+    "str_dispatch_book_chapterdes_8000_3",
+    common[1]
+  },
+  {
+    32,
+    4,
+    8000,
+    3708004,
+    "str_dispatch_book_chaptername_8000_4",
+    "str_dispatch_book_chaptercont_8000_4",
+    "str_dispatch_book_chapterdes_8000_4",
+    common[1]
+  },
+  {
+    33,
+    1,
+    9000,
+    3709001,
+    "str_dispatch_book_chaptername_9000_1",
+    "str_dispatch_book_chaptercont_9000_1",
+    "str_dispatch_book_chapterdes_9000_1",
+    common[1]
+  },
+  {
+    34,
+    2,
+    9000,
+    3709002,
+    "str_dispatch_book_chaptername_9000_2",
+    "str_dispatch_book_chaptercont_9000_2",
+    "str_dispatch_book_chapterdes_9000_2",
+    common[1]
+  },
+  {
+    35,
+    3,
+    9000,
+    3709003,
+    "str_dispatch_book_chaptername_9000_3",
+    "str_dispatch_book_chaptercont_9000_3",
+    "str_dispatch_book_chapterdes_9000_3",
+    common[1]
+  },
+  {
+    36,
+    4,
+    9000,
+    3709004,
+    "str_dispatch_book_chaptername_9000_4",
+    "str_dispatch_book_chaptercont_9000_4",
+    "str_dispatch_book_chapterdes_9000_4",
+    common[1]
+  },
+  {
+    37,
+    1,
+    10000,
+    3710001,
+    "str_dispatch_book_chaptername_10000_1",
+    "str_dispatch_book_chaptercont_10000_1",
+    "str_dispatch_book_chapterdes_10000_1",
+    common[1]
+  },
+  {
+    38,
+    2,
+    10000,
+    3710002,
+    "str_dispatch_book_chaptername_10000_2",
+    "str_dispatch_book_chaptercont_10000_2",
+    "str_dispatch_book_chapterdes_10000_2",
+    common[1]
+  },
+  {
+    39,
+    3,
+    10000,
+    3710003,
+    "str_dispatch_book_chaptername_10000_3",
+    "str_dispatch_book_chaptercont_10000_3",
+    "str_dispatch_book_chapterdes_10000_3",
+    common[1]
+  },
+  {
+    40,
+    4,
+    10000,
+    3710004,
+    "str_dispatch_book_chaptername_10000_4",
+    "str_dispatch_book_chaptercont_10000_4",
+    "str_dispatch_book_chapterdes_10000_4",
+    common[1]
+  },
+  {
+    41,
+    5,
+    10000,
+    3710005,
+    "str_dispatch_book_chaptername_10000_5",
+    "str_dispatch_book_chaptercont_10000_5",
+    "str_dispatch_book_chapterdes_10000_5",
+    common[1]
+  },
+  {
+    42,
+    1,
+    11000,
+    3711001,
+    "str_dispatch_book_chaptername_11000_1",
+    "str_dispatch_book_chaptercont_11000_1",
+    "str_dispatch_book_chapterdes_11000_1",
+    common[1]
+  },
+  {
+    43,
+    2,
+    11000,
+    3711002,
+    "str_dispatch_book_chaptername_11000_2",
+    "str_dispatch_book_chaptercont_11000_2",
+    "str_dispatch_book_chapterdes_11000_2",
+    common[1]
+  },
+  {
+    44,
+    3,
+    11000,
+    3711003,
+    "str_dispatch_book_chaptername_11000_3",
+    "str_dispatch_book_chaptercont_11000_3",
+    "str_dispatch_book_chapterdes_11000_3",
+    common[1]
+  },
+  {
+    45,
+    4,
+    11000,
+    3711004,
+    "str_dispatch_book_chaptername_11000_4",
+    "str_dispatch_book_chaptercont_11000_4",
+    "str_dispatch_book_chapterdes_11000_4",
+    common[1]
+  },
+  {
+    46,
+    5,
+    11000,
+    3711005,
+    "str_dispatch_book_chaptername_11000_5",
+    "str_dispatch_book_chaptercont_11000_5",
+    "str_dispatch_book_chapterdes_11000_5",
+    common[1]
+  },
+  {
+    47,
+    1,
+    12000,
+    3712001,
+    "str_dispatch_book_chaptername_12000_1",
+    "str_dispatch_book_chaptercont_12000_1",
+    "str_dispatch_book_chapterdes_12000_1",
+    common[2]
+  },
+  {
+    48,
+    2,
+    12000,
+    3712002,
+    "str_dispatch_book_chaptername_12000_2",
+    "str_dispatch_book_chaptercont_12000_2",
+    "str_dispatch_book_chapterdes_12000_2",
+    common[2]
+  },
+  {
+    49,
+    3,
+    12000,
+    3712003,
+    "str_dispatch_book_chaptername_12000_3",
+    "str_dispatch_book_chaptercont_12000_3",
+    "str_dispatch_book_chapterdes_12000_3",
+    common[2]
+  },
+  {
+    50,
+    4,
+    12000,
+    3712004,
+    "str_dispatch_book_chaptername_12000_4",
+    "str_dispatch_book_chaptercont_12000_4",
+    "str_dispatch_book_chapterdes_12000_4",
+    common[2]
+  },
+  {
+    51,
+    5,
+    12000,
+    3712005,
+    "str_dispatch_book_chaptername_12000_5",
+    "str_dispatch_book_chaptercont_12000_5",
+    "str_dispatch_book_chapterdes_12000_5",
+    common[2]
+  },
+  {
+    52,
+    6,
+    12000,
+    3712006,
+    "str_dispatch_book_chaptername_12000_6",
+    "str_dispatch_book_chaptercont_12000_6",
+    "str_dispatch_book_chapterdes_12000_6",
+    common[2]
+  },
+  {
+    53,
+    7,
+    12000,
+    3712007,
+    "str_dispatch_book_chaptername_12000_7",
+    "str_dispatch_book_chaptercont_12000_7",
+    "str_dispatch_book_chapterdes_12000_7",
+    common[2]
+  },
+  {
+    54,
+    8,
+    12000,
+    3712008,
+    "str_dispatch_book_chaptername_12000_8",
+    "str_dispatch_book_chaptercont_12000_8",
+    "str_dispatch_book_chapterdes_12000_8",
+    common[2]
+  },
+  {
+    55,
+    9,
+    12000,
+    3712009,
+    "str_dispatch_book_chaptername_12000_9",
+    "str_dispatch_book_chaptercont_12000_9",
+    "str_dispatch_book_chapterdes_12000_9",
+    common[2]
+  },
+  {
+    56,
+    10,
+    12000,
+    3712010,
+    "str_dispatch_book_chaptername_12000_10",
+    "str_dispatch_book_chaptercont_12000_10",
+    "str_dispatch_book_chapterdes_12000_10",
+    common[2]
+  },
+  {
+    57,
+    11,
+    12000,
+    3712011,
+    "str_dispatch_book_chaptername_12000_11",
+    "str_dispatch_book_chaptercont_12000_11",
+    "str_dispatch_book_chapterdes_12000_11",
+    common[2]
+  },
+  {
+    58,
+    12,
+    12000,
+    3712012,
+    "str_dispatch_book_chaptername_12000_12",
+    "str_dispatch_book_chaptercont_12000_12",
+    "str_dispatch_book_chapterdes_12000_12",
+    common[2]
+  },
+  {
+    59,
+    1,
+    13000,
+    3713001,
+    "str_dispatch_book_chaptername_13000_1",
+    "str_dispatch_book_chaptercont_13000_1",
+    "str_dispatch_book_chapterdes_13000_1",
+    common[2]
+  },
+  {
+    60,
+    2,
+    13000,
+    3713002,
+    "str_dispatch_book_chaptername_13000_2",
+    "str_dispatch_book_chaptercont_13000_2",
+    "str_dispatch_book_chapterdes_13000_2",
+    common[2]
+  },
+  {
+    61,
+    3,
+    13000,
+    3713003,
+    "str_dispatch_book_chaptername_13000_3",
+    "str_dispatch_book_chaptercont_13000_3",
+    "str_dispatch_book_chapterdes_13000_3",
+    common[2]
+  },
+  {
+    62,
+    4,
+    13000,
+    3713004,
+    "str_dispatch_book_chaptername_13000_4",
+    "str_dispatch_book_chaptercont_13000_4",
+    "str_dispatch_book_chapterdes_13000_4",
+    common[2]
+  },
+  {
+    63,
+    5,
+    13000,
+    3713005,
+    "str_dispatch_book_chaptername_13000_5",
+    "str_dispatch_book_chaptercont_13000_5",
+    "str_dispatch_book_chapterdes_13000_5",
+    common[2]
+  },
+  {
+    64,
+    6,
+    13000,
+    3713006,
+    "str_dispatch_book_chaptername_13000_6",
+    "str_dispatch_book_chaptercont_13000_6",
+    "str_dispatch_book_chapterdes_13000_6",
+    common[2]
+  },
+  {
+    65,
+    7,
+    13000,
+    3713007,
+    "str_dispatch_book_chaptername_13000_7",
+    "str_dispatch_book_chaptercont_13000_7",
+    "str_dispatch_book_chapterdes_13000_7",
+    common[2]
+  },
+  {
+    66,
+    8,
+    13000,
+    3713008,
+    "str_dispatch_book_chaptername_13000_8",
+    "str_dispatch_book_chaptercont_13000_8",
+    "str_dispatch_book_chapterdes_13000_8",
+    common[2]
+  },
+  {
+    67,
+    9,
+    13000,
+    3713009,
+    "str_dispatch_book_chaptername_13000_9",
+    "str_dispatch_book_chaptercont_13000_9",
+    "str_dispatch_book_chapterdes_13000_9",
+    common[2]
+  },
+  {
+    68,
+    10,
+    13000,
+    3713010,
+    "str_dispatch_book_chaptername_13000_10",
+    "str_dispatch_book_chaptercont_13000_10",
+    "str_dispatch_book_chapterdes_13000_10",
+    common[2]
+  },
+  {
+    69,
+    11,
+    13000,
+    3713011,
+    "str_dispatch_book_chaptername_13000_11",
+    "str_dispatch_book_chaptercont_13000_11",
+    "str_dispatch_book_chapterdes_13000_11",
+    common[2]
+  },
+  {
+    70,
+    12,
+    13000,
+    3713012,
+    "str_dispatch_book_chaptername_13000_12",
+    "str_dispatch_book_chaptercont_13000_12",
+    "str_dispatch_book_chapterdes_13000_12",
+    common[2]
+  },
+  {
+    71,
+    1,
+    14000,
+    3714001,
+    "str_dispatch_book_chaptername_14000_1",
+    "str_dispatch_book_chaptercont_14000_1",
+    "str_dispatch_book_chapterdes_14000_1",
+    common[2]
+  },
+  {
+    72,
+    2,
+    14000,
+    3714002,
+    "str_dispatch_book_chaptername_14000_2",
+    "str_dispatch_book_chaptercont_14000_2",
+    "str_dispatch_book_chapterdes_14000_2",
+    common[2]
+  },
+  {
+    73,
+    3,
+    14000,
+    3714003,
+    "str_dispatch_book_chaptername_14000_3",
+    "str_dispatch_book_chaptercont_14000_3",
+    "str_dispatch_book_chapterdes_14000_3",
+    common[2]
+  },
+  {
+    74,
+    4,
+    14000,
+    3714004,
+    "str_dispatch_book_chaptername_14000_4",
+    "str_dispatch_book_chaptercont_14000_4",
+    "str_dispatch_book_chapterdes_14000_4",
+    common[2]
+  },
+  {
+    75,
+    5,
+    14000,
+    3714005,
+    "str_dispatch_book_chaptername_14000_5",
+    "str_dispatch_book_chaptercont_14000_5",
+    "str_dispatch_book_chapterdes_14000_5",
+    common[2]
+  },
+  {
+    76,
+    6,
+    14000,
+    3714006,
+    "str_dispatch_book_chaptername_14000_6",
+    "str_dispatch_book_chaptercont_14000_6",
+    "str_dispatch_book_chapterdes_14000_6",
+    common[2]
+  },
+  {
+    77,
+    7,
+    14000,
+    3714007,
+    "str_dispatch_book_chaptername_14000_7",
+    "str_dispatch_book_chaptercont_14000_7",
+    "str_dispatch_book_chapterdes_14000_7",
+    common[2]
+  },
+  {
+    78,
+    8,
+    14000,
+    3714008,
+    "str_dispatch_book_chaptername_14000_8",
+    "str_dispatch_book_chaptercont_14000_8",
+    "str_dispatch_book_chapterdes_14000_8",
+    common[2]
+  },
+  {
+    79,
+    9,
+    14000,
+    3714009,
+    "str_dispatch_book_chaptername_14000_9",
+    "str_dispatch_book_chaptercont_14000_9",
+    "str_dispatch_book_chapterdes_14000_9",
+    common[2]
+  },
+  {
+    80,
+    10,
+    14000,
+    3714010,
+    "str_dispatch_book_chaptername_14000_10",
+    "str_dispatch_book_chaptercont_14000_10",
+    "str_dispatch_book_chapterdes_14000_10",
+    common[2]
+  },
+  {
+    81,
+    11,
+    14000,
+    3714011,
+    "str_dispatch_book_chaptername_14000_11",
+    "str_dispatch_book_chaptercont_14000_11",
+    "str_dispatch_book_chapterdes_14000_11",
+    common[2]
+  },
+  {
+    82,
+    12,
+    14000,
+    3714012,
+    "str_dispatch_book_chaptername_14000_12",
+    "str_dispatch_book_chaptercont_14000_12",
+    "str_dispatch_book_chapterdes_14000_12",
+    common[2]
+  },
+  {
+    83,
+    1,
+    15000,
+    3715001,
+    "str_dispatch_book_chaptername_15000_1",
+    "str_dispatch_book_chaptercont_15000_1",
+    "str_dispatch_book_chapterdes_15000_1",
+    common[2]
+  },
+  {
+    84,
+    2,
+    15000,
+    3715002,
+    "str_dispatch_book_chaptername_15000_2",
+    "str_dispatch_book_chaptercont_15000_2",
+    "str_dispatch_book_chapterdes_15000_2",
+    common[2]
+  },
+  {
+    85,
+    3,
+    15000,
+    3715003,
+    "str_dispatch_book_chaptername_15000_3",
+    "str_dispatch_book_chaptercont_15000_3",
+    "str_dispatch_book_chapterdes_15000_3",
+    common[2]
+  },
+  {
+    86,
+    4,
+    15000,
+    3715004,
+    "str_dispatch_book_chaptername_15000_4",
+    "str_dispatch_book_chaptercont_15000_4",
+    "str_dispatch_book_chapterdes_15000_4",
+    common[2]
+  },
+  {
+    87,
+    5,
+    15000,
+    3715005,
+    "str_dispatch_book_chaptername_15000_5",
+    "str_dispatch_book_chaptercont_15000_5",
+    "str_dispatch_book_chapterdes_15000_5",
+    common[2]
+  },
+  {
+    88,
+    6,
+    15000,
+    3715006,
+    "str_dispatch_book_chaptername_15000_6",
+    "str_dispatch_book_chaptercont_15000_6",
+    "str_dispatch_book_chapterdes_15000_6",
+    common[2]
+  },
+  {
+    89,
+    7,
+    15000,
+    3715007,
+    "str_dispatch_book_chaptername_15000_7",
+    "str_dispatch_book_chaptercont_15000_7",
+    "str_dispatch_book_chapterdes_15000_7",
+    common[2]
+  },
+  {
+    90,
+    8,
+    15000,
+    3715008,
+    "str_dispatch_book_chaptername_15000_8",
+    "str_dispatch_book_chaptercont_15000_8",
+    "str_dispatch_book_chapterdes_15000_8",
+    common[2]
+  },
+  {
+    91,
+    9,
+    15000,
+    3715009,
+    "str_dispatch_book_chaptername_15000_9",
+    "str_dispatch_book_chaptercont_15000_9",
+    "str_dispatch_book_chapterdes_15000_9",
+    common[2]
+  },
+  {
+    92,
+    10,
+    15000,
+    3715010,
+    "str_dispatch_book_chaptername_15000_10",
+    "str_dispatch_book_chaptercont_15000_10",
+    "str_dispatch_book_chapterdes_15000_10",
+    common[2]
+  },
+  {
+    93,
+    11,
+    15000,
+    3715011,
+    "str_dispatch_book_chaptername_15000_11",
+    "str_dispatch_book_chaptercont_15000_11",
+    "str_dispatch_book_chapterdes_15000_11",
+    common[2]
+  },
+  {
+    94,
+    12,
+    15000,
+    3715012,
+    "str_dispatch_book_chaptername_15000_12",
+    "str_dispatch_book_chaptercont_15000_12",
+    "str_dispatch_book_chapterdes_15000_12",
+    common[2]
+  }
 }
 return config, "ID", key
-

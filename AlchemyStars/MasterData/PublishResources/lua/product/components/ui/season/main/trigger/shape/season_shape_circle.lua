@@ -1,30 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/trigger/shape/season_shape_circle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonShapeCircle", SeasonShapeBase)
 SeasonShapeCircle = SeasonShapeCircle
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonShapeCircle.Constructor = function(self, position, param)
-  -- function num : 0_0
+function SeasonShapeCircle:Constructor(position, param)
   self._position = position
   self._radius = param
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonShapeCircle.Dispose = function(self)
-  -- function num : 0_1
+function SeasonShapeCircle:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonShapeCircle.OnCheck = function(self, position)
-  -- function num : 0_2 , upvalues : _ENV
-  do return (Vector2.Distance)(Vector2(position.x, position.z), self._position) <= self._radius end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SeasonShapeCircle:OnCheck(position)
+  return Vector2.Distance(Vector2(position.x, position.z), self._position) <= self._radius
 end
-
-

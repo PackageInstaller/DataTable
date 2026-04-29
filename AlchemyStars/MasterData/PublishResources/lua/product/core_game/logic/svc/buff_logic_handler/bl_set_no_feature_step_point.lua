@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_no_feature_step_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSetNoFeatureStepPoint", BuffLogicBase)
 BuffLogicSetNoFeatureStepPoint = BuffLogicSetNoFeatureStepPoint
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetNoFeatureStepPoint.Constructor = function(self, buffinstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetNoFeatureStepPoint:Constructor(buffinstance, logicParam)
   self._maxStep = logicParam.MaxStep
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetNoFeatureStepPoint.DoLogic = function(self, notify)
-  -- function num : 0_1
-  (self._buffComponent):SetBuffValue("NoFeatureStepPoint", self._maxStep)
+function BuffLogicSetNoFeatureStepPoint:DoLogic(notify)
+  self._buffComponent:SetBuffValue("NoFeatureStepPoint", self._maxStep)
 end
-
-

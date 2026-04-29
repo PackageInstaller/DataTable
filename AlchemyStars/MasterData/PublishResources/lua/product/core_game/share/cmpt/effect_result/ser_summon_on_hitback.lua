@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_summon_on_hitback.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectSummonOnHitbackResult", SkillEffectResultBase)
 SkillEffectSummonOnHitbackResult = SkillEffectSummonOnHitbackResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectSummonOnHitbackResult.Constrctor = function(self, hitbackResultArray, summonResultArray)
-  -- function num : 0_0
+function SkillEffectSummonOnHitbackResult:Constrctor(hitbackResultArray, summonResultArray)
   self._hitbackResults = hitbackResultArray
   self._summonResults = summonResultArray
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonOnHitbackResult.GetHitbackResultArray = function(self)
-  -- function num : 0_1
+function SkillEffectSummonOnHitbackResult:GetHitbackResultArray()
   return self._hitbackResults
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonOnHitbackResult.GetSummonResultArray = function(self)
-  -- function num : 0_2
+function SkillEffectSummonOnHitbackResult:GetSummonResultArray()
   return self._summonResults
 end
-
-

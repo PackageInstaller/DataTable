@@ -1,33 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_play_effect_anim_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewPlayEffectAnim", BuffViewBase)
 BuffViewPlayEffectAnim = BuffViewPlayEffectAnim
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewPlayEffectAnim.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewPlayEffectAnim:PlayView(TT)
   local result = self._buffResult
   local gameObjectName = result:GetObjName()
   local animName = result:GetAnimName()
   local waitTime = result:GetWaitTime()
-  local targetGameObject = ((UnityEngine.GameObject).Find)(gameObjectName)
+  local targetGameObject = UnityEngine.GameObject.Find(gameObjectName)
   if not targetGameObject then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : _ENV, waitTime, targetGameObject, gameObjectName, animName
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     YIELD(TT, waitTime * 1000)
-    targetGameObject = ((UnityEngine.GameObject).Find)(gameObjectName)
+    targetGameObject = UnityEngine.GameObject.Find(gameObjectName)
     if targetGameObject and animName then
-      local anim = (targetGameObject.gameObject):GetComponent("Animation")
+      local anim = targetGameObject.gameObject:GetComponent("Animation")
       anim:Play(animName)
     end
-  end
-)
+  end)
 end
-
-

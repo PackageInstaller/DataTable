@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/story/home_story_camera_track_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeStoryCameraTrackController", Object)
 HomeStoryCameraTrackController = HomeStoryCameraTrackController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeStoryCameraTrackController.Constructor = function(self, storyManager)
-  -- function num : 0_0 , upvalues : _ENV
+function HomeStoryCameraTrackController:Constructor(storyManager)
   self._storyManager = storyManager
   self._cameraTr = storyManager:GetStoryCamera()
   self:SetSceneCameraTr()
@@ -16,330 +9,238 @@ HomeStoryCameraTrackController.Constructor = function(self, storyManager)
   self._keyframeDone = {}
   self._animationData = {}
   self._currentVC = nil
-  self._brain = ((self._cameraTr).gameObject):GetComponent(typeof(Cinemachine.CinemachineBrain))
+  self._brain = self._cameraTr.gameObject:GetComponent(typeof(Cinemachine.CinemachineBrain))
   if not self._brain then
-    self._brain = ((self._cameraTr).gameObject):AddComponent(typeof(Cinemachine.CinemachineBrain))
+    self._brain = self._cameraTr.gameObject:AddComponent(typeof(Cinemachine.CinemachineBrain))
   end
-  self._fiexdUpdateSetting = (self._brain).m_BlendUpdateMethod
-  self._cameraUpdateGo = (UnityEngine.GameObject):New("test_camera_update_go")
-  self._lateUpdatebBrain = (self._cameraUpdateGo):AddComponent(typeof(Cinemachine.CinemachineBrain))
-  self._lateUpdateSetting = (self._lateUpdatebBrain).m_BlendUpdateMethod
+  self._fiexdUpdateSetting = self._brain.m_BlendUpdateMethod
+  self._cameraUpdateGo = UnityEngine.GameObject:New("test_camera_update_go")
+  self._lateUpdatebBrain = self._cameraUpdateGo:AddComponent(typeof(Cinemachine.CinemachineBrain))
+  self._lateUpdateSetting = self._lateUpdatebBrain.m_BlendUpdateMethod
   self._isFixedUpdate = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryCameraTrackController.SetSceneCameraTr = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomeStoryCameraTrackController:SetSceneCameraTr()
   if self._cameraTr then
-    local dir = (self._cameraTr):Find("ActorDir")
-    local uiModule = (GameGlobal.GetUIModule)(HomelandModule)
+    local dir = self._cameraTr:Find("ActorDir")
+    local uiModule = GameGlobal.GetUIModule(HomelandModule)
     if uiModule then
       local homelandClient = uiModule:GetClient()
       if homelandClient then
         self._sceneMgr = homelandClient:SceneManager()
-        ;
-        (self._sceneMgr):SetCustomLightTransform(dir)
+        self._sceneMgr:SetCustomLightTransform(dir)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryCameraTrackController.SetVCEntity = function(self, vce)
-  -- function num : 0_2
+function HomeStoryCameraTrackController:SetVCEntity(vce)
   if self._currentVC then
-    (self._currentVC):ActiveVC(false)
+    self._currentVC:ActiveVC(false)
   end
   self._currentVC = vce
   if self._currentVC then
-    (self._currentVC):ActiveVC(true)
+    self._currentVC:ActiveVC(true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryCameraTrackController.SectionStart = function(self, trackData)
-  -- function num : 0_3
+function HomeStoryCameraTrackController:SectionStart(trackData)
   self._currentTrackData = trackData
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryCameraTrackController.SectionEnd = function(self)
-  -- function num : 0_4
+function HomeStoryCameraTrackController:SectionEnd()
   self._currentTrackData = nil
   self._keyframeDone = {}
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryCameraTrackController.Update = function(self, time)
-  -- function num : 0_5 , upvalues : _ENV
+function HomeStoryCameraTrackController:Update(time)
   if self._sceneMgr then
-    (self._sceneMgr):UpdateH3DRenderSetting()
+    self._sceneMgr:UpdateH3DRenderSetting()
   end
   if not self._currentTrackData then
     return true
   end
   local allTrackEnd = true
-  if self._currentTrackData and (self._currentTrackData).KeyFrames then
-    for index,keyframe in ipairs((self._currentTrackData).KeyFrames) do
-      -- DECOMPILER ERROR at PC33: Unhandled construct in 'MakeBoolean' P1
-
-      if not (self._keyframeDone)[keyframe] and keyframe.Time < time then
-        self:_TriggerKeyframe(keyframe)
-        -- DECOMPILER ERROR at PC35: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._keyframeDone)[keyframe] = true
-      else
-        allTrackEnd = false
+  if self._currentTrackData and self._currentTrackData.KeyFrames then
+    for index, keyframe in ipairs(self._currentTrackData.KeyFrames) do
+      if not self._keyframeDone[keyframe] then
+        if time > keyframe.Time then
+          self:_TriggerKeyframe(keyframe)
+          self._keyframeDone[keyframe] = true
+        else
+          allTrackEnd = false
+        end
       end
     end
-    do
-      if self:_UpdateAnimation(time) then
-        do return allTrackEnd end
-        do return true end
-      end
-    end
+    allTrackEnd = self:_UpdateAnimation(time) and allTrackEnd
+    return allTrackEnd
+  else
+    return true
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryCameraTrackController.DOShakeCamera = function(self, shakeData)
-  -- function num : 0_6
+function HomeStoryCameraTrackController:DOShakeCamera(shakeData)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryCameraTrackController._TriggerKeyframe = function(self, keyframeData)
-  -- function num : 0_7 , upvalues : _ENV
+function HomeStoryCameraTrackController:_TriggerKeyframe(keyframeData)
   if keyframeData.Shake ~= nil then
-    if (((DG.Tweening).DOTween).IsTweening)(self._cameraTr) then
-      (Log.fatal)("[Story] camera is shaking!")
+    if DG.Tweening.DOTween.IsTweening(self._cameraTr) then
+      Log.fatal("[Story] camera is shaking!")
     end
     local shakeData = keyframeData.Shake
     local tweener = self:DOShakeCamera()
-    ;
-    (self._cameraTr):DOShakePosition(shakeData.Duration, Vector3((shakeData.Strength)[1], (shakeData.Strength)[2], (shakeData.Strength)[3]), shakeData.Vibrato, 0, false, shakeData.FadeOut)
-    local aniInfo = {HomeStoryEntityAnimationType.Shake, keyframeData.Time, tweener}
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._animationData)[keyframeData.Shake] = aniInfo
+    self._cameraTr:DOShakePosition(shakeData.Duration, Vector3(shakeData.Strength[1], shakeData.Strength[2], shakeData.Strength[3]), shakeData.Vibrato, 0, false, shakeData.FadeOut)
+    local aniInfo = {
+      HomeStoryEntityAnimationType.Shake,
+      keyframeData.Time,
+      tweener
+    }
+    self._animationData[keyframeData.Shake] = aniInfo
+  elseif keyframeData.StartShake then
+    self._storyManager:StartLoopShake(keyframeData.StartShake)
+  elseif keyframeData.StopShake then
+    self._storyManager:StopLoopShake(keyframeData.StopShake)
+  end
+  if keyframeData.Position3D ~= nil then
+    self:_SetPosition(Vector3(keyframeData.Position3D[1], keyframeData.Position3D[2], keyframeData.Position3D[3]))
+  end
+  if keyframeData.Rotation3D ~= nil then
+    self:_SetRotation(Quaternion.Euler(keyframeData.Rotation3D[1], keyframeData.Rotation3D[2], keyframeData.Rotation3D[3]))
+  end
+  if keyframeData.Scaling3D ~= nil then
+    self:_SetScaling(Vector3(keyframeData.Scaling3D, keyframeData.Scaling3D, keyframeData.Scaling3D))
+  end
+  if keyframeData.Translate3D then
+    local aniInfo = {
+      HomeStoryEntityAnimationType.Translate,
+      keyframeData.Time,
+      Vector3(keyframeData.Translate3D.StartValue[1], keyframeData.Translate3D.StartValue[2], keyframeData.Translate3D.StartValue[3]),
+      Vector3(keyframeData.Translate3D.EndValue[1], keyframeData.Translate3D.EndValue[2], keyframeData.Translate3D.EndValue[3])
+    }
+    self._animationData[keyframeData.Translate3D] = aniInfo
+  end
+  if keyframeData.Rotate3D then
+    local aniInfo = {
+      HomeStoryEntityAnimationType.Rotate,
+      keyframeData.Time,
+      Quaternion.Euler(keyframeData.Rotate3D.StartValue[1], keyframeData.Rotate3D.StartValue[2], keyframeData.Rotate3D.StartValue[3]),
+      Quaternion.Euler(keyframeData.Rotate3D.EndValue[1], keyframeData.Rotate3D.EndValue[2], keyframeData.Rotate3D.EndValue[3])
+    }
+    self._animationData[keyframeData.Rotate3D] = aniInfo
+  end
+  if keyframeData.Scale3D then
+    local aniInfo = {
+      HomeStoryEntityAnimationType.Scale,
+      keyframeData.Time,
+      Vector3(keyframeData.Scale3D.StartValue, keyframeData.Scale3D.StartValue, keyframeData.Scale3D.StartValue),
+      Vector3(keyframeData.Scale3D.EndValue, keyframeData.Scale3D.EndValue, keyframeData.Scale3D.EndValue)
+    }
+    self._animationData[keyframeData.Scale3D] = aniInfo
+  end
+  if keyframeData.VC then
+    self:SetVC(keyframeData.VC)
+  end
+  if keyframeData.LateUpdate then
+    self:SetUpdateType(true)
   else
-    do
-      if keyframeData.StartShake then
-        (self._storyManager):StartLoopShake(keyframeData.StartShake)
-      else
-        if keyframeData.StopShake then
-          (self._storyManager):StopLoopShake(keyframeData.StopShake)
-        end
-      end
-      if keyframeData.Position3D ~= nil then
-        self:_SetPosition(Vector3((keyframeData.Position3D)[1], (keyframeData.Position3D)[2], (keyframeData.Position3D)[3]))
-      end
-      if keyframeData.Rotation3D ~= nil then
-        self:_SetRotation((Quaternion.Euler)((keyframeData.Rotation3D)[1], (keyframeData.Rotation3D)[2], (keyframeData.Rotation3D)[3]))
-      end
-      if keyframeData.Scaling3D ~= nil then
-        self:_SetScaling(Vector3(keyframeData.Scaling3D, keyframeData.Scaling3D, keyframeData.Scaling3D))
-      end
-      do
-        if keyframeData.Translate3D then
-          local aniInfo = {HomeStoryEntityAnimationType.Translate, keyframeData.Time, Vector3(((keyframeData.Translate3D).StartValue)[1], ((keyframeData.Translate3D).StartValue)[2], ((keyframeData.Translate3D).StartValue)[3]), Vector3(((keyframeData.Translate3D).EndValue)[1], ((keyframeData.Translate3D).EndValue)[2], ((keyframeData.Translate3D).EndValue)[3])}
-          -- DECOMPILER ERROR at PC128: Confused about usage of register: R3 in 'UnsetPending'
-
-          ;
-          (self._animationData)[keyframeData.Translate3D] = aniInfo
-        end
-        do
-          if keyframeData.Rotate3D then
-            local aniInfo = {HomeStoryEntityAnimationType.Rotate, keyframeData.Time, (Quaternion.Euler)(((keyframeData.Rotate3D).StartValue)[1], ((keyframeData.Rotate3D).StartValue)[2], ((keyframeData.Rotate3D).StartValue)[3]), (Quaternion.Euler)(((keyframeData.Rotate3D).EndValue)[1], ((keyframeData.Rotate3D).EndValue)[2], ((keyframeData.Rotate3D).EndValue)[3])}
-            -- DECOMPILER ERROR at PC163: Confused about usage of register: R3 in 'UnsetPending'
-
-            ;
-            (self._animationData)[keyframeData.Rotate3D] = aniInfo
-          end
-          do
-            if keyframeData.Scale3D then
-              local aniInfo = {HomeStoryEntityAnimationType.Scale, keyframeData.Time, Vector3((keyframeData.Scale3D).StartValue, (keyframeData.Scale3D).StartValue, (keyframeData.Scale3D).StartValue), Vector3((keyframeData.Scale3D).EndValue, (keyframeData.Scale3D).EndValue, (keyframeData.Scale3D).EndValue)}
-              -- DECOMPILER ERROR at PC190: Confused about usage of register: R3 in 'UnsetPending'
-
-              ;
-              (self._animationData)[keyframeData.Scale3D] = aniInfo
-            end
-            if keyframeData.VC then
-              self:SetVC(keyframeData.VC)
-            end
-            if keyframeData.LateUpdate then
-              self:SetUpdateType(true)
-            else
-              self:SetUpdateType(false)
-            end
-          end
-        end
-      end
-    end
+    self:SetUpdateType(false)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryCameraTrackController.SetUpdateType = function(self, lateUpdate)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  if lateUpdate and self._isFixedUpdate then
-    (self._brain).m_BlendUpdateMethod = self._lateUpdateSetting
-    self._isFixedUpdate = false
-  end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not self._isFixedUpdate then
-    (self._brain).m_BlendUpdateMethod = self._fiexdUpdateSetting
+function HomeStoryCameraTrackController:SetUpdateType(lateUpdate)
+  if lateUpdate then
+    if self._isFixedUpdate then
+      self._brain.m_BlendUpdateMethod = self._lateUpdateSetting
+      self._isFixedUpdate = false
+    end
+  elseif not self._isFixedUpdate then
+    self._brain.m_BlendUpdateMethod = self._fiexdUpdateSetting
     self._isFixedUpdate = true
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryCameraTrackController.SetVC = function(self, vcData)
-  -- function num : 0_9 , upvalues : _ENV
+function HomeStoryCameraTrackController:SetVC(vcData)
   local vcEntityID = vcData.EntityID
   if vcEntityID == -1 then
     self:SetVCEntity(nil)
   else
-    local vcEntity = (self._storyManager):GetEntity(vcEntityID)
-    local style = ((Cinemachine.CinemachineBlendDefinition).Style).Cut
+    local vcEntity = self._storyManager:GetEntity(vcEntityID)
+    local style = Cinemachine.CinemachineBlendDefinition.Style.Cut
     if vcData.Style == 0 then
-      style = ((Cinemachine.CinemachineBlendDefinition).Style).Cut
-    else
-      if vcData.Style == 1 then
-        style = ((Cinemachine.CinemachineBlendDefinition).Style).EaseInOut
-      else
-        if vcData.Style == 2 then
-          style = ((Cinemachine.CinemachineBlendDefinition).Style).EaseIn
-        else
-          if vcData.Style == 3 then
-            style = ((Cinemachine.CinemachineBlendDefinition).Style).EaseOut
-          else
-            if vcData.Style == 4 then
-              style = ((Cinemachine.CinemachineBlendDefinition).Style).HardIn
-            else
-              if vcData.Style == 5 then
-                style = ((Cinemachine.CinemachineBlendDefinition).Style).HardOut
-              else
-                if vcData.Style == 6 then
-                  style = ((Cinemachine.CinemachineBlendDefinition).Style).Linear
-                else
-                  if vcData.Style == 7 then
-                    style = ((Cinemachine.CinemachineBlendDefinition).Style).Custom
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+      style = Cinemachine.CinemachineBlendDefinition.Style.Cut
+    elseif vcData.Style == 1 then
+      style = Cinemachine.CinemachineBlendDefinition.Style.EaseInOut
+    elseif vcData.Style == 2 then
+      style = Cinemachine.CinemachineBlendDefinition.Style.EaseIn
+    elseif vcData.Style == 3 then
+      style = Cinemachine.CinemachineBlendDefinition.Style.EaseOut
+    elseif vcData.Style == 4 then
+      style = Cinemachine.CinemachineBlendDefinition.Style.HardIn
+    elseif vcData.Style == 5 then
+      style = Cinemachine.CinemachineBlendDefinition.Style.HardOut
+    elseif vcData.Style == 6 then
+      style = Cinemachine.CinemachineBlendDefinition.Style.Linear
+    elseif vcData.Style == 7 then
+      style = Cinemachine.CinemachineBlendDefinition.Style.Custom
     end
     local duration = vcData.Duration
-    local info = (Cinemachine.CinemachineBlendDefinition):New(style, duration)
-    -- DECOMPILER ERROR at PC86: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._brain).m_DefaultBlend = info
+    local info = Cinemachine.CinemachineBlendDefinition:New(style, duration)
+    self._brain.m_DefaultBlend = info
     self:SetVCEntity(vcEntity)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryCameraTrackController._UpdateAnimation = function(self, time)
-  -- function num : 0_10 , upvalues : _ENV
+function HomeStoryCameraTrackController:_UpdateAnimation(time)
   local allEnd = true
-  for aniData,aniInfo in pairs(self._animationData) do
+  for aniData, aniInfo in pairs(self._animationData) do
     allEnd = false
     local t = 1
     if aniData.Duration > 0 then
       t = (time - aniInfo[2]) / aniData.Duration
     end
-    if t > 1 then
+    if 1 < t then
       t = 1
     end
-    if aniInfo[1] == HomeStoryEntityAnimationType.Shake and not (aniInfo[3]):IsComplete() then
-      allEnd = false
-    end
-    if aniInfo[1] == HomeStoryEntityAnimationType.Translate then
-      self:_SetPosition((Vector3.Lerp)(aniInfo[3], aniInfo[4], t))
-    else
-      if aniInfo[1] == HomeStoryEntityAnimationType.Rotate then
-        self:_SetRotation((Quaternion.Lerp)(aniInfo[3], aniInfo[4], t))
-      else
-        if aniInfo[1] == HomeStoryEntityAnimationType.Scale then
-          self:_SetScaling((Vector3.Lerp)(aniInfo[3], aniInfo[4], t))
-        end
+    if aniInfo[1] == HomeStoryEntityAnimationType.Shake then
+      if not aniInfo[3]:IsComplete() then
+        allEnd = false
       end
+    elseif aniInfo[1] == HomeStoryEntityAnimationType.Translate then
+      self:_SetPosition(Vector3.Lerp(aniInfo[3], aniInfo[4], t))
+    elseif aniInfo[1] == HomeStoryEntityAnimationType.Rotate then
+      self:_SetRotation(Quaternion.Lerp(aniInfo[3], aniInfo[4], t))
+    elseif aniInfo[1] == HomeStoryEntityAnimationType.Scale then
+      self:_SetScaling(Vector3.Lerp(aniInfo[3], aniInfo[4], t))
     end
-    -- DECOMPILER ERROR at PC73: Confused about usage of register: R9 in 'UnsetPending'
-
-    if t >= 1 then
-      (self._animationData)[aniData] = nil
+    if 1 <= t then
+      self._animationData[aniData] = nil
     end
   end
   return allEnd
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryCameraTrackController._SetPosition = function(self, pos)
-  -- function num : 0_11
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._cameraTr).localPosition = pos
+function HomeStoryCameraTrackController:_SetPosition(pos)
+  self._cameraTr.localPosition = pos
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryCameraTrackController._SetRotation = function(self, rot)
-  -- function num : 0_12
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._cameraTr).localRotation = rot
+function HomeStoryCameraTrackController:_SetRotation(rot)
+  self._cameraTr.localRotation = rot
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryCameraTrackController._SetScaling = function(self, scale)
-  -- function num : 0_13
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._cameraTr).localScale = scale
+function HomeStoryCameraTrackController:_SetScaling(scale)
+  self._cameraTr.localScale = scale
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryCameraTrackController.OnUpdate = function(self, dms)
-  -- function num : 0_14
+function HomeStoryCameraTrackController:OnUpdate(dms)
   if self._currentVC then
-    (self._currentVC):OnUpdate(dms)
+    self._currentVC:OnUpdate(dms)
   end
 end
 
 _class("HomeStoryCameraShake", Object)
 HomeStoryCameraShake = HomeStoryCameraShake
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeStoryCameraShake.Constructor = function(self, vc, shakeData)
-  -- function num : 0_15
+function HomeStoryCameraShake:Constructor(vc, shakeData)
   self._vc = vc
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._vc).enabled = nil
+  self._vc.enabled = nil
 end
-
-

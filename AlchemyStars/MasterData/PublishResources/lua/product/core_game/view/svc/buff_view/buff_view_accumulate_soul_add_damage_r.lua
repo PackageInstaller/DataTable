@@ -1,28 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_accumulate_soul_add_damage_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAccumulateSoulAddDamage", BuffViewBase)
 BuffViewAccumulateSoulAddDamage = BuffViewAccumulateSoulAddDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAccumulateSoulAddDamage.PlayView = function(self, TT, notify)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewAccumulateSoulAddDamage:PlayView(TT, notify)
   local result = self:GetBuffResult()
   local curAccumulateNum = result:GetLayer()
-  ;
-  ((self._entity):BuffView()):SetBuffValue("SoulCount", curAccumulateNum)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetAccumulateNum, ((self._entity):PetPstID()):GetPstID(), curAccumulateNum)
+  self._entity:BuffView():SetBuffValue("SoulCount", curAccumulateNum)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetAccumulateNum, self._entity:PetPstID():GetPstID(), curAccumulateNum)
   if notify:GetNotifyEntity() == self._entity then
-    return 
+    return
   end
   self:_PlayCollectSoul(TT, notify:GetTargetEntityList(), notify:GetNotifyEntity())
-  local cfgData = (self._viewInstance):BuffConfigData()
+  local cfgData = self._viewInstance:BuffConfigData()
   local cfg = cfgData:GetViewParams()
   if not cfg then
-    return 
+    return
   end
   local waitTime = cfg.waitBuffViewTime
   if waitTime then
@@ -30,28 +21,25 @@ BuffViewAccumulateSoulAddDamage.PlayView = function(self, TT, notify)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAccumulateSoulAddDamage._PlayCollectSoul = function(self, TT, targetEntityList, casterEntity)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfgData = (self._viewInstance):BuffConfigData()
+function BuffViewAccumulateSoulAddDamage:_PlayCollectSoul(TT, targetEntityList, casterEntity)
+  local cfgData = self._viewInstance:BuffConfigData()
   local cfg = cfgData:GetViewParams()
   if not cfg then
-    return 
+    return
   end
-  if targetEntityList == nil or (table.count)(targetEntityList) <= 0 then
-    return 
+  if targetEntityList == nil or table.count(targetEntityList) <= 0 then
+    return
   end
   local targetGridPosList = {}
-  for k,v in pairs(targetEntityList) do
+  for k, v in pairs(targetEntityList) do
     if v and v:Location() then
-      targetGridPosList[#targetGridPosList + 1] = (v:Location()):GetPosition()
+      targetGridPosList[#targetGridPosList + 1] = v:Location():GetPosition()
     end
   end
   if not self._skillService then
-    self._skillService = (self._world):GetService("PlaySkill")
+    self._skillService = self._world:GetService("PlaySkill")
   end
-  local effectService = (self._world):GetService("Effect")
+  local effectService = self._world:GetService("Effect")
   local castAudioId = cfg.castAudioId
   local castAnimName = cfg.castAnimName
   local castEffect = cfg.castEffect
@@ -64,96 +52,79 @@ BuffViewAccumulateSoulAddDamage._PlayCollectSoul = function(self, TT, targetEnti
   local castEndEffectId = cfg.castEndEffectId
   local castEndEffectTime = cfg.castEndEffectTime
   if castAudioId then
-    (self._skillService):PlayCastAudio(TT, castAudioId, 0)
+    self._skillService:PlayCastAudio(TT, castAudioId, 0)
   end
   local effectList = self:_PlayAnimationEffect(TT, casterEntity, castAnimName, castEffect, 0)
-  if bornEffectId and bornEffectId > 0 then
-    for k,v in pairs(targetGridPosList) do
+  if bornEffectId and 0 < bornEffectId then
+    for k, v in pairs(targetGridPosList) do
       local renderPos = v
       local effectEntity = effectService:CreatePositionEffect(bornEffectId, renderPos)
     end
   end
-  do
-    YIELD(TT, bornEffectTime)
-    local effectEntityList = {}
-    for k,v in pairs(targetGridPosList) do
-      local renderPos = v
-      renderPos.y = renderPos.y + startHigh
-      local effect = effectService:CreatePositionEffect(gridEffectId, renderPos)
-      ;
-      (table.insert)(effectEntityList, {entity = effect, position = renderPos})
-    end
-    local taskIDs = {}
-    for k,v in pairs(effectEntityList) do
-      local view = (v.entity):View()
-      local go = view:GetGameObject()
-      local curTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoFlyLine, self, v.entity, casterEntity, v.position, flyTime, endHigh)
-      if curTaskID > 0 then
-        taskIDs[#taskIDs + 1] = curTaskID
-      end
-      YIELD(TT)
-    end
-    do
-      while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDs) do
-        YIELD(TT)
-      end
-      for i = 1, #effectList do
-        (self._world):DestroyEntity(effectList[i])
-      end
-      self:_PlayAnimationEffect(TT, casterEntity, nil, castEndEffectId, castEndEffectTime)
-    end
+  YIELD(TT, bornEffectTime)
+  local effectEntityList = {}
+  for k, v in pairs(targetGridPosList) do
+    local renderPos = v
+    renderPos.y = renderPos.y + startHigh
+    local effect = effectService:CreatePositionEffect(gridEffectId, renderPos)
+    table.insert(effectEntityList, {entity = effect, position = renderPos})
   end
+  local taskIDs = {}
+  for k, v in pairs(effectEntityList) do
+    local view = v.entity:View()
+    local go = view:GetGameObject()
+    local curTaskID = GameGlobal.TaskManager():CoreGameStartTask(self._DoFlyLine, self, v.entity, casterEntity, v.position, flyTime, endHigh)
+    if 0 < curTaskID then
+      taskIDs[#taskIDs + 1] = curTaskID
+    end
+    YIELD(TT)
+  end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDs) do
+    YIELD(TT)
+  end
+  for i = 1, #effectList do
+    self._world:DestroyEntity(effectList[i])
+  end
+  self:_PlayAnimationEffect(TT, casterEntity, nil, castEndEffectId, castEndEffectTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAccumulateSoulAddDamage._PlayAnimationEffect = function(self, TT, casterEntity, stAnimationName, nEffectID, nEffectTime)
-  -- function num : 0_2 , upvalues : _ENV
-  if stAnimationName and stAnimationName ~= "" then
+function BuffViewAccumulateSoulAddDamage:_PlayAnimationEffect(TT, casterEntity, stAnimationName, nEffectID, nEffectTime)
+  if stAnimationName and "" ~= stAnimationName then
     casterEntity:SetAnimatorControllerTriggers({stAnimationName})
   end
   local effectList = {}
   if nEffectID then
-    local effectService = (self._world):GetService("Effect")
+    local effectService = self._world:GetService("Effect")
     local listEffectID = {}
-    -- DECOMPILER ERROR at PC26: Unhandled construct in 'MakeBoolean' P1
-
-    if type(nEffectID) == "number" and nEffectID > 0 then
-      listEffectID[#listEffectID + 1] = nEffectID
-    end
-    if type(nEffectID) == "table" then
+    if type(nEffectID) == "number" then
+      if 0 < nEffectID then
+        listEffectID[#listEffectID + 1] = nEffectID
+      end
+    elseif type(nEffectID) == "table" then
       listEffectID = nEffectID
     end
     for i = 1, #listEffectID do
       effectList[#effectList + 1] = effectService:CreateEffect(listEffectID[i], casterEntity)
     end
   end
-  do
-    YIELD(TT, nEffectTime)
-    return effectList
-  end
+  YIELD(TT, nEffectTime)
+  return effectList
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAccumulateSoulAddDamage._DoFlyLine = function(self, TT, entityEffect, entityCaster, effectRenderPos, flyTime, endHigh)
-  -- function num : 0_3 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
+function BuffViewAccumulateSoulAddDamage:_DoFlyLine(TT, entityEffect, entityCaster, effectRenderPos, flyTime, endHigh)
+  local boardServiceRender = self._world:GetService("BoardRender")
   local posCaster = entityCaster:GetGridPosition()
   local gridWorldpos = boardServiceRender:GridPos2RenderPos(posCaster)
   local effectViewCmpt = entityEffect:View()
   local effectObject = effectViewCmpt:GetGameObject()
   gridWorldpos.y = gridWorldpos.y + endHigh
-  local endtime = (GameGlobal:GetInstance()):GetCurrentTime() + flyTime
+  local endtime = GameGlobal:GetInstance():GetCurrentTime() + flyTime
   local transWork = effectObject.transform
-  local nFlyTime = flyTime / 1000
-  local easeWork = (transWork:DOMove(gridWorldpos, nFlyTime, false)):SetEase(((DG.Tweening).Ease).InOutSine)
-  while (GameGlobal:GetInstance()):GetCurrentTime() < endtime do
+  local nFlyTime = flyTime / 1000.0
+  local easeWork = transWork:DOMove(gridWorldpos, nFlyTime, false):SetEase(DG.Tweening.Ease.InOutSine)
+  while endtime > GameGlobal:GetInstance():GetCurrentTime() do
     YIELD(TT)
   end
   effectObject:SetActive(false)
-  ;
-  (self._world):DestroyEntity(entityEffect)
+  self._world:DestroyEntity(entityEffect)
 end
-
-

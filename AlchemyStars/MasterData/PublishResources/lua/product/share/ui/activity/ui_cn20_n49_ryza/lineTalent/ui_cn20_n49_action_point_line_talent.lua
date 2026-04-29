@@ -1,37 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/lineTalent/ui_cn20_n49_action_point_line_talent.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49ActionPointLineTalent", UICustomWidget)
 UICN20N49ActionPointLineTalent = UICN20N49ActionPointLineTalent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49ActionPointLineTalent.OnShow = function(self)
-  -- function num : 0_0
+function UICN20N49ActionPointLineTalent:OnShow()
   self._isOpen = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49ActionPointLineTalent.OnHide = function(self)
-  -- function num : 0_1
+function UICN20N49ActionPointLineTalent:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49ActionPointLineTalent._SpawnObject = function(self, widgetName, className)
-  -- function num : 0_2
+function UICN20N49ActionPointLineTalent:_SpawnObject(widgetName, className)
   local pool = self:GetUIComponent("UISelectObjectPath", widgetName)
   local obj = pool:SpawnObject(className)
   return obj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49ActionPointLineTalent.SetData = function(self, campaign, componentId, detailDialog, showTime, posControllerName)
-  -- function num : 0_3
+function UICN20N49ActionPointLineTalent:SetData(campaign, componentId, detailDialog, showTime, posControllerName)
   self._campaign = campaign
   self._componentId = componentId
   self._detailDialog = detailDialog
@@ -41,19 +25,13 @@ UICN20N49ActionPointLineTalent.SetData = function(self, campaign, componentId, d
   self:_SetActionPoint()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49ActionPointLineTalent.AttachEvents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UICN20N49ActionPointLineTalent:AttachEvents()
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49ActionPointLineTalent._SetActionPoint = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UICN20N49ActionPointLineTalent:_SetActionPoint()
   local componentId = self._componentId
-  local component = (self._campaign):GetComponent(componentId)
+  local component = self._campaign:GetComponent(componentId)
   local icon = component:GetItemIcon()
   if icon then
     self:_SetIcon("_iconActionPoint", icon)
@@ -67,60 +45,41 @@ UICN20N49ActionPointLineTalent._SetActionPoint = function(self)
     state_max:SetActive(n2 <= n1)
     local endTime = component:GetRegainEndTime()
     if self._endTime_ActionPoint == endTime then
-      (Log.info)("UICN20N49ActionPointLineTalent:_SetActionPoint() Same endTime")
+      Log.info("UICN20N49ActionPointLineTalent:_SetActionPoint() Same endTime")
     elseif n2 <= n1 then
-      (Log.info)("UICN20N49ActionPointLineTalent:_SetActionPoint() n1 >= n2")
+      Log.info("UICN20N49ActionPointLineTalent:_SetActionPoint() n1 >= n2")
     else
       self._endTime_ActionPoint = endTime
       self:_SetRemainingTime_Action("_actionPointPool", "str_activity_common_next_action_point", endTime, nil, function()
-    -- function num : 0_5_0 , upvalues : self
-    self:_ReloadAndRefreshActionPoint()
-  end
-)
+        self:_ReloadAndRefreshActionPoint()
+      end)
     end
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49ActionPointLineTalent._ReloadAndRefreshActionPoint = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.info)("UICN20N49ActionPointLineTalent:_ReloadAndRefreshActionPoint()")
+function UICN20N49ActionPointLineTalent:_ReloadAndRefreshActionPoint()
+  Log.info("UICN20N49ActionPointLineTalent:_ReloadAndRefreshActionPoint()")
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
     YIELD(1)
     local res = AsyncRequestRes:New()
-    ;
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+    self._campaign:ReLoadCampaignInfo_Force(TT, res)
     self:_SetActionPoint()
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49ActionPointLineTalent.OnUIGetItemCloseInQuest = function(self, type)
-  -- function num : 0_7 , upvalues : _ENV
+function UICN20N49ActionPointLineTalent:OnUIGetItemCloseInQuest(type)
   if self._isOpen then
     local res = AsyncRequestRes:New()
-    do
-      self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, res
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-    if res and res:GetSucc(true) then
-      self:_Refresh()
-    end
-  end
-, self)
-    end
+    self:StartTask(function(TT)
+      self._campaign:ReLoadCampaignInfo_Force(TT, res)
+      if res and res:GetSucc(true) then
+        self:_Refresh()
+      end
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49ActionPointLineTalent._SetRemainingTime_Action = function(self, widgetName, descId, endTime, tickCallback, stopCallback)
-  -- function num : 0_8
+function UICN20N49ActionPointLineTalent:_SetRemainingTime_Action(widgetName, descId, endTime, tickCallback, stopCallback)
   local obj = self:_SpawnObject(widgetName, "UIActivityCommonRemainingTime")
   obj:SetCustomTimeStr_Common_1()
   obj:SetExtraRollingText()
@@ -128,43 +87,25 @@ UICN20N49ActionPointLineTalent._SetRemainingTime_Action = function(self, widgetN
   obj:SetData(endTime, tickCallback, stopCallback)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49ActionPointLineTalent._Refresh = function(self)
-  -- function num : 0_9
+function UICN20N49ActionPointLineTalent:_Refresh()
   self._endTime_ActionPoint = nil
   self:_SetActionPoint()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49ActionPointLineTalent._SetIcon = function(self, widgetName, icon)
-  -- function num : 0_10 , upvalues : _ENV
-  if not widgetName then
-    widgetName = "icon"
-  end
+function UICN20N49ActionPointLineTalent:_SetIcon(widgetName, icon)
+  widgetName = widgetName or "icon"
   local obj = self:GetUIComponent("Image", widgetName)
-  obj.sprite = (self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)):GetSprite(icon)
+  obj.sprite = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas):GetSprite(icon)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49ActionPointLineTalent._SetText = function(self, widgetName, str)
-  -- function num : 0_11
-  if not widgetName then
-    widgetName = "text"
-  end
+function UICN20N49ActionPointLineTalent:_SetText(widgetName, str)
+  widgetName = widgetName or "text"
   local obj = self:GetUIComponent("UILocalizationText", widgetName)
   obj:SetText(str)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49ActionPointLineTalent.ActionPointBtnOnClick = function(self, go)
-  -- function num : 0_12
+function UICN20N49ActionPointLineTalent:ActionPointBtnOnClick(go)
   local componentId = self._componentId
-  local component = (self._campaign):GetComponent(componentId)
-  self:ShowDialog(self._detailDialog, component, (go.transform).anchoredPosition, nil, go, self._posControllerName)
+  local component = self._campaign:GetComponent(componentId)
+  self:ShowDialog(self._detailDialog, component, go.transform.anchoredPosition, nil, go, self._posControllerName)
 end
-
-

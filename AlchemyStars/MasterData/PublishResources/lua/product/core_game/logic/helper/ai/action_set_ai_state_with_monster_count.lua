@@ -1,38 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_set_ai_state_with_monster_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionSetAIStateWithMonsterCount", AINewNode)
 ActionSetAIStateWithMonsterCount = ActionSetAIStateWithMonsterCount
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSetAIStateWithMonsterCount.OnBegin = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionSetAIStateWithMonsterCount:OnBegin()
   local str = self:GetLogicData(-1)
-  local ss = (string.split)(str, ",")
+  local ss = string.split(str, ",")
   local nSummonIDs = {}
-  for i,s in ipairs(ss) do
+  for i, s in ipairs(ss) do
     nSummonIDs[#nSummonIDs + 1] = tonumber(s)
   end
   local hadCount = 1
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   if monsterGroup then
-    for _,monsterEntity in ipairs(monsterGroup:GetEntities()) do
+    for _, monsterEntity in ipairs(monsterGroup:GetEntities()) do
       if not monsterEntity:HasDeadMark() then
-        local monsterClassID = (monsterEntity:MonsterID()):GetMonsterClassID()
-        if (table.icontains)(nSummonIDs, monsterClassID) then
+        local monsterClassID = monsterEntity:MonsterID():GetMonsterClassID()
+        if table.icontains(nSummonIDs, monsterClassID) then
           hadCount = hadCount + 1
         end
       end
     end
   end
-  do
-    local aiCmpt = (self.m_entityOwn):AI()
-    aiCmpt:SetAITreeState(hadCount)
-    self:PrintLog("state=", hadCount)
-  end
+  local aiCmpt = self.m_entityOwn:AI()
+  aiCmpt:SetAITreeState(hadCount)
+  self:PrintLog("state=", hadCount)
 end
-
-

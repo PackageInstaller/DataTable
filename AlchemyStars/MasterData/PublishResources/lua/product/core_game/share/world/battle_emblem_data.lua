@@ -1,46 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/world/battle_emblem_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local EmblemElementComType = {Equal = 1, Greater = 2, Less = 3}
+local EmblemElementComType = {
+  Equal = 1,
+  Greater = 2,
+  Less = 3
+}
 _enum("EmblemElementComType", EmblemElementComType)
 _class("BattleEmblemElementData", Object)
 BattleEmblemElementData = BattleEmblemElementData
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-BattleEmblemElementData.Constructor = function(self, data, cfgData)
-  -- function num : 0_0
+function BattleEmblemElementData:Constructor(data, cfgData)
   self._data = data
   self._cfgData = cfgData
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-BattleEmblemElementData.GetComType = function(self)
-  -- function num : 0_1 , upvalues : EmblemElementComType
+function BattleEmblemElementData:GetComType()
   if self._data == self._cfgData then
     return EmblemElementComType.Equal
   end
-  if self._cfgData < self._data then
+  if self._data > self._cfgData then
     return EmblemElementComType.Greater
   end
   return EmblemElementComType.Less
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-BattleEmblemElementData.GetData = function(self)
-  -- function num : 0_2
+function BattleEmblemElementData:GetData()
   return self._data
 end
 
 _class("BattleEmblemData", Object)
 BattleEmblemData = BattleEmblemData
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
 
-BattleEmblemData.Constructor = function(self, id, sp, criChance, criDamage, hitRate, comboRate, randomRate)
-  -- function num : 0_3
+function BattleEmblemData:Constructor(id, sp, criChance, criDamage, hitRate, comboRate, randomRate)
   self._emblemID = id
   self._spData = nil
   self._criChanceData = nil
@@ -50,10 +39,5 @@ BattleEmblemData.Constructor = function(self, id, sp, criChance, criDamage, hitR
   self._randomRateData = nil
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-BattleEmblemData.BuildEmblemData = function(self, emblemData)
-  -- function num : 0_4
+function BattleEmblemData:BuildEmblemData(emblemData)
 end
-
-

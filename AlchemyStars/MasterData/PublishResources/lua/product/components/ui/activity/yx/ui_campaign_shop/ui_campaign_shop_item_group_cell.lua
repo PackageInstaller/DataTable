@@ -1,61 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/yx/ui_campaign_shop/ui_campaign_shop_item_group_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICampaignShopItemGroupCell", UICustomWidget)
 UICampaignShopItemGroupCell = UICampaignShopItemGroupCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICampaignShopItemGroupCell.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICampaignShopItemGroupCell:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopItemGroupCell.InitWidget = function(self)
-  -- function num : 0_1
+function UICampaignShopItemGroupCell:InitWidget()
   self._smallBoxGen = self:GetUIComponent("UISelectObjectPath", "SmallBoxGen")
   self._bigItemGen = self:GetUIComponent("UISelectObjectPath", "BigItemGen")
   self._rootLayout = self:GetUIComponent("LayoutElement", "Root")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopItemGroupCell.SetData = function(self)
-  -- function num : 0_2
+function UICampaignShopItemGroupCell:SetData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopItemGroupCell.InitData = function(self, data)
-  -- function num : 0_3
-  local item = nil
+function UICampaignShopItemGroupCell:InitData(data)
+  local item
   if data.GetIsSpecial and data:GetIsSpecial() then
-    item = (self._bigItemGen):SpawnObject("UICampaignShopItemBig")
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._rootLayout).minWidth = 400
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._rootLayout).preferredWidth = 400
+    item = self._bigItemGen:SpawnObject("UICampaignShopItemBig")
+    self._rootLayout.minWidth = 400
+    self._rootLayout.preferredWidth = 400
   else
-    item = (self._smallBoxGen):SpawnObject("UICampaignShopSmallItemBox")
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._rootLayout).minWidth = 350
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._rootLayout).preferredWidth = 350
+    item = self._smallBoxGen:SpawnObject("UICampaignShopSmallItemBox")
+    self._rootLayout.minWidth = 350
+    self._rootLayout.preferredWidth = 350
   end
   if item then
     item:InitData(data)
   end
 end
-
-

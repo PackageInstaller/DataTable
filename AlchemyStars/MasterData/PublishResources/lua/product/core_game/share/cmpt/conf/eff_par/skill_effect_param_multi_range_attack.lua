@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_multi_range_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParam_MultiRangeAttack", SkillEffectParamBase)
 SkillEffectParam_MultiRangeAttack = SkillEffectParam_MultiRangeAttack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_MultiRangeAttack.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_MultiRangeAttack:Constructor(t)
   self._percent = t.percent
   self._formulaID = t.formulaID
   if t.vampire ~= nil then
@@ -19,32 +12,18 @@ SkillEffectParam_MultiRangeAttack.Constructor = function(self, t)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_MultiRangeAttack.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_MultiRangeAttack:GetEffectType()
   return SkillEffectType.MultiRangeAttack
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_MultiRangeAttack.GetDamagePercent = function(self)
-  -- function num : 0_2
+function SkillEffectParam_MultiRangeAttack:GetDamagePercent()
   return self._percent
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_MultiRangeAttack.GetDamageFormulaID = function(self)
-  -- function num : 0_3
+function SkillEffectParam_MultiRangeAttack:GetDamageFormulaID()
   return self._formulaID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_MultiRangeAttack.GetVampire = function(self)
-  -- function num : 0_4
+function SkillEffectParam_MultiRangeAttack:GetVampire()
   return self._vampire
 end
-
-

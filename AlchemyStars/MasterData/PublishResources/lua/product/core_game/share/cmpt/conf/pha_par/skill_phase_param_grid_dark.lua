@@ -1,40 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_param_grid_dark.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 local SkillPhaseParam_GridDark_Type = {Dark = 0, Resume = 1}
 _enum("SkillPhaseParam_GridDark_Type", SkillPhaseParam_GridDark_Type)
 _class("SkillPhaseParam_GridDark", SkillPhaseParamBase)
 SkillPhaseParam_GridDark = SkillPhaseParam_GridDark
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillPhaseParam_GridDark.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseParam_GridDark:Constructor(t)
   self._darkType = t.darkType
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridDark.GetCacheTable = function(self)
-  -- function num : 0_1
+function SkillPhaseParam_GridDark:GetCacheTable()
   local t = {}
   return t
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridDark.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseParam_GridDark:GetPhaseType()
   return SkillViewPhaseType.GridDark
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridDark.GetDarkType = function(self)
-  -- function num : 0_3
+function SkillPhaseParam_GridDark:GetDarkType()
   return self._darkType
 end
-
-

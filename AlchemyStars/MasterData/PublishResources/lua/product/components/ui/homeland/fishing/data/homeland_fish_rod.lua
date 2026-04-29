@@ -1,70 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/fishing/data/homeland_fish_rod.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandFishRod", Object)
 HomelandFishRod = HomelandFishRod
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandFishRod.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local cfgs = (Cfg.cfg_item_tool_upgrade)({ToolType = 2})
+function HomelandFishRod:Constructor()
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local cfgs = Cfg.cfg_item_tool_upgrade({ToolType = 2})
   local t = {}
-  for _,v in pairs(cfgs) do
+  for _, v in pairs(cfgs) do
     t[#t + 1] = v
   end
-  ;
-  (table.sort)(t, function(a, b)
-    -- function num : 0_0_0
-    do return b.Level < a.Level end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(t, function(a, b)
+    return a.Level > b.Level
+  end)
   local fishRodId = 0
   for i = 1, #t do
-    local count = itemModule:GetItemCount((t[i]).ID)
-    if count > 0 then
-      fishRodId = (t[i]).ID
+    local count = itemModule:GetItemCount(t[i].ID)
+    if 0 < count then
+      fishRodId = t[i].ID
       break
     end
   end
-  do
-    self._fishRodItemId = fishRodId
-    local cfg = (Cfg.cfg_item_tool_upgrade)[fishRodId]
-    self._fishingLength = cfg.param / 1000
-    self._modelName = cfg.Res
-    self._modelAttachPath = cfg.AttachPath
-  end
+  self._fishRodItemId = fishRodId
+  local cfg = Cfg.cfg_item_tool_upgrade[fishRodId]
+  self._fishingLength = cfg.param / 1000
+  self._modelName = cfg.Res
+  self._modelAttachPath = cfg.AttachPath
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishRod.GetItemId = function(self)
-  -- function num : 0_1
+function HomelandFishRod:GetItemId()
   return self._fishRodItemId
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishRod.GetFishingLength = function(self)
-  -- function num : 0_2
+function HomelandFishRod:GetFishingLength()
   return self._fishingLength
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishRod.GetModelName = function(self)
-  -- function num : 0_3
+function HomelandFishRod:GetModelName()
   return self._modelName
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishRod.GetAttachPath = function(self)
-  -- function num : 0_4
+function HomelandFishRod:GetAttachPath()
   return self._modelAttachPath
 end
-
-

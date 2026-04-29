@@ -1,57 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_lost_land/ui_lost_land_award_view_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILostLandAwardViewItem", UICustomWidget)
 UILostLandAwardViewItem = UILostLandAwardViewItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILostLandAwardViewItem.OnShow = function(self)
-  -- function num : 0_0
+function UILostLandAwardViewItem:OnShow()
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandAwardViewItem.Active = function(self, active)
-  -- function num : 0_1
-  (self._go):SetActive(active)
+function UILostLandAwardViewItem:Active(active)
+  self._go:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandAwardViewItem.SetData = function(self, data, callback)
-  -- function num : 0_2 , upvalues : _ENV
+function UILostLandAwardViewItem:SetData(data, callback)
   self._callback = callback
   self._id = data.assetid
   local count = data.count
-  local cfg_item = (Cfg.cfg_item)[self._id]
+  local cfg_item = Cfg.cfg_item[self._id]
   if not cfg_item then
-    (Log.error)("###[UILostLandAwardViewItem] cfg_item is nil ! id --> ", self._id)
+    Log.error("###[UILostLandAwardViewItem] cfg_item is nil ! id --> ", self._id)
   end
-  ;
-  (self._icon):LoadImage(cfg_item.Icon)
-  ;
-  (self._name):SetText((StringTable.Get)(cfg_item.Name) .. " x " .. count)
+  self._icon:LoadImage(cfg_item.Icon)
+  self._name:SetText(StringTable.Get(cfg_item.Name) .. " x " .. count)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandAwardViewItem.GetComponents = function(self)
-  -- function num : 0_3
+function UILostLandAwardViewItem:GetComponents()
   self._go = self:GetGameObject("rect")
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._name = self:GetUIComponent("UILocalizationText", "name")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandAwardViewItem.iconOnClick = function(self, go)
-  -- function num : 0_4
+function UILostLandAwardViewItem:iconOnClick(go)
   if self._callback then
-    (self._callback)(self._id, (go.transform).position)
+    self._callback(self._id, go.transform.position)
   end
 end
-
-

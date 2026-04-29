@@ -1,114 +1,73 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n13/build/ui_n13_build_item_picnic.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBuildBuildItemPicnic", UICustomWidget)
 UIBuildBuildItemPicnic = UIBuildBuildItemPicnic
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBuildBuildItemPicnic.OnShow = function(self)
-  -- function num : 0_0
+function UIBuildBuildItemPicnic:OnShow()
   self._go = self:GetGameObject("Go")
   self._maskPanel = self:GetUIComponent("RectTransform", "Mask")
   self._txtDebug = self:GetUIComponent("UILocalizationText", "_txtDebug")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildBuildItemPicnic.SetData = function(self, buildManager, buildItemId, btnCallback)
-  -- function num : 0_1
+function UIBuildBuildItemPicnic:SetData(buildManager, buildItemId, btnCallback)
   self._buildManager = buildManager
   self._buildItemId = buildItemId
   self._btnCallback = btnCallback
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildBuildItemPicnic.Refresh = function(self)
-  -- function num : 0_2
+function UIBuildBuildItemPicnic:Refresh()
   local show = self:CanShowBtn()
-  ;
-  (self._go):SetActive(show)
+  self._go:SetActive(show)
   if not show then
-    return 
+    return
   end
   self:_SetPos(self._buildItemId)
   self:_SetBtn(self._buildItemId)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildBuildItemPicnic.CanShowBtn = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local show = (self._buildManager):IsShow(self._buildItemId)
-  local complete = (self._buildManager):CheckPicnicStatusComplete(self._buildItemId)
-  local lockTime = (self._buildManager):CheckPicnicLockTime(self._buildItemId)
-  local nextCfg = (self._buildManager):CheckPicnicHaveNextCfg()
-  local result = not show or not complete or not lockTime or nextCfg
+function UIBuildBuildItemPicnic:CanShowBtn()
+  local show = self._buildManager:IsShow(self._buildItemId)
+  local complete = self._buildManager:CheckPicnicStatusComplete(self._buildItemId)
+  local lockTime = self._buildManager:CheckPicnicLockTime(self._buildItemId)
+  local nextCfg = self._buildManager:CheckPicnicHaveNextCfg()
+  local result = show and complete and lockTime and nextCfg
   if result then
-    (Log.debug)("UIBuildBuildItemPicnic:CanShowBtn() result = true")
+    Log.debug("UIBuildBuildItemPicnic:CanShowBtn() result = true")
   else
-    ;
-    (Log.debug)("UIBuildBuildItemPicnic:CanShowBtn() result = " .. tostring(result), " show = " .. tostring(show), " complete = " .. tostring(complete), " lockTime = " .. tostring(lockTime), " nextCfg = " .. tostring(nextCfg))
+    Log.debug("UIBuildBuildItemPicnic:CanShowBtn() result = " .. tostring(result), " show = " .. tostring(show), " complete = " .. tostring(complete), " lockTime = " .. tostring(lockTime), " nextCfg = " .. tostring(nextCfg))
   end
   return result
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildBuildItemPicnic._CanPicnic = function(self)
-  -- function num : 0_4
-  return (self._buildManager):CheckCanPicnic(self._buildItemId)
+function UIBuildBuildItemPicnic:_CanPicnic()
+  return self._buildManager:CheckCanPicnic(self._buildItemId)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildBuildItemPicnic._SetPos = function(self, buildItemId)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._go).transform).anchoredPosition = (self._buildManager):GetWidgetPos(buildItemId)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._maskPanel).anchoredPosition = (self._buildManager):GetWidgetDesPos(buildItemId)
+function UIBuildBuildItemPicnic:_SetPos(buildItemId)
+  self._go.transform.anchoredPosition = self._buildManager:GetWidgetPos(buildItemId)
+  self._maskPanel.anchoredPosition = self._buildManager:GetWidgetDesPos(buildItemId)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildBuildItemPicnic._SetBtn = function(self, buildItemId)
-  -- function num : 0_6 , upvalues : _ENV
-  local str = (UIActivityN13Helper.GetStrByStatus_Picnic)((self._buildManager):GetName(buildItemId))
-  if (self._buildManager):CheckPicnicHaveStory() then
+function UIBuildBuildItemPicnic:_SetBtn(buildItemId)
+  local str = UIActivityN13Helper.GetStrByStatus_Picnic(self._buildManager:GetName(buildItemId))
+  if self._buildManager:CheckPicnicHaveStory() then
     str = str .. "(等待剧情)"
-  else
-    if not (self._buildManager):CheckPicnicLockTime(buildItemId) then
-      str = str .. "(等待刷新)"
-    else
-      if not (self._buildManager):CheckPicnicHaveNextCfg() then
-        str = str .. "(全部结束)"
-      end
+  elseif not self._buildManager:CheckPicnicLockTime(buildItemId) then
+    str = str .. "(等待刷新)"
+  elseif not self._buildManager:CheckPicnicHaveNextCfg() then
+    str = str .. "(全部结束)"
+  end
+  self._txtDebug:SetText(str)
+end
+
+function UIBuildBuildItemPicnic:BtnOnClick()
+  if not self:_CanPicnic() then
+    if self._buildManager:CheckPicnicHaveStory() then
+      ToastManager.ShowToast(StringTable.Get("str_n13_picnic_need_play_story"))
     end
+    return
   end
-  ;
-  (self._txtDebug):SetText(str)
-end
-
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildBuildItemPicnic.BtnOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  if not self:_CanPicnic() and (self._buildManager):CheckPicnicHaveStory() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n13_picnic_need_play_story"))
-  end
-  do return  end
-  ;
-  (self._go):SetActive(false)
+  self._go:SetActive(false)
   if self._btnCallback then
-    (self._btnCallback)()
+    self._btnCallback()
   end
 end
-
-

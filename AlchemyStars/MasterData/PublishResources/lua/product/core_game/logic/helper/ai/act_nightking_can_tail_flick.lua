@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/act_nightking_can_tail_flick.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionNightKingCanTailFlick", AINewNode)
 ActionNightKingCanTailFlick = ActionNightKingCanTailFlick
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionNightKingCanTailFlick.Constructor = function(self)
-  -- function num : 0_0
+function ActionNightKingCanTailFlick:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionNightKingCanTailFlick.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ActionNightKingCanTailFlick:OnUpdate()
   local ownEntity = self.m_entityOwn
   local myPos = ownEntity:GetGridPosition()
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   local newDir, newBodyArea = utilScopeSvc:GetTailFlickSwitchBodyArea(ownEntity, teamEntity)
   for i = 2, #newBodyArea do
     local area = newBodyArea[i]
@@ -30,5 +20,3 @@ ActionNightKingCanTailFlick.OnUpdate = function(self)
   end
   return AINewNodeStatus.Success
 end
-
-

@@ -1,8 +1,5 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/kr/activity/cn15_n44/str_cn15_n44_lesson.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_cn15_n44_lesson_1 = "일상 보급", str_cn15_n44_lesson_2 = "[일상 보급] 이벤트 기간에 일일 활약도 보물상자를 수령할 때마다 추가로 [일상 보급상자]를 획득할 수 있습니다."}
+local config = {
+  str_cn15_n44_lesson_1 = "일상 보급",
+  str_cn15_n44_lesson_2 = "[일상 보급] 이벤트 기간에 일일 활약도 보물상자를 수령할 때마다 추가로 [일상 보급상자]를 획득할 수 있습니다."
+}
 return config
-

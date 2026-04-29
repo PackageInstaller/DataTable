@@ -1,163 +1,109 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/tale_pet/ui_tale_pet/ui_mission_submit_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMissionSubmitItem", UIController)
 UIMissionSubmitItem = UIMissionSubmitItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMissionSubmitItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMissionSubmitItem:OnShow(uiParams)
   self.itemId = uiParams[1]
   self.taskDesc = uiParams[2]
   self.taskNum = uiParams[3]
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
+  self.itemModule = GameGlobal.GetModule(ItemModule)
   self._uiCommonAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
   self:InitWidget()
   self:RefreshInfo()
   self:AttachEvent(GameEventType.ItemCountChanged, self.OnItemCountChanged)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionSubmitItem.OnHide = function(self)
-  -- function num : 0_1
+function UIMissionSubmitItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionSubmitItem.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMissionSubmitItem:InitWidget()
   self.txtMission = self:GetUIComponent("UILocalizationText", "txtMission")
   self.itemIcon = self:GetUIComponent("RawImageLoader", "itemIcon")
   self.missionNum = self:GetUIComponent("UILocalizationText", "missionNum")
   self.allNum = self:GetUIComponent("UILocalizationText", "allNum")
   self.txtCancel = self:GetUIComponent("UILocalizationText", "txtCancel")
   self.txtSubmit = self:GetUIComponent("UILocalizationText", "txtSubmit")
-  ;
-  (self.txtSubmit):SetText((StringTable.Get)("str_tale_pet_btn_submit_name"))
-  ;
-  (self.txtCancel):SetText((StringTable.Get)("str_tale_pet_btn_cancel"))
+  self.txtSubmit:SetText(StringTable.Get("str_tale_pet_btn_submit_name"))
+  self.txtCancel:SetText(StringTable.Get("str_tale_pet_btn_cancel"))
   self.infoRect = self:GetUIComponent("RectTransform", "itemIcon")
   self.itemTips = self:GetUIComponent("UISelectObjectPath", "itemTips")
-  self.tips = (self.itemTips):SpawnObject("UISelectInfo")
+  self.tips = self.itemTips:SpawnObject("UISelectInfo")
   self.quality = self:GetUIComponent("Image", "quality")
   self.qualityGo = self:GetGameObject("quality")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionSubmitItem.RefreshInfo = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)({ID = self.itemId})
+function UIMissionSubmitItem:RefreshInfo()
+  local cfg = Cfg.cfg_item({
+    ID = self.itemId
+  })
   if cfg == nil then
-    return 
+    return
   end
-  ;
-  (self.txtMission):SetText(self.taskDesc)
-  ;
-  (self.itemIcon):LoadImage((cfg[1]).Icon)
-  local itemCount = (self.itemModule):GetItemCount(self.itemId)
-  ;
-  (self.allNum):SetText((StringTable.Get)("str_tale_pet_item_own", itemCount))
+  self.txtMission:SetText(self.taskDesc)
+  self.itemIcon:LoadImage(cfg[1].Icon)
+  local itemCount = self.itemModule:GetItemCount(self.itemId)
+  self.allNum:SetText(StringTable.Get("str_tale_pet_item_own", itemCount))
   if itemCount < self.taskNum then
     self.countNotEnough = true
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.allNum).color = Color(1, 0, 0, 1)
+    self.allNum.color = Color(1, 0, 0, 1)
   else
     self.countNotEnough = false
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.allNum).color = Color(1, 1, 1, 1)
+    self.allNum.color = Color(1, 1, 1, 1)
   end
-  self:SetQuality((cfg[1]).Color)
+  self:SetQuality(cfg[1].Color)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionSubmitItem.SetQuality = function(self, quality)
-  -- function num : 0_4 , upvalues : _ENV
+function UIMissionSubmitItem:SetQuality(quality)
   if quality <= 0 then
-    (self.qualityGo):SetActive(false)
-    return 
+    self.qualityGo:SetActive(false)
+    return
   end
-  local qualityName = (UIEnum.ItemColorFrame)(quality)
+  local qualityName = UIEnum.ItemColorFrame(quality)
   if qualityName ~= "" then
-    (self.qualityGo):SetActive(true)
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.quality).sprite = (self._uiCommonAtlas):GetSprite(qualityName)
+    self.qualityGo:SetActive(true)
+    self.quality.sprite = self._uiCommonAtlas:GetSprite(qualityName)
   else
-    ;
-    (self.qualityGo):SetActive(false)
+    self.qualityGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionSubmitItem.BtnSubmitOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIMissionSubmitItem:BtnSubmitOnClick()
   if self.countNotEnough then
-    (ToastManager.ShowToast)((StringTable.Get)("str_tale_pet_submit_fail"))
+    ToastManager.ShowToast(StringTable.Get("str_tale_pet_submit_fail"))
   else
     self:Lock("UIMissionSubmitItem:SubmitItem")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.SubmitItem, self)
+    GameGlobal.TaskManager():StartTask(self.SubmitItem, self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionSubmitItem.SubmitItem = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  local itemAsset = ((self.itemModule):GetItemByTempId(self.itemId))
-  -- DECOMPILER ERROR at PC4: Overwrote pending register: R3 in 'AssignReg'
-
-  local pstid = .end
-  for key,value in pairs(itemAsset) do
+function UIMissionSubmitItem:SubmitItem(TT)
+  local itemAsset = self.itemModule:GetItemByTempId(self.itemId)
+  local pstid
+  for key, value in pairs(itemAsset) do
     pstid = value:GetID()
   end
   local items = {}
   local item = ItemAsset:New()
   item.assetid = pstid
   item.count = self.taskNum
-  ;
-  (table.insert)(items, item)
-  local res = (self.itemModule):ReqTaskSubmitItem(TT, items)
+  table.insert(items, item)
+  local res = self.itemModule:ReqTaskSubmitItem(TT, items)
   if res:GetSucc() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_tale_pet_submit_succ"))
+    ToastManager.ShowToast(StringTable.Get("str_tale_pet_submit_succ"))
     self:CloseDialog()
   else
-    ;
-    (ToastManager.ShowToast)(res:GetResult())
+    ToastManager.ShowToast(res:GetResult())
   end
   self:UnLock("UIMissionSubmitItem:SubmitItem")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionSubmitItem.BtnCancelOnClick = function(self)
-  -- function num : 0_7
+function UIMissionSubmitItem:BtnCancelOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionSubmitItem.BtnInfoOnClick = function(self)
-  -- function num : 0_8
+function UIMissionSubmitItem:BtnInfoOnClick()
   self:ShowDialog("UIItemGetPathController", self.itemId)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionSubmitItem.OnItemCountChanged = function(self)
-  -- function num : 0_9
+function UIMissionSubmitItem:OnItemCountChanged()
   self:RefreshInfo()
 end
-
-

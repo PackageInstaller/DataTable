@@ -1,30 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_stun_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewSetStun", BuffViewBase)
 BuffViewSetStun = BuffViewSetStun
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewSetStun.PlayView = function(self, TT)
-  -- function num : 0_0
-  (self._entity):SetAnimatorControllerBools({Stun = true})
+function BuffViewSetStun:PlayView(TT)
+  self._entity:SetAnimatorControllerBools({Stun = true})
 end
 
 _class("BuffViewResetStun", BuffViewBase)
 BuffViewResetStun = BuffViewResetStun
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewResetStun.PlayView = function(self, TT)
-  -- function num : 0_1
+function BuffViewResetStun:PlayView(TT)
   local targetEntity = self._entity
   targetEntity:SetAnimatorControllerBools({Stun = false})
-  local effectService = (self._world):GetService("Effect")
+  local effectService = self._world:GetService("Effect")
   if effectService ~= nil then
     effectService:ShowIdleEffect(targetEntity, true)
     effectService:DestroyWeakEffect(targetEntity)
   end
 end
-
-

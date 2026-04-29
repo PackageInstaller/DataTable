@@ -1,17 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/trap/2800601/cfg_skill_view_280061105.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterAnimation,animName=Skill04; PlayAudio,audioID=8011,audioType=1; PlayCasterBindEffect,effectID=3477; Wait,waitTime=450; PlayCasterMaterialAnim,animName=eff_2800601_skill04_cure; Wait,waitTime=550; "}
-}
-, 
-{2, 2, 0, 2, 1, 0, 
-{" PlayAddHpText,damageStageIndex=1; DataSelectResult,effectType=36,index=1,damageStageIndex=2; PlayEffectAtTargetPos,effectID=3343; Wait,waitTime=2500; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName=Skill04; PlayAudio,audioID=8011,audioType=1; PlayCasterBindEffect,effectID=3477; Wait,waitTime=450; PlayCasterMaterialAnim,animName=eff_2800601_skill04_cure; Wait,waitTime=550; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    2,
+    1,
+    0,
+    {
+      " PlayAddHpText,damageStageIndex=1; DataSelectResult,effectType=36,index=1,damageStageIndex=2; PlayEffectAtTargetPos,effectID=3343; Wait,waitTime=2500; "
+    }
+  }
 }
 return config, "ID", key
-

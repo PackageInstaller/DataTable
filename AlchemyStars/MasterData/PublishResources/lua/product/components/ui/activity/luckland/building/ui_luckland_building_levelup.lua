@@ -1,31 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/building/ui_luckland_building_levelup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandBuildingLevelUp", UIController)
 UILuckLandBuildingLevelUp = UILuckLandBuildingLevelUp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandBuildingLevelUp.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UILuckLandBuildingLevelUp:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildingLevelUp.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UILuckLandBuildingLevelUp:OnShow(uiParams)
   self._buildData = uiParams[1]
   self._cb = uiParams[2]
   self:_InitWidget()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildingLevelUp._InitWidget = function(self)
-  -- function num : 0_2
+function UILuckLandBuildingLevelUp:_InitWidget()
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._level = self:GetUIComponent("UILocalizationText", "Level")
@@ -46,183 +33,124 @@ UILuckLandBuildingLevelUp._InitWidget = function(self)
   self._animation = self:GetUIComponent("Animation", "Animation")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildingLevelUp._OnValue = function(self)
-  -- function num : 0_3
+function UILuckLandBuildingLevelUp:_OnValue()
   self:RefreshUIInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildingLevelUp.RefreshUIInfo = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._icon):LoadImage((self._buildData):Icon())
-  ;
-  (self._name):SetText((StringTable.Get)((self._buildData):Name()))
-  ;
-  (self._desc):SetText((StringTable.Get)((self._buildData):Desc()))
-  ;
-  (self._level):SetText("Lv." .. (self._buildData):GetCurLevel())
-  self._isMax = (self._buildData):MaxLevel() <= (self._buildData):GetCurLevel()
+function UILuckLandBuildingLevelUp:RefreshUIInfo()
+  self._icon:LoadImage(self._buildData:Icon())
+  self._name:SetText(StringTable.Get(self._buildData:Name()))
+  self._desc:SetText(StringTable.Get(self._buildData:Desc()))
+  self._level:SetText("Lv." .. self._buildData:GetCurLevel())
+  self._isMax = self._buildData:GetCurLevel() >= self._buildData:MaxLevel()
   self._nextMax = false
   if self._isMax then
-    (self._maxLevelText):SetText("Lv." .. (self._buildData):GetCurLevel())
-    local maxLevelTipStr = (self._buildData):GetLevelTip((self._buildData):ID())
+    self._maxLevelText:SetText("Lv." .. self._buildData:GetCurLevel())
+    local maxLevelTipStr = self._buildData:GetLevelTip(self._buildData:ID())
     if maxLevelTipStr then
-      (self._maxLevelEffect):SetText((StringTable.Get)(maxLevelTipStr))
+      self._maxLevelEffect:SetText(StringTable.Get(maxLevelTipStr))
     end
-    ;
-    (self._curMoneyGO):SetActive(false)
-    ;
-    (self._levelUpBtnGO):SetActive(false)
-    -- DECOMPILER ERROR at PC83: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._cancleBtnRect).anchoredPosition = Vector2(0, -243)
+    self._curMoneyGO:SetActive(false)
+    self._levelUpBtnGO:SetActive(false)
+    self._cancleBtnRect.anchoredPosition = Vector2(0, -243)
   else
-    (self._curLevelText):SetText("Lv." .. (self._buildData):GetCurLevel())
-    local curLevelTipStr = (self._buildData):GetLevelTip((self._buildData):ID())
+    self._curLevelText:SetText("Lv." .. self._buildData:GetCurLevel())
+    local curLevelTipStr = self._buildData:GetLevelTip(self._buildData:ID())
     if curLevelTipStr then
-      (self._curLevelEffect):SetText((StringTable.Get)(curLevelTipStr))
+      self._curLevelEffect:SetText(StringTable.Get(curLevelTipStr))
     end
-    self._upgradeCost = ((self._buildData):Cfg()).UpgradeCost
-    ;
-    (self._cost):SetText(self._upgradeCost)
-    local nextCfg = (Cfg.cfg_luckland_client_build)[(self._buildData):ID() + 1]
+    self._upgradeCost = self._buildData:Cfg().UpgradeCost
+    self._cost:SetText(self._upgradeCost)
+    local nextCfg = Cfg.cfg_luckland_client_build[self._buildData:ID() + 1]
     if nextCfg then
       local nextLevel = nextCfg.ID % 100
-      self._nextMax = (self._buildData):MaxLevel() <= nextLevel
-      ;
-      (self._nextLevelText):SetText("Lv." .. nextLevel)
+      self._nextMax = nextLevel >= self._buildData:MaxLevel()
+      self._nextLevelText:SetText("Lv." .. nextLevel)
       local nextLevelTipStr = nextCfg.BuildLevelTips
       if nextLevelTipStr then
-        (self._nextLevelEffect):SetText((StringTable.Get)(nextLevelTipStr))
+        self._nextLevelEffect:SetText(StringTable.Get(nextLevelTipStr))
       end
     end
-    local total = (LuckLandInnerGameHelper.GetCurMoney)()
-    ;
-    (self._currencyCount):SetText(total)
-    ;
-    (self._curMoneyGO):SetActive(true)
-    ;
-    (self._levelUpBtnGO):SetActive(true)
-    -- DECOMPILER ERROR at PC172: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._cancleBtnRect).anchoredPosition = Vector2(-302.1, -243)
-    -- DECOMPILER ERROR at PC182: Confused about usage of register: R4 in 'UnsetPending'
-
+    local total = LuckLandInnerGameHelper.GetCurMoney()
+    self._currencyCount:SetText(total)
+    self._curMoneyGO:SetActive(true)
+    self._levelUpBtnGO:SetActive(true)
+    self._cancleBtnRect.anchoredPosition = Vector2(-302.1, -243)
     if total < self._upgradeCost then
-      (self._cost).color = Color(0.95294117647059, 0.32549019607843, 0.28627450980392)
+      self._cost.color = Color(0.9529411764705882, 0.3254901960784314, 0.28627450980392155)
     else
-      -- DECOMPILER ERROR at PC190: Confused about usage of register: R4 in 'UnsetPending'
-
-      (self._cost).color = Color(1, 1, 1)
+      self._cost.color = Color(1, 1, 1)
     end
   end
-  ;
-  (self._upgradeGO):SetActive(not self._isMax)
-  ;
-  (self._maxGO):SetActive(self._isMax)
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
+  self._upgradeGO:SetActive(not self._isMax)
+  self._maxGO:SetActive(self._isMax)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildingLevelUp.CloseBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UILuckLandBuildingLevelUp:CloseBtnOnClick(go)
   self:_CloseUI()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildingLevelUp.CancleBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UILuckLandBuildingLevelUp:CancleBtnOnClick(go)
   self:_CloseUI()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildingLevelUp._CloseUI = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UILuckLandBuildingLevelUp:_CloseUI()
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV
     self:Lock("UILuckLandBuildingLevelUp")
-    ;
-    (self._animation):Play("uieff_UILuckLandBuildingLevelUp_out")
+    self._animation:Play("uieff_UILuckLandBuildingLevelUp_out")
     YIELD(TT, 333)
     self:UnLock("UILuckLandBuildingLevelUp")
     if self._cb then
-      (self._cb)(false)
+      self._cb(false)
     end
     self:CloseDialog()
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildingLevelUp.LevelUpBtnOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
+function UILuckLandBuildingLevelUp:LevelUpBtnOnClick(go)
   if self._isMax then
-    return 
+    return
   end
-  if (LuckLandInnerGameHelper.GetCurMoney)() < self._upgradeCost then
-    (ToastManager.ShowToast)((StringTable.Get)("str_luckland_building_upgrade_error"))
+  if self._upgradeCost > LuckLandInnerGameHelper.GetCurMoney() then
+    ToastManager.ShowToast(StringTable.Get("str_luckland_building_upgrade_error"))
   else
     self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV
-    self:Lock("UILuckLandBuildingLevelUp")
-    if self._nextMax then
-      local entityMgr = (LuckLandInnerGameHelper.GetEntityMgr)()
-      do
-        do
-          if entityMgr then
-            local buildingEntity = entityMgr:GetBuildingByTemplateID((self._buildData):ID())
-            if buildingEntity then
-              ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LuckLandUpgrade, buildingEntity:ID())
-              ;
-              (self._buildData):Upgrade()
-              self:RefreshUIInfo()
-            end
-          end
-          ;
-          (self._animation):Play("uieff_UILuckLandBuildingLevelUp_max")
-          YIELD(TT, 1167)
-          ;
-          (self._animation):Play("uieff_UILuckLandBuildingLevelUp_levelup")
-          YIELD(TT, 600)
-          local entityMgr = (LuckLandInnerGameHelper.GetEntityMgr)()
-          do
-            do
-              if entityMgr then
-                local buildingEntity = entityMgr:GetBuildingByTemplateID((self._buildData):ID())
-                if buildingEntity then
-                  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LuckLandUpgrade, buildingEntity:ID())
-                  ;
-                  (self._buildData):Upgrade()
-                  self:RefreshUIInfo()
-                end
-              end
-              YIELD(TT, 567)
-              self:UnLock("UILuckLandBuildingLevelUp")
-              local entityMgr = (LuckLandInnerGameHelper.GetEntityMgr)()
-              local buildingEntity = entityMgr:GetBuildingByTemplateID((self._buildData):ID())
-              local module = GameGlobal:GetLuckLandModule()
-              module:BuildingUpgradeDrawCard(buildingEntity:GetBuildingType())
-              if self._cb then
-                (self._cb)(true)
-                self:CloseDialog()
-              end
-            end
+      self:Lock("UILuckLandBuildingLevelUp")
+      if self._nextMax then
+        local entityMgr = LuckLandInnerGameHelper.GetEntityMgr()
+        if entityMgr then
+          local buildingEntity = entityMgr:GetBuildingByTemplateID(self._buildData:ID())
+          if buildingEntity then
+            GameGlobal.EventDispatcher():Dispatch(GameEventType.LuckLandUpgrade, buildingEntity:ID())
+            self._buildData:Upgrade()
+            self:RefreshUIInfo()
           end
         end
+        self._animation:Play("uieff_UILuckLandBuildingLevelUp_max")
+        YIELD(TT, 1167)
+      else
+        self._animation:Play("uieff_UILuckLandBuildingLevelUp_levelup")
+        YIELD(TT, 600)
+        local entityMgr = LuckLandInnerGameHelper.GetEntityMgr()
+        if entityMgr then
+          local buildingEntity = entityMgr:GetBuildingByTemplateID(self._buildData:ID())
+          if buildingEntity then
+            GameGlobal.EventDispatcher():Dispatch(GameEventType.LuckLandUpgrade, buildingEntity:ID())
+            self._buildData:Upgrade()
+            self:RefreshUIInfo()
+          end
+        end
+        YIELD(TT, 567)
       end
-    end
-  end
-, self)
+      self:UnLock("UILuckLandBuildingLevelUp")
+      local entityMgr = LuckLandInnerGameHelper.GetEntityMgr()
+      local buildingEntity = entityMgr:GetBuildingByTemplateID(self._buildData:ID())
+      local module = GameGlobal:GetLuckLandModule()
+      module:BuildingUpgradeDrawCard(buildingEntity:GetBuildingType())
+      if self._cb then
+        self._cb(true)
+        self:CloseDialog()
+      end
+    end, self)
   end
 end
-
-

@@ -1,90 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/gm_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GMCommand", IEntityCommand)
 GMCommand = GMCommand
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GMCommand.Constructor = function(self)
-  -- function num : 0_0
+function GMCommand:Constructor()
   self._commandType = "GM"
   self._funcParam = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCommand.GetExecStateID = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function GMCommand:GetExecStateID()
   return GameStateID.WaitInput
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCommand.IsExecExcluded = function(self)
-  -- function num : 0_2
+function GMCommand:IsExecExcluded()
   return 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCommand.DependRoundCount = function(self)
-  -- function num : 0_3
+function GMCommand:DependRoundCount()
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCommand.SetFuncName = function(self, funcName)
-  -- function num : 0_4
+function GMCommand:SetFuncName(funcName)
   self._funcName = funcName
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCommand.GetFuncName = function(self)
-  -- function num : 0_5
+function GMCommand:GetFuncName()
   return self._funcName
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCommand.GetCommandType = function(self)
-  -- function num : 0_6
+function GMCommand:GetCommandType()
   return self._commandType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCommand.SetFuncParam = function(self, ...)
-  -- function num : 0_7
-  self._funcParam = {...}
+function GMCommand:SetFuncParam(...)
+  self._funcParam = {
+    ...
+  }
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCommand.GetFuncParam = function(self)
-  -- function num : 0_8
+function GMCommand:GetFuncParam()
   return self._funcParam
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCommand.ToNetMessage = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function GMCommand:ToNetMessage()
   local msg = CEventLuaCommand:New()
   msg.cmd = echo(self)
   return msg
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_10 , upvalues : _ENV
+function GMCommand:FromNetMessage(msg)
   local cmd = ohce(msg.cmd)
   self._funcName = cmd:GetFuncName()
   self._funcParam = cmd:GetFuncParam()
 end
-
-

@@ -1,59 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/favour_pet/vote2/ui_favour_pet_vote2_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFavourPetVote2Detail", UIController)
 UIFavourPetVote2Detail = UIFavourPetVote2Detail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFavourPetVote2Detail.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  if uiParams then
-    local component = uiParams[1]
-  end
-  if uiParams then
-    local voteId = uiParams[2]
-  end
-  local cfg = (UIFavourPetHelper.GetSkinInfo)(component, voteId)
+function UIFavourPetVote2Detail:OnShow(uiParams)
+  local component = uiParams and uiParams[1]
+  local voteId = uiParams and uiParams[2]
+  local cfg = UIFavourPetHelper.GetSkinInfo(component, voteId)
   if cfg then
     local skinName = cfg.SkinName
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, "_name", (StringTable.Get)(skinName))
+    UIWidgetHelper.SetLocalizationText(self, "_name", StringTable.Get(skinName))
     local skinDesc = cfg.SkinDesc
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, "_desc", (StringTable.Get)(skinDesc))
+    UIWidgetHelper.SetLocalizationText(self, "_desc", StringTable.Get(skinDesc))
     local skinImg = cfg.SkinIntroImg
-    ;
-    (UIWidgetHelper.SetRawImage)(self, "_introImg", skinImg)
+    UIWidgetHelper.SetRawImage(self, "_introImg", skinImg)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2Detail.OnHide = function(self)
-  -- function num : 0_1
+function UIFavourPetVote2Detail:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2Detail.CloseBtnOnClick = function(self)
-  -- function num : 0_2
+function UIFavourPetVote2Detail:CloseBtnOnClick()
   self:_CloseDialogWithAnim()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2Detail._CloseDialogWithAnim = function(self, callback)
-  -- function num : 0_3 , upvalues : _ENV
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", "uianim_UIFavourPetVote2Detail_out", 433, function()
-    -- function num : 0_3_0 , upvalues : callback, self
+function UIFavourPetVote2Detail:_CloseDialogWithAnim(callback)
+  UIWidgetHelper.PlayAnimation(self, "_anim", "uianim_UIFavourPetVote2Detail_out", 433, function()
     if callback then
       callback()
     end
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

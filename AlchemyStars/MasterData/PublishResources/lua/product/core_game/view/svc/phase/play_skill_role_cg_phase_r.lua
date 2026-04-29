@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_role_cg_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillRoleCGPhase", PlaySkillPhaseBase)
 PlaySkillRoleCGPhase = PlaySkillRoleCGPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillRoleCGPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillRoleCGPhase:PlayFlight(TT, casterEntity, phaseParam)
   local roleCGParam = phaseParam
   local cgTimeLen = roleCGParam:GetCGTimeLen()
   local cgRes = roleCGParam:GetCGRes()
@@ -18,7 +11,7 @@ PlaySkillRoleCGPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
   local battleRenderConfigCmpt = world:BattleRenderConfig()
   local canPlayCG = battleRenderConfigCmpt:GetCanPlaySkillSpineInBattle(cgRes)
   if not canPlayCG then
-    return 
+    return
   end
   if hideRoleTime then
     YIELD(TT, hideRoleTime)
@@ -26,14 +19,10 @@ PlaySkillRoleCGPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
   if hideRoleTime then
     casterEntity:SetViewVisible(false)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowUltraSkillSpine, cgRes)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowUltraSkillSpine, cgRes)
   YIELD(TT, cgTimeLen)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.StopUltraSkillSpine, cgRes)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.StopUltraSkillSpine, cgRes)
   if hideRoleTime then
     casterEntity:SetViewVisible(true)
   end
 end
-
-

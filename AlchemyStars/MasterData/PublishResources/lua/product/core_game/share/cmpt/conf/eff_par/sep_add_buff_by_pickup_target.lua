@@ -1,67 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_add_buff_by_pickup_target.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectAddBuffByPickupTargetParam", SkillEffectParamBase)
 SkillEffectAddBuffByPickupTargetParam = SkillEffectAddBuffByPickupTargetParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectAddBuffByPickupTargetParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectAddBuffByPickupTargetParam:Constructor(t)
   self._buffID = t.buffID
   self._matchPieceType = t.matchPieceType
   self._trapIDBuffTab = t.trapIDBuffTab
   self._trapIDBuffMatchPieceTypeTab = t.trapIDBuffMatchPieceTypeTab
   self._trapIDList = {}
   if self._trapIDBuffTab then
-    for key,value in pairs(self._trapIDBuffTab) do
-      (table.insert)(self._trapIDList, key)
+    for key, value in pairs(self._trapIDBuffTab) do
+      table.insert(self._trapIDList, key)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAddBuffByPickupTargetParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectAddBuffByPickupTargetParam:GetEffectType()
   return SkillEffectType.AddBuffByPickupTarget
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAddBuffByPickupTargetParam.GetTrapIDList = function(self)
-  -- function num : 0_2
+function SkillEffectAddBuffByPickupTargetParam:GetTrapIDList()
   return self._trapIDList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAddBuffByPickupTargetParam.GetBuffID = function(self)
-  -- function num : 0_3
+function SkillEffectAddBuffByPickupTargetParam:GetBuffID()
   return self._buffID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAddBuffByPickupTargetParam.GetBuffIDByTrapID = function(self, trapID)
-  -- function num : 0_4
-  return (self._trapIDBuffTab)[trapID]
+function SkillEffectAddBuffByPickupTargetParam:GetBuffIDByTrapID(trapID)
+  return self._trapIDBuffTab[trapID]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAddBuffByPickupTargetParam.GetMatchPieceTypeBuffIDByTrapID = function(self, trapID)
-  -- function num : 0_5
-  return (self._trapIDBuffMatchPieceTypeTab)[trapID]
+function SkillEffectAddBuffByPickupTargetParam:GetMatchPieceTypeBuffIDByTrapID(trapID)
+  return self._trapIDBuffMatchPieceTypeTab[trapID]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAddBuffByPickupTargetParam.GetMatchPieceType = function(self)
-  -- function num : 0_6
+function SkillEffectAddBuffByPickupTargetParam:GetMatchPieceType()
   return self._matchPieceType
 end
-
-

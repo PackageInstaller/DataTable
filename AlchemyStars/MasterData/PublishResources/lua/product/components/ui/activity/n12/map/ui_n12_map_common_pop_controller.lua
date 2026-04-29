@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/map/ui_n12_map_common_pop_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12MapCommonPopController", UIController)
 UIN12MapCommonPopController = UIN12MapCommonPopController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12MapCommonPopController.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UIN12MapCommonPopController:OnShow(uiParam)
   self._title = uiParam[1]
   self._content = uiParam[2]
   self._btn1Tex = uiParam[3]
@@ -19,90 +12,59 @@ UIN12MapCommonPopController.OnShow = function(self, uiParam)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapCommonPopController.GetComponents = function(self)
-  -- function num : 0_1
+function UIN12MapCommonPopController:GetComponents()
   self._contentTex = self:GetUIComponent("UILocalizationText", "content")
   self._btnTex1 = self:GetUIComponent("UILocalizedTMP", "btnTex1")
   self._btnTex2 = self:GetUIComponent("UILocalizationText", "btnTex2")
   self._titleTex = self:GetUIComponent("UILocalizationText", "title")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapCommonPopController.OnValue = function(self)
-  -- function num : 0_2
+function UIN12MapCommonPopController:OnValue()
   local title = self._title or ""
   local content = self._content or ""
   local btn1Tex = self._btn1Tex or ""
   local btn2Tex = self._btn2Tex or ""
-  ;
-  (self._titleTex):SetText(title)
-  ;
-  (self._btnTex1):SetText(btn1Tex)
-  ;
-  (self._btnTex2):SetText(btn2Tex)
-  ;
-  (self._contentTex):SetText(content)
+  self._titleTex:SetText(title)
+  self._btnTex1:SetText(btn1Tex)
+  self._btnTex2:SetText(btn2Tex)
+  self._contentTex:SetText(content)
   self:SetTextMat()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapCommonPopController.SetTextMat = function(self)
-  -- function num : 0_3
+function UIN12MapCommonPopController:SetTextMat()
   self:SetFontMat(self._btnTex1, "uieff_n12_map_leave_tex.mat")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapCommonPopController.SetFontMat = function(self, lable, resname)
-  -- function num : 0_4 , upvalues : _ENV
-  self._res = (ResourceManager:GetInstance()):SyncLoadAsset(resname, LoadType.Mat)
+function UIN12MapCommonPopController:SetFontMat(lable, resname)
+  self._res = ResourceManager:GetInstance():SyncLoadAsset(resname, LoadType.Mat)
   if not self._res then
-    return 
+    return
   end
-  local obj = (self._res).Obj
+  local obj = self._res.Obj
   local mat = lable.fontMaterial
   lable.fontMaterial = obj
-  ;
-  (lable.fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  lable.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapCommonPopController.btn1OnClick = function(self, go)
-  -- function num : 0_5
+function UIN12MapCommonPopController:btn1OnClick(go)
   if self._btn1Cb then
-    (self._btn1Cb)()
+    self._btn1Cb()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapCommonPopController.btn2OnClick = function(self, go)
-  -- function num : 0_6
+function UIN12MapCommonPopController:btn2OnClick(go)
   if self._btn2Cb then
-    (self._btn2Cb)()
+    self._btn2Cb()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapCommonPopController.closeBtnOnClick = function(self, go)
-  -- function num : 0_7
+function UIN12MapCommonPopController:closeBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapCommonPopController.OnHide = function(self)
-  -- function num : 0_8
+function UIN12MapCommonPopController:OnHide()
   if self._res then
-    (self._res):Dispose()
+    self._res:Dispose()
     self._res = nil
   end
 end
-
-

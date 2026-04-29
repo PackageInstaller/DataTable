@@ -1,43 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/ui_s4_trade_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local UIS4TradeBtnType = {LeftDown = 1, Center = 2}
 _enum("UIS4TradeBtnType", UIS4TradeBtnType)
 local UIS4TradeCloseType = {Return = 1, Main = 2}
 _enum("UIS4TradeCloseType", UIS4TradeCloseType)
 _class("UIS4TradeMainController", UIController)
 UIS4TradeMainController = UIS4TradeMainController
--- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
 
-UIS4TradeMainController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
+function UIS4TradeMainController:LoadDataOnEnter(TT, res)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   res:SetSucc(true)
-  self._seasonObj = ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonObj()
+  self._seasonObj = GameGlobal.GetModule(SeasonModule):GetCurSeasonObj()
   if not self._seasonObj then
     res:SetSucc(false)
-    ;
-    (Log.error)("无法获取到赛季数据")
-    return 
+    Log.error("无法获取到赛季数据")
+    return
   end
   self._tradeData = UIS4TradeData:New(self._seasonObj)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIS4TradeMainController:OnShow(uiParams)
   self:InitWidget()
   self:InitData()
   self:AttachEvents()
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.AttachEvents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIS4TradeMainController:AttachEvents()
   self:AttachEvent(GameEventType.OnS4TradeCrewChange, self.OnS4TradeCrewChange)
   self:AttachEvent(GameEventType.OnS4HarborUPPreview, self.HarborLvUPSpeed)
   self:AttachEvent(GameEventType.OnS4ShipUPPreview, self.ShipLvUPLoadage)
@@ -46,27 +32,17 @@ UIS4TradeMainController.AttachEvents = function(self)
   self:AttachEvent(GameEventType.ItemCountChanged, self.SetTopCoinValue)
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : UIS4TradeCloseType, _ENV
+function UIS4TradeMainController:InitWidget()
   self._anim = self:GetUIComponent("Animation", "_anim")
   self._backBtns = self:GetUIComponent("UISelectObjectPath", "_backBtns")
-  self._commonTopBtn = (self._backBtns):SpawnObject("UISeasonTopBtn")
-  ;
-  (self._commonTopBtn):SetData(function()
-    -- function num : 0_3_0 , upvalues : self, UIS4TradeCloseType
+  self._commonTopBtn = self._backBtns:SpawnObject("UISeasonTopBtn")
+  self._commonTopBtn:SetData(function()
     self:Close(UIS4TradeCloseType.Return)
-  end
-, function()
-    -- function num : 0_3_1 , upvalues : self, UIS4TradeCloseType
+  end, function()
     self:Close(UIS4TradeCloseType.Main)
-  end
-, nil, function()
-    -- function num : 0_3_2 , upvalues : _ENV
-    (UISeasonHelper.ShowSeasonHelperBook)(UISeasonHelperTabIndex.Business)
-  end
-, nil)
+  end, nil, function()
+    UISeasonHelper.ShowSeasonHelperBook(UISeasonHelperTabIndex.Business)
+  end, nil)
   self._uiElements = self:GetGameObject("_uiElements")
   self.shot = self:GetGameObject("shot")
   self.rt = self:GetGameObject("rt")
@@ -94,21 +70,19 @@ UIS4TradeMainController.InitWidget = function(self)
   self._speedSlider = self:GetUIComponent("Slider", "_speedSlider")
   self._speedUpSlider = self:GetUIComponent("Slider", "_speedUpSlider")
   self._speedUpSliderObj = self:GetGameObject("_speedUpSlider")
-  ;
-  (self._speedUpSliderObj):SetActive(false)
+  self._speedUpSliderObj:SetActive(false)
   self._speedUpOnPreview = false
   self._loadageTxt = self:GetUIComponent("UILocalizationText", "_loadageTxt")
   self._loadageSlider = self:GetUIComponent("Slider", "_loadageSlider")
   self._loadageUpSlider = self:GetUIComponent("Slider", "_loadageUpSlider")
   self._loadageUpSliderObj = self:GetGameObject("_loadageUpSlider")
-  ;
-  (self._loadageUpSliderObj):SetActive(false)
+  self._loadageUpSliderObj:SetActive(false)
   self._loadageUpOnPreview = false
   self._changeBtnsPool = self:GetUIComponent("UISelectObjectPath", "_changeBtns")
   self._shipsPool = self:GetUIComponent("UISelectObjectPath", "_ships")
   self._crewWidgetSpawner = self:GetUIComponent("UISelectObjectPath", "crewWidgetSpawner")
   self._crewManagerSpawner = self:GetUIComponent("UISelectObjectPath", "crewManagerSpawner")
-  local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
+  local open_id = GameGlobal.GameLogic():GetOpenId()
   self.LocalDBStr = "UIS4TradeMainController_haborOnChose" .. open_id
   self.EventLocalDBStr = "UIS4TradeMainController_EventID" .. open_id
   self.nameA = self:GetUIComponent("UILocalizationText", "NameA")
@@ -121,12 +95,22 @@ UIS4TradeMainController.InitWidget = function(self)
   self.harborLevelC = self:GetUIComponent("UILocalizationText", "HarborLevelC")
   self.shipLevelC = self:GetUIComponent("UILocalizationText", "ShipLevelC")
   self.harborLevelTxts = {
-[1] = {self.nameA, self.harborLevelA, self.shipLevelA}
-, 
-[2] = {self.nameB, self.harborLevelB, self.shipLevelB}
-, 
-[3] = {self.nameC, self.harborLevelC, self.shipLevelC}
-}
+    [1] = {
+      self.nameA,
+      self.harborLevelA,
+      self.shipLevelA
+    },
+    [2] = {
+      self.nameB,
+      self.harborLevelB,
+      self.shipLevelB
+    },
+    [3] = {
+      self.nameC,
+      self.harborLevelC,
+      self.shipLevelC
+    }
+  }
   self.ProgressRedPoint = self:GetGameObject("ProgressRedPoint")
   self.StartRedPoint = self:GetGameObject("StartRedPoint")
   self.turnTxt = self:GetUIComponent("UILocalizationText", "TurnTxt")
@@ -136,20 +120,15 @@ UIS4TradeMainController.InitWidget = function(self)
   self.LevelUpRedPoint = self:GetGameObject("LevelUpRedPoint")
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.InitData = function(self)
-  -- function num : 0_4
-  self._crewWidget = (self._crewWidgetSpawner):SpawnObject("UIS4TradeCrewWidget")
-  self._crewManager = (self._crewManagerSpawner):SpawnObject("UIS4TradeCrewManager")
-  self.HarborIDs = (self._tradeData):GetHarborIDs()
+function UIS4TradeMainController:InitData()
+  self._crewWidget = self._crewWidgetSpawner:SpawnObject("UIS4TradeCrewWidget")
+  self._crewManager = self._crewManagerSpawner:SpawnObject("UIS4TradeCrewManager")
+  self.HarborIDs = self._tradeData:GetHarborIDs()
   self:LoadHarborBtns()
   self:LoadShips()
   self:SetHarborShipParams()
-  ;
-  (self._crewWidget):SetData(self._tradeData, self.OnChooseHarborId)
-  ;
-  (self._crewManager):SetData(self._tradeData, self.OnChooseHarborId)
+  self._crewWidget:SetData(self._tradeData, self.OnChooseHarborId)
+  self._crewManager:SetData(self._tradeData, self.OnChooseHarborId)
   self:SetTopCoinValue()
   self:SetOutSeaTime()
   self:SetShipState(false)
@@ -161,39 +140,28 @@ UIS4TradeMainController.InitData = function(self)
   self:PlayTradeMainAnimIn()
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.CheckActivityEnd = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
-  local BusinessInfo = (self._tradeData):GetBusinessCompInfo()
+function UIS4TradeMainController:CheckActivityEnd()
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
+  local BusinessInfo = self._tradeData:GetBusinessCompInfo()
   local svrTimeModule = self:GetModule(SvrTimeModule)
   local curTime = svrTimeModule:GetServerTime() * 0.001
-  if BusinessInfo.m_close_time < curTime then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
-    ;
-    (seasonModule:UIModule()):ExitSeasonTo(UIStateType.UIMain)
+  if curTime > BusinessInfo.m_close_time then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
+    seasonModule:UIModule():ExitSeasonTo(UIStateType.UIMain)
   end
-  self._activityEndEvent = (UIActivityHelper.StartTimerEvent)(self._activityEndEvent, function()
-    -- function num : 0_5_0 , upvalues : svrTimeModule, BusinessInfo, self, _ENV, seasonModule
+  self._activityEndEvent = UIActivityHelper.StartTimerEvent(self._activityEndEvent, function()
     local curTime = svrTimeModule:GetServerTime() * 0.001
     local remainTime = BusinessInfo.m_close_time - curTime
     if remainTime <= 0 then
-      self._activityEndEvent = (UIActivityHelper.CancelTimerEvent)(self._activityEndEvent)
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
-      ;
-      (seasonModule:UIModule()):ExitSeasonTo(UIStateType.UIMain)
+      self._activityEndEvent = UIActivityHelper.CancelTimerEvent(self._activityEndEvent)
+      ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
+      seasonModule:UIModule():ExitSeasonTo(UIStateType.UIMain)
       return true
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.Close = function(self, type)
-  -- function num : 0_6 , upvalues : _ENV, UIS4TradeCloseType
+function UIS4TradeMainController:Close(type)
   self:DetachEvent(GameEventType.OnS4TradeCrewChange, self.OnS4TradeCrewChange)
   self:DetachEvent(GameEventType.OnS4HarborUPPreview, self.HarborLvUPSpeed)
   self:DetachEvent(GameEventType.OnS4ShipUPPreview, self.ShipLvUPLoadage)
@@ -203,88 +171,66 @@ UIS4TradeMainController.Close = function(self, type)
   self:CancleTimeEvents()
   local LockName = "UIS4TradeMainController_AnimIN"
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, LockName, _ENV, type, UIS4TradeCloseType
     self:Lock(LockName)
-    ;
-    (self._anim):Play("uianim_UIS4TradeMainController_out")
+    self._anim:Play("uianim_UIS4TradeMainController_out")
     YIELD(TT, 300)
     self:UnLock(LockName)
     if type == UIS4TradeCloseType.Return then
-      local controller = ((GameGlobal.UIStateManager)()):GetController("UISeasonMainS4")
+      local controller = GameGlobal.UIStateManager():GetController("UISeasonMainS4")
       controller:SetTradeGameRed()
       self:CloseDialog()
     else
-      do
-        local seasonModule = (GameGlobal.GetModule)(SeasonModule)
-        ;
-        (seasonModule:UIModule()):ExitSeasonTo(UIStateType.UIMain)
-      end
+      local seasonModule = GameGlobal.GetModule(SeasonModule)
+      seasonModule:UIModule():ExitSeasonTo(UIStateType.UIMain)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.CancleTimeEvents = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
-  self._activityEndEvent = (UIActivityHelper.CancelTimerEvent)(self._activityEndEvent)
+function UIS4TradeMainController:CancleTimeEvents()
+  self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
+  self._activityEndEvent = UIActivityHelper.CancelTimerEvent(self._activityEndEvent)
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.LoadHarborBtns = function(self)
-  -- function num : 0_8 , upvalues : _ENV, UIS4TradeBtnType
-  self.btns = (self._changeBtnsPool):SpawnObjects("UIS4ChangeBtn", #self.HarborIDs)
-  for k,v in ipairs(self.btns) do
-    local harborId = (self.HarborIDs)[k]
-    local unlock = (self._tradeData):CheckHarborLock(harborId)
+function UIS4TradeMainController:LoadHarborBtns()
+  self.btns = self._changeBtnsPool:SpawnObjects("UIS4ChangeBtn", #self.HarborIDs)
+  for k, v in ipairs(self.btns) do
+    local harborId = self.HarborIDs[k]
+    local unlock = self._tradeData:CheckHarborLock(harborId)
     v:SetData(k, harborId, unlock, function(id)
-    -- function num : 0_8_0 , upvalues : self
-    self:HarborBtnOnClick(id)
+      self:HarborBtnOnClick(id)
+    end)
   end
-)
-  end
-  local BtnID = (LocalDB.GetInt)(self.LocalDBStr, (self.HarborIDs)[1])
+  local BtnID = LocalDB.GetInt(self.LocalDBStr, self.HarborIDs[1])
   self.OnChooseHarborId = BtnID
   self:SetChoose(BtnID, UIS4TradeBtnType.LeftDown, false)
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.LoadShips = function(self)
-  -- function num : 0_9 , upvalues : _ENV, UIS4TradeBtnType
-  self._ships = (self._shipsPool):SpawnObjects("UIS4TradeGameShip", #self.HarborIDs)
-  for k,v in ipairs(self._ships) do
-    local harborId = (self.HarborIDs)[k]
-    local unlock = (self._tradeData):CheckHarborLock(harborId)
+function UIS4TradeMainController:LoadShips()
+  self._ships = self._shipsPool:SpawnObjects("UIS4TradeGameShip", #self.HarborIDs)
+  for k, v in ipairs(self._ships) do
+    local harborId = self.HarborIDs[k]
+    local unlock = self._tradeData:CheckHarborLock(harborId)
     v:SetData(k, harborId, unlock, function(id)
-    -- function num : 0_9_0 , upvalues : self
-    self:ShipBtnOnClick(id)
+      self:ShipBtnOnClick(id)
+    end)
   end
-)
-  end
-  local BtnID = (LocalDB.GetInt)(self.LocalDBStr, (self.HarborIDs)[1])
+  local BtnID = LocalDB.GetInt(self.LocalDBStr, self.HarborIDs[1])
   self.OnChooseHarborId = BtnID
   self:SetChoose(BtnID, UIS4TradeBtnType.Center, false)
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.SetChoose = function(self, id, type, saveChose)
-  -- function num : 0_10 , upvalues : UIS4TradeBtnType, _ENV
+function UIS4TradeMainController:SetChoose(id, type, saveChose)
   if not self.OnChooseHarborId then
-    self.OnChooseHarborId = (self.HarborIDs)[1]
+    self.OnChooseHarborId = self.HarborIDs[1]
   end
-  local btnPool = nil
+  local btnPool
   if type == UIS4TradeBtnType.LeftDown then
     btnPool = self.btns
   else
     btnPool = self._ships
   end
-  for k,v in ipairs(btnPool) do
-    if (self.HarborIDs)[k] == id then
+  for k, v in ipairs(btnPool) do
+    if self.HarborIDs[k] == id then
       v:OnChose(true)
     else
       v:OnChose(false)
@@ -292,28 +238,19 @@ UIS4TradeMainController.SetChoose = function(self, id, type, saveChose)
   end
   if saveChose then
     self.OnChooseHarborId = id
-    ;
-    (LocalDB.SetInt)(self.LocalDBStr, self.OnChooseHarborId)
+    LocalDB.SetInt(self.LocalDBStr, self.OnChooseHarborId)
   end
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.OnS4TradeCrewChange = function(self)
-  -- function num : 0_11
-  (self._crewWidget):Refresh()
-  ;
-  (self._crewManager):Refresh()
+function UIS4TradeMainController:OnS4TradeCrewChange()
+  self._crewWidget:Refresh()
+  self._crewManager:Refresh()
   self:SetShipState(false)
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.RefrshShipParams = function(self, id)
-  -- function num : 0_12
-  (self._crewWidget):SetData(self._tradeData, id)
-  ;
-  (self._crewManager):SetData(self._tradeData, id)
+function UIS4TradeMainController:RefrshShipParams(id)
+  self._crewWidget:SetData(self._tradeData, id)
+  self._crewManager:SetData(self._tradeData, id)
   self:LoadHarborBtns()
   self:LoadShips()
   self:SetHarborShipParams()
@@ -326,94 +263,66 @@ UIS4TradeMainController.RefrshShipParams = function(self, id)
   self:RefreshRedPoint()
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.SetTopCoinValue = function(self)
-  -- function num : 0_13
-  local num1, num2 = (self._tradeData):GetCoinCount()
-  ;
-  (self._coinCount):SetText(num1)
-  ;
-  (self._talentCount):SetText(num2)
+function UIS4TradeMainController:SetTopCoinValue()
+  local num1, num2 = self._tradeData:GetCoinCount()
+  self._coinCount:SetText(num1)
+  self._talentCount:SetText(num2)
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.SetOutSeaTime = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local info = (self._tradeData):GetHarbourInfo(self.OnChooseHarborId)
+function UIS4TradeMainController:SetOutSeaTime()
+  local info = self._tradeData:GetHarbourInfo(self.OnChooseHarborId)
   local endtime = info.cdEnd
   self.OutSeaOnCd = true
   if endtime == 0 then
-    self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+    self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
     if tolua:isnull(self._anim) then
-      return 
+      return
     end
-    ;
-    (self._startTxt):SetText((StringTable.Get)("str_season_s4_trade_ready"))
-    ;
-    (self.StartRedPoint):SetActive(true)
+    self._startTxt:SetText(StringTable.Get("str_season_s4_trade_ready"))
+    self.StartRedPoint:SetActive(true)
     self.OutSeaOnCd = false
-    return 
+    return
   end
-  ;
-  (self.StartRedPoint):SetActive(false)
+  self.StartRedPoint:SetActive(false)
   self:_SetTimer(endtime)
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController._SetTimer = function(self, endtime)
-  -- function num : 0_15 , upvalues : _ENV
-  self._timeEvent = (UIActivityHelper.StartTimerEvent)(self._timeEvent, function()
-    -- function num : 0_15_0 , upvalues : self, endtime
+function UIS4TradeMainController:_SetTimer(endtime)
+  self._timeEvent = UIActivityHelper.StartTimerEvent(self._timeEvent, function()
     return self:_SetRemainingTimer(endtime)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController._SetRemainingTimer = function(self, endtime)
-  -- function num : 0_16 , upvalues : _ENV
+function UIS4TradeMainController:_SetRemainingTimer(endtime)
   local remainTime = 0
-  local curtime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+  local curtime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   remainTime = endtime - curtime
   local pre_remaining = ""
-  if remainTime > 0 then
+  if 0 < remainTime then
     self:_SetRemainTime(remainTime)
   end
   if remainTime <= 0 then
-    self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+    self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
     if tolua:isnull(self._anim) then
       return true
     end
-    ;
-    (self._startTxt):SetText((StringTable.Get)("str_season_s4_trade_ready"))
-    ;
-    (self.StartRedPoint):SetActive(true)
+    self._startTxt:SetText(StringTable.Get("str_season_s4_trade_ready"))
+    self.StartRedPoint:SetActive(true)
     self.OutSeaOnCd = false
     return true
   end
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController._SetRemainTime = function(self, remaintime)
-  -- function num : 0_17 , upvalues : _ENV
-  local timeStr = (UIS4TradeHelper.GetRemainTime)(remaintime)
+function UIS4TradeMainController:_SetRemainTime(remaintime)
+  local timeStr = UIS4TradeHelper.GetRemainTime(remaintime)
   if tolua:isnull(self._anim) then
-    self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
-    return 
+    self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
+    return
   end
-  ;
-  (self._startTxt):SetText(timeStr)
+  self._startTxt:SetText(timeStr)
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.SetShipState = function(self, ShowUp)
-  -- function num : 0_18
+function UIS4TradeMainController:SetShipState(ShowUp)
   if ShowUp then
     self:SetShipUPState()
   else
@@ -421,33 +330,23 @@ UIS4TradeMainController.SetShipState = function(self, ShowUp)
   end
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.SetShipNowState = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  ((self._stateUpCount).gameObject):SetActive(false)
-  ;
-  ((self._uPIncome).gameObject):SetActive(false)
-  local nowState, nowIncome = (self._tradeData):GetIncomeParams(self.OnChooseHarborId, nil, nil, nil, nil, nil, nil)
-  local state = (math.floor)(nowState * 100)
-  ;
-  (self._stateCount):SetText(state .. "%")
-  ;
-  (self._income):SetText(nowIncome)
+function UIS4TradeMainController:SetShipNowState()
+  self._stateUpCount.gameObject:SetActive(false)
+  self._uPIncome.gameObject:SetActive(false)
+  local nowState, nowIncome = self._tradeData:GetIncomeParams(self.OnChooseHarborId, nil, nil, nil, nil, nil, nil)
+  local state = math.floor(nowState * 100)
+  self._stateCount:SetText(state .. "%")
+  self._income:SetText(nowIncome)
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.SetShipUPState = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  ((self._stateUpCount).gameObject):SetActive(true)
-  ;
-  ((self._uPIncome).gameObject):SetActive(true)
-  local commandValue, sailValue, fixValue = nil, nil, nil
+function UIS4TradeMainController:SetShipUPState()
+  self._stateUpCount.gameObject:SetActive(true)
+  self._uPIncome.gameObject:SetActive(true)
+  local commandValue, sailValue, fixValue
   local speed, boatloadValue, speedOnPreview, loadOnPreview = self:GetShowSpeedAndLoad()
-  local harborLv, shipLv = (self._tradeData):GetHarborShipLV(self.OnChooseHarborId)
-  local NextshipParams = (self._tradeData):GetShipNextValueByID(self.OnChooseHarborId)
-  local curShipParams = (self._tradeData):GetShipCurValueByID(self.OnChooseHarborId)
+  local harborLv, shipLv = self._tradeData:GetHarborShipLV(self.OnChooseHarborId)
+  local NextshipParams = self._tradeData:GetShipNextValueByID(self.OnChooseHarborId)
+  local curShipParams = self._tradeData:GetShipCurValueByID(self.OnChooseHarborId)
   if speedOnPreview then
     harborLv = harborLv + 1
   end
@@ -461,520 +360,337 @@ UIS4TradeMainController.SetShipUPState = function(self)
     sailValue = curShipParams[2]
     fixValue = curShipParams[3]
   end
-  local curState, curIncome = (self._tradeData):GetIncomeParams(self.OnChooseHarborId, nil, nil, nil, nil, harborLv, shipLv)
-  local nowState, nowIncome = (self._tradeData):GetIncomeParams(self.OnChooseHarborId, nil, nil, nil, nil, nil, nil)
-  local mathNowState = (math.floor)(nowState * 100)
-  local StateDvalue = (math.floor)((curState - nowState) * 100)
-  local IncomeDvalue = (math.floor)(curIncome - nowIncome)
-  ;
-  (self._stateCount):SetText(mathNowState .. "%")
-  ;
-  (self._income):SetText(nowIncome)
+  local curState, curIncome = self._tradeData:GetIncomeParams(self.OnChooseHarborId, nil, nil, nil, nil, harborLv, shipLv)
+  local nowState, nowIncome = self._tradeData:GetIncomeParams(self.OnChooseHarborId, nil, nil, nil, nil, nil, nil)
+  local mathNowState = math.floor(nowState * 100)
+  local StateDvalue = math.floor((curState - nowState) * 100)
+  local IncomeDvalue = math.floor(curIncome - nowIncome)
+  self._stateCount:SetText(mathNowState .. "%")
+  self._income:SetText(nowIncome)
   if speedOnPreview and not loadOnPreview then
-    ((self._stateUpCount).gameObject):SetActive(false)
-    ;
-    ((self._uPIncome).gameObject):SetActive(false)
-    return 
+    self._stateUpCount.gameObject:SetActive(false)
+    self._uPIncome.gameObject:SetActive(false)
+    return
   end
   local type = "+"
   if StateDvalue < 0 then
-    (self._stateUpCount):SetText(StateDvalue .. "%")
+    self._stateUpCount:SetText(StateDvalue .. "%")
   else
-    ;
-    (self._stateUpCount):SetText(type .. StateDvalue .. "%")
+    self._stateUpCount:SetText(type .. StateDvalue .. "%")
   end
   local Incometype = "+"
   if IncomeDvalue < 0 then
-    (self._uPIncome):SetText(IncomeDvalue)
+    self._uPIncome:SetText(IncomeDvalue)
   else
-    ;
-    (self._uPIncome):SetText(Incometype .. IncomeDvalue)
+    self._uPIncome:SetText(Incometype .. IncomeDvalue)
   end
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.SetHarborShipParams = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local MaxSpeed, MaxLoad = (self._tradeData):GetShipLoadValueByID(self.OnChooseHarborId)
-  if not MaxSpeed then
-    MaxSpeed = 200
-  end
-  if not MaxLoad then
-    MaxLoad = 200
-  end
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._speedSlider).maxValue = MaxSpeed
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._loadageSlider).maxValue = MaxLoad
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._speedUpSlider).maxValue = MaxSpeed
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._loadageUpSlider).maxValue = MaxLoad
-  local NowSpeed, NowLoad = (self._tradeData):GetNowSpeedAndLoad(self.OnChooseHarborId)
-  if not NowSpeed then
-    NowSpeed = 0
-  end
-  if not NowLoad then
-    NowLoad = 0
-  end
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._speedSlider).value = NowSpeed
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._loadageSlider).value = NowLoad
+function UIS4TradeMainController:SetHarborShipParams()
+  local MaxSpeed, MaxLoad = self._tradeData:GetShipLoadValueByID(self.OnChooseHarborId)
+  MaxSpeed = MaxSpeed or 200
+  MaxLoad = MaxLoad or 200
+  self._speedSlider.maxValue = MaxSpeed
+  self._loadageSlider.maxValue = MaxLoad
+  self._speedUpSlider.maxValue = MaxSpeed
+  self._loadageUpSlider.maxValue = MaxLoad
+  local NowSpeed, NowLoad = self._tradeData:GetNowSpeedAndLoad(self.OnChooseHarborId)
+  NowSpeed = NowSpeed or 0
+  NowLoad = NowLoad or 0
+  self._speedSlider.value = NowSpeed
+  self._loadageSlider.value = NowLoad
   local titleKey = "str_season_s4_trade_harbor_" .. self.OnChooseHarborId
-  local titleStr = (StringTable.Get)(titleKey)
-  ;
-  (self._harborName):SetText(titleStr)
+  local titleStr = StringTable.Get(titleKey)
+  self._harborName:SetText(titleStr)
   self:SetNowValueTxt()
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.SetNowValueTxt = function(self)
-  -- function num : 0_22
-  local NowSpeed, NowLoad = (self._tradeData):GetNowSpeedAndLoad(self.OnChooseHarborId)
+function UIS4TradeMainController:SetNowValueTxt()
+  local NowSpeed, NowLoad = self._tradeData:GetNowSpeedAndLoad(self.OnChooseHarborId)
   self:SetNowSpeedValueTxt()
   self:SetNowLoadValueTxt()
   self:SetUnLoadTimeTxt()
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.SetNowSpeedValueTxt = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local NowSpeed, NowLoad = (self._tradeData):GetNowSpeedAndLoad(self.OnChooseHarborId)
-  local speedStr = (StringTable.Get)("str_season_s4_trade_unload_speed") .. NowSpeed .. "/" .. (StringTable.Get)("str_season_s4_trade_unload_speed_time")
-  ;
-  (self._speedTxt):SetText(speedStr)
+function UIS4TradeMainController:SetNowSpeedValueTxt()
+  local NowSpeed, NowLoad = self._tradeData:GetNowSpeedAndLoad(self.OnChooseHarborId)
+  local speedStr = StringTable.Get("str_season_s4_trade_unload_speed") .. NowSpeed .. "/" .. StringTable.Get("str_season_s4_trade_unload_speed_time")
+  self._speedTxt:SetText(speedStr)
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.SetNowLoadValueTxt = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local NowSpeed, NowLoad = (self._tradeData):GetNowSpeedAndLoad(self.OnChooseHarborId)
-  local loadStr = (StringTable.Get)("str_season_s4_trade_boatload") .. NowLoad
-  ;
-  (self._loadageTxt):SetText(loadStr)
+function UIS4TradeMainController:SetNowLoadValueTxt()
+  local NowSpeed, NowLoad = self._tradeData:GetNowSpeedAndLoad(self.OnChooseHarborId)
+  local loadStr = StringTable.Get("str_season_s4_trade_boatload") .. NowLoad
+  self._loadageTxt:SetText(loadStr)
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.SetUnLoadTimeTxt = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIS4TradeMainController:SetUnLoadTimeTxt()
   local speed, load, speedOnPreview, loadOnPreview = self:GetShowSpeedAndLoad()
-  local harborLv, shipLv = (self._tradeData):GetHarborShipLV(self.OnChooseHarborId)
-  local harborMaxLv, shipMaxLv = (self._tradeData):GetHarborShipMaxLevelByID(self.OnChooseHarborId)
-  if speedOnPreview and harborLv + 1 <= harborMaxLv then
+  local harborLv, shipLv = self._tradeData:GetHarborShipLV(self.OnChooseHarborId)
+  local harborMaxLv, shipMaxLv = self._tradeData:GetHarborShipMaxLevelByID(self.OnChooseHarborId)
+  if speedOnPreview and harborMaxLv >= harborLv + 1 then
     harborLv = harborLv + 1
   end
-  if loadOnPreview and shipLv + 1 <= shipMaxLv then
+  if loadOnPreview and shipMaxLv >= shipLv + 1 then
     shipLv = shipLv + 1
   end
-  local nowState, nowIncome, cdValue = (self._tradeData):GetIncomeParams(self.OnChooseHarborId, nil, nil, nil, nil, harborLv, shipLv)
-  local hour = (math.floor)(cdValue / 3600)
-  local timeStr = (StringTable.Get)("str_activity_hour", hour)
-  ;
-  (self._unloadTime):SetText((StringTable.Get)("str_season_s4_trade_unload_time") .. timeStr)
+  local nowState, nowIncome, cdValue = self._tradeData:GetIncomeParams(self.OnChooseHarborId, nil, nil, nil, nil, harborLv, shipLv)
+  local hour = math.floor(cdValue / 3600)
+  local timeStr = StringTable.Get("str_activity_hour", hour)
+  self._unloadTime:SetText(StringTable.Get("str_season_s4_trade_unload_time") .. timeStr)
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.GetShowSpeedAndLoad = function(self)
-  -- function num : 0_26
-  local speed, load = nil, nil
+function UIS4TradeMainController:GetShowSpeedAndLoad()
+  local speed, load
   local speedOnPreview = self._speedUpOnPreview
   local loadOnPreview = self._loadageUpOnPreview
   if speedOnPreview then
-    speed = (self._speedUpSlider).value
+    speed = self._speedUpSlider.value
   else
-    speed = (self._speedSlider).value
+    speed = self._speedSlider.value
   end
   if loadOnPreview then
-    load = (self._loadageUpSlider).value
+    load = self._loadageUpSlider.value
   else
-    load = (self._loadageSlider).value
+    load = self._loadageSlider.value
   end
   return speed, load, speedOnPreview, loadOnPreview
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.HarborLvUPSpeed = function(self, Show)
-  -- function num : 0_27 , upvalues : _ENV
-  (self._speedUpSliderObj):SetActive(Show)
+function UIS4TradeMainController:HarborLvUPSpeed(Show)
+  self._speedUpSliderObj:SetActive(Show)
   self._speedUpOnPreview = Show
   if not Show then
     self:SetNowSpeedValueTxt()
     self:SetUnLoadTimeTxt()
-    return 
+    return
   end
-  local LvUPSpeed = (self._tradeData):GetLvUPHarborSpeed(self.OnChooseHarborId)
-  if not LvUPSpeed then
-    LvUPSpeed = 0
-  end
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._speedUpSlider).value = LvUPSpeed
-  local baseSpeed = (self._speedSlider).value
-  local Dvalue = (math.floor)(LvUPSpeed - baseSpeed)
-  local str = (StringTable.Get)("str_season_s4_trade_unload_speed") .. (math.floor)(baseSpeed) .. "+" .. Dvalue .. "/" .. (StringTable.Get)("str_season_s4_trade_unload_speed_time")
-  ;
-  (self._speedTxt):SetText(str)
+  local LvUPSpeed = self._tradeData:GetLvUPHarborSpeed(self.OnChooseHarborId)
+  LvUPSpeed = LvUPSpeed or 0
+  self._speedUpSlider.value = LvUPSpeed
+  local baseSpeed = self._speedSlider.value
+  local Dvalue = math.floor(LvUPSpeed - baseSpeed)
+  local str = StringTable.Get("str_season_s4_trade_unload_speed") .. math.floor(baseSpeed) .. "+" .. Dvalue .. "/" .. StringTable.Get("str_season_s4_trade_unload_speed_time")
+  self._speedTxt:SetText(str)
   self:SetUnLoadTimeTxt()
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.ShipLvUPLoadage = function(self, Show)
-  -- function num : 0_28 , upvalues : _ENV
-  (self._loadageUpSliderObj):SetActive(Show)
+function UIS4TradeMainController:ShipLvUPLoadage(Show)
+  self._loadageUpSliderObj:SetActive(Show)
   self._loadageUpOnPreview = Show
-  ;
-  (self._crewWidget):Refresh(Show)
+  self._crewWidget:Refresh(Show)
   if not Show then
     self:SetNowLoadValueTxt()
     self:SetUnLoadTimeTxt()
-    return 
+    return
   end
-  local LvUPLoad = (self._tradeData):GetLvUPShipLoad(self.OnChooseHarborId)
-  if not LvUPLoad then
-    LvUPLoad = 0
-  end
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._loadageUpSlider).value = LvUPLoad
-  local baseLoad = (self._loadageSlider).value
-  local Dvalue = (math.floor)(LvUPLoad - baseLoad)
-  local str = (StringTable.Get)("str_season_s4_trade_boatload") .. (math.floor)(baseLoad) .. "+" .. Dvalue
-  ;
-  (self._loadageTxt):SetText(str)
+  local LvUPLoad = self._tradeData:GetLvUPShipLoad(self.OnChooseHarborId)
+  LvUPLoad = LvUPLoad or 0
+  self._loadageUpSlider.value = LvUPLoad
+  local baseLoad = self._loadageSlider.value
+  local Dvalue = math.floor(LvUPLoad - baseLoad)
+  local str = StringTable.Get("str_season_s4_trade_boatload") .. math.floor(baseLoad) .. "+" .. Dvalue
+  self._loadageTxt:SetText(str)
   self:SetUnLoadTimeTxt()
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.SetProgress = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UIS4TradeMainController:SetProgress()
   local number = 1
-  local TotalProcessCompInfo = (self._tradeData):GetTotalProcessCompInfo()
-  local TotalProcessComp = (self._tradeData):GetTotalProcessComp()
+  local TotalProcessCompInfo = self._tradeData:GetTotalProcessCompInfo()
+  local TotalProcessComp = self._tradeData:GetTotalProcessComp()
   local TotalList = TotalProcessComp:GetProgressList()
   local TotalCurrentProgress = TotalProcessCompInfo.m_current_progress
   local NowMaxProgress = TotalList[1]
-  for i,v in ipairs(TotalList) do
-    -- DECOMPILER ERROR at PC20: Unhandled construct in 'MakeBoolean' P1
-
-    if v <= TotalCurrentProgress and number < #TotalList then
-      number = number + 1
-    end
-    NowMaxProgress = v
-    do break end
-  end
-  do
-    if TotalList[#TotalList] <= TotalCurrentProgress then
-      (self.progressTips):SetText((StringTable.Get)("str_season_s4_trade_shop_max_level"))
-      ;
-      ((self._progressTxt).gameObject):SetActive(false)
-    end
-    local ProgreStr = (string.format)("<color=#985542>%s</color>/", TotalCurrentProgress)
-    local ProgresTotalStr = (string.format)("<color=#403d3c>%s</color>", NowMaxProgress)
-    ;
-    (self._progressTxt):SetText(ProgreStr .. ProgresTotalStr)
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._progressSlider).maxValue = NowMaxProgress
-    -- DECOMPILER ERROR at PC61: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._progressSlider).value = TotalCurrentProgress
-    if number <= 2 then
-      local colorStr = (string.format)("<color=#A36E56>%s</color>", number)
-      ;
-      (self._progressNumber):SetText(colorStr)
-      -- DECOMPILER ERROR at PC78: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self._progressIcon).sprite = (self.atlas):GetSprite("exp_s4_paoshang_task_rare1")
-    else
-      do
-        if number <= 4 then
-          local colorStr = (string.format)("<color=#B5B7B8>%s</color>", number)
-          ;
-          (self._progressNumber):SetText(colorStr)
-          -- DECOMPILER ERROR at PC96: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (self._progressIcon).sprite = (self.atlas):GetSprite("exp_s4_paoshang_task_rare2")
-        else
-          do
-            local colorStr = (string.format)("<color=#C3A665>%s</color>", number)
-            ;
-            (self._progressNumber):SetText(colorStr)
-            -- DECOMPILER ERROR at PC112: Confused about usage of register: R10 in 'UnsetPending'
-
-            ;
-            (self._progressIcon).sprite = (self.atlas):GetSprite("exp_s4_paoshang_task_rare3")
-          end
-        end
+  for i, v in ipairs(TotalList) do
+    if v <= TotalCurrentProgress then
+      if number < #TotalList then
+        number = number + 1
       end
+    else
+      NowMaxProgress = v
+      break
     end
+  end
+  if TotalCurrentProgress >= TotalList[#TotalList] then
+    self.progressTips:SetText(StringTable.Get("str_season_s4_trade_shop_max_level"))
+    self._progressTxt.gameObject:SetActive(false)
+  end
+  local ProgreStr = string.format("<color=#985542>%s</color>/", TotalCurrentProgress)
+  local ProgresTotalStr = string.format("<color=#403d3c>%s</color>", NowMaxProgress)
+  self._progressTxt:SetText(ProgreStr .. ProgresTotalStr)
+  self._progressSlider.maxValue = NowMaxProgress
+  self._progressSlider.value = TotalCurrentProgress
+  if number <= 2 then
+    local colorStr = string.format("<color=#A36E56>%s</color>", number)
+    self._progressNumber:SetText(colorStr)
+    self._progressIcon.sprite = self.atlas:GetSprite("exp_s4_paoshang_task_rare1")
+  elseif number <= 4 then
+    local colorStr = string.format("<color=#B5B7B8>%s</color>", number)
+    self._progressNumber:SetText(colorStr)
+    self._progressIcon.sprite = self.atlas:GetSprite("exp_s4_paoshang_task_rare2")
+  else
+    local colorStr = string.format("<color=#C3A665>%s</color>", number)
+    self._progressNumber:SetText(colorStr)
+    self._progressIcon.sprite = self.atlas:GetSprite("exp_s4_paoshang_task_rare3")
   end
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.SetLevelTxts = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  for i,v in ipairs(self.harborLevelTxts) do
-    local harborLv, shipLv = (self._tradeData):GetHarborShipLV(i)
-    local harborMaxLv, shipMaxLv = (self._tradeData):GetHarborShipMaxLevelByID(i)
+function UIS4TradeMainController:SetLevelTxts()
+  for i, v in ipairs(self.harborLevelTxts) do
+    local harborLv, shipLv = self._tradeData:GetHarborShipLV(i)
+    local harborMaxLv, shipMaxLv = self._tradeData:GetHarborShipMaxLevelByID(i)
     self:SetTxtDetail(i, harborLv, shipLv, harborMaxLv, shipMaxLv, v[1], v[2], v[3])
   end
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.SetTxtDetail = function(self, Id, harborLv, shipLv, harborMaxLv, shipMaxLv, nameComp, harborComp, shipComp)
-  -- function num : 0_31 , upvalues : _ENV
-  nameComp:SetText((StringTable.Get)("str_season_s4_trade_show_level_title_" .. Id))
-  harborComp:SetText((StringTable.Get)("str_season_s4_trade_show_level_harbor", harborLv, harborMaxLv))
-  shipComp:SetText((StringTable.Get)("str_season_s4_trade_show_level_ship", shipLv, shipMaxLv))
+function UIS4TradeMainController:SetTxtDetail(Id, harborLv, shipLv, harborMaxLv, shipMaxLv, nameComp, harborComp, shipComp)
+  nameComp:SetText(StringTable.Get("str_season_s4_trade_show_level_title_" .. Id))
+  harborComp:SetText(StringTable.Get("str_season_s4_trade_show_level_harbor", harborLv, harborMaxLv))
+  shipComp:SetText(StringTable.Get("str_season_s4_trade_show_level_ship", shipLv, shipMaxLv))
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.RefreshRedPoint = function(self)
-  -- function num : 0_32
-  local TotalProcessComp = (self._tradeData):GetTotalProcessComp()
-  local RewardProcessComp = (self._tradeData):GetRewardProcessComp()
+function UIS4TradeMainController:RefreshRedPoint()
+  local TotalProcessComp = self._tradeData:GetTotalProcessComp()
+  local RewardProcessComp = self._tradeData:GetRewardProcessComp()
   local totalRed = TotalProcessComp:HasCanGetReward()
   local ProfitAwardRed = RewardProcessComp:HasCanGetReward()
   local ProfitLevelRed = RewardProcessComp:HasCanLevelUp()
   if totalRed or ProfitAwardRed or ProfitLevelRed then
-    (self.ProgressRedPoint):SetActive(true)
+    self.ProgressRedPoint:SetActive(true)
   else
-    ;
-    (self.ProgressRedPoint):SetActive(false)
+    self.ProgressRedPoint:SetActive(false)
   end
-  local BusinessComp = (self._tradeData):GetBusinessComp()
+  local BusinessComp = self._tradeData:GetBusinessComp()
   local HarborRed = BusinessComp:HasRedHarborLv()
   local ShipLvRed = BusinessComp:HasRedShipLv()
-  ;
-  (self.LevelUpRedPoint):SetActive(HarborRed or ShipLvRed)
+  self.LevelUpRedPoint:SetActive(HarborRed or ShipLvRed)
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.SetEventData = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  local globalCfg = (Cfg.cfg_component_business_global)({})
-  local BusinessCompInfo = (self._tradeData):GetBusinessCompInfo()
+function UIS4TradeMainController:SetEventData()
+  local globalCfg = Cfg.cfg_component_business_global({})
+  local BusinessCompInfo = self._tradeData:GetBusinessCompInfo()
   self.eventID = BusinessCompInfo.globalId
   local eventNum = BusinessCompInfo.globalNum
   if self.eventID == 0 or not globalCfg[self.eventID] then
-    (Log.error)("航海事件id", self.eventID)
+    Log.error("航海事件id", self.eventID)
     self.eventID = 1
-    return 
+    return
   end
-  local EventIcon = (globalCfg[self.eventID]).EventIcon
-  self.RemainNum = (globalCfg[self.eventID]).SailingNum - eventNum
-  ;
-  (self.eventIcon):LoadImage(EventIcon)
-  ;
-  (self.turnTxt):SetText(self.RemainNum)
-  local lastEvent = (LocalDB.GetInt)(self.EventLocalDBStr)
+  local EventIcon = globalCfg[self.eventID].EventIcon
+  self.RemainNum = globalCfg[self.eventID].SailingNum - eventNum
+  self.eventIcon:LoadImage(EventIcon)
+  self.turnTxt:SetText(self.RemainNum)
+  local lastEvent = LocalDB.GetInt(self.EventLocalDBStr)
   if not lastEvent or lastEvent == 0 or lastEvent ~= self.eventID then
     self:ShowDialog("UIS4ShowEventController", self.eventID, true, self.RemainNum)
-    ;
-    (LocalDB.SetInt)(self.EventLocalDBStr, self.eventID)
+    LocalDB.SetInt(self.EventLocalDBStr, self.eventID)
   end
 end
 
--- DECOMPILER ERROR at PC124: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.StartBtnOnClick = function(self, go)
-  -- function num : 0_34 , upvalues : _ENV
+function UIS4TradeMainController:StartBtnOnClick(go)
   if self.OutSeaOnCd then
-    return 
+    return
   end
-  local state, nowIncome, cdtime = (self._tradeData):GetIncomeParams(self.OnChooseHarborId, nil, nil, nil, nil, nil, nil)
-  local mathState = (math.floor)(state * 100)
-  local hour = (math.floor)(cdtime / 3600)
-  local timeStr = (StringTable.Get)("str_activity_hour", hour)
+  local state, nowIncome, cdtime = self._tradeData:GetIncomeParams(self.OnChooseHarborId, nil, nil, nil, nil, nil, nil)
+  local mathState = math.floor(state * 100)
+  local hour = math.floor(cdtime / 3600)
+  local timeStr = StringTable.Get("str_activity_hour", hour)
   self:ShowDialog("UIS4StartGameEnsureController", self._tradeData, self.OnChooseHarborId, mathState, timeStr)
 end
 
--- DECOMPILER ERROR at PC127: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.DiaryBtnOnClick = function(self, go)
-  -- function num : 0_35
+function UIS4TradeMainController:DiaryBtnOnClick(go)
   self:ShowDialog("UIS4DiaryController", self._tradeData, self.OnChooseHarborId)
 end
 
--- DECOMPILER ERROR at PC130: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.CoinBtn1OnClick = function(self, go)
-  -- function num : 0_36
-  (self._iconInfo):SetActive(true)
-  ;
-  (self._iconInfoClose):SetActive(true)
+function UIS4TradeMainController:CoinBtn1OnClick(go)
+  self._iconInfo:SetActive(true)
+  self._iconInfoClose:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC133: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.CoinBtn2OnClick = function(self, go)
-  -- function num : 0_37
+function UIS4TradeMainController:CoinBtn2OnClick(go)
   self:ShowDialog("UISeasonTalentLineMission")
 end
 
--- DECOMPILER ERROR at PC136: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.EventBtnOnClick = function(self, go)
-  -- function num : 0_38
-  local BusinessCompInfo = (self._tradeData):GetBusinessCompInfo()
+function UIS4TradeMainController:EventBtnOnClick(go)
+  local BusinessCompInfo = self._tradeData:GetBusinessCompInfo()
   self.globalInfo = BusinessCompInfo.globalInfo
   self:ShowDialog("UIS4ShowEventController", self.eventID, true, self.RemainNum)
 end
 
--- DECOMPILER ERROR at PC139: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.AchievementsBtnOnClick = function(self, go)
-  -- function num : 0_39
+function UIS4TradeMainController:AchievementsBtnOnClick(go)
   self:ShowDialog("UIS4ProgressController", self._tradeData, self._campaign)
 end
 
--- DECOMPILER ERROR at PC142: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.IconInfoCloseOnClick = function(self)
-  -- function num : 0_40
-  (self._iconInfo):SetActive(false)
-  ;
-  (self._iconInfoClose):SetActive(false)
+function UIS4TradeMainController:IconInfoCloseOnClick()
+  self._iconInfo:SetActive(false)
+  self._iconInfoClose:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC145: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.ShipInfoBtnOnClick = function(self)
-  -- function num : 0_41
-  (self._shipInfo):SetActive(true)
-  ;
-  (self._shipInfoClose):SetActive(true)
+function UIS4TradeMainController:ShipInfoBtnOnClick()
+  self._shipInfo:SetActive(true)
+  self._shipInfoClose:SetActive(true)
   self:PlayShipInfoAnimIn()
 end
 
--- DECOMPILER ERROR at PC148: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.ShipInfoCloseOnClick = function(self)
-  -- function num : 0_42
+function UIS4TradeMainController:ShipInfoCloseOnClick()
   self:PlayShipInfoAnimOut()
-  ;
-  (self._shipInfo):SetActive(false)
-  ;
-  (self._shipInfoClose):SetActive(false)
+  self._shipInfo:SetActive(false)
+  self._shipInfoClose:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC151: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.LevelUpBtnOnClick = function(self)
-  -- function num : 0_43
+function UIS4TradeMainController:LevelUpBtnOnClick()
   self:ShowDialog("UIS4LevelUpController", self._tradeData, self.OnChooseHarborId)
 end
 
--- DECOMPILER ERROR at PC154: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.HarborBtnOnClick = function(self, id)
-  -- function num : 0_44 , upvalues : UIS4TradeBtnType
+function UIS4TradeMainController:HarborBtnOnClick(id)
   if self.OnChooseHarborId == id then
-    return 
+    return
   end
   self:SetChoose(id, UIS4TradeBtnType.LeftDown, false)
   self:SetChoose(id, UIS4TradeBtnType.Center, true)
   self:RefrshShipParams(self.OnChooseHarborId)
 end
 
--- DECOMPILER ERROR at PC157: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.ShipBtnOnClick = function(self, id)
-  -- function num : 0_45 , upvalues : UIS4TradeBtnType
+function UIS4TradeMainController:ShipBtnOnClick(id)
   if self.OnChooseHarborId == id then
-    return 
+    return
   end
   self:SetChoose(id, UIS4TradeBtnType.LeftDown, false)
   self:SetChoose(id, UIS4TradeBtnType.Center, true)
   self:RefrshShipParams(self.OnChooseHarborId)
 end
 
--- DECOMPILER ERROR at PC160: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.PlayTradeMainAnimIn = function(self)
-  -- function num : 0_46 , upvalues : _ENV
+function UIS4TradeMainController:PlayTradeMainAnimIn()
   local LockName = "UIS4TradeMainController_AnimIN"
   self:StartTask(function(TT)
-    -- function num : 0_46_0 , upvalues : self, LockName, _ENV
     self:Lock(LockName)
-    ;
-    (self._anim):Play("uianim_UIS4TradeMainController_in")
+    self._anim:Play("uianim_UIS4TradeMainController_in")
     YIELD(TT, 200)
     self:UnLock(LockName)
     self:_CheckGuide()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC163: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.PlayShipInfoAnimIn = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function UIS4TradeMainController:PlayShipInfoAnimIn()
   local LockName = "UIS4TradeMainController_ShipInfoAnimIN"
   self:StartTask(function(TT)
-    -- function num : 0_47_0 , upvalues : self, LockName, _ENV
     self:Lock(LockName)
-    ;
-    (self._anim):Play("uianim_UIS4TradeCrewWidget_ShipInfo_in")
+    self._anim:Play("uianim_UIS4TradeCrewWidget_ShipInfo_in")
     YIELD(TT, 200)
     self:UnLock(LockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC166: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController.PlayShipInfoAnimOut = function(self)
-  -- function num : 0_48 , upvalues : _ENV
+function UIS4TradeMainController:PlayShipInfoAnimOut()
   local LockName = "UIS4TradeMainController_ShipInfoAnimOut"
   self:StartTask(function(TT)
-    -- function num : 0_48_0 , upvalues : self, LockName, _ENV
     self:Lock(LockName)
-    ;
-    (self._anim):Play("uianim_UIS4TradeCrewWidget_ShipInfo_out")
+    self._anim:Play("uianim_UIS4TradeCrewWidget_ShipInfo_out")
     YIELD(TT, 200)
     self:UnLock(LockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC169: Confused about usage of register: R2 in 'UnsetPending'
-
-UIS4TradeMainController._CheckGuide = function(self)
-  -- function num : 0_49 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIS4TradeMainController)
+function UIS4TradeMainController:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIS4TradeMainController)
 end
-
-

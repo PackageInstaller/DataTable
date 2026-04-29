@@ -1,53 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_damage_reflect_distance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectParam_DamageReflectDistance", SkillDamageEffectParam)
 SkillEffectParam_DamageReflectDistance = SkillEffectParam_DamageReflectDistance
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_DamageReflectDistance.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_DamageReflectDistance:Constructor(t)
   self._formulaID = t.formulaID
   self._percent = t.percent
   self._distanceDamageParam = t.distanceDamageParam
   self._skillIncreaseType = t.skillIncreaseType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DamageReflectDistance.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_DamageReflectDistance:GetEffectType()
   return SkillEffectType.DamageReflectDistance
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DamageReflectDistance.GetDamagePercent = function(self)
-  -- function num : 0_2
+function SkillEffectParam_DamageReflectDistance:GetDamagePercent()
   return self._percent
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DamageReflectDistance.GetDamageFormulaID = function(self)
-  -- function num : 0_3
+function SkillEffectParam_DamageReflectDistance:GetDamageFormulaID()
   return self._formulaID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DamageReflectDistance.GetDistanceDamageParam = function(self)
-  -- function num : 0_4
+function SkillEffectParam_DamageReflectDistance:GetDistanceDamageParam()
   return self._distanceDamageParam
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DamageReflectDistance.GetSkillIncreaseType = function(self)
-  -- function num : 0_5
+function SkillEffectParam_DamageReflectDistance:GetSkillIncreaseType()
   return self._skillIncreaseType
 end
-
-

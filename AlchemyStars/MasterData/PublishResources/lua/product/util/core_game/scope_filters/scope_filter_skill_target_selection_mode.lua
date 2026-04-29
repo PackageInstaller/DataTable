@@ -1,28 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scope_filters/scope_filter_skill_target_selection_mode.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_filter_base")
 _class("SkillScopeFilter_SkillTargetSelectionMode", SkillScopeFilter_Base)
 SkillScopeFilter_SkillTargetSelectionMode = SkillScopeFilter_SkillTargetSelectionMode
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeFilter_SkillTargetSelectionMode.DoModifyRange = function(self, scopeResult, filterParam, passParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeFilter_SkillTargetSelectionMode:DoModifyRange(scopeResult, filterParam, passParam)
   local skillTargetSelectionModea = filterParam:GetTargetSelectionMode()
   local world = passParam:GetWorld()
   if skillTargetSelectionModea == SkillTargetSelectionMode.Grid then
     local utilData = world:GetService("UtilData")
     local extraBoardPosRange = utilData:GetExtraBoardPosList()
-    if extraBoardPosRange and (table.count)(extraBoardPosRange) > 0 then
-      for _,pos in ipairs(extraBoardPosRange) do
-        (table.removev)(scopeResult:GetAttackRange(), pos)
-        ;
-        (table.removev)(scopeResult:GetWholeGridRange(), pos)
+    if extraBoardPosRange and table.count(extraBoardPosRange) > 0 then
+      for _, pos in ipairs(extraBoardPosRange) do
+        table.removev(scopeResult:GetAttackRange(), pos)
+        table.removev(scopeResult:GetWholeGridRange(), pos)
       end
     end
+  else
   end
 end
-
-

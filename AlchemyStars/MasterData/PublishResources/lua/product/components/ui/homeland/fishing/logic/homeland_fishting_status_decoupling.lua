@@ -1,46 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/fishing/logic/homeland_fishting_status_decoupling.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandFishingStatusDecoupling", HomelandFishingStatus)
 HomelandFishingStatusDecoupling = HomelandFishingStatusDecoupling
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandFishingStatusDecoupling.OnEnter = function(self, failureReason)
-  -- function num : 0_0 , upvalues : _ENV
-  (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_fish_flee"))
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.FishingFailureCoror, self, failureReason)
+function HomelandFishingStatusDecoupling:OnEnter(failureReason)
+  ToastManager.ShowHomeToast(StringTable.Get("str_homeland_fish_flee"))
+  GameGlobal.TaskManager():StartTask(self.FishingFailureCoror, self, failureReason)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusDecoupling.FishingFailureCoror = function(self, TT, failureReason)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandFishingStatusDecoupling:FishingFailureCoror(TT, failureReason)
   self:LockUI("HomelandFishingStatusDecoupling_FishingFailureCoror")
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
   homelandModule:ApplyFishPostionData(TT)
-  local homelandUIModule = (GameGlobal.GetUIModule)(HomelandModule)
+  local homelandUIModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homelandUIModule:GetClient()
-  local characterController = (homelandClient:CharacterManager()):MainCharacterController()
+  local characterController = homelandClient:CharacterManager():MainCharacterController()
   if not characterController:GetIsFishMach() then
-    (self._homelandFishing):RefreshFishingPosition()
+    self._homelandFishing:RefreshFishingPosition()
   end
-  local anim = nil
+  local anim
   if failureReason == FishgingFailureReason.FishPowerGreat then
-    anim = (HomelandFishingConst.GetAnimationCfg)(FishgingAnimation.DecouplingFishPowerGreat)
-  else
-    if failureReason == FishgingFailureReason.PersonPowerGreat then
-      anim = (HomelandFishingConst.GetAnimationCfg)(FishgingAnimation.DecouplingPersonPowerGreat)
-    else
-      if failureReason == FishgingFailureReason.TimeOut then
-        anim = (HomelandFishingConst.GetAnimationCfg)(FishgingAnimation.FishFailure)
-      end
-    end
+    anim = HomelandFishingConst.GetAnimationCfg(FishgingAnimation.DecouplingFishPowerGreat)
+  elseif failureReason == FishgingFailureReason.PersonPowerGreat then
+    anim = HomelandFishingConst.GetAnimationCfg(FishgingAnimation.DecouplingPersonPowerGreat)
+  elseif failureReason == FishgingFailureReason.TimeOut then
+    anim = HomelandFishingConst.GetAnimationCfg(FishgingAnimation.FishFailure)
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioFishingFail)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioFishingFail)
   if anim then
     self:PlayAnimation(anim.name)
     self:PlayFishRodAnimation(anim.rodname)
@@ -50,23 +34,12 @@ HomelandFishingStatusDecoupling.FishingFailureCoror = function(self, TT, failure
   self:UnLockUI("HomelandFishingStatusDecoupling_FishingFailureCoror")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusDecoupling.OnExit = function(self)
-  -- function num : 0_2
+function HomelandFishingStatusDecoupling:OnExit()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusDecoupling.FishingStatus = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandFishingStatusDecoupling:FishingStatus()
   return FishgingStatus.FishDecoupling
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusDecoupling.OnDestroy = function(self)
-  -- function num : 0_4
+function HomelandFishingStatusDecoupling:OnDestroy()
 end
-
-

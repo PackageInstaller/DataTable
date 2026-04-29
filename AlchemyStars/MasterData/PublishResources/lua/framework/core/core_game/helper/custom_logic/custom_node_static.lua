@@ -1,19 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/helper/custom_logic/custom_node_static.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("algorithm")
 require("array_list")
 require("sorted_array")
 require("sorted_dictionary")
 _staticClass("CustomNodeStatic")
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-CustomNodeStatic.TraverseCollectInterface = function(interfaceList, funcName, node)
-  -- function num : 0_0
+function CustomNodeStatic.TraverseCollectInterface(interfaceList, funcName, node)
   if node == nil then
-    return 
+    return
   end
   if node.CollectInterface then
     node:CollectInterface(interfaceList, funcName)
@@ -24,29 +17,21 @@ CustomNodeStatic.TraverseCollectInterface = function(interfaceList, funcName, no
 end
 
 _staticClass("CustomNodeConfigStatic")
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
 CustomNodeConfigStatic.NodeConfigChecker = SortedDictionary:New()
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
 
-CustomNodeConfigStatic.AddChecker = function(nodeType, cfgCheckFunc)
-  -- function num : 0_1 , upvalues : _ENV
-  (CustomNodeConfigStatic.NodeConfigChecker):Insert(nodeType, cfgCheckFunc)
+function CustomNodeConfigStatic.AddChecker(nodeType, cfgCheckFunc)
+  CustomNodeConfigStatic.NodeConfigChecker:Insert(nodeType, cfgCheckFunc)
 end
 
 CLHelper = {}
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
 
-CLHelper.Assert = function(condition, logMsg)
-  -- function num : 0_2 , upvalues : _ENV
+function CLHelper.Assert(condition, logMsg)
   if condition then
     return true
   end
   if logMsg then
-    (Log.fatal)(logMsg)
+    Log.fatal(logMsg)
   end
   assert(condition)
   return false
 end
-
-

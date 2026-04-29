@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_up_level_pet_detail_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIUpLevelPetDetailItem", UICustomWidget)
 UIUpLevelPetDetailItem = UIUpLevelPetDetailItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIUpLevelPetDetailItem.Constructor = function(self)
-  -- function num : 0_0
+function UIUpLevelPetDetailItem:Constructor()
   self._isCurrent = false
   self._index = 0
   self._controllerName = "UIUpLevelInterfaceController"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelPetDetailItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIUpLevelPetDetailItem:OnShow(uiParams)
   self._cg = self:GetUIComponent("RawImageLoader", "cg")
   self._rawImage = self:GetUIComponent("RawImage", "cg")
   self._cgGo = self:GetGameObject("cg")
@@ -27,102 +17,59 @@ UIUpLevelPetDetailItem.OnShow = function(self, uiParams)
   self:AttachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelPetDetailItem.OnHide = function(self)
-  -- function num : 0_2
+function UIUpLevelPetDetailItem:OnHide()
   self:RemoveEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelPetDetailItem.OnHideCallBack = function(self)
-  -- function num : 0_3
+function UIUpLevelPetDetailItem:OnHideCallBack()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelPetDetailItem.SetData = function(self, index, pet, curridx)
-  -- function num : 0_4 , upvalues : _ENV
+function UIUpLevelPetDetailItem:SetData(index, pet, curridx)
   self._index = index
   self:UpLevelCheckIsCurrent(curridx)
   self._petInfo = pet
-  self._pstid = (self._petInfo):GetPstID()
-  local size = ((Cfg.cfg_global).ui_interface_common_size).ArrayValue
-  ;
-  ((self._cgGo):GetComponent("RectTransform")).sizeDelta = Vector2(size[1], size[2])
-  self:LoadCgSync((self._petInfo):GetPetStaticBody(PetSkinEffectPath.BODY_LEVLE_UP))
+  self._pstid = self._petInfo:GetPstID()
+  local size = Cfg.cfg_global.ui_interface_common_size.ArrayValue
+  self._cgGo:GetComponent("RectTransform").sizeDelta = Vector2(size[1], size[2])
+  self:LoadCgSync(self._petInfo:GetPetStaticBody(PetSkinEffectPath.BODY_LEVLE_UP))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelPetDetailItem.LoadCgSync = function(self, matName)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._cg):LoadImage(matName)
-  ;
-  (UICG.SetTransform)((self._cgGo).transform, self._controllerName, matName)
+function UIUpLevelPetDetailItem:LoadCgSync(matName)
+  self._cg:LoadImage(matName)
+  UICG.SetTransform(self._cgGo.transform, self._controllerName, matName)
   local alpha = 1
   if not self._isCurrent then
     alpha = 0
   end
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._group3).alpha = alpha
+  self._group3.alpha = alpha
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelPetDetailItem.AttachEvents = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIUpLevelPetDetailItem:AttachEvents()
   self:AttachEvent(GameEventType.UpLevelCheckIsCurrent, self.UpLevelCheckIsCurrent)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelPetDetailItem.RemoveEvents = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIUpLevelPetDetailItem:RemoveEvents()
   self:DetachEvent(GameEventType.UpLevelCheckIsCurrent, self.UpLevelCheckIsCurrent)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelPetDetailItem.UpLevelCheckIsCurrent = function(self, idx)
-  -- function num : 0_8
+function UIUpLevelPetDetailItem:UpLevelCheckIsCurrent(idx)
   self._isCurrent = self._index == idx
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelPetDetailItem.GetC2C = function(self)
-  -- function num : 0_9
+function UIUpLevelPetDetailItem:GetC2C()
   return self._off
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelPetDetailItem.ChangeCanvasGroupAlpha = function(self, all, centerX)
-  -- function num : 0_10 , upvalues : _ENV
-  self._off = ((self._center).position).x - centerX
+function UIUpLevelPetDetailItem:ChangeCanvasGroupAlpha(all, centerX)
+  self._off = self._center.position.x - centerX
   local rate = self._off / all
-  rate = tonumber((string.format)("%.3f", rate))
-  if rate > 1 then
+  rate = tonumber(string.format("%.3f", rate))
+  if 1 < rate then
     rate = 1
-  else
-    if rate < -1 then
-      rate = -1
-    end
+  elseif rate < -1 then
+    rate = -1
   end
-  local alpha = 1 - (math.abs)(rate)
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rect3).anchoredPosition = Vector2(-500 * rate, 0)
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._group3).alpha = alpha
+  local alpha = 1 - math.abs(rate)
+  self._rect3.anchoredPosition = Vector2(-500 * rate, 0)
+  self._group3.alpha = alpha
 end
-
-

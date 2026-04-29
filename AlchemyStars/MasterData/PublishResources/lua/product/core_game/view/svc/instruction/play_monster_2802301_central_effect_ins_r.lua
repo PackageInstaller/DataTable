@@ -1,50 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_monster_2802301_central_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayMonster2802301CentralEffectInstruction", BaseInstruction)
 PlayMonster2802301CentralEffectInstruction = PlayMonster2802301CentralEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayMonster2802301CentralEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayMonster2802301CentralEffectInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._posY = tonumber(paramList.posY)
   local strOffset = paramList.offset
   if strOffset then
-    local arr = (string.split)(strOffset, "|")
+    local arr = string.split(strOffset, "|")
     self._offset = Vector2(tonumber(arr[1]), tonumber(arr[2]))
   else
-    do
-      self._offset = Vector2.zero
-    end
+    self._offset = Vector2.zero
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMonster2802301CentralEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayMonster2802301CentralEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local targetPos = Vector2.zero
   targetPos.y = self._posY
-  targetPos.x = ((world:GetService("UtilData")):GetRoundBeginPlayerPos()).x
+  targetPos.x = world:GetService("UtilData"):GetRoundBeginPlayerPos().x
   local offsetPos = targetPos + self._offset
   local effectService = world:GetService("Effect")
   effectService:CreateWorldPositionEffect(self._effectID, offsetPos)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMonster2802301CentralEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayMonster2802301CentralEffectInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

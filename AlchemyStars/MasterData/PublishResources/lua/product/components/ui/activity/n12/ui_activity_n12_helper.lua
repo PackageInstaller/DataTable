@@ -1,145 +1,92 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/ui_activity_n12_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN12Helper", Object)
 UIActivityN12Helper = UIActivityN12Helper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN12Helper.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityN12Helper:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN12Helper.GetEntrustNewKey = function()
-  -- function num : 0_1 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityN12Helper.GetEntrustNewKey()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   return "UIActivityN12Helper_Entrust_New_" .. roleModule:GetPstId()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN12Helper.EntrustHasNew = function(component)
-  -- function num : 0_2 , upvalues : _ENV
-  local key = (UIActivityN12Helper.GetEntrustNewKey)()
+function UIActivityN12Helper.EntrustHasNew(component)
+  local key = UIActivityN12Helper.GetEntrustNewKey()
   local historyTime = 0
-  if (LocalDB.HasKey)(key) then
-    historyTime = (LocalDB.GetFloat)(key)
+  if LocalDB.HasKey(key) then
+    historyTime = LocalDB.GetFloat(key)
   end
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = timeModule:GetServerTime()
-  ;
-  (Log.info)("UIActivityN12Helper.EntrustHasNew() key = ", key, " nowTime = ", nowTime, " historyTime = ", historyTime)
+  Log.info("UIActivityN12Helper.EntrustHasNew() key = ", key, " nowTime = ", nowTime, " historyTime = ", historyTime)
   local levels = component:GetAllLevelId()
-  for _,levelId in ipairs(levels) do
+  for _, levelId in ipairs(levels) do
     local openTime = component:GetStageOpenTime(levelId) * 1000
-    if openTime <= nowTime and historyTime < openTime then
-      (Log.info)("UIActivityN12Helper.EntrustHasNew() return true, levelId = ", levelId, " openTime = ", openTime)
+    if nowTime >= openTime and historyTime < openTime then
+      Log.info("UIActivityN12Helper.EntrustHasNew() return true, levelId = ", levelId, " openTime = ", openTime)
       return true
     end
   end
-  ;
-  (Log.info)("UIActivityN12Helper.EntrustHasNew() return false")
+  Log.info("UIActivityN12Helper.EntrustHasNew() return false")
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN12Helper.EntrustClearNew = function()
-  -- function num : 0_3 , upvalues : _ENV
-  local key = (UIActivityN12Helper.GetEntrustNewKey)()
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIActivityN12Helper.EntrustClearNew()
+  local key = UIActivityN12Helper.GetEntrustNewKey()
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = timeModule:GetServerTime()
-  ;
-  (Log.info)("UIActivityN12Helper.EntrustClearNew() key = ", key, " nowTime = ", nowTime)
-  ;
-  (LocalDB.SetFloat)(key, nowTime)
+  Log.info("UIActivityN12Helper.EntrustClearNew() key = ", key, " nowTime = ", nowTime)
+  LocalDB.SetFloat(key, nowTime)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN12Helper.N12_MapNode_Click = function(nodeid, levelId, component)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg_map_node = (Cfg.cfg_campaign_entrust_event)[nodeid]
+function UIActivityN12Helper.N12_MapNode_Click(nodeid, levelId, component)
+  local cfg_map_node = Cfg.cfg_campaign_entrust_event[nodeid]
   if not cfg_map_node then
-    (Log.error)("###[UIActivityN12Helper] cfg_map_node is nil ! id --> ", nodeid)
+    Log.error("###[UIActivityN12Helper] cfg_map_node is nil ! id --> ", nodeid)
   end
   local nodeType = cfg_map_node.EventType
   if nodeType == EntrustEventType.EntrustEventType_Box then
-    (UIActivityN12Helper.N12_MapNode_Box)(nodeid, levelId, component)
-  else
-    if nodeType == EntrustEventType.EntrustEventType_Story then
-      (UIActivityN12Helper.N12_MapNode_Story)(nodeid, levelId, component)
-    else
-      if nodeType == EntrustEventType.EntrustEventType_Fight then
-        (UIActivityN12Helper.N12_MapNode_Stage)(nodeid, levelId, component)
-      else
-        if nodeType == EntrustEventType.EntrustEventType_End and component:GetBannerState() then
-          component:SetBannerState(1)
-          ;
-          (UIActivityN12Helper.N12_MapNode_Banner)(nodeid, levelId, component)
-        end
-      end
+    UIActivityN12Helper.N12_MapNode_Box(nodeid, levelId, component)
+  elseif nodeType == EntrustEventType.EntrustEventType_Story then
+    UIActivityN12Helper.N12_MapNode_Story(nodeid, levelId, component)
+  elseif nodeType == EntrustEventType.EntrustEventType_Fight then
+    UIActivityN12Helper.N12_MapNode_Stage(nodeid, levelId, component)
+  elseif nodeType == EntrustEventType.EntrustEventType_End then
+    if component:GetBannerState() then
+      component:SetBannerState(1)
+      UIActivityN12Helper.N12_MapNode_Banner(nodeid, levelId, component)
     end
-  end
-  if nodeType == EntrustEventType.EntrustEventType_MissionOccupy or nodeType == EntrustEventType.EntrustEventType_MissionSubmit then
-    (UIActivityN12Helper.N12_MapNode_Quest)(nodeid, levelId, component)
+  elseif nodeType == EntrustEventType.EntrustEventType_MissionOccupy or nodeType == EntrustEventType.EntrustEventType_MissionSubmit then
+    UIActivityN12Helper.N12_MapNode_Quest(nodeid, levelId, component)
   else
-    ;
-    (Log.debug)("###[UIActivityN12Helper] nodeType else ! type --> ", nodeType)
+    Log.debug("###[UIActivityN12Helper] nodeType else ! type --> ", nodeType)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN12Helper.N12_MapNode_Quest = function(nodeid, levelId, component)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIN12MapQuestController", nodeid, levelId, component)
+function UIActivityN12Helper.N12_MapNode_Quest(nodeid, levelId, component)
+  GameGlobal.UIStateManager():ShowDialog("UIN12MapQuestController", nodeid, levelId, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN12Helper.N12_MapNode_Over = function(nodeid, levelId, component)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIN12MapExitsController", nodeid, levelId, component)
+function UIActivityN12Helper.N12_MapNode_Over(nodeid, levelId, component)
+  GameGlobal.UIStateManager():ShowDialog("UIN12MapExitsController", nodeid, levelId, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN12Helper.N12_MapNode_Banner = function(nodeid, levelId, component)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIN12MapBannerController", nodeid, levelId, component)
+function UIActivityN12Helper.N12_MapNode_Banner(nodeid, levelId, component)
+  GameGlobal.UIStateManager():ShowDialog("UIN12MapBannerController", nodeid, levelId, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN12Helper.N12_MapNode_Stage = function(nodeid, levelId, component)
-  -- function num : 0_8 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIN12MapStageController", nodeid, levelId, component)
+function UIActivityN12Helper.N12_MapNode_Stage(nodeid, levelId, component)
+  GameGlobal.UIStateManager():ShowDialog("UIN12MapStageController", nodeid, levelId, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN12Helper.N12_MapNode_Story = function(nodeid, levelId, component)
-  -- function num : 0_9 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIN12MapStoryController", nodeid, levelId, component)
+function UIActivityN12Helper.N12_MapNode_Story(nodeid, levelId, component)
+  GameGlobal.UIStateManager():ShowDialog("UIN12MapStoryController", nodeid, levelId, component)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN12Helper.N12_MapNode_Box = function(nodeid, levelId, component)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIN12MapBoxController", nodeid, levelId, component)
+function UIActivityN12Helper.N12_MapNode_Box(nodeid, levelId, component)
+  GameGlobal.UIStateManager():ShowDialog("UIN12MapBoxController", nodeid, levelId, component)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN12Helper.GetMapNodeAnimationKey = function(nodeid)
-  -- function num : 0_11 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityN12Helper.GetMapNodeAnimationKey(nodeid)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   return "UIActivityN12Helper_MapNodeAnimation_" .. roleModule:GetPstId() .. "_" .. nodeid
 end
-
-

@@ -1,102 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/svc/base_service.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BaseService", Object)
 BaseService = BaseService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BaseService.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function BaseService:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
-  self._mathService = (self._world):GetService("Math")
-  local runPos = (self._world):GetRunningPosition()
+  self._configService = self._world:GetService("Config")
+  self._mathService = self._world:GetService("Math")
+  local runPos = self._world:GetRunningPosition()
   if runPos == WorldRunPostion.AtServer then
     local serverWorld = self._world
     self._eventDispatcher = serverWorld:EventDispatcher()
   else
-    do
-      self._eventDispatcher = (GameGlobal.EventDispatcher)()
-    end
+    self._eventDispatcher = GameGlobal.EventDispatcher()
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseService._GetBattleStatComponent = function(self)
-  -- function num : 0_1
-  return (self._world):BattleStat()
+function BaseService:_GetBattleStatComponent()
+  return self._world:BattleStat()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseService._GetEventDispatcher = function(self)
-  -- function num : 0_2
+function BaseService:_GetEventDispatcher()
   return self._eventDispatcher
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseService._GetRandomNumber = function(self, m, n)
-  -- function num : 0_3
-  local randomService = (self._world):GetService("RandomLogic")
+function BaseService:_GetRandomNumber(m, n)
+  local randomService = self._world:GetService("RandomLogic")
   return randomService:LogicRand(m, n)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseService.GetBoardRandomNumber = function(self, m, n)
-  -- function num : 0_4
-  local randomService = (self._world):GetService("RandomLogic")
+function BaseService:GetBoardRandomNumber(m, n)
+  local randomService = self._world:GetService("RandomLogic")
   return randomService:BoardLogicRand(m, n)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseService.GetService = function(self, name)
-  -- function num : 0_5
-  return (self._world):GetService(name)
+function BaseService:GetService(name)
+  return self._world:GetService(name)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseService.GetMatchType = function(self)
-  -- function num : 0_6
-  return (self._world):MatchType()
+function BaseService:GetMatchType()
+  return self._world:MatchType()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseService.LogNotice = function(self, ...)
-  -- function num : 0_7 , upvalues : _ENV
-  if self._world and (self._world):IsDevelopEnv() then
-    (Log.debug)(self._className, " ", ...)
+function BaseService:LogNotice(...)
+  if self._world and self._world:IsDevelopEnv() then
+    Log.debug(self._className, " ", ...)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseService.LogWarn = function(self, ...)
-  -- function num : 0_8 , upvalues : _ENV
-  if self._world and (self._world):IsDevelopEnv() then
-    (Log.warn)(self._className, " ", ...)
+function BaseService:LogWarn(...)
+  if self._world and self._world:IsDevelopEnv() then
+    Log.warn(self._className, " ", ...)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseService.LogError = function(self, ...)
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.error)(self._className, " ", ...)
+function BaseService:LogError(...)
+  Log.error(self._className, " ", ...)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseService.ThrowException = function(self, ...)
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.exception)(self._className, " ", ...)
+function BaseService:ThrowException(...)
+  Log.exception(self._className, " ", ...)
 end
-
-

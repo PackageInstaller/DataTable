@@ -1,33 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/pet/player_chain_attack_state_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pet_chain_skill_self_attack_r")
 require("pet_chain_skill_shadow_attack_r")
 require("pet_chain_skill_agent_attack_r")
 _class("PlayerChainAttackStateSystem_Render", ReactiveSystem)
 PlayerChainAttackStateSystem_Render = PlayerChainAttackStateSystem_Render
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayerChainAttackStateSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function PlayerChainAttackStateSystem_Render:Constructor(world)
   self._world = world
   self._configService = world:GetService("Config")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerChainAttackStateSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local c = Collector:New({world:GetGroup((world.BW_WEMatchers).ChainSkillFlag)}, {"Added"})
+function PlayerChainAttackStateSystem_Render:GetTrigger(world)
+  local c = Collector:New({
+    world:GetGroup(world.BW_WEMatchers.ChainSkillFlag)
+  }, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerChainAttackStateSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayerChainAttackStateSystem_Render:Filter(entity)
   if not entity:HasMoveFSM() then
     return false
   end
@@ -39,238 +28,192 @@ PlayerChainAttackStateSystem_Render.Filter = function(self, entity)
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerChainAttackStateSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function PlayerChainAttackStateSystem_Render:ExecuteEntities(entities)
   local len = #entities
   for i = 1, len do
     self:HandleAttack(entities[i])
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerChainAttackStateSystem_Render.HandleAttack = function(self, entity)
-  -- function num : 0_4 , upvalues : _ENV
+function PlayerChainAttackStateSystem_Render:HandleAttack(entity)
   local chain_skill_cmpt = entity:ChainSkill()
   if chain_skill_cmpt == nil then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.ChainSkillAttackFinish, 1, entity:GetID())
-    return 
+    self._world:EventDispatcher():Dispatch(GameEventType.ChainSkillAttackFinish, 1, entity:GetID())
+    return
   end
   local chainNum = chain_skill_cmpt:GetChainNum()
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local chainAtkResCmpt = (renderBoardEntity:LogicResult()):GetLogicResult(LogicStepType.ChainAttack)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local chainAtkResCmpt = renderBoardEntity:LogicResult():GetLogicResult(LogicStepType.ChainAttack)
   local chain_skill_id = chainAtkResCmpt:GetPetCastChainSkillID(entity:GetID())
   if chain_skill_id <= 0 then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.ChainSkillAttackFinish, 1, entity:GetID())
-    return 
+    self._world:EventDispatcher():Dispatch(GameEventType.ChainSkillAttackFinish, 1, entity:GetID())
+    return
   end
-  local playSkillService = (self._world):GetService("PlaySkill")
+  local playSkillService = self._world:GetService("PlaySkill")
   playSkillService:ShowCasterEntity(entity:GetID())
   self:_PlayChainAttackVoice(entity)
   self:_UAReportChainAttack(entity, chain_skill_id, chainNum)
-  ;
-  (TaskManager:GetInstance()):CoreGameStartTask(self._DoPlayChainAttack, self, entity, chain_skill_id)
+  TaskManager:GetInstance():CoreGameStartTask(self._DoPlayChainAttack, self, entity, chain_skill_id)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerChainAttackStateSystem_Render.GetPetForward = function(self, casterEntity)
-  -- function num : 0_5 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
-  local casterPos = (casterEntity:GridLocation()).Position
+function PlayerChainAttackStateSystem_Render:GetPetForward(casterEntity)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  local casterPos = casterEntity:GridLocation().Position
   local damageResultList = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   if not damageResultList then
     return Vector2(0, 1)
   end
-  local get_index = function(c, p)
-    -- function num : 0_5_0
-    if p.x - c.x == 0 and p.y - c.y > 0 then
+  
+  local function get_index(c, p)
+    if p.x - c.x == 0 and 0 < p.y - c.y then
       return 1
     end
-    if p.x - c.x > 0 and p.y - c.y > 0 then
+    if p.x - c.x > 0 and 0 < p.y - c.y then
       return 2
     end
     if p.x - c.x > 0 and p.y - c.y == 0 then
       return 3
     end
-    if p.x - c.x > 0 and p.y - c.y < 0 then
+    if p.x - c.x > 0 and 0 > p.y - c.y then
       return 4
     end
-    if p.x - c.x == 0 and p.y - c.y < 0 then
+    if p.x - c.x == 0 and 0 > p.y - c.y then
       return 5
     end
-    if p.x - c.x < 0 and p.y - c.y < 0 then
+    if p.x - c.x < 0 and 0 > p.y - c.y then
       return 6
     end
     if p.x - c.x < 0 and p.y - c.y == 0 then
       return 7
     end
-    if p.x - c.x < 0 and p.y - c.y > 0 then
+    if p.x - c.x < 0 and 0 < p.y - c.y then
       return 8
     end
     return 1
   end
-
+  
   local damagePosList = {}
-  for i,result in ipairs(damageResultList) do
+  for i, result in ipairs(damageResultList) do
     damagePosList[i] = result:GetGridPos()
   end
-  local cmpFunc = function(damageResultPos1, damageResultPos2)
-    -- function num : 0_5_1 , upvalues : _ENV, casterPos, get_index
-    local dis1 = (Vector2.Distance)(damageResultPos1, casterPos)
-    local dis2 = (Vector2.Distance)(damageResultPos2, casterPos)
-    if get_index(casterPos, damageResultPos1) >= get_index(casterPos, damageResultPos2) then
-      do return dis1 ~= dis2 end
-      do return dis1 < dis2 end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  
+  local function cmpFunc(damageResultPos1, damageResultPos2)
+    local dis1 = Vector2.Distance(damageResultPos1, casterPos)
+    local dis2 = Vector2.Distance(damageResultPos2, casterPos)
+    if dis1 == dis2 then
+      return get_index(casterPos, damageResultPos1) < get_index(casterPos, damageResultPos2)
+    else
+      return dis1 < dis2
     end
   end
-
-  ;
-  (table.sort)(damagePosList, cmpFunc)
+  
+  table.sort(damagePosList, cmpFunc)
   local dir = damagePosList[1] - casterPos
   return dir
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerChainAttackStateSystem_Render._DoPlayChainAttack = function(self, TT, casterEntity, skillID)
-  -- function num : 0_6 , upvalues : _ENV
+function PlayerChainAttackStateSystem_Render:_DoPlayChainAttack(TT, casterEntity, skillID)
   self:_WaitChainAttackTrapTaskEnd(TT)
   local chainTaskIDList = {}
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local petCanMultiStageChainSkill = utilData:OnCheckPetCanMultiStageChainSkill(casterEntity)
   if petCanMultiStageChainSkill then
     self:_OnPlayChainSkillForMultiStage(TT, casterEntity, skillID)
   else
     chainTaskIDList = self:_OnPlayChainSkill(TT, casterEntity, skillID)
   end
-  while not (TaskHelper:GetInstance()):IsAllTaskFinished(chainTaskIDList, true) do
+  while not TaskHelper:GetInstance():IsAllTaskFinished(chainTaskIDList, true) do
     YIELD(TT)
   end
-  local guideService = (self._world):GetService("Guide")
+  local guideService = self._world:GetService("Guide")
   local guideTaskId = guideService:Trigger(GameEventType.GuidePlayerSkillFinish, GuidePlaySkillFinish.ChainSkillFinish, casterEntity)
-  while not (TaskHelper:GetInstance()):IsTaskFinished(guideTaskId, true) do
+  while not TaskHelper:GetInstance():IsTaskFinished(guideTaskId, true) do
     YIELD(TT)
   end
-  local pstId = (casterEntity:PetPstID()):GetPstID()
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.InOutQueue, pstId, false)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ShowHideChainSkillCG, pstId, false)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChainSkillAttackFinish, 1, casterEntity:GetID())
+  local pstId = casterEntity:PetPstID():GetPstID()
+  self._world:EventDispatcher():Dispatch(GameEventType.InOutQueue, pstId, false)
+  self._world:EventDispatcher():Dispatch(GameEventType.ShowHideChainSkillCG, pstId, false)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChainSkillAttackFinish, 1, casterEntity:GetID())
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerChainAttackStateSystem_Render._OnPlayChainSkill = function(self, TT, casterEntity, skillID)
-  -- function num : 0_7 , upvalues : _ENV
+function PlayerChainAttackStateSystem_Render:_OnPlayChainSkill(TT, casterEntity, skillID)
   local chainTaskIDList = {}
   local selfAttack = PetChainSkillSelfAttack:New(self._world)
-  local selfAttackTaskID = (TaskManager:GetInstance()):CoreGameStartTask(selfAttack.DoPlayPetSelfChainAttack, selfAttack, casterEntity, skillID)
-  if selfAttackTaskID > 0 then
+  local selfAttackTaskID = TaskManager:GetInstance():CoreGameStartTask(selfAttack.DoPlayPetSelfChainAttack, selfAttack, casterEntity, skillID)
+  if 0 < selfAttackTaskID then
     chainTaskIDList[#chainTaskIDList + 1] = selfAttackTaskID
   end
   local shadowAttack = PetChainSkillShadowAttack:New(self._world)
-  local shadowAttackTaskID = (TaskManager:GetInstance()):CoreGameStartTask(shadowAttack.DoPlayPetShadowChainAttack, shadowAttack, casterEntity, skillID)
-  if shadowAttackTaskID > 0 then
+  local shadowAttackTaskID = TaskManager:GetInstance():CoreGameStartTask(shadowAttack.DoPlayPetShadowChainAttack, shadowAttack, casterEntity, skillID)
+  if 0 < shadowAttackTaskID then
     chainTaskIDList[#chainTaskIDList + 1] = shadowAttackTaskID
   end
   local agentAttack = PetChainSkillAgentAttack:New(self._world)
-  local agentAttackTaskID = (TaskManager:GetInstance()):CoreGameStartTask(agentAttack.DoPlayPetAgentChainAttack, agentAttack, casterEntity, skillID)
-  if agentAttackTaskID > 0 then
+  local agentAttackTaskID = TaskManager:GetInstance():CoreGameStartTask(agentAttack.DoPlayPetAgentChainAttack, agentAttack, casterEntity, skillID)
+  if 0 < agentAttackTaskID then
     chainTaskIDList[#chainTaskIDList + 1] = agentAttackTaskID
   end
   return chainTaskIDList
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerChainAttackStateSystem_Render._OnPlayChainSkillForMultiStage = function(self, TT, casterEntity, skillID)
-  -- function num : 0_8 , upvalues : _ENV
-  local utilData = (self._world):GetService("UtilData")
+function PlayerChainAttackStateSystem_Render:_OnPlayChainSkillForMultiStage(TT, casterEntity, skillID)
+  local utilData = self._world:GetService("UtilData")
   local chainTimes = utilData:OnGetPetChainTimesForRender(casterEntity)
   local chainTaskIDList = {}
   for chainTimeIndex = 1, chainTimes do
     local chainSkillStageInfoList = utilData:OnGetPetChainSkillConfigIDList(casterEntity, chainTimeIndex)
-    local curChainTimeSkillStageCount = (table.count)(chainSkillStageInfoList)
+    local curChainTimeSkillStageCount = table.count(chainSkillStageInfoList)
     for index = 1, curChainTimeSkillStageCount do
       if chainTimeIndex == 1 or index == curChainTimeSkillStageCount then
         local selfAttack = PetChainSkillSelfAttackForMultiStage:New(self._world)
-        local selfAttackTaskID = (TaskManager:GetInstance()):CoreGameStartTask(selfAttack.DoPlayPetSelfChainAttackForMultiStage, selfAttack, casterEntity, chainTimeIndex, index)
-        if selfAttackTaskID > 0 then
+        local selfAttackTaskID = TaskManager:GetInstance():CoreGameStartTask(selfAttack.DoPlayPetSelfChainAttackForMultiStage, selfAttack, casterEntity, chainTimeIndex, index)
+        if 0 < selfAttackTaskID then
           chainTaskIDList[#chainTaskIDList + 1] = selfAttackTaskID
         end
       end
-      do
-        if chainTimeIndex == 1 and index == curChainTimeSkillStageCount then
-          local shadowAttack = PetChainSkillShadowAttack:New(self._world)
-          local shadowAttackTaskID = (TaskManager:GetInstance()):CoreGameStartTask(shadowAttack.DoPlayPetShadowChainAttack, shadowAttack, casterEntity, skillID)
-          if shadowAttackTaskID > 0 then
-            chainTaskIDList[#chainTaskIDList + 1] = shadowAttackTaskID
-          end
-        end
-        do
-          if index == curChainTimeSkillStageCount then
-            local agentAttack = PetChainSkillAgentAttackSelect:New(self._world)
-            local agentAttackTaskID = (TaskManager:GetInstance()):CoreGameStartTask(agentAttack.DoPlayPetAgentChainAttackSelect, agentAttack, casterEntity, chainTimeIndex)
-            if agentAttackTaskID > 0 then
-              chainTaskIDList[#chainTaskIDList + 1] = agentAttackTaskID
-            end
-          end
-          do
-            do
-              while not (TaskHelper:GetInstance()):IsAllTaskFinished(chainTaskIDList, true) do
-                YIELD(TT)
-              end
-              -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out DO_STMT
-
-            end
-          end
+      if chainTimeIndex == 1 and index == curChainTimeSkillStageCount then
+        local shadowAttack = PetChainSkillShadowAttack:New(self._world)
+        local shadowAttackTaskID = TaskManager:GetInstance():CoreGameStartTask(shadowAttack.DoPlayPetShadowChainAttack, shadowAttack, casterEntity, skillID)
+        if 0 < shadowAttackTaskID then
+          chainTaskIDList[#chainTaskIDList + 1] = shadowAttackTaskID
         end
       end
+      if index == curChainTimeSkillStageCount then
+        local agentAttack = PetChainSkillAgentAttackSelect:New(self._world)
+        local agentAttackTaskID = TaskManager:GetInstance():CoreGameStartTask(agentAttack.DoPlayPetAgentChainAttackSelect, agentAttack, casterEntity, chainTimeIndex)
+        if 0 < agentAttackTaskID then
+          chainTaskIDList[#chainTaskIDList + 1] = agentAttackTaskID
+        end
+      end
+      while not TaskHelper:GetInstance():IsAllTaskFinished(chainTaskIDList, true) do
+        YIELD(TT)
+      end
     end
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(chainTaskIDList, true) do
+    while not TaskHelper:GetInstance():IsAllTaskFinished(chainTaskIDList, true) do
       YIELD(TT)
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerChainAttackStateSystem_Render._WaitChainAttackTrapTaskEnd = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
-  local trapServiceRender = (self._world):GetService("TrapRender")
+function PlayerChainAttackStateSystem_Render:_WaitChainAttackTrapTaskEnd(TT)
+  local trapServiceRender = self._world:GetService("TrapRender")
   while not trapServiceRender:IsTrapViewTaskOver() do
     YIELD(TT)
   end
   trapServiceRender:ClearTrapViewTask()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerChainAttackStateSystem_Render._PlayChainAttackVoice = function(self, casterEntity)
-  -- function num : 0_10 , upvalues : _ENV
-  local tplID = (casterEntity:PetPstID()):GetTemplateID()
-  local pm = (GameGlobal.GetModule)(PetAudioModule)
-  ;
-  (InnerGameHelperRender.InnerGamePlayPetUIVoice)("ChainSkill", tplID)
+function PlayerChainAttackStateSystem_Render:_PlayChainAttackVoice(casterEntity)
+  local tplID = casterEntity:PetPstID():GetTemplateID()
+  local pm = GameGlobal.GetModule(PetAudioModule)
+  InnerGameHelperRender.InnerGamePlayPetUIVoice("ChainSkill", tplID)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerChainAttackStateSystem_Render._UAReportChainAttack = function(self, casterEntity, skillID, chainNum)
-  -- function num : 0_11 , upvalues : _ENV
-  local tplID = (casterEntity:PetPstID()):GetTemplateID()
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("FightSpellChainSkill", {skillID, chainNum, tplID}, false, true)
+function PlayerChainAttackStateSystem_Render:_UAReportChainAttack(casterEntity, skillID, chainNum)
+  local tplID = casterEntity:PetPstID():GetTemplateID()
+  GameGlobal.UAReportForceGuideEvent("FightSpellChainSkill", {
+    skillID,
+    chainNum,
+    tplID
+  }, false, true)
 end
-
-

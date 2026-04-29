@@ -1,50 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/ui/ui_dialog_open_state.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("CTestRobot_ShowUIState", CTestRobot_Base)
 CTestRobot_ShowUIState = CTestRobot_ShowUIState
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CTestRobot_ShowUIState.Constructor = function(self, pManger, stName, showParam)
-  -- function num : 0_0
+function CTestRobot_ShowUIState:Constructor(pManger, stName, showParam)
   self.m_stName = stName
   self.m_showParam = showParam
   self.m_nWaitID = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CTestRobot_ShowUIState.OnBegin = function(self, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  local nReturn = ((CTestRobot_ShowUIState.super).OnBegin)(self, ...)
+function CTestRobot_ShowUIState:OnBegin(...)
+  local nReturn = CTestRobot_ShowUIState.super.OnBegin(self, ...)
   self.m_nWaitID = self:_ShowUI()
   return nReturn
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CTestRobot_ShowUIState.OnWorking = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  return ((CTestRobot_ShowUIState.super).OnWorking)(self)
+function CTestRobot_ShowUIState:OnWorking()
+  return CTestRobot_ShowUIState.super.OnWorking(self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CTestRobot_ShowUIState._ShowUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local showParam = nil
-  -- DECOMPILER ERROR at PC13: Unhandled construct in 'MakeBoolean' P1
-
-  if self.m_showParam and type(self.m_showParam) == "table" then
-    showParam = (table.unpack)(self.m_showParam)
-  else
-    showParam = self.m_showParam
+function CTestRobot_ShowUIState:_ShowUI()
+  local showParam
+  if self.m_showParam then
+    if type(self.m_showParam) == "table" then
+      showParam = table.unpack(self.m_showParam)
+    else
+      showParam = self.m_showParam
+    end
   end
   self:PrintLog("ShowUIState, UI = ", self.m_stName)
-  return ((GameGlobal.UIStateManager)()):SwitchState(self.m_stName, showParam)
+  return GameGlobal.UIStateManager():SwitchState(self.m_stName, showParam)
 end
-
-

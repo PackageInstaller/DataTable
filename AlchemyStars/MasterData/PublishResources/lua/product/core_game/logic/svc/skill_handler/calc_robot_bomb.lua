@@ -1,71 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_robot_bomb.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_RobotBomb", SkillEffectCalc_Base)
 SkillEffectCalc_RobotBomb = SkillEffectCalc_RobotBomb
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_RobotBomb.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_RobotBomb:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
-  self._utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  self._utilCalcSvc = (self._world):GetService("UtilCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
+  self._utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  self._utilCalcSvc = self._world:GetService("UtilCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_RobotBomb.DoSkillEffectCalculator = function(self, skillEffectCalcParam, notPreview)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_RobotBomb:DoSkillEffectCalculator(skillEffectCalcParam, notPreview)
   local param = skillEffectCalcParam:GetSkillEffectParam()
   local skillRange = skillEffectCalcParam:GetSkillRange()
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
   local results = {}
   local robotParam = param:GetRobotBombParam()
   if robotParam then
     if robotParam.trapID then
-      local trapLogicSvc = (self._world):GetService("TrapLogic")
+      local trapLogicSvc = self._world:GetService("TrapLogic")
       local entityIDs = trapLogicSvc:FindTrapByTrapID(robotParam.trapID)
       if entityIDs[1] then
-        local trapEntity = (self._world):GetEntityByID(entityIDs[1])
+        local trapEntity = self._world:GetEntityByID(entityIDs[1])
         if trapEntity then
           local pos = trapEntity:GetGridPosition()
           local result = self:_CalcSingleRobotBomb(skillEffectCalcParam, casterEntity, pos, robotParam, trapEntity, notPreview)
           if result then
-            (table.insert)(results, result)
+            table.insert(results, result)
           end
         end
       end
     else
-      do
-        local pos = skillEffectCalcParam:GetCenterPos()
-        if not pos then
-          pos = casterEntity:GetGridPosition()
-        end
-        do
-          local result = self:_CalcSingleRobotBomb(skillEffectCalcParam, casterEntity, pos, robotParam, nil, notPreview)
-          if result then
-            (table.insert)(results, result)
-          end
-          return results
-        end
+      local pos = skillEffectCalcParam:GetCenterPos()
+      pos = pos or casterEntity:GetGridPosition()
+      local result = self:_CalcSingleRobotBomb(skillEffectCalcParam, casterEntity, pos, robotParam, nil, notPreview)
+      if result then
+        table.insert(results, result)
       end
     end
   end
+  return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_RobotBomb._CalcSingleRobotBomb = function(self, skillEffectCalcParam, casterEntity, center, robotBombParam, trapEntity, notPreview)
-  -- function num : 0_2 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local singleResult = (SkillEffectResultRobotBomb:New())
-  local nearestMonster = nil
-  local monsters = (self._utilScopeSvc):SortMonstersByPos(center, true)
+function SkillEffectCalc_RobotBomb:_CalcSingleRobotBomb(skillEffectCalcParam, casterEntity, center, robotBombParam, trapEntity, notPreview)
+  local utilDataSvc = self._world:GetService("UtilData")
+  local singleResult = SkillEffectResultRobotBomb:New()
+  local nearestMonster
+  local monsters = self._utilScopeSvc:SortMonstersByPos(center, true)
   if monsters then
-    for _,value in ipairs(monsters) do
+    for _, value in ipairs(monsters) do
       local monsterEntity = value.monster_e
       if not monsterEntity:HasDeadMark() then
         nearestMonster = monsterEntity
@@ -73,205 +54,161 @@ SkillEffectCalc_RobotBomb._CalcSingleRobotBomb = function(self, skillEffectCalcP
       end
     end
   end
-  do
-    if (self._world):MatchType() == MatchType.MT_BlackFist then
-      nearestMonster = ((self._world):Player()):GetCurrentEnemyTeamEntity()
-    end
-    if nearestMonster then
-      local skillConfigData = ((self._world):GetService("Config")):GetSkillConfigData(skillEffectCalcParam:GetSkillID(), casterEntity)
-      local scopeType = skillConfigData:GetSkillScopeType()
-      local scopeParam = skillConfigData:GetSkillScopeParam()
-      local scopeCalculator = (self._utilScopeSvc):GetSkillScopeCalc()
-      local scopeResult = scopeCalculator:ComputeScopeRange(scopeType, scopeParam, center)
-      local attackRange = scopeResult:GetAttackRange()
-      local tartgetPos = nearestMonster:GetGridPosition()
-      local bodyArea = (nearestMonster:BodyArea()):GetArea()
-      local bodyAreaPosList = {}
-      for _,body in ipairs(bodyArea) do
-        local bodyPos = nearestMonster:GetGridPosition() + body
-        ;
-        (table.insert)(bodyAreaPosList, bodyPos)
-      end
-      ;
-      (table.sort)(bodyAreaPosList, function(a, b)
-    -- function num : 0_2_0 , upvalues : _ENV, center
-    local disA = (Vector2.Distance)(center, a)
-    local disB = (Vector2.Distance)(center, b)
-    do return disA < disB end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    nearestMonster = self._world:Player():GetCurrentEnemyTeamEntity()
   end
-)
-      tartgetPos = bodyAreaPosList[1]
-      local realPath = self:_OnCalcShortestPath(center, tartgetPos, {})
-      for _,_position in ipairs(realPath) do
-        if self:_InRange(_position, attackRange) then
-          (table.insert)(singleResult.path, _position)
+  if nearestMonster then
+    local skillConfigData = self._world:GetService("Config"):GetSkillConfigData(skillEffectCalcParam:GetSkillID(), casterEntity)
+    local scopeType = skillConfigData:GetSkillScopeType()
+    local scopeParam = skillConfigData:GetSkillScopeParam()
+    local scopeCalculator = self._utilScopeSvc:GetSkillScopeCalc()
+    local scopeResult = scopeCalculator:ComputeScopeRange(scopeType, scopeParam, center)
+    local attackRange = scopeResult:GetAttackRange()
+    local tartgetPos = nearestMonster:GetGridPosition()
+    local bodyArea = nearestMonster:BodyArea():GetArea()
+    local bodyAreaPosList = {}
+    for _, body in ipairs(bodyArea) do
+      local bodyPos = nearestMonster:GetGridPosition() + body
+      table.insert(bodyAreaPosList, bodyPos)
+    end
+    table.sort(bodyAreaPosList, function(a, b)
+      local disA = Vector2.Distance(center, a)
+      local disB = Vector2.Distance(center, b)
+      return disA < disB
+    end)
+    tartgetPos = bodyAreaPosList[1]
+    local realPath = self:_OnCalcShortestPath(center, tartgetPos, {})
+    for _, _position in ipairs(realPath) do
+      if self:_InRange(_position, attackRange) then
+        table.insert(singleResult.path, _position)
+      end
+    end
+    if robotBombParam.recordCount > 0 then
+      local board = self._world:GetBoardEntity():Board()
+      for i = 1, robotBombParam.recordCount do
+        local position = singleResult.path[i]
+        if position then
+          local pieceType = board:GetPieceType(position)
+          Log.debug("SkillEffectCalc_RobotBomb:_CalcSingleRobotBomb ", position.x, position.y, robotBombParam.recordCount, pieceType)
+          table.insert(singleResult.pieceTypes, pieceType)
         end
       end
-      if robotBombParam.recordCount > 0 then
-        local board = ((self._world):GetBoardEntity()):Board()
-        for i = 1, robotBombParam.recordCount do
-          local position = (singleResult.path)[i]
-          if position then
-            local pieceType = board:GetPieceType(position)
-            ;
-            (Log.debug)("SkillEffectCalc_RobotBomb:_CalcSingleRobotBomb ", position.x, position.y, robotBombParam.recordCount, pieceType)
-            ;
-            (table.insert)(singleResult.pieceTypes, pieceType)
+    end
+    local destination = singleResult.path[#singleResult.path]
+    if destination then
+      local scopeCalculator = self._utilScopeSvc:GetSkillScopeCalc()
+      local scopeResult = scopeCalculator:ComputeScopeRange(robotBombParam.scopeType, robotBombParam.scopeParam, destination, casterEntity:BodyArea():GetArea())
+      singleResult.explosionRange = scopeResult:GetAttackRange()
+    end
+    local monsters = self:GetMonstersInRange(singleResult.explosionRange)
+    if not notPreview then
+      for _, explosionPos in ipairs(singleResult.explosionRange) do
+        local monster = utilDataSvc:GetMonsterAtPos(explosionPos)
+        if self._world:MatchType() == MatchType.MT_BlackFist then
+          local enemyTeamEntity = self._world:Player():GetCurrentEnemyTeamEntity()
+          if enemyTeamEntity:GetGridPosition() == explosionPos then
+            monster = enemyTeamEntity
           end
         end
-      end
-      do
-        local destination = (singleResult.path)[#singleResult.path]
-        if destination then
-          local scopeCalculator = (self._utilScopeSvc):GetSkillScopeCalc()
-          local scopeResult = scopeCalculator:ComputeScopeRange(robotBombParam.scopeType, robotBombParam.scopeParam, destination, (casterEntity:BodyArea()):GetArea())
-          singleResult.explosionRange = scopeResult:GetAttackRange()
-        end
-        do
-          do
-            local monsters = self:GetMonstersInRange(singleResult.explosionRange)
-            if not notPreview then
-              for _,explosionPos in ipairs(singleResult.explosionRange) do
-                local monster = utilDataSvc:GetMonsterAtPos(explosionPos)
-                do
-                  if (self._world):MatchType() == MatchType.MT_BlackFist then
-                    local enemyTeamEntity = ((self._world):Player()):GetCurrentEnemyTeamEntity()
-                    if enemyTeamEntity:GetGridPosition() == explosionPos then
-                      monster = enemyTeamEntity
-                    end
-                  end
-                  do
-                    if monster then
-                      local damageResult = self:CalcDamageResult(skillEffectCalcParam, monster, explosionPos)
-                      if damageResult then
-                        (table.insert)(singleResult.damageResult, damageResult)
-                      end
-                    end
-                    -- DECOMPILER ERROR at PC212: LeaveBlock: unexpected jumping out DO_STMT
-
-                  end
-                end
-              end
-            end
-            if trapEntity then
-              singleResult.trapEntityID = trapEntity:GetID()
-            end
-            return singleResult
+        if monster then
+          local damageResult = self:CalcDamageResult(skillEffectCalcParam, monster, explosionPos)
+          if damageResult then
+            table.insert(singleResult.damageResult, damageResult)
           end
         end
       end
     end
+    if trapEntity then
+      singleResult.trapEntityID = trapEntity:GetID()
+    end
   end
+  return singleResult
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_RobotBomb._InRange = function(self, position, range)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectCalc_RobotBomb:_InRange(position, range)
   local inRange = false
-  for _,_position in ipairs(range) do
+  for _, _position in ipairs(range) do
     if _position.x == position.x and _position.y == position.y then
       inRange = true
       break
     end
   end
-  do
-    return inRange
-  end
+  return inRange
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_RobotBomb.GetMonstersInRange = function(self, range)
-  -- function num : 0_4 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function SkillEffectCalc_RobotBomb:GetMonstersInRange(range)
+  local utilDataSvc = self._world:GetService("UtilData")
   local monsters = {}
   local ids = {}
   if range then
-    for _,position in ipairs(range) do
+    for _, position in ipairs(range) do
       local monster = utilDataSvc:GetMonsterAtPos(position)
       if monster and not ids[monster:GetID()] then
         ids[monster:GetID()] = true
-        ;
-        (table.insert)(monsters, monster)
+        table.insert(monsters, monster)
       end
     end
   end
-  do
-    return monsters
-  end
+  return monsters
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_RobotBomb.CalcDamageResult = function(self, skillEffectCalcParam, monster, explosionPos)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillEffectCalc_RobotBomb:CalcDamageResult(skillEffectCalcParam, monster, explosionPos)
   local casterEntityID = skillEffectCalcParam:GetCasterEntityID()
-  local casterEntity = ((self._world):GetEntityByID(casterEntityID))
-  local damageResult = nil
-  local nTotalDamage, listDamageInfo = (self._skillEffectService):ComputeSkillDamage(casterEntity, casterEntity:GetGridPosition(), monster, explosionPos, skillEffectCalcParam:GetSkillID(), skillEffectCalcParam:GetSkillEffectParam(), SkillEffectType.RobotBomb, 1)
-  damageResult = (self._skillEffectService):NewSkillDamageEffectResult(explosionPos, monster:GetID(), nTotalDamage, listDamageInfo)
+  local casterEntity = self._world:GetEntityByID(casterEntityID)
+  local damageResult
+  local nTotalDamage, listDamageInfo = self._skillEffectService:ComputeSkillDamage(casterEntity, casterEntity:GetGridPosition(), monster, explosionPos, skillEffectCalcParam:GetSkillID(), skillEffectCalcParam:GetSkillEffectParam(), SkillEffectType.RobotBomb, 1)
+  damageResult = self._skillEffectService:NewSkillDamageEffectResult(explosionPos, monster:GetID(), nTotalDamage, listDamageInfo)
   return damageResult
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_RobotBomb._OnCalcShortestPath = function(self, posStart, posEnd, chessPetPosList, lastMovePath)
-  -- function num : 0_6 , upvalues : _ENV
-  local dirs = {Vector2(0, 1), Vector2(1, 0), Vector2(0, -1), Vector2(-1, 0)}
+function SkillEffectCalc_RobotBomb:_OnCalcShortestPath(posStart, posEnd, chessPetPosList, lastMovePath)
+  local dirs = {
+    Vector2(0, 1),
+    Vector2(1, 0),
+    Vector2(0, -1),
+    Vector2(-1, 0)
+  }
   local movePath = {posStart}
   local walkLastPos = posStart
   for i = 1, 9 do
     local sortPosList = {}
-    for _,dir in ipairs(dirs) do
+    for _, dir in ipairs(dirs) do
       local targetPos = walkLastPos + dir
-      if not lastMovePath or lastMovePath and not (table.intable)(lastMovePath, targetPos) then
-        (table.insert)(sortPosList, targetPos)
+      if not lastMovePath or lastMovePath and not table.intable(lastMovePath, targetPos) then
+        table.insert(sortPosList, targetPos)
       end
     end
     local curMovePos = self:_OnCompareNearestPos(sortPosList, posEnd)
-    ;
-    (table.insert)(movePath, curMovePos)
+    table.insert(movePath, curMovePos)
     walkLastPos = movePath[#movePath]
-  end
-  do
-    if walkLastPos ~= posEnd and walkLastPos ~= nil then
-      return movePath
+    if walkLastPos == posEnd or walkLastPos == nil then
+      break
     end
   end
+  return movePath
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_RobotBomb._OnCompareNearestPos = function(self, posList, targetPos)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillEffectCalc_RobotBomb:_OnCompareNearestPos(posList, targetPos)
   local nearestPos = posList[1]
-  for _,pos in ipairs(posList) do
-    local dis1 = (Vector2.Distance)(nearestPos, targetPos)
-    local dis2 = (Vector2.Distance)(pos, targetPos)
-    if dis2 < dis1 then
+  for _, pos in ipairs(posList) do
+    local dis1 = Vector2.Distance(nearestPos, targetPos)
+    local dis2 = Vector2.Distance(pos, targetPos)
+    if dis1 > dis2 then
       nearestPos = pos
     end
   end
   return nearestPos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_RobotBomb._OnRangeOffset = function(self, range, newCenter)
-  -- function num : 0_8 , upvalues : _ENV
+function SkillEffectCalc_RobotBomb:_OnRangeOffset(range, newCenter)
   local count = #range
-  local centerIndex = (math.ceil)(count / 2)
+  local centerIndex = math.ceil(count / 2)
   local rangeCenter = range[centerIndex]
   local resultRange = {}
-  for _,position in ipairs(range) do
+  for _, position in ipairs(range) do
     local x = position.x + (newCenter.x - rangeCenter.x)
     local y = position.y + (newCenter.y - rangeCenter.y)
-    ;
-    (table.insert)(resultRange, Vector2(x, y))
+    table.insert(resultRange, Vector2(x, y))
   end
   return resultRange
 end
-
-

@@ -1,34 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/main/ui_n22_intro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22Intro", UIController)
 UIN22Intro = UIN22Intro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22Intro.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self.atc = (self:GetGameObject()):GetComponent(typeof(ATransitionComponent))
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.atc).enabled = true
-  ;
-  (self.atc):PlayEnterAnimation(true)
+function UIN22Intro:OnShow(uiParams)
+  self.atc = self:GetGameObject():GetComponent(typeof(ATransitionComponent))
+  self.atc.enabled = true
+  self.atc:PlayEnterAnimation(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22Intro.OnHide = function(self)
-  -- function num : 0_1
+function UIN22Intro:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22Intro.BtnCloseOnClick = function(self, go)
-  -- function num : 0_2
+function UIN22Intro:BtnCloseOnClick(go)
   self:CloseDialog()
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_effect_holder_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterEffectHolderInstruction", BaseInstruction)
 PlayCasterEffectHolderInstruction = PlayCasterEffectHolderInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterEffectHolderInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterEffectHolderInstruction:Constructor(paramList)
   self._effHolderType = paramList.effHolderType
   self._isShow = false
   local s = tonumber(paramList.isShow)
@@ -18,27 +11,20 @@ PlayCasterEffectHolderInstruction.Constructor = function(self, paramList)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterEffectHolderInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterEffectHolderInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
   local cEffectHolder = casterEntity:EffectHolder()
   if not cEffectHolder then
-    (Log.warn)("### no EffectHolderComponent on casterEntity. EntityId=", casterEntity:GetID())
-    return 
+    Log.warn("### no EffectHolderComponent on casterEntity. EntityId=", casterEntity:GetID())
+    return
   end
   if self._effHolderType == "Idle" then
     effectService:ShowIdleEffect(casterEntity, self._isShow)
+  elseif self._effHolderType == "Permanent" then
+    effectService:ShowPermanentEffect(casterEntity, self._isShow)
   else
-    if self._effHolderType == "Permanent" then
-      effectService:ShowPermanentEffect(casterEntity, self._isShow)
-    else
-      local effectList = cEffectHolder:GetEffectList(self._effHolderType)
-      effectService:ShowEffect(effectList, self._isShow)
-    end
+    local effectList = cEffectHolder:GetEffectList(self._effHolderType)
+    effectService:ShowEffect(effectList, self._isShow)
   end
 end
-
-

@@ -1,52 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n30/Entrust/main/ui_n30_entrust_item_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN30EntrustItemInfo", UIController)
 UIN30EntrustItemInfo = UIN30EntrustItemInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN30EntrustItemInfo.Constructor = function(self)
-  -- function num : 0_0
+function UIN30EntrustItemInfo:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustItemInfo.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIN30EntrustItemInfo:LoadDataOnEnter(TT, res, uiParams)
   self._reward = uiParams[1]
   self._deltaPosition = uiParams[2]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustItemInfo.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN30EntrustItemInfo:OnShow(uiParams)
   self._animation = self:GetUIComponent("Animation", "animation")
   self._itemInfo = self:GetUIComponent("UISelectObjectPath", "itemInfo")
-  self._tips = (self._itemInfo):SpawnObject("UISelectInfo")
+  self._tips = self._itemInfo:SpawnObject("UISelectInfo")
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustItemInfo.OnHide = function(self)
-  -- function num : 0_3
+function UIN30EntrustItemInfo:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustItemInfo.BtnAnywhereOnClick = function(self)
-  -- function num : 0_4
+function UIN30EntrustItemInfo:BtnAnywhereOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustItemInfo.Flush = function(self)
-  -- function num : 0_5
-  (self._tips):SetData((self._reward).assetid, self._deltaPosition + ((self._animation).transform).position)
+function UIN30EntrustItemInfo:Flush()
+  self._tips:SetData(self._reward.assetid, self._deltaPosition + self._animation.transform.position)
 end
-
-

@@ -1,49 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/Chess/Intro/ui_n29_chess_intro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN29ChessIntro", UIController)
 UIN29ChessIntro = UIN29ChessIntro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN29ChessIntro.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN29ChessIntro:OnShow(uiParams)
   self:_GetComponent()
   self:_InitParams(uiParams)
   self:_RefView()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessIntro._GetComponent = function(self)
-  -- function num : 0_1
+function UIN29ChessIntro:_GetComponent()
   self._title = self:GetUIComponent("UILocalizationText", "_title")
   self._content = self:GetUIComponent("UILocalizationText", "txtDesc")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessIntro._InitParams = function(self, uiParams)
-  -- function num : 0_2
+function UIN29ChessIntro:_InitParams(uiParams)
   self._title_str = uiParams[1]
   self._content_str = uiParams[2]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessIntro._RefView = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._title):SetText((StringTable.Get)(self._title_str))
-  ;
-  (self._content):SetText((StringTable.Get)(self._content_str))
+function UIN29ChessIntro:_RefView()
+  self._title:SetText(StringTable.Get(self._title_str))
+  self._content:SetText(StringTable.Get(self._content_str))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessIntro.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIN29ChessIntro:ConfirmBtnOnClick(go)
   self:CloseDialog()
 end
-
-

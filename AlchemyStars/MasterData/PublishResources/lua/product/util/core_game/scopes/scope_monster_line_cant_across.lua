@@ -1,97 +1,75 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_monster_line_cant_across.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_MonsterLineCantAcross", SkillScopeCalculator_Base)
 SkillScopeCalculator_MonsterLineCantAcross = SkillScopeCalculator_MonsterLineCantAcross
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_MonsterLineCantAcross.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local world = ((self._hub)._gridFilter)._world
+function SkillScopeCalculator_MonsterLineCantAcross:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local world = self._hub._gridFilter._world
   local utilScopeSvc = world:GetService("UtilScopeCalc")
   local utilData = world:GetService("UtilData")
   local monsterClassID = scopeParam[1]
   local containEdges = scopeParam[2] or 1
-  local targetEntity = nil
+  local targetEntity
   local monsterList, monsterPosList = utilScopeSvc:SelectAllMonster()
-  for i,e in ipairs(monsterList) do
-    if monsterClassID == (e:MonsterID()):GetMonsterClassID() then
+  for i, e in ipairs(monsterList) do
+    if monsterClassID == e:MonsterID():GetMonsterClassID() then
       targetEntity = e
       break
     end
   end
-  do
-    if not targetEntity then
-      return SkillScopeResult:New(SkillScopeType.MonsterLineCantAcross, casterPos, {}, {})
-    end
-    local targetPos = targetEntity:GetGridPosition()
-    local cross_area = {}
-    local wholeArea = {}
-    local curPos = casterEntity:GetGridPosition()
-    local curBodyArea = (casterEntity:BodyArea()):GetArea()
-    local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
-    local scopeParam = {widthThreshold = 0.7, noExtend = 1}
-    local scopeResult = scopeCalculator:ComputeScopeRange(SkillScopeType.AngleFreeLine, scopeParam, targetPos, curBodyArea, nil, nil, curPos)
-    local attackRange = scopeResult:GetAttackRange()
-    local CmpDistancefunc = function(pos1, pos2)
-    -- function num : 0_0_0 , upvalues : _ENV, casterPos
-    local dis1 = (Vector2.Distance)(casterPos, pos1)
-    local dis2 = (Vector2.Distance)(casterPos, pos2)
-    do return dis2 < dis1 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  if not targetEntity then
+    return SkillScopeResult:New(SkillScopeType.MonsterLineCantAcross, casterPos, {}, {})
   end
-
-    ;
-    (table.sort)(attackRange, CmpDistancefunc)
-    local supplementPosList = {}
-    for k,pos in ipairs(attackRange) do
-      local nextPos = attackRange[k + 1]
-      if nextPos then
-        if (math.abs)(pos.x - nextPos.x) == 1 and (math.abs)(pos.y - nextPos.y) == 1 then
-          local remainPosList = {}
-          local intableCount = 0
-          local diffX = nextPos.x - pos.x
-          local diffY = nextPos.y - pos.y
-          for i = pos.x, nextPos.x, diffX do
-            for j = pos.y, nextPos.y, diffY do
-              local workPos = Vector2(i, j)
-              if (table.intable)(attackRange, workPos) then
-                intableCount = intableCount + 1
-              else
-                if workPos ~= pos and workPos ~= nextPos then
-                  local isValidGrid = utilData:IsValidPiecePos(workPos)
-                  if isValidGrid then
-                    (table.insert)(remainPosList, workPos)
-                  end
-                end
-              end
+  local targetPos = targetEntity:GetGridPosition()
+  local cross_area = {}
+  local wholeArea = {}
+  local curPos = casterEntity:GetGridPosition()
+  local curBodyArea = casterEntity:BodyArea():GetArea()
+  local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
+  local scopeParam = {widthThreshold = 0.7, noExtend = 1}
+  local scopeResult = scopeCalculator:ComputeScopeRange(SkillScopeType.AngleFreeLine, scopeParam, targetPos, curBodyArea, nil, nil, curPos)
+  local attackRange = scopeResult:GetAttackRange()
+  
+  local function CmpDistancefunc(pos1, pos2)
+    local dis1 = Vector2.Distance(casterPos, pos1)
+    local dis2 = Vector2.Distance(casterPos, pos2)
+    return dis1 > dis2
+  end
+  
+  table.sort(attackRange, CmpDistancefunc)
+  local supplementPosList = {}
+  for k, pos in ipairs(attackRange) do
+    local nextPos = attackRange[k + 1]
+    if not nextPos then
+      break
+    end
+    if math.abs(pos.x - nextPos.x) == 1 and math.abs(pos.y - nextPos.y) == 1 then
+      local remainPosList = {}
+      local intableCount = 0
+      local diffX = nextPos.x - pos.x
+      local diffY = nextPos.y - pos.y
+      for i = pos.x, nextPos.x, diffX do
+        for j = pos.y, nextPos.y, diffY do
+          local workPos = Vector2(i, j)
+          if table.intable(attackRange, workPos) then
+            intableCount = intableCount + 1
+          elseif workPos ~= pos and workPos ~= nextPos then
+            local isValidGrid = utilData:IsValidPiecePos(workPos)
+            if isValidGrid then
+              table.insert(remainPosList, workPos)
             end
           end
-          if (table.count)(remainPosList) > 0 and intableCount == 2 then
-            (table.insert)(supplementPosList, remainPosList[1])
-          end
-        end
-        do
-          -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out IF_STMT
-
         end
       end
+      if 0 < table.count(remainPosList) and intableCount == 2 then
+        table.insert(supplementPosList, remainPosList[1])
+      end
     end
-    ;
-    (table.appendArray)(attackRange, supplementPosList)
-    if containEdges == 0 then
-      (table.removev)(attackRange, targetPos)
-      ;
-      (table.removev)(attackRange, casterPos)
-    end
-    local result = SkillScopeResult:New(SkillScopeType.MonsterLineCantAcross, casterPos, attackRange, attackRange)
-    return result
   end
+  table.appendArray(attackRange, supplementPosList)
+  if containEdges == 0 then
+    table.removev(attackRange, targetPos)
+    table.removev(attackRange, casterPos)
+  end
+  local result = SkillScopeResult:New(SkillScopeType.MonsterLineCantAcross, casterPos, attackRange, attackRange)
+  return result
 end
-
-

@@ -1,43 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/helper/custom_nodes_foundation/bhv_nodes/bhv_print_log.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("abstract_bhv_finite_time")
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
 
-CustomNodeConfigStatic.Check_PrintLogBhv = function(cfg)
-  -- function num : 0_0
+function CustomNodeConfigStatic.Check_PrintLogBhv(cfg)
   if cfg.LogStr then
     return true
   end
   return false
 end
 
-;
-(CustomNodeConfigStatic.AddChecker)("PrintLogBhv", CustomNodeConfigStatic.Check_PrintLogBhv)
+CustomNodeConfigStatic.AddChecker("PrintLogBhv", CustomNodeConfigStatic.Check_PrintLogBhv)
 _class("PrintLogBhv", HasBeginBhv)
 PrintLogBhv = PrintLogBhv
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-PrintLogBhv.Constructor = function(self)
-  -- function num : 0_1
+function PrintLogBhv:Constructor()
   self.logStr = 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PrintLogBhv.InitializeNode = function(self, cfg, context)
-  -- function num : 0_2 , upvalues : _ENV
-  ((PrintLogBhv.super).InitializeNode)(self, cfg, context)
+function PrintLogBhv:InitializeNode(cfg, context)
+  PrintLogBhv.super.InitializeNode(self, cfg, context)
   self.logStr = cfg.LogStr
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PrintLogBhv.OnBegin = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (Log.debug)(self.logStr)
+function PrintLogBhv:OnBegin()
+  Log.debug(self.logStr)
 end
-
-

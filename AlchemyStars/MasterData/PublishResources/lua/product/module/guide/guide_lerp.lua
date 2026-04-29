@@ -1,31 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/guide/guide_lerp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GuideLerp", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-GuideLerp.LineLerp = function(self, startValue, targetValue, t)
-  -- function num : 0_0
+function GuideLerp:LineLerp(startValue, targetValue, t)
   return startValue + (targetValue - startValue) * t
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideLerp.SlowDown = function(self, startValue, targetValue)
-  -- function num : 0_1 , upvalues : _ENV
-  local t = (GameGlobal:GetInstance()):GetCurrentTime() - self.startTime
+function GuideLerp:SlowDown(startValue, targetValue)
+  local t = GameGlobal:GetInstance():GetCurrentTime() - self.startTime
   t = t / self.duration
-  local value = -(targetValue - startValue) * (t) * (t - 2) + startValue
+  local value = -(targetValue - startValue) * t * (t - 2) + startValue
   return value
 end
 
-local lerpFuncMap = {line = GuideLerp.LineLerp, slowDown = GuideLerp.SlowDown}
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
+local lerpFuncMap = {
+  line = GuideLerp.LineLerp,
+  slowDown = GuideLerp.SlowDown
+}
 
-GuideLerp.Constructor = function(self, startValue, targetValue, duration, lerpType)
-  -- function num : 0_2 , upvalues : lerpFuncMap, _ENV
+function GuideLerp:Constructor(startValue, targetValue, duration, lerpType)
   self.startValue = startValue
   self.targetValue = targetValue
   self.duration = duration
@@ -36,26 +27,17 @@ GuideLerp.Constructor = function(self, startValue, targetValue, duration, lerpTy
     end
     self.lerpFunc = self.LineLerp
   end
-  self.startTime = (GameGlobal:GetInstance()):GetCurrentTime()
+  self.startTime = GameGlobal:GetInstance():GetCurrentTime()
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideLerp.Reset = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self.startTime = (GameGlobal:GetInstance()):GetCurrentTime()
+function GuideLerp:Reset()
+  self.startTime = GameGlobal:GetInstance():GetCurrentTime()
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideLerp.Lerp = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local t = ((GameGlobal:GetInstance()):GetCurrentTime() - self.startTime) / self.duration
-  if t > 1 then
+function GuideLerp:Lerp()
+  local t = (GameGlobal:GetInstance():GetCurrentTime() - self.startTime) / self.duration
+  if 1 < t then
     t = 1
   end
-  do return self:lerpFunc(self.startValue, self.targetValue, t), t == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return self:lerpFunc(self.startValue, self.targetValue, t), t == 1
 end
-
-

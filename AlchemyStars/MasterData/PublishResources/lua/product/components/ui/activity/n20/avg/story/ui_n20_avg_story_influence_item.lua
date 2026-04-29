@@ -1,28 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/story/ui_n20_avg_story_influence_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20AVGStoryInfluenceItem", UICustomWidget)
 UIN20AVGStoryInfluenceItem = UIN20AVGStoryInfluenceItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20AVGStoryInfluenceItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN20AVGData()
-  self.animNames = {"uieff_UIN20AVGStoryInfluenceItem_noInfluence_in", "uieff_UIN20AVGStoryInfluenceItem_noInfluence_loop1", "uieff_UIN20AVGStoryInfluenceItem_noInfluence_loop2", "uieff_UIN20AVGStoryInfluenceItem_noInfluence_loop3", "uieff_UIN20AVGStoryInfluenceItem_noInfluence_out", "uieff_UIN20AVGStoryInfluenceItem_notTry_in", "uieff_UIN20AVGStoryInfluenceItem_notTry_loop1", "uieff_UIN20AVGStoryInfluenceItem_notTry_loop2", "uieff_UIN20AVGStoryInfluenceItem_notTry_loop3", "uieff_UIN20AVGStoryInfluenceItem_notTry_out", "uieff_UIN20AVGStoryInfluenceItem_isInfluence_in", "uieff_UIN20AVGStoryInfluenceItem_isInfluence_loop1", "uieff_UIN20AVGStoryInfluenceItem_isInfluence_loop2", "uieff_UIN20AVGStoryInfluenceItem_isInfluence_loop3", "uieff_UIN20AVGStoryInfluenceItem_isInfluence_out"}
+function UIN20AVGStoryInfluenceItem:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN20AVGData()
+  self.animNames = {
+    "uieff_UIN20AVGStoryInfluenceItem_noInfluence_in",
+    "uieff_UIN20AVGStoryInfluenceItem_noInfluence_loop1",
+    "uieff_UIN20AVGStoryInfluenceItem_noInfluence_loop2",
+    "uieff_UIN20AVGStoryInfluenceItem_noInfluence_loop3",
+    "uieff_UIN20AVGStoryInfluenceItem_noInfluence_out",
+    "uieff_UIN20AVGStoryInfluenceItem_notTry_in",
+    "uieff_UIN20AVGStoryInfluenceItem_notTry_loop1",
+    "uieff_UIN20AVGStoryInfluenceItem_notTry_loop2",
+    "uieff_UIN20AVGStoryInfluenceItem_notTry_loop3",
+    "uieff_UIN20AVGStoryInfluenceItem_notTry_out",
+    "uieff_UIN20AVGStoryInfluenceItem_isInfluence_in",
+    "uieff_UIN20AVGStoryInfluenceItem_isInfluence_loop1",
+    "uieff_UIN20AVGStoryInfluenceItem_isInfluence_loop2",
+    "uieff_UIN20AVGStoryInfluenceItem_isInfluence_loop3",
+    "uieff_UIN20AVGStoryInfluenceItem_isInfluence_out"
+  }
   self.taskId = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGStoryInfluenceItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN20AVGStoryInfluenceItem:OnShow()
   self.anim = self:GetUIComponent("Animation", "root")
-  self.rt = (self:GetGameObject()):GetComponent(typeof(UnityEngine.RectTransform))
-  ;
-  (UICommonHelper:GetInstance()):RectTransformAnchor2Center(self.rt)
+  self.rt = self:GetGameObject():GetComponent(typeof(UnityEngine.RectTransform))
+  UICommonHelper:GetInstance():RectTransformAnchor2Center(self.rt)
   self.noInfluence = self:GetGameObject("noInfluence")
   self.notTry = self:GetGameObject("notTry")
   self.isInfluence = self:GetGameObject("isInfluence")
@@ -36,215 +41,145 @@ UIN20AVGStoryInfluenceItem.OnShow = function(self)
   self.patners = self:GetGameObject("patners")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGStoryInfluenceItem.OnHide = function(self)
-  -- function num : 0_2
+function UIN20AVGStoryInfluenceItem:OnHide()
   self.anim = nil
   self.taskId = 0
   self.option = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGStoryInfluenceItem.Flush = function(self, option)
-  -- function num : 0_3
+function UIN20AVGStoryInfluenceItem:Flush(option)
   self.option = option
   self:FlushInfluence()
   self:FlushPos()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGStoryInfluenceItem.FlushPos = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-  if not ((self.data).optionPos)[(self.option).index] then
-    (self.rt).anchoredPosition = Vector2.zero
-  end
+function UIN20AVGStoryInfluenceItem:FlushPos()
+  self.rt.anchoredPosition = self.data.optionPos[self.option.index] or Vector2.zero
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGStoryInfluenceItem.FlushInfluence = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self.option):IsSelected() then
-    if (self.option):IsInfluential() then
-      if (self.option):IsInfluentialLeader() then
-        (self.goLeader):SetActive(true)
-        local leader = (self.poolLeader):SpawnObject("UIN20AVGActorValueChange")
-        leader:Flush(0, (self.option).influenceLeader)
+function UIN20AVGStoryInfluenceItem:FlushInfluence()
+  if self.option:IsSelected() then
+    if self.option:IsInfluential() then
+      if self.option:IsInfluentialLeader() then
+        self.goLeader:SetActive(true)
+        local leader = self.poolLeader:SpawnObject("UIN20AVGActorValueChange")
+        leader:Flush(0, self.option.influenceLeader)
       else
-        do
-          ;
-          (self.goLeader):SetActive(false)
-          if (self.option):IsInfluentialPartners() then
-            (self.patners):SetActive(true)
-            local lst = {}
-            for index,actor in ipairs((self.data).actorPartners) do
-              if (self.option):IsInfluentialPartner(index) then
-                (table.insert)(lst, index)
-              end
-            end
-            local len = (table.count)(lst)
-            ;
-            (self.poolPatners):SpawnObjects("UIN20AVGActorValueChange", len)
-            local uis = (self.poolPatners):GetAllSpawnList()
-            for i,ui in ipairs(uis) do
-              local index = lst[i]
-              ui:Flush(index, ((self.option).influencePartners)[index])
-            end
-          else
-            do
-              ;
-              (self.patners):SetActive(false)
-              ;
-              (self.txtInfluence):SetText("")
-              if (string.isnullorempty)((self.option).influence) then
-                (self.txtInfluence):SetText((self.option).influence)
-              end
-            end
+        self.goLeader:SetActive(false)
+      end
+      if self.option:IsInfluentialPartners() then
+        self.patners:SetActive(true)
+        local lst = {}
+        for index, actor in ipairs(self.data.actorPartners) do
+          if self.option:IsInfluentialPartner(index) then
+            table.insert(lst, index)
           end
         end
+        local len = table.count(lst)
+        self.poolPatners:SpawnObjects("UIN20AVGActorValueChange", len)
+        local uis = self.poolPatners:GetAllSpawnList()
+        for i, ui in ipairs(uis) do
+          local index = lst[i]
+          ui:Flush(index, self.option.influencePartners[index])
+        end
+      else
+        self.patners:SetActive(false)
       end
+      self.txtInfluence:SetText("")
+    elseif string.isnullorempty(self.option.influence) then
+    else
+      self.txtInfluence:SetText(self.option.influence)
     end
+  else
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGStoryInfluenceItem.ResetRectTransform = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.rtNoInfluence).anchoredPosition = Vector2.zero
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.rtNotTry).anchoredPosition = Vector2.zero
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.rtIsInfluence).anchoredPosition = Vector2.zero
+function UIN20AVGStoryInfluenceItem:ResetRectTransform()
+  self.rtNoInfluence.anchoredPosition = Vector2.zero
+  self.rtNotTry.anchoredPosition = Vector2.zero
+  self.rtIsInfluence.anchoredPosition = Vector2.zero
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGStoryInfluenceItem.GetState = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN20AVGStoryInfluenceItem:GetState()
   if not self.option then
-    return 
+    return
   end
   local state = 0
-  if (self.option):IsSelected() then
-    if (self.option):IsInfluential() then
+  if self.option:IsSelected() then
+    if self.option:IsInfluential() then
       state = 11
+    elseif string.isnullorempty(self.option.influence) then
+      state = 1
     else
-      if (string.isnullorempty)((self.option).influence) then
-        state = 1
-      else
-        state = 11
-      end
+      state = 11
     end
   else
     state = 6
   end
-  ;
-  (self.noInfluence):SetActive(state == 1)
-  ;
-  (self.notTry):SetActive(state == 6)
-  ;
-  (self.isInfluence):SetActive(state == 11)
-  do return state end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self.noInfluence:SetActive(state == 1)
+  self.notTry:SetActive(state == 6)
+  self.isInfluence:SetActive(state == 11)
+  return state
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGStoryInfluenceItem.PlayAnimIn = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN20AVGStoryInfluenceItem:PlayAnimIn()
   if not self.anim then
-    return 
+    return
   end
   self:ResetRectTransform()
   if self.taskId > 0 then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId)
+    GameGlobal.TaskManager():KillTask(self.taskId)
   end
   self.taskId = self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV
     local state = self:GetState()
-    local animName = (self.animNames)[state]
+    local animName = self.animNames[state]
     self:ResetAnim()
-    ;
-    (self.anim):Play(animName)
+    self.anim:Play(animName)
     YIELD(TT, 833)
     self.taskId = 0
     self:PlayAnimLoop()
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGStoryInfluenceItem.PlayAnimLoop = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN20AVGStoryInfluenceItem:PlayAnimLoop()
   if not self.anim then
-    return 
+    return
   end
-  local offset = (math.random)(1, 3)
+  local offset = math.random(1, 3)
   local state = self:GetState() + offset
-  local animName = (self.animNames)[state]
+  local animName = self.animNames[state]
   self:ResetAnim()
-  ;
-  (self.anim):Play(animName)
+  self.anim:Play(animName)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGStoryInfluenceItem.PlayAnimOut = function(self)
-  -- function num : 0_10
+function UIN20AVGStoryInfluenceItem:PlayAnimOut()
   if not self.anim then
-    return 
+    return
   end
   local state = self:GetState() + 4
   self:ResetAnim()
-  ;
-  (self.anim):Play((self.animNames)[state])
+  self.anim:Play(self.animNames[state])
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGStoryInfluenceItem.ResetAnim = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN20AVGStoryInfluenceItem:ResetAnim()
   if not self.anim then
-    return 
+    return
   end
-  for index,animName in ipairs(self.animNames) do
+  for index, animName in ipairs(self.animNames) do
     self:ResetAnimByName(animName)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGStoryInfluenceItem.ResetAnimByName = function(self, animName)
-  -- function num : 0_12
+function UIN20AVGStoryInfluenceItem:ResetAnimByName(animName)
   if not self.anim then
-    return 
+    return
   end
-  local state = (self.anim):get_Item(animName)
+  local state = self.anim:get_Item(animName)
   state.normalizedTime = 0
-  ;
-  (self.anim):Stop()
+  self.anim:Stop()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGStoryInfluenceItem.PrintAnimNormalizedTime = function(self, animName)
-  -- function num : 0_13 , upvalues : _ENV
-  local state = (self.anim):get_Item(animName)
-  ;
-  (Log.fatal)("### PrintAnimNormalizedTime", state.normalizedTime, animName)
+function UIN20AVGStoryInfluenceItem:PrintAnimNormalizedTime(animName)
+  local state = self.anim:get_Item(animName)
+  Log.fatal("### PrintAnimNormalizedTime", state.normalizedTime, animName)
 end
-
-

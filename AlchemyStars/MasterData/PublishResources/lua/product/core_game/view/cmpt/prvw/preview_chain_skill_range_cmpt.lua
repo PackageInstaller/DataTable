@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/preview_chain_skill_range_cmpt.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewChainSkillRangeComponent", Object)
 PreviewChainSkillRangeComponent = PreviewChainSkillRangeComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewChainSkillRangeComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PreviewChainSkillRangeComponent:Constructor()
   self._enablePreviewChainSkillRange = false
   self._flashChainSkill = true
   self._curPreviewTypeIndex = 0
@@ -23,242 +16,152 @@ PreviewChainSkillRangeComponent.Constructor = function(self)
   self._previewTypeList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.EnablePreviewChainSkillRange = function(self, enable)
-  -- function num : 0_1
+function PreviewChainSkillRangeComponent:EnablePreviewChainSkillRange(enable)
   self._enablePreviewChainSkillRange = enable
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.GetPreviewChainSkillRangeEnable = function(self)
-  -- function num : 0_2
+function PreviewChainSkillRangeComponent:GetPreviewChainSkillRangeEnable()
   return self._enablePreviewChainSkillRange
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.ResetPreviewChainSkillData = function(self)
-  -- function num : 0_3
+function PreviewChainSkillRangeComponent:ResetPreviewChainSkillData()
   self._flashChainSkill = true
   self._curPreviewTypeIndex = 0
   self._curTypeViewStartTime = 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.GetChainSkillRangeOutlineDic = function(self)
-  -- function num : 0_4
+function PreviewChainSkillRangeComponent:GetChainSkillRangeOutlineDic()
   return self._chainSkillRangeOutlineEntityDic
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.IsFlashChainSkillRange = function(self)
-  -- function num : 0_5
+function PreviewChainSkillRangeComponent:IsFlashChainSkillRange()
   return self._flashChainSkill
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.SetChainSkillRangeFlash = function(self, isFlashRange)
-  -- function num : 0_6
+function PreviewChainSkillRangeComponent:SetChainSkillRangeFlash(isFlashRange)
   self._flashChainSkill = isFlashRange
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.GetPreviewTypeIndex = function(self)
-  -- function num : 0_7
+function PreviewChainSkillRangeComponent:GetPreviewTypeIndex()
   return self._curPreviewTypeIndex
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.SetPreviewTypeIndex = function(self, previewTypeIndex)
-  -- function num : 0_8
+function PreviewChainSkillRangeComponent:SetPreviewTypeIndex(previewTypeIndex)
   self._curPreviewTypeIndex = previewTypeIndex
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.GetPreviewShowTime = function(self)
-  -- function num : 0_9
+function PreviewChainSkillRangeComponent:GetPreviewShowTime()
   return self._previewMaxTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.GetPreviewStartTime = function(self)
-  -- function num : 0_10
+function PreviewChainSkillRangeComponent:GetPreviewStartTime()
   return self._curTypeViewStartTime
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.SetPreviewStartTime = function(self, previewStartTime)
-  -- function num : 0_11
+function PreviewChainSkillRangeComponent:SetPreviewStartTime(previewStartTime)
   self._curTypeViewStartTime = previewStartTime
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.GetChainSkillRangeCount = function(self)
-  -- function num : 0_12
-  return (self._chainSkillRangeOutlineEntityDic):GetChainSkillOutlineEntityCount()
+function PreviewChainSkillRangeComponent:GetChainSkillRangeCount()
+  return self._chainSkillRangeOutlineEntityDic:GetChainSkillOutlineEntityCount()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.GetChainSkillSingleEntityDic = function(self)
-  -- function num : 0_13
+function PreviewChainSkillRangeComponent:GetChainSkillSingleEntityDic()
   return self._petSingleEntityDic
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.AddChainSkillSingleEntityDic = function(self, previewIndex, entityID)
-  -- function num : 0_14 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._petSingleEntityDic)[previewIndex] then
-    (self._petSingleEntityDic)[previewIndex] = {}
+function PreviewChainSkillRangeComponent:AddChainSkillSingleEntityDic(previewIndex, entityID)
+  if not self._petSingleEntityDic[previewIndex] then
+    self._petSingleEntityDic[previewIndex] = {}
   end
-  ;
-  (table.insert)((self._petSingleEntityDic)[previewIndex], entityID)
+  table.insert(self._petSingleEntityDic[previewIndex], entityID)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.GetChainSkillAddHPPetDic = function(self)
-  -- function num : 0_15
+function PreviewChainSkillRangeComponent:GetChainSkillAddHPPetDic()
   return self._addHPPetDic
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.AddChainSkillAddHPPetDic = function(self, previewIndex, entityID)
-  -- function num : 0_16
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._addHPPetDic)[previewIndex] = entityID
+function PreviewChainSkillRangeComponent:AddChainSkillAddHPPetDic(previewIndex, entityID)
+  self._addHPPetDic[previewIndex] = entityID
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.CheckPreviewIndexData = function(self, previewIndex, previewType)
-  -- function num : 0_17 , upvalues : _ENV
+function PreviewChainSkillRangeComponent:CheckPreviewIndexData(previewIndex, previewType)
   if not previewType then
     return false
   end
-  if previewType == PreviewChainSkillType.Range and not (self._chainSkillRangeOutlineEntityDic):HasPreviewIndex(previewIndex) then
-    return false
-  end
-  if previewType == PreviewChainSkillType.SingleEntity and not (self._petSingleEntityDic)[previewIndex] then
-    return false
-  end
-  if previewType == PreviewChainSkillType.AddHP and not (self._addHPPetDic)[previewIndex] then
-    return false
-  end
-  if previewType == PreviewChainSkillType.RangeAndSingleEntity then
-    if not (self._chainSkillRangeOutlineEntityDic):HasPreviewIndex(previewIndex) then
+  if previewType == PreviewChainSkillType.Range then
+    if not self._chainSkillRangeOutlineEntityDic:HasPreviewIndex(previewIndex) then
       return false
     end
-    if not (self._petSingleEntityDic)[previewIndex] then
+  elseif previewType == PreviewChainSkillType.SingleEntity then
+    if not self._petSingleEntityDic[previewIndex] then
+      return false
+    end
+  elseif previewType == PreviewChainSkillType.AddHP then
+    if not self._addHPPetDic[previewIndex] then
+      return false
+    end
+  elseif previewType == PreviewChainSkillType.RangeAndSingleEntity then
+    if not self._chainSkillRangeOutlineEntityDic:HasPreviewIndex(previewIndex) then
+      return false
+    end
+    if not self._petSingleEntityDic[previewIndex] then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.GetPreviewChainSkillTypeByPreviewIndex = function(self, previewIndex)
-  -- function num : 0_18 , upvalues : _ENV
-  if self:CheckPreviewIndexData(previewIndex, (self._previewTypeList)[previewIndex]) then
-    return (self._previewTypeList)[previewIndex]
+function PreviewChainSkillRangeComponent:GetPreviewChainSkillTypeByPreviewIndex(previewIndex)
+  if self:CheckPreviewIndexData(previewIndex, self._previewTypeList[previewIndex]) then
+    return self._previewTypeList[previewIndex]
   end
   return PreviewChainSkillType.None
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.SetPreviewTypeByPreviewIndex = function(self, previewIndex, previewType)
-  -- function num : 0_19
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._previewTypeList)[previewIndex] = previewType
+function PreviewChainSkillRangeComponent:SetPreviewTypeByPreviewIndex(previewIndex, previewType)
+  self._previewTypeList[previewIndex] = previewType
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.HasSnipeEffect = function(self, entityID)
-  -- function num : 0_20
-  if (self._snipeEffectEntityDic)[entityID] then
+function PreviewChainSkillRangeComponent:HasSnipeEffect(entityID)
+  if self._snipeEffectEntityDic[entityID] then
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.AddSnipeEffect = function(self, masterEntityID, effectEntity)
-  -- function num : 0_21
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._snipeEffectEntityDic)[masterEntityID] = effectEntity
+function PreviewChainSkillRangeComponent:AddSnipeEffect(masterEntityID, effectEntity)
+  self._snipeEffectEntityDic[masterEntityID] = effectEntity
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.GetSnipeEffectList = function(self)
-  -- function num : 0_22
+function PreviewChainSkillRangeComponent:GetSnipeEffectList()
   return self._snipeEffectEntityDic
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.GetPreviewChainSkillSingleEffectList = function(self, previewIndex)
-  -- function num : 0_23 , upvalues : _ENV
-  local targetEntityList = (self._petSingleEntityDic)[previewIndex]
+function PreviewChainSkillRangeComponent:GetPreviewChainSkillSingleEffectList(previewIndex)
+  local targetEntityList = self._petSingleEntityDic[previewIndex]
   local effectEntityList = {}
-  for i,id in ipairs(targetEntityList) do
-    local effectEntity = (self._snipeEffectEntityDic)[id]
-    ;
-    (table.insert)(effectEntityList, effectEntity)
+  for i, id in ipairs(targetEntityList) do
+    local effectEntity = self._snipeEffectEntityDic[id]
+    table.insert(effectEntityList, effectEntity)
   end
   return effectEntityList
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.GetChainSkillAddHPPetEntityID = function(self, previewIndex)
-  -- function num : 0_24
-  return (self._addHPPetDic)[previewIndex]
+function PreviewChainSkillRangeComponent:GetChainSkillAddHPPetEntityID(previewIndex)
+  return self._addHPPetDic[previewIndex]
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.AddChainSkillAttackElementType = function(self, previewIndex, elementType)
-  -- function num : 0_25
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._previewAttackElementType)[previewIndex] = elementType
+function PreviewChainSkillRangeComponent:AddChainSkillAttackElementType(previewIndex, elementType)
+  self._previewAttackElementType[previewIndex] = elementType
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.GetChainSkillAttackElementType = function(self, previewIndex)
-  -- function num : 0_26
-  return (self._previewAttackElementType)[previewIndex]
+function PreviewChainSkillRangeComponent:GetChainSkillAttackElementType(previewIndex)
+  return self._previewAttackElementType[previewIndex]
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.ClearPreviewChainSkill = function(self)
-  -- function num : 0_27
+function PreviewChainSkillRangeComponent:ClearPreviewChainSkill()
   self._addHPPetDic = {}
   self._petSingleEntityDic = {}
   self._snipeEffectEntityDic = {}
@@ -267,74 +170,53 @@ PreviewChainSkillRangeComponent.ClearPreviewChainSkill = function(self)
   self._previewTypeList = {}
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.HasPreviewChainSkillData = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  if (self._chainSkillRangeOutlineEntityDic):GetChainSkillOutlineEntityCount() ~= 0 or next(self._petSingleEntityDic) or next(self._addHPPetDic) then
+function PreviewChainSkillRangeComponent:HasPreviewChainSkillData()
+  if self._chainSkillRangeOutlineEntityDic:GetChainSkillOutlineEntityCount() ~= 0 or next(self._petSingleEntityDic) or next(self._addHPPetDic) then
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.AddPreviewPetID = function(self, previewIndex, petEntityID)
-  -- function num : 0_29
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._previewPetID)[previewIndex] = petEntityID
+function PreviewChainSkillRangeComponent:AddPreviewPetID(previewIndex, petEntityID)
+  self._previewPetID[previewIndex] = petEntityID
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillRangeComponent.GetPreviewPetID = function(self, previewIndex)
-  -- function num : 0_30
-  return (self._previewPetID)[previewIndex]
+function PreviewChainSkillRangeComponent:GetPreviewPetID(previewIndex)
+  return self._previewPetID[previewIndex]
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PreviewChainSkillRange = function(self)
-  -- function num : 0_31
-  return self:GetComponent((self.WEComponentsEnum).PreviewChainSkillRange)
+function Entity:PreviewChainSkillRange()
+  return self:GetComponent(self.WEComponentsEnum.PreviewChainSkillRange)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPreviewChainSkillRange = function(self)
-  -- function num : 0_32
-  return self:HasComponent((self.WEComponentsEnum).PreviewChainSkillRange)
+function Entity:HasPreviewChainSkillRange()
+  return self:HasComponent(self.WEComponentsEnum.PreviewChainSkillRange)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPreviewChainSkillRange = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewChainSkillRange
+function Entity:AddPreviewChainSkillRange()
+  local index = self.WEComponentsEnum.PreviewChainSkillRange
   local component = PreviewChainSkillRangeComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePreviewChainSkillRange = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewChainSkillRange
+function Entity:ReplacePreviewChainSkillRange()
+  local index = self.WEComponentsEnum.PreviewChainSkillRange
   local component = PreviewChainSkillRangeComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePreviewChainSkillRange = function(self)
-  -- function num : 0_35
+function Entity:RemovePreviewChainSkillRange()
   if self:HasPreviewChainSkillRange() then
-    self:RemoveComponent((self.WEComponentsEnum).PreviewChainSkillRange)
+    self:RemoveComponent(self.WEComponentsEnum.PreviewChainSkillRange)
   end
 end
 
-local PreviewChainSkillType = {None = 0, Range = 1, SingleEntity = 2, AddHP = 3, RangeAndSingleEntity = 4}
+local PreviewChainSkillType = {
+  None = 0,
+  Range = 1,
+  SingleEntity = 2,
+  AddHP = 3,
+  RangeAndSingleEntity = 4
+}
 _enum("PreviewChainSkillType", PreviewChainSkillType)
-

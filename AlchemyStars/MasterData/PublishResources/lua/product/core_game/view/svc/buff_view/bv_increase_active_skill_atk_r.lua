@@ -1,32 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_increase_active_skill_atk_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewDoIncreaseActiveSkillAtk", BuffViewBase)
 BuffViewDoIncreaseActiveSkillAtk = BuffViewDoIncreaseActiveSkillAtk
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewDoIncreaseActiveSkillAtk.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewDoIncreaseActiveSkillAtk:PlayView(TT)
   local result = self._buffResult
   local light = result:GetLight()
   local layer = result:GetLayer()
   if light then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetAccumulateNum, ((self._entity):PetPstID()):GetPstID(), layer)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.SetAccumulateNum, self._entity:PetPstID():GetPstID(), layer)
   end
 end
 
 _class("BuffViewUndoIncreaseActiveSkillAtk", BuffViewBase)
 BuffViewUndoIncreaseActiveSkillAtk = BuffViewUndoIncreaseActiveSkillAtk
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewUndoIncreaseActiveSkillAtk.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewUndoIncreaseActiveSkillAtk:PlayView(TT)
   local result = self._buffResult
   if result:GetDark() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetAccumulateNum, ((self._entity):PetPstID()):GetPstID(), 0)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.SetAccumulateNum, self._entity:PetPstID():GetPstID(), 0)
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/buff/ui_season_buff_level_up_s3.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBuffLevelUpS3", UIController)
 UISeasonBuffLevelUpS3 = UISeasonBuffLevelUpS3
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBuffLevelUpS3.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonBuffLevelUpS3:LoadDataOnEnter(TT, res, uiParams)
   local serialautofightmodule = self:GetModule(SerialAutoFightModule)
   local running = serialautofightmodule:IsRunning()
   if running then
@@ -18,28 +11,21 @@ UISeasonBuffLevelUpS3.LoadDataOnEnter = function(self, TT, res, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffLevelUpS3.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonBuffLevelUpS3:OnShow(uiParams)
   self._oldLevelText = self:GetUIComponent("UILocalizationText", "OldLevel")
   self._curLevelText = self:GetUIComponent("UILocalizationText", "CurLevel")
   self._detailLevelText = self:GetUIComponent("UILocalizationText", "DetailLevel")
   self._detailContentText = self:GetUIComponent("UILocalizationText", "DetailContent")
   self._levelUpAreaGO = self:GetGameObject("LevelUpArea")
-  ;
-  (self._levelUpAreaGO):SetActive(true)
+  self._levelUpAreaGO:SetActive(true)
   self._infoAreaGO = self:GetGameObject("InfoArea")
-  ;
-  (self._infoAreaGO):SetActive(false)
+  self._infoAreaGO:SetActive(false)
   local oldLv = uiParams[1]
   local newLv = uiParams[2]
   self.componentID = uiParams[3]
-  ;
-  (self._oldLevelText):SetText((StringTable.Get)("str_season_buff_level", tostring(oldLv)))
-  ;
-  (self._curLevelText):SetText((StringTable.Get)("str_season_buff_level", tostring(newLv)))
-  local frameTime = 16.666666666667
+  self._oldLevelText:SetText(StringTable.Get("str_season_buff_level", tostring(oldLv)))
+  self._curLevelText:SetText(StringTable.Get("str_season_buff_level", tostring(newLv)))
+  local frameTime = 16.666666666666668
   self.switchAreaTime = frameTime * 133
   self.switchAreaDone = false
   self.accTime = 0
@@ -47,68 +33,51 @@ UISeasonBuffLevelUpS3.OnShow = function(self, uiParams)
   if uiParams[4] then
     self._closeCallBack = uiParams[4]
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundPlayerUpLevel)
-  ;
-  (self._detailLevelText):SetText((StringTable.Get)("str_season_buff_level", tostring(newLv)))
-  local cfgGroup = (Cfg.cfg_component_season_wordbuff)({ComponentID = self.componentID, Lv = newLv})
-  if cfgGroup and #cfgGroup > 0 then
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundPlayerUpLevel)
+  self._detailLevelText:SetText(StringTable.Get("str_season_buff_level", tostring(newLv)))
+  local cfgGroup = Cfg.cfg_component_season_wordbuff({
+    ComponentID = self.componentID,
+    Lv = newLv
+  })
+  if cfgGroup and 0 < #cfgGroup then
     local cfg = cfgGroup[1]
     local desc = cfg.Desc
-    ;
-    (self._detailContentText):SetText((StringTable.Get)(desc))
+    self._detailContentText:SetText(StringTable.Get(desc))
   else
-    do
-      ;
-      (self._detailContentText):SetText("")
-      self._enable = true
-      local guideBuffLevel = ((Cfg.cfg_guide_const).guide_season_s1_buff_level).IntValue
-      if guideBuffLevel == newLv then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISeasonBuffLevelUp2)
-      else
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISeasonBuffLevelUp)
-      end
-      self._setAlphaArea = self:GetUIComponent("CanvasGroup", "Panel")
-    end
+    self._detailContentText:SetText("")
   end
+  self._enable = true
+  local guideBuffLevel = Cfg.cfg_guide_const.guide_season_s1_buff_level.IntValue
+  if guideBuffLevel == newLv then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISeasonBuffLevelUp2)
+  else
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISeasonBuffLevelUp)
+  end
+  self._setAlphaArea = self:GetUIComponent("CanvasGroup", "Panel")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffLevelUpS3.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_2
+function UISeasonBuffLevelUpS3:OnUpdate(deltaTimeMS)
   if not self._enable then
-    return 
+    return
   end
   self.accTime = self.accTime + deltaTimeMS
   if self.accTime < self.switchAreaTime or self.switchAreaDone then
-    return 
+    return
   end
-  if self.switchAreaTime < self.accTime then
-    (self._levelUpAreaGO):SetActive(false)
-    ;
-    (self._infoAreaGO):SetActive(true)
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._setAlphaArea).alpha = 0
-    ;
-    (self._setAlphaArea):DOFade(1, 0.3)
+  if self.accTime > self.switchAreaTime then
+    self._levelUpAreaGO:SetActive(false)
+    self._infoAreaGO:SetActive(true)
+    self._setAlphaArea.alpha = 0
+    self._setAlphaArea:DOFade(1, 0.3)
     self.switchAreaDone = true
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffLevelUpS3.FullScreenBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UISeasonBuffLevelUpS3:FullScreenBtnOnClick(go)
   if self.switchAreaDone then
     self:CloseDialog()
     if self._closeCallBack then
-      (self._closeCallBack)()
+      self._closeCallBack()
     end
   end
 end
-
-

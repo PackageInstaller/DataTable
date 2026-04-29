@@ -1,30 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/tower/stn_tower_superman.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("Tower_BattleCheat_SuperAurorian", CTestRobot_Base)
 Tower_BattleCheat_SuperAurorian = Tower_BattleCheat_SuperAurorian
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Tower_BattleCheat_SuperAurorian.OnWorking = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local runData = (self._manager):GetMissionRunData()
+function Tower_BattleCheat_SuperAurorian:OnWorking()
+  local runData = self._manager:GetMissionRunData()
   local type = runData:GetTowerElementType()
   if type < 4 then
-    return ((Tower_BattleCheat_SuperAurorian.super).OnWorking)(self)
+    return Tower_BattleCheat_SuperAurorian.super.OnWorking(self)
   end
   local maxHP = GMCommand:New()
   maxHP:SetFuncName("BattleCheatHeroMaxHP")
-  ;
-  ((GameGlobal:GetInstance()):EventDispatcher()):Dispatch(GameEventType.OnUIGMCheatCommand, maxHP)
+  GameGlobal:GetInstance():EventDispatcher():Dispatch(GameEventType.OnUIGMCheatCommand, maxHP)
   local cmd = GMCommand:New()
   cmd:SetFuncName("BattleCheatAttackMax")
   cmd:SetFuncParam(8000)
-  ;
-  ((GameGlobal:GetInstance()):EventDispatcher()):Dispatch(GameEventType.OnUIGMCheatCommand, cmd)
-  return ((Tower_BattleCheat_SuperAurorian.super).OnWorking)(self)
+  GameGlobal:GetInstance():EventDispatcher():Dispatch(GameEventType.OnUIGMCheatCommand, cmd)
+  return Tower_BattleCheat_SuperAurorian.super.OnWorking(self)
 end
-
-

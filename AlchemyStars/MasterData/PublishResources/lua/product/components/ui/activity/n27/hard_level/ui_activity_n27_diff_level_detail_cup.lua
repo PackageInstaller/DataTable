@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/hard_level/ui_activity_n27_diff_level_detail_cup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN27DiffLevelDetailCup", UICustomWidget)
 UIActivityN27DiffLevelDetailCup = UIActivityN27DiffLevelDetailCup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN27DiffLevelDetailCup.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UIActivityN27DiffLevelDetailCup:OnShow(uiParam)
   self._descTex = self:GetUIComponent("UILocalizationText", "desc")
   self._awardGo = self:GetGameObject("award")
   self._awardIcon = self:GetUIComponent("RawImageLoader", "awardIcon")
@@ -17,26 +10,16 @@ UIActivityN27DiffLevelDetailCup.OnShow = function(self, uiParam)
   self._uncomplete = self:GetGameObject("UnComplete")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27DiffLevelDetailCup.SetData = function(self, data)
-  -- function num : 0_1
-  (self._descTex):SetText(data:GetDes())
+function UIActivityN27DiffLevelDetailCup:SetData(data)
+  self._descTex:SetText(data:GetDes())
   local complete = data:IsComplete()
-  ;
-  (self._complete):SetActive(complete)
-  ;
-  (self._uncomplete):SetActive(not complete)
+  self._complete:SetActive(complete)
+  self._uncomplete:SetActive(not complete)
   if complete then
-    (self._awardGo):SetActive(false)
+    self._awardGo:SetActive(false)
   else
-    ;
-    (self._awardGo):SetActive(true)
+    self._awardGo:SetActive(true)
   end
-  ;
-  (self._awardIcon):LoadImage(data:GetRewardIcon())
-  ;
-  (self._awardCount):SetText(data:GetRewardCount())
+  self._awardIcon:LoadImage(data:GetRewardIcon())
+  self._awardCount:SetText(data:GetRewardCount())
 end
-
-

@@ -1,42 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn15n44/VigorousReward/ui_vigorous_reward_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIVigorousRewardController", UISideEnterCenterContentBase)
 UIVigorousRewardController = UIVigorousRewardController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIVigorousRewardController.DoShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIVigorousRewardController:DoShow(uiParams)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   self:CancelNew()
   self:GetComponents()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVigorousRewardController.DoInit = function(self, params)
-  -- function num : 0_1
+function UIVigorousRewardController:DoInit(params)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVigorousRewardController.DoHide = function(self)
-  -- function num : 0_2
+function UIVigorousRewardController:DoHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVigorousRewardController.DoDestroy = function(self)
-  -- function num : 0_3
+function UIVigorousRewardController:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVigorousRewardController.GetComponents = function(self)
-  -- function num : 0_4
+function UIVigorousRewardController:GetComponents()
   self._cg = self:GetUIComponent("RawImageLoader", "cg")
   self._cgRect = self:GetUIComponent("RectTransform", "cg")
   self._title = self:GetUIComponent("UILocalizedTMP", "title")
@@ -44,87 +25,62 @@ UIVigorousRewardController.GetComponents = function(self)
   self._timer = self:GetUIComponent("UILocalizationText", "time")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVigorousRewardController.OnValue = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfg = (Cfg.cfg_quest_daily_extra_activity)[1]
+function UIVigorousRewardController:OnValue()
+  local cfg = Cfg.cfg_quest_daily_extra_activity[1]
   if not cfg then
-    (Log.fatal)("###[UIQuestDailyExtraInfoController] cfg is nil ! id --> ", 1)
+    Log.fatal("###[UIQuestDailyExtraInfoController] cfg is nil ! id --> ", 1)
   else
     local title = cfg.InfoTitle
     local cg = cfg.InfoCg
     local content = cfg.InfoContent
     local offset = cfg.CgOffset
     local timeTransform = cfg.TimeTransform
-    ;
-    (self._cg):LoadImage(cg)
-    ;
-    (self._title):SetText((StringTable.Get)(title))
-    ;
-    (self._content):SetText((StringTable.Get)(content))
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R7 in 'UnsetPending'
-
+    self._cg:LoadImage(cg)
+    self._title:SetText(StringTable.Get(title))
+    self._content:SetText(StringTable.Get(content))
     if offset then
-      (self._cgRect).anchoredPosition = Vector2(offset[1], offset[2])
+      self._cgRect.anchoredPosition = Vector2(offset[1], offset[2])
     end
-    local loginModule = (GameGlobal.GetModule)(LoginModule)
+    local loginModule = GameGlobal.GetModule(LoginModule)
     if timeTransform == 0 then
       self._endTime = loginModule:GetTimeStampByTimeStr(cfg.EndTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-    else
-      if timeTransform == 1 then
-        self._endTime = loginModule:GetTimeStampByTimeStr(cfg.EndTime, Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone)
-      end
+    elseif timeTransform == 1 then
+      self._endTime = loginModule:GetTimeStampByTimeStr(cfg.EndTime, Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone)
     end
     self:ShowLessTime()
     if self._event then
-      ((GameGlobal.Timer)()):CancelEvent(self._event)
+      GameGlobal.Timer():CancelEvent(self._event)
       self._event = nil
     end
-    self._event = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_5_0 , upvalues : self
-    self:ShowLessTime()
-  end
-)
+    self._event = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+      self:ShowLessTime()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVigorousRewardController.ShowLessTime = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local nowTime = (math.ceil)((self._svrTimeModule):GetServerTime() * 0.001)
+function UIVigorousRewardController:ShowLessTime()
+  local nowTime = math.ceil(self._svrTimeModule:GetServerTime() * 0.001)
   local sec = self._endTime - nowTime
-  local timeStr = nil
+  local timeStr
   if sec < 0 then
     sec = 0
   end
-  timeStr = (HelperProxy:GetInstance()):Time2Tex(sec)
-  if sec > 0 then
-    (self._timer):SetText((StringTable.Get)("str_activity_powercost_time_main", timeStr))
+  timeStr = HelperProxy:GetInstance():Time2Tex(sec)
+  if 0 < sec then
+    self._timer:SetText(StringTable.Get("str_activity_powercost_time_main", timeStr))
   else
-    ;
-    (self._timer):SetText((StringTable.Get)("str_activity_error_109"))
+    self._timer:SetText(StringTable.Get("str_activity_error_109"))
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVigorousRewardController.OnHide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIVigorousRewardController:OnHide()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVigorousRewardController.CancelNew = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local pstID = ((GameGlobal.GetModule)(RoleModule)):GetPstId()
-  ;
-  (LocalDB.SetInt)("UIVigorousRewardEnter_New" .. pstID, 1)
+function UIVigorousRewardController:CancelNew()
+  local pstID = GameGlobal.GetModule(RoleModule):GetPstId()
+  LocalDB.SetInt("UIVigorousRewardEnter_New" .. pstID, 1)
 end
-
-

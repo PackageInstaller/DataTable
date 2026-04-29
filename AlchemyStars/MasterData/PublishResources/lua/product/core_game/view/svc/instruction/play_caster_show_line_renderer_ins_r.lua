@@ -1,46 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_show_line_renderer_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterShowLineRendererInstruction", BaseInstruction)
 PlayCasterShowLineRendererInstruction = PlayCasterShowLineRendererInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterShowLineRendererInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterShowLineRendererInstruction:Constructor(paramList)
   self._show = tonumber(paramList.show) == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterShowLineRendererInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterShowLineRendererInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local effectHolderCmpt = casterEntity:EffectHolder()
   if not effectHolderCmpt then
-    return 
+    return
   end
   local buffView = casterEntity:BuffView()
   local notOpenLineEffectObjName = buffView:GetBuffValue("NotOpenLineEffectObjName")
   local effectList = effectHolderCmpt:GetPermanentEffect()
-  for i,eff in ipairs(effectList) do
+  for i, eff in ipairs(effectList) do
     local e = world:GetEntityByID(eff)
     if e and e:HasView() then
-      local go = (e:View()):GetGameObject()
+      local go = e:View():GetGameObject()
       local renderers = go:GetComponentsInChildren(typeof(UnityEngine.LineRenderer), true)
       if renderers then
         for i = 0, renderers.Length - 1 do
           local line = renderers[i]
-          if line and notOpenLineEffectObjName ~= (line.gameObject).name then
-            (line.gameObject):SetActive(self._show)
+          if line and notOpenLineEffectObjName ~= line.gameObject.name then
+            line.gameObject:SetActive(self._show)
           end
         end
       end
     end
   end
 end
-
-

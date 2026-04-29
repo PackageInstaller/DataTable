@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/mission/mission_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MissionModule", GameModule)
 MissionModule = MissionModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MissionModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._cfg_discovery = (Cfg.cfg_discovery)()
-  self._cfg_discovery_path = (Cfg.cfg_discovery_path)()
+function MissionModule:Constructor()
+  self._cfg_discovery = Cfg.cfg_discovery()
+  self._cfg_discovery_path = Cfg.cfg_discovery_path()
   self._curMissionID = 0
   self._passMissionList = {}
   self._canActiveMissionList = {}
@@ -24,115 +17,75 @@ MissionModule.Constructor = function(self)
   self._showChapterPreview = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self.caller):RegisterPushHandler(CEventMobilePushMissionInfoChange, self.HandleMissionInfoChange, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventMobilePushAlreadyReturnPowerMissionInfoChange, self.HandlePushAlreadyReturnPowerMissionInfoChange, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventMobilePushAlreadyReturnPowerCamMissionInfoChange, self.HandlePushAlreadyReturnPowerCamMissionInfoChange, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventMobilePushMissionActiveStoryData, self.HandleActiveStoryDataChange, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushOneMissionInfoChange, self.HandleOneMissionInfoChange, self)
+function MissionModule:Init()
+  self.caller:RegisterPushHandler(CEventMobilePushMissionInfoChange, self.HandleMissionInfoChange, self)
+  self.caller:RegisterPushHandler(CEventMobilePushAlreadyReturnPowerMissionInfoChange, self.HandlePushAlreadyReturnPowerMissionInfoChange, self)
+  self.caller:RegisterPushHandler(CEventMobilePushAlreadyReturnPowerCamMissionInfoChange, self.HandlePushAlreadyReturnPowerCamMissionInfoChange, self)
+  self.caller:RegisterPushHandler(CEventMobilePushMissionActiveStoryData, self.HandleActiveStoryDataChange, self)
+  self.caller:RegisterPushHandler(CEventPushOneMissionInfoChange, self.HandleOneMissionInfoChange, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.InitMissionInfo = function(self, mission_id, passMissionList)
-  -- function num : 0_2
+function MissionModule:InitMissionInfo(mission_id, passMissionList)
   self:SetPassMissionList(passMissionList)
   self:SetCurMissionID(mission_id)
   self._curNode = self:InitCurNode()
   self:InitDiscoveryData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetPassMissionList = function(self)
-  -- function num : 0_3
+function MissionModule:GetPassMissionList()
   return self._passMissionList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.SetPassMissionList = function(self, passMissionList)
-  -- function num : 0_4
+function MissionModule:SetPassMissionList(passMissionList)
   self._passMissionList = passMissionList
   self:UpdateCanActiveMissionList()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetCanActiveMissionList = function(self)
-  -- function num : 0_5
+function MissionModule:GetCanActiveMissionList()
   return self._canActiveMissionList
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.IsMissionCanActive = function(self, mission_id)
-  -- function num : 0_6 , upvalues : _ENV
+function MissionModule:IsMissionCanActive(mission_id)
   if self._canActiveMissionList then
-    for _,v in pairs(self._canActiveMissionList) do
+    for _, v in pairs(self._canActiveMissionList) do
       if v.ID == mission_id then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetPassMissionById = function(self, id)
-  -- function num : 0_7 , upvalues : _ENV
+function MissionModule:GetPassMissionById(id)
   if self._passMissionList then
-    for i,v in ipairs(self._passMissionList) do
+    for i, v in ipairs(self._passMissionList) do
       if v.id == id then
         return v
       end
     end
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetCanActiveMissionById = function(self, id)
-  -- function num : 0_8 , upvalues : _ENV
+function MissionModule:GetCanActiveMissionById(id)
   if self._canActiveMissionList then
-    for i,v in ipairs(self._canActiveMissionList) do
+    for i, v in ipairs(self._canActiveMissionList) do
       if v.ID == id then
         return v
       end
     end
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.IsInitPlayer = function(self)
-  -- function num : 0_9
+function MissionModule:IsInitPlayer()
   if self._curMissionID == 0 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetPlayerStayWayPointID = function(self)
-  -- function num : 0_10
+function MissionModule:GetPlayerStayWayPointID()
   if self:IsInitPlayer() then
     return 0
   else
@@ -140,20 +93,13 @@ MissionModule.GetPlayerStayWayPointID = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.SetCurMissionID = function(self, mission_id)
-  -- function num : 0_11 , upvalues : _ENV
+function MissionModule:SetCurMissionID(mission_id)
   self._curMissionID = mission_id
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MissionInfoChange)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MissionInfoChange)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.IsPassMissionID = function(self, mission_id)
-  -- function num : 0_12 , upvalues : _ENV
-  for i,v in pairs(self._passMissionList) do
+function MissionModule:IsPassMissionID(mission_id)
+  for i, v in pairs(self._passMissionList) do
     if v.id == mission_id then
       return true
     end
@@ -161,15 +107,12 @@ MissionModule.IsPassMissionID = function(self, mission_id)
   return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetPassMaxMissionID = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local cfg_mission_chapter_config = (Cfg.cfg_mission_chapter)()
+function MissionModule:GetPassMaxMissionID()
+  local cfg_mission_chapter_config = Cfg.cfg_mission_chapter()
   local max_chapter_index = 0
   local missionID = 0
-  for _,v in (HelperProxy:GetInstance()):pairsByKeys(self._passMissionList) do
-    for _,config in (HelperProxy:GetInstance()):pairsByKeys(cfg_mission_chapter_config) do
+  for _, v in HelperProxy:GetInstance():pairsByKeys(self._passMissionList) do
+    for _, config in HelperProxy:GetInstance():pairsByKeys(cfg_mission_chapter_config) do
       if config.MissionID == v.id and config.Type == WayPointType.WayPointType_Main and max_chapter_index < config.ID then
         max_chapter_index = config.ID
         missionID = v.id
@@ -179,14 +122,11 @@ MissionModule.GetPassMaxMissionID = function(self)
   return missionID
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule._GetMaxMissionIDAndIndex = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local cfg_mission_chapter_config = (Cfg.cfg_mission_chapter)()
+function MissionModule:_GetMaxMissionIDAndIndex()
+  local cfg_mission_chapter_config = Cfg.cfg_mission_chapter()
   local max_chapter_index = 0
-  for _,v in (HelperProxy:GetInstance()):pairsByKeys(self._passMissionList) do
-    for _,config in (HelperProxy:GetInstance()):pairsByKeys(cfg_mission_chapter_config) do
+  for _, v in HelperProxy:GetInstance():pairsByKeys(self._passMissionList) do
+    for _, config in HelperProxy:GetInstance():pairsByKeys(cfg_mission_chapter_config) do
       if config.MissionID == v.id and max_chapter_index < config.ID then
         max_chapter_index = config.ID
       end
@@ -195,51 +135,39 @@ MissionModule._GetMaxMissionIDAndIndex = function(self)
   return max_chapter_index
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.IsBigMission = function(self, mission_id)
-  -- function num : 0_15 , upvalues : _ENV
-  local mission_config = (Cfg.cfg_mission)[mission_id]
+function MissionModule:IsBigMission(mission_id)
+  local mission_config = Cfg.cfg_mission[mission_id]
   if mission_config and mission_config.Type == MissionType.MissionType_Big then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule._GetPassWayPointID = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local cfg_mission_chapter_config = (Cfg.cfg_mission_chapter)()
+function MissionModule:_GetPassWayPointID()
+  local cfg_mission_chapter_config = Cfg.cfg_mission_chapter()
   local wayponitlist = {}
-  for _,v in pairs(self._passMissionList) do
-    for _,config in pairs(cfg_mission_chapter_config) do
-      if config.MissionID == v.id and not (table.intable)(wayponitlist, config.WayPointID) then
-        (table.insert)(wayponitlist, config.WayPointID)
+  for _, v in pairs(self._passMissionList) do
+    for _, config in pairs(cfg_mission_chapter_config) do
+      if config.MissionID == v.id and not table.intable(wayponitlist, config.WayPointID) then
+        table.insert(wayponitlist, config.WayPointID)
       end
     end
   end
   return wayponitlist
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.Concat = function(self, tb1, tb2)
-  -- function num : 0_17 , upvalues : _ENV
-  for i,t1 in pairs(tb1) do
-    if not (table.intable)(tb2, t1) then
-      (table.insert)(tb2, t1)
+function MissionModule:Concat(tb1, tb2)
+  for i, t1 in pairs(tb1) do
+    if not table.intable(tb2, t1) then
+      table.insert(tb2, t1)
     end
   end
   return tb2
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetWayPointIDByMissionID = function(self, mission_id)
-  -- function num : 0_18 , upvalues : _ENV
-  local cfg_mission_chapter_config = (Cfg.cfg_mission_chapter)()
-  for i,v in pairs(cfg_mission_chapter_config) do
+function MissionModule:GetWayPointIDByMissionID(mission_id)
+  local cfg_mission_chapter_config = Cfg.cfg_mission_chapter()
+  for i, v in pairs(cfg_mission_chapter_config) do
     if v.MissionID == mission_id then
       return v.WayPointID
     end
@@ -247,51 +175,35 @@ MissionModule.GetWayPointIDByMissionID = function(self, mission_id)
   return 0
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule._GetCanActiveWayPointList = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function MissionModule:_GetCanActiveWayPointList()
   local waypointid_list = {}
-  for i,v in pairs(self._canActiveMissionList) do
-    if not (table.intable)(waypointid_list, self:GetWayPointIDByMissionID(v.ID)) then
-      (table.insert)(waypointid_list, self:GetWayPointIDByMissionID(v.ID))
+  for i, v in pairs(self._canActiveMissionList) do
+    if not table.intable(waypointid_list, self:GetWayPointIDByMissionID(v.ID)) then
+      table.insert(waypointid_list, self:GetWayPointIDByMissionID(v.ID))
     end
   end
   return waypointid_list
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetAllShowWayPointID = function(self)
-  -- function num : 0_20
+function MissionModule:GetAllShowWayPointID()
   self:UpdateCanActiveMissionList()
   local waypointList = self:_GetPassWayPointID()
   waypointList = self:Concat(waypointList, self:_GetCanActiveWayPointList())
   return waypointList
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetDiscoveryData = function(self)
-  -- function num : 0_21
+function MissionModule:GetDiscoveryData()
   return self._discoveryData
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.InitDiscoveryData = function(self)
-  -- function num : 0_22
+function MissionModule:InitDiscoveryData()
   if self._cfg_discovery then
-    (self._discoveryData):Init(self._cfg_discovery)
-    ;
-    (self._discoveryData):Update(self._passMissionList, self._canActiveMissionList)
+    self._discoveryData:Init(self._cfg_discovery)
+    self._discoveryData:Update(self._passMissionList, self._canActiveMissionList)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.InitCurNode = function(self)
-  -- function num : 0_23
+function MissionModule:InitCurNode()
   local serializedCurNodeId = 0
   if serializedCurNodeId ~= 0 and self:IsNodeExist(serializedCurNodeId) then
     return serializedCurNodeId
@@ -303,53 +215,37 @@ MissionModule.InitCurNode = function(self)
   return 0
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetCurNode = function(self)
-  -- function num : 0_24
+function MissionModule:GetCurNode()
   return self._curNode
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.SetCurNode = function(self, nodeId)
-  -- function num : 0_25
+function MissionModule:SetCurNode(nodeId)
   self._curNode = nodeId
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.UpdateCanActiveMissionList = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function MissionModule:UpdateCanActiveMissionList()
   local canActiveMissionList = {}
-  local cfg_mission_config = (Cfg.cfg_mission)()
-  for _,v in pairs(cfg_mission_config) do
+  local cfg_mission_config = Cfg.cfg_mission()
+  for _, v in pairs(cfg_mission_config) do
     if self:IsUnLockMission(v, self._passMissionList) then
-      (table.insert)(canActiveMissionList, v)
+      table.insert(canActiveMissionList, v)
     end
   end
-  for _,v in pairs(self._passMissionList) do
-    for key,canActiveMission in pairs(canActiveMissionList) do
+  for _, v in pairs(self._passMissionList) do
+    for key, canActiveMission in pairs(canActiveMissionList) do
       if v.id == canActiveMission.ID then
-        (table.remove)(canActiveMissionList, key)
+        table.remove(canActiveMissionList, key)
         break
       end
     end
   end
-  ;
-  (table.sort)(canActiveMissionList, function(m1, m2)
-    -- function num : 0_26_0
-    do return m1.ID < m2.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(canActiveMissionList, function(m1, m2)
+    return m1.ID < m2.ID
+  end)
   self._canActiveMissionList = canActiveMissionList
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.IsUnLockMission = function(self, mission_config, passMissionList)
-  -- function num : 0_27 , upvalues : _ENV
+function MissionModule:IsUnLockMission(mission_config, passMissionList)
   if #mission_config.NeedMissionList == 0 then
     return true
   end
@@ -361,89 +257,63 @@ MissionModule.IsUnLockMission = function(self, mission_config, passMissionList)
   if nPlayerLevel < mission_config.NeedLevel then
     return false
   end
-  for _,p in pairs(mission_config.NeedMissionList) do
+  for _, p in pairs(mission_config.NeedMissionList) do
     local needMissionID = tonumber(p)
     local isFind = false
-    for _,v in pairs(passMissionList) do
+    for _, v in pairs(passMissionList) do
       if v.id == needMissionID then
         isFind = true
         break
       end
     end
-    do
-      do
-        if isFind == false then
-          return false
-        end
-        if (EngineGameHelper.EnableAppleVerifyBulletin)() and needMissionID == 4002120 then
-          return false
-        end
-        -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if isFind == false then
+      return false
+    end
+    if EngineGameHelper.EnableAppleVerifyBulletin() and needMissionID == 4002120 then
+      return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.HandleMissionInfoChange = function(self, msg)
-  -- function num : 0_28 , upvalues : _ENV
+function MissionModule:HandleMissionInfoChange(msg)
   self:SetCurMissionID(msg.m_cur_mission_id)
   local add_mission_list = {}
-  if (table.count)(self._passMissionList) ~= 0 then
-    for _new,p in pairs(msg.m_change_pass_mission_list) do
+  if table.count(self._passMissionList) ~= 0 then
+    for _new, p in pairs(msg.m_change_pass_mission_list) do
       local bFind = false
-      for _old,v in pairs(self._passMissionList) do
-        -- DECOMPILER ERROR at PC24: Confused about usage of register: R14 in 'UnsetPending'
-
+      for _old, v in pairs(self._passMissionList) do
         if v.id == p.id then
-          (self._passMissionList)[_old] = p
+          self._passMissionList[_old] = p
           bFind = true
           break
         end
       end
-      do
-        do
-          if bFind == false then
-            (table.insert)(add_mission_list, p)
-          end
-          -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+      if bFind == false then
+        table.insert(add_mission_list, p)
       end
     end
   else
     add_mission_list = msg.m_change_pass_mission_list
   end
-  for _,v in pairs(add_mission_list) do
-    (table.insert)(self._passMissionList, v)
+  for _, v in pairs(add_mission_list) do
+    table.insert(self._passMissionList, v)
   end
   self:SetPassMissionList(self._passMissionList)
-  ;
-  (self._discoveryData):Update(self._passMissionList, self._canActiveMissionList)
+  self._discoveryData:Update(self._passMissionList, self._canActiveMissionList)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.HandleOneMissionInfoChange = function(self, msg)
-  -- function num : 0_29 , upvalues : _ENV
-  for i,v in ipairs(self._passMissionList) do
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R7 in 'UnsetPending'
-
-    if v.id == (msg.m_change_mission_info).id then
-      (self._passMissionList)[i] = msg.m_change_mission_info
+function MissionModule:HandleOneMissionInfoChange(msg)
+  for i, v in ipairs(self._passMissionList) do
+    if v.id == msg.m_change_mission_info.id then
+      self._passMissionList[i] = msg.m_change_mission_info
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.ReqMissionPassData = function(self, TT, nId)
-  -- function num : 0_30 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyMissionPassDataReq)
+function MissionModule:ReqMissionPassData(TT, nId)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyMissionPassDataReq)
   request.nMissionId = nId
   local reply = self:Call(TT, request)
   local AsyncRes = AsyncRequestRes:New()
@@ -456,93 +326,79 @@ MissionModule.ReqMissionPassData = function(self, TT, nId)
   return AsyncRes, replyEvent.info
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.UpdateMainFormationInfo = function(self, TT, formation_id, formation_name, pet_list)
-  -- function num : 0_31 , upvalues : _ENV
+function MissionModule:UpdateMainFormationInfo(TT, formation_id, formation_name, pet_list)
   local str_pet_list = ""
-  local l_role_module = (GameGlobal.GetModule)(RoleModule)
+  local l_role_module = GameGlobal.GetModule(RoleModule)
   if not l_role_module:CheckModuleUnlock(GameModuleID.MD_ForceGuideEnd) then
     local petModule = self:GetModule(PetModule)
-    for index,value in ipairs(pet_list) do
+    for index, value in ipairs(pet_list) do
       local l_pet = petModule:GetPet(value)
       if l_pet then
         str_pet_list = str_pet_list .. l_pet:GetTemplateID() .. ","
       end
     end
   end
-  do
-    ;
-    (GameGlobal.UAReportForceGuideEvent)("UITeamsChangeFormationBegin", {str_pet_list, formation_id, formation_name}, true)
-    local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventMobileChangeMainFormationInfo)
-    request.m_formation_id = formation_id
-    request.m_formation_name = formation_name
-    request.m_formation_pet_list = pet_list
-    local res = AsyncRequestRes:New()
-    local reply = self:Call(TT, request)
-    if reply.res ~= CallResultType.Normal then
-      res:SetResult(-1)
-      return res, nil
-    end
-    res:SetSucc(true)
-    local replyEvent = reply.msg
-    res:SetResult(replyEvent.m_result)
-    if replyEvent.m_result == 0 then
-      self:SetFormationInfos(replyEvent.m_formation_info)
-      ;
-      (GameGlobal.UAReportForceGuideEvent)("UITeamsChangeFormationEnd", {str_pet_list, formation_id, formation_name}, true)
-    end
-    return res, replyEvent.m_formation_info
+  GameGlobal.UAReportForceGuideEvent("UITeamsChangeFormationBegin", {
+    str_pet_list,
+    formation_id,
+    formation_name
+  }, true)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventMobileChangeMainFormationInfo)
+  request.m_formation_id = formation_id
+  request.m_formation_name = formation_name
+  request.m_formation_pet_list = pet_list
+  local res = AsyncRequestRes:New()
+  local reply = self:Call(TT, request)
+  if reply.res ~= CallResultType.Normal then
+    res:SetResult(-1)
+    return res, nil
   end
+  res:SetSucc(true)
+  local replyEvent = reply.msg
+  res:SetResult(replyEvent.m_result)
+  if replyEvent.m_result == 0 then
+    self:SetFormationInfos(replyEvent.m_formation_info)
+    GameGlobal.UAReportForceGuideEvent("UITeamsChangeFormationEnd", {
+      str_pet_list,
+      formation_id,
+      formation_name
+    }, true)
+  end
+  return res, replyEvent.m_formation_info
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetPathByNodeId = function(self, sNodeId, eNodeId)
-  -- function num : 0_32
+function MissionModule:GetPathByNodeId(sNodeId, eNodeId)
   if not self._cfg_discovery_path then
     return nil
   end
-  return (self._cfg_discovery_path)[sNodeId .. "_" .. eNodeId]
+  return self._cfg_discovery_path[sNodeId .. "_" .. eNodeId]
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.IsNodeExist = function(self, nodeId)
-  -- function num : 0_33
-  if self._discoveryData and ((self._discoveryData).map_nodes)[nodeId] then
+function MissionModule:IsNodeExist(nodeId)
+  if self._discoveryData and self._discoveryData.map_nodes[nodeId] then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetCurPos = function(self)
-  -- function num : 0_34
-  local node = (self._discoveryData):GetNodeDataByNodeId(self._curNode)
+function MissionModule:GetCurPos()
+  local node = self._discoveryData:GetNodeDataByNodeId(self._curNode)
   if node then
     return node.pos
   end
-  return (self._discoveryData).walker_origin_pos
+  return self._discoveryData.walker_origin_pos
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetNodeDataByNodeId = function(self, nodeId)
-  -- function num : 0_35
+function MissionModule:GetNodeDataByNodeId(nodeId)
   if self._discoveryData then
-    return (self._discoveryData):GetNodeDataByNodeId(nodeId)
+    return self._discoveryData:GetNodeDataByNodeId(nodeId)
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetChapterIDByMissionID = function(self, mission_id)
-  -- function num : 0_36 , upvalues : _ENV
-  local cfg_mission_chapter_config = (Cfg.cfg_mission_chapter)()
-  for i,v in pairs(cfg_mission_chapter_config) do
+function MissionModule:GetChapterIDByMissionID(mission_id)
+  local cfg_mission_chapter_config = Cfg.cfg_mission_chapter()
+  for i, v in pairs(cfg_mission_chapter_config) do
     if v.MissionID == mission_id then
       return v.ID
     end
@@ -550,12 +406,9 @@ MissionModule.GetChapterIDByMissionID = function(self, mission_id)
   return 0
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetChapterMainIDByMissionID = function(self, mission_id)
-  -- function num : 0_37 , upvalues : _ENV
-  local cfg_mission_chapter_config = (Cfg.cfg_mission_chapter)()
-  for i,v in pairs(cfg_mission_chapter_config) do
+function MissionModule:GetChapterMainIDByMissionID(mission_id)
+  local cfg_mission_chapter_config = Cfg.cfg_mission_chapter()
+  for i, v in pairs(cfg_mission_chapter_config) do
     if v.MissionID == mission_id then
       return v.MainChapterID
     end
@@ -563,48 +416,36 @@ MissionModule.GetChapterMainIDByMissionID = function(self, mission_id)
   return 0
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetCurMissionID = function(self)
-  -- function num : 0_38
+function MissionModule:GetCurMissionID()
   return self._curMissionID
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule._GetMissionChapterType = function(self, mission_id)
-  -- function num : 0_39 , upvalues : _ENV
-  local cfg_mission_chapter_config = (Cfg.cfg_mission_chapter)()
+function MissionModule:_GetMissionChapterType(mission_id)
+  local cfg_mission_chapter_config = Cfg.cfg_mission_chapter()
   local mission_chapter_type = 0
-  for i,v in pairs(cfg_mission_chapter_config) do
+  for i, v in pairs(cfg_mission_chapter_config) do
     if v.MissionID == mission_id then
       return v.Type
     end
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule._GetMissionChapterID = function(self, mission_id)
-  -- function num : 0_40 , upvalues : _ENV
-  local cfg_mission_chapter_config = (Cfg.cfg_mission_chapter)()
+function MissionModule:_GetMissionChapterID(mission_id)
+  local cfg_mission_chapter_config = Cfg.cfg_mission_chapter()
   local mission_chapter_type = 0
-  for i,v in pairs(cfg_mission_chapter_config) do
+  for i, v in pairs(cfg_mission_chapter_config) do
     if v.MissionID == mission_id then
       return v.MainChapterID, v.BranchChapterID
     end
   end
-  return 
+  return
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.IsChapterComplete = function(self, mission_id)
-  -- function num : 0_41 , upvalues : _ENV
-  local cfg_mission_chapter_config = (Cfg.cfg_mission_chapter)()
+function MissionModule:IsChapterComplete(mission_id)
+  local cfg_mission_chapter_config = Cfg.cfg_mission_chapter()
   local mission_main_id, mission_branch_id = self:_GetMissionChapterID(mission_id)
   if mission_main_id and mission_branch_id then
-    for i,config in pairs(cfg_mission_chapter_config) do
+    for i, config in pairs(cfg_mission_chapter_config) do
       if config.MainChapterID == mission_main_id and config.BranchChapterID == mission_branch_id and not self:IsPassMissionID(config.MissionID) then
         return false
       end
@@ -614,108 +455,72 @@ MissionModule.IsChapterComplete = function(self, mission_id)
   return false
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.SingleMatch = function(self, stageId, teamId)
-  -- function num : 0_42 , upvalues : _ENV
-  local game = (GameGlobal.GetModule)(GameMatchModule)
+function MissionModule:SingleMatch(stageId, teamId)
+  local game = GameGlobal.GetModule(GameMatchModule)
   local info = MissionCreateInfo:New()
   info.mission_id = stageId
   info.formation_id = teamId
   game:StartMatch(MatchType.MT_Mission, teamId, info)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.Get3StarConditionDesc = function(self, condition_id, colorStr)
-  -- function num : 0_43 , upvalues : _ENV
-  local star_condition = (Cfg.cfg_threestarcondition)[condition_id]
+function MissionModule:Get3StarConditionDesc(condition_id, colorStr)
+  local star_condition = Cfg.cfg_threestarcondition[condition_id]
   if not star_condition then
     return nil
   else
     local paramStrArray = star_condition.ConditionNumber
     local paramCount = #paramStrArray
     local ret = "no condition"
-    if not colorStr then
-      colorStr = "FFFFFF"
-    end
+    colorStr = colorStr or "FFFFFF"
     if star_condition.ConditionType == BonusObjectiveType.KillMonstersInLimitedRound then
-      ret = (StringTable.Get)(star_condition.Name, tonumber(paramStrArray[1]), colorStr)
+      ret = StringTable.Get(star_condition.Name, tonumber(paramStrArray[1]), colorStr)
+    elseif star_condition.ConditionType == BonusObjectiveType.HitBySkill then
+      ret = StringTable.Get(star_condition.Name, tonumber(paramStrArray[1]), colorStr)
+    elseif star_condition.ConditionType == BonusObjectiveType.KillMonstersWithBuff then
+      ret = StringTable.Get(star_condition.Name, tonumber(paramStrArray[1]), colorStr)
+    elseif star_condition.ConditionType == BonusObjectiveType.MonsterEscapeLessThan then
+      ret = StringTable.Get(star_condition.Name)
+    elseif paramCount == 1 then
+      ret = StringTable.Get(star_condition.Name, tonumber(paramStrArray[1]), colorStr)
+    elseif paramCount == 2 then
+      ret = StringTable.Get(star_condition.Name, tonumber(paramStrArray[2]), colorStr)
     else
-      if star_condition.ConditionType == BonusObjectiveType.HitBySkill then
-        ret = (StringTable.Get)(star_condition.Name, tonumber(paramStrArray[1]), colorStr)
-      else
-        if star_condition.ConditionType == BonusObjectiveType.KillMonstersWithBuff then
-          ret = (StringTable.Get)(star_condition.Name, tonumber(paramStrArray[1]), colorStr)
-        else
-          if star_condition.ConditionType == BonusObjectiveType.MonsterEscapeLessThan then
-            ret = (StringTable.Get)(star_condition.Name)
-          else
-            if paramCount == 1 then
-              ret = (StringTable.Get)(star_condition.Name, tonumber(paramStrArray[1]), colorStr)
-            else
-              if paramCount == 2 then
-                ret = (StringTable.Get)(star_condition.Name, tonumber(paramStrArray[2]), colorStr)
-              else
-                ret = (StringTable.Get)(star_condition.Name)
-              end
-            end
-          end
-        end
-      end
+      ret = StringTable.Get(star_condition.Name)
     end
     return ret
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetMissionName = function(self, mission_id)
-  -- function num : 0_44 , upvalues : _ENV
-  local mission_config = (Cfg.cfg_mission)[mission_id]
+function MissionModule:GetMissionName(mission_id)
+  local mission_config = Cfg.cfg_mission[mission_id]
   if mission_config then
-    return (StringTable.Get)(mission_config.Name)
+    return StringTable.Get(mission_config.Name)
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetMissionDesc = function(self, mission_id)
-  -- function num : 0_45 , upvalues : _ENV
-  local mission_config = (Cfg.cfg_mission)[mission_id]
+function MissionModule:GetMissionDesc(mission_id)
+  local mission_config = Cfg.cfg_mission[mission_id]
   if mission_config then
-    return (StringTable.Get)(mission_config.Desc)
+    return StringTable.Get(mission_config.Desc)
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.HandlePushAlreadyReturnPowerMissionInfoChange = function(self, msg)
-  -- function num : 0_46
+function MissionModule:HandlePushAlreadyReturnPowerMissionInfoChange(msg)
   self:SetAlreadyReturnMissionList(msg.m_already_return_power_mission_list)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.HandlePushAlreadyReturnPowerCamMissionInfoChange = function(self, msg)
-  -- function num : 0_47
+function MissionModule:HandlePushAlreadyReturnPowerCamMissionInfoChange(msg)
   self:SetAlreadyReturnCamMissionList(msg.m_already_return_power_cam_mission_list)
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.SetAlreadyReturnMissionList = function(self, list)
-  -- function num : 0_48
+function MissionModule:SetAlreadyReturnMissionList(list)
   self._alreadyReturnPowerMissionList = list
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.IsAlreadyReturnPower = function(self, mission_id)
-  -- function num : 0_49 , upvalues : _ENV
-  for k,v in pairs(self._alreadyReturnPowerMissionList) do
+function MissionModule:IsAlreadyReturnPower(mission_id)
+  for k, v in pairs(self._alreadyReturnPowerMissionList) do
     if mission_id == v then
       return true
     end
@@ -723,18 +528,12 @@ MissionModule.IsAlreadyReturnPower = function(self, mission_id)
   return false
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.SetAlreadyReturnCamMissionList = function(self, list)
-  -- function num : 0_50
+function MissionModule:SetAlreadyReturnCamMissionList(list)
   self._alreadyReturnPowerCamMissionList = list
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.IsAlreadyReturnPowerCamMission = function(self, cam_mission_id)
-  -- function num : 0_51 , upvalues : _ENV
-  for k,v in pairs(self._alreadyReturnPowerCamMissionList) do
+function MissionModule:IsAlreadyReturnPowerCamMission(cam_mission_id)
+  for k, v in pairs(self._alreadyReturnPowerCamMissionList) do
     if cam_mission_id == v then
       return true
     end
@@ -742,47 +541,36 @@ MissionModule.IsAlreadyReturnPowerCamMission = function(self, cam_mission_id)
   return false
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetNextBigMissionID = function(self, mission_id)
-  -- function num : 0_52 , upvalues : _ENV
-  local cfg_mission_chapter = (Cfg.cfg_mission_chapter)()
+function MissionModule:GetNextBigMissionID(mission_id)
+  local cfg_mission_chapter = Cfg.cfg_mission_chapter()
   if mission_id == 0 then
-    for k,v in (HelperProxy:GetInstance()):pairsByKeys(cfg_mission_chapter) do
+    for k, v in HelperProxy:GetInstance():pairsByKeys(cfg_mission_chapter) do
       if self:IsBigMission(v.MissionID) and v.ChapterType == WayPointType.WayPointType_Main then
         return v.MissionID, v.WayPointID
       end
     end
   end
-  do
-    if self:_GetMissionChapterType(mission_id) == WayPointType.WayPointType_Branch then
-      return nil, nil
-    end
-    local chapter_id = 0
-    local next_mission_id, next_waypoint_id = nil, nil
-    for k,v in (HelperProxy:GetInstance()):pairsByKeys(cfg_mission_chapter) do
-      -- DECOMPILER ERROR at PC50: Unhandled construct in 'MakeBoolean' P1
-
-      if chapter_id == 0 and v.MissionID == mission_id then
+  if self:_GetMissionChapterType(mission_id) == WayPointType.WayPointType_Branch then
+    return nil, nil
+  end
+  local chapter_id = 0
+  local next_mission_id, next_waypoint_id
+  for k, v in HelperProxy:GetInstance():pairsByKeys(cfg_mission_chapter) do
+    if chapter_id == 0 then
+      if v.MissionID == mission_id then
         chapter_id = v.ID
       end
-      if chapter_id < v.ID and self:IsBigMission(v.MissionID) and v.ChapterType == WayPointType.WayPointType_Main then
-        next_mission_id = v.MissionID
-        next_waypoint_id = v.WayPointID
-        break
-      end
-    end
-    do
-      return next_mission_id, next_waypoint_id
+    elseif chapter_id < v.ID and self:IsBigMission(v.MissionID) and v.ChapterType == WayPointType.WayPointType_Main then
+      next_mission_id = v.MissionID
+      next_waypoint_id = v.WayPointID
+      break
     end
   end
+  return next_mission_id, next_waypoint_id
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.IsFightMission = function(self, missionID)
-  -- function num : 0_53 , upvalues : _ENV
-  local config = (Cfg.cfg_mission)[missionID]
+function MissionModule:IsFightMission(missionID)
+  local config = Cfg.cfg_mission[missionID]
   if config then
     if config.Type == MissionType.MissionType_Story then
       return false
@@ -792,32 +580,20 @@ MissionModule.IsFightMission = function(self, missionID)
   end
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.Has3StarCondition = function(self, mission_id)
-  -- function num : 0_54
+function MissionModule:Has3StarCondition(mission_id)
   return self:IsFightMission(mission_id)
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.SetFormationInfos = function(self, infos)
-  -- function num : 0_55
-  (self._teamCtx):InitByServerData(infos)
+function MissionModule:SetFormationInfos(infos)
+  self._teamCtx:InitByServerData(infos)
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.TeamCtx = function(self)
-  -- function num : 0_56
+function MissionModule:TeamCtx()
   return self._teamCtx
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule._IsConditionPass = function(self, vecCondition, nConditionID)
-  -- function num : 0_57 , upvalues : _ENV
-  for _,conditionPass in pairs(vecCondition) do
+function MissionModule:_IsConditionPass(vecCondition, nConditionID)
+  for _, conditionPass in pairs(vecCondition) do
     if conditionPass == nConditionID then
       return true
     end
@@ -825,10 +601,7 @@ MissionModule._IsConditionPass = function(self, vecCondition, nConditionID)
   return false
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule._ConvertCondition = function(self, vecPassCondition, nConditionID, nParam)
-  -- function num : 0_58 , upvalues : _ENV
+function MissionModule:_ConvertCondition(vecPassCondition, nConditionID, nParam)
   local uiExtCondition = UI_DetailExtCondition:New()
   uiExtCondition.m_nID = nConditionID
   uiExtCondition.m_nParam = nParam
@@ -837,31 +610,20 @@ MissionModule._ConvertCondition = function(self, vecPassCondition, nConditionID,
   return uiExtCondition
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.Module_ConvertMatchResult = function(self, recvResult)
-  -- function num : 0_59 , upvalues : _ENV
+function MissionModule:Module_ConvertMatchResult(recvResult)
   local uiMatchResult = UI_MatchResult:New()
   uiMatchResult.m_nMatchType = MatchType.MT_Mission
   uiMatchResult.m_nID = recvResult.mission_id
-  local cfgMission = (Cfg.cfg_mission)[uiMatchResult.m_nID]
-  local strStageIndex = (DiscoveryStage.GetStageIndexString)(uiMatchResult.m_nID)
-  local strStageName = (StringTable.Get)(cfgMission.Name)
+  local cfgMission = Cfg.cfg_mission[uiMatchResult.m_nID]
+  local strStageIndex = DiscoveryStage.GetStageIndexString(uiMatchResult.m_nID)
+  local strStageName = StringTable.Get(cfgMission.Name)
   uiMatchResult.m_stShowName = strStageIndex .. " " .. strStageName
-  uiMatchResult.m_stShowDesc = (StringTable.Get)(cfgMission.Desc)
+  uiMatchResult.m_stShowDesc = StringTable.Get(cfgMission.Desc)
   uiMatchResult.m_vecCondition = {}
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R6 in 'UnsetPending'
-
   if self:Has3StarCondition(uiMatchResult.m_nID) then
-    (uiMatchResult.m_vecCondition)[1] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition1, 0)
-    -- DECOMPILER ERROR at PC50: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (uiMatchResult.m_vecCondition)[2] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition2, 0)
-    -- DECOMPILER ERROR at PC57: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (uiMatchResult.m_vecCondition)[3] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition3, 0)
+    uiMatchResult.m_vecCondition[1] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition1, 0)
+    uiMatchResult.m_vecCondition[2] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition2, 0)
+    uiMatchResult.m_vecCondition[3] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition3, 0)
   end
   uiMatchResult.m_vecAwardNormal = recvResult.rewards
   uiMatchResult.m_vecAwardPerfect = recvResult.star_rewards
@@ -870,22 +632,21 @@ MissionModule.Module_ConvertMatchResult = function(self, recvResult)
   return uiMatchResult
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetMissionGetWayDetails = function(self, mission_id)
-  -- function num : 0_60 , upvalues : _ENV
+function MissionModule:GetMissionGetWayDetails(mission_id)
   local isShow = false
   local isUnLock = false
-  local chapterConfig = (Cfg.cfg_mission_chapter)({MissionID = mission_id})
+  local chapterConfig = Cfg.cfg_mission_chapter({MissionID = mission_id})
   if self:GetCurMissionID() == 0 then
-    if (chapterConfig[1]).MainChapterID == 1 then
+    if chapterConfig[1].MainChapterID == 1 then
       return true, false
     else
       return false, false
     end
   end
-  local currentChapterConfig = (Cfg.cfg_mission_chapter)({MissionID = self:GetCurMissionID()})
-  if currentChapterConfig and chapterConfig and (chapterConfig[1]).MainChapterID <= (currentChapterConfig[1]).MainChapterID then
+  local currentChapterConfig = Cfg.cfg_mission_chapter({
+    MissionID = self:GetCurMissionID()
+  })
+  if currentChapterConfig and chapterConfig and chapterConfig[1].MainChapterID <= currentChapterConfig[1].MainChapterID then
     isShow = true
   end
   if self:IsPassMissionID(mission_id) or self:IsMissionCanActive(mission_id) then
@@ -894,94 +655,73 @@ MissionModule.GetMissionGetWayDetails = function(self, mission_id)
   return isShow, isUnLock
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.SetStoryActiveData = function(self, mission_story_data)
-  -- function num : 0_61
+function MissionModule:SetStoryActiveData(mission_story_data)
   self._activeStoryInfo = mission_story_data
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.SetMissionStoryActive = function(self, TT, mission_id, activeStoryType)
-  -- function num : 0_62 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventMobileSaveActiveStoryInfo)
+function MissionModule:SetMissionStoryActive(TT, mission_id, activeStoryType)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventMobileSaveActiveStoryInfo)
   request.m_mission_id = mission_id or 0
-  if not activeStoryType then
-    request.m_story_type = ActiveStoryType.ActiveStoryType_None
-    local res = AsyncRequestRes:New()
-    local reply = self:Call(TT, request)
-    if reply.res ~= CallResultType.Normal then
-      res:SetResult(-1)
-      return res
-    end
-    res:SetSucc(true)
-    local replyEvent = reply.msg
-    res:SetResult(replyEvent.m_result)
+  request.m_story_type = activeStoryType or ActiveStoryType.ActiveStoryType_None
+  local res = AsyncRequestRes:New()
+  local reply = self:Call(TT, request)
+  if reply.res ~= CallResultType.Normal then
+    res:SetResult(-1)
     return res
   end
+  res:SetSucc(true)
+  local replyEvent = reply.msg
+  res:SetResult(replyEvent.m_result)
+  return res
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.IsMissionStoryActive = function(self, mission_id, activeStoryType)
-  -- function num : 0_63 , upvalues : _ENV
+function MissionModule:IsMissionStoryActive(mission_id, activeStoryType)
   if GameSingle then
     return true
   end
   if self._activeStoryInfo then
-    for k,v in pairs(self._activeStoryInfo) do
+    for k, v in pairs(self._activeStoryInfo) do
       if k == mission_id then
         local t = v.active_story_type & activeStoryType
         return t ~= 0
       end
     end
   end
-  do return false end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.HandleActiveStoryDataChange = function(self, msg)
-  -- function num : 0_64
-  self:SetStoryActiveData((msg.active_story_data).active_story_map)
+function MissionModule:HandleActiveStoryDataChange(msg)
+  self:SetStoryActiveData(msg.active_story_data.active_story_map)
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetErrorMsg = function(self, errCode)
-  -- function num : 0_65 , upvalues : _ENV
+function MissionModule:GetErrorMsg(errCode)
   local vecErrorMsg = {}
-  vecErrorMsg[MISSION_RESULT_CODE.MISSION_FAILED] = (StringTable.Get)("str_mission_error_failed")
-  vecErrorMsg[MISSION_RESULT_CODE.MISSION_INVALID_LEVEL] = (StringTable.Get)("str_mission_error_invalid_level")
-  vecErrorMsg[MISSION_RESULT_CODE.MISSION_INVALID_POWER] = (StringTable.Get)("str_mission_error_invalid_power")
-  vecErrorMsg[MISSION_RESULT_CODE.MISSION_NOT_EXIST] = (StringTable.Get)("str_mission_error_not_exist")
-  vecErrorMsg[MISSION_RESULT_CODE.MISSION_IS_LOCK] = (StringTable.Get)("str_mission_error_is_lock")
-  vecErrorMsg[MISSION_RESULT_CODE.MISSION_STORY_ALREADY_ACTIVE] = (StringTable.Get)("str_mission_error_story_already_active")
-  vecErrorMsg[MISSION_RESULT_CODE.MISSION_INVALID_ID] = (StringTable.Get)("str_mission_error_invalid_id")
-  vecErrorMsg[MISSION_RESULT_CODE.MISSION_STORY_INVALID_TYPE] = (StringTable.Get)("str_mission_error_story_invalid_type")
-  vecErrorMsg[MISSION_RESULT_CODE.MISSION_INVALID_CHAPTER_AWARD] = (StringTable.Get)("str_mission_error_invalid_chapter_award")
-  vecErrorMsg[MISSION_RESULT_CODE.MISSION_INVALID_CHAPTER_AWARD_INVALID_STAR] = (StringTable.Get)("str_mission_error_invalid_chapter_award_star")
-  vecErrorMsg[MISSION_RESULT_CODE.MISSION_INVALID_CHAPTER_AWARD_RECEIVE] = (StringTable.Get)("str_mission_error_invalid_chapter_award_receive")
-  vecErrorMsg[MISSION_RESULT_CODE.MISSION_INVALID_CHAPTER_AWARD_CONFIG] = (StringTable.Get)("str_mission_error_invalid_chapter_award_config")
-  vecErrorMsg[FORMATION_RESUTL_CODE.FORMATION_DIRTY_NAME] = (StringTable.Get)("str_mission_error_dirty_name")
-  vecErrorMsg[FORMATION_RESUTL_CODE.FORMATION_INVALID_NAME] = (StringTable.Get)("str_maze_FORMATION_INVALID_NAME")
+  vecErrorMsg[MISSION_RESULT_CODE.MISSION_FAILED] = StringTable.Get("str_mission_error_failed")
+  vecErrorMsg[MISSION_RESULT_CODE.MISSION_INVALID_LEVEL] = StringTable.Get("str_mission_error_invalid_level")
+  vecErrorMsg[MISSION_RESULT_CODE.MISSION_INVALID_POWER] = StringTable.Get("str_mission_error_invalid_power")
+  vecErrorMsg[MISSION_RESULT_CODE.MISSION_NOT_EXIST] = StringTable.Get("str_mission_error_not_exist")
+  vecErrorMsg[MISSION_RESULT_CODE.MISSION_IS_LOCK] = StringTable.Get("str_mission_error_is_lock")
+  vecErrorMsg[MISSION_RESULT_CODE.MISSION_STORY_ALREADY_ACTIVE] = StringTable.Get("str_mission_error_story_already_active")
+  vecErrorMsg[MISSION_RESULT_CODE.MISSION_INVALID_ID] = StringTable.Get("str_mission_error_invalid_id")
+  vecErrorMsg[MISSION_RESULT_CODE.MISSION_STORY_INVALID_TYPE] = StringTable.Get("str_mission_error_story_invalid_type")
+  vecErrorMsg[MISSION_RESULT_CODE.MISSION_INVALID_CHAPTER_AWARD] = StringTable.Get("str_mission_error_invalid_chapter_award")
+  vecErrorMsg[MISSION_RESULT_CODE.MISSION_INVALID_CHAPTER_AWARD_INVALID_STAR] = StringTable.Get("str_mission_error_invalid_chapter_award_star")
+  vecErrorMsg[MISSION_RESULT_CODE.MISSION_INVALID_CHAPTER_AWARD_RECEIVE] = StringTable.Get("str_mission_error_invalid_chapter_award_receive")
+  vecErrorMsg[MISSION_RESULT_CODE.MISSION_INVALID_CHAPTER_AWARD_CONFIG] = StringTable.Get("str_mission_error_invalid_chapter_award_config")
+  vecErrorMsg[FORMATION_RESUTL_CODE.FORMATION_DIRTY_NAME] = StringTable.Get("str_mission_error_dirty_name")
+  vecErrorMsg[FORMATION_RESUTL_CODE.FORMATION_INVALID_NAME] = StringTable.Get("str_maze_FORMATION_INVALID_NAME")
   local EIGHT_PETS_INVALID_NAME = 107600
-  vecErrorMsg[EIGHT_PETS_INVALID_NAME] = (StringTable.Get)("str_maze_FORMATION_INVALID_NAME")
+  vecErrorMsg[EIGHT_PETS_INVALID_NAME] = StringTable.Get("str_maze_FORMATION_INVALID_NAME")
   local stErrorMsg = vecErrorMsg[errCode]
-  if stErrorMsg == nil then
-    return (StringTable.Get)("str_match_error_server_error")
+  if nil == stErrorMsg then
+    return StringTable.Get("str_match_error_server_error")
   end
   return stErrorMsg
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetChapterName = function(self, chapterID)
-  -- function num : 0_66 , upvalues : _ENV
-  local config = (Cfg.cfg_mission_chapter_award)()
-  for k,v in pairs(config) do
+function MissionModule:GetChapterName(chapterID)
+  local config = Cfg.cfg_mission_chapter_award()
+  for k, v in pairs(config) do
     if v.ChapterID == chapterID then
       return v.ChapterIdx, v.ChapterName
     end
@@ -989,34 +729,25 @@ MissionModule.GetChapterName = function(self, chapterID)
   return nil, nil
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.ParseStarInfo = function(self, star)
-  -- function num : 0_67 , upvalues : _ENV
+function MissionModule:ParseStarInfo(star)
   local starCount = 0
   local completeStarList = {}
   if star & 1 ~= 0 then
     starCount = starCount + 1
-    ;
-    (table.insert)(completeStarList, 1)
+    table.insert(completeStarList, 1)
   end
   if star & 2 ~= 0 then
     starCount = starCount + 1
-    ;
-    (table.insert)(completeStarList, 2)
+    table.insert(completeStarList, 2)
   end
   if star & 4 ~= 0 then
     starCount = starCount + 1
-    ;
-    (table.insert)(completeStarList, 3)
+    table.insert(completeStarList, 3)
   end
   return starCount, completeStarList
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetStarCount = function(self, star)
-  -- function num : 0_68
+function MissionModule:GetStarCount(star)
   local starCount = 0
   if star & 1 ~= 0 then
     starCount = starCount + 1
@@ -1030,11 +761,8 @@ MissionModule.GetStarCount = function(self, star)
   return starCount
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.CompleteStoryMission = function(self, TT, missionID)
-  -- function num : 0_69 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventMobileCompleteStoryMission)
+function MissionModule:CompleteStoryMission(TT, missionID)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventMobileCompleteStoryMission)
   request.m_mission_id = missionID or 0
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
@@ -1045,11 +773,8 @@ MissionModule.CompleteStoryMission = function(self, TT, missionID)
   return replyEvent.m_result, replyEvent.reward
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.ReceiveChapterAward = function(self, TT, chapterID, starCount)
-  -- function num : 0_70 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventMobileReceiveChapterAward)
+function MissionModule:ReceiveChapterAward(TT, chapterID, starCount)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventMobileReceiveChapterAward)
   request.m_chapter_id = chapterID or 0
   request.star_count = starCount or 0
   local reply = self:Call(TT, request)
@@ -1063,47 +788,36 @@ MissionModule.ReceiveChapterAward = function(self, TT, chapterID, starCount)
   return replyEvent.m_result, replyEvent.reward
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetNextByMissionID = function(self, mission_id)
-  -- function num : 0_71 , upvalues : _ENV
-  local cfg_mission_chapter = (Cfg.cfg_mission_chapter)()
+function MissionModule:GetNextByMissionID(mission_id)
+  local cfg_mission_chapter = Cfg.cfg_mission_chapter()
   if mission_id == 0 then
-    for k,v in (HelperProxy:GetInstance()):pairsByKeys(cfg_mission_chapter) do
+    for k, v in HelperProxy:GetInstance():pairsByKeys(cfg_mission_chapter) do
       if v.ChapterType == WayPointType.WayPointType_Main then
         return v.MissionID, v.WayPointID
       end
     end
   end
-  do
-    if self:_GetMissionChapterType(mission_id) == WayPointType.WayPointType_Branch then
-      return nil, nil
-    end
-    local chapter_id = 0
-    local next_mission_id, next_waypoint_id = nil, nil
-    for k,v in (HelperProxy:GetInstance()):pairsByKeys(cfg_mission_chapter) do
-      -- DECOMPILER ERROR at PC45: Unhandled construct in 'MakeBoolean' P1
-
-      if chapter_id == 0 and v.MissionID == mission_id then
+  if self:_GetMissionChapterType(mission_id) == WayPointType.WayPointType_Branch then
+    return nil, nil
+  end
+  local chapter_id = 0
+  local next_mission_id, next_waypoint_id
+  for k, v in HelperProxy:GetInstance():pairsByKeys(cfg_mission_chapter) do
+    if chapter_id == 0 then
+      if v.MissionID == mission_id then
         chapter_id = v.ID
       end
-      if chapter_id < v.ID and v.ChapterType == WayPointType.WayPointType_Main then
-        next_mission_id = v.MissionID
-        next_waypoint_id = v.WayPointID
-        break
-      end
-    end
-    do
-      return next_mission_id, next_waypoint_id
+    elseif chapter_id < v.ID and v.ChapterType == WayPointType.WayPointType_Main then
+      next_mission_id = v.MissionID
+      next_waypoint_id = v.WayPointID
+      break
     end
   end
+  return next_mission_id, next_waypoint_id
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetMissionType = function(self, mission_id)
-  -- function num : 0_72 , upvalues : _ENV
-  local config = (Cfg.cfg_mission)[mission_id]
+function MissionModule:GetMissionType(mission_id)
+  local config = Cfg.cfg_mission[mission_id]
   if config then
     return config.Type
   else
@@ -1111,15 +825,12 @@ MissionModule.GetMissionType = function(self, mission_id)
   end
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.SetChapterInfo = function(self, data)
-  -- function num : 0_73 , upvalues : _ENV
+function MissionModule:SetChapterInfo(data)
   self._chapter_info = {}
-  for _,v in pairs(self._passMissionList) do
+  for _, v in pairs(self._passMissionList) do
     local chapter_id = self:GetChapterMainIDByMissionID(v.id)
     local bFind = false
-    for _,k in pairs(data.receive_star_award_map) do
+    for _, k in pairs(data.receive_star_award_map) do
       if k.chapter_id == chapter_id then
         bFind = true
         if k.star_count then
@@ -1134,31 +845,24 @@ MissionModule.SetChapterInfo = function(self, data)
       tmp.chapter_id = chapter_id
       tmp.star_count = self:GetStarCount(v.star)
       tmp.receive_star_award_list = {}
-      ;
-      (table.insert)(data.receive_star_award_map, tmp)
+      table.insert(data.receive_star_award_map, tmp)
     end
   end
   self._chapter_info = data.receive_star_award_map
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule._ClearChapterStarCount = function(self)
-  -- function num : 0_74 , upvalues : _ENV
-  for _,k in pairs(self._chapter_info) do
+function MissionModule:_ClearChapterStarCount()
+  for _, k in pairs(self._chapter_info) do
     k.star_count = 0
   end
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.UpdateChapterData = function(self)
-  -- function num : 0_75 , upvalues : _ENV
+function MissionModule:UpdateChapterData()
   self:_ClearChapterStarCount()
-  for _,v in pairs(self._passMissionList) do
+  for _, v in pairs(self._passMissionList) do
     local chapter_id = self:GetChapterMainIDByMissionID(v.id)
     local bFind = false
-    for _,k in pairs(self._chapter_info) do
+    for _, k in pairs(self._chapter_info) do
       if k.chapter_id == chapter_id then
         bFind = true
         if k.star_count then
@@ -1173,68 +877,47 @@ MissionModule.UpdateChapterData = function(self)
       tmp.chapter_id = chapter_id
       tmp.star_count = self:GetStarCount(v.star)
       tmp.receive_star_award_list = {}
-      ;
-      (table.insert)(self._chapter_info, tmp)
+      table.insert(self._chapter_info, tmp)
     end
   end
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetChapterInfo = function(self)
-  -- function num : 0_76
+function MissionModule:GetChapterInfo()
   return self._chapter_info
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetShowChapterPreview = function(self)
-  -- function num : 0_77
+function MissionModule:GetShowChapterPreview()
   return self._showChapterPreview
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.SetShowChapterPreview = function(self, show)
-  -- function num : 0_78
+function MissionModule:SetShowChapterPreview(show)
   self._showChapterPreview = show
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.IsFirstPassMission = function(self, id)
-  -- function num : 0_79
+function MissionModule:IsFirstPassMission(id)
   return not self:IsPassMissionID(id)
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.IsMissionFirstPassCanIgnorPower = function(self, id)
-  -- function num : 0_80 , upvalues : _ENV
+function MissionModule:IsMissionFirstPassCanIgnorPower(id)
   if id == EFirstPassCanIgnorPowerMission.EFirstPassCanIgnorPowerMission_1_1 or id == EFirstPassCanIgnorPowerMission.EFirstPassCanIgnorPowerMission_1_2 or id == EFirstPassCanIgnorPowerMission.EFirstPassCanIgnorPowerMission_1_3 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionModule.GetStoryByStageIdStoryType = function(self, missionID, storyTriggerType)
-  -- function num : 0_81 , upvalues : _ENV
-  local cfg = (Cfg.cfg_mission_story)[missionID]
+function MissionModule:GetStoryByStageIdStoryType(missionID, storyTriggerType)
+  local cfg = Cfg.cfg_mission_story[missionID]
   if not cfg then
     return nil
   end
-  local index = nil
+  local index
   for i = 1, #cfg.StoryActiveType do
-    if (cfg.StoryActiveType)[i] == storyTriggerType then
+    if cfg.StoryActiveType[i] == storyTriggerType then
       index = i
     end
   end
   if not index then
     return nil
   end
-  return (cfg.StoryID)[index]
+  return cfg.StoryID[index]
 end
-
-

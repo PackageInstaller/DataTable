@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/story/ui_n28_avg_story.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGStory", UIController)
 UIN28AVGStory = UIN28AVGStory
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGStory.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN28AVGData()
+function UIN28AVGStory:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN28AVGData()
   self.passSectionIds = {}
   self.passSectionTimes = {}
   self.selectedOptionIds = {}
@@ -18,13 +11,13 @@ UIN28AVGStory.Constructor = function(self)
   self.cacheUserEvidences = {}
   self.nextNodeId = 0
   self.onDialogEndCallback = nil
-  self.colorInfluenceBG = {Color(0, 0, 0, 0.5), Color(0, 0, 0, 0)}
+  self.colorInfluenceBG = {
+    Color(0, 0, 0, 0.5),
+    Color(0, 0, 0, 0)
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN28AVGStory:OnShow(uiParams)
   local nodeId = uiParams[1]
   self:NodeId(nodeId)
   self._revertBGM = uiParams[4] ~= false
@@ -34,32 +27,23 @@ UIN28AVGStory.OnShow = function(self, uiParams)
   self._rootGameObject = self:GetGameObject("StoryRoot")
   self._dialogRootGameObject = self:GetGameObject("DialogRoot")
   self._maskTemplate = self:GetGameObject("MaskTemplate")
-  ;
-  (self._maskTemplate):SetActive(false)
+  self._maskTemplate:SetActive(false)
   self._maskHorizontalTemplate = self:GetGameObject("MaskHorizontalTemplate")
-  ;
-  (self._maskHorizontalTemplate):SetActive(false)
+  self._maskHorizontalTemplate:SetActive(false)
   self._spineSliceMaskTemplate = self:GetGameObject("SpineSliceMaskTemplate")
-  ;
-  (self._spineSliceMaskTemplate):SetActive(false)
+  self._spineSliceMaskTemplate:SetActive(false)
   self._spineSliceHorizontalMaskTemplate = self:GetGameObject("SpineSliceHorizontalMaskTemplate")
-  ;
-  (self._spineSliceHorizontalMaskTemplate):SetActive(false)
+  self._spineSliceHorizontalMaskTemplate:SetActive(false)
   self._spineCircleMaskTemplate = self:GetGameObject("SpineCircleMaskTemplate")
-  ;
-  (self._spineCircleMaskTemplate):SetActive(false)
+  self._spineCircleMaskTemplate:SetActive(false)
   self._topBlackSide = self:GetGameObject("Top")
-  ;
-  (self._topBlackSide):SetActive(false)
+  self._topBlackSide:SetActive(false)
   self._bottomBlackSide = self:GetGameObject("Bottom")
-  ;
-  (self._bottomBlackSide):SetActive(false)
+  self._bottomBlackSide:SetActive(false)
   self._leftBlackSide = self:GetGameObject("Left")
-  ;
-  (self._leftBlackSide):SetActive(false)
+  self._leftBlackSide:SetActive(false)
   self._rightBlackSide = self:GetGameObject("Right")
-  ;
-  (self._rightBlackSide):SetActive(false)
+  self._rightBlackSide:SetActive(false)
   local poolLeader = self:GetUIComponent("UISelectObjectPath", "leader")
   self.leader = poolLeader:SpawnObject("UIN28AVGActor")
   self.goAuto = self:GetGameObject("goAuto")
@@ -83,16 +67,15 @@ UIN28AVGStory.OnShow = function(self, uiParams)
   self.btnEvidenceBook = self:GetGameObject("btnEvidenceBook")
   self.ui = self:GetGameObject("ui")
   self.imgShowUI = self:GetGameObject("imgShowUI")
-  ;
-  (self.imgShowUI):SetActive(false)
+  self.imgShowUI:SetActive(false)
   self.showEvidenceEff = self:GetGameObject("showEvidenceEff")
   self.jumpEff = self:GetGameObject("jumpEff")
   self._uiAtlas = self:GetAsset("UIStory.spriteatlas", LoadType.SpriteAtlas)
   self.txtDebug = self:GetUIComponent("UILocalizationText", "txtDebug")
   if IsUnityEditor() then
-    ((self.txtDebug).gameObject):SetActive(true)
+    self.txtDebug.gameObject:SetActive(true)
   else
-    ((self.txtDebug).gameObject):SetActive(false)
+    self.txtDebug.gameObject:SetActive(false)
   end
   self:AttachEvent(GameEventType.AVGOnDialogEnd, self.AVGOnDialogEnd)
   self:AttachEvent(GameEventType.AVGShowOption, self.AVGShowOption)
@@ -100,21 +83,15 @@ UIN28AVGStory.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.AVGShowEvdience, self.AVGShowEvdience)
   self:AttachEvent(GameEventType.AVGHideEvdienceBook, self.AVGHideEvdienceBook)
   self:AttachEvent(GameEventType.AVGStopAutoState, self.StopAutoState)
-  self.fsm = (StateMachineManager:GetInstance()):CreateStateMachine("N28StateAVGStory", N28StateAVGStory)
-  ;
-  (self.fsm):SetData(self)
-  ;
-  (self.fsm):Init(N28StateAVGStory.Init)
+  self.fsm = StateMachineManager:GetInstance():CreateStateMachine("N28StateAVGStory", N28StateAVGStory)
+  self.fsm:SetData(self)
+  self.fsm:Init(N28StateAVGStory.Init)
   self:FlushData()
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN28AVGStory:OnHide()
   if self._playAnimationTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._playAnimationTask)
+    GameGlobal.TaskManager():KillTask(self._playAnimationTask)
     self._playAnimationTask = nil
     self:UnLock("UIN28AVGStory_ShowJumpAnim")
   end
@@ -124,53 +101,35 @@ UIN28AVGStory.OnHide = function(self)
   self:DetachEvent(GameEventType.AVGShowEvdience, self.AVGShowEvdience)
   self:DetachEvent(GameEventType.AVGHideEvdienceBook, self.AVGHideEvdienceBook)
   self:DetachEvent(GameEventType.AVGStopAutoState, self.StopAutoState)
-  ;
-  (self._storyManager):Destroy()
+  self._storyManager:Destroy()
   self._storyManager = nil
-  ;
-  (self.fsm):SetData(nil)
-  ;
-  (StateMachineManager:GetInstance()):DestroyStateMachine((self.fsm).Id)
+  self.fsm:SetData(nil)
+  StateMachineManager:GetInstance():DestroyStateMachine(self.fsm.Id)
   self.fsm = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.InitStoryManager = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local node = (self.data):GetNodeById(self.nodeId)
+function UIN28AVGStory:InitStoryManager()
+  local node = self.data:GetNodeById(self.nodeId)
   if not node then
     AVGLog("no node. nodeId", self.nodeId)
-    return 
+    return
   end
   local storyId = node.storyId
   self._storyManager = StoryManager:New(self, storyId, self._revertBGM, self._ignoreBreak)
   self._entityInfo = nil
-  ;
-  (self._storyManager):Init(self._debugMode, self._entityInfo)
-  ;
-  (self.data):StoryManager(self._storyManager)
+  self._storyManager:Init(self._debugMode, self._entityInfo)
+  self.data:StoryManager(self._storyManager)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.FlushData = function(self, anim)
-  -- function num : 0_4
+function UIN28AVGStory:FlushData(anim)
   local hp, strategies = self:CalcCurData()
-  ;
-  (self.leader):Flush(0, hp, true)
+  self.leader:Flush(0, hp, true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.PlayAnimHP = function(self, hpDelta)
-  -- function num : 0_5
+function UIN28AVGStory:PlayAnimHP(hpDelta)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.NodeId = function(self, nodeId)
-  -- function num : 0_6
+function UIN28AVGStory:NodeId(nodeId)
   if nodeId then
     self.nodeId = nodeId
   else
@@ -178,136 +137,83 @@ UIN28AVGStory.NodeId = function(self, nodeId)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.NextNodeId = function(self, nextNodeId)
-  -- function num : 0_7
-  -- DECOMPILER ERROR at PC4: Unhandled construct in 'MakeBoolean' P1
-
-  if nextNodeId and nextNodeId ~= 0 then
-    self.nextNodeId = nextNodeId
+function UIN28AVGStory:NextNodeId(nextNodeId)
+  if nextNodeId then
+    if nextNodeId ~= 0 then
+      self.nextNodeId = nextNodeId
+    end
+  else
+    return self.nextNodeId
   end
-  do return self.nextNodeId end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.PassSectionId = function(self, sectionSign)
-  -- function num : 0_8
+function UIN28AVGStory:PassSectionId(sectionSign)
   if sectionSign then
-    return (self.passSectionIds)[sectionSign]
+    return self.passSectionIds[sectionSign]
   else
     return self.passSectionIds
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.PassSectionTimes = function(self, sectionSign)
-  -- function num : 0_9
+function UIN28AVGStory:PassSectionTimes(sectionSign)
   if sectionSign then
-    return (self.passSectionTimes)[sectionSign]
+    return self.passSectionTimes[sectionSign]
   else
     return self.passSectionTimes
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.SetPassSectionTimes = function(self, sectionSign)
-  -- function num : 0_10
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.passSectionTimes)[sectionSign] = (self.passSectionTimes)[sectionSign] or 0
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.passSectionTimes)[sectionSign] = (self.passSectionTimes)[sectionSign] + 1
+function UIN28AVGStory:SetPassSectionTimes(sectionSign)
+  self.passSectionTimes[sectionSign] = self.passSectionTimes[sectionSign] or 0
+  self.passSectionTimes[sectionSign] = self.passSectionTimes[sectionSign] + 1
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.GetShowEvienceCount = function(self, manualID)
-  -- function num : 0_11
-  return (self.showEvienceCountList)[manualID]
+function UIN28AVGStory:GetShowEvienceCount(manualID)
+  return self.showEvienceCountList[manualID]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.SetShowEvienceCount = function(self, manualID)
-  -- function num : 0_12
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.showEvienceCountList)[manualID] = (self.showEvienceCountList)[manualID] or 0
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.showEvienceCountList)[manualID] = (self.showEvienceCountList)[manualID] + 1
+function UIN28AVGStory:SetShowEvienceCount(manualID)
+  self.showEvienceCountList[manualID] = self.showEvienceCountList[manualID] or 0
+  self.showEvienceCountList[manualID] = self.showEvienceCountList[manualID] + 1
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.ClearShowEvienceCount = function(self)
-  -- function num : 0_13
+function UIN28AVGStory:ClearShowEvienceCount()
   self.showEvienceCountList = {}
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.CopyEvidenceDataInCache = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN28AVGStory:CopyEvidenceDataInCache()
   local nodeId = self:NodeId()
-  local node = (self.data):GetNodeById(nodeId)
-  self.cacheUserEvidences = (table.shallowcopy)(node:GetEvidenceData())
+  local node = self.data:GetNodeById(nodeId)
+  self.cacheUserEvidences = table.shallowcopy(node:GetEvidenceData())
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.ChangeEvidenceDataInCache = function(self, eid, isAdd)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN28AVGStory:ChangeEvidenceDataInCache(eid, isAdd)
   if isAdd then
-    (table.insert)(self.cacheUserEvidences, eid)
+    table.insert(self.cacheUserEvidences, eid)
   else
-    ;
-    (table.removev)(self.cacheUserEvidences, eid)
+    table.removev(self.cacheUserEvidences, eid)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.GetEvidenceDataInCache = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN28AVGStory:GetEvidenceDataInCache()
   if self._debugMode and #self.cacheUserEvidences == 0 then
-    for _,v in pairs((self.data).allEvidences) do
-      (table.insert)(self.cacheUserEvidences, v.id)
+    for _, v in pairs(self.data.allEvidences) do
+      table.insert(self.cacheUserEvidences, v.id)
     end
   end
-  do
-    return self.cacheUserEvidences
-  end
+  return self.cacheUserEvidences
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.SetPassSectionId = function(self, sectionSign, b)
-  -- function num : 0_17 , upvalues : _ENV
+function UIN28AVGStory:SetPassSectionId(sectionSign, b)
   if b then
     self:SetPassSectionTimes(sectionSign)
-    -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.passSectionIds)[sectionSign] = true
+    self.passSectionIds[sectionSign] = true
   else
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.passSectionIds)[sectionSign] = nil
+    self.passSectionIds[sectionSign] = nil
   end
   if IsUnityEditor() then
     local signStr = ""
-    for sign,b in pairs(self.passSectionIds) do
+    for sign, b in pairs(self.passSectionIds) do
       if b then
         signStr = signStr .. sign .. ";"
       end
@@ -316,73 +222,48 @@ UIN28AVGStory.SetPassSectionId = function(self, sectionSign, b)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.ClearPassSectionIds = function(self)
-  -- function num : 0_18
+function UIN28AVGStory:ClearPassSectionIds()
   self.passSectionIds = {}
   self.passSectionTimes = {}
   self:FlushData(true)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.InitEvidenceBookShowStatus = function(self)
-  -- function num : 0_19
-  local node = (self.data):GetNodeById(self.nodeId)
+function UIN28AVGStory:InitEvidenceBookShowStatus()
+  local node = self.data:GetNodeById(self.nodeId)
   self.isNodeShowEvidenceBook = node.hideEvidenceBook == 1
-  ;
-  (self.btnEvidenceBook):SetActive(self.isNodeShowEvidenceBook)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self.btnEvidenceBook:SetActive(self.isNodeShowEvidenceBook)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.SelectedOptionId = function(self, optionId)
-  -- function num : 0_20
+function UIN28AVGStory:SelectedOptionId(optionId)
   if optionId then
-    return (self.selectedOptionIds)[optionId]
+    return self.selectedOptionIds[optionId]
   else
     return self.selectedOptionIds
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.SetSelectedOptionId = function(self, optionId, b)
-  -- function num : 0_21
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
+function UIN28AVGStory:SetSelectedOptionId(optionId, b)
   if b then
-    (self.selectedOptionIds)[optionId] = true
+    self.selectedOptionIds[optionId] = true
   else
-    -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.selectedOptionIds)[optionId] = nil
+    self.selectedOptionIds[optionId] = nil
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.ClearSelectedOptionIds = function(self)
-  -- function num : 0_22
+function UIN28AVGStory:ClearSelectedOptionIds()
   self.selectedOptionIds = {}
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.CalcCurData = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIN28AVGStory:CalcCurData()
   local nodeId = self:NodeId()
-  local node = (self.data):GetNodeById(nodeId)
+  local node = self.data:GetNodeById(nodeId)
   local hp, strategies = node:StartData()
-  local node = (self.data):GetNodeById(nodeId)
+  local node = self.data:GetNodeById(nodeId)
   local passSectionTimes = self:PassSectionTimes()
   if passSectionTimes then
-    for sign,b in pairs(passSectionTimes) do
+    for sign, b in pairs(passSectionTimes) do
       if b then
-        local tNumbers = (N28AVGData.Sign2Numbers)(sign)
+        local tNumbers = N28AVGData.Sign2Numbers(sign)
         local storyId = tNumbers[1]
         local paragraphId = tNumbers[2]
         local sectionIdx = tNumbers[3]
@@ -390,25 +271,15 @@ UIN28AVGStory.CalcCurData = function(self)
         local dialog = paragraph:GetDialogBySectionIdx(sectionIdx)
         local vc = dialog:ValueChange()
         if vc then
-          for index,value in ipairs(vc) do
+          for index, value in ipairs(vc) do
             if index == 1 then
               for i = 1, b do
                 hp = hp + value
               end
             else
-              do
-                do
-                  local indexPartner = index - 1
-                  if strategies and strategies[indexPartner] then
-                    strategies[indexPartner] = strategies[indexPartner] + value
-                  end
-                  -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
+              local indexPartner = index - 1
+              if strategies and strategies[indexPartner] then
+                strategies[indexPartner] = strategies[indexPartner] + value
               end
             end
           end
@@ -416,345 +287,218 @@ UIN28AVGStory.CalcCurData = function(self)
       end
     end
   end
-  do
-    local minHP, maxHP = ((self.data).actorLeader).min, ((self.data).actorLeader).max
-    hp = (Mathf.Clamp)(hp, minHP, maxHP)
-    for index,_ in ipairs(strategies) do
-      local partner = ((self.data).actorPartners)[index]
-      local minStrategy, maxStrategy = partner.min, partner.max
-      strategies[index] = (Mathf.Clamp)(strategies[index], minStrategy, maxStrategy)
-    end
-    return hp, strategies
+  local minHP, maxHP = self.data.actorLeader.min, self.data.actorLeader.max
+  hp = Mathf.Clamp(hp, minHP, maxHP)
+  for index, _ in ipairs(strategies) do
+    local partner = self.data.actorPartners[index]
+    local minStrategy, maxStrategy = partner.min, partner.max
+    strategies[index] = Mathf.Clamp(strategies[index], minStrategy, maxStrategy)
   end
+  return hp, strategies
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_24
+function UIN28AVGStory:OnUpdate(deltaTimeMS)
   if self.fsm then
-    (self.fsm):OnUpdate(deltaTimeMS)
+    self.fsm:OnUpdate(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.UpdateDriveByState = function(self, deltaTimeMS)
-  -- function num : 0_25
+function UIN28AVGStory:UpdateDriveByState(deltaTimeMS)
   if not self._storyManager then
-    return 
+    return
   end
-  ;
-  (self._storyManager):Update(deltaTimeMS)
-  if (self._storyManager):IsEnd() then
+  self._storyManager:Update(deltaTimeMS)
+  if self._storyManager:IsEnd() then
     self:_EndStory()
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory._EndStory = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):SetBlackSideVisible(true)
-  ;
-  (self.fsm):ChangeState(N28StateAVGStory.BECheck, (self._storyManager)._auto or false)
+function UIN28AVGStory:_EndStory()
+  GameGlobal.UIStateManager():SetBlackSideVisible(true)
+  self.fsm:ChangeState(N28StateAVGStory.BECheck, self._storyManager._auto or false)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.SetBlackSideSize = function(self, width, height)
-  -- function num : 0_27 , upvalues : _ENV
-  ((self._topBlackSide):GetComponent("RectTransform")).sizeDelta = Vector2(0, height)
-  ;
-  ((self._bottomBlackSide):GetComponent("RectTransform")).sizeDelta = Vector2(0, height)
-  ;
-  (self._topBlackSide):SetActive(height > 0)
-  ;
-  (self._bottomBlackSide):SetActive(height > 0)
-  ;
-  ((self._leftBlackSide):GetComponent("RectTransform")).sizeDelta = Vector2(width, 0)
-  ;
-  ((self._rightBlackSide):GetComponent("RectTransform")).sizeDelta = Vector2(width, 0)
-  ;
-  (self._leftBlackSide):SetActive(width > 0)
-  ;
-  (self._rightBlackSide):SetActive(width > 0)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UIN28AVGStory:SetBlackSideSize(width, height)
+  self._topBlackSide:GetComponent("RectTransform").sizeDelta = Vector2(0, height)
+  self._bottomBlackSide:GetComponent("RectTransform").sizeDelta = Vector2(0, height)
+  self._topBlackSide:SetActive(0 < height)
+  self._bottomBlackSide:SetActive(0 < height)
+  self._leftBlackSide:GetComponent("RectTransform").sizeDelta = Vector2(width, 0)
+  self._rightBlackSide:GetComponent("RectTransform").sizeDelta = Vector2(width, 0)
+  self._leftBlackSide:SetActive(0 < width)
+  self._rightBlackSide:SetActive(0 < width)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.GetCanvasSize = function(self)
-  -- function num : 0_28
-  return ((self._uiCanvasRect).sizeDelta).x, ((self._uiCanvasRect).sizeDelta).y
+function UIN28AVGStory:GetCanvasSize()
+  return self._uiCanvasRect.sizeDelta.x, self._uiCanvasRect.sizeDelta.y
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.AVGOnDialogEnd = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  ;
-  (self.fsm):ChangeState(N28StateAVGStory.BECheck, (self._storyManager)._auto or false)
+function UIN28AVGStory:AVGOnDialogEnd()
+  self.fsm:ChangeState(N28StateAVGStory.BECheck, self._storyManager._auto or false)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.SetAVGOnDialogEnd = function(self, onDialogEndCallback)
-  -- function num : 0_30
+function UIN28AVGStory:SetAVGOnDialogEnd(onDialogEndCallback)
   self.onDialogEndCallback = onDialogEndCallback
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.AVGShowOption = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  (self.fsm):ChangeState(N28StateAVGStory.Option)
+function UIN28AVGStory:AVGShowOption()
+  self.fsm:ChangeState(N28StateAVGStory.Option)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.AVGGainEvidence = function(self, eventCfg, uiDialog)
-  -- function num : 0_32 , upvalues : _ENV
-  (self.fsm):ChangeState(N28StateAVGStory.GainEvidence, eventCfg, uiDialog)
+function UIN28AVGStory:AVGGainEvidence(eventCfg, uiDialog)
+  self.fsm:ChangeState(N28StateAVGStory.GainEvidence, eventCfg, uiDialog)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.AVGShowEvdience = function(self, eventCfg, trackData, uiDialog)
-  -- function num : 0_33 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN42AVGStoryShowEvidence)
-  ;
-  (self.fsm):ChangeState(N28StateAVGStory.ShowEvidence, eventCfg, trackData, uiDialog)
+function UIN28AVGStory:AVGShowEvdience(eventCfg, trackData, uiDialog)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN42AVGStoryShowEvidence)
+  self.fsm:ChangeState(N28StateAVGStory.ShowEvidence, eventCfg, trackData, uiDialog)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.StopAutoState = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  (self.fsm):ChangeState(N28StateAVGStory.Play)
+function UIN28AVGStory:StopAutoState()
+  self.fsm:ChangeState(N28StateAVGStory.Play)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.AVGHideEvdienceBook = function(self, eventCfg, uiDialog)
-  -- function num : 0_35 , upvalues : _ENV
-  local flag = (eventCfg.Params)[1] == 1
-  ;
-  (self.btnEvidenceBook):SetActive(flag)
+function UIN28AVGStory:AVGHideEvdienceBook(eventCfg, uiDialog)
+  local flag = eventCfg.Params[1] == 1
+  self.btnEvidenceBook:SetActive(flag)
   self.isNodeShowEvidenceBook = flag
   if flag then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN42AVGStoryEvidenceBook)
-    local guideModule = (GameGlobal.GetModule)(GuideModule)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN42AVGStoryEvidenceBook)
+    local guideModule = GameGlobal.GetModule(GuideModule)
     if guideModule:IsGuideProcess(542005) then
-      (self._storyManager):ForceJumpStop(true)
+      self._storyManager:ForceJumpStop(true)
       if uiDialog:GetAuto(1) then
         uiDialog:SetAuto(false, 1)
       end
-      ;
-      ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_35_0 , upvalues : _ENV, self
-    YIELD(TT)
-    ;
-    (self._storyManager):ForceJumpStop(false)
-  end
-)
+      GameGlobal.TaskManager():StartTask(function(TT)
+        YIELD(TT)
+        self._storyManager:ForceJumpStop(false)
+      end)
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.ShowJumpAnim = function(self, callback)
-  -- function num : 0_36 , upvalues : _ENV
+function UIN28AVGStory:ShowJumpAnim(callback)
   self:Lock("UIN28AVGStory_ShowJumpAnim")
-  ;
-  (self.jumpEff):SetActive(true)
-  local anim = (self.jumpEff):GetComponent("Animation")
-  self._playAnimationTask = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_36_0 , upvalues : anim, _ENV, callback, self
+  self.jumpEff:SetActive(true)
+  local anim = self.jumpEff:GetComponent("Animation")
+  self._playAnimationTask = GameGlobal.TaskManager():StartTask(function(TT)
     anim:Play("uieff_UIN28AVGStory_star")
     YIELD(TT, 567)
     callback()
     YIELD(TT, 100)
     anim:Play("uieff_UIN28AVGStory_star_out")
     YIELD(TT, 333)
-    ;
-    (self.jumpEff):SetActive(false)
+    self.jumpEff:SetActive(false)
     self:UnLock("UIN28AVGStory_ShowJumpAnim")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.SetBtnEvidenceBookActive = function(self, flag)
-  -- function num : 0_37
+function UIN28AVGStory:SetBtnEvidenceBookActive(flag)
   if not self.isNodeShowEvidenceBook and flag then
-    return 
+    return
   end
-  ;
-  (self.btnEvidenceBook):SetActive(flag)
+  self.btnEvidenceBook:SetActive(flag)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.ShowHideOption = function(self, isShow)
-  -- function num : 0_38
-  (self.goOptions):SetActive(isShow)
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.btnNextImg).raycastTarget = not isShow
+function UIN28AVGStory:ShowHideOption(isShow)
+  self.goOptions:SetActive(isShow)
+  self.btnNextImg.raycastTarget = not isShow
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.ShowHideGainEvidence = function(self, isShow)
-  -- function num : 0_39
-  (self.goGainEvidence):SetActive(isShow)
+function UIN28AVGStory:ShowHideGainEvidence(isShow)
+  self.goGainEvidence:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.ShowHideShowEvidence = function(self, isShow)
-  -- function num : 0_40
-  (self.goShowEvidence):SetActive(isShow)
+function UIN28AVGStory:ShowHideShowEvidence(isShow)
+  self.goShowEvidence:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.ShowHideShowEvidenceEff = function(self, isShow)
-  -- function num : 0_41
-  (self.showEvidenceEff):SetActive(isShow)
+function UIN28AVGStory:ShowHideShowEvidenceEff(isShow)
+  self.showEvidenceEff:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.ShowHideJumpBtn = function(self, isShow)
-  -- function num : 0_42
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.btnNextImg).raycastTarget = isShow
+function UIN28AVGStory:ShowHideJumpBtn(isShow)
+  self.btnNextImg.raycastTarget = isShow
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.IsAuto = function(self)
-  -- function num : 0_43
-  local isAuto = (self._storyManager)._auto
+function UIN28AVGStory:IsAuto()
+  local isAuto = self._storyManager._auto
   return isAuto
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.PlayFromBegain = function(self, nodeId)
-  -- function num : 0_44 , upvalues : _ENV
-  if (self._storyManager)._storyEntityList then
-    for index,storyEntity in ipairs((self._storyManager)._storyEntityList) do
+function UIN28AVGStory:PlayFromBegain(nodeId)
+  if self._storyManager._storyEntityList then
+    for index, storyEntity in ipairs(self._storyManager._storyEntityList) do
       local go = storyEntity._gameObject
-      ;
-      ((UnityEngine.GameObject).Destroy)(go)
+      UnityEngine.GameObject.Destroy(go)
     end
   end
-  do
-    ;
-    (self._storyManager):Destroy()
-    self:NodeId(nodeId)
-    ;
-    (self.fsm):ChangeState(N28StateAVGStory.Init)
-  end
+  self._storyManager:Destroy()
+  self:NodeId(nodeId)
+  self.fsm:ChangeState(N28StateAVGStory.Init)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.BgOnClick = function(self, go)
-  -- function num : 0_45 , upvalues : _ENV
-  (Log.fatal)("### bgOnClick")
+function UIN28AVGStory:BgOnClick(go)
+  Log.fatal("### bgOnClick")
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.BtnAutoOnClick = function(self, go)
-  -- function num : 0_46 , upvalues : _ENV
+function UIN28AVGStory:BtnAutoOnClick(go)
   if self:IsAuto() then
-    (self.fsm):ChangeState(N28StateAVGStory.Play)
+    self.fsm:ChangeState(N28StateAVGStory.Play)
   else
-    ;
-    (self.fsm):ChangeState(N28StateAVGStory.Auto)
+    self.fsm:ChangeState(N28StateAVGStory.Auto)
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.BtnReviewOnClick = function(self, go)
-  -- function num : 0_47
+function UIN28AVGStory:BtnReviewOnClick(go)
   self:ShowDialog("UIN28AVGReview")
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.BtnEvidenceBookOnClick = function(self, go)
-  -- function num : 0_48 , upvalues : _ENV
+function UIN28AVGStory:BtnEvidenceBookOnClick(go)
   local evidenceListCache = self:GetEvidenceDataInCache()
-  ;
-  (table.sort)(evidenceListCache, function(v1, v2)
-    -- function num : 0_48_0
-    do return v1 < v2 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(evidenceListCache, function(v1, v2)
+    return v1 < v2
+  end)
   self:ShowDialog("UIN28AVGStoryEvidenceBook", evidenceListCache)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.BtnShowHideUIOnClick = function(self, go)
-  -- function num : 0_49
-  (self._storyManager):HideUI(true)
-  ;
-  (self.ui):SetActive(false)
-  ;
-  (self.imgShowUI):SetActive(true)
+function UIN28AVGStory:BtnShowHideUIOnClick(go)
+  self._storyManager:HideUI(true)
+  self.ui:SetActive(false)
+  self.imgShowUI:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.ImgShowUIOnClick = function(self, go)
-  -- function num : 0_50
-  (self._storyManager):HideUI(false)
-  ;
-  (self.ui):SetActive(true)
-  ;
-  (self.imgShowUI):SetActive(false)
+function UIN28AVGStory:ImgShowUIOnClick(go)
+  self._storyManager:HideUI(false)
+  self.ui:SetActive(true)
+  self.imgShowUI:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.BtnNextOnClick = function(self, go)
-  -- function num : 0_51 , upvalues : _ENV
-  (self.fsm):ChangeState(N28StateAVGStory.Next)
+function UIN28AVGStory:BtnNextOnClick(go)
+  self.fsm:ChangeState(N28StateAVGStory.Next)
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.BtnGraphOnClick = function(self, go)
-  -- function num : 0_52
+function UIN28AVGStory:BtnGraphOnClick(go)
   self:ShowDialog("UIN28AVGGraph", true)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStory.BtnExitOnClick = function(self, go)
-  -- function num : 0_53 , upvalues : _ENV
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_avg_n28_exit_plot_hint"), function()
-    -- function num : 0_53_0 , upvalues : self, _ENV
+function UIN28AVGStory:BtnExitOnClick(go)
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_avg_n28_exit_plot_hint"), function()
     self:SwitchState(UIStateType.UIN28AVGMain)
-  end
-)
+  end)
 end
 
-local N28StateAVGStory = {Init = 0, Play = 1, Auto = 2, Next = 3, Option = 4, GainEvidence = 5, ShowEvidence = 6, BECheck = 7, Over = 8}
+local N28StateAVGStory = {
+  Init = 0,
+  Play = 1,
+  Auto = 2,
+  Next = 3,
+  Option = 4,
+  GainEvidence = 5,
+  ShowEvidence = 6,
+  BECheck = 7,
+  Over = 8
+}
 _enum("N28StateAVGStory", N28StateAVGStory)
-

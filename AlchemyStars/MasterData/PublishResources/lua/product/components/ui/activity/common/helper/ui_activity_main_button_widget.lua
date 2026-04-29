@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common/helper/ui_activity_main_button_widget.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityMainButtonWidget", Object)
 UIActivityMainButtonWidget = UIActivityMainButtonWidget
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityMainButtonWidget.Constructor = function(self, uiView, activityConst, componentId, checkRedComponentIds, checkNewComponentIds, activeCustomConst, callback, remainStr, unlockTimeStr, unlockMissionStr, extraCustomCheckRed)
-  -- function num : 0_0
+function UIActivityMainButtonWidget:Constructor(uiView, activityConst, componentId, checkRedComponentIds, checkNewComponentIds, activeCustomConst, callback, remainStr, unlockTimeStr, unlockMissionStr, extraCustomCheckRed)
   self._activityConst = activityConst
   self._checkRedComponentIds = checkRedComponentIds
   self._checkNewComponentIds = checkNewComponentIds
@@ -20,197 +13,148 @@ UIActivityMainButtonWidget.Constructor = function(self, uiView, activityConst, c
   self._activeCustomConst = activeCustomConst
   self._componentId = componentId
   self._uiView = uiView
-  self._red = (self._uiView):GetGameObject("red")
-  self._new = (self._uiView):GetGameObject("new")
-  self._open = (self._uiView):GetGameObject("open")
-  self._remaintime = (self._uiView):GetUIComponent("UILocalizationText", "remaintime")
-  self._close = (self._uiView):GetGameObject("close")
-  self._lock = (self._uiView):GetGameObject("lock")
-  self.locktips = (self._uiView):GetUIComponent("UILocalizationText", "locktips")
+  self._red = self._uiView:GetGameObject("red")
+  self._new = self._uiView:GetGameObject("new")
+  self._open = self._uiView:GetGameObject("open")
+  self._remaintime = self._uiView:GetUIComponent("UILocalizationText", "remaintime")
+  self._close = self._uiView:GetGameObject("close")
+  self._lock = self._uiView:GetGameObject("lock")
+  self.locktips = self._uiView:GetUIComponent("UILocalizationText", "locktips")
   if self._red then
-    (self._red):SetActive(false)
+    self._red:SetActive(false)
   end
   if self._new then
-    (self._new):SetActive(false)
+    self._new:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainButtonWidget.SetCustomTimeStr = function(self, dayStr, hourStr, minusStr, lessOneMinusStr)
-  -- function num : 0_1
+function UIActivityMainButtonWidget:SetCustomTimeStr(dayStr, hourStr, minusStr, lessOneMinusStr)
   self._dayStr = dayStr
   self._hourStr = hourStr
   self._minusStr = minusStr
   self._lessOneMinusStr = lessOneMinusStr
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainButtonWidget.Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityMainButtonWidget:Init()
   self:RefreshRedAndNew()
   self._buttonStatus = UIActivityButtonStatus:New(function()
-    -- function num : 0_2_0 , upvalues : self
-    return (self._activeCustomConst):GetComponentStatus(self._componentId)
-  end
-, function(TT)
-    -- function num : 0_2_1 , upvalues : self
+    return self._activeCustomConst:GetComponentStatus(self._componentId)
+  end, function(TT)
     self:ReLoadData(TT, self._componentId)
-  end
-, function(status, timeStr)
-    -- function num : 0_2_2 , upvalues : self, _ENV
+  end, function(status, timeStr)
     if self._open then
-      (self._open):SetActive(false)
+      self._open:SetActive(false)
     end
     if self._close then
-      (self._close):SetActive(false)
+      self._close:SetActive(false)
     end
     if self._lock then
-      (self._lock):SetActive(false)
+      self._lock:SetActive(false)
     end
     if status == ActivityComponentStatus.Open then
       if self._open then
-        (self._open):SetActive(true)
+        self._open:SetActive(true)
       end
       if self._remaintime then
-        (self._remaintime):SetText((StringTable.Get)(self._remainStr, timeStr))
+        self._remaintime:SetText(StringTable.Get(self._remainStr, timeStr))
       end
-    else
-      if (status == ActivityComponentStatus.Close or status == ActivityComponentStatus.ActivityEnd or status == ActivityComponentStatus.None) and self._close then
-        (self._close):SetActive(true)
+    elseif status == ActivityComponentStatus.Close or status == ActivityComponentStatus.ActivityEnd or status == ActivityComponentStatus.None then
+      if self._close then
+        self._close:SetActive(true)
       end
-    end
-    if status == ActivityComponentStatus.TimeLock then
+    elseif status == ActivityComponentStatus.TimeLock then
       if self._lock then
-        (self._lock):SetActive(true)
+        self._lock:SetActive(true)
       end
       if self.locktips then
-        (self.locktips):SetText((StringTable.Get)(self._unlockTimeStr, timeStr))
+        self.locktips:SetText(StringTable.Get(self._unlockTimeStr, timeStr))
       end
-    else
-      if status == ActivityComponentStatus.MissionLock then
-        if self._lock then
-          (self._lock):SetActive(true)
-        end
-        if self.locktips then
-          (self.locktips):SetText((StringTable.Get)(self._unlockMissionStr))
-        end
+    elseif status == ActivityComponentStatus.MissionLock then
+      if self._lock then
+        self._lock:SetActive(true)
+      end
+      if self.locktips then
+        self.locktips:SetText(StringTable.Get(self._unlockMissionStr))
       end
     end
-  end
-, self._dayStr, self._hourStr, self._minusStr, self._lessOneMinusStr)
+  end, self._dayStr, self._hourStr, self._minusStr, self._lessOneMinusStr)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainButtonWidget.Refresh = function(self)
-  -- function num : 0_3
+function UIActivityMainButtonWidget:Refresh()
   if self._buttonStatus then
-    (self._buttonStatus):CheckButtonStatus()
+    self._buttonStatus:CheckButtonStatus()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainButtonWidget.RefreshRedAndNew = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityMainButtonWidget:RefreshRedAndNew()
   if self._red then
-    local red = (self._activeCustomConst):IsShowComponentRed(self._componentId)
+    local red = self._activeCustomConst:IsShowComponentRed(self._componentId)
     if self._checkRedComponentIds then
       for i = 1, #self._checkRedComponentIds do
-        if (self._activeCustomConst):IsShowComponentRed((self._checkRedComponentIds)[i]) then
+        if self._activeCustomConst:IsShowComponentRed(self._checkRedComponentIds[i]) then
           red = true
           break
         end
       end
     end
-    do
-      do
-        do
-          if self._extraCustomCheckRed and not red then
-            local comOpen = (self._activeCustomConst):GetComponentStatus(self._componentId)
-            if comOpen and comOpen == ActivityComponentStatus.Open then
-              red = (self._extraCustomCheckRed)()
-            end
-          end
-          ;
-          (self._red):SetActive(red)
-          if self._new then
-            local shownew = (self._activeCustomConst):IsShowComponentNew(self._componentId)
-            if self._checkNewComponentIds then
-              for i = 1, #self._checkNewComponentIds do
-                if (self._activeCustomConst):IsShowComponentNew((self._checkNewComponentIds)[i]) then
-                  shownew = true
-                  break
-                end
-              end
-            end
-            do
-              ;
-              (self._new):SetActive(shownew)
-              if shownew and self._red then
-                (self._red):SetActive(false)
-              end
-            end
-          end
+    if self._extraCustomCheckRed and not red then
+      local comOpen = self._activeCustomConst:GetComponentStatus(self._componentId)
+      if comOpen and comOpen == ActivityComponentStatus.Open then
+        red = self._extraCustomCheckRed()
+      end
+    end
+    self._red:SetActive(red)
+  end
+  if self._new then
+    local shownew = self._activeCustomConst:IsShowComponentNew(self._componentId)
+    if self._checkNewComponentIds then
+      for i = 1, #self._checkNewComponentIds do
+        if self._activeCustomConst:IsShowComponentNew(self._checkNewComponentIds[i]) then
+          shownew = true
+          break
         end
       end
+    end
+    self._new:SetActive(shownew)
+    if shownew and self._red then
+      self._red:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainButtonWidget.Release = function(self)
-  -- function num : 0_5
+function UIActivityMainButtonWidget:Release()
   if self._buttonStatus then
-    (self._buttonStatus):Release()
+    self._buttonStatus:Release()
     self._buttonStatus = nil
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainButtonWidget.ReLoadData = function(self, TT, key)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("UIActivityMainButtonWidget_ReLoadData" .. key)
+function UIActivityMainButtonWidget:ReLoadData(TT, key)
+  GameGlobal.UIStateManager():Lock("UIActivityMainButtonWidget_ReLoadData" .. key)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (self._activityConst):LoadData(TT, res)
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("UIActivityMainButtonWidget_ReLoadData" .. key)
+  self._activityConst:LoadData(TT, res)
+  GameGlobal.UIStateManager():UnLock("UIActivityMainButtonWidget_ReLoadData" .. key)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMainButtonWidget.BtnOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local status, time = (self._activeCustomConst):GetComponentStatus(self._componentId)
+function UIActivityMainButtonWidget:BtnOnClick()
+  local status, time = self._activeCustomConst:GetComponentStatus(self._componentId)
   if status == ActivityComponentStatus.Close or status == ActivityComponentStatus.ActivityEnd then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     if status == ActivityComponentStatus.ActivityEnd then
-      ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
+      GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
     end
-    return 
-  else
-    if status == ActivityComponentStatus.TimeLock then
-      (ToastManager.ShowToast)((StringTable.Get)(self._unlockTimeStr, (UIActivityCustomHelper.GetTimeString)(time, self._dayStr, self._hourStr, self._minusStr, self._lessOneMinusStr)))
-      return 
-    else
-      if status == ActivityComponentStatus.MissionLock then
-        (ToastManager.ShowToast)((StringTable.Get)(self._unlockMissionStr))
-        return 
-      end
-    end
+    return
+  elseif status == ActivityComponentStatus.TimeLock then
+    ToastManager.ShowToast(StringTable.Get(self._unlockTimeStr, UIActivityCustomHelper.GetTimeString(time, self._dayStr, self._hourStr, self._minusStr, self._lessOneMinusStr)))
+    return
+  elseif status == ActivityComponentStatus.MissionLock then
+    ToastManager.ShowToast(StringTable.Get(self._unlockMissionStr))
+    return
   end
-  ;
-  (self._activeCustomConst):ClearComponentNew(self._componentId)
+  self._activeCustomConst:ClearComponentNew(self._componentId)
   self:RefreshRedAndNew()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
-
-

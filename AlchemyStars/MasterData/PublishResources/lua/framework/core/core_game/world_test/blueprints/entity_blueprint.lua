@@ -1,37 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_test/blueprints/entity_blueprint.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 EntityBlueprints = {
-[10001] = {ID = 10001, Tips = "LocalCharacter", 
-Components = {
-{Type = "Asset", NativePrefabPath = "KH_a_103.prefab"}
-, 
-{Type = "Location", 
-Pos = {-1, 0, -2}
-, 
-Dir = {0, 0, -1}
+  [10001] = {
+    ID = 10001,
+    Tips = "LocalCharacter",
+    Components = {
+      {
+        Type = "Asset",
+        NativePrefabPath = "KH_a_103.prefab"
+      },
+      {
+        Type = "Location",
+        Pos = {
+          -1,
+          0,
+          -2
+        },
+        Dir = {
+          0,
+          0,
+          -1
+        }
+      }
+    }
+  },
+  [10002] = {
+    ID = 10002,
+    Tips = "LocalCharacter",
+    Components = {
+      {Type = "Asset", NativePrefabPath = "LogicTest1"},
+      {
+        Type = "Location",
+        Pos = {
+          1,
+          0,
+          1
+        },
+        Dir = {
+          0,
+          0,
+          1
+        }
+      }
+    }
+  }
 }
-}
-}
-, 
-[10002] = {ID = 10002, Tips = "LocalCharacter", 
-Components = {
-{Type = "Asset", NativePrefabPath = "LogicTest1"}
-, 
-{Type = "Location", 
-Pos = {1, 0, 1}
-, 
-Dir = {0, 0, 1}
-}
-}
-}
-}
--- DECOMPILER ERROR at PC52: Confused about usage of register: R0 in 'UnsetPending'
 
-Entity.ApplyBlueprint = function(self, blueprintID)
-  -- function num : 0_0 , upvalues : _ENV
+function Entity:ApplyBlueprint(blueprintID)
   local blueprint = EntityBlueprints[blueprintID]
   local cmpts = blueprint.Components
   for i = 1, #cmpts do
@@ -40,5 +53,3 @@ Entity.ApplyBlueprint = function(self, blueprintID)
     ApplyFunc(cmptCfg, self)
   end
 end
-
-

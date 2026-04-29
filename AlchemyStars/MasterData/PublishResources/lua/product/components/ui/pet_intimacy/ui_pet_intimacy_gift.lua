@@ -1,75 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet_intimacy/ui_pet_intimacy_gift.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetIntimacyGift", Object)
 UIPetIntimacyGift = UIPetIntimacyGift
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetIntimacyGift.Constructor = function(self, intimacyMainController, petData)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetIntimacyGift:Constructor(intimacyMainController, petData)
   self._intimacyMainController = intimacyMainController
   self._petData = petData
   self._isInited = false
   self.uiCustomEventListener = UICustomUIEventListener:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._scrollView = (self._intimacyMainController):GetUIComponent("UIDynamicScrollView", "GiftListScrollView")
-  self._affinityLevelLabel = (self._intimacyMainController):GetUIComponent("UILocalizationText", "AffinityLevel")
-  self._curExpLabel = (self._intimacyMainController):GetUIComponent("UILocalizationText", "CurrExp")
-  self._maxExpLabel = (self._intimacyMainController):GetUIComponent("UILocalizationText", "MaxExp")
-  self._addExpLabel = (self._intimacyMainController):GetUIComponent("UILocalizationText", "AddExp")
-  self._affinityRelationNameLabel = (self._intimacyMainController):GetUIComponent("UILocalizationText", "AffinityRelationName")
-  self._affinityTr = (self._intimacyMainController):GetUIComponent("Transform", "RelationShipRoot")
-  self._revolvingText = (self._intimacyMainController):GetUIComponent("RevolvingTextWithDynamicScroll", "RelationShipRoot")
-  self._affinityLevelMaxGo = (self._intimacyMainController):GetGameObject("AffinityLevelMax")
-  self._petInfoPanelGo = (self._intimacyMainController):GetGameObject("PetInfoPanel")
-  self._expPanelGo = (self._intimacyMainController):GetGameObject("ExpPanel")
-  self._addExpGo = (self._intimacyMainController):GetGameObject("AddExp")
-  self._giveAwayGiftButtonPanelGo = (self._intimacyMainController):GetGameObject("GiveAwayGiftButtonPanel")
-  self._affinityMaxPanelGo = (self._intimacyMainController):GetGameObject("AffinityMaxPanel")
-  self._affinityExpBar1 = (self._intimacyMainController):GetUIComponent("Image", "AffinityBar1")
-  self._affinityExpBar2 = (self._intimacyMainController):GetUIComponent("Slider", "AffinityBar2")
-  self._buttonSendGo = (self._intimacyMainController):GetGameObject("ButtonSend")
-  self._buttonClearGo = (self._intimacyMainController):GetGameObject("ButtonClear")
-  self._attackValueLabel = (self._intimacyMainController):GetUIComponent("UILocalizationText", "AttackValue")
-  self._defendValueLabel = (self._intimacyMainController):GetUIComponent("UILocalizationText", "DefendValue")
-  self._hpValueLabel = (self._intimacyMainController):GetUIComponent("UILocalizationText", "HpValue")
-  self._sendGiftEff = (self._intimacyMainController):GetGameObject("sendGiftEff")
-  self._effLevelUp = (self._intimacyMainController):GetGameObject("effLevelUp")
-  ;
-  (self._effLevelUp):SetActive(false)
-  self._sendGiftEffRawImage = (self._intimacyMainController):GetUIComponent("RawImage", "sendGiftEffRawImage")
-  self._sendGiftEffRawImageRect = (self._intimacyMainController):GetUIComponent("RectTransform", "sendGiftEffRawImage")
-  self._sendGiftEffRawImageParentRect = (self._intimacyMainController):GetUIComponent("RectTransform", "sendGiftEffRawImageRect")
-  self._petModle = (self._intimacyMainController):GetGameObject("PetModel")
-  self._randomEventTips = (self._intimacyMainController):GetGameObject("randomEventTips")
-  local etlSend = (UICustomUIEventListener.Get)(self._buttonSendGo)
-  ;
-  (self.uiCustomEventListener):AddUICustomEventListener(etlSend, UIEvent.Click, function(go)
-    -- function num : 0_1_0 , upvalues : self
+function UIPetIntimacyGift:Init()
+  self._scrollView = self._intimacyMainController:GetUIComponent("UIDynamicScrollView", "GiftListScrollView")
+  self._affinityLevelLabel = self._intimacyMainController:GetUIComponent("UILocalizationText", "AffinityLevel")
+  self._curExpLabel = self._intimacyMainController:GetUIComponent("UILocalizationText", "CurrExp")
+  self._maxExpLabel = self._intimacyMainController:GetUIComponent("UILocalizationText", "MaxExp")
+  self._addExpLabel = self._intimacyMainController:GetUIComponent("UILocalizationText", "AddExp")
+  self._affinityRelationNameLabel = self._intimacyMainController:GetUIComponent("UILocalizationText", "AffinityRelationName")
+  self._affinityTr = self._intimacyMainController:GetUIComponent("Transform", "RelationShipRoot")
+  self._revolvingText = self._intimacyMainController:GetUIComponent("RevolvingTextWithDynamicScroll", "RelationShipRoot")
+  self._affinityLevelMaxGo = self._intimacyMainController:GetGameObject("AffinityLevelMax")
+  self._petInfoPanelGo = self._intimacyMainController:GetGameObject("PetInfoPanel")
+  self._expPanelGo = self._intimacyMainController:GetGameObject("ExpPanel")
+  self._addExpGo = self._intimacyMainController:GetGameObject("AddExp")
+  self._giveAwayGiftButtonPanelGo = self._intimacyMainController:GetGameObject("GiveAwayGiftButtonPanel")
+  self._affinityMaxPanelGo = self._intimacyMainController:GetGameObject("AffinityMaxPanel")
+  self._affinityExpBar1 = self._intimacyMainController:GetUIComponent("Image", "AffinityBar1")
+  self._affinityExpBar2 = self._intimacyMainController:GetUIComponent("Slider", "AffinityBar2")
+  self._buttonSendGo = self._intimacyMainController:GetGameObject("ButtonSend")
+  self._buttonClearGo = self._intimacyMainController:GetGameObject("ButtonClear")
+  self._attackValueLabel = self._intimacyMainController:GetUIComponent("UILocalizationText", "AttackValue")
+  self._defendValueLabel = self._intimacyMainController:GetUIComponent("UILocalizationText", "DefendValue")
+  self._hpValueLabel = self._intimacyMainController:GetUIComponent("UILocalizationText", "HpValue")
+  self._sendGiftEff = self._intimacyMainController:GetGameObject("sendGiftEff")
+  self._effLevelUp = self._intimacyMainController:GetGameObject("effLevelUp")
+  self._effLevelUp:SetActive(false)
+  self._sendGiftEffRawImage = self._intimacyMainController:GetUIComponent("RawImage", "sendGiftEffRawImage")
+  self._sendGiftEffRawImageRect = self._intimacyMainController:GetUIComponent("RectTransform", "sendGiftEffRawImage")
+  self._sendGiftEffRawImageParentRect = self._intimacyMainController:GetUIComponent("RectTransform", "sendGiftEffRawImageRect")
+  self._petModle = self._intimacyMainController:GetGameObject("PetModel")
+  self._randomEventTips = self._intimacyMainController:GetGameObject("randomEventTips")
+  local etlSend = UICustomUIEventListener.Get(self._buttonSendGo)
+  self.uiCustomEventListener:AddUICustomEventListener(etlSend, UIEvent.Click, function(go)
     self:_SendButtonClick()
-  end
-)
-  local etlClear = (UICustomUIEventListener.Get)(self._buttonClearGo)
-  ;
-  (self.uiCustomEventListener):AddUICustomEventListener(etlClear, UIEvent.Click, function(go)
-    -- function num : 0_1_1 , upvalues : self
+  end)
+  local etlClear = UICustomUIEventListener.Get(self._buttonClearGo)
+  self.uiCustomEventListener:AddUICustomEventListener(etlClear, UIEvent.Click, function(go)
     self:_ClearButtonClick()
-  end
-)
-  local etlClear = (UICustomUIEventListener.Get)(self._randomEventTips)
-  ;
-  (self.uiCustomEventListener):AddUICustomEventListener(etlClear, UIEvent.Click, function(go)
-    -- function num : 0_1_2 , upvalues : self
+  end)
+  local etlClear = UICustomUIEventListener.Get(self._randomEventTips)
+  self.uiCustomEventListener:AddUICustomEventListener(etlClear, UIEvent.Click, function(go)
     self:randomEventTipsOnClick()
-  end
-)
+  end)
   self._hasFavorableGift = false
   self:_InitPetData()
   self:_InitGiftData()
@@ -81,52 +61,29 @@ UIPetIntimacyGift.Init = function(self)
   self:CheckStoryBtn()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift.PetDataChanged = function(self, petData)
-  -- function num : 0_2
+function UIPetIntimacyGift:PetDataChanged(petData)
   self._petData = petData
   if self._isInited then
     self:Refresh()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift.CheckPetStoryCount = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local AirModule = (GameGlobal.GetModule)(AircraftModule)
+function UIPetIntimacyGift:CheckPetStoryCount()
+  local AirModule = GameGlobal.GetModule(AircraftModule)
   local giftStory = AirModule:GetStoryEventDicByTriggerType(EStoryTriggerType.GiveGift)
-  if giftStory and (table.count)(giftStory) > 0 then
-    local cfg = (Cfg.cfg_aircraft_pet_stroy_refresh)({})
-    for key,value in pairs(giftStory) do
-      for index,var in ipairs(value.story_event_id_list) do
-        if var > 0 then
+  if giftStory and table.count(giftStory) > 0 then
+    local cfg = Cfg.cfg_aircraft_pet_stroy_refresh({})
+    for key, value in pairs(giftStory) do
+      for index, var in ipairs(value.story_event_id_list) do
+        if 0 < var then
           local _cfg = cfg[var]
           if _cfg then
             local petid = _cfg.PetID
-            -- DECOMPILER ERROR at PC43: Confused about usage of register: R16 in 'UnsetPending'
-
-            if petid == (self._petData):GetTemplateID() then
-              (self._storyIds)[#self._storyIds + 1] = var
+            if petid == self._petData:GetTemplateID() then
+              self._storyIds[#self._storyIds + 1] = var
             end
           else
-            do
-              do
-                ;
-                (Log.error)("###[UIPetIntimacyGift] _cfg is nil ! id --> ", var)
-                -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
+            Log.error("###[UIPetIntimacyGift] _cfg is nil ! id --> ", var)
           end
         end
       end
@@ -134,41 +91,31 @@ UIPetIntimacyGift.CheckPetStoryCount = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift.CheckStoryBtn = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.debug)("###[UIPetIntimacyGift] 检查剧情数量，count --> ", #self._storyIds)
-  ;
-  (self._randomEventTips):SetActive(#self._storyIds > 0)
+function UIPetIntimacyGift:CheckStoryBtn()
+  Log.debug("###[UIPetIntimacyGift] 检查剧情数量，count --> ", #self._storyIds)
+  self._randomEventTips:SetActive(#self._storyIds > 0)
   if #self._storyIds > 0 then
-    local first = (self._storyIds)[1]
-    local head = (self._petData):GetPetHead(PetSkinEffectPath.HEAD_ICON_PET_INTIMACY)
-    local icon = (self._intimacyMainController):GetUIComponent("RawImageLoader", "randomEventHead")
+    local first = self._storyIds[1]
+    local head = self._petData:GetPetHead(PetSkinEffectPath.HEAD_ICON_PET_INTIMACY)
+    local icon = self._intimacyMainController:GetUIComponent("RawImageLoader", "randomEventHead")
     icon:LoadImage(head)
-    local cfg_pet_story = (Cfg.cfg_pet_story)[first]
+    local cfg_pet_story = Cfg.cfg_pet_story[first]
     if not cfg_pet_story then
-      (Log.error)("###[UIPetIntimacyGift] cfg_pet_story is nil ! id --> ", first)
+      Log.error("###[UIPetIntimacyGift] cfg_pet_story is nil ! id --> ", first)
     end
     local Title = cfg_pet_story.Title
-    local TitleTex = (self._intimacyMainController):GetUIComponent("UILocalizationText", "randomEventDesc")
-    TitleTex:SetText((StringTable.Get)(Title))
+    local TitleTex = self._intimacyMainController:GetUIComponent("UILocalizationText", "randomEventDesc")
+    TitleTex:SetText(StringTable.Get(Title))
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift.Refresh = function(self)
-  -- function num : 0_5
+function UIPetIntimacyGift:Refresh()
   if self._isInited then
     self:_InitPetData()
     self:_InitGiftData()
     self:_SetListItemCount()
-    ;
-    (self._scrollView):ResetListView()
-    ;
-    (self._scrollView):RefreshAllShownItem()
+    self._scrollView:ResetListView()
+    self._scrollView:RefreshAllShownItem()
     self:_RefreshPetAniffityInfo()
     self._storyIds = {}
     self:CheckPetStoryCount()
@@ -179,410 +126,277 @@ UIPetIntimacyGift.Refresh = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift.CloseWindow = function(self)
-  -- function num : 0_6
+function UIPetIntimacyGift:CloseWindow()
   self:_StopPlayVoice()
   if self._randomEventTips then
-    (self._randomEventTips):SetActive(false)
+    self._randomEventTips:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift.Destroy = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIPetIntimacyGift:Destroy()
   self:CloseWindow()
-  local pm = (GameGlobal.GetModule)(PetAudioModule)
+  local pm = GameGlobal.GetModule(PetAudioModule)
   pm:StopAll()
-  ;
-  (self.uiCustomEventListener):RemoveAllCustomEventListener()
+  self.uiCustomEventListener:RemoveAllCustomEventListener()
   if self._playVoiceTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._playVoiceTask)
+    GameGlobal.TaskManager():KillTask(self._playVoiceTask)
     self._playVoiceTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift.Update = function(self)
-  -- function num : 0_8
+function UIPetIntimacyGift:Update()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift._LoadVoiceRes = function(self)
-  -- function num : 0_9
+function UIPetIntimacyGift:_LoadVoiceRes()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift._StopPlayVoice = function(self, isPlayAnim)
-  -- function num : 0_10
+function UIPetIntimacyGift:_StopPlayVoice(isPlayAnim)
   if self._intimacyMainController then
-    (self._intimacyMainController):StopPlayVoice(isPlayAnim)
+    self._intimacyMainController:StopPlayVoice(isPlayAnim)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift._PlayVoice = function(self, isLove)
-  -- function num : 0_11 , upvalues : _ENV
-  local pm = (GameGlobal.GetModule)(PetAudioModule)
-  if not isLove then
-    isLove = false
-  end
+function UIPetIntimacyGift:_PlayVoice(isLove)
+  local pm = GameGlobal.GetModule(PetAudioModule)
+  isLove = isLove or false
   local audioName = isLove and "ReceiveLoveGift" or "ReceiveGift"
-  local checkSkinID = (self._petData):GetSkinId()
-  local petid = (self._petData):GetTemplateID()
-  local cfgs = ((Cfg.cfg_pet_voice)({PetID = petid, SkinID = checkSkinID}))
-  local cfg_pet_voice_skin = nil
+  local checkSkinID = self._petData:GetSkinId()
+  local petid = self._petData:GetTemplateID()
+  local cfgs = Cfg.cfg_pet_voice({PetID = petid, SkinID = checkSkinID})
+  local cfg_pet_voice_skin
   if cfgs and next(cfgs) then
     cfg_pet_voice_skin = cfgs[1]
   else
-    local tmp_cfgs = (Cfg.cfg_pet_voice)({PetID = petid, SkinID = nil})
+    local tmp_cfgs = Cfg.cfg_pet_voice({PetID = petid, SkinID = nil})
     if tmp_cfgs and next(tmp_cfgs) then
       cfg_pet_voice_skin = tmp_cfgs[1]
     end
   end
-  do
-    if not cfg_pet_voice_skin then
-      (Log.error)("###[UIPetIntimacyGift] cfg_pet_voice_skin is nil ! id:", petid, "|skin:", checkSkinID)
-      return 
-    end
-    local l_audio_id = nil
-    local cfg_pet_voice = cfg_pet_voice_skin[audioName]
-    if type(cfg_pet_voice) == "table" then
-      local giftlv = (self._petData):GetPetAffinityLevel()
-      if giftlv >= 5 then
-        for key,value in pairs(cfg_pet_voice) do
-          local lv = value[2]
-          if lv and lv == giftlv then
-            l_audio_id = value[1]
-            break
-          end
+  if not cfg_pet_voice_skin then
+    Log.error("###[UIPetIntimacyGift] cfg_pet_voice_skin is nil ! id:", petid, "|skin:", checkSkinID)
+    return
+  end
+  local l_audio_id
+  local cfg_pet_voice = cfg_pet_voice_skin[audioName]
+  if type(cfg_pet_voice) == "table" then
+    local giftlv = self._petData:GetPetAffinityLevel()
+    if 5 <= giftlv then
+      for key, value in pairs(cfg_pet_voice) do
+        local lv = value[2]
+        if lv and lv == giftlv then
+          l_audio_id = value[1]
+          break
         end
-        do
-          do
-            ;
-            (Log.error)("###[UIPetIntimacyGift] check over , audio id is nil ! petid:", petid, "|giftlv:", giftlv)
-            l_audio_id = (cfg_pet_voice[1])[1]
-            if type(cfg_pet_voice) == "number" then
-              l_audio_id = cfg_pet_voice
-            else
-              ;
-              (Log.error)("###[UIPetIntimacyGift] cfg_pet_voice is nil ! type is other.petid:", petid)
-            end
-            if not l_audio_id then
-              return 
-            end
-            if self._last_audio_id then
-              (AudioHelperController.StopUIVoice)(self._last_audio_id)
-            end
-            self._last_audio_id = pm:PlayAudio(l_audio_id)
-            local cfg = (AudioHelperController.GetCfgAudio)(l_audio_id)
-            if not cfg then
-              return 
-            end
-            local l_content_cfg = cfg.Content
-            if self._playVoiceTask then
-              ((GameGlobal.TaskManager)()):KillTask(self._playVoiceTask)
-              self._playVoiceTask = nil
-            end
-            self:_StopPlayVoice()
-            ;
-            (self._intimacyMainController):PlayVoice((HelperProxy:GetInstance()):ReplacePlayerName((StringTable.Get)(l_content_cfg)), not isLove)
-            self._playVoiceTask = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : _ENV, self, l_audio_id
-    while 1 do
+      end
+      Log.error("###[UIPetIntimacyGift] check over , audio id is nil ! petid:", petid, "|giftlv:", giftlv)
+    else
+      l_audio_id = cfg_pet_voice[1][1]
+    end
+  elseif type(cfg_pet_voice) == "number" then
+    l_audio_id = cfg_pet_voice
+  else
+    Log.error("###[UIPetIntimacyGift] cfg_pet_voice is nil ! type is other.petid:", petid)
+  end
+  if not l_audio_id then
+    return
+  end
+  if self._last_audio_id then
+    AudioHelperController.StopUIVoice(self._last_audio_id)
+  end
+  self._last_audio_id = pm:PlayAudio(l_audio_id)
+  local cfg = AudioHelperController.GetCfgAudio(l_audio_id)
+  if not cfg then
+    return
+  end
+  local l_content_cfg = cfg.Content
+  if self._playVoiceTask then
+    GameGlobal.TaskManager():KillTask(self._playVoiceTask)
+    self._playVoiceTask = nil
+  end
+  self:_StopPlayVoice()
+  self._intimacyMainController:PlayVoice(HelperProxy:GetInstance():ReplacePlayerName(StringTable.Get(l_content_cfg)), not isLove)
+  self._playVoiceTask = GameGlobal.TaskManager():StartTask(function(TT)
+    while true do
       YIELD(TT)
       if not self._intimacyMainController then
-        return 
+        return
       end
-      local len = (AudioHelperController.GetPlayingVoiceSecLengthByAudioId)(l_audio_id)
-      if len > 0 then
+      local len = AudioHelperController.GetPlayingVoiceSecLengthByAudioId(l_audio_id)
+      if 0 < len then
         YIELD(TT, len * 1000)
         break
       end
     end
-    do
-      if not self._intimacyMainController then
-        return 
-      end
-      self:_StopPlayVoice(true)
-      self._playVoiceTask = nil
+    if not self._intimacyMainController then
+      return
     end
-  end
-, self)
-          end
-        end
-      end
-    end
-  end
+    self:_StopPlayVoice(true)
+    self._playVoiceTask = nil
+  end, self)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift._InitPetData = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  self._maxAffinityMaxLevel = (self._petData):GetPetAffinityMaxLevel()
-  local petConfig = (Cfg.cfg_pet)[(self._petData):GetTemplateID()]
+function UIPetIntimacyGift:_InitPetData()
+  self._maxAffinityMaxLevel = self._petData:GetPetAffinityMaxLevel()
+  local petConfig = Cfg.cfg_pet[self._petData:GetTemplateID()]
   self._functionType = petConfig.FunctionType
   self._tags = petConfig.Tags
-  self._realLevel = (self._petData):GetPetAffinityLevel()
-  self._realExp = (self._petData):GetPetAffinityExp()
-  self._realMaxExp = (self._petData):GetPetAffinityMaxExp(self._realLevel)
+  self._realLevel = self._petData:GetPetAffinityLevel()
+  self._realExp = self._petData:GetPetAffinityExp()
+  self._realMaxExp = self._petData:GetPetAffinityMaxExp(self._realLevel)
   self._curLevel = self._realLevel
   self._curExp = self._realExp
   self._curMaxExp = self._realMaxExp
   self._addExp = 0
-  local matName = (self._petData):GetPetStaticBody(PetSkinEffectPath.BODY_PET_INTIMACY)
-  local petCgMat = ((self._petModle):GetComponent("RawImage")).material
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._sendGiftEffRawImage).texture = petCgMat:GetTexture("_MainTex")
-  local petMpdoleRt = (self._petModle):GetComponent("RectTransform")
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._sendGiftEffRawImageRect).sizeDelta = petMpdoleRt.sizeDelta
-  -- DECOMPILER ERROR at PC65: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._sendGiftEffRawImageParentRect).anchoredPosition = petMpdoleRt.anchoredPosition + (((petMpdoleRt.parent).gameObject):GetComponent("RectTransform")).anchoredPosition
-  -- DECOMPILER ERROR at PC72: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._sendGiftEffRawImageRect).localScale = ((self._petModle):GetComponent("RectTransform")).localScale
+  local matName = self._petData:GetPetStaticBody(PetSkinEffectPath.BODY_PET_INTIMACY)
+  local petCgMat = self._petModle:GetComponent("RawImage").material
+  self._sendGiftEffRawImage.texture = petCgMat:GetTexture("_MainTex")
+  local petMpdoleRt = self._petModle:GetComponent("RectTransform")
+  self._sendGiftEffRawImageRect.sizeDelta = petMpdoleRt.sizeDelta
+  self._sendGiftEffRawImageParentRect.anchoredPosition = petMpdoleRt.anchoredPosition + petMpdoleRt.parent.gameObject:GetComponent("RectTransform").anchoredPosition
+  self._sendGiftEffRawImageRect.localScale = self._petModle:GetComponent("RectTransform").localScale
   self:_RefreshPetAddAttributes(self._curLevel)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift._RefreshPetAddAttributes = function(self, level)
-  -- function num : 0_13 , upvalues : _ENV
-  local attack, defend, hp = (UIPetIntimacyGift.GetAttributesByPetAffinityLv)((self._petData):GetTemplateID(), level)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._attackValueLabel).text = "+" .. attack
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._defendValueLabel).text = "+" .. defend
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._hpValueLabel).text = "+" .. hp
+function UIPetIntimacyGift:_RefreshPetAddAttributes(level)
+  local attack, defend, hp = UIPetIntimacyGift.GetAttributesByPetAffinityLv(self._petData:GetTemplateID(), level)
+  self._attackValueLabel.text = "+" .. attack
+  self._defendValueLabel.text = "+" .. defend
+  self._hpValueLabel.text = "+" .. hp
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift.GetAttributesByPetAffinityLv = function(petTemplateID, level)
-  -- function num : 0_14 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_pet_affinity)({PetID = petTemplateID})
+function UIPetIntimacyGift.GetAttributesByPetAffinityLv(petTemplateID, level)
+  local cfgs = Cfg.cfg_pet_affinity({PetID = petTemplateID})
   local attack, defend, hp = 0, 0, 0
   if cfgs then
-    local cfg = nil
-    for k,v in pairs(cfgs) do
+    local cfg
+    for k, v in pairs(cfgs) do
       if v.AffinityLevel == level then
         cfg = v
         break
       end
     end
-    do
-      do
-        if cfg then
-          attack = cfg.Attack
-          defend = cfg.Defence
-          hp = cfg.Health
-        end
-        return attack, defend, hp
-      end
+    if cfg then
+      attack = cfg.Attack
+      defend = cfg.Defence
+      hp = cfg.Health
     end
   end
+  return attack, defend, hp
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift._InitGiftData = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIPetIntimacyGift:_InitGiftData()
   self._itemCountPerRow = 4
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
-  local itemDatas = (self._itemModule):GetItemListBySubType(ItemSubType.ItemSubType_PetPresent)
+  self._itemModule = GameGlobal.GetModule(ItemModule)
+  local itemDatas = self._itemModule:GetItemListBySubType(ItemSubType.ItemSubType_PetPresent)
   self._giftDatas = {}
-  do
-    if itemDatas then
-      local giftDatas = {}
-      for i = 1, #itemDatas do
-        local giftData = {}
-        giftData.giftData = itemDatas[i]
-        giftData.isSelected = false
-        giftData.selectedCount = 0
-        local templateId = (itemDatas[i]):GetTemplateID()
-        local cfg = (Cfg.cfg_item_pet_present)[templateId]
-        if cfg then
-          giftData.baseAffinity = cfg.BaseAffinity
-          giftData.extAffinity = cfg.ExtAffinity
-          giftData.forceFavorType = cfg.ForceFavorType
-          giftData.functionFavorType = cfg.FunctionFavorType
-          giftData.des = cfg.Desc
-        end
-        giftData.index = 0
-        if self:IsFavorableGift(giftData) then
-          giftData.index = 1
-        end
-        giftDatas[i] = giftData
+  if itemDatas then
+    local giftDatas = {}
+    for i = 1, #itemDatas do
+      local giftData = {}
+      giftData.giftData = itemDatas[i]
+      giftData.isSelected = false
+      giftData.selectedCount = 0
+      local templateId = itemDatas[i]:GetTemplateID()
+      local cfg = Cfg.cfg_item_pet_present[templateId]
+      if cfg then
+        giftData.baseAffinity = cfg.BaseAffinity
+        giftData.extAffinity = cfg.ExtAffinity
+        giftData.forceFavorType = cfg.ForceFavorType
+        giftData.functionFavorType = cfg.FunctionFavorType
+        giftData.des = cfg.Desc
       end
-      self._giftDatas = giftDatas
+      giftData.index = 0
+      if self:IsFavorableGift(giftData) then
+        giftData.index = 1
+      end
+      giftDatas[i] = giftData
     end
-    self._giftDatas = self:_SortGiftDatas(self._giftDatas)
-    self._giftCount = (table.count)(self._giftDatas)
-    self:_CalRow()
+    self._giftDatas = giftDatas
   end
+  self._giftDatas = self:_SortGiftDatas(self._giftDatas)
+  self._giftCount = table.count(self._giftDatas)
+  self:_CalRow()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift._SortGiftDatas = function(self, giftDatas)
-  -- function num : 0_16 , upvalues : _ENV
-  do
-    if not giftDatas then
-      local emptyTable = {}
-      return emptyTable
-    end
-    ;
-    (table.sort)(giftDatas, function(a, b)
-    -- function num : 0_16_0
-    if b.index >= a.index then
-      do return a.index == b.index end
-      do return (b.giftData):GetTemplateID() < (a.giftData):GetTemplateID() end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
+function UIPetIntimacyGift:_SortGiftDatas(giftDatas)
+  if not giftDatas then
+    local emptyTable = {}
+    return emptyTable
   end
-)
-    return giftDatas
-  end
+  table.sort(giftDatas, function(a, b)
+    if a.index ~= b.index then
+      return a.index > b.index
+    end
+    return a.giftData:GetTemplateID() > b.giftData:GetTemplateID()
+  end)
+  return giftDatas
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift._RefreshPetAniffityInfo = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local curExp = self._curExp - ((Cfg.cfg_pet_affinity_exp)[self._curLevel]).NeedAffintyExp
+function UIPetIntimacyGift:_RefreshPetAniffityInfo()
+  local curExp = self._curExp - Cfg.cfg_pet_affinity_exp[self._curLevel].NeedAffintyExp
   local percent = curExp / self._curMaxExp
   if self._maxAffinityMaxLevel <= self._curLevel then
-    (self._affinityLevelMaxGo):SetActive(true)
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._curExpLabel).text = self._curMaxExp
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._maxExpLabel).text = self._curMaxExp
+    self._affinityLevelMaxGo:SetActive(true)
+    self._curExpLabel.text = self._curMaxExp
+    self._maxExpLabel.text = self._curMaxExp
     percent = 1
   else
-    ;
-    (self._affinityLevelMaxGo):SetActive(false)
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._curExpLabel).text = curExp
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._maxExpLabel).text = self._curMaxExp
+    self._affinityLevelMaxGo:SetActive(false)
+    self._curExpLabel.text = curExp
+    self._maxExpLabel.text = self._curMaxExp
   end
-  if self._maxAffinityMaxLevel <= self._realLevel then
-    (self._addExpGo):SetActive(false)
+  if self._realLevel >= self._maxAffinityMaxLevel then
+    self._addExpGo:SetActive(false)
+  elseif self._addExp ~= 0 then
+    self._addExpGo:SetActive(true)
+    self._addExpLabel.text = "+" .. self._addExp
   else
-    if self._addExp ~= 0 then
-      (self._addExpGo):SetActive(true)
-      -- DECOMPILER ERROR at PC54: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._addExpLabel).text = "+" .. self._addExp
-    else
-      ;
-      (self._addExpGo):SetActive(false)
+    self._addExpGo:SetActive(false)
+  end
+  self._affinityLevelLabel.text = self._curLevel
+  self._affinityExpBar1.fillAmount = percent
+  self._affinityExpBar2.value = percent
+  local cfg = Cfg.cfg_pet_affinity_exp[self._curLevel]
+  if 0 < self._affinityTr.childCount then
+    for i = 1, self._affinityTr.childCount do
+      local cloneText = self._affinityTr:GetChild(i - 1).gameObject:GetComponent("UILocalizationText")
+      cloneText:SetText(StringTable.Get(cfg.Desc))
     end
   end
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._affinityLevelLabel).text = self._curLevel
-  -- DECOMPILER ERROR at PC64: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._affinityExpBar1).fillAmount = percent
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._affinityExpBar2).value = percent
-  local cfg = (Cfg.cfg_pet_affinity_exp)[self._curLevel]
-  if (self._affinityTr).childCount > 0 then
-    for i = 1, (self._affinityTr).childCount do
-      local cloneText = (((self._affinityTr):GetChild(i - 1)).gameObject):GetComponent("UILocalizationText")
-      cloneText:SetText((StringTable.Get)(cfg.Desc))
-    end
+  self._revolvingText:OnRefreshRevolving()
+  if self._realLevel >= self._maxAffinityMaxLevel then
+    self._giveAwayGiftButtonPanelGo:SetActive(true)
+    self._affinityMaxPanelGo:SetActive(false)
+  else
+    self._giveAwayGiftButtonPanelGo:SetActive(true)
+    self._affinityMaxPanelGo:SetActive(false)
   end
-  do
-    ;
-    (self._revolvingText):OnRefreshRevolving()
-    if self._maxAffinityMaxLevel <= self._realLevel then
-      (self._giveAwayGiftButtonPanelGo):SetActive(true)
-      ;
-      (self._affinityMaxPanelGo):SetActive(false)
-    else
-      ;
-      (self._giveAwayGiftButtonPanelGo):SetActive(true)
-      ;
-      (self._affinityMaxPanelGo):SetActive(false)
-    end
-    self:_RefreshPetAddAttributes(self._curLevel)
-  end
+  self:_RefreshPetAddAttributes(self._curLevel)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift._CalRow = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  self._giftRow = (math.ceil)(self._giftCount / self._itemCountPerRow)
+function UIPetIntimacyGift:_CalRow()
+  self._giftRow = math.ceil(self._giftCount / self._itemCountPerRow)
   if self._giftRow < 4 then
     self._giftRow = 4
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift._InitScrollView = function(self)
-  -- function num : 0_19
-  (self._scrollView):InitListView(self._giftRow, function(scrollview, index)
-    -- function num : 0_19_0 , upvalues : self
+function UIPetIntimacyGift:_InitScrollView()
+  self._scrollView:InitListView(self._giftRow, function(scrollview, index)
     return self:_OnGeGiftItem(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift._SetListItemCount = function(self)
-  -- function num : 0_20
-  (self._scrollView):SetListItemCount(self._giftRow)
+function UIPetIntimacyGift:_SetListItemCount()
+  self._scrollView:SetListItemCount(self._giftRow)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift._OnGeGiftItem = function(self, scrollView, index)
-  -- function num : 0_21
+function UIPetIntimacyGift:_OnGeGiftItem(scrollView, index)
   if index < 0 then
     return nil
   end
   local item = scrollView:NewListViewItem("RowItem")
-  local rowPool = (self._intimacyMainController):GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
+  local rowPool = self._intimacyMainController:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
     item.IsInitHandlerCalled = true
     rowPool:SpawnObjects("UIPetIntimacyGiftItem", self._itemCountPerRow)
@@ -596,21 +410,15 @@ UIPetIntimacyGift._OnGeGiftItem = function(self, scrollView, index)
   return item
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift._RefreshGiftItemInfo = function(self, itemWidget, index)
-  -- function num : 0_22
-  itemWidget:Refresh(self._intimacyMainController, self, self._petData, (self._giftDatas)[index])
+function UIPetIntimacyGift:_RefreshGiftItemInfo(itemWidget, index)
+  itemWidget:Refresh(self._intimacyMainController, self, self._petData, self._giftDatas[index])
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift.OnItemClicked = function(self, giftData, isAdd)
-  -- function num : 0_23
+function UIPetIntimacyGift:OnItemClicked(giftData, isAdd)
   if giftData == nil then
     return false
   end
-  if self._realLevel < self._maxAffinityMaxLevel and isAdd and self._maxAffinityMaxLevel <= self._curLevel then
+  if self._realLevel < self._maxAffinityMaxLevel and isAdd and self._curLevel >= self._maxAffinityMaxLevel then
     return false
   end
   local affinityValue = 0
@@ -621,24 +429,21 @@ UIPetIntimacyGift.OnItemClicked = function(self, giftData, isAdd)
     affinityValue = affinityValue + giftData.extAffinity
   end
   if isAdd then
-    self._addExp = self._addExp + (affinityValue)
-    self._curExp = self._curExp + (affinityValue)
+    self._addExp = self._addExp + affinityValue
+    self._curExp = self._curExp + affinityValue
   else
-    self._addExp = self._addExp - (affinityValue)
-    self._curExp = self._curExp - (affinityValue)
+    self._addExp = self._addExp - affinityValue
+    self._curExp = self._curExp - affinityValue
   end
   self:_CalPetData()
   self:_RefreshPetAniffityInfo()
   return true
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift._CalPetData = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIPetIntimacyGift:_CalPetData()
   for i = 1, self._maxAffinityMaxLevel do
-    local expCfg = (Cfg.cfg_pet_affinity_exp)[i]
-    if self._curExp < expCfg.NeedAffintyExp then
+    local expCfg = Cfg.cfg_pet_affinity_exp[i]
+    if expCfg.NeedAffintyExp > self._curExp then
       self._curLevel = i - 1
       break
     end
@@ -646,149 +451,102 @@ UIPetIntimacyGift._CalPetData = function(self)
       self._curLevel = self._maxAffinityMaxLevel
     end
   end
-  do
-    self._curMaxExp = (self._petData):GetPetAffinityMaxExp(self._curLevel)
-  end
+  self._curMaxExp = self._petData:GetPetAffinityMaxExp(self._curLevel)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift.IsFavorableGift = function(self, giftData)
-  -- function num : 0_25
+function UIPetIntimacyGift:IsFavorableGift(giftData)
   if giftData.forceFavorType and self._tags then
     for i = 1, #self._tags do
-      if (self._tags)[i] == giftData.forceFavorType then
+      if self._tags[i] == giftData.forceFavorType then
         return true
       end
     end
   end
-  do
-    if giftData.functionFavorType and self._functionType and giftData.functionFavorType == self._functionType then
-      return true
-    end
-    return false
+  if giftData.functionFavorType and self._functionType and giftData.functionFavorType == self._functionType then
+    return true
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift._ClearButtonClick = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+function UIPetIntimacyGift:_ClearButtonClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift._SendButtonClick = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+function UIPetIntimacyGift:_SendButtonClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   local items = self:_GetSelectedGiftItems()
-  if (table.count)(items) <= 0 then
-    return 
+  if table.count(items) <= 0 then
+    return
   end
   if self._maxAffinityMaxLevel <= self._realLevel then
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_affinity_level_has_reachmax"), function(param)
-    -- function num : 0_27_0 , upvalues : self, _ENV, items
-    (self._intimacyMainController):Lock("_SendButtonClick")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self._SendGiftMsg, self, items)
-  end
-, nil, function(param)
-    -- function num : 0_27_1
-  end
-, nil)
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_affinity_level_has_reachmax"), function(param)
+      self._intimacyMainController:Lock("_SendButtonClick")
+      GameGlobal.TaskManager():StartTask(self._SendGiftMsg, self, items)
+    end, nil, function(param)
+    end, nil)
   else
-    ;
-    (self._intimacyMainController):Lock("_SendButtonClick")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self._SendGiftMsg, self, items)
+    self._intimacyMainController:Lock("_SendButtonClick")
+    GameGlobal.TaskManager():StartTask(self._SendGiftMsg, self, items)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift._SendGiftMsg = function(self, TT, items)
-  -- function num : 0_28 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  local res, replay = petModule:RequestGivePetPresent(TT, (self._petData):GetPstID(), items)
-  ;
-  (self._intimacyMainController):UnLock("_SendButtonClick")
+function UIPetIntimacyGift:_SendGiftMsg(TT, items)
+  local petModule = GameGlobal.GetModule(PetModule)
+  local res, replay = petModule:RequestGivePetPresent(TT, self._petData:GetPstID(), items)
+  self._intimacyMainController:UnLock("_SendButtonClick")
   if res:GetSucc() then
     self:ShowEff()
     local lvOld = self._curLevel
     self:Refresh()
     local lvNew = self._curLevel
     if lvOld < lvNew then
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIPetIntimacyLevelUp", (self._petData):GetTemplateID(), (self._petData):GetSkinId(), lvOld, lvNew)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSendGiftAndLevelUp)
+      GameGlobal.UIStateManager():ShowDialog("UIPetIntimacyLevelUp", self._petData:GetTemplateID(), self._petData:GetSkinId(), lvOld, lvNew)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSendGiftAndLevelUp)
       self:ShowEffLevelUp()
     end
     self:_PickPetTaskReward(replay.m_task_ids)
     local tab = {}
     if replay.trigger_story_event_id and replay.trigger_story_event_id ~= 0 then
-      (table.insert)(tab, replay.trigger_story_event_id)
+      table.insert(tab, replay.trigger_story_event_id)
     end
-    ;
-    (Log.debug)("###[UIPetIntimacyGift] send gift succ , story count == ", (table.count)(tab))
-    if #tab > 0 then
+    Log.debug("###[UIPetIntimacyGift] send gift succ , story count == ", table.count(tab))
+    if 0 < #tab then
       for i = 1, #tab do
         local storyid = tab[i]
-        -- DECOMPILER ERROR at PC85: Confused about usage of register: R14 in 'UnsetPending'
-
-        ;
-        (self._storyIds)[#self._storyIds + 1] = storyid
+        self._storyIds[#self._storyIds + 1] = storyid
       end
     end
-    do
-      do
-        ;
-        (Log.debug)("###[UIPetIntimacyGift] send gift succ , self._storyIds count == ", (table.count)(self._storyIds))
-        self:CheckStoryBtn()
-        ;
-        (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundGiveGift)
-        self:_PlayVoice(self._hasFavorableGift)
-        ;
-        (Log.error)("###[UIPetIntimacyGift] RequestGivePetPresent err:", res.m_result)
-      end
-    end
+    Log.debug("###[UIPetIntimacyGift] send gift succ , self._storyIds count == ", table.count(self._storyIds))
+    self:CheckStoryBtn()
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundGiveGift)
+    self:_PlayVoice(self._hasFavorableGift)
+  else
+    Log.error("###[UIPetIntimacyGift] RequestGivePetPresent err:", res.m_result)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift.ShowEff = function(self)
-  -- function num : 0_29
-  (self._sendGiftEff):SetActive(false)
-  ;
-  (self._sendGiftEff):SetActive(true)
+function UIPetIntimacyGift:ShowEff()
+  self._sendGiftEff:SetActive(false)
+  self._sendGiftEff:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift.ShowEffLevelUp = function(self)
-  -- function num : 0_30
-  (self._effLevelUp):SetActive(false)
-  ;
-  (self._effLevelUp):SetActive(true)
+function UIPetIntimacyGift:ShowEffLevelUp()
+  self._effLevelUp:SetActive(false)
+  self._effLevelUp:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift._GetSelectedGiftItems = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function UIPetIntimacyGift:_GetSelectedGiftItems()
   self._hasFavorableGift = false
   local items = {}
-  local giftCount = (table.count)(self._giftDatas)
+  local giftCount = table.count(self._giftDatas)
   for i = 1, giftCount do
-    local giftData = (self._giftDatas)[i]
+    local giftData = self._giftDatas[i]
     if giftData.isSelected then
       local item = ItemAsset:New()
-      item.assetid = (giftData.giftData):GetID()
+      item.assetid = giftData.giftData:GetID()
       item.count = giftData.selectedCount
-      ;
-      (table.insert)(items, item)
+      table.insert(items, item)
       if self:IsFavorableGift(giftData) then
         self._hasFavorableGift = true
       end
@@ -797,98 +555,67 @@ UIPetIntimacyGift._GetSelectedGiftItems = function(self)
   return items
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift._PickPetTaskReward = function(self, taskIds, storyIds)
-  -- function num : 0_32 , upvalues : _ENV
+function UIPetIntimacyGift:_PickPetTaskReward(taskIds, storyIds)
   if taskIds == nil or #taskIds <= 0 then
-    return 
+    return
   else
-    local taskCfg = (Cfg.cfg_pet_task)[taskIds[1]]
+    local taskCfg = Cfg.cfg_pet_task[taskIds[1]]
     local storyId = taskCfg.StoryID
-    if storyId and storyId > 0 then
-      (self._intimacyMainController):ShowDialog("UIStoryBanner", storyId, StoryBannerShowType.HalfPortrait)
+    if storyId and 0 < storyId then
+      self._intimacyMainController:ShowDialog("UIStoryBanner", storyId, StoryBannerShowType.HalfPortrait)
     end
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift.randomEventTipsOnClick = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  (Log.debug)("###[UIPetIntimacyGift] 点击剧情按钮看剧情 !")
+function UIPetIntimacyGift:randomEventTipsOnClick()
+  Log.debug("###[UIPetIntimacyGift] 点击剧情按钮看剧情 !")
   if self._storyIds and #self._storyIds > 0 then
-    local eventid = (self._storyIds)[1]
-    ;
-    (Log.debug)("###[UIPetIntimacyGift] 看剧情成功,准备请求 , id --> ", eventid)
-    local cfg_pet_story = (Cfg.cfg_pet_story)[eventid]
+    local eventid = self._storyIds[1]
+    Log.debug("###[UIPetIntimacyGift] 看剧情成功,准备请求 , id --> ", eventid)
+    local cfg_pet_story = Cfg.cfg_pet_story[eventid]
     if not cfg_pet_story then
-      (Log.error)("###[UIPetIntimacyGift] cfg_pet_story is nil ! id --> ", eventid)
+      Log.error("###[UIPetIntimacyGift] cfg_pet_story is nil ! id --> ", eventid)
     end
     local storyid = cfg_pet_story.StoryID
-    local cfg_aircraft_pet_stroy_refresh = (Cfg.cfg_aircraft_pet_stroy_refresh)[eventid]
+    local cfg_aircraft_pet_stroy_refresh = Cfg.cfg_aircraft_pet_stroy_refresh[eventid]
     if not cfg_aircraft_pet_stroy_refresh then
-      (Log.error)("###[UIPetIntimacyGift] cfg_aircraft_pet_stroy_refresh is nil ! id --> ", eventid)
+      Log.error("###[UIPetIntimacyGift] cfg_aircraft_pet_stroy_refresh is nil ! id --> ", eventid)
     end
     local type = cfg_aircraft_pet_stroy_refresh.TriggerType
-    ;
-    (self._intimacyMainController):Lock("UIPetIntimacyGift:randomEventTipsOnClick")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.OnrandomEventTipsOnClick, self, type, storyid, eventid)
+    self._intimacyMainController:Lock("UIPetIntimacyGift:randomEventTipsOnClick")
+    GameGlobal.TaskManager():StartTask(self.OnrandomEventTipsOnClick, self, type, storyid, eventid)
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift.OnrandomEventTipsOnClick = function(self, TT, type, storyid, eventid)
-  -- function num : 0_34 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  local res = petModule:RequestPetViewTriggeredStory(TT, (self._petData):GetPstID(), type, eventid)
-  ;
-  (self._intimacyMainController):UnLock("UIPetIntimacyGift:randomEventTipsOnClick")
+function UIPetIntimacyGift:OnrandomEventTipsOnClick(TT, type, storyid, eventid)
+  local petModule = GameGlobal.GetModule(PetModule)
+  local res = petModule:RequestPetViewTriggeredStory(TT, self._petData:GetPstID(), type, eventid)
+  self._intimacyMainController:UnLock("UIPetIntimacyGift:randomEventTipsOnClick")
   if res:GetSucc() then
-    (Log.debug)("###[UIPetIntimacyGift] 可以看剧情,开始播放 , storyid --> ", storyid)
-    ;
-    (self._intimacyMainController):ShowDialog("UIStoryController", storyid, function()
-    -- function num : 0_34_0 , upvalues : self, type, eventid
-    self:EndStoryDialog(type, eventid)
-  end
-)
+    Log.debug("###[UIPetIntimacyGift] 可以看剧情,开始播放 , storyid --> ", storyid)
+    self._intimacyMainController:ShowDialog("UIStoryController", storyid, function()
+      self:EndStoryDialog(type, eventid)
+    end)
   else
-    ;
-    (Log.error)("###[UIPetIntimacyGift] OnrandomEventTipsOnClick succ false --> ", res:GetResult())
+    Log.error("###[UIPetIntimacyGift] OnrandomEventTipsOnClick succ false --> ", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGift.EndStoryDialog = function(self, type, eventid)
-  -- function num : 0_35 , upvalues : _ENV
-  (self._intimacyMainController):Lock("UIPetIntimacyGift:EndStoryDialog")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_35_0 , upvalues : _ENV, self, type, eventid
-    local petModule = (GameGlobal.GetModule)(PetModule)
-    local res, replay = petModule:RequestPetFinishTriggeredStory(TT, (self._petData):GetPstID(), type, eventid)
-    ;
-    (self._intimacyMainController):UnLock("UIPetIntimacyGift:EndStoryDialog")
+function UIPetIntimacyGift:EndStoryDialog(type, eventid)
+  self._intimacyMainController:Lock("UIPetIntimacyGift:EndStoryDialog")
+  GameGlobal.TaskManager():StartTask(function(TT)
+    local petModule = GameGlobal.GetModule(PetModule)
+    local res, replay = petModule:RequestPetFinishTriggeredStory(TT, self._petData:GetPstID(), type, eventid)
+    self._intimacyMainController:UnLock("UIPetIntimacyGift:EndStoryDialog")
     if res:GetSucc() then
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", replay.reward, function()
-      -- function num : 0_35_0_0 , upvalues : _ENV, self
-      (Log.debug)("###[UIPetIntimacyGift] 看完剧情，移除剧情!")
-      ;
-      (table.remove)(self._storyIds, 1)
-      self:CheckStoryBtn()
-    end
-)
-      ;
-      (Log.debug)("###[UIPetIntimacyGift] story Look end")
+      GameGlobal.UIStateManager():ShowDialog("UIGetItemController", replay.reward, function()
+        Log.debug("###[UIPetIntimacyGift] 看完剧情，移除剧情!")
+        table.remove(self._storyIds, 1)
+        self:CheckStoryBtn()
+      end)
+      Log.debug("###[UIPetIntimacyGift] story Look end")
     else
-      ;
-      (Log.error)("###[UIPetIntimacyGift] story Look end res-->", res:GetResult())
+      Log.error("###[UIPetIntimacyGift] story Look end res-->", res:GetResult())
     end
-  end
-)
+  end)
 end
-
-

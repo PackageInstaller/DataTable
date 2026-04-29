@@ -1,100 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/skill_range_outline_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillRangeOutlineComponent", Object)
 SkillRangeOutlineComponent = SkillRangeOutlineComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillRangeOutlineComponent.Constructor = function(self, pieceType, isPreview)
-  -- function num : 0_0
+function SkillRangeOutlineComponent:Constructor(pieceType, isPreview)
   self._pieceType = pieceType
   self._isPreview = isPreview
   self._isDestroy = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRangeOutlineComponent.SetPieceType = function(self, pieceType)
-  -- function num : 0_1
+function SkillRangeOutlineComponent:SetPieceType(pieceType)
   self._pieceType = pieceType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRangeOutlineComponent.SetIsPreview = function(self, isPreview)
-  -- function num : 0_2
+function SkillRangeOutlineComponent:SetIsPreview(isPreview)
   self._isPreview = isPreview
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRangeOutlineComponent.GetPieceType = function(self)
-  -- function num : 0_3
+function SkillRangeOutlineComponent:GetPieceType()
   return self._pieceType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRangeOutlineComponent.IsPreview = function(self)
-  -- function num : 0_4
+function SkillRangeOutlineComponent:IsPreview()
   return self._isPreview
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRangeOutlineComponent.SetIsDestroy = function(self, isDestroy)
-  -- function num : 0_5
+function SkillRangeOutlineComponent:SetIsDestroy(isDestroy)
   self._isDestroy = isDestroy
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRangeOutlineComponent.IsDestroy = function(self)
-  -- function num : 0_6
+function SkillRangeOutlineComponent:IsDestroy()
   return self._isDestroy
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SkillRangeOutline = function(self)
-  -- function num : 0_7
-  return self:GetComponent((self.WEComponentsEnum).SkillRangeOutline)
+function Entity:SkillRangeOutline()
+  return self:GetComponent(self.WEComponentsEnum.SkillRangeOutline)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasSkillRangeOutline = function(self)
-  -- function num : 0_8
-  return self:HasComponent((self.WEComponentsEnum).SkillRangeOutline)
+function Entity:HasSkillRangeOutline()
+  return self:HasComponent(self.WEComponentsEnum.SkillRangeOutline)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddSkillRangeOutline = function(self, pieceType)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).SkillRangeOutline
+function Entity:AddSkillRangeOutline(pieceType)
+  local index = self.WEComponentsEnum.SkillRangeOutline
   local component = SkillRangeOutlineComponent:New(pieceType)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceSkillRangeOutline = function(self, pieceType, isPreview)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).SkillRangeOutline
+function Entity:ReplaceSkillRangeOutline(pieceType, isPreview)
+  local index = self.WEComponentsEnum.SkillRangeOutline
   local component = SkillRangeOutlineComponent:New(pieceType, isPreview)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveSkillRangeOutline = function(self)
-  -- function num : 0_11
+function Entity:RemoveSkillRangeOutline()
   if self:HasSkillRangeOutline() then
-    self:RemoveComponent((self.WEComponentsEnum).SkillRangeOutline)
+    self:RemoveComponent(self.WEComponentsEnum.SkillRangeOutline)
   end
 end
-
-

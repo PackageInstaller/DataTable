@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/common/ui_season_maze_msg_box.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeMsgBox", UIController)
 UISeasonMazeMsgBox = UISeasonMazeMsgBox
 _enum("SeasonMazeMsgBoxType", {OkCancel = 0, Ok = 1})
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeMsgBox.InitWidget = function(self)
-  -- function num : 0_0
+function UISeasonMazeMsgBox:InitWidget()
   self._onlyOk = self:GetGameObject("OnlyOk")
   self._okCancel = self:GetGameObject("OkCancel")
   self._titleTex = self:GetUIComponent("UILocalizationText", "title")
@@ -20,10 +13,7 @@ UISeasonMazeMsgBox.InitWidget = function(self)
   self._txtCancel = self:GetUIComponent("UILocalizationText", "txtCancel")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeMsgBox.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeMsgBox:OnShow(uiParams)
   self:InitWidget()
   self._title = uiParams[1]
   self._desc = uiParams[2]
@@ -33,82 +23,54 @@ UISeasonMazeMsgBox.OnShow = function(self, uiParams)
   self._cancelCb = uiParams[6]
   self._cancelParams = uiParams[7]
   self._afterShowCb = uiParams[8]
-  if (string.isnullorempty)(self._title) then
-    (self._titleTex):SetText("")
-    ;
-    (self._titleTex2):SetText("")
+  if string.isnullorempty(self._title) then
+    self._titleTex:SetText("")
+    self._titleTex2:SetText("")
   else
-    ;
-    (self._titleTex):SetText(self._title)
-    ;
-    (self._titleTex2):SetText(self._title)
+    self._titleTex:SetText(self._title)
+    self._titleTex2:SetText(self._title)
   end
-  if (string.isnullorempty)(self._desc) then
-    (self._descTex):SetText("")
+  if string.isnullorempty(self._desc) then
+    self._descTex:SetText("")
   else
-    ;
-    (self._descTex):SetText(self._desc)
+    self._descTex:SetText(self._desc)
   end
-  ;
-  (self._onlyOk):SetActive(self._uiType == SeasonMazeMsgBoxType.Ok)
-  ;
-  (self._okCancel):SetActive(self._uiType == SeasonMazeMsgBoxType.OkCancel)
+  self._onlyOk:SetActive(self._uiType == SeasonMazeMsgBoxType.Ok)
+  self._okCancel:SetActive(self._uiType == SeasonMazeMsgBoxType.OkCancel)
   if self._afterShowCb then
-    (self._afterShowCb)(self)
+    self._afterShowCb(self)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeMsgBox.CancelBtnOnClick = function(self, go)
-  -- function num : 0_2
+function UISeasonMazeMsgBox:CancelBtnOnClick(go)
   if self._cancelCb then
-    (self._cancelCb)(self._cancelParams)
+    self._cancelCb(self._cancelParams)
   end
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeMsgBox.OkBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UISeasonMazeMsgBox:OkBtnOnClick(go)
   if self._okCb then
-    (self._okCb)(self._okParams)
+    self._okCb(self._okParams)
   end
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeMsgBox.OnlyOkBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UISeasonMazeMsgBox:OnlyOkBtnOnClick(go)
   if self._okCb then
-    (self._okCb)(self._okParams)
+    self._okCb(self._okParams)
   end
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeMsgBox.SetOnlyOkBtnTxt = function(self, txt)
-  -- function num : 0_5
-  (self._txtOnlyOk):SetText(txt)
+function UISeasonMazeMsgBox:SetOnlyOkBtnTxt(txt)
+  self._txtOnlyOk:SetText(txt)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeMsgBox.SetOkCancelBtnTxt = function(self, okTxt, cancelTxt)
-  -- function num : 0_6
-  (self._txtOK):SetText(okTxt)
-  ;
-  (self._txtCancel):SetText(cancelTxt)
+function UISeasonMazeMsgBox:SetOkCancelBtnTxt(okTxt, cancelTxt)
+  self._txtOK:SetText(okTxt)
+  self._txtCancel:SetText(cancelTxt)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeMsgBox.OnHide = function(self)
-  -- function num : 0_7
+function UISeasonMazeMsgBox:OnHide()
 end
-
-

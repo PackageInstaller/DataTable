@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/switch_body_area_dir_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local SwitchBodyAreaDirType = {None = 0, Left = 1, Right = 2, Turn = 3}
+local SwitchBodyAreaDirType = {
+  None = 0,
+  Left = 1,
+  Right = 2,
+  Turn = 3
+}
 _enum("SwitchBodyAreaDirType", SwitchBodyAreaDirType)
-

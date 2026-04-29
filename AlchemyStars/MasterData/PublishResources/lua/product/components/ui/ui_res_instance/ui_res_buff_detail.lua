@@ -1,49 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_res_instance/ui_res_buff_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIResBuffDetail", UICustomWidget)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UIResBuffDetail.OnShow = function(self)
-  -- function num : 0_0
+function UIResBuffDetail:OnShow()
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._des = self:GetUIComponent("UILocalizationText", "Des")
   self._maskGo = self:GetGameObject("Mask")
   self._bg = self:GetGameObject("bg")
-  ;
-  (self._maskGo):SetActive(false)
+  self._maskGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResBuffDetail.SetData = function(self, buffData, rootWorldPos, offset)
-  -- function num : 0_1
-  (self._maskGo):SetActive(true)
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._bg).transform).position = rootWorldPos
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._bg).transform).localPosition = ((self._bg).transform).localPosition + offset
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._name).text = buffData.name
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._des).text = buffData.des
+function UIResBuffDetail:SetData(buffData, rootWorldPos, offset)
+  self._maskGo:SetActive(true)
+  self._bg.transform.position = rootWorldPos
+  self._bg.transform.localPosition = self._bg.transform.localPosition + offset
+  self._name.text = buffData.name
+  self._des.text = buffData.des
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResBuffDetail.MaskOnClick = function(self, go)
-  -- function num : 0_2
-  (self._maskGo):SetActive(false)
+function UIResBuffDetail:MaskOnClick(go)
+  self._maskGo:SetActive(false)
 end
-
-

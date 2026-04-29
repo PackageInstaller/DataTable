@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_attack_and_summon_with_farest_board_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayAttackAndSummonWithFarestBoardInstruction", BaseInstruction)
 PlayAttackAndSummonWithFarestBoardInstruction = PlayAttackAndSummonWithFarestBoardInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayAttackAndSummonWithFarestBoardInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayAttackAndSummonWithFarestBoardInstruction:Constructor(paramList)
   self._hitEffectID = tonumber(paramList.hitEffectID) or 0
   self._flyEffectID = tonumber(paramList.flyEffectID) or 0
   self._time = tonumber(paramList.time)
@@ -17,30 +10,30 @@ PlayAttackAndSummonWithFarestBoardInstruction.Constructor = function(self, param
   self._animNameDown = "movedown"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAttackAndSummonWithFarestBoardInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayAttackAndSummonWithFarestBoardInstruction:GetCacheResource()
   local t = {}
   if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    })
   end
-  if self._flyEffectID and self._flyEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._flyEffectID]).ResPath, 1})
+  if self._flyEffectID and 0 < self._flyEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._flyEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAttackAndSummonWithFarestBoardInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayAttackAndSummonWithFarestBoardInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   local summonEverythingResult = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SummonEverything)
   if not damageResultArray then
-    return 
+    return
   end
   local listWaitTask = {}
   local world = casterEntity:GetOwnerWorld()
@@ -57,61 +50,62 @@ PlayAttackAndSummonWithFarestBoardInstruction.DoInstruction = function(self, TT,
   local attackRangeEnd = scopeResultEnd:GetAttackRange()
   local posOld = attackRangeStart[1]
   local posNew = attackRangeEnd[1]
-  local distance = (Vector2.Distance)(posNew, posOld)
+  local distance = Vector2.Distance(posNew, posOld)
   local speed = distance / self._time * 1000
   local oneGridFlyTime = self._time / distance
-  casterEntity:SetAnimatorControllerTriggers({self._animNameUp})
+  casterEntity:SetAnimatorControllerTriggers({
+    self._animNameUp
+  })
   YIELD(TT, 667)
   casterEntity:SetPosition(posOld)
-  casterEntity:SetAnimatorControllerTriggers({self._animNameDown})
+  casterEntity:SetAnimatorControllerTriggers({
+    self._animNameDown
+  })
   YIELD(TT, 500)
   YIELD(TT)
-  do
-    while casterEntity:HasGridMove() do
-      local gridMoveComponent = casterEntity:GridMove()
+  while casterEntity:HasGridMove() do
+    local gridMoveComponent = casterEntity:GridMove()
+    YIELD(TT)
+  end
+  local flyEffect = sEffect:CreateEffect(self._flyEffectID, casterEntity)
+  casterEntity:AddGridMove(speed, posNew, posOld)
+  local attackRangeSummon = scopeResultSummon:GetAttackRange()
+  local distanceStartToSummon = Vector2.Distance(posOld, attackRangeSummon[1])
+  YIELD(TT, oneGridFlyTime * distanceStartToSummon)
+  if summonEverythingResult and table.count(summonEverythingResult) > 0 then
+    local sPlaySkillInstruction = world:GetService("PlaySkillInstruction")
+    for _, summoResult in ipairs(summonEverythingResult) do
+      local nTaskID = GameGlobal.TaskManager():CoreGameStartTask(sPlaySkillInstruction.ShowSummonAction, sPlaySkillInstruction, world, summoResult)
+      table.insert(listWaitTask, nTaskID)
+    end
+  end
+  YIELD(TT, oneGridFlyTime)
+  if damageResultArray and table.count(damageResultArray) > 0 then
+    for _, damageResult in ipairs(damageResultArray) do
+      local targetEntityID = damageResult:GetTargetID()
+      local targetEntity = world:GetEntityByID(targetEntityID)
+      local damageInfo = damageResult:GetDamageInfo(1)
+      local damageGridPos = damageResult:GetGridPos()
+      local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName("Hit"):SetHandleBeHitParam_HitEffectID(self._hitEffectID):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damageGridPos):SetHandleBeHitParam_HitTurnTarget(TurnToTargetType.None):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(false):SetHandleBeHitParam_SkillID(skillID)
+      playSkillService:HandleBeHit(TT, beHitParam)
+    end
+  end
+  while casterEntity:HasGridMove() do
+    YIELD(TT)
+  end
+  world:DestroyEntity(flyEffect)
+  casterEntity:SetAnimatorControllerTriggers({
+    self._animNameUp
+  })
+  YIELD(TT, 667)
+  casterEntity:SetPosition(gridPos)
+  casterEntity:SetAnimatorControllerTriggers({
+    self._animNameDown
+  })
+  YIELD(TT, 500)
+  if table.count(listWaitTask) > 0 then
+    while not TaskHelper:GetInstance():IsAllTaskFinished(listWaitTask) do
       YIELD(TT)
-    end
-    local flyEffect = sEffect:CreateEffect(self._flyEffectID, casterEntity)
-    casterEntity:AddGridMove(speed, posNew, posOld)
-    local attackRangeSummon = scopeResultSummon:GetAttackRange()
-    local distanceStartToSummon = (Vector2.Distance)(posOld, attackRangeSummon[1])
-    YIELD(TT, oneGridFlyTime * distanceStartToSummon)
-    if summonEverythingResult and (table.count)(summonEverythingResult) > 0 then
-      local sPlaySkillInstruction = world:GetService("PlaySkillInstruction")
-      for _,summoResult in ipairs(summonEverythingResult) do
-        local nTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(sPlaySkillInstruction.ShowSummonAction, sPlaySkillInstruction, world, summoResult)
-        ;
-        (table.insert)(listWaitTask, nTaskID)
-      end
-    end
-    do
-      YIELD(TT, oneGridFlyTime)
-      if damageResultArray and (table.count)(damageResultArray) > 0 then
-        for _,damageResult in ipairs(damageResultArray) do
-          local targetEntityID = damageResult:GetTargetID()
-          local targetEntity = world:GetEntityByID(targetEntityID)
-          local damageInfo = damageResult:GetDamageInfo(1)
-          local damageGridPos = damageResult:GetGridPos()
-          local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName("Hit")):SetHandleBeHitParam_HitEffectID(self._hitEffectID)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damageGridPos)):SetHandleBeHitParam_HitTurnTarget(TurnToTargetType.None)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(false)):SetHandleBeHitParam_SkillID(skillID)
-          playSkillService:HandleBeHit(TT, beHitParam)
-        end
-      end
-      do
-        while casterEntity:HasGridMove() do
-          YIELD(TT)
-        end
-        world:DestroyEntity(flyEffect)
-        casterEntity:SetAnimatorControllerTriggers({self._animNameUp})
-        YIELD(TT, 667)
-        casterEntity:SetPosition(gridPos)
-        casterEntity:SetAnimatorControllerTriggers({self._animNameDown})
-        YIELD(TT, 500)
-        while (table.count)(listWaitTask) > 0 and not (TaskHelper:GetInstance()):IsAllTaskFinished(listWaitTask) do
-          YIELD(TT)
-        end
-      end
     end
   end
 end
-
-

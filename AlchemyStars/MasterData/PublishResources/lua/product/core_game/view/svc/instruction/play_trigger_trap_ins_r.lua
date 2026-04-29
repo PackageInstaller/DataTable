@@ -1,49 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_trigger_trap_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTriggerTrapInstruction", BaseInstruction)
 PlayTriggerTrapInstruction = PlayTriggerTrapInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTriggerTrapInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayTriggerTrapInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTriggerTrapInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTriggerTrapInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local routineCmpt = (casterEntity:SkillRoutine()):GetResultContainer()
+  local routineCmpt = casterEntity:SkillRoutine():GetResultContainer()
   if not routineCmpt then
-    return 
+    return
   end
   local resultArray = routineCmpt:GetEffectResultsAsArray(SkillEffectType.TriggerTrap)
   if not resultArray then
-    return 
+    return
   end
   local eTrap = {}
-  for _,result in ipairs(resultArray) do
+  for _, result in ipairs(resultArray) do
     local entity = world:GetEntityByID(result:GetEntityID())
     if entity then
-      (table.insert)(eTrap, entity)
+      table.insert(eTrap, entity)
     end
   end
-  if (table.count)(eTrap) == 0 then
-    return 
+  if table.count(eTrap) == 0 then
+    return
   end
   local trapServiceRender = world:GetService("TrapRender")
-  do
-    if casterEntity and (casterEntity:EntityType()):IsAutoBeadSkillHolder() then
-      local teamEntity = (world:Player()):GetCurrentTeamEntity()
-      casterEntity = teamEntity
-    end
-    trapServiceRender:PlayTrapTriggerSkillTasks(TT, eTrap, false, casterEntity)
-    trapServiceRender:DestroyTrapList(TT, eTrap)
+  if casterEntity and casterEntity:EntityType():IsAutoBeadSkillHolder() then
+    local teamEntity = world:Player():GetCurrentTeamEntity()
+    casterEntity = teamEntity
   end
+  trapServiceRender:PlayTrapTriggerSkillTasks(TT, eTrap, false, casterEntity)
+  trapServiceRender:DestroyTrapList(TT, eTrap)
 end
-
-

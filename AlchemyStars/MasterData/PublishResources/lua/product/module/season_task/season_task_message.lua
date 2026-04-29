@@ -1,207 +1,185 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/season_task/season_task_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local season_taskMessageDef = {CLSID_CEventGetSeasonTaskInfoReq = 43000, CLSID_CEventGetSeasonTaskInfoRes = 43001, CLSID_CEventPushUpdateTaskNode = 43002, CLSID_CEventClientSubmitInfoReq = 43003, CLSID_CEventClientSubmitInfoRes = 43004, CLSID_CEventSeasonMiniGameInfoReq = 43005, CLSID_CEventSeasonMiniGameInfoRes = 43006, CLSID_CEventSeasonDebrisMissionReq = 43007, CLSID_CEventSeasonDebrisMissionRes = 43008, CLSID_CEventSeasonCastleReq = 43009, CLSID_CEventSeasonCastleRes = 43010, CLSID_CEventClientSubmitEventPointInfoReq = 43011, CLSID_CEventClientSubmitEventPointInfoRes = 43012}
-;
-(table.append)(MessageDef, season_taskMessageDef)
+local season_taskMessageDef = {
+  CLSID_CEventGetSeasonTaskInfoReq = 43000,
+  CLSID_CEventGetSeasonTaskInfoRes = 43001,
+  CLSID_CEventPushUpdateTaskNode = 43002,
+  CLSID_CEventClientSubmitInfoReq = 43003,
+  CLSID_CEventClientSubmitInfoRes = 43004,
+  CLSID_CEventSeasonMiniGameInfoReq = 43005,
+  CLSID_CEventSeasonMiniGameInfoRes = 43006,
+  CLSID_CEventSeasonDebrisMissionReq = 43007,
+  CLSID_CEventSeasonDebrisMissionRes = 43008,
+  CLSID_CEventSeasonCastleReq = 43009,
+  CLSID_CEventSeasonCastleRes = 43010,
+  CLSID_CEventClientSubmitEventPointInfoReq = 43011,
+  CLSID_CEventClientSubmitEventPointInfoRes = 43012
+}
+table.append(MessageDef, season_taskMessageDef)
 _class("CEventGetSeasonTaskInfoReq", CCallRequestEvent)
 CEventGetSeasonTaskInfoReq = CEventGetSeasonTaskInfoReq
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetSeasonTaskInfoReq.Constructor = function(self)
-  -- function num : 0_0
+function CEventGetSeasonTaskInfoReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventGetSeasonTaskInfoReq._proto = {}
 _class("CEventGetSeasonTaskInfoRes", CCallReplyEvent)
 CEventGetSeasonTaskInfoRes = CEventGetSeasonTaskInfoRes
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetSeasonTaskInfoRes.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CEventGetSeasonTaskInfoRes:Constructor()
   self.n_ret = 0
   self.cur_task_info = client_season_task_info:New()
   self.client_infos = ClientQuestProgressInfo:New()
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventGetSeasonTaskInfoRes._proto = {
-[1] = {"n_ret", "int"}
-, 
-[2] = {"cur_task_info", "client_season_task_info"}
-, 
-[3] = {"client_infos", "ClientQuestProgressInfo"}
+  [1] = {"n_ret", "int"},
+  [2] = {
+    "cur_task_info",
+    "client_season_task_info"
+  },
+  [3] = {
+    "client_infos",
+    "ClientQuestProgressInfo"
+  }
 }
 _class("CEventPushUpdateTaskNode", CSvrPushEvent)
 CEventPushUpdateTaskNode = CEventPushUpdateTaskNode
--- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushUpdateTaskNode.Constructor = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function CEventPushUpdateTaskNode:Constructor()
   self.cur_task_info = client_season_task_info:New()
   self.is_cross_day = false
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventPushUpdateTaskNode._proto = {
-[1] = {"cur_task_info", "client_season_task_info"}
-, 
-[2] = {"is_cross_day", "bool"}
+  [1] = {
+    "cur_task_info",
+    "client_season_task_info"
+  },
+  [2] = {
+    "is_cross_day",
+    "bool"
+  }
 }
 _class("CEventClientSubmitInfoReq", CCallRequestEvent)
 CEventClientSubmitInfoReq = CEventClientSubmitInfoReq
--- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventClientSubmitInfoReq.Constructor = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CEventClientSubmitInfoReq:Constructor()
   self.info = QuestProgress:New()
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventClientSubmitInfoReq._proto = {
-[1] = {"info", "QuestProgress"}
+  [1] = {
+    "info",
+    "QuestProgress"
+  }
 }
 _class("CEventClientSubmitInfoRes", CCallReplyEvent)
 CEventClientSubmitInfoRes = CEventClientSubmitInfoRes
--- DECOMPILER ERROR at PC108: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventClientSubmitInfoRes.Constructor = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function CEventClientSubmitInfoRes:Constructor()
   self.n_ret = 0
   self.info = QuestProgress:New()
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventClientSubmitInfoRes._proto = {
-[1] = {"n_ret", "int"}
-, 
-[2] = {"info", "QuestProgress"}
+  [1] = {"n_ret", "int"},
+  [2] = {
+    "info",
+    "QuestProgress"
+  }
 }
 _class("CEventSeasonMiniGameInfoReq", CCallRequestEvent)
 CEventSeasonMiniGameInfoReq = CEventSeasonMiniGameInfoReq
--- DECOMPILER ERROR at PC130: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventSeasonMiniGameInfoReq.Constructor = function(self)
-  -- function num : 0_5
+function CEventSeasonMiniGameInfoReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC133: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventSeasonMiniGameInfoReq._proto = {}
 _class("CEventSeasonMiniGameInfoRes", CCallReplyEvent)
 CEventSeasonMiniGameInfoRes = CEventSeasonMiniGameInfoRes
--- DECOMPILER ERROR at PC142: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventSeasonMiniGameInfoRes.Constructor = function(self)
-  -- function num : 0_6
+function CEventSeasonMiniGameInfoRes:Constructor()
   self.debris_mission = {}
   self.castle_lv = {}
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventSeasonMiniGameInfoRes._proto = {
-[1] = {"debris_mission", "map<int,int>"}
-, 
-[2] = {"castle_lv", "map<int,int>"}
+  [1] = {
+    "debris_mission",
+    "map<int,int>"
+  },
+  [2] = {
+    "castle_lv",
+    "map<int,int>"
+  }
 }
 _class("CEventSeasonDebrisMissionReq", CCallRequestEvent)
 CEventSeasonDebrisMissionReq = CEventSeasonDebrisMissionReq
--- DECOMPILER ERROR at PC164: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventSeasonDebrisMissionReq.Constructor = function(self)
-  -- function num : 0_7
+function CEventSeasonDebrisMissionReq:Constructor()
   self.mission_id = 0
   self.score = 0
 end
 
--- DECOMPILER ERROR at PC177: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventSeasonDebrisMissionReq._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"score", "int"}
+  [1] = {"mission_id", "int"},
+  [2] = {"score", "int"}
 }
 _class("CEventSeasonDebrisMissionRes", CCallReplyEvent)
 CEventSeasonDebrisMissionRes = CEventSeasonDebrisMissionRes
--- DECOMPILER ERROR at PC186: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventSeasonDebrisMissionRes.Constructor = function(self)
-  -- function num : 0_8
+function CEventSeasonDebrisMissionRes:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventSeasonDebrisMissionRes._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventSeasonCastleReq", CCallRequestEvent)
 CEventSeasonCastleReq = CEventSeasonCastleReq
--- DECOMPILER ERROR at PC203: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventSeasonCastleReq.Constructor = function(self)
-  -- function num : 0_9
+function CEventSeasonCastleReq:Constructor()
   self.id = 0
 end
 
--- DECOMPILER ERROR at PC211: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventSeasonCastleReq._proto = {
-[1] = {"id", "int"}
+  [1] = {"id", "int"}
 }
 _class("CEventSeasonCastleRes", CCallReplyEvent)
 CEventSeasonCastleRes = CEventSeasonCastleRes
--- DECOMPILER ERROR at PC220: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventSeasonCastleRes.Constructor = function(self)
-  -- function num : 0_10
+function CEventSeasonCastleRes:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC228: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventSeasonCastleRes._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventClientSubmitEventPointInfoReq", CCallRequestEvent)
 CEventClientSubmitEventPointInfoReq = CEventClientSubmitEventPointInfoReq
--- DECOMPILER ERROR at PC237: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventClientSubmitEventPointInfoReq.Constructor = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function CEventClientSubmitEventPointInfoReq:Constructor()
   self.info = EvenPointInfo:New()
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventClientSubmitEventPointInfoReq._proto = {
-[1] = {"info", "EvenPointInfo"}
+  [1] = {
+    "info",
+    "EvenPointInfo"
+  }
 }
 _class("CEventClientSubmitEventPointInfoRes", CCallReplyEvent)
 CEventClientSubmitEventPointInfoRes = CEventClientSubmitEventPointInfoRes
--- DECOMPILER ERROR at PC254: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventClientSubmitEventPointInfoRes.Constructor = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function CEventClientSubmitEventPointInfoRes:Constructor()
   self.n_ret = 0
   self.info = EvenPointInfo:New()
 end
 
--- DECOMPILER ERROR at PC267: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventClientSubmitEventPointInfoRes._proto = {
-[1] = {"n_ret", "int"}
-, 
-[2] = {"info", "EvenPointInfo"}
+  [1] = {"n_ret", "int"},
+  [2] = {
+    "info",
+    "EvenPointInfo"
+  }
 }
-

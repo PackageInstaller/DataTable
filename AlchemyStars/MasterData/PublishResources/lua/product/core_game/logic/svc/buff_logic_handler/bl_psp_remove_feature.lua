@@ -1,25 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_psp_remove_feature.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicPSPRemoveFeature", BuffLogicBase)
 BuffLogicPSPRemoveFeature = BuffLogicPSPRemoveFeature
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicPSPRemoveFeature.Constructor = function(self, buffinstance, logicParam)
-  -- function num : 0_0
+function BuffLogicPSPRemoveFeature:Constructor(buffinstance, logicParam)
   self._featureType = logicParam.featureType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicPSPRemoveFeature.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local featureSvc = (self._world):GetService("FeatureLogic")
+function BuffLogicPSPRemoveFeature:DoLogic(notify)
+  local featureSvc = self._world:GetService("FeatureLogic")
   featureSvc:OnBuffRemoveFeature(self._featureType)
   return true
 end
-
-

@@ -1,70 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/asheep_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("ASheepComponent", ICampaignComponent)
 ASheepComponent = ASheepComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ASheepComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ASheepComponent:Constructor()
   self.m_component_info = ASheepComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ASheepComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ASheepComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = ASheepComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ASheepComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function ASheepComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ASheepComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ASheepComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_A_SHEEP
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ASheepComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function ASheepComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ASheepComponent.HandleCompleteASheepMission = function(self, TT, asyncRes, mission_id, score)
-  -- function num : 0_5 , upvalues : _ENV
+function ASheepComponent:HandleCompleteASheepMission(TT, asyncRes, mission_id, score)
   local request = CompleteASheepMissionReq:New()
   request.mission_id = mission_id
   request.score = score
   local response = CompleteASheepMissionRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][ASheepComponent] HandleCompleteASheepMission ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][ASheepComponent] HandleCompleteASheepMission ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).m_info = response.m_info
+  self.m_component_info.m_info = response.m_info
   return response.ret, response.reward
 end
-
-

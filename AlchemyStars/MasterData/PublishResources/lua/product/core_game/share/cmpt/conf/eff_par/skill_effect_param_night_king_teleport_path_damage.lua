@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_night_king_teleport_path_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParamNightKingTeleportPathDamage", SkillDamageEffectParam)
 SkillEffectParamNightKingTeleportPathDamage = SkillEffectParamNightKingTeleportPathDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamNightKingTeleportPathDamage.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamNightKingTeleportPathDamage:Constructor(t)
   self._pathDamageScopeType = t.pathDamageScopeType
   self._pathDamageScopeParam = t.pathDamageScopeParam
   self._pathDamageTargetType = t.pathDamageTargetType
@@ -18,53 +11,30 @@ SkillEffectParamNightKingTeleportPathDamage.Constructor = function(self, t)
   self._finalDamageTargetType = t.finalDamageTargetType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamNightKingTeleportPathDamage.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamNightKingTeleportPathDamage:GetEffectType()
   return SkillEffectType.NightKingTeleportPathDamage
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamNightKingTeleportPathDamage.GetPathDamageScopeType = function(self)
-  -- function num : 0_2
+function SkillEffectParamNightKingTeleportPathDamage:GetPathDamageScopeType()
   return self._pathDamageScopeType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamNightKingTeleportPathDamage.GetPathDamageScopeParam = function(self)
-  -- function num : 0_3
+function SkillEffectParamNightKingTeleportPathDamage:GetPathDamageScopeParam()
   return self._pathDamageScopeParam
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamNightKingTeleportPathDamage.GetPathDamageTargetType = function(self)
-  -- function num : 0_4
+function SkillEffectParamNightKingTeleportPathDamage:GetPathDamageTargetType()
   return self._pathDamageTargetType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamNightKingTeleportPathDamage.GetFinalDamageScopeType = function(self)
-  -- function num : 0_5
+function SkillEffectParamNightKingTeleportPathDamage:GetFinalDamageScopeType()
   return self._finalDamageScopeType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamNightKingTeleportPathDamage.GetFinalDamageScopeParam = function(self)
-  -- function num : 0_6
+function SkillEffectParamNightKingTeleportPathDamage:GetFinalDamageScopeParam()
   return self._finalDamageScopeParam
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamNightKingTeleportPathDamage.GetFinalDamageTargetType = function(self)
-  -- function num : 0_7
+function SkillEffectParamNightKingTeleportPathDamage:GetFinalDamageTargetType()
   return self._finalDamageTargetType
 end
-
-

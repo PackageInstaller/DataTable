@@ -1,32 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_set_scene_obj_visible_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlaySetSceneObjVisibleInstruction", BaseInstruction)
 PlaySetSceneObjVisibleInstruction = PlaySetSceneObjVisibleInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySetSceneObjVisibleInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySetSceneObjVisibleInstruction:Constructor(paramList)
   self._sceneObjName = paramList.sceneObjName
   self._visible = tonumber(paramList.visible)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySetSceneObjVisibleInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySetSceneObjVisibleInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local boardEntity = world:GetRenderBoardEntity()
   local renderBoardCmpt = boardEntity:RenderBoard()
   local sceneGO = renderBoardCmpt:GetSceneGO("SceneRoot")
-  local go = ((GameObjectHelper.FindChild)(sceneGO.transform, self._sceneObjName)).gameObject
-  if self._visible ~= 1 then
-    go:SetActive(not go)
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local go = GameObjectHelper.FindChild(sceneGO.transform, self._sceneObjName).gameObject
+  if go then
+    go:SetActive(self._visible == 1)
   end
 end
-
-

@@ -1,62 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/visit/ui_home_visit_log.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeVisitLog", Object)
 UIHomeVisitLog = UIHomeVisitLog
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeVisitLog.Constructor = function(self, log_info)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomeVisitLog:Constructor(log_info)
   self._palyerName = log_info.nick
   self._speedup = log_info.masks & HomelandVisitMask.HVM_Forge > 0
-  self._water = log_info.masks & HomelandVisitMask.HVM_Cultivation > 0
-  self._takeGift = log_info.masks & HomelandVisitMask.HVM_Item > 0
+  self._water = 0 < log_info.masks & HomelandVisitMask.HVM_Cultivation
+  self._takeGift = 0 < log_info.masks & HomelandVisitMask.HVM_Item
   if self._takeGift then
-    self._giftID = (log_info.item).assetid
-    self._giftCount = (log_info.item).count
+    self._giftID = log_info.item.assetid
+    self._giftCount = log_info.item.count
   end
   self._time = log_info.visit_time
   local actionCount = 1
   local params = {}
   if self._speedup then
     actionCount = actionCount + 1
-    ;
-    (table.insert)(params, (StringTable.Get)("str_homeland_visit_log_action2"))
+    table.insert(params, StringTable.Get("str_homeland_visit_log_action2"))
   end
   if self._water then
     actionCount = actionCount + 1
-    ;
-    (table.insert)(params, (StringTable.Get)("str_homeland_visit_log_action3"))
+    table.insert(params, StringTable.Get("str_homeland_visit_log_action3"))
   end
   if self._takeGift then
     actionCount = actionCount + 1
-    local cfg = (Cfg.cfg_item)[self._giftID]
+    local cfg = Cfg.cfg_item[self._giftID]
     if cfg == nil then
-      (Log.exception)("cfg_item中找不到领取的物品:", self._giftID)
+      Log.exception("cfg_item中找不到领取的物品:", self._giftID)
     end
-    local name = (StringTable.Get)(cfg.Name)
-    ;
-    (table.insert)(params, (StringTable.Get)("str_homeland_visit_log_action4", name, self._giftCount))
+    local name = StringTable.Get(cfg.Name)
+    table.insert(params, StringTable.Get("str_homeland_visit_log_action4", name, self._giftCount))
   end
   local logKey = "str_homeland_visit_log_type" .. actionCount
-  self._log = (StringTable.Get)(logKey, self._palyerName, (table.unpack)(params, 1, actionCount))
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
+  self._log = StringTable.Get(logKey, self._palyerName, table.unpack(params, 1, actionCount))
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitLog.Content = function(self)
-  -- function num : 0_1
+function UIHomeVisitLog:Content()
   return self._log
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitLog.Time = function(self)
-  -- function num : 0_2
+function UIHomeVisitLog:Time()
   return self._time
 end
-
-

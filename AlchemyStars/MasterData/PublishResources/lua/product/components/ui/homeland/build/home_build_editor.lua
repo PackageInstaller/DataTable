@@ -1,42 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/build/home_build_editor.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeBuildEditor", Object)
 HomeBuildEditor = HomeBuildEditor
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeBuildEditor.Constructor = function(self, input)
-  -- function num : 0_0
+function HomeBuildEditor:Constructor(input)
   self._mdfs = {}
   self._curMdf = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildEditor.Enter = function(self)
-  -- function num : 0_1
+function HomeBuildEditor:Enter()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildEditor.Exit = function(self)
-  -- function num : 0_2
+function HomeBuildEditor:Exit()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildEditor.Update = function(self, dt)
-  -- function num : 0_3
+function HomeBuildEditor:Update(dt)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildEditor.Dispose = function(self)
-  -- function num : 0_4
+function HomeBuildEditor:Dispose()
   self._mdfs = nil
   self._curMdf = nil
 end
-
-

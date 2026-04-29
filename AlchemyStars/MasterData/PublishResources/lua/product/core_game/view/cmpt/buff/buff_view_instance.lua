@@ -1,73 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/buff/buff_view_instance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewInstance", Object)
 BuffViewInstance = BuffViewInstance
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewInstance.Constructor = function(self, entity, seq, buffID, context)
-  -- function num : 0_0
+function BuffViewInstance:Constructor(entity, seq, buffID, context)
   self._seq = seq
   self._entity = entity
   self._world = entity:GetOwnerWorld()
-  local sConfig = (self._world):GetService("Config")
+  local sConfig = self._world:GetService("Config")
   self._buffConfigData = sConfig:GetBuffConfigData(buffID)
-  self._buffLayerName = self:ParseBuffLayerName((self._buffConfigData):GetBuffEffectType())
-  self._maxBuffRoundCount = ((self._buffConfigData):GetData()).RoundCount
+  self._buffLayerName = self:ParseBuffLayerName(self._buffConfigData:GetBuffEffectType())
+  self._maxBuffRoundCount = self._buffConfigData:GetData().RoundCount
   self._buffRoundCount = 0
   self._show = false
   self._unload = false
   self._buffEffectEntityID = 0
   self._buffViewDic = {}
   self._buffViewContext = context
-  self._maxCountDown = ((self._buffConfigData):GetData()).CountDown
+  self._maxCountDown = self._buffConfigData:GetData().CountDown
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.BuffSeq = function(self)
-  -- function num : 0_1
+function BuffViewInstance:BuffSeq()
   return self._seq
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.AddBuffView = function(self, notify, viewName, buffResult, triggers)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffViewInstance:AddBuffView(notify, viewName, buffResult, triggers)
   local notifyType = notify:GetNotifyType()
   local viewProto = _G["BuffView" .. viewName]
   if viewProto then
-    local views = (self._buffViewDic)[notifyType]
-    if not views then
-      views = {}
-    end
+    local views = self._buffViewDic[notifyType]
+    views = views or {}
     local view = viewProto:New(self, buffResult, viewName, triggers, notify)
     views[#views + 1] = view
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R9 in 'UnsetPending'
-
-    if #views > 0 then
-      (self._buffViewDic)[notifyType] = views
+    if 0 < #views then
+      self._buffViewDic[notifyType] = views
     end
-    local detailLogger = (self._world):GetDetailMatchLogger()
+    local detailLogger = self._world:GetDetailMatchLogger()
     detailLogger:RecordAddBuffView(view)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetBuffView = function(self, notify)
-  -- function num : 0_3 , upvalues : _ENV
+function BuffViewInstance:GetBuffView(notify)
   if not notify then
-    return 
+    return
   end
   local notifyType = notify:GetNotifyType()
-  local views = (self._buffViewDic)[notifyType]
+  local views = self._buffViewDic[notifyType]
   local ret = {}
   local newViews = {}
   if views then
-    for i,view in ipairs(views) do
+    for i, view in ipairs(views) do
       if view:CheckNotifyAndTriggers(notify) then
         ret[#ret + 1] = view
       else
@@ -75,52 +55,31 @@ BuffViewInstance.GetBuffView = function(self, notify)
       end
     end
   end
-  do
-    if #newViews == 0 then
-      newViews = nil
-    end
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._buffViewDic)[notifyType] = newViews
-    return ret
+  if #newViews == 0 then
+    newViews = nil
   end
+  self._buffViewDic[notifyType] = newViews
+  return ret
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.HasBuffView = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  do return next(self._buffViewDic) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function BuffViewInstance:HasBuffView()
+  return next(self._buffViewDic) ~= nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.SetShow = function(self)
-  -- function num : 0_5
+function BuffViewInstance:SetShow()
   self._show = true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.IsShow = function(self)
-  -- function num : 0_6
+function BuffViewInstance:IsShow()
   return self._show
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.SetUnload = function(self, notifyType)
-  -- function num : 0_7
+function BuffViewInstance:SetUnload(notifyType)
   self._unload = true
   self._unloadNotifyType = notifyType
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.IsUnload = function(self, notify)
-  -- function num : 0_8
+function BuffViewInstance:IsUnload(notify)
   if notify and self._unloadNotifyType then
     if self._unloadNotifyType == notify:GetNotifyType() then
       return true
@@ -132,92 +91,56 @@ BuffViewInstance.IsUnload = function(self, notify)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.Entity = function(self)
-  -- function num : 0_9
+function BuffViewInstance:Entity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.World = function(self)
-  -- function num : 0_10
+function BuffViewInstance:World()
   return self._world
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.BuffConfigData = function(self)
-  -- function num : 0_11
+function BuffViewInstance:BuffConfigData()
   return self._buffConfigData
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.BuffID = function(self)
-  -- function num : 0_12
-  return (self._buffConfigData):GetBuffID()
+function BuffViewInstance:BuffID()
+  return self._buffConfigData:GetBuffID()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetBuffType = function(self)
-  -- function num : 0_13
-  return (self._buffConfigData):GetBuffType()
+function BuffViewInstance:GetBuffType()
+  return self._buffConfigData:GetBuffType()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetMaterialAnimationMode = function(self)
-  -- function num : 0_14
-  return (self._buffConfigData):GetMaterialAnimationMode()
+function BuffViewInstance:GetMaterialAnimationMode()
+  return self._buffConfigData:GetMaterialAnimationMode()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetBuffEffectType = function(self)
-  -- function num : 0_15
-  return (self._buffConfigData):GetBuffEffectType()
+function BuffViewInstance:GetBuffEffectType()
+  return self._buffConfigData:GetBuffEffectType()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetBuffIcon = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  if not ((GameGlobal.GetModule)(SkillPerfModule)):IsBeginPerf() then
-    local playBuffSvc = (self._world):GetService("PlayBuff")
+function BuffViewInstance:GetBuffIcon()
+  if not GameGlobal.GetModule(SkillPerfModule):IsBeginPerf() then
+    local playBuffSvc = self._world:GetService("PlayBuff")
     return playBuffSvc:ReplaceBuffIcon(self._buffConfigData, self._entity)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetBuffName = function(self)
-  -- function num : 0_17
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+function BuffViewInstance:GetBuffName()
+  local playBuffSvc = self._world:GetService("PlayBuff")
   return playBuffSvc:ReplaceBuffName(self._buffConfigData, self._entity)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetBuffDesc = function(self)
-  -- function num : 0_18
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+function BuffViewInstance:GetBuffDesc()
+  local playBuffSvc = self._world:GetService("PlayBuff")
   return playBuffSvc:ModifyMaxLayerCountByGlobalCfg(self._buffConfigData, self._entity)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetBuffDescParams = function(self)
-  -- function num : 0_19
-  return (self._buffConfigData):GetBuffDescParams()
+function BuffViewInstance:GetBuffDescParams()
+  return self._buffConfigData:GetBuffDescParams()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetShowBuffDescParams = function(self)
-  -- function num : 0_20
+function BuffViewInstance:GetShowBuffDescParams()
   local buffDescParams = self:GetBuffDescParams()
   if not buffDescParams then
     return ""
@@ -226,109 +149,66 @@ BuffViewInstance.GetShowBuffDescParams = function(self)
   return buffDescParams * layer
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetBuffEffectEntityID = function(self)
-  -- function num : 0_21
+function BuffViewInstance:GetBuffEffectEntityID()
   return self._buffEffectEntityID
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.SetBuffEffectEntityID = function(self, id)
-  -- function num : 0_22
+function BuffViewInstance:SetBuffEffectEntityID(id)
   self._buffEffectEntityID = id
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetRoundCount = function(self)
-  -- function num : 0_23
+function BuffViewInstance:GetRoundCount()
   return self._buffRoundCount
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.SetRoundCount = function(self, cnt)
-  -- function num : 0_24
+function BuffViewInstance:SetRoundCount(cnt)
   self._buffRoundCount = cnt
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetMaxRoundCount = function(self)
-  -- function num : 0_25
+function BuffViewInstance:GetMaxRoundCount()
   return self._maxBuffRoundCount
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.SetMaxRoundCount = function(self, cnt)
-  -- function num : 0_26
+function BuffViewInstance:SetMaxRoundCount(cnt)
   self._maxBuffRoundCount = cnt
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.RemainRoundCount = function(self)
-  -- function num : 0_27
+function BuffViewInstance:RemainRoundCount()
   return self._maxBuffRoundCount - self._buffRoundCount
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetLayerCount = function(self)
-  -- function num : 0_28
-  local layer = ((self._entity):BuffView()):GetBuffValue(self._buffLayerName)
+function BuffViewInstance:GetLayerCount()
+  local layer = self._entity:BuffView():GetBuffValue(self._buffLayerName)
   return layer or 0
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.HasLayer = function(self)
-  -- function num : 0_29
-  local layer = ((self._entity):BuffView()):GetBuffValue(self._buffLayerName)
+function BuffViewInstance:HasLayer()
+  local layer = self._entity:BuffView():GetBuffValue(self._buffLayerName)
   return layer
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.SetLayerCount = function(self, TT, layer, totalLayerCount, casterEntity)
-  -- function num : 0_30 , upvalues : _ENV
+function BuffViewInstance:SetLayerCount(TT, layer, totalLayerCount, casterEntity)
   local oldlayer = self:GetLayerCount()
-  ;
-  ((self._entity):BuffView()):SetBuffValue(self._buffLayerName, layer)
-  local nt = NTNotifyLayerChange:New(self._buffLayerName, layer, totalLayerCount, Vector2.zero, self._entity, (self._buffConfigData):GetBuffEffectType(), casterEntity)
+  self._entity:BuffView():SetBuffValue(self._buffLayerName, layer)
+  local nt = NTNotifyLayerChange:New(self._buffLayerName, layer, totalLayerCount, Vector2.zero, self._entity, self._buffConfigData:GetBuffEffectType(), casterEntity)
   nt.__oldFinalLayer = oldlayer
-  ;
-  ((self._world):GetService("PlayBuff")):PlayBuffView(TT, nt)
-  if ((self._world):Player()):IsLocalTeamEntity(self._entity) and oldlayer == 0 and layer > 0 then
-    local teamBuffList = ((self._entity):BuffView()):GetBuffTeamStateShowList()
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeTeamBuff, teamBuffList)
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, nt)
+  if self._world:Player():IsLocalTeamEntity(self._entity) and oldlayer == 0 and 0 < layer then
+    local teamBuffList = self._entity:BuffView():GetBuffTeamStateShowList()
+    self._world:EventDispatcher():Dispatch(GameEventType.ChangeTeamBuff, teamBuffList)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.SetLayerCountByLayerName = function(self, TT, layer, layerName)
-  -- function num : 0_31 , upvalues : _ENV
-  ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTNotifyLayerChange:New(layerName))
-  ;
-  ((self._entity):BuffView()):SetBuffValue(layerName, layer)
+function BuffViewInstance:SetLayerCountByLayerName(TT, layer, layerName)
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, NTNotifyLayerChange:New(layerName))
+  self._entity:BuffView():SetBuffValue(layerName, layer)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.ParseBuffLayerName = function(self, buffEffectType)
-  -- function num : 0_32
+function BuffViewInstance:ParseBuffLayerName(buffEffectType)
   return "Layer" .. buffEffectType
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetRoundCountOrLayerText = function(self)
-  -- function num : 0_33
+function BuffViewInstance:GetRoundCountOrLayerText()
   local layer = self:GetLayerCount()
   local buffRoundCount = self:GetRoundCount()
   if self:IsShowRestRound() then
@@ -342,28 +222,23 @@ BuffViewInstance.GetRoundCountOrLayerText = function(self)
   end
   if layer ~= 0 then
     return self:GetLayerText(true)
+  else
   end
   return ""
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetRoundCountText = function(self)
-  -- function num : 0_34 , upvalues : _ENV
+function BuffViewInstance:GetRoundCountText()
   local remainRoundCount = self:RemainRoundCount()
   if remainRoundCount <= 0 then
     return ""
   end
-  return (StringTable.Get)("str_common_round_name", remainRoundCount)
+  return StringTable.Get("str_common_round_name", remainRoundCount)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetLayerText = function(self, extend)
-  -- function num : 0_35 , upvalues : _ENV
+function BuffViewInstance:GetLayerText(extend)
   local layer = self:GetLayerCount()
   if extend then
-    return (StringTable.Get)("str_common_layer_name", layer)
+    return StringTable.Get("str_common_layer_name", layer)
   else
     local layerOneShowNum = self:IsLayerOneShowNum()
     if not layer then
@@ -376,80 +251,49 @@ BuffViewInstance.GetLayerText = function(self, extend)
       return ""
     end
   end
-  do
-    return layer
-  end
+  return layer
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetBuffViewContext = function(self)
-  -- function num : 0_36
+function BuffViewInstance:GetBuffViewContext()
   return self._buffViewContext
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetBuffEffectLayerAnimList = function(self)
-  -- function num : 0_37
-  return (self._buffConfigData):GetEffectLayerAnimList()
+function BuffViewInstance:GetBuffEffectLayerAnimList()
+  return self._buffConfigData:GetEffectLayerAnimList()
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.IsLayerOneShowNum = function(self)
-  -- function num : 0_38
-  return (self._buffConfigData):IsLayerOneShowNum()
+function BuffViewInstance:IsLayerOneShowNum()
+  return self._buffConfigData:IsLayerOneShowNum()
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.IsShowRestRound = function(self)
-  -- function num : 0_39
-  return (self._buffConfigData):IsShowRestRound()
+function BuffViewInstance:IsShowRestRound()
+  return self._buffConfigData:IsShowRestRound()
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetMaxCountDown = function(self)
-  -- function num : 0_40
+function BuffViewInstance:GetMaxCountDown()
   return self._maxCountDown
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetCountDown = function(self)
-  -- function num : 0_41
-  if not ((self._entity):BuffView()):GetBuffValue(self._buffLayerName .. "CountDown") then
-    local countDown = self._maxCountDown
-  end
+function BuffViewInstance:GetCountDown()
+  local countDown = self._entity:BuffView():GetBuffValue(self._buffLayerName .. "CountDown") or self._maxCountDown
   return countDown
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.SetCountDown = function(self, countDown)
-  -- function num : 0_42
+function BuffViewInstance:SetCountDown(countDown)
   local maxCountDown = self:GetMaxCountDown()
   if not maxCountDown then
-    return 
+    return
   end
   if countDown < 0 then
-    return 
+    return
   end
-  ;
-  ((self._entity):BuffView()):SetBuffValue(self._buffLayerName .. "CountDown", countDown)
+  self._entity:BuffView():SetBuffValue(self._buffLayerName .. "CountDown", countDown)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInstance.GetCountDownText = function(self)
-  -- function num : 0_43 , upvalues : _ENV
+function BuffViewInstance:GetCountDownText()
   local curCountDown = self:GetCountDown()
   if curCountDown <= 0 then
     return ""
   end
-  return (StringTable.Get)("str_common_count_down_name", curCountDown)
+  return StringTable.Get("str_common_count_down_name", curCountDown)
 end
-
-

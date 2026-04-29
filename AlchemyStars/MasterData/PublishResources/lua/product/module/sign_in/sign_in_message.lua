@@ -1,372 +1,341 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/sign_in/sign_in_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local sign_inMessageDef = {CLSID_CEventSignInReq = 34000, CLSID_CEventSignInRes = 34001, CLSID_CEventRecvTotalLoginRewardReq = 34002, CLSID_CEventRecvTotalLoginRewardRes = 34003, CLSID_CEventCurMonthSignDataReq = 34004, CLSID_CEventCurMonthSignDataRes = 34005, CLSID_CEventTotalLoginReq = 34006, CLSID_CEventTotalLoginRes = 34007, CLSID_CEventNewPlayerLoginStatusReq = 34008, CLSID_CEventNewPlayerLoginStatusReply = 34009, CLSID_CEventAcceptNewPlayerRewardReq = 34010, CLSID_CEventAcceptNewPlayerRewardReply = 34011, CLSID_CEventPredictionReq = 34012, CLSID_CEventPredictionResult = 34013, CLSID_CEventPredictionAwardReq = 34014, CLSID_CEventPredictionAwardResult = 34015, CLSID_CEventNotifyPrediction = 34016, CLSID_CEventNotifyPredictionData = 34017, CLSID_CEventGetMainDressUpReq = 34018, CLSID_CEventGetMainDressUpResult = 34019, CLSID_CEventSetMainDressUpReq = 34020, CLSID_CEventSetMainDressUpResult = 34021, CLSID_CEventCurMainDressUpReq = 34022, CLSID_CEventCurMainDressUpResult = 34023}
-;
-(table.append)(MessageDef, sign_inMessageDef)
-local SIGN_IN_RESULT_CODE = {SIGN_IN_SUCCEED = 0, SIGN_IN_INVALID = 1, SIGN_IN_MON_SIGN_DATA_INVALID = 2, SIGN_IN_TODAY_IS_SIGN = 3, SIGN_IN_FULL = 4, SIGN_IN_NOT_SIGN_CANT_RE_SIGN = 5, SIGN_IN_RE_SIGN_VIG_POINT = 6, SIGN_IN_TOTAL_LOGIN_DAYS_INVALID = 7, SIGN_IN_TOTAL_LOGIN_IS_RECVED = 8, SIGN_IN_TOTAL_LOGIN_NOT_ENOUGH = 9, SIGN_IN_IS_RE_SIGNED = 10, SIGN_DAY_NUM_ERROR = 11, SIGN_DAY_NUM_ACCEPTED = 12, SIGN_DAY_NUM_NOT_ENOUGH = 13}
+local sign_inMessageDef = {
+  CLSID_CEventSignInReq = 34000,
+  CLSID_CEventSignInRes = 34001,
+  CLSID_CEventRecvTotalLoginRewardReq = 34002,
+  CLSID_CEventRecvTotalLoginRewardRes = 34003,
+  CLSID_CEventCurMonthSignDataReq = 34004,
+  CLSID_CEventCurMonthSignDataRes = 34005,
+  CLSID_CEventTotalLoginReq = 34006,
+  CLSID_CEventTotalLoginRes = 34007,
+  CLSID_CEventNewPlayerLoginStatusReq = 34008,
+  CLSID_CEventNewPlayerLoginStatusReply = 34009,
+  CLSID_CEventAcceptNewPlayerRewardReq = 34010,
+  CLSID_CEventAcceptNewPlayerRewardReply = 34011,
+  CLSID_CEventPredictionReq = 34012,
+  CLSID_CEventPredictionResult = 34013,
+  CLSID_CEventPredictionAwardReq = 34014,
+  CLSID_CEventPredictionAwardResult = 34015,
+  CLSID_CEventNotifyPrediction = 34016,
+  CLSID_CEventNotifyPredictionData = 34017,
+  CLSID_CEventGetMainDressUpReq = 34018,
+  CLSID_CEventGetMainDressUpResult = 34019,
+  CLSID_CEventSetMainDressUpReq = 34020,
+  CLSID_CEventSetMainDressUpResult = 34021,
+  CLSID_CEventCurMainDressUpReq = 34022,
+  CLSID_CEventCurMainDressUpResult = 34023
+}
+table.append(MessageDef, sign_inMessageDef)
+local SIGN_IN_RESULT_CODE = {
+  SIGN_IN_SUCCEED = 0,
+  SIGN_IN_INVALID = 1,
+  SIGN_IN_MON_SIGN_DATA_INVALID = 2,
+  SIGN_IN_TODAY_IS_SIGN = 3,
+  SIGN_IN_FULL = 4,
+  SIGN_IN_NOT_SIGN_CANT_RE_SIGN = 5,
+  SIGN_IN_RE_SIGN_VIG_POINT = 6,
+  SIGN_IN_TOTAL_LOGIN_DAYS_INVALID = 7,
+  SIGN_IN_TOTAL_LOGIN_IS_RECVED = 8,
+  SIGN_IN_TOTAL_LOGIN_NOT_ENOUGH = 9,
+  SIGN_IN_IS_RE_SIGNED = 10,
+  SIGN_DAY_NUM_ERROR = 11,
+  SIGN_DAY_NUM_ACCEPTED = 12,
+  SIGN_DAY_NUM_NOT_ENOUGH = 13
+}
 _enum("SIGN_IN_RESULT_CODE", SIGN_IN_RESULT_CODE)
 _class("CEventSignInReq", CCallRequestEvent)
 CEventSignInReq = CEventSignInReq
--- DECOMPILER ERROR at PC60: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventSignInReq.Constructor = function(self)
-  -- function num : 0_0
+function CEventSignInReq:Constructor()
   self.bIsReSignIn = false
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventSignInReq._proto = {
-[1] = {"bIsReSignIn", "bool"}
+  [1] = {
+    "bIsReSignIn",
+    "bool"
+  }
 }
 _class("CEventSignInRes", CCallReplyEvent)
 CEventSignInRes = CEventSignInRes
--- DECOMPILER ERROR at PC77: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventSignInRes.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CEventSignInRes:Constructor()
   self.nRet = 0
   self.bIsReSignIn = false
   self.sign_in_base_info = SignInBaseInfo:New()
   self.act_assets = {}
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventSignInRes._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"bIsReSignIn", "bool"}
-, 
-[3] = {"sign_in_base_info", "SignInBaseInfo"}
-, 
-[4] = {"act_assets", "list<RoleAsset>"}
+  [1] = {"nRet", "int"},
+  [2] = {
+    "bIsReSignIn",
+    "bool"
+  },
+  [3] = {
+    "sign_in_base_info",
+    "SignInBaseInfo"
+  },
+  [4] = {
+    "act_assets",
+    "list<RoleAsset>"
+  }
 }
 _class("CEventRecvTotalLoginRewardReq", CCallRequestEvent)
 CEventRecvTotalLoginRewardReq = CEventRecvTotalLoginRewardReq
--- DECOMPILER ERROR at PC109: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRecvTotalLoginRewardReq.Constructor = function(self)
-  -- function num : 0_2
+function CEventRecvTotalLoginRewardReq:Constructor()
   self.nRecvDays = 0
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventRecvTotalLoginRewardReq._proto = {
-[1] = {"nRecvDays", "int"}
+  [1] = {"nRecvDays", "int"}
 }
 _class("CEventRecvTotalLoginRewardRes", CCallReplyEvent)
 CEventRecvTotalLoginRewardRes = CEventRecvTotalLoginRewardRes
--- DECOMPILER ERROR at PC126: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRecvTotalLoginRewardRes.Constructor = function(self)
-  -- function num : 0_3
+function CEventRecvTotalLoginRewardRes:Constructor()
   self.nRet = 0
   self.nRecvDays = 0
   self.nTotalLoginDays = 0
 end
 
--- DECOMPILER ERROR at PC144: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventRecvTotalLoginRewardRes._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"nRecvDays", "int"}
-, 
-[3] = {"nTotalLoginDays", "int"}
+  [1] = {"nRet", "int"},
+  [2] = {"nRecvDays", "int"},
+  [3] = {
+    "nTotalLoginDays",
+    "int"
+  }
 }
 _class("CEventCurMonthSignDataReq", CCallRequestEvent)
 CEventCurMonthSignDataReq = CEventCurMonthSignDataReq
--- DECOMPILER ERROR at PC153: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventCurMonthSignDataReq.Constructor = function(self)
-  -- function num : 0_4
+function CEventCurMonthSignDataReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC156: Confused about usage of register: R2 in 'UnsetPending'
 
 CEventCurMonthSignDataReq._proto = {}
 _class("CEventCurMonthSignDataRes", CCallReplyEvent)
 CEventCurMonthSignDataRes = CEventCurMonthSignDataRes
--- DECOMPILER ERROR at PC165: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventCurMonthSignDataRes.Constructor = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function CEventCurMonthSignDataRes:Constructor()
   self.nRet = 0
   self.sign_in_base_info = SignInBaseInfo:New()
 end
 
--- DECOMPILER ERROR at PC178: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventCurMonthSignDataRes._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"sign_in_base_info", "SignInBaseInfo"}
+  [1] = {"nRet", "int"},
+  [2] = {
+    "sign_in_base_info",
+    "SignInBaseInfo"
+  }
 }
 _class("CEventTotalLoginReq", CCallRequestEvent)
 CEventTotalLoginReq = CEventTotalLoginReq
--- DECOMPILER ERROR at PC187: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventTotalLoginReq.Constructor = function(self)
-  -- function num : 0_6
+function CEventTotalLoginReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC190: Confused about usage of register: R2 in 'UnsetPending'
 
 CEventTotalLoginReq._proto = {}
 _class("CEventTotalLoginRes", CCallReplyEvent)
 CEventTotalLoginRes = CEventTotalLoginRes
--- DECOMPILER ERROR at PC199: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventTotalLoginRes.Constructor = function(self)
-  -- function num : 0_7
+function CEventTotalLoginRes:Constructor()
   self.total_login_info = {}
   self.nTotalLoginDays = 0
   self.tmNextRefreshTime = 0
 end
 
--- DECOMPILER ERROR at PC217: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventTotalLoginRes._proto = {
-[1] = {"total_login_info", "map<int,TotalLoginInfo>"}
-, 
-[2] = {"nTotalLoginDays", "int"}
-, 
-[3] = {"tmNextRefreshTime", "time"}
+  [1] = {
+    "total_login_info",
+    "map<int,TotalLoginInfo>"
+  },
+  [2] = {
+    "nTotalLoginDays",
+    "int"
+  },
+  [3] = {
+    "tmNextRefreshTime",
+    "time"
+  }
 }
 _class("CEventNewPlayerLoginStatusReq", CCallRequestEvent)
 CEventNewPlayerLoginStatusReq = CEventNewPlayerLoginStatusReq
--- DECOMPILER ERROR at PC226: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventNewPlayerLoginStatusReq.Constructor = function(self)
-  -- function num : 0_8
+function CEventNewPlayerLoginStatusReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC229: Confused about usage of register: R2 in 'UnsetPending'
 
 CEventNewPlayerLoginStatusReq._proto = {}
 _class("CEventNewPlayerLoginStatusReply", CCallReplyEvent)
 CEventNewPlayerLoginStatusReply = CEventNewPlayerLoginStatusReply
--- DECOMPILER ERROR at PC238: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventNewPlayerLoginStatusReply.Constructor = function(self)
-  -- function num : 0_9
+function CEventNewPlayerLoginStatusReply:Constructor()
   self.ret = 0
   self.accept_status = {}
   self.reward_cfg = {}
 end
 
--- DECOMPILER ERROR at PC256: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventNewPlayerLoginStatusReply._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"accept_status", "map<int,int>"}
-, 
-[3] = {"reward_cfg", "map<int,list<RoleAsset>>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "accept_status",
+    "map<int,int>"
+  },
+  [3] = {
+    "reward_cfg",
+    "map<int,list<RoleAsset>>"
+  }
 }
 _class("CEventAcceptNewPlayerRewardReq", CCallRequestEvent)
 CEventAcceptNewPlayerRewardReq = CEventAcceptNewPlayerRewardReq
--- DECOMPILER ERROR at PC265: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventAcceptNewPlayerRewardReq.Constructor = function(self)
-  -- function num : 0_10
+function CEventAcceptNewPlayerRewardReq:Constructor()
   self.day_num = 0
 end
 
--- DECOMPILER ERROR at PC273: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventAcceptNewPlayerRewardReq._proto = {
-[1] = {"day_num", "int"}
+  [1] = {"day_num", "int"}
 }
 _class("CEventAcceptNewPlayerRewardReply", CCallReplyEvent)
 CEventAcceptNewPlayerRewardReply = CEventAcceptNewPlayerRewardReply
--- DECOMPILER ERROR at PC282: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventAcceptNewPlayerRewardReply.Constructor = function(self)
-  -- function num : 0_11
+function CEventAcceptNewPlayerRewardReply:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventAcceptNewPlayerRewardReply._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventPredictionReq", CCallRequestEvent)
 CEventPredictionReq = CEventPredictionReq
--- DECOMPILER ERROR at PC299: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPredictionReq.Constructor = function(self)
-  -- function num : 0_12
+function CEventPredictionReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC302: Confused about usage of register: R2 in 'UnsetPending'
 
 CEventPredictionReq._proto = {}
 _class("CEventPredictionResult", CCallReplyEvent)
 CEventPredictionResult = CEventPredictionResult
--- DECOMPILER ERROR at PC311: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPredictionResult.Constructor = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function CEventPredictionResult:Constructor()
   self.ret = 0
   self.info = PredictionMsgInfo:New()
 end
 
--- DECOMPILER ERROR at PC324: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventPredictionResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"info", "PredictionMsgInfo"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "info",
+    "PredictionMsgInfo"
+  }
 }
 _class("CEventPredictionAwardReq", CCallRequestEvent)
 CEventPredictionAwardReq = CEventPredictionAwardReq
--- DECOMPILER ERROR at PC333: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPredictionAwardReq.Constructor = function(self)
-  -- function num : 0_14
+function CEventPredictionAwardReq:Constructor()
   self.day = 0
   self.id = 0
 end
 
--- DECOMPILER ERROR at PC346: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventPredictionAwardReq._proto = {
-[1] = {"day", "int"}
-, 
-[2] = {"id", "int"}
+  [1] = {"day", "int"},
+  [2] = {"id", "int"}
 }
 _class("CEventPredictionAwardResult", CCallReplyEvent)
 CEventPredictionAwardResult = CEventPredictionAwardResult
--- DECOMPILER ERROR at PC355: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPredictionAwardResult.Constructor = function(self)
-  -- function num : 0_15
+function CEventPredictionAwardResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC363: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventPredictionAwardResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventNotifyPrediction", CSvrPushEvent)
 CEventNotifyPrediction = CEventNotifyPrediction
--- DECOMPILER ERROR at PC372: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventNotifyPrediction.Constructor = function(self)
-  -- function num : 0_16
+function CEventNotifyPrediction:Constructor()
   self.index = 0
   self.status = 0
 end
 
--- DECOMPILER ERROR at PC385: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventNotifyPrediction._proto = {
-[1] = {"index", "int"}
-, 
-[2] = {"status", "int"}
+  [1] = {"index", "int"},
+  [2] = {"status", "int"}
 }
 _class("CEventNotifyPredictionData", CSvrPushEvent)
 CEventNotifyPredictionData = CEventNotifyPredictionData
--- DECOMPILER ERROR at PC394: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventNotifyPredictionData.Constructor = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function CEventNotifyPredictionData:Constructor()
   self.info = PredictionMsgInfo:New()
 end
 
--- DECOMPILER ERROR at PC402: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventNotifyPredictionData._proto = {
-[1] = {"info", "PredictionMsgInfo"}
+  [1] = {
+    "info",
+    "PredictionMsgInfo"
+  }
 }
 _class("CEventGetMainDressUpReq", CCallRequestEvent)
 CEventGetMainDressUpReq = CEventGetMainDressUpReq
--- DECOMPILER ERROR at PC411: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventGetMainDressUpReq.Constructor = function(self)
-  -- function num : 0_18
+function CEventGetMainDressUpReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC414: Confused about usage of register: R2 in 'UnsetPending'
 
 CEventGetMainDressUpReq._proto = {}
 _class("CEventGetMainDressUpResult", CCallReplyEvent)
 CEventGetMainDressUpResult = CEventGetMainDressUpResult
--- DECOMPILER ERROR at PC423: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventGetMainDressUpResult.Constructor = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function CEventGetMainDressUpResult:Constructor()
   self.info = MainDressUpMap:New()
 end
 
--- DECOMPILER ERROR at PC431: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventGetMainDressUpResult._proto = {
-[1] = {"info", "MainDressUpMap"}
+  [1] = {
+    "info",
+    "MainDressUpMap"
+  }
 }
 _class("CEventSetMainDressUpReq", CCallRequestEvent)
 CEventSetMainDressUpReq = CEventSetMainDressUpReq
--- DECOMPILER ERROR at PC440: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventSetMainDressUpReq.Constructor = function(self)
-  -- function num : 0_20
+function CEventSetMainDressUpReq:Constructor()
   self.info = {}
 end
 
--- DECOMPILER ERROR at PC448: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventSetMainDressUpReq._proto = {
-[1] = {"info", "map<int,MainDressUpInfo>"}
+  [1] = {
+    "info",
+    "map<int,MainDressUpInfo>"
+  }
 }
 _class("CEventSetMainDressUpResult", CCallReplyEvent)
 CEventSetMainDressUpResult = CEventSetMainDressUpResult
--- DECOMPILER ERROR at PC457: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventSetMainDressUpResult.Constructor = function(self)
-  -- function num : 0_21
+function CEventSetMainDressUpResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC465: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventSetMainDressUpResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventCurMainDressUpReq", CCallRequestEvent)
 CEventCurMainDressUpReq = CEventCurMainDressUpReq
--- DECOMPILER ERROR at PC474: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventCurMainDressUpReq.Constructor = function(self)
-  -- function num : 0_22
+function CEventCurMainDressUpReq:Constructor()
   self.cur_index = 0
 end
 
--- DECOMPILER ERROR at PC482: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventCurMainDressUpReq._proto = {
-[1] = {"cur_index", "int"}
+  [1] = {"cur_index", "int"}
 }
 _class("CEventCurMainDressUpResult", CCallReplyEvent)
 CEventCurMainDressUpResult = CEventCurMainDressUpResult
--- DECOMPILER ERROR at PC491: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventCurMainDressUpResult.Constructor = function(self)
-  -- function num : 0_23
+function CEventCurMainDressUpResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC499: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventCurMainDressUpResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
-

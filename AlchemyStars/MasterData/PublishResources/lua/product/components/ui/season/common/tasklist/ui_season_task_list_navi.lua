@@ -1,193 +1,123 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/tasklist/ui_season_task_list_navi.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTaskListNavi", UICustomWidget)
 UISeasonTaskListNavi = UISeasonTaskListNavi
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTaskListNavi._GetAnimInfo = function(self, key)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.exception)(self._className .. "必须重写 _GetAnimInfo() 方法:", (debug.traceback)())
+function UISeasonTaskListNavi:_GetAnimInfo(key)
+  Log.exception(self._className .. "必须重写 _GetAnimInfo() 方法:", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListNavi.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._seasonTaskModule = ((GameGlobal.GameLogic)()):GetModule(SeasonTaskModule)
+function UISeasonTaskListNavi:OnShow(uiParams)
+  self._seasonTaskModule = GameGlobal.GameLogic():GetModule(SeasonTaskModule)
   self:_Refresh()
   self:_AttachEvent()
   local obj = self:GetGameObject("Desc")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(obj), UIEvent.Click, function(go)
-    -- function num : 0_1_0 , upvalues : self
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(obj), UIEvent.Click, function(go)
     self:_BrowseTask()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListNavi.OnHide = function(self)
-  -- function num : 0_2
+function UISeasonTaskListNavi:OnHide()
   self:_DetachEvent()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListNavi._Refresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonTaskListNavi:_Refresh()
   if not self.view then
-    return 
+    return
   end
-  local node = (self._seasonTaskModule):GetCurNode()
-  local questId = (UISeasonTaskListHelper.GetCurQuestId)(node)
+  local node = self._seasonTaskModule:GetCurNode()
+  local questId = UISeasonTaskListHelper.GetCurQuestId(node)
   self:_CheckShow(questId)
   self:_SetTitle(questId)
   self:_SetDesc(questId)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListNavi._CheckShow = function(self, questId)
-  -- function num : 0_4 , upvalues : _ENV
-  local mode = ((((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()):SeasonMapManager()):Mode()
+function UISeasonTaskListNavi:_CheckShow(questId)
+  local mode = GameGlobal.GetUIModule(SeasonModule):SeasonManager():SeasonMapManager():Mode()
   local isTravel = mode == SeasonMapMode.Mode2
   local isHaveQuest = questId ~= 0
-  local isFin = (UISeasonTaskListHelper.CheckQuestFin)(questId)
-  if isTravel and isHaveQuest then
-    local isShow = not isFin
-  end
-  ;
-  (Log.info)("UISeasonTaskListNavi:_CheckShow(), questId =", questId, "isTravel =", isTravel, "isHaveQuest =", isHaveQuest, "isFin =", isFin)
+  local isFin = UISeasonTaskListHelper.CheckQuestFin(questId)
+  local isShow = isTravel and isHaveQuest and not isFin
+  Log.info("UISeasonTaskListNavi:_CheckShow(), questId =", questId, "isTravel =", isTravel, "isHaveQuest =", isHaveQuest, "isFin =", isFin)
   self:_SetShow(isShow)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListNavi._SetShow = function(self, isShow)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonTaskListNavi:_SetShow(isShow)
   if isShow == self._isShow then
-    return 
+    return
   end
   self._isShow = isShow
   local change = self._isShow ~= nil
   local play = change or isShow
-  if not isShow or not "in" then
-    local name = not play or "out"
-  end
-  local func = function()
-    -- function num : 0_5_0 , upvalues : isShow, self, _ENV
-    if isShow ~= self._isShow then
-      (Log.info)("UISeasonTaskListNavi:_SetShow(), isShow was Change !!!")
+  if play then
+    local name = isShow and "in" or "out"
+    
+    local function func()
+      if isShow ~= self._isShow then
+        Log.info("UISeasonTaskListNavi:_SetShow(), isShow was Change !!!")
+      end
+      Log.info("UISeasonTaskListNavi:_SetShow(), play stop, self._isShow =", self._isShow)
+      self:_SetActive(self._isShow)
     end
-    ;
-    (Log.info)("UISeasonTaskListNavi:_SetShow(), play stop, self._isShow =", self._isShow)
-    self:_SetActive(self._isShow)
-  end
-
-  do
+    
     local animName, duration = self:_GetAnimInfo(name)
-    if not (string.isnullorempty)(animName) then
+    if not string.isnullorempty(animName) then
       self:_SetActive(true)
-      ;
-      (Log.info)("UISeasonTaskListNavi:_SetShow(), play start, true")
-      ;
-      (UIWidgetHelper.PlayAnimation)(self, "_anim", animName, duration, func)
+      Log.info("UISeasonTaskListNavi:_SetShow(), play start, true")
+      UIWidgetHelper.PlayAnimation(self, "_anim", animName, duration, func)
     else
       func()
     end
-    ;
-    (Log.info)("UISeasonTaskListNavi:_SetShow(), play false isShow =", isShow)
+  else
+    Log.info("UISeasonTaskListNavi:_SetShow(), play false isShow =", isShow)
     self:_SetActive(isShow)
-    -- DECOMPILER ERROR: 7 unprocessed JMP targets
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListNavi._SetActive = function(self, isShow)
-  -- function num : 0_6
-  (self:GetGameObject()):SetActive(isShow)
+function UISeasonTaskListNavi:_SetActive(isShow)
+  self:GetGameObject():SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListNavi._SetTitle = function(self, questId)
-  -- function num : 0_7 , upvalues : _ENV
-  local text = (UISeasonTaskListHelper.GetQuestText)(questId, "QuestName")
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtTitle", text)
+function UISeasonTaskListNavi:_SetTitle(questId)
+  local text = UISeasonTaskListHelper.GetQuestText(questId, "QuestName")
+  UIWidgetHelper.SetLocalizationText(self, "_txtTitle", text)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListNavi._SetDesc = function(self, questId)
-  -- function num : 0_8 , upvalues : _ENV
-  local text = (UISeasonTaskListHelper.GetQuestText)(questId, "QuestDesc")
+function UISeasonTaskListNavi:_SetDesc(questId)
+  local text = UISeasonTaskListHelper.GetQuestText(questId, "QuestDesc")
   local obj = self:GetUIComponent("UIRichText", "_txtDesc")
   obj:SetText(text)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListNavi._BrowseTask = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (UISeasonTaskListHelper.GoToTask)()
+function UISeasonTaskListNavi:_BrowseTask()
+  UISeasonTaskListHelper.GoToTask()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListNavi.BtnOnClick = function(self, go)
-  -- function num : 0_10
+function UISeasonTaskListNavi:BtnOnClick(go)
   self:_BrowseTask()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListNavi._AttachEvent = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonTaskListNavi:_AttachEvent()
   self:AttachEvent(GameEventType.OnSeasonTaskReset, self.OnSeasonTaskReset)
   self:AttachEvent(GameEventType.OnSeasonTaskRefreshed, self.OnSeasonTaskRefreshed)
   self:AttachEvent(GameEventType.OnSeasonModeChanged, self.OnSeasonModeChanged)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListNavi._DetachEvent = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UISeasonTaskListNavi:_DetachEvent()
   self:DetachEvent(GameEventType.OnSeasonTaskReset, self.OnSeasonTaskReset)
   self:DetachEvent(GameEventType.OnSeasonTaskRefreshed, self.OnSeasonTaskRefreshed)
   self:DetachEvent(GameEventType.OnSeasonModeChanged, self.OnSeasonModeChanged)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListNavi.OnSeasonTaskReset = function(self)
-  -- function num : 0_13
+function UISeasonTaskListNavi:OnSeasonTaskReset()
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListNavi.OnSeasonTaskRefreshed = function(self)
-  -- function num : 0_14
+function UISeasonTaskListNavi:OnSeasonTaskRefreshed()
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListNavi.OnSeasonModeChanged = function(self)
-  -- function num : 0_15
+function UISeasonTaskListNavi:OnSeasonModeChanged()
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListNavi.OnAfterUIRootActive = function(self, flag, uiName)
-  -- function num : 0_16
+function UISeasonTaskListNavi:OnAfterUIRootActive(flag, uiName)
 end
-
-

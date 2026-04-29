@@ -1,101 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/homelandpet_behavior_story_furniture_invite.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homelandpet_behavior_base")
 _class("HomelandPetBehaviorFurnitureInvite", HomelandPetBehaviorBase)
 HomelandPetBehaviorFurnitureInvite = HomelandPetBehaviorFurnitureInvite
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetBehaviorFurnitureInvite.Constructor = function(self, behaviorType, pet)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomelandPetBehaviorFurnitureInvite.super).Constructor)(self, behaviorType, pet)
-  self._petInviteManager = (self._homelandClient):GetHomelandPetInviteManager()
-  self._petManager = (self._homelandClient):PetManager()
+function HomelandPetBehaviorFurnitureInvite:Constructor(behaviorType, pet)
+  HomelandPetBehaviorFurnitureInvite.super.Constructor(self, behaviorType, pet)
+  self._petInviteManager = self._homelandClient:GetHomelandPetInviteManager()
+  self._petManager = self._homelandClient:PetManager()
   self._moveComponent = self:GetComponent(HomelandPetComponentType.Move)
   self._animationComponent = self:GetComponent(HomelandPetComponentType.InteractionAnimation)
   self._interactPoint = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFurnitureInvite.Enter = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((HomelandPetBehaviorFurnitureInvite.super).Enter)(self)
-  local building = (self._petInviteManager):GetOperateBuilding()
+function HomelandPetBehaviorFurnitureInvite:Enter()
+  HomelandPetBehaviorFurnitureInvite.super.Enter(self)
+  local building = self._petInviteManager:GetOperateBuilding()
   if building == nil then
-    ((self._pet):GetPetBehavior()):RandomBehavior()
-    return 
+    self._pet:GetPetBehavior():RandomBehavior()
+    return
   end
   self._interactPoint = building:GetPetInteractPoint()
   if self._interactPoint then
-    local targetTransform = building:GetInteractTransform((self._interactPoint):GetIndex())
-    if not (self._petManager):MainCharacterInteracting(building, targetTransform) then
-      (self._moveComponent):SetTarget(targetTransform.position)
+    local targetTransform = building:GetInteractTransform(self._interactPoint:GetIndex())
+    if not self._petManager:MainCharacterInteracting(building, targetTransform) then
+      self._moveComponent:SetTarget(targetTransform.position)
       if targetTransform.childCount > 0 then
-        do
-          (self._interactPoint):SetInteractObject(self._pet)
-          ;
-          (self._pet):SetInteractingBuilding(building)
-          ;
-          ((self._pet):GetPetBehavior()):RandomBehavior()
-          ;
-          ((self._pet):GetPetBehavior()):RandomBehavior()
-        end
       end
+      self._interactPoint:SetInteractObject(self._pet)
+      self._pet:SetInteractingBuilding(building)
+    else
+      self._pet:GetPetBehavior():RandomBehavior()
     end
+  else
+    self._pet:GetPetBehavior():RandomBehavior()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFurnitureInvite.Exit = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((HomelandPetBehaviorFurnitureInvite.super).Exit)(self)
-  ;
-  ((HomelandPetBehaviorInteractingFurniture.super).Exit)(self)
+function HomelandPetBehaviorFurnitureInvite:Exit()
+  HomelandPetBehaviorFurnitureInvite.super.Exit(self)
+  HomelandPetBehaviorInteractingFurniture.super.Exit(self)
   if self._interactPoint then
-    (self._interactPoint):SetInteractObject(nil)
+    self._interactPoint:SetInteractObject(nil)
     self._interactPoint = nil
   end
-  ;
-  (self._pet):SetInteractingBuilding(nil)
+  self._pet:SetInteractingBuilding(nil)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFurnitureInvite.CanInterrupt = function(self)
-  -- function num : 0_3
+function HomelandPetBehaviorFurnitureInvite:CanInterrupt()
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFurnitureInvite._GetInteractionCfg = function(self, interactions)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = nil
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  local finishEventList = (homelandModule:GetHomeLandEventInfo()).finish_event_list
-  for _,id in pairs(interactions) do
-    if self:_IsUnLock((self._pet):TemplateID(), id, finishEventList) then
-      local cfgBuildingPet = (Cfg.cfg_homeland_building_pet)[id]
-      if cfgBuildingPet and (not cfgBuildingPet.petIDs or (table.icontains)(cfgBuildingPet.petIDs, (self._pet):TemplateID()) or (table.icontains)(cfgBuildingPet.petIDs, (self._pet):SkinID())) then
+function HomelandPetBehaviorFurnitureInvite:_GetInteractionCfg(interactions)
+  local cfg
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
+  local finishEventList = homelandModule:GetHomeLandEventInfo().finish_event_list
+  for _, id in pairs(interactions) do
+    if self:_IsUnLock(self._pet:TemplateID(), id, finishEventList) then
+      local cfgBuildingPet = Cfg.cfg_homeland_building_pet[id]
+      if cfgBuildingPet and (not cfgBuildingPet.petIDs or table.icontains(cfgBuildingPet.petIDs, self._pet:TemplateID()) or table.icontains(cfgBuildingPet.petIDs, self._pet:SkinID())) then
         cfg = cfgBuildingPet
         break
       end
     end
   end
-  do
-    return cfg
-  end
+  return cfg
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorFurnitureInvite._IsUnLock = function(self, petID, id, finishEventList)
-  -- function num : 0_5
+function HomelandPetBehaviorFurnitureInvite:_IsUnLock(petID, id, finishEventList)
   return true
 end
-
-

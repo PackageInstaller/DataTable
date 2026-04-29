@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui_homeland_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandModule", UIModule)
 UIHomelandModule = UIHomelandModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandModule.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandModule:Constructor()
   self._running = false
   self._homelandClient = nil
   self._visitInfo = nil
@@ -17,388 +10,281 @@ UIHomelandModule.Constructor = function(self)
   self._enterCallback = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.ShowDialog = function(self, name, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog(name, ...)
+function UIHomelandModule:ShowDialog(name, ...)
+  GameGlobal.UIStateManager():ShowDialog(name, ...)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.CloseDialog = function(self, name)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):CloseDialog(name)
+function UIHomelandModule:CloseDialog(name)
+  GameGlobal.UIStateManager():CloseDialog(name)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.IsRunning = function(self)
-  -- function num : 0_3
+function UIHomelandModule:IsRunning()
   return self._running
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.Update = function(self, curTick)
-  -- function num : 0_4
-  (self._homelandClient):Update(curTick)
+function UIHomelandModule:Update(curTick)
+  self._homelandClient:Update(curTick)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.LoadHomeland = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (HomeLoading.Self)()
+function UIHomelandModule:LoadHomeland()
+  HomeLoading.Self()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.LoadHomelandScene = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (HomeLoading.Self_Art)()
+function UIHomelandModule:LoadHomelandScene()
+  HomeLoading.Self_Art()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.EnterHomeland = function(self, TT, isVisit)
-  -- function num : 0_7 , upvalues : _ENV
-  (Log.debug)("[homeland loading] UIHomelandModule EnterHomeland start")
+function UIHomelandModule:EnterHomeland(TT, isVisit)
+  Log.debug("[homeland loading] UIHomelandModule EnterHomeland start")
   self:AttachEvent(GameEventType.BeforeRelogin, self.LeaveHomeland)
   if isVisit then
     self._homelandClient = HomelandVisitClient:New()
   else
     self._homelandClient = HomelandClient:New()
   end
-  ;
-  (self._homelandClient):Init(TT)
-  ;
-  (self._homelandClient):OnEnterHomeland()
+  self._homelandClient:Init(TT)
+  self._homelandClient:OnEnterHomeland()
   self._running = true
   self:AttachEvent(GameEventType.HomelandLevelOnLevelInfoChange, self._OnLevelInfoChanged)
-  ;
-  (Log.debug)("[homeland loading] UIHomelandModule EnterHomeland end")
+  Log.debug("[homeland loading] UIHomelandModule EnterHomeland end")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.SetEnterCallback = function(self, callback)
-  -- function num : 0_8
+function UIHomelandModule:SetEnterCallback(callback)
   self._enterCallback = callback
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.GetEnterCallback = function(self)
-  -- function num : 0_9
+function UIHomelandModule:GetEnterCallback()
   return self._enterCallback
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.LeaveHomeland = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIHomelandModule:LeaveHomeland()
   self:ClearLevelupTip()
   self:DetachEvent(GameEventType.HomelandLevelOnLevelInfoChange, self._OnLevelInfoChanged)
   self:DetachEvent(GameEventType.BeforeRelogin, self.LeaveHomeland)
   MovieFatherSon:Dispose()
-  ;
-  (self._homelandClient):Dispose()
+  self._homelandClient:Dispose()
   self._homelandClient = nil
   self._visitInfo = nil
   self._uiVisitInfo = nil
   self._running = false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.GetClient = function(self)
-  -- function num : 0_11
+function UIHomelandModule:GetClient()
   return self._homelandClient
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.SetEventInfo = function(self, list, num)
-  -- function num : 0_12
+function UIHomelandModule:SetEventInfo(list, num)
   self._eventList = list
   self._eventNum = num
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.GetEventInfo = function(self)
-  -- function num : 0_13
+function UIHomelandModule:GetEventInfo()
   return self._eventList, self._eventNum
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.SetVisitInfo = function(self, info)
-  -- function num : 0_14 , upvalues : _ENV
+function UIHomelandModule:SetVisitInfo(info)
   self._visitInfo = info
   if info then
     self._uiVisitInfo = UIHomeVisitInfo:New(info)
   end
-  ;
-  (HomelandVisitHelper.RefreshVistAquariumFish)()
+  HomelandVisitHelper.RefreshVistAquariumFish()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.GetVisitInfo = function(self)
-  -- function num : 0_15
+function UIHomelandModule:GetVisitInfo()
   return self._visitInfo
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.GetVisitPoolInfo = function(self)
-  -- function num : 0_16
+function UIHomelandModule:GetVisitPoolInfo()
   if self._visitInfo then
-    return (self._visitInfo).wishing_pool_info
+    return self._visitInfo.wishing_pool_info
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.GetVisitUIInfo = function(self)
-  -- function num : 0_17
+function UIHomelandModule:GetVisitUIInfo()
   return self._uiVisitInfo
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.ReqFriendList = function(self, TT)
-  -- function num : 0_18 , upvalues : _ENV
+function UIHomelandModule:ReqFriendList(TT)
   local needReq = false
   local now = GetSvrTimeNow()
-  -- DECOMPILER ERROR at PC10: Unhandled construct in 'MakeBoolean' P1
-
-  if self._reqFriendTime and now - self._reqFriendTime > 60 then
+  if self._reqFriendTime then
+    if now - self._reqFriendTime > 60 then
+      needReq = true
+    end
+  else
     needReq = true
   end
-  needReq = true
   if needReq then
-    local allFriends = ((GameGlobal.GetModule)(SocialModule)):GetFriendList(TT)
+    local allFriends = GameGlobal.GetModule(SocialModule):GetFriendList(TT)
     if not allFriends then
-      (Log.fatal)("获取所有好友列表失败")
+      Log.fatal("获取所有好友列表失败")
       return nil
     end
-    local module = (GameGlobal.GetModule)(HomelandModule)
+    local module = GameGlobal.GetModule(HomelandModule)
     local fres, fdata = module:HomelandVisitListReq(TT)
     if not fres:GetSucc() then
-      (Log.fatal)("获取家园好友列表失败：", fres:GetResult())
-      ;
-      (ToastManager.ShowHomeToast)(module:GetVisitErrorMsg(fres:GetResult()))
+      Log.fatal("获取家园好友列表失败：", fres:GetResult())
+      ToastManager.ShowHomeToast(module:GetVisitErrorMsg(fres:GetResult()))
       return nil
     end
-    local lres, ldata = nil, nil
-    lres = module:HomelandVisitLogReq(TT)
+    local lres, ldata
+    lres, ldata = module:HomelandVisitLogReq(TT)
     if not lres:GetSucc() then
-      (Log.fatal)("获取日志列表失败：", lres:GetResult())
-      ;
-      (ToastManager.ShowHomeToast)(module:GetVisitErrorMsg(lres:GetResult()))
+      Log.fatal("获取日志列表失败：", lres:GetResult())
+      ToastManager.ShowHomeToast(module:GetVisitErrorMsg(lres:GetResult()))
       return nil
     end
     self._friendList = {}
-    for _,value in pairs(fdata.visit_list) do
-      local visit_info = R15_PC88
+    for _, value in pairs(fdata.visit_list) do
+      local visit_info = value
       local social_info = allFriends[visit_info.pstid]
       local friend = UIHomeFriendData:New(social_info, visit_info)
-      ;
-      (table.insert)(self._friendList, friend)
+      table.insert(self._friendList, friend)
     end
     self._logList = {}
-    for _,value in pairs((ldata.log_list).curday_list) do
-      local log_info = R15_PC110
+    for _, value in pairs(ldata.log_list.curday_list) do
+      local log_info = value
       local log = UIHomeVisitLog:New(log_info)
-      ;
-      (table.insert)(self._logList, log)
+      table.insert(self._logList, log)
     end
-    for _,value in pairs((ldata.log_list).log_list) do
-      local log_info = R15_PC127
+    for _, value in pairs(ldata.log_list.log_list) do
+      local log_info = value
       local log = UIHomeVisitLog:New(log_info)
-      ;
-      (table.insert)(self._logList, log)
+      table.insert(self._logList, log)
     end
     self._reqFriendTime = now
   end
-  do
-    return self._friendList, self._logList
-  end
+  return self._friendList, self._logList
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.GetCurrentToolCfg = function(self, toolType)
-  -- function num : 0_19 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local axeCfgs = (Cfg.cfg_item_tool_upgrade)({ToolType = toolType})
-  for _,cfg in pairs(axeCfgs) do
+function UIHomelandModule:GetCurrentToolCfg(toolType)
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local axeCfgs = Cfg.cfg_item_tool_upgrade({ToolType = toolType})
+  for _, cfg in pairs(axeCfgs) do
     local items = itemModule:GetItemByTempId(cfg.ID)
-    if (table.count)(items) > 0 then
+    if table.count(items) > 0 then
       return cfg
     end
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.Visit_Water = function(self, breed, point, interactBtn)
-  -- function num : 0_20 , upvalues : _ENV
+function UIHomelandModule:Visit_Water(breed, point, interactBtn)
   if breed:Visit_IsWatered() then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_visit_has_watered"))
-    return 
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_visit_has_watered"))
+    return
   end
-  local host = (self._visitInfo).pstid
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._Water, self, host, breed, point, interactBtn)
+  local host = self._visitInfo.pstid
+  GameGlobal.TaskManager():StartTask(self._Water, self, host, breed, point, interactBtn)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule._Water = function(self, TT, host, breed, point, interactBtn)
-  -- function num : 0_21 , upvalues : _ENV
+function UIHomelandModule:_Water(TT, host, breed, point, interactBtn)
   local pstID = breed:PstID()
-  local module = (GameGlobal.GetModule)(HomelandModule)
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("UIHomeVisitReqWater")
+  local module = GameGlobal.GetModule(HomelandModule)
+  GameGlobal.UIStateManager():Lock("UIHomeVisitReqWater")
   local res, data = module:HomelandAccCultivateReq(TT, host, pstID)
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("UIHomeVisitReqWater")
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._visitInfo).cultivation_info = data.newInfo
+  GameGlobal.UIStateManager():UnLock("UIHomeVisitReqWater")
+  self._visitInfo.cultivation_info = data.newInfo
   if not res:GetSucc() then
-    (ToastManager.ShowHomeToast)(module:GetVisitErrorMsg(res:GetResult()))
-    return 
+    ToastManager.ShowHomeToast(module:GetVisitErrorMsg(res:GetResult()))
+    return
   end
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("PlayWaterAction")
-  ;
-  (interactBtn:GetGameObject()):SetActive(false)
-  ;
-  (((self._homelandClient):CharacterManager()):MainCharacterController()):Action_Water(TT, point)
+  GameGlobal.UIStateManager():Lock("PlayWaterAction")
+  interactBtn:GetGameObject():SetActive(false)
+  self._homelandClient:CharacterManager():MainCharacterController():Action_Water(TT, point)
   breed:HideWaterEft(TT)
-  ;
-  (interactBtn:GetGameObject()):SetActive(true)
-  ;
-  (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_visit_water_success"))
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("PlayWaterAction")
+  interactBtn:GetGameObject():SetActive(true)
+  ToastManager.ShowHomeToast(StringTable.Get("str_homeland_visit_water_success"))
+  GameGlobal.UIStateManager():UnLock("PlayWaterAction")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule._OnLevelInfoChanged = function(self, deltaLevel, curLevel)
-  -- function num : 0_22 , upvalues : _ENV
+function UIHomelandModule:_OnLevelInfoChanged(deltaLevel, curLevel)
   self._levelUpCache = deltaLevel
   self._curLevel = curLevel
-  ;
-  (Log.notice)("等级和经验消息推送:", deltaLevel)
+  Log.notice("等级和经验消息推送:", deltaLevel)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.TryPopLevelUpTip = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIHomelandModule:TryPopLevelUpTip()
   if self._levelUpCache > 0 then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_level_up", self._curLevel))
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_level_up", self._curLevel))
     self._levelUpCache = 0
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.ClearLevelupTip = function(self)
-  -- function num : 0_24
+function UIHomelandModule:ClearLevelupTip()
   self._levelUpCache = 0
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.OnBreedInteract = function(self, breedBuild)
-  -- function num : 0_25 , upvalues : _ENV
+function UIHomelandModule:OnBreedInteract(breedBuild)
   local homelandModule = self:GetModule(HomelandModule)
   local svrTimeModule = self:GetModule(SvrTimeModule)
   local defaultType = HomelandBreedUIType.Mutation
   local breedState = HomelandBreedState.None
-  local buildingPstId = (breedBuild:GetArchitecture()).pstid
-  local cultivationInfo = (homelandModule:GetHomelandInfo()).cultivation_info
-  local landCultivationInfo = (cultivationInfo.land_cultivation_infos)[buildingPstId]
-  do
-    if landCultivationInfo then
-      local remainTime = homelandModule:GetLandEndTime(landCultivationInfo) - svrTimeModule:GetServerTime() * 0.001
-      if #(landCultivationInfo.client_info).mutation_cultivation > 0 then
-        defaultType = HomelandBreedUIType.Mutation
-        if remainTime <= 0 then
-          breedState = HomelandBreedState.MutationReap
-        else
-          breedState = HomelandBreedState.Mutationing
-        end
-      end
-      if #(landCultivationInfo.client_info).directional_cultivation > 0 then
-        defaultType = HomelandBreedUIType.Clone
-        if remainTime <= 0 then
-          breedState = HomelandBreedState.CloneReap
-        else
-          breedState = HomelandBreedState.Cloning
-        end
-      end
-      if #(landCultivationInfo.client_info).state_change_cultivation > 0 then
-        defaultType = HomelandBreedUIType.StateChg
-        breedState = HomelandBreedState.StateChgReap
+  local buildingPstId = breedBuild:GetArchitecture().pstid
+  local cultivationInfo = homelandModule:GetHomelandInfo().cultivation_info
+  local landCultivationInfo = cultivationInfo.land_cultivation_infos[buildingPstId]
+  if landCultivationInfo then
+    local remainTime = homelandModule:GetLandEndTime(landCultivationInfo) - svrTimeModule:GetServerTime() * 0.001
+    if #landCultivationInfo.client_info.mutation_cultivation > 0 then
+      defaultType = HomelandBreedUIType.Mutation
+      if remainTime <= 0 then
+        breedState = HomelandBreedState.MutationReap
+      else
+        breedState = HomelandBreedState.Mutationing
       end
     end
-    local mainSeedData, mutationSeedData = nil, nil
-    local cbFunc = function()
-    -- function num : 0_25_0
+    if 0 < #landCultivationInfo.client_info.directional_cultivation then
+      defaultType = HomelandBreedUIType.Clone
+      if remainTime <= 0 then
+        breedState = HomelandBreedState.CloneReap
+      else
+        breedState = HomelandBreedState.Cloning
+      end
+    end
+    if 0 < #landCultivationInfo.client_info.state_change_cultivation then
+      defaultType = HomelandBreedUIType.StateChg
+      breedState = HomelandBreedState.StateChgReap
+    end
   end
-
-    if breedState == HomelandBreedState.MutationReap then
-      local mutationData = nil
-      if landCultivationInfo then
-        mutationData = ((landCultivationInfo.client_info).mutation_cultivation)[1]
-      end
-      if mutationData then
-        mainSeedData = (Cfg.cfg_item)[mutationData.main_seed_id]
-        mutationSeedData = (Cfg.cfg_item)[mutationData.second_seed_id]
-      end
-    else
-      do
-        if breedState == HomelandBreedState.CloneReap then
-          local directionalCultivation = nil
-          if landCultivationInfo then
-            directionalCultivation = ((landCultivationInfo.client_info).directional_cultivation)[1]
-          end
-          if directionalCultivation then
-            mainSeedData = (Cfg.cfg_item)[directionalCultivation.seed_id]
-            mutationSeedData = mainSeedData
-          end
-        else
-          do
-            do
-              if breedState == HomelandBreedState.StateChgReap then
-                local chgStateData = nil
-                if landCultivationInfo then
-                  chgStateData = ((landCultivationInfo.client_info).state_change_cultivation)[1]
-                end
-                if chgStateData then
-                  mainSeedData = (Cfg.cfg_item)[chgStateData.tree_id]
-                end
-              end
-              if breedState == HomelandBreedState.MutationReap or breedState == HomelandBreedState.CloneReap or breedState == HomelandBreedState.StateChgReap then
-                ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_25_1 , upvalues : homelandModule, buildingPstId, self, mainSeedData, mutationSeedData, cbFunc, defaultType, breedBuild, _ENV
-    local res, items, exp, first = homelandModule:HandlePickupCultivation(TT, buildingPstId)
-    if res:GetSucc() then
-      do
-        if exp > 0 then
+  local mainSeedData, mutationSeedData
+  
+  local function cbFunc()
+  end
+  
+  if breedState == HomelandBreedState.MutationReap then
+    local mutationData
+    if landCultivationInfo then
+      mutationData = landCultivationInfo.client_info.mutation_cultivation[1]
+    end
+    if mutationData then
+      mainSeedData = Cfg.cfg_item[mutationData.main_seed_id]
+      mutationSeedData = Cfg.cfg_item[mutationData.second_seed_id]
+    end
+  elseif breedState == HomelandBreedState.CloneReap then
+    local directionalCultivation
+    if landCultivationInfo then
+      directionalCultivation = landCultivationInfo.client_info.directional_cultivation[1]
+    end
+    if directionalCultivation then
+      mainSeedData = Cfg.cfg_item[directionalCultivation.seed_id]
+      mutationSeedData = mainSeedData
+    end
+  elseif breedState == HomelandBreedState.StateChgReap then
+    local chgStateData
+    if landCultivationInfo then
+      chgStateData = landCultivationInfo.client_info.state_change_cultivation[1]
+    end
+    if chgStateData then
+      mainSeedData = Cfg.cfg_item[chgStateData.tree_id]
+    end
+  end
+  if breedState == HomelandBreedState.MutationReap or breedState == HomelandBreedState.CloneReap or breedState == HomelandBreedState.StateChgReap then
+    GameGlobal.TaskManager():StartTask(function(TT)
+      local res, items, exp, first = homelandModule:HandlePickupCultivation(TT, buildingPstId)
+      if res:GetSucc() then
+        if 0 < exp then
           local roleAsset = {}
           roleAsset.exp = true
           roleAsset.first = first
@@ -407,60 +293,35 @@ UIHomelandModule.OnBreedInteract = function(self, breedBuild)
         end
         self:ShowDialog("UIHomelandBreedResult", mainSeedData, mutationSeedData, items, cbFunc, defaultType)
         breedBuild:Clear()
-        if exp > 0 then
-          (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_forge_add_exp", exp))
+        if 0 < exp then
+          ToastManager.ShowHomeToast(StringTable.Get("str_homeland_forge_add_exp", exp))
         end
         YIELD(TT, 1000)
         self:TryPopLevelUpTip()
       end
-    end
+    end, self)
+  else
+    breedBuild:ShowDialog("UIHomelandBreed", breedBuild)
   end
-, self)
-              else
-                breedBuild:ShowDialog("UIHomelandBreed", breedBuild)
-              end
-              ;
-              (Log.info)("BuildBase Show Breed UI", breedState)
-            end
-          end
-        end
-      end
-    end
-  end
+  Log.info("BuildBase Show Breed UI", breedState)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.ShowStartDialog = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIHomelandModule:ShowStartDialog()
   if self._dialog then
-    local name = (self._dialog).name
-    local param = (self._dialog).param
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog(name, param)
+    local name = self._dialog.name
+    local param = self._dialog.param
+    GameGlobal.UIStateManager():ShowDialog(name, param)
     self._dialog = nil
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.SetDialog = function(self, dialogName, dialogParam)
-  -- function num : 0_27
+function UIHomelandModule:SetDialog(dialogName, dialogParam)
   self._dialog = {}
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._dialog).name = dialogName
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._dialog).param = dialogParam
+  self._dialog.name = dialogName
+  self._dialog.param = dialogParam
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.SaveStoryList = function(self, saveList)
-  -- function num : 0_28
+function UIHomelandModule:SaveStoryList(saveList)
   if saveList then
     self._saveStoryList_test = saveList
   else
@@ -468,282 +329,191 @@ UIHomelandModule.SaveStoryList = function(self, saveList)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.EnterMoviePrepare = function(self, TT)
-  -- function num : 0_29 , upvalues : _ENV
-  local fatehrBuilding = (MoviePrepareData:GetInstance()):GetFatherBuild()
-  ;
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIHomelandMoviePrepareMainController)
-  while ((GameGlobal.UIStateManager)()):IsLocked() do
+function UIHomelandModule:EnterMoviePrepare(TT)
+  local fatehrBuilding = MoviePrepareData:GetInstance():GetFatherBuild()
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIHomelandMoviePrepareMainController)
+  while GameGlobal.UIStateManager():IsLocked() do
     YIELD(TT)
   end
-  ;
-  (self._homelandClient):StartBuild()
-  ;
-  ((self._homelandClient):BuildManager()):SetBuildEditorMode(BuildEditorMode.MakeMovieOther)
-  ;
-  ((self._homelandClient):BuildManager()):SetFatherBuildingForMakeMovie(fatehrBuilding)
-  ;
-  ((self._homelandClient):BuildManager()):ShowArea(false)
+  self._homelandClient:StartBuild()
+  self._homelandClient:BuildManager():SetBuildEditorMode(BuildEditorMode.MakeMovieOther)
+  self._homelandClient:BuildManager():SetFatherBuildingForMakeMovie(fatehrBuilding)
+  self._homelandClient:BuildManager():ShowArea(false)
   self:ClearWallAndFloorInScene(fatehrBuilding)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.EnterMovieMaker = function(self, TT)
-  -- function num : 0_30 , upvalues : _ENV
-  (self._homelandClient):SetLockGlobalCamera(nil)
-  ;
-  (self._homelandClient):FinishBuild(TT)
-  ;
-  (MoviePrepareData:GetInstance()):EnsurePrepareArchList()
-  ;
-  (HomelandMoviePrepareManager:GetInstance()):ShowAll(false)
-  local movieID = (MoviePrepareData:GetInstance()):GetMovieId()
+function UIHomelandModule:EnterMovieMaker(TT)
+  self._homelandClient:SetLockGlobalCamera(nil)
+  self._homelandClient:FinishBuild(TT)
+  MoviePrepareData:GetInstance():EnsurePrepareArchList()
+  HomelandMoviePrepareManager:GetInstance():ShowAll(false)
+  local movieID = MoviePrepareData:GetInstance():GetMovieId()
   local petList = {}
-  local endList = (HomelandMoviePrepareManager:GetInstance()):GetSelectedData(MoviePrepareType.PT_Actor)
-  for _,v in pairs(endList) do
-    (table.insert)(petList, v:GetItemId())
+  local endList = HomelandMoviePrepareManager:GetInstance():GetSelectedData(MoviePrepareType.PT_Actor)
+  for _, v in pairs(endList) do
+    table.insert(petList, v:GetItemId())
   end
-  local storyID = (MovieDataManager:GetInstance()):GetMovieStoryID(movieID, petList)
-  ;
-  (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIHomeMovieStoryController .. "DirectIn", function()
-    -- function num : 0_30_0 , upvalues : _ENV, storyID, self
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIHomeMovieStoryController, storyID, false, false, false, true, false)
-    ;
-    ((self._homelandClient):BuildManager()):ShowArea(false)
-  end
-)
+  local storyID = MovieDataManager:GetInstance():GetMovieStoryID(movieID, petList)
+  CutsceneManager.ExcuteCutsceneIn(UIStateType.UIHomeMovieStoryController .. "DirectIn", function()
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIHomeMovieStoryController, storyID, false, false, false, true, false)
+    self._homelandClient:BuildManager():ShowArea(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.EnterMovieResult = function(self, TT, isRecord)
-  -- function num : 0_31 , upvalues : _ENV
-  local fatehrBuilding = (MoviePrepareData:GetInstance()):GetFatherBuild()
+function UIHomelandModule:EnterMovieResult(TT, isRecord)
+  local fatehrBuilding = MoviePrepareData:GetInstance():GetFatherBuild()
   local scoreList = {}
-  local movieID = (MoviePrepareData:GetInstance()):GetMovieId()
+  local movieID = MoviePrepareData:GetInstance():GetMovieId()
   if isRecord then
-    local playBackData = (MoviePrepareData:GetInstance()):GetPlayBackData()
+    local playBackData = MoviePrepareData:GetInstance():GetPlayBackData()
     scoreList.actorScore = playBackData.pet_score / 2
     scoreList.itemScore = playBackData.item_score / 2
     scoreList.optionScore = playBackData.option_score / 2
-    scoreList.totalScore = (MovieDataManager:GetInstance()):CaculateTotalScore(playBackData)
+    scoreList.totalScore = MovieDataManager:GetInstance():CaculateTotalScore(playBackData)
   else
-    do
-      ;
-      (MovieDataManager:GetInstance()):SendDataToServer(TT)
-      do
-        local replyData = (MovieDataManager:GetInstance()):GetReplyClosingData()
-        scoreList.actorScore = replyData.pet_score / 2
-        scoreList.itemScore = replyData.item_score / 2
-        scoreList.optionScore = replyData.option_score / 2
-        scoreList.totalScore = (MovieDataManager:GetInstance()):CaculateTotalScore(replyData)
-        local cfgClosingList = ((Cfg.cfg_homeland_movice_closing)({MovieID = movieID}))
-        local closingItem = nil
-        for _,v in pairs(cfgClosingList) do
-          local l, r = (MovieDataManager:GetInstance()):GetClosingCondition(v.Condition)
-          local score = (MovieDataManager:GetInstance()):TransferToStarScore(scoreList.totalScore)
-          if l <= score and score < r + 0.01 then
-            closingItem = v
-            break
-          end
-        end
-        do
-          self._homelandMovieClosingManager = HomelandMovieClosingManager:New()
-          ;
-          (self._homelandMovieClosingManager):ShowPetClosing(isRecord, closingItem)
-          ;
-          ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIHomelandMovieClosingController, isRecord, closingItem, scoreList, self._homelandMovieClosingManager)
-          while ((GameGlobal.UIStateManager)()):IsLocked() do
-            YIELD(TT)
-          end
-          do
-            if not isRecord then
-              local replyData = (MovieDataManager:GetInstance()):GetReplyClosingData()
-              if (table.count)(replyData.rewards) ~= 0 then
-                ((GameGlobal.UIStateManager)()):ShowDialog("UIHomeShowAwards", replyData.rewards, nil, false, nil)
-              end
-            end
-            ;
-            (self._homelandClient):StartBuild()
-            ;
-            ((self._homelandClient):BuildManager()):SetBuildEditorMode(BuildEditorMode.MakeMovieClosing)
-            ;
-            ((self._homelandClient):BuildManager()):SetFatherBuildingForMakeMovie(fatehrBuilding)
-            self:FocusPreparePointDirect(fatehrBuilding, MoviePrepareType.PT_Result)
-            ;
-            (self._homelandClient):SetLockGlobalCamera(true)
-            ;
-            ((self._homelandClient):BuildManager()):ShowArea(false)
-            ;
-            (CutsceneManager.ExcuteCutsceneOut)()
-          end
-        end
-      end
+    MovieDataManager:GetInstance():SendDataToServer(TT)
+    local replyData = MovieDataManager:GetInstance():GetReplyClosingData()
+    scoreList.actorScore = replyData.pet_score / 2
+    scoreList.itemScore = replyData.item_score / 2
+    scoreList.optionScore = replyData.option_score / 2
+    scoreList.totalScore = MovieDataManager:GetInstance():CaculateTotalScore(replyData)
+  end
+  local cfgClosingList = Cfg.cfg_homeland_movice_closing({MovieID = movieID})
+  local closingItem
+  for _, v in pairs(cfgClosingList) do
+    local l, r = MovieDataManager:GetInstance():GetClosingCondition(v.Condition)
+    local score = MovieDataManager:GetInstance():TransferToStarScore(scoreList.totalScore)
+    if l <= score and score < r + 0.01 then
+      closingItem = v
+      break
     end
   end
+  self._homelandMovieClosingManager = HomelandMovieClosingManager:New()
+  self._homelandMovieClosingManager:ShowPetClosing(isRecord, closingItem)
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIHomelandMovieClosingController, isRecord, closingItem, scoreList, self._homelandMovieClosingManager)
+  while GameGlobal.UIStateManager():IsLocked() do
+    YIELD(TT)
+  end
+  if not isRecord then
+    local replyData = MovieDataManager:GetInstance():GetReplyClosingData()
+    if table.count(replyData.rewards) ~= 0 then
+      GameGlobal.UIStateManager():ShowDialog("UIHomeShowAwards", replyData.rewards, nil, false, nil)
+    end
+  end
+  self._homelandClient:StartBuild()
+  self._homelandClient:BuildManager():SetBuildEditorMode(BuildEditorMode.MakeMovieClosing)
+  self._homelandClient:BuildManager():SetFatherBuildingForMakeMovie(fatehrBuilding)
+  self:FocusPreparePointDirect(fatehrBuilding, MoviePrepareType.PT_Result)
+  self._homelandClient:SetLockGlobalCamera(true)
+  self._homelandClient:BuildManager():ShowArea(false)
+  CutsceneManager.ExcuteCutsceneOut()
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.EnterHomelandAfterMovieMaker = function(self, TT, isRecord, cutSceneOut)
-  -- function num : 0_32 , upvalues : _ENV
-  (self._homelandClient):SetLockGlobalCamera(nil)
-  ;
-  (AudioHelperController.PlayBGM)(CriAudioIDConst.BGMEnterHomeland, AudioConstValue.BGMCrossFadeTime)
+function UIHomelandModule:EnterHomelandAfterMovieMaker(TT, isRecord, cutSceneOut)
+  self._homelandClient:SetLockGlobalCamera(nil)
+  AudioHelperController.PlayBGM(CriAudioIDConst.BGMEnterHomeland, AudioConstValue.BGMCrossFadeTime)
   if cutSceneOut then
-    (CutsceneManager.ExcuteCutsceneOut)()
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIHomeland)
+    CutsceneManager.ExcuteCutsceneOut()
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIHomeland)
   else
     if self._homelandMovieClosingManager then
-      (self._homelandMovieClosingManager):StopAnim()
+      self._homelandMovieClosingManager:StopAnim()
     end
-    ;
-    (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIHomeMovieStoryController .. "DirectIn", function()
-    -- function num : 0_32_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIHomeland)
-    ;
-    (CutsceneManager.ExcuteCutsceneOut)()
+    CutsceneManager.ExcuteCutsceneIn(UIStateType.UIHomeMovieStoryController .. "DirectIn", function()
+      GameGlobal.UIStateManager():SwitchState(UIStateType.UIHomeland)
+      CutsceneManager.ExcuteCutsceneOut()
+    end)
   end
-)
-  end
-  local fatehrBuilding = (MoviePrepareData:GetInstance()):GetFatherBuild()
+  local fatehrBuilding = MoviePrepareData:GetInstance():GetFatherBuild()
   self:RestoreFreeChildrenInScene(fatehrBuilding)
   if not isRecord then
-    (HomelandMoviePrepareManager:GetInstance()):Dispose()
+    HomelandMoviePrepareManager:GetInstance():Dispose()
   end
-  ;
-  (self._homelandClient):FinishBuild(TT)
+  self._homelandClient:FinishBuild(TT)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.EnterRepalyMovie = function(self, TT)
-  -- function num : 0_33 , upvalues : _ENV
-  local fatehrBuilding = (MoviePrepareData:GetInstance()):GetFatherBuild()
+function UIHomelandModule:EnterRepalyMovie(TT)
+  local fatehrBuilding = MoviePrepareData:GetInstance():GetFatherBuild()
   self:ClearWallAndFloorInScene(fatehrBuilding)
-  local archlist = (MoviePrepareData:GetInstance()):GetPrepareArchList()
+  local archlist = MoviePrepareData:GetInstance():GetPrepareArchList()
   self:SetFreeChildren(fatehrBuilding, archlist)
-  local movieID = (MoviePrepareData:GetInstance()):GetMovieId()
-  local playBackData = (MoviePrepareData:GetInstance()):GetPlayBackData()
+  local movieID = MoviePrepareData:GetInstance():GetMovieId()
+  local playBackData = MoviePrepareData:GetInstance():GetPlayBackData()
   local petList = {}
-  for _,v in pairs(playBackData.chose_pets) do
-    (table.insert)(petList, v)
+  for _, v in pairs(playBackData.chose_pets) do
+    table.insert(petList, v)
   end
-  local storyID = (MovieDataManager:GetInstance()):GetMovieStoryID(movieID, petList)
-  local openTease = (MoviePrepareData:GetInstance()):GetOpenTease()
-  ;
-  (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIHomeMovieStoryController .. "DirectIn", function()
-    -- function num : 0_33_0 , upvalues : _ENV, storyID, openTease, self
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIHomeMovieStoryController, storyID, false, false, false, openTease, true)
-    ;
-    ((self._homelandClient):BuildManager()):ShowArea(false)
-  end
-)
+  local storyID = MovieDataManager:GetInstance():GetMovieStoryID(movieID, petList)
+  local openTease = MoviePrepareData:GetInstance():GetOpenTease()
+  CutsceneManager.ExcuteCutsceneIn(UIStateType.UIHomeMovieStoryController .. "DirectIn", function()
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIHomeMovieStoryController, storyID, false, false, false, openTease, true)
+    self._homelandClient:BuildManager():ShowArea(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.GetFreeChildren = function(self, fatherBuilding)
-  -- function num : 0_34 , upvalues : _ENV
+function UIHomelandModule:GetFreeChildren(fatherBuilding)
   return MovieFatherSon:OnSavePlayback(fatherBuilding)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.ClearFreeChildrenInScene = function(self, fatherBuilding)
-  -- function num : 0_35 , upvalues : _ENV
+function UIHomelandModule:ClearFreeChildrenInScene(fatherBuilding)
   return MovieFatherSon:OnClearFreeArea(fatherBuilding)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.ClearWallAndFloorInScene = function(self, fatherBuilding)
-  -- function num : 0_36 , upvalues : _ENV
+function UIHomelandModule:ClearWallAndFloorInScene(fatherBuilding)
   return MovieFatherSon:OnClearMovie(fatherBuilding)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.RestoreFreeChildrenInScene = function(self, fatherBuilding)
-  -- function num : 0_37 , upvalues : _ENV
+function UIHomelandModule:RestoreFreeChildrenInScene(fatherBuilding)
   return MovieFatherSon:OnRestoreHomeBuilding(fatherBuilding)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.SetFreeChildren = function(self, fatherBuilding, children)
-  -- function num : 0_38 , upvalues : _ENV
+function UIHomelandModule:SetFreeChildren(fatherBuilding, children)
   return MovieFatherSon:OnEnterPlayback(fatherBuilding, children)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.ShowHightLightFreeArea = function(self, fatherBuilding, bShow)
-  -- function num : 0_39
+function UIHomelandModule:ShowHightLightFreeArea(fatherBuilding, bShow)
   fatherBuilding:ShowMovieFreeAreaEffect(bShow)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.FocusPreparePoint = function(self, fatherBuilding, prepareType, callback)
-  -- function num : 0_40
+function UIHomelandModule:FocusPreparePoint(fatherBuilding, prepareType, callback)
   local point = self:GetPreparePoint(fatherBuilding, prepareType)
-  if not point and callback then
-    callback()
+  if not point then
+    if callback then
+      callback()
+    end
+    return
   end
-  do return  end
-  ;
-  ((self._homelandClient):BuildManager()):FocusPoint(point, callback)
+  self._homelandClient:BuildManager():FocusPoint(point, callback)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.FocusPreparePointDirect = function(self, fatherBuilding, prepareType, callback)
-  -- function num : 0_41
+function UIHomelandModule:FocusPreparePointDirect(fatherBuilding, prepareType, callback)
   local point = self:GetPreparePoint(fatherBuilding, prepareType)
-  if not point and callback then
-    callback()
+  if not point then
+    if callback then
+      callback()
+    end
+    return
   end
-  do return  end
-  ;
-  ((self._homelandClient):BuildManager()):FocusPointDirect(point)
+  self._homelandClient:BuildManager():FocusPointDirect(point)
   if callback then
     callback()
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandModule.GetPreparePoint = function(self, fatherBuilding, prepareType)
-  -- function num : 0_42 , upvalues : _ENV
-  local point = nil
+function UIHomelandModule:GetPreparePoint(fatherBuilding, prepareType)
+  local point
   if prepareType == MoviePrepareType.PT_Scene then
     point = fatherBuilding:GetPrepareMovieSceneFocusPoint()
+  elseif prepareType == MoviePrepareType.PT_Prop then
+    point = fatherBuilding:GetPrepareMoviePropFocusPoint()
+  elseif prepareType == MoviePrepareType.PT_Furniture then
+    point = fatherBuilding:ChangeSkinFocusPoint()
+  elseif prepareType == MoviePrepareType.PT_Actor then
+    point = fatherBuilding:GetPrepareMovieActorFocusPoint()
+  elseif prepareType == MoviePrepareType.PT_Result then
+    point = fatherBuilding:GetPrepareMovieResultFocusPoint()
   else
-    if prepareType == MoviePrepareType.PT_Prop then
-      point = fatherBuilding:GetPrepareMoviePropFocusPoint()
-    else
-      if prepareType == MoviePrepareType.PT_Furniture then
-        point = fatherBuilding:ChangeSkinFocusPoint()
-      else
-        if prepareType == MoviePrepareType.PT_Actor then
-          point = fatherBuilding:GetPrepareMovieActorFocusPoint()
-        else
-          if prepareType == MoviePrepareType.PT_Result then
-            point = fatherBuilding:GetPrepareMovieResultFocusPoint()
-          else
-            ;
-            (Log.error)("ERR:UIHomelandModule:GetPreparePoint Can\'t Support " .. "prepareType")
-          end
-        end
-      end
-    end
+    Log.error("ERR:UIHomelandModule:GetPreparePoint Can't Support " .. "prepareType")
   end
   return point
 end
-
-

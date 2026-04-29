@@ -1,190 +1,109 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/data/d_shop_secret_good_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DShopSecretGoodBase", Object)
 DShopSecretGoodBase = DShopSecretGoodBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DShopSecretGoodBase.Constructor = function(self, goodinfo, goodconfig)
-  -- function num : 0_0
+function DShopSecretGoodBase:Constructor(goodinfo, goodconfig)
   self.discount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.Refresh = function(self, goodinfo, goodconfig)
-  -- function num : 0_1 , upvalues : _ENV
+function DShopSecretGoodBase:Refresh(goodinfo, goodconfig)
   self.goodId = goodinfo.goods_id
   self.cfg = goodconfig
   if goodconfig == nil then
-    (Log.error)("err DShopSecretGoodBase  goodConfig is nil, goodsId = " .. self.goodId)
+    Log.error("err DShopSecretGoodBase  goodConfig is nil, goodsId = " .. self.goodId)
   end
-  if (self.cfg)[ConfigKey.ConfigKey_IsAddBagNum] and (self.cfg)[ConfigKey.ConfigKey_IsAddBagNum] > 0 then
-    local haveCount = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(goodconfig[ConfigKey.ConfigKey_ItemId])
-    self.remainNum = (math.max)((self.cfg)[ConfigKey.ConfigKey_SaleNum] - (haveCount + goodinfo.selled_num), 0)
+  if self.cfg[ConfigKey.ConfigKey_IsAddBagNum] and self.cfg[ConfigKey.ConfigKey_IsAddBagNum] > 0 then
+    local haveCount = GameGlobal.GetModule(ItemModule):GetItemCount(goodconfig[ConfigKey.ConfigKey_ItemId])
+    self.remainNum = math.max(self.cfg[ConfigKey.ConfigKey_SaleNum] - (haveCount + goodinfo.selled_num), 0)
   else
-    do
-      self.remainNum = (self.cfg)[ConfigKey.ConfigKey_SaleNum] - goodinfo.selled_num
-      self.discount = self.cfg and (self.cfg)[ConfigKey.ConfigKey_Discount] or 0
-      self.saleMaxNum = (self.cfg)[ConfigKey.ConfigKey_SaleNum]
-    end
+    self.remainNum = self.cfg[ConfigKey.ConfigKey_SaleNum] - goodinfo.selled_num
   end
+  self.discount = self.cfg and self.cfg[ConfigKey.ConfigKey_Discount] or 0
+  self.saleMaxNum = self.cfg[ConfigKey.ConfigKey_SaleNum]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.GetGoodId = function(self)
-  -- function num : 0_2
+function DShopSecretGoodBase:GetGoodId()
   return self.goodId
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.GetRemainCount = function(self)
-  -- function num : 0_3
+function DShopSecretGoodBase:GetRemainCount()
   return self.remainNum
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.GetDiscount = function(self)
-  -- function num : 0_4
+function DShopSecretGoodBase:GetDiscount()
   return self.discount
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.GetSubTabType = function(self)
-  -- function num : 0_5
+function DShopSecretGoodBase:GetSubTabType()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.GetRemainTotalCount = function(self)
-  -- function num : 0_6
+function DShopSecretGoodBase:GetRemainTotalCount()
   return 1
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.ShowRemain = function(self)
-  -- function num : 0_7
+function DShopSecretGoodBase:ShowRemain()
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.GetItemId = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  return (self.cfg and (self.cfg)[ConfigKey.ConfigKey_ItemId]) or (self.localCfg and (self.localCfg).ItemId) or 0
+function DShopSecretGoodBase:GetItemId()
+  return self.cfg and self.cfg[ConfigKey.ConfigKey_ItemId] or self.localCfg and self.localCfg.ItemId or 0
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.IsPet = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function DShopSecretGoodBase:IsPet()
   local itemId = self:GetItemId()
-  do return (Cfg.cfg_pet)[itemId] ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return Cfg.cfg_pet[itemId] ~= nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.IsBattlePass = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  do return (self.cfg)[ConfigKey.ConfigKey_BattleType] ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function DShopSecretGoodBase:IsBattlePass()
+  return self.cfg[ConfigKey.ConfigKey_BattleType] ~= nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.GetBattlePassType = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  return (self.cfg)[ConfigKey.ConfigKey_BattleType]
+function DShopSecretGoodBase:GetBattlePassType()
+  return self.cfg[ConfigKey.ConfigKey_BattleType]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.GetConvertType = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function DShopSecretGoodBase:GetConvertType()
   if self:IsBattlePass() then
-    return (self.cfg)[ConfigKey.ConfigKey_ConvertType]
+    return self.cfg[ConfigKey.ConfigKey_ConvertType]
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.GetConvertPrice = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function DShopSecretGoodBase:GetConvertPrice()
   if self:IsBattlePass() then
-    return (self.cfg)[ConfigKey.ConfigKey_ConvertPrice]
+    return self.cfg[ConfigKey.ConfigKey_ConvertPrice]
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.GetItemCount = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  return (self.cfg and (self.cfg)[ConfigKey.ConfigKey_ItemCount]) or (self.localCfg and (self.localCfg).ItemCount) or 0
+function DShopSecretGoodBase:GetItemCount()
+  return self.cfg and self.cfg[ConfigKey.ConfigKey_ItemCount] or self.localCfg and self.localCfg.ItemCount or 0
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.GetSaleType = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  return (self.cfg and (self.cfg)[ConfigKey.ConfigKey_SaleType]) or (self.localCfg and (self.localCfg).SaleType) or 0
+function DShopSecretGoodBase:GetSaleType()
+  return self.cfg and self.cfg[ConfigKey.ConfigKey_SaleType] or self.localCfg and self.localCfg.SaleType or 0
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.GetOriginalSalePrice = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  if self.cfg then
-    return (self.cfg)[ConfigKey.ConfigKey_RawPrice]
-  end
+function DShopSecretGoodBase:GetOriginalSalePrice()
+  return self.cfg and self.cfg[ConfigKey.ConfigKey_RawPrice]
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.GetSalePrice = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function DShopSecretGoodBase:GetSalePrice()
   local singlePrice = self:GetOriginalSalePrice()
-  return self.cfg and (self.cfg)[ConfigKey.ConfigKey_NowPrice] or singlePrice
+  return self.cfg and self.cfg[ConfigKey.ConfigKey_NowPrice] or singlePrice
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.GetSaleTag = function(self)
-  -- function num : 0_18
+function DShopSecretGoodBase:GetSaleTag()
   return 0
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.ShowSaleTag = function(self)
-  -- function num : 0_19
+function DShopSecretGoodBase:ShowSaleTag()
   return false
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.IsUnLimit = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  do return self.saleMaxNum == SpecialNum.MysteryGoodsUnlimitedNum end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function DShopSecretGoodBase:IsUnLimit()
+  return self.saleMaxNum == SpecialNum.MysteryGoodsUnlimitedNum
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretGoodBase.AddBagNum = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  if self.cfg then
-    return (self.cfg)[ConfigKey.ConfigKey_IsAddBagNum]
-  end
+function DShopSecretGoodBase:AddBagNum()
+  return self.cfg and self.cfg[ConfigKey.ConfigKey_IsAddBagNum]
 end
-
-

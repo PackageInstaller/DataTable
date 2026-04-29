@@ -1,14 +1,5 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_gl/ui_haute_couture_draw_dynamic_probablity_bg_gl.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawDynamicProbabilityBgGL", UICustomWidget)
 UIHauteCoutureDrawDynamicProbabilityBgGL = UIHauteCoutureDrawDynamicProbabilityBgGL
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawDynamicProbabilityBgGL.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawDynamicProbabilityBgGL:Constructor()
 end
-
-

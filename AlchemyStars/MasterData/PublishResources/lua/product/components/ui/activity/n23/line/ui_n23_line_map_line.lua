@@ -1,41 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n23/line/ui_n23_line_map_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN23LineMapLine", UICustomWidget)
 UIN23LineMapLine = UIN23LineMapLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN23LineMapLine.OnShow = function(self)
-  -- function num : 0_0
+function UIN23LineMapLine:OnShow()
   self._rect = self:GetUIComponent("RectTransform", "shape")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23LineMapLine.OnHide = function(self)
-  -- function num : 0_1
+function UIN23LineMapLine:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23LineMapLine.Flush = function(self, from, to)
-  -- function num : 0_2 , upvalues : _ENV
-  local dis = (Vector2.Distance)(from, to)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rect).sizeDelta = Vector2(dis, ((self._rect).sizeDelta).y)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = from
+function UIN23LineMapLine:Flush(from, to)
+  local dis = Vector2.Distance(from, to)
+  self._rect.sizeDelta = Vector2(dis, self._rect.sizeDelta.y)
+  self._rect.anchoredPosition = from
   local v = to - from
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rect).localRotation = (Quaternion.FromToRotation)(Vector3.right, Vector3(v.x, v.y, 0))
+  self._rect.localRotation = Quaternion.FromToRotation(Vector3.right, Vector3(v.x, v.y, 0))
 end
-
-

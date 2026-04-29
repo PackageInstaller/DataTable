@@ -1,33 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_logic/active_skill_calculator.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ActiveSkillCalculator", Object)
 ActiveSkillCalculator = ActiveSkillCalculator
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ActiveSkillCalculator.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function ActiveSkillCalculator:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
-  self._skillLogicService = (self._world):GetService("SkillLogic")
+  self._configService = self._world:GetService("Config")
+  self._skillLogicService = self._world:GetService("SkillLogic")
   self._foreachEffectCalculator = ForEachEffectCalculator:New(world)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillCalculator.DoCalculateSkill = function(self, casterEntity)
-  -- function num : 0_1
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+function ActiveSkillCalculator:DoCalculateSkill(casterEntity)
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
-  local attackRange = (skillEffectResultContainer:GetScopeResult()):GetAttackRange()
-  local logger = (self._world):GetMatchLogger()
+  local attackRange = skillEffectResultContainer:GetScopeResult():GetAttackRange()
+  local logger = self._world:GetMatchLogger()
   local casterEntityID = casterEntity:GetID()
-  logger:BeginSkill(casterEntityID, (casterEntity:GridLocation()):GetGridPos(), skillID, attackRange)
-  ;
-  (self._foreachEffectCalculator):DoSkillEffectCalculate(casterEntity)
+  logger:BeginSkill(casterEntityID, casterEntity:GridLocation():GetGridPos(), skillID, attackRange)
+  self._foreachEffectCalculator:DoSkillEffectCalculate(casterEntity)
   logger:EndSkill(casterEntityID)
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/find_frog_game/ui_cn14n43_frog_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN14N43FrogEntry", UISideEnterCenterContentBase)
 UICN14N43FrogEntry = UICN14N43FrogEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN14N43FrogEntry.Constructor = function(self)
-  -- function num : 0_0
+function UICN14N43FrogEntry:Constructor()
   self.CollectFrogData = {}
   self.CollectSeverMark = 0
   self.RecycleFrogNum = 0
@@ -22,61 +15,50 @@ UICN14N43FrogEntry.Constructor = function(self)
   self.FallSpeed = 3500
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry.DoInit = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self.FrogNumMax = (table.count)((Cfg.cfg_frog_info)())
+function UICN14N43FrogEntry:DoInit()
+  self.FrogNumMax = table.count(Cfg.cfg_frog_info())
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._campaignModule = self:GetModule(CampaignModule)
   self._campaign = self._data
-  local sample = (self._campaign):GetSample()
+  local sample = self._campaign:GetSample()
   self._endTime = sample.end_time
-  self._localProcess = (self._campaign):GetLocalProcess()
-  self._personProgressComponent = (self._localProcess):GetComponent(ECampaignCollectFrogComponentID.ECAMPAIGN_COLLECT_FROG_PERSON_PROCESS)
-  self.cmpInfo = (self._personProgressComponent):ComponentInfo()
+  self._localProcess = self._campaign:GetLocalProcess()
+  self._personProgressComponent = self._localProcess:GetComponent(ECampaignCollectFrogComponentID.ECAMPAIGN_COLLECT_FROG_PERSON_PROCESS)
+  self.cmpInfo = self._personProgressComponent:ComponentInfo()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
-  local getRewards = (self.cmpInfo).m_received_progress
-  for k,v in pairs(getRewards) do
+  local getRewards = self.cmpInfo.m_received_progress
+  for k, v in pairs(getRewards) do
     if v == self.FrogNumMax then
       self.isReceiveFinalFrog = true
     end
   end
   self:_CollectFrogFormatData()
-  self.CollectSeverMark = (self.cmpInfo).m_mark
-  self.RecycleFrogNum = (self.cmpInfo).m_mark_else
-  ;
-  (Log.debug)("[Frog]   CollectSeverMark:", self.CollectSeverMark, ", self.RecycleFrogNum:", self.RecycleFrogNum)
+  self.CollectSeverMark = self.cmpInfo.m_mark
+  self.RecycleFrogNum = self.cmpInfo.m_mark_else
+  Log.debug("[Frog]   CollectSeverMark:", self.CollectSeverMark, ", self.RecycleFrogNum:", self.RecycleFrogNum)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry.DoShow = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN14N43FrogEntry:DoShow()
   self.CanRecycleFrog = true
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
+    self._campaign:ClearCampaignNew(TT)
+  end)
   self:_GetComponents()
   self:_InitFrogReward()
   self.taskId = self:StartTask(function(TT)
-    -- function num : 0_2_1 , upvalues : self, _ENV
-    while 1 do
+    while true do
       self:_OnValue()
       YIELD(TT, 1000)
     end
-  end
-)
+  end)
   self:_InitFrogNode()
-  local rewards = (self.cmpInfo).m_progress_rewards
-  local getRewards = (self.cmpInfo).m_received_progress
+  local rewards = self.cmpInfo.m_progress_rewards
+  local getRewards = self.cmpInfo.m_received_progress
   local isReceived = false
-  for k,v in pairs(rewards) do
+  for k, v in pairs(rewards) do
     if k ~= self.FrogNumMax and k <= self.RecycleFrogNum then
       local b = false
-      for key,value in pairs(getRewards) do
+      for key, value in pairs(getRewards) do
         if value == k then
           b = true
         end
@@ -87,63 +69,49 @@ UICN14N43FrogEntry.DoShow = function(self)
       end
     end
   end
-  do
-    if isReceived then
-      ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_2_2 , upvalues : _ENV, self
-    local res = UIStateSwitchReq:New()
-    res:SetSucc(true)
-    local reward = (self._personProgressComponent):HandleOneKeyReceiveRewards(TT, res)
-    ;
-    (UIActivityHelper.ShowUIGetRewards)(reward)
+  if isReceived then
+    GameGlobal.TaskManager():StartTask(function(TT)
+      local res = UIStateSwitchReq:New()
+      res:SetSucc(true)
+      local reward = self._personProgressComponent:HandleOneKeyReceiveRewards(TT, res)
+      UIActivityHelper.ShowUIGetRewards(reward)
+    end)
   end
-)
-    end
-    self:_RefUI()
-  end
+  self:_RefUI()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry.DoHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN14N43FrogEntry:DoHide()
   if self.taskId then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId)
+    GameGlobal.TaskManager():KillTask(self.taskId)
     self.taskId = nil
   end
   if self.taskId2 then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId2)
+    GameGlobal.TaskManager():KillTask(self.taskId2)
     self.taskId2 = nil
   end
   if self.taskId3 then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId3)
+    GameGlobal.TaskManager():KillTask(self.taskId3)
     self.taskId3 = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry.DoDestroy = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (UICN14N43FrogEntry.super):Dispose()
+function UICN14N43FrogEntry:DoDestroy()
+  UICN14N43FrogEntry.super:Dispose()
   if self.taskId then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId)
+    GameGlobal.TaskManager():KillTask(self.taskId)
     self.taskId = nil
   end
   if self.taskId2 then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId2)
+    GameGlobal.TaskManager():KillTask(self.taskId2)
     self.taskId2 = nil
   end
   if self.taskId3 then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId3)
+    GameGlobal.TaskManager():KillTask(self.taskId3)
     self.taskId3 = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry._GetComponents = function(self)
-  -- function num : 0_5
+function UICN14N43FrogEntry:_GetComponents()
   self._remainTime = self:GetUIComponent("UILocalizationText", "RemainTimeText")
   self._remainTime2 = self:GetUIComponent("UILocalizationText", "RemainTimeText2")
   self._TestTips = self:GetUIComponent("UILocalizationText", "TestTips")
@@ -168,201 +136,144 @@ UICN14N43FrogEntry._GetComponents = function(self)
   self.RecycleArea = self:GetUIComponent("RectTransform", "RecycleArea")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry._OnValue = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UICN14N43FrogEntry:_OnValue()
   if self._remainTime then
-    local curTime = (self._svrTimeModule):GetServerTime() * 0.001
+    local curTime = self._svrTimeModule:GetServerTime() * 0.001
     local endTime = self._endTime
     if curTime < endTime then
-      (self._remainTime):SetText((StringTable.Get)("str_activity_common_remainingtime_3", ""))
-      ;
-      (self._remainTime2):SetText((UIActivityHelper.GetFormatTimerStr)(endTime - curTime))
-      ;
-      ((self._remainTime2).gameObject):SetActive(true)
+      self._remainTime:SetText(StringTable.Get("str_activity_common_remainingtime_3", ""))
+      self._remainTime2:SetText(UIActivityHelper.GetFormatTimerStr(endTime - curTime))
+      self._remainTime2.gameObject:SetActive(true)
     else
-      ;
-      (self._remainTime):SetText((StringTable.Get)("str_activity_common_state_over"))
-      ;
-      ((self._remainTime2).gameObject):SetActive(false)
+      self._remainTime:SetText(StringTable.Get("str_activity_common_state_over"))
+      self._remainTime2.gameObject:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry.AfterUILayerChanged = function(self)
-  -- function num : 0_7
+function UICN14N43FrogEntry:AfterUILayerChanged()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry._CollectFrogFormatData = function(self)
-  -- function num : 0_8
+function UICN14N43FrogEntry:_CollectFrogFormatData()
   self.CollectFrogData = {}
-  local mark = (self.cmpInfo).m_mark
+  local mark = self.cmpInfo.m_mark
   for i = self.FrogNumMax, 1, -1 do
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self.CollectFrogData)[i] = mark & 1
+    self.CollectFrogData[i] = mark & 1
     mark = mark >> 1
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry._InitFrogNode = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UICN14N43FrogEntry:_InitFrogNode()
   local showNum = 0
   for i = 1, self.FrogNumMax do
-    if (self.CollectFrogData)[i] == 1 then
+    if self.CollectFrogData[i] == 1 then
       showNum = showNum + 1
     end
   end
   if self.RecycleFrogNum < self.FrogNumMax then
-    (self._RootAnim):Play("effanim_UICN14N43FrogEntry_in")
-    ;
-    (self._EffAnim):Play("effanim_UICN14N43FrogEntry_eff_in")
+    self._RootAnim:Play("effanim_UICN14N43FrogEntry_in")
+    self._EffAnim:Play("effanim_UICN14N43FrogEntry_eff_in")
   else
-    ;
-    (self._eff):SetActive(false)
+    self._eff:SetActive(false)
   end
   self:_AddProgress()
   showNum = showNum - self.RecycleFrogNum
-  local b = showNum == 0 and self.RecycleFrogNum < self.FrogNumMax
-  ;
-  (self._frog0):SetActive(b)
-  ;
-  (self._shou):SetActive(showNum > 0)
-  ;
-  (self._mark):SetActive(self.RecycleFrogNum < self.FrogNumMax)
-  ;
-  (self._receiveNode):SetActive((self.FrogNumMax < self.RecycleFrogNum and not self.isReceiveFinalFrog))
+  local b = showNum == 0 and self.FrogNumMax > self.RecycleFrogNum
+  self._frog0:SetActive(b)
+  self._shou:SetActive(0 < showNum)
+  self._mark:SetActive(self.FrogNumMax > self.RecycleFrogNum)
+  self._receiveNode:SetActive(self.RecycleFrogNum > self.FrogNumMax and not self.isReceiveFinalFrog)
   self.FrogItemList = {}
-  ;
-  (self._frogNode):ClearWidgets()
-  local items = (self._frogNode):SpawnObjects("UICN14N43Frog", showNum)
-  local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UISideEnterCenterController")
+  self._frogNode:ClearWidgets()
+  local items = self._frogNode:SpawnObjects("UICN14N43Frog", showNum)
+  local camera = GameGlobal.UIStateManager():GetControllerCamera("UISideEnterCenterController")
   for i = 1, showNum do
     local item = items[i]
     item:SetDragData(camera, self.RecycleArea)
     item:SetPos(Vector3((i - 1) * self.FrogPosDiffX, -400, 0))
     item:SetData(false, i, function(idx)
-    -- function num : 0_9_0 , upvalues : self
-    self:_ClickFrog(idx)
-  end
-)
-    if self.ShowFrogMax < i then
+      self:_ClickFrog(idx)
+    end)
+    if i > self.ShowFrogMax then
       item:SetActive(false)
     end
-    ;
-    (table.insert)(self.FrogItemList, item)
+    table.insert(self.FrogItemList, item)
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry._AddProgress = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local serverP = (self.cmpInfo).m_current_progress
+function UICN14N43FrogEntry:_AddProgress()
+  local serverP = self.cmpInfo.m_current_progress
   local clintP = self.RecycleFrogNum
   local addNum = clintP - serverP
   if addNum <= 0 then
-    return 
+    return
   end
-  ;
-  (Log.debug)("[Frog]   _AddProgress:", addNum)
+  Log.debug("[Frog]   _AddProgress:", addNum)
   for i = 1, addNum do
-    ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : _ENV, self
-    local res = UIStateSwitchReq:New()
-    res:SetSucc(true)
-    ;
-    (self._personProgressComponent):HandlePersonProgressCollect(TT, res, 1, self.CollectSeverMark, self.RecycleFrogNum)
-  end
-)
+    GameGlobal.TaskManager():StartTask(function(TT)
+      local res = UIStateSwitchReq:New()
+      res:SetSucc(true)
+      self._personProgressComponent:HandlePersonProgressCollect(TT, res, 1, self.CollectSeverMark, self.RecycleFrogNum)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry._RefFrogReward = function(self)
-  -- function num : 0_11
+function UICN14N43FrogEntry:_RefFrogReward()
   for i = 1, self.FrogNumMax do
-    (self["_getRewardNode" .. i]):SetActive(i <= self.RecycleFrogNum)
+    self["_getRewardNode" .. i]:SetActive(i <= self.RecycleFrogNum)
     if i == self.FrogNumMax and not self.isReceiveFinalFrog then
-      (self["_getRewardNode" .. i]):SetActive(false)
+      self["_getRewardNode" .. i]:SetActive(false)
     end
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry._InitFrogReward = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local rewards = (self.cmpInfo).m_progress_rewards
-  for k,v in pairs(rewards) do
+function UICN14N43FrogEntry:_InitFrogReward()
+  local rewards = self.cmpInfo.m_progress_rewards
+  for k, v in pairs(rewards) do
     local reward = v[1]
-    local conf = (Cfg.cfg_item)[reward.assetid]
-    ;
-    (self["_rewardIcon" .. k]):LoadImage(conf.Icon)
-    ;
-    (self["_rewardNum" .. k]):SetText(reward.count)
+    local conf = Cfg.cfg_item[reward.assetid]
+    self["_rewardIcon" .. k]:LoadImage(conf.Icon)
+    self["_rewardNum" .. k]:SetText(reward.count)
     if k == self.FrogNumMax then
-      (self._frogName):SetText((StringTable.Get)(conf.Name))
+      self._frogName:SetText(StringTable.Get(conf.Name))
       self.RewardFrogID = reward.assetid
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry._ClickFrog = function(self, idx)
-  -- function num : 0_13
+function UICN14N43FrogEntry:_ClickFrog(idx)
   if not self.CanRecycleFrog then
-    return 
+    return
   end
   idx = 1
   self:_PlayInWater(idx)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry._PlayInWater = function(self, idx)
-  -- function num : 0_14 , upvalues : _ENV
+function UICN14N43FrogEntry:_PlayInWater(idx)
   self.CanRecycleFrog = false
   for i = 1, #self.FrogItemList do
     local isShow = i <= self.ShowFrogMax + 1
-    ;
-    ((self.FrogItemList)[i]):SetActive(isShow)
+    self.FrogItemList[i]:SetActive(isShow)
   end
-  local fristFrog = (self.FrogItemList)[idx]
-  self.taskId2 = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_14_0 , upvalues : fristFrog, self, _ENV, idx
+  local fristFrog = self.FrogItemList[idx]
+  self.taskId2 = GameGlobal.TaskManager():StartTask(function(TT)
     fristFrog:PlayInWater()
     if self.RecycleFrogNum + 1 == self.FrogNumMax then
-      (self._shou):SetActive(false)
+      self._shou:SetActive(false)
     end
     YIELD(TT, 30)
-    ;
-    (self._EffAnim):Play("effanim_UICN14N43FrogEntry_eff_start")
+    self._EffAnim:Play("effanim_UICN14N43FrogEntry_eff_start")
     YIELD(TT, 900)
-    ;
-    (self._EffAnim):Play("effanim_UICN14N43FrogEntry_eff_in")
+    self._EffAnim:Play("effanim_UICN14N43FrogEntry_eff_in")
     fristFrog:SetActive(false)
-    ;
-    (table.removev)(self.FrogItemList, (self.FrogItemList)[idx])
+    table.removev(self.FrogItemList, self.FrogItemList[idx])
     for i = 1, #self.FrogItemList do
-      local f = (self.FrogItemList)[i]
+      local f = self.FrogItemList[i]
       local go = f:GetGameObject()
       go:SetActive(false)
       go:SetActive(true)
-      ;
-      (go.transform):DOLocalMoveX((i - 1) * self.FrogPosDiffX, 0.66)
+      go.transform:DOLocalMoveX((i - 1) * self.FrogPosDiffX, 0.66)
       f:ChangeIdx(i - 1)
       f:PlayMoveEff()
     end
@@ -370,22 +281,16 @@ UICN14N43FrogEntry._PlayInWater = function(self, idx)
     self:_PlayInWaterOver()
     YIELD(TT, 666)
     self.CanRecycleFrog = true
-  end
-)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry._PlayInWaterOver = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : _ENV, self
+function UICN14N43FrogEntry:_PlayInWaterOver()
+  GameGlobal.TaskManager():StartTask(function(TT)
     local res = UIStateSwitchReq:New()
     res:SetSucc(true)
-    local response = (self._personProgressComponent):HandlePersonProgressCollect(TT, res, 1, self.CollectSeverMark, self.RecycleFrogNum)
+    local response = self._personProgressComponent:HandlePersonProgressCollect(TT, res, 1, self.CollectSeverMark, self.RecycleFrogNum)
     if not response then
-      return 
+      return
     end
     if self.RecycleFrogNum == self.FrogNumMax then
       self:_ShowFinalFrog(true)
@@ -393,147 +298,103 @@ UICN14N43FrogEntry._PlayInWaterOver = function(self)
       self:_ReceiveRewards()
       self:_RefUI()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry._RefUI = function(self)
-  -- function num : 0_16
-  (self._TestTips):SetText(self.RecycleFrogNum .. "/" .. self.FrogNumMax)
+function UICN14N43FrogEntry:_RefUI()
+  self._TestTips:SetText(self.RecycleFrogNum .. "/" .. self.FrogNumMax)
   self:_RefFrogReward()
   if self.RecycleFrogNum == self.FrogNumMax then
     self:_ShowFinalFrog(false)
   end
   local showNum = 0
   for i = 1, self.FrogNumMax do
-    if (self.CollectFrogData)[i] == 1 then
+    if self.CollectFrogData[i] == 1 then
       showNum = showNum + 1
     end
   end
   showNum = showNum - self.RecycleFrogNum
-  local b = showNum == 0 and self.RecycleFrogNum < self.FrogNumMax
-  ;
-  (self._frog0):SetActive(b)
-  ;
-  (self._shou):SetActive(showNum > 0)
-  ;
-  (self._ReceiveOver):SetActive(self.isReceiveFinalFrog)
+  local b = showNum == 0 and self.FrogNumMax > self.RecycleFrogNum
+  self._frog0:SetActive(b)
+  self._shou:SetActive(0 < showNum)
+  self._ReceiveOver:SetActive(self.isReceiveFinalFrog)
   if self.isReceiveFinalFrog then
-    (self._finalFrog):SpawnObjects("UICN14N43Frog", 1)
-    ;
-    (self._finalFrogNode):SetActive(true)
+    self._finalFrog:SpawnObjects("UICN14N43Frog", 1)
+    self._finalFrogNode:SetActive(true)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry._ReceiveRewards = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local rewards = (self.cmpInfo).m_progress_rewards
+function UICN14N43FrogEntry:_ReceiveRewards()
+  local rewards = self.cmpInfo.m_progress_rewards
   local progress = 0
-  for k,v in pairs(rewards) do
+  for k, v in pairs(rewards) do
     if k == self.RecycleFrogNum then
       progress = k
       break
     end
   end
-  do
-    if progress == 0 then
-      return 
-    end
-    self.taskId3 = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_17_0 , upvalues : progress, self, _ENV
+  if progress == 0 then
+    return
+  end
+  self.taskId3 = GameGlobal.TaskManager():StartTask(function(TT)
     if progress ~= self.FrogNumMax then
-      (self["_rewardAnim" .. progress]):Play("effanim_UICN14N43FrogEntry_go")
+      self["_rewardAnim" .. progress]:Play("effanim_UICN14N43FrogEntry_go")
     end
     YIELD(TT, 250)
     local res = UIStateSwitchReq:New()
     res:SetSucc(true)
-    local reward = (self._personProgressComponent):HandleReceiveReward(TT, res, progress)
-    ;
-    (UIActivityHelper.ShowUIGetRewards)(reward)
-  end
-)
-  end
+    local reward = self._personProgressComponent:HandleReceiveReward(TT, res, progress)
+    UIActivityHelper.ShowUIGetRewards(reward)
+  end)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry._ShowFinalFrog = function(self, showAnim)
-  -- function num : 0_18
+function UICN14N43FrogEntry:_ShowFinalFrog(showAnim)
   if self.isReceiveFinalFrog then
-    return 
+    return
   end
-  ;
-  (self._receiveNode):SetActive(true)
-  ;
-  (self._mark):SetActive(false)
-  ;
-  (self._finalFrogNode):SetActive(true)
-  local items = (self._finalFrog):SpawnObjects("UICN14N43Frog", 1)
+  self._receiveNode:SetActive(true)
+  self._mark:SetActive(false)
+  self._finalFrogNode:SetActive(true)
+  local items = self._finalFrog:SpawnObjects("UICN14N43Frog", 1)
   local final = items[1]
   if showAnim then
     final:PlayOutWater()
   end
-  ;
-  (self._EffAnim):Play("effanim_UICN14N43FrogEntry_eff_out")
+  self._EffAnim:Play("effanim_UICN14N43FrogEntry_eff_out")
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry.IntroBtnOnClick = function(self, go)
-  -- function num : 0_19 , upvalues : _ENV
+function UICN14N43FrogEntry:IntroBtnOnClick(go)
   if self:CheckActivityOver() then
-    return 
+    return
   end
   self:ShowDialog(UIStateType.UICN14N43FrogIntro)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry.DetailBtnOnClick = function(self, go)
-  -- function num : 0_20
+function UICN14N43FrogEntry:DetailBtnOnClick(go)
   self:ShowDialog("UIShopPetDetailController", self.RewardFrogID)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry.ReceiveNodeOnClick = function(self, go)
-  -- function num : 0_21
+function UICN14N43FrogEntry:ReceiveNodeOnClick(go)
   if self.isReceiveFinalFrog then
-    return 
+    return
   end
   self.isReceiveFinalFrog = true
-  ;
-  (self._receiveNode):SetActive(false)
-  ;
-  (self._mark):SetActive(false)
-  ;
-  (self._finalFrogNode):SetActive(true)
+  self._receiveNode:SetActive(false)
+  self._mark:SetActive(false)
+  self._finalFrogNode:SetActive(true)
   self:_ReceiveRewards()
   self:_RefUI()
-  ;
-  (self["_rewardAnim" .. self.FrogNumMax]):Play("effanim_UICN14N43FrogEntry_go")
+  self["_rewardAnim" .. self.FrogNumMax]:Play("effanim_UICN14N43FrogEntry_go")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogEntry.CheckActivityOver = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local curTime = (self._svrTimeModule):GetServerTime() * 0.001
+function UICN14N43FrogEntry:CheckActivityOver()
+  local curTime = self._svrTimeModule:GetServerTime() * 0.001
   local endTime = self._endTime
   if curTime < endTime then
     return false
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._campaign)._id)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaign._id)
     return true
   end
 end
-
-

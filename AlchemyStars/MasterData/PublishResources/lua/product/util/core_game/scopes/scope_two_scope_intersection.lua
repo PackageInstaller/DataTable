@@ -1,58 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_two_scope_intersection.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_TwoScopeIntersection", SkillScopeCalculator_Base)
 SkillScopeCalculator_TwoScopeIntersection = SkillScopeCalculator_TwoScopeIntersection
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_TwoScopeIntersection.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local calc = SkillScopeCalculator:New((self._hub)._gridFilter)
+function SkillScopeCalculator_TwoScopeIntersection:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local calc = SkillScopeCalculator:New(self._hub._gridFilter)
   local attackRange = {}
   local wholeRange = {}
   local attackRangeList = {}
   local wholeRangeList = {}
-  for _,v in ipairs(scopeParam) do
+  for _, v in ipairs(scopeParam) do
     local _scopeType = v.scopeType
     local _scpoe_param = v.scopeParam
     local _scope_centerPosIndex = v.centerPosIndex
     local transCenterPos = centerPos
-    -- DECOMPILER ERROR at PC21: Unhandled construct in 'MakeBoolean' P1
-
-    if _scope_centerPosIndex and _scope_centerPosIndex == 0 then
-      transCenterPos = centerPos
-    else
-      transCenterPos = centerPos[_scope_centerPosIndex]
+    if _scope_centerPosIndex then
+      if _scope_centerPosIndex == 0 then
+        transCenterPos = centerPos
+      else
+        transCenterPos = centerPos[_scope_centerPosIndex]
+      end
     end
     local result = calc:ComputeScopeRange(_scopeType, _scpoe_param, transCenterPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-    ;
-    (table.insert)(attackRangeList, result:GetAttackRange())
-    ;
-    (table.insert)(wholeRangeList, result:GetWholeGridRange())
+    table.insert(attackRangeList, result:GetAttackRange())
+    table.insert(wholeRangeList, result:GetWholeGridRange())
   end
-  if #attackRangeList >= 2 then
+  if 2 <= #attackRangeList then
     attackRange = self:_GetIntersectionScope(attackRangeList[1], attackRangeList[2])
   end
-  if #wholeRangeList >= 2 then
+  if 2 <= #wholeRangeList then
     wholeRange = self:_GetIntersectionScope(wholeRangeList[1], wholeRangeList[2])
   end
   return SkillScopeResult:New(SkillScopeType.TwoScopeIntersection, centerPos, attackRange, wholeRange)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_TwoScopeIntersection._GetIntersectionScope = function(self, list1, list2)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeCalculator_TwoScopeIntersection:_GetIntersectionScope(list1, list2)
   local out = {}
-  for _,e in ipairs(list1) do
-    if (table.icontains)(list2, e) then
-      (table.insert)(out, e)
+  for _, e in ipairs(list1) do
+    if table.icontains(list2, e) then
+      table.insert(out, e)
     end
   end
   return out
 end
-
-

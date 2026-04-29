@@ -1,39 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_kill_targets.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectKillTargetsResult", SkillEffectResultBase)
 SkillEffectKillTargetsResult = SkillEffectKillTargetsResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectKillTargetsResult.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectKillTargetsResult:GetEffectType()
   return SkillEffectType.KillTargets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectKillTargetsResult.Constructor = function(self, targetList)
-  -- function num : 0_1
-  if not targetList then
-    self._targetList = {}
-  end
+function SkillEffectKillTargetsResult:Constructor(targetList)
+  self._targetList = targetList or {}
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectKillTargetsResult.AddTargetID = function(self, targetID)
-  -- function num : 0_2 , upvalues : _ENV
-  (table.insert)(self._targetList, targetID)
+function SkillEffectKillTargetsResult:AddTargetID(targetID)
+  table.insert(self._targetList, targetID)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectKillTargetsResult.GetTargetList = function(self)
-  -- function num : 0_3
+function SkillEffectKillTargetsResult:GetTargetList()
   return self._targetList
 end
-
-

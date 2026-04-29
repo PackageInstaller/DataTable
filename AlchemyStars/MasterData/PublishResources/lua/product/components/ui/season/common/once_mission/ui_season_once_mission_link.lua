@@ -1,39 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/once_mission/ui_season_once_mission_link.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonOnceMissionLink", UICustomWidget)
 UISeasonOnceMissionLink = UISeasonOnceMissionLink
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonOnceMissionLink.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonOnceMissionLink:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionLink.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonOnceMissionLink:InitWidget()
   self._t_b_lineGo = self:GetGameObject("t_b_line")
   self._b_t_lineGo = self:GetGameObject("b_t_line")
   self._rect = self:GetUIComponent("RectTransform", "shape")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionLink.SetData = function(self, from, to)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._rect).anchoredPosition = from
-  local top2Bottom = to.y < from.y
-  ;
-  (self._t_b_lineGo):SetActive(top2Bottom)
-  ;
-  (self._b_t_lineGo):SetActive(not top2Bottom)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UISeasonOnceMissionLink:SetData(from, to)
+  self._rect.anchoredPosition = from
+  local top2Bottom = from.y > to.y
+  self._t_b_lineGo:SetActive(top2Bottom)
+  self._b_t_lineGo:SetActive(not top2Bottom)
 end
-
-

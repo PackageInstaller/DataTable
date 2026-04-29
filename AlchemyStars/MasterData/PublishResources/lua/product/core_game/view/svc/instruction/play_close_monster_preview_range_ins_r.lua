@@ -1,75 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_close_monster_preview_range_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCloseMonsterPreviewRangeInstruction", BaseInstruction)
 PlayCloseMonsterPreviewRangeInstruction = PlayCloseMonsterPreviewRangeInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCloseMonsterPreviewRangeInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayCloseMonsterPreviewRangeInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCloseMonsterPreviewRangeInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayCloseMonsterPreviewRangeInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self:_HideMonsterAction(casterEntity)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCloseMonsterPreviewRangeInstruction._HideMonsterAction = function(self, casterEntity)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayCloseMonsterPreviewRangeInstruction:_HideMonsterAction(casterEntity)
   local monsterEntityID = casterEntity:GetID()
   local world = casterEntity:GetOwnerWorld()
   local renderEntityService = world:GetService("RenderEntity")
   renderEntityService:DestroyMonsterPreviewAreaOutlineEntity()
   local previewActiveSkillSvc = world:GetService("PreviewActiveSkill")
-  ;
-  (world:GetService("MonsterShowRender")):MonsterGridAnimDown()
+  world:GetService("MonsterShowRender"):MonsterGridAnimDown()
   local previewEntity = world:GetPreviewEntity()
   local renderStatCmpt = previewEntity:RenderState()
   local skillTipsEntityID = renderStatCmpt:GetSkillTipsEntityID()
-  do
-    if skillTipsEntityID ~= -1 then
-      local skillTipsEntity = world:GetEntityByID(skillTipsEntityID)
-      skillTipsEntity:SetViewVisible(false)
-    end
-    local monsterEntity = world:GetEntityByID(monsterEntityID)
-    local holderCmp = monsterEntity:EffectHolder()
-    if not holderCmp then
-      return 
-    end
-    local idDic = holderCmp:GetEffectIDEntityDic()
-    local entityList = idDic[BattleConst.MonsterAttackRangeTextEffect]
-    if entityList then
-      for k,entityId in pairs(entityList) do
-        local entity = world:GetEntityByID(entityId)
-        if entity then
-          world:DestroyEntity(entity)
-        end
-      end
-      idDic[BattleConst.MonsterAttackRangeTextEffect] = nil
-    end
+  if skillTipsEntityID ~= -1 then
+    local skillTipsEntity = world:GetEntityByID(skillTipsEntityID)
+    skillTipsEntity:SetViewVisible(false)
   end
-end
-
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCloseMonsterPreviewRangeInstruction._RemoveMonsterAttackText = function(self, world, monsterEntityID)
-  -- function num : 0_3 , upvalues : _ENV
   local monsterEntity = world:GetEntityByID(monsterEntityID)
   local holderCmp = monsterEntity:EffectHolder()
   if not holderCmp then
-    return 
+    return
   end
   local idDic = holderCmp:GetEffectIDEntityDic()
   local entityList = idDic[BattleConst.MonsterAttackRangeTextEffect]
   if entityList then
-    for k,entityId in pairs(entityList) do
+    for k, entityId in pairs(entityList) do
       local entity = world:GetEntityByID(entityId)
       if entity then
         world:DestroyEntity(entity)
@@ -79,4 +41,21 @@ PlayCloseMonsterPreviewRangeInstruction._RemoveMonsterAttackText = function(self
   end
 end
 
-
+function PlayCloseMonsterPreviewRangeInstruction:_RemoveMonsterAttackText(world, monsterEntityID)
+  local monsterEntity = world:GetEntityByID(monsterEntityID)
+  local holderCmp = monsterEntity:EffectHolder()
+  if not holderCmp then
+    return
+  end
+  local idDic = holderCmp:GetEffectIDEntityDic()
+  local entityList = idDic[BattleConst.MonsterAttackRangeTextEffect]
+  if entityList then
+    for k, entityId in pairs(entityList) do
+      local entity = world:GetEntityByID(entityId)
+      if entity then
+        world:DestroyEntity(entity)
+      end
+    end
+    idDic[BattleConst.MonsterAttackRangeTextEffect] = nil
+  end
+end

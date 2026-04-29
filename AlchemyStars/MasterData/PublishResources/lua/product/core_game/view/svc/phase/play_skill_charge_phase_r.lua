@@ -1,28 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_charge_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillChargePhase", PlaySkillPhaseBase)
 PlaySkillChargePhase = PlaySkillChargePhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillChargePhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillChargePhase:PlayFlight(TT, casterEntity, phaseParam)
   local chargeAnim = phaseParam:GetAnim()
   casterEntity:SetAnimatorControllerTriggers({chargeAnim})
   local delay = phaseParam:GetDelay()
-  if delay > 0 then
+  if 0 < delay then
     YIELD(TT, delay)
   end
-  local effectService = (self._world):GetService("Effect")
+  local effectService = self._world:GetService("Effect")
   local effIds = phaseParam:GetEffIds()
   if effIds then
-    for i,v in ipairs(effIds) do
+    for i, v in ipairs(effIds) do
       effectService:CreateEffect(v, casterEntity)
     end
   end
 end
-
-

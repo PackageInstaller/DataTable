@@ -1,42 +1,106 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/board_gen_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("board_svc_l")
 local AttackAreaType = {PlayerArea = 1, AIArea = 2}
 _enum("AttackAreaType", AttackAreaType)
-local GenBoardMode = {Generated = 0, Specified = 1, Guide = 2, Archived = 3, BigBoard = 4}
+local GenBoardMode = {
+  Generated = 0,
+  Specified = 1,
+  Guide = 2,
+  Archived = 3,
+  BigBoard = 4
+}
 _enum("GenBoardMode", GenBoardMode)
-local RightRotate = function(arr)
-  -- function num : 0_0 , upvalues : _ENV
+
+local function RightRotate(arr)
   local brr = {}
   local n = #arr
   for y = 1, n do
     local t = {}
-    ;
-    (table.insert)(brr, t)
+    table.insert(brr, t)
     for x = n, 1, -1 do
-      (table.insert)(t, (arr[x])[y])
+      table.insert(t, arr[x][y])
     end
   end
   return brr
 end
 
-local RoomPrototype = {[1000] = 1, [100] = 1, [10] = 1, [1] = 1, [1100] = 2, [110] = 2, [11] = 2, [1001] = 2, [1010] = 3, [101] = 3, [1110] = 4, [111] = 4, [1011] = 4, [1101] = 4, [1111] = 5}
-local RotateTable = {[1000] = 0, [100] = 1, [10] = 2, [1] = 3, [1100] = 0, [110] = 1, [11] = 2, [1001] = 3, [1010] = 0, [101] = 1, [1110] = 0, [111] = 1, [1011] = 2, [1101] = 3, [1111] = 0}
-local PointRightRotateTable = {[101] = 501, [201] = 502, [301] = 503, [401] = 504, [501] = 505, [102] = 401, [202] = 402, [302] = 403, [402] = 404, [502] = 405, [103] = 301, [203] = 302, [303] = 303, [403] = 304, [503] = 305, [104] = 201, [204] = 202, [304] = 203, [404] = 204, [504] = 205, [105] = 101, [205] = 102, [305] = 103, [405] = 104, [505] = 105}
-local DirRightRotateTable = {[12] = 21, [21] = 10, [10] = 1, [1] = 12, [2] = 22, [22] = 20, [20] = 0, [0] = 2}
+local RoomPrototype = {
+  [1000] = 1,
+  [100] = 1,
+  [10] = 1,
+  [1] = 1,
+  [1100] = 2,
+  [110] = 2,
+  [11] = 2,
+  [1001] = 2,
+  [1010] = 3,
+  [101] = 3,
+  [1110] = 4,
+  [111] = 4,
+  [1011] = 4,
+  [1101] = 4,
+  [1111] = 5
+}
+local RotateTable = {
+  [1000] = 0,
+  [100] = 1,
+  [10] = 2,
+  [1] = 3,
+  [1100] = 0,
+  [110] = 1,
+  [11] = 2,
+  [1001] = 3,
+  [1010] = 0,
+  [101] = 1,
+  [1110] = 0,
+  [111] = 1,
+  [1011] = 2,
+  [1101] = 3,
+  [1111] = 0
+}
+local PointRightRotateTable = {
+  [101] = 501,
+  [201] = 502,
+  [301] = 503,
+  [401] = 504,
+  [501] = 505,
+  [102] = 401,
+  [202] = 402,
+  [302] = 403,
+  [402] = 404,
+  [502] = 405,
+  [103] = 301,
+  [203] = 302,
+  [303] = 303,
+  [403] = 304,
+  [503] = 305,
+  [104] = 201,
+  [204] = 202,
+  [304] = 203,
+  [404] = 204,
+  [504] = 205,
+  [105] = 101,
+  [205] = 102,
+  [305] = 103,
+  [405] = 104,
+  [505] = 105
+}
+local DirRightRotateTable = {
+  [12] = 21,
+  [21] = 10,
+  [10] = 1,
+  [1] = 12,
+  [2] = 22,
+  [22] = 20,
+  [20] = 0,
+  [0] = 2
+}
 local BigBoardRoomSize = 5
-local Filter_MatchGAndGrid = function(g, filter_grid)
-  -- function num : 0_1 , upvalues : _ENV
+
+local function Filter_MatchGAndGrid(g, filter_grid)
   return CanMatchPieceType(g.color, filter_grid.color)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic._RightRotatePoint = function(self, x, y, cnt)
-  -- function num : 0_2 , upvalues : PointRightRotateTable
+function BoardServiceLogic:_RightRotatePoint(x, y, cnt)
   if cnt == 0 then
     return x, y
   end
@@ -49,10 +113,7 @@ BoardServiceLogic._RightRotatePoint = function(self, x, y, cnt)
   return x, y
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic._RightRotateDir = function(self, x, y, cnt)
-  -- function num : 0_3 , upvalues : DirRightRotateTable
+function BoardServiceLogic:_RightRotateDir(x, y, cnt)
   if cnt == 0 then
     return x, y
   end
@@ -65,96 +126,62 @@ BoardServiceLogic._RightRotateDir = function(self, x, y, cnt)
   return x, y
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic._BigBoardRandRoom = function(self, cells, cx, cy)
-  -- function num : 0_4 , upvalues : RotateTable, RoomPrototype, _ENV, RightRotate
-  local adj = {0, 0, 0, 0}
-  if cells[cx] and (cells[cx])[cy + 1] and (cells[cx])[cy + 1] ~= 0 then
+function BoardServiceLogic:_BigBoardRandRoom(cells, cx, cy)
+  local adj = {
+    0,
+    0,
+    0,
+    0
+  }
+  if cells[cx] and cells[cx][cy + 1] and cells[cx][cy + 1] ~= 0 then
     adj[1] = 1
   end
-  if cells[cx + 1] and (cells[cx + 1])[cy] and (cells[cx + 1])[cy] ~= 0 then
+  if cells[cx + 1] and cells[cx + 1][cy] and cells[cx + 1][cy] ~= 0 then
     adj[2] = 1
   end
-  if cells[cx] and (cells[cx])[cy - 1] and (cells[cx])[cy - 1] ~= 0 then
+  if cells[cx] and cells[cx][cy - 1] and cells[cx][cy - 1] ~= 0 then
     adj[3] = 1
   end
-  if cells[cx - 1] and (cells[cx - 1])[cy] and (cells[cx - 1])[cy] ~= 0 then
+  if cells[cx - 1] and cells[cx - 1][cy] and cells[cx - 1][cy] ~= 0 then
     adj[4] = 1
   end
   local val = adj[1] * 1000 + adj[2] * 100 + adj[3] * 10 + adj[4] * 1
   local rotateCnt = RotateTable[val]
   local roomtype = RoomPrototype[val]
-  local cfgs = (Cfg.cfg_board_big_room)({RoomType = roomtype})
-  local randomSvc = (self._world):GetService("RandomLogic")
+  local cfgs = Cfg.cfg_board_big_room({RoomType = roomtype})
+  local randomSvc = self._world:GetService("RandomLogic")
   local r = randomSvc:LogicRand(1, #cfgs)
   local roomcfg = cfgs[r]
   local grids = roomcfg.RoomGrid
   for i = 1, rotateCnt do
     grids = RightRotate(grids)
   end
-  local role, traps, monsters = nil, nil, nil
+  local role, traps, monsters
   if roomcfg.Role then
-    role = (table.clone)(roomcfg.Role)
-    -- DECOMPILER ERROR at PC119: Confused about usage of register: R17 in 'UnsetPending'
-
-    -- DECOMPILER ERROR at PC120: Confused about usage of register: R16 in 'UnsetPending'
-
-    ;
-    (role.Pos)[1] = self:_RightRotatePoint((role.Pos)[1], (role.Pos)[2], rotateCnt)
-    -- DECOMPILER ERROR at PC130: Confused about usage of register: R17 in 'UnsetPending'
-
-    -- DECOMPILER ERROR at PC131: Confused about usage of register: R16 in 'UnsetPending'
-
-    ;
-    (role.Dir)[1] = self:_RightRotateDir((role.Dir)[1], (role.Dir)[2], rotateCnt)
+    role = table.clone(roomcfg.Role)
+    role.Pos[1], role.Pos[2] = self:_RightRotatePoint(role.Pos[1], role.Pos[2], rotateCnt)
+    role.Dir[1], role.Dir[2] = self:_RightRotateDir(role.Dir[1], role.Dir[2], rotateCnt)
   end
   if roomcfg.Traps then
-    traps = (table.clone)(roomcfg.Traps)
-    for _,v in ipairs(traps) do
-      -- DECOMPILER ERROR at PC153: Confused about usage of register: R22 in 'UnsetPending'
-
-      -- DECOMPILER ERROR at PC154: Confused about usage of register: R21 in 'UnsetPending'
-
-      (v.Pos)[1] = self:_RightRotatePoint((v.Pos)[1], (v.Pos)[2], rotateCnt)
-      -- DECOMPILER ERROR at PC164: Confused about usage of register: R22 in 'UnsetPending'
-
-      -- DECOMPILER ERROR at PC165: Confused about usage of register: R21 in 'UnsetPending'
-
-      ;
-      (v.Dir)[1] = self:_RightRotateDir((v.Dir)[1], (v.Dir)[2], rotateCnt)
+    traps = table.clone(roomcfg.Traps)
+    for _, v in ipairs(traps) do
+      v.Pos[1], v.Pos[2] = self:_RightRotatePoint(v.Pos[1], v.Pos[2], rotateCnt)
+      v.Dir[1], v.Dir[2] = self:_RightRotateDir(v.Dir[1], v.Dir[2], rotateCnt)
     end
   end
-  do
-    if roomcfg.Monsters then
-      monsters = (table.clone)(roomcfg.Monsters)
-      for _,v in ipairs(monsters) do
-        -- DECOMPILER ERROR at PC189: Confused about usage of register: R22 in 'UnsetPending'
-
-        -- DECOMPILER ERROR at PC190: Confused about usage of register: R21 in 'UnsetPending'
-
-        (v.Pos)[1] = self:_RightRotatePoint((v.Pos)[1], (v.Pos)[2], rotateCnt)
-        -- DECOMPILER ERROR at PC200: Confused about usage of register: R22 in 'UnsetPending'
-
-        -- DECOMPILER ERROR at PC201: Confused about usage of register: R21 in 'UnsetPending'
-
-        ;
-        (v.Dir)[1] = self:_RightRotateDir((v.Dir)[1], (v.Dir)[2], rotateCnt)
-      end
-    end
-    do
-      ;
-      (Log.error)("[gen board] cx=", cx, "cy=", cy, "val=", val, "roll=", rotateCnt, "roomtype=", roomtype, "roomcfg.id=", roomcfg.ID)
-      return grids, role, traps, monsters
+  if roomcfg.Monsters then
+    monsters = table.clone(roomcfg.Monsters)
+    for _, v in ipairs(monsters) do
+      v.Pos[1], v.Pos[2] = self:_RightRotatePoint(v.Pos[1], v.Pos[2], rotateCnt)
+      v.Dir[1], v.Dir[2] = self:_RightRotateDir(v.Dir[1], v.Dir[2], rotateCnt)
     end
   end
+  Log.error("[gen board] cx=", cx, "cy=", cy, "val=", val, "roll=", rotateCnt, "roomtype=", roomtype, "roomcfg.id=", roomcfg.ID)
+  return grids, role, traps, monsters
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic._BigBoardFixedRoom = function(self, cellID)
-  -- function num : 0_5 , upvalues : _ENV
-  local cellCfg = (Cfg.cfg_board_big_room)[cellID]
+function BoardServiceLogic:_BigBoardFixedRoom(cellID)
+  local cellCfg = Cfg.cfg_board_big_room[cellID]
   local grids = cellCfg.RoomGrid
   local role = cellCfg.Role
   local traps = cellCfg.Traps
@@ -162,98 +189,62 @@ BoardServiceLogic._BigBoardFixedRoom = function(self, cellID)
   return grids, role, traps, monsters
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic.GetCurBoardMaxX = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if not self._defaultMaxX then
-    return BattleConst.DefaultMaxX
-  end
+function BoardServiceLogic:GetCurBoardMaxX()
+  return self._defaultMaxX or BattleConst.DefaultMaxX
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic.GetCurBoardMaxY = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  if not self._defaultMaxY then
-    return BattleConst.DefaultMaxY
-  end
+function BoardServiceLogic:GetCurBoardMaxY()
+  return self._defaultMaxY or BattleConst.DefaultMaxY
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic.GetCurBoardMaxLen = function(self)
-  -- function num : 0_8
+function BoardServiceLogic:GetCurBoardMaxLen()
   local maxX = self:GetCurBoardMaxX()
   local maxY = self:GetCurBoardMaxY()
-  return maxY < maxX and maxX or maxY
+  return maxX > maxY and maxX or maxY
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic._SetCurBoardCfgInfo = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function BoardServiceLogic:_SetCurBoardCfgInfo()
   if self._boardConfig then
-    if not (self._boardConfig).DefaultMaxX or not (self._boardConfig).DefaultMaxX then
-      self._defaultMaxX = BattleConst.DefaultMaxX
-      if not (self._boardConfig).DefaultMaxY or not (self._boardConfig).DefaultMaxY then
-        self._defaultMaxY = BattleConst.DefaultMaxY
-        -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-        BattleConst.BoardMaxLen = (math.max)(self._defaultMaxX, self._defaultMaxY)
-        self._defaultPlayerAreaSizeX = BattleConst.DefaultPlayerAreaSize
-        self._defaultPlayerAreaSizeY = BattleConst.DefaultPlayerAreaSize
-        if (self._boardConfig).DefaultPlayerAreaSize and type((self._boardConfig).DefaultPlayerAreaSize) == "table" and #(self._boardConfig).DefaultPlayerAreaSize == 2 then
-          self._defaultPlayerAreaSizeX = ((self._boardConfig).DefaultPlayerAreaSize)[1]
-          self._defaultPlayerAreaSizeY = ((self._boardConfig).DefaultPlayerAreaSize)[2]
-        end
-        self._defaultAIAreaSizeX = BattleConst.DefaultAIAreaSize
-        self._defaultAIAreaSizeY = BattleConst.DefaultAIAreaSize
-        if (self._boardConfig).DefaultAIAreaSize and type((self._boardConfig).DefaultAIAreaSize) == "table" and #(self._boardConfig).DefaultAIAreaSize == 2 then
-          self._defaultAIAreaSizeX = ((self._boardConfig).DefaultAIAreaSize)[1]
-          self._defaultAIAreaSizeY = ((self._boardConfig).DefaultAIAreaSize)[2]
-        end
-        -- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
-
-        if self.PlayerArea then
-          (self.PlayerArea).maxX = self._defaultPlayerAreaSizeX
-          -- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-          ;
-          (self.PlayerArea).maxY = self._defaultPlayerAreaSizeY
-        end
-        -- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-        if self.AIArea then
-          (self.AIArea).maxX = self._defaultAIAreaSizeX
-          -- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-          ;
-          (self.AIArea).maxY = self._defaultAIAreaSizeY
-        end
-        self:_GenBoardRingMax()
-      end
+    self._defaultMaxX = self._boardConfig.DefaultMaxX and self._boardConfig.DefaultMaxX or BattleConst.DefaultMaxX
+    self._defaultMaxY = self._boardConfig.DefaultMaxY and self._boardConfig.DefaultMaxY or BattleConst.DefaultMaxY
+    BattleConst.BoardMaxLen = math.max(self._defaultMaxX, self._defaultMaxY)
+    self._defaultPlayerAreaSizeX = BattleConst.DefaultPlayerAreaSize
+    self._defaultPlayerAreaSizeY = BattleConst.DefaultPlayerAreaSize
+    if self._boardConfig.DefaultPlayerAreaSize and type(self._boardConfig.DefaultPlayerAreaSize) == "table" and #self._boardConfig.DefaultPlayerAreaSize == 2 then
+      self._defaultPlayerAreaSizeX = self._boardConfig.DefaultPlayerAreaSize[1]
+      self._defaultPlayerAreaSizeY = self._boardConfig.DefaultPlayerAreaSize[2]
     end
+    self._defaultAIAreaSizeX = BattleConst.DefaultAIAreaSize
+    self._defaultAIAreaSizeY = BattleConst.DefaultAIAreaSize
+    if self._boardConfig.DefaultAIAreaSize and type(self._boardConfig.DefaultAIAreaSize) == "table" and #self._boardConfig.DefaultAIAreaSize == 2 then
+      self._defaultAIAreaSizeX = self._boardConfig.DefaultAIAreaSize[1]
+      self._defaultAIAreaSizeY = self._boardConfig.DefaultAIAreaSize[2]
+    end
+    if self.PlayerArea then
+      self.PlayerArea.maxX = self._defaultPlayerAreaSizeX
+      self.PlayerArea.maxY = self._defaultPlayerAreaSizeY
+    end
+    if self.AIArea then
+      self.AIArea.maxX = self._defaultAIAreaSizeX
+      self.AIArea.maxY = self._defaultAIAreaSizeY
+    end
+    self:_GenBoardRingMax()
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic._GenBoardRingMax = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function BoardServiceLogic:_GenBoardRingMax()
   self._ringMax = {}
   local maxX = self:GetCurBoardMaxX()
   local maxY = self:GetCurBoardMaxY()
   local maxLen = self:GetCurBoardMaxLen()
-  local pushPos = function(posX, posY)
-    -- function num : 0_10_0 , upvalues : maxX, maxY, _ENV, self
-    if -maxX <= posX and posX <= maxX and -maxY <= posY and posY <= maxY then
+  
+  local function pushPos(posX, posY)
+    if posX >= -maxX and posX <= maxX and posY >= -maxY and posY <= maxY then
       local pos = {posX, posY}
-      ;
-      (table.insert)(self._ringMax, pos)
+      table.insert(self._ringMax, pos)
     end
   end
-
+  
   for ringNum = 1, maxLen do
     for posY = -ringNum, ringNum do
       pushPos(-ringNum, posY)
@@ -268,10 +259,7 @@ BoardServiceLogic._GenBoardRingMax = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic.GetCurBoardRingMax = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function BoardServiceLogic:GetCurBoardRingMax()
   if self._ringMax then
     return self._ringMax
   else
@@ -279,10 +267,7 @@ BoardServiceLogic.GetCurBoardRingMax = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic.GenerateBoard = function(self, boardId, teamEntity)
-  -- function num : 0_12 , upvalues : _ENV, GenBoardMode, BigBoardRoomSize
+function BoardServiceLogic:GenerateBoard(boardId, teamEntity)
   self.GridTiles = {}
   self._gridArray = {}
   self.MonsterArea = {}
@@ -291,279 +276,212 @@ BoardServiceLogic.GenerateBoard = function(self, boardId, teamEntity)
   self._connectRate = 0
   self._totalConnect = 0
   self._totalGridCnt = 0
-  self._boardConfig = (Cfg.cfg_board)[boardId]
+  self._boardConfig = Cfg.cfg_board[boardId]
   self:_SetCurBoardCfgInfo()
   self._genPieceTotalWeight = 0
   local generatePieceWeight = self:GetCurBoardGeneratePieceWeight()
   for i = 1, #generatePieceWeight do
     self._genPieceTotalWeight = self._genPieceTotalWeight + generatePieceWeight[i]
   end
-  local levelConfigData = (self._configService):GetLevelConfigData()
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.RoleArea).Pos = levelConfigData:GetPlayerBornPos()
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.RoleArea).Dir = levelConfigData:GetPlayerBornRotation()
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R5 in 'UnsetPending'
-
+  local levelConfigData = self._configService:GetLevelConfigData()
+  self.RoleArea.Pos = levelConfigData:GetPlayerBornPos()
+  self.RoleArea.Dir = levelConfigData:GetPlayerBornRotation()
   if teamEntity then
-    (self.RoleArea).Pos = (table.cloneconf)(teamEntity:GetGridPosition())
-    -- DECOMPILER ERROR at PC57: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.RoleArea).Dir = (table.cloneconf)(teamEntity:GetGridDirection())
+    self.RoleArea.Pos = table.cloneconf(teamEntity:GetGridPosition())
+    self.RoleArea.Dir = table.cloneconf(teamEntity:GetGridDirection())
   end
-  if (self._boardConfig).BoardMode == GenBoardMode.BigBoard then
-    local cfg = (Cfg.cfg_board_big_cell)[(self._boardConfig).BigBoard]
+  if self._boardConfig.BoardMode == GenBoardMode.BigBoard then
+    local cfg = Cfg.cfg_board_big_cell[self._boardConfig.BigBoard]
     local cells = cfg.BigBoardCells
-    if not cfg.FixCells then
-      local fixCells = {}
-    end
-    for cx,row in ipairs(cells) do
-      for cy,cellType in ipairs(row) do
-        local grids, role, traps, monsters = nil, nil, nil, nil
+    local fixCells = cfg.FixCells or {}
+    for cx, row in ipairs(cells) do
+      for cy, cellType in ipairs(row) do
+        local grids, role, traps, monsters
         if cellType == 1 then
-          grids = self:_BigBoardRandRoom(cells, cx, cy)
-        else
-          if cellType == 2 then
-            local cellID = 1
-            for i,v in ipairs(fixCells) do
-              if (v.Pos)[1] == cx and (v.Pos)[2] == cy then
-                cellID = v.CellID
-              end
+          grids, role, traps, monsters = self:_BigBoardRandRoom(cells, cx, cy)
+        elseif cellType == 2 then
+          local cellID = 1
+          for i, v in ipairs(fixCells) do
+            if v.Pos[1] == cx and v.Pos[2] == cy then
+              cellID = v.CellID
             end
-            -- DECOMPILER ERROR at PC115: Overwrote pending register: R21 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC116: Overwrote pending register: R20 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC117: Overwrote pending register: R19 in 'AssignReg'
-
-            grids = self:_BigBoardFixedRoom(cellID)
           end
+          grids, role, traps, monsters = self:_BigBoardFixedRoom(cellID)
         end
-        do
-          if grids then
-            local basex = BigBoardRoomSize * (cx - 1)
-            local basey = BigBoardRoomSize * (cy - 1)
-            if role then
-              self.RoleArea = {Pos = Vector2(basex + (role.Pos)[1], basey + (role.Pos)[2]), Dir = Vector2((role.Dir)[1], (role.Dir)[2])}
-            end
-            for ox,row in ipairs(grids) do
-              for oy,gt in ipairs(row) do
-                local x = ox + basex
-                local y = oy + basey
-                -- DECOMPILER ERROR at PC163: Confused about usage of register: R36 in 'UnsetPending'
-
-                if not (self.GridTiles)[x] then
-                  (self.GridTiles)[x] = {}
-                end
-                if gt == 1 then
-                  local offset = (math.abs)(x - ((self.RoleArea).Pos).x) + (math.abs)(y - ((self.RoleArea).Pos).y)
-                  local val = (BattleConst.BoardGenConnectRateParamTable)[offset]
-                  -- DECOMPILER ERROR at PC194: Confused about usage of register: R38 in 'UnsetPending'
-
-                  ;
-                  ((self.GridTiles)[x])[y] = {x = x, y = y, connect = 0, color = PieceType.None, connvalue = val}
-                  ;
-                  (table.insert)(self._gridArray, ((self.GridTiles)[x])[y])
-                end
+        if grids then
+          local basex = BigBoardRoomSize * (cx - 1)
+          local basey = BigBoardRoomSize * (cy - 1)
+          if role then
+            self.RoleArea = {
+              Pos = Vector2(basex + role.Pos[1], basey + role.Pos[2]),
+              Dir = Vector2(role.Dir[1], role.Dir[2])
+            }
+          end
+          for ox, row in ipairs(grids) do
+            for oy, gt in ipairs(row) do
+              local x = ox + basex
+              local y = oy + basey
+              if not self.GridTiles[x] then
+                self.GridTiles[x] = {}
+              end
+              if gt == 1 then
+                local offset = math.abs(x - self.RoleArea.Pos.x) + math.abs(y - self.RoleArea.Pos.y)
+                local val = BattleConst.BoardGenConnectRateParamTable[offset]
+                self.GridTiles[x][y] = {
+                  x = x,
+                  y = y,
+                  connect = 0,
+                  color = PieceType.None,
+                  connvalue = val
+                }
+                table.insert(self._gridArray, self.GridTiles[x][y])
               end
             end
-            if traps then
-              for _,trap in ipairs(traps) do
-                local t = {ID = trap.TrapID, Pos = Vector2(basex + (trap.Pos)[1], basey + (trap.Pos)[2]), Dir = Vector2((trap.Dir)[1], (trap.Dir)[2])}
-                ;
-                (table.insert)(self.TrapArea, t)
-              end
+          end
+          if traps then
+            for _, trap in ipairs(traps) do
+              local t = {
+                ID = trap.TrapID,
+                Pos = Vector2(basex + trap.Pos[1], basey + trap.Pos[2]),
+                Dir = Vector2(trap.Dir[1], trap.Dir[2])
+              }
+              table.insert(self.TrapArea, t)
             end
-            do
-              if monsters then
-                for _,monster in ipairs(monsters) do
-                  local t = {ID = monster.MonsterID, Pos = Vector2(basex + (monster.Pos)[1], basey + (monster.Pos)[2]), Dir = Vector2((monster.Dir)[1], (monster.Dir)[2])}
-                  ;
-                  (table.insert)(self.MonsterArea, t)
-                end
-              end
-              do
-                -- DECOMPILER ERROR at PC270: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC270: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC270: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC270: LeaveBlock: unexpected jumping out DO_STMT
-
-              end
+          end
+          if monsters then
+            for _, monster in ipairs(monsters) do
+              local t = {
+                ID = monster.MonsterID,
+                Pos = Vector2(basex + monster.Pos[1], basey + monster.Pos[2]),
+                Dir = Vector2(monster.Dir[1], monster.Dir[2])
+              }
+              table.insert(self.MonsterArea, t)
             end
           end
         end
       end
     end
   else
-    do
-      local maxX = self:GetCurBoardMaxX()
-      local maxY = self:GetCurBoardMaxY()
-      for x = 1, maxX do
-        -- DECOMPILER ERROR at PC285: Confused about usage of register: R11 in 'UnsetPending'
-
-        (self.GridTiles)[x] = {}
-        for y = 1, maxY do
-          local offset = (math.abs)(x - ((self.RoleArea).Pos).x) + (math.abs)(y - ((self.RoleArea).Pos).y) + 1
-          local val = (BattleConst.BoardGenConnectRateParamTable)[offset]
-          -- DECOMPILER ERROR at PC314: Overwrote pending register: R19 in 'AssignReg'
-
-          -- DECOMPILER ERROR at PC315: Overwrote pending register: R20 in 'AssignReg'
-
-          assert(val ~= nil, role .. traps)
-          -- DECOMPILER ERROR at PC328: Confused about usage of register: R17 in 'UnsetPending'
-
-          ;
-          ((self.GridTiles)[x])[y] = {x = x, y = y, connect = 0, color = PieceType.None, connvalue = val}
-          ;
-          (table.insert)(self._gridArray, ((self.GridTiles)[x])[y])
-        end
+    local maxX = self:GetCurBoardMaxX()
+    local maxY = self:GetCurBoardMaxY()
+    for x = 1, maxX do
+      self.GridTiles[x] = {}
+      for y = 1, maxY do
+        local offset = math.abs(x - self.RoleArea.Pos.x) + math.abs(y - self.RoleArea.Pos.y) + 1
+        local val = BattleConst.BoardGenConnectRateParamTable[offset]
+        assert(val ~= nil, "offset=" .. offset)
+        self.GridTiles[x][y] = {
+          x = x,
+          y = y,
+          connect = 0,
+          color = PieceType.None,
+          connvalue = val
+        }
+        table.insert(self._gridArray, self.GridTiles[x][y])
       end
-      for _,v in ipairs(self.GapTiles) do
-        local x, y = v[1], v[2]
-        -- DECOMPILER ERROR at PC346: Confused about usage of register: R14 in 'UnsetPending'
-
-        ;
-        ((self.GridTiles)[x])[y] = nil
-      end
-      if (self._world):MatchType(GetMatchTypeType.NoLinkLine) ~= MatchType.MT_PopStar and (self._world):MatchType(GetMatchTypeType.NoLinkLine) ~= MatchType.MT_PopStarPro then
-        self._roleGrid = ((self.GridTiles)[((self.RoleArea).Pos).x])[((self.RoleArea).Pos).y]
-      end
-      local boardMode = (self._boardConfig).BoardMode
-      local pieces = nil
-      local archive = ((self._world):GetService("Maze")):GetBattleArchive()
-      if archive then
-        boardMode = GenBoardMode.Archived
-        pieces = archive.pieces
-      end
-      if boardMode == GenBoardMode.Generated then
-        self:GeneratedColor()
-      elseif boardMode == GenBoardMode.Specified then
-        self:SpecifiedColor((self._boardConfig).SpecifiedBoard)
-      elseif boardMode == GenBoardMode.Guide then
-        self:SpecifiedColor((self._boardConfig).SpecifiedBoard)
-      elseif boardMode == GenBoardMode.Archived then
-        self:SpecifiedColor(pieces)
-      elseif boardMode == GenBoardMode.BigBoard then
-        self:GeneratedColor()
-      end
-      -- DECOMPILER ERROR at PC433: Confused about usage of register: R8 in 'UnsetPending'
-
-      if boardMode ~= GenBoardMode.Archived and self._roleGrid then
-        (self._roleGrid).color = PieceType.None
-      end
-      local supplyPieceWeight = (table.cloneconf)((self._boardConfig).SupplyPieceWeight)
-      supplyPieceWeight = self:ProcessSupplyPieceWeight(supplyPieceWeight)
-      self:CalculateSupplyPieceWeights(supplyPieceWeight)
-      if self._extraBoardPosList then
-        for i = 1, #self._extraBoardPosList do
-          local x = ((self._extraBoardPosList)[i])[1]
-          local y = ((self._extraBoardPosList)[i])[2]
-          -- DECOMPILER ERROR at PC466: Confused about usage of register: R15 in 'UnsetPending'
-
-          if not (self.GridTiles)[x] then
-            (self.GridTiles)[x] = {}
-          end
-          -- DECOMPILER ERROR at PC475: Confused about usage of register: R15 in 'UnsetPending'
-
-          if not ((self.GridTiles)[x])[y] then
-            ((self.GridTiles)[x])[y] = {}
-          end
-          -- DECOMPILER ERROR at PC486: Confused about usage of register: R15 in 'UnsetPending'
-
-          ;
-          ((self.GridTiles)[x])[y] = {x = x, y = y, connect = 0, color = PieceType.None, connvalue = 0}
-        end
-      end
-      do return self.GridTiles end
-      -- DECOMPILER ERROR: 14 unprocessed JMP targets
+    end
+    for _, v in ipairs(self.GapTiles) do
+      local x, y = v[1], v[2]
+      self.GridTiles[x][y] = nil
     end
   end
+  if self._world:MatchType(GetMatchTypeType.NoLinkLine) ~= MatchType.MT_PopStar and self._world:MatchType(GetMatchTypeType.NoLinkLine) ~= MatchType.MT_PopStarPro then
+    self._roleGrid = self.GridTiles[self.RoleArea.Pos.x][self.RoleArea.Pos.y]
+  end
+  local boardMode = self._boardConfig.BoardMode
+  local pieces
+  local archive = self._world:GetService("Maze"):GetBattleArchive()
+  if archive then
+    boardMode = GenBoardMode.Archived
+    pieces = archive.pieces
+  end
+  if boardMode == GenBoardMode.Generated then
+    self:GeneratedColor()
+  elseif boardMode == GenBoardMode.Specified then
+    self:SpecifiedColor(self._boardConfig.SpecifiedBoard)
+  elseif boardMode == GenBoardMode.Guide then
+    self:SpecifiedColor(self._boardConfig.SpecifiedBoard)
+  elseif boardMode == GenBoardMode.Archived then
+    self:SpecifiedColor(pieces)
+  elseif boardMode == GenBoardMode.BigBoard then
+    self:GeneratedColor()
+  end
+  if boardMode ~= GenBoardMode.Archived and self._roleGrid then
+    self._roleGrid.color = PieceType.None
+  end
+  local supplyPieceWeight = table.cloneconf(self._boardConfig.SupplyPieceWeight)
+  supplyPieceWeight = self:ProcessSupplyPieceWeight(supplyPieceWeight)
+  self:CalculateSupplyPieceWeights(supplyPieceWeight)
+  if self._extraBoardPosList then
+    for i = 1, #self._extraBoardPosList do
+      local x = self._extraBoardPosList[i][1]
+      local y = self._extraBoardPosList[i][2]
+      if not self.GridTiles[x] then
+        self.GridTiles[x] = {}
+      end
+      if not self.GridTiles[x][y] then
+        self.GridTiles[x][y] = {}
+      end
+      self.GridTiles[x][y] = {
+        x = x,
+        y = y,
+        connect = 0,
+        color = PieceType.None,
+        connvalue = 0
+      }
+    end
+  end
+  return self.GridTiles
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic.SetGapTilesBlock = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
-  local blockFlags = (boardEntity:Board()):GetBlockFlagArray()
+function BoardServiceLogic:SetGapTilesBlock()
+  local boardEntity = self._world:GetBoardEntity()
+  local blockFlags = boardEntity:Board():GetBlockFlagArray()
   local mapGapTiles = self.GapTiles
-  local sBoard = (self._world):GetService("BoardLogic")
+  local sBoard = self._world:GetService("BoardLogic")
   local cfgId = BattleConst.BlockFlagCfgIDGapTile
   local blockFlag = sBoard:GetBlockFlagByBlockId(cfgId)
-  for _,v in ipairs(mapGapTiles) do
+  for _, v in ipairs(mapGapTiles) do
     local block = PieceBlockData:New(v[1], v[2])
     block:AddBlock(-cfgId, blockFlag)
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R13 in 'UnsetPending'
-
-    ;
-    (blockFlags[v[1]])[v[2]] = block
+    blockFlags[v[1]][v[2]] = block
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic.ModifyPieceWeight = function(self, piece_type, weight, flag)
-  -- function num : 0_14
-  ((self._supplyPieceWeights)[piece_type]):AddModify(weight, flag)
-  ;
-  (self._supplyPieceTotalWeight):AddModify(weight, flag)
+function BoardServiceLogic:ModifyPieceWeight(piece_type, weight, flag)
+  self._supplyPieceWeights[piece_type]:AddModify(weight, flag)
+  self._supplyPieceTotalWeight:AddModify(weight, flag)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic.RemoveModifyPieceWeight = function(self, piece_type, flag)
-  -- function num : 0_15
-  ((self._supplyPieceWeights)[piece_type]):RemoveModify(flag)
-  ;
-  (self._supplyPieceTotalWeight):RemoveModify(flag)
+function BoardServiceLogic:RemoveModifyPieceWeight(piece_type, flag)
+  self._supplyPieceWeights[piece_type]:RemoveModify(flag)
+  self._supplyPieceTotalWeight:RemoveModify(flag)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic.SpecifiedColor = function(self, board)
-  -- function num : 0_16 , upvalues : _ENV
-  for x,row in pairs(board) do
-    for y,color in pairs(row) do
-      -- DECOMPILER ERROR at PC16: Confused about usage of register: R12 in 'UnsetPending'
-
-      if ((self.GridTiles)[x])[y] then
-        (((self.GridTiles)[x])[y]).color = color
-        self:AddGridColor(((self.GridTiles)[x])[y])
+function BoardServiceLogic:SpecifiedColor(board)
+  for x, row in pairs(board) do
+    for y, color in pairs(row) do
+      if self.GridTiles[x][y] then
+        self.GridTiles[x][y].color = color
+        self:AddGridColor(self.GridTiles[x][y])
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic.GetConnectRate = function(self)
-  -- function num : 0_17
+function BoardServiceLogic:GetConnectRate()
   return self._connectRate
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic.GeneratedColor = function(self)
-  -- function num : 0_18
+function BoardServiceLogic:GeneratedColor()
   self:GenColorPool(51)
   self:GenIslandPool()
   self:GrowIslandPool()
   self:FillRestGridColor()
-  self:AdjustConnectRate((self._boardConfig).ConnectRate)
+  self:AdjustConnectRate(self._boardConfig.ConnectRate)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic.GenColorPool = function(self, maxGridNum)
-  -- function num : 0_19 , upvalues : _ENV
+function BoardServiceLogic:GenColorPool(maxGridNum)
   local pool = {}
   local generatePieceAmount = self:GetCurBoardGeneratePieceAmount()
   pool[PieceType.Blue] = generatePieceAmount[PieceType.Blue] or 0
@@ -572,10 +490,10 @@ BoardServiceLogic.GenColorPool = function(self, maxGridNum)
   pool[PieceType.Yellow] = generatePieceAmount[PieceType.Yellow] or 0
   pool[PieceType.Any] = generatePieceAmount[PieceType.Any] or 0
   local sum = 0
-  for i,v in ipairs(pool) do
+  for i, v in ipairs(pool) do
     sum = sum + v
   end
-  local rest = maxGridNum - (sum)
+  local rest = maxGridNum - sum
   for i = 0, rest do
     local color = self:GenGridColorByWeight()
     pool[color] = pool[color] + 1
@@ -584,10 +502,7 @@ BoardServiceLogic.GenColorPool = function(self, maxGridNum)
   return pool
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic.GenGridColorByWeight = function(self)
-  -- function num : 0_20
+function BoardServiceLogic:GenGridColorByWeight()
   local randomRes = self:GetBoardRandomNumber(1, self._genPieceTotalWeight)
   local weight = 0
   local generatePieceWeight = self:GetCurBoardGeneratePieceWeight()
@@ -599,24 +514,18 @@ BoardServiceLogic.GenGridColorByWeight = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic.FillGridColorByWeight = function(self)
-  -- function num : 0_21
-  local randomRes = self:GetBoardRandomNumber(1, (self._supplyPieceTotalWeight):Value())
+function BoardServiceLogic:FillGridColorByWeight()
+  local randomRes = self:GetBoardRandomNumber(1, self._supplyPieceTotalWeight:Value())
   local weight = 0
   for i = 1, #self._supplyPieceWeights do
-    weight = weight + ((self._supplyPieceWeights)[i]):Value()
+    weight = weight + self._supplyPieceWeights[i]:Value()
     if randomRes <= weight then
       return i
     end
   end
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic.GetRoundGrid = function(self, grid, filter, ...)
-  -- function num : 0_22 , upvalues : _ENV
+function BoardServiceLogic:GetRoundGrid(grid, filter, ...)
   local roundGrids = {}
   if grid == nil then
     return roundGrids
@@ -624,10 +533,10 @@ BoardServiceLogic.GetRoundGrid = function(self, grid, filter, ...)
   for x = -1, 1 do
     for y = -1, 1 do
       local pos = Vector2(grid.x + x, grid.y + y)
-      if (x ~= 0 or y ~= 0) and (self.GridTiles)[pos.x] and ((self.GridTiles)[pos.x])[pos.y] then
-        local g = ((self.GridTiles)[pos.x])[pos.y]
+      if (x ~= 0 or y ~= 0) and self.GridTiles[pos.x] and self.GridTiles[pos.x][pos.y] then
+        local g = self.GridTiles[pos.x][pos.y]
         if filter == nil or filter(g, ...) then
-          (table.insert)(roundGrids, g)
+          table.insert(roundGrids, g)
         end
       end
     end
@@ -635,109 +544,80 @@ BoardServiceLogic.GetRoundGrid = function(self, grid, filter, ...)
   return roundGrids
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic.GenIslandPool = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function BoardServiceLogic:GenIslandPool()
   self._initIslands = {}
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  if (self._boardConfig).RoundIslandCount > 8 then
-    (self._boardConfig).RoundIslandCount = 8
+  if self._boardConfig.RoundIslandCount > 8 then
+    self._boardConfig.RoundIslandCount = 8
   end
   local baseGrid = self._roleGrid
-  if (self._world):SubMatchType() == MatchType.MT_PopStar or (self._world):SubMatchType() == MatchType.MT_PopStarPro then
-    baseGrid = ((self.GridTiles)[((self.RoleArea).Pos).x])[((self.RoleArea).Pos).y]
+  if self._world:SubMatchType() == MatchType.MT_PopStar or self._world:SubMatchType() == MatchType.MT_PopStarPro then
+    baseGrid = self.GridTiles[self.RoleArea.Pos.x][self.RoleArea.Pos.y]
   end
   local round = self:GetRoundGrid(baseGrid)
   if #round == 0 then
-    return 
+    return
   end
-  for _ = 1, (self._boardConfig).RoundIslandCount do
+  for _ = 1, self._boardConfig.RoundIslandCount do
     local r = self:GetBoardRandomNumber(1, #round)
     local grid = round[r]
-    ;
-    (table.remove)(round, r)
+    table.remove(round, r)
     local island = {}
     if self._maxIsland == nil then
       self._maxIsland = island
-      island.length = self:GetBoardRandomNumber(((self._boardConfig).LongIsland)[2], ((self._boardConfig).LongIsland)[3] + 1)
-      grid.color = ((self._boardConfig).LongIsland)[1]
+      island.length = self:GetBoardRandomNumber(self._boardConfig.LongIsland[2], self._boardConfig.LongIsland[3] + 1)
+      grid.color = self._boardConfig.LongIsland[1]
     else
-      island.length = self:GetBoardRandomNumber(2, (self._maxIsland).length)
+      island.length = self:GetBoardRandomNumber(2, self._maxIsland.length)
       grid.color = self:FillGridColorFromPool(grid)
     end
     self:AddGridColor(grid)
-    ;
-    (table.insert)(island, grid)
-    ;
-    (table.insert)(self._initIslands, island)
+    table.insert(island, grid)
+    table.insert(self._initIslands, island)
   end
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic.GrowIslandPool = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  for i,v in ipairs(self._initIslands) do
+function BoardServiceLogic:GrowIslandPool()
+  for i, v in ipairs(self._initIslands) do
     self:GrowIsland(v)
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic.GrowIsland = function(self, island)
-  -- function num : 0_25 , upvalues : _ENV
+function BoardServiceLogic:GrowIsland(island)
   for i = 1, island.length do
-    local color = (island[1]).color
-    if (self._colorPool)[color] == 0 then
-      return 
+    local color = island[1].color
+    if self._colorPool[color] == 0 then
+      return
     end
     local last = island[#island]
     local next = self:FindNextGrowGrid(last)
     if next == nil then
-      return 
+      return
     end
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._colorPool)[color] = (self._colorPool)[color] - 1
+    self._colorPool[color] = self._colorPool[color] - 1
     next.color = color
     self:AddGridColor(next)
-    ;
-    (table.insert)(island, next)
+    table.insert(island, next)
   end
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R9 in 'UnsetPending'
-
-BoardServiceLogic.IsMonsterConfigPos = function(self, pos)
-  -- function num : 0_26
+function BoardServiceLogic:IsMonsterConfigPos(pos)
   return false
 end
 
-local Filter_FindNextGrowGrid = function(g, self, last)
-  -- function num : 0_27 , upvalues : _ENV
-  do return (g.color == PieceType.None and g ~= self._roleGrid and not self:IsMonsterConfigPos(last)) end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+local function Filter_FindNextGrowGrid(g, self, last)
+  return g.color == PieceType.None and g ~= self._roleGrid and not self:IsMonsterConfigPos(last)
 end
 
--- DECOMPILER ERROR at PC168: Confused about usage of register: R10 in 'UnsetPending'
-
-BoardServiceLogic.FindNextGrowGrid = function(self, last)
-  -- function num : 0_28 , upvalues : Filter_FindNextGrowGrid
+function BoardServiceLogic:FindNextGrowGrid(last)
   local round = self:GetRoundGrid(last, Filter_FindNextGrowGrid, self, last)
-  if #round > 0 then
+  if 0 < #round then
     local r = self:GetBoardRandomNumber(1, #round)
     return round[r]
   end
 end
 
--- DECOMPILER ERROR at PC171: Confused about usage of register: R10 in 'UnsetPending'
-
-BoardServiceLogic.FillRestGridColor = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  for _,grid in ipairs(self._gridArray) do
+function BoardServiceLogic:FillRestGridColor()
+  for _, grid in ipairs(self._gridArray) do
     if grid.color == PieceType.None and grid ~= self._roleGrid then
       grid.color = self:FillGridColorFromPool(grid)
       self:AddGridColor(grid)
@@ -745,54 +625,40 @@ BoardServiceLogic.FillRestGridColor = function(self)
   end
 end
 
-local Filter_FillGridColorFromPool = function(g, maxIsland)
-  -- function num : 0_30 , upvalues : _ENV
-  return (table.icontains)(maxIsland, g)
+local function Filter_FillGridColorFromPool(g, maxIsland)
+  return table.icontains(maxIsland, g)
 end
 
--- DECOMPILER ERROR at PC175: Confused about usage of register: R11 in 'UnsetPending'
-
-BoardServiceLogic.FillGridColorFromPool = function(self, grid)
-  -- function num : 0_31 , upvalues : _ENV, Filter_FillGridColorFromPool
+function BoardServiceLogic:FillGridColorFromPool(grid)
   local colors = {}
-  for k,v in ipairs(self._colorPool) do
-    if v > 0 then
-      (table.insert)(colors, k)
+  for k, v in ipairs(self._colorPool) do
+    if 0 < v then
+      table.insert(colors, k)
     end
   end
-  do
-    if #colors > 1 then
-      local round = self:GetRoundGrid(grid, Filter_FillGridColorFromPool, self._maxIsland)
-      if #round > 0 then
-        (table.removev)(colors, ((self._maxIsland)[1]).color)
-      end
-    end
-    if #colors > 0 then
-      local r = self:GetBoardRandomNumber(1, #colors)
-      local c = colors[r]
-      -- DECOMPILER ERROR at PC44: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._colorPool)[c] = (self._colorPool)[c] - 1
-      return c
-    end
-    do
-      return self:GenGridColorByWeight()
+  if 1 < #colors then
+    local round = self:GetRoundGrid(grid, Filter_FillGridColorFromPool, self._maxIsland)
+    if 0 < #round then
+      table.removev(colors, self._maxIsland[1].color)
     end
   end
+  if 0 < #colors then
+    local r = self:GetBoardRandomNumber(1, #colors)
+    local c = colors[r]
+    self._colorPool[c] = self._colorPool[c] - 1
+    return c
+  end
+  return self:GenGridColorByWeight()
 end
 
--- DECOMPILER ERROR at PC178: Confused about usage of register: R11 in 'UnsetPending'
-
-BoardServiceLogic.ExchangeGrid = function(self, gridA, gridB)
-  -- function num : 0_32 , upvalues : Filter_MatchGAndGrid, _ENV
+function BoardServiceLogic:ExchangeGrid(gridA, gridB)
   local roundA = self:GetRoundGrid(gridA, Filter_MatchGAndGrid, gridA)
-  for _,g in pairs(roundA) do
+  for _, g in pairs(roundA) do
     g.connect = g.connect - gridA.connvalue
     self._totalConnect = self._totalConnect - g.connvalue - gridA.connvalue
   end
   local roundB = self:GetRoundGrid(gridB, Filter_MatchGAndGrid, gridB)
-  for k,g in pairs(roundB) do
+  for k, g in pairs(roundB) do
     g.connect = g.connect - gridB.connvalue
     self._totalConnect = self._totalConnect - g.connvalue - gridB.connvalue
   end
@@ -800,13 +666,13 @@ BoardServiceLogic.ExchangeGrid = function(self, gridA, gridB)
   gridA.color = gridB.color
   gridB.color = color
   roundA = self:GetRoundGrid(gridA, Filter_MatchGAndGrid, gridA)
-  for k,g in pairs(roundA) do
+  for k, g in pairs(roundA) do
     g.connect = g.connect + gridA.connvalue
     gridA.connect = gridA.connect + g.connvalue
     self._totalConnect = self._totalConnect + g.connvalue + gridA.connvalue
   end
   roundB = self:GetRoundGrid(gridB, Filter_MatchGAndGrid, gridB)
-  for k,g in pairs(roundB) do
+  for k, g in pairs(roundB) do
     g.connect = g.connect + gridB.connvalue
     gridB.connect = gridB.connect + g.connvalue
     self._totalConnect = self._totalConnect + g.connvalue + gridB.connvalue
@@ -814,15 +680,12 @@ BoardServiceLogic.ExchangeGrid = function(self, gridA, gridB)
   self._connectRate = self._totalConnect / self._totalGridCnt
 end
 
--- DECOMPILER ERROR at PC181: Confused about usage of register: R11 in 'UnsetPending'
-
-BoardServiceLogic.AddGridColor = function(self, grid)
-  -- function num : 0_33 , upvalues : Filter_MatchGAndGrid, _ENV
+function BoardServiceLogic:AddGridColor(grid)
   if grid == self._roleGrid then
-    return 
+    return
   end
   local round = self:GetRoundGrid(grid, Filter_MatchGAndGrid, grid)
-  for _,g in pairs(round) do
+  for _, g in pairs(round) do
     g.connect = g.connect + grid.connvalue
     grid.connect = grid.connect + g.connvalue
     self._totalConnect = self._totalConnect + g.connvalue + grid.connvalue
@@ -831,15 +694,12 @@ BoardServiceLogic.AddGridColor = function(self, grid)
   self._connectRate = self._totalConnect / self._totalGridCnt
 end
 
--- DECOMPILER ERROR at PC184: Confused about usage of register: R11 in 'UnsetPending'
-
-BoardServiceLogic.RemoveGridColor = function(self, grid)
-  -- function num : 0_34 , upvalues : Filter_MatchGAndGrid, _ENV
+function BoardServiceLogic:RemoveGridColor(grid)
   if grid == self._roleGrid then
-    return 
+    return
   end
   local round = self:GetRoundGrid(grid, Filter_MatchGAndGrid, grid)
-  for _,g in pairs(round) do
+  for _, g in pairs(round) do
     g.connect = g.connect - grid.connvalue
     self._totalConnect = self._totalConnect - g.connvalue - grid.connvalue
   end
@@ -849,36 +709,29 @@ BoardServiceLogic.RemoveGridColor = function(self, grid)
   self._connectRate = self._totalConnect / self._totalGridCnt
 end
 
-local Filter_AdjustConnectRate1 = function(g, color)
-  -- function num : 0_35
-  do return g.color == color and g.connect < 3 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+local function Filter_AdjustConnectRate1(g, color)
+  return g.color == color and g.connect < 3
 end
 
-local Filter_AdjustConnectRate2 = function(g, color, grid)
-  -- function num : 0_36
-  do return g.color ~= color and g.connect + grid.connect > 6 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+local function Filter_AdjustConnectRate2(g, color, grid)
+  return g.color ~= color and g.connect + grid.connect > 6
 end
 
--- DECOMPILER ERROR at PC189: Confused about usage of register: R13 in 'UnsetPending'
-
-BoardServiceLogic.AdjustConnectRate = function(self, target)
-  -- function num : 0_37 , upvalues : _ENV, Filter_AdjustConnectRate1, Filter_AdjustConnectRate2
-  if (math.abs)(target - self._connectRate) < 0.1 then
-    return 
+function BoardServiceLogic:AdjustConnectRate(target)
+  if math.abs(target - self._connectRate) < 0.1 then
+    return
   end
-  if self._connectRate < target then
-    for _,v in ipairs(self.GridTiles) do
-      for _,grid in ipairs(v) do
+  if target > self._connectRate then
+    for _, v in ipairs(self.GridTiles) do
+      for _, grid in ipairs(v) do
         if self:IsValidPiecePos(grid) then
           local color = self:GetIncrGridColor(grid)
           if color ~= PieceType.None then
             local grid2 = self:FirstGrid(Filter_AdjustConnectRate1, color)
             if grid2 ~= nil then
               self:ExchangeGrid(grid, grid2)
-              if (math.abs)(target - self._connectRate) < 0.1 then
-                return 
+              if math.abs(target - self._connectRate) < 0.1 then
+                return
               end
             end
           end
@@ -886,17 +739,15 @@ BoardServiceLogic.AdjustConnectRate = function(self, target)
       end
     end
   else
-    do
-      for _,v in ipairs(self.GridTiles) do
-        for _,grid in ipairs(v) do
-          local color = self:GetDecrGridColor(grid)
-          if color ~= PieceType.None then
-            local grid2 = self:FirstGrid(Filter_AdjustConnectRate2, color, grid)
-            if grid2 ~= nil then
-              self:ExchangeGrid(grid, grid2)
-              if (math.abs)(target - self._connectRate) < 0.1 then
-                return 
-              end
+    for _, v in ipairs(self.GridTiles) do
+      for _, grid in ipairs(v) do
+        local color = self:GetDecrGridColor(grid)
+        if color ~= PieceType.None then
+          local grid2 = self:FirstGrid(Filter_AdjustConnectRate2, color, grid)
+          if grid2 ~= nil then
+            self:ExchangeGrid(grid, grid2)
+            if math.abs(target - self._connectRate) < 0.1 then
+              return
             end
           end
         end
@@ -905,15 +756,12 @@ BoardServiceLogic.AdjustConnectRate = function(self, target)
   end
 end
 
--- DECOMPILER ERROR at PC192: Confused about usage of register: R13 in 'UnsetPending'
-
-BoardServiceLogic.FirstGrid = function(self, filter, ...)
-  -- function num : 0_38 , upvalues : _ENV
+function BoardServiceLogic:FirstGrid(filter, ...)
   if filter == nil then
-    return 
+    return
   end
-  for _,v in ipairs(self.GridTiles) do
-    for _,grid in ipairs(v) do
+  for _, v in ipairs(self.GridTiles) do
+    for _, grid in ipairs(v) do
       if filter(grid, ...) then
         return grid
       end
@@ -921,127 +769,113 @@ BoardServiceLogic.FirstGrid = function(self, filter, ...)
   end
 end
 
--- DECOMPILER ERROR at PC195: Confused about usage of register: R13 in 'UnsetPending'
-
-BoardServiceLogic.GetIncrGridColor = function(self, grid)
-  -- function num : 0_39 , upvalues : _ENV
+function BoardServiceLogic:GetIncrGridColor(grid)
   if grid ~= self._roleGrid and grid.connect < 2 then
     local dict = self:CalcRoundGridColor(grid)
-    for k,v in ipairs(dict) do
-      if not CanMatchPieceType(k, grid.color) and v > 3 then
+    for k, v in ipairs(dict) do
+      if not CanMatchPieceType(k, grid.color) and 3 < v then
         return k
       end
     end
   end
-  do
-    return PieceType.None
-  end
+  return PieceType.None
 end
 
--- DECOMPILER ERROR at PC198: Confused about usage of register: R13 in 'UnsetPending'
-
-BoardServiceLogic.GetDecrGridColor = function(self, grid)
-  -- function num : 0_40 , upvalues : _ENV
+function BoardServiceLogic:GetDecrGridColor(grid)
   if grid.connect > 3 and grid.color ~= PieceType.Any then
     return grid.color
   end
   return PieceType.None
 end
 
-local Filter_CalcRoundGridColor = function(g)
-  -- function num : 0_41 , upvalues : _ENV
-  do return g.color ~= PieceType.None end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+local function Filter_CalcRoundGridColor(g)
+  return g.color ~= PieceType.None
 end
 
--- DECOMPILER ERROR at PC202: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic.CalcRoundGridColor = function(self, grid)
-  -- function num : 0_42 , upvalues : _ENV, Filter_CalcRoundGridColor
-  local dict = {[PieceType.Blue] = 0, [PieceType.Red] = 0, [PieceType.Green] = 0, [PieceType.Yellow] = 0, [PieceType.Any] = 0}
+function BoardServiceLogic:CalcRoundGridColor(grid)
+  local dict = {
+    [PieceType.Blue] = 0,
+    [PieceType.Red] = 0,
+    [PieceType.Green] = 0,
+    [PieceType.Yellow] = 0,
+    [PieceType.Any] = 0
+  }
   local round = self:GetRoundGrid(grid, Filter_CalcRoundGridColor)
-  for k,g in pairs(round) do
+  for k, g in pairs(round) do
     dict[g.color] = dict[g.color] + 1
   end
   return dict
 end
 
--- DECOMPILER ERROR at PC205: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic.SupplyPieceList = function(self, poslist)
-  -- function num : 0_43 , upvalues : _ENV, GenBoardMode
-  ((self._world):GetSyncLogger()):Trace({key = "SupplyPieceList", posCnt = #poslist})
+function BoardServiceLogic:SupplyPieceList(poslist)
+  self._world:GetSyncLogger():Trace({
+    key = "SupplyPieceList",
+    posCnt = #poslist
+  })
   local chainPath = {}
-  for _,pos in ipairs(poslist) do
-    local grid = ((self.GridTiles)[pos.x])[pos.y]
+  for _, pos in ipairs(poslist) do
+    local grid = self.GridTiles[pos.x][pos.y]
     if grid then
-      (table.insert)(chainPath, grid)
+      table.insert(chainPath, grid)
       if self:GetCanConvertGridElement(grid) then
         self:RemoveGridColor(grid)
       end
     end
   end
-  local round = ((self._world):BattleStat()):GetPieceRefreshCount()
+  local round = self._world:BattleStat():GetPieceRefreshCount()
   if round == 0 then
     round = 1
   end
-  if (self._boardConfig).BoardMode == GenBoardMode.Guide and round <= #(self._boardConfig).GuideBoard then
-    local idx = ((self._boardConfig).GuideBoard)[round]
-    local cfg = (Cfg.cfg_board_guide)[idx]
+  if self._boardConfig.BoardMode == GenBoardMode.Guide and round <= #self._boardConfig.GuideBoard then
+    local idx = self._boardConfig.GuideBoard[round]
+    local cfg = Cfg.cfg_board_guide[idx]
     if cfg == nil then
-      (Log.error)("GenBoardMode.Guide round=", round, " idx=", idx)
+      Log.error("GenBoardMode.Guide round=", round, " idx=", idx)
     end
-    for _,grid in ipairs(chainPath) do
+    for _, grid in ipairs(chainPath) do
       if self:GetCanConvertGridElement(grid) then
-        grid.color = ((cfg.Board)[grid.x])[grid.y]
+        grid.color = cfg.Board[grid.x][grid.y]
         self:AddGridColor(grid)
       end
     end
     return chainPath
   end
-  do
-    local useMaintainColorList = {}
-    local colors = {}
-    for _,grid in ipairs(chainPath) do
-      if self:GetCanConvertGridElement(grid) then
-        local maintainColor = self:_ApplyMaintainColor(grid)
-        if maintainColor then
-          grid.color = maintainColor
-          ;
-          (table.insert)(useMaintainColorList, grid)
-        else
-          grid.color = self:FillGridColorByWeight()
-        end
-        self:AddGridColor(grid)
-        ;
-        (table.insert)(colors, grid.color)
+  local useMaintainColorList = {}
+  local colors = {}
+  for _, grid in ipairs(chainPath) do
+    if self:GetCanConvertGridElement(grid) then
+      local maintainColor = self:_ApplyMaintainColor(grid)
+      if maintainColor then
+        grid.color = maintainColor
+        table.insert(useMaintainColorList, grid)
+      else
+        grid.color = self:FillGridColorByWeight()
       end
+      self:AddGridColor(grid)
+      table.insert(colors, grid.color)
     end
-    colors.rate = self._connectRate
-    for _,grid in ipairs(chainPath) do
-      if self:GetCanConvertGridElement(grid) then
-        self:RemoveGridColor(grid)
-      end
-    end
-    local nResultIndex = 1
-    for i,grid in ipairs(chainPath) do
-      if self:GetCanConvertGridElement(grid) then
-        grid.color = colors[nResultIndex]
-        nResultIndex = nResultIndex + 1
-        self:AddGridColor(grid)
-      end
-    end
-    return chainPath, useMaintainColorList
   end
+  colors.rate = self._connectRate
+  for _, grid in ipairs(chainPath) do
+    if self:GetCanConvertGridElement(grid) then
+      self:RemoveGridColor(grid)
+    end
+  end
+  local nResultIndex = 1
+  for i, grid in ipairs(chainPath) do
+    if self:GetCanConvertGridElement(grid) then
+      grid.color = colors[nResultIndex]
+      nResultIndex = nResultIndex + 1
+      self:AddGridColor(grid)
+    end
+  end
+  return chainPath, useMaintainColorList
 end
 
--- DECOMPILER ERROR at PC208: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic._ApplyMaintainColor = function(self, pos)
-  -- function num : 0_44 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function BoardServiceLogic:_ApplyMaintainColor(pos)
+  local boardEntity = self._world:GetBoardEntity()
   local boardCmpt = boardEntity:Board()
-  local posIndex = (Vector2.Pos2Index)(pos)
+  local posIndex = Vector2.Pos2Index(pos)
   local retColor = boardCmpt:GetMaintainColorForSupply(posIndex)
   if retColor then
     boardCmpt:ResetMaintainColorForSupply(posIndex)
@@ -1049,25 +883,19 @@ BoardServiceLogic._ApplyMaintainColor = function(self, pos)
   end
 end
 
--- DECOMPILER ERROR at PC211: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic.SetMaintainColorForSupply = function(self, pos, maintainColor)
-  -- function num : 0_45 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function BoardServiceLogic:SetMaintainColorForSupply(pos, maintainColor)
+  local boardEntity = self._world:GetBoardEntity()
   local boardCmpt = boardEntity:Board()
-  local posIndex = (Vector2.Pos2Index)(pos)
+  local posIndex = Vector2.Pos2Index(pos)
   boardCmpt:SetMaintainColorForSupply(posIndex, maintainColor)
 end
 
--- DECOMPILER ERROR at PC214: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic.SyncGridTilesColor = function(self)
-  -- function num : 0_46 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function BoardServiceLogic:SyncGridTilesColor()
+  local boardEntity = self._world:GetBoardEntity()
   local boardCmpt = boardEntity:Board()
-  for x,col in ipairs(boardCmpt.Pieces) do
-    for y,color in pairs(col) do
-      local grid = ((self.GridTiles)[x])[y]
+  for x, col in ipairs(boardCmpt.Pieces) do
+    for y, color in pairs(col) do
+      local grid = self.GridTiles[x][y]
       if grid.color ~= color then
         self:RemoveGridColor(grid)
         grid.color = color
@@ -1077,106 +905,80 @@ BoardServiceLogic.SyncGridTilesColor = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC217: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic.FallGrids = function(self, chainPath, dir, teamEntity)
-  -- function num : 0_47 , upvalues : _ENV
+function BoardServiceLogic:FallGrids(chainPath, dir, teamEntity)
   local delset = {}
   local newset = {}
   local movset = {}
   local rolegrid = {}
   local lastPos = chainPath[#chainPath]
-  local boardLogicSvc = (self._world):GetService("BoardLogic")
+  local boardLogicSvc = self._world:GetService("BoardLogic")
   boardLogicSvc:RemoveEntityBlockFlag(teamEntity, lastPos)
   if self:GetCanConvertGridElement(lastPos) then
     local maintainColor = self:_ApplyMaintainColor(lastPos)
-    local lastGrid = ((self.GridTiles)[lastPos.x])[lastPos.y]
+    local lastGrid = self.GridTiles[lastPos.x][lastPos.y]
     lastGrid.color = PieceType.None
     rolegrid.color = PieceType.None
     rolegrid.pos = lastPos
   end
-  do
-    boardLogicSvc:SetEntityBlockFlag(teamEntity, lastPos)
-    for i = 1, #chainPath - 1 do
-      local pos = chainPath[i]
-      local grid = ((self.GridTiles)[pos.x])[pos.y]
-      if grid then
-        local maintainColor = self:_ApplyMaintainColor(pos)
-      end
+  boardLogicSvc:SetEntityBlockFlag(teamEntity, lastPos)
+  for i = 1, #chainPath - 1 do
+    local pos = chainPath[i]
+    local grid = self.GridTiles[pos.x][pos.y]
+    if grid then
+      local maintainColor = self:_ApplyMaintainColor(pos)
       if maintainColor then
-        do
-          delset[#delset + 1] = {pos = pos, color = grid.color}
-          grid.del = true
-          -- DECOMPILER ERROR at PC65: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC65: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      else
+        delset[#delset + 1] = {
+          pos = pos,
+          color = grid.color
+        }
+        grid.del = true
       end
     end
-    newset = self:_FallGrid_CalSetByDir(dir)
-    self:_FallGrid_DelGrids(delset)
-    self:_FallGrid_DelMoveFromGrids(movset)
-    self:_FallGrid_NewGrids(newset)
-    self:_FallGrid_AddMoveToGrids(movset)
-    return delset, newset, movset, rolegrid
   end
+  newset, movset = self:_FallGrid_CalSetByDir(dir)
+  self:_FallGrid_DelGrids(delset)
+  self:_FallGrid_DelMoveFromGrids(movset)
+  self:_FallGrid_NewGrids(newset)
+  self:_FallGrid_AddMoveToGrids(movset)
+  return delset, newset, movset, rolegrid
 end
 
--- DECOMPILER ERROR at PC220: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic._FallGrid_CalSetByDir = function(self, dir)
-  -- function num : 0_48
+function BoardServiceLogic:_FallGrid_CalSetByDir(dir)
   local newset = {}
   local movset = {}
   if dir.x == 0 and dir.y == -1 then
-    newset = self:_FallGrid_CalDown()
-  else
-    -- DECOMPILER ERROR at PC21: Overwrote pending register: R3 in 'AssignReg'
-
-    if dir.x == 0 and dir.y == 1 then
-      newset = self:_FallGrid_CalUp()
-    else
-      -- DECOMPILER ERROR at PC32: Overwrote pending register: R3 in 'AssignReg'
-
-      if dir.x == 1 and dir.y == 0 then
-        newset = self:_FallGrid_CalRight()
-      else
-        -- DECOMPILER ERROR at PC43: Overwrote pending register: R3 in 'AssignReg'
-
-        if dir.x == -1 and dir.y == 0 then
-          newset = self:_FallGrid_CalLeft()
-        end
-      end
-    end
+    newset, movset = self:_FallGrid_CalDown()
+  elseif dir.x == 0 and dir.y == 1 then
+    newset, movset = self:_FallGrid_CalUp()
+  elseif dir.x == 1 and dir.y == 0 then
+    newset, movset = self:_FallGrid_CalRight()
+  elseif dir.x == -1 and dir.y == 0 then
+    newset, movset = self:_FallGrid_CalLeft()
   end
   return newset, movset
 end
 
--- DECOMPILER ERROR at PC223: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic._FallGrid_CalDown = function(self)
-  -- function num : 0_49 , upvalues : _ENV
-  local slot = nil
+function BoardServiceLogic:_FallGrid_CalDown()
+  local slot
   local movset = {}
   local newset = {}
   local maxX = self:GetCurBoardMaxX()
   local maxY = self:GetCurBoardMaxY()
-  local findslot = function(x, y1)
-    -- function num : 0_49_0 , upvalues : maxY, self, slot, _ENV
+  
+  local function findslot(x, y1)
     for y = y1, maxY do
-      local grid = ((self.GridTiles)[x])[y]
+      local grid = self.GridTiles[x][y]
       if grid and grid.del then
         slot = Vector2(x, y)
         return slot
       end
     end
   end
-
-  local findmove = function(x, y1)
-    -- function num : 0_49_1 , upvalues : maxY, self, _ENV
+  
+  local function findmove(x, y1)
     for y = y1, maxY do
-      local grid = ((self.GridTiles)[x])[y]
+      local grid = self.GridTiles[x][y]
       if grid then
         local pos = Vector2(x, y)
         if not grid.del and self:CanFallGrid(pos) then
@@ -1185,73 +987,54 @@ BoardServiceLogic._FallGrid_CalDown = function(self)
       end
     end
   end
-
+  
   for x = 1, maxX do
     slot = findslot(x, 1)
-    while 1 do
-      if slot then
-        local pos = findmove(x, slot.y + 1)
-        if pos then
-          local grid = ((self.GridTiles)[pos.x])[pos.y]
-          grid.del = true
-          movset[#movset + 1] = {from = pos, to = slot, color = grid.color}
-        else
-          do
-            do
-              do
-                local maxY = self:_GetMaxYOfColX(x)
-                newset[#newset + 1] = {from = Vector2(x, maxY), pos = slot, color = self:FillGridColorByWeight()}
-                -- DECOMPILER ERROR at PC63: Confused about usage of register: R13 in 'UnsetPending'
-
-                ;
-                (((self.GridTiles)[slot.x])[slot.y]).del = nil
-                slot = findslot(x, slot.y + 1)
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
-          end
-        end
+    while slot do
+      local pos = findmove(x, slot.y + 1)
+      if pos then
+        local grid = self.GridTiles[pos.x][pos.y]
+        grid.del = true
+        movset[#movset + 1] = {
+          from = pos,
+          to = slot,
+          color = grid.color
+        }
+      else
+        local maxY = self:_GetMaxYOfColX(x)
+        newset[#newset + 1] = {
+          from = Vector2(x, maxY),
+          pos = slot,
+          color = self:FillGridColorByWeight()
+        }
       end
+      self.GridTiles[slot.x][slot.y].del = nil
+      slot = findslot(x, slot.y + 1)
     end
   end
   return newset, movset
 end
 
--- DECOMPILER ERROR at PC226: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic._FallGrid_CalUp = function(self)
-  -- function num : 0_50 , upvalues : _ENV
-  local slot = nil
+function BoardServiceLogic:_FallGrid_CalUp()
+  local slot
   local movset = {}
   local newset = {}
   local maxX = self:GetCurBoardMaxX()
   local maxY = self:GetCurBoardMaxY()
-  local findslot = function(x, y1)
-    -- function num : 0_50_0 , upvalues : self, slot, _ENV
+  
+  local function findslot(x, y1)
     for y = y1, 1, -1 do
-      local grid = ((self.GridTiles)[x])[y]
+      local grid = self.GridTiles[x][y]
       if grid and grid.del then
         slot = Vector2(x, y)
         return slot
       end
     end
   end
-
-  local findmove = function(x, y1)
-    -- function num : 0_50_1 , upvalues : self, _ENV
+  
+  local function findmove(x, y1)
     for y = y1, 1, -1 do
-      local grid = ((self.GridTiles)[x])[y]
+      local grid = self.GridTiles[x][y]
       if grid then
         local pos = Vector2(x, y)
         if not grid.del and self:CanFallGrid(pos) then
@@ -1260,73 +1043,54 @@ BoardServiceLogic._FallGrid_CalUp = function(self)
       end
     end
   end
-
+  
   for x = 1, maxX do
     slot = findslot(x, maxY)
-    while 1 do
-      if slot then
-        local pos = findmove(x, slot.y - 1)
-        if pos then
-          local grid = ((self.GridTiles)[pos.x])[pos.y]
-          grid.del = true
-          movset[#movset + 1] = {from = pos, to = slot, color = grid.color}
-        else
-          do
-            do
-              do
-                local minY = self:_GetMinYOfColX(x)
-                newset[#newset + 1] = {from = Vector2(x, minY), pos = slot, color = self:FillGridColorByWeight()}
-                -- DECOMPILER ERROR at PC63: Confused about usage of register: R13 in 'UnsetPending'
-
-                ;
-                (((self.GridTiles)[slot.x])[slot.y]).del = nil
-                slot = findslot(x, slot.y - 1)
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
-          end
-        end
+    while slot do
+      local pos = findmove(x, slot.y - 1)
+      if pos then
+        local grid = self.GridTiles[pos.x][pos.y]
+        grid.del = true
+        movset[#movset + 1] = {
+          from = pos,
+          to = slot,
+          color = grid.color
+        }
+      else
+        local minY = self:_GetMinYOfColX(x)
+        newset[#newset + 1] = {
+          from = Vector2(x, minY),
+          pos = slot,
+          color = self:FillGridColorByWeight()
+        }
       end
+      self.GridTiles[slot.x][slot.y].del = nil
+      slot = findslot(x, slot.y - 1)
     end
   end
   return newset, movset
 end
 
--- DECOMPILER ERROR at PC229: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic._FallGrid_CalLeft = function(self)
-  -- function num : 0_51 , upvalues : _ENV
-  local slot = nil
+function BoardServiceLogic:_FallGrid_CalLeft()
+  local slot
   local movset = {}
   local newset = {}
   local maxX = self:GetCurBoardMaxX()
   local maxY = self:GetCurBoardMaxY()
-  local findslot = function(x1, y)
-    -- function num : 0_51_0 , upvalues : maxX, self, slot, _ENV
+  
+  local function findslot(x1, y)
     for x = x1, maxX do
-      local grid = ((self.GridTiles)[x])[y]
+      local grid = self.GridTiles[x][y]
       if grid and grid.del then
         slot = Vector2(x, y)
         return slot
       end
     end
   end
-
-  local findmove = function(x1, y)
-    -- function num : 0_51_1 , upvalues : maxX, self, _ENV
+  
+  local function findmove(x1, y)
     for x = x1, maxX do
-      local grid = ((self.GridTiles)[x])[y]
+      local grid = self.GridTiles[x][y]
       if grid then
         local pos = Vector2(x, y)
         if not grid.del and self:CanFallGrid(pos) then
@@ -1335,73 +1099,54 @@ BoardServiceLogic._FallGrid_CalLeft = function(self)
       end
     end
   end
-
+  
   for y = 1, maxY do
     slot = findslot(1, y)
-    while 1 do
-      if slot then
-        local pos = findmove(slot.x + 1, slot.y)
-        if pos then
-          local grid = ((self.GridTiles)[pos.x])[pos.y]
-          grid.del = true
-          movset[#movset + 1] = {from = pos, to = slot, color = grid.color}
-        else
-          do
-            do
-              do
-                local maxX = self:_GetMaxXOfRowY(y)
-                newset[#newset + 1] = {from = Vector2(maxX, y), pos = slot, color = self:FillGridColorByWeight()}
-                -- DECOMPILER ERROR at PC63: Confused about usage of register: R13 in 'UnsetPending'
-
-                ;
-                (((self.GridTiles)[slot.x])[slot.y]).del = nil
-                slot = findslot(slot.x + 1, slot.y)
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
-          end
-        end
+    while slot do
+      local pos = findmove(slot.x + 1, slot.y)
+      if pos then
+        local grid = self.GridTiles[pos.x][pos.y]
+        grid.del = true
+        movset[#movset + 1] = {
+          from = pos,
+          to = slot,
+          color = grid.color
+        }
+      else
+        local maxX = self:_GetMaxXOfRowY(y)
+        newset[#newset + 1] = {
+          from = Vector2(maxX, y),
+          pos = slot,
+          color = self:FillGridColorByWeight()
+        }
       end
+      self.GridTiles[slot.x][slot.y].del = nil
+      slot = findslot(slot.x + 1, slot.y)
     end
   end
   return newset, movset
 end
 
--- DECOMPILER ERROR at PC232: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic._FallGrid_CalRight = function(self)
-  -- function num : 0_52 , upvalues : _ENV
-  local slot = nil
+function BoardServiceLogic:_FallGrid_CalRight()
+  local slot
   local movset = {}
   local newset = {}
   local maxX = self:GetCurBoardMaxX()
   local maxY = self:GetCurBoardMaxY()
-  local findslot = function(x1, y)
-    -- function num : 0_52_0 , upvalues : self, slot, _ENV
+  
+  local function findslot(x1, y)
     for x = x1, 1, -1 do
-      local grid = ((self.GridTiles)[x])[y]
+      local grid = self.GridTiles[x][y]
       if grid and grid.del then
         slot = Vector2(x, y)
         return slot
       end
     end
   end
-
-  local findmove = function(x1, y)
-    -- function num : 0_52_1 , upvalues : self, _ENV
+  
+  local function findmove(x1, y)
     for x = x1, 1, -1 do
-      local grid = ((self.GridTiles)[x])[y]
+      local grid = self.GridTiles[x][y]
       if grid then
         local pos = Vector2(x, y)
         if not grid.del and self:CanFallGrid(pos) then
@@ -1410,99 +1155,69 @@ BoardServiceLogic._FallGrid_CalRight = function(self)
       end
     end
   end
-
+  
   for y = 1, maxY do
     slot = findslot(maxX, y)
-    while 1 do
-      if slot then
-        local pos = findmove(slot.x - 1, slot.y)
-        if pos then
-          local grid = ((self.GridTiles)[pos.x])[pos.y]
-          grid.del = true
-          movset[#movset + 1] = {from = pos, to = slot, color = grid.color}
-        else
-          do
-            do
-              do
-                local minX = self:_GetMinXOfRowY(y)
-                newset[#newset + 1] = {from = Vector2(minX, y), pos = slot, color = self:FillGridColorByWeight()}
-                -- DECOMPILER ERROR at PC63: Confused about usage of register: R13 in 'UnsetPending'
-
-                ;
-                (((self.GridTiles)[slot.x])[slot.y]).del = nil
-                slot = findslot(slot.x - 1, slot.y)
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
-          end
-        end
+    while slot do
+      local pos = findmove(slot.x - 1, slot.y)
+      if pos then
+        local grid = self.GridTiles[pos.x][pos.y]
+        grid.del = true
+        movset[#movset + 1] = {
+          from = pos,
+          to = slot,
+          color = grid.color
+        }
+      else
+        local minX = self:_GetMinXOfRowY(y)
+        newset[#newset + 1] = {
+          from = Vector2(minX, y),
+          pos = slot,
+          color = self:FillGridColorByWeight()
+        }
       end
+      self.GridTiles[slot.x][slot.y].del = nil
+      slot = findslot(slot.x - 1, slot.y)
     end
   end
   return newset, movset
 end
 
--- DECOMPILER ERROR at PC235: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic._FallGrid_DelGrids = function(self, delset)
-  -- function num : 0_53 , upvalues : _ENV
-  for _,v in ipairs(delset) do
-    local grid = ((self.GridTiles)[(v.pos).x])[(v.pos).y]
+function BoardServiceLogic:_FallGrid_DelGrids(delset)
+  for _, v in ipairs(delset) do
+    local grid = self.GridTiles[v.pos.x][v.pos.y]
     self:RemoveGridColor(grid)
   end
 end
 
--- DECOMPILER ERROR at PC238: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic._FallGrid_NewGrids = function(self, newset)
-  -- function num : 0_54 , upvalues : _ENV
-  for _,v in ipairs(newset) do
-    local grid = ((self.GridTiles)[(v.pos).x])[(v.pos).y]
+function BoardServiceLogic:_FallGrid_NewGrids(newset)
+  for _, v in ipairs(newset) do
+    local grid = self.GridTiles[v.pos.x][v.pos.y]
     grid.color = v.color
     self:AddGridColor(grid)
   end
 end
 
--- DECOMPILER ERROR at PC241: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic._FallGrid_DelMoveFromGrids = function(self, movset)
-  -- function num : 0_55 , upvalues : _ENV
-  for _,v in ipairs(movset) do
-    local grid = ((self.GridTiles)[(v.from).x])[(v.from).y]
+function BoardServiceLogic:_FallGrid_DelMoveFromGrids(movset)
+  for _, v in ipairs(movset) do
+    local grid = self.GridTiles[v.from.x][v.from.y]
     self:RemoveGridColor(grid)
   end
 end
 
--- DECOMPILER ERROR at PC244: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic._FallGrid_AddMoveToGrids = function(self, movset)
-  -- function num : 0_56 , upvalues : _ENV
-  for _,v in ipairs(movset) do
-    local grid = ((self.GridTiles)[(v.to).x])[(v.to).y]
+function BoardServiceLogic:_FallGrid_AddMoveToGrids(movset)
+  for _, v in ipairs(movset) do
+    local grid = self.GridTiles[v.to.x][v.to.y]
     grid.color = v.color
     self:AddGridColor(grid)
   end
 end
 
--- DECOMPILER ERROR at PC247: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic._GetMinXOfRowY = function(self, rowY)
-  -- function num : 0_57
+function BoardServiceLogic:_GetMinXOfRowY(rowY)
   local maxX = self:GetCurBoardMaxX()
   local retX = 1
   for index = 1, maxX do
-    local colTiles = (self.GridTiles)[index]
+    local colTiles = self.GridTiles[index]
     if colTiles then
       local tile = colTiles[rowY]
       if tile then
@@ -1511,19 +1226,14 @@ BoardServiceLogic._GetMinXOfRowY = function(self, rowY)
       end
     end
   end
-  do
-    return retX
-  end
+  return retX
 end
 
--- DECOMPILER ERROR at PC250: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic._GetMaxXOfRowY = function(self, rowY)
-  -- function num : 0_58
+function BoardServiceLogic:_GetMaxXOfRowY(rowY)
   local maxX = self:GetCurBoardMaxX()
   local retX = maxX
   for index = maxX, 1, -1 do
-    local colTiles = (self.GridTiles)[index]
+    local colTiles = self.GridTiles[index]
     if colTiles then
       local tile = colTiles[rowY]
       if tile then
@@ -1532,18 +1242,13 @@ BoardServiceLogic._GetMaxXOfRowY = function(self, rowY)
       end
     end
   end
-  do
-    return retX
-  end
+  return retX
 end
 
--- DECOMPILER ERROR at PC253: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic._GetMinYOfColX = function(self, colX)
-  -- function num : 0_59
+function BoardServiceLogic:_GetMinYOfColX(colX)
   local maxY = self:GetCurBoardMaxY()
   local retY = 1
-  local colTiles = (self.GridTiles)[colX]
+  local colTiles = self.GridTiles[colX]
   if colTiles then
     for index = 1, maxY do
       local tile = colTiles[index]
@@ -1553,18 +1258,13 @@ BoardServiceLogic._GetMinYOfColX = function(self, colX)
       end
     end
   end
-  do
-    return retY
-  end
+  return retY
 end
 
--- DECOMPILER ERROR at PC256: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic._GetMaxYOfColX = function(self, colX)
-  -- function num : 0_60
+function BoardServiceLogic:_GetMaxYOfColX(colX)
   local maxY = self:GetCurBoardMaxY()
   local retY = maxY
-  local colTiles = (self.GridTiles)[colX]
+  local colTiles = self.GridTiles[colX]
   if colTiles then
     for index = maxY, 1, -1 do
       local tile = colTiles[index]
@@ -1574,54 +1274,37 @@ BoardServiceLogic._GetMaxYOfColX = function(self, colX)
       end
     end
   end
-  do
-    return retY
-  end
+  return retY
 end
 
--- DECOMPILER ERROR at PC259: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic.GetMinXOfRowY = function(self, rowY)
-  -- function num : 0_61
+function BoardServiceLogic:GetMinXOfRowY(rowY)
   return self:_GetMinXOfRowY(rowY)
 end
 
--- DECOMPILER ERROR at PC262: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic.GetMaxXOfRowY = function(self, rowY)
-  -- function num : 0_62
+function BoardServiceLogic:GetMaxXOfRowY(rowY)
   return self:_GetMaxXOfRowY(rowY)
 end
 
--- DECOMPILER ERROR at PC265: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic.GetMinYOfColX = function(self, colX)
-  -- function num : 0_63
+function BoardServiceLogic:GetMinYOfColX(colX)
   return self:_GetMinYOfColX(colX)
 end
 
--- DECOMPILER ERROR at PC268: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic.GetMaxYOfColX = function(self, colX)
-  -- function num : 0_64
+function BoardServiceLogic:GetMaxYOfColX(colX)
   return self:_GetMaxYOfColX(colX)
 end
 
--- DECOMPILER ERROR at PC271: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic.CalculateSupplyPieceWeights = function(self, boardSupplyPieceWeights)
-  -- function num : 0_65 , upvalues : _ENV
-  local levelConfigData = (self._configService):GetLevelConfigData()
-  if levelConfigData:IsApplyPetSupplyPieceWeight() and (self._world):GetRunningPosition() ~= WorldRunPostion.Performance then
-    local baseBoardSupplyPieceWeights = (table.cloneconf)(boardSupplyPieceWeights)
-    local listMatchPet = (self._world):GetLocalMatchPetList()
-    for _,matchPet in ipairs(listMatchPet) do
+function BoardServiceLogic:CalculateSupplyPieceWeights(boardSupplyPieceWeights)
+  local levelConfigData = self._configService:GetLevelConfigData()
+  if levelConfigData:IsApplyPetSupplyPieceWeight() and self._world:GetRunningPosition() ~= WorldRunPostion.Performance then
+    local baseBoardSupplyPieceWeights = table.cloneconf(boardSupplyPieceWeights)
+    local listMatchPet = self._world:GetLocalMatchPetList()
+    for _, matchPet in ipairs(listMatchPet) do
       local petWeights = matchPet:GetPetSupplyPieceWeights()
       if petWeights then
         if #petWeights ~= 5 then
-          (Log.error)("Cfg PetSupplyPieceWeights size error: pet ID:", matchPet:GetTemplateID())
+          Log.error("Cfg PetSupplyPieceWeights size error: pet ID:", matchPet:GetTemplateID())
         end
-        for index,value in ipairs(petWeights) do
+        for index, value in ipairs(petWeights) do
           if baseBoardSupplyPieceWeights[index] ~= 0 then
             boardSupplyPieceWeights[index] = boardSupplyPieceWeights[index] + value
           end
@@ -1630,13 +1313,13 @@ BoardServiceLogic.CalculateSupplyPieceWeights = function(self, boardSupplyPieceW
     end
     local enlightenInfo = self:_CalcEnlightenActiveType()
     if enlightenInfo then
-      local baseWeights = (table.cloneconf)(boardSupplyPieceWeights)
+      local baseWeights = table.cloneconf(boardSupplyPieceWeights)
       local enlightenWeights = enlightenInfo:GetSupplyPieceWeights()
       if enlightenWeights then
         if #enlightenWeights ~= 5 then
-          (Log.error)("Cfg SupplyPieceWeight enlighten weights error!!!")
+          Log.error("Cfg SupplyPieceWeight enlighten weights error!!!")
         end
-        for index,value in ipairs(enlightenWeights) do
+        for index, value in ipairs(enlightenWeights) do
           if baseWeights[index] ~= 0 then
             boardSupplyPieceWeights[index] = boardSupplyPieceWeights[index] + value
           end
@@ -1644,92 +1327,87 @@ BoardServiceLogic.CalculateSupplyPieceWeights = function(self, boardSupplyPieceW
       end
     end
   end
-  do
-    local totalSupplyWeight = 0
-    for i = 1, #boardSupplyPieceWeights do
-      if boardSupplyPieceWeights[i] < 0 then
-        boardSupplyPieceWeights[i] = 0
-      end
-      totalSupplyWeight = totalSupplyWeight + boardSupplyPieceWeights[i]
+  local totalSupplyWeight = 0
+  for i = 1, #boardSupplyPieceWeights do
+    if boardSupplyPieceWeights[i] < 0 then
+      boardSupplyPieceWeights[i] = 0
     end
-    if totalSupplyWeight < 1 then
-      (Log.error)("Cfg SupplyPieceWeight total weight error!!!")
-    end
-    self._supplyPieceTotalWeight = MultModifyValue_Add:New(totalSupplyWeight)
-    ;
-    (Log.info)("total supply weight = :", totalSupplyWeight)
-    self._supplyPieceWeights = {[PieceType.Blue] = MultModifyValue_Add:New(boardSupplyPieceWeights[1]), [PieceType.Red] = MultModifyValue_Add:New(boardSupplyPieceWeights[2]), [PieceType.Green] = MultModifyValue_Add:New(boardSupplyPieceWeights[3]), [PieceType.Yellow] = MultModifyValue_Add:New(boardSupplyPieceWeights[4]), [PieceType.Any] = MultModifyValue_Add:New(boardSupplyPieceWeights[5])}
+    totalSupplyWeight = totalSupplyWeight + boardSupplyPieceWeights[i]
   end
+  if totalSupplyWeight < 1 then
+    Log.error("Cfg SupplyPieceWeight total weight error!!!")
+  end
+  self._supplyPieceTotalWeight = MultModifyValue_Add:New(totalSupplyWeight)
+  Log.info("total supply weight = :", totalSupplyWeight)
+  self._supplyPieceWeights = {
+    [PieceType.Blue] = MultModifyValue_Add:New(boardSupplyPieceWeights[1]),
+    [PieceType.Red] = MultModifyValue_Add:New(boardSupplyPieceWeights[2]),
+    [PieceType.Green] = MultModifyValue_Add:New(boardSupplyPieceWeights[3]),
+    [PieceType.Yellow] = MultModifyValue_Add:New(boardSupplyPieceWeights[4]),
+    [PieceType.Any] = MultModifyValue_Add:New(boardSupplyPieceWeights[5])
+  }
 end
 
--- DECOMPILER ERROR at PC274: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic._CalcEnlightenActiveType = function(self)
-  -- function num : 0_66 , upvalues : _ENV
+function BoardServiceLogic:_CalcEnlightenActiveType()
   local elementTypeDic = {}
-  local listMatchPet = (self._world):GetLocalMatchPetList()
-  for _,matchPet in ipairs(listMatchPet) do
+  local listMatchPet = self._world:GetLocalMatchPetList()
+  for _, matchPet in ipairs(listMatchPet) do
     local primaryType = matchPet:GetPetFirstElement()
     if not elementTypeDic[primaryType] then
       elementTypeDic[primaryType] = {}
     end
-    ;
-    (table.insert)(elementTypeDic[primaryType], matchPet)
+    table.insert(elementTypeDic[primaryType], matchPet)
   end
-  for type,petList in pairs(elementTypeDic) do
-    if BattleConst.ActiveEnlightenPetMinNum <= (table.count)(petList) then
-      return (self._world):GetEnlightenInfoByType(type)
+  for type, petList in pairs(elementTypeDic) do
+    if table.count(petList) >= BattleConst.ActiveEnlightenPetMinNum then
+      return self._world:GetEnlightenInfoByType(type)
     end
   end
 end
 
--- DECOMPILER ERROR at PC277: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic.GenerateSpliceBoard = function(self, boardId)
-  -- function num : 0_67 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function BoardServiceLogic:GenerateSpliceBoard(boardId)
+  local boardEntity = self._world:GetBoardEntity()
   local spliceBoardPosList = self:GetSpliceBoardPosList()
   local spliceGridTiles = {}
   if spliceBoardPosList then
     for i = 1, #spliceBoardPosList do
-      local x = (spliceBoardPosList[i])[1]
-      local y = (spliceBoardPosList[i])[2]
-      if not (spliceBoardPosList[i])[3] then
-        local color = PieceType.None
-      end
+      local x = spliceBoardPosList[i][1]
+      local y = spliceBoardPosList[i][2]
+      local color = spliceBoardPosList[i][3] or PieceType.None
       if color == -1 then
         color = self:FillGridColorByWeight()
       end
       if not spliceGridTiles[x] then
         spliceGridTiles[x] = {}
       end
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (spliceGridTiles[x])[y] = {x = x, y = y, connect = 0, color = color, connvalue = 0}
+      spliceGridTiles[x][y] = {
+        x = x,
+        y = y,
+        connect = 0,
+        color = color,
+        connvalue = 0
+      }
     end
   end
-  do
-    return spliceGridTiles
-  end
+  return spliceGridTiles
 end
 
--- DECOMPILER ERROR at PC280: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic.PopStarGridByFallDir = function(self, posList, dir)
-  -- function num : 0_68
+function BoardServiceLogic:PopStarGridByFallDir(posList, dir)
   local delSet = {}
   local newSet = {}
   local moveSet = {}
   for i = 1, #posList do
     local pos = posList[i]
-    local grid = ((self.GridTiles)[pos.x])[pos.y]
+    local grid = self.GridTiles[pos.x][pos.y]
     if grid then
-      delSet[#delSet + 1] = {pos = pos, color = grid.color}
+      delSet[#delSet + 1] = {
+        pos = pos,
+        color = grid.color
+      }
       grid.del = true
     end
   end
-  newSet = self:_FallGrid_CalSetByDir(dir)
+  newSet, moveSet = self:_FallGrid_CalSetByDir(dir)
   self:_FallGrid_DelGrids(delSet)
   self:_FallGrid_DelMoveFromGrids(moveSet)
   self:_FallGrid_NewGrids(newSet)
@@ -1737,60 +1415,45 @@ BoardServiceLogic.PopStarGridByFallDir = function(self, posList, dir)
   return delSet, newSet, moveSet
 end
 
--- DECOMPILER ERROR at PC283: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic.GetCurBoardGeneratePieceAmount = function(self)
-  -- function num : 0_69
-  local affixSvc = (self._world):GetService("Affix")
-  local generatePieceAmount = affixSvc:ProcessGeneratePieceAmount((self._boardConfig).GeneratePieceAmount)
+function BoardServiceLogic:GetCurBoardGeneratePieceAmount()
+  local affixSvc = self._world:GetService("Affix")
+  local generatePieceAmount = affixSvc:ProcessGeneratePieceAmount(self._boardConfig.GeneratePieceAmount)
   return generatePieceAmount
 end
 
--- DECOMPILER ERROR at PC286: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic.GetCurBoardGeneratePieceWeight = function(self)
-  -- function num : 0_70
-  local affixSvc = (self._world):GetService("Affix")
-  local generatePieceWeight = affixSvc:ProcessGeneratePieceWeight((self._boardConfig).GeneratePieceWeight)
+function BoardServiceLogic:GetCurBoardGeneratePieceWeight()
+  local affixSvc = self._world:GetService("Affix")
+  local generatePieceWeight = affixSvc:ProcessGeneratePieceWeight(self._boardConfig.GeneratePieceWeight)
   return generatePieceWeight
 end
 
--- DECOMPILER ERROR at PC289: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic.ProcessSupplyPieceWeight = function(self, baseSupplyPieceWeight)
-  -- function num : 0_71
-  local affixSvc = (self._world):GetService("Affix")
+function BoardServiceLogic:ProcessSupplyPieceWeight(baseSupplyPieceWeight)
+  local affixSvc = self._world:GetService("Affix")
   local generatePieceWeight = affixSvc:ProcessSupplyPieceWeight(baseSupplyPieceWeight)
   return generatePieceWeight
 end
 
--- DECOMPILER ERROR at PC292: Confused about usage of register: R14 in 'UnsetPending'
-
-BoardServiceLogic.GeneratePushBoard = function(self, pushBoardPosList)
-  -- function num : 0_72 , upvalues : _ENV
+function BoardServiceLogic:GeneratePushBoard(pushBoardPosList)
   local pushGridTiles = {}
   if pushBoardPosList then
     for i = 1, #pushBoardPosList do
-      local x = (pushBoardPosList[i])[1]
-      local y = (pushBoardPosList[i])[2]
-      if not (pushBoardPosList[i])[3] then
-        local color = PieceType.None
-      end
+      local x = pushBoardPosList[i][1]
+      local y = pushBoardPosList[i][2]
+      local color = pushBoardPosList[i][3] or PieceType.None
       if color == -1 then
         color = self:FillGridColorByWeight()
       end
       if not pushGridTiles[x] then
         pushGridTiles[x] = {}
       end
-      -- DECOMPILER ERROR at PC34: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (pushGridTiles[x])[y] = {x = x, y = y, connect = 0, color = color, connvalue = 0}
+      pushGridTiles[x][y] = {
+        x = x,
+        y = y,
+        connect = 0,
+        color = color,
+        connvalue = 0
+      }
     end
   end
-  do
-    return pushGridTiles
-  end
+  return pushGridTiles
 end
-
-

@@ -1,101 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_level_trap_absort_summon.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_LevelTrapAbsortSummon", SkillEffectCalc_Base)
 SkillEffectCalc_LevelTrapAbsortSummon = SkillEffectCalc_LevelTrapAbsortSummon
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_LevelTrapAbsortSummon.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_LevelTrapAbsortSummon:DoSkillEffectCalculator(skillEffectCalcParam)
   local param = skillEffectCalcParam:GetSkillEffectParam()
   local checkTrapIDs = param:GetCheckTrapIDs()
-  if not skillEffectCalcParam.skillRange then
-    local range = {}
-  end
+  local range = skillEffectCalcParam.skillRange or {}
   local centerPos = skillEffectCalcParam:GetCenterPos()
   local casterEntityID = skillEffectCalcParam:GetCasterEntityID()
-  local utilSvc = (self._world):GetService("UtilData")
+  local utilSvc = self._world:GetService("UtilData")
   local trapInRange = {}
-  for _,pos in ipairs(range) do
+  for _, pos in ipairs(range) do
     local array = utilSvc:GetTrapsAtPos(pos)
-    for _,eTrap in ipairs(array) do
+    for _, eTrap in ipairs(array) do
       if eTrap and not eTrap:HasDeadMark() then
         local isOwner = false
         if eTrap:HasSummoner() then
-          local summonEntityID = (eTrap:Summoner()):GetSummonerEntityID()
+          local summonEntityID = eTrap:Summoner():GetSummonerEntityID()
           local summonEntity = eTrap:GetSummonerEntity()
           if summonEntity and summonEntity:HasSuperEntity() and summonEntity:GetSuperEntity() then
-            summonEntityID = (summonEntity:GetSuperEntity()):GetID()
+            summonEntityID = summonEntity:GetSuperEntity():GetID()
           end
           if summonEntityID == casterEntityID then
             isOwner = true
           end
         else
-          do
-            do
-              isOwner = true
-              if isOwner and (table.icontains)(checkTrapIDs, (eTrap:Trap()):GetTrapID()) then
-                (table.insert)(trapInRange, eTrap)
-              end
-              -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+          isOwner = true
+        end
+        if isOwner and table.icontains(checkTrapIDs, eTrap:Trap():GetTrapID()) then
+          table.insert(trapInRange, eTrap)
         end
       end
     end
   end
   local tarLevel = 0
-  if #trapInRange > 0 then
-    for _,desTrap in ipairs(trapInRange) do
-      local desTrapID = (desTrap:Trap()):GetTrapID()
+  if 0 < #trapInRange then
+    for _, desTrap in ipairs(trapInRange) do
+      local desTrapID = desTrap:Trap():GetTrapID()
       local desTrapLevel = param:GetTrapModelLevel(desTrapID)
       tarLevel = tarLevel + desTrapLevel
     end
   end
-  do
-    if tarLevel == 0 then
-      tarLevel = 1
-    end
-    local tarTrapID = 0
-    local isTarTrapMaxLevel = false
-    local modelLevelDic = param:GetModelLevels()
-    if modelLevelDic then
-      if not modelLevelDic[tarLevel] then
-        tarTrapID = modelLevelDic[#modelLevelDic]
-      end
-      if #modelLevelDic <= tarLevel then
-        isTarTrapMaxLevel = true
-      end
-    end
-    if tarTrapID and tarTrapID > 0 then
-      local summonList = {}
-      local destroyList = {}
-      local summonTrapResult = SkillSummonTrapEffectResult:New(tarTrapID, centerPos, param:IsTransferDisabled(), param:GetSkillEffectDamageStageIndex())
-      ;
-      (table.insert)(summonList, summonTrapResult)
-      for _,desTrap in ipairs(trapInRange) do
-        local desTrapEntityID = desTrap:GetID()
-        local cTrap = desTrap:Trap()
-        local desTrapID = cTrap:GetTrapID()
-        local destroyTrapResult = SkillEffectDestroyTrapResult:New(desTrapEntityID, desTrapID)
-        ;
-        (table.insert)(destroyList, destroyTrapResult)
-      end
-      return SkillEffectResultLevelTrapAbsortSummon:New(summonList, destroyList, isTarTrapMaxLevel)
+  if tarLevel == 0 then
+    tarLevel = 1
+  end
+  local tarTrapID = 0
+  local isTarTrapMaxLevel = false
+  local modelLevelDic = param:GetModelLevels()
+  if modelLevelDic then
+    tarTrapID = modelLevelDic[tarLevel] or modelLevelDic[#modelLevelDic]
+    if tarLevel >= #modelLevelDic then
+      isTarTrapMaxLevel = true
     end
   end
+  if tarTrapID and 0 < tarTrapID then
+    local summonList = {}
+    local destroyList = {}
+    local summonTrapResult = SkillSummonTrapEffectResult:New(tarTrapID, centerPos, param:IsTransferDisabled(), param:GetSkillEffectDamageStageIndex())
+    table.insert(summonList, summonTrapResult)
+    for _, desTrap in ipairs(trapInRange) do
+      local desTrapEntityID = desTrap:GetID()
+      local cTrap = desTrap:Trap()
+      local desTrapID = cTrap:GetTrapID()
+      local destroyTrapResult = SkillEffectDestroyTrapResult:New(desTrapEntityID, desTrapID)
+      table.insert(destroyList, destroyTrapResult)
+    end
+    return SkillEffectResultLevelTrapAbsortSummon:New(summonList, destroyList, isTarTrapMaxLevel)
+  end
 end
-
-

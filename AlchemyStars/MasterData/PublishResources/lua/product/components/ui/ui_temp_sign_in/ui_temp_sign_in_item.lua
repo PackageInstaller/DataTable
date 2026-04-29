@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_temp_sign_in/ui_temp_sign_in_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITempSignInItem", UICustomWidget)
 UITempSignInItem = UITempSignInItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITempSignInItem.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UITempSignInItem:OnShow(uiParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInItem.OnHide = function(self)
-  -- function num : 0_1
+function UITempSignInItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInItem.SetData = function(self, idx, data, currentTotalDay, selectCallback, getCallback, tipCallback, lastDay)
-  -- function num : 0_2
+function UITempSignInItem:SetData(idx, data, currentTotalDay, selectCallback, getCallback, tipCallback, lastDay)
   self._idx = idx
   self._data = data
   self._currentTotalDay = currentTotalDay
@@ -29,130 +16,100 @@ UITempSignInItem.SetData = function(self, idx, data, currentTotalDay, selectCall
   self._tipCallback = tipCallback
   self._lastDay = lastDay and lastDay or false
   self:_SetItems()
-  self:_SetDayText((self._data).day)
-  self:_SetState((self._data).got)
+  self:_SetDayText(self._data.day)
+  self:_SetState(self._data.got)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInItem._SetItems = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local awards = (self._data).awardList
-  local items = (UIWidgetHelper.SpawnObjects)(self, "ItemArea", "UITempSignInAwardItem", #awards)
+function UITempSignInItem:_SetItems()
+  local awards = self._data.awardList
+  local items = UIWidgetHelper.SpawnObjects(self, "ItemArea", "UITempSignInAwardItem", #awards)
   for i = 1, #items do
-    (items[i]):SetData(i, awards[i], self._tipCallback)
+    items[i]:SetData(i, awards[i], self._tipCallback)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInItem._SetCurDay = function(self, isCurDay)
-  -- function num : 0_4 , upvalues : _ENV
+function UITempSignInItem:_SetCurDay(isCurDay)
   local state = isCurDay and 1 or 2
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"bg_curday", "DayText_curday"}
-, 
-{"bg_normal", "DayText_normal"}
-})
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, state)
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {
+      "bg_curday",
+      "DayText_curday"
+    },
+    {
+      "bg_normal",
+      "DayText_normal"
+    }
+  })
+  UIWidgetHelper.SetObjGroupShow(objs, state)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInItem._SetState = function(self, state, forEffect)
-  -- function num : 0_5 , upvalues : _ENV
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"StateLocked"}
-, 
-{"StateCanGet"}
-, 
-{"StateGot"}
-})
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, state)
+function UITempSignInItem:_SetState(state, forEffect)
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {
+      "StateLocked"
+    },
+    {
+      "StateCanGet"
+    },
+    {"StateGot"}
+  })
+  UIWidgetHelper.SetObjGroupShow(objs, state)
   if forEffect then
-    return 
+    return
   end
-  local isCurDay = (self._data).day == self._currentTotalDay
+  local isCurDay = self._data.day == self._currentTotalDay
   local isLastDay = self._lastDay
-  local isGot = (self._data).got == NewPlayerLoginStatus.NPLS_Accepted
+  local isGot = self._data.got == NewPlayerLoginStatus.NPLS_Accepted
   self:_SetCurDay(isCurDay)
   self:_SetLastFrame(isLastDay)
-  if isCurDay or isLastDay then
-    local showEff = not isNotGot
-  end
-  ;
-  (self:GetGameObject("eff_front")):SetActive(showEff)
-  ;
-  (self:GetGameObject("eff_back")):SetActive(showEff)
+  local showEff = (isCurDay or isLastDay) and not isNotGot
+  self:GetGameObject("eff_front"):SetActive(showEff)
+  self:GetGameObject("eff_back"):SetActive(showEff)
   local value = isGot and 0.5 or 1
   self:_SetAlpha(value)
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInItem._SetAlpha = function(self, value)
-  -- function num : 0_6
+function UITempSignInItem:_SetAlpha(value)
   local cg = self:GetUIComponent("CanvasGroup", "SetAlphaArea")
   cg.alpha = value
   local cg2 = self:GetUIComponent("CanvasGroup", "StateArea")
   cg2.alpha = value
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInItem.SetSelected = function(self, show)
-  -- function num : 0_7
-  (self:GetGameObject("SelectStateArea")):SetActive(show)
+function UITempSignInItem:SetSelected(show)
+  self:GetGameObject("SelectStateArea"):SetActive(show)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInItem._SetLastFrame = function(self, show)
-  -- function num : 0_8
-  (self:GetGameObject("lastFrame")):SetActive(show)
+function UITempSignInItem:_SetLastFrame(show)
+  self:GetGameObject("lastFrame"):SetActive(show)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInItem._SetDayText = function(self, day)
-  -- function num : 0_9 , upvalues : _ENV
-  local tb = {"DayText_curday", "DayText_normal"}
-  for _,v in ipairs(tb) do
-    (UIWidgetHelper.SetLocalizationText)(self, v, (StringTable.Get)("str_temp_sign_in_day_text", day))
+function UITempSignInItem:_SetDayText(day)
+  local tb = {
+    "DayText_curday",
+    "DayText_normal"
+  }
+  for _, v in ipairs(tb) do
+    UIWidgetHelper.SetLocalizationText(self, v, StringTable.Get("str_temp_sign_in_day_text", day))
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInItem.OnAwardGot = function(self, data)
-  -- function num : 0_10 , upvalues : _ENV
+function UITempSignInItem:OnAwardGot(data)
   self._data = data
-  self:_SetState((self._data).got, true)
+  self:_SetState(self._data.got, true)
   local animName = "uieff_UITempSigninContent_Cell_Get"
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", animName, 333, function()
-    -- function num : 0_10_0 , upvalues : _ENV, data
-    (UIActivityHelper.ShowUIGetRewards)(data.awardList)
-  end
-)
+  UIWidgetHelper.PlayAnimation(self, "_anim", animName, 333, function()
+    UIActivityHelper.ShowUIGetRewards(data.awardList)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInItem.BgBtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
+function UITempSignInItem:BgBtnOnClick(go)
   local idx = self._idx
   if self._selectCallback then
-    (self._selectCallback)(idx)
+    self._selectCallback(idx)
   end
-  local canGet = (self._data).got == NewPlayerLoginStatus.NPLS_UnAccept
+  local canGet = self._data.got == NewPlayerLoginStatus.NPLS_UnAccept
   if canGet and self._getCallback then
-    (self._getCallback)(idx)
+    self._getCallback(idx)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
-
-

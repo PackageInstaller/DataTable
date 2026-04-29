@@ -1,55 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/smoke_test_team_build_pool_options.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SmokeTestTeamBuildPoolOptions", Object)
 SmokeTestTeamBuildPoolOptions = SmokeTestTeamBuildPoolOptions
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SmokeTestTeamBuildPoolOptions.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SmokeTestTeamBuildPoolOptions:Constructor()
   self.seatStarWeight = {}
-  for k,v in pairs(TestConst.MissionRandomWeightByStar) do
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self.seatStarWeight)[k] = v
+  for k, v in pairs(TestConst.MissionRandomWeightByStar) do
+    self.seatStarWeight[k] = v
   end
   self.sameElementWeight = TestConst.MissionSameElementWeight
   self.leaderElementWeightEnabled = true
   self.forcePetMainElement = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestTeamBuildPoolOptions.SetSameElementWeight = function(self, v)
-  -- function num : 0_1
+function SmokeTestTeamBuildPoolOptions:SetSameElementWeight(v)
   self.sameElementWeight = v
   return self
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestTeamBuildPoolOptions.SetSeatStarWeight = function(self, seatIndex, weightMap)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self.seatStarWeight)[seatIndex] = weightMap
+function SmokeTestTeamBuildPoolOptions:SetSeatStarWeight(seatIndex, weightMap)
+  self.seatStarWeight[seatIndex] = weightMap
   return self
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestTeamBuildPoolOptions.SetSkipLeaderElementWeight = function(self, v)
-  -- function num : 0_3
+function SmokeTestTeamBuildPoolOptions:SetSkipLeaderElementWeight(v)
   self.leaderElementWeightEnabled = v
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestTeamBuildPoolOptions.SetForcePetMainElement = function(self, v)
-  -- function num : 0_4
+function SmokeTestTeamBuildPoolOptions:SetForcePetMainElement(v)
   self.forcePetMainElement = v
 end
-
-

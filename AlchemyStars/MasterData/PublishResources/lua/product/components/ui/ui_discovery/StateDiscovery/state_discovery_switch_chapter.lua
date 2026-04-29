@@ -1,28 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/StateDiscovery/state_discovery_switch_chapter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateDiscoverySwitchChapter", StateDiscoveryBase)
 StateDiscoverySwitchChapter = StateDiscoverySwitchChapter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateDiscoverySwitchChapter.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
-  (StateDiscoverySwitchChapter.super):OnEnter(TT, ...)
+function StateDiscoverySwitchChapter:OnEnter(TT, ...)
+  StateDiscoverySwitchChapter.super:OnEnter(TT, ...)
   self:Init()
-  ;
-  (self._ui):Lock("StateDiscoverySwitchChapter")
-  ;
-  (self._ui):Flush()
+  self._ui:Lock("StateDiscoverySwitchChapter")
+  self._ui:Flush()
   self:ChangeState(StateDiscovery.Init)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDiscoverySwitchChapter.OnExit = function(self, TT)
-  -- function num : 0_1
-  (self._ui):UnLock("StateDiscoverySwitchChapter")
+function StateDiscoverySwitchChapter:OnExit(TT)
+  self._ui:UnLock("StateDiscoverySwitchChapter")
 end
-
-

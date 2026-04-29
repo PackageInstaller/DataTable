@@ -1,50 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_extend/ui_extend_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIExtendManager", Object)
 UIExtendManager = UIExtendManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIExtendManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.debug)("[UIExtend] UIExtendManager:Constructor")
+function UIExtendManager:Constructor()
+  Log.debug("[UIExtend] UIExtendManager:Constructor")
   self.logics = {}
   self.seq = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtendManager.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.debug)("[UIExtend] UIExtendManager:Dispose")
-  for _,v in pairs(self.logics) do
+function UIExtendManager:Dispose()
+  Log.debug("[UIExtend] UIExtendManager:Dispose")
+  for _, v in pairs(self.logics) do
     v:Dispose()
   end
   self.logics = nil
   self.seq = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtendManager.OnDestroy = function(self)
-  -- function num : 0_2
+function UIExtendManager:OnDestroy()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtendManager.CreateUI = function(self, uiName, uiPrefabName, ...)
-  -- function num : 0_3 , upvalues : _ENV
-  local view, resRequest = (UIResourceManager.GetView)(uiName, uiPrefabName)
+function UIExtendManager:CreateUI(uiName, uiPrefabName, ...)
+  local view, resRequest = UIResourceManager.GetView(uiName, uiPrefabName)
   if not view then
-    (Log.fatal)("[UIExtend] UIExtendManager:CreateUI, Load Resources error: ", uiPrefabName)
-    return 
+    Log.fatal("[UIExtend] UIExtendManager:CreateUI, Load Resources error: ", uiPrefabName)
+    return
   end
   local logic, id = self:CreateExtendLogic(uiName)
   if not logic then
     resRequest:Dispose()
-    return 
+    return
   end
   logic:Load(view, resRequest)
   logic:Show()
@@ -52,19 +36,16 @@ UIExtendManager.CreateUI = function(self, uiName, uiPrefabName, ...)
   return id
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtendManager.CreateUIAsync = function(self, TT, uiName, uiPrefabName, ...)
-  -- function num : 0_4 , upvalues : _ENV
-  local view, resRequest = (UIResourceManager.GetViewAsync)(TT, uiName, uiPrefabName)
+function UIExtendManager:CreateUIAsync(TT, uiName, uiPrefabName, ...)
+  local view, resRequest = UIResourceManager.GetViewAsync(TT, uiName, uiPrefabName)
   if not view then
-    (Log.fatal)("[UIExtend] UIExtendManager:CreateUIAsync, Load Resources error: ", uiPrefabName)
-    return 
+    Log.fatal("[UIExtend] UIExtendManager:CreateUIAsync, Load Resources error: ", uiPrefabName)
+    return
   end
   local logic, id = self:CreateExtendLogic(uiName)
   if not logic then
     resRequest:Dispose()
-    return 
+    return
   end
   logic:Load(view, resRequest)
   logic:Show()
@@ -72,55 +53,36 @@ UIExtendManager.CreateUIAsync = function(self, TT, uiName, uiPrefabName, ...)
   return id
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtendManager.DestroyUI = function(self, logicID)
-  -- function num : 0_5
-  local logic = (self.logics)[logicID]
+function UIExtendManager:DestroyUI(logicID)
+  local logic = self.logics[logicID]
   if logic then
     logic:Dispose()
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.logics)[logicID] = nil
+    self.logics[logicID] = nil
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtendManager.OnUILoaded = function(self, uiName, logic, ...)
-  -- function num : 0_6 , upvalues : _ENV
+function UIExtendManager:OnUILoaded(uiName, logic, ...)
   logic:SetName(uiName)
   logic:OnCreate(...)
-  ;
-  ((GameGlobal.UIStateManager)()):SetHighParent(logic)
+  GameGlobal.UIStateManager():SetHighParent(logic)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtendManager.CreateExtendLogic = function(self, uiName)
-  -- function num : 0_7 , upvalues : _ENV
+function UIExtendManager:CreateExtendLogic(uiName)
   local id = 0
   local logic = _createInstance(uiName)
   if logic then
     if not logic:IsChildOf("UIExtendLogic") then
-      (Log.fatal)("[UIExtend] UIExtendManager:CreateExtendLogic Fail, ", uiName, " is not inherited from UIExtendLogic!")
-      return 
+      Log.fatal("[UIExtend] UIExtendManager:CreateExtendLogic Fail, ", uiName, " is not inherited from UIExtendLogic!")
+      return
     end
     id = self.seq + 1
     if id < 0 then
       id = 1
     end
     self.seq = id
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.logics)[id] = logic
+    self.logics[id] = logic
   else
-    ;
-    (Log.fatal)("[UIExtend] UIExtendManager:CreateExtendLogic Error, ", uiName)
+    Log.fatal("[UIExtend] UIExtendManager:CreateExtendLogic Error, ", uiName)
   end
   return logic, id
 end
-
-

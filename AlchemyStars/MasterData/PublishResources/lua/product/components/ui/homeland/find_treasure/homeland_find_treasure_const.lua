@@ -1,90 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/find_treasure/homeland_find_treasure_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandFindTreasureConst", Object)
 HomelandFindTreasureConst = HomelandFindTreasureConst
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandFindTreasureConst.Constructor = function(self)
-  -- function num : 0_0
+function HomelandFindTreasureConst:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetCampaignType = function()
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandFindTreasureConst.GetCampaignType()
   return HomelandFindTreasureConst.CAMPAIGN_TYPE
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetComponentType = function()
-  -- function num : 0_2 , upvalues : _ENV
+function HomelandFindTreasureConst.GetComponentType()
   return HomelandFindTreasureConst.COMPONENT_TYPE
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.InitHomelandFindTreausre = function(TT, homelandClient, campaignType, componentType)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R4 in 'UnsetPending'
-
+function HomelandFindTreasureConst.InitHomelandFindTreausre(TT, homelandClient, campaignType, componentType)
   HomelandFindTreasureConst.CAMPAIGN_TYPE = campaignType
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R4 in 'UnsetPending'
-
   HomelandFindTreasureConst.COMPONENT_TYPE = componentType
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not (HomelandFindTreasureConst.InitHomelandFindTreausreData)(TT) then
+  if not HomelandFindTreasureConst.InitHomelandFindTreausreData(TT) then
     HomelandFindTreasureConst.ACTIVITY_CAMPAIGN = nil
     return nil
   end
   return HomelandFindTreasureManager:New(homelandClient)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.Destroy = function()
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
+function HomelandFindTreasureConst.Destroy()
   HomelandFindTreasureConst.ACTIVITY_CAMPAIGN = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.InitHomelandFindTreausreData = function(TT, campaignType, componentType)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
+function HomelandFindTreasureConst.InitHomelandFindTreausreData(TT, campaignType, componentType)
   HomelandFindTreasureConst.TreasureActiveRemainTime = 0
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
   if not HomelandFindTreasureConst.ACTIVITY_CAMPAIGN then
     HomelandFindTreasureConst.ACTIVITY_CAMPAIGN = UIActivityCampaign:New()
   end
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R4 in 'UnsetPending'
-
   if campaignType then
     HomelandFindTreasureConst.CAMPAIGN_TYPE = campaignType
   end
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
   if componentType then
     HomelandFindTreasureConst.COMPONENT_TYPE = componentType
   end
-  ;
-  (HomelandFindTreasureConst.ACTIVITY_CAMPAIGN):LoadCampaignInfo(TT, res, HomelandFindTreasureConst.CAMPAIGN_TYPE, HomelandFindTreasureConst.COMPONENT_TYPE)
-  ;
-  (HomelandFindTreasureConst.ACTIVITY_CAMPAIGN):ReLoadCampaignInfo_Force(TT, res)
+  HomelandFindTreasureConst.ACTIVITY_CAMPAIGN:LoadCampaignInfo(TT, res, HomelandFindTreasureConst.CAMPAIGN_TYPE, HomelandFindTreasureConst.COMPONENT_TYPE)
+  HomelandFindTreasureConst.ACTIVITY_CAMPAIGN:ReLoadCampaignInfo_Force(TT, res)
   if res and not res:GetSucc() then
     return false
   end
-  local localProcess = (HomelandFindTreasureConst.ACTIVITY_CAMPAIGN):GetLocalProcess()
+  local localProcess = HomelandFindTreasureConst.ACTIVITY_CAMPAIGN:GetLocalProcess()
   if not localProcess then
     return false
   end
@@ -96,54 +56,34 @@ HomelandFindTreasureConst.InitHomelandFindTreausreData = function(TT, campaignTy
   if not exploreMinigameComponent:ComponentIsOpen() then
     return false
   end
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = timeModule:GetServerTime() / 1000
-  -- DECOMPILER ERROR at PC88: Confused about usage of register: R9 in 'UnsetPending'
-
-  HomelandFindTreasureConst.TreasureActiveRemainTime = (math.floor)(miniGameExploreComponentLoadInfo.m_close_time - nowTime)
-  -- DECOMPILER ERROR at PC90: Confused about usage of register: R9 in 'UnsetPending'
-
+  HomelandFindTreasureConst.TreasureActiveRemainTime = math.floor(miniGameExploreComponentLoadInfo.m_close_time - nowTime)
   HomelandFindTreasureConst.ExploreMinigameComponent = exploreMinigameComponent
-  -- DECOMPILER ERROR at PC92: Confused about usage of register: R9 in 'UnsetPending'
-
   HomelandFindTreasureConst.MiniGameExploreComponentLoadInfo = miniGameExploreComponentLoadInfo
   return true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetActivityCampaign = function()
-  -- function num : 0_6 , upvalues : _ENV
+function HomelandFindTreasureConst.GetActivityCampaign()
   return HomelandFindTreasureConst.ACTIVITY_CAMPAIGN
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetGameData = function()
-  -- function num : 0_7 , upvalues : _ENV
+function HomelandFindTreasureConst.GetGameData()
   return UIFindTreasureGameData:New()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetHasCostSingle = function()
-  -- function num : 0_8 , upvalues : _ENV
+function HomelandFindTreasureConst.GetHasCostSingle()
   if not HomelandFindTreasureConst.MiniGameExploreComponentLoadInfo then
     return 0, 0
   end
-  return (HomelandFindTreasureConst.MiniGameExploreComponentLoadInfo).used_low_equip_num, (HomelandFindTreasureConst.MiniGameExploreComponentLoadInfo).used_high_equip_num
+  return HomelandFindTreasureConst.MiniGameExploreComponentLoadInfo.used_low_equip_num, HomelandFindTreasureConst.MiniGameExploreComponentLoadInfo.used_high_equip_num
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetSingleCount = function(cfg)
-  -- function num : 0_9 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local cfgs = ((Cfg.cfg_component_minigame_explore_limit)({}))
-  -- DECOMPILER ERROR at PC8: Overwrote pending register: R3 in 'AssignReg'
-
-  local cfg = .end
-  for _,v in pairs(cfgs) do
+function HomelandFindTreasureConst.GetSingleCount(cfg)
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local cfgs = Cfg.cfg_component_minigame_explore_limit({})
+  local cfg
+  for _, v in pairs(cfgs) do
     cfg = v
   end
   local primaryId = cfg.PrimaryEquipID
@@ -151,245 +91,161 @@ HomelandFindTreasureConst.GetSingleCount = function(cfg)
   return itemModule:GetItemCount(primaryId), itemModule:GetItemCount(seniorId)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetSingleCfg = function()
-  -- function num : 0_10 , upvalues : _ENV
+function HomelandFindTreasureConst.GetSingleCfg()
   if HomelandFindTreasureConst.ExploreMinigameComponent == nil then
     return nil
   end
-  local componentId = (HomelandFindTreasureConst.ExploreMinigameComponent):GetComponentCfgId()
-  local cfgs = (Cfg.cfg_component_minigame_explore_limit)({ComponentID = componentId})
+  local componentId = HomelandFindTreasureConst.ExploreMinigameComponent:GetComponentCfgId()
+  local cfgs = Cfg.cfg_component_minigame_explore_limit({ComponentID = componentId})
   if cfgs == nil then
     return nil
   end
-  local cfg = nil
-  for _,v in pairs(cfgs) do
+  local cfg
+  for _, v in pairs(cfgs) do
     cfg = v
   end
   return cfg
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetNPCAsset = function()
-  -- function num : 0_11 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
+function HomelandFindTreasureConst.GetNPCAsset()
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
   return cfg.NPCModel
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetNPCRotateTime = function()
-  -- function num : 0_12 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
+function HomelandFindTreasureConst.GetNPCRotateTime()
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
   return cfg.NPCRotateTime / 1000
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetNPCHeadImage = function()
-  -- function num : 0_13 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
+function HomelandFindTreasureConst.GetNPCHeadImage()
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
   return cfg.NPCHeadImage
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetNPCPosition = function()
-  -- function num : 0_14 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
-  return Vector3((cfg.NPCPosition)[1] / 1000, (cfg.NPCPosition)[2] / 1000, (cfg.NPCPosition)[3] / 1000)
+function HomelandFindTreasureConst.GetNPCPosition()
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
+  return Vector3(cfg.NPCPosition[1] / 1000, cfg.NPCPosition[2] / 1000, cfg.NPCPosition[3] / 1000)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetNPCBackpackModel = function()
-  -- function num : 0_15 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
+function HomelandFindTreasureConst.GetNPCBackpackModel()
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
   return cfg.BackpackModel
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetNPCBackpackModelAttachPath = function()
-  -- function num : 0_16 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
+function HomelandFindTreasureConst.GetNPCBackpackModelAttachPath()
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
   return cfg.BackpackAttachPath
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetNPCMinimapIcon = function()
-  -- function num : 0_17 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
+function HomelandFindTreasureConst.GetNPCMinimapIcon()
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
   return cfg.NPCMinimapIcon
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetNPCIcon = function()
-  -- function num : 0_18 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
+function HomelandFindTreasureConst.GetNPCIcon()
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
   return cfg.NPCIcon
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetNPCName = function()
-  -- function num : 0_19 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
+function HomelandFindTreasureConst.GetNPCName()
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
   return cfg.NPCName
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetNPCDes = function()
-  -- function num : 0_20 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
+function HomelandFindTreasureConst.GetNPCDes()
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
   return cfg.NPCDes
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetStartPosition = function()
-  -- function num : 0_21 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
-  return Vector3((cfg.StartPosition)[1] / 1000, (cfg.StartPosition)[2] / 1000, (cfg.StartPosition)[3] / 1000)
+function HomelandFindTreasureConst.GetStartPosition()
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
+  return Vector3(cfg.StartPosition[1] / 1000, cfg.StartPosition[2] / 1000, cfg.StartPosition[3] / 1000)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetStartDirection = function()
-  -- function num : 0_22 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
-  return Vector3((cfg.StartDirection)[1] / 1000, (cfg.StartDirection)[2] / 1000, (cfg.StartDirection)[3] / 1000)
+function HomelandFindTreasureConst.GetStartDirection()
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
+  return Vector3(cfg.StartDirection[1] / 1000, cfg.StartDirection[2] / 1000, cfg.StartDirection[3] / 1000)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetStartCamera = function()
-  -- function num : 0_23 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
+function HomelandFindTreasureConst.GetStartCamera()
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
   return cfg.StartCameraAngleX / 1000, cfg.StartCameraAngleY / 1000, cfg.StartCameraScale / 1000
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetSpecialEffectPrefabAndPath = function()
-  -- function num : 0_24 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
+function HomelandFindTreasureConst.GetSpecialEffectPrefabAndPath()
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
   return cfg.SpecialEffectPrefab, cfg.SpecialEffectAttachPath
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetNormalEffectPrefabAndPath = function()
-  -- function num : 0_25 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
+function HomelandFindTreasureConst.GetNormalEffectPrefabAndPath()
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
   return cfg.NormalEffectPrefab, cfg.NormalEffectAttachPath
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetToolPrefabAndPath = function()
-  -- function num : 0_26 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
+function HomelandFindTreasureConst.GetToolPrefabAndPath()
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
   return cfg.ToolPrefab, cfg.ToolAttachPath
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetTreasureShowDis = function()
-  -- function num : 0_27 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
+function HomelandFindTreasureConst.GetTreasureShowDis()
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
   return cfg.TreasureShowDis / 1000
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetOriginalPosition = function()
-  -- function num : 0_28 , upvalues : _ENV
+function HomelandFindTreasureConst.GetOriginalPosition()
   return HomelandFindTreasureConst.ORIGINAL_POSITION
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.SetOriginalPosition = function(position)
-  -- function num : 0_29 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function HomelandFindTreasureConst.SetOriginalPosition(position)
   HomelandFindTreasureConst.ORIGINAL_POSITION = position
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetOriginalRotation = function()
-  -- function num : 0_30 , upvalues : _ENV
+function HomelandFindTreasureConst.GetOriginalRotation()
   return HomelandFindTreasureConst.ORIGINAL_DIRECTION
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.SetOriginalRotation = function(rotation)
-  -- function num : 0_31 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function HomelandFindTreasureConst.SetOriginalRotation(rotation)
   HomelandFindTreasureConst.ORIGINAL_DIRECTION = rotation
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetFindTreasureActiveRemainTime = function()
-  -- function num : 0_32 , upvalues : _ENV
+function HomelandFindTreasureConst.GetFindTreasureActiveRemainTime()
   if not HomelandFindTreasureConst.TreasureActiveRemainTime then
     return 0
   end
   return HomelandFindTreasureConst.TreasureActiveRemainTime
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.IsGameActivityEnd = function()
-  -- function num : 0_33 , upvalues : _ENV
+function HomelandFindTreasureConst.IsGameActivityEnd()
   if not HomelandFindTreasureConst.ExploreMinigameComponent then
     return true
   end
-  return not (HomelandFindTreasureConst.ExploreMinigameComponent):ComponentIsOpen()
+  return not HomelandFindTreasureConst.ExploreMinigameComponent:ComponentIsOpen()
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetFindTreasureSingleDatas = function(TT)
-  -- function num : 0_34 , upvalues : _ENV
+function HomelandFindTreasureConst.GetFindTreasureSingleDatas(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (HomelandFindTreasureConst.ACTIVITY_CAMPAIGN):LoadCampaignInfo(TT, res, HomelandFindTreasureConst.CAMPAIGN_TYPE, HomelandFindTreasureConst.COMPONENT_TYPE)
-  ;
-  (HomelandFindTreasureConst.ACTIVITY_CAMPAIGN):ReLoadCampaignInfo_Force(TT, res)
+  HomelandFindTreasureConst.ACTIVITY_CAMPAIGN:LoadCampaignInfo(TT, res, HomelandFindTreasureConst.CAMPAIGN_TYPE, HomelandFindTreasureConst.COMPONENT_TYPE)
+  HomelandFindTreasureConst.ACTIVITY_CAMPAIGN:ReLoadCampaignInfo_Force(TT, res)
   return UIFindTreasureSingleDatas:New()
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetNextSingleTime = function()
-  -- function num : 0_35 , upvalues : _ENV
-  if (HomelandFindTreasureConst.IsGameActivityEnd)() then
+function HomelandFindTreasureConst.GetNextSingleTime()
+  if HomelandFindTreasureConst.IsGameActivityEnd() then
     return 0
   end
   if not HomelandFindTreasureConst.MiniGameExploreComponentLoadInfo then
     return 0
   end
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = timeModule:GetServerTime() / 1000
-  local closeTime = (HomelandFindTreasureConst.MiniGameExploreComponentLoadInfo).m_close_time
+  local closeTime = HomelandFindTreasureConst.MiniGameExploreComponentLoadInfo.m_close_time
   local lessTime = closeTime - nowTime
   local moreThanDay = false
-  if lessTime > 86400 then
+  if 86400 < lessTime then
     moreThanDay = true
   end
-  local seconds = (math.floor)((HomelandFindTreasureConst.MiniGameExploreComponentLoadInfo).next_refresh_time - nowTime)
+  local seconds = math.floor(HomelandFindTreasureConst.MiniGameExploreComponentLoadInfo.next_refresh_time - nowTime)
   if seconds < 0 then
     seconds = 0
   end
@@ -399,139 +255,98 @@ HomelandFindTreasureConst.GetNextSingleTime = function()
   return seconds, moreThanDay
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.StartGame = function(TT, singleDatas, callback, reStart)
-  -- function num : 0_36 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("HomelandFindTreasureConst_StartGame")
+function HomelandFindTreasureConst.StartGame(TT, singleDatas, callback, reStart)
+  GameGlobal.UIStateManager():Lock("HomelandFindTreasureConst_StartGame")
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (HomelandFindTreasureConst.ACTIVITY_CAMPAIGN):LoadCampaignInfo(TT, res, HomelandFindTreasureConst.CAMPAIGN_TYPE, HomelandFindTreasureConst.COMPONENT_TYPE)
-  ;
-  (HomelandFindTreasureConst.ACTIVITY_CAMPAIGN):ReLoadCampaignInfo_Force(TT, res)
+  HomelandFindTreasureConst.ACTIVITY_CAMPAIGN:LoadCampaignInfo(TT, res, HomelandFindTreasureConst.CAMPAIGN_TYPE, HomelandFindTreasureConst.COMPONENT_TYPE)
+  HomelandFindTreasureConst.ACTIVITY_CAMPAIGN:ReLoadCampaignInfo_Force(TT, res)
   if res and not res:GetSucc() then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_find_treasure_game_active_end"))
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("HomelandFindTreasureConst_StartGame")
-    return 
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_find_treasure_game_active_end"))
+    GameGlobal.UIStateManager():UnLock("HomelandFindTreasureConst_StartGame")
+    return
   end
-  local localProcess = (HomelandFindTreasureConst.ACTIVITY_CAMPAIGN):GetLocalProcess()
+  local localProcess = HomelandFindTreasureConst.ACTIVITY_CAMPAIGN:GetLocalProcess()
   if not localProcess then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_find_treasure_game_active_end"))
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("HomelandFindTreasureConst_StartGame")
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_find_treasure_game_active_end"))
+    GameGlobal.UIStateManager():UnLock("HomelandFindTreasureConst_StartGame")
     return nil
   end
   local exploreMinigameComponent = localProcess:GetComponent(HomelandFindTreasureConst.COMPONENT_TYPE)
   if not exploreMinigameComponent:ComponentIsOpen() then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_find_treasure_game_active_end"))
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("HomelandFindTreasureConst_StartGame")
-    return 
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_find_treasure_game_active_end"))
+    GameGlobal.UIStateManager():UnLock("HomelandFindTreasureConst_StartGame")
+    return
   end
   local posId = exploreMinigameComponent:HandleRandomRewardPostion(TT, res)
   if not res:GetSucc() then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_find_treasure_server_error", res:GetResult()))
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("HomelandFindTreasureConst_StartGame")
-    return 
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_find_treasure_server_error", res:GetResult()))
+    GameGlobal.UIStateManager():UnLock("HomelandFindTreasureConst_StartGame")
+    return
   end
   if not singleDatas:GetCanUseSingleData() then
-    local btn1Data = {(StringTable.Get)("str_homeland_find_treasure_cancel_btn"), function(param)
-    -- function num : 0_36_0
-  end
-}
-    local btn2Data = {(StringTable.Get)("str_homeland_find_treasure_confirm_btn"), function(param)
-    -- function num : 0_36_1 , upvalues : callback, _ENV, posId, reStart
+    local btn1Data = {
+      StringTable.Get("str_homeland_find_treasure_cancel_btn"),
+      function(param)
+      end
+    }
+    local btn2Data = {
+      StringTable.Get("str_homeland_find_treasure_confirm_btn"),
+      function(param)
+        if callback then
+          local waitTime = callback()
+          GameGlobal.TaskManager():StartTask(function(TT)
+            GameGlobal.UIStateManager():Lock("HomelandFindTreasureConst_StartGameCoro")
+            if waitTime then
+              YIELD(TT, waitTime)
+            end
+            GameGlobal.UIStateManager():ShowDialog("UIFindTreasureStartGame", posId, reStart)
+            GameGlobal.UIStateManager():UnLock("HomelandFindTreasureConst_StartGameCoro")
+          end)
+        else
+          GameGlobal.UIStateManager():ShowDialog("UIFindTreasureStartGame", posId, reStart)
+        end
+      end
+    }
+    GameGlobal.UIStateManager():ShowDialog("UIHomelandMessageBox", nil, StringTable.Get("str_homeland_find_treasure_no_single_tips"), btn1Data, btn2Data, true)
+  else
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnMainCharacterStartMove)
+    GameGlobal.GetUIModule(HomelandModule):GetClient():CharacterManager():MainCharacterController():ResetStateAndAnim()
     if callback then
       local waitTime = callback()
-      do
-        ((GameGlobal.TaskManager)()):StartTask(function(TT)
-      -- function num : 0_36_1_0 , upvalues : _ENV, waitTime, posId, reStart
-      ((GameGlobal.UIStateManager)()):Lock("HomelandFindTreasureConst_StartGameCoro")
       if waitTime then
         YIELD(TT, waitTime)
       end
-      ;
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIFindTreasureStartGame", posId, reStart)
-      ;
-      ((GameGlobal.UIStateManager)()):UnLock("HomelandFindTreasureConst_StartGameCoro")
     end
-)
-      end
-    else
-      do
-        ;
-        ((GameGlobal.UIStateManager)()):ShowDialog("UIFindTreasureStartGame", posId, reStart)
-      end
-    end
+    GameGlobal.UIStateManager():ShowDialog("UIFindTreasureStartGame", posId, reStart)
   end
-}
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIHomelandMessageBox", nil, (StringTable.Get)("str_homeland_find_treasure_no_single_tips"), btn1Data, btn2Data, true)
-  else
-    do
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnMainCharacterStartMove)
-      ;
-      (((((GameGlobal.GetUIModule)(HomelandModule)):GetClient()):CharacterManager()):MainCharacterController()):ResetStateAndAnim()
-      do
-        if callback then
-          local waitTime = callback()
-          if waitTime then
-            YIELD(TT, waitTime)
-          end
-        end
-        ;
-        ((GameGlobal.UIStateManager)()):ShowDialog("UIFindTreasureStartGame", posId, reStart)
-        ;
-        ((GameGlobal.UIStateManager)()):UnLock("HomelandFindTreasureConst_StartGame")
-      end
-    end
-  end
+  GameGlobal.UIStateManager():UnLock("HomelandFindTreasureConst_StartGame")
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetPlotId = function()
-  -- function num : 0_37 , upvalues : _ENV
+function HomelandFindTreasureConst.GetPlotId()
   if not HomelandFindTreasureConst.MiniGameExploreComponentLoadInfo then
     return 0
   end
-  return (HomelandFindTreasureConst.MiniGameExploreComponentLoadInfo).m_first_story_id
+  return HomelandFindTreasureConst.MiniGameExploreComponentLoadInfo.m_first_story_id
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.NeedPlayPlot = function()
-  -- function num : 0_38 , upvalues : _ENV
-  local key = (HomelandFindTreasureConst.GetFirstEnterKey)()
-  if not ((UnityEngine.PlayerPrefs).HasKey)(key) then
+function HomelandFindTreasureConst.NeedPlayPlot()
+  local key = HomelandFindTreasureConst.GetFirstEnterKey()
+  if not UnityEngine.PlayerPrefs.HasKey(key) then
     return true
   end
-  local value = ((UnityEngine.PlayerPrefs).GetInt)(key)
-  do return value == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local value = UnityEngine.PlayerPrefs.GetInt(key)
+  return value == 0
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.PlayPlot = function()
-  -- function num : 0_39 , upvalues : _ENV
-  local key = (HomelandFindTreasureConst.GetFirstEnterKey)()
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+function HomelandFindTreasureConst.PlayPlot()
+  local key = HomelandFindTreasureConst.GetFirstEnterKey()
+  UnityEngine.PlayerPrefs.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureConst.GetFirstEnterKey = function()
-  -- function num : 0_40 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function HomelandFindTreasureConst.GetFirstEnterKey()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. "HOMELAND_FIND_TREASURE_PLOT"
   return key
 end
-
-

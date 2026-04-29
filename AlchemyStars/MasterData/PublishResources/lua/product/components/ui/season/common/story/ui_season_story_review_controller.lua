@@ -1,61 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/story/ui_season_story_review_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonStoryReviewController", UIController)
 UISeasonStoryReviewController = UISeasonStoryReviewController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonStoryReviewController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonStoryReviewController:OnShow(uiParams)
   self._talkIDList = uiParams[1]
   self:_GetComponents()
   self:_InitComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryReviewController._GetComponents = function(self)
-  -- function num : 0_1
+function UISeasonStoryReviewController:_GetComponents()
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._rect = self:GetUIComponent("RectTransform", "Content")
   self._scroll = self:GetUIComponent("ScrollRect", "Scroll View")
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryReviewController._InitComponent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._reviewItems = (self._content):SpawnObjects("UISeasonStoryReviewItem", #self._talkIDList)
-  for i,reviewItem in pairs(self._reviewItems) do
-    reviewItem:SetData((self._talkIDList)[i])
+function UISeasonStoryReviewController:_InitComponent()
+  self._reviewItems = self._content:SpawnObjects("UISeasonStoryReviewItem", #self._talkIDList)
+  for i, reviewItem in pairs(self._reviewItems) do
+    reviewItem:SetData(self._talkIDList[i])
   end
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._rect)
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._rect)
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scroll).normalizedPosition = Vector2(0, 0)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._rect)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._rect)
+  self._scroll.normalizedPosition = Vector2(0, 0)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryReviewController.FullBtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonStoryReviewController:FullBtnOnClick()
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, _ENV
     self:Lock("uianim_UISeasonStoryReviewController_out")
-    ;
-    (self._anim):Play("uianim_UISeasonStoryReviewController_out")
+    self._anim:Play("uianim_UISeasonStoryReviewController_out")
     YIELD(TT, 334)
     self:UnLock("uianim_UISeasonStoryReviewController_out")
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

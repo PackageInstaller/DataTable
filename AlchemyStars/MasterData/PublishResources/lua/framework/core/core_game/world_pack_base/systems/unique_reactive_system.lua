@@ -1,70 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/systems/unique_reactive_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UniqueReactiveSystem", Object)
 UniqueReactiveSystem = UniqueReactiveSystem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UniqueReactiveSystem.Constructor = function(self, world)
-  -- function num : 0_0
+function UniqueReactiveSystem:Constructor(world)
   self.world = world
   self._world = world
   if self.OnUniqueComponentReplaced then
-    (world.BW_Ev_OnUniqueComponentReplaced):AddEvent(self, self.OnUniqueComponentReplaced)
+    world.BW_Ev_OnUniqueComponentReplaced:AddEvent(self, self.OnUniqueComponentReplaced)
   end
   self.CheckExecute = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UniqueReactiveSystem.Dispose = function(self)
-  -- function num : 0_1
-  ((self.world).BW_Ev_OnUniqueComponentReplaced):RemoveEvent(self, self.OnUniqueComponentReplaced)
+function UniqueReactiveSystem:Dispose()
+  self.world.BW_Ev_OnUniqueComponentReplaced:RemoveEvent(self, self.OnUniqueComponentReplaced)
   self.world = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UniqueReactiveSystem.OnUniqueComponentReplaced = function(self, index, previousComponent, component)
-  -- function num : 0_2
+function UniqueReactiveSystem:OnUniqueComponentReplaced(index, previousComponent, component)
   if self:IsInterested(index, previousComponent, component) then
     self.CheckExecute = true
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UniqueReactiveSystem.Execute = function(self)
-  -- function num : 0_3
+function UniqueReactiveSystem:Execute()
   local world = self.world
-  if self.CheckExecute and self:Filter(world) then
-    self:ExecuteWorld(world)
+  if self.CheckExecute then
+    if self:Filter(world) then
+      self:ExecuteWorld(world)
+    end
+    self.CheckExecute = false
   end
-  self.CheckExecute = false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UniqueReactiveSystem.IsInterested = function(self, index, previousComponent, component)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.fatal)("call super UniqueReactiveSystem:GetMatcher Error")
+function UniqueReactiveSystem:IsInterested(index, previousComponent, component)
+  Log.fatal("call super UniqueReactiveSystem:GetMatcher Error")
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UniqueReactiveSystem.ExecuteWorld = function(self, world)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.fatal)("call super UniqueReactiveSystem:ExecuteEntities Error")
+function UniqueReactiveSystem:ExecuteWorld(world)
+  Log.fatal("call super UniqueReactiveSystem:ExecuteEntities Error")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UniqueReactiveSystem.Filter = function(self, world)
-  -- function num : 0_6
+function UniqueReactiveSystem:Filter(world)
   return true
 end
-
-

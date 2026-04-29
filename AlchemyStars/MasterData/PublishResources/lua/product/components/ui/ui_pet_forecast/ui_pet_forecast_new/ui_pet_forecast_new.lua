@@ -1,75 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_forecast/ui_pet_forecast_new/ui_pet_forecast_new.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UIPetForecastNew", UISideEnterCenterContentBase)
 UIPetForecastNew = UIPetForecastNew
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetForecastNew.DoInit = function(self, params)
-  -- function num : 0_0
+function UIPetForecastNew:DoInit(params)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastNew.DoShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPetForecastNew:DoShow()
   self._forecastData = self._data
   self.mSignIn = self:GetModule(SignInModule)
-  self.cfg = (self._forecastData).cfg
+  self.cfg = self._forecastData.cfg
   self:InitUIComponents()
   self:AttachEvent(GameEventType.ShowItemTips, self.ShowTips)
   self:AttachEvent(GameEventType.RolePropertyChanged, self.ItemCountChanged)
-  self.te = (UIActivityHelper.StartTimerEvent)(self.te, function()
-    -- function num : 0_1_0 , upvalues : self
+  self.te = UIActivityHelper.StartTimerEvent(self.te, function()
     self:FlushLeftTime()
-  end
-)
+  end)
   self.curSelectDay = 0
-  if self._forecastData and (self._forecastData).id > 0 then
-    local id = (self._forecastData).id
-    local key = (UIPetForecastEnterNew.GetLocalDBKey)(id)
-    ;
-    (LocalDB.SetInt)(key, 1)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CampaignComponentStepChange, -1, nil, nil)
+  if self._forecastData and 0 < self._forecastData.id then
+    local id = self._forecastData.id
+    local key = UIPetForecastEnterNew.GetLocalDBKey(id)
+    LocalDB.SetInt(key, 1)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.CampaignComponentStepChange, -1, nil, nil)
   end
-  do
-    self:Flush()
-  end
+  self:Flush()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastNew.DoHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (UIWidgetHelper.ClearWidgets)(self, "_tipsPool")
+function UIPetForecastNew:DoHide()
+  UIWidgetHelper.ClearWidgets(self, "_tipsPool")
   self:Close()
-  self.te = (UIActivityHelper.CancelTimerEvent)(self.te)
+  self.te = UIActivityHelper.CancelTimerEvent(self.te)
   self:DetachEvent(GameEventType.ShowItemTips, self.ShowTips)
   self:DetachEvent(GameEventType.RolePropertyChanged, self.ItemCountChanged)
-  ;
-  (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self.matReq1)
-  ;
-  (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self.matReq2)
-  ;
-  (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self.matReq3)
-  ;
-  (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self.matReq4)
+  UIWidgetHelper.DisposeLocalizedTMPMaterial(self.matReq1)
+  UIWidgetHelper.DisposeLocalizedTMPMaterial(self.matReq2)
+  UIWidgetHelper.DisposeLocalizedTMPMaterial(self.matReq3)
+  UIWidgetHelper.DisposeLocalizedTMPMaterial(self.matReq4)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastNew.DoDestroy = function(self)
-  -- function num : 0_3
+function UIPetForecastNew:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastNew.InitUIComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIPetForecastNew:InitUIComponents()
   self.mainBg = self:GetUIComponent("RawImageLoader", "mainbg")
   self.beginMonth = self:GetUIComponent("UILocalizedTMP", "startmonth")
   self.beginDay = self:GetUIComponent("UILocalizedTMP", "startday")
@@ -80,49 +51,32 @@ UIPetForecastNew.InitUIComponents = function(self)
   self.introContent = self:GetUIComponent("UILocalizationText", "introContent")
   self.letfTimeBg = self:GetUIComponent("RawImageLoader", "letfTimeBg")
   self.tips = self:GetUIComponent("UILocalizationText", "tips")
-  ;
-  (self.mainBg):LoadImage((self.cfg).mainBG)
-  if (self.cfg).forecastTitle and not (string.isnullorempty)((self.cfg).forecastTitle) then
-    (self.introTitle):SetText((StringTable.Get)((self.cfg).forecastTitle))
-    ;
-    (self.introContent):SetText((StringTable.Get)((self.cfg).forecastContent))
+  self.mainBg:LoadImage(self.cfg.mainBG)
+  if self.cfg.forecastTitle and not string.isnullorempty(self.cfg.forecastTitle) then
+    self.introTitle:SetText(StringTable.Get(self.cfg.forecastTitle))
+    self.introContent:SetText(StringTable.Get(self.cfg.forecastContent))
   else
-    ;
-    ((self.introTitle).gameObject):SetActive(false)
-    ;
-    ((self.introContent).gameObject):SetActive(false)
+    self.introTitle.gameObject:SetActive(false)
+    self.introContent.gameObject:SetActive(false)
   end
-  ;
-  (self.spine):LoadImage((self.cfg).spine)
-  ;
-  (self.beginMonth):SetText(((self.cfg).beginTime)[1])
-  ;
-  (self.beginDay):SetText(((self.cfg).beginTime)[2])
-  ;
-  (self.endMonth):SetText(((self.cfg).endTime)[1])
-  ;
-  (self.endDay):SetText(((self.cfg).endTime)[2])
-  ;
-  (self.letfTimeBg):LoadImage((self.cfg).leftTimeIcon)
-  ;
-  (self.tips):SetText((StringTable.Get)("str_prediction_info"))
+  self.spine:LoadImage(self.cfg.spine)
+  self.beginMonth:SetText(self.cfg.beginTime[1])
+  self.beginDay:SetText(self.cfg.beginTime[2])
+  self.endMonth:SetText(self.cfg.endTime[1])
+  self.endDay:SetText(self.cfg.endTime[2])
+  self.letfTimeBg:LoadImage(self.cfg.leftTimeIcon)
+  self.tips:SetText(StringTable.Get("str_prediction_info"))
   self:LoadTmpMat()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastNew.LoadTmpMat = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self.matReq1 = (UIWidgetHelper.SetLocalizedTMPMaterial)(self, "startmonth", "PetForecastMat.mat")
-  self.matReq2 = (UIWidgetHelper.SetLocalizedTMPMaterial)(self, "startday", "PetForecastMat.mat")
-  self.matReq3 = (UIWidgetHelper.SetLocalizedTMPMaterial)(self, "endmonth", "PetForecastMat.mat")
-  self.matReq4 = (UIWidgetHelper.SetLocalizedTMPMaterial)(self, "endday", "PetForecastMat.mat")
+function UIPetForecastNew:LoadTmpMat()
+  self.matReq1 = UIWidgetHelper.SetLocalizedTMPMaterial(self, "startmonth", "PetForecastMat.mat")
+  self.matReq2 = UIWidgetHelper.SetLocalizedTMPMaterial(self, "startday", "PetForecastMat.mat")
+  self.matReq3 = UIWidgetHelper.SetLocalizedTMPMaterial(self, "endmonth", "PetForecastMat.mat")
+  self.matReq4 = UIWidgetHelper.SetLocalizedTMPMaterial(self, "endday", "PetForecastMat.mat")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastNew.RequestPrediction = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function UIPetForecastNew:RequestPrediction(TT)
   local lockName = "UIPetForecastNew_RequestPrediction"
   self:Lock(lockName)
   local res = AsyncRequestRes:New()
@@ -130,146 +84,107 @@ UIPetForecastNew.RequestPrediction = function(self, TT)
   if not self._dataLoader then
     self._dataLoader = UIPetForecastDataLoader:New()
   end
-  self._data = (self._dataLoader):LoadData(TT, res)
+  self._data = self._dataLoader:LoadData(TT, res)
   self._forecastData = self._data
   self:Flush()
   self:UnLock(lockName)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastNew.Flush = function(self, isShow)
-  -- function num : 0_7 , upvalues : _ENV
+function UIPetForecastNew:Flush(isShow)
   if not self._forecastData then
-    (Log.warn)("### self._forecastData nil.")
-    return 
+    Log.warn("### self._forecastData nil.")
+    return
   end
   self:FlushLeftTime()
   self:_SetPieceBtn(isShow)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastNew.FlushLeftTime = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIPetForecastNew:FlushLeftTime()
   local text = ""
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   if HelperProxy:IsCrossDayTo(nowTimestamp) then
     self:StartTask(self.RequestPrediction, self)
   end
-  if self._forecastData and nowTimestamp < (self._forecastData).endTime then
-    local leftSeconds = (UICommonHelper.CalcLeftSeconds)((self._forecastData).endTime)
-    local d, h, m, s = (UICommonHelper.S2DHMS)(leftSeconds)
-    if d >= 1 then
-      text = (StringTable.Get)("str_prediction_left_time_d_h", (math.floor)(d), (math.floor)(h))
+  if self._forecastData and nowTimestamp < self._forecastData.endTime then
+    local leftSeconds = UICommonHelper.CalcLeftSeconds(self._forecastData.endTime)
+    local d, h, m, s = UICommonHelper.S2DHMS(leftSeconds)
+    if 1 <= d then
+      text = StringTable.Get("str_prediction_left_time_d_h", math.floor(d), math.floor(h))
+    elseif 1 <= h then
+      text = StringTable.Get("str_prediction_left_time_h_m", math.floor(h), math.floor(m))
+    elseif 1 <= m then
+      text = StringTable.Get("str_prediction_left_time_m", math.floor(m))
     else
-      if h >= 1 then
-        text = (StringTable.Get)("str_prediction_left_time_h_m", (math.floor)(h), (math.floor)(m))
-      else
-        if m >= 1 then
-          text = (StringTable.Get)("str_prediction_left_time_m", (math.floor)(m))
-        else
-          text = (StringTable.Get)("str_prediction_left_time_m", "<" .. 1)
-        end
-      end
+      text = StringTable.Get("str_prediction_left_time_m", "<" .. 1)
     end
   else
-    do
-      text = (StringTable.Get)("str_prediction_error_code_1")
-      ;
-      (UIActivityHelper.CancelTimerEvent)(self.te)
-      local color = (self.cfg).leftTime
-      text = (StringTable.Get)("str_prediction_left_remain_time", text)
-      if color then
-        text = "<color=" .. color .. ">" .. text .. "</color>"
-      end
-      ;
-      (UIWidgetHelper.SetLocalizationText)(self, "txtLeftTime", text)
-    end
+    text = StringTable.Get("str_prediction_error_code_1")
+    UIActivityHelper.CancelTimerEvent(self.te)
   end
+  local color = self.cfg.leftTime
+  text = StringTable.Get("str_prediction_left_remain_time", text)
+  if color then
+    text = "<color=" .. color .. ">" .. text .. "</color>"
+  end
+  UIWidgetHelper.SetLocalizationText(self, "txtLeftTime", text)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastNew._SetPieceBtn = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local isAllAccepted = (self._forecastData):IsAllAccepted()
-  local len = (table.count)((self._forecastData).pieces)
+function UIPetForecastNew:_SetPieceBtn()
+  local isAllAccepted = self._forecastData:IsAllAccepted()
+  local len = table.count(self._forecastData.pieces)
   local horizonLayout = self:GetUIComponent("HorizontalLayoutGroup", "Rewards")
   if len == 5 then
     horizonLayout.spacing = 240
   end
-  local pieceList = (UIWidgetHelper.SpawnObjects)(self, "Rewards", "UIPetForecastAwardItemNew", len)
-  for i,v in ipairs(pieceList) do
-    do
-      local awardInfo = ((((self._forecastData).pieces)[i]).awards)[1]
-      local tplId = awardInfo[1]
-      local count = awardInfo[2]
-      v:Flush(i, tplId, count, (self._forecastData).curDay == i, (((self._forecastData).pieces)[i]).state, function(TT)
-    -- function num : 0_9_0 , upvalues : self, i, _ENV, len, tplId, v
-    if ((self._forecastData).pieces)[i] and (((self._forecastData).pieces)[i]).state == PredictionStatus.PRES_UnAccept then
-      self:GetRewards(len)
-    else
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowItemTips, tplId, ((v:Trans()).transform).position)
-    end
+  local pieceList = UIWidgetHelper.SpawnObjects(self, "Rewards", "UIPetForecastAwardItemNew", len)
+  for i, v in ipairs(pieceList) do
+    local awardInfo = self._forecastData.pieces[i].awards[1]
+    local tplId = awardInfo[1]
+    local count = awardInfo[2]
+    v:Flush(i, tplId, count, self._forecastData.curDay == i, self._forecastData.pieces[i].state, function(TT)
+      if self._forecastData.pieces[i] and self._forecastData.pieces[i].state == PredictionStatus.PRES_UnAccept then
+        self:GetRewards(len)
+      else
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowItemTips, tplId, v:Trans().transform.position)
+      end
+    end)
   end
-)
-    end
-  end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastNew.ShowTips = function(self, matid, pos)
-  -- function num : 0_10 , upvalues : _ENV
-  (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
+function UIPetForecastNew:ShowTips(matid, pos)
+  UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastNew.Close = function(self)
-  -- function num : 0_11
+function UIPetForecastNew:Close()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastNew.ItemCountChanged = function(self)
-  -- function num : 0_12
+function UIPetForecastNew:ItemCountChanged()
   self:StartTask(self.RequestPrediction, self)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastNew.GetRewards = function(self, len)
-  -- function num : 0_13 , upvalues : _ENV
+function UIPetForecastNew:GetRewards(len)
   self:StartTask(function(TT)
-    -- function num : 0_13_0 , upvalues : self, len, _ENV
     local lockName = "UIPetForecastBtn:_Start_Req"
     local toNewUnlockLastState = false
     self:Lock(lockName)
     local toClose = false
     local t = {}
     for i = 1, len do
-      if (((self._forecastData).pieces)[i]).state == PredictionStatus.PRES_UnAccept then
-        local res, replyEvent = (self.mSignIn):PredictionAwardReq(TT, i, (self._forecastData).id)
+      if self._forecastData.pieces[i].state == PredictionStatus.PRES_UnAccept then
+        local res, replyEvent = self.mSignIn:PredictionAwardReq(TT, i, self._forecastData.id)
         if res:GetResult() == Prediction_Result_Code.PREDICTION_SWITCH then
-          (ToastManager.ShowToast)((StringTable.Get)("str_prediction_error_activity_finished"))
+          ToastManager.ShowToast(StringTable.Get("str_prediction_error_activity_finished"))
           toClose = true
-        else
-          if (PetForecastData.CheckCode)(res:GetResult(), true) then
-            (self._forecastData):UpdateState(i, PredictionStatus.PRES_Accepted)
-            local piece = (self._forecastData):GetPiece(i)
-            if piece and piece.awards then
-              for i,award in ipairs(piece.awards) do
-                if award then
-                  local a = RoleAsset:New()
-                  a.assetid = award[1]
-                  a.count = award[2]
-                  ;
-                  (table.insert)(t, a)
-                end
+        elseif PetForecastData.CheckCode(res:GetResult(), true) then
+          self._forecastData:UpdateState(i, PredictionStatus.PRES_Accepted)
+          local piece = self._forecastData:GetPiece(i)
+          if piece and piece.awards then
+            for i, award in ipairs(piece.awards) do
+              if award then
+                local a = RoleAsset:New()
+                a.assetid = award[1]
+                a.count = award[2]
+                table.insert(t, a)
               end
             end
           end
@@ -277,41 +192,25 @@ UIPetForecastNew.GetRewards = function(self, len)
       end
     end
     YIELD(TT, 800)
-    if t and (table.count)(t) > 0 then
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", t, function()
-      -- function num : 0_13_0_0 , upvalues : self
-      self:Flush()
-    end
-)
-      while not ((GameGlobal.UIStateManager)()):IsShow("UIGetItemController") do
+    if t and table.count(t) > 0 then
+      GameGlobal.UIStateManager():ShowDialog("UIGetItemController", t, function()
+        self:Flush()
+      end)
+      while not GameGlobal.UIStateManager():IsShow("UIGetItemController") do
         YIELD(TT)
       end
     end
-    toNewUnlockLastState = (self._forecastData):IsAllAccepted()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CampaignComponentStepChange, -1, nil, nil)
+    toNewUnlockLastState = self._forecastData:IsAllAccepted()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.CampaignComponentStepChange, -1, nil, nil)
     self:UnLock(lockName)
     if toClose then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PredictionDataChanged)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.PredictionDataChanged)
     end
-    while 1 do
-      if toNewUnlockLastState then
-        if ((GameGlobal.UIStateManager)()):IsShow("UIGetItemController") then
-          YIELD(TT)
-          -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+    if toNewUnlockLastState then
+      while GameGlobal.UIStateManager():IsShow("UIGetItemController") do
+        YIELD(TT)
       end
+      local uiPetForecast = self:RootUIOwner()
     end
-    local uiPetForecast = self:RootUIOwner()
-  end
-, self)
+  end, self)
 end
-
-

@@ -1,37 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_target_refresh_buff_view_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTargetRefreshBuffViewInstruction", BaseInstruction)
 PlayTargetRefreshBuffViewInstruction = PlayTargetRefreshBuffViewInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTargetRefreshBuffViewInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayTargetRefreshBuffViewInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTargetRefreshBuffViewInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTargetRefreshBuffViewInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   if not targetEntityID then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local targetEntity = world:GetEntityByID(targetEntityID)
   local buffViewComponent = targetEntity:BuffView()
   if not buffViewComponent then
-    return 
+    return
   end
   local curIndex = phaseContext:GetCurBuffResultIndex()
   local buffResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.ModifyBuffValue)
-  if buffResultArray == nil or (table.count)(buffResultArray) < curIndex then
-    (Log.fatal)("add buff instruction ,buff result is nil")
-    return 
+  if buffResultArray == nil or curIndex > table.count(buffResultArray) then
+    Log.fatal("add buff instruction ,buff result is nil")
+    return
   end
   local buffResult = buffResultArray[curIndex]
   local viewInstance = buffViewComponent:GetBuffViewInstance(buffResult:GetBuffSeq())
@@ -39,8 +29,5 @@ PlayTargetRefreshBuffViewInstruction.DoInstruction = function(self, TT, casterEn
     viewInstance:SetLayerCount(TT, buffResult:GetBuffLayer())
   end
   local entity = viewInstance:Entity()
-  ;
-  (world:GetService("PlayBuff")):PlayUIChangeBuff(entity)
+  world:GetService("PlayBuff"):PlayUIChangeBuff(entity)
 end
-
-

@@ -1,45 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_dynamic_center_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectResult_DynamicCenterDamage", SkillEffectResultBase)
 SkillEffectResult_DynamicCenterDamage = SkillEffectResult_DynamicCenterDamage
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
 SkillEffectResult_DynamicCenterDamage.__EFFECT_TYPE = SkillEffectType.DynamicCenterDamage
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_DynamicCenterDamage.Constructor = function(self, damageScope, damageResults, finalCenter)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectResult_DynamicCenterDamage:Constructor(damageScope, damageResults, finalCenter)
   self._damageScope = damageScope
-  if not damageResults then
-    self._damageResults = {}
-    if not finalCenter then
-      self._finalCenter = Vector2.zero
-    end
-  end
+  self._damageResults = damageResults or {}
+  self._finalCenter = finalCenter or Vector2.zero
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_DynamicCenterDamage.GetDamageScope = function(self)
-  -- function num : 0_1
+function SkillEffectResult_DynamicCenterDamage:GetDamageScope()
   return self._damageScope
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_DynamicCenterDamage.GetDamageResults = function(self)
-  -- function num : 0_2
+function SkillEffectResult_DynamicCenterDamage:GetDamageResults()
   return self._damageResults
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_DynamicCenterDamage.GetFinalCenter = function(self)
-  -- function num : 0_3
+function SkillEffectResult_DynamicCenterDamage:GetFinalCenter()
   return self._finalCenter
 end
-
-

@@ -1,88 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/bag/ui_activity_n29_detective_piece_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN29DetectivePieceTab", UICustomWidget)
 UIActivityN29DetectivePieceTab = UIActivityN29DetectivePieceTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN29DetectivePieceTab.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityN29DetectivePieceTab:OnShow(uiParams)
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectivePieceTab._GetComponent = function(self)
-  -- function num : 0_1
+function UIActivityN29DetectivePieceTab:_GetComponent()
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._tabObj = self:GetGameObject("tab")
   self._emptyObj = self:GetGameObject("Empty")
   self._anim = self:GetUIComponent("Animation", "tab")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectivePieceTab.SetData = function(self, data)
-  -- function num : 0_2
+function UIActivityN29DetectivePieceTab:SetData(data)
   self._info = data
   self:InitContent()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectivePieceTab.InitContent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local list = (self._info).fragment_list
+function UIActivityN29DetectivePieceTab:InitContent()
+  local list = self._info.fragment_list
   if #list == 0 then
-    (self._emptyObj):SetActive(true)
+    self._emptyObj:SetActive(true)
   else
-    ;
-    (self._emptyObj):SetActive(false)
-    self._widgets = (self._content):SpawnObjects("UIActivityN29DetectivePieceItem", #list)
-    for i,v in pairs(list) do
-      local widget = (self._widgets)[i]
-      local cfg = (Cfg.cfg_component_detective_item)[v]
+    self._emptyObj:SetActive(false)
+    self._widgets = self._content:SpawnObjects("UIActivityN29DetectivePieceItem", #list)
+    for i, v in pairs(list) do
+      local widget = self._widgets[i]
+      local cfg = Cfg.cfg_component_detective_item[v]
       widget:SetData(cfg, i)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectivePieceTab.SetActive = function(self, isActive)
-  -- function num : 0_4
+function UIActivityN29DetectivePieceTab:SetActive(isActive)
   self:StartTask(self._ActiveAnim, self, isActive)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectivePieceTab._ActiveAnim = function(self, TT, isActive)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN29DetectivePieceTab:_ActiveAnim(TT, isActive)
   if isActive then
-    (self._tabObj):SetActive(true)
+    self._tabObj:SetActive(true)
   else
-    ;
-    (self._anim):Play("uieff_UIN29DetectivePieceTab_out")
+    self._anim:Play("uieff_UIN29DetectivePieceTab_out")
     YIELD(TT, 200)
-    ;
-    (self._tabObj):SetActive(false)
+    self._tabObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectivePieceTab.CloseBtnOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._anim):Play("uieff_UIN29DetectivePieceTab_out")
-  local controller = ((GameGlobal.UIStateManager)()):GetController("UIActivityN29DetectiveBagController")
+function UIActivityN29DetectivePieceTab:CloseBtnOnClick()
+  self._anim:Play("uieff_UIN29DetectivePieceTab_out")
+  local controller = GameGlobal.UIStateManager():GetController("UIActivityN29DetectiveBagController")
   if controller then
     controller:Close()
   else
-    ;
-    (Log.fatal)("不存在UIActivityN29DetectiveBagController，请检查！！！")
+    Log.fatal("不存在UIActivityN29DetectiveBagController，请检查！！！")
   end
 end
-
-

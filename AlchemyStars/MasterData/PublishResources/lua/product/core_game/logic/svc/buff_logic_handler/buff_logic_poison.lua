@@ -1,89 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_poison.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddPoison", BuffLogicBase)
 BuffLogicAddPoison = BuffLogicAddPoison
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddPoison.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddPoison:Constructor(buffInstance, logicParam)
   self._damagePercent = logicParam.damagePercent
   self._triggerBuffEffect = logicParam.triggerBuffEffect
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddPoison.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicAddPoison:DoLogic()
+  local e = self._buffInstance:Entity()
   local attrCmpt = e:Attributes()
   local maxHp = attrCmpt:CalcMaxHp()
   if maxHp <= 0 then
-    return 
+    return
   end
-  local turn = (e:BuffComponent()):GetBuffValue("PoisonTurn")
-  local round = ((self._world):BattleStat()):GetLevelTotalRoundCount()
+  local turn = e:BuffComponent():GetBuffValue("PoisonTurn")
+  local round = self._world:BattleStat():GetLevelTotalRoundCount()
   if turn == round and self._triggerBuffEffect == nil then
-    return 
+    return
   end
-  ;
-  (e:BuffComponent()):SetBuffValue("PoisonTurn", round)
+  e:BuffComponent():SetBuffValue("PoisonTurn", round)
   local attrCmpt = e:Attributes()
   local curHP = attrCmpt:GetCurrentHP()
-  local layer = (self._buffInstance):GetLayerCount()
+  local layer = self._buffInstance:GetLayerCount()
   if self._triggerBuffEffect then
-    layer = (self._buffLogicService):GetBuffLayer(e, self._triggerBuffEffect)
+    layer = self._buffLogicService:GetBuffLayer(e, self._triggerBuffEffect)
   end
   if layer == 0 then
-    return 
+    return
   end
   local casterEntity = self:GetCasterEntity()
   if casterEntity:EntityType() == nil then
     casterEntity = e
   end
-  local blsvc = (self._world):GetService("BuffLogic")
-  ;
-  (Log.debug)("Buff AddPoison, beforeCalcDmg,entityID: ", e:GetID())
-  local damageParam = {percent = self._damagePercent, layer = layer, formulaID = 15}
-  do
-    if blsvc:IsEnableSpecialDotFormula(casterEntity, e) then
-      local cfgParam = blsvc:GetSpecialDotFormulaParamByID(FormulaNumberType.PoisonDamage)
-      if cfgParam then
-        damageParam.percent = cfgParam.percent
-        damageParam.formulaID = cfgParam.formulaID
-      end
+  local blsvc = self._world:GetService("BuffLogic")
+  Log.debug("Buff AddPoison, beforeCalcDmg,entityID: ", e:GetID())
+  local damageParam = {
+    percent = self._damagePercent,
+    layer = layer,
+    formulaID = 15
+  }
+  if blsvc:IsEnableSpecialDotFormula(casterEntity, e) then
+    local cfgParam = blsvc:GetSpecialDotFormulaParamByID(FormulaNumberType.PoisonDamage)
+    if cfgParam then
+      damageParam.percent = cfgParam.percent
+      damageParam.formulaID = cfgParam.formulaID
     end
-    local damageInfo = blsvc:DoBuffDamage((self._buffInstance):BuffID(), casterEntity, e, damageParam)
-    if damageInfo:GetDamageType() == DamageType.Real then
-      damageInfo:SetDamageType(DamageType.Poison)
-    end
-    local calcDamageSvc = (self._world):GetService("CalcDamage")
-    local recoverDamageInfos = {}
-    if e:HasMonsterID() then
-      local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-      local buffForbidCure = (teamEntity:Attributes()):GetAttribute("BuffForbidCure")
-      if not buffForbidCure then
-        local es = (teamEntity:Team()):GetTeamPetEntities()
-        for i,petEntity in ipairs(es) do
-          local poisonVampire = (petEntity:BuffComponent()):GetBuffValue("PoisonVampire") or 0
-          local vampireVal = (math.floor)(damageInfo:GetDamageValue() * poisonVampire)
-          if vampireVal > 0 then
-            local recoverDamageInfo = DamageInfo:New(vampireVal, DamageType.Recover)
-            recoverDamageInfo:SetTargetEntityID(petEntity:GetID())
-            calcDamageSvc:AddTargetHP(petEntity:GetID(), recoverDamageInfo)
-            ;
-            (table.insert)(recoverDamageInfos, recoverDamageInfo)
-          end
+  end
+  local damageInfo = blsvc:DoBuffDamage(self._buffInstance:BuffID(), casterEntity, e, damageParam)
+  if damageInfo:GetDamageType() == DamageType.Real then
+    damageInfo:SetDamageType(DamageType.Poison)
+  end
+  local calcDamageSvc = self._world:GetService("CalcDamage")
+  local recoverDamageInfos = {}
+  if e:HasMonsterID() then
+    local teamEntity = self._world:Player():GetLocalTeamEntity()
+    local buffForbidCure = teamEntity:Attributes():GetAttribute("BuffForbidCure")
+    if not buffForbidCure then
+      local es = teamEntity:Team():GetTeamPetEntities()
+      for i, petEntity in ipairs(es) do
+        local poisonVampire = petEntity:BuffComponent():GetBuffValue("PoisonVampire") or 0
+        local vampireVal = math.floor(damageInfo:GetDamageValue() * poisonVampire)
+        if 0 < vampireVal then
+          local recoverDamageInfo = DamageInfo:New(vampireVal, DamageType.Recover)
+          recoverDamageInfo:SetTargetEntityID(petEntity:GetID())
+          calcDamageSvc:AddTargetHP(petEntity:GetID(), recoverDamageInfo)
+          table.insert(recoverDamageInfos, recoverDamageInfo)
         end
       end
     end
-    do
-      local buffResult = BuffResultAddPoison:New(damageInfo, recoverDamageInfos)
-      return buffResult
-    end
   end
+  local buffResult = BuffResultAddPoison:New(damageInfo, recoverDamageInfos)
+  return buffResult
 end
-
-

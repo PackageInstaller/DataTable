@@ -1,31 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_psp_add_feature_energy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicPSPAddFeatureEnergy", BuffLogicBase)
 BuffLogicPSPAddFeatureEnergy = BuffLogicPSPAddFeatureEnergy
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicPSPAddFeatureEnergy.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicPSPAddFeatureEnergy:Constructor(buffInstance, logicParam)
   self._baseValue = logicParam.baseValue or 0
-  if not logicParam.modifyType then
-    self._modifyType = BuffPopStarProModifyType.None
-  end
+  self._modifyType = logicParam.modifyType or BuffPopStarProModifyType.None
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicPSPAddFeatureEnergy.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local popSarProSvc = (self._world):GetService("PopStarProLogic")
+function BuffLogicPSPAddFeatureEnergy:DoLogic()
+  local popSarProSvc = self._world:GetService("PopStarProLogic")
   local count = popSarProSvc:GetCountByModifyType(self._modifyType)
   local addValue = self._baseValue * count
   local ntAdd = NTPopStarProAddFeatureEnergy:New()
   ntAdd:SetAddNum(addValue)
-  local triggerSvc = (self._world):GetService("Trigger")
+  local triggerSvc = self._world:GetService("Trigger")
   triggerSvc:Notify(ntAdd)
 end
-
-

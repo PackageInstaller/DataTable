@@ -1,85 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/visit/ui_home_storehouse_gift_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeStorehouseGiftItem", UICustomWidget)
 UIHomeStorehouseGiftItem = UIHomeStorehouseGiftItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeStorehouseGiftItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomeStorehouseGiftItem:OnShow(uiParams)
   self:InitWidget()
   self:AttachEvent(GameEventType.HomeStorehouseGiftItemOnSelect, self._OnSelectChanged)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouseGiftItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIHomeStorehouseGiftItem:InitWidget()
   self.root = self:GetGameObject("root")
   self.item = self:GetUIComponent("UISelectObjectPath", "item")
   self.selector = self:GetGameObject("selector")
   self._empty = self:GetGameObject("empty")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouseGiftItem.SetData = function(self, idx, data, curSelect, showEmpty)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomeStorehouseGiftItem:SetData(idx, data, curSelect, showEmpty)
   self._idx = idx
   if data then
     local tplID = data:GetTemplateID()
-    local itemHome = (self.item):SpawnObject("UIItemHomeland")
+    local itemHome = self.item:SpawnObject("UIItemHomeland")
     local asset = RoleAsset:New()
     asset.assetid = tplID
     asset.count = data:GetCount()
-    local uiModule = (GameGlobal.GetUIModule)(HomelandModule)
-    local buildMng = (uiModule:GetClient()):BuildManager()
-    local isBuilding = (Cfg.cfg_item_architecture)[tplID] ~= nil
+    local uiModule = GameGlobal.GetUIModule(HomelandModule)
+    local buildMng = uiModule:GetClient():BuildManager()
+    local isBuilding = Cfg.cfg_item_architecture[tplID] ~= nil
     if isBuilding then
       asset.count = buildMng:GetBuildCount(tplID)
     end
     itemHome:Flush(asset)
     self._selected = self._idx == curSelect
-    ;
-    (self.selector):SetActive(self._selected)
-    ;
-    (self.root):SetActive(true)
-    ;
-    (self._empty):SetActive(false)
+    self.selector:SetActive(self._selected)
+    self.root:SetActive(true)
+    self._empty:SetActive(false)
   else
-    (self.root):SetActive(false)
-    ;
-    (self._empty):SetActive(showEmpty)
+    self.root:SetActive(false)
+    self._empty:SetActive(showEmpty)
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouseGiftItem.AreaOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomeStorehouseGiftItem:AreaOnClick(go)
   if self._selected then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomeStorehouseGiftItemOnSelect, self._idx)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomeStorehouseGiftItemOnSelect, self._idx)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouseGiftItem._OnSelectChanged = function(self, idx)
-  -- function num : 0_4
+function UIHomeStorehouseGiftItem:_OnSelectChanged(idx)
   if self._idx == idx and not self._selected then
-    (self.selector):SetActive(true)
+    self.selector:SetActive(true)
     self._selected = true
-  else
-    if self._idx ~= idx and self._selected then
-      (self.selector):SetActive(false)
-      self._selected = false
-    end
+  elseif self._idx ~= idx and self._selected then
+    self.selector:SetActive(false)
+    self._selected = false
   end
 end
-
-

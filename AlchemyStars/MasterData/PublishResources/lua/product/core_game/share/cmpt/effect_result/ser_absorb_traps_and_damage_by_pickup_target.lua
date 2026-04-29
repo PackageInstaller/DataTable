@@ -1,53 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_absorb_traps_and_damage_by_pickup_target.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectAbsorbTrapsAndDamageByPickupTargetResult", SkillEffectResultBase)
 SkillEffectAbsorbTrapsAndDamageByPickupTargetResult = SkillEffectAbsorbTrapsAndDamageByPickupTargetResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectAbsorbTrapsAndDamageByPickupTargetResult.Constructor = function(self, trapEntityIDs, damageResultArray)
-  -- function num : 0_0
+function SkillEffectAbsorbTrapsAndDamageByPickupTargetResult:Constructor(trapEntityIDs, damageResultArray)
   self._trapEntityIDs = trapEntityIDs
   self._damageResultArray = damageResultArray
   self._finalAttackIndex = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAbsorbTrapsAndDamageByPickupTargetResult.GetTrapEntityIDs = function(self)
-  -- function num : 0_1
+function SkillEffectAbsorbTrapsAndDamageByPickupTargetResult:GetTrapEntityIDs()
   return self._trapEntityIDs
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAbsorbTrapsAndDamageByPickupTargetResult.GetDamageResultArray = function(self)
-  -- function num : 0_2
+function SkillEffectAbsorbTrapsAndDamageByPickupTargetResult:GetDamageResultArray()
   return self._damageResultArray
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAbsorbTrapsAndDamageByPickupTargetResult.GetEffectType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectAbsorbTrapsAndDamageByPickupTargetResult:GetEffectType()
   return SkillEffectType.AbsorbTrapsAndDamageByPickupTarget
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAbsorbTrapsAndDamageByPickupTargetResult.GetFinalAttackIndex = function(self)
-  -- function num : 0_4
+function SkillEffectAbsorbTrapsAndDamageByPickupTargetResult:GetFinalAttackIndex()
   return self._finalAttackIndex
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAbsorbTrapsAndDamageByPickupTargetResult.SetFinalAttackIndex = function(self, index)
-  -- function num : 0_5
+function SkillEffectAbsorbTrapsAndDamageByPickupTargetResult:SetFinalAttackIndex(index)
   self._finalAttackIndex = index
 end
-
-

@@ -1,61 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_pet_dina.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_PetDiNa", PickUpPolicy_Base)
 PickUpPolicy_PetDiNa = PickUpPolicy_PetDiNa
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_PetDiNa.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PickUpPolicy_PetDiNa:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
-  local petPos = (petEntity:GetGridPosition()):Clone()
+  local petPos = petEntity:GetGridPosition():Clone()
   local activeSkillID = calcParam.activeSkillID
   local posList = {}
   local attackPosList = {}
   local targetIDList = {}
-  local configSvc = (self._world):GetService("Config")
+  local configSvc = self._world:GetService("Config")
   local skillCfgData = configSvc:GetSkillConfigData(activeSkillID)
   local pickUpParam = skillCfgData:GetSkillPickParam()
   local depth = pickUpParam[1] or 0
-  if not pickUpParam[2] then
-    local pieceType = PieceType.Blue
-  end
-  local canLinkMonster = pickUpParam[3] or 0 == 1
+  local pieceType = pickUpParam[2] or PieceType.Blue
+  local canLinkMonster = (pickUpParam[3] or 0) == 1
   if depth == 0 then
     return posList, attackPosList, targetIDList
   end
-  local pieceTypeList = {PieceType.Blue, PieceType.Red, PieceType.Green, PieceType.Yellow}
-  ;
-  (table.removev)(pieceTypeList, pieceType)
-  local targetEntity = nil
-  if (self._world):MatchType() == MatchType.MT_BlackFist and petEntity:HasPet() then
-    targetEntity = (((petEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()
-  end
-  local utilScope = (self._world):GetService("UtilScopeCalc")
-  do
+  local pieceTypeList = {
+    PieceType.Blue,
+    PieceType.Red,
+    PieceType.Green,
+    PieceType.Yellow
+  }
+  table.removev(pieceTypeList, pieceType)
+  local targetEntity
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    if petEntity:HasPet() then
+      targetEntity = petEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
+    end
+  else
+    local utilScope = self._world:GetService("UtilScopeCalc")
     local monsterList, monsterPosList = utilScope:SelectNearestMonsterOnPos(petPos, 1)
-    if monsterList and #monsterList > 0 then
+    if monsterList and 0 < #monsterList then
       targetEntity = monsterList[1]
     end
-    if not targetEntity then
-      return posList, attackPosList, targetIDList
-    end
-    ;
-    (table.insert)(targetIDList, targetEntity:GetID())
-    posList = self:FindPath_MonsterMoveGridByParam(petEntity, targetEntity, pieceTypeList, depth, canLinkMonster)
-    attackPosList = posList
-    do return posList, attackPosList, targetIDList end
-    -- DECOMPILER ERROR: 5 unprocessed JMP targets
   end
+  if not targetEntity then
+    return posList, attackPosList, targetIDList
+  end
+  table.insert(targetIDList, targetEntity:GetID())
+  posList = self:FindPath_MonsterMoveGridByParam(petEntity, targetEntity, pieceTypeList, depth, canLinkMonster)
+  attackPosList = posList
+  return posList, attackPosList, targetIDList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetDiNa.FindPath_MonsterMoveGridByParam = function(self, casterEntity, targetEntity, pieceTypeList, depth, canLinkMonster)
-  -- function num : 0_1 , upvalues : _ENV
+function PickUpPolicy_PetDiNa:FindPath_MonsterMoveGridByParam(casterEntity, targetEntity, pieceTypeList, depth, canLinkMonster)
   local movePath = {}
   self._diNaChainPaths = {}
   self._diNaChainIndexPaths = {}
@@ -68,91 +59,82 @@ PickUpPolicy_PetDiNa.FindPath_MonsterMoveGridByParam = function(self, casterEnti
   self._HighConnectRateCutLen = self:_CalcHighConnectRateCutLen(casterEntity)
   self:_CalcAllMovePathByPieceTypeList(casterEntity, pieceTypeList, depth)
   movePath = self:_FindPathNearToTarget4(targetEntity)
-  do
-    if #movePath < 1 then
-      local pos = casterEntity:GetGridPosition()
-      movePath = {pos}
-    end
-    local targetPos = targetEntity:GetGridPosition()
-    local utilDataSvc = (self._world):GetService("UtilData")
-    local tpPieceType = utilDataSvc:GetPieceType(targetPos)
-    if canLinkMonster and tpPieceType ~= PieceType.None then
-      local endPos = movePath[#movePath]
-      local endPosIndex = (Vector2.Pos2Index)(endPos)
-      local posIndex = (Vector2.Pos2Index)(targetPos)
-      local aroundPosList = self:_GetPosIndexListByOffset(posIndex, Offset8)
-      if (table.icontains)(aroundPosList, endPosIndex) then
-        movePath[#movePath + 1] = targetPos
-      end
-    end
-    do
-      if #movePath <= 1 then
-        movePath = {}
-      end
-      self._diNaChainPaths = {}
-      self._diNaChainIndexPaths = {}
-      self._diNaMoveForward = false
-      self._diNaConnectMap = {}
-      self._HighConnectRateCutLen = 0
-      self._maxlen = 0
-      self._cutlen = 0
-      return movePath
+  if #movePath < 1 then
+    local pos = casterEntity:GetGridPosition()
+    movePath = {pos}
+  end
+  local targetPos = targetEntity:GetGridPosition()
+  local utilDataSvc = self._world:GetService("UtilData")
+  local tpPieceType = utilDataSvc:GetPieceType(targetPos)
+  if canLinkMonster and tpPieceType ~= PieceType.None then
+    local endPos = movePath[#movePath]
+    local endPosIndex = Vector2.Pos2Index(endPos)
+    local posIndex = Vector2.Pos2Index(targetPos)
+    local aroundPosList = self:_GetPosIndexListByOffset(posIndex, Offset8)
+    if table.icontains(aroundPosList, endPosIndex) then
+      movePath[#movePath + 1] = targetPos
     end
   end
+  if #movePath <= 1 then
+    movePath = {}
+  end
+  self._diNaChainPaths = {}
+  self._diNaChainIndexPaths = {}
+  self._diNaMoveForward = false
+  self._diNaConnectMap = {}
+  self._HighConnectRateCutLen = 0
+  self._maxlen = 0
+  self._cutlen = 0
+  return movePath
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetDiNa._BuildConnectMapByPieceTypeList = function(self, entity, pieceTypeList)
-  -- function num : 0_2 , upvalues : _ENV
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
+function PickUpPolicy_PetDiNa:_BuildConnectMapByPieceTypeList(entity, pieceTypeList)
+  local boardCmpt = self._world:GetBoardEntity():Board()
   local pos = entity:GetGridPosition()
-  local posIndex = (Vector2.Pos2Index)(pos)
+  local posIndex = Vector2.Pos2Index(pos)
   local blockFlag = BlockFlag.LinkLine
   local blockCanMoveMap = boardCmpt:GetBlockFlagCanMoveMap(blockFlag)
   self:_ConnectMapByPieceTypeList(posIndex, pieceTypeList, boardCmpt, blockCanMoveMap)
   boardCmpt:ClearBlockFlagCanMoveMap(blockFlag)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetDiNa._CanMatchPieceTypeList = function(self, type, typeList)
-  -- function num : 0_3 , upvalues : _ENV
+function PickUpPolicy_PetDiNa:_CanMatchPieceTypeList(type, typeList)
   if type == PieceType.None then
     return false
   end
-  return (table.icontains)(typeList, type)
+  return table.icontains(typeList, type)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetDiNa._Offset2Index = function(self, i, j)
-  -- function num : 0_4
+function PickUpPolicy_PetDiNa:_Offset2Index(i, j)
   local t = {
-[1] = {6, 7, 8}
-, 
-[2] = {5, 0, 1}
-, 
-[3] = {4, 3, 2}
-}
-  return (t[i + 2])[j + 2]
+    [1] = {
+      6,
+      7,
+      8
+    },
+    [2] = {
+      5,
+      0,
+      1
+    },
+    [3] = {
+      4,
+      3,
+      2
+    }
+  }
+  return t[i + 2][j + 2]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetDiNa._ConnectMapByPieceTypeList = function(self, posIndex, pieceTypeList, boardCmpt, blockCanMoveMap)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._diNaConnectMap)[posIndex] then
-    return 
+function PickUpPolicy_PetDiNa:_ConnectMapByPieceTypeList(posIndex, pieceTypeList, boardCmpt, blockCanMoveMap)
+  if self._diNaConnectMap[posIndex] then
+    return
   end
   local ct = {}
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._diNaConnectMap)[posIndex] = ct
-  for _,offset in ipairs(Offset8) do
+  self._diNaConnectMap[posIndex] = ct
+  for _, offset in ipairs(Offset8) do
     local offsetVec = Vector2(offset[1], offset[2])
-    local surroundIndex = posIndex + (Vector2.Pos2Index)(offsetVec)
+    local surroundIndex = posIndex + Vector2.Pos2Index(offsetVec)
     if blockCanMoveMap[surroundIndex] then
       local surroundPiece = boardCmpt:GetPieceTypeByIndex(surroundIndex)
       if CanMatchPieceTypeList(surroundPiece, pieceTypeList) then
@@ -163,160 +145,121 @@ PickUpPolicy_PetDiNa._ConnectMapByPieceTypeList = function(self, posIndex, piece
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetDiNa._CalcAllMovePathByPieceTypeList = function(self, casterEntity, pieceTypeList, depth)
-  -- function num : 0_6 , upvalues : _ENV
+function PickUpPolicy_PetDiNa:_CalcAllMovePathByPieceTypeList(casterEntity, pieceTypeList, depth)
   local pos = casterEntity:GetGridPosition()
-  local startPosIndex = (Vector2.Pos2Index)(pos)
+  local startPosIndex = Vector2.Pos2Index(pos)
   local chainPathIdx = {startPosIndex}
   self:_NextMoveByPieceTypeList(chainPathIdx, pieceTypeList, depth)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetDiNa._NextMoveByPieceTypeList = function(self, chainPathIdx, pieceTypeList, depth)
-  -- function num : 0_7 , upvalues : _ENV
+function PickUpPolicy_PetDiNa:_NextMoveByPieceTypeList(chainPathIdx, pieceTypeList, depth)
   if depth == 0 then
-    return 
+    return
   end
   local startPosIdx = chainPathIdx[#chainPathIdx]
-  local ct = (self._diNaConnectMap)[startPosIdx]
-  if not ct or (table.count)(ct) == 0 then
-    return 
+  local ct = self._diNaConnectMap[startPosIdx]
+  if not ct or table.count(ct) == 0 then
+    return
   end
   for i = 1, 8 do
     if startPosIdx ~= chainPathIdx[#chainPathIdx] then
-      return 
+      return
     end
     local posIdx = ct[i]
-    if posIdx and not (table.icontains)(chainPathIdx, posIdx) then
+    if posIdx and not table.icontains(chainPathIdx, posIdx) then
       chainPathIdx[#chainPathIdx + 1] = posIdx
-      local s = (table.concat)(chainPathIdx, " ")
+      local s = table.concat(chainPathIdx, " ")
       self._diNaMoveForward = true
       self:_NextMoveByPieceTypeList(chainPathIdx, pieceTypeList, depth - 1)
-      if self._diNaMoveForward and #chainPathIdx > 1 then
+      if self._diNaMoveForward and 1 < #chainPathIdx then
         self._diNaMoveForward = false
         local chainPath = {}
         for n = 1, #chainPathIdx do
-          chainPath[#chainPath + 1] = (Vector2.Index2Pos)(chainPathIdx[n])
+          chainPath[#chainPath + 1] = Vector2.Index2Pos(chainPathIdx[n])
         end
-        if (table.icontains)(self._diNaChainIndexPaths, chainPathIdx) then
-          return 
+        if table.icontains(self._diNaChainIndexPaths, chainPathIdx) then
+          return
         end
-        -- DECOMPILER ERROR at PC81: Confused about usage of register: R13 in 'UnsetPending'
-
-        ;
-        (self._diNaChainPaths)[#self._diNaChainPaths + 1] = chainPath
-        -- DECOMPILER ERROR at PC90: Confused about usage of register: R13 in 'UnsetPending'
-
-        ;
-        (self._diNaChainIndexPaths)[#self._diNaChainIndexPaths + 1] = (table.cloneconf)(chainPathIdx)
-        local s = (table.concat)(chainPathIdx, " ")
+        self._diNaChainPaths[#self._diNaChainPaths + 1] = chainPath
+        self._diNaChainIndexPaths[#self._diNaChainIndexPaths + 1] = table.cloneconf(chainPathIdx)
+        local s = table.concat(chainPathIdx, " ")
         self._maxlen = #chainPathIdx
         self._cutlen = self:_CalcChainPathComplexityLen(chainPathIdx)
       end
-      do
-        if startPosIdx == chainPathIdx[#chainPathIdx - 1] then
+      if startPosIdx == chainPathIdx[#chainPathIdx - 1] then
+        local len = #chainPathIdx
+        chainPathIdx[len] = nil
+        local s = table.concat(chainPathIdx, " ")
+      end
+      if self._maxlen - #chainPathIdx == 4 then
+        for n = #chainPathIdx, self._cutlen, -1 do
           local len = #chainPathIdx
           chainPathIdx[len] = nil
-          local s = (table.concat)(chainPathIdx, " ")
-        end
-        do
-          if self._maxlen - #chainPathIdx == 4 then
-            for n = #chainPathIdx, self._cutlen, -1 do
-              local len = #chainPathIdx
-              chainPathIdx[len] = nil
-              local s = (table.concat)(chainPathIdx, " ")
-            end
-          end
-          do
-            -- DECOMPILER ERROR at PC131: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC131: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC131: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC131: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+          local s = table.concat(chainPathIdx, " ")
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetDiNa._FindPathNearToTarget4 = function(self, targetEntity)
-  -- function num : 0_8 , upvalues : _ENV
+function PickUpPolicy_PetDiNa:_FindPathNearToTarget4(targetEntity)
   local offsetList = Offset4
   local targetPos = targetEntity:GetGridPosition()
-  local posIndex = (Vector2.Pos2Index)(targetPos)
+  local posIndex = Vector2.Pos2Index(targetPos)
   local highValuePosIdxList = self:_GetPosIndexListByOffset(posIndex, offsetList)
   local retPath = {}
   local unionCount = 0
   local retIndex = 0
-  for i,chainPathIdx in ipairs(self._diNaChainIndexPaths) do
-    local targetInPath = (table.union)(chainPathIdx, highValuePosIdxList)
+  for i, chainPathIdx in ipairs(self._diNaChainIndexPaths) do
+    local targetInPath = table.union(chainPathIdx, highValuePosIdxList)
     if unionCount < #targetInPath then
       unionCount = #targetInPath
       retIndex = i
-    end
-  end
-  do
-    if unionCount ~= #highValuePosIdxList then
-      local disMin = MAX_INT_32
-      local chainPathIndex = 0
-      if retIndex > 0 then
-        chainPathIndex = retIndex
-      else
-        for i,chainPath in ipairs(self._diNaChainPaths) do
-          local chainPos = chainPath[#chainPath]
-          local dis = (Vector2.Distance)(chainPos, targetPos)
-          if dis < disMin then
-            disMin = dis
-            chainPathIndex = i
-          end
-        end
-      end
-      do
-        if chainPathIndex > 0 then
-          retPath = (self._diNaChainPaths)[chainPathIndex]
-        end
-        return retPath
+      if unionCount == #highValuePosIdxList then
+        break
       end
     end
   end
+  local disMin = MAX_INT_32
+  local chainPathIndex = 0
+  if 0 < retIndex then
+    chainPathIndex = retIndex
+  else
+    for i, chainPath in ipairs(self._diNaChainPaths) do
+      local chainPos = chainPath[#chainPath]
+      local dis = Vector2.Distance(chainPos, targetPos)
+      if disMin > dis then
+        disMin = dis
+        chainPathIndex = i
+      end
+    end
+  end
+  if 0 < chainPathIndex then
+    retPath = self._diNaChainPaths[chainPathIndex]
+  end
+  return retPath
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetDiNa._GetPosIndexListByOffset = function(self, posIndex, offsetList)
-  -- function num : 0_9 , upvalues : _ENV
+function PickUpPolicy_PetDiNa:_GetPosIndexListByOffset(posIndex, offsetList)
   local posIndexList = {}
-  for _,offset in ipairs(offsetList) do
+  for _, offset in ipairs(offsetList) do
     local offsetVec = Vector2(offset[1], offset[2])
-    local index = posIndex + (Vector2.Pos2Index)(offsetVec)
-    ;
-    (table.insert)(posIndexList, index)
+    local index = posIndex + Vector2.Pos2Index(offsetVec)
+    table.insert(posIndexList, index)
   end
   return posIndexList
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetDiNa._CalcHighConnectRateCutLen = function(self, casterEntity)
-  -- function num : 0_10 , upvalues : _ENV
+function PickUpPolicy_PetDiNa:_CalcHighConnectRateCutLen(casterEntity)
   local connectMap = self._diNaConnectMap
   local playerPos = casterEntity:GetGridPosition()
-  local playerPosIndex = (Vector2.Pos2Index)(playerPos)
+  local playerPosIndex = Vector2.Pos2Index(playerPos)
   local touchIdx = {}
   local totalConnect = 0
   local totalPosNum = 0
-  local search = nil
-  search = function(posIndex)
-    -- function num : 0_10_0 , upvalues : touchIdx, totalPosNum, connectMap, totalConnect, search
+  local search
+  
+  function search(posIndex)
     touchIdx[posIndex] = true
     totalPosNum = totalPosNum + 1
     local ct = connectMap[posIndex]
@@ -330,39 +273,31 @@ PickUpPolicy_PetDiNa._CalcHighConnectRateCutLen = function(self, casterEntity)
       end
     end
   end
-
+  
   search(playerPosIndex)
   local rate = totalConnect / totalPosNum
   local cutlen = 0
   local idx = BattleConst.AutoFightMoveEnhanced and 2 or 1
-  if BattleConst.AutoFightPathLengthCutPosNum < totalPosNum and (BattleConst.AutoFightPathLengthCutConnectRate)[idx] < rate then
+  if totalPosNum > BattleConst.AutoFightPathLengthCutPosNum and rate > BattleConst.AutoFightPathLengthCutConnectRate[idx] then
     cutlen = BattleConst.AutoFightPathLengthCut
   end
-  ;
-  (Log.debug)("[AutoFight] _CalcHighConnectRateCutLen() totalPosNum=", totalPosNum, " ConnectRate=", rate)
+  Log.debug("[AutoFight] _CalcHighConnectRateCutLen() totalPosNum=", totalPosNum, " ConnectRate=", rate)
   return cutlen
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetDiNa._CalcChainPathComplexityLen = function(self, chainPathIdx)
-  -- function num : 0_11 , upvalues : _ENV
+function PickUpPolicy_PetDiNa:_CalcChainPathComplexityLen(chainPathIdx)
   if self._HighConnectRateCutLen > 0 then
     return self._HighConnectRateCutLen
   end
   local m = BattleConst.AutoFightMoveEnhanced and 2 or 1
   local cc = 1
   local len = #chainPathIdx
-  for i,idx in ipairs(chainPathIdx) do
-    cc = cc * (table.count)((self._diNaConnectMap)[idx])
-    if (BattleConst.AutoFightPathComplexity)[m] < cc then
+  for i, idx in ipairs(chainPathIdx) do
+    cc = cc * table.count(self._diNaConnectMap[idx])
+    if cc > BattleConst.AutoFightPathComplexity[m] then
       len = i - 1
       break
     end
   end
-  do
-    return len
-  end
+  return len
 end
-
-

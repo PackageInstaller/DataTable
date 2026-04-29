@@ -1,59 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/entrust/event/ui_n22_entrust_event_story.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22EntrustEventStory", UIN22EntrustEventBase)
 UIN22EntrustEventStory = UIN22EntrustEventStory
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22EntrustEventStory.Refresh = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN22EntrustEventStory:Refresh()
   self:_SetRoot(true)
   self:_SetCloseBtn()
   local cfg = self:GetCfgCampaignEntrustEvent()
-  local params = (cfg.Params)[1]
+  local params = cfg.Params[1]
   local storyID = params.StoryID
   local desc = params.Desc
-  local pass = (self._component):IsEventPass(self._levelId, self._eventId)
+  local pass = self._component:IsEventPass(self._levelId, self._eventId)
   self:_SetPass(pass)
   self:_SetTalkIcon("n22_wt_dfqb_icon03")
-  self:_SetTalkDesc((StringTable.Get)(desc))
-  local str1 = (StringTable.Get)("str_n22_entrust_event_story_look_again")
-  local str2 = (StringTable.Get)("str_n22_entrust_event_story_look")
+  self:_SetTalkDesc(StringTable.Get(desc))
+  local str1 = StringTable.Get("str_n22_entrust_event_story_look_again")
+  local str2 = StringTable.Get("str_n22_entrust_event_story_look")
   local txtConfirm = pass and str1 or str2
   self:_SetConfirmBtn(true, txtConfirm, function()
-    -- function num : 0_0_0 , upvalues : _ENV, storyID, pass, self
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIStoryController", storyID, function()
-      -- function num : 0_0_0_0 , upvalues : pass, self
+    GameGlobal.UIStateManager():ShowDialog("UIStoryController", storyID, function()
       if not pass then
         self:RequestEvent()
       else
         self:CloseDialog()
       end
-    end
-)
-  end
-)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventStory.OnEventFinish = function(self, rewards)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.info)("UIN22EntrustEventStory:OnEventFinish()")
-  if rewards and (table.count)(rewards) > 0 then
-    local title = (StringTable.Get)("str_activity_battlepass_buy_deluxe_claim")
+function UIN22EntrustEventStory:OnEventFinish(rewards)
+  Log.info("UIN22EntrustEventStory:OnEventFinish()")
+  if rewards and table.count(rewards) > 0 then
+    local title = StringTable.Get("str_activity_battlepass_buy_deluxe_claim")
     self:ShowDialog("UIN22EntrustRewardsController", title, rewards, function()
-    -- function num : 0_1_0 , upvalues : self
+      self:CloseDialog()
+    end)
+  else
     self:CloseDialog()
   end
-)
-  else
-    do
-      self:CloseDialog()
-    end
-  end
 end
-
-

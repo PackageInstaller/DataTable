@@ -1,28 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_animator_by_element.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeAnimatorByElement", BuffLogicBase)
 BuffLogicChangeAnimatorByElement = BuffLogicChangeAnimatorByElement
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeAnimatorByElement.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeAnimatorByElement:Constructor(buffInstance, logicParam)
   self._animator = logicParam.animator
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAnimatorByElement.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local entity = (self._buffInstance):Entity()
-  local element = (entity:Element()):GetPrimaryType()
-  local changeAnimator = (self._animator)[element]
-  ;
-  (Log.error)(changeAnimator)
-  ;
-  (entity:BuffComponent()):SetBuffValue("ChangeAnimator", changeAnimator)
+function BuffLogicChangeAnimatorByElement:DoLogic(notify)
+  local entity = self._buffInstance:Entity()
+  local element = entity:Element():GetPrimaryType()
+  local changeAnimator = self._animator[element]
+  Log.error(changeAnimator)
+  entity:BuffComponent():SetBuffValue("ChangeAnimator", changeAnimator)
 end
-
-

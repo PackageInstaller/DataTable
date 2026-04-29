@@ -1,93 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/map/ui_single_season_map_event.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISingleSeasonMapEvent", UICustomWidget)
 UISingleSeasonMapEvent = UISingleSeasonMapEvent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISingleSeasonMapEvent.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISingleSeasonMapEvent:OnShow(uiParams)
   self:InitWidget()
-  self._uiSeasonModule = (GameGlobal.GetUIModule)(SeasonModule)
-  self._seasonManager = (self._uiSeasonModule):SeasonManager()
-  self._seasonPlayerManager = (self._seasonManager):SeasonPlayerManager()
-  self._seasonPlayer = (self._seasonPlayerManager):GetPlayer()
-  self._seasonMapManager = (self._seasonManager):SeasonMapManager()
+  self._uiSeasonModule = GameGlobal.GetUIModule(SeasonModule)
+  self._seasonManager = self._uiSeasonModule:SeasonManager()
+  self._seasonPlayerManager = self._seasonManager:SeasonPlayerManager()
+  self._seasonPlayer = self._seasonPlayerManager:GetPlayer()
+  self._seasonMapManager = self._seasonManager:SeasonMapManager()
   self._bindEventData = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISingleSeasonMapEvent.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._seasonMapCfg = (Cfg.cfg_season_map)[((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonID()]
+function UISingleSeasonMapEvent:InitWidget()
+  self._seasonMapCfg = Cfg.cfg_season_map[GameGlobal.GetModule(SeasonModule):GetCurSeasonID()]
   self._rootRectTf = self:GetUIComponent("RectTransform", "Icon")
   self._iconImage = self:GetUIComponent("Image", "Icon")
-  self._leftUpAnchorPos = Vector3(((self._seasonMapCfg).LeftUpAnchorPos)[1], ((self._seasonMapCfg).LeftUpAnchorPos)[2], ((self._seasonMapCfg).LeftUpAnchorPos)[3])
-  self._rightDownAnchorpos = Vector3(((self._seasonMapCfg).RightDownAnchorPos)[1], ((self._seasonMapCfg).RightDownAnchorPos)[2], ((self._seasonMapCfg).RightDownAnchorPos)[3])
+  self._leftUpAnchorPos = Vector3(self._seasonMapCfg.LeftUpAnchorPos[1], self._seasonMapCfg.LeftUpAnchorPos[2], self._seasonMapCfg.LeftUpAnchorPos[3])
+  self._rightDownAnchorpos = Vector3(self._seasonMapCfg.RightDownAnchorPos[1], self._seasonMapCfg.RightDownAnchorPos[2], self._seasonMapCfg.RightDownAnchorPos[3])
   self._atlas = self:GetAsset("UISeasonMain.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISingleSeasonMapEvent.SetData = function(self, point, mapRect)
-  -- function num : 0_2
+function UISingleSeasonMapEvent:SetData(point, mapRect)
   if point then
     local pos = point:Position()
     self._bindEventData = point
-    local icon = (self._bindEventData):EventMapIcon()
+    local icon = self._bindEventData:EventMapIcon()
     if icon then
-      local sprite = (self._atlas):GetSprite(icon)
-      -- DECOMPILER ERROR at PC17: Confused about usage of register: R6 in 'UnsetPending'
-
+      local sprite = self._atlas:GetSprite(icon)
       if sprite then
-        (self._iconImage).sprite = sprite
-        ;
-        (self._iconImage):SetNativeSize()
+        self._iconImage.sprite = sprite
+        self._iconImage:SetNativeSize()
       end
     else
-      do
-        -- DECOMPILER ERROR at PC23: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._iconImage).sprite = nil
-        self.mapRect = mapRect
-        self:RefreshMapIcon(pos)
-      end
+      self._iconImage.sprite = nil
     end
+    self.mapRect = mapRect
+    self:RefreshMapIcon(pos)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISingleSeasonMapEvent.OnHide = function(self)
-  -- function num : 0_3
+function UISingleSeasonMapEvent:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISingleSeasonMapEvent.Update = function(self, dt)
-  -- function num : 0_4
+function UISingleSeasonMapEvent:Update(dt)
   if self._seasonPlayer == nil or self._bindEventData == nil then
-    return 
+    return
   end
-  if not (self._bindEventData):IsShow() then
-    ((self._rootRectTf).gameObject):SetActive(false)
-    return 
+  if not self._bindEventData:IsShow() then
+    self._rootRectTf.gameObject:SetActive(false)
+    return
   else
-    ;
-    ((self._rootRectTf).gameObject):SetActive(true)
+    self._rootRectTf.gameObject:SetActive(true)
   end
-  self:RefreshMapIcon((self._bindEventData):Position())
+  self:RefreshMapIcon(self._bindEventData:Position())
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISingleSeasonMapEvent.RefreshMapIcon = function(self, pos)
-  -- function num : 0_5 , upvalues : _ENV
-  local tf = (self._seasonPlayer):Transform()
+function UISingleSeasonMapEvent:RefreshMapIcon(pos)
+  local tf = self._seasonPlayer:Transform()
   local singlePos = pos
   local leftUpPos = self._leftUpAnchorPos
   local rightDownPos = self._rightDownAnchorpos
@@ -96,14 +65,9 @@ UISingleSeasonMapEvent.RefreshMapIcon = function(self, pos)
   local curPosDelta = rightDownPos - singlePos
   local percentX = curPosDelta.x / mapPosDelta.x
   local percentY = curPosDelta.z / mapPosDelta.z
-  local leftUpUIPos = Vector2(((self.mapRect).anchoredPosition).x - ((self.mapRect).sizeDelta).x, ((self.mapRect).anchoredPosition).y - ((self.mapRect).sizeDelta).y)
-  local rightDownUIPos = (self.mapRect).anchoredPosition
+  local leftUpUIPos = Vector2(self.mapRect.anchoredPosition.x - self.mapRect.sizeDelta.x, self.mapRect.anchoredPosition.y - self.mapRect.sizeDelta.y)
+  local rightDownUIPos = self.mapRect.anchoredPosition
   local anchoredPos = rightDownUIPos - leftUpUIPos
   anchoredPos = rightDownUIPos - Vector2(anchoredPos.x * percentX, -anchoredPos.y * percentY)
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R14 in 'UnsetPending'
-
-  ;
-  (self._rootRectTf).anchoredPosition = anchoredPos
+  self._rootRectTf.anchoredPosition = anchoredPos
 end
-
-

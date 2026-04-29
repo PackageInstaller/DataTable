@@ -1,37 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_normal_skill_with_element_and_chain_angle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetNormalSkillWithElementAndChainAngle", BuffLogicBase)
 BuffLogicSetNormalSkillWithElementAndChainAngle = BuffLogicSetNormalSkillWithElementAndChainAngle
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetNormalSkillWithElementAndChainAngle.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetNormalSkillWithElementAndChainAngle:Constructor(buffInstance, logicParam)
   self._element = logicParam.element
   self._skillList = logicParam.skillList
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetNormalSkillWithElementAndChainAngle.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicSetNormalSkillWithElementAndChainAngle:DoLogic(notify)
   if not notify.GetChainPathType then
-    return 
+    return
   end
-  local setSkillValue, setOrderValue, setBeforeMoveValue = nil, nil, nil
+  local setSkillValue, setOrderValue, setBeforeMoveValue
   local chainElement = notify:GetChainPathType()
   if chainElement == self._element then
     setSkillValue = self._skillList
     setOrderValue = 1
     setBeforeMoveValue = true
   end
-  local e = (self._buffInstance):Entity()
+  local e = self._buffInstance:Entity()
   local buffCmpt = e:BuffComponent()
   buffCmpt:SetBuffValue("ChangeNormalSkillIDWithChainPathRightAngle", setSkillValue)
   buffCmpt:SetBuffValue("NormalSkillBeforeMove", setBeforeMoveValue)
   buffCmpt:SetBuffValue("PetRoundTeamOrder_" .. SkillType.Normal, setOrderValue)
 end
-
-

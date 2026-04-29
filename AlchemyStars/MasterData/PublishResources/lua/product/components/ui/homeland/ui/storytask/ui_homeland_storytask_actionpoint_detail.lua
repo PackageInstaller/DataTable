@@ -1,53 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/storytask/ui_homeland_storytask_actionpoint_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandStoryTaskActionPointDetail", UIController)
 UIHomelandStoryTaskActionPointDetail = UIHomelandStoryTaskActionPointDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandStoryTaskActionPointDetail.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandStoryTaskActionPointDetail:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskActionPointDetail.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIHomelandStoryTaskActionPointDetail:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskActionPointDetail.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIHomelandStoryTaskActionPointDetail:OnShow(uiParams)
   self:_GetComponents()
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskActionPointDetail._GetComponents = function(self)
-  -- function num : 0_3
+function UIHomelandStoryTaskActionPointDetail:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskActionPointDetail.OnHide = function(self)
-  -- function num : 0_4
+function UIHomelandStoryTaskActionPointDetail:OnHide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskActionPointDetail.Refresh = function(self)
-  -- function num : 0_5
+function UIHomelandStoryTaskActionPointDetail:Refresh()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskActionPointDetail.CloseBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIHomelandStoryTaskActionPointDetail:CloseBtnOnClick(go)
   self:CloseDialog()
 end
-
-

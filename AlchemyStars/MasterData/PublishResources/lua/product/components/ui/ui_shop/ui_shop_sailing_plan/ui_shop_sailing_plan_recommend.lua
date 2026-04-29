@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_sailing_plan/ui_shop_sailing_plan_recommend.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopSailingPlanRecommend", UICustomWidget)
 UIShopSailingPlanRecommend = UIShopSailingPlanRecommend
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopSailingPlanRecommend.Constructor = function(self)
-  -- function num : 0_0
+function UIShopSailingPlanRecommend:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanRecommend.BgOnClick = function(self, go)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OpenShop, ShopMainTabType.SailingPlan)
+function UIShopSailingPlanRecommend:BgOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OpenShop, ShopMainTabType.SailingPlan)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanRecommend.SetData = function(self, uishopcontroller)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopSailingPlanRecommend:SetData(uishopcontroller)
   self._uishopcontroller = uishopcontroller
   self._uiShopSailingPlanHelper = UIShopSailingPlanHelper:New()
-  local active = (self._uiShopSailingPlanHelper):CheckActive()
+  local active = self._uiShopSailingPlanHelper:CheckActive()
   local go = self:GetGameObject()
   go:SetActive(active)
   if active then
@@ -33,10 +20,7 @@ UIShopSailingPlanRecommend.SetData = function(self, uishopcontroller)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanRecommend.GetComponents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIShopSailingPlanRecommend:GetComponents()
   self._priceTex = self:GetUIComponent("UILocalizationText", "price")
   self._bgImg = self:GetUIComponent("Image", "Bg")
   self._atlas = self:GetAsset("SailingPlan.spriteatlas", LoadType.SpriteAtlas)
@@ -45,19 +29,15 @@ UIShopSailingPlanRecommend.GetComponents = function(self)
   self._priceTexGo = self:GetGameObject("price")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanRecommend.OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._sailingPlanLocalProcess = (self._uishopcontroller):GetSailingPlanLocalProgress()
-  self._buyInfo = (self._sailingPlanLocalProcess):GetComponentInfo(ECCampaignInlandSailingComponentID.BUY_GIFT)
-  local gift = ((self._buyInfo).m_campaign_gift_list)[1]
+function UIShopSailingPlanRecommend:OnValue()
+  self._sailingPlanLocalProcess = self._uishopcontroller:GetSailingPlanLocalProgress()
+  self._buyInfo = self._sailingPlanLocalProcess:GetComponentInfo(ECCampaignInlandSailingComponentID.BUY_GIFT)
+  local gift = self._buyInfo.m_campaign_gift_list[1]
   local price = gift.m_now_price
-  local priceTex = (math.floor)(price * 0.1)
-  ;
-  (self._priceTex):SetText((RechargeShopItem.RemoveDot00)(priceTex))
-  self._buyState = (self._buyInfo).m_buy_state
-  local bgSpriteName, tex, posx, priceActive = nil, nil, nil, nil
+  local priceTex = math.floor(price * 0.1)
+  self._priceTex:SetText(RechargeShopItem.RemoveDot00(priceTex))
+  self._buyState = self._buyInfo.m_buy_state
+  local bgSpriteName, tex, posx, priceActive
   if self._buyState ~= BuyGiftStateType.EBGST_INIT then
     bgSpriteName = "shop_qh_lh06"
     tex = "str_shop_sailing_plan17"
@@ -69,19 +49,9 @@ UIShopSailingPlanRecommend.OnValue = function(self)
     posx = -81.5
     priceActive = true
   end
-  ;
-  (self._priceTexGo):SetActive(priceActive)
-  ;
-  (self._tex):SetText((StringTable.Get)(tex))
-  local sp = (self._atlas):GetSprite(bgSpriteName)
-  -- DECOMPILER ERROR at PC59: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self._bgImg).sprite = sp
-  -- DECOMPILER ERROR at PC65: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self._texTr).anchoredPosition = Vector2(posx, 1.3)
+  self._priceTexGo:SetActive(priceActive)
+  self._tex:SetText(StringTable.Get(tex))
+  local sp = self._atlas:GetSprite(bgSpriteName)
+  self._bgImg.sprite = sp
+  self._texTr.anchoredPosition = Vector2(posx, 1.3)
 end
-
-

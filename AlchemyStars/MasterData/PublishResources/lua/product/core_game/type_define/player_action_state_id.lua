@@ -1,8 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/player_action_state_id.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-PlayerActionStateID = {Idle = 0, Move = 1, NormalAttack = 2, ChainSkillAttack = 3, PlayHitBack = 4}
+PlayerActionStateID = {
+  Idle = 0,
+  Move = 1,
+  NormalAttack = 2,
+  ChainSkillAttack = 3,
+  PlayHitBack = 4
+}
 _enum("PlayerActionStateID", PlayerActionStateID)
-

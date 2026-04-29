@@ -1,163 +1,91 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_norm/ui_map_node_item_next_chapter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMapNodeItemNextChapter", UIMapNodeItemBase)
 UIMapNodeItemNextChapter = UIMapNodeItemNextChapter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMapNodeItemNextChapter.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((UIMapNodeItemNextChapter.super).Constructor)(self)
+function UIMapNodeItemNextChapter:Constructor()
+  UIMapNodeItemNextChapter.super.Constructor(self)
   self._module = self:GetModule(MissionModule)
-  self._data = (self._module):GetDiscoveryData()
+  self._data = self._module:GetDiscoveryData()
   self._nextChapter = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemNextChapter.OnHide = function(self)
-  -- function num : 0_1
+function UIMapNodeItemNextChapter:OnHide()
   self._nextChapter = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemNextChapter.GetUIComponentStar = function(self)
-  -- function num : 0_2
+function UIMapNodeItemNextChapter:GetUIComponentStar()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemNextChapter.Init = function(self, nextChapterData, notPlayAnimation)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMapNodeItemNextChapter:Init(nextChapterData, notPlayAnimation)
   self._nextChapter = nextChapterData
   self._notPlayAnimation = notPlayAnimation
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMax = self._vec0_5
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMin = self._vec0_5
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).sizeDelta = Vector2(100, 100)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = (self._nextChapter).pos
-  ;
-  (self.eff):SetActive(false)
-  local chapter = (self._data):GetChapterByChapterId((self._nextChapter).chapterId)
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not chapter.name then
-    (self.txtTip).text = not chapter or not chapter:State() or ""
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.txtTip).text = (StringTable.Get)("str_discovery_coming_soon")
+  self._rectTransform.anchorMax = self._vec0_5
+  self._rectTransform.anchorMin = self._vec0_5
+  self._rectTransform.sizeDelta = Vector2(100, 100)
+  self._rectTransform.anchoredPosition = self._nextChapter.pos
+  self.eff:SetActive(false)
+  local chapter = self._data:GetChapterByChapterId(self._nextChapter.chapterId)
+  if chapter and chapter:State() then
+    self.txtTip.text = chapter.name or ""
+  else
+    self.txtTip.text = StringTable.Get("str_discovery_coming_soon")
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemNextChapter.Flush = function(self)
-  -- function num : 0_4
+function UIMapNodeItemNextChapter:Flush()
   self:FlushState()
   self:Animation()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemNextChapter.FlushState = function(self)
-  -- function num : 0_5
-  local curChapter = (self._data):GetCurPosChapter()
+function UIMapNodeItemNextChapter:FlushState()
+  local curChapter = self._data:GetCurPosChapter()
   local isComplete = curChapter:IsComplete()
-  ;
-  (self._root):SetActive(isComplete)
+  self._root:SetActive(isComplete)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemNextChapter.FlushStar = function(self)
-  -- function num : 0_6
+function UIMapNodeItemNextChapter:FlushStar()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemNextChapter.ClickItem = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local chapter = (self._data):GetChapterByChapterId((self._nextChapter).chapterId)
+function UIMapNodeItemNextChapter:ClickItem()
+  local chapter = self._data:GetChapterByChapterId(self._nextChapter.chapterId)
   if chapter and chapter:State() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryFlushChapter, (self._nextChapter).chapterId)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryFlushChapter, self._nextChapter.chapterId)
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_discovery_coming_soon_hint"))
+    ToastManager.ShowToast(StringTable.Get("str_discovery_coming_soon_hint"))
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemNextChapter.Animation = function(self)
-  -- function num : 0_8
+function UIMapNodeItemNextChapter:Animation()
   if self:IsFirstShow() then
     self:SaveIsFirstShow()
   end
   self:PlayTipAnim()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemNextChapter.Highlight = function(self, isHighlight, chapterId)
-  -- function num : 0_9
+function UIMapNodeItemNextChapter:Highlight(isHighlight, chapterId)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemNextChapter.GetTipAnimName = function(self)
-  -- function num : 0_10
+function UIMapNodeItemNextChapter:GetTipAnimName()
   return "uieff_UINormNodeNext_in"
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemNextChapter.GetTip = function(self)
-  -- function num : 0_11
+function UIMapNodeItemNextChapter:GetTip()
   if self._nextChapter then
     return self._tipRoot
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemNextChapter.IsFirstShow = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local playerPrefsKey = self:GetPstId() .. "DiscoveryNextChapterIsFirstShow" .. (self._nextChapter).chapterId
-  local isFirst = ((UnityEngine.PlayerPrefs).GetInt)(playerPrefsKey, 0)
-  do return isFirst == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIMapNodeItemNextChapter:IsFirstShow()
+  local playerPrefsKey = self:GetPstId() .. "DiscoveryNextChapterIsFirstShow" .. self._nextChapter.chapterId
+  local isFirst = UnityEngine.PlayerPrefs.GetInt(playerPrefsKey, 0)
+  return isFirst == 0
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemNextChapter.SaveIsFirstShow = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local playerPrefsKey = self:GetPstId() .. "DiscoveryNextChapterIsFirstShow" .. (self._nextChapter).chapterId
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(playerPrefsKey, 1)
+function UIMapNodeItemNextChapter:SaveIsFirstShow()
+  local playerPrefsKey = self:GetPstId() .. "DiscoveryNextChapterIsFirstShow" .. self._nextChapter.chapterId
+  UnityEngine.PlayerPrefs.SetInt(playerPrefsKey, 1)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemNextChapter.GetPstId = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIMapNodeItemNextChapter:GetPstId()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   return roleModule:GetPstId()
 end
-
-

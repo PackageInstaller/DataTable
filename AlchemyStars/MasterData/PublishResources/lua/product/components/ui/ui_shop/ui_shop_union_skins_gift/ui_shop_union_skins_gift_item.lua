@@ -1,56 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_union_skins_gift/ui_shop_union_skins_gift_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ShopUnionSkinsGiftItem", Object)
 ShopUnionSkinsGiftItem = ShopUnionSkinsGiftItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ShopUnionSkinsGiftItem.Constructor = function(self, skinData, giftData)
-  -- function num : 0_0 , upvalues : _ENV
+function ShopUnionSkinsGiftItem:Constructor(skinData, giftData)
   self._skinData = skinData
   self._giftData = giftData
   self._id = 0
   self._order = 0
   if self._skinData ~= nil then
-    self._id = (self._skinData):GetId()
-    local cfgv = (Cfg.cfg_shop_common_goods)[self._id]
+    self._id = self._skinData:GetId()
+    local cfgv = Cfg.cfg_shop_common_goods[self._id]
     if cfgv ~= nil then
       self._order = cfgv.SequenceId
     end
   end
-  do
-    if self._giftData ~= nil then
-      self._id = (self._giftData):GetId()
-      local cfgv = (Cfg.cfg_shop_giftmarket_goods)[self._id]
-      if cfgv ~= nil then
-        self._order = cfgv.SequenceId
-      end
+  if self._giftData ~= nil then
+    self._id = self._giftData:GetId()
+    local cfgv = Cfg.cfg_shop_giftmarket_goods[self._id]
+    if cfgv ~= nil then
+      self._order = cfgv.SequenceId
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopUnionSkinsGiftItem.GetId = function(self)
-  -- function num : 0_1
+function ShopUnionSkinsGiftItem:GetId()
   return self._id
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopUnionSkinsGiftItem.GetOrder = function(self)
-  -- function num : 0_2
+function ShopUnionSkinsGiftItem:GetOrder()
   return self._order
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopUnionSkinsGiftItem.IsResident = function(self)
-  -- function num : 0_3
+function ShopUnionSkinsGiftItem:IsResident()
   if self._skinData ~= nil then
-    return (self._skinData):IsResident()
+    return self._skinData:IsResident()
   end
   if self._giftData ~= nil then
     return false
@@ -58,12 +40,9 @@ ShopUnionSkinsGiftItem.IsResident = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopUnionSkinsGiftItem.HasSoldOut = function(self)
-  -- function num : 0_4
+function ShopUnionSkinsGiftItem:HasSoldOut()
   if self._skinData ~= nil then
-    return (self._skinData):HasSoldOut()
+    return self._skinData:HasSoldOut()
   end
   if self._giftData ~= nil then
     return false
@@ -71,50 +50,36 @@ ShopUnionSkinsGiftItem.HasSoldOut = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopUnionSkinsGiftItem.GetTabID = function(self)
-  -- function num : 0_5
+function ShopUnionSkinsGiftItem:GetTabID()
   if self._skinData ~= nil then
-    return (self._skinData):GetTabID()
+    return self._skinData:GetTabID()
   end
-  do
-    if self._giftData ~= nil then
-      local isShow, idTab = (self._giftData):IsShowInSkinsTab()
-      return idTab
-    end
-    return nil
+  if self._giftData ~= nil then
+    local isShow, idTab = self._giftData:IsShowInSkinsTab()
+    return idTab
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopUnionSkinsGiftItem.GetSkinData = function(self)
-  -- function num : 0_6
+function ShopUnionSkinsGiftItem:GetSkinData()
   return self._skinData
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopUnionSkinsGiftItem.GetGiftData = function(self)
-  -- function num : 0_7
+function ShopUnionSkinsGiftItem:GetGiftData()
   return self._giftData
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopUnionSkinsGiftItem.GetSkinID = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function ShopUnionSkinsGiftItem:GetSkinID()
   if self._skinData then
-    return (self._skinData)._skinId
+    return self._skinData._skinId
   else
     if self._giftData then
-      local awards = (self._giftData):GetAwardsImmediately()
+      local awards = self._giftData:GetAwardsImmediately()
       if awards and next(awards) then
-        for index,value in ipairs(awards) do
+        for index, value in ipairs(awards) do
           local tmpid = value._templateId
-          local idx = (string.find)(tostring(tmpid), "40")
-          local isSkin = not idx or idx == 1
+          local idx = string.find(tostring(tmpid), "40")
+          local isSkin = idx and idx == 1
           if isSkin then
             return tmpid - 4000000
           end
@@ -123,14 +88,10 @@ ShopUnionSkinsGiftItem.GetSkinID = function(self)
     end
     return nil
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopUnionSkinsGiftItem.IsNew = function(self, newList)
-  -- function num : 0_9 , upvalues : _ENV
-  for key,value in pairs(newList) do
+function ShopUnionSkinsGiftItem:IsNew(newList)
+  for key, value in pairs(newList) do
     if value == self:GetId() then
       return true
     end
@@ -140,102 +101,70 @@ end
 
 _class("UIShopUnionSkinsGiftItem", UICustomWidget)
 UIShopUnionSkinsGiftItem = UIShopUnionSkinsGiftItem
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopUnionSkinsGiftItem.Constructor = function(self)
-  -- function num : 0_10
+function UIShopUnionSkinsGiftItem:Constructor()
   self._dataItem = nil
   self._uiSkinItem = nil
   self._uiGiftItem = nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopUnionSkinsGiftItem.OnShow = function(self, uiParams)
-  -- function num : 0_11
+function UIShopUnionSkinsGiftItem:OnShow(uiParams)
   self._UIShopSkinsItem = self:GetUIComponent("UISelectObjectPath", "UIShopSkinsItem")
   self._UIShopGiftPackItem = self:GetUIComponent("UISelectObjectPath", "UIShopGiftPackItem")
-  self.animation = (self:GetGameObject()):GetComponent("Animation")
+  self.animation = self:GetGameObject():GetComponent("Animation")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopUnionSkinsGiftItem.OnHide = function(self)
-  -- function num : 0_12
+function UIShopUnionSkinsGiftItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopUnionSkinsGiftItem.Flush = function(self, dataItem, fnSkinFlush, fnGiftFlush)
-  -- function num : 0_13
+function UIShopUnionSkinsGiftItem:Flush(dataItem, fnSkinFlush, fnGiftFlush)
   self._dataItem = dataItem
-  local dataSkin = (self._dataItem):GetSkinData()
-  local dataGift = (self._dataItem):GetGiftData()
+  local dataSkin = self._dataItem:GetSkinData()
+  local dataGift = self._dataItem:GetGiftData()
   if self._uiSkinItem ~= nil then
-    ((self._uiSkinItem):GetGameObject()):SetActive(false)
+    self._uiSkinItem:GetGameObject():SetActive(false)
   end
   if self._uiGiftItem ~= nil then
-    ((self._uiGiftItem):GetGameObject()):SetActive(false)
+    self._uiGiftItem:GetGameObject():SetActive(false)
   end
   if dataSkin ~= nil and fnSkinFlush ~= nil then
-    self._uiSkinItem = (self._UIShopSkinsItem):SpawnObject("UIShopSkinsItem")
-    ;
-    ((self._uiSkinItem):GetGameObject()).name = 0
-    ;
-    ((self._uiSkinItem):GetGameObject()):SetActive(true)
+    self._uiSkinItem = self._UIShopSkinsItem:SpawnObject("UIShopSkinsItem")
+    self._uiSkinItem:GetGameObject().name = 0
+    self._uiSkinItem:GetGameObject():SetActive(true)
     fnSkinFlush(self._uiSkinItem)
   end
   if dataGift ~= nil and fnGiftFlush ~= nil then
-    self._uiGiftItem = (self._UIShopGiftPackItem):SpawnObject("UIShopGiftPackItemContainer")
-    ;
-    ((self._uiGiftItem):GetGameObject()).name = 0
-    ;
-    ((self._uiGiftItem):GetGameObject()):SetActive(true)
+    self._uiGiftItem = self._UIShopGiftPackItem:SpawnObject("UIShopGiftPackItemContainer")
+    self._uiGiftItem:GetGameObject().name = 0
+    self._uiGiftItem:GetGameObject():SetActive(true)
     fnGiftFlush(self._uiGiftItem)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopUnionSkinsGiftItem.JumpItem = function(self)
-  -- function num : 0_14
-  if (self._dataItem):GetSkinData() ~= nil and self:GetUISkinItem() ~= nil then
-    (self:GetUISkinItem()):BgOnClick()
+function UIShopUnionSkinsGiftItem:JumpItem()
+  if self._dataItem:GetSkinData() ~= nil and self:GetUISkinItem() ~= nil then
+    self:GetUISkinItem():BgOnClick()
   end
-  if (self._dataItem):GetGiftData() ~= nil and self:GetUIGiftItem() ~= nil then
-    (self:GetUIGiftItem()):OpenUIShopGiftPackDetail()
+  if self._dataItem:GetGiftData() ~= nil and self:GetUIGiftItem() ~= nil then
+    self:GetUIGiftItem():OpenUIShopGiftPackDetail()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopUnionSkinsGiftItem.GetDataItem = function(self)
-  -- function num : 0_15
+function UIShopUnionSkinsGiftItem:GetDataItem()
   return self._dataItem
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopUnionSkinsGiftItem.GetUISkinItem = function(self)
-  -- function num : 0_16
+function UIShopUnionSkinsGiftItem:GetUISkinItem()
   return self._uiSkinItem
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopUnionSkinsGiftItem.GetUIGiftItem = function(self)
-  -- function num : 0_17
+function UIShopUnionSkinsGiftItem:GetUIGiftItem()
   return self._uiGiftItem
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopUnionSkinsGiftItem.PlayInAnimation = function(self)
-  -- function num : 0_18
-  if ((self.animation).gameObject).activeInHierarchy then
-    (self.animation):Play("uieff_UIShopUnionSkinsGiftItem_In")
+function UIShopUnionSkinsGiftItem:PlayInAnimation()
+  if self.animation.gameObject.activeInHierarchy then
+    self.animation:Play("uieff_UIShopUnionSkinsGiftItem_In")
   end
   return 1040
 end
-
-

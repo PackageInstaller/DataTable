@@ -1,47 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_deer_grid_range_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayDeerGridRangeEffectInstruction", BaseInstruction)
 PlayDeerGridRangeEffectInstruction = PlayDeerGridRangeEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayDeerGridRangeEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayDeerGridRangeEffectInstruction:Constructor(paramList)
   self._effectID = 2926
   local strIsRotate = paramList.isRotate
-  if tonumber(strIsRotate) ~= 1 then
-    self._isRotate = not strIsRotate
+  if strIsRotate then
+    self._isRotate = tonumber(strIsRotate) == 1
+  else
     self._isRotate = false
-    local strStep = paramList.step
-    if strStep then
-      self._step = tonumber(strStep)
-    else
-      self._step = 1
-    end
-    local strOffset = paramList.offset
-    if strOffset then
-      local arr = (string.split)(strOffset, "|")
-      self._offset = Vector2(tonumber(arr[1]), tonumber(arr[2]))
-    else
-      self._offset = Vector2.zero
-    end
-    local randomRotate = paramList.randomRotate
-    if randomRotate then
-      self._randomRotate = tonumber(randomRotate)
-    else
-      self._randomRotate = nil
-    end
-    -- DECOMPILER ERROR: 9 unprocessed JMP targets
+  end
+  local strStep = paramList.step
+  if strStep then
+    self._step = tonumber(strStep)
+  else
+    self._step = 1
+  end
+  local strOffset = paramList.offset
+  if strOffset then
+    local arr = string.split(strOffset, "|")
+    self._offset = Vector2(tonumber(arr[1]), tonumber(arr[2]))
+  else
+    self._offset = Vector2.zero
+  end
+  local randomRotate = paramList.randomRotate
+  if randomRotate then
+    self._randomRotate = tonumber(randomRotate)
+  else
+    self._randomRotate = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDeerGridRangeEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayDeerGridRangeEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local scopeGridRange = phaseContext:GetScopeGridRange()
   if not scopeGridRange then
     return InstructionConst.PhaseEnd
@@ -52,51 +42,31 @@ PlayDeerGridRangeEffectInstruction.DoInstruction = function(self, TT, casterEnti
   end
   local curScopeGridRangeIndex = phaseContext:GetCurScopeGridRangeIndex()
   if maxScopeRangeCount < curScopeGridRangeIndex then
-    return 
+    return
   end
-  local casterPos = (casterEntity:GridLocation()):GetGridPos()
+  local casterPos = casterEntity:GridLocation():GetGridPos()
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
   local boardServiceRender = world:GetService("BoardRender")
   local worldPos = boardServiceRender:GridPos2RenderPos(casterEntity:GetGridPosition())
-  for _,range in pairs(scopeGridRange) do
+  for _, range in pairs(scopeGridRange) do
     if range then
       local posList = range[curScopeGridRangeIndex]
       if posList then
-        local len = (table.count)(posList)
+        local len = table.count(posList)
         for i = 1, len, self._step do
           local pos = posList[i]
           local targetPos = pos + self._offset
           if self._isRotate then
             local effectEntity = effectService:CreateWorldPositionDirectionEffect(self._effectID, targetPos, targetPos - casterPos)
             self:SatisfyShader(effectEntity, worldPos)
+          elseif self._randomRotate then
+            local randomPos = Vector2(math.random(0, self._randomRotate), math.random(0, self._randomRotate))
+            local effectEntity = effectService:CreateWorldPositionDirectionEffect(self._effectID, targetPos, randomPos)
+            self:SatisfyShader(effectEntity, worldPos)
           else
-            do
-              if self._randomRotate then
-                local randomPos = Vector2((math.random)(0, self._randomRotate), (math.random)(0, self._randomRotate))
-                local effectEntity = effectService:CreateWorldPositionDirectionEffect(self._effectID, targetPos, randomPos)
-                self:SatisfyShader(effectEntity, worldPos)
-              else
-                do
-                  do
-                    local effectEntity = effectService:CreateWorldPositionEffect(self._effectID, targetPos)
-                    self:SatisfyShader(effectEntity, worldPos)
-                    -- DECOMPILER ERROR at PC101: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC101: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC101: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC101: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC101: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC101: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
-                end
-              end
-            end
+            local effectEntity = effectService:CreateWorldPositionEffect(self._effectID, targetPos)
+            self:SatisfyShader(effectEntity, worldPos)
           end
         end
       end
@@ -104,30 +74,24 @@ PlayDeerGridRangeEffectInstruction.DoInstruction = function(self, TT, casterEnti
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDeerGridRangeEffectInstruction.SatisfyShader = function(self, effectEntity, worldPos)
-  -- function num : 0_2 , upvalues : _ENV
-  local csgo = (effectEntity:View()):GetGameObject()
-  local grass = (GameObjectHelper.FindChild)(csgo.transform, "caodi")
-  local csRenderer = (grass.gameObject):GetComponent(typeof(UnityEngine.MeshRenderer))
+function PlayDeerGridRangeEffectInstruction:SatisfyShader(effectEntity, worldPos)
+  local csgo = effectEntity:View():GetGameObject()
+  local grass = GameObjectHelper.FindChild(csgo.transform, "caodi")
+  local csRenderer = grass.gameObject:GetComponent(typeof(UnityEngine.MeshRenderer))
   local v4 = Vector4.zero
   v4.x = worldPos.x
   v4.y = worldPos.y
   v4.z = worldPos.z
-  ;
-  (csRenderer.sharedMaterial):SetVector("_Location_xyz", v4)
+  csRenderer.sharedMaterial:SetVector("_Location_xyz", v4)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDeerGridRangeEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayDeerGridRangeEffectInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 10})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      10
+    })
   end
   return t
 end
-
-

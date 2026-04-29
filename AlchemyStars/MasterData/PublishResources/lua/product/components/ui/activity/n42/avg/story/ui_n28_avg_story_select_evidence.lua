@@ -1,87 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/story/ui_n28_avg_story_select_evidence.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGStorySelectEvidence", UICustomWidget)
 UIN28AVGStorySelectEvidence = UIN28AVGStorySelectEvidence
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGStorySelectEvidence.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN28AVGStorySelectEvidence:OnShow()
   self._selectObj = self:GetGameObject("select")
   self._anim = self:GetUIComponent("Animation", "anim")
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self:AttachEvent(GameEventType.AVGSelectEvidenceItem, self.OnSelect)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStorySelectEvidence.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN28AVGStorySelectEvidence:OnHide()
   self:DetachEvent(GameEventType.AVGSelectEvidenceItem, self.OnSelect)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStorySelectEvidence.SetData = function(self, evidence)
-  -- function num : 0_2
+function UIN28AVGStorySelectEvidence:SetData(evidence)
   self._id = evidence.ID
-  ;
-  (self._icon):LoadImage(evidence.EvidenceIcon)
+  self._icon:LoadImage(evidence.EvidenceIcon)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStorySelectEvidence.BtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AVGSelectEvidenceItem, self._id)
+function UIN28AVGStorySelectEvidence:BtnOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AVGSelectEvidenceItem, self._id)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStorySelectEvidence.OnSelect = function(self, selectID, noAnim)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN28AVGStorySelectEvidence:OnSelect(selectID, noAnim)
   if noAnim then
     if selectID ~= self._id then
-      (self._selectObj):SetActive(false)
+      self._selectObj:SetActive(false)
     end
     self:Lock("UIN28AVGStoryBookEvidenceItem_OnSelectNoAnim")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self, selectID
-    YIELD(TT, 300)
-    self:UnLock("UIN28AVGStoryBookEvidenceItem_OnSelectNoAnim")
-    self:PlayAnim(selectID)
-  end
-, self)
+    GameGlobal.TaskManager():StartTask(function(TT)
+      YIELD(TT, 300)
+      self:UnLock("UIN28AVGStoryBookEvidenceItem_OnSelectNoAnim")
+      self:PlayAnim(selectID)
+    end, self)
   else
     self:PlayAnim(selectID, noAnim)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStorySelectEvidence.PlayAnim = function(self, selectID, noAnim)
-  -- function num : 0_5 , upvalues : _ENV
-  if selectID == self._id and not (self._selectObj).activeSelf then
-    (self._selectObj):SetActive(true)
-    ;
-    (self._anim):Play("uieff_UIN28AVGStorySelectEvidence_select_in")
-  end
-  if (self._selectObj).activeSelf then
-    (self._anim):Play("uieff_UIN28AVGStorySelectEvidence_select_out")
+function UIN28AVGStorySelectEvidence:PlayAnim(selectID, noAnim)
+  if selectID == self._id then
+    if not self._selectObj.activeSelf then
+      self._selectObj:SetActive(true)
+      self._anim:Play("uieff_UIN28AVGStorySelectEvidence_select_in")
+    end
+  elseif self._selectObj.activeSelf then
+    self._anim:Play("uieff_UIN28AVGStorySelectEvidence_select_out")
     self:Lock("UIN28AVGStoryBookEvidenceItem_OnSelect")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self
-    YIELD(TT, 300)
-    ;
-    (self._selectObj):SetActive(false)
-    self:UnLock("UIN28AVGStoryBookEvidenceItem_OnSelect")
-  end
-, self)
+    GameGlobal.TaskManager():StartTask(function(TT)
+      YIELD(TT, 300)
+      self._selectObj:SetActive(false)
+      self:UnLock("UIN28AVGStoryBookEvidenceItem_OnSelect")
+    end, self)
   end
 end
-
-

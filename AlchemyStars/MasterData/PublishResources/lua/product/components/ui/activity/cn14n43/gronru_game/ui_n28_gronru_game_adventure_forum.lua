@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/gronru_game/ui_n28_gronru_game_adventure_forum.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28GronruGameAdventureForum", UICustomWidget)
 UIN28GronruGameAdventureForum = UIN28GronruGameAdventureForum
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28GronruGameAdventureForum.Constructor = function(self)
-  -- function num : 0_0
+function UIN28GronruGameAdventureForum:Constructor()
   self._parent = nil
   self._cfg = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventureForum.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN28GronruGameAdventureForum:OnShow(uiParams)
   self._uiShort = self:GetUIComponent("RectTransform", "uiShort")
   self._uiLong = self:GetUIComponent("RectTransform", "uiLong")
   self._uiAgree = self:GetUIComponent("RectTransform", "uiAgree")
@@ -26,51 +16,30 @@ UIN28GronruGameAdventureForum.OnShow = function(self, uiParams)
   self._txtPublisherThumb = self:GetUIComponent("UILocalizationText", "txtPublisherThumb")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventureForum.OnHide = function(self)
-  -- function num : 0_2
+function UIN28GronruGameAdventureForum:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventureForum.BtnPreviewOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._parent):OnForumPreview(self._cfg)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BounceTabExpand)
+function UIN28GronruGameAdventureForum:BtnPreviewOnClick(go)
+  self._parent:OnForumPreview(self._cfg)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BounceTabExpand)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventureForum.Flush = function(self, parent, cfg)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN28GronruGameAdventureForum:Flush(parent, cfg)
   self._parent = parent
   self._cfg = cfg
-  if (self._cfg).LayoutType == UIN28GronruPlatformType.Forum_Layout_Short then
-    self:ResetCellSize((self._uiShort).sizeDelta)
-  else
-    if (self._cfg).LayoutType == UIN28GronruPlatformType.Forum_Layout_Long then
-      self:ResetCellSize((self._uiLong).sizeDelta)
-    end
+  if self._cfg.LayoutType == UIN28GronruPlatformType.Forum_Layout_Short then
+    self:ResetCellSize(self._uiShort.sizeDelta)
+  elseif self._cfg.LayoutType == UIN28GronruPlatformType.Forum_Layout_Long then
+    self:ResetCellSize(self._uiLong.sizeDelta)
   end
-  ;
-  ((self._uiAgree).gameObject):SetActive((self._cfg).CommentType == UIN28GronruPlatformType.Forum_Comment_Agree)
-  ;
-  ((self._uiDisagreee).gameObject):SetActive((self._cfg).CommentType == UIN28GronruPlatformType.Forum_Comment_Disagree)
-  ;
-  (self._txtHour):SetText((StringTable.Get)((self._cfg).GameDuration))
-  ;
-  (self._txtPublisher):SetText((StringTable.Get)((self._cfg).Publisher))
-  ;
-  (self._txtPublisherThumb):SetText((StringTable.Get)((self._cfg).Name))
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._uiAgree.gameObject:SetActive(self._cfg.CommentType == UIN28GronruPlatformType.Forum_Comment_Agree)
+  self._uiDisagreee.gameObject:SetActive(self._cfg.CommentType == UIN28GronruPlatformType.Forum_Comment_Disagree)
+  self._txtHour:SetText(StringTable.Get(self._cfg.GameDuration))
+  self._txtPublisher:SetText(StringTable.Get(self._cfg.Publisher))
+  self._txtPublisherThumb:SetText(StringTable.Get(self._cfg.Name))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventureForum.ResetCellSize = function(self, cellSize)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN28GronruGameAdventureForum:ResetCellSize(cellSize)
   local view = self:View()
   local rt = view.transform
   rt.pivot = Vector2.one * 0.5
@@ -81,27 +50,17 @@ UIN28GronruGameAdventureForum.ResetCellSize = function(self, cellSize)
   rt.anchoredPosition = Vector2.zero
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventureForum.Size = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self._cfg).LayoutType == UIN28GronruPlatformType.Forum_Layout_Short then
-    return (self._uiShort).sizeDelta
-  else
-    if (self._cfg).LayoutType == UIN28GronruPlatformType.Forum_Layout_Long then
-      return (self._uiLong).sizeDelta
-    end
+function UIN28GronruGameAdventureForum:Size()
+  if self._cfg.LayoutType == UIN28GronruPlatformType.Forum_Layout_Short then
+    return self._uiShort.sizeDelta
+  elseif self._cfg.LayoutType == UIN28GronruPlatformType.Forum_Layout_Long then
+    return self._uiLong.sizeDelta
   end
-  local rt = (self:View()).transform
+  local rt = self:View().transform
   return rt.sizeDelta
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventureForum.SetPos = function(self, x, y)
-  -- function num : 0_7 , upvalues : _ENV
-  local rt = (self:View()).transform
+function UIN28GronruGameAdventureForum:SetPos(x, y)
+  local rt = self:View().transform
   rt.anchoredPosition = Vector2(x, y)
 end
-
-

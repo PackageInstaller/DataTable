@@ -1,17 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/role/1501571/cfg_skill_view_21015711.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7, PhasePosDir = 8}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7,
+  PhasePosDir = 8
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterAnimation,animName = AtkChain; PlayCasterBindEffect,effectID=3694; PlayCasterBindEffect,effectID=3695; PlayCasterBindEffect,effectID=3696; PlayCameraEffect,effectID=3697; PlayAudio,audioID = 2480,audioType=1; Wait,waitTime=1000; PlaySkillAttackRange,showTime=600,isEffectRange=0; Wait,waitTime=2000; "}
-}
-, 
-{2, 2, 0, 1, 1, 1700, 
-{" DataSelectDamage,damageIndex = 1,damageStageIndex=1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=3698,turnToTarget=1,deathClear=0,label=doAgain; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; Wait,waitTime=1200; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName = AtkChain; PlayCasterBindEffect,effectID=3694; PlayCasterBindEffect,effectID=3695; PlayCasterBindEffect,effectID=3696; PlayCameraEffect,effectID=3697; PlayAudio,audioID = 2480,audioType=1; Wait,waitTime=1000; PlaySkillAttackRange,showTime=600,isEffectRange=0; Wait,waitTime=2000; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    1,
+    1700,
+    {
+      " DataSelectDamage,damageIndex = 1,damageStageIndex=1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=3698,turnToTarget=1,deathClear=0,label=doAgain; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; Wait,waitTime=1200; "
+    }
+  }
 }
 return config, "ID", key
-

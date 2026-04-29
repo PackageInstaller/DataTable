@@ -1,101 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/ui_season_quest_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonQuestController", UIController)
 UISeasonQuestController = UISeasonQuestController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonQuestController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._seasonModule = (GameGlobal.GetModule)(SeasonModule)
-  local reqRes = (self._seasonModule):ForceRequestCurSeasonData(TT)
+function UISeasonQuestController:LoadDataOnEnter(TT, res, uiParams)
+  self._seasonModule = GameGlobal.GetModule(SeasonModule)
+  local reqRes = self._seasonModule:ForceRequestCurSeasonData(TT)
   if not reqRes:GetSucc() then
-    (self._seasonModule):CheckErrorCode(reqRes:GetResult(), -1)
+    self._seasonModule:CheckErrorCode(reqRes:GetResult(), -1)
     res:SetSucc(false)
-    return 
+    return
   end
-  local component = (self._seasonModule):GetCurSeasonQuestComponent()
-  if component then
-    local isOpen = component:ComponentIsOpen()
-  end
+  local component = self._seasonModule:GetCurSeasonQuestComponent()
+  local isOpen = component and component:ComponentIsOpen()
   if not isOpen then
     res:SetSucc(false)
-    return 
+    return
   end
-  self._seasonId = (self._seasonModule):GetCurSeasonID()
+  self._seasonId = self._seasonModule:GetCurSeasonID()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonQuestController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonQuestController:OnShow(uiParams)
   self:_SetCommonTopButton()
-  local className, prefabName = (UISeasonHelper.GetCurSeasonQuestContent)()
-  if not (string.isnullorempty)(className) then
-    local closeFunc = function()
-    -- function num : 0_1_0 , upvalues : self
-    self:CloseDialog()
-  end
-
-    local obj = (UIWidgetHelper.SpawnObject)(self, "_pool", className, prefabName)
-    obj:SetData({ownerName = self:GetName(), closeCallback = closeFunc})
+  local className, prefabName = UISeasonHelper.GetCurSeasonQuestContent()
+  if not string.isnullorempty(className) then
+    local function closeFunc()
+      self:CloseDialog()
+    end
+    
+    local obj = UIWidgetHelper.SpawnObject(self, "_pool", className, prefabName)
+    obj:SetData({
+      ownerName = self:GetName(),
+      closeCallback = closeFunc
+    })
     self._content = obj
   end
-  do
-    self:AddListener()
-  end
+  self:AddListener()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonQuestController.OnHide = function(self)
-  -- function num : 0_2
+function UISeasonQuestController:OnHide()
   self:DetachListener()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonQuestController._SetCommonTopButton = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_backBtns", "UICommonTopButton")
+function UISeasonQuestController:_SetCommonTopButton()
+  local obj = UIWidgetHelper.SpawnObject(self, "_backBtns", "UICommonTopButton")
   obj:SetData(function()
-    -- function num : 0_3_0 , upvalues : self
-    if self._content and (self._content).CloseDialogWithAnim then
-      (self._content):CloseDialogWithAnim(function()
-      -- function num : 0_3_0_0 , upvalues : self
-      self:CloseDialog()
-    end
-)
+    if self._content and self._content.CloseDialogWithAnim then
+      self._content:CloseDialogWithAnim(function()
+        self:CloseDialog()
+      end)
     else
       self:CloseDialog()
     end
-  end
-, nil, nil, false)
+  end, nil, nil, false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonQuestController.AddListener = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonQuestController:AddListener()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self.OnActivityCloseEvent)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonQuestController.DetachListener = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonQuestController:DetachListener()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self.OnActivityCloseEvent)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonQuestController.OnActivityCloseEvent = function(self, id)
-  -- function num : 0_6
+function UISeasonQuestController:OnActivityCloseEvent(id)
   if self._seasonId and self._seasonId == id then
     self:CloseDialog()
   end
 end
-
-

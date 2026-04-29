@@ -1,22 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_nearest_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_NearestPos", PickUpPolicy_Base)
 PickUpPolicy_NearestPos = PickUpPolicy_NearestPos
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_NearestPos.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PickUpPolicy_NearestPos:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
   local activeSkillID = calcParam.activeSkillID
   local policyParam = calcParam.policyParam
   local pickUpNum = self:_GetPickUpNumByConfig(activeSkillID)
-  local petColor = (petEntity:Element()):GetPrimaryType()
-  local casterPos = (petEntity:GridLocation()).Position
-  local boardService = (self._world):GetService("BoardLogic")
+  local petColor = petEntity:Element():GetPrimaryType()
+  local casterPos = petEntity:GridLocation().Position
+  local boardService = self._world:GetService("BoardLogic")
   local posList = {}
   local targetIdList = {}
   local attackPosList = {}
@@ -24,25 +17,20 @@ PickUpPolicy_NearestPos.CalcAutoFightPickUpPolicy = function(self, calcParam)
   local casterPosIndex = self:_Pos2Index(casterPos)
   local env = self:_GetPickUpPolicyEnv()
   local validPosIdxList, validPosList = self:_CalcPickUpValidGridList(petEntity, activeSkillID)
-  for _,off in ipairs(ringMax) do
+  for _, off in ipairs(ringMax) do
     local posIdx = self:_PosIndexAddOffset(casterPosIndex, off)
     if validPosIdxList[posIdx] then
       local pos = self:_Index2Pos(posIdx)
-      if (env.BoardPosCanMove)[posIdx] and (env.BoardPosPieces)[posIdx] ~= petColor then
+      if env.BoardPosCanMove[posIdx] and env.BoardPosPieces[posIdx] ~= petColor then
         local result, targetIds = self:_CalcSkillScopeResultAndTargets_PickUpPolicy(petEntity, activeSkillID, pos)
-        ;
-        (table.appendArray)(attackPosList, result:GetAttackRange())
-        ;
-        (table.appendArray)(targetIdList, targetIds)
+        table.appendArray(attackPosList, result:GetAttackRange())
+        table.appendArray(targetIdList, targetIds)
         posList[#posList + 1] = pos
+        if pickUpNum <= #posList then
+          break
+        end
       end
     end
   end
-  do
-    if pickUpNum > #posList then
-      return posList, attackPosList, targetIdList
-    end
-  end
+  return posList, attackPosList, targetIdList
 end
-
-

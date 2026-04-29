@@ -1,53 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_fix_trap_wall.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultFixTrapWall", SkillEffectResultBase)
 SkillEffectResultFixTrapWall = SkillEffectResultFixTrapWall
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultFixTrapWall.Constructor = function(self, isAdd, fixTrapWallPosList, stageIndex)
-  -- function num : 0_0
+function SkillEffectResultFixTrapWall:Constructor(isAdd, fixTrapWallPosList, stageIndex)
   self._isAdd = isAdd
   self._fixTrapWallPosList = fixTrapWallPosList
   self._stageIndex = stageIndex
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultFixTrapWall.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultFixTrapWall:GetEffectType()
   return SkillEffectType.FixTrapWall
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultFixTrapWall.GetIsAdd = function(self)
-  -- function num : 0_2
+function SkillEffectResultFixTrapWall:GetIsAdd()
   return self._isAdd
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultFixTrapWall.GetFixTrapWallPosList = function(self)
-  -- function num : 0_3
+function SkillEffectResultFixTrapWall:GetFixTrapWallPosList()
   return self._fixTrapWallPosList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultFixTrapWall.GetStageIndex = function(self)
-  -- function num : 0_4
+function SkillEffectResultFixTrapWall:GetStageIndex()
   return self._stageIndex
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultFixTrapWall.GetDamageStageIndex = function(self)
-  -- function num : 0_5
+function SkillEffectResultFixTrapWall:GetDamageStageIndex()
   return self._stageIndex
 end
-
-

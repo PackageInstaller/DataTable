@@ -1,28 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_change_pet_chain_skill_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangePetChainSkill", BuffViewBase)
 BuffViewChangePetChainSkill = BuffViewChangePetChainSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangePetChainSkill.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  if (self._buffResult):GetLight() == 1 then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivatePassive, ((self._entity):PetPstID()):GetPstID(), true)
+function BuffViewChangePetChainSkill:PlayView(TT)
+  if self._buffResult:GetLight() == 1 then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivatePassive, self._entity:PetPstID():GetPstID(), true)
   end
 end
 
 _class("BuffViewChangePetChainSkillUndo", BuffViewBase)
 BuffViewChangePetChainSkillUndo = BuffViewChangePetChainSkillUndo
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangePetChainSkillUndo.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._buffResult):GetBlack() == 1 then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivatePassive, ((self._entity):PetPstID()):GetPstID(), false)
+function BuffViewChangePetChainSkillUndo:PlayView(TT)
+  if self._buffResult:GetBlack() == 1 then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivatePassive, self._entity:PetPstID():GetPstID(), false)
   end
 end
-
-

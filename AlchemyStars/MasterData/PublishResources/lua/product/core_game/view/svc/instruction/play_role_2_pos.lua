@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_role_2_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayRole2PosInstruction", BaseInstruction)
 PlayRole2PosInstruction = PlayRole2PosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayRole2PosInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayRole2PosInstruction:Constructor(paramList)
   self._posX = tonumber(paramList.posX) or 0
   self._posY = tonumber(paramList.posY) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayRole2PosInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayRole2PosInstruction:DoInstruction(TT, casterEntity, phaseContext)
   casterEntity:SetViewVisible(true)
   local posNew = Vector2(self._posX, self._posY)
   casterEntity:SetLocationHeight(0)
   casterEntity:SetPosition(posNew + casterEntity:GetGridOffset())
 end
-
-

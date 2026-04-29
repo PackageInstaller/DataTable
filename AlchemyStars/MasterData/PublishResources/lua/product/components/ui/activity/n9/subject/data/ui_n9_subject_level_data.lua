@@ -1,206 +1,142 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n9/subject/data/ui_n9_subject_level_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN9SubjectLevelGradeData", Object)
 UIN9SubjectLevelGradeData = UIN9SubjectLevelGradeData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN9SubjectLevelGradeData.Constructor = function(self, cfg, subjectComponentInfo)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN9SubjectLevelGradeData:Constructor(cfg, subjectComponentInfo)
   self._levelId = cfg.LevelId
   self._grade = cfg.Grade
   self._gradeId = cfg.GradeId
-  self._des = (StringTable.Get)(cfg.Des)
-  self._name = (StringTable.Get)(cfg.Name)
+  self._des = StringTable.Get(cfg.Des)
+  self._name = StringTable.Get(cfg.Name)
   self._levelType = cfg.LevelType
   self._failedCount = cfg.FailedCount
   self._openType = cfg.OpenType
   self._answerTime = cfg.AnswerTime
   self._rewards = cfg.Reward
   self._positionIndex = cfg.PositionIndex
-  local gradeCft = (Cfg.cfg_subject_level_grade)({ID = self._gradeId})
+  local gradeCft = Cfg.cfg_subject_level_grade({
+    ID = self._gradeId
+  })
   self._subjectLibaray = {}
-  local library = (gradeCft[1]).SubjectLibrary
+  local library = gradeCft[1].SubjectLibrary
   if library then
     local preMaxIndex = 0
     for i = 1, #library do
-      if (library[i])[1] <= preMaxIndex then
-        (Log.exception)("cfg_subject_level_grade 题库列表配置错误:", self._gradeId)
+      if preMaxIndex >= library[i][1] then
+        Log.exception("cfg_subject_level_grade 题库列表配置错误:", self._gradeId)
       else
-        for j = (library[i])[1], (library[i])[2] do
-          -- DECOMPILER ERROR at PC65: Confused about usage of register: R14 in 'UnsetPending'
-
-          (self._subjectLibaray)[#self._subjectLibaray + 1] = j
+        for j = library[i][1], library[i][2] do
+          self._subjectLibaray[#self._subjectLibaray + 1] = j
         end
-        preMaxIndex = (library[i])[2]
+        preMaxIndex = library[i][2]
       end
     end
   end
-  do
-    self._selectRole = (gradeCft[1]).SelectRole
-    self._hasComplete = false
-    local rewarded_levels = subjectComponentInfo.rewarded_levels
-    for i = 1, #rewarded_levels do
-      if (rewarded_levels[i]).level_id == self._levelId and (rewarded_levels[i]).grade == self._grade then
-        self._hasComplete = true
+  self._selectRole = gradeCft[1].SelectRole
+  self._hasComplete = false
+  local rewarded_levels = subjectComponentInfo.rewarded_levels
+  for i = 1, #rewarded_levels do
+    if rewarded_levels[i].level_id == self._levelId and rewarded_levels[i].grade == self._grade then
+      self._hasComplete = true
+      break
+    end
+  end
+  local levels = subjectComponentInfo.levels
+  self._openTime = 0
+  if levels then
+    for k, v in pairs(levels) do
+      if v.level_id == self._levelId and v.grade == self._grade then
+        self._openTime = v.opentime
+        if not self._openTime then
+          self._openTime = 0
+        end
         break
       end
     end
-    do
-      local levels = subjectComponentInfo.levels
-      self._openTime = 0
-      if levels then
-        for k,v in pairs(levels) do
-          if v.level_id == self._levelId and v.grade == self._grade then
-            self._openTime = v.opentime
-            if not self._openTime then
-              self._openTime = 0
-            end
-            break
-          end
-        end
-      end
-    end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelGradeData.GetGrade = function(self)
-  -- function num : 0_1
+function UIN9SubjectLevelGradeData:GetGrade()
   return self._grade
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelGradeData.GetDes = function(self)
-  -- function num : 0_2
+function UIN9SubjectLevelGradeData:GetDes()
   return self._des
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelGradeData.GetName = function(self)
-  -- function num : 0_3
+function UIN9SubjectLevelGradeData:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelGradeData.GetLevelType = function(self)
-  -- function num : 0_4
+function UIN9SubjectLevelGradeData:GetLevelType()
   return self._levelType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelGradeData.GetFailedCount = function(self)
-  -- function num : 0_5
+function UIN9SubjectLevelGradeData:GetFailedCount()
   return self._failedCount
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelGradeData.GetOpenType = function(self)
-  -- function num : 0_6
+function UIN9SubjectLevelGradeData:GetOpenType()
   return self._openType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelGradeData.GetOpenTime = function(self)
-  -- function num : 0_7
+function UIN9SubjectLevelGradeData:GetOpenTime()
   return self._openTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelGradeData.GetRewards = function(self)
-  -- function num : 0_8
+function UIN9SubjectLevelGradeData:GetRewards()
   return self._rewards
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelGradeData.GetPositionIndex = function(self)
-  -- function num : 0_9
+function UIN9SubjectLevelGradeData:GetPositionIndex()
   return self._positionIndex
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelGradeData.GetHasComplete = function(self)
-  -- function num : 0_10
+function UIN9SubjectLevelGradeData:GetHasComplete()
   return self._hasComplete
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelGradeData.GetAnswerTime = function(self)
-  -- function num : 0_11
+function UIN9SubjectLevelGradeData:GetAnswerTime()
   return self._answerTime
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelGradeData.GenSubject = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN9SubjectLevelGradeData:GenSubject()
   local tmpCfgs = {}
   for i = 1, #self._subjectLibaray do
-    local cfgs = (Cfg.cfg_subject_library)({ID = (self._subjectLibaray)[i]})
+    local cfgs = Cfg.cfg_subject_library({
+      ID = self._subjectLibaray[i]
+    })
     local cfg = cfgs[1]
     local grade = cfg.Grade
     if not tmpCfgs[grade] then
       tmpCfgs[grade] = {}
     end
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (tmpCfgs[grade])[#tmpCfgs[grade] + 1] = cfg
+    tmpCfgs[grade][#tmpCfgs[grade] + 1] = cfg
   end
   local subject = {}
   local preMaxIndex = 0
   for i = 1, #self._selectRole do
-    if ((self._selectRole)[i])[1] <= preMaxIndex then
-      (Log.exception)("cfg_subject_level_grade 选择规则错误配置错误:", self._gradeId)
+    if preMaxIndex >= self._selectRole[i][1] then
+      Log.exception("cfg_subject_level_grade 选择规则错误配置错误:", self._gradeId)
     else
-      if ((self._selectRole)[i])[3] then
-        local cfgs = tmpCfgs[((self._selectRole)[i])[3]]
+      if self._selectRole[i][3] then
+        local cfgs = tmpCfgs[self._selectRole[i][3]]
         if #cfgs <= 0 then
-          (Log.exception)("cfg_subject_level_grade 题目数量不够，策划之前拍过胸脯说题目数量一定会够:", self._gradeId)
+          Log.exception("cfg_subject_level_grade 题目数量不够，策划之前拍过胸脯说题目数量一定会够:", self._gradeId)
           break
         end
-        for j = ((self._selectRole)[i])[1], ((self._selectRole)[i])[2] do
-          local index = (math.random)(1, #cfgs)
+        for j = self._selectRole[i][1], self._selectRole[i][2] do
+          local index = math.random(1, #cfgs)
           subject[#subject + 1] = UIN9SubjectData:New(cfgs[index])
-          ;
-          (table.remove)(cfgs, index)
+          table.remove(cfgs, index)
           if #cfgs <= 0 then
-            (Log.exception)("cfg_subject_level_grade 题目数量不够，策划之前拍过胸脯说题目数量一定会够:", self._gradeId)
+            Log.exception("cfg_subject_level_grade 题目数量不够，策划之前拍过胸脯说题目数量一定会够:", self._gradeId)
             break
           end
         end
       else
-        do
-          do
-            ;
-            (Log.exception)("cfg_subject_level_grade 选择规则错误配置错误:", self._gradeId)
-            preMaxIndex = ((self._selectRole)[i])[2]
-            -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        Log.exception("cfg_subject_level_grade 选择规则错误配置错误:", self._gradeId)
       end
+      preMaxIndex = self._selectRole[i][2]
     end
   end
   return subject
@@ -208,68 +144,51 @@ end
 
 _class("UIN9SubjectLevelData", Object)
 UIN9SubjectLevelData = UIN9SubjectLevelData
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN9SubjectLevelData.Constructor = function(self, cfgs, subjectComponentInfo)
-  -- function num : 0_13 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIN9SubjectLevelData:Constructor(cfgs, subjectComponentInfo)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
   self._historyRecord = subjectComponentInfo.test_score
   self._gradeLevel = 0
   if self._historyRecord ~= nil and self._historyRecord > 0 then
-    self._gradeLevel = (UIN9Const.GetGradeLevel)(self._historyRecord)
+    self._gradeLevel = UIN9Const.GetGradeLevel(self._historyRecord)
   end
   self._levelGrades = {}
   if not cfgs then
-    return 
+    return
   end
-  for k,v in pairs(cfgs) do
+  for k, v in pairs(cfgs) do
     local gradeData = UIN9SubjectLevelGradeData:New(v, subjectComponentInfo)
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._levelGrades)[#self._levelGrades + 1] = gradeData
+    self._levelGrades[#self._levelGrades + 1] = gradeData
   end
-  ;
-  (table.sort)(self._levelGrades, function(a, b)
-    -- function num : 0_13_0
-    do return a:GetGrade() < b:GetGrade() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._levelGrades, function(a, b)
+    return a:GetGrade() < b:GetGrade()
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelData.IsOpen = function(self)
-  -- function num : 0_14
+function UIN9SubjectLevelData:IsOpen()
   if #self._levelGrades <= 0 then
     return false
   end
-  local levelGradeData = (self._levelGrades)[1]
+  local levelGradeData = self._levelGrades[1]
   local openType = levelGradeData:GetOpenType()
   if openType == 2 then
     local openTime = levelGradeData:GetOpenTime()
-    local nowTime = (self._timeModule):GetServerTime() / 1000
+    local nowTime = self._timeModule:GetServerTime() / 1000
     if openTime <= nowTime then
       return true
     end
     return false
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelData.GetOpenTimeStr = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN9SubjectLevelData:GetOpenTimeStr()
   if #self._levelGrades <= 0 then
     return ""
   end
-  local openTime = ((self._levelGrades)[1]):GetOpenTime()
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  local seconds = (math.floor)(openTime - nowTime)
+  local openTime = self._levelGrades[1]:GetOpenTime()
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  local seconds = math.floor(openTime - nowTime)
   if seconds < 0 then
     seconds = 0
   end
@@ -277,193 +196,138 @@ UIN9SubjectLevelData.GetOpenTimeStr = function(self)
     return ""
   end
   local timeStr = ""
-  local day = (math.floor)(seconds / 3600 / 24)
-  if day > 0 then
+  local day = math.floor(seconds / 3600 / 24)
+  if 0 < day then
     seconds = seconds - day * 3600 * 24
-    local hour = (math.floor)((seconds) / 3600)
-    timeStr = (StringTable.Get)("str_activity_n9_day", day)
-    if hour > 0 then
-      timeStr = timeStr .. (StringTable.Get)("str_activity_n9_hour", hour)
+    local hour = math.floor(seconds / 3600)
+    timeStr = StringTable.Get("str_activity_n9_day", day)
+    if 0 < hour then
+      timeStr = timeStr .. StringTable.Get("str_activity_n9_hour", hour)
+    end
+  elseif 60 <= seconds then
+    local hour = math.floor(seconds / 3600)
+    seconds = seconds - hour * 3600
+    if 0 < hour then
+      timeStr = StringTable.Get("str_activity_n9_hour", hour)
+    end
+    local minus = math.floor(seconds / 60)
+    if minus then
+      timeStr = timeStr .. StringTable.Get("str_activity_n9_minus", minus)
     end
   else
-    do
-      if seconds >= 60 then
-        local hour = (math.floor)((seconds) / 3600)
-        seconds = seconds - hour * 3600
-        if hour > 0 then
-          timeStr = (StringTable.Get)("str_activity_n9_hour", hour)
-        end
-        local minus = (math.floor)((seconds) / 60)
-        if minus then
-          timeStr = timeStr .. (StringTable.Get)("str_activity_n9_minus", minus)
-        end
-      else
-        do
-          timeStr = (StringTable.Get)("str_activity_n9_less_minus")
-          return timeStr
-        end
-      end
-    end
+    timeStr = StringTable.Get("str_activity_n9_less_minus")
   end
+  return timeStr
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelData.GetHistoryRecord = function(self)
-  -- function num : 0_16
+function UIN9SubjectLevelData:GetHistoryRecord()
   return self._historyRecord
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelData.GetGradeLevelStr = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  return (UIN9Const.GetGradeLevelStr)(self._gradeLevel)
+function UIN9SubjectLevelData:GetGradeLevelStr()
+  return UIN9Const.GetGradeLevelStr(self._gradeLevel)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelData.GetPositionIndex = function(self)
-  -- function num : 0_18
+function UIN9SubjectLevelData:GetPositionIndex()
   if #self._levelGrades <= 0 then
     return -1
   end
-  return ((self._levelGrades)[1]):GetPositionIndex()
+  return self._levelGrades[1]:GetPositionIndex()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelData.GetLevelName = function(self)
-  -- function num : 0_19
+function UIN9SubjectLevelData:GetLevelName()
   if #self._levelGrades <= 0 then
     return ""
   end
-  return ((self._levelGrades)[1]):GetName()
+  return self._levelGrades[1]:GetName()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelData.GetDes = function(self)
-  -- function num : 0_20
+function UIN9SubjectLevelData:GetDes()
   if #self._levelGrades <= 0 then
     return ""
   end
-  return ((self._levelGrades)[1]):GetDes()
+  return self._levelGrades[1]:GetDes()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelData.GetLevelType = function(self)
-  -- function num : 0_21
+function UIN9SubjectLevelData:GetLevelType()
   if #self._levelGrades <= 0 then
     return ""
   end
-  return ((self._levelGrades)[1]):GetLevelType()
+  return self._levelGrades[1]:GetLevelType()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelData.GetLeveGrade = function(self, grade)
-  -- function num : 0_22
+function UIN9SubjectLevelData:GetLeveGrade(grade)
   local levelType = self:GetLevelType()
   if levelType == 2 then
-    return (self._levelGrades)[1]
+    return self._levelGrades[1]
   end
   for i = 1, #self._levelGrades do
-    if grade == ((self._levelGrades)[i]):GetGrade() then
-      return (self._levelGrades)[i]
+    if grade == self._levelGrades[i]:GetGrade() then
+      return self._levelGrades[i]
     end
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelData.GetLevelGradeList = function(self)
-  -- function num : 0_23
+function UIN9SubjectLevelData:GetLevelGradeList()
   local gradeList = {}
   for i = 1, #self._levelGrades do
-    gradeList[#gradeList + 1] = ((self._levelGrades)[i]):GetGrade()
+    gradeList[#gradeList + 1] = self._levelGrades[i]:GetGrade()
   end
   return gradeList
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelData.GetLevelGradCount = function(self)
-  -- function num : 0_24
+function UIN9SubjectLevelData:GetLevelGradCount()
   local gradeList = self:GetLevelGradeList()
   return #gradeList
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelData.GetCompleteGradeCount = function(self)
-  -- function num : 0_25
+function UIN9SubjectLevelData:GetCompleteGradeCount()
   local count = 0
   for i = 1, #self._levelGrades do
-    if ((self._levelGrades)[i]):GetHasComplete() then
+    if self._levelGrades[i]:GetHasComplete() then
       count = count + 1
     end
   end
   return count
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelData.GradeComplete = function(self, grade)
-  -- function num : 0_26
+function UIN9SubjectLevelData:GradeComplete(grade)
   for i = 1, #self._levelGrades do
-    if grade == ((self._levelGrades)[i]):GetGrade() then
-      return ((self._levelGrades)[i]):GetHasComplete()
+    if grade == self._levelGrades[i]:GetGrade() then
+      return self._levelGrades[i]:GetHasComplete()
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelData.GetGradeCount = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  return (table.count)(self._levelGrades)
+function UIN9SubjectLevelData:GetGradeCount()
+  return table.count(self._levelGrades)
 end
 
 _class("UIN9SubjectLevelDatas", Object)
 UIN9SubjectLevelDatas = UIN9SubjectLevelDatas
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN9SubjectLevelDatas.Constructor = function(self, subjectComponentInfo)
-  -- function num : 0_28 , upvalues : _ENV
+function UIN9SubjectLevelDatas:Constructor(subjectComponentInfo)
   self._levels = {}
-  local cfgs = (ConfigServiceHelper.GetConfigMessageByAttr)(Cfg.cfg_subject_level, "ComponentID", 101010208)
+  local cfgs = ConfigServiceHelper.GetConfigMessageByAttr(Cfg.cfg_subject_level, "ComponentID", 101010208)
   if not cfgs then
-    return 
+    return
   end
   local levelCfgs = {}
-  for k,v in pairs(cfgs) do
+  for k, v in pairs(cfgs) do
     local levelId = v.LevelId
     if not levelCfgs[levelId] then
       levelCfgs[levelId] = {}
     end
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (levelCfgs[levelId])[#levelCfgs[levelId] + 1] = v
+    levelCfgs[levelId][#levelCfgs[levelId] + 1] = v
   end
-  for k,v in pairs(levelCfgs) do
+  for k, v in pairs(levelCfgs) do
     local levelData = UIN9SubjectLevelData:New(v, subjectComponentInfo)
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._levels)[#self._levels + 1] = levelData
+    self._levels[#self._levels + 1] = levelData
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectLevelDatas.GetLevelDatas = function(self)
-  -- function num : 0_29
+function UIN9SubjectLevelDatas:GetLevelDatas()
   return self._levels
 end
-
-

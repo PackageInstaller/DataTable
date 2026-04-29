@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/data_select_damage_info_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("DataSelectDamageInfoInstruction", BaseInstruction)
 DataSelectDamageInfoInstruction = DataSelectDamageInfoInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSelectDamageInfoInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function DataSelectDamageInfoInstruction:Constructor(paramList)
   self._damageInfoIndex = tonumber(paramList.damageInfoIndex)
   self._damageStageIndex = tonumber(paramList.damageStageIndex) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectDamageInfoInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function DataSelectDamageInfoInstruction:DoInstruction(TT, casterEntity, phaseContext)
   phaseContext:SetCurDamageInfoIndex(self._damageInfoIndex)
 end
-
-

@@ -1,84 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/mini_maze/ui_mini_maze_choose_relic_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMiniMazeChooseRelicItem", UICustomWidget)
 UIMiniMazeChooseRelicItem = UIMiniMazeChooseRelicItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMiniMazeChooseRelicItem.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMiniMazeChooseRelicItem:OnShow(uiParam)
   self._atlas = self:GetAsset("UIMazeChoose.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChooseRelicItem.GetComponents = function(self)
-  -- function num : 0_1
+function UIMiniMazeChooseRelicItem:GetComponents()
   self._card = self:GetUIComponent("RectTransform", "card")
   self._itemPool = self:GetUIComponent("UISelectObjectPath", "itemPool")
   self._itemPoolCanvasGroup = self:GetUIComponent("CanvasGroup", "itemPool")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChooseRelicItem.SetData = function(self, index, itemID, pos, _cardClick)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMiniMazeChooseRelicItem:SetData(index, itemID, pos, _cardClick)
   self:GetComponents()
   self._index = index
   self._pos = pos
   self._callback = _cardClick
   self._canClick = false
-  self._item = (self._itemPool):SpawnObject("UIRugueLikeBackpackItem")
-  ;
-  (self._item):SetData(index, itemID, function()
-    -- function num : 0_2_0 , upvalues : self
+  self._item = self._itemPool:SpawnObject("UIRugueLikeBackpackItem")
+  self._item:SetData(index, itemID, function()
     self:CardClick()
-  end
-)
-  ;
-  (self._card):DOScale(Vector3(1, 1, 1), 0.2)
-  ;
-  ((self._card):DOMove(pos, 0.2)):OnComplete(function()
-    -- function num : 0_2_1 , upvalues : self
+  end)
+  self._card:DOScale(Vector3(1, 1, 1), 0.2)
+  self._card:DOMove(pos, 0.2):OnComplete(function()
     self._canClick = true
-  end
-)
+  end)
   self._colorBg = self:GetUIComponent("Image", "colorBg")
-  ;
-  ((self._colorBg).gameObject):SetActive(false)
-  local cfg_item = (Cfg.cfg_item)[itemID]
+  self._colorBg.gameObject:SetActive(false)
+  local cfg_item = Cfg.cfg_item[itemID]
   if cfg_item then
     local color = cfg_item.Color
-    -- DECOMPILER ERROR at PC57: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._colorBg).sprite = (self._atlas):GetSprite("map_xuanzhong_di" .. color)
+    self._colorBg.sprite = self._atlas:GetSprite("map_xuanzhong_di" .. color)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChooseRelicItem.CardClick = function(self)
-  -- function num : 0_3
+function UIMiniMazeChooseRelicItem:CardClick()
   if self._canClick == true then
-    (self._callback)(self._index)
+    self._callback(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChooseRelicItem.CancelOrSelect = function(self, select)
-  -- function num : 0_4 , upvalues : _ENV
+function UIMiniMazeChooseRelicItem:CancelOrSelect(select)
   if select then
-    (self._card):DOScale(Vector3(1.1, 1.1, 1.1), 0.2)
+    self._card:DOScale(Vector3(1.1, 1.1, 1.1), 0.2)
   else
-    ;
-    (self._card):DOScale(Vector3(1, 1, 1), 0.2)
+    self._card:DOScale(Vector3(1, 1, 1), 0.2)
   end
-  ;
-  ((self._colorBg).gameObject):SetActive(select)
+  self._colorBg.gameObject:SetActive(select)
 end
-
-

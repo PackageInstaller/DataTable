@@ -1,40 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/entrust/common/ui_n22_entrust_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22EntrustRewardItem", UICustomWidget)
 UIN22EntrustRewardItem = UIN22EntrustRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22EntrustRewardItem.SetData = function(self, roleAsset, received, callback)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN22EntrustRewardItem:SetData(roleAsset, received, callback)
   self._roleAsset = roleAsset
   self._callback = callback
-  local itemId = (self._roleAsset).assetid
-  local count = (self._roleAsset).count
-  ;
-  (UIWidgetHelper.SetItemIcon)(self, itemId, "_icon")
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_text", count)
+  local itemId = self._roleAsset.assetid
+  local count = self._roleAsset.count
+  UIWidgetHelper.SetItemIcon(self, itemId, "_icon")
+  UIWidgetHelper.SetLocalizationText(self, "_text", count)
   self:_SetReceived(received)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustRewardItem._SetReceived = function(self, show)
-  -- function num : 0_1
+function UIN22EntrustRewardItem:_SetReceived(show)
   local obj = self:GetGameObject("state_Taken")
   obj:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustRewardItem.BtnOnClick = function(self, go)
-  -- function num : 0_2
+function UIN22EntrustRewardItem:BtnOnClick(go)
   if self._callback then
-    (self._callback)((self._roleAsset).assetid, (go.transform).position)
+    self._callback(self._roleAsset.assetid, go.transform.position)
   end
 end
-
-

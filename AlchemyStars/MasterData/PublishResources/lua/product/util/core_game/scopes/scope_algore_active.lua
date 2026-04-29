@@ -1,22 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_algore_active.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_AlGoreActiveSkill", SkillScopeCalculator_Base)
 SkillScopeCalculator_AlGoreActiveSkill = SkillScopeCalculator_AlGoreActiveSkill
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_AlGoreActiveSkill.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
-  local calcPos = nil
-  -- DECOMPILER ERROR at PC6: Unhandled construct in 'MakeBoolean' P1
-
-  if centerPos and #centerPos == 0 then
-    calcPos = centerPos
-  else
-    calcPos = centerPos[1]
+function SkillScopeCalculator_AlGoreActiveSkill:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
+  local calcPos
+  if centerPos then
+    if #centerPos == 0 then
+      calcPos = centerPos
+    else
+      calcPos = centerPos[1]
+    end
   end
   local ret = {}
   self:_InsertTargetGrid(ret, Vector2(calcPos.x, calcPos.y))
@@ -39,14 +32,9 @@ SkillScopeCalculator_AlGoreActiveSkill.CalcRange = function(self, scopeType, sco
   return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_AlGoreActiveSkill._InsertTargetGrid = function(self, targetArea, newGridPos)
-  -- function num : 0_1 , upvalues : _ENV
-  local isValid = (self._gridFilter):IsValidPiecePos(newGridPos)
+function SkillScopeCalculator_AlGoreActiveSkill:_InsertTargetGrid(targetArea, newGridPos)
+  local isValid = self._gridFilter:IsValidPiecePos(newGridPos)
   if isValid then
-    (table.insert)(targetArea, newGridPos)
+    table.insert(targetArea, newGridPos)
   end
 end
-
-

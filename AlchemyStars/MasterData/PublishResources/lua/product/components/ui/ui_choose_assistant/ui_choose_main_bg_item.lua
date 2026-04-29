@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/ui_choose_main_bg_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChooseMainBgItem", UICustomWidget)
 UIChooseMainBgItem = UIChooseMainBgItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChooseMainBgItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChooseMainBgItem:OnShow()
   self:AttachEvent(GameEventType.ChangeMainBg, self.Select)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgItem.SetData = function(self, id, itemid, type, using, select, bgName, name, callback)
-  -- function num : 0_1
+function UIChooseMainBgItem:SetData(id, itemid, type, using, select, bgName, name, callback)
   self._id = id
   self._itemid = itemid
   self._type = type
@@ -28,10 +18,7 @@ UIChooseMainBgItem.SetData = function(self, id, itemid, type, using, select, bgN
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIChooseMainBgItem:_GetComponents()
   self._nameTex = self:GetUIComponent("UILocalizationText", "name")
   self._bg = self:GetUIComponent("RawImageLoader", "bg")
   self._selectObj = self:GetGameObject("select")
@@ -41,98 +28,66 @@ UIChooseMainBgItem._GetComponents = function(self)
   self._rect = self:GetGameObject("rect")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgItem._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._empty):SetActive(self._id == 99999)
-  ;
-  (self._rect):SetActive(self._id ~= 99999)
-  if self._id ~= 99999 or self._bgName then
-    (self._bg):LoadImage(self._bgName)
+function UIChooseMainBgItem:_OnValue()
+  self._empty:SetActive(self._id == 99999)
+  self._rect:SetActive(self._id ~= 99999)
+  if self._id == 99999 then
+  else
+    if self._bgName then
+      self._bg:LoadImage(self._bgName)
+    end
+    if self._name then
+      self._nameTex:SetText(StringTable.Get(self._name))
+    end
+    self._usingGo:SetActive(self._using)
+    self._selectObj:SetActive(self._select)
+    self:SetRed()
   end
-  if self._name then
-    (self._nameTex):SetText((StringTable.Get)(self._name))
-  end
-  ;
-  (self._usingGo):SetActive(self._using)
-  ;
-  (self._selectObj):SetActive(self._select)
-  self:SetRed()
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgItem.SetRed = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIChooseMainBgItem:SetRed()
   self._redState = false
   if self._itemid then
-    ((GameGlobal.GetModule)(ItemModule))
-    local itemModule = nil
-    local item_data = nil
+    local itemModule = GameGlobal.GetModule(ItemModule)
+    local item_data
     local items = itemModule:GetItemByTempId(self._itemid)
-    if items and (table.count)(items) > 0 then
-      for key,value in pairs(items) do
+    if items and table.count(items) > 0 then
+      for key, value in pairs(items) do
         item_data = value
-        do break end
+        break
       end
     end
-    do
-      do
-        self._redState = item_data:IsNewOverlay()
-        self._pstid = item_data:GetID()
-        ;
-        (self._red):SetActive(self._redState)
-      end
-    end
+    self._redState = item_data:IsNewOverlay()
+    self._pstid = item_data:GetID()
   end
+  self._red:SetActive(self._redState)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgItem.bgOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIChooseMainBgItem:bgOnClick(go)
   if self._callback then
-    (self._callback)(self._id, self._type)
+    self._callback(self._id, self._type)
   end
   if self._redState then
     self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
-    if self._itemid and self._pstid then
-      local itemModule = (GameGlobal.GetModule)(ItemModule)
-      itemModule:SetItemUnnewOverlay(TT, self._pstid)
-    end
-  end
-)
+      if self._itemid and self._pstid then
+        local itemModule = GameGlobal.GetModule(ItemModule)
+        itemModule:SetItemUnnewOverlay(TT, self._pstid)
+      end
+    end)
     self._redState = false
-    ;
-    (self._red):SetActive(self._redState)
+    self._red:SetActive(self._redState)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgItem.GetID = function(self)
-  -- function num : 0_6
+function UIChooseMainBgItem:GetID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgItem.GetUsing = function(self)
-  -- function num : 0_7
+function UIChooseMainBgItem:GetUsing()
   return self._using
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgItem.Select = function(self, type, id)
-  -- function num : 0_8
+function UIChooseMainBgItem:Select(type, id)
   local select = self._id == id
-  ;
-  (self._selectObj):SetActive(select)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._selectObj:SetActive(select)
 end
-
-

@@ -1,69 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/tactic/ui_aircraft_tactic.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftTactic", UIController)
 UIAircraftTactic = UIAircraftTactic
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftTactic.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftTactic:LoadDataOnEnter(TT, res, uiParams)
   self._airModule = self:GetModule(AircraftModule)
-  self._tacticRoom = (self._airModule):GetRoomByRoomType(AirRoomType.TacticRoom)
+  self._tacticRoom = self._airModule:GetRoomByRoomType(AirRoomType.TacticRoom)
   if not self._tacticRoom then
-    (Log.exception)("获取不到战术室数据")
+    Log.exception("获取不到战术室数据")
     res:SetResult(false)
-    return 
+    return
   end
-  local ack = (self._airModule):RequestRefreshTacticRoom(TT)
+  local ack = self._airModule:RequestRefreshTacticRoom(TT)
   if not ack or not ack:GetSucc() then
-    (self._airModule):GetErrorMsg(ack:GetResult())
+    self._airModule:GetErrorMsg(ack:GetResult())
     res:SetResult(false)
-    return 
+    return
   end
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTactic.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIAircraftTactic:OnShow(uiParams)
   self:InitWidget()
   self._timeModule = self:GetModule(SvrTimeModule)
-  self._topTips = (self.firefly):SpawnObject("UICurrencyMenu")
-  ;
-  (self._topTips):SetData({RoleAssetID.RoleAssetFirefly})
-  local firefly = (self._topTips):GetItemByTypeId(RoleAssetID.RoleAssetFirefly)
+  self._topTips = self.firefly:SpawnObject("UICurrencyMenu")
+  self._topTips:SetData({
+    RoleAssetID.RoleAssetFirefly
+  })
+  local firefly = self._topTips:GetItemByTypeId(RoleAssetID.RoleAssetFirefly)
   if firefly then
     firefly:CloseAddBtn()
     self:OnFireflyChanged()
   end
-  local topWidget = (self.topBtn):SpawnObject("UICommonTopButton")
+  local topWidget = self.topBtn:SpawnObject("UICommonTopButton")
   topWidget:SetData(function()
-    -- function num : 0_1_0 , upvalues : self
     self:CloseDialog()
-  end
-, function()
-    -- function num : 0_1_1 , upvalues : self
+  end, function()
     self:ShowDialog("UIHelpController", self:GetName())
-  end
-, function()
-    -- function num : 0_1_2 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftLeaveAircraft)
-    ;
-    ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Aircraft_Exit, "UI")
-  end
-)
-  self._tapeTime = (self.time):SpawnObject("UIAircraftTacticTapeTime")
+  end, function()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftLeaveAircraft)
+    GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Aircraft_Exit, "UI")
+  end)
+  self._tapeTime = self.time:SpawnObject("UIAircraftTacticTapeTime")
   self._timerHolder = UITimerHolder:New()
-  ;
-  (self._timerHolder):StartTimerInfinite("CallPerSecond", 1000, function()
-    -- function num : 0_1_3 , upvalues : self
+  self._timerHolder:StartTimerInfinite("CallPerSecond", 1000, function()
     self:CallPerSecond()
-  end
-)
-  self._tapePool = (self.tapes):SpawnObject("UIAircraftTacticTapeList")
+  end)
+  self._tapePool = self.tapes:SpawnObject("UIAircraftTacticTapeList")
   self:Refresh()
   self:AttachEvent(GameEventType.AircraftOnFireFlyChanged, self.OnFireflyChanged)
   self:AttachEvent(GameEventType.AircraftTacticRefreshTapeList, self.RefreshTapeList)
@@ -75,154 +56,104 @@ UIAircraftTactic.OnShow = function(self, uiParams)
   self:TopRankEffect()
   self:TriggerGuide()
   self:Lock("WaitForAnim")
-  ;
-  (self._timerHolder):StartTimer("WaitForAnim", 1500, function()
-    -- function num : 0_1_4 , upvalues : self
+  self._timerHolder:StartTimer("WaitForAnim", 1500, function()
     self:UnLock("WaitForAnim")
-  end
-)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N8EnterTatic)
+  end)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N8EnterTatic)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTactic.TriggerGuide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftTactic:TriggerGuide()
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV
     YIELD(TT, 1667)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIAircraftTactic)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIAircraftTactic)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTactic.OnHide = function(self)
-  -- function num : 0_3
-  (self._timerHolder):Dispose()
+function UIAircraftTactic:OnHide()
+  self._timerHolder:Dispose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTactic.Refresh = function(self, afterReq)
-  -- function num : 0_4
+function UIAircraftTactic:Refresh(afterReq)
   self:RefreshTapeList()
   self:CallPerSecond(afterReq)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTactic.RefreshTapeList = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._tapeList = (self._tacticRoom):GetCartridgeList()
-  ;
-  (table.sort)(self._tapeList, function(a, b)
-    -- function num : 0_5_0 , upvalues : _ENV
-    local cfga = (Cfg.cfg_item_cartridge)[a:GetTemplateID()]
-    local cfgb = (Cfg.cfg_item_cartridge)[b:GetTemplateID()]
-    if cfga.SortID >= cfgb.SortID then
-      do return cfga.SortID == cfgb.SortID end
-      if a:IsNewOverlay() ~= b:IsNewOverlay() then
-        return a:IsNewOverlay()
-      end
-      do return b:GetGainTime() < a:GetGainTime() end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UIAircraftTactic:RefreshTapeList()
+  self._tapeList = self._tacticRoom:GetCartridgeList()
+  table.sort(self._tapeList, function(a, b)
+    local cfga = Cfg.cfg_item_cartridge[a:GetTemplateID()]
+    local cfgb = Cfg.cfg_item_cartridge[b:GetTemplateID()]
+    if cfga.SortID ~= cfgb.SortID then
+      return cfga.SortID < cfgb.SortID
     end
-  end
-)
+    if a:IsNewOverlay() ~= b:IsNewOverlay() then
+      return a:IsNewOverlay()
+    end
+    return a:GetGainTime() > b:GetGainTime()
+  end)
   self._curTapeCount = #self._tapeList
-  self._packCount = (self._tacticRoom):GetCartridgeGiftCount()
-  self._tapeIsFull = (self._tacticRoom):GetCartridgeLimit() <= self._curTapeCount + self._packCount
-  ;
-  (self._tapePool):SetData(self._tapeList, self._packCount)
-  ;
-  (self._tapeTime):SetData(self._curTapeCount + self._packCount)
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.speedupBtn).interactable = not self._tapeIsFull
-  ;
-  (self._empty):SetActive(self._curTapeCount + self._packCount == 0)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._packCount = self._tacticRoom:GetCartridgeGiftCount()
+  self._tapeIsFull = self._curTapeCount + self._packCount >= self._tacticRoom:GetCartridgeLimit()
+  self._tapePool:SetData(self._tapeList, self._packCount)
+  self._tapeTime:SetData(self._curTapeCount + self._packCount)
+  self.speedupBtn.interactable = not self._tapeIsFull
+  self._empty:SetActive(self._curTapeCount + self._packCount == 0)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTactic.OnFireflyChanged = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local firefly = (self._topTips):GetItemByTypeId(RoleAssetID.RoleAssetFirefly)
+function UIAircraftTactic:OnFireflyChanged()
+  local firefly = self._topTips:GetItemByTypeId(RoleAssetID.RoleAssetFirefly)
   if firefly then
-    firefly:SetText((self._airModule):GetFirefly() .. "/" .. (math.floor)((self._airModule):GetMaxFirefly()))
+    firefly:SetText(self._airModule:GetFirefly() .. "/" .. math.floor(self._airModule:GetMaxFirefly()))
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTactic.CallPerSecond = function(self, afterReq)
-  -- function num : 0_7 , upvalues : _ENV
-  local now = (math.floor)((self._timeModule):GetServerTime() / 1000)
-  local weekTime = (self._tacticRoom):GetNextResetTime() - now
+function UIAircraftTactic:CallPerSecond(afterReq)
+  local now = math.floor(self._timeModule:GetServerTime() / 1000)
+  local weekTime = self._tacticRoom:GetNextResetTime() - now
   local weekRefresh = weekTime < 0
-  local weekStr = (HelperProxy:GetInstance()):FormatTime_3(weekTime)
+  local weekStr = HelperProxy:GetInstance():FormatTime_3(weekTime)
   if self._weeklyStr ~= weekStr then
     self._weeklyStr = weekStr
-    ;
-    (self.weekCountdown):SetText((StringTable.Get)("str_aircraft_tactic_weekly_refresh_time", weekStr))
+    self.weekCountdown:SetText(StringTable.Get("str_aircraft_tactic_weekly_refresh_time", weekStr))
   end
-  local tapeCeiling = (self._tacticRoom):GetCartridgeLimit()
-  local tapeCount = (self._tacticRoom):GetCartridgeGiftCount() + self._curTapeCount
+  local tapeCeiling = self._tacticRoom:GetCartridgeLimit()
+  local tapeCount = self._tacticRoom:GetCartridgeGiftCount() + self._curTapeCount
   local tapeRefresh = false
-  do
-    if tapeCount < tapeCeiling then
-      local time = (self._tacticRoom):GetCartridgeCountDown() - now
-      ;
-      (self._tapeTime):Tick(time)
-      if time <= 0 then
-        tapeRefresh = true
-      end
+  if tapeCeiling > tapeCount then
+    local time = self._tacticRoom:GetCartridgeCountDown() - now
+    self._tapeTime:Tick(time)
+    if time <= 0 then
+      tapeRefresh = true
     end
-    if weekRefresh or tapeRefresh then
-      if afterReq then
-        (Log.error)("战术室时间错误", "，周刷新:", weekRefresh, "，卡带刷新:", tapeRefresh, "，当前时间:", now, "，卡带刷新时间:", (self._tacticRoom):GetCartridgeCountDown(), "，卡带总数量:", tapeCount, "，卡带上限:", tapeCeiling, "，礼包数量:", (self._tacticRoom):GetCartridgeGiftCount())
-        ;
-        (Log.exception)("战术室时间错误,引发死循环,详情查看日志")
-        ;
-        (self._timerHolder):StopTimer("CallPerSecond")
-        return 
-      end
-      AirLog("倒计时到0，请求更新战术室。周刷新:", weekRefresh, "，卡带刷新:", tapeRefresh)
-      self:StartTask(self.reqRefresh, self, tapeRefresh)
+  end
+  if weekRefresh or tapeRefresh then
+    if afterReq then
+      Log.error("战术室时间错误", "，周刷新:", weekRefresh, "，卡带刷新:", tapeRefresh, "，当前时间:", now, "，卡带刷新时间:", self._tacticRoom:GetCartridgeCountDown(), "，卡带总数量:", tapeCount, "，卡带上限:", tapeCeiling, "，礼包数量:", self._tacticRoom:GetCartridgeGiftCount())
+      Log.exception("战术室时间错误,引发死循环,详情查看日志")
+      self._timerHolder:StopTimer("CallPerSecond")
+      return
     end
-    -- DECOMPILER ERROR: 6 unprocessed JMP targets
+    AirLog("倒计时到0，请求更新战术室。周刷新:", weekRefresh, "，卡带刷新:", tapeRefresh)
+    self:StartTask(self.reqRefresh, self, tapeRefresh)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTactic.reqRefresh = function(self, TT, isTapeChanged)
-  -- function num : 0_8 , upvalues : _ENV
+function UIAircraftTactic:reqRefresh(TT, isTapeChanged)
   self:Lock(self:GetName())
-  local res = (self._airModule):RequestRefreshTacticRoom(TT)
+  local res = self._airModule:RequestRefreshTacticRoom(TT)
   self:UnLock(self:GetName())
   if not res or not res:GetSucc() then
-    (self._airModule):GetErrorMsg(res:GetResult())
-    return 
+    self._airModule:GetErrorMsg(res:GetResult())
+    return
   end
   if isTapeChanged then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftTacticOnTapeChanged)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshRoomUI, (self._tacticRoom):SpaceId())
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftTacticOnTapeChanged)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshRoomUI, self._tacticRoom:SpaceId())
   end
   self:Refresh(true)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTactic.InitWidget = function(self)
-  -- function num : 0_9
+function UIAircraftTactic:InitWidget()
   self.firefly = self:GetUIComponent("UISelectObjectPath", "firefly")
   self.topBtn = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self.weekCountdown = self:GetUIComponent("UILocalizationText", "weekCountdown")
@@ -238,86 +169,57 @@ UIAircraftTactic.InitWidget = function(self)
   self._rankEff = self:GetUIComponent("Animation", "UIAircraftTactic")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTactic.TopRankEffect = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local expID = ((Cfg.cfg_aircraft_values)[36]).IntValue
+function UIAircraftTactic:TopRankEffect()
+  local expID = Cfg.cfg_aircraft_values[36].IntValue
   local count = 0
   if expID then
-    count = ((GameGlobal.GetModule)(RoleModule)):GetAssetCount(expID)
+    count = GameGlobal.GetModule(RoleModule):GetAssetCount(expID)
   end
-  local currentLv = ((GameGlobal.GetModule)(AircraftModule)):GetLvByExp(count)
-  local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
+  local currentLv = GameGlobal.GetModule(AircraftModule):GetLvByExp(count)
+  local open_id = GameGlobal.GameLogic():GetOpenId()
   local key = "rank_save_lv_enter_" .. open_id
-  local saveLv = (LocalDB.GetInt)(key, 0)
-  ;
-  (LocalDB.SetInt)(key, currentLv)
-  ;
-  (self.topRankLevel):SetText(saveLv)
-  if saveLv < currentLv then
+  local saveLv = LocalDB.GetInt(key, 0)
+  LocalDB.SetInt(key, currentLv)
+  self.topRankLevel:SetText(saveLv)
+  if currentLv > saveLv then
     AirLog("播放巅峰升级动效:", saveLv, "->", currentLv)
-    ;
-    (self._rankEff):Play("uieff_AircraftTactic_LevelUp_Main")
+    self._rankEff:Play("uieff_AircraftTactic_LevelUp_Main")
     self:Lock("UIAircraftTactic:TopRankEffect")
-    ;
-    ((GameGlobal.Timer)()):AddEvent(792, function()
-    -- function num : 0_10_0 , upvalues : self
-    self:UnLock("UIAircraftTactic:TopRankEffect")
-    ;
-    (self.topRankLevel):SetText((self._airModule):UI_TopRankCurrentLv())
-  end
-)
+    GameGlobal.Timer():AddEvent(792, function()
+      self:UnLock("UIAircraftTactic:TopRankEffect")
+      self.topRankLevel:SetText(self._airModule:UI_TopRankCurrentLv())
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTactic.TopRankBtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N8DefaultClick)
+function UIAircraftTactic:TopRankBtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N8DefaultClick)
   self:ShowDialog("UITopRankController")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTactic.DatabaseBtnOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N8DefaultClick)
+function UIAircraftTactic:DatabaseBtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N8DefaultClick)
   self:ShowDialog("UIDataBaseMapController")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTactic.SpeedupBtnOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N8DefaultClick)
+function UIAircraftTactic:SpeedupBtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N8DefaultClick)
   if self._tapeIsFull then
-    return 
+    return
   end
-  if (self._tacticRoom):GetWeeklyFreeMakeCount() > 0 then
+  if self._tacticRoom:GetWeeklyFreeMakeCount() > 0 then
     self:ShowDialog("UITacticTapeProduceFree")
   else
     self:ShowDialog("UITacticTapeProduceSpeedup")
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTactic.RankRed = function(self)
-  -- function num : 0_14
-  local red = (self._airModule):UI_TopRankRed()
-  ;
-  (self.rankRedGo):SetActive(red)
+function UIAircraftTactic:RankRed()
+  local red = self._airModule:UI_TopRankRed()
+  self.rankRedGo:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTactic.DataBaseRed = function(self)
-  -- function num : 0_15
-  local red = (self._airModule):UI_DB_all_node_red()
-  ;
-  (self.dbRedGo):SetActive(red)
+function UIAircraftTactic:DataBaseRed()
+  local red = self._airModule:UI_DB_all_node_red()
+  self.dbRedGo:SetActive(red)
 end
-
-

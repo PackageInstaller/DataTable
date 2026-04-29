@@ -1,48 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/activity_n_plus_six/rebuilding_event/ui_activity_n_plus_six_event_info_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityNPlusSixEventInfoItem", UICustomWidget)
 UIActivityNPlusSixEventInfoItem = UIActivityNPlusSixEventInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityNPlusSixEventInfoItem.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityNPlusSixEventInfoItem:OnShow()
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._go = self:GetGameObject("Go")
   self._contents = self:GetUIComponent("UISelectObjectPath", "Content")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventInfoItem.Refresh = function(self, eventData)
-  -- function num : 0_1
+function UIActivityNPlusSixEventInfoItem:Refresh(eventData)
   self._eventData = eventData
   if not self._eventData then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
-  ;
-  (self._go):SetActive(true)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._name).text = (self._eventData):GetName()
-  local rewards = (self._eventData):GetRewards()
-  ;
-  (self._contents):SpawnObjects("UIActivityNPlusSixEventRewardItem", #rewards)
-  local items = (self._contents):GetAllSpawnList()
+  self._go:SetActive(true)
+  self._name.text = self._eventData:GetName()
+  local rewards = self._eventData:GetRewards()
+  self._contents:SpawnObjects("UIActivityNPlusSixEventRewardItem", #rewards)
+  local items = self._contents:GetAllSpawnList()
   for i = 1, #items do
-    (items[i]):Refresh(rewards[i], false)
+    items[i]:Refresh(rewards[i], false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventInfoItem.BtnOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NPlusSixEventInfoItemClick, (self._eventData):GetEventId())
+function UIActivityNPlusSixEventInfoItem:BtnOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.NPlusSixEventInfoItemClick, self._eventData:GetEventId())
 end
-
-

@@ -1,69 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/framework/campaign_component_local_process_pool.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCLocalProcessInfo", Object)
 CCLocalProcessInfo = CCLocalProcessInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCLocalProcessInfo.Constructor = function(self)
-  -- function num : 0_0
+function CCLocalProcessInfo:Constructor()
   self.m_type = nil
   self.m_adapter_obj = nil
 end
 
 _class("CampaignComponentLocalProcessPool", Object)
 CampaignComponentLocalProcessPool = CampaignComponentLocalProcessPool
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-CampaignComponentLocalProcessPool.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CampaignComponentLocalProcessPool:Constructor()
   self.m_campaign_com_module = nil
   self.m_adapter_type_dict = SortedDictionary:New()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignComponentLocalProcessPool.RegistorCampaignComponent = function(self, a_campaign_type, a_type)
-  -- function num : 0_2 , upvalues : _ENV
-  local adapter_type = (self.m_adapter_type_dict):Find(a_campaign_type)
-  if adapter_type ~= nil then
-    (Log.error)("[Campaign][CampaignComponentFactory] RegistorCampaignComponent type is exist! a_campaign_type:", a_campaign_type, "a_type:", a_type)
+function CampaignComponentLocalProcessPool:RegistorCampaignComponent(a_campaign_type, a_type)
+  local adapter_type = self.m_adapter_type_dict:Find(a_campaign_type)
+  if nil ~= adapter_type then
+    Log.error("[Campaign][CampaignComponentFactory] RegistorCampaignComponent type is exist! a_campaign_type:", a_campaign_type, "a_type:", a_type)
     return false
   end
   local cc_adapter_info = CCLocalProcessInfo:New()
   cc_adapter_info.m_type = a_type
-  ;
-  (self.m_adapter_type_dict):Insert(a_campaign_type, cc_adapter_info)
+  self.m_adapter_type_dict:Insert(a_campaign_type, cc_adapter_info)
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignComponentLocalProcessPool.GetLocalProcess = function(self, a_campaign_type)
-  -- function num : 0_3 , upvalues : _ENV
-  local cc_adapter_info = (self.m_adapter_type_dict):Find(a_campaign_type)
-  if cc_adapter_info == nil then
-    (Log.error)("[Campaign][CampaignComponentAdapterPool] GetLocalProcess GetAdapter type is not exist! a_campaign_type:", a_campaign_type)
+function CampaignComponentLocalProcessPool:GetLocalProcess(a_campaign_type)
+  local cc_adapter_info = self.m_adapter_type_dict:Find(a_campaign_type)
+  if nil == cc_adapter_info then
+    Log.error("[Campaign][CampaignComponentAdapterPool] GetLocalProcess GetAdapter type is not exist! a_campaign_type:", a_campaign_type)
     return nil
   end
-  if cc_adapter_info.m_adapter_obj == nil then
-    cc_adapter_info.m_adapter_obj = (cc_adapter_info.m_type):New()
-    if cc_adapter_info.m_adapter_obj == nil then
-      (Log.error)("[Campaign][CampaignComponentAdapterPool] GetLocalProcess CreateInstance error! a_campaign_type:", a_campaign_type)
+  if nil == cc_adapter_info.m_adapter_obj then
+    cc_adapter_info.m_adapter_obj = cc_adapter_info.m_type:New()
+    if nil == cc_adapter_info.m_adapter_obj then
+      Log.error("[Campaign][CampaignComponentAdapterPool] GetLocalProcess CreateInstance error! a_campaign_type:", a_campaign_type)
       return nil
     end
-    ;
-    (cc_adapter_info.m_adapter_obj):Init(self)
+    cc_adapter_info.m_adapter_obj:Init(self)
   end
   return cc_adapter_info.m_adapter_obj
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignComponentLocalProcessPool.InitComponentRegister = function(self, a_module)
-  -- function num : 0_4 , upvalues : _ENV
+function CampaignComponentLocalProcessPool:InitComponentRegister(a_module)
   self.m_campaign_com_module = a_module
   self:RegistorCampaignComponent(ECampaignType.CAMPAIGN_TYPE_EVERESCUEPLAN, CCampaignEvaRescuePlan)
   self:RegistorCampaignComponent(ECampaignType.CAMPAIGN_TYPE_HIIRO, CCampaignHiiro)
@@ -186,5 +166,3 @@ CampaignComponentLocalProcessPool.InitComponentRegister = function(self, a_modul
   self:RegistorCampaignComponent(ECampaignType.CAMPAIGN_TYPE_INLAND_N21, CCampaignCN21)
   self:RegistorCampaignComponent(ECampaignType.CAMPAIGN_TYPE_INLAND_N22, CCampaignCN22)
 end
-
-

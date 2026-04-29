@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_pet_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetPetInfo", UICustomWidget)
 UIWidgetPetInfo = UIWidgetPetInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetPetInfo.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWidgetPetInfo:OnShow()
   self._attackTxt = self:GetUIComponent("UILocalizationText", "AttackText")
   self._defenseTxt = self:GetUIComponent("UILocalizationText", "DefenseText")
   self._hpTxt = self:GetUIComponent("UILocalizationText", "HpText")
@@ -16,10 +9,8 @@ UIWidgetPetInfo.OnShow = function(self)
   self._englishNameTxt = self:GetUIComponent("UILocalizationText", "EnglishName")
   self._Stars = self:GetGameObject("Stars")
   self._StarList = {}
-  for i = 1, ((self._Stars).transform).childCount do
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R5 in 'UnsetPending'
-
-    (self._StarList)[i] = (((self._Stars).transform):GetChild(i - 1)).gameObject
+  for i = 1, self._Stars.transform.childCount do
+    self._StarList[i] = self._Stars.transform:GetChild(i - 1).gameObject
   end
   self._cg = self:GetUIComponent("RectTransform", "cg")
   self._roleStaticBody = self:GetUIComponent("RawImageLoader", "Role")
@@ -29,157 +20,108 @@ UIWidgetPetInfo.OnShow = function(self)
   self._hpStrID = "str_battle_pet_info_hp"
   self._energyStrID = "str_battle_pet_info_energy"
   self._infoContainerRT = self:GetUIComponent("RectTransform", "InfoContainer")
-  local matchEnterData = (self:GetModule(MatchModule)):GetMatchEnterData()
+  local matchEnterData = self:GetModule(MatchModule):GetMatchEnterData()
   if matchEnterData:GetMatchType() == MatchType.MT_PopStar or matchEnterData:GetSubMatchType() == MatchType.MT_PopStar then
     self._goAttributes = self:GetGameObject("Attributes")
-    ;
-    (self._goAttributes):SetActive(false)
+    self._goAttributes:SetActive(false)
   end
   self:AttachEvent(GameEventType.UIShowPetInfo, self.HandleUIShowPetInfo)
   self:AttachEvent(GameEventType.ShowGuideStep, self.ShowGuideStep)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetInfo.CloseBtnOnClick = function(self, go)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIShowPetInfo, self.petPstID, false)
+function UIWidgetPetInfo:CloseBtnOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIShowPetInfo, self.petPstID, false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetInfo.CloseBgOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIShowPetInfo, self.petPstID, false)
+function UIWidgetPetInfo:CloseBgOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIShowPetInfo, self.petPstID, false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetInfo.Init = function(self, pet)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._attackTxt):SetText((StringTable.Get)(self._attackStrID) .. " " .. (string.format)("%.0f", pet:GetPetAttack()))
-  ;
-  (self._defenseTxt):SetText((StringTable.Get)(self._defenseStrID) .. " " .. (string.format)("%.0f", pet:GetPetDefence()))
-  ;
-  (self._hpTxt):SetText((StringTable.Get)(self._hpStrID) .. " " .. (string.format)("%.0f", pet:GetPetHealth()))
-  ;
-  (self._localNameTxt):SetText((StringTable.Get)(pet:GetPetName()))
-  ;
-  (self._englishNameTxt):SetText((StringTable.Get)(pet:GetPetEnglishName()))
+function UIWidgetPetInfo:Init(pet)
+  self._attackTxt:SetText(StringTable.Get(self._attackStrID) .. " " .. string.format("%.0f", pet:GetPetAttack()))
+  self._defenseTxt:SetText(StringTable.Get(self._defenseStrID) .. " " .. string.format("%.0f", pet:GetPetDefence()))
+  self._hpTxt:SetText(StringTable.Get(self._hpStrID) .. " " .. string.format("%.0f", pet:GetPetHealth()))
+  self._localNameTxt:SetText(StringTable.Get(pet:GetPetName()))
+  self._englishNameTxt:SetText(StringTable.Get(pet:GetPetEnglishName()))
   local starCount = pet:GetPetStar()
   for i = 1, #self._StarList do
     if i <= starCount then
-      ((self._StarList)[i]):SetActive(true)
+      self._StarList[i]:SetActive(true)
     else
-      ;
-      ((self._StarList)[i]):SetActive(false)
+      self._StarList[i]:SetActive(false)
     end
   end
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  local petModule = GameGlobal.GetModule(PetModule)
   local uiModule = petModule.uiModule
   local skillDetailInfos = uiModule:GetSkillDetailInfoBySkillTypeHideExtra(pet)
-  local spawnSkillCount = (table.count)(skillDetailInfos)
-  ;
-  (self._skills):SpawnObjects("UIPetSkillItem", spawnSkillCount)
-  self._skillsSpawns = (self._skills):GetAllSpawnList()
+  local spawnSkillCount = table.count(skillDetailInfos)
+  self._skills:SpawnObjects("UIPetSkillItem", spawnSkillCount)
+  self._skillsSpawns = self._skills:GetAllSpawnList()
   if self._skillsSpawns then
     for i = 1, spawnSkillCount do
-      local item = (self._skillsSpawns)[i]
+      local item = self._skillsSpawns[i]
       local skill_info = skillDetailInfos[i]
       local skill_list = skill_info.skillList
       item:Flush(i, pet, skill_list, true)
     end
   end
-  do
-    local staticBody = pet:GetPetStaticBody(PetSkinEffectPath.BODY_INGAME_PREVIEW)
-    ;
-    (UICG.SetTransform)(self._cg, self:GetName(), staticBody)
-    if not ((GameGlobal.GetModule)(SkillPerfModule)):IsBeginPerf() then
-      (self._roleStaticBody):LoadImage(staticBody)
-    end
-    ;
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._infoContainerRT)
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.ForceRebuildInfoContainer, self)
+  local staticBody = pet:GetPetStaticBody(PetSkinEffectPath.BODY_INGAME_PREVIEW)
+  UICG.SetTransform(self._cg, self:GetName(), staticBody)
+  if not GameGlobal.GetModule(SkillPerfModule):IsBeginPerf() then
+    self._roleStaticBody:LoadImage(staticBody)
   end
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._infoContainerRT)
+  GameGlobal.TaskManager():StartTask(self.ForceRebuildInfoContainer, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetInfo.ForceRebuildInfoContainer = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  ((self._infoContainerRT).gameObject):SetActive(false)
+function UIWidgetPetInfo:ForceRebuildInfoContainer(TT)
+  self._infoContainerRT.gameObject:SetActive(false)
   YIELD(TT)
-  ;
-  ((self._infoContainerRT).gameObject):SetActive(true)
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._infoContainerRT)
+  self._infoContainerRT.gameObject:SetActive(true)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._infoContainerRT)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetInfo.OnHide = function(self)
-  -- function num : 0_5
-  ((self._infoContainerRT).gameObject):SetActive(false)
+function UIWidgetPetInfo:OnHide()
+  self._infoContainerRT.gameObject:SetActive(false)
   self:Close()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetInfo.Close = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+function UIWidgetPetInfo:Close()
+  local guideModule = GameGlobal.GetModule(GuideModule)
   if guideModule:GuideInProgress() then
     local guides = guideModule:GetCurGuides()
     if guides then
-      for _,guide in pairs(guides) do
+      for _, guide in pairs(guides) do
         local curStep = guide:GetCurStep()
         if curStep and curStep.show then
           local cfg = curStep:GetBtnGuideCfg()
           if cfg and cfg.completeRule == GuideCompleteType.OperationComplete then
-            return 
+            return
           end
         end
       end
     end
   end
-  do
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.Button)
-  end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.Button)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetInfo.ShowGuideStep = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIShowPetInfo, self.petPstID, false)
+function UIWidgetPetInfo:ShowGuideStep()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIShowPetInfo, self.petPstID, false)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetInfo.HandleUIShowPetInfo = function(self, petPstID, isShow)
-  -- function num : 0_8 , upvalues : _ENV
+function UIWidgetPetInfo:HandleUIShowPetInfo(petPstID, isShow)
   if isShow then
-    if (GuideHelper.IsUIGuideShow)() then
-      return 
+    if GuideHelper.IsUIGuideShow() then
+      return
     end
-    local enterData = ((GameGlobal.GetModule)(MatchModule)):GetMatchEnterData()
-    local matchPets = (InnerGameHelperRender.GetLocalMatchPets)()
+    local enterData = GameGlobal.GetModule(MatchModule):GetMatchEnterData()
+    local matchPets = InnerGameHelperRender.GetLocalMatchPets()
     local pet = matchPets[petPstID]
     self.petPstID = petPstID
     self:Init(pet)
-    ;
-    (self:GetGameObject()):SetActive(true)
-  else
-    do
-      if (self:GetGameObject()).activeSelf then
-        self:Close()
-        ;
-        (self:GetGameObject()):SetActive(false)
-      end
-    end
+    self:GetGameObject():SetActive(true)
+  elseif self:GetGameObject().activeSelf then
+    self:Close()
+    self:GetGameObject():SetActive(false)
   end
 end
-
-

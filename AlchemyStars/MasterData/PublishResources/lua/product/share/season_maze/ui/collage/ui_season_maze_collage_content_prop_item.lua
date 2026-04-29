@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/collage/ui_season_maze_collage_content_prop_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeCollageContentPropItem", UICustomWidget)
 UISeasonMazeCollageContentPropItem = UISeasonMazeCollageContentPropItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeCollageContentPropItem.OnShow = function(self)
-  -- function num : 0_0
+function UISeasonMazeCollageContentPropItem:OnShow()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentPropItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMazeCollageContentPropItem:InitWidget()
   self.lockGo = self:GetGameObject("lock")
   self.newGo = self:GetGameObject("new")
   self.txtName = self:GetUIComponent("UILocalizationText", "name1")
@@ -24,65 +14,45 @@ UISeasonMazeCollageContentPropItem.InitWidget = function(self)
   self.imgBg = self:GetUIComponent("Image", "colorBg")
   self._txtLock = self:GetUIComponent("UILocalizationText", "txtLock")
   self._gameObject = self:GetGameObject()
-  ;
-  (self._gameObject):SetActive(false)
+  self._gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentPropItem.SetData = function(self, d, rowIndex, clickCb)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._gameObject):SetActive(false)
+function UISeasonMazeCollageContentPropItem:SetData(d, rowIndex, clickCb)
+  self._gameObject:SetActive(false)
   self._data = d
-  self._itemId = (self._data):GetCfgId()
+  self._itemId = self._data:GetCfgId()
   self._clickCb = clickCb
-  local cfg = (self._data):GetCfg()
-  ;
-  (self.icon):LoadImage(cfg.Icon)
-  local strName = (StringTable.Get)(cfg.Name)
-  ;
-  (self.txtName):SetText(strName)
-  ;
-  (self.txtName2):SetText(strName)
-  ;
-  (self.newGo):SetActive((self._data):GetNew())
-  local bLock = not (self._data):GetUnlock()
-  ;
-  (self.lockGo):SetActive(bLock)
+  local cfg = self._data:GetCfg()
+  self.icon:LoadImage(cfg.Icon)
+  local strName = StringTable.Get(cfg.Name)
+  self.txtName:SetText(strName)
+  self.txtName2:SetText(strName)
+  self.newGo:SetActive(self._data:GetNew())
+  local bLock = not self._data:GetUnlock()
+  self.lockGo:SetActive(bLock)
   if bLock then
-    (self._txtLock):SetText((StringTable.Get)("str_season_maze_enter_handbook_cond_desc", (self._data):GetUnLockLv()))
+    self._txtLock:SetText(StringTable.Get("str_season_maze_enter_handbook_cond_desc", self._data:GetUnLockLv()))
   end
   if rowIndex and rowIndex < 3 then
     local delta = rowIndex * 70
     if delta == 0 then
-      (self._gameObject):SetActive(true)
+      self._gameObject:SetActive(true)
     else
-      local timerEvent = ((GameGlobal.Timer)()):AddEventTimes(delta, TimerTriggerCount.Once, function()
-    -- function num : 0_2_0 , upvalues : self
-    (self._gameObject):SetActive(true)
-  end
-)
+      local timerEvent = GameGlobal.Timer():AddEventTimes(delta, TimerTriggerCount.Once, function()
+        self._gameObject:SetActive(true)
+      end)
     end
   else
-    do
-      ;
-      (self._gameObject):SetActive(true)
-    end
+    self._gameObject:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentPropItem.PropItemOnClick = function(self)
-  -- function num : 0_3
-  if (self._data):GetNew() then
-    (self._data):SetNewAsRead()
-    ;
-    (self.newGo):SetActive(false)
+function UISeasonMazeCollageContentPropItem:PropItemOnClick()
+  if self._data:GetNew() then
+    self._data:SetNewAsRead()
+    self.newGo:SetActive(false)
   end
   if self._clickCb then
-    (self._clickCb)(self._itemId, ((self.lockGo).transform).position)
+    self._clickCb(self._itemId, self.lockGo.transform.position)
   end
 end
-
-

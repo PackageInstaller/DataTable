@@ -1,67 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/test_func/LevelTest/ui_level_test_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILevelTestController", UIController)
 UILevelTestController = UILevelTestController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILevelTestController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UILevelTestController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILevelTestController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UILevelTestController:OnShow(uiParams)
   self.levelBack = uiParams[1]
   self:InitWidget()
   self:InitData()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILevelTestController.InitWidget = function(self)
-  -- function num : 0_2
+function UILevelTestController:InitWidget()
   self.content = self:GetUIComponent("UISelectObjectPath", "Content")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILevelTestController.InitData = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  local group = (Cfg.cfg_mission)({})
+function UILevelTestController:InitData(go)
+  local group = Cfg.cfg_mission({})
   local groupList = {}
   local items = {}
-  for k,v in pairs(group) do
+  for k, v in pairs(group) do
     local id = v.LevelTestGroup
     if id and not groupList[id] then
-      local data = {id, v.LevelTestGroupName}
+      local data = {
+        id,
+        v.LevelTestGroupName
+      }
       groupList[id] = data
-      ;
-      (table.insert)(items, data)
+      table.insert(items, data)
     end
   end
-  local count = (table.count)(groupList)
-  ;
-  (self.content):SpawnObjects("UILevelTestGroupItem", count)
-  local itemList = (self.content):GetAllSpawnList()
-  for key,item in ipairs(itemList) do
+  local count = table.count(groupList)
+  self.content:SpawnObjects("UILevelTestGroupItem", count)
+  local itemList = self.content:GetAllSpawnList()
+  for key, item in ipairs(itemList) do
     item:SetData(items[key])
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILevelTestController.ReturnBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UILevelTestController:ReturnBtnOnClick(go)
   if self.levelBack then
     self:SwitchState(UIStateType.UIMain)
   else
     self:CloseDialog()
   end
 end
-
-

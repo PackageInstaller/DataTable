@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/balance/ui_season_balance_qa_answer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBalanceQA_Answer", UICustomWidget)
 UISeasonBalanceQA_Answer = UISeasonBalanceQA_Answer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBalanceQA_Answer.Constructor = function(self)
-  -- function num : 0_0
+function UISeasonBalanceQA_Answer:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceQA_Answer.OnShow = function(self)
-  -- function num : 0_1
+function UISeasonBalanceQA_Answer:OnShow()
   self._desc = self:GetUIComponent("UILocalizationText", "desc")
   self._descOnly = self:GetUIComponent("UILocalizationText", "descOnly")
   self._descWithImg = self:GetGameObject("descWithImg")
@@ -24,81 +14,49 @@ UISeasonBalanceQA_Answer.OnShow = function(self)
   self._alpha = self:GetUIComponent("CanvasGroup", "Btn")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceQA_Answer.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonBalanceQA_Answer:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceQA_Answer.SetDataOnlyDesc = function(self, desc)
-  -- function num : 0_3
-  (self._onlyDesc):SetActive(true)
-  ;
-  (self._descWithImg):SetActive(false)
-  ;
-  (self._descOnly):SetText(desc)
+function UISeasonBalanceQA_Answer:SetDataOnlyDesc(desc)
+  self._onlyDesc:SetActive(true)
+  self._descWithImg:SetActive(false)
+  self._descOnly:SetText(desc)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceQA_Answer.SetData = function(self, idx, cfg, callback)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._onlyDesc):SetActive(false)
-  ;
-  (self._descWithImg):SetActive(true)
+function UISeasonBalanceQA_Answer:SetData(idx, cfg, callback)
+  self._onlyDesc:SetActive(false)
+  self._descWithImg:SetActive(true)
   self._idx = idx
   self._callback = callback
   self._cfg = cfg
-  self._succIdx = (self._cfg).SuccIdx
-  ;
-  (self._desc):SetText((StringTable.Get)(((self._cfg).Answers)[self._idx]))
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R4 in 'UnsetPending'
-
+  self._succIdx = self._cfg.SuccIdx
+  self._desc:SetText(StringTable.Get(self._cfg.Answers[self._idx]))
   if self._callback then
-    (self._Btn).raycastTarget = true
+    self._Btn.raycastTarget = true
   else
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._Btn).raycastTarget = false
+    self._Btn.raycastTarget = false
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceQA_Answer.PlayAnim = function(self, yieldTime)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._alpha).alpha = 0
-  if yieldTime > 0 then
+function UISeasonBalanceQA_Answer:PlayAnim(yieldTime)
+  self._alpha.alpha = 0
+  if 0 < yieldTime then
     if self._timer then
-      ((GameGlobal.Timer)()):CancelEvent(self._timer)
+      GameGlobal.Timer():CancelEvent(self._timer)
     end
-    self._timer = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_5_0 , upvalues : self
-    (self._anim):Play("uieffanim_UISeasonBalanceQA_Answer_in")
-  end
-)
+    self._timer = GameGlobal.Timer():AddEvent(yieldTime, function()
+      self._anim:Play("uieffanim_UISeasonBalanceQA_Answer_in")
+    end)
   else
-    ;
-    (self._anim):Play("uieffanim_UISeasonBalanceQA_Answer_in")
+    self._anim:Play("uieffanim_UISeasonBalanceQA_Answer_in")
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceQA_Answer.BtnOnClick = function(self, go)
-  -- function num : 0_6
-  if self._idx ~= self._succIdx then
-    (self._callback)(not self._callback, self._cfg, self._idx)
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UISeasonBalanceQA_Answer:BtnOnClick(go)
+  if self._callback then
+    self._callback(self._idx == self._succIdx, self._cfg, self._idx)
   end
 end
-
-

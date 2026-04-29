@@ -1,77 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_res_instance/ui_res_award.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIResAward", UICustomWidget)
 UIResAward = UIResAward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIResAward.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIResAward:OnShow()
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.ResInstance, UIItemScale.Level2)
-  ;
-  (self.uiItem):SetClickCallBack(function()
-    -- function num : 0_0_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.ResInstance, UIItemScale.Level2)
+  self.uiItem:SetClickCallBack(function()
     self:bgOnClick()
-  end
-)
+  end)
   self._trans = self:GetGameObject()
   self._resModule = self:GetModule(ResDungeonModule)
   self:AttachEvent(GameEventType.ChangeResDouble, self.OnChangeResDouble)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResAward.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIResAward:OnHide()
   self:DetachEvent(GameEventType.ChangeResDouble, self.OnChangeResDouble)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResAward.OnChangeResDouble = function(self, double)
-  -- function num : 0_2
+function UIResAward:OnChangeResDouble(double)
   if double then
-    (self.uiItem):SetData({showRes = true})
+    self.uiItem:SetData({showRes = true})
   else
-    ;
-    (self.uiItem):SetData({showRes = false})
+    self.uiItem:SetData({showRes = false})
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResAward.Flush = function(self, v)
-  -- function num : 0_3 , upvalues : _ENV
+function UIResAward:Flush(v)
   if not v then
-    return 
+    return
   end
   self._v = v
   local icon = v.icon
   local quality = v.color
-  local double = (self._resModule):IsOpenDoubleRes()
+  local double = self._resModule:IsOpenDoubleRes()
   local itemId = v.id
   local awardType = v.type
   local activityText = ""
   if awardType == StageAwardType.Activity then
     activityText = "str_item_xianshi"
   end
-  ;
-  (self.uiItem):SetData({icon = icon, quality = quality, showRes = double, itemId = itemId, topText = (UIEnum.ItemRandomStr)(v.randomType), activityText = (StringTable.Get)(activityText)})
+  self.uiItem:SetData({
+    icon = icon,
+    quality = quality,
+    showRes = double,
+    itemId = itemId,
+    topText = UIEnum.ItemRandomStr(v.randomType),
+    activityText = StringTable.Get(activityText)
+  })
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResAward.bgOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+function UIResAward:bgOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   if self._v then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowItemTips, (self._v).id, ((self._trans).transform).position)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowItemTips, self._v.id, self._trans.transform.position)
   end
 end
-
-

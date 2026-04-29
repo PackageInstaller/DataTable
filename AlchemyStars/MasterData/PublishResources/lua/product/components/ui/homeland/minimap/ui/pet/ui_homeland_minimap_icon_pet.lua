@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/pet/ui_homeland_minimap_icon_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapIconPet", UIHomelandMinimapIconBase)
 UIHomelandMinimapIconPet = UIHomelandMinimapIconPet
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapIconPet.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandMinimapIconPet:OnShow(uiParams)
   self._rawImageLoader = self:GetUIComponent("RawImageLoader", "RawImage")
   self._selectGO = self:GetGameObject("Selected")
   self._eventBubble = self:GetGameObject("EventBubble")
@@ -16,145 +9,81 @@ UIHomelandMinimapIconPet.OnShow = function(self, uiParams)
   self._headBGGo = self:GetGameObject("HeadBG")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconPet.OnInitDone = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self.pet = (self:GetIconData()):GetParam()
-  self.cfg = (Cfg.cfg_pet)[(self.pet):TemplateID()]
-  local skinID = (self.pet):ClothSkinID()
-  local skinCfg = (Cfg.cfg_pet_skin)[skinID]
-  ;
-  (self._rawImageLoader):LoadImage(skinCfg.Head)
-  local behaviorType = ((self.pet):GetPetBehavior()):GetCurBehaviorType()
-  ;
-  (self._treasureBubble):SetActive(behaviorType == HomelandPetBehaviorType.TreasureIdle)
-  ;
-  (self._eventBubble):SetActive(behaviorType == HomelandPetBehaviorType.StoryWaitingBuild or behaviorType == HomelandPetBehaviorType.StoryWaitingBuildStand or behaviorType == HomelandPetBehaviorType.StoryWaitingStand or behaviorType == HomelandPetBehaviorType.StoryWaitingWalk)
-  self._behaviorChangeCallback = function(type)
-    -- function num : 0_1_0 , upvalues : self
+function UIHomelandMinimapIconPet:OnInitDone()
+  self.pet = self:GetIconData():GetParam()
+  self.cfg = Cfg.cfg_pet[self.pet:TemplateID()]
+  local skinID = self.pet:ClothSkinID()
+  local skinCfg = Cfg.cfg_pet_skin[skinID]
+  self._rawImageLoader:LoadImage(skinCfg.Head)
+  local behaviorType = self.pet:GetPetBehavior():GetCurBehaviorType()
+  self._treasureBubble:SetActive(behaviorType == HomelandPetBehaviorType.TreasureIdle)
+  self._eventBubble:SetActive(behaviorType == HomelandPetBehaviorType.StoryWaitingBuild or behaviorType == HomelandPetBehaviorType.StoryWaitingBuildStand or behaviorType == HomelandPetBehaviorType.StoryWaitingStand or behaviorType == HomelandPetBehaviorType.StoryWaitingWalk)
+  
+  function self._behaviorChangeCallback(type)
     self:OnPetBehaviorChanged(type)
   end
-
-  ;
-  (self.pet):RegisterBehaviorChangeCallback(self._behaviorChangeCallback)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  
+  self.pet:RegisterBehaviorChangeCallback(self._behaviorChangeCallback)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconPet.OnHide = function(self)
-  -- function num : 0_2
-  (self.pet):UnRegisterBehaviorChangeCallback(self._behaviorChangeCallback)
+function UIHomelandMinimapIconPet:OnHide()
+  self.pet:UnRegisterBehaviorChangeCallback(self._behaviorChangeCallback)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconPet.OnPetBehaviorChanged = function(self, behaviorType)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._treasureBubble):SetActive(behaviorType == HomelandPetBehaviorType.TreasureIdle)
-  ;
-  (self._eventBubble):SetActive(behaviorType == HomelandPetBehaviorType.StoryWaitingBuild or behaviorType == HomelandPetBehaviorType.StoryWaitingBuildStand or behaviorType == HomelandPetBehaviorType.StoryWaitingStand or behaviorType == HomelandPetBehaviorType.StoryWaitingWalk)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIHomelandMinimapIconPet:OnPetBehaviorChanged(behaviorType)
+  self._treasureBubble:SetActive(behaviorType == HomelandPetBehaviorType.TreasureIdle)
+  self._eventBubble:SetActive(behaviorType == HomelandPetBehaviorType.StoryWaitingBuild or behaviorType == HomelandPetBehaviorType.StoryWaitingBuildStand or behaviorType == HomelandPetBehaviorType.StoryWaitingStand or behaviorType == HomelandPetBehaviorType.StoryWaitingWalk)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconPet.OnSelected = function(self)
-  -- function num : 0_4
-  (self._selectGO):SetActive(true)
+function UIHomelandMinimapIconPet:OnSelected()
+  self._selectGO:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconPet.OnUnSelected = function(self)
-  -- function num : 0_5
-  (self._selectGO):SetActive(false)
+function UIHomelandMinimapIconPet:OnUnSelected()
+  self._selectGO:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconPet.GetShowIconOffset = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandMinimapIconPet:GetShowIconOffset()
   return Vector2(0, -30)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconPet.GetIconMultiSelectPositionOffset = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHomelandMinimapIconPet:GetIconMultiSelectPositionOffset()
   return Vector2(0, 30)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconPet.GetShowName = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  return (StringTable.Get)((self.cfg).Name)
+function UIHomelandMinimapIconPet:GetShowName()
+  return StringTable.Get(self.cfg.Name)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconPet.GetMutilSelectedPosition = function(self)
-  -- function num : 0_9
-  return ((self._headBGGo).transform).position
+function UIHomelandMinimapIconPet:GetMutilSelectedPosition()
+  return self._headBGGo.transform.position
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconPet.GetAnimationName = function(self, animType)
-  -- function num : 0_10 , upvalues : _ENV
+function UIHomelandMinimapIconPet:GetAnimationName(animType)
   if not self._animationNames then
     self._animationNames = {}
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.IN] = "UIHomelandMinimapPetIcon_in"
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.OUT] = "UIHomelandMinimapPetIcon_out"
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.SELECT] = "UIHomelandMinimapPetIcon_Selected_in"
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.UNSELECT] = "UIHomelandMinimapPetIcon_Selected_out"
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.EXPANSION] = "UIHomelandMinimapPetIcon_blue"
+    self._animationNames[MinimapIconAnimationType.IN] = "UIHomelandMinimapPetIcon_in"
+    self._animationNames[MinimapIconAnimationType.OUT] = "UIHomelandMinimapPetIcon_out"
+    self._animationNames[MinimapIconAnimationType.SELECT] = "UIHomelandMinimapPetIcon_Selected_in"
+    self._animationNames[MinimapIconAnimationType.UNSELECT] = "UIHomelandMinimapPetIcon_Selected_out"
+    self._animationNames[MinimapIconAnimationType.EXPANSION] = "UIHomelandMinimapPetIcon_blue"
   end
-  return (self._animationNames)[animType]
+  return self._animationNames[animType]
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconPet.IsMarkSelf = function(self, type, id)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHomelandMinimapIconPet:IsMarkSelf(type, id)
   if type == HomelandMimimapIconMarkType.Pet then
-    local cfg = (Cfg.cfg_homeland_event)[id]
+    local cfg = Cfg.cfg_homeland_event[id]
     if cfg then
-      local petid = (self.pet):TemplateID()
+      local petid = self.pet:TemplateID()
       local cfgPetID = cfg.PetID
       if cfgPetID and cfgPetID == petid then
         return true
       end
     end
-  else
-    do
-      do
-        if type == HomelandMimimapIconMarkType.FishingMatch then
-          local petid = (self.pet):TemplateID()
-          return petid == id
-        end
-        do return false end
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
-      end
-    end
+  elseif type == HomelandMimimapIconMarkType.FishingMatch then
+    local petid = self.pet:TemplateID()
+    return petid == id
   end
+  return false
 end
-
-

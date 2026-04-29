@@ -1,20 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/core/bounce_debug.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BounceDebug", Object)
 BounceDebug = BounceDebug
--- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
 BounceDebug.ShowObjRect = nil
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
 BounceDebug.PlayerLiveForever = nil
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
 BounceDebug.TestPlayerRes = nil
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
 BounceDebug.TestLevelId = nil
-

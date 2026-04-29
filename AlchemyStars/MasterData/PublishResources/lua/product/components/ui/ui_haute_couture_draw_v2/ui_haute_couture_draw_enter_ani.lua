@@ -1,31 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/ui_haute_couture_draw_enter_ani.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawEnterAni", UICustomWidget)
 UIHauteCoutureDrawEnterAni = UIHauteCoutureDrawEnterAni
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawEnterAni.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawEnterAni:Constructor()
   self._clipLength = -1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawEnterAni.OnShow = function(self)
-  -- function num : 0_1
+function UIHauteCoutureDrawEnterAni:OnShow()
   self:InitWidgets()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawEnterAni.InitWidgets = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHauteCoutureDrawEnterAni:InitWidgets()
   local aniGo = self:GetGameObject("Animation")
   local animation = aniGo:GetComponent("Animation")
-  local clips = (HelperProxy:GetInstance()):GetAllAnimationClip(animation)
+  local clips = HelperProxy:GetInstance():GetAllAnimationClip(animation)
   if clips and clips.Length > 0 then
     local clip = clips[0]
     if clip then
@@ -36,11 +23,6 @@ UIHauteCoutureDrawEnterAni.InitWidgets = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawEnterAni.GetClipLength = function(self)
-  -- function num : 0_3
+function UIHauteCoutureDrawEnterAni:GetClipLength()
   return self._clipLength
 end
-
-

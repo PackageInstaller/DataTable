@@ -1,197 +1,140 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_round_enter_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("round_enter_system")
 _class("RoundEnterSystem_Render", RoundEnterSystem)
 RoundEnterSystem_Render = RoundEnterSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-RoundEnterSystem_Render._DoRenderShowPetTurnTips = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local renderEntitySvc = (self._world):GetService("RenderEntity")
-  if (self._world):GetGameTurn() == GameTurnType.LocalPlayerTurn then
+function RoundEnterSystem_Render:_DoRenderShowPetTurnTips(TT)
+  local renderEntitySvc = self._world:GetService("RenderEntity")
+  if self._world:GetGameTurn() == GameTurnType.LocalPlayerTurn then
     renderEntitySvc:ShowUITurnTips(true)
   else
     renderEntitySvc:ShowUITurnTips(false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem_Render._DoRenderShowPetUI = function(self, TT, curWaveRound)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateRoundCount, curWaveRound)
-  local renderBattleService = (self.world):GetService("RenderBattle")
+function RoundEnterSystem_Render:_DoRenderShowPetUI(TT, curWaveRound)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateRoundCount, curWaveRound)
+  local renderBattleService = self.world:GetService("RenderBattle")
   renderBattleService:ShowUIPetInfo(TT)
   if GameSingle then
-    return 
+    return
   end
   self:_DoRenderGuidePlayer(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem_Render._DoRenderPlayerTurnBuff = function(self, TT, teamEntity, formerTeamOrder)
-  -- function num : 0_2 , upvalues : _ENV
+function RoundEnterSystem_Render:_DoRenderPlayerTurnBuff(TT, teamEntity, formerTeamOrder)
   if teamEntity == nil then
-    return 
+    return
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local gsmState = utilDataSvc:GetCurMainStateID()
-  local playBuffService = (self._world):GetService("PlayBuff")
+  local playBuffService = self._world:GetService("PlayBuff")
   playBuffService:RefreshLockHPView(TT, gsmState)
   playBuffService:PlayPlayerTurnBuff(TT, teamEntity, formerTeamOrder, false)
-  local renderBattleService = (self._world):GetService("RenderBattle")
+  local renderBattleService = self._world:GetService("RenderBattle")
   renderBattleService:ChangeTeamLeaderRender(TT, teamEntity)
   if GameSingle then
-    return 
+    return
   end
   self:_DoRenderGuideBuffEnd(TT)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem_Render._DoRenderChessTurnBuff = function(self, TT)
-  -- function num : 0_3
-  local playBuffService = (self._world):GetService("PlayBuff")
+function RoundEnterSystem_Render:_DoRenderChessTurnBuff(TT)
+  local playBuffService = self._world:GetService("PlayBuff")
   playBuffService:PlayChessTurnBuff(TT)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem_Render._DoRenderGuidePlayer = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  local guideService = (self._world):GetService("Guide")
-  local utilStatSvc = (self._world):GetService("UtilData")
+function RoundEnterSystem_Render:_DoRenderGuidePlayer(TT)
+  local guideService = self._world:GetService("Guide")
+  local utilStatSvc = self._world:GetService("UtilData")
   local guideTaskId = guideService:Trigger(GameEventType.GuideRound, GuideRoundTurn.PlayerTurn)
-  while not (TaskHelper:GetInstance()):IsTaskFinished(guideTaskId, true) do
+  while not TaskHelper:GetInstance():IsTaskFinished(guideTaskId, true) do
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem_Render._DoRenderUpdatePetPower = function(self, TT, tNotifyArray)
-  -- function num : 0_5 , upvalues : _ENV
+function RoundEnterSystem_Render:_DoRenderUpdatePetPower(TT, tNotifyArray)
   if not tNotifyArray or #tNotifyArray == 0 then
-    return 
+    return
   end
-  local playbfsvc = (self._world):GetService("PlayBuff")
-  for _,notify in ipairs(tNotifyArray) do
+  local playbfsvc = self._world:GetService("PlayBuff")
+  for _, notify in ipairs(tNotifyArray) do
     playbfsvc:PlayBuffView(TT, notify)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem_Render._DoRenderTrapBeforePlayer = function(self, TT)
-  -- function num : 0_6
-  local playAISvc = (self._world):GetService("PlayAI")
+function RoundEnterSystem_Render:_DoRenderTrapBeforePlayer(TT)
+  local playAISvc = self._world:GetService("PlayAI")
   if playAISvc == nil then
-    return 
+    return
   end
   playAISvc:DoCommonRountine(TT)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem_Render._DoRenderResetChessPetFinishState = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
-  local chessSvcRender = (self._world):GetService("ChessRender")
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).ChessPetRender)
-  for i,v in ipairs(group:GetEntities()) do
+function RoundEnterSystem_Render:_DoRenderResetChessPetFinishState(TT)
+  local chessSvcRender = self._world:GetService("ChessRender")
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.ChessPetRender)
+  for i, v in ipairs(group:GetEntities()) do
     chessSvcRender:ShowChessPetCanMoveEffect(v:GetID())
   end
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.FinishTurnOnly)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.FinishTurnOnly)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem_Render._DoRenderFeatureOnRoundEnter = function(self, TT)
-  -- function num : 0_8
-  local featureSvcRender = (self._world):GetService("FeatureRender")
+function RoundEnterSystem_Render:_DoRenderFeatureOnRoundEnter(TT)
+  local featureSvcRender = self._world:GetService("FeatureRender")
   if featureSvcRender then
     featureSvcRender:DoFeatureOnRoundEnter(TT)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem_Render._DoRenderFeatureOnRoundEnterEarly = function(self, TT)
-  -- function num : 0_9
-  local featureSvcRender = (self._world):GetService("FeatureRender")
+function RoundEnterSystem_Render:_DoRenderFeatureOnRoundEnterEarly(TT)
+  local featureSvcRender = self._world:GetService("FeatureRender")
   if featureSvcRender then
     featureSvcRender:DoFeatureOnRoundEnterEarly(TT)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem_Render._DoRenderFeatureShowBanPetSkill = function(self, TT)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureShowBanPetSkill, true)
+function RoundEnterSystem_Render:_DoRenderFeatureShowBanPetSkill(TT)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureShowBanPetSkill, true)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem_Render._DoRenderSaveRoundBeginPlayerPos = function(self, TT, teamEntity)
-  -- function num : 0_11 , upvalues : _ENV
-  ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTSaveRoundBeginPlayerPosEnd:New(teamEntity))
+function RoundEnterSystem_Render:_DoRenderSaveRoundBeginPlayerPos(TT, teamEntity)
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, NTSaveRoundBeginPlayerPosEnd:New(teamEntity))
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem_Render._DoRenderPunishmentRoundEnter = function(self, TT, damageInfo, isWarnRound)
-  -- function num : 0_12 , upvalues : _ENV
+function RoundEnterSystem_Render:_DoRenderPunishmentRoundEnter(TT, damageInfo, isWarnRound)
   if isWarnRound then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateOutOfRoundPunish)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideOutOfRoundPunishWarn, true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateOutOfRoundPunish)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideOutOfRoundPunishWarn, true)
     YIELD(TT, 2000)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideOutOfRoundPunishWarn, false)
-    return 
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideOutOfRoundPunishWarn, false)
+    return
   end
   if not damageInfo then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideOutOfRoundDamageWarning, false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideOutOfRoundDamageWarning, false)
   YIELD(TT)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideOutOfRoundDamageWarning, true)
-  local eTeam = ((self._world):Player()):GetLocalTeamEntity()
-  local rsvcPlayDamage = (self._world):GetService("PlayDamage")
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideOutOfRoundDamageWarning, true)
+  local eTeam = self._world:Player():GetLocalTeamEntity()
+  local rsvcPlayDamage = self._world:GetService("PlayDamage")
   local taskID = rsvcPlayDamage:AsyncUpdateHPAndDisplayDamage(eTeam, damageInfo)
-  while not (TaskHelper:GetInstance()):IsTaskFinished(taskID) do
+  while not TaskHelper:GetInstance():IsTaskFinished(taskID) do
     YIELD(TT)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateOutOfRoundPunish)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateOutOfRoundPunish)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem_Render._DoRenderRefreshMonsterAntiActiveSkill = function(self, TT)
-  -- function num : 0_13 , upvalues : _ENV
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,e in ipairs(monsterGroup:GetEntities()) do
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateAntiActiveSkill, e:GetID())
+function RoundEnterSystem_Render:_DoRenderRefreshMonsterAntiActiveSkill(TT)
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(monsterGroup:GetEntities()) do
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateAntiActiveSkill, e:GetID())
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundEnterSystem_Render._DoRenderGuideBuffEnd = function(self, TT)
-  -- function num : 0_14 , upvalues : _ENV
-  local guideService = (self._world):GetService("Guide")
+function RoundEnterSystem_Render:_DoRenderGuideBuffEnd(TT)
+  local guideService = self._world:GetService("Guide")
   local guideTaskId = guideService:Trigger(GameEventType.GuideRound, GuideRoundTurn.BuffEnd)
-  while not (TaskHelper:GetInstance()):IsTaskFinished(guideTaskId, true) do
+  while not TaskHelper:GetInstance():IsTaskFinished(guideTaskId, true) do
     YIELD(TT)
   end
 end
-
-

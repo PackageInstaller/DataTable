@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_skill_select_by_round_and_buff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionSkillSelectByRoundAndBuff", AINewNode)
 ActionSkillSelectByRoundAndBuff = ActionSkillSelectByRoundAndBuff
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSkillSelectByRoundAndBuff.Constructor = function(self)
-  -- function num : 0_0
+function ActionSkillSelectByRoundAndBuff:Constructor()
   self._skillListIndex = 1
   self._skillID = 0
   self.m_nDefaultSkillIndex = 0
   self.m_nSkillListCount = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSelectByRoundAndBuff.InitializeNode = function(self, cfg, context, parentNode, configData)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionSkillSelectByRoundAndBuff.super).InitializeNode)(self, cfg, context, parentNode, configData)
+function ActionSkillSelectByRoundAndBuff:InitializeNode(cfg, context, parentNode, configData)
+  ActionSkillSelectByRoundAndBuff.super.InitializeNode(self, cfg, context, parentNode, configData)
   self._skillListIndex = configData[1]
   self.m_nDefaultSkillIndex = configData[2]
   self._checkRound = configData[3]
@@ -28,63 +18,44 @@ ActionSkillSelectByRoundAndBuff.InitializeNode = function(self, cfg, context, pa
   self._buffID = configData[5]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSelectByRoundAndBuff.Update = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function ActionSkillSelectByRoundAndBuff:Update()
   local vecSkillLists = self:GetConfigSkillList()
   local skillList = vecSkillLists[self._skillListIndex]
   if skillList then
     local nGameRound = self:GetGameRountNow()
     local nSaveRound = self:GetRuntimeData("GameRound")
-    if not self:GetRuntimeData("NextRoundCount") and not self.m_nDefaultSkillIndex then
-      local roundCount = nSaveRound ~= nil and nSaveRound == nGameRound or 1
-    end
-    self._skillID = skillList[roundCount]
-    do
+    if nil == nSaveRound or nSaveRound ~= nGameRound then
+      local roundCount = self:GetRuntimeData("NextRoundCount") or self.m_nDefaultSkillIndex or 1
+      self._skillID = skillList[roundCount]
       if roundCount == self._checkRound and self._checkRound > 0 then
-        local addRound = ((self.m_entityOwn):Attributes()):GetAttribute(self._buffAttribute)
-        if addRound then
-          addRound = addRound - 1
-        end
-        if addRound and addRound > 0 then
-          self._skillID = skillList[roundCount + (addRound)]
+        local addRound = self.m_entityOwn:Attributes():GetAttribute(self._buffAttribute)
+        addRound = addRound and addRound - 1
+        if addRound and 0 < addRound then
+          self._skillID = skillList[roundCount + addRound]
         end
       end
-      if self._buffID > 0 then
-        local buffCmp = (self.m_entityOwn):BuffComponent()
+      if 0 < self._buffID then
+        local buffCmp = self.m_entityOwn:BuffComponent()
         local buffInstance = buffCmp:GetBuffById(self._buffID)
         if not buffInstance then
           self._skillID = skillList[roundCount + self._checkRound]
         end
       end
-      do
-        do
-          self:PrintLog("按回合选技能<初次进入>，RoundCount = ", roundCount, ", skillID = ", self._skillID)
-          do
-            do
-              local roundCount = self:GetRuntimeData("NextRoundCount") or self.m_nDefaultSkillIndex or 1
-              self:PrintLog("按回合选技能<多次进入>，RoundCount = ", roundCount, ", skillID = ", self._skillID)
-              if self.m_nSkillListCount <= 0 then
-                self.m_nSkillListCount = (table.count)(skillList)
-                if self.m_nSkillListCount > 0 then
-                  self:SetRuntimeData("SkillCount", self.m_nSkillListCount)
-                end
-              end
-              return AINewNodeStatus.Success
-            end
-          end
-        end
+      self:PrintLog("按回合选技能<初次进入>，RoundCount = ", roundCount, ", skillID = ", self._skillID)
+    else
+      local roundCount = self:GetRuntimeData("NextRoundCount") or self.m_nDefaultSkillIndex or 1
+      self:PrintLog("按回合选技能<多次进入>，RoundCount = ", roundCount, ", skillID = ", self._skillID)
+    end
+    if 0 >= self.m_nSkillListCount then
+      self.m_nSkillListCount = table.count(skillList)
+      if 0 < self.m_nSkillListCount then
+        self:SetRuntimeData("SkillCount", self.m_nSkillListCount)
       end
     end
   end
+  return AINewNodeStatus.Success
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSelectByRoundAndBuff.GetActionSkillID = function(self)
-  -- function num : 0_3
+function ActionSkillSelectByRoundAndBuff:GetActionSkillID()
   return self._skillID
 end
-
-

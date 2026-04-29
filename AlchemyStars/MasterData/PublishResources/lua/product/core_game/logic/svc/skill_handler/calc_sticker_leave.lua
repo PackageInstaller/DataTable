@@ -1,40 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_sticker_leave.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_StickerLeave", Object)
 SkillEffectCalc_StickerLeave = SkillEffectCalc_StickerLeave
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_StickerLeave.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_StickerLeave:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_StickerLeave.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_StickerLeave:DoSkillEffectCalculator(skillEffectCalcParam)
   local pos = skillEffectCalcParam.attackPos
   local sep = skillEffectCalcParam.skillEffectParam
   local convertColor = sep:GetConvertColor()
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
+  local boardCmpt = self._world:GetBoardEntity():Board()
   local es = boardCmpt:GetPieceEntities(pos, function(e)
-    -- function num : 0_1_0 , upvalues : _ENV
-    do return not e:Trap() or (e:Trap()):GetTrapType() == TrapType.TerrainAbyss end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-)
+    return e:Trap() and e:Trap():GetTrapType() == TrapType.TerrainAbyss
+  end)
   local range = {}
   local color = boardCmpt:GetPieceType(pos)
-  local onAbyss = #es > 0
+  local onAbyss = 0 < #es
   if onAbyss then
     range[#range + 1] = pos
     color = PieceType.None
-  elseif convertColor and PieceType.None < convertColor and convertColor <= PieceType.Any then
-    local boardServiceLogic = (self._world):GetService("BoardLogic")
+  elseif convertColor and convertColor > PieceType.None and convertColor <= PieceType.Any then
+    local boardServiceLogic = self._world:GetService("BoardLogic")
     local canConverPos = boardServiceLogic:GetCanConvertGridElement(pos)
     if canConverPos then
       range[#range + 1] = pos
@@ -42,8 +29,5 @@ SkillEffectCalc_StickerLeave.DoSkillEffectCalculator = function(self, skillEffec
     end
   end
   local skillConvertEffectResult = SkillConvertGridElementEffectResult:New(range, color)
-  do return skillConvertEffectResult end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return skillConvertEffectResult
 end
-
-

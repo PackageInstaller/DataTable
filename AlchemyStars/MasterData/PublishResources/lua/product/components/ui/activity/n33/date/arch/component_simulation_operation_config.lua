@@ -1,82 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/date/arch/component_simulation_operation_config.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ComponentSimulationOperationConfig", Object)
 ComponentSimulationOperationConfig = ComponentSimulationOperationConfig
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ComponentSimulationOperationConfig.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ComponentSimulationOperationConfig:Constructor()
   self._allBuildingInfos = {}
   self._count = 0
-  local allData = (Cfg.cfg_component_simulation_operation)()
-  for k,v in pairs(allData) do
+  local allData = Cfg.cfg_component_simulation_operation()
+  for k, v in pairs(allData) do
     local info = ComponentSimulationBuildingInfo:New(v)
     local bID = info.BuildingID
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R9 in 'UnsetPending'
-
-    if not (self._allBuildingInfos)[bID] then
-      (self._allBuildingInfos)[bID] = {}
+    if not self._allBuildingInfos[bID] then
+      self._allBuildingInfos[bID] = {}
       self._count = self._count + 1
     end
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    ((self._allBuildingInfos)[bID])[info.Level] = info
+    self._allBuildingInfos[bID][info.Level] = info
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ComponentSimulationOperationConfig.GetBuildingCount = function(self)
-  -- function num : 0_1
+function ComponentSimulationOperationConfig:GetBuildingCount()
   return self._count
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ComponentSimulationOperationConfig.GetBuildingAllLvInfo = function(self, buildingID)
-  -- function num : 0_2
-  return (self._allBuildingInfos)[buildingID]
+function ComponentSimulationOperationConfig:GetBuildingAllLvInfo(buildingID)
+  return self._allBuildingInfos[buildingID]
 end
 
 _class("ComponentSimulationBuildingInfo", Object)
 ComponentSimulationBuildingInfo = ComponentSimulationBuildingInfo
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-ComponentSimulationBuildingInfo.Constructor = function(self, data)
-  -- function num : 0_3
+function ComponentSimulationBuildingInfo:Constructor(data)
   self.ComponentID = data.ComponentID
   self.BuildingID = data.ArchitectureId
   self.Level = data.Level
   self.UpgradeCost = data.UpgradeCost
-  if not data.PreCondition then
-    self.PreCondition = {}
-    self.DefaultNum = data.DefaultNum
-    self.LimitNum = data.LimitNum
-    if not data.StoryList then
-      self.StoryList = {}
-      self.Rate = data.Rate
-      self.Rewards = self:SortReward(data.Rewards)
-      self.Name = data.Name
-      self.MapName = data.MapName
-      self.Des = data.Des
-      self.Icon = data.Icon
-      self.Pic = data.Pic
-      self.MapPos = self:TableToVector2(data.MapPos)
-      self.BubbleNodePos = self:TableToVector2(data.BubbleNodePos)
-      self.NamePos = self:TableToVector2(data.NamePos)
-      self.BubbleReverse = data.BubbleReverse
-    end
-  end
+  self.PreCondition = data.PreCondition or {}
+  self.DefaultNum = data.DefaultNum
+  self.LimitNum = data.LimitNum
+  self.StoryList = data.StoryList or {}
+  self.Rate = data.Rate
+  self.Rewards = self:SortReward(data.Rewards)
+  self.Name = data.Name
+  self.MapName = data.MapName
+  self.Des = data.Des
+  self.Icon = data.Icon
+  self.Pic = data.Pic
+  self.MapPos = self:TableToVector2(data.MapPos)
+  self.BubbleNodePos = self:TableToVector2(data.BubbleNodePos)
+  self.NamePos = self:TableToVector2(data.NamePos)
+  self.BubbleReverse = data.BubbleReverse
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ComponentSimulationBuildingInfo.TableToVector2 = function(self, tableValue)
-  -- function num : 0_4 , upvalues : _ENV
+function ComponentSimulationBuildingInfo:TableToVector2(tableValue)
   if not tableValue then
     return nil
   end
@@ -86,27 +59,22 @@ ComponentSimulationBuildingInfo.TableToVector2 = function(self, tableValue)
   return v
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ComponentSimulationBuildingInfo.SortReward = function(self, data)
-  -- function num : 0_5 , upvalues : _ENV
+function ComponentSimulationBuildingInfo:SortReward(data)
   local newList = {}
   if not data then
     return newList
   end
-  for key,v in pairs(data) do
+  for key, v in pairs(data) do
     local id = v[1]
     if id == RoleAssetID.RoleAssetSimulationOperationCoin then
-      (table.insert)(newList, v)
+      table.insert(newList, v)
     end
   end
-  for key,v in pairs(data) do
+  for key, v in pairs(data) do
     local id = v[1]
     if id ~= RoleAssetID.RoleAssetSimulationOperationCoin then
-      (table.insert)(newList, v)
+      table.insert(newList, v)
     end
   end
   return newList
 end
-
-

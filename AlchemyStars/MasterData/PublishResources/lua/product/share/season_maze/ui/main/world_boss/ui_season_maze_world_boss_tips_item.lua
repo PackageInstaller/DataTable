@@ -1,29 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/world_boss/ui_season_maze_world_boss_tips_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeWorldBossTipsItem", UICustomWidget)
 UISeasonMazeWorldBossTipsItem = UISeasonMazeWorldBossTipsItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeWorldBossTipsItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMazeWorldBossTipsItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossTipsItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMazeWorldBossTipsItem:InitWidget()
   self.tipsText = self:GetUIComponent("UILocalizationText", "tipsText")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossTipsItem.SetData = function(self, str)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.tipsText):SetText((StringTable.Get)(str))
+function UISeasonMazeWorldBossTipsItem:SetData(str)
+  self.tipsText:SetText(StringTable.Get(str))
 end
-
-

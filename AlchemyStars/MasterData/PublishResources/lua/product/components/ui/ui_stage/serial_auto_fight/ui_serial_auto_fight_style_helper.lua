@@ -1,83 +1,69 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_stage/serial_auto_fight/ui_serial_auto_fight_style_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISerialAutoFightStyleHelper", Object)
 UISerialAutoFightStyleHelper = UISerialAutoFightStyleHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISerialAutoFightStyleHelper.GetStyleInfo = function(name, key)
-  -- function num : 0_0 , upvalues : _ENV
-  if (string.isnullorempty)(name) or (string.isnullorempty)(key) then
-    return 
+function UISerialAutoFightStyleHelper.GetStyleInfo(name, key)
+  if string.isnullorempty(name) or string.isnullorempty(key) then
+    return
   end
   local style = {}
   local dark = {
-bg_di01 = {rawImageName = "fight_saodang_di02"}
-, 
-bg_di04 = {rawImageName = "fight_saodang_di06"}
-, 
-bg_di05 = {rawImageName = "fight_saodang_di07"}
-, 
-line01 = {atlasName = "UIAutoFightSweep.spriteatlas", spriteName = "fight_saodang_line02"}
-, 
-line03 = {atlasName = "UIAutoFightSweep.spriteatlas", spriteName = "fight_saodang_line04"}
-, 
-kuang01 = {atlasName = "UIAutoFightSweep.spriteatlas", spriteName = "fight_saodang_kuang02"}
-, 
-kuang03 = {atlasName = "UIAutoFightSweep.spriteatlas", spriteName = "fight_saodang_kuang04"}
-, 
-di08 = {atlasName = "UIAutoFightSweep.spriteatlas", spriteName = "fight_saodang_di09"}
-, 
-titleColor = {color = "#FFFFFF"}
-, 
-optionTitleColorOff = {color = "#F4F4F4"}
-, 
-optionTitleColorOn = {color = "#F4F4F4"}
-, 
-optionColor = {color = "#F4F4F4"}
-, 
-optionColor2 = {color = "#3E3D3D"}
-, 
-optionTabBtnOff1 = {}
-, 
-optionTabBtnOn1 = {}
-, 
-optionTabBtnOff2 = {}
-, 
-optionTabBtnOn2 = {}
-, 
-optionFightBtnBg = {}
-, 
-optionFightBtnImg = {}
-}
+    bg_di01 = {
+      rawImageName = "fight_saodang_di02"
+    },
+    bg_di04 = {
+      rawImageName = "fight_saodang_di06"
+    },
+    bg_di05 = {
+      rawImageName = "fight_saodang_di07"
+    },
+    line01 = {
+      atlasName = "UIAutoFightSweep.spriteatlas",
+      spriteName = "fight_saodang_line02"
+    },
+    line03 = {
+      atlasName = "UIAutoFightSweep.spriteatlas",
+      spriteName = "fight_saodang_line04"
+    },
+    kuang01 = {
+      atlasName = "UIAutoFightSweep.spriteatlas",
+      spriteName = "fight_saodang_kuang02"
+    },
+    kuang03 = {
+      atlasName = "UIAutoFightSweep.spriteatlas",
+      spriteName = "fight_saodang_kuang04"
+    },
+    di08 = {
+      atlasName = "UIAutoFightSweep.spriteatlas",
+      spriteName = "fight_saodang_di09"
+    },
+    titleColor = {color = "#FFFFFF"},
+    optionTitleColorOff = {color = "#F4F4F4"},
+    optionTitleColorOn = {color = "#F4F4F4"},
+    optionColor = {color = "#F4F4F4"},
+    optionColor2 = {color = "#3E3D3D"},
+    optionTabBtnOff1 = {},
+    optionTabBtnOn1 = {},
+    optionTabBtnOff2 = {},
+    optionTabBtnOn2 = {},
+    optionFightBtnBg = {},
+    optionFightBtnImg = {}
+  }
   style.dark = dark
-  local season = (UISeasonHelper.GetCurSeasonAutoFightStyle)()
+  local season = UISeasonHelper.GetCurSeasonAutoFightStyle()
   style.season = season
-  if style[name] then
-    local styleInfo = (style[name])[key]
-  end
+  local styleInfo = style[name] and style[name][key]
   if styleInfo == nil then
-    (Log.exception)("UISerialAutoFightStyleHelper.GetStyle(", name, ", ", key, ") return nil")
+    Log.exception("UISerialAutoFightStyleHelper.GetStyle(", name, ", ", key, ") return nil")
   end
   return styleInfo
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightStyleHelper.FitStyle_RichText = function(styleName, styleKey, text)
-  -- function num : 0_1 , upvalues : _ENV
-  local info = (UISerialAutoFightStyleHelper.GetStyleInfo)(styleName, styleKey)
-  return (UIStyleHelper.FitStyle_RichText)(info, text)
+function UISerialAutoFightStyleHelper.FitStyle_RichText(styleName, styleKey, text)
+  local info = UISerialAutoFightStyleHelper.GetStyleInfo(styleName, styleKey)
+  return UIStyleHelper.FitStyle_RichText(info, text)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightStyleHelper.FitStyle_Widget = function(styleName, styleKey, uiView, widgetName)
-  -- function num : 0_2 , upvalues : _ENV
-  local info = (UISerialAutoFightStyleHelper.GetStyleInfo)(styleName, styleKey)
-  return (UIStyleHelper.FitStyle_Widget)(info, uiView, widgetName)
+function UISerialAutoFightStyleHelper.FitStyle_Widget(styleName, styleKey, uiView, widgetName)
+  local info = UISerialAutoFightStyleHelper.GetStyleInfo(styleName, styleKey)
+  return UIStyleHelper.FitStyle_Widget(info, uiView, widgetName)
 end
-
-

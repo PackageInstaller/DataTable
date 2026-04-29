@@ -1,71 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/res_pet_equip_refine.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ResPetEquipRefine", Object)
 ResPetEquipRefine = ResPetEquipRefine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ResPetEquipRefine.Constructor = function(self)
-  -- function num : 0_0
+function ResPetEquipRefine:Constructor()
   self._Res = {}
   self._MaxLv = {}
   self:InitResPetEquipRefine()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ResPetEquipRefine.InitResPetEquipRefine = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ResPetEquipRefine:InitResPetEquipRefine()
   self._Res = {}
-  local cfg = (Cfg.cfg_pet_equip_refine)({})
-  for k,v in pairs(cfg) do
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R7 in 'UnsetPending'
-
-    if (self._Res)[v.PetID] == nil then
-      (self._Res)[v.PetID] = {}
+  local cfg = Cfg.cfg_pet_equip_refine({})
+  for k, v in pairs(cfg) do
+    if self._Res[v.PetID] == nil then
+      self._Res[v.PetID] = {}
     end
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R7 in 'UnsetPending'
-
-    if (self._MaxLv)[v.PetID] == nil or (self._MaxLv)[v.PetID] < v.Level then
-      (self._MaxLv)[v.PetID] = v.Level
+    if self._MaxLv[v.PetID] == nil or self._MaxLv[v.PetID] < v.Level then
+      self._MaxLv[v.PetID] = v.Level
     end
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self._Res)[v.PetID])[v.Level] = v
+    self._Res[v.PetID][v.Level] = v
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ResPetEquipRefine.GetRes = function(self, petId, level)
-  -- function num : 0_2 , upvalues : _ENV
+function ResPetEquipRefine:GetRes(petId, level)
   if petId == nil or level == nil then
     return nil
   end
-  if (self._Res)[petId] == nil then
+  if self._Res[petId] == nil then
     return nil
   end
-  local res = ((self._Res)[petId])[level]
+  local res = self._Res[petId][level]
   if res == nil then
-    (Log.error)("ResPetEquipRefine:GetRes petId level error ", petId, ", ", level)
+    Log.error("ResPetEquipRefine:GetRes petId level error ", petId, ", ", level)
     return nil
   end
   return res
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ResPetEquipRefine.GetMaxLv = function(self, petId)
-  -- function num : 0_3 , upvalues : _ENV
-  local ns = (self._MaxLv)[petId]
+function ResPetEquipRefine:GetMaxLv(petId)
+  local ns = self._MaxLv[petId]
   if ns == nil then
-    (Log.error)("ResPetEquipRefine:GetMaxLv petId error ", petId)
+    Log.error("ResPetEquipRefine:GetMaxLv petId error ", petId)
     return nil
   end
   return ns
 end
-
-

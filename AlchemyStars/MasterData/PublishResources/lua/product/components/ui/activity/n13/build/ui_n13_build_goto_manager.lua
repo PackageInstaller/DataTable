@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n13/build/ui_n13_build_goto_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN13BuildGotoManager", Object)
 UIN13BuildGotoManager = UIN13BuildGotoManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN13BuildGotoManager.Constructor = function(self, buildManager, petManager, gotoRoot, gotoBtns, points, content, btnCallback)
-  -- function num : 0_0
+function UIN13BuildGotoManager:Constructor(buildManager, petManager, gotoRoot, gotoBtns, points, content, btnCallback)
   self._buildManager = buildManager
   self._petManager = petManager
   self._gotoRoot = gotoRoot
@@ -19,131 +12,103 @@ UIN13BuildGotoManager.Constructor = function(self, buildManager, petManager, got
   self._btnCallback = btnCallback
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildGotoManager._InitLines = function(self, points)
-  -- function num : 0_1
+function UIN13BuildGotoManager:_InitLines(points)
   local tb = {
-{points[1], points[2]}
-, 
-{points[3], points[4]}
-, 
-{points[5], points[6]}
-, 
-{points[7], points[8]}
-}
+    {
+      points[1],
+      points[2]
+    },
+    {
+      points[3],
+      points[4]
+    },
+    {
+      points[5],
+      points[6]
+    },
+    {
+      points[7],
+      points[8]
+    }
+  }
   return tb
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildGotoManager.Refresh = function(self, type)
-  -- function num : 0_2
+function UIN13BuildGotoManager:Refresh(type)
   self.type = type
   self:_SetData(1, self:_GetShow_Name())
   self:_SetData(2, self:_GetShow_Pet())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildGotoManager._SetData = function(self, type, id)
-  -- function num : 0_3 , upvalues : _ENV
-  local gotoBtn = (self._gotoBtns)[type]
+function UIN13BuildGotoManager:_SetData(type, id)
+  local gotoBtn = self._gotoBtns[type]
   if not id or id == 0 then
-    (gotoBtn:GetGameObject()):SetActive(false)
-    return 
+    gotoBtn:GetGameObject():SetActive(false)
+    return
   end
   local target = Vector2.zero
   if type == 1 then
-    target = (self._buildManager):GetWidgetPos(id) + (self._buildManager):GetWidgetDesPos(id)
-  else
-    if type == 2 then
-      local nodeId = (self._petManager):_PetObj_GetPos(id)
-      target = ((self._petManager)._nodeData):GetNodePos(nodeId)
-      target.y = target.y + 100
-    end
+    target = self._buildManager:GetWidgetPos(id) + self._buildManager:GetWidgetDesPos(id)
+  elseif type == 2 then
+    local nodeId = self._petManager:_PetObj_GetPos(id)
+    target = self._petManager._nodeData:GetNodePos(nodeId)
+    target.y = target.y + 100
   end
-  do
-    local pos = self:_CheckShowPos(self:_ConvertPos(target))
-    if not pos then
-      (gotoBtn:GetGameObject()):SetActive(false)
-      return 
-    end
-    ;
-    (gotoBtn:GetGameObject()):SetActive(true)
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((gotoBtn:GetGameObject()).transform).anchoredPosition = pos
-    if type ~= 1 or not self._buildManager then
-      local manager = self._petManager
-    end
-    gotoBtn:SetData(type, manager, id, function()
-    -- function num : 0_3_0 , upvalues : gotoBtn, self, target
-    (gotoBtn:GetGameObject()):SetActive(false)
+  local pos = self:_CheckShowPos(self:_ConvertPos(target))
+  if not pos then
+    gotoBtn:GetGameObject():SetActive(false)
+    return
+  end
+  gotoBtn:GetGameObject():SetActive(true)
+  gotoBtn:GetGameObject().transform.anchoredPosition = pos
+  local manager = type == 1 and self._buildManager or self._petManager
+  gotoBtn:SetData(type, manager, id, function()
+    gotoBtn:GetGameObject():SetActive(false)
     if self._btnCallback then
-      (self._btnCallback)(target)
+      self._btnCallback(target)
     end
-  end
-, self.type)
-  end
+  end, self.type)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildGotoManager._CheckShowPos = function(self, target)
-  -- function num : 0_4 , upvalues : _ENV
-  if (UIActivityMath.IsInRect)(target, ((self._gotoRoot).transform).rect) then
-    return 
+function UIN13BuildGotoManager:_CheckShowPos(target)
+  if UIActivityMath.IsInRect(target, self._gotoRoot.transform.rect) then
+    return
   end
-  for _,v in ipairs(self._lines) do
-    if (UIActivityMath.IsIntersection_V2)(v[1], v[2], target, Vector2.zero) then
-      return (UIActivityMath.Inter)(v[1], v[2], target, Vector2.zero)
+  for _, v in ipairs(self._lines) do
+    if UIActivityMath.IsIntersection_V2(v[1], v[2], target, Vector2.zero) then
+      return UIActivityMath.Inter(v[1], v[2], target, Vector2.zero)
     end
   end
   local dis = {}
-  for i,v in ipairs(self._points) do
-    dis[i] = (Vector2.Distance)(target, v)
+  for i, v in ipairs(self._points) do
+    dis[i] = Vector2.Distance(target, v)
   end
-  local val, idx = (table.min)(dis)
-  return (self._points)[idx]
+  local val, idx = table.min(dis)
+  return self._points[idx]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildGotoManager._GetShow_Name = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local buildItemIdList = (self._buildManager):GetBuildItemIdList()
-  for _,buildItemId in ipairs(buildItemIdList) do
-    local isShow = (self._buildManager):IsShow(buildItemId)
-    local isNotComplete = not (self._buildManager):IsAllStatusComplete(buildItemId)
-    if isNotComplete then
-      local isNextUnlock = (self._buildManager):IsNextStatusUnlock(buildItemId)
-    end
+function UIN13BuildGotoManager:_GetShow_Name()
+  local buildItemIdList = self._buildManager:GetBuildItemIdList()
+  for _, buildItemId in ipairs(buildItemIdList) do
+    local isShow = self._buildManager:IsShow(buildItemId)
+    local isNotComplete = not self._buildManager:IsAllStatusComplete(buildItemId)
+    local isNextUnlock = isNotComplete and self._buildManager:IsNextStatusUnlock(buildItemId)
     if isShow and isNotComplete and isNextUnlock then
       return buildItemId
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildGotoManager._GetShow_Pet = function(self)
-  -- function num : 0_6
-  local haveStory = (self._buildManager):CheckPicnicHaveStory()
-  local seq = (self._buildManager):GetPicnicCurSeq()
-  local petId = (self._buildManager):GetPicnicPet(seq)
+function UIN13BuildGotoManager:_GetShow_Pet()
+  local haveStory = self._buildManager:CheckPicnicHaveStory()
+  local seq = self._buildManager:GetPicnicCurSeq()
+  local petId = self._buildManager:GetPicnicPet(seq)
   if haveStory then
     return petId
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildGotoManager._ConvertPos = function(self, point)
-  -- function num : 0_7
-  local p = ((self._content).transform):TransformPoint(point)
-  return ((self._gotoRoot).transform):InverseTransformPoint(p)
+function UIN13BuildGotoManager:_ConvertPos(point)
+  local p = self._content.transform:TransformPoint(point)
+  return self._gotoRoot.transform:InverseTransformPoint(p)
 end
-
-

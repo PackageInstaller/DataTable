@@ -1,36 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/visit/ui_home_gift_selector.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeGiftSelector", UIController)
 UIHomeGiftSelector = UIHomeGiftSelector
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeGiftSelector.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomeGiftSelector:OnShow(uiParams)
   self:InitWidget()
-  local selector = (self.operator):SpawnObject("UIHomeStorehouseOperator")
+  local selector = self.operator:SpawnObject("UIHomeStorehouseOperator")
   selector:SetData(function(id, count)
-    -- function num : 0_0_0 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIHomeVisitAddGift, id, count)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIHomeVisitAddGift, id, count)
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeGiftSelector.InitWidget = function(self)
-  -- function num : 0_1
+function UIHomeGiftSelector:InitWidget()
   self.operator = self:GetUIComponent("UISelectObjectPath", "Operator")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeGiftSelector.CloseOnClick = function(self, go)
-  -- function num : 0_2
+function UIHomeGiftSelector:CloseOnClick(go)
   self:CloseDialog()
 end
-
-

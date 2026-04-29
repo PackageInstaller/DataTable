@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n19/p5/ui_n19_p5_show_awards.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN19P5ShowAwards", UIController)
 UIN19P5ShowAwards = UIN19P5ShowAwards
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN19P5ShowAwards.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN19P5ShowAwards:OnShow(uiParams)
   self._closeCallback = uiParams[2]
   self._listPerPageCount = 5
   self._curItemPage = 1
@@ -17,82 +10,57 @@ UIN19P5ShowAwards.OnShow = function(self, uiParams)
   self._listItemTotalCount = 0
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ItemList")
   self._bg = self:GetUIComponent("RectTransform", "canvasGroup")
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bg).localScale = Vector3(1, 1, 1)
+  self._bg.localScale = Vector3(1, 1, 1)
   self._beforeTime = 200
   self._inited = false
-  -- DECOMPILER ERROR at PC38: Unhandled construct in 'MakeBoolean' P1
-
-  if uiParams[1] and (table.count)(uiParams[1]) == 0 then
-    (Log.fatal)("###[UIN19P5ShowAwards] table.count(uiParams[1]) == 0 !")
-  end
-  ;
-  (Log.fatal)("###[UIN19P5ShowAwards] uiParams[1] is nil !")
-  if not uiParams[1] then
-    self._itemList = {}
-    self._listItemTotalCount = (table.count)(self._itemList)
-    self:CalcPage()
-    self._selectItemIndex = -1
-    if self._scrollView then
-      (self._scrollView):InitListView(1, function(scrollView, index)
-    -- function num : 0_0_0 , upvalues : self
-    return self:_InitListView(scrollView, index)
-  end
-)
-      self._inited = true
+  if uiParams[1] then
+    if table.count(uiParams[1]) == 0 then
+      Log.fatal("###[UIN19P5ShowAwards] table.count(uiParams[1]) == 0 !")
     end
-    local bgCanvas = self:GetUIComponent("Canvas", "BGCanvas")
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundGetItem)
+  else
+    Log.fatal("###[UIN19P5ShowAwards] uiParams[1] is nil !")
   end
+  self._itemList = uiParams[1] or {}
+  self._listItemTotalCount = table.count(self._itemList)
+  self:CalcPage()
+  self._selectItemIndex = -1
+  if self._scrollView then
+    self._scrollView:InitListView(1, function(scrollView, index)
+      return self:_InitListView(scrollView, index)
+    end)
+    self._inited = true
+  end
+  local bgCanvas = self:GetUIComponent("Canvas", "BGCanvas")
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundGetItem)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5ShowAwards.DoAnimation = function(self)
-  -- function num : 0_1
+function UIN19P5ShowAwards:DoAnimation()
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "canvasGroup")
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).alpha = 0
-  self._tweener = (self._canvasGroup):DOFade(1, 0.02)
+  self._canvasGroup.alpha = 0
+  self._tweener = self._canvasGroup:DOFade(1, 0.02)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5ShowAwards.ClosePanel = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN19P5ShowAwards:ClosePanel()
   self:CloseDialog()
-  ;
-  (Log.debug)("关闭获取物品界面")
+  Log.debug("关闭获取物品界面")
   if self._closeCallback then
-    (Log.debug)("关闭回调调用")
-    ;
-    (self._closeCallback)()
+    Log.debug("关闭回调调用")
+    self._closeCallback()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5ShowAwards.OnHide = function(self)
-  -- function num : 0_3
+function UIN19P5ShowAwards:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5ShowAwards._InitListView = function(self, scrollView, index)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN19P5ShowAwards:_InitListView(scrollView, index)
   if index < 0 then
     return nil
   end
-  local count = nil
-  if (table.count)(self._itemList) > 5 then
+  local count
+  if table.count(self._itemList) > 5 then
     count = 5
   else
-    count = (table.count)(self._itemList)
+    count = table.count(self._itemList)
   end
   local item = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
@@ -104,8 +72,8 @@ UIN19P5ShowAwards._InitListView = function(self, scrollView, index)
   for i = 1, count do
     local giftItem = rowList[i]
     local itemIndex = self:_GetCurPageFirstIndex() + i - 1
-    if self._listItemTotalCount < itemIndex then
-      (giftItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._listItemTotalCount then
+      giftItem:GetGameObject():SetActive(false)
     else
       self:_ShowItem(giftItem, itemIndex, i)
     end
@@ -113,53 +81,36 @@ UIN19P5ShowAwards._InitListView = function(self, scrollView, index)
   return item
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5ShowAwards._ShowItem = function(self, giftItem, index, tweenIdx)
-  -- function num : 0_5
+function UIN19P5ShowAwards:_ShowItem(giftItem, index, tweenIdx)
   local item_data = self:_GetItemDataByIndex(index)
   if item_data then
     giftItem:SetData(item_data, function(award)
-    -- function num : 0_5_0 , upvalues : self
-    self:OnItemSelect(award)
-  end
-)
-    ;
-    (giftItem:GetGameObject()):SetActive(true)
+      self:OnItemSelect(award)
+    end)
+    giftItem:GetGameObject():SetActive(true)
   else
-    ;
-    (giftItem:GetGameObject()):SetActive(false)
+    giftItem:GetGameObject():SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5ShowAwards.OnItemSelect = function(self, award)
-  -- function num : 0_6
+function UIN19P5ShowAwards:OnItemSelect(award)
   self:ShowDialog("UIN19P5Tip", award, true)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5ShowAwards.NextOnClick = function(self, go)
-  -- function num : 0_7
+function UIN19P5ShowAwards:NextOnClick(go)
   if self._selectItemIndex ~= -1 then
     self._selectItemIndex = -1
+  elseif self:_GetNextPageIndex() ~= -1 then
+    self._scrollView:RefreshAllShownItem()
+    self._selectItemIndex = -1
   else
-    if self:_GetNextPageIndex() ~= -1 then
-      (self._scrollView):RefreshAllShownItem()
-      self._selectItemIndex = -1
-    else
-      self:ClosePanel()
-    end
+    self:ClosePanel()
   end
 end
 
 local modf = math.modf
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN19P5ShowAwards.CalcPage = function(self)
-  -- function num : 0_8 , upvalues : modf
+function UIN19P5ShowAwards:CalcPage()
   local pageCount, mod = modf(self._listItemTotalCount / self._listPerPageCount)
   if mod ~= 0 then
     pageCount = pageCount + 1
@@ -167,10 +118,7 @@ UIN19P5ShowAwards.CalcPage = function(self)
   self._listPageCount = pageCount
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN19P5ShowAwards._GetNextPageIndex = function(self)
-  -- function num : 0_9
+function UIN19P5ShowAwards:_GetNextPageIndex()
   local index = self._curItemPage * self._listPerPageCount + 1
   if index <= self._listItemTotalCount then
     self._curItemPage = self._curItemPage + 1
@@ -180,84 +128,55 @@ UIN19P5ShowAwards._GetNextPageIndex = function(self)
   return -1
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN19P5ShowAwards._GetCurPageFirstIndex = function(self)
-  -- function num : 0_10
+function UIN19P5ShowAwards:_GetCurPageFirstIndex()
   return self._curPageFirstIndex
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN19P5ShowAwards._GetItemDataByIndex = function(self, index)
-  -- function num : 0_11
-  if #self._itemList < index then
+function UIN19P5ShowAwards:_GetItemDataByIndex(index)
+  if index > #self._itemList then
     return nil
   end
-  return (self._itemList)[index]
+  return self._itemList[index]
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN19P5ShowAwards._FormatItemCount = function(self, itemCount)
-  -- function num : 0_12 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):FormatItemCount(itemCount)
+function UIN19P5ShowAwards:_FormatItemCount(itemCount)
+  return HelperProxy:GetInstance():FormatItemCount(itemCount)
 end
 
 _class("UIN19P5ShowAwardsItem", UIN19P5AwardItem)
 UIN19P5ShowAwardsItem = UIN19P5ShowAwardsItem
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN19P5ShowAwardsItem.SetData = function(self, LotteryAward, callback)
-  -- function num : 0_13
+function UIN19P5ShowAwardsItem:SetData(LotteryAward, callback)
   self.award = LotteryAward
   self.callback = callback
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN19P5ShowAwardsItem.OnValue = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (self.Mask):SetActive(false)
-  ;
-  (self.hide):SetActive(true)
-  local id = (self.award).m_item_id
-  local cfg = (Cfg.cfg_item)[id]
+function UIN19P5ShowAwardsItem:OnValue()
+  self.Mask:SetActive(false)
+  self.hide:SetActive(true)
+  local id = self.award.m_item_id
+  local cfg = Cfg.cfg_item[id]
   if not cfg then
-    (Log.error)("###[UIN19P5AwardItem] cfg is nil ! id --> ", id)
+    Log.error("###[UIN19P5AwardItem] cfg is nil ! id --> ", id)
   end
-  local color = (self.color2color)[cfg.Color]
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.Color).sprite = (self.atlas):GetSprite(color)
+  local color = self.color2color[cfg.Color]
+  self.Color.sprite = self.atlas:GetSprite(color)
   local icon = cfg.Icon
-  ;
-  (self.Icon):LoadImage(icon)
-  local count = (self.award).m_count
-  ;
-  (self.ItemCount):SetText(count)
-  local bgSprite = nil
-  if (self.award).m_is_big_reward then
-    (self.BigImg):SetActive(true)
+  self.Icon:LoadImage(icon)
+  local count = self.award.m_count
+  self.ItemCount:SetText(count)
+  local bgSprite
+  if self.award.m_is_big_reward then
+    self.BigImg:SetActive(true)
     bgSprite = "n19p5_choujiang_di14"
+  elseif self.award.m_reward_type == ECampaignLRType.E_CLRT_rare then
+    self.BigImg:SetActive(false)
+    bgSprite = "n19p5_choujiang_di15"
   else
-    if (self.award).m_reward_type == ECampaignLRType.E_CLRT_rare then
-      (self.BigImg):SetActive(false)
-      bgSprite = "n19p5_choujiang_di15"
-    else
-      ;
-      (self.BigImg):SetActive(false)
-      bgSprite = "n19p5_choujiang_di16"
-    end
+    self.BigImg:SetActive(false)
+    bgSprite = "n19p5_choujiang_di16"
   end
-  -- DECOMPILER ERROR at PC73: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.BgImg).sprite = (self.atlas):GetSprite(bgSprite)
-  ;
-  (self.timeGo):SetActive(false)
+  self.BgImg.sprite = self.atlas:GetSprite(bgSprite)
+  self.timeGo:SetActive(false)
 end
-
-

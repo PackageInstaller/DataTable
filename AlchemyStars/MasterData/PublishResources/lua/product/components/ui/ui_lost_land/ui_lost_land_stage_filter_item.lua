@@ -1,67 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_lost_land/ui_lost_land_stage_filter_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILostLandStageFilterItem", UICustomWidget)
 UILostLandStageFilterItem = UILostLandStageFilterItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILostLandStageFilterItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._prof2Img = {[2001] = "spirit_prof_5", [2002] = "spirit_prof_1", [2003] = "spirit_prof_3", [2004] = "spirit_prof_7"}
-  self._prof2Tex = {[2001] = "str_pet_tag_job_name_color_change", [2002] = "str_pet_tag_job_name_return_blood", [2003] = "str_pet_tag_job_name_attack", [2004] = "str_pet_tag_job_name_function"}
+function UILostLandStageFilterItem:OnShow(uiParams)
+  self._prof2Img = {
+    [2001] = "spirit_prof_5",
+    [2002] = "spirit_prof_1",
+    [2003] = "spirit_prof_3",
+    [2004] = "spirit_prof_7"
+  }
+  self._prof2Tex = {
+    [2001] = "str_pet_tag_job_name_color_change",
+    [2002] = "str_pet_tag_job_name_return_blood",
+    [2003] = "str_pet_tag_job_name_attack",
+    [2004] = "str_pet_tag_job_name_function"
+  }
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   self._uiHeartItemAtlas = self:GetAsset("UIHeartItem.spriteatlas", LoadType.SpriteAtlas)
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageFilterItem.SetData = function(self, recommendData)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._elementGo):SetActive(false)
-  ;
-  (self._profGo):SetActive(false)
-  ;
-  (self._campGo):SetActive(false)
+function UILostLandStageFilterItem:SetData(recommendData)
+  self._elementGo:SetActive(false)
+  self._profGo:SetActive(false)
+  self._campGo:SetActive(false)
   local recommendCondition = recommendData
   if recommendCondition.cond1 == PetFilterCondType.RFCT_Color then
-    (self._elementGo):SetActive(true)
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._elementImg).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(((Cfg.cfg_pet_element)[recommendCondition.cond2]).Icon))
-    local elementTex = (StringTable.Get)("str_pet_detail_element_" .. recommendCondition.cond2) .. (StringTable.Get)("str_pet_detail_element_property")
-    ;
-    (self._elementTex):SetText(elementTex)
-  else
-    do
-      if recommendCondition.cond1 == PetFilterCondType.RFCT_Prof then
-        (self._profGo):SetActive(true)
-        -- DECOMPILER ERROR at PC69: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._profImg).sprite = (self._uiHeartItemAtlas):GetSprite((self._prof2Img)[recommendCondition.cond2])
-        ;
-        (self._profTex):SetText((StringTable.Get)((self._prof2Tex)[self._prof]))
-      else
-        if recommendCondition.cond1 == PetFilterCondType.RFCT_Force then
-          (self._campGo):SetActive(true)
-          local cfg = (Cfg.cfg_pet_tags)[recommendCondition.cond2]
-          if cfg ~= nil then
-            (self._campTex):SetText((StringTable.Get)(cfg.Name))
-          end
-        end
-      end
+    self._elementGo:SetActive(true)
+    self._elementImg.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(Cfg.cfg_pet_element[recommendCondition.cond2].Icon))
+    local elementTex = StringTable.Get("str_pet_detail_element_" .. recommendCondition.cond2) .. StringTable.Get("str_pet_detail_element_property")
+    self._elementTex:SetText(elementTex)
+  elseif recommendCondition.cond1 == PetFilterCondType.RFCT_Prof then
+    self._profGo:SetActive(true)
+    self._profImg.sprite = self._uiHeartItemAtlas:GetSprite(self._prof2Img[recommendCondition.cond2])
+    self._profTex:SetText(StringTable.Get(self._prof2Tex[self._prof]))
+  elseif recommendCondition.cond1 == PetFilterCondType.RFCT_Force then
+    self._campGo:SetActive(true)
+    local cfg = Cfg.cfg_pet_tags[recommendCondition.cond2]
+    if cfg ~= nil then
+      self._campTex:SetText(StringTable.Get(cfg.Name))
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageFilterItem.GetComponents = function(self)
-  -- function num : 0_2
+function UILostLandStageFilterItem:GetComponents()
   self._profGo = self:GetGameObject("profGo")
   self._profImg = self:GetUIComponent("Image", "profImg")
   self._profTex = self:GetUIComponent("UILocalizationText", "profTex")
@@ -71,5 +52,3 @@ UILostLandStageFilterItem.GetComponents = function(self)
   self._elementImg = self:GetUIComponent("Image", "elementImg")
   self._elementTex = self:GetUIComponent("UILocalizationText", "elementTex")
 end
-
-

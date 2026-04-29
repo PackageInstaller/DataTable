@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/data_select_scope_grid_range_index_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("DataSelectScopeGridRangeIndexInstruction", BaseInstruction)
 DataSelectScopeGridRangeIndexInstruction = DataSelectScopeGridRangeIndexInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSelectScopeGridRangeIndexInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function DataSelectScopeGridRangeIndexInstruction:Constructor(paramList)
   self._index = tonumber(paramList.index)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectScopeGridRangeIndexInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function DataSelectScopeGridRangeIndexInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local scopeGridRange = phaseContext:GetScopeGridRange()
   if not scopeGridRange then
     return InstructionConst.PhaseEnd
@@ -25,5 +15,3 @@ DataSelectScopeGridRangeIndexInstruction.DoInstruction = function(self, TT, cast
     phaseContext:SetCurScopeGridRangeIndex(self._index)
   end
 end
-
-

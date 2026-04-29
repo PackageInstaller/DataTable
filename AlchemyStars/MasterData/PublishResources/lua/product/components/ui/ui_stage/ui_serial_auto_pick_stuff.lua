@@ -1,54 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_stage/ui_serial_auto_pick_stuff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_item")
 _class("UISerialAutoPickStuff", UIItem)
 UISerialAutoPickStuff = UISerialAutoPickStuff
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISerialAutoPickStuff.Constructor = function(self)
-  -- function num : 0_0
+function UISerialAutoPickStuff:Constructor()
   self._uiTips = nil
   self._widgetTips = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoPickStuff.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  (UIItem.OnShow)(self, uiParams)
-  self._aps = ((GameGlobal.GetModule)(SerialAutoFightModule)):GetApsData()
+function UISerialAutoPickStuff:OnShow(uiParams)
+  UIItem.OnShow(self, uiParams)
+  self._aps = GameGlobal.GetModule(SerialAutoFightModule):GetApsData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoPickStuff.OnHide = function(self)
-  -- function num : 0_2
+function UISerialAutoPickStuff:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoPickStuff.ColorText = function(self, clr, txt)
-  -- function num : 0_3 , upvalues : _ENV
-  return (string.format)("<color=#%s>%s</color>", clr, txt)
+function UISerialAutoPickStuff:ColorText(clr, txt)
+  return string.format("<color=#%s>%s</color>", clr, txt)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoPickStuff.SetTips = function(self, tipsName)
-  -- function num : 0_4 , upvalues : _ENV
+function UISerialAutoPickStuff:SetTips(tipsName)
   local uiOwner = self:RootUIOwner()
   self._uiTips = uiOwner:GetUIComponent("UISelectObjectPath", tipsName)
-  self._widgetTips = (self._uiTips):SpawnObject("UISelectInfo")
-  local itemId = (self._aps):GetItemID()
-  local itemCondition = (self._aps):GetItemCondition()
+  self._widgetTips = self._uiTips:SpawnObject("UISelectInfo")
+  local itemId = self._aps:GetItemID()
+  local itemCondition = self._aps:GetItemCondition()
   local roleModule = self:GetModule(RoleModule)
   local count = roleModule:GetAssetCount(itemId)
-  count = (math.max)(0, count)
-  local showCount = nil
-  if count > 9999 then
+  count = math.max(0, count)
+  local showCount
+  if 9999 < count then
     showCount = "9999+"
   else
     showCount = tostring(count)
@@ -63,27 +44,25 @@ UISerialAutoPickStuff.SetTips = function(self, tipsName)
     str = str .. self:ColorText("ffffff", "/")
     str = str .. self:ColorText("ffffff", tostring(itemCondition))
   end
-  local cfg = (Cfg.cfg_item)[itemId]
+  local cfg = Cfg.cfg_item[itemId]
   local icon = cfg.Icon
   local quality = cfg.Color
-  local topText = (StringTable.Get)("str_battle_set_auto_fight_stat_title")
+  local topText = StringTable.Get("str_battle_set_auto_fight_stat_title")
   self:SetForm(UIItemForm.Stage)
-  self:SetData({icon = icon, quality = quality, text1 = str, itemId = itemId, topText = topText})
+  self:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = str,
+    itemId = itemId,
+    topText = topText
+  })
   self:EnableNode(UIItemNode.Award, false)
   self:SetClickCallBack(function(go)
-    -- function num : 0_4_0 , upvalues : self
     self:ShowTipBtnOnClick(go)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoPickStuff.ShowTipBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
-  ;
-  (self._widgetTips):SetData((self._aps):GetItemID(), (go.transform).position)
+function UISerialAutoPickStuff:ShowTipBtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
+  self._widgetTips:SetData(self._aps:GetItemID(), go.transform.position)
 end
-
-

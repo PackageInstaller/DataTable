@@ -1,12 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/type_define/luckland_entity_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local LuckLandEntityType = {None = 0, Pet = 1, Monster = 2, Building = 3}
+local LuckLandEntityType = {
+  None = 0,
+  Pet = 1,
+  Monster = 2,
+  Building = 3
+}
 _enum("LuckLandEntityType", LuckLandEntityType)
-local LuckLandIncType = {None = 0, Accumulate = 1, Temp = 2}
+local LuckLandIncType = {
+  None = 0,
+  Accumulate = 1,
+  Temp = 2
+}
 _enum("LuckLandIncType", LuckLandIncType)
-local LuckLandPosType = {Morning = 1, Midday = 2, Night = 3}
+local LuckLandPosType = {
+  Morning = 1,
+  Midday = 2,
+  Night = 3
+}
 _enum("LuckLandPosType", LuckLandPosType)
-

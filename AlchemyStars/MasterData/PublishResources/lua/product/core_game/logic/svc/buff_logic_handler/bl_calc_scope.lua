@@ -1,110 +1,75 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_calc_scope.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("battle_const")
 require("buff_logic_base")
 local buffValueKeyFormat = BattleConst.BuffCalcScopeKeyFormat
-local getBuffValueKey = function(instance)
-  -- function num : 0_0 , upvalues : _ENV, buffValueKeyFormat
-  return (string.format)(buffValueKeyFormat, instance:BuffID())
+
+local function getBuffValueKey(instance)
+  return string.format(buffValueKeyFormat, instance:BuffID())
 end
 
-local getBuffValueKeyByBuffID = function(buffID)
-  -- function num : 0_1 , upvalues : _ENV, buffValueKeyFormat
-  return (string.format)(buffValueKeyFormat, buffID)
+local function getBuffValueKeyByBuffID(buffID)
+  return string.format(buffValueKeyFormat, buffID)
 end
 
 _class("BuffLogicCalcScope", BuffLogicBase)
 BuffLogicCalcScope = BuffLogicCalcScope
--- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
 
-BuffLogicCalcScope.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicCalcScope:Constructor(buffInstance, logicParam)
   self._skillID = logicParam.skillID
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-BuffLogicCalcScope.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV, getBuffValueKey
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+function BuffLogicCalcScope:DoLogic()
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalc = SkillScopeCalculator:New(utilScopeSvc)
   local entity = self:GetEntity()
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(self._skillID)
-  local scopeResult = scopeCalc:CalcSkillScope(skillConfigData, entity:GetGridPosition(), entity:GetGridDirection(), (entity:BodyArea()):GetArea(), entity)
-  ;
-  (self:GetBuffComponent()):SetBuffValue(getBuffValueKey(self._buffInstance), scopeResult)
+  local scopeResult = scopeCalc:CalcSkillScope(skillConfigData, entity:GetGridPosition(), entity:GetGridDirection(), entity:BodyArea():GetArea(), entity)
+  self:GetBuffComponent():SetBuffValue(getBuffValueKey(self._buffInstance), scopeResult)
   return BuffResultCalcScope:New(scopeResult)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-BuffLogicCalcScope.DoOverlap = function(self)
-  -- function num : 0_4
+function BuffLogicCalcScope:DoOverlap()
   return self:DoLogic()
 end
 
 _class("BuffLogicClearCalcScope", BuffLogicBase)
 BuffLogicClearCalcScope = BuffLogicClearCalcScope
--- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
 
-BuffLogicClearCalcScope.DoLogic = function(self)
-  -- function num : 0_5 , upvalues : getBuffValueKey
-  (self:GetBuffComponent()):SetBuffValue((getBuffValueKey(self._buffInstance)), nil)
+function BuffLogicClearCalcScope:DoLogic()
+  self:GetBuffComponent():SetBuffValue(getBuffValueKey(self._buffInstance), nil)
   return true
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
-BuffLogicClearCalcScope.DoOverlap = function(self)
-  -- function num : 0_6
+function BuffLogicClearCalcScope:DoOverlap()
   return self:DoLogic()
 end
 
 _class("BuffLogicShowCalcScope", BuffLogicBase)
 BuffLogicShowCalcScope = BuffLogicShowCalcScope
--- DECOMPILER ERROR at PC45: Confused about usage of register: R3 in 'UnsetPending'
 
-BuffLogicShowCalcScope.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_7
+function BuffLogicShowCalcScope:Constructor(buffInstance, logicParam)
   self._showBuffID = logicParam.showBuffID
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R3 in 'UnsetPending'
-
-BuffLogicShowCalcScope.DoLogic = function(self)
-  -- function num : 0_8 , upvalues : getBuffValueKeyByBuffID, _ENV
-  local scopeResult = (self:GetBuffComponent()):GetBuffValue(getBuffValueKeyByBuffID(self._showBuffID))
+function BuffLogicShowCalcScope:DoLogic()
+  local scopeResult = self:GetBuffComponent():GetBuffValue(getBuffValueKeyByBuffID(self._showBuffID))
   if not scopeResult then
-    return 
+    return
   end
   return BuffResultCalcScope:New(scopeResult)
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R3 in 'UnsetPending'
-
-BuffLogicShowCalcScope.DoOverlap = function(self)
-  -- function num : 0_9
+function BuffLogicShowCalcScope:DoOverlap()
   return self:DoLogic()
 end
 
 _class("BuffLogicHideCalcScope", BuffLogicBase)
 BuffLogicHideCalcScope = BuffLogicHideCalcScope
--- DECOMPILER ERROR at PC60: Confused about usage of register: R3 in 'UnsetPending'
 
-BuffLogicHideCalcScope.DoLogic = function(self)
-  -- function num : 0_10
+function BuffLogicHideCalcScope:DoLogic()
   return true
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R3 in 'UnsetPending'
-
-BuffLogicHideCalcScope.DoOverlap = function(self)
-  -- function num : 0_11
+function BuffLogicHideCalcScope:DoOverlap()
   return self:DoLogic()
 end
-
-

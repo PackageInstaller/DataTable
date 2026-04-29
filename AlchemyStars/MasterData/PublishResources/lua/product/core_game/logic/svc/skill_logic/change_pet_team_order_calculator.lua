@@ -1,100 +1,75 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_logic/change_pet_team_order_calculator.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChangePetTeamOrderCalculator", Object)
 ChangePetTeamOrderCalculator = ChangePetTeamOrderCalculator
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChangePetTeamOrderCalculator.Constructor = function(self, world)
-  -- function num : 0_0
+function ChangePetTeamOrderCalculator:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChangePetTeamOrderCalculator.Calculate = function(self, casterEntity, effectParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+function ChangePetTeamOrderCalculator:Calculate(casterEntity, effectParam)
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local generalEffectCalc = GeneralEffectCalculator:New(self._world)
   local finalScopeFilterParam = effectParam:GetScopeFilterParam()
   local scopeResult = generalEffectCalc:_CalcSkillEffectScopeResult(casterEntity, effectParam, finalScopeFilterParam)
   local targetIDs = generalEffectCalc:_CalcSkillEffectTargetList(casterEntity, scopeResult, effectParam)
   local t = {}
-  for _,entityID in ipairs(targetIDs) do
-    local entity = (self._world):GetEntityByID(entityID)
+  for _, entityID in ipairs(targetIDs) do
+    local entity = self._world:GetEntityByID(entityID)
     local result = self:CalculateOneTarget(casterEntity, effectParam, entity)
     if result then
       skillEffectResultContainer:AddEffectResult(result)
-      ;
-      (table.insert)(t, result)
+      table.insert(t, result)
     end
   end
   return t
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChangePetTeamOrderCalculator.CalculateOneTarget = function(self, casterEntity, effectParam, targetEntity)
-  -- function num : 0_2 , upvalues : _ENV
+function ChangePetTeamOrderCalculator:CalculateOneTarget(casterEntity, effectParam, targetEntity)
   local eTarget = targetEntity
   if eTarget:HasSuperEntity() then
     eTarget = targetEntity:GetSuperEntity()
   end
   if not eTarget:HasPetPstID() then
-    return 
+    return
   end
-  if (eTarget:PetPstID()):IsHelpPet() then
-    return 
+  if eTarget:PetPstID():IsHelpPet() then
+    return
   end
-  local cTeam = ((eTarget:Pet()):GetOwnerTeamEntity()):Team()
+  local cTeam = eTarget:Pet():GetOwnerTeamEntity():Team()
   local tOldTeamOrder = cTeam:CloneTeamOrder()
   local nHelpPetPstID = cTeam:GetHelpPetPstID()
-  local eTeam = (eTarget:Pet()):GetOwnerTeamEntity()
+  local eTeam = eTarget:Pet():GetOwnerTeamEntity()
   local cTeam = eTeam:Team()
-  local nTargetPetPstID = (eTarget:PetPstID()):GetPstID()
+  local nTargetPetPstID = eTarget:PetPstID():GetPstID()
   local tTeamOrder = {}
   local tDead = {}
-  for k,v in ipairs(cTeam:GetTeamOrder()) do
+  for k, v in ipairs(cTeam:GetTeamOrder()) do
     local e = cTeam:GetPetEntityByPetPstID(v)
     if (not nHelpPetPstID or nHelpPetPstID ~= v) and nTargetPetPstID ~= v then
       if e:HasPetDeadMark() then
-        (table.insert)(tDead, v)
+        table.insert(tDead, v)
       else
-        ;
-        (table.insert)(tTeamOrder, v)
+        table.insert(tTeamOrder, v)
       end
     end
   end
   if effectParam:GetTargetOrder() == ChangePetTeamOrderTargetOrder.TeamLeader then
-    (table.insert)(tTeamOrder, 1, nTargetPetPstID)
-  else
-    if effectParam:GetTargetOrder() == ChangePetTeamOrderTargetOrder.TeamTail then
-      (table.insert)(tTeamOrder, nTargetPetPstID)
-    end
+    table.insert(tTeamOrder, 1, nTargetPetPstID)
+  elseif effectParam:GetTargetOrder() == ChangePetTeamOrderTargetOrder.TeamTail then
+    table.insert(tTeamOrder, nTargetPetPstID)
   end
   if nHelpPetPstID then
     local e = cTeam:GetPetEntityByPetPstID(nHelpPetPstID)
     if e:HasPetDeadMark() then
-      (table.appendArray)(tTeamOrder, tDead)
-      ;
-      (table.insert)(tTeamOrder, nHelpPetPstID)
+      table.appendArray(tTeamOrder, tDead)
+      table.insert(tTeamOrder, nHelpPetPstID)
     else
-      ;
-      (table.insert)(tTeamOrder, nHelpPetPstID)
-      ;
-      (table.appendArray)(tTeamOrder, tDead)
+      table.insert(tTeamOrder, nHelpPetPstID)
+      table.appendArray(tTeamOrder, tDead)
     end
   else
-    do
-      ;
-      (table.appendArray)(tTeamOrder, tDead)
-      local result = SkillEffectResult_ChangePetTeamOrder:New(eTarget:GetID(), tOldTeamOrder, tTeamOrder)
-      return result
-    end
+    table.appendArray(tTeamOrder, tDead)
   end
+  local result = SkillEffectResult_ChangePetTeamOrder:New(eTarget:GetID(), tOldTeamOrder, tTeamOrder)
+  return result
 end
-
-

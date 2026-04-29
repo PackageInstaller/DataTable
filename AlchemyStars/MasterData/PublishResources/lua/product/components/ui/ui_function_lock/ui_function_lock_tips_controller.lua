@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_function_lock/ui_function_lock_tips_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFunctionLockTipsController", UIController)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFunctionLockTipsController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIFunctionLockTipsController:OnShow(uiParams)
   local functionId = uiParams[1]
   if functionId == nil then
-    return 
+    return
   end
-  local functionLockCfg = (Cfg.cfg_module_unlock)[functionId]
+  local functionLockCfg = Cfg.cfg_module_unlock[functionId]
   if not functionLockCfg then
-    return 
+    return
   end
   self._functionIconImgLoader = self:GetUIComponent("RawImageLoader", "FunctionIcon")
   self._parentFunctionIconImgLoader = self:GetUIComponent("RawImageLoader", "ParentFunctionIcon")
@@ -24,53 +17,27 @@ UIFunctionLockTipsController.OnShow = function(self, uiParams)
   self._simpleDesLabel = self:GetUIComponent("UILocalizationText", "SimpleDes")
   self._coreDesLabel = self:GetUIComponent("UILocalizationText", "CoreDes")
   self._remainTimeLabel = self:GetUIComponent("UILocalizationText", "RemainTime")
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._functionNameLabel).text = (StringTable.Get)(functionLockCfg.Name)
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._simpleDesLabel).text = (StringTable.Get)(functionLockCfg.SimpleDes)
-  -- DECOMPILER ERROR at PC67: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._coreDesLabel).text = (StringTable.Get)(functionLockCfg.CoreDes)
-  -- DECOMPILER ERROR at PC73: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._functionIconNameLabel).text = (StringTable.Get)(functionLockCfg.FunctionName)
-  -- DECOMPILER ERROR at PC79: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._parentFunctionIconNameLabel).text = (StringTable.Get)(functionLockCfg.ParentFunctionName)
-  ;
-  (self._functionIconImgLoader):LoadImage(functionLockCfg.icon)
-  ;
-  (self._parentFunctionIconImgLoader):LoadImage(functionLockCfg.ParentIcon)
+  self._functionNameLabel.text = StringTable.Get(functionLockCfg.Name)
+  self._simpleDesLabel.text = StringTable.Get(functionLockCfg.SimpleDes)
+  self._coreDesLabel.text = StringTable.Get(functionLockCfg.CoreDes)
+  self._functionIconNameLabel.text = StringTable.Get(functionLockCfg.FunctionName)
+  self._parentFunctionIconNameLabel.text = StringTable.Get(functionLockCfg.ParentFunctionName)
+  self._functionIconImgLoader:LoadImage(functionLockCfg.icon)
+  self._parentFunctionIconImgLoader:LoadImage(functionLockCfg.ParentIcon)
   self._timer = 0
   self._hasClosed = false
   self._remaindTime = 10
-  -- DECOMPILER ERROR at PC100: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._remainTimeLabel).text = (string.format)((StringTable.Get)("str_function_lock_remaind_time"), self._remaindTime)
+  self._remainTimeLabel.text = string.format(StringTable.Get("str_function_lock_remaind_time"), self._remaindTime)
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFunctionLockTipsController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_1 , upvalues : _ENV
+function UIFunctionLockTipsController:OnUpdate(deltaTimeMS)
   if self._hasClosed == false then
     if self._remaindTime > 0 then
       self._timer = self._timer + deltaTimeMS
       if self._timer >= 1000 then
         self._timer = self._timer - 1000
         self._remaindTime = self._remaindTime - 1
-        -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-        ;
-        (self._remainTimeLabel).text = (string.format)((StringTable.Get)("str_function_lock_remaind_time"), self._remaindTime)
+        self._remainTimeLabel.text = string.format(StringTable.Get("str_function_lock_remaind_time"), self._remaindTime)
       end
     else
       self:_Close()
@@ -78,24 +45,16 @@ UIFunctionLockTipsController.OnUpdate = function(self, deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFunctionLockTipsController.ButtonBackgroundOnClick = function(self, go)
-  -- function num : 0_2
+function UIFunctionLockTipsController:ButtonBackgroundOnClick(go)
   self:_Close()
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFunctionLockTipsController._Close = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIFunctionLockTipsController:_Close()
   if self._hasClosed then
-    return 
+    return
   end
   self._hasClosed = true
   self:CloseDialog()
   local uiModule = self:GetUIModule(RoleModule)
   uiModule:ShowUIComplete()
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_we_chat/ui_we_chat_scroll.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWeChatScroll", Object)
 UIWeChatScroll = UIWeChatScroll
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWeChatScroll.Constructor = function(self, owner)
-  -- function num : 0_0
+function UIWeChatScroll:Constructor(owner)
   self.owner = owner
   self.cells = {}
   self.heights = {}
@@ -16,132 +9,75 @@ UIWeChatScroll.Constructor = function(self, owner)
   self:OnShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatScroll.InitScrollParam = function(self)
-  -- function num : 0_1
+function UIWeChatScroll:InitScrollParam()
   self.cells = {}
   self.heights = {}
   self.defaultHeight = 875
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatScroll.OnShow = function(self)
-  -- function num : 0_2
-  self.scrollView = (self.owner):GetUIComponent("ScrollRect", "chatscrollview")
-  self.sop = (self.owner):GetUIComponent("UISelectObjectPath", "Content")
-  self.contentRect = (self.owner):GetUIComponent("RectTransform", "Content")
-  self.layout = (self.owner):GetUIComponent("VerticalLayoutGroup", "Content")
+function UIWeChatScroll:OnShow()
+  self.scrollView = self.owner:GetUIComponent("ScrollRect", "chatscrollview")
+  self.sop = self.owner:GetUIComponent("UISelectObjectPath", "Content")
+  self.contentRect = self.owner:GetUIComponent("RectTransform", "Content")
+  self.layout = self.owner:GetUIComponent("VerticalLayoutGroup", "Content")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatScroll.InitItems = function(self, talks, weChatRole)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWeChatScroll:InitItems(talks, weChatRole)
   self.cells = {}
   self.heights = {}
-  ;
-  (self.sop):SpawnObjects("UIWeChatCell", #talks)
-  self.cells = (self.sop):GetAllSpawnList()
-  for index,cell in ipairs(self.cells) do
+  self.sop:SpawnObjects("UIWeChatCell", #talks)
+  self.cells = self.sop:GetAllSpawnList()
+  for index, cell in ipairs(self.cells) do
     local talk = talks[index]
     if talk then
       cell:Enable(true)
       local height = cell:SetData(talk, weChatRole)
-      ;
-      (table.insert)(self.heights, height)
+      table.insert(self.heights, height)
     else
-      do
-        do
-          cell:Enable(false)
-          -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      cell:Enable(false)
     end
   end
   self:UpdateContentHeight()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatScroll.AddItem = function(self, talk, weChatRole)
-  -- function num : 0_4 , upvalues : _ENV
-  local cell = (self.sop):SpawnObject("UIWeChatCell")
+function UIWeChatScroll:AddItem(talk, weChatRole)
+  local cell = self.sop:SpawnObject("UIWeChatCell")
   local height = cell:SetData(talk, weChatRole)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.heights)[#self.cells] = height
-  ;
-  (table.insert)(self.cells, cell)
+  self.heights[#self.cells] = height
+  table.insert(self.cells, cell)
   self:UpdateContentHeight()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatScroll.GetItem = function(self, talk)
-  -- function num : 0_5 , upvalues : _ENV
-  for index,cell in ipairs(self.cells) do
-    if (cell.talk).talkId == talk.talkId then
+function UIWeChatScroll:GetItem(talk)
+  for index, cell in ipairs(self.cells) do
+    if cell.talk.talkId == talk.talkId then
       return cell, index
     end
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatScroll.UpdateItem = function(self, talk)
-  -- function num : 0_6
+function UIWeChatScroll:UpdateItem(talk)
   local cell, index = self:GetItem(talk)
   if cell then
     local height = cell:SetData(talk)
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.heights)[index] = height
+    self.heights[index] = height
     self:UpdateContentHeight()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatScroll.UpdateContentHeight = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIWeChatScroll:UpdateContentHeight()
   local contentHeight = 0
-  for index,height in ipairs(self.heights) do
+  for index, height in ipairs(self.heights) do
     contentHeight = contentHeight + height
   end
   if contentHeight < self.defaultHeight then
     contentHeight = self.defaultHeight
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.layout).childAlignment = (UnityEngine.TextAnchor).UpperLeft
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.scrollView).enabled = false
+    self.layout.childAlignment = UnityEngine.TextAnchor.UpperLeft
+    self.scrollView.enabled = false
   else
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.layout).childAlignment = (UnityEngine.TextAnchor).LowerLeft
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.scrollView).enabled = true
+    self.layout.childAlignment = UnityEngine.TextAnchor.LowerLeft
+    self.scrollView.enabled = true
   end
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.contentRect).sizeDelta = Vector2(1227, contentHeight)
+  self.contentRect.sizeDelta = Vector2(1227, contentHeight)
 end
-
-

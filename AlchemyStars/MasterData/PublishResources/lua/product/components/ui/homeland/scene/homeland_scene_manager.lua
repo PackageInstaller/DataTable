@@ -1,158 +1,97 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/scene/homeland_scene_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandSceneManager", Object)
 HomelandSceneManager = HomelandSceneManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandSceneManager.Constructor = function(self)
-  -- function num : 0_0
+function HomelandSceneManager:Constructor()
   self._runtimeRootName = "RuntimeRoot"
   self._sceneRootName = "Envrionment"
   self._buildingRootName = "Building"
   self._waterRootName = "WaterManage"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneManager.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._runtimeRootTrans = (((UnityEngine.GameObject).Find)(self._runtimeRootName)).transform
-  self._sceneRoot = ((UnityEngine.GameObject).Find)(self._sceneRootName)
-  self._sceneRootTrans = (self._sceneRoot).transform
-  self._buildingRootTrans = (self._sceneRootTrans):Find(self._buildingRootName)
-  self._navmeshSurface = (self._sceneRoot):GetComponent(typeof((UnityEngine.AI).NavMeshSurface))
-  self._waterDepthCmd = ((self._sceneRootTrans):Find(self._waterRootName)):GetComponent(typeof(WaterDepthCmd))
+function HomelandSceneManager:Init()
+  self._runtimeRootTrans = UnityEngine.GameObject.Find(self._runtimeRootName).transform
+  self._sceneRoot = UnityEngine.GameObject.Find(self._sceneRootName)
+  self._sceneRootTrans = self._sceneRoot.transform
+  self._buildingRootTrans = self._sceneRootTrans:Find(self._buildingRootName)
+  self._navmeshSurface = self._sceneRoot:GetComponent(typeof(UnityEngine.AI.NavMeshSurface))
+  self._waterDepthCmd = self._sceneRootTrans:Find(self._waterRootName):GetComponent(typeof(WaterDepthCmd))
   local findName = "[H3DRenderSetting]"
-  local findGo = ((UnityEngine.GameObject).Find)(findName)
+  local findGo = UnityEngine.GameObject.Find(findName)
   if findGo then
     self._h3dRenderSetting = findGo:GetComponent(typeof(H3DRenderSetting))
   end
   if not APPVER1190 then
-    local mr = ((((self._sceneRoot).transform):Find("MatRef")).gameObject):GetComponent(typeof(UnityEngine.MeshRenderer))
-    for i = 0, (mr.sharedMaterials).Length - 1 do
-      -- DECOMPILER ERROR at PC78: Confused about usage of register: R8 in 'UnsetPending'
-
-      (((mr.sharedMaterials)[i]).shader).maximumLOD = 200
+    local mr = self._sceneRoot.transform:Find("MatRef").gameObject:GetComponent(typeof(UnityEngine.MeshRenderer))
+    for i = 0, mr.sharedMaterials.Length - 1 do
+      mr.sharedMaterials[i].shader.maximumLOD = 200
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneManager.RuntimeRootTrans = function(self)
-  -- function num : 0_2
+function HomelandSceneManager:RuntimeRootTrans()
   return self._runtimeRootTrans
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneManager.BuildingRootTrans = function(self)
-  -- function num : 0_3
+function HomelandSceneManager:BuildingRootTrans()
   return self._buildingRootTrans
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneManager.SceneRootTrans = function(self)
-  -- function num : 0_4
+function HomelandSceneManager:SceneRootTrans()
   return self._sceneRootTrans
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneManager.BuildNavMesh = function(self)
-  -- function num : 0_5
-  return (self._navmeshSurface):UpdateNavMesh((self._navmeshSurface).navMeshData)
+function HomelandSceneManager:BuildNavMesh()
+  return self._navmeshSurface:UpdateNavMesh(self._navmeshSurface.navMeshData)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneManager.BuildNavMeshAsync = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
-    ((GameGlobal.UIStateManager)()):Lock("WaitBuildNavMesh")
+function HomelandSceneManager:BuildNavMeshAsync()
+  GameGlobal.TaskManager():StartTask(function(TT)
+    GameGlobal.UIStateManager():Lock("WaitBuildNavMesh")
     YIELD(TT)
-    local res = (self._navmeshSurface):UpdateNavMesh((self._navmeshSurface).navMeshData)
+    local res = self._navmeshSurface:UpdateNavMesh(self._navmeshSurface.navMeshData)
     while not res.isDone do
       YIELD(TT)
     end
     YIELD(TT)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnHomelandNavmeshUpdated)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("WaitBuildNavMesh")
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnHomelandNavmeshUpdated)
+    GameGlobal.UIStateManager():UnLock("WaitBuildNavMesh")
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneManager.Dispose = function(self)
-  -- function num : 0_7
+function HomelandSceneManager:Dispose()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneManager.WaterDepthCmdUpdateAllRender = function(self)
-  -- function num : 0_8
+function HomelandSceneManager:WaterDepthCmdUpdateAllRender()
   if not self._waterDepthCmd then
-    return 
+    return
   end
-  ;
-  (self._waterDepthCmd):UpdateAllRender()
+  self._waterDepthCmd:UpdateAllRender()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneManager.AddWaterDepthTarget = function(self, gameObject)
-  -- function num : 0_9
+function HomelandSceneManager:AddWaterDepthTarget(gameObject)
   if not self._waterDepthCmd then
-    return 
+    return
   end
-  ;
-  (self._waterDepthCmd):AddTarget(gameObject)
-  ;
-  (self._waterDepthCmd):UpdateAllRender()
+  self._waterDepthCmd:AddTarget(gameObject)
+  self._waterDepthCmd:UpdateAllRender()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneManager.RemoveWaterDepthTarget = function(self, gameObject)
-  -- function num : 0_10
+function HomelandSceneManager:RemoveWaterDepthTarget(gameObject)
   if not self._waterDepthCmd then
-    return 
+    return
   end
-  ;
-  (self._waterDepthCmd):RemoveTarget(gameObject)
-  ;
-  (self._waterDepthCmd):UpdateAllRender()
+  self._waterDepthCmd:RemoveTarget(gameObject)
+  self._waterDepthCmd:UpdateAllRender()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneManager.SetCustomLightTransform = function(self, transform)
-  -- function num : 0_11
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._h3dRenderSetting).CustomLight = transform
+function HomelandSceneManager:SetCustomLightTransform(transform)
+  self._h3dRenderSetting.CustomLight = transform
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneManager.GetCustomLightTransform = function(self)
-  -- function num : 0_12
-  return (self._h3dRenderSetting).CustomLight
+function HomelandSceneManager:GetCustomLightTransform()
+  return self._h3dRenderSetting.CustomLight
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneManager.UpdateH3DRenderSetting = function(self)
-  -- function num : 0_13
-  (self._h3dRenderSetting):UpdateGlobalParam()
+function HomelandSceneManager:UpdateH3DRenderSetting()
+  self._h3dRenderSetting:UpdateGlobalParam()
 end
-
-

@@ -1,110 +1,75 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/main/ui_activity_returnsystem_tab_quest.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReturnSystemTabQuest", UICustomWidget)
 UIActivityReturnSystemTabQuest = UIActivityReturnSystemTabQuest
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReturnSystemTabQuest.SetData = function(self, campaign, remainingTimeCallback, tipsCallback)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityReturnSystemTabQuest:SetData(campaign, remainingTimeCallback, tipsCallback)
   self._campaign = campaign
   self._remainingTimeCallback = remainingTimeCallback
   self._tipsCallback = tipsCallback
-  self._component = (UIActivityReturnSystemHelper.GetComponentByTabName)(self._campaign, "quest", 1)
+  self._component = UIActivityReturnSystemHelper.GetComponentByTabName(self._campaign, "quest", 1)
   self:_Refresh()
   self:_CheckQuestDailyReset()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabQuest.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityReturnSystemTabQuest:OnShow(uiParams)
   self._isOpen = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabQuest.OnHide = function(self)
-  -- function num : 0_2
+function UIActivityReturnSystemTabQuest:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabQuest._ReLoadData = function(self, TT, res)
-  -- function num : 0_3
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+function UIActivityReturnSystemTabQuest:_ReLoadData(TT, res)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabQuest._Refresh = function(self)
-  -- function num : 0_4
+function UIActivityReturnSystemTabQuest:_Refresh()
   self:_SetRemainingTime()
   self:_SetProgress()
   self:_SetDynamicList(true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabQuest._SetProgress = function(self)
-  -- function num : 0_5
+function UIActivityReturnSystemTabQuest:_SetProgress()
   local sop = self:GetUIComponent("UISelectObjectPath", "progressPool")
   local obj = sop:SpawnObject("UIActivityReturnSystemProgress")
   obj:SetData(self._campaign, self._tipsCallback)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabQuest._CheckQuestDailyReset = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local nextTime = (self._component):GetEarliestEndTimeInDailyQuest()
+function UIActivityReturnSystemTabQuest:_CheckQuestDailyReset()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local nextTime = self._component:GetEarliestEndTimeInDailyQuest()
   local stamp = nextTime - curTime
-  if stamp > 0 then
-    return 
+  if 0 < stamp then
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
-    ;
-    (self._component):HandleCamQuestDailyReset(TT, res)
+    self._component:HandleCamQuestDailyReset(TT, res)
     if res:GetSucc() then
       self:_ReLoadData(TT, res)
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabQuest._SetRemainingTime = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityReturnSystemTabQuest:_SetRemainingTime()
   if self._remainingTimeCallback then
     local svrTimeModule = self:GetModule(SvrTimeModule)
-    local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-    local endTime = (self._component):GetEarliestEndTimeInDailyQuest()
+    local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+    local endTime = self._component:GetEarliestEndTimeInDailyQuest()
     local stamp = endTime - curTime
     if stamp <= 0 then
-      (self._remainingTimeCallback)(endTime, true)
+      self._remainingTimeCallback(endTime, true)
     else
-      ;
-      (self._remainingTimeCallback)(endTime)
+      self._remainingTimeCallback(endTime)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabQuest._FlushQuestItems = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local showTab = (self._dynamicList):GetVisibleItemIDsInScrollView()
+function UIActivityReturnSystemTabQuest:_FlushQuestItems()
+  local showTab = self._dynamicList:GetVisibleItemIDsInScrollView()
   for index = 0, showTab.Count - 1 do
-    local id = (math.floor)(showTab[index])
-    local item = (self._dynamicList):GetShownItemByItemIndex(id)
+    local id = math.floor(showTab[index])
+    local item = self._dynamicList:GetShownItemByItemIndex(id)
     local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
     local rowList = rowPool:GetAllSpawnList()
     for i = 1, self._itemCountPerRow do
@@ -115,62 +80,44 @@ UIActivityReturnSystemTabQuest._FlushQuestItems = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabQuest._SetDynamicListData = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  self._dynamicListInfo = (self._component):GetQuestInfo()
-  self._questStatus = (self._component):GetCampaignQuestStatus(self._dynamicListInfo)
-  ;
-  (self._component):SortQuestInfoByCampaignQuestStatus(self._dynamicListInfo)
-  self._dynamicListSize = (table.count)(self._dynamicListInfo)
+function UIActivityReturnSystemTabQuest:_SetDynamicListData()
+  self._dynamicListInfo = self._component:GetQuestInfo()
+  self._questStatus = self._component:GetCampaignQuestStatus(self._dynamicListInfo)
+  self._component:SortQuestInfoByCampaignQuestStatus(self._dynamicListInfo)
+  self._dynamicListSize = table.count(self._dynamicListInfo)
   self._dynamicListSize = self._dynamicListSize + 1
   self._itemCountPerRow = 1
-  self._dynamicListRowSize = (math.floor)((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
+  self._dynamicListRowSize = math.floor((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabQuest._SetDynamicList = function(self, resetPos)
-  -- function num : 0_10
+function UIActivityReturnSystemTabQuest:_SetDynamicList(resetPos)
   self:_SetDynamicListData()
   if not self._isDynamicInited then
     self._isDynamicInited = true
     self._dynamicList = self:GetUIComponent("UIDynamicScrollView", "dynamicList")
-    ;
-    (self._dynamicList):InitListView(self._dynamicListRowSize, function(scrollView, index)
-    -- function num : 0_10_0 , upvalues : self
-    return self:_SpawnListItem(scrollView, index)
-  end
-)
+    self._dynamicList:InitListView(self._dynamicListRowSize, function(scrollView, index)
+      return self:_SpawnListItem(scrollView, index)
+    end)
   else
     self:_RefreshList(self._dynamicListRowSize, self._dynamicList, resetPos)
   end
   self:_FlushQuestItems()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabQuest._RefreshList = function(self, count, list, resetPos)
-  -- function num : 0_11
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UIActivityReturnSystemTabQuest:_RefreshList(count, list, resetPos)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(count)
   list:MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R5 in 'UnsetPending'
-
   if not resetPos then
-    ((list.ScrollRect).content).localPosition = contentPos
+    list.ScrollRect.content.localPosition = contentPos
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabQuest._SpawnListItem = function(self, scrollView, index)
-  -- function num : 0_12
+function UIActivityReturnSystemTabQuest:_SpawnListItem(scrollView, index)
   if index < 0 then
     return nil
   end
-  local item = nil
+  local item
   if index == self._dynamicListSize - 1 then
     item = scrollView:NewListViewItem("EmptyItem")
   else
@@ -184,110 +131,77 @@ UIActivityReturnSystemTabQuest._SpawnListItem = function(self, scrollView, index
     for i = 1, self._itemCountPerRow do
       local listItem = rowList[i]
       local itemIndex = index * self._itemCountPerRow + i
-      if self._dynamicListSize < itemIndex then
-        (listItem:GetGameObject()):SetActive(false)
+      if itemIndex > self._dynamicListSize then
+        listItem:GetGameObject():SetActive(false)
       else
-        ;
-        (listItem:GetGameObject()):SetActive(true)
+        listItem:GetGameObject():SetActive(true)
         self:_SetListItemData(listItem, itemIndex)
       end
     end
   end
-  do
-    return item
-  end
+  return item
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabQuest._SetListItemData = function(self, listItem, index)
-  -- function num : 0_13
-  local componentInfo = (self._component):GetComponentInfo()
-  local quest = (self._dynamicListInfo)[index]
-  local status = (self._questStatus)[quest]
-  ;
-  (listItem:GetGameObject()):SetActive(true)
+function UIActivityReturnSystemTabQuest:_SetListItemData(listItem, index)
+  local componentInfo = self._component:GetComponentInfo()
+  local quest = self._dynamicListInfo[index]
+  local status = self._questStatus[quest]
+  listItem:GetGameObject():SetActive(true)
   if quest ~= nil then
     listItem:SetData(index, self._campaign, quest, status, componentInfo, function(questInfo)
-    -- function num : 0_13_0 , upvalues : self
-    self:ListItemOnClick(questInfo)
-  end
-, self._tipsCallback)
+      self:ListItemOnClick(questInfo)
+    end, self._tipsCallback)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabQuest.ListItemOnClick = function(self, questInfo)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityReturnSystemTabQuest:ListItemOnClick(questInfo)
   if questInfo.status <= QuestStatus.QUEST_Accepted then
-    local jumpModule = (self._questModule).uiModule
+    local jumpModule = self._questModule.uiModule
     if jumpModule == nil then
-      (Log.fatal)("[quest] error --> uiModule is nil ! --> jumpModule")
-      return 
+      Log.fatal("[quest] error --> uiModule is nil ! --> jumpModule")
+      return
     end
     local fromParam = {}
-    ;
-    (table.insert)(fromParam, QuestType.QT_Daily)
+    table.insert(fromParam, QuestType.QT_Daily)
     jumpModule:SetFromUIData(FromUIType.NormalUI, "UIQuestController", UIStateType.UIMain, fromParam)
     local jumpType = questInfo.JumpID
     local jumpParams = questInfo.JumpParam
     jumpModule:SetJumpUIData(jumpType, jumpParams)
     jumpModule:Jump()
-  else
-    do
-      if questInfo.status == QuestStatus.QUEST_Completed then
-        self:_GetListItemReward(questInfo.quest_id)
-      end
-    end
+  elseif questInfo.status == QuestStatus.QUEST_Completed then
+    self:_GetListItemReward(questInfo.quest_id)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabQuest._GetListItemReward = function(self, id)
-  -- function num : 0_15 , upvalues : _ENV
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
+function UIActivityReturnSystemTabQuest:_GetListItemReward(id)
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
   self:Lock("UIActivityReturnSystemTabQuest:_GetListItemRewardReq")
   self:StartTask(self._GetListItemRewardReq, self, id)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabQuest._GetListItemRewardReq = function(self, TT, id)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityReturnSystemTabQuest:_GetListItemRewardReq(TT, id)
   if self._component then
     local res = AsyncRequestRes:New()
-    local ret, rewards = (self._component):HandleQuestTake(TT, res, id)
+    local ret, rewards = self._component:HandleQuestTake(TT, res, id)
     self:UnLock("UIActivityReturnSystemTabQuest:_GetListItemRewardReq")
     if self.view == nil then
-      return 
+      return
     end
     if res:GetSucc() then
       rewards = self:_RemoveProgressItemInGetItems(rewards)
-      ;
-      (UIActivityHelper.ShowUIGetRewards)(rewards)
+      UIActivityHelper.ShowUIGetRewards(rewards)
     else
-      local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-      campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, function()
-    -- function num : 0_16_0 , upvalues : self
-    self:_Refresh()
-  end
-, function()
-    -- function num : 0_16_1 , upvalues : self, _ENV
-    self:SwitchState(UIStateType.UIMain)
-  end
-)
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      campaignModule:CheckErrorCode(res.m_result, self._campaign._id, function()
+        self:_Refresh()
+      end, function()
+        self:SwitchState(UIStateType.UIMain)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabQuest._RemoveProgressItemInGetItems = function(self, rewards)
-  -- function num : 0_17 , upvalues : _ENV
-  local component = (UIActivityReturnSystemHelper.GetComponentByTabName)(self._campaign, "quest", 2)
+function UIActivityReturnSystemTabQuest:_RemoveProgressItemInGetItems(rewards)
+  local component = UIActivityReturnSystemHelper.GetComponentByTabName(self._campaign, "quest", 2)
   return component:RemoveProgressItemInTable(rewards)
 end
-
-

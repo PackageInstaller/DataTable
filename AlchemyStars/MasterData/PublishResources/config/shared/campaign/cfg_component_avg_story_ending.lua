@@ -1,90 +1,608 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_avg_story_ending.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, Title = 3, Desc = 4, AcceptableCGGift = 5, AcceptableCG = 6, CG = 7, EndingCG = 8, CollectCG = 9, CollectTab = 10, GetConditionDesc = 11, IsBE = 12}
-local common = {"str_avg_n28_end_title_1101", "str_avg_n28_end_desc_1101", "str_avg_n28_end_title_1102", "str_avg_n28_end_desc_1102", "str_avg_n28_end_title_1103", "str_avg_n28_end_desc_1103", "str_avg_n28_end_title_1104", "str_avg_n28_end_desc_1104", "str_avg_n28_end_title_1105", "str_avg_n28_end_desc_1105", "str_avg_n28_end_title_1106", "str_avg_n28_end_desc_1106", "str_avg_n28_end_title_1107", "str_avg_n28_end_desc_1107", "CGlingenne", "N28_avg_jg_photo1201", "N28_avg_sc_photo1201", "N28_avg_sc_yeqian1201", "str_avg_n28_end_title_1201", "str_avg_n28_end_desc_1201", "str_avg_n28_end_get_condition_desc_1201", "CGlingenge", "N28_avg_jg_photo1202", "N28_avg_sc_photo1202", "N28_avg_sc_yeqian1202", "str_avg_n28_end_title_1202", "str_avg_n28_end_desc_1202", "str_avg_n28_end_get_condition_desc_1202", "CGdinahaojieju", "N28_avg_jg_photo1203", "N28_avg_sc_photo1203", "N28_avg_sc_yeqian1203", "str_avg_n28_end_title_1203", "str_avg_n28_end_desc_1203", "str_avg_n28_end_get_condition_desc_1203", "CGshenpantinzhenjieju", "N28_avg_jg_photo1204", "N28_avg_sc_photo1204", "N28_avg_sc_yeqian1204", "str_avg_n28_end_title_1204", "str_avg_n28_end_desc_1204", "str_avg_n28_end_get_condition_desc_1204"}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  Title = 3,
+  Desc = 4,
+  AcceptableCGGift = 5,
+  AcceptableCG = 6,
+  CG = 7,
+  EndingCG = 8,
+  CollectCG = 9,
+  CollectTab = 10,
+  GetConditionDesc = 11,
+  IsBE = 12
+}
+local common = {
+  "str_avg_n28_end_title_1101",
+  "str_avg_n28_end_desc_1101",
+  "str_avg_n28_end_title_1102",
+  "str_avg_n28_end_desc_1102",
+  "str_avg_n28_end_title_1103",
+  "str_avg_n28_end_desc_1103",
+  "str_avg_n28_end_title_1104",
+  "str_avg_n28_end_desc_1104",
+  "str_avg_n28_end_title_1105",
+  "str_avg_n28_end_desc_1105",
+  "str_avg_n28_end_title_1106",
+  "str_avg_n28_end_desc_1106",
+  "str_avg_n28_end_title_1107",
+  "str_avg_n28_end_desc_1107",
+  "CGlingenne",
+  "N28_avg_jg_photo1201",
+  "N28_avg_sc_photo1201",
+  "N28_avg_sc_yeqian1201",
+  "str_avg_n28_end_title_1201",
+  "str_avg_n28_end_desc_1201",
+  "str_avg_n28_end_get_condition_desc_1201",
+  "CGlingenge",
+  "N28_avg_jg_photo1202",
+  "N28_avg_sc_photo1202",
+  "N28_avg_sc_yeqian1202",
+  "str_avg_n28_end_title_1202",
+  "str_avg_n28_end_desc_1202",
+  "str_avg_n28_end_get_condition_desc_1202",
+  "CGdinahaojieju",
+  "N28_avg_jg_photo1203",
+  "N28_avg_sc_photo1203",
+  "N28_avg_sc_yeqian1203",
+  "str_avg_n28_end_title_1203",
+  "str_avg_n28_end_desc_1203",
+  "str_avg_n28_end_get_condition_desc_1203",
+  "CGshenpantinzhenjieju",
+  "N28_avg_jg_photo1204",
+  "N28_avg_sc_photo1204",
+  "N28_avg_sc_yeqian1204",
+  "str_avg_n28_end_title_1204",
+  "str_avg_n28_end_desc_1204",
+  "str_avg_n28_end_get_condition_desc_1204"
+}
 local config = {
-[101] = {101, 106310709, "str_avg_n20_end_title_101", "str_avg_n20_end_desc_101", nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[102] = {102, 106310709, "str_avg_n20_end_title_102", "str_avg_n20_end_desc_102", nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[103] = {103, 106310709, "str_avg_n20_end_title_103", "str_avg_n20_end_desc_103", nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[104] = {104, 106310709, "str_avg_n20_end_title_104", "str_avg_n20_end_desc_104", nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[105] = {105, 106310709, "str_avg_n20_end_title_105", "str_avg_n20_end_desc_105", nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[106] = {106, 106310709, "str_avg_n20_end_title_106", "str_avg_n20_end_desc_106", nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[107] = {107, 106310709, "str_avg_n20_end_title_107", "str_avg_n20_end_desc_107", nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[108] = {108, 106310709, "str_avg_n20_end_title_108", "str_avg_n20_end_desc_108", nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[109] = {109, 106310709, "str_avg_n20_end_title_109", "str_avg_n20_end_desc_109", nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[110] = {110, 106310709, "str_avg_n20_end_title_110", "str_avg_n20_end_desc_110", nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[111] = {111, 106310709, "str_avg_n20_end_title_111", "str_avg_n20_end_desc_111", nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[112] = {112, 106310709, "str_avg_n20_end_title_112", "str_avg_n20_end_desc_112", nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[113] = {113, 106310709, "str_avg_n20_end_title_113", "str_avg_n20_end_desc_113", nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[201] = {201, 106310709, "str_avg_n20_end_title_201", "str_avg_n20_end_desc_201", 3900021, 3900031, "CGnormalend", "N20_avg_jg_photo05", "N20_avg_sc_image02", nil, "str_avg_n20_end_get_condition_desc_201"}
-, 
-[202] = {202, 106310709, "str_avg_n20_end_title_202", "str_avg_n20_end_desc_202", 3900022, 3900032, "CGkaliange", "N20_avg_jg_photo03", "N20_avg_sc_image06", nil, "str_avg_n20_end_get_condition_desc_202"}
-, 
-[203] = {203, 106310709, "str_avg_n20_end_title_203", "str_avg_n20_end_desc_203", 3900023, 3900033, "CGweisige", "N20_avg_jg_photo01", "N20_avg_sc_image03", nil, "str_avg_n20_end_get_condition_desc_203"}
-, 
-[204] = {204, 106310709, "str_avg_n20_end_title_204", "str_avg_n20_end_desc_204", 3900024, 3900034, "CGfeiyage", "N20_avg_jg_photo02", "N20_avg_sc_image05", nil, "str_avg_n20_end_get_condition_desc_204"}
-, 
-[205] = {205, 106310709, "str_avg_n20_end_title_205", "str_avg_n20_end_desc_205", 3900025, 3900035, "CGtureend", "N20_avg_jg_photo04", "N20_avg_sc_image04", nil, "str_avg_n20_end_get_condition_desc_205"}
-, 
-[1101] = {1101, 108410708, common[1], common[2], nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[1102] = {1102, 108410708, common[3], common[4], nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[1103] = {1103, 108410708, common[5], common[6], nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[1104] = {1104, 108410708, common[7], common[8], nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[1105] = {1105, 108410708, common[9], common[10], nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[1106] = {1106, 108410708, common[11], common[12], nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[1107] = {1107, 108410708, common[13], common[14], nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[1201] = {1201, 108410708, common[19], common[20], 3900121, 3900131, common[15], common[16], common[17], common[18], common[21]}
-, 
-[1202] = {1202, 108410708, common[26], common[27], 3900122, 3900132, common[22], common[23], common[24], common[25], common[28]}
-, 
-[1203] = {1203, 108410708, common[33], common[34], 3900123, 3900133, common[29], common[30], common[31], common[32], common[35]}
-, 
-[1204] = {1204, 108410708, common[40], common[41], 3900124, 3900134, common[36], common[37], common[38], common[39], common[42]}
-, 
-[2101] = {2101, 114510702, common[1], common[2], nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[2102] = {2102, 114510702, common[3], common[4], nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[2103] = {2103, 114510702, common[5], common[6], nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[2104] = {2104, 114510702, common[7], common[8], nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[2105] = {2105, 114510702, common[9], common[10], nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[2106] = {2106, 114510702, common[11], common[12], nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[2107] = {2107, 114510702, common[13], common[14], nil, nil, nil, nil, nil, nil, nil, true}
-, 
-[2201] = {2201, 114510702, common[19], common[20], 3900221, 3900231, common[15], common[16], common[17], common[18], common[21]}
-, 
-[2202] = {2202, 114510702, common[26], common[27], 3900222, 3900232, common[22], common[23], common[24], common[25], common[28]}
-, 
-[2203] = {2203, 114510702, common[33], common[34], 3900223, 3900233, common[29], common[30], common[31], common[32], common[35]}
-, 
-[2204] = {2204, 114510702, common[40], common[41], 3900224, 3900234, common[36], common[37], common[38], common[39], common[42]}
+  [101] = {
+    101,
+    106310709,
+    "str_avg_n20_end_title_101",
+    "str_avg_n20_end_desc_101",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [102] = {
+    102,
+    106310709,
+    "str_avg_n20_end_title_102",
+    "str_avg_n20_end_desc_102",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [103] = {
+    103,
+    106310709,
+    "str_avg_n20_end_title_103",
+    "str_avg_n20_end_desc_103",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [104] = {
+    104,
+    106310709,
+    "str_avg_n20_end_title_104",
+    "str_avg_n20_end_desc_104",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [105] = {
+    105,
+    106310709,
+    "str_avg_n20_end_title_105",
+    "str_avg_n20_end_desc_105",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [106] = {
+    106,
+    106310709,
+    "str_avg_n20_end_title_106",
+    "str_avg_n20_end_desc_106",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [107] = {
+    107,
+    106310709,
+    "str_avg_n20_end_title_107",
+    "str_avg_n20_end_desc_107",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [108] = {
+    108,
+    106310709,
+    "str_avg_n20_end_title_108",
+    "str_avg_n20_end_desc_108",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [109] = {
+    109,
+    106310709,
+    "str_avg_n20_end_title_109",
+    "str_avg_n20_end_desc_109",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [110] = {
+    110,
+    106310709,
+    "str_avg_n20_end_title_110",
+    "str_avg_n20_end_desc_110",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [111] = {
+    111,
+    106310709,
+    "str_avg_n20_end_title_111",
+    "str_avg_n20_end_desc_111",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [112] = {
+    112,
+    106310709,
+    "str_avg_n20_end_title_112",
+    "str_avg_n20_end_desc_112",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [113] = {
+    113,
+    106310709,
+    "str_avg_n20_end_title_113",
+    "str_avg_n20_end_desc_113",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [201] = {
+    201,
+    106310709,
+    "str_avg_n20_end_title_201",
+    "str_avg_n20_end_desc_201",
+    3900021,
+    3900031,
+    "CGnormalend",
+    "N20_avg_jg_photo05",
+    "N20_avg_sc_image02",
+    nil,
+    "str_avg_n20_end_get_condition_desc_201"
+  },
+  [202] = {
+    202,
+    106310709,
+    "str_avg_n20_end_title_202",
+    "str_avg_n20_end_desc_202",
+    3900022,
+    3900032,
+    "CGkaliange",
+    "N20_avg_jg_photo03",
+    "N20_avg_sc_image06",
+    nil,
+    "str_avg_n20_end_get_condition_desc_202"
+  },
+  [203] = {
+    203,
+    106310709,
+    "str_avg_n20_end_title_203",
+    "str_avg_n20_end_desc_203",
+    3900023,
+    3900033,
+    "CGweisige",
+    "N20_avg_jg_photo01",
+    "N20_avg_sc_image03",
+    nil,
+    "str_avg_n20_end_get_condition_desc_203"
+  },
+  [204] = {
+    204,
+    106310709,
+    "str_avg_n20_end_title_204",
+    "str_avg_n20_end_desc_204",
+    3900024,
+    3900034,
+    "CGfeiyage",
+    "N20_avg_jg_photo02",
+    "N20_avg_sc_image05",
+    nil,
+    "str_avg_n20_end_get_condition_desc_204"
+  },
+  [205] = {
+    205,
+    106310709,
+    "str_avg_n20_end_title_205",
+    "str_avg_n20_end_desc_205",
+    3900025,
+    3900035,
+    "CGtureend",
+    "N20_avg_jg_photo04",
+    "N20_avg_sc_image04",
+    nil,
+    "str_avg_n20_end_get_condition_desc_205"
+  },
+  [1101] = {
+    1101,
+    108410708,
+    common[1],
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [1102] = {
+    1102,
+    108410708,
+    common[3],
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [1103] = {
+    1103,
+    108410708,
+    common[5],
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [1104] = {
+    1104,
+    108410708,
+    common[7],
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [1105] = {
+    1105,
+    108410708,
+    common[9],
+    common[10],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [1106] = {
+    1106,
+    108410708,
+    common[11],
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [1107] = {
+    1107,
+    108410708,
+    common[13],
+    common[14],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [1201] = {
+    1201,
+    108410708,
+    common[19],
+    common[20],
+    3900121,
+    3900131,
+    common[15],
+    common[16],
+    common[17],
+    common[18],
+    common[21]
+  },
+  [1202] = {
+    1202,
+    108410708,
+    common[26],
+    common[27],
+    3900122,
+    3900132,
+    common[22],
+    common[23],
+    common[24],
+    common[25],
+    common[28]
+  },
+  [1203] = {
+    1203,
+    108410708,
+    common[33],
+    common[34],
+    3900123,
+    3900133,
+    common[29],
+    common[30],
+    common[31],
+    common[32],
+    common[35]
+  },
+  [1204] = {
+    1204,
+    108410708,
+    common[40],
+    common[41],
+    3900124,
+    3900134,
+    common[36],
+    common[37],
+    common[38],
+    common[39],
+    common[42]
+  },
+  [2101] = {
+    2101,
+    114510702,
+    common[1],
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [2102] = {
+    2102,
+    114510702,
+    common[3],
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [2103] = {
+    2103,
+    114510702,
+    common[5],
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [2104] = {
+    2104,
+    114510702,
+    common[7],
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [2105] = {
+    2105,
+    114510702,
+    common[9],
+    common[10],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [2106] = {
+    2106,
+    114510702,
+    common[11],
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [2107] = {
+    2107,
+    114510702,
+    common[13],
+    common[14],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    true
+  },
+  [2201] = {
+    2201,
+    114510702,
+    common[19],
+    common[20],
+    3900221,
+    3900231,
+    common[15],
+    common[16],
+    common[17],
+    common[18],
+    common[21]
+  },
+  [2202] = {
+    2202,
+    114510702,
+    common[26],
+    common[27],
+    3900222,
+    3900232,
+    common[22],
+    common[23],
+    common[24],
+    common[25],
+    common[28]
+  },
+  [2203] = {
+    2203,
+    114510702,
+    common[33],
+    common[34],
+    3900223,
+    3900233,
+    common[29],
+    common[30],
+    common[31],
+    common[32],
+    common[35]
+  },
+  [2204] = {
+    2204,
+    114510702,
+    common[40],
+    common[41],
+    3900224,
+    3900234,
+    common[36],
+    common[37],
+    common[38],
+    common[39],
+    common[42]
+  }
 }
 return config, "ID", key
-

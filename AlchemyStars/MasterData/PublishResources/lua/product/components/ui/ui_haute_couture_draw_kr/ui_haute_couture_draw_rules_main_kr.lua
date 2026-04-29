@@ -1,50 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_kr/ui_haute_couture_draw_rules_main_kr.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawRulesMainKR", UIHauteCoutureDrawRulesBase)
 UIHauteCoutureDrawRulesMainKR = UIHauteCoutureDrawRulesMainKR
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawRulesMainKR.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawRulesMainKR:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesMainKR.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHauteCoutureDrawRulesMainKR:OnShow(uiParams)
   self:InitWidgets()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesMainKR.InitWidgets = function(self)
-  -- function num : 0_2
+function UIHauteCoutureDrawRulesMainKR:InitWidgets()
   self:InitWidgetsBase()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesMainKR.GetRuleItemPrefab = function(self)
-  -- function num : 0_3
+function UIHauteCoutureDrawRulesMainKR:GetRuleItemPrefab()
   return "UISeniorSKinProItemsKR.prefab"
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesMainKR.GetRuleItemScript = function(self)
-  -- function num : 0_4
+function UIHauteCoutureDrawRulesMainKR:GetRuleItemScript()
   return "UISeniorSKinProItems"
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesMainKR.CloseBtnOnClick = function(self)
-  -- function num : 0_5
-  (self.controller):CloseDialog()
+function UIHauteCoutureDrawRulesMainKR:CloseBtnOnClick()
+  self.controller:CloseDialog()
 end
-
-

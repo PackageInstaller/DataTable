@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/story/ui_n28_avg_story_show_evidence.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGStoryShowEvidence", UICustomWidget)
 UIN28AVGStoryShowEvidence = UIN28AVGStoryShowEvidence
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGStoryShowEvidence.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN28AVGData()
+function UIN28AVGStoryShowEvidence:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN28AVGData()
   self.curSelectEvidenceID = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryShowEvidence.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN28AVGStoryShowEvidence:OnShow()
   self._poolEvidence = self:GetUIComponent("UISelectObjectPath", "poolEvidence")
   self._poolEvidenceTrans = self:GetUIComponent("RectTransform", "poolEvidence")
   self._dialogText = self:GetUIComponent("UILocalizationText", "dialogText")
@@ -31,192 +21,131 @@ UIN28AVGStoryShowEvidence.OnShow = function(self)
   self:AttachEvent(GameEventType.AVGSelectEvidenceItem, self.OnSelectEvidenceItem)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryShowEvidence.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN28AVGStoryShowEvidence:OnHide()
   self:DetachEvent(GameEventType.AVGSelectEvidenceItem, self.OnSelectEvidenceItem)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryShowEvidence.Flush = function(self, hint, curEvidences, callback)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN28AVGStoryShowEvidence:Flush(hint, curEvidences, callback)
   self._callback = callback
-  local spawnList = (self._poolEvidence):SpawnObjects("UIN28AVGStorySelectEvidence", #curEvidences)
+  local spawnList = self._poolEvidence:SpawnObjects("UIN28AVGStorySelectEvidence", #curEvidences)
   local idx = 1
-  local firstEid = nil
-  for _,v in pairs(spawnList) do
+  local firstEid
+  for _, v in pairs(spawnList) do
     local eid = curEvidences[idx]
-    if idx ~= 1 or not eid then
-      do
-        local cfg = self:GetEvidenceCfg(eid)
-        v:SetData(cfg)
-        idx = idx + 1
-        -- DECOMPILER ERROR at PC24: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC24: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
-    end
+    firstEid = idx == 1 and eid or firstEid
+    local cfg = self:GetEvidenceCfg(eid)
+    v:SetData(cfg)
+    idx = idx + 1
   end
-  ;
-  (self._dialogText):SetText((StringTable.Get)(hint))
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._poolEvidenceTrans).anchoredPosition = Vector2(0, 0)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AVGSelectEvidenceItem, firstEid, true)
-  local flushCallback = function()
-    -- function num : 0_3_0 , upvalues : curEvidences, _ENV, self
-    if #curEvidences > 6 then
-      if ((self._poolEvidenceTrans).sizeDelta).x < (math.abs)(((self._poolEvidenceTrans).anchoredPosition).x) then
-        (self._arrow):SetActive(false)
+  self._dialogText:SetText(StringTable.Get(hint))
+  self._poolEvidenceTrans.anchoredPosition = Vector2(0, 0)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AVGSelectEvidenceItem, firstEid, true)
+  
+  local function flushCallback()
+    if 6 < #curEvidences then
+      if math.abs(self._poolEvidenceTrans.anchoredPosition.x) > self._poolEvidenceTrans.sizeDelta.x then
+        self._arrow:SetActive(false)
       else
-        ;
-        (self._arrow):SetActive(true)
+        self._arrow:SetActive(true)
       end
     else
-      ;
-      (self._arrow):SetActive(false)
+      self._arrow:SetActive(false)
     end
   end
-
-  ;
-  ((self._scrollView).onValueChanged):AddListener(flushCallback)
+  
+  self._scrollView.onValueChanged:AddListener(flushCallback)
   flushCallback()
   self:Lock("UIN28AVGStoryShowEvidence_Flush")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_3_1 , upvalues : _ENV, self
+  GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT, 500)
     self:UnLock("UIN28AVGStoryShowEvidence_Flush")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryShowEvidence.OnSelectEvidenceItem = function(self, evidenceID, noAnim)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
+function UIN28AVGStoryShowEvidence:OnSelectEvidenceItem(evidenceID, noAnim)
   if noAnim then
-    (self._content).anchoredPosition = Vector2(0, 0)
+    self._content.anchoredPosition = Vector2(0, 0)
   end
   if self.curSelectEvidenceID == evidenceID then
-    return 
+    return
   end
-  local anim = (self.curSelectEvidenceID ~= nil and not noAnim)
+  local anim = self.curSelectEvidenceID ~= nil and not noAnim
   local isLeft = true
-  isLeft = not anim or evidenceID < self.curSelectEvidenceID
+  if anim then
+    isLeft = evidenceID < self.curSelectEvidenceID
+  end
   self.curSelectEvidenceID = evidenceID
   self:PlayAnim(evidenceID, isLeft, anim)
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._content).anchoredPosition = Vector2(0, 0)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  self._content.anchoredPosition = Vector2(0, 0)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryShowEvidence.PlayAnim = function(self, evidenceID, isLeft, anim)
-  -- function num : 0_5 , upvalues : _ENV
-  local showInfo = function()
-    -- function num : 0_5_0 , upvalues : self, evidenceID, _ENV
+function UIN28AVGStoryShowEvidence:PlayAnim(evidenceID, isLeft, anim)
+  local function showInfo()
     local cfg = self:GetEvidenceCfg(evidenceID)
-    local intro = self:_DoEscape((StringTable.Get)(cfg.EvidenceIntro))
-    ;
-    (self._titleText):SetText((StringTable.Get)(cfg.EvidenceName))
-    ;
-    (self._infoText):SetText(intro)
-    ;
-    (self._iconRawImage):LoadImage(cfg.EvidenceIcon)
+    
+    local intro = self:_DoEscape(StringTable.Get(cfg.EvidenceIntro))
+    self._titleText:SetText(StringTable.Get(cfg.EvidenceName))
+    self._infoText:SetText(intro)
+    self._iconRawImage:LoadImage(cfg.EvidenceIcon)
   end
-
+  
   if anim then
     if isLeft then
-      (self._anim):Play("uieff_UIN28AVGStoryShowEvidence_L_out")
+      self._anim:Play("uieff_UIN28AVGStoryShowEvidence_L_out")
       self:StartTask(function(TT)
-    -- function num : 0_5_1 , upvalues : self, _ENV, showInfo
-    self:Lock("UIN28AVGStoryShowEvidence_PlayAnim")
-    YIELD(TT, 200)
-    self:UnLock("UIN28AVGStoryShowEvidence_PlayAnim")
-    ;
-    (self._anim):Play("uieff_UIN28AVGStoryShowEvidence_L_in")
-    showInfo()
-  end
-)
+        self:Lock("UIN28AVGStoryShowEvidence_PlayAnim")
+        YIELD(TT, 200)
+        self:UnLock("UIN28AVGStoryShowEvidence_PlayAnim")
+        self._anim:Play("uieff_UIN28AVGStoryShowEvidence_L_in")
+        showInfo()
+      end)
     else
-      ;
-      (self._anim):Play("uieff_UIN28AVGStoryShowEvidence_L_out")
+      self._anim:Play("uieff_UIN28AVGStoryShowEvidence_L_out")
       self:StartTask(function(TT)
-    -- function num : 0_5_2 , upvalues : self, _ENV, showInfo
-    self:Lock("UIN28AVGStoryShowEvidence_PlayAnim")
-    YIELD(TT, 200)
-    self:UnLock("UIN28AVGStoryShowEvidence_PlayAnim")
-    ;
-    (self._anim):Play("uieff_UIN28AVGStoryShowEvidence_L_in")
-    showInfo()
-  end
-)
+        self:Lock("UIN28AVGStoryShowEvidence_PlayAnim")
+        YIELD(TT, 200)
+        self:UnLock("UIN28AVGStoryShowEvidence_PlayAnim")
+        self._anim:Play("uieff_UIN28AVGStoryShowEvidence_L_in")
+        showInfo()
+      end)
     end
   else
     showInfo()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryShowEvidence.BtnOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN28AVGStoryShowEvidence:BtnOnClick()
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, _ENV
-    (self._anim):Play("uieff_UIN28AVGStoryShowEvidence_click")
+    self._anim:Play("uieff_UIN28AVGStoryShowEvidence_click")
     self:Lock("UIN28AVGStoryShowEvidence_PlayAnim")
     YIELD(TT, 467)
     self:UnLock("UIN28AVGStoryShowEvidence_PlayAnim")
-    ;
-    (self._callback)(self.curSelectEvidenceID)
-  end
-)
+    self._callback(self.curSelectEvidenceID)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryShowEvidence.GetEvidenceCfg = function(self, eid)
-  -- function num : 0_7 , upvalues : _ENV
-  local evidenceCfg = (Cfg.cfg_component_avg_evidence)({ID = eid})
+function UIN28AVGStoryShowEvidence:GetEvidenceCfg(eid)
+  local evidenceCfg = Cfg.cfg_component_avg_evidence({ID = eid})
   if evidenceCfg then
     return evidenceCfg[1]
   end
   return {}
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryShowEvidence.GetEvidenceManualCfg = function(self, mid)
-  -- function num : 0_8 , upvalues : _ENV
-  local evidenceManualCfg = (Cfg.cfg_component_avg_evidence_manual)({ID = mid})
+function UIN28AVGStoryShowEvidence:GetEvidenceManualCfg(mid)
+  local evidenceManualCfg = Cfg.cfg_component_avg_evidence_manual({ID = mid})
   if evidenceManualCfg then
     return evidenceManualCfg[1]
   end
   return {}
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryShowEvidence._DoEscape = function(self, strContent)
-  -- function num : 0_9 , upvalues : _ENV
-  strContent = (string.gsub)(strContent, "$$", "$")
-  local name = ((GameGlobal.GetModule)(RoleModule)):GetName()
-  if (string.isnullorempty)(name) then
-    name = (StringTable.Get)("str_guide_moren_name")
+function UIN28AVGStoryShowEvidence:_DoEscape(strContent)
+  strContent = string.gsub(strContent, "$$", "$")
+  local name = GameGlobal.GetModule(RoleModule):GetName()
+  if string.isnullorempty(name) then
+    name = StringTable.Get("str_guide_moren_name")
   end
-  strContent = (string.gsub)(strContent, "PlayerName", name)
+  strContent = string.gsub(strContent, "PlayerName", name)
   return strContent
 end
-
-

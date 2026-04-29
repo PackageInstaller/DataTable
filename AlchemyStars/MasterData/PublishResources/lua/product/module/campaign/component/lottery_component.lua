@@ -1,81 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/lottery_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LotteryComponent", ICampaignComponent)
 LotteryComponent = LotteryComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LotteryComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function LotteryComponent:Constructor()
   self._componentInfo = LotteryComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LotteryComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function LotteryComponent:ComponentInfo()
   if not self._componentInfo then
     self._componentInfo = LotteryComponentInfo:New()
   end
   return self._componentInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LotteryComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function LotteryComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LotteryComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function LotteryComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_LOTTERY
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LotteryComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self._componentInfo)
+function LotteryComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self._componentInfo)
   return ret
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LotteryComponent.HandleLottery = function(self, TT, asyncRes, jackpotIndex, lotteryType)
-  -- function num : 0_5 , upvalues : _ENV
+function LotteryComponent:HandleLottery(TT, asyncRes, jackpotIndex, lotteryType)
   local request = LotteryComponentLotteryReq:New()
   request.m_jackpot_index = jackpotIndex
   request.m_lottery_type = lotteryType
   local response = LotteryComponentLotteryRep:New()
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][Lottery] HandleLottery ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][Lottery] HandleLottery ret:", asyncRes.m_result)
     return nil
   end
   if response.m_is_open_new then
-    (table.insert)(componentInfo.m_unlock_jackpots, response.m_unlock_jackpot_index)
+    table.insert(componentInfo.m_unlock_jackpots, response.m_unlock_jackpot_index)
   end
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (componentInfo.m_jackpots)[jackpotIndex] = response.m_jackpot
+  componentInfo.m_jackpots[jackpotIndex] = response.m_jackpot
   asyncRes:SetSucc(true)
   return response.m_rewards, response.m_is_open_new
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LotteryComponent.IsLotteryJackpotUnlock = function(self, jackpotIndex)
-  -- function num : 0_6 , upvalues : _ENV
+function LotteryComponent:IsLotteryJackpotUnlock(jackpotIndex)
   local componentInfo = self:ComponentInfo()
-  for _,value in pairs(componentInfo.m_unlock_jackpots) do
+  for _, value in pairs(componentInfo.m_unlock_jackpots) do
     if value == jackpotIndex then
       return true
     end
@@ -83,157 +54,126 @@ LotteryComponent.IsLotteryJackpotUnlock = function(self, jackpotIndex)
   return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LotteryComponent.IsLotteryJeckpotEmpty = function(self, jackpotIndex)
-  -- function num : 0_7 , upvalues : _ENV
+function LotteryComponent:IsLotteryJeckpotEmpty(jackpotIndex)
   local componentInfo = self:ComponentInfo()
-  local jackpot = (componentInfo.m_jackpots)[jackpotIndex]
+  local jackpot = componentInfo.m_jackpots[jackpotIndex]
   if jackpot then
-    for _,awardInfo in pairs(jackpot) do
+    for _, awardInfo in pairs(jackpot) do
       if awardInfo.m_lottery_count ~= 0 then
         return false
       end
     end
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LotteryComponent.IsLotteryJeckpotNoRestBigReward = function(self, jackpotIndex)
-  -- function num : 0_8
+function LotteryComponent:IsLotteryJeckpotNoRestBigReward(jackpotIndex)
   local awardInfo = self:GetLotteryBigReward(jackpotIndex)
-  do return not awardInfo or awardInfo.m_lottery_count == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return not awardInfo or awardInfo.m_lottery_count == 0
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LotteryComponent.IsLotteryJeckpotCanMutliLottery = function(self, jackpotIndex)
-  -- function num : 0_9 , upvalues : _ENV
+function LotteryComponent:IsLotteryJeckpotCanMutliLottery(jackpotIndex)
   local componentInfo = self:ComponentInfo()
-  local jackpot = (componentInfo.m_jackpots)[jackpotIndex]
+  local jackpot = componentInfo.m_jackpots[jackpotIndex]
   local lottery_count = 0
   if jackpot then
-    for _,awardInfo in pairs(jackpot) do
+    for _, awardInfo in pairs(jackpot) do
       lottery_count = lottery_count + awardInfo.m_lottery_count
     end
   end
-  do
-    if componentInfo.m_multi_lottery <= lottery_count then
-      return true
-    end
-    return false
+  if lottery_count >= componentInfo.m_multi_lottery then
+    return true
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LotteryComponent.GetLotteryCount = function(self, jackpotIndex)
-  -- function num : 0_10 , upvalues : _ENV
+function LotteryComponent:GetLotteryCount(jackpotIndex)
   local rest = 0
   local total = 0
-  local jackpots_info = (self:ComponentInfo()).m_jackpots
-  for key,award in pairs(jackpots_info[jackpotIndex]) do
+  local jackpots_info = self:ComponentInfo().m_jackpots
+  for key, award in pairs(jackpots_info[jackpotIndex]) do
     rest = award.m_lottery_count + rest
     total = award.m_lottery_limit_count + total
   end
   return rest, total
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LotteryComponent.HaveRedPoint = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function LotteryComponent:HaveRedPoint()
   local componentInfo = self:ComponentInfo()
   if componentInfo and self:ComponentIsOpen() then
     local costCount = componentInfo.m_cost_count * componentInfo.m_multi_lottery
-    local curCount = (ClientCampaignDrawShop.GetMoney)(componentInfo.m_cost_item_id)
-    return (costCount <= curCount and self:_JackPotCanLottery())
+    local curCount = ClientCampaignDrawShop.GetMoney(componentInfo.m_cost_item_id)
+    return costCount <= curCount and self:_JackPotCanLottery()
   end
-  do return false end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LotteryComponent._JackPotCanLottery = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function LotteryComponent:_JackPotCanLottery()
   local componentInfo = self:ComponentInfo()
   if componentInfo then
-    for key,value in pairs(componentInfo.m_unlock_jackpots) do
+    for key, value in pairs(componentInfo.m_unlock_jackpots) do
       local remainCount = 0
-      local jackpots = (componentInfo.m_jackpots)[value]
+      local jackpots = componentInfo.m_jackpots[value]
       if jackpots then
-        for _,awardinfo in pairs(jackpots) do
+        for _, awardinfo in pairs(jackpots) do
           remainCount = remainCount + awardinfo.m_lottery_count
         end
-        if componentInfo.m_multi_lottery <= remainCount then
+        if remainCount >= componentInfo.m_multi_lottery then
           return true
         end
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LotteryComponent.RandEventInfo = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function LotteryComponent:RandEventInfo()
   local jackpots_info = {}
   local lottery_times = 0
-  local unlock_jackpots_id = (self:ComponentInfo()).m_unlock_jackpots
-  local cur_jackpots = (self:ComponentInfo()).m_jackpots
-  for id_key,id_value in pairs(unlock_jackpots_id) do
-    for key,value in pairs(cur_jackpots[id_value]) do
+  local unlock_jackpots_id = self:ComponentInfo().m_unlock_jackpots
+  local cur_jackpots = self:ComponentInfo().m_jackpots
+  for id_key, id_value in pairs(unlock_jackpots_id) do
+    for key, value in pairs(cur_jackpots[id_value]) do
       lottery_times = lottery_times + value.m_lottery_limit_count - value.m_lottery_count
     end
   end
-  local campaign_id = (self:GetComponentInfo()).m_campaign_id
-  local event_cfg = (Cfg.cfg_activity_lottery_event)({CampaignID = campaign_id})
-  local event_info = (event_cfg[1]).Event
+  local campaign_id = self:GetComponentInfo().m_campaign_id
+  local event_cfg = Cfg.cfg_activity_lottery_event({CampaignID = campaign_id})
+  local event_info = event_cfg[1].Event
   for i = 1, #event_info do
     local jackpot_event = RandomEvent:New()
-    jackpot_event.lottery_times = (event_info[i])[1]
-    jackpot_event.event_id = (event_info[i])[2]
-    if (event_info[i])[1] <= lottery_times then
+    jackpot_event.lottery_times = event_info[i][1]
+    jackpot_event.event_id = event_info[i][2]
+    if lottery_times >= event_info[i][1] then
       jackpot_event.is_unlock = true
     end
-    ;
-    (table.insert)(jackpots_info, jackpot_event)
+    table.insert(jackpots_info, jackpot_event)
   end
   return jackpots_info, lottery_times
 end
 
-local LotteryState = {None = 1, WaitRequestResult = 2, LotterySpine = 3, LotteryResultSpine = 4, ShowRewards = 5}
+local LotteryState = {
+  None = 1,
+  WaitRequestResult = 2,
+  LotterySpine = 3,
+  LotteryResultSpine = 4,
+  ShowRewards = 5
+}
 _enum("LotteryState", LotteryState)
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
 
-LotteryComponent.GetLotteryCostItemIconText = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local item_id = (self:GetComponentInfo()).m_cost_item_id
-  local cfgItem = (Cfg.cfg_item)[item_id]
-  if cfgItem then
-    local icon = cfgItem.Icon
-  end
-  local count = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(item_id)
+function LotteryComponent:GetLotteryCostItemIconText()
+  local item_id = self:GetComponentInfo().m_cost_item_id
+  local cfgItem = Cfg.cfg_item[item_id]
+  local icon = cfgItem and cfgItem.Icon
+  local count = GameGlobal.GetModule(ItemModule):GetItemCount(item_id)
   return icon, count
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-LotteryComponent.GetLotteryBigReward = function(self, jackpotIndex)
-  -- function num : 0_15 , upvalues : _ENV
+function LotteryComponent:GetLotteryBigReward(jackpotIndex)
   local componentInfo = self:ComponentInfo()
-  local jackpot = (componentInfo.m_jackpots)[jackpotIndex]
+  local jackpot = componentInfo.m_jackpots[jackpotIndex]
   if jackpot then
-    for _,awardInfo in pairs(jackpot) do
+    for _, awardInfo in pairs(jackpot) do
       if awardInfo.m_is_big_reward then
         return awardInfo
       end
@@ -241,19 +181,12 @@ LotteryComponent.GetLotteryBigReward = function(self, jackpotIndex)
   end
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-LotteryComponent.GetLotteryBigRewardName = function(self, jackpotIndex)
-  -- function num : 0_16 , upvalues : _ENV
+function LotteryComponent:GetLotteryBigRewardName(jackpotIndex)
   local awardInfo = self:GetLotteryBigReward(jackpotIndex)
   if awardInfo then
     local itemId = awardInfo.m_item_id
-    local cfg = (Cfg.cfg_item)[itemId]
-    return cfg and (StringTable.Get)(cfg.Name) or ""
+    local cfg = Cfg.cfg_item[itemId]
+    return cfg and StringTable.Get(cfg.Name) or ""
   end
-  do
-    return ""
-  end
+  return ""
 end
-
-

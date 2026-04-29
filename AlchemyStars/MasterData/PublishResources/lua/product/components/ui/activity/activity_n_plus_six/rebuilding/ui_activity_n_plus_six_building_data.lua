@@ -1,18 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/activity_n_plus_six/rebuilding/ui_activity_n_plus_six_building_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UIActivityNPlusSixBuildingStatus = {CleanUp = 0, CleanUpComplete = 1, RepairComplete = 2, DecorateComplete = 4}
+local UIActivityNPlusSixBuildingStatus = {
+  CleanUp = 0,
+  CleanUpComplete = 1,
+  RepairComplete = 2,
+  DecorateComplete = 4
+}
 _enum("UIActivityNPlusSixBuildingStatus", UIActivityNPlusSixBuildingStatus)
 _class("UIActivityNPlusSixBuildingStatusData", Object)
 UIActivityNPlusSixBuildingStatusData = UIActivityNPlusSixBuildingStatusData
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityNPlusSixBuildingStatusData.Constructor = function(self, cfg, localProcess)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityNPlusSixBuildingStatusData:Constructor(cfg, localProcess)
   if not cfg then
-    return 
+    return
   end
   self._localProcess = localProcess
   self._status = cfg.BuildStatus
@@ -23,17 +21,17 @@ UIActivityNPlusSixBuildingStatusData.Constructor = function(self, cfg, localProc
   self._storyReviewId = cfg.StoryReviewId
   self._statusName = ""
   if cfg.StatusName then
-    self._statusName = (StringTable.Get)(cfg.StatusName)
+    self._statusName = StringTable.Get(cfg.StatusName)
   end
   self._des = ""
   if cfg.Des then
-    self._des = (StringTable.Get)(cfg.Des)
+    self._des = StringTable.Get(cfg.Des)
   end
   self._icon = ""
   if cfg.Icon then
     self._icon = cfg.Icon
   end
-  self._name = (StringTable.Get)(cfg.Name)
+  self._name = StringTable.Get(cfg.Name)
   self._isShow = cfg.IsShow == 1
   local widgetPos = cfg.WidgetPos
   self._widgetPos = Vector2(widgetPos[1], widgetPos[2])
@@ -51,247 +49,155 @@ UIActivityNPlusSixBuildingStatusData.Constructor = function(self, cfg, localProc
   self._widgetDesPos = Vector2(widgetDesPos[1], widgetDesPos[2])
   self._layer = cfg.Layer
   self._tipsIcon = cfg.TipsIcon
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetWidgetDesPos = function(self)
-  -- function num : 0_1
+function UIActivityNPlusSixBuildingStatusData:GetWidgetDesPos()
   return self._widgetDesPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetWidgetPos = function(self)
-  -- function num : 0_2
+function UIActivityNPlusSixBuildingStatusData:GetWidgetPos()
   return self._widgetPos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetIconPos = function(self)
-  -- function num : 0_3
+function UIActivityNPlusSixBuildingStatusData:GetIconPos()
   return self._iconPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetIconWidth = function(self)
-  -- function num : 0_4
+function UIActivityNPlusSixBuildingStatusData:GetIconWidth()
   return self._iconWidth
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetIconHeight = function(self)
-  -- function num : 0_5
+function UIActivityNPlusSixBuildingStatusData:GetIconHeight()
   return self._iconHeight
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetIconRotate = function(self)
-  -- function num : 0_6
+function UIActivityNPlusSixBuildingStatusData:GetIconRotate()
   return self._iconRotate
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetTriggerPos = function(self)
-  -- function num : 0_7
+function UIActivityNPlusSixBuildingStatusData:GetTriggerPos()
   return self._triggerPos
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetTriggerWidth = function(self)
-  -- function num : 0_8
+function UIActivityNPlusSixBuildingStatusData:GetTriggerWidth()
   return self._triggerWidth
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetTriggerHeight = function(self)
-  -- function num : 0_9
+function UIActivityNPlusSixBuildingStatusData:GetTriggerHeight()
   return self._triggerHeight
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetTriggerRotate = function(self)
-  -- function num : 0_10
+function UIActivityNPlusSixBuildingStatusData:GetTriggerRotate()
   return self._triggerRotate
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetLayer = function(self)
-  -- function num : 0_11
+function UIActivityNPlusSixBuildingStatusData:GetLayer()
   return self._layer
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetStatus = function(self)
-  -- function num : 0_12
+function UIActivityNPlusSixBuildingStatusData:GetStatus()
   return self._status
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetCondition = function(self)
-  -- function num : 0_13
+function UIActivityNPlusSixBuildingStatusData:GetCondition()
   return self._condition
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetCost = function(self)
-  -- function num : 0_14
+function UIActivityNPlusSixBuildingStatusData:GetCost()
   return self._cost
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetStoryId = function(self)
-  -- function num : 0_15
+function UIActivityNPlusSixBuildingStatusData:GetStoryId()
   return self._storyId
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetStoryType = function(self)
-  -- function num : 0_16
+function UIActivityNPlusSixBuildingStatusData:GetStoryType()
   return self._storyType
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetStoryReviewId = function(self)
-  -- function num : 0_17
+function UIActivityNPlusSixBuildingStatusData:GetStoryReviewId()
   return self._storyReviewId
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetStatusName = function(self)
-  -- function num : 0_18
+function UIActivityNPlusSixBuildingStatusData:GetStatusName()
   return self._statusName
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetDes = function(self)
-  -- function num : 0_19
+function UIActivityNPlusSixBuildingStatusData:GetDes()
   return self._des
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetIcon = function(self)
-  -- function num : 0_20
+function UIActivityNPlusSixBuildingStatusData:GetIcon()
   return self._icon
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetName = function(self)
-  -- function num : 0_21
+function UIActivityNPlusSixBuildingStatusData:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.IsShow = function(self)
-  -- function num : 0_22
+function UIActivityNPlusSixBuildingStatusData:IsShow()
   return self._isShow
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.IsUnLock = function(self, buildingDatas)
-  -- function num : 0_23
+function UIActivityNPlusSixBuildingStatusData:IsUnLock(buildingDatas)
   if not self._condition then
     return true
   end
-  return (self._condition):IsUnLock(buildingDatas)
+  return self._condition:IsUnLock(buildingDatas)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingStatusData.GetTipsIcon = function(self)
-  -- function num : 0_24
+function UIActivityNPlusSixBuildingStatusData:GetTipsIcon()
   return self._tipsIcon
 end
 
 _class("UIActivityNPlusSixBuildingData", Object)
 UIActivityNPlusSixBuildingData = UIActivityNPlusSixBuildingData
--- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityNPlusSixBuildingData.Constructor = function(self, buildingDatas, buildingId, cfgs, localProcess)
-  -- function num : 0_25 , upvalues : _ENV, UIActivityNPlusSixBuildingStatus
+function UIActivityNPlusSixBuildingData:Constructor(buildingDatas, buildingId, cfgs, localProcess)
   if cfgs == nil then
-    return 
+    return
   end
   self._localProcess = localProcess
-  self._buildComponent = (self._localProcess):GetComponent(ECampaignN6ComponentID.ECAMPAIGN_N6_BUILD)
-  self._buildComponentInfo = (self._localProcess):GetComponentInfo(ECampaignN6ComponentID.ECAMPAIGN_N6_BUILD)
+  self._buildComponent = self._localProcess:GetComponent(ECampaignN6ComponentID.ECAMPAIGN_N6_BUILD)
+  self._buildComponentInfo = self._localProcess:GetComponentInfo(ECampaignN6ComponentID.ECAMPAIGN_N6_BUILD)
   self._buildingDatas = buildingDatas
   self._buildingId = buildingId
   self._statusDatas = {}
-  for k,v in pairs(cfgs) do
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R10 in 'UnsetPending'
-
-    (self._statusDatas)[#self._statusDatas + 1] = UIActivityNPlusSixBuildingStatusData:New(v, self._localProcess)
+  for k, v in pairs(cfgs) do
+    self._statusDatas[#self._statusDatas + 1] = UIActivityNPlusSixBuildingStatusData:New(v, self._localProcess)
   end
-  ;
-  (table.sort)(self._statusDatas, function(a, b)
-    -- function num : 0_25_0
-    do return a:GetStatus() < b:GetStatus() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  local status = ((self._statusDatas)[1]):GetStatus()
-  local buildItemInfos = (self._buildComponentInfo).build_item_infos
+  table.sort(self._statusDatas, function(a, b)
+    return a:GetStatus() < b:GetStatus()
+  end)
+  local status = self._statusDatas[1]:GetStatus()
+  local buildItemInfos = self._buildComponentInfo.build_item_infos
   local buildingInfo = buildItemInfos[buildingId]
-  do
-    if buildingInfo then
-      local mask = buildingInfo.mask
-      if mask == 0 then
-        status = UIActivityNPlusSixBuildingStatus.CleanUp
-      else
-        if mask & 4 > 0 then
-          status = UIActivityNPlusSixBuildingStatus.DecorateComplete
-        else
-          if mask & 2 > 0 then
-            status = UIActivityNPlusSixBuildingStatus.RepairComplete
-          else
-            if mask & 1 > 0 then
-              status = UIActivityNPlusSixBuildingStatus.CleanUpComplete
-            end
-          end
-        end
-      end
+  if buildingInfo then
+    local mask = buildingInfo.mask
+    if mask == 0 then
+      status = UIActivityNPlusSixBuildingStatus.CleanUp
+    elseif 0 < mask & 4 then
+      status = UIActivityNPlusSixBuildingStatus.DecorateComplete
+    elseif 0 < mask & 2 then
+      status = UIActivityNPlusSixBuildingStatus.RepairComplete
+    elseif mask & 1 > 0 then
+      status = UIActivityNPlusSixBuildingStatus.CleanUpComplete
     end
-    self._currentStatus = nil
-    self._currentStatusIndex = 0
-    for i = 1, #self._statusDatas do
-      if ((self._statusDatas)[i]):GetStatus() == status then
-        self._currentStatusIndex = i
-        self._currentStatus = (self._statusDatas)[i]
-        break
-      end
+  end
+  self._currentStatus = nil
+  self._currentStatusIndex = 0
+  for i = 1, #self._statusDatas do
+    if self._statusDatas[i]:GetStatus() == status then
+      self._currentStatusIndex = i
+      self._currentStatus = self._statusDatas[i]
+      break
     end
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetUnPlayStoryList = function(self)
-  -- function num : 0_26 , upvalues : UIActivityNPlusSixBuildingStatus
+function UIActivityNPlusSixBuildingData:GetUnPlayStoryList()
   local storyList = {}
-  local buildItemInfos = (self._buildComponentInfo).build_item_infos
+  local buildItemInfos = self._buildComponentInfo.build_item_infos
   local buildingInfo = buildItemInfos[self._buildingId]
   if buildingInfo then
     local mask = buildingInfo.mask
@@ -300,155 +206,119 @@ UIActivityNPlusSixBuildingData.GetUnPlayStoryList = function(self)
       local statusData = self:GetStatusByStatusType(UIActivityNPlusSixBuildingStatus.RepairComplete)
       local storyType = statusData:GetStoryType()
       local storyId = statusData:GetStoryId()
-      if storyId and storyId > 0 then
-        storyList[#storyList + 1] = {storyType, storyId, UIActivityNPlusSixBuildingStatus.RepairComplete, self._buildingId}
+      if storyId and 0 < storyId then
+        storyList[#storyList + 1] = {
+          storyType,
+          storyId,
+          UIActivityNPlusSixBuildingStatus.RepairComplete,
+          self._buildingId
+        }
       end
     end
-    do
-      if mask & 2 > 0 and storyMask & 2 == 0 then
-        local statusData = self:GetStatusByStatusType(UIActivityNPlusSixBuildingStatus.CleanUpComplete)
-        local storyType = statusData:GetStoryType()
-        local storyId = statusData:GetStoryId()
-        if storyId and storyId > 0 then
-          storyList[#storyList + 1] = {storyType, storyId, UIActivityNPlusSixBuildingStatus.CleanUpComplete, self._buildingId}
-        end
+    if 0 < mask & 2 and storyMask & 2 == 0 then
+      local statusData = self:GetStatusByStatusType(UIActivityNPlusSixBuildingStatus.CleanUpComplete)
+      local storyType = statusData:GetStoryType()
+      local storyId = statusData:GetStoryId()
+      if storyId and 0 < storyId then
+        storyList[#storyList + 1] = {
+          storyType,
+          storyId,
+          UIActivityNPlusSixBuildingStatus.CleanUpComplete,
+          self._buildingId
+        }
       end
-      do
-        if mask & 1 > 0 and storyMask & 1 == 0 then
-          local statusData = self:GetStatusByStatusType(UIActivityNPlusSixBuildingStatus.CleanUp)
-          local storyType = statusData:GetStoryType()
-          local storyId = statusData:GetStoryId()
-          if storyId and storyId > 0 then
-            storyList[#storyList + 1] = {storyType, storyId, UIActivityNPlusSixBuildingStatus.CleanUp, self._buildingId}
-          end
-        end
-        do
-          return storyList
-        end
+    end
+    if 0 < mask & 1 and storyMask & 1 == 0 then
+      local statusData = self:GetStatusByStatusType(UIActivityNPlusSixBuildingStatus.CleanUp)
+      local storyType = statusData:GetStoryType()
+      local storyId = statusData:GetStoryId()
+      if storyId and 0 < storyId then
+        storyList[#storyList + 1] = {
+          storyType,
+          storyId,
+          UIActivityNPlusSixBuildingStatus.CleanUp,
+          self._buildingId
+        }
       end
     end
   end
+  return storyList
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetBuildingComponent = function(self)
-  -- function num : 0_27
+function UIActivityNPlusSixBuildingData:GetBuildingComponent()
   return self._buildComponent
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetBuildingComponentInfo = function(self)
-  -- function num : 0_28
+function UIActivityNPlusSixBuildingData:GetBuildingComponentInfo()
   return self._buildComponentInfo
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetBuildingId = function(self)
-  -- function num : 0_29
+function UIActivityNPlusSixBuildingData:GetBuildingId()
   return self._buildingId
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.IsUnLockStatus = function(self, status)
-  -- function num : 0_30
-  do return status <= self:GetStatusType() end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIActivityNPlusSixBuildingData:IsUnLockStatus(status)
+  return status <= self:GetStatusType()
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetStatusType = function(self)
-  -- function num : 0_31
-  return (self._currentStatus):GetStatus()
+function UIActivityNPlusSixBuildingData:GetStatusType()
+  return self._currentStatus:GetStatus()
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetStatus = function(self)
-  -- function num : 0_32
+function UIActivityNPlusSixBuildingData:GetStatus()
   return self._currentStatus
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetStatusData = function(self)
-  -- function num : 0_33
+function UIActivityNPlusSixBuildingData:GetStatusData()
   if #self._statusDatas <= 0 then
     return nil
   end
-  return (self._statusDatas)[self._currentStatusIndex]
+  return self._statusDatas[self._currentStatusIndex]
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.CanBuild = function(self)
-  -- function num : 0_34
+function UIActivityNPlusSixBuildingData:CanBuild()
   if #self._statusDatas <= 0 then
     return false
   end
-  do return self._currentStatusIndex < #self._statusDatas end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return self._currentStatusIndex < #self._statusDatas
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.IsComplete = function(self)
-  -- function num : 0_35
+function UIActivityNPlusSixBuildingData:IsComplete()
   if #self._statusDatas <= 0 then
     return true
   end
-  do return #self._statusDatas <= self._currentStatusIndex end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return self._currentStatusIndex >= #self._statusDatas
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetName = function(self)
-  -- function num : 0_36
+function UIActivityNPlusSixBuildingData:GetName()
   if not self._currentStatus then
     return ""
   end
-  return (self._currentStatus):GetName()
+  return self._currentStatus:GetName()
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetStatusName = function(self)
-  -- function num : 0_37
+function UIActivityNPlusSixBuildingData:GetStatusName()
   if not self._currentStatus then
     return ""
   end
-  return (self._currentStatus):GetStatusName()
+  return self._currentStatus:GetStatusName()
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetIcon = function(self)
-  -- function num : 0_38
+function UIActivityNPlusSixBuildingData:GetIcon()
   if not self._currentStatus then
     return ""
   end
-  return (self._currentStatus):GetIcon()
+  return self._currentStatus:GetIcon()
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetDes = function(self)
-  -- function num : 0_39
+function UIActivityNPlusSixBuildingData:GetDes()
   if not self._currentStatus then
     return ""
   end
-  return (self._currentStatus):GetDes()
+  return self._currentStatus:GetDes()
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetCost = function(self)
-  -- function num : 0_40
+function UIActivityNPlusSixBuildingData:GetCost()
   local nextStatusData = self:GetNextStatusData()
   if not nextStatusData then
     return nil
@@ -456,53 +326,38 @@ UIActivityNPlusSixBuildingData.GetCost = function(self)
   return nextStatusData:GetCost()
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetCompleteStoryId = function(self)
-  -- function num : 0_41
+function UIActivityNPlusSixBuildingData:GetCompleteStoryId()
   if not self._currentStatus then
     return 0
   end
-  return (self._currentStatus):GetStoryId()
+  return self._currentStatus:GetStoryId()
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetCompleteStoryType = function(self)
-  -- function num : 0_42
+function UIActivityNPlusSixBuildingData:GetCompleteStoryType()
   if not self._currentStatus then
     return 0
   end
-  return (self._currentStatus):GetStoryType()
+  return self._currentStatus:GetStoryType()
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.IsShow = function(self)
-  -- function num : 0_43
+function UIActivityNPlusSixBuildingData:IsShow()
   if not self._currentStatus then
     return false
   end
-  if (self._currentStatus):IsUnLock(self._buildingDatas) then
+  if self._currentStatus:IsUnLock(self._buildingDatas) then
     return true
   end
-  return (self._currentStatus):IsShow()
+  return self._currentStatus:IsShow()
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.IsUnLock = function(self)
-  -- function num : 0_44
+function UIActivityNPlusSixBuildingData:IsUnLock()
   if not self._currentStatus then
     return true
   end
-  return (self._currentStatus):IsUnLock(self._buildingDatas)
+  return self._currentStatus:IsUnLock(self._buildingDatas)
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.IsNextStatusUnLock = function(self)
-  -- function num : 0_45
+function UIActivityNPlusSixBuildingData:IsNextStatusUnLock()
   local nextStatusData = self:GetNextStatusData()
   if not nextStatusData then
     return nil
@@ -510,23 +365,17 @@ UIActivityNPlusSixBuildingData.IsNextStatusUnLock = function(self)
   return nextStatusData:IsUnLock(self._buildingDatas)
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetNextStatusData = function(self)
-  -- function num : 0_46
+function UIActivityNPlusSixBuildingData:GetNextStatusData()
   if #self._statusDatas <= 0 then
     return nil
   end
-  if #self._statusDatas <= self._currentStatusIndex then
+  if self._currentStatusIndex >= #self._statusDatas then
     return nil
   end
-  return (self._statusDatas)[self._currentStatusIndex + 1]
+  return self._statusDatas[self._currentStatusIndex + 1]
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetNextStatus = function(self)
-  -- function num : 0_47
+function UIActivityNPlusSixBuildingData:GetNextStatus()
   local status = self:GetNextStatusData()
   if not status then
     return nil
@@ -534,173 +383,129 @@ UIActivityNPlusSixBuildingData.GetNextStatus = function(self)
   return status:GetStatus()
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.BuildingLevelUp = function(self)
-  -- function num : 0_48
+function UIActivityNPlusSixBuildingData:BuildingLevelUp()
   if #self._statusDatas <= 0 then
-    return 
+    return
   end
-  if #self._statusDatas <= self._currentStatusIndex then
-    return 
+  if self._currentStatusIndex >= #self._statusDatas then
+    return
   end
   self._currentStatusIndex = self._currentStatusIndex + 1
-  self._currentStatus = (self._statusDatas)[self._currentStatusIndex]
+  self._currentStatus = self._statusDatas[self._currentStatusIndex]
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetStatusByStatusType = function(self, status)
-  -- function num : 0_49
+function UIActivityNPlusSixBuildingData:GetStatusByStatusType(status)
   for i = 1, #self._statusDatas do
-    if ((self._statusDatas)[i]):GetStatus() == status then
-      return (self._statusDatas)[i]
+    if self._statusDatas[i]:GetStatus() == status then
+      return self._statusDatas[i]
     end
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetCanReviewStory = function(self)
-  -- function num : 0_50
+function UIActivityNPlusSixBuildingData:GetCanReviewStory()
   local ids = {}
   for i = 1, self._currentStatusIndex - 1 do
-    local id = ((self._statusDatas)[i]):GetStoryReviewId()
-    if id and id > 0 then
+    local id = self._statusDatas[i]:GetStoryReviewId()
+    if id and 0 < id then
       ids[#ids + 1] = id
     end
   end
   return ids
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetWidgetDesPos = function(self)
-  -- function num : 0_51 , upvalues : _ENV
+function UIActivityNPlusSixBuildingData:GetWidgetDesPos()
   if not self._currentStatus then
     return Vector2(0, 0)
   end
-  return (self._currentStatus):GetWidgetDesPos()
+  return self._currentStatus:GetWidgetDesPos()
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetWidgetPos = function(self)
-  -- function num : 0_52 , upvalues : _ENV
+function UIActivityNPlusSixBuildingData:GetWidgetPos()
   if not self._currentStatus then
     return Vector2(0, 0)
   end
-  return (self._currentStatus):GetWidgetPos()
+  return self._currentStatus:GetWidgetPos()
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetIconPos = function(self)
-  -- function num : 0_53 , upvalues : _ENV
+function UIActivityNPlusSixBuildingData:GetIconPos()
   if not self._currentStatus then
     return Vector2(0, 0)
   end
-  return (self._currentStatus):GetIconPos()
+  return self._currentStatus:GetIconPos()
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetIconWidth = function(self)
-  -- function num : 0_54
+function UIActivityNPlusSixBuildingData:GetIconWidth()
   if not self._currentStatus then
     return 0
   end
-  return (self._currentStatus):GetIconWidth()
+  return self._currentStatus:GetIconWidth()
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetIconHeight = function(self)
-  -- function num : 0_55
+function UIActivityNPlusSixBuildingData:GetIconHeight()
   if not self._currentStatus then
     return 0
   end
-  return (self._currentStatus):GetIconHeight()
+  return self._currentStatus:GetIconHeight()
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetIconRotate = function(self)
-  -- function num : 0_56
+function UIActivityNPlusSixBuildingData:GetIconRotate()
   if not self._currentStatus then
     return 0
   end
-  return (self._currentStatus):GetIconRotate()
+  return self._currentStatus:GetIconRotate()
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetTriggerPos = function(self)
-  -- function num : 0_57 , upvalues : _ENV
+function UIActivityNPlusSixBuildingData:GetTriggerPos()
   if not self._currentStatus then
     return Vector2(0, 0)
   end
-  return (self._currentStatus):GetTriggerPos()
+  return self._currentStatus:GetTriggerPos()
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetTriggerWidth = function(self)
-  -- function num : 0_58
+function UIActivityNPlusSixBuildingData:GetTriggerWidth()
   if not self._currentStatus then
     return 0
   end
-  return (self._currentStatus):GetTriggerWidth()
+  return self._currentStatus:GetTriggerWidth()
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetTriggerHeight = function(self)
-  -- function num : 0_59
+function UIActivityNPlusSixBuildingData:GetTriggerHeight()
   if not self._currentStatus then
     return 0
   end
-  return (self._currentStatus):GetTriggerHeight()
+  return self._currentStatus:GetTriggerHeight()
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetTriggerRotate = function(self)
-  -- function num : 0_60
+function UIActivityNPlusSixBuildingData:GetTriggerRotate()
   if not self._currentStatus then
     return 0
   end
-  return (self._currentStatus):GetTriggerRotate()
+  return self._currentStatus:GetTriggerRotate()
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingData.GetLayer = function(self)
-  -- function num : 0_61
+function UIActivityNPlusSixBuildingData:GetLayer()
   if not self._currentStatus then
     return 0
   end
-  return (self._currentStatus):GetLayer()
+  return self._currentStatus:GetLayer()
 end
 
 _class("UIActivityNPlusSixBuildingDatas", Object)
 UIActivityNPlusSixBuildingDatas = UIActivityNPlusSixBuildingDatas
--- DECOMPILER ERROR at PC215: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityNPlusSixBuildingDatas.Constructor = function(self, componentId, localProcess)
-  -- function num : 0_62 , upvalues : _ENV
+function UIActivityNPlusSixBuildingDatas:Constructor(componentId, localProcess)
   self._localProcess = localProcess
   self._buildingList = {}
-  local cfgs = (Cfg.cfg_component_build_item)({ComponentID = componentId})
+  local cfgs = Cfg.cfg_component_build_item({ComponentID = componentId})
   if not cfgs then
-    return 
+    return
   end
-  if (table.count)(cfgs) <= 0 then
-    return 
+  if table.count(cfgs) <= 0 then
+    return
   end
   local buildingCfgs = {}
-  for k,v in pairs(cfgs) do
+  for k, v in pairs(cfgs) do
     local buildingId = v.BuildItemId
     local buildingCfg = buildingCfgs[buildingId]
     if not buildingCfg then
@@ -709,41 +514,27 @@ UIActivityNPlusSixBuildingDatas.Constructor = function(self, componentId, localP
     end
     buildingCfg[#buildingCfg + 1] = v
   end
-  for k,v in pairs(buildingCfgs) do
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R10 in 'UnsetPending'
-
-    (self._buildingList)[k] = UIActivityNPlusSixBuildingData:New(self, k, v, self._localProcess)
+  for k, v in pairs(buildingCfgs) do
+    self._buildingList[k] = UIActivityNPlusSixBuildingData:New(self, k, v, self._localProcess)
   end
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingDatas.GetBuildingList = function(self)
-  -- function num : 0_63
+function UIActivityNPlusSixBuildingDatas:GetBuildingList()
   return self._buildingList
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingDatas.GetBuilding = function(self, buildingId)
-  -- function num : 0_64
-  return (self._buildingList)[buildingId]
+function UIActivityNPlusSixBuildingDatas:GetBuilding(buildingId)
+  return self._buildingList[buildingId]
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingDatas.IsUnLock = function(self, buildingId)
-  -- function num : 0_65
-  local buildingData = (self._buildingList)[buildingId]
+function UIActivityNPlusSixBuildingDatas:IsUnLock(buildingId)
+  local buildingData = self._buildingList[buildingId]
   return buildingData:IsUnLock()
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingDatas.GetUnPlayStoryList = function(self)
-  -- function num : 0_66 , upvalues : _ENV
+function UIActivityNPlusSixBuildingDatas:GetUnPlayStoryList()
   local storyList = {}
-  for k,v in pairs(self._buildingList) do
+  for k, v in pairs(self._buildingList) do
     local storys = v:GetUnPlayStoryList()
     for j = 1, #storys do
       storyList[#storyList + 1] = storys[j]
@@ -752,19 +543,16 @@ UIActivityNPlusSixBuildingDatas.GetUnPlayStoryList = function(self)
   return storyList
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingDatas.HaveCanBuilding = function(self, itemCount)
-  -- function num : 0_67 , upvalues : _ENV
-  for k,v in pairs(self._buildingList) do
+function UIActivityNPlusSixBuildingDatas:HaveCanBuilding(itemCount)
+  for k, v in pairs(self._buildingList) do
     local buildingData = v
     if buildingData:CanBuild() and buildingData:IsUnLock() and buildingData:IsNextStatusUnLock() then
       local costCfg = buildingData:GetCost()
       local cost = 0
-      if costCfg and costCfg[1] and (costCfg[1])[2] then
-        cost = (costCfg[1])[2]
+      if costCfg and costCfg[1] and costCfg[1][2] then
+        cost = costCfg[1][2]
       end
-      if cost <= itemCount then
+      if itemCount >= cost then
         return true
       end
     end
@@ -772,11 +560,8 @@ UIActivityNPlusSixBuildingDatas.HaveCanBuilding = function(self, itemCount)
   return false
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingDatas.IsAllBuildingComplete = function(self)
-  -- function num : 0_68 , upvalues : _ENV
-  for k,v in pairs(self._buildingList) do
+function UIActivityNPlusSixBuildingDatas:IsAllBuildingComplete()
+  for k, v in pairs(self._buildingList) do
     local buildingData = v
     if not buildingData:IsComplete() then
       return false
@@ -785,54 +570,34 @@ UIActivityNPlusSixBuildingDatas.IsAllBuildingComplete = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingDatas.IsFirstEnterBuilding = function(self)
-  -- function num : 0_69 , upvalues : _ENV
+function UIActivityNPlusSixBuildingDatas:IsFirstEnterBuilding()
   local key = self:GetFirstEnterBuildingKey()
-  local value = ((UnityEngine.PlayerPrefs).GetInt)(key, 0)
-  do return value == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local value = UnityEngine.PlayerPrefs.GetInt(key, 0)
+  return value == 0
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingDatas.EnterBuilding = function(self)
-  -- function num : 0_70 , upvalues : _ENV
+function UIActivityNPlusSixBuildingDatas:EnterBuilding()
   local key = self:GetFirstEnterBuildingKey()
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+  UnityEngine.PlayerPrefs.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingDatas.GetFirstEnterBuildingKey = function(self)
-  -- function num : 0_71 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityNPlusSixBuildingDatas:GetFirstEnterBuildingKey()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. "FirstEnterNPlusSixBuilding"
   return key
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingDatas.GetCanReviewStory = function(self)
-  -- function num : 0_72 , upvalues : _ENV
+function UIActivityNPlusSixBuildingDatas:GetCanReviewStory()
   local results = {}
-  for k,v in pairs(self._buildingList) do
+  for k, v in pairs(self._buildingList) do
     local ids = v:GetCanReviewStory()
     for i = 1, #ids do
       results[#results + 1] = ids[i]
     end
   end
-  ;
-  (table.sort)(results, function(a, b)
-    -- function num : 0_72_0
-    do return a < b end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(results, function(a, b)
+    return a < b
+  end)
   return results
 end
-
-

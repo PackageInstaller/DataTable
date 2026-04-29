@@ -1,246 +1,153 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_book/ui_book_role_relation_role_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBookRoleRelationRoleCell", UICustomWidget)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBookRoleRelationRoleCell.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBookRoleRelationRoleCell:OnShow()
   self._sizePos = {
-[1] = {[1] = 0, [2] = -8, [3] = 183, [4] = 225.7}
-, 
-[2] = {[1] = 0, [2] = -30, [3] = 156, [4] = 266}
-}
+    [1] = {
+      [1] = 0,
+      [2] = -8,
+      [3] = 183,
+      [4] = 225.7
+    },
+    [2] = {
+      [1] = 0,
+      [2] = -30,
+      [3] = 156,
+      [4] = 266
+    }
+  }
   self.nameTxt = self:GetUIComponent("UILocalizationText", "txt1")
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self._iconRect = self:GetUIComponent("RectTransform", "icon")
   self.iconGO = self:GetGameObject("icon")
   self.logo = self:GetUIComponent("RawImageLoader", "logo")
   self.chooseGO = self:GetGameObject("choose")
-  ;
-  (self.chooseGO):SetActive(false)
+  self.chooseGO:SetActive(false)
   self.lockGO = self:GetGameObject("lock")
   self.lockImage = self:GetUIComponent("Image", "lock")
   self.showGO = self:GetGameObject("show")
   self.lineGO = self:GetGameObject("line")
   self.lineShuGO = self:GetGameObject("lineshu")
-  ;
-  (self.lineShuGO):SetActive(false)
-  ;
-  (self.lineGO):SetActive(false)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self.iconGO), UIEvent.Press, function(go)
-    -- function num : 0_0_0 , upvalues : self
-    (self.chooseGO):SetActive(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self.iconGO), UIEvent.Release, function(go)
-    -- function num : 0_0_1 , upvalues : self
-    (self.chooseGO):SetActive(false)
-  end
-)
-  self._animation = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
+  self.lineShuGO:SetActive(false)
+  self.lineGO:SetActive(false)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self.iconGO), UIEvent.Press, function(go)
+    self.chooseGO:SetActive(true)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self.iconGO), UIEvent.Release, function(go)
+    self.chooseGO:SetActive(false)
+  end)
+  self._animation = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleRelationRoleCell.SetClickCallBack = function(self, clickCallBack)
-  -- function num : 0_1
+function UIBookRoleRelationRoleCell:SetClickCallBack(clickCallBack)
   self.clickCallBack = clickCallBack
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleRelationRoleCell.IsActive = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self.data).isMonster then
-    if (self.data).monsterId <= 0 then
-      do return self.bookRoleType ~= BookRoleType.Pet end
-      do return (self.data).petPsdId > 0 end
-      if (self.data).monsterId <= 0 then
-        do return self.bookRoleType ~= BookRoleType.Monster end
-        do return true end
-        -- DECOMPILER ERROR: 6 unprocessed JMP targets
-      end
+function UIBookRoleRelationRoleCell:IsActive()
+  if self.bookRoleType == BookRoleType.Pet then
+    if self.data.isMonster then
+      return self.data.monsterId > 0
+    else
+      return 0 < self.data.petPsdId
     end
+  elseif self.bookRoleType == BookRoleType.Monster then
+    return self.data.monsterId > 0
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleRelationRoleCell.OnHide = function(self)
-  -- function num : 0_3
+function UIBookRoleRelationRoleCell:OnHide()
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleRelationRoleCell.Refresh = function(self, bookRoleType, data, showLine, showShuLine)
-  -- function num : 0_4 , upvalues : _ENV
+function UIBookRoleRelationRoleCell:Refresh(bookRoleType, data, showLine, showShuLine)
   self.bookRoleType = bookRoleType
   self.data = data
-  local atlas = (self:GetAsset("UIBook.spriteatlas", LoadType.SpriteAtlas))
-  local sizePos = nil
+  local atlas = self:GetAsset("UIBook.spriteatlas", LoadType.SpriteAtlas)
+  local sizePos
   if self.bookRoleType == BookRoleType.Pet then
-    (self.lineGO):SetActive(showLine)
-    ;
-    (self.lineShuGO):SetActive(showShuLine)
-    if not (self.data).isMonster then
-      local cfg = (Cfg.cfg_pet)[(self.data).petTempId]
+    self.lineGO:SetActive(showLine)
+    self.lineShuGO:SetActive(showShuLine)
+    if not self.data.isMonster then
+      local cfg = Cfg.cfg_pet[self.data.petTempId]
       local petModule = self:GetModule(PetModule)
-      local petData = (petModule:GetPetByTemplateId((self.data).petTempId))
-      local body = nil
+      local petData = petModule:GetPetByTemplateId(self.data.petTempId)
+      local body
       if petData then
-        sizePos = (self._sizePos)[2]
+        sizePos = self._sizePos[2]
         local grade = petData:GetPetGrade()
-        body = (HelperProxy:GetInstance()):GetPetTeamBody((self.data).petTempId, grade, petData:GetSkinId(), PetSkinEffectPath.CARD_ROLE_RELATION)
+        body = HelperProxy:GetInstance():GetPetTeamBody(self.data.petTempId, grade, petData:GetSkinId(), PetSkinEffectPath.CARD_ROLE_RELATION)
       else
-        do
-          do
-            sizePos = (self._sizePos)[1]
-            body = (HelperProxy:GetInstance()):GetPetTeamBody((self.data).petTempId, 0, 0, PetSkinEffectPath.CARD_ROLE_RELATION)
-            ;
-            (self.icon):LoadImage(body)
-            if (self.data).petPsdId > 0 then
-              (self.showGO):SetActive(true)
-              ;
-              (self.lockGO):SetActive(false)
-              ;
-              (self.iconGO):SetActive(true)
-              ;
-              (self.logo):LoadImage(cfg.Logo)
-              ;
-              (self.nameTxt):SetText((StringTable.Get)(cfg.Name))
-              -- DECOMPILER ERROR at PC106: Confused about usage of register: R11 in 'UnsetPending'
-
-              ;
-              (self.nameTxt).color = Color.white
-            else
-              ;
-              (self.showGO):SetActive(false)
-              ;
-              (self.lockGO):SetActive(true)
-              ;
-              (self.iconGO):SetActive(false)
-              -- DECOMPILER ERROR at PC124: Confused about usage of register: R11 in 'UnsetPending'
-
-              ;
-              (self.lockImage).sprite = atlas:GetSprite("tujian_xiaozu_frame10")
-              ;
-              (self.nameTxt):SetText((StringTable.Get)("str_book_btn_lock"))
-              -- DECOMPILER ERROR at PC139: Confused about usage of register: R11 in 'UnsetPending'
-
-              ;
-              (self.nameTxt).color = Color(0.45098039215686, 0.45098039215686, 0.45098039215686, 1)
-            end
-            sizePos = (self._sizePos)[1]
-            ;
-            (self.lineGO):SetActive(showLine)
-            ;
-            (self.lineShuGO):SetActive(showShuLine)
-            do
-              local cfgMonsterClass = (Cfg.cfg_monster_class)[(self.data).monsterClassId]
-              ;
-              (self.icon):LoadImage(cfgMonsterClass.EnemyStaticBody)
-              if (self.data).monsterId > 0 then
-                (self.showGO):SetActive(false)
-                ;
-                (self.lockGO):SetActive(false)
-                ;
-                (self.iconGO):SetActive(true)
-                ;
-                (self.nameTxt):SetText((StringTable.Get)(cfgMonsterClass.Name))
-                -- DECOMPILER ERROR at PC186: Confused about usage of register: R8 in 'UnsetPending'
-
-                ;
-                (self.nameTxt).color = Color.white
-              else
-                ;
-                (self.showGO):SetActive(false)
-                ;
-                (self.lockGO):SetActive(true)
-                ;
-                (self.iconGO):SetActive(false)
-                -- DECOMPILER ERROR at PC204: Confused about usage of register: R8 in 'UnsetPending'
-
-                ;
-                (self.lockImage).sprite = atlas:GetSprite("tujian_xiaozu_frame10")
-                ;
-                (self.nameTxt):SetText((StringTable.Get)("str_book_btn_monster_lock"))
-                -- DECOMPILER ERROR at PC219: Confused about usage of register: R8 in 'UnsetPending'
-
-                ;
-                (self.nameTxt).color = Color(0.45098039215686, 0.45098039215686, 0.45098039215686, 1)
-              end
-              if self.bookRoleType == BookRoleType.Monster then
-                sizePos = (self._sizePos)[1]
-                ;
-                (self.lineGO):SetActive(showLine)
-                ;
-                (self.lineShuGO):SetActive(showShuLine)
-                local cfgMonsterClass = (Cfg.cfg_monster_class)[(self.data).monsterClassId]
-                if cfgMonsterClass then
-                  (self.icon):LoadImage(cfgMonsterClass.EnemyStaticBody)
-                  if (self.data).monsterId > 0 then
-                    (self.showGO):SetActive(false)
-                    ;
-                    (self.lockGO):SetActive(false)
-                    ;
-                    (self.iconGO):SetActive(true)
-                    ;
-                    (self.nameTxt):SetText((StringTable.Get)(cfgMonsterClass.Name))
-                    -- DECOMPILER ERROR at PC273: Confused about usage of register: R8 in 'UnsetPending'
-
-                    ;
-                    (self.nameTxt).color = Color.white
-                  else
-                    ;
-                    (self.showGO):SetActive(false)
-                    ;
-                    (self.lockGO):SetActive(true)
-                    ;
-                    (self.iconGO):SetActive(false)
-                    -- DECOMPILER ERROR at PC291: Confused about usage of register: R8 in 'UnsetPending'
-
-                    ;
-                    (self.lockImage).sprite = atlas:GetSprite("tujian_xiaozu_frame10")
-                    ;
-                    (self.nameTxt):SetText((StringTable.Get)("str_book_btn_monster_lock"))
-                    -- DECOMPILER ERROR at PC306: Confused about usage of register: R8 in 'UnsetPending'
-
-                    ;
-                    (self.nameTxt).color = Color(0.45098039215686, 0.45098039215686, 0.45098039215686, 1)
-                  end
-                end
-              end
-              do
-                -- DECOMPILER ERROR at PC312: Confused about usage of register: R7 in 'UnsetPending'
-
-                ;
-                (self._iconRect).sizeDelta = Vector2(sizePos[3], sizePos[4])
-                -- DECOMPILER ERROR at PC318: Confused about usage of register: R7 in 'UnsetPending'
-
-                ;
-                (self._iconRect).anchoredPosition = Vector2(sizePos[1], sizePos[2])
-              end
-            end
-          end
-        end
+        sizePos = self._sizePos[1]
+        body = HelperProxy:GetInstance():GetPetTeamBody(self.data.petTempId, 0, 0, PetSkinEffectPath.CARD_ROLE_RELATION)
+      end
+      self.icon:LoadImage(body)
+      if 0 < self.data.petPsdId then
+        self.showGO:SetActive(true)
+        self.lockGO:SetActive(false)
+        self.iconGO:SetActive(true)
+        self.logo:LoadImage(cfg.Logo)
+        self.nameTxt:SetText(StringTable.Get(cfg.Name))
+        self.nameTxt.color = Color.white
+      else
+        self.showGO:SetActive(false)
+        self.lockGO:SetActive(true)
+        self.iconGO:SetActive(false)
+        self.lockImage.sprite = atlas:GetSprite("tujian_xiaozu_frame10")
+        self.nameTxt:SetText(StringTable.Get("str_book_btn_lock"))
+        self.nameTxt.color = Color(0.45098039215686275, 0.45098039215686275, 0.45098039215686275, 1)
+      end
+    else
+      sizePos = self._sizePos[1]
+      self.lineGO:SetActive(showLine)
+      self.lineShuGO:SetActive(showShuLine)
+      local cfgMonsterClass = Cfg.cfg_monster_class[self.data.monsterClassId]
+      self.icon:LoadImage(cfgMonsterClass.EnemyStaticBody)
+      if 0 < self.data.monsterId then
+        self.showGO:SetActive(false)
+        self.lockGO:SetActive(false)
+        self.iconGO:SetActive(true)
+        self.nameTxt:SetText(StringTable.Get(cfgMonsterClass.Name))
+        self.nameTxt.color = Color.white
+      else
+        self.showGO:SetActive(false)
+        self.lockGO:SetActive(true)
+        self.iconGO:SetActive(false)
+        self.lockImage.sprite = atlas:GetSprite("tujian_xiaozu_frame10")
+        self.nameTxt:SetText(StringTable.Get("str_book_btn_monster_lock"))
+        self.nameTxt.color = Color(0.45098039215686275, 0.45098039215686275, 0.45098039215686275, 1)
+      end
+    end
+  elseif self.bookRoleType == BookRoleType.Monster then
+    sizePos = self._sizePos[1]
+    self.lineGO:SetActive(showLine)
+    self.lineShuGO:SetActive(showShuLine)
+    local cfgMonsterClass = Cfg.cfg_monster_class[self.data.monsterClassId]
+    if cfgMonsterClass then
+      self.icon:LoadImage(cfgMonsterClass.EnemyStaticBody)
+      if 0 < self.data.monsterId then
+        self.showGO:SetActive(false)
+        self.lockGO:SetActive(false)
+        self.iconGO:SetActive(true)
+        self.nameTxt:SetText(StringTable.Get(cfgMonsterClass.Name))
+        self.nameTxt.color = Color.white
+      else
+        self.showGO:SetActive(false)
+        self.lockGO:SetActive(true)
+        self.iconGO:SetActive(false)
+        self.lockImage.sprite = atlas:GetSprite("tujian_xiaozu_frame10")
+        self.nameTxt:SetText(StringTable.Get("str_book_btn_monster_lock"))
+        self.nameTxt.color = Color(0.45098039215686275, 0.45098039215686275, 0.45098039215686275, 1)
       end
     end
   end
+  self._iconRect.sizeDelta = Vector2(sizePos[3], sizePos[4])
+  self._iconRect.anchoredPosition = Vector2(sizePos[1], sizePos[2])
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleRelationRoleCell.iconOnClick = function(self, go)
-  -- function num : 0_5
+function UIBookRoleRelationRoleCell:iconOnClick(go)
   if self.clickCallBack then
-    (self.clickCallBack)(self)
+    self.clickCallBack(self)
     if not self:IsActive() then
-      (self._animation):Play("uieff_RoleCell_Shake")
+      self._animation:Play("uieff_RoleCell_Shake")
     end
   end
 end
-
-

@@ -1,28 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/gm/stn_gm_pass_mission_goldberg.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("GM_PassMissionGoldberg", Common_AsyncBase)
 GM_PassMissionGoldberg = GM_PassMissionGoldberg
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GM_PassMissionGoldberg.Constructor = function(self, _manager)
-  -- function num : 0_0
+function GM_PassMissionGoldberg:Constructor(_manager)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GM_PassMissionGoldberg.TaskFunc = function(self, TT, status)
-  -- function num : 0_1
-  local runData = (self._manager):GetMissionRunData()
+function GM_PassMissionGoldberg:TaskFunc(TT, status)
+  local runData = self._manager:GetMissionRunData()
   local componentID = runData:GetComponentConfigID()
   local missionID = runData:GetMissionID()
-  ;
-  (self._manager):AsyncGM_PassLineCampMission(TT, status, componentID, missionID)
-  ;
-  (self._manager):AsyncGM_PassMultiLineCampMission(TT, status, componentID, missionID)
+  self._manager:AsyncGM_PassLineCampMission(TT, status, componentID, missionID)
+  self._manager:AsyncGM_PassMultiLineCampMission(TT, status, componentID, missionID)
 end
-
-

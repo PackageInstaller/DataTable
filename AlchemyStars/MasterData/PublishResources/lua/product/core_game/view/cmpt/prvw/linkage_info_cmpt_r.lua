@@ -1,19 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/linkage_info_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LinkageInfoComponent", Object)
 LinkageInfoComponent = LinkageInfoComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LinkageInfoComponent.Constructor = function(self, linkTextOffsetList, attackRateOffset, maxCount, world)
-  -- function num : 0_0 , upvalues : _ENV
+function LinkageInfoComponent:Constructor(linkTextOffsetList, attackRateOffset, maxCount, world)
   self._world = world
-  self._linkTextOffset = Vector3((linkTextOffsetList[1])[1], (linkTextOffsetList[1])[2], 0)
-  self._linkTextOffsetPopStarPor = Vector3((linkTextOffsetList[2])[1], (linkTextOffsetList[2])[2], 0)
+  self._linkTextOffset = Vector3(linkTextOffsetList[1][1], linkTextOffsetList[1][2], 0)
+  self._linkTextOffsetPopStarPor = Vector3(linkTextOffsetList[2][1], linkTextOffsetList[2][2], 0)
   self._attackRateOffset = Vector3(attackRateOffset[1], attackRateOffset[2], 0)
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local superChainCount = utilData:GetCurrentTeamSuperChainCount()
   self._maxCount = superChainCount
   self._pathCountText = nil
@@ -29,218 +22,157 @@ LinkageInfoComponent.Constructor = function(self, linkTextOffsetList, attackRate
   self._previewPetEntityID = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageInfoComponent.SetRenderObject = function(self, linkageGameObject)
-  -- function num : 0_1 , upvalues : _ENV
+function LinkageInfoComponent:SetRenderObject(linkageGameObject)
   self._linkageRoot = linkageGameObject
   local linkageRootTrans = linkageGameObject.transform
-  local tempObject = (GameObjectHelper.FindChild)(linkageRootTrans, "PathCountText")
+  local tempObject = GameObjectHelper.FindChild(linkageRootTrans, "PathCountText")
   self._pathCountText = tempObject:GetComponent("UILocalizationText")
-  self._pathCountGroup = (GameObjectHelper.FindChild)(linkageRootTrans, "PathCountGroup")
-  self._superChain = (GameObjectHelper.FindChild)(linkageRootTrans, "SuperChain")
-  local transformChainPathIcon = (GameObjectHelper.FindChild)(self._pathCountGroup, "PetIconContainer")
+  self._pathCountGroup = GameObjectHelper.FindChild(linkageRootTrans, "PathCountGroup")
+  self._superChain = GameObjectHelper.FindChild(linkageRootTrans, "SuperChain")
+  local transformChainPathIcon = GameObjectHelper.FindChild(self._pathCountGroup, "PetIconContainer")
   self._chainPathIconContainer = transformChainPathIcon.gameObject
-  local goIconLoader = ((GameObjectHelper.FindChild)(transformChainPathIcon, "IconLoader")).gameObject
+  local goIconLoader = GameObjectHelper.FindChild(transformChainPathIcon, "IconLoader").gameObject
   self._chainIconLoader = goIconLoader:GetComponent("RawImageLoader")
-  local transformSuperchainIcon = (GameObjectHelper.FindChild)(self._superChain, "PetIconContainer")
+  local transformSuperchainIcon = GameObjectHelper.FindChild(self._superChain, "PetIconContainer")
   self._superchainPathIconContainer = transformSuperchainIcon.gameObject
-  local goSuperIconLoader = ((GameObjectHelper.FindChild)(transformSuperchainIcon, "IconLoader")).gameObject
+  local goSuperIconLoader = GameObjectHelper.FindChild(transformSuperchainIcon, "IconLoader").gameObject
   self._superchainIconLoader = goSuperIconLoader:GetComponent("RawImageLoader")
-  local transformEffSuperChain_BG = (GameObjectHelper.FindChild)(self._superChain, "EffSuperChain_BG")
+  local transformEffSuperChain_BG = GameObjectHelper.FindChild(self._superChain, "EffSuperChain_BG")
   self._superChainEffGO = transformEffSuperChain_BG.gameObject
-  local transformEffNoSuperChain_BG = (GameObjectHelper.FindChild)(self._superChain, "EffNoSuperChain_BG")
+  local transformEffNoSuperChain_BG = GameObjectHelper.FindChild(self._superChain, "EffNoSuperChain_BG")
   self._onlyMaxPrefabGO = transformEffNoSuperChain_BG.gameObject
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageInfoComponent.SetChainSkillPet = function(self, ePet)
-  -- function num : 0_2 , upvalues : _ENV
+function LinkageInfoComponent:SetChainSkillPet(ePet)
   local strIconLoader = tostring(self._chainIconLoader)
   if strIconLoader == "nil" or strIconLoader == "" then
-    return 
+    return
   end
   if ePet:GetID() == self._previewPetEntityID then
-    return 
+    return
   end
   self._previewPetEntityID = ePet:GetID()
   local cPetPstID = ePet:PetPstID()
   if not cPetPstID then
-    return 
+    return
   end
   local pstID = cPetPstID:GetPstID()
   local world = ePet:GetOwnerWorld()
   local matchPet = world:GetPetData(pstID)
   if not matchPet then
-    return 
+    return
   end
   local templateID = matchPet:GetTemplateID()
-  local cfgPetTemplate = (Cfg.cfg_pet)[templateID]
+  local cfgPetTemplate = Cfg.cfg_pet[templateID]
   if not cfgPetTemplate then
-    return 
+    return
   end
   local strPetIcon = matchPet:GetPetHead(PetSkinEffectPath.HEAD_ICON_CHAIN_SKILL_PREVIEW)
-  ;
-  (self._chainIconLoader):LoadImage(strPetIcon)
-  ;
-  (self._chainPathIconContainer):SetActive(true)
-  ;
-  (self._superchainIconLoader):LoadImage(strPetIcon)
-  ;
-  (self._superchainPathIconContainer):SetActive(true)
+  self._chainIconLoader:LoadImage(strPetIcon)
+  self._chainPathIconContainer:SetActive(true)
+  self._superchainIconLoader:LoadImage(strPetIcon)
+  self._superchainPathIconContainer:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageInfoComponent.HideChainSkillPet = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function LinkageInfoComponent:HideChainSkillPet()
   local strIconLoader = tostring(self._chainIconLoader)
   if strIconLoader == "nil" or strIconLoader == "" then
-    return 
+    return
   end
   self._previewPetEntityID = 0
-  ;
-  (self._chainPathIconContainer):SetActive(false)
-  ;
-  (self._superchainPathIconContainer):SetActive(false)
+  self._chainPathIconContainer:SetActive(false)
+  self._superchainPathIconContainer:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageInfoComponent.SetLinkCount = function(self, linkCount, onlyShowCount)
-  -- function num : 0_4 , upvalues : _ENV
+function LinkageInfoComponent:SetLinkCount(linkCount, onlyShowCount)
   if self._linkageRoot == nil then
-    return 
+    return
   end
   local realLinkCount = linkCount - 1
   if realLinkCount < 1 then
-    (self._linkageRoot):SetActive(false)
+    self._linkageRoot:SetActive(false)
   else
-    ;
-    (self._linkageRoot):SetActive(true)
-    local utilData = (self._world):GetService("UtilData")
+    self._linkageRoot:SetActive(true)
+    local utilData = self._world:GetService("UtilData")
     local superChainCount = utilData:GetCurrentTeamSuperChainCount()
     self._maxCount = superChainCount
     if realLinkCount < self._maxCount or onlyShowCount then
-      ((self._pathCountGroup).gameObject):SetActive(true)
-      ;
-      ((self._superChain).gameObject):SetActive(false)
-      ;
-      (self._onlyMaxPrefabGO):SetActive(false)
-      ;
-      (self._superChainEffGO):SetActive(false)
+      self._pathCountGroup.gameObject:SetActive(true)
+      self._superChain.gameObject:SetActive(false)
+      self._onlyMaxPrefabGO:SetActive(false)
+      self._superChainEffGO:SetActive(false)
       local linkCountFormat = 0
       if realLinkCount < 10 then
         linkCountFormat = "0" .. realLinkCount
       else
         linkCountFormat = realLinkCount
       end
-      ;
-      (self._pathCountText):SetText(linkCountFormat)
+      self._pathCountText:SetText(linkCountFormat)
     else
-      do
-        ;
-        ((self._pathCountGroup).gameObject):SetActive(false)
-        ;
-        ((self._superChain).gameObject):SetActive(true)
-        local utilDataSvc = (self._world):GetService("UtilData")
-        do
-          local isCloseAuroraTimeByLinkStep = false
-          if (self._world):LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
-            isCloseAuroraTimeByLinkStep = true
-          end
-          if isCloseAuroraTimeByLinkStep or utilDataSvc:IsCloseAuroraTime() then
-            (self._superChainEffGO):SetActive(false)
-            ;
-            (self._onlyMaxPrefabGO):SetActive(true)
-          else
-            ;
-            (self._superChainEffGO):SetActive(true)
-            ;
-            (self._onlyMaxPrefabGO):SetActive(false)
-          end
-          local num = (math.floor)(realLinkCount / 10 + 1)
-          local lastNum = realLinkCount
-          if lastNum >= 10 then
-            lastNum = realLinkCount % 10
-          end
-          local attackRateFormat = "*" .. num .. "." .. lastNum
-        end
+      self._pathCountGroup.gameObject:SetActive(false)
+      self._superChain.gameObject:SetActive(true)
+      local utilDataSvc = self._world:GetService("UtilData")
+      local isCloseAuroraTimeByLinkStep = false
+      if self._world:LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
+        isCloseAuroraTimeByLinkStep = true
+      end
+      if isCloseAuroraTimeByLinkStep or utilDataSvc:IsCloseAuroraTime() then
+        self._superChainEffGO:SetActive(false)
+        self._onlyMaxPrefabGO:SetActive(true)
+      else
+        self._superChainEffGO:SetActive(true)
+        self._onlyMaxPrefabGO:SetActive(false)
       end
     end
+    local num = math.floor(realLinkCount / 10 + 1)
+    local lastNum = realLinkCount
+    if 10 <= lastNum then
+      lastNum = realLinkCount % 10
+    end
+    local attackRateFormat = "*" .. num .. "." .. lastNum
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageInfoComponent.SetLinkagePos = function(self, pos)
-  -- function num : 0_5 , upvalues : _ENV
+function LinkageInfoComponent:SetLinkagePos(pos)
   if self._linkageRoot == nil then
-    return 
+    return
   end
-  if (self._world):MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
+  if self._world:MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
     pos = pos + self._linkTextOffsetPopStarPor
   else
     pos = pos + self._linkTextOffset
   end
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._pathCountGroup).transform).position = pos
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._superChain).transform).position = pos
+  self._pathCountGroup.transform.position = pos
+  self._superChain.transform.position = pos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageInfoComponent.Destructor = function(self)
-  -- function num : 0_6
+function LinkageInfoComponent:Destructor()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.LinkageInfo = function(self)
-  -- function num : 0_7
-  return self:GetComponent((self.WEComponentsEnum).LinkageInfo)
+function Entity:LinkageInfo()
+  return self:GetComponent(self.WEComponentsEnum.LinkageInfo)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasLinkageInfo = function(self)
-  -- function num : 0_8
-  return self:HasComponent((self.WEComponentsEnum).LinkageInfo)
+function Entity:HasLinkageInfo()
+  return self:HasComponent(self.WEComponentsEnum.LinkageInfo)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddLinkageInfo = function(self, linkTextOffsetList, attackRateOffset, maxCount)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LinkageInfo
+function Entity:AddLinkageInfo(linkTextOffsetList, attackRateOffset, maxCount)
+  local index = self.WEComponentsEnum.LinkageInfo
   local world = self:GetOwnerWorld()
   local component = LinkageInfoComponent:New(linkTextOffsetList, attackRateOffset, maxCount, world)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceLinkageInfo = function(self, linkTextOffsetList, attackRateOffset, maxCount)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LinkageInfo
+function Entity:ReplaceLinkageInfo(linkTextOffsetList, attackRateOffset, maxCount)
+  local index = self.WEComponentsEnum.LinkageInfo
   local world = self:GetOwnerWorld()
   local component = LinkageInfoComponent:New(linkTextOffsetList, attackRateOffset, maxCount, world)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveLinkageInfo = function(self)
-  -- function num : 0_11
+function Entity:RemoveLinkageInfo()
   if self:HasLinkageInfo() then
-    self:RemoveComponent((self.WEComponentsEnum).LinkageInfo)
+    self:RemoveComponent(self.WEComponentsEnum.LinkageInfo)
   end
 end
-
-

@@ -1,107 +1,63 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_monster_move_longest_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectMonsterMoveLongestGridResult", SkillEffectResultBase)
 SkillEffectMonsterMoveLongestGridResult = SkillEffectMonsterMoveLongestGridResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectMonsterMoveLongestGridResult.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectMonsterMoveLongestGridResult:GetEffectType()
   return SkillEffectType.MonsterMoveLongestGrid
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridResult.Constructor = function(self, walkResultList, isDead, finalAttackResult, summonTrapResult)
-  -- function num : 0_1
+function SkillEffectMonsterMoveLongestGridResult:Constructor(walkResultList, isDead, finalAttackResult, summonTrapResult)
   self._walkResultList = walkResultList
   self._isDead = isDead
   self._summonTrapResultList = summonTrapResult
   self._finalAttackResult = finalAttackResult
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridResult.GetWalkResultList = function(self)
-  -- function num : 0_2
+function SkillEffectMonsterMoveLongestGridResult:GetWalkResultList()
   return self._walkResultList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridResult.IsCasterDead = function(self)
-  -- function num : 0_3
+function SkillEffectMonsterMoveLongestGridResult:IsCasterDead()
   return self._isDead
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridResult.GetFinalAttackResult = function(self)
-  -- function num : 0_4
+function SkillEffectMonsterMoveLongestGridResult:GetFinalAttackResult()
   return self._finalAttackResult
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridResult.GetSummonTrapResultList = function(self)
-  -- function num : 0_5
+function SkillEffectMonsterMoveLongestGridResult:GetSummonTrapResultList()
   return self._summonTrapResultList
 end
 
 _class("MonsterMoveLongestGridResult", MonsterWalkResult)
 MonsterMoveLongestGridResult = MonsterMoveLongestGridResult
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterMoveLongestGridResult.Constructor = function(self)
-  -- function num : 0_6
+function MonsterMoveLongestGridResult:Constructor()
   self._newPieceType = nil
   self._attackResult = nil
   self._flushTrapID = nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveLongestGridResult.SetNewGridType = function(self, pieceType)
-  -- function num : 0_7
+function MonsterMoveLongestGridResult:SetNewGridType(pieceType)
   self._newPieceType = pieceType
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveLongestGridResult.SetAttackResult = function(self, attackResult)
-  -- function num : 0_8
+function MonsterMoveLongestGridResult:SetAttackResult(attackResult)
   self._attackResult = attackResult
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveLongestGridResult.SetFlushTrapID = function(self, trapID)
-  -- function num : 0_9
+function MonsterMoveLongestGridResult:SetFlushTrapID(trapID)
   self._flushTrapID = trapID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveLongestGridResult.GetNewGridType = function(self)
-  -- function num : 0_10
+function MonsterMoveLongestGridResult:GetNewGridType()
   return self._newPieceType
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveLongestGridResult.GetAttackResult = function(self)
-  -- function num : 0_11
+function MonsterMoveLongestGridResult:GetAttackResult()
   return self._attackResult
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveLongestGridResult.GetFlushTrapID = function(self)
-  -- function num : 0_12
+function MonsterMoveLongestGridResult:GetFlushTrapID()
   return self._flushTrapID
 end
-
-

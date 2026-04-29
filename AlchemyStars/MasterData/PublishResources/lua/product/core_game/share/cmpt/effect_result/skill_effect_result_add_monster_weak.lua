@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_add_monster_weak.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultAddMonsterWeak", SkillEffectResultBase)
 SkillEffectResultAddMonsterWeak = SkillEffectResultAddMonsterWeak
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultAddMonsterWeak.Constructor = function(self, entityID, weakResult, damageResult)
-  -- function num : 0_0
+function SkillEffectResultAddMonsterWeak:Constructor(entityID, weakResult, damageResult)
   self._entityID = entityID
   self._weakResult = weakResult
   self._damageResult = damageResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultAddMonsterWeak.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultAddMonsterWeak:GetEffectType()
   return SkillEffectType.AddMonsterWeak
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultAddMonsterWeak.GetEntityID = function(self)
-  -- function num : 0_2
+function SkillEffectResultAddMonsterWeak:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultAddMonsterWeak.GetWeakResult = function(self)
-  -- function num : 0_3
+function SkillEffectResultAddMonsterWeak:GetWeakResult()
   return self._weakResult
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultAddMonsterWeak.GetDamageResult = function(self)
-  -- function num : 0_4
+function SkillEffectResultAddMonsterWeak:GetDamageResult()
   return self._damageResult
 end
-
-

@@ -1,115 +1,75 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/3dui/season_ui_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonUILevel", Object)
 SeasonUILevel = SeasonUILevel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonUILevel.Constructor = function(self, gameObject, atlas, levelCfg)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonUILevel:Constructor(gameObject, atlas, levelCfg)
   self._gameObject = gameObject
   self._atlas = atlas
   self._levelCfg = levelCfg
-  self._view = (self._gameObject):GetComponent(typeof(UIView))
+  self._view = self._gameObject:GetComponent(typeof(UIView))
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUILevel._GetComponents = function(self)
-  -- function num : 0_1
-  self._rootTransform = (self._view):GetUIComponent("Transform", "Root")
-  self._name = (self._view):GetUIComponent("UILocalizationText", "Name")
-  self._starGO = (self._view):GetGameObject("Star")
+function SeasonUILevel:_GetComponents()
+  self._rootTransform = self._view:GetUIComponent("Transform", "Root")
+  self._name = self._view:GetUIComponent("UILocalizationText", "Name")
+  self._starGO = self._view:GetGameObject("Star")
   self._star = {}
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._star)[1] = (self._view):GetUIComponent("Image", "1")
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._star)[2] = (self._view):GetUIComponent("Image", "2")
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._star)[3] = (self._view):GetUIComponent("Image", "3")
+  self._star[1] = self._view:GetUIComponent("Image", "1")
+  self._star[2] = self._view:GetUIComponent("Image", "2")
+  self._star[3] = self._view:GetUIComponent("Image", "3")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUILevel.SetData = function(self, eventPoint, componentInfo)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonUILevel:SetData(eventPoint, componentInfo)
   if eventPoint then
     self._eventPoint = eventPoint
-    local cfg = (self._eventPoint):GetMissionCfg()
+    local cfg = self._eventPoint:GetMissionCfg()
     local showStar = false
     local starMask = 0
-    local passInfo = (componentInfo.m_pass_mission_info)[cfg.ID]
-    if passInfo and cfg.ThreeStarCondition3 and cfg.ThreeStarCondition3 > 0 then
-      showStar = true
-      starMask = passInfo.star
-    end
-    do
-      if (self._eventPoint):Diff() == UISeasonLevelDiff.Hard then
-        local normalCfg = (Cfg.cfg_season_mission)({GroupID = (self._eventPoint):GroupID(), OrderID = UISeasonLevelDiff.Normal})
-        if normalCfg then
-          passInfo = (componentInfo.m_pass_mission_info)[(normalCfg[1]).ID]
-          if passInfo then
-            showStar = true
-            starMask = 0
-          end
-        end
+    local passInfo = componentInfo.m_pass_mission_info[cfg.ID]
+    if passInfo then
+      if cfg.ThreeStarCondition3 and 0 < cfg.ThreeStarCondition3 then
+        showStar = true
+        starMask = passInfo.star
       end
-      ;
-      (self._name):SetText((StringTable.Get)(cfg.Name))
-      ;
-      (self._starGO):SetActive(showStar)
-      if showStar then
-        local starCount = (starMask & 1) + (starMask >> 1 & 1) + (starMask >> 2 & 1)
-        for i = 1, #self._star do
-          local spriteName = (self._levelCfg).spriteGray
-          if i <= starCount then
-            spriteName = (self._levelCfg).sprite
-          end
-          -- DECOMPILER ERROR at PC87: Confused about usage of register: R13 in 'UnsetPending'
-
-          ;
-          ((self._star)[i]).sprite = (self._atlas):GetSprite(spriteName)
-        end
-      end
-      do
-        do
-          local cfg = (self._eventPoint):GetEventPointCfg()
-          -- DECOMPILER ERROR at PC106: Confused about usage of register: R8 in 'UnsetPending'
-
-          if cfg and cfg.UILevelOffset then
-            (self._rootTransform).localPosition = Vector3((cfg.UILevelOffset)[1], (cfg.UILevelOffset)[2], (cfg.UILevelOffset)[3])
-          end
-          self:RefreshPosition()
-          ;
-          (self._gameObject):SetActive(false)
+    elseif self._eventPoint:Diff() == UISeasonLevelDiff.Hard then
+      local normalCfg = Cfg.cfg_season_mission({
+        GroupID = self._eventPoint:GroupID(),
+        OrderID = UISeasonLevelDiff.Normal
+      })
+      if normalCfg then
+        passInfo = componentInfo.m_pass_mission_info[normalCfg[1].ID]
+        if passInfo then
+          showStar = true
+          starMask = 0
         end
       end
     end
+    self._name:SetText(StringTable.Get(cfg.Name))
+    self._starGO:SetActive(showStar)
+    if showStar then
+      local starCount = (starMask & 1) + (starMask >> 1 & 1) + (starMask >> 2 & 1)
+      for i = 1, #self._star do
+        local spriteName = self._levelCfg.spriteGray
+        if i <= starCount then
+          spriteName = self._levelCfg.sprite
+        end
+        self._star[i].sprite = self._atlas:GetSprite(spriteName)
+      end
+    end
+    local cfg = self._eventPoint:GetEventPointCfg()
+    if cfg and cfg.UILevelOffset then
+      self._rootTransform.localPosition = Vector3(cfg.UILevelOffset[1], cfg.UILevelOffset[2], cfg.UILevelOffset[3])
+    end
+    self:RefreshPosition()
+  else
+    self._gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUILevel.RefreshPosition = function(self)
-  -- function num : 0_3
+function SeasonUILevel:RefreshPosition()
   if self._eventPoint then
-    local show = (self._eventPoint):IsShow()
-    ;
-    (self._gameObject):SetActive(show)
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self._gameObject).transform).position = (self._eventPoint):Position()
+    local show = self._eventPoint:IsShow()
+    self._gameObject:SetActive(show)
+    self._gameObject.transform.position = self._eventPoint:Position()
   end
 end
-
-

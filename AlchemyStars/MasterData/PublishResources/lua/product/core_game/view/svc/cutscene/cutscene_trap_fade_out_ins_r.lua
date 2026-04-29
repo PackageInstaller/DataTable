@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/cutscene/cutscene_trap_fade_out_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("cutscene_base_ins_r")
 _class("CutsceneTrapFadeOutInstruction", CutsceneBaseInstruction)
 CutsceneTrapFadeOutInstruction = CutsceneTrapFadeOutInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneTrapFadeOutInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function CutsceneTrapFadeOutInstruction:Constructor(paramList)
   self._duration = tonumber(paramList.duration)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneTrapFadeOutInstruction.DoInstruction = function(self, TT, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function CutsceneTrapFadeOutInstruction:DoInstruction(TT, phaseContext)
   local world = phaseContext:GetCutsceneWorld()
-  local trapGroup = world:GetGroup((world.BW_WEMatchers).Trap)
+  local trapGroup = world:GetGroup(world.BW_WEMatchers.Trap)
   if trapGroup then
-    for i,e in ipairs(trapGroup:GetEntities()) do
+    for i, e in ipairs(trapGroup:GetEntities()) do
       local trapRenderCmpt = e:TrapRender()
       if trapRenderCmpt and not trapRenderCmpt:GetHadPlayDestroy() then
         self:DOFade(e, world, self._duration)
@@ -29,12 +19,9 @@ CutsceneTrapFadeOutInstruction.DoInstruction = function(self, TT, phaseContext)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneTrapFadeOutInstruction.DOFade = function(self, e, world, duration)
-  -- function num : 0_2 , upvalues : _ENV
+function CutsceneTrapFadeOutInstruction:DOFade(e, world, duration)
   duration = duration * 0.001
-  local fadeComponent = ((e:View()):GetGameObject()):GetComponent(typeof(FadeComponent))
+  local fadeComponent = e:View():GetGameObject():GetComponent(typeof(FadeComponent))
   if not fadeComponent then
     e:SetViewVisible(false)
     local roundRender = e:TrapRoundInfoRender()
@@ -45,40 +32,30 @@ CutsceneTrapFadeOutInstruction.DOFade = function(self, e, world, duration)
         round_entity:SetViewVisible(false)
       end
     end
-    do
-      do
-        do return  end
-        if duration <= 0 then
-          fadeComponent.Alpha = 0
-          return 
-        end
-        local tmpDuration = 0
-        local factor = 0
-        local func = nil
-        tmpDuration = duration
-        factor = -1
-        func = function()
-    -- function num : 0_2_0 , upvalues : tmpDuration
-    do return tmpDuration >= 0 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+    return
   end
-
-        local mathService = world:GetService("Math")
-        ;
-        ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_2_1 , upvalues : func, tmpDuration, _ENV, factor, duration, mathService, fadeComponent
+  if duration <= 0 then
+    fadeComponent.Alpha = 0
+    return
+  end
+  local tmpDuration = 0
+  local factor = 0
+  local func
+  tmpDuration = duration
+  factor = -1
+  
+  function func()
+    return 0 <= tmpDuration
+  end
+  
+  local mathService = world:GetService("Math")
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     while func() do
-      tmpDuration = tmpDuration + (UnityEngine.Time).deltaTime * factor
+      tmpDuration = tmpDuration + UnityEngine.Time.deltaTime * factor
       local tran = tmpDuration / duration
       tran = mathService:ClampValue(tran, 0, 1)
       fadeComponent.Alpha = tran
       YIELD(TT)
     end
-  end
-, self)
-      end
-    end
-  end
+  end, self)
 end
-
-

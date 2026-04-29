@@ -1,22 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_pet_1502051_chain_trajectory_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayPet1502051ChainTrajectoryInstruction", BaseInstruction)
 PlayPet1502051ChainTrajectoryInstruction = PlayPet1502051ChainTrajectoryInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayPet1502051ChainTrajectoryInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayPet1502051ChainTrajectoryInstruction:Constructor(paramList)
   self._trajectoryEffectID = tonumber(paramList.trajectoryEffectID)
-  if not self._trajectoryEffectID or not (Cfg.cfg_effect)[self._trajectoryEffectID] then
-    (Log.exception)(self._className, "trajectoryEffectID无效: ", tostring(self._trajectoryEffectID))
+  if not self._trajectoryEffectID or not Cfg.cfg_effect[self._trajectoryEffectID] then
+    Log.exception(self._className, "trajectoryEffectID无效: ", tostring(self._trajectoryEffectID))
   end
   self._hitEffectID = tonumber(paramList.hitEffectID)
-  if self._hitEffectID and self._hitEffectID ~= 0 and not (Cfg.cfg_effect)[self._hitEffectID] then
-    (Log.exception)(self._className, "hitEffectID无效：", tostring(self._hitEffectID))
+  if self._hitEffectID and self._hitEffectID ~= 0 and not Cfg.cfg_effect[self._hitEffectID] then
+    Log.exception(self._className, "hitEffectID无效：", tostring(self._hitEffectID))
   end
   self._singleGridTime = tonumber(paramList.singleGridTime)
   self._flyLength = tonumber(paramList.flyLength)
@@ -25,74 +18,75 @@ PlayPet1502051ChainTrajectoryInstruction.Constructor = function(self, paramList)
   self._deathClear = tonumber(paramList.deathClear)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPet1502051ChainTrajectoryInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayPet1502051ChainTrajectoryInstruction:GetCacheResource()
   local t = {}
   if self._trajectoryEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._trajectoryEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._trajectoryEffectID].ResPath,
+      1
+    })
   end
   if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPet1502051ChainTrajectoryInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayPet1502051ChainTrajectoryInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
   local casterPos = casterEntity:GetRenderGridPosition()
   local trajectories = self:_CreateAllTrajectories(casterPos)
   self:_LaunchTrajectories(trajectories)
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(self._TaskRunTrajectories, self, casterEntity, trajectories, phaseContext)
+  GameGlobal.TaskManager():CoreGameStartTask(self._TaskRunTrajectories, self, casterEntity, trajectories, phaseContext)
 end
 
-local trajectoryDirections = {(Vector2.New)(0, 1), (Vector2.New)(0, -1), (Vector2.New)(1, 0), (Vector2.New)(-1, 0), (Vector2.New)(1, 1), (Vector2.New)(-1, -1), (Vector2.New)(-1, 1), (Vector2.New)(1, -1)}
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
+local trajectoryDirections = {
+  Vector2.New(0, 1),
+  Vector2.New(0, -1),
+  Vector2.New(1, 0),
+  Vector2.New(-1, 0),
+  Vector2.New(1, 1),
+  Vector2.New(-1, -1),
+  Vector2.New(-1, 1),
+  Vector2.New(1, -1)
+}
 
-PlayPet1502051ChainTrajectoryInstruction._CreateAllTrajectories = function(self, casterPos)
-  -- function num : 0_3 , upvalues : _ENV, trajectoryDirections
-  local fxsvc = (self._world):GetService("Effect")
+function PlayPet1502051ChainTrajectoryInstruction:_CreateAllTrajectories(casterPos)
+  local fxsvc = self._world:GetService("Effect")
   local trajectories = {}
-  for _,dir in ipairs(trajectoryDirections) do
-    local isCornerDir = (math.abs)(dir.x) + (math.abs)(dir.y) > 1
+  for _, dir in ipairs(trajectoryDirections) do
+    local isCornerDir = math.abs(dir.x) + math.abs(dir.y) > 1
     local beginPos = casterPos + dir
     local efx = fxsvc:CreateWorldPositionDirectionEffect(self._trajectoryEffectID, beginPos, dir)
-    ;
-    (table.insert)(trajectories, {direction = dir, entity = efx, currentGridPos = beginPos, endPos = beginPos + dir * self._flyLength})
+    table.insert(trajectories, {
+      direction = dir,
+      entity = efx,
+      currentGridPos = beginPos,
+      endPos = beginPos + dir * self._flyLength
+    })
   end
-  do return trajectories end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return trajectories
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-PlayPet1502051ChainTrajectoryInstruction._LaunchTrajectories = function(self, trajectories)
-  -- function num : 0_4 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
+function PlayPet1502051ChainTrajectoryInstruction:_LaunchTrajectories(trajectories)
+  local boardServiceRender = self._world:GetService("BoardRender")
   local time = self._flyLength * self._singleGridTime
-  for _,info in ipairs(trajectories) do
+  for _, info in ipairs(trajectories) do
     local endWorldPos = boardServiceRender:GridPos2RenderPos(info.endPos)
-    local csTransform = (((info.entity):View()):GetGameObject()).transform
+    local csTransform = info.entity:View():GetGameObject().transform
     info.ease = csTransform:DOMove(endWorldPos, time * 0.001, false)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-PlayPet1502051ChainTrajectoryInstruction._TaskRunTrajectories = function(self, TT, casterEntity, trajectories, phaseContext)
-  -- function num : 0_5 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayPet1502051ChainTrajectoryInstruction:_TaskRunTrajectories(TT, casterEntity, trajectories, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   for i = 1, self._flyLength do
-    for _,info in ipairs(trajectories) do
+    for _, info in ipairs(trajectories) do
       info.currentGridPos = info.currentGridPos + info.direction
     end
     YIELD(TT, self._singleGridTime)
   end
 end
-
-

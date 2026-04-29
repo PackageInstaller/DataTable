@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_ui_effect_outside_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayUIEffectOutsideInstruction", BaseInstruction)
 PlayUIEffectOutsideInstruction = PlayUIEffectOutsideInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayUIEffectOutsideInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayUIEffectOutsideInstruction:Constructor(paramList)
   self._prefabName = paramList.effectName
   self._duaration = tonumber(paramList.duration)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayUIEffectOutsideInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayUIEffectOutsideInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  ;
-  (world:EventDispatcher()):Dispatch(GameEventType.PlayBattleUIEffectOutside, self._prefabName, self._duaration)
+  world:EventDispatcher():Dispatch(GameEventType.PlayBattleUIEffectOutside, self._prefabName, self._duaration)
 end
-
-

@@ -1,43 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_damagebysacrificetraps.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectDamageBySacrificeTrapsParam", SkillDamageEffectParam)
 SkillEffectDamageBySacrificeTrapsParam = SkillEffectDamageBySacrificeTrapsParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectDamageBySacrificeTrapsParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectDamageBySacrificeTrapsParam:Constructor(t)
   self._trapID = {}
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
   if type(t.trapID) == "number" then
-    (self._trapID)[t.trapID] = true
-  else
-    if type(t.trapID) == "table" then
-      for _,id in ipairs(t.trapID) do
-        -- DECOMPILER ERROR at PC21: Confused about usage of register: R7 in 'UnsetPending'
-
-        (self._trapID)[id] = true
-      end
+    self._trapID[t.trapID] = true
+  elseif type(t.trapID) == "table" then
+    for _, id in ipairs(t.trapID) do
+      self._trapID[id] = true
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageBySacrificeTrapsParam.GetTrapID = function(self)
-  -- function num : 0_1
+function SkillEffectDamageBySacrificeTrapsParam:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageBySacrificeTrapsParam.GetEffectType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectDamageBySacrificeTrapsParam:GetEffectType()
   return SkillEffectType.DamageBySacrificeTraps
 end
-
-

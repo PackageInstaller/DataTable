@@ -1,64 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/active_task/award_show/ui_active_task_award_item_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActiveTaskAwardItemInfo", UICustomWidget)
 UIActiveTaskAwardItemInfo = UIActiveTaskAwardItemInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActiveTaskAwardItemInfo.OnShow = function(self)
-  -- function num : 0_0
+function UIActiveTaskAwardItemInfo:OnShow()
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskAwardItemInfo.OnHide = function(self)
-  -- function num : 0_1
+function UIActiveTaskAwardItemInfo:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskAwardItemInfo._GetComponent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActiveTaskAwardItemInfo:_GetComponent()
   self._info = self:GetUIComponent("UILocalizationText", "ItemInfo")
   self._rect = self:GetUIComponent("RectTransform", "gameObj")
   self._gameObj = self:GetGameObject("gameObj")
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMax = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMin = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).pivot = Vector2(0.85, 1)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).sizeDelta = Vector2(480, 0)
+  self._rect.anchorMax = Vector2(0.5, 0.5)
+  self._rect.anchorMin = Vector2(0.5, 0.5)
+  self._rect.pivot = Vector2(0.85, 1)
+  self._rect.sizeDelta = Vector2(480, 0)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskAwardItemInfo.SetData = function(self, txt, pos)
-  -- function num : 0_3
-  (self._info):SetText(txt)
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._gameObj).transform).position = pos
+function UIActiveTaskAwardItemInfo:SetData(txt, pos)
+  self._info:SetText(txt)
+  self._gameObj.transform.position = pos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskAwardItemInfo.SetActive = function(self, isActive)
-  -- function num : 0_4
-  (self._gameObj):SetActive(isActive)
+function UIActiveTaskAwardItemInfo:SetActive(isActive)
+  self._gameObj:SetActive(isActive)
 end
-
-

@@ -1,25 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_show_powerfull_round_count_ui.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicShowPowerfullRoundCountUI", BuffLogicBase)
 BuffLogicShowPowerfullRoundCountUI = BuffLogicShowPowerfullRoundCountUI
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicShowPowerfullRoundCountUI.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicShowPowerfullRoundCountUI:Constructor(buffInstance, logicParam)
   self._bShow = logicParam.show == 1
   self._resDic = logicParam.resDic
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicShowPowerfullRoundCountUI.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicShowPowerfullRoundCountUI:DoLogic()
   local buffResult = BuffResultShowPowerfullRoundCountUI:New(self._bShow, self._resDic)
   return buffResult
 end
-
-

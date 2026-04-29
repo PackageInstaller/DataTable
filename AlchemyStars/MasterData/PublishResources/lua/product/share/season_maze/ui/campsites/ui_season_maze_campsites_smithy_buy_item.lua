@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/campsites/ui_season_maze_campsites_smithy_buy_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMaze_Campsites_SmithyBuyItem", UIController)
 UISeasonMaze_Campsites_SmithyBuyItem = UISeasonMaze_Campsites_SmithyBuyItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMaze_Campsites_SmithyBuyItem.InitWidget = function(self)
-  -- function num : 0_0
+function UISeasonMaze_Campsites_SmithyBuyItem:InitWidget()
   self._Icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._PriceText = self:GetUIComponent("UILocalizationText", "PriceText")
   self._DescTitleText = self:GetUIComponent("UILocalizationText", "DescTitleText")
   self._Content = self:GetUIComponent("UILocalizationText", "Content")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_SmithyBuyItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISeasonMaze_Campsites_SmithyBuyItem:OnShow(uiParams)
   self:InitWidget()
   self._uiData = uiParams[1]
   self._com = uiParams[2]
@@ -31,89 +21,62 @@ UISeasonMaze_Campsites_SmithyBuyItem.OnShow = function(self, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_SmithyBuyItem.RefreshUI = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local itemId = (((self._uiData)._slotData).item).id
+function UISeasonMaze_Campsites_SmithyBuyItem:RefreshUI()
+  local itemId = self._uiData._slotData.item.id
   local iconRes = ""
-  local onceCfg = ((Cfg.cfg_component_season_maze_once)({OnceID = itemId}))[1]
+  local onceCfg = Cfg.cfg_component_season_maze_once({OnceID = itemId})[1]
   if onceCfg then
     iconRes = onceCfg.Icon
     local desc = onceCfg.Desc
     if desc then
-      (self._Content):SetText((StringTable.Get)(desc))
+      self._Content:SetText(StringTable.Get(desc))
     end
   end
-  do
-    ;
-    (self._Icon):LoadImage(iconRes)
-    local price = ((self._uiData)._slotData).price
-    local priceStr = tostring(price)
-    local curGold = (self._com):GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
-    if curGold < price then
-      priceStr = "<color=#c97d7d>" .. priceStr .. "</color>"
-    end
-    ;
-    (self._PriceText):SetText(priceStr)
-  end
-end
-
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_SmithyBuyItem.RefreshUI_FromEffect = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local itemId = (((self._uiData)._slotData).item).id
-  local iconRes = ""
-  local attCfg = (Cfg.cfg_season_maze_attribute)[itemId]
-  if attCfg ~= nil then
-    iconRes = attCfg.ItemIcon
-    ;
-    (self._Content):SetText((StringTable.Get)(attCfg.Desc))
-  end
-  ;
-  (self._Icon):LoadImage(iconRes)
-  local price = ((self._uiData)._slotData).price
+  self._Icon:LoadImage(iconRes)
+  local price = self._uiData._slotData.price
   local priceStr = tostring(price)
-  local curGold = (self._com):GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
-  if curGold < price then
+  local curGold = self._com:GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
+  if price > curGold then
     priceStr = "<color=#c97d7d>" .. priceStr .. "</color>"
   end
-  ;
-  (self._PriceText):SetText(priceStr)
+  self._PriceText:SetText(priceStr)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
+function UISeasonMaze_Campsites_SmithyBuyItem:RefreshUI_FromEffect()
+  local itemId = self._uiData._slotData.item.id
+  local iconRes = ""
+  local attCfg = Cfg.cfg_season_maze_attribute[itemId]
+  if attCfg ~= nil then
+    iconRes = attCfg.ItemIcon
+    self._Content:SetText(StringTable.Get(attCfg.Desc))
+  end
+  self._Icon:LoadImage(iconRes)
+  local price = self._uiData._slotData.price
+  local priceStr = tostring(price)
+  local curGold = self._com:GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
+  if price > curGold then
+    priceStr = "<color=#c97d7d>" .. priceStr .. "</color>"
+  end
+  self._PriceText:SetText(priceStr)
+end
 
-UISeasonMaze_Campsites_SmithyBuyItem.CancelBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UISeasonMaze_Campsites_SmithyBuyItem:CancelBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_SmithyBuyItem.BuyBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  local price = ((self._uiData)._slotData).price
-  local curGold = (self._com):GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
-  do
-    if curGold < price then
-      local tips = (StringTable.Get)("str_season_maze_gold_not_enough")
-      ;
-      (ToastManager.ShowToast)(tips)
-      return 
-    end
-    self:CloseDialog()
-    if self._callback then
-      (self._callback)()
-    end
+function UISeasonMaze_Campsites_SmithyBuyItem:BuyBtnOnClick(go)
+  local price = self._uiData._slotData.price
+  local curGold = self._com:GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
+  if price > curGold then
+    local tips = StringTable.Get("str_season_maze_gold_not_enough")
+    ToastManager.ShowToast(tips)
+    return
+  end
+  self:CloseDialog()
+  if self._callback then
+    self._callback()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_SmithyBuyItem.OnHide = function(self)
-  -- function num : 0_6
+function UISeasonMaze_Campsites_SmithyBuyItem:OnHide()
 end
-
-

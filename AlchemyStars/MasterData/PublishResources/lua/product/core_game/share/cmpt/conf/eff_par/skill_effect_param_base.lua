@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_scope_filter_param")
 _class("SkillEffectParamBase", Object)
 SkillEffectParamBase = SkillEffectParamBase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamBase.Constructor = function(self, t, petId, effectIndex, skillType, grade, awaking)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParamBase:Constructor(t, petId, effectIndex, skillType, grade, awaking)
   self._targetType = t.scopeTargetType
   self._scopeType = t.scopeType
   self._scopeCenterType = t.scopeCenterType
@@ -18,7 +11,7 @@ SkillEffectParamBase.Constructor = function(self, t, petId, effectIndex, skillTy
   self._damageStageIndex = t.damageStageIndex or 1
   self._scopeTargetTypeParam = t.scopeTargetTypeParam or 0
   if not t.scopeCasterOccupiedFilter and not t.obstructingTrapFilter and not t.monsterOccupiedPosFilter and not t.targetSelectionMode and not t.obstructingTrapByIDFilter then
-    self._scopeFilterParam = (SkillScopeFilterParam.GenerateDefaultParam)()
+    self._scopeFilterParam = SkillScopeFilterParam.GenerateDefaultParam()
   else
     self._scopeFilterParam = SkillScopeFilterParam:New(t)
   end
@@ -30,137 +23,88 @@ SkillEffectParamBase.Constructor = function(self, t, petId, effectIndex, skillTy
   self._disableTeamLeaderActiveSkill = t.disableTeamLeaderActiveSkill
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamBase.GetSKillAwakeAndGradeParam = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamBase:GetSKillAwakeAndGradeParam()
   if self._skillAwakeAndGradeParam then
     return self._skillAwakeAndGradeParam
   end
   if self._petId == nil or self._effectIndex == nil or self._skillType == nil or self._grade == nil or self._awaking == nil then
     return nil
   end
-  do
-    if self._petSkillCfg == nil then
-      local petSkillCfg = (Cfg.cfg_pet_skill)({PetID = self._petId, Grade = self._grade, Awakening = self._awaking})
-      if petSkillCfg then
-        self._petSkillCfg = petSkillCfg[1]
-      end
+  if self._petSkillCfg == nil then
+    local petSkillCfg = Cfg.cfg_pet_skill({
+      PetID = self._petId,
+      Grade = self._grade,
+      Awakening = self._awaking
+    })
+    if petSkillCfg then
+      self._petSkillCfg = petSkillCfg[1]
     end
-    if not self._petSkillCfg then
-      return nil
-    end
-    if self._skillType == SkillType.Normal then
-      self._skillAwakeAndGradeParam = ((self._petSkillCfg).NormallSkillParam)[self._effectIndex]
-    else
-      if self._skillType == SkillType.Chain then
-        self._skillAwakeAndGradeParam = ((self._petSkillCfg).ChainSkillParam)[self._effectIndex]
-      else
-        if self._skillType == SkillType.Active then
-          self._skillAwakeAndGradeParam = ((self._petSkillCfg).ActiveSkillParam)[self._effectIndex]
-        end
-      end
-    end
-    return self._skillAwakeAndGradeParam
   end
+  if not self._petSkillCfg then
+    return nil
+  end
+  if self._skillType == SkillType.Normal then
+    self._skillAwakeAndGradeParam = self._petSkillCfg.NormallSkillParam[self._effectIndex]
+  elseif self._skillType == SkillType.Chain then
+    self._skillAwakeAndGradeParam = self._petSkillCfg.ChainSkillParam[self._effectIndex]
+  elseif self._skillType == SkillType.Active then
+    self._skillAwakeAndGradeParam = self._petSkillCfg.ActiveSkillParam[self._effectIndex]
+  end
+  return self._skillAwakeAndGradeParam
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamBase.GetPetId = function(self)
-  -- function num : 0_2
+function SkillEffectParamBase:GetPetId()
   return self._petId
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamBase.GetEffectIndex = function(self)
-  -- function num : 0_3
+function SkillEffectParamBase:GetEffectIndex()
   return self._effectIndex
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamBase.GetSkillType = function(self)
-  -- function num : 0_4
+function SkillEffectParamBase:GetSkillType()
   return self._skillType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamBase.GetGrade = function(self)
-  -- function num : 0_5
+function SkillEffectParamBase:GetGrade()
   return self._grade
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamBase.GetAwaking = function(self)
-  -- function num : 0_6
+function SkillEffectParamBase:GetAwaking()
   return self._awaking
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamBase.GetEffectType = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillEffectParamBase:GetEffectType()
   return SkillEffectType.Base
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamBase.GetSkillEffectTargetType = function(self)
-  -- function num : 0_8
+function SkillEffectParamBase:GetSkillEffectTargetType()
   return self._targetType
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamBase.GetSkillEffectScopeType = function(self)
-  -- function num : 0_9
+function SkillEffectParamBase:GetSkillEffectScopeType()
   return self._scopeType
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamBase.GetSkillEffectScopeCenterType = function(self)
-  -- function num : 0_10
+function SkillEffectParamBase:GetSkillEffectScopeCenterType()
   return self._scopeCenterType
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamBase.GetSkillEffectScopeParam = function(self)
-  -- function num : 0_11
+function SkillEffectParamBase:GetSkillEffectScopeParam()
   return self._scopeParam
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamBase.GetSkillEffectDamageStageIndex = function(self)
-  -- function num : 0_12
+function SkillEffectParamBase:GetSkillEffectDamageStageIndex()
   return self._damageStageIndex
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamBase.GetScopeFilterParam = function(self)
-  -- function num : 0_13
+function SkillEffectParamBase:GetScopeFilterParam()
   return self._scopeFilterParam
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamBase.GetSkillEffectTargetTypeParam = function(self)
-  -- function num : 0_14
+function SkillEffectParamBase:GetSkillEffectTargetTypeParam()
   return self._scopeTargetTypeParam
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamBase.IsDisableTeamLeaderActiveSkill = function(self)
-  -- function num : 0_15
+function SkillEffectParamBase:IsDisableTeamLeaderActiveSkill()
   return self._disableTeamLeaderActiveSkill
 end
-
-

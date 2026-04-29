@@ -1,78 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n13/build_reward/ui_n13_build_reward_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN13BuildRewardController", UIController)
 UIN13BuildRewardController = UIN13BuildRewardController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN13BuildRewardController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN13BuildRewardController:OnShow(uiParams)
   self._isOpen = true
   self._buildManager = uiParams[1]
   if not self._buildManager then
-    (Log.error)("UIN13BuildRewardController:OnShow() buildManager == nil")
+    Log.error("UIN13BuildRewardController:OnShow() buildManager == nil")
     self:CloseDialog()
-    return 
+    return
   end
   self:_SetDynamicList(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardController.OnHide = function(self)
-  -- function num : 0_1
+function UIN13BuildRewardController:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardController._SetDynamicListData = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._dynamicListInfo = (self._buildManager):GetBuildRewardList()
-  self._dynamicListSize = (table.count)(self._dynamicListInfo)
+function UIN13BuildRewardController:_SetDynamicListData()
+  self._dynamicListInfo = self._buildManager:GetBuildRewardList()
+  self._dynamicListSize = table.count(self._dynamicListInfo)
   self._itemCountPerRow = 1
-  self._dynamicListRowSize = (math.floor)((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
+  self._dynamicListRowSize = math.floor((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardController._SetDynamicList = function(self, resetPos, noAnim)
-  -- function num : 0_3
+function UIN13BuildRewardController:_SetDynamicList(resetPos, noAnim)
   self:_SetDynamicListData()
   if not self._isDynamicInited then
     self._isDynamicInited = true
     self._dynamicList = self:GetUIComponent("UIDynamicScrollView", "dynamicList")
-    ;
-    (self._dynamicList):InitListView(self._dynamicListRowSize, function(scrollView, index)
-    -- function num : 0_3_0 , upvalues : self
-    return self:_SpawnListItem(scrollView, index)
-  end
-)
+    self._dynamicList:InitListView(self._dynamicListRowSize, function(scrollView, index)
+      return self:_SpawnListItem(scrollView, index)
+    end)
   else
     self:_RefreshList(self._dynamicListRowSize, self._dynamicList, resetPos)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardController._RefreshList = function(self, count, list, resetPos)
-  -- function num : 0_4
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UIN13BuildRewardController:_RefreshList(count, list, resetPos)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(count)
   list:MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R5 in 'UnsetPending'
-
   if not resetPos then
-    ((list.ScrollRect).content).localPosition = contentPos
+    list.ScrollRect.content.localPosition = contentPos
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardController._SpawnListItem = function(self, scrollView, index)
-  -- function num : 0_5
+function UIN13BuildRewardController:_SpawnListItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -86,40 +59,26 @@ UIN13BuildRewardController._SpawnListItem = function(self, scrollView, index)
   for i = 1, self._itemCountPerRow do
     local listItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._dynamicListSize < itemIndex then
-      (listItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._dynamicListSize then
+      listItem:GetGameObject():SetActive(false)
     else
-      ;
-      (listItem:GetGameObject()):SetActive(true)
+      listItem:GetGameObject():SetActive(true)
       self:_SetListItemData(listItem, itemIndex)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardController._SetListItemData = function(self, listItem, index)
-  -- function num : 0_6 , upvalues : _ENV
-  local data = (self._dynamicListInfo)[index]
+function UIN13BuildRewardController:_SetListItemData(listItem, index)
+  local data = self._dynamicListInfo[index]
   listItem:SetData(self._buildManager, data, function(matid, pos)
-    -- function num : 0_6_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "itemInfoPool", matid, pos)
-  end
-)
+    UIWidgetHelper.SetAwardItemTips(self, "itemInfoPool", matid, pos)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardController.ListItemOnClick = function(self, progress)
-  -- function num : 0_7
+function UIN13BuildRewardController:ListItemOnClick(progress)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardController.CloseBtnOnClick = function(self, go)
-  -- function num : 0_8
+function UIN13BuildRewardController:CloseBtnOnClick(go)
   self:CloseDialog()
 end
-
-

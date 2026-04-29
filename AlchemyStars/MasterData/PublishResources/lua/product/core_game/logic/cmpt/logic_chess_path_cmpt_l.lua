@@ -1,125 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/logic_chess_path_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LogicChessPathComponent", Object)
 LogicChessPathComponent = LogicChessPathComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LogicChessPathComponent.Constructor = function(self)
-  -- function num : 0_0
+function LogicChessPathComponent:Constructor()
   self._chessPath = {}
   self._chessPetEntityID = -1
   self._pickUpPos = nil
   self._walkResultList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChessPathComponent.ClearLogicChessPath = function(self)
-  -- function num : 0_1
+function LogicChessPathComponent:ClearLogicChessPath()
   self._chessPath = {}
   self._chessPetEntityID = -1
   self._pickUpPos = nil
   self._walkResultList = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChessPathComponent.GetLogicChessPath = function(self)
-  -- function num : 0_2
+function LogicChessPathComponent:GetLogicChessPath()
   return self._chessPath
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChessPathComponent.SetLogicChessPath = function(self, chessPath)
-  -- function num : 0_3
+function LogicChessPathComponent:SetLogicChessPath(chessPath)
   self._chessPath = chessPath
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChessPathComponent.GetLogicChessPetEntityID = function(self)
-  -- function num : 0_4
+function LogicChessPathComponent:GetLogicChessPetEntityID()
   return self._chessPetEntityID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChessPathComponent.SetLogicChessPetEntityID = function(self, chessPetEntityID)
-  -- function num : 0_5
+function LogicChessPathComponent:SetLogicChessPetEntityID(chessPetEntityID)
   self._chessPetEntityID = chessPetEntityID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChessPathComponent.GetLogicWalkResultList = function(self)
-  -- function num : 0_6
+function LogicChessPathComponent:GetLogicWalkResultList()
   return self._walkResultList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChessPathComponent.SetLogicWalkResultList = function(self, walkResultList)
-  -- function num : 0_7
+function LogicChessPathComponent:SetLogicWalkResultList(walkResultList)
   self._walkResultList = walkResultList
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChessPathComponent.GetLogicPickUpPos = function(self)
-  -- function num : 0_8
+function LogicChessPathComponent:GetLogicPickUpPos()
   return self._pickUpPos
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChessPathComponent.SetLogicPickUpPos = function(self, pickUpPos)
-  -- function num : 0_9
+function LogicChessPathComponent:SetLogicPickUpPos(pickUpPos)
   self._pickUpPos = pickUpPos
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.LogicChessPath = function(self)
-  -- function num : 0_10
-  return self:GetComponent((self.WEComponentsEnum).LogicChessPath)
+function Entity:LogicChessPath()
+  return self:GetComponent(self.WEComponentsEnum.LogicChessPath)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasLogicChessPath = function(self)
-  -- function num : 0_11
-  return self:HasComponent((self.WEComponentsEnum).LogicChessPath)
+function Entity:HasLogicChessPath()
+  return self:HasComponent(self.WEComponentsEnum.LogicChessPath)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddLogicChessPath = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LogicChessPath
+function Entity:AddLogicChessPath()
+  local index = self.WEComponentsEnum.LogicChessPath
   local component = LogicChessPathComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceLogicChessPath = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LogicChessPath
+function Entity:ReplaceLogicChessPath()
+  local index = self.WEComponentsEnum.LogicChessPath
   local component = LogicChessPathComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveLogicChessPath = function(self)
-  -- function num : 0_14
+function Entity:RemoveLogicChessPath()
   if self:HasLogicChessPath() then
-    self:RemoveComponent((self.WEComponentsEnum).LogicChessPath)
+    self:RemoveComponent(self.WEComponentsEnum.LogicChessPath)
   end
 end
-
-

@@ -1,69 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chat/ui_chat_add_blacklist_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChatAddBlacklistController", UIController)
 UIChatAddBlacklistController = UIChatAddBlacklistController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChatAddBlacklistController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIChatAddBlacklistController:OnShow(uiParams)
   self._friendData = uiParams[1]
   self._chatFriendManager = uiParams[2]
   self:_GetComponents()
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatAddBlacklistController._GetComponents = function(self)
-  -- function num : 0_1
+function UIChatAddBlacklistController:_GetComponents()
   self._name = self:GetUIComponent("UILocalizationText", "Name")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatAddBlacklistController._Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._name).text = (StringTable.Get)("str_chat_add_to_blacklist_confirm", (self._friendData):GetName())
+function UIChatAddBlacklistController:_Init()
+  self._name.text = StringTable.Get("str_chat_add_to_blacklist_confirm", self._friendData:GetName())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatAddBlacklistController.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIChatAddBlacklistController:ConfirmBtnOnClick(go)
   self:Lock("ConfirmBtnOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._AddToBlackList, self)
+  GameGlobal.TaskManager():StartTask(self._AddToBlackList, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatAddBlacklistController._AddToBlackList = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIChatAddBlacklistController:_AddToBlackList(TT)
   if not self._friendData then
     self:UnLock("ConfirmBtnOnClick")
     self:CloseDialog()
-    return 
+    return
   end
-  local res = (self._chatFriendManager):HandleBlackOperate(TT, (self._friendData):GetFriendId(), false)
+  local res = self._chatFriendManager:HandleBlackOperate(TT, self._friendData:GetFriendId(), false)
   self:UnLock("ConfirmBtnOnClick")
   self:CloseDialog()
   if res then
-    (ToastManager.ShowToast)((StringTable.Get)("str_chat_add_blacklist_success", (self._friendData):GetName()))
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeFriendInfoSuccess)
+    ToastManager.ShowToast(StringTable.Get("str_chat_add_blacklist_success", self._friendData:GetName()))
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeFriendInfoSuccess)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatAddBlacklistController.CancelBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIChatAddBlacklistController:CancelBtnOnClick(go)
   self:CloseDialog()
 end
-
-

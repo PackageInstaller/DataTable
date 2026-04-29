@@ -1,39 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_rotate.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_Rotate", Object)
 SkillEffectCalc_Rotate = SkillEffectCalc_Rotate
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_Rotate.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_Rotate:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_Rotate.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_Rotate:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
     if result then
-      (table.insert)(results, result)
+      table.insert(results, result)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_Rotate._CalculateSingleTarget = function(self, skillEffectCalcParam, targetEntityID)
-  -- function num : 0_2 , upvalues : _ENV
-  local defender = (self._world):GetEntityByID(targetEntityID)
-  local dir = (defender:GridLocation()).Direction
-  local isClockwise = (skillEffectCalcParam.skillEffectParam):IsClockwise()
+function SkillEffectCalc_Rotate:_CalculateSingleTarget(skillEffectCalcParam, targetEntityID)
+  local defender = self._world:GetEntityByID(targetEntityID)
+  local dir = defender:GridLocation().Direction
+  local isClockwise = skillEffectCalcParam.skillEffectParam:IsClockwise()
   local dirNew = Vector2.zero
   if isClockwise then
     dirNew.x = dir.y
@@ -44,5 +31,3 @@ SkillEffectCalc_Rotate._CalculateSingleTarget = function(self, skillEffectCalcPa
   end
   return SkillRotateEffectResult:New(targetEntityID, dir, dirNew)
 end
-
-

@@ -1,138 +1,103 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/ui_list_middle_on_top_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ui_list_middle_on_top_component", Object)
 ui_list_middle_on_top_component = ui_list_middle_on_top_component
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ui_list_middle_on_top_component.InitListLayout = function(contentRect, widgetList, cellWidth, cellHeight, bHorizon, bVertical)
-  -- function num : 0_0 , upvalues : _ENV
+function ui_list_middle_on_top_component.InitListLayout(contentRect, widgetList, cellWidth, cellHeight, bHorizon, bVertical)
   local cellCount = #widgetList
   local contentTarSize = contentRect.sizeDelta
   local contentTarPos = contentRect.anchoredPosition
-  local conTarWidth = (contentRect.sizeDelta).x
-  local conTarHeight = (contentRect.sizeDelta).y
-  local conTarPosX = (contentRect.anchoredPosition).x
-  local conTarPosY = (contentRect.anchoredPosition).y
+  local conTarWidth = contentRect.sizeDelta.x
+  local conTarHeight = contentRect.sizeDelta.y
+  local conTarPosX = contentRect.anchoredPosition.x
+  local conTarPosY = contentRect.anchoredPosition.y
   if bHorizon then
     conTarWidth = cellWidth * cellCount
-    conTarPosX = 0
+    conTarPosX = 0.0
   end
   if bVertical then
     conTarHeight = cellHeight * cellCount
-    conTarPosY = 0
+    conTarPosY = 0.0
   end
   contentTarSize = Vector2(conTarWidth, conTarHeight)
   contentRect.sizeDelta = contentTarSize
   contentRect.anchoredPosition = Vector2(conTarPosX, conTarPosY)
-  local firstPosX = -(conTarWidth) / 2 + cellWidth / 2
+  local firstPosX = -conTarWidth / 2 + cellWidth / 2
   local firstPosY = conTarHeight / 2 - cellHeight / 2
-  for index,widget in ipairs(widgetList) do
+  for index, widget in ipairs(widgetList) do
     local itemGo = widget:GetGameObject()
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R21 in 'UnsetPending'
-
-    ;
-    (itemGo.transform).anchorMin = Vector2(0.5, 0.5)
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R21 in 'UnsetPending'
-
-    ;
-    (itemGo.transform).anchorMax = Vector2(0.5, 0.5)
-    -- DECOMPILER ERROR at PC60: Confused about usage of register: R21 in 'UnsetPending'
-
-    ;
-    (itemGo.transform).sizeDelta = Vector2(cellWidth, cellHeight)
-    local posX = ((itemGo.transform).anchoredPosition).x
-    local posY = ((itemGo.transform).anchoredPosition).y
+    itemGo.transform.anchorMin = Vector2(0.5, 0.5)
+    itemGo.transform.anchorMax = Vector2(0.5, 0.5)
+    itemGo.transform.sizeDelta = Vector2(cellWidth, cellHeight)
+    local posX = itemGo.transform.anchoredPosition.x
+    local posY = itemGo.transform.anchoredPosition.y
     if bHorizon then
       posX = firstPosX + cellWidth * (index - 1)
     end
     if bVertical then
       posY = firstPosY - cellHeight * (index - 1)
     end
-    -- DECOMPILER ERROR at PC82: Confused about usage of register: R23 in 'UnsetPending'
-
-    ;
-    (itemGo.transform).anchoredPosition = Vector2(posX, posY)
+    itemGo.transform.anchoredPosition = Vector2(posX, posY)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ui_list_middle_on_top_component.Constructor = function(self, widgetList, scrollRect, contentRect, bHorizon, bVertical)
-  -- function num : 0_1 , upvalues : _ENV
+function ui_list_middle_on_top_component:Constructor(widgetList, scrollRect, contentRect, bHorizon, bVertical)
   self._bHaveBar = false
   self._items = widgetList
   self._scrollRect = scrollRect
   self._content = contentRect
   self._itemCount = #self._items
   self._sortTb = {}
-  for index,value in ipairs(self._items) do
+  for index, value in ipairs(self._items) do
     local sortData = {}
     sortData.idx = index
     sortData.absDis = 0
     sortData.curPos = 0
-    ;
-    (table.insert)(self._sortTb, sortData)
+    table.insert(self._sortTb, sortData)
   end
   self._bHorizon = bHorizon
   self._bVertical = bVertical
-  self._lastContentPosX = ((self._content).anchoredPosition).x
-  self._lastContentPosY = ((self._content).anchoredPosition).y
-  self._contentWidth = ((self._content).sizeDelta).x
-  self._contentHeight = ((self._content).sizeDelta).y
+  self._lastContentPosX = self._content.anchoredPosition.x
+  self._lastContentPosY = self._content.anchoredPosition.y
+  self._contentWidth = self._content.sizeDelta.x
+  self._contentHeight = self._content.sizeDelta.y
   if self._itemCount > 0 then
-    local cellTrans = (((self._items)[1]):GetGameObject()).transform
-    self._cellWidth = (cellTrans.sizeDelta).x
-    self._cellHeight = (cellTrans.sizeDelta).y
+    local cellTrans = self._items[1]:GetGameObject().transform
+    self._cellWidth = cellTrans.sizeDelta.x
+    self._cellHeight = cellTrans.sizeDelta.y
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ui_list_middle_on_top_component.SetCustomScrollBar = function(self, barGo, slidingAreaGo, handlerGo)
-  -- function num : 0_2 , upvalues : _ENV
+function ui_list_middle_on_top_component:SetCustomScrollBar(barGo, slidingAreaGo, handlerGo)
   if self._itemCount <= 0 then
     barGo:SetActive(false)
-    return 
+    return
   end
   barGo:SetActive(true)
   self._bHaveBar = true
   self._barGo = barGo
   self._slidingAreaGo = slidingAreaGo
   self._handlerGo = handlerGo
-  if not self._bHorizon or self._bVertical then
-    local slidingLength = (((self._slidingAreaGo).transform).sizeDelta).y
+  if self._bHorizon then
+  elseif self._bVertical then
+    local slidingLength = self._slidingAreaGo.transform.sizeDelta.y
     local tarHandlerLength = slidingLength / self._itemCount
-    local curHandlerSize = ((self._handlerGo).transform).sizeDelta
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self._handlerGo).transform).sizeDelta = Vector2(curHandlerSize.x, tarHandlerLength)
-    local curHandlerPos = ((self._handlerGo).transform).anchoredPosition
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((self._handlerGo).transform).anchoredPosition = Vector2(curHandlerPos.x, 0)
+    local curHandlerSize = self._handlerGo.transform.sizeDelta
+    self._handlerGo.transform.sizeDelta = Vector2(curHandlerSize.x, tarHandlerLength)
+    local curHandlerPos = self._handlerGo.transform.anchoredPosition
+    self._handlerGo.transform.anchoredPosition = Vector2(curHandlerPos.x, 0)
     self._conStartPosOffForBar = self._contentHeight / 2 - self._cellHeight / 2
     self._conStartPosMaxForBar = self._contentHeight - self._cellHeight
     self._barProgressLength = slidingLength - tarHandlerLength
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ui_list_middle_on_top_component._RefreshScrollBar = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if self._bHaveBar and (not self._bHorizon or self._bVertical) then
-    local edgePos = ((self._content).anchoredPosition).y + self._conStartPosOffForBar
+function ui_list_middle_on_top_component:_RefreshScrollBar()
+  if not self._bHaveBar or self._bHorizon then
+  elseif self._bVertical then
+    local edgePos = self._content.anchoredPosition.y + self._conStartPosOffForBar
     if edgePos < 0 then
       edgePos = 0
-    else
-      if self._conStartPosMaxForBar < edgePos then
-        edgePos = self._conStartPosMaxForBar
-      end
+    elseif edgePos > self._conStartPosMaxForBar then
+      edgePos = self._conStartPosMaxForBar
     end
     local newPos = 0
     if self._conStartPosMaxForBar == 0 then
@@ -140,77 +105,57 @@ ui_list_middle_on_top_component._RefreshScrollBar = function(self)
     else
       newPos = 0 - edgePos / self._conStartPosMaxForBar * self._barProgressLength
     end
-    local curHandlerPos = ((self._handlerGo).transform).anchoredPosition
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    ((self._handlerGo).transform).anchoredPosition = Vector2(curHandlerPos.x, newPos)
+    local curHandlerPos = self._handlerGo.transform.anchoredPosition
+    self._handlerGo.transform.anchoredPosition = Vector2(curHandlerPos.x, newPos)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ui_list_middle_on_top_component.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_4
-  if ((self._content).anchoredPosition).x ~= self._lastContentPosX or ((self._content).anchoredPosition).y ~= self._lastContentPosY then
+function ui_list_middle_on_top_component:OnUpdate(deltaTimeMS)
+  if self._content.anchoredPosition.x ~= self._lastContentPosX or self._content.anchoredPosition.y ~= self._lastContentPosY then
     self:_RefreshClothListSibling()
     self:_RefreshScrollBar()
-    self._lastContentPosX = ((self._content).anchoredPosition).x
-    self._lastContentPosY = ((self._content).anchoredPosition).y
+    self._lastContentPosX = self._content.anchoredPosition.x
+    self._lastContentPosY = self._content.anchoredPosition.y
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ui_list_middle_on_top_component._CalCenterPos = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function ui_list_middle_on_top_component:_CalCenterPos()
   local oriCenterX = 0
   local oriCenterY = 0
-  local curCenterX = oriCenterX - ((self._content).anchoredPosition).x
-  local curCenterY = oriCenterY - ((self._content).anchoredPosition).y
+  local curCenterX = oriCenterX - self._content.anchoredPosition.x
+  local curCenterY = oriCenterY - self._content.anchoredPosition.y
   self._curCenter = Vector2(curCenterX, curCenterY)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ui_list_middle_on_top_component._CalDisSqrToCenter = function(self, pos)
-  -- function num : 0_6
-  local disX = pos.x - (self._curCenter).x
-  local disY = pos.y - (self._curCenter).y
+function ui_list_middle_on_top_component:_CalDisSqrToCenter(pos)
+  local disX = pos.x - self._curCenter.x
+  local disY = pos.y - self._curCenter.y
   local absDis = disX * disX + disY * disY
   return absDis
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ui_list_middle_on_top_component._CalDisTo = function(self, posA, posB)
-  -- function num : 0_7 , upvalues : _ENV
+function ui_list_middle_on_top_component:_CalDisTo(posA, posB)
   local absDis = 0
   if self._bHorizon then
-    absDis = (math.abs)(posA.x - posB.x)
-  else
-    if self._bVertical then
-      absDis = (math.abs)(posA.y - posB.y)
-    end
+    absDis = math.abs(posA.x - posB.x)
+  elseif self._bVertical then
+    absDis = math.abs(posA.y - posB.y)
   end
   return absDis
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ui_list_middle_on_top_component._RefreshClothListSibling = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function ui_list_middle_on_top_component:_RefreshClothListSibling()
   if not self._items then
-    return 
+    return
   end
   self:_CalCenterPos()
   local minAbs = -1
   local topCellPos = Vector2.zero
-  for index,item in ipairs(self._items) do
-    local curCellPos = ((item:GetGameObject()).transform).anchoredPosition
+  for index, item in ipairs(self._items) do
+    local curCellPos = item:GetGameObject().transform.anchoredPosition
     local absDis = self:_CalDisSqrToCenter(curCellPos)
-    local tmpCell = (self._sortTb)[index]
-    if minAbs < 0 or absDis < minAbs then
+    local tmpCell = self._sortTb[index]
+    if minAbs < 0 or minAbs > absDis then
       minAbs = absDis
       topCellPos.x = curCellPos.x
       topCellPos.y = curCellPos.y
@@ -221,18 +166,13 @@ ui_list_middle_on_top_component._RefreshClothListSibling = function(self)
       tmpCell.curPos = curCellPos
     end
   end
-  ;
-  (table.sort)(self._sortTb, function(a, b)
-    -- function num : 0_8_0
-    do return b.absDis < a.absDis end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  for index,value in ipairs(self._sortTb) do
-    local item = (self._items)[value.idx]
+  table.sort(self._sortTb, function(a, b)
+    return a.absDis > b.absDis
+  end)
+  for index, value in ipairs(self._sortTb) do
+    local item = self._items[value.idx]
     local itemGo = item:GetGameObject()
-    ;
-    (itemGo.transform):SetSiblingIndex(index - 1)
+    itemGo.transform:SetSiblingIndex(index - 1)
     if item.SetIsOnTop then
       if index == self._itemCount then
         item:SetIsOnTop(true)
@@ -248,30 +188,21 @@ ui_list_middle_on_top_component._RefreshClothListSibling = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ui_list_middle_on_top_component._CalSkinListOrderLayer = function(self, absDis)
-  -- function num : 0_9 , upvalues : _ENV
+function ui_list_middle_on_top_component:_CalSkinListOrderLayer(absDis)
   local param = self._cellWidth
   if param <= 0 then
     return 1
   end
-  local a, b = (math.modf)(absDis / param)
+  local a, b = math.modf(absDis / param)
   return a
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ui_list_middle_on_top_component.RefreshListOrder = function(self)
-  -- function num : 0_10
+function ui_list_middle_on_top_component:RefreshListOrder()
   self:_RefreshClothListSibling()
   self:_RefreshScrollBar()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ui_list_middle_on_top_component.CalculateNewIndexByDragPos = function(self, dragBeginEPos, dragEndEPos, curSelIndex)
-  -- function num : 0_11 , upvalues : _ENV
+function ui_list_middle_on_top_component:CalculateNewIndexByDragPos(dragBeginEPos, dragEndEPos, curSelIndex)
   if self._itemCount <= 1 then
     return 1
   end
@@ -281,73 +212,59 @@ ui_list_middle_on_top_component.CalculateNewIndexByDragPos = function(self, drag
   local dragEndPos = 0
   local bDragForward = false
   if self._bHorizon then
-    local lPosX = ((self._content).anchoredPosition).x - self._contentWidth / 2
-    if lPosX >= 0 then
+    local lPosX = self._content.anchoredPosition.x - self._contentWidth / 2
+    if 0 <= lPosX then
       lPosX = -self._cellWidth / 2
-    else
-      if lPosX <= -self._contentWidth then
-        lPosX = -self._contentWidth + self._cellWidth / 2
-      end
+    elseif lPosX <= -self._contentWidth then
+      lPosX = -self._contentWidth + self._cellWidth / 2
     end
-    absLPos = (math.abs)(lPosX)
+    absLPos = math.abs(lPosX)
     cellSize = self._cellWidth
     dragBeginPos = dragBeginEPos.x
     dragEndPos = dragEndEPos.x
-    if dragEndPos < dragBeginPos then
+    if dragBeginPos > dragEndPos then
       bDragForward = true
     end
-  else
-    do
-      do
-        if self._bVertical then
-          local lPosY = ((self._content).anchoredPosition).y + self._contentHeight / 2
-          if lPosY <= 0 then
-            lPosY = self._cellHeight / 2
-          else
-            if self._contentHeight <= lPosY then
-              lPosY = self._contentHeight - self._cellHeight / 2
-            end
-          end
-          absLPos = (math.abs)(lPosY)
-          cellSize = self._cellHeight
-          dragBeginPos = dragBeginEPos.y
-          dragEndPos = dragEndEPos.y
-          if dragBeginPos < dragEndPos then
-            bDragForward = true
-          end
-        end
-        local c = (math.ceil)(absLPos / cellSize)
-        local _, d = (math.modf)(absLPos / cellSize)
-        local tmpIdx = curSelIndex
-        tmpIdx = c
-        -- DECOMPILER ERROR at PC94: Unhandled construct in 'MakeBoolean' P1
-
-        if tmpIdx == curSelIndex and bDragForward and d > 0.7 then
-          tmpIdx = tmpIdx + 1
-        end
-        if d < 0.3 then
-          tmpIdx = tmpIdx - 1
-        end
-        local finalIdx = 1
-        if self._itemCount < tmpIdx then
-          finalIdx = self._itemCount
-        else
-          if tmpIdx <= 0 then
-            finalIdx = 1
-          else
-            finalIdx = tmpIdx
-          end
-        end
-        return finalIdx
-      end
+  elseif self._bVertical then
+    local lPosY = self._content.anchoredPosition.y + self._contentHeight / 2
+    if lPosY <= 0 then
+      lPosY = self._cellHeight / 2
+    elseif lPosY >= self._contentHeight then
+      lPosY = self._contentHeight - self._cellHeight / 2
+    end
+    absLPos = math.abs(lPosY)
+    cellSize = self._cellHeight
+    dragBeginPos = dragBeginEPos.y
+    dragEndPos = dragEndEPos.y
+    if dragBeginPos < dragEndPos then
+      bDragForward = true
     end
   end
+  local c = math.ceil(absLPos / cellSize)
+  local _, d = math.modf(absLPos / cellSize)
+  local tmpIdx = curSelIndex
+  tmpIdx = c
+  if tmpIdx == curSelIndex then
+    if bDragForward then
+      if 0.7 < d then
+        tmpIdx = tmpIdx + 1
+      end
+    elseif d < 0.3 then
+      tmpIdx = tmpIdx - 1
+    end
+  end
+  local finalIdx = 1
+  if tmpIdx > self._itemCount then
+    finalIdx = self._itemCount
+  elseif tmpIdx <= 0 then
+    finalIdx = 1
+  else
+    finalIdx = tmpIdx
+  end
+  return finalIdx
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ui_list_middle_on_top_component.CalcPosParam = function(self, idx)
-  -- function num : 0_12
+function ui_list_middle_on_top_component:CalcPosParam(idx)
   local pos = 0
   if not idx or self._itemCount <= 1 then
     return pos
@@ -355,17 +272,9 @@ ui_list_middle_on_top_component.CalcPosParam = function(self, idx)
   if self._bHorizon then
     local startPos = self._contentWidth / 2 + self._cellWidth / 2
     pos = startPos - idx * self._cellWidth
-  else
-    do
-      do
-        if self._bVertical then
-          local startPos = -1 * self._contentHeight / 2 - self._cellHeight / 2
-          pos = startPos + idx * self._cellHeight
-        end
-        return pos
-      end
-    end
+  elseif self._bVertical then
+    local startPos = -1 * self._contentHeight / 2 - self._cellHeight / 2
+    pos = startPos + idx * self._cellHeight
   end
+  return pos
 end
-
-

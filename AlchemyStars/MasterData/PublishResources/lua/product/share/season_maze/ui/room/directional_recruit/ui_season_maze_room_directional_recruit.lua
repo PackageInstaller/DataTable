@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/room/directional_recruit/ui_season_maze_room_directional_recruit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_season_maze_room_base")
 _class("UISeasonMazeRoom_DirectionalRecruit", UISeasonMazeRoomBase)
 UISeasonMazeRoom_DirectionalRecruit = UISeasonMazeRoom_DirectionalRecruit
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoom_DirectionalRecruit.InitWidget = function(self)
-  -- function num : 0_0
+function UISeasonMazeRoom_DirectionalRecruit:InitWidget()
   self._chooseColorArea = self:GetUIComponent("UISelectObjectPath", "ChooseColorArea")
   self._chooseColorAreaGo = self:GetGameObject("ChooseColorArea")
   self._choosePetArea = self:GetUIComponent("UISelectObjectPath", "ChoosePetArea")
@@ -17,33 +10,34 @@ UISeasonMazeRoom_DirectionalRecruit.InitWidget = function(self)
   self._colorChoosed = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruit.OnShowUI = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._mulitOpen = (UnityEngine.Input).multiTouchEnabled
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (UnityEngine.Input).multiTouchEnabled = false
+function UISeasonMazeRoom_DirectionalRecruit:OnShowUI(uiParams)
+  self._mulitOpen = UnityEngine.Input.multiTouchEnabled
+  UnityEngine.Input.multiTouchEnabled = false
   self:InitWidget()
   self:AttachEvent(GameEventType.OnUISeasonMazeAttChanged, self.OnUISeasonMazeAttChanged)
-  self._colorIndexs = {[1] = ElementType.ElementType_Blue, [2] = ElementType.ElementType_Red, [3] = ElementType.ElementType_Green, [4] = ElementType.ElementType_Yellow}
-  self.ElementNameTable = {[ElementType.ElementType_Blue] = "str_pet_element_name_blue", [ElementType.ElementType_Red] = "str_pet_element_name_red", [ElementType.ElementType_Green] = "str_pet_element_name_green", [ElementType.ElementType_Yellow] = "str_pet_element_name_yellow"}
+  self._colorIndexs = {
+    [1] = ElementType.ElementType_Blue,
+    [2] = ElementType.ElementType_Red,
+    [3] = ElementType.ElementType_Green,
+    [4] = ElementType.ElementType_Yellow
+  }
+  self.ElementNameTable = {
+    [ElementType.ElementType_Blue] = "str_pet_element_name_blue",
+    [ElementType.ElementType_Red] = "str_pet_element_name_red",
+    [ElementType.ElementType_Green] = "str_pet_element_name_green",
+    [ElementType.ElementType_Yellow] = "str_pet_element_name_yellow"
+  }
   self:InitData()
   self:InitChooseColor()
   self:SwitchState()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruit.InitData = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
+function UISeasonMazeRoom_DirectionalRecruit:InitData()
+  local seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
   local seasonMazeObj = seasonMazeModule:CurSeasonObj()
   self._com = seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
-  self._comInfo = (self._com):GetComponentInfo()
-  local petList = (self._comInfo).m_recruit_room_pet_list
+  self._comInfo = self._com:GetComponentInfo()
+  local petList = self._comInfo.m_recruit_room_pet_list
   if #petList == 0 then
     self._colorChoosed = false
   else
@@ -51,195 +45,119 @@ UISeasonMazeRoom_DirectionalRecruit.InitData = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruit.GetReflushCnt = function(self)
-  -- function num : 0_3
-  local cnt = (self._comInfo).m_recruit_room_reflush_cnt
+function UISeasonMazeRoom_DirectionalRecruit:GetReflushCnt()
+  local cnt = self._comInfo.m_recruit_room_reflush_cnt
   return cnt
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruit.InitChooseColor = function(self)
-  -- function num : 0_4
-  self._chooseColorWidget = (self._chooseColorArea):SpawnObject("UISeasonMazeRoom_DirectionalRecruitChooseColor")
-  ;
-  (self._chooseColorWidget):SetData(function()
-    -- function num : 0_4_0 , upvalues : self
+function UISeasonMazeRoom_DirectionalRecruit:InitChooseColor()
+  self._chooseColorWidget = self._chooseColorArea:SpawnObject("UISeasonMazeRoom_DirectionalRecruitChooseColor")
+  self._chooseColorWidget:SetData(function()
     self:OnBackBtnOnClick()
-  end
-, function(idx)
-    -- function num : 0_4_1 , upvalues : self
+  end, function(idx)
     self:OnChooseColor(idx)
-  end
-, function()
-    -- function num : 0_4_2 , upvalues : self
+  end, function()
     self:OnExit()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruit.OnChooseColor = function(self, idx)
-  -- function num : 0_5 , upvalues : _ENV
-  local color = (self._colorIndexs)[idx]
+function UISeasonMazeRoom_DirectionalRecruit:OnChooseColor(idx)
+  local color = self._colorIndexs[idx]
   if not color then
-    return 
+    return
   end
-  local colorStr = (StringTable.Get)((self.ElementNameTable)[color])
-  local msgStr = (StringTable.Get)("str_season_maze_room_recruit_choose_color_tips1", colorStr)
-  ;
-  (UISeasonMazeModule.PopMsgBox)(nil, msgStr, SeasonMazeMsgBoxType.OkCancel, function()
-    -- function num : 0_5_0 , upvalues : self, color
+  local colorStr = StringTable.Get(self.ElementNameTable[color])
+  local msgStr = StringTable.Get("str_season_maze_room_recruit_choose_color_tips1", colorStr)
+  UISeasonMazeModule.PopMsgBox(nil, msgStr, SeasonMazeMsgBoxType.OkCancel, function()
     self:ReqSelectProp(color)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruit.SwitchState = function(self)
-  -- function num : 0_6
+function UISeasonMazeRoom_DirectionalRecruit:SwitchState()
   if self._colorChoosed then
     self:InitChoosePet()
   end
-  ;
-  (self._chooseColorAreaGo):SetActive(not self._colorChoosed)
-  ;
-  (self._choosePetAreaGo):SetActive(self._colorChoosed)
+  self._chooseColorAreaGo:SetActive(not self._colorChoosed)
+  self._choosePetAreaGo:SetActive(self._colorChoosed)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruit.InitChoosePet = function(self)
-  -- function num : 0_7
-  self._choosePetWidget = (self._choosePetArea):SpawnObject("UISeasonMazeRoom_DirectionalRecruitChoosePet")
-  ;
-  (self._choosePetWidget):SetData(function()
-    -- function num : 0_7_0 , upvalues : self
+function UISeasonMazeRoom_DirectionalRecruit:InitChoosePet()
+  self._choosePetWidget = self._choosePetArea:SpawnObject("UISeasonMazeRoom_DirectionalRecruitChoosePet")
+  self._choosePetWidget:SetData(function()
     self:OnBackBtnOnClick()
-  end
-, function(petID)
-    -- function num : 0_7_1 , upvalues : self
+  end, function(petID)
     self:OnChoosePetFinish(petID)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruit.GetPets = function(self)
-  -- function num : 0_8
+function UISeasonMazeRoom_DirectionalRecruit:GetPets()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruit.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_9
+function UISeasonMazeRoom_DirectionalRecruit:LoadDataOnEnter(TT, res, uiParams)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruit.OnUISeasonMazeAttChanged = function(self)
-  -- function num : 0_10
+function UISeasonMazeRoom_DirectionalRecruit:OnUISeasonMazeAttChanged()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruit.OnHide = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonMazeRoom_DirectionalRecruit:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (UnityEngine.Input).multiTouchEnabled = self._mulitOpen
+  UnityEngine.Input.multiTouchEnabled = self._mulitOpen
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruit.OnBackBtnOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCancel)
-  ;
-  ((self._seasonMazeModule):UIModule()):SetTempRoom(self:GetName())
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTempCloseRoom, true)
+function UISeasonMazeRoom_DirectionalRecruit:OnBackBtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCancel)
+  self._seasonMazeModule:UIModule():SetTempRoom(self:GetName())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTempCloseRoom, true)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruit.ReqSelectProp = function(self, color)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonMazeRoom_DirectionalRecruit:ReqSelectProp(color)
   self:Lock("UISeasonMazeRoom_DirectionalRecruit:ReqSelectProp")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.TaskReqSelectProp, self, color)
+  GameGlobal.TaskManager():StartTask(self.TaskReqSelectProp, self, color)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruit.TaskReqSelectProp = function(self, TT, color)
-  -- function num : 0_14 , upvalues : _ENV
+function UISeasonMazeRoom_DirectionalRecruit:TaskReqSelectProp(TT, color)
   local res = AsyncRequestRes:New()
-  local response = (self._com):HandleSeasonMazeRecruitRoomSelectProp(TT, res, color)
+  local response = self._com:HandleSeasonMazeRecruitRoomSelectProp(TT, res, color)
   self:UnLock("UISeasonMazeRoom_DirectionalRecruit:ReqSelectProp")
   if res:GetSucc() then
     local randomPetIDList = response.cur_pets
     local selectedPet = response.select_pet
-    if #randomPetIDList > 0 then
+    if 0 < #randomPetIDList then
       self._colorChoosed = true
       self:SwitchState()
     else
       self._colorChoosed = false
-      local tips = (StringTable.Get)("str_season_maze_room_recruit_choose_color_tips2")
-      ;
-      (ToastManager.ShowToast)(tips)
-      return 
+      local tips = StringTable.Get("str_season_maze_room_recruit_choose_color_tips2")
+      ToastManager.ShowToast(tips)
+      return
     end
   else
-    do
-      local result = res:GetResult()
-      ;
-      (Log.error)("###[UISeasonMazeRoom_DirectionalRecruit] HandleSeasonMazeRecruitRoomSelectProp fail! result:", result)
-      if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-        return 
-      end
+    local result = res:GetResult()
+    Log.error("###[UISeasonMazeRoom_DirectionalRecruit] HandleSeasonMazeRecruitRoomSelectProp fail! result:", result)
+    if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruit.OnChoosePetFinish = function(self, petID)
-  -- function num : 0_15 , upvalues : _ENV
+function UISeasonMazeRoom_DirectionalRecruit:OnChoosePetFinish(petID)
   self:OnHideUI(petID)
-  do return  end
+  do return end
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
-  self._timer = ((GameGlobal.Timer)()):AddEvent(3000, function()
-    -- function num : 0_15_0 , upvalues : self, petID
+  self._timer = GameGlobal.Timer():AddEvent(3000, function()
     self:OnHideUI(petID)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruit.OnExit = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local msgStr = (StringTable.Get)("str_season_maze_room_recruit_exit_tips")
-  ;
-  (UISeasonMazeModule.PopMsgBox)(nil, msgStr, SeasonMazeMsgBoxType.OkCancel, function()
-    -- function num : 0_16_0 , upvalues : self
+function UISeasonMazeRoom_DirectionalRecruit:OnExit()
+  local msgStr = StringTable.Get("str_season_maze_room_recruit_exit_tips")
+  UISeasonMazeModule.PopMsgBox(nil, msgStr, SeasonMazeMsgBoxType.OkCancel, function()
     self:OnHideUI()
-  end
-)
+  end)
 end
-
-

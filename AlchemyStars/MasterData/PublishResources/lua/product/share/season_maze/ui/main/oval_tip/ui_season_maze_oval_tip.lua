@@ -1,159 +1,101 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/oval_tip/ui_season_maze_oval_tip.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeOvalTip", Object)
 UISeasonMazeOvalTip = UISeasonMazeOvalTip
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeOvalTip.Constructor = function(self, seasonMazeID, req, onClick)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazeOvalTip:Constructor(seasonMazeID, req, onClick)
   self._seasonMazeID = seasonMazeID
   self._req = req
   self._onClick = onClick
   self._gameObject = req.Obj
-  self._rectTransform = (self._gameObject):GetComponent(typeof(UnityEngine.RectTransform))
-  self._uiView = (self._gameObject):GetComponent(typeof(UIView))
-  ;
-  (self._uiView):SetShow(true, self)
-  self._icon = (self._uiView):GetGameObject("Icon")
-  self._iconImg = (self._uiView):GetUIComponent("Image", "Icon")
-  self._arrowObj = (self._uiView):GetGameObject("Arrow")
-  self._arrowRect = (self._uiView):GetUIComponent("RectTransform", "Arrow")
-  self._arrowIcon = (self._uiView):GetUIComponent("Image", "ArrowIcon")
+  self._rectTransform = self._gameObject:GetComponent(typeof(UnityEngine.RectTransform))
+  self._uiView = self._gameObject:GetComponent(typeof(UIView))
+  self._uiView:SetShow(true, self)
+  self._icon = self._uiView:GetGameObject("Icon")
+  self._iconImg = self._uiView:GetUIComponent("Image", "Icon")
+  self._arrowObj = self._uiView:GetGameObject("Arrow")
+  self._arrowRect = self._uiView:GetUIComponent("RectTransform", "Arrow")
+  self._arrowIcon = self._uiView:GetUIComponent("Image", "ArrowIcon")
   self._name2Asset = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalTip.TargetWorldPos = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeOvalTip:TargetWorldPos()
   if self._type == UISeasonOvalTipType.Player then
     local target = self._target
     return target:Position()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalTip.Show = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeOvalTip:Show()
   self._isIn = false
   local show = true
   if self._target and self._type == UISeasonOvalTipType.Task then
-    show = (self._target):IsShow()
+    show = self._target:IsShow()
   end
-  ;
-  (self._gameObject):SetActive(show)
+  self._gameObject:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalTip.Hide = function(self)
-  -- function num : 0_3
+function UISeasonMazeOvalTip:Hide()
   self._isIn = true
-  ;
-  (self._gameObject):SetActive(false)
+  self._gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalTip.Delete = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMazeOvalTip:Delete()
   self._req = nil
   self._gameObject = nil
-  ;
-  (self._uiView):SetShow(false, self)
+  self._uiView:SetShow(false, self)
   self._uiView = nil
-  for _,req in pairs(self._name2Asset) do
+  for _, req in pairs(self._name2Asset) do
     req:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalTip.Dispose = function(self)
-  -- function num : 0_5
-  (self._req):Dispose()
+function UISeasonMazeOvalTip:Dispose()
+  self._req:Dispose()
   self:Delete()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalTip.IsInOval = function(self)
-  -- function num : 0_6
+function UISeasonMazeOvalTip:IsInOval()
   return self._isIn
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalTip.Sync = function(self, pos, rot)
-  -- function num : 0_7
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._rectTransform).anchoredPosition = pos
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._arrowRect).localRotation = rot
+function UISeasonMazeOvalTip:Sync(pos, rot)
+  self._rectTransform.anchoredPosition = pos
+  self._arrowRect.localRotation = rot
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalTip.IconOnClick = function(self)
-  -- function num : 0_8
-  (self._onClick)(self)
+function UISeasonMazeOvalTip:IconOnClick()
+  self._onClick(self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalTip.ArrowIconOnClick = function(self)
-  -- function num : 0_9
-  (self._onClick)(self)
+function UISeasonMazeOvalTip:ArrowIconOnClick()
+  self._onClick(self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalTip.ResetTarget = function(self, target, type)
-  -- function num : 0_10 , upvalues : _ENV
-  (self._uiView):SetShow(false, self)
-  ;
-  (self._uiView):SetShow(true, self)
+function UISeasonMazeOvalTip:ResetTarget(target, type)
+  self._uiView:SetShow(false, self)
+  self._uiView:SetShow(true, self)
   self._type = type
-  local cameraCfg = (Cfg.cfg_season_maze_camera)[self._seasonMazeID]
+  local cameraCfg = Cfg.cfg_season_maze_camera[self._seasonMazeID]
   if self._type == UISeasonOvalTipType.Player then
     self._target = target
-    ;
-    (self._icon):SetActive(true)
-    local min = (cameraCfg.PlayerTipHideRange)[1]
-    local max = (cameraCfg.PlayerTipHideRange)[2]
+    self._icon:SetActive(true)
+    local min = cameraCfg.PlayerTipHideRange[1]
+    local max = cameraCfg.PlayerTipHideRange[2]
     local maxSize = cameraCfg.CameraSizeMin
     local minSize = cameraCfg.CameraSizeMax
     self._tipHideParam = (max - min) / (maxSize - minSize)
     self._tipHideMinDistance = min
     self._cameraMinSize = minSize
   end
-  do
-    self:_RefreshIcon()
-    self:Hide()
-  end
+  self:_RefreshIcon()
+  self:Hide()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalTip.GetCanShowDistance = function(self, cameraSize)
-  -- function num : 0_11
+function UISeasonMazeOvalTip:GetCanShowDistance(cameraSize)
   if self._tipHideMinDistance then
     return self._tipHideMinDistance + (cameraSize - self._cameraMinSize) * self._tipHideParam
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalTip._RefreshIcon = function(self)
-  -- function num : 0_12
+function UISeasonMazeOvalTip:_RefreshIcon()
 end
-
-

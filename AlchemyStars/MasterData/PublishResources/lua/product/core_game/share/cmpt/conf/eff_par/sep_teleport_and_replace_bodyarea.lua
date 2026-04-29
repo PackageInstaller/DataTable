@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_teleport_and_replace_bodyarea.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParam_TeleportAndReplaceBodyArea", SkillEffectParamBase)
 SkillEffectParam_TeleportAndReplaceBodyArea = SkillEffectParam_TeleportAndReplaceBodyArea
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_TeleportAndReplaceBodyArea.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParam_TeleportAndReplaceBodyArea:Constructor(t)
   local posData = t.pos
   self._pos = Vector2(posData[1], posData[2])
   local dirData = t.dir
   self._dir = Vector2(dirData[1], dirData[2])
   self._bodyArea = {}
-  if not t.bodyArea then
-    local bodyAreaData = {}
-  end
-  for index,value in ipairs(bodyAreaData) do
+  local bodyAreaData = t.bodyArea or {}
+  for index, value in ipairs(bodyAreaData) do
     local off = Vector2(value[1], value[2])
-    ;
-    (table.insert)(self._bodyArea, off)
+    table.insert(self._bodyArea, off)
   end
   local gridOffSetData = t.gridOffSet
   self._gridOffSet = Vector2(gridOffSetData[1], gridOffSetData[2])
@@ -29,46 +19,26 @@ SkillEffectParam_TeleportAndReplaceBodyArea.Constructor = function(self, t)
   self._damageOffSet = Vector2(damageOffSetData[1], damageOffSetData[2])
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_TeleportAndReplaceBodyArea.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_TeleportAndReplaceBodyArea:GetEffectType()
   return SkillEffectType.TeleportAndReplaceBodyArea
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_TeleportAndReplaceBodyArea.GetTargetPos = function(self)
-  -- function num : 0_2
+function SkillEffectParam_TeleportAndReplaceBodyArea:GetTargetPos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_TeleportAndReplaceBodyArea.GetTargetDir = function(self)
-  -- function num : 0_3
+function SkillEffectParam_TeleportAndReplaceBodyArea:GetTargetDir()
   return self._dir
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_TeleportAndReplaceBodyArea.GetReplaceBodyArea = function(self)
-  -- function num : 0_4
+function SkillEffectParam_TeleportAndReplaceBodyArea:GetReplaceBodyArea()
   return self._bodyArea
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_TeleportAndReplaceBodyArea.GetReplaceGridOffSet = function(self)
-  -- function num : 0_5
+function SkillEffectParam_TeleportAndReplaceBodyArea:GetReplaceGridOffSet()
   return self._gridOffSet
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_TeleportAndReplaceBodyArea.GetReplaceDamageOffSet = function(self)
-  -- function num : 0_6
+function SkillEffectParam_TeleportAndReplaceBodyArea:GetReplaceDamageOffSet()
   return self._damageOffSet
 end
-
-

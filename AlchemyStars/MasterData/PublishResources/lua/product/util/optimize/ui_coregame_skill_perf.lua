@@ -1,54 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/optimize/ui_coregame_skill_perf.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICoreGameSkillPerfController", UIController)
 UICoreGameSkillPerfController = UICoreGameSkillPerfController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICoreGameSkillPerfController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UICoreGameSkillPerfController:OnShow(uiParams)
   self._fpsText = self:GetUIComponent("UILocalizationText", "fps")
   self._info = self:GetUIComponent("UILocalizationText", "info")
   self:AttachEvent(GameEventType.UpdateTestScenceInfo, self.UpdateTestScenceInfo)
   self:AttachEvent(GameEventType.TestSceneCloseButton, self.CloseButton)
   self.buttonGO = self:GetGameObject("Button")
   self._fpsTextGO = self:GetGameObject("fps")
-  self._module = (GameGlobal.GetModule)(SkillPerfModule)
+  self._module = GameGlobal.GetModule(SkillPerfModule)
   self._petID = self:GetUIComponent("InputField", "PetID")
   self._ActiveSkillID = self:GetUIComponent("InputField", "ActiveSkillID")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICoreGameSkillPerfController.BtnActiveSkillPerfOnClick = function(self, go)
-  -- function num : 0_1
-  (self._module):BeginActiveSkillStat()
+function UICoreGameSkillPerfController:BtnActiveSkillPerfOnClick(go)
+  self._module:BeginActiveSkillStat()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICoreGameSkillPerfController.BtnBackOnClick = function(self, go)
-  -- function num : 0_2
-  (self._module):PerfClose()
+function UICoreGameSkillPerfController:BtnBackOnClick(go)
+  self._module:PerfClose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICoreGameSkillPerfController.BtnStopOnClick = function(self, go)
-  -- function num : 0_3
-  (self._module):BeginActiveSkillStat()
+function UICoreGameSkillPerfController:BtnStopOnClick(go)
+  self._module:BeginActiveSkillStat()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICoreGameSkillPerfController.BtnSPActiveSkillPerfOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  local petID = tonumber((self._petID).text)
-  local skillID = tonumber((self._ActiveSkillID).text)
-  ;
-  (self._module):CastActiveSkill(petID, skillID)
+function UICoreGameSkillPerfController:BtnSPActiveSkillPerfOnClick(go)
+  local petID = tonumber(self._petID.text)
+  local skillID = tonumber(self._ActiveSkillID.text)
+  self._module:CastActiveSkill(petID, skillID)
 end
-
-

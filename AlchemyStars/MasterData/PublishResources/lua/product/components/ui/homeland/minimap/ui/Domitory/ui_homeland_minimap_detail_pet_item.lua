@@ -1,44 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/Domitory/ui_homeland_minimap_detail_pet_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapDetailPetItem", UICustomWidget)
 UIHomelandMinimapDetailPetItem = UIHomelandMinimapDetailPetItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapDetailPetItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandMinimapDetailPetItem:OnShow(uiParams)
   self:InitWidget()
-  self._affinity = (self.affinity):SpawnObject("UIHomePetAffinityItem")
+  self._affinity = self.affinity:SpawnObject("UIHomePetAffinityItem")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailPetItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIHomelandMinimapDetailPetItem:InitWidget()
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.affinity = self:GetUIComponent("UISelectObjectPath", "affinity")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailPetItem.SetData = function(self, pet)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandMinimapDetailPetItem:SetData(pet)
   if pet then
-    (self.icon):LoadImage(pet:GetPetTeamBody(PetSkinEffectPath.CARD_TEAM))
-    ;
-    (self._affinity):SetData(pet)
-    ;
-    ((self.icon).gameObject):SetActive(true)
-    ;
-    ((self._affinity):GetGameObject()):SetActive(true)
+    self.icon:LoadImage(pet:GetPetTeamBody(PetSkinEffectPath.CARD_TEAM))
+    self._affinity:SetData(pet)
+    self.icon.gameObject:SetActive(true)
+    self._affinity:GetGameObject():SetActive(true)
   else
-    ;
-    ((self.icon).gameObject):SetActive(false)
-    ;
-    ((self._affinity):GetGameObject()):SetActive(false)
+    self.icon.gameObject:SetActive(false)
+    self._affinity:GetGameObject():SetActive(false)
   end
 end
-
-

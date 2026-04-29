@@ -1,39 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/ui_world_boss_dan_detail_tips_context.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorldBossDanDetailTipsContext", UICustomWidget)
 UIWorldBossDanDetailTipsContext = UIWorldBossDanDetailTipsContext
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossDanDetailTipsContext.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWorldBossDanDetailTipsContext:OnShow(uiParams)
   self._rect = self:GetUIComponent("RectTransform", "rect")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailTipsContext.OnHide = function(self)
-  -- function num : 0_1
+function UIWorldBossDanDetailTipsContext:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailTipsContext.SetData = function(self, str, go)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWorldBossDanDetailTipsContext:SetData(str, go)
   self:Lock("UIWorldBossDanDetailTipsController")
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rect).position = (go:GetComponent("Transform")).position
-  local anchoredPosition = (self._rect).anchoredPosition
+  self._rect.position = go:GetComponent("Transform").position
+  local anchoredPosition = self._rect.anchoredPosition
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, self, str, anchoredPosition
     YIELD(TT, 50)
     self:ShowDialog("UIWorldBossDanDetailTipsController", str, anchoredPosition)
-  end
-, self)
+  end, self)
 end
-
-

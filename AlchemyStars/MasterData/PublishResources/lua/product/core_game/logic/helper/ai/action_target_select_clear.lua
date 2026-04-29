@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_target_select_clear.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionTargetSelectClear", AINewNode)
 ActionTargetSelectClear = ActionTargetSelectClear
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionTargetSelectClear.Constructor = function(self)
-  -- function num : 0_0
+function ActionTargetSelectClear:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTargetSelectClear.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionTargetSelectClear.super).Reset)(self)
+function ActionTargetSelectClear:Reset()
+  ActionTargetSelectClear.super.Reset(self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTargetSelectClear.OnBegin = function(self)
-  -- function num : 0_2
-  local aiCmpt = (self.m_entityOwn):AI()
+function ActionTargetSelectClear:OnBegin()
+  local aiCmpt = self.m_entityOwn:AI()
   self:ResetTarget()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTargetSelectClear.OnUpdate = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local aiCmpt = (self.m_entityOwn):AI()
+function ActionTargetSelectClear:OnUpdate()
+  local aiCmpt = self.m_entityOwn:AI()
   local entityPlayer = aiCmpt:GetTargetDefault()
   self:ResetTarget()
   self:PrintDebugLog("目标清空，玩家ID = ", entityPlayer:GetID())
   return AINewNodeStatus.Success
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTargetSelectClear.OnEnd = function(self)
-  -- function num : 0_4
+function ActionTargetSelectClear:OnEnd()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTargetSelectClear.ResetTarget = function(self)
-  -- function num : 0_5
+function ActionTargetSelectClear:ResetTarget()
   self:SetRuntimeData("Target", nil)
 end
-
-

@@ -1,33 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_forecast/ui_pet_forecast_data_loader.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetForecastDataLoader", Object)
 UIPetForecastDataLoader = UIPetForecastDataLoader
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetForecastDataLoader.SetData = function(self, params)
-  -- function num : 0_0
+function UIPetForecastDataLoader:SetData(params)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastDataLoader.LoadData = function(self, TT, res)
-  -- function num : 0_1 , upvalues : _ENV
-  local signInModule = (GameGlobal.GetModule)(SignInModule)
+function UIPetForecastDataLoader:LoadData(TT, res)
+  local signInModule = GameGlobal.GetModule(SignInModule)
   local data = signInModule:GetPredictionData()
   local ret, replyEvent = signInModule:PredictionReq(TT)
-  if (PetForecastData.CheckCode)(ret:GetResult(), false) then
+  if PetForecastData.CheckCode(ret:GetResult(), false) then
     data:Init(replyEvent.info)
     return data
   else
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, -1)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, -1)
     res:SetSucc(false)
-    ;
-    (Log.warn)("### PredictionReq failed.")
+    Log.warn("### PredictionReq failed.")
   end
 end
-
-

@@ -1,63 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/lottery/ui_n27_lottery_unlock_pool.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN27LotteryUnlockPool", UIController)
 UIN27LotteryUnlockPool = UIN27LotteryUnlockPool
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN27LotteryUnlockPool.Constructor = function(self)
-  -- function num : 0_0
+function UIN27LotteryUnlockPool:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryUnlockPool.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN27LotteryUnlockPool:OnShow(uiParams)
   self._txtAnywhereGoto = self:GetUIComponent("UILocalizationText", "txtAnywhereGoto")
   self._animation = self:GetUIComponent("Animation", "animation")
   self._imgLanguageShadowAnimation = self:GetUIComponent("Animation", "imgLanguageShadowAnimation")
   self:StartTask(self.StationPerformanceTask, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryUnlockPool.BtnAnywhereOnClick = function(self, go)
-  -- function num : 0_2
+function UIN27LotteryUnlockPool:BtnAnywhereOnClick(go)
   self:StartTask(self.CloseDialogTask, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryUnlockPool.StationPerformanceTask = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN27LotteryUnlockPool:StationPerformanceTask(TT)
   self:Lock("UIN27LotteryUnlockPool:StationPerformance")
-  ;
-  ((self._txtAnywhereGoto).gameObject):SetActive(false)
-  ;
-  (self._animation):Play("uieffanim_UIN27LotteryUnlockPool_in")
+  self._txtAnywhereGoto.gameObject:SetActive(false)
+  self._animation:Play("uieffanim_UIN27LotteryUnlockPool_in")
   YIELD(TT, 400)
-  ;
-  (self._imgLanguageShadowAnimation):Play("uieffanim_UIN27LotteryUnlockPool_imgLanguageShadow_loop")
+  self._imgLanguageShadowAnimation:Play("uieffanim_UIN27LotteryUnlockPool_imgLanguageShadow_loop")
   YIELD(TT, 100)
-  ;
-  ((self._txtAnywhereGoto).gameObject):SetActive(true)
+  self._txtAnywhereGoto.gameObject:SetActive(true)
   self:UnLock("UIN27LotteryUnlockPool:StationPerformance")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryUnlockPool.CloseDialogTask = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN27LotteryUnlockPool:CloseDialogTask(TT)
   self:Lock("UIN27LotteryUnlockPool:CloseDialog")
-  ;
-  (self._animation):Play("uieffanim_UIN27LotteryUnlockPool_out")
+  self._animation:Play("uieffanim_UIN27LotteryUnlockPool_out")
   YIELD(TT, 367)
   self:CloseDialog()
   YIELD(TT, 200)
   self:CallUIMethod("UIN27LotteryMain", "BtnAnywhereOnClick", go)
   self:UnLock("UIN27LotteryUnlockPool:CloseDialog")
 end
-
-

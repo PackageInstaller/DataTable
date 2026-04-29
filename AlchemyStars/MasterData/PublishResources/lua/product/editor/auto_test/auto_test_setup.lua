@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/auto_test_setup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AutoTestSetup", Object)
 AutoTestSetup = AutoTestSetup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AutoTestSetup.Constructor = function(self, setup)
-  -- function num : 0_0
+function AutoTestSetup:Constructor(setup)
   self._config = setup
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestSetup.BeforeLoading = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  for i,cfg in ipairs(self._config) do
+function AutoTestSetup:BeforeLoading()
+  for i, cfg in ipairs(self._config) do
     local f = self[cfg.setup .. "_Test1"]
     if f then
       f(self, cfg.args)
@@ -24,12 +14,9 @@ AutoTestSetup.BeforeLoading = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestSetup.OnWaitInput = function(self, world)
-  -- function num : 0_2 , upvalues : _ENV
+function AutoTestSetup:OnWaitInput(world)
   self._world = world
-  for i,cfg in ipairs(self._config) do
+  for i, cfg in ipairs(self._config) do
     local f = self[cfg.setup .. "_Test2"]
     if f then
       f(self, cfg.args)
@@ -37,72 +24,43 @@ AutoTestSetup.OnWaitInput = function(self, world)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestSetup.LevelBasic_Test1 = function(self, args)
-  -- function num : 0_3
+function AutoTestSetup:LevelBasic_Test1(args)
   self.matchType = args.matchType
   self.levelID = args.levelID
   self.words = args.words
   self.affixs = args.affixs
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestSetup.SetLevelRoundCount_Test1 = function(self, args)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (Cfg.cfg_level)[self.levelID]
+function AutoTestSetup:SetLevelRoundCount_Test1(args)
+  local cfg = Cfg.cfg_level[self.levelID]
   self._originalRoundCount = cfg.Round
   cfg.Round = args.levelRoundCount
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestSetup.SetLevelRoundCount_Test2 = function(self, args)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfg = (Cfg.cfg_level)[self.levelID]
+function AutoTestSetup:SetLevelRoundCount_Test2(args)
+  local cfg = Cfg.cfg_level[self.levelID]
   cfg.Round = self._originalRoundCount
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestSetup.SetLevelWaveIDList_Test1 = function(self, args)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg = (Cfg.cfg_level)[self.levelID]
+function AutoTestSetup:SetLevelWaveIDList_Test1(args)
+  local cfg = Cfg.cfg_level[self.levelID]
   self._originalWaveIDList = cfg.MonsterWave
   cfg.MonsterWave = args.waveIDList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestSetup.SetLevelWaveIDList_Test2 = function(self, args)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg = (Cfg.cfg_level)[self.levelID]
+function AutoTestSetup:SetLevelWaveIDList_Test2(args)
+  local cfg = Cfg.cfg_level[self.levelID]
   cfg.MonsterWave = self._originalWaveIDList
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestSetup.AddWaveMonster_Test = function(self, args)
-  -- function num : 0_8
+function AutoTestSetup:AddWaveMonster_Test(args)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestSetup.AddWaveTrap_Test = function(self, args)
-  -- function num : 0_9
+function AutoTestSetup:AddWaveTrap_Test(args)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestSetup.SetLevelCompleteCondition_Test = function(self, args)
-  -- function num : 0_10
+function AutoTestSetup:SetLevelCompleteCondition_Test(args)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestSetup.AddWaveCompleteCondition_Test = function(self, args)
-  -- function num : 0_11
+function AutoTestSetup:AddWaveCompleteCondition_Test(args)
 end
-
-

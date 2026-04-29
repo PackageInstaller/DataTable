@@ -1,34 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/helper/custom_logic/custom_logic_factory.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CustomLogicGenInfo", Object)
 CustomLogicGenInfo = CustomLogicGenInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CustomLogicGenInfo.Constructor = function(self)
-  -- function num : 0_0
+function CustomLogicGenInfo:Constructor()
   self.CustomLogicConfigID = -1
   self.CustomLogicConfigTable = nil
 end
 
 _staticClass("CustomLogicFactory")
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
 CustomLogicFactory.CreateIndexTable = {}
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-CustomLogicFactory.Static_CreateLogic = function(genInfo)
-  -- function num : 0_1 , upvalues : _ENV
+function CustomLogicFactory.Static_CreateLogic(genInfo)
   local cfgID = genInfo.CustomLogicConfigID
-  local config = (genInfo.CustomLogicConfigTable)[cfgID]
+  local config = genInfo.CustomLogicConfigTable[cfgID]
   if not config then
-    (Log.fatal)("CreateLogic Cant Find Config : id = " .. cfgID)
+    Log.fatal("CreateLogic Cant Find Config : id = " .. cfgID)
     return nil
   end
-  local logic = (Classes[config.Type]):New()
-  logic.InstanceID = (CustomLogicFactory.Static_GenerateInstanceID)(config.Type)
+  local logic = Classes[config.Type]:New()
+  logic.InstanceID = CustomLogicFactory.Static_GenerateInstanceID(config.Type)
   local context = CustomNodeContext:New(genInfo, logic, genInfo.CustomLogicConfigTable)
   logic:InitializeNode(config, context)
   logic.CustomLogicID = cfgID
@@ -36,28 +25,17 @@ CustomLogicFactory.Static_CreateLogic = function(genInfo)
   return logic
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomLogicFactory.Static_DestroyLogic = function(logic)
-  -- function num : 0_2
+function CustomLogicFactory.Static_DestroyLogic(logic)
   logic:Destroy()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomLogicFactory.Static_GenerateInstanceID = function(custom_logic_type)
-  -- function num : 0_3 , upvalues : _ENV
-  local type_create_index = (CustomLogicFactory.CreateIndexTable)[custom_logic_type]
+function CustomLogicFactory.Static_GenerateInstanceID(custom_logic_type)
+  local type_create_index = CustomLogicFactory.CreateIndexTable[custom_logic_type]
   if type_create_index then
     type_create_index = type_create_index + 1
   else
     type_create_index = 1
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (CustomLogicFactory.CreateIndexTable)[custom_logic_type] = type_create_index
+  CustomLogicFactory.CreateIndexTable[custom_logic_type] = type_create_index
   return type_create_index
 end
-
-

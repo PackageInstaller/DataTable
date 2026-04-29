@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/game/ui_n25_idol_game_training_class.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolGameTrainingClass", UICustomWidget)
 UIN25IdolGameTrainingClass = UIN25IdolGameTrainingClass
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolGameTrainingClass.SetData = function(self, trainType, value, txtSong, head, muse, callback)
-  -- function num : 0_0
+function UIN25IdolGameTrainingClass:SetData(trainType, value, txtSong, head, muse, callback)
   self._trainType = trainType or 1
   self._callback = callback
   self:_SetState(trainType)
@@ -17,83 +10,61 @@ UIN25IdolGameTrainingClass.SetData = function(self, trainType, value, txtSong, h
   self:_SetText(txtSong)
   self:_SetTrainPoint(muse, trainType, value)
   self:_SetMuse(muse ~= nil)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGameTrainingClass._SetState = function(self, state)
-  -- function num : 0_1 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"_bg_music", "_headBg_music"}
-, 
-{"_bg_dance", "_headBg_dance"}
-, 
-{"_bg_perform", "_headBg_perform"}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+function UIN25IdolGameTrainingClass:_SetState(state)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {
+      "_bg_music",
+      "_headBg_music"
+    },
+    {
+      "_bg_dance",
+      "_headBg_dance"
+    },
+    {
+      "_bg_perform",
+      "_headBg_perform"
+    }
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGameTrainingClass.SetBtnState = function(self, state)
-  -- function num : 0_2 , upvalues : _ENV
-  self._btnStateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"StartBtn"}
-, 
-{"ProcessBtn"}
-}, self._btnStateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._btnStateObj, state)
+function UIN25IdolGameTrainingClass:SetBtnState(state)
+  self._btnStateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {"StartBtn"},
+    {"ProcessBtn"}
+  }, self._btnStateObj)
+  UIWidgetHelper.SetObjGroupShow(self._btnStateObj, state)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGameTrainingClass._SetHead = function(self, head)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN25IdolGameTrainingClass:_SetHead(head)
   if head then
-    (UIWidgetHelper.SetRawImage)(self, "_head", head)
+    UIWidgetHelper.SetRawImage(self, "_head", head)
   end
-  ;
-  (self:GetGameObject("_headGroup")):SetActive(head ~= nil)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self:GetGameObject("_headGroup"):SetActive(head ~= nil)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGameTrainingClass._SetText = function(self, txtSong)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN25IdolGameTrainingClass:_SetText(txtSong)
   if txtSong then
-    (UIWidgetHelper.SetLocalizationText)(self, "_txtSong", (StringTable.Get)(txtSong))
+    UIWidgetHelper.SetLocalizationText(self, "_txtSong", StringTable.Get(txtSong))
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGameTrainingClass._SetTrainPoint = function(self, muse, trainType, value)
-  -- function num : 0_5 , upvalues : _ENV
-  local uiType = not muse and muse and 3 or 2
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_trainPoint", "UIN25IdolCommonTrainPoint")
+function UIN25IdolGameTrainingClass:_SetTrainPoint(muse, trainType, value)
+  value = muse or value
+  local uiType = muse and 3 or 2
+  local obj = UIWidgetHelper.SpawnObject(self, "_trainPoint", "UIN25IdolCommonTrainPoint")
   obj:SetData(uiType, trainType, value, nil)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGameTrainingClass._SetMuse = function(self, isShow)
-  -- function num : 0_6 , upvalues : _ENV
-  (self:GetGameObject("_muse")):SetActive(isShow)
-  ;
-  (UIWidgetHelper.SetAnimationPlay)(self, "_anim", "uieff_UIN25IdolGameTrainingClass_muse_loop")
+function UIN25IdolGameTrainingClass:_SetMuse(isShow)
+  self:GetGameObject("_muse"):SetActive(isShow)
+  UIWidgetHelper.SetAnimationPlay(self, "_anim", "uieff_UIN25IdolGameTrainingClass_muse_loop")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGameTrainingClass.StartBtnOnClick = function(self, go)
-  -- function num : 0_7
+function UIN25IdolGameTrainingClass:StartBtnOnClick(go)
   if self._callback then
-    (self._callback)(self._trainType, self)
+    self._callback(self._trainType, self)
   end
 end
-
-

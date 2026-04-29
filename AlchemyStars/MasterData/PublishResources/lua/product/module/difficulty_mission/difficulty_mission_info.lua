@@ -1,81 +1,92 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/difficulty_mission/difficulty_mission_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local DifficultyMissionErrorType = {E_DIFFICULTYMISSION_ERROR_TYPE_SUCCESS = 0, E_DIFFICULTYMISSION_ERROR_TYPE_FAILURE = 1, E_DIFFICULTYMISSION_LOAD_ERROR = 2, E_DIFFICULTYMISSION_SAVE_ERROR = 3, E_DIFFICULTYMISSION_ERROR_UNLOCK = 4, E_DIFFICULTYMISSION_ERROR_RECORD_NOT_EXIST = 5, E_DIFFICULTYMISSION_CHOSE_RECORD_ERROR = 6, E_DIFFICULTYMISSION_FORMATION_INVALID_PET = 10, E_DIFFICULTYMISSION_FORMATION_INVALID_PETCOUNT = 11, E_DIFFICULTYMISSION_FORMATION_DUPLICATION_PET = 12, E_DIFFICULTYMISSION_FORMATION_DATA_INVALID = 13, E_DIFFICULTYMISSION_FORMATION_SAME_BINDER = 14}
+local DifficultyMissionErrorType = {
+  E_DIFFICULTYMISSION_ERROR_TYPE_SUCCESS = 0,
+  E_DIFFICULTYMISSION_ERROR_TYPE_FAILURE = 1,
+  E_DIFFICULTYMISSION_LOAD_ERROR = 2,
+  E_DIFFICULTYMISSION_SAVE_ERROR = 3,
+  E_DIFFICULTYMISSION_ERROR_UNLOCK = 4,
+  E_DIFFICULTYMISSION_ERROR_RECORD_NOT_EXIST = 5,
+  E_DIFFICULTYMISSION_CHOSE_RECORD_ERROR = 6,
+  E_DIFFICULTYMISSION_FORMATION_INVALID_PET = 10,
+  E_DIFFICULTYMISSION_FORMATION_INVALID_PETCOUNT = 11,
+  E_DIFFICULTYMISSION_FORMATION_DUPLICATION_PET = 12,
+  E_DIFFICULTYMISSION_FORMATION_DATA_INVALID = 13,
+  E_DIFFICULTYMISSION_FORMATION_SAME_BINDER = 14
+}
 _enum("DifficultyMissionErrorType", DifficultyMissionErrorType)
 local DifficultyMissionFormationPetPlaceType = {E_DM_FormationPetPlaceType_None = 0}
 _enum("DifficultyMissionFormationPetPlaceType", DifficultyMissionFormationPetPlaceType)
 _class("SubMissionInfo", Object)
 SubMissionInfo = SubMissionInfo
--- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
 
-SubMissionInfo.Constructor = function(self)
-  -- function num : 0_0
+function SubMissionInfo:Constructor()
   self.mission_id = 0
   self.pet_list = {}
   self.max_left_turn = 0
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
 SubMissionInfo._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"pet_list", "list<int64>"}
-, 
-[3] = {"max_left_turn", "int"}
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "pet_list",
+    "list<int64>"
+  },
+  [3] = {
+    "max_left_turn",
+    "int"
+  }
 }
 _class("ParentMissionInfo", Object)
 ParentMissionInfo = ParentMissionInfo
--- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
 
-ParentMissionInfo.Constructor = function(self)
-  -- function num : 0_1
+function ParentMissionInfo:Constructor()
   self.parent_mission_id = 0
   self.sub_mission_infos = {}
   self.complete_enties = {}
   self.status = 0
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R2 in 'UnsetPending'
-
 ParentMissionInfo._proto = {
-[1] = {"parent_mission_id", "int"}
-, 
-[2] = {"sub_mission_infos", "list<SubMissionInfo>"}
-, 
-[3] = {"complete_enties", "list<int>"}
-, 
-[4] = {"status", "int"}
+  [1] = {
+    "parent_mission_id",
+    "int"
+  },
+  [2] = {
+    "sub_mission_infos",
+    "list<SubMissionInfo>"
+  },
+  [3] = {
+    "complete_enties",
+    "list<int>"
+  },
+  [4] = {"status", "int"}
 }
 _class("ClientDifficultyMissionInfo", Object)
 ClientDifficultyMissionInfo = ClientDifficultyMissionInfo
--- DECOMPILER ERROR at PC90: Confused about usage of register: R2 in 'UnsetPending'
 
-ClientDifficultyMissionInfo.Constructor = function(self)
-  -- function num : 0_2
+function ClientDifficultyMissionInfo:Constructor()
   self.cur_parent_id = 0
   self.infos = {}
   self.pet_list = {}
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R2 in 'UnsetPending'
-
 ClientDifficultyMissionInfo._proto = {
-[1] = {"cur_parent_id", "int"}
-, 
-[2] = {"infos", "map<int,ParentMissionInfo>"}
-, 
-[3] = {"pet_list", "list<int64>"}
+  [1] = {
+    "cur_parent_id",
+    "int"
+  },
+  [2] = {
+    "infos",
+    "map<int,ParentMissionInfo>"
+  },
+  [3] = {
+    "pet_list",
+    "list<int64>"
+  }
 }
 _class("parent_mission_pass_info", Object)
 parent_mission_pass_info = parent_mission_pass_info
--- DECOMPILER ERROR at PC117: Confused about usage of register: R2 in 'UnsetPending'
 
-parent_mission_pass_info.Constructor = function(self)
-  -- function num : 0_3
+function parent_mission_pass_info:Constructor()
   self.pstid = 0
   self.mission_id = 0
   self.nick = ""
@@ -86,23 +97,16 @@ parent_mission_pass_info.Constructor = function(self)
   self.frame_id = 0
 end
 
--- DECOMPILER ERROR at PC160: Confused about usage of register: R2 in 'UnsetPending'
-
 parent_mission_pass_info._proto = {
-[1] = {"pstid", "int64"}
-, 
-[2] = {"mission_id", "int"}
-, 
-[3] = {"nick", "string"}
-, 
-[4] = {"head", "int"}
-, 
-[5] = {"head_bg", "int"}
-, 
-[6] = {"formation_info", "map<int,list<mission_pass_pet_info>>"}
-, 
-[7] = {"pass_time", "time"}
-, 
-[8] = {"frame_id", "int"}
+  [1] = {"pstid", "int64"},
+  [2] = {"mission_id", "int"},
+  [3] = {"nick", "string"},
+  [4] = {"head", "int"},
+  [5] = {"head_bg", "int"},
+  [6] = {
+    "formation_info",
+    "map<int,list<mission_pass_pet_info>>"
+  },
+  [7] = {"pass_time", "time"},
+  [8] = {"frame_id", "int"}
 }
-

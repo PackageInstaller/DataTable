@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/ui_season_bubble.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBubble", UIController)
 UISeasonBubble = UISeasonBubble
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBubble.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonBubble:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBubble.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISeasonBubble:OnShow(uiParams)
   self._bubbles = uiParams[1]
   self._eventPoint = uiParams[2]
   self._callBack = uiParams[3]
@@ -25,10 +15,7 @@ UISeasonBubble.OnShow = function(self, uiParams)
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBubble._GetComponents = function(self)
-  -- function num : 0_2
+function UISeasonBubble:_GetComponents()
   self._animation = self:GetUIComponent("Animation", "Animation")
   self._dialogLeftGO = self:GetGameObject("DialogLeft")
   self._dialogLeftRect = self:GetUIComponent("RectTransform", "DialogLeft")
@@ -38,77 +25,64 @@ UISeasonBubble._GetComponents = function(self)
   self._contentRight = self:GetUIComponent("UILocalizationText", "ContentRight")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBubble._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self._seasonManager = (self:GetUIModule(SeasonModule)):SeasonManager()
-  self._player = ((self._seasonManager):SeasonPlayerManager()):GetPlayer()
-  self._camera = ((self._seasonManager):SeasonCameraManager()):Camera()
+function UISeasonBubble:_OnValue()
+  self._seasonManager = self:GetUIModule(SeasonModule):SeasonManager()
+  self._player = self._seasonManager:SeasonPlayerManager():GetPlayer()
+  self._camera = self._seasonManager:SeasonCameraManager():Camera()
   self:_RefershText()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBubble._RefershText = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local bubble = (self._bubbles)[self._index]
+function UISeasonBubble:_RefershText()
+  local bubble = self._bubbles[self._index]
   if bubble then
     local text = bubble.text
     local bubbleType = bubble.type
     local offset = Vector2(0, 0)
-    if not (bubble.offset).x then
-      offset.x = not bubble.offset or 0
-      offset.y = (bubble.offset).y or 0
-      local bubbleObject, dialogGO, dialogRect, content = nil, nil, nil, nil
-      if bubbleType == SeasonBubbleObjectType.EventPoint then
-        bubbleObject = self._eventPoint
-        if ((self._player):Position()).x <= ((self._eventPoint):Position()).x then
-          offset.x = offset.x + self._offsetX
-          dialogGO = self._dialogLeftGO
-          dialogRect = self._dialogLeftRect
-          content = self._contentLeft
-          ;
-          (self._dialogRightGO):SetActive(false)
-        else
-          offset.x = offset.x - self._offsetX
-          dialogGO = self._dialogRightGO
-          dialogRect = self._dialogRightRect
-          content = self._contentRight
-          ;
-          (self._dialogLeftGO):SetActive(false)
-        end
-      else
-        bubbleObject = self._player
-        if ((self._eventPoint):Position()).x <= ((self._player):Position()).x then
-          offset.x = offset.x + self._offsetX
-          dialogGO = self._dialogLeftGO
-          dialogRect = self._dialogLeftRect
-          content = self._contentLeft
-          ;
-          (self._dialogRightGO):SetActive(false)
-        else
-          offset.x = offset.x - self._offsetX
-          dialogGO = self._dialogRightGO
-          dialogRect = self._dialogRightRect
-          content = self._contentRight
-          ;
-          (self._dialogLeftGO):SetActive(false)
-        end
-      end
-      local point = (self._camera):WorldToScreenPoint(bubbleObject:Position())
-      local res, pos = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)((dialogRect.parent).parent, point, (((GameGlobal.UIStateManager)()):GetControllerCamera("UISeasonBubble")), nil)
-      dialogRect.anchoredPosition = pos + offset
-      content:SetText((StringTable.Get)(text))
-      dialogGO:SetActive(true)
+    if bubble.offset then
+      offset.x = bubble.offset.x or 0
+      offset.y = bubble.offset.y or 0
     end
+    local bubbleObject, dialogGO, dialogRect, content
+    if bubbleType == SeasonBubbleObjectType.EventPoint then
+      bubbleObject = self._eventPoint
+      if self._eventPoint:Position().x >= self._player:Position().x then
+        offset.x = offset.x + self._offsetX
+        dialogGO = self._dialogLeftGO
+        dialogRect = self._dialogLeftRect
+        content = self._contentLeft
+        self._dialogRightGO:SetActive(false)
+      else
+        offset.x = offset.x - self._offsetX
+        dialogGO = self._dialogRightGO
+        dialogRect = self._dialogRightRect
+        content = self._contentRight
+        self._dialogLeftGO:SetActive(false)
+      end
+    else
+      bubbleObject = self._player
+      if self._player:Position().x >= self._eventPoint:Position().x then
+        offset.x = offset.x + self._offsetX
+        dialogGO = self._dialogLeftGO
+        dialogRect = self._dialogLeftRect
+        content = self._contentLeft
+        self._dialogRightGO:SetActive(false)
+      else
+        offset.x = offset.x - self._offsetX
+        dialogGO = self._dialogRightGO
+        dialogRect = self._dialogRightRect
+        content = self._contentRight
+        self._dialogLeftGO:SetActive(false)
+      end
+    end
+    local point = self._camera:WorldToScreenPoint(bubbleObject:Position())
+    local res, pos = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(dialogRect.parent.parent, point, GameGlobal.UIStateManager():GetControllerCamera("UISeasonBubble"), nil)
+    dialogRect.anchoredPosition = pos + offset
+    content:SetText(StringTable.Get(text))
+    dialogGO:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBubble.NextBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UISeasonBubble:NextBtnOnClick(go)
   self._index = self._index + 1
   if self._index <= #self._bubbles then
     self:_RefershText()
@@ -117,24 +91,16 @@ UISeasonBubble.NextBtnOnClick = function(self, go)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBubble.Close = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonBubble:Close()
   self:Lock("UISeasonBubbleClose")
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, _ENV
-    (self._animation):Play("uianim_UISeasonBubble_out")
+    self._animation:Play("uianim_UISeasonBubble_out")
     YIELD(TT, 500)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISeasonBubble)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISeasonBubble)
     self:CloseDialog()
     if self._callBack then
-      (self._callBack)({})
+      self._callBack({})
     end
     self:UnLock("UISeasonBubbleClose")
-  end
-)
+  end)
 end
-
-

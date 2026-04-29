@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/social/air_group_action_machine.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("fsm_state_machine")
 require("air_group_action_state_base")
 _class("AirGroupActionMachine", FSMStateMachine)
 AirGroupActionMachine = AirGroupActionMachine
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-AirGroupActionMachine.Constructor = function(self, executor, stateTypes)
-  -- function num : 0_0
+function AirGroupActionMachine:Constructor(executor, stateTypes)
   self.m_StateTypes = stateTypes
   self.m_CurIndex = 0
   self._disposed = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionMachine.OnInit = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function AirGroupActionMachine:OnInit()
   self:Add(AirGroupActionNoneState:New(AirGroupActionStateType.None, self))
   self:Add(AirGroupActionMoveState:New(AirGroupActionStateType.Move, self))
   self:Add(AirGroupActionFollowState:New(AirGroupActionStateType.Follow, self))
@@ -35,57 +25,42 @@ AirGroupActionMachine.OnInit = function(self)
   self:SetDefault(AirGroupActionStateType.None)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionMachine.ChangeNextState = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function AirGroupActionMachine:ChangeNextState()
   self.m_CurIndex = self.m_CurIndex + 1
-  if #self.m_StateTypes < self.m_CurIndex and not self._disposed then
-    self._disposed = true
-    if self.callback then
-      (self.callback)(self.sender)
+  if self.m_CurIndex > #self.m_StateTypes then
+    if not self._disposed then
+      self._disposed = true
+      if self.callback then
+        self.callback(self.sender)
+      end
     end
+  else
+    self:ChangeState(self.m_StateTypes[self.m_CurIndex])
+    Log.error("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!改变行为", self.m_StateTypes[self.m_CurIndex])
   end
-  self:ChangeState((self.m_StateTypes)[self.m_CurIndex])
-  ;
-  (Log.error)("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!改变行为", (self.m_StateTypes)[self.m_CurIndex])
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionMachine.ChangeStartState = function(self, state)
-  -- function num : 0_3 , upvalues : _ENV
-  local index = (table.ikey)(self.m_StateTypes, state)
+function AirGroupActionMachine:ChangeStartState(state)
+  local index = table.ikey(self.m_StateTypes, state)
   self.m_CurIndex = index
-  self:ChangeState((self.m_StateTypes)[self.m_CurIndex])
+  self:ChangeState(self.m_StateTypes[self.m_CurIndex])
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionMachine.StartState = function(self)
-  -- function num : 0_4
+function AirGroupActionMachine:StartState()
   self.m_CurIndex = 1
-  self:ChangeState((self.m_StateTypes)[self.m_CurIndex])
+  self:ChangeState(self.m_StateTypes[self.m_CurIndex])
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionMachine.SetProcessFinish = function(self, callBack, sender)
-  -- function num : 0_5
+function AirGroupActionMachine:SetProcessFinish(callBack, sender)
   self.callback = callBack
   self.sender = sender
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionMachine.OnDispose = function(self)
-  -- function num : 0_6
+function AirGroupActionMachine:OnDispose()
   if not self._disposed then
     self._disposed = true
     if self.callback then
-      (self.callback)(self.sender)
+      self.callback(self.sender)
     end
   end
 end
-
-

@@ -1,240 +1,515 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/battle_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("piece_type")
-BattleConst = {FrameTime = 0.033333333333333, MoveSpeed = 4.5, MoveInternal = 1000, CanMoveInternal = 1000, SuperChainCount = 15, OneGridMoveTime = 0.22222222222222, OneGridObliqueMoveTime = (math.sqrt)(2) / 4.5, NormalSceneLayer = 0, DarkSceneLayer = 16, DarkShaderValue = 0.4, DarkShaderDuration = 1, TiltShiftLayer = 20, ChainSkillToDarkTime = 300, ChainSkillDarkAlpha = 0.5, ChainSkillToNormalTime = 500, ActiveSkillDarkAlpha = 0.5, ActiveSkillToNormalTime = 500, StunWaitTime = 2000, FlySpeed = 50, Strong = 0.2, Counter = 0.2, LowHpWarningPercent = 30, FocusPlayerFov = 5.5, FocusFovTimeLen = 0.2, FocusWaitTime = 10, FocusToNormalTimeLen = 0.3, FocusDeltaPos = 7, BorderDistance = 4, CameraMaxTranslate = 13, CameraNormalTranslate = 13, TouchMoveCameraSpeed = 0.002, TouchMoveCameraEdgeSpeed = 0.004, MoveCameraEdge = 7, MoveCameraToNormalTime = 0.3, MoveCameraToDeltaTime = 0.25, CameraMaxHorizatalLeft = 2.85, CameraMaxHorizatalRight = 2.85, CameraMaxVerticalUp = 1.6, CameraMaxVerticalDown = 1.6, CameraDefaultAspect = 1.77777, HeadBuffHeightOffset = 0.5, FreezeTimeScale = 0.1, FreezeDuration = 300, BonusShowDuration = 3000, HitAnimationIntervalMs = 500, HitbackSpeed = 30, DefaultHitbackAnimName = "Hit", ManualConvertCount = 5, BulletTimeSpeed = 0.15, CollectPanelShowTimeLen = 5000, CollectPanelDuration = 0.3, GuideFingerDuration = 5, GuidePathInternal = 0.2, GuidePathStepWaitTime = 1000, LastPlayerFov = 4, LastFovTimeLen = 0.009, LastBackTimeLen = 0.8, StoryTipsDuration = 2000, StoryTipsHideIntervalDuration = 800, 
-StoryTipsRightGridPosList = {
-{1, 3}
-, 
-{1, 4}
-, 
-{1, 5}
-, 
-{1, 6}
-, 
-{1, 7}
-, 
-{2, 2}
-, 
-{2, 3}
-, 
-{2, 4}
-, 
-{2, 5}
-, 
-{2, 6}
-, 
-{2, 7}
-, 
-{2, 8}
-, 
-{3, 1}
-, 
-{3, 2}
-, 
-{3, 3}
-, 
-{3, 4}
-, 
-{3, 5}
-, 
-{3, 6}
-, 
-{3, 7}
-, 
-{4, 1}
-, 
-{4, 2}
-, 
-{4, 3}
-, 
-{4, 4}
-, 
-{4, 5}
-, 
-{4, 6}
-, 
-{5, 1}
-, 
-{5, 2}
-, 
-{5, 3}
-, 
-{5, 4}
-, 
-{5, 5}
-, 
-{6, 1}
-, 
-{6, 2}
-, 
-{6, 3}
-, 
-{6, 4}
-, 
-{7, 1}
-, 
-{7, 2}
-, 
-{7, 3}
-, 
-{8, 2}
+BattleConst = {
+  FrameTime = 0.03333333333333333,
+  MoveSpeed = 4.5,
+  MoveInternal = 1000,
+  CanMoveInternal = 1000,
+  SuperChainCount = 15,
+  OneGridMoveTime = 0.2222222222222222,
+  OneGridObliqueMoveTime = math.sqrt(2) / 4.5,
+  NormalSceneLayer = 0,
+  DarkSceneLayer = 16,
+  DarkShaderValue = 0.4,
+  DarkShaderDuration = 1,
+  TiltShiftLayer = 20,
+  ChainSkillToDarkTime = 300,
+  ChainSkillDarkAlpha = 0.5,
+  ChainSkillToNormalTime = 500,
+  ActiveSkillDarkAlpha = 0.5,
+  ActiveSkillToNormalTime = 500,
+  StunWaitTime = 2000,
+  FlySpeed = 50,
+  Strong = 0.2,
+  Counter = 0.2,
+  LowHpWarningPercent = 30,
+  FocusPlayerFov = 5.5,
+  FocusFovTimeLen = 0.2,
+  FocusWaitTime = 10,
+  FocusToNormalTimeLen = 0.3,
+  FocusDeltaPos = 7,
+  BorderDistance = 4,
+  CameraMaxTranslate = 13,
+  CameraNormalTranslate = 13,
+  TouchMoveCameraSpeed = 0.002,
+  TouchMoveCameraEdgeSpeed = 0.004,
+  MoveCameraEdge = 7,
+  MoveCameraToNormalTime = 0.3,
+  MoveCameraToDeltaTime = 0.25,
+  CameraMaxHorizatalLeft = 2.85,
+  CameraMaxHorizatalRight = 2.85,
+  CameraMaxVerticalUp = 1.6,
+  CameraMaxVerticalDown = 1.6,
+  CameraDefaultAspect = 1.77777,
+  HeadBuffHeightOffset = 0.5,
+  FreezeTimeScale = 0.1,
+  FreezeDuration = 300,
+  BonusShowDuration = 3000,
+  HitAnimationIntervalMs = 500,
+  HitbackSpeed = 30,
+  DefaultHitbackAnimName = "Hit",
+  ManualConvertCount = 5,
+  BulletTimeSpeed = 0.15,
+  CollectPanelShowTimeLen = 5000,
+  CollectPanelDuration = 0.3,
+  GuideFingerDuration = 5,
+  GuidePathInternal = 0.2,
+  GuidePathStepWaitTime = 1000,
+  LastPlayerFov = 4,
+  LastFovTimeLen = 0.009,
+  LastBackTimeLen = 0.8,
+  StoryTipsDuration = 2000,
+  StoryTipsHideIntervalDuration = 800,
+  StoryTipsRightGridPosList = {
+    {1, 3},
+    {1, 4},
+    {1, 5},
+    {1, 6},
+    {1, 7},
+    {2, 2},
+    {2, 3},
+    {2, 4},
+    {2, 5},
+    {2, 6},
+    {2, 7},
+    {2, 8},
+    {3, 1},
+    {3, 2},
+    {3, 3},
+    {3, 4},
+    {3, 5},
+    {3, 6},
+    {3, 7},
+    {4, 1},
+    {4, 2},
+    {4, 3},
+    {4, 4},
+    {4, 5},
+    {4, 6},
+    {5, 1},
+    {5, 2},
+    {5, 3},
+    {5, 4},
+    {5, 5},
+    {6, 1},
+    {6, 2},
+    {6, 3},
+    {6, 4},
+    {7, 1},
+    {7, 2},
+    {7, 3},
+    {8, 2}
+  },
+  StoryTipsLeftGridPosList = {
+    {9, 3},
+    {9, 4},
+    {9, 5},
+    {9, 6},
+    {9, 7},
+    {8, 3},
+    {8, 4},
+    {8, 5},
+    {8, 6},
+    {8, 7},
+    {8, 8},
+    {7, 4},
+    {7, 5},
+    {7, 6},
+    {7, 7},
+    {7, 8},
+    {7, 9},
+    {6, 5},
+    {6, 6},
+    {6, 7},
+    {6, 8},
+    {6, 9},
+    {5, 6},
+    {5, 7},
+    {5, 8},
+    {5, 9},
+    {4, 7},
+    {4, 8},
+    {4, 9},
+    {3, 8},
+    {3, 9}
+  },
+  StoryTipsLeftOffSet = -0.2,
+  StoryTipsRightOffSet = 0.2,
+  MonsterEffDelay = 0,
+  MonsterShowEDelay = 500,
+  MonsterDuration = 100,
+  TrapEffDelay = 0,
+  TrapEffId = 58,
+  TrapShowEDelay = 500,
+  TrapDuration = 100,
+  TrapAni = "Brith",
+  TrapAniDelay = 2000,
+  SingleDamageNumberShowHeight = 0.5,
+  GridDamageNumberShowHeight = 0.5,
+  DamageUpHigh = 0.2,
+  DamageDuration = 0.5,
+  DamageHighestPointList = {
+    Vector2(0.05, 0.2),
+    Vector2(0.09, 0.2),
+    Vector2(-0.09, 0.17),
+    Vector2(0.1, 0.19),
+    Vector2(-0.1, 0.16),
+    Vector2(0.08, 0.2),
+    Vector2(-0.08, 0.17),
+    Vector2(0.11, 0.19),
+    Vector2(-0.11, 0.16)
+  },
+  LockGridTrapID = 61,
+  PrismTrapID = 62,
+  AddHealthEffect = 9,
+  ShieldHitEffect = 115,
+  ShieldBrokenEffect = 116,
+  AircraftHitShieldEffect = 786,
+  AircraftHoldShieldEffect = 759,
+  HarmReductionNormal = 976,
+  HarmReductionInvincible = 976,
+  MonsterAttackRangeTextEffect = 339,
+  MonsterBornEffectList = {
+    319,
+    320,
+    321,
+    322,
+    323
+  },
+  MonsterBornAudioList = {
+    9033,
+    9034,
+    9035
+  },
+  TimeSpeedKeyStr = "UIBattleTimeSpeed",
+  TimeSpeedList = {
+    1.2,
+    1.8,
+    3.5
+  },
+  Speed2Index = 2,
+  RimFlashTime = 0.3,
+  GoBackStayTime = 750,
+  GridSideLength = 1,
+  AbyssBottomDepth = -1.5,
+  SpAbyssBottomDepth = -1,
+  GridSideYScale = 1.5,
+  SpGridSideYScale = 1,
+  LeaderPrimaryParam = 1,
+  LeaderSecondaryParam = 1,
+  LeaderNullParam = 1,
+  LeaderAllParam = 1.05,
+  PetPrimaryParam = 1,
+  PetSecondaryParam = 0.35,
+  PetAllParam = 1.05,
+  PrimarySecondaryDefaultParam = 1,
+  PrimarySecondaryActiveParam = 1,
+  DefaultMaxX = 9,
+  DefaultMaxY = 9,
+  DefaultAIAreaSize = 11,
+  DefaultPlayerAreaSize = 9,
+  GapTiles = {
+    {1, 1},
+    {1, 2},
+    {2, 1},
+    {1, 8},
+    {1, 9},
+    {2, 9},
+    {8, 1},
+    {9, 1},
+    {9, 2},
+    {8, 9},
+    {9, 8},
+    {9, 9}
+  },
+  BoardCenterPos = Vector2(5, 5),
+  StepPower = 1,
+  RefreshPieceTick = 700,
+  RefreshPetInfoTick = 700,
+  WaringHeight = 0.01,
+  ExitTrapID = 702,
+  ExitViewSkillID = 500083,
+  MinScreenHeight = 0.6,
+  MaxScreenHeight = 0.9,
+  CameraOffsetArray = {
+    {
+      x = 0,
+      y = 1,
+      z = 0
+    },
+    {
+      x = 0,
+      y = 3,
+      z = 0
+    },
+    {
+      x = 1.25,
+      y = 5.25,
+      z = 7.25
+    }
+  },
+  ConveySpeed = 3,
+  TractionSpeed = 10,
+  ForceMovementPreviewSpeed = 10,
+  PrismEffectPieceCount = 2,
+  FallGridTime = 0.7,
+  DoubleClickIntervalTime = 1000,
+  DefaultMovementSpeed = 2,
+  DefaultMovementAnimatorBool = "Move",
+  FlagBuffType = 10001,
+  FlagBuffOverlayKeyFormatter = "Layer_%d",
+  BenumbGridEffectID = 969,
+  TrapWallBlockGridEffectID = 969,
+  TrapWallEffectIDL = 280270101,
+  TrapWallEffectIDW = 280270102,
+  MonsterWeakEffectIDL = 77777771,
+  MonsterWeakEffectIDW = 77777772,
+  MonsterWeakEffectID = 160225109,
+  MonsterWeakEffectBirth = "eff_1602251_gonming_birth",
+  MonsterWeakEffectIdle = "eff_1602251_gonming_idle",
+  MonsterWeakEffectDeath = "eff_1602251_gonming_death",
+  PreAttackBuffId = 40801,
+  PreAttackBuffIdForExtra = 40805,
+  ImmuneTransportBuffIds = {30184, 30185},
+  NotLoadHighMonsters = {
+    2900301,
+    2900801,
+    2900811,
+    2903001
+  },
+  NotShowHUDHPMonsters = {2900301, 2903001},
+  MonsterDeadEffectLight = 1060,
+  MonsterDeadEffectDark = 1059,
+  MonsterDeadEffectDoppelganger = 10940102,
+  DefaultWarningAreaTextEffectID = 339,
+  BaseGridRenderPos = Vector3(-4, 0, -3),
+  AuroraFxExitTimeMs = 734,
+  PickupInvalidAnimTimeMs = 500,
+  BlockFlagCfgIDPet = 7,
+  BlockFlagCfgIDPet_PopStarPro = 52,
+  BlockFlagCfgIDGapTile = 9,
+  DimensionPreviewInstructionSetId = 100,
+  DimensionPreviewInstructionSetIdChain = 101,
+  DimensionPreviewInstructionSetIdPrepare = 102,
+  DimensionPreviewInstructionSetIdFinish = 103,
+  DimensionPreviewCarouselDuration = 2000,
+  ChangeTeamLeaderEffect = {
+    [PieceType.Blue] = 1322,
+    [PieceType.Red] = 1323,
+    [PieceType.Green] = 1324,
+    [PieceType.Yellow] = 1325
+  },
+  CacheHeight = 1000,
+  LogicYieldTime = 0.02,
+  AutoFightMoveEnhanced = false,
+  AutoFightPathLengthCut = 4,
+  AutoFightPathLengthCutConnectRate = {3, 3.8},
+  AutoFightPathLengthCutPosNum = 16,
+  AutoFightPathCountCut = 4,
+  AutoFightPathComplexity = {100000, 200000},
+  AutoFightNoAttackPosValue = 7,
+  AutoFightNormalAttackPosValue = 30,
+  AutoFightNormalAttackChainParam = 0.1,
+  AutoFightChainAttackChainParam = 0.1,
+  AutoFightChainAttackValue = 50,
+  AutoFightSuperChainAddPathValue = 200,
+  AutoFightElementBuffFlagAddPosValue = {
+    [0] = 50,
+    [1] = 20,
+    [2] = 30
+  },
+  FinalAttackSkillIdListOfTriggerTrap = {580222, 580232},
+  ScopeAngleFreeLineThreshold = 0.7,
+  MazeArchivedEffectID = {
+    578,
+    1139,
+    1147,
+    1155,
+    1163
+  },
+  MazeNoSaveArchiveLevelID = {99952001},
+  PetMiyaNotCollectSoulsSkillIDs = {
+    3100052,
+    3160052,
+    3300052,
+    3360052
+  },
+  HUDEdgeUpper = 0.96,
+  HUDEdgeDown = 0.1,
+  HUDEdgeLeft = 0.03,
+  HUDEdgeRight = 0.9,
+  Kick = true,
+  ChainSkillSnipeEffectID = 1610,
+  UIBattleTeamStateEnter_ShieldBarWidth = 211,
+  DefaultEnhanceGridTrapID = 14,
+  BattleEnterIntroPresentation_CameraFovMultiplier = 30,
+  BoardShowPieceGroupInternal = 75,
+  BoardShowPieceRandomRange = {min = 0, max = 120},
+  DamageBuffAnimatorHitDelay = 1000,
+  CoroutineMaxWaitTime = 60000,
+  RoundAddLegendPower = 5,
+  LegendPowerMax = 99,
+  AlchemyPowerMax = 99,
+  UseObsoleteAI = false,
+  WordBuffForMission = 7770001,
+  EndDragEffect = 2471,
+  AddBuffLayerTotalKeyFormatter = "__TOTAL_%s",
+  MonsterADHFormula2ParmaYDefault = 1,
+  MonsterADHFormula2ParmaZDefault = 1,
+  WorldBossHP = 99999999999,
+  ControlBuffEffectTypeArray = {
+    1001,
+    1002,
+    3006
+  },
+  PreviewMonsterInternal = 3000,
+  SingleDamageMaxValue = 3000000,
+  TotalDamageMaxValue = 10000000000,
+  TotalDamageMaxValueMod = 100000000,
+  DisableMonsterClassIDList = {
+    2900415,
+    2900416,
+    2900417,
+    2900418,
+    3900411
+  },
+  DeadDontDestroyEffectMonsterClassIDList = {
+    2910001,
+    2910003,
+    2910006,
+    2910008
+  },
+  MonsterDontNeedMaterialAnimationClassIDList = {2002202},
+  EliteMonsterPermanentEffectBodyArea1 = 3086,
+  EliteMonsterPermanentEffectBodyArea4 = 3087,
+  EliteMonsterTrialEffect = "eff_jingying_01.asset",
+  FallGridDirDefaultEffectId = 3508,
+  NonFormalPetWarningEnabled = true,
+  BoardGenConnectRateParamTable = {
+    1.2,
+    1.1,
+    1.05,
+    0.98,
+    0.95,
+    0.92,
+    0.9,
+    0.88,
+    0.86,
+    0.85,
+    0.85,
+    0.85,
+    0.85,
+    0.85,
+    0.85,
+    0.85,
+    0.85,
+    0.85,
+    0.85,
+    0.85,
+    0.85,
+    0.85,
+    0.85,
+    0.85,
+    0.85
+  },
+  OtherBoardConnectRate = 0.85,
+  E_HelpPet_EnableHelpSlotIndex = 5,
+  NoShowCasterEntityOnPreview = {
+    300144,
+    302144,
+    310144,
+    312144,
+    300146,
+    303146,
+    320146,
+    323146,
+    330146,
+    333146,
+    3302362
+  },
+  UIChangeTeamOrderTweenerTime = 0.5,
+  UIShuffleTeamOrderPhase1Time = 0.25,
+  UIShuffleTeamOrderPhase1Pause = 0.1,
+  UIShuffleTeamOrderPhase2Time = 0.25,
+  Wangge_WidthMin = 0,
+  Wangge_WidthMax = 0.2,
+  Wangge_GlobalWidth = 10.49,
+  Wangge_HeightMin = 0,
+  Wangge_HeightMax = 0.2,
+  Wangge_GlobalHeight = 10.49,
+  HUDUI_ChessHPSliderBuffOffset = 72,
+  HUDUI_ChessHPSecondBarThreshold = 50,
+  N15MaterialAnimAsset = "n15_shader_effects.asset",
+  SanCameraEffID = 3531,
+  SanViewEffDefaultStartVal = 70,
+  DayNightToDayDefaultEffID = 3545,
+  DayNightToNightDefaultEffID = 3546,
+  BoardMaxLen = 11,
+  RealFrameTime = 0.03333333333333333,
+  EachSuperGridDamageParam = 0.05,
+  EachPoorGridDamageParam = -0.1,
+  PunishmentRoundHPPercent = {
+    [1] = 0.1,
+    [2] = 0.15,
+    [3] = 0.2,
+    [4] = 0.25,
+    [5] = 0.3
+  },
+  BoardShowCameraAnimationByScript_TweenTime = 1.167,
+  PreviewConveySpeed = 2,
+  CandleLightKey = "CoffinMusumeCandleLight",
+  PartnerAttrCfgComponentID = 107602607,
+  UIBossHPEliteInfoDefaultWidth = 660,
+  UIBossHPEnergyItemWidth = 48,
+  TeleportExitBoardOffsetX = 1000,
+  TeleportExitBoardOffsetY = 1000,
+  HUDHPSliderDefaultWidth = 144,
+  HUDHPSliderBuffIconWidth = 39,
+  HUDHPSliderBuffIconFullWidthOffset = 12,
+  AuroraTimeFxQuadHeight = -0.1,
+  PlayerStunRenderYieldTimeMS = 1500,
+  DestroyPieceEffectID = 290520115,
+  DestroyPieceEffectPlayInterval = 150,
+  GridCellScale = 1,
+  NormalMonsterAroundGridWeightWhenConverting = 10,
+  EliteMonsterAroundGridWeightWhenConverting = 20,
+  BossAroundGridWeightWhenConverting = 40,
+  TrapShowLevelDefault = 0,
+  BuffCalcScopeKeyFormat = "BUFF_VALUE_CALC_SCOPE_%d",
+  AkexiyaScanTrap_MeantimeLimitID = {
+    15020811,
+    15020815,
+    15120811,
+    15120815,
+    15220811,
+    15220815,
+    15320811,
+    15320815,
+    150114911,
+    15014912
+  },
+  Tank2002901TowerEffectKey = "EFFECT_HOLDER_KEY_2002901_TANK_TOWER",
+  N34BossArriveBuffValueKey = "N34BossArrive",
+  N34BossSceneState = "N34BossSceneState",
+  ClientGlobalUnscaledCountDownFlagID = 1,
+  ActiveEnlightenPetMinNum = 5,
+  AttributesModifierIDByEnlighten = 100,
+  AttributesModifierIDBySeasonMaze = 101,
+  N37BossTrapID = 2809101,
+  BVK_ForceEnterAurora = "ForceEnterAurora",
+  BVK_ReplaceBuffIDFormat = "ReplaceBuffID_BuffEffectType_%d",
+  GCSNotify_SkillEffectTypeList = {
+    4,
+    6,
+    62,
+    109,
+    112,
+    198,
+    221
+  },
+  AutoBeadBaseChargeBuffID = 2205021,
+  AIOrderDefaultWeight = 1000,
+  BossCarrotHitBackClockWiseRate = 0.6,
+  OverdrawPetTemplateIDList = {1602271},
+  ColorPalettePetTemplateIDList = {1502281}
 }
-, 
-StoryTipsLeftGridPosList = {
-{9, 3}
-, 
-{9, 4}
-, 
-{9, 5}
-, 
-{9, 6}
-, 
-{9, 7}
-, 
-{8, 3}
-, 
-{8, 4}
-, 
-{8, 5}
-, 
-{8, 6}
-, 
-{8, 7}
-, 
-{8, 8}
-, 
-{7, 4}
-, 
-{7, 5}
-, 
-{7, 6}
-, 
-{7, 7}
-, 
-{7, 8}
-, 
-{7, 9}
-, 
-{6, 5}
-, 
-{6, 6}
-, 
-{6, 7}
-, 
-{6, 8}
-, 
-{6, 9}
-, 
-{5, 6}
-, 
-{5, 7}
-, 
-{5, 8}
-, 
-{5, 9}
-, 
-{4, 7}
-, 
-{4, 8}
-, 
-{4, 9}
-, 
-{3, 8}
-, 
-{3, 9}
-}
-, StoryTipsLeftOffSet = -0.2, StoryTipsRightOffSet = 0.2, MonsterEffDelay = 0, MonsterShowEDelay = 500, MonsterDuration = 100, TrapEffDelay = 0, TrapEffId = 58, TrapShowEDelay = 500, TrapDuration = 100, TrapAni = "Brith", TrapAniDelay = 2000, SingleDamageNumberShowHeight = 0.5, GridDamageNumberShowHeight = 0.5, DamageUpHigh = 0.2, DamageDuration = 0.5, 
-DamageHighestPointList = {Vector2(0.05, 0.2), Vector2(0.09, 0.2), Vector2(-0.09, 0.17), Vector2(0.1, 0.19), Vector2(-0.1, 0.16), Vector2(0.08, 0.2), Vector2(-0.08, 0.17), Vector2(0.11, 0.19), Vector2(-0.11, 0.16)}
-, LockGridTrapID = 61, PrismTrapID = 62, AddHealthEffect = 9, ShieldHitEffect = 115, ShieldBrokenEffect = 116, AircraftHitShieldEffect = 786, AircraftHoldShieldEffect = 759, HarmReductionNormal = 976, HarmReductionInvincible = 976, MonsterAttackRangeTextEffect = 339, 
-MonsterBornEffectList = {319, 320, 321, 322, 323}
-, 
-MonsterBornAudioList = {9033, 9034, 9035}
-, TimeSpeedKeyStr = "UIBattleTimeSpeed", 
-TimeSpeedList = {1.2, 1.8, 3.5}
-, Speed2Index = 2, RimFlashTime = 0.3, GoBackStayTime = 750, GridSideLength = 1, AbyssBottomDepth = -1.5, SpAbyssBottomDepth = -1, GridSideYScale = 1.5, SpGridSideYScale = 1, LeaderPrimaryParam = 1, LeaderSecondaryParam = 1, LeaderNullParam = 1, LeaderAllParam = 1.05, PetPrimaryParam = 1, PetSecondaryParam = 0.35, PetAllParam = 1.05, PrimarySecondaryDefaultParam = 1, PrimarySecondaryActiveParam = 1, DefaultMaxX = 9, DefaultMaxY = 9, DefaultAIAreaSize = 11, DefaultPlayerAreaSize = 9, 
-GapTiles = {
-{1, 1}
-, 
-{1, 2}
-, 
-{2, 1}
-, 
-{1, 8}
-, 
-{1, 9}
-, 
-{2, 9}
-, 
-{8, 1}
-, 
-{9, 1}
-, 
-{9, 2}
-, 
-{8, 9}
-, 
-{9, 8}
-, 
-{9, 9}
-}
-, BoardCenterPos = Vector2(5, 5), StepPower = 1, RefreshPieceTick = 700, RefreshPetInfoTick = 700, WaringHeight = 0.01, ExitTrapID = 702, ExitViewSkillID = 500083, MinScreenHeight = 0.6, MaxScreenHeight = 0.9, 
-CameraOffsetArray = {
-{x = 0, y = 1, z = 0}
-, 
-{x = 0, y = 3, z = 0}
-, 
-{x = 1.25, y = 5.25, z = 7.25}
-}
-, ConveySpeed = 3, TractionSpeed = 10, ForceMovementPreviewSpeed = 10, PrismEffectPieceCount = 2, FallGridTime = 0.7, DoubleClickIntervalTime = 1000, DefaultMovementSpeed = 2, DefaultMovementAnimatorBool = "Move", FlagBuffType = 10001, FlagBuffOverlayKeyFormatter = "Layer_%d", BenumbGridEffectID = 969, TrapWallBlockGridEffectID = 969, TrapWallEffectIDL = 280270101, TrapWallEffectIDW = 280270102, MonsterWeakEffectIDL = 77777771, MonsterWeakEffectIDW = 77777772, MonsterWeakEffectID = 160225109, MonsterWeakEffectBirth = "eff_1602251_gonming_birth", MonsterWeakEffectIdle = "eff_1602251_gonming_idle", MonsterWeakEffectDeath = "eff_1602251_gonming_death", PreAttackBuffId = 40801, PreAttackBuffIdForExtra = 40805, 
-ImmuneTransportBuffIds = {30184, 30185}
-, 
-NotLoadHighMonsters = {2900301, 2900801, 2900811, 2903001}
-, 
-NotShowHUDHPMonsters = {2900301, 2903001}
-, MonsterDeadEffectLight = 1060, MonsterDeadEffectDark = 1059, MonsterDeadEffectDoppelganger = 10940102, DefaultWarningAreaTextEffectID = 339, BaseGridRenderPos = (_ENV.Vector3)(-4, 0, -3), AuroraFxExitTimeMs = 734, PickupInvalidAnimTimeMs = 500, BlockFlagCfgIDPet = 7, BlockFlagCfgIDPet_PopStarPro = 52, BlockFlagCfgIDGapTile = 9, DimensionPreviewInstructionSetId = 100, DimensionPreviewInstructionSetIdChain = 101, DimensionPreviewInstructionSetIdPrepare = 102, DimensionPreviewInstructionSetIdFinish = 103, DimensionPreviewCarouselDuration = 2000, 
-ChangeTeamLeaderEffect = {[(_ENV.PieceType).Blue] = 1322, [(_ENV.PieceType).Red] = 1323, [(_ENV.PieceType).Green] = 1324, [(_ENV.PieceType).Yellow] = 1325}
-, CacheHeight = 1000, LogicYieldTime = 0.02, AutoFightMoveEnhanced = false, AutoFightPathLengthCut = 4, 
-AutoFightPathLengthCutConnectRate = {3, 3.8}
-, AutoFightPathLengthCutPosNum = 16, AutoFightPathCountCut = 4, 
-AutoFightPathComplexity = {100000, 200000}
-, AutoFightNoAttackPosValue = 7, AutoFightNormalAttackPosValue = 30, AutoFightNormalAttackChainParam = 0.1, AutoFightChainAttackChainParam = 0.1, AutoFightChainAttackValue = 50, AutoFightSuperChainAddPathValue = 200, 
-AutoFightElementBuffFlagAddPosValue = {[0] = 50, [1] = 20, [2] = 30}
-, 
-FinalAttackSkillIdListOfTriggerTrap = {580222, 580232}
-, ScopeAngleFreeLineThreshold = 0.7, 
-MazeArchivedEffectID = {578, 1139, 1147, 1155, 1163}
-, 
-MazeNoSaveArchiveLevelID = {99952001}
-, 
-PetMiyaNotCollectSoulsSkillIDs = {3100052, 3160052, 3300052, 3360052}
-, HUDEdgeUpper = 0.96, HUDEdgeDown = 0.1, HUDEdgeLeft = 0.03, HUDEdgeRight = 0.9, Kick = true, ChainSkillSnipeEffectID = 1610, UIBattleTeamStateEnter_ShieldBarWidth = 211, DefaultEnhanceGridTrapID = 14, BattleEnterIntroPresentation_CameraFovMultiplier = 30, BoardShowPieceGroupInternal = 75, 
-BoardShowPieceRandomRange = {min = 0, max = 120}
-, DamageBuffAnimatorHitDelay = 1000, CoroutineMaxWaitTime = 60000, RoundAddLegendPower = 5, LegendPowerMax = 99, AlchemyPowerMax = 99, UseObsoleteAI = false, WordBuffForMission = 7770001, EndDragEffect = 2471, AddBuffLayerTotalKeyFormatter = "__TOTAL_%s", MonsterADHFormula2ParmaYDefault = 1, MonsterADHFormula2ParmaZDefault = 1, WorldBossHP = 99999999999, 
-ControlBuffEffectTypeArray = {1001, 1002, 3006}
-, PreviewMonsterInternal = 3000, SingleDamageMaxValue = 3000000, TotalDamageMaxValue = 10000000000, TotalDamageMaxValueMod = 100000000, 
-DisableMonsterClassIDList = {2900415, 2900416, 2900417, 2900418, 3900411}
-, 
-DeadDontDestroyEffectMonsterClassIDList = {2910001, 2910003, 2910006, 2910008}
-, 
-MonsterDontNeedMaterialAnimationClassIDList = {2002202}
-, EliteMonsterPermanentEffectBodyArea1 = 3086, EliteMonsterPermanentEffectBodyArea4 = 3087, EliteMonsterTrialEffect = "eff_jingying_01.asset", FallGridDirDefaultEffectId = 3508, NonFormalPetWarningEnabled = true, 
-BoardGenConnectRateParamTable = {1.2, 1.1, 1.05, 0.98, 0.95, 0.92, 0.9, 0.88, 0.86, 0.85, 0.85, 0.85, 0.85, 0.85, 0.85, 0.85, 0.85, 0.85, 0.85, 0.85, 0.85, 0.85, 0.85, 0.85, 0.85}
-, OtherBoardConnectRate = 0.85, E_HelpPet_EnableHelpSlotIndex = 5, 
-NoShowCasterEntityOnPreview = {300144, 302144, 310144, 312144, 300146, 303146, 320146, 323146, 330146, 333146, 3302362}
-, UIChangeTeamOrderTweenerTime = 0.5, UIShuffleTeamOrderPhase1Time = 0.25, UIShuffleTeamOrderPhase1Pause = 0.1, UIShuffleTeamOrderPhase2Time = 0.25, Wangge_WidthMin = 0, Wangge_WidthMax = 0.2, Wangge_GlobalWidth = 10.49, Wangge_HeightMin = 0, Wangge_HeightMax = 0.2, Wangge_GlobalHeight = 10.49, HUDUI_ChessHPSliderBuffOffset = 72, HUDUI_ChessHPSecondBarThreshold = 50, N15MaterialAnimAsset = "n15_shader_effects.asset", SanCameraEffID = 3531, SanViewEffDefaultStartVal = 70, DayNightToDayDefaultEffID = 3545, DayNightToNightDefaultEffID = 3546, BoardMaxLen = 11, RealFrameTime = 0.033333333333333, EachSuperGridDamageParam = 0.05, EachPoorGridDamageParam = -0.1, 
-PunishmentRoundHPPercent = {[1] = 0.1, [2] = 0.15, [3] = 0.2, [4] = 0.25, [5] = 0.3}
-, BoardShowCameraAnimationByScript_TweenTime = 1.167, PreviewConveySpeed = 2, CandleLightKey = "CoffinMusumeCandleLight", PartnerAttrCfgComponentID = 107602607, UIBossHPEliteInfoDefaultWidth = 660, UIBossHPEnergyItemWidth = 48, TeleportExitBoardOffsetX = 1000, TeleportExitBoardOffsetY = 1000, HUDHPSliderDefaultWidth = 144, HUDHPSliderBuffIconWidth = 39, HUDHPSliderBuffIconFullWidthOffset = 12, AuroraTimeFxQuadHeight = -0.1, PlayerStunRenderYieldTimeMS = 1500, DestroyPieceEffectID = 290520115, DestroyPieceEffectPlayInterval = 150, GridCellScale = 1, NormalMonsterAroundGridWeightWhenConverting = 10, EliteMonsterAroundGridWeightWhenConverting = 20, BossAroundGridWeightWhenConverting = 40, TrapShowLevelDefault = 0, BuffCalcScopeKeyFormat = "BUFF_VALUE_CALC_SCOPE_%d", 
-AkexiyaScanTrap_MeantimeLimitID = {15020811, 15020815, 15120811, 15120815, 15220811, 15220815, 15320811, 15320815, 150114911, 15014912}
-, Tank2002901TowerEffectKey = "EFFECT_HOLDER_KEY_2002901_TANK_TOWER", N34BossArriveBuffValueKey = "N34BossArrive", N34BossSceneState = "N34BossSceneState", ClientGlobalUnscaledCountDownFlagID = 1, ActiveEnlightenPetMinNum = 5, AttributesModifierIDByEnlighten = 100, AttributesModifierIDBySeasonMaze = 101, N37BossTrapID = 2809101, BVK_ForceEnterAurora = "ForceEnterAurora", BVK_ReplaceBuffIDFormat = "ReplaceBuffID_BuffEffectType_%d", 
-GCSNotify_SkillEffectTypeList = {4, 6, 62, 109, 112, 198, 221}
-, AutoBeadBaseChargeBuffID = 2205021, AIOrderDefaultWeight = 1000, BossCarrotHitBackClockWiseRate = 0.6, 
-OverdrawPetTemplateIDList = {1602271}
-, 
-ColorPalettePetTemplateIDList = {1502281}
-}
-;
-(_ENV._enum)("BattleConst", BattleConst)
-
+_enum("BattleConst", BattleConst)

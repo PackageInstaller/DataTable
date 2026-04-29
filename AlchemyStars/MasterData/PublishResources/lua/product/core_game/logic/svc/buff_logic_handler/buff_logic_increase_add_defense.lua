@@ -1,78 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_increase_add_defense.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetIncreaseAddDefense", BuffLogicBase)
 BuffLogicSetIncreaseAddDefense = BuffLogicSetIncreaseAddDefense
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetIncreaseAddDefense.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetIncreaseAddDefense:Constructor(buffInstance, logicParam)
   self._increaseRate = logicParam.increaseRate or 1
   self._referTo = logicParam.referTo
   self._AddedEntity = self._entity
   self._headOut = logicParam.headOut ~= nil
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetIncreaseAddDefense.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local pstIDCmpt = (self._AddedEntity):PetPstID()
+function BuffLogicSetIncreaseAddDefense:DoLogic()
+  local pstIDCmpt = self._AddedEntity:PetPstID()
   local pstID = pstIDCmpt:GetPstID()
-  local petData = (self._world):GetPetData(pstID)
+  local petData = self._world:GetPetData(pstID)
   local baseValue = 0
   if self._referTo == "attack" then
     baseValue = petData:GetPetAttack()
-  else
-    if self._referTo == "defence" then
-      baseValue = petData:GetPetDefence()
-    end
+  elseif self._referTo == "defence" then
+    baseValue = petData:GetPetDefence()
   end
   if baseValue == 0 then
-    (Log.fatal)("Add 0 Defence check config")
+    Log.fatal("Add 0 Defence check config")
   end
   local increaseValue = baseValue * self._increaseRate
-  ;
-  (self._buffLogicService):ChangeBaseDefence(self._AddedEntity, self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix, increaseValue)
-  do
-    if (self._AddedEntity):HasPetPstID() then
-      local teamEntity = ((self._AddedEntity):Pet()):GetOwnerTeamEntity()
-      self:UpdateTeamDefenceLogic(teamEntity)
-    end
-    if self._headOut then
-      return true
-    end
+  self._buffLogicService:ChangeBaseDefence(self._AddedEntity, self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix, increaseValue)
+  if self._AddedEntity:HasPetPstID() then
+    local teamEntity = self._AddedEntity:Pet():GetOwnerTeamEntity()
+    self:UpdateTeamDefenceLogic(teamEntity)
+  end
+  if self._headOut then
+    return true
   end
 end
 
 _class("BuffLogicResetIncreaseAddDefense", BuffLogicBase)
 BuffLogicResetIncreaseAddDefense = BuffLogicResetIncreaseAddDefense
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetIncreaseAddDefense.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetIncreaseAddDefense:Constructor(buffInstance, logicParam)
   self._AddedEntity = self._entity
   self._black = logicParam.black ~= nil
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetIncreaseAddDefense.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function BuffLogicResetIncreaseAddDefense:DoLogic()
   local e = self._AddedEntity
-  ;
-  (self._buffLogicService):RemoveBaseDefence(e, self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix)
+  self._buffLogicService:RemoveBaseDefence(e, self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix)
   if self._black then
     return true
   end
-  if (self._AddedEntity):HasPetPstID() then
-    local teamEntity = ((self._AddedEntity):Pet()):GetOwnerTeamEntity()
+  if self._AddedEntity:HasPetPstID() then
+    local teamEntity = self._AddedEntity:Pet():GetOwnerTeamEntity()
     self:UpdateTeamDefenceLogic(teamEntity)
   end
 end
-
-

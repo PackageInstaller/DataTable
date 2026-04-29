@@ -1,31 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_view_can_turn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetViewCanTurn", BuffLogicBase)
 BuffLogicSetViewCanTurn = BuffLogicSetViewCanTurn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetViewCanTurn.Constructor = function(self, _, logicParam)
-  -- function num : 0_0
+function BuffLogicSetViewCanTurn:Constructor(_, logicParam)
   self._canTurn = logicParam.canTurn
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetViewCanTurn.DoLogic = function(self)
-  -- function num : 0_1
-  ((self._entity):BuffComponent()):SetBuffValue("MONSTER_VIEW_CAN_TURN", self._canTurn)
+function BuffLogicSetViewCanTurn:DoLogic()
+  self._entity:BuffComponent():SetBuffValue("MONSTER_VIEW_CAN_TURN", self._canTurn)
 end
 
 _class("BuffLogicRevertViewCanTurn", BuffLogicBase)
 BuffLogicRevertViewCanTurn = BuffLogicRevertViewCanTurn
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRevertViewCanTurn.DoLogic = function(self)
-  -- function num : 0_2
-  ((self._entity):BuffComponent()):SetBuffValue("MONSTER_VIEW_CAN_TURN", nil)
+function BuffLogicRevertViewCanTurn:DoLogic()
+  self._entity:BuffComponent():SetBuffValue("MONSTER_VIEW_CAN_TURN", nil)
 end
-
-

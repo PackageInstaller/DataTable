@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/homeland/homeland_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandModule", GameModule)
 HomelandModule = HomelandModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandModule.Constructor = function(self)
-  -- function num : 0_0
+function HomelandModule:Constructor()
   self.m_homeland_info = {}
   self.m_group_id_set = {}
   self._RareFishingPosition = {}
@@ -26,248 +19,152 @@ HomelandModule.Constructor = function(self)
   self._storyTask_autoReq = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((HomelandModule.super).Init)(self)
-  ;
-  (self.caller):RegisterPushHandler(CEventHomelandTreasureUpdate, self.HandleTreasureUpdate, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventHomelandShopUpdate, self.HandleShopUpdate, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventHomelandForgeUpdate, self.HandleForgeUpdate, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventHomelandCultivationUpdate, self.HandleCultivationUpdate, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventHomelandVisitItemUpdate, self.HandleVisitItemUpdate, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventHomelandDormitoryUpdate, self.HandleDormitoryUpdate, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushEventChange, self.HandlePushEventChange, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushLevelInfo, self.HandlePushLevelInfo, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventHomelandVisitUpdate, self.HandleHomelandVisitUpdate, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushHomelandFunctionUnlocked, self.HandleFunctionUnlocked, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventHomelandStoryTaskUpdate, self.HandleStoryTaskUpdate, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventHomelandRefreshRarePositionPush, self.HandleRefreshRarePositionUpdate, self)
+function HomelandModule:Init()
+  HomelandModule.super.Init(self)
+  self.caller:RegisterPushHandler(CEventHomelandTreasureUpdate, self.HandleTreasureUpdate, self)
+  self.caller:RegisterPushHandler(CEventHomelandShopUpdate, self.HandleShopUpdate, self)
+  self.caller:RegisterPushHandler(CEventHomelandForgeUpdate, self.HandleForgeUpdate, self)
+  self.caller:RegisterPushHandler(CEventHomelandCultivationUpdate, self.HandleCultivationUpdate, self)
+  self.caller:RegisterPushHandler(CEventHomelandVisitItemUpdate, self.HandleVisitItemUpdate, self)
+  self.caller:RegisterPushHandler(CEventHomelandDormitoryUpdate, self.HandleDormitoryUpdate, self)
+  self.caller:RegisterPushHandler(CEventPushEventChange, self.HandlePushEventChange, self)
+  self.caller:RegisterPushHandler(CEventPushLevelInfo, self.HandlePushLevelInfo, self)
+  self.caller:RegisterPushHandler(CEventHomelandVisitUpdate, self.HandleHomelandVisitUpdate, self)
+  self.caller:RegisterPushHandler(CEventPushHomelandFunctionUnlocked, self.HandleFunctionUnlocked, self)
+  self.caller:RegisterPushHandler(CEventHomelandStoryTaskUpdate, self.HandleStoryTaskUpdate, self)
+  self.caller:RegisterPushHandler(CEventHomelandRefreshRarePositionPush, self.HandleRefreshRarePositionUpdate, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.caller):UnRegisterPushHandler(CEventHomelandTreasureUpdate)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventHomelandShopUpdate)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventHomelandForgeUpdate)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventHomelandCultivationUpdate)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventHomelandVisitItemUpdate)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventHomelandDormitoryUpdate)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventPushEventChange)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventPushLevelInfo)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventHomelandVisitUpdate)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventPushHomelandFunctionUnlocked)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventHomelandStoryTaskUpdate)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventHomelandRefreshRarePositionPush)
-  ;
-  ((HomelandModule.super).Dispose)(self)
+function HomelandModule:Dispose()
+  self.caller:UnRegisterPushHandler(CEventHomelandTreasureUpdate)
+  self.caller:UnRegisterPushHandler(CEventHomelandShopUpdate)
+  self.caller:UnRegisterPushHandler(CEventHomelandForgeUpdate)
+  self.caller:UnRegisterPushHandler(CEventHomelandCultivationUpdate)
+  self.caller:UnRegisterPushHandler(CEventHomelandVisitItemUpdate)
+  self.caller:UnRegisterPushHandler(CEventHomelandDormitoryUpdate)
+  self.caller:UnRegisterPushHandler(CEventPushEventChange)
+  self.caller:UnRegisterPushHandler(CEventPushLevelInfo)
+  self.caller:UnRegisterPushHandler(CEventHomelandVisitUpdate)
+  self.caller:UnRegisterPushHandler(CEventPushHomelandFunctionUnlocked)
+  self.caller:UnRegisterPushHandler(CEventHomelandStoryTaskUpdate)
+  self.caller:UnRegisterPushHandler(CEventHomelandRefreshRarePositionPush)
+  HomelandModule.super.Dispose(self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.SetTaskGroupTimeline = function(self, task_group_timeline)
-  -- function num : 0_3
+function HomelandModule:SetTaskGroupTimeline(task_group_timeline)
   self._task_group_timeline = task_group_timeline
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.SetTaskGroupCloseTimeline = function(self, task_group_close_timeline)
-  -- function num : 0_4 , upvalues : _ENV
-  for index,value in ipairs(task_group_close_timeline) do
-    for _index,_value in ipairs(value.task_group_list) do
-      -- DECOMPILER ERROR at PC10: Confused about usage of register: R12 in 'UnsetPending'
-
-      (self._task_group_close_time)[_value] = value.valid_time
+function HomelandModule:SetTaskGroupCloseTimeline(task_group_close_timeline)
+  for index, value in ipairs(task_group_close_timeline) do
+    for _index, _value in ipairs(value.task_group_list) do
+      self._task_group_close_time[_value] = value.valid_time
     end
   end
   self:MergeTaskGroupTimeline(self._task_group_close_timeline, task_group_close_timeline)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.MergeTaskGroupTimeline = function(self, target_timeline, task_group_timeline)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandModule:MergeTaskGroupTimeline(target_timeline, task_group_timeline)
   if not task_group_timeline or #task_group_timeline <= 0 then
-    return 
+    return
   end
   local l_num = #task_group_timeline
-  local first_valid_time = (task_group_timeline[1]).valid_time
-  local l_targetindex = nil
-  for _index,_value in ipairs(target_timeline) do
+  local first_valid_time = task_group_timeline[1].valid_time
+  local l_targetindex
+  for _index, _value in ipairs(target_timeline) do
     if first_valid_time <= _value.valid_time then
       l_targetindex = _index - 1
       break
     end
   end
-  do
-    if l_targetindex == nil then
-      l_targetindex = #target_timeline
-    end
-    local l_end_index = nil
-    for _index,_value in ipairs(task_group_timeline) do
-      l_end_index = l_targetindex + _index
-      target_timeline[l_end_index] = _value
-    end
+  if l_targetindex == nil then
+    l_targetindex = #target_timeline
+  end
+  local l_end_index
+  for _index, _value in ipairs(task_group_timeline) do
+    l_end_index = l_targetindex + _index
+    target_timeline[l_end_index] = _value
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HandleFunctionUnlocked = function(self, msg)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_homeland_info).unlock_functions = msg.unlock_functions
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomeLandFunctionUnlock, msg.function_unlock_type)
+function HomelandModule:HandleFunctionUnlocked(msg)
+  self.m_homeland_info.unlock_functions = msg.unlock_functions
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomeLandFunctionUnlock, msg.function_unlock_type)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.SetRecvGroupId = function(self, group_id_set)
-  -- function num : 0_7
+function HomelandModule:SetRecvGroupId(group_id_set)
   self.m_group_id_set = group_id_set
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.SetFunctionUnlockMask = function(self, unlock_mask)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_homeland_info).unlock_functions = unlock_mask
+function HomelandModule:SetFunctionUnlockMask(unlock_mask)
+  self.m_homeland_info.unlock_functions = unlock_mask
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule._GetUnlockFunctionBit = function(self, function_type)
-  -- function num : 0_9 , upvalues : _ENV
+function HomelandModule:_GetUnlockFunctionBit(function_type)
   return function_type % EHomelandFunctionUnlock.HOMELAND_FUNCTION_UNLOCK_MASK_BIT
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule._GetUnlockFunctionDict = function(self, function_type)
-  -- function num : 0_10 , upvalues : _ENV
-  if not self.m_homeland_info or not (self.m_homeland_info).unlock_functions then
+function HomelandModule:_GetUnlockFunctionDict(function_type)
+  if not self.m_homeland_info or not self.m_homeland_info.unlock_functions then
     return 0
   end
-  if EHomelandFunctionUnlock.HOMELAND_FUNCTION_UNLOCK_MASK_BIT <= function_type then
-    return ((self.m_homeland_info).unlock_functions)[2]
+  if function_type >= EHomelandFunctionUnlock.HOMELAND_FUNCTION_UNLOCK_MASK_BIT then
+    return self.m_homeland_info.unlock_functions[2]
   else
-    return ((self.m_homeland_info).unlock_functions)[1]
+    return self.m_homeland_info.unlock_functions[1]
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.CheckFunctionUnlock = function(self, function_type)
-  -- function num : 0_11
+function HomelandModule:CheckFunctionUnlock(function_type)
   local unlock_mask = self:_GetUnlockFunctionDict(function_type)
   local unlock_mask_bit = self:_GetUnlockFunctionBit(function_type)
   local value = unlock_mask & 1 << unlock_mask_bit
-  do return value ~= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return value ~= 0
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HandlePushLevelInfo = function(self, levelInfo)
-  -- function num : 0_12 , upvalues : _ENV
-  local deltaLevel = (math.max)(levelInfo.level - (self.m_homeland_info).level, 0)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_homeland_info).level = levelInfo.level
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_homeland_info).exp = levelInfo.exp
-  ;
-  (self._homelandLevelData):OnLevelInfoChange(deltaLevel)
+function HomelandModule:HandlePushLevelInfo(levelInfo)
+  local deltaLevel = math.max(levelInfo.level - self.m_homeland_info.level, 0)
+  self.m_homeland_info.level = levelInfo.level
+  self.m_homeland_info.exp = levelInfo.exp
+  self._homelandLevelData:OnLevelInfoChange(deltaLevel)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HandleHomelandVisitUpdate = function(self, msgInfo)
-  -- function num : 0_13
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_homeland_info).visit_info = msgInfo.info
+function HomelandModule:HandleHomelandVisitUpdate(msgInfo)
+  self.m_homeland_info.visit_info = msgInfo.info
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.Update = function(self, curTick)
-  -- function num : 0_14 , upvalues : _ENV
-  if (self.uiModule):IsRunning() then
-    (self.uiModule):Update(curTick)
+function HomelandModule:Update(curTick)
+  if self.uiModule:IsRunning() then
+    self.uiModule:Update(curTick)
   end
   if self.m_RequestGroup == nil and curTick - self._last_update_tick >= 1000 then
     self.m_RequestGroup = self:CheckTaskGroupTimeLine(self._task_group_timeline)
     if self.m_RequestGroup ~= nil then
-      ((GameGlobal.TaskManager)()):StartTask(self._HandleHomelandUpdateTaskReq, self)
-    else
-      if self:CheckTaskGroupTimeLine(self._task_group_close_timeline) ~= nil then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.QuestUpdate)
-      end
+      GameGlobal.TaskManager():StartTask(self._HandleHomelandUpdateTaskReq, self)
+    elseif self:CheckTaskGroupTimeLine(self._task_group_close_timeline) ~= nil then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.QuestUpdate)
     end
     self._last_update_tick = curTick
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetHomelandInfo = function(self)
-  -- function num : 0_15
+function HomelandModule:GetHomelandInfo()
   return self.m_homeland_info
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetHomelandLevel = function(self)
-  -- function num : 0_16
+function HomelandModule:GetHomelandLevel()
   if not self.m_homeland_info then
     return 0
   end
-  if not (self.m_homeland_info).level then
+  if not self.m_homeland_info.level then
     return 0
   end
-  return (self.m_homeland_info).level
+  return self.m_homeland_info.level
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetBuildPstid = function(self, buildId)
-  -- function num : 0_17 , upvalues : _ENV
-  local architectureList = ((self.m_homeland_info).architecture_list).architecture_list
-  for _,v in pairs(architectureList) do
+function HomelandModule:GetBuildPstid(buildId)
+  local architectureList = self.m_homeland_info.architecture_list.architecture_list
+  for _, v in pairs(architectureList) do
     if v.asset_id == buildId then
       return v.pstid
     end
@@ -275,138 +172,102 @@ HomelandModule.GetBuildPstid = function(self, buildId)
   return 0
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetBuildSkinIds = function(self, buildId)
-  -- function num : 0_18 , upvalues : _ENV
-  local skinCfg = (Cfg.cfg_item_architecture_skin)({architecture_id = buildId})
+function HomelandModule:GetBuildSkinIds(buildId)
+  local skinCfg = Cfg.cfg_item_architecture_skin({architecture_id = buildId})
   local skins = {}
-  local buildCfg = (Cfg.cfg_item_architecture)[buildId]
+  local buildCfg = Cfg.cfg_item_architecture[buildId]
   local defaultSkin = buildCfg.DefaultSkin
   if skinCfg then
-    for k,v in pairs(skinCfg) do
+    for k, v in pairs(skinCfg) do
       if defaultSkin ~= v.ID then
         skins[#skins + 1] = v.ID
       end
     end
   end
-  do
-    ;
-    (table.sort)(skins, function(a, b)
-    -- function num : 0_18_0 , upvalues : self
+  table.sort(skins, function(a, b)
     local hasA = self:HasBuildSkin(a)
     local hasB = self:HasBuildSkin(b)
-    if a >= b then
-      do return hasA ~= hasB end
-      if hasA then
-        return true
-      end
-      do return false end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    if hasA == hasB then
+      return a < b
     end
-  end
-)
-    if defaultSkin then
-      (table.insert)(skins, 1, defaultSkin)
+    if hasA then
+      return true
     end
-    return skins
+    return false
+  end)
+  if defaultSkin then
+    table.insert(skins, 1, defaultSkin)
   end
+  return skins
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetOwnBuildSkinIds = function(self, buildId)
-  -- function num : 0_19 , upvalues : _ENV
-  local skinCfg = (Cfg.cfg_item_architecture_skin)({architecture_id = buildId})
+function HomelandModule:GetOwnBuildSkinIds(buildId)
+  local skinCfg = Cfg.cfg_item_architecture_skin({architecture_id = buildId})
   local skins = {}
-  local buildCfg = (Cfg.cfg_item_architecture)[buildId]
+  local buildCfg = Cfg.cfg_item_architecture[buildId]
   local defaultSkin = buildCfg.DefaultSkin
   if skinCfg then
-    for k,v in pairs(skinCfg) do
+    for k, v in pairs(skinCfg) do
       if defaultSkin ~= v.ID and self:HasBuildSkin(v.ID) then
         skins[#skins + 1] = v.ID
       end
     end
   end
-  do
-    ;
-    (table.sort)(skins, function(a, b)
-    -- function num : 0_19_0 , upvalues : self
+  table.sort(skins, function(a, b)
     local hasA = self:HasBuildSkin(a)
     local hasB = self:HasBuildSkin(b)
-    if a >= b then
-      do return hasA ~= hasB end
-      if hasA then
-        return true
-      end
-      do return false end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    if hasA == hasB then
+      return a < b
     end
-  end
-)
-    if defaultSkin then
-      (table.insert)(skins, 1, defaultSkin)
+    if hasA then
+      return true
     end
-    return skins
+    return false
+  end)
+  if defaultSkin then
+    table.insert(skins, 1, defaultSkin)
   end
+  return skins
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HasBuildSkin = function(self, skinId)
-  -- function num : 0_20 , upvalues : _ENV
+function HomelandModule:HasBuildSkin(skinId)
   if skinId == 0 then
     return true
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local count = itemModule:GetItemCount(skinId)
   if not count then
     return false
   end
-  do return count > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return 0 < count
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetCurrentBuildSkin = function(self, buildId, pstId)
-  -- function num : 0_21 , upvalues : _ENV
-  local architecture = (((self.m_homeland_info).architecture_list).architecture_list)[pstId]
+function HomelandModule:GetCurrentBuildSkin(buildId, pstId)
+  local architecture = self.m_homeland_info.architecture_list.architecture_list[pstId]
   if not architecture then
     return 0
   end
-  do
-    if not architecture.skin or architecture.skin <= 0 then
-      local skinCfg = (Cfg.cfg_item_architecture)[buildId]
-      if not skinCfg.DefaultSkin then
-        return 0
-      end
-      return skinCfg.DefaultSkin
+  if not architecture.skin or 0 >= architecture.skin then
+    local skinCfg = Cfg.cfg_item_architecture[buildId]
+    if not skinCfg.DefaultSkin then
+      return 0
     end
-    return architecture.skin
+    return skinCfg.DefaultSkin
   end
+  return architecture.skin
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetTreasureInfo = function(self)
-  -- function num : 0_22
-  return (self.m_homeland_info).trea_info
+function HomelandModule:GetTreasureInfo()
+  return self.m_homeland_info.trea_info
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetTreasureBirthInfo = function(self, birth_id)
-  -- function num : 0_23
-  return (((self.m_homeland_info).trea_info).treasures)[birth_id]
+function HomelandModule:GetTreasureBirthInfo(birth_id)
+  return self.m_homeland_info.trea_info.treasures[birth_id]
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.EnterHomeLand = function(self, TT, stateTable)
-  -- function num : 0_24 , upvalues : _ENV
+function HomelandModule:EnterHomeLand(TT, stateTable)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventEnterHomelandReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventEnterHomelandReq)
   request.player_pstid = 0
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -416,8 +277,7 @@ HomelandModule.EnterHomeLand = function(self, TT, stateTable)
   local replyEvent = reply.msg
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
     self.m_homeland_info = replyEvent.data
-    ;
-    (self.uiModule):SetEventInfo(replyEvent.can_trigger_event_list, replyEvent.can_trigger_event_num)
+    self.uiModule:SetEventInfo(replyEvent.can_trigger_event_list, replyEvent.can_trigger_event_num)
     AsyncRes:SetSucc(true)
     self:MergeTaskGroupTimeline(self._task_group_timeline, replyEvent.task_group_timeline)
     self:SetTaskGroupCloseTimeline(replyEvent.task_group_close_timeline)
@@ -431,19 +291,16 @@ HomelandModule.EnterHomeLand = function(self, TT, stateTable)
   return AsyncRes, replyEvent
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.IsRecvGroupTaskReward = function(self, group_task_id)
-  -- function num : 0_25 , upvalues : _ENV
-  for key,value in pairs(self.m_group_id_set) do
+function HomelandModule:IsRecvGroupTaskReward(group_task_id)
+  for key, value in pairs(self.m_group_id_set) do
     if value == group_task_id then
       return true
     end
   end
-  if group_task_id > 4 then
+  if 4 < group_task_id then
     return false
   end
-  local l_task_group = (Cfg.cfg_homeland_task_group)[group_task_id]
+  local l_task_group = Cfg.cfg_homeland_task_group[group_task_id]
   if not l_task_group then
     return true
   end
@@ -451,51 +308,46 @@ HomelandModule.IsRecvGroupTaskReward = function(self, group_task_id)
     return true
   end
   local l_UnlockDrawingId = 0
-  for _,value in pairs(l_task_group.Reward) do
+  for _, value in pairs(l_task_group.Reward) do
     if value and value[1] and value[2] and value[2] == 1 then
       local l_item_id = value[1]
-      local l_arch_unlock_item = (Cfg.cfg_item)[l_item_id]
+      local l_arch_unlock_item = Cfg.cfg_item[l_item_id]
       if l_arch_unlock_item and l_arch_unlock_item.ItemSubType == ItemSubType.ItemSubType_HomelandDrawingg then
         l_UnlockDrawingId = l_item_id
         break
       end
     end
   end
-  do
-    if l_UnlockDrawingId == 0 then
-      return true
-    end
-    local itemModule = (GameGlobal.GetModule)(ItemModule)
-    local l_drawing_count = itemModule:GetItemCount(l_UnlockDrawingId)
-    if l_drawing_count > 0 then
-      return true
-    end
-    local l_architecture = (Cfg.cfg_item_architecture)({UnlockDrawing = l_UnlockDrawingId})
-    if not l_architecture then
-      return true
-    end
-    local l_arch_cfg_item = l_architecture[1]
-    if not l_arch_cfg_item then
-      return true
-    end
-    if not self.m_homeland_info or not (self.m_homeland_info).forge_info or not ((self.m_homeland_info).forge_info).unlock_architecture_list then
-      return true
-    end
-    for l_ak,l_avar in pairs(((self.m_homeland_info).forge_info).unlock_architecture_list) do
-      if l_avar == l_arch_cfg_item.ID then
-        return true
-      end
-    end
-    return false
+  if l_UnlockDrawingId == 0 then
+    return true
   end
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local l_drawing_count = itemModule:GetItemCount(l_UnlockDrawingId)
+  if 0 < l_drawing_count then
+    return true
+  end
+  local l_architecture = Cfg.cfg_item_architecture({UnlockDrawing = l_UnlockDrawingId})
+  if not l_architecture then
+    return true
+  end
+  local l_arch_cfg_item = l_architecture[1]
+  if not l_arch_cfg_item then
+    return true
+  end
+  if not (self.m_homeland_info and self.m_homeland_info.forge_info) or not self.m_homeland_info.forge_info.unlock_architecture_list then
+    return true
+  end
+  for l_ak, l_avar in pairs(self.m_homeland_info.forge_info.unlock_architecture_list) do
+    if l_avar == l_arch_cfg_item.ID then
+      return true
+    end
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HandleUnlock = function(self, TT, architecture_id)
-  -- function num : 0_26 , upvalues : _ENV
+function HomelandModule:HandleUnlock(TT, architecture_id)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventUnlockReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventUnlockReq)
   request.architecture_id = architecture_id
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -503,10 +355,8 @@ HomelandModule.HandleUnlock = function(self, TT, architecture_id)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    ((self.m_homeland_info).forge_info).unlock_architecture_list = replyEvent.unlock_architecture_list
+    self.m_homeland_info.forge_info.unlock_architecture_list = replyEvent.unlock_architecture_list
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -514,12 +364,9 @@ HomelandModule.HandleUnlock = function(self, TT, architecture_id)
   return AsyncRes, replyEvent.unlock_architecture_list
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HandleOneClickUnlock = function(self, TT, architectur_ids)
-  -- function num : 0_27 , upvalues : _ENV
+function HomelandModule:HandleOneClickUnlock(TT, architectur_ids)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventOneClickUnlockReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventOneClickUnlockReq)
   request.architecture_ids = architectur_ids
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -527,10 +374,8 @@ HomelandModule.HandleOneClickUnlock = function(self, TT, architectur_ids)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    ((self.m_homeland_info).forge_info).unlock_architecture_list = replyEvent.unlock_architecture_list
+    self.m_homeland_info.forge_info.unlock_architecture_list = replyEvent.unlock_architecture_list
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -538,12 +383,9 @@ HomelandModule.HandleOneClickUnlock = function(self, TT, architectur_ids)
   return AsyncRes, replyEvent.unlock_architecture_list
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HandleForge = function(self, TT, architecture_id, queue_index)
-  -- function num : 0_28 , upvalues : _ENV
+function HomelandModule:HandleForge(TT, architecture_id, queue_index)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventForgeReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventForgeReq)
   request.architecture_id = architecture_id
   request.queue_index = queue_index
   local reply = self:Call(TT, request)
@@ -552,10 +394,8 @@ HomelandModule.HandleForge = function(self, TT, architecture_id, queue_index)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R8 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    ((self.m_homeland_info).forge_info).forge_list = replyEvent.forge_list
+    self.m_homeland_info.forge_info.forge_list = replyEvent.forge_list
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -563,12 +403,9 @@ HomelandModule.HandleForge = function(self, TT, architecture_id, queue_index)
   return AsyncRes, replyEvent.forge_list
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HandleAccelerate = function(self, TT, queue_index, asset)
-  -- function num : 0_29 , upvalues : _ENV
+function HomelandModule:HandleAccelerate(TT, queue_index, asset)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventAccelerateReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventAccelerateReq)
   request.queue_index = queue_index
   request.item = asset
   local reply = self:Call(TT, request)
@@ -577,10 +414,8 @@ HomelandModule.HandleAccelerate = function(self, TT, queue_index, asset)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R8 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    ((self.m_homeland_info).forge_info).forge_list = replyEvent.forge_list
+    self.m_homeland_info.forge_info.forge_list = replyEvent.forge_list
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -588,12 +423,9 @@ HomelandModule.HandleAccelerate = function(self, TT, queue_index, asset)
   return AsyncRes, replyEvent.forge_list
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HandleCancel = function(self, TT, queue_index)
-  -- function num : 0_30 , upvalues : _ENV
+function HomelandModule:HandleCancel(TT, queue_index)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventCancelReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventCancelReq)
   request.queue_index = queue_index
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -601,10 +433,8 @@ HomelandModule.HandleCancel = function(self, TT, queue_index)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    ((self.m_homeland_info).forge_info).forge_list = replyEvent.forge_list
+    self.m_homeland_info.forge_info.forge_list = replyEvent.forge_list
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -612,12 +442,9 @@ HomelandModule.HandleCancel = function(self, TT, queue_index)
   return AsyncRes, replyEvent.forge_list, replyEvent.return_material
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HandlPickUp = function(self, TT, queue_index)
-  -- function num : 0_31 , upvalues : _ENV
+function HomelandModule:HandlPickUp(TT, queue_index)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventPickUpReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventPickUpReq)
   request.queue_index = queue_index
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -625,14 +452,9 @@ HomelandModule.HandlPickUp = function(self, TT, queue_index)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    ((self.m_homeland_info).forge_info).forge_list = replyEvent.forge_list
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self.m_homeland_info).forge_info).already_forge_list = replyEvent.already_forge_list
+    self.m_homeland_info.forge_info.forge_list = replyEvent.forge_list
+    self.m_homeland_info.forge_info.already_forge_list = replyEvent.already_forge_list
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -640,12 +462,9 @@ HomelandModule.HandlPickUp = function(self, TT, queue_index)
   return AsyncRes, replyEvent.forge_list, replyEvent.architecture
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.SetCurrentBuildSkin = function(self, TT, buildPstId, skinId)
-  -- function num : 0_32 , upvalues : _ENV
+function HomelandModule:SetCurrentBuildSkin(TT, buildPstId, skinId)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventSelectSkinReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventSelectSkinReq)
   request.pstid = buildPstId
   request.skin_id = skinId
   local reply = self:Call(TT, request)
@@ -655,26 +474,18 @@ HomelandModule.SetCurrentBuildSkin = function(self, TT, buildPstId, skinId)
   end
   local replyEvent = reply.msg
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    local id = (replyEvent.architecture_info).pstid
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (((self.m_homeland_info).architecture_list).architecture_list)[id] = replyEvent.architecture_info
+    local id = replyEvent.architecture_info.pstid
+    self.m_homeland_info.architecture_list.architecture_list[id] = replyEvent.architecture_info
     AsyncRes:SetSucc(true)
   else
-    do
-      AsyncRes:SetResult(replyEvent.nRet)
-      return AsyncRes, replyEvent.architecture_info
-    end
+    AsyncRes:SetResult(replyEvent.nRet)
   end
+  return AsyncRes, replyEvent.architecture_info
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HomelandBuild = function(self, TT, add_list, delete_list, update_list)
-  -- function num : 0_33 , upvalues : _ENV
+function HomelandModule:HomelandBuild(TT, add_list, delete_list, update_list)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandBuildReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandBuildReq)
   request.add_architectures = add_list
   request.delete_pstids = delete_list
   request.update_architectures = update_list
@@ -686,20 +497,14 @@ HomelandModule.HomelandBuild = function(self, TT, add_list, delete_list, update_
   end
   local replyEvent = reply.msg
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    for i,v in ipairs(replyEvent.update_architectures) do
-      -- DECOMPILER ERROR at PC42: Confused about usage of register: R14 in 'UnsetPending'
-
-      (((self.m_homeland_info).architecture_list).architecture_list)[v.pstid] = v
+    for i, v in ipairs(replyEvent.update_architectures) do
+      self.m_homeland_info.architecture_list.architecture_list[v.pstid] = v
     end
-    for i,v in ipairs(replyEvent.delete_pstids) do
-      -- DECOMPILER ERROR at PC52: Confused about usage of register: R14 in 'UnsetPending'
-
-      (((self.m_homeland_info).architecture_list).architecture_list)[v] = nil
+    for i, v in ipairs(replyEvent.delete_pstids) do
+      self.m_homeland_info.architecture_list.architecture_list[v] = nil
     end
-    for i,v in ipairs(replyEvent.add_architectures) do
-      -- DECOMPILER ERROR at PC63: Confused about usage of register: R14 in 'UnsetPending'
-
-      (((self.m_homeland_info).architecture_list).architecture_list)[v.pstid] = v
+    for i, v in ipairs(replyEvent.add_architectures) do
+      self.m_homeland_info.architecture_list.architecture_list[v.pstid] = v
     end
     AsyncRes:SetSucc(true)
   else
@@ -708,12 +513,9 @@ HomelandModule.HomelandBuild = function(self, TT, add_list, delete_list, update_
   return AsyncRes, replyEvent.add_architectures
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HomelandShopRefreshReq = function(self, TT)
-  -- function num : 0_34 , upvalues : _ENV
+function HomelandModule:HomelandShopRefreshReq(TT)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandShopRefreshReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandShopRefreshReq)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     AsyncRes:SetResult(HomeLandErrorType.E_HOME_LAND_UNLOCK)
@@ -722,22 +524,16 @@ HomelandModule.HomelandShopRefreshReq = function(self, TT)
   local replyEvent = reply.msg
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
     AsyncRes:SetSucc(true)
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.m_homeland_info).shop_info = replyEvent.shop_info
+    self.m_homeland_info.shop_info = replyEvent.shop_info
   else
     AsyncRes:SetResult(replyEvent.nRet)
   end
-  return AsyncRes, (self.m_homeland_info).shop_info
+  return AsyncRes, self.m_homeland_info.shop_info
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HomelandShopReq = function(self, TT, cfgId, num)
-  -- function num : 0_35 , upvalues : _ENV
+function HomelandModule:HomelandShopReq(TT, cfgId, num)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandShopReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandShopReq)
   request.id = cfgId
   request.num = num
   local reply = self:Call(TT, request)
@@ -748,28 +544,20 @@ HomelandModule.HomelandShopReq = function(self, TT, cfgId, num)
   local replyEvent = reply.msg
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
     AsyncRes:SetSucc(true)
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R8 in 'UnsetPending'
-
-    if (((self.m_homeland_info).shop_info).chs_map)[cfgId] ~= nil then
-      (((self.m_homeland_info).shop_info).chs_map)[cfgId] = (((self.m_homeland_info).shop_info).chs_map)[cfgId] + num
+    if self.m_homeland_info.shop_info.chs_map[cfgId] ~= nil then
+      self.m_homeland_info.shop_info.chs_map[cfgId] = self.m_homeland_info.shop_info.chs_map[cfgId] + num
     else
-      -- DECOMPILER ERROR at PC53: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (((self.m_homeland_info).shop_info).chs_map)[cfgId] = num
+      self.m_homeland_info.shop_info.chs_map[cfgId] = num
     end
   else
     AsyncRes:SetResult(replyEvent.nRet)
   end
-  return AsyncRes, (self.m_homeland_info).shop_info
+  return AsyncRes, self.m_homeland_info.shop_info
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HomelandSellReq = function(self, TT, id_num)
-  -- function num : 0_36 , upvalues : _ENV
+function HomelandModule:HomelandSellReq(TT, id_num)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandSellReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandSellReq)
   request.id_num = id_num
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -782,26 +570,17 @@ HomelandModule.HomelandSellReq = function(self, TT, id_num)
   else
     AsyncRes:SetResult(replyEvent.nRet)
   end
-  return AsyncRes, (self.m_homeland_info).shop_info
+  return AsyncRes, self.m_homeland_info.shop_info
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HandleShopUpdate = function(self, msgInfo)
-  -- function num : 0_37 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_homeland_info).shop_info = msgInfo.shop_info
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandShopUpdate)
+function HomelandModule:HandleShopUpdate(msgInfo)
+  self.m_homeland_info.shop_info = msgInfo.shop_info
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandShopUpdate)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HomelandGoodsReq = function(self, TT, id, isSell)
-  -- function num : 0_38 , upvalues : _ENV
+function HomelandModule:HomelandGoodsReq(TT, id, isSell)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandGoodsReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandGoodsReq)
   request.id = id
   request.is_sell = isSell
   local reply = self:Call(TT, request)
@@ -812,36 +591,23 @@ HomelandModule.HomelandGoodsReq = function(self, TT, id, isSell)
   local replyEvent = reply.msg
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
     AsyncRes:SetSucc(true)
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((self.m_homeland_info).shop_info).goods_refresh_time = replyEvent.goods_refresh_time
-    for i,v in pairs(replyEvent.goods_info) do
-      -- DECOMPILER ERROR at PC45: Confused about usage of register: R13 in 'UnsetPending'
-
-      (((self.m_homeland_info).shop_info).goods_info)[i] = v
+    self.m_homeland_info.shop_info.goods_refresh_time = replyEvent.goods_refresh_time
+    for i, v in pairs(replyEvent.goods_info) do
+      self.m_homeland_info.shop_info.goods_info[i] = v
     end
   else
-    do
-      AsyncRes:SetResult(replyEvent.nRet)
-      return AsyncRes, replyEvent.shop_info
-    end
+    AsyncRes:SetResult(replyEvent.nRet)
   end
+  return AsyncRes, replyEvent.shop_info
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetHomelandDairyInfo = function(self)
-  -- function num : 0_39
-  return (self.m_homeland_info).dairy_info
+function HomelandModule:GetHomelandDairyInfo()
+  return self.m_homeland_info.dairy_info
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HandleHomelandFixShabbyReq = function(self, TT, arch_pstid)
-  -- function num : 0_40 , upvalues : _ENV
+function HomelandModule:HandleHomelandFixShabbyReq(TT, arch_pstid)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandFixShabbyReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandFixShabbyReq)
   request.arch_pstid = arch_pstid
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -850,21 +616,16 @@ HomelandModule.HandleHomelandFixShabbyReq = function(self, TT, arch_pstid)
   end
   local replyEvent = reply.msg
   AsyncRes:SetResult(replyEvent.nRet)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (((self.m_homeland_info).architecture_list).architecture_list)[arch_pstid] = replyEvent.architecture_info
+    self.m_homeland_info.architecture_list.architecture_list[arch_pstid] = replyEvent.architecture_info
     AsyncRes:SetSucc(true)
   end
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HandleHomelandReadedDairyReq = function(self, TT, read_dairy_id)
-  -- function num : 0_41 , upvalues : _ENV
+function HomelandModule:HandleHomelandReadedDairyReq(TT, read_dairy_id)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandReadedDairyReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandReadedDairyReq)
   request.nReadDairyId = read_dairy_id
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -875,30 +636,23 @@ HomelandModule.HandleHomelandReadedDairyReq = function(self, TT, read_dairy_id)
   AsyncRes:SetResult(replyEvent.nRet)
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
     local bHasID = false
-    for index,value in ipairs(((self.m_homeland_info).dairy_info).is_readed_dairy) do
+    for index, value in ipairs(self.m_homeland_info.dairy_info.is_readed_dairy) do
       if value == read_dairy_id then
         bHasID = true
         break
       end
     end
-    do
-      do
-        if not bHasID then
-          (table.insert)(((self.m_homeland_info).dairy_info).is_readed_dairy, read_dairy_id)
-        end
-        AsyncRes:SetSucc(true)
-        return AsyncRes
-      end
+    if not bHasID then
+      table.insert(self.m_homeland_info.dairy_info.is_readed_dairy, read_dairy_id)
     end
+    AsyncRes:SetSucc(true)
   end
+  return AsyncRes
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HandleHomelandTraceReq = function(self, TT, trace_type, trace_id)
-  -- function num : 0_42 , upvalues : _ENV
+function HomelandModule:HandleHomelandTraceReq(TT, trace_type, trace_id)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandTraceReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandTraceReq)
   request.trace_type = trace_type
   request.trace_id = trace_id
   local reply = self:Call(TT, request)
@@ -908,28 +662,20 @@ HomelandModule.HandleHomelandTraceReq = function(self, TT, trace_type, trace_id)
   end
   local replyEvent = reply.msg
   AsyncRes:SetResult(replyEvent.nRet)
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R8 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (self.m_homeland_info).trace_info = replyEvent.trace_info
+    self.m_homeland_info.trace_info = replyEvent.trace_info
     AsyncRes:SetSucc(true)
   end
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetHomeLandEventInfo = function(self)
-  -- function num : 0_43
-  return (self.m_homeland_info).event_info
+function HomelandModule:GetHomeLandEventInfo()
+  return self.m_homeland_info.event_info
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HandleClientFinishEventReq = function(self, TT, finish_event_id)
-  -- function num : 0_44 , upvalues : _ENV
+function HomelandModule:HandleClientFinishEventReq(TT, finish_event_id)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventClientFinishEventReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventClientFinishEventReq)
   request.finish_event_id = finish_event_id
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -938,28 +684,23 @@ HomelandModule.HandleClientFinishEventReq = function(self, TT, finish_event_id)
   end
   local replyEvent = reply.msg
   AsyncRes:SetResult(replyEvent.nRet)
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (self.m_homeland_info).event_info = replyEvent.event_info
+    self.m_homeland_info.event_info = replyEvent.event_info
     if replyEvent.wishing_coin_position ~= 0 then
-      (table.insert)(((self.m_homeland_info).fishing_data).append_wishingcoin_position, replyEvent.wishing_coin_position)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIHomeEventTips, UIHomeEventTipsType.Tex, {(StringTable.Get)("str_homeland_new_fishing_position_tips")})
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FishingRefreshFishingPosition)
+      table.insert(self.m_homeland_info.fishing_data.append_wishingcoin_position, replyEvent.wishing_coin_position)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIHomeEventTips, UIHomeEventTipsType.Tex, {
+        StringTable.Get("str_homeland_new_fishing_position_tips")
+      })
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.FishingRefreshFishingPosition)
     end
     AsyncRes:SetSucc(true)
   end
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HandleClientTriggerEventReq = function(self, TT, trigger_event_list)
-  -- function num : 0_45 , upvalues : _ENV
+function HomelandModule:HandleClientTriggerEventReq(TT, trigger_event_list)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventClientTriggerEventReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventClientTriggerEventReq)
   request.trigger_event_list = trigger_event_list
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -968,21 +709,16 @@ HomelandModule.HandleClientTriggerEventReq = function(self, TT, trigger_event_li
   end
   local replyEvent = reply.msg
   AsyncRes:SetResult(replyEvent.nRet)
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (self.m_homeland_info).event_info = replyEvent.event_info
+    self.m_homeland_info.event_info = replyEvent.event_info
     AsyncRes:SetSucc(true)
   end
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HomelandGetNewTreasure = function(self, TT, birthId, expos)
-  -- function num : 0_46 , upvalues : _ENV
+function HomelandModule:HomelandGetNewTreasure(TT, birthId, expos)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandTreasureReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandTreasureReq)
   request.birth_id = birthId
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -990,10 +726,8 @@ HomelandModule.HomelandGetNewTreasure = function(self, TT, birthId, expos)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R8 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (self.m_homeland_info).trea_info = replyEvent.trea_info
+    self.m_homeland_info.trea_info = replyEvent.trea_info
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -1001,12 +735,9 @@ HomelandModule.HomelandGetNewTreasure = function(self, TT, birthId, expos)
   return AsyncRes, replyEvent.trea_info
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HomelandChangeTreasureState = function(self, TT, birthId, state)
-  -- function num : 0_47 , upvalues : _ENV
+function HomelandModule:HomelandChangeTreasureState(TT, birthId, state)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandTreasureStateReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandTreasureStateReq)
   request.birth_id = birthId
   request.state = state
   local reply = self:Call(TT, request)
@@ -1017,47 +748,35 @@ HomelandModule.HomelandChangeTreasureState = function(self, TT, birthId, state)
   local replyEvent = reply.msg
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
     AsyncRes:SetSucc(true)
-    local t = (((self.m_homeland_info).trea_info).treasures)[birthId]
+    local t = self.m_homeland_info.trea_info.treasures[birthId]
     if state == TreasureState.TS_GRAB then
       t.state = TreasureState.TS_DESTROY
     else
       t.state = state
     end
   else
-    do
-      AsyncRes:SetResult(replyEvent.nRet)
-      return AsyncRes, replyEvent.assets
-    end
+    AsyncRes:SetResult(replyEvent.nRet)
   end
+  return AsyncRes, replyEvent.assets
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HandleTreasureUpdate = function(self, msgInfo)
-  -- function num : 0_48 , upvalues : _ENV
+function HomelandModule:HandleTreasureUpdate(msgInfo)
   local delmap = {}
-  for birthID,v in pairs((msgInfo.trea_info).treasures) do
+  for birthID, v in pairs(msgInfo.trea_info.treasures) do
     if v.state == TreasureState.TS_DESTROY then
-      (table.insert)(delmap, birthID)
+      table.insert(delmap, birthID)
     end
   end
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_homeland_info).trea_info = msgInfo.trea_info
+  self.m_homeland_info.trea_info = msgInfo.trea_info
   if #delmap <= 0 then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TreasureRemove, delmap)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.TreasureRemove, delmap)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HomelandVisitListReq = function(self, TT)
-  -- function num : 0_49 , upvalues : _ENV
+function HomelandModule:HomelandVisitListReq(TT)
   local asyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandVisitListReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandVisitListReq)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     asyncRes:SetResult(HomeLandErrorType.E_HOME_LAND_UNLOCK)
@@ -1068,12 +787,9 @@ HomelandModule.HomelandVisitListReq = function(self, TT)
   return asyncRes, replyEvent
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HomelandVisitFriendReq = function(self, TT, peer_pstid)
-  -- function num : 0_50 , upvalues : _ENV
+function HomelandModule:HomelandVisitFriendReq(TT, peer_pstid)
   local asyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandVisitFriendReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandVisitFriendReq)
   request.pstid = peer_pstid
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -1089,12 +805,9 @@ HomelandModule.HomelandVisitFriendReq = function(self, TT, peer_pstid)
   return asyncRes, replyEvent
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HomelandTakeItemReq = function(self, TT, host_pstid, index, item_pstid)
-  -- function num : 0_51 , upvalues : _ENV
+function HomelandModule:HomelandTakeItemReq(TT, host_pstid, index, item_pstid)
   local asyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandTakeItemReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandTakeItemReq)
   request.pstid = host_pstid
   request.index = index
   request.item_pstid = item_pstid
@@ -1105,7 +818,7 @@ HomelandModule.HomelandTakeItemReq = function(self, TT, host_pstid, index, item_
   end
   local replyEvent = reply.msg
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (table.insert)(((self.m_homeland_info).visit_info).item_list, host_pstid)
+    table.insert(self.m_homeland_info.visit_info.item_list, host_pstid)
     asyncRes:SetSucc(true)
   else
     asyncRes:SetResult(replyEvent.nRet)
@@ -1113,12 +826,9 @@ HomelandModule.HomelandTakeItemReq = function(self, TT, host_pstid, index, item_
   return asyncRes, replyEvent
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HomelandAccForgeReq = function(self, TT, host_pstid)
-  -- function num : 0_52 , upvalues : _ENV
+function HomelandModule:HomelandAccForgeReq(TT, host_pstid)
   local asyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandAccForgeReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandAccForgeReq)
   request.pstid = host_pstid
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -1127,7 +837,7 @@ HomelandModule.HomelandAccForgeReq = function(self, TT, host_pstid)
   end
   local replyEvent = reply.msg
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (table.insert)(((self.m_homeland_info).visit_info).forge_list, host_pstid)
+    table.insert(self.m_homeland_info.visit_info.forge_list, host_pstid)
     asyncRes:SetSucc(true)
   else
     asyncRes:SetResult(replyEvent.nRet)
@@ -1135,12 +845,9 @@ HomelandModule.HomelandAccForgeReq = function(self, TT, host_pstid)
   return asyncRes, replyEvent
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HomelandAccCultivateReq = function(self, TT, host_pstid, land_pstid)
-  -- function num : 0_53 , upvalues : _ENV
+function HomelandModule:HomelandAccCultivateReq(TT, host_pstid, land_pstid)
   local asyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandAccCultivateReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandAccCultivateReq)
   request.pstid = host_pstid
   request.land_pstid = land_pstid
   local reply = self:Call(TT, request)
@@ -1150,7 +857,7 @@ HomelandModule.HomelandAccCultivateReq = function(self, TT, host_pstid, land_pst
   end
   local replyEvent = reply.msg
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (table.insert)(((self.m_homeland_info).visit_info).cultivation_list, land_pstid)
+    table.insert(self.m_homeland_info.visit_info.cultivation_list, land_pstid)
     asyncRes:SetSucc(true)
   else
     asyncRes:SetResult(replyEvent.nRet)
@@ -1158,12 +865,9 @@ HomelandModule.HomelandAccCultivateReq = function(self, TT, host_pstid, land_pst
   return asyncRes, replyEvent
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HomelandMoveItemReq = function(self, TT, index, item)
-  -- function num : 0_54 , upvalues : _ENV
+function HomelandModule:HomelandMoveItemReq(TT, index, item)
   local asyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandMoveItemReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandMoveItemReq)
   request.item = item
   request.index = index
   local reply = self:Call(TT, request)
@@ -1172,14 +876,10 @@ HomelandModule.HomelandMoveItemReq = function(self, TT, index, item)
     return asyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R8 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (((self.m_homeland_info).visit_int_info).item_map)[index] = nil
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R8 in 'UnsetPending'
-
+    self.m_homeland_info.visit_int_info.item_map[index] = nil
     if item ~= nil then
-      (((self.m_homeland_info).visit_int_info).item_map)[index] = replyEvent.item
+      self.m_homeland_info.visit_int_info.item_map[index] = replyEvent.item
     end
     asyncRes:SetSucc(true)
   else
@@ -1188,12 +888,9 @@ HomelandModule.HomelandMoveItemReq = function(self, TT, index, item)
   return asyncRes, replyEvent
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HomelandVisitLogReq = function(self, TT)
-  -- function num : 0_55 , upvalues : _ENV
+function HomelandModule:HomelandVisitLogReq(TT)
   local asyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandVisitLogReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandVisitLogReq)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     asyncRes:SetResult(HomeLandErrorType.E_HOME_LAND_UNLOCK)
@@ -1204,116 +901,69 @@ HomelandModule.HomelandVisitLogReq = function(self, TT)
   return asyncRes, replyEvent
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HandleForgeUpdate = function(self, msgInfo)
-  -- function num : 0_56
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self.m_homeland_info).forge_info).forge_list = msgInfo.forge_list
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self.m_homeland_info).visit_int_info).forge_acc_map = msgInfo.forge_time
+function HomelandModule:HandleForgeUpdate(msgInfo)
+  self.m_homeland_info.forge_info.forge_list = msgInfo.forge_list
+  self.m_homeland_info.visit_int_info.forge_acc_map = msgInfo.forge_time
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HandleCultivationUpdate = function(self, msgInfo)
-  -- function num : 0_57 , upvalues : _ENV
+function HomelandModule:HandleCultivationUpdate(msgInfo)
   if self.m_homeland_info == nil then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_homeland_info).cultivation_info = msgInfo.infos
-  if msgInfo.cul_time and (table.count)(msgInfo.cul_time) > 0 then
-    for pstId,visitHelpTimeInfo in pairs(((self.m_homeland_info).visit_int_info).cul_acc_map) do
-      if (msgInfo.cul_time)[pstId] ~= nil and visitHelpTimeInfo.help_surplus_time ~= ((msgInfo.cul_time)[pstId]).help_surplus_time then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandFriendSpeed, pstId)
+  self.m_homeland_info.cultivation_info = msgInfo.infos
+  if msgInfo.cul_time and table.count(msgInfo.cul_time) > 0 then
+    for pstId, visitHelpTimeInfo in pairs(self.m_homeland_info.visit_int_info.cul_acc_map) do
+      if msgInfo.cul_time[pstId] ~= nil and visitHelpTimeInfo.help_surplus_time ~= msgInfo.cul_time[pstId].help_surplus_time then
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandFriendSpeed, pstId)
       end
     end
   end
-  do
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self.m_homeland_info).visit_int_info).cul_acc_map = msgInfo.cul_time
-  end
+  self.m_homeland_info.visit_int_info.cul_acc_map = msgInfo.cul_time
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HandleVisitItemUpdate = function(self, msgInfo)
-  -- function num : 0_58
-  if ((self.m_homeland_info).visit_int_info).item_map == nil then
-    return 
+function HomelandModule:HandleVisitItemUpdate(msgInfo)
+  if self.m_homeland_info.visit_int_info.item_map == nil then
+    return
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (((self.m_homeland_info).visit_int_info).item_map)[msgInfo.index] = nil
+  self.m_homeland_info.visit_int_info.item_map[msgInfo.index] = nil
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.PushFinishHomeChatId = function(self, petTemplateId, chatId)
-  -- function num : 0_59 , upvalues : _ENV
+function HomelandModule:PushFinishHomeChatId(petTemplateId, chatId)
   if petTemplateId == nil or chatId == nil or petTemplateId <= 0 or chatId <= 0 then
-    return 
+    return
   end
-  local msg = (NetMessageFactory:GetInstance()):CreateMessage(CEventPushFinishHomeChatId)
+  local msg = NetMessageFactory:GetInstance():CreateMessage(CEventPushFinishHomeChatId)
   msg.pet_template_id = petTemplateId
   msg.finish_home_pet_chat_id = chatId
   self:Push(msg)
-  local chatlist = ((self.m_homeland_info).complate_chat_ids)[petTemplateId]
+  local chatlist = self.m_homeland_info.complate_chat_ids[petTemplateId]
   if chatlist ~= nil then
-    (table.insert)(chatlist, chatId)
+    table.insert(chatlist, chatId)
   else
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    ((self.m_homeland_info).complate_chat_ids)[petTemplateId] = {chatId}
+    self.m_homeland_info.complate_chat_ids[petTemplateId] = {chatId}
   end
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetPetComplatedChatList = function(self, petTemplateID)
-  -- function num : 0_60
-  local chatlist = ((self.m_homeland_info).complate_chat_ids)[petTemplateID]
+function HomelandModule:GetPetComplatedChatList(petTemplateID)
+  local chatlist = self.m_homeland_info.complate_chat_ids[petTemplateID]
   return chatlist
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HideDialogNew = function(self, petTemplateID)
-  -- function num : 0_61 , upvalues : _ENV
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  return not (LocalDB.HasKey)("HideDialogNew2" .. loginModule:GetRoleShowID() .. tostring(petTemplateID))
+function HomelandModule:HideDialogNew(petTemplateID)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  return not LocalDB.HasKey("HideDialogNew2" .. loginModule:GetRoleShowID() .. tostring(petTemplateID))
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.OnOpenHideDialog = function(self, petTemplateID)
-  -- function num : 0_62 , upvalues : _ENV
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  ;
-  (LocalDB.SetInt)("HideDialogNew2" .. loginModule:GetRoleShowID() .. tostring(petTemplateID), 1)
+function HomelandModule:OnOpenHideDialog(petTemplateID)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  LocalDB.SetInt("HideDialogNew2" .. loginModule:GetRoleShowID() .. tostring(petTemplateID), 1)
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.ChangeSkin = function(self, TT, architecture)
-  -- function num : 0_63
+function HomelandModule:ChangeSkin(TT, architecture)
   return self:HomelandBuild(TT, {}, {}, {architecture})
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HasSkinRedPoint = function(self, buildId)
-  -- function num : 0_64
+function HomelandModule:HasSkinRedPoint(buildId)
   local skinIds = self:GetBuildSkinIds(buildId)
   for i = 1, #skinIds do
     local skinId = skinIds[i]
@@ -1324,133 +974,102 @@ HomelandModule.HasSkinRedPoint = function(self, buildId)
   return false
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HasSkinRedPointBySkinId = function(self, skinId)
-  -- function num : 0_65 , upvalues : _ENV
+function HomelandModule:HasSkinRedPointBySkinId(skinId)
   if skinId == 0 then
     return false
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local items = itemModule:GetItemByTempId(skinId)
   if not items then
     return false
   end
-  if (table.count)(items) <= 0 then
+  if 0 >= table.count(items) then
     return false
   end
-  local item = nil
-  for k,v in pairs(items) do
+  local item
+  for k, v in pairs(items) do
     item = v
-    do break end
+    break
   end
-  do
-    local isNew = false
-    do
-      if item:IsNewOverlay() then
-        local cfg = (Cfg.cfg_item)[skinId]
-        if cfg.ShowNew and cfg.ShowNew == 1 then
-          isNew = true
-        end
-      end
-      return isNew
+  local isNew = false
+  if item:IsNewOverlay() then
+    local cfg = Cfg.cfg_item[skinId]
+    if cfg.ShowNew and cfg.ShowNew == 1 then
+      isNew = true
     end
   end
+  return isNew
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.SetSkinRedPointStatus = function(self, TT, skinId)
-  -- function num : 0_66 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function HomelandModule:SetSkinRedPointStatus(TT, skinId)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local items = itemModule:GetItemByTempId(skinId)
   if not items then
-    return 
+    return
   end
-  if (table.count)(items) <= 0 then
-    return 
+  if table.count(items) <= 0 then
+    return
   end
-  local item = nil
-  for k,v in pairs(items) do
+  local item
+  for k, v in pairs(items) do
     item = v
-    do break end
+    break
   end
-  do
-    itemModule:SetItemUnnewOverlay(TT, item:GetID())
-  end
+  itemModule:SetItemUnnewOverlay(TT, item:GetID())
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetForgeData = function(self)
-  -- function num : 0_67 , upvalues : _ENV
+function HomelandModule:GetForgeData()
   if not self.forgeData then
     self.forgeData = UIForgeData:New()
   end
   return self.forgeData
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetHomelandBackpackData = function(self)
-  -- function num : 0_68 , upvalues : _ENV
+function HomelandModule:GetHomelandBackpackData()
   if not self.homelandBackpackData then
     self.homelandBackpackData = UIHomelandBackpackData:New()
   end
   return self.homelandBackpackData
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetHomelandLevelData = function(self)
-  -- function num : 0_69 , upvalues : _ENV
+function HomelandModule:GetHomelandLevelData()
   if not self._homelandLevelData then
     self._homelandLevelData = UIHomelandLevelData:New()
   end
   return self._homelandLevelData
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetBuildArchitecture = function(self)
-  -- function num : 0_70
-  return ((self.m_homeland_info).architecture_list).architecture_list
+function HomelandModule:GetBuildArchitecture()
+  return self.m_homeland_info.architecture_list.architecture_list
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetAmbientValue = function(self)
-  -- function num : 0_71 , upvalues : _ENV
+function HomelandModule:GetAmbientValue()
   local value = 0
   local archs = self:GetBuildArchitecture()
-  for _,arch in pairs(archs) do
+  for _, arch in pairs(archs) do
     if arch.status == ArchitectureStatus.AS_Normal then
-      if arch.skin > 0 then
-        if not (Cfg.cfg_item_architecture_skin)[arch.skin] then
-          (Log.fatal)("cfg_item_architecture_skin中缺少配置:arch.skin")
+      if 0 < arch.skin then
+        if not Cfg.cfg_item_architecture_skin[arch.skin] then
+          Log.fatal("cfg_item_architecture_skin中缺少配置:arch.skin")
         else
-          value = value + ((Cfg.cfg_item_architecture_skin)[arch.skin]).LivableValue
+          value = value + Cfg.cfg_item_architecture_skin[arch.skin].LivableValue
         end
       else
-        if not (Cfg.cfg_item_architecture)[arch.asset_id] then
-          (Log.fatal)("cfg_item_architecture中缺少配置:arch.asset_id")
+        if not Cfg.cfg_item_architecture[arch.asset_id] then
+          Log.fatal("cfg_item_architecture中缺少配置:arch.asset_id")
         end
-        value = value + ((Cfg.cfg_item_architecture)[arch.asset_id]).LivableValue
+        value = value + Cfg.cfg_item_architecture[arch.asset_id].LivableValue
       end
     end
   end
-  local cfg_level = (Cfg.cfg_homeland_level)[(self.m_homeland_info).level]
-  if cfg_level == nil or cfg_level.LivableValueMax == nil or cfg_level.LivableValueMax >= value or not cfg_level.LivableValueMax then
-    return value
-  end
+  local cfg_level = Cfg.cfg_homeland_level[self.m_homeland_info.level]
+  value = cfg_level ~= nil and cfg_level.LivableValueMax ~= nil and value > cfg_level.LivableValueMax and cfg_level.LivableValueMax or value
+  return value
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HomelandFell = function(self, TT, tree_id, cur_fell_times)
-  -- function num : 0_72 , upvalues : _ENV
+function HomelandModule:HomelandFell(TT, tree_id, cur_fell_times)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandFellReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandFellReq)
   request.tree_id = tree_id
   request.feel_times = cur_fell_times
   local reply = self:Call(TT, request)
@@ -1459,10 +1078,8 @@ HomelandModule.HomelandFell = function(self, TT, tree_id, cur_fell_times)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R8 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (self.m_homeland_info).fell_info = replyEvent.fell_info
+    self.m_homeland_info.fell_info = replyEvent.fell_info
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -1470,22 +1087,17 @@ HomelandModule.HomelandFell = function(self, TT, tree_id, cur_fell_times)
   return AsyncRes, replyEvent.assets
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.HomelandGetFellInfo = function(self, TT)
-  -- function num : 0_73 , upvalues : _ENV
+function HomelandModule:HomelandGetFellInfo(TT)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventFellInfoReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventFellInfoReq)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     AsyncRes:SetResult(HomeLandErrorType.E_HOME_LAND_UNLOCK)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R6 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (self.m_homeland_info).fell_info = replyEvent.fell_info
+    self.m_homeland_info.fell_info = replyEvent.fell_info
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -1493,26 +1105,17 @@ HomelandModule.HomelandGetFellInfo = function(self, TT)
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.IsPopDormitoryTips = function(self)
-  -- function num : 0_74
-  return ((self.m_homeland_info).dormitory_info).pop_tips
+function HomelandModule:IsPopDormitoryTips()
+  return self.m_homeland_info.dormitory_info.pop_tips
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetDormitoryNextRefreshStoryTime = function(self)
-  -- function num : 0_75
-  return ((self.m_homeland_info).dormitory_info).next_refresh_story_time
+function HomelandModule:GetDormitoryNextRefreshStoryTime()
+  return self.m_homeland_info.dormitory_info.next_refresh_story_time
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.DormitoryChangeName = function(self, TT, index, newName)
-  -- function num : 0_76 , upvalues : _ENV
+function HomelandModule:DormitoryChangeName(TT, index, newName)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventDormitoryChangeNameReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventDormitoryChangeNameReq)
   request.index = index
   request.name = newName
   local reply = self:Call(TT, request)
@@ -1521,10 +1124,8 @@ HomelandModule.DormitoryChangeName = function(self, TT, index, newName)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R8 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    ((((self.m_homeland_info).dormitory_info).list)[index]).name = newName
+    self.m_homeland_info.dormitory_info.list[index].name = newName
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -1532,12 +1133,9 @@ HomelandModule.DormitoryChangeName = function(self, TT, index, newName)
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.DormitoryUpdatePet = function(self, TT, data)
-  -- function num : 0_77 , upvalues : _ENV
+function HomelandModule:DormitoryUpdatePet(TT, data)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventDormitoryUpdatePetReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventDormitoryUpdatePetReq)
   request.updateData = data
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -1546,34 +1144,27 @@ HomelandModule.DormitoryUpdatePet = function(self, TT, data)
   end
   local replyEvent = reply.msg
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    local dormitoryInfo = (self.m_homeland_info).dormitory_info
-    for roomIndex,v in pairs(data) do
-      local room = (dormitoryInfo.list)[roomIndex]
-      for petIndex,petID in pairs(v) do
-        -- DECOMPILER ERROR at PC43: Confused about usage of register: R19 in 'UnsetPending'
-
-        (room.petList)[petIndex] = petID
+    local dormitoryInfo = self.m_homeland_info.dormitory_info
+    for roomIndex, v in pairs(data) do
+      local room = dormitoryInfo.list[roomIndex]
+      for petIndex, petID in pairs(v) do
+        room.petList[petIndex] = petID
       end
     end
     AsyncRes:SetSucc(true)
   else
-    do
-      AsyncRes:SetResult(replyEvent.nRet)
-      return AsyncRes
-    end
+    AsyncRes:SetResult(replyEvent.nRet)
   end
+  return AsyncRes
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetAllDomitoryPets = function(self)
-  -- function num : 0_78 , upvalues : _ENV
+function HomelandModule:GetAllDomitoryPets()
   local list = {}
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  local dormitoryInfo = (self.m_homeland_info).dormitory_info
-  for roomIndex,v in pairs(dormitoryInfo.list) do
+  local petModule = GameGlobal.GetModule(PetModule)
+  local dormitoryInfo = self.m_homeland_info.dormitory_info
+  for roomIndex, v in pairs(dormitoryInfo.list) do
     local room = v
-    for petIndex,pstid in pairs(room.petList) do
+    for petIndex, pstid in pairs(room.petList) do
       local pet = petModule:GetPet(pstid)
       if pet then
         list[#list + 1] = pet
@@ -1583,14 +1174,11 @@ HomelandModule.GetAllDomitoryPets = function(self)
   return list
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetPetSettledRoom = function(self, pstid)
-  -- function num : 0_79 , upvalues : _ENV
-  local dormitoryInfo = (self.m_homeland_info).dormitory_info
-  for roomIndex,v in pairs(dormitoryInfo.list) do
+function HomelandModule:GetPetSettledRoom(pstid)
+  local dormitoryInfo = self.m_homeland_info.dormitory_info
+  for roomIndex, v in pairs(dormitoryInfo.list) do
     local room = v
-    for petIndex,petID in pairs(room.petList) do
+    for petIndex, petID in pairs(room.petList) do
       if petID == pstid then
         return roomIndex
       end
@@ -1599,80 +1187,64 @@ HomelandModule.GetPetSettledRoom = function(self, pstid)
   return nil
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.PetCanSettle = function(self, petTmpID)
-  -- function num : 0_80 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_home_dormitory_nocheckin_pet)({PetID = petTmpID})
-  if cfgs and #cfgs > 0 then
+function HomelandModule:PetCanSettle(petTmpID)
+  local cfgs = Cfg.cfg_home_dormitory_nocheckin_pet({PetID = petTmpID})
+  if cfgs and 0 < #cfgs then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetRoomIntimacySpeed = function(self, roomIdx)
-  -- function num : 0_81 , upvalues : _ENV
+function HomelandModule:GetRoomIntimacySpeed(roomIdx)
   local ambient = self:GetAmbientValue()
-  local tmp = (Cfg.cfg_homeland_dormitory_favorability)({})
+  local tmp = Cfg.cfg_homeland_dormitory_favorability({})
   local cfgs = {}
-  for _,value in pairs(tmp) do
-    (table.insert)(cfgs, value)
+  for _, value in pairs(tmp) do
+    table.insert(cfgs, value)
   end
-  ;
-  (table.sort)(cfgs, function(a, b)
-    -- function num : 0_81_0
-    do return a.AtmosphereValue < b.AtmosphereValue end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(cfgs, function(a, b)
+    return a.AtmosphereValue < b.AtmosphereValue
+  end)
   local valuePerPet = 0
-  for _,cfg in ipairs(cfgs) do
+  for _, cfg in ipairs(cfgs) do
     if ambient <= cfg.AtmosphereValue then
       valuePerPet = cfg.SinglePetAddValue
       break
     end
   end
-  do
-    if valuePerPet == 0 then
-      valuePerPet = (cfgs[#cfgs]).SinglePetAddValue
-    end
-    local room = (((self.m_homeland_info).dormitory_info).list)[roomIdx]
-    local count = 0
-    local settledPetCount = 0
-    for _,pstid in ipairs(room.petList) do
-      if pstid ~= 0 then
-        settledPetCount = settledPetCount + 1
-        local pet = (self:GetModule(PetModule)):GetPet(pstid)
-        if pet:GetPetAffinityLevel() < pet:GetPetAffinityMaxLevel() then
-          count = count + 1
-        end
+  if valuePerPet == 0 then
+    valuePerPet = cfgs[#cfgs].SinglePetAddValue
+  end
+  local room = self.m_homeland_info.dormitory_info.list[roomIdx]
+  local count = 0
+  local settledPetCount = 0
+  for _, pstid in ipairs(room.petList) do
+    if pstid ~= 0 then
+      settledPetCount = settledPetCount + 1
+      local pet = self:GetModule(PetModule):GetPet(pstid)
+      if pet:GetPetAffinityLevel() < pet:GetPetAffinityMaxLevel() then
+        count = count + 1
       end
     end
-    if settledPetCount == 0 then
-      return 0
-    end
-    if count == 0 then
-      return 0
-    end
-    return (math.floor)(valuePerPet * (settledPetCount) / (count))
   end
+  if settledPetCount == 0 then
+    return 0
+  end
+  if count == 0 then
+    return 0
+  end
+  return math.floor(valuePerPet * settledPetCount / count)
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.ApplyFishBiteHook = function(self, TT, fishing_entry_type, fishing_postion_id, following_pets)
-  -- function num : 0_82 , upvalues : _ENV
-  (Log.debug)("fishing_entry_type : ", fishing_entry_type, "fishing_postion_id : ", fishing_postion_id)
+function HomelandModule:ApplyFishBiteHook(TT, fishing_entry_type, fishing_postion_id, following_pets)
+  Log.debug("fishing_entry_type : ", fishing_entry_type, "fishing_postion_id : ", fishing_postion_id)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandFishBiteReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandFishBiteReq)
   request.fishing_position_id = fishing_postion_id
   request.fishing_entry_type = fishing_entry_type
   self._fishing_postion_id = fishing_postion_id
   request.follow_fishing_id = self:GetFollowFishingID(following_pets)
-  ;
-  (Log.debug)("HomelandModule:ApplyFishBiteHook GetFollowFishingID and  id = ", request.follow_fishing_id)
+  Log.debug("HomelandModule:ApplyFishBiteHook GetFollowFishingID and  id = ", request.follow_fishing_id)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     AsyncRes:SetSucc(false)
@@ -1680,22 +1252,18 @@ HomelandModule.ApplyFishBiteHook = function(self, TT, fishing_entry_type, fishin
     return AsyncRes
   end
   AsyncRes:SetSucc(true)
-  AsyncRes:SetResult((reply.msg).nRet)
-  self._bite_fish_id = (reply.msg).result_fish_id
-  ;
-  (Log.debug)("HomelandModule:ApplyFishBiteHook reply.msg.result_fish_id : ", (reply.msg).result_fish_id)
+  AsyncRes:SetResult(reply.msg.nRet)
+  self._bite_fish_id = reply.msg.result_fish_id
+  Log.debug("HomelandModule:ApplyFishBiteHook reply.msg.result_fish_id : ", reply.msg.result_fish_id)
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetFollowFishingID = function(self, following_pets)
-  -- function num : 0_83 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_homeland_follow_fishing)({})
-  for id,cfg in pairs(cfgs) do
+function HomelandModule:GetFollowFishingID(following_pets)
+  local cfgs = Cfg.cfg_homeland_follow_fishing({})
+  for id, cfg in pairs(cfgs) do
     if self._fishing_postion_id == cfg.AvailablePositionID then
       for i = 1, #cfg.FollowingProperty do
-        if self:FollowPetsHitProperty(following_pets, (cfg.FollowingProperty)[i]) then
+        if self:FollowPetsHitProperty(following_pets, cfg.FollowingProperty[i]) then
           return cfg.ID
         end
       end
@@ -1704,16 +1272,13 @@ HomelandModule.GetFollowFishingID = function(self, following_pets)
   return 0
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.FollowPetsHitProperty = function(self, following_pets, propertyTable)
-  -- function num : 0_84 , upvalues : _ENV
+function HomelandModule:FollowPetsHitProperty(following_pets, propertyTable)
   if #following_pets ~= #propertyTable then
     return false
   end
   for i = 1, #following_pets do
     local petID = following_pets[i]
-    local pet_cfg = ((Cfg.cfg_pet)({ID = petID}))[1]
+    local pet_cfg = Cfg.cfg_pet({ID = petID})[1]
     if pet_cfg ~= nil and pet_cfg.PetProperty ~= propertyTable[i] then
       return false
     end
@@ -1721,19 +1286,13 @@ HomelandModule.FollowPetsHitProperty = function(self, following_pets, propertyTa
   return true
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetCurrentBiteFishID = function(self)
-  -- function num : 0_85
+function HomelandModule:GetCurrentBiteFishID()
   return self._bite_fish_id
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.ApplyConfirmFishingSuccess = function(self, TT, fishing_entry_type, following_pets)
-  -- function num : 0_86 , upvalues : _ENV
+function HomelandModule:ApplyConfirmFishingSuccess(TT, fishing_entry_type, following_pets)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandFishingComfirmReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandFishingComfirmReq)
   request.fishing_entry_type = fishing_entry_type
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -1742,19 +1301,15 @@ HomelandModule.ApplyConfirmFishingSuccess = function(self, TT, fishing_entry_typ
     return AsyncRes
   end
   AsyncRes:SetSucc(true)
-  AsyncRes:SetResult((reply.msg).nRet)
-  ;
-  (Log.debug)("HomelandModule:ApplyConfirmFishingSuccess ret : ", (reply.msg).nRet)
+  AsyncRes:SetResult(reply.msg.nRet)
+  Log.debug("HomelandModule:ApplyConfirmFishingSuccess ret : ", reply.msg.nRet)
   self._bite_fish_id = -1
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.ApplyFishPostionData = function(self, TT)
-  -- function num : 0_87 , upvalues : _ENV
+function HomelandModule:ApplyFishPostionData(TT)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandGetFishingDataReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandGetFishingDataReq)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     AsyncRes:SetSucc(false)
@@ -1762,67 +1317,43 @@ HomelandModule.ApplyFishPostionData = function(self, TT)
     return AsyncRes
   end
   AsyncRes:SetSucc(true)
-  AsyncRes:SetResult((reply.msg).nRet)
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self.m_homeland_info).fishing_data).fishing_postions_data = (reply.msg).fishing_postions
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self.m_homeland_info).fishing_data).append_wishingcoin_position = (reply.msg).append_wishingcoin_position
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self.m_homeland_info).fishing_data).clue_submit_status = (reply.msg).clue_submit_status
+  AsyncRes:SetResult(reply.msg.nRet)
+  self.m_homeland_info.fishing_data.fishing_postions_data = reply.msg.fishing_postions
+  self.m_homeland_info.fishing_data.append_wishingcoin_position = reply.msg.append_wishingcoin_position
+  self.m_homeland_info.fishing_data.clue_submit_status = reply.msg.clue_submit_status
   self:_UpdateRareFishingPosition()
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetFishingPostionData = function(self)
-  -- function num : 0_88
-  return ((self.m_homeland_info).fishing_data).fishing_postions_data
+function HomelandModule:GetFishingPostionData()
+  return self.m_homeland_info.fishing_data.fishing_postions_data
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetWishingCoinPostionData = function(self)
-  -- function num : 0_89
-  return ((self.m_homeland_info).fishing_data).append_wishingcoin_position
+function HomelandModule:GetWishingCoinPostionData()
+  return self.m_homeland_info.fishing_data.append_wishingcoin_position
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetFishingPositionRandomPosition = function(self, positionId)
-  -- function num : 0_90 , upvalues : _ENV
+function HomelandModule:GetFishingPositionRandomPosition(positionId)
   if not self._fishingPositionCache then
     self._fishingPositionCache = {}
   end
-  if (self._fishingPositionCache)[positionId] then
-    return (self._fishingPositionCache)[positionId]
+  if self._fishingPositionCache[positionId] then
+    return self._fishingPositionCache[positionId]
   end
-  local cfg = (HomelandFishingConst.GetFishingPositionCfg)(positionId)
+  local cfg = HomelandFishingConst.GetFishingPositionCfg(positionId)
   if not cfg then
     return Vector3(0, 0, 0)
   end
   local posArray = cfg.Position
-  local index = (math.random)(1, #posArray)
-  local pos = Vector3(((cfg.Position)[index])[1] / 1000, ((cfg.Position)[index])[2] / 1000, ((cfg.Position)[index])[3] / 1000)
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._fishingPositionCache)[positionId] = pos
+  local index = math.random(1, #posArray)
+  local pos = Vector3(cfg.Position[index][1] / 1000, cfg.Position[index][2] / 1000, cfg.Position[index][3] / 1000)
+  self._fishingPositionCache[positionId] = pos
   return pos
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.ApplyHomelandRefreshRarePosition = function(self, TT, rareClueID)
-  -- function num : 0_91 , upvalues : _ENV
+function HomelandModule:ApplyHomelandRefreshRarePosition(TT, rareClueID)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandRefreshRarePositionReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandRefreshRarePositionReq)
   request.rare_clue_id = rareClueID
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -1831,58 +1362,37 @@ HomelandModule.ApplyHomelandRefreshRarePosition = function(self, TT, rareClueID)
     return AsyncRes
   end
   AsyncRes:SetSucc(true)
-  AsyncRes:SetResult((reply.msg).nRet)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self.m_homeland_info).fishing_data).clue_submit_status = (reply.msg).clue_submit_status
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self.m_homeland_info).fishing_data).assets = (reply.msg).assets
+  AsyncRes:SetResult(reply.msg.nRet)
+  self.m_homeland_info.fishing_data.clue_submit_status = reply.msg.clue_submit_status
+  self.m_homeland_info.fishing_data.assets = reply.msg.assets
   self:_UpdateRareFishingPosition()
-  return AsyncRes, (reply.msg).assets
+  return AsyncRes, reply.msg.assets
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule._UpdateRareFishingPosition = function(self)
-  -- function num : 0_92 , upvalues : _ENV
-  (table.clear)(self._RareFishingPosition)
-  for k,v in pairs(((self.m_homeland_info).fishing_data).clue_submit_status) do
+function HomelandModule:_UpdateRareFishingPosition()
+  table.clear(self._RareFishingPosition)
+  for k, v in pairs(self.m_homeland_info.fishing_data.clue_submit_status) do
     if v.rare_fishing_position ~= 0 then
-      (table.insert)(self._RareFishingPosition, v.rare_fishing_position)
+      table.insert(self._RareFishingPosition, v.rare_fishing_position)
     end
   end
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetAllRareFishingClue = function(self)
-  -- function num : 0_93
-  return ((self.m_homeland_info).fishing_data).clue_submit_status
+function HomelandModule:GetAllRareFishingClue()
+  return self.m_homeland_info.fishing_data.clue_submit_status
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetAllRareFishingPosition = function(self)
-  -- function num : 0_94
+function HomelandModule:GetAllRareFishingPosition()
   return self._RareFishingPosition
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetPetFishingReward = function(self)
-  -- function num : 0_95
-  return ((self.m_homeland_info).fishing_data).assets
+function HomelandModule:GetPetFishingReward()
+  return self.m_homeland_info.fishing_data.assets
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.ApplyCollectItem = function(self, TT, item_id)
-  -- function num : 0_96 , upvalues : _ENV
+function HomelandModule:ApplyCollectItem(TT, item_id)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventWishingPoolCollectReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventWishingPoolCollectReq)
   request.item_id = item_id
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -1891,25 +1401,16 @@ HomelandModule.ApplyCollectItem = function(self, TT, item_id)
     return AsyncRes
   end
   AsyncRes:SetSucc(true)
-  AsyncRes:SetResult((reply.msg).nRet)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self.m_homeland_info).wishing_pool_info).item_count = (reply.msg).item_count
-  self._wishing_reward = (reply.msg).reward
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self.m_homeland_info).wishing_pool_info).wishing_coin_list = (reply.msg).wishing_coin_list
+  AsyncRes:SetResult(reply.msg.nRet)
+  self.m_homeland_info.wishing_pool_info.item_count = reply.msg.item_count
+  self._wishing_reward = reply.msg.reward
+  self.m_homeland_info.wishing_pool_info.wishing_coin_list = reply.msg.wishing_coin_list
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC299: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.ApplyTakeOutFish = function(self, TT, fish_id)
-  -- function num : 0_97 , upvalues : _ENV
+function HomelandModule:ApplyTakeOutFish(TT, fish_id)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventWishingPoolTakeOutReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventWishingPoolTakeOutReq)
   request.item_id = fish_id
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -1918,20 +1419,14 @@ HomelandModule.ApplyTakeOutFish = function(self, TT, fish_id)
     return AsyncRes
   end
   AsyncRes:SetSucc(true)
-  AsyncRes:SetResult((reply.msg).nRet)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self.m_homeland_info).wishing_pool_info).item_count = (reply.msg).item_count
+  AsyncRes:SetResult(reply.msg.nRet)
+  self.m_homeland_info.wishing_pool_info.item_count = reply.msg.item_count
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.ApplyUpdateWishingPoolAllFish = function(self, TT, fishTable)
-  -- function num : 0_98 , upvalues : _ENV
+function HomelandModule:ApplyUpdateWishingPoolAllFish(TT, fishTable)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventWishingPoolUpdateFishReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventWishingPoolUpdateFishReq)
   request.all_fish_num = fishTable
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -1940,20 +1435,14 @@ HomelandModule.ApplyUpdateWishingPoolAllFish = function(self, TT, fishTable)
     return AsyncRes
   end
   AsyncRes:SetSucc(true)
-  AsyncRes:SetResult((reply.msg).nRet)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self.m_homeland_info).wishing_pool_info).item_count = (reply.msg).item_count
+  AsyncRes:SetResult(reply.msg.nRet)
+  self.m_homeland_info.wishing_pool_info.item_count = reply.msg.item_count
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC305: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.ApplyUpdateFishTankAllFish = function(self, TT, tank_pstid, fishTable)
-  -- function num : 0_99 , upvalues : _ENV
+function HomelandModule:ApplyUpdateFishTankAllFish(TT, tank_pstid, fishTable)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventFishTankUpdateFishReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventFishTankUpdateFishReq)
   request.tank_pst_id = tank_pstid
   request.fish2num = fishTable
   local reply = self:Call(TT, request)
@@ -1963,105 +1452,78 @@ HomelandModule.ApplyUpdateFishTankAllFish = function(self, TT, tank_pstid, fishT
     return AsyncRes
   end
   AsyncRes:SetSucc(true)
-  AsyncRes:SetResult((reply.msg).nRet)
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (((self.m_homeland_info).wishing_pool_info).fish_tank_item_count)[tank_pstid] = (reply.msg).fish_tank_item_count
+  AsyncRes:SetResult(reply.msg.nRet)
+  self.m_homeland_info.wishing_pool_info.fish_tank_item_count[tank_pstid] = reply.msg.fish_tank_item_count
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC308: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetItem2CountMap = function(self)
-  -- function num : 0_100
-  if not (self.m_homeland_info).wishing_pool_info then
+function HomelandModule:GetItem2CountMap()
+  if not self.m_homeland_info.wishing_pool_info then
     return nil
   end
-  return ((self.m_homeland_info).wishing_pool_info).item_count
+  return self.m_homeland_info.wishing_pool_info.item_count
 end
 
--- DECOMPILER ERROR at PC311: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetWishingCoinList = function(self)
-  -- function num : 0_101
-  return ((self.m_homeland_info).wishing_pool_info).wishing_coin_list
+function HomelandModule:GetWishingCoinList()
+  return self.m_homeland_info.wishing_pool_info.wishing_coin_list
 end
 
--- DECOMPILER ERROR at PC314: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetFishTankData = function(self)
-  -- function num : 0_102
-  return ((self.m_homeland_info).wishing_pool_info).fish_tank_item_count
+function HomelandModule:GetFishTankData()
+  return self.m_homeland_info.wishing_pool_info.fish_tank_item_count
 end
 
--- DECOMPILER ERROR at PC317: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.DeleteFishTankData = function(self, tank_pstid)
-  -- function num : 0_103
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  (((self.m_homeland_info).wishing_pool_info).fish_tank_item_count)[tank_pstid] = nil
+function HomelandModule:DeleteFishTankData(tank_pstid)
+  self.m_homeland_info.wishing_pool_info.fish_tank_item_count[tank_pstid] = nil
 end
 
--- DECOMPILER ERROR at PC320: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetFishsInBuilding = function(self, tplId)
-  -- function num : 0_104 , upvalues : _ENV
+function HomelandModule:GetFishsInBuilding(tplId)
   local placedCount = 0
   local items = self:GetItem2CountMap()
   if items then
-    local itemModule = (GameGlobal.GetModule)(ItemModule)
-    for k,v in pairs(items) do
-      local tmpCfg = (Cfg.cfg_item)[k]
+    local itemModule = GameGlobal.GetModule(ItemModule)
+    for k, v in pairs(items) do
+      local tmpCfg = Cfg.cfg_item[k]
       if tmpCfg and tmpCfg.ItemSubType == ItemSubType.ItemSubType_Fish then
-        local cfg = (Cfg.cfg_item_homeland_fish)[k]
+        local cfg = Cfg.cfg_item_homeland_fish[k]
         if cfg and cfg.Type == 2 and k == tplId then
           placedCount = placedCount + v
         end
       end
     end
   end
-  do
-    local fishMapList = self:GetFishTankData()
-    if fishMapList then
-      local itemModule = (GameGlobal.GetModule)(ItemModule)
-      for buildPstId,items in pairs(fishMapList) do
-        for k,v in pairs(items) do
-          local tmpCfg = (Cfg.cfg_item)[k]
-          if tmpCfg then
-            local cfg = (Cfg.cfg_item_homeland_fish)[k]
-            if cfg and k == tplId then
-              placedCount = placedCount + v
-            end
+  local fishMapList = self:GetFishTankData()
+  if fishMapList then
+    local itemModule = GameGlobal.GetModule(ItemModule)
+    for buildPstId, items in pairs(fishMapList) do
+      for k, v in pairs(items) do
+        local tmpCfg = Cfg.cfg_item[k]
+        if tmpCfg then
+          local cfg = Cfg.cfg_item_homeland_fish[k]
+          if cfg and k == tplId then
+            placedCount = placedCount + v
           end
         end
       end
     end
-    do
-      return placedCount
-    end
   end
+  return placedCount
 end
 
--- DECOMPILER ERROR at PC323: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetFishsInWishingBuilding = function(self)
-  -- function num : 0_105 , upvalues : _ENV
+function HomelandModule:GetFishsInWishingBuilding()
   local items = self:GetItem2CountMap()
   if not items then
     return {}
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local result = {}
   local need_update = false
-  for k,v in pairs(items) do
-    local tmpCfg = (Cfg.cfg_item)[k]
+  for k, v in pairs(items) do
+    local tmpCfg = Cfg.cfg_item[k]
     if tmpCfg and tmpCfg.ItemSubType == ItemSubType.ItemSubType_Fish then
-      local cfg = (Cfg.cfg_item_homeland_fish)[k]
+      local cfg = Cfg.cfg_item_homeland_fish[k]
       if cfg and cfg.Type == 2 then
         local maxCount = itemModule:GetItemCount(k)
-        if maxCount < v then
+        if v > maxCount then
           v = maxCount
           need_update = true
         end
@@ -2070,100 +1532,84 @@ HomelandModule.GetFishsInWishingBuilding = function(self)
     end
   end
   if need_update then
-    ((GameGlobal.TaskManager)()):StartTask(self.ApplyUpdateWishingPoolAllFish, self, result)
+    GameGlobal.TaskManager():StartTask(self.ApplyUpdateWishingPoolAllFish, self, result)
   end
   return result
 end
 
--- DECOMPILER ERROR at PC326: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetFishsInAquarium = function(self)
-  -- function num : 0_106 , upvalues : _ENV
+function HomelandModule:GetFishsInAquarium()
   local fishMapList = self:GetFishTankData()
   if not fishMapList then
     return nil
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local result = {}
-  for buildPstId,items in pairs(fishMapList) do
+  for buildPstId, items in pairs(fishMapList) do
     result[buildPstId] = {}
     local need_update = false
-    for k,v in pairs(items) do
-      local tmpCfg = (Cfg.cfg_item)[k]
+    for k, v in pairs(items) do
+      local tmpCfg = Cfg.cfg_item[k]
       if tmpCfg then
-        local cfg = (Cfg.cfg_item_homeland_fish)[k]
+        local cfg = Cfg.cfg_item_homeland_fish[k]
         if cfg then
           local maxCount = itemModule:GetItemCount(k)
-          if maxCount < v then
+          if v > maxCount then
             v = maxCount
             need_update = true
           end
-          -- DECOMPILER ERROR at PC40: Confused about usage of register: R18 in 'UnsetPending'
-
-          ;
-          (result[buildPstId])[k] = v
+          result[buildPstId][k] = v
         end
       end
-      do
-        do
-          if need_update then
-            ((GameGlobal.TaskManager)()):StartTask(self.ApplyUpdateFishTankAllFish, self, buildPstId, result[buildPstId])
-          end
-          -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+      if need_update then
+        GameGlobal.TaskManager():StartTask(self.ApplyUpdateFishTankAllFish, self, buildPstId, result[buildPstId])
       end
     end
   end
   return result
 end
 
--- DECOMPILER ERROR at PC329: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.GetCurrentReward = function(self)
-  -- function num : 0_107
+function HomelandModule:GetCurrentReward()
   local reward = self._wishing_reward
   self._wishing_reward = {}
   return reward
 end
 
--- DECOMPILER ERROR at PC332: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandModule.CheckTaskGroupTimeLine = function(self, group_timeline)
-  -- function num : 0_108 , upvalues : _ENV
+function HomelandModule:CheckTaskGroupTimeLine(group_timeline)
   if not self._svrTimeModule then
-    self._svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
+    self._svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
   end
   if group_timeline == nil or #group_timeline <= 0 then
     return nil
   end
-  local l_ret_group = nil
-  local svrTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
-  if group_timeline[1] and (group_timeline[1]).valid_time + 1 <= svrTime then
+  local l_ret_group
+  local svrTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
+  if group_timeline[1] and svrTime >= group_timeline[1].valid_time + 1 then
     l_ret_group = group_timeline[1]
-    ;
-    (table.remove)(group_timeline, 1)
+    table.remove(group_timeline, 1)
   end
   return l_ret_group
 end
 
-local EStoryViewStoryStatus = {IsView = 0, NotView = 1, NoStory = 2, QuestInvalid = 3}
+local EStoryViewStoryStatus = {
+  IsView = 0,
+  NotView = 1,
+  NoStory = 2,
+  QuestInvalid = 3
+}
 _enum("EStoryViewStoryStatus", EStoryViewStoryStatus)
--- DECOMPILER ERROR at PC344: Confused about usage of register: R1 in 'UnsetPending'
 
-HomelandModule.CanViewGroupTaskStory = function(self, story_mask, quest_id)
-  -- function num : 0_109 , upvalues : _ENV, EStoryViewStoryStatus
-  local l_quest_module = (GameGlobal.GetModule)(QuestModule)
+function HomelandModule:CanViewGroupTaskStory(story_mask, quest_id)
+  local l_quest_module = GameGlobal.GetModule(QuestModule)
   local pQuest = l_quest_module:GetQuest(quest_id)
   if not pQuest then
     return EStoryViewStoryStatus.QuestInvalid
   end
   local quest_info = pQuest:QuestInfo()
-  local cur_story_mask = (quest_info.grouptask_cond_cur_progress)[EHomelandGroupTaskCond.EHomelandGroupTaskCond_ViewStory]
+  local cur_story_mask = quest_info.grouptask_cond_cur_progress[EHomelandGroupTaskCond.EHomelandGroupTaskCond_ViewStory]
   if cur_story_mask == story_mask then
     return EStoryViewStoryStatus.IsView
   end
-  local total_story_mask = (quest_info.grouptask_cond_total_progress)[EHomelandGroupTaskCond.EHomelandGroupTaskCond_ViewStory]
+  local total_story_mask = quest_info.grouptask_cond_total_progress[EHomelandGroupTaskCond.EHomelandGroupTaskCond_ViewStory]
   if total_story_mask == nil or total_story_mask & story_mask ~= story_mask then
     return EStoryViewStoryStatus.NoStory
   end
@@ -2174,32 +1620,28 @@ HomelandModule.CanViewGroupTaskStory = function(self, story_mask, quest_id)
   end
 end
 
--- DECOMPILER ERROR at PC347: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.GetHomelandGroupTaskInfo = function(self, questType)
-  -- function num : 0_110 , upvalues : _ENV
-  if questType < QuestType.QT_Homeland_Group_Rookie or questType > 119 then
+function HomelandModule:GetHomelandGroupTaskInfo(questType)
+  if questType < QuestType.QT_Homeland_Group_Rookie or 119 < questType then
     return nil
   end
   if not self._svrTimeModule then
-    self._svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
+    self._svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
   end
-  local svrTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
-  local l_quest_module = (GameGlobal.GetModule)(QuestModule)
+  local svrTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
+  local l_quest_module = GameGlobal.GetModule(QuestModule)
   local l_ret_table = {}
   local l_quest_array = l_quest_module:GetQuestByQuestType(questType)
-  for index,value in ipairs(l_quest_array) do
-    if QuestStatus.QUEST_Accepted <= value:Status() then
+  for index, value in ipairs(l_quest_array) do
+    if value:Status() >= QuestStatus.QUEST_Accepted then
       local l_qinfo = value:QuestInfo()
-      local l_homeland_task_info = (Cfg.cfg_homeland_task)[l_qinfo.quest_id]
+      local l_homeland_task_info = Cfg.cfg_homeland_task[l_qinfo.quest_id]
       if l_homeland_task_info then
         local l_group_id = l_homeland_task_info.GroupID
-        if (self._task_group_close_time)[l_group_id] == nil or (self._task_group_close_time)[l_group_id] <= 0 or svrTime < (self._task_group_close_time)[l_group_id] then
+        if self._task_group_close_time[l_group_id] == nil or self._task_group_close_time[l_group_id] <= 0 or svrTime < self._task_group_close_time[l_group_id] then
           if not l_ret_table[l_group_id] then
             l_ret_table[l_group_id] = {}
           end
-          ;
-          (table.insert)(l_ret_table[l_group_id], value)
+          table.insert(l_ret_table[l_group_id], value)
         end
       end
     end
@@ -2207,12 +1649,9 @@ HomelandModule.GetHomelandGroupTaskInfo = function(self, questType)
   return l_ret_table
 end
 
--- DECOMPILER ERROR at PC350: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleHomelandTaskViewStoryReq = function(self, TT, nQuestId, nHomeLandGroupTaskStoryMask)
-  -- function num : 0_111 , upvalues : _ENV
+function HomelandModule:HandleHomelandTaskViewStoryReq(TT, nQuestId, nHomeLandGroupTaskStoryMask)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandTaskViewStoryReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandTaskViewStoryReq)
   request.nQuestCfgId = nQuestId
   request.nHomeLandGroupTaskStoryMask = nHomeLandGroupTaskStoryMask
   local reply = self:Call(TT, request)
@@ -2228,14 +1667,11 @@ HomelandModule.HandleHomelandTaskViewStoryReq = function(self, TT, nQuestId, nHo
   return AsyncRes, replyEvent
 end
 
--- DECOMPILER ERROR at PC353: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule._HandleHomelandUpdateTaskReq = function(self, TT)
-  -- function num : 0_112 , upvalues : _ENV
-  (Log.info)("HomelandModule:_HandleHomelandUpdateTaskReq()")
+function HomelandModule:_HandleHomelandUpdateTaskReq(TT)
+  Log.info("HomelandModule:_HandleHomelandUpdateTaskReq()")
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandUpdateTaskReq)
-  request.nGroupCfgIdVec = (self.m_RequestGroup).task_group_list
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandUpdateTaskReq)
+  request.nGroupCfgIdVec = self.m_RequestGroup.task_group_list
   local reply = self:Call(TT, request)
   self.m_RequestGroup = nil
   if reply.res ~= CallResultType.Normal then
@@ -2247,12 +1683,9 @@ HomelandModule._HandleHomelandUpdateTaskReq = function(self, TT)
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC356: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule._HandleHomelandForceUpdateTaskReq = function(self, TT, group_list)
-  -- function num : 0_113 , upvalues : _ENV
+function HomelandModule:_HandleHomelandForceUpdateTaskReq(TT, group_list)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandUpdateTaskReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandUpdateTaskReq)
   request.nGroupCfgIdVec = group_list
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2264,13 +1697,10 @@ HomelandModule._HandleHomelandForceUpdateTaskReq = function(self, TT, group_list
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC359: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleHomelandFinishTaskReq = function(self, TT, finish_quest_id)
-  -- function num : 0_114 , upvalues : _ENV
-  (Log.info)("HomelandModule:HandleHomelandFinishTaskReq() finish_quest_id = ", finish_quest_id)
+function HomelandModule:HandleHomelandFinishTaskReq(TT, finish_quest_id)
+  Log.info("HomelandModule:HandleHomelandFinishTaskReq() finish_quest_id = ", finish_quest_id)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandFinishTaskReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandFinishTaskReq)
   request.nQuestCfgId = finish_quest_id
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2285,13 +1715,10 @@ HomelandModule.HandleHomelandFinishTaskReq = function(self, TT, finish_quest_id)
   return AsyncRes, replyEvent
 end
 
--- DECOMPILER ERROR at PC362: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleHomelandTaskGroupTakeReq = function(self, TT, group_id)
-  -- function num : 0_115 , upvalues : _ENV
-  (Log.info)("HomelandModule:HandleHomelandTaskGroupTakeReq() group_id = ", group_id)
+function HomelandModule:HandleHomelandTaskGroupTakeReq(TT, group_id)
+  Log.info("HomelandModule:HandleHomelandTaskGroupTakeReq() group_id = ", group_id)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandTaskGroupTakeReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandTaskGroupTakeReq)
   request.nTaskGroupId = group_id
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2302,19 +1729,15 @@ HomelandModule.HandleHomelandTaskGroupTakeReq = function(self, TT, group_id)
   AsyncRes:SetResult(replyEvent.nRet)
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
     AsyncRes:SetSucc(true)
-    ;
-    (table.insert)(self.m_group_id_set, group_id)
+    table.insert(self.m_group_id_set, group_id)
   end
   return AsyncRes, replyEvent
 end
 
--- DECOMPILER ERROR at PC365: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleHomelandTaskQuestTakeReq = function(self, TT, quest_id)
-  -- function num : 0_116 , upvalues : _ENV
-  (Log.info)("HomelandModule:HandleHomelandTaskQuestTakeReq() quest_id = ", quest_id)
+function HomelandModule:HandleHomelandTaskQuestTakeReq(TT, quest_id)
+  Log.info("HomelandModule:HandleHomelandTaskQuestTakeReq() quest_id = ", quest_id)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandTaskQuestTakeReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandTaskQuestTakeReq)
   request.nQuestCfgId = quest_id
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2326,18 +1749,14 @@ HomelandModule.HandleHomelandTaskQuestTakeReq = function(self, TT, quest_id)
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
     AsyncRes:SetSucc(true)
   else
-    ;
-    (Log.error)("HomelandModule:HandleHomelandTaskQuestTakeReq error nRet:", replyEvent.nRet, " quetid: ", quest_id, " quest_ret: ", replyEvent.nQuestRet)
+    Log.error("HomelandModule:HandleHomelandTaskQuestTakeReq error nRet:", replyEvent.nRet, " quetid: ", quest_id, " quest_ret: ", replyEvent.nQuestRet)
   end
   return AsyncRes, replyEvent
 end
 
--- DECOMPILER ERROR at PC368: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleCultivation = function(self, TT, cultivation_info)
-  -- function num : 0_117 , upvalues : _ENV
+function HomelandModule:HandleCultivation(TT, cultivation_info)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventCultivationReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventCultivationReq)
   request.cultivation_info = cultivation_info
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2345,10 +1764,8 @@ HomelandModule.HandleCultivation = function(self, TT, cultivation_info)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (self.m_homeland_info).cultivation_info = replyEvent.infos
+    self.m_homeland_info.cultivation_info = replyEvent.infos
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -2356,12 +1773,9 @@ HomelandModule.HandleCultivation = function(self, TT, cultivation_info)
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC371: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleCancelCultivation = function(self, TT, land_pstid)
-  -- function num : 0_118 , upvalues : _ENV
+function HomelandModule:HandleCancelCultivation(TT, land_pstid)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventCultivationCancelReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventCultivationCancelReq)
   request.land_pstid = land_pstid
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2369,10 +1783,8 @@ HomelandModule.HandleCancelCultivation = function(self, TT, land_pstid)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (self.m_homeland_info).cultivation_info = replyEvent.infos
+    self.m_homeland_info.cultivation_info = replyEvent.infos
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -2380,12 +1792,9 @@ HomelandModule.HandleCancelCultivation = function(self, TT, land_pstid)
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC374: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleAccelerateCultivation = function(self, TT, land_pstid, item_info)
-  -- function num : 0_119 , upvalues : _ENV
+function HomelandModule:HandleAccelerateCultivation(TT, land_pstid, item_info)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventCultivationAccelerateReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventCultivationAccelerateReq)
   request.land_pstid = land_pstid
   request.item_info = item_info
   local reply = self:Call(TT, request)
@@ -2394,10 +1803,8 @@ HomelandModule.HandleAccelerateCultivation = function(self, TT, land_pstid, item
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R8 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (self.m_homeland_info).cultivation_info = replyEvent.infos
+    self.m_homeland_info.cultivation_info = replyEvent.infos
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -2405,12 +1812,9 @@ HomelandModule.HandleAccelerateCultivation = function(self, TT, land_pstid, item
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC377: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandlePickupCultivation = function(self, TT, land_pstid)
-  -- function num : 0_120 , upvalues : _ENV
+function HomelandModule:HandlePickupCultivation(TT, land_pstid)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventCultivationPickUpReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventCultivationPickUpReq)
   request.land_pstid = land_pstid
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2418,10 +1822,8 @@ HomelandModule.HandlePickupCultivation = function(self, TT, land_pstid)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (self.m_homeland_info).cultivation_info = replyEvent.infos
+    self.m_homeland_info.cultivation_info = replyEvent.infos
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -2429,12 +1831,9 @@ HomelandModule.HandlePickupCultivation = function(self, TT, land_pstid)
   return AsyncRes, replyEvent.items, replyEvent.homeland_exp, replyEvent.is_first
 end
 
--- DECOMPILER ERROR at PC380: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandDyeingTree = function(self, TT, tree_pstid, select_tree_id, dye_item_id)
-  -- function num : 0_121 , upvalues : _ENV
+function HomelandModule:HandDyeingTree(TT, tree_pstid, select_tree_id, dye_item_id)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventDyeingTreeReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventDyeingTreeReq)
   request.architecture_pstid = tree_pstid
   request.select_tree_id = select_tree_id
   request.dye_item_id = dye_item_id
@@ -2445,10 +1844,8 @@ HomelandModule.HandDyeingTree = function(self, TT, tree_pstid, select_tree_id, d
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R9 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (((self.m_homeland_info).architecture_list).architecture_list)[(replyEvent.arch_info).pstid] = replyEvent.arch_info
+    self.m_homeland_info.architecture_list.architecture_list[replyEvent.arch_info.pstid] = replyEvent.arch_info
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -2456,32 +1853,18 @@ HomelandModule.HandDyeingTree = function(self, TT, tree_pstid, select_tree_id, d
   return AsyncRes, replyEvent.arch_info
 end
 
--- DECOMPILER ERROR at PC383: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleDormitoryUpdate = function(self, msgInfo)
-  -- function num : 0_122
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self.m_homeland_info).dormitory_info).list = msgInfo.list
+function HomelandModule:HandleDormitoryUpdate(msgInfo)
+  self.m_homeland_info.dormitory_info.list = msgInfo.list
 end
 
--- DECOMPILER ERROR at PC386: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandlePushEventChange = function(self, msgInfo)
-  -- function num : 0_123 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_homeland_info).event_info = msgInfo.event_info
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomeLandEventChange, msgInfo.erase_event_id, msgInfo.trigger_immediately_event)
+function HomelandModule:HandlePushEventChange(msgInfo)
+  self.m_homeland_info.event_info = msgInfo.event_info
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomeLandEventChange, msgInfo.erase_event_id, msgInfo.trigger_immediately_event)
 end
 
--- DECOMPILER ERROR at PC389: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HomelandMining = function(self, TT, mine_id, cur_times)
-  -- function num : 0_124 , upvalues : _ENV
+function HomelandModule:HomelandMining(TT, mine_id, cur_times)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandMiningReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandMiningReq)
   request.mine_id = mine_id
   request.mining_times = cur_times
   local reply = self:Call(TT, request)
@@ -2490,10 +1873,8 @@ HomelandModule.HomelandMining = function(self, TT, mine_id, cur_times)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R8 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (self.m_homeland_info).mining_info = replyEvent.mining_info
+    self.m_homeland_info.mining_info = replyEvent.mining_info
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -2501,22 +1882,17 @@ HomelandModule.HomelandMining = function(self, TT, mine_id, cur_times)
   return AsyncRes, replyEvent.assets
 end
 
--- DECOMPILER ERROR at PC392: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HomelandGetMiningInfo = function(self, TT)
-  -- function num : 0_125 , upvalues : _ENV
+function HomelandModule:HomelandGetMiningInfo(TT)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventMiningInfoReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventMiningInfoReq)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     AsyncRes:SetResult(HomeLandErrorType.E_HOME_LAND_UNLOCK)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R6 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (self.m_homeland_info).mining_info = replyEvent.mining_info
+    self.m_homeland_info.mining_info = replyEvent.mining_info
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -2524,22 +1900,17 @@ HomelandModule.HomelandGetMiningInfo = function(self, TT)
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC395: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HomelandSign = function(self, TT)
-  -- function num : 0_126 , upvalues : _ENV
+function HomelandModule:HomelandSign(TT)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandSignReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandSignReq)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     AsyncRes:SetResult(HomeLandErrorType.E_HOME_LAND_UNLOCK)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R6 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (self.m_homeland_info).sign_info = replyEvent.info
+    self.m_homeland_info.sign_info = replyEvent.info
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -2547,12 +1918,9 @@ HomelandModule.HomelandSign = function(self, TT)
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC398: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HomelandLevelReward = function(self, TT, level)
-  -- function num : 0_127 , upvalues : _ENV
+function HomelandModule:HomelandLevelReward(TT, level)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandLevelRewardReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandLevelRewardReq)
   request.level = level
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2560,10 +1928,8 @@ HomelandModule.HomelandLevelReward = function(self, TT, level)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (self.m_homeland_info).sign_info = replyEvent.info
+    self.m_homeland_info.sign_info = replyEvent.info
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -2571,22 +1937,17 @@ HomelandModule.HomelandLevelReward = function(self, TT, level)
   return AsyncRes, replyEvent.assets
 end
 
--- DECOMPILER ERROR at PC401: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HomelandGetSignInfo = function(self, TT)
-  -- function num : 0_128 , upvalues : _ENV
+function HomelandModule:HomelandGetSignInfo(TT)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventGetSignInfoReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventGetSignInfoReq)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     AsyncRes:SetResult(HomeLandErrorType.E_HOME_LAND_UNLOCK)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R6 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (self.m_homeland_info).sign_info = replyEvent.info
+    self.m_homeland_info.sign_info = replyEvent.info
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -2594,170 +1955,116 @@ HomelandModule.HomelandGetSignInfo = function(self, TT)
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC404: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.GetVisitErrorMsg = function(self, errorcode)
-  -- function num : 0_129 , upvalues : _ENV
-  (Log.fatal)("[VisitError] " .. errorcode)
-  if errorcode < HomeLandErrorType.E_HET_VISIT_NO_FRIEND or HomeLandErrorType.E_HET_VISIT_STATE_LOCK < errorcode then
-    return (StringTable.Get)("str_homeland_visit_errorcode_unknown", errorcode)
-  else
-    if errorcode == HomeLandErrorType.E_HOME_LAND_TYPE_FAILURE then
-      return (StringTable.Get)("str_homeland_visit_errorcode_622")
-    end
+function HomelandModule:GetVisitErrorMsg(errorcode)
+  Log.fatal("[VisitError] " .. errorcode)
+  if errorcode < HomeLandErrorType.E_HET_VISIT_NO_FRIEND or errorcode > HomeLandErrorType.E_HET_VISIT_STATE_LOCK then
+    return StringTable.Get("str_homeland_visit_errorcode_unknown", errorcode)
+  elseif errorcode == HomeLandErrorType.E_HOME_LAND_TYPE_FAILURE then
+    return StringTable.Get("str_homeland_visit_errorcode_622")
   end
-  return (StringTable.Get)("str_homeland_visit_errorcode_" .. errorcode)
+  return StringTable.Get("str_homeland_visit_errorcode_" .. errorcode)
 end
 
--- DECOMPILER ERROR at PC407: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.ClearNormalData = function(self)
-  -- function num : 0_130
+function HomelandModule:ClearNormalData()
 end
 
--- DECOMPILER ERROR at PC410: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.GetLandEndTime = function(self, landInfo)
-  -- function num : 0_131
-  local helpInfo = (((self.m_homeland_info).visit_int_info).cul_acc_map)[(landInfo.client_info).land_pstid]
+function HomelandModule:GetLandEndTime(landInfo)
+  local helpInfo = self.m_homeland_info.visit_int_info.cul_acc_map[landInfo.client_info.land_pstid]
   if helpInfo then
     return landInfo.end_time - helpInfo.offline_help_time
   end
   return landInfo.end_time
 end
 
--- DECOMPILER ERROR at PC413: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.GetDomitoryByPstID = function(self, id)
-  -- function num : 0_132
-  local info = (self.m_homeland_info).dormitory_info
+function HomelandModule:GetDomitoryByPstID(id)
+  local info = self.m_homeland_info.dormitory_info
   for i = 1, 4 do
-    local room = (info.list)[i]
+    local room = info.list[i]
     if room and room.bBulid and room.architectureID == id then
       return room
     end
   end
 end
 
--- DECOMPILER ERROR at PC416: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.SetniqueTreeData = function(self, cultivation_data)
-  -- function num : 0_133
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_homeland_info).cultivation_info = cultivation_data
+function HomelandModule:SetniqueTreeData(cultivation_data)
+  self.m_homeland_info.cultivation_info = cultivation_data
 end
 
--- DECOMPILER ERROR at PC419: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.SetForgeData = function(self, forge_data)
-  -- function num : 0_134
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_homeland_info).forge_info = forge_data
+function HomelandModule:SetForgeData(forge_data)
+  self.m_homeland_info.forge_info = forge_data
 end
 
--- DECOMPILER ERROR at PC422: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.SetMovieInfo = function(self, movie_info)
-  -- function num : 0_135
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_homeland_info).movice_info = movie_info
+function HomelandModule:SetMovieInfo(movie_info)
+  self.m_homeland_info.movice_info = movie_info
 end
 
--- DECOMPILER ERROR at PC425: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.SetVisitHelpData = function(self, visit_help_data)
-  -- function num : 0_136
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self.m_homeland_info).visit_int_info then
-    (self.m_homeland_info).visit_int_info = {}
+function HomelandModule:SetVisitHelpData(visit_help_data)
+  if not self.m_homeland_info.visit_int_info then
+    self.m_homeland_info.visit_int_info = {}
   end
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self.m_homeland_info).visit_int_info).cul_acc_map = visit_help_data
+  self.m_homeland_info.visit_int_info.cul_acc_map = visit_help_data
 end
 
--- DECOMPILER ERROR at PC428: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.GetUniqueTreeNum = function(self)
-  -- function num : 0_137 , upvalues : _ENV
-  if not (self.m_homeland_info).cultivation_info then
+function HomelandModule:GetUniqueTreeNum()
+  if not self.m_homeland_info.cultivation_info then
     return 0
   end
-  local cultivation_info = ((self.m_homeland_info).cultivation_info).land_cultivation_infos
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
+  local cultivation_info = self.m_homeland_info.cultivation_info.land_cultivation_infos
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
   if not time_mod then
     return false
   end
-  local tm_now = (math.modf)(time_mod:GetServerTime() / 1000)
+  local tm_now = math.modf(time_mod:GetServerTime() / 1000)
   local tree_num = 0
-  for key,value in pairs(cultivation_info) do
+  for key, value in pairs(cultivation_info) do
     local end_time = self:GetLandEndTime(value)
-    if end_time <= tm_now then
+    if tm_now >= end_time then
       tree_num = tree_num + 1
     end
   end
   return tree_num
 end
 
--- DECOMPILER ERROR at PC431: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.GetForgeNum = function(self)
-  -- function num : 0_138 , upvalues : _ENV
-  if not (self.m_homeland_info).forge_info then
+function HomelandModule:GetForgeNum()
+  if not self.m_homeland_info.forge_info then
     return 0
   end
-  local forge_list = ((self.m_homeland_info).forge_info).forge_list
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
+  local forge_list = self.m_homeland_info.forge_info.forge_list
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
   if not time_mod then
     return false
   end
-  local tm_now = (math.modf)(time_mod:GetServerTime() / 1000)
+  local tm_now = math.modf(time_mod:GetServerTime() / 1000)
   local forge_num = 0
-  for index,value in ipairs(forge_list) do
-    if value.end_time <= tm_now then
+  for index, value in ipairs(forge_list) do
+    if tm_now >= value.end_time then
       forge_num = forge_num + 1
     end
   end
   return forge_num
 end
 
--- DECOMPILER ERROR at PC434: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.GetMainRedCount = function(self)
-  -- function num : 0_139
+function HomelandModule:GetMainRedCount()
   local forgeNumber = self:GetForgeNum()
   local treeNumber = self:GetUniqueTreeNum()
   local num = forgeNumber + treeNumber
   return num
 end
 
--- DECOMPILER ERROR at PC437: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.GetAmbientCeiling = function(self)
-  -- function num : 0_140 , upvalues : _ENV
-  return ((Cfg.cfg_homeland_level)[(self.m_homeland_info).level]).LivableValueMax
+function HomelandModule:GetAmbientCeiling()
+  return Cfg.cfg_homeland_level[self.m_homeland_info.level].LivableValueMax
 end
 
--- DECOMPILER ERROR at PC440: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.PlayTreeDyeAnimation = function(self, pstId)
-  -- function num : 0_141 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_141_0 , upvalues : _ENV, self, pstId
+function HomelandModule:PlayTreeDyeAnimation(pstId)
+  GameGlobal.TaskManager():StartTask(function(TT)
     local key = "HomelandModulePlayTreeDyeAnimation"
-    ;
-    ((GameGlobal.UIStateManager)()):Lock(key)
+    GameGlobal.UIStateManager():Lock(key)
     local mUIHomeland = self:GetUIModule()
     local homelandClient = mUIHomeland:GetClient()
-    local homeBuildManager = (homelandClient:BuildManager())
-    local tree = nil
+    local homeBuildManager = homelandClient:BuildManager()
+    local tree
     local buildings = homeBuildManager:GetBuildings()
-    for _,building in ipairs(buildings) do
+    for _, building in ipairs(buildings) do
       if building:GetBuildPstId() == pstId then
         tree = building
       end
@@ -2769,26 +2076,20 @@ HomelandModule.PlayTreeDyeAnimation = function(self, pstId)
       ma:Play("effanim_jy_ProductPfb_tree_out")
     end
     YIELD(TT, 500)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ResetOneBuilding, pstId, true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ResetOneBuilding, pstId, true)
     local tran = tree:GetBoneNode(meshroot)
     local ma = tran:GetComponent(typeof(MaterialAnimation))
     if ma then
       ma:Play("effanim_jy_ProductPfb_tree_in")
     end
     YIELD(TT, 1000)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(key)
-  end
-, self)
+    GameGlobal.UIStateManager():UnLock(key)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC443: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HomelandStoryTaskUnlockReq = function(self, TT, id)
-  -- function num : 0_142 , upvalues : _ENV
+function HomelandModule:HomelandStoryTaskUnlockReq(TT, id)
   local asyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandStoryTaskUnlockReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandStoryTaskUnlockReq)
   request.id = id
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2797,7 +2098,7 @@ HomelandModule.HomelandStoryTaskUnlockReq = function(self, TT, id)
   end
   local replyEvent = reply.msg
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (table.insert)(((self.m_homeland_info).story_task_info).id_list, id)
+    table.insert(self.m_homeland_info.story_task_info.id_list, id)
     asyncRes:SetSucc(true)
   else
     asyncRes:SetResult(replyEvent.nRet)
@@ -2805,12 +2106,9 @@ HomelandModule.HomelandStoryTaskUnlockReq = function(self, TT, id)
   return asyncRes, replyEvent
 end
 
--- DECOMPILER ERROR at PC446: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HomelandStoryTaskAutoOperateReq = function(self, TT, id)
-  -- function num : 0_143 , upvalues : _ENV
+function HomelandModule:HomelandStoryTaskAutoOperateReq(TT, id)
   local asyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandStoryTaskAutoOperateReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandStoryTaskAutoOperateReq)
   request.id = id
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2818,16 +2116,11 @@ HomelandModule.HomelandStoryTaskAutoOperateReq = function(self, TT, id)
     return asyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    if ((self.m_homeland_info).story_task_info).cfg_id == id then
-      ((self.m_homeland_info).story_task_info).cfg_id = 0
+    if self.m_homeland_info.story_task_info.cfg_id == id then
+      self.m_homeland_info.story_task_info.cfg_id = 0
     else
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      ((self.m_homeland_info).story_task_info).cfg_id = id
+      self.m_homeland_info.story_task_info.cfg_id = id
     end
     asyncRes:SetSucc(true)
   else
@@ -2836,33 +2129,22 @@ HomelandModule.HomelandStoryTaskAutoOperateReq = function(self, TT, id)
   return asyncRes, replyEvent
 end
 
--- DECOMPILER ERROR at PC449: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleStoryTaskUpdate = function(self, msg)
-  -- function num : 0_144 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_homeland_info).story_task_info = msg.info
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HandleStoryTaskUpdate, msg.info)
+function HomelandModule:HandleStoryTaskUpdate(msg)
+  self.m_homeland_info.story_task_info = msg.info
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HandleStoryTaskUpdate, msg.info)
 end
 
--- DECOMPILER ERROR at PC452: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HomelandStoryTaskMoudleUnlockReq = function(self, TT)
-  -- function num : 0_145 , upvalues : _ENV
+function HomelandModule:HomelandStoryTaskMoudleUnlockReq(TT)
   local asyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomelandStoryTaskMoudleUnlockReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomelandStoryTaskMoudleUnlockReq)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     asyncRes:SetResult(HomeLandErrorType.E_HOME_LAND_UNLOCK)
     return asyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R6 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (self.m_homeland_info).story_task_info = replyEvent.info
+    self.m_homeland_info.story_task_info = replyEvent.info
     asyncRes:SetSucc(true)
   else
     asyncRes:SetResult(replyEvent.nRet)
@@ -2870,40 +2152,31 @@ HomelandModule.HomelandStoryTaskMoudleUnlockReq = function(self, TT)
   return asyncRes, replyEvent
 end
 
--- DECOMPILER ERROR at PC455: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.SetStoryTaskAutoReq = function(self, autoReq, id)
-  -- function num : 0_146
+function HomelandModule:SetStoryTaskAutoReq(autoReq, id)
   self._storyTask_autoReq = autoReq
   if autoReq then
     self._storyTask_id = id
   end
 end
 
--- DECOMPILER ERROR at PC458: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HomelandStoryTaskAutoTraceReq = function(self, TT)
-  -- function num : 0_147 , upvalues : _ENV
+function HomelandModule:HomelandStoryTaskAutoTraceReq(TT)
   local autoReq = self._storyTask_autoReq
   local id = self._storyTask_id
   self:SetStoryTaskAutoReq(false)
   if autoReq then
     local res = self:HomelandStoryTaskUnlockReq(TT, id)
-    if ((self.m_homeland_info).story_task_info).cfg_id ~= self._storyTask_id then
+    if self.m_homeland_info.story_task_info.cfg_id ~= self._storyTask_id then
       res = self:HomelandStoryTaskAutoOperateReq(TT, id)
     end
     if res:GetSucc() then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HandleStoryTaskUpdate)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.HandleStoryTaskUpdate)
     end
   end
 end
 
--- DECOMPILER ERROR at PC461: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleUnlockHangPoint = function(self, TT, pstid, hang_point_id)
-  -- function num : 0_148 , upvalues : _ENV
+function HomelandModule:HandleUnlockHangPoint(TT, pstid, hang_point_id)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventUnlockFatherHangPointReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventUnlockFatherHangPointReq)
   request.pstid = pstid
   request.hang_point_id = hang_point_id
   local reply = self:Call(TT, request)
@@ -2912,10 +2185,8 @@ HomelandModule.HandleUnlockHangPoint = function(self, TT, pstid, hang_point_id)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R8 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (((self.m_homeland_info).fater_arch_info).infos)[(replyEvent.data).id] = replyEvent.data
+    self.m_homeland_info.fater_arch_info.infos[replyEvent.data.id] = replyEvent.data
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -2923,11 +2194,8 @@ HomelandModule.HandleUnlockHangPoint = function(self, TT, pstid, hang_point_id)
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC464: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.GetHangPointInfo = function(self, buildingID)
-  -- function num : 0_149
-  local infos = ((self.m_homeland_info).fater_arch_info).infos
+function HomelandModule:GetHangPointInfo(buildingID)
+  local infos = self.m_homeland_info.fater_arch_info.infos
   local info = infos[buildingID]
   if info then
     return info.clean_hang_point
@@ -2935,23 +2203,17 @@ HomelandModule.GetHangPointInfo = function(self, buildingID)
   return {}
 end
 
--- DECOMPILER ERROR at PC467: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.CheckEventFinished = function(self, eventID)
-  -- function num : 0_150
-  if (((self.m_homeland_info).event_info).finish_event_list)[eventID] then
+function HomelandModule:CheckEventFinished(eventID)
+  if self.m_homeland_info.event_info.finish_event_list[eventID] then
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC470: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleEnterMakingMovice = function(self, TT, movice_id)
-  -- function num : 0_151 , upvalues : _ENV
+function HomelandModule:HandleEnterMakingMovice(TT, movice_id)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventEnterMakingMoviceReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventEnterMakingMoviceReq)
   request.movice_id = movice_id
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2968,12 +2230,9 @@ HomelandModule.HandleEnterMakingMovice = function(self, TT, movice_id)
   return AsyncRes, replyEvent.pstid
 end
 
--- DECOMPILER ERROR at PC473: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleReuestScore = function(self, TT, movice_pstid, movice_info)
-  -- function num : 0_152 , upvalues : _ENV
+function HomelandModule:HandleReuestScore(TT, movice_pstid, movice_info)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestScoreReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestScoreReq)
   request.pstid = movice_pstid
   request.record = movice_info
   local reply = self:Call(TT, request)
@@ -2982,10 +2241,8 @@ HomelandModule.HandleReuestScore = function(self, TT, movice_pstid, movice_info)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R8 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (((self.m_homeland_info).movice_info).movices)[(replyEvent.data).movice_id] = replyEvent.data
+    self.m_homeland_info.movice_info.movices[replyEvent.data.movice_id] = replyEvent.data
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -2993,12 +2250,9 @@ HomelandModule.HandleReuestScore = function(self, TT, movice_pstid, movice_info)
   return AsyncRes, replyEvent
 end
 
--- DECOMPILER ERROR at PC476: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleSubmitRecordName = function(self, TT, movice_pstid, name)
-  -- function num : 0_153 , upvalues : _ENV
+function HomelandModule:HandleSubmitRecordName(TT, movice_pstid, name)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventSubmitRecordNameReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventSubmitRecordNameReq)
   request.pstid = movice_pstid
   request.name = name
   local reply = self:Call(TT, request)
@@ -3015,12 +2269,9 @@ HomelandModule.HandleSubmitRecordName = function(self, TT, movice_pstid, name)
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC479: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleSaveRecord = function(self, TT, cur_movice_pstid, replace_movice_pstid, arch_list)
-  -- function num : 0_154 , upvalues : _ENV
+function HomelandModule:HandleSaveRecord(TT, cur_movice_pstid, replace_movice_pstid, arch_list)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventSaveRecordReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventSaveRecordReq)
   request.cur_record_pstid = cur_movice_pstid
   request.arch_list = arch_list
   request.replace_record_pstid = replace_movice_pstid
@@ -3030,10 +2281,8 @@ HomelandModule.HandleSaveRecord = function(self, TT, cur_movice_pstid, replace_m
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R9 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    (((self.m_homeland_info).movice_info).movices)[(replyEvent.data).movice_id] = replyEvent.data
+    self.m_homeland_info.movice_info.movices[replyEvent.data.movice_id] = replyEvent.data
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -3041,12 +2290,9 @@ HomelandModule.HandleSaveRecord = function(self, TT, cur_movice_pstid, replace_m
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC482: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleRequesRecordArch = function(self, TT, pstid, movice_id)
-  -- function num : 0_155 , upvalues : _ENV
+function HomelandModule:HandleRequesRecordArch(TT, pstid, movice_id)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestRecordArchReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestRecordArchReq)
   request.pstid = pstid
   request.movice_id = movice_id
   local reply = self:Call(TT, request)
@@ -3063,22 +2309,14 @@ HomelandModule.HandleRequesRecordArch = function(self, TT, pstid, movice_id)
   return AsyncRes, replyEvent.arch_list
 end
 
--- DECOMPILER ERROR at PC485: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleRefreshRarePositionUpdate = function(self, msg)
-  -- function num : 0_156
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self.m_homeland_info).fishing_data).clue_submit_status = msg.clue_submit_status
+function HomelandModule:HandleRefreshRarePositionUpdate(msg)
+  self.m_homeland_info.fishing_data.clue_submit_status = msg.clue_submit_status
   self:_UpdateRareFishingPosition()
 end
 
--- DECOMPILER ERROR at PC488: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleFishMatchBegin = function(self, TT, match_main_id)
-  -- function num : 0_157 , upvalues : _ENV
+function HomelandModule:HandleFishMatchBegin(TT, match_main_id)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventFishingChallengeReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventFishingChallengeReq)
   request.match_main_id = match_main_id
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -3097,12 +2335,9 @@ HomelandModule.HandleFishMatchBegin = function(self, TT, match_main_id)
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC491: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleFishMatchEnd = function(self, TT, pet_fish_num)
-  -- function num : 0_158 , upvalues : _ENV
+function HomelandModule:HandleFishMatchEnd(TT, pet_fish_num)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventFishingChallengeEndReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventFishingChallengeEndReq)
   request.pet_fish_num = pet_fish_num
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -3110,10 +2345,8 @@ HomelandModule.HandleFishMatchEnd = function(self, TT, pet_fish_num)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    ((self.m_homeland_info).fishing_data).challenge_pet_times = replyEvent.challenge_pet_times
+    self.m_homeland_info.fishing_data.challenge_pet_times = replyEvent.challenge_pet_times
     self.m_match_end_time = 0
     self.m_pet_ability_id = 0
     self.m_match_main_id = 0
@@ -3124,12 +2357,9 @@ HomelandModule.HandleFishMatchEnd = function(self, TT, pet_fish_num)
   return AsyncRes, replyEvent.success, replyEvent.rewards
 end
 
--- DECOMPILER ERROR at PC494: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleFishMatchCancel = function(self, TT, match_main_id)
-  -- function num : 0_159 , upvalues : _ENV
+function HomelandModule:HandleFishMatchCancel(TT, match_main_id)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventCancelFishingChallengeReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventCancelFishingChallengeReq)
   request.match_main_id = match_main_id
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -3148,12 +2378,9 @@ HomelandModule.HandleFishMatchCancel = function(self, TT, match_main_id)
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC497: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.HandleGetAnonymousLetterReward = function(self, TT, anonymous_letter_id)
-  -- function num : 0_160 , upvalues : _ENV
+function HomelandModule:HandleGetAnonymousLetterReward(TT, anonymous_letter_id)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventReceiveAnonymousLetterRewardReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventReceiveAnonymousLetterRewardReq)
   request.anonymous_letter_id = anonymous_letter_id
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -3161,10 +2388,8 @@ HomelandModule.HandleGetAnonymousLetterReward = function(self, TT, anonymous_let
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.nRet == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
-    ((self.m_homeland_info).movice_info).anonymous_letter_reward = replyEvent.anonymous_letter_receive
+    self.m_homeland_info.movice_info.anonymous_letter_reward = replyEvent.anonymous_letter_receive
     AsyncRes:SetSucc(true)
   else
     AsyncRes:SetResult(replyEvent.nRet)
@@ -3172,11 +2397,6 @@ HomelandModule.HandleGetAnonymousLetterReward = function(self, TT, anonymous_let
   return AsyncRes, replyEvent.rewards
 end
 
--- DECOMPILER ERROR at PC500: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandModule.GetAnonymousLetterRreward = function(self)
-  -- function num : 0_161
-  return ((self.m_homeland_info).movice_info).anonymous_letter_reward
+function HomelandModule:GetAnonymousLetterRreward()
+  return self.m_homeland_info.movice_info.anonymous_letter_reward
 end
-
-

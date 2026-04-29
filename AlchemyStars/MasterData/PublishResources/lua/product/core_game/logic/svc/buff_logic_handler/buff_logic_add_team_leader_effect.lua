@@ -1,35 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_team_leader_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddTeamLeaderEffect", BuffLogicBase)
 BuffLogicAddTeamLeaderEffect = BuffLogicAddTeamLeaderEffect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddTeamLeaderEffect.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddTeamLeaderEffect:Constructor(buffInstance, logicParam)
   self._effectID = logicParam.effectID
   self._remove = logicParam.remove or 0
   self._removeAnim = logicParam.removeAnim
   self._removeAnimTime = logicParam.removeAnimTime
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddTeamLeaderEffect.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local entity = (self._buffInstance):Entity()
+function BuffLogicAddTeamLeaderEffect:DoLogic(notify)
+  local entity = self._buffInstance:Entity()
   if not entity:HasTeam() then
-    return 
+    return
   end
-  local teamLeader = ((entity:Team()):GetTeamLeaderEntity())
-  local oldTeamLeaderID = nil
+  local teamLeader = entity:Team():GetTeamLeaderEntity()
+  local oldTeamLeaderID
   if notify and notify:GetNotifyType() == NotifyType.ChangeTeamLeader then
-    oldTeamLeaderID = (notify:GetOldTeamLeader()):GetID()
+    oldTeamLeaderID = notify:GetOldTeamLeader():GetID()
   end
   local buffResult = BuffResultAddTeamLeaderEffect:New(oldTeamLeaderID, teamLeader:GetID(), self._effectID, self._remove, self._removeAnim, self._removeAnimTime)
   return buffResult
 end
-
-

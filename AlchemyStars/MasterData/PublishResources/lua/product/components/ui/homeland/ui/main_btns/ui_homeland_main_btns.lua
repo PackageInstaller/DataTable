@@ -1,53 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/main_btns/ui_homeland_main_btns.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMainBtns", UICustomWidget)
 UIHomelandMainBtns = UIHomelandMainBtns
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMainBtns.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.mUIHomeland = (self.mHomeland):GetUIModule()
-  self.homelandClient = (self.mUIHomeland):GetClient()
-  self._isVisit = (self.homelandClient):IsVisit()
+function UIHomelandMainBtns:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.mUIHomeland = self.mHomeland:GetUIModule()
+  self.homelandClient = self.mUIHomeland:GetClient()
+  self._isVisit = self.homelandClient:IsVisit()
   if not self._isVisit then
-    self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-    self.data = (self.mHomeland):GetHomelandLevelData()
-    ;
-    (self.data):Init()
-    self.dataBag = (self.mHomeland):GetHomelandBackpackData()
-    ;
-    (self.dataBag):Init()
+    self.mHomeland = GameGlobal.GetModule(HomelandModule)
+    self.data = self.mHomeland:GetHomelandLevelData()
+    self.data:Init()
+    self.dataBag = self.mHomeland:GetHomelandBackpackData()
+    self.dataBag:Init()
     self._dairyEnterData = UIHomelandDairyEnterData:New()
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandMainBtns:OnShow()
   local btnPool = self:GetUIComponent("UISelectObjectPath", "btnPool")
   self._btnItem = btnPool:SpawnObject("UIHomeCommonCloseBtn")
-  ;
-  (self._btnItem):SetData(function()
-    -- function num : 0_1_0 , upvalues : self
+  self._btnItem:SetData(function()
     self:btnBackOnClick()
-  end
-, nil, true)
+  end, nil, true)
   self.txtTips = self:GetUIComponent("UILocalizationText", "txtTips")
   self.goTips = self:GetGameObject("tips")
   self.diaryTips = self:GetGameObject("diaryTips")
   self.msgText = self:GetUIComponent("UILocalizationText", "msgText")
   self.redBag = self:GetGameObject("redBag")
-  ;
-  (self.redBag):SetActive(false)
+  self.redBag:SetActive(false)
   self.dairyNew = self:GetGameObject("dairyNew")
   self.redLevel = self:GetGameObject("redLevel")
-  ;
-  (self.redLevel):SetActive(false)
+  self.redLevel:SetActive(false)
   self.txtLevel = self:GetUIComponent("UILocalizationText", "txtLevel")
   self.taskRedPoint = self:GetGameObject("TaskRedPoint")
   self._btnFollowShow = self:GetGameObject("btnFollowShow")
@@ -74,21 +57,14 @@ UIHomelandMainBtns.OnShow = function(self)
   self.btnTask = self:GetGameObject("btnTask")
   self.campaignEnter = self:GetGameObject("campaignEnter")
   if self._isVisit then
-    (self.btnBuild):SetActive(false)
-    ;
-    (self.btnBag):SetActive(false)
-    ;
-    (self.tglFollow):SetActive(false)
-    ;
-    (self.btnShowHide):SetActive(false)
-    ;
-    (self.btnDiary):SetActive(false)
-    ;
-    (self.btnLevel):SetActive(false)
-    ;
-    (self.btnTask):SetActive(false)
-    ;
-    (self.campaignEnter):SetActive(false)
+    self.btnBuild:SetActive(false)
+    self.btnBag:SetActive(false)
+    self.tglFollow:SetActive(false)
+    self.btnShowHide:SetActive(false)
+    self.btnDiary:SetActive(false)
+    self.btnLevel:SetActive(false)
+    self.btnTask:SetActive(false)
+    self.campaignEnter:SetActive(false)
   else
     self:Refresh()
     if self:CheckNewEventTip() then
@@ -98,12 +74,9 @@ UIHomelandMainBtns.OnShow = function(self)
   self:_RefreshTaskRedPoint()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandMainBtns:OnHide()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   self:DetachEvent(GameEventType.ItemCountChanged, self.ItemCountChanged)
@@ -112,373 +85,237 @@ UIHomelandMainBtns.OnHide = function(self)
   self:DetachEvent(GameEventType.AfterUILayerChanged, self.ShowDiaryInfo)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.SetCampaignEnter = function(self, latestCampObj)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandMainBtns:SetCampaignEnter(latestCampObj)
   if not self._isVisit then
-    local obj = (UIWidgetHelper.SpawnObject)(self, "campaignEnter", "UIHomelandMainBtnsCampaignEnter")
+    local obj = UIWidgetHelper.SpawnObject(self, "campaignEnter", "UIHomelandMainBtnsCampaignEnter")
     obj:SetData(self.campaignEnter)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.CheckFollowCount = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandMainBtns:CheckFollowCount()
   local show = false
-  local followList = ((self.homelandClient):PetManager()):GetFollowPets()
-  if (table.count)(followList) > 0 then
+  local followList = self.homelandClient:PetManager():GetFollowPets()
+  if table.count(followList) > 0 then
     show = true
   end
-  ;
-  (self._btnFollow):SetActive(show)
+  self._btnFollow:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.btnBackOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ExitHomeland)
-  ;
-  (HomeLoading.Exit)()
+function UIHomelandMainBtns:btnBackOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ExitHomeland)
+  HomeLoading.Exit()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.BtnFollowOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  local followList = ((self.homelandClient):PetManager()):GetFollowPets()
-  if (table.count)(followList) > 0 then
-    (self._btnFollowShow):SetActive(true)
+function UIHomelandMainBtns:BtnFollowOnClick(go)
+  local followList = self.homelandClient:PetManager():GetFollowPets()
+  if table.count(followList) > 0 then
+    self._btnFollowShow:SetActive(true)
     self:ShowDialog("UIHomePetFollowList", function()
-    -- function num : 0_6_0 , upvalues : self
-    (self._btnFollowShow):SetActive(false)
-  end
-)
+      self._btnFollowShow:SetActive(false)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.BtnShowHideOnClick = function(self, go)
-  -- function num : 0_7
-  (self.uiOwner):SetShowHide(false)
+function UIHomelandMainBtns:BtnShowHideOnClick(go)
+  self.uiOwner:SetShowHide(false)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.BtnBuildOnClick = function(self, go)
-  -- function num : 0_8
+function UIHomelandMainBtns:BtnBuildOnClick(go)
   self:StartTask(self._EnterBuildMode, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns._EnterBuildMode = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHomelandMainBtns:_EnterBuildMode(TT)
   self:SwitchState(UIStateType.UIHomelandBuild)
-  while ((GameGlobal.UIStateManager)()):IsLocked() do
+  while GameGlobal.UIStateManager():IsLocked() do
     YIELD(TT)
   end
-  ;
-  (self.homelandClient):StartBuild()
+  self.homelandClient:StartBuild()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.btnBagOnClick = function(self, go)
-  -- function num : 0_10
+function UIHomelandMainBtns:btnBagOnClick(go)
   self:ShowDialog("UIHomelandBackpack")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.OnHomeEventTips = function(self, petid, text)
-  -- function num : 0_11
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._homeEventTips)[#self._homeEventTips + 1] = {petid, text}
+function UIHomelandMainBtns:OnHomeEventTips(petid, text)
+  self._homeEventTips[#self._homeEventTips + 1] = {petid, text}
   self:PlayTips(true)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.PlayTips = function(self, isStart)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHomelandMainBtns:PlayTips(isStart)
   if self._isPlayingTips and isStart then
-    return 
+    return
   end
-  local t = (self._homeEventTips)[1]
+  local t = self._homeEventTips[1]
   if not t then
     self._isPlayingTips = false
-    ;
-    (self.goTips):SetActive(false)
-    return 
+    self.goTips:SetActive(false)
+    return
   end
-  ;
-  (table.remove)(self._homeEventTips, 1)
+  table.remove(self._homeEventTips, 1)
   if isStart then
     self._isPlayingTips = true
-    ;
-    (self.goTips):SetActive(true)
+    self.goTips:SetActive(true)
   end
-  local canvasGroup = (self.goTips):GetComponent("CanvasGroup")
-  ;
-  (self.txtTips):SetText(t[2])
-  ;
-  (canvasGroup:DOFade(1, 1.5)):OnComplete(function()
-    -- function num : 0_12_0 , upvalues : canvasGroup, self
-    (canvasGroup:DOFade(0, 1.5)):OnComplete(function()
-      -- function num : 0_12_0_0 , upvalues : self
+  local canvasGroup = self.goTips:GetComponent("CanvasGroup")
+  self.txtTips:SetText(t[2])
+  canvasGroup:DOFade(1, 1.5):OnComplete(function()
+    canvasGroup:DOFade(0, 1.5):OnComplete(function()
       self:PlayTips(false)
-    end
-)
-  end
-)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.ShowDiaryInfo = function(self)
-  -- function num : 0_13
+function UIHomelandMainBtns:ShowDiaryInfo()
   if not self._isVisit then
-    self._homelandDairyCount = (self._dairyEnterData):GetDairyEventCount()
-    local isNew = (self._dairyEnterData):CheckNew()
-    ;
-    (self.diaryTips):SetActive((self._homelandDairyCount > 0 and not isNew))
-    ;
-    (self.dairyNew):SetActive(isNew)
-    if self._homelandDairyCount <= 99 or not 99 then
-      do
-        self._homelandDairyCount = self._homelandDairyCount
-        ;
-        (self.msgText):SetText(self._homelandDairyCount)
-        -- DECOMPILER ERROR: 5 unprocessed JMP targets
-      end
-    end
+    self._homelandDairyCount, self._finishDairys = self._dairyEnterData:GetDairyEventCount()
+    local isNew = self._dairyEnterData:CheckNew()
+    self.diaryTips:SetActive(self._homelandDairyCount > 0 and not isNew)
+    self.dairyNew:SetActive(isNew)
+    self._homelandDairyCount = self._homelandDairyCount > 99 and 99 or self._homelandDairyCount
+    self.msgText:SetText(self._homelandDairyCount)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.BtnDiaryOnClick = function(self, go)
-  -- function num : 0_14
+function UIHomelandMainBtns:BtnDiaryOnClick(go)
   self:ShowDialog("UIHomeLandDiaryEnterController")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.RefreshFuncUnlock = function(self, functionType)
-  -- function num : 0_15 , upvalues : _ENV
+function UIHomelandMainBtns:RefreshFuncUnlock(functionType)
   if functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_BAG_UI then
-    (self.btnBag):SetActive(true)
-  else
-    if functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_BUILD_UI then
-      (self.btnBuild):SetActive(true)
-    else
-      if functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_LEVEL_BTN_UI then
-        (self.btnLevel):SetActive(true)
-      else
-        if functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_DAIRY_UI then
-          (self.btnDiary):SetActive(true)
-        else
-          if functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_VISIT_UI then
-            (self.btnFriend):SetActive(true)
-          else
-            if functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_QUEST_BTN then
-              (self.btnTask):SetActive(true)
-            else
-              if functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_FOLLOW_UI then
-                (self.tglFollow):SetActive(true)
-              end
-            end
-          end
-        end
-      end
-    end
+    self.btnBag:SetActive(true)
+  elseif functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_BUILD_UI then
+    self.btnBuild:SetActive(true)
+  elseif functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_LEVEL_BTN_UI then
+    self.btnLevel:SetActive(true)
+  elseif functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_DAIRY_UI then
+    self.btnDiary:SetActive(true)
+  elseif functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_VISIT_UI then
+    self.btnFriend:SetActive(true)
+  elseif functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_QUEST_BTN then
+    self.btnTask:SetActive(true)
+  elseif functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_FOLLOW_UI then
+    self.tglFollow:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.Refresh = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  (self.btnBag):SetActive((self.mHomeland):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_BAG_UI))
-  ;
-  (self.btnBuild):SetActive((self.mHomeland):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_BUILD_UI))
-  ;
-  (self.btnLevel):SetActive((self.mHomeland):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_LEVEL_BTN_UI))
-  ;
-  (self.btnDiary):SetActive((self.mHomeland):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_DAIRY_UI))
-  ;
-  (self.btnFriend):SetActive((self.mHomeland):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_VISIT_UI))
-  ;
-  (self.btnTask):SetActive((self.mHomeland):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_QUEST_BTN))
-  ;
-  (self.tglFollow):SetActive((self.mHomeland):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_FOLLOW_UI))
+function UIHomelandMainBtns:Refresh()
+  self.btnBag:SetActive(self.mHomeland:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_BAG_UI))
+  self.btnBuild:SetActive(self.mHomeland:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_BUILD_UI))
+  self.btnLevel:SetActive(self.mHomeland:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_LEVEL_BTN_UI))
+  self.btnDiary:SetActive(self.mHomeland:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_DAIRY_UI))
+  self.btnFriend:SetActive(self.mHomeland:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_VISIT_UI))
+  self.btnTask:SetActive(self.mHomeland:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_QUEST_BTN))
+  self.tglFollow:SetActive(self.mHomeland:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_FOLLOW_UI))
   self:ShowDiaryInfo()
   self:FlushRedBag()
   self:FlushLevel()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.ItemCountChanged = function(self)
-  -- function num : 0_17
+function UIHomelandMainBtns:ItemCountChanged()
   if not self._isVisit then
-    (self.dataBag):InitList()
+    self.dataBag:InitList()
     self:FlushRedBag()
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.FlushRedBag = function(self)
-  -- function num : 0_18
+function UIHomelandMainBtns:FlushRedBag()
   if not self._isVisit then
-    if (self.dataBag):IsNew() then
-      (self.redBag):SetActive(true)
+    if self.dataBag:IsNew() then
+      self.redBag:SetActive(true)
     else
-      ;
-      (self.redBag):SetActive(false)
+      self.redBag:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.btnLevelOnClick = function(self, go)
-  -- function num : 0_19
+function UIHomelandMainBtns:btnLevelOnClick(go)
   self:ShowDialog("UIHomelandLevel")
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.FlushLevel = function(self)
-  -- function num : 0_20
-  (self.txtLevel):SetText((self.data).level)
+function UIHomelandMainBtns:FlushLevel()
+  self.txtLevel:SetText(self.data.level)
   self:FlushRedLevel()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.FlushRedLevel = function(self)
-  -- function num : 0_21
-  if (self.data):HasAward2Get() then
-    (self.redLevel):SetActive(true)
+function UIHomelandMainBtns:FlushRedLevel()
+  if self.data:HasAward2Get() then
+    self.redLevel:SetActive(true)
   else
-    ;
-    (self.redLevel):SetActive(false)
+    self.redLevel:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.BtnFriendOnClick = function(self, go)
-  -- function num : 0_22
+function UIHomelandMainBtns:BtnFriendOnClick(go)
   self:ShowDialog("UIHomeVisitFriends")
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.btnTaskOnClick = function(self, go)
-  -- function num : 0_23
+function UIHomelandMainBtns:btnTaskOnClick(go)
   self:ShowDialog("UIHomelandTask", function()
-    -- function num : 0_23_0 , upvalues : self
     self:_RefreshTaskRedPoint()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns._RefreshTaskRedPoint = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIHomelandMainBtns:_RefreshTaskRedPoint()
   local questModule = self:GetModule(QuestModule)
   local show, functionType = questModule:HomeLandTaskRedPoint()
   if show then
     local unlock = true
     if functionType == QuestType.QT_Homeland_Stage or functionType == QuestType.QT_Homeland_Stage_Num then
-      unlock = (self.mHomeland):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_QUEST_STAGE_UI)
-    else
-      if functionType == QuestType.QT_Homeland_Common then
-        unlock = (self.mHomeland):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_QUEST_COMMON_UI)
-      end
+      unlock = self.mHomeland:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_QUEST_STAGE_UI)
+    elseif functionType == QuestType.QT_Homeland_Common then
+      unlock = self.mHomeland:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_QUEST_COMMON_UI)
     end
-    ;
-    (self.taskRedPoint):SetActive(not show or unlock)
+    self.taskRedPoint:SetActive(show and unlock)
   else
-    do
-      ;
-      (self.taskRedPoint):SetActive(show)
-    end
+    self.taskRedPoint:SetActive(show)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.OnHomeEventFinish = function(self)
-  -- function num : 0_25
+function UIHomelandMainBtns:OnHomeEventFinish()
   self:ShowDiaryInfo()
   self:ShowEventTipTimer()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.CheckNewEventTip = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function UIHomelandMainBtns:CheckNewEventTip()
+  local mRole = GameGlobal.GetModule(RoleModule)
   local pstid = mRole:GetPstId()
   local key = "CheckNewEventTip" .. pstid
-  if not ((UnityEngine.PlayerPrefs).HasKey)(key) then
-    ((UnityEngine.PlayerPrefs).SetInt)(key, 0)
+  if not UnityEngine.PlayerPrefs.HasKey(key) then
+    UnityEngine.PlayerPrefs.SetInt(key, 0)
   end
   local res = false
-  local count = ((UnityEngine.PlayerPrefs).GetInt)(key)
+  local count = UnityEngine.PlayerPrefs.GetInt(key)
   if #self._finishDairys ~= count then
     res = true
   end
   return res
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.ShowEventTip = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function UIHomelandMainBtns:ShowEventTip()
+  local mRole = GameGlobal.GetModule(RoleModule)
   local pstid = mRole:GetPstId()
   local key = "CheckNewEventTip" .. pstid
-  local count = ((UnityEngine.PlayerPrefs).GetInt)(key)
+  local count = UnityEngine.PlayerPrefs.GetInt(key)
   if #self._finishDairys ~= count then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIHomeEventTips, UIHomeEventTipsType.Dairy, {(StringTable.Get)("str_homeland_diarynew_tips")})
-    ;
-    ((UnityEngine.PlayerPrefs).SetInt)(key, #self._finishDairys)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIHomeEventTips, UIHomeEventTipsType.Dairy, {
+      StringTable.Get("str_homeland_diarynew_tips")
+    })
+    UnityEngine.PlayerPrefs.SetInt(key, #self._finishDairys)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.ShowEventTipTimer = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UIHomelandMainBtns:ShowEventTipTimer()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   if not self._timerHandler then
-    self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(500, TimerTriggerCount.Once, function()
-    -- function num : 0_28_0 , upvalues : self
-    self:ShowEventTip()
-  end
-)
+    self._timerHandler = GameGlobal.Timer():AddEventTimes(500, TimerTriggerCount.Once, function()
+      self:ShowEventTip()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtns.OnQuestUpdate = function(self, quests)
-  -- function num : 0_29
+function UIHomelandMainBtns:OnQuestUpdate(quests)
   self:_RefreshTaskRedPoint()
 end
-
-

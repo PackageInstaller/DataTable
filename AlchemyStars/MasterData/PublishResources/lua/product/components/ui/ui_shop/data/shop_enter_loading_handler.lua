@@ -1,43 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/data/shop_enter_loading_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ShopEnterLoadingHandler", LoadingHandler)
 ShopEnterLoadingHandler = ShopEnterLoadingHandler
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ShopEnterLoadingHandler.Constructor = function(self)
-  -- function num : 0_0
+function ShopEnterLoadingHandler:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopEnterLoadingHandler.PreLoadBeforeLoadLevel = function(self, TT)
-  -- function num : 0_1
+function ShopEnterLoadingHandler:PreLoadBeforeLoadLevel(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopEnterLoadingHandler.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  (LoadingHandler.PreLoadAfterLoadLevel)(self, TT, ...)
+function ShopEnterLoadingHandler:PreLoadAfterLoadLevel(TT, ...)
+  LoadingHandler.PreLoadAfterLoadLevel(self, TT, ...)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopEnterLoadingHandler.OnLoadingFinish = function(self, ...)
-  -- function num : 0_3 , upvalues : _ENV
-  local _, _, param = (table.unpack)({...})
-  ;
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIShop, param)
+function ShopEnterLoadingHandler:OnLoadingFinish(...)
+  local _, _, param = table.unpack({
+    ...
+  })
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIShop, param)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopEnterLoadingHandler.LoadingType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function ShopEnterLoadingHandler:LoadingType()
   return LoadingType.BOTTOM
 end
-
-

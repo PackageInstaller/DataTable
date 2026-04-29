@@ -1,65 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_train_convert_element_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseTrainConvertElementParam", SkillPhaseParamBase)
 SkillPhaseTrainConvertElementParam = SkillPhaseTrainConvertElementParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseTrainConvertElementParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseTrainConvertElementParam:Constructor(t)
   self._gridEffectID = t.gridEffectID
   self._gridIntervalTime = t.gridIntervalTime
   self._bestConvertTime = t.bestConvertTime
   self._finishDelayTime = t.finishDelayTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainConvertElementParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseTrainConvertElementParam:GetCacheTable()
   local t = {}
   if self._gridEffectID and self._gridEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._gridEffectID]).ResPath, 1}
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._gridEffectID].ResPath,
+      1
+    }
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainConvertElementParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseTrainConvertElementParam:GetPhaseType()
   return SkillViewPhaseType.TrainConvertElement
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainConvertElementParam.GetGridEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseTrainConvertElementParam:GetGridEffectID()
   return self._gridEffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainConvertElementParam.GetGridIntervalTime = function(self)
-  -- function num : 0_4
+function SkillPhaseTrainConvertElementParam:GetGridIntervalTime()
   return self._gridIntervalTime
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainConvertElementParam.GetBestEffectTime = function(self)
-  -- function num : 0_5
+function SkillPhaseTrainConvertElementParam:GetBestEffectTime()
   return self._bestEffectTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainConvertElementParam.GetFinishDelayTime = function(self)
-  -- function num : 0_6
+function SkillPhaseTrainConvertElementParam:GetFinishDelayTime()
   return self._finishDelayTime
 end
-
-

@@ -1,81 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_n28_minigame.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignN28MiniGame", ICampaignComponentLocalProcessBase)
 CCampaignN28MiniGame = CCampaignN28MiniGame
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignN28MiniGame.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignN28MiniGame:Constructor()
   self._bounceMissionComponent = nil
   self._bounceMissionComponentInfo = nil
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN28MiniGame.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignN28MiniGame:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N28_MINI_GAME
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN28MiniGame.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignN28MiniGame:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN28MiniGame.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignN28MiniGame:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetBounceMissionComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN28MiniGame._GetBounceMissionComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._bounceMissionComponent = (self._campaignObj):GetComponent(ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
+function CCampaignN28MiniGame:_GetBounceMissionComponent()
+  self._bounceMissionComponent = self._campaignObj:GetComponent(ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
   if not self._bounceMissionComponent then
-    return 
+    return
   end
-  self._bounceMissionComponentInfo = (self._bounceMissionComponent):ComponentInfo()
+  self._bounceMissionComponentInfo = self._bounceMissionComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN28MiniGame.GetComponent = function(self, componentID)
-  -- function num : 0_5 , upvalues : _ENV
+function CCampaignN28MiniGame:GetComponent(componentID)
   if ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION == componentID then
     return self._bounceMissionComponent
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN28MiniGame.GetComponentInfo = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignN28MiniGame:GetComponentInfo(componentID)
   if ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION == componentID then
     return self._bounceMissionComponentInfo
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN28MiniGame.GetEntryNew = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignN28MiniGame:GetEntryNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_N28_MINI_GAME)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
-
-

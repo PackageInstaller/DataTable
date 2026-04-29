@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_mail/ui_mail_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMailController", UIController)
 UIMailController = UIMailController
 local ClientMailType = {Normal = 1, Collection = 2}
--- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
 
-UIMailController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : ClientMailType, _ENV
+function UIMailController:OnShow(uiParams)
   self._currentType = ClientMailType.Normal
   self.InitedMailList = false
   self._mailCountLabel = self:GetUIComponent("UILocalizationText", "MailCount")
@@ -23,14 +16,11 @@ UIMailController.OnShow = function(self, uiParams)
   self._selectCollection = self:GetUIComponent("Image", "collection")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "BackBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_0_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-)
-  self._mailModule = (GameGlobal.GetModule)(MailModule)
-  self._currentTimeEvent = ((GameGlobal.RealTimer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, self.OnOneMinusUpdate, self)
+  end)
+  self._mailModule = GameGlobal.GetModule(MailModule)
+  self._currentTimeEvent = GameGlobal.RealTimer():AddEventTimes(1000, TimerTriggerCount.Infinite, self.OnOneMinusUpdate, self)
   self:AttachEvent(GameEventType.ModuleMailNotifyNewMail, self._ReceiveNewMail)
   self:AttachEvent(GameEventType.ModuleMailNotifyExpiredMail, self._MailExpired)
   self:_RefreshMailData()
@@ -41,109 +31,71 @@ UIMailController.OnShow = function(self, uiParams)
   self:_CachePetIdList()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._RefreshSelectMail = function(self)
-  -- function num : 0_1 , upvalues : ClientMailType
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIMailController:_RefreshSelectMail()
   if self._currentType == ClientMailType.Normal then
-    (self._selectNormal).sprite = (self._atlas):GetSprite("mail_buchang_btn11")
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._selectCollection).sprite = (self._atlas):GetSprite("mail_buchang_btn10")
-  else
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-    if self._currentType == ClientMailType.Collection then
-      (self._selectNormal).sprite = (self._atlas):GetSprite("mail_buchang_btn10")
-      -- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._selectCollection).sprite = (self._atlas):GetSprite("mail_buchang_btn11")
-    end
+    self._selectNormal.sprite = self._atlas:GetSprite("mail_buchang_btn11")
+    self._selectCollection.sprite = self._atlas:GetSprite("mail_buchang_btn10")
+  elseif self._currentType == ClientMailType.Collection then
+    self._selectNormal.sprite = self._atlas:GetSprite("mail_buchang_btn10")
+    self._selectCollection.sprite = self._atlas:GetSprite("mail_buchang_btn11")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._RefreshMailEmptyIconStatus = function(self)
-  -- function num : 0_2
+function UIMailController:_RefreshMailEmptyIconStatus()
   if self._mailCount <= 0 then
-    (self._mailEmptyIconGo):SetActive(true)
+    self._mailEmptyIconGo:SetActive(true)
   else
-    ;
-    (self._mailEmptyIconGo):SetActive(false)
+    self._mailEmptyIconGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._CachePetIdList = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
+function UIMailController:_CachePetIdList()
+  local petModule = GameGlobal.GetModule(PetModule)
   petModule:GetAllPetsSnapshoot()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._ReceiveNewMail = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self._SendLoadAllMailDatasMsg, self)
+function UIMailController:_ReceiveNewMail()
+  GameGlobal.TaskManager():StartTask(self._SendLoadAllMailDatasMsg, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._SendLoadAllMailDatasMsg = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
-  local ack, resMailData = (self._mailModule):LoadAllMails(TT)
+function UIMailController:_SendLoadAllMailDatasMsg(TT)
+  local ack, resMailData = self._mailModule:LoadAllMails(TT)
   if not ack:GetSucc() then
-    (ToastManager.ShowToast)("receive mail data error")
+    ToastManager.ShowToast("receive mail data error")
   end
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._MailExpired = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (ToastManager.ShowToast)((StringTable.Get)("str_mail_has_expire"))
+function UIMailController:_MailExpired()
+  ToastManager.ShowToast(StringTable.Get("str_mail_has_expire"))
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_7 , upvalues : _ENV
-  local mailModule = (GameGlobal.GetModule)(MailModule)
+function UIMailController:LoadDataOnEnter(TT, res, uiParams)
+  local mailModule = GameGlobal.GetModule(MailModule)
   local ack, resMailData = mailModule:LoadAllMails(TT)
   if ack:GetSucc() then
     res:SetSucc(true)
   else
     res:SetSucc(false)
-    ;
-    (ToastManager.ShowToast)("receive mail data error")
+    ToastManager.ShowToast("receive mail data error")
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController.OnOneMinusUpdate = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIMailController:OnOneMinusUpdate()
   if not self._mailDatas then
-    return 
+    return
   end
-  for k,v in pairs(self._mailDatas) do
+  for k, v in pairs(self._mailDatas) do
     v.remainSeconds = v.remainSeconds - 1
     if v.remainSeconds <= 0 then
       v.remainSeconds = 0
     end
   end
   if not self._collectMailDatas then
-    return 
+    return
   end
-  for k,v in pairs(self._collectMailDatas) do
+  for k, v in pairs(self._collectMailDatas) do
     v.remainSeconds = v.remainSeconds - 1
     if v.remainSeconds <= 0 then
       v.remainSeconds = 0
@@ -151,29 +103,22 @@ UIMailController.OnOneMinusUpdate = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController.OnHide = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIMailController:OnHide()
   if self._currentTimeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._currentTimeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._currentTimeEvent)
     self._currentTimeEvent = nil
   end
   self:DetachEvent(GameEventType.ModuleMailNotifyNewMail, self._ReceiveNewMail)
   self:DetachEvent(GameEventType.ModuleMailNotifyExpiredMail, self._MailExpired)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshMailStatus)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshMailStatus)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._RecvRefreshMailData = function(self, mail_id, isGain, isRead, isExpired)
-  -- function num : 0_10 , upvalues : ClientMailType, _ENV
+function UIMailController:_RecvRefreshMailData(mail_id, isGain, isRead, isExpired)
   if self._currentType == ClientMailType.Normal then
-    self._maxMailCount = ((Cfg.cfg_global).MailLimitNum).IntValue
-    local delete_index = nil
+    self._maxMailCount = Cfg.cfg_global.MailLimitNum.IntValue
+    local delete_index
     local isNotFind = true
-    for i,v in ipairs(self._mailDatas) do
+    for i, v in ipairs(self._mailDatas) do
       if v.id == mail_id then
         isNotFind = false
         if isExpired then
@@ -190,63 +135,51 @@ UIMailController._RecvRefreshMailData = function(self, mail_id, isGain, isRead, 
         break
       end
     end
-    do
-      do
-        if isExpired and delete_index ~= nil then
-          (table.remove)(self._mailDatas, delete_index)
+    if isExpired and delete_index ~= nil then
+      table.remove(self._mailDatas, delete_index)
+    end
+    Log.debug("_________________isNotFind:", isNotFind)
+    if isNotFind then
+      self:_RefreshMailData()
+    end
+    self:_CalMailData()
+  elseif self._currentType == ClientMailType.Collection then
+    self._maxMailCount = Cfg.cfg_global.MailLimitNum.IntValue
+    local delete_index
+    local isNotFind = true
+    for i, v in ipairs(self._collectMailDatas) do
+      if v.id == mail_id then
+        isNotFind = false
+        if isExpired then
+          delete_index = i
+          break
         end
-        ;
-        (Log.debug)("_________________isNotFind:", isNotFind)
-        if isNotFind then
-          self:_RefreshMailData()
+        if isGain then
+          v.isGain = true
+          isRead = true
         end
-        self:_CalMailData()
-        if self._currentType == ClientMailType.Collection then
-          self._maxMailCount = ((Cfg.cfg_global).MailLimitNum).IntValue
-          local delete_index = nil
-          local isNotFind = true
-          for i,v in ipairs(self._collectMailDatas) do
-            if v.id == mail_id then
-              isNotFind = false
-              if isExpired then
-                delete_index = i
-                break
-              end
-              if isGain then
-                v.isGain = true
-                isRead = true
-              end
-              if isRead then
-                v.isRead = true
-              end
-              break
-            end
-          end
-          do
-            if isExpired and delete_index ~= nil then
-              (table.remove)(self._collectMailDatas, delete_index)
-            end
-            ;
-            (Log.debug)("_________________isNotFind:", isNotFind)
-            if isNotFind then
-              self:_RefreshMailData()
-            end
-            self:_CalMailData()
-          end
+        if isRead then
+          v.isRead = true
         end
+        break
       end
     end
+    if isExpired and delete_index ~= nil then
+      table.remove(self._collectMailDatas, delete_index)
+    end
+    Log.debug("_________________isNotFind:", isNotFind)
+    if isNotFind then
+      self:_RefreshMailData()
+    end
+    self:_CalMailData()
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._RecvRefreshCollectMailData = function(self, mail_id, isGain, isRead, isExpired)
-  -- function num : 0_11 , upvalues : _ENV
-  self._maxMailCount = ((Cfg.cfg_global).MailLimitNum).IntValue
-  local delete_index = nil
+function UIMailController:_RecvRefreshCollectMailData(mail_id, isGain, isRead, isExpired)
+  self._maxMailCount = Cfg.cfg_global.MailLimitNum.IntValue
+  local delete_index
   local isNotFind = true
-  for i,v in ipairs(self._collectMailDatas) do
+  for i, v in ipairs(self._collectMailDatas) do
     if v.id == mail_id then
       isNotFind = false
       if isExpired then
@@ -263,46 +196,35 @@ UIMailController._RecvRefreshCollectMailData = function(self, mail_id, isGain, i
       break
     end
   end
-  do
-    if isExpired and delete_index ~= nil then
-      (table.remove)(self._collectMailDatas, delete_index)
-    end
-    ;
-    (Log.debug)("_________________isNotFind:", isNotFind)
-    if isNotFind then
-      self:_RefreshMailData()
-    end
-    self:_CalMailData()
+  if isExpired and delete_index ~= nil then
+    table.remove(self._collectMailDatas, delete_index)
   end
-end
-
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._RefreshMailData = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  self._maxMailCount = ((Cfg.cfg_global).MailLimitNum).IntValue
-  self._mailDatas = {}
-  self._collectMailDatas = {}
-  local allMailData, collectMailData = (self._mailModule):GetAllMailData()
-  local mailCount = (table.count)(allMailData)
-  local collectMailCount = (table.count)(collectMailData)
-  for i = 1, mailCount do
-    local mailInfo = allMailData[i]
-    ;
-    (table.insert)(self._mailDatas, self:_GetMailData(mailInfo))
-  end
-  for i = 1, collectMailCount do
-    local mailInfo = collectMailData[i]
-    ;
-    (table.insert)(self._collectMailDatas, self:_GetMailData(mailInfo))
+  Log.debug("_________________isNotFind:", isNotFind)
+  if isNotFind then
+    self:_RefreshMailData()
   end
   self:_CalMailData()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
+function UIMailController:_RefreshMailData()
+  self._maxMailCount = Cfg.cfg_global.MailLimitNum.IntValue
+  self._mailDatas = {}
+  self._collectMailDatas = {}
+  local allMailData, collectMailData = self._mailModule:GetAllMailData()
+  local mailCount = table.count(allMailData)
+  local collectMailCount = table.count(collectMailData)
+  for i = 1, mailCount do
+    local mailInfo = allMailData[i]
+    table.insert(self._mailDatas, self:_GetMailData(mailInfo))
+  end
+  for i = 1, collectMailCount do
+    local mailInfo = collectMailData[i]
+    table.insert(self._collectMailDatas, self:_GetMailData(mailInfo))
+  end
+  self:_CalMailData()
+end
 
-UIMailController._GetMailData = function(self, mailInfo)
-  -- function num : 0_13 , upvalues : _ENV
+function UIMailController:_GetMailData(mailInfo)
   local mailData = {}
   mailData.id = mailInfo.mail_id
   mailData.isGain = mailInfo.is_gain
@@ -312,301 +234,210 @@ UIMailController._GetMailData = function(self, mailInfo)
     mailData.title = mailInfo.title_id
     mailData.content = mailInfo.content_id
     mailData.senderName = mailInfo.sender_nick
-  else
-    if mailInfo.mail_type == MailType.MAIL_TYPE_ITEM_CONVER then
-      mailData.title = (StringTable.Get)(mailInfo.title_id)
-      mailData.senderName = (StringTable.Get)(mailInfo.sender_nick)
-      local content_id_ext = mailInfo.content_id_ext
-      if content_id_ext and content_id_ext.assetid > 0 then
-        local tb = (Cfg.cfg_item)[content_id_ext.assetid]
-        if tb then
-          local converId = tb.ConverId
-          if converId and converId > 0 then
-            local converIdCfg = (Cfg.cfg_item)[converId]
-            if converIdCfg then
-              mailData.content = (StringTable.Get)(mailInfo.content_id, (StringTable.Get)(tb.Name), content_id_ext.count, (StringTable.Get)(converIdCfg.Name))
-            else
-              mailData.content = (StringTable.Get)(mailInfo.content_id, (StringTable.Get)(tb.Name), content_id_ext.count)
-            end
+  elseif mailInfo.mail_type == MailType.MAIL_TYPE_ITEM_CONVER then
+    mailData.title = StringTable.Get(mailInfo.title_id)
+    mailData.senderName = StringTable.Get(mailInfo.sender_nick)
+    local content_id_ext = mailInfo.content_id_ext
+    if content_id_ext and content_id_ext.assetid > 0 then
+      local tb = Cfg.cfg_item[content_id_ext.assetid]
+      if tb then
+        local converId = tb.ConverId
+        if converId and 0 < converId then
+          local converIdCfg = Cfg.cfg_item[converId]
+          if converIdCfg then
+            mailData.content = StringTable.Get(mailInfo.content_id, StringTable.Get(tb.Name), content_id_ext.count, StringTable.Get(converIdCfg.Name))
           else
-            do
-              do
-                do
-                  do
-                    mailData.content = (StringTable.Get)(mailInfo.content_id, (StringTable.Get)(tb.Name), content_id_ext.count)
-                    mailData.content = (StringTable.Get)(mailInfo.content_id)
-                    mailData.content = (StringTable.Get)(mailInfo.content_id)
-                    if mailInfo.mail_type == MailType.MAIL_TYPE_FIX_ITEM then
-                      mailData.title = (StringTable.Get)(mailInfo.title_id)
-                      local contentParams = mailInfo.content_param
-                      local paramTab = {}
-                      for i = 1, #contentParams do
-                        if i % 3 == 1 then
-                          local itemid = tonumber(contentParams[i])
-                          local cfg_item = (Cfg.cfg_item)[itemid]
-                          if not cfg_item then
-                            (Log.error)("###[mail] cfg_item is nil ! id --> ", itemid)
-                          end
-                          local itemName = (StringTable.Get)(cfg_item.Name) or ""
-                          ;
-                          (table.insert)(paramTab, itemName)
-                        else
-                          do
-                            do
-                              ;
-                              (table.insert)(paramTab, contentParams[i])
-                              -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out DO_STMT
-
-                              -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                              -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out IF_STMT
-
-                            end
-                          end
-                        end
-                      end
-                      mailData.content = (StringTable.Get)(mailInfo.content_id, (table.unpack)(paramTab))
-                      mailData.senderName = (StringTable.Get)(mailInfo.sender_nick)
-                    else
-                      do
-                        if mailInfo.mail_type == MailType.MAIL_TYPE_TOWER_COMPENTSATE then
-                          mailData.title = (StringTable.Get)(mailInfo.title_id)
-                          mailData.content = (StringTable.Get)(mailInfo.content_id, (table.unpack)(mailInfo.content_param))
-                          mailData.senderName = (StringTable.Get)(mailInfo.sender_nick)
-                        else
-                          if mailInfo.mail_type == MailType.MAIL_TYPE_TEXT_CONVER then
-                            mailData.title = (StringTable.Get)(mailInfo.title_id)
-                            mailData.senderName = (StringTable.Get)(mailInfo.sender_nick)
-                            local contentParams = mailInfo.content_param
-                            if contentParams and #contentParams % 4 == 0 then
-                              local groupCount = #contentParams / 4
-                              local from, to = {}, {}
-                              for i = 1, groupCount do
-                                local group = i - 1
-                                local fromID = tonumber(contentParams[group * 4 + 1])
-                                local fromCount = tonumber(contentParams[group * 4 + 2])
-                                local toID = tonumber(contentParams[group * 4 + 3])
-                                local toCount = tonumber(contentParams[group * 4 + 4])
-                                ;
-                                (table.insert)(from, {fromID, fromCount})
-                                ;
-                                (table.insert)(to, {toID, toCount})
-                              end
-                              local params = {}
-                              local strKey = nil
-                              if #from == 1 and #to == 1 then
-                                for _,t in ipairs(from) do
-                                  local id = t[1]
-                                  local count = t[2]
-                                  local name = (StringTable.Get)(((Cfg.cfg_item)[id]).Name)
-                                  ;
-                                  (table.insert)(params, name)
-                                  ;
-                                  (table.insert)(params, count)
-                                  do break end
-                                end
-                                do
-                                  for _,t in ipairs(to) do
-                                    local id = t[1]
-                                    local count = t[2]
-                                    local name = (StringTable.Get)(((Cfg.cfg_item)[id]).Name)
-                                    ;
-                                    (table.insert)(params, name)
-                                    ;
-                                    (table.insert)(params, count)
-                                    do break end
-                                  end
-                                  do
-                                    do
-                                      do
-                                        strKey = mailInfo.content_id .. "_1"
-                                        if #from == 2 and #to == 2 then
-                                          for _,t in ipairs(from) do
-                                            local id = t[1]
-                                            local count = t[2]
-                                            local name = (StringTable.Get)(((Cfg.cfg_item)[id]).Name)
-                                            ;
-                                            (table.insert)(params, name)
-                                            ;
-                                            (table.insert)(params, count)
-                                          end
-                                          for _,t in ipairs(to) do
-                                            local id = t[1]
-                                            local count = t[2]
-                                            local name = (StringTable.Get)(((Cfg.cfg_item)[id]).Name)
-                                            ;
-                                            (table.insert)(params, name)
-                                            ;
-                                            (table.insert)(params, count)
-                                          end
-                                          strKey = mailInfo.content_id .. "_2"
-                                        else
-                                          ;
-                                          (Log.exception)("赛季邮件参数错误2", echo(contentParams))
-                                        end
-                                        mailData.content = (StringTable.Get)(strKey, (table.unpack)(params))
-                                        ;
-                                        (Log.exception)("赛季邮件参数错误1", echo(contentParams))
-                                        if mailInfo.mail_type == MailType.MAIL_TYPE_CAM_QUEST then
-                                          mailData.title = (StringTable.Get)(mailInfo.title_id)
-                                          mailData.senderName = (StringTable.Get)(mailInfo.sender_nick)
-                                          local cname = ""
-                                          local content_id_ext = mailInfo.content_id_ext
-                                          do
-                                            do
-                                              if content_id_ext and content_id_ext.assetid > 0 then
-                                                local cfg_campaign = (Cfg.cfg_campaign)[content_id_ext.assetid]
-                                                if cfg_campaign then
-                                                  cname = (StringTable.Get)(cfg_campaign.CampaignName)
-                                                end
-                                              end
-                                              mailData.content = (StringTable.Get)(mailInfo.content_id, cname)
-                                              mailData.title = (StringTable.Get)(mailInfo.title_id)
-                                              mailData.content = (StringTable.Get)(mailInfo.content_id)
-                                              mailData.senderName = (StringTable.Get)(mailInfo.sender_nick)
-                                              mailData.createTimeSeconds = mailInfo.create_time
-                                              mailData.createTime = TimeToDate(mailInfo.create_time, "day")
-                                              mailData.remainSeconds = mailInfo.remain_time
-                                              mailData.rewards = mailInfo.appendix
-                                              if mailData.rewards ~= nil and (table.count)(mailData.rewards) > 0 then
-                                                mailData.hasReward = true
-                                              end
-                                              return mailData
-                                            end
-                                          end
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
+            mailData.content = StringTable.Get(mailInfo.content_id, StringTable.Get(tb.Name), content_id_ext.count)
           end
+        else
+          mailData.content = StringTable.Get(mailInfo.content_id, StringTable.Get(tb.Name), content_id_ext.count)
         end
+      else
+        mailData.content = StringTable.Get(mailInfo.content_id)
+      end
+    else
+      mailData.content = StringTable.Get(mailInfo.content_id)
+    end
+  elseif mailInfo.mail_type == MailType.MAIL_TYPE_FIX_ITEM then
+    mailData.title = StringTable.Get(mailInfo.title_id)
+    local contentParams = mailInfo.content_param
+    local paramTab = {}
+    for i = 1, #contentParams do
+      if i % 3 == 1 then
+        local itemid = tonumber(contentParams[i])
+        local cfg_item = Cfg.cfg_item[itemid]
+        if not cfg_item then
+          Log.error("###[mail] cfg_item is nil ! id --> ", itemid)
+        end
+        local itemName = StringTable.Get(cfg_item.Name) or ""
+        table.insert(paramTab, itemName)
+      else
+        table.insert(paramTab, contentParams[i])
       end
     end
+    mailData.content = StringTable.Get(mailInfo.content_id, table.unpack(paramTab))
+    mailData.senderName = StringTable.Get(mailInfo.sender_nick)
+  elseif mailInfo.mail_type == MailType.MAIL_TYPE_TOWER_COMPENTSATE then
+    mailData.title = StringTable.Get(mailInfo.title_id)
+    mailData.content = StringTable.Get(mailInfo.content_id, table.unpack(mailInfo.content_param))
+    mailData.senderName = StringTable.Get(mailInfo.sender_nick)
+  elseif mailInfo.mail_type == MailType.MAIL_TYPE_TEXT_CONVER then
+    mailData.title = StringTable.Get(mailInfo.title_id)
+    mailData.senderName = StringTable.Get(mailInfo.sender_nick)
+    local contentParams = mailInfo.content_param
+    if contentParams and #contentParams % 4 == 0 then
+      local groupCount = #contentParams / 4
+      local from, to = {}, {}
+      for i = 1, groupCount do
+        local group = i - 1
+        local fromID = tonumber(contentParams[group * 4 + 1])
+        local fromCount = tonumber(contentParams[group * 4 + 2])
+        local toID = tonumber(contentParams[group * 4 + 3])
+        local toCount = tonumber(contentParams[group * 4 + 4])
+        table.insert(from, {fromID, fromCount})
+        table.insert(to, {toID, toCount})
+      end
+      local params = {}
+      local strKey
+      if #from == 1 and #to == 1 then
+        for _, t in ipairs(from) do
+          local id = t[1]
+          local count = t[2]
+          local name = StringTable.Get(Cfg.cfg_item[id].Name)
+          table.insert(params, name)
+          table.insert(params, count)
+          break
+        end
+        for _, t in ipairs(to) do
+          local id = t[1]
+          local count = t[2]
+          local name = StringTable.Get(Cfg.cfg_item[id].Name)
+          table.insert(params, name)
+          table.insert(params, count)
+          break
+        end
+        strKey = mailInfo.content_id .. "_1"
+      elseif #from == 2 and #to == 2 then
+        for _, t in ipairs(from) do
+          local id = t[1]
+          local count = t[2]
+          local name = StringTable.Get(Cfg.cfg_item[id].Name)
+          table.insert(params, name)
+          table.insert(params, count)
+        end
+        for _, t in ipairs(to) do
+          local id = t[1]
+          local count = t[2]
+          local name = StringTable.Get(Cfg.cfg_item[id].Name)
+          table.insert(params, name)
+          table.insert(params, count)
+        end
+        strKey = mailInfo.content_id .. "_2"
+      else
+        Log.exception("赛季邮件参数错误2", echo(contentParams))
+      end
+      mailData.content = StringTable.Get(strKey, table.unpack(params))
+    else
+      Log.exception("赛季邮件参数错误1", echo(contentParams))
+    end
+  elseif mailInfo.mail_type == MailType.MAIL_TYPE_CAM_QUEST then
+    mailData.title = StringTable.Get(mailInfo.title_id)
+    mailData.senderName = StringTable.Get(mailInfo.sender_nick)
+    local cname = ""
+    local content_id_ext = mailInfo.content_id_ext
+    if content_id_ext and content_id_ext.assetid > 0 then
+      local cfg_campaign = Cfg.cfg_campaign[content_id_ext.assetid]
+      if cfg_campaign then
+        cname = StringTable.Get(cfg_campaign.CampaignName)
+      end
+    end
+    mailData.content = StringTable.Get(mailInfo.content_id, cname)
+  else
+    mailData.title = StringTable.Get(mailInfo.title_id)
+    mailData.content = StringTable.Get(mailInfo.content_id)
+    mailData.senderName = StringTable.Get(mailInfo.sender_nick)
   end
+  mailData.createTimeSeconds = mailInfo.create_time
+  mailData.createTime = TimeToDate(mailInfo.create_time, "day")
+  mailData.remainSeconds = mailInfo.remain_time
+  mailData.rewards = mailInfo.appendix
+  if mailData.rewards ~= nil and 0 < table.count(mailData.rewards) then
+    mailData.hasReward = true
+  end
+  return mailData
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._CalMailData = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIMailController:_CalMailData()
   self._mailDatas = self:_SortMailData(self._mailDatas)
-  self._mailCount = (table.count)(self._mailDatas)
+  self._mailCount = table.count(self._mailDatas)
   self._unReadMailCount = 0
   for i = 1, self._mailCount do
-    local mailData = (self._mailDatas)[i]
+    local mailData = self._mailDatas[i]
     if mailData.isRead == false then
       self._unReadMailCount = self._unReadMailCount + 1
     end
   end
   self._collectMailDatas = self:_SortMailData(self._collectMailDatas)
-  self._collectMailCount = (table.count)(self._collectMailDatas)
+  self._collectMailCount = table.count(self._collectMailDatas)
   self._unReadCollectMailCount = 0
   for i = 1, self._collectMailCount do
-    local mailData = (self._collectMailDatas)[i]
+    local mailData = self._collectMailDatas[i]
     if mailData.isRead == false then
       self._unReadCollectMailCount = self._unReadCollectMailCount + 1
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._SortMailData = function(self, mailDatas)
-  -- function num : 0_15 , upvalues : _ENV
-  (table.sort)(mailDatas, function(a, b)
-    -- function num : 0_15_0
+function UIMailController:_SortMailData(mailDatas)
+  table.sort(mailDatas, function(a, b)
     if a.isRead ~= b.isRead then
       return b.isRead
     end
-    local isGainA = a.hasReward and a.isGain
-    local isGainB = b.hasReward and b.isGain
+    local isGainA = not a.hasReward or a.isGain
+    local isGainB = not b.hasReward or b.isGain
     if isGainA ~= isGainB then
       return isGainB
     end
-    if b.createTimeSeconds >= a.createTimeSeconds then
-      do return a.createTimeSeconds == b.createTimeSeconds end
-      do return a.id < b.id end
-      -- DECOMPILER ERROR: 8 unprocessed JMP targets
+    if a.createTimeSeconds ~= b.createTimeSeconds then
+      return a.createTimeSeconds > b.createTimeSeconds
     end
-  end
-)
+    return a.id < b.id
+  end)
   return mailDatas
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._RefreshMailInfoPanel = function(self)
-  -- function num : 0_16 , upvalues : ClientMailType
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIMailController:_RefreshMailInfoPanel()
   if self._currentType == ClientMailType.Normal then
-    (self._mailCountLabel).text = "<color=#ffd300>" .. self._mailCount .. "</color>" .. " / " .. self._maxMailCount
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._unReadMailCountLabel).text = self._unReadMailCount
-  else
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-    if self._currentType == ClientMailType.Collection then
-      (self._mailCountLabel).text = "<color=#ffd300>" .. self._collectMailCount .. "</color>" .. " / " .. self._maxMailCount
-      -- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._unReadMailCountLabel).text = self._unReadCollectMailCount
-    end
+    self._mailCountLabel.text = "<color=#ffd300>" .. self._mailCount .. "</color>" .. " / " .. self._maxMailCount
+    self._unReadMailCountLabel.text = self._unReadMailCount
+  elseif self._currentType == ClientMailType.Collection then
+    self._mailCountLabel.text = "<color=#ffd300>" .. self._collectMailCount .. "</color>" .. " / " .. self._maxMailCount
+    self._unReadMailCountLabel.text = self._unReadCollectMailCount
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._SetListItemCount = function(self)
-  -- function num : 0_17 , upvalues : ClientMailType
+function UIMailController:_SetListItemCount()
   if self._currentType == ClientMailType.Normal then
-    (self._scrollView):SetListItemCount(self._mailCount, false)
-  else
-    if self._currentType == ClientMailType.Collection then
-      (self._scrollView):SetListItemCount(self._collectMailCount, false)
-    end
+    self._scrollView:SetListItemCount(self._mailCount, false)
+  elseif self._currentType == ClientMailType.Collection then
+    self._scrollView:SetListItemCount(self._collectMailCount, false)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._InitScrollView = function(self)
-  -- function num : 0_18
-  (self._scrollView):InitListView(self._mailCount, function(scrollview, index)
-    -- function num : 0_18_0 , upvalues : self
+function UIMailController:_InitScrollView()
+  self._scrollView:InitListView(self._mailCount, function(scrollview, index)
     return self:_OnGetMailItem(scrollview, index)
-  end
-, self:GetScrollViewParam())
+  end, self:GetScrollViewParam())
   self.InitedMailList = true
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController.GetScrollViewParam = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIMailController:GetScrollViewParam()
   local param = UIDynamicScrollViewInitParam:New()
   param.mItemDefaultWithPaddingSize = 240
   return param
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._OnGetMailItem = function(self, scrollView, index)
-  -- function num : 0_20 , upvalues : ClientMailType, _ENV
+function UIMailController:_OnGetMailItem(scrollView, index)
   local item = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -615,140 +446,95 @@ UIMailController._OnGetMailItem = function(self, scrollView, index)
   end
   local rowList = rowPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      if self._currentType == ClientMailType.Normal then
-        if self._mailCount < itemIndex then
-          (itemWidget:GetGameObject()):SetActive(false)
-        else
-          self:_RefreshMailItemInfo(itemWidget, itemIndex)
-        end
+  if itemWidget then
+    local itemIndex = index + 1
+    if self._currentType == ClientMailType.Normal then
+      if itemIndex > self._mailCount then
+        itemWidget:GetGameObject():SetActive(false)
       else
-        if self._currentType == ClientMailType.Collection then
-          if self._collectMailCount < itemIndex then
-            (itemWidget:GetGameObject()):SetActive(false)
-          else
-            self:_RefreshMailItemInfo(itemWidget, itemIndex)
-          end
-        end
+        self:_RefreshMailItemInfo(itemWidget, itemIndex)
+      end
+    elseif self._currentType == ClientMailType.Collection then
+      if itemIndex > self._collectMailCount then
+        itemWidget:GetGameObject():SetActive(false)
+      else
+        self:_RefreshMailItemInfo(itemWidget, itemIndex)
       end
     end
-    ;
-    (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
-    return item
   end
+  UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
+  return item
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._RefreshMailItemInfo = function(self, itemWidget, index)
-  -- function num : 0_21 , upvalues : ClientMailType
+function UIMailController:_RefreshMailItemInfo(itemWidget, index)
   if self._currentType == ClientMailType.Normal then
-    itemWidget:Refresh(self, (self._mailDatas)[index])
-  else
-    if self._currentType == ClientMailType.Collection then
-      itemWidget:Refresh(self, (self._collectMailDatas)[index], true)
-    end
+    itemWidget:Refresh(self, self._mailDatas[index])
+  elseif self._currentType == ClientMailType.Collection then
+    itemWidget:Refresh(self, self._collectMailDatas[index], true)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._Refresh = function(self)
-  -- function num : 0_22
+function UIMailController:_Refresh()
   self:_RefreshSelectMail()
   self:_RefreshMailData()
   self:_SetListItemCount()
-  ;
-  (self._scrollView):RefreshAllShownItem()
+  self._scrollView:RefreshAllShownItem()
   self:_RefreshMailInfoPanel()
   self:_RefreshMailEmptyIconStatus()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._RecvRefresh = function(self, mail_id, isGain, isRead, isExpired)
-  -- function num : 0_23
+function UIMailController:_RecvRefresh(mail_id, isGain, isRead, isExpired)
   self:_RefreshSelectMail()
   self:_RecvRefreshMailData(mail_id, isGain, isRead, isExpired)
   self:_SetListItemCount()
-  ;
-  (self._scrollView):RefreshAllShownItem()
+  self._scrollView:RefreshAllShownItem()
   self:_RefreshMailInfoPanel()
   self:_RefreshMailEmptyIconStatus()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController.NormalOnClick = function(self)
-  -- function num : 0_24 , upvalues : ClientMailType
-  (self._deleteBtn):SetActive(true)
+function UIMailController:NormalOnClick()
+  self._deleteBtn:SetActive(true)
   self._currentType = ClientMailType.Normal
   self:_Refresh()
-  ;
-  (self._scrollView):MovePanelToItemIndex(0, 0)
+  self._scrollView:MovePanelToItemIndex(0, 0)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController.CollectionOnClick = function(self)
-  -- function num : 0_25 , upvalues : ClientMailType
-  (self._deleteBtn):SetActive(false)
+function UIMailController:CollectionOnClick()
+  self._deleteBtn:SetActive(false)
   self._currentType = ClientMailType.Collection
   self:_Refresh()
-  ;
-  (self._scrollView):MovePanelToItemIndex(0, 0)
+  self._scrollView:MovePanelToItemIndex(0, 0)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController.BtnDeleteAllReadedMailOnClick = function(self, go)
-  -- function num : 0_26 , upvalues : _ENV
+function UIMailController:BtnDeleteAllReadedMailOnClick(go)
   self:Lock("DeleteAllReadedMailLock")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._SendDeleteAllReadedMailMsg, self)
+  GameGlobal.TaskManager():StartTask(self._SendDeleteAllReadedMailMsg, self)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._SendDeleteAllReadedMailMsg = function(self, TT)
-  -- function num : 0_27 , upvalues : _ENV
-  local res = (self._mailModule):RequestBatchDeleteMail(TT)
+function UIMailController:_SendDeleteAllReadedMailMsg(TT)
+  local res = self._mailModule:RequestBatchDeleteMail(TT)
   self:UnLock("DeleteAllReadedMailLock")
   if res.m_result == MailErrorCode.MAIL_SUCC then
     self:_Refresh()
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController.BtnCollectedRewardOnClick = function(self, go)
-  -- function num : 0_28 , upvalues : _ENV
+function UIMailController:BtnCollectedRewardOnClick(go)
   self:Lock("CollectedAllRewardsLock")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._SendCollectedAllRewardsMsg, self)
+  GameGlobal.TaskManager():StartTask(self._SendCollectedAllRewardsMsg, self)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._SendCollectedAllRewardsMsg = function(self, TT)
-  -- function num : 0_29 , upvalues : _ENV, ClientMailType
-  ((GameGlobal.GetModule)(ItemModule)):CommonAutoConversionEventOpen(true)
-  local res, rewards = nil, nil
+function UIMailController:_SendCollectedAllRewardsMsg(TT)
+  GameGlobal.GetModule(ItemModule):CommonAutoConversionEventOpen(true)
+  local res, rewards
   if self._currentType == ClientMailType.Normal then
-    res = (self._mailModule):RequestBatchReceiveAppendix(TT)
-  else
-    -- DECOMPILER ERROR at PC28: Overwrote pending register: R3 in 'AssignReg'
-
-    if self._currentType == ClientMailType.Collection then
-      res = (self._mailModule):RequestBatchReceiveAppendix(TT, true)
-    end
+    res, rewards = self._mailModule:RequestBatchReceiveAppendix(TT)
+  elseif self._currentType == ClientMailType.Collection then
+    res, rewards = self._mailModule:RequestBatchReceiveAppendix(TT, true)
   end
-  ;
-  ((GameGlobal.GetModule)(ItemModule)):CommonAutoConversionEventOpen(false)
-  self._autoConversionList = ((GameGlobal.GetModule)(ItemModule)):GetConverList()
+  GameGlobal.GetModule(ItemModule):CommonAutoConversionEventOpen(false)
+  self._autoConversionList = GameGlobal.GetModule(ItemModule):GetConverList()
   self:UnLock("CollectedAllRewardsLock")
   if res.m_result == MailErrorCode.MAIL_SUCC and rewards then
     self:_ShowRewards(rewards)
@@ -756,69 +542,48 @@ UIMailController._SendCollectedAllRewardsMsg = function(self, TT)
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._ShowRewards = function(self, rewards, callback)
-  -- function num : 0_30 , upvalues : _ENV
-  (UiMailHelper.ShowUIGetRewards)(rewards, callback, false, self._autoConversionList)
-  return 
+function UIMailController:_ShowRewards(rewards, callback)
+  UiMailHelper.ShowUIGetRewards(rewards, callback, false, self._autoConversionList)
+  return
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController.ReadMail = function(self, mailData)
-  -- function num : 0_31 , upvalues : _ENV
+function UIMailController:ReadMail(mailData)
   if not mailData then
-    return 
+    return
   end
   self:Lock("ReadMailLock")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._SendReadMailMsg, self, mailData)
+  GameGlobal.TaskManager():StartTask(self._SendReadMailMsg, self, mailData)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._SendReadMailMsg = function(self, TT, mailData)
-  -- function num : 0_32 , upvalues : _ENV, ClientMailType
-  local res = (self._mailModule):RequestReadMail(TT, mailData.id)
+function UIMailController:_SendReadMailMsg(TT, mailData)
+  local res = self._mailModule:RequestReadMail(TT, mailData.id)
   self:UnLock("ReadMailLock")
-  ;
-  (Log.debug)("_______________________res.m_result:", res.m_result)
-  if self._currentType ~= ClientMailType.Collection then
-    self:ShowDialog("UIMailContentController", mailData, self, res.m_result ~= MailErrorCode.MAIL_SUCC and res.m_result ~= MailErrorCode.MAIL_ALREADY_READ)
+  Log.debug("_______________________res.m_result:", res.m_result)
+  if res.m_result == MailErrorCode.MAIL_SUCC or res.m_result == MailErrorCode.MAIL_ALREADY_READ then
+    self:ShowDialog("UIMailContentController", mailData, self, self._currentType == ClientMailType.Collection)
     self:_RecvRefresh(mailData.id, false, true, false)
-    do return  end
-    if res.m_result == MailErrorCode.MAIL_ERR_MAIL_EXPIRED then
-      (ToastManager.ShowToast)((StringTable.Get)("str_mail_has_expire"))
-      self:_RecvRefresh(mailData.id, false, true, true)
-      return 
-    end
-    self:_Refresh()
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    return
+  elseif res.m_result == MailErrorCode.MAIL_ERR_MAIL_EXPIRED then
+    ToastManager.ShowToast(StringTable.Get("str_mail_has_expire"))
+    self:_RecvRefresh(mailData.id, false, true, true)
+    return
   end
+  self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController.CollectedReward = function(self, mailData, callback)
-  -- function num : 0_33 , upvalues : _ENV
+function UIMailController:CollectedReward(mailData, callback)
   if not mailData then
-    return 
+    return
   end
   self:Lock("CollectedMailLock")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._SendCollectedRewardMsg, self, mailData, callback)
+  GameGlobal.TaskManager():StartTask(self._SendCollectedRewardMsg, self, mailData, callback)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._SendCollectedRewardMsg = function(self, TT, mailData, callback)
-  -- function num : 0_34 , upvalues : _ENV
-  ((GameGlobal.GetModule)(ItemModule)):CommonAutoConversionEventOpen(true)
-  local res, rewards = (self._mailModule):RequestReceiveAppendix(TT, mailData.id)
-  ;
-  ((GameGlobal.GetModule)(ItemModule)):CommonAutoConversionEventOpen(false)
-  self._autoConversionList = ((GameGlobal.GetModule)(ItemModule)):GetConverList()
+function UIMailController:_SendCollectedRewardMsg(TT, mailData, callback)
+  GameGlobal.GetModule(ItemModule):CommonAutoConversionEventOpen(true)
+  local res, rewards = self._mailModule:RequestReceiveAppendix(TT, mailData.id)
+  GameGlobal.GetModule(ItemModule):CommonAutoConversionEventOpen(false)
+  self._autoConversionList = GameGlobal.GetModule(ItemModule):GetConverList()
   self:UnLock("CollectedMailLock")
   if res.m_result == MailErrorCode.MAIL_SUCC then
     self:_RecvRefresh(mailData.id, true, true, false)
@@ -826,68 +591,52 @@ UIMailController._SendCollectedRewardMsg = function(self, TT, mailData, callback
     mailData.isRead = true
     if rewards then
       self:_ShowRewards(rewards, function()
-    -- function num : 0_34_0 , upvalues : callback
-    if callback then
-      callback(true)
+        if callback then
+          callback(true)
+        end
+      end)
     end
-  end
-)
-    end
-    return 
+    return
   end
   if res.m_result == MailErrorCode.MAIL_ERR_MAIL_EXPIRED then
     if callback then
       callback(false)
     end
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_mail_has_expire"))
+    ToastManager.ShowToast(StringTable.Get("str_mail_has_expire"))
     self:_RecvRefresh(mailData.id, true, true, true)
-    return 
-  else
-    if res.m_result == MailErrorCode.MAIL_ERR_PHY_IS_LIMIT then
-      (ToastManager.ShowToast)((StringTable.Get)("str_physicalpower_error_phy_add_full"))
-      return 
-    else
-      if res.m_result == MailErrorCode.MAIL_ERR_ASSET_DOUBLE_RES_LIMIT then
-        (ToastManager.ShowToast)((StringTable.Get)("str_mail_maxcarrier_tip"))
-        return 
-      end
-    end
+    return
+  elseif res.m_result == MailErrorCode.MAIL_ERR_PHY_IS_LIMIT then
+    ToastManager.ShowToast(StringTable.Get("str_physicalpower_error_phy_add_full"))
+    return
+  elseif res.m_result == MailErrorCode.MAIL_ERR_ASSET_DOUBLE_RES_LIMIT then
+    ToastManager.ShowToast(StringTable.Get("str_mail_maxcarrier_tip"))
+    return
   end
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController.DeleteMail = function(self, mailData, callback)
-  -- function num : 0_35 , upvalues : _ENV
+function UIMailController:DeleteMail(mailData, callback)
   if not mailData then
-    return 
+    return
   end
   self:Lock("DeleteMailLock")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._SendDeleteMailMsg, self, mailData, callback)
+  GameGlobal.TaskManager():StartTask(self._SendDeleteMailMsg, self, mailData, callback)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMailController._SendDeleteMailMsg = function(self, TT, mailData, callback)
-  -- function num : 0_36 , upvalues : _ENV
-  local res = (self._mailModule):RequestDeleteMail(TT, mailData.id)
+function UIMailController:_SendDeleteMailMsg(TT, mailData, callback)
+  local res = self._mailModule:RequestDeleteMail(TT, mailData.id)
   self:UnLock("DeleteMailLock")
   if res.m_result == MailErrorCode.MAIL_SUCC then
     self:_Refresh()
     if callback then
       callback(true)
     end
-    return 
+    return
   end
   if res.m_result == MailErrorCode.MAIL_ERR_MAIL_HAVE_APPENDIX then
-    (ToastManager.ShowToast)((StringTable.Get)("str_mail_has_reward_ungain"))
+    ToastManager.ShowToast(StringTable.Get("str_mail_has_reward_ungain"))
   end
   if callback then
     callback(false)
   end
 end
-
-

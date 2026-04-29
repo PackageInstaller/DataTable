@@ -1,28 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n26/main/ui_activity_n26_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN26MainController", UIController)
 UIActivityN26MainController = UIActivityN26MainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN26MainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIActivityN26MainController:LoadDataOnEnter(TT, res, uiParams)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
   self._activityConst = UIActivityN26Const:New()
-  ;
-  (self._activityConst):LoadData(TT, res)
+  self._activityConst:LoadData(TT, res)
   if res and not res:GetSucc() then
-    local campModule = (GameGlobal.GetModule)(CampaignModule)
-    campModule:CheckErrorCode(res.m_result, ((self._activityConst):GetCampaignId()), nil, nil)
+    local campModule = GameGlobal.GetModule(CampaignModule)
+    campModule:CheckErrorCode(res.m_result, self._activityConst:GetCampaignId(), nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN26MainController:OnShow()
   self:AttachEvent(GameEventType.OnActivityTotalAwardGot, self.RefreshRedData)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self.RefreshRedData)
   self:AttachEvent(GameEventType.OnN26ActivityMainRedStatusRefresh, self.RefreshRedData)
@@ -63,515 +52,321 @@ UIActivityN26MainController.OnShow = function(self)
   self._timeLabel = self:GetUIComponent("UILocalizationText", "Time")
   self._btnPanel = self:GetGameObject("BtnPanel")
   self._showBtn = self:GetGameObject("ShowBtn")
-  ;
-  (self._showBtn):SetActive(false)
+  self._showBtn:SetActive(false)
   self._anim = self:GetUIComponent("Animation", "Anim")
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   local backBtn = btns:SpawnObject("UICommonTopButton")
   backBtn:SetData(function()
-    -- function num : 0_1_0 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(self.CloseCoro, self)
-  end
-, nil, nil, false, function()
-    -- function num : 0_1_1 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(self.SetButtonShowStatus, self, false)
-  end
-)
+    GameGlobal.TaskManager():StartTask(self.CloseCoro, self)
+  end, nil, nil, false, function()
+    GameGlobal.TaskManager():StartTask(self.SetButtonShowStatus, self, false)
+  end)
   self:InitUI()
-  ;
-  (CutsceneManager.ExcuteCutsceneOut)(function()
-    -- function num : 0_1_2 , upvalues : _ENV, self
-    (UIActivityHelper.PlayFirstPlot_Campaign)((self._activityConst):GetCampaign())
-  end
-)
-  ;
-  (self._activityConst):ClearEnterNew()
+  CutsceneManager.ExcuteCutsceneOut(function()
+    UIActivityHelper.PlayFirstPlot_Campaign(self._activityConst:GetCampaign())
+  end)
+  self._activityConst:ClearEnterNew()
   self:PlayEnterAnim()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.PlayEnterAnim = function(self)
-  -- function num : 0_2
+function UIActivityN26MainController:PlayEnterAnim()
   self:StartTask(self.PlayEnterAnimCoro, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.PlayEnterAnimCoro = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN26MainController:PlayEnterAnimCoro(TT)
   self:Lock("UIActivityN26MainController_PlayEnterAnimCoro")
-  ;
-  (self._anim):Play("uieff_N26_MainController")
+  self._anim:Play("uieff_N26_MainController")
   YIELD(TT, 1500)
   self:UnLock("UIActivityN26MainController_PlayEnterAnimCoro")
   self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController._CheckGuide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN26MainController)
+function UIActivityN26MainController:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN26MainController)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_5
+function UIActivityN26MainController:OnUpdate(deltaTimeMS)
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.OnHide = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._normalLevelButtonStatus):Release()
-  ;
-  (self._hardLevelButtonStatus):Release()
-  ;
-  (self._movieButtonStatus):Release()
-  ;
-  (self._miniGameButtonStatus):Release()
+function UIActivityN26MainController:OnHide()
+  self._normalLevelButtonStatus:Release()
+  self._hardLevelButtonStatus:Release()
+  self._movieButtonStatus:Release()
+  self._miniGameButtonStatus:Release()
   self:DetachEvent(GameEventType.OnActivityTotalAwardGot, self.RefreshRedData)
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self.RefreshRedData)
   self:DetachEvent(GameEventType.OnN26ActivityMainRedStatusRefresh, self.RefreshRedData)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.InitUI = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityN26MainController:InitUI()
   self:RefreshShopBtnStatus()
   self:RefreshUI()
   self:RefreshNew()
   self:RefreshRed()
   self._normalLevelButtonStatus = UIActivityN26ButtonStatus:New(function()
-    -- function num : 0_7_0 , upvalues : self
-    return (self._activityConst):GetNormalLineMissionComponentStatus()
-  end
-, function(TT)
-    -- function num : 0_7_1 , upvalues : self
+    return self._activityConst:GetNormalLineMissionComponentStatus()
+  end, function(TT)
     self:ReLoadData(TT, "normallevel")
-  end
-, function(status, timeStr)
-    -- function num : 0_7_2 , upvalues : self, _ENV
-    (self._normalLevelRemainTimePanel):SetActive(false)
-    ;
-    (self._normalLevelEndPanel):SetActive(false)
+  end, function(status, timeStr)
+    self._normalLevelRemainTimePanel:SetActive(false)
+    self._normalLevelEndPanel:SetActive(false)
     if status == ActivityComponentStatus.Open then
-      (self._normalLevelMask):SetActive(false)
-      ;
-      (self._normalLevelRemainTimePanel):SetActive(true)
-      ;
-      (self._normalLevelRemainTimeLabel):SetText((StringTable.Get)("str_n26_activity_normal_level_remain_time", timeStr))
-    else
-      if status == ActivityComponentStatus.Close or status == ActivityComponentStatus.ActivityEnd or status == ActivityComponentStatus.None then
-        (self._normalLevelEndPanel):SetActive(true)
-        ;
-        (self._normalLevelMask):SetActive(true)
-      else
-        if status == ActivityComponentStatus.TimeLock then
-          (self._normalLevelMask):SetActive(true)
-        else
-          if status == ActivityComponentStatus.MissionLock then
-            (self._normalLevelMask):SetActive(true)
-          end
-        end
-      end
+      self._normalLevelMask:SetActive(false)
+      self._normalLevelRemainTimePanel:SetActive(true)
+      self._normalLevelRemainTimeLabel:SetText(StringTable.Get("str_n26_activity_normal_level_remain_time", timeStr))
+    elseif status == ActivityComponentStatus.Close or status == ActivityComponentStatus.ActivityEnd or status == ActivityComponentStatus.None then
+      self._normalLevelEndPanel:SetActive(true)
+      self._normalLevelMask:SetActive(true)
+    elseif status == ActivityComponentStatus.TimeLock then
+      self._normalLevelMask:SetActive(true)
+    elseif status == ActivityComponentStatus.MissionLock then
+      self._normalLevelMask:SetActive(true)
     end
-  end
-)
+  end)
   self._hardLevelButtonStatus = UIActivityN26ButtonStatus:New(function()
-    -- function num : 0_7_3 , upvalues : self
-    return (self._activityConst):GetHardLineMissionComponentStatus()
-  end
-, function(TT)
-    -- function num : 0_7_4 , upvalues : self
+    return self._activityConst:GetHardLineMissionComponentStatus()
+  end, function(TT)
     self:ReLoadData(TT, "hardlevel")
-  end
-, function(status, timeStr)
-    -- function num : 0_7_5 , upvalues : self, _ENV
-    (self._hardLevelEndPanel):SetActive(false)
-    ;
-    (self._hardLevelLockTipsPanel):SetActive(false)
-    ;
-    (self._hardLevelRemainTimePanel):SetActive(false)
+  end, function(status, timeStr)
+    self._hardLevelEndPanel:SetActive(false)
+    self._hardLevelLockTipsPanel:SetActive(false)
+    self._hardLevelRemainTimePanel:SetActive(false)
     if status == ActivityComponentStatus.Open then
-      (self._hardLevelMask):SetActive(false)
-      ;
-      (self._hardLevelRemainTimePanel):SetActive(true)
-      ;
-      (self._hardLevelRemainTimeLabel):SetText((StringTable.Get)("str_n26_activity_hard_level_remain_time", timeStr))
-    else
-      if status == ActivityComponentStatus.Close or status == ActivityComponentStatus.ActivityEnd or status == ActivityComponentStatus.None then
-        (self._hardLevelEndPanel):SetActive(true)
-        ;
-        (self._hardLevelMask):SetActive(true)
-      else
-        if status == ActivityComponentStatus.TimeLock then
-          (self._hardLevelLockTipsPanel):SetActive(true)
-          ;
-          (self._hardLevelMask):SetActive(true)
-          ;
-          (self._hardLevelLockTipsLabel):SetText((StringTable.Get)("str_n26_activity_hard_level_lock_time_tips", timeStr))
-        else
-          if status == ActivityComponentStatus.MissionLock then
-            (self._hardLevelLockTipsPanel):SetActive(true)
-            ;
-            (self._hardLevelMask):SetActive(true)
-            ;
-            (self._hardLevelLockTipsLabel):SetText((StringTable.Get)("str_n26_activity_hard_level_lock_mission_tips"))
-          end
-        end
-      end
+      self._hardLevelMask:SetActive(false)
+      self._hardLevelRemainTimePanel:SetActive(true)
+      self._hardLevelRemainTimeLabel:SetText(StringTable.Get("str_n26_activity_hard_level_remain_time", timeStr))
+    elseif status == ActivityComponentStatus.Close or status == ActivityComponentStatus.ActivityEnd or status == ActivityComponentStatus.None then
+      self._hardLevelEndPanel:SetActive(true)
+      self._hardLevelMask:SetActive(true)
+    elseif status == ActivityComponentStatus.TimeLock then
+      self._hardLevelLockTipsPanel:SetActive(true)
+      self._hardLevelMask:SetActive(true)
+      self._hardLevelLockTipsLabel:SetText(StringTable.Get("str_n26_activity_hard_level_lock_time_tips", timeStr))
+    elseif status == ActivityComponentStatus.MissionLock then
+      self._hardLevelLockTipsPanel:SetActive(true)
+      self._hardLevelMask:SetActive(true)
+      self._hardLevelLockTipsLabel:SetText(StringTable.Get("str_n26_activity_hard_level_lock_mission_tips"))
     end
-  end
-)
+  end)
   self._movieButtonStatus = UIActivityN26ButtonStatus:New(function()
-    -- function num : 0_7_6 , upvalues : self
-    return (self._activityConst):GetMovieComponentStatus()
-  end
-, function(TT)
-    -- function num : 0_7_7 , upvalues : self
+    return self._activityConst:GetMovieComponentStatus()
+  end, function(TT)
     self:ReLoadData(TT, "movie")
-  end
-, function(status, timeStr)
-    -- function num : 0_7_8 , upvalues : self, _ENV
-    (self._movieEndPanel):SetActive(false)
-    ;
-    (self._movieRemainTimePanel):SetActive(false)
+  end, function(status, timeStr)
+    self._movieEndPanel:SetActive(false)
+    self._movieRemainTimePanel:SetActive(false)
     if status == ActivityComponentStatus.Open then
-      (self._movieRemainTimePanel):SetActive(true)
-      ;
-      (self._movieRemainTimeLabel):SetText((StringTable.Get)("str_n26_activity_movie_remain_time", timeStr))
-    else
-      if status == ActivityComponentStatus.Close or status == ActivityComponentStatus.ActivityEnd or status == ActivityComponentStatus.None then
-        (self._movieEndPanel):SetActive(true)
-      else
-      end
+      self._movieRemainTimePanel:SetActive(true)
+      self._movieRemainTimeLabel:SetText(StringTable.Get("str_n26_activity_movie_remain_time", timeStr))
+    elseif status == ActivityComponentStatus.Close or status == ActivityComponentStatus.ActivityEnd or status == ActivityComponentStatus.None then
+      self._movieEndPanel:SetActive(true)
+    elseif status == ActivityComponentStatus.TimeLock then
+    elseif status == ActivityComponentStatus.MissionLock then
     end
-    if (status ~= ActivityComponentStatus.TimeLock or status == ActivityComponentStatus.MissionLock) then
-    end
-  end
-)
+  end)
   self._miniGameButtonStatus = UIActivityN26ButtonStatus:New(function()
-    -- function num : 0_7_9 , upvalues : self
-    return (self._activityConst):GetMiniGameComponentStatus()
-  end
-, function(TT)
-    -- function num : 0_7_10 , upvalues : self
+    return self._activityConst:GetMiniGameComponentStatus()
+  end, function(TT)
     self:ReLoadData(TT, "minigame")
-  end
-, function(status, timeStr)
-    -- function num : 0_7_11 , upvalues : self, _ENV
-    (self._minGameEndPanel):SetActive(false)
-    ;
-    (self._minGameRemainTimePanel):SetActive(false)
-    ;
-    (self._miniGameLockTipsPanel):SetActive(false)
+  end, function(status, timeStr)
+    self._minGameEndPanel:SetActive(false)
+    self._minGameRemainTimePanel:SetActive(false)
+    self._miniGameLockTipsPanel:SetActive(false)
     if status == ActivityComponentStatus.Open then
-      (self._minGameMask):SetActive(false)
-      ;
-      (self._minGameRemainTimePanel):SetActive(true)
-      ;
-      (self._miniGameRemainTimeLabel):SetText((StringTable.Get)("str_n26_activity_minigame_remain_time", timeStr))
-    else
-      if status == ActivityComponentStatus.Close or status == ActivityComponentStatus.ActivityEnd or status == ActivityComponentStatus.None then
-        (self._minGameEndPanel):SetActive(true)
-        ;
-        (self._minGameMask):SetActive(true)
-      else
-        if status == ActivityComponentStatus.TimeLock then
-          (self._miniGameLockTipsPanel):SetActive(true)
-          ;
-          (self._minGameMask):SetActive(true)
-          ;
-          (self._miniGameLockTipsLabel):SetText((StringTable.Get)("str_n26_activity_minigame_lock_time_tips", timeStr))
-        else
-          if status == ActivityComponentStatus.MissionLock then
-            (self._miniGameLockTipsPanel):SetActive(true)
-            ;
-            (self._minGameMask):SetActive(true)
-            ;
-            (self._miniGameLockTipsLabel):SetText((StringTable.Get)("str_n26_activity_minigame_lock_mission_tips"))
-          end
-        end
-      end
+      self._minGameMask:SetActive(false)
+      self._minGameRemainTimePanel:SetActive(true)
+      self._miniGameRemainTimeLabel:SetText(StringTable.Get("str_n26_activity_minigame_remain_time", timeStr))
+    elseif status == ActivityComponentStatus.Close or status == ActivityComponentStatus.ActivityEnd or status == ActivityComponentStatus.None then
+      self._minGameEndPanel:SetActive(true)
+      self._minGameMask:SetActive(true)
+    elseif status == ActivityComponentStatus.TimeLock then
+      self._miniGameLockTipsPanel:SetActive(true)
+      self._minGameMask:SetActive(true)
+      self._miniGameLockTipsLabel:SetText(StringTable.Get("str_n26_activity_minigame_lock_time_tips", timeStr))
+    elseif status == ActivityComponentStatus.MissionLock then
+      self._miniGameLockTipsPanel:SetActive(true)
+      self._minGameMask:SetActive(true)
+      self._miniGameLockTipsLabel:SetText(StringTable.Get("str_n26_activity_minigame_lock_mission_tips"))
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.RefreshRedData = function(self)
-  -- function num : 0_8
+function UIActivityN26MainController:RefreshRedData()
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self
     self:Lock("UIActivityN26MainController_ReLoadData")
     self:ReLoadData(TT, "Refresh")
     self:RefreshRed()
     self:RefreshShopBtnStatus()
     self:UnLock("UIActivityN26MainController_ReLoadData")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.RefreshNew = function(self)
-  -- function num : 0_9
-  (self._normalLevelNew):SetActive((self._activityConst):IsShowNormalLineNew())
-  ;
-  (self._hardLevelNew):SetActive((self._activityConst):IsShowHardLineNew())
-  ;
-  (self._shopNew):SetActive((self._activityConst):IsShowShopNew())
-  ;
-  (self._movieNew):SetActive((self._activityConst):IsShowMovieNew())
-  ;
-  (self._miniGameNew):SetActive((self._activityConst):IsShowMiniGameNew())
+function UIActivityN26MainController:RefreshNew()
+  self._normalLevelNew:SetActive(self._activityConst:IsShowNormalLineNew())
+  self._hardLevelNew:SetActive(self._activityConst:IsShowHardLineNew())
+  self._shopNew:SetActive(self._activityConst:IsShowShopNew())
+  self._movieNew:SetActive(self._activityConst:IsShowMovieNew())
+  self._miniGameNew:SetActive(self._activityConst:IsShowMiniGameNew())
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.RefreshRed = function(self)
-  -- function num : 0_10
-  (self._eventRed):SetActive((self._activityConst):IsShowBattlePassRed())
-  ;
-  (self._loginRed):SetActive((self._activityConst):IsShowLoginRed())
-  ;
-  (self._normalLevelRed):SetActive((self._activityConst):IsShowNormalLineRed())
-  ;
-  (self._hardLevelRed):SetActive((self._activityConst):IsShowHardLineRed())
-  ;
-  (self._shopRed):SetActive((self._activityConst):IsShowShopRed())
-  ;
-  (self._movieRed):SetActive((self._activityConst):IsShowMovieRed())
-  ;
-  (self._miniGameRed):SetActive((self._activityConst):IsShowMiniGameRed())
+function UIActivityN26MainController:RefreshRed()
+  self._eventRed:SetActive(self._activityConst:IsShowBattlePassRed())
+  self._loginRed:SetActive(self._activityConst:IsShowLoginRed())
+  self._normalLevelRed:SetActive(self._activityConst:IsShowNormalLineRed())
+  self._hardLevelRed:SetActive(self._activityConst:IsShowHardLineRed())
+  self._shopRed:SetActive(self._activityConst:IsShowShopRed())
+  self._movieRed:SetActive(self._activityConst:IsShowMovieRed())
+  self._miniGameRed:SetActive(self._activityConst:IsShowMiniGameRed())
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.ReLoadData = function(self, TT, key)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityN26MainController:ReLoadData(TT, key)
   self:Lock("UIActivityN26MainController_ReLoadData" .. key)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (self._activityConst):LoadData(TT, res)
+  self._activityConst:LoadData(TT, res)
   self:UnLock("UIActivityN26MainController_ReLoadData" .. key)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.CloseCoro = function(self, TT)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityN26MainController:CloseCoro(TT)
   self:Lock("UIActivityN21CCMainController_CloseCoro")
   self:SwitchState(UIStateType.UIMain)
   self:UnLock("UIActivityN21CCMainController_CloseCoro")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.RefreshUI = function(self)
-  -- function num : 0_13
+function UIActivityN26MainController:RefreshUI()
   self:RefreshActivityRemainTime()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.RefreshActivityRemainTime = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  if (self._activityConst):IsActivityEnd() then
-    (self._timeLabel):SetText((StringTable.Get)("str_n26_activity_end"))
-    return 
+function UIActivityN26MainController:RefreshActivityRemainTime()
+  if self._activityConst:IsActivityEnd() then
+    self._timeLabel:SetText(StringTable.Get("str_n26_activity_end"))
+    return
   end
-  local endTime = (self._activityConst):GetActiveEndTime()
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  local seconds = (math.floor)(endTime - nowTime)
+  local endTime = self._activityConst:GetActiveEndTime()
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  local seconds = math.floor(endTime - nowTime)
   if seconds <= 0 then
     seconds = 0
   end
-  local timeStr = (UIActivityN26Helper.GetTimeString)(seconds)
-  local timeTips = (StringTable.Get)("str_n26_activity_remain_time", timeStr)
-  ;
-  (self._timeLabel):SetText(timeTips)
+  local timeStr = UIActivityN26Helper.GetTimeString(seconds)
+  local timeTips = StringTable.Get("str_n26_activity_remain_time", timeStr)
+  self._timeLabel:SetText(timeTips)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.SetButtonShowStatus = function(self, TT, isShow)
-  -- function num : 0_15 , upvalues : _ENV
-  (self._showBtn):SetActive(not isShow)
-  ;
-  (self._btnPanel):SetActive(isShow)
+function UIActivityN26MainController:SetButtonShowStatus(TT, isShow)
+  self._showBtn:SetActive(not isShow)
+  self._btnPanel:SetActive(isShow)
   local aniName = "uieff_N26_MainController_out"
   if isShow then
     aniName = "uieff_N26_MainController_in"
   end
   self:Lock("UIActivityN26MainController_SetButtonShowStatus")
-  ;
-  (self._anim):Play(aniName)
+  self._anim:Play(aniName)
   YIELD(TT, 1500)
   self:UnLock("UIActivityN26MainController_SetButtonShowStatus")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.PlayEnterPlot = function(self)
-  -- function num : 0_16
-  self:ShowDialog("UIStoryController", (self._activityConst):GetPlotId())
-  ;
-  (self._activityConst):SetPlayPlotStatus()
+function UIActivityN26MainController:PlayEnterPlot()
+  self:ShowDialog("UIStoryController", self._activityConst:GetPlotId())
+  self._activityConst:SetPlayPlotStatus()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.RefreshShopBtnStatus = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local shopCom, info = (self._activityConst):GetShopComponent()
+function UIActivityN26MainController:RefreshShopBtnStatus()
+  local shopCom, info = self._activityConst:GetShopComponent()
   local icon, count = shopCom:GetCostItemIconText()
-  ;
-  (self._shopIconLoader):LoadImage(icon)
-  ;
-  (self._shopCountLabel):SetText((UIActivityN26Helper.GetItemCountStr)(7, count, "#8D8D8D", "#ffd146"))
+  self._shopIconLoader:LoadImage(icon)
+  self._shopCountLabel:SetText(UIActivityN26Helper.GetItemCountStr(7, count, "#8D8D8D", "#ffd146"))
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.InfoBtnOnClick = function(self)
-  -- function num : 0_18
+function UIActivityN26MainController:InfoBtnOnClick()
   self:ShowDialog("UIIntroLoader", "UIN26Intro")
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.EventOnClick = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  (UIActivityBattlePassHelper.OpenMainController)()
+function UIActivityN26MainController:EventOnClick()
+  UIActivityBattlePassHelper.OpenMainController()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.LoginOnClick = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local status, time = (self._activityConst):GetLoginComponentStatus()
+function UIActivityN26MainController:LoginOnClick()
+  local status, time = self._activityConst:GetLoginComponentStatus()
   if status == ActivityComponentStatus.Close or status == ActivityComponentStatus.ActivityEnd then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n26_activity_end"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_n26_activity_end"))
+    return
   end
   self:ShowDialog("UIActivityTotalLoginAwardController", false, ECampaignType.CAMPAIGN_TYPE_N26, ECampaignN26ComponentID.ECAMPAIGN_N26_CUMULATIVE_LOGIN)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.ShowBtnOnClick = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.SetButtonShowStatus, self, true)
+function UIActivityN26MainController:ShowBtnOnClick()
+  GameGlobal.TaskManager():StartTask(self.SetButtonShowStatus, self, true)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.PilotBtnOnClick = function(self)
-  -- function num : 0_22
+function UIActivityN26MainController:PilotBtnOnClick()
   self:PlayEnterPlot()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.NormalLevelOnClick = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local status, time = (self._activityConst):GetNormalLineMissionComponentStatus()
+function UIActivityN26MainController:NormalLevelOnClick()
+  local status, time = self._activityConst:GetNormalLineMissionComponentStatus()
   if status == ActivityComponentStatus.Close or status == ActivityComponentStatus.ActivityEnd then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n26_activity_end"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_n26_activity_end"))
+    return
   end
-  ;
-  (self._activityConst):ClearNormalLineNew()
+  self._activityConst:ClearNormalLineNew()
   self:RefreshNew()
   self:SwitchState(UIStateType.UIN26Line, self._activityConst)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.HardLevelOnClick = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local status, time = (self._activityConst):GetHardLineMissionComponentStatus()
+function UIActivityN26MainController:HardLevelOnClick()
+  local status, time = self._activityConst:GetHardLineMissionComponentStatus()
   if status == ActivityComponentStatus.Close or status == ActivityComponentStatus.ActivityEnd then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n26_activity_end"))
-    return 
-  else
-    if status == ActivityComponentStatus.TimeLock then
-      (ToastManager.ShowToast)((StringTable.Get)("str_n26_activity_hard_level_lock_time_tips", (UIActivityN26Helper.GetTimeString)(time)))
-      return 
-    else
-      if status == ActivityComponentStatus.MissionLock then
-        (ToastManager.ShowToast)((StringTable.Get)("str_n26_activity_hard_level_lock_mission_tips"))
-        return 
-      end
-    end
+    ToastManager.ShowToast(StringTable.Get("str_n26_activity_end"))
+    return
+  elseif status == ActivityComponentStatus.TimeLock then
+    ToastManager.ShowToast(StringTable.Get("str_n26_activity_hard_level_lock_time_tips", UIActivityN26Helper.GetTimeString(time)))
+    return
+  elseif status == ActivityComponentStatus.MissionLock then
+    ToastManager.ShowToast(StringTable.Get("str_n26_activity_hard_level_lock_mission_tips"))
+    return
   end
-  ;
-  (self._activityConst):ClearHardLineNew()
+  self._activityConst:ClearHardLineNew()
   self:RefreshNew()
   self:SwitchState(UIStateType.UIN26HardLevel, self._activityConst)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.ShopOnClick = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  local status, time = (self._activityConst):GetShopComponentStatus()
+function UIActivityN26MainController:ShopOnClick()
+  local status, time = self._activityConst:GetShopComponentStatus()
   if status == ActivityComponentStatus.Close or status == ActivityComponentStatus.ActivityEnd then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n26_activity_end"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_n26_activity_end"))
+    return
   end
-  ;
-  (self._activityConst):ClearShopNew()
+  self._activityConst:ClearShopNew()
   self:RefreshNew()
   self:ShowDialog("UIActivityN26Shop")
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.MovieOnClick = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  local status, time = (self._activityConst):GetMovieComponentStatus()
+function UIActivityN26MainController:MovieOnClick()
+  local status, time = self._activityConst:GetMovieComponentStatus()
   if status == ActivityComponentStatus.Close or status == ActivityComponentStatus.ActivityEnd then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n26_activity_end"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_n26_activity_end"))
+    return
   end
-  ;
-  (self._activityConst):ClearMovieNew()
+  self._activityConst:ClearMovieNew()
   self:RefreshNew()
   self:ShowDialog("UIN26Movie")
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26MainController.MiniGameOnClick = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  local status, time = (self._activityConst):GetMiniGameComponentStatus()
+function UIActivityN26MainController:MiniGameOnClick()
+  local status, time = self._activityConst:GetMiniGameComponentStatus()
   if status == ActivityComponentStatus.Close or status == ActivityComponentStatus.ActivityEnd then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n26_activity_end"))
-    return 
-  else
-    if status == ActivityComponentStatus.TimeLock then
-      (ToastManager.ShowToast)((StringTable.Get)("str_n26_activity_minigame_lock_time_tips", (UIActivityN26Helper.GetTimeString)(time)))
-      return 
-    else
-      if status == ActivityComponentStatus.MissionLock then
-        (ToastManager.ShowToast)((StringTable.Get)("str_n26_activity_minigame_lock_mission_tips"))
-        return 
-      end
-    end
+    ToastManager.ShowToast(StringTable.Get("str_n26_activity_end"))
+    return
+  elseif status == ActivityComponentStatus.TimeLock then
+    ToastManager.ShowToast(StringTable.Get("str_n26_activity_minigame_lock_time_tips", UIActivityN26Helper.GetTimeString(time)))
+    return
+  elseif status == ActivityComponentStatus.MissionLock then
+    ToastManager.ShowToast(StringTable.Get("str_n26_activity_minigame_lock_mission_tips"))
+    return
   end
-  ;
-  (self._activityConst):ClearMiniGameNew()
+  self._activityConst:ClearMiniGameNew()
   self:RefreshNew()
   self:SwitchState(UIStateType.UIN26CookMainController)
 end
-
-

@@ -1,75 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/ui_time_login_v2/ui_time_login_v2_progress_listitem.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITimeLoginV2ProgressItem", UICustomWidget)
 UITimeLoginV2ProgressItem = UITimeLoginV2ProgressItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITimeLoginV2ProgressItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UITimeLoginV2ProgressItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimeLoginV2ProgressItem.OnHide = function(self)
-  -- function num : 0_1
+function UITimeLoginV2ProgressItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimeLoginV2ProgressItem.SetData = function(self, roleAsset, progress, state, recvCallback, tipsCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UITimeLoginV2ProgressItem:SetData(roleAsset, progress, state, recvCallback, tipsCallback)
   self._roleAsset = roleAsset
   self._recvCallback = recvCallback
   self._tipsCallback = tipsCallback
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtProgress", progress)
+  UIWidgetHelper.SetLocalizationText(self, "_txtProgress", progress)
   self:_SetItem(roleAsset.assetid, roleAsset.count)
   self:_SetState(state)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimeLoginV2ProgressItem._SetItem = function(self, itemId, count)
-  -- function num : 0_3 , upvalues : _ENV
-  (UIWidgetHelper.SetItemIcon)(self, itemId, "_icon")
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtCount", count)
+function UITimeLoginV2ProgressItem:_SetItem(itemId, count)
+  UIWidgetHelper.SetItemIcon(self, itemId, "_icon")
+  UIWidgetHelper.SetLocalizationText(self, "_txtCount", count)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimeLoginV2ProgressItem._SetState = function(self, state)
-  -- function num : 0_4 , upvalues : _ENV
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"state_Accepted"}
-, 
-{"state_Completed"}
-, 
-{"state_Taken"}
-})
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, state)
+function UITimeLoginV2ProgressItem:_SetState(state)
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {
+      "state_Accepted"
+    },
+    {
+      "state_Completed"
+    },
+    {
+      "state_Taken"
+    }
+  })
+  UIWidgetHelper.SetObjGroupShow(objs, state)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimeLoginV2ProgressItem.AcceptedOnClick = function(self, go)
-  -- function num : 0_5
+function UITimeLoginV2ProgressItem:AcceptedOnClick(go)
   if self._tipsCallback then
-    (self._tipsCallback)((self._roleAsset).assetid, (go.transform).position)
+    self._tipsCallback(self._roleAsset.assetid, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimeLoginV2ProgressItem.CompletedOnClick = function(self, go)
-  -- function num : 0_6
+function UITimeLoginV2ProgressItem:CompletedOnClick(go)
   if self._recvCallback then
-    (self._recvCallback)()
+    self._recvCallback()
   end
 end
-
-

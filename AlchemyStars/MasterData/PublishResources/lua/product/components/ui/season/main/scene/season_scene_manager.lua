@@ -1,104 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/scene/season_scene_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonSceneManager", Object)
 SeasonSceneManager = SeasonSceneManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonSceneManager.Constructor = function(self)
-  -- function num : 0_0
+function SeasonSceneManager:Constructor()
   self._mapEventPointRootName = "MapEventPoint"
   self._sceneRootName = "SceneRoot"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneManager.OnInit = function(self, seasonID)
-  -- function num : 0_1 , upvalues : _ENV
-  self._sceenRoot = (GameObjectHelper.Find)(self._sceneRootName)
+function SeasonSceneManager:OnInit(seasonID)
+  self._sceenRoot = GameObjectHelper.Find(self._sceneRootName)
   if not self._sceenRoot then
-    (Log.fatal)("SeasonSceneManager scene no sceneroot! root name is ", self._sceneRootName)
-    return 
+    Log.fatal("SeasonSceneManager scene no sceneroot! root name is ", self._sceneRootName)
+    return
   end
-  self._mapEventPointRoot = (GameObjectHelper.CreateEmpty)(self._mapEventPointRootName, nil)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._mapEventPointRoot).layer = SeasonLayerMask.Stage
-  self._scene = (self._mapEventPointRoot).scene
+  self._mapEventPointRoot = GameObjectHelper.CreateEmpty(self._mapEventPointRootName, nil)
+  self._mapEventPointRoot.layer = SeasonLayerMask.Stage
+  self._scene = self._mapEventPointRoot.scene
   self._sceneLayers = SeasonSceneLayers:New(self._sceenRoot)
   self._environment = SeasonSceneEnvironment:New(self._sceenRoot, seasonID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneManager.OnAfterInit = function(self)
-  -- function num : 0_2
-  (self._sceneLayers):OnAfterInit()
+function SeasonSceneManager:OnAfterInit()
+  self._sceneLayers:OnAfterInit()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneManager.GetEventPointRoot = function(self)
-  -- function num : 0_3
+function SeasonSceneManager:GetEventPointRoot()
   return self._mapEventPointRoot
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneManager.GetEventPointRootTransform = function(self)
-  -- function num : 0_4
-  return (self._mapEventPointRoot).transform
+function SeasonSceneManager:GetEventPointRootTransform()
+  return self._mapEventPointRoot.transform
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneManager.Update = function(self, deltaTime)
-  -- function num : 0_5
-  (self._environment):Update(deltaTime)
+function SeasonSceneManager:Update(deltaTime)
+  self._environment:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneManager.Dispose = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._sceneLayers):Dispose()
-  ;
-  (self._environment):Dispose()
-  ;
-  ((UnityEngine.Object).Destroy)(self._mapEventPointRoot)
+function SeasonSceneManager:Dispose()
+  self._sceneLayers:Dispose()
+  self._environment:Dispose()
+  UnityEngine.Object.Destroy(self._mapEventPointRoot)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneManager.Scene = function(self)
-  -- function num : 0_7
+function SeasonSceneManager:Scene()
   return self._scene
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneManager.GetLayer = function(self, layerType)
-  -- function num : 0_8
-  return (self._sceneLayers):GetLayer(layerType)
+function SeasonSceneManager:GetLayer(layerType)
+  return self._sceneLayers:GetLayer(layerType)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneManager.UnLockZone = function(self, zoneMask, zoneID2Animation)
-  -- function num : 0_9
-  (self._sceneLayers):UnLockZone(zoneMask, zoneID2Animation)
-  ;
-  (self._environment):UnLockZone(zoneMask, zoneID2Animation)
+function SeasonSceneManager:UnLockZone(zoneMask, zoneID2Animation)
+  self._sceneLayers:UnLockZone(zoneMask, zoneID2Animation)
+  self._environment:UnLockZone(zoneMask, zoneID2Animation)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneManager.ChangeMap = function(self, ids, openingID, closeID)
-  -- function num : 0_10
-  (self._sceneLayers):ChangeMap(ids, openingID, closeID)
+function SeasonSceneManager:ChangeMap(ids, openingID, closeID)
+  self._sceneLayers:ChangeMap(ids, openingID, closeID)
 end
-
-

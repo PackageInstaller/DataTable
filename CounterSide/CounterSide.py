@@ -401,7 +401,7 @@ def process_lua_file(filepath: Path, output_dir: Path) -> tuple[str, str]:
 
     try:
         result = subprocess.run(
-            ["unluac", str(luac_path)], capture_output=True, text=True, timeout=60
+            ["unluac", str(luac_path), "--rawstring"], capture_output=True, text=True, timeout=60
         )
         if result.returncode == 0:
             lua_path.write_text(result.stdout, encoding="utf-8")
@@ -489,6 +489,7 @@ def main():
 
         if status == "ok" or status == "ok:luac_only":
             lua_ok += 1
+            print(f"{msg}")
         elif status.startswith("skip"):
             lua_skip += 1
         else:

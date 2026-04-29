@@ -1,26 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_add_layer_by_teleport_distance_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddLayerByTeleportDistance", BuffViewBase)
 BuffViewAddLayerByTeleportDistance = BuffViewAddLayerByTeleportDistance
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddLayerByTeleportDistance.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewAddLayerByTeleportDistance:PlayView(TT)
   local result = self._buffResult
   local curMarkLayer = result:GetLayer()
-  ;
-  (self._viewInstance):SetLayerCount(TT, curMarkLayer)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+  self._viewInstance:SetLayerCount(TT, curMarkLayer)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
   if result:GetDonotDisplay() then
-    return 
+    return
   end
-  if (self._entity):HasPetPstID() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetAccumulateNum, ((self._entity):PetPstID()):GetPstID(), curMarkLayer)
+  if self._entity:HasPetPstID() then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.SetAccumulateNum, self._entity:PetPstID():GetPstID(), curMarkLayer)
   end
 end
-
-

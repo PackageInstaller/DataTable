@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_delay_hit_back_effect_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillDelayHitBackEffectResult", SkillEffectResultBase)
 SkillDelayHitBackEffectResult = SkillDelayHitBackEffectResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillDelayHitBackEffectResult.Constructor = function(self, casterEntityID, victimID, distance, dirType, asterPos, gridPos, targetLocationCenter, targetBodyArea)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillDelayHitBackEffectResult:Constructor(casterEntityID, victimID, distance, dirType, asterPos, gridPos, targetLocationCenter, targetBodyArea)
   self._casterID = casterEntityID
   self._victimID = victimID
   self._distance = distance
@@ -19,92 +12,54 @@ SkillDelayHitBackEffectResult.Constructor = function(self, casterEntityID, victi
   self._targetLocationCenter = targetLocationCenter
   self._targetBodyArea = targetBodyArea
   if asterPos then
-    self._attackDistance = (math.abs)(asterPos.y - gridPos.y) + (math.abs)(asterPos.x - gridPos.x)
+    self._attackDistance = math.abs(asterPos.y - gridPos.y) + math.abs(asterPos.x - gridPos.x)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDelayHitBackEffectResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillDelayHitBackEffectResult:GetEffectType()
   return SkillEffectType.HitBack
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDelayHitBackEffectResult.GetCasterEntityID = function(self)
-  -- function num : 0_2
+function SkillDelayHitBackEffectResult:GetCasterEntityID()
   return self._casterID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDelayHitBackEffectResult.GetCasterPos = function(self)
-  -- function num : 0_3
+function SkillDelayHitBackEffectResult:GetCasterPos()
   return self._casterPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDelayHitBackEffectResult.GetGridPos = function(self)
-  -- function num : 0_4
+function SkillDelayHitBackEffectResult:GetGridPos()
   return self._gridPos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDelayHitBackEffectResult.GetTargetLocationCenter = function(self)
-  -- function num : 0_5
+function SkillDelayHitBackEffectResult:GetTargetLocationCenter()
   return self._targetLocationCenter
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDelayHitBackEffectResult.GetTargetBodyArea = function(self)
-  -- function num : 0_6
+function SkillDelayHitBackEffectResult:GetTargetBodyArea()
   return self._targetBodyArea
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDelayHitBackEffectResult.GetAttackDistance = function(self)
-  -- function num : 0_7
+function SkillDelayHitBackEffectResult:GetAttackDistance()
   return self._attackDistance
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDelayHitBackEffectResult.GetTargetID = function(self)
-  -- function num : 0_8
+function SkillDelayHitBackEffectResult:GetTargetID()
   return self._victimID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDelayHitBackEffectResult.GetHitbackDistance = function(self)
-  -- function num : 0_9
+function SkillDelayHitBackEffectResult:GetHitbackDistance()
   return self._distance
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDelayHitBackEffectResult.GetHitbackDirType = function(self)
-  -- function num : 0_10
+function SkillDelayHitBackEffectResult:GetHitbackDirType()
   return self._dirType
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDelayHitBackEffectResult.SetHitbackDirType = function(self, newHitbackDirType)
-  -- function num : 0_11
+function SkillDelayHitBackEffectResult:SetHitbackDirType(newHitbackDirType)
   self._dirType = newHitbackDirType
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDelayHitBackEffectResult.GetCalcType = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function SkillDelayHitBackEffectResult:GetCalcType()
   return HitBackCalcType.Delay
 end
-
-

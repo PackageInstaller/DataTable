@@ -1,43 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_caster_material_anim_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayCasterMaterialAnimInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayCasterMaterialAnimInstruction = SkillPreviewPlayCasterMaterialAnimInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayCasterMaterialAnimInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayCasterMaterialAnimInstruction:Constructor(params)
   self._anim = params.Anim
   self._isPet1702361 = tonumber(params.isPet1702361)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayCasterMaterialAnimInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1
+function SkillPreviewPlayCasterMaterialAnimInstruction:DoInstruction(TT, casterEntity, previewContext)
   local playEntity = casterEntity
-  do
-    if self._isPet1702361 == 1 then
-      local sPreviewSkill = (previewContext:GetWorld()):GetService("PreviewActiveSkill")
-      playEntity = sPreviewSkill:GetPet1702361Entity(casterEntity, previewContext)
-    end
-    if self._anim == "Flash" then
-      playEntity:NewEnableFlash()
-    else
-      if self._anim == "Transparent" then
-        playEntity:NewEnableTransparent()
-      else
-        if self._anim == "Ghost" then
-          playEntity:NewEnableGhost()
-        else
-          playEntity:PlayMaterialAnim(self._anim)
-        end
-      end
-    end
+  if self._isPet1702361 == 1 then
+    local sPreviewSkill = previewContext:GetWorld():GetService("PreviewActiveSkill")
+    playEntity = sPreviewSkill:GetPet1702361Entity(casterEntity, previewContext)
+  end
+  if self._anim == "Flash" then
+    playEntity:NewEnableFlash()
+  elseif self._anim == "Transparent" then
+    playEntity:NewEnableTransparent()
+  elseif self._anim == "Ghost" then
+    playEntity:NewEnableGhost()
+  else
+    playEntity:PlayMaterialAnim(self._anim)
   end
 end
-
-

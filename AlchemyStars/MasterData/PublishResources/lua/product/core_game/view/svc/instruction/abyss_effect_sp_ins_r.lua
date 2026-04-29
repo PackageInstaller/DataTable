@@ -1,36 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/abyss_effect_sp_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("AbyssEffectSpInstruction", BaseInstruction)
 AbyssEffectSpInstruction = AbyssEffectSpInstruction
-local AbyssEffectSpType = {Line = 1, Cross = 2, DoubleLine = 3, DoubleCross = 4}
+local AbyssEffectSpType = {
+  Line = 1,
+  Cross = 2,
+  DoubleLine = 3,
+  DoubleCross = 4
+}
 _enum("AbyssEffectSpType", AbyssEffectSpType)
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
 
-AbyssEffectSpInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function AbyssEffectSpInstruction:Constructor(paramList)
   self._effectMask = tonumber(paramList.effectMask)
   self._effectBottom = tonumber(paramList.effectBottom)
   self._effectSide = tonumber(paramList.effectSide)
   self._type = tonumber(paramList.type) or 1
-  if not tonumber(paramList.gridType) then
-    self._gridType = PieceType.None
-  end
+  self._gridType = tonumber(paramList.gridType) or PieceType.None
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-AbyssEffectSpInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function AbyssEffectSpInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
   self._casterEntity = casterEntity
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-  local eTraps = (group:GetEntities())
-  local terrainAbyssEntity = nil
-  for k,entity in pairs(eTraps) do
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  local eTraps = group:GetEntities()
+  local terrainAbyssEntity
+  for k, entity in pairs(eTraps) do
     local trapRenderCmpt = entity:TrapRender()
     if trapRenderCmpt:GetTrapType() == TrapType.TerrainAbyss2 then
       terrainAbyssEntity = entity
@@ -42,159 +35,140 @@ AbyssEffectSpInstruction.DoInstruction = function(self, TT, casterEntity, phaseC
   end
   cEffectHolder = terrainAbyssEntity:EffectHolder()
   self:Destroy(cEffectHolder)
-  local sEffect = (self._world):GetService("Effect")
-  local pieceSvc = (self._world):GetService("Piece")
+  local sEffect = self._world:GetService("Effect")
+  local pieceSvc = self._world:GetService("Piece")
   local keyMask = "AbssyMask"
   local keyBottom = "AbssyBottom"
   local keySide = "AbyssSide"
   local truePosList = {}
   local posList = self:GetPosList(self._type)
-  for i,pos in ipairs(posList) do
+  for i, pos in ipairs(posList) do
     local ePiece = pieceSvc:FindPieceEntity(pos)
-    ;
-    ((ePiece:View()):GetGameObject()):SetActive(false)
+    ePiece:View():GetGameObject():SetActive(false)
     local effEntityMask = sEffect:CreateWorldPositionEffect(self._effectMask, pos)
     local effEntityIdMask = effEntityMask:GetID()
     cEffectHolder:AttachEffect(keyMask, effEntityIdMask)
     local effEntityBottom = sEffect:CreateWorldPositionEffect(self._effectBottom, pos)
-    effEntityBottom:SetLocationHeight((effEntityBottom:Location()):Height() + BattleConst.SpAbyssBottomDepth)
+    effEntityBottom:SetLocationHeight(effEntityBottom:Location():Height() + BattleConst.SpAbyssBottomDepth)
     local effEntityIdBottom = effEntityBottom:GetID()
     cEffectHolder:AttachEffect(keyBottom, effEntityIdBottom)
-    ;
-    (table.insert)(truePosList, pos)
+    table.insert(truePosList, pos)
   end
-  local playSkillSvc = (self._world):GetService("PlaySkill")
-  local ersvc = (self._world):GetService("RenderEntity")
+  local playSkillSvc = self._world:GetService("PlaySkill")
+  local ersvc = self._world:GetService("RenderEntity")
   local effectEntityList = ersvc:CreateSideEffects(truePosList, self._effectSide, Vector3(1, BattleConst.SpGridSideYScale, 1))
-  for _,entity in ipairs(effectEntityList) do
+  for _, entity in ipairs(effectEntityList) do
     cEffectHolder:AttachEffect(keySide, entity:GetID())
   end
-  local boardServiceR = (self._world):GetService("BoardRender")
-  local trapRender = (self._world):GetService("TrapRender")
+  local boardServiceR = self._world:GetService("BoardRender")
+  local trapRender = self._world:GetService("TrapRender")
   trapRender:CreateSingleTrapRender(TT, terrainAbyssEntity)
-  for i,pos in ipairs(truePosList) do
+  for i, pos in ipairs(truePosList) do
     boardServiceR:ReCreateGridEntity(self._gridType, pos, true)
     local ePiece = pieceSvc:FindPieceEntity(pos)
-    ;
-    ((ePiece:View()):GetGameObject()):SetActive(false)
+    ePiece:View():GetGameObject():SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-AbyssEffectSpInstruction.GetPosList = function(self, type)
-  -- function num : 0_2 , upvalues : AbyssEffectSpType, _ENV
+function AbyssEffectSpInstruction:GetPosList(type)
   local retPos = {}
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local maxLen = utilData:GetCurBoardMaxLen()
   if type == AbyssEffectSpType.Line then
     for i = 1, 9 do
       local pos = Vector2(i, 5)
       if utilData:IsValidPiecePos(pos) then
-        (table.insert)(retPos, pos)
+        table.insert(retPos, pos)
       end
     end
-  else
-    do
-      if type == AbyssEffectSpType.Cross then
-        for i = 1, 9 do
-          local pos = Vector2(5, i)
-          if utilData:IsValidPiecePos(pos) then
-            (table.insert)(retPos, pos)
-          end
-        end
-        for i = 1, 9 do
-          local pos = Vector2(i, 5)
-          if utilData:IsValidPiecePos(pos) and not (table.Vector2Include)(retPos, pos) then
-            (table.insert)(retPos, pos)
-          end
-        end
-      else
-        do
-          if type == AbyssEffectSpType.DoubleLine then
-            for i = 1, maxLen do
-              local pos = Vector2(i, 5)
-              if utilData:IsValidPiecePos(pos) then
-                (table.insert)(retPos, pos)
-              end
-            end
-            for i = 1, maxLen do
-              local pos = Vector2(i, 6)
-              if utilData:IsValidPiecePos(pos) and not (table.Vector2Include)(retPos, pos) then
-                (table.insert)(retPos, pos)
-              end
-            end
-          else
-            do
-              if type == AbyssEffectSpType.DoubleCross then
-                for i = 1, maxLen do
-                  local pos = Vector2(5, i)
-                  if utilData:IsValidPiecePos(pos) and not (table.Vector2Include)(retPos, pos) then
-                    (table.insert)(retPos, pos)
-                  end
-                end
-                for i = 1, maxLen do
-                  local pos = Vector2(6, i)
-                  if utilData:IsValidPiecePos(pos) and not (table.Vector2Include)(retPos, pos) then
-                    (table.insert)(retPos, pos)
-                  end
-                end
-                for i = 1, maxLen do
-                  local pos = Vector2(i, 5)
-                  if utilData:IsValidPiecePos(pos) and not (table.Vector2Include)(retPos, pos) then
-                    (table.insert)(retPos, pos)
-                  end
-                end
-                for i = 1, maxLen do
-                  local pos = Vector2(i, 6)
-                  if utilData:IsValidPiecePos(pos) and not (table.Vector2Include)(retPos, pos) then
-                    (table.insert)(retPos, pos)
-                  end
-                end
-              end
-              do
-                return retPos
-              end
-            end
-          end
-        end
+  elseif type == AbyssEffectSpType.Cross then
+    for i = 1, 9 do
+      local pos = Vector2(5, i)
+      if utilData:IsValidPiecePos(pos) then
+        table.insert(retPos, pos)
+      end
+    end
+    for i = 1, 9 do
+      local pos = Vector2(i, 5)
+      if utilData:IsValidPiecePos(pos) and not table.Vector2Include(retPos, pos) then
+        table.insert(retPos, pos)
+      end
+    end
+  elseif type == AbyssEffectSpType.DoubleLine then
+    for i = 1, maxLen do
+      local pos = Vector2(i, 5)
+      if utilData:IsValidPiecePos(pos) then
+        table.insert(retPos, pos)
+      end
+    end
+    for i = 1, maxLen do
+      local pos = Vector2(i, 6)
+      if utilData:IsValidPiecePos(pos) and not table.Vector2Include(retPos, pos) then
+        table.insert(retPos, pos)
+      end
+    end
+  elseif type == AbyssEffectSpType.DoubleCross then
+    for i = 1, maxLen do
+      local pos = Vector2(5, i)
+      if utilData:IsValidPiecePos(pos) and not table.Vector2Include(retPos, pos) then
+        table.insert(retPos, pos)
+      end
+    end
+    for i = 1, maxLen do
+      local pos = Vector2(6, i)
+      if utilData:IsValidPiecePos(pos) and not table.Vector2Include(retPos, pos) then
+        table.insert(retPos, pos)
+      end
+    end
+    for i = 1, maxLen do
+      local pos = Vector2(i, 5)
+      if utilData:IsValidPiecePos(pos) and not table.Vector2Include(retPos, pos) then
+        table.insert(retPos, pos)
+      end
+    end
+    for i = 1, maxLen do
+      local pos = Vector2(i, 6)
+      if utilData:IsValidPiecePos(pos) and not table.Vector2Include(retPos, pos) then
+        table.insert(retPos, pos)
       end
     end
   end
+  return retPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-AbyssEffectSpInstruction.Destroy = function(self, effectHolder)
-  -- function num : 0_3 , upvalues : _ENV
+function AbyssEffectSpInstruction:Destroy(effectHolder)
   local dictEffectId = effectHolder:GetDictEffectId()
   if dictEffectId then
-    for key,list in pairs(dictEffectId) do
-      for index,id in ipairs(list) do
-        local eEffect = (self._world):GetEntityByID(id)
+    for key, list in pairs(dictEffectId) do
+      for index, id in ipairs(list) do
+        local eEffect = self._world:GetEntityByID(id)
         if eEffect then
-          (self._world):DestroyEntity(eEffect)
+          self._world:DestroyEntity(eEffect)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-AbyssEffectSpInstruction.GetCacheResource = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function AbyssEffectSpInstruction:GetCacheResource()
   local t = {}
   if self._effectMask and self._effectMask > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectMask]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectMask].ResPath,
+      1
+    })
   end
-  if self._effectBottom and self._effectBottom > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectBottom]).ResPath, 1})
+  if self._effectBottom and 0 < self._effectBottom then
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectBottom].ResPath,
+      1
+    })
   end
-  if self._effectSide and self._effectSide > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectSide]).ResPath, 1})
+  if self._effectSide and 0 < self._effectSide then
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectSide].ResPath,
+      1
+    })
   end
   return t
 end
-
-

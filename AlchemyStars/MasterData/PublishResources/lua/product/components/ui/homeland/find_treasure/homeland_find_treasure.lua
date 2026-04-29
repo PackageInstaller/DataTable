@@ -1,78 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/find_treasure/homeland_find_treasure.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandFindTreasure", Object)
 HomelandFindTreasure = HomelandFindTreasure
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandFindTreasure.Constructor = function(self, findTreasureManager, posId)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandFindTreasure:Constructor(findTreasureManager, posId)
   self._posId = posId
   self._findTreasureManager = findTreasureManager
-  self._gameData = (HomelandFindTreasureConst.GetGameData)()
+  self._gameData = HomelandFindTreasureConst.GetGameData()
   self._pause = true
   self._complete = true
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
   local characterManager = homelandClient:CharacterManager()
   self._playerTran = characterManager:GetCharacterTransform()
   self._characterController = characterManager:MainCharacterController()
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
   self._triggerDistance = cfg.FindTreasureMinDistance / 1000
-  self._treasureShowDis = (HomelandFindTreasureConst.GetTreasureShowDis)()
+  self._treasureShowDis = HomelandFindTreasureConst.GetTreasureShowDis()
   self:CreateTreasure()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasure.AttachModel = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local model = (HomelandFindTreasureConst.GetNPCBackpackModel)()
-  local attachPath = (HomelandFindTreasureConst.GetNPCBackpackModelAttachPath)()
-  self._backpack = (self._characterController):AttachModel(model, attachPath)
+function HomelandFindTreasure:AttachModel()
+  local model = HomelandFindTreasureConst.GetNPCBackpackModel()
+  local attachPath = HomelandFindTreasureConst.GetNPCBackpackModelAttachPath()
+  self._backpack = self._characterController:AttachModel(model, attachPath)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasure.Start = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function HomelandFindTreasure:Start()
   self._pause = false
   self._complete = false
   self._timer = 0
-  self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1, TimerTriggerCount.Infinite, function()
-    -- function num : 0_2_0 , upvalues : self, _ENV
-    self:Update((UnityEngine.Time).deltaTime)
-  end
-)
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(1, TimerTriggerCount.Infinite, function()
+    self:Update(UnityEngine.Time.deltaTime)
+  end)
   return self._gameData
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasure.Update = function(self, deltaTime)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandFindTreasure:Update(deltaTime)
   if self._pause then
-    return 
+    return
   end
   if self._complete then
-    return 
+    return
   end
   self._timer = self._timer + deltaTime
-  ;
-  (self._gameData):AddGameTime(deltaTime)
-  if (self._gameData):GetGameTotalTime() <= self._timer then
+  self._gameData:AddGameTime(deltaTime)
+  if self._timer >= self._gameData:GetGameTotalTime() then
     self:Failure()
-    return 
+    return
   end
   if self._treasureTran and self._playerTran then
-    local dis = (Vector3.Distance)((self._playerTran).position, (self._treasureTran).position)
-    if self._treasureShowDis < dis and self._treasureGo then
-      (self._treasureGo):SetActive(false)
-    end
-    if self._treasureGo then
-      (self._treasureGo):SetActive(true)
+    local dis = Vector3.Distance(self._playerTran.position, self._treasureTran.position)
+    if dis > self._treasureShowDis then
+      if self._treasureGo then
+        self._treasureGo:SetActive(false)
+      end
+    elseif self._treasureGo then
+      self._treasureGo:SetActive(true)
     end
     if dis <= self._triggerDistance then
       self:Success()
@@ -80,95 +62,59 @@ HomelandFindTreasure.Update = function(self, deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasure.Destroy = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._characterController):ReleaseAttachedModel()
+function HomelandFindTreasure:Destroy()
+  self._characterController:ReleaseAttachedModel()
   self._backpack = nil
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   self:ReleaseTreasureModel()
-  ;
-  (self._characterController):SetLocation((HomelandFindTreasureConst.GetOriginalPosition)(), (HomelandFindTreasureConst.GetOriginalRotation)())
+  self._characterController:SetLocation(HomelandFindTreasureConst.GetOriginalPosition(), HomelandFindTreasureConst.GetOriginalRotation())
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasure.ReleaseTreasureModel = function(self)
-  -- function num : 0_5
+function HomelandFindTreasure:ReleaseTreasureModel()
   if self._treasureReq then
-    (self._treasureReq):Dispose()
+    self._treasureReq:Dispose()
     self._treasureReq = nil
     self._treasureGo = nil
     self._treasureTran = nil
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasure.Pause = function(self)
-  -- function num : 0_6
+function HomelandFindTreasure:Pause()
   self._pause = true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasure.Resume = function(self)
-  -- function num : 0_7
+function HomelandFindTreasure:Resume()
   self._pause = false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasure.Failure = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function HomelandFindTreasure:Failure()
   self._complete = true
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FindTreasureFailure)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FindTreasureFailure)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasure.Success = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function HomelandFindTreasure:Success()
   self._complete = true
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FindTreasureSuccess)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FindTreasureSuccess)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasure.CreateTreasure = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local model = (self._gameData):GetModel()
+function HomelandFindTreasure:CreateTreasure()
+  local model = self._gameData:GetModel()
   self:ReleaseTreasureModel()
-  self._treasureReq = (ResourceManager:GetInstance()):SyncLoadAsset(model, LoadType.GameObject)
-  self._treasureGo = (self._treasureReq).Obj
-  ;
-  (self._treasureGo):SetActive(true)
-  self._treasureTran = (self._treasureGo).transform
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._treasureTran).position = self:CreateTreasurePosition()
+  self._treasureReq = ResourceManager:GetInstance():SyncLoadAsset(model, LoadType.GameObject)
+  self._treasureGo = self._treasureReq.Obj
+  self._treasureGo:SetActive(true)
+  self._treasureTran = self._treasureGo.transform
+  self._treasureTran.position = self:CreateTreasurePosition()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasure.CreateTreasurePosition = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_location)[self._posId]
-  return Vector3((cfg.Position)[1] / 1000, (cfg.Position)[2] / 1000, (cfg.Position)[3] / 1000)
+function HomelandFindTreasure:CreateTreasurePosition()
+  local cfg = Cfg.cfg_homeland_location[self._posId]
+  return Vector3(cfg.Position[1] / 1000, cfg.Position[2] / 1000, cfg.Position[3] / 1000)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasure.GetTreasurePosition = function(self)
-  -- function num : 0_12
-  return (self._treasureTran).position
+function HomelandFindTreasure:GetTreasurePosition()
+  return self._treasureTran.position
 end
-
-

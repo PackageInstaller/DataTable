@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_eliminate/diff/ui_eliminate_diff_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEliminateDiffItem", UICustomWidget)
 UIEliminateDiffItem = UIEliminateDiffItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEliminateDiffItem.Constructor = function(self)
-  -- function num : 0_0
+function UIEliminateDiffItem:Constructor()
   self._isLock = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateDiffItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIEliminateDiffItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateDiffItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIEliminateDiffItem:_GetComponents()
   self._diffTitle = self:GetUIComponent("UILocalizationText", "diffTitle")
   self._scoreNum = self:GetUIComponent("UILocalizationText", "scoreNum")
   self._lockTxt = self:GetUIComponent("UILocalizationText", "lockTxt")
@@ -31,59 +18,39 @@ UIEliminateDiffItem._GetComponents = function(self)
   self._lockMaskObj = self:GetGameObject("lockMask")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateDiffItem.SetData = function(self, cfg, index, callback)
-  -- function num : 0_3
+function UIEliminateDiffItem:SetData(cfg, index, callback)
   self._cfg = cfg
   self._index = index
   self._callback = callback
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateDiffItem._InitComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._diffTitle):SetText((StringTable.Get)("str_eliminate_difficulty", (self._cfg).ID))
-  ;
-  (self._scoreNum):SetText((self._cfg).RoundScore)
-  local anipopModule = (GameGlobal.GetModule)(AnipopModule)
+function UIEliminateDiffItem:_InitComponents()
+  self._diffTitle:SetText(StringTable.Get("str_eliminate_difficulty", self._cfg.ID))
+  self._scoreNum:SetText(self._cfg.RoundScore)
+  local anipopModule = GameGlobal.GetModule(AnipopModule)
   local anipopInfo = anipopModule:GetAniPopInfo()
-  if (self._cfg).ID <= anipopInfo.cur_hard_id then
+  if self._cfg.ID <= anipopInfo.cur_hard_id then
     self._isLock = false
   else
-    ;
-    (self._lockTxt):SetText((StringTable.Get)("str_eliminate_diff_locktip1"))
+    self._lockTxt:SetText(StringTable.Get("str_eliminate_diff_locktip1"))
   end
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not self._isLock or not Color(1, 1, 1) then
-    (self._scoreNum).color = Color(0.88235294117647, 0.75294117647059, 0.42352941176471)
-    ;
-    (self._lockMaskObj):SetActive(self._isLock)
-    self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV
+  self._scoreNum.color = self._isLock and Color(1, 1, 1) or Color(0.8823529411764706, 0.7529411764705882, 0.4235294117647059)
+  self._lockMaskObj:SetActive(self._isLock)
+  self:StartTask(function(TT)
     local yieldTime = (self._index - 1) * 60
     YIELD(TT, yieldTime)
-    if not (tolua.isnull)(self._animObj) then
-      (self._anim):Play("uieff_UIEliminateDiffItem_in")
+    if not tolua.isnull(self._animObj) then
+      self._anim:Play("uieff_UIEliminateDiffItem_in")
     end
-  end
-)
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateDiffItem.BgOnClick = function(self)
-  -- function num : 0_5
+function UIEliminateDiffItem:BgOnClick()
   if self._isLock then
-    return 
+    return
   end
   if self._callback then
-    (self._callback)((self._cfg).ID)
+    self._callback(self._cfg.ID)
   end
 end
-
-

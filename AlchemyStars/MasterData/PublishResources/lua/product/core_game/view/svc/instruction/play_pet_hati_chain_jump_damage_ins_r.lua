@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_pet_hati_chain_jump_damage_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayPetHatiChainJumpDamageInstruction", BaseInstruction)
 PlayPetHatiChainJumpDamageInstruction = PlayPetHatiChainJumpDamageInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayPetHatiChainJumpDamageInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayPetHatiChainJumpDamageInstruction:Constructor(paramList)
   self._casterAnimateTrigger = paramList.casterAnimateTrigger
   self._hideEffectID = tonumber(paramList.hideEffectID)
   self._showEffectID = tonumber(paramList.showEffectID)
@@ -25,20 +18,17 @@ PlayPetHatiChainJumpDamageInstruction.Constructor = function(self, paramList)
   self._resetPosTimeMs = tonumber(paramList.resetPosTimeMs)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPetHatiChainJumpDamageInstruction._CacheEff = function(self, t, effID, count)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayPetHatiChainJumpDamageInstruction:_CacheEff(t, effID, count)
   local cacheCount = count or 1
   if effID and effID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[effID]).ResPath, cacheCount})
+    table.insert(t, {
+      Cfg.cfg_effect[effID].ResPath,
+      cacheCount
+    })
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPetHatiChainJumpDamageInstruction.GetCacheResource = function(self)
-  -- function num : 0_2
+function PlayPetHatiChainJumpDamageInstruction:GetCacheResource()
   local t = {}
   self:_CacheEff(t, self._hideEffectID, 1)
   self:_CacheEff(t, self._showEffectID, 1)
@@ -48,24 +38,21 @@ PlayPetHatiChainJumpDamageInstruction.GetCacheResource = function(self)
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPetHatiChainJumpDamageInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayPetHatiChainJumpDamageInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
-  if not skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.DynamicCenterDamage) then
-    local resultArray = {}
-  end
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.DynamicCenterDamage) or {}
   local result = resultArray[1]
   if not result then
-    return 
+    return
   end
   local centerScope = result:GetDamageScope()
   local viewCenterPos = centerScope:GetCenterPos()
   local utilScopeSvc = world:GetService("UtilScopeCalc")
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
-  local mainCenterScope = scopeCalculator:ComputeScopeRange(SkillScopeType.Square, {1, 1}, viewCenterPos, {Vector2(0, 0)})
+  local mainCenterScope = scopeCalculator:ComputeScopeRange(SkillScopeType.Square, {1, 1}, viewCenterPos, {
+    Vector2(0, 0)
+  })
   local mainCenterScopeRange = mainCenterScope:GetAttackRange()
   local effectService = world:GetService("Effect")
   local playSkillService = world:GetService("PlaySkill")
@@ -76,18 +63,17 @@ PlayPetHatiChainJumpDamageInstruction.DoInstruction = function(self, TT, casterE
   local curDamageResultStageIndex = phaseContext:GetCurDamageResultStageIndex() or 1
   local damageResults = result:GetDamageResults()
   local damageByPosIndex = {}
-  for _,damageResult in ipairs(damageResults) do
+  for _, damageResult in ipairs(damageResults) do
     local target = damageResult:GetTargetID()
     local damageInfo = damageResult:GetDamageInfo(curDamageInfoIndex)
-    if target and target > 0 and damageInfo then
+    if target and 0 < target and damageInfo then
       local eTarget = world:GetEntityByID(target)
       local damageGridPos = damageResult:GetGridPos()
-      local posIndex = (Vector2.Pos2Index)(damageGridPos)
+      local posIndex = Vector2.Pos2Index(damageGridPos)
       if not damageByPosIndex[posIndex] then
         damageByPosIndex[posIndex] = {}
       end
-      ;
-      (table.insert)(damageByPosIndex[posIndex], damageResult)
+      table.insert(damageByPosIndex[posIndex], damageResult)
     end
   end
   local damageScope = result:GetDamageScope()
@@ -98,168 +84,142 @@ PlayPetHatiChainJumpDamageInstruction.DoInstruction = function(self, TT, casterE
   local viewDirection = casterEntity:GetRenderGridDirection()
   local turnDir = viewCenterPos - viewPosition
   casterEntity:SetDirection(turnDir)
-  casterEntity:SetAnimatorControllerTriggers({self._casterAnimateTrigger})
+  casterEntity:SetAnimatorControllerTriggers({
+    self._casterAnimateTrigger
+  })
   effectService:CreateEffect(self._hideEffectID, casterEntity)
-  do
-    if hasRoundRange then
-      local roundEffTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._ShowRoundEff, self, world, res, maxGridCount, mainCenterScopeRange, viewCenterPos)
-      phaseContext:AddPhaseTask(roundEffTaskID)
-    end
-    local roundEffTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._ShowMainEff, self, world, viewCenterPos)
+  if hasRoundRange then
+    local roundEffTaskID = GameGlobal.TaskManager():CoreGameStartTask(self._ShowRoundEff, self, world, res, maxGridCount, mainCenterScopeRange, viewCenterPos)
     phaseContext:AddPhaseTask(roundEffTaskID)
-    YIELD(TT, self._jumpTimeMs)
-    casterEntity:SetLocation(viewCenterPos)
-    effectService:CreateEffect(self._showEffectID, casterEntity)
-    YIELD(TT, self._landingTimeMs)
+  end
+  local roundEffTaskID = GameGlobal.TaskManager():CoreGameStartTask(self._ShowMainEff, self, world, viewCenterPos)
+  phaseContext:AddPhaseTask(roundEffTaskID)
+  YIELD(TT, self._jumpTimeMs)
+  casterEntity:SetLocation(viewCenterPos)
+  effectService:CreateEffect(self._showEffectID, casterEntity)
+  YIELD(TT, self._landingTimeMs)
+  for rangeIndex = 1, maxGridCount do
+    for _, range in pairs(res) do
+      if range then
+        local posList = range[rangeIndex]
+        if posList then
+          local len = table.count(posList)
+          for i = 1, len do
+            local pos = posList[i]
+            local targetPos = pos
+            if table.icontains(mainCenterScopeRange, targetPos) then
+              local posIndex = Vector2.Pos2Index(pos)
+              if damageByPosIndex[posIndex] then
+                local damageResultsAtPos = damageByPosIndex[posIndex]
+                for _, damageResult in ipairs(damageResultsAtPos) do
+                  local target = damageResult:GetTargetID()
+                  local damageInfo = damageResult:GetDamageInfo(curDamageInfoIndex)
+                  if target and 0 < target and damageInfo then
+                    local eTarget = world:GetEntityByID(target)
+                    local damageGridPos = damageResult:GetGridPos()
+                    local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(eTarget):SetHandleBeHitParam_HitAnimName("hit"):SetHandleBeHitParam_HitEffectID(0):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damageGridPos):SetHandleBeHitParam_HitTurnTarget(1):SetHandleBeHitParam_DeathClear(0):SetHandleBeHitParam_IsFinalHit(playFinalAttack):SetHandleBeHitParam_SkillID(skillID):SetHandleBeHitParam_DamageIndex(curDamageIndex)
+                    local hitBackTaskID = TaskManager:GetInstance():CoreGameStartTask(playSkillService.HandleBeHit, playSkillService, beHitParam)
+                    phaseContext:AddPhaseTask(hitBackTaskID)
+                  end
+                end
+              end
+            else
+              hasRoundRange = true
+            end
+          end
+        end
+      end
+    end
+  end
+  if hasRoundRange then
+    YIELD(TT, self._roundDamageDelayMs)
     for rangeIndex = 1, maxGridCount do
-      for _,range in pairs(res) do
+      for _, range in pairs(res) do
         if range then
           local posList = range[rangeIndex]
           if posList then
-            local len = (table.count)(posList)
+            local len = table.count(posList)
             for i = 1, len do
               local pos = posList[i]
               local targetPos = pos
-              if (table.icontains)(mainCenterScopeRange, targetPos) then
-                local posIndex = (Vector2.Pos2Index)(pos)
+              if table.icontains(mainCenterScopeRange, targetPos) then
+              else
+                local posIndex = Vector2.Pos2Index(pos)
                 if damageByPosIndex[posIndex] then
                   local damageResultsAtPos = damageByPosIndex[posIndex]
-                  for _,damageResult in ipairs(damageResultsAtPos) do
+                  for _, damageResult in ipairs(damageResultsAtPos) do
                     local target = damageResult:GetTargetID()
                     local damageInfo = damageResult:GetDamageInfo(curDamageInfoIndex)
-                    if target and target > 0 and damageInfo then
+                    if target and 0 < target and damageInfo then
                       local eTarget = world:GetEntityByID(target)
                       local damageGridPos = damageResult:GetGridPos()
-                      local beHitParam = (((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(eTarget)):SetHandleBeHitParam_HitAnimName("hit")):SetHandleBeHitParam_HitEffectID(0)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damageGridPos)):SetHandleBeHitParam_HitTurnTarget(1)):SetHandleBeHitParam_DeathClear(0)):SetHandleBeHitParam_IsFinalHit(playFinalAttack)):SetHandleBeHitParam_SkillID(skillID)):SetHandleBeHitParam_DamageIndex(curDamageIndex)
-                      local hitBackTaskID = (TaskManager:GetInstance()):CoreGameStartTask(playSkillService.HandleBeHit, playSkillService, beHitParam)
+                      local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(eTarget):SetHandleBeHitParam_HitAnimName("hit"):SetHandleBeHitParam_HitEffectID(0):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damageGridPos):SetHandleBeHitParam_HitTurnTarget(1):SetHandleBeHitParam_DeathClear(0):SetHandleBeHitParam_IsFinalHit(playFinalAttack):SetHandleBeHitParam_SkillID(skillID):SetHandleBeHitParam_DamageIndex(curDamageIndex)
+                      local hitBackTaskID = TaskManager:GetInstance():CoreGameStartTask(playSkillService.HandleBeHit, playSkillService, beHitParam)
                       phaseContext:AddPhaseTask(hitBackTaskID)
                     end
                   end
                 end
-              else
-                do
-                  do
-                    hasRoundRange = true
-                    -- DECOMPILER ERROR at PC294: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC294: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC294: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
-                end
               end
             end
+          end
+        end
+      end
+    end
+  end
+  YIELD(TT, self._damageToHideTimeMs)
+  casterEntity:SetViewVisible(false)
+  YIELD(TT, self._hideToEffTimeMs)
+  local resetPos = casterEntity:GetGridPosition()
+  effectService:CreateWorldPositionDirectionEffect(self._resetPosEffectID, resetPos)
+  YIELD(TT, self._resetPosTimeMs)
+  casterEntity:SetViewVisible(true)
+  casterEntity:SetLocation(viewPosition, viewDirection)
+end
+
+function PlayPetHatiChainJumpDamageInstruction:_CheckHasRoundRange(res, maxGridCount, mainCenterScopeRange)
+  local hasRoundRange = false
+  for rangeIndex = 1, maxGridCount do
+    for _, range in pairs(res) do
+      if range then
+        local posList = range[rangeIndex]
+        if posList then
+          local len = table.count(posList)
+          for i = 1, len do
+            local pos = posList[i]
+            local targetPos = pos
+            if not table.icontains(mainCenterScopeRange, targetPos) then
+              hasRoundRange = true
+              break
+            end
+          end
+          if hasRoundRange then
+            break
           end
         end
       end
     end
     if hasRoundRange then
-      YIELD(TT, self._roundDamageDelayMs)
-      for rangeIndex = 1, maxGridCount do
-        for _,range in pairs(res) do
-          if range then
-            local posList = range[rangeIndex]
-            if posList then
-              local len = (table.count)(posList)
-              for i = 1, len do
-                local pos = posList[i]
-                local targetPos = pos
-                if (table.icontains)(mainCenterScopeRange, targetPos) then
-                  local posIndex = (Vector2.Pos2Index)(pos)
-                  if damageByPosIndex[posIndex] then
-                    local damageResultsAtPos = damageByPosIndex[posIndex]
-                    for _,damageResult in ipairs(damageResultsAtPos) do
-                      local target = damageResult:GetTargetID()
-                      local damageInfo = damageResult:GetDamageInfo(curDamageInfoIndex)
-                      if target and target > 0 and damageInfo then
-                        local eTarget = world:GetEntityByID(target)
-                        local damageGridPos = damageResult:GetGridPos()
-                        local beHitParam = (((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(eTarget)):SetHandleBeHitParam_HitAnimName("hit")):SetHandleBeHitParam_HitEffectID(0)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damageGridPos)):SetHandleBeHitParam_HitTurnTarget(1)):SetHandleBeHitParam_DeathClear(0)):SetHandleBeHitParam_IsFinalHit(playFinalAttack)):SetHandleBeHitParam_SkillID(skillID)):SetHandleBeHitParam_DamageIndex(curDamageIndex)
-                        local hitBackTaskID = (TaskManager:GetInstance()):CoreGameStartTask(playSkillService.HandleBeHit, playSkillService, beHitParam)
-                        phaseContext:AddPhaseTask(hitBackTaskID)
-                      end
-                    end
-                  end
-                  do
-                    -- DECOMPILER ERROR at PC412: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC412: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
-    do
-      YIELD(TT, self._damageToHideTimeMs)
-      casterEntity:SetViewVisible(false)
-      YIELD(TT, self._hideToEffTimeMs)
-      local resetPos = casterEntity:GetGridPosition()
-      effectService:CreateWorldPositionDirectionEffect(self._resetPosEffectID, resetPos)
-      YIELD(TT, self._resetPosTimeMs)
-      casterEntity:SetViewVisible(true)
-      casterEntity:SetLocation(viewPosition, viewDirection)
+      break
     end
   end
+  return hasRoundRange
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPetHatiChainJumpDamageInstruction._CheckHasRoundRange = function(self, res, maxGridCount, mainCenterScopeRange)
-  -- function num : 0_4 , upvalues : _ENV
-  local hasRoundRange = false
-  for rangeIndex = 1, maxGridCount do
-    for _,range in pairs(res) do
-      if range then
-        local posList = range[rangeIndex]
-        if posList then
-          local len = (table.count)(posList)
-          for i = 1, len do
-            local pos = posList[i]
-            local targetPos = pos
-            if not (table.icontains)(mainCenterScopeRange, targetPos) then
-              hasRoundRange = true
-              break
-            end
-          end
-        end
-      end
-    end
-  end
-  do
-    if hasRoundRange or not hasRoundRange then
-      return hasRoundRange
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPetHatiChainJumpDamageInstruction._ShowRoundEff = function(self, TT, world, res, maxGridCount, mainCenterScopeRange, viewCenterPos)
-  -- function num : 0_5 , upvalues : _ENV
+function PlayPetHatiChainJumpDamageInstruction:_ShowRoundEff(TT, world, res, maxGridCount, mainCenterScopeRange, viewCenterPos)
   YIELD(TT, self._roundEffDelayFromStartMs)
   local effectService = world:GetService("Effect")
   for rangeIndex = 1, maxGridCount do
-    for _,range in pairs(res) do
+    for _, range in pairs(res) do
       if range then
         local posList = range[rangeIndex]
         if posList then
-          local len = (table.count)(posList)
+          local len = table.count(posList)
           for i = 1, len do
             local pos = posList[i]
             local targetPos = pos
-            if (table.icontains)(mainCenterScopeRange, targetPos) then
-              do
-                effectService:CreateWorldPositionDirectionEffect(self._roundGridEffectID, targetPos, targetPos - viewCenterPos)
-                -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
+            if table.icontains(mainCenterScopeRange, targetPos) then
+            else
+              effectService:CreateWorldPositionDirectionEffect(self._roundGridEffectID, targetPos, targetPos - viewCenterPos)
             end
           end
         end
@@ -268,13 +228,8 @@ PlayPetHatiChainJumpDamageInstruction._ShowRoundEff = function(self, TT, world, 
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPetHatiChainJumpDamageInstruction._ShowMainEff = function(self, TT, world, viewCenterPos)
-  -- function num : 0_6 , upvalues : _ENV
+function PlayPetHatiChainJumpDamageInstruction:_ShowMainEff(TT, world, viewCenterPos)
   YIELD(TT, self._mainEffTimeMs)
   local effectService = world:GetService("Effect")
   effectService:CreateWorldPositionDirectionEffect(self._mainEffectID, viewCenterPos)
 end
-
-

@@ -1,43 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_extra_camp_entry/ui_main_lobby_extra_camp_entry_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyExtraCampEntryItem", UICustomWidget)
 UIMainLobbyExtraCampEntryItem = UIMainLobbyExtraCampEntryItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyExtraCampEntryItem.OnShow = function(self)
-  -- function num : 0_0
+function UIMainLobbyExtraCampEntryItem:OnShow()
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyExtraCampEntryItem.OnHide = function(self)
-  -- function num : 0_1
+function UIMainLobbyExtraCampEntryItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyExtraCampEntryItem.SetData = function(self, campObj)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMainLobbyExtraCampEntryItem:SetData(campObj)
   local sampleInfo = campObj.m_sample_info
   local campid = sampleInfo.id
-  local cfg = (Cfg.cfg_main_lobby_side_entrys)[campid]
+  local cfg = Cfg.cfg_main_lobby_side_entrys[campid]
   local prefabName = cfg.PrefabName
   local clsName = cfg.ClsName
   if prefabName and clsName ~= "UIMainLobbyExtraBP" then
-    (self._pool):ClearWidgets()
-    ;
-    ((self._pool).dynamicInfoOfEngine):SetObjectName(prefabName)
-    self._item = (self._pool):SpawnObject(clsName)
-    ;
-    (self._item):SetData(sampleInfo)
+    self._pool:ClearWidgets()
+    self._pool.dynamicInfoOfEngine:SetObjectName(prefabName)
+    self._item = self._pool:SpawnObject(clsName)
+    self._item:SetData(sampleInfo)
   else
-    ;
-    (Log.error)("###[UIMainLobbyExtraCampEntryItem] prefab name and cls name is nil ! id --> ", campid)
+    Log.error("###[UIMainLobbyExtraCampEntryItem] prefab name and cls name is nil ! id --> ", campid)
   end
 end
-
-

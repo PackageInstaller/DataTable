@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/chain/grid_touch_begin_drag_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GridBeginDragSystem_Render", UniqueReactiveSystem)
 GridBeginDragSystem_Render = GridBeginDragSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GridBeginDragSystem_Render.IsInterested = function(self, index, previousComponent, component)
-  -- function num : 0_0 , upvalues : _ENV
+function GridBeginDragSystem_Render:IsInterested(index, previousComponent, component)
   if component == nil then
     return false
   end
@@ -21,67 +14,47 @@ GridBeginDragSystem_Render.IsInterested = function(self, index, previousComponen
   return true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GridBeginDragSystem_Render.ExecuteWorld = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
+function GridBeginDragSystem_Render:ExecuteWorld(world)
   self.world = world
-  local playerGridLocation = ((world:Player()):GetLocalTeamEntity()):GridLocation()
+  local playerGridLocation = world:Player():GetLocalTeamEntity():GridLocation()
   local gridTouchComponent = world:GridTouch()
   local touchPosition = gridTouchComponent:GetGridTouchBeginPosition()
   local offset = gridTouchComponent:GetGridTouchOffset()
-  local linkLineService = (self.world):GetService("LinkLine")
+  local linkLineService = self.world:GetService("LinkLine")
   local touchPlayer = linkLineService:IsTouchInPlayerTouchArea(touchPosition, offset)
   gridTouchComponent:SetTouchPlayer(touchPlayer)
-  local previewEntity = (self._world):GetPreviewEntity()
+  local previewEntity = self._world:GetPreviewEntity()
   local previewChainPathCmpt = previewEntity:PreviewChainPath()
   previewChainPathCmpt:ClearPreviewChainPath()
-  ;
-  (Log.debug)("[touch] GridBeginDragSystem_Render player position:", (playerGridLocation.Position).x, " ", (playerGridLocation.Position).y, " ", (playerGridLocation.Position).z)
-  ;
-  (Log.debug)("[touch] GridBeginDragSystem_Render touchPosition:", touchPosition.x, " ", touchPosition.y, " ", touchPosition.z, " Time:", (UnityEngine.Time).frameCount)
-  ;
-  (Log.debug)("[touch] GridBeginDragSystem_Render offset:", offset.x, " ", offset.y, " ", offset.z)
+  Log.debug("[touch] GridBeginDragSystem_Render player position:", playerGridLocation.Position.x, " ", playerGridLocation.Position.y, " ", playerGridLocation.Position.z)
+  Log.debug("[touch] GridBeginDragSystem_Render touchPosition:", touchPosition.x, " ", touchPosition.y, " ", touchPosition.z, " Time:", UnityEngine.Time.frameCount)
+  Log.debug("[touch] GridBeginDragSystem_Render offset:", offset.x, " ", offset.y, " ", offset.z)
   if touchPlayer then
     previewChainPathCmpt:SetLinkLineState(true)
     linkLineService:StartLinkLine(touchPosition, offset)
-    local prvwSvc = (self._world):GetService("PreviewMonsterTrap")
+    local prvwSvc = self._world:GetService("PreviewMonsterTrap")
     prvwSvc:ClearMonsterTrapPreview()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MatchLineDragStart)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.MatchLineDragStart)
   else
-    do
-      ;
-      (Log.notice)("[touch] GridBeginDragSystem_Render no touch player ")
-      local guideService = (self.world):GetService("Guide")
-      if not guideService:IsGuidePathInvokeType() then
-        local prvwSvc = (self._world):GetService("PreviewMonsterTrap")
-        prvwSvc:CheckPreviewMonsterAction(touchPosition, offset)
-        local previewActiveSkillSvc = world:GetService("PreviewActiveSkill")
-        ;
-        (world:GetService("MonsterShowRender")):MonsterGridAnimDown()
-      end
+    Log.notice("[touch] GridBeginDragSystem_Render no touch player ")
+    local guideService = self.world:GetService("Guide")
+    if not guideService:IsGuidePathInvokeType() then
+      local prvwSvc = self._world:GetService("PreviewMonsterTrap")
+      prvwSvc:CheckPreviewMonsterAction(touchPosition, offset)
+      local previewActiveSkillSvc = world:GetService("PreviewActiveSkill")
+      world:GetService("MonsterShowRender"):MonsterGridAnimDown()
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GridBeginDragSystem_Render.Filter = function(self, world)
-  -- function num : 0_2
+function GridBeginDragSystem_Render:Filter(world)
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GridBeginDragSystem_Render.NearCenter = function(self, centerPos, checkPos, offset)
-  -- function num : 0_3 , upvalues : _ENV
+function GridBeginDragSystem_Render:NearCenter(centerPos, checkPos, offset)
   local diff = checkPos - centerPos
-  if (math.abs)(diff.x) >= 1 or (math.abs)(diff.y) >= 1 then
+  if math.abs(diff.x) >= 1 or 1 <= math.abs(diff.y) then
     return false
   end
-  do return (math.abs)(offset.x) < 1 and (math.abs)(offset.y) < 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return math.abs(offset.x) < 1 and 1 > math.abs(offset.y)
 end
-
-

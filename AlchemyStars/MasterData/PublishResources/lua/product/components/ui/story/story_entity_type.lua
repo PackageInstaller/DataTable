@@ -1,8 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/story/story_entity_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-StoryEntityType = {Invalid = 0, Dialog = 1, Spine = 2, Picture = 3, Effect = 4, Sound = 5, SpineSlice = 6, Text = 7, PostProcessing = 8, CrackMask = 9, SpineSliceEdge = 10, SpineSliceHorizontal = 11, PictureSliceEdge = 12, PictureSliceHorizontalEdge = 13, SpineCircleEdge = 14, SpotLight = 15, AVGDialog = 16, Sprite = 17, Usme = 18, BgVedio = 19}
+StoryEntityType = {
+  Invalid = 0,
+  Dialog = 1,
+  Spine = 2,
+  Picture = 3,
+  Effect = 4,
+  Sound = 5,
+  SpineSlice = 6,
+  Text = 7,
+  PostProcessing = 8,
+  CrackMask = 9,
+  SpineSliceEdge = 10,
+  SpineSliceHorizontal = 11,
+  PictureSliceEdge = 12,
+  PictureSliceHorizontalEdge = 13,
+  SpineCircleEdge = 14,
+  SpotLight = 15,
+  AVGDialog = 16,
+  Sprite = 17,
+  Usme = 18,
+  BgVedio = 19
+}
 _enum("StoryEntityType", StoryEntityType)
-

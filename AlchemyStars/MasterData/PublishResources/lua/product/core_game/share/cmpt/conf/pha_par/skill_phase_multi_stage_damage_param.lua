@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_multi_stage_damage_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseMultiStageDamageParam", SkillPhaseParamBase)
 SkillPhaseMultiStageDamageParam = SkillPhaseMultiStageDamageParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseMultiStageDamageParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseMultiStageDamageParam:Constructor(t)
   self._turnToTarget = t.turnToTarget
   self._hitAnimName = t.hitAnimName
   self._hitEffectID = t.hitEffectID
@@ -20,71 +13,41 @@ SkillPhaseMultiStageDamageParam.Constructor = function(self, t)
   self._randomPercent = t.randomPercent or 10
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiStageDamageParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseMultiStageDamageParam:GetCacheTable()
   local t = {}
   local gridFxCacheElement = self:GenerateCacheTableElementByID(self._hitEffectID)
-  ;
-  (table.insert)(t, gridFxCacheElement)
+  table.insert(t, gridFxCacheElement)
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiStageDamageParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseMultiStageDamageParam:GetPhaseType()
   return SkillViewPhaseType.MultiStageDamage
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiStageDamageParam.GetTurnToTarget = function(self)
-  -- function num : 0_3
+function SkillPhaseMultiStageDamageParam:GetTurnToTarget()
   return self._turnToTarget
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiStageDamageParam.GetHitAnimName = function(self)
-  -- function num : 0_4
+function SkillPhaseMultiStageDamageParam:GetHitAnimName()
   return self._hitAnimName
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiStageDamageParam.GetHitEffectID = function(self)
-  -- function num : 0_5
+function SkillPhaseMultiStageDamageParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiStageDamageParam.GetStageCount = function(self)
-  -- function num : 0_6
+function SkillPhaseMultiStageDamageParam:GetStageCount()
   return self._stageCount
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiStageDamageParam.GetIntervalTime = function(self)
-  -- function num : 0_7
+function SkillPhaseMultiStageDamageParam:GetIntervalTime()
   return self._intervalTime
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiStageDamageParam.GetRandom = function(self)
-  -- function num : 0_8
+function SkillPhaseMultiStageDamageParam:GetRandom()
   return self._random
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiStageDamageParam.GetRandomPercent = function(self)
-  -- function num : 0_9
+function SkillPhaseMultiStageDamageParam:GetRandomPercent()
   return self._randomPercent
 end
-
-

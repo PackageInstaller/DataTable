@@ -1,123 +1,103 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/aircraft/aircraft_room/aircraft_smelt_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("aircraft_room_base")
 _class("AircraftSmeltRoom", AircraftRoomBase)
 AircraftSmeltRoom = AircraftSmeltRoom
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftSmeltRoom.Constructor = function(self)
-  -- function num : 0_0
+function AircraftSmeltRoom:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSmeltRoom.SetClientData = function(self, client_data)
-  -- function num : 0_1
+function AircraftSmeltRoom:SetClientData(client_data)
   self._storage_max = client_data[1]
   self._one_speed = client_data[2]
   self._atom_dis = client_data[3]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSmeltRoom.GetRoomConfig = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_smelt_room)[self._roomid]
+function AircraftSmeltRoom:GetRoomConfig()
+  local cfg = Cfg.cfg_aircraft_smelt_room[self._roomid]
   return cfg
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSmeltRoom.CanCollect = function(self)
-  -- function num : 0_3
+function AircraftSmeltRoom:CanCollect()
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSmeltRoom.GetAtomNum = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function AircraftSmeltRoom:GetAtomNum()
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = timeModule:GetServerTime() / 1000
-  local oldTime = (self._module):GetSmeltCDTime()
+  local oldTime = self._module:GetSmeltCDTime()
   local num = (nowTime - oldTime) / self._one_speed
   if num < 0 then
     num = 0
-  else
-    if self._storage_max < num then
-      num = self._storage_max
-    end
+  elseif num > self._storage_max then
+    num = self._storage_max
   end
   return num
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSmeltRoom.GetStorageMax = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  return (math.floor)(self._storage_max)
+function AircraftSmeltRoom:GetStorageMax()
+  return math.floor(self._storage_max)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSmeltRoom.GetOneSpeed = function(self)
-  -- function num : 0_6
+function AircraftSmeltRoom:GetOneSpeed()
   return 3600 / self._one_speed
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSmeltRoom.AtomDiscount = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  return (math.max)(self._atom_dis, 0)
+function AircraftSmeltRoom:AtomDiscount()
+  return math.max(self._atom_dis, 0)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSmeltRoom.FacilityTip = function(self)
-  -- function num : 0_8
-  return (self:GetRoomConfig()).LockDesc
+function AircraftSmeltRoom:FacilityTip()
+  return self:GetRoomConfig().LockDesc
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSmeltRoom.GetUpgradeInfo = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function AircraftSmeltRoom:GetUpgradeInfo()
   local room_cfg = self:GetConfig()
-  local cur_cfg = (Cfg.cfg_aircraft_smelt_room)[room_cfg.ID]
-  local next_cfg = (Cfg.cfg_aircraft_smelt_room)[room_cfg.NextLevelID]
+  local cur_cfg = Cfg.cfg_aircraft_smelt_room[room_cfg.ID]
+  local next_cfg = Cfg.cfg_aircraft_smelt_room[room_cfg.NextLevelID]
   if next_cfg == nil then
     return nil
   end
   local info = {
-{AirLevelInfoTitle.AtomStorageCeiling, AirRoomChangeLevelDataType.NumberInt, cur_cfg.StorageMax, next_cfg.StorageMax}
-, 
-{AirLevelInfoTitle.AtomRecoverSpeed, AirRoomChangeLevelDataType.NumberFloat, cur_cfg.OneSpeed, next_cfg.OneSpeed}
-}
+    {
+      AirLevelInfoTitle.AtomStorageCeiling,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_cfg.StorageMax,
+      next_cfg.StorageMax
+    },
+    {
+      AirLevelInfoTitle.AtomRecoverSpeed,
+      AirRoomChangeLevelDataType.NumberFloat,
+      cur_cfg.OneSpeed,
+      next_cfg.OneSpeed
+    }
+  }
   if next_cfg.LevelUpTip then
-    (table.insert)(info, {AirLevelInfoTitle.UnlockMoreAsset, AirRoomChangeLevelDataType.TextData})
+    table.insert(info, {
+      AirLevelInfoTitle.UnlockMoreAsset,
+      AirRoomChangeLevelDataType.TextData
+    })
   end
   return info
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSmeltRoom.GetDegradeInfo = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function AircraftSmeltRoom:GetDegradeInfo()
   local room_cfg = self:GetConfig()
-  local cur_cfg = (Cfg.cfg_aircraft_smelt_room)[room_cfg.ID]
-  local next_cfg = (Cfg.cfg_aircraft_smelt_room)[room_cfg.PrevLevelID]
+  local cur_cfg = Cfg.cfg_aircraft_smelt_room[room_cfg.ID]
+  local next_cfg = Cfg.cfg_aircraft_smelt_room[room_cfg.PrevLevelID]
   if next_cfg == nil then
     return nil
   end
   return {
-{AirLevelInfoTitle.AtomStorageCeiling, AirRoomChangeLevelDataType.NumberInt, cur_cfg.StorageMax, next_cfg.StorageMax}
-, 
-{AirLevelInfoTitle.AtomRecoverSpeed, AirRoomChangeLevelDataType.NumberFloat, cur_cfg.OneSpeed, next_cfg.OneSpeed}
-}
+    {
+      AirLevelInfoTitle.AtomStorageCeiling,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_cfg.StorageMax,
+      next_cfg.StorageMax
+    },
+    {
+      AirLevelInfoTitle.AtomRecoverSpeed,
+      AirRoomChangeLevelDataType.NumberFloat,
+      cur_cfg.OneSpeed,
+      next_cfg.OneSpeed
+    }
+  }
 end
-
-

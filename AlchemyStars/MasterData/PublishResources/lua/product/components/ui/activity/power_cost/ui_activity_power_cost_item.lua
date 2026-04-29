@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/power_cost/ui_activity_power_cost_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityPowerCostItem", UICustomWidget)
 UIActivityPowerCostItem = UIActivityPowerCostItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityPowerCostItem._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityPowerCostItem:_GetComponents()
   self._iconImg = self:GetUIComponent("RawImageLoader", "icon")
   self._iconRect = self:GetUIComponent("RectTransform", "icon")
   self._iconObj = self:GetGameObject("icon")
@@ -17,134 +10,84 @@ UIActivityPowerCostItem._GetComponents = function(self)
   self._countTextObj = self:GetGameObject("countText")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostItem.SetData = function(self, index, roleAsset, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityPowerCostItem:SetData(index, roleAsset, callback)
   self:_GetComponents()
   self._index = index
   self._roleAsset = roleAsset
   self._callback = callback
-  self._cfg_item = (Cfg.cfg_item)[(self._roleAsset).assetid]
+  self._cfg_item = Cfg.cfg_item[self._roleAsset.assetid]
   if self._cfg_item == nil then
-    (Log.fatal)("[quest] error --> cfg_item is nil ! id --> " .. (self._roleAsset).assetid)
-    return 
+    Log.fatal("[quest] error --> cfg_item is nil ! id --> " .. self._roleAsset.assetid)
+    return
   end
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostItem.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIActivityPowerCostItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostItem.OnHide = function(self)
-  -- function num : 0_3
+function UIActivityPowerCostItem:OnHide()
   self._callback = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostItem.SetEffShow = function(self, show)
-  -- function num : 0_4
-  (self:GetGameObject("eff")):SetActive(show)
+function UIActivityPowerCostItem:SetEffShow(show)
+  self:GetGameObject("eff"):SetActive(show)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostItem._OnValue = function(self)
-  -- function num : 0_5
-  local icon = (self._cfg_item).Icon
-  local count = (self._roleAsset).count
-  local itemId = (self._roleAsset).assetid
+function UIActivityPowerCostItem:_OnValue()
+  local icon = self._cfg_item.Icon
+  local count = self._roleAsset.count
+  local itemId = self._roleAsset.assetid
   self:SetIcon(icon, itemId)
   self:SetCount(count, true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostItem.iconOnClick = function(self, go)
-  -- function num : 0_6
+function UIActivityPowerCostItem:iconOnClick(go)
   if self._callback then
-    (self._callback)((self._roleAsset).assetid, (go.transform).position)
+    self._callback(self._roleAsset.assetid, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostItem.SetIcon = function(self, name, itemId)
-  -- function num : 0_7 , upvalues : _ENV
-  if not (string.isnullorempty)(name) then
+function UIActivityPowerCostItem:SetIcon(name, itemId)
+  if not string.isnullorempty(name) then
     self:ShowIcon(true, itemId)
-    ;
-    (self._iconImg):LoadImage(name)
+    self._iconImg:LoadImage(name)
   else
     self:ShowIcon(false)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostItem.ShowIcon = function(self, show, itemId)
-  -- function num : 0_8
-  (self._iconObj):SetActive(show)
+function UIActivityPowerCostItem:ShowIcon(show, itemId)
+  self._iconObj:SetActive(show)
   self:SetIconOffset(itemId)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostItem.SetIconOffset = function(self, itemId)
-  -- function num : 0_9
+function UIActivityPowerCostItem:SetIconOffset(itemId)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostItem._IsPet = function(self, id)
-  -- function num : 0_10 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet)({ID = id})
+function UIActivityPowerCostItem:_IsPet(id)
+  local cfg = Cfg.cfg_pet({ID = id})
   return cfg and true or false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostItem.SetCount = function(self, text, showZeroFlag)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityPowerCostItem:SetCount(text, showZeroFlag)
   if text ~= nil then
     local show = false
     if type(text) == "number" then
       local num = text
-      if num <= 0 then
-        do
-          do
-            show = showZeroFlag
-            show = show
-            ;
-            (self._countText):SetText((HelperProxy:GetInstance()):FormatItemCount(num))
-            if type(text) == "string" then
-              show = not (string.isnullorempty)(text)
-              ;
-              (self._countText):SetText(text)
-            end
-            self:ShowCountGroup(show)
-            self:ShowCountGroup(false)
-            -- DECOMPILER ERROR: 6 unprocessed JMP targets
-          end
-        end
-      end
+      show = 0 < num or showZeroFlag
+      self._countText:SetText(HelperProxy:GetInstance():FormatItemCount(num))
+    elseif type(text) == "string" then
+      show = not string.isnullorempty(text)
+      self._countText:SetText(text)
     end
+    self:ShowCountGroup(show)
+  else
+    self:ShowCountGroup(false)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostItem.ShowCountGroup = function(self, show)
-  -- function num : 0_12
-  (self._countTextObj):SetActive(show)
-  ;
-  (self._countBgObj):SetActive(show)
+function UIActivityPowerCostItem:ShowCountGroup(show)
+  self._countTextObj:SetActive(show)
+  self._countBgObj:SetActive(show)
 end
-
-

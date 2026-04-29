@@ -1,25 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n24/shop/ui_n24_shop_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN24ShopItem", UICustomWidget)
 UIN24ShopItem = UIN24ShopItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN24ShopItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.size = {big = Vector2(353, 370), small = Vector2(274, 306)}
+function UIN24ShopItem:Constructor()
+  self.size = {
+    big = Vector2(353, 370),
+    small = Vector2(274, 306)
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24ShopItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN24ShopItem:OnShow(uiParams)
   self.atlas = self:GetAsset("UIN24.spriteatlas", LoadType.SpriteAtlas)
   self.go = self:GetGameObject()
-  ;
-  (self.go):SetActive(false)
+  self.go:SetActive(false)
   self.anim = self:GetUIComponent("Animation", "UIN24ShopItem")
   self.loe = self:GetUIComponent("LayoutElement", "UIN24ShopItem")
   self.big = self:GetGameObject("big")
@@ -35,45 +27,35 @@ UIN24ShopItem.OnShow = function(self, uiParams)
   self.txtCountAwardSmall = self:GetUIComponent("UILocalizationText", "txtCountAwardSmall")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24ShopItem.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgIconBig):DestoryLastImage()
-  ;
-  (self.imgIconSmall):DestoryLastImage()
+function UIN24ShopItem:OnHide()
+  self.imgIconBig:DestoryLastImage()
+  self.imgIconSmall:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24ShopItem.InitData = function(self, data, itemInfoCallback, unlock)
-  -- function num : 0_3
+function UIN24ShopItem:InitData(data, itemInfoCallback, unlock)
   self._data = data
   self._unlock = unlock
-  self._itemId = (self._data).m_item_id
-  self._itemCount = (self._data).m_lottery_limit_count
-  self._itemRestCount = (self._data).m_lottery_count
+  self._itemId = self._data.m_item_id
+  self._itemCount = self._data.m_lottery_limit_count
+  self._itemRestCount = self._data.m_lottery_count
   self._itemInfoCallback = itemInfoCallback
   self:FillUi()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24ShopItem.FillUi = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local itemCfg = (Cfg.cfg_item)[self._itemId]
+function UIN24ShopItem:FillUi()
+  local itemCfg = Cfg.cfg_item[self._itemId]
   if itemCfg then
     local res = itemCfg.Icon
     local hasRest = self._itemRestCount > 0
-    local itemCount = (self._data).m_count
-    local bgSprite, imgIconColor = nil, nil
+    local itemCount = self._data.m_count
+    local bgSprite, imgIconColor
     local showNumberTex = "x" .. itemCount
-    local showTimesTex, starSprite = nil, nil
+    local showTimesTex, starSprite
     if self._unlock and hasRest then
       imgIconColor = Color.white
       showNumberTex = "<color=#f0ede9>" .. showNumberTex .. "</color>"
       showTimesTex = "<color=#f7e2c4>" .. self._itemRestCount .. "/" .. self._itemCount .. "</color>"
-      bgSprite = (self._data).m_is_big_reward and "n24_shop_di2" or "n24_shop_di4"
+      bgSprite = self._data.m_is_big_reward and "n24_shop_di2" or "n24_shop_di4"
       starSprite = "n24_shop_icon1"
     else
       imgIconColor = Color(1, 1, 1, 0.5)
@@ -83,105 +65,58 @@ UIN24ShopItem.FillUi = function(self)
       else
         showTimesTex = "<color=#9a9a9a>" .. self._itemRestCount .. "</color><color=#606060>/" .. self._itemCount .. "</color>"
       end
-      bgSprite = (self._data).m_is_big_reward and "n24_shop_di3" or "n24_shop_di5"
+      bgSprite = self._data.m_is_big_reward and "n24_shop_di3" or "n24_shop_di5"
       starSprite = "n24_shop_icon2"
     end
-    -- DECOMPILER ERROR at PC90: Confused about usage of register: R10 in 'UnsetPending'
-
-    if (self._data).m_is_big_reward then
-      (self.loe).preferredWidth = ((self.size).big).x
-      -- DECOMPILER ERROR at PC95: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self.loe).preferredHeight = ((self.size).big).y
-      ;
-      (self.big):SetActive(true)
-      ;
-      (self.small):SetActive(false)
-      -- DECOMPILER ERROR at PC109: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self.bgBig).sprite = (self.atlas):GetSprite(bgSprite)
-      -- DECOMPILER ERROR at PC115: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self.imgBigFlag).sprite = (self.atlas):GetSprite(starSprite)
-      ;
-      (self.imgIconBig):LoadImage(res)
-      ;
-      (self.imgIconBig):SetColor(imgIconColor)
-      ;
-      (self.txtCountItemBig):SetText(showNumberTex)
-      ;
-      (self.txtCountAwardBig):SetText(showTimesTex)
+    if self._data.m_is_big_reward then
+      self.loe.preferredWidth = self.size.big.x
+      self.loe.preferredHeight = self.size.big.y
+      self.big:SetActive(true)
+      self.small:SetActive(false)
+      self.bgBig.sprite = self.atlas:GetSprite(bgSprite)
+      self.imgBigFlag.sprite = self.atlas:GetSprite(starSprite)
+      self.imgIconBig:LoadImage(res)
+      self.imgIconBig:SetColor(imgIconColor)
+      self.txtCountItemBig:SetText(showNumberTex)
+      self.txtCountAwardBig:SetText(showTimesTex)
     else
-      -- DECOMPILER ERROR at PC137: Confused about usage of register: R10 in 'UnsetPending'
-
-      (self.loe).preferredWidth = ((self.size).small).x
-      -- DECOMPILER ERROR at PC142: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self.loe).preferredHeight = ((self.size).small).y
-      ;
-      (self.big):SetActive(false)
-      ;
-      (self.small):SetActive(true)
-      -- DECOMPILER ERROR at PC156: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self.bgSmall).sprite = (self.atlas):GetSprite(bgSprite)
-      ;
-      (self.imgIconSmall):LoadImage(res)
-      ;
-      (self.imgIconSmall):SetColor(imgIconColor)
-      ;
-      (self.txtCountItemSmall):SetText(showNumberTex)
-      ;
-      (self.txtCountAwardSmall):SetText(showTimesTex)
+      self.loe.preferredWidth = self.size.small.x
+      self.loe.preferredHeight = self.size.small.y
+      self.big:SetActive(false)
+      self.small:SetActive(true)
+      self.bgSmall.sprite = self.atlas:GetSprite(bgSprite)
+      self.imgIconSmall:LoadImage(res)
+      self.imgIconSmall:SetColor(imgIconColor)
+      self.txtCountItemSmall:SetText(showNumberTex)
+      self.txtCountAwardSmall:SetText(showTimesTex)
     end
   end
-  -- DECOMPILER ERROR: 11 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24ShopItem.ShowHide = function(self, isShow)
-  -- function num : 0_5
-  (self.go):SetActive(isShow)
+function UIN24ShopItem:ShowHide(isShow)
+  self.go:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24ShopItem.PlayAnim = function(self, idx)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN24ShopItem:PlayAnim(idx)
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : idx, _ENV, self
-    if idx > 1 then
+    if 1 < idx then
       YIELD(TT, (idx - 1) * 60)
     end
-    ;
-    (self.go):SetActive(true)
+    self.go:SetActive(true)
     local key = "UIN24ShopItemPlayAnim" .. self._itemId
     self:Lock(key)
-    if (self._data).m_is_big_reward then
-      (self.anim):Play("uieffanim_UIN24ShopItem_big")
+    if self._data.m_is_big_reward then
+      self.anim:Play("uieffanim_UIN24ShopItem_big")
     else
-      ;
-      (self.anim):Play("uieffanim_UIN24ShopItem_small")
+      self.anim:Play("uieffanim_UIN24ShopItem_small")
     end
     YIELD(TT, 867)
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24ShopItem.BgOnClick = function(self, go)
-  -- function num : 0_7
+function UIN24ShopItem:BgOnClick(go)
   if self._itemInfoCallback then
-    (self._itemInfoCallback)((self._data).m_item_id, (go.transform).position)
+    self._itemInfoCallback(self._data.m_item_id, go.transform.position)
   end
 end
-
-

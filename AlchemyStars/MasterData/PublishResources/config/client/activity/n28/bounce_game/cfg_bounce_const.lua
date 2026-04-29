@@ -1,13 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/n28/bounce_game/cfg_bounce_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, GSpeed = 2, BirthPos = 3, BaseJumpSpeed = 4, AccDownSpeed = 5, SpeedWhenAttackAtDown = 6, SpeedWhenAttackAtAccDown = 7, AirJumpSpeed = 8, AttckCD = 9, AirAttackCD = 10, JumpCD = 11}
+local key = {
+  ID = 1,
+  GSpeed = 2,
+  BirthPos = 3,
+  BaseJumpSpeed = 4,
+  AccDownSpeed = 5,
+  SpeedWhenAttackAtDown = 6,
+  SpeedWhenAttackAtAccDown = 7,
+  AirJumpSpeed = 8,
+  AttckCD = 9,
+  AirAttackCD = 10,
+  JumpCD = 11
+}
 local config = {
-{1, 4400, 
-{-420, 0}
-, 1450, -1800, 1500, 1800, 1200, 500, 300, 60}
+  {
+    1,
+    4400,
+    {-420, 0},
+    1450,
+    -1800,
+    1500,
+    1800,
+    1200,
+    500,
+    300,
+    60
+  }
 }
 return config, "ID", key
-

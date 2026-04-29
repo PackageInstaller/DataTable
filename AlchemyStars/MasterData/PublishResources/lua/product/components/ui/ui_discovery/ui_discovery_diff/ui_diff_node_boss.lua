@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_diff/ui_diff_node_boss.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiffNodeBoss", UIDiffNodeBase)
 UIDiffNodeBoss = UIDiffNodeBoss
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiffNodeBoss.SetInfo = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local name = (self._node):NodeName()
-  local cup1, cup2 = (self._node):CupNum()
-  local bossCg = (self._node):Boss()
-  ;
-  (self._monster):LoadImage(bossCg)
+function UIDiffNodeBoss:SetInfo()
+  local name = self._node:NodeName()
+  local cup1, cup2 = self._node:CupNum()
+  local bossCg = self._node:Boss()
+  self._monster:LoadImage(bossCg)
   local tips = "str_diff_mission_node_tips_boss"
-  ;
-  (self._texName):SetText((StringTable.Get)(tips))
-  ;
-  (self._texTip):SetText((StringTable.Get)(name))
-  ;
-  (self._cupNum):SetText(cup1 .. "/" .. cup2)
+  self._texName:SetText(StringTable.Get(tips))
+  self._texTip:SetText(StringTable.Get(name))
+  self._cupNum:SetText(cup1 .. "/" .. cup2)
 end
-
-

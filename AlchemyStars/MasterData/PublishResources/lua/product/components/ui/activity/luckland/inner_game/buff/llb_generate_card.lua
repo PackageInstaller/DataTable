@@ -1,32 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/buff/llb_generate_card.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("llb_logic_base")
 _class("LLBuffLogicGenerateCard", LLBuffLogicBase)
 LLBuffLogicGenerateCard = LLBuffLogicGenerateCard
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuffLogicGenerateCard.Constructor = function(self, buffObj, logicParam)
-  -- function num : 0_0
+function LLBuffLogicGenerateCard:Constructor(buffObj, logicParam)
   self._type = logicParam.type
   self._id = logicParam.id
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicGenerateCard.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function LLBuffLogicGenerateCard:DoLogic(notify)
   local notifyEntity = notify:GetNotifyEntity()
-  local llEntMng = (notifyEntity:GetLuckLandModule()):GetEntityMng()
+  local llEntMng = notifyEntity:GetLuckLandModule():GetEntityMng()
   if self._type == LuckLandEntityType.Pet then
     llEntMng:PetEnterBackpack(llEntMng:CreateEntity(self._type, self._id))
-  else
-    if self._type == LuckLandEntityType.Monster and not llEntMng:IsFightMonstersFull() then
-      llEntMng:AppendMonster(llEntMng:CreateEntity(self._type, self._id))
-    end
+  elseif self._type == LuckLandEntityType.Monster and not llEntMng:IsFightMonstersFull() then
+    llEntMng:AppendMonster(llEntMng:CreateEntity(self._type, self._id))
   end
 end
-
-

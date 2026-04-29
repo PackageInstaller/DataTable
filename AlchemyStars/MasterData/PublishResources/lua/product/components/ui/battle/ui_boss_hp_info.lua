@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_boss_hp_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBossHPInfo", UICustomWidget)
 UIBossHPInfo = UIBossHPInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBossHPInfo.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBossHPInfo:Constructor()
   self._pstId = 0
   self._tplId = 0
   self._rawPosition = Vector2.zero
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.SwitchRes = function(self, hpType)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBossHPInfo:SwitchRes(hpType)
   self._bossUIHPType = hpType
   local imageWhiteBackgroundGO = self:GetGameObject("WhiteBackground")
   imageWhiteBackgroundGO:SetActive(false)
@@ -30,63 +20,36 @@ UIBossHPInfo.SwitchRes = function(self, hpType)
   local shieldImg = self:GetGameObject("shield")
   shieldImg:SetActive(false)
   self._hpShieldSPGO = self:GetGameObject("HPShieldSP")
-  ;
-  (self._hpShieldSPGO):SetActive(false)
+  self._hpShieldSPGO:SetActive(false)
   if hpType == BossUIHPType.Normal then
     imageWhiteBackgroundGO:SetActive(true)
     sldRedHp:SetActive(true)
     self._sldRedHp = self:GetUIComponent("Slider", "sldRedHp")
     self._sldRedHpRectTransform = self:GetUIComponent("RectTransform", "sldRedHp")
     local energyLayerRootGO = self:GetGameObject("energyLayerRoot")
-    -- DECOMPILER ERROR at PC72: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (energyLayerRootGO.transform).localPosition = Vector3(((energyLayerRootGO.transform).localPosition).x, -40, ((energyLayerRootGO.transform).localPosition).z)
-    -- DECOMPILER ERROR at PC77: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._rawPosition).x = ((energyLayerRootGO.transform).localPosition).x
-    -- DECOMPILER ERROR at PC82: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._rawPosition).y = ((energyLayerRootGO.transform).localPosition).y
-  else
-    do
-      if hpType == BossUIHPType.Gold then
-        imageWhiteBackgroundSPGO:SetActive(true)
-        sldRedHpSP:SetActive(true)
-        ;
-        (self._hpShieldSPGO):SetActive(true)
-        self._sldRedHp = self:GetUIComponent("Slider", "sldRedHpSP")
-        self._sldRedHpRectTransform = self:GetUIComponent("RectTransform", "sldRedHpSP")
-        self._hpShieldSPLineGO = self:GetGameObject("ShieldSPLine")
-        self._hpShieldSPStarGO = self:GetGameObject("ShieldSPStar")
-        self._hpShieldSPEffGO = self:GetGameObject("ShieldSPEff")
-        self._hpShieldSPEffGO = self:GetGameObject("ShieldSPEff")
-        self._shieldSPAnim = self:GetUIComponent("Animation", "HPShieldSP")
-        self._hpShieldSPRenderers = (self._hpShieldSPEffGO):GetComponentsInChildren(typeof(UnityEngine.Renderer))
-        local energyLayerRootGO = self:GetGameObject("energyLayerRoot")
-        -- DECOMPILER ERROR at PC150: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (energyLayerRootGO.transform).localPosition = Vector3(((energyLayerRootGO.transform).localPosition).x, -60, ((energyLayerRootGO.transform).localPosition).z)
-        -- DECOMPILER ERROR at PC155: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._rawPosition).x = ((energyLayerRootGO.transform).localPosition).x
-        -- DECOMPILER ERROR at PC160: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._rawPosition).y = ((energyLayerRootGO.transform).localPosition).y
-      end
-    end
+    energyLayerRootGO.transform.localPosition = Vector3(energyLayerRootGO.transform.localPosition.x, -40, energyLayerRootGO.transform.localPosition.z)
+    self._rawPosition.x = energyLayerRootGO.transform.localPosition.x
+    self._rawPosition.y = energyLayerRootGO.transform.localPosition.y
+  elseif hpType == BossUIHPType.Gold then
+    imageWhiteBackgroundSPGO:SetActive(true)
+    sldRedHpSP:SetActive(true)
+    self._hpShieldSPGO:SetActive(true)
+    self._sldRedHp = self:GetUIComponent("Slider", "sldRedHpSP")
+    self._sldRedHpRectTransform = self:GetUIComponent("RectTransform", "sldRedHpSP")
+    self._hpShieldSPLineGO = self:GetGameObject("ShieldSPLine")
+    self._hpShieldSPStarGO = self:GetGameObject("ShieldSPStar")
+    self._hpShieldSPEffGO = self:GetGameObject("ShieldSPEff")
+    self._hpShieldSPEffGO = self:GetGameObject("ShieldSPEff")
+    self._shieldSPAnim = self:GetUIComponent("Animation", "HPShieldSP")
+    self._hpShieldSPRenderers = self._hpShieldSPEffGO:GetComponentsInChildren(typeof(UnityEngine.Renderer))
+    local energyLayerRootGO = self:GetGameObject("energyLayerRoot")
+    energyLayerRootGO.transform.localPosition = Vector3(energyLayerRootGO.transform.localPosition.x, -60, energyLayerRootGO.transform.localPosition.z)
+    self._rawPosition.x = energyLayerRootGO.transform.localPosition.x
+    self._rawPosition.y = energyLayerRootGO.transform.localPosition.y
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.OnShow = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBossHPInfo:OnShow()
   self._go = self:GetGameObject()
   self._txtBoss = self:GetUIComponent("UILocalizationText", "txtBoss")
   self._txtBossName = self:GetUIComponent("UILocalizationText", "txtBossName")
@@ -121,8 +84,7 @@ UIBossHPInfo.OnShow = function(self)
   self._buttonImage = self:GetUIComponent("Graphic", "buttonOpenBuff")
   self.buffWindowRoot = self:GetGameObject("buffWindowRoot")
   self.buffWindowRootPath = self:GetUIComponent("UISelectObjectPath", "buffWindowRoot")
-  ;
-  (self.buffWindowRootPath):SpawnObjects("UIBossBuffInfo", 1)
+  self.buffWindowRootPath:SpawnObjects("UIBossBuffInfo", 1)
   local buffRootPath = self:GetUIComponent("UISelectObjectPath", "buffRoot")
   if buffRootPath then
     self._uiBossHPBuffInfo = buffRootPath:SpawnObject("UIHPBuffInfo")
@@ -140,22 +102,18 @@ UIBossHPInfo.OnShow = function(self)
   self._shieldImg = self:GetUIComponent("Image", "shield")
   self.worldBossGO = self:GetGameObject("WorldBoss")
   if self.worldBossGO then
-    (self.worldBossGO):SetActive(false)
+    self.worldBossGO:SetActive(false)
     self.sldYellowHpGO = self:GetGameObject("sldYellowHp")
-    ;
-    (self.sldYellowHpGO):SetActive(false)
+    self.sldYellowHpGO:SetActive(false)
     self._imageWhiteBackground = self:GetUIComponent("Image", "WhiteBackground")
     self._imageRedBackground = self:GetUIComponent("Image", "RedBackground")
     self._txtTotalDamageNum = self:GetUIComponent("UILocalizationText", "totalDamageNumText")
     self._totalDamageNum = 0
-    ;
-    (self._txtTotalDamageNum):SetText("0")
+    self._txtTotalDamageNum:SetText("0")
     self._txtTotalDamageNumGray = self:GetUIComponent("UILocalizationText", "totalDamageNumTextGray")
-    ;
-    (self._txtTotalDamageNumGray):SetText((UIActivityHelper.AddZeroFrontNum)(8, self._totalDamageNum))
+    self._txtTotalDamageNumGray:SetText(UIActivityHelper.AddZeroFrontNum(8, self._totalDamageNum))
     self._txtCurStageNum = self:GetUIComponent("UILocalizationText", "curStageNumText")
-    ;
-    (self._txtCurStageNum):SetText("x1")
+    self._txtCurStageNum:SetText("x1")
     self._imgFillWhite = self:GetUIComponent("Image", "imgFillWhite")
     self._imgFillYellow = self:GetUIComponent("Image", "imgFillYellow")
     self._sldYellowHp = self:GetUIComponent("Slider", "sldYellowHp")
@@ -170,24 +128,19 @@ UIBossHPInfo.OnShow = function(self)
   self._curseHpRect = self:GetUIComponent("RectTransform", "curseHp")
   self:AttachEvent(GameEventType.UpdateBossCurseHP, self.UpdateBossCurseHP)
   self._passiveSkillInfoIconGO = self:GetGameObject("infoIcon")
-  ;
-  (self._passiveSkillInfoIconGO):SetActive(false)
+  self._passiveSkillInfoIconGO:SetActive(false)
   self._hasPassiveSkillInfo = false
   self.passiveSkillInfoWinRoot = self:GetGameObject("passiveSkillInfoWinRoot")
   self.passiveSkillInfoWinRootPath = self:GetUIComponent("UISelectObjectPath", "passiveSkillInfoWinRoot")
-  ;
-  (self.passiveSkillInfoWinRootPath):SpawnObjects("UIMonsterPassiveInfo", 1)
+  self.passiveSkillInfoWinRootPath:SpawnObjects("UIMonsterPassiveInfo", 1)
   self._antiActiveSkillRoot = self:GetGameObject("AntiActiveSkillRoot")
   if self._antiActiveSkillRoot then
-    (self._antiActiveSkillRoot):SetActive(false)
+    self._antiActiveSkillRoot:SetActive(false)
     self._txtAntiActiveSkillCount = self:GetUIComponent("UILocalizationText", "antiActiveSkillCount")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIBossHPInfo:OnHide()
   self:DetachEvent(GameEventType.UpdateBossRedHp, self.UpdateBossRedHp)
   self:DetachEvent(GameEventType.UpdateBossWhiteHp, self.UpdateBossWhiteHp)
   self:DetachEvent(GameEventType.UpdateBossShield, self.UpdateBossShield)
@@ -202,117 +155,88 @@ UIBossHPInfo.OnHide = function(self)
   self:DetachEvent(GameEventType.BossSwitchMultiHP, self.UpdateBossMultiHP)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.SetActive = function(self, state)
-  -- function num : 0_4
-  (self._go):SetActive(state)
+function UIBossHPInfo:SetActive(state)
+  self._go:SetActive(state)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.Flush = function(self, t, isWorldBoss)
-  -- function num : 0_5 , upvalues : _ENV
+function UIBossHPInfo:Flush(t, isWorldBoss)
   self._pstId = t.pstId
-  ;
-  (self._go):SetActive(true)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
+  self._go:SetActive(true)
   if t.isVice then
-    (self._imgFillRed).color = Color.gray
+    self._imgFillRed.color = Color.gray
   else
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._imgFillRed).color = Color.white
+    self._imgFillRed.color = Color.white
   end
-  if not t.UIBossHPType then
-    self:SwitchRes(BossUIHPType.Normal)
-    self:UpdateBossNameAndElement(t.tplId, t.HPBarType, self._pstId, t.matchPet, t.curElement, t.hpEnergyVal, t.maxHPEnergyVal)
-    local percent = t.percent or 1
-    local hpShieldType = (InnerGameHelperRender.GetHPShieldType)(self._pstId)
-    if self._hpShieldType ~= hpShieldType then
-      self._hpShieldType = hpShieldType
-      self:SetHPShieldImg()
-    end
-    self:UpdateBossRedHp(self._pstId, percent)
-    self:UpdateBossWhiteHp(self._pstId, percent, true)
-    self:UpdateBossHpPercent(self._pstId, percent, t.hP, t.maxHP, t.attack)
-    self:UpdateBossShield(self._pstId, t.shieldValue, t.hP, t.maxHP)
-    self:UpdateBossGreyHP(self._pstId, t.greyVal, t.hP, t.maxHP)
-    self:UpdateBossCurseHP(self._pstId, t.showCurseHp, t.curseHpVal, t.hP, t.maxHP)
-    self._hpLockSepList = t.sepHPList
-    if not t.sepHpUnlockedList then
-      self._hpLockUnlockedList = {}
-      if self._hpLockSepList then
-        local Redgo = self:GetGameObject("Fill Area")
-        local hpMaxWidth = ((Redgo.transform).rect).width
-        self._lockList = self:GetUIComponent("UISelectObjectPath", "lockList")
-        ;
-        (self._lockList):SpawnObjects("UICustomWidget", #self._hpLockSepList)
-        local lockGOList = (self._lockList):GetAllSpawnList()
-        for i = 1, #self._hpLockSepList do
-          local sepPer = (self._hpLockSepList)[i]
-          local offsetX = 0
-          if sepPer >= 50 then
-            offsetX = (sepPer - 50) * hpMaxWidth / 100
-          else
-            offsetX = (50 - sepPer) * hpMaxWidth / 100 * -1
-          end
-          local go = (lockGOList[i]):GetGameObject()
-          -- DECOMPILER ERROR at PC140: Confused about usage of register: R15 in 'UnsetPending'
-
-          ;
-          (go.transform).localPosition = Vector3(offsetX, 0, 0)
-          local uiview = go:GetComponent("UIView")
-          local lockGO = uiview:GetGameObject("Lock")
-          local bLock = true
-          if self._hpLockUnlockedList and (table.icontains)(self._hpLockUnlockedList, i) then
-            bLock = false
-          end
-          lockGO:SetActive(bLock)
-          local unlockGO = uiview:GetGameObject("UnLock")
-          unlockGO:SetActive(not bLock)
-        end
+  self:SwitchRes(t.UIBossHPType or BossUIHPType.Normal)
+  self:UpdateBossNameAndElement(t.tplId, t.HPBarType, self._pstId, t.matchPet, t.curElement, t.hpEnergyVal, t.maxHPEnergyVal)
+  local percent = t.percent or 1
+  local hpShieldType = InnerGameHelperRender.GetHPShieldType(self._pstId)
+  if self._hpShieldType ~= hpShieldType then
+    self._hpShieldType = hpShieldType
+    self:SetHPShieldImg()
+  end
+  self:UpdateBossRedHp(self._pstId, percent)
+  self:UpdateBossWhiteHp(self._pstId, percent, true)
+  self:UpdateBossHpPercent(self._pstId, percent, t.hP, t.maxHP, t.attack)
+  self:UpdateBossShield(self._pstId, t.shieldValue, t.hP, t.maxHP)
+  self:UpdateBossGreyHP(self._pstId, t.greyVal, t.hP, t.maxHP)
+  self:UpdateBossCurseHP(self._pstId, t.showCurseHp, t.curseHpVal, t.hP, t.maxHP)
+  self._hpLockSepList = t.sepHPList
+  self._hpLockUnlockedList = t.sepHpUnlockedList or {}
+  if self._hpLockSepList then
+    local Redgo = self:GetGameObject("Fill Area")
+    local hpMaxWidth = Redgo.transform.rect.width
+    self._lockList = self:GetUIComponent("UISelectObjectPath", "lockList")
+    self._lockList:SpawnObjects("UICustomWidget", #self._hpLockSepList)
+    local lockGOList = self._lockList:GetAllSpawnList()
+    for i = 1, #self._hpLockSepList do
+      local sepPer = self._hpLockSepList[i]
+      local offsetX = 0
+      if 50 <= sepPer then
+        offsetX = (sepPer - 50) * hpMaxWidth / 100
+      else
+        offsetX = (50 - sepPer) * hpMaxWidth / 100 * -1
       end
-      do
-        if self._uiBossHPBuffInfo and t.pstId then
-          (self._uiBossHPBuffInfo):SetBossData(t.pstId)
-        end
-        if isWorldBoss then
-          self:InitWorldBossHP(t)
-        end
-        self:FlushPassiveSkillInfo(t.tplId)
+      local go = lockGOList[i]:GetGameObject()
+      go.transform.localPosition = Vector3(offsetX, 0, 0)
+      local uiview = go:GetComponent("UIView")
+      local lockGO = uiview:GetGameObject("Lock")
+      local bLock = true
+      if self._hpLockUnlockedList and table.icontains(self._hpLockUnlockedList, i) then
+        bLock = false
       end
+      lockGO:SetActive(bLock)
+      local unlockGO = uiview:GetGameObject("UnLock")
+      unlockGO:SetActive(not bLock)
     end
   end
+  if self._uiBossHPBuffInfo and t.pstId then
+    self._uiBossHPBuffInfo:SetBossData(t.pstId)
+  end
+  if isWorldBoss then
+    self:InitWorldBossHP(t)
+  end
+  self:FlushPassiveSkillInfo(t.tplId)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.FlushPassiveSkillInfo = function(self, tplID)
-  -- function num : 0_6 , upvalues : _ENV
-  local monsterConfigData = (ConfigServiceHelper.GetMonsterConfigData)()
+function UIBossHPInfo:FlushPassiveSkillInfo(tplID)
+  local monsterConfigData = ConfigServiceHelper.GetMonsterConfigData()
   local have = monsterConfigData:IsHasPassiveSkillInfo(tplID)
-  ;
-  (self._passiveSkillInfoIconGO):SetActive(have)
+  self._passiveSkillInfoIconGO:SetActive(have)
   self._hasPassiveSkillInfo = have
-  local lst = (self.passiveSkillInfoWinRootPath):GetAllSpawnList()
-  if lst and (table.count)(lst) > 0 then
-    (lst[1]):SetCanvasShow(false)
+  local lst = self.passiveSkillInfoWinRootPath:GetAllSpawnList()
+  if lst and table.count(lst) > 0 then
+    lst[1]:SetCanvasShow(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.ChangeBossHpLock = function(self, index, state)
-  -- function num : 0_7
+function UIBossHPInfo:ChangeBossHpLock(index, state)
   if self._lockList then
-    local lockGOList = (self._lockList):GetAllSpawnList()
+    local lockGOList = self._lockList:GetAllSpawnList()
     if lockGOList == nil or lockGOList[index] == nil then
-      return 
+      return
     end
-    local go = (lockGOList[index]):GetGameObject()
+    local go = lockGOList[index]:GetGameObject()
     local uiview = go:GetComponent("UIView")
     local lockGO = uiview:GetGameObject("Lock")
     lockGO:SetActive(state)
@@ -321,98 +245,66 @@ UIBossHPInfo.ChangeBossHpLock = function(self, index, state)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.UpdateBossRedHp = function(self, entityID, redHpPercent)
-  -- function num : 0_8
+function UIBossHPInfo:UpdateBossRedHp(entityID, redHpPercent)
   if entityID ~= self._pstId then
-    return 
+    return
   end
   if self._multiHPSeq then
-    (self._multiHPSeq):Complete()
+    self._multiHPSeq:Complete()
   end
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._sldRedHp).value = redHpPercent
+  self._sldRedHp.value = redHpPercent
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.SetSPShieldLen = function(self, left, right)
-  -- function num : 0_9
-  for i = 0, (self._hpShieldSPRenderers).Length - 1 do
-    local render = (self._hpShieldSPRenderers)[i]
-    ;
-    (render.sharedMaterial):SetFloat("_left", left)
-    ;
-    (render.sharedMaterial):SetFloat("_ringht", right)
+function UIBossHPInfo:SetSPShieldLen(left, right)
+  for i = 0, self._hpShieldSPRenderers.Length - 1 do
+    local render = self._hpShieldSPRenderers[i]
+    render.sharedMaterial:SetFloat("_left", left)
+    render.sharedMaterial:SetFloat("_ringht", right)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.SetSPShieldStarAndLine = function(self, left, right, isOverFlow)
-  -- function num : 0_10 , upvalues : _ENV
-  local hpMaxWidth = ((self._sldRedHpRectTransform).rect).width
-  local param = ((self._sldRedHpRectTransform).rect).width / 2 * -1
+function UIBossHPInfo:SetSPShieldStarAndLine(left, right, isOverFlow)
+  local hpMaxWidth = self._sldRedHpRectTransform.rect.width
+  local param = self._sldRedHpRectTransform.rect.width / 2 * -1
   local starParam = 10
-  local hpMaxWidth = ((self._sldRedHpRectTransform).rect).width
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R8 in 'UnsetPending'
-
+  local hpMaxWidth = self._sldRedHpRectTransform.rect.width
   if isOverFlow then
-    ((self._hpShieldSPLineGO).transform).localPosition = Vector3(hpMaxWidth * right + param + 5, 0, 0)
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((self._hpShieldSPStarGO).transform).localPosition = Vector3(hpMaxWidth * left + param + starParam, 0, 0)
+    self._hpShieldSPLineGO.transform.localPosition = Vector3(hpMaxWidth * right + param + 5, 0, 0)
+    self._hpShieldSPStarGO.transform.localPosition = Vector3(hpMaxWidth * left + param + starParam, 0, 0)
   else
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((self._hpShieldSPLineGO).transform).localPosition = Vector3(hpMaxWidth * left + param + 5, 0, 0)
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((self._hpShieldSPStarGO).transform).localPosition = Vector3(hpMaxWidth * right + param + 5, 0, 0)
+    self._hpShieldSPLineGO.transform.localPosition = Vector3(hpMaxWidth * left + param + 5, 0, 0)
+    self._hpShieldSPStarGO.transform.localPosition = Vector3(hpMaxWidth * right + param + 5, 0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.UpdateBossShield = function(self, entityID, shieldValue, redhp, maxhp, isInitShield)
-  -- function num : 0_11 , upvalues : _ENV
+function UIBossHPInfo:UpdateBossShield(entityID, shieldValue, redhp, maxhp, isInitShield)
   if not self._shieldImg then
-    return 
+    return
   end
   if entityID ~= self._pstId then
-    return 
+    return
   end
   if self._bossUIHPType == BossUIHPType.Gold then
     self._shieldValue = shieldValue
     if shieldValue == nil or shieldValue <= 0 then
-      (self._shieldSPAnim):Play("uianim_BossHp_all_02")
+      self._shieldSPAnim:Play("uianim_BossHp_all_02")
+    elseif isInitShield then
+      self._shieldSPAnim:Play("uianim_BossHp_all_03")
     else
-      if isInitShield then
-        (self._shieldSPAnim):Play("uianim_BossHp_all_03")
-      else
-        ;
-        (self._shieldSPAnim):Play("uianim_BossHp_all_01")
-      end
+      self._shieldSPAnim:Play("uianim_BossHp_all_01")
     end
   end
   if shieldValue == nil or shieldValue <= 0 then
-    ((self._shieldImg).gameObject):SetActive(false)
-    ;
-    (self._hpShieldSPGO):SetActive(false)
-    return 
+    self._shieldImg.gameObject:SetActive(false)
+    self._hpShieldSPGO:SetActive(false)
+    return
   end
-  local shieldRectTransform = (self._shieldImg).rectTransform
+  local shieldRectTransform = self._shieldImg.rectTransform
   local greenRectTransform = self._sldRedHpRectTransform
-  local hpMaxWidth = ((self._sldRedHpRectTransform).rect).width
-  local hpMaxHeight = (shieldRectTransform.rect).height
+  local hpMaxWidth = self._sldRedHpRectTransform.rect.width
+  local hpMaxHeight = shieldRectTransform.rect.height
   local shieldPercent = shieldValue / maxhp
-  if shieldPercent > 1 then
+  if 1 < shieldPercent then
     shieldPercent = 1
   end
   local shieldWidth = shieldPercent * hpMaxWidth
@@ -420,59 +312,44 @@ UIBossHPInfo.UpdateBossShield = function(self, entityID, shieldValue, redhp, max
   local hpWidth = hpPercent * hpMaxWidth
   local hpAndShield = redhp + shieldValue
   if self._bossUIHPType == BossUIHPType.Normal then
-    ((self._shieldImg).gameObject):SetActive(true)
+    self._shieldImg.gameObject:SetActive(true)
     shieldRectTransform.sizeDelta = Vector2(shieldWidth, hpMaxHeight)
-    if hpAndShield < maxhp then
+    if maxhp > hpAndShield then
       local posX = -hpMaxWidth / 2 + hpWidth
       shieldRectTransform.localPosition = Vector3(posX, 0, 0)
     else
-      do
-        do
-          local posX = -hpMaxWidth / 2 + (hpMaxWidth - shieldWidth)
-          shieldRectTransform.localPosition = Vector3(posX, 0, 0)
-          if self._bossUIHPType == BossUIHPType.Gold then
-            (self._hpShieldSPGO):SetActive(true)
-            if hpAndShield <= maxhp then
-              self:SetSPShieldLen(hpPercent, hpAndShield / maxhp)
-              self:SetSPShieldStarAndLine(hpPercent, hpAndShield / maxhp, false)
-            else
-              self:SetSPShieldLen(1 - shieldPercent, 1)
-              self:SetSPShieldStarAndLine(1 - shieldPercent, 1, true)
-            end
-          end
-          self._shieldValue = shieldValue
-        end
-      end
+      local posX = -hpMaxWidth / 2 + (hpMaxWidth - shieldWidth)
+      shieldRectTransform.localPosition = Vector3(posX, 0, 0)
+    end
+  elseif self._bossUIHPType == BossUIHPType.Gold then
+    self._hpShieldSPGO:SetActive(true)
+    if maxhp >= hpAndShield then
+      self:SetSPShieldLen(hpPercent, hpAndShield / maxhp)
+      self:SetSPShieldStarAndLine(hpPercent, hpAndShield / maxhp, false)
+    else
+      self:SetSPShieldLen(1 - shieldPercent, 1)
+      self:SetSPShieldStarAndLine(1 - shieldPercent, 1, true)
     end
   end
+  self._shieldValue = shieldValue
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.UpdateBossElement = function(self, element, entityID)
-  -- function num : 0_12 , upvalues : _ENV
+function UIBossHPInfo:UpdateBossElement(element, entityID)
   if entityID ~= self._pstId then
-    return 
+    return
   end
-  local spriteStr = ((Cfg.cfg_pet_element)[element]).Icon
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R4 in 'UnsetPending'
-
+  local spriteStr = Cfg.cfg_pet_element[element].Icon
   if spriteStr then
-    (self._imgElement).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(spriteStr .. "_battle"))
-    ;
-    ((self._imgElement).gameObject):SetActive(true)
+    self._imgElement.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(spriteStr .. "_battle"))
+    self._imgElement.gameObject:SetActive(true)
   else
-    ;
-    ((self._imgElement).gameObject):SetActive(false)
+    self._imgElement.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.UpdateBossNameAndElement = function(self, tplId, hpBarType, entityID, matchPet, curElement, hpEnergyVal, maxEnergyVal)
-  -- function num : 0_13 , upvalues : _ENV
+function UIBossHPInfo:UpdateBossNameAndElement(tplId, hpBarType, entityID, matchPet, curElement, hpEnergyVal, maxEnergyVal)
   if entityID ~= self._pstId then
-    return 
+    return
   end
   local name, elementType, icon = self:GetNameAndElement(tplId, hpBarType, matchPet)
   if curElement then
@@ -482,320 +359,200 @@ UIBossHPInfo.UpdateBossNameAndElement = function(self, tplId, hpBarType, entityI
   self._hpBarType = hpBarType
   if hpBarType == HPBarType.EliteBoss or hpBarType == HPBarType.Boss or hpBarType == HPBarType.NormalMonster or hpBarType == HPBarType.EliteMonster or HPBarType.BlackFist then
     self._tplId = tplId
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R12 in 'UnsetPending'
-
     if self._txtBossName then
-      (self._txtBossName).text = (StringTable.Get)(name)
-      local width = (self._txtBossName).preferredWidth
+      self._txtBossName.text = StringTable.Get(name)
+      local width = self._txtBossName.preferredWidth
       local rootWdth = 254
-      -- DECOMPILER ERROR at PC52: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self._rtRect).sizeDelta = Vector2(width, 50)
+      self._rtRect.sizeDelta = Vector2(width, 50)
       if width <= 124 then
         rootWdth = 254
+      elseif 244 <= width then
+        rootWdth = 376
       else
-        if width >= 244 then
-          rootWdth = 376
-        else
-          rootWdth = width + 130
-        end
+        rootWdth = width + 130
       end
-      -- DECOMPILER ERROR at PC67: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self._bossLayoutGroupRectTransform).sizeDelta = Vector2(rootWdth, 99)
+      self._bossLayoutGroupRectTransform.sizeDelta = Vector2(rootWdth, 99)
       if self._revolvingText then
-        (self._revolvingText):OnRefreshRevolving()
+        self._revolvingText:OnRefreshRevolving()
       end
     end
-    do
-      bossElement = elementType
-      ;
-      (self._imgIcon):LoadImage(icon)
-      -- DECOMPILER ERROR at PC94: Confused about usage of register: R12 in 'UnsetPending'
-
-      if hpBarType == HPBarType.EliteBoss or hpBarType == HPBarType.Boss then
-        (self._monsterType).color = Color(1, 0.047058823529412, 0.007843137254902, 1)
-        -- DECOMPILER ERROR at PC102: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (self._txtBoss).color = Color(1, 0.047058823529412, 0.007843137254902, 1)
-        ;
-        (self._txtBoss):SetText((StringTable.Get)("str_battle_boss"))
-      else
-        -- DECOMPILER ERROR at PC122: Confused about usage of register: R12 in 'UnsetPending'
-
-        if hpBarType == HPBarType.EliteMonster then
-          (self._monsterType).color = Color(0.68235294117647, 0.30980392156863, 1, 1)
-          -- DECOMPILER ERROR at PC130: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          (self._txtBoss).color = Color(0.68235294117647, 0.30980392156863, 1, 1)
-          ;
-          (self._txtBoss):SetText((StringTable.Get)("str_battle_elite"))
-        else
-          -- DECOMPILER ERROR at PC150: Confused about usage of register: R12 in 'UnsetPending'
-
-          if hpBarType == HPBarType.NormalMonster then
-            (self._monsterType).color = Color(0.60392156862745, 0.60392156862745, 0.60392156862745, 1)
-            -- DECOMPILER ERROR at PC158: Confused about usage of register: R12 in 'UnsetPending'
-
-            ;
-            (self._txtBoss).color = Color(0.60392156862745, 0.60392156862745, 0.60392156862745, 1)
-            ;
-            (self._txtBoss):SetText((StringTable.Get)("str_battle_monster"))
-          else
-            -- DECOMPILER ERROR at PC178: Confused about usage of register: R12 in 'UnsetPending'
-
-            if hpBarType == HPBarType.BlackFist then
-              (self._monsterType).color = Color(0.68235294117647, 0.30980392156863, 1, 1)
-              -- DECOMPILER ERROR at PC186: Confused about usage of register: R12 in 'UnsetPending'
-
-              ;
-              (self._txtBoss).color = Color(0.68235294117647, 0.30980392156863, 1, 1)
-              ;
-              (self._txtBoss):SetText((StringTable.Get)("str_battle_pet"))
-            end
-          end
-        end
-      end
-      self:UpdateBossElement(bossElement, entityID)
-      if self._uiBossHPBuffInfo and self._pstId then
-        (self._uiBossHPBuffInfo):SetBossData(self._pstId)
-      end
-      ;
-      (self._uIBossHPEliteInfo):OnHide()
-      local eliteInfoWidth = BattleConst.UIBossHPEliteInfoDefaultWidth
-      if hpEnergyVal and maxEnergyVal then
-        eliteInfoWidth = eliteInfoWidth - maxEnergyVal * BattleConst.UIBossHPEnergyItemWidth
-        ;
-        (self._uiBossHPEnergyInfo):SetData(entityID, hpEnergyVal, maxEnergyVal)
-      end
-      if self._uIBossHPEliteInfo and (hpBarType == HPBarType.EliteBoss or hpBarType == HPBarType.EliteMonster) then
-        (self._uIBossHPEliteInfo):SetWidth(eliteInfoWidth, false)
-        local eliteIDArray = (BattleStatHelper.GetEliteIDArray)(entityID, tplId)
-        ;
-        (self._uIBossHPEliteInfo):OnSetData(eliteIDArray)
-      end
-      do
-        local harmReductionInstance = (InnerGameHelperRender.GetSingleBuffByBuffEffect)(self._pstId, BuffEffectType.HarmReduction)
-        local coffinMusumeInstance = (InnerGameHelperRender.GetSingleBuffByBuffEffect)(self._pstId, BuffEffectType.CoffinMusume)
-        local coffinMusumeAtkDefInstance = (InnerGameHelperRender.GetSingleBuffByBuffEffect)(self._pstId, BuffEffectType.CoffinMusumeAtkDef)
-        local showHarmReduction = harmReductionInstance ~= nil or coffinMusumeInstance ~= nil or coffinMusumeAtkDefInstance ~= nil
-        ;
-        ((self._harmReductionRoot).gameObject):SetActive(showHarmReduction)
-        if showHarmReduction then
-          (self._harmReductionRootPath):SpawnObject("UIBossHarmReductionInfo")
-        end
-        if self._bossLayoutGroup then
-          (UIHelper.RefreshLayout)((self._bossLayoutGroup):GetComponent("RectTransform"))
-        end
-        self:FlushPassiveSkillInfo(tplId)
-        -- DECOMPILER ERROR: 3 unprocessed JMP targets
-      end
+    bossElement = elementType
+    self._imgIcon:LoadImage(icon)
+    if hpBarType == HPBarType.EliteBoss or hpBarType == HPBarType.Boss then
+      self._monsterType.color = Color(1.0, 0.047058823529411764, 0.00784313725490196, 1)
+      self._txtBoss.color = Color(1.0, 0.047058823529411764, 0.00784313725490196, 1)
+      self._txtBoss:SetText(StringTable.Get("str_battle_boss"))
+    elseif hpBarType == HPBarType.EliteMonster then
+      self._monsterType.color = Color(0.6823529411764706, 0.30980392156862746, 1.0, 1)
+      self._txtBoss.color = Color(0.6823529411764706, 0.30980392156862746, 1.0, 1)
+      self._txtBoss:SetText(StringTable.Get("str_battle_elite"))
+    elseif hpBarType == HPBarType.NormalMonster then
+      self._monsterType.color = Color(0.6039215686274509, 0.6039215686274509, 0.6039215686274509, 1)
+      self._txtBoss.color = Color(0.6039215686274509, 0.6039215686274509, 0.6039215686274509, 1)
+      self._txtBoss:SetText(StringTable.Get("str_battle_monster"))
+    elseif hpBarType == HPBarType.BlackFist then
+      self._monsterType.color = Color(0.6823529411764706, 0.30980392156862746, 1.0, 1)
+      self._txtBoss.color = Color(0.6823529411764706, 0.30980392156862746, 1.0, 1)
+      self._txtBoss:SetText(StringTable.Get("str_battle_pet"))
     end
   end
+  self:UpdateBossElement(bossElement, entityID)
+  if self._uiBossHPBuffInfo and self._pstId then
+    self._uiBossHPBuffInfo:SetBossData(self._pstId)
+  end
+  self._uIBossHPEliteInfo:OnHide()
+  local eliteInfoWidth = BattleConst.UIBossHPEliteInfoDefaultWidth
+  if hpEnergyVal and maxEnergyVal then
+    eliteInfoWidth = eliteInfoWidth - maxEnergyVal * BattleConst.UIBossHPEnergyItemWidth
+    self._uiBossHPEnergyInfo:SetData(entityID, hpEnergyVal, maxEnergyVal)
+  end
+  if self._uIBossHPEliteInfo and (hpBarType == HPBarType.EliteBoss or hpBarType == HPBarType.EliteMonster) then
+    self._uIBossHPEliteInfo:SetWidth(eliteInfoWidth, false)
+    local eliteIDArray = BattleStatHelper.GetEliteIDArray(entityID, tplId)
+    self._uIBossHPEliteInfo:OnSetData(eliteIDArray)
+  end
+  local harmReductionInstance = InnerGameHelperRender.GetSingleBuffByBuffEffect(self._pstId, BuffEffectType.HarmReduction)
+  local coffinMusumeInstance = InnerGameHelperRender.GetSingleBuffByBuffEffect(self._pstId, BuffEffectType.CoffinMusume)
+  local coffinMusumeAtkDefInstance = InnerGameHelperRender.GetSingleBuffByBuffEffect(self._pstId, BuffEffectType.CoffinMusumeAtkDef)
+  local showHarmReduction = harmReductionInstance ~= nil or coffinMusumeInstance ~= nil or coffinMusumeAtkDefInstance ~= nil
+  self._harmReductionRoot.gameObject:SetActive(showHarmReduction)
+  if showHarmReduction then
+    self._harmReductionRootPath:SpawnObject("UIBossHarmReductionInfo")
+  end
+  if self._bossLayoutGroup then
+    UIHelper.RefreshLayout(self._bossLayoutGroup:GetComponent("RectTransform"))
+  end
+  self:FlushPassiveSkillInfo(tplId)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.RefreshBossEnergy = function(self, entityID)
-  -- function num : 0_14
-  local max = (self._uiBossHPEnergyInfo)._max
+function UIBossHPInfo:RefreshBossEnergy(entityID)
+  local max = self._uiBossHPEnergyInfo._max
   local cur = max - self._multiHPStage + 1
-  ;
-  (self._uiBossHPEnergyInfo):UpdateBossHPEnergy(entityID, cur)
+  self._uiBossHPEnergyInfo:UpdateBossHPEnergy(entityID, cur)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.UpdateBossMultiHP = function(self, entityID, whiteHpPercent, switchCount, newMultiHPStage)
-  -- function num : 0_15 , upvalues : _ENV
+function UIBossHPInfo:UpdateBossMultiHP(entityID, whiteHpPercent, switchCount, newMultiHPStage)
   if entityID ~= self._pstId then
-    return 
+    return
   end
-  if self._multiHPSeq and not (self._multiHPSeq):IsComplete() then
-    (self._multiHPSeq):Complete()
+  if self._multiHPSeq and not self._multiHPSeq:IsComplete() then
+    self._multiHPSeq:Complete()
     self:RefreshBossEnergy(entityID)
   end
   self._multiHPStage = newMultiHPStage
-  self._multiHPSeq = (((DG.Tweening).DOTween).Sequence)()
-  while switchCount > 0 do
-    (self._multiHPSeq):Append((((self._sldWhiteHp):DOValue(0, 0.3)):OnPlay(function()
-    -- function num : 0_15_0 , upvalues : self
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._sldRedHp).value = 0
-  end
-)):OnComplete(function()
-    -- function num : 0_15_1 , upvalues : self, entityID
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._sldRedHp).value = 1
-    -- DECOMPILER ERROR at PC3: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._sldWhiteHp).value = 1
-    ;
-    (self._uiBossHPEnergyInfo):SubHPEnergy(entityID, 1)
-  end
-))
+  self._multiHPSeq = DG.Tweening.DOTween.Sequence()
+  while 0 < switchCount do
+    self._multiHPSeq:Append(self._sldWhiteHp:DOValue(0, 0.3):OnPlay(function()
+      self._sldRedHp.value = 0
+    end):OnComplete(function()
+      self._sldRedHp.value = 1
+      self._sldWhiteHp.value = 1
+      self._uiBossHPEnergyInfo:SubHPEnergy(entityID, 1)
+    end))
     switchCount = switchCount - 1
   end
-  ;
-  (self._multiHPSeq):Append((((self._sldWhiteHp):DOValue(whiteHpPercent, 0.3)):OnPlay(function()
-    -- function num : 0_15_2 , upvalues : self, whiteHpPercent
-    -- DECOMPILER ERROR at PC2: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._sldRedHp).value = whiteHpPercent
-  end
-)):OnComplete(function()
-    -- function num : 0_15_3 , upvalues : self, _ENV, whiteHpPercent, entityID
-    self.whiteHpPercent = (math.floor)(whiteHpPercent * 100)
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._sldRedHp).value = whiteHpPercent
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._sldWhiteHp).value = whiteHpPercent
+  self._multiHPSeq:Append(self._sldWhiteHp:DOValue(whiteHpPercent, 0.3):OnPlay(function()
+    self._sldRedHp.value = whiteHpPercent
+  end):OnComplete(function()
+    self.whiteHpPercent = math.floor(whiteHpPercent * 100)
+    self._sldRedHp.value = whiteHpPercent
+    self._sldWhiteHp.value = whiteHpPercent
     self:UpdateBossHpPercent(entityID)
     self:GreyName(whiteHpPercent)
-  end
-))
+  end))
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.UpdateBossWhiteHp = function(self, entityID, whiteHpPercent, isInit)
-  -- function num : 0_16 , upvalues : _ENV
+function UIBossHPInfo:UpdateBossWhiteHp(entityID, whiteHpPercent, isInit)
   if entityID ~= self._pstId then
-    return 
+    return
   end
-  if self._multiHPSeq and not (self._multiHPSeq):IsComplete() then
-    (self._multiHPSeq):Complete()
+  if self._multiHPSeq and not self._multiHPSeq:IsComplete() then
+    self._multiHPSeq:Complete()
     self:RefreshBossEnergy(entityID)
   end
   if self._tnrWhiteHP then
-    (self._tnrWhiteHP):Complete()
+    self._tnrWhiteHP:Complete()
   end
-  if whiteHpPercent > 0 and whiteHpPercent < 0.01 then
+  if 0 < whiteHpPercent and whiteHpPercent < 0.01 then
     whiteHpPercent = 0.01
   end
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R4 in 'UnsetPending'
-
   if isInit then
-    (self._sldWhiteHp).value = whiteHpPercent
+    self._sldWhiteHp.value = whiteHpPercent
   else
-    self._tnrWhiteHP = (self._sldWhiteHp):DOValue(whiteHpPercent, 0.3)
+    self._tnrWhiteHP = self._sldWhiteHp:DOValue(whiteHpPercent, 0.3)
   end
-  self.whiteHpPercent = (math.floor)(whiteHpPercent * 100)
+  self.whiteHpPercent = math.floor(whiteHpPercent * 100)
   self:UpdateBossHpPercent(entityID)
   self:GreyName(whiteHpPercent)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.UpdateBossHpPercent = function(self, entityID)
-  -- function num : 0_17 , upvalues : _ENV
+function UIBossHPInfo:UpdateBossHpPercent(entityID)
   if entityID ~= self._pstId then
-    return 
+    return
   end
-  local match = (GameGlobal.GetModule)(MatchModule)
+  local match = GameGlobal.GetModule(MatchModule)
   local enterData = match:GetMatchEnterData()
   local chessGroup = self:GetGameObject("chessHPGroup")
   if chessGroup then
     chessGroup:SetActive(false)
   end
-  ;
-  (self._txtHpPercent):SetText((table.concat)({self.whiteHpPercent, "%"}))
+  self._txtHpPercent:SetText(table.concat({
+    self.whiteHpPercent,
+    "%"
+  }))
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.GetWhiteHpPercent = function(self)
-  -- function num : 0_18
+function UIBossHPInfo:GetWhiteHpPercent()
   return self.whiteHpPercent
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.GreyName = function(self, hpPercent)
-  -- function num : 0_19
+function UIBossHPInfo:GreyName(hpPercent)
   if self._rawImage then
     if hpPercent <= 0 then
-      ((self._rawImage).material):SetFloat("_LuminosityAmount", 1)
+      self._rawImage.material:SetFloat("_LuminosityAmount", 1)
     else
-      ;
-      ((self._rawImage).material):SetFloat("_LuminosityAmount", 0)
+      self._rawImage.material:SetFloat("_LuminosityAmount", 0)
     end
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.buttonOpenBuffOnClick = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIBossHPInfo", input = "buttonOpenBuffOnClick", 
-args = {}
-})
-  local lst = (self.buffWindowRootPath):GetAllSpawnList()
-  if lst and (table.count)(lst) > 0 then
-    (lst[1]):Init(self._pstId, self._tplId, self._hpBarType)
+function UIBossHPInfo:buttonOpenBuffOnClick()
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIBossHPInfo",
+    input = "buttonOpenBuffOnClick",
+    args = {}
+  })
+  local lst = self.buffWindowRootPath:GetAllSpawnList()
+  if lst and table.count(lst) > 0 then
+    lst[1]:Init(self._pstId, self._tplId, self._hpBarType)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.ChangeBossHPBuffButtonRayCast = function(self, state)
-  -- function num : 0_21
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._buttonImage).raycastTarget = state
+function UIBossHPInfo:ChangeBossHPBuffButtonRayCast(state)
+  self._buttonImage.raycastTarget = state
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.GetImageSp = function(self, imageName)
-  -- function num : 0_22
-  return (self._uiAtlas):GetSprite(imageName)
+function UIBossHPInfo:GetImageSp(imageName)
+  return self._uiAtlas:GetSprite(imageName)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.SetRedHPImage = function(self, imageName)
-  -- function num : 0_23
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._imgFillRed).sprite = self:GetImageSp(imageName)
+function UIBossHPInfo:SetRedHPImage(imageName)
+  self._imgFillRed.sprite = self:GetImageSp(imageName)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.SetYellowHPImage = function(self, imageName)
-  -- function num : 0_24
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._imgFillYellow).sprite = self:GetImageSp(imageName)
+function UIBossHPInfo:SetYellowHPImage(imageName)
+  self._imgFillYellow.sprite = self:GetImageSp(imageName)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.GetImageName = function(self, imageID)
-  -- function num : 0_25 , upvalues : _ENV
-  local cfg = (Cfg.cfg_world_boss_hp_image)[imageID]
+function UIBossHPInfo:GetImageName(imageID)
+  local cfg = Cfg.cfg_world_boss_hp_image[imageID]
   if not cfg then
-    (Log.fatal)("ImageID :", imageID, "invalid not in cfg_world_boss_hp_image")
+    Log.fatal("ImageID :", imageID, "invalid not in cfg_world_boss_hp_image")
   end
   return cfg.ImageName
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.InitWorldBossHP = function(self, t)
-  -- function num : 0_26 , upvalues : _ENV
+function UIBossHPInfo:InitWorldBossHP(t)
   self._isCurWorldBossStyle = true
   local redHPImageID = t.worldBossCurImageID
   local yellowHPImageID = t.worldBossPreImageID
@@ -803,175 +560,101 @@ UIBossHPInfo.InitWorldBossHP = function(self, t)
   local yellowImageID = self:GetImageName(yellowHPImageID)
   self:SetRedHPImage(redImageName)
   self:SetYellowHPImage(yellowImageID)
-  ;
-  (self.sldYellowHpGO):SetActive(true)
-  ;
-  (self.worldBossGO):SetActive(true)
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._sldYellowHp).value = 1
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._sldRedHp).value = 0
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._txtHpPercent).text = "0%"
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._sldWhiteHp).value = 0
-  ;
-  (self.sldWhiteHpGO):SetActive(false)
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R6 in 'UnsetPending'
-
-  if ((self._harmReductionRoot).gameObject).activeSelf then
-    (((self.worldBossGO).gameObject).transform).localPosition = Vector3(0, -50, 0)
+  self.sldYellowHpGO:SetActive(true)
+  self.worldBossGO:SetActive(true)
+  self._sldYellowHp.value = 1
+  self._sldRedHp.value = 0
+  self._txtHpPercent.text = "0%"
+  self._sldWhiteHp.value = 0
+  self.sldWhiteHpGO:SetActive(false)
+  if self._harmReductionRoot.gameObject.activeSelf then
+    self.worldBossGO.gameObject.transform.localPosition = Vector3(0, -50, 0)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.SwitchWorldBossHPStage = function(self, newRedImageID, newYellowImageID)
-  -- function num : 0_27 , upvalues : _ENV
+function UIBossHPInfo:SwitchWorldBossHPStage(newRedImageID, newYellowImageID)
   local redImageName = self:GetImageName(newRedImageID)
   local yellowImageID = self:GetImageName(newYellowImageID)
-  ;
-  (Log.fatal)("RedImage:", redImageName, " YellowImage:", yellowImageID)
+  Log.fatal("RedImage:", redImageName, " YellowImage:", yellowImageID)
   self:SetRedHPImage(redImageName)
   self:SetYellowHPImage(yellowImageID)
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._sldWhiteHp).value = 0
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._sldRedHp).value = 0
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._txtHpPercent).text = "0%"
+  self._sldWhiteHp.value = 0
+  self._sldRedHp.value = 0
+  self._txtHpPercent.text = "0%"
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.UpdateWorldBossHP = function(self, pstID, changeInfoList, damage, stage)
-  -- function num : 0_28 , upvalues : _ENV
+function UIBossHPInfo:UpdateWorldBossHP(pstID, changeInfoList, damage, stage)
   if pstID ~= self._pstId then
-    return 
+    return
   end
   self._totalDamageNum = self._totalDamageNum + damage
-  local showNum = (HelperProxy:GetInstance()):SMazeDamageUnit(self._totalDamageNum)
-  ;
-  (self._txtTotalDamageNum):SetText(showNum)
+  local showNum = HelperProxy:GetInstance():SMazeDamageUnit(self._totalDamageNum)
+  self._txtTotalDamageNum:SetText(showNum)
   local grayTex = ""
-  local addZeroTex = (UIActivityHelper.AddZeroFrontNum)(8, self._totalDamageNum)
+  local addZeroTex = UIActivityHelper.AddZeroFrontNum(8, self._totalDamageNum)
   if addZeroTex == tostring(self._totalDamageNum) then
     grayTex = showNum
   else
     grayTex = addZeroTex
   end
-  ;
-  (self._txtTotalDamageNumGray):SetText(grayTex)
-  ;
-  (self._txtCurStageNum):SetText("x" .. tostring(stage))
-  for index,info in ipairs(changeInfoList) do
+  self._txtTotalDamageNumGray:SetText(grayTex)
+  self._txtCurStageNum:SetText("x" .. tostring(stage))
+  for index, info in ipairs(changeInfoList) do
     if info.redHP > 0 and info.redHP < 0.01 then
       info.redHP = 0.01
     end
-    -- DECOMPILER ERROR at PC56: Confused about usage of register: R13 in 'UnsetPending'
-
-    ;
-    (self._sldRedHp).value = info.redHP
-    local percent = (math.floor)(info.redHP * 100)
-    -- DECOMPILER ERROR at PC66: Confused about usage of register: R14 in 'UnsetPending'
-
-    ;
-    (self._txtHpPercent).text = percent .. "%"
+    self._sldRedHp.value = info.redHP
+    local percent = math.floor(info.redHP * 100)
+    self._txtHpPercent.text = percent .. "%"
     if info.changeStage then
       self:SwitchWorldBossHPStage(info.redImageID, info.yellowImageID)
     end
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.UpdateBossGreyHP = function(self, entityID, value, redhp, maxHP)
-  -- function num : 0_29
+function UIBossHPInfo:UpdateBossGreyHP(entityID, value, redhp, maxHP)
   if entityID ~= self._pstId then
-    return 
+    return
   end
-  if not value then
-    value = 0
-  end
-  if not redhp then
-    redhp = 0
-  end
-  if not maxHP then
-    maxHP = 1
-  end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._sldGreyHp).value = (value + redhp) / maxHP or 0
+  value = value or 0
+  redhp = redhp or 0
+  maxHP = maxHP or 1
+  self._sldGreyHp.value = (value + redhp) / maxHP or 0
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.UpdateBossCurseHP = function(self, entityID, bShow, value, redhp, maxHP)
-  -- function num : 0_30 , upvalues : _ENV
+function UIBossHPInfo:UpdateBossCurseHP(entityID, bShow, value, redhp, maxHP)
   if entityID ~= self._pstId then
-    return 
+    return
   end
   if not self._sldCurseHpBgGo then
-    return 
+    return
   end
   if not value then
     bShow = false
     value = 0
   end
-  if not value then
-    value = 0
-  end
-  if not redhp then
-    redhp = 0
-  end
-  if not maxHP then
-    maxHP = 1
-  end
-  ;
-  (self._sldCurseHpBgGo):SetActive(bShow)
-  ;
-  (self._curseHpGo):SetActive(bShow)
+  value = value or 0
+  redhp = redhp or 0
+  maxHP = maxHP or 1
+  self._sldCurseHpBgGo:SetActive(bShow)
+  self._curseHpGo:SetActive(bShow)
   local percent = value / maxHP
-  if percent > 1 then
+  if 1 < percent then
     percent = 1
   end
-  local hpMaxWidth = ((self._sldRedHpRectTransform).rect).width
-  local hpMaxHeight = ((self._sldRedHpRectTransform).rect).height
+  local hpMaxWidth = self._sldRedHpRectTransform.rect.width
+  local hpMaxHeight = self._sldRedHpRectTransform.rect.height
   local curseHpWidth = percent * hpMaxWidth
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._curseHpRect).sizeDelta = Vector2(curseHpWidth, hpMaxHeight)
+  self._curseHpRect.sizeDelta = Vector2(curseHpWidth, hpMaxHeight)
   local curseHpBgLeftOff = 31
   local curseHpBgWidth = curseHpWidth + curseHpBgLeftOff
-  local curseHpBgMaxHeight = ((self._sldCurseHpBgRect).rect).height
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R13 in 'UnsetPending'
-
-  ;
-  (self._sldCurseHpBgRect).sizeDelta = Vector2(curseHpBgWidth, curseHpBgMaxHeight)
+  local curseHpBgMaxHeight = self._sldCurseHpBgRect.rect.height
+  self._sldCurseHpBgRect.sizeDelta = Vector2(curseHpBgWidth, curseHpBgMaxHeight)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.GetNameAndElement = function(self, tplId, type, matchPet)
-  -- function num : 0_31 , upvalues : _ENV
+function UIBossHPInfo:GetNameAndElement(tplId, type, matchPet)
   if type == HPBarType.EliteMonster or type == HPBarType.NormalMonster or type == HPBarType.Boss or type == HPBarType.EliteBoss then
-    local monsterConfigData = (ConfigServiceHelper.GetMonsterConfigData)()
+    local monsterConfigData = ConfigServiceHelper.GetMonsterConfigData()
     local cfgMonsterObject = monsterConfigData:GetMonsterObject(tplId)
     local cfgMonsterClass = monsterConfigData:GetMonsterClass(tplId)
     if cfgMonsterObject then
@@ -980,24 +663,17 @@ UIBossHPInfo.GetNameAndElement = function(self, tplId, type, matchPet)
       local icon = cfgMonsterClass.HeadIcon
       return name, element, icon
     end
-  else
-    do
-      if type == HPBarType.BlackFist then
-        local petcfg = (Cfg.cfg_pet)[tplId]
-        local element = matchPet:GetPetFirstElement()
-        local headIconName = matchPet:GetPetHead(PetSkinEffectPath.HEAD_ICON_CHAIN_SKILL_PREVIEW)
-        return petcfg.Name, element, headIconName
-      end
-    end
+  elseif type == HPBarType.BlackFist then
+    local petcfg = Cfg.cfg_pet[tplId]
+    local element = matchPet:GetPetFirstElement()
+    local headIconName = matchPet:GetPetHead(PetSkinEffectPath.HEAD_ICON_CHAIN_SKILL_PREVIEW)
+    return petcfg.Name, element, headIconName
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.UpdateTeamHPChange = function(self, args)
-  -- function num : 0_32
+function UIBossHPInfo:UpdateTeamHPChange(args)
   if args.isLocalTeam then
-    return 
+    return
   end
   local maxHP = args.maxHP
   local redHP = args.currentHP / maxHP
@@ -1013,130 +689,86 @@ UIBossHPInfo.UpdateTeamHPChange = function(self, args)
   self:UpdateBossCurseHP(entityID, args.showCurseHp, args.curseHpVal, args.currentHP, maxHP)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.buttonOpenPassiveSkillInfoOnClick = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function UIBossHPInfo:buttonOpenPassiveSkillInfoOnClick()
   if not self._hasPassiveSkillInfo then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIBossHPInfo", input = "buttonOpenPassiveSkillInfoOnClick", 
-args = {}
-})
-  local lst = (self.passiveSkillInfoWinRootPath):GetAllSpawnList()
-  if lst and (table.count)(lst) > 0 then
-    (lst[1]):Init(self._pstId, self._tplId)
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIBossHPInfo",
+    input = "buttonOpenPassiveSkillInfoOnClick",
+    args = {}
+  })
+  local lst = self.passiveSkillInfoWinRootPath:GetAllSpawnList()
+  if lst and table.count(lst) > 0 then
+    lst[1]:Init(self._pstId, self._tplId)
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.UpdateAntiActiveSkill = function(self, entityID, showCD)
-  -- function num : 0_34 , upvalues : _ENV
+function UIBossHPInfo:UpdateAntiActiveSkill(entityID, showCD)
   if entityID ~= self._pstId then
-    return 
+    return
   end
-  local antiSkillEnabled = (InnerGameHelperRender.GetEntityAttribute)(entityID, "AntiSkillEnabled")
-  local maxCount = (InnerGameHelperRender.GetEntityAttribute)(entityID, "MaxAntiSkillCountPerRound")
-  local antiCD = (InnerGameHelperRender.GetEntityAttribute)(entityID, "WaitActiveSkillCount")
-  local show = (maxCount ~= 0 and antiSkillEnabled == 1) or showCD ~= nil
-  ;
-  ((self._antiActiveSkillRoot).gameObject):SetActive(show)
+  local antiSkillEnabled = InnerGameHelperRender.GetEntityAttribute(entityID, "AntiSkillEnabled")
+  local maxCount = InnerGameHelperRender.GetEntityAttribute(entityID, "MaxAntiSkillCountPerRound")
+  local antiCD = InnerGameHelperRender.GetEntityAttribute(entityID, "WaitActiveSkillCount")
+  local show = maxCount ~= 0 and antiSkillEnabled == 1 or showCD ~= nil
+  self._antiActiveSkillRoot.gameObject:SetActive(show)
   if not show then
-    return 
+    return
   end
-  local originalCount = (InnerGameHelperRender.GetEntityAttribute)(entityID, "OriginalWaitActiveSkillCount")
-  ;
-  ((self._txtAntiActiveSkillCount).gameObject):SetActive(originalCount ~= 1)
+  local originalCount = InnerGameHelperRender.GetEntityAttribute(entityID, "OriginalWaitActiveSkillCount")
+  self._txtAntiActiveSkillCount.gameObject:SetActive(originalCount ~= 1)
   if showCD then
     antiCD = showCD
   end
-  ;
-  (self._txtAntiActiveSkillCount):SetText(antiCD)
+  self._txtAntiActiveSkillCount:SetText(antiCD)
   self:_EnergyXAdaptive(show)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.PreviewSetWorldBossHP = function(self, info)
-  -- function num : 0_35 , upvalues : _ENV
+function UIBossHPInfo:PreviewSetWorldBossHP(info)
   if info.pstId ~= self._pstId then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._sldGreyHp).value = 0
+  self._sldGreyHp.value = 0
   self:SwitchWorldBossHPStage(info.worldBossCurImageID, info.worldBossPreImageID)
   self._totalDamageNum = info.worldBossTotalDamage
-  ;
-  (self._txtTotalDamageNum):SetText(tostring(self._totalDamageNum))
-  ;
-  (self._txtTotalDamageNumGray):SetText((UIActivityHelper.AddZeroFrontNum)(8, self._totalDamageNum))
-  ;
-  (self._txtCurStageNum):SetText("x" .. tostring(info.worldBossCurStage))
-  if info.worldBossCurStageHpPercent > 0 and info.worldBossCurStageHpPercent < 0.01 then
+  self._txtTotalDamageNum:SetText(tostring(self._totalDamageNum))
+  self._txtTotalDamageNumGray:SetText(UIActivityHelper.AddZeroFrontNum(8, self._totalDamageNum))
+  self._txtCurStageNum:SetText("x" .. tostring(info.worldBossCurStage))
+  if 0 < info.worldBossCurStageHpPercent and info.worldBossCurStageHpPercent < 0.01 then
     info.worldBossCurStageHpPercent = 0.01
   end
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._sldRedHp).value = info.worldBossCurStageHpPercent
-  local percent = (math.floor)(info.worldBossCurStageHpPercent * 100)
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._txtHpPercent).text = percent .. "%"
+  self._sldRedHp.value = info.worldBossCurStageHpPercent
+  local percent = math.floor(info.worldBossCurStageHpPercent * 100)
+  self._txtHpPercent.text = percent .. "%"
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.PreviewRevertWorldBossStyle = function(self)
-  -- function num : 0_36
+function UIBossHPInfo:PreviewRevertWorldBossStyle()
   if not self._isCurWorldBossStyle then
-    return 
+    return
   end
   local redImageName = "thread_bosstiao2_frame"
   local yellowImageID = "thread_bosstiao3_frame"
   self:SetRedHPImage(redImageName)
   self:SetYellowHPImage(yellowImageID)
-  ;
-  (self.sldYellowHpGO):SetActive(false)
-  ;
-  (self.worldBossGO):SetActive(false)
-  ;
-  (self.sldWhiteHpGO):SetActive(true)
+  self.sldYellowHpGO:SetActive(false)
+  self.worldBossGO:SetActive(false)
+  self.sldWhiteHpGO:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo.SetHPShieldImg = function(self)
-  -- function num : 0_37 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIBossHPInfo:SetHPShieldImg()
   if self._hpShieldType == HPShieldType.Lava then
-    (self._shieldImg).sprite = (InnerGameHelperRender:GetInstance()):GetImageFromInnerUI("thread_junei_rongyan01")
-  else
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-    if self._hpShieldType == HPShieldType.Normal then
-      (self._shieldImg).sprite = (InnerGameHelperRender:GetInstance()):GetImageFromInnerUI("thread_junei_xuetiao5")
-    end
+    self._shieldImg.sprite = InnerGameHelperRender:GetInstance():GetImageFromInnerUI("thread_junei_rongyan01")
+  elseif self._hpShieldType == HPShieldType.Normal then
+    self._shieldImg.sprite = InnerGameHelperRender:GetInstance():GetImageFromInnerUI("thread_junei_xuetiao5")
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPInfo._EnergyXAdaptive = function(self, anti)
-  -- function num : 0_38 , upvalues : _ENV
+function UIBossHPInfo:_EnergyXAdaptive(anti)
   local rect = self:GetUIComponent("RectTransform", "energyLayerRoot")
   if anti then
-    rect.anchoredPosition = Vector3((self._rawPosition).x - 53, (self._rawPosition).y - 3, (rect.anchoredPosition).z)
+    rect.anchoredPosition = Vector3(self._rawPosition.x - 53, self._rawPosition.y - 3, rect.anchoredPosition.z)
   else
-    rect.anchoredPosition = Vector3((self._rawPosition).x, (self._rawPosition).y, (rect.anchoredPosition).z)
+    rect.anchoredPosition = Vector3(self._rawPosition.x, self._rawPosition.y, rect.anchoredPosition.z)
   end
 end
-
-

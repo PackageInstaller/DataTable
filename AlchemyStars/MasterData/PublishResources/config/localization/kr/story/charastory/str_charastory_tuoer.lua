@@ -1,8 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/kr/story/charastory/str_charastory_tuoer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {ui_story_31330401_1_dialog_content = "PlayerName 씨, 왜 숨이 거칠어지는 거죠? 그렇게 제 요리가 기대되는 건가요~?", ui_story_31330401_2_dialog_content = "뭐, 당연한 일이죠. 제가 만든 요리는 이 세상 누구도 따라 할 수 없으니까요.", ui_story_31330401_3_dialog_content = "공포 수준으로 말하자면 확실히 아무도 따라 할 수 없겠어...", ui_story_31330401_4_dialog_content = "다시 와 줘서 기쁘긴 한데, 그 괴상한 요리 연구는 좀 멈춰줄 수 없을까?", ui_story_31330401_5_dialog_content = "클레임이 엄청 들어오고 있다고...", ui_story_31330401_6_dialog_content = "무슨 일이야? 바이스? 바이스, 괜찮아?", ui_story_31330401_7_dialog_content = "하... 빨리 PlayerName한테 연락해 줘. 지금 당장... 스카이워커호를 타고 도망치라고...\n이건... 내 마지막 당부...야...", ui_story_31330401_8_dialog_content = "이 기묘한 기체는 뭐야? 설마 암귀의 공격인가?", ui_story_31330401_9_dialog_content = "암귀...가 아니라, 토, 토르 씨가... 만든 새로운 암흑요리야... 빠, 빨리 도망쳐!", ui_story_31330401_10_dialog_content = "바이스 씨, 왜 도망가요? 얼른 제가 만든 「사막거미를 곁들인 암귀 볶음」 좀 먹어 보세요.\n분명히 맛있을 거라구요!", ui_story_31330401_11_dialog_content = "그 뒤로 바이스는 암귀에 대한 트라우마까지 생겨버렸다고.", ui_story_31330401_12_dialog_content = "그건 사소한 사고예요! 이번엔 암귀를 재료로 안 썼으니까 괜찮아요.", ui_story_31330401_13_dialog_content = "그럼 이번엔 또 뭘 만들었는데?", ui_story_31330401_14_dialog_content = "이국적인 식재료를 결합해서 새로운 맛에 도전했어요.", ui_story_31330401_15_dialog_content = "끝이야... 갑자기 나쁜 예감이 들어.", ui_story_31330401_16_dialog_content = "우선 일루미나 연방의 향신료를 채택했어요.", ui_story_31330401_17_dialog_content = "음? 의외로 정상이네.", ui_story_31330401_18_dialog_content = "다음으로 용주에 가서 질 좋은 고추를 골랐어요.", ui_story_31330401_19_dialog_content = "아, 용주 요리였어? 그럼 조금 기대되는데?", ui_story_31330401_20_dialog_content = "그리고 대망의 메인 식재료!\n레디젤 사막을 한참 동안 다녀서 마침내 잡은 맹독 사막 도마뱀이랍니다!", ui_story_31330401_21_dialog_content = "아?", ui_story_31330401_22_dialog_content = "거기에 제가 있던 세계의 과일을 곁들여서 「스파이시 도마뱀과 과일 플레이트」 완성!", ui_story_31330401_23_dialog_content = "<color=#e8d9bb>걸쭉한 붉은 소스와 아직 죽지 않은 듯한 도마뱀이 어우러져 공포와 비명을 자아내고 있다 .</color>", ui_story_31330401_24_dialog_content = "토르 씨... 좀 평범한 요리로 만들면 안 될까?", ui_story_31330401_25_dialog_content = "평범해선 안 되죠! 그럼 PlayerName 씨에 대한 감사의 마음을... 전할 수가 없잖아요...", ui_story_31330401_26_dialog_content = "그때 우릴 도와준 고마움은 지금도 잊지 않고 있어요.\n그래서 전... 아무도 해본 적 없는 요리를 만들고 싶은 거예요.", ui_story_31330401_27_dialog_content = "PlayerName 씨, 이 요리... 먹어 주실 거죠?", ui_story_31330401_28_option_content = "당연하지.", ui_story_31330401_29_dialog_content = "토르 씨가 정말 노력했다는 걸 알 수 있겠어.", ui_story_31330401_30_dialog_content = "보기엔 조금 징그럽지만... 그래도 먹어볼게.", ui_story_31330401_31_option_content = "이건 아무래도 좀...", ui_story_31330401_32_dialog_content = "...그런가요. 정말 미안해요... 지금 바로 치울게요.", ui_story_31330401_33_dialog_content = "그래도 먹을게.", ui_story_31330401_34_dialog_content = "이건 토르 씨가 날 위해 해 준 세상 단 하나뿐인 요리니까.", ui_story_31330401_35_dialog_content = "PlayerName 씨!", ui_story_31330401_36_dialog_content = "(동족들아... 날 지켜줘! 내가 모든 걸 이겨낼 용기를 줘!)", ui_story_31330401_37_dialog_content = "......", ui_story_31330401_38_dialog_content = "<size=50>으으읍──!</size> ...어? 이거 왜 맛있어?", ui_story_31330401_39_dialog_content = "말했잖아요~ 전 세계 제일의 메이드라구요. 제가 만든 요리가 맛없을 리가 있겠어요?", ui_story_31330401_40_dialog_content = "(맛있는 요리를 「암흑화」시키는 능력도 일종의 특별한 재능일지도 모르겠네...)", ui_story_31330401_41_dialog_content = "좋아! 그럼 앞으로도 이 세계에서 요리 솜씨를 연마해야겠어요! 다음엔 뭘 만들까요!", ui_story_31330401_42_dialog_content = "가정식이면 돼..."}
+local config = {
+  ui_story_31330401_1_dialog_content = "PlayerName 씨, 왜 숨이 거칠어지는 거죠? 그렇게 제 요리가 기대되는 건가요~?",
+  ui_story_31330401_2_dialog_content = "뭐, 당연한 일이죠. 제가 만든 요리는 이 세상 누구도 따라 할 수 없으니까요.",
+  ui_story_31330401_3_dialog_content = "공포 수준으로 말하자면 확실히 아무도 따라 할 수 없겠어...",
+  ui_story_31330401_4_dialog_content = "다시 와 줘서 기쁘긴 한데, 그 괴상한 요리 연구는 좀 멈춰줄 수 없을까?",
+  ui_story_31330401_5_dialog_content = "클레임이 엄청 들어오고 있다고...",
+  ui_story_31330401_6_dialog_content = "무슨 일이야? 바이스? 바이스, 괜찮아?",
+  ui_story_31330401_7_dialog_content = "하... 빨리 PlayerName한테 연락해 줘. 지금 당장... 스카이워커호를 타고 도망치라고...\n이건... 내 마지막 당부...야...",
+  ui_story_31330401_8_dialog_content = "이 기묘한 기체는 뭐야? 설마 암귀의 공격인가?",
+  ui_story_31330401_9_dialog_content = "암귀...가 아니라, 토, 토르 씨가... 만든 새로운 암흑요리야... 빠, 빨리 도망쳐!",
+  ui_story_31330401_10_dialog_content = "바이스 씨, 왜 도망가요? 얼른 제가 만든 「사막거미를 곁들인 암귀 볶음」 좀 먹어 보세요.\n분명히 맛있을 거라구요!",
+  ui_story_31330401_11_dialog_content = "그 뒤로 바이스는 암귀에 대한 트라우마까지 생겨버렸다고.",
+  ui_story_31330401_12_dialog_content = "그건 사소한 사고예요! 이번엔 암귀를 재료로 안 썼으니까 괜찮아요.",
+  ui_story_31330401_13_dialog_content = "그럼 이번엔 또 뭘 만들었는데?",
+  ui_story_31330401_14_dialog_content = "이국적인 식재료를 결합해서 새로운 맛에 도전했어요.",
+  ui_story_31330401_15_dialog_content = "끝이야... 갑자기 나쁜 예감이 들어.",
+  ui_story_31330401_16_dialog_content = "우선 일루미나 연방의 향신료를 채택했어요.",
+  ui_story_31330401_17_dialog_content = "음? 의외로 정상이네.",
+  ui_story_31330401_18_dialog_content = "다음으로 용주에 가서 질 좋은 고추를 골랐어요.",
+  ui_story_31330401_19_dialog_content = "아, 용주 요리였어? 그럼 조금 기대되는데?",
+  ui_story_31330401_20_dialog_content = "그리고 대망의 메인 식재료!\n레디젤 사막을 한참 동안 다녀서 마침내 잡은 맹독 사막 도마뱀이랍니다!",
+  ui_story_31330401_21_dialog_content = "아?",
+  ui_story_31330401_22_dialog_content = "거기에 제가 있던 세계의 과일을 곁들여서 「스파이시 도마뱀과 과일 플레이트」 완성!",
+  ui_story_31330401_23_dialog_content = "<color=#e8d9bb>걸쭉한 붉은 소스와 아직 죽지 않은 듯한 도마뱀이 어우러져 공포와 비명을 자아내고 있다 .</color>",
+  ui_story_31330401_24_dialog_content = "토르 씨... 좀 평범한 요리로 만들면 안 될까?",
+  ui_story_31330401_25_dialog_content = "평범해선 안 되죠! 그럼 PlayerName 씨에 대한 감사의 마음을... 전할 수가 없잖아요...",
+  ui_story_31330401_26_dialog_content = "그때 우릴 도와준 고마움은 지금도 잊지 않고 있어요.\n그래서 전... 아무도 해본 적 없는 요리를 만들고 싶은 거예요.",
+  ui_story_31330401_27_dialog_content = "PlayerName 씨, 이 요리... 먹어 주실 거죠?",
+  ui_story_31330401_28_option_content = "당연하지.",
+  ui_story_31330401_29_dialog_content = "토르 씨가 정말 노력했다는 걸 알 수 있겠어.",
+  ui_story_31330401_30_dialog_content = "보기엔 조금 징그럽지만... 그래도 먹어볼게.",
+  ui_story_31330401_31_option_content = "이건 아무래도 좀...",
+  ui_story_31330401_32_dialog_content = "...그런가요. 정말 미안해요... 지금 바로 치울게요.",
+  ui_story_31330401_33_dialog_content = "그래도 먹을게.",
+  ui_story_31330401_34_dialog_content = "이건 토르 씨가 날 위해 해 준 세상 단 하나뿐인 요리니까.",
+  ui_story_31330401_35_dialog_content = "PlayerName 씨!",
+  ui_story_31330401_36_dialog_content = "(동족들아... 날 지켜줘! 내가 모든 걸 이겨낼 용기를 줘!)",
+  ui_story_31330401_37_dialog_content = "......",
+  ui_story_31330401_38_dialog_content = "<size=50>으으읍──!</size> ...어? 이거 왜 맛있어?",
+  ui_story_31330401_39_dialog_content = "말했잖아요~ 전 세계 제일의 메이드라구요. 제가 만든 요리가 맛없을 리가 있겠어요?",
+  ui_story_31330401_40_dialog_content = "(맛있는 요리를 「암흑화」시키는 능력도 일종의 특별한 재능일지도 모르겠네...)",
+  ui_story_31330401_41_dialog_content = "좋아! 그럼 앞으로도 이 세계에서 요리 솜씨를 연마해야겠어요! 다음엔 뭘 만들까요!",
+  ui_story_31330401_42_dialog_content = "가정식이면 돼..."
+}
 return config
-

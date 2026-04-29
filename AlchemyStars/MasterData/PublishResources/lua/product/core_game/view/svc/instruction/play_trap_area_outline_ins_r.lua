@@ -1,39 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_trap_area_outline_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayTrapAreaOutlineInstruction", BaseInstruction)
 PlayTrapAreaOutlineInstruction = PlayTrapAreaOutlineInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTrapAreaOutlineInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTrapAreaOutlineInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._trapType = tonumber(paramList.trapType)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrapAreaOutlineInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTrapAreaOutlineInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 10})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      10
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrapAreaOutlineInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayTrapAreaOutlineInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local utilScope = world:GetService("UtilScopeCalc")
   local tGridRange = utilScope:GetGridPossessedByTrapType(self._trapType)
   local rsvcEntity = world:GetService("RenderEntity")
   rsvcEntity:ClearTrapAreaOutlineEntity()
-  rsvcEntity:CreateTrapAreaOutlineEntity(tGridRange, ((Cfg.cfg_effect)[self._effectID]).ResPath)
+  rsvcEntity:CreateTrapAreaOutlineEntity(tGridRange, Cfg.cfg_effect[self._effectID].ResPath)
 end
-
-

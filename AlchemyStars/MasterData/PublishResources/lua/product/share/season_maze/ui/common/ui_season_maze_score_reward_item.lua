@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/common/ui_season_maze_score_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeScroreRewarditem", UICustomWidget)
 UISeasonMazeScroreRewarditem = UISeasonMazeScroreRewarditem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeScroreRewarditem.InitWidget = function(self)
-  -- function num : 0_0
+function UISeasonMazeScroreRewarditem:InitWidget()
   self.rewardPool = self:GetUIComponent("UISelectObjectPath", "reward")
   self.progressText = self:GetUIComponent("UILocalizationText", "progress")
   self.canvasGroup = self:GetUIComponent("CanvasGroup", "canvasGroup")
@@ -17,23 +10,16 @@ UISeasonMazeScroreRewarditem.InitWidget = function(self)
   self.rect = self:GetUIComponent("RectTransform", "root")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScroreRewarditem.OnShow = function(self)
-  -- function num : 0_1
+function UISeasonMazeScroreRewarditem:OnShow()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScroreRewarditem.SetData = function(self, roleAssets, progress, state, tips, uictrl)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeScroreRewarditem:SetData(roleAssets, progress, state, tips, uictrl)
   self.uictrl = uictrl
   self.state = state
   self.progress = progress
-  ;
-  (self.rewardPool):SpawnObjects("UISeasonMazeItem", #roleAssets)
-  local spawnList = (self.rewardPool):GetAllSpawnList()
+  self.rewardPool:SpawnObjects("UISeasonMazeItem", #roleAssets)
+  local spawnList = self.rewardPool:GetAllSpawnList()
   for i = 1, #roleAssets do
     local roleAsset = roleAssets[i]
     local obj = SeasonMazeEffect:New()
@@ -41,66 +27,35 @@ UISeasonMazeScroreRewarditem.SetData = function(self, roleAssets, progress, stat
     obj.id = roleAsset.assetid
     obj.value_min = roleAsset.count
     obj.value_max = roleAsset.count
-    ;
-    (spawnList[i]):SetData(obj, tips, 1)
+    spawnList[i]:SetData(obj, tips, 1)
   end
-  ;
-  (self.progressText):SetText(self.progress)
+  self.progressText:SetText(self.progress)
   if state == CampaignPointProgressStatus.CPPS_Taken then
-    (self.mask):SetActive(true)
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.canvasGroup).alpha = 0.3
-    ;
-    (self.bgselect):SetActive(false)
+    self.mask:SetActive(true)
+    self.canvasGroup.alpha = 0.3
+    self.bgselect:SetActive(false)
+  elseif state == CampaignPointProgressStatus.CPPS_Completed then
+    self.bgselect:SetActive(true)
+    self.mask:SetActive(false)
+    self.canvasGroup.alpha = 1
   else
-    if state == CampaignPointProgressStatus.CPPS_Completed then
-      (self.bgselect):SetActive(true)
-      ;
-      (self.mask):SetActive(false)
-      -- DECOMPILER ERROR at PC67: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self.canvasGroup).alpha = 1
-    else
-      ;
-      (self.bgselect):SetActive(false)
-      ;
-      (self.mask):SetActive(false)
-      -- DECOMPILER ERROR at PC78: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self.canvasGroup).alpha = 1
-    end
+    self.bgselect:SetActive(false)
+    self.mask:SetActive(false)
+    self.canvasGroup.alpha = 1
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScroreRewarditem.GetProgress = function(self)
-  -- function num : 0_3
+function UISeasonMazeScroreRewarditem:GetProgress()
   return self.progress
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScroreRewarditem.SetSelect = function(self, progress)
-  -- function num : 0_4
+function UISeasonMazeScroreRewarditem:SetSelect(progress)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScroreRewarditem.BgOnClick = function(self)
-  -- function num : 0_5
-  (self.uictrl):OnRewardProgressSelect(self.progress, self.state)
+function UISeasonMazeScroreRewarditem:BgOnClick()
+  self.uictrl:OnRewardProgressSelect(self.progress, self.state)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScroreRewarditem.GetBottomPosY = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  return (math.abs)(((self.rect).anchoredPosition).y) + ((self.rect).sizeDelta).y / 2
+function UISeasonMazeScroreRewarditem:GetBottomPosY()
+  return math.abs(self.rect.anchoredPosition.y) + self.rect.sizeDelta.y / 2
 end
-
-

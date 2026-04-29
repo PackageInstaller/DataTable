@@ -1,190 +1,88 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/minigame/ui_minigame_guest.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMiniGameGuest", UICustomWidget)
 UIMiniGameGuest = UIMiniGameGuest
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMiniGameGuest.Constructor = function(self)
-  -- function num : 0_0
+function UIMiniGameGuest:Constructor()
   self._inited = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameGuest.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIMiniGameGuest:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameGuest._GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMiniGameGuest:_GetComponents()
   self._lookForward = self:GetUIComponent("RawImageLoader", "LookForward")
   self._quietness = self:GetUIComponent("RawImageLoader", "Quietness")
   self._impatient = self:GetUIComponent("RawImageLoader", "Impatient")
   self._happy = self:GetUIComponent("RawImageLoader", "Happy")
   self._rawImage = {}
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rawImage)[GuestMood.LookForward] = self:GetUIComponent("RawImage", "LookForward")
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rawImage)[GuestMood.Quietness] = self:GetUIComponent("RawImage", "Quietness")
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rawImage)[GuestMood.Impatient] = self:GetUIComponent("RawImage", "Impatient")
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rawImage)[GuestMood.Happy] = self:GetUIComponent("RawImage", "Happy")
+  self._rawImage[GuestMood.LookForward] = self:GetUIComponent("RawImage", "LookForward")
+  self._rawImage[GuestMood.Quietness] = self:GetUIComponent("RawImage", "Quietness")
+  self._rawImage[GuestMood.Impatient] = self:GetUIComponent("RawImage", "Impatient")
+  self._rawImage[GuestMood.Happy] = self:GetUIComponent("RawImage", "Happy")
   self._moodObj = {}
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._moodObj)[GuestMood.LookForward] = self:GetGameObject("LookForward")
-  -- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._moodObj)[GuestMood.Quietness] = self:GetGameObject("Quietness")
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._moodObj)[GuestMood.Impatient] = self:GetGameObject("Impatient")
-  -- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._moodObj)[GuestMood.Happy] = self:GetGameObject("HappyObj")
+  self._moodObj[GuestMood.LookForward] = self:GetGameObject("LookForward")
+  self._moodObj[GuestMood.Quietness] = self:GetGameObject("Quietness")
+  self._moodObj[GuestMood.Impatient] = self:GetGameObject("Impatient")
+  self._moodObj[GuestMood.Happy] = self:GetGameObject("HappyObj")
   self._moodAnimation = {}
-  -- DECOMPILER ERROR at PC93: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._moodAnimation)[GuestMood.LookForward] = self:GetUIComponent("Animation", "LookForward")
-  -- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._moodAnimation)[GuestMood.Impatient] = self:GetUIComponent("Animation", "Impatient")
-  -- DECOMPILER ERROR at PC109: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._moodAnimation)[GuestMood.Happy] = self:GetUIComponent("Animation", "HappyObj")
+  self._moodAnimation[GuestMood.LookForward] = self:GetUIComponent("Animation", "LookForward")
+  self._moodAnimation[GuestMood.Impatient] = self:GetUIComponent("Animation", "Impatient")
+  self._moodAnimation[GuestMood.Happy] = self:GetUIComponent("Animation", "HappyObj")
   self._orderformObj = self:GetGameObject("Orderform")
   self._orderformImg = {}
-  -- DECOMPILER ERROR at PC123: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._orderformImg)[OrderformStep.Weight] = self:GetUIComponent("Image", "Weight")
-  -- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._orderformImg)[OrderformStep.Ingredient] = self:GetUIComponent("Image", "Ingredient")
-  -- DECOMPILER ERROR at PC139: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._orderformImg)[OrderformStep.Jam] = self:GetUIComponent("Image", "Jam")
+  self._orderformImg[OrderformStep.Weight] = self:GetUIComponent("Image", "Weight")
+  self._orderformImg[OrderformStep.Ingredient] = self:GetUIComponent("Image", "Ingredient")
+  self._orderformImg[OrderformStep.Jam] = self:GetUIComponent("Image", "Jam")
   self._atlas = self:GetAsset("UISummerGame.spriteatlas", LoadType.SpriteAtlas)
   self._hand = self:GetUIComponent("RawImageLoader", "Hand")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameGuest.SetActive = function(self, active)
-  -- function num : 0_3
-  ((self.view).gameObject):SetActive(active)
+function UIMiniGameGuest:SetActive(active)
+  self.view.gameObject:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameGuest.SetData = function(self, id)
-  -- function num : 0_4 , upvalues : _ENV
+function UIMiniGameGuest:SetData(id)
   self.id = id
   if not self._inited then
-    (self._lookForward):LoadImage((string.format)((GuestImg.Img)[GuestMood.LookForward], id))
-    ;
-    (self._quietness):LoadImage((string.format)((GuestImg.Img)[GuestMood.Quietness], id))
-    ;
-    (self._impatient):LoadImage((string.format)((GuestImg.Img)[GuestMood.Impatient], id))
-    ;
-    (self._happy):LoadImage((string.format)((GuestImg.Img)[GuestMood.Happy], id))
-    ;
-    (self._hand):LoadImage((string.format)((GuestImg.Misc).Hand, id))
+    self._lookForward:LoadImage(string.format(GuestImg.Img[GuestMood.LookForward], id))
+    self._quietness:LoadImage(string.format(GuestImg.Img[GuestMood.Quietness], id))
+    self._impatient:LoadImage(string.format(GuestImg.Img[GuestMood.Impatient], id))
+    self._happy:LoadImage(string.format(GuestImg.Img[GuestMood.Happy], id))
+    self._hand:LoadImage(string.format(GuestImg.Misc.Hand, id))
     self._inited = true
   end
-  for key,value in pairs(GuestMood) do
-    ((self._moodObj)[value]):SetActive(value == GuestMood.LookForward)
-    -- DECOMPILER ERROR at PC82: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (((self._moodObj)[value]).transform).localPosition = Vector3.zero
-    -- DECOMPILER ERROR at PC87: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self._rawImage)[value]).color = Color.white
+  for key, value in pairs(GuestMood) do
+    self._moodObj[value]:SetActive(value == GuestMood.LookForward)
+    self._moodObj[value].transform.localPosition = Vector3.zero
+    self._rawImage[value].color = Color.white
   end
-  ;
-  (self._orderformObj):SetActive(false)
+  self._orderformObj:SetActive(false)
   self:PlayAnimation(GuestMood.LookForward)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameGuest.SetPosition = function(self, position, offset)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  ((self.view).transform).position = position
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self.view).transform).localPosition = ((self.view).transform).localPosition + offset
+function UIMiniGameGuest:SetPosition(position, offset)
+  self.view.transform.position = position
+  self.view.transform.localPosition = self.view.transform.localPosition + offset
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameGuest._Update = function(self, mood)
-  -- function num : 0_6 , upvalues : _ENV
-  for key,value in pairs(GuestMood) do
+function UIMiniGameGuest:_Update(mood)
+  for key, value in pairs(GuestMood) do
     local active = value == mood
-    if ((self._moodObj)[value]).activeSelf ~= active then
-      ((self._moodObj)[value]):SetActive(active)
+    if self._moodObj[value].activeSelf ~= active then
+      self._moodObj[value]:SetActive(active)
     end
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameGuest.Happy = function(self, orderform, mood)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._orderformObj):SetActive(true)
+function UIMiniGameGuest:Happy(orderform, mood)
+  self._orderformObj:SetActive(true)
   local imgs = OrderformImg.Img
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._orderformImg)[OrderformStep.Weight]).sprite = (self._atlas):GetSprite((imgs[OrderformStep.Weight])[orderform._weight])
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._orderformImg)[OrderformStep.Ingredient]).sprite = (self._atlas):GetSprite(((imgs[OrderformStep.Ingredient])[orderform._weight])[orderform._ingredient])
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._orderformImg)[OrderformStep.Jam]).sprite = (self._atlas):GetSprite(((imgs[OrderformStep.Jam])[orderform._weight])[orderform._jam])
+  self._orderformImg[OrderformStep.Weight].sprite = self._atlas:GetSprite(imgs[OrderformStep.Weight][orderform._weight])
+  self._orderformImg[OrderformStep.Ingredient].sprite = self._atlas:GetSprite(imgs[OrderformStep.Ingredient][orderform._weight][orderform._ingredient])
+  self._orderformImg[OrderformStep.Jam].sprite = self._atlas:GetSprite(imgs[OrderformStep.Jam][orderform._weight][orderform._jam])
   self:PlayAnimation(mood)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameGuest.PlayAnimation = function(self, mood)
-  -- function num : 0_8 , upvalues : _ENV
-  ((self._moodAnimation)[mood]):Play((MGAnimations.Guest)[mood])
+function UIMiniGameGuest:PlayAnimation(mood)
+  self._moodAnimation[mood]:Play(MGAnimations.Guest[mood])
 end
-
-

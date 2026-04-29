@@ -1,8 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/kr/activity/n14/str_fishing.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_fishing_game_best_score = "도전 최고 성적:", str_fishing_game_lock = "미개방", str_fishing_game_premissionunfinished = "이전 스테이지 도전을 완료해야 합니다.", str_fishing_game_storyreplay = "스토리 회상", str_fishing_game_challenge = "도전", str_fishing_game_order_title = "주문", str_fishing_game_bouns = "BONUSx", str_fishing_game_quit_tips = "화면을 터치해 닫기", str_fishing_game_current_score = "이번 성적: ", str_fishing_game_continue = "계속하기", str_fishing_game_exit = "나가기", str_fishing_game_description = "더 높은 점수에 도전해 더 많은 보상을 획득해 보세요!", str_fishing_game_remain_time = "남은 도전 시간: ", str_fishing_game_pause = "일시정지", str_fishing_game_time_end = "시간 종료", str_fishing_game_start_soon = "곧 시작됩니다", str_fishing_game_lock_title = "미개방", str_fishing_continuity_click = "연타", str_fishing_lock_mission = "이전 스테이지 클리어 시 개방", str_fishing_lock_time = "개방 시간이 아닙니다.", str_fishing_storypart = "스토리 회상", str_fishing_game_start = "게임 시작", str_fishing_game_title = "낚시의 달인", str_fishing_game_desc = "마음껏 낚시를 해 보세요!", str_fishing_game_paihang = "낚시의 정상 결전", str_fishing_game_title1 = "낚시 출조", str_fishing_game_title2 = "정확한 솜씨", str_fishing_game_title3 = "낚시의 대가", str_fishing_game_title4 = "낚시의 왕", str_fishing_cn17_lock_mission = "이전 스테이지를 클리어하지 않았습니다.", str_fishing_cn17_lock_time = "스테이지 개방까지: {1}", str_fishing_cn17_rank_name = "낚시 도전 순위", str_fishing_cn17_rank_btn = "순위 보기", str_fishing_cn17_rank_can_tips = "상위 {1}위까지 순위에 반영", str_fishing_cn17_combo = "화면을 터치해 빠르게 낚으세요!", str_fishing_cn17_rank = "낚시 도전 순위"}
+local config = {
+  str_fishing_game_best_score = "도전 최고 성적:",
+  str_fishing_game_lock = "미개방",
+  str_fishing_game_premissionunfinished = "이전 스테이지 도전을 완료해야 합니다.",
+  str_fishing_game_storyreplay = "스토리 회상",
+  str_fishing_game_challenge = "도전",
+  str_fishing_game_order_title = "주문",
+  str_fishing_game_bouns = "BONUSx",
+  str_fishing_game_quit_tips = "화면을 터치해 닫기",
+  str_fishing_game_current_score = "이번 성적: ",
+  str_fishing_game_continue = "계속하기",
+  str_fishing_game_exit = "나가기",
+  str_fishing_game_description = "더 높은 점수에 도전해 더 많은 보상을 획득해 보세요!",
+  str_fishing_game_remain_time = "남은 도전 시간: ",
+  str_fishing_game_pause = "일시정지",
+  str_fishing_game_time_end = "시간 종료",
+  str_fishing_game_start_soon = "곧 시작됩니다",
+  str_fishing_game_lock_title = "미개방",
+  str_fishing_continuity_click = "연타",
+  str_fishing_lock_mission = "이전 스테이지 클리어 시 개방",
+  str_fishing_lock_time = "개방 시간이 아닙니다.",
+  str_fishing_storypart = "스토리 회상",
+  str_fishing_game_start = "게임 시작",
+  str_fishing_game_title = "낚시의 달인",
+  str_fishing_game_desc = "마음껏 낚시를 해 보세요!",
+  str_fishing_game_paihang = "낚시의 정상 결전",
+  str_fishing_game_title1 = "낚시 출조",
+  str_fishing_game_title2 = "정확한 솜씨",
+  str_fishing_game_title3 = "낚시의 대가",
+  str_fishing_game_title4 = "낚시의 왕",
+  str_fishing_cn17_lock_mission = "이전 스테이지를 클리어하지 않았습니다.",
+  str_fishing_cn17_lock_time = "스테이지 개방까지: {1}",
+  str_fishing_cn17_rank_name = "낚시 도전 순위",
+  str_fishing_cn17_rank_btn = "순위 보기",
+  str_fishing_cn17_rank_can_tips = "상위 {1}위까지 순위에 반영",
+  str_fishing_cn17_combo = "화면을 터치해 빠르게 낚으세요!",
+  str_fishing_cn17_rank = "낚시 도전 순위"
+}
 return config
-

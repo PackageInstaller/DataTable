@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/season_maze/stn_gm_season_maze_reset.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("GM_SeasonMazeReset", Common_AsyncBase)
 GM_SeasonMazeReset = GM_SeasonMazeReset
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GM_SeasonMazeReset.Constructor = function(self, _manager)
-  -- function num : 0_0
+function GM_SeasonMazeReset:Constructor(_manager)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GM_SeasonMazeReset.TaskFunc = function(self, TT, status)
-  -- function num : 0_1
-  local runData = (self._manager):GetMissionRunData()
+function GM_SeasonMazeReset:TaskFunc(TT, status)
+  local runData = self._manager:GetMissionRunData()
   local componentID = runData:GetComponentConfigID()
   local activityID = 9001
-  ;
-  (self._manager):AsyncGM_ResetCampDat(TT, status, activityID)
+  self._manager:AsyncGM_ResetCampDat(TT, status, activityID)
 end
-
-

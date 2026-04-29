@@ -1,52 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_throw_monster_and_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_ThrowMonsterAndDamage", Object)
 SkillEffectCalc_ThrowMonsterAndDamage = SkillEffectCalc_ThrowMonsterAndDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ThrowMonsterAndDamage.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_ThrowMonsterAndDamage:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ThrowMonsterAndDamage.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_ThrowMonsterAndDamage:DoSkillEffectCalculator(skillEffectCalcParam)
   local monsterEntityIDs = self:GatherMonsterEntityIDs(skillEffectCalcParam)
   if #monsterEntityIDs == 0 then
-    return 
+    return
   end
   local damageRes = self:CalculateDamageResult(skillEffectCalcParam, monsterEntityIDs)
   local result = SkillEffectThrowMonsterAndDamageResult:New(monsterEntityIDs, damageRes)
   return {result}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ThrowMonsterAndDamage.GatherMonsterEntityIDs = function(self, skillEffectCalcParam)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_ThrowMonsterAndDamage:GatherMonsterEntityIDs(skillEffectCalcParam)
   local effectParam = skillEffectCalcParam:GetSkillEffectParam()
   local monsterClassID = effectParam:GetMonsterClassID()
   local monsterEntityIDs = {}
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,monsterEntity in ipairs(monsterGroup:GetEntities()) do
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, monsterEntity in ipairs(monsterGroup:GetEntities()) do
     local monsterIDCmpt = monsterEntity:MonsterID()
     if monsterIDCmpt and monsterClassID == monsterIDCmpt:GetMonsterClassID() and not monsterEntity:HasDeadMark() then
-      (table.insert)(monsterEntityIDs, monsterEntity:GetID())
+      table.insert(monsterEntityIDs, monsterEntity:GetID())
     end
   end
   return monsterEntityIDs
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ThrowMonsterAndDamage.CalculateDamageResult = function(self, skillEffectCalcParam, monsterEntityIDs)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectCalc_ThrowMonsterAndDamage:CalculateDamageResult(skillEffectCalcParam, monsterEntityIDs)
   if #monsterEntityIDs == 0 then
     return nil
   end
@@ -57,16 +41,20 @@ SkillEffectCalc_ThrowMonsterAndDamage.CalculateDamageResult = function(self, ski
   if curFormulaID == nil then
     curFormulaID = 2
   end
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
   local casterPos = casterEntity:GetGridPosition()
-  local defenderEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local defenderEntity = self._world:Player():GetLocalTeamEntity()
   local defenderPos = defenderEntity:GetGridPosition()
   local attackCount = #monsterEntityIDs
-  local percentList = {basePercent + addPercent * attackCount}
-  local skillDamageParam = SkillDamageEffectParam:New({percent = percentList, formulaID = curFormulaID, damageStageIndex = 1})
-  local nTotalDamage, listDamageInfo = (self._skillEffectService):ComputeSkillDamage(casterEntity, casterPos, defenderEntity, defenderPos, skillEffectCalcParam:GetSkillID(), skillDamageParam, SkillEffectType.ThrowMonsterAndDamage, 1)
-  local damageRes = (self._skillEffectService):NewSkillDamageEffectResult(defenderPos, defenderEntity:GetID(), nTotalDamage, listDamageInfo)
+  local percentList = {
+    basePercent + addPercent * attackCount
+  }
+  local skillDamageParam = SkillDamageEffectParam:New({
+    percent = percentList,
+    formulaID = curFormulaID,
+    damageStageIndex = 1
+  })
+  local nTotalDamage, listDamageInfo = self._skillEffectService:ComputeSkillDamage(casterEntity, casterPos, defenderEntity, defenderPos, skillEffectCalcParam:GetSkillID(), skillDamageParam, SkillEffectType.ThrowMonsterAndDamage, 1)
+  local damageRes = self._skillEffectService:NewSkillDamageEffectResult(defenderPos, defenderEntity:GetID(), nTotalDamage, listDamageInfo)
   return damageRes
 end
-
-

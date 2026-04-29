@@ -1,22 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_train_reset_element_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillTrainResetElementPhase", PlaySkillPhaseBase)
 PlaySkillTrainResetElementPhase = PlaySkillTrainResetElementPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillTrainResetElementPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillTrainResetElementPhase:PlayFlight(TT, casterEntity, phaseParam)
   local effectParam = phaseParam
   local gridEffectID = effectParam:GetGridEffectID()
   local bestEffectTime = effectParam:GetBestEffectTime()
   local gridIntervalTime = effectParam:GetGridIntervalTime()
-  local trapServiceRender = (self._world):GetService("TrapRender")
-  local castPos = (casterEntity:GridLocation()).Position
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local trapServiceRender = self._world:GetService("TrapRender")
+  local castPos = casterEntity:GridLocation().Position
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resetResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.ResetGridElement)
   local renderPickUpComponent = casterEntity:RenderPickUpComponent()
   local resetDataArray = resetResult:GetResetGridData()
@@ -24,99 +17,74 @@ PlaySkillTrainResetElementPhase.PlayFlight = function(self, TT, casterEntity, ph
   local gridPosList = self:_SortGridByDirection(resetDataArray, directType)
   local beginIndex, endIndex, step = self:_GetStepAndBegin(directType)
   local tConvertInfo = {}
-  local pieceService = (self._world):GetService("Piece")
-  local svcPlayBuff = (self._world):GetService("PlayBuff")
-  local svcPlaySkill = (self._world):GetService("PlaySkill")
+  local pieceService = self._world:GetService("Piece")
+  local svcPlayBuff = self._world:GetService("PlayBuff")
+  local svcPlaySkill = self._world:GetService("PlaySkill")
   for index = beginIndex, endIndex, step do
     local dataList = gridPosList[index]
     if dataList then
-      for _,data in pairs(dataList) do
-        local pos = {x = data.m_nX, y = data.m_nY}
+      for _, data in pairs(dataList) do
+        local pos = {
+          x = data.m_nX,
+          y = data.m_nY
+        }
         local nOldGridType = PieceType.None
         local gridEntity = pieceService:FindPieceEntity(pos)
         local pieceCmpt = gridEntity:Piece()
         nOldGridType = pieceCmpt:GetPieceType()
-        local pos = (Vector2.New)(data.m_nX, data.m_nY)
+        local pos = Vector2.New(data.m_nX, data.m_nY)
         local targetGridType = data.m_nNewElementType
-        ;
-        ((GameGlobal.TaskManager)()):CoreGameStartTask((self:SkillService())._SingleGridEffect, self:SkillService(), gridEffectID, pos, bestEffectTime, targetGridType)
+        GameGlobal.TaskManager():CoreGameStartTask(self:SkillService()._SingleGridEffect, self:SkillService(), gridEffectID, pos, bestEffectTime, targetGridType)
         local flushTraps = resetResult:GetFlushTrapsAt(pos)
-        for _,trap in ipairs(flushTraps) do
+        for _, trap in ipairs(flushTraps) do
           trapServiceRender:DestroyTrap(TT, trap)
         end
         local convertInfo = NTGridConvert_ConvertInfo:New(pos, nOldGridType, targetGridType)
-        ;
-        (table.insert)(tConvertInfo, convertInfo)
+        table.insert(tConvertInfo, convertInfo)
       end
     end
-    do
-      do
-        if index ~= endIndex then
-          YIELD(TT, gridIntervalTime)
-        end
-        -- DECOMPILER ERROR at PC126: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if index ~= endIndex then
+      YIELD(TT, gridIntervalTime)
     end
   end
-  do
-    if #tConvertInfo > 0 then
-      local notify = NTGridConvert:New(casterEntity, tConvertInfo)
-      notify:SetConvertEffectType(SkillEffectType.ResetGridElement)
-      notify.__attackPosMatchRequired = true
-      svcPlayBuff:PlayBuffView(TT, notify)
-    end
-    local finishDelayTime = effectParam:GetFinishDelayTime()
-    YIELD(TT, finishDelayTime)
+  if 0 < #tConvertInfo then
+    local notify = NTGridConvert:New(casterEntity, tConvertInfo)
+    notify:SetConvertEffectType(SkillEffectType.ResetGridElement)
+    notify.__attackPosMatchRequired = true
+    svcPlayBuff:PlayBuffView(TT, notify)
   end
+  local finishDelayTime = effectParam:GetFinishDelayTime()
+  YIELD(TT, finishDelayTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillTrainResetElementPhase._SortGridByDirection = function(self, resetGridArray, directionType)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillTrainResetElementPhase:_SortGridByDirection(resetGridArray, directionType)
   local girdList = {}
   if directionType == HitBackDirectionType.Up or directionType == HitBackDirectionType.Down then
-    for _,data in pairs(resetGridArray) do
+    for _, data in pairs(resetGridArray) do
       local posY = data.m_nY
       if not girdList[posY] then
         girdList[posY] = {}
       end
-      ;
-      (table.insert)(girdList[posY], data)
+      table.insert(girdList[posY], data)
     end
-  else
-    do
-      if directionType == HitBackDirectionType.Left or directionType == HitBackDirectionType.Right then
-        for _,data in pairs(resetGridArray) do
-          local posX = data.m_nX
-          if not girdList[posX] then
-            girdList[posX] = {}
-          end
-          ;
-          (table.insert)(girdList[posX], data)
-        end
+  elseif directionType == HitBackDirectionType.Left or directionType == HitBackDirectionType.Right then
+    for _, data in pairs(resetGridArray) do
+      local posX = data.m_nX
+      if not girdList[posX] then
+        girdList[posX] = {}
       end
-      do
-        return girdList
-      end
+      table.insert(girdList[posX], data)
     end
   end
+  return girdList
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillTrainResetElementPhase._GetStepAndBegin = function(self, directionType)
-  -- function num : 0_2 , upvalues : _ENV
-  local utilData = (self._world):GetService("UtilData")
+function PlaySkillTrainResetElementPhase:_GetStepAndBegin(directionType)
+  local utilData = self._world:GetService("UtilData")
   local maxLen = utilData:GetCurBoardMaxLen()
   if directionType == HitBackDirectionType.Down or directionType == HitBackDirectionType.Left then
     return maxLen, 1, -1
-  else
-    if directionType == HitBackDirectionType.Up or directionType == HitBackDirectionType.Right then
-      return 1, maxLen + 1, 1
-    end
+  elseif directionType == HitBackDirectionType.Up or directionType == HitBackDirectionType.Right then
+    return 1, maxLen + 1, 1
   end
 end
-
-

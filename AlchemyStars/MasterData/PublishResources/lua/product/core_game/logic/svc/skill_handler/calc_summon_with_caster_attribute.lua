@@ -1,84 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_summon_with_caster_attribute.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SummonWithCasterAttribute", SkillEffectCalc_Base)
 SkillEffectCalc_SummonWithCasterAttribute = SkillEffectCalc_SummonWithCasterAttribute
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SummonWithCasterAttribute.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SummonWithCasterAttribute:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonWithCasterAttribute.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_SummonWithCasterAttribute:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local effectParam = skillEffectCalcParam:GetSkillEffectParam()
-  local skillRange = (table.clone)(skillEffectCalcParam.skillRange)
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local skillRange = table.clone(skillEffectCalcParam.skillRange)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local casterPos = casterEntity:GetGridPosition()
-  local compareAttributeType = (effectParam:GetCompareType())
-  local compareAttribute = nil
+  local compareAttributeType = effectParam:GetCompareType()
+  local compareAttribute
   local attrCmpt = casterEntity:Attributes()
   if compareAttributeType == SummonWithCasterAttributeType.HpPercent then
     local max_hp = attrCmpt:CalcMaxHp()
     local cur_hp = attrCmpt:GetCurrentHP()
-    compareAttribute = (math.floor)(cur_hp / max_hp * 100)
+    compareAttribute = math.floor(cur_hp / max_hp * 100)
   end
-  do
-    local compareParam = effectParam:GetCompareParam()
-    local compareSymbol = effectParam:GetCompareSymbol()
-    local satisfied = false
-    if compareAttribute ~= compareParam then
-      satisfied = compareSymbol ~= ComparisonOperator.EQ
-      if compareAttribute == compareParam then
-        satisfied = compareSymbol ~= ComparisonOperator.NE
-        if compareParam >= compareAttribute then
-          satisfied = compareSymbol ~= ComparisonOperator.GT
-          if compareParam > compareAttribute then
-            satisfied = compareSymbol ~= ComparisonOperator.GE
-            if compareAttribute >= compareParam then
-              satisfied = compareSymbol ~= ComparisonOperator.LT
-              if compareAttribute > compareParam then
-                satisfied = compareSymbol ~= ComparisonOperator.LE
-                if not satisfied then
-                  return {}
-                end
-                if not skillRange or (table.count)(skillRange) == 0 then
-                  return {}
-                end
-                local hadSummonPosList = {}
-                local randomSvc = (self._world):GetService("RandomLogic")
-                local boardSvc = (self._world):GetService("BoardLogic")
-                skillRange = randomSvc:Shuffle(skillRange)
-                local monsterIDList = effectParam:GetMonsterID()
-                for _,monsterID in ipairs(monsterIDList) do
-                  local summonPos = nil
-                  for i,v in ipairs(skillRange) do
-                    if not boardSvc:IsPosBlock(v, BlockFlag.MonsterLand) and not (table.icontains)(hadSummonPosList, summonPos) then
-                      summonPos = v
-                      ;
-                      (table.insert)(hadSummonPosList, summonPos)
-                      break
-                    end
-                  end
-                  local result = SkillEffectResult_SummonEverything:New(SkillEffectEnum_SummonType.Monster, monsterID, casterPos, summonPos)
-                  ;
-                  (table.insert)(results, result)
-                end
-                do return results end
-                -- DECOMPILER ERROR: 18 unprocessed JMP targets
-              end
-            end
-          end
-        end
+  local compareParam = effectParam:GetCompareParam()
+  local compareSymbol = effectParam:GetCompareSymbol()
+  local satisfied = false
+  if compareSymbol == ComparisonOperator.EQ then
+    satisfied = compareAttribute == compareParam
+  elseif compareSymbol == ComparisonOperator.NE then
+    satisfied = compareAttribute ~= compareParam
+  elseif compareSymbol == ComparisonOperator.GT then
+    satisfied = compareAttribute > compareParam
+  elseif compareSymbol == ComparisonOperator.GE then
+    satisfied = compareAttribute >= compareParam
+  elseif compareSymbol == ComparisonOperator.LT then
+    satisfied = compareAttribute < compareParam
+  elseif compareSymbol == ComparisonOperator.LE then
+    satisfied = compareAttribute <= compareParam
+  end
+  if not satisfied then
+    return {}
+  end
+  if not skillRange or table.count(skillRange) == 0 then
+    return {}
+  end
+  local hadSummonPosList = {}
+  local randomSvc = self._world:GetService("RandomLogic")
+  local boardSvc = self._world:GetService("BoardLogic")
+  skillRange = randomSvc:Shuffle(skillRange)
+  local monsterIDList = effectParam:GetMonsterID()
+  for _, monsterID in ipairs(monsterIDList) do
+    local summonPos
+    for i, v in ipairs(skillRange) do
+      if not boardSvc:IsPosBlock(v, BlockFlag.MonsterLand) and not table.icontains(hadSummonPosList, summonPos) then
+        summonPos = v
+        table.insert(hadSummonPosList, summonPos)
+        break
       end
     end
+    local result = SkillEffectResult_SummonEverything:New(SkillEffectEnum_SummonType.Monster, monsterID, casterPos, summonPos)
+    table.insert(results, result)
   end
+  return results
 end
-
-

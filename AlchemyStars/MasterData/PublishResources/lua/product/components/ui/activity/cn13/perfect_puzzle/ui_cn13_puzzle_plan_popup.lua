@@ -1,40 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn13/perfect_puzzle/ui_cn13_puzzle_plan_popup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN13PuzzlePlanPopUp", UIController)
 UICN13PuzzlePlanPopUp = UICN13PuzzlePlanPopUp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN13PuzzlePlanPopUp.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN13PuzzlePlanPopUp:LoadDataOnEnter(TT, res)
   self._campaignModule = self:GetModule(CampaignModule)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_INLAND_PERFECT_PUZZLE
   self._svrTimeModule = self:GetModule(SvrTimeModule)
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
+  self._questModule = GameGlobal.GetModule(QuestModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, self._campaignType, ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE, ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST, ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
+  self._campaign:LoadCampaignInfo(TT, res, self._campaignType, ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE, ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST, ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
   if res and res:GetSucc() then
-    self._localProcess = (self._campaignModule):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_INLAND_PERFECT_PUZZLE)
-    self.personProcess = (self._localProcess):GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
-    self.personProcessInfo = (self._localProcess):GetComponentInfo(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
+    self._localProcess = self._campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_INLAND_PERFECT_PUZZLE)
+    self.personProcess = self._localProcess:GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
+    self.personProcessInfo = self._localProcess:GetComponentInfo(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PuzzlePlanPopUp.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UICN13PuzzlePlanPopUp:OnShow(uiParams)
   self:InitWidget()
   self:InitUI()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PuzzlePlanPopUp.InitWidget = function(self)
-  -- function num : 0_2
+function UICN13PuzzlePlanPopUp:InitWidget()
   self._anim = self:GetGameObject("_anim")
   self.titleText = self:GetGameObject("TitleText")
   self.itemTips = self:GetUIComponent("UISelectObjectPath", "ItemTips")
@@ -42,49 +28,34 @@ UICN13PuzzlePlanPopUp.InitWidget = function(self)
   self.questPool = self:GetUIComponent("UISelectObjectPath", "QuestPool")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PuzzlePlanPopUp.InitUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local progress = (self.personProcess):GetProgressList()
+function UICN13PuzzlePlanPopUp:InitUI()
+  local progress = self.personProcess:GetProgressList()
   self._dynamicListInfo = progress
-  ;
-  (self.personProcess):SortProgressListByCampaignPersonProgressStatus(self._dynamicListInfo)
-  self._dynamicListSize = (table.count)(self._dynamicListInfo)
+  self.personProcess:SortProgressListByCampaignPersonProgressStatus(self._dynamicListInfo)
+  self._dynamicListSize = table.count(self._dynamicListInfo)
   self._itemCountPerRow = 1
-  self._dynamicListRowSize = (math.floor)((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
+  self._dynamicListRowSize = math.floor((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
   if not self._isDynamicInited then
     self._isDynamicInited = true
     self._taskList = self:GetUIComponent("UIDynamicScrollView", "taskList")
-    ;
-    (self._taskList):InitListView(self._dynamicListRowSize, function(scrollView, index)
-    -- function num : 0_3_0 , upvalues : self
-    return self:_SpawnListItem(scrollView, index)
-  end
-)
+    self._taskList:InitListView(self._dynamicListRowSize, function(scrollView, index)
+      return self:_SpawnListItem(scrollView, index)
+    end)
   else
     self:_RefreshList(self._dynamicListRowSize, self._taskList, nil)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PuzzlePlanPopUp._RefreshList = function(self, count, list, resetPos)
-  -- function num : 0_4
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UICN13PuzzlePlanPopUp:_RefreshList(count, list, resetPos)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(count)
   list:MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R5 in 'UnsetPending'
-
   if not resetPos then
-    ((list.ScrollRect).content).localPosition = contentPos
+    list.ScrollRect.content.localPosition = contentPos
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PuzzlePlanPopUp._SpawnListItem = function(self, scrollView, index)
-  -- function num : 0_5
+function UICN13PuzzlePlanPopUp:_SpawnListItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -98,105 +69,70 @@ UICN13PuzzlePlanPopUp._SpawnListItem = function(self, scrollView, index)
   for i = 1, self._itemCountPerRow do
     local listItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._dynamicListSize < itemIndex then
-      (listItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._dynamicListSize then
+      listItem:GetGameObject():SetActive(false)
     else
-      ;
-      (listItem:GetGameObject()):SetActive(true)
+      listItem:GetGameObject():SetActive(true)
       self:_SetListItemData(listItem, itemIndex)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PuzzlePlanPopUp._SetListItemData = function(self, listItem, index)
-  -- function num : 0_6 , upvalues : _ENV
-  local progress = (self._dynamicListInfo)[index]
+function UICN13PuzzlePlanPopUp:_SetListItemData(listItem, index)
+  local progress = self._dynamicListInfo[index]
   listItem:SetData(self._campaign, index, progress, function(v)
-    -- function num : 0_6_0 , upvalues : self
     self:ListItemOnClick(v)
-  end
-, function(matid, pos)
-    -- function num : 0_6_1 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "ItemTips", matid, pos)
-  end
-)
+  end, function(matid, pos)
+    UIWidgetHelper.SetAwardItemTips(self, "ItemTips", matid, pos)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PuzzlePlanPopUp.ListItemOnClick = function(self, progress)
-  -- function num : 0_7 , upvalues : _ENV
-  if not (self._campaign):CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._campaign)._id)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
+function UICN13PuzzlePlanPopUp:ListItemOnClick(progress)
+  if not self._campaign:CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaign._id)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
     self:CloseDialog()
-    return 
+    return
   end
-  local component = (self._campaign):GetComponentByType(CampaignComType.E_CAMPAIGN_COM_PERSON_PROGESS, 1)
+  local component = self._campaign:GetComponentByType(CampaignComType.E_CAMPAIGN_COM_PERSON_PROGESS, 1)
   component:Start_HandleReceiveReward(progress, function(res, rewards)
-    -- function num : 0_7_0 , upvalues : self
     self:_OnReceiveRewards(res, rewards)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PuzzlePlanPopUp._OnReceiveRewards = function(self, res, rewards)
-  -- function num : 0_8 , upvalues : _ENV
+function UICN13PuzzlePlanPopUp:_OnReceiveRewards(res, rewards)
   if self.view == nil then
-    return 
+    return
   end
   if res:GetSucc() then
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
+    UIActivityHelper.ShowUIGetRewards(rewards)
     self:_Refresh()
   else
-    ;
-    (self._campaign):CheckErrorCode(res.m_result, function()
-    -- function num : 0_8_0 , upvalues : self
-    self:_Refresh()
-  end
-, function()
-    -- function num : 0_8_1 , upvalues : self
-    self:CloseDialog()
-  end
-)
+    self._campaign:CheckErrorCode(res.m_result, function()
+      self:_Refresh()
+    end, function()
+      self:CloseDialog()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PuzzlePlanPopUp._Refresh = function(self)
-  -- function num : 0_9
+function UICN13PuzzlePlanPopUp:_Refresh()
   self:InitUI()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PuzzlePlanPopUp.BgOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
-  if not (self._campaign):CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._campaign)._id)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
+function UICN13PuzzlePlanPopUp:BgOnClick(go)
+  if not self._campaign:CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaign._id)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
   end
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PuzzlePlanPopUp.CloseBtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  if not (self._campaign):CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._campaign)._id)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
+function UICN13PuzzlePlanPopUp:CloseBtnOnClick(go)
+  if not self._campaign:CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaign._id)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
   end
   self:CloseDialog()
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_param_scope_trajectory.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseParamScopeTrajectory", SkillPhaseParamBase)
 SkillPhaseParamScopeTrajectory = SkillPhaseParamScopeTrajectory
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseParamScopeTrajectory.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseParamScopeTrajectory:Constructor(t)
   self._scopeHorizontalOrVertical = t.scopeHorizontalOrVertical == 1
   self._sidesDamageDelay = t.sidesDamageDelay or 0
   self._trajectoryCreateDelay = t.trajectoryCreateDelay or 0
@@ -34,27 +27,17 @@ SkillPhaseParamScopeTrajectory.Constructor = function(self, t)
   self._sidesEffectID = t.sidesEffectID
   self._sidesEffectDelayMS = t.sidesEffectDelayMS
   self._trajectoryFlightEndOffset = t.trajectoryFlightEndOffset or 0
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetTrajectoryFlightEndOffset = function(self)
-  -- function num : 0_1
+function SkillPhaseParamScopeTrajectory:GetTrajectoryFlightEndOffset()
   return self._trajectoryFlightEndOffset
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetScopeHorizontalOrVertical = function(self)
-  -- function num : 0_2
+function SkillPhaseParamScopeTrajectory:GetScopeHorizontalOrVertical()
   return self._scopeHorizontalOrVertical
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetCacheTable = function(self)
-  -- function num : 0_3
+function SkillPhaseParamScopeTrajectory:GetCacheTable()
   local listID = {}
   self:AddEffectIDToListID(listID, self._trajectoryEffectID)
   self:AddEffectIDToListID(listID, self._targetEffectID)
@@ -63,168 +46,97 @@ SkillPhaseParamScopeTrajectory.GetCacheTable = function(self)
   return self:GetCacheTableFromListID(listID)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetPhaseType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillPhaseParamScopeTrajectory:GetPhaseType()
   return SkillViewPhaseType.ScopeTrajectory
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetTrajectoryEffectID = function(self)
-  -- function num : 0_5
+function SkillPhaseParamScopeTrajectory:GetTrajectoryEffectID()
   return self._trajectoryEffectID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetTrajectoryEffectOffset = function(self)
-  -- function num : 0_6
+function SkillPhaseParamScopeTrajectory:GetTrajectoryEffectOffset()
   return self._trajectoryEffectOffset
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetTrajectoryTime = function(self)
-  -- function num : 0_7
+function SkillPhaseParamScopeTrajectory:GetTrajectoryTime()
   return self._trajectoryTime
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetTotalTime = function(self)
-  -- function num : 0_8
+function SkillPhaseParamScopeTrajectory:GetTotalTime()
   return self._totalTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetTargetWaitTime = function(self)
-  -- function num : 0_9
+function SkillPhaseParamScopeTrajectory:GetTargetWaitTime()
   return self._targetWaitTime
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetTargetEffectID = function(self)
-  -- function num : 0_10
+function SkillPhaseParamScopeTrajectory:GetTargetEffectID()
   return self._targetEffectID
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetTargetDelayTime = function(self)
-  -- function num : 0_11
+function SkillPhaseParamScopeTrajectory:GetTargetDelayTime()
   return self._targetDelayTime
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetHitAnimation = function(self)
-  -- function num : 0_12
+function SkillPhaseParamScopeTrajectory:GetHitAnimation()
   return self._hitAnimationName
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetHitEffectID = function(self)
-  -- function num : 0_13
+function SkillPhaseParamScopeTrajectory:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetHitEffectTime = function(self)
-  -- function num : 0_14
+function SkillPhaseParamScopeTrajectory:GetHitEffectTime()
   return self._hitEffectTime
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetDamageIndex = function(self)
-  -- function num : 0_15
+function SkillPhaseParamScopeTrajectory:GetDamageIndex()
   return self._damageIndex
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.IsClearBodyNow = function(self)
-  -- function num : 0_16
+function SkillPhaseParamScopeTrajectory:IsClearBodyNow()
   if self._clearBodyNow and self._clearBodyNow > 0 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetFinishDelayTime = function(self)
-  -- function num : 0_17
+function SkillPhaseParamScopeTrajectory:GetFinishDelayTime()
   return self._finishDelayTime
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetBeginDelayTime = function(self)
-  -- function num : 0_18
+function SkillPhaseParamScopeTrajectory:GetBeginDelayTime()
   return self._beginDelayTime
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetTrajectoryFollowingEffectID = function(self)
-  -- function num : 0_19
+function SkillPhaseParamScopeTrajectory:GetTrajectoryFollowingEffectID()
   return self._trajectoryFollowingEffectID
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetTrajectoryFinishEffectID = function(self)
-  -- function num : 0_20
+function SkillPhaseParamScopeTrajectory:GetTrajectoryFinishEffectID()
   return self._trajectoryFinishEffectID
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetTrajectoryFinishEffectTime = function(self)
-  -- function num : 0_21
+function SkillPhaseParamScopeTrajectory:GetTrajectoryFinishEffectTime()
   return self._trajectoryFinishEffectTime
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetTailDismissDelay = function(self)
-  -- function num : 0_22
+function SkillPhaseParamScopeTrajectory:GetTailDismissDelay()
   return self._tailDismissDelay
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetSidesDamageDelay = function(self)
-  -- function num : 0_23
+function SkillPhaseParamScopeTrajectory:GetSidesDamageDelay()
   return self._sidesDamageDelay
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetTrajectoryCreateDelay = function(self)
-  -- function num : 0_24
+function SkillPhaseParamScopeTrajectory:GetTrajectoryCreateDelay()
   return self._trajectoryCreateDelay
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.GetSidesEffectID = function(self)
-  -- function num : 0_25
+function SkillPhaseParamScopeTrajectory:GetSidesEffectID()
   return self._sidesEffectID
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamScopeTrajectory.SidesEffectDelay = function(self)
-  -- function num : 0_26
+function SkillPhaseParamScopeTrajectory:SidesEffectDelay()
   return self._sidesEffectDelayMS
 end
-
-

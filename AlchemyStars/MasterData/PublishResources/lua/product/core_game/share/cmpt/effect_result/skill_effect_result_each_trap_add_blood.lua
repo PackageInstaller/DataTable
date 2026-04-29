@@ -1,66 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_each_trap_add_blood.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectResultEachTrapAddBlood", SkillEffectResultBase)
 SkillEffectResultEachTrapAddBlood = SkillEffectResultEachTrapAddBlood
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultEachTrapAddBlood.Constructor = function(self)
-  -- function num : 0_0
+function SkillEffectResultEachTrapAddBlood:Constructor()
   self._targetID = 0
   self._addValue = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultEachTrapAddBlood.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultEachTrapAddBlood:GetEffectType()
   return SkillEffectType.EachTrapAddBlood
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultEachTrapAddBlood.SetAddData = function(self, targetID, addValue)
-  -- function num : 0_2
+function SkillEffectResultEachTrapAddBlood:SetAddData(targetID, addValue)
   self._targetID = targetID
   self._addValue = addValue
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultEachTrapAddBlood.GetTargetID = function(self)
-  -- function num : 0_3
+function SkillEffectResultEachTrapAddBlood:GetTargetID()
   return self._targetID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultEachTrapAddBlood.GetAddValue = function(self)
-  -- function num : 0_4
+function SkillEffectResultEachTrapAddBlood:GetAddValue()
   return self._addValue
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultEachTrapAddBlood.SetAddValue = function(self, addValue)
-  -- function num : 0_5
+function SkillEffectResultEachTrapAddBlood:SetAddValue(addValue)
   self._addValue = addValue
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultEachTrapAddBlood.SetDamageInfo = function(self, damageInfo)
-  -- function num : 0_6
+function SkillEffectResultEachTrapAddBlood:SetDamageInfo(damageInfo)
   self._damageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultEachTrapAddBlood.GetDamageInfo = function(self)
-  -- function num : 0_7
+function SkillEffectResultEachTrapAddBlood:GetDamageInfo()
   return self._damageInfo
 end
-
-

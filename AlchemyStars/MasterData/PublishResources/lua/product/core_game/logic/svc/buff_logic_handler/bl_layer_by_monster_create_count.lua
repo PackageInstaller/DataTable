@@ -1,52 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_layer_by_monster_create_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAddLayerByMonsterCreateCount", BuffLogicBase)
 BuffLogicAddLayerByMonsterCreateCount = BuffLogicAddLayerByMonsterCreateCount
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddLayerByMonsterCreateCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._dontDisplay = logicParam.dontDisplay or false
-    self._monsterID = logicParam.monsterID
-    self._monsterClassID = logicParam.monsterClassID
-  end
+function BuffLogicAddLayerByMonsterCreateCount:Constructor(buffInstance, logicParam)
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._dontDisplay = logicParam.dontDisplay or false
+  self._monsterID = logicParam.monsterID
+  self._monsterClassID = logicParam.monsterClassID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddLayerByMonsterCreateCount.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local svc = (self._world):GetService("BuffLogic")
+function BuffLogicAddLayerByMonsterCreateCount:DoLogic(notify)
+  local svc = self._world:GetService("BuffLogic")
   local count = 0
-  self._entity = (self._buffInstance):Entity()
-  if not (self._entity):HasMonsterID() then
-    return 
+  self._entity = self._buffInstance:Entity()
+  if not self._entity:HasMonsterID() then
+    return
   end
-  local cBattleStat = (self._world):BattleStat()
+  local cBattleStat = self._world:BattleStat()
   if self._monsterID then
-    count = count + cBattleStat:GetMonsterIDCount(((self._entity):MonsterID()):GetMonsterID())
+    count = count + cBattleStat:GetMonsterIDCount(self._entity:MonsterID():GetMonsterID())
   end
   if self._monsterClassID then
-    count = count + cBattleStat:GetMonsterClassIDCount(((self._entity):MonsterID()):GetMonsterClassID())
+    count = count + cBattleStat:GetMonsterClassIDCount(self._entity:MonsterID():GetMonsterClassID())
   end
   local addLayer = count - 1
-  local casterEntity = (self._buffInstance):Context() and ((self._buffInstance):Context()).casterEntity or nil
+  local casterEntity = self._buffInstance:Context() and self._buffInstance:Context().casterEntity or nil
   local curMarkLayer, buffinst = svc:AddBuffLayer(self._entity, self._layerType, addLayer, nil, casterEntity)
   if not buffinst then
-    return 
+    return
   end
   local buffResult = BuffResultLayer:New(curMarkLayer, buffinst:BuffSeq(), addLayer, self._layerType)
   buffResult:SetDontDisplay(self._dontDisplay)
   if self._dontDisplay then
-    return 
+    return
   end
   return buffResult
 end
-
-

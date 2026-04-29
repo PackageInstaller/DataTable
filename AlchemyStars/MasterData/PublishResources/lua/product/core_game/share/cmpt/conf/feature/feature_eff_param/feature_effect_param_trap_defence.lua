@@ -1,71 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/feature/feature_eff_param/feature_effect_param_trap_defence.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureEffectParamTrapDefence", FeatureEffectParamBase)
 FeatureEffectParamTrapDefence = FeatureEffectParamTrapDefence
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureEffectParamTrapDefence.Constructor = function(self, t)
-  -- function num : 0_0
+function FeatureEffectParamTrapDefence:Constructor(t)
   if not t then
-    return 
+    return
   end
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTrapDefence._RefreshData = function(self, t)
-  -- function num : 0_1
+function FeatureEffectParamTrapDefence:_RefreshData(t)
   if not t then
-    return 
+    return
   end
   if t.SkillID then
     self._skillID = t.SkillID
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTrapDefence.GetFeatureType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function FeatureEffectParamTrapDefence:GetFeatureType()
   return FeatureType.TrapDefence
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTrapDefence.CopyFrom = function(self, param)
-  -- function num : 0_3 , upvalues : _ENV
+function FeatureEffectParamTrapDefence:CopyFrom(param)
   if param then
-    for k,v in pairs(param) do
+    for k, v in pairs(param) do
       self[k] = v
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTrapDefence.CloneSelf = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function FeatureEffectParamTrapDefence:CloneSelf()
   local param = FeatureEffectParamTrapDefence:New()
   param:CopyFrom(self)
   return param
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTrapDefence.ReplaceByCustomCfg = function(self, t)
-  -- function num : 0_5
+function FeatureEffectParamTrapDefence:ReplaceByCustomCfg(t)
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTrapDefence.GetMasterSkillID = function(self)
-  -- function num : 0_6
+function FeatureEffectParamTrapDefence:GetMasterSkillID()
   return self._skillID
 end
-
-

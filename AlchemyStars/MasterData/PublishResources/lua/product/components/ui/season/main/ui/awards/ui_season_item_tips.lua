@@ -1,36 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/awards/ui_season_item_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonItemTips", UIController)
 UISeasonItemTips = UISeasonItemTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonItemTips.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mRole = (GameGlobal.GetModule)(RoleModule)
+function UISeasonItemTips:Constructor()
+  self.mRole = GameGlobal.GetModule(RoleModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonItemTips.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonItemTips:OnShow(uiParams)
   self.itemTplId = uiParams[1]
   self.go = uiParams[2]
   self.showItemCount = uiParams[3]
   self.bg = self:GetGameObject("bg")
-  local passEvent = (self.bg):GetComponent("PassEventComponent")
+  local passEvent = self.bg:GetComponent("PassEventComponent")
   passEvent:SetClickCallback(function()
-    -- function num : 0_1_0 , upvalues : self
     self:CloseOnClick()
-  end
-)
-  self.black_mask = (((((self:GetGameObject()).transform).parent).parent):Find("BGMaskCanvas/black_mask")):GetComponent(typeof((UnityEngine.UI).Image))
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.black_mask).raycastTarget = false
+  end)
+  self.black_mask = self:GetGameObject().transform.parent.parent:Find("BGMaskCanvas/black_mask"):GetComponent(typeof(UnityEngine.UI.Image))
+  self.black_mask.raycastTarget = false
   self.c = self:GetUIComponent("RectTransform", "c")
   self.itemPool = self:GetUIComponent("UISelectObjectPath", "itemPool")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
@@ -40,85 +25,50 @@ UISeasonItemTips.OnShow = function(self, uiParams)
   self:FlushPos()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonItemTips.OnHide = function(self)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.black_mask).raycastTarget = true
+function UISeasonItemTips:OnHide()
+  self.black_mask.raycastTarget = true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonItemTips.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[self.itemTplId]
-  local c = (self.mRole):GetAssetCount(self.itemTplId) or 0
+function UISeasonItemTips:Flush()
+  local cfg = Cfg.cfg_item[self.itemTplId]
+  local c = self.mRole:GetAssetCount(self.itemTplId) or 0
   local ra = RoleAsset:New()
   ra.assetid = self.itemTplId
   ra.count = c
-  local ui = (self.itemPool):SpawnObject("UIItemHomeland")
+  local ui = self.itemPool:SpawnObject("UIItemHomeland")
   ui:Flush(ra, nil)
-  ;
-  (self.txtName):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self.txtCount):SetText(c)
-  ;
-  ((self.txtCount).gameObject):SetActive(self.showItemCount)
-  ;
-  (self.txtDesc):SetText((StringTable.Get)(cfg.Intro))
+  self.txtName:SetText(StringTable.Get(cfg.Name))
+  self.txtCount:SetText(c)
+  self.txtCount.gameObject:SetActive(self.showItemCount)
+  self.txtDesc:SetText(StringTable.Get(cfg.Intro))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonItemTips.FlushPos = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonItemTips:FlushPos()
   if self.go then
-    local pos = ((self.go).transform).position
-    local posSelf = ((self.bg).transform).position
+    local pos = self.go.transform.position
+    local posSelf = self.bg.transform.position
     local n = 1
     local step = 5
     local half = step * 0.5
-    while pos.y + step * n < posSelf.y - half do
+    while posSelf.y - half > pos.y + step * n do
       n = n + 1
     end
-    local targetPos = Vector3(pos.x, pos.y + step * (n), 0)
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R7 in 'UnsetPending'
-
+    local targetPos = Vector3(pos.x, pos.y + step * n, 0)
     if targetPos.x > 0 then
-      if posSelf.y < targetPos.y then
-        (self.c).pivot = Vector2.one
+      if targetPos.y > posSelf.y then
+        self.c.pivot = Vector2.one
       else
-        -- DECOMPILER ERROR at PC45: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (self.c).pivot = Vector2(1, 0)
+        self.c.pivot = Vector2(1, 0)
       end
+    elseif targetPos.y > posSelf.y then
+      self.c.pivot = Vector2(0, 1)
     else
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R7 in 'UnsetPending'
-
-      if posSelf.y < targetPos.y then
-        (self.c).pivot = Vector2(0, 1)
-      else
-        -- DECOMPILER ERROR at PC61: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (self.c).pivot = Vector2.zero
-      end
+      self.c.pivot = Vector2.zero
     end
-    -- DECOMPILER ERROR at PC63: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.c).position = targetPos
+    self.c.position = targetPos
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonItemTips.CloseOnClick = function(self)
-  -- function num : 0_5
+function UISeasonItemTips:CloseOnClick()
   self:CloseDialog()
 end
-
-

@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_psp_add_hp_by_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultPSPAddHPByType", BuffResultBase)
 BuffResultPSPAddHPByType = BuffResultPSPAddHPByType
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultPSPAddHPByType.Constructor = function(self, damageInfo, eid)
-  -- function num : 0_0
+function BuffResultPSPAddHPByType:Constructor(damageInfo, eid)
   self._damageInfo = damageInfo
   self._entityID = eid
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultPSPAddHPByType.GetDamageInfo = function(self)
-  -- function num : 0_1
+function BuffResultPSPAddHPByType:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultPSPAddHPByType.GetEntityID = function(self)
-  -- function num : 0_2
+function BuffResultPSPAddHPByType:GetEntityID()
   return self._entityID
 end
-
-

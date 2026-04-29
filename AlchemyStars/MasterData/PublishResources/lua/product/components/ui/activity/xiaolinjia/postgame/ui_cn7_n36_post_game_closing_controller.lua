@@ -1,96 +1,63 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/postgame/ui_cn7_n36_post_game_closing_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN7N36PostGameClosingController", UIController)
 UICN7N36PostGameClosingController = UICN7N36PostGameClosingController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN7N36PostGameClosingController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN7N36PostGameClosingController:OnShow(uiParams)
   self._missionID = uiParams[1]
   self._rt = uiParams[2]
   self._score = uiParams[3]
   self._missionCallBack = uiParams[4]
   self._hasPassed = uiParams[5]
   self._taskChainCallBack = uiParams[6]
-  self._missionCfg = ((Cfg.cfg_season_debris_mission)({ID = self._missionID}))[1]
-  self._txtCfg = ((Cfg.cfg_season_debris_level)[self._missionID]).SuccessMessage
+  self._missionCfg = Cfg.cfg_season_debris_mission({
+    ID = self._missionID
+  })[1]
+  self._txtCfg = Cfg.cfg_season_debris_level[self._missionID].SuccessMessage
   self:InitWidget()
   self:ShowDetail()
   self:PlayAnimIN()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostGameClosingController.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN7N36PostGameClosingController:InitWidget()
   self._RTBG = self:GetUIComponent("RawImage", "RTBG")
   self._RTBGRect = self:GetUIComponent("RectTransform", "RTBG")
   self._ScoreTxt = self:GetUIComponent("UILocalizationText", "ScoreTxt")
   self._anim = self:GetUIComponent("Animation", "anim")
-  local standard = 1.7777777777778
-  local now = (UnityEngine.Screen).width / (UnityEngine.Screen).height
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._RTBGRect).sizeDelta = Vector2(1080 * now, 1080)
+  local standard = 1.7777777777777777
+  local now = UnityEngine.Screen.width / UnityEngine.Screen.height
+  self._RTBGRect.sizeDelta = Vector2(1080 * now, 1080)
   self._FishTxt = self:GetUIComponent("UILocalizationText", "FishTxt")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostGameClosingController.EnsureBtnOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN7N36PostGameClosingController:EnsureBtnOnClick()
   local lockName = "UICN7N36PostGameClosingController_AnimOUT"
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    ;
-    (self._anim):Play("uieff_UICN7N36PostGameClosingController_out")
+    self._anim:Play("uieff_UICN7N36PostGameClosingController_out")
     YIELD(TT, 500)
     self:UnLock(lockName)
-    ;
-    ((GameGlobal.UIStateManager)()):CloseDialog("UICN7N36PostInnerGameController")
+    GameGlobal.UIStateManager():CloseDialog("UICN7N36PostInnerGameController")
     self:CloseDialog()
     if self._missionCallBack then
-      (self._missionCallBack)(not self._hasPassed)
+      self._missionCallBack(not self._hasPassed)
     end
     if self._taskChainCallBack then
-      (self._taskChainCallBack)(true)
+      self._taskChainCallBack(true)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostGameClosingController.ShowDetail = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._ScoreTxt):SetText(self._score)
-  ;
-  (self._FishTxt):SetText((StringTable.Get)(self._txtCfg))
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._RTBG).texture = self._rt
+function UICN7N36PostGameClosingController:ShowDetail()
+  self._ScoreTxt:SetText(self._score)
+  self._FishTxt:SetText(StringTable.Get(self._txtCfg))
+  self._RTBG.texture = self._rt
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostGameClosingController.PlayAnimIN = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UICN7N36PostGameClosingController:PlayAnimIN()
   local lockName = "UICN7N36PostGameClosingController_AnimIN"
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    ;
-    (self._anim):Play("uieff_UICN7N36PostGameClosingController_in")
+    self._anim:Play("uieff_UICN7N36PostGameClosingController_in")
     YIELD(TT, 500)
     self:UnLock(lockName)
-  end
-)
+  end)
 end
-
-

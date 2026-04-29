@@ -1,92 +1,76 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_up_level_material_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIUpLevelMaterialItem", UICustomWidget)
 UIUpLevelMaterialItem = UIUpLevelMaterialItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIUpLevelMaterialItem.Constructor = function(self)
-  -- function num : 0_0
+function UIUpLevelMaterialItem:Constructor()
   self._perSecondCout = 2
   self._perNextSecondCout = 5
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelMaterialItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIUpLevelMaterialItem:OnShow(uiParams)
   self._itemInfo = nil
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.PetLevelUpFast)
+  self.uiItem:SetForm(UIItemForm.PetLevelUpFast)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelMaterialItem.OnHide = function(self)
-  -- function num : 0_2
+function UIUpLevelMaterialItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelMaterialItem.SetData = function(self, itemInfo, petElement, consumInfo, tItemIndex, maxCount, parentGo)
-  -- function num : 0_3 , upvalues : _ENV
+function UIUpLevelMaterialItem:SetData(itemInfo, petElement, consumInfo, tItemIndex, maxCount, parentGo)
   self._itemInfo = itemInfo
   if itemInfo == nil then
-    (self.uiItem):SetData({useNum = 0, exp = "", icon = "", quality = 0, text1 = ""})
-    ;
-    (self.uiItem):Select(false)
-    ;
-    (self.uiItem):SetBtnImage(false)
-    return 
+    self.uiItem:SetData({
+      useNum = 0,
+      exp = "",
+      icon = "",
+      quality = 0,
+      text1 = ""
+    })
+    self.uiItem:Select(false)
+    self.uiItem:SetBtnImage(false)
+    return
   end
   local exp = ""
   local icon = ""
   local quality = 0
   local text1 = ""
   self._useNum = 0
-  local itemId = ((self._itemInfo).m_template_data).ID
+  local itemId = self._itemInfo.m_template_data.ID
   self._consumInfo = consumInfo
   self._maxCount = maxCount
-  text1 = (HelperProxy:GetInstance()):FormatItemCount((itemInfo.m_data).count)
-  local cfg = (Cfg.cfg_item)[((self._itemInfo).m_template_data).ID]
+  text1 = HelperProxy:GetInstance():FormatItemCount(itemInfo.m_data.count)
+  local cfg = Cfg.cfg_item[self._itemInfo.m_template_data.ID]
   if cfg then
     icon = cfg.Icon
     quality = cfg.Color
   end
   self._itemIndex = tItemIndex
-  self._useNum = self._consumInfo and (self._consumInfo).count or 0
-  local cfg_ite_type = (Cfg.cfg_item_pet_exp)[((self._itemInfo).m_template_data).ID]
-  do
-    if cfg_ite_type and cfg_ite_type.Element == petElement then
-      local v = "+" .. ((Cfg.cfg_global).ElementAddExp).IntValue .. "%"
-      exp = v
-    end
-    ;
-    (self.uiItem):SetData({exp = exp, icon = icon, quality = quality, text1 = text1, useNum = self._useNum, itemId = itemId, changePos = true, isUp = true})
-    ;
-    (self.uiItem):SetBtnImage(true)
-    ;
-    (self.uiItem):SetClickCallBack(function()
-    -- function num : 0_3_0 , upvalues : _ENV, self, parentGo
-    (Log.fatal)("UIUpLevelMaterialItem callback")
-    local deltaPosition = ((self.uiItem)._transform).position - (parentGo.transform).position
+  self._useNum = self._consumInfo and self._consumInfo.count or 0
+  local cfg_ite_type = Cfg.cfg_item_pet_exp[self._itemInfo.m_template_data.ID]
+  if cfg_ite_type and cfg_ite_type.Element == petElement then
+    local v = "+" .. Cfg.cfg_global.ElementAddExp.IntValue .. "%"
+    exp = v
+  end
+  self.uiItem:SetData({
+    exp = exp,
+    icon = icon,
+    quality = quality,
+    text1 = text1,
+    useNum = self._useNum,
+    itemId = itemId,
+    changePos = true,
+    isUp = true
+  })
+  self.uiItem:SetBtnImage(true)
+  self.uiItem:SetClickCallBack(function()
+    Log.fatal("UIUpLevelMaterialItem callback")
+    local deltaPosition = self.uiItem._transform.position - parentGo.transform.position
     local asset = RoleAsset:New()
-    asset.assetid = ((self._itemInfo).m_template_data).ID
+    asset.assetid = self._itemInfo.m_template_data.ID
     self:ShowDialog("UICommonItemInfo", asset, deltaPosition)
-  end
-)
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelMaterialItem.ShowUpAnim = function(self, changePos, isUp)
-  -- function num : 0_4
-  (self.uiItem):SetData({changePos = changePos, isUp = isUp})
+function UIUpLevelMaterialItem:ShowUpAnim(changePos, isUp)
+  self.uiItem:SetData({changePos = changePos, isUp = isUp})
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_skill_href_info/ui_skill_href_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISkillHrefInfo", UIController)
 UISkillHrefInfo = UISkillHrefInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISkillHrefInfo.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISkillHrefInfo:OnShow(uiParams)
   self._offset = self:GetGameObject("offset")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
@@ -16,105 +9,78 @@ UISkillHrefInfo.OnShow = function(self, uiParams)
   self:Flush(uiParams[1])
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillHrefInfo.OnHide = function(self)
-  -- function num : 0_1
+function UISkillHrefInfo:OnHide()
   self._offset = nil
   self._txtName = nil
   self._imgIcon = nil
   self._txtDesc = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillHrefInfo.Flush = function(self, hrefName)
-  -- function num : 0_2 , upvalues : _ENV
+function UISkillHrefInfo:Flush(hrefName)
   if not hrefName then
     self:CloseSelfDialog()
-    return 
+    return
   end
   local id = tonumber(hrefName)
-  local cfgv = (Cfg.cfg_href_desc)[id]
+  local cfgv = Cfg.cfg_href_desc[id]
   if not cfgv then
     self:CloseSelfDialog()
-    return 
+    return
   end
   local name, icon, desc = self:GetInfo(cfgv)
-  ;
-  (self._txtName):SetText(name)
-  if (string.isnullorempty)(icon) then
-    ((self._imgIcon).gameObject):SetActive(false)
+  self._txtName:SetText(name)
+  if string.isnullorempty(icon) then
+    self._imgIcon.gameObject:SetActive(false)
   else
-    ;
-    ((self._imgIcon).gameObject):SetActive(true)
-    ;
-    (self._imgIcon):LoadImage(icon)
+    self._imgIcon.gameObject:SetActive(true)
+    self._imgIcon:LoadImage(icon)
   end
-  ;
-  (self._txtDesc):SetText(desc)
+  self._txtDesc:SetText(desc)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillHrefInfo.bgOnClick = function(self)
-  -- function num : 0_3
+function UISkillHrefInfo:bgOnClick()
   self:CloseSelfDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillHrefInfo.CloseSelfDialog = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):CloseDialog(self:GetName())
+function UISkillHrefInfo:CloseSelfDialog()
+  GameGlobal.UIStateManager():CloseDialog(self:GetName())
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillHrefInfo.GetInfo = function(self, cfgv)
-  -- function num : 0_5 , upvalues : _ENV
+function UISkillHrefInfo:GetInfo(cfgv)
   local name = ""
   local icon = ""
   local desc = ""
   if cfgv.type == SkillHrefInfoType.Buff then
-    local buffId = (cfgv.typeParam).buffId
-    local cfgBuff = (Cfg.cfg_buff)[buffId]
+    local buffId = cfgv.typeParam.buffId
+    local cfgBuff = Cfg.cfg_buff[buffId]
     if cfgBuff then
-      name = (StringTable.Get)(cfgBuff.Name)
+      name = StringTable.Get(cfgBuff.Name)
       icon = cfgBuff.Icon
-      desc = (StringTable.Get)(cfgBuff.Desc, cfgBuff.DescParams)
+      desc = StringTable.Get(cfgBuff.Desc, cfgBuff.DescParams)
+    end
+  elseif cfgv.type == SkillHrefInfoType.Trap then
+    local trapId = cfgv.typeParam.trapId
+    local cfg = Cfg.cfg_trap[trapId]
+    if cfg then
+      name = StringTable.Get(cfg.NameStr)
+      icon = cfg.CardResPath
+      desc = StringTable.Get(cfg.InnerDesc)
+    end
+  elseif cfgv.type == SkillHrefInfoType.Global then
+    local cfg = cfgv.typeParam
+    if cfg then
+      name = StringTable.Get(cfg.name)
+      icon = cfg.icon
+      desc = StringTable.Get(cfg.desc)
     end
   else
-    do
-      if cfgv.type == SkillHrefInfoType.Trap then
-        local trapId = (cfgv.typeParam).trapId
-        local cfg = (Cfg.cfg_trap)[trapId]
-        if cfg then
-          name = (StringTable.Get)(cfg.NameStr)
-          icon = cfg.CardResPath
-          desc = (StringTable.Get)(cfg.InnerDesc)
-        end
-      else
-        do
-          if cfgv.type == SkillHrefInfoType.Global then
-            local cfg = cfgv.typeParam
-            if cfg then
-              name = (StringTable.Get)(cfg.name)
-              icon = cfg.icon
-              desc = (StringTable.Get)(cfg.desc)
-            end
-          else
-            do
-              ;
-              (Log.fatal)("### unknown type")
-              return name, icon, desc
-            end
-          end
-        end
-      end
-    end
+    Log.fatal("### unknown type")
   end
+  return name, icon, desc
 end
 
-SkillHrefInfoType = {Buff = 1, Trap = 2, Global = 3}
-
+SkillHrefInfoType = {
+  Buff = 1,
+  Trap = 2,
+  Global = 3
+}

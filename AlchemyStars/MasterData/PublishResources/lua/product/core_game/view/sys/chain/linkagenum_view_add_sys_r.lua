@@ -1,63 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/chain/linkagenum_view_add_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LinkageNumViewAddSystem_Render", ReactiveSystem)
 LinkageNumViewAddSystem_Render = LinkageNumViewAddSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LinkageNumViewAddSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function LinkageNumViewAddSystem_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageNumViewAddSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = world:GetGroup((world.BW_WEMatchers).View)
+function LinkageNumViewAddSystem_Render:GetTrigger(world)
+  local group = world:GetGroup(world.BW_WEMatchers.View)
   local c = Collector:New({group}, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageNumViewAddSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2
+function LinkageNumViewAddSystem_Render:Filter(entity)
   return entity:HasLinkageNum()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageNumViewAddSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function LinkageNumViewAddSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     self:OnLinkageNumViewAdded(entities[i])
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageNumViewAddSystem_Render.OnLinkageNumViewAdded = function(self, linknumEntity)
-  -- function num : 0_4 , upvalues : _ENV
+function LinkageNumViewAddSystem_Render:OnLinkageNumViewAdded(linknumEntity)
   local viewCmpt = linknumEntity:View()
   if viewCmpt == nil then
-    return 
+    return
   end
   local viewObj = viewCmpt:GetGameObject()
   if viewObj == nil then
-    return 
+    return
   end
   local linkageNumCmpt = linknumEntity:LinkageNum()
   linknumEntity:SetViewVisible(true)
   local viewWrapper = viewCmpt.ViewWrapper
   local viewRoot = viewWrapper.GameObject
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (viewRoot.transform).rotation = (Quaternion.Euler)(90, -90, 0)
+  viewRoot.transform.rotation = Quaternion.Euler(90, -90, 0)
   linkageNumCmpt:SetLinkCount(viewRoot)
 end
-
-

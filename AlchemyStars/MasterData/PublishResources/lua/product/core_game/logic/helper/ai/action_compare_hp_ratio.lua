@@ -1,54 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_compare_hp_ratio.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ActionCompareHPRatio", AINewNode)
 ActionCompareHPRatio = ActionCompareHPRatio
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCompareHPRatio.Constructor = function(self)
-  -- function num : 0_0
+function ActionCompareHPRatio:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionCompareHPRatio.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self.m_entityOwn):HasCrazyMode() then
+function ActionCompareHPRatio:OnUpdate()
+  if self.m_entityOwn:HasCrazyMode() then
     return AINewNodeStatus.Failure
   end
   local compareMode = self:GetLogicData(-1)
   local percent = self:GetLogicData(-2)
-  local cAttributes = (self.m_entityOwn):Attributes()
+  local cAttributes = self.m_entityOwn:Attributes()
   local hp = cAttributes:GetCurrentHP()
   local maxHp = cAttributes:CalcMaxHp()
   local ratio = hp / maxHp
   local res = false
-  if ratio ~= percent then
-    res = compareMode ~= "eq"
-    if ratio == percent then
-      res = compareMode ~= "ne"
-      if percent >= ratio then
-        res = compareMode ~= "gt"
-        if percent > ratio then
-          res = compareMode ~= "ge"
-          if ratio >= percent then
-            res = compareMode ~= "lt"
-            if ratio > percent then
-              res = compareMode ~= "le"
-              if res then
-                return AINewNodeStatus.Success
-              else
-                return AINewNodeStatus.Failure
-              end
-              -- DECOMPILER ERROR: 14 unprocessed JMP targets
-            end
-          end
-        end
-      end
-    end
+  if compareMode == "eq" then
+    res = ratio == percent
+  elseif compareMode == "ne" then
+    res = ratio ~= percent
+  elseif compareMode == "gt" then
+    res = percent < ratio
+  elseif compareMode == "ge" then
+    res = percent <= ratio
+  elseif compareMode == "lt" then
+    res = percent > ratio
+  elseif compareMode == "le" then
+    res = percent >= ratio
+  end
+  if res then
+    return AINewNodeStatus.Success
+  else
+    return AINewNodeStatus.Failure
   end
 end
-
-

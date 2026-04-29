@@ -1,49 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_save_qr_tip_new.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISaveQRTipNew", UIController)
 UISaveQRTipNew = UISaveQRTipNew
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISaveQRTipNew.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISaveQRTipNew:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISaveQRTipNew.OnHide = function(self)
-  -- function num : 0_1
+function UISaveQRTipNew:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISaveQRTipNew.InitUI = function(self)
-  -- function num : 0_2
+function UISaveQRTipNew:InitUI()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISaveQRTipNew.ButtonOkOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(LoginModule)
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UISaveQRTipNew:ButtonOkOnClick()
+  local module = GameGlobal.GetModule(LoginModule)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   local str = module:GetSaveStr()
-  ;
-  (GetQR_Local.SaveFile)(str)
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  GetQR_Local.SaveFile(str)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   roleModule:GameSingleSaveChoosePainting()
-  ;
-  (ToastManager.ShowToast)((StringTable.Get)("str_set_download_success"))
+  ToastManager.ShowToast(StringTable.Get("str_set_download_success"))
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISaveQRTipNew.ButtonHelpOnClick = function(self)
-  -- function num : 0_4
+function UISaveQRTipNew:ButtonHelpOnClick()
   self:ShowDialog("UISaveQRDetail")
 end
-
-

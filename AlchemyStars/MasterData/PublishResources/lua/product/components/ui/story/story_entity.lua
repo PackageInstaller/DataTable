@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/story/story_entity.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StoryEntity", Object)
 StoryEntity = StoryEntity
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StoryEntity.Constructor = function(self, ID, gameObject, resRequest, storyManager)
-  -- function num : 0_0 , upvalues : _ENV
+function StoryEntity:Constructor(ID, gameObject, resRequest, storyManager)
   self._ID = ID
   self._gameObject = gameObject
   self._resRequest = resRequest
@@ -18,84 +11,53 @@ StoryEntity.Constructor = function(self, ID, gameObject, resRequest, storyManage
   self._keyframeDone = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntity.GetEntityType = function(self)
-  -- function num : 0_1
+function StoryEntity:GetEntityType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntity.GetID = function(self)
-  -- function num : 0_2
+function StoryEntity:GetID()
   return self._ID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntity._TriggerKeyframe = function(self, keyframeData)
-  -- function num : 0_3
+function StoryEntity:_TriggerKeyframe(keyframeData)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntity._UpdateAnimation = function(self, time)
-  -- function num : 0_4
+function StoryEntity:_UpdateAnimation(time)
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntity.Update = function(self, time)
-  -- function num : 0_5 , upvalues : _ENV
+function StoryEntity:Update(time)
   local allTrackEnd = true
-  if self._currentTrackData and (self._currentTrackData).KeyFrames then
-    for index,keyframe in ipairs((self._currentTrackData).KeyFrames) do
-      -- DECOMPILER ERROR at PC22: Unhandled construct in 'MakeBoolean' P1
-
-      if not (self._keyframeDone)[keyframe] and keyframe.Time <= time then
-        self:_TriggerKeyframe(keyframe)
-        -- DECOMPILER ERROR at PC24: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._keyframeDone)[keyframe] = true
-      else
-        allTrackEnd = false
+  if self._currentTrackData and self._currentTrackData.KeyFrames then
+    for index, keyframe in ipairs(self._currentTrackData.KeyFrames) do
+      if not self._keyframeDone[keyframe] then
+        if time >= keyframe.Time then
+          self:_TriggerKeyframe(keyframe)
+          self._keyframeDone[keyframe] = true
+        else
+          allTrackEnd = false
+        end
       end
     end
-    do
-      if self:_UpdateAnimation(time) then
-        do return allTrackEnd end
-        do return true end
-      end
-    end
+    allTrackEnd = self:_UpdateAnimation(time) and allTrackEnd
+    return allTrackEnd
+  else
+    return true
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntity.SectionStart = function(self, trackData)
-  -- function num : 0_6
+function StoryEntity:SectionStart(trackData)
   self._currentTrackData = trackData
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntity.SectionEnd = function(self)
-  -- function num : 0_7
+function StoryEntity:SectionEnd()
   self._currentTrackData = nil
   self._keyframeDone = {}
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntity.Destroy = function(self)
-  -- function num : 0_8
+function StoryEntity:Destroy()
   if self._resRequest ~= nil then
-    (self._resRequest):Dispose()
+    self._resRequest:Dispose()
     self._resRequest = nil
   end
 end
-
-

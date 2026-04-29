@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_education/condition/ui_education_condition_element_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_education_condition")
 _class("UIEducationConditionElementLevel", UIEducationCondition)
 UIEducationConditionElementLevel = UIEducationConditionElementLevel
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEducationConditionElementLevel.Constructor = function(self, count, elementType, limitGrade)
-  -- function num : 0_0 , upvalues : _ENV
+function UIEducationConditionElementLevel:Constructor(count, elementType, limitGrade)
   self._type = ConditionType.CT_PetYElementZLevel
   self._quantity = count
   self._elementType = elementType
@@ -18,39 +11,27 @@ UIEducationConditionElementLevel.Constructor = function(self, count, elementType
   self._limitStar = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationConditionElementLevel.GetElementType = function(self)
-  -- function num : 0_1
+function UIEducationConditionElementLevel:GetElementType()
   return self._elementType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationConditionElementLevel.GetLimitGrade = function(self)
-  -- function num : 0_2
+function UIEducationConditionElementLevel:GetLimitGrade()
   return self._limitGrade
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationConditionElementLevel.Test = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIEducationConditionElementLevel:Test()
   self._completed = 0
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  local petModule = GameGlobal.GetModule(PetModule)
   local allPets = petModule:GetPets()
-  for k,v in pairs(allPets) do
+  for k, v in pairs(allPets) do
     local isMet = true
-    isMet = not isMet or v:GetPetFirstElement() == self._elementType or self._elementType == 0
-    isMet = not isMet or self._limitGrade <= v:GetPetGrade() or self._limitGrade == 0
-    isMet = not isMet or self._limitLevel <= v:GetPetLevel() or self._limitLevel == 0
-    isMet = not isMet or self._limitStar <= v:GetPetStar() or self._limitStar == 0
+    isMet = isMet and (v:GetPetFirstElement() == self._elementType or 0 == self._elementType)
+    isMet = isMet and (v:GetPetGrade() >= self._limitGrade or 0 == self._limitGrade)
+    isMet = isMet and (v:GetPetLevel() >= self._limitLevel or 0 == self._limitLevel)
+    isMet = isMet and (v:GetPetStar() >= self._limitStar or 0 == self._limitStar)
     if isMet then
       self._completed = self._completed + 1
     end
   end
-  self._completed = (math.min)(self._completed, self._quantity)
-  -- DECOMPILER ERROR: 9 unprocessed JMP targets
+  self._completed = math.min(self._completed, self._quantity)
 end
-
-

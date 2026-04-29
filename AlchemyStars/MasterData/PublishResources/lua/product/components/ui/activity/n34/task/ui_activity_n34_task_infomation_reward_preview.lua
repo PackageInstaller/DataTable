@@ -1,33 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/task/ui_activity_n34_task_infomation_reward_preview.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN34TaskInfomationRewardPreview", UIController)
 UIActivityN34TaskInfomationRewardPreview = UIActivityN34TaskInfomationRewardPreview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN34TaskInfomationRewardPreview.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIActivityN34TaskInfomationRewardPreview:LoadDataOnEnter(TT, res)
+  self._itemModule = GameGlobal.GetModule(ItemModule)
   self._activityConst = UIActivityCustomConst:New(self:GetCampaignType(), self:GetComponentIds())
-  ;
-  (self._activityConst):LoadData(TT, res)
-  do
-    if res and not res:GetSucc() then
-      local campModule = (GameGlobal.GetModule)(CampaignModule)
-      campModule:CheckErrorCode(res.m_result, ((self._activityConst):GetCampaignId()), nil, nil)
-    end
-    self._questComponent = (self._activityConst):GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_QUEST)
-    self._component = (self._activityConst):GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_SURVEY)
-    self._questModule = (GameGlobal.GetModule)(QuestModule)
+  self._activityConst:LoadData(TT, res)
+  if res and not res:GetSucc() then
+    local campModule = GameGlobal.GetModule(CampaignModule)
+    campModule:CheckErrorCode(res.m_result, self._activityConst:GetCampaignId(), nil, nil)
   end
+  self._questComponent = self._activityConst:GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_QUEST)
+  self._component, self._componentInfo = self._activityConst:GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_SURVEY)
+  self._questModule = GameGlobal.GetModule(QuestModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreview.OnShow = function(self, params)
-  -- function num : 0_1
+function UIActivityN34TaskInfomationRewardPreview:OnShow(params)
   self._cfg = params[1]
   self._rewardPage = params[2]
   self._evaluated = params[3]
@@ -36,27 +23,18 @@ UIActivityN34TaskInfomationRewardPreview.OnShow = function(self, params)
   self:StartTimer()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreview.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN34TaskInfomationRewardPreview:OnHide()
   if self._timeEvent then
-    (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+    UIActivityHelper.CancelTimerEvent(self._timeEvent)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreview.GetComponents = function(self)
-  -- function num : 0_3
+function UIActivityN34TaskInfomationRewardPreview:GetComponents()
   self._backBtn = self:GetUIComponent("UISelectObjectPath", "BackBtn")
-  self._commonTopBtn = (self._backBtn):SpawnObject("UICommonTopButton")
-  ;
-  (self._commonTopBtn):SetData(function()
-    -- function num : 0_3_0 , upvalues : self
+  self._commonTopBtn = self._backBtn:SpawnObject("UICommonTopButton")
+  self._commonTopBtn:SetData(function()
     self:CloseDialog()
-  end
-, nil, nil, false)
+  end, nil, nil, false)
   self._previewBtn = self:GetGameObject("previewBtn")
   self._evaluateBtn = self:GetGameObject("evaluateBtn")
   self._evaluate = self:GetGameObject("evaluate")
@@ -79,214 +57,143 @@ UIActivityN34TaskInfomationRewardPreview.GetComponents = function(self)
   self._spine = self:GetUIComponent("SpineLoader", "Spine")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreview.Init = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._preview):SetActive(self._rewardPage)
-  ;
-  (self._evaluate):SetActive(not self._rewardPage)
-  self._previewItems = (self._previewContent):SpawnObjects("UIActivityN34TaskInfomationRewardPreviewItem", #(self._cfg).TaskList)
+function UIActivityN34TaskInfomationRewardPreview:Init()
+  self._preview:SetActive(self._rewardPage)
+  self._evaluate:SetActive(not self._rewardPage)
+  self._previewItems = self._previewContent:SpawnObjects("UIActivityN34TaskInfomationRewardPreviewItem", #self._cfg.TaskList)
   local list = self:SortList()
-  for index,value in ipairs(self._previewItems) do
+  for index, value in ipairs(self._previewItems) do
     local quest = list[index]
     local state = QuestStatus.QUEST_NotStart
     if quest then
       state = self:GetTaskState(quest)
     end
     value:SetData(index, self._cfg, quest, state, function(id, pos)
-    -- function num : 0_4_0 , upvalues : self
-    self:ShowTips(id, pos)
+      self:ShowTips(id, pos)
+    end)
   end
-)
-  end
-  ;
-  (self._tipTextGo):SetActive(not self._evaluated)
-  ;
-  (self._evaluateText):SetText((self._cfg).EvaluatedInfo)
-  ;
-  (self._previewSelectGo):SetActive(true)
-  ;
-  (self._evaluatedGo):SetActive(self._evaluated)
-  ;
-  (self._evaluatedSelectGo):SetActive(false)
-  local num = (self._itemModule):GetItemCount((self._cfg).TrustItem)
-  local value = num / (self._cfg).TrustTotal
-  -- DECOMPILER ERROR at PC72: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._process).value = value
-  local value = (math.floor)(num / (self._cfg).TrustTotal * 100 + 0.5)
-  ;
-  (self._progressLabel):SetText(value .. "%")
-  ;
-  (self._name):SetText((StringTable.Get)((self._cfg).Name))
-  local str = ((Cfg.cfg_global).survey_tokens_item).StrValue
-  local a, b = (string.match)(str, "(.*)%|(.*)")
-  local num = (self._itemModule):GetItemCount(tonumber(a))
-  if num > 9999999 then
+  self._tipTextGo:SetActive(not self._evaluated)
+  self._evaluateText:SetText(self._cfg.EvaluatedInfo)
+  self._previewSelectGo:SetActive(true)
+  self._evaluatedGo:SetActive(self._evaluated)
+  self._evaluatedSelectGo:SetActive(false)
+  local num = self._itemModule:GetItemCount(self._cfg.TrustItem)
+  local value = num / self._cfg.TrustTotal
+  self._process.value = value
+  local value = math.floor(num / self._cfg.TrustTotal * 100 + 0.5)
+  self._progressLabel:SetText(value .. "%")
+  self._name:SetText(StringTable.Get(self._cfg.Name))
+  local str = Cfg.cfg_global.survey_tokens_item.StrValue
+  local a, b = string.match(str, "(.*)%|(.*)")
+  local num = self._itemModule:GetItemCount(tonumber(a))
+  if 9999999 < num then
     num = 9999999
   end
-  ;
-  (self._itemText):SetText((UIActivityCustomHelper.GetItemCountStr)(7, num, "#CFCFCF", "#CFCFCF"))
-  ;
-  (self._nameTitleText):SetText((self._cfg).Des)
-  ;
-  (self._nameText):SetText((self._cfg).Name)
-  ;
-  (self._spine):LoadSpine((self._cfg).Spine)
+  self._itemText:SetText(UIActivityCustomHelper.GetItemCountStr(7, num, "#CFCFCF", "#CFCFCF"))
+  self._nameTitleText:SetText(self._cfg.Des)
+  self._nameText:SetText(self._cfg.Name)
+  self._spine:LoadSpine(self._cfg.Spine)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreview.Refresh = function(self)
-  -- function num : 0_5
-  (self._preview):SetActive(true)
-  ;
-  (self._evaluate):SetActive(false)
-  ;
-  (self._previewSelectGo):SetActive(self._rewardPage)
-  ;
-  (self._evaluatedGo):SetActive(false)
-  ;
-  (self._evaluatedSelectGo):SetActive(not self._rewardPage)
-  local callBack = function()
-    -- function num : 0_5_0 , upvalues : self
+function UIActivityN34TaskInfomationRewardPreview:Refresh()
+  self._preview:SetActive(true)
+  self._evaluate:SetActive(false)
+  self._previewSelectGo:SetActive(self._rewardPage)
+  self._evaluatedGo:SetActive(false)
+  self._evaluatedSelectGo:SetActive(not self._rewardPage)
+  
+  local function callBack()
     self._rewardPage = true
     self:Refresh()
   end
-
+  
   if not self._rewardPage then
     self:ShowDialog("UIActivityN34TaskInfomationPasteTips", self._cfg, callBack)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreview.GetTaskState = function(self, quest)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityN34TaskInfomationRewardPreview:GetTaskState(quest)
   local state = RewardState.Unlock
-  state = (self._questComponent):CheckCampaignQuestStatus(quest:QuestInfo())
+  state = self._questComponent:CheckCampaignQuestStatus(quest:QuestInfo())
   return state
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreview.GetCampaignType = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityN34TaskInfomationRewardPreview:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N34
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreview.GetComponentIds = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityN34TaskInfomationRewardPreview:GetComponentIds()
   local componentIds = {}
   componentIds[#componentIds + 1] = ECampaignN34ComponentID.ECAMPAIGN_N34_SURVEY
   componentIds[#componentIds + 1] = ECampaignN34ComponentID.ECAMPAIGN_N34_QUEST
   return componentIds
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreview.CloseOnClick = function(self)
-  -- function num : 0_9
+function UIActivityN34TaskInfomationRewardPreview:CloseOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreview.PreviewBtnOnClick = function(self)
-  -- function num : 0_10
+function UIActivityN34TaskInfomationRewardPreview:PreviewBtnOnClick()
   self._rewardPage = true
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreview.EvaluateBtnOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local unlock = (table.icontains)(((self._componentInfo).info).pet_unlock, (self._cfg).PetID)
+function UIActivityN34TaskInfomationRewardPreview:EvaluateBtnOnClick()
+  local unlock = table.icontains(self._componentInfo.info.pet_unlock, self._cfg.PetID)
   if unlock then
     self:ShowDialog("UIActivityN34TaskInfomationPasteTips", self._cfg)
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_n34_task_delegate_person_uncomplete_tips"))
+    ToastManager.ShowToast(StringTable.Get("str_n34_task_delegate_person_uncomplete_tips"))
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreview.StartTimer = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityN34TaskInfomationRewardPreview:StartTimer()
   if self._timeEvent then
-    (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+    UIActivityHelper.CancelTimerEvent(self._timeEvent)
   end
   self._addTime = 0
-  self._timeEvent = (UIActivityHelper.StartTimerEvent)(self._timeEvent, function()
-    -- function num : 0_12_0 , upvalues : self
+  self._timeEvent = UIActivityHelper.StartTimerEvent(self._timeEvent, function()
     self._addTime = self._addTime + 1
     if self._addTime > 5 then
       self._addTime = 0
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreview.ShowTips = function(self, itemId, pos)
-  -- function num : 0_13
-  (self._tips):SetData(itemId, pos)
+function UIActivityN34TaskInfomationRewardPreview:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreview.SortList = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityN34TaskInfomationRewardPreview:SortList()
   local questList, finished = {}, {}
-  for index,value in ipairs((self._cfg).TaskList) do
-    local quest = (self._questModule):GetQuest(((self._cfg).TaskList)[index])
+  for index, value in ipairs(self._cfg.TaskList) do
+    local quest = self._questModule:GetQuest(self._cfg.TaskList[index])
     local state = QuestStatus.QUEST_NotStart
     if quest then
       state = self:GetTaskState(quest)
       if state == 4 then
-        (table.insert)(finished, quest)
+        table.insert(finished, quest)
       else
-        ;
-        (table.insert)(questList, quest)
+        table.insert(questList, quest)
       end
     end
   end
-  ;
-  (table.sort)(questList, function(a, b)
-    -- function num : 0_14_0
-    local idA = (a:QuestInfo()).quest_id
-    local idB = (b:QuestInfo()).quest_id
-    do return idA < idB end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  ;
-  (table.sort)(finished, function(a, b)
-    -- function num : 0_14_1
-    local idA = (a:QuestInfo()).quest_id
-    local idB = (b:QuestInfo()).quest_id
-    do return idA < idB end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  for index,value in ipairs(finished) do
-    (table.insert)(questList, value)
+  table.sort(questList, function(a, b)
+    local idA = a:QuestInfo().quest_id
+    local idB = b:QuestInfo().quest_id
+    return idA < idB
+  end)
+  table.sort(finished, function(a, b)
+    local idA = a:QuestInfo().quest_id
+    local idB = b:QuestInfo().quest_id
+    return idA < idB
+  end)
+  for index, value in ipairs(finished) do
+    table.insert(questList, value)
   end
   return questList
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreview.TipOnClick = function(self)
-  -- function num : 0_15
+function UIActivityN34TaskInfomationRewardPreview:TipOnClick()
   self:ShowDialog("UIActivityN34TaskInfomationRewardPreviewTip", self._cfg)
 end
-
-

@@ -1,71 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/connect_pieces_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ConnectPiecesComponent", Object)
 ConnectPiecesComponent = ConnectPiecesComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ConnectPiecesComponent.Constructor = function(self, ConnectPieces, elementType)
-  -- function num : 0_0
+function ConnectPiecesComponent:Constructor(ConnectPieces, elementType)
   self._ConnectPieces = ConnectPieces
   self._elementType = elementType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectPiecesComponent.GetConnectPieces = function(self)
-  -- function num : 0_1
+function ConnectPiecesComponent:GetConnectPieces()
   return self._ConnectPieces
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectPiecesComponent.GetPieceType = function(self)
-  -- function num : 0_2
+function ConnectPiecesComponent:GetPieceType()
   return self._elementType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ConnectPieces = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).ConnectPieces)
+function Entity:ConnectPieces()
+  return self:GetComponent(self.WEComponentsEnum.ConnectPieces)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasConnectPieces = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).ConnectPieces)
+function Entity:HasConnectPieces()
+  return self:HasComponent(self.WEComponentsEnum.ConnectPieces)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddConnectPieces = function(self, ConnectPieces, elementType)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ConnectPieces
+function Entity:AddConnectPieces(ConnectPieces, elementType)
+  local index = self.WEComponentsEnum.ConnectPieces
   local component = ConnectPiecesComponent:New(ConnectPieces, elementType)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceConnectPieces = function(self, ConnectPieces, elementType)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ConnectPieces
+function Entity:ReplaceConnectPieces(ConnectPieces, elementType)
+  local index = self.WEComponentsEnum.ConnectPieces
   local component = ConnectPiecesComponent:New(ConnectPieces, elementType)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveConnectPieces = function(self)
-  -- function num : 0_7
+function Entity:RemoveConnectPieces()
   if self:HasConnectPieces() then
-    self:RemoveComponent((self.WEComponentsEnum).ConnectPieces)
+    self:RemoveComponent(self.WEComponentsEnum.ConnectPieces)
   end
 end
-
-

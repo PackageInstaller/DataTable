@@ -1,71 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n16/ingame/ui_n16_faulttoleran_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN16FaultTolerantItem", UICustomWidget)
 UIN16FaultTolerantItem = UIN16FaultTolerantItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN16FaultTolerantItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN16FaultTolerantItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16FaultTolerantItem.OnHide = function(self)
-  -- function num : 0_1
+function UIN16FaultTolerantItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16FaultTolerantItem.InitWidget = function(self)
-  -- function num : 0_2
+function UIN16FaultTolerantItem:InitWidget()
   self.used = self:GetGameObject("used")
   self.nouse = self:GetGameObject("nouse")
   self.ani = self:GetUIComponent("Animation", "go")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16FaultTolerantItem.Refresh = function(self)
-  -- function num : 0_3
-  (self.used):SetActive(true)
-  ;
-  (self.nouse):SetActive(true)
+function UIN16FaultTolerantItem:Refresh()
+  self.used:SetActive(true)
+  self.nouse:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16FaultTolerantItem.SetUsed = function(self, used)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN16FaultTolerantItem:SetUsed(used)
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self, used
     YIELD(TT, 1000)
-    if not self.nouse or not (self.nouse).gameObject then
-      return 
+    if not self.nouse or not self.nouse.gameObject then
+      return
     end
-    ;
-    (self.nouse):SetActive(not used)
-    ;
-    (self.used):SetActive(used)
-  end
-, self)
+    self.nouse:SetActive(not used)
+    self.used:SetActive(used)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16FaultTolerantItem.SetData = function(self, nIndex)
-  -- function num : 0_5
+function UIN16FaultTolerantItem:SetData(nIndex)
   self._index = nIndex
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16FaultTolerantItem.PlayeAni = function(self)
-  -- function num : 0_6
-  (self.ani):Play("uieff_FaultToLearnItem_Fade")
+function UIN16FaultTolerantItem:PlayeAni()
+  self.ani:Play("uieff_FaultToLearnItem_Fade")
 end
-
-

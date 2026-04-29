@@ -1,46 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/week_tower/ui_week_tower_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWeekTowerController", UISideEnterCenterContentBase)
 UIWeekTowerController = UIWeekTowerController
-local WeekTowerDiffEnum = {Easy = 1, Normal = 2, Diff = 3}
+local WeekTowerDiffEnum = {
+  Easy = 1,
+  Normal = 2,
+  Diff = 3
+}
 _enum("WeekTowerDiffEnum", WeekTowerDiffEnum)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIWeekTowerController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._infoTweenPos = {[1] = 0, [2] = 900}
+function UIWeekTowerController:Constructor()
+  self._infoTweenPos = {
+    [1] = 0,
+    [2] = 900
+  }
   self._moveContentTime = 0.2
-  self._infoAnim = {open = "uieff_WeekTower_Info_In", close = "uieff_WeekTower_Info_Out"}
+  self._infoAnim = {
+    open = "uieff_WeekTower_Info_In",
+    close = "uieff_WeekTower_Info_Out"
+  }
   self._infoIsOpen = false
   self._currentMissionData = nil
   self._missionid2activityrewards = {}
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._module = (GameGlobal.GetModule)(CampaignModule)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._module = GameGlobal.GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.CreateMisisonList = function(self)
-  -- function num : 0_1 , upvalues : _ENV, WeekTowerDiffEnum
-  self._component = (self._localProcess):GetComponent(ECampaignWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_MISSION)
-  local componentid = (self._component):GetComponentCfgId()
-  local missionInfo = (self._localProcess):GetComponentInfo(ECampaignWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_MISSION)
+function UIWeekTowerController:CreateMisisonList()
+  self._component = self._localProcess:GetComponent(ECampaignWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_MISSION)
+  local componentid = self._component:GetComponentCfgId()
+  local missionInfo = self._localProcess:GetComponentInfo(ECampaignWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_MISSION)
   local passMissionMap = missionInfo.m_pass_mission_info
   local currentMissionID = missionInfo.m_cur_mission
-  local missionCfgList = (Cfg.cfg_component_line_mission)({ComponentID = componentid})
-  if not missionCfgList or (table.count)(missionCfgList) <= 0 then
-    (Log.error)("###[UIWeekTowerController] missionIdList is nil or count <= 0 !")
+  local missionCfgList = Cfg.cfg_component_line_mission({ComponentID = componentid})
+  if not missionCfgList or table.count(missionCfgList) <= 0 then
+    Log.error("###[UIWeekTowerController] missionIdList is nil or count <= 0 !")
   end
-  ;
-  (table.sort)(missionCfgList, function(a, b)
-    -- function num : 0_1_0
-    do return a.SortId < b.SortId end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(missionCfgList, function(a, b)
+    return a.SortId < b.SortId
+  end)
   local easyMissionList = {}
   local normalMissionList = {}
   local diffMissionList = {}
@@ -57,19 +53,15 @@ UIWeekTowerController.CreateMisisonList = function(self)
     local missionData = WeekTowerMissionData:New(missionCfg, pass, passInfo)
     self._gotStarCount = self._gotStarCount + missionData:GetStarCount()
     if missionData:GetDiff() == WeekTowerDiffEnum.Easy then
-      (table.insert)(easyMissionList, missionData)
-    else
-      if missionData:GetDiff() == WeekTowerDiffEnum.Normal then
-        (table.insert)(normalMissionList, missionData)
-      else
-        if missionData:GetDiff() == WeekTowerDiffEnum.Diff then
-          (table.insert)(diffMissionList, missionData)
-        end
-      end
+      table.insert(easyMissionList, missionData)
+    elseif missionData:GetDiff() == WeekTowerDiffEnum.Normal then
+      table.insert(normalMissionList, missionData)
+    elseif missionData:GetDiff() == WeekTowerDiffEnum.Diff then
+      table.insert(diffMissionList, missionData)
     end
   end
   self._currentMissionData = nil
-  local currentDiff, index = nil, nil
+  local currentDiff, index
   if currentDiff == nil then
     for i = 1, #easyMissionList do
       local mission = easyMissionList[i]
@@ -87,90 +79,70 @@ UIWeekTowerController.CreateMisisonList = function(self)
       end
     end
   end
-  do
-    if currentDiff == nil then
-      (Log.debug)("###[UIWeekTowerController] self._currentDiff == nil !")
-      currentDiff = WeekTowerDiffEnum.Easy
-      index = 1
-      self._currentMissionData = easyMissionList[1]
-    end
-    if (self._currentMissionData):GetPassTime() == WeekTowerMissionBattleStatus.Lock then
-      (self._currentMissionData):SetPassState(WeekTowerMissionBattleStatus.Battle)
-    end
-    self._diffList = {}
-    local easyLock = true
-    if WeekTowerDiffEnum.Easy <= currentDiff then
-      easyLock = false
-    end
-    local easy = WeekTowerDiffData:New(easyLock, easyMissionList, WeekTowerDiffEnum.Easy)
-    ;
-    (table.insert)(self._diffList, easy)
-    local normalLock = true
-    if WeekTowerDiffEnum.Normal <= currentDiff then
-      normalLock = false
-    end
-    local normal = WeekTowerDiffData:New(normalLock, normalMissionList, WeekTowerDiffEnum.Normal)
-    ;
-    (table.insert)(self._diffList, normal)
-    local diffLock = true
-    if WeekTowerDiffEnum.Diff <= currentDiff then
-      diffLock = false
-    end
-    local diff = WeekTowerDiffData:New(diffLock, diffMissionList, WeekTowerDiffEnum.Diff)
-    ;
-    (table.insert)(self._diffList, diff)
-    self._selectDiffIdx = currentDiff
-    self._selectIndex = index
+  if currentDiff == nil then
+    Log.debug("###[UIWeekTowerController] self._currentDiff == nil !")
+    currentDiff = WeekTowerDiffEnum.Easy
+    index = 1
+    self._currentMissionData = easyMissionList[1]
   end
+  if self._currentMissionData:GetPassTime() == WeekTowerMissionBattleStatus.Lock then
+    self._currentMissionData:SetPassState(WeekTowerMissionBattleStatus.Battle)
+  end
+  self._diffList = {}
+  local easyLock = true
+  if currentDiff >= WeekTowerDiffEnum.Easy then
+    easyLock = false
+  end
+  local easy = WeekTowerDiffData:New(easyLock, easyMissionList, WeekTowerDiffEnum.Easy)
+  table.insert(self._diffList, easy)
+  local normalLock = true
+  if currentDiff >= WeekTowerDiffEnum.Normal then
+    normalLock = false
+  end
+  local normal = WeekTowerDiffData:New(normalLock, normalMissionList, WeekTowerDiffEnum.Normal)
+  table.insert(self._diffList, normal)
+  local diffLock = true
+  if currentDiff >= WeekTowerDiffEnum.Diff then
+    diffLock = false
+  end
+  local diff = WeekTowerDiffData:New(diffLock, diffMissionList, WeekTowerDiffEnum.Diff)
+  table.insert(self._diffList, diff)
+  self._selectDiffIdx = currentDiff
+  self._selectIndex = index
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.InitQuestInfo = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._questCmpt = (self._localProcess):GetComponent(ECampaignWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_TASK)
+function UIWeekTowerController:InitQuestInfo()
+  self._questCmpt = self._localProcess:GetComponent(ECampaignWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_TASK)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.DoInit = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self._weekTowerID = (self._data):GetCampaignID()
-  local isOpen = (self._data):CheckCampaignOpen()
+function UIWeekTowerController:DoInit()
+  self._weekTowerID = self._data:GetCampaignID()
+  local isOpen = self._data:CheckCampaignOpen()
   if not isOpen then
     res:SetSucc(false)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_week_tower_reset_activity_close_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_week_tower_reset_activity_close_tips"))
+    return
   end
-  self._campaign_sample = (self._data):GetSample()
-  self._activeEndTime = (self._campaign_sample).end_time
-  self._localProcess = (self._data):GetLocalProcess()
+  self._campaign_sample = self._data:GetSample()
+  self._activeEndTime = self._campaign_sample.end_time
+  self._localProcess = self._data:GetLocalProcess()
   self:CreateMisisonList()
   self:InitQuestInfo()
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.DoShow = function(self, uiParams)
-  -- function num : 0_4 , upvalues : _ENV
-  local isNew = (self._data):CheckCampaignNew()
+function UIWeekTowerController:DoShow(uiParams)
+  local isNew = self._data:CheckCampaignNew()
   if isNew then
     self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self
-    (self._data):ClearCampaignNew(TT)
-  end
-, self)
+      self._data:ClearCampaignNew(TT)
+    end, self)
   end
   self:GetComponents()
   self:OnValue()
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self.RefreshAwardState)
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.GetComponents = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIWeekTowerController:GetComponents()
   local itemTips = self:GetUIComponent("UISelectObjectPath", "MatTip")
   self._selectInfo = itemTips:SpawnObject("UISelectInfo")
   self._name = self:GetUIComponent("UILocalizationText", "name")
@@ -184,7 +156,7 @@ UIWeekTowerController.GetComponents = function(self)
   self._awardContent = self:GetUIComponent("UISelectObjectPath", "AwardContent")
   self._awardGot = self:GetGameObject("awardGot")
   local grid = self:GetUIComponent("GridLayoutGroup", "stagePools")
-  self._itemWidth = (grid.cellSize).x
+  self._itemWidth = grid.cellSize.x
   self._stagePools = self:GetUIComponent("UISelectObjectPath", "stagePools")
   self._contentRect = self:GetUIComponent("RectTransform", "stagePools")
   self._scrollRect = self:GetUIComponent("ScrollRect", "stagePool")
@@ -207,41 +179,26 @@ UIWeekTowerController.GetComponents = function(self)
   self._infoBg2 = self:GetUIComponent("RawImageLoader", "infoBg2")
   self._infoBg2Go = self:GetGameObject("infoBg2")
   self._bgGo = self:GetGameObject("bg")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._bgGo), UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_5_0 , upvalues : self
-    (self._scrollRect):OnBeginDrag(eventData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._bgGo), UIEvent.EndDrag, function(eventData)
-    -- function num : 0_5_1 , upvalues : self
-    (self._scrollRect):OnEndDrag(eventData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._bgGo), UIEvent.Drag, function(eventData)
-    -- function num : 0_5_2 , upvalues : self
-    (self._scrollRect):OnDrag(eventData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._bgGo), UIEvent.Click, function(go)
-    -- function num : 0_5_3 , upvalues : self
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._bgGo), UIEvent.BeginDrag, function(eventData)
+    self._scrollRect:OnBeginDrag(eventData)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._bgGo), UIEvent.EndDrag, function(eventData)
+    self._scrollRect:OnEndDrag(eventData)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._bgGo), UIEvent.Drag, function(eventData)
+    self._scrollRect:OnDrag(eventData)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._bgGo), UIEvent.Click, function(go)
     self:bgOnClick(go)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self._battleBtn).gameObject), UIEvent.Press, function(go)
-    -- function num : 0_5_4 , upvalues : self
-    (self._btnPress):SetActive(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self._battleBtn).gameObject), UIEvent.Release, function(go)
-    -- function num : 0_5_5 , upvalues : self
-    (self._btnPress):SetActive(false)
-  end
-)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._battleBtn.gameObject), UIEvent.Press, function(go)
+    self._btnPress:SetActive(true)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._battleBtn.gameObject), UIEvent.Release, function(go)
+    self._btnPress:SetActive(false)
+  end)
   self._maskClick = self:GetUIComponent("Image", "maskClick")
-  -- DECOMPILER ERROR at PC232: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._maskClick).alphaHitTestMinimumThreshold = 0.1
+  self._maskClick.alphaHitTestMinimumThreshold = 0.1
   self._conds = self:GetUIComponent("UISelectObjectPath", "conditions")
   self._awardBtnRed = self:GetGameObject("awardRed")
   self._awardBtnIcon = self:GetUIComponent("Image", "awardsIcon")
@@ -254,17 +211,11 @@ UIWeekTowerController.GetComponents = function(self)
   self._battleBtnGO = self:GetGameObject("BattleButton")
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.CloseController = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIWeekTowerController:CloseController()
   self:SwitchState(UIStateType.UIMain)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.OnValue = function(self)
-  -- function num : 0_7
+function UIWeekTowerController:OnValue()
   self:InitTimer()
   self:InitAward()
   self:InitStagePool()
@@ -274,647 +225,479 @@ UIWeekTowerController.OnValue = function(self)
   self:MoveContentPosX()
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.InitAward = function(self)
-  -- function num : 0_8
-  (self._starText):SetText(self._gotStarCount .. "/" .. self._totalStarCount)
+function UIWeekTowerController:InitAward()
+  self._starText:SetText(self._gotStarCount .. "/" .. self._totalStarCount)
   self:RefreshAwardState()
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.RefreshAwardState = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local questList = (self._questCmpt):GetQuestInfo()
+function UIWeekTowerController:RefreshAwardState()
+  local questList = self._questCmpt:GetQuestInfo()
   local allQuestTaken = true
   for i = 1, #questList do
-    if (questList[i]):Status() ~= QuestStatus.QUEST_Taken then
+    if questList[i]:Status() ~= QuestStatus.QUEST_Taken then
       allQuestTaken = false
       break
     end
   end
-  do
-    do
-      if allQuestTaken then
-        local atlas = self:GetAsset("UIWeekTower.spriteatlas", LoadType.SpriteAtlas)
-        -- DECOMPILER ERROR at PC29: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._awardBtnIcon).sprite = atlas:GetSprite("lose_status_icon2")
-      end
-      ;
-      (self._awardBtnRed):SetActive((self._questCmpt):HaveRedPoint())
-    end
+  if allQuestTaken then
+    local atlas = self:GetAsset("UIWeekTower.spriteatlas", LoadType.SpriteAtlas)
+    self._awardBtnIcon.sprite = atlas:GetSprite("lose_status_icon2")
   end
+  self._awardBtnRed:SetActive(self._questCmpt:HaveRedPoint())
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.MoveContentPosX = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._scrollRect).enabled = false
+function UIWeekTowerController:MoveContentPosX()
+  self._scrollRect.enabled = false
   local movePosX = (self._selectIndex - 1) * -1 * self._itemWidth
   if self._tweener then
-    (self._tweener):Kill()
+    self._tweener:Kill()
     self._tweener = nil
   end
-  self._tweener = ((self._contentRect):DOAnchorPosX(movePosX, self._moveContentTime)):OnComplete(function()
-    -- function num : 0_10_0 , upvalues : self, _ENV, movePosX
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._contentRect).anchoredPosition = Vector2(movePosX, ((self._contentRect).anchoredPosition).y)
+  self._tweener = self._contentRect:DOAnchorPosX(movePosX, self._moveContentTime):OnComplete(function()
+    self._contentRect.anchoredPosition = Vector2(movePosX, self._contentRect.anchoredPosition.y)
     self._tweener = nil
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._scrollRect).enabled = true
-  end
-)
+    self._scrollRect.enabled = true
+  end)
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.InitBtns = function(self)
-  -- function num : 0_11
-  local btn1 = (self._btnPool1):SpawnObject("UIWeekTowerDiffBtn")
-  btn1:SetData(1, (self._diffList)[1], self._selectDiffIdx, function(idx)
-    -- function num : 0_11_0 , upvalues : self
+function UIWeekTowerController:InitBtns()
+  local btn1 = self._btnPool1:SpawnObject("UIWeekTowerDiffBtn")
+  btn1:SetData(1, self._diffList[1], self._selectDiffIdx, function(idx)
     self:BtnItemClick(idx)
-  end
-)
-  local btn2 = (self._btnPool2):SpawnObject("UIWeekTowerDiffBtn")
-  btn2:SetData(2, (self._diffList)[2], self._selectDiffIdx, function(idx)
-    -- function num : 0_11_1 , upvalues : self
+  end)
+  local btn2 = self._btnPool2:SpawnObject("UIWeekTowerDiffBtn")
+  btn2:SetData(2, self._diffList[2], self._selectDiffIdx, function(idx)
     self:BtnItemClick(idx)
-  end
-)
-  local btn3 = (self._btnPool3):SpawnObject("UIWeekTowerDiffBtn")
-  btn3:SetData(3, (self._diffList)[3], self._selectDiffIdx, function(idx)
-    -- function num : 0_11_2 , upvalues : self
+  end)
+  local btn3 = self._btnPool3:SpawnObject("UIWeekTowerDiffBtn")
+  btn3:SetData(3, self._diffList[3], self._selectDiffIdx, function(idx)
     self:BtnItemClick(idx)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.BtnItemClick = function(self, idx)
-  -- function num : 0_12 , upvalues : _ENV
+function UIWeekTowerController:BtnItemClick(idx)
   if idx == self._selectDiffIdx then
-    return 
+    return
   end
-  local diffData = (self._diffList)[idx]
+  local diffData = self._diffList[idx]
   if diffData:Lock() then
-    (Log.debug)("###[UIWeekTowerController] click diff is lock ! idx --> ", idx)
+    Log.debug("###[UIWeekTowerController] click diff is lock ! idx --> ", idx)
   else
     self._selectDiffIdx = idx
     local _idx = 0
-    local missionList = ((self._diffList)[self._selectDiffIdx]):MissionList()
+    local missionList = self._diffList[self._selectDiffIdx]:MissionList()
     for i = 1, #missionList do
       local data = missionList[i]
       _idx = _idx + 1
-    end
-    do
-      if data:GetPassTime() == WeekTowerMissionBattleStatus.Battle or _idx < 1 then
-        _idx = 1
+      if data:GetPassTime() == WeekTowerMissionBattleStatus.Battle then
+        break
       end
-      self._selectIndex = _idx
-      self._currentMissionData = missionList[self._selectIndex]
-      self:InitStagePool()
-      self:InitBgScroll()
-      self:ClickSucc()
-      self:MoveInfoRect(true)
-      self:MoveContentPosX()
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIWeekTowerDiffItemClick, self._selectDiffIdx)
     end
+    if _idx < 1 then
+      _idx = 1
+    end
+    self._selectIndex = _idx
+    self._currentMissionData = missionList[self._selectIndex]
+    self:InitStagePool()
+    self:InitBgScroll()
+    self:ClickSucc()
+    self:MoveInfoRect(true)
+    self:MoveContentPosX()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIWeekTowerDiffItemClick, self._selectDiffIdx)
   end
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.DoHide = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIWeekTowerController:DoHide()
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
     self._timerEvent = nil
   end
   if self._scroller then
-    (self._scroller):Dispose()
+    self._scroller:Dispose()
     self._scroller = nil
   end
   if self._tweener then
-    (self._tweener):Kill()
+    self._tweener:Kill()
     self._tweener = nil
   end
   self._infoIsOpen = false
-  ;
-  (self._titleAnim):Play("uieff_WeekTower_Info_Title_In")
-  ;
-  (self._titleAnim):Rewind()
-  ;
-  (self._titleAnim):Sample()
-  ;
-  (self._titleAnim):Stop()
+  self._titleAnim:Play("uieff_WeekTower_Info_Title_In")
+  self._titleAnim:Rewind()
+  self._titleAnim:Sample()
+  self._titleAnim:Stop()
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self.RefreshAwardState)
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.DoDestroy = function(self)
-  -- function num : 0_14
+function UIWeekTowerController:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.InitBgScroll = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local cfg_week_tower_view = (Cfg.cfg_week_tower_view)[self._weekTowerID]
+function UIWeekTowerController:InitBgScroll()
+  local cfg_week_tower_view = Cfg.cfg_week_tower_view[self._weekTowerID]
   if not cfg_week_tower_view then
-    (Log.error)("###[UIWeekTowerController] cfg is nil ! id --> ", self._weekTowerID)
+    Log.error("###[UIWeekTowerController] cfg is nil ! id --> ", self._weekTowerID)
   end
-  local title = (cfg_week_tower_view.Title)[self._selectDiffIdx]
-  ;
-  (self._titleName):SetText((StringTable.Get)(title))
-  local bgs = (cfg_week_tower_view.BGS)[self._selectDiffIdx]
+  local title = cfg_week_tower_view.Title[self._selectDiffIdx]
+  self._titleName:SetText(StringTable.Get(title))
+  local bgs = cfg_week_tower_view.BGS[self._selectDiffIdx]
   if not bgs then
-    (Log.error)("###[UIWeekTowerController] cfg bgs is nil ! id --> ", self._weekTowerID)
+    Log.error("###[UIWeekTowerController] cfg bgs is nil ! id --> ", self._weekTowerID)
   end
-  if #bgs > 1 then
-    ((self._bgLoader1).gameObject):SetActive(true)
-    ;
-    ((self._bgLoader2).gameObject):SetActive(true)
-    ;
-    ((self._bgLoader3).gameObject):SetActive(false)
+  if 1 < #bgs then
+    self._bgLoader1.gameObject:SetActive(true)
+    self._bgLoader2.gameObject:SetActive(true)
+    self._bgLoader3.gameObject:SetActive(false)
     local posx = {}
-    local scrollIdx1 = ((cfg_week_tower_view.ScrollIndex)[self._selectDiffIdx])[1]
-    local scrollIdx2 = ((cfg_week_tower_view.ScrollIndex)[self._selectDiffIdx])[2]
+    local scrollIdx1 = cfg_week_tower_view.ScrollIndex[self._selectDiffIdx][1]
+    local scrollIdx2 = cfg_week_tower_view.ScrollIndex[self._selectDiffIdx][2]
     local gridLayout = self:GetUIComponent("GridLayoutGroup", "stagePools")
-    local sizeX = (gridLayout.cellSize).x
+    local sizeX = gridLayout.cellSize.x
     local pos1 = sizeX * (scrollIdx1 - 1) + sizeX * 0.5
     local pos2 = sizeX * (scrollIdx1 + 1 - 1) + sizeX * 0.5
     local pos3 = sizeX * (scrollIdx2 - 1) + sizeX * 0.5
     local pos4 = sizeX * (scrollIdx2 + 1 - 1) + sizeX * 0.5
-    self._scroller = UILevelScroller:New(self._contentRect, self._bgLoader1, self._bgLoader2, {bgs[1], bgs[2], bgs[3]}, {pos1, pos2, pos3, pos4})
-    ;
-    ((self._scrollRect).onValueChanged):AddListener(function()
-    -- function num : 0_15_0 , upvalues : self
-    (self._scroller):OnChange()
-  end
-)
+    self._scroller = UILevelScroller:New(self._contentRect, self._bgLoader1, self._bgLoader2, {
+      bgs[1],
+      bgs[2],
+      bgs[3]
+    }, {
+      pos1,
+      pos2,
+      pos3,
+      pos4
+    })
+    self._scrollRect.onValueChanged:AddListener(function()
+      self._scroller:OnChange()
+    end)
   else
-    do
-      ;
-      ((self._bgLoader1).gameObject):SetActive(false)
-      ;
-      ((self._bgLoader2).gameObject):SetActive(false)
-      ;
-      ((self._bgLoader3).gameObject):SetActive(true)
-      ;
-      (self._bgLoader3):LoadImage(bgs[1])
-    end
+    self._bgLoader1.gameObject:SetActive(false)
+    self._bgLoader2.gameObject:SetActive(false)
+    self._bgLoader3.gameObject:SetActive(true)
+    self._bgLoader3:LoadImage(bgs[1])
   end
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.InitTimer = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIWeekTowerController:InitTimer()
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
     self._timerEvent = nil
   end
-  self._timerEvent = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_16_0 , upvalues : self
+  self._timerEvent = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:SetTimerTex()
-  end
-)
+  end)
   self:SetTimerTex()
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.SetTimerTex = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local svrTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+function UIWeekTowerController:SetTimerTex()
+  local svrTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   local sec = self._activeEndTime - svrTime
   if sec < -1 then
     self:TimeReset()
   else
-    local timeTex = (HelperProxy:GetInstance()):Time2Tex(sec)
-    ;
-    (self._timer):SetText((StringTable.Get)("str_week_tower_reset_time_tips", timeTex))
+    local timeTex = HelperProxy:GetInstance():Time2Tex(sec)
+    self._timer:SetText(StringTable.Get("str_week_tower_reset_time_tips", timeTex))
   end
-  do
-    if self._notOpenMissionExist then
-      local newOpenMission = {}
-      local svrTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
-      local needRefreshStageInfo = false
-      for i = 1, #self._notOpenMissionList do
-        local missionData = (self._notOpenMissionList)[i]
-        local openTime = missionData:OpenTime()
-        if openTime <= svrTime then
-          (table.insert)(newOpenMission, missionData)
-        end
-        if missionData == self._currentMissionData then
-          needRefreshStageInfo = true
-        end
+  if self._notOpenMissionExist then
+    local newOpenMission = {}
+    local svrTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
+    local needRefreshStageInfo = false
+    for i = 1, #self._notOpenMissionList do
+      local missionData = self._notOpenMissionList[i]
+      local openTime = missionData:OpenTime()
+      if svrTime >= openTime then
+        table.insert(newOpenMission, missionData)
       end
-      for i = 1, #newOpenMission do
-        local missionData = newOpenMission[i]
-        ;
-        (table.removev)(self._notOpenMissionList, missionData)
-        if (self._missionDic)[missionData] ~= nil then
-          ((self._missionDic)[missionData]):Open()
-          -- DECOMPILER ERROR at PC80: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          (self._missionDic)[missionData] = nil
-        end
+      if missionData == self._currentMissionData then
+        needRefreshStageInfo = true
       end
-      if needRefreshStageInfo then
-        self:RefreshStageInfo()
+    end
+    for i = 1, #newOpenMission do
+      local missionData = newOpenMission[i]
+      table.removev(self._notOpenMissionList, missionData)
+      if self._missionDic[missionData] ~= nil then
+        self._missionDic[missionData]:Open()
+        self._missionDic[missionData] = nil
       end
+    end
+    if needRefreshStageInfo then
+      self:RefreshStageInfo()
     end
   end
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.TimeReset = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIWeekTowerController:TimeReset()
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
     self._timerEvent = nil
   end
-  ;
-  (ToastManager.ShowToast)((StringTable.Get)("str_week_tower_reset_time_reset_tips"))
+  ToastManager.ShowToast(StringTable.Get("str_week_tower_reset_time_reset_tips"))
   self:CloseController()
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.InitEnemyInfo = function(self)
-  -- function num : 0_19
+function UIWeekTowerController:InitEnemyInfo()
   if self._enemies == nil then
-    self._enemies = (self._enemyMsg):SpawnObject("UIEnemyMsg")
+    self._enemies = self._enemyMsg:SpawnObject("UIEnemyMsg")
   end
-  ;
-  (self._enemies):SetData((self._currentMissionData):GetLevelID())
+  self._enemies:SetData(self._currentMissionData:GetLevelID())
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.InitStagePool = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local missionList = ((self._diffList)[self._selectDiffIdx]):MissionList()
-  local svrTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
+function UIWeekTowerController:InitStagePool()
+  local missionList = self._diffList[self._selectDiffIdx]:MissionList()
+  local svrTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
   local count = #missionList
-  ;
-  (self._stagePools):SpawnObjects("UIWeekTowerNodeLoader", count)
-  local pools = (self._stagePools):GetAllSpawnList()
+  self._stagePools:SpawnObjects("UIWeekTowerNodeLoader", count)
+  local pools = self._stagePools:GetAllSpawnList()
   for i = 1, #pools do
     local item = pools[i]
     local missionData = missionList[i]
     local openTime = missionData:OpenTime()
-    local open = not openTime or openTime <= svrTime
+    local open = not openTime or svrTime >= openTime
     if not open then
       self._notOpenMissionExist = true
       if not self._notOpenMissionList then
         self._notOpenMissionList = {}
         self._missionDic = {}
       end
-      ;
-      (table.insert)(self._notOpenMissionList, missionData)
-      -- DECOMPILER ERROR at PC51: Confused about usage of register: R13 in 'UnsetPending'
-
-      ;
-      (self._missionDic)[missionData] = item
+      table.insert(self._notOpenMissionList, missionData)
+      self._missionDic[missionData] = item
     end
     item:SetData(i, count, missionData, function(index, notOpen)
-    -- function num : 0_20_0 , upvalues : self
-    self:OnStageItemClick(index, notOpen)
+      self:OnStageItemClick(index, notOpen)
+    end, self._itemWidth, open)
   end
-, self._itemWidth, open)
-  end
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._contentRect).sizeDelta = Vector2(self._itemWidth * count)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self._contentRect.sizeDelta = Vector2(self._itemWidth * count)
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.OnStageItemClick = function(self, index)
-  -- function num : 0_21
-  (self._scrollRect):StopMovement()
+function UIWeekTowerController:OnStageItemClick(index)
+  self._scrollRect:StopMovement()
   local movePosX = (index - 1) * -1 * self._itemWidth
-  ;
-  (self._contentRect):DOAnchorPosX(movePosX, self._moveContentTime)
+  self._contentRect:DOAnchorPosX(movePosX, self._moveContentTime)
   if not self._infoIsOpen then
     self:MoveInfoRect(true)
   end
   if self._selectIndex == index then
-    return 
+    return
   end
   self._selectIndex = index
-  self._currentMissionData = (((self._diffList)[self._selectDiffIdx]):MissionList())[self._selectIndex]
+  self._currentMissionData = self._diffList[self._selectDiffIdx]:MissionList()[self._selectIndex]
   self:ClickSucc()
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.ClickSucc = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIWeekTowerNodeItemClick, self._selectIndex)
+function UIWeekTowerController:ClickSucc()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIWeekTowerNodeItemClick, self._selectIndex)
   self:RefreshStageInfo()
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.RefreshStageInfo = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local svrTime = (math.floor)(((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001)
-  local openTime = (self._currentMissionData):OpenTime()
+function UIWeekTowerController:RefreshStageInfo()
+  local svrTime = math.floor(GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001)
+  local openTime = self._currentMissionData:OpenTime()
   local leftTime = openTime - svrTime
   self:InitInfoBg()
   self:InitName()
   if leftTime <= 0 then
-    (self._notOpen):SetActive(false)
+    self._notOpen:SetActive(false)
     self:InitEnemyInfo()
     self:InitRecommendLv()
     self:InitWord()
     self:InitConditions()
-    ;
-    (self._wordGO):SetActive(true)
-    ;
-    (self._enemyInfo):SetActive(true)
-    ;
-    (self._condition):SetActive(true)
-    ;
-    (self._battleBtnGO):SetActive(true)
+    self._wordGO:SetActive(true)
+    self._enemyInfo:SetActive(true)
+    self._condition:SetActive(true)
+    self._battleBtnGO:SetActive(true)
   else
-    ;
-    (self._notOpen):SetActive(true)
-    local openLeftTime = (HelperProxy:GetInstance()):Time2Tex(leftTime)
-    ;
-    (self._openTime):SetText((StringTable.Get)("str_week_tower_open_left_time", openLeftTime))
-    ;
-    (self._wordGO):SetActive(false)
-    ;
-    (self._enemyInfo):SetActive(false)
-    ;
-    (self._condition):SetActive(false)
-    ;
-    (self._battleBtnGO):SetActive(false)
+    self._notOpen:SetActive(true)
+    local openLeftTime = HelperProxy:GetInstance():Time2Tex(leftTime)
+    self._openTime:SetText(StringTable.Get("str_week_tower_open_left_time", openLeftTime))
+    self._wordGO:SetActive(false)
+    self._enemyInfo:SetActive(false)
+    self._condition:SetActive(false)
+    self._battleBtnGO:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.InitConditions = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local threeStarConds = (self._currentMissionData):Get3StarConditions()
-  ;
-  (self._conds):SpawnObjects("UIConditionItem", (table.count)(threeStarConds))
-  self._conditions = (self._conds):GetAllSpawnList()
-  for i,v in ipairs(self._conditions) do
+function UIWeekTowerController:InitConditions()
+  local threeStarConds = self._currentMissionData:Get3StarConditions()
+  self._conds:SpawnObjects("UIConditionItem", table.count(threeStarConds))
+  self._conditions = self._conds:GetAllSpawnList()
+  for i, v in ipairs(self._conditions) do
     v:Flush(threeStarConds[i], i)
   end
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.InitName = function(self)
-  -- function num : 0_25
-  local missionName = (self._currentMissionData):GetMissionName()
-  ;
-  (self._name):SetText(missionName)
+function UIWeekTowerController:InitName()
+  local missionName = self._currentMissionData:GetMissionName()
+  self._name:SetText(missionName)
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.InitInfoBg = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  local cfg = (Cfg.cfg_week_tower_view)[self._weekTowerID]
-  local idx1 = ((cfg.ScrollIndex)[self._selectDiffIdx])[1]
-  local infoBg, infoBg2, battleBtn = nil, nil, nil
+function UIWeekTowerController:InitInfoBg()
+  local cfg = Cfg.cfg_week_tower_view[self._weekTowerID]
+  local idx1 = cfg.ScrollIndex[self._selectDiffIdx][1]
+  local infoBg, infoBg2, battleBtn
   local oneChoose = false
   if idx1 == 0 then
     oneChoose = true
   end
   if oneChoose then
-    infoBg = ((cfg.InfoBg)[self._selectDiffIdx])[1]
-    battleBtn = ((cfg.BattleBtn)[self._selectDiffIdx])[1]
-    infoBg2 = ((cfg.LayoutIcon)[self._selectDiffIdx])[1]
+    infoBg = cfg.InfoBg[self._selectDiffIdx][1]
+    battleBtn = cfg.BattleBtn[self._selectDiffIdx][1]
+    infoBg2 = cfg.LayoutIcon[self._selectDiffIdx][1]
   else
-    local idx2 = ((cfg.ScrollIndex)[self._selectDiffIdx])[2]
-    if self._selectIndex < idx1 then
-      infoBg = ((cfg.InfoBg)[self._selectDiffIdx])[1]
-      battleBtn = ((cfg.BattleBtn)[self._selectDiffIdx])[1]
-      infoBg2 = ((cfg.LayoutIcon)[self._selectDiffIdx])[1]
+    local idx2 = cfg.ScrollIndex[self._selectDiffIdx][2]
+    if idx1 > self._selectIndex then
+      infoBg = cfg.InfoBg[self._selectDiffIdx][1]
+      battleBtn = cfg.BattleBtn[self._selectDiffIdx][1]
+      infoBg2 = cfg.LayoutIcon[self._selectDiffIdx][1]
+    elseif idx2 > self._selectIndex then
+      infoBg = cfg.InfoBg[self._selectDiffIdx][2]
+      battleBtn = cfg.BattleBtn[self._selectDiffIdx][2]
+      infoBg2 = cfg.LayoutIcon[self._selectDiffIdx][3]
     else
-      if self._selectIndex < idx2 then
-        infoBg = ((cfg.InfoBg)[self._selectDiffIdx])[2]
-        battleBtn = ((cfg.BattleBtn)[self._selectDiffIdx])[2]
-        infoBg2 = ((cfg.LayoutIcon)[self._selectDiffIdx])[3]
-      else
-        infoBg = ((cfg.InfoBg)[self._selectDiffIdx])[3]
-        battleBtn = ((cfg.BattleBtn)[self._selectDiffIdx])[3]
-        infoBg2 = ((cfg.LayoutIcon)[self._selectDiffIdx])[3]
-      end
+      infoBg = cfg.InfoBg[self._selectDiffIdx][3]
+      battleBtn = cfg.BattleBtn[self._selectDiffIdx][3]
+      infoBg2 = cfg.LayoutIcon[self._selectDiffIdx][3]
     end
   end
-  do
-    ;
-    (self._infoBg):LoadImage(infoBg)
-    ;
-    (self._battleBtn):LoadImage(battleBtn)
+  self._infoBg:LoadImage(infoBg)
+  self._battleBtn:LoadImage(battleBtn)
+end
+
+function UIWeekTowerController:InitRecommendLv()
+  local recommendGrade = self._currentMissionData:GetRecommendGrade()
+  local recommendLv = self._currentMissionData:GetRecommendLv()
+  if recommendGrade and 0 < recommendGrade then
+    self._recommendLV.gameObject:SetActive(true)
+    self._recommendLV:SetText(StringTable.Get("str_pet_config_common_advance") .. "<size=29>" .. recommendGrade .. "</size>")
+  else
+    self._recommendLV.gameObject:SetActive(false)
+  end
+  if recommendLv and 0 < recommendLv then
+    self._recommendLV2.gameObject:SetActive(true)
+    self._recommendLV2:SetText("LV." .. recommendLv)
+  else
+    self._recommendLV2.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.InitRecommendLv = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  local recommendGrade = (self._currentMissionData):GetRecommendGrade()
-  local recommendLv = (self._currentMissionData):GetRecommendLv()
-  if recommendGrade and recommendGrade > 0 then
-    ((self._recommendLV).gameObject):SetActive(true)
-    ;
-    (self._recommendLV):SetText((StringTable.Get)("str_pet_config_common_advance") .. "<size=29>" .. recommendGrade .. "</size>")
-  else
-    ;
-    ((self._recommendLV).gameObject):SetActive(false)
-  end
-  if recommendLv and recommendLv > 0 then
-    ((self._recommendLV2).gameObject):SetActive(true)
-    ;
-    (self._recommendLV2):SetText("LV." .. recommendLv)
-  else
-    ;
-    ((self._recommendLV2).gameObject):SetActive(false)
-  end
-end
-
--- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.InitStageAwardTT = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  local battleStatus = (self._currentMissionData):GetPassTime()
+function UIWeekTowerController:InitStageAwardTT()
+  local battleStatus = self._currentMissionData:GetPassTime()
   if battleStatus == WeekTowerMissionBattleStatus.Pass then
-    (self._awardGot):SetActive(true)
+    self._awardGot:SetActive(true)
   else
-    ;
-    (self._awardGot):SetActive(false)
+    self._awardGot:SetActive(false)
   end
-  local missionid = (self._currentMissionData):GetID()
-  if (self._missionid2activityrewards)[missionid] then
+  local missionid = self._currentMissionData:GetID()
+  if self._missionid2activityrewards[missionid] then
     self._activity_rewards = {}
-    for i = 1, #(self._missionid2activityrewards)[missionid] do
-      local _data = ((self._missionid2activityrewards)[missionid])[i]
-      ;
-      (table.insert)(self._activity_rewards, _data)
+    for i = 1, #self._missionid2activityrewards[missionid] do
+      local _data = self._missionid2activityrewards[missionid][i]
+      table.insert(self._activity_rewards, _data)
     end
     self:InitStageAward()
   else
     self:Lock("UIWeekTowerController:InitStageAwardTT")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self._OnInitStageAwardTT, self)
+    GameGlobal.TaskManager():StartTask(self._OnInitStageAwardTT, self)
   end
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController._OnInitStageAwardTT = function(self, TT)
-  -- function num : 0_29 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  local missionid = (self._currentMissionData):GetID()
+function UIWeekTowerController:_OnInitStageAwardTT(TT)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
+  local missionid = self._currentMissionData:GetID()
   local res, rewards = campaignModule:HandleCampaignGetMatchMissionExReward(TT, MatchType.MT_WeekTower, missionid)
   self:UnLock("UIWeekTowerController:InitStageAwardTT")
   local items = {}
   if res:GetSucc() then
-    for i = 1, (table.count)(rewards) do
+    for i = 1, table.count(rewards) do
       local _data = {}
       _data.item = rewards[i]
       _data.type = StageAwardType.Activity
-      ;
-      (table.insert)(items, _data)
+      table.insert(items, _data)
     end
   else
-    do
-      ;
-      (Log.error)("###[UIWeekTowerController] HandleCampaignGetMatchMissionExReward fail ! mission id --> ", missionid)
-      if not self._missionid2activityrewards then
-        self._missionid2activityrewards = {}
-      end
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R7 in 'UnsetPending'
-
-      if not (self._missionid2activityrewards)[missionid] then
-        (self._missionid2activityrewards)[missionid] = items
-      end
-      self._activity_rewards = {}
-      for i = 1, #items do
-        local _data = items[i]
-        ;
-        (table.insert)(self._activity_rewards, _data)
-      end
-      self:InitStageAward()
-    end
+    Log.error("###[UIWeekTowerController] HandleCampaignGetMatchMissionExReward fail ! mission id --> ", missionid)
   end
+  if not self._missionid2activityrewards then
+    self._missionid2activityrewards = {}
+  end
+  if not self._missionid2activityrewards[missionid] then
+    self._missionid2activityrewards[missionid] = items
+  end
+  self._activity_rewards = {}
+  for i = 1, #items do
+    local _data = items[i]
+    table.insert(self._activity_rewards, _data)
+  end
+  self:InitStageAward()
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.InitStageAward = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  local dropItems = (self._currentMissionData):GetAward()
+function UIWeekTowerController:InitStageAward()
+  local dropItems = self._currentMissionData:GetAward()
   local items = {}
   for i = 1, #dropItems do
     local _data = {}
     _data.type = StageAwardType.First
     _data.item = dropItems[i]
-    ;
-    (table.insert)(items, _data)
+    table.insert(items, _data)
   end
-  ;
-  (table.appendArray)(self._activity_rewards, items)
-  ;
-  (self._awardContent):SpawnObjects("UIItem", #self._activity_rewards)
-  local items = (self._awardContent):GetAllSpawnList()
-  do
-    for i,data in ipairs(self._activity_rewards) do
-      local item = data.item
-      ;
-      (items[i]):SetForm(UIItemForm.Tower, UIItemScale.Level3)
-      local cfgItem = (Cfg.cfg_item)[item.id]
-      if not cfgItem then
-        (Log.error)("###[UIWeekTowerController] cfgItem is nil ! id --> ", item.id)
-      end
-      local strKey = ""
-      local activityText = ""
-      local awardType = data.type
-      if awardType == StageAwardType.First then
-        strKey = "str_discovery_first_award"
-      else
-        if awardType == StageAwardType.Star then
-          strKey = "str_discovery_3star_award"
-        else
-          if awardType == StageAwardType.Activity then
-            strKey = "str_discovery_activity_award"
-            activityText = "str_item_xianshi"
-          else
-            if awardType == StageAwardType.HasGen then
-              strKey = "str_discovery_already_collect"
-            else
-              strKey = "str_discovery_normal_award"
-            end
-          end
-        end
-      end
-      ;
-      (items[i]):SetData({text1 = item.count, awardText = (StringTable.Get)(strKey), icon = cfgItem.Icon, itemId = item.id, quality = cfgItem.Color, activityText = (StringTable.Get)(activityText)})
-      ;
-      (items[i]):SetClickCallBack(function(go)
-    -- function num : 0_30_0 , upvalues : self, item
-    self:ItemInfo(item.id, (go.transform).position)
-  end
-)
+  table.appendArray(self._activity_rewards, items)
+  self._awardContent:SpawnObjects("UIItem", #self._activity_rewards)
+  local items = self._awardContent:GetAllSpawnList()
+  for i, data in ipairs(self._activity_rewards) do
+    local item = data.item
+    items[i]:SetForm(UIItemForm.Tower, UIItemScale.Level3)
+    local cfgItem = Cfg.cfg_item[item.id]
+    if not cfgItem then
+      Log.error("###[UIWeekTowerController] cfgItem is nil ! id --> ", item.id)
     end
+    local strKey = ""
+    local activityText = ""
+    local awardType = data.type
+    if awardType == StageAwardType.First then
+      strKey = "str_discovery_first_award"
+    elseif awardType == StageAwardType.Star then
+      strKey = "str_discovery_3star_award"
+    elseif awardType == StageAwardType.Activity then
+      strKey = "str_discovery_activity_award"
+      activityText = "str_item_xianshi"
+    elseif awardType == StageAwardType.HasGen then
+      strKey = "str_discovery_already_collect"
+    else
+      strKey = "str_discovery_normal_award"
+    end
+    items[i]:SetData({
+      text1 = item.count,
+      awardText = StringTable.Get(strKey),
+      icon = cfgItem.Icon,
+      itemId = item.id,
+      quality = cfgItem.Color,
+      activityText = StringTable.Get(activityText)
+    })
+    items[i]:SetClickCallBack(function(go)
+      self:ItemInfo(item.id, go.transform.position)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.InitWord = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  local word = (self._currentMissionData):GetWord()
+function UIWeekTowerController:InitWord()
+  local word = self._currentMissionData:GetWord()
   local haveWord = false
-  -- DECOMPILER ERROR at PC14: Unhandled construct in 'MakeBoolean' P1
-
-  -- DECOMPILER ERROR at PC14: Unhandled construct in 'MakeBoolean' P1
-
-  if word ~= nil and type(word) == "table" and #word > 0 then
-    haveWord = true
-  end
-  if word ~= 0 then
-    haveWord = true
-  end
-  ;
-  (self._wordParent):SetActive(haveWord)
-  if haveWord then
-    local wordStr = nil
+  if word ~= nil then
     if type(word) == "table" then
-      for _,wordId in ipairs(word) do
-        local wordCfg = (Cfg.cfg_word_buff)[wordId]
+      if 0 < #word then
+        haveWord = true
+      end
+    elseif word ~= 0 then
+      haveWord = true
+    end
+  end
+  self._wordParent:SetActive(haveWord)
+  if haveWord then
+    local wordStr
+    if type(word) == "table" then
+      for _, wordId in ipairs(word) do
+        local wordCfg = Cfg.cfg_word_buff[wordId]
         if wordCfg == nil then
-          (Log.error)("###[UIWeekTowerController] 找不到尖塔词缀，word：", wordId)
+          Log.error("###[UIWeekTowerController] 找不到尖塔词缀，word：", wordId)
         else
-          local desc = (StringTable.Get)(wordCfg.Desc)
+          local desc = StringTable.Get(wordCfg.Desc)
           if wordStr then
             wordStr = wordStr .. "\n" .. desc
           else
@@ -923,121 +706,80 @@ UIWeekTowerController.InitWord = function(self)
         end
       end
     else
-      do
-        do
-          local wordCfg = (Cfg.cfg_word_buff)[word]
-          if wordCfg == nil then
-            (Log.error)("###[UIWeekTowerController] 找不到尖塔词缀，word：", word)
-          else
-            wordStr = (StringTable.Get)(wordCfg.Desc)
-          end
-          ;
-          (self._word):SetText(wordStr)
-        end
+      local wordCfg = Cfg.cfg_word_buff[word]
+      if wordCfg == nil then
+        Log.error("###[UIWeekTowerController] 找不到尖塔词缀，word：", word)
+      else
+        wordStr = StringTable.Get(wordCfg.Desc)
       end
     end
+    self._word:SetText(wordStr)
   end
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.BattleButtonOnClick = function(self, go)
-  -- function num : 0_32 , upvalues : _ENV
-  local lock = (self._currentMissionData):GetPassTime()
-  do
-    if lock == WeekTowerMissionBattleStatus.Lock then
-      local tips = (StringTable.Get)("str_week_tower_stage_lock_tips")
-      ;
-      (ToastManager.ShowToast)(tips)
-      return 
-    end
-    local ctx = ((GameGlobal.GetModule)(MissionModule)):TeamCtx()
-    local param = {(self._currentMissionData):GetID(), (self._component):GetCampaignMissionComponentId(), (self._component):GetCampaignMissionParamKeyMap()}
-    ctx:Init(TeamOpenerType.Campaign, param)
-    ctx:ShowDialogUITeams()
+function UIWeekTowerController:BattleButtonOnClick(go)
+  local lock = self._currentMissionData:GetPassTime()
+  if lock == WeekTowerMissionBattleStatus.Lock then
+    local tips = StringTable.Get("str_week_tower_stage_lock_tips")
+    ToastManager.ShowToast(tips)
+    return
   end
+  local ctx = GameGlobal.GetModule(MissionModule):TeamCtx()
+  local param = {
+    self._currentMissionData:GetID(),
+    self._component:GetCampaignMissionComponentId(),
+    self._component:GetCampaignMissionParamKeyMap()
+  }
+  ctx:Init(TeamOpenerType.Campaign, param)
+  ctx:ShowDialogUITeams()
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.AwardsIconOnClick = function(self)
-  -- function num : 0_33
+function UIWeekTowerController:AwardsIconOnClick()
   self:ShowDialog("UIWeekTowerAwardsController", self._questCmpt)
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.ItemInfo = function(self, id, pos)
-  -- function num : 0_34
-  (self._selectInfo):SetData(id, pos)
+function UIWeekTowerController:ItemInfo(id, pos)
+  self._selectInfo:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.bgOnClick = function(self, go)
-  -- function num : 0_35
+function UIWeekTowerController:bgOnClick(go)
   if self._infoIsOpen then
     self:MoveInfoRect(false)
   end
 end
 
--- DECOMPILER ERROR at PC124: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.ThreeStarTipsBtnOnClick = function(self, go)
-  -- function num : 0_36
+function UIWeekTowerController:ThreeStarTipsBtnOnClick(go)
   self:ShowDialog("UIThreeStarTips")
 end
 
--- DECOMPILER ERROR at PC127: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWeekTowerController.MoveInfoRect = function(self, open, init)
-  -- function num : 0_37 , upvalues : _ENV
+function UIWeekTowerController:MoveInfoRect(open, init)
   self._infoIsOpen = open
   local lockTime = 100
   self:Lock("UIWeekTowerController:MoveInfoRect")
   if init then
-    (self._infoRectAnim):Play((self._infoAnim).open)
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._infoRectCanvasGroup).blocksRaycasts = true
+    self._infoRectAnim:Play(self._infoAnim.open)
+    self._infoRectCanvasGroup.blocksRaycasts = true
     lockTime = 433
-    ;
-    ((GameGlobal.Timer)()):AddEvent(lockTime, function()
-    -- function num : 0_37_0 , upvalues : self
-    self:UnLock("UIWeekTowerController:MoveInfoRect")
-  end
-)
-    return 
+    GameGlobal.Timer():AddEvent(lockTime, function()
+      self:UnLock("UIWeekTowerController:MoveInfoRect")
+    end)
+    return
   end
   if open then
-    (self._titleAnim):Play("uieff_WeekTower_Info_Title_Out")
+    self._titleAnim:Play("uieff_WeekTower_Info_Title_Out")
     lockTime = 333
   else
-    ;
-    (self._infoRectAnim):Play((self._infoAnim).close)
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._infoRectCanvasGroup).blocksRaycasts = false
+    self._infoRectAnim:Play(self._infoAnim.close)
+    self._infoRectCanvasGroup.blocksRaycasts = false
     lockTime = 433
   end
-  ;
-  ((GameGlobal.Timer)()):AddEvent(lockTime, function()
-    -- function num : 0_37_1 , upvalues : open, self
+  GameGlobal.Timer():AddEvent(lockTime, function()
     if open then
-      (self._infoRectAnim):Play((self._infoAnim).open)
-      -- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-      ;
-      (self._infoRectCanvasGroup).blocksRaycasts = true
+      self._infoRectAnim:Play(self._infoAnim.open)
+      self._infoRectCanvasGroup.blocksRaycasts = true
     else
-      ;
-      (self._titleAnim):Play("uieff_WeekTower_Info_Title_In")
+      self._titleAnim:Play("uieff_WeekTower_Info_Title_In")
     end
     self:UnLock("UIWeekTowerController:MoveInfoRect")
-  end
-)
+  end)
 end
-
-

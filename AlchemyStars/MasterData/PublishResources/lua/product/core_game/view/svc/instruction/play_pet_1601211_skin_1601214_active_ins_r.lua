@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_pet_1601211_skin_1601214_active_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayPet1601211Skin1601214ActiveInstruction", BaseInstruction)
 PlayPet1601211Skin1601214ActiveInstruction = PlayPet1601211Skin1601214ActiveInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayPet1601211Skin1601214ActiveInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayPet1601211Skin1601214ActiveInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID) or 160121406
   self._gridEffectID1 = tonumber(paramList.gridEffectID1) or 160121408
   self._gridEffectID2 = tonumber(paramList.gridEffectID2) or 160121409
@@ -20,56 +13,54 @@ PlayPet1601211Skin1601214ActiveInstruction.Constructor = function(self, paramLis
   self._effectAnimName2 = paramList.effectAnimName2 or "effanim_1601214_ult_hit01_02"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPet1601211Skin1601214ActiveInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayPet1601211Skin1601214ActiveInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   local renderPickUpComponent = casterEntity:RenderPickUpComponent()
   local pickUpGridArray = renderPickUpComponent:GetAllValidPickUpGridPos()
   local specialScopeResultList = {}
-  for _,result in pairs(damageResultArray) do
+  for _, result in pairs(damageResultArray) do
     if result.GetSpecialScopeResultList then
       local specialScopeResult = result:GetSpecialScopeResultList()
-      if specialScopeResult and (table.count)(specialScopeResult) > 0 and not (table.icontains)(specialScopeResultList, specialScopeResult[1]) then
-        (table.appendArray)(specialScopeResultList, specialScopeResult)
+      if specialScopeResult and table.count(specialScopeResult) > 0 and not table.icontains(specialScopeResultList, specialScopeResult[1]) then
+        table.appendArray(specialScopeResultList, specialScopeResult)
       end
     end
   end
-  local scopeGridSort = DataSortScopeGridRangeInstruction:New({sortType = GridRangeSortType.SpecialScopeResultIndex})
+  local scopeGridSort = DataSortScopeGridRangeInstruction:New({
+    sortType = GridRangeSortType.SpecialScopeResultIndex
+  })
   local gridRange, maxGridCount = scopeGridSort:_SpecialScopeIndexSort(specialScopeResultList)
   local effectService = world:GetService("Effect")
   local boardServiceRender = world:GetService("BoardRender")
   local hadDamageTargetIds = {}
   local gridEffectEntityList = {}
-  for _,range in pairs(gridRange) do
-    for index,posList in pairs(range) do
-      for i,pos in pairs(posList) do
+  for _, range in pairs(gridRange) do
+    for index, posList in pairs(range) do
+      for i, pos in pairs(posList) do
         local targetPos = pos
         if pickUpGridArray[1] ~= pos then
-          for _,v in ipairs(damageResultArray) do
+          for _, v in ipairs(damageResultArray) do
             local damageResult = v
             if damageResult:GetGridPos() == pos then
               local targetEntityID = damageResult:GetTargetID()
               local targetEntity = world:GetEntityByID(targetEntityID)
-              if not (table.icontains)(hadDamageTargetIds, targetEntityID) then
-                (table.insert)(hadDamageTargetIds, targetEntityID)
+              if not table.icontains(hadDamageTargetIds, targetEntityID) then
+                table.insert(hadDamageTargetIds, targetEntityID)
                 local targetRenderPosition = boardServiceRender:GetEntityRealTimeGridPos(targetEntity, true)
-                local bodyAreaCount = (targetEntity:BodyArea()):GetAreaCount()
+                local bodyAreaCount = targetEntity:BodyArea():GetAreaCount()
                 local gridEffectID = self._gridEffectID1
-                if bodyAreaCount >= 4 then
+                if 4 <= bodyAreaCount then
                   gridEffectID = self._gridEffectID2
                 end
                 local gridEffectEntity = effectService:CreateWorldPositionEffect(gridEffectID, targetRenderPosition)
-                local obj = (gridEffectEntity:View()):GetGameObject()
+                local obj = gridEffectEntity:View():GetGameObject()
                 local anim = obj:GetComponentInChildren(typeof(UnityEngine.Animation))
                 if anim then
                   anim:Play(self._effectAnimName1)
                 end
-                ;
-                (table.insert)(gridEffectEntityList, gridEffectEntity)
+                table.insert(gridEffectEntityList, gridEffectEntity)
               end
             end
           end
@@ -78,92 +69,61 @@ PlayPet1601211Skin1601214ActiveInstruction.DoInstruction = function(self, TT, ca
             dir = pickUpGridArray[2] - pickUpGridArray[1]
           else
             local lastPosList = range[index - 1]
-            local nearestPos = nil
-            for _,lastPos in pairs(lastPosList) do
-              local dis = (Vector2.Distance)(targetPos, lastPos)
+            local nearestPos
+            for _, lastPos in pairs(lastPosList) do
+              local dis = Vector2.Distance(targetPos, lastPos)
               if dis == 1 then
                 nearestPos = lastPos
                 break
               end
             end
-            do
-              if not nearestPos then
-                if index > 2 then
-                  lastPosList = range[index - 2]
-                  for _,lastPos in pairs(lastPosList) do
-                    local dis = (Vector2.Distance)(targetPos, lastPos)
-                    if dis == 1 then
-                      nearestPos = lastPos
-                      break
-                    end
-                  end
-                end
-                do
-                  do
-                    if not nearestPos then
-                      lastPosList = range[index - 1]
-                      nearestPos = lastPosList[#lastPosList]
-                    end
-                    dir = targetPos - nearestPos
-                    do
-                      local effEntity = effectService:CreateWorldPositionDirectionEffect(self._effectID, targetPos, dir)
-                      -- DECOMPILER ERROR at PC205: LeaveBlock: unexpected jumping out DO_STMT
-
-                      -- DECOMPILER ERROR at PC205: LeaveBlock: unexpected jumping out DO_STMT
-
-                      -- DECOMPILER ERROR at PC205: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                      -- DECOMPILER ERROR at PC205: LeaveBlock: unexpected jumping out IF_STMT
-
-                      -- DECOMPILER ERROR at PC205: LeaveBlock: unexpected jumping out DO_STMT
-
-                      -- DECOMPILER ERROR at PC205: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                      -- DECOMPILER ERROR at PC205: LeaveBlock: unexpected jumping out IF_STMT
-
-                      -- DECOMPILER ERROR at PC205: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                      -- DECOMPILER ERROR at PC205: LeaveBlock: unexpected jumping out IF_STMT
-
-                    end
+            if not nearestPos then
+              if 2 < index then
+                lastPosList = range[index - 2]
+                for _, lastPos in pairs(lastPosList) do
+                  local dis = Vector2.Distance(targetPos, lastPos)
+                  if dis == 1 then
+                    nearestPos = lastPos
+                    break
                   end
                 end
               end
+              if not nearestPos then
+                lastPosList = range[index - 1]
+                nearestPos = lastPosList[#lastPosList]
+              end
             end
+            dir = targetPos - nearestPos
           end
+          local effEntity = effectService:CreateWorldPositionDirectionEffect(self._effectID, targetPos, dir)
         end
       end
       YIELD(TT, self._intervalTime)
     end
   end
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, self, gridEffectEntityList, world
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     YIELD(TT, self._waitTime)
-    for _,effectEntity in pairs(gridEffectEntityList) do
-      local obj = (effectEntity:View()):GetGameObject()
+    for _, effectEntity in pairs(gridEffectEntityList) do
+      local obj = effectEntity:View():GetGameObject()
       local anim = obj:GetComponentInChildren(typeof(UnityEngine.Animation))
       if anim then
         anim:Play(self._effectAnimName2)
       end
     end
     YIELD(TT, self._effectAnimTime)
-    for _,effectEntity in ipairs(gridEffectEntityList) do
+    for _, effectEntity in ipairs(gridEffectEntityList) do
       world:DestroyEntity(effectEntity)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPet1601211Skin1601214ActiveInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayPet1601211Skin1601214ActiveInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 10})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      10
+    })
   end
   return t
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/visit/ui_home_visit_gift_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeVisitGiftItem", UICustomWidget)
 UIHomeVisitGiftItem = UIHomeVisitGiftItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeVisitGiftItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomeVisitGiftItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitGiftItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIHomeVisitGiftItem:InitWidget()
   self.item = self:GetUIComponent("UISelectObjectPath", "item")
   self.add = self:GetGameObject("add")
   self.itemGo = self:GetGameObject("item")
@@ -23,56 +13,35 @@ UIHomeVisitGiftItem.InitWidget = function(self)
   self.select = self:GetGameObject("Select")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitGiftItem.SetData = function(self, idx, data, onRemove, onClick)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomeVisitGiftItem:SetData(idx, data, onRemove, onClick)
   self._idx = idx
   self._onRemove = onRemove
   self._onClick = onClick
   if data == nil then
-    (self.add):SetActive(true)
-    ;
-    (self.itemGo):SetActive(false)
-    ;
-    (self.delBtn):SetActive(false)
+    self.add:SetActive(true)
+    self.itemGo:SetActive(false)
+    self.delBtn:SetActive(false)
   else
-    local itemHome = (self.item):SpawnObject("UIItemHomeland")
+    local itemHome = self.item:SpawnObject("UIItemHomeland")
     local asset = RoleAsset:New()
     asset.assetid = data.assetid
     asset.count = data.count
     itemHome:Flush(asset)
-    ;
-    (self.add):SetActive(false)
-    ;
-    (self.itemGo):SetActive(true)
-    ;
-    (self.delBtn):SetActive(true)
+    self.add:SetActive(false)
+    self.itemGo:SetActive(true)
+    self.delBtn:SetActive(true)
   end
-  do
-    self:Select(false)
-  end
+  self:Select(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitGiftItem.DelOnClick = function(self, go)
-  -- function num : 0_3
-  (self._onRemove)(self._idx)
+function UIHomeVisitGiftItem:DelOnClick(go)
+  self._onRemove(self._idx)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitGiftItem.AreaOnClick = function(self, go)
-  -- function num : 0_4
-  (self._onClick)(self._idx, go)
+function UIHomeVisitGiftItem:AreaOnClick(go)
+  self._onClick(self._idx, go)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitGiftItem.Select = function(self, select)
-  -- function num : 0_5
-  (self.select):SetActive(select)
+function UIHomeVisitGiftItem:Select(select)
+  self.select:SetActive(select)
 end
-
-

@@ -1,101 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/cover/season_maze_cover_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeCoverManager", Object)
 SeasonMazeCoverManager = SeasonMazeCoverManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeCoverManager.Constructor = function(self)
-  -- function num : 0_0
+function SeasonMazeCoverManager:Constructor()
   self._flag = "_cover"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCoverManager.OnInit = function(self, seasonID)
-  -- function num : 0_1
+function SeasonMazeCoverManager:OnInit(seasonID)
   self._covers = {}
   self._waitClearing = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCoverManager.Update = function(self, deltaTime)
-  -- function num : 0_2
+function SeasonMazeCoverManager:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCoverManager.OnCoverCheck = function(self, position)
-  -- function num : 0_3 , upvalues : _ENV
-  (table.clear)(self._waitClearing)
-  for transform,cover in pairs(self._covers) do
-    if (tolua.isnull)(transform) then
-      (table.insert)(self._waitClearing, transform)
+function SeasonMazeCoverManager:OnCoverCheck(position)
+  table.clear(self._waitClearing)
+  for transform, cover in pairs(self._covers) do
+    if tolua.isnull(transform) then
+      table.insert(self._waitClearing, transform)
+    elseif cover:OnCoverCheck(position) then
+      cover:IncreaseBuildingY()
     else
-      if cover:OnCoverCheck(position) then
-        cover:IncreaseBuildingY()
-      else
-        cover:ReduceBuildingY()
-      end
+      cover:ReduceBuildingY()
     end
   end
   self:_TryCleanCover()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCoverManager.Dispose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,cover in pairs(self._covers) do
+function SeasonMazeCoverManager:Dispose()
+  for _, cover in pairs(self._covers) do
     cover:Dispose()
   end
-  ;
-  (table.clear)(self._covers)
+  table.clear(self._covers)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCoverManager.CoverFlag = function(self)
-  -- function num : 0_5
+function SeasonMazeCoverManager:CoverFlag()
   return self._flag
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCoverManager.AddCover = function(self, transform, cover)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
+function SeasonMazeCoverManager:AddCover(transform, cover)
   if transform and cover then
-    if not (self._covers)[transform] then
-      (self._covers)[transform] = SeasonMazeCoverBase:New(transform)
+    if not self._covers[transform] then
+      self._covers[transform] = SeasonMazeCoverBase:New(transform)
     end
-    ;
-    ((self._covers)[transform]):AddBuildingCover(cover)
+    self._covers[transform]:AddBuildingCover(cover)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCoverManager.ClearCover = function(self, transform)
-  -- function num : 0_7
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._covers)[transform] = nil
+function SeasonMazeCoverManager:ClearCover(transform)
+  self._covers[transform] = nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCoverManager._TryCleanCover = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  for _,transform in pairs(self._waitClearing) do
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._covers)[transform] = nil
+function SeasonMazeCoverManager:_TryCleanCover()
+  for _, transform in pairs(self._waitClearing) do
+    self._covers[transform] = nil
   end
 end
-
-

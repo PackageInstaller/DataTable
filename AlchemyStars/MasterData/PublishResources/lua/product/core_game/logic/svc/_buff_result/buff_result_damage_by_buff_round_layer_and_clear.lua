@@ -1,31 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_damage_by_buff_round_layer_and_clear.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultDamageByBuffRoundLayerAndClear", BuffResultBase)
 BuffResultDamageByBuffRoundLayerAndClear = BuffResultDamageByBuffRoundLayerAndClear
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultDamageByBuffRoundLayerAndClear.Constructor = function(self, damageInfo, targetBuffSeq)
-  -- function num : 0_0
+function BuffResultDamageByBuffRoundLayerAndClear:Constructor(damageInfo, targetBuffSeq)
   self._damageInfo = damageInfo
   self._targetBuffSeq = targetBuffSeq
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDamageByBuffRoundLayerAndClear.GetDamageInfo = function(self)
-  -- function num : 0_1
+function BuffResultDamageByBuffRoundLayerAndClear:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDamageByBuffRoundLayerAndClear.GetTargetBuffSeq = function(self)
-  -- function num : 0_2
+function BuffResultDamageByBuffRoundLayerAndClear:GetTargetBuffSeq()
   return self._targetBuffSeq
 end
-
-

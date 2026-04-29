@@ -1,29 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_is_attach_pos_valid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_is_base")
 _class("ActionIsAttachPosValid", ActionIsBase)
 ActionIsAttachPosValid = ActionIsAttachPosValid
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionIsAttachPosValid.Constructor = function(self)
-  -- function num : 0_0
+function ActionIsAttachPosValid:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionIsAttachPosValid.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if (AINewNode.IsEntityDead)(self.m_entityOwn) then
+function ActionIsAttachPosValid:OnUpdate()
+  if AINewNode.IsEntityDead(self.m_entityOwn) then
     return AINewNodeStatus.Failure
   end
-  local aiComponent = (self.m_entityOwn):AI()
+  local aiComponent = self.m_entityOwn:AI()
   local nSkillID = self:GetLogicData(1)
-  local selfPos = (self.m_entityOwn):GetGridPosition()
-  local dir = ((self.m_entityOwn):GridLocation()).Direction
-  local selfBodyArea = ((self.m_entityOwn):BodyArea()):GetArea()
+  local selfPos = self.m_entityOwn:GetGridPosition()
+  local dir = self.m_entityOwn:GridLocation().Direction
+  local selfBodyArea = self.m_entityOwn:BodyArea():GetArea()
   local skillRangeData = self:CalculateSkillRange(nSkillID, selfPos, dir, selfBodyArea)
   local entityTarget = aiComponent:GetTargetEntity()
   if not entityTarget or #skillRangeData == 0 then
@@ -34,34 +24,26 @@ ActionIsAttachPosValid.OnUpdate = function(self)
     local targetPos = entityTarget:GetGridPosition()
     local bodyArea = entityTarget:GetCoverAreaList(targetPos)
     local bConnected = false
-    for key,posWork in ipairs(bodyArea) do
+    for key, posWork in ipairs(bodyArea) do
       if self:IsPosConnected(selfPos, posWork) then
         bConnected = true
         break
       end
     end
-    do
-      do
-        bSuccess = bConnected
-        if bSuccess == true then
-          self:PrintLog("攻击位置<有效>: skillID = ", nSkillID)
-          return AINewNodeStatus.Success
-        else
-          local configService = (self._world):GetService("Config")
-          local skillConfigData = configService:GetSkillConfigData(nSkillID)
-          if SkillTargetType.Monster == skillConfigData:GetSkillTargetType() then
-            self:PrintLog("skillID = ", nSkillID, ", 同组范围攻击位置<有效>")
-            return AINewNodeStatus.Success
-          end
-          self:PrintLog("攻击位置<无效>: skillID = ", nSkillID)
-          return AINewNodeStatus.Failure
-        end
-        do
-          return AINewNodeStatus.Failure
-        end
-      end
-    end
+    bSuccess = bConnected
   end
+  if true == bSuccess then
+    self:PrintLog("攻击位置<有效>: skillID = ", nSkillID)
+    return AINewNodeStatus.Success
+  else
+    local configService = self._world:GetService("Config")
+    local skillConfigData = configService:GetSkillConfigData(nSkillID)
+    if SkillTargetType.Monster == skillConfigData:GetSkillTargetType() then
+      self:PrintLog("skillID = ", nSkillID, ", 同组范围攻击位置<有效>")
+      return AINewNodeStatus.Success
+    end
+    self:PrintLog("攻击位置<无效>: skillID = ", nSkillID)
+    return AINewNodeStatus.Failure
+  end
+  return AINewNodeStatus.Failure
 end
-
-

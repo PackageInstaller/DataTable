@@ -1,91 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/difficulty_mission_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DifficultyMissionComponent", ICampaignComponent)
 DifficultyMissionComponent = DifficultyMissionComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DifficultyMissionComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function DifficultyMissionComponent:Constructor()
   self.m_component_info = ClientCampaignDifficultyMissionInfo:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function DifficultyMissionComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = ClientCampaignDifficultyMissionInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function DifficultyMissionComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionComponent.IsPassCamMissionID = function(self, camMissionId)
-  -- function num : 0_3
-  if ((self.m_component_info).m_pass_mission_info)[camMissionId] then
+function DifficultyMissionComponent:IsPassCamMissionID(camMissionId)
+  if self.m_component_info.m_pass_mission_info[camMissionId] then
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionComponent.GetComponentType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function DifficultyMissionComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_DIFFICULTY_MISSION
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_5 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function DifficultyMissionComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionComponent.GetCampaignMissionComponentId = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function DifficultyMissionComponent:GetCampaignMissionComponentId()
   return EDifficultyMissionComponentId.EDifficultyMissionComponentId_Campaign
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionComponent.GetCampaignMissionParamKeyMap = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function DifficultyMissionComponent:GetCampaignMissionParamKeyMap()
   local ComponentInfo = self:ComponentInfo()
   local nCfgId = self:GetComponetCfgId(ComponentInfo.m_campaign_id, ComponentInfo.m_component_id)
-  return {[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId}
+  return {
+    [ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId
+  }
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionComponent.HandleDifficultyChangeFormation = function(self, TT, asyncRes, parent_mission_id, sub_id, pet_list)
-  -- function num : 0_8 , upvalues : _ENV
+function DifficultyMissionComponent:HandleDifficultyChangeFormation(TT, asyncRes, parent_mission_id, sub_id, pet_list)
   local request = CCampaignEventApplyChangeFormationReq:New()
   local response = CCampaignEventApplyChangeFormationRes:New()
   request.parent_mission_id = parent_mission_id
   request.formation_pet_list = pet_list
   request.sub_mission_id = sub_id
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   local res = AsyncRequestRes:New()
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][IdolComponent] HandleDifficultyChangeFormation ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][IdolComponent] HandleDifficultyChangeFormation ret:", asyncRes.m_result)
     res:SetSucc(false)
     return res
   end
@@ -93,20 +63,16 @@ DifficultyMissionComponent.HandleDifficultyChangeFormation = function(self, TT, 
   return res
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionComponent.HandleDifficultyResetSubMissionRecord = function(self, TT, asyncRes, parent_mission_id, sub_mission_id)
-  -- function num : 0_9 , upvalues : _ENV
+function DifficultyMissionComponent:HandleDifficultyResetSubMissionRecord(TT, asyncRes, parent_mission_id, sub_mission_id)
   local request = CCampaignEventResetSubMissionRecordReq:New()
   local response = CCampaignEventResetSubMissionRecordRes:New()
   request.parent_mission_id = parent_mission_id
   request.sub_mission_id = sub_mission_id
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   local res = AsyncRequestRes:New()
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][IdolComponent] HandleDifficultyChangeFormation ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][IdolComponent] HandleDifficultyChangeFormation ret:", asyncRes.m_result)
     res:SetResult(asyncRes.m_result)
     return res
   end
@@ -114,40 +80,24 @@ DifficultyMissionComponent.HandleDifficultyResetSubMissionRecord = function(self
   return res
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_10 , upvalues : _ENV
+function DifficultyMissionComponent:CampaignComponentPushNotify(notify_data)
   if DifficultyMissionComponentNotifyType.DifficultyMissionComponentNotifyType_Parent == notify_data.m_notify_type then
     local ev = NotifyDifficultyMissionComponentParentInfoChanged:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R4 in 'UnsetPending'
-
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
-      ((self.m_component_info).infos)[(ev.info).parent_mission_id] = ev.info
-      -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self.m_component_info).cur_parent_id = ev.cur_mission_id
+      self.m_component_info.infos[ev.info.parent_mission_id] = ev.info
+      self.m_component_info.cur_parent_id = ev.cur_mission_id
     else
-      ;
-      (Log.error)("[CampaignCom][DifficultyMissionComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][DifficultyMissionComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
-  do
-    if DifficultyMissionComponentNotifyType.DifficultyMissionComponentNotifyType_CurFormation == notify_data.m_notify_type then
-      local ev = NotifyDifficultyMissionComponentCurFormationChanged:New()
-      local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
-      -- DECOMPILER ERROR at PC47: Confused about usage of register: R4 in 'UnsetPending'
-
-      if ret then
-        (self.m_component_info).pet_list = ev.formation_pet_list
-      else
-        ;
-        (Log.error)("[CampaignCom][DifficultyMissionComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
-      end
+  if DifficultyMissionComponentNotifyType.DifficultyMissionComponentNotifyType_CurFormation == notify_data.m_notify_type then
+    local ev = NotifyDifficultyMissionComponentCurFormationChanged:New()
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
+    if ret then
+      self.m_component_info.pet_list = ev.formation_pet_list
+    else
+      Log.error("[CampaignCom][DifficultyMissionComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
-
-

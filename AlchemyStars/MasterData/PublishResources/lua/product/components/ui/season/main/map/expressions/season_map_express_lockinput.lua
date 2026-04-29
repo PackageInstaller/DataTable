@@ -1,38 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/expressions/season_map_express_lockinput.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapExpressLockInput", SeasonMapExpressBase)
 SeasonMapExpressLockInput = SeasonMapExpressLockInput
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapExpressLockInput.Constructor = function(self, cfg, eventPoint)
-  -- function num : 0_0
-  self._content = (self._cfg).LockInput
+function SeasonMapExpressLockInput:Constructor(cfg, eventPoint)
+  self._content = self._cfg.LockInput
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressLockInput.Update = function(self, deltaTime)
-  -- function num : 0_1
+function SeasonMapExpressLockInput:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressLockInput.OnPlay = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonMapExpressLockInput:OnPlay()
   if self._content ~= nil then
-    local seasonManager = ((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()
+    local seasonManager = GameGlobal.GetUIModule(SeasonModule):SeasonManager()
     if self._content == true then
       seasonManager:Lock("LockInput")
-    else
-      if self._content == false then
-        seasonManager:UnLock("LockInput")
-      end
+    elseif self._content == false then
+      seasonManager:UnLock("LockInput")
     end
     self:Next()
   end
 end
-
-

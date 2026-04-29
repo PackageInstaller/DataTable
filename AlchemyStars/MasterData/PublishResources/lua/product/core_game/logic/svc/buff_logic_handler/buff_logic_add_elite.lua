@@ -1,62 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_elite.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddElite", BuffLogicBase)
 BuffLogicAddElite = BuffLogicAddElite
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddElite.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicAddElite:Constructor(buffInstance, logicParam)
   self._eliteIDArray = logicParam.eliteIDArray
   if not self._eliteIDArray then
-    (Log.error)("[AddElite] config error: elite id array is nil!")
+    Log.error("[AddElite] config error: elite id array is nil!")
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddElite.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local ownerEntity = (self._buffInstance):Entity()
+function BuffLogicAddElite:DoLogic(notify)
+  local ownerEntity = self._buffInstance:Entity()
   local monsterIDCmpt = ownerEntity:MonsterID()
   if not monsterIDCmpt then
-    return 
+    return
   end
   local addEliteIDArray = {}
   local ownerEliteIDArray = monsterIDCmpt:GetEliteIDArray()
-  for _,id in ipairs(self._eliteIDArray) do
-    if not (table.icontains)(ownerEliteIDArray, id) then
-      (table.insert)(addEliteIDArray, id)
+  for _, id in ipairs(self._eliteIDArray) do
+    if not table.icontains(ownerEliteIDArray, id) then
+      table.insert(addEliteIDArray, id)
     end
   end
   if #addEliteIDArray == 0 then
-    return 
+    return
   end
-  ;
-  (table.appendArray)(ownerEliteIDArray, addEliteIDArray)
+  table.appendArray(ownerEliteIDArray, addEliteIDArray)
   monsterIDCmpt:SetEliteIDArray(ownerEliteIDArray)
   local result = BuffResultAddElite:New(addEliteIDArray)
-  local world = (self._buffInstance):World()
+  local world = self._buffInstance:World()
   local buffLogicSvc = world:GetService("BuffLogic")
-  for _,eliteID in ipairs(addEliteIDArray) do
-    local cfg = (Cfg.cfg_monster_elite)[eliteID]
+  for _, eliteID in ipairs(addEliteIDArray) do
+    local cfg = Cfg.cfg_monster_elite[eliteID]
     if not cfg then
-      (Log.error)("[AddElite]", "invalid eliteID: ", eliteID)
-    else
-      if cfg.Buff and #cfg.Buff ~= 0 then
-        for _,buffID in ipairs(cfg.Buff) do
-          (Log.debug)("[AddElite]", "entityID: ", ownerEntity:GetID(), "elite ID: ", eliteID, ", buffID: ", buffID)
-          local buffIns = buffLogicSvc:AddBuff(buffID, ownerEntity, {})
-          if buffIns then
-            result:AddBuffSeq(buffIns:BuffSeq())
-          end
+      Log.error("[AddElite]", "invalid eliteID: ", eliteID)
+    elseif cfg.Buff and #cfg.Buff ~= 0 then
+      for _, buffID in ipairs(cfg.Buff) do
+        Log.debug("[AddElite]", "entityID: ", ownerEntity:GetID(), "elite ID: ", eliteID, ", buffID: ", buffID)
+        local buffIns = buffLogicSvc:AddBuff(buffID, ownerEntity, {})
+        if buffIns then
+          result:AddBuffSeq(buffIns:BuffSeq())
         end
       end
     end
   end
   return result
 end
-
-

@@ -1,206 +1,148 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/gronru_game/mission/ui_n28_gronru_game_selectplayer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28GronruGameSelectPlayer", UIController)
 UIN28GronruGameSelectPlayer = UIN28GronruGameSelectPlayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28GronruGameSelectPlayer.Constructor = function(self)
-  -- function num : 0_0
+function UIN28GronruGameSelectPlayer:Constructor()
   self._aniCfg = {
-[1] = {"idle_1600061", "idle_1600061_2"}
-, 
-[2] = {"idle_1000011", "idle_1000011_2"}
-, 
-[3] = {"idle_1500331", "idle_1500331_2"}
-}
+    [1] = {
+      "idle_1600061",
+      "idle_1600061_2"
+    },
+    [2] = {
+      "idle_1000011",
+      "idle_1000011_2"
+    },
+    [3] = {
+      "idle_1500331",
+      "idle_1500331_2"
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameSelectPlayer.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN28GronruGameSelectPlayer:LoadDataOnEnter(TT, res, uiParams)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   local campaignModule = self:GetModule(CampaignModule)
   self._campaignModule = campaignModule
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N28_MINI_GAME, ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N28_MINI_GAME, ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
     self:Lock("UIN28GronruGameSelectPlayer")
     self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, self
-    YIELD(TT)
-    self:UnLock("UIN28GronruGameSelectPlayer")
-    self:CloseDialog()
+      YIELD(TT)
+      self:UnLock("UIN28GronruGameSelectPlayer")
+      self:CloseDialog()
+    end)
+    return
   end
-)
-    return 
-  end
-  local sample = (self._campaign):GetSample()
+  local sample = self._campaign:GetSample()
   self._endTime = sample.end_time
-  self._component = (self._campaign):GetComponent(ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
-  self._componentInfo = (self._campaign):GetComponentInfo(ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
-  local openTime = (self._componentInfo).m_unlock_time
+  self._component = self._campaign:GetComponent(ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
+  self._componentInfo = self._campaign:GetComponentInfo(ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
+  local openTime = self._componentInfo.m_unlock_time
   local closeTime = self._endTime
-  local nowtime = (self._svrTimeModule):GetServerTime() / 1000
+  local nowtime = self._svrTimeModule:GetServerTime() / 1000
   if closeTime < nowtime then
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
     campaignModule:ShowErrorToast(res.m_result, true)
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameSelectPlayer.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN28GronruGameSelectPlayer:OnShow(uiParams)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._Refresh)
   self._curPlayerIndex = 2
-  ;
-  (UIN28GronruGameConst.SetSelectPlayer)(self._curPlayerIndex)
+  UIN28GronruGameConst.SetSelectPlayer(self._curPlayerIndex)
   self:InitWidget()
   self:Flush()
-  ;
-  (UIN28GronruGameConst.SetSelectPlayer)(self._curPlayerIndex)
+  UIN28GronruGameConst.SetSelectPlayer(self._curPlayerIndex)
   self:PlaySelectAction(self._curPlayerIndex)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN28GronruGameSelectPlayer)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN28GronruGameSelectPlayer)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameSelectPlayer.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN28GronruGameSelectPlayer:OnHide()
   self:DetachEvent(GameEventType.AfterUILayerChanged, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameSelectPlayer.InitWidget = function(self)
-  -- function num : 0_4
+function UIN28GronruGameSelectPlayer:InitWidget()
   self.players = {}
   self.playerAnis = {}
   for i = 1, 3 do
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R5 in 'UnsetPending'
-
-    (self.players)[i] = self:GetUIComponent("RectTransform", "player" .. i)
+    self.players[i] = self:GetUIComponent("RectTransform", "player" .. i)
   end
   for i = 1, 3 do
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R5 in 'UnsetPending'
-
-    (self.playerAnis)[i] = self:GetUIComponent("Animator", "playerprefab" .. i)
+    self.playerAnis[i] = self:GetUIComponent("Animator", "playerprefab" .. i)
   end
   self._arrow = self:GetUIComponent("RectTransform", "arrow")
   self._anim = self:GetUIComponent("Animation", "root")
   self._anim = self:GetUIComponent("Animation", "root")
   self._againImage = self:GetUIComponent("RectTransform", "againImage")
-  ;
-  ((self._againImage).gameObject):SetActive(true)
+  self._againImage.gameObject:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameSelectPlayer.Flush = function(self)
-  -- function num : 0_5
+function UIN28GronruGameSelectPlayer:Flush()
   for i = 1, #self.playerAnis do
-    ((self.playerAnis)[i]):Play(((self._aniCfg)[i])[2])
+    self.playerAnis[i]:Play(self._aniCfg[i][2])
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameSelectPlayer.InfobtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN28GronruGameSelectPlayer:InfobtnOnClick(go)
   if self:CheckActivityOver() then
-    return 
+    return
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BoucneInfo)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BoucneInfo)
   self:ShowDialog("UIIntroLoader", "UIN28GronruGameIntro")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameSelectPlayer.ButtonBackOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN28GronruGameSelectPlayer:ButtonBackOnClick(go)
   if self:CheckActivityOver() then
-    return 
+    return
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BoucneInfo)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BoucneInfo)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameSelectPlayer.GameBtnOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN28GronruGameSelectPlayer:GameBtnOnClick(go)
   if self:CheckActivityOver() then
-    return 
+    return
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BoucneInfo)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BoucneInfo)
   if self:CheckActivityOver() then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV
     self:Lock("UIN28GronruGameSelectPlayer:GameBtnOnClick")
-    ;
-    (self._anim):Play("uieff_UIN28GronruGameIntro_out")
+    self._anim:Play("uieff_UIN28GronruGameIntro_out")
     YIELD(TT, 200)
     self:ShowDialog(UIStateType.UIN28GronruGameLevel)
     self:UnLock("UIN28GronruGameSelectPlayer:GameBtnOnClick")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameSelectPlayer.SelectBtnOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN28GronruGameSelectPlayer:SelectBtnOnClick(go)
   if self:CheckActivityOver() then
-    return 
+    return
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BoucneInfo)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BoucneInfo)
   self._curPlayerIndex = self._curPlayerIndex + 1
-  if self._curPlayerIndex % 3 ~= 0 or not 3 then
-    self._curPlayerIndex = self._curPlayerIndex % 3
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._arrow).anchoredPosition = Vector2((((self.players)[self._curPlayerIndex]).anchoredPosition).x, ((self._arrow).anchoredPosition).y)
-    ;
-    (UIN28GronruGameConst.SetSelectPlayer)(self._curPlayerIndex)
-    self:PlaySelectAction(self._curPlayerIndex)
-  end
+  self._curPlayerIndex = self._curPlayerIndex % 3 == 0 and 3 or self._curPlayerIndex % 3
+  self._arrow.anchoredPosition = Vector2(self.players[self._curPlayerIndex].anchoredPosition.x, self._arrow.anchoredPosition.y)
+  UIN28GronruGameConst.SetSelectPlayer(self._curPlayerIndex)
+  self:PlaySelectAction(self._curPlayerIndex)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameSelectPlayer.PlaySelectAction = function(self, index)
-  -- function num : 0_10
+function UIN28GronruGameSelectPlayer:PlaySelectAction(index)
   for i = 1, #self.playerAnis do
     if index == i then
-      ((self.playerAnis)[i]):Play(((self._aniCfg)[i])[1])
+      self.playerAnis[i]:Play(self._aniCfg[i][1])
     else
-      ;
-      ((self.playerAnis)[i]):Play(((self._aniCfg)[i])[2])
+      self.playerAnis[i]:Play(self._aniCfg[i][2])
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameSelectPlayer.CheckActivityOver = function(self)
-  -- function num : 0_11
+function UIN28GronruGameSelectPlayer:CheckActivityOver()
   local closeTime = self._endTime
-  local nowtime = (self._svrTimeModule):GetServerTime() * 0.001
+  local nowtime = self._svrTimeModule:GetServerTime() * 0.001
   if closeTime < nowtime then
     self:CloseDialog()
     return true
@@ -208,14 +150,9 @@ UIN28GronruGameSelectPlayer.CheckActivityOver = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameSelectPlayer._Refresh = function(self, bo)
-  -- function num : 0_12 , upvalues : _ENV
-  local topDepth = (((GameGlobal.UIStateManager)()).uiControllerManager):TopDepth()
+function UIN28GronruGameSelectPlayer:_Refresh(bo)
+  local topDepth = GameGlobal.UIStateManager().uiControllerManager:TopDepth()
   if topDepth == self:GetDepth() and not self:CheckActivityOver() then
     self:PlaySelectAction(self._curPlayerIndex)
   end
 end
-
-

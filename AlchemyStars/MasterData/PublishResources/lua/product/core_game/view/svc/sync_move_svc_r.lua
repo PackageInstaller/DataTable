@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/sync_move_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SyncMoveServiceRender", BaseService)
 SyncMoveServiceRender = SyncMoveServiceRender
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SyncMoveServiceRender.OnGridMoveToPos = function(self, e, pathIndex, speed, teamEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SyncMoveServiceRender:OnGridMoveToPos(e, pathIndex, speed, teamEntity)
   local leader = teamEntity:GetTeamLeaderPetEntity()
   if leader:GetID() == e:GetID() then
-    local group = (self._world):GetGroup(((self._world).BW_WEMatchers).RenderSyncMoveWithTeam)
+    local group = self._world:GetGroup(self._world.BW_WEMatchers.RenderSyncMoveWithTeam)
     local syncMoveEntites = group:GetEntities()
-    local boardServiceRender = (self._world):GetService("BoardRender")
-    for _,e in ipairs(syncMoveEntites) do
+    local boardServiceRender = self._world:GetService("BoardRender")
+    for _, e in ipairs(syncMoveEntites) do
       local syncMoveCmptRender = e:RenderSyncMoveWithTeam()
       if syncMoveCmptRender then
         local syncPath = syncMoveCmptRender:GetSyncMovePath()
@@ -33,41 +26,31 @@ SyncMoveServiceRender.OnGridMoveToPos = function(self, e, pathIndex, speed, team
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncMoveServiceRender.OnArriveAtPos = function(self, e, pathIndex, teamEntity)
-  -- function num : 0_1 , upvalues : _ENV
+function SyncMoveServiceRender:OnArriveAtPos(e, pathIndex, teamEntity)
   local leader = teamEntity:GetTeamLeaderPetEntity()
   if leader:GetID() == e:GetID() then
-    local group = (self._world):GetGroup(((self._world).BW_WEMatchers).RenderSyncMoveWithTeam)
-    do
-      local syncMoveEntites = group:GetEntities()
-      local boardServiceRender = (self._world):GetService("BoardRender")
-      local playBuffSvc = (self._world):GetService("PlayBuff")
-      for _,e in ipairs(syncMoveEntites) do
-        local syncMoveCmptRender = e:RenderSyncMoveWithTeam()
-        if syncMoveCmptRender then
-          local syncPath = syncMoveCmptRender:GetSyncMovePath()
-          if syncPath then
-            local tarPath = syncPath[pathIndex]
-            if tarPath then
-              local oldPos = tarPath.tarPos
-              do
-                local lastPath = syncPath[pathIndex - 1]
-                if lastPath then
-                  oldPos = lastPath.tarPos
-                end
-                local ntSyncMoveEachMoveEnd = NTSyncMoveEachMoveEnd:New(e, tarPath.tarPos, oldPos, pathIndex)
-                ;
-                ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : playBuffSvc, ntSyncMoveEachMoveEnd
-    playBuffSvc:PlayBuffView(TT, ntSyncMoveEachMoveEnd)
-  end
-)
-                if pathIndex == #syncPath then
-                  e:SetAnimatorControllerBools({Move = false})
-                end
-              end
+    local group = self._world:GetGroup(self._world.BW_WEMatchers.RenderSyncMoveWithTeam)
+    local syncMoveEntites = group:GetEntities()
+    local boardServiceRender = self._world:GetService("BoardRender")
+    local playBuffSvc = self._world:GetService("PlayBuff")
+    for _, e in ipairs(syncMoveEntites) do
+      local syncMoveCmptRender = e:RenderSyncMoveWithTeam()
+      if syncMoveCmptRender then
+        local syncPath = syncMoveCmptRender:GetSyncMovePath()
+        if syncPath then
+          local tarPath = syncPath[pathIndex]
+          if tarPath then
+            local oldPos = tarPath.tarPos
+            local lastPath = syncPath[pathIndex - 1]
+            if lastPath then
+              oldPos = lastPath.tarPos
+            end
+            local ntSyncMoveEachMoveEnd = NTSyncMoveEachMoveEnd:New(e, tarPath.tarPos, oldPos, pathIndex)
+            GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+              playBuffSvc:PlayBuffView(TT, ntSyncMoveEachMoveEnd)
+            end)
+            if pathIndex == #syncPath then
+              e:SetAnimatorControllerBools({Move = false})
             end
           end
         end
@@ -76,25 +59,22 @@ SyncMoveServiceRender.OnArriveAtPos = function(self, e, pathIndex, teamEntity)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncMoveServiceRender.PreviewOnLinkLine = function(self, chainPath)
-  -- function num : 0_2 , upvalues : _ENV
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).RenderSyncMoveWithTeam)
+function SyncMoveServiceRender:PreviewOnLinkLine(chainPath)
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.RenderSyncMoveWithTeam)
   local syncMoveEntites = group:GetEntities()
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local entitySvc = (self._world):GetService("RenderEntity")
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
-  for _,e in ipairs(syncMoveEntites) do
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local entitySvc = self._world:GetService("RenderEntity")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
+  for _, e in ipairs(syncMoveEntites) do
     local syncMoveCmptRender = e:RenderSyncMoveWithTeam()
     if syncMoveCmptRender then
-      local curPos = (e:GridLocation()).Position
+      local curPos = e:GridLocation().Position
       local finalPos = utilCalcSvc:CalSyncMovePreviewPos(curPos, chainPath)
       if finalPos then
-        local ghostEntityID = (syncMoveCmptRender:GetGhostEntityID())
-        local ghostEntity = nil
+        local ghostEntityID = syncMoveCmptRender:GetGhostEntityID()
+        local ghostEntity
         if ghostEntityID then
-          ghostEntity = (self._world):GetEntityByID(ghostEntityID)
+          ghostEntity = self._world:GetEntityByID(ghostEntityID)
         else
           ghostEntity = entitySvc:CreateGhost(finalPos, e)
           if ghostEntity then
@@ -109,17 +89,14 @@ SyncMoveServiceRender.PreviewOnLinkLine = function(self, chainPath)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncMoveServiceRender.ClearPreview = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).RenderSyncMoveWithTeam)
+function SyncMoveServiceRender:ClearPreview()
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.RenderSyncMoveWithTeam)
   local syncMoveEntites = group:GetEntities()
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local entitySvc = (self._world):GetService("RenderEntity")
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local entitySvc = self._world:GetService("RenderEntity")
   entitySvc:DestroyGhost()
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
-  for _,e in ipairs(syncMoveEntites) do
+  local utilCalcSvc = self._world:GetService("UtilCalc")
+  for _, e in ipairs(syncMoveEntites) do
     local syncMoveCmptRender = e:RenderSyncMoveWithTeam()
     if syncMoveCmptRender then
       local ghostEntityID = syncMoveCmptRender:GetGhostEntityID()
@@ -129,5 +106,3 @@ SyncMoveServiceRender.ClearPreview = function(self)
     end
   end
 end
-
-

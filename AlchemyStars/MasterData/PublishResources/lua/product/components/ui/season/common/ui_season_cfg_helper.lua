@@ -1,81 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/ui_season_cfg_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonCfgHelper", Object)
 UISeasonCfgHelper = UISeasonCfgHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonCfgHelper.CfgSeason_CampaignClient = function(id)
-  -- function num : 0_0 , upvalues : _ENV
-  local cfg = (Cfg.cfg_season_campaign_client)[id]
-  ;
-  (UISeasonCfgHelper.CheckCfgNil)(cfg, "cfg_season_campaign_client", id)
+function UISeasonCfgHelper.CfgSeason_CampaignClient(id)
+  local cfg = Cfg.cfg_season_campaign_client[id]
+  UISeasonCfgHelper.CheckCfgNil(cfg, "cfg_season_campaign_client", id)
   return cfg
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCfgHelper.GetCurSeasonMedalGroupCfg = function(id)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonCfgHelper.GetCurSeasonMedalGroupCfg(id)
   if id == -1 then
-    return 
+    return
   end
-  local cfg = (UISeasonCfgHelper.CfgSeason_CampaignClient)(id)
-  if cfg then
-    local medalId = cfg.MedalGroupID
-  end
+  local cfg = UISeasonCfgHelper.CfgSeason_CampaignClient(id)
+  local medalId = cfg and cfg.MedalGroupID
   if medalId then
-    local medalCfg = (Cfg.cfg_item_medal_group)[medalId]
-    ;
-    (UISeasonCfgHelper.CheckCfgNil)(medalCfg, "cfg_item_medal_group", medalId)
+    local medalCfg = Cfg.cfg_item_medal_group[medalId]
+    UISeasonCfgHelper.CheckCfgNil(medalCfg, "cfg_item_medal_group", medalId)
     return medalCfg
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCfgHelper.CfgSeason_QuestItemPos = function(index)
-  -- function num : 0_2 , upvalues : _ENV
-  local seasonId = ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonID()
-  local cfgs = (Cfg.cfg_season_quest_item_pos)({SeasonID = seasonId})
+function UISeasonCfgHelper.CfgSeason_QuestItemPos(index)
+  local seasonId = GameGlobal.GetModule(SeasonModule):GetCurSeasonID()
+  local cfgs = Cfg.cfg_season_quest_item_pos({SeasonID = seasonId})
   if cfgs then
-    (table.sort)(cfgs, function(a, b)
-    -- function num : 0_2_0
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    table.sort(cfgs, function(a, b)
+      return a.ID < b.ID
+    end)
     local idx = (index - 1) % #cfgs + 1
     local cfg = cfgs[idx]
     return cfg
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCfgHelper.CfgSeason_QuestItemClient = function(id)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_season_quest_item_client)[id]
-  ;
-  (UISeasonCfgHelper.CheckCfgNil)(cfg, "cfg_season_quest_item_client", id)
+function UISeasonCfgHelper.CfgSeason_QuestItemClient(id)
+  local cfg = Cfg.cfg_season_quest_item_client[id]
+  UISeasonCfgHelper.CheckCfgNil(cfg, "cfg_season_quest_item_client", id)
   return cfg
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCfgHelper.CheckCfgNil = function(cfg, cfgName, id)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonCfgHelper.CheckCfgNil(cfg, cfgName, id)
   if not cfg then
-    local strId = (string.format)("UISeasonCfgHelper %s[%s] = nil", cfgName, id)
-    if not id or not strId then
-      local str = (string.format)("UISeasonCfgHelper %s = nil", cfgName)
-    end
-    ;
-    (Log.exception)(str, (debug.traceback)())
-    return 
+    local strId = string.format("UISeasonCfgHelper %s[%s] = nil", cfgName, id)
+    local str = id and strId or string.format("UISeasonCfgHelper %s = nil", cfgName)
+    Log.exception(str, debug.traceback())
+    return
   end
 end
-
-

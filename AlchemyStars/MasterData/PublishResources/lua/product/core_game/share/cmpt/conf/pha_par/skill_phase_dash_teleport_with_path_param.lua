@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_dash_teleport_with_path_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseDashTeleportWithPathParam", SkillPhaseParamBase)
 SkillPhaseDashTeleportWithPathParam = SkillPhaseDashTeleportWithPathParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseDashTeleportWithPathParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseDashTeleportWithPathParam:Constructor(t)
   self.startAction = t.startAction
   self.startDashDelay = t.startDashDelay
   self.startEffectID = t.startEffectID
@@ -25,122 +18,87 @@ SkillPhaseDashTeleportWithPathParam.Constructor = function(self, t)
   self.dashAudioID = t.dashAudioID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDashTeleportWithPathParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseDashTeleportWithPathParam:GetPhaseType()
   return SkillViewPhaseType.DashTeleportWithPath
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDashTeleportWithPathParam.GetCacheTable = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseDashTeleportWithPathParam:GetCacheTable()
   local t = {}
   if self.startEffectID and self.startEffectID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.startEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self.startEffectID].ResPath,
+      1
+    })
   end
   if self.pathPointEffectID and self.pathPointEffectID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.pathPointEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self.pathPointEffectID].ResPath,
+      1
+    })
   end
   if self.eachDashFinishEffectID and self.eachDashFinishEffectID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.eachDashFinishEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self.eachDashFinishEffectID].ResPath,
+      1
+    })
   end
   if self.dashEffectID and self.dashEffectID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.dashEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self.dashEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDashTeleportWithPathParam.GetStartAction = function(self)
-  -- function num : 0_3
+function SkillPhaseDashTeleportWithPathParam:GetStartAction()
   return self.startAction
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDashTeleportWithPathParam.GetStartDashDelay = function(self)
-  -- function num : 0_4
+function SkillPhaseDashTeleportWithPathParam:GetStartDashDelay()
   return self.startDashDelay
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDashTeleportWithPathParam.GetStartEffectID = function(self)
-  -- function num : 0_5
+function SkillPhaseDashTeleportWithPathParam:GetStartEffectID()
   return self.startEffectID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDashTeleportWithPathParam.GetMiddleStartAction = function(self)
-  -- function num : 0_6
+function SkillPhaseDashTeleportWithPathParam:GetMiddleStartAction()
   return self.middleStartAction
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDashTeleportWithPathParam.GetMiddleStartDashDelay = function(self)
-  -- function num : 0_7
+function SkillPhaseDashTeleportWithPathParam:GetMiddleStartDashDelay()
   return self.middleStartDashDelay
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDashTeleportWithPathParam.GetStopAction = function(self)
-  -- function num : 0_8
+function SkillPhaseDashTeleportWithPathParam:GetStopAction()
   return self.stopAction
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDashTeleportWithPathParam.GetStopDelay = function(self)
-  -- function num : 0_9
+function SkillPhaseDashTeleportWithPathParam:GetStopDelay()
   return self.stopDealy
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDashTeleportWithPathParam.GetDashAction = function(self)
-  -- function num : 0_10
+function SkillPhaseDashTeleportWithPathParam:GetDashAction()
   return self.dashAction
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDashTeleportWithPathParam.GetEachDashDuration = function(self)
-  -- function num : 0_11
+function SkillPhaseDashTeleportWithPathParam:GetEachDashDuration()
   return self.eachDashDuration
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDashTeleportWithPathParam.GetPathPointEffectID = function(self)
-  -- function num : 0_12
+function SkillPhaseDashTeleportWithPathParam:GetPathPointEffectID()
   return self.pathPointEffectID
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDashTeleportWithPathParam.GetEachDashFinishEffectID = function(self)
-  -- function num : 0_13
+function SkillPhaseDashTeleportWithPathParam:GetEachDashFinishEffectID()
   return self.eachDashFinishEffectID
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDashTeleportWithPathParam.GetDashEffectID = function(self)
-  -- function num : 0_14
+function SkillPhaseDashTeleportWithPathParam:GetDashEffectID()
   return self.dashEffectID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDashTeleportWithPathParam.GetDashAudioID = function(self)
-  -- function num : 0_15
+function SkillPhaseDashTeleportWithPathParam:GetDashAudioID()
   return self.dashAudioID
 end
-
-

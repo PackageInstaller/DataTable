@@ -1,108 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/entity/luckland_entity_building.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LLEntityBuilding", LuckLandEntity)
 LLEntityBuilding = LLEntityBuilding
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LLEntityBuilding.InitData = function(self, templateID)
-  -- function num : 0_0 , upvalues : _ENV
+function LLEntityBuilding:InitData(templateID)
   self._entityType = LuckLandEntityType.Building
-  local cfgData = (self._configMng):GetBuildingConfigData(templateID)
+  local cfgData = self._configMng:GetBuildingConfigData(templateID)
   self._cfg = cfgData
   self._type = cfgData:GetBuildingType()
   self._countDown = cfgData:GetCountDown()
   self:_InitBuildingBaseData(self._cfg)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityBuilding._InitBuildingBaseData = function(self, cfgData)
-  -- function num : 0_1 , upvalues : _ENV
+function LLEntityBuilding:_InitBuildingBaseData(cfgData)
   self._level = cfgData:GetBuildingLevel()
   self._maxLevel = cfgData:GetMaxLevel()
   self._upgradeCost = cfgData:GetUpgradeCost()
   self._cardPool = cfgData:GetCardPool()
   if self._type == LuckLandBuildingType.CampFire then
-    self._posList = (table.shallowcopy)(LuckLandConst.MorningPosList)
-    ;
-    (table.appendArray)(self._posList, LuckLandConst.MiddayPosList)
+    self._posList = table.shallowcopy(LuckLandConst.MorningPosList)
+    table.appendArray(self._posList, LuckLandConst.MiddayPosList)
     local unlockPosList = cfgData:GetPosList()
     if unlockPosList then
-      (table.appendArray)(self._posList, unlockPosList)
+      table.appendArray(self._posList, unlockPosList)
     end
   end
-  do
-    self._defRate = cfgData:GetDefRate()
-    self._maxHPIncreaseParam = cfgData:GetMaxHPIncreaseParam()
-  end
+  self._defRate = cfgData:GetDefRate()
+  self._maxHPIncreaseParam = cfgData:GetMaxHPIncreaseParam()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityBuilding.GetBuildingType = function(self)
-  -- function num : 0_2
+function LLEntityBuilding:GetBuildingType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityBuilding.GetCardPool = function(self)
-  -- function num : 0_3
+function LLEntityBuilding:GetCardPool()
   return self._cardPool
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityBuilding.GetPosCount = function(self)
-  -- function num : 0_4
+function LLEntityBuilding:GetPosCount()
   if not self._posList then
-    return 
+    return
   end
   return #self._posList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityBuilding.GetPosList = function(self)
-  -- function num : 0_5
-  if not self._posList then
-    return {}
-  end
+function LLEntityBuilding:GetPosList()
+  return self._posList or {}
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityBuilding.GetDefRate = function(self)
-  -- function num : 0_6
+function LLEntityBuilding:GetDefRate()
   return self._defRate
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityBuilding.GetMaxHPIncreaseParam = function(self)
-  -- function num : 0_7
+function LLEntityBuilding:GetMaxHPIncreaseParam()
   return self._maxHPIncreaseParam
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityBuilding.GetUpgradeCost = function(self)
-  -- function num : 0_8
+function LLEntityBuilding:GetUpgradeCost()
   return self._upgradeCost
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityBuilding.Upgrade = function(self)
-  -- function num : 0_9
+function LLEntityBuilding:Upgrade()
   local templateID = self:GetTemplateID() + 1
-  local cfgData = (self._configMng):GetBuildingConfigData(templateID)
+  local cfgData = self._configMng:GetBuildingConfigData(templateID)
   self._cfg = cfgData
   self:_InitBuildingBaseData(self._cfg)
   self:SetTemplateID(templateID)
 end
-
-

@@ -1,49 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n13/build/ui_n13_build_confirm_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN13BuildConfirmController", UIController)
 UIN13BuildConfirmController = UIN13BuildConfirmController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN13BuildConfirmController._SpawnObject = function(self, widgetName, className)
-  -- function num : 0_0
+function UIN13BuildConfirmController:_SpawnObject(widgetName, className)
   local pool = self:GetUIComponent("UISelectObjectPath", widgetName)
   local obj = pool:SpawnObject(className)
   return obj
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildConfirmController._SpawnObjects = function(self, widgetName, className, count)
-  -- function num : 0_1
+function UIN13BuildConfirmController:_SpawnObjects(widgetName, className, count)
   local pool = self:GetUIComponent("UISelectObjectPath", widgetName)
   local objs = {}
   pool:SpawnObjects(className, count, objs)
   return objs
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildConfirmController._SetRawImage = function(self, widgetName, url)
-  -- function num : 0_2
+function UIN13BuildConfirmController:_SetRawImage(widgetName, url)
   local obj = self:GetUIComponent("RawImageLoader", widgetName)
   obj:LoadImage(url)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildConfirmController._SetText = function(self, widgetName, txt)
-  -- function num : 0_3
+function UIN13BuildConfirmController:_SetText(widgetName, txt)
   local obj = self:GetUIComponent("UILocalizationText", widgetName)
   obj:SetText(txt)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildConfirmController.OnShow = function(self, uiParams)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN13BuildConfirmController:OnShow(uiParams)
   self._buildManager = uiParams[1]
   self._buildItemId = uiParams[2]
   if uiParams[3] then
@@ -51,9 +32,9 @@ UIN13BuildConfirmController.OnShow = function(self, uiParams)
   else
     self._reviewType = nil
   end
-  self._component = (self._buildManager)._buildComponent
+  self._component = self._buildManager._buildComponent
   self._isOpen = true
-  local curStatus = (self._buildManager):GetBuildCurStatus(self._buildItemId)
+  local curStatus = self._buildManager:GetBuildCurStatus(self._buildItemId)
   local type = curStatus == UIBuildComponentBuildStatus.Init and 1 or 2
   self:_SetTitleText(type)
   self:_SetBtnText(type)
@@ -62,167 +43,124 @@ UIN13BuildConfirmController.OnShow = function(self, uiParams)
   self:_SetCost(self._buildItemId)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildConfirmController.OnHide = function(self)
-  -- function num : 0_5
+function UIN13BuildConfirmController:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildConfirmController._SetTitleText = function(self, type)
-  -- function num : 0_6 , upvalues : _ENV
-  local tb = {"str_n13_build_tips_title", "str_n13_build_deco_tips_title"}
-  self:_SetText("_title", (StringTable.Get)(tb[type]))
+function UIN13BuildConfirmController:_SetTitleText(type)
+  local tb = {
+    "str_n13_build_tips_title",
+    "str_n13_build_deco_tips_title"
+  }
+  self:_SetText("_title", StringTable.Get(tb[type]))
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildConfirmController._SetBtnText = function(self, type)
-  -- function num : 0_7 , upvalues : _ENV
-  local tb = {"str_n13_build_tips_btn", "str_n13_build_deco_tips_btn"}
-  self:_SetText("_txtBuild", (StringTable.Get)(tb[type]))
-  self:_SetText("_txtBuild2", (StringTable.Get)(tb[type]))
+function UIN13BuildConfirmController:_SetBtnText(type)
+  local tb = {
+    "str_n13_build_tips_btn",
+    "str_n13_build_deco_tips_btn"
+  }
+  self:_SetText("_txtBuild", StringTable.Get(tb[type]))
+  self:_SetText("_txtBuild2", StringTable.Get(tb[type]))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildConfirmController._SetScore = function(self, reviewType)
-  -- function num : 0_8
+function UIN13BuildConfirmController:_SetScore(reviewType)
   local obj = self:_SpawnObject("_score", "UIN13BuildScore")
   obj:SetData(reviewType)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildConfirmController._SetChangeImage = function(self, buildItemId)
-  -- function num : 0_9 , upvalues : _ENV
-  local curStatus = (self._buildManager):GetBuildCurStatus(buildItemId)
-  local nextStatus = (self._buildManager):GetBuildNextStatus(buildItemId, curStatus)
-  local curData = ((self._buildManager)._buildItemData):GetBuildItemData(buildItemId, curStatus)
-  local nextData = ((self._buildManager)._buildItemData):GetBuildItemData(buildItemId, nextStatus)
-  local name = (self._buildManager):GetName(buildItemId)
-  local curStr = (StringTable.Get)("str_n13_build_confirm_old", name)
-  local nextStr = (StringTable.Get)("str_n13_build_confirm_new", name)
+function UIN13BuildConfirmController:_SetChangeImage(buildItemId)
+  local curStatus = self._buildManager:GetBuildCurStatus(buildItemId)
+  local nextStatus = self._buildManager:GetBuildNextStatus(buildItemId, curStatus)
+  local curData = self._buildManager._buildItemData:GetBuildItemData(buildItemId, curStatus)
+  local nextData = self._buildManager._buildItemData:GetBuildItemData(buildItemId, nextStatus)
+  local name = self._buildManager:GetName(buildItemId)
+  local curStr = StringTable.Get("str_n13_build_confirm_old", name)
+  local nextStr = StringTable.Get("str_n13_build_confirm_new", name)
   self:_SetText("_oldTxt", curStr)
   self:_SetText("_newTxt", nextStr)
-  local curTips = ((self._buildManager)._buildItemData):GetTipsIcon(curData)
-  local nextTips = ((self._buildManager)._buildItemData):GetTipsIcon(nextData)
+  local curTips = self._buildManager._buildItemData:GetTipsIcon(curData)
+  local nextTips = self._buildManager._buildItemData:GetTipsIcon(nextData)
   self:_SetRawImage("_oldImage", curTips)
   self:_SetRawImage("_newImage", nextTips)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildConfirmController._SetCost = function(self, buildItemId)
-  -- function num : 0_10 , upvalues : _ENV
-  local url = (UIActivityN13Helper.GetCoinItemIconName)(self._reviewType)
-  self._cost = (self._buildManager):GetCostCount(buildItemId) or 0
+function UIN13BuildConfirmController:_SetCost(buildItemId)
+  local url = UIActivityN13Helper.GetCoinItemIconName(self._reviewType)
+  self._cost = self._buildManager:GetCostCount(buildItemId) or 0
   self:_SetRawImage("_icon", url)
   self:_SetText("_cost", self._cost)
   self:_SetText("_cost2", self._cost)
-  local itemCount = (UIActivityN13Helper.GetCoinItemCount)(self._reviewType)
-  local idx = self._cost <= itemCount and 1 or 2
-  local tb = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"_cost", "_txtBuild"}
-, 
-{"_cost2", "_txtBuild2"}
-})
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(tb, idx)
+  local itemCount = UIActivityN13Helper.GetCoinItemCount(self._reviewType)
+  local idx = itemCount >= self._cost and 1 or 2
+  local tb = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {"_cost", "_txtBuild"},
+    {"_cost2", "_txtBuild2"}
+  })
+  UIWidgetHelper.SetObjGroupShow(tb, idx)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildConfirmController.Building = function(self)
-  -- function num : 0_11
-  local curStatus = (self._buildManager):GetBuildCurStatus(self._buildItemId)
-  local nextStatus = (self._buildManager):GetBuildNextStatus(self._buildItemId, curStatus)
+function UIN13BuildConfirmController:Building()
+  local curStatus = self._buildManager:GetBuildCurStatus(self._buildItemId)
+  local nextStatus = self._buildManager:GetBuildNextStatus(self._buildItemId, curStatus)
   if not nextStatus then
     self:CloseDialog()
-    return 
+    return
   end
-  local storyType = (self._buildManager):GetCompleteStoryType(self._buildItemId)
-  local storyId = (self._buildManager):GetCompleteStoryId(self._buildItemId)
-  ;
-  (self._component):Start_HandleBuild(self._buildItemId, nextStatus, function(res, rewardList)
-    -- function num : 0_11_0 , upvalues : self, storyType, storyId, curStatus
+  local storyType = self._buildManager:GetCompleteStoryType(self._buildItemId)
+  local storyId = self._buildManager:GetCompleteStoryId(self._buildItemId)
+  self._component:Start_HandleBuild(self._buildItemId, nextStatus, function(res, rewardList)
     self:_OnBuild(res, rewardList, storyType, storyId, curStatus, self._buildItemId)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildConfirmController._OnBuild = function(self, res, rewardList, storyType, storyId, status, buildItemId)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN13BuildConfirmController:_OnBuild(res, rewardList, storyType, storyId, status, buildItemId)
   self:CloseDialog()
   if res:GetSucc() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NPlusSixBuildingAllBuildingComplete)
-    if storyId and storyId > 0 then
-      local storyInfo = {storyType, storyId, status, buildItemId}
-      ;
-      (UIActivityN13Helper.PlayStory_Build)(self._component, storyInfo, function()
-    -- function num : 0_12_0 , upvalues : self, buildItemId, rewardList
-    self:StartTask(self._PlayOut, self, buildItemId, rewardList)
-  end
-)
-    else
-      do
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.NPlusSixBuildingAllBuildingComplete)
+    if storyId and 0 < storyId then
+      local storyInfo = {
+        storyType,
+        storyId,
+        status,
+        buildItemId
+      }
+      UIActivityN13Helper.PlayStory_Build(self._component, storyInfo, function()
         self:StartTask(self._PlayOut, self, buildItemId, rewardList)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NPlusSixBuildingMainRefresh)
-        ;
-        (Log.error)("UIN13BuildConfirmController:_OnBuild() error")
-      end
+      end)
+    else
+      self:StartTask(self._PlayOut, self, buildItemId, rewardList)
     end
+  else
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.NPlusSixBuildingMainRefresh)
+    Log.error("UIN13BuildConfirmController:_OnBuild() error")
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildConfirmController._PlayOut = function(self, TT, buildItemId, rewardList)
-  -- function num : 0_13 , upvalues : _ENV
+function UIN13BuildConfirmController:_PlayOut(TT, buildItemId, rewardList)
   local lockName = "UIN13BuildConfirmController:_PlayOut"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NPlusSixBuildingBuildingComplete, buildItemId)
+  GameGlobal.UIStateManager():Lock(lockName)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.NPlusSixBuildingBuildingComplete, buildItemId)
   YIELD(TT, 1500)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NPlusSixBuildingMainRefresh)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.NPlusSixBuildingMainRefresh)
   YIELD(TT, 200)
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock(lockName)
-  ;
-  (UIActivityHelper.ShowUIGetRewards)(rewardList)
+  GameGlobal.UIStateManager():UnLock(lockName)
+  UIActivityHelper.ShowUIGetRewards(rewardList)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildConfirmController.CloseBtnOnClick = function(self)
-  -- function num : 0_14
+function UIN13BuildConfirmController:CloseBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildConfirmController.CancelBtnOnClick = function(self)
-  -- function num : 0_15
+function UIN13BuildConfirmController:CancelBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildConfirmController.BuildingBtnOnClick = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local itemCount = (UIActivityN13Helper.GetCoinItemCount)(self._reviewType)
+function UIN13BuildConfirmController:BuildingBtnOnClick()
+  local itemCount = UIActivityN13Helper.GetCoinItemCount(self._reviewType)
   if itemCount < self._cost then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n13_build_tips_item_count_not_enouth"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_n13_build_tips_item_count_not_enouth"))
+    return
   end
   self:Building()
 end
-
-

@@ -1,155 +1,106 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/trigger/luckland_trigger_tool.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LuckLandTriggerTool", Singleton)
 LuckLandTriggerTool = LuckLandTriggerTool
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LuckLandTriggerTool.Compare = function(compareType, count1, count2)
-  -- function num : 0_0 , upvalues : _ENV
-  if count1 >= count2 then
-    do return compareType ~= LuckLandTriggerCompareType.Less end
-    if count1 > count2 then
-      do return compareType ~= LuckLandTriggerCompareType.LessEqual end
-      if count1 ~= count2 then
-        do return compareType ~= LuckLandTriggerCompareType.Equal end
-        if count2 >= count1 then
-          do return compareType ~= LuckLandTriggerCompareType.MoreThan end
-          if count2 > count1 then
-            do return compareType ~= LuckLandTriggerCompareType.MoreThanEqual end
-            do return false end
-            -- DECOMPILER ERROR: 10 unprocessed JMP targets
-          end
-        end
-      end
-    end
+function LuckLandTriggerTool.Compare(compareType, count1, count2)
+  if compareType == LuckLandTriggerCompareType.Less then
+    return count1 < count2
+  elseif compareType == LuckLandTriggerCompareType.LessEqual then
+    return count1 <= count2
+  elseif compareType == LuckLandTriggerCompareType.Equal then
+    return count1 == count2
+  elseif compareType == LuckLandTriggerCompareType.MoreThan then
+    return count2 < count1
+  elseif compareType == LuckLandTriggerCompareType.MoreThanEqual then
+    return count2 <= count1
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandTriggerTool.TagCheck = function(tagType, tagTypeParam, compareType, count, targetPet, distance)
-  -- function num : 0_1 , upvalues : _ENV
+function LuckLandTriggerTool.TagCheck(tagType, tagTypeParam, compareType, count, targetPet, distance)
   local petCount = 0
-  local pets = (LuckLandTriggerTool.GetPetsByTag)(tagType, tagTypeParam)
-  if pets and #pets > 0 then
+  local pets = LuckLandTriggerTool.GetPetsByTag(tagType, tagTypeParam)
+  if pets and 0 < #pets then
     if targetPet and distance then
-      for _,pet in pairs(pets) do
-        if (LuckLandTriggerTool.Distance)(pet, targetPet) <= distance then
+      for _, pet in pairs(pets) do
+        if distance >= LuckLandTriggerTool.Distance(pet, targetPet) then
           petCount = petCount + 1
         end
       end
     else
-      do
-        petCount = #pets
-        return (LuckLandTriggerTool.Compare)(compareType, petCount, count)
-      end
+      petCount = #pets
     end
   end
+  return LuckLandTriggerTool.Compare(compareType, petCount, count)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandTriggerTool.GetPetsByTag = function(tagType, tagTypeParam)
-  -- function num : 0_2 , upvalues : _ENV
-  local pets = nil
-  local entityMgr = (LuckLandInnerGameHelper.GetEntityMgr)()
+function LuckLandTriggerTool.GetPetsByTag(tagType, tagTypeParam)
+  local pets
+  local entityMgr = LuckLandInnerGameHelper.GetEntityMgr()
   if entityMgr then
     if tagType == LLPetTagType.Element then
       pets = entityMgr:GetFightPetsByElement(tagTypeParam)
-    else
-      if tagType == LLPetTagType.Camp then
-        pets = entityMgr:GetFightPetsByCamp(tagTypeParam)
-      else
-        if tagType == LLPetTagType.Level then
-          pets = entityMgr:GetFightPetsByLevel(tagTypeParam)
-        else
-          if tagType == LLPetTagType.Res then
-            pets = entityMgr:GetFightPetsByResType(tagTypeParam)
-          else
-            if tagType == LLPetTagType.ElementOrCamp then
-              local elementType = tagTypeParam[1]
-              local campType = tagTypeParam[2]
-              local elementPets = entityMgr:GetFightPetsByElement(elementType)
-              local campPets = entityMgr:GetFightPetsByCamp(campType)
-              if elementPets then
-                pets = elementPets
-              end
-              if campPets and pets then
-                local contain = function(pet)
-    -- function num : 0_2_0 , upvalues : _ENV, pets
-    for _,_pet in pairs(pets) do
-      if _pet:ID() == pet:ID() then
-        return true
+    elseif tagType == LLPetTagType.Camp then
+      pets = entityMgr:GetFightPetsByCamp(tagTypeParam)
+    elseif tagType == LLPetTagType.Level then
+      pets = entityMgr:GetFightPetsByLevel(tagTypeParam)
+    elseif tagType == LLPetTagType.Res then
+      pets = entityMgr:GetFightPetsByResType(tagTypeParam)
+    elseif tagType == LLPetTagType.ElementOrCamp then
+      local elementType = tagTypeParam[1]
+      local campType = tagTypeParam[2]
+      local elementPets = entityMgr:GetFightPetsByElement(elementType)
+      local campPets = entityMgr:GetFightPetsByCamp(campType)
+      if elementPets then
+        pets = elementPets
       end
-    end
-    return false
-  end
-
-                for _,petEntity in pairs(campPets) do
-                  if not contain(petEntity) then
-                    (table.insert)(pets, petEntity)
-                  end
-                end
-              else
-                do
-                  do
-                    pets = campPets
-                    return pets
-                  end
-                end
+      if campPets then
+        if pets then
+          local function contain(pet)
+            for _, _pet in pairs(pets) do
+              if _pet:ID() == pet:ID() then
+                return true
               end
             end
+            return false
           end
+          
+          for _, petEntity in pairs(campPets) do
+            if not contain(petEntity) then
+              table.insert(pets, petEntity)
+            end
+          end
+        else
+          pets = campPets
         end
       end
     end
   end
+  return pets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandTriggerTool.CalcPetsRange = function(pets, targetPet, distance)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,pet in pairs(pets) do
-    if pet:ID() ~= targetPet:ID() and distance < (LuckLandTriggerTool.Distance)(pet, targetPet) then
+function LuckLandTriggerTool.CalcPetsRange(pets, targetPet, distance)
+  for _, pet in pairs(pets) do
+    if pet:ID() ~= targetPet:ID() and distance < LuckLandTriggerTool.Distance(pet, targetPet) then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandTriggerTool.Distance = function(pet1, pet2)
-  -- function num : 0_4 , upvalues : _ENV
-  return (math.abs)(pet1:GetPos() - pet2:GetPos())
+function LuckLandTriggerTool.Distance(pet1, pet2)
+  return math.abs(pet1:GetPos() - pet2:GetPos())
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandTriggerTool.CheckPetPos = function(posType, pet)
-  -- function num : 0_5 , upvalues : _ENV
+function LuckLandTriggerTool.CheckPetPos(posType, pet)
   local pos = pet:GetPos()
   if posType == LuckLandTriggerPosType.Morning then
-    return (table.icontains)(LuckLandConst.MorningPosList, pos)
-  else
-    if posType == LuckLandTriggerPosType.Midday then
-      return (table.icontains)(LuckLandConst.MiddayPosList, pos)
-    else
-      if posType == LuckLandTriggerPosType.Night then
-        return (table.icontains)(LuckLandConst.NightPosList, pos)
-      else
-        if (LuckLandInnerGameHelper.GetBackpackPetDataByID)(pet:ID()) == nil then
-          do return posType ~= LuckLandTriggerPosType.Bag end
-          do return false end
-          -- DECOMPILER ERROR: 2 unprocessed JMP targets
-        end
-      end
-    end
+    return table.icontains(LuckLandConst.MorningPosList, pos)
+  elseif posType == LuckLandTriggerPosType.Midday then
+    return table.icontains(LuckLandConst.MiddayPosList, pos)
+  elseif posType == LuckLandTriggerPosType.Night then
+    return table.icontains(LuckLandConst.NightPosList, pos)
+  elseif posType == LuckLandTriggerPosType.Bag then
+    return LuckLandInnerGameHelper.GetBackpackPetDataByID(pet:ID()) ~= nil
   end
+  return false
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_pet_work_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopPetWorkSkill", UICustomWidget)
 UIShopPetWorkSkill = UIShopPetWorkSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopPetWorkSkill.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIShopPetWorkSkill:OnShow(uiParams)
   self._workIndexName = self:GetUIComponent("UILocalizationText", "workIndexName")
   self._workSkillDesc = self:GetUIComponent("UILocalizationText", "workSkillDesc")
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
@@ -17,42 +10,21 @@ UIShopPetWorkSkill.OnShow = function(self, uiParams)
   self._topCanvasGroup = self:GetUIComponent("CanvasGroup", "top")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopPetWorkSkill.SetData = function(self, index, skillCls, roomType)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfg_work_skill = (Cfg.cfg_work_skill)[skillCls.ID]
+function UIShopPetWorkSkill:SetData(index, skillCls, roomType)
+  local cfg_work_skill = Cfg.cfg_work_skill[skillCls.ID]
   if cfg_work_skill then
-    (self._icon):LoadImage(cfg_work_skill.Icon)
-    ;
-    (self._workIndexName):SetText((StringTable.Get)(cfg_work_skill.Name))
-    ;
-    (self._workSkillDesc):SetText((StringTable.Get)(cfg_work_skill.Desc))
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._workSkillText).color = Color(1, 1, 1, 1)
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._workSkillDesc).color = Color(1, 1, 1, 1)
+    self._icon:LoadImage(cfg_work_skill.Icon)
+    self._workIndexName:SetText(StringTable.Get(cfg_work_skill.Name))
+    self._workSkillDesc:SetText(StringTable.Get(cfg_work_skill.Desc))
+    self._workSkillText.color = Color(1, 1, 1, 1)
+    self._workSkillDesc.color = Color(1, 1, 1, 1)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopPetWorkSkill.ShowInAnim = function(self)
-  -- function num : 0_2
-  (self._Anim):Play("uieff_UIShopPetWorkSkill_in")
+function UIShopPetWorkSkill:ShowInAnim()
+  self._Anim:Play("uieff_UIShopPetWorkSkill_in")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopPetWorkSkill.HideAnim = function(self)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._topCanvasGroup).alpha = 0
+function UIShopPetWorkSkill:HideAnim()
+  self._topCanvasGroup.alpha = 0
 end
-
-

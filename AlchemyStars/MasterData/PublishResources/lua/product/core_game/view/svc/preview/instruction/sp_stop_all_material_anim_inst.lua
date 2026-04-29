@@ -1,38 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_stop_all_material_anim_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewStopAllMaterialAnimInstruction", SkillPreviewBaseInstruction)
 SkillPreviewStopAllMaterialAnimInstruction = SkillPreviewStopAllMaterialAnimInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewStopAllMaterialAnimInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewStopAllMaterialAnimInstruction:Constructor(params)
   self._exceptCaster = params.ExceptCaster
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewStopAllMaterialAnimInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewStopAllMaterialAnimInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = previewContext:GetWorld()
-  local flashEnemyEntities = (world:GetGroup((world.BW_WEMatchers).MonsterID)):GetEntities()
+  local flashEnemyEntities = world:GetGroup(world.BW_WEMatchers.MonsterID):GetEntities()
   if world:MatchType() == MatchType.MT_BlackFist then
-    flashEnemyEntities = (world:GetGroup((world.BW_WEMatchers).Pet)):GetEntities()
+    flashEnemyEntities = world:GetGroup(world.BW_WEMatchers.Pet):GetEntities()
   end
-  for _,v in ipairs(flashEnemyEntities) do
-    -- DECOMPILER ERROR at PC40: Unhandled construct in 'MakeBoolean' P1
-
-    if self._exceptCaster and self._exceptCaster == "true" and v:GetID() ~= casterEntity:GetID() then
+  for _, v in ipairs(flashEnemyEntities) do
+    if self._exceptCaster and self._exceptCaster == "true" then
+      if v:GetID() ~= casterEntity:GetID() then
+        v:StopMaterialAnimLayer(MaterialAnimLayer.SkillPreview)
+      end
+    else
       v:StopMaterialAnimLayer(MaterialAnimLayer.SkillPreview)
     end
-    v:StopMaterialAnimLayer(MaterialAnimLayer.SkillPreview)
   end
   local targetIDList = previewContext:GetTargetEntityIDList()
-  targetIDList = (table.unique)(targetIDList)
-  for _,id in pairs(targetIDList) do
+  targetIDList = table.unique(targetIDList)
+  for _, id in pairs(targetIDList) do
     local entity = world:GetEntityByID(id)
     if entity then
       if entity:HasTeam() then
@@ -42,5 +33,3 @@ SkillPreviewStopAllMaterialAnimInstruction.DoInstruction = function(self, TT, ca
     end
   end
 end
-
-

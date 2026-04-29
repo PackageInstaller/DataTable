@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/homeland_pet_request_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandPetRequestBase", Object)
 HomelandPetRequestBase = HomelandPetRequestBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetRequestBase.Constructor = function(self, petID, pstID, assetName, clickAnimClip)
-  -- function num : 0_0
+function HomelandPetRequestBase:Constructor(petID, pstID, assetName, clickAnimClip)
   self._petID = petID
   self._pstID = pstID
   self._assetName = assetName
@@ -19,73 +12,54 @@ HomelandPetRequestBase.Constructor = function(self, petID, pstID, assetName, cli
   self._petAnim = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetRequestBase.PetGameObject = function(self)
-  -- function num : 0_1
+function HomelandPetRequestBase:PetGameObject()
   return self._petGameObject
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetRequestBase.PetAnimation = function(self)
-  -- function num : 0_2
+function HomelandPetRequestBase:PetAnimation()
   return self._petAnim
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetRequestBase.Dispose = function(self)
-  -- function num : 0_3
+function HomelandPetRequestBase:Dispose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetRequestBase.ClickAnimClip = function(self)
-  -- function num : 0_4
+function HomelandPetRequestBase:ClickAnimClip()
   return self._clickAnimClip
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetRequestBase.MakePet = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandPetRequestBase:MakePet()
   if self._aircraftAnimation == nil then
-    (Log.error)("Can not find animation component, load pet module fail.", self._petID)
-    return 
+    Log.error("Can not find animation component, load pet module fail.", self._petID)
+    return
   end
-  if (self._aircraftAnimation).clip == nil then
-    (Log.error)("Pet have not Stand animation.", self._petID)
-    return 
+  if self._aircraftAnimation.clip == nil then
+    Log.error("Pet have not Stand animation.", self._petID)
+    return
   end
-  local root = (((self._petGameObject).transform):Find("Root")).gameObject
+  local root = self._petGameObject.transform:Find("Root").gameObject
   local animator = root:GetComponent(typeof(UnityEngine.Animator))
   if animator then
-    ((UnityEngine.Object).Destroy)(animator)
+    UnityEngine.Object.Destroy(animator)
   end
   local petAnim = root:AddComponent(typeof(UnityEngine.Animation))
-  local clips = (HelperProxy:GetInstance()):GetAllAnimationClip(self._aircraftAnimation)
+  local clips = HelperProxy:GetInstance():GetAllAnimationClip(self._aircraftAnimation)
   for i = 0, clips.Length - 1 do
     if clips[i] == nil then
-      (Log.error)("Pet animation is null:", self._petID, ", index:", i)
+      Log.error("Pet animation is null:", self._petID, ", index:", i)
     else
-      petAnim:AddClip(clips[i], (clips[i]).name)
+      petAnim:AddClip(clips[i], clips[i].name)
     end
   end
   if self._homelandAnimation ~= nil then
-    clips = (HelperProxy:GetInstance()):GetAllAnimationClip(self._homelandAnimation)
+    clips = HelperProxy:GetInstance():GetAllAnimationClip(self._homelandAnimation)
     for i = 0, clips.Length - 1 do
       if clips[i] == nil then
-        (Log.error)("Pet animation is null:", self._petID, ", index:", i)
+        Log.error("Pet animation is null:", self._petID, ", index:", i)
       else
-        petAnim:AddClip(clips[i], (clips[i]).name)
+        petAnim:AddClip(clips[i], clips[i].name)
       end
     end
   end
-  do
-    petAnim.clip = (self._aircraftAnimation).clip
-    self._petAnim = petAnim
-  end
+  petAnim.clip = self._aircraftAnimation.clip
+  self._petAnim = petAnim
 end
-
-

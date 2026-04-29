@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_get_phy_point/ui_get_phy_point_tips_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIGetPhyPointTipsItem", UICustomWidget)
 UIGetPhyPointTipsItem = UIGetPhyPointTipsItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGetPhyPointTipsItem.SetData = function(self, times, cost, icon)
-  -- function num : 0_0 , upvalues : _ENV
+function UIGetPhyPointTipsItem:SetData(times, cost, icon)
   local iconRaw = self:GetUIComponent("RawImageLoader", "icon")
   local timesTex = self:GetUIComponent("UILocalizationText", "times")
   local costTex = self:GetUIComponent("UILocalizationText", "cost")
   iconRaw:LoadImage(icon)
-  local timesStr = nil
-  if (table.count)(times) > 1 then
+  local timesStr
+  if table.count(times) > 1 then
     local times1 = times[1]
     local times2 = times[2]
     if times1 < times2 - 0.1 then
@@ -23,14 +16,10 @@ UIGetPhyPointTipsItem.SetData = function(self, times, cost, icon)
       timesStr = times1
     end
   else
-    do
-      timesStr = times[1]
-      timesTex:SetText((StringTable.Get)("str_get_phy_point_times", timesStr))
-      if times[3] then
-        costTex:SetText(times[3])
-      end
-    end
+    timesStr = times[1]
+  end
+  timesTex:SetText(StringTable.Get("str_get_phy_point_times", timesStr))
+  if times[3] then
+    costTex:SetText(times[3])
   end
 end
-
-

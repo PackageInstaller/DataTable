@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_review_n15.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignReviewN15", ICampaignComponentLocalProcessBase)
 CCampaignReviewN15 = CCampaignReviewN15
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignReviewN15.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignReviewN15:Constructor()
   self._lineMissionComponet = nil
   self._lineMissionCompInfo = nil
   self._pointProgressComponent = nil
@@ -16,55 +9,37 @@ CCampaignReviewN15.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewN15.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignReviewN15:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_REVIEW_N15
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewN15.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignReviewN15:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewN15.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignReviewN15:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetLineMissionComponent()
   self:_GetPointProgressComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewN15._GetLineMissionComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._lineMissionComponet = (self._campaignObj):GetComponent(ECampaignReviewN15ComponentID.ECAMPAIGN_REVIEW_ReviewN15_LINE_MISSION)
+function CCampaignReviewN15:_GetLineMissionComponent()
+  self._lineMissionComponet = self._campaignObj:GetComponent(ECampaignReviewN15ComponentID.ECAMPAIGN_REVIEW_ReviewN15_LINE_MISSION)
   if not self._lineMissionComponet then
-    return 
+    return
   end
-  self._lineMissionCompInfo = (self._lineMissionComponet):ComponentInfo()
+  self._lineMissionCompInfo = self._lineMissionComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewN15._GetPointProgressComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._pointProgressComponent = (self._campaignObj):GetComponent(ECampaignReviewN15ComponentID.ECAMPAIGN_REVIEW_ReviewN15_POINT_PROGRESS)
+function CCampaignReviewN15:_GetPointProgressComponent()
+  self._pointProgressComponent = self._campaignObj:GetComponent(ECampaignReviewN15ComponentID.ECAMPAIGN_REVIEW_ReviewN15_POINT_PROGRESS)
   if not self._pointProgressComponent then
-    return 
+    return
   end
-  self._pointProgressComponentInfo = (self._pointProgressComponent):ComponentInfo()
+  self._pointProgressComponentInfo = self._pointProgressComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewN15.GetComponent = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignReviewN15:GetComponent(componentID)
   if ECampaignReviewN15ComponentID.ECAMPAIGN_REVIEW_ReviewN15_LINE_MISSION == componentID then
     return self._lineMissionComponet
   end
@@ -74,10 +49,7 @@ CCampaignReviewN15.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewN15.GetComponentInfo = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignReviewN15:GetComponentInfo(componentID)
   if ECampaignReviewN15ComponentID.ECAMPAIGN_REVIEW_ReviewN15_LINE_MISSION == componentID then
     return self._lineMissionCompInfo
   end
@@ -86,5 +58,3 @@ CCampaignReviewN15.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

@@ -1,22 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_vote_cost_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, CostItemID = 3, InitItem = 4}
-local common = {
-{
-{3000028, 1}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  CostItemID = 3,
+  InitItem = 4
 }
+local common = {
+  {
+    {3000028, 1}
+  }
 }
 local config = {
-{1, 120505401, 3000027}
-, 
-{2, 120705401, 3000028, common[1]}
-, 
-{3, 506005401, 7000714}
-, 
-{4, 888805401, 3000028, common[1]}
+  {
+    1,
+    120505401,
+    3000027
+  },
+  {
+    2,
+    120705401,
+    3000028,
+    common[1]
+  },
+  {
+    3,
+    506005401,
+    7000714
+  },
+  {
+    4,
+    888805401,
+    3000028,
+    common[1]
+  }
 }
 return config, "ID", key
-

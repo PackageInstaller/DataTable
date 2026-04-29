@@ -1,38 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_shadow_chain.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicShadowChain", BuffLogicBase)
 BuffLogicShadowChain = BuffLogicShadowChain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicShadowChain.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicShadowChain:Constructor(buffInstance, logicParam)
   self._damagePercent = logicParam.damagePercent
   self._shadowPrefab = logicParam.shadowPrefab
   self._shadowCreate = logicParam.shadowCreate or 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicShadowChain.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicShadowChain:DoLogic()
+  local e = self._buffInstance:Entity()
   local buffComponent = e:BuffComponent()
-  local entityService = (self._world):GetService("LogicEntity")
+  local entityService = self._world:GetService("LogicEntity")
   local shadowEntity = entityService:_CreateTeamMemberShadow(e)
   buffComponent:SetBuffValue("ShadowChainEntityID", shadowEntity:GetID())
-  local damagePercent = nil
+  local damagePercent
   local buffShadowChainSKillPro = buffComponent:GetSingleBuffByBuffEffect(BuffEffectType.ShadowChainSKillPro)
-  if not buffComponent:GetBuffValue("ShadowChainDamagePercent") then
-    damagePercent = (self._buffInstance):GetBuffEffectType() ~= BuffEffectType.ShadowChainSKill or not buffShadowChainSKillPro or 1
+  if self._buffInstance:GetBuffEffectType() == BuffEffectType.ShadowChainSKill and buffShadowChainSKillPro then
+    damagePercent = buffComponent:GetBuffValue("ShadowChainDamagePercent") or 1
+    damagePercent = damagePercent + self._damagePercent
+  else
+    damagePercent = self._damagePercent
   end
-  damagePercent = (damagePercent) + self._damagePercent
-  damagePercent = self._damagePercent
   buffComponent:SetBuffValue("ShadowChainDamagePercent", damagePercent)
-  local buffResult = BuffResultShadowChain:New(shadowEntity:GetID(), (e:PetPstID()):GetPstID(), self._shadowPrefab, self._shadowCreate, e:GetID())
+  local buffResult = BuffResultShadowChain:New(shadowEntity:GetID(), e:PetPstID():GetPstID(), self._shadowPrefab, self._shadowCreate, e:GetID())
   return buffResult
 end
-
-

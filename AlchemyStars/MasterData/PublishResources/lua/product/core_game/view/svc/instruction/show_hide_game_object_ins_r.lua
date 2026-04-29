@@ -1,38 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/show_hide_game_object_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("ShowHideGameObjectInstruction", BaseInstruction)
 ShowHideGameObjectInstruction = ShowHideGameObjectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ShowHideGameObjectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function ShowHideGameObjectInstruction:Constructor(paramList)
   local str = paramList.isShow or "0"
   self._isShow = tonumber(str) > 0
   self._goName = paramList.goName or ""
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ShowHideGameObjectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function ShowHideGameObjectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  if (string.isnullorempty)(self._goName) then
-    (Log.fatal)("### ShowHideGameObjectInstruction param [goName] invalid. goName=", self._goName)
-    return 
+  if string.isnullorempty(self._goName) then
+    Log.fatal("### ShowHideGameObjectInstruction param [goName] invalid. goName=", self._goName)
+    return
   end
-  local cRenderBoard = (world:GetRenderBoardEntity()):RenderBoard()
+  local cRenderBoard = world:GetRenderBoardEntity():RenderBoard()
   local go = cRenderBoard:GetSceneGO(self._goName)
   if go then
     go:SetActive(self._isShow)
   else
-    ;
-    (Log.fatal)("### no GameObject named [", self._goName, "] in scene.")
+    Log.fatal("### no GameObject named [", self._goName, "] in scene.")
   end
 end
-
-

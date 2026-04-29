@@ -1,118 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/world_match_type_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local GetMatchTypeType = {NoLinkLine = 1, CalcBattleResult = 2, PopStarProNoRelic = 3, WorldBossBattle = 4, SeasonMazeWorldBoss = 5, GameMode = 6}
+local GetMatchTypeType = {
+  NoLinkLine = 1,
+  CalcBattleResult = 2,
+  PopStarProNoRelic = 3,
+  WorldBossBattle = 4,
+  SeasonMazeWorldBoss = 5,
+  GameMode = 6
+}
 _enum("GetMatchTypeType", GetMatchTypeType)
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
 
-MainWorld.RegisterMatchTypeProgressFunc = function(self)
-  -- function num : 0_0 , upvalues : GetMatchTypeType
+function MainWorld:RegisterMatchTypeProgressFunc()
   self._matchTypeProgressFunc = {}
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._matchTypeProgressFunc)[GetMatchTypeType.NoLinkLine] = self.GetNoLinkLineMatchType
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._matchTypeProgressFunc)[GetMatchTypeType.CalcBattleResult] = self.CalcBattleResultGetMatchType
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._matchTypeProgressFunc)[GetMatchTypeType.PopStarProNoRelic] = self.PopStarProNoRelicMatchType
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._matchTypeProgressFunc)[GetMatchTypeType.WorldBossBattle] = self.WorldBossBattle
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._matchTypeProgressFunc)[GetMatchTypeType.SeasonMazeWorldBoss] = self.SeasonMazeWorldBoss
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._matchTypeProgressFunc)[GetMatchTypeType.GameMode] = self.GetGameModeMatchType
+  self._matchTypeProgressFunc[GetMatchTypeType.NoLinkLine] = self.GetNoLinkLineMatchType
+  self._matchTypeProgressFunc[GetMatchTypeType.CalcBattleResult] = self.CalcBattleResultGetMatchType
+  self._matchTypeProgressFunc[GetMatchTypeType.PopStarProNoRelic] = self.PopStarProNoRelicMatchType
+  self._matchTypeProgressFunc[GetMatchTypeType.WorldBossBattle] = self.WorldBossBattle
+  self._matchTypeProgressFunc[GetMatchTypeType.SeasonMazeWorldBoss] = self.SeasonMazeWorldBoss
+  self._matchTypeProgressFunc[GetMatchTypeType.GameMode] = self.GetGameModeMatchType
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-MainWorld.GetGameModeMatchType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function MainWorld:GetGameModeMatchType()
   if self._matchType == MatchType.MT_SeasonMaze and self._subMatchType == MatchType.MT_WorldBoss then
     return MatchType.MT_SeasonMaze
   end
   return self._subMatchType
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-MainWorld.SeasonMazeWorldBoss = function(self)
-  -- function num : 0_2
+function MainWorld:SeasonMazeWorldBoss()
   return self._matchType, self._subMatchType
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-MainWorld.WorldBossBattle = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function MainWorld:WorldBossBattle()
   if self._matchType == MatchType.MT_SeasonMaze and self._subMatchType == MatchType.MT_WorldBoss then
     return MatchType.MT_WorldBoss
   end
   return self._matchType
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-MainWorld.PopStarProNoRelicMatchType = function(self)
-  -- function num : 0_4
+function MainWorld:PopStarProNoRelicMatchType()
   return self._matchType
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-MainWorld.CalcBattleResultGetMatchType = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function MainWorld:CalcBattleResultGetMatchType()
   if self._matchType == MatchType.MT_SeasonMaze and self._subMatchType == MatchType.MT_WorldBoss then
     return MatchType.MT_SeasonMaze
   end
   return self._matchType
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-MainWorld.GetNoLinkLineMatchType = function(self)
-  -- function num : 0_6
+function MainWorld:GetNoLinkLineMatchType()
   return self._subMatchType
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-MainWorld.MatchType = function(self, getMatchTypeType)
-  -- function num : 0_7
+function MainWorld:MatchType(getMatchTypeType)
   if not getMatchTypeType then
     return self._subMatchType
   end
-  local func = (self._matchTypeProgressFunc)[getMatchTypeType]
+  local func = self._matchTypeProgressFunc[getMatchTypeType]
   if func then
     return func(self, getMatchTypeType)
   end
   return self._matchType
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-MainWorld.GetGameMode = function(self)
-  -- function num : 0_8
+function MainWorld:GetGameMode()
   return self.game_mode
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-MainWorld.SetGameModeType = function(self)
-  -- function num : 0_9 , upvalues : _ENV, GetMatchTypeType
-  self.game_mode = (MatchType2GameMode.GetGameModeByMatchType)(self:MatchType(GetMatchTypeType.GameMode))
+function MainWorld:SetGameModeType()
+  self.game_mode = MatchType2GameMode.GetGameModeByMatchType(self:MatchType(GetMatchTypeType.GameMode))
 end
-
-

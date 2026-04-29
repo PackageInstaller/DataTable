@@ -1,102 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_summon_meantime_limit_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlaySummonMeantimeLimitInstruction", BaseInstruction)
 PlaySummonMeantimeLimitInstruction = PlaySummonMeantimeLimitInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySummonMeantimeLimitInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySummonMeantimeLimitInstruction:Constructor(paramList)
   self._trapDieSkillID = tonumber(paramList.trapDieSkillID)
   self._forceMeanTime = tonumber(paramList.forceMeanTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySummonMeantimeLimitInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySummonMeantimeLimitInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local routineCmpt = (casterEntity:SkillRoutine()):GetResultContainer()
+  local routineCmpt = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = routineCmpt:GetEffectResultsAsArray(SkillEffectType.SummonMeantimeLimit)
   if not resultArray then
-    return 
+    return
   end
   local trapServiceRender = world:GetService("TrapRender")
   local playSkillSvc = world:GetService("PlaySkill")
-  local configSvc = (world:GetService("Config"))
-  local skillPhaseArray = nil
-  do
-    if self._trapDieSkillID then
-      local skillConfigData = configSvc:GetSkillConfigData(self._trapDieSkillID, casterEntity)
-      skillPhaseArray = skillConfigData:GetSkillPhaseArray()
-    end
-    for _,result in ipairs(resultArray) do
-      do
-        local destroyEntityID = result:GetDestroyEntityID()
-        for i,entityID in ipairs(destroyEntityID) do
-          local entity = world:GetEntityByID(entityID)
-          do
-            if entity then
-              local skillHolder = entity
-              do
-                local skillResult = (result:GetTrapDieSkillResult())[i]
-                if skillResult then
-                  (skillHolder:SkillRoutine()):SetResultContainer(skillResult)
-                end
-                if self._trapDieSkillID then
-                  playSkillSvc:_SkillRoutineTask(TT, skillHolder, skillPhaseArray, self._trapDieSkillID)
-                end
-                trapServiceRender:PlayTrapDieSkill(TT, {entity})
-                -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
-          end
-        end
-        local trapIDList = result:GetTrapIDList()
-        local replaceAttr = result:GetReplaceAttr()
-        for i = 1, #trapIDList do
-          local trapEntity = world:GetEntityByID(trapIDList[i])
-          if self._forceMeanTime and self._forceMeanTime == 1 then
-            ((GameGlobal.TaskManager)()):StartTask(function()
-    -- function num : 0_1_0 , upvalues : self, TT, world, trapEntity, replaceAttr
-    self:_ShowTrap(TT, world, trapEntity, replaceAttr)
+  local configSvc = world:GetService("Config")
+  local skillPhaseArray
+  if self._trapDieSkillID then
+    local skillConfigData = configSvc:GetSkillConfigData(self._trapDieSkillID, casterEntity)
+    skillPhaseArray = skillConfigData:GetSkillPhaseArray()
   end
-)
-          else
-            self:_ShowTrap(TT, world, trapEntity, replaceAttr)
-          end
+  for _, result in ipairs(resultArray) do
+    local destroyEntityID = result:GetDestroyEntityID()
+    for i, entityID in ipairs(destroyEntityID) do
+      local entity = world:GetEntityByID(entityID)
+      if entity then
+        local skillHolder = entity
+        local skillResult = result:GetTrapDieSkillResult()[i]
+        if skillResult then
+          skillHolder:SkillRoutine():SetResultContainer(skillResult)
         end
-        trapServiceRender:UpdateAllTrapSummonIndex()
+        if self._trapDieSkillID then
+          playSkillSvc:_SkillRoutineTask(TT, skillHolder, skillPhaseArray, self._trapDieSkillID)
+        end
+        trapServiceRender:PlayTrapDieSkill(TT, {entity})
       end
     end
+    local trapIDList = result:GetTrapIDList()
+    local replaceAttr = result:GetReplaceAttr()
+    for i = 1, #trapIDList do
+      local trapEntity = world:GetEntityByID(trapIDList[i])
+      if self._forceMeanTime and self._forceMeanTime == 1 then
+        GameGlobal.TaskManager():StartTask(function()
+          self:_ShowTrap(TT, world, trapEntity, replaceAttr)
+        end)
+      else
+        self:_ShowTrap(TT, world, trapEntity, replaceAttr)
+      end
+    end
+    trapServiceRender:UpdateAllTrapSummonIndex()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySummonMeantimeLimitInstruction._ShowTrap = function(self, TT, world, trapEntity, replaceAttr)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySummonMeantimeLimitInstruction:_ShowTrap(TT, world, trapEntity, replaceAttr)
   local trapServiceRender = world:GetService("TrapRender")
   trapServiceRender:CreateSingleTrapRender(TT, trapEntity, true)
-  local hp, hpMax = nil, nil
-  for key,value in pairs(replaceAttr) do
+  local hp, hpMax
+  for key, value in pairs(replaceAttr) do
     if key == "MaxHP" then
       hpMax = value
-    else
-      if key == "HP" then
-        hp = value
-      end
+    elseif key == "HP" then
+      hp = value
     end
   end
   if hp and hpMax then
     trapEntity:ReplaceRedAndMaxHP(hp, hpMax)
   end
 end
-
-

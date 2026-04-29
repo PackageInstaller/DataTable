@@ -1,96 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/feature_skill_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureSkillComponent", Object)
 FeatureSkillComponent = FeatureSkillComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureSkillComponent.Constructor = function(self)
-  -- function num : 0_0
+function FeatureSkillComponent:Constructor()
   self._featureType = -1
   self._featureSkillID = -1
   self._casterEntityID = -1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureSkillComponent.SetFeatureSkillID = function(self, featureType, featureSkillID, casterEntityID)
-  -- function num : 0_1
+function FeatureSkillComponent:SetFeatureSkillID(featureType, featureSkillID, casterEntityID)
   self._featureType = featureType
   self._featureSkillID = featureSkillID
   self._casterEntityID = casterEntityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureSkillComponent.GetFeatureType = function(self)
-  -- function num : 0_2
+function FeatureSkillComponent:GetFeatureType()
   return self._featureType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureSkillComponent.GetFeatureSkillID = function(self)
-  -- function num : 0_3
+function FeatureSkillComponent:GetFeatureSkillID()
   return self._featureSkillID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureSkillComponent.GetFeatureSkillCasterEntityID = function(self)
-  -- function num : 0_4
+function FeatureSkillComponent:GetFeatureSkillCasterEntityID()
   return self._casterEntityID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureSkillComponent.ResetFeatureSkillCmpt = function(self)
-  -- function num : 0_5
+function FeatureSkillComponent:ResetFeatureSkillCmpt()
   self._featureSkillID = -1
   self._casterEntityID = -1
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.FeatureSkill = function(self)
-  -- function num : 0_6
-  return self:GetComponent((self.WEComponentsEnum).FeatureSkill)
+function Entity:FeatureSkill()
+  return self:GetComponent(self.WEComponentsEnum.FeatureSkill)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasFeatureSkill = function(self)
-  -- function num : 0_7
-  return self:HasComponent((self.WEComponentsEnum).FeatureSkill)
+function Entity:HasFeatureSkill()
+  return self:HasComponent(self.WEComponentsEnum.FeatureSkill)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddFeatureSkill = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).FeatureSkill
+function Entity:AddFeatureSkill()
+  local index = self.WEComponentsEnum.FeatureSkill
   local component = FeatureSkillComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceFeatureSkill = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).FeatureSkill
+function Entity:ReplaceFeatureSkill()
+  local index = self.WEComponentsEnum.FeatureSkill
   local component = FeatureSkillComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveFeatureSkill = function(self)
-  -- function num : 0_10
+function Entity:RemoveFeatureSkill()
   if self:HasFeatureSkill() then
-    self:RemoveComponent((self.WEComponentsEnum).FeatureSkill)
+    self:RemoveComponent(self.WEComponentsEnum.FeatureSkill)
   end
 end
-
-

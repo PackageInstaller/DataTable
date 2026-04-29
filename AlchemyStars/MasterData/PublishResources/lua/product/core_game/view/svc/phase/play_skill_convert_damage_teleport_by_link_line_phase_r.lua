@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_convert_damage_teleport_by_link_line_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillConvertDamageTeleportByLinkLinePhase", PlaySkillPhaseBase)
 PlaySkillConvertDamageTeleportByLinkLinePhase = PlaySkillConvertDamageTeleportByLinkLinePhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillConvertDamageTeleportByLinkLinePhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillConvertDamageTeleportByLinkLinePhase:PlayFlight(TT, casterEntity, phaseParam)
   local param = phaseParam
-  local resultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local resultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillResult = resultContainer:GetEffectResultByArray(SkillEffectType.ConvertAndDamageByLinkLine)
   if not skillResult then
-    return 
+    return
   end
   self._skillID = resultContainer:GetSkillID()
   self._chainPath = skillResult:GetChainPath()
@@ -23,7 +16,7 @@ PlaySkillConvertDamageTeleportByLinkLinePhase.PlayFlight = function(self, TT, ca
   self._damageResult = skillResult:GetDamageResult()
   self:_PlayOpening(param)
   local beginDelayTime = param:GetBeginDelayTime()
-  if beginDelayTime > 0 then
+  if 0 < beginDelayTime then
     YIELD(TT, beginDelayTime)
   end
   self._convertInfoList = {}
@@ -39,36 +32,32 @@ PlaySkillConvertDamageTeleportByLinkLinePhase.PlayFlight = function(self, TT, ca
   if self._teleportResult then
     self:_DoTeleport(TT, casterEntity)
   end
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+  local playBuffSvc = self._world:GetService("PlayBuff")
   local nt = NTGridConvert:New(casterEntity, self._convertInfoList)
   nt:SetConvertEffectType(SkillEffectType.ConvertAndDamageByLinkLine)
   playBuffSvc:PlayBuffView(TT, nt)
   self:_PlayEnding(TT, param)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillConvertDamageTeleportByLinkLinePhase._PlayOpening = function(self, param)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillConvertDamageTeleportByLinkLinePhase:_PlayOpening(param)
   local cameraEffID = param:GetCameraEffID()
-  if cameraEffID and cameraEffID > 0 then
-    self._cameraEff = (self._effectService):CreateScreenEffPointEffect(cameraEffID)
+  if cameraEffID and 0 < cameraEffID then
+    self._cameraEff = self._effectService:CreateScreenEffPointEffect(cameraEffID)
   end
   local sceneEffID = param:GetSceneEffID()
   local sceneEffPos = param:GetSceneEffPos()
-  if sceneEffID and sceneEffID > 0 then
-    self._sceneEff = (self._effectService):CreateWorldPositionEffect(sceneEffID, sceneEffPos)
+  if sceneEffID and 0 < sceneEffID then
+    self._sceneEff = self._effectService:CreateWorldPositionEffect(sceneEffID, sceneEffPos)
   end
-  local animNames = {param:GetSceneEffAnimIn(), param:GetSceneEffAnimIdle()}
+  local animNames = {
+    param:GetSceneEffAnimIn(),
+    param:GetSceneEffAnimIdle()
+  }
   self:_PlayAnimation(self._sceneEff, animNames)
-  ;
-  (AudioHelperController.PlayInnerGameSfx)(param:GetStartAudioID())
+  AudioHelperController.PlayInnerGameSfx(param:GetStartAudioID())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillConvertDamageTeleportByLinkLinePhase._DoWalk = function(self, TT, casterEntity, param)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySkillConvertDamageTeleportByLinkLinePhase:_DoWalk(TT, casterEntity, param)
   local moveTime = param:GetMoveSpeedTime() / 1000
   local moveSpeed = 1 / moveTime
   local hasWalkPoint = false
@@ -81,45 +70,38 @@ PlaySkillConvertDamageTeleportByLinkLinePhase._DoWalk = function(self, TT, caste
     local moveTrailEffect = param:GetMoveTrailEffect()
     self:_PlayMoveTrailEffect(casterEntity, moveTrailEffect)
   end
-  do
-    self._convertEffList = {}
-    local boardServiceRender = (self._world):GetService("BoardRender")
-    local pathLength = #self._chainPath
-    local hasAttack = self._damageResult ~= nil
-    for index,walkPos in ipairs(self._chainPath) do
-      local curPos = boardServiceRender:GetRealEntityGridPos(casterEntity)
-      if index ~= 1 then
-        casterEntity:AddGridMove(moveSpeed, walkPos, curPos)
-        local walkDir = walkPos - curPos
-        casterEntity:SetDirection(walkDir)
-        while casterEntity:HasGridMove() do
-          YIELD(TT)
-        end
+  self._convertEffList = {}
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local pathLength = #self._chainPath
+  local hasAttack = self._damageResult ~= nil
+  for index, walkPos in ipairs(self._chainPath) do
+    local curPos = boardServiceRender:GetRealEntityGridPos(casterEntity)
+    if index ~= 1 then
+      casterEntity:AddGridMove(moveSpeed, walkPos, curPos)
+      local walkDir = walkPos - curPos
+      casterEntity:SetDirection(walkDir)
+      while casterEntity:HasGridMove() do
+        YIELD(TT)
       end
-      local convertEff = self:_PlayConvertEff(index, pathLength, walkPos, hasAttack, param)
-      if convertEff then
-        (table.insert)(self._convertEffList, convertEff)
-        ;
-        (AudioHelperController.PlayInnerGameSfx)(param:GetConvertAudioID())
-      end
-      local pos, pieceType = self:_GetConvertPosAndType(index, pathLength, walkPos, hasAttack)
-      if pos and pieceType then
-        self:_PlayConvert(TT, pos, pieceType)
-      end
-      self:_DestroyLinkLine(walkPos)
     end
-    if hasWalkPoint then
-      self:_StartMoveAnimation(casterEntity, walkAnim, false)
-      self:_PlayMoveTrailEffect(casterEntity)
+    local convertEff = self:_PlayConvertEff(index, pathLength, walkPos, hasAttack, param)
+    if convertEff then
+      table.insert(self._convertEffList, convertEff)
+      AudioHelperController.PlayInnerGameSfx(param:GetConvertAudioID())
     end
-    -- DECOMPILER ERROR: 7 unprocessed JMP targets
+    local pos, pieceType = self:_GetConvertPosAndType(index, pathLength, walkPos, hasAttack)
+    if pos and pieceType then
+      self:_PlayConvert(TT, pos, pieceType)
+    end
+    self:_DestroyLinkLine(walkPos)
+  end
+  if hasWalkPoint then
+    self:_StartMoveAnimation(casterEntity, walkAnim, false)
+    self:_PlayMoveTrailEffect(casterEntity)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillConvertDamageTeleportByLinkLinePhase._StartMoveAnimation = function(self, casterEntity, anim, isMove)
-  -- function num : 0_3
+function PlaySkillConvertDamageTeleportByLinkLinePhase:_StartMoveAnimation(casterEntity, anim, isMove)
   local curVal = casterEntity:GetAnimatorControllerBoolsData(anim)
   if curVal ~= isMove then
     local statTable = {}
@@ -128,21 +110,18 @@ PlaySkillConvertDamageTeleportByLinkLinePhase._StartMoveAnimation = function(sel
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillConvertDamageTeleportByLinkLinePhase._PlayMoveTrailEffect = function(self, casterEntity, trailEffect)
-  -- function num : 0_4 , upvalues : _ENV
+function PlaySkillConvertDamageTeleportByLinkLinePhase:_PlayMoveTrailEffect(casterEntity, trailEffect)
   if casterEntity and casterEntity:HasView() then
-    local go = (casterEntity:View()):GetGameObject()
-    local rootTF = (go.transform):Find("Root")
-    local trailEffectExCmpt = (rootTF.gameObject):GetComponent(typeof(TrailsFX.TrailEffectEx))
+    local go = casterEntity:View():GetGameObject()
+    local rootTF = go.transform:Find("Root")
+    local trailEffectExCmpt = rootTF.gameObject:GetComponent(typeof(TrailsFX.TrailEffectEx))
     if trailEffectExCmpt then
-      ((UnityEngine.Object).Destroy)(trailEffectExCmpt)
+      UnityEngine.Object.Destroy(trailEffectExCmpt)
     end
     casterEntity:RemoveTrailEffectEx()
     if trailEffect then
-      trailEffectExCmpt = (rootTF.gameObject):AddComponent(typeof(TrailsFX.TrailEffectEx))
-      local resServ = ((self._world).BW_Services).ResourcesPool
+      trailEffectExCmpt = rootTF.gameObject:AddComponent(typeof(TrailsFX.TrailEffectEx))
+      local resServ = self._world.BW_Services.ResourcesPool
       local containerTrailEffect = resServ:LoadAsset(trailEffect)
       if not containerTrailEffect then
         resServ:CacheAsset(trailEffect, 1)
@@ -154,49 +133,40 @@ PlaySkillConvertDamageTeleportByLinkLinePhase._PlayMoveTrailEffect = function(se
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillConvertDamageTeleportByLinkLinePhase._PlayConvertEff = function(self, index, maxCount, pos, hasAttack, param)
-  -- function num : 0_5
+function PlaySkillConvertDamageTeleportByLinkLinePhase:_PlayConvertEff(index, maxCount, pos, hasAttack, param)
   local needConvertEff = false
-  -- DECOMPILER ERROR at PC5: Unhandled construct in 'MakeBoolean' P1
-
-  if hasAttack and index ~= maxCount then
-    needConvertEff = true
-  end
-  if index ~= 1 then
+  if hasAttack then
+    if index ~= maxCount then
+      needConvertEff = true
+    end
+  elseif index ~= 1 then
     needConvertEff = true
   end
   if not needConvertEff then
-    return 
+    return
   end
   local convertEffID = param:GetConvertEffID()
-  if convertEffID and convertEffID > 0 then
-    local convertEff = (self._effectService):CreateWorldPositionEffect(convertEffID, pos)
+  if convertEffID and 0 < convertEffID then
+    local convertEff = self._effectService:CreateWorldPositionEffect(convertEffID, pos)
     return convertEff
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillConvertDamageTeleportByLinkLinePhase._GetConvertPosAndType = function(self, index, maxCount, pos, hasAttack)
-  -- function num : 0_6 , upvalues : _ENV
+function PlaySkillConvertDamageTeleportByLinkLinePhase:_GetConvertPosAndType(index, maxCount, pos, hasAttack)
   if hasAttack then
     if not self._teleportResult then
-      return 
+      return
     end
     if index == 1 then
-      return (self._teleportResult):GetPosOld(), (self._teleportResult):GetColorOld()
-    else
-      if index == maxCount then
-        return (self._teleportResult):GetPosNew(), (self._teleportResult):GetColorNew()
-      end
+      return self._teleportResult:GetPosOld(), self._teleportResult:GetColorOld()
+    elseif index == maxCount then
+      return self._teleportResult:GetPosNew(), self._teleportResult:GetColorNew()
     end
   end
   if self._convertResult then
-    local convertPosList = (self._convertResult):GetTargetGridArray()
-    local convertType = (self._convertResult):GetTargetElementType()
-    for _,convertPos in ipairs(convertPosList) do
+    local convertPosList = self._convertResult:GetTargetGridArray()
+    local convertType = self._convertResult:GetTargetElementType()
+    for _, convertPos in ipairs(convertPosList) do
       if convertPos == pos then
         return pos, convertType
       end
@@ -204,128 +174,110 @@ PlaySkillConvertDamageTeleportByLinkLinePhase._GetConvertPosAndType = function(s
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillConvertDamageTeleportByLinkLinePhase._PlayConvert = function(self, TT, pos, pieceType)
-  -- function num : 0_7 , upvalues : _ENV
+function PlaySkillConvertDamageTeleportByLinkLinePhase:_PlayConvert(TT, pos, pieceType)
   local oldGridType = PieceType.None
-  local pieceSvc = (self._world):GetService("Piece")
+  local pieceSvc = self._world:GetService("Piece")
   local gridEntity = pieceSvc:FindPieceEntity(pos)
   local pieceCmpt = gridEntity:Piece()
   if pieceCmpt then
     oldGridType = pieceCmpt:GetPieceType()
   end
   local convertInfo = NTGridConvert_ConvertInfo:New(pos, oldGridType, pieceType)
-  ;
-  (table.insert)(self._convertInfoList, convertInfo)
-  local boardService = (self._world):GetService("BoardRender")
+  table.insert(self._convertInfoList, convertInfo)
+  local boardService = self._world:GetService("BoardRender")
   boardService:ReCreateGridEntity(pieceType, pos, false)
-  local piece_service = (self._world):GetService("Piece")
+  local piece_service = self._world:GetService("Piece")
   if piece_service then
     piece_service:SetPieceAnimNormal(pos)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillConvertDamageTeleportByLinkLinePhase._DestroyLinkLine = function(self, moveInPos)
-  -- function num : 0_8 , upvalues : _ENV
-  local reBoard = (self._world):GetRenderBoardEntity()
+function PlaySkillConvertDamageTeleportByLinkLinePhase:_DestroyLinkLine(moveInPos)
+  local reBoard = self._world:GetRenderBoardEntity()
   local linkRendererDataCmpt = reBoard:LinkRendererData()
   local allEntities = linkRendererDataCmpt:GetLinkLineEntityList()
   local removeList = {}
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  for _,linkLineEntity in ipairs(allEntities) do
+  local boardServiceRender = self._world:GetService("BoardRender")
+  for _, linkLineEntity in ipairs(allEntities) do
     local pos = boardServiceRender:GetRealEntityGridPos(linkLineEntity)
     if not moveInPos or pos == moveInPos then
-      (table.insert)(removeList, linkLineEntity)
+      table.insert(removeList, linkLineEntity)
     end
   end
-  local linkageRenderService = (self._world):GetService("LinkageRender")
-  for _,e in ipairs(removeList) do
+  local linkageRenderService = self._world:GetService("LinkageRender")
+  for _, e in ipairs(removeList) do
     linkageRenderService:DestroyLinkLine(e)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillConvertDamageTeleportByLinkLinePhase._DoDamage = function(self, TT, casterEntity, param)
-  -- function num : 0_9 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local targetPos = (self._damageResult):GetGridPos()
+function PlaySkillConvertDamageTeleportByLinkLinePhase:_DoDamage(TT, casterEntity, param)
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local targetPos = self._damageResult:GetGridPos()
   local curPos = boardServiceRender:GetRealEntityGridPos(casterEntity)
   local attackDir = targetPos - curPos
   casterEntity:SetDirection(attackDir)
   local attackAnim = param:GetAttackAnim()
   casterEntity:SetAnimatorControllerTriggers({attackAnim})
-  ;
-  (AudioHelperController.PlayInnerGameSfx)(param:GetAttackAudioID())
+  AudioHelperController.PlayInnerGameSfx(param:GetAttackAudioID())
   local gatherEffIDList = param:GetGatherEffIDList()
   if gatherEffIDList then
-    for _,effID in ipairs(gatherEffIDList) do
-      (self._effectService):CreateEffect(effID, casterEntity)
+    for _, effID in ipairs(gatherEffIDList) do
+      self._effectService:CreateEffect(effID, casterEntity)
     end
   end
-  do
-    local attackEffDelayTime = param:GetAttackEffDelayTime()
-    if attackEffDelayTime then
-      YIELD(TT, attackEffDelayTime)
+  local attackEffDelayTime = param:GetAttackEffDelayTime()
+  if attackEffDelayTime then
+    YIELD(TT, attackEffDelayTime)
+  end
+  local attackEffID = param:GetAttackEffID()
+  if attackEffID and 0 < attackEffID then
+    self._effectService:CreateEffect(attackEffID, casterEntity)
+  end
+  local hitDelayTime = param:GetHitDelayTime()
+  if hitDelayTime then
+    hitDelayTime = hitDelayTime - attackEffDelayTime
+    if 0 < hitDelayTime then
+      YIELD(TT, hitDelayTime)
     end
-    local attackEffID = param:GetAttackEffID()
-    if attackEffID and attackEffID > 0 then
-      (self._effectService):CreateEffect(attackEffID, casterEntity)
-    end
-    local hitDelayTime = param:GetHitDelayTime()
-    if hitDelayTime then
-      hitDelayTime = hitDelayTime - attackEffDelayTime
-      if hitDelayTime > 0 then
-        YIELD(TT, hitDelayTime)
-      end
-    end
-    local targetID = (self._damageResult):GetTargetID()
-    local targetEntity = (self._world):GetEntityByID(targetID)
-    local damageInfo = (self._damageResult):GetDamageInfo(1)
-    local hitAnimName = param:GetHitAnim()
-    local skillID = self._skillID
-    local beHitParam = ((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(hitAnimName)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(targetPos)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(false)):SetHandleBeHitParam_SkillID(skillID)
-    ;
-    (self._skillService):HandleBeHit(TT, beHitParam)
-    local attackEffTime = param:GetAttackEffTime()
-    if attackEffTime then
-      local delayTime = attackEffTime - (hitDelayTime)
-      YIELD(TT, delayTime)
-    end
+  end
+  local targetID = self._damageResult:GetTargetID()
+  local targetEntity = self._world:GetEntityByID(targetID)
+  local damageInfo = self._damageResult:GetDamageInfo(1)
+  local hitAnimName = param:GetHitAnim()
+  local skillID = self._skillID
+  local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(hitAnimName):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(targetPos):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(false):SetHandleBeHitParam_SkillID(skillID)
+  self._skillService:HandleBeHit(TT, beHitParam)
+  local attackEffTime = param:GetAttackEffTime()
+  if attackEffTime then
+    local delayTime = attackEffTime - hitDelayTime
+    YIELD(TT, delayTime)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillConvertDamageTeleportByLinkLinePhase._DoBack = function(self, TT, casterEntity, param)
-  -- function num : 0_10 , upvalues : _ENV
+function PlaySkillConvertDamageTeleportByLinkLinePhase:_DoBack(TT, casterEntity, param)
   local teleportDelayTime = param:GetTeleportDelayTime()
   if teleportDelayTime then
     YIELD(TT, teleportDelayTime)
   end
-  ;
-  (AudioHelperController.PlayInnerGameSfx)(param:GetTeleportAudioID())
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  AudioHelperController.PlayInnerGameSfx(param:GetTeleportAudioID())
+  local boardServiceRender = self._world:GetService("BoardRender")
   local curPos = boardServiceRender:GetRealEntityGridPos(casterEntity)
   if #self._chainPath == 0 then
-    return 
+    return
   end
-  local targetPos = (self._chainPath)[1]
+  local targetPos = self._chainPath[1]
   self:_RoleShow(casterEntity, false, false)
   local disappearEffID = param:GetDisappearEffID()
-  if disappearEffID and disappearEffID > 0 then
-    (self._effectService):CreateWorldPositionEffect(disappearEffID, curPos)
+  if disappearEffID and 0 < disappearEffID then
+    self._effectService:CreateWorldPositionEffect(disappearEffID, curPos)
   end
   local disappearTime = param:GetDisappearTime()
   if disappearTime then
     YIELD(TT, disappearTime)
   end
   local appearEffID = param:GetAppearEffID()
-  if appearEffID and appearEffID > 0 then
-    (self._effectService):CreateWorldPositionEffect(appearEffID, targetPos)
+  if appearEffID and 0 < appearEffID then
+    self._effectService:CreateWorldPositionEffect(appearEffID, targetPos)
   end
   local appearDelayTime = param:GetAppearDelayTime()
   if appearDelayTime then
@@ -335,64 +287,50 @@ PlaySkillConvertDamageTeleportByLinkLinePhase._DoBack = function(self, TT, caste
   self:_RoleShow(casterEntity, true, true)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillConvertDamageTeleportByLinkLinePhase._RoleShow = function(self, entity, showRole, showBloodSlider)
-  -- function num : 0_11
+function PlaySkillConvertDamageTeleportByLinkLinePhase:_RoleShow(entity, showRole, showBloodSlider)
   entity:SetViewVisible(showRole)
   local sliderEntityID = 0
   if entity:HasPetPstID() then
-    local captainEntity = (entity:Pet()):GetOwnerTeamEntity()
-    sliderEntityID = (captainEntity:HP()):GetHPSliderEntityID()
+    local captainEntity = entity:Pet():GetOwnerTeamEntity()
+    sliderEntityID = captainEntity:HP():GetHPSliderEntityID()
   else
-    do
-      sliderEntityID = (entity:HP()):GetHPSliderEntityID()
-      local sliderEntity = (self._world):GetEntityByID(sliderEntityID)
-      if sliderEntity then
-        sliderEntity:SetViewVisible(showBloodSlider)
-      end
-    end
+    sliderEntityID = entity:HP():GetHPSliderEntityID()
+  end
+  local sliderEntity = self._world:GetEntityByID(sliderEntityID)
+  if sliderEntity then
+    sliderEntity:SetViewVisible(showBloodSlider)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillConvertDamageTeleportByLinkLinePhase._DoTeleport = function(self, TT, casterEntity)
-  -- function num : 0_12 , upvalues : _ENV
-  local newDir = (self._teleportResult):GetDirNew()
-  local newPos = (self._teleportResult):GetPosNew()
-  local oldPos = (self._teleportResult):GetPosOld()
-  local trapServiceRender = (self._world):GetService("TrapRender")
-  local pieceService = (self._world):GetService("Piece")
+function PlaySkillConvertDamageTeleportByLinkLinePhase:_DoTeleport(TT, casterEntity)
+  local newDir = self._teleportResult:GetDirNew()
+  local newPos = self._teleportResult:GetPosNew()
+  local oldPos = self._teleportResult:GetPosOld()
+  local trapServiceRender = self._world:GetService("TrapRender")
+  local pieceService = self._world:GetService("Piece")
   if casterEntity:HasPetPstID() then
     trapServiceRender:ShowHideTrapAtPos(newPos, false)
-    local teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-    local teamLeaderEntity = (teamEntity:Team()):GetTeamLeaderEntity()
-    local pets = (teamEntity:Team()):GetTeamPetEntities()
-    for _,petEntity in ipairs(pets) do
+    local teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
+    local teamLeaderEntity = teamEntity:Team():GetTeamLeaderEntity()
+    local pets = teamEntity:Team():GetTeamPetEntities()
+    for _, petEntity in ipairs(pets) do
       petEntity:SetPosition(newPos)
     end
     teamEntity:SetLocation(newPos, newDir)
     teamLeaderEntity:SetLocation(newPos, newDir)
     pieceService:RemovePrismAt(newPos)
   end
-  do
-    local playBuffSvc = (self._world):GetService("PlayBuff")
-    local nt = NTTeleport:New(casterEntity, oldPos, newPos)
-    playBuffSvc:PlayBuffView(TT, nt)
-  end
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  local nt = NTTeleport:New(casterEntity, oldPos, newPos)
+  playBuffSvc:PlayBuffView(TT, nt)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillConvertDamageTeleportByLinkLinePhase._PlayEnding = function(self, TT, param)
-  -- function num : 0_13 , upvalues : _ENV
+function PlaySkillConvertDamageTeleportByLinkLinePhase:_PlayEnding(TT, param)
   local cameraOutAnim = param:GetCameraEffAnimOut()
   if cameraOutAnim then
     self:_PlayAnimation(self._cameraEff, {cameraOutAnim})
   end
-  ;
-  (AudioHelperController.PlayInnerGameSfx)(param:GetStartAudioID())
+  AudioHelperController.PlayInnerGameSfx(param:GetStartAudioID())
   local sceneOutDelayTime = param:GetSceneOutDelayTime()
   if sceneOutDelayTime then
     YIELD(TT, sceneOutDelayTime)
@@ -403,49 +341,38 @@ PlaySkillConvertDamageTeleportByLinkLinePhase._PlayEnding = function(self, TT, p
   end
   local convertOutAnim = param:GetConvertEffAnimOut()
   if self._convertEffList then
-    for _,entity in ipairs(self._convertEffList) do
+    for _, entity in ipairs(self._convertEffList) do
       self:_PlayAnimation(entity, {convertOutAnim})
     end
   end
-  do
-    local endDelayTime = param:GetEndDelayTime()
-    if endDelayTime then
-      YIELD(TT, endDelayTime)
-    end
-    ;
-    (self._world):DestroyEntity(self._cameraEff)
-    ;
-    (self._world):DestroyEntity(self._sceneEff)
-    if self._convertEffList then
-      for _,entity in ipairs(self._convertEffList) do
-        (self._world):DestroyEntity(entity)
-      end
+  local endDelayTime = param:GetEndDelayTime()
+  if endDelayTime then
+    YIELD(TT, endDelayTime)
+  end
+  self._world:DestroyEntity(self._cameraEff)
+  self._world:DestroyEntity(self._sceneEff)
+  if self._convertEffList then
+    for _, entity in ipairs(self._convertEffList) do
+      self._world:DestroyEntity(entity)
     end
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillConvertDamageTeleportByLinkLinePhase._PlayAnimation = function(self, entity, animNames)
-  -- function num : 0_14 , upvalues : _ENV
+function PlaySkillConvertDamageTeleportByLinkLinePhase:_PlayAnimation(entity, animNames)
   if entity and entity:HasView() then
-    local go = (entity:View()):GetGameObject()
+    local go = entity:View():GetGameObject()
     local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
     if anim == nil then
-      (Log.fatal)("Cant play legacy animation, animation not found in ", go.name)
-      return 
+      Log.fatal("Cant play legacy animation, animation not found in ", go.name)
+      return
     end
-    if (table.count)(animNames) > 1 then
+    if table.count(animNames) > 1 then
       anim:Stop()
       for i = 1, #animNames do
         anim:PlayQueued(animNames[i])
       end
     else
-      do
-        anim:Play(animNames[1])
-      end
+      anim:Play(animNames[1])
     end
   end
 end
-
-

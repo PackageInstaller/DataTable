@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n48/hard_line_mission/ui_n48_hard_black.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN48HardBlack", Object)
 UIN48HardBlack = UIN48HardBlack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN48HardBlack.Constructor = function(self, uiView)
-  -- function num : 0_0
+function UIN48HardBlack:Constructor(uiView)
   self._uiView = uiView
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlack.SetData = function(self, campaign, component)
-  -- function num : 0_1
+function UIN48HardBlack:SetData(campaign, component)
   self._campaign = campaign
   self._blackHardComponent = component
   self._blackHardCompInfo = component:GetComponentInfo()
@@ -23,116 +13,77 @@ UIN48HardBlack.SetData = function(self, campaign, component)
   self:_InitLevelData()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlack.Destroy = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,countdownTimer in pairs(self._countdownTimer) do
-    countdownTimer = (UIActivityHelper.CancelTimerEvent)(countdownTimer)
+function UIN48HardBlack:Destroy()
+  for _, countdownTimer in pairs(self._countdownTimer) do
+    countdownTimer = UIActivityHelper.CancelTimerEvent(countdownTimer)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlack.SetActive = function(self, status, playAnim)
-  -- function num : 0_3 , upvalues : _ENV
-  (UIWidgetHelper.ClearWidgets)(self._uiView, "_nodes_Black")
-  ;
-  ((self._uiView):GetGameObject("_nodes_Black")):SetActive(status)
+function UIN48HardBlack:SetActive(status, playAnim)
+  UIWidgetHelper.ClearWidgets(self._uiView, "_nodes_Black")
+  self._uiView:GetGameObject("_nodes_Black"):SetActive(status)
   if status then
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlack._InitLevelData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN48HardBlack:_InitLevelData()
   if not self._levelDatas then
     self._levelDatas = {}
-    local componentCfgId = (self._blackHardComponent):GetComponentCfgId()
-    local cfgs = (Cfg.cfg_difficulty_parent_mission)({ComponentID = componentCfgId})
+    local componentCfgId = self._blackHardComponent:GetComponentCfgId()
+    local cfgs = Cfg.cfg_difficulty_parent_mission({ComponentID = componentCfgId})
     if cfgs ~= nil then
-      for k,cfg in pairs(cfgs) do
+      for k, cfg in pairs(cfgs) do
         local data = UIActivityDiffLevelData:New()
         data:InitParentLevel(self._blackHardComponent, self._blackHardCompInfo, cfg)
-        -- DECOMPILER ERROR at PC31: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self._levelDatas)[#self._levelDatas + 1] = data
+        self._levelDatas[#self._levelDatas + 1] = data
       end
     end
   else
-    do
-      for i = 1, #self._levelDatas do
-        ((self._levelDatas)[i]):RefreshParentLevel(self._blackHardComponent, self._blackHardCompInfo)
-      end
+    for i = 1, #self._levelDatas do
+      self._levelDatas[i]:RefreshParentLevel(self._blackHardComponent, self._blackHardCompInfo)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlack._Refresh = function(self, playAnim)
-  -- function num : 0_5 , upvalues : _ENV
-  local nodes = (UIWidgetHelper.SpawnObjects)(self._uiView, "_nodes_Black", "UIN48HardBlackNode", #self._levelDatas)
+function UIN48HardBlack:_Refresh(playAnim)
+  local nodes = UIWidgetHelper.SpawnObjects(self._uiView, "_nodes_Black", "UIN48HardBlackNode", #self._levelDatas)
   self.nodes = nodes
   for i = 1, #nodes do
-    do
-      local uiNode = nodes[i]
-      uiNode:SetData((self._levelDatas)[i], function(data)
-    -- function num : 0_5_0 , upvalues : self
-    self:OnNodeClick(data)
+    local uiNode = nodes[i]
+    uiNode:SetData(self._levelDatas[i], function(data)
+      self:OnNodeClick(data)
+    end)
+    uiNode.view:GetGameObject():SetActive(false)
   end
-)
-      ;
-      ((uiNode.view):GetGameObject()):SetActive(false)
-    end
-  end
-  for j,node in pairs(nodes) do
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self._countdownTimer)[j] = ((GameGlobal.Timer)()):AddEvent(33 * (j - 1), function()
-    -- function num : 0_5_1 , upvalues : node
-    ((node.view):GetGameObject()):SetActive(true)
-    node:PlayAnime_In()
-  end
-)
+  for j, node in pairs(nodes) do
+    self._countdownTimer[j] = GameGlobal.Timer():AddEvent(33 * (j - 1), function()
+      node.view:GetGameObject():SetActive(true)
+      node:PlayAnime_In()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlack._HideAnim = function(self, playAnim)
-  -- function num : 0_6
+function UIN48HardBlack:_HideAnim(playAnim)
   if not self.nodes then
-    return 
+    return
   end
   for i = #self.nodes, 1, -1 do
-    local node = (self.nodes)[i]
+    local node = self.nodes[i]
     node:PlayAnime_Out()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlack.OnNodeClick = function(self, data)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIActivityDiffLevelDetail", data, self._blackHardComponent)
+function UIN48HardBlack:OnNodeClick(data)
+  GameGlobal.UIStateManager():ShowDialog("UIActivityDiffLevelDetail", data, self._blackHardComponent)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlack.ClickNodeByID = function(self, id)
-  -- function num : 0_8 , upvalues : _ENV
-  for _,data in ipairs(self._levelDatas) do
+function UIN48HardBlack:ClickNodeByID(id)
+  for _, data in ipairs(self._levelDatas) do
     if data:GetMissionId() == id then
       self:OnNodeClick(data)
       return true
     end
   end
-  ;
-  (Log.error)("[UIN48HardBlack] 找不到目标id:", id)
+  Log.error("[UIN48HardBlack] 找不到目标id:", id)
   return false
 end
-
-

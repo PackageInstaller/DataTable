@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_alpha_throw_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectAlphaThrowTrapResult", SkillEffectResultBase)
 SkillEffectAlphaThrowTrapResult = SkillEffectAlphaThrowTrapResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectAlphaThrowTrapResult.Constructor = function(self, trapEntityIDs, trapMountID, monsterMountID, damageRes)
-  -- function num : 0_0
+function SkillEffectAlphaThrowTrapResult:Constructor(trapEntityIDs, trapMountID, monsterMountID, damageRes)
   self._trapEntityIDs = trapEntityIDs
   self._trapMountID = trapMountID
   self._monsterMountID = monsterMountID
   self._damageResult = damageRes
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaThrowTrapResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectAlphaThrowTrapResult:GetEffectType()
   return SkillEffectType.AlphaThrowTrap
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaThrowTrapResult.GetTrapEntityIDs = function(self)
-  -- function num : 0_2
+function SkillEffectAlphaThrowTrapResult:GetTrapEntityIDs()
   return self._trapEntityIDs
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaThrowTrapResult.GetTrapMountID = function(self)
-  -- function num : 0_3
+function SkillEffectAlphaThrowTrapResult:GetTrapMountID()
   return self._trapMountID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaThrowTrapResult.GetMonsterMountID = function(self)
-  -- function num : 0_4
+function SkillEffectAlphaThrowTrapResult:GetMonsterMountID()
   return self._monsterMountID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaThrowTrapResult.GetDamageResult = function(self)
-  -- function num : 0_5
+function SkillEffectAlphaThrowTrapResult:GetDamageResult()
   return self._damageResult
 end
-
-

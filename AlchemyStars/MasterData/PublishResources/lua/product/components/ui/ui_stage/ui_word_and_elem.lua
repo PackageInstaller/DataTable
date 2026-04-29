@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_stage/ui_word_and_elem.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWordAndElemItem", UICustomWidget)
 UIWordAndElemItem = UIWordAndElemItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWordAndElemItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWordAndElemItem:OnShow()
   self._alpha = self:GetUIComponent("CanvasGroup", "word")
   self._atlas = self:GetAsset("UIStage.spriteatlas", LoadType.SpriteAtlas)
   self._img1 = self:GetUIComponent("Image", "elemBtn")
@@ -17,89 +10,58 @@ UIWordAndElemItem.OnShow = function(self)
   self._tex2 = self:GetUIComponent("UILocalizationText", "tex2")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWordAndElemItem.SetData = function(self, cfg, black)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWordAndElemItem:SetData(cfg, black)
   self._tb = {}
   local buff = cfg.BaseWordBuff
   if buff then
-    if type(buff) ~= "table" or not buff then
-      local words = {buff}
-    end
-    for _,wordId in ipairs(buff) do
-      (table.insert)(self._tb, self:_GetWordDesc(cfg.ID, wordId))
+    local words = type(buff) == "table" and buff or {buff}
+    for _, wordId in ipairs(buff) do
+      table.insert(self._tb, self:_GetWordDesc(cfg.ID, wordId))
     end
   end
-  do
-    self._show = #self._tb ~= 0
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R4 in 'UnsetPending'
-
-    if self._show then
-      (self._alpha).alpha = 1
-    else
-      -- DECOMPILER ERROR at PC43: Confused about usage of register: R4 in 'UnsetPending'
-
-      (self._alpha).alpha = 0.4
-    end
-    local texColor, sprite = nil, nil
-    if black then
-      sprite = "map_black_btn01"
-      texColor = Color(0.85882352941176, 0.85882352941176, 0.85882352941176, 1)
-    else
-      sprite = "map_bantou21_frame"
-      texColor = Color(0.90980392156863, 0.90980392156863, 0.90980392156863, 1)
-    end
-    -- DECOMPILER ERROR at PC69: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._img1).sprite = (self._atlas):GetSprite(sprite)
-    -- DECOMPILER ERROR at PC75: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._img2).sprite = (self._atlas):GetSprite(sprite)
-    -- DECOMPILER ERROR at PC77: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._tex1).color = texColor
-    -- DECOMPILER ERROR at PC79: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._tex2).color = texColor
-    -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  self._show = #self._tb ~= 0
+  if self._show then
+    self._alpha.alpha = 1
+  else
+    self._alpha.alpha = 0.4
   end
+  local texColor, sprite
+  if black then
+    sprite = "map_black_btn01"
+    texColor = Color(0.8588235294117647, 0.8588235294117647, 0.8588235294117647, 1)
+  else
+    sprite = "map_bantou21_frame"
+    texColor = Color(0.9098039215686274, 0.9098039215686274, 0.9098039215686274, 1)
+  end
+  self._img1.sprite = self._atlas:GetSprite(sprite)
+  self._img2.sprite = self._atlas:GetSprite(sprite)
+  self._tex1.color = texColor
+  self._tex2.color = texColor
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWordAndElemItem.ElemBtnOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIStageClick", {"restrainBtnOnClick"}, true)
+function UIWordAndElemItem:ElemBtnOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("UIStageClick", {
+    "restrainBtnOnClick"
+  }, true)
   self:ShowDialog("UIStageElemTips")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWordAndElemItem.WordBtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWordAndElemItem:WordBtnOnClick(go)
   if self._show then
-    (GameGlobal.UAReportForceGuideEvent)("UIStageClick", {"restrainBtnOnClick"}, true)
+    GameGlobal.UAReportForceGuideEvent("UIStageClick", {
+      "restrainBtnOnClick"
+    }, true)
     self:ShowDialog("UIStageWordTips", self._tb)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWordAndElemItem._GetWordDesc = function(self, levelId, wordId)
-  -- function num : 0_4 , upvalues : _ENV
-  local word = (Cfg.cfg_word_buff)[wordId]
+function UIWordAndElemItem:_GetWordDesc(levelId, wordId)
+  local word = Cfg.cfg_word_buff[wordId]
   if not word then
-    (Log.exception)("cfg_word_buff 中找不到词缀:", wordId, "levelId:", levelId)
+    Log.exception("cfg_word_buff 中找不到词缀:", wordId, "levelId:", levelId)
   end
-  local name = (StringTable.Get)((word.Word)[1])
-  local desc = (StringTable.Get)(word.Desc)
+  local name = StringTable.Get(word.Word[1])
+  local desc = StringTable.Get(word.Desc)
   local tex = "【" .. name .. "】 " .. desc
   return tex
 end
-
-

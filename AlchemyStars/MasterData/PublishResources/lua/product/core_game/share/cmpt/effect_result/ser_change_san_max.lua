@@ -1,122 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_change_san_max.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultChangeSanMax", SkillEffectResultBase)
 SkillEffectResultChangeSanMax = SkillEffectResultChangeSanMax
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultChangeSanMax.Constructor = function(self, deltaMax, deltaVal)
-  -- function num : 0_0
+function SkillEffectResultChangeSanMax:Constructor(deltaMax, deltaVal)
   self._deltaMax = deltaMax
   self._deltaVal = deltaVal
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeSanMax.GetDeltaMax = function(self)
-  -- function num : 0_1
+function SkillEffectResultChangeSanMax:GetDeltaMax()
   return self._deltaMax
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeSanMax.GetDeltaVal = function(self)
-  -- function num : 0_2
+function SkillEffectResultChangeSanMax:GetDeltaVal()
   return self._deltaVal
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeSanMax.GetEffectType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectResultChangeSanMax:GetEffectType()
   return SkillEffectType.ChangeSanMax
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeSanMax.SetOldSanValue = function(self, v)
-  -- function num : 0_4
+function SkillEffectResultChangeSanMax:SetOldSanValue(v)
   self._oldSanVal = v
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeSanMax.SetNewSanValue = function(self, v)
-  -- function num : 0_5
+function SkillEffectResultChangeSanMax:SetNewSanValue(v)
   self._currentSanVal = v
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeSanMax.SetDebtValue = function(self, v)
-  -- function num : 0_6
+function SkillEffectResultChangeSanMax:SetDebtValue(v)
   self._debtVal = v
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeSanMax.SetModifyTimes = function(self, v)
-  -- function num : 0_7
+function SkillEffectResultChangeSanMax:SetModifyTimes(v)
   self._modifyTimes = v
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeSanMax.GetOldSanValue = function(self)
-  -- function num : 0_8
+function SkillEffectResultChangeSanMax:GetOldSanValue()
   return self._oldSanVal
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeSanMax.GetNewSanValue = function(self)
-  -- function num : 0_9
+function SkillEffectResultChangeSanMax:GetNewSanValue()
   return self._currentSanVal
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeSanMax.GetDebtValue = function(self)
-  -- function num : 0_10
+function SkillEffectResultChangeSanMax:GetDebtValue()
   return self._debtVal
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeSanMax.GetModifyTimes = function(self)
-  -- function num : 0_11
+function SkillEffectResultChangeSanMax:GetModifyTimes()
   return self._modifyTimes
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeSanMax.SetOldSanMaxValue = function(self, v)
-  -- function num : 0_12
+function SkillEffectResultChangeSanMax:SetOldSanMaxValue(v)
   self._oldSanMaxVal = v
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeSanMax.SetNewSanMaxValue = function(self, v)
-  -- function num : 0_13
+function SkillEffectResultChangeSanMax:SetNewSanMaxValue(v)
   self._currentSanMaXVal = v
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeSanMax.GetOldSanMaxValue = function(self)
-  -- function num : 0_14
+function SkillEffectResultChangeSanMax:GetOldSanMaxValue()
   return self._oldSanMaxVal
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeSanMax.GetNewSanMaxValue = function(self)
-  -- function num : 0_15
+function SkillEffectResultChangeSanMax:GetNewSanMaxValue()
   return self._currentSanMaXVal
 end
-
-

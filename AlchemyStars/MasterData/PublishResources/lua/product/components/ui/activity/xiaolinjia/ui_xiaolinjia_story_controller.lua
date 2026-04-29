@@ -1,27 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/ui_xiaolinjia_story_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXiaoLinJiaStoryController", UIController)
 UIXiaoLinJiaStoryController = UIXiaoLinJiaStoryController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXiaoLinJiaStoryController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIXiaoLinJiaStoryController:OnShow(uiParams)
   self.missionID = uiParams[1]
   self.uiMainController = uiParams[2]
-  local cfg = (Cfg.cfg_xiaolinjia_mission)({ID = self.missionID})
+  local cfg = Cfg.cfg_xiaolinjia_mission({
+    ID = self.missionID
+  })
   if cfg then
     self.missionCfg = cfg[1]
   else
-    ;
-    (Log.exception)("story cfg is nil", self.missionID)
+    Log.exception("story cfg is nil", self.missionID)
   end
-  self._campaign = (self.uiMainController):GetCampaign()
-  local componentID = (self.uiMainController):GetTacitTestComponentCfgId()
-  self.collectionCfg = (Cfg.cfg_xiaolinjia_collection)({ComponentID = componentID})
-  self.roleName = (StringTable.Get)((self.missionCfg).RoleName)
+  self._campaign = self.uiMainController:GetCampaign()
+  local componentID = self.uiMainController:GetTacitTestComponentCfgId()
+  self.collectionCfg = Cfg.cfg_xiaolinjia_collection({ComponentID = componentID})
+  self.roleName = StringTable.Get(self.missionCfg.RoleName)
   self.MAX_QUESTION_COUNT = 3
   self.curGetStarCount = 0
   self.curAnswerRightRecord = {}
@@ -29,8 +23,13 @@ UIXiaoLinJiaStoryController.OnShow = function(self, uiParams)
   self.getReward = nil
   self.recordPos = 1
   self.atlas = self:GetAsset("XiaoLinJia.spriteatlas", LoadType.SpriteAtlas)
-  self.storyManager = XiaoLinJiaStoryManager:New((self.missionCfg).StoryCfgName, self)
-  self.playerCtrlMap = {[1] = UIXiaoLinJiaPlayer:New(self:GetUIComponent("UIView", "player1"), self, self.atlas, 1), [2] = UIXiaoLinJiaPlayer:New(self:GetUIComponent("UIView", "player2"), self, self.atlas, 2), [3] = UIXiaoLinJiaPlayer:New(self:GetUIComponent("UIView", "player3"), self, self.atlas, 3), [4] = UIXiaoLinJiaPlayer:New(self:GetUIComponent("UIView", "player4"), self, self.atlas, 4)}
+  self.storyManager = XiaoLinJiaStoryManager:New(self.missionCfg.StoryCfgName, self)
+  self.playerCtrlMap = {
+    [1] = UIXiaoLinJiaPlayer:New(self:GetUIComponent("UIView", "player1"), self, self.atlas, 1),
+    [2] = UIXiaoLinJiaPlayer:New(self:GetUIComponent("UIView", "player2"), self, self.atlas, 2),
+    [3] = UIXiaoLinJiaPlayer:New(self:GetUIComponent("UIView", "player3"), self, self.atlas, 3),
+    [4] = UIXiaoLinJiaPlayer:New(self:GetUIComponent("UIView", "player4"), self, self.atlas, 4)
+  }
   self.optionsPool = self:GetUIComponent("UISelectObjectPath", "options")
   self.questionStart = self:GetGameObject("questionStart")
   self.questionRoot = self:GetGameObject("questionRoot")
@@ -62,304 +61,204 @@ UIXiaoLinJiaStoryController.OnShow = function(self, uiParams)
   self.endPanelAnim = self:GetUIComponent("Animation", "endPanelAnim")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_0_0 , upvalues : _ENV, self
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_xiaolinjia_text_quit_2"), function(param)
-      -- function num : 0_0_0_0 , upvalues : self, _ENV
+  self._backBtns:SetData(function()
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_xiaolinjia_text_quit_2"), function(param)
       self:Lock("UIXiaoLinJiaStoryController_Close")
-      ;
-      (self.anim):Play("uieffanim_UIXiaoLinJiaStoryController_out")
+      self.anim:Play("uieffanim_UIXiaoLinJiaStoryController_out")
       self:StartTask(function(TT)
-        -- function num : 0_0_0_0_0 , upvalues : _ENV, self
         YIELD(TT, 333)
         self:CloseDialog()
         self:UnLock("UIXiaoLinJiaStoryController_Close")
         self:UnLock("WaitForOtherPlayerSelectFinish")
-        if (self._campaign):CheckCampaignClose_ShowClientError() then
-          return 
+        if self._campaign:CheckCampaignClose_ShowClientError() then
+          return
         end
-      end
-)
-    end
-, nil, function(param)
-      -- function num : 0_0_0_1 , upvalues : _ENV
-      (Log.debug)("###[UIXiaoLinJiaStoryController] 取消")
-    end
-, nil)
-  end
-, nil, nil, false, nil, nil, nil)
-  local firstMission = (self.storyManager):GetFirstMissionData()
+      end)
+    end, nil, function(param)
+      Log.debug("###[UIXiaoLinJiaStoryController] 取消")
+    end, nil)
+  end, nil, nil, false, nil, nil, nil)
+  local firstMission = self.storyManager:GetFirstMissionData()
   for i = 1, #self.playerCtrlMap do
-    ((self.playerCtrlMap)[i]):SetFaceIcon((firstMission.FaceIcon)[i])
+    self.playerCtrlMap[i]:SetFaceIcon(firstMission.FaceIcon[i])
   end
   self:StartTask(function(TT)
-    -- function num : 0_0_1 , upvalues : self, _ENV
     self:Lock("UIXiaoLinJiaStoryController_StartSession")
     YIELD(TT, 800)
     self:UnLock("UIXiaoLinJiaStoryController_StartSession")
-    ;
-    (self.storyManager):StartSession()
-  end
-)
+    self.storyManager:StartSession()
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryController.HandleStartQuestionSession = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local curSessionData = (self.storyManager):GetCurSessionData()
+function UIXiaoLinJiaStoryController:HandleStartQuestionSession()
+  local curSessionData = self.storyManager:GetCurSessionData()
   local curQuestionData = curSessionData[1]
   local otherPlayerSelects = curQuestionData.OtherPlayerAnswer
-  local curQuestionIndex = (self.storyManager):GetCurQuestionIndex()
-  ;
-  (self.lcBtnGroup):SetActive(false)
+  local curQuestionIndex = self.storyManager:GetCurQuestionIndex()
+  self.lcBtnGroup:SetActive(false)
   self.questionSessionTask = self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self, _ENV, curQuestionIndex, curQuestionData, otherPlayerSelects
-    (self.questionStartText1):SetText((StringTable.Get)("str_xiaolinjia_text_question_num", curQuestionIndex))
-    ;
-    (self.questionStartText2):SetText((StringTable.Get)("str_xiaolinjia_text_question_num", curQuestionIndex))
-    ;
-    (self.questionTitleText1):SetText((StringTable.Get)("str_xiaolinjia_text_question_num", curQuestionIndex))
-    ;
-    (self.questionTitleText2):SetText((StringTable.Get)("str_xiaolinjia_text_question_num", curQuestionIndex))
-    ;
-    (self.questionStart):SetActive(true)
+    self.questionStartText1:SetText(StringTable.Get("str_xiaolinjia_text_question_num", curQuestionIndex))
+    self.questionStartText2:SetText(StringTable.Get("str_xiaolinjia_text_question_num", curQuestionIndex))
+    self.questionTitleText1:SetText(StringTable.Get("str_xiaolinjia_text_question_num", curQuestionIndex))
+    self.questionTitleText2:SetText(StringTable.Get("str_xiaolinjia_text_question_num", curQuestionIndex))
+    self.questionStart:SetActive(true)
     YIELD(TT, 800)
-    if (tolua.isnull)(self.questionStartAnim) then
-      return 
+    if tolua.isnull(self.questionStartAnim) then
+      return
     end
-    ;
-    (self.questionStartAnim):Play("uieffanim_UIXiaoLinJiaStoryController_QuestionStart_out")
+    self.questionStartAnim:Play("uieffanim_UIXiaoLinJiaStoryController_QuestionStart_out")
     YIELD(TT, 300)
-    if (tolua.isnull)(self.questionStart) then
-      return 
+    if tolua.isnull(self.questionStart) then
+      return
     end
-    ;
-    (self.questionStart):SetActive(false)
-    ;
-    (self.questionRoot):SetActive(true)
-    ;
-    (self.questionTitleStr):SetText((StringTable.Get)(curQuestionData.Topic))
-    ;
-    (self.optionsPool):SpawnObjects("UIXiaoLinJiaStoryOptionItem", #curQuestionData.Options)
-    self.options = (self.optionsPool):GetAllSpawnList()
+    self.questionStart:SetActive(false)
+    self.questionRoot:SetActive(true)
+    self.questionTitleStr:SetText(StringTable.Get(curQuestionData.Topic))
+    self.optionsPool:SpawnObjects("UIXiaoLinJiaStoryOptionItem", #curQuestionData.Options)
+    self.options = self.optionsPool:GetAllSpawnList()
     for i = 1, #self.playerCtrlMap do
-      ((self.playerCtrlMap)[i]):SetFaceIcon(((self.missionCfg).SelectingFaceIcon)[i])
+      self.playerCtrlMap[i]:SetFaceIcon(self.missionCfg.SelectingFaceIcon[i])
     end
     for i = 2, #self.playerCtrlMap do
-      ((self.playerCtrlMap)[i]):SetPlayerSelect(otherPlayerSelects[i - 1])
-      ;
-      ((self.playerCtrlMap)[i]):DoSelectingAnim()
+      self.playerCtrlMap[i]:SetPlayerSelect(otherPlayerSelects[i - 1])
+      self.playerCtrlMap[i]:DoSelectingAnim()
     end
-    for i,v in pairs(curQuestionData.Options) do
-      ((self.options)[i]):SetData(i, v, curQuestionData.OtherPlayerAnswer, self.missionCfg, function(index)
-      -- function num : 0_1_0_0 , upvalues : self, curQuestionData, curQuestionIndex, _ENV
-      (self.storyManager):SetCurPlayerSelectIndex(index)
-      ;
-      ((self.playerCtrlMap)[1]):SetPlayerSelect(index)
-      -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-      if index == curQuestionData.Answer then
-        (self.curAnswerRightRecord)[curQuestionIndex] = curQuestionData.Answer
-        self.curGetStarCount = self.curGetStarCount + 1
-        self.curAnswerIsRight = true
-      else
-        self.curAnswerIsRight = false
-      end
-      if curQuestionIndex == self.MAX_QUESTION_COUNT then
-        (self.uiMainController):SaveTacitTestResult(self.missionID, self.curGetStarCount, function(reward)
-        -- function num : 0_1_0_0_0 , upvalues : self
-        self.getReward = reward
-        self:AfterPlayerSelectOption()
-      end
-)
-        local record = (self.uiMainController):GetMissionQuestionRecord(self.missionID)
-        if record then
-          for idx,v in pairs(record) do
-            -- DECOMPILER ERROR at PC43: Confused about usage of register: R7 in 'UnsetPending'
-
-            (self.curAnswerRightRecord)[idx] = v
-          end
+    for i, v in pairs(curQuestionData.Options) do
+      self.options[i]:SetData(i, v, curQuestionData.OtherPlayerAnswer, self.missionCfg, function(index)
+        self.storyManager:SetCurPlayerSelectIndex(index)
+        self.playerCtrlMap[1]:SetPlayerSelect(index)
+        if index == curQuestionData.Answer then
+          self.curAnswerRightRecord[curQuestionIndex] = curQuestionData.Answer
+          self.curGetStarCount = self.curGetStarCount + 1
+          self.curAnswerIsRight = true
+        else
+          self.curAnswerIsRight = false
         end
-        do
-          do
-            ;
-            (self.uiMainController):UpdateTacitTestAnswer(self.missionID, self.curAnswerRightRecord)
+        if curQuestionIndex == self.MAX_QUESTION_COUNT then
+          self.uiMainController:SaveTacitTestResult(self.missionID, self.curGetStarCount, function(reward)
+            self.getReward = reward
             self:AfterPlayerSelectOption()
+          end)
+          local record = self.uiMainController:GetMissionQuestionRecord(self.missionID)
+          if record then
+            for idx, v in pairs(record) do
+              self.curAnswerRightRecord[idx] = v
+            end
           end
+          self.uiMainController:UpdateTacitTestAnswer(self.missionID, self.curAnswerRightRecord)
+        else
+          self:AfterPlayerSelectOption()
         end
-      end
-    end
-)
+      end)
     end
     self.questionSessionTask = nil
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryController.GetOtherPlayerIsSelectFinish = function(self)
-  -- function num : 0_2
+function UIXiaoLinJiaStoryController:GetOtherPlayerIsSelectFinish()
   local isFinish = true
   for i = 2, #self.playerCtrlMap do
-    isFinish = ((self.playerCtrlMap)[i]):IsFinishSelect()
+    isFinish = self.playerCtrlMap[i]:IsFinishSelect()
   end
   return isFinish
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryController.AfterPlayerSelectOption = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local curSessionData = (self.storyManager):GetCurSessionData()
+function UIXiaoLinJiaStoryController:AfterPlayerSelectOption()
+  local curSessionData = self.storyManager:GetCurSessionData()
   local curQuestionData = curSessionData[1]
   self.afterQuestionSessionTask = self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, _ENV
     self:Lock("WaitForOtherPlayerSelectFinish")
     while not self:GetOtherPlayerIsSelectFinish() do
       YIELD(TT)
     end
-    ;
-    (self.questionShow):SetActive(true)
+    self.questionShow:SetActive(true)
     YIELD(TT, 1000)
-    ;
-    (self.questionShowAnim):Play("uieffanim_UIXiaoLinJiaStoryController_QuestionShow_out")
+    self.questionShowAnim:Play("uieffanim_UIXiaoLinJiaStoryController_QuestionShow_out")
     YIELD(TT, 333)
-    ;
-    (self.questionShow):SetActive(false)
-    for _,v in pairs(self.playerCtrlMap) do
+    self.questionShow:SetActive(false)
+    for _, v in pairs(self.playerCtrlMap) do
       v:ChangeToSelectBG()
     end
-    for _,v in pairs(self.options) do
+    for _, v in pairs(self.options) do
       v:ShowAllSelectResult()
     end
-    do
-      local titleStr = self.curAnswerIsRight and "str_xiaolinjia_text_good_result" or "str_xiaolinjia_text_bad_result"
-      ;
-      (self.questionResultTitle):SetText((StringTable.Get)(titleStr, self.roleName))
-      -- DECOMPILER ERROR at PC70: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.questionResultHead).sprite = (self.atlas):GetSprite((self.missionCfg).ClosingHeadIcon)
-      for i = 1, self.curGetStarCount do
-        local trans = ((self.questionResultStar).transform):GetChild(i - 1)
-        ;
-        ((trans:Find("star")).gameObject):SetActive(true)
-      end
-      YIELD(TT, 1000)
-      ;
-      (self.questionResult):SetActive(true)
-      ;
-      (AudioHelperController.RequestAndPlayUIVoiceAutoRelease)(CriAudioIDConst.HomelandAudioBubble)
-      self:UnLock("WaitForOtherPlayerSelectFinish")
-      self.afterQuestionSessionTask = nil
+    local titleStr = self.curAnswerIsRight and "str_xiaolinjia_text_good_result" or "str_xiaolinjia_text_bad_result"
+    self.questionResultTitle:SetText(StringTable.Get(titleStr, self.roleName))
+    self.questionResultHead.sprite = self.atlas:GetSprite(self.missionCfg.ClosingHeadIcon)
+    for i = 1, self.curGetStarCount do
+      local trans = self.questionResultStar.transform:GetChild(i - 1)
+      trans:Find("star").gameObject:SetActive(true)
     end
-  end
-)
+    YIELD(TT, 1000)
+    self.questionResult:SetActive(true)
+    AudioHelperController.RequestAndPlayUIVoiceAutoRelease(CriAudioIDConst.HomelandAudioBubble)
+    self:UnLock("WaitForOtherPlayerSelectFinish")
+    self.afterQuestionSessionTask = nil
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryController.HandleStartDialogSession = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local curSessionData = (self.storyManager):GetCurSessionData()
-  for _,data in pairs(curSessionData) do
+function UIXiaoLinJiaStoryController:HandleStartDialogSession()
+  local curSessionData = self.storyManager:GetCurSessionData()
+  for _, data in pairs(curSessionData) do
     for i = 1, #self.playerCtrlMap do
-      do
-        do
-          if i == data.Speaker then
-            local content = self:_DoEscape((StringTable.Get)(data.Content))
-            ;
-            ((self.playerCtrlMap)[i]):SetSpeakContent(content, data.ContentBG)
-          end
-          ;
-          ((self.playerCtrlMap)[i]):SetFaceIcon((data.FaceIcon)[i])
-          -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+      if i == data.Speaker then
+        local content = self:_DoEscape(StringTable.Get(data.Content))
+        self.playerCtrlMap[i]:SetSpeakContent(content, data.ContentBG)
       end
+      self.playerCtrlMap[i]:SetFaceIcon(data.FaceIcon[i])
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryController.HandleEndQuestionSession = function(self, TT)
-  -- function num : 0_5
-  local curSession = (self.storyManager):GetCurSessionID()
+function UIXiaoLinJiaStoryController:HandleEndQuestionSession(TT)
+  local curSession = self.storyManager:GetCurSessionID()
   self.recordPos = curSession
-  ;
-  (self.lcBtnGroup):SetActive(true)
+  self.lcBtnGroup:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryController.HandleEndDialogSession = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  local curSessionData = (self.storyManager):GetCurSessionData()
-  for _,data in pairs(curSessionData) do
-    local player = (self.playerCtrlMap)[data.Speaker]
+function UIXiaoLinJiaStoryController:HandleEndDialogSession(TT)
+  local curSessionData = self.storyManager:GetCurSessionData()
+  for _, data in pairs(curSessionData) do
+    local player = self.playerCtrlMap[data.Speaker]
     player:ShowDialogAnim(false)
   end
   YIELD(TT, 333)
-  for _,data in pairs(curSessionData) do
-    local player = (self.playerCtrlMap)[data.Speaker]
+  for _, data in pairs(curSessionData) do
+    local player = self.playerCtrlMap[data.Speaker]
     if player then
       player:ShowDialog(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryController.ShowClosingPanel = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local str = (StringTable.Get)((self.uiMainController):GetEvaluate(self.curGetStarCount))
-  ;
-  (self.endPanelEvaluateText1):SetText(str)
-  ;
-  (self.endPanelEvaluateText2):SetText(str)
-  ;
-  (self.endPanelTitle):SetText((StringTable.Get)("str_xiaolinjia_text_rank_result", self.roleName))
-  ;
-  (self.endPanelContent):SetText((StringTable.Get)("str_xiaolinjia_rankdesc_" .. self.curGetStarCount))
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.endPanelHeadIcon).sprite = (self.atlas):GetSprite((self.missionCfg).ClosingHeadIcon)
+function UIXiaoLinJiaStoryController:ShowClosingPanel()
+  local str = StringTable.Get(self.uiMainController:GetEvaluate(self.curGetStarCount))
+  self.endPanelEvaluateText1:SetText(str)
+  self.endPanelEvaluateText2:SetText(str)
+  self.endPanelTitle:SetText(StringTable.Get("str_xiaolinjia_text_rank_result", self.roleName))
+  self.endPanelContent:SetText(StringTable.Get("str_xiaolinjia_rankdesc_" .. self.curGetStarCount))
+  self.endPanelHeadIcon.sprite = self.atlas:GetSprite(self.missionCfg.ClosingHeadIcon)
   for i = 1, self.curGetStarCount do
-    local trans = ((self.endPanelStar).transform):GetChild(i - 1)
-    ;
-    ((trans:Find("star")).gameObject):SetActive(true)
+    local trans = self.endPanelStar.transform:GetChild(i - 1)
+    trans:Find("star").gameObject:SetActive(true)
   end
-  ;
-  (self.endPanel):SetActive(true)
-  ;
-  (self.lcBtnGroup):SetActive(false)
-  ;
-  (AudioHelperController.RequestAndPlayUIVoiceAutoRelease)(CriAudioIDConst.SoundXiaoLinJiaClosing)
+  self.endPanel:SetActive(true)
+  self.lcBtnGroup:SetActive(false)
+  AudioHelperController.RequestAndPlayUIVoiceAutoRelease(CriAudioIDConst.SoundXiaoLinJiaClosing)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryController._DoEscape = function(self, strContent)
-  -- function num : 0_8 , upvalues : _ENV
-  strContent = (string.gsub)(strContent, "$$", "$")
-  local name = ((GameGlobal.GetModule)(RoleModule)):GetName()
-  if (string.isnullorempty)(name) then
-    name = (StringTable.Get)("str_guide_moren_name")
+function UIXiaoLinJiaStoryController:_DoEscape(strContent)
+  strContent = string.gsub(strContent, "$$", "$")
+  local name = GameGlobal.GetModule(RoleModule):GetName()
+  if string.isnullorempty(name) then
+    name = StringTable.Get("str_guide_moren_name")
   end
-  strContent = (string.gsub)(strContent, "PlayerName", name)
+  strContent = string.gsub(strContent, "PlayerName", name)
   return strContent
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryController.OnSessionStart = function(self)
-  -- function num : 0_9
-  local isQuestion = (self.storyManager):GetCurSessionIsQuestion()
+function UIXiaoLinJiaStoryController:OnSessionStart()
+  local isQuestion = self.storyManager:GetCurSessionIsQuestion()
   if isQuestion then
     self:HandleStartQuestionSession()
   else
@@ -367,11 +266,8 @@ UIXiaoLinJiaStoryController.OnSessionStart = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryController.OnSessionEnd = function(self, TT)
-  -- function num : 0_10
-  local isQuestion = (self.storyManager):GetCurSessionIsQuestion()
+function UIXiaoLinJiaStoryController:OnSessionEnd(TT)
+  local isQuestion = self.storyManager:GetCurSessionIsQuestion()
   if isQuestion then
     self:HandleEndQuestionSession(TT)
   else
@@ -379,193 +275,128 @@ UIXiaoLinJiaStoryController.OnSessionEnd = function(self, TT)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_11
-  (self.storyManager):Update(deltaTimeMS)
+function UIXiaoLinJiaStoryController:OnUpdate(deltaTimeMS)
+  self.storyManager:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryController.OnHide = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIXiaoLinJiaStoryController:OnHide()
   if self.afterQuestionSessionTask then
-    ((GameGlobal.TaskManager)()):KillTask(self.afterQuestionSessionTask)
+    GameGlobal.TaskManager():KillTask(self.afterQuestionSessionTask)
     self.afterQuestionSessionTask = nil
   end
   if self.questionSessionTask then
-    ((GameGlobal.TaskManager)()):KillTask(self.questionSessionTask)
+    GameGlobal.TaskManager():KillTask(self.questionSessionTask)
     self.questionSessionTask = nil
   end
-  for _,v in pairs(self.playerCtrlMap) do
+  for _, v in pairs(self.playerCtrlMap) do
     v:OnDispose()
   end
-  ;
-  (self.storyManager):OnDispose()
+  self.storyManager:OnDispose()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryController.OnExit = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnXiaoLinJiaMainPanelRefresh, true)
+function UIXiaoLinJiaStoryController:OnExit()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnXiaoLinJiaMainPanelRefresh, true)
   self:Lock("UIXiaoLinJiaStoryController_Close")
-  ;
-  (self.anim):Play("uieffanim_UIXiaoLinJiaStoryController_out")
+  self.anim:Play("uieffanim_UIXiaoLinJiaStoryController_out")
   self:StartTask(function(TT)
-    -- function num : 0_13_0 , upvalues : _ENV, self
     YIELD(TT, 333)
     self:CloseDialog()
     self:UnLock("UIXiaoLinJiaStoryController_Close")
     self:UnLock("WaitForOtherPlayerSelectFinish")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryController.ClosingPanelBtnOnClick = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIXiaoLinJiaStoryController:ClosingPanelBtnOnClick()
   self:Lock("UIXiaoLinJiaStoryController_ClosingPanelBtnOnClick")
-  ;
-  (self.endPanelAnim):Play("uieffanim_UIXiaoLinJiaStoryController_endPanel_out")
+  self.endPanelAnim:Play("uieffanim_UIXiaoLinJiaStoryController_endPanel_out")
   self:StartTask(function(TT)
-    -- function num : 0_14_0 , upvalues : _ENV, self
     YIELD(TT, 500)
     self:UnLock("UIXiaoLinJiaStoryController_ClosingPanelBtnOnClick")
-    ;
-    (self.endPanel):SetActive(false)
+    self.endPanel:SetActive(false)
     if self.curGetStarCount == 3 then
-      (self.storyManager):ForceEnd()
-      ;
-      ((GameGlobal.GetModule)(StoryModule)):StartStory((self.missionCfg).EndingStory, function()
-      -- function num : 0_14_0_0 , upvalues : self, _ENV
-      if self.getReward and #self.getReward > 0 then
-        local id = ((self.getReward)[1]).assetid
-        local cfg = nil
-        for _,v in pairs(self.collectionCfg) do
-          if v.ItemID == id then
-            cfg = v
+      self.storyManager:ForceEnd()
+      GameGlobal.GetModule(StoryModule):StartStory(self.missionCfg.EndingStory, function()
+        if self.getReward and #self.getReward > 0 then
+          local id = self.getReward[1].assetid
+          local cfg
+          for _, v in pairs(self.collectionCfg) do
+            if v.ItemID == id then
+              cfg = v
+            end
           end
+          self.questionResultHead = self.atlas:GetSprite(self.missionCfg.ClosingHeadIcon)
+          self:ShowDialog("UIXiaoLinJiaGetCollectionController", function()
+          end, cfg, self.missionCfg.ClosingHeadIcon, self.roleName)
+        else
         end
-        self.questionResultHead = (self.atlas):GetSprite((self.missionCfg).ClosingHeadIcon)
-        self:ShowDialog("UIXiaoLinJiaGetCollectionController", function()
-        -- function num : 0_14_0_0_0
-      end
-, cfg, (self.missionCfg).ClosingHeadIcon, self.roleName)
-      end
-      do
         self:OnExit()
-      end
-    end
-, true)
+      end, true)
     else
-      ;
-      (self.lcBtnGroup):SetActive(true)
-      ;
-      (self.storyManager):TouchQuestionResultPanelAndJumpToNextSession()
-      self.recordPos = (self.storyManager):GetCurSessionID()
+      self.lcBtnGroup:SetActive(true)
+      self.storyManager:TouchQuestionResultPanelAndJumpToNextSession()
+      self.recordPos = self.storyManager:GetCurSessionID()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryController.QuestionResultBtnOnClick = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIXiaoLinJiaStoryController:QuestionResultBtnOnClick()
   self:Lock("UIXiaoLinJiaStoryController_QuestionResult_out")
-  ;
-  (self.questionResultAnim):Play("uieffanim_UIXiaoLinJiaStoryController_QuestionResult_out")
+  self.questionResultAnim:Play("uieffanim_UIXiaoLinJiaStoryController_QuestionResult_out")
   self:StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : _ENV, self
     YIELD(TT, 300)
-    ;
-    (self.questionResult):SetActive(false)
-    ;
-    (self.questionRoot):SetActive(false)
-    ;
-    (self.storyManager):TouchQuestionResultPanelAndJumpToNextSession()
-    for _,v in pairs(self.playerCtrlMap) do
+    self.questionResult:SetActive(false)
+    self.questionRoot:SetActive(false)
+    self.storyManager:TouchQuestionResultPanelAndJumpToNextSession()
+    for _, v in pairs(self.playerCtrlMap) do
       v:ResetSelectBG()
     end
     self:UnLock("UIXiaoLinJiaStoryController_QuestionResult_out")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryController.FullScreenBtnOnClick = function(self)
-  -- function num : 0_16
-  if (self.storyManager):GetAuto() then
-    (self.storyManager):SetAuto(false)
-    ;
-    (self.autoShow):SetActive(false)
+function UIXiaoLinJiaStoryController:FullScreenBtnOnClick()
+  if self.storyManager:GetAuto() then
+    self.storyManager:SetAuto(false)
+    self.autoShow:SetActive(false)
   else
-    ;
-    (self.storyManager):TouchScreenAndJumpToNextSession()
+    self.storyManager:TouchScreenAndJumpToNextSession()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryController.RecordBtnOnClick = function(self)
-  -- function num : 0_17
-  local auto = (self.storyManager):GetAuto()
+function UIXiaoLinJiaStoryController:RecordBtnOnClick()
+  local auto = self.storyManager:GetAuto()
   if auto then
-    (self.storyManager):SetAuto(false)
-    ;
-    (self.autoShow):SetActive(false)
+    self.storyManager:SetAuto(false)
+    self.autoShow:SetActive(false)
   end
-  local dialogList = (self.storyManager):GetDialogList()
-  local curSession = (self.storyManager):GetCurSessionID()
-  local curQuestionIndex = (self.storyManager):GetCurQuestionIndex()
+  local dialogList = self.storyManager:GetDialogList()
+  local curSession = self.storyManager:GetCurSessionID()
+  local curQuestionIndex = self.storyManager:GetCurQuestionIndex()
   self:ShowDialog("UIXiaoLinJiaReview", curSession, dialogList, self.recordPos, function()
-    -- function num : 0_17_0 , upvalues : auto, self
     if auto then
-      (self.storyManager):SetAuto(true)
-      ;
-      (self.autoShow):SetActive(true)
+      self.storyManager:SetAuto(true)
+      self.autoShow:SetActive(true)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryController.AutoBtnOnClick = function(self)
-  -- function num : 0_18
-  local auto = (self.storyManager):GetAuto()
-  ;
-  (self.storyManager):SetAuto(not auto)
-  ;
-  (self.autoShow):SetActive(not auto)
+function UIXiaoLinJiaStoryController:AutoBtnOnClick()
+  local auto = self.storyManager:GetAuto()
+  self.storyManager:SetAuto(not auto)
+  self.autoShow:SetActive(not auto)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryController.JumpBtnOnClick = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  if (self.storyManager):GetCanJumpSession() then
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_story_skip_confirm"), function(param)
-    -- function num : 0_19_0 , upvalues : self
-    local auto = (self.storyManager):GetAuto()
-    if auto then
-      (self.storyManager):SetAuto(false)
-      ;
-      (self.autoShow):SetActive(false)
-    end
-    ;
-    (self.storyManager):JumpSession()
-  end
-, nil, function(param)
-    -- function num : 0_19_1 , upvalues : _ENV
-    (Log.debug)("###[UIXiaoLinJiaStoryController] 取消")
-  end
-, nil)
+function UIXiaoLinJiaStoryController:JumpBtnOnClick()
+  if self.storyManager:GetCanJumpSession() then
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_story_skip_confirm"), function(param)
+      local auto = self.storyManager:GetAuto()
+      if auto then
+        self.storyManager:SetAuto(false)
+        self.autoShow:SetActive(false)
+      end
+      self.storyManager:JumpSession()
+    end, nil, function(param)
+      Log.debug("###[UIXiaoLinJiaStoryController] 取消")
+    end, nil)
   end
 end
-
-

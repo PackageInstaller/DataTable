@@ -1,41 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n18/enter/ui_n18_homeland_entry_mini_game.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN18HomelandEntryMiniGame", Object)
 UIN18HomelandEntryMiniGame = UIN18HomelandEntryMiniGame
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN18HomelandEntryMiniGame.Constructor = function(self, campaign)
-  -- function num : 0_0
+function UIN18HomelandEntryMiniGame:Constructor(campaign)
   self._campaign = campaign
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18HomelandEntryMiniGame.GetNew = function(self)
-  -- function num : 0_1
+function UIN18HomelandEntryMiniGame:GetNew()
   return false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18HomelandEntryMiniGame.GetRedCount = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local primaryCount, seniorCount = (HomelandFindTreasureConst.GetSingleCount)()
+function UIN18HomelandEntryMiniGame:GetRedCount()
+  local primaryCount, seniorCount = HomelandFindTreasureConst.GetSingleCount()
   return seniorCount
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18HomelandEntryMiniGame.OpenUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (UIActivityHelper.PlayFirstPlot_Component)(self._campaign, ECampaignN18ComponentID.ECAMPAIGN_N18_MINI_GAME, function()
-    -- function num : 0_3_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIFindTreasureDetail", false, ECampaignType.CAMPAIGN_TYPE_N18, ECampaignN18ComponentID.ECAMPAIGN_N18_MINI_GAME)
-  end
-)
+function UIN18HomelandEntryMiniGame:OpenUI()
+  UIActivityHelper.PlayFirstPlot_Component(self._campaign, ECampaignN18ComponentID.ECAMPAIGN_N18_MINI_GAME, function()
+    GameGlobal.UIStateManager():ShowDialog("UIFindTreasureDetail", false, ECampaignType.CAMPAIGN_TYPE_N18, ECampaignN18ComponentID.ECAMPAIGN_N18_MINI_GAME)
+  end)
 end
-
-

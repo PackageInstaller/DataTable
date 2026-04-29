@@ -1,109 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_occupy_tip.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftOccupyTip", Object)
 AircraftOccupyTip = AircraftOccupyTip
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftOccupyTip.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftOccupyTip:Constructor()
   self._reqs = {}
   self._tileCache = {}
   for i = 1, 8 do
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R5 in 'UnsetPending'
-
-    (self._tileCache)[i] = self:loadTile()
+    self._tileCache[i] = self:loadTile()
   end
   self._showTiles = {}
   self._inValidColor = Color(1, 0.067, 0, 0.5098)
   self._validColor = Color(0.394, 0.6424, 0.6792, 0.4)
-  self._mat = (((self._tileCache)[1]):GetComponent(typeof(UnityEngine.MeshRenderer))).sharedMaterial
+  self._mat = self._tileCache[1]:GetComponent(typeof(UnityEngine.MeshRenderer)).sharedMaterial
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftOccupyTip.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  for _,req in pairs(self._reqs) do
+function AircraftOccupyTip:Dispose()
+  for _, req in pairs(self._reqs) do
     req:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftOccupyTip.Show = function(self, grids, rot, valid, gs)
-  -- function num : 0_2 , upvalues : _ENV
+function AircraftOccupyTip:Show(grids, rot, valid, gs)
   if valid then
-    (self._mat):SetColor("_MainColor", self._validColor)
+    self._mat:SetColor("_MainColor", self._validColor)
   else
-    ;
-    (self._mat):SetColor("_MainColor", self._inValidColor)
+    self._mat:SetColor("_MainColor", self._inValidColor)
   end
   local count = #grids
   local num = #self._showTiles - count
   if num < 0 then
     for i = 1, -num do
-      -- DECOMPILER ERROR at PC29: Confused about usage of register: R11 in 'UnsetPending'
-
-      (self._showTiles)[#self._showTiles + 1] = self:getTile()
-      local go = (self._showTiles)[#self._showTiles]
+      self._showTiles[#self._showTiles + 1] = self:getTile()
+      local go = self._showTiles[#self._showTiles]
     end
   else
-    do
-      if num > 0 then
-        for i = 1, num do
-          local t = (self._showTiles)[#self._showTiles]
-          -- DECOMPILER ERROR at PC49: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          (self._showTiles)[#self._showTiles] = nil
-          t:SetActive(false)
-          -- DECOMPILER ERROR at PC57: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          (self._tileCache)[#self._tileCache + 1] = t
-        end
+    if 0 < num then
+      for i = 1, num do
+        local t = self._showTiles[#self._showTiles]
+        self._showTiles[#self._showTiles] = nil
+        t:SetActive(false)
+        self._tileCache[#self._tileCache + 1] = t
       end
-      do
-        for i,tile in ipairs(self._showTiles) do
-          local t = tile.transform
-          t.position = grids[i]
-          t.rotation = rot
-        end
-      end
+    else
     end
+  end
+  for i, tile in ipairs(self._showTiles) do
+    local t = tile.transform
+    t.position = grids[i]
+    t.rotation = rot
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftOccupyTip.Hide = function(self)
-  -- function num : 0_3
+function AircraftOccupyTip:Hide()
   for i = 1, #self._showTiles do
-    local tile = (self._showTiles)[i]
+    local tile = self._showTiles[i]
     tile:SetActive(false)
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._tileCache)[#self._tileCache + 1] = tile
+    self._tileCache[#self._tileCache + 1] = tile
   end
   self._showTiles = {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftOccupyTip.getTile = function(self)
-  -- function num : 0_4
+function AircraftOccupyTip:getTile()
   local cacheCount = #self._tileCache
-  local t = nil
-  if cacheCount > 0 then
-    t = (self._tileCache)[cacheCount]
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._tileCache)[cacheCount] = nil
+  local t
+  if 0 < cacheCount then
+    t = self._tileCache[cacheCount]
+    self._tileCache[cacheCount] = nil
   else
     t = self:loadTile()
   end
@@ -111,16 +72,8 @@ AircraftOccupyTip.getTile = function(self)
   return t
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftOccupyTip.loadTile = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset("AircraftOccupyTile.prefab", LoadType.GameObject)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._reqs)[#self._reqs + 1] = req
+function AircraftOccupyTip:loadTile()
+  local req = ResourceManager:GetInstance():SyncLoadAsset("AircraftOccupyTile.prefab", LoadType.GameObject)
+  self._reqs[#self._reqs + 1] = req
   return req.Obj
 end
-
-

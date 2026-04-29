@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn16n45/sea_note/ui_cn16n45_sea_note_level_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN16N45SeaNoteLevelAwardItem", UICustomWidget)
 UICN16N45SeaNoteLevelAwardItem = UICN16N45SeaNoteLevelAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN16N45SeaNoteLevelAwardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN16N45SeaNoteLevelAwardItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelAwardItem.InitWidget = function(self)
-  -- function num : 0_1
+function UICN16N45SeaNoteLevelAwardItem:InitWidget()
   self.txt = self:GetUIComponent("UILocalizationText", "txt")
   self._trans = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelAwardItem.SetData = function(self, tyoe, id, pass, missionId, _aSheepCom)
-  -- function num : 0_2
+function UICN16N45SeaNoteLevelAwardItem:SetData(tyoe, id, pass, missionId, _aSheepCom)
   self._type = tyoe
   self._id = id
   self._missionId = missionId
@@ -32,58 +19,38 @@ UICN16N45SeaNoteLevelAwardItem.SetData = function(self, tyoe, id, pass, missionI
   self:SetPass(pass)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelAwardItem.SetDetail = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN16N45SeaNoteLevelAwardItem:SetDetail()
   if self._type == CN9SouthSeaRoadType.Normal then
     self.cfg = Cfg.cfg_component_asheep_mission
-    local awards = ((self.cfg)[self._id]).Rewards
+    local awards = self.cfg[self._id].Rewards
     self:_SetIcon(awards)
-    ;
-    (self.txt):SetText((StringTable.Get)("str_cn9_awards_tip1"))
+    self.txt:SetText(StringTable.Get("str_cn9_awards_tip1"))
   else
-    do
-      local campaignId = (self._ASheepCom):GetComponentCfgId()
-      self.specialCfg = (Cfg.cfg_component_asheep_mission_reward)({ComponentID = campaignId})
-      local ScoreLimit = ((self.specialCfg)[self._id]).ScoreLimit
-      local awards = ((self.specialCfg)[self._id]).Rewards
-      self:_SetIcon(awards)
-      ;
-      (self.txt):SetText((StringTable.Get)("str_cn9_awards_tip2") .. " " .. ScoreLimit)
-    end
+    local campaignId = self._ASheepCom:GetComponentCfgId()
+    self.specialCfg = Cfg.cfg_component_asheep_mission_reward({ComponentID = campaignId})
+    local ScoreLimit = self.specialCfg[self._id].ScoreLimit
+    local awards = self.specialCfg[self._id].Rewards
+    self:_SetIcon(awards)
+    self.txt:SetText(StringTable.Get("str_cn9_awards_tip2") .. " " .. ScoreLimit)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelAwardItem.SetPass = function(self, pass)
-  -- function num : 0_4 , upvalues : _ENV
-  for i,v in ipairs(self.list) do
+function UICN16N45SeaNoteLevelAwardItem:SetPass(pass)
+  for i, v in ipairs(self.list) do
     v:SetPass(pass)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelAwardItem._SetIcon = function(self, awards)
-  -- function num : 0_5 , upvalues : _ENV
+function UICN16N45SeaNoteLevelAwardItem:_SetIcon(awards)
   local pool = self:GetUIComponent("UISelectObjectPath", "awards")
   self.list = pool:SpawnObjects("UICN16N45SeaNoteLevelAwardOneItem", #awards)
-  for i,v in ipairs(self.list) do
+  for i, v in ipairs(self.list) do
     v:SetData(awards[i], function(id)
-    -- function num : 0_5_0 , upvalues : self
-    self:ClickItem(id)
-  end
-, self._missionId, i)
+      self:ClickItem(id)
+    end, self._missionId, i)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelAwardItem.ClickItem = function(self, id)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowItemTips, id, ((self._trans).transform).position)
+function UICN16N45SeaNoteLevelAwardItem:ClickItem(id)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowItemTips, id, self._trans.transform.position)
 end
-
-

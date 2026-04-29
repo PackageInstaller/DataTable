@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/common/stn_common_wait_game_event.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("Common_WaitGameEvent", CTestRobot_Base)
 Common_WaitGameEvent = Common_WaitGameEvent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Common_WaitGameEvent.Constructor = function(self, pManger, nEventType, timeout)
-  -- function num : 0_0
+function Common_WaitGameEvent:Constructor(pManger, nEventType, timeout)
   self.m_nEventType = nEventType
   self.m_callback = nil
   self.m_bEventTrigger = false
@@ -18,60 +11,36 @@ Common_WaitGameEvent.Constructor = function(self, pManger, nEventType, timeout)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Common_WaitGameEvent.OnBegin = function(self, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  self.m_nWaitStart = (os.clock)()
+function Common_WaitGameEvent:OnBegin(...)
+  self.m_nWaitStart = os.clock()
   self.m_bEventTrigger = false
   self:_AddListener()
-  return ((Common_WaitGameEvent.super).OnBegin)(self, ...)
+  return Common_WaitGameEvent.super.OnBegin(self, ...)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Common_WaitGameEvent.OnWorking = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC12: Unhandled construct in 'MakeBoolean' P3
-
-  local isTimeout = (self._maxTimeoutMS and self._maxTimeoutMS < (os.clock)() - self.m_nWaitStart)
+function Common_WaitGameEvent:OnWorking()
+  local isTimeout = self._maxTimeoutMS and os.clock() - self.m_nWaitStart > self._maxTimeoutMS or false
   if not self.m_bEventTrigger and not isTimeout then
     return false
   end
-  do return ((Common_WaitGameEvent.super).OnWorking)(self) end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return Common_WaitGameEvent.super.OnWorking(self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Common_WaitGameEvent.OnEnd = function(self, ...)
-  -- function num : 0_3 , upvalues : _ENV
+function Common_WaitGameEvent:OnEnd(...)
   self:_RemoveListener()
-  return ((Common_WaitGameEvent.super).OnEnd)(self, ...)
+  return Common_WaitGameEvent.super.OnEnd(self, ...)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Common_WaitGameEvent._AddListener = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self.m_callback = (GameHelper:GetInstance()):CreateCallback(self._OnEvent, self)
-  ;
-  (((self.m_pGameCenter).EventDispatcher)()):AddCallbackListener(self.m_nEventType, self.m_callback)
+function Common_WaitGameEvent:_AddListener()
+  self.m_callback = GameHelper:GetInstance():CreateCallback(self._OnEvent, self)
+  self.m_pGameCenter.EventDispatcher():AddCallbackListener(self.m_nEventType, self.m_callback)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Common_WaitGameEvent._RemoveListener = function(self)
-  -- function num : 0_5
-  (((self.m_pGameCenter).EventDispatcher)()):RemoveCallbackListener(self.m_nEventType, self.m_callback)
+function Common_WaitGameEvent:_RemoveListener()
+  self.m_pGameCenter.EventDispatcher():RemoveCallbackListener(self.m_nEventType, self.m_callback)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Common_WaitGameEvent._OnEvent = function(self, ...)
-  -- function num : 0_6
+function Common_WaitGameEvent:_OnEvent(...)
   self.m_bEventTrigger = true
   self:Log(self, "WaitEvent Trigger Event = ", self.m_nEventType)
 end
-
-

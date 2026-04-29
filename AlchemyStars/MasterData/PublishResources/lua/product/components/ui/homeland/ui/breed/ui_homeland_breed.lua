@@ -1,40 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/breed/ui_homeland_breed.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBreed", UIController)
 UIHomelandBreed = UIHomelandBreed
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBreed.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandBreed:Constructor()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
   self._curBreedUIType = nil
   self._breedWidget = {}
   self._breedTypeState = {}
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._breedTypeState)[HomelandBreedUIType.Mutation] = HomelandBreedState.None
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._breedTypeState)[HomelandBreedUIType.Clone] = HomelandBreedState.None
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._breedTypeState)[HomelandBreedUIType.StateChg] = HomelandBreedState.None
+  self._breedTypeState[HomelandBreedUIType.Mutation] = HomelandBreedState.None
+  self._breedTypeState[HomelandBreedUIType.Clone] = HomelandBreedState.None
+  self._breedTypeState[HomelandBreedUIType.StateChg] = HomelandBreedState.None
   self._atlas = self:GetAsset("UIHomelandBreed.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreed.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandBreed:OnShow(uiParams)
   self.breedLand = uiParams[1]
-  self.buildingPstId = ((self.breedLand):GetArchitecture()).pstid
+  self.buildingPstId = self.breedLand:GetArchitecture().pstid
   self._landCultivationInfo = self:_GetCurBuildBreedInfo(self.buildingPstId)
   self:_GetComponents()
   self:_OnValue()
@@ -42,142 +23,78 @@ UIHomelandBreed.OnShow = function(self, uiParams)
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreed._AttachEvents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandBreed:_AttachEvents()
   self:AttachEvent(GameEventType.HomelandCloseBreedUI, self.OnHomelandCloseBreedUI)
   self:AttachEvent(GameEventType.HomelandFriendSpeed, self.OnHomelandFriendSpeed)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreed.OnHomelandCloseBreedUI = function(self)
-  -- function num : 0_3
+function UIHomelandBreed:OnHomelandCloseBreedUI()
   self:_Close()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreed._GetComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandBreed:_GetComponents()
   self._backBtn = self:GetUIComponent("UISelectObjectPath", "BackBtn")
-  self._commonBackBtn = (self._backBtn):SpawnObject("UIHomeCommonCloseBtn")
-  ;
-  (self._commonBackBtn):SetData(function()
-    -- function num : 0_4_0 , upvalues : self
+  self._commonBackBtn = self._backBtn:SpawnObject("UIHomeCommonCloseBtn")
+  self._commonBackBtn:SetData(function()
     self:_Close()
-  end
-, function()
-    -- function num : 0_4_1 , upvalues : self
+  end, function()
     self:ShowDialog("UIHomeHelpController", "UIHomelandBreed")
-  end
-)
+  end)
   self._breed = {}
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._breed)[HomelandBreedUIType.Mutation] = self:GetGameObject("Mutation")
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._breed)[HomelandBreedUIType.Clone] = self:GetGameObject("Clone")
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._breed)[HomelandBreedUIType.StateChg] = self:GetGameObject("StateChg")
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._breed)[HomelandBreedUIType.Manual] = self:GetGameObject("Manual")
+  self._breed[HomelandBreedUIType.Mutation] = self:GetGameObject("Mutation")
+  self._breed[HomelandBreedUIType.Clone] = self:GetGameObject("Clone")
+  self._breed[HomelandBreedUIType.StateChg] = self:GetGameObject("StateChg")
+  self._breed[HomelandBreedUIType.Manual] = self:GetGameObject("Manual")
   self._breedBtnImg = {}
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._breedBtnImg)[HomelandBreedUIType.Mutation] = self:GetUIComponent("Image", "MutationBtn")
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._breedBtnImg)[HomelandBreedUIType.Clone] = self:GetUIComponent("Image", "CloneBtn")
-  -- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._breedBtnImg)[HomelandBreedUIType.StateChg] = self:GetUIComponent("Image", "StateChgBtn")
-  -- DECOMPILER ERROR at PC78: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._breedBtnImg)[HomelandBreedUIType.Manual] = self:GetUIComponent("Image", "ManualBtn")
+  self._breedBtnImg[HomelandBreedUIType.Mutation] = self:GetUIComponent("Image", "MutationBtn")
+  self._breedBtnImg[HomelandBreedUIType.Clone] = self:GetUIComponent("Image", "CloneBtn")
+  self._breedBtnImg[HomelandBreedUIType.StateChg] = self:GetUIComponent("Image", "StateChgBtn")
+  self._breedBtnImg[HomelandBreedUIType.Manual] = self:GetUIComponent("Image", "ManualBtn")
   self._breedUI = {}
-  -- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._breedUI)[HomelandBreedUIType.Mutation] = self:GetUIComponent("UISelectObjectPath", "Mutation")
-  -- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._breedUI)[HomelandBreedUIType.Clone] = self:GetUIComponent("UISelectObjectPath", "Clone")
-  -- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._breedUI)[HomelandBreedUIType.StateChg] = self:GetUIComponent("UISelectObjectPath", "StateChg")
-  -- DECOMPILER ERROR at PC112: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._breedUI)[HomelandBreedUIType.Manual] = self:GetUIComponent("UISelectObjectPath", "Manual")
+  self._breedUI[HomelandBreedUIType.Mutation] = self:GetUIComponent("UISelectObjectPath", "Mutation")
+  self._breedUI[HomelandBreedUIType.Clone] = self:GetUIComponent("UISelectObjectPath", "Clone")
+  self._breedUI[HomelandBreedUIType.StateChg] = self:GetUIComponent("UISelectObjectPath", "StateChg")
+  self._breedUI[HomelandBreedUIType.Manual] = self:GetUIComponent("UISelectObjectPath", "Manual")
   self._mutationBgObj = self:GetGameObject("MutationBg")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreed._OnValue = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandBreed:_OnValue()
   local defaultType = HomelandBreedUIType.Mutation
   self._breedState = HomelandBreedState.None
-  do
-    if self._landCultivationInfo then
-      local remainTime = (self._homelandModule):GetLandEndTime(self._landCultivationInfo) - (self._svrTimeModule):GetServerTime() * 0.001
-      if #((self._landCultivationInfo).client_info).mutation_cultivation > 0 then
-        defaultType = HomelandBreedUIType.Mutation
-        if remainTime <= 0 then
-          self._breedState = HomelandBreedState.MutationReap
-        else
-          self._breedState = HomelandBreedState.Mutationing
-        end
-        -- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._breedTypeState)[defaultType] = self._breedState
+  if self._landCultivationInfo then
+    local remainTime = self._homelandModule:GetLandEndTime(self._landCultivationInfo) - self._svrTimeModule:GetServerTime() * 0.001
+    if #self._landCultivationInfo.client_info.mutation_cultivation > 0 then
+      defaultType = HomelandBreedUIType.Mutation
+      if remainTime <= 0 then
+        self._breedState = HomelandBreedState.MutationReap
+      else
+        self._breedState = HomelandBreedState.Mutationing
       end
-      if #((self._landCultivationInfo).client_info).directional_cultivation > 0 then
-        defaultType = HomelandBreedUIType.Clone
-        if remainTime <= 0 then
-          self._breedState = HomelandBreedState.CloneReap
-        else
-          self._breedState = HomelandBreedState.Cloning
-        end
-        -- DECOMPILER ERROR at PC56: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._breedTypeState)[defaultType] = self._breedState
-      end
+      self._breedTypeState[defaultType] = self._breedState
     end
-    self:_ChangeBreedUIType(defaultType)
+    if 0 < #self._landCultivationInfo.client_info.directional_cultivation then
+      defaultType = HomelandBreedUIType.Clone
+      if remainTime <= 0 then
+        self._breedState = HomelandBreedState.CloneReap
+      else
+        self._breedState = HomelandBreedState.Cloning
+      end
+      self._breedTypeState[defaultType] = self._breedState
+    end
   end
+  self:_ChangeBreedUIType(defaultType)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreed._ChangeBreedUIType = function(self, breedUIType)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandBreed:_ChangeBreedUIType(breedUIType)
   if self._curBreedUIType == breedUIType then
-    return 
+    return
   end
   if self:_BreedMutex(breedUIType) then
-    return 
+    return
   end
   self._curBreedUIType = breedUIType
-  for _,_type in pairs(HomelandBreedUIType) do
-    ((self._breed)[_type]):SetActive(_type == self._curBreedUIType)
+  for _, _type in pairs(HomelandBreedUIType) do
+    self._breed[_type]:SetActive(_type == self._curBreedUIType)
     local spriteName = "n17_plant_di3"
     if _type == HomelandBreedUIType.Manual then
       spriteName = "n17_plant_di5"
@@ -185,132 +102,80 @@ UIHomelandBreed._ChangeBreedUIType = function(self, breedUIType)
     if _type == self._curBreedUIType then
       spriteName = "n17_plant_di2"
     end
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((self._breedBtnImg)[_type]).sprite = (self._atlas):GetSprite(spriteName)
+    self._breedBtnImg[_type].sprite = self._atlas:GetSprite(spriteName)
   end
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._breedWidget)[self._curBreedUIType] then
-    (self._breedWidget)[self._curBreedUIType] = ((self._breedUI)[self._curBreedUIType]):SpawnObject(HomelandBreedUIWidget[self._curBreedUIType])
+  if not self._breedWidget[self._curBreedUIType] then
+    self._breedWidget[self._curBreedUIType] = self._breedUI[self._curBreedUIType]:SpawnObject(HomelandBreedUIWidget[self._curBreedUIType])
   end
-  ;
-  ((self._breedWidget)[self._curBreedUIType]):SetData(self._landCultivationInfo)
-  ;
-  (self._mutationBgObj):SetActive(self._curBreedUIType == HomelandBreedUIType.Mutation or self._curBreedUIType == HomelandBreedUIType.StateChg)
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  self._breedWidget[self._curBreedUIType]:SetData(self._landCultivationInfo)
+  self._mutationBgObj:SetActive(self._curBreedUIType == HomelandBreedUIType.Mutation or self._curBreedUIType == HomelandBreedUIType.StateChg)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreed.Update = function(self, deltaTime)
-  -- function num : 0_7
-  if (self._breedWidget)[self._curBreedUIType] then
-    ((self._breedWidget)[self._curBreedUIType]):Update(deltaTime)
+function UIHomelandBreed:Update(deltaTime)
+  if self._breedWidget[self._curBreedUIType] then
+    self._breedWidget[self._curBreedUIType]:Update(deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreed._Close = function(self)
-  -- function num : 0_8
+function UIHomelandBreed:_Close()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreed.MutationBtnOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHomelandBreed:MutationBtnOnClick(go)
   self:_ChangeBreedUIType(HomelandBreedUIType.Mutation)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreed.CloneBtnOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
+function UIHomelandBreed:CloneBtnOnClick(go)
   self:_ChangeBreedUIType(HomelandBreedUIType.Clone)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreed.StateChgBtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHomelandBreed:StateChgBtnOnClick(go)
   self:_ChangeBreedUIType(HomelandBreedUIType.StateChg)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreed.ManualBtnOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHomelandBreed:ManualBtnOnClick(go)
   self:_ChangeBreedUIType(HomelandBreedUIType.Manual)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreed._GetCurBuildBreedInfo = function(self, pstId)
-  -- function num : 0_13
-  self._cultivationInfo = ((self._homelandModule):GetHomelandInfo()).cultivation_info
-  return ((self._cultivationInfo).land_cultivation_infos)[pstId]
+function UIHomelandBreed:_GetCurBuildBreedInfo(pstId)
+  self._cultivationInfo = self._homelandModule:GetHomelandInfo().cultivation_info
+  return self._cultivationInfo.land_cultivation_infos[pstId]
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreed._BreedMutex = function(self, uiType)
-  -- function num : 0_14 , upvalues : _ENV
+function UIHomelandBreed:_BreedMutex(uiType)
   if uiType == HomelandBreedUIType.Manual then
     return false
   end
-  if (self._breedTypeState)[uiType] ~= self._breedState then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_breed_breeding", (StringTable.Get)(HomelandBreedTypeStr[self._breedState])))
+  if self._breedTypeState[uiType] ~= self._breedState then
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_breed_breeding", StringTable.Get(HomelandBreedTypeStr[self._breedState])))
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreed.GetCurBreedState = function(self)
-  -- function num : 0_15
+function UIHomelandBreed:GetCurBreedState()
   return self._breedState
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreed.SetCurBreedState = function(self, state)
-  -- function num : 0_16
+function UIHomelandBreed:SetCurBreedState(state)
   self._breedState = state
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._breedTypeState)[self._curBreedUIType] = self._breedState
+  self._breedTypeState[self._curBreedUIType] = self._breedState
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreed.RefreshCultivationInfo = function(self)
-  -- function num : 0_17
+function UIHomelandBreed:RefreshCultivationInfo()
   self._landCultivationInfo = self:_GetCurBuildBreedInfo(self.buildingPstId)
   return self._landCultivationInfo
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreed.OnHomelandFriendSpeed = function(self, pstId)
-  -- function num : 0_18
+function UIHomelandBreed:OnHomelandFriendSpeed(pstId)
   if self.buildingPstId ~= pstId then
-    return 
+    return
   end
-  if (self._breedWidget)[self._curBreedUIType] then
-    ((self._breedWidget)[self._curBreedUIType]):RefreshBreedInfo(self:RefreshCultivationInfo())
+  if self._breedWidget[self._curBreedUIType] then
+    self._breedWidget[self._curBreedUIType]:RefreshBreedInfo(self:RefreshCultivationInfo())
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreed._CheckGuide = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIHomelandBreed)
+function UIHomelandBreed:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIHomelandBreed)
 end
-
-

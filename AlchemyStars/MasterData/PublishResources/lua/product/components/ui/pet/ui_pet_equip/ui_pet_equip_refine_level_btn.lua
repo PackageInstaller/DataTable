@@ -1,66 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_refine_level_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipRefineLevelBtn", UICustomWidget)
 UIPetEquipRefineLevelBtn = UIPetEquipRefineLevelBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipRefineLevelBtn.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetEquipRefineLevelBtn:OnShow(uiParams)
   self:InitWidget()
   self._atlas = self:GetAsset("UIPetEquip.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefineLevelBtn.InitWidget = function(self)
-  -- function num : 0_1
+function UIPetEquipRefineLevelBtn:InitWidget()
   self.imgLevel = self:GetUIComponent("Image", "imgLevel")
   self.maskGo = self:GetGameObject("maskGo")
   self.selectGo = self:GetGameObject("selectGo")
   self.animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefineLevelBtn.SetData = function(self, bgName, clickCall)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self.imgLevel).sprite = (self._atlas):GetSprite(bgName)
+function UIPetEquipRefineLevelBtn:SetData(bgName, clickCall)
+  self.imgLevel.sprite = self._atlas:GetSprite(bgName)
   self.clickCall = clickCall
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefineLevelBtn.ImgLevelOnClick = function(self, go)
-  -- function num : 0_3
+function UIPetEquipRefineLevelBtn:ImgLevelOnClick(go)
   if self.clickCall then
-    (self.clickCall)()
+    self.clickCall()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefineLevelBtn.SetSelect = function(self, bSelect)
-  -- function num : 0_4
+function UIPetEquipRefineLevelBtn:SetSelect(bSelect)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefineLevelBtn.HideMask = function(self, bHide)
-  -- function num : 0_5
+function UIPetEquipRefineLevelBtn:HideMask(bHide)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefineLevelBtn.PlayAni = function(self, aniName)
-  -- function num : 0_6
+function UIPetEquipRefineLevelBtn:PlayAni(aniName)
   if self.animation then
-    (self.animation):Play(aniName)
+    self.animation:Play(aniName)
   end
 end
-
-

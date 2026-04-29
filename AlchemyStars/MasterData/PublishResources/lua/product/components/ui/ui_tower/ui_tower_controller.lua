@@ -1,58 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_tower/ui_tower_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITowerController", UIController)
 UITowerController = UITowerController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITowerController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
+function UITowerController:LoadDataOnEnter(TT, res)
   local module = self:GetModule(TowerModule)
   local result, data = module:ReqPlayerTowerData(TT)
   if result:GetSucc() then
-    (Log.notice)("[Tower] 请求尖塔数据成功，打开ui")
+    Log.notice("[Tower] 请求尖塔数据成功，打开ui")
     res:SetSucc(true)
   else
-    ;
-    (ToastManager.ShowToast)(module:GetErrorMsg(result:GetResult()))
+    ToastManager.ShowToast(module:GetErrorMsg(result:GetResult()))
     res:SetSucc(false)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UITowerController:OnShow(uiParams)
   local cfgID = uiParams[1]
   local topButton = self:GetUIComponent("UISelectObjectPath", "TopButtons")
   self.topButtonWidget = topButton:SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_1_0 , upvalues : self, _ENV
+  self.topButtonWidget:SetData(function()
     self:SwitchState(UIStateType.UIDiscovery)
-  end
-, nil, function()
-    -- function num : 0_1_1 , upvalues : self, _ENV
+  end, nil, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-, nil, nil)
+  end, nil, nil)
   local passAward = self:GetUIComponent("UISelectObjectPath", "PassAward")
   self._passAwardObj = self:GetGameObject("PassAward")
   self._passAwardWidget = passAward:SpawnObject("UITowerPassAwardEntrance")
-  ;
-  (self._passAwardWidget):SetData()
+  self._passAwardWidget:SetData()
   self:InitWidget()
   self._module = self:GetModule(TowerModule)
-  self.waterTower = (self.water):SpawnObject("UITowerInfoItem")
-  self.fireTower = (self.fire):SpawnObject("UITowerInfoItem")
-  self.woodTower = (self.wood):SpawnObject("UITowerInfoItem")
-  self.thunderTower = (self.thunder):SpawnObject("UITowerInfoItem")
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+  self.waterTower = self.water:SpawnObject("UITowerInfoItem")
+  self.fireTower = self.fire:SpawnObject("UITowerInfoItem")
+  self.woodTower = self.wood:SpawnObject("UITowerInfoItem")
+  self.thunderTower = self.thunder:SpawnObject("UITowerInfoItem")
+  local mRole = GameGlobal.GetModule(RoleModule)
   local psdId = mRole:GetPstId()
   local key = "UITowerDiffcult" .. psdId
-  if (LocalDB.GetInt)(key, 0) == 1 then
+  if LocalDB.GetInt(key, 0) == 1 then
     self.click = false
     self:SetDiffclut()
   else
@@ -63,54 +46,42 @@ UITowerController.OnShow = function(self, uiParams)
     self:ShowTower(cfgID)
   end
   self._module = self:GetModule(TowerModule)
-  local showLevel = ((Cfg.cfg_global).difficulty_tower_show_level).IntValue
+  local showLevel = Cfg.cfg_global.difficulty_tower_show_level.IntValue
   for i = 1, 4 do
-    local cur = (self._module):GetTowerLayer(i)
-    if cur < showLevel then
+    local cur = self._module:GetTowerLayer(i)
+    if showLevel > cur then
       self._passShowLevel = false
     else
       self._passShowLevel = true
       break
     end
   end
-  do
-    ;
-    (self.change):SetActive(self._passShowLevel)
-    for i = 1, 4 do
-      local ceiling = (self._module):GetTowerCeiling(i)
-      local cur = (self._module):GetTowerLayer(i)
-      if cur < ceiling then
-        self._passAllTower = false
-        break
-      else
-        self._passAllTower = true
-      end
+  self.change:SetActive(self._passShowLevel)
+  for i = 1, 4 do
+    local ceiling = self._module:GetTowerCeiling(i)
+    local cur = self._module:GetTowerLayer(i)
+    if ceiling > cur then
+      self._passAllTower = false
+      break
+    else
+      self._passAllTower = true
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerController.ShowTower = function(self, id)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_tower_detail)[id]
+function UITowerController:ShowTower(id)
+  local cfg = Cfg.cfg_tower_detail[id]
   if cfg == nil then
-    (Log.exception)("[Tower] 尖塔初始化参数错误，不能默认打开尖塔。id:", id)
-    return 
+    Log.exception("[Tower] 尖塔初始化参数错误，不能默认打开尖塔。id:", id)
+    return
   end
   self:SwitchState(UIStateType.UITowerLayer, cfg.Type)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerController.OnHide = function(self)
-  -- function num : 0_3
+function UITowerController:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerController.InitWidget = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UITowerController:InitWidget()
   self.water = self:GetUIComponent("UISelectObjectPath", "water")
   self.fire = self:GetUIComponent("UISelectObjectPath", "fire")
   self.wood = self:GetUIComponent("UISelectObjectPath", "wood")
@@ -124,129 +95,76 @@ UITowerController.InitWidget = function(self)
   self.atlas = self:GetAsset("UITower.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerController.GetBtn = function(self, index)
-  -- function num : 0_5
+function UITowerController:GetBtn(index)
   if index == 1 then
-    return (self.waterTower):GetGameObject("Image")
-  else
-    if index == 2 then
-      return (self.fireTower):GetGameObject("Image")
-    else
-      if index == 3 then
-        return (self.woodTower):GetGameObject("Image")
-      else
-        if index == 4 then
-          return (self.thunderTower):GetGameObject("Image")
-        end
-      end
-    end
+    return self.waterTower:GetGameObject("Image")
+  elseif index == 2 then
+    return self.fireTower:GetGameObject("Image")
+  elseif index == 3 then
+    return self.woodTower:GetGameObject("Image")
+  elseif index == 4 then
+    return self.thunderTower:GetGameObject("Image")
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerController.Clear = function(self)
-  -- function num : 0_6
-  (self.water):ClearWidgets()
-  ;
-  (self.fire):ClearWidgets()
-  ;
-  (self.wood):ClearWidgets()
-  ;
-  (self.thunder):ClearWidgets()
-  self.waterTower = (self.water):SpawnObject("UITowerInfoItem")
-  self.fireTower = (self.fire):SpawnObject("UITowerInfoItem")
-  self.woodTower = (self.wood):SpawnObject("UITowerInfoItem")
-  self.thunderTower = (self.thunder):SpawnObject("UITowerInfoItem")
+function UITowerController:Clear()
+  self.water:ClearWidgets()
+  self.fire:ClearWidgets()
+  self.wood:ClearWidgets()
+  self.thunder:ClearWidgets()
+  self.waterTower = self.water:SpawnObject("UITowerInfoItem")
+  self.fireTower = self.fire:SpawnObject("UITowerInfoItem")
+  self.woodTower = self.wood:SpawnObject("UITowerInfoItem")
+  self.thunderTower = self.thunder:SpawnObject("UITowerInfoItem")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerController.SetNormal = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._passAwardObj):SetActive(true)
-  ;
-  (self.txt):SetText((StringTable.Get)("str_tower_normal_model"))
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.icon).sprite = (self.atlas):GetSprite("ht_gqxq_di10")
-  ;
-  (self.bg):LoadImage("tower_xuanze_bg")
-  ;
-  (self.btmMask):SetActive(false)
-  ;
-  (self.waterTower):SetData(TowerElementType.TowerElementType_Blue)
-  ;
-  (self.fireTower):SetData(TowerElementType.TowerElementType_Red)
-  ;
-  (self.woodTower):SetData(TowerElementType.TowerElementType_Green)
-  ;
-  (self.thunderTower):SetData(TowerElementType.TowerElementType_Yellow)
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.changeRT)
+function UITowerController:SetNormal()
+  self._passAwardObj:SetActive(true)
+  self.txt:SetText(StringTable.Get("str_tower_normal_model"))
+  self.icon.sprite = self.atlas:GetSprite("ht_gqxq_di10")
+  self.bg:LoadImage("tower_xuanze_bg")
+  self.btmMask:SetActive(false)
+  self.waterTower:SetData(TowerElementType.TowerElementType_Blue)
+  self.fireTower:SetData(TowerElementType.TowerElementType_Red)
+  self.woodTower:SetData(TowerElementType.TowerElementType_Green)
+  self.thunderTower:SetData(TowerElementType.TowerElementType_Yellow)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.changeRT)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerController.SetDiffclut = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (self._passAwardObj):SetActive(false)
-  ;
-  (self.txt):SetText((StringTable.Get)("str_tower_diffcult_model"))
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.icon).sprite = (self.atlas):GetSprite("ht_gqxq_di09")
-  ;
-  (self.bg):LoadImage("ht_gqxq_di01")
-  ;
-  (self.btmMask):SetActive(true)
-  ;
-  (self.waterTower):SetData(TowerElementType.TowerElementType_Difficulty_Blue)
-  ;
-  (self.fireTower):SetData(TowerElementType.TowerElementType_Difficulty_Red)
-  ;
-  (self.woodTower):SetData(TowerElementType.TowerElementType_Difficulty_Green)
-  ;
-  (self.thunderTower):SetData(TowerElementType.TowerElementType_Difficulty_Yellow)
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.changeRT)
+function UITowerController:SetDiffclut()
+  self._passAwardObj:SetActive(false)
+  self.txt:SetText(StringTable.Get("str_tower_diffcult_model"))
+  self.icon.sprite = self.atlas:GetSprite("ht_gqxq_di09")
+  self.bg:LoadImage("ht_gqxq_di01")
+  self.btmMask:SetActive(true)
+  self.waterTower:SetData(TowerElementType.TowerElementType_Difficulty_Blue)
+  self.fireTower:SetData(TowerElementType.TowerElementType_Difficulty_Red)
+  self.woodTower:SetData(TowerElementType.TowerElementType_Difficulty_Green)
+  self.thunderTower:SetData(TowerElementType.TowerElementType_Difficulty_Yellow)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.changeRT)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerController.Change = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function UITowerController:Change()
+  local mRole = GameGlobal.GetModule(RoleModule)
   local psdId = mRole:GetPstId()
   local key = "UITowerDiffcult" .. psdId
   if self.click then
-    (LocalDB.SetInt)(key, 1)
+    LocalDB.SetInt(key, 1)
     self:Clear()
     self:SetDiffclut()
     self.click = false
   else
-    ;
-    (LocalDB.SetInt)(key, 0)
+    LocalDB.SetInt(key, 0)
     self:Clear()
     self:SetNormal()
     self.click = true
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerController.ChangeOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UITowerController:ChangeOnClick()
   if self._passAllTower then
     self:Change()
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_tower_not_open_tips"))
+    ToastManager.ShowToast(StringTable.Get("str_tower_not_open_tips"))
   end
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_transposition_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillTranspositionPhase", PlaySkillPhaseBase)
 PlaySkillTranspositionPhase = PlaySkillTranspositionPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillTranspositionPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillTranspositionPhase:PlayFlight(TT, casterEntity, phaseParam)
   local effectParam = phaseParam
   self._flyEffectID = effectParam:GetFlyEffectID()
   local anim1 = effectParam:GetAnim1()
@@ -23,18 +16,18 @@ PlaySkillTranspositionPhase.PlayFlight = function(self, TT, casterEntity, phaseP
   local delayFlyTime = effectParam:GetDelayFlyTime()
   self._oneGridFlyTime = effectParam:GetOneGridFlyTime()
   local finishTime = effectParam:GetFinishTime()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local teleportEffectResultAll = skillEffectResultContainer:GetEffectResultByArrayAll(SkillEffectType.Teleport)
   if not teleportEffectResultAll then
-    return 
+    return
   end
   local casterResult = teleportEffectResultAll[1]
   local targetResult = teleportEffectResultAll[2]
   if not casterResult or not targetResult then
-    return 
+    return
   end
   local targetEntityID = targetResult:GetTargetID()
-  local targetEntity = (self._world):GetEntityByID(targetEntityID)
+  local targetEntity = self._world:GetEntityByID(targetEntityID)
   if effectParam:IsUseSuper() and casterEntity:HasSuperEntity() then
     casterEntity = casterEntity:GetSuperEntity()
   end
@@ -50,11 +43,11 @@ PlaySkillTranspositionPhase.PlayFlight = function(self, TT, casterEntity, phaseP
   if otherMaterialAnim then
     targetEntity:PlayMaterialAnim(otherMaterialAnim)
   end
-  local effectService = (self._world):GetService("Effect")
+  local effectService = self._world:GetService("Effect")
   effectService:CreateEffect(mainEffectID1, casterEntity)
   effectService:CreateEffect(mainEffectID1, targetEntity)
   YIELD(TT, delayFlyTime)
-  local playSkillInstructionService = (self._world):GetService("PlaySkillInstruction")
+  local playSkillInstructionService = self._world:GetService("PlaySkillInstruction")
   playSkillInstructionService:Teleport(TT, casterEntity, RoleShowType.TeleportHide, false, casterResult)
   playSkillInstructionService:Teleport(TT, targetEntity, RoleShowType.TeleportHide, false, targetResult)
   self:_ShowShowLineRenderer(casterEntity, false)
@@ -66,9 +59,9 @@ PlaySkillTranspositionPhase.PlayFlight = function(self, TT, casterEntity, phaseP
   playSkillInstructionService:Teleport(TT, targetEntity, RoleShowType.TeleportMove, false, targetResult)
   playSkillInstructionService:Teleport(TT, casterEntity, RoleShowType.TeleportShow, false, casterResult)
   playSkillInstructionService:Teleport(TT, targetEntity, RoleShowType.TeleportShow, false, targetResult)
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   local teamLeaderEntity = teamEntity:GetTeamLeaderPetEntity()
-  local resvc = (self._world):GetService("RenderEntity")
+  local resvc = self._world:GetService("RenderEntity")
   resvc:TurnToTarget(casterEntity, teamLeaderEntity)
   resvc:TurnToTarget(targetEntity, teamLeaderEntity)
   self:_ShowShowLineRenderer(casterEntity, true)
@@ -86,105 +79,80 @@ PlaySkillTranspositionPhase.PlayFlight = function(self, TT, casterEntity, phaseP
   YIELD(TT, finishTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillTranspositionPhase._OnPlayBezier = function(self, casterEntity, targetEntity, dir)
-  -- function num : 0_1 , upvalues : _ENV
-  local playSkillService = (self._world):GetService("PlaySkill")
+function PlaySkillTranspositionPhase:_OnPlayBezier(casterEntity, targetEntity, dir)
+  local playSkillService = self._world:GetService("PlaySkill")
   local casterBoneTransform = playSkillService:GetEntityRenderSelectBoneTransform(casterEntity, "Hit")
   local casterPos = casterBoneTransform.position
   local targetBoneTransform = playSkillService:GetEntityRenderSelectBoneTransform(targetEntity, "Hit")
   local targetPos = targetBoneTransform.position
-  local effectService = (self._world):GetService("Effect")
+  local effectService = self._world:GetService("Effect")
   local effectEntity = effectService:CreatePositionEffect(self._flyEffectID, casterPos)
-  local go = (effectEntity:View()):GetGameObject()
+  local go = effectEntity:View():GetGameObject()
   local path = {}
-  ;
-  (table.insert)(path, (go.transform).position)
-  local flyDis = (Vector3.Distance)(targetPos, casterPos)
+  table.insert(path, go.transform.position)
+  local flyDis = Vector3.Distance(targetPos, casterPos)
   local flyDir = targetPos - casterPos
   local curNormalized = (targetPos - casterPos).normalized
-  local verticalNormalized = (Vector3(-curNormalized.z / curNormalized.x, 0, 1)).normalized
+  local verticalNormalized = Vector3(-curNormalized.z / curNormalized.x, 0, 1).normalized
   local verticalDis = verticalNormalized * flyDis
-  local pathFirstPos = (Vector3.Lerp)(casterPos, targetPos, 0.25)
+  local pathFirstPos = Vector3.Lerp(casterPos, targetPos, 0.25)
   pathFirstPos = pathFirstPos + verticalDis / 4 * dir
-  ;
-  (table.insert)(path, pathFirstPos)
-  local pathSecondPos = (Vector3.Lerp)(casterPos, targetPos, 0.5)
-  ;
-  (table.insert)(path, pathSecondPos)
-  local pathThirdPos = (Vector3.Lerp)(casterPos, targetPos, 0.8)
+  table.insert(path, pathFirstPos)
+  local pathSecondPos = Vector3.Lerp(casterPos, targetPos, 0.5)
+  table.insert(path, pathSecondPos)
+  local pathThirdPos = Vector3.Lerp(casterPos, targetPos, 0.8)
   pathThirdPos = pathThirdPos - verticalDis / 4 * dir
-  ;
-  (table.insert)(path, pathThirdPos)
-  ;
-  (table.insert)(path, targetPos)
+  table.insert(path, pathThirdPos)
+  table.insert(path, targetPos)
   local pathBezier = {}
   for i = 0, 1, 0.1 do
-    (table.insert)(pathBezier, self:_BezierMethod(i, path))
+    table.insert(pathBezier, self:_BezierMethod(i, path))
   end
-  ;
-  (table.insert)(pathBezier, targetPos)
+  table.insert(pathBezier, targetPos)
   self._flyTime = flyDis * self._oneGridFlyTime
-  local curve = ((DG.Tweening).Ease).Linear
-  local animationCurveHolder = (go.gameObject):GetComponent(typeof(AnimationCurveHolder))
-  do
-    if animationCurveHolder then
-      local curveList = animationCurveHolder.acurveList
-      if curveList and curveList.Length > 0 then
-        curve = curveList[0]
-      end
+  local curve = DG.Tweening.Ease.Linear
+  local animationCurveHolder = go.gameObject:GetComponent(typeof(AnimationCurveHolder))
+  if animationCurveHolder then
+    local curveList = animationCurveHolder.acurveList
+    if curveList and 0 < curveList.Length then
+      curve = curveList[0]
     end
-    ;
-    ((go.transform):DOLocalPath(pathBezier, self._flyTime / 1000, ((DG.Tweening).PathType).CatmullRom, ((DG.Tweening).PathMode).Full3D)):SetEase(curve)
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, self, effectEntity
+  end
+  go.transform:DOLocalPath(pathBezier, self._flyTime / 1000, DG.Tweening.PathType.CatmullRom, DG.Tweening.PathMode.Full3D):SetEase(curve)
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     YIELD(TT, self._flyTime)
-    ;
-    (self._world):DestroyEntity(effectEntity)
-  end
-)
-  end
+    self._world:DestroyEntity(effectEntity)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillTranspositionPhase._BezierMethod = function(self, t, foceList)
-  -- function num : 0_2 , upvalues : _ENV
-  if (table.count)(foceList) < 2 then
+function PlaySkillTranspositionPhase:_BezierMethod(t, foceList)
+  if table.count(foceList) < 2 then
     return foceList[1]
   end
   local temp = {}
-  for i = 1, (table.count)(foceList) - 1 do
-    local proportion = Vector3((1 - t) * (foceList[i]).x + t * (foceList[i + 1]).x, (1 - t) * (foceList[i]).y + t * (foceList[i + 1]).y, (1 - t) * (foceList[i]).z + t * (foceList[i + 1]).z)
-    ;
-    (table.insert)(temp, proportion)
+  for i = 1, table.count(foceList) - 1 do
+    local proportion = Vector3((1 - t) * foceList[i].x + t * foceList[i + 1].x, (1 - t) * foceList[i].y + t * foceList[i + 1].y, (1 - t) * foceList[i].z + t * foceList[i + 1].z)
+    table.insert(temp, proportion)
   end
   return self:_BezierMethod(t, temp)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillTranspositionPhase._ShowShowLineRenderer = function(self, entity, show)
-  -- function num : 0_3 , upvalues : _ENV
+function PlaySkillTranspositionPhase:_ShowShowLineRenderer(entity, show)
   local effectHolderCmpt = entity:EffectHolder()
   if effectHolderCmpt then
     local effectList = effectHolderCmpt:GetPermanentEffect()
-    for i,eff in ipairs(effectList) do
-      local e = (self._world):GetEntityByID(eff)
+    for i, eff in ipairs(effectList) do
+      local e = self._world:GetEntityByID(eff)
       if e and e:HasView() then
-        local go = (e:View()):GetGameObject()
+        local go = e:View():GetGameObject()
         local renderers = go:GetComponentsInChildren(typeof(UnityEngine.LineRenderer), true)
         for i = 0, renderers.Length - 1 do
           local line = renderers[i]
           if line then
-            (line.gameObject):SetActive(show)
+            line.gameObject:SetActive(show)
           end
         end
       end
     end
   end
 end
-
-

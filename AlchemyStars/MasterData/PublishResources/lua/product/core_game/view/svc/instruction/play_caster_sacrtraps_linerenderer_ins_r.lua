@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_sacrtraps_linerenderer_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterSacrificeTrapsLineRendererInstruction", BaseInstruction)
 PlayCasterSacrificeTrapsLineRendererInstruction = PlayCasterSacrificeTrapsLineRendererInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterSacrificeTrapsLineRendererInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterSacrificeTrapsLineRendererInstruction:Constructor(paramList)
   self._casterEffectID = tonumber(paramList.casterEffectID)
   self._lineCasterBindPos = paramList.lineCasterBindPos
   self._lineEffectID = tonumber(paramList.lineEffectID)
@@ -20,154 +13,140 @@ PlayCasterSacrificeTrapsLineRendererInstruction.Constructor = function(self, par
   self._lineDuration = paramList.lineDuration
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterSacrificeTrapsLineRendererInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterSacrificeTrapsLineRendererInstruction:GetCacheResource()
   local t = {}
   if self._casterEffectID and self._casterEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._casterEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._casterEffectID].ResPath,
+      1
+    })
   end
-  if self._lineEffectID and self._lineEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._lineEffectID]).ResPath, 1})
+  if self._lineEffectID and 0 < self._lineEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._lineEffectID].ResPath,
+      1
+    })
   end
-  if self._gridEffectID and self._gridEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._gridEffectID]).ResPath, 1})
+  if self._gridEffectID and 0 < self._gridEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._gridEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterSacrificeTrapsLineRendererInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayCasterSacrificeTrapsLineRendererInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   self._casterEntity = casterEntity
   self._world = world
   local effectService = world:GetService("Effect")
   local casterEffectEntity = effectService:CreateEffect(self._casterEffectID, casterEntity)
-  local targetRoot = (GameObjectHelper.FindChild)((((casterEffectEntity:View()).ViewWrapper).GameObject).transform, self._lineCasterBindPos)
+  local targetRoot = GameObjectHelper.FindChild(casterEffectEntity:View().ViewWrapper.GameObject.transform, self._lineCasterBindPos)
   if not targetRoot then
-    return 
+    return
   end
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local results = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SacrificeTraps)
-  if not results then
-    results = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.PetSacrificeSuperGridTraps)
-  end
+  results = results or skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.PetSacrificeSuperGridTraps)
   local result = results[1]
   if not result then
-    (Log.fatal)("11111111111")
+    Log.fatal("11111111111")
   end
   local trapIDs = result:GetTrapIDs()
   local taskIDList = {}
-  local extraGrids = nil
+  local extraGrids
   if result.GetExtraGrids then
     extraGrids = result:GetExtraGrids()
   end
-  local taskID = (TaskManager:GetInstance()):CoreGameStartTask(self.PlayGridEffectAtTraps, self, trapIDs, extraGrids)
-  ;
-  (table.insert)(taskIDList, taskID)
-  taskID = (TaskManager:GetInstance()):CoreGameStartTask(self.PlayLineEffect, self, trapIDs, targetRoot, extraGrids)
-  ;
-  (table.insert)(taskIDList, taskID)
-  while not (TaskHelper:GetInstance()):IsAllTaskFinished(self.taskIDList) do
+  local taskID = TaskManager:GetInstance():CoreGameStartTask(self.PlayGridEffectAtTraps, self, trapIDs, extraGrids)
+  table.insert(taskIDList, taskID)
+  taskID = TaskManager:GetInstance():CoreGameStartTask(self.PlayLineEffect, self, trapIDs, targetRoot, extraGrids)
+  table.insert(taskIDList, taskID)
+  while not TaskHelper:GetInstance():IsAllTaskFinished(self.taskIDList) do
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterSacrificeTrapsLineRendererInstruction.PlayLineEffect = function(self, TT, trapIDs, targetRoot, extraGrids)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayCasterSacrificeTrapsLineRendererInstruction:PlayLineEffect(TT, trapIDs, targetRoot, extraGrids)
   YIELD(TT, self._lineEffectWaitTime)
-  local effectService = (self._world):GetService("Effect")
-  local pieceSvc = (self._world):GetService("Piece")
+  local effectService = self._world:GetService("Effect")
+  local pieceSvc = self._world:GetService("Piece")
   local tarPosList = {}
-  for i,id in ipairs(trapIDs) do
-    local trapEntity = (self._world):GetEntityByID(id)
+  for i, id in ipairs(trapIDs) do
+    local trapEntity = self._world:GetEntityByID(id)
     local trapPos = trapEntity:GetGridPosition()
-    ;
-    (table.insert)(tarPosList, trapPos)
+    table.insert(tarPosList, trapPos)
   end
   if extraGrids then
-    for index,pos in ipairs(extraGrids) do
-      (table.insert)(tarPosList, pos)
+    for index, pos in ipairs(extraGrids) do
+      table.insert(tarPosList, pos)
     end
   end
-  do
-    for i,gridPos in ipairs(tarPosList) do
-      local trapPos = gridPos
-      local pieceEntity = pieceSvc:FindPieceEntity(trapPos)
-      local linkLineEntity = (self._gridEffectEntityList)[i]
-      local effectLineRenderer = linkLineEntity:EffectLineRenderer()
-      local entityViewRoot = (((linkLineEntity:View()).ViewWrapper).GameObject).transform
-      local curRoot = (GameObjectHelper.FindChild)(entityViewRoot, self._gridBindPos)
-      if not curRoot and EDITOR then
-        (Log.exception)("Pos:", tostring(trapPos), " Grid no  :", self._gridBindPos)
+  for i, gridPos in ipairs(tarPosList) do
+    local trapPos = gridPos
+    local pieceEntity = pieceSvc:FindPieceEntity(trapPos)
+    local linkLineEntity = self._gridEffectEntityList[i]
+    local effectLineRenderer = linkLineEntity:EffectLineRenderer()
+    local entityViewRoot = linkLineEntity:View().ViewWrapper.GameObject.transform
+    local curRoot = GameObjectHelper.FindChild(entityViewRoot, self._gridBindPos)
+    if not curRoot and EDITOR then
+      Log.exception("Pos:", tostring(trapPos), " Grid no  :", self._gridBindPos)
+    end
+    if curRoot then
+      if not effectLineRenderer then
+        linkLineEntity:AddEffectLineRenderer()
+        effectLineRenderer = linkLineEntity:EffectLineRenderer()
       end
-      if curRoot then
-        if not effectLineRenderer then
-          linkLineEntity:AddEffectLineRenderer()
-          effectLineRenderer = linkLineEntity:EffectLineRenderer()
-        end
-        local effectHolderCmpt = linkLineEntity:EffectHolder()
-        if not effectHolderCmpt then
-          linkLineEntity:AddEffectHolder()
-          effectHolderCmpt = linkLineEntity:EffectHolder()
-        end
-        local effectEntityIdList = (effectHolderCmpt:GetEffectIDEntityDic())[self._lineEffectID]
-        local effect = nil
-        if effectEntityIdList then
-          effect = (self._world):GetEntityByID(effectEntityIdList[1])
-        end
-        if not effect then
-          effect = effectService:CreateEffect(self._lineEffectID, linkLineEntity)
-          effectHolderCmpt:AttachPermanentEffect(effect:GetID())
-        end
-        local go = ((effect:View()):GetGameObject())
-        local renderers = nil
-        renderers = (go.transform):GetComponentsInChildren(typeof(UnityEngine.LineRenderer), true)
-        for i = 0, renderers.Length - 1 do
-          local line = renderers[i]
-          if line then
-            (line.gameObject):SetActive(true)
-          end
-        end
-        effectLineRenderer:InitEffectLineRenderer((self._casterEntity):GetID(), curRoot, targetRoot, entityViewRoot, renderers, effect:GetID())
-        effectLineRenderer:SetEffectLineRendererShow((self._casterEntity):GetID(), true)
+      local effectHolderCmpt = linkLineEntity:EffectHolder()
+      if not effectHolderCmpt then
+        linkLineEntity:AddEffectHolder()
+        effectHolderCmpt = linkLineEntity:EffectHolder()
       end
+      local effectEntityIdList = effectHolderCmpt:GetEffectIDEntityDic()[self._lineEffectID]
+      local effect
+      if effectEntityIdList then
+        effect = self._world:GetEntityByID(effectEntityIdList[1])
+      end
+      if not effect then
+        effect = effectService:CreateEffect(self._lineEffectID, linkLineEntity)
+        effectHolderCmpt:AttachPermanentEffect(effect:GetID())
+      end
+      local go = effect:View():GetGameObject()
+      local renderers
+      renderers = go.transform:GetComponentsInChildren(typeof(UnityEngine.LineRenderer), true)
+      for i = 0, renderers.Length - 1 do
+        local line = renderers[i]
+        if line then
+          line.gameObject:SetActive(true)
+        end
+      end
+      effectLineRenderer:InitEffectLineRenderer(self._casterEntity:GetID(), curRoot, targetRoot, entityViewRoot, renderers, effect:GetID())
+      effectLineRenderer:SetEffectLineRendererShow(self._casterEntity:GetID(), true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterSacrificeTrapsLineRendererInstruction.PlayGridEffectAtTraps = function(self, TT, trapIDs, extraGrids)
-  -- function num : 0_4 , upvalues : _ENV
+function PlayCasterSacrificeTrapsLineRendererInstruction:PlayGridEffectAtTraps(TT, trapIDs, extraGrids)
   YIELD(TT, self._gridEffectWaitTime)
   self._gridEffectEntityList = {}
-  local effectService = (self._world):GetService("Effect")
-  local pieceSvc = (self._world):GetService("Piece")
-  for i,id in ipairs(trapIDs) do
-    local trapEntity = (self._world):GetEntityByID(id)
+  local effectService = self._world:GetService("Effect")
+  local pieceSvc = self._world:GetService("Piece")
+  for i, id in ipairs(trapIDs) do
+    local trapEntity = self._world:GetEntityByID(id)
     local effectLineRenderer = trapEntity:EffectLineRenderer()
     local trapPos = trapEntity:GetGridPosition()
     if trapPos then
       local entity = effectService:CreateCommonGridEffect(self._gridEffectID, trapPos)
       entity:SetViewVisible(true)
-      ;
-      (table.insert)(self._gridEffectEntityList, entity)
+      table.insert(self._gridEffectEntityList, entity)
     end
   end
   if extraGrids then
-    for index,pos in ipairs(extraGrids) do
+    for index, pos in ipairs(extraGrids) do
       local entity = effectService:CreateCommonGridEffect(self._gridEffectID, pos)
       entity:SetViewVisible(true)
-      ;
-      (table.insert)(self._gridEffectEntityList, entity)
+      table.insert(self._gridEffectEntityList, entity)
     end
   end
 end
-
-

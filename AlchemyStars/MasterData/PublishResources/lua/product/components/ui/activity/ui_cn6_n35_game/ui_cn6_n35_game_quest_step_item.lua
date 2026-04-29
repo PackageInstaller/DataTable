@@ -1,32 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/ui_cn6_n35_game/ui_cn6_n35_game_quest_step_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UI_CN6_N35_GameQuestStepItem", UICustomWidget)
 UI_CN6_N35_GameQuestStepItem = UI_CN6_N35_GameQuestStepItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UI_CN6_N35_GameQuestStepItem.OnShow = function(self)
-  -- function num : 0_0
+function UI_CN6_N35_GameQuestStepItem:OnShow()
   self._imgRect = self:GetUIComponent("RectTransform", "rect")
   self._img = self:GetUIComponent("Image", "img")
   self._tex = self:GetUIComponent("UILocalizedTMP", "tex")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UI_CN6_N35_GameQuestStepItem.SetData = function(self, tex, posx, sp)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R4 in 'UnsetPending'
-
-  (self._imgRect).anchoredPosition = Vector2(posx, 0)
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._img).sprite = sp
-  ;
-  (self._tex):SetText(tex)
+function UI_CN6_N35_GameQuestStepItem:SetData(tex, posx, sp)
+  self._imgRect.anchoredPosition = Vector2(posx, 0)
+  self._img.sprite = sp
+  self._tex:SetText(tex)
 end
-
-

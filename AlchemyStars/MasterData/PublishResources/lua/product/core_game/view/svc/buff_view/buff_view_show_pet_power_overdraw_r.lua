@@ -1,19 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_show_pet_power_overdraw_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewShowPetPowerOverdraw", BuffViewBase)
 BuffViewShowPetPowerOverdraw = BuffViewShowPetPowerOverdraw
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewShowPetPowerOverdraw.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local petPstID = ((self._entity):PetPstID()):GetPstID()
-  local ready = (self._buffResult):GetReady()
-  local overdraw = (self._buffResult):GetOverdraw()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetPowerOverdrawChange, petPstID, {ready = ready, overdraw = overdraw})
+function BuffViewShowPetPowerOverdraw:PlayView(TT)
+  local petPstID = self._entity:PetPstID():GetPstID()
+  local ready = self._buffResult:GetReady()
+  local overdraw = self._buffResult:GetOverdraw()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PetPowerOverdrawChange, petPstID, {ready = ready, overdraw = overdraw})
 end
-
-

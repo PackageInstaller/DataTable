@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/tree/ui_cn20_n49_tree_info_desc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49TreeInfoDesc", UICustomWidget)
 UICN20N49TreeInfoDesc = UICN20N49TreeInfoDesc
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49TreeInfoDesc.OnShow = function(self)
-  -- function num : 0_0
+function UICN20N49TreeInfoDesc:OnShow()
   self._desc = self:GetUIComponent("UILocalizationText", "Desc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeInfoDesc.SetData = function(self, desc)
-  -- function num : 0_1
-  (self._desc):SetText(desc)
+function UICN20N49TreeInfoDesc:SetData(desc)
+  self._desc:SetText(desc)
 end
-
-

@@ -1,28 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cookgame/cook/cookbook/ui_n0_cookbook_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN0CookBookController", UIController)
 UIN0CookBookController = UIN0CookBookController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN0CookBookController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIN0CookBookController:LoadDataOnEnter(TT, res)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN0CookBookController:OnShow(uiParams)
   self._cookData = uiParams[1]
   self._closeCallback = uiParams[2]
-  local com, comInfo = (self._cookData):GetComponnet()
+  local com, comInfo = self._cookData:GetComponnet()
   self._foodData = comInfo
-  self._componnetId = (self._cookData):GetComponentId()
+  self._componnetId = self._cookData:GetComponentId()
   self._unlockNum = 0
   self._foodStatusTb = {}
-  self._foodCfgTb = (Cfg.cfg_component_newyear_dinner_food)({ComponentID = self._componnetId})
+  self._foodCfgTb = Cfg.cfg_component_newyear_dinner_food({
+    ComponentID = self._componnetId
+  })
   self._curFoodWidget = nil
   self._foodWidgets = {}
   self._rewardWidgets = {}
@@ -31,53 +23,37 @@ UIN0CookBookController.OnShow = function(self, uiParams)
   self:AddListener()
   self:InitWidget()
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    local campaign = (self._cookData):GetCampaign()
+    local campaign = self._cookData:GetCampaign()
     campaign:ReLoadCampaignInfo_Force(TT, res)
-    ;
-    (self._foodPidGo):SetActive(true)
+    self._foodPidGo:SetActive(true)
     self:_RefreshFoodList()
     self:_SetFirstSelect()
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookController.OnHide = function(self)
-  -- function num : 0_2
+function UIN0CookBookController:OnHide()
   self:RemoveListener()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookController.AddListener = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN0CookBookController:AddListener()
   self:AttachEvent(GameEventType.OnN0CookMakeSucc, self.CookSuccess)
   self:AttachEvent(GameEventType.ActivityCloseEvent, self.OnActivityCloseEvent)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookController.RemoveListener = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN0CookBookController:RemoveListener()
   self:DetachEvent(GameEventType.OnN0CookMakeSucc, self.CookSuccess)
   self:DetachEvent(GameEventType.ActivityCloseEvent, self.OnActivityCloseEvent)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookController.InitWidget = function(self)
-  -- function num : 0_5
+function UIN0CookBookController:InitWidget()
   self._foodContent = self:GetUIComponent("UISelectObjectPath", "foodContent")
   self._selfNumTxt = self:GetUIComponent("UILocalizationText", "selfNum")
   self._foodName = self:GetUIComponent("UILocalizedTMP", "foodName")
   self._foodPic = self:GetUIComponent("RawImageLoader", "foodPic")
   self._foodPidGo = self:GetGameObject("foodPic")
-  ;
-  (self._foodPidGo):SetActive(false)
+  self._foodPidGo:SetActive(false)
   self._rewardContent = self:GetUIComponent("UISelectObjectPath", "rewardContent")
   self._createBtnBg = self:GetUIComponent("Image", "createBtnBg")
   self._createBtnTxtObj = self:GetGameObject("createBtnTxt")
@@ -86,261 +62,179 @@ UIN0CookBookController.InitWidget = function(self)
   self._isDoneObj = self:GetGameObject("isDone")
   self._createBtnObj = self:GetGameObject("CreateBtn")
   self._itemInfo = self:GetUIComponent("UISelectObjectPath", "itemInfo")
-  self._selectInfo = (self._itemInfo):SpawnObject("UISelectInfo")
+  self._selectInfo = self._itemInfo:SpawnObject("UISelectInfo")
   self._panelAnim = self:GetUIComponent("Animation", "panelAnim")
   self._leftAnim = self:GetUIComponent("Animation", "leftAnim")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookController._RefreshFoodList = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN0CookBookController:_RefreshFoodList()
   self:InitFoodList()
-  self._req = (ResourceManager:GetInstance()):SyncLoadAsset("ui_n0_foodbook.mat", LoadType.Mat)
-  if self._req and (self._req).Obj then
-    self.material = (self._req).Obj
-    local oldMaterial = (self._foodName).fontMaterial
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._foodName).fontMaterial = self.material
-    ;
-    ((self._foodName).fontMaterial):SetTexture("_MainTex", oldMaterial:GetTexture("_MainTex"))
+  self._req = ResourceManager:GetInstance():SyncLoadAsset("ui_n0_foodbook.mat", LoadType.Mat)
+  if self._req and self._req.Obj then
+    self.material = self._req.Obj
+    local oldMaterial = self._foodName.fontMaterial
+    self._foodName.fontMaterial = self.material
+    self._foodName.fontMaterial:SetTexture("_MainTex", oldMaterial:GetTexture("_MainTex"))
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookController.InitFoodList = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN0CookBookController:InitFoodList()
   if self._foodData then
-    self._foodStatusTb = ((self._foodData).data_info).food_list
+    self._foodStatusTb = self._foodData.data_info.food_list
   end
   self._unlockNum = 0
-  self._foodWidgets = (self._foodContent):SpawnObjects("UIN0CookBookItem", #self._foodCfgTb)
-  for i,v in pairs(self._foodWidgets) do
-    local cfg = (self._foodCfgTb)[i]
-    local status = (self._foodStatusTb)[cfg.FoodID]
+  self._foodWidgets = self._foodContent:SpawnObjects("UIN0CookBookItem", #self._foodCfgTb)
+  for i, v in pairs(self._foodWidgets) do
+    local cfg = self._foodCfgTb[i]
+    local status = self._foodStatusTb[cfg.FoodID]
     if status then
       self._unlockNum = self._unlockNum + 1
     else
       status = NewYearDinner_Status.E_NewYearDinner_Status_LOCK
     end
     v:SetData(cfg, status, function(widget)
-    -- function num : 0_7_0 , upvalues : self
-    if self._curFoodWidget == widget then
-      return 
+      if self._curFoodWidget == widget then
+        return
+      end
+      self:RefreshFoodInfo(widget)
+    end, i)
+    if not self._curFoodWidget then
     end
-    self:RefreshFoodInfo(widget)
   end
-, i)
-  end
-  if not self._curFoodWidget then
-    (self._selfNumTxt):SetText(self._unlockNum .. "/" .. #self._foodCfgTb)
-  end
+  self._selfNumTxt:SetText(self._unlockNum .. "/" .. #self._foodCfgTb)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookController.RefreshFoodInfo = function(self, widget)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN0CookBookController:RefreshFoodInfo(widget)
   if self._curFoodWidget then
-    (self._curFoodWidget):SetSelect(false)
+    self._curFoodWidget:SetSelect(false)
   end
-  do
-    if self._isFirst then
-      local curFood = widget:GetInfo()
-      ;
-      (self._foodPic):LoadImage(curFood.BigTu)
-    end
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV, widget
+  if self._isFirst then
+    local curFood = widget:GetInfo()
+    self._foodPic:LoadImage(curFood.BigTu)
+  end
+  GameGlobal.TaskManager():StartTask(function(TT)
     if self._isFirst then
       self._isFirst = false
     else
       self:Lock("UIN0CookBookController_Switch")
-      ;
-      (self._leftAnim):Play("uieff_N0_CookBookController_left_out")
-      local time = ((self._leftAnim):GetClip("uieff_N0_CookBookController_left_out")).length
+      self._leftAnim:Play("uieff_N0_CookBookController_left_out")
+      local time = self._leftAnim:GetClip("uieff_N0_CookBookController_left_out").length
       YIELD(TT, time * 1000)
-      ;
-      (self._leftAnim):Play("uieff_N0_CookBookController_left_in")
+      self._leftAnim:Play("uieff_N0_CookBookController_left_in")
       self:UnLock("UIN0CookBookController_Switch")
     end
-    do
-      local curFood = widget:GetInfo()
-      self._curFoodWidget = widget
-      ;
-      (self._foodPic):LoadImage(curFood.BigTu)
-      ;
-      (self._foodName):SetText((StringTable.Get)(curFood.Name))
-      ;
-      (self._foodInfo):SetText((StringTable.Get)(curFood.Description))
-      local status = widget:GetStatus()
-      -- DECOMPILER ERROR at PC65: Confused about usage of register: R3 in 'UnsetPending'
-
-      if status == NewYearDinner_Status.E_NewYearDinner_Status_LOCK then
-        (self._createBtnBg).sprite = (self._atlas):GetSprite("n0_food_btn03")
-        ;
-        (self._isDoneObj):SetActive(false)
-        ;
-        (self._createBtnObj):SetActive(true)
-        ;
-        (self._createBtnTxtObj):SetActive(false)
-        ;
-        (self._timeObj):SetActive(true)
-        local loginModule = (GameGlobal.GetModule)(LoginModule)
-        local descId = "str_n0_foodbook_remainTime"
-        local time = curFood.UnlockTime
-        local timer = loginModule:GetTimeStampByTimeStr(time, Enum_DateTimeZoneType.E_ZoneType_GMT)
-        self:_SetRemainingTime("remainingTimePool", descId, timer)
-      else
-        do
-          -- DECOMPILER ERROR at PC109: Confused about usage of register: R3 in 'UnsetPending'
-
-          if status == NewYearDinner_Status.E_NewYearDinner_Status_UN_FINISH then
-            (self._createBtnBg).sprite = (self._atlas):GetSprite("n0_food_btn02")
-            ;
-            (self._createBtnTxtObj):SetActive(true)
-            ;
-            (self._timeObj):SetActive(false)
-            ;
-            (self._isDoneObj):SetActive(false)
-            ;
-            (self._createBtnObj):SetActive(true)
-          else
-            ;
-            (self._createBtnTxtObj):SetActive(false)
-            ;
-            (self._timeObj):SetActive(false)
-            ;
-            (self._isDoneObj):SetActive(true)
-            ;
-            (self._createBtnObj):SetActive(false)
-          end
-          local rewards = curFood.Reward
-          local rewardWidget = (self._rewardContent):SpawnObject("UIN0CookRewardItem")
-          local id = (rewards[1])[1]
-          local num = (rewards[1])[2]
-          rewardWidget:SetData(id, num, function(tplId, pos)
-      -- function num : 0_8_0_0 , upvalues : self
+    local curFood = widget:GetInfo()
+    self._curFoodWidget = widget
+    self._foodPic:LoadImage(curFood.BigTu)
+    self._foodName:SetText(StringTable.Get(curFood.Name))
+    self._foodInfo:SetText(StringTable.Get(curFood.Description))
+    local status = widget:GetStatus()
+    if status == NewYearDinner_Status.E_NewYearDinner_Status_LOCK then
+      self._createBtnBg.sprite = self._atlas:GetSprite("n0_food_btn03")
+      self._isDoneObj:SetActive(false)
+      self._createBtnObj:SetActive(true)
+      self._createBtnTxtObj:SetActive(false)
+      self._timeObj:SetActive(true)
+      local loginModule = GameGlobal.GetModule(LoginModule)
+      local descId = "str_n0_foodbook_remainTime"
+      local time = curFood.UnlockTime
+      local timer = loginModule:GetTimeStampByTimeStr(time, Enum_DateTimeZoneType.E_ZoneType_GMT)
+      self:_SetRemainingTime("remainingTimePool", descId, timer)
+    elseif status == NewYearDinner_Status.E_NewYearDinner_Status_UN_FINISH then
+      self._createBtnBg.sprite = self._atlas:GetSprite("n0_food_btn02")
+      self._createBtnTxtObj:SetActive(true)
+      self._timeObj:SetActive(false)
+      self._isDoneObj:SetActive(false)
+      self._createBtnObj:SetActive(true)
+    else
+      self._createBtnTxtObj:SetActive(false)
+      self._timeObj:SetActive(false)
+      self._isDoneObj:SetActive(true)
+      self._createBtnObj:SetActive(false)
+    end
+    local rewards = curFood.Reward
+    local rewardWidget = self._rewardContent:SpawnObject("UIN0CookRewardItem")
+    local id = rewards[1][1]
+    local num = rewards[1][2]
+    rewardWidget:SetData(id, num, function(tplId, pos)
       self:OnItemClicked(tplId, pos)
-    end
-, function(tplId, pos)
-      -- function num : 0_8_0_1 , upvalues : self
-      (self.OnItemClicked)(tplId, pos)
-    end
-)
-        end
-      end
-    end
-  end
-, self)
-  end
+    end, function(tplId, pos)
+      self.OnItemClicked(tplId, pos)
+    end)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookController._SetRemainingTime = function(self, widgetName, descId, endTime)
-  -- function num : 0_9
+function UIN0CookBookController:_SetRemainingTime(widgetName, descId, endTime)
   local sop = self:GetUIComponent("UISelectObjectPath", widgetName)
   local obj = sop:SpawnObject("UIActivityCommonRemainingTime")
-  obj:SetCustomTimeStr({day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_n0_foodbook_remainTime_End"})
+  obj:SetCustomTimeStr({
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_n0_foodbook_remainTime_End"
+  })
   obj:SetAdvanceText(descId)
   obj:SetData(endTime, nil, nil)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookController._SetFirstSelect = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  for _,v in pairs(self._foodWidgets) do
+function UIN0CookBookController:_SetFirstSelect()
+  for _, v in pairs(self._foodWidgets) do
     if v:GetStatus() == NewYearDinner_Status.E_NewYearDinner_Status_UN_FINISH then
       v:ItemBtnOnClick()
-      return 
+      return
     end
   end
-  ;
-  ((self._foodWidgets)[1]):ItemBtnOnClick()
+  self._foodWidgets[1]:ItemBtnOnClick()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookController.CookSuccess = function(self)
-  -- function num : 0_11
-  (self._createBtnTxtObj):SetActive(false)
-  ;
-  (self._timeObj):SetActive(false)
-  ;
-  (self._isDoneObj):SetActive(true)
-  ;
-  (self._createBtnObj):SetActive(false)
-  ;
-  (self._curFoodWidget):SetDone()
+function UIN0CookBookController:CookSuccess()
+  self._createBtnTxtObj:SetActive(false)
+  self._timeObj:SetActive(false)
+  self._isDoneObj:SetActive(true)
+  self._createBtnObj:SetActive(false)
+  self._curFoodWidget:SetDone()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookController.OnItemClicked = function(self, matid, pos)
-  -- function num : 0_12
-  (self._selectInfo):SetData(matid, pos)
+function UIN0CookBookController:OnItemClicked(matid, pos)
+  self._selectInfo:SetData(matid, pos)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookController._CloseFunc = function(self, TT)
-  -- function num : 0_13 , upvalues : _ENV
+function UIN0CookBookController:_CloseFunc(TT)
   self:Lock("UIN0CookBookController_Close")
-  ;
-  (self._panelAnim):Play("uieff_N0_CookBookController_out")
-  local time = ((self._panelAnim):GetClip("uieff_N0_CookBookController_out")).length
+  self._panelAnim:Play("uieff_N0_CookBookController_out")
+  local time = self._panelAnim:GetClip("uieff_N0_CookBookController_out").length
   YIELD(TT, time * 1000)
   self:UnLock("UIN0CookBookController_Close")
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookController.CloseBtnOnClick = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN0CookBookController:CloseBtnOnClick()
   if self._closeCallback then
-    (self._closeCallback)()
+    self._closeCallback()
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._CloseFunc, self)
+  GameGlobal.TaskManager():StartTask(self._CloseFunc, self)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookController.CreateBtnOnClick = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  do
-    if (self._cookData):IsActivityClose() then
-      local result = ((self._cookData):GetCampaign()):CheckComponentOpenClientError(ECCampaignInlandDinnerComponentID.ECAMPAIGN_INLAND_DINNER)
-      ;
-      ((self._cookData):GetCampaign()):CheckErrorCode(result)
-      return 
+function UIN0CookBookController:CreateBtnOnClick()
+  if self._cookData:IsActivityClose() then
+    local result = self._cookData:GetCampaign():CheckComponentOpenClientError(ECCampaignInlandDinnerComponentID.ECAMPAIGN_INLAND_DINNER)
+    self._cookData:GetCampaign():CheckErrorCode(result)
+    return
+  end
+  if self._curFoodWidget then
+    local status = self._curFoodWidget:GetStatus()
+    if status == NewYearDinner_Status.E_NewYearDinner_Status_LOCK then
+      return
     end
-    if self._curFoodWidget then
-      local status = (self._curFoodWidget):GetStatus()
-      if status == NewYearDinner_Status.E_NewYearDinner_Status_LOCK then
-        return 
-      end
-      local foodId = (self._curFoodWidget):GetID()
-      self:ShowDialog("UIN0CookMakeController", foodId, self._cookData)
-    end
+    local foodId = self._curFoodWidget:GetID()
+    self:ShowDialog("UIN0CookMakeController", foodId, self._cookData)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookBookController.OnActivityCloseEvent = function(self, campaignId)
-  -- function num : 0_16
-  local campaign = (self._cookData):GetCampaign()
+function UIN0CookBookController:OnActivityCloseEvent(campaignId)
+  local campaign = self._cookData:GetCampaign()
   if campaign and campaign._id == campaignId then
     self:CloseDialog()
   end
 end
-
-

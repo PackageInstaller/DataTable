@@ -1,21 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/general/ui_set_privacy_set_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UISetPrivacySetType = {ParentAgree = 0, TranlateProto = 1, PrivacyProcy = 2, UserProcy = 3, Max = 4}
+local UISetPrivacySetType = {
+  ParentAgree = 0,
+  TranlateProto = 1,
+  PrivacyProcy = 2,
+  UserProcy = 3,
+  Max = 4
+}
 _enum("UISetPrivacySetType", UISetPrivacySetType)
 _class("UISetPrivacySetController", UIController)
 UISetPrivacySetController = UISetPrivacySetController
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
 
-UISetPrivacySetController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : UISetPrivacySetType, _ENV
+function UISetPrivacySetController:OnShow(uiParams)
   self._item = self:GetGameObject("Item")
-  self._content = (self:GetGameObject("Content")).transform
+  self._content = self:GetGameObject("Content").transform
   for i = 0, UISetPrivacySetType.Max - 1 do
     if self:IsPrivacyShow(i) then
-      local go = ((UnityEngine.GameObject).Instantiate)(self._item, self._content)
+      local go = UnityEngine.GameObject.Instantiate(self._item, self._content)
       go:SetActive(true)
       local com = self:GetUIComponentDynamic("UISelectObjectPath", go)
       local item = com:SpawnObject("UISetPrivacySetItem")
@@ -24,25 +23,15 @@ UISetPrivacySetController.OnShow = function(self, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UISetPrivacySetController.IsPrivacyShow = function(self, privacySetType)
-  -- function num : 0_1 , upvalues : UISetPrivacySetType, _ENV
+function UISetPrivacySetController:IsPrivacyShow(privacySetType)
   if privacySetType == UISetPrivacySetType.ParentAgree then
-    return not (SDKProxy:GetInstance()):IsAdult()
-  else
-    if privacySetType == UISetPrivacySetType.TranlateProto then
-      return (SDKProxy:GetInstance()):IsEEA()
-    end
+    return not SDKProxy:GetInstance():IsAdult()
+  elseif privacySetType == UISetPrivacySetType.TranlateProto then
+    return SDKProxy:GetInstance():IsEEA()
   end
   return true
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UISetPrivacySetController.MaskOnClick = function(self)
-  -- function num : 0_2
+function UISetPrivacySetController:MaskOnClick()
   self:CloseDialog()
 end
-
-

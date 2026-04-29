@@ -1,8 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/es/str_pet_photo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_pet_photo_character_star_en = "PERSONAJE/ESTRELLA", str_pet_photo_character_star = "Aurorians desplegados", str_pet_photo_default_state = "Estado normal", str_pet_photo_awaken_state = "Ascender", str_pet_photo_awaken_state_tip = "Estado ascendido"}
+local config = {
+  str_pet_photo_character_star_en = "PERSONAJE/ESTRELLA",
+  str_pet_photo_character_star = "Aurorians desplegados",
+  str_pet_photo_default_state = "Estado normal",
+  str_pet_photo_awaken_state = "Ascender",
+  str_pet_photo_awaken_state_tip = "Estado ascendido"
+}
 return config
-

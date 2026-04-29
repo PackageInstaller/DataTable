@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_damage_effect_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillDamageEffectResult", SkillEffectResultBase)
 SkillDamageEffectResult = SkillDamageEffectResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillDamageEffectResult.Constructor = function(self, gridPos, targetid, damage, damageArray, damageStageIndex)
-  -- function num : 0_0
+function SkillDamageEffectResult:Constructor(gridPos, targetid, damage, damageArray, damageStageIndex)
   self._attackGridDataDict = {}
   self._gridPos = gridPos
   self._targetID = targetid
@@ -22,103 +15,62 @@ SkillDamageEffectResult.Constructor = function(self, gridPos, targetid, damage, 
   self._damageIndex = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillDamageEffectResult:GetEffectType()
   return SkillEffectType.Damage
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.GetTargetID = function(self)
-  -- function num : 0_2
+function SkillDamageEffectResult:GetTargetID()
   return self._targetID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.GetTotalDamage = function(self)
-  -- function num : 0_3
+function SkillDamageEffectResult:GetTotalDamage()
   return self._totalDamage
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.SetTotalDamage = function(self, val)
-  -- function num : 0_4 , upvalues : _ENV
-  self._totalDamage = (math.floor)(val)
+function SkillDamageEffectResult:SetTotalDamage(val)
+  self._totalDamage = math.floor(val)
   if self._totalDamage < 1 then
     self._totalDamage = 1
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.GetGridPos = function(self)
-  -- function num : 0_5
+function SkillDamageEffectResult:GetGridPos()
   return self._gridPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.GetDamageInfoArray = function(self)
-  -- function num : 0_6
+function SkillDamageEffectResult:GetDamageInfoArray()
   return self._multiDamageInfo
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.GetDamageInfo = function(self, index)
-  -- function num : 0_7
+function SkillDamageEffectResult:GetDamageInfo(index)
   if self._multiDamageInfo then
-    return (self._multiDamageInfo)[index]
+    return self._multiDamageInfo[index]
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.SetDamageInfo = function(self, index, damageInfo)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._multiDamageInfo)[index] = damageInfo
+function SkillDamageEffectResult:SetDamageInfo(index, damageInfo)
+  self._multiDamageInfo[index] = damageInfo
   self._totalDamage = self._totalDamage + damageInfo:GetDamageValue()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.GetDamageStageIndex = function(self)
-  -- function num : 0_9
+function SkillDamageEffectResult:GetDamageStageIndex()
   return self._damageStageIndex
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.SetDamageStageIndex = function(self, damageStageIndex)
-  -- function num : 0_10
+function SkillDamageEffectResult:SetDamageStageIndex(damageStageIndex)
   self._damageStageIndex = damageStageIndex
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.SetUsed = function(self)
-  -- function num : 0_11
+function SkillDamageEffectResult:SetUsed()
   self._used = true
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.IsUsed = function(self)
-  -- function num : 0_12
+function SkillDamageEffectResult:IsUsed()
   return self._used
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.IsSame = function(self, otherResult)
-  -- function num : 0_13
+function SkillDamageEffectResult:IsSame(otherResult)
   if self._targetID ~= otherResult._targetID then
     return false
   end
@@ -128,88 +80,50 @@ SkillDamageEffectResult.IsSame = function(self, otherResult)
   return true
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.SetSpecialScopeResultList = function(self, specialScopeResultList)
-  -- function num : 0_14
+function SkillDamageEffectResult:SetSpecialScopeResultList(specialScopeResultList)
   self._specialScopeResultList = specialScopeResultList
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.GetSpecialScopeResultList = function(self)
-  -- function num : 0_15
+function SkillDamageEffectResult:GetSpecialScopeResultList()
   return self._specialScopeResultList
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.SetCasterID = function(self, casterID)
-  -- function num : 0_16
+function SkillDamageEffectResult:SetCasterID(casterID)
   self._casterID = casterID
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.GetCasterID = function(self)
-  -- function num : 0_17
+function SkillDamageEffectResult:GetCasterID()
   return self._casterID
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.SetBuffLayerCountForDamage = function(self, layerCount)
-  -- function num : 0_18
+function SkillDamageEffectResult:SetBuffLayerCountForDamage(layerCount)
   self._buffLayerCountForDamage = layerCount
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.GetBuffLayerCountForDamage = function(self)
-  -- function num : 0_19
+function SkillDamageEffectResult:GetBuffLayerCountForDamage()
   return self._buffLayerCountForDamage
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.SetDamageIndex = function(self, index)
-  -- function num : 0_20
+function SkillDamageEffectResult:SetDamageIndex(index)
   self._damageIndex = index
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.GetDamageIndex = function(self)
-  -- function num : 0_21
+function SkillDamageEffectResult:GetDamageIndex()
   return self._damageIndex
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.SetNormalAttackDouble = function(self, normalAttackDouble)
-  -- function num : 0_22
+function SkillDamageEffectResult:SetNormalAttackDouble(normalAttackDouble)
   self._normalAttackDouble = normalAttackDouble
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.GetNormalAttackDouble = function(self)
-  -- function num : 0_23
+function SkillDamageEffectResult:GetNormalAttackDouble()
   return self._normalAttackDouble
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.GetNormalAttackIndex = function(self)
-  -- function num : 0_24
+function SkillDamageEffectResult:GetNormalAttackIndex()
   return self._normalAttackIndex
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectResult.SetNormalAttackIndex = function(self, index)
-  -- function num : 0_25
+function SkillDamageEffectResult:SetNormalAttackIndex(index)
   self._normalAttackIndex = index
 end
-
-

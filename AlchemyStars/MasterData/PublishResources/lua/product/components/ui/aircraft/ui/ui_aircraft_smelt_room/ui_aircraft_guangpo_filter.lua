@@ -1,29 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_smelt_room/ui_aircraft_guangpo_filter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftGuangPoFilter", UICustomWidget)
 UIAircraftGuangPoFilter = UIAircraftGuangPoFilter
-XinPoFilter = {All = 0, Star4 = 4, Star5 = 5, Star6 = 6}
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
+XinPoFilter = {
+  All = 0,
+  Star4 = 4,
+  Star5 = 5,
+  Star6 = 6
+}
 
-UIAircraftGuangPoFilter.OnShow = function(self)
-  -- function num : 0_0
+function UIAircraftGuangPoFilter:OnShow()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftGuangPoFilter.SetData = function(self, onChanged)
-  -- function num : 0_1
+function UIAircraftGuangPoFilter:SetData(onChanged)
   self._onChanged = onChanged
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftGuangPoFilter.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftGuangPoFilter:InitWidget()
   self.all = self:GetUIComponent("Toggle", "all")
   self._4s = self:GetUIComponent("Toggle", "_4s")
   self._5s = self:GetUIComponent("Toggle", "_5s")
@@ -36,64 +28,67 @@ UIAircraftGuangPoFilter.InitWidget = function(self)
   self._6Text = self:GetUIComponent("UILocalizationText", "_6Text")
   self._6Image = self:GetUIComponent("Image", "_6Image")
   self._root = self:GetGameObject()
-  self._onColor = Color(0.10588235294118, 1, 1)
+  self._onColor = Color(0.10588235294117647, 1, 1)
   self._notOnColor = Color.white
-  self._toggles = {[XinPoFilter.All] = nil, [XinPoFilter.Star4] = nil, [XinPoFilter.Star5] = nil, [XinPoFilter.Star6] = nil}
+  self._toggles = {
+    [XinPoFilter.All] = nil,
+    [XinPoFilter.Star4] = nil,
+    [XinPoFilter.Star5] = nil,
+    [XinPoFilter.Star6] = nil
+  }
   self._toggleViews = {
-[XinPoFilter.All] = {toggle = self.all, 
-graphics = {self.allText}
-}
-, 
-[XinPoFilter.Star4] = {toggle = self._4s, 
-graphics = {self._4Image, self._4Text}
-}
-, 
-[XinPoFilter.Star5] = {toggle = self._5s, 
-graphics = {self._5Image, self._5Text}
-}
-, 
-[XinPoFilter.Star6] = {toggle = self._6s, 
-graphics = {self._6Image, self._6Text}
-}
-}
+    [XinPoFilter.All] = {
+      toggle = self.all,
+      graphics = {
+        self.allText
+      }
+    },
+    [XinPoFilter.Star4] = {
+      toggle = self._4s,
+      graphics = {
+        self._4Image,
+        self._4Text
+      }
+    },
+    [XinPoFilter.Star5] = {
+      toggle = self._5s,
+      graphics = {
+        self._5Image,
+        self._5Text
+      }
+    },
+    [XinPoFilter.Star6] = {
+      toggle = self._6s,
+      graphics = {
+        self._6Image,
+        self._6Text
+      }
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftGuangPoFilter.Refresh = function(self, star4, star5, star6)
-  -- function num : 0_3 , upvalues : _ENV
+function UIAircraftGuangPoFilter:Refresh(star4, star5, star6)
   self:ChangeToggle(XinPoFilter.Star4, star4)
   self:ChangeToggle(XinPoFilter.Star5, star5)
   self:ChangeToggle(XinPoFilter.Star6, star6)
-  self:ChangeToggle(XinPoFilter.All, not star4 or not star5 or star6)
+  self:ChangeToggle(XinPoFilter.All, star4 and star5 and star6)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftGuangPoFilter.Active = function(self, active)
-  -- function num : 0_4
-  (self._root):SetActive(active)
+function UIAircraftGuangPoFilter:Active(active)
+  self._root:SetActive(active)
   if active then
+  else
     self._toggles = {}
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftGuangPoFilter.ChangeToggle = function(self, type, isOn)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._toggles)[type] == isOn then
-    return 
+function UIAircraftGuangPoFilter:ChangeToggle(type, isOn)
+  if self._toggles[type] == isOn then
+    return
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._toggles)[type] = isOn
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (((self._toggleViews)[type]).toggle).isOn = isOn
-  for _,graphic in pairs(((self._toggleViews)[type]).graphics) do
+  self._toggles[type] = isOn
+  self._toggleViews[type].toggle.isOn = isOn
+  for _, graphic in pairs(self._toggleViews[type].graphics) do
     if isOn then
       graphic.color = self._onColor
     else
@@ -102,55 +97,32 @@ UIAircraftGuangPoFilter.ChangeToggle = function(self, type, isOn)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftGuangPoFilter.CheckAll = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self._toggles)[XinPoFilter.Star4] and (self._toggles)[XinPoFilter.Star5] then
-    self:ChangeToggle(XinPoFilter.All, (self._toggles)[XinPoFilter.Star6])
-  end
+function UIAircraftGuangPoFilter:CheckAll()
+  self:ChangeToggle(XinPoFilter.All, self._toggles[XinPoFilter.Star4] and self._toggles[XinPoFilter.Star5] and self._toggles[XinPoFilter.Star6])
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftGuangPoFilter.AreaAllOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self:ChangeToggle(XinPoFilter.All, not (self._toggles)[XinPoFilter.All])
-  self:ChangeToggle(XinPoFilter.Star4, (self._toggles)[XinPoFilter.All])
-  self:ChangeToggle(XinPoFilter.Star5, (self._toggles)[XinPoFilter.All])
-  self:ChangeToggle(XinPoFilter.Star6, (self._toggles)[XinPoFilter.All])
-  ;
-  (self._onChanged)(XinPoFilter.All, (self._toggles)[XinPoFilter.All])
+function UIAircraftGuangPoFilter:AreaAllOnClick()
+  self:ChangeToggle(XinPoFilter.All, not self._toggles[XinPoFilter.All])
+  self:ChangeToggle(XinPoFilter.Star4, self._toggles[XinPoFilter.All])
+  self:ChangeToggle(XinPoFilter.Star5, self._toggles[XinPoFilter.All])
+  self:ChangeToggle(XinPoFilter.Star6, self._toggles[XinPoFilter.All])
+  self._onChanged(XinPoFilter.All, self._toggles[XinPoFilter.All])
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftGuangPoFilter.Area4OnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self:ChangeToggle(XinPoFilter.Star4, not (self._toggles)[XinPoFilter.Star4])
+function UIAircraftGuangPoFilter:Area4OnClick()
+  self:ChangeToggle(XinPoFilter.Star4, not self._toggles[XinPoFilter.Star4])
   self:CheckAll()
-  ;
-  (self._onChanged)(XinPoFilter.Star4, (self._toggles)[XinPoFilter.Star4])
+  self._onChanged(XinPoFilter.Star4, self._toggles[XinPoFilter.Star4])
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftGuangPoFilter.Area5OnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  self:ChangeToggle(XinPoFilter.Star5, not (self._toggles)[XinPoFilter.Star5])
+function UIAircraftGuangPoFilter:Area5OnClick()
+  self:ChangeToggle(XinPoFilter.Star5, not self._toggles[XinPoFilter.Star5])
   self:CheckAll()
-  ;
-  (self._onChanged)(XinPoFilter.Star5, (self._toggles)[XinPoFilter.Star5])
+  self._onChanged(XinPoFilter.Star5, self._toggles[XinPoFilter.Star5])
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftGuangPoFilter.Area6OnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  self:ChangeToggle(XinPoFilter.Star6, not (self._toggles)[XinPoFilter.Star6])
+function UIAircraftGuangPoFilter:Area6OnClick()
+  self:ChangeToggle(XinPoFilter.Star6, not self._toggles[XinPoFilter.Star6])
   self:CheckAll()
-  ;
-  (self._onChanged)(XinPoFilter.Star6, (self._toggles)[XinPoFilter.Star6])
+  self._onChanged(XinPoFilter.Star6, self._toggles[XinPoFilter.Star6])
 end
-
-

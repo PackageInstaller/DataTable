@@ -1,40 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/vampire/talent/ui_n25_vampire_talent_tree.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25VampireTalentTree", UIController)
 UIN25VampireTalentTree = UIN25VampireTalentTree
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25VampireTalentTree.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN25VampireTalentTree:Constructor()
   self.mCampaign = self:GetModule(CampaignModule)
-  self.data = (self.mCampaign):GetN25Data()
+  self.data = self.mCampaign:GetN25Data()
   self.scaleSizeList = {en = 0.8}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTree.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN25VampireTalentTree:OnShow(uiParams)
   local TopBtn = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   local backBtns = TopBtn:SpawnObject("UINewCommonTopButton")
   backBtns:SetData(function()
-    -- function num : 0_1_0 , upvalues : self, _ENV
-    if ((self.data):GetActivityCampaign()):CheckCampaignOpen() then
+    if self.data:GetActivityCampaign():CheckCampaignOpen() then
       self:SwitchState(UIStateType.UIN25VampireMain)
     else
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_" .. CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED))
+      ToastManager.ShowToast(StringTable.Get("str_activity_error_" .. CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED))
       self:SwitchState(UIStateType.UIMain)
     end
-  end
-, nil, function()
-    -- function num : 0_1_1 , upvalues : self, _ENV
+  end, nil, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-)
+  end)
   self.poolLevel = self:GetUIComponent("UISelectObjectPath", "level")
   self.txtExp = self:GetUIComponent("UILocalizationText", "txtExp")
   self.lock = self:GetGameObject("lock")
@@ -56,277 +41,183 @@ UIN25VampireTalentTree.OnShow = function(self, uiParams)
   self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTree.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.Icon):DestoryLastImage()
+function UIN25VampireTalentTree:OnHide()
+  self.Icon:DestoryLastImage()
   self:DetachEvent(GameEventType.N25UpdateTalentData, self.N25UpdateTalentData)
   self:DetachEvent(GameEventType.OnVampireTalentSkillTipsClose, self.OnVampireTalentSkillTipsClose)
   self:DetachEvent(GameEventType.ActivityCloseEvent, self.CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTree._CheckGuide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN25VampireTalentTree)
+function UIN25VampireTalentTree:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN25VampireTalentTree)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTree.GuideSecondItemTalent = function(self)
-  -- function num : 0_4
+function UIN25VampireTalentTree:GuideSecondItemTalent()
   if self.secondTreeItem then
-    return (self.secondTreeItem).gudieRelic
+    return self.secondTreeItem.gudieRelic
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTree.GuideFirstItemTalent = function(self)
-  -- function num : 0_5
+function UIN25VampireTalentTree:GuideFirstItemTalent()
   if self.firstTreeItem then
-    return (self.firstTreeItem).guideSkill
+    return self.firstTreeItem.guideSkill
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTree.Flush = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local lv, curExp, lvUpExp = (self.data):GetTalentLevelExp()
-  local uiTextLevel = (self.poolLevel):SpawnObject("UIN25VampireTalentText")
+function UIN25VampireTalentTree:Flush()
+  local lv, curExp, lvUpExp = self.data:GetTalentLevelExp()
+  local uiTextLevel = self.poolLevel:SpawnObject("UIN25VampireTalentText")
   uiTextLevel:Flush(lv, "num_level")
-  ;
-  (self.txtExp):SetText(curExp .. "/" .. lvUpExp)
+  self.txtExp:SetText(curExp .. "/" .. lvUpExp)
   self:FlushRoleSkill()
-  local used = (self.data):GetTalentUsed()
-  local left = (self.data):GetTalentLeft()
-  ;
-  (self.txtUsed):SetText(used)
-  ;
-  (self.txtLeft):SetText(left)
-  local language = (Localization.GetCurLanguage)()
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R8 in 'UnsetPending'
-
+  local used = self.data:GetTalentUsed()
+  local left = self.data:GetTalentLeft()
+  self.txtUsed:SetText(used)
+  self.txtLeft:SetText(left)
+  local language = Localization.GetCurLanguage()
   if language == LanguageType.us then
-    (self.rtUsed).localScale = Vector3.one * (self.scaleSizeList).en
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.rtLeft).localScale = Vector3.one * (self.scaleSizeList).en
+    self.rtUsed.localScale = Vector3.one * self.scaleSizeList.en
+    self.rtLeft.localScale = Vector3.one * self.scaleSizeList.en
   else
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.rtUsed).localScale = Vector3.one
-    -- DECOMPILER ERROR at PC63: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.rtLeft).localScale = Vector3.one
+    self.rtUsed.localScale = Vector3.one
+    self.rtLeft.localScale = Vector3.one
   end
   self:FlushTalentTreeItem()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTree.FlushTalentTreeItem = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local len = (table.count)((self.data).tiers)
-  ;
-  (self.poolContent):SpawnObjects("UIN25VampireTalentTreeItem", len)
-  local uis = (self.poolContent):GetAllSpawnList()
-  for i,tier in pairs((self.data).tiers) do
-    do
-      local ui = uis[i]
-      ui:Flush(tier.id, function()
-    -- function num : 0_7_0 , upvalues : self, tier
-    self:Move2Center(tier.id)
-  end
-)
-      if i == 1 then
-        self.firstTreeItem = ui
-      else
-        if i == 2 then
-          self.secondTreeItem = ui
-        end
-      end
+function UIN25VampireTalentTree:FlushTalentTreeItem()
+  local len = table.count(self.data.tiers)
+  self.poolContent:SpawnObjects("UIN25VampireTalentTreeItem", len)
+  local uis = self.poolContent:GetAllSpawnList()
+  for i, tier in pairs(self.data.tiers) do
+    local ui = uis[i]
+    ui:Flush(tier.id, function()
+      self:Move2Center(tier.id)
+    end)
+    if i == 1 then
+      self.firstTreeItem = ui
+    elseif i == 2 then
+      self.secondTreeItem = ui
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTree.FlushRoleSkill = function(self)
-  -- function num : 0_8
-  if (self.data):IsRoleSkillActive() then
-    (self.lock):SetActive(false)
-    local roleSkill = (self.data):GetCurRoleSkill()
+function UIN25VampireTalentTree:FlushRoleSkill()
+  if self.data:IsRoleSkillActive() then
+    self.lock:SetActive(false)
+    local roleSkill = self.data:GetCurRoleSkill()
     if roleSkill then
-      (self.normal):SetActive(true)
+      self.normal:SetActive(true)
       local icon, name, desc = roleSkill:IconNameDesc()
-      ;
-      (self.Icon):LoadImage(icon)
+      self.Icon:LoadImage(icon)
     else
-      do
-        do
-          ;
-          (self.normal):SetActive(false)
-          ;
-          (self.lock):SetActive(true)
-          ;
-          (self.normal):SetActive(false)
-        end
-      end
+      self.normal:SetActive(false)
     end
+  else
+    self.lock:SetActive(true)
+    self.normal:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTree.N25UpdateTalentData = function(self)
-  -- function num : 0_9
-  (self.data):InitVampire()
+function UIN25VampireTalentTree:N25UpdateTalentData()
+  self.data:InitVampire()
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTree.Move2Center = function(self, tierId)
-  -- function num : 0_10 , upvalues : _ENV
-  local uis = (self.poolContent):GetAllSpawnList()
-  for i,ui in pairs(uis) do
+function UIN25VampireTalentTree:Move2Center(tierId)
+  local uis = self.poolContent:GetAllSpawnList()
+  for i, ui in pairs(uis) do
     if tierId == ui:Id() then
       local percent = 0.25
-      do
-        local height = ((self.rtSV).rect).height
-        local rt = ui:RectTransform()
-        local localPosRT = (self.rtSV):InverseTransformPoint(rt.position)
-        local distance = (math.abs)(localPosRT.y)
-        if (0.5 - percent) * height < distance then
-          self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self, localPosRT, _ENV, height
-    local key = "UIN25VampireTalentTreeMove2Center"
-    self:Lock(key)
-    local duration = 0.5
-    local endValue = ((self.rtContent).anchoredPosition).y - localPosRT.y
-    endValue = ((UnityEngine.Mathf).Clamp)(endValue, 0, ((self.rtContent).rect).height - height)
-    ;
-    (self.rtContent):DOAnchorPosY(endValue, duration)
-    YIELD(TT, duration * 1000)
-    self:UnLock(key)
-  end
-, self)
-        end
-        break
+      local height = self.rtSV.rect.height
+      local rt = ui:RectTransform()
+      local localPosRT = self.rtSV:InverseTransformPoint(rt.position)
+      local distance = math.abs(localPosRT.y)
+      if distance > (0.5 - percent) * height then
+        self:StartTask(function(TT)
+          local key = "UIN25VampireTalentTreeMove2Center"
+          self:Lock(key)
+          local duration = 0.5
+          local endValue = self.rtContent.anchoredPosition.y - localPosRT.y
+          endValue = UnityEngine.Mathf.Clamp(endValue, 0, self.rtContent.rect.height - height)
+          self.rtContent:DOAnchorPosY(endValue, duration)
+          YIELD(TT, duration * 1000)
+          self:UnLock(key)
+        end, self)
       end
+      break
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTree.GetTalentTreeItems = function(self)
-  -- function num : 0_11
-  local uis = (self.poolContent):GetAllSpawnList()
+function UIN25VampireTalentTree:GetTalentTreeItems()
+  local uis = self.poolContent:GetAllSpawnList()
   return uis
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTree.PlayAnimTalentTreeItem = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN25VampireTalentTree:PlayAnimTalentTreeItem()
   self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : self, _ENV
     local key = "UIN25VampireTalentTreePlayAnimTalentTreeItem"
     self:Lock(key)
     local uis = self:GetTalentTreeItems()
-    for index,ui in ipairs(uis) do
-      (ui:GetGameObject()):SetActive(false)
+    for index, ui in ipairs(uis) do
+      ui:GetGameObject():SetActive(false)
     end
-    for index,ui in ipairs(uis) do
+    for index, ui in ipairs(uis) do
       if index == 1 then
         YIELD(TT, 200)
       else
         YIELD(TT, 20)
       end
-      ;
-      (ui:GetGameObject()):SetActive(true)
+      ui:GetGameObject():SetActive(true)
       ui:PlayAnimation()
     end
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTree.CheckActivityClose = function(self, id)
-  -- function num : 0_13 , upvalues : _ENV
-  local cType, cId = (self.data):GetCampaignTypeId()
+function UIN25VampireTalentTree:CheckActivityClose(id)
+  local cType, cId = self.data:GetCampaignTypeId()
   if cId == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTree.BtnIntroOnClick = function(self, go)
-  -- function num : 0_14
+function UIN25VampireTalentTree:BtnIntroOnClick(go)
   self:ShowDialog("UIN25VampireTalentIntro", "str_n25_vampire_talent_intro_title", "str_n25_vampire_talent_intro_")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTree.ImgLockOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : _ENV
-  (ToastManager.ShowToast)((StringTable.Get)("str_n25_vampire_talent_skill_not_active"))
+function UIN25VampireTalentTree:ImgLockOnClick(go)
+  ToastManager.ShowToast(StringTable.Get("str_n25_vampire_talent_skill_not_active"))
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTree.ImgRoleSkillOnClick = function(self, go)
-  -- function num : 0_16
+function UIN25VampireTalentTree:ImgRoleSkillOnClick(go)
   self:ShowDialog("UIN25VampireRoleSkill")
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTree.BtnResetOnClick = function(self, go)
-  -- function num : 0_17 , upvalues : _ENV
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_n25_vampire_reset_all_cost_point"), function(param)
-    -- function num : 0_17_0 , upvalues : self, _ENV
+function UIN25VampireTalentTree:BtnResetOnClick(go)
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_n25_vampire_reset_all_cost_point"), function(param)
     self:StartTask(function(TT)
-      -- function num : 0_17_0_0 , upvalues : self, _ENV
-      local used = (self.data):GetTalentUsed()
+      local used = self.data:GetTalentUsed()
       if used <= 0 then
-        return 
+        return
       end
       local key = "HandleBloodsuckerResetTalentTree"
       self:Lock(key)
-      local c = (self.data):GetComponentVampire()
+      local c = self.data:GetComponentVampire()
       local res = AsyncRequestRes:New()
       c:HandleBloodsuckerResetTalentTree(TT, res)
-      if (N25Data.CheckCode)(res) then
-        self:UnLock(key)
+      if N25Data.CheckCode(res) then
       end
-    end
-, self)
-  end
-)
+      self:UnLock(key)
+    end, self)
+  end)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTree.OnVampireTalentSkillTipsClose = function(self, skillId)
-  -- function num : 0_18 , upvalues : _ENV
-  local skilldata = (self.data):GetSkillBySkillId(skillId)
+function UIN25VampireTalentTree:OnVampireTalentSkillTipsClose(skillId)
+  local skilldata = self.data:GetSkillBySkillId(skillId)
   if skilldata.level == 1 then
-    local cfgv = (Cfg.cfg_mini_maze_talent)[skillId]
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_n25_vampire_talent_point_unlock", (StringTable.Get)(cfgv.Name)))
+    local cfgv = Cfg.cfg_mini_maze_talent[skillId]
+    ToastManager.ShowToast(StringTable.Get("str_n25_vampire_talent_point_unlock", StringTable.Get(cfgv.Name)))
   end
 end
-
-

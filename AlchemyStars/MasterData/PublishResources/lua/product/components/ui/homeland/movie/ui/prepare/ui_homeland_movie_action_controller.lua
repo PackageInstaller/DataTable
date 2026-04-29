@@ -1,71 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/prepare/ui_homeland_movie_action_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMovieActionController", UIController)
 UIHomelandMovieActionController = UIHomelandMovieActionController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMovieActionController.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandMovieActionController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActionController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandMovieActionController:OnShow(uiParams)
   self:InitWidget()
   self._ActionRoot = self:GetGameObject("ActionRoot")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActionController.OnHide = function(self)
-  -- function num : 0_2
+function UIHomelandMovieActionController:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActionController.InitWidget = function(self)
-  -- function num : 0_3
+function UIHomelandMovieActionController:InitWidget()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActionController.BackBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIHomelandMovieActionController:BackBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActionController.ActionOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandMovieActionController:ActionOnClick(go)
   self:Lock("UIHomelandMovieActionController_ActionOnClick")
-  ;
-  ((self._ActionRoot).transform):DOScale(Vector3(0.8, 0.8, 0.8), 0.1)
-  ;
-  ((GameGlobal.Timer)()):AddEvent(200, function()
-    -- function num : 0_5_0 , upvalues : self, _ENV
-    ((self._ActionRoot).transform):DOScale(Vector3(1, 1, 1), 0.1)
-  end
-)
-  ;
-  ((GameGlobal.Timer)()):AddEvent(400, function()
-    -- function num : 0_5_1 , upvalues : self, _ENV
+  self._ActionRoot.transform:DOScale(Vector3(0.8, 0.8, 0.8), 0.1)
+  GameGlobal.Timer():AddEvent(200, function()
+    self._ActionRoot.transform:DOScale(Vector3(1, 1, 1), 0.1)
+  end)
+  GameGlobal.Timer():AddEvent(400, function()
     self:UnLock("UIHomelandMovieActionController_ActionOnClick")
     self:CloseDialog()
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1Click)
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(function(TT)
-      -- function num : 0_5_1_0 , upvalues : _ENV
-      (((GameGlobal.GetModule)(HomelandModule)):GetUIModule()):EnterMovieMaker(TT)
-    end
-)
-  end
-)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1Click)
+    GameGlobal.TaskManager():StartTask(function(TT)
+      GameGlobal.GetModule(HomelandModule):GetUIModule():EnterMovieMaker(TT)
+    end)
+  end)
 end
-
-

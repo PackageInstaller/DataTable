@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/ui_n25_idol_sum_up.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolSumUp", UIController)
 UIN25IdolSumUp = UIN25IdolSumUp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolSumUp.Constructor = function(self)
-  -- function num : 0_0
+function UIN25IdolSumUp:Constructor()
   self._pptIndex = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolSumUp.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIN25IdolSumUp:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N25)
-  self._idolComponent = (self._localProcess):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
+  self._idolComponent = self._localProcess:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolSumUp.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN25IdolSumUp:OnShow(uiParams)
   self:AttachEvent(GameEventType.UIOpen, self.OnUIOpenHandle)
   self._uiWidget = self:GetUIComponent("RectTransform", "uiWidget")
   self._uiShow = self:GetUIComponent("RectTransform", "uiShow")
@@ -37,163 +24,118 @@ UIN25IdolSumUp.OnShow = function(self, uiParams)
   self._txtTrain1 = self:GetUIComponent("UILocalizationText", "txtTrain1")
   self._txtTrain2 = self:GetUIComponent("UILocalizationText", "txtTrain2")
   self._pptGroup = {
-{root = self._ppt1, fnFlush = self.FlushPPT1, bgName = "n25_ychtfsj_di13"}
-, 
-{root = self._ppt2, fnFlush = self.FlushPPT2, bgName = "n25_ych_tu05"}
-}
+    {
+      root = self._ppt1,
+      fnFlush = self.FlushPPT1,
+      bgName = "n25_ychtfsj_di13"
+    },
+    {
+      root = self._ppt2,
+      fnFlush = self.FlushPPT2,
+      bgName = "n25_ych_tu05"
+    }
+  }
   self:InitCommonTopButton()
   self:EnterFullScreenBg(false)
-  ;
-  (CutsceneManager.ExcuteCutsceneOut)()
+  CutsceneManager.ExcuteCutsceneOut()
   self:ShowPPT(self._pptIndex + 1)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolSumUp.OnHide = function(self)
-  -- function num : 0_3
+function UIN25IdolSumUp:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolSumUp.EnterFullScreenBg = function(self, isEnter)
-  -- function num : 0_4
-  ((self._uiWidget).gameObject):SetActive(not isEnter)
-  ;
-  ((self._uiShow).gameObject):SetActive(isEnter)
+function UIN25IdolSumUp:EnterFullScreenBg(isEnter)
+  self._uiWidget.gameObject:SetActive(not isEnter)
+  self._uiShow.gameObject:SetActive(isEnter)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolSumUp.InitCommonTopButton = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._backBtns = (self._ltBtn):SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_5_0 , upvalues : self, _ENV
+function UIN25IdolSumUp:InitCommonTopButton()
+  self._backBtns = self._ltBtn:SpawnObject("UINewCommonTopButton")
+  self._backBtns:SetData(function()
     self:SwitchState(UIStateType.UIN25IdolLogin)
-  end
-, nil, function()
-    -- function num : 0_5_1 , upvalues : self, _ENV
+  end, nil, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-, true, nil, function()
-    -- function num : 0_5_2 , upvalues : self
+  end, true, nil, function()
     self:EnterFullScreenBg(true)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolSumUp.FlushPPT1 = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local idolInfo = (self._idolComponent):GetComponentInfo()
+function UIN25IdolSumUp:FlushPPT1()
+  local idolInfo = self._idolComponent:GetComponentInfo()
   local breakInfo = idolInfo.break_info
   local countCome = 0
-  for k,v in pairs(breakInfo.agree_events) do
+  for k, v in pairs(breakInfo.agree_events) do
     countCome = countCome + 1
   end
-  local valueTrain = (StringTable.Get)("str_n25_idol_y_sumup_train1", countCome)
-  ;
-  (self._txtTrain1):SetText(valueTrain)
+  local valueTrain = StringTable.Get("str_n25_idol_y_sumup_train1", countCome)
+  self._txtTrain1:SetText(valueTrain)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolSumUp.FlushPPT2 = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local idolInfo = (self._idolComponent):GetComponentInfo()
+function UIN25IdolSumUp:FlushPPT2()
+  local idolInfo = self._idolComponent:GetComponentInfo()
   local breakInfo = idolInfo.break_info
   local valueFans = breakInfo.funs_num
   local musicValue = 0
   local danceValue = 0
   local performValue = 0
-  do
-    if breakInfo.train_data ~= nil then
-      local train_data = breakInfo.train_data
-      if train_data[IdolTrainType.IdolTrainType_Music] ~= nil then
-        musicValue = train_data[IdolTrainType.IdolTrainType_Music]
-      end
-      if train_data[IdolTrainType.IdolTrainType_Dance] ~= nil then
-        danceValue = train_data[IdolTrainType.IdolTrainType_Dance]
-      end
-      if train_data[IdolTrainType.IdolTrainType_Perform] ~= nil then
-        performValue = train_data[IdolTrainType.IdolTrainType_Perform]
-      end
+  if breakInfo.train_data ~= nil then
+    local train_data = breakInfo.train_data
+    if train_data[IdolTrainType.IdolTrainType_Music] ~= nil then
+      musicValue = train_data[IdolTrainType.IdolTrainType_Music]
     end
-    local theMaxAbility = ""
-    local theMaxDescription = ""
-    local theMaxValue = (math.max)(musicValue, danceValue, performValue)
-    if theMaxValue == musicValue then
-      theMaxAbility = (StringTable.Get)("str_n25_idol_y_music")
-      theMaxDescription = (StringTable.Get)("str_n25_idol_y_sumup_out_music")
-    else
-      if theMaxValue == danceValue then
-        theMaxAbility = (StringTable.Get)("str_n25_idol_y_dance")
-        theMaxDescription = (StringTable.Get)("str_n25_idol_y_sumup_out_dance")
-      else
-        if theMaxValue == performValue then
-          theMaxAbility = (StringTable.Get)("str_n25_idol_y_perform")
-          theMaxDescription = (StringTable.Get)("str_n25_idol_y_sumup_out_perform")
-        end
-      end
+    if train_data[IdolTrainType.IdolTrainType_Dance] ~= nil then
+      danceValue = train_data[IdolTrainType.IdolTrainType_Dance]
     end
-    local valueTrain = (StringTable.Get)("str_n25_idol_y_sumup_train2", valueFans, theMaxAbility, theMaxDescription)
-    ;
-    (self._txtTrain2):SetText(valueTrain)
+    if train_data[IdolTrainType.IdolTrainType_Perform] ~= nil then
+      performValue = train_data[IdolTrainType.IdolTrainType_Perform]
+    end
   end
+  local theMaxAbility = ""
+  local theMaxDescription = ""
+  local theMaxValue = math.max(musicValue, danceValue, performValue)
+  if theMaxValue == musicValue then
+    theMaxAbility = StringTable.Get("str_n25_idol_y_music")
+    theMaxDescription = StringTable.Get("str_n25_idol_y_sumup_out_music")
+  elseif theMaxValue == danceValue then
+    theMaxAbility = StringTable.Get("str_n25_idol_y_dance")
+    theMaxDescription = StringTable.Get("str_n25_idol_y_sumup_out_dance")
+  elseif theMaxValue == performValue then
+    theMaxAbility = StringTable.Get("str_n25_idol_y_perform")
+    theMaxDescription = StringTable.Get("str_n25_idol_y_sumup_out_perform")
+  end
+  local valueTrain = StringTable.Get("str_n25_idol_y_sumup_train2", valueFans, theMaxAbility, theMaxDescription)
+  self._txtTrain2:SetText(valueTrain)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolSumUp.ShowPPT = function(self, pptIndex)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN25IdolSumUp:ShowPPT(pptIndex)
   self._pptIndex = pptIndex
-  if #self._pptGroup < self._pptIndex then
+  if self._pptIndex > #self._pptGroup then
     self:BtnSkipOnClick(nil)
-    return 
+    return
   end
-  for k,v in pairs(self._pptGroup) do
-    ((v.root).gameObject):SetActive(false)
+  for k, v in pairs(self._pptGroup) do
+    v.root.gameObject:SetActive(false)
   end
-  local ppt = (self._pptGroup)[self._pptIndex]
-  ;
-  (self._pptBGLoader):LoadImage(ppt.bgName)
-  ;
-  ((ppt.root).gameObject):SetActive(true)
-  ;
-  (ppt.fnFlush)(self)
+  local ppt = self._pptGroup[self._pptIndex]
+  self._pptBGLoader:LoadImage(ppt.bgName)
+  ppt.root.gameObject:SetActive(true)
+  ppt.fnFlush(self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolSumUp.OnUIOpenHandle = function(self, uiName)
-  -- function num : 0_9
+function UIN25IdolSumUp:OnUIOpenHandle(uiName)
   if uiName == "UIN25IdolEndCG" then
     self:CloseDialog()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolSumUp.BtnUiShowOnClick = function(self, go)
-  -- function num : 0_10
+function UIN25IdolSumUp:BtnUiShowOnClick(go)
   self:EnterFullScreenBg(false)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolSumUp.BtnNextOnClick = function(self, go)
-  -- function num : 0_11
+function UIN25IdolSumUp:BtnNextOnClick(go)
   self:ShowPPT(self._pptIndex + 1)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolSumUp.BtnSkipOnClick = function(self, go)
-  -- function num : 0_12
+function UIN25IdolSumUp:BtnSkipOnClick(go)
   self:ShowDialog("UIN25IdolEndCG")
 end
-
-

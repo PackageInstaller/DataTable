@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_scorpion_hitback.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_ScorpionHitBack", Object)
 SkillEffectCalc_ScorpionHitBack = SkillEffectCalc_ScorpionHitBack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ScorpionHitBack.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_ScorpionHitBack:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ScorpionHitBack.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_ScorpionHitBack:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillEffectParam = skillEffectCalcParam:GetSkillEffectParam()
-  local attacker = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-  local attackerPos = (attacker:GridLocation()).Position
-  local attackerDir = (attacker:GridLocation()).Direction
+  local attacker = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local attackerPos = attacker:GridLocation().Position
+  local attackerDir = attacker:GridLocation().Direction
   local attackerBodyArea = attacker:BodyArea()
   local targetIDList = skillEffectCalcParam:GetTargetEntityIDs()
   if #targetIDList == 1 and targetIDList[1] == -1 then
@@ -28,19 +18,14 @@ SkillEffectCalc_ScorpionHitBack.DoSkillEffectCalculator = function(self, skillEf
   end
   local ignorePlayerBlock = skillEffectParam:GetIgnorePlayerBlock()
   local targetEntityID = targetIDList[1]
-  local targetEntity = (self._world):GetEntityByID(targetEntityID)
+  local targetEntity = self._world:GetEntityByID(targetEntityID)
   local skillRange = skillEffectCalcParam.skillRange
-  local endPos, dir = (self._skillEffectService):CalcHitbackEffect(attackerPos, attackerDir, attackerBodyArea, targetEntityID, HitBackDirectionType.Scorpion, HitBackType.PushAway, 100, HitBackCalcType.Instant, ignorePlayerBlock, nil, attacker, skillRange, nil, false, nil, HitBackInteractnWithBoardType.None, skillEffectParam:GetSkillType(), {})
+  local endPos, dir = self._skillEffectService:CalcHitbackEffect(attackerPos, attackerDir, attackerBodyArea, targetEntityID, HitBackDirectionType.Scorpion, HitBackType.PushAway, 100, HitBackCalcType.Instant, ignorePlayerBlock, nil, attacker, skillRange, nil, false, nil, HitBackInteractnWithBoardType.None, skillEffectParam:GetSkillType(), {})
   local hitBackDis = 1
   local resultList = {}
-  do
-    while targetEntity:GetGridPosition() ~= endPos do
-      local hitBackEffectResult = (self._skillEffectService):CalcHitbackEffectResult(attackerPos, attackerDir, attackerBodyArea, targetEntityID, HitBackDirectionType.Scorpion, HitBackType.PushAway, hitBackDis, HitBackCalcType.Instant, ignorePlayerBlock, nil, attacker, skillRange, nil, false, nil, HitBackInteractnWithBoardType.None, skillEffectParam:GetSkillType(), {})
-      ;
-      (table.insert)(resultList, hitBackEffectResult)
-    end
-    return resultList
+  while targetEntity:GetGridPosition() ~= endPos do
+    local hitBackEffectResult = self._skillEffectService:CalcHitbackEffectResult(attackerPos, attackerDir, attackerBodyArea, targetEntityID, HitBackDirectionType.Scorpion, HitBackType.PushAway, hitBackDis, HitBackCalcType.Instant, ignorePlayerBlock, nil, attacker, skillRange, nil, false, nil, HitBackInteractnWithBoardType.None, skillEffectParam:GetSkillType(), {})
+    table.insert(resultList, hitBackEffectResult)
   end
+  return resultList
 end
-
-

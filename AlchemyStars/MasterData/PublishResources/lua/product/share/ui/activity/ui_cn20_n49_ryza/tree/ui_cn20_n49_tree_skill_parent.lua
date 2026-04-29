@@ -1,15 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/tree/ui_cn20_n49_tree_skill_parent.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49TreeSkillParent", UICustomWidget)
 UICN20N49TreeSkillParent = UICN20N49TreeSkillParent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49TreeSkillParent.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.idx2pos = {[1] = Vector2(-289.4, 48.6), [2] = Vector2(-226, -278.9), [3] = Vector2(180.6, -277.6), [4] = Vector2(252.4, 47.4), [5] = Vector2(-20.3, 236.9)}
+function UICN20N49TreeSkillParent:OnShow()
+  self.idx2pos = {
+    [1] = Vector2(-289.4, 48.6),
+    [2] = Vector2(-226, -278.9),
+    [3] = Vector2(180.6, -277.6),
+    [4] = Vector2(252.4, 47.4),
+    [5] = Vector2(-20.3, 236.9)
+  }
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._mask = self:GetGameObject("Mask")
@@ -25,45 +24,31 @@ UICN20N49TreeSkillParent.OnShow = function(self)
   self:AttachEvent(GameEventType.OnTalentTreeSkillUp, self.OnTalentTreeSkillUp)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillParent.Get_1P_2N_Icon = function(self)
-  -- function num : 0_1
-  local pools = (self._pool):GetAllSpawnList()
+function UICN20N49TreeSkillParent:Get_1P_2N_Icon()
+  local pools = self._pool:GetAllSpawnList()
   local t_2n = pools[2]
   return t_2n:Get_1P_2N_Icon()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillParent.OnTalentTreeSkillUp = function(self, rootid)
-  -- function num : 0_2
+function UICN20N49TreeSkillParent:OnTalentTreeSkillUp(rootid)
   if rootid == self.rootid then
-    (self._anim):Play("uianim_UISeasonTalentTree_parent")
+    self._anim:Play("uianim_UISeasonTalentTree_parent")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillParent.OnSelectSkill = function(self, skillCls)
-  -- function num : 0_3
+function UICN20N49TreeSkillParent:OnSelectSkill(skillCls)
   local select = false
-  select = not skillCls or skillCls.rootid == self.rootid
+  if skillCls then
+    select = skillCls.rootid == self.rootid
+  end
   self:Select(select)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillParent.Select = function(self, active)
-  -- function num : 0_4
-  (self._select):SetActive(active)
+function UICN20N49TreeSkillParent:Select(active)
+  self._select:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillParent.SetData = function(self, idx, rootid, cfg, rootIDMap, comCfgID, callback)
-  -- function num : 0_5
+function UICN20N49TreeSkillParent:SetData(idx, rootid, cfg, rootIDMap, comCfgID, callback)
   self.idx = idx
   self.rootid = rootid
   self.cfg = cfg
@@ -75,10 +60,7 @@ UICN20N49TreeSkillParent.SetData = function(self, idx, rootid, cfg, rootIDMap, c
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillParent.OnValue = function(self)
-  -- function num : 0_6
+function UICN20N49TreeSkillParent:OnValue()
   self:SetPos()
   self:SetIcon()
   self:SetMask()
@@ -87,83 +69,55 @@ UICN20N49TreeSkillParent.OnValue = function(self)
   self:SetLv()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillParent.SetPos = function(self)
-  -- function num : 0_7
-  local pos = (self.idx2pos)[self.idx]
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._root).anchoredPosition = pos
+function UICN20N49TreeSkillParent:SetPos()
+  local pos = self.idx2pos[self.idx]
+  self._root.anchoredPosition = pos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillParent.SetIcon = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self.comCfgID, SkillTypeID = self.rootid, Level = 1})
+function UICN20N49TreeSkillParent:SetIcon()
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = self.comCfgID,
+    SkillTypeID = self.rootid,
+    Level = 1
+  })
   local cfg = cfgs[1]
   local icon = cfg.Icon
   if icon then
-    (self._icon):LoadImage(icon)
+    self._icon:LoadImage(icon)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillParent.SetMask = function(self)
-  -- function num : 0_9
-  local mask = ((self.cls).level == 0 and not (self.cls).lock)
-  ;
-  (self._mask):SetActive(mask)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UICN20N49TreeSkillParent:SetMask()
+  local mask = self.cls.level == 0 and not self.cls.lock
+  self._mask:SetActive(mask)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillParent.SetLock = function(self)
-  -- function num : 0_10
-  (self._lock):SetActive((self.cls).lock)
+function UICN20N49TreeSkillParent:SetLock()
+  self._lock:SetActive(self.cls.lock)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillParent.SetBuyTips = function(self)
-  -- function num : 0_11
-  (self._buyTips):SetActive((self.cls).canBuy)
+function UICN20N49TreeSkillParent:SetBuyTips()
+  self._buyTips:SetActive(self.cls.canBuy)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillParent.SetLv = function(self)
-  -- function num : 0_12
-  local lv = (self.cls).level
-  ;
-  (self._lv):SetActive(lv > 0)
-  do
-    if lv > 0 then
-      local levelMax = (self.cls):GetLevelMax()
-      if lv == levelMax then
-        local lvStr = "<color=#ff5656>" .. lv .. "</color>"
-        ;
-        (self._lvTex):SetText(lvStr .. "/" .. levelMax)
-      else
-        (self._lvTex):SetText(lv .. "/" .. levelMax)
-      end
+function UICN20N49TreeSkillParent:SetLv()
+  local lv = self.cls.level
+  self._lv:SetActive(0 < lv)
+  if 0 < lv then
+    local levelMax = self.cls:GetLevelMax()
+    if lv == levelMax then
+      local lvStr = "<color=#ff5656>" .. lv .. "</color>"
+      self._lvTex:SetText(lvStr .. "/" .. levelMax)
+    else
+      self._lvTex:SetText(lv .. "/" .. levelMax)
     end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillParent.ShowChildList = function(self)
-  -- function num : 0_13
-  local childList = (self.cfg).ChildSkill
-  ;
-  (self._pool):SpawnObjects("UICN20N49TreeSkillChild", #childList)
-  local pools = (self._pool):GetAllSpawnList()
+function UICN20N49TreeSkillParent:ShowChildList()
+  local childList = self.cfg.ChildSkill
+  self._pool:SpawnObjects("UICN20N49TreeSkillChild", #childList)
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, #childList do
     local item = pools[i]
     local rootid = childList[i]
@@ -171,35 +125,24 @@ UICN20N49TreeSkillParent.ShowChildList = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillParent.RefreshCls = function(self, cls, rootIDMap)
-  -- function num : 0_14
+function UICN20N49TreeSkillParent:RefreshCls(cls, rootIDMap)
   self.cls = cls
   self.rootIDMap = rootIDMap
   self:RefreshChildList()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillParent.RefreshChildList = function(self)
-  -- function num : 0_15
-  local childList = (self.cfg).ChildSkill
-  local pools = (self._pool):GetAllSpawnList()
+function UICN20N49TreeSkillParent:RefreshChildList()
+  local childList = self.cfg.ChildSkill
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, #childList do
     local item = pools[i]
     item:RefreshCls(self.rootIDMap)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillParent.IconOnClick = function(self, go)
-  -- function num : 0_16
+function UICN20N49TreeSkillParent:IconOnClick(go)
   if self.callback then
-    (self.callback)(self.cls)
+    self.callback(self.cls)
   end
 end
-
-

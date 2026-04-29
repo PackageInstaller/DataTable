@@ -1,43 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_target_select_by_no_id_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionTargetSelectByNoIDMonster", AINewNode)
 ActionTargetSelectByNoIDMonster = ActionTargetSelectByNoIDMonster
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionTargetSelectByNoIDMonster.Constructor = function(self)
-  -- function num : 0_0
+function ActionTargetSelectByNoIDMonster:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTargetSelectByNoIDMonster.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionTargetSelectByNoIDMonster.super).Reset)(self)
+function ActionTargetSelectByNoIDMonster:Reset()
+  ActionTargetSelectByNoIDMonster.super.Reset(self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTargetSelectByNoIDMonster.OnBegin = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local aiCmpt = (self.m_entityOwn):AI()
+function ActionTargetSelectByNoIDMonster:OnBegin()
+  local aiCmpt = self.m_entityOwn:AI()
   self:FindTarget()
   local targetEntity = aiCmpt:GetTargetEntity()
   local monsterIDList = self.m_configData
   self.monsterIDStr = ""
-  for _,id in ipairs(monsterIDList) do
+  for _, id in ipairs(monsterIDList) do
     self.monsterIDStr = self.monsterIDStr .. tostring(id) .. " "
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTargetSelectByNoIDMonster.OnUpdate = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local aiCmpt = (self.m_entityOwn):AI()
+function ActionTargetSelectByNoIDMonster:OnUpdate()
+  local aiCmpt = self.m_entityOwn:AI()
   local entityPlayer = aiCmpt:GetTargetDefault()
   self:FindTarget()
   local entityTarget = aiCmpt:GetTargetEntity()
@@ -48,31 +32,21 @@ ActionTargetSelectByNoIDMonster.OnUpdate = function(self)
   return AINewNodeStatus.Failure
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTargetSelectByNoIDMonster.OnEnd = function(self)
-  -- function num : 0_4
+function ActionTargetSelectByNoIDMonster:OnEnd()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTargetSelectByNoIDMonster.FindTarget = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function ActionTargetSelectByNoIDMonster:FindTarget()
   local monsterIDList = self.m_configData
-  local ownPos = (self.m_entityOwn):GetGridPosition()
-  local utilScopeCalc = (self._world):GetService("UtilScopeCalc")
-  local monsterList = (utilScopeCalc:SortMonstersByPos(ownPos))
-  local targetEntityID = nil
-  for i,element in ipairs(monsterList) do
+  local ownPos = self.m_entityOwn:GetGridPosition()
+  local utilScopeCalc = self._world:GetService("UtilScopeCalc")
+  local monsterList = utilScopeCalc:SortMonstersByPos(ownPos)
+  local targetEntityID
+  for i, element in ipairs(monsterList) do
     local monsterEntity = element.monster_e
-    if not (table.icontains)(monsterIDList, (monsterEntity:MonsterID()):GetMonsterClassID()) and not monsterEntity:HasDeadMark() then
+    if not table.icontains(monsterIDList, monsterEntity:MonsterID():GetMonsterClassID()) and not monsterEntity:HasDeadMark() then
       targetEntityID = monsterEntity:GetID()
       break
     end
   end
-  do
-    self:SetRuntimeData("Target", targetEntityID)
-  end
+  self:SetRuntimeData("Target", targetEntityID)
 end
-
-

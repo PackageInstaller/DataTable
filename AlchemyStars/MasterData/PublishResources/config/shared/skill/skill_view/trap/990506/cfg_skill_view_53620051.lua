@@ -1,13 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/trap/990506/cfg_skill_view_53620051.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PauseMove, matchers=MonsterID|PetPstID, moveAnim=1; DataSelectDamage,damageIndex = 1; PlayCasterLegacyAnimation,animNames=eff_2800311_skill_main; Wait,waitTime=500; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=2658,turnToTarget=0,deathClear=0; Wait,waitTime=200; ResumeMove, matchers=MonsterID|PetPstID, moveAnim=1; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PauseMove, matchers=MonsterID|PetPstID, moveAnim=1; DataSelectDamage,damageIndex = 1; PlayCasterLegacyAnimation,animNames=eff_2800311_skill_main; Wait,waitTime=500; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=2658,turnToTarget=0,deathClear=0; Wait,waitTime=200; ResumeMove, matchers=MonsterID|PetPstID, moveAnim=1; "
+    }
+  }
 }
 return config, "ID", key
-

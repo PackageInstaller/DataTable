@@ -1,63 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_param_show_hide_role.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
-local SkillPhaseParam_ShowType = {Hide = 0, Show = 1, Replace = 2, Fade = 3}
+local SkillPhaseParam_ShowType = {
+  Hide = 0,
+  Show = 1,
+  Replace = 2,
+  Fade = 3
+}
 _enum("SkillPhaseParam_ShowType", SkillPhaseParam_ShowType)
 _class("SkillPhaseParam_ShowHideRole", SkillPhaseParamBase)
 SkillPhaseParam_ShowHideRole = SkillPhaseParam_ShowHideRole
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillPhaseParam_ShowHideRole.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseParam_ShowHideRole:Constructor(t)
   self._beginDelay = t.beginDelay
   self._showType = t.showType
   self._showParam = t.showParam
   self._endDelay = t.endDelay
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_ShowHideRole.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : SkillPhaseParam_ShowType
+function SkillPhaseParam_ShowHideRole:GetCacheTable()
   local t = {}
-  do
-    if SkillPhaseParam_ShowType.Replace == self._showType and self._showParam then
-      local resPrefab = self._showParam
-      t[#t + 1] = {resPrefab, 1}
-    end
-    return t
+  if SkillPhaseParam_ShowType.Replace == self._showType and self._showParam then
+    local resPrefab = self._showParam
+    t[#t + 1] = {resPrefab, 1}
   end
+  return t
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_ShowHideRole.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseParam_ShowHideRole:GetPhaseType()
   return SkillViewPhaseType.ShowHideRole
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_ShowHideRole.GetBeginDelay = function(self)
-  -- function num : 0_3
+function SkillPhaseParam_ShowHideRole:GetBeginDelay()
   return self._beginDelay
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_ShowHideRole.GetEndDelay = function(self)
-  -- function num : 0_4
+function SkillPhaseParam_ShowHideRole:GetEndDelay()
   return self._endDelay
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_ShowHideRole.GetShowData = function(self)
-  -- function num : 0_5
+function SkillPhaseParam_ShowHideRole:GetShowData()
   return self._showType, self._showParam
 end
-
-

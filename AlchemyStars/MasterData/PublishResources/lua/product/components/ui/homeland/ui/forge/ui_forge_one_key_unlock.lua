@@ -1,106 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/forge/ui_forge_one_key_unlock.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIForgeOneKeyUnlock", UIController)
 UIForgeOneKeyUnlock = UIForgeOneKeyUnlock
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIForgeOneKeyUnlock.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIForgeOneKeyUnlock:OnShow(uiParams)
   self:InitWidget()
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.data = (self.mHomeland):GetForgeData()
-  self._items = (self.data):GetAllUnlockableItem()
-  ;
-  (table.sort)(self._items, function(a, b)
-    -- function num : 0_0_0 , upvalues : _ENV
-    local colora = ((Cfg.cfg_item)[a.id]).Color
-    local colorb = ((Cfg.cfg_item)[b.id]).Color
-    if colorb >= colora then
-      do return colora == colorb end
-      do return a.id < b.id end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.data = self.mHomeland:GetForgeData()
+  self._items = self.data:GetAllUnlockableItem()
+  table.sort(self._items, function(a, b)
+    local colora = Cfg.cfg_item[a.id].Color
+    local colorb = Cfg.cfg_item[b.id].Color
+    if colora ~= colorb then
+      return colora > colorb
     end
-  end
-)
-  local widgets = (self.content):SpawnObjects("UIItemHomeland", #self._items)
+    return a.id < b.id
+  end)
+  local widgets = self.content:SpawnObjects("UIItemHomeland", #self._items)
   for i = 1, #self._items do
     local asset = RoleAsset:New()
-    asset.assetid = ((self._items)[i]).id
+    asset.assetid = self._items[i].id
     asset.count = 1
-    ;
-    (widgets[i]):Flush(asset)
+    widgets[i]:Flush(asset)
   end
-  ;
-  (UIHelper.RefreshLayout)(self.contentRect)
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.scroll).horizontalNormalizedPosition = 0
+  UIHelper.RefreshLayout(self.contentRect)
+  self.scroll.horizontalNormalizedPosition = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeOneKeyUnlock.InitWidget = function(self)
-  -- function num : 0_1
+function UIForgeOneKeyUnlock:InitWidget()
   self.content = self:GetUIComponent("UISelectObjectPath", "Content")
   self.contentRect = self:GetUIComponent("RectTransform", "Content")
   self.scroll = self:GetUIComponent("ScrollRect", "ScrollView")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeOneKeyUnlock.CancelBtnOnClick = function(self, go)
-  -- function num : 0_2
+function UIForgeOneKeyUnlock:CancelBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeOneKeyUnlock.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIForgeOneKeyUnlock:ConfirmBtnOnClick(go)
   self:StartTask(self._Req, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeOneKeyUnlock.CloseOnClick = function(self, go)
-  -- function num : 0_4
+function UIForgeOneKeyUnlock:CloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeOneKeyUnlock._Req = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
+function UIForgeOneKeyUnlock:_Req(TT)
   local ids = {}
-  for _,item in ipairs(self._items) do
+  for _, item in ipairs(self._items) do
     ids[#ids + 1] = item.id
   end
-  ;
-  (Log.notice)("一键解锁:", (table.concat)(ids, ","))
+  Log.notice("一键解锁:", table.concat(ids, ","))
   self:Lock(self:GetName())
-  local res, _ = (self.mHomeland):HandleOneClickUnlock(TT, ids)
+  local res, _ = self.mHomeland:HandleOneClickUnlock(TT, ids)
   self:UnLock(self:GetName())
   if not res:GetSucc() then
-    return 
+    return
   end
-  local oldSort = (self.data).tSort
-  ;
-  (self.data):Init((self.mHomeland):GetHomelandInfo())
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.data).tSort = oldSort
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandForgeUpdateList)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshInteractUI)
+  local oldSort = self.data.tSort
+  self.data:Init(self.mHomeland:GetHomelandInfo())
+  self.data.tSort = oldSort
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandForgeUpdateList)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshInteractUI)
   self:CloseDialog()
-  ;
-  (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_forge_unlock_once_success"))
+  ToastManager.ShowHomeToast(StringTable.Get("str_homeland_forge_unlock_once_success"))
 end
-
-

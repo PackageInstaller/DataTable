@@ -1,228 +1,145 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/round_result_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("RoundResultSystem", MainStateSystem)
 RoundResultSystem = RoundResultSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-RoundResultSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function RoundResultSystem:_GetMainStateID()
   return GameStateID.RoundResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function RoundResultSystem:_OnMainStateEnter(TT)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   self:_DoLogicNotifyRoundResultStart(teamEntity)
   self:_DoRenderNotifyRoundResultStart(TT, teamEntity)
   self:_DoLogicCloseAuroraTime()
   self:_DoRenderCloseAuroraTime(TT)
   if self:_IsBattleEnd() then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.RoundResultFinish, 2)
-    return 
+    self._world:EventDispatcher():Dispatch(GameEventType.RoundResultFinish, 2)
+    return
   end
   self:_DoLogicTrapRoundResult()
   self:_DoRenderTrapAction(TT)
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
+  if self._world:MatchType() == MatchType.MT_BlackFist then
     self:_DoLogicBuffBeforeTrapRoundCount(teamEntity)
     self:_DoRenderBuffBeforeTrapRoundCount(TT, teamEntity)
     local traps = self:_DoLogicCalcTrapState()
     self:_DoRenderTrapState(TT, traps)
   else
-    do
-      do
-        local traps = self:_DoLogicCalcTrapStateNonFightClub()
-        self:_DoRenderCalcTrapStateNonFightClub(TT, traps)
-        self:_UpdateTrapGridRound(TT)
-        self:_DoLogicNotifyRoundTurnEnd(teamEntity)
-        self:_DoRenderNotifyRoundTurnEnd(TT, teamEntity)
-        self:_DoLogicUpdateBattleState(teamEntity)
-        self:_DoRenderRefreshCombinedWaveInfoOnRoundResult(TT)
-        local battleCalcResult = self:_IsBattleEnd()
-        self:_DoRenderShowRoundEnd(TT, battleCalcResult)
-        local traps, monsters = self:_DoLogicSpawnInWaveMonsters(MonsterWaveInternalTime.RoundResult)
-        self:_DoRenderInWave(TT, traps, monsters)
-        self:_ClearShareSkillResult()
-        self:_DoSaveDetailMatchLogger(TT)
-        self:_DoLogicGotoNextState(teamEntity)
-      end
-    end
+    local traps = self:_DoLogicCalcTrapStateNonFightClub()
+    self:_DoRenderCalcTrapStateNonFightClub(TT, traps)
   end
+  self:_UpdateTrapGridRound(TT)
+  self:_DoLogicNotifyRoundTurnEnd(teamEntity)
+  self:_DoRenderNotifyRoundTurnEnd(TT, teamEntity)
+  self:_DoLogicUpdateBattleState(teamEntity)
+  self:_DoRenderRefreshCombinedWaveInfoOnRoundResult(TT)
+  local battleCalcResult = self:_IsBattleEnd()
+  self:_DoRenderShowRoundEnd(TT, battleCalcResult)
+  local traps, monsters = self:_DoLogicSpawnInWaveMonsters(MonsterWaveInternalTime.RoundResult)
+  self:_DoRenderInWave(TT, traps, monsters)
+  self:_ClearShareSkillResult()
+  self:_DoSaveDetailMatchLogger(TT)
+  self:_DoLogicGotoNextState(teamEntity)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._DoLogicNotifyRoundResultStart = function(self, teamEntity)
-  -- function num : 0_2 , upvalues : _ENV
-  local triggerSvc = (self._world):GetService("Trigger")
+function RoundResultSystem:_DoLogicNotifyRoundResultStart(teamEntity)
+  local triggerSvc = self._world:GetService("Trigger")
   triggerSvc:Notify(NTRoundResultStart:New(teamEntity))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._DoLogicNotifyRoundTurnEnd = function(self, teamEntity)
-  -- function num : 0_3 , upvalues : _ENV
-  local svc = (self._world):GetService("Trigger")
+function RoundResultSystem:_DoLogicNotifyRoundTurnEnd(teamEntity)
+  local svc = self._world:GetService("Trigger")
   svc:Notify(NTRoundTurnEnd:New(teamEntity))
   svc:Notify(NTEnemyTurnEnd:New(teamEntity))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._DoLogicUpdateBattleState = function(self, teamEntity)
-  -- function num : 0_4 , upvalues : _ENV
-  local buffService = (self._world):GetService("BuffLogic")
+function RoundResultSystem:_DoLogicUpdateBattleState(teamEntity)
+  local buffService = self._world:GetService("BuffLogic")
   if buffService:DoGuideLockRoundCount(teamEntity) then
-    ((self._world):BattleStat()):MoveToNextRound(0)
-  else
-    if (self._world):MatchType() == MatchType.MT_BlackFist then
-      if (self._world):GetGameTurn() == GameTurnType.RemotePlayerTurn then
-        (self._world):ChangeGameTurn()
-        ;
-        ((self._world):BattleStat()):MoveToNextRound()
-      else
-        ;
-        (self._world):ChangeGameTurn()
-      end
+    self._world:BattleStat():MoveToNextRound(0)
+  elseif self._world:MatchType() == MatchType.MT_BlackFist then
+    if self._world:GetGameTurn() == GameTurnType.RemotePlayerTurn then
+      self._world:ChangeGameTurn()
+      self._world:BattleStat():MoveToNextRound()
     else
-      ;
-      ((self._world):BattleStat()):MoveToNextRound()
+      self._world:ChangeGameTurn()
     end
+  else
+    self._world:BattleStat():MoveToNextRound()
   end
-  ;
-  ((self._world):GetDataLogger()):AddDataLog("OnRoundEnd")
+  self._world:GetDataLogger():AddDataLog("OnRoundEnd")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._DoLogicTrapRoundResult = function(self)
-  -- function num : 0_5
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function RoundResultSystem:_DoLogicTrapRoundResult()
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   trapServiceLogic:TrapActionRoundResult()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._DoLogicGotoNextState = function(self, teamEntity)
-  -- function num : 0_6 , upvalues : _ENV
+function RoundResultSystem:_DoLogicGotoNextState(teamEntity)
   local mazeNoLight = false
-  if ((self._world):GetService("Maze")):GetLightCount() ~= 0 then
-    mazeNoLight = (self._world):MatchType() ~= MatchType.MT_Maze
-    local battleStatCmpt = (self._world):BattleStat()
-    local leftRoundCount = battleStatCmpt:GetCurWaveRound()
-    local battleService = (self._world):GetService("Battle")
-    local configService = (self._world):GetService("Config")
-    local levelConfigData = configService:GetLevelConfigData()
-    if battleService:IsWavePreEnd(teamEntity) or mazeNoLight or leftRoundCount == 0 and levelConfigData:GetOutOfRoundType() == 0 then
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.RoundResultFinish, 2)
-    else
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.RoundResultFinish, 1)
-    end
-    -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  if self._world:MatchType() == MatchType.MT_Maze then
+    mazeNoLight = self._world:GetService("Maze"):GetLightCount() == 0
+  end
+  local battleStatCmpt = self._world:BattleStat()
+  local leftRoundCount = battleStatCmpt:GetCurWaveRound()
+  local battleService = self._world:GetService("Battle")
+  local configService = self._world:GetService("Config")
+  local levelConfigData = configService:GetLevelConfigData()
+  if battleService:IsWavePreEnd(teamEntity) or mazeNoLight or leftRoundCount == 0 and levelConfigData:GetOutOfRoundType() == 0 then
+    self._world:EventDispatcher():Dispatch(GameEventType.RoundResultFinish, 2)
+  else
+    self._world:EventDispatcher():Dispatch(GameEventType.RoundResultFinish, 1)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._DoLogicCalcTrapState = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function RoundResultSystem:_DoLogicCalcTrapState()
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   return trapServiceLogic:CalcTrapState(TrapDestroyType.DestroyByRound)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._DoLogicCalcTrapStateNonFightClub = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function RoundResultSystem:_DoLogicCalcTrapStateNonFightClub()
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   return trapServiceLogic:CalcTrapState(TrapDestroyType.DestroyAtRoundResult)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._ClearShareSkillResult = function(self)
-  -- function num : 0_9
-  local boardEntity = (self._world):GetBoardEntity()
+function RoundResultSystem:_ClearShareSkillResult()
+  local boardEntity = self._world:GetBoardEntity()
   boardEntity:ReplaceShareSkillResult()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._DoLogicBuffBeforeTrapRoundCount = function(self, teamEntity)
-  -- function num : 0_10 , upvalues : _ENV
-  local triggerSvc = (self._world):GetService("Trigger")
+function RoundResultSystem:_DoLogicBuffBeforeTrapRoundCount(teamEntity)
+  local triggerSvc = self._world:GetService("Trigger")
   triggerSvc:Notify(NTMonsterRoundBeforeTrapRoundCount:New(teamEntity))
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._DoRenderShowRoundEnd = function(self, TT, battleCalcResult)
-  -- function num : 0_11
+function RoundResultSystem:_DoRenderShowRoundEnd(TT, battleCalcResult)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._DoRenderNotifyRoundResultStart = function(self, TT, teamEntity)
-  -- function num : 0_12
+function RoundResultSystem:_DoRenderNotifyRoundResultStart(TT, teamEntity)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._DoRenderNotifyRoundTurnEnd = function(self, TT)
-  -- function num : 0_13
+function RoundResultSystem:_DoRenderNotifyRoundTurnEnd(TT)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._DoRenderInWave = function(self, TT, traps, monsters)
-  -- function num : 0_14
+function RoundResultSystem:_DoRenderInWave(TT, traps, monsters)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._DoRenderTrapAction = function(self, TT)
-  -- function num : 0_15
+function RoundResultSystem:_DoRenderTrapAction(TT)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._DoRenderTrapState = function(self, TT)
-  -- function num : 0_16
+function RoundResultSystem:_DoRenderTrapState(TT)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._DoRenderRefreshCombinedWaveInfoOnRoundResult = function(self, TT)
-  -- function num : 0_17
+function RoundResultSystem:_DoRenderRefreshCombinedWaveInfoOnRoundResult(TT)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._DoRenderCalcTrapStateNonFightClub = function(self, TT, calcStateTraps)
-  -- function num : 0_18
+function RoundResultSystem:_DoRenderCalcTrapStateNonFightClub(TT, calcStateTraps)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._UpdateTrapGridRound = function(self, TT)
-  -- function num : 0_19
+function RoundResultSystem:_UpdateTrapGridRound(TT)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._DoRenderBuffBeforeTrapRoundCount = function(self, TT, teamEntity)
-  -- function num : 0_20
+function RoundResultSystem:_DoRenderBuffBeforeTrapRoundCount(TT, teamEntity)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundResultSystem._DoSaveDetailMatchLogger = function(self, TT)
-  -- function num : 0_21
+function RoundResultSystem:_DoSaveDetailMatchLogger(TT)
 end
-
-

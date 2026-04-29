@@ -1,8 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/str_assistant.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_assistant_current_assistant = "選択中の助手", str_assistant_choose = "選択済み", str_assistant_current_skin = "現在のコーデ", str_assistant_choose_current_assistant = "助手変更済み", str_assistant_all = "すべて", str_assistant_change_assistant = "助手の変更", str_assistant_preview_assistant = "助手プレビュー", str_assistant_main_bg_cancel = "キャンセル", str_assistant_main_bg_save = "保存", str_assistant_main_bg_using = "使用中", str_assistant_pos_btn = "位置", str_assistant_bg_btn = "背景", str_assistant_skin_btn = "コーデ", str_assistant_change_assistant_skin = "助手/コーデの変更", str_assistant_current_use_skin = "現在のコーデ", str_assistant_main_cg_cancel = "設定キャンセル", str_assistant_main_cg_save = "設定保存", str_assistant_main_cg_reply = "初期設定回復", str_assistant_current_pet_null = "無し", str_assistant_main_bg_move = "移動", str_assistant_main_bg_hide_as = "助手を非表示", str_assistant_cg_bg_btn = "CG背景", str_assistant_cg_bg_btn1 = "シーン", str_assistant_cg_bg_btn2 = "ストーリーCG", str_assistant_cg_bg_btn3 = "コーデCG", str_assistant_cg_bg_btn4 = "イベントCG", str_assistant_cg_bg_tip1 = "コーデコレクションストーリーをクリアすると解放", str_assistant_cg_bg_tip2 = "対応するイベントCGを獲得すると解放", str_assistant_cg_bg_tip3 = "メインストーリーをクリアすると解放", str_assistant_mulSpine_btn_txt = "スライドショー", str_assistant_mulSpine_btn_txt2 = "1枚", str_assistant_cg_bgPos = "背景の位置", str_assistant_cg_petPos = "助手の位置", str_assistant_main_change_sp = "助手の変更", str_assistant_main_change_bg = "背景変更", str_assistant_main_change_pos = "位置とサイズ", str_assistant_main_change_min = "-", str_assistant_main_change_max = "+", str_assistant_main_change_cg_des = "光霊を直接ドラッグして移動やズームができます", str_assistant_main_change_role = "光霊", str_assistant_main_change_bg1 = "背景", str_assistant_main_bg_sure = "OK", str_assistant_main_change_bj_des = "背景を直接ドラッグして移動やズームができます", str_assistant_main_change_no_cg_des = "助手を選択していません", str_assistant_main_cg_dressup_title = "ホーム画面コーディネート", str_assistant_main_cg_dressup_tips = "選択したコーディネートはホーム画面でスワイプして切り換えることができます", str_assistant_main_cg_dressup_single_name_1 = "コーディネート1", str_assistant_main_cg_dressup_single_name_2 = "コーディネート2", str_assistant_main_cg_dressup_single_name_3 = "コーディネート3", str_assistant_main_cg_dressup_single_name_4 = "コーディネート4", str_assistant_main_cg_dressup_single_name_5 = "コーディネート5", str_assistant_main_cg_dressup_warning_un_open = "コーディネートは少なくとも1つ選択してください"}
+local config = {
+  str_assistant_current_assistant = "選択中の助手",
+  str_assistant_choose = "選択済み",
+  str_assistant_current_skin = "現在のコーデ",
+  str_assistant_choose_current_assistant = "助手変更済み",
+  str_assistant_all = "すべて",
+  str_assistant_change_assistant = "助手の変更",
+  str_assistant_preview_assistant = "助手プレビュー",
+  str_assistant_main_bg_cancel = "キャンセル",
+  str_assistant_main_bg_save = "保存",
+  str_assistant_main_bg_using = "使用中",
+  str_assistant_pos_btn = "位置",
+  str_assistant_bg_btn = "背景",
+  str_assistant_skin_btn = "コーデ",
+  str_assistant_change_assistant_skin = "助手/コーデの変更",
+  str_assistant_current_use_skin = "現在のコーデ",
+  str_assistant_main_cg_cancel = "設定キャンセル",
+  str_assistant_main_cg_save = "設定保存",
+  str_assistant_main_cg_reply = "初期設定回復",
+  str_assistant_current_pet_null = "無し",
+  str_assistant_main_bg_move = "移動",
+  str_assistant_main_bg_hide_as = "助手を非表示",
+  str_assistant_cg_bg_btn = "CG背景",
+  str_assistant_cg_bg_btn1 = "シーン",
+  str_assistant_cg_bg_btn2 = "ストーリーCG",
+  str_assistant_cg_bg_btn3 = "コーデCG",
+  str_assistant_cg_bg_btn4 = "イベントCG",
+  str_assistant_cg_bg_tip1 = "コーデコレクションストーリーをクリアすると解放",
+  str_assistant_cg_bg_tip2 = "対応するイベントCGを獲得すると解放",
+  str_assistant_cg_bg_tip3 = "メインストーリーをクリアすると解放",
+  str_assistant_mulSpine_btn_txt = "スライドショー",
+  str_assistant_mulSpine_btn_txt2 = "1枚",
+  str_assistant_cg_bgPos = "背景の位置",
+  str_assistant_cg_petPos = "助手の位置",
+  str_assistant_main_change_sp = "助手の変更",
+  str_assistant_main_change_bg = "背景変更",
+  str_assistant_main_change_pos = "位置とサイズ",
+  str_assistant_main_change_min = "-",
+  str_assistant_main_change_max = "+",
+  str_assistant_main_change_cg_des = "光霊を直接ドラッグして移動やズームができます",
+  str_assistant_main_change_role = "光霊",
+  str_assistant_main_change_bg1 = "背景",
+  str_assistant_main_bg_sure = "OK",
+  str_assistant_main_change_bj_des = "背景を直接ドラッグして移動やズームができます",
+  str_assistant_main_change_no_cg_des = "助手を選択していません",
+  str_assistant_main_cg_dressup_title = "ホーム画面コーディネート",
+  str_assistant_main_cg_dressup_tips = "選択したコーディネートはホーム画面でスワイプして切り換えることができます",
+  str_assistant_main_cg_dressup_single_name_1 = "コーディネート1",
+  str_assistant_main_cg_dressup_single_name_2 = "コーディネート2",
+  str_assistant_main_cg_dressup_single_name_3 = "コーディネート3",
+  str_assistant_main_cg_dressup_single_name_4 = "コーディネート4",
+  str_assistant_main_cg_dressup_single_name_5 = "コーディネート5",
+  str_assistant_main_cg_dressup_warning_un_open = "コーディネートは少なくとも1つ選択してください"
+}
 return config
-

@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_camp_center/pet_try_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_lobby_center_camp_data")
 _class("PetTryEnter", MainLobbyCenterCampData)
 PetTryEnter = PetTryEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PetTryEnter.CheckNew = function(self)
-  -- function num : 0_0
+function PetTryEnter:CheckNew()
   return 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PetTryEnter.CheckRed = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local btnKey = (self._cfg).BtnKey
-  local cfg = (Cfg.cfg_main_side_enter_btn)[btnKey]
+function PetTryEnter:CheckRed()
+  local btnKey = self._cfg.BtnKey
+  local cfg = Cfg.cfg_main_side_enter_btn[btnKey]
   local campType = cfg.CampaignType
   local campID = cfg.CampaignId
-  local campModule = ((GameGlobal.GetModule)(CampaignModule))
-  local sampleInfo = nil
+  local campModule = GameGlobal.GetModule(CampaignModule)
+  local sampleInfo
   if campID then
     sampleInfo = campModule:GetReviewCampaignSampleByCampaignId(campID)
   else
@@ -30,5 +20,3 @@ PetTryEnter.CheckRed = function(self)
   end
   return sampleInfo and sampleInfo:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW) and 1 or 0
 end
-
-

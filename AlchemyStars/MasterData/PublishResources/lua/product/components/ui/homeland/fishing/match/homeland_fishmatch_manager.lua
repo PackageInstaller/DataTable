@@ -1,71 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/fishing/match/homeland_fishmatch_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandFishMatchManager", Singleton)
 HomelandFishMatchManager = HomelandFishMatchManager
 local HomelandFishingGameType = {Pet = 5, TaskNpc = 3}
 _enum("HomelandFishingGameType", HomelandFishingGameType)
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-HomelandFishMatchManager.Constructor = function(self)
-  -- function num : 0_0
+function HomelandFishMatchManager:Constructor()
   self._fishmatch = nil
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatchManager.GetMatchItem = function(self, cfg, pet, istask)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandFishMatchManager:GetMatchItem(cfg, pet, istask)
   local match = HomelandFishMatch:New(cfg, pet, istask)
   return match
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatchManager.GetCurFishMatch = function(self)
-  -- function num : 0_2
+function HomelandFishMatchManager:GetCurFishMatch()
   return self._fishmatch
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatchManager.ChangeMatch = function(self, match)
-  -- function num : 0_3
+function HomelandFishMatchManager:ChangeMatch(match)
   if self._fishmatch then
-    (self._fishmatch):PetMatchCancel()
-    if (self._fishmatch):IsTask() then
-      (self._fishmatch):PetSetBornPos()
-      ;
-      (self._fishmatch):Dispose()
-      self._fishmatch = nil
-      self._fishmatch = match
+    self._fishmatch:PetMatchCancel()
+    if self._fishmatch:IsTask() then
+    else
+      self._fishmatch:PetSetBornPos()
     end
+    self._fishmatch:Dispose()
+    self._fishmatch = nil
   end
+  self._fishmatch = match
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatchManager.Dispose = function(self)
-  -- function num : 0_4
+function HomelandFishMatchManager:Dispose()
   if self._fishmatch then
-    (self._fishmatch):Dispose()
+    self._fishmatch:Dispose()
     self._fishmatch = nil
   end
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatchManager.IsInTaskMatchState = function(self)
-  -- function num : 0_5
+function HomelandFishMatchManager:IsInTaskMatchState()
   if not self._fishmatch then
     return false
   end
-  if (self._fishmatch):IsTask() then
+  if self._fishmatch:IsTask() then
     return true
   end
   return false
 end
-
-

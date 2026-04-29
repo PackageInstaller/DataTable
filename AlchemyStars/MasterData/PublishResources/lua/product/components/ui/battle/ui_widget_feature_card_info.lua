@@ -1,39 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_feature_card_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetFeatureCardInfo", UICustomWidget)
 UIWidgetFeatureCardInfo = UIWidgetFeatureCardInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetFeatureCardInfo.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetFeatureCardInfo:OnShow(uiParams)
   self:InitWidget()
   self:ResetState()
   self:RefreshAll()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWidgetFeatureCardInfo:OnHide()
   if self._players then
-    for i,player in ipairs(self._players) do
+    for i, player in ipairs(self._players) do
       if player:IsPlaying() then
         player:Stop()
       end
     end
   end
-  do
-    self._matRes = {}
-  end
+  self._matRes = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.InitWidget = function(self)
-  -- function num : 0_2
+function UIWidgetFeatureCardInfo:InitWidget()
   self.enableFakeInput = true
   self._selectMax = 3
   self._players = {}
@@ -87,102 +72,165 @@ UIWidgetFeatureCardInfo.InitWidget = function(self)
   self:InitLocalData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.SetFontMat = function(self, lable, resname)
-  -- function num : 0_3 , upvalues : _ENV
-  local res = (ResourceManager:GetInstance()):SyncLoadAsset(resname, LoadType.Mat)
-  ;
-  (table.insert)(self._matRes, res)
+function UIWidgetFeatureCardInfo:SetFontMat(lable, resname)
+  local res = ResourceManager:GetInstance():SyncLoadAsset(resname, LoadType.Mat)
+  table.insert(self._matRes, res)
   if not res then
-    return 
+    return
   end
   local obj = res.Obj
   local mat = lable.fontMaterial
   lable.fontMaterial = obj
-  ;
-  (lable.fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  lable.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.InitLocalData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIWidgetFeatureCardInfo:InitLocalData()
   self.depotUi = {
-[FeatureCardType.A] = {go = self.cardA, numGo = self.cardNumBgA, numText = self.cardNumA, imgLoader = self.cardImgA, imgGo = self.cardImgAGo, imgResMore = "n21_jieruo_red5", 
-imgRes = {[0] = "n21_jieruo_red0", [1] = "n21_jieruo_red1", [2] = "n21_jieruo_red2", [3] = "n21_jieruo_red3"}
-}
-, 
-[FeatureCardType.B] = {go = self.cardB, numGo = self.cardNumBgB, numText = self.cardNumB, imgLoader = self.cardImgB, imgGo = self.cardImgBGo, imgResMore = "n21_jieruo_yellow5", 
-imgRes = {[0] = "n21_jieruo_yellow0", [1] = "n21_jieruo_yellow1", [2] = "n21_jieruo_yellow2", [3] = "n21_jieruo_yellow3"}
-}
-, 
-[FeatureCardType.C] = {go = self.cardC, numGo = self.cardNumBgC, numText = self.cardNumC, imgLoader = self.cardImgC, imgGo = self.cardImgCGo, imgResMore = "n21_jieruo_blue4", 
-imgRes = {[0] = "n21_jieruo_blue0", [1] = "n21_jieruo_blue1", [2] = "n21_jieruo_blue2", [3] = "n21_jieruo_blue3"}
-}
-}
+    [FeatureCardType.A] = {
+      go = self.cardA,
+      numGo = self.cardNumBgA,
+      numText = self.cardNumA,
+      imgLoader = self.cardImgA,
+      imgGo = self.cardImgAGo,
+      imgResMore = "n21_jieruo_red5",
+      imgRes = {
+        [0] = "n21_jieruo_red0",
+        [1] = "n21_jieruo_red1",
+        [2] = "n21_jieruo_red2",
+        [3] = "n21_jieruo_red3"
+      }
+    },
+    [FeatureCardType.B] = {
+      go = self.cardB,
+      numGo = self.cardNumBgB,
+      numText = self.cardNumB,
+      imgLoader = self.cardImgB,
+      imgGo = self.cardImgBGo,
+      imgResMore = "n21_jieruo_yellow5",
+      imgRes = {
+        [0] = "n21_jieruo_yellow0",
+        [1] = "n21_jieruo_yellow1",
+        [2] = "n21_jieruo_yellow2",
+        [3] = "n21_jieruo_yellow3"
+      }
+    },
+    [FeatureCardType.C] = {
+      go = self.cardC,
+      numGo = self.cardNumBgC,
+      numText = self.cardNumC,
+      imgLoader = self.cardImgC,
+      imgGo = self.cardImgCGo,
+      imgResMore = "n21_jieruo_blue4",
+      imgRes = {
+        [0] = "n21_jieruo_blue0",
+        [1] = "n21_jieruo_blue1",
+        [2] = "n21_jieruo_blue2",
+        [3] = "n21_jieruo_blue3"
+      }
+    }
+  }
   self.selectedUi = {
-[1] = {go = self.selectedFillAreaGo1, rect = self.selectedFillAreaRect1, imgLoader = self.selectedCardImg1, anim = self._selAnim1, animNamePutDown = "SelectedCell1_putdown", animNameIn = "SelectedCell1_enlarge", animNameOut = "SelectedCell1_recover", animNameUnselected = "SelectedCell1_off", moveInPlayer = nil, moveOutPlayer = nil}
-, 
-[2] = {go = self.selectedFillAreaGo2, rect = self.selectedFillAreaRect2, imgLoader = self.selectedCardImg2, anim = self._selAnim2, animNamePutDown = "SelectedCell2_putdown", animNameIn = "SelectedCell2_enlarge", animNameOut = "SelectedCell2_recover", animNameUnselected = "SelectedCell2_off", moveInPlayer = nil, moveOutPlayer = nil}
-, 
-[3] = {go = self.selectedFillAreaGo3, rect = self.selectedFillAreaRect3, imgLoader = self.selectedCardImg3, anim = self._selAnim3, animNamePutDown = "SelectedCell3_putdown", animNameIn = "SelectedCell3_enlarge", animNameOut = "SelectedCell3_recover", animNameUnselected = "SelectedCell3_off", moveInPlayer = nil, moveOutPlayer = nil}
-}
+    [1] = {
+      go = self.selectedFillAreaGo1,
+      rect = self.selectedFillAreaRect1,
+      imgLoader = self.selectedCardImg1,
+      anim = self._selAnim1,
+      animNamePutDown = "SelectedCell1_putdown",
+      animNameIn = "SelectedCell1_enlarge",
+      animNameOut = "SelectedCell1_recover",
+      animNameUnselected = "SelectedCell1_off",
+      moveInPlayer = nil,
+      moveOutPlayer = nil
+    },
+    [2] = {
+      go = self.selectedFillAreaGo2,
+      rect = self.selectedFillAreaRect2,
+      imgLoader = self.selectedCardImg2,
+      anim = self._selAnim2,
+      animNamePutDown = "SelectedCell2_putdown",
+      animNameIn = "SelectedCell2_enlarge",
+      animNameOut = "SelectedCell2_recover",
+      animNameUnselected = "SelectedCell2_off",
+      moveInPlayer = nil,
+      moveOutPlayer = nil
+    },
+    [3] = {
+      go = self.selectedFillAreaGo3,
+      rect = self.selectedFillAreaRect3,
+      imgLoader = self.selectedCardImg3,
+      anim = self._selAnim3,
+      animNamePutDown = "SelectedCell3_putdown",
+      animNameIn = "SelectedCell3_enlarge",
+      animNameOut = "SelectedCell3_recover",
+      animNameUnselected = "SelectedCell3_off",
+      moveInPlayer = nil,
+      moveOutPlayer = nil
+    }
+  }
   self.selectedCardRes = {
-[FeatureCardType.A] = {res = "n21_jieruo_ka_red"}
-, 
-[FeatureCardType.B] = {res = "n21_jieruo_ka_yellow"}
-, 
-[FeatureCardType.C] = {res = "n21_jieruo_ka_blue"}
-}
+    [FeatureCardType.A] = {
+      res = "n21_jieruo_ka_red"
+    },
+    [FeatureCardType.B] = {
+      res = "n21_jieruo_ka_yellow"
+    },
+    [FeatureCardType.C] = {
+      res = "n21_jieruo_ka_blue"
+    }
+  }
   self.skillLocalInfoDic = {
-[1] = {title = "abc", infoParamType = 2}
-, 
-[2] = {title = "aaa", infoParamType = 1}
-, 
-[3] = {title = "aab", infoParamType = 0}
-}
-  self.comTypeToSkillLocalInfoDic = {[FeatureCardCompositionType.ABC] = 1, [FeatureCardCompositionType.AAA] = 2, [FeatureCardCompositionType.BBB] = 2, [FeatureCardCompositionType.CCC] = 2, [FeatureCardCompositionType.AAB] = 3, [FeatureCardCompositionType.AAC] = 3, [FeatureCardCompositionType.BBA] = 3, [FeatureCardCompositionType.BBC] = 3, [FeatureCardCompositionType.CCA] = 3, [FeatureCardCompositionType.CCB] = 3}
+    [1] = {title = "abc", infoParamType = 2},
+    [2] = {title = "aaa", infoParamType = 1},
+    [3] = {title = "aab", infoParamType = 0}
+  }
+  self.comTypeToSkillLocalInfoDic = {
+    [FeatureCardCompositionType.ABC] = 1,
+    [FeatureCardCompositionType.AAA] = 2,
+    [FeatureCardCompositionType.BBB] = 2,
+    [FeatureCardCompositionType.CCC] = 2,
+    [FeatureCardCompositionType.AAB] = 3,
+    [FeatureCardCompositionType.AAC] = 3,
+    [FeatureCardCompositionType.BBA] = 3,
+    [FeatureCardCompositionType.BBC] = 3,
+    [FeatureCardCompositionType.CCA] = 3,
+    [FeatureCardCompositionType.CCB] = 3
+  }
   self:AttachDragEvent(FeatureCardType.A)
   self:AttachDragEvent(FeatureCardType.B)
   self:AttachDragEvent(FeatureCardType.C)
-  self._dragEndDisappearAnimNames = {[FeatureCardType.A] = "DragCard_sun", [FeatureCardType.B] = "DragCard_moon", [FeatureCardType.C] = "DragCard_star"}
-  self._dragEndDisRefreshDepotAnimNames = {[FeatureCardType.A] = "CardBagArea_A", [FeatureCardType.B] = "CardBagArea_B", [FeatureCardType.C] = "CardBagArea_C"}
+  self._dragEndDisappearAnimNames = {
+    [FeatureCardType.A] = "DragCard_sun",
+    [FeatureCardType.B] = "DragCard_moon",
+    [FeatureCardType.C] = "DragCard_star"
+  }
+  self._dragEndDisRefreshDepotAnimNames = {
+    [FeatureCardType.A] = "CardBagArea_A",
+    [FeatureCardType.B] = "CardBagArea_B",
+    [FeatureCardType.C] = "CardBagArea_C"
+  }
   self:SetFontMat(self._castTextTmp, "battle_feature_card_info_text_mt.mat")
   self:SetFontMat(self._closeTextTmp, "battle_feature_card_info_text_mt.mat")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.SetUIBattle = function(self, uiBattle)
-  -- function num : 0_5
+function UIWidgetFeatureCardInfo:SetUIBattle(uiBattle)
   self._uiBattle = uiBattle
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.GetSkillLocalInfo = function(self, compositionType)
-  -- function num : 0_6
-  local dicKey = (self.comTypeToSkillLocalInfoDic)[compositionType]
+function UIWidgetFeatureCardInfo:GetSkillLocalInfo(compositionType)
+  local dicKey = self.comTypeToSkillLocalInfoDic[compositionType]
   if dicKey then
-    return (self.skillLocalInfoDic)[dicKey]
+    return self.skillLocalInfoDic[dicKey]
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.ResetState = function(self)
-  -- function num : 0_7
+function UIWidgetFeatureCardInfo:ResetState()
   self.canCast = false
   self._curSkillID = 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.RefreshAll = function(self)
-  -- function num : 0_8
+function UIWidgetFeatureCardInfo:RefreshAll()
   if not self._initData then
-    return 
+    return
   end
   self:RefreshCardDepotInfo()
   self:RefreshCardSelectedInfo()
@@ -190,972 +238,712 @@ UIWidgetFeatureCardInfo.RefreshAll = function(self)
   self:RefreshCastBtn()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.Init = function(self, skillInitData, castCb, cancelCb)
-  -- function num : 0_9 , upvalues : _ENV
+function UIWidgetFeatureCardInfo:Init(skillInitData, castCb, cancelCb)
   self._initData = skillInitData
   self._castCb = castCb
   self._cancelCb = cancelCb
   self._curSkillID = 0
   self.canCast = false
   self._uiCastClicked = false
-  local cards = (FeatureServiceHelper.GetCards)()
+  local cards = FeatureServiceHelper.GetCards()
   self._cards = {}
-  for cardType,count in pairs(cards) do
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R10 in 'UnsetPending'
-
-    (self._cards)[cardType] = count
+  for cardType, count in pairs(cards) do
+    self._cards[cardType] = count
   end
   self._selectedCards = {}
   self:RefreshAll()
   self:PlayEnterAudio()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.GetSelectedCount = function(self)
-  -- function num : 0_10
+function UIWidgetFeatureCardInfo:GetSelectedCount()
   local count = 0
   for index = 1, self._selectMax do
-    local cardType = (self._selectedCards)[index]
-    if cardType and cardType > 0 then
+    local cardType = self._selectedCards[index]
+    if cardType and 0 < cardType then
       count = count + 1
     end
   end
   return count
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.InsertToSelected = function(self, cardType, tarIndex)
-  -- function num : 0_11
+function UIWidgetFeatureCardInfo:InsertToSelected(cardType, tarIndex)
   if not tarIndex then
     for index = 1, self._selectMax do
-      local cardType = (self._selectedCards)[index]
-      -- DECOMPILER ERROR at PC14: Confused about usage of register: R8 in 'UnsetPending'
-
-      if cardType and cardType > 0 then
-        do
-          (self._selectedCards)[index] = cardType
-          do return  end
-          -- DECOMPILER ERROR at PC16: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC16: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      local cardType = self._selectedCards[index]
+      if cardType and 0 < cardType then
+      else
+        self._selectedCards[index] = cardType
+        return
       end
     end
   end
-  local curCardType = (self._selectedCards)[tarIndex]
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R4 in 'UnsetPending'
-
-  if curCardType and curCardType > 0 then
-    (self._selectedCards)[tarIndex] = cardType
+  local curCardType = self._selectedCards[tarIndex]
+  if curCardType and 0 < curCardType then
+  else
+    self._selectedCards[tarIndex] = cardType
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.RemoveSelected = function(self, index)
-  -- function num : 0_12
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._selectedCards)[index] = 0
+function UIWidgetFeatureCardInfo:RemoveSelected(index)
+  self._selectedCards[index] = 0
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.IsSelectedSlotEmpty = function(self, index)
-  -- function num : 0_13
-  local card = (self._selectedCards)[index]
-  if card and card > 0 then
+function UIWidgetFeatureCardInfo:IsSelectedSlotEmpty(index)
+  local card = self._selectedCards[index]
+  if card and 0 < card then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.SelectCard = function(self, cardType, tarIndex)
-  -- function num : 0_14
-  if (self._cards)[cardType] and (self._cards)[cardType] > 0 then
-    do return -1 end
-    if not tarIndex then
-      local bHasEmptySlot = false
-      for i = 1, self._selectMax do
-        if self:IsSelectedSlotEmpty(i) then
-          bHasEmptySlot = true
-          tarIndex = i
-          break
-        end
-      end
-      do
-        do
-          if not bHasEmptySlot then
-            return 0
-          end
-          -- DECOMPILER ERROR at PC40: Confused about usage of register: R3 in 'UnsetPending'
-
-          if self:GetSelectedCount() < self._selectMax then
-            (self._cards)[cardType] = (self._cards)[cardType] - 1
-            self:InsertToSelected(cardType, tarIndex)
-          end
-          return tarIndex
-        end
+function UIWidgetFeatureCardInfo:SelectCard(cardType, tarIndex)
+  if self._cards[cardType] and self._cards[cardType] > 0 then
+  else
+    return -1
+  end
+  if not tarIndex then
+    local bHasEmptySlot = false
+    for i = 1, self._selectMax do
+      if self:IsSelectedSlotEmpty(i) then
+        bHasEmptySlot = true
+        tarIndex = i
+        break
       end
     end
+    if not bHasEmptySlot then
+      return 0
+    end
   end
+  if self:GetSelectedCount() < self._selectMax then
+    self._cards[cardType] = self._cards[cardType] - 1
+    self:InsertToSelected(cardType, tarIndex)
+  end
+  return tarIndex
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.UnselectCard = function(self, cardIndex)
-  -- function num : 0_15
-  if (self._selectedCards)[cardIndex] then
-    local cardType = (self._selectedCards)[cardIndex]
+function UIWidgetFeatureCardInfo:UnselectCard(cardIndex)
+  if self._selectedCards[cardIndex] then
+    local cardType = self._selectedCards[cardIndex]
     self:RemoveSelected(cardIndex)
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-    if not (self._cards)[cardType] then
-      (self._cards)[cardType] = 0
+    if not self._cards[cardType] then
+      self._cards[cardType] = 0
     end
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-    if (self._cards)[cardType] then
-      (self._cards)[cardType] = (self._cards)[cardType] + 1
+    if self._cards[cardType] then
+      self._cards[cardType] = self._cards[cardType] + 1
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.IsSelectedCardsEnough = function(self)
-  -- function num : 0_16
+function UIWidgetFeatureCardInfo:IsSelectedCardsEnough()
   if self._selectedCards and self:GetSelectedCount() == self._selectMax then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.CheckCurSkillCastCondition = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local skillConfigData = (ConfigServiceHelper.GetSkillConfigData)(self._curSkillID)
+function UIWidgetFeatureCardInfo:CheckCurSkillCastCondition()
+  local skillConfigData = ConfigServiceHelper.GetSkillConfigData(self._curSkillID)
   if not skillConfigData then
     return false
   end
-  return (FeatureServiceHelper.CheckFeatureSkillCastCondition)(FeatureType.Card, self._curSkillID)
+  return FeatureServiceHelper.CheckFeatureSkillCastCondition(FeatureType.Card, self._curSkillID)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.RefreshSkillInfo = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIWidgetFeatureCardInfo:RefreshSkillInfo()
   if self:IsSelectedCardsEnough() then
     if self._curSkillID and self._curSkillID > 0 then
+    else
       self:UIAnimOnCardEnough()
-      ;
-      (self.skillDetailArea):SetActive(true)
-      local comType = (FeatureServiceHelper.CaclCardCompositionType)(self._selectedCards)
-      local skillLocalInfo = self:GetSkillLocalInfo(comType)
-      if skillLocalInfo then
-        local skillID = ((self._initData):GetCardSkillDic())[comType]
-        if skillID then
-          self._curSkillID = skillID
-          local log = nil
-          self.canCast = self:CheckCurSkillCastCondition()
-          -- DECOMPILER ERROR at PC44: Overwrote pending register: R7 in 'AssignReg'
-
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(R7_PC36, self._curSkillID)
-          -- DECOMPILER ERROR at PC51: Overwrote pending register: R7 in 'AssignReg'
-
-          -- DECOMPILER ERROR at PC52: Overwrote pending register: R7 in 'AssignReg'
-
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(R7_PC36, FeatureType.Card, self._curSkillID)
-        end
-        do
-          -- DECOMPILER ERROR at PC57: Overwrote pending register: R4 in 'AssignReg'
-
-          local skillConfigData = (log.GetSkillConfigData)(self._curSkillID)
-          if skillConfigData then
-            local title = skillConfigData:GetSkillName()
-            -- DECOMPILER ERROR at PC67: Overwrote pending register: R7 in 'AssignReg'
-
-            local skillTitle = (StringTable.Get)(R7_PC36)
-            -- DECOMPILER ERROR at PC69: Overwrote pending register: R7 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC70: Overwrote pending register: R7 in 'AssignReg'
-
-            R7_PC36(R7_PC36, skillTitle)
-            -- DECOMPILER ERROR at PC73: Overwrote pending register: R7 in 'AssignReg'
-
-            local skillDesc = R7_PC36
-            local desc = skillConfigData:GetSkillDesc()
-            -- DECOMPILER ERROR at PC83: Overwrote pending register: R7 in 'AssignReg'
-
-            if skillLocalInfo.infoParamType ~= 0 or skillLocalInfo.infoParamType == 1 then
-              local nameOri = self:_GetTeamLeaderName()
-              local name = (StringTable.Get)(nameOri)
-              -- DECOMPILER ERROR at PC99: Overwrote pending register: R7 in 'AssignReg'
-
-            else
-              do
-                if skillLocalInfo.infoParamType == 2 then
-                  local nameOri = self:_GetTeamTailName()
-                  local name = (StringTable.Get)(nameOri)
-                  -- DECOMPILER ERROR at PC115: Overwrote pending register: R7 in 'AssignReg'
-
-                end
-                do
-                  do
-                    do
-                      ;
-                      (self.skillDescText):SetText(skillDesc)
-                      self:ResetState()
-                      ;
-                      (self.skillDetailArea):SetActive(false)
-                      if self._curSkillID and self._curSkillID > 0 then
-                        self:OnCancelSkill()
-                      end
-                      self:ResetState()
-                      self._cannotCastReason = BattleUIActiveSkillCannotCastReason.CardNotEnough
-                      ;
-                      (self.skillDetailArea):SetActive(false)
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
     end
+    self.skillDetailArea:SetActive(true)
+    local comType = FeatureServiceHelper.CaclCardCompositionType(self._selectedCards)
+    local skillLocalInfo = self:GetSkillLocalInfo(comType)
+    if skillLocalInfo then
+      local skillID = self._initData:GetCardSkillDic()[comType]
+      if skillID then
+        self._curSkillID = skillID
+        local log
+        self.canCast, log, self._cannotCastReason = self:CheckCurSkillCastCondition()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.PreClickPetHead, self._curSkillID)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.ClickPersonaSkill, FeatureType.Card, self._curSkillID)
+      end
+      local skillConfigData = ConfigServiceHelper.GetSkillConfigData(self._curSkillID)
+      if skillConfigData then
+        local title = skillConfigData:GetSkillName()
+        local skillTitle = StringTable.Get(title)
+        self.skillTitleText:SetText(skillTitle)
+        local skillDesc = ""
+        local desc = skillConfigData:GetSkillDesc()
+        if skillLocalInfo.infoParamType == 0 then
+          skillDesc = StringTable.Get(desc)
+        elseif skillLocalInfo.infoParamType == 1 then
+          local nameOri = self:_GetTeamLeaderName()
+          local name = StringTable.Get(nameOri)
+          skillDesc = StringTable.Get(desc, name)
+        elseif skillLocalInfo.infoParamType == 2 then
+          local nameOri = self:_GetTeamTailName()
+          local name = StringTable.Get(nameOri)
+          skillDesc = StringTable.Get(desc, name)
+        end
+        self.skillDescText:SetText(skillDesc)
+      end
+    else
+      self:ResetState()
+      self.skillDetailArea:SetActive(false)
+    end
+  else
+    if self._curSkillID and self._curSkillID > 0 then
+      self:OnCancelSkill()
+    end
+    self:ResetState()
+    self._cannotCastReason = BattleUIActiveSkillCannotCastReason.CardNotEnough
+    self.skillDetailArea:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.OnCancelSkill = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.StopPreviewFeatureSkill, false, true, self._curSkillID, FeatureType.Card)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PreClickPetHead, -1)
+function UIWidgetFeatureCardInfo:OnCancelSkill()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.StopPreviewFeatureSkill, false, true, self._curSkillID, FeatureType.Card)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PreClickPetHead, -1)
   self:UIAnimOnSkillCancel()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo._GetTeamLeaderName = function(self)
-  -- function num : 0_20
-  return (self._uiBattle):GetUITeamLeaderName()
+function UIWidgetFeatureCardInfo:_GetTeamLeaderName()
+  return self._uiBattle:GetUITeamLeaderName()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo._GetTeamTailName = function(self)
-  -- function num : 0_21
-  return (self._uiBattle):GetUITeamTailName()
+function UIWidgetFeatureCardInfo:_GetTeamTailName()
+  return self._uiBattle:GetUITeamTailName()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.RefreshCastBtn = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIWidgetFeatureCardInfo:RefreshCastBtn()
   if self.canCast then
-    (self.castBtn).interactable = true
-    local toColor = Color(1, 1, 1, 1)
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._castTextTmp).color = toColor
+    self.castBtn.interactable = true
+    local toColor = Color(1.0, 1.0, 1.0, 1)
+    self._castTextTmp.color = toColor
   else
-    do
-      -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self.castBtn).interactable = false
-      local toColor = Color(1, 1, 1, 0.70588235294118)
-      -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._castTextTmp).color = toColor
-    end
+    self.castBtn.interactable = false
+    local toColor = Color(1.0, 1.0, 1.0, 0.7058823529411765)
+    self._castTextTmp.color = toColor
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.RefreshCardDepotInfo = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIWidgetFeatureCardInfo:RefreshCardDepotInfo()
   self:RefreshOneCardDepotInfo(FeatureCardType.A)
   self:RefreshOneCardDepotInfo(FeatureCardType.B)
   self:RefreshOneCardDepotInfo(FeatureCardType.C)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.RefreshOneCardDepotInfo = function(self, cardType)
-  -- function num : 0_24
-  local uiInfo = (self.depotUi)[cardType]
-  local cardNum = (self._cards)[cardType]
+function UIWidgetFeatureCardInfo:RefreshOneCardDepotInfo(cardType)
+  local uiInfo = self.depotUi[cardType]
+  local cardNum = self._cards[cardType]
   if uiInfo then
-    if cardNum and cardNum > 0 then
-      (uiInfo.numGo):SetActive(true)
-      ;
-      (uiInfo.numText):SetText(cardNum)
-      if not (uiInfo.imgRes)[cardNum] then
-        local res = uiInfo.imgResMore
-      end
-      ;
-      (uiInfo.imgLoader):LoadImage(res)
+    if cardNum and 0 < cardNum then
+      uiInfo.numGo:SetActive(true)
+      uiInfo.numText:SetText(cardNum)
+      local res = uiInfo.imgRes[cardNum] or uiInfo.imgResMore
+      uiInfo.imgLoader:LoadImage(res)
     else
-      do
-        ;
-        (uiInfo.imgLoader):LoadImage((uiInfo.imgRes)[0])
-        ;
-        (uiInfo.numGo):SetActive(true)
-        ;
-        (uiInfo.numText):SetText(0)
-      end
+      uiInfo.imgLoader:LoadImage(uiInfo.imgRes[0])
+      uiInfo.numGo:SetActive(true)
+      uiInfo.numText:SetText(0)
     end
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.TmpDecressOneCardDepotInfo = function(self, cardType)
-  -- function num : 0_25
-  local uiInfo = (self.depotUi)[cardType]
-  local oriCardNum = (self._cards)[cardType]
+function UIWidgetFeatureCardInfo:TmpDecressOneCardDepotInfo(cardType)
+  local uiInfo = self.depotUi[cardType]
+  local oriCardNum = self._cards[cardType]
   local cardNum = 0
-  if oriCardNum and oriCardNum > 0 then
+  if oriCardNum and 0 < oriCardNum then
     cardNum = oriCardNum - 1
   end
   if uiInfo then
-    if cardNum and cardNum > 0 then
-      (uiInfo.numGo):SetActive(true)
-      ;
-      (uiInfo.numText):SetText(cardNum)
-      if not (uiInfo.imgRes)[cardNum] then
-        local res = uiInfo.imgResMore
-      end
-      ;
-      (uiInfo.imgLoader):LoadImage(res)
+    if cardNum and 0 < cardNum then
+      uiInfo.numGo:SetActive(true)
+      uiInfo.numText:SetText(cardNum)
+      local res = uiInfo.imgRes[cardNum] or uiInfo.imgResMore
+      uiInfo.imgLoader:LoadImage(res)
     else
-      do
-        ;
-        (uiInfo.imgLoader):LoadImage((uiInfo.imgRes)[0])
-        ;
-        (uiInfo.numGo):SetActive(true)
-        ;
-        (uiInfo.numText):SetText(0)
-      end
+      uiInfo.imgLoader:LoadImage(uiInfo.imgRes[0])
+      uiInfo.numGo:SetActive(true)
+      uiInfo.numText:SetText(0)
     end
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.RefreshCardSelectedInfo = function(self)
-  -- function num : 0_26
+function UIWidgetFeatureCardInfo:RefreshCardSelectedInfo()
   for i = 1, self._selectMax do
     self:RefreshOneCardSelectedInfo(i)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.RefreshOneCardSelectedInfo = function(self, index)
-  -- function num : 0_27
-  local uiInfo = (self.selectedUi)[index]
-  local cardType = (self._selectedCards)[index]
+function UIWidgetFeatureCardInfo:RefreshOneCardSelectedInfo(index)
+  local uiInfo = self.selectedUi[index]
+  local cardType = self._selectedCards[index]
   if uiInfo then
-    if cardType and cardType > 0 then
-      (uiInfo.go):SetActive(true)
-      local res = ((self.selectedCardRes)[cardType]).res
-      ;
-      (uiInfo.imgLoader):LoadImage(res)
+    if cardType and 0 < cardType then
+      uiInfo.go:SetActive(true)
+      local res = self.selectedCardRes[cardType].res
+      uiInfo.imgLoader:LoadImage(res)
     else
-      do
-        ;
-        (uiInfo.go):SetActive(false)
-      end
+      uiInfo.go:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.SetData = function(self)
-  -- function num : 0_28
+function UIWidgetFeatureCardInfo:SetData()
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.CloseBtnOnClick = function(self, go)
-  -- function num : 0_29
+function UIWidgetFeatureCardInfo:CloseBtnOnClick(go)
   if self._cancelCb then
-    (self._cancelCb)(self._curSkillID)
+    self._cancelCb(self._curSkillID)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.CloseArea1OnClick = function(self, go)
-  -- function num : 0_30
+function UIWidgetFeatureCardInfo:CloseArea1OnClick(go)
   self:CloseBtnOnClick(nil)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.CloseArea2OnClick = function(self, go)
-  -- function num : 0_31
+function UIWidgetFeatureCardInfo:CloseArea2OnClick(go)
   self:CloseBtnOnClick(nil)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.CastBtnOnClick = function(self, go)
-  -- function num : 0_32
+function UIWidgetFeatureCardInfo:CastBtnOnClick(go)
   self:OnCastClick()
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.SelectedCardImg1OnClick = function(self, go)
-  -- function num : 0_33
+function UIWidgetFeatureCardInfo:SelectedCardImg1OnClick(go)
   self:UnselectCard(1)
   self:RefreshAll()
   self:UIAnimOnUnSelected(1)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.SelectedCardImg2OnClick = function(self, go)
-  -- function num : 0_34
+function UIWidgetFeatureCardInfo:SelectedCardImg2OnClick(go)
   self:UnselectCard(2)
   self:RefreshAll()
   self:UIAnimOnUnSelected(2)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.SelectedCardImg3OnClick = function(self, go)
-  -- function num : 0_35
+function UIWidgetFeatureCardInfo:SelectedCardImg3OnClick(go)
   self:UnselectCard(3)
   self:RefreshAll()
   self:UIAnimOnUnSelected(3)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.AutoCardImgOnClick = function(self, cardType)
-  -- function num : 0_36 , upvalues : _ENV
+function UIWidgetFeatureCardInfo:AutoCardImgOnClick(cardType)
   if FeatureCardType.A == cardType then
     self:CardImgAOnClick(nil)
-  else
-    if FeatureCardType.B == cardType then
-      self:CardImgBOnClick(nil)
-    else
-      if FeatureCardType.C == cardType then
-        self:CardImgCOnClick(nil)
-      end
-    end
+  elseif FeatureCardType.B == cardType then
+    self:CardImgBOnClick(nil)
+  elseif FeatureCardType.C == cardType then
+    self:CardImgCOnClick(nil)
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.CardImgAOnClick = function(self, go)
-  -- function num : 0_37 , upvalues : _ENV
+function UIWidgetFeatureCardInfo:CardImgAOnClick(go)
   local toSlotIndex = self:SelectCard(FeatureCardType.A)
-  if toSlotIndex > 0 then
+  if 0 < toSlotIndex then
     self:RefreshAll()
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(2522)
+    AudioHelperController.PlayUISoundAutoRelease(2522)
     self:UIAnimOnPutDownSelected(toSlotIndex)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.CardImgBOnClick = function(self, go)
-  -- function num : 0_38 , upvalues : _ENV
+function UIWidgetFeatureCardInfo:CardImgBOnClick(go)
   local toSlotIndex = self:SelectCard(FeatureCardType.B)
-  if toSlotIndex > 0 then
+  if 0 < toSlotIndex then
     self:RefreshAll()
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(2522)
+    AudioHelperController.PlayUISoundAutoRelease(2522)
     self:UIAnimOnPutDownSelected(toSlotIndex)
   end
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.CardImgCOnClick = function(self, go)
-  -- function num : 0_39 , upvalues : _ENV
+function UIWidgetFeatureCardInfo:CardImgCOnClick(go)
   local toSlotIndex = self:SelectCard(FeatureCardType.C)
-  if toSlotIndex > 0 then
+  if 0 < toSlotIndex then
     self:RefreshAll()
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(2522)
+    AudioHelperController.PlayUISoundAutoRelease(2522)
     self:UIAnimOnPutDownSelected(toSlotIndex)
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.OnCastClick = function(self)
-  -- function num : 0_40 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIWidgetFeatureCardInfo", input = "TmpCastOnClick", 
-args = {}
-})
+function UIWidgetFeatureCardInfo:OnCastClick()
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIWidgetFeatureCardInfo",
+    input = "TmpCastOnClick",
+    args = {}
+  })
   if self._uiCastClicked then
-    return 
+    return
   end
   if not self.canCast then
     if not self:MissionCanCast() then
-      local text = (StringTable.Get)("str_match_pickup_skill_limit")
-      ;
-      (ToastManager.ShowToast)(text)
+      local text = StringTable.Get("str_match_pickup_skill_limit")
+      ToastManager.ShowToast(text)
+    elseif self._cannotCastReason then
+      local textKey = ActiveSkillCannotCastReasonText[self._cannotCastReason]
+      local text = StringTable.Get(textKey)
+      ToastManager.ShowToast(text)
     else
-      do
-        if self._cannotCastReason then
-          local textKey = ActiveSkillCannotCastReasonText[self._cannotCastReason]
-          local text = (StringTable.Get)(textKey)
-          ;
-          (ToastManager.ShowToast)(text)
-        else
-          do
-            do
-              local text = (StringTable.Get)("str_match_cannot_cast_skill_reason")
-              ;
-              (ToastManager.ShowToast)(text)
-              if self._castCb and self.canCast then
-                local skillConfigData = (ConfigServiceHelper.GetSkillConfigData)(self._curSkillID)
-                local pickUpType = skillConfigData:GetSkillPickType()
-                -- DECOMPILER ERROR at PC72: Confused about usage of register: R3 in 'UnsetPending'
-
-                if self:MissionCanCast() then
-                  (self.castBtn).interactable = false
-                  self._uiCastClicked = true
-                  self:UIAnimOnCast(pickUpType)
-                  ;
-                  (Log.info)("[Card] cast on click ")
-                else
-                  local text = (StringTable.Get)("str_match_pickup_skill_limit")
-                  ;
-                  (ToastManager.ShowToast)(text)
-                end
-              end
-            end
-          end
-        end
-      end
+      local text = StringTable.Get("str_match_cannot_cast_skill_reason")
+      ToastManager.ShowToast(text)
+    end
+  end
+  if self._castCb and self.canCast then
+    local skillConfigData = ConfigServiceHelper.GetSkillConfigData(self._curSkillID)
+    local pickUpType = skillConfigData:GetSkillPickType()
+    if self:MissionCanCast() then
+      self.castBtn.interactable = false
+      self._uiCastClicked = true
+      self:UIAnimOnCast(pickUpType)
+      Log.info("[Card] cast on click ")
+    else
+      local text = StringTable.Get("str_match_pickup_skill_limit")
+      ToastManager.ShowToast(text)
     end
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.MissionCanCast = function(self)
-  -- function num : 0_41 , upvalues : _ENV
-  local matchModule = (GameGlobal.GetModule)(MatchModule)
+function UIWidgetFeatureCardInfo:MissionCanCast()
+  local matchModule = GameGlobal.GetModule(MatchModule)
   local enterData = matchModule:GetMatchEnterData()
   if enterData:GetMatchType() == MatchType.MT_Mission then
-    local currentMissionId = (enterData:GetMissionCreateInfo()).mission_id
-    local current_mission_cfg = (Cfg.cfg_mission)[currentMissionId]
+    local currentMissionId = enterData:GetMissionCreateInfo().mission_id
+    local current_mission_cfg = Cfg.cfg_mission[currentMissionId]
     if current_mission_cfg == nil then
       return true
     end
     local missionCanCast = current_mission_cfg.CastSkillLimit
     return missionCanCast
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.OnCardDragBegin = function(self, cardType)
-  -- function num : 0_42 , upvalues : _ENV
-  local cardNum = (self._cards)[cardType]
-  if cardNum and cardNum > 0 then
+function UIWidgetFeatureCardInfo:OnCardDragBegin(cardType)
+  local cardNum = self._cards[cardType]
+  if cardNum and 0 < cardNum then
     self._dragingCard = true
     self._dragingCardCurSlot = 0
     self:ShowDragCard(cardType)
     self:TmpDecressOneCardDepotInfo(cardType)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(2522)
-    self._dragingSoundID = (AudioHelperController.PlayUISoundResource)(2525, true)
+    AudioHelperController.PlayUISoundAutoRelease(2522)
+    self._dragingSoundID = AudioHelperController.PlayUISoundResource(2525, true)
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.ShowDragCard = function(self, cardType)
-  -- function num : 0_43
-  (self.dragCardGo):SetActive(true)
-  local res = ((self.selectedCardRes)[cardType]).res
-  ;
-  (self.dragCardImgGo):SetActive(true)
-  ;
-  (self.dragCardImg):LoadImage(res)
+function UIWidgetFeatureCardInfo:ShowDragCard(cardType)
+  self.dragCardGo:SetActive(true)
+  local res = self.selectedCardRes[cardType].res
+  self.dragCardImgGo:SetActive(true)
+  self.dragCardImg:LoadImage(res)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.OnDragCardEnd = function(self, cardType)
-  -- function num : 0_44 , upvalues : _ENV
+function UIWidgetFeatureCardInfo:OnDragCardEnd(cardType)
   if self._dragingSoundID then
-    (AudioHelperController.StopUISound)(self._dragingSoundID)
+    AudioHelperController.StopUISound(self._dragingSoundID)
   end
   if self._dragingCard then
     self._dragingCard = false
     self._dragingCardCurSlot = 0
     local toSlotIndex = 0
-    for index,info in pairs(self.selectedUi) do
+    for index, info in pairs(self.selectedUi) do
       local tran = info.rect
-      local localPos = tran:InverseTransformPoint((self.dragCardTran).position)
-      if (tran.rect):Contains(localPos) then
+      local localPos = tran:InverseTransformPoint(self.dragCardTran.position)
+      if tran.rect:Contains(localPos) then
         toSlotIndex = index
         break
       end
     end
-    do
-      if toSlotIndex == 0 then
-        (self.dragCardImgGo):SetActive(false)
-        self:UIAnimOnDragCardEnd(cardType)
-        return 
-      end
-      if not self:IsSelectedSlotEmpty(toSlotIndex) then
-        self:UnselectCard(toSlotIndex)
-      end
-      self:SelectCard(cardType, toSlotIndex)
-      self:RefreshAll()
-      self:HideDragCard()
-      self:UIAnimOnPutDownSelected(toSlotIndex)
+    if toSlotIndex == 0 then
+      self.dragCardImgGo:SetActive(false)
+      self:UIAnimOnDragCardEnd(cardType)
+      return
     end
+    if not self:IsSelectedSlotEmpty(toSlotIndex) then
+      self:UnselectCard(toSlotIndex)
+    end
+    self:SelectCard(cardType, toSlotIndex)
+    self:RefreshAll()
+    self:HideDragCard()
+    self:UIAnimOnPutDownSelected(toSlotIndex)
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.HideDragCard = function(self)
-  -- function num : 0_45
-  (self.dragCardGo):SetActive(false)
-  ;
-  (self.dragCardImgGo):SetActive(false)
+function UIWidgetFeatureCardInfo:HideDragCard()
+  self.dragCardGo:SetActive(false)
+  self.dragCardImgGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.RefreshDragCardPos = function(self, screenPos)
-  -- function num : 0_46 , upvalues : _ENV
+function UIWidgetFeatureCardInfo:RefreshDragCardPos(screenPos)
   if self._dragingCard and self.dragCardTran then
-    local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera((self.uiOwner):GetName())
-    local pos = (UIHelper.ScreenPointToWorldPointInRectangle)((self.dragCardTran).parent, screenPos, camera)
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.dragCardTran).position = pos
+    local camera = GameGlobal.UIStateManager():GetControllerCamera(self.uiOwner:GetName())
+    local pos = UIHelper.ScreenPointToWorldPointInRectangle(self.dragCardTran.parent, screenPos, camera)
+    self.dragCardTran.position = pos
     if self._dragingCard then
       local toSlotIndex = 0
-      for index,info in pairs(self.selectedUi) do
+      for index, info in pairs(self.selectedUi) do
         local tran = info.rect
-        local localPos = tran:InverseTransformPoint((self.dragCardTran).position)
-        if (tran.rect):Contains(localPos) then
+        local localPos = tran:InverseTransformPoint(self.dragCardTran.position)
+        if tran.rect:Contains(localPos) then
           toSlotIndex = index
           break
         end
       end
-      do
-        -- DECOMPILER ERROR at PC53: Unhandled construct in 'MakeBoolean' P1
-
-        if toSlotIndex == 0 and self._dragingCardCurSlot > 0 then
+      if toSlotIndex == 0 then
+        if 0 < self._dragingCardCurSlot then
           self:UIAnimOnMoveOutSelected(self._dragingCardCurSlot)
           self._dragingCardCurSlot = 0
         end
-        if self._dragingCardCurSlot ~= toSlotIndex then
-          if self._dragingCardCurSlot > 0 then
-            self:UIAnimOnMoveOutSelected(self._dragingCardCurSlot)
-          end
-          self:UIAnimOnMoveInSelected(toSlotIndex)
-          self._dragingCardCurSlot = toSlotIndex
+      elseif self._dragingCardCurSlot ~= toSlotIndex then
+        if 0 < self._dragingCardCurSlot then
+          self:UIAnimOnMoveOutSelected(self._dragingCardCurSlot)
         end
+        self:UIAnimOnMoveInSelected(toSlotIndex)
+        self._dragingCardCurSlot = toSlotIndex
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.AttachDragEvent = function(self, cardType)
-  -- function num : 0_47 , upvalues : _ENV
-  local hostGo = nil
-  local uiInfo = (self.depotUi)[cardType]
+function UIWidgetFeatureCardInfo:AttachDragEvent(cardType)
+  local hostGo
+  local uiInfo = self.depotUi[cardType]
   if uiInfo then
     hostGo = uiInfo.imgGo
   end
   if not hostGo then
-    return 
+    return
   end
-  local etl = (UICustomUIEventListener.Get)(hostGo)
+  local etl = UICustomUIEventListener.Get(hostGo)
   self:AddUICustomEventListener(etl, UIEvent.BeginDrag, function(ped)
-    -- function num : 0_47_0 , upvalues : self, cardType
     self:OnCardDragBegin(cardType)
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Drag, function(ped)
-    -- function num : 0_47_1 , upvalues : self
     self:RefreshDragCardPos(ped.position)
-  end
-)
-  local endDragFunc = function()
-    -- function num : 0_47_2 , upvalues : self, cardType
+  end)
+  
+  local function endDragFunc()
     self:OnDragCardEnd(cardType)
   end
-
+  
   self:AddUICustomEventListener(etl, UIEvent.EndDrag, function(ped)
-    -- function num : 0_47_3 , upvalues : endDragFunc
     endDragFunc()
-  end
-)
+  end)
   if not EDITOR then
     self:AddUICustomEventListener(etl, UIEvent.ApplicationFocus, function(b)
-    -- function num : 0_47_4 , upvalues : etl, endDragFunc
-    if not b then
-      if not etl.IsDragging then
-        return 
+      if not b then
+        if not etl.IsDragging then
+          return
+        end
+        etl.IsDragging = false
+        endDragFunc()
       end
-      etl.IsDragging = false
-      endDragFunc()
-    end
-  end
-)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.UIAnimOnDragCardEnd = function(self, cardType)
-  -- function num : 0_48 , upvalues : _ENV
-  local animName = (self._dragEndDisappearAnimNames)[cardType]
+function UIWidgetFeatureCardInfo:UIAnimOnDragCardEnd(cardType)
+  local animName = self._dragEndDisappearAnimNames[cardType]
   if animName then
     self:Lock("UIAnimOnDragCardEnd")
     local player = EZTL_Player:New()
-    local tl = EZTL_Sequence:New({EZTL_PlayAnimation:New(self._dragCardAnim, animName), EZTL_Callback:New(function()
-    -- function num : 0_48_0 , upvalues : self, cardType
-    self:UIAnimOnDragCardEndRefreshDepot(cardType)
-    self:RefreshCardDepotInfo()
-    self:HideDragCard()
-    self:UnLock("UIAnimOnDragCardEnd")
-  end
-)}, "抽牌ui动效")
+    local tl = EZTL_Sequence:New({
+      EZTL_PlayAnimation:New(self._dragCardAnim, animName),
+      EZTL_Callback:New(function()
+        self:UIAnimOnDragCardEndRefreshDepot(cardType)
+        self:RefreshCardDepotInfo()
+        self:HideDragCard()
+        self:UnLock("UIAnimOnDragCardEnd")
+      end)
+    }, "抽牌ui动效")
     player:Play(tl)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(2527)
-    ;
-    (table.insert)(self._players, player)
+    AudioHelperController.PlayUISoundAutoRelease(2527)
+    table.insert(self._players, player)
   end
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.UIAnimOnDragCardEndRefreshDepot = function(self, cardType)
-  -- function num : 0_49 , upvalues : _ENV
-  local animName = (self._dragEndDisRefreshDepotAnimNames)[cardType]
+function UIWidgetFeatureCardInfo:UIAnimOnDragCardEndRefreshDepot(cardType)
+  local animName = self._dragEndDisRefreshDepotAnimNames[cardType]
   if animName then
     local player = EZTL_Player:New()
-    local tl = EZTL_Sequence:New({EZTL_PlayAnimation:New(self._cardBagAnim, animName), EZTL_Callback:New(function()
-    -- function num : 0_49_0 , upvalues : self
-    self:UnLock("UIAnimOnDragCardEndRefreshDepot")
-  end
-)}, "拖牌空地释放ui动效")
+    local tl = EZTL_Sequence:New({
+      EZTL_PlayAnimation:New(self._cardBagAnim, animName),
+      EZTL_Callback:New(function()
+        self:UnLock("UIAnimOnDragCardEndRefreshDepot")
+      end)
+    }, "拖牌空地释放ui动效")
     player:Play(tl)
-    ;
-    (table.insert)(self._players, player)
+    table.insert(self._players, player)
   end
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.UIAnimOnCardEnough = function(self)
-  -- function num : 0_50 , upvalues : _ENV
+function UIWidgetFeatureCardInfo:UIAnimOnCardEnough()
   local animName = "UIWidgetFeatureCardInfo_skill"
   if animName then
     self:Lock("UIAnimOnCardEnough")
     local player = EZTL_Player:New()
-    local tl = EZTL_Sequence:New({EZTL_PlayAnimation:New(self._rootAnim, animName), EZTL_Callback:New(function()
-    -- function num : 0_50_0 , upvalues : self
-    self:UnLock("UIAnimOnCardEnough")
-  end
-)}, "卡牌足够")
+    local tl = EZTL_Sequence:New({
+      EZTL_PlayAnimation:New(self._rootAnim, animName),
+      EZTL_Callback:New(function()
+        self:UnLock("UIAnimOnCardEnough")
+      end)
+    }, "卡牌足够")
     player:Play(tl)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(2519)
-    ;
-    (table.insert)(self._players, player)
+    AudioHelperController.PlayUISoundAutoRelease(2519)
+    table.insert(self._players, player)
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.UIAnimOnCast = function(self, pickUpType)
-  -- function num : 0_51 , upvalues : _ENV
+function UIWidgetFeatureCardInfo:UIAnimOnCast(pickUpType)
   local hideDelayMs = 3870
   local animName = "UIWidgetFeatureCardInfo_skill_start"
   if animName then
     local player = EZTL_Player:New()
     local tl1 = EZTL_PlayAnimation:New(self._rootAnim, animName)
     local tl2 = EZTL_Callback:New(function()
-    -- function num : 0_51_0 , upvalues : self, pickUpType, hideDelayMs
-    (self._castCb)(self._curSkillID, pickUpType, hideDelayMs)
-  end
-)
+      self._castCb(self._curSkillID, pickUpType, hideDelayMs)
+    end)
     local tl3 = EZTL_Wait:New(hideDelayMs, "发动")
-    local tl = EZTL_Parallel:New({tl1, tl2, tl3}, EZTL_EndTag.All, nil, "卡牌技发动")
+    local tl = EZTL_Parallel:New({
+      tl1,
+      tl2,
+      tl3
+    }, EZTL_EndTag.All, nil, "卡牌技发动")
     player:Play(tl)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(2529)
-    ;
-    (table.insert)(self._players, player)
+    AudioHelperController.PlayUISoundAutoRelease(2529)
+    table.insert(self._players, player)
   end
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.UIAnimOnPutDownSelected = function(self, slotIndex)
-  -- function num : 0_52 , upvalues : _ENV
-  local selectUi = (self.selectedUi)[slotIndex]
+function UIWidgetFeatureCardInfo:UIAnimOnPutDownSelected(slotIndex)
+  local selectUi = self.selectedUi[slotIndex]
   if not selectUi then
-    return 
+    return
   end
-  if selectUi.moveInPlayer and (selectUi.moveInPlayer):IsPlaying() then
-    (selectUi.moveInPlayer):Stop()
+  if selectUi.moveInPlayer then
+    if selectUi.moveInPlayer:IsPlaying() then
+      selectUi.moveInPlayer:Stop()
+    end
+    selectUi.moveInPlayer = nil
   end
-  selectUi.moveInPlayer = nil
-  if selectUi.moveOutPlayer and (selectUi.moveOutPlayer):IsPlaying() then
-    (selectUi.moveOutPlayer):Stop()
+  if selectUi.moveOutPlayer then
+    if selectUi.moveOutPlayer:IsPlaying() then
+      selectUi.moveOutPlayer:Stop()
+    end
+    selectUi.moveOutPlayer = nil
   end
-  selectUi.moveOutPlayer = nil
-  if selectUi.putDownPlayer and (selectUi.putDownPlayer):IsPlaying() then
-    (selectUi.putDownPlayer):Stop()
+  if selectUi.putDownPlayer then
+    if selectUi.putDownPlayer:IsPlaying() then
+      selectUi.putDownPlayer:Stop()
+    end
+    selectUi.putDownPlayer = nil
   end
-  selectUi.putDownPlayer = nil
   local anim = selectUi.anim
   local animName = selectUi.animNamePutDown
   if animName then
     local player = EZTL_Player:New()
-    local tl = EZTL_Sequence:New({EZTL_PlayAnimation:New(anim, animName), EZTL_Callback:New(function()
-    -- function num : 0_52_0 , upvalues : self
-    self:UnLock("UIAnimOnPutDownSelected")
-  end
-)}, "动效")
+    local tl = EZTL_Sequence:New({
+      EZTL_PlayAnimation:New(anim, animName),
+      EZTL_Callback:New(function()
+        self:UnLock("UIAnimOnPutDownSelected")
+      end)
+    }, "动效")
     player:Play(tl)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(2524)
-    ;
-    (table.insert)(self._players, player)
+    AudioHelperController.PlayUISoundAutoRelease(2524)
+    table.insert(self._players, player)
     selectUi.putDownPlayer = player
   end
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.UIAnimOnMoveInSelected = function(self, slotIndex)
-  -- function num : 0_53 , upvalues : _ENV
-  local selectUi = (self.selectedUi)[slotIndex]
+function UIWidgetFeatureCardInfo:UIAnimOnMoveInSelected(slotIndex)
+  local selectUi = self.selectedUi[slotIndex]
   if not selectUi then
-    return 
+    return
   end
-  local cardType = (self._selectedCards)[slotIndex]
-  if cardType and cardType > 0 then
-    return 
+  local cardType = self._selectedCards[slotIndex]
+  if cardType and 0 < cardType then
+    return
   end
   if selectUi.moveInPlayer then
-    return 
+    return
   end
-  if selectUi.moveOutPlayer and (selectUi.moveOutPlayer):IsPlaying() then
-    (selectUi.moveOutPlayer):Stop()
+  if selectUi.moveOutPlayer then
+    if selectUi.moveOutPlayer:IsPlaying() then
+      selectUi.moveOutPlayer:Stop()
+    end
+    selectUi.moveOutPlayer = nil
   end
-  selectUi.moveOutPlayer = nil
   local anim = selectUi.anim
   local animName = selectUi.animNameIn
   if animName then
     local player = EZTL_Player:New()
-    local tl = EZTL_Sequence:New({EZTL_PlayAnimation:New(anim, animName), EZTL_Callback:New(function()
-    -- function num : 0_53_0
-  end
-)}, "动效")
+    local tl = EZTL_Sequence:New({
+      EZTL_PlayAnimation:New(anim, animName),
+      EZTL_Callback:New(function()
+      end)
+    }, "动效")
     player:Play(tl)
-    ;
-    (table.insert)(self._players, player)
+    table.insert(self._players, player)
     selectUi.moveInPlayer = player
   end
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.UIAnimOnMoveOutSelected = function(self, slotIndex)
-  -- function num : 0_54 , upvalues : _ENV
-  local selectUi = (self.selectedUi)[slotIndex]
+function UIWidgetFeatureCardInfo:UIAnimOnMoveOutSelected(slotIndex)
+  local selectUi = self.selectedUi[slotIndex]
   if not selectUi then
-    return 
+    return
   end
-  local cardType = (self._selectedCards)[slotIndex]
-  if cardType and cardType > 0 then
-    return 
+  local cardType = self._selectedCards[slotIndex]
+  if cardType and 0 < cardType then
+    return
   end
   if selectUi.moveOutPlayer then
-    return 
+    return
   end
-  if selectUi.moveInPlayer and (selectUi.moveInPlayer):IsPlaying() then
-    (selectUi.moveInPlayer):Stop()
+  if selectUi.moveInPlayer then
+    if selectUi.moveInPlayer:IsPlaying() then
+      selectUi.moveInPlayer:Stop()
+    end
+    selectUi.moveInPlayer = nil
   end
-  selectUi.moveInPlayer = nil
   local anim = selectUi.anim
   local animName = selectUi.animNameOut
   if animName then
     local player = EZTL_Player:New()
-    local tl = EZTL_Sequence:New({EZTL_PlayAnimation:New(anim, animName), EZTL_Callback:New(function()
-    -- function num : 0_54_0
-  end
-)}, "动效")
+    local tl = EZTL_Sequence:New({
+      EZTL_PlayAnimation:New(anim, animName),
+      EZTL_Callback:New(function()
+      end)
+    }, "动效")
     player:Play(tl)
-    ;
-    (table.insert)(self._players, player)
+    table.insert(self._players, player)
     selectUi.moveOutPlayer = player
   end
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.UIAnimOnUnSelected = function(self, slotIndex)
-  -- function num : 0_55
-  local selectUi = (self.selectedUi)[slotIndex]
+function UIWidgetFeatureCardInfo:UIAnimOnUnSelected(slotIndex)
+  local selectUi = self.selectedUi[slotIndex]
   if not selectUi then
-    return 
+    return
   end
-  if selectUi.moveInPlayer and (selectUi.moveInPlayer):IsPlaying() then
-    (selectUi.moveInPlayer):Stop()
+  if selectUi.moveInPlayer then
+    if selectUi.moveInPlayer:IsPlaying() then
+      selectUi.moveInPlayer:Stop()
+    end
+    selectUi.moveInPlayer = nil
   end
-  selectUi.moveInPlayer = nil
-  if selectUi.moveOutPlayer and (selectUi.moveOutPlayer):IsPlaying() then
-    (selectUi.moveOutPlayer):Stop()
+  if selectUi.moveOutPlayer then
+    if selectUi.moveOutPlayer:IsPlaying() then
+      selectUi.moveOutPlayer:Stop()
+    end
+    selectUi.moveOutPlayer = nil
   end
-  selectUi.moveOutPlayer = nil
-  if selectUi.putDownPlayer and (selectUi.putDownPlayer):IsPlaying() then
-    (selectUi.putDownPlayer):Stop()
+  if selectUi.putDownPlayer then
+    if selectUi.putDownPlayer:IsPlaying() then
+      selectUi.putDownPlayer:Stop()
+    end
+    selectUi.putDownPlayer = nil
   end
-  selectUi.putDownPlayer = nil
   local anim = selectUi.anim
   local animName = selectUi.animNameUnselected
   if animName then
@@ -1163,48 +951,34 @@ UIWidgetFeatureCardInfo.UIAnimOnUnSelected = function(self, slotIndex)
   end
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.UIAnimOnSkillCancel = function(self)
-  -- function num : 0_56 , upvalues : _ENV
+function UIWidgetFeatureCardInfo:UIAnimOnSkillCancel()
   local animName = "UIWidgetFeatureCardInfo_skill_out"
   if animName then
     self:Lock("UIAnimOnSkillCancel")
     local player = EZTL_Player:New()
-    local tl = EZTL_Sequence:New({EZTL_PlayAnimation:New(self._rootAnim, animName), EZTL_Callback:New(function()
-    -- function num : 0_56_0 , upvalues : self
-    self:UnLock("UIAnimOnSkillCancel")
-  end
-)}, "关闭界面")
+    local tl = EZTL_Sequence:New({
+      EZTL_PlayAnimation:New(self._rootAnim, animName),
+      EZTL_Callback:New(function()
+        self:UnLock("UIAnimOnSkillCancel")
+      end)
+    }, "关闭界面")
     player:Play(tl)
-    ;
-    (table.insert)(self._players, player)
+    table.insert(self._players, player)
   end
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.PlayEnterAudio = function(self)
-  -- function num : 0_57 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(2524)
+function UIWidgetFeatureCardInfo:PlayEnterAudio()
+  AudioHelperController.PlayUISoundAutoRelease(2524)
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.GetCardBuffEffBeginScreenPos = function(self)
-  -- function num : 0_58 , upvalues : _ENV
-  local pos = (self._buffEffPosRect).position
-  local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera((self._uiBattle):GetName())
+function UIWidgetFeatureCardInfo:GetCardBuffEffBeginScreenPos()
+  local pos = self._buffEffPosRect.position
+  local camera = GameGlobal.UIStateManager():GetControllerCamera(self._uiBattle:GetName())
   local screenPos = camera:WorldToScreenPoint(pos)
   return screenPos
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCardInfo.GetCardBuffEffBeginPos = function(self)
-  -- function num : 0_59
-  local pos = (self._buffEffPosRect).position
+function UIWidgetFeatureCardInfo:GetCardBuffEffBeginPos()
+  local pos = self._buffEffPosRect.position
   return pos
 end
-
-

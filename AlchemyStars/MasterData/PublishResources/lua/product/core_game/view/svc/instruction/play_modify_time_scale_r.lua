@@ -1,36 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_modify_time_scale_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayModifyTimeScaleInstruction", BaseInstruction)
 PlayModifyTimeScaleInstruction = PlayModifyTimeScaleInstruction
 local ModifyTimeScaleType = {Reset = 0, SetTimeScale = 1}
 _enum("ModifyTimeScaleType", ModifyTimeScaleType)
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
 
-PlayModifyTimeScaleInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV, ModifyTimeScaleType
+function PlayModifyTimeScaleInstruction:Constructor(paramList)
   self._modifyType = tonumber(paramList.type)
   if self._modifyType == ModifyTimeScaleType.SetTimeScale then
     self._timeScale = tonumber(paramList.timeScale)
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-PlayModifyTimeScaleInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : ModifyTimeScaleType, _ENV
+function PlayModifyTimeScaleInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if self._modifyType == ModifyTimeScaleType.Reset then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BattleTimeSpeed, true)
-  else
-    if self._modifyType == ModifyTimeScaleType.SetTimeScale and self._timeScale then
-      (HelperProxy:GetInstance()):SetGameTimeScale(self._timeScale)
-      ;
-      (AudioHelperController.SetInnerGameSoundPlaySpeed)(self._timeScale)
-    end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.BattleTimeSpeed, true)
+  elseif self._modifyType == ModifyTimeScaleType.SetTimeScale and self._timeScale then
+    HelperProxy:GetInstance():SetGameTimeScale(self._timeScale)
+    AudioHelperController.SetInnerGameSoundPlaySpeed(self._timeScale)
   end
 end
-
-

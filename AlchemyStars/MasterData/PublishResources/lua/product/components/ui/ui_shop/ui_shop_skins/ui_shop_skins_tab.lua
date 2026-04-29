@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_skins/ui_shop_skins_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopSkinsTab", UICustomWidget)
 UIShopSkinsTab = UIShopSkinsTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopSkinsTab.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopSkinsTab:Constructor()
   self.shopModule = self:GetModule(ShopModule)
-  self.clientShop = (self.shopModule):GetClientShop()
-  self._data = (self.clientShop):GetSkinsShopData()
-  self._giftData = (self.clientShop):GetGiftPackShopData()
-  self._mRole = ((GameGlobal.GameLogic)()):GetModule(RoleModule)
+  self.clientShop = self.shopModule:GetClientShop()
+  self._data = self.clientShop:GetSkinsShopData()
+  self._giftData = self.clientShop:GetGiftPackShopData()
+  self._mRole = GameGlobal.GameLogic():GetModule(RoleModule)
   self._countPerPage = 4
   self._currentSelTab = SkinsShopTabEnum.ALL
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopSkinsTab:OnShow(uiParams)
   self:InitWidget()
   self:AttachEvent(GameEventType.UpdateSkinsShop, self.EnsureFlush)
   self:AttachEvent(GameEventType.UpdateGiftPackShop, self.EnsureFlush)
@@ -30,19 +20,13 @@ UIShopSkinsTab.OnShow = function(self, uiParams)
   self:FlushTab()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopSkinsTab:OnHide()
   self:DetachEvent(GameEventType.UpdateSkinsShop, self.EnsureFlush)
   self:DetachEvent(GameEventType.UpdateGiftPackShop, self.EnsureFlush)
   self:DetachEvent(GameEventType.ShopNew, self.FlushTabNew)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.InitWidget = function(self)
-  -- function num : 0_3
+function UIShopSkinsTab:InitWidget()
   self._scrollRect = nil
   self._content = self:GetUIComponent("RectTransform", "Content")
   self._emptyTipsGo = self:GetGameObject("EmptyTips")
@@ -52,12 +36,9 @@ UIShopSkinsTab.InitWidget = function(self)
   self._anim = self:GetUIComponent("Animation", "UIShopSkinsTab")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.OnTabClick = function(self, keyTab, go)
-  -- function num : 0_4
+function UIShopSkinsTab:OnTabClick(keyTab, go)
   if self._currentSelTab == keyTab then
-    return 
+    return
   end
   self._currentSelTab = keyTab
   self:FlushTab()
@@ -66,21 +47,18 @@ UIShopSkinsTab.OnTabClick = function(self, keyTab, go)
   self:InAnimation()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.CreateTab = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIShopSkinsTab:CreateTab()
   self._currentSelTab = SkinsShopTabEnum.ALL
   if self._tabs == nil then
     self._tabs = {}
     self._tabBtns = {}
     local tmpTab = {}
-    local cfgTabs = (Cfg.cfg_shop_common_goods_tab)({})
-    for index,value in ipairs(cfgTabs) do
+    local cfgTabs = Cfg.cfg_shop_common_goods_tab({})
+    for index, value in ipairs(cfgTabs) do
       if value.ID == 1 then
         tmpTab[value.ID] = value
       else
-        for key,val in pairs(self._items) do
+        for key, val in pairs(self._items) do
           if val:GetTabID() == value.ID then
             tmpTab[value.ID] = value
             break
@@ -88,99 +66,74 @@ UIShopSkinsTab.CreateTab = function(self)
         end
       end
     end
-    for key,value in pairs(tmpTab) do
-      (table.insert)(self._tabBtns, value)
+    for key, value in pairs(tmpTab) do
+      table.insert(self._tabBtns, value)
     end
-    ;
-    (table.sort)(self._tabBtns, function(a, b)
-    -- function num : 0_5_0
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    table.sort(self._tabBtns, function(a, b)
+      return a.ID < b.ID
+    end)
     local count = #self._tabBtns
     local idTab = 1
-    local uiTabs = (self._tabContent):SpawnObjects("UIShopSecretTabBtn", count)
-    for k,v in ipairs(self._tabBtns) do
+    local uiTabs = self._tabContent:SpawnObjects("UIShopSecretTabBtn", count)
+    for k, v in ipairs(self._tabBtns) do
       local item = {
-data = {}
-, ui = uiTabs[idTab]}
+        data = {},
+        ui = uiTabs[idTab]
+      }
       idTab = idTab + 1
-      ;
-      (item.ui):SetData(v.ID, (StringTable.Get)(v.Name), function(keyTab, go)
-    -- function num : 0_5_1 , upvalues : self
-    self:OnTabClick(keyTab, go)
-  end
-)
-      -- DECOMPILER ERROR at PC85: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self._tabs)[k] = item
-      ;
-      (item.ui):SkinTabDetachEvent()
+      item.ui:SetData(v.ID, StringTable.Get(v.Name), function(keyTab, go)
+        self:OnTabClick(keyTab, go)
+      end)
+      self._tabs[k] = item
+      item.ui:SkinTabDetachEvent()
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.FlushTab = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  for index,value in ipairs(self._tabs) do
+function UIShopSkinsTab:FlushTab()
+  for index, value in ipairs(self._tabs) do
     local ui = value.ui
-    ui:SetSelected(self._currentSelTab == ((self._tabBtns)[index]).ID)
+    ui:SetSelected(self._currentSelTab == self._tabBtns[index].ID)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.EnsureFlush = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((self:RootUIOwner()):GetGameObject())
-  local root = nil
-  local goDepth = nil
+function UIShopSkinsTab:EnsureFlush()
+  local root = self:RootUIOwner():GetGameObject()
+  local goDepth
   while goDepth == nil do
-    if (string.find)(root.name, "depth_") then
+    if string.find(root.name, "depth_") then
       goDepth = root
     else
-      root = ((root.transform).parent).gameObject
+      root = root.transform.parent.gameObject
     end
     if root == nil then
-      goDepth = (self._content).gameObject
+      goDepth = self._content.gameObject
     end
   end
   if goDepth.activeInHierarchy then
     self:Flush()
   else
     self:StartSafeTask("UIShopSkinsTab::EnsureFlush", function(lockName, TT)
-    -- function num : 0_7_0 , upvalues : goDepth, _ENV, self
-    while not goDepth.activeInHierarchy do
-      YIELD(TT)
-    end
-    self:Flush()
-  end
-)
+      while not goDepth.activeInHierarchy do
+        YIELD(TT)
+      end
+      self:Flush()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.Flush = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIShopSkinsTab:Flush()
   self._items = {}
   local skinsItems = self:FilterFlush()
-  local giftItems = (self._giftData):GetGoods()
-  for k,v in pairs(skinsItems) do
+  local giftItems = self._giftData:GetGoods()
+  for k, v in pairs(skinsItems) do
     local item = ShopUnionSkinsGiftItem:New(v, nil)
-    ;
-    (table.insert)(self._items, item)
+    table.insert(self._items, item)
   end
-  for k,v in pairs(giftItems) do
+  for k, v in pairs(giftItems) do
     if v:IsShowInSkinsTab() then
       local item = ShopUnionSkinsGiftItem:New(nil, v)
-      ;
-      (table.insert)(self._items, item)
+      table.insert(self._items, item)
     end
   end
   self:CreateTab()
@@ -189,20 +142,17 @@ UIShopSkinsTab.Flush = function(self)
   self:FlushTabNew()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.FlushTabNew = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local pools = (self._tabContent):GetAllSpawnList()
-  for index,value in ipairs(self._tabBtns) do
+function UIShopSkinsTab:FlushTabNew()
+  local pools = self._tabContent:GetAllSpawnList()
+  for index, value in ipairs(self._tabBtns) do
     local isNew = false
-    for key,val in pairs(self._items) do
+    for key, val in pairs(self._items) do
       if val:GetTabID() == value.ID or value.ID == 1 then
-        local data = nil
+        local data
         if val:GetSkinData() == nil then
-          data = (self._giftData):GetGoodBuyId(val:GetId())
+          data = self._giftData:GetGoodBuyId(val:GetId())
         else
-          data = (self._data):GetGoodById(val:GetId())
+          data = self._data:GetGoodById(val:GetId())
         end
         if data and data:GetNew() then
           isNew = true
@@ -210,200 +160,147 @@ UIShopSkinsTab.FlushTabNew = function(self)
         end
       end
     end
-    do
-      do
-        ;
-        (pools[index]):FlushNew(isNew)
-        -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    pools[index]:FlushNew(isNew)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.FlushTabContent = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIShopSkinsTab:FlushTabContent()
   self._selItems = {}
   self._poolItems = {}
   if self._currentSelTab == SkinsShopTabEnum.ALL then
     self._selItems = self._items
   else
-    for k,v in pairs(self._items) do
+    for k, v in pairs(self._items) do
       if v:GetTabID() == self._currentSelTab then
-        (table.insert)(self._selItems, v)
+        table.insert(self._selItems, v)
       end
     end
   end
-  do
-    self:SortFlush()
-    local itemCount = #self._selItems
-    ;
-    (self._emptyTipsGo):SetActive(itemCount == 0)
-    local localPosition = (self._content).localPosition
-    if self._scrollRect then
-      (self._scrollRect):SetListItemCount(itemCount)
-      ;
-      (self._scrollRect):ResetListView()
-      ;
-      (self._scrollRect):RefreshAllShownItem()
-      ;
-      (self._scrollRect):MovePanelToItemIndex(0, 0)
-    else
-      self._scrollRect = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
-      ;
-      (self._scrollRect):InitListView(itemCount, function(scrollView, index)
-    -- function num : 0_10_0 , upvalues : self
-    return self:InitListView(scrollView, index)
+  self:SortFlush()
+  local itemCount = #self._selItems
+  self._emptyTipsGo:SetActive(itemCount == 0)
+  local localPosition = self._content.localPosition
+  if self._scrollRect then
+    self._scrollRect:SetListItemCount(itemCount)
+    self._scrollRect:ResetListView()
+    self._scrollRect:RefreshAllShownItem()
+    self._scrollRect:MovePanelToItemIndex(0, 0)
+  else
+    self._scrollRect = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
+    self._scrollRect:InitListView(itemCount, function(scrollView, index)
+      return self:InitListView(scrollView, index)
+    end, nil)
   end
-, nil)
-    end
-    local localPositionY = localPosition.y
-    localPosition = (self._content).localPosition
-    -- DECOMPILER ERROR at PC80: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._content).localPosition = Vector3(localPosition.x, localPositionY, localPosition.z)
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
-  end
+  local localPositionY = localPosition.y
+  localPosition = self._content.localPosition
+  self._content.localPosition = Vector3(localPosition.x, localPositionY, localPosition.z)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.InitListView = function(self, scrollView, index)
-  -- function num : 0_11
+function UIShopSkinsTab:InitListView(scrollView, index)
   local item = scrollView:NewListViewItem("dsvItem")
   local itemPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R5 in 'UnsetPending'
-
   if self._poolItems ~= nil then
-    (self._poolItems)[index] = itemPool
+    self._poolItems[index] = itemPool
   end
   if not item.IsInitHandlerCalled then
     item.IsInitHandlerCalled = true
     itemPool:SpawnObjects("UIShopUnionSkinsGiftItem", 1)
   end
   local luaIndex = index + 1
-  local uiItem = (itemPool:GetAllSpawnList())[1]
-  ;
-  (uiItem:GetGameObject()).name = 0
-  local dataItem = (self._selItems)[luaIndex]
+  local uiItem = itemPool:GetAllSpawnList()[1]
+  uiItem:GetGameObject().name = 0
+  local dataItem = self._selItems[luaIndex]
   uiItem:Flush(dataItem, function(uiSubItem)
-    -- function num : 0_11_0 , upvalues : dataItem, self
     uiSubItem:Flush(dataItem:GetId())
     uiSubItem:SetOutTimeClickFunc(function()
-      -- function num : 0_11_0_0 , upvalues : self
       self:_ConfirmSkinOverTimeBox()
-    end
-)
-  end
-, function(uiSubItem)
-    -- function num : 0_11_1 , upvalues : dataItem
+    end)
+  end, function(uiSubItem)
     uiSubItem:Flush(dataItem:GetId())
-  end
-)
+  end)
   return item
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.TabAnimation = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIShopSkinsTab:TabAnimation()
   if self._tabAnimationIndex == nil then
     self._tabAnimationIndex = 1
   end
-  local spawns = (self._tabContent):GetAllSpawnList()
+  local spawns = self._tabContent:GetAllSpawnList()
   local luaIndex = 1
   local count = #spawns
-  for k,v in pairs(spawns) do
+  for k, v in pairs(spawns) do
     if v:IsSelected() then
       luaIndex = k
       break
     end
   end
-  do
-    local contentWidth = 0
-    do
-      local viewWidth = (((self._tabSv).transform).rect).width
-      contentWidth = contentWidth + ((self._tabContentLayout).padding).left
-      contentWidth = contentWidth + ((self._tabContentLayout).padding).right
-      contentWidth = contentWidth + count * ((self._tabContentLayout).cellSize).x
-      contentWidth = contentWidth + (count - 1) * ((self._tabContentLayout).spacing).x
-      if contentWidth <= viewWidth then
-        return 
-      end
-      if self._tabAnimationIndex == luaIndex then
-        return 
-      end
-      local doAnimation = false
-      local leftPosition = 0
-      local pastPosition = (self._tabSv).horizontalNormalizedPosition * (contentWidth - viewWidth)
-      if self._tabAnimationIndex < luaIndex then
-        self._tabAnimationIndex = luaIndex
-        luaIndex = luaIndex + 1
-        luaIndex = (math.min)(luaIndex, count)
-        leftPosition = leftPosition + ((self._tabContentLayout).padding).left
-        leftPosition = leftPosition + ((self._tabContentLayout).padding).right
-        leftPosition = leftPosition + luaIndex * ((self._tabContentLayout).cellSize).x
-        leftPosition = leftPosition + (luaIndex - 1) * ((self._tabContentLayout).spacing).x
-        leftPosition = leftPosition + 0.5 * ((self._tabContentLayout).spacing).x
-        leftPosition = leftPosition - viewWidth
-        leftPosition = (math.max)(leftPosition, 0)
-        doAnimation = pastPosition < leftPosition
-      else
-        self._tabAnimationIndex = luaIndex
-        luaIndex = luaIndex - 1
-        luaIndex = (math.max)(luaIndex, 1)
-        leftPosition = leftPosition + ((self._tabContentLayout).padding).left
-        leftPosition = leftPosition + luaIndex * ((self._tabContentLayout).cellSize).x
-        leftPosition = leftPosition + (luaIndex - 1) * ((self._tabContentLayout).spacing).x
-        leftPosition = leftPosition + 0.5 * ((self._tabContentLayout).spacing).x
-        leftPosition = leftPosition - ((self._tabContentLayout).spacing).x - ((self._tabContentLayout).cellSize).x
-        leftPosition = (math.max)(leftPosition, 0)
-        doAnimation = leftPosition < pastPosition
-      end
-      if doAnimation then
-        local cur = (self._tabSv).horizontalNormalizedPosition
-        local dst = leftPosition / (contentWidth - viewWidth)
-        dst = (math.max)(dst, 0)
-        dst = (math.min)(dst, 1)
-        self:StartSafeTask("UIShopSkinsTab::TabAnimation", function(lockName, TT)
-    -- function num : 0_12_0 , upvalues : self, dst, cur, _ENV
-    self:Lock(lockName)
-    local period = 500
-    local deltaMs = 0
-    local speed = (dst - cur) / period
-    local value = cur
-    do
-      while deltaMs <= period do
-        local dt = (GameGlobal:GetInstance()):GetDeltaTime()
+  local contentWidth = 0
+  local viewWidth = self._tabSv.transform.rect.width
+  contentWidth = contentWidth + self._tabContentLayout.padding.left
+  contentWidth = contentWidth + self._tabContentLayout.padding.right
+  contentWidth = contentWidth + count * self._tabContentLayout.cellSize.x
+  contentWidth = contentWidth + (count - 1) * self._tabContentLayout.spacing.x
+  if viewWidth >= contentWidth then
+    return
+  end
+  if self._tabAnimationIndex == luaIndex then
+    return
+  end
+  local doAnimation = false
+  local leftPosition = 0
+  local pastPosition = self._tabSv.horizontalNormalizedPosition * (contentWidth - viewWidth)
+  if luaIndex > self._tabAnimationIndex then
+    self._tabAnimationIndex = luaIndex
+    luaIndex = luaIndex + 1
+    luaIndex = math.min(luaIndex, count)
+    leftPosition = leftPosition + self._tabContentLayout.padding.left
+    leftPosition = leftPosition + self._tabContentLayout.padding.right
+    leftPosition = leftPosition + luaIndex * self._tabContentLayout.cellSize.x
+    leftPosition = leftPosition + (luaIndex - 1) * self._tabContentLayout.spacing.x
+    leftPosition = leftPosition + 0.5 * self._tabContentLayout.spacing.x
+    leftPosition = leftPosition - viewWidth
+    leftPosition = math.max(leftPosition, 0)
+    doAnimation = pastPosition < leftPosition
+  else
+    self._tabAnimationIndex = luaIndex
+    luaIndex = luaIndex - 1
+    luaIndex = math.max(luaIndex, 1)
+    leftPosition = leftPosition + self._tabContentLayout.padding.left
+    leftPosition = leftPosition + luaIndex * self._tabContentLayout.cellSize.x
+    leftPosition = leftPosition + (luaIndex - 1) * self._tabContentLayout.spacing.x
+    leftPosition = leftPosition + 0.5 * self._tabContentLayout.spacing.x
+    leftPosition = leftPosition - self._tabContentLayout.spacing.x - self._tabContentLayout.cellSize.x
+    leftPosition = math.max(leftPosition, 0)
+    doAnimation = pastPosition > leftPosition
+  end
+  if doAnimation then
+    local cur = self._tabSv.horizontalNormalizedPosition
+    local dst = leftPosition / (contentWidth - viewWidth)
+    dst = math.max(dst, 0)
+    dst = math.min(dst, 1)
+    self:StartSafeTask("UIShopSkinsTab::TabAnimation", function(lockName, TT)
+      self:Lock(lockName)
+      local period = 500
+      local deltaMs = 0
+      local speed = (dst - cur) / period
+      local value = cur
+      while period >= deltaMs do
+        local dt = GameGlobal:GetInstance():GetDeltaTime()
         deltaMs = deltaMs + dt
         value = value + speed * dt
         if period < deltaMs then
           value = dst
         end
-        -- DECOMPILER ERROR at PC25: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (self._tabSv).horizontalNormalizedPosition = value
+        self._tabSv.horizontalNormalizedPosition = value
         YIELD()
       end
       self:UnLock(lockName)
-    end
-  end
-)
-      end
-      -- DECOMPILER ERROR: 5 unprocessed JMP targets
-    end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.FilterFlush = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local filterItems = (self._data):GetGoods()
+function UIShopSkinsTab:FilterFlush()
+  local filterItems = self._data:GetGoods()
   local lookup = {}
   for i = 1, #filterItems do
     local binderItem = filterItems[i]
@@ -411,32 +308,27 @@ UIShopSkinsTab.FilterFlush = function(self)
     lookup[binderItemID] = binderItem
   end
   local skinsItems = {}
-  local cfg = (Cfg.cfg_shop_common_goods)({})
+  local cfg = Cfg.cfg_shop_common_goods({})
   for i = 1, #filterItems do
     local item = filterItems[i]
     local id = item:GetId()
     local localCfg = cfg[id]
     local binderSkinID = localCfg.CurrencySkinID
-    local binderItem = nil
+    local binderItem
     if binderSkinID then
       binderItem = lookup[binderSkinID]
     end
     if binderItem ~= nil then
       binderItem:SetBinderSkin(item)
     else
-      ;
-      (table.insert)(skinsItems, item)
+      table.insert(skinsItems, item)
     end
   end
   return skinsItems
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.SortFlush = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (table.sort)(self._selItems, function(a, b)
-    -- function num : 0_14_0 , upvalues : _ENV
+function UIShopSkinsTab:SortFlush()
+  table.sort(self._selItems, function(a, b)
     local aId = a:GetId()
     local aOrder = a:GetOrder()
     local aResident = a:IsResident()
@@ -447,32 +339,34 @@ UIShopSkinsTab.SortFlush = function(self)
     local bSoldOut = b:HasSoldOut()
     if not aSoldOut and bSoldOut then
       return true
-    else
-      if aSoldOut and not bSoldOut then
-        return false
-      end
+    elseif aSoldOut and not bSoldOut then
+      return false
     end
     local isGift_a = a:GetGiftData()
     local isGift_b = b:GetGiftData()
     if isGift_a and not isGift_b then
       return true
-    else
-      if not isGift_a and isGift_b then
-        return false
-      end
+    elseif not isGift_a and isGift_b then
+      return false
     end
     local skinid_a = a:GetSkinID()
     local skinid_b = b:GetSkinID()
     if skinid_a and skinid_b then
-      local cfg_skin_a = (Cfg.cfg_pet_skin)[skinid_a]
-      local cfg_skin_b = (Cfg.cfg_pet_skin)[skinid_b]
+      local cfg_skin_a = Cfg.cfg_pet_skin[skinid_a]
+      local cfg_skin_b = Cfg.cfg_pet_skin[skinid_b]
       local skinType_a = cfg_skin_a.SkinType
       local skinType_b = cfg_skin_b.SkinType
       if skinType_a ~= skinType_b then
-        local tab = {[1] = 1, [2] = 10, [3] = 1000, [4] = 100, [5] = 100}
+        local tab = {
+          [1] = 1,
+          [2] = 10,
+          [3] = 1000,
+          [4] = 100,
+          [5] = 100
+        }
         local weight_a = tab[skinType_a]
         local weight_b = tab[skinType_b]
-        return weight_b < weight_a
+        return weight_a > weight_b
       end
     end
     if not aResident and bResident then
@@ -482,94 +376,68 @@ UIShopSkinsTab.SortFlush = function(self)
     end
     if aOrder < bOrder then
       return true
-    elseif bOrder < aOrder then
+    elseif aOrder > bOrder then
       return false
     end
-    do return aId < bId end
-    -- DECOMPILER ERROR: 7 unprocessed JMP targets
-  end
-)
+    return aId < bId
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab._ConfirmSkinOverTimeBox = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local strTitle = (StringTable.Get)("str_login_msdk_tip")
-  local strText = (StringTable.Get)("str_shop_skin_off_shelf")
-  local okCb = function()
-    -- function num : 0_15_0 , upvalues : self, _ENV
+function UIShopSkinsTab:_ConfirmSkinOverTimeBox()
+  local strTitle = StringTable.Get("str_login_msdk_tip")
+  local strText = StringTable.Get("str_shop_skin_off_shelf")
+  
+  local function okCb()
     self:StartTask(function(TT)
-      -- function num : 0_15_0_0 , upvalues : self, _ENV
-      (self.clientShop):SendProtocal(TT, ShopMainTabType.Skins)
-    end
-)
+      self.clientShop:SendProtocal(TT, ShopMainTabType.Skins)
+    end)
   end
-
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, strTitle, strText, okCb, nil)
+  
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, strTitle, strText, okCb, nil)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.Update = function(self, deltaTimeMS)
-  -- function num : 0_16
+function UIShopSkinsTab:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.SetData = function(self, param)
-  -- function num : 0_17 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Skins)
+function UIShopSkinsTab:SetData(param)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Skins)
   self._param = param
   self:JumpItem()
-  if self._param == nil or (self._param)[4] == nil then
+  if self._param == nil or self._param[4] == nil then
     self:InAnimation()
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.RefreshPanel = function(self, subTabType)
-  -- function num : 0_18
+function UIShopSkinsTab:RefreshPanel(subTabType)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.ExcuteHideLogic = function(self, callBack)
-  -- function num : 0_19
+function UIShopSkinsTab:ExcuteHideLogic(callBack)
   if callBack then
     callBack(self)
   end
   self._param = nil
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.JumpItem = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
-  do
-    if roleModule:IsJapanZone() then
-      local payModule = (GameGlobal.GetModule)(PayModule)
-      if payModule:IsShowSelectAgePanel() then
-        self:ShowDialog("UISetAgeConfirmController")
-        payModule:OpenSelectAgePanel()
-        return 
-      end
+function UIShopSkinsTab:JumpItem()
+  local roleModule = GameGlobal.GetModule(RoleModule)
+  if roleModule:IsJapanZone() then
+    local payModule = GameGlobal.GetModule(PayModule)
+    if payModule:IsShowSelectAgePanel() then
+      self:ShowDialog("UISetAgeConfirmController")
+      payModule:OpenSelectAgePanel()
+      return
     end
-    if not (self._param)[4] then
-      local jumpId = not self._param or 0
-    end
+  end
+  if self._param then
+    local jumpId = self._param[4] or 0
     if jumpId then
-      for i,item in ipairs(self._items) do
+      for i, item in ipairs(self._items) do
         if item and item:GetId() == jumpId then
           if self._poolItems == nil then
             self._poolItems = {}
           end
-          ;
-          (self._scrollRect):MovePanelToItemIndex(i - 1, 0)
-          local uiItem = (((self._poolItems)[i - 1]):GetAllSpawnList())[1]
+          self._scrollRect:MovePanelToItemIndex(i - 1, 0)
+          local uiItem = self._poolItems[i - 1]:GetAllSpawnList()[1]
           uiItem:JumpItem()
           break
         end
@@ -578,84 +446,62 @@ UIShopSkinsTab.JumpItem = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.InAnimation = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIShopSkinsTab:InAnimation()
   if self._poolItems == nil then
-    return 
+    return
   end
-  local taskMgr = (GameGlobal.TaskManager)()
+  local taskMgr = GameGlobal.TaskManager()
   local task = taskMgr:FindTask(self._inAnimationTask)
   if task and task.state ~= TaskState.Stop then
-    return 
+    return
   end
   for index = 0, math.maxinteger do
-    local pool = (self._poolItems)[index]
-    if pool ~= nil then
-      local rowList = pool:GetAllSpawnList()
-      for ik,item in pairs(rowList) do
-        if item ~= nil then
-          (item:GetGameObject()):SetActive(false)
-        end
+    local pool = self._poolItems[index]
+    if pool == nil then
+      break
+    end
+    local rowList = pool:GetAllSpawnList()
+    for ik, item in pairs(rowList) do
+      if item ~= nil then
+        item:GetGameObject():SetActive(false)
       end
-      -- DECOMPILER ERROR at PC42: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-      -- DECOMPILER ERROR at PC42: LeaveBlock: unexpected jumping out IF_STMT
-
     end
   end
   self._inAnimationTask = self:StartSafeTask("UIShopSkinsTab::InAnimation", function(lockName, TT)
-    -- function num : 0_21_0 , upvalues : _ENV, self
     YIELD(TT)
     local animLength = 0
     for index = 0, math.maxinteger do
       if not self._poolItems then
-        (Log.debug)("###[UIShopSkinsTab] play anim , pools is reset , wait next play .")
+        Log.debug("###[UIShopSkinsTab] play anim , pools is reset , wait next play .")
         self._poolItems = nil
-        return 
+        return
       end
-      local pool = (self._poolItems)[index]
-      if pool ~= nil then
-        do
-          local rowList = pool:GetAllSpawnList()
-          for ik,item in pairs(rowList) do
-            local luaIndex = index + 1
-            local data = (self._selItems)[luaIndex]
-            if data then
-              (item:GetGameObject()):SetActive(true)
-              animLength = (math.max)(animLength, item:PlayInAnimation())
-            end
-          end
-          YIELD(TT)
-          -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_STMT
-
+      local pool = self._poolItems[index]
+      if pool == nil then
+        break
+      end
+      local rowList = pool:GetAllSpawnList()
+      for ik, item in pairs(rowList) do
+        local luaIndex = index + 1
+        local data = self._selItems[luaIndex]
+        if data then
+          item:GetGameObject():SetActive(true)
+          animLength = math.max(animLength, item:PlayInAnimation())
         end
       end
+      YIELD(TT)
     end
-    if animLength > 0 then
+    if 0 < animLength then
       YIELD(TT, animLength)
     end
     self._inAnimationTask = nil
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.ShowSelf = function(self)
-  -- function num : 0_22
-  (self._anim):Stop()
-  ;
-  (self._anim):Play()
+function UIShopSkinsTab:ShowSelf()
+  self._anim:Stop()
+  self._anim:Play()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTab.HideSelf = function(self)
-  -- function num : 0_23
+function UIShopSkinsTab:HideSelf()
 end
-
-

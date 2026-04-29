@@ -1,54 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/pop_star_pro_piece_refresh_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PopStarProPieceRefreshSystem", MainStateSystem)
 PopStarProPieceRefreshSystem = PopStarProPieceRefreshSystem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarProPieceRefreshSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PopStarProPieceRefreshSystem:_GetMainStateID()
   return GameStateID.PieceRefresh
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProPieceRefreshSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1
+function PopStarProPieceRefreshSystem:_OnMainStateEnter(TT)
   local result = self:_DoLogicFillPiece()
   self:_DoRenderFillPiece(TT, result)
   self:_DoLogicSyncPieceType()
   self:_DoLogicSwitchState()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProPieceRefreshSystem._DoLogicSwitchState = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.PieceRefreshFinish, 1)
+function PopStarProPieceRefreshSystem:_DoLogicSwitchState()
+  self._world:EventDispatcher():Dispatch(GameEventType.PieceRefreshFinish, 1)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProPieceRefreshSystem._DoLogicFillPiece = function(self)
-  -- function num : 0_3
-  local popStarProSvc = (self._world):GetService("PopStarProLogic")
+function PopStarProPieceRefreshSystem:_DoLogicFillPiece()
+  local popStarProSvc = self._world:GetService("PopStarProLogic")
   local connectPieces = popStarProSvc:GetPopConnectPieces()
   if not connectPieces then
-    return 
+    return
   end
   if #connectPieces == 0 then
-    return 
+    return
   end
   local result = popStarProSvc:CalculatePopPieces(connectPieces)
   return result
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProPieceRefreshSystem._DoRenderFillPiece = function(self, TT, result)
-  -- function num : 0_4
+function PopStarProPieceRefreshSystem:_DoRenderFillPiece(TT, result)
 end
-
-

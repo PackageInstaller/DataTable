@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/world/match_enter_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MatchEnterData", Object)
 MatchEnterData = MatchEnterData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MatchEnterData.Constructor = function(self, player_pstid, create_info, player_list)
-  -- function num : 0_0 , upvalues : _ENV
+function MatchEnterData:Constructor(player_pstid, create_info, player_list)
   if player_pstid == nil then
-    return 
+    return
   end
   self._player_pstid = player_pstid
   self._client_create_info = create_info.client_create_info
@@ -48,67 +41,41 @@ MatchEnterData.Constructor = function(self, player_pstid, create_info, player_li
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.SetSubMatchTypeByMatchType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function MatchEnterData:SetSubMatchTypeByMatchType()
   if self._match_type == MatchType.MT_Campaign then
-    local campaignMissionInfo = ((self._client_create_info).campaign_mission_info)[1]
+    local campaignMissionInfo = self._client_create_info.campaign_mission_info[1]
     self._subMatchType = campaignMissionInfo.nSubMatchType
-  else
-    do
-      if self._match_type == MatchType.MT_WorldBoss then
-        local createInfo = self:GetWorldBossCreateInfo()
-        local cfg = (Cfg.cfg_world_boss_mission)[createInfo.mission_id]
-        if cfg.SubMatchType then
-          self._subMatchType = cfg.SubMatchType
-        end
-      else
-        do
-          if self._match_type == MatchType.MT_SeasonMaze then
-            local createInfo = ((self._client_create_info).season_maze_mission_info)[1]
-            local cfg = (Cfg.cfg_world_boss_mission)[createInfo.mission_id]
-            self._subMatchType = createInfo.match_sub_type
-          else
-            do
-              self._subMatchType = self._match_type
-              if not self._subMatchType then
-                self._subMatchType = self._match_type
-              end
-            end
-          end
-        end
-      end
+  elseif self._match_type == MatchType.MT_WorldBoss then
+    local createInfo = self:GetWorldBossCreateInfo()
+    local cfg = Cfg.cfg_world_boss_mission[createInfo.mission_id]
+    if cfg.SubMatchType then
+      self._subMatchType = cfg.SubMatchType
     end
+  elseif self._match_type == MatchType.MT_SeasonMaze then
+    local createInfo = self._client_create_info.season_maze_mission_info[1]
+    local cfg = Cfg.cfg_world_boss_mission[createInfo.mission_id]
+    self._subMatchType = createInfo.match_sub_type
+  else
+    self._subMatchType = self._match_type
+  end
+  if not self._subMatchType then
+    self._subMatchType = self._match_type
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.IsHaveHelpPet = function(self)
-  -- function num : 0_2
-  do return not self.m_nHelpPetKey or self.m_nHelpPetKey > 0 end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function MatchEnterData:IsHaveHelpPet()
+  return self.m_nHelpPetKey and self.m_nHelpPetKey > 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetPetHp = function(self)
-  -- function num : 0_3
+function MatchEnterData:GetPetHp()
   return 100, 100
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetPetDie = function(self)
-  -- function num : 0_4
+function MatchEnterData:GetPetDie()
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetMazePetInfoByPstId = function(self, pstid)
-  -- function num : 0_5
+function MatchEnterData:GetMazePetInfoByPstId(pstid)
   local tab = {}
   tab.pet_pstid = pstid
   tab.power = 100
@@ -117,490 +84,310 @@ MatchEnterData.GetMazePetInfoByPstId = function(self, pstid)
   return tab
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetCalPetMaxHp = function(self, pstid)
-  -- function num : 0_6
+function MatchEnterData:GetCalPetMaxHp(pstid)
   local mask_hp = 100
   return mask_hp
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetAssignRefreshProb = function(self)
-  -- function num : 0_7
+function MatchEnterData:GetAssignRefreshProb()
   return self._assign_wave_refresh_probability
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.LevelIsPass = function(self)
-  -- function num : 0_8
+function MatchEnterData:LevelIsPass()
   return self._level_is_pass
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetMatchType = function(self)
-  -- function num : 0_9
+function MatchEnterData:GetMatchType()
   return self._match_type
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetSubMatchType = function(self)
-  -- function num : 0_10
+function MatchEnterData:GetSubMatchType()
   return self._subMatchType
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetLevelID = function(self)
-  -- function num : 0_11
+function MatchEnterData:GetLevelID()
   return self._level_id
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetSeed = function(self)
-  -- function num : 0_12
+function MatchEnterData:GetSeed()
   return self._seed
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetServerTime = function(self)
-  -- function num : 0_13
+function MatchEnterData:GetServerTime()
   return self._time
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetPlayerList = function(self)
-  -- function num : 0_14
+function MatchEnterData:GetPlayerList()
   return self._joined_players
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetLocalPlayerInfo = function(self)
-  -- function num : 0_15
-  return (self._joined_players)[self._player_pstid]
+function MatchEnterData:GetLocalPlayerInfo()
+  return self._joined_players[self._player_pstid]
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetMissionCreateInfo = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local createData = nil
+function MatchEnterData:GetMissionCreateInfo()
+  local createData
   if self._match_type == MatchType.MT_Mission then
-    return ((self._client_create_info).mission_info)[1]
-  else
-    if MatchType.MT_ExtMission == self._match_type then
-      return ((self._client_create_info).m_extMissionInfo)[1]
-    else
-      if MatchType.MT_Campaign == self._match_type then
-        return ((self._client_create_info).campaign_mission_info)[1]
-      else
-        if MatchType.MT_SailingMission == self._match_type then
-          return ((self._client_create_info).sailing_mission_info)[1]
-        else
-          if self._match_type == MatchType.MT_MiniMaze then
-            return ((self._client_create_info).bloodsucker_mission_info)[1]
-          else
-            if self._match_type == MatchType.MT_PopStar then
-              return ((self._client_create_info).popstar_mission_info)[1]
-            else
-              if self._match_type == MatchType.MT_Season then
-                return ((self._client_create_info).season_mission_info)[1]
-              else
-                if self._match_type == MatchType.MT_PopStarPro then
-                  return ((self._client_create_info).anipop_mission_info)[1]
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+    return self._client_create_info.mission_info[1]
+  elseif MatchType.MT_ExtMission == self._match_type then
+    return self._client_create_info.m_extMissionInfo[1]
+  elseif MatchType.MT_Campaign == self._match_type then
+    return self._client_create_info.campaign_mission_info[1]
+  elseif MatchType.MT_SailingMission == self._match_type then
+    return self._client_create_info.sailing_mission_info[1]
+  elseif self._match_type == MatchType.MT_MiniMaze then
+    return self._client_create_info.bloodsucker_mission_info[1]
+  elseif self._match_type == MatchType.MT_PopStar then
+    return self._client_create_info.popstar_mission_info[1]
+  elseif self._match_type == MatchType.MT_Season then
+    return self._client_create_info.season_mission_info[1]
+  elseif self._match_type == MatchType.MT_PopStarPro then
+    return self._client_create_info.anipop_mission_info[1]
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetMazeCreateInfo = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function MatchEnterData:GetMazeCreateInfo()
   if self._match_type == MatchType.MT_Maze then
-    return ((self._client_create_info).maze_info)[1]
+    return self._client_create_info.maze_info[1]
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetResDungeonInfo = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function MatchEnterData:GetResDungeonInfo()
   if self._match_type == MatchType.MT_ResDungeon then
-    return ((self._client_create_info).resdungeon_info)[1]
+    return self._client_create_info.resdungeon_info[1]
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetTowerInfo = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function MatchEnterData:GetTowerInfo()
   if self._match_type == MatchType.MT_Tower then
-    return ((self._client_create_info).tower_info)[1]
+    return self._client_create_info.tower_info[1]
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetCampaignMissionInfo = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function MatchEnterData:GetCampaignMissionInfo()
   if self._match_type == MatchType.MT_Campaign then
-    return ((self._client_create_info).campaign_mission_info)[1]
+    return self._client_create_info.campaign_mission_info[1]
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetSailingMissionInfo = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function MatchEnterData:GetSailingMissionInfo()
   if MatchType.MT_SailingMission == self._match_type then
-    return ((self._client_create_info).sailing_mission_info)[1]
+    return self._client_create_info.sailing_mission_info[1]
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetTalePetMissionInfo = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function MatchEnterData:GetTalePetMissionInfo()
   if self._match_type == MatchType.MT_TalePet then
-    return ((self._client_create_info).tale_pet_info)[1]
+    return self._client_create_info.tale_pet_info[1]
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetWorldBossCreateInfo = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function MatchEnterData:GetWorldBossCreateInfo()
   if self._match_type == MatchType.MT_WorldBoss then
-    return ((self._client_create_info).world_boss_mission_info)[1]
+    return self._client_create_info.world_boss_mission_info[1]
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetBlackFistInfo = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function MatchEnterData:GetBlackFistInfo()
   if self._match_type == MatchType.MT_BlackFist then
-    return ((self._client_create_info).black_fist_info)[1]
+    return self._client_create_info.black_fist_info[1]
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetChessInfo = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function MatchEnterData:GetChessInfo()
   if self._match_type == MatchType.MT_Chess then
-    return ((self._client_create_info).chess_mission_info)[1]
+    return self._client_create_info.chess_mission_info[1]
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetDifficultyMissionInfo = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function MatchEnterData:GetDifficultyMissionInfo()
   if self._match_type == MatchType.MT_DifficultyMission then
-    return ((self._client_create_info).difficulty_mission_info)[1]
+    return self._client_create_info.difficulty_mission_info[1]
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetSeasonMissionInfo = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function MatchEnterData:GetSeasonMissionInfo()
   if self._match_type == MatchType.MT_Season then
-    return ((self._client_create_info).season_mission_info)[1]
+    return self._client_create_info.season_mission_info[1]
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetEightPetsMissionInfo = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function MatchEnterData:GetEightPetsMissionInfo()
   if self._match_type == MatchType.MT_EightPets then
-    return ((self._client_create_info).eight_pets_mission_info)[1]
+    return self._client_create_info.eight_pets_mission_info[1]
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetSeasonMazeMissionInfo = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function MatchEnterData:GetSeasonMazeMissionInfo()
   if self._match_type == MatchType.MT_SeasonMaze then
-    return ((self._client_create_info).season_maze_mission_info)[1]
+    return self._client_create_info.season_maze_mission_info[1]
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetAniPopStarInfo = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function MatchEnterData:GetAniPopStarInfo()
   if self._match_type == MatchType.MT_PopStarPro then
-    return ((self._client_create_info).anipop_mission_info)[1]
+    return self._client_create_info.anipop_mission_info[1]
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.HasBonusConditionArray = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function MatchEnterData:HasBonusConditionArray()
   if self._match_type == MatchType.MT_Mission then
     return true
-  else
-    if MatchType.MT_ExtMission == self._match_type then
-      return true
-    else
-      if MatchType.MT_ResDungeon == self._match_type then
-        return true
-      end
-    end
+  elseif MatchType.MT_ExtMission == self._match_type then
+    return true
+  elseif MatchType.MT_ResDungeon == self._match_type then
+    return true
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetBonusConditionArray = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function MatchEnterData:GetBonusConditionArray()
   local bonusConditionArray = {}
   if self._match_type == MatchType.MT_Mission then
-    local missionInfo = ((self._client_create_info).mission_info)[1]
-    local missionData = (Cfg.cfg_mission)[missionInfo.mission_id]
+    local missionInfo = self._client_create_info.mission_info[1]
+    local missionData = Cfg.cfg_mission[missionInfo.mission_id]
     local conditionID = missionData.ThreeStarCondition1
     bonusConditionArray[#bonusConditionArray + 1] = conditionID
     conditionID = missionData.ThreeStarCondition2
     bonusConditionArray[#bonusConditionArray + 1] = conditionID
     conditionID = missionData.ThreeStarCondition3
     bonusConditionArray[#bonusConditionArray + 1] = conditionID
-  else
-    do
-      if MatchType.MT_Campaign == self._match_type then
-        local missionInfo = ((self._client_create_info).campaign_mission_info)[1]
-        local missionData = (Cfg.cfg_campaign_mission)[missionInfo.nCampaignMissionId]
-        if missionData and missionData.IgnoreThreeStar == 0 then
-          local conditionID = missionData.ThreeStarCondition1
-          bonusConditionArray[#bonusConditionArray + 1] = conditionID
-          conditionID = missionData.ThreeStarCondition2
-          bonusConditionArray[#bonusConditionArray + 1] = conditionID
-          conditionID = missionData.ThreeStarCondition3
-          bonusConditionArray[#bonusConditionArray + 1] = conditionID
-        end
-      else
-        do
-          if MatchType.MT_ExtMission == self._match_type then
-            local extMissionInfo = ((self._client_create_info).m_extMissionInfo)[1]
-            local extTaskData = (Cfg.cfg_extra_mission_task)[extMissionInfo.m_nExtTaskID]
-            local conditionID = 0
-            conditionID = extTaskData.ThreeStarCondition1
-            bonusConditionArray[#bonusConditionArray + 1] = conditionID
-            conditionID = extTaskData.ThreeStarCondition2
-            bonusConditionArray[#bonusConditionArray + 1] = conditionID
-            conditionID = extTaskData.ThreeStarCondition3
-            bonusConditionArray[#bonusConditionArray + 1] = conditionID
-          else
-            do
-              if MatchType.MT_ResDungeon == self._match_type then
-                local info = ((self._client_create_info).resdungeon_info)[1]
-                local cfg = (Cfg.cfg_res_instance_detail)[info.res_dungeon_id]
-                local conditionID = 0
-                conditionID = cfg.ThreeStarCondition1
-                bonusConditionArray[#bonusConditionArray + 1] = conditionID
-                conditionID = cfg.ThreeStarCondition2
-                bonusConditionArray[#bonusConditionArray + 1] = conditionID
-                conditionID = cfg.ThreeStarCondition3
-                bonusConditionArray[#bonusConditionArray + 1] = conditionID
-              else
-                do
-                  if MatchType.MT_Season == self._match_type then
-                    local missionInfo = ((self._client_create_info).season_mission_info)[1]
-                    local missionData = (Cfg.cfg_season_mission)[missionInfo.mission_id]
-                    if missionData and missionData.ShowCondition == 1 then
-                      local conditionID = missionData.ThreeStarCondition1
-                      bonusConditionArray[#bonusConditionArray + 1] = conditionID
-                      conditionID = missionData.ThreeStarCondition2
-                      bonusConditionArray[#bonusConditionArray + 1] = conditionID
-                      conditionID = missionData.ThreeStarCondition3
-                      bonusConditionArray[#bonusConditionArray + 1] = conditionID
-                    end
-                  end
-                  do
-                    return bonusConditionArray
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+  elseif MatchType.MT_Campaign == self._match_type then
+    local missionInfo = self._client_create_info.campaign_mission_info[1]
+    local missionData = Cfg.cfg_campaign_mission[missionInfo.nCampaignMissionId]
+    if missionData and missionData.IgnoreThreeStar == 0 then
+      local conditionID = missionData.ThreeStarCondition1
+      bonusConditionArray[#bonusConditionArray + 1] = conditionID
+      conditionID = missionData.ThreeStarCondition2
+      bonusConditionArray[#bonusConditionArray + 1] = conditionID
+      conditionID = missionData.ThreeStarCondition3
+      bonusConditionArray[#bonusConditionArray + 1] = conditionID
+    end
+  elseif MatchType.MT_ExtMission == self._match_type then
+    local extMissionInfo = self._client_create_info.m_extMissionInfo[1]
+    local extTaskData = Cfg.cfg_extra_mission_task[extMissionInfo.m_nExtTaskID]
+    local conditionID = 0
+    conditionID = extTaskData.ThreeStarCondition1
+    bonusConditionArray[#bonusConditionArray + 1] = conditionID
+    conditionID = extTaskData.ThreeStarCondition2
+    bonusConditionArray[#bonusConditionArray + 1] = conditionID
+    conditionID = extTaskData.ThreeStarCondition3
+    bonusConditionArray[#bonusConditionArray + 1] = conditionID
+  elseif MatchType.MT_ResDungeon == self._match_type then
+    local info = self._client_create_info.resdungeon_info[1]
+    local cfg = Cfg.cfg_res_instance_detail[info.res_dungeon_id]
+    local conditionID = 0
+    conditionID = cfg.ThreeStarCondition1
+    bonusConditionArray[#bonusConditionArray + 1] = conditionID
+    conditionID = cfg.ThreeStarCondition2
+    bonusConditionArray[#bonusConditionArray + 1] = conditionID
+    conditionID = cfg.ThreeStarCondition3
+    bonusConditionArray[#bonusConditionArray + 1] = conditionID
+  elseif MatchType.MT_Season == self._match_type then
+    local missionInfo = self._client_create_info.season_mission_info[1]
+    local missionData = Cfg.cfg_season_mission[missionInfo.mission_id]
+    if missionData and missionData.ShowCondition == 1 then
+      local conditionID = missionData.ThreeStarCondition1
+      bonusConditionArray[#bonusConditionArray + 1] = conditionID
+      conditionID = missionData.ThreeStarCondition2
+      bonusConditionArray[#bonusConditionArray + 1] = conditionID
+      conditionID = missionData.ThreeStarCondition3
+      bonusConditionArray[#bonusConditionArray + 1] = conditionID
     end
   end
+  return bonusConditionArray
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.IsSpeedUpEnabled = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  return (self._flags):CheckFlag(MatchLogicFlags.MLF_SpeedUp)
+function MatchEnterData:IsSpeedUpEnabled()
+  return self._flags:CheckFlag(MatchLogicFlags.MLF_SpeedUp)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetSyncMode = function(self)
-  -- function num : 0_34
+function MatchEnterData:GetSyncMode()
   return self._sync_mode
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetServerAutoFight = function(self)
-  -- function num : 0_35
+function MatchEnterData:GetServerAutoFight()
   return self._server_auto_fight
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.IsEnableAuroraTime = function(self)
-  -- function num : 0_36 , upvalues : _ENV
+function MatchEnterData:IsEnableAuroraTime()
   if self:GetSubMatchType() == MatchType.MT_PopStarPro then
     return false
   end
-  do return ((Cfg.cfg_global).EnableAuroraTime).IntValue == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return Cfg.cfg_global.EnableAuroraTime.IntValue == 1
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetWordBuffIds = function(self)
-  -- function num : 0_37
+function MatchEnterData:GetWordBuffIds()
   return self._wordBuffIds
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetLocalMatchPets = function(self)
-  -- function num : 0_38
+function MatchEnterData:GetLocalMatchPets()
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetRemoteMatchPets = function(self)
-  -- function num : 0_39
+function MatchEnterData:GetRemoteMatchPets()
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetTalePetBuffs = function(self)
-  -- function num : 0_40
+function MatchEnterData:GetTalePetBuffs()
   return self._tale_pet_buffs
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetNormalPetBuffs = function(self)
-  -- function num : 0_41
+function MatchEnterData:GetNormalPetBuffs()
   return self._normal_pet_buffs
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetTaleBuffCfgID = function(self)
-  -- function num : 0_42
+function MatchEnterData:GetTaleBuffCfgID()
   return self._tale_buff_cfgID
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetAffixList = function(self)
-  -- function num : 0_43
+function MatchEnterData:GetAffixList()
   return self._affixList
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetDoubleResourceState = function(self)
-  -- function num : 0_44
+function MatchEnterData:GetDoubleResourceState()
   return self._double_resource_state
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetAssetDoubleItemCount = function(self)
-  -- function num : 0_45 , upvalues : _ENV
+function MatchEnterData:GetAssetDoubleItemCount()
   if self._match_type == MatchType.MT_Mission then
-    return (self:GetMissionCreateInfo()).asset_double_item_count
-  else
-    if MatchType.MT_ResDungeon == self._match_type then
-      return (self:GetResDungeonInfo()).asset_double_item_count
-    end
+    return self:GetMissionCreateInfo().asset_double_item_count
+  elseif MatchType.MT_ResDungeon == self._match_type then
+    return self:GetResDungeonInfo().asset_double_item_count
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetHardID = function(self)
-  -- function num : 0_46
+function MatchEnterData:GetHardID()
   return self._hardID
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetHardIndex = function(self)
-  -- function num : 0_47
+function MatchEnterData:GetHardIndex()
   return self._hardIndex
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetBoardSeed = function(self)
-  -- function num : 0_48
+function MatchEnterData:GetBoardSeed()
   return self._boardSeed
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetWaveIDList = function(self)
-  -- function num : 0_49
+function MatchEnterData:GetWaveIDList()
   return self._waveIDList
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetBoardIDList = function(self)
-  -- function num : 0_50
+function MatchEnterData:GetBoardIDList()
   return self._boardIDList
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.GetFsmID = function(self, matchType)
-  -- function num : 0_51 , upvalues : _ENV
+function MatchEnterData:GetFsmID(matchType)
   if matchType == MatchType.MT_PopStar then
     return 2
   end
   return 1
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterData.ParseEnlightenInfo = function(self)
-  -- function num : 0_52 , upvalues : _ENV
+function MatchEnterData:ParseEnlightenInfo()
   local enlightenInfoDic = {}
-  for type,ID in pairs(self._enlightenIDDic) do
-    local cfgTmp = (Cfg.cfg_pet_property_cultivate)[ID]
+  for type, ID in pairs(self._enlightenIDDic) do
+    local cfgTmp = Cfg.cfg_pet_property_cultivate[ID]
     if not cfgTmp then
-      (Log.error)("[ParseEnlightenInfo] cfg_pet_property_cultivate is nil, ID = ", ID)
+      Log.error("[ParseEnlightenInfo] cfg_pet_property_cultivate is nil, ID = ", ID)
     end
     enlightenInfoDic[type] = EnlightenInfo:New(cfgTmp.Attack, cfgTmp.Defence, cfgTmp.Health, cfgTmp.PropertyRestraint, cfgTmp.MainSkillDamage, cfgTmp.SupplyPieceWeight)
   end
@@ -609,10 +396,8 @@ end
 
 local MainWorldCreationContextType = {Client = 1, Server = 2}
 _enum("MainWorldCreationContextType", MainWorldCreationContextType)
--- DECOMPILER ERROR at PC174: Confused about usage of register: R1 in 'UnsetPending'
 
-MatchEnterData.CreateWorldInfo = function(self, type)
-  -- function num : 0_53 , upvalues : _ENV, MainWorldCreationContextType
+function MatchEnterData:CreateWorldInfo(type)
   local worldInfo = MainWorldCreationContext:New()
   worldInfo.fsm_id = self:GetFsmID(self:GetSubMatchType())
   worldInfo.level_id = self:GetLevelID()
@@ -643,16 +428,15 @@ MatchEnterData.CreateWorldInfo = function(self, type)
     worldInfo.network_mode = NetworkMode.Networks
   end
   local localMatchPets, remoteMatchPets = worldInfo:InitializePetsData()
-  self._func_get_local_match_pets = function()
-    -- function num : 0_53_0 , upvalues : localMatchPets, worldInfo
-    return localMatchPets, (worldInfo.localPlayerInfo).pet_list
+  
+  function self._func_get_local_match_pets()
+    return localMatchPets, worldInfo.localPlayerInfo.pet_list
   end
-
-  self._func_get_remote_match_pets = function()
-    -- function num : 0_53_1 , upvalues : remoteMatchPets, worldInfo
+  
+  function self._func_get_remote_match_pets()
     return remoteMatchPets, worldInfo.remoteTeamInfo
   end
-
+  
   worldInfo.m_nHelpPetKey = self.m_nHelpPetKey
   worldInfo.tale_pet_buffs = self:GetTalePetBuffs()
   worldInfo.normal_pet_buffs = self:GetNormalPetBuffs()
@@ -663,81 +447,51 @@ MatchEnterData.CreateWorldInfo = function(self, type)
   worldInfo.boardSeed = self:GetBoardSeed()
   worldInfo.waveIDList = self:GetWaveIDList()
   worldInfo.boardIDList = self:GetBoardIDList()
-  if self.m_nHelpPetKey > 0 then
-    for _,matchPet in pairs(localMatchPets) do
+  if 0 < self.m_nHelpPetKey then
+    for _, matchPet in pairs(localMatchPets) do
       if matchPet:GetTeamSlot() == BattleConst.E_HelpPet_EnableHelpSlotIndex then
         worldInfo.localHelpPetPstID = matchPet:GetPstID()
         break
       end
     end
   end
-  do
-    worldInfo.enlightenInfoDic = self:ParseEnlightenInfo()
-    return worldInfo
-  end
+  worldInfo.enlightenInfoDic = self:ParseEnlightenInfo()
+  return worldInfo
 end
 
--- DECOMPILER ERROR at PC177: Confused about usage of register: R1 in 'UnsetPending'
-
-MatchEnterData.GetLinkLineType = function(self)
-  -- function num : 0_54
+function MatchEnterData:GetLinkLineType()
   return self._linkLineType
 end
 
--- DECOMPILER ERROR at PC180: Confused about usage of register: R1 in 'UnsetPending'
-
-MatchEnterData.SetBlackFistData = function(self, worldInfo, remoteTeamInfo)
-  -- function num : 0_55 , upvalues : _ENV
+function MatchEnterData:SetBlackFistData(worldInfo, remoteTeamInfo)
   worldInfo.remoteTeamInfo = remoteTeamInfo
-  for _,matchPetInfo in ipairs(worldInfo.remoteTeamInfo) do
+  for _, matchPetInfo in ipairs(worldInfo.remoteTeamInfo) do
     matchPetInfo.pet_power = -1
   end
 end
 
--- DECOMPILER ERROR at PC183: Confused about usage of register: R1 in 'UnsetPending'
-
-MatchEnterData.SetPopStarData = function(self, worldInfo, missionID)
-  -- function num : 0_56
+function MatchEnterData:SetPopStarData(worldInfo, missionID)
   worldInfo.missionID = missionID
 end
 
--- DECOMPILER ERROR at PC186: Confused about usage of register: R1 in 'UnsetPending'
-
-MatchEnterData.InitCreateContextByMatchType = function(self, worldInfo)
-  -- function num : 0_57 , upvalues : _ENV
+function MatchEnterData:InitCreateContextByMatchType(worldInfo)
   if worldInfo.matchType == MatchType.MT_Mission then
-    worldInfo.missionID = (self:GetMissionCreateInfo()).mission_id
-  else
-    if worldInfo.matchType == MatchType.MT_ExtMission then
-      worldInfo.ext_mission_task_id = (self:GetMissionCreateInfo()).m_nExtTaskID
-    else
-      if worldInfo.matchType == MatchType.MT_Maze then
-        worldInfo.mazeCreateInfo = self:GetMazeCreateInfo()
-      else
-        if worldInfo.matchType == MatchType.MT_BlackFist then
-          self:SetBlackFistData(worldInfo, (self:GetBlackFistInfo()).black_team_info)
-        else
-          if worldInfo.matchType == MatchType.MT_PopStar or worldInfo.matchType == MatchType.MT_PopStarPro then
-            self:SetPopStarData(worldInfo, (self:GetMissionCreateInfo()).mission_id)
-          else
-            if worldInfo.matchType == MatchType.MT_Campaign then
-              if worldInfo.subMatchType == MatchType.MT_BlackFist then
-                self:SetBlackFistData(worldInfo, (self:GetCampaignMissionInfo()).mBlackTeamInfo)
-              else
-                if worldInfo.subMatchType == MatchType.MT_PopStarPro then
-                  self:SetPopStarData(worldInfo, (self:GetCampaignMissionInfo()).nCampaignMissionId)
-                end
-              end
-            else
-              if worldInfo.matchType == MatchType.MT_SeasonMaze then
-                worldInfo.mazeCreateInfo = self:GetSeasonMazeMissionInfo()
-              end
-            end
-          end
-        end
-      end
+    worldInfo.missionID = self:GetMissionCreateInfo().mission_id
+  elseif worldInfo.matchType == MatchType.MT_ExtMission then
+    worldInfo.ext_mission_task_id = self:GetMissionCreateInfo().m_nExtTaskID
+  elseif worldInfo.matchType == MatchType.MT_Maze then
+    worldInfo.mazeCreateInfo = self:GetMazeCreateInfo()
+  elseif worldInfo.matchType == MatchType.MT_BlackFist then
+    self:SetBlackFistData(worldInfo, self:GetBlackFistInfo().black_team_info)
+  elseif worldInfo.matchType == MatchType.MT_PopStar or worldInfo.matchType == MatchType.MT_PopStarPro then
+    self:SetPopStarData(worldInfo, self:GetMissionCreateInfo().mission_id)
+  elseif worldInfo.matchType == MatchType.MT_Campaign then
+    if worldInfo.subMatchType == MatchType.MT_BlackFist then
+      self:SetBlackFistData(worldInfo, self:GetCampaignMissionInfo().mBlackTeamInfo)
+    elseif worldInfo.subMatchType == MatchType.MT_PopStarPro then
+      self:SetPopStarData(worldInfo, self:GetCampaignMissionInfo().nCampaignMissionId)
     end
+  elseif worldInfo.matchType == MatchType.MT_SeasonMaze then
+    worldInfo.mazeCreateInfo = self:GetSeasonMazeMissionInfo()
   end
 end
-
-

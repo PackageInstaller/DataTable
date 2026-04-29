@@ -1,3798 +1,22714 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/world_boss/cfg_world_boss_dan.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, DanLevel = 2, MissionID = 3, NeedDamage = 4, RankLevel = 5, MailID = 6, Rewards = 7, DanName = 8, DanBadgeBase = 9, SimpleDanBadgeBase = 10, IsPlusDan = 11}
+local key = {
+  ID = 1,
+  DanLevel = 2,
+  MissionID = 3,
+  NeedDamage = 4,
+  RankLevel = 5,
+  MailID = 6,
+  Rewards = 7,
+  DanName = 8,
+  DanBadgeBase = 9,
+  SimpleDanBadgeBase = 10,
+  IsPlusDan = 11
+}
 local common = {
-{
-{3000003, 100}
-, 
-{3410605, 5}
+  {
+    {3000003, 100},
+    {3410605, 5}
+  },
+  {
+    {3000003, 110},
+    {3410605, 6}
+  },
+  {
+    {3000003, 120},
+    {3410605, 7}
+  },
+  {
+    {3000003, 130},
+    {3410605, 7}
+  },
+  {
+    {3000003, 140},
+    {3410605, 8}
+  },
+  {
+    {3000003, 150},
+    {3410605, 8}
+  },
+  {
+    {3000003, 150},
+    {3410605, 9}
+  },
+  {
+    {3000003, 150},
+    {3410605, 10}
+  },
+  {
+    {3000003, 100},
+    {3000025, 1},
+    {3000026, 200}
+  },
+  {
+    {3000003, 120},
+    {3000025, 1},
+    {3000026, 220}
+  },
+  {
+    {3000003, 140},
+    {3000025, 1},
+    {3000026, 240}
+  },
+  {
+    {3000003, 160},
+    {3000025, 2},
+    {3000026, 270}
+  },
+  {
+    {3000003, 180},
+    {3000025, 2},
+    {3000026, 300}
+  },
+  {
+    {3000003, 200},
+    {3000025, 2},
+    {3000026, 330}
+  },
+  {
+    {3000003, 220},
+    {3000025, 3},
+    {3000026, 360}
+  },
+  {
+    {3000003, 240},
+    {3000025, 3},
+    {3000026, 400}
+  },
+  {
+    {3000003, 270},
+    {3000025, 3},
+    {3000026, 450}
+  },
+  {
+    {3000003, 300},
+    {3000025, 4},
+    {3000026, 500}
+  },
+  {
+    {3000003, 300},
+    {3000025, 5},
+    {3000026, 600}
+  },
+  "str_world_boss_dan_1",
+  "world_huizhang_tu01",
+  "world_huizhang1_tu01",
+  "str_world_boss_dan_3",
+  "world_huizhang_tu03",
+  "world_huizhang1_tu03",
+  "str_world_boss_dan_4",
+  "world_huizhang_tu04",
+  "world_huizhang1_tu04",
+  "str_world_boss_dan_5",
+  "world_huizhang_tu05",
+  "world_huizhang1_tu05",
+  "str_world_boss_dan_6",
+  "world_huizhang_tu06",
+  "world_huizhang1_tu06",
+  "str_world_boss_dan_7",
+  "world_huizhang_tu07",
+  "world_huizhang1_tu07",
+  "str_world_boss_dan_8",
+  "world_huizhang_tu08",
+  "world_huizhang1_tu08",
+  "str_world_boss_dan_11",
+  "world_huizhang_tu11",
+  "world_huizhang1_tu11",
+  "str_world_boss_dan_12",
+  "world_huizhang_tu12",
+  "world_huizhang1_tu12",
+  "str_world_boss_dan_13",
+  "world_huizhang_tu13",
+  "world_huizhang1_tu13",
+  "str_world_boss_dan_14",
+  "world_huizhang_tu15",
+  "world_huizhang1_tu15"
 }
-, 
-{
-{3000003, 110}
-, 
-{3410605, 6}
-}
-, 
-{
-{3000003, 120}
-, 
-{3410605, 7}
-}
-, 
-{
-{3000003, 130}
-, 
-{3410605, 7}
-}
-, 
-{
-{3000003, 140}
-, 
-{3410605, 8}
-}
-, 
-{
-{3000003, 150}
-, 
-{3410605, 8}
-}
-, 
-{
-{3000003, 150}
-, 
-{3410605, 9}
-}
-, 
-{
-{3000003, 150}
-, 
-{3410605, 10}
-}
-, 
-{
-{3000003, 100}
-, 
-{3000025, 1}
-, 
-{3000026, 200}
-}
-, 
-{
-{3000003, 120}
-, 
-{3000025, 1}
-, 
-{3000026, 220}
-}
-, 
-{
-{3000003, 140}
-, 
-{3000025, 1}
-, 
-{3000026, 240}
-}
-, 
-{
-{3000003, 160}
-, 
-{3000025, 2}
-, 
-{3000026, 270}
-}
-, 
-{
-{3000003, 180}
-, 
-{3000025, 2}
-, 
-{3000026, 300}
-}
-, 
-{
-{3000003, 200}
-, 
-{3000025, 2}
-, 
-{3000026, 330}
-}
-, 
-{
-{3000003, 220}
-, 
-{3000025, 3}
-, 
-{3000026, 360}
-}
-, 
-{
-{3000003, 240}
-, 
-{3000025, 3}
-, 
-{3000026, 400}
-}
-, 
-{
-{3000003, 270}
-, 
-{3000025, 3}
-, 
-{3000026, 450}
-}
-, 
-{
-{3000003, 300}
-, 
-{3000025, 4}
-, 
-{3000026, 500}
-}
-, 
-{
-{3000003, 300}
-, 
-{3000025, 5}
-, 
-{3000026, 600}
-}
-, "str_world_boss_dan_1", "world_huizhang_tu01", "world_huizhang1_tu01", "str_world_boss_dan_3", "world_huizhang_tu03", "world_huizhang1_tu03", "str_world_boss_dan_4", "world_huizhang_tu04", "world_huizhang1_tu04", "str_world_boss_dan_5", "world_huizhang_tu05", "world_huizhang1_tu05", "str_world_boss_dan_6", "world_huizhang_tu06", "world_huizhang1_tu06", "str_world_boss_dan_7", "world_huizhang_tu07", "world_huizhang1_tu07", "str_world_boss_dan_8", "world_huizhang_tu08", "world_huizhang1_tu08", "str_world_boss_dan_11", "world_huizhang_tu11", "world_huizhang1_tu11", "str_world_boss_dan_12", "world_huizhang_tu12", "world_huizhang1_tu12", "str_world_boss_dan_13", "world_huizhang_tu13", "world_huizhang1_tu13", "str_world_boss_dan_14", "world_huizhang_tu15", "world_huizhang1_tu15"}
 local config = {
-{1, 100, 7001001, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{2, 200, 7001001, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{3, 300, 7001001, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{4, 400, 7001001, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{5, 500, 7001001, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{6, 600, 7001001, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{7, 700, 7001001, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{8, 800, 7001001, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{9, 900, 7001001, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{10, 1000, 7001001, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{11, 1100, 7001001, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{12, 100, 7001002, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{13, 200, 7001002, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{14, 300, 7001002, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{15, 400, 7001002, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{16, 500, 7001002, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{17, 600, 7001002, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{18, 700, 7001002, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{19, 800, 7001002, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{20, 900, 7001002, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{21, 1000, 7001002, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{22, 1100, 7001002, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{23, 100, 7001003, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{24, 200, 7001003, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{25, 300, 7001003, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{26, 400, 7001003, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{27, 500, 7001003, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{28, 600, 7001003, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{29, 700, 7001003, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{30, 800, 7001003, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{31, 900, 7001003, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{32, 1000, 7001003, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{33, 1100, 7001003, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{34, 100, 7001004, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{35, 200, 7001004, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{36, 300, 7001004, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{37, 400, 7001004, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{38, 500, 7001004, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{39, 600, 7001004, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{40, 700, 7001004, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{41, 800, 7001004, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{42, 900, 7001004, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{43, 1000, 7001004, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{44, 1100, 7001004, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{45, 100, 7001005, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{46, 200, 7001005, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{47, 300, 7001005, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{48, 400, 7001005, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{49, 500, 7001005, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{50, 600, 7001005, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{51, 700, 7001005, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{52, 800, 7001005, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{53, 900, 7001005, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{54, 1000, 7001005, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{55, 1100, 7001005, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{56, 100, 7001006, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{57, 200, 7001006, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{58, 300, 7001006, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{59, 400, 7001006, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{60, 500, 7001006, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{61, 600, 7001006, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{62, 700, 7001006, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{63, 800, 7001006, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{64, 900, 7001006, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{65, 1000, 7001006, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{66, 1100, 7001006, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{67, 100, 7001007, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{68, 200, 7001007, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{69, 300, 7001007, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{70, 400, 7001007, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{71, 500, 7001007, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{72, 600, 7001007, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{73, 700, 7001007, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{74, 800, 7001007, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{75, 900, 7001007, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{76, 1000, 7001007, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{77, 1100, 7001007, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{78, 100, 7001008, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{79, 200, 7001008, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{80, 300, 7001008, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{81, 400, 7001008, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{82, 500, 7001008, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{83, 600, 7001008, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{84, 700, 7001008, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{85, 800, 7001008, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{86, 900, 7001008, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{87, 1000, 7001008, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{88, 1100, 7001008, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{89, 100, 7001009, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{90, 200, 7001009, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{91, 300, 7001009, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{92, 400, 7001009, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{93, 500, 7001009, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{94, 600, 7001009, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{95, 700, 7001009, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{96, 800, 7001009, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{97, 900, 7001009, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{98, 1000, 7001009, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{99, 1100, 7001009, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{100, 100, 7001010, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{101, 200, 7001010, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{102, 300, 7001010, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{103, 400, 7001010, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{104, 500, 7001010, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{105, 600, 7001010, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{106, 700, 7001010, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{107, 800, 7001010, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{108, 900, 7001010, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{109, 1000, 7001010, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{110, 1100, 7001010, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{111, 100, 7001011, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{112, 200, 7001011, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{113, 300, 7001011, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{114, 400, 7001011, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{115, 500, 7001011, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{116, 600, 7001011, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{117, 700, 7001011, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{118, 800, 7001011, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{119, 900, 7001011, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{120, 1000, 7001011, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{121, 1100, 7001011, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{122, 100, 7001012, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{123, 200, 7001012, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{124, 300, 7001012, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{125, 400, 7001012, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{126, 500, 7001012, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{127, 600, 7001012, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{128, 700, 7001012, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{129, 800, 7001012, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{130, 900, 7001012, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{131, 1000, 7001012, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{132, 1100, 7001012, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{133, 100, 7001013, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{134, 200, 7001013, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{135, 300, 7001013, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{136, 400, 7001013, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{137, 500, 7001013, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{138, 600, 7001013, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{139, 700, 7001013, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{140, 800, 7001013, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{141, 900, 7001013, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{142, 1000, 7001013, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{143, 1100, 7001013, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{144, 100, 7001014, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{145, 200, 7001014, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{146, 300, 7001014, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{147, 400, 7001014, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{148, 500, 7001014, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{149, 600, 7001014, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{150, 700, 7001014, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{151, 800, 7001014, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{152, 900, 7001014, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{153, 1000, 7001014, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{154, 1100, 7001014, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{155, 100, 7001015, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{156, 200, 7001015, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{157, 300, 7001015, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{158, 400, 7001015, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{159, 500, 7001015, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{160, 600, 7001015, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{161, 700, 7001015, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{162, 800, 7001015, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{163, 900, 7001015, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{164, 1000, 7001015, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{165, 1100, 7001015, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{166, 100, 7001016, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{167, 200, 7001016, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{168, 300, 7001016, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{169, 400, 7001016, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{170, 500, 7001016, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{171, 600, 7001016, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{172, 700, 7001016, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{173, 800, 7001016, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{174, 900, 7001016, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{175, 1000, 7001016, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{176, 1100, 7001016, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{177, 100, 7001017, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{178, 200, 7001017, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{179, 300, 7001017, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{180, 400, 7001017, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{181, 500, 7001017, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{182, 600, 7001017, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{183, 700, 7001017, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{184, 800, 7001017, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{185, 900, 7001017, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{186, 1000, 7001017, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{187, 1100, 7001017, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{188, 100, 7001018, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{189, 200, 7001018, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{190, 300, 7001018, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{191, 400, 7001018, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{192, 500, 7001018, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{193, 600, 7001018, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{194, 700, 7001018, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{195, 800, 7001018, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{196, 900, 7001018, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{197, 1000, 7001018, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{198, 1100, 7001018, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{199, 100, 7001019, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{200, 200, 7001019, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{201, 300, 7001019, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{202, 400, 7001019, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{203, 500, 7001019, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{204, 600, 7001019, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{205, 700, 7001019, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{206, 800, 7001019, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{207, 900, 7001019, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{208, 1000, 7001019, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{209, 1100, 7001019, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{210, 100, 7001020, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{211, 200, 7001020, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{212, 300, 7001020, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{213, 400, 7001020, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{214, 500, 7001020, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{215, 600, 7001020, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{216, 700, 7001020, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{217, 800, 7001020, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{218, 900, 7001020, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{219, 1000, 7001020, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{220, 1100, 7001020, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{221, 100, 7001021, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{222, 200, 7001021, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{223, 300, 7001021, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{224, 400, 7001021, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{225, 500, 7001021, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{226, 600, 7001021, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{227, 700, 7001021, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{228, 800, 7001021, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{229, 900, 7001021, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{230, 1000, 7001021, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{231, 1100, 7001021, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{232, 100, 7001022, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{233, 200, 7001022, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{234, 300, 7001022, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{235, 400, 7001022, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{236, 500, 7001022, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{237, 600, 7001022, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{238, 700, 7001022, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{239, 800, 7001022, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{240, 900, 7001022, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{241, 1000, 7001022, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{242, 1100, 7001022, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{243, 100, 7001023, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{244, 200, 7001023, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{245, 300, 7001023, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{246, 400, 7001023, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{247, 500, 7001023, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{248, 600, 7001023, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{249, 700, 7001023, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{250, 800, 7001023, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{251, 900, 7001023, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{252, 1000, 7001023, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{253, 1100, 7001023, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{254, 100, 7001024, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{255, 200, 7001024, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{256, 300, 7001024, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{257, 400, 7001024, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{258, 500, 7001024, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{259, 600, 7001024, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{260, 700, 7001024, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{261, 800, 7001024, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{262, 900, 7001024, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{263, 1000, 7001024, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{264, 1100, 7001024, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{265, 100, 7001025, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{266, 200, 7001025, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{267, 300, 7001025, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{268, 400, 7001025, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{269, 500, 7001025, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{270, 600, 7001025, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{271, 700, 7001025, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{272, 800, 7001025, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{273, 900, 7001025, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{274, 1000, 7001025, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{275, 1100, 7001025, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{276, 100, 7001026, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{277, 200, 7001026, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{278, 300, 7001026, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{279, 400, 7001026, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{280, 500, 7001026, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{281, 600, 7001026, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{282, 700, 7001026, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{283, 800, 7001026, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{284, 900, 7001026, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{285, 1000, 7001026, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{286, 1100, 7001026, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{287, 100, 7001027, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{288, 200, 7001027, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{289, 300, 7001027, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{290, 400, 7001027, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{291, 500, 7001027, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{292, 600, 7001027, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{293, 700, 7001027, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{294, 800, 7001027, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{295, 900, 7001027, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{296, 1000, 7001027, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{297, 1100, 7001027, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{298, 100, 7001028, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{299, 200, 7001028, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{300, 300, 7001028, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{301, 400, 7001028, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{302, 500, 7001028, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{303, 600, 7001028, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{304, 700, 7001028, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{305, 800, 7001028, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{306, 900, 7001028, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{307, 1000, 7001028, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{308, 1100, 7001028, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{309, 100, 7001029, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{310, 200, 7001029, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{311, 300, 7001029, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{312, 400, 7001029, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{313, 500, 7001029, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{314, 600, 7001029, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{315, 700, 7001029, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{316, 800, 7001029, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{317, 900, 7001029, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{318, 1000, 7001029, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{319, 1100, 7001029, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{320, 100, 7001030, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{321, 200, 7001030, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{322, 300, 7001030, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{323, 400, 7001030, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{324, 500, 7001030, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{325, 600, 7001030, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{326, 700, 7001030, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{327, 800, 7001030, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{328, 900, 7001030, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{329, 1000, 7001030, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{330, 1100, 7001030, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{331, 100, 7001031, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{332, 200, 7001031, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{333, 300, 7001031, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{334, 400, 7001031, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{335, 500, 7001031, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{336, 600, 7001031, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{337, 700, 7001031, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{338, 800, 7001031, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{339, 900, 7001031, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{340, 1000, 7001031, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{341, 1100, 7001031, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{342, 100, 7001032, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{343, 200, 7001032, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{344, 300, 7001032, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{345, 400, 7001032, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{346, 500, 7001032, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{347, 600, 7001032, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{348, 700, 7001032, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{349, 800, 7001032, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{350, 900, 7001032, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{351, 1000, 7001032, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{352, 1100, 7001032, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{353, 100, 7001033, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{354, 200, 7001033, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{355, 300, 7001033, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{356, 400, 7001033, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{357, 500, 7001033, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{358, 600, 7001033, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{359, 700, 7001033, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{360, 800, 7001033, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{361, 900, 7001033, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{362, 1000, 7001033, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{363, 1100, 7001033, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{364, 100, 7001034, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{365, 200, 7001034, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{366, 300, 7001034, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{367, 400, 7001034, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{368, 500, 7001034, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{369, 600, 7001034, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{370, 700, 7001034, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{371, 800, 7001034, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{372, 900, 7001034, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{373, 1000, 7001034, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{374, 1100, 7001034, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{375, 100, 7001035, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{376, 200, 7001035, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{377, 300, 7001035, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{378, 400, 7001035, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{379, 500, 7001035, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{380, 600, 7001035, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{381, 700, 7001035, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{382, 800, 7001035, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{383, 900, 7001035, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{384, 1000, 7001035, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{385, 1100, 7001035, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{386, 100, 7001036, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{387, 200, 7001036, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{388, 300, 7001036, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{389, 400, 7001036, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{390, 500, 7001036, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{391, 600, 7001036, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{392, 700, 7001036, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{393, 800, 7001036, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{394, 900, 7001036, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{395, 1000, 7001036, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{396, 1100, 7001036, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{397, 100, 7001037, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{398, 200, 7001037, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{399, 300, 7001037, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{400, 400, 7001037, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{401, 500, 7001037, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{402, 600, 7001037, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{403, 700, 7001037, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{404, 800, 7001037, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{405, 900, 7001037, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{406, 1000, 7001037, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{407, 1100, 7001037, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{408, 100, 7001038, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{409, 200, 7001038, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{410, 300, 7001038, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{411, 400, 7001038, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{412, 500, 7001038, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{413, 600, 7001038, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{414, 700, 7001038, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{415, 800, 7001038, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{416, 900, 7001038, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{417, 1000, 7001038, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{418, 1100, 7001038, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{419, 100, 7001039, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{420, 200, 7001039, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{421, 300, 7001039, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{422, 400, 7001039, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{423, 500, 7001039, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{424, 600, 7001039, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{425, 700, 7001039, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{426, 800, 7001039, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{427, 900, 7001039, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{428, 1000, 7001039, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{429, 1100, 7001039, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{430, 100, 7001040, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{431, 200, 7001040, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{432, 300, 7001040, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{433, 400, 7001040, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{434, 500, 7001040, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{435, 600, 7001040, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{436, 700, 7001040, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{437, 800, 7001040, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{438, 900, 7001040, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{439, 1000, 7001040, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{440, 1100, 7001040, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{441, 100, 7001041, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{442, 200, 7001041, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{443, 300, 7001041, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{444, 400, 7001041, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{445, 500, 7001041, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{446, 600, 7001041, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{447, 700, 7001041, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{448, 800, 7001041, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{449, 900, 7001041, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{450, 1000, 7001041, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{451, 1100, 7001041, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{452, 100, 7001042, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{453, 200, 7001042, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{454, 300, 7001042, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{455, 400, 7001042, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{456, 500, 7001042, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{457, 600, 7001042, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{458, 700, 7001042, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{459, 800, 7001042, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{460, 900, 7001042, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{461, 1000, 7001042, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{462, 1100, 7001042, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{463, 100, 7001043, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{464, 200, 7001043, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{465, 300, 7001043, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{466, 400, 7001043, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{467, 500, 7001043, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{468, 600, 7001043, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{469, 700, 7001043, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{470, 800, 7001043, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{471, 900, 7001043, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{472, 1000, 7001043, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{473, 1100, 7001043, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{474, 100, 7001044, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{475, 200, 7001044, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{476, 300, 7001044, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{477, 400, 7001044, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{478, 500, 7001044, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{479, 600, 7001044, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{480, 700, 7001044, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{481, 800, 7001044, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{482, 900, 7001044, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{483, 1000, 7001044, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{484, 1100, 7001044, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{485, 100, 7001045, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{486, 200, 7001045, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{487, 300, 7001045, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{488, 400, 7001045, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{489, 500, 7001045, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{490, 600, 7001045, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{491, 700, 7001045, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{492, 800, 7001045, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{493, 900, 7001045, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{494, 1000, 7001045, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{495, 1100, 7001045, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{496, 100, 7001046, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{497, 200, 7001046, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{498, 300, 7001046, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{499, 400, 7001046, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{500, 500, 7001046, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{501, 600, 7001046, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{502, 700, 7001046, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{503, 800, 7001046, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{504, 900, 7001046, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{505, 1000, 7001046, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{506, 1100, 7001046, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{507, 100, 7001047, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{508, 200, 7001047, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{509, 300, 7001047, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{510, 400, 7001047, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{511, 500, 7001047, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{512, 600, 7001047, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{513, 700, 7001047, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{514, 800, 7001047, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{515, 900, 7001047, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{516, 1000, 7001047, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{517, 1100, 7001047, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{518, 100, 7001048, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{519, 200, 7001048, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{520, 300, 7001048, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{521, 400, 7001048, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{522, 500, 7001048, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{523, 600, 7001048, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{524, 700, 7001048, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{525, 800, 7001048, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{526, 900, 7001048, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{527, 1000, 7001048, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{528, 1100, 7001048, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{529, 100, 7001049, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{530, 200, 7001049, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{531, 300, 7001049, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{532, 400, 7001049, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{533, 500, 7001049, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{534, 600, 7001049, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{535, 700, 7001049, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{536, 800, 7001049, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{537, 900, 7001049, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{538, 1000, 7001049, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{539, 1100, 7001049, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{540, 100, 7001050, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{541, 200, 7001050, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{542, 300, 7001050, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{543, 400, 7001050, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{544, 500, 7001050, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{545, 600, 7001050, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{546, 700, 7001050, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{547, 800, 7001050, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{548, 900, 7001050, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{549, 1000, 7001050, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{550, 1100, 7001050, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{551, 100, 7001051, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{552, 200, 7001051, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{553, 300, 7001051, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{554, 400, 7001051, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{555, 500, 7001051, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{556, 600, 7001051, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{557, 700, 7001051, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{558, 800, 7001051, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{559, 900, 7001051, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{560, 1000, 7001051, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{561, 1100, 7001051, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{562, 100, 7001052, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{563, 200, 7001052, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{564, 300, 7001052, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{565, 400, 7001052, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{566, 500, 7001052, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{567, 600, 7001052, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{568, 700, 7001052, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{569, 800, 7001052, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{570, 900, 7001052, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{571, 1000, 7001052, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{572, 1100, 7001052, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{573, 100, 7001053, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{574, 200, 7001053, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{575, 300, 7001053, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{576, 400, 7001053, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{577, 500, 7001053, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{578, 600, 7001053, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{579, 700, 7001053, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{580, 800, 7001053, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{581, 900, 7001053, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{582, 1000, 7001053, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{583, 1100, 7001053, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{584, 100, 7001054, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{585, 200, 7001054, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{586, 300, 7001054, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{587, 400, 7001054, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{588, 500, 7001054, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{589, 600, 7001054, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{590, 700, 7001054, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{591, 800, 7001054, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{592, 900, 7001054, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{593, 1000, 7001054, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{594, 1100, 7001054, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{595, 100, 7001055, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{596, 200, 7001055, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{597, 300, 7001055, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{598, 400, 7001055, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{599, 500, 7001055, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{600, 600, 7001055, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{601, 700, 7001055, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{602, 800, 7001055, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{603, 900, 7001055, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{604, 1000, 7001055, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{605, 1100, 7001055, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{606, 100, 7001056, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{607, 200, 7001056, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{608, 300, 7001056, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{609, 400, 7001056, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{610, 500, 7001056, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{611, 600, 7001056, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{612, 700, 7001056, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{613, 800, 7001056, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{614, 900, 7001056, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{615, 1000, 7001056, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{616, 1100, 7001056, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{617, 100, 7001057, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{618, 200, 7001057, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{619, 300, 7001057, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{620, 400, 7001057, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{621, 500, 7001057, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{622, 600, 7001057, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{623, 700, 7001057, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{624, 800, 7001057, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{625, 900, 7001057, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{626, 1000, 7001057, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{627, 1100, 7001057, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{628, 100, 7001058, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{629, 200, 7001058, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{630, 300, 7001058, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{631, 400, 7001058, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{632, 500, 7001058, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{633, 600, 7001058, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{634, 700, 7001058, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{635, 800, 7001058, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{636, 900, 7001058, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{637, 1000, 7001058, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{638, 1100, 7001058, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{639, 100, 7001059, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{640, 200, 7001059, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{641, 300, 7001059, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{642, 400, 7001059, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{643, 500, 7001059, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{644, 600, 7001059, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{645, 700, 7001059, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{646, 800, 7001059, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{647, 900, 7001059, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{648, 1000, 7001059, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{649, 1100, 7001059, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{650, 100, 7001060, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{651, 200, 7001060, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{652, 300, 7001060, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{653, 400, 7001060, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{654, 500, 7001060, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{655, 600, 7001060, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{656, 700, 7001060, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{657, 800, 7001060, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{658, 900, 7001060, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{659, 1000, 7001060, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{660, 1100, 7001060, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{661, 100, 7001061, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{662, 200, 7001061, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{663, 300, 7001061, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{664, 400, 7001061, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{665, 500, 7001061, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{666, 600, 7001061, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{667, 700, 7001061, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{668, 800, 7001061, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{669, 900, 7001061, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{670, 1000, 7001061, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{671, 1100, 7001061, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{672, 100, 7001062, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{673, 200, 7001062, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{674, 300, 7001062, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{675, 400, 7001062, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{676, 500, 7001062, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{677, 600, 7001062, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{678, 700, 7001062, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{679, 800, 7001062, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{680, 900, 7001062, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{681, 1000, 7001062, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{682, 1100, 7001062, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{683, 100, 7001063, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{684, 200, 7001063, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{685, 300, 7001063, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{686, 400, 7001063, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{687, 500, 7001063, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{688, 600, 7001063, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{689, 700, 7001063, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{690, 800, 7001063, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{691, 900, 7001063, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{692, 1000, 7001063, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{693, 1100, 7001063, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{694, 100, 7001064, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{695, 200, 7001064, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{696, 300, 7001064, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{697, 400, 7001064, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{698, 500, 7001064, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{699, 600, 7001064, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{700, 700, 7001064, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{701, 800, 7001064, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{702, 900, 7001064, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{703, 1000, 7001064, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{704, 1100, 7001064, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{705, 100, 7001065, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{706, 200, 7001065, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{707, 300, 7001065, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{708, 400, 7001065, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{709, 500, 7001065, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{710, 600, 7001065, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{711, 700, 7001065, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{712, 800, 7001065, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{713, 900, 7001065, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{714, 1000, 7001065, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{715, 1100, 7001065, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{716, 100, 7001066, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{717, 200, 7001066, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{718, 300, 7001066, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{719, 400, 7001066, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{720, 500, 7001066, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{721, 600, 7001066, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{722, 700, 7001066, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{723, 800, 7001066, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{724, 900, 7001066, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{725, 1000, 7001066, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{726, 1100, 7001066, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{727, 100, 7001067, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{728, 200, 7001067, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{729, 300, 7001067, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{730, 400, 7001067, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{731, 500, 7001067, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{732, 600, 7001067, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{733, 700, 7001067, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{734, 800, 7001067, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{735, 900, 7001067, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{736, 1000, 7001067, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{737, 1100, 7001067, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{738, 100, 7001068, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{739, 200, 7001068, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{740, 300, 7001068, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{741, 400, 7001068, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{742, 500, 7001068, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{743, 600, 7001068, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{744, 700, 7001068, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{745, 800, 7001068, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{746, 900, 7001068, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{747, 1000, 7001068, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{748, 1100, 7001068, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{749, 100, 7001069, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{750, 200, 7001069, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{751, 300, 7001069, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{752, 400, 7001069, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{753, 500, 7001069, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{754, 600, 7001069, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{755, 700, 7001069, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{756, 800, 7001069, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{757, 900, 7001069, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{758, 1000, 7001069, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{759, 1100, 7001069, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{760, 100, 7001070, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{761, 200, 7001070, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{762, 300, 7001070, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{763, 400, 7001070, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{764, 500, 7001070, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{765, 600, 7001070, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{766, 700, 7001070, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{767, 800, 7001070, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{768, 900, 7001070, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{769, 1000, 7001070, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{770, 1100, 7001070, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{771, 100, 7001071, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{772, 200, 7001071, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{773, 300, 7001071, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{774, 400, 7001071, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{775, 500, 7001071, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{776, 600, 7001071, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{777, 700, 7001071, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{778, 800, 7001071, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{779, 900, 7001071, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{780, 1000, 7001071, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{781, 1100, 7001071, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{782, 100, 7001072, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{783, 200, 7001072, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{784, 300, 7001072, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{785, 400, 7001072, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{786, 500, 7001072, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{787, 600, 7001072, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{788, 700, 7001072, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{789, 800, 7001072, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{790, 900, 7001072, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{791, 1000, 7001072, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{792, 1100, 7001072, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{793, 100, 7001073, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{794, 200, 7001073, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{795, 300, 7001073, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{796, 400, 7001073, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{797, 500, 7001073, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{798, 600, 7001073, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{799, 700, 7001073, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{800, 800, 7001073, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{801, 900, 7001073, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{802, 1000, 7001073, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{803, 1100, 7001073, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{804, 100, 7001074, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{805, 200, 7001074, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{806, 300, 7001074, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{807, 400, 7001074, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{808, 500, 7001074, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{809, 600, 7001074, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{810, 700, 7001074, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{811, 800, 7001074, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{812, 900, 7001074, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{813, 1000, 7001074, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{814, 1100, 7001074, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{815, 100, 7001075, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{816, 200, 7001075, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{817, 300, 7001075, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{818, 400, 7001075, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{819, 500, 7001075, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{820, 600, 7001075, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{821, 700, 7001075, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{822, 800, 7001075, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{823, 900, 7001075, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{824, 1000, 7001075, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{825, 1100, 7001075, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{826, 100, 7001076, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{827, 200, 7001076, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{828, 300, 7001076, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{829, 400, 7001076, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{830, 500, 7001076, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{831, 600, 7001076, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{832, 700, 7001076, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{833, 800, 7001076, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{834, 900, 7001076, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{835, 1000, 7001076, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{836, 1100, 7001076, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{837, 100, 7001077, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{838, 200, 7001077, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{839, 300, 7001077, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{840, 400, 7001077, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{841, 500, 7001077, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{842, 600, 7001077, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{843, 700, 7001077, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{844, 800, 7001077, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{845, 900, 7001077, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{846, 1000, 7001077, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{847, 1100, 7001077, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{848, 100, 7001078, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{849, 200, 7001078, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{850, 300, 7001078, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{851, 400, 7001078, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{852, 500, 7001078, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{853, 600, 7001078, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{854, 700, 7001078, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{855, 800, 7001078, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{856, 900, 7001078, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{857, 1000, 7001078, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{858, 1100, 7001078, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{859, 100, 7001079, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{860, 200, 7001079, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{861, 300, 7001079, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{862, 400, 7001079, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{863, 500, 7001079, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{864, 600, 7001079, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{865, 700, 7001079, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{866, 800, 7001079, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{867, 900, 7001079, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{868, 1000, 7001079, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{869, 1100, 7001079, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{870, 100, 7001080, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{871, 200, 7001080, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{872, 300, 7001080, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{873, 400, 7001080, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{874, 500, 7001080, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{875, 600, 7001080, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{876, 700, 7001080, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{877, 800, 7001080, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{878, 900, 7001080, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{879, 1000, 7001080, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{880, 1100, 7001080, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{881, 100, 7001081, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{882, 200, 7001081, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{883, 300, 7001081, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{884, 400, 7001081, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{885, 500, 7001081, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{886, 600, 7001081, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{887, 700, 7001081, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{888, 800, 7001081, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{889, 900, 7001081, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{890, 1000, 7001081, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{891, 1100, 7001081, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{892, 100, 7001082, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{893, 200, 7001082, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{894, 300, 7001082, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{895, 400, 7001082, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{896, 500, 7001082, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{897, 600, 7001082, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{898, 700, 7001082, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{899, 800, 7001082, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{900, 900, 7001082, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{901, 1000, 7001082, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{902, 1100, 7001082, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{903, 100, 7001083, 100000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{904, 200, 7001083, 200000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{905, 300, 7001083, 400000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{906, 400, 7001083, 600000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{907, 500, 7001083, 800000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{908, 600, 7001083, 1000000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{909, 700, 7001083, 1400000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{910, 800, 7001083, 1800000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{911, 900, 7001083, 2400000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{912, 1000, 7001083, 3000000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{913, 1100, 7001083, 3000000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{914, 100, 7001084, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{915, 200, 7001084, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{916, 300, 7001084, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{917, 400, 7001084, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{918, 500, 7001084, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{919, 600, 7001084, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{920, 700, 7001084, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{921, 800, 7001084, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{922, 900, 7001084, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{923, 1000, 7001084, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{924, 1100, 7001084, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{925, 100, 7001085, 50000, 0, 40001, common[1], common[20], common[21], common[22]}
-, 
-{926, 200, 7001085, 100000, 0, 40003, common[2], common[23], common[24], common[25]}
-, 
-{927, 300, 7001085, 200000, 0, 40004, common[3], common[26], common[27], common[28], 1}
-, 
-{928, 400, 7001085, 300000, 0, 40005, common[4], common[29], common[30], common[31]}
-, 
-{929, 500, 7001085, 400000, 0, 40006, common[5], common[32], common[33], common[34], 1}
-, 
-{930, 600, 7001085, 500000, 0, 40007, common[6], common[35], common[36], common[37]}
-, 
-{931, 700, 7001085, 700000, 0, 40008, common[7], common[38], common[39], common[40], 1}
-, 
-{932, 800, 7001085, 900000, 0, 40011, common[7], common[41], common[42], common[43]}
-, 
-{933, 900, 7001085, 1200000, 0, 40012, common[8], common[44], common[45], common[46], 1}
-, 
-{934, 1000, 7001085, 1500000, 0, 40013, common[8], common[47], common[48], common[49]}
-, 
-{935, 1100, 7001085, 1500000, 999, 40014, common[8], common[50], common[51], common[52]}
-, 
-{936, 100, 7001086, 700000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{937, 200, 7001086, 1400000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{938, 300, 7001086, 2100000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{939, 400, 7001086, 2800000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{940, 500, 7001086, 3600000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{941, 600, 7001086, 4500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{942, 700, 7001086, 5400000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{943, 800, 7001086, 6300000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{944, 900, 7001086, 7600000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{945, 1000, 7001086, 9000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{946, 1100, 7001086, 9000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{947, 100, 7001087, 800000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{948, 200, 7001087, 1600000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{949, 300, 7001087, 2400000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{950, 400, 7001087, 3200000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{951, 500, 7001087, 4000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{952, 600, 7001087, 5000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{953, 700, 7001087, 6000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{954, 800, 7001087, 7000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{955, 900, 7001087, 8500000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{956, 1000, 7001087, 10000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{957, 1100, 7001087, 10000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{958, 100, 7001088, 500000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{959, 200, 7001088, 1000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{960, 300, 7001088, 1500000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{961, 400, 7001088, 2000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{962, 500, 7001088, 2500000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{963, 600, 7001088, 3000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{964, 700, 7001088, 3500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{965, 800, 7001088, 4000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{966, 900, 7001088, 5000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{967, 1000, 7001088, 6000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{968, 1100, 7001088, 6000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{969, 100, 7001089, 500000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{970, 200, 7001089, 1000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{971, 300, 7001089, 1500000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{972, 400, 7001089, 2000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{973, 500, 7001089, 2500000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{974, 600, 7001089, 3000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{975, 700, 7001089, 3500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{976, 800, 7001089, 4000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{977, 900, 7001089, 5000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{978, 1000, 7001089, 6000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{979, 1100, 7001089, 6000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{980, 100, 7001090, 500000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{981, 200, 7001090, 1000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{982, 300, 7001090, 1500000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{983, 400, 7001090, 2000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{984, 500, 7001090, 2500000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{985, 600, 7001090, 3000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{986, 700, 7001090, 3500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{987, 800, 7001090, 4000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{988, 900, 7001090, 5000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{989, 1000, 7001090, 6000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{990, 1100, 7001090, 6000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{991, 100, 7001091, 500000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{992, 200, 7001091, 1000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{993, 300, 7001091, 1500000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{994, 400, 7001091, 2000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{995, 500, 7001091, 2500000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{996, 600, 7001091, 3000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{997, 700, 7001091, 3500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{998, 800, 7001091, 4000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{999, 900, 7001091, 5000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1000, 1000, 7001091, 6000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1001, 1100, 7001091, 6000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1002, 100, 7001092, 900000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1003, 200, 7001092, 1800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1004, 300, 7001092, 2700000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1005, 400, 7001092, 3600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1006, 500, 7001092, 4500000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1007, 600, 7001092, 5500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1008, 700, 7001092, 6500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1009, 800, 7001092, 8000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1010, 900, 7001092, 9500000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1011, 1000, 7001092, 11000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1012, 1100, 7001092, 11000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1013, 100, 7001093, 700000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1014, 200, 7001093, 1400000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1015, 300, 7001093, 2100000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1016, 400, 7001093, 2800000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1017, 500, 7001093, 3600000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1018, 600, 7001093, 4500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1019, 700, 7001093, 5400000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1020, 800, 7001093, 6300000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1021, 900, 7001093, 7600000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1022, 1000, 7001093, 9000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1023, 1100, 7001093, 9000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1024, 100, 7001094, 700000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1025, 200, 7001094, 1400000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1026, 300, 7001094, 2100000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1027, 400, 7001094, 2800000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1028, 500, 7001094, 3600000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1029, 600, 7001094, 4500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1030, 700, 7001094, 5400000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1031, 800, 7001094, 6300000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1032, 900, 7001094, 7600000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1033, 1000, 7001094, 9000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1034, 1100, 7001094, 9000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1035, 100, 7001095, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1036, 200, 7001095, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1037, 300, 7001095, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1038, 400, 7001095, 1600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1039, 500, 7001095, 2000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1040, 600, 7001095, 2500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1041, 700, 7001095, 3000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1042, 800, 7001095, 3600000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1043, 900, 7001095, 4200000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1044, 1000, 7001095, 5000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1045, 1100, 7001095, 5000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1046, 100, 7001096, 500000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1047, 200, 7001096, 1000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1048, 300, 7001096, 1500000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1049, 400, 7001096, 2000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1050, 500, 7001096, 2500000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1051, 600, 7001096, 3000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1052, 700, 7001096, 3500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1053, 800, 7001096, 4000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1054, 900, 7001096, 5000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1055, 1000, 7001096, 6000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1056, 1100, 7001096, 6000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1057, 100, 7001097, 500000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1058, 200, 7001097, 1000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1059, 300, 7001097, 1500000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1060, 400, 7001097, 2000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1061, 500, 7001097, 2500000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1062, 600, 7001097, 3000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1063, 700, 7001097, 3500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1064, 800, 7001097, 4000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1065, 900, 7001097, 5000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1066, 1000, 7001097, 6000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1067, 1100, 7001097, 6000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1068, 100, 7001098, 700000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1069, 200, 7001098, 1400000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1070, 300, 7001098, 2100000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1071, 400, 7001098, 2800000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1072, 500, 7001098, 3600000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1073, 600, 7001098, 4500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1074, 700, 7001098, 5400000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1075, 800, 7001098, 6300000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1076, 900, 7001098, 7600000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1077, 1000, 7001098, 9000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1078, 1100, 7001098, 9000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1079, 100, 7001099, 1100000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1080, 200, 7001099, 2200000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1081, 300, 7001099, 3300000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1082, 400, 7001099, 4500000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1083, 500, 7001099, 5700000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1084, 600, 7001099, 7000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1085, 700, 7001099, 8500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1086, 800, 7001099, 10000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1087, 900, 7001099, 12000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1088, 1000, 7001099, 14000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1089, 1100, 7001099, 14000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1090, 100, 7001100, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1091, 200, 7001100, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1092, 300, 7001100, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1093, 400, 7001100, 1600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1094, 500, 7001100, 2000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1095, 600, 7001100, 2500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1096, 700, 7001100, 3000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1097, 800, 7001100, 3600000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1098, 900, 7001100, 4200000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1099, 1000, 7001100, 5000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1100, 1100, 7001100, 5000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1101, 100, 7001101, 800000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1102, 200, 7001101, 1600000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1103, 300, 7001101, 2400000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1104, 400, 7001101, 3200000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1105, 500, 7001101, 4000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1106, 600, 7001101, 5000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1107, 700, 7001101, 6000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1108, 800, 7001101, 7000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1109, 900, 7001101, 8500000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1110, 1000, 7001101, 10000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1111, 1100, 7001101, 10000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1112, 100, 7001102, 600000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1113, 200, 7001102, 1200000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1114, 300, 7001102, 1800000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1115, 400, 7001102, 2500000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1116, 500, 7001102, 3200000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1117, 600, 7001102, 4000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1118, 700, 7001102, 5000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1119, 800, 7001102, 6000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1120, 900, 7001102, 7000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1121, 1000, 7001102, 8000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1122, 1100, 7001102, 8000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1123, 100, 7001103, 1100000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1124, 200, 7001103, 2200000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1125, 300, 7001103, 3300000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1126, 400, 7001103, 4500000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1127, 500, 7001103, 5700000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1128, 600, 7001103, 7000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1129, 700, 7001103, 8500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1130, 800, 7001103, 10000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1131, 900, 7001103, 12000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1132, 1000, 7001103, 14000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1133, 1100, 7001103, 14000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1134, 100, 7001104, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1135, 200, 7001104, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1136, 300, 7001104, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1137, 400, 7001104, 1600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1138, 500, 7001104, 2000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1139, 600, 7001104, 2500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1140, 700, 7001104, 3000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1141, 800, 7001104, 3600000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1142, 900, 7001104, 4300000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1143, 1000, 7001104, 5000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1144, 1100, 7001104, 5000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1145, 100, 7001105, 500000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1146, 200, 7001105, 1000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1147, 300, 7001105, 1500000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1148, 400, 7001105, 2000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1149, 500, 7001105, 2500000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1150, 600, 7001105, 3000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1151, 700, 7001105, 3600000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1152, 800, 7001105, 4200000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1153, 900, 7001105, 5000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1154, 1000, 7001105, 6000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1155, 1100, 7001105, 6000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1156, 100, 7001106, 600000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1157, 200, 7001106, 1200000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1158, 300, 7001106, 1800000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1159, 400, 7001106, 2400000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1160, 500, 7001106, 3000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1161, 600, 7001106, 3700000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1162, 700, 7001106, 4500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1163, 800, 7001106, 5400000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1164, 900, 7001106, 6400000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1165, 1000, 7001106, 7500000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1166, 1100, 7001106, 7500000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1167, 100, 7001107, 600000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1168, 200, 7001107, 1200000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1169, 300, 7001107, 1800000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1170, 400, 7001107, 2500000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1171, 500, 7001107, 3200000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1172, 600, 7001107, 4000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1173, 700, 7001107, 5000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1174, 800, 7001107, 6000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1175, 900, 7001107, 7000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1176, 1000, 7001107, 8000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1177, 1100, 7001107, 8000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1178, 100, 7001108, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1179, 200, 7001108, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1180, 300, 7001108, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1181, 400, 7001108, 1600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1182, 500, 7001108, 2000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1183, 600, 7001108, 2500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1184, 700, 7001108, 3000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1185, 800, 7001108, 3600000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1186, 900, 7001108, 4300000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1187, 1000, 7001108, 5000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1188, 1100, 7001108, 5000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1189, 100, 7001109, 500000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1190, 200, 7001109, 1000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1191, 300, 7001109, 1500000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1192, 400, 7001109, 2000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1193, 500, 7001109, 2500000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1194, 600, 7001109, 3000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1195, 700, 7001109, 3500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1196, 800, 7001109, 4000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1197, 900, 7001109, 5000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1198, 1000, 7001109, 6000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1199, 1100, 7001109, 6000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1200, 100, 7001110, 1000000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1201, 200, 7001110, 2000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1202, 300, 7001110, 3000000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1203, 400, 7001110, 4000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1204, 500, 7001110, 5000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1205, 600, 7001110, 6000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1206, 700, 7001110, 7500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1207, 800, 7001110, 9000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1208, 900, 7001110, 10500000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1209, 1000, 7001110, 12000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1210, 1100, 7001110, 12000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1211, 100, 7001111, 1000000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1212, 200, 7001111, 2000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1213, 300, 7001111, 3000000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1214, 400, 7001111, 4000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1215, 500, 7001111, 5000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1216, 600, 7001111, 6000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1217, 700, 7001111, 7500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1218, 800, 7001111, 9000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1219, 900, 7001111, 10500000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1220, 1000, 7001111, 12000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1221, 1100, 7001111, 12000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1222, 100, 7001112, 1000000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1223, 200, 7001112, 2000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1224, 300, 7001112, 3000000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1225, 400, 7001112, 4000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1226, 500, 7001112, 5000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1227, 600, 7001112, 6000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1228, 700, 7001112, 7500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1229, 800, 7001112, 9000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1230, 900, 7001112, 10500000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1231, 1000, 7001112, 12000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1232, 1100, 7001112, 12000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1233, 100, 7001113, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1234, 200, 7001113, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1235, 300, 7001113, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1236, 400, 7001113, 1600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1237, 500, 7001113, 2000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1238, 600, 7001113, 2500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1239, 700, 7001113, 3000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1240, 800, 7001113, 3600000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1241, 900, 7001113, 4200000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1242, 1000, 7001113, 5000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1243, 1100, 7001113, 5000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1244, 100, 7001114, 500000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1245, 200, 7001114, 1000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1246, 300, 7001114, 1500000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1247, 400, 7001114, 2000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1248, 500, 7001114, 2500000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1249, 600, 7001114, 3000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1250, 700, 7001114, 3600000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1251, 800, 7001114, 4200000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1252, 900, 7001114, 5000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1253, 1000, 7001114, 6000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1254, 1100, 7001114, 6000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1255, 100, 7001115, 600000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1256, 200, 7001115, 1200000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1257, 300, 7001115, 1800000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1258, 400, 7001115, 2400000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1259, 500, 7001115, 3000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1260, 600, 7001115, 3700000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1261, 700, 7001115, 4500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1262, 800, 7001115, 5400000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1263, 900, 7001115, 6400000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1264, 1000, 7001115, 7500000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1265, 1100, 7001115, 7500000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1266, 100, 7001116, 1000000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1267, 200, 7001116, 2000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1268, 300, 7001116, 3000000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1269, 400, 7001116, 4000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1270, 500, 7001116, 5000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1271, 600, 7001116, 6000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1272, 700, 7001116, 7500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1273, 800, 7001116, 9000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1274, 900, 7001116, 10500000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1275, 1000, 7001116, 12000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1276, 1100, 7001116, 12000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1277, 100, 7001117, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1278, 200, 7001117, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1279, 300, 7001117, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1280, 400, 7001117, 1600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1281, 500, 7001117, 2000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1282, 600, 7001117, 2500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1283, 700, 7001117, 3000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1284, 800, 7001117, 3600000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1285, 900, 7001117, 4200000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1286, 1000, 7001117, 5000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1287, 1100, 7001117, 5000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1288, 100, 7001118, 500000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1289, 200, 7001118, 1000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1290, 300, 7001118, 1500000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1291, 400, 7001118, 2000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1292, 500, 7001118, 2500000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1293, 600, 7001118, 3000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1294, 700, 7001118, 3600000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1295, 800, 7001118, 4200000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1296, 900, 7001118, 5000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1297, 1000, 7001118, 6000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1298, 1100, 7001118, 6000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1299, 100, 7001119, 600000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1300, 200, 7001119, 1200000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1301, 300, 7001119, 1800000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1302, 400, 7001119, 2400000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1303, 500, 7001119, 3000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1304, 600, 7001119, 3700000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1305, 700, 7001119, 4500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1306, 800, 7001119, 5400000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1307, 900, 7001119, 6400000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1308, 1000, 7001119, 7500000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1309, 1100, 7001119, 7500000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1310, 100, 7001120, 600000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1311, 200, 7001120, 1200000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1312, 300, 7001120, 1800000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1313, 400, 7001120, 2400000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1314, 500, 7001120, 3000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1315, 600, 7001120, 3700000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1316, 700, 7001120, 4500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1317, 800, 7001120, 5400000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1318, 900, 7001120, 6400000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1319, 1000, 7001120, 7500000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1320, 1100, 7001120, 7500000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1321, 100, 7001121, 300000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1322, 200, 7001121, 600000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1323, 300, 7001121, 1000000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1324, 400, 7001121, 1400000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1325, 500, 7001121, 1800000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1326, 600, 7001121, 2200000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1327, 700, 7001121, 2700000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1328, 800, 7001121, 3200000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1329, 900, 7001121, 3800000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1330, 1000, 7001121, 4500000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1331, 1100, 7001121, 4500000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1332, 100, 7001122, 600000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1333, 200, 7001122, 1200000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1334, 300, 7001122, 1800000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1335, 400, 7001122, 2400000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1336, 500, 7001122, 3000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1337, 600, 7001122, 3700000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1338, 700, 7001122, 4500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1339, 800, 7001122, 5400000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1340, 900, 7001122, 6400000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1341, 1000, 7001122, 7500000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1342, 1100, 7001122, 7500000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1343, 100, 7001123, 600000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1344, 200, 7001123, 1200000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1345, 300, 7001123, 1800000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1346, 400, 7001123, 2500000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1347, 500, 7001123, 3200000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1348, 600, 7001123, 4000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1349, 700, 7001123, 5000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1350, 800, 7001123, 6000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1351, 900, 7001123, 7000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1352, 1000, 7001123, 8000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1353, 1100, 7001123, 8000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1354, 100, 7001124, 600000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1355, 200, 7001124, 1200000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1356, 300, 7001124, 1800000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1357, 400, 7001124, 2600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1358, 500, 7001124, 3400000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1359, 600, 7001124, 4200000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1360, 700, 7001124, 5200000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1361, 800, 7001124, 6200000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1362, 900, 7001124, 7300000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1363, 1000, 7001124, 8400000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1364, 1100, 7001124, 8400000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1365, 100, 7001125, 900000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1366, 200, 7001125, 1800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1367, 300, 7001125, 2700000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1368, 400, 7001125, 3600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1369, 500, 7001125, 4500000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1370, 600, 7001125, 5500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1371, 700, 7001125, 6500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1372, 800, 7001125, 8000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1373, 900, 7001125, 9500000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1374, 1000, 7001125, 11000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1375, 1100, 7001125, 11000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1376, 100, 7001126, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1377, 200, 7001126, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1378, 300, 7001126, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1379, 400, 7001126, 1700000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1380, 500, 7001126, 2200000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1381, 600, 7001126, 2700000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1382, 700, 7001126, 3300000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1383, 800, 7001126, 4000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1384, 900, 7001126, 4700000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1385, 1000, 7001126, 5500000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1386, 1100, 7001126, 5500000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1387, 100, 7001127, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1388, 200, 7001127, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1389, 300, 7001127, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1390, 400, 7001127, 1600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1391, 500, 7001127, 2000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1392, 600, 7001127, 2500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1393, 700, 7001127, 3000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1394, 800, 7001127, 3600000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1395, 900, 7001127, 4200000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1396, 1000, 7001127, 5000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1397, 1100, 7001127, 5000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1398, 100, 7001128, 600000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1399, 200, 7001128, 1200000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1400, 300, 7001128, 1800000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1401, 400, 7001128, 2600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1402, 500, 7001128, 3400000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1403, 600, 7001128, 4200000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1404, 700, 7001128, 5200000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1405, 800, 7001128, 6200000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1406, 900, 7001128, 7300000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1407, 1000, 7001128, 8400000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1408, 1100, 7001128, 8400000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1409, 100, 7001129, 1000000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1410, 200, 7001129, 2000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1411, 300, 7001129, 3000000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1412, 400, 7001129, 4000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1413, 500, 7001129, 5000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1414, 600, 7001129, 6000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1415, 700, 7001129, 7500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1416, 800, 7001129, 9000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1417, 900, 7001129, 10500000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1418, 1000, 7001129, 12000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1419, 1100, 7001129, 12000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1420, 100, 7001130, 600000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1421, 200, 7001130, 1200000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1422, 300, 7001130, 1800000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1423, 400, 7001130, 2500000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1424, 500, 7001130, 3200000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1425, 600, 7001130, 4000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1426, 700, 7001130, 5000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1427, 800, 7001130, 6000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1428, 900, 7001130, 7000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1429, 1000, 7001130, 8000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1430, 1100, 7001130, 8000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1431, 100, 7001131, 600000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1432, 200, 7001131, 1200000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1433, 300, 7001131, 1800000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1434, 400, 7001131, 2600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1435, 500, 7001131, 3400000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1436, 600, 7001131, 4200000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1437, 700, 7001131, 5200000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1438, 800, 7001131, 6200000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1439, 900, 7001131, 7300000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1440, 1000, 7001131, 8400000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1441, 1100, 7001131, 8400000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1442, 100, 7001132, 800000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1443, 200, 7001132, 1600000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1444, 300, 7001132, 2400000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1445, 400, 7001132, 3200000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1446, 500, 7001132, 4000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1447, 600, 7001132, 5000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1448, 700, 7001132, 6000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1449, 800, 7001132, 7000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1450, 900, 7001132, 8500000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1451, 1000, 7001132, 10000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1452, 1100, 7001132, 10000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1453, 100, 7001133, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1454, 200, 7001133, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1455, 300, 7001133, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1456, 400, 7001133, 1700000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1457, 500, 7001133, 2200000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1458, 600, 7001133, 2700000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1459, 700, 7001133, 3300000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1460, 800, 7001133, 4000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1461, 900, 7001133, 4700000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1462, 1000, 7001133, 5500000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1463, 1100, 7001133, 5500000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1464, 100, 7001134, 700000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1465, 200, 7001134, 1400000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1466, 300, 7001134, 2100000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1467, 400, 7001134, 2800000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1468, 500, 7001134, 3600000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1469, 600, 7001134, 4500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1470, 700, 7001134, 5400000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1471, 800, 7001134, 6300000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1472, 900, 7001134, 7600000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1473, 1000, 7001134, 9000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1474, 1100, 7001134, 9000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1475, 100, 7001135, 600000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1476, 200, 7001135, 1200000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1477, 300, 7001135, 1800000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1478, 400, 7001135, 2600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1479, 500, 7001135, 3400000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1480, 600, 7001135, 4200000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1481, 700, 7001135, 5200000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1482, 800, 7001135, 6200000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1483, 900, 7001135, 7300000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1484, 1000, 7001135, 8400000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1485, 1100, 7001135, 8400000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1486, 100, 7001136, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1487, 200, 7001136, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1488, 300, 7001136, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1489, 400, 7001136, 1600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1490, 500, 7001136, 2000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1491, 600, 7001136, 2500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1492, 700, 7001136, 3000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1493, 800, 7001136, 3600000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1494, 900, 7001136, 4200000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1495, 1000, 7001136, 5000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1496, 1100, 7001136, 5000000, 2000, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1497, 100, 7001137, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1498, 200, 7001137, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1499, 300, 7001137, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1500, 400, 7001137, 1600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1501, 500, 7001137, 2100000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1502, 600, 7001137, 2600000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1503, 700, 7001137, 3200000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1504, 800, 7001137, 3800000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1505, 900, 7001137, 4500000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1506, 1000, 7001137, 5200000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1507, 1100, 7001137, 5200000, 2000, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1508, 100, 7001138, 500000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1509, 200, 7001138, 1000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1510, 300, 7001138, 1500000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1511, 400, 7001138, 2000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1512, 500, 7001138, 2500000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1513, 600, 7001138, 3200000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1514, 700, 7001138, 4000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1515, 800, 7001138, 4800000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1516, 900, 7001138, 5600000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1517, 1000, 7001138, 6500000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1518, 1100, 7001138, 6500000, 2000, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1519, 100, 7001139, 1000000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1520, 200, 7001139, 2000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1521, 300, 7001139, 3000000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1522, 400, 7001139, 4000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1523, 500, 7001139, 5000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1524, 600, 7001139, 6000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1525, 700, 7001139, 7500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1526, 800, 7001139, 9000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1527, 900, 7001139, 10500000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1528, 1000, 7001139, 12000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1529, 1100, 7001139, 12000000, 2000, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1530, 100, 7001140, 500000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1531, 200, 7001140, 1000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1532, 300, 7001140, 1500000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1533, 400, 7001140, 2000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1534, 500, 7001140, 2500000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1535, 600, 7001140, 3000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1536, 700, 7001140, 3600000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1537, 800, 7001140, 4200000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1538, 900, 7001140, 5000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1539, 1000, 7001140, 6000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1540, 1100, 7001140, 6000000, 2000, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1541, 100, 7001141, 1000000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1542, 200, 7001141, 2000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1543, 300, 7001141, 3000000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1544, 400, 7001141, 4000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1545, 500, 7001141, 5000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1546, 600, 7001141, 6000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1547, 700, 7001141, 7500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1548, 800, 7001141, 9000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1549, 900, 7001141, 10500000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1550, 1000, 7001141, 12000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1551, 1100, 7001141, 12000000, 2000, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1552, 100, 7001142, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1553, 200, 7001142, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1554, 300, 7001142, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1555, 400, 7001142, 1600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1556, 500, 7001142, 2000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1557, 600, 7001142, 2500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1558, 700, 7001142, 3000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1559, 800, 7001142, 3600000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1560, 900, 7001142, 4200000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1561, 1000, 7001142, 5000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1562, 1100, 7001142, 5000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1563, 100, 7001143, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1564, 200, 7001143, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1565, 300, 7001143, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1566, 400, 7001143, 1700000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1567, 500, 7001143, 2200000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1568, 600, 7001143, 2700000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1569, 700, 7001143, 3300000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1570, 800, 7001143, 4000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1571, 900, 7001143, 4700000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1572, 1000, 7001143, 5500000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1573, 1100, 7001143, 5500000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1574, 100, 7001144, 700000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1575, 200, 7001144, 1400000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1576, 300, 7001144, 2100000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1577, 400, 7001144, 2800000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1578, 500, 7001144, 3600000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1579, 600, 7001144, 4500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1580, 700, 7001144, 5400000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1581, 800, 7001144, 6300000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1582, 900, 7001144, 7600000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1583, 1000, 7001144, 9000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1584, 1100, 7001144, 9000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1585, 100, 7001145, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1586, 200, 7001145, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1587, 300, 7001145, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1588, 400, 7001145, 1600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1589, 500, 7001145, 2000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1590, 600, 7001145, 2500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1591, 700, 7001145, 3000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1592, 800, 7001145, 3600000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1593, 900, 7001145, 4200000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1594, 1000, 7001145, 5000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1595, 1100, 7001145, 5000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1596, 100, 7001146, 600000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1597, 200, 7001146, 1200000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1598, 300, 7001146, 1800000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1599, 400, 7001146, 2600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1600, 500, 7001146, 3400000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1601, 600, 7001146, 4200000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1602, 700, 7001146, 5200000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1603, 800, 7001146, 6200000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1604, 900, 7001146, 7300000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1605, 1000, 7001146, 8400000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1606, 1100, 7001146, 8400000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1607, 100, 7001147, 500000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1608, 200, 7001147, 1000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1609, 300, 7001147, 1500000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1610, 400, 7001147, 2000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1611, 500, 7001147, 2500000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1612, 600, 7001147, 3000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1613, 700, 7001147, 3600000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1614, 800, 7001147, 4200000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1615, 900, 7001147, 5000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1616, 1000, 7001147, 6000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1617, 1100, 7001147, 6000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1618, 100, 7001148, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1619, 200, 7001148, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1620, 300, 7001148, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1621, 400, 7001148, 1600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1622, 500, 7001148, 2000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1623, 600, 7001148, 2500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1624, 700, 7001148, 3000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1625, 800, 7001148, 3600000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1626, 900, 7001148, 4200000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1627, 1000, 7001148, 5000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1628, 1100, 7001148, 5000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1629, 100, 7001149, 600000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1630, 200, 7001149, 1200000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1631, 300, 7001149, 1800000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1632, 400, 7001149, 2400000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1633, 500, 7001149, 3000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1634, 600, 7001149, 3700000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1635, 700, 7001149, 4500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1636, 800, 7001149, 5400000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1637, 900, 7001149, 6400000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1638, 1000, 7001149, 7500000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1639, 1100, 7001149, 7500000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1640, 100, 7001150, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1641, 200, 7001150, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1642, 300, 7001150, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1643, 400, 7001150, 1600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1644, 500, 7001150, 2000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1645, 600, 7001150, 2500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1646, 700, 7001150, 3000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1647, 800, 7001150, 3600000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1648, 900, 7001150, 4200000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1649, 1000, 7001150, 5000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1650, 1100, 7001150, 5000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1651, 100, 7001151, 250000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1652, 200, 7001151, 500000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1653, 300, 7001151, 750000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1654, 400, 7001151, 1000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1655, 500, 7001151, 1300000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1656, 600, 7001151, 1600000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1657, 700, 7001151, 2000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1658, 800, 7001151, 2400000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1659, 900, 7001151, 2800000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1660, 1000, 7001151, 3200000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1661, 1100, 7001151, 3200000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1662, 100, 7001152, 500000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1663, 200, 7001152, 1000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1664, 300, 7001152, 1500000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1665, 400, 7001152, 2000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1666, 500, 7001152, 2500000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1667, 600, 7001152, 3200000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1668, 700, 7001152, 4000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1669, 800, 7001152, 4800000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1670, 900, 7001152, 5600000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1671, 1000, 7001152, 6500000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1672, 1100, 7001152, 6500000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1673, 100, 7001153, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1674, 200, 7001153, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1675, 300, 7001153, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1676, 400, 7001153, 1600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1677, 500, 7001153, 2100000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1678, 600, 7001153, 2600000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1679, 700, 7001153, 3200000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1680, 800, 7001153, 3800000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1681, 900, 7001153, 4500000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1682, 1000, 7001153, 5200000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1683, 1100, 7001153, 5200000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1684, 100, 7001154, 1000000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1685, 200, 7001154, 2000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1686, 300, 7001154, 3000000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1687, 400, 7001154, 4000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1688, 500, 7001154, 5000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1689, 600, 7001154, 6000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1690, 700, 7001154, 7500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1691, 800, 7001154, 9000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1692, 900, 7001154, 10500000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1693, 1000, 7001154, 12000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1694, 1100, 7001154, 12000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1695, 100, 7001155, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1696, 200, 7001155, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1697, 300, 7001155, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1698, 400, 7001155, 1600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1699, 500, 7001155, 2000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1700, 600, 7001155, 2500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1701, 700, 7001155, 3000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1702, 800, 7001155, 3600000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1703, 900, 7001155, 4200000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1704, 1000, 7001155, 5000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1705, 1100, 7001155, 5000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1706, 100, 7001156, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1707, 200, 7001156, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1708, 300, 7001156, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1709, 400, 7001156, 1700000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1710, 500, 7001156, 2200000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1711, 600, 7001156, 2700000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1712, 700, 7001156, 3300000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1713, 800, 7001156, 4000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1714, 900, 7001156, 4700000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1715, 1000, 7001156, 5500000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1716, 1100, 7001156, 5500000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1717, 100, 7001157, 500000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1718, 200, 7001157, 1000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1719, 300, 7001157, 1500000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1720, 400, 7001157, 2000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1721, 500, 7001157, 2500000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1722, 600, 7001157, 3000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1723, 700, 7001157, 3500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1724, 800, 7001157, 4000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1725, 900, 7001157, 5000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1726, 1000, 7001157, 6000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1727, 1100, 7001157, 6000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1728, 100, 7001158, 600000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1729, 200, 7001158, 1200000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1730, 300, 7001158, 1800000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1731, 400, 7001158, 2600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1732, 500, 7001158, 3400000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1733, 600, 7001158, 4200000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1734, 700, 7001158, 5200000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1735, 800, 7001158, 6200000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1736, 900, 7001158, 7300000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1737, 1000, 7001158, 8400000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1738, 1100, 7001158, 8400000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1739, 100, 7001159, 500000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1740, 200, 7001159, 1000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1741, 300, 7001159, 1500000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1742, 400, 7001159, 2000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1743, 500, 7001159, 2500000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1744, 600, 7001159, 3000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1745, 700, 7001159, 3500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1746, 800, 7001159, 4000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1747, 900, 7001159, 5000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1748, 1000, 7001159, 6000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1749, 1100, 7001159, 6000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1750, 100, 7001160, 500000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1751, 200, 7001160, 1000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1752, 300, 7001160, 1500000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1753, 400, 7001160, 2000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1754, 500, 7001160, 2500000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1755, 600, 7001160, 3000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1756, 700, 7001160, 3600000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1757, 800, 7001160, 4200000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1758, 900, 7001160, 5000000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1759, 1000, 7001160, 6000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1760, 1100, 7001160, 6000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1761, 100, 7001161, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1762, 200, 7001161, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1763, 300, 7001161, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1764, 400, 7001161, 1600000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1765, 500, 7001161, 2000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1766, 600, 7001161, 2500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1767, 700, 7001161, 3000000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1768, 800, 7001161, 3600000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1769, 900, 7001161, 4200000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1770, 1000, 7001161, 5000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1771, 1100, 7001161, 5000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1772, 100, 7001162, 1000000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1773, 200, 7001162, 2000000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1774, 300, 7001162, 3000000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1775, 400, 7001162, 4000000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1776, 500, 7001162, 5000000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1777, 600, 7001162, 6000000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1778, 700, 7001162, 7500000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1779, 800, 7001162, 9000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1780, 900, 7001162, 10500000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1781, 1000, 7001162, 12000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1782, 1100, 7001162, 12000000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1783, 100, 7001163, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1784, 200, 7001163, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1785, 300, 7001163, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1786, 400, 7001163, 1700000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1787, 500, 7001163, 2200000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1788, 600, 7001163, 2700000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1789, 700, 7001163, 3300000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1790, 800, 7001163, 4000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1791, 900, 7001163, 4700000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1792, 1000, 7001163, 5500000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1793, 1100, 7001163, 5500000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1794, 100, 7001164, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1795, 200, 7001164, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1796, 300, 7001164, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1797, 400, 7001164, 1700000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1798, 500, 7001164, 2200000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1799, 600, 7001164, 2700000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1800, 700, 7001164, 3300000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1801, 800, 7001164, 4000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1802, 900, 7001164, 4700000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1803, 1000, 7001164, 5500000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1804, 1100, 7001164, 5500000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1805, 100, 7001165, 400000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1806, 200, 7001165, 800000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1807, 300, 7001165, 1200000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1808, 400, 7001165, 1700000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1809, 500, 7001165, 2200000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1810, 600, 7001165, 2700000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1811, 700, 7001165, 3300000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1812, 800, 7001165, 4000000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1813, 900, 7001165, 4700000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1814, 1000, 7001165, 5500000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1815, 1100, 7001165, 5500000, 999, 40014, common[19], common[50], common[51], common[52]}
-, 
-{1816, 100, 7001166, 700000, 0, 40001, common[9], common[20], common[21], common[22]}
-, 
-{1817, 200, 7001166, 1400000, 0, 40003, common[10], common[23], common[24], common[25]}
-, 
-{1818, 300, 7001166, 2100000, 0, 40004, common[11], common[26], common[27], common[28], 1}
-, 
-{1819, 400, 7001166, 2800000, 0, 40005, common[12], common[29], common[30], common[31]}
-, 
-{1820, 500, 7001166, 3600000, 0, 40006, common[13], common[32], common[33], common[34], 1}
-, 
-{1821, 600, 7001166, 4500000, 0, 40007, common[14], common[35], common[36], common[37]}
-, 
-{1822, 700, 7001166, 5400000, 0, 40008, common[15], common[38], common[39], common[40], 1}
-, 
-{1823, 800, 7001166, 6300000, 0, 40011, common[16], common[41], common[42], common[43]}
-, 
-{1824, 900, 7001166, 7600000, 0, 40012, common[17], common[44], common[45], common[46], 1}
-, 
-{1825, 1000, 7001166, 9000000, 0, 40013, common[18], common[47], common[48], common[49]}
-, 
-{1826, 1100, 7001166, 9000000, 999, 40014, common[19], common[50], common[51], common[52]}
+  {
+    1,
+    100,
+    7001001,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    2,
+    200,
+    7001001,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    3,
+    300,
+    7001001,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    4,
+    400,
+    7001001,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    5,
+    500,
+    7001001,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    6,
+    600,
+    7001001,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    7,
+    700,
+    7001001,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    8,
+    800,
+    7001001,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    9,
+    900,
+    7001001,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    10,
+    1000,
+    7001001,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    11,
+    1100,
+    7001001,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    12,
+    100,
+    7001002,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    13,
+    200,
+    7001002,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    14,
+    300,
+    7001002,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    15,
+    400,
+    7001002,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    16,
+    500,
+    7001002,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    17,
+    600,
+    7001002,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    18,
+    700,
+    7001002,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    19,
+    800,
+    7001002,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    20,
+    900,
+    7001002,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    21,
+    1000,
+    7001002,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    22,
+    1100,
+    7001002,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    23,
+    100,
+    7001003,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    24,
+    200,
+    7001003,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    25,
+    300,
+    7001003,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    26,
+    400,
+    7001003,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    27,
+    500,
+    7001003,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    28,
+    600,
+    7001003,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    29,
+    700,
+    7001003,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    30,
+    800,
+    7001003,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    31,
+    900,
+    7001003,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    32,
+    1000,
+    7001003,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    33,
+    1100,
+    7001003,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    34,
+    100,
+    7001004,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    35,
+    200,
+    7001004,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    36,
+    300,
+    7001004,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    37,
+    400,
+    7001004,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    38,
+    500,
+    7001004,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    39,
+    600,
+    7001004,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    40,
+    700,
+    7001004,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    41,
+    800,
+    7001004,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    42,
+    900,
+    7001004,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    43,
+    1000,
+    7001004,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    44,
+    1100,
+    7001004,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    45,
+    100,
+    7001005,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    46,
+    200,
+    7001005,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    47,
+    300,
+    7001005,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    48,
+    400,
+    7001005,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    49,
+    500,
+    7001005,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    50,
+    600,
+    7001005,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    51,
+    700,
+    7001005,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    52,
+    800,
+    7001005,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    53,
+    900,
+    7001005,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    54,
+    1000,
+    7001005,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    55,
+    1100,
+    7001005,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    56,
+    100,
+    7001006,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    57,
+    200,
+    7001006,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    58,
+    300,
+    7001006,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    59,
+    400,
+    7001006,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    60,
+    500,
+    7001006,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    61,
+    600,
+    7001006,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    62,
+    700,
+    7001006,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    63,
+    800,
+    7001006,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    64,
+    900,
+    7001006,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    65,
+    1000,
+    7001006,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    66,
+    1100,
+    7001006,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    67,
+    100,
+    7001007,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    68,
+    200,
+    7001007,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    69,
+    300,
+    7001007,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    70,
+    400,
+    7001007,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    71,
+    500,
+    7001007,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    72,
+    600,
+    7001007,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    73,
+    700,
+    7001007,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    74,
+    800,
+    7001007,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    75,
+    900,
+    7001007,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    76,
+    1000,
+    7001007,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    77,
+    1100,
+    7001007,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    78,
+    100,
+    7001008,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    79,
+    200,
+    7001008,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    80,
+    300,
+    7001008,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    81,
+    400,
+    7001008,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    82,
+    500,
+    7001008,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    83,
+    600,
+    7001008,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    84,
+    700,
+    7001008,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    85,
+    800,
+    7001008,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    86,
+    900,
+    7001008,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    87,
+    1000,
+    7001008,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    88,
+    1100,
+    7001008,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    89,
+    100,
+    7001009,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    90,
+    200,
+    7001009,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    91,
+    300,
+    7001009,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    92,
+    400,
+    7001009,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    93,
+    500,
+    7001009,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    94,
+    600,
+    7001009,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    95,
+    700,
+    7001009,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    96,
+    800,
+    7001009,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    97,
+    900,
+    7001009,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    98,
+    1000,
+    7001009,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    99,
+    1100,
+    7001009,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    100,
+    100,
+    7001010,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    101,
+    200,
+    7001010,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    102,
+    300,
+    7001010,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    103,
+    400,
+    7001010,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    104,
+    500,
+    7001010,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    105,
+    600,
+    7001010,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    106,
+    700,
+    7001010,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    107,
+    800,
+    7001010,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    108,
+    900,
+    7001010,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    109,
+    1000,
+    7001010,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    110,
+    1100,
+    7001010,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    111,
+    100,
+    7001011,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    112,
+    200,
+    7001011,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    113,
+    300,
+    7001011,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    114,
+    400,
+    7001011,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    115,
+    500,
+    7001011,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    116,
+    600,
+    7001011,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    117,
+    700,
+    7001011,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    118,
+    800,
+    7001011,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    119,
+    900,
+    7001011,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    120,
+    1000,
+    7001011,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    121,
+    1100,
+    7001011,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    122,
+    100,
+    7001012,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    123,
+    200,
+    7001012,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    124,
+    300,
+    7001012,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    125,
+    400,
+    7001012,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    126,
+    500,
+    7001012,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    127,
+    600,
+    7001012,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    128,
+    700,
+    7001012,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    129,
+    800,
+    7001012,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    130,
+    900,
+    7001012,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    131,
+    1000,
+    7001012,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    132,
+    1100,
+    7001012,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    133,
+    100,
+    7001013,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    134,
+    200,
+    7001013,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    135,
+    300,
+    7001013,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    136,
+    400,
+    7001013,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    137,
+    500,
+    7001013,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    138,
+    600,
+    7001013,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    139,
+    700,
+    7001013,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    140,
+    800,
+    7001013,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    141,
+    900,
+    7001013,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    142,
+    1000,
+    7001013,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    143,
+    1100,
+    7001013,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    144,
+    100,
+    7001014,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    145,
+    200,
+    7001014,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    146,
+    300,
+    7001014,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    147,
+    400,
+    7001014,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    148,
+    500,
+    7001014,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    149,
+    600,
+    7001014,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    150,
+    700,
+    7001014,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    151,
+    800,
+    7001014,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    152,
+    900,
+    7001014,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    153,
+    1000,
+    7001014,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    154,
+    1100,
+    7001014,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    155,
+    100,
+    7001015,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    156,
+    200,
+    7001015,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    157,
+    300,
+    7001015,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    158,
+    400,
+    7001015,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    159,
+    500,
+    7001015,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    160,
+    600,
+    7001015,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    161,
+    700,
+    7001015,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    162,
+    800,
+    7001015,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    163,
+    900,
+    7001015,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    164,
+    1000,
+    7001015,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    165,
+    1100,
+    7001015,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    166,
+    100,
+    7001016,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    167,
+    200,
+    7001016,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    168,
+    300,
+    7001016,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    169,
+    400,
+    7001016,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    170,
+    500,
+    7001016,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    171,
+    600,
+    7001016,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    172,
+    700,
+    7001016,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    173,
+    800,
+    7001016,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    174,
+    900,
+    7001016,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    175,
+    1000,
+    7001016,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    176,
+    1100,
+    7001016,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    177,
+    100,
+    7001017,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    178,
+    200,
+    7001017,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    179,
+    300,
+    7001017,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    180,
+    400,
+    7001017,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    181,
+    500,
+    7001017,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    182,
+    600,
+    7001017,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    183,
+    700,
+    7001017,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    184,
+    800,
+    7001017,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    185,
+    900,
+    7001017,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    186,
+    1000,
+    7001017,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    187,
+    1100,
+    7001017,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    188,
+    100,
+    7001018,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    189,
+    200,
+    7001018,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    190,
+    300,
+    7001018,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    191,
+    400,
+    7001018,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    192,
+    500,
+    7001018,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    193,
+    600,
+    7001018,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    194,
+    700,
+    7001018,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    195,
+    800,
+    7001018,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    196,
+    900,
+    7001018,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    197,
+    1000,
+    7001018,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    198,
+    1100,
+    7001018,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    199,
+    100,
+    7001019,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    200,
+    200,
+    7001019,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    201,
+    300,
+    7001019,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    202,
+    400,
+    7001019,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    203,
+    500,
+    7001019,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    204,
+    600,
+    7001019,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    205,
+    700,
+    7001019,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    206,
+    800,
+    7001019,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    207,
+    900,
+    7001019,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    208,
+    1000,
+    7001019,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    209,
+    1100,
+    7001019,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    210,
+    100,
+    7001020,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    211,
+    200,
+    7001020,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    212,
+    300,
+    7001020,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    213,
+    400,
+    7001020,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    214,
+    500,
+    7001020,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    215,
+    600,
+    7001020,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    216,
+    700,
+    7001020,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    217,
+    800,
+    7001020,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    218,
+    900,
+    7001020,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    219,
+    1000,
+    7001020,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    220,
+    1100,
+    7001020,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    221,
+    100,
+    7001021,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    222,
+    200,
+    7001021,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    223,
+    300,
+    7001021,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    224,
+    400,
+    7001021,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    225,
+    500,
+    7001021,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    226,
+    600,
+    7001021,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    227,
+    700,
+    7001021,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    228,
+    800,
+    7001021,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    229,
+    900,
+    7001021,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    230,
+    1000,
+    7001021,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    231,
+    1100,
+    7001021,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    232,
+    100,
+    7001022,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    233,
+    200,
+    7001022,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    234,
+    300,
+    7001022,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    235,
+    400,
+    7001022,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    236,
+    500,
+    7001022,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    237,
+    600,
+    7001022,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    238,
+    700,
+    7001022,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    239,
+    800,
+    7001022,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    240,
+    900,
+    7001022,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    241,
+    1000,
+    7001022,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    242,
+    1100,
+    7001022,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    243,
+    100,
+    7001023,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    244,
+    200,
+    7001023,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    245,
+    300,
+    7001023,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    246,
+    400,
+    7001023,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    247,
+    500,
+    7001023,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    248,
+    600,
+    7001023,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    249,
+    700,
+    7001023,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    250,
+    800,
+    7001023,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    251,
+    900,
+    7001023,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    252,
+    1000,
+    7001023,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    253,
+    1100,
+    7001023,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    254,
+    100,
+    7001024,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    255,
+    200,
+    7001024,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    256,
+    300,
+    7001024,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    257,
+    400,
+    7001024,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    258,
+    500,
+    7001024,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    259,
+    600,
+    7001024,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    260,
+    700,
+    7001024,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    261,
+    800,
+    7001024,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    262,
+    900,
+    7001024,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    263,
+    1000,
+    7001024,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    264,
+    1100,
+    7001024,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    265,
+    100,
+    7001025,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    266,
+    200,
+    7001025,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    267,
+    300,
+    7001025,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    268,
+    400,
+    7001025,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    269,
+    500,
+    7001025,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    270,
+    600,
+    7001025,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    271,
+    700,
+    7001025,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    272,
+    800,
+    7001025,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    273,
+    900,
+    7001025,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    274,
+    1000,
+    7001025,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    275,
+    1100,
+    7001025,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    276,
+    100,
+    7001026,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    277,
+    200,
+    7001026,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    278,
+    300,
+    7001026,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    279,
+    400,
+    7001026,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    280,
+    500,
+    7001026,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    281,
+    600,
+    7001026,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    282,
+    700,
+    7001026,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    283,
+    800,
+    7001026,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    284,
+    900,
+    7001026,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    285,
+    1000,
+    7001026,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    286,
+    1100,
+    7001026,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    287,
+    100,
+    7001027,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    288,
+    200,
+    7001027,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    289,
+    300,
+    7001027,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    290,
+    400,
+    7001027,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    291,
+    500,
+    7001027,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    292,
+    600,
+    7001027,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    293,
+    700,
+    7001027,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    294,
+    800,
+    7001027,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    295,
+    900,
+    7001027,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    296,
+    1000,
+    7001027,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    297,
+    1100,
+    7001027,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    298,
+    100,
+    7001028,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    299,
+    200,
+    7001028,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    300,
+    300,
+    7001028,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    301,
+    400,
+    7001028,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    302,
+    500,
+    7001028,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    303,
+    600,
+    7001028,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    304,
+    700,
+    7001028,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    305,
+    800,
+    7001028,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    306,
+    900,
+    7001028,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    307,
+    1000,
+    7001028,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    308,
+    1100,
+    7001028,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    309,
+    100,
+    7001029,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    310,
+    200,
+    7001029,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    311,
+    300,
+    7001029,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    312,
+    400,
+    7001029,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    313,
+    500,
+    7001029,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    314,
+    600,
+    7001029,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    315,
+    700,
+    7001029,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    316,
+    800,
+    7001029,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    317,
+    900,
+    7001029,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    318,
+    1000,
+    7001029,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    319,
+    1100,
+    7001029,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    320,
+    100,
+    7001030,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    321,
+    200,
+    7001030,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    322,
+    300,
+    7001030,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    323,
+    400,
+    7001030,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    324,
+    500,
+    7001030,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    325,
+    600,
+    7001030,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    326,
+    700,
+    7001030,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    327,
+    800,
+    7001030,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    328,
+    900,
+    7001030,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    329,
+    1000,
+    7001030,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    330,
+    1100,
+    7001030,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    331,
+    100,
+    7001031,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    332,
+    200,
+    7001031,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    333,
+    300,
+    7001031,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    334,
+    400,
+    7001031,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    335,
+    500,
+    7001031,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    336,
+    600,
+    7001031,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    337,
+    700,
+    7001031,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    338,
+    800,
+    7001031,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    339,
+    900,
+    7001031,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    340,
+    1000,
+    7001031,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    341,
+    1100,
+    7001031,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    342,
+    100,
+    7001032,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    343,
+    200,
+    7001032,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    344,
+    300,
+    7001032,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    345,
+    400,
+    7001032,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    346,
+    500,
+    7001032,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    347,
+    600,
+    7001032,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    348,
+    700,
+    7001032,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    349,
+    800,
+    7001032,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    350,
+    900,
+    7001032,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    351,
+    1000,
+    7001032,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    352,
+    1100,
+    7001032,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    353,
+    100,
+    7001033,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    354,
+    200,
+    7001033,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    355,
+    300,
+    7001033,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    356,
+    400,
+    7001033,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    357,
+    500,
+    7001033,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    358,
+    600,
+    7001033,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    359,
+    700,
+    7001033,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    360,
+    800,
+    7001033,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    361,
+    900,
+    7001033,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    362,
+    1000,
+    7001033,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    363,
+    1100,
+    7001033,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    364,
+    100,
+    7001034,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    365,
+    200,
+    7001034,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    366,
+    300,
+    7001034,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    367,
+    400,
+    7001034,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    368,
+    500,
+    7001034,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    369,
+    600,
+    7001034,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    370,
+    700,
+    7001034,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    371,
+    800,
+    7001034,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    372,
+    900,
+    7001034,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    373,
+    1000,
+    7001034,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    374,
+    1100,
+    7001034,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    375,
+    100,
+    7001035,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    376,
+    200,
+    7001035,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    377,
+    300,
+    7001035,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    378,
+    400,
+    7001035,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    379,
+    500,
+    7001035,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    380,
+    600,
+    7001035,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    381,
+    700,
+    7001035,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    382,
+    800,
+    7001035,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    383,
+    900,
+    7001035,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    384,
+    1000,
+    7001035,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    385,
+    1100,
+    7001035,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    386,
+    100,
+    7001036,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    387,
+    200,
+    7001036,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    388,
+    300,
+    7001036,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    389,
+    400,
+    7001036,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    390,
+    500,
+    7001036,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    391,
+    600,
+    7001036,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    392,
+    700,
+    7001036,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    393,
+    800,
+    7001036,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    394,
+    900,
+    7001036,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    395,
+    1000,
+    7001036,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    396,
+    1100,
+    7001036,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    397,
+    100,
+    7001037,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    398,
+    200,
+    7001037,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    399,
+    300,
+    7001037,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    400,
+    400,
+    7001037,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    401,
+    500,
+    7001037,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    402,
+    600,
+    7001037,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    403,
+    700,
+    7001037,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    404,
+    800,
+    7001037,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    405,
+    900,
+    7001037,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    406,
+    1000,
+    7001037,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    407,
+    1100,
+    7001037,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    408,
+    100,
+    7001038,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    409,
+    200,
+    7001038,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    410,
+    300,
+    7001038,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    411,
+    400,
+    7001038,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    412,
+    500,
+    7001038,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    413,
+    600,
+    7001038,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    414,
+    700,
+    7001038,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    415,
+    800,
+    7001038,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    416,
+    900,
+    7001038,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    417,
+    1000,
+    7001038,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    418,
+    1100,
+    7001038,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    419,
+    100,
+    7001039,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    420,
+    200,
+    7001039,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    421,
+    300,
+    7001039,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    422,
+    400,
+    7001039,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    423,
+    500,
+    7001039,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    424,
+    600,
+    7001039,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    425,
+    700,
+    7001039,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    426,
+    800,
+    7001039,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    427,
+    900,
+    7001039,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    428,
+    1000,
+    7001039,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    429,
+    1100,
+    7001039,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    430,
+    100,
+    7001040,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    431,
+    200,
+    7001040,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    432,
+    300,
+    7001040,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    433,
+    400,
+    7001040,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    434,
+    500,
+    7001040,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    435,
+    600,
+    7001040,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    436,
+    700,
+    7001040,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    437,
+    800,
+    7001040,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    438,
+    900,
+    7001040,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    439,
+    1000,
+    7001040,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    440,
+    1100,
+    7001040,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    441,
+    100,
+    7001041,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    442,
+    200,
+    7001041,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    443,
+    300,
+    7001041,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    444,
+    400,
+    7001041,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    445,
+    500,
+    7001041,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    446,
+    600,
+    7001041,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    447,
+    700,
+    7001041,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    448,
+    800,
+    7001041,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    449,
+    900,
+    7001041,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    450,
+    1000,
+    7001041,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    451,
+    1100,
+    7001041,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    452,
+    100,
+    7001042,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    453,
+    200,
+    7001042,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    454,
+    300,
+    7001042,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    455,
+    400,
+    7001042,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    456,
+    500,
+    7001042,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    457,
+    600,
+    7001042,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    458,
+    700,
+    7001042,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    459,
+    800,
+    7001042,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    460,
+    900,
+    7001042,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    461,
+    1000,
+    7001042,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    462,
+    1100,
+    7001042,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    463,
+    100,
+    7001043,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    464,
+    200,
+    7001043,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    465,
+    300,
+    7001043,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    466,
+    400,
+    7001043,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    467,
+    500,
+    7001043,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    468,
+    600,
+    7001043,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    469,
+    700,
+    7001043,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    470,
+    800,
+    7001043,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    471,
+    900,
+    7001043,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    472,
+    1000,
+    7001043,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    473,
+    1100,
+    7001043,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    474,
+    100,
+    7001044,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    475,
+    200,
+    7001044,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    476,
+    300,
+    7001044,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    477,
+    400,
+    7001044,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    478,
+    500,
+    7001044,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    479,
+    600,
+    7001044,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    480,
+    700,
+    7001044,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    481,
+    800,
+    7001044,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    482,
+    900,
+    7001044,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    483,
+    1000,
+    7001044,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    484,
+    1100,
+    7001044,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    485,
+    100,
+    7001045,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    486,
+    200,
+    7001045,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    487,
+    300,
+    7001045,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    488,
+    400,
+    7001045,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    489,
+    500,
+    7001045,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    490,
+    600,
+    7001045,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    491,
+    700,
+    7001045,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    492,
+    800,
+    7001045,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    493,
+    900,
+    7001045,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    494,
+    1000,
+    7001045,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    495,
+    1100,
+    7001045,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    496,
+    100,
+    7001046,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    497,
+    200,
+    7001046,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    498,
+    300,
+    7001046,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    499,
+    400,
+    7001046,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    500,
+    500,
+    7001046,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    501,
+    600,
+    7001046,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    502,
+    700,
+    7001046,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    503,
+    800,
+    7001046,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    504,
+    900,
+    7001046,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    505,
+    1000,
+    7001046,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    506,
+    1100,
+    7001046,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    507,
+    100,
+    7001047,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    508,
+    200,
+    7001047,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    509,
+    300,
+    7001047,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    510,
+    400,
+    7001047,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    511,
+    500,
+    7001047,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    512,
+    600,
+    7001047,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    513,
+    700,
+    7001047,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    514,
+    800,
+    7001047,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    515,
+    900,
+    7001047,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    516,
+    1000,
+    7001047,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    517,
+    1100,
+    7001047,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    518,
+    100,
+    7001048,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    519,
+    200,
+    7001048,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    520,
+    300,
+    7001048,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    521,
+    400,
+    7001048,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    522,
+    500,
+    7001048,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    523,
+    600,
+    7001048,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    524,
+    700,
+    7001048,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    525,
+    800,
+    7001048,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    526,
+    900,
+    7001048,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    527,
+    1000,
+    7001048,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    528,
+    1100,
+    7001048,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    529,
+    100,
+    7001049,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    530,
+    200,
+    7001049,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    531,
+    300,
+    7001049,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    532,
+    400,
+    7001049,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    533,
+    500,
+    7001049,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    534,
+    600,
+    7001049,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    535,
+    700,
+    7001049,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    536,
+    800,
+    7001049,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    537,
+    900,
+    7001049,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    538,
+    1000,
+    7001049,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    539,
+    1100,
+    7001049,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    540,
+    100,
+    7001050,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    541,
+    200,
+    7001050,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    542,
+    300,
+    7001050,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    543,
+    400,
+    7001050,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    544,
+    500,
+    7001050,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    545,
+    600,
+    7001050,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    546,
+    700,
+    7001050,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    547,
+    800,
+    7001050,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    548,
+    900,
+    7001050,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    549,
+    1000,
+    7001050,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    550,
+    1100,
+    7001050,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    551,
+    100,
+    7001051,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    552,
+    200,
+    7001051,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    553,
+    300,
+    7001051,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    554,
+    400,
+    7001051,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    555,
+    500,
+    7001051,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    556,
+    600,
+    7001051,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    557,
+    700,
+    7001051,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    558,
+    800,
+    7001051,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    559,
+    900,
+    7001051,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    560,
+    1000,
+    7001051,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    561,
+    1100,
+    7001051,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    562,
+    100,
+    7001052,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    563,
+    200,
+    7001052,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    564,
+    300,
+    7001052,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    565,
+    400,
+    7001052,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    566,
+    500,
+    7001052,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    567,
+    600,
+    7001052,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    568,
+    700,
+    7001052,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    569,
+    800,
+    7001052,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    570,
+    900,
+    7001052,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    571,
+    1000,
+    7001052,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    572,
+    1100,
+    7001052,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    573,
+    100,
+    7001053,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    574,
+    200,
+    7001053,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    575,
+    300,
+    7001053,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    576,
+    400,
+    7001053,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    577,
+    500,
+    7001053,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    578,
+    600,
+    7001053,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    579,
+    700,
+    7001053,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    580,
+    800,
+    7001053,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    581,
+    900,
+    7001053,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    582,
+    1000,
+    7001053,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    583,
+    1100,
+    7001053,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    584,
+    100,
+    7001054,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    585,
+    200,
+    7001054,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    586,
+    300,
+    7001054,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    587,
+    400,
+    7001054,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    588,
+    500,
+    7001054,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    589,
+    600,
+    7001054,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    590,
+    700,
+    7001054,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    591,
+    800,
+    7001054,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    592,
+    900,
+    7001054,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    593,
+    1000,
+    7001054,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    594,
+    1100,
+    7001054,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    595,
+    100,
+    7001055,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    596,
+    200,
+    7001055,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    597,
+    300,
+    7001055,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    598,
+    400,
+    7001055,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    599,
+    500,
+    7001055,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    600,
+    600,
+    7001055,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    601,
+    700,
+    7001055,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    602,
+    800,
+    7001055,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    603,
+    900,
+    7001055,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    604,
+    1000,
+    7001055,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    605,
+    1100,
+    7001055,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    606,
+    100,
+    7001056,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    607,
+    200,
+    7001056,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    608,
+    300,
+    7001056,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    609,
+    400,
+    7001056,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    610,
+    500,
+    7001056,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    611,
+    600,
+    7001056,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    612,
+    700,
+    7001056,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    613,
+    800,
+    7001056,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    614,
+    900,
+    7001056,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    615,
+    1000,
+    7001056,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    616,
+    1100,
+    7001056,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    617,
+    100,
+    7001057,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    618,
+    200,
+    7001057,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    619,
+    300,
+    7001057,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    620,
+    400,
+    7001057,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    621,
+    500,
+    7001057,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    622,
+    600,
+    7001057,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    623,
+    700,
+    7001057,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    624,
+    800,
+    7001057,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    625,
+    900,
+    7001057,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    626,
+    1000,
+    7001057,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    627,
+    1100,
+    7001057,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    628,
+    100,
+    7001058,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    629,
+    200,
+    7001058,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    630,
+    300,
+    7001058,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    631,
+    400,
+    7001058,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    632,
+    500,
+    7001058,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    633,
+    600,
+    7001058,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    634,
+    700,
+    7001058,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    635,
+    800,
+    7001058,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    636,
+    900,
+    7001058,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    637,
+    1000,
+    7001058,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    638,
+    1100,
+    7001058,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    639,
+    100,
+    7001059,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    640,
+    200,
+    7001059,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    641,
+    300,
+    7001059,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    642,
+    400,
+    7001059,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    643,
+    500,
+    7001059,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    644,
+    600,
+    7001059,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    645,
+    700,
+    7001059,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    646,
+    800,
+    7001059,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    647,
+    900,
+    7001059,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    648,
+    1000,
+    7001059,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    649,
+    1100,
+    7001059,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    650,
+    100,
+    7001060,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    651,
+    200,
+    7001060,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    652,
+    300,
+    7001060,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    653,
+    400,
+    7001060,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    654,
+    500,
+    7001060,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    655,
+    600,
+    7001060,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    656,
+    700,
+    7001060,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    657,
+    800,
+    7001060,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    658,
+    900,
+    7001060,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    659,
+    1000,
+    7001060,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    660,
+    1100,
+    7001060,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    661,
+    100,
+    7001061,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    662,
+    200,
+    7001061,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    663,
+    300,
+    7001061,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    664,
+    400,
+    7001061,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    665,
+    500,
+    7001061,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    666,
+    600,
+    7001061,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    667,
+    700,
+    7001061,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    668,
+    800,
+    7001061,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    669,
+    900,
+    7001061,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    670,
+    1000,
+    7001061,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    671,
+    1100,
+    7001061,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    672,
+    100,
+    7001062,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    673,
+    200,
+    7001062,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    674,
+    300,
+    7001062,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    675,
+    400,
+    7001062,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    676,
+    500,
+    7001062,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    677,
+    600,
+    7001062,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    678,
+    700,
+    7001062,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    679,
+    800,
+    7001062,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    680,
+    900,
+    7001062,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    681,
+    1000,
+    7001062,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    682,
+    1100,
+    7001062,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    683,
+    100,
+    7001063,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    684,
+    200,
+    7001063,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    685,
+    300,
+    7001063,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    686,
+    400,
+    7001063,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    687,
+    500,
+    7001063,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    688,
+    600,
+    7001063,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    689,
+    700,
+    7001063,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    690,
+    800,
+    7001063,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    691,
+    900,
+    7001063,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    692,
+    1000,
+    7001063,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    693,
+    1100,
+    7001063,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    694,
+    100,
+    7001064,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    695,
+    200,
+    7001064,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    696,
+    300,
+    7001064,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    697,
+    400,
+    7001064,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    698,
+    500,
+    7001064,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    699,
+    600,
+    7001064,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    700,
+    700,
+    7001064,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    701,
+    800,
+    7001064,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    702,
+    900,
+    7001064,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    703,
+    1000,
+    7001064,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    704,
+    1100,
+    7001064,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    705,
+    100,
+    7001065,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    706,
+    200,
+    7001065,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    707,
+    300,
+    7001065,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    708,
+    400,
+    7001065,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    709,
+    500,
+    7001065,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    710,
+    600,
+    7001065,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    711,
+    700,
+    7001065,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    712,
+    800,
+    7001065,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    713,
+    900,
+    7001065,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    714,
+    1000,
+    7001065,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    715,
+    1100,
+    7001065,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    716,
+    100,
+    7001066,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    717,
+    200,
+    7001066,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    718,
+    300,
+    7001066,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    719,
+    400,
+    7001066,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    720,
+    500,
+    7001066,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    721,
+    600,
+    7001066,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    722,
+    700,
+    7001066,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    723,
+    800,
+    7001066,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    724,
+    900,
+    7001066,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    725,
+    1000,
+    7001066,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    726,
+    1100,
+    7001066,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    727,
+    100,
+    7001067,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    728,
+    200,
+    7001067,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    729,
+    300,
+    7001067,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    730,
+    400,
+    7001067,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    731,
+    500,
+    7001067,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    732,
+    600,
+    7001067,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    733,
+    700,
+    7001067,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    734,
+    800,
+    7001067,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    735,
+    900,
+    7001067,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    736,
+    1000,
+    7001067,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    737,
+    1100,
+    7001067,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    738,
+    100,
+    7001068,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    739,
+    200,
+    7001068,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    740,
+    300,
+    7001068,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    741,
+    400,
+    7001068,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    742,
+    500,
+    7001068,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    743,
+    600,
+    7001068,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    744,
+    700,
+    7001068,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    745,
+    800,
+    7001068,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    746,
+    900,
+    7001068,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    747,
+    1000,
+    7001068,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    748,
+    1100,
+    7001068,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    749,
+    100,
+    7001069,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    750,
+    200,
+    7001069,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    751,
+    300,
+    7001069,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    752,
+    400,
+    7001069,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    753,
+    500,
+    7001069,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    754,
+    600,
+    7001069,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    755,
+    700,
+    7001069,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    756,
+    800,
+    7001069,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    757,
+    900,
+    7001069,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    758,
+    1000,
+    7001069,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    759,
+    1100,
+    7001069,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    760,
+    100,
+    7001070,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    761,
+    200,
+    7001070,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    762,
+    300,
+    7001070,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    763,
+    400,
+    7001070,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    764,
+    500,
+    7001070,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    765,
+    600,
+    7001070,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    766,
+    700,
+    7001070,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    767,
+    800,
+    7001070,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    768,
+    900,
+    7001070,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    769,
+    1000,
+    7001070,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    770,
+    1100,
+    7001070,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    771,
+    100,
+    7001071,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    772,
+    200,
+    7001071,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    773,
+    300,
+    7001071,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    774,
+    400,
+    7001071,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    775,
+    500,
+    7001071,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    776,
+    600,
+    7001071,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    777,
+    700,
+    7001071,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    778,
+    800,
+    7001071,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    779,
+    900,
+    7001071,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    780,
+    1000,
+    7001071,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    781,
+    1100,
+    7001071,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    782,
+    100,
+    7001072,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    783,
+    200,
+    7001072,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    784,
+    300,
+    7001072,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    785,
+    400,
+    7001072,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    786,
+    500,
+    7001072,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    787,
+    600,
+    7001072,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    788,
+    700,
+    7001072,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    789,
+    800,
+    7001072,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    790,
+    900,
+    7001072,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    791,
+    1000,
+    7001072,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    792,
+    1100,
+    7001072,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    793,
+    100,
+    7001073,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    794,
+    200,
+    7001073,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    795,
+    300,
+    7001073,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    796,
+    400,
+    7001073,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    797,
+    500,
+    7001073,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    798,
+    600,
+    7001073,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    799,
+    700,
+    7001073,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    800,
+    800,
+    7001073,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    801,
+    900,
+    7001073,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    802,
+    1000,
+    7001073,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    803,
+    1100,
+    7001073,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    804,
+    100,
+    7001074,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    805,
+    200,
+    7001074,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    806,
+    300,
+    7001074,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    807,
+    400,
+    7001074,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    808,
+    500,
+    7001074,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    809,
+    600,
+    7001074,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    810,
+    700,
+    7001074,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    811,
+    800,
+    7001074,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    812,
+    900,
+    7001074,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    813,
+    1000,
+    7001074,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    814,
+    1100,
+    7001074,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    815,
+    100,
+    7001075,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    816,
+    200,
+    7001075,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    817,
+    300,
+    7001075,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    818,
+    400,
+    7001075,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    819,
+    500,
+    7001075,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    820,
+    600,
+    7001075,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    821,
+    700,
+    7001075,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    822,
+    800,
+    7001075,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    823,
+    900,
+    7001075,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    824,
+    1000,
+    7001075,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    825,
+    1100,
+    7001075,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    826,
+    100,
+    7001076,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    827,
+    200,
+    7001076,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    828,
+    300,
+    7001076,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    829,
+    400,
+    7001076,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    830,
+    500,
+    7001076,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    831,
+    600,
+    7001076,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    832,
+    700,
+    7001076,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    833,
+    800,
+    7001076,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    834,
+    900,
+    7001076,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    835,
+    1000,
+    7001076,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    836,
+    1100,
+    7001076,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    837,
+    100,
+    7001077,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    838,
+    200,
+    7001077,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    839,
+    300,
+    7001077,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    840,
+    400,
+    7001077,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    841,
+    500,
+    7001077,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    842,
+    600,
+    7001077,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    843,
+    700,
+    7001077,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    844,
+    800,
+    7001077,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    845,
+    900,
+    7001077,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    846,
+    1000,
+    7001077,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    847,
+    1100,
+    7001077,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    848,
+    100,
+    7001078,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    849,
+    200,
+    7001078,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    850,
+    300,
+    7001078,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    851,
+    400,
+    7001078,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    852,
+    500,
+    7001078,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    853,
+    600,
+    7001078,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    854,
+    700,
+    7001078,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    855,
+    800,
+    7001078,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    856,
+    900,
+    7001078,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    857,
+    1000,
+    7001078,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    858,
+    1100,
+    7001078,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    859,
+    100,
+    7001079,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    860,
+    200,
+    7001079,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    861,
+    300,
+    7001079,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    862,
+    400,
+    7001079,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    863,
+    500,
+    7001079,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    864,
+    600,
+    7001079,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    865,
+    700,
+    7001079,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    866,
+    800,
+    7001079,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    867,
+    900,
+    7001079,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    868,
+    1000,
+    7001079,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    869,
+    1100,
+    7001079,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    870,
+    100,
+    7001080,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    871,
+    200,
+    7001080,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    872,
+    300,
+    7001080,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    873,
+    400,
+    7001080,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    874,
+    500,
+    7001080,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    875,
+    600,
+    7001080,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    876,
+    700,
+    7001080,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    877,
+    800,
+    7001080,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    878,
+    900,
+    7001080,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    879,
+    1000,
+    7001080,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    880,
+    1100,
+    7001080,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    881,
+    100,
+    7001081,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    882,
+    200,
+    7001081,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    883,
+    300,
+    7001081,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    884,
+    400,
+    7001081,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    885,
+    500,
+    7001081,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    886,
+    600,
+    7001081,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    887,
+    700,
+    7001081,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    888,
+    800,
+    7001081,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    889,
+    900,
+    7001081,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    890,
+    1000,
+    7001081,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    891,
+    1100,
+    7001081,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    892,
+    100,
+    7001082,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    893,
+    200,
+    7001082,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    894,
+    300,
+    7001082,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    895,
+    400,
+    7001082,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    896,
+    500,
+    7001082,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    897,
+    600,
+    7001082,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    898,
+    700,
+    7001082,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    899,
+    800,
+    7001082,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    900,
+    900,
+    7001082,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    901,
+    1000,
+    7001082,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    902,
+    1100,
+    7001082,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    903,
+    100,
+    7001083,
+    100000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    904,
+    200,
+    7001083,
+    200000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    905,
+    300,
+    7001083,
+    400000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    906,
+    400,
+    7001083,
+    600000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    907,
+    500,
+    7001083,
+    800000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    908,
+    600,
+    7001083,
+    1000000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    909,
+    700,
+    7001083,
+    1400000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    910,
+    800,
+    7001083,
+    1800000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    911,
+    900,
+    7001083,
+    2400000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    912,
+    1000,
+    7001083,
+    3000000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    913,
+    1100,
+    7001083,
+    3000000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    914,
+    100,
+    7001084,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    915,
+    200,
+    7001084,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    916,
+    300,
+    7001084,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    917,
+    400,
+    7001084,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    918,
+    500,
+    7001084,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    919,
+    600,
+    7001084,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    920,
+    700,
+    7001084,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    921,
+    800,
+    7001084,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    922,
+    900,
+    7001084,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    923,
+    1000,
+    7001084,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    924,
+    1100,
+    7001084,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    925,
+    100,
+    7001085,
+    50000,
+    0,
+    40001,
+    common[1],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    926,
+    200,
+    7001085,
+    100000,
+    0,
+    40003,
+    common[2],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    927,
+    300,
+    7001085,
+    200000,
+    0,
+    40004,
+    common[3],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    928,
+    400,
+    7001085,
+    300000,
+    0,
+    40005,
+    common[4],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    929,
+    500,
+    7001085,
+    400000,
+    0,
+    40006,
+    common[5],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    930,
+    600,
+    7001085,
+    500000,
+    0,
+    40007,
+    common[6],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    931,
+    700,
+    7001085,
+    700000,
+    0,
+    40008,
+    common[7],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    932,
+    800,
+    7001085,
+    900000,
+    0,
+    40011,
+    common[7],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    933,
+    900,
+    7001085,
+    1200000,
+    0,
+    40012,
+    common[8],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    934,
+    1000,
+    7001085,
+    1500000,
+    0,
+    40013,
+    common[8],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    935,
+    1100,
+    7001085,
+    1500000,
+    999,
+    40014,
+    common[8],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    936,
+    100,
+    7001086,
+    700000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    937,
+    200,
+    7001086,
+    1400000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    938,
+    300,
+    7001086,
+    2100000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    939,
+    400,
+    7001086,
+    2800000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    940,
+    500,
+    7001086,
+    3600000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    941,
+    600,
+    7001086,
+    4500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    942,
+    700,
+    7001086,
+    5400000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    943,
+    800,
+    7001086,
+    6300000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    944,
+    900,
+    7001086,
+    7600000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    945,
+    1000,
+    7001086,
+    9000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    946,
+    1100,
+    7001086,
+    9000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    947,
+    100,
+    7001087,
+    800000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    948,
+    200,
+    7001087,
+    1600000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    949,
+    300,
+    7001087,
+    2400000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    950,
+    400,
+    7001087,
+    3200000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    951,
+    500,
+    7001087,
+    4000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    952,
+    600,
+    7001087,
+    5000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    953,
+    700,
+    7001087,
+    6000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    954,
+    800,
+    7001087,
+    7000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    955,
+    900,
+    7001087,
+    8500000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    956,
+    1000,
+    7001087,
+    10000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    957,
+    1100,
+    7001087,
+    10000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    958,
+    100,
+    7001088,
+    500000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    959,
+    200,
+    7001088,
+    1000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    960,
+    300,
+    7001088,
+    1500000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    961,
+    400,
+    7001088,
+    2000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    962,
+    500,
+    7001088,
+    2500000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    963,
+    600,
+    7001088,
+    3000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    964,
+    700,
+    7001088,
+    3500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    965,
+    800,
+    7001088,
+    4000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    966,
+    900,
+    7001088,
+    5000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    967,
+    1000,
+    7001088,
+    6000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    968,
+    1100,
+    7001088,
+    6000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    969,
+    100,
+    7001089,
+    500000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    970,
+    200,
+    7001089,
+    1000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    971,
+    300,
+    7001089,
+    1500000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    972,
+    400,
+    7001089,
+    2000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    973,
+    500,
+    7001089,
+    2500000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    974,
+    600,
+    7001089,
+    3000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    975,
+    700,
+    7001089,
+    3500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    976,
+    800,
+    7001089,
+    4000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    977,
+    900,
+    7001089,
+    5000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    978,
+    1000,
+    7001089,
+    6000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    979,
+    1100,
+    7001089,
+    6000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    980,
+    100,
+    7001090,
+    500000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    981,
+    200,
+    7001090,
+    1000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    982,
+    300,
+    7001090,
+    1500000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    983,
+    400,
+    7001090,
+    2000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    984,
+    500,
+    7001090,
+    2500000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    985,
+    600,
+    7001090,
+    3000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    986,
+    700,
+    7001090,
+    3500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    987,
+    800,
+    7001090,
+    4000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    988,
+    900,
+    7001090,
+    5000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    989,
+    1000,
+    7001090,
+    6000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    990,
+    1100,
+    7001090,
+    6000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    991,
+    100,
+    7001091,
+    500000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    992,
+    200,
+    7001091,
+    1000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    993,
+    300,
+    7001091,
+    1500000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    994,
+    400,
+    7001091,
+    2000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    995,
+    500,
+    7001091,
+    2500000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    996,
+    600,
+    7001091,
+    3000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    997,
+    700,
+    7001091,
+    3500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    998,
+    800,
+    7001091,
+    4000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    999,
+    900,
+    7001091,
+    5000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1000,
+    1000,
+    7001091,
+    6000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1001,
+    1100,
+    7001091,
+    6000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1002,
+    100,
+    7001092,
+    900000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1003,
+    200,
+    7001092,
+    1800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1004,
+    300,
+    7001092,
+    2700000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1005,
+    400,
+    7001092,
+    3600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1006,
+    500,
+    7001092,
+    4500000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1007,
+    600,
+    7001092,
+    5500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1008,
+    700,
+    7001092,
+    6500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1009,
+    800,
+    7001092,
+    8000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1010,
+    900,
+    7001092,
+    9500000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1011,
+    1000,
+    7001092,
+    11000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1012,
+    1100,
+    7001092,
+    11000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1013,
+    100,
+    7001093,
+    700000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1014,
+    200,
+    7001093,
+    1400000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1015,
+    300,
+    7001093,
+    2100000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1016,
+    400,
+    7001093,
+    2800000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1017,
+    500,
+    7001093,
+    3600000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1018,
+    600,
+    7001093,
+    4500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1019,
+    700,
+    7001093,
+    5400000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1020,
+    800,
+    7001093,
+    6300000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1021,
+    900,
+    7001093,
+    7600000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1022,
+    1000,
+    7001093,
+    9000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1023,
+    1100,
+    7001093,
+    9000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1024,
+    100,
+    7001094,
+    700000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1025,
+    200,
+    7001094,
+    1400000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1026,
+    300,
+    7001094,
+    2100000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1027,
+    400,
+    7001094,
+    2800000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1028,
+    500,
+    7001094,
+    3600000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1029,
+    600,
+    7001094,
+    4500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1030,
+    700,
+    7001094,
+    5400000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1031,
+    800,
+    7001094,
+    6300000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1032,
+    900,
+    7001094,
+    7600000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1033,
+    1000,
+    7001094,
+    9000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1034,
+    1100,
+    7001094,
+    9000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1035,
+    100,
+    7001095,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1036,
+    200,
+    7001095,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1037,
+    300,
+    7001095,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1038,
+    400,
+    7001095,
+    1600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1039,
+    500,
+    7001095,
+    2000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1040,
+    600,
+    7001095,
+    2500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1041,
+    700,
+    7001095,
+    3000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1042,
+    800,
+    7001095,
+    3600000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1043,
+    900,
+    7001095,
+    4200000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1044,
+    1000,
+    7001095,
+    5000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1045,
+    1100,
+    7001095,
+    5000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1046,
+    100,
+    7001096,
+    500000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1047,
+    200,
+    7001096,
+    1000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1048,
+    300,
+    7001096,
+    1500000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1049,
+    400,
+    7001096,
+    2000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1050,
+    500,
+    7001096,
+    2500000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1051,
+    600,
+    7001096,
+    3000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1052,
+    700,
+    7001096,
+    3500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1053,
+    800,
+    7001096,
+    4000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1054,
+    900,
+    7001096,
+    5000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1055,
+    1000,
+    7001096,
+    6000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1056,
+    1100,
+    7001096,
+    6000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1057,
+    100,
+    7001097,
+    500000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1058,
+    200,
+    7001097,
+    1000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1059,
+    300,
+    7001097,
+    1500000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1060,
+    400,
+    7001097,
+    2000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1061,
+    500,
+    7001097,
+    2500000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1062,
+    600,
+    7001097,
+    3000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1063,
+    700,
+    7001097,
+    3500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1064,
+    800,
+    7001097,
+    4000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1065,
+    900,
+    7001097,
+    5000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1066,
+    1000,
+    7001097,
+    6000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1067,
+    1100,
+    7001097,
+    6000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1068,
+    100,
+    7001098,
+    700000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1069,
+    200,
+    7001098,
+    1400000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1070,
+    300,
+    7001098,
+    2100000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1071,
+    400,
+    7001098,
+    2800000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1072,
+    500,
+    7001098,
+    3600000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1073,
+    600,
+    7001098,
+    4500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1074,
+    700,
+    7001098,
+    5400000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1075,
+    800,
+    7001098,
+    6300000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1076,
+    900,
+    7001098,
+    7600000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1077,
+    1000,
+    7001098,
+    9000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1078,
+    1100,
+    7001098,
+    9000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1079,
+    100,
+    7001099,
+    1100000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1080,
+    200,
+    7001099,
+    2200000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1081,
+    300,
+    7001099,
+    3300000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1082,
+    400,
+    7001099,
+    4500000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1083,
+    500,
+    7001099,
+    5700000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1084,
+    600,
+    7001099,
+    7000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1085,
+    700,
+    7001099,
+    8500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1086,
+    800,
+    7001099,
+    10000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1087,
+    900,
+    7001099,
+    12000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1088,
+    1000,
+    7001099,
+    14000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1089,
+    1100,
+    7001099,
+    14000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1090,
+    100,
+    7001100,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1091,
+    200,
+    7001100,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1092,
+    300,
+    7001100,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1093,
+    400,
+    7001100,
+    1600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1094,
+    500,
+    7001100,
+    2000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1095,
+    600,
+    7001100,
+    2500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1096,
+    700,
+    7001100,
+    3000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1097,
+    800,
+    7001100,
+    3600000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1098,
+    900,
+    7001100,
+    4200000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1099,
+    1000,
+    7001100,
+    5000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1100,
+    1100,
+    7001100,
+    5000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1101,
+    100,
+    7001101,
+    800000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1102,
+    200,
+    7001101,
+    1600000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1103,
+    300,
+    7001101,
+    2400000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1104,
+    400,
+    7001101,
+    3200000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1105,
+    500,
+    7001101,
+    4000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1106,
+    600,
+    7001101,
+    5000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1107,
+    700,
+    7001101,
+    6000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1108,
+    800,
+    7001101,
+    7000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1109,
+    900,
+    7001101,
+    8500000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1110,
+    1000,
+    7001101,
+    10000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1111,
+    1100,
+    7001101,
+    10000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1112,
+    100,
+    7001102,
+    600000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1113,
+    200,
+    7001102,
+    1200000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1114,
+    300,
+    7001102,
+    1800000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1115,
+    400,
+    7001102,
+    2500000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1116,
+    500,
+    7001102,
+    3200000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1117,
+    600,
+    7001102,
+    4000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1118,
+    700,
+    7001102,
+    5000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1119,
+    800,
+    7001102,
+    6000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1120,
+    900,
+    7001102,
+    7000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1121,
+    1000,
+    7001102,
+    8000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1122,
+    1100,
+    7001102,
+    8000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1123,
+    100,
+    7001103,
+    1100000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1124,
+    200,
+    7001103,
+    2200000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1125,
+    300,
+    7001103,
+    3300000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1126,
+    400,
+    7001103,
+    4500000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1127,
+    500,
+    7001103,
+    5700000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1128,
+    600,
+    7001103,
+    7000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1129,
+    700,
+    7001103,
+    8500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1130,
+    800,
+    7001103,
+    10000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1131,
+    900,
+    7001103,
+    12000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1132,
+    1000,
+    7001103,
+    14000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1133,
+    1100,
+    7001103,
+    14000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1134,
+    100,
+    7001104,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1135,
+    200,
+    7001104,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1136,
+    300,
+    7001104,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1137,
+    400,
+    7001104,
+    1600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1138,
+    500,
+    7001104,
+    2000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1139,
+    600,
+    7001104,
+    2500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1140,
+    700,
+    7001104,
+    3000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1141,
+    800,
+    7001104,
+    3600000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1142,
+    900,
+    7001104,
+    4300000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1143,
+    1000,
+    7001104,
+    5000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1144,
+    1100,
+    7001104,
+    5000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1145,
+    100,
+    7001105,
+    500000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1146,
+    200,
+    7001105,
+    1000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1147,
+    300,
+    7001105,
+    1500000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1148,
+    400,
+    7001105,
+    2000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1149,
+    500,
+    7001105,
+    2500000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1150,
+    600,
+    7001105,
+    3000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1151,
+    700,
+    7001105,
+    3600000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1152,
+    800,
+    7001105,
+    4200000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1153,
+    900,
+    7001105,
+    5000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1154,
+    1000,
+    7001105,
+    6000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1155,
+    1100,
+    7001105,
+    6000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1156,
+    100,
+    7001106,
+    600000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1157,
+    200,
+    7001106,
+    1200000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1158,
+    300,
+    7001106,
+    1800000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1159,
+    400,
+    7001106,
+    2400000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1160,
+    500,
+    7001106,
+    3000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1161,
+    600,
+    7001106,
+    3700000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1162,
+    700,
+    7001106,
+    4500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1163,
+    800,
+    7001106,
+    5400000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1164,
+    900,
+    7001106,
+    6400000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1165,
+    1000,
+    7001106,
+    7500000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1166,
+    1100,
+    7001106,
+    7500000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1167,
+    100,
+    7001107,
+    600000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1168,
+    200,
+    7001107,
+    1200000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1169,
+    300,
+    7001107,
+    1800000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1170,
+    400,
+    7001107,
+    2500000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1171,
+    500,
+    7001107,
+    3200000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1172,
+    600,
+    7001107,
+    4000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1173,
+    700,
+    7001107,
+    5000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1174,
+    800,
+    7001107,
+    6000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1175,
+    900,
+    7001107,
+    7000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1176,
+    1000,
+    7001107,
+    8000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1177,
+    1100,
+    7001107,
+    8000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1178,
+    100,
+    7001108,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1179,
+    200,
+    7001108,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1180,
+    300,
+    7001108,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1181,
+    400,
+    7001108,
+    1600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1182,
+    500,
+    7001108,
+    2000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1183,
+    600,
+    7001108,
+    2500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1184,
+    700,
+    7001108,
+    3000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1185,
+    800,
+    7001108,
+    3600000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1186,
+    900,
+    7001108,
+    4300000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1187,
+    1000,
+    7001108,
+    5000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1188,
+    1100,
+    7001108,
+    5000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1189,
+    100,
+    7001109,
+    500000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1190,
+    200,
+    7001109,
+    1000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1191,
+    300,
+    7001109,
+    1500000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1192,
+    400,
+    7001109,
+    2000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1193,
+    500,
+    7001109,
+    2500000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1194,
+    600,
+    7001109,
+    3000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1195,
+    700,
+    7001109,
+    3500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1196,
+    800,
+    7001109,
+    4000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1197,
+    900,
+    7001109,
+    5000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1198,
+    1000,
+    7001109,
+    6000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1199,
+    1100,
+    7001109,
+    6000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1200,
+    100,
+    7001110,
+    1000000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1201,
+    200,
+    7001110,
+    2000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1202,
+    300,
+    7001110,
+    3000000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1203,
+    400,
+    7001110,
+    4000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1204,
+    500,
+    7001110,
+    5000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1205,
+    600,
+    7001110,
+    6000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1206,
+    700,
+    7001110,
+    7500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1207,
+    800,
+    7001110,
+    9000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1208,
+    900,
+    7001110,
+    10500000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1209,
+    1000,
+    7001110,
+    12000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1210,
+    1100,
+    7001110,
+    12000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1211,
+    100,
+    7001111,
+    1000000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1212,
+    200,
+    7001111,
+    2000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1213,
+    300,
+    7001111,
+    3000000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1214,
+    400,
+    7001111,
+    4000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1215,
+    500,
+    7001111,
+    5000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1216,
+    600,
+    7001111,
+    6000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1217,
+    700,
+    7001111,
+    7500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1218,
+    800,
+    7001111,
+    9000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1219,
+    900,
+    7001111,
+    10500000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1220,
+    1000,
+    7001111,
+    12000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1221,
+    1100,
+    7001111,
+    12000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1222,
+    100,
+    7001112,
+    1000000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1223,
+    200,
+    7001112,
+    2000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1224,
+    300,
+    7001112,
+    3000000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1225,
+    400,
+    7001112,
+    4000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1226,
+    500,
+    7001112,
+    5000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1227,
+    600,
+    7001112,
+    6000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1228,
+    700,
+    7001112,
+    7500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1229,
+    800,
+    7001112,
+    9000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1230,
+    900,
+    7001112,
+    10500000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1231,
+    1000,
+    7001112,
+    12000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1232,
+    1100,
+    7001112,
+    12000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1233,
+    100,
+    7001113,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1234,
+    200,
+    7001113,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1235,
+    300,
+    7001113,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1236,
+    400,
+    7001113,
+    1600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1237,
+    500,
+    7001113,
+    2000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1238,
+    600,
+    7001113,
+    2500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1239,
+    700,
+    7001113,
+    3000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1240,
+    800,
+    7001113,
+    3600000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1241,
+    900,
+    7001113,
+    4200000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1242,
+    1000,
+    7001113,
+    5000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1243,
+    1100,
+    7001113,
+    5000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1244,
+    100,
+    7001114,
+    500000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1245,
+    200,
+    7001114,
+    1000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1246,
+    300,
+    7001114,
+    1500000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1247,
+    400,
+    7001114,
+    2000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1248,
+    500,
+    7001114,
+    2500000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1249,
+    600,
+    7001114,
+    3000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1250,
+    700,
+    7001114,
+    3600000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1251,
+    800,
+    7001114,
+    4200000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1252,
+    900,
+    7001114,
+    5000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1253,
+    1000,
+    7001114,
+    6000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1254,
+    1100,
+    7001114,
+    6000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1255,
+    100,
+    7001115,
+    600000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1256,
+    200,
+    7001115,
+    1200000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1257,
+    300,
+    7001115,
+    1800000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1258,
+    400,
+    7001115,
+    2400000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1259,
+    500,
+    7001115,
+    3000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1260,
+    600,
+    7001115,
+    3700000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1261,
+    700,
+    7001115,
+    4500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1262,
+    800,
+    7001115,
+    5400000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1263,
+    900,
+    7001115,
+    6400000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1264,
+    1000,
+    7001115,
+    7500000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1265,
+    1100,
+    7001115,
+    7500000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1266,
+    100,
+    7001116,
+    1000000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1267,
+    200,
+    7001116,
+    2000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1268,
+    300,
+    7001116,
+    3000000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1269,
+    400,
+    7001116,
+    4000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1270,
+    500,
+    7001116,
+    5000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1271,
+    600,
+    7001116,
+    6000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1272,
+    700,
+    7001116,
+    7500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1273,
+    800,
+    7001116,
+    9000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1274,
+    900,
+    7001116,
+    10500000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1275,
+    1000,
+    7001116,
+    12000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1276,
+    1100,
+    7001116,
+    12000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1277,
+    100,
+    7001117,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1278,
+    200,
+    7001117,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1279,
+    300,
+    7001117,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1280,
+    400,
+    7001117,
+    1600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1281,
+    500,
+    7001117,
+    2000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1282,
+    600,
+    7001117,
+    2500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1283,
+    700,
+    7001117,
+    3000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1284,
+    800,
+    7001117,
+    3600000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1285,
+    900,
+    7001117,
+    4200000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1286,
+    1000,
+    7001117,
+    5000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1287,
+    1100,
+    7001117,
+    5000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1288,
+    100,
+    7001118,
+    500000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1289,
+    200,
+    7001118,
+    1000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1290,
+    300,
+    7001118,
+    1500000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1291,
+    400,
+    7001118,
+    2000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1292,
+    500,
+    7001118,
+    2500000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1293,
+    600,
+    7001118,
+    3000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1294,
+    700,
+    7001118,
+    3600000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1295,
+    800,
+    7001118,
+    4200000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1296,
+    900,
+    7001118,
+    5000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1297,
+    1000,
+    7001118,
+    6000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1298,
+    1100,
+    7001118,
+    6000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1299,
+    100,
+    7001119,
+    600000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1300,
+    200,
+    7001119,
+    1200000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1301,
+    300,
+    7001119,
+    1800000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1302,
+    400,
+    7001119,
+    2400000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1303,
+    500,
+    7001119,
+    3000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1304,
+    600,
+    7001119,
+    3700000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1305,
+    700,
+    7001119,
+    4500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1306,
+    800,
+    7001119,
+    5400000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1307,
+    900,
+    7001119,
+    6400000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1308,
+    1000,
+    7001119,
+    7500000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1309,
+    1100,
+    7001119,
+    7500000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1310,
+    100,
+    7001120,
+    600000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1311,
+    200,
+    7001120,
+    1200000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1312,
+    300,
+    7001120,
+    1800000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1313,
+    400,
+    7001120,
+    2400000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1314,
+    500,
+    7001120,
+    3000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1315,
+    600,
+    7001120,
+    3700000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1316,
+    700,
+    7001120,
+    4500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1317,
+    800,
+    7001120,
+    5400000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1318,
+    900,
+    7001120,
+    6400000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1319,
+    1000,
+    7001120,
+    7500000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1320,
+    1100,
+    7001120,
+    7500000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1321,
+    100,
+    7001121,
+    300000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1322,
+    200,
+    7001121,
+    600000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1323,
+    300,
+    7001121,
+    1000000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1324,
+    400,
+    7001121,
+    1400000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1325,
+    500,
+    7001121,
+    1800000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1326,
+    600,
+    7001121,
+    2200000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1327,
+    700,
+    7001121,
+    2700000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1328,
+    800,
+    7001121,
+    3200000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1329,
+    900,
+    7001121,
+    3800000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1330,
+    1000,
+    7001121,
+    4500000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1331,
+    1100,
+    7001121,
+    4500000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1332,
+    100,
+    7001122,
+    600000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1333,
+    200,
+    7001122,
+    1200000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1334,
+    300,
+    7001122,
+    1800000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1335,
+    400,
+    7001122,
+    2400000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1336,
+    500,
+    7001122,
+    3000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1337,
+    600,
+    7001122,
+    3700000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1338,
+    700,
+    7001122,
+    4500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1339,
+    800,
+    7001122,
+    5400000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1340,
+    900,
+    7001122,
+    6400000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1341,
+    1000,
+    7001122,
+    7500000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1342,
+    1100,
+    7001122,
+    7500000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1343,
+    100,
+    7001123,
+    600000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1344,
+    200,
+    7001123,
+    1200000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1345,
+    300,
+    7001123,
+    1800000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1346,
+    400,
+    7001123,
+    2500000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1347,
+    500,
+    7001123,
+    3200000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1348,
+    600,
+    7001123,
+    4000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1349,
+    700,
+    7001123,
+    5000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1350,
+    800,
+    7001123,
+    6000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1351,
+    900,
+    7001123,
+    7000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1352,
+    1000,
+    7001123,
+    8000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1353,
+    1100,
+    7001123,
+    8000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1354,
+    100,
+    7001124,
+    600000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1355,
+    200,
+    7001124,
+    1200000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1356,
+    300,
+    7001124,
+    1800000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1357,
+    400,
+    7001124,
+    2600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1358,
+    500,
+    7001124,
+    3400000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1359,
+    600,
+    7001124,
+    4200000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1360,
+    700,
+    7001124,
+    5200000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1361,
+    800,
+    7001124,
+    6200000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1362,
+    900,
+    7001124,
+    7300000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1363,
+    1000,
+    7001124,
+    8400000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1364,
+    1100,
+    7001124,
+    8400000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1365,
+    100,
+    7001125,
+    900000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1366,
+    200,
+    7001125,
+    1800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1367,
+    300,
+    7001125,
+    2700000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1368,
+    400,
+    7001125,
+    3600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1369,
+    500,
+    7001125,
+    4500000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1370,
+    600,
+    7001125,
+    5500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1371,
+    700,
+    7001125,
+    6500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1372,
+    800,
+    7001125,
+    8000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1373,
+    900,
+    7001125,
+    9500000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1374,
+    1000,
+    7001125,
+    11000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1375,
+    1100,
+    7001125,
+    11000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1376,
+    100,
+    7001126,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1377,
+    200,
+    7001126,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1378,
+    300,
+    7001126,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1379,
+    400,
+    7001126,
+    1700000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1380,
+    500,
+    7001126,
+    2200000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1381,
+    600,
+    7001126,
+    2700000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1382,
+    700,
+    7001126,
+    3300000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1383,
+    800,
+    7001126,
+    4000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1384,
+    900,
+    7001126,
+    4700000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1385,
+    1000,
+    7001126,
+    5500000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1386,
+    1100,
+    7001126,
+    5500000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1387,
+    100,
+    7001127,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1388,
+    200,
+    7001127,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1389,
+    300,
+    7001127,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1390,
+    400,
+    7001127,
+    1600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1391,
+    500,
+    7001127,
+    2000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1392,
+    600,
+    7001127,
+    2500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1393,
+    700,
+    7001127,
+    3000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1394,
+    800,
+    7001127,
+    3600000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1395,
+    900,
+    7001127,
+    4200000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1396,
+    1000,
+    7001127,
+    5000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1397,
+    1100,
+    7001127,
+    5000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1398,
+    100,
+    7001128,
+    600000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1399,
+    200,
+    7001128,
+    1200000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1400,
+    300,
+    7001128,
+    1800000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1401,
+    400,
+    7001128,
+    2600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1402,
+    500,
+    7001128,
+    3400000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1403,
+    600,
+    7001128,
+    4200000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1404,
+    700,
+    7001128,
+    5200000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1405,
+    800,
+    7001128,
+    6200000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1406,
+    900,
+    7001128,
+    7300000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1407,
+    1000,
+    7001128,
+    8400000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1408,
+    1100,
+    7001128,
+    8400000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1409,
+    100,
+    7001129,
+    1000000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1410,
+    200,
+    7001129,
+    2000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1411,
+    300,
+    7001129,
+    3000000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1412,
+    400,
+    7001129,
+    4000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1413,
+    500,
+    7001129,
+    5000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1414,
+    600,
+    7001129,
+    6000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1415,
+    700,
+    7001129,
+    7500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1416,
+    800,
+    7001129,
+    9000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1417,
+    900,
+    7001129,
+    10500000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1418,
+    1000,
+    7001129,
+    12000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1419,
+    1100,
+    7001129,
+    12000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1420,
+    100,
+    7001130,
+    600000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1421,
+    200,
+    7001130,
+    1200000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1422,
+    300,
+    7001130,
+    1800000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1423,
+    400,
+    7001130,
+    2500000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1424,
+    500,
+    7001130,
+    3200000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1425,
+    600,
+    7001130,
+    4000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1426,
+    700,
+    7001130,
+    5000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1427,
+    800,
+    7001130,
+    6000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1428,
+    900,
+    7001130,
+    7000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1429,
+    1000,
+    7001130,
+    8000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1430,
+    1100,
+    7001130,
+    8000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1431,
+    100,
+    7001131,
+    600000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1432,
+    200,
+    7001131,
+    1200000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1433,
+    300,
+    7001131,
+    1800000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1434,
+    400,
+    7001131,
+    2600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1435,
+    500,
+    7001131,
+    3400000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1436,
+    600,
+    7001131,
+    4200000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1437,
+    700,
+    7001131,
+    5200000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1438,
+    800,
+    7001131,
+    6200000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1439,
+    900,
+    7001131,
+    7300000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1440,
+    1000,
+    7001131,
+    8400000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1441,
+    1100,
+    7001131,
+    8400000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1442,
+    100,
+    7001132,
+    800000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1443,
+    200,
+    7001132,
+    1600000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1444,
+    300,
+    7001132,
+    2400000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1445,
+    400,
+    7001132,
+    3200000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1446,
+    500,
+    7001132,
+    4000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1447,
+    600,
+    7001132,
+    5000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1448,
+    700,
+    7001132,
+    6000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1449,
+    800,
+    7001132,
+    7000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1450,
+    900,
+    7001132,
+    8500000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1451,
+    1000,
+    7001132,
+    10000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1452,
+    1100,
+    7001132,
+    10000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1453,
+    100,
+    7001133,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1454,
+    200,
+    7001133,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1455,
+    300,
+    7001133,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1456,
+    400,
+    7001133,
+    1700000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1457,
+    500,
+    7001133,
+    2200000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1458,
+    600,
+    7001133,
+    2700000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1459,
+    700,
+    7001133,
+    3300000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1460,
+    800,
+    7001133,
+    4000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1461,
+    900,
+    7001133,
+    4700000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1462,
+    1000,
+    7001133,
+    5500000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1463,
+    1100,
+    7001133,
+    5500000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1464,
+    100,
+    7001134,
+    700000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1465,
+    200,
+    7001134,
+    1400000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1466,
+    300,
+    7001134,
+    2100000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1467,
+    400,
+    7001134,
+    2800000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1468,
+    500,
+    7001134,
+    3600000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1469,
+    600,
+    7001134,
+    4500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1470,
+    700,
+    7001134,
+    5400000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1471,
+    800,
+    7001134,
+    6300000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1472,
+    900,
+    7001134,
+    7600000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1473,
+    1000,
+    7001134,
+    9000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1474,
+    1100,
+    7001134,
+    9000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1475,
+    100,
+    7001135,
+    600000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1476,
+    200,
+    7001135,
+    1200000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1477,
+    300,
+    7001135,
+    1800000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1478,
+    400,
+    7001135,
+    2600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1479,
+    500,
+    7001135,
+    3400000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1480,
+    600,
+    7001135,
+    4200000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1481,
+    700,
+    7001135,
+    5200000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1482,
+    800,
+    7001135,
+    6200000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1483,
+    900,
+    7001135,
+    7300000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1484,
+    1000,
+    7001135,
+    8400000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1485,
+    1100,
+    7001135,
+    8400000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1486,
+    100,
+    7001136,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1487,
+    200,
+    7001136,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1488,
+    300,
+    7001136,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1489,
+    400,
+    7001136,
+    1600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1490,
+    500,
+    7001136,
+    2000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1491,
+    600,
+    7001136,
+    2500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1492,
+    700,
+    7001136,
+    3000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1493,
+    800,
+    7001136,
+    3600000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1494,
+    900,
+    7001136,
+    4200000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1495,
+    1000,
+    7001136,
+    5000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1496,
+    1100,
+    7001136,
+    5000000,
+    2000,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1497,
+    100,
+    7001137,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1498,
+    200,
+    7001137,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1499,
+    300,
+    7001137,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1500,
+    400,
+    7001137,
+    1600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1501,
+    500,
+    7001137,
+    2100000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1502,
+    600,
+    7001137,
+    2600000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1503,
+    700,
+    7001137,
+    3200000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1504,
+    800,
+    7001137,
+    3800000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1505,
+    900,
+    7001137,
+    4500000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1506,
+    1000,
+    7001137,
+    5200000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1507,
+    1100,
+    7001137,
+    5200000,
+    2000,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1508,
+    100,
+    7001138,
+    500000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1509,
+    200,
+    7001138,
+    1000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1510,
+    300,
+    7001138,
+    1500000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1511,
+    400,
+    7001138,
+    2000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1512,
+    500,
+    7001138,
+    2500000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1513,
+    600,
+    7001138,
+    3200000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1514,
+    700,
+    7001138,
+    4000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1515,
+    800,
+    7001138,
+    4800000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1516,
+    900,
+    7001138,
+    5600000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1517,
+    1000,
+    7001138,
+    6500000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1518,
+    1100,
+    7001138,
+    6500000,
+    2000,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1519,
+    100,
+    7001139,
+    1000000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1520,
+    200,
+    7001139,
+    2000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1521,
+    300,
+    7001139,
+    3000000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1522,
+    400,
+    7001139,
+    4000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1523,
+    500,
+    7001139,
+    5000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1524,
+    600,
+    7001139,
+    6000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1525,
+    700,
+    7001139,
+    7500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1526,
+    800,
+    7001139,
+    9000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1527,
+    900,
+    7001139,
+    10500000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1528,
+    1000,
+    7001139,
+    12000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1529,
+    1100,
+    7001139,
+    12000000,
+    2000,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1530,
+    100,
+    7001140,
+    500000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1531,
+    200,
+    7001140,
+    1000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1532,
+    300,
+    7001140,
+    1500000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1533,
+    400,
+    7001140,
+    2000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1534,
+    500,
+    7001140,
+    2500000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1535,
+    600,
+    7001140,
+    3000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1536,
+    700,
+    7001140,
+    3600000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1537,
+    800,
+    7001140,
+    4200000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1538,
+    900,
+    7001140,
+    5000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1539,
+    1000,
+    7001140,
+    6000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1540,
+    1100,
+    7001140,
+    6000000,
+    2000,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1541,
+    100,
+    7001141,
+    1000000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1542,
+    200,
+    7001141,
+    2000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1543,
+    300,
+    7001141,
+    3000000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1544,
+    400,
+    7001141,
+    4000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1545,
+    500,
+    7001141,
+    5000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1546,
+    600,
+    7001141,
+    6000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1547,
+    700,
+    7001141,
+    7500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1548,
+    800,
+    7001141,
+    9000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1549,
+    900,
+    7001141,
+    10500000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1550,
+    1000,
+    7001141,
+    12000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1551,
+    1100,
+    7001141,
+    12000000,
+    2000,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1552,
+    100,
+    7001142,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1553,
+    200,
+    7001142,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1554,
+    300,
+    7001142,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1555,
+    400,
+    7001142,
+    1600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1556,
+    500,
+    7001142,
+    2000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1557,
+    600,
+    7001142,
+    2500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1558,
+    700,
+    7001142,
+    3000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1559,
+    800,
+    7001142,
+    3600000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1560,
+    900,
+    7001142,
+    4200000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1561,
+    1000,
+    7001142,
+    5000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1562,
+    1100,
+    7001142,
+    5000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1563,
+    100,
+    7001143,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1564,
+    200,
+    7001143,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1565,
+    300,
+    7001143,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1566,
+    400,
+    7001143,
+    1700000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1567,
+    500,
+    7001143,
+    2200000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1568,
+    600,
+    7001143,
+    2700000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1569,
+    700,
+    7001143,
+    3300000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1570,
+    800,
+    7001143,
+    4000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1571,
+    900,
+    7001143,
+    4700000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1572,
+    1000,
+    7001143,
+    5500000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1573,
+    1100,
+    7001143,
+    5500000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1574,
+    100,
+    7001144,
+    700000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1575,
+    200,
+    7001144,
+    1400000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1576,
+    300,
+    7001144,
+    2100000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1577,
+    400,
+    7001144,
+    2800000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1578,
+    500,
+    7001144,
+    3600000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1579,
+    600,
+    7001144,
+    4500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1580,
+    700,
+    7001144,
+    5400000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1581,
+    800,
+    7001144,
+    6300000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1582,
+    900,
+    7001144,
+    7600000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1583,
+    1000,
+    7001144,
+    9000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1584,
+    1100,
+    7001144,
+    9000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1585,
+    100,
+    7001145,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1586,
+    200,
+    7001145,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1587,
+    300,
+    7001145,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1588,
+    400,
+    7001145,
+    1600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1589,
+    500,
+    7001145,
+    2000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1590,
+    600,
+    7001145,
+    2500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1591,
+    700,
+    7001145,
+    3000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1592,
+    800,
+    7001145,
+    3600000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1593,
+    900,
+    7001145,
+    4200000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1594,
+    1000,
+    7001145,
+    5000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1595,
+    1100,
+    7001145,
+    5000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1596,
+    100,
+    7001146,
+    600000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1597,
+    200,
+    7001146,
+    1200000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1598,
+    300,
+    7001146,
+    1800000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1599,
+    400,
+    7001146,
+    2600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1600,
+    500,
+    7001146,
+    3400000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1601,
+    600,
+    7001146,
+    4200000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1602,
+    700,
+    7001146,
+    5200000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1603,
+    800,
+    7001146,
+    6200000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1604,
+    900,
+    7001146,
+    7300000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1605,
+    1000,
+    7001146,
+    8400000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1606,
+    1100,
+    7001146,
+    8400000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1607,
+    100,
+    7001147,
+    500000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1608,
+    200,
+    7001147,
+    1000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1609,
+    300,
+    7001147,
+    1500000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1610,
+    400,
+    7001147,
+    2000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1611,
+    500,
+    7001147,
+    2500000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1612,
+    600,
+    7001147,
+    3000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1613,
+    700,
+    7001147,
+    3600000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1614,
+    800,
+    7001147,
+    4200000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1615,
+    900,
+    7001147,
+    5000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1616,
+    1000,
+    7001147,
+    6000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1617,
+    1100,
+    7001147,
+    6000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1618,
+    100,
+    7001148,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1619,
+    200,
+    7001148,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1620,
+    300,
+    7001148,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1621,
+    400,
+    7001148,
+    1600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1622,
+    500,
+    7001148,
+    2000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1623,
+    600,
+    7001148,
+    2500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1624,
+    700,
+    7001148,
+    3000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1625,
+    800,
+    7001148,
+    3600000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1626,
+    900,
+    7001148,
+    4200000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1627,
+    1000,
+    7001148,
+    5000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1628,
+    1100,
+    7001148,
+    5000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1629,
+    100,
+    7001149,
+    600000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1630,
+    200,
+    7001149,
+    1200000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1631,
+    300,
+    7001149,
+    1800000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1632,
+    400,
+    7001149,
+    2400000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1633,
+    500,
+    7001149,
+    3000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1634,
+    600,
+    7001149,
+    3700000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1635,
+    700,
+    7001149,
+    4500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1636,
+    800,
+    7001149,
+    5400000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1637,
+    900,
+    7001149,
+    6400000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1638,
+    1000,
+    7001149,
+    7500000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1639,
+    1100,
+    7001149,
+    7500000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1640,
+    100,
+    7001150,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1641,
+    200,
+    7001150,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1642,
+    300,
+    7001150,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1643,
+    400,
+    7001150,
+    1600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1644,
+    500,
+    7001150,
+    2000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1645,
+    600,
+    7001150,
+    2500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1646,
+    700,
+    7001150,
+    3000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1647,
+    800,
+    7001150,
+    3600000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1648,
+    900,
+    7001150,
+    4200000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1649,
+    1000,
+    7001150,
+    5000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1650,
+    1100,
+    7001150,
+    5000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1651,
+    100,
+    7001151,
+    250000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1652,
+    200,
+    7001151,
+    500000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1653,
+    300,
+    7001151,
+    750000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1654,
+    400,
+    7001151,
+    1000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1655,
+    500,
+    7001151,
+    1300000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1656,
+    600,
+    7001151,
+    1600000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1657,
+    700,
+    7001151,
+    2000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1658,
+    800,
+    7001151,
+    2400000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1659,
+    900,
+    7001151,
+    2800000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1660,
+    1000,
+    7001151,
+    3200000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1661,
+    1100,
+    7001151,
+    3200000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1662,
+    100,
+    7001152,
+    500000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1663,
+    200,
+    7001152,
+    1000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1664,
+    300,
+    7001152,
+    1500000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1665,
+    400,
+    7001152,
+    2000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1666,
+    500,
+    7001152,
+    2500000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1667,
+    600,
+    7001152,
+    3200000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1668,
+    700,
+    7001152,
+    4000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1669,
+    800,
+    7001152,
+    4800000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1670,
+    900,
+    7001152,
+    5600000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1671,
+    1000,
+    7001152,
+    6500000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1672,
+    1100,
+    7001152,
+    6500000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1673,
+    100,
+    7001153,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1674,
+    200,
+    7001153,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1675,
+    300,
+    7001153,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1676,
+    400,
+    7001153,
+    1600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1677,
+    500,
+    7001153,
+    2100000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1678,
+    600,
+    7001153,
+    2600000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1679,
+    700,
+    7001153,
+    3200000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1680,
+    800,
+    7001153,
+    3800000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1681,
+    900,
+    7001153,
+    4500000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1682,
+    1000,
+    7001153,
+    5200000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1683,
+    1100,
+    7001153,
+    5200000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1684,
+    100,
+    7001154,
+    1000000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1685,
+    200,
+    7001154,
+    2000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1686,
+    300,
+    7001154,
+    3000000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1687,
+    400,
+    7001154,
+    4000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1688,
+    500,
+    7001154,
+    5000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1689,
+    600,
+    7001154,
+    6000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1690,
+    700,
+    7001154,
+    7500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1691,
+    800,
+    7001154,
+    9000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1692,
+    900,
+    7001154,
+    10500000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1693,
+    1000,
+    7001154,
+    12000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1694,
+    1100,
+    7001154,
+    12000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1695,
+    100,
+    7001155,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1696,
+    200,
+    7001155,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1697,
+    300,
+    7001155,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1698,
+    400,
+    7001155,
+    1600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1699,
+    500,
+    7001155,
+    2000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1700,
+    600,
+    7001155,
+    2500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1701,
+    700,
+    7001155,
+    3000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1702,
+    800,
+    7001155,
+    3600000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1703,
+    900,
+    7001155,
+    4200000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1704,
+    1000,
+    7001155,
+    5000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1705,
+    1100,
+    7001155,
+    5000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1706,
+    100,
+    7001156,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1707,
+    200,
+    7001156,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1708,
+    300,
+    7001156,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1709,
+    400,
+    7001156,
+    1700000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1710,
+    500,
+    7001156,
+    2200000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1711,
+    600,
+    7001156,
+    2700000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1712,
+    700,
+    7001156,
+    3300000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1713,
+    800,
+    7001156,
+    4000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1714,
+    900,
+    7001156,
+    4700000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1715,
+    1000,
+    7001156,
+    5500000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1716,
+    1100,
+    7001156,
+    5500000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1717,
+    100,
+    7001157,
+    500000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1718,
+    200,
+    7001157,
+    1000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1719,
+    300,
+    7001157,
+    1500000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1720,
+    400,
+    7001157,
+    2000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1721,
+    500,
+    7001157,
+    2500000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1722,
+    600,
+    7001157,
+    3000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1723,
+    700,
+    7001157,
+    3500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1724,
+    800,
+    7001157,
+    4000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1725,
+    900,
+    7001157,
+    5000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1726,
+    1000,
+    7001157,
+    6000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1727,
+    1100,
+    7001157,
+    6000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1728,
+    100,
+    7001158,
+    600000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1729,
+    200,
+    7001158,
+    1200000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1730,
+    300,
+    7001158,
+    1800000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1731,
+    400,
+    7001158,
+    2600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1732,
+    500,
+    7001158,
+    3400000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1733,
+    600,
+    7001158,
+    4200000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1734,
+    700,
+    7001158,
+    5200000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1735,
+    800,
+    7001158,
+    6200000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1736,
+    900,
+    7001158,
+    7300000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1737,
+    1000,
+    7001158,
+    8400000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1738,
+    1100,
+    7001158,
+    8400000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1739,
+    100,
+    7001159,
+    500000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1740,
+    200,
+    7001159,
+    1000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1741,
+    300,
+    7001159,
+    1500000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1742,
+    400,
+    7001159,
+    2000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1743,
+    500,
+    7001159,
+    2500000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1744,
+    600,
+    7001159,
+    3000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1745,
+    700,
+    7001159,
+    3500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1746,
+    800,
+    7001159,
+    4000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1747,
+    900,
+    7001159,
+    5000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1748,
+    1000,
+    7001159,
+    6000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1749,
+    1100,
+    7001159,
+    6000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1750,
+    100,
+    7001160,
+    500000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1751,
+    200,
+    7001160,
+    1000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1752,
+    300,
+    7001160,
+    1500000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1753,
+    400,
+    7001160,
+    2000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1754,
+    500,
+    7001160,
+    2500000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1755,
+    600,
+    7001160,
+    3000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1756,
+    700,
+    7001160,
+    3600000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1757,
+    800,
+    7001160,
+    4200000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1758,
+    900,
+    7001160,
+    5000000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1759,
+    1000,
+    7001160,
+    6000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1760,
+    1100,
+    7001160,
+    6000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1761,
+    100,
+    7001161,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1762,
+    200,
+    7001161,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1763,
+    300,
+    7001161,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1764,
+    400,
+    7001161,
+    1600000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1765,
+    500,
+    7001161,
+    2000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1766,
+    600,
+    7001161,
+    2500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1767,
+    700,
+    7001161,
+    3000000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1768,
+    800,
+    7001161,
+    3600000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1769,
+    900,
+    7001161,
+    4200000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1770,
+    1000,
+    7001161,
+    5000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1771,
+    1100,
+    7001161,
+    5000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1772,
+    100,
+    7001162,
+    1000000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1773,
+    200,
+    7001162,
+    2000000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1774,
+    300,
+    7001162,
+    3000000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1775,
+    400,
+    7001162,
+    4000000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1776,
+    500,
+    7001162,
+    5000000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1777,
+    600,
+    7001162,
+    6000000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1778,
+    700,
+    7001162,
+    7500000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1779,
+    800,
+    7001162,
+    9000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1780,
+    900,
+    7001162,
+    10500000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1781,
+    1000,
+    7001162,
+    12000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1782,
+    1100,
+    7001162,
+    12000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1783,
+    100,
+    7001163,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1784,
+    200,
+    7001163,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1785,
+    300,
+    7001163,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1786,
+    400,
+    7001163,
+    1700000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1787,
+    500,
+    7001163,
+    2200000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1788,
+    600,
+    7001163,
+    2700000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1789,
+    700,
+    7001163,
+    3300000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1790,
+    800,
+    7001163,
+    4000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1791,
+    900,
+    7001163,
+    4700000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1792,
+    1000,
+    7001163,
+    5500000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1793,
+    1100,
+    7001163,
+    5500000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1794,
+    100,
+    7001164,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1795,
+    200,
+    7001164,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1796,
+    300,
+    7001164,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1797,
+    400,
+    7001164,
+    1700000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1798,
+    500,
+    7001164,
+    2200000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1799,
+    600,
+    7001164,
+    2700000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1800,
+    700,
+    7001164,
+    3300000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1801,
+    800,
+    7001164,
+    4000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1802,
+    900,
+    7001164,
+    4700000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1803,
+    1000,
+    7001164,
+    5500000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1804,
+    1100,
+    7001164,
+    5500000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1805,
+    100,
+    7001165,
+    400000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1806,
+    200,
+    7001165,
+    800000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1807,
+    300,
+    7001165,
+    1200000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1808,
+    400,
+    7001165,
+    1700000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1809,
+    500,
+    7001165,
+    2200000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1810,
+    600,
+    7001165,
+    2700000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1811,
+    700,
+    7001165,
+    3300000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1812,
+    800,
+    7001165,
+    4000000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1813,
+    900,
+    7001165,
+    4700000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1814,
+    1000,
+    7001165,
+    5500000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1815,
+    1100,
+    7001165,
+    5500000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  },
+  {
+    1816,
+    100,
+    7001166,
+    700000,
+    0,
+    40001,
+    common[9],
+    common[20],
+    common[21],
+    common[22]
+  },
+  {
+    1817,
+    200,
+    7001166,
+    1400000,
+    0,
+    40003,
+    common[10],
+    common[23],
+    common[24],
+    common[25]
+  },
+  {
+    1818,
+    300,
+    7001166,
+    2100000,
+    0,
+    40004,
+    common[11],
+    common[26],
+    common[27],
+    common[28],
+    1
+  },
+  {
+    1819,
+    400,
+    7001166,
+    2800000,
+    0,
+    40005,
+    common[12],
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    1820,
+    500,
+    7001166,
+    3600000,
+    0,
+    40006,
+    common[13],
+    common[32],
+    common[33],
+    common[34],
+    1
+  },
+  {
+    1821,
+    600,
+    7001166,
+    4500000,
+    0,
+    40007,
+    common[14],
+    common[35],
+    common[36],
+    common[37]
+  },
+  {
+    1822,
+    700,
+    7001166,
+    5400000,
+    0,
+    40008,
+    common[15],
+    common[38],
+    common[39],
+    common[40],
+    1
+  },
+  {
+    1823,
+    800,
+    7001166,
+    6300000,
+    0,
+    40011,
+    common[16],
+    common[41],
+    common[42],
+    common[43]
+  },
+  {
+    1824,
+    900,
+    7001166,
+    7600000,
+    0,
+    40012,
+    common[17],
+    common[44],
+    common[45],
+    common[46],
+    1
+  },
+  {
+    1825,
+    1000,
+    7001166,
+    9000000,
+    0,
+    40013,
+    common[18],
+    common[47],
+    common[48],
+    common[49]
+  },
+  {
+    1826,
+    1100,
+    7001166,
+    9000000,
+    999,
+    40014,
+    common[19],
+    common[50],
+    common[51],
+    common[52]
+  }
 }
 return config, "ID", key
-

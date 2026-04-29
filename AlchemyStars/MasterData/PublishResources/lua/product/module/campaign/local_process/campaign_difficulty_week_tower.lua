@@ -1,98 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_difficulty_week_tower.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignDifficultyWeekTower", ICampaignComponentLocalProcessBase)
 CCampaignDifficultyWeekTower = CCampaignDifficultyWeekTower
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignDifficultyWeekTower.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignDifficultyWeekTower:Constructor()
   self._weekTowerMissionComponent = nil
   self._weekTowerMissionComponentInfo = nil
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignDifficultyWeekTower.InitComponent = function(self, campaignObj)
-  -- function num : 0_1
+function CCampaignDifficultyWeekTower:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetWeekTowerMissionComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignDifficultyWeekTower.GetCampaignType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function CCampaignDifficultyWeekTower:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_DIFFICULTY_WEEK_TOWER
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignDifficultyWeekTower.CampaignObjInfo = function(self)
-  -- function num : 0_3
+function CCampaignDifficultyWeekTower:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignDifficultyWeekTower._GetWeekTowerMissionComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._weekTowerMissionComponent = (self._campaignObj):GetComponent(ECampaignDiffcultyWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_DIFFICULT_MISSION)
+function CCampaignDifficultyWeekTower:_GetWeekTowerMissionComponent()
+  self._weekTowerMissionComponent = self._campaignObj:GetComponent(ECampaignDiffcultyWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_DIFFICULT_MISSION)
   if not self._weekTowerMissionComponent then
-    return 
+    return
   end
-  self._weekTowerMissionComponentInfo = (self._weekTowerMissionComponent):ComponentInfo()
+  self._weekTowerMissionComponentInfo = self._weekTowerMissionComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignDifficultyWeekTower.GetComponent = function(self, componentID)
-  -- function num : 0_5 , upvalues : _ENV
+function CCampaignDifficultyWeekTower:GetComponent(componentID)
   if ECampaignDiffcultyWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_DIFFICULT_MISSION == componentID then
     return self._weekTowerMissionComponent
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignDifficultyWeekTower.GetComponentInfo = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignDifficultyWeekTower:GetComponentInfo(componentID)
   if ECampaignDiffcultyWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_DIFFICULT_MISSION == componentID then
     return self._weekTowerMissionComponentInfo
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignDifficultyWeekTower.GetEntryNew = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignDifficultyWeekTower:GetEntryNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_DIFFICULTY_WEEK_TOWER)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignDifficultyWeekTower.GetEntryRedDot = function(self)
-  -- function num : 0_8
+function CCampaignDifficultyWeekTower:GetEntryRedDot()
   return self:HardLineMissionRedDot()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignDifficultyWeekTower.HardLineMissionRedDot = function(self)
-  -- function num : 0_9
-  if not (self._weekTowerMissionComponent):ComponentIsOpen() then
+function CCampaignDifficultyWeekTower:HardLineMissionRedDot()
+  if not self._weekTowerMissionComponent:ComponentIsOpen() then
     return false
   end
-  return (self._weekTowerMissionComponent):HaveRedPoint()
+  return self._weekTowerMissionComponent:HaveRedPoint()
 end
-
-

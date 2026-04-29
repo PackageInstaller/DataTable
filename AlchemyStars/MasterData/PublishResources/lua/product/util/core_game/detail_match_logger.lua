@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/detail_match_logger.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DetailMatchLogger", Object)
 DetailMatchLogger = DetailMatchLogger
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DetailMatchLogger.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function DetailMatchLogger:Constructor(world)
   self._logs = {}
   self._skills = {}
   self._buffs = {}
@@ -16,467 +9,338 @@ DetailMatchLogger.Constructor = function(self, world)
   self._curPrefixStr = ""
   self._curTabCount = 0
   self._aiLogs = {}
-  self._logDate = (os.date)("%y%m%d%H%M%S")
+  self._logDate = os.date("%y%m%d%H%M%S")
   if not StringTable then
-    StringTable = {Get = function(name)
-    -- function num : 0_0_0
-    return name
-  end
-}
+    StringTable = {
+      Get = function(name)
+        return name
+      end
+    }
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DetailMatchLogger.CheckEnabled = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  if (self._world):GetRunningPosition() == WorldRunPostion.AtClient and not (self._world):IsDevelopEnv() then
+function DetailMatchLogger:CheckEnabled()
+  if self._world:GetRunningPosition() == WorldRunPostion.AtClient then
+    if not self._world:IsDevelopEnv() then
+      _G.ENABLE_DETAIL_MATCH_LOG = false
+    end
+  else
     _G.ENABLE_DETAIL_MATCH_LOG = false
   end
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  _G.ENABLE_DETAIL_MATCH_LOG = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DetailMatchLogger.GetLogs = function(self)
-  -- function num : 0_2
+function DetailMatchLogger:GetLogs()
   return self._logs
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DetailMatchLogger.AddTab = function(self)
-  -- function num : 0_3
+function DetailMatchLogger:AddTab()
   self._curTabCount = self._curTabCount + 1
   self:_CalcPrefixStr()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DetailMatchLogger.DelTab = function(self)
-  -- function num : 0_4
+function DetailMatchLogger:DelTab()
   self._curTabCount = self._curTabCount - 1
   self:_CalcPrefixStr()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DetailMatchLogger._CalcPrefixStr = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._curPrefixStr = (string.rep)("   ", self._curTabCount)
+function DetailMatchLogger:_CalcPrefixStr()
+  self._curPrefixStr = string.rep("   ", self._curTabCount)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DetailMatchLogger.AddMatchLog = function(self, logname, info, v)
-  -- function num : 0_6 , upvalues : _ENV
+function DetailMatchLogger:AddMatchLog(logname, info, v)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  ;
-  (table.insert)(self._logs, {name = logname, info = info})
+  table.insert(self._logs, {name = logname, info = info})
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DetailMatchLogger.SaveDetailMatchLog = function(self, open)
-  -- function num : 0_7 , upvalues : _ENV
+function DetailMatchLogger:SaveDetailMatchLog(open)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   local dir = EngineGameHelper.StoragePath .. "DetailMatchLog/"
-  ;
-  (App.MakeDir)(dir)
+  App.MakeDir(dir)
   local _filePath = dir .. "DetailMatchLog" .. self._logDate .. ".log"
-  local file = (io.open)(_filePath, "w+")
+  local file = io.open(_filePath, "w+")
   if file then
-    for i,log in ipairs(self._logs) do
+    for i, log in ipairs(self._logs) do
       file:write(log.info)
     end
-    ;
-    (io.close)(file)
+    io.close(file)
     if EDITOR and open then
-      (SmokingTestHub.OpenLogFile)(_filePath)
+      SmokingTestHub.OpenLogFile(_filePath)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DetailMatchLogger.SimpleLog = function(self, logStr)
-  -- function num : 0_8 , upvalues : _ENV
+function DetailMatchLogger:SimpleLog(logStr)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  local infoStr = (string.format)("%s%s\n", self._curPrefixStr, logStr)
+  local infoStr = string.format("%s%s\n", self._curPrefixStr, logStr)
   self:AddMatchLog("SimpleLog", infoStr)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DetailMatchLogger.BeginSkill = function(self, attackerid, attackpos, skillid, range)
-  -- function num : 0_9 , upvalues : _ENV
+function DetailMatchLogger:BeginSkill(attackerid, attackpos, skillid, range)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  local cfgsvc = (self._world):GetService("Config")
-  local skillName = (cfgsvc:GetSkillConfigData(skillid)):GetSkillName()
-  skillName = (StringTable.Get)(skillName)
-  local titleStr = (string.format)("【技能】攻击者[%d] 攻击位置[%s] 技能ID[%d] 技能名称[%s]", attackerid, self:V2PosToString(attackpos), skillid, skillName)
+  local cfgsvc = self._world:GetService("Config")
+  local skillName = cfgsvc:GetSkillConfigData(skillid):GetSkillName()
+  skillName = StringTable.Get(skillName)
+  local titleStr = string.format("【技能】攻击者[%d] 攻击位置[%s] 技能ID[%d] 技能名称[%s]", attackerid, self:V2PosToString(attackpos), skillid, skillName)
   self:BeginBlock("SkillBegin", titleStr)
   local rangeCopy = {}
-  ;
-  (table.appendArray)(rangeCopy, range)
-  local t = {desc = "攻击者[attackerid] 攻击位置[attackpos] 技能ID[skillid]", attackerid = attackerid, attackpos = attackpos, skillid = skillid, range = rangeCopy}
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._skills)[attackerid] = t
+  table.appendArray(rangeCopy, range)
+  local t = {
+    desc = "攻击者[attackerid] 攻击位置[attackpos] 技能ID[skillid]",
+    attackerid = attackerid,
+    attackpos = attackpos,
+    skillid = skillid,
+    range = rangeCopy
+  }
+  self._skills[attackerid] = t
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DetailMatchLogger.EndSkill = function(self, attackerid)
-  -- function num : 0_10 , upvalues : _ENV
+function DetailMatchLogger:EndSkill(attackerid)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  local v = (self._skills)[attackerid]
-  do
-    if v then
-      local desc = self:SkillLogToString(v)
-      -- DECOMPILER ERROR at PC13: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._skills)[attackerid] = nil
-      self:AddMatchLog("Skill", desc, v)
-    end
-    self:EndBlock("SkillEnd")
+  local v = self._skills[attackerid]
+  if v then
+    local desc = self:SkillLogToString(v)
+    self._skills[attackerid] = nil
+    self:AddMatchLog("Skill", desc, v)
   end
+  self:EndBlock("SkillEnd")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-DetailMatchLogger.BeginBuff = function(self, attackerid, buffid)
-  -- function num : 0_11 , upvalues : _ENV
+function DetailMatchLogger:BeginBuff(attackerid, buffid)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  local t = {desc = "攻击者[attackerid] BUFFID[buffid]", attackerid = attackerid, buffid = buffid}
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._buffs)[attackerid] = t
+  local t = {
+    desc = "攻击者[attackerid] BUFFID[buffid]",
+    attackerid = attackerid,
+    buffid = buffid
+  }
+  self._buffs[attackerid] = t
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-DetailMatchLogger.EndBuff = function(self, attackerid)
-  -- function num : 0_12 , upvalues : _ENV
+function DetailMatchLogger:EndBuff(attackerid)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  local v = (self._buffs)[attackerid]
+  local v = self._buffs[attackerid]
   if v then
     local desc = self:BuffLogToString(v)
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._buffs)[attackerid] = nil
+    self._buffs[attackerid] = nil
     self:AddMatchLog("Buff", desc, v)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-DetailMatchLogger.BeginDamageLog = function(self, attackerid)
-  -- function num : 0_13 , upvalues : _ENV
+function DetailMatchLogger:BeginDamageLog(attackerid)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  if not (self._buffs)[attackerid] then
-    local t = (self._skills)[attackerid]
-  end
+  local t = self._buffs[attackerid] or self._skills[attackerid]
   if not t then
-    return 
+    return
   end
   if not t.calcDamage then
     t.calcDamage = {}
   end
-  ;
-  (table.insert)(t.calcDamage, {})
+  table.insert(t.calcDamage, {})
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-DetailMatchLogger.AddDamageLog = function(self, attackerid, log)
-  -- function num : 0_14 , upvalues : _ENV
+function DetailMatchLogger:AddDamageLog(attackerid, log)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  if not (self._buffs)[attackerid] then
-    local t = (self._skills)[attackerid]
-  end
+  local t = self._buffs[attackerid] or self._skills[attackerid]
   if not t then
-    return 
+    return
   end
   if not t.calcDamage then
     t.calcDamage = {}
-    ;
-    (table.insert)(t.calcDamage, {})
+    table.insert(t.calcDamage, {})
   end
   local damagelog = t.calcDamage
   local t = damagelog[#damagelog]
-  ;
-  (table.insert)(t, log)
+  table.insert(t, log)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-DetailMatchLogger.EndDamageLog = function(self, attackerid)
-  -- function num : 0_15 , upvalues : _ENV
+function DetailMatchLogger:EndDamageLog(attackerid)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  if not (self._buffs)[attackerid] then
-    local attack = (self._skills)[attackerid]
-  end
+  local attack = self._buffs[attackerid] or self._skills[attackerid]
   if not attack then
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-DetailMatchLogger.AddBloodLog = function(self, attackerid, log)
-  -- function num : 0_16 , upvalues : _ENV
+function DetailMatchLogger:AddBloodLog(attackerid, log)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  if not (self._buffs)[attackerid] then
-    local t = (self._skills)[attackerid]
-  end
+  local t = self._buffs[attackerid] or self._skills[attackerid]
   if not t then
-    return 
+    return
   end
   if not t.calcAddBlood then
     t.calcAddBlood = {}
   end
-  ;
-  (table.insert)(t.calcAddBlood, log)
+  table.insert(t.calcAddBlood, log)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-DetailMatchLogger.AddHPShieldLog = function(self, attackerid, log)
-  -- function num : 0_17 , upvalues : _ENV
-  ((self._world):GetSyncLogger()):Trace(log)
+function DetailMatchLogger:AddHPShieldLog(attackerid, log)
+  self._world:GetSyncLogger():Trace(log)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  if not (self._buffs)[attackerid] then
-    local t = (self._skills)[attackerid]
-  end
+  local t = self._buffs[attackerid] or self._skills[attackerid]
   if not t then
-    return 
+    return
   end
   if not t.calcAddHPShield then
     t.calcAddHPShield = {}
   end
-  ;
-  (table.insert)(t.calcAddHPShield, log)
+  table.insert(t.calcAddHPShield, log)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-DetailMatchLogger.SkillLogToString = function(self, t)
-  -- function num : 0_18 , upvalues : _ENV
+function DetailMatchLogger:SkillLogToString(t)
   local strList = {}
-  local partStr = nil
-  local cfgsvc = (self._world):GetService("Config")
-  local skillName = (cfgsvc:GetSkillConfigData(t.skillid)):GetSkillName()
-  skillName = (StringTable.Get)(skillName)
-  partStr = (string.format)("%s[伤害日志] 技能[%d] 名字[%s]  %s {\n", self._curPrefixStr, t.skillid, skillName, self:LogToString(t))
-  ;
-  (table.insert)(strList, partStr)
+  local partStr
+  local cfgsvc = self._world:GetService("Config")
+  local skillName = cfgsvc:GetSkillConfigData(t.skillid):GetSkillName()
+  skillName = StringTable.Get(skillName)
+  partStr = string.format("%s[伤害日志] 技能[%d] 名字[%s]  %s {\n", self._curPrefixStr, t.skillid, skillName, self:LogToString(t))
+  table.insert(strList, partStr)
   self:AddTab()
   if t.calcDamage then
-    for i,v in ipairs(t.calcDamage) do
-      for k,d in ipairs(v) do
-        partStr = (string.format)("%s>>%s\n", self._curPrefixStr, self:LogToString(d))
-        ;
-        (table.insert)(strList, partStr)
+    for i, v in ipairs(t.calcDamage) do
+      for k, d in ipairs(v) do
+        partStr = string.format("%s>>%s\n", self._curPrefixStr, self:LogToString(d))
+        table.insert(strList, partStr)
       end
     end
   end
-  do
-    if t.calcAddBlood then
-      for i,v in ipairs(t.calcAddBlood) do
-        partStr = (string.format)("%s>>%s\n", self._curPrefixStr, self:LogToString(v))
-        ;
-        (table.insert)(strList, partStr)
-      end
-    end
-    do
-      if t.calcAddHPShield then
-        for i,v in ipairs(t.calcAddHPShield) do
-          partStr = (string.format)("%s>>%s\n", self._curPrefixStr, self:LogToString(v))
-          ;
-          (table.insert)(strList, partStr)
-        end
-      end
-      do
-        self:DelTab()
-        partStr = self:BlockEndStr()
-        ;
-        (table.insert)(strList, partStr)
-        local s = (table.concat)(strList)
-        return s
-      end
+  if t.calcAddBlood then
+    for i, v in ipairs(t.calcAddBlood) do
+      partStr = string.format("%s>>%s\n", self._curPrefixStr, self:LogToString(v))
+      table.insert(strList, partStr)
     end
   end
+  if t.calcAddHPShield then
+    for i, v in ipairs(t.calcAddHPShield) do
+      partStr = string.format("%s>>%s\n", self._curPrefixStr, self:LogToString(v))
+      table.insert(strList, partStr)
+    end
+  end
+  self:DelTab()
+  partStr = self:BlockEndStr()
+  table.insert(strList, partStr)
+  local s = table.concat(strList)
+  return s
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-DetailMatchLogger.BuffLogToString = function(self, t)
-  -- function num : 0_19 , upvalues : _ENV
+function DetailMatchLogger:BuffLogToString(t)
   local strList = {}
-  local partStr = nil
-  local cfgsvc = (self._world):GetService("Config")
-  local buffName = (cfgsvc:GetBuffConfigData(t.buffid)):GetBuffName()
-  buffName = (StringTable.Get)(buffName)
-  partStr = (string.format)("%s[伤害日志] BUFF[%d] 名字[%s]  %s {\n", self._curPrefixStr, t.buffid, buffName, self:LogToString(t))
-  ;
-  (table.insert)(strList, partStr)
+  local partStr
+  local cfgsvc = self._world:GetService("Config")
+  local buffName = cfgsvc:GetBuffConfigData(t.buffid):GetBuffName()
+  buffName = StringTable.Get(buffName)
+  partStr = string.format("%s[伤害日志] BUFF[%d] 名字[%s]  %s {\n", self._curPrefixStr, t.buffid, buffName, self:LogToString(t))
+  table.insert(strList, partStr)
   self:AddTab()
   if t.calcDamage then
-    for i,v in ipairs(t.calcDamage) do
-      for k,d in ipairs(v) do
-        partStr = (string.format)("%s>>%s\n", self._curPrefixStr, self:LogToString(d))
-        ;
-        (table.insert)(strList, partStr)
+    for i, v in ipairs(t.calcDamage) do
+      for k, d in ipairs(v) do
+        partStr = string.format("%s>>%s\n", self._curPrefixStr, self:LogToString(d))
+        table.insert(strList, partStr)
       end
     end
   end
-  do
-    if t.calcAddBlood then
-      for i,v in ipairs(t.calcAddBlood) do
-        partStr = (string.format)("%s>>%s\n", self._curPrefixStr, self:LogToString(v))
-        ;
-        (table.insert)(strList, partStr)
-      end
-    end
-    do
-      if t.calcAddHPShield then
-        for i,v in ipairs(t.calcAddHPShield) do
-          partStr = (string.format)("%s>>%s\n", self._curPrefixStr, self:LogToString(v))
-          ;
-          (table.insert)(strList, partStr)
-        end
-      end
-      do
-        self:DelTab()
-        partStr = self:BlockEndStr()
-        ;
-        (table.insert)(strList, partStr)
-        local s = (table.concat)(strList)
-        return s
-      end
+  if t.calcAddBlood then
+    for i, v in ipairs(t.calcAddBlood) do
+      partStr = string.format("%s>>%s\n", self._curPrefixStr, self:LogToString(v))
+      table.insert(strList, partStr)
     end
   end
+  if t.calcAddHPShield then
+    for i, v in ipairs(t.calcAddHPShield) do
+      partStr = string.format("%s>>%s\n", self._curPrefixStr, self:LogToString(v))
+      table.insert(strList, partStr)
+    end
+  end
+  self:DelTab()
+  partStr = self:BlockEndStr()
+  table.insert(strList, partStr)
+  local s = table.concat(strList)
+  return s
 end
 
-local splitT = nil
-local SplitToString = function(s)
-  -- function num : 0_20 , upvalues : _ENV, splitT
+local splitT
+
+local function SplitToString(s)
   return "[" .. tostring(splitT[s]) .. "]"
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.LogToString = function(self, t)
-  -- function num : 0_21 , upvalues : splitT, _ENV, SplitToString
+function DetailMatchLogger:LogToString(t)
   splitT = t
-  local desc = ((string.gsub)(t.desc, "%[(%w+)%]", SplitToString))
-  -- DECOMPILER ERROR at PC7: Overwrote pending register: R3 in 'AssignReg'
-
-  splitT = .end
+  local desc = string.gsub(t.desc, "%[(%w+)%]", SplitToString)
+  splitT = nil
   return desc
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.BlockBeginStr = function(self, blockNameStr)
-  -- function num : 0_22 , upvalues : _ENV
-  local infoStr = (string.format)("%s%s{\n", self._curPrefixStr, blockNameStr)
+function DetailMatchLogger:BlockBeginStr(blockNameStr)
+  local infoStr = string.format("%s%s{\n", self._curPrefixStr, blockNameStr)
   return infoStr
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.BlockEndStr = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local infoStr = (string.format)("%s}\n", self._curPrefixStr)
+function DetailMatchLogger:BlockEndStr()
+  local infoStr = string.format("%s}\n", self._curPrefixStr)
   return infoStr
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.BeginBlock = function(self, logName, blockNameStr)
-  -- function num : 0_24
+function DetailMatchLogger:BeginBlock(logName, blockNameStr)
   local infoStr = self:BlockBeginStr(blockNameStr)
   self:AddMatchLog(logName, infoStr)
   self:AddTab()
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.EndBlock = function(self, logName)
-  -- function num : 0_25
+function DetailMatchLogger:EndBlock(logName)
   self:DelTab()
   local infoStr = self:BlockEndStr()
   self:AddMatchLog(logName, infoStr)
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.TakeSnapshotBegin = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function DetailMatchLogger:TakeSnapshotBegin()
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   self:BeginBlock("SnapBegin", "【快照】")
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.TakeSnapshotEnd = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function DetailMatchLogger:TakeSnapshotEnd()
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   self:EndBlock("SnapEnd")
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.TakeSnapshot = function(self, onlyFsm)
-  -- function num : 0_28 , upvalues : _ENV
+function DetailMatchLogger:TakeSnapshot(onlyFsm)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   self:TakeSnapshotBegin()
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   local fsmInfo = self:GetFSMInfo()
   self:AddMatchLog("FSMInfo", fsmInfo)
   if onlyFsm then
     self:TakeSnapshotEnd()
-    return 
+    return
   end
   if teamEntity then
     local teamInfo = self:GetTeamInfo(teamEntity)
@@ -486,383 +350,293 @@ DetailMatchLogger.TakeSnapshot = function(self, onlyFsm)
     self:AddMatchLog("PetInfo", petInfo)
     self:EndBlock("EndPetInfo")
   end
-  do
-    self:BeginBlock("BeginMonsterInfo", "【怪物列表】")
-    local monsterInfo = self:GetMonsterInfo()
-    self:AddMatchLog("MonsterInfo", monsterInfo)
-    self:EndBlock("EndMonsterInfo")
-    self:BeginBlock("BeginTrapInfo", "【机关列表】")
-    local trapInfo = self:GetTrapInfo()
-    self:EndBlock("EndTrapInfo")
-    self:AddMatchLog("TrapInfo", trapInfo)
-    if (self._world):MatchType() == MatchType.MT_BlackFist then
-      teamEntity = ((self._world):Player()):GetRemoteTeamEntity()
-      local teamInfo = self:GetTeamInfo(teamEntity)
-      local petInfo = self:GetPetInfo(teamEntity)
-      self:AddMatchLog("EnemyTeamInfo", teamInfo)
-      self:AddMatchLog("EnemyPetInfo", petInfo)
-    end
-    do
-      self:TakeSnapshotEnd()
-    end
+  self:BeginBlock("BeginMonsterInfo", "【怪物列表】")
+  local monsterInfo = self:GetMonsterInfo()
+  self:AddMatchLog("MonsterInfo", monsterInfo)
+  self:EndBlock("EndMonsterInfo")
+  self:BeginBlock("BeginTrapInfo", "【机关列表】")
+  local trapInfo = self:GetTrapInfo()
+  self:EndBlock("EndTrapInfo")
+  self:AddMatchLog("TrapInfo", trapInfo)
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    teamEntity = self._world:Player():GetRemoteTeamEntity()
+    local teamInfo = self:GetTeamInfo(teamEntity)
+    local petInfo = self:GetPetInfo(teamEntity)
+    self:AddMatchLog("EnemyTeamInfo", teamInfo)
+    self:AddMatchLog("EnemyPetInfo", petInfo)
   end
+  self:TakeSnapshotEnd()
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.GetFSMInfo = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  local fsmState = ((self._world):GameFSM()):CurStateID()
+function DetailMatchLogger:GetFSMInfo()
+  local fsmState = self._world:GameFSM():CurStateID()
   local stateName = GetEnumKey("GameStateID", fsmState)
-  local roundCount = ((self._world):BattleStat()):GetLevelTotalRoundCount()
-  local curWaveNum = ((self._world):BattleStat()):GetCurWaveIndex()
-  local infoStr = (string.format)("%s【状态】 %s 回合[%d] 波次[%d] \n", self._curPrefixStr, stateName, roundCount, curWaveNum)
+  local roundCount = self._world:BattleStat():GetLevelTotalRoundCount()
+  local curWaveNum = self._world:BattleStat():GetCurWaveIndex()
+  local infoStr = string.format("%s【状态】 %s 回合[%d] 波次[%d] \n", self._curPrefixStr, stateName, roundCount, curWaveNum)
   return infoStr
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger._EntityAttrAndBuff = function(self, e)
-  -- function num : 0_30 , upvalues : _ENV
+function DetailMatchLogger:_EntityAttrAndBuff(e)
   local strList = {}
-  local partStr = nil
-  partStr = (string.format)("%s属性{\n", self._curPrefixStr)
-  ;
-  (table.insert)(strList, partStr)
+  local partStr
+  partStr = string.format("%s属性{\n", self._curPrefixStr)
+  table.insert(strList, partStr)
   self:AddTab()
   partStr = self:GetAttributeInfo(e)
-  ;
-  (table.insert)(strList, partStr)
+  table.insert(strList, partStr)
   self:DelTab()
   partStr = self:BlockEndStr()
-  ;
-  (table.insert)(strList, partStr)
-  partStr = (string.format)("%sbuff{\n", self._curPrefixStr)
-  ;
-  (table.insert)(strList, partStr)
+  table.insert(strList, partStr)
+  partStr = string.format("%sbuff{\n", self._curPrefixStr)
+  table.insert(strList, partStr)
   self:AddTab()
   partStr = self:GetBuffInfo(e)
-  ;
-  (table.insert)(strList, partStr)
+  table.insert(strList, partStr)
   self:DelTab()
   partStr = self:BlockEndStr()
-  ;
-  (table.insert)(strList, partStr)
-  partStr = (string.format)("%s[Render] buff{\n", self._curPrefixStr)
-  ;
-  (table.insert)(strList, partStr)
+  table.insert(strList, partStr)
+  partStr = string.format("%s[Render] buff{\n", self._curPrefixStr)
+  table.insert(strList, partStr)
   self:AddTab()
   partStr = self:GetEntityBuffViewInfo(e)
-  ;
-  (table.insert)(strList, partStr)
+  table.insert(strList, partStr)
   self:DelTab()
   partStr = self:BlockEndStr()
-  ;
-  (table.insert)(strList, partStr)
-  local s = (table.concat)(strList)
+  table.insert(strList, partStr)
+  local s = table.concat(strList)
   return s
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.GetTeamInfo = function(self, teamEntity)
-  -- function num : 0_31 , upvalues : _ENV
+function DetailMatchLogger:GetTeamInfo(teamEntity)
   local e = teamEntity
-  local pos = (e:GridLocation()):GetGridPos()
+  local pos = e:GridLocation():GetGridPos()
   local strList = {}
-  local partStr = nil
-  partStr = (string.format)("%s【队伍】 ID[%d] 位置[%s]{\n", self._curPrefixStr, e:GetID(), self:V2PosToString(pos))
-  ;
-  (table.insert)(strList, partStr)
+  local partStr
+  partStr = string.format("%s【队伍】 ID[%d] 位置[%s]{\n", self._curPrefixStr, e:GetID(), self:V2PosToString(pos))
+  table.insert(strList, partStr)
   self:AddTab()
   partStr = self:_EntityAttrAndBuff(e)
-  ;
-  (table.insert)(strList, partStr)
+  table.insert(strList, partStr)
   self:DelTab()
   partStr = self:BlockEndStr()
-  ;
-  (table.insert)(strList, partStr)
-  local s = (table.concat)(strList)
+  table.insert(strList, partStr)
+  local s = table.concat(strList)
   return s
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.GetPetInfo = function(self, teamEntity)
-  -- function num : 0_32 , upvalues : _ENV
-  local es = (teamEntity:Team()):GetTeamPetEntities()
+function DetailMatchLogger:GetPetInfo(teamEntity)
+  local es = teamEntity:Team():GetTeamPetEntities()
   local totalStrList = {}
-  local partStr = nil
+  local partStr
   local groupStrList = {}
-  for i,e in ipairs(es) do
-    local tid = (e:PetPstID()):GetTemplateID()
-    local pos = (e:GridLocation()):GetGridPos()
-    local name = (StringTable.Get)(((Cfg.cfg_pet)[tid]).Name)
+  for i, e in ipairs(es) do
+    local tid = e:PetPstID():GetTemplateID()
+    local pos = e:GridLocation():GetGridPos()
+    local name = StringTable.Get(Cfg.cfg_pet[tid].Name)
     local strList = {}
-    partStr = (string.format)("%s【光灵】[%s] 实体ID[%d] 光灵ID[%d] 位置[%s]{\n", self._curPrefixStr, name, e:GetID(), tid, self:V2PosToString(pos))
-    ;
-    (table.insert)(strList, partStr)
+    partStr = string.format("%s【光灵】[%s] 实体ID[%d] 光灵ID[%d] 位置[%s]{\n", self._curPrefixStr, name, e:GetID(), tid, self:V2PosToString(pos))
+    table.insert(strList, partStr)
     self:AddTab()
     partStr = self:_EntityAttrAndBuff(e)
-    ;
-    (table.insert)(strList, partStr)
+    table.insert(strList, partStr)
     self:DelTab()
     partStr = self:BlockEndStr()
-    ;
-    (table.insert)(strList, partStr)
-    local infoStr = (table.concat)(strList)
-    ;
-    (table.insert)(groupStrList, infoStr)
+    table.insert(strList, partStr)
+    local infoStr = table.concat(strList)
+    table.insert(groupStrList, infoStr)
   end
-  partStr = (table.concat)(groupStrList)
-  ;
-  (table.insert)(totalStrList, partStr)
-  local s = (table.concat)(totalStrList)
+  partStr = table.concat(groupStrList)
+  table.insert(totalStrList, partStr)
+  local s = table.concat(totalStrList)
   return s
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.GetMonsterInfo = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+function DetailMatchLogger:GetMonsterInfo()
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   local totalStrList = {}
-  local partStr = nil
+  local partStr
   local groupStrList = {}
-  for i,e in ipairs(group:GetEntities()) do
-    local tid = (e:MonsterID()):GetMonsterID()
-    local pos = (e:GridLocation()):GetGridPos()
-    local dir = (e:GridLocation()):GetGridDir()
-    local name = (StringTable.Get)(((Cfg.cfg_monster_class)[((Cfg.cfg_monster)[tid]).ClassID]).Name)
+  for i, e in ipairs(group:GetEntities()) do
+    local tid = e:MonsterID():GetMonsterID()
+    local pos = e:GridLocation():GetGridPos()
+    local dir = e:GridLocation():GetGridDir()
+    local name = StringTable.Get(Cfg.cfg_monster_class[Cfg.cfg_monster[tid].ClassID].Name)
     local strList = {}
-    partStr = (string.format)("%s【怪物】[%s] 实体ID[%d] 怪物ID[%d] 位置[%s]{\n", self._curPrefixStr, name, e:GetID(), tid, self:V2PosToString(pos))
-    ;
-    (table.insert)(strList, partStr)
+    partStr = string.format("%s【怪物】[%s] 实体ID[%d] 怪物ID[%d] 位置[%s]{\n", self._curPrefixStr, name, e:GetID(), tid, self:V2PosToString(pos))
+    table.insert(strList, partStr)
     self:AddTab()
     partStr = self:_EntityAttrAndBuff(e)
-    ;
-    (table.insert)(strList, partStr)
+    table.insert(strList, partStr)
     self:DelTab()
     partStr = self:BlockEndStr()
-    ;
-    (table.insert)(strList, partStr)
-    local infoStr = (table.concat)(strList)
-    ;
-    (table.insert)(groupStrList, infoStr)
+    table.insert(strList, partStr)
+    local infoStr = table.concat(strList)
+    table.insert(groupStrList, infoStr)
   end
-  partStr = (table.concat)(groupStrList)
-  ;
-  (table.insert)(totalStrList, partStr)
-  local s = (table.concat)(totalStrList)
+  partStr = table.concat(groupStrList)
+  table.insert(totalStrList, partStr)
+  local s = table.concat(totalStrList)
   return s
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.GetTrapInfo = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
+function DetailMatchLogger:GetTrapInfo()
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
   local totalStrList = {}
-  local partStr = nil
+  local partStr
   local groupStrList = {}
-  for i,e in ipairs(group:GetEntities()) do
-    local tid = (e:Trap()):GetTrapID()
-    local pos = (e:GridLocation()):GetGridPos()
-    local dir = (e:GridLocation()):GetGridDir()
-    local name = (StringTable.Get)(((Cfg.cfg_trap)[tid]).NameStr)
+  for i, e in ipairs(group:GetEntities()) do
+    local tid = e:Trap():GetTrapID()
+    local pos = e:GridLocation():GetGridPos()
+    local dir = e:GridLocation():GetGridDir()
+    local name = StringTable.Get(Cfg.cfg_trap[tid].NameStr)
     if name == nil then
       name = "null"
     end
     local strList = {}
-    partStr = (string.format)("%s【机关】[%s] 实体ID[%d] 机关ID[%d] 位置[%s]{\n", self._curPrefixStr, name, e:GetID(), tid, self:V2PosToString(pos))
-    ;
-    (table.insert)(strList, partStr)
+    partStr = string.format("%s【机关】[%s] 实体ID[%d] 机关ID[%d] 位置[%s]{\n", self._curPrefixStr, name, e:GetID(), tid, self:V2PosToString(pos))
+    table.insert(strList, partStr)
     self:AddTab()
     partStr = self:_EntityAttrAndBuff(e)
-    ;
-    (table.insert)(strList, partStr)
+    table.insert(strList, partStr)
     self:DelTab()
     partStr = self:BlockEndStr()
-    ;
-    (table.insert)(strList, partStr)
-    local infoStr = (table.concat)(strList)
-    ;
-    (table.insert)(groupStrList, infoStr)
+    table.insert(strList, partStr)
+    local infoStr = table.concat(strList)
+    table.insert(groupStrList, infoStr)
   end
-  partStr = (table.concat)(groupStrList)
-  ;
-  (table.insert)(totalStrList, partStr)
-  local s = (table.concat)(totalStrList)
+  partStr = table.concat(groupStrList)
+  table.insert(totalStrList, partStr)
+  local s = table.concat(totalStrList)
   return s
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.GetBuffInfo = function(self, e)
-  -- function num : 0_35 , upvalues : _ENV
+function DetailMatchLogger:GetBuffInfo(e)
   local buffCom = e:BuffComponent()
   if buffCom then
     if #buffCom:GetBuffArray() == 0 then
-      return (string.format)("%s\n", self._curPrefixStr)
+      return string.format("%s\n", self._curPrefixStr)
     end
     local buffStrList = {}
-    for i,buff in ipairs(buffCom:GetBuffArray()) do
+    for i, buff in ipairs(buffCom:GetBuffArray()) do
       local buffid = buff:BuffID()
       local buffEffectType = buff:GetBuffEffectType()
       local buffSeq = buff:BuffSeq()
       local layerCount = buff:GetLayerCount()
-      local name = (StringTable.Get)(((Cfg.cfg_buff)[buffid]).Name)
-      local desc = (string.format)("%sbuffID[%d] 名称[%s] EffectType[%d] Seq[%d] 层数[%d]\n", self._curPrefixStr, buffid, name, buffEffectType, buffSeq, layerCount)
-      ;
-      (table.insert)(buffStrList, desc)
+      local name = StringTable.Get(Cfg.cfg_buff[buffid].Name)
+      local desc = string.format("%sbuffID[%d] 名称[%s] EffectType[%d] Seq[%d] 层数[%d]\n", self._curPrefixStr, buffid, name, buffEffectType, buffSeq, layerCount)
+      table.insert(buffStrList, desc)
     end
-    local buffListStr = (table.concat)(buffStrList)
+    local buffListStr = table.concat(buffStrList)
     return buffListStr
   end
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.GetEntityBuffViewInfo = function(self, e)
-  -- function num : 0_36 , upvalues : _ENV
+function DetailMatchLogger:GetEntityBuffViewInfo(e)
   local buffCom = e:BuffView()
   if buffCom then
-    local viewInsArray = (e:BuffView()):GetBuffViewInstanceArray()
+    local viewInsArray = e:BuffView():GetBuffViewInstanceArray()
     if #viewInsArray == 0 then
-      return (string.format)("%s\n", self._curPrefixStr)
+      return string.format("%s\n", self._curPrefixStr)
     end
     local buffStrList = {}
-    for _,inst in ipairs(viewInsArray) do
+    for _, inst in ipairs(viewInsArray) do
       local buff = inst
       local buffid = buff:BuffID()
       local buffEffectType = buff:GetBuffEffectType()
       local buffSeq = buff:BuffSeq()
       local layerCount = buff:GetLayerCount()
-      local name = (StringTable.Get)(((Cfg.cfg_buff)[buffid]).Name)
-      local desc = (string.format)("%s[Render] buffID[%d] 名称[%s] EffectType[%d] Seq[%d] 层数[%d]\n", self._curPrefixStr, buffid, name, buffEffectType, buffSeq, layerCount)
-      ;
-      (table.insert)(buffStrList, desc)
+      local name = StringTable.Get(Cfg.cfg_buff[buffid].Name)
+      local desc = string.format("%s[Render] buffID[%d] 名称[%s] EffectType[%d] Seq[%d] 层数[%d]\n", self._curPrefixStr, buffid, name, buffEffectType, buffSeq, layerCount)
+      table.insert(buffStrList, desc)
     end
-    local buffListStr = (table.concat)(buffStrList)
+    local buffListStr = table.concat(buffStrList)
     return buffListStr
   end
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.GetAttributeInfo = function(self, e)
-  -- function num : 0_37 , upvalues : _ENV
+function DetailMatchLogger:GetAttributeInfo(e)
   local attrCom = e:Attributes()
   local buffCom = e:BuffComponent()
   local attrStrList = {}
-  for name,attr in pairs(attrCom.modifierDic) do
+  for name, attr in pairs(attrCom.modifierDic) do
     local value = attr:Value()
     if type(value) == "number" then
       local buffIdListStr = ""
-      do
-        if attr.valueModifyList then
-          local buffIdStrList = {}
-          for i,v in ipairs(attr.valueModifyList) do
-            if v[1] > 1000 and buffCom then
-              local buffInstance = buffCom:GetBuffBySeq(v[1])
-              if buffInstance then
-                local buffid = buffInstance:BuffID()
-                ;
-                (table.insert)(buffIdStrList, tostring(buffid))
-              end
+      if attr.valueModifyList then
+        local buffIdStrList = {}
+        for i, v in ipairs(attr.valueModifyList) do
+          if v[1] > 1000 and buffCom then
+            local buffInstance = buffCom:GetBuffBySeq(v[1])
+            if buffInstance then
+              local buffid = buffInstance:BuffID()
+              table.insert(buffIdStrList, tostring(buffid))
             end
           end
-          buffIdListStr = (table.concat)(buffIdStrList, ",")
         end
-        do
-          local desc = nil
-          if name == "HP" then
-            desc = (string.format)("%s%s[%s] 修改BuffID[%s]\n%s灰血池积蓄[%s]\n", self._curPrefixStr, self:GetAttrCNName(name), tostring(value), buffIdListStr, self._curPrefixStr, tostring(buffCom:GetGreyHPValue(true)))
-          else
-            desc = (string.format)("%s%s[%s] 修改BuffID[%s]\n", self._curPrefixStr, self:GetAttrCNName(name), tostring(value), buffIdListStr)
-          end
-          ;
-          (table.insert)(attrStrList, desc)
-          -- DECOMPILER ERROR at PC93: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC93: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC93: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+        buffIdListStr = table.concat(buffIdStrList, ",")
       end
+      local desc
+      if name == "HP" then
+        desc = string.format("%s%s[%s] 修改BuffID[%s]\n%s灰血池积蓄[%s]\n", self._curPrefixStr, self:GetAttrCNName(name), tostring(value), buffIdListStr, self._curPrefixStr, tostring(buffCom:GetGreyHPValue(true)))
+      else
+        desc = string.format("%s%s[%s] 修改BuffID[%s]\n", self._curPrefixStr, self:GetAttrCNName(name), tostring(value), buffIdListStr)
+      end
+      table.insert(attrStrList, desc)
     end
   end
-  local attrListStr = (table.concat)(attrStrList)
+  local attrListStr = table.concat(attrStrList)
   return attrListStr
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.GetAttrCNName = function(self, name)
-  -- function num : 0_38 , upvalues : _ENV
+function DetailMatchLogger:GetAttrCNName(name)
   return AttrCN[name] or name
 end
 
--- DECOMPILER ERROR at PC124: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.GameFsmNodeEnter = function(self, stateID, stateName)
-  -- function num : 0_39 , upvalues : _ENV
+function DetailMatchLogger:GameFsmNodeEnter(stateID, stateName)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  local roundCount = ((self._world):BattleStat()):GetLevelTotalRoundCount()
-  local curWaveNum = ((self._world):BattleStat()):GetCurWaveIndex()
-  local infoStr = (string.format)("%s【状态机】【进入】 %s  %02d. 回合[%d] 波次[%d]{\n", self._curPrefixStr, stateName, stateID, roundCount, curWaveNum)
+  local roundCount = self._world:BattleStat():GetLevelTotalRoundCount()
+  local curWaveNum = self._world:BattleStat():GetCurWaveIndex()
+  local infoStr = string.format("%s【状态机】【进入】 %s  %02d. 回合[%d] 波次[%d]{\n", self._curPrefixStr, stateName, stateID, roundCount, curWaveNum)
   self:AddMatchLog("FsmNodeInfo", infoStr)
   self:AddTab()
 end
 
--- DECOMPILER ERROR at PC127: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.GameFsmNodeExit = function(self, stateID, stateName)
-  -- function num : 0_40 , upvalues : _ENV
+function DetailMatchLogger:GameFsmNodeExit(stateID, stateName)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   self:DelTab()
-  local infoStr = (string.format)("%s}【退出】 %s  %02d. \n\n", self._curPrefixStr, stateName, stateID)
+  local infoStr = string.format("%s}【退出】 %s  %02d. \n\n", self._curPrefixStr, stateName, stateID)
   self:AddMatchLog("FsmNodeInfo", infoStr)
 end
 
--- DECOMPILER ERROR at PC130: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.V2PosToString = function(self, pos)
-  -- function num : 0_41 , upvalues : _ENV
-  local str = (string.format)("(%s,%s)", tostring(pos.x), tostring(pos.y))
+function DetailMatchLogger:V2PosToString(pos)
+  local str = string.format("(%s,%s)", tostring(pos.x), tostring(pos.y))
   return str
 end
 
--- DECOMPILER ERROR at PC133: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.BeginNotify = function(self, notify)
-  -- function num : 0_42 , upvalues : _ENV
+function DetailMatchLogger:BeginNotify(notify)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   local notifyType = notify:GetNotifyType()
   if notifyType == NotifyType.AddMatchLog then
-    return 
+    return
   end
   self:BeginBlock("BeginNotify", "【通知】")
   local notifyType = notify:GetNotifyType()
   local notifyTypeName = GetEnumKey("NotifyType", notifyType)
-  local titleStr = (string.format)("通知[%s] 枚举值[%d] 成员:", notifyTypeName, notifyType)
+  local titleStr = string.format("通知[%s] 枚举值[%d] 成员:", notifyTypeName, notifyType)
   self:BeginBlock("BeginNotifyInfo", titleStr)
   local infoStr = self:GetNotifyInfo(notify)
   self:AddMatchLog("NotifyInfo", infoStr)
   self:EndBlock("EndNotifyInfo")
 end
 
--- DECOMPILER ERROR at PC136: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.GetNotifyInfo = function(self, notify)
-  -- function num : 0_43 , upvalues : _ENV
+function DetailMatchLogger:GetNotifyInfo(notify)
   local notifyType = notify:GetNotifyType()
   local notifyTypeName = GetEnumKey("NotifyType", notifyType)
   local notifyEntity = notify:GetNotifyEntity()
@@ -872,10 +646,10 @@ DetailMatchLogger.GetNotifyInfo = function(self, notify)
   end
   local totalStrList = {}
   local notifyMemberStrList = {}
-  local partStr = nil
-  for key,value in pairs(notify) do
+  local partStr
+  for key, value in pairs(notify) do
     if key ~= "_className" then
-      local eID, attackRange, attackRangeStr = nil, nil, nil
+      local eID, attackRange, attackRangeStr
       if type(value) == "table" and value._className then
         if value.GetID then
           eID = value:GetID()
@@ -883,75 +657,52 @@ DetailMatchLogger.GetNotifyInfo = function(self, notify)
         if value.GetAttackRange then
           attackRange = value:GetAttackRange()
           local st = {}
-          for i,v in ipairs(attackRange) do
+          for i, v in ipairs(attackRange) do
             if v._className == "Vector2" then
-              st[#st + 1] = (Vector2.Pos2Index)(v)
+              st[#st + 1] = Vector2.Pos2Index(v)
             end
           end
-          attackRangeStr = (table.concat)(st, " ")
+          attackRangeStr = table.concat(st, " ")
         end
       end
-      do
-        do
-          if eID then
-            partStr = (string.format)("%s%s : EntityID[%d]\n", self._curPrefixStr, tostring(key), eID)
-          else
-            if attackRangeStr then
-              partStr = (string.format)("%s%s : AttackRange[%s]\n", self._curPrefixStr, tostring(key), attackRangeStr)
-            else
-              partStr = (string.format)("%s%s : %s\n", self._curPrefixStr, tostring(key), self:_ToString(value))
-            end
-          end
-          ;
-          (table.insert)(notifyMemberStrList, partStr)
-          -- DECOMPILER ERROR at PC110: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC110: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC110: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      if eID then
+        partStr = string.format("%s%s : EntityID[%d]\n", self._curPrefixStr, tostring(key), eID)
+      elseif attackRangeStr then
+        partStr = string.format("%s%s : AttackRange[%s]\n", self._curPrefixStr, tostring(key), attackRangeStr)
+      else
+        partStr = string.format("%s%s : %s\n", self._curPrefixStr, tostring(key), self:_ToString(value))
       end
+      table.insert(notifyMemberStrList, partStr)
     end
   end
-  local memberListStr = (table.concat)(notifyMemberStrList)
-  ;
-  (table.insert)(totalStrList, memberListStr)
-  local totalStr = (table.concat)(totalStrList)
+  local memberListStr = table.concat(notifyMemberStrList)
+  table.insert(totalStrList, memberListStr)
+  local totalStr = table.concat(totalStrList)
   return totalStr
 end
 
--- DECOMPILER ERROR at PC139: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.EndNotify = function(self, notify)
-  -- function num : 0_44 , upvalues : _ENV
+function DetailMatchLogger:EndNotify(notify)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   local notifyType = notify:GetNotifyType()
   if notifyType == NotifyType.AddMatchLog then
-    return 
+    return
   end
   self:EndBlock("EndNotify")
 end
 
--- DECOMPILER ERROR at PC142: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.BeginTriggerSuccess = function(self, triggers)
-  -- function num : 0_45 , upvalues : _ENV
+function DetailMatchLogger:BeginTriggerSuccess(triggers)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   self:BeginBlock("BeginTriggerSuccess", "【触发】")
 end
 
--- DECOMPILER ERROR at PC145: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.GetTriggersInfo = function(self, triggers)
-  -- function num : 0_46 , upvalues : _ENV
-  local condStr = nil
+function DetailMatchLogger:GetTriggersInfo(triggers)
+  local condStr
   local condStrList = {}
-  for i,trigger in ipairs(triggers) do
+  for i, trigger in ipairs(triggers) do
     local combinedTrigger = trigger
     local triggerOwner = combinedTrigger:GetTriggerOwner()
     local ownerID = 0
@@ -966,22 +717,14 @@ DetailMatchLogger.GetTriggersInfo = function(self, triggers)
     if triggerOwnerClassName then
       if triggerOwnerClassName == "BuffLoadHandler" then
         triggerOwnerClassName = "加载"
-      else
-        if triggerOwnerClassName == "BuffActiveHandler" then
-          triggerOwnerClassName = "激活条件"
-        else
-          if triggerOwnerClassName == "BuffExecuteHandler" then
-            triggerOwnerClassName = "执行条件"
-          else
-            if triggerOwnerClassName == "BuffDeactiveHandler" then
-              triggerOwnerClassName = "失活条件"
-            else
-              if triggerOwnerClassName == "BuffUnloadHandler" then
-                triggerOwnerClassName = "卸载"
-              end
-            end
-          end
-        end
+      elseif triggerOwnerClassName == "BuffActiveHandler" then
+        triggerOwnerClassName = "激活条件"
+      elseif triggerOwnerClassName == "BuffExecuteHandler" then
+        triggerOwnerClassName = "执行条件"
+      elseif triggerOwnerClassName == "BuffDeactiveHandler" then
+        triggerOwnerClassName = "失活条件"
+      elseif triggerOwnerClassName == "BuffUnloadHandler" then
+        triggerOwnerClassName = "卸载"
       end
     end
     if ownerBuffInstance then
@@ -989,50 +732,35 @@ DetailMatchLogger.GetTriggersInfo = function(self, triggers)
       ownerBuffID = ownerBuffInstance:BuffID()
     end
     local triggerNotifyType = combinedTrigger:GetNotifyType()
-    local notifyListStr = (table.concat)(triggerNotifyType, ",")
-    local triggerList = (combinedTrigger:GetTriggers())
-    local triggerStr = nil
+    local notifyListStr = table.concat(triggerNotifyType, ",")
+    local triggerList = combinedTrigger:GetTriggers()
+    local triggerStr
     local triggerStrList = {}
-    for _,trigger in ipairs(triggerList) do
+    for _, trigger in ipairs(triggerList) do
       local triggerType = trigger:GetTriggerType()
       local triggerTypeName = GetEnumKey("TriggerType", triggerType)
       local triggerParams = trigger._param
-      if #triggerParams > 0 then
-        local paramStr = (table.concat)(triggerParams, ",")
-        triggerStr = (string.format)("触发类型:%d[%s],参数列表:%s", triggerType, triggerTypeName, paramStr)
+      if 0 < #triggerParams then
+        local paramStr = table.concat(triggerParams, ",")
+        triggerStr = string.format("触发类型:%d[%s],参数列表:%s", triggerType, triggerTypeName, paramStr)
       else
-        do
-          do
-            triggerStr = (string.format)("触发类型:%d[%s]", triggerType, triggerTypeName)
-            ;
-            (table.insert)(triggerStrList, triggerStr)
-            -- DECOMPILER ERROR at PC101: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC101: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC101: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        triggerStr = string.format("触发类型:%d[%s]", triggerType, triggerTypeName)
       end
+      table.insert(triggerStrList, triggerStr)
     end
-    local triggerListStr = (table.concat)(triggerStrList, " | ")
-    condStr = (string.format)("%s宿主ID[%d] Buff序号[%d] BuffID[%d] [%s] 通知列表 %s|%s\n", self._curPrefixStr, ownerID, ownerBuffSeq, ownerBuffID, triggerOwnerClassName, notifyListStr, triggerListStr)
-    ;
-    (table.insert)(condStrList, condStr)
+    local triggerListStr = table.concat(triggerStrList, " | ")
+    condStr = string.format("%s宿主ID[%d] Buff序号[%d] BuffID[%d] [%s] 通知列表 %s|%s\n", self._curPrefixStr, ownerID, ownerBuffSeq, ownerBuffID, triggerOwnerClassName, notifyListStr, triggerListStr)
+    table.insert(condStrList, condStr)
   end
-  local condListStr = (table.concat)(condStrList)
+  local condListStr = table.concat(condStrList)
   return condListStr
 end
 
--- DECOMPILER ERROR at PC148: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.RecordTriggerSuccess = function(self, trigger)
-  -- function num : 0_47 , upvalues : _ENV
+function DetailMatchLogger:RecordTriggerSuccess(trigger)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  local condStr = nil
+  local condStr
   local condStrList = {}
   local combinedTrigger = trigger
   local triggerOwner = combinedTrigger:GetTriggerOwner()
@@ -1048,22 +776,14 @@ DetailMatchLogger.RecordTriggerSuccess = function(self, trigger)
   if triggerOwnerClassName then
     if triggerOwnerClassName == "BuffLoadHandler" then
       triggerOwnerClassName = "加载"
-    else
-      if triggerOwnerClassName == "BuffActiveHandler" then
-        triggerOwnerClassName = "激活条件"
-      else
-        if triggerOwnerClassName == "BuffExecuteHandler" then
-          triggerOwnerClassName = "执行条件"
-        else
-          if triggerOwnerClassName == "BuffDeactiveHandler" then
-            triggerOwnerClassName = "失活条件"
-          else
-            if triggerOwnerClassName == "BuffUnloadHandler" then
-              triggerOwnerClassName = "卸载"
-            end
-          end
-        end
-      end
+    elseif triggerOwnerClassName == "BuffActiveHandler" then
+      triggerOwnerClassName = "激活条件"
+    elseif triggerOwnerClassName == "BuffExecuteHandler" then
+      triggerOwnerClassName = "执行条件"
+    elseif triggerOwnerClassName == "BuffDeactiveHandler" then
+      triggerOwnerClassName = "失活条件"
+    elseif triggerOwnerClassName == "BuffUnloadHandler" then
+      triggerOwnerClassName = "卸载"
     end
   end
   if ownerBuffInstance then
@@ -1071,68 +791,48 @@ DetailMatchLogger.RecordTriggerSuccess = function(self, trigger)
     ownerBuffID = ownerBuffInstance:BuffID()
   end
   local triggerNotifyType = combinedTrigger:GetNotifyType()
-  local notifyListStr = (table.concat)(triggerNotifyType, ",")
-  local triggerList = (combinedTrigger:GetTriggers())
-  local triggerStr = nil
+  local notifyListStr = table.concat(triggerNotifyType, ",")
+  local triggerList = combinedTrigger:GetTriggers()
+  local triggerStr
   local triggerStrList = {}
-  for _,trigger in ipairs(triggerList) do
+  for _, trigger in ipairs(triggerList) do
     local triggerType = trigger:GetTriggerType()
     local triggerTypeName = GetEnumKey("TriggerType", triggerType)
     local triggerParams = trigger._param
-    if #triggerParams > 0 then
-      local paramStr = (table.concat)(triggerParams, ",")
-      triggerStr = (string.format)("触发类型:%d[%s],参数列表:%s", triggerType, triggerTypeName, paramStr)
+    if 0 < #triggerParams then
+      local paramStr = table.concat(triggerParams, ",")
+      triggerStr = string.format("触发类型:%d[%s],参数列表:%s", triggerType, triggerTypeName, paramStr)
     else
-      do
-        do
-          triggerStr = (string.format)("触发类型:%d[%s]", triggerType, triggerTypeName)
-          ;
-          (table.insert)(triggerStrList, triggerStr)
-          -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      triggerStr = string.format("触发类型:%d[%s]", triggerType, triggerTypeName)
     end
+    table.insert(triggerStrList, triggerStr)
   end
-  local triggerListStr = (table.concat)(triggerStrList, " | ")
-  condStr = (string.format)("%s宿主ID[%d] Buff序号[%d] BuffID[%d] [%s] 通知列表 %s|%s\n", self._curPrefixStr, ownerID, ownerBuffSeq, ownerBuffID, triggerOwnerClassName, notifyListStr, triggerListStr)
+  local triggerListStr = table.concat(triggerStrList, " | ")
+  condStr = string.format("%s宿主ID[%d] Buff序号[%d] BuffID[%d] [%s] 通知列表 %s|%s\n", self._curPrefixStr, ownerID, ownerBuffSeq, ownerBuffID, triggerOwnerClassName, notifyListStr, triggerListStr)
   local infoStr = condStr
   self:AddMatchLog("BeginTriggerSuccess", infoStr)
 end
 
--- DECOMPILER ERROR at PC151: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.EndTriggerSuccess = function(self)
-  -- function num : 0_48 , upvalues : _ENV
+function DetailMatchLogger:EndTriggerSuccess()
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   self:EndBlock("EndTriggerSuccess")
 end
 
--- DECOMPILER ERROR at PC154: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.BeginTriggerLogic = function(self, TypeStr)
-  -- function num : 0_49 , upvalues : _ENV
+function DetailMatchLogger:BeginTriggerLogic(TypeStr)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  local blockNameStr = (string.format)("【执行】[%s]", TypeStr)
+  local blockNameStr = string.format("【执行】[%s]", TypeStr)
   local infoStr = self:BlockBeginStr(blockNameStr)
   self:AddMatchLog("BeginTriggerLogic", infoStr)
   self:AddTab()
 end
 
--- DECOMPILER ERROR at PC157: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.RecordBuffInstance = function(self, buffInstance, ownerEntityID)
-  -- function num : 0_50 , upvalues : _ENV
+function DetailMatchLogger:RecordBuffInstance(buffInstance, ownerEntityID)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   local ownerBuffSeq = -1
   local ownerBuffID = -1
@@ -1140,27 +840,21 @@ DetailMatchLogger.RecordBuffInstance = function(self, buffInstance, ownerEntityI
     ownerBuffSeq = buffInstance:BuffSeq()
     ownerBuffID = buffInstance:BuffID()
   end
-  local infoStr = (string.format)("%sBuff实例 宿主ID[%d] Buff序号[%d] BuffID[%d]\n", self._curPrefixStr, ownerEntityID, ownerBuffSeq, ownerBuffID)
+  local infoStr = string.format("%sBuff实例 宿主ID[%d] Buff序号[%d] BuffID[%d]\n", self._curPrefixStr, ownerEntityID, ownerBuffSeq, ownerBuffID)
   self:AddMatchLog("RecordBuffInstance", infoStr)
 end
 
--- DECOMPILER ERROR at PC160: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.RecordTriggerLogic = function(self, index, logic)
-  -- function num : 0_51 , upvalues : _ENV
+function DetailMatchLogger:RecordTriggerLogic(index, logic)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  local infoStr = (string.format)("buff逻辑: 序号[%d] 逻辑[%s]", index, logic:GetLogicName())
+  local infoStr = string.format("buff逻辑: 序号[%d] 逻辑[%s]", index, logic:GetLogicName())
   self:BeginBlock("BeginRecordTriggerLogic", infoStr)
 end
 
--- DECOMPILER ERROR at PC163: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.RecordBuffLogic = function(self, logic)
-  -- function num : 0_52 , upvalues : _ENV
+function DetailMatchLogger:RecordBuffLogic(logic)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   self:BeginBlock("BeginRecordBuffLogic", "成员:")
   local infoStr = self:GetBuffLogicInfo(logic)
@@ -1168,368 +862,291 @@ DetailMatchLogger.RecordBuffLogic = function(self, logic)
   self:EndBlock("EndRecordBuffLogic")
 end
 
--- DECOMPILER ERROR at PC166: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.GetBuffLogicInfo = function(self, logic)
-  -- function num : 0_53 , upvalues : _ENV
+function DetailMatchLogger:GetBuffLogicInfo(logic)
   local totalStrList = {}
   local memberStrList = {}
-  local partStr = nil
-  for key,value in pairs(logic) do
+  local partStr
+  for key, value in pairs(logic) do
     if key ~= "_className" and key ~= "_buffComponent" and key ~= "_buffLogicService" and key ~= "_buffInstance" and key ~= "_world" then
-      local eID, attackRange, attackRangeStr = nil, nil, nil
+      local eID, attackRange, attackRangeStr
       if type(value) == "table" and value._className and value.GetID then
         eID = value:GetID()
       end
       if eID then
-        partStr = (string.format)("%s%s : EntityID[%d]\n", self._curPrefixStr, tostring(key), eID)
+        partStr = string.format("%s%s : EntityID[%d]\n", self._curPrefixStr, tostring(key), eID)
+      elseif attackRangeStr then
+        partStr = string.format("%s%s : AttackRange[%s]\n", self._curPrefixStr, tostring(key), attackRangeStr)
       else
-        if attackRangeStr then
-          partStr = (string.format)("%s%s : AttackRange[%s]\n", self._curPrefixStr, tostring(key), attackRangeStr)
-        else
-          partStr = (string.format)("%s%s : %s\n", self._curPrefixStr, tostring(key), self:_ToString(value))
-        end
+        partStr = string.format("%s%s : %s\n", self._curPrefixStr, tostring(key), self:_ToString(value))
       end
-      ;
-      (table.insert)(memberStrList, partStr)
+      table.insert(memberStrList, partStr)
     end
   end
-  local memberListStr = (table.concat)(memberStrList)
-  ;
-  (table.insert)(totalStrList, memberListStr)
-  local totalStr = (table.concat)(totalStrList)
+  local memberListStr = table.concat(memberStrList)
+  table.insert(totalStrList, memberListStr)
+  local totalStr = table.concat(totalStrList)
   return totalStr
 end
 
--- DECOMPILER ERROR at PC169: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger._ToString = function(self, v)
-  -- function num : 0_54 , upvalues : _ENV
-  local retStr = nil
+function DetailMatchLogger:_ToString(v)
+  local retStr
   if type(v) == "table" then
     if v._className then
       local className = v._className
       if className == "Vector2" then
-        retStr = (string.format)("(%f,%f)", v.x, v.y)
+        retStr = string.format("(%f,%f)", v.x, v.y)
         return retStr
+      elseif className == "Vector3" then
+        retStr = string.format("(%f,%f,%f)", v.x, v.y, v.z)
+        return retStr
+      elseif className == "DamageInfo" then
+      elseif className == "BuffViewInstance" then
+        local buff = v
+        local buffid = buff:BuffID()
+        local buffEffectType = buff:GetBuffEffectType()
+        local buffSeq = buff:BuffSeq()
+        local layerCount = buff:GetLayerCount()
+        local name = StringTable.Get(Cfg.cfg_buff[buffid].Name)
+        retStr = string.format("对象:[BuffViewInstance] buffID[%d] 名称[%s] EffectType[%d] Seq[%d] 层数[%d]", buffid, name, buffEffectType, buffSeq, layerCount)
+        return retStr
+      elseif className == "Entity" then
+        local entityID = v:GetID()
+        retStr = string.format("实体 实体ID[%d]", entityID)
+        return retStr
+      elseif IsSubClassOf(className, "BuffResultBase") then
       else
-        if className == "Vector3" then
-          retStr = (string.format)("(%f,%f,%f)", v.x, v.y, v.z)
-          return retStr
-        else
-        end
+        retStr = string.format("对象:类型[%s]", className)
+        return retStr
       end
     end
-    if className ~= "DamageInfo" or className == "BuffViewInstance" then
-      local buff = v
-      local buffid = buff:BuffID()
-      local buffEffectType = buff:GetBuffEffectType()
-      local buffSeq = buff:BuffSeq()
-      local layerCount = buff:GetLayerCount()
-      local name = (StringTable.Get)(((Cfg.cfg_buff)[buffid]).Name)
-      retStr = (string.format)("对象:[BuffViewInstance] buffID[%d] 名称[%s] EffectType[%d] Seq[%d] 层数[%d]", buffid, name, buffEffectType, buffSeq, layerCount)
-      return retStr
-    else
-      do
-        do
-          if className == "Entity" then
-            local entityID = v:GetID()
-            retStr = (string.format)("实体 实体ID[%d]", entityID)
-            return retStr
-          else
-          end
-          if IsSubClassOf(className, "BuffResultBase") then
-            do
-              retStr = (string.format)("对象:类型[%s]", className)
-              do return retStr end
-              local partStr = nil
-              do
-                local partStrList = {}
-                partStr = "{\n"
-                ;
-                (table.insert)(partStrList, partStr)
-                self:AddTab()
-                for key,value in pairs(v) do
-                  local valueStr = self:_ToString(value)
-                  partStr = (string.format)("%s%s : %s\n", self._curPrefixStr, tostring(key), valueStr)
-                  ;
-                  (table.insert)(partStrList, partStr)
-                end
-                self:DelTab()
-                partStr = (string.format)("%s}", self._curPrefixStr)
-                ;
-                (table.insert)(partStrList, partStr)
-                retStr = (table.concat)(partStrList)
-                retStr = tostring(v)
-                return retStr
-              end
-            end
-          end
-        end
-      end
+    local partStr
+    local partStrList = {}
+    partStr = "{\n"
+    table.insert(partStrList, partStr)
+    self:AddTab()
+    for key, value in pairs(v) do
+      local valueStr = self:_ToString(value)
+      partStr = string.format("%s%s : %s\n", self._curPrefixStr, tostring(key), valueStr)
+      table.insert(partStrList, partStr)
     end
+    self:DelTab()
+    partStr = string.format("%s}", self._curPrefixStr)
+    table.insert(partStrList, partStr)
+    retStr = table.concat(partStrList)
+  else
+    retStr = tostring(v)
   end
+  return retStr
 end
 
--- DECOMPILER ERROR at PC172: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.RecordBuffResult = function(self, result)
-  -- function num : 0_55 , upvalues : _ENV
+function DetailMatchLogger:RecordBuffResult(result)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  local className = nil
+  local className
   if result._className then
     className = result._className
   end
-  local titleStr = (string.format)("Buff结果,类名[%s] 成员:", className)
+  local titleStr = string.format("Buff结果,类名[%s] 成员:", className)
   self:BeginBlock("BeginRecordBuffResult", titleStr)
   local infoStr = self:GetBuffResultInfo(result)
   self:AddMatchLog("RecordBuffResult", infoStr)
   self:EndBlock("EndRecordBuffResult")
 end
 
--- DECOMPILER ERROR at PC175: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.GetBuffResultInfo = function(self, result)
-  -- function num : 0_56 , upvalues : _ENV
+function DetailMatchLogger:GetBuffResultInfo(result)
   local totalStrList = {}
   local memberStrList = {}
-  local partStr, className = nil, nil
+  local partStr, className
   if result._className then
     className = result._className
   end
-  for key,value in pairs(result) do
+  for key, value in pairs(result) do
     if key ~= "_className" then
-      local eID, attackRange, attackRangeStr = nil, nil, nil
+      local eID, attackRange, attackRangeStr
       if type(value) == "table" and value._className and value.GetID then
         eID = value:GetID()
       end
       if eID then
-        partStr = (string.format)("%s%s : EntityID[%d]\n", self._curPrefixStr, tostring(key), eID)
+        partStr = string.format("%s%s : EntityID[%d]\n", self._curPrefixStr, tostring(key), eID)
+      elseif attackRangeStr then
+        partStr = string.format("%s%s : AttackRange[%s]\n", self._curPrefixStr, tostring(key), attackRangeStr)
       else
-        if attackRangeStr then
-          partStr = (string.format)("%s%s : AttackRange[%s]\n", self._curPrefixStr, tostring(key), attackRangeStr)
-        else
-          partStr = (string.format)("%s%s : %s\n", self._curPrefixStr, tostring(key), self:_ToString(value))
-        end
+        partStr = string.format("%s%s : %s\n", self._curPrefixStr, tostring(key), self:_ToString(value))
       end
-      ;
-      (table.insert)(memberStrList, partStr)
+      table.insert(memberStrList, partStr)
     end
   end
-  local memberListStr = (table.concat)(memberStrList)
-  ;
-  (table.insert)(totalStrList, memberListStr)
-  local totalStr = (table.concat)(totalStrList)
+  local memberListStr = table.concat(memberStrList)
+  table.insert(totalStrList, memberListStr)
+  local totalStr = table.concat(totalStrList)
   return totalStr
 end
 
--- DECOMPILER ERROR at PC178: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.EndRecordTriggerLogic = function(self)
-  -- function num : 0_57 , upvalues : _ENV
+function DetailMatchLogger:EndRecordTriggerLogic()
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   self:EndBlock("EndRecordTriggerLogic")
 end
 
--- DECOMPILER ERROR at PC181: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.EndTriggerLogic = function(self)
-  -- function num : 0_58 , upvalues : _ENV
+function DetailMatchLogger:EndTriggerLogic()
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   self:DelTab()
   local infoStr = self:BlockEndStr()
   self:AddMatchLog("EndTriggerLogic", infoStr)
 end
 
--- DECOMPILER ERROR at PC184: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.RecordAddBuffView = function(self, view)
-  -- function num : 0_59 , upvalues : _ENV
+function DetailMatchLogger:RecordAddBuffView(view)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  local className = nil
+  local className
   if view._className then
     className = view._className
   end
-  local titleStr = (string.format)("添加BuffView,类名[%s] 成员:", className)
+  local titleStr = string.format("添加BuffView,类名[%s] 成员:", className)
   self:BeginBlock("BeginRecordBuffView", titleStr)
   local infoStr = self:GetBuffViewInfo(view)
   self:AddMatchLog("RecordBuffResult", infoStr)
   self:EndBlock("EndRecordBuffView")
 end
 
--- DECOMPILER ERROR at PC187: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.GetBuffViewInfo = function(self, view)
-  -- function num : 0_60 , upvalues : _ENV
+function DetailMatchLogger:GetBuffViewInfo(view)
   local totalStrList = {}
   local memberStrList = {}
-  local partStr, className = nil, nil
+  local partStr, className
   if view._className then
     className = view._className
   end
-  for key,value in pairs(view) do
+  for key, value in pairs(view) do
     if key ~= "_className" then
-      partStr = (string.format)("%s%s : %s\n", self._curPrefixStr, tostring(key), self:_ToString(value))
-      ;
-      (table.insert)(memberStrList, partStr)
+      partStr = string.format("%s%s : %s\n", self._curPrefixStr, tostring(key), self:_ToString(value))
+      table.insert(memberStrList, partStr)
     end
   end
-  local memberListStr = (table.concat)(memberStrList)
-  ;
-  (table.insert)(totalStrList, memberListStr)
-  local totalStr = (table.concat)(totalStrList)
+  local memberListStr = table.concat(memberStrList)
+  table.insert(totalStrList, memberListStr)
+  local totalStr = table.concat(totalStrList)
   return totalStr
 end
 
--- DECOMPILER ERROR at PC190: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.BeginCalcSkillEffect = function(self, calculatorName, index, skillEffectParam)
-  -- function num : 0_61 , upvalues : _ENV
+function DetailMatchLogger:BeginCalcSkillEffect(calculatorName, index, skillEffectParam)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   local skillEffectType = skillEffectParam:GetEffectType()
   local effectName = GetEnumKey("SkillEffectType", skillEffectType)
-  local titleStr = (string.format)("计算技能效果 序号[%d] 效果类型[%d] 效果名[%s]", index, skillEffectType, effectName)
+  local titleStr = string.format("计算技能效果 序号[%d] 效果类型[%d] 效果名[%s]", index, skillEffectType, effectName)
   self:BeginBlock("BeginCalcSkillEffect", titleStr)
 end
 
--- DECOMPILER ERROR at PC193: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.EndCalcSkillEffect = function(self, calculatorName, index, skillEffectParam)
-  -- function num : 0_62 , upvalues : _ENV
+function DetailMatchLogger:EndCalcSkillEffect(calculatorName, index, skillEffectParam)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   self:EndBlock("EndCalcSkillEffect")
 end
 
--- DECOMPILER ERROR at PC196: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.BeginApplySkillEffect = function(self, casterEntity, skillEffectType, resultArray)
-  -- function num : 0_63 , upvalues : _ENV
+function DetailMatchLogger:BeginApplySkillEffect(casterEntity, skillEffectType, resultArray)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   local casterEntityID = -1
   if casterEntity then
     casterEntityID = casterEntity:GetID()
   end
   local effectName = GetEnumKey("SkillEffectType", skillEffectType)
-  local titleStr = (string.format)("应用技能效果,施法者[%d] 效果类型[%d] 效果名[%s]", casterEntityID, skillEffectType, effectName)
+  local titleStr = string.format("应用技能效果,施法者[%d] 效果类型[%d] 效果名[%s]", casterEntityID, skillEffectType, effectName)
   self:BeginBlock("BeginApplySkillEffect", titleStr)
   local infoStr = self:GetSkillEffectResultsInfo(resultArray)
   self:AddMatchLog("BeginApplySkillEffect", infoStr)
 end
 
--- DECOMPILER ERROR at PC199: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.EndApplySkillEffect = function(self, casterEntity, skillEffectType, resultArray)
-  -- function num : 0_64 , upvalues : _ENV
+function DetailMatchLogger:EndApplySkillEffect(casterEntity, skillEffectType, resultArray)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   self:EndBlock("EndCalcSkillEffect")
 end
 
--- DECOMPILER ERROR at PC202: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.GetSkillEffectResultsInfo = function(self, results)
-  -- function num : 0_65 , upvalues : _ENV
+function DetailMatchLogger:GetSkillEffectResultsInfo(results)
   local totalStrList = {}
   local memberStrList = {}
-  local partStr = nil
+  local partStr
   local tmpResults = results
   if type(results) == "table" then
+  else
     tmpResults = {results}
-    for index,result in ipairs(tmpResults) do
-      local resultClassName = ""
-      if result._className then
-        resultClassName = result._className
-      end
-      local blockTitleStr = (string.format)("技能效果结果序号[%d] 结果类型[%s]", index, resultClassName)
-      partStr = self:BlockBeginStr(blockTitleStr)
-      ;
-      (table.insert)(totalStrList, partStr)
-      self:AddTab()
-      for key,value in pairs(result) do
-        if key ~= "_className" then
-          partStr = (string.format)("%s%s : %s\n", self._curPrefixStr, tostring(key), self:_ToString(value))
-          ;
-          (table.insert)(memberStrList, partStr)
-        end
-      end
-      local memberListStr = (table.concat)(memberStrList)
-      ;
-      (table.insert)(totalStrList, memberListStr)
-      self:DelTab()
-      partStr = self:BlockEndStr()
-      ;
-      (table.insert)(totalStrList, partStr)
-    end
-    local totalStr = (table.concat)(totalStrList)
-    return totalStr
   end
+  for index, result in ipairs(tmpResults) do
+    local resultClassName = ""
+    if result._className then
+      resultClassName = result._className
+    end
+    local blockTitleStr = string.format("技能效果结果序号[%d] 结果类型[%s]", index, resultClassName)
+    partStr = self:BlockBeginStr(blockTitleStr)
+    table.insert(totalStrList, partStr)
+    self:AddTab()
+    for key, value in pairs(result) do
+      if key ~= "_className" then
+        partStr = string.format("%s%s : %s\n", self._curPrefixStr, tostring(key), self:_ToString(value))
+        table.insert(memberStrList, partStr)
+      end
+    end
+    local memberListStr = table.concat(memberStrList)
+    table.insert(totalStrList, memberListStr)
+    self:DelTab()
+    partStr = self:BlockEndStr()
+    table.insert(totalStrList, partStr)
+  end
+  local totalStr = table.concat(totalStrList)
+  return totalStr
 end
 
--- DECOMPILER ERROR at PC205: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.ViewBeginPlayBuffView = function(self, notify)
-  -- function num : 0_66 , upvalues : _ENV
+function DetailMatchLogger:ViewBeginPlayBuffView(notify)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   local notifyType = notify:GetNotifyType()
   if notifyType == NotifyType.AddMatchLog then
-    return 
+    return
   end
   self:BeginBlock("ViewBeginPlayBuffView", "【表现】【播放通知】")
   local notifyType = notify:GetNotifyType()
   local notifyTypeName = GetEnumKey("NotifyType", notifyType)
-  local titleStr = (string.format)("通知[%s] 枚举值[%d] 成员:", notifyTypeName, notifyType)
+  local titleStr = string.format("通知[%s] 枚举值[%d] 成员:", notifyTypeName, notifyType)
   self:BeginBlock("viewNotifyInfo", titleStr)
   local infoStr = self:GetNotifyInfo(notify)
   self:AddMatchLog("ViewNotifyInfo", infoStr)
   self:EndBlock("EndviewNotifyInfo")
 end
 
--- DECOMPILER ERROR at PC208: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.ViewEndPlayBuffView = function(self, notify)
-  -- function num : 0_67 , upvalues : _ENV
+function DetailMatchLogger:ViewEndPlayBuffView(notify)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   self:EndBlock("ViewEndPlayBuffView")
 end
 
--- DECOMPILER ERROR at PC211: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.ViewRecordPlayBuffView = function(self, entity, notify, views)
-  -- function num : 0_68 , upvalues : _ENV
+function DetailMatchLogger:ViewRecordPlayBuffView(entity, notify, views)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  local entityID = nil
+  local entityID
   if entity then
     entityID = entity:GetID()
   end
-  local titleStr = (string.format)("实体播放buffView,实体ID[%d]:", entityID)
+  local titleStr = string.format("实体播放buffView,实体ID[%d]:", entityID)
   self:BeginBlock("ViewRecordPlayBuffView", titleStr)
-  for index,view in ipairs(views) do
-    local className = nil
+  for index, view in ipairs(views) do
+    local className
     if view._className then
       className = view._className
     end
-    titleStr = (string.format)("播放BuffView,类名[%s] 成员:", className)
+    titleStr = string.format("播放BuffView,类名[%s] 成员:", className)
     self:BeginBlock("ViewRecordPlayBuffView", titleStr)
     local infoStr = self:GetBuffViewInfo(view)
     self:AddMatchLog("ViewRecordPlayBuffView", infoStr)
@@ -1538,78 +1155,62 @@ DetailMatchLogger.ViewRecordPlayBuffView = function(self, entity, notify, views)
   self:EndBlock("EndRecordBuffView")
 end
 
--- DECOMPILER ERROR at PC214: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.AILogInitDataStruct = function(self, monsterID, entityID, round, runCount, aiConfigID)
-  -- function num : 0_69 , upvalues : _ENV
+function DetailMatchLogger:AILogInitDataStruct(monsterID, entityID, round, runCount, aiConfigID)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  local monster = (string.format)("%s.%s", tostring(monsterID), tostring(entityID))
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R7 in 'UnsetPending'
-
-  if not (self._aiLogs)[monster] then
-    (self._aiLogs)[monster] = {}
+  local monster = string.format("%s.%s", tostring(monsterID), tostring(entityID))
+  if not self._aiLogs[monster] then
+    self._aiLogs[monster] = {}
   end
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R7 in 'UnsetPending'
-
-  if not ((self._aiLogs)[monster])[aiConfigID] then
-    ((self._aiLogs)[monster])[aiConfigID] = {}
+  if not self._aiLogs[monster][aiConfigID] then
+    self._aiLogs[monster][aiConfigID] = {}
   end
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R7 in 'UnsetPending'
-
-  if not (((self._aiLogs)[monster])[aiConfigID])[round] then
-    (((self._aiLogs)[monster])[aiConfigID])[round] = {}
+  if not self._aiLogs[monster][aiConfigID][round] then
+    self._aiLogs[monster][aiConfigID][round] = {}
   end
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R7 in 'UnsetPending'
-
-  if not ((((self._aiLogs)[monster])[aiConfigID])[round])[runCount] then
-    ((((self._aiLogs)[monster])[aiConfigID])[round])[runCount] = {}
+  if not self._aiLogs[monster][aiConfigID][round][runCount] then
+    self._aiLogs[monster][aiConfigID][round][runCount] = {}
   end
 end
 
--- DECOMPILER ERROR at PC217: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.AddToLogFile = function(self, monsterID, entityID, round, runCount, aiConfigID, t)
-  -- function num : 0_70 , upvalues : _ENV
+function DetailMatchLogger:AddToLogFile(monsterID, entityID, round, runCount, aiConfigID, t)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
-  local monster = (string.format)("%s.%s", tostring(monsterID), tostring(entityID))
-  ;
-  (table.insert)(((((self._aiLogs)[monster])[aiConfigID])[round])[runCount], t)
+  local monster = string.format("%s.%s", tostring(monsterID), tostring(entityID))
+  table.insert(self._aiLogs[monster][aiConfigID][round][runCount], t)
 end
 
--- DECOMPILER ERROR at PC220: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.AddAIStreamLog = function(self, monsterID, entityID, round, runCount, aiConfigID, aiTreeID, slotID)
-  -- function num : 0_71 , upvalues : _ENV
+function DetailMatchLogger:AddAIStreamLog(monsterID, entityID, round, runCount, aiConfigID, aiTreeID, slotID)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   self:AILogInitDataStruct(monsterID, entityID, round, runCount, aiConfigID)
-  local t = {Type = AILogDataType.AISteamLog, TreeID = aiTreeID, SlotID = slotID}
+  local t = {
+    Type = AILogDataType.AISteamLog,
+    TreeID = aiTreeID,
+    SlotID = slotID
+  }
   self:AddToLogFile(monsterID, entityID, round, runCount, aiConfigID, t)
 end
 
--- DECOMPILER ERROR at PC223: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.AddAIDebugInfoLog = function(self, monsterID, entityID, round, runCount, aiConfigID, aiTreeID, info)
-  -- function num : 0_72 , upvalues : _ENV
+function DetailMatchLogger:AddAIDebugInfoLog(monsterID, entityID, round, runCount, aiConfigID, aiTreeID, info)
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   self:AILogInitDataStruct(monsterID, entityID, round, runCount, aiConfigID)
-  local t = {Type = AILogDataType.AIDebugLog, TreeID = aiTreeID, Info = info}
+  local t = {
+    Type = AILogDataType.AIDebugLog,
+    TreeID = aiTreeID,
+    Info = info
+  }
   self:AddToLogFile(monsterID, entityID, round, runCount, aiConfigID, t)
 end
 
--- DECOMPILER ERROR at PC226: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.SaveAILog = function(self)
-  -- function num : 0_73 , upvalues : _ENV
+function DetailMatchLogger:SaveAILog()
   if not _G.ENABLE_DETAIL_MATCH_LOG then
-    return 
+    return
   end
   self:BeginBlock("SaveAILog", "AIDebugInfo=")
   local infoStr = self:GetAILogInfo()
@@ -1618,80 +1219,61 @@ DetailMatchLogger.SaveAILog = function(self)
   self._aiLogs = {}
 end
 
--- DECOMPILER ERROR at PC229: Confused about usage of register: R2 in 'UnsetPending'
-
-DetailMatchLogger.GetAILogInfo = function(self)
-  -- function num : 0_74 , upvalues : _ENV
+function DetailMatchLogger:GetAILogInfo()
   local totalStrList = {}
-  local partStr = nil
-  for monsterID,i in pairs(self._aiLogs) do
-    partStr = (string.format)("%s怪物ID.实体ID[\'%s\'] = {\n", self._curPrefixStr, monsterID)
-    ;
-    (table.insert)(totalStrList, partStr)
+  local partStr
+  for monsterID, i in pairs(self._aiLogs) do
+    partStr = string.format("%s怪物ID.实体ID['%s'] = {\n", self._curPrefixStr, monsterID)
+    table.insert(totalStrList, partStr)
     self:AddTab()
-    for aiConfig,o in pairs(i) do
-      partStr = (string.format)("%sAIConfig[\'%s\'] = {\n", self._curPrefixStr, tostring(aiConfig))
-      ;
-      (table.insert)(totalStrList, partStr)
+    for aiConfig, o in pairs(i) do
+      partStr = string.format("%sAIConfig['%s'] = {\n", self._curPrefixStr, tostring(aiConfig))
+      table.insert(totalStrList, partStr)
       self:AddTab()
-      for round,q in pairs(o) do
-        partStr = (string.format)("%sRound[\'%s\'] = {\n", self._curPrefixStr, tostring(round))
-        ;
-        (table.insert)(totalStrList, partStr)
+      for round, q in pairs(o) do
+        partStr = string.format("%sRound['%s'] = {\n", self._curPrefixStr, tostring(round))
+        table.insert(totalStrList, partStr)
         self:AddTab()
-        for runCount,x in pairs(R19_PC62) do
-          partStr = (string.format)("%sRunCount[\'%s\'] = {\n", self._curPrefixStr, tostring(runCount))
-          ;
-          (table.insert)(totalStrList, partStr)
+        for runCount, x in pairs(q) do
+          partStr = string.format("%sRunCount['%s'] = {\n", self._curPrefixStr, tostring(runCount))
+          table.insert(totalStrList, partStr)
           self:AddTab()
-          for index,t in ipairs(R24_PC82) do
-            partStr = (string.format)("%s[%s]={\n", self._curPrefixStr, tostring(index))
-            ;
-            (table.insert)(totalStrList, partStr)
+          for index, t in ipairs(x) do
+            partStr = string.format("%s[%s]={\n", self._curPrefixStr, tostring(index))
+            table.insert(totalStrList, partStr)
             self:AddTab()
-            partStr = (string.format)("%sTreeID=%s,\n", self._curPrefixStr, tostring(t.TreeID))
-            ;
-            (table.insert)(totalStrList, partStr)
-            partStr = (string.format)("%sType=%s,\n", self._curPrefixStr, tostring(t.Type))
-            ;
-            (table.insert)(totalStrList, partStr)
+            partStr = string.format("%sTreeID=%s,\n", self._curPrefixStr, tostring(t.TreeID))
+            table.insert(totalStrList, partStr)
+            partStr = string.format("%sType=%s,\n", self._curPrefixStr, tostring(t.Type))
+            table.insert(totalStrList, partStr)
             if t.SlotID then
-              partStr = (string.format)("%sSlotID=%s,\n", self._curPrefixStr, tostring(t.SlotID))
-              ;
-              (table.insert)(totalStrList, partStr)
+              partStr = string.format("%sSlotID=%s,\n", self._curPrefixStr, tostring(t.SlotID))
+              table.insert(totalStrList, partStr)
             end
             if t.Info then
-              partStr = (string.format)("%sInfo=\'%s\',\n", self._curPrefixStr, tostring(t.Info))
-              ;
-              (table.insert)(totalStrList, partStr)
+              partStr = string.format("%sInfo='%s',\n", self._curPrefixStr, tostring(t.Info))
+              table.insert(totalStrList, partStr)
             end
             self:DelTab()
             partStr = self:BlockEndStr()
-            ;
-            (table.insert)(totalStrList, partStr)
+            table.insert(totalStrList, partStr)
           end
           self:DelTab()
           partStr = self:BlockEndStr()
-          ;
-          (table.insert)(totalStrList, partStr)
+          table.insert(totalStrList, partStr)
         end
         self:DelTab()
         partStr = self:BlockEndStr()
-        ;
-        (table.insert)(totalStrList, partStr)
+        table.insert(totalStrList, partStr)
       end
       self:DelTab()
       partStr = self:BlockEndStr()
-      ;
-      (table.insert)(totalStrList, partStr)
+      table.insert(totalStrList, partStr)
     end
     self:DelTab()
     partStr = self:BlockEndStr()
-    ;
-    (table.insert)(totalStrList, partStr)
+    table.insert(totalStrList, partStr)
   end
-  local totalStr = (table.concat)(totalStrList)
+  local totalStr = table.concat(totalStrList)
   return totalStr
 end
-
-

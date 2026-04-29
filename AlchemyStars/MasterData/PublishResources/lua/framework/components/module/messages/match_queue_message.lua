@@ -1,89 +1,76 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/components/module/messages/match_queue_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local match_queueMessageDef = {CLSID_CEventRequestQuickJoinMatch = 12000, CLSID_CEventReplyQuickJoinMatch = 12001, CLSID_CEventRequestCancelQuickJoinMatch = 12002, CLSID_CEventReplyCancelQuickJoinMatch = 12003, CLSID_CEventPushMatchingSuccess = 12004}
-;
-(table.append)(MessageDef, match_queueMessageDef)
+local match_queueMessageDef = {
+  CLSID_CEventRequestQuickJoinMatch = 12000,
+  CLSID_CEventReplyQuickJoinMatch = 12001,
+  CLSID_CEventRequestCancelQuickJoinMatch = 12002,
+  CLSID_CEventReplyCancelQuickJoinMatch = 12003,
+  CLSID_CEventPushMatchingSuccess = 12004
+}
+table.append(MessageDef, match_queueMessageDef)
 _class("CEventRequestQuickJoinMatch", CCallRequestEvent)
 CEventRequestQuickJoinMatch = CEventRequestQuickJoinMatch
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRequestQuickJoinMatch.Constructor = function(self)
-  -- function num : 0_0
+function CEventRequestQuickJoinMatch:Constructor()
   self.m_match_type = 0
   self.m_level_id = 0
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventRequestQuickJoinMatch._proto = {
-[1] = {"m_match_type", "int"}
-, 
-[2] = {"m_level_id", "int"}
+  [1] = {
+    "m_match_type",
+    "int"
+  },
+  [2] = {"m_level_id", "int"}
 }
 _class("CEventReplyQuickJoinMatch", CCallReplyEvent)
 CEventReplyQuickJoinMatch = CEventReplyQuickJoinMatch
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyQuickJoinMatch.Constructor = function(self)
-  -- function num : 0_1
+function CEventReplyQuickJoinMatch:Constructor()
   self.m_ret = 0
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyQuickJoinMatch._proto = {
-[1] = {"m_ret", "int"}
+  [1] = {"m_ret", "int"}
 }
 _class("CEventRequestCancelQuickJoinMatch", CCallRequestEvent)
 CEventRequestCancelQuickJoinMatch = CEventRequestCancelQuickJoinMatch
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRequestCancelQuickJoinMatch.Constructor = function(self)
-  -- function num : 0_2
+function CEventRequestCancelQuickJoinMatch:Constructor()
 end
-
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventRequestCancelQuickJoinMatch._proto = {}
 _class("CEventReplyCancelQuickJoinMatch", CCallReplyEvent)
 CEventReplyCancelQuickJoinMatch = CEventReplyCancelQuickJoinMatch
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyCancelQuickJoinMatch.Constructor = function(self)
-  -- function num : 0_3
+function CEventReplyCancelQuickJoinMatch:Constructor()
   self.m_ret = 0
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyCancelQuickJoinMatch._proto = {
-[1] = {"m_ret", "int"}
+  [1] = {"m_ret", "int"}
 }
 _class("CEventPushMatchingSuccess", CSvrPushEvent)
 CEventPushMatchingSuccess = CEventPushMatchingSuccess
--- DECOMPILER ERROR at PC90: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushMatchingSuccess.Constructor = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function CEventPushMatchingSuccess:Constructor()
   self.m_match_to_enter = GroupToken:New()
   self.m_vkey = 0
   self.m_server_ip = ""
   self.m_server_port = 0
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventPushMatchingSuccess._proto = {
-[1] = {"m_match_to_enter", "GroupToken"}
-, 
-[2] = {"m_vkey", "int"}
-, 
-[3] = {"m_server_ip", "string"}
-, 
-[4] = {"m_server_port", "short"}
+  [1] = {
+    "m_match_to_enter",
+    "GroupToken"
+  },
+  [2] = {"m_vkey", "int"},
+  [3] = {
+    "m_server_ip",
+    "string"
+  },
+  [4] = {
+    "m_server_port",
+    "short"
+  }
 }
-

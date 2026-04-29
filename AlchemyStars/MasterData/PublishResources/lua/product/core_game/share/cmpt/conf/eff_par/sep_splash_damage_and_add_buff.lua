@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_splash_damage_and_add_buff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParamSplashDamageAndAddBuff", SkillDamageEffectParam)
 SkillEffectParamSplashDamageAndAddBuff = SkillEffectParamSplashDamageAndAddBuff
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamSplashDamageAndAddBuff.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamSplashDamageAndAddBuff:Constructor(t)
   self._splashTargetType = t.splashTargetType
   self._splashScopeType = t.splashScopeType
   self._splashScopeParam = t.splashScopeParam
@@ -17,46 +10,26 @@ SkillEffectParamSplashDamageAndAddBuff.Constructor = function(self, t)
   self._buffID = t.buffID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSplashDamageAndAddBuff.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamSplashDamageAndAddBuff:GetEffectType()
   return SkillEffectType.SplashDamageAndAddBuff
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSplashDamageAndAddBuff.GetSplashTargetType = function(self)
-  -- function num : 0_2
+function SkillEffectParamSplashDamageAndAddBuff:GetSplashTargetType()
   return self._splashTargetType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSplashDamageAndAddBuff.GetSplashScopeType = function(self)
-  -- function num : 0_3
+function SkillEffectParamSplashDamageAndAddBuff:GetSplashScopeType()
   return self._splashScopeType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSplashDamageAndAddBuff.GetSplashScopeParam = function(self)
-  -- function num : 0_4
+function SkillEffectParamSplashDamageAndAddBuff:GetSplashScopeParam()
   return self._splashScopeParam
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSplashDamageAndAddBuff.GetSplashOffset = function(self)
-  -- function num : 0_5
+function SkillEffectParamSplashDamageAndAddBuff:GetSplashOffset()
   return self._splashOffset
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSplashDamageAndAddBuff.GetBuffID = function(self)
-  -- function num : 0_6
+function SkillEffectParamSplashDamageAndAddBuff:GetBuffID()
   return self._buffID
 end
-
-

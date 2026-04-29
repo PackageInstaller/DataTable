@@ -1,53 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_death_instant.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicDeathInstant", BuffLogicBase)
 BuffLogicDeathInstant = BuffLogicDeathInstant
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDeathInstant.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicDeathInstant:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDeathInstant.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._entity):HasDeadMark() then
-    return 
+function BuffLogicDeathInstant:DoLogic(notify)
+  if self._entity:HasDeadMark() then
+    return
   end
   local buffLogicSvc = self:GetBuffLogicService()
   if not buffLogicSvc:IsTargetCanBeToDie(self._entity) then
-    return 
+    return
   end
-  local skillLogic = (self._world):GetService("SkillLogic")
-  local curHp = ((self._entity):Attributes()):GetCurrentHP()
+  local skillLogic = self._world:GetService("SkillLogic")
+  local curHp = self._entity:Attributes():GetCurrentHP()
   local damageInfo = DamageInfo:New(curHp * -1, DamageType.Real, nil, nil)
-  ;
-  ((self._entity):Attributes()):SetSimpleAttribute("BuffDeathHp", curHp)
+  self._entity:Attributes():SetSimpleAttribute("BuffDeathHp", curHp)
   local endHP = 0
-  if not (self._buffComponent):GetBuffValue("LockHPByRound") and not (self._buffComponent):GetBuffValue("LockHPAlways") then
+  if not self._buffComponent:GetBuffValue("LockHPByRound") and not self._buffComponent:GetBuffValue("LockHPAlways") then
     endHP = 0
   else
-    endHP = skillLogic:CalcTargetHP((self._entity):GetID(), damageInfo)
+    endHP = skillLogic:CalcTargetHP(self._entity:GetID(), damageInfo)
   end
-  ;
-  ((self._entity):Attributes()):Modify("HP", endHP)
-  ;
-  (Log.debug)("BuffLogicDeathInstant ModifyHP =", endHP, " defender=", (self._entity):GetID())
-  do
-    if (self._entity):MonsterID() and endHP == 0 then
-      local sMonsterShowLogic = (self._world):GetService("MonsterShowLogic")
-      sMonsterShowLogic:AddMonsterDeadMark(self._entity)
-      sMonsterShowLogic:_DoLogicDead(self._entity)
-    end
-    local casterID = (notify:GetNotifyEntity()):GetID()
-    local hasDead = (self._entity):HasDeadMark()
-    local buffResult = BuffResultDeathInstant:New(casterID, hasDead)
-    return buffResult
+  self._entity:Attributes():Modify("HP", endHP)
+  Log.debug("BuffLogicDeathInstant ModifyHP =", endHP, " defender=", self._entity:GetID())
+  if self._entity:MonsterID() and endHP == 0 then
+    local sMonsterShowLogic = self._world:GetService("MonsterShowLogic")
+    sMonsterShowLogic:AddMonsterDeadMark(self._entity)
+    sMonsterShowLogic:_DoLogicDead(self._entity)
   end
+  local casterID = notify:GetNotifyEntity():GetID()
+  local hasDead = self._entity:HasDeadMark()
+  local buffResult = BuffResultDeathInstant:New(casterID, hasDead)
+  return buffResult
 end
-
-

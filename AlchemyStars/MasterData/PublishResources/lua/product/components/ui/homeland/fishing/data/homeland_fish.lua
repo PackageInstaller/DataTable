@@ -1,21 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/fishing/data/homeland_fish.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandFish", Object)
 HomelandFish = HomelandFish
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandFish.Constructor = function(self, fishId)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandFish:Constructor(fishId)
   self._fishItemId = fishId
-  local cfg = (Cfg.cfg_item_homeland_fish)[fishId]
+  local cfg = Cfg.cfg_item_homeland_fish[fishId]
+  cfg = cfg or Cfg.cfg_item_wishing_coin[fishId]
   if not cfg then
-    cfg = (Cfg.cfg_item_wishing_coin)[fishId]
-  end
-  if not cfg then
-    (Log.fatal)("随机的鱼的ID错误：", fishId)
+    Log.fatal("随机的鱼的ID错误：", fishId)
   end
   local fishingOperator = cfg.FishingOperator
   self._fishPowerLargeRange = fishingOperator[1]
@@ -38,9 +29,8 @@ HomelandFish.Constructor = function(self, fishId)
   self._fishInvitePowerSpeed = cfg.FishInvitePowerSpeed
   self._model = cfg.FishEffect
   self._fishingOldOperator = cfg.FishingOldOperator
-  ;
-  (Log.fatal)("鱼id", fishId)
-  if cfg == (Cfg.cfg_item_homeland_fish)[fishId] then
+  Log.fatal("鱼id", fishId)
+  if cfg == Cfg.cfg_item_homeland_fish[fishId] then
     self._fishingRaceOperator = cfg.FishingRaceOperator
     self._fishingInvitOperator = cfg.FishingInvitOperator
     local fishingOperatorRace = cfg.RaceType
@@ -55,328 +45,249 @@ HomelandFish.Constructor = function(self, fishId)
       self._rightPowerRangeInvite = fishingOperatorInvite[2]
       self._playerPowerLargeRangeInvite = fishingOperatorInvite[3]
     end
-  else
-    do
-      if cfg == (Cfg.cfg_item_wishing_coin)[fishId] then
-        local fishingOperator = cfg.FishingOperator
-        self._fishPowerLargeRangeRace = fishingOperator[1]
-        self._rightPowerRangeRace = fishingOperator[2]
-        self._playerPowerLargeRangeRace = fishingOperator[3]
-        self._fishPowerLargeRangeInvite = fishingOperator[1]
-        self._rightPowerRangeInvite = fishingOperator[2]
-        self._playerPowerLargeRangeInvite = fishingOperator[3]
-      end
-    end
+  elseif cfg == Cfg.cfg_item_wishing_coin[fishId] then
+    local fishingOperator = cfg.FishingOperator
+    self._fishPowerLargeRangeRace = fishingOperator[1]
+    self._rightPowerRangeRace = fishingOperator[2]
+    self._playerPowerLargeRangeRace = fishingOperator[3]
+    self._fishPowerLargeRangeInvite = fishingOperator[1]
+    self._rightPowerRangeInvite = fishingOperator[2]
+    self._playerPowerLargeRangeInvite = fishingOperator[3]
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFish.GetModel = function(self)
-  -- function num : 0_1
+function HomelandFish:GetModel()
   return self._model
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFish.GetFishPowerSpeed = function(self, time)
-  -- function num : 0_2
+function HomelandFish:GetFishPowerSpeed(time)
   if self._fishPowerSpeed == nil or #self._fishPowerSpeed <= 0 then
     return -1
   end
   for i = 1, #self._fishPowerSpeed do
-    local tmp = (self._fishPowerSpeed)[i]
-    if (tmp.range)[1] <= time and time <= (tmp.range)[2] then
+    local tmp = self._fishPowerSpeed[i]
+    if time >= tmp.range[1] and time <= tmp.range[2] then
       return tmp.value / 1000
     end
   end
-  return ((self._fishPowerSpeed)[#self._fishPowerSpeed]).value / 1000
+  return self._fishPowerSpeed[#self._fishPowerSpeed].value / 1000
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFish.GetRaceFishPowerSpeed = function(self, time)
-  -- function num : 0_3
+function HomelandFish:GetRaceFishPowerSpeed(time)
   if self._fishRacePowerSpeed == nil or #self._fishRacePowerSpeed <= 0 then
     return -1
   end
   for i = 1, #self._fishRacePowerSpeed do
-    local tmp = (self._fishRacePowerSpeed)[i]
-    if (tmp.range)[1] <= time and time <= (tmp.range)[2] then
+    local tmp = self._fishRacePowerSpeed[i]
+    if time >= tmp.range[1] and time <= tmp.range[2] then
       return tmp.value / 1000
     end
   end
-  return ((self._fishRacePowerSpeed)[#self._fishRacePowerSpeed]).value / 1000
+  return self._fishRacePowerSpeed[#self._fishRacePowerSpeed].value / 1000
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFish.GetInviteFishPowerSpeed = function(self, time)
-  -- function num : 0_4
+function HomelandFish:GetInviteFishPowerSpeed(time)
   if self._fishInvitePowerSpeed == nil or #self._fishInvitePowerSpeed <= 0 then
     return -1
   end
   for i = 1, #self._fishInvitePowerSpeed do
-    local tmp = (self._fishInvitePowerSpeed)[i]
-    if (tmp.range)[1] <= time and time <= (tmp.range)[2] then
+    local tmp = self._fishInvitePowerSpeed[i]
+    if time >= tmp.range[1] and time <= tmp.range[2] then
       return tmp.value / 1000
     end
   end
-  return ((self._fishInvitePowerSpeed)[#self._fishInvitePowerSpeed]).value / 1000
+  return self._fishInvitePowerSpeed[#self._fishInvitePowerSpeed].value / 1000
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFish.GetItemId = function(self)
-  -- function num : 0_5
+function HomelandFish:GetItemId()
   return self._fishItemId
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFish.GetDecouplingTime = function(self)
-  -- function num : 0_6
+function HomelandFish:GetDecouplingTime()
   return self._decouplingTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFish.GetLineBreakTime = function(self)
-  -- function num : 0_7
+function HomelandFish:GetLineBreakTime()
   return self._lineBreakTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFish.GetPowerRange = function(self)
-  -- function num : 0_8
+function HomelandFish:GetPowerRange()
   return 0, self._fishPowerLargeRange + self._rightPowerRange + self._playerPowerLargeRange
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFish.GetRacePowerRange = function(self)
-  -- function num : 0_9
+function HomelandFish:GetRacePowerRange()
   return 0, self._fishPowerLargeRangeRace + self._rightPowerRangeRace + self._playerPowerLargeRangeRace
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFish.GetInvitePowerRange = function(self)
-  -- function num : 0_10
+function HomelandFish:GetInvitePowerRange()
   return 0, self._fishPowerLargeRangeInvite + self._rightPowerRangeInvite + self._playerPowerLargeRangeInvite
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFish.GetRightPowerRange = function(self)
-  -- function num : 0_11
+function HomelandFish:GetRightPowerRange()
   return self._fishPowerLargeRange, self._fishPowerLargeRange + self._rightPowerRange
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFish.GetRaceRightPowerRange = function(self)
-  -- function num : 0_12
+function HomelandFish:GetRaceRightPowerRange()
   return self._fishPowerLargeRangeRace, self._fishPowerLargeRangeRace + self._rightPowerRangeRace
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFish.GetInviteRightPowerRange = function(self)
-  -- function num : 0_13
+function HomelandFish:GetInviteRightPowerRange()
   return self._fishPowerLargeRangeInvite, self._fishPowerLargeRangeInvite + self._rightPowerRangeInvite
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFish.GetMoveRange = function(self)
-  -- function num : 0_14
+function HomelandFish:GetMoveRange()
   return self._moveRange
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFish.GetMoveSpeed = function(self)
-  -- function num : 0_15
+function HomelandFish:GetMoveSpeed()
   return self._moveSpeed
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFish.GetGameMoveSpeed = function(self, type, n)
-  -- function num : 0_16
+function HomelandFish:GetGameMoveSpeed(type, n)
   if type == 3 then
     if self._fishingRaceOperator == nil then
       return nil
     else
       if n <= #self._fishingRaceOperator then
-        self._moveSpeed = ((self._fishingRaceOperator)[n])[1]
+        self._moveSpeed = self._fishingRaceOperator[n][1]
       else
         self._moveSpeed = 0
       end
       return self._moveSpeed / 100
     end
-  else
-    if type == 5 then
-      if self._fishingInvitOperator == nil then
-        return nil
-      else
-        if n <= #self._fishingInvitOperator then
-          self._moveSpeed = ((self._fishingInvitOperator)[n])[1]
-        else
-          self._moveSpeed = 0
-        end
-        return self._moveSpeed / 100
-      end
+  elseif type == 5 then
+    if self._fishingInvitOperator == nil then
+      return nil
     else
-      if type == 6 or type == 1 then
-        if self._fishingOldOperator == nil then
-          return nil
-        else
-          if n <= #self._fishingOldOperator then
-            self._moveSpeed = ((self._fishingOldOperator)[n])[1]
-          else
-            self._moveSpeed = 0
-          end
-          return self._moveSpeed / 100
-        end
+      if n <= #self._fishingInvitOperator then
+        self._moveSpeed = self._fishingInvitOperator[n][1]
+      else
+        self._moveSpeed = 0
       end
+      return self._moveSpeed / 100
+    end
+  elseif type == 6 or type == 1 then
+    if self._fishingOldOperator == nil then
+      return nil
+    else
+      if n <= #self._fishingOldOperator then
+        self._moveSpeed = self._fishingOldOperator[n][1]
+      else
+        self._moveSpeed = 0
+      end
+      return self._moveSpeed / 100
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFish.GetMoveTime = function(self, type, n)
-  -- function num : 0_17
+function HomelandFish:GetMoveTime(type, n)
   if type == 3 then
     if self._fishingRaceOperator == nil then
       return nil
     else
       if n <= #self._fishingRaceOperator then
-        self._moveTime = ((self._fishingRaceOperator)[n])[2]
+        self._moveTime = self._fishingRaceOperator[n][2]
       else
         self._moveTime = 0
       end
       return self._moveTime
     end
-  else
-    if type == 5 then
-      if self._fishingInvitOperator == nil then
-        return nil
-      else
-        if n <= #self._fishingInvitOperator then
-          self._moveTime = ((self._fishingInvitOperator)[n])[2]
-        else
-          self._moveTime = 0
-        end
-        return self._moveTime
-      end
+  elseif type == 5 then
+    if self._fishingInvitOperator == nil then
+      return nil
     else
-      if type == 6 or type == 1 then
-        if self._fishingOldOperator == nil then
-          return nil
-        else
-          if n <= #self._fishingOldOperator then
-            self._moveTime = ((self._fishingOldOperator)[n])[2]
-          else
-            self._moveTime = 0
-          end
-          return self._moveTime
-        end
+      if n <= #self._fishingInvitOperator then
+        self._moveTime = self._fishingInvitOperator[n][2]
+      else
+        self._moveTime = 0
       end
+      return self._moveTime
+    end
+  elseif type == 6 or type == 1 then
+    if self._fishingOldOperator == nil then
+      return nil
+    else
+      if n <= #self._fishingOldOperator then
+        self._moveTime = self._fishingOldOperator[n][2]
+      else
+        self._moveTime = 0
+      end
+      return self._moveTime
     end
   end
   return self._moveTime
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFish.GetChangeLength = function(self, type, n)
-  -- function num : 0_18
+function HomelandFish:GetChangeLength(type, n)
   if type == 3 then
     if self._fishingRaceOperator == nil then
       return nil
     else
       if n <= #self._fishingRaceOperator then
-        self._changeLength = ((self._fishingRaceOperator)[n])[3]
+        self._changeLength = self._fishingRaceOperator[n][3]
       else
         self._changeLength = 0
       end
       return self._changeLength
     end
-  else
-    if type == 5 then
-      if self._fishingInvitOperator == nil then
-        return nil
-      else
-        if n <= #self._fishingInvitOperator then
-          self._changeLength = ((self._fishingInvitOperator)[n])[3]
-        else
-          self._changeLength = 0
-        end
-        return self._changeLength
-      end
+  elseif type == 5 then
+    if self._fishingInvitOperator == nil then
+      return nil
     else
-      if type == 6 or type == 1 then
-        if self._fishingOldOperator == nil then
-          return nil
-        else
-          if n <= #self._fishingOldOperator then
-            self._changeLength = ((self._fishingOldOperator)[n])[3]
-          else
-            self._changeLength = 0
-          end
-          return self._changeLength
-        end
+      if n <= #self._fishingInvitOperator then
+        self._changeLength = self._fishingInvitOperator[n][3]
+      else
+        self._changeLength = 0
       end
+      return self._changeLength
+    end
+  elseif type == 6 or type == 1 then
+    if self._fishingOldOperator == nil then
+      return nil
+    else
+      if n <= #self._fishingOldOperator then
+        self._changeLength = self._fishingOldOperator[n][3]
+      else
+        self._changeLength = 0
+      end
+      return self._changeLength
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFish.GetChangeTime = function(self, type, n)
-  -- function num : 0_19
+function HomelandFish:GetChangeTime(type, n)
   if type == 3 then
     if self._fishingRaceOperator == nil then
       return nil
     else
       if n <= #self._fishingRaceOperator then
-        self._changeTime = ((self._fishingRaceOperator)[n])[4]
+        self._changeTime = self._fishingRaceOperator[n][4]
       else
         self._changeTime = 0
       end
       return self._changeTime
     end
-  else
-    if type == 5 then
-      if self._fishingInvitOperator == nil then
-        return nil
-      else
-        if n <= #self._fishingInvitOperator then
-          self._changeTime = ((self._fishingInvitOperator)[n])[4]
-        else
-          self._changeTime = 0
-        end
-        return self._changeTime
-      end
+  elseif type == 5 then
+    if self._fishingInvitOperator == nil then
+      return nil
     else
-      if type == 6 or type == 1 then
-        if self._fishingOldOperator == nil then
-          return nil
-        else
-          if n <= #self._fishingOldOperator then
-            self._changeTime = ((self._fishingOldOperator)[n])[4]
-          else
-            self._changeTime = 0
-          end
-          return self._changeTime
-        end
+      if n <= #self._fishingInvitOperator then
+        self._changeTime = self._fishingInvitOperator[n][4]
+      else
+        self._changeTime = 0
       end
+      return self._changeTime
+    end
+  elseif type == 6 or type == 1 then
+    if self._fishingOldOperator == nil then
+      return nil
+    else
+      if n <= #self._fishingOldOperator then
+        self._changeTime = self._fishingOldOperator[n][4]
+      else
+        self._changeTime = 0
+      end
+      return self._changeTime
     end
   end
 end
-
-

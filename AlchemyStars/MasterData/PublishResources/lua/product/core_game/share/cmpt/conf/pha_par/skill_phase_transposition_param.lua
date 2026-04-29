@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_transposition_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseTranspositionParam", SkillPhaseParamBase)
 SkillPhaseTranspositionParam = SkillPhaseTranspositionParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseTranspositionParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseTranspositionParam:Constructor(t)
   self._anim1 = t.anim1
   self._anim2 = t.anim2
   self._materialAnim1 = t.materialAnim1
@@ -25,119 +18,81 @@ SkillPhaseTranspositionParam.Constructor = function(self, t)
   self._otherMaterialAnim = t.otherMaterialAnim
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTranspositionParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseTranspositionParam:GetPhaseType()
   return SkillViewPhaseType.Transposition
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTranspositionParam.GetFlyEffectID = function(self)
-  -- function num : 0_2
+function SkillPhaseTranspositionParam:GetFlyEffectID()
   return self._flyEffectID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTranspositionParam.GetMainEffectID1 = function(self)
-  -- function num : 0_3
+function SkillPhaseTranspositionParam:GetMainEffectID1()
   return self._mainEffectID1
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTranspositionParam.GetMainEffectID2 = function(self)
-  -- function num : 0_4
+function SkillPhaseTranspositionParam:GetMainEffectID2()
   return self._mainEffectID2
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTranspositionParam.GetAnim1 = function(self)
-  -- function num : 0_5
+function SkillPhaseTranspositionParam:GetAnim1()
   return self._anim1
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTranspositionParam.GetAnim2 = function(self)
-  -- function num : 0_6
+function SkillPhaseTranspositionParam:GetAnim2()
   return self._anim2
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTranspositionParam.GetMaterialAnim1 = function(self)
-  -- function num : 0_7
+function SkillPhaseTranspositionParam:GetMaterialAnim1()
   return self._materialAnim1
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTranspositionParam.GetMaterialAnim2 = function(self)
-  -- function num : 0_8
+function SkillPhaseTranspositionParam:GetMaterialAnim2()
   return self._materialAnim2
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTranspositionParam.GetCasterMaterialAnim = function(self)
-  -- function num : 0_9
+function SkillPhaseTranspositionParam:GetCasterMaterialAnim()
   return self._casterMaterialAnim
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTranspositionParam.GetOtherMaterialAnim = function(self)
-  -- function num : 0_10
+function SkillPhaseTranspositionParam:GetOtherMaterialAnim()
   return self._otherMaterialAnim
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTranspositionParam.GetDelayFlyTime = function(self)
-  -- function num : 0_11
+function SkillPhaseTranspositionParam:GetDelayFlyTime()
   return self._delayFlyTime
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTranspositionParam.GetOneGridFlyTime = function(self)
-  -- function num : 0_12
+function SkillPhaseTranspositionParam:GetOneGridFlyTime()
   return self._oneGridFlyTime
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTranspositionParam.GetFinishTime = function(self)
-  -- function num : 0_13
+function SkillPhaseTranspositionParam:GetFinishTime()
   return self._finishTime
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTranspositionParam.IsUseSuper = function(self)
-  -- function num : 0_14
+function SkillPhaseTranspositionParam:IsUseSuper()
   return self._useSuper
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTranspositionParam.GetCacheTable = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function SkillPhaseTranspositionParam:GetCacheTable()
   local t = {}
   if self._mainEffectID1 and self._mainEffectID1 > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._mainEffectID1]).ResPath, 2}
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._mainEffectID1].ResPath,
+      2
+    }
   end
-  if self._mainEffectID2 and self._mainEffectID2 > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._mainEffectID2]).ResPath, 2}
+  if self._mainEffectID2 and 0 < self._mainEffectID2 then
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._mainEffectID2].ResPath,
+      2
+    }
   end
-  if self._flyEffectID and self._flyEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._flyEffectID]).ResPath, 2}
+  if self._flyEffectID and 0 < self._flyEffectID then
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._flyEffectID].ResPath,
+      2
+    }
   end
   return t
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/backpack/ui_season_backpack_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBackpackNode", UICustomWidget)
 UISeasonBackpackNode = UISeasonBackpackNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBackpackNode.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonBackpackNode:OnShow(uiParams)
   self._isUnlock = false
   self._seasonModule = self:GetModule(SeasonModule)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
@@ -17,127 +10,84 @@ UISeasonBackpackNode.OnShow = function(self, uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackNode.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonBackpackNode:InitWidget()
   self._stateImg = self:GetUIComponent("Image", "StateImg")
   self._levelRect = self:GetUIComponent("RectTransform", "Level")
   self._name = self:GetUIComponent("UILocalizedTMP", "Name")
   self._doneGO = self:GetGameObject("Done")
   self._redpoint = self:GetGameObject("Redpoint")
-  self._animation = (self:GetGameObject()):GetComponent("Animation")
+  self._animation = self:GetGameObject():GetComponent("Animation")
   self._levelAnimation = self:GetUIComponent("Animation", "Level")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackNode.SetData = function(self, index, cfg)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonBackpackNode:SetData(index, cfg)
   self._index = index
   self._cfg = cfg
-  self._levelCfg = (Cfg.cfg_season_debris_level)[(self._cfg).ID]
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._levelRect).anchoredPosition = Vector2(0, (self._levelCfg).Y)
-  self._key = "UISeasonBackpack" .. ((GameGlobal.GetModule)(LoginModule)):GetRoleShowID() .. (self._cfg).ID
+  self._levelCfg = Cfg.cfg_season_debris_level[self._cfg.ID]
+  self._levelRect.anchoredPosition = Vector2(0, self._levelCfg.Y)
+  self._key = "UISeasonBackpack" .. GameGlobal.GetModule(LoginModule):GetRoleShowID() .. self._cfg.ID
   self:_RefreshUI()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackNode._RefreshUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonBackpackNode:_RefreshUI()
   local levelImgName = "exp_s3_xxg_btn01"
-  local name = (StringTable.Get)((self._levelCfg).Title)
-  local isDone = (self._seasonModule):GetHasPassedDebris((self._cfg).ID)
+  local name = StringTable.Get(self._levelCfg.Title)
+  local isDone = self._seasonModule:GetHasPassedDebris(self._cfg.ID)
   if isDone then
     self._isUnlock = true
     levelImgName = "exp_s3_xxg_btn02"
   else
-    local curTime = (self._svrTimeModule):GetServerTime() * 0.001
-    local unlockTime = (self._loginModule):GetTimeStampByTimeStr((self._cfg).DateTimeBegin, (self._cfg).TimeTransform)
-    self._isUnlock = unlockTime <= curTime
+    local curTime = self._svrTimeModule:GetServerTime() * 0.001
+    local unlockTime = self._loginModule:GetTimeStampByTimeStr(self._cfg.DateTimeBegin, self._cfg.TimeTransform)
+    self._isUnlock = curTime >= unlockTime
     if not self._isUnlock then
       levelImgName = "exp_s3_xxg_btn03"
-      name = (StringTable.Get)("str_season_debris_locktime", (UIActivityHelper.GetFormatTimerStr)(unlockTime - curTime))
+      name = StringTable.Get("str_season_debris_locktime", UIActivityHelper.GetFormatTimerStr(unlockTime - curTime))
     end
   end
-  ;
-  (self._doneGO):SetActive(isDone)
-  ;
-  (self._name):SetText(name)
-  ;
-  (self._redpoint):SetActive(self:_CheckRedpoint())
-  -- DECOMPILER ERROR at PC63: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._stateImg).sprite = (self._atlas):GetSprite(levelImgName)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._doneGO:SetActive(isDone)
+  self._name:SetText(name)
+  self._redpoint:SetActive(self:_CheckRedpoint())
+  self._stateImg.sprite = self._atlas:GetSprite(levelImgName)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackNode.LevelOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonBackpackNode:LevelOnClick(go)
   if self._isUnlock then
     self:ShowDialog("UISeasonBackpackInfo", self._cfg)
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_debris_lock"))
+    ToastManager.ShowToast(StringTable.Get("str_season_debris_lock"))
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackNode._CheckRedpoint = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonBackpackNode:_CheckRedpoint()
   if self._isUnlock then
-    local record = (LocalDB.GetInt)(self._key, 0)
-    ;
-    (LocalDB.SetInt)(self._key, 1)
+    local record = LocalDB.GetInt(self._key, 0)
+    LocalDB.SetInt(self._key, 1)
     return record <= 0
   else
     return false
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackNode.Index = function(self)
-  -- function num : 0_6
+function UISeasonBackpackNode:Index()
   return self._index
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackNode.IsUnlock = function(self)
-  -- function num : 0_7
+function UISeasonBackpackNode:IsUnlock()
   return self._isUnlock
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackNode.Refresh = function(self)
-  -- function num : 0_8
+function UISeasonBackpackNode:Refresh()
   self:_RefreshUI()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackNode.PlayAnimation = function(self)
-  -- function num : 0_9
+function UISeasonBackpackNode:PlayAnimation()
   if self._isUnlock then
-    (self._levelAnimation):Play("uieff_UISeasonBackpackNode_level_in")
+    self._levelAnimation:Play("uieff_UISeasonBackpackNode_level_in")
   end
   if self._index % 2 == 1 then
-    (self._animation):Play("uieff_UISeasonBackpackNode_in01")
+    self._animation:Play("uieff_UISeasonBackpackNode_in01")
   else
-    ;
-    (self._animation):Play("uieff_UISeasonBackpackNode_in")
+    self._animation:Play("uieff_UISeasonBackpackNode_in")
   end
 end
-
-

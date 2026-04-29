@@ -1,96 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/base_building/ui_homeland_minimap_icon_base_building.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapIconBaseBuilding", UIHomelandMinimapIconBase)
 UIHomelandMinimapIconBaseBuilding = UIHomelandMinimapIconBaseBuilding
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapIconBaseBuilding.OnInitDone = function(self)
-  -- function num : 0_0
+function UIHomelandMinimapIconBaseBuilding:OnInitDone()
   self.getable = self:GetGameObject("getable")
   self.selected = self:GetGameObject("Selected")
-  ;
-  (self.getable):SetActive(false)
+  self.getable:SetActive(false)
   self:Init()
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBaseBuilding.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.data = (self.mHomeland):GetForgeData()
+function UIHomelandMinimapIconBaseBuilding:Init()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.data = self.mHomeland:GetForgeData()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBaseBuilding.Flush = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local mapStateCount = (self.data):GetSequenceStateCountMap()
+function UIHomelandMinimapIconBaseBuilding:Flush()
+  local mapStateCount = self.data:GetSequenceStateCountMap()
   local countGetable = mapStateCount[ForgeSequenceState.Getable]
-  if countGetable > 0 then
-    (self.getable):SetActive(true)
+  if 0 < countGetable then
+    self.getable:SetActive(true)
   else
-    ;
-    (self.getable):SetActive(false)
+    self.getable:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBaseBuilding.OnSelected = function(self)
-  -- function num : 0_3
-  (self.selected):SetActive(true)
+function UIHomelandMinimapIconBaseBuilding:OnSelected()
+  self.selected:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBaseBuilding.OnUnSelected = function(self)
-  -- function num : 0_4
-  (self.selected):SetActive(false)
+function UIHomelandMinimapIconBaseBuilding:OnUnSelected()
+  self.selected:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBaseBuilding.GetShowName = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local building = (self:GetIconData()):GetParam()
+function UIHomelandMinimapIconBaseBuilding:GetShowName()
+  local building = self:GetIconData():GetParam()
   local skinId = building:SkinID()
-  local cfg_item_architecture_skin = (Cfg.cfg_item_architecture_skin)[skinId]
-  return (StringTable.Get)(cfg_item_architecture_skin.SkinName)
+  local cfg_item_architecture_skin = Cfg.cfg_item_architecture_skin[skinId]
+  return StringTable.Get(cfg_item_architecture_skin.SkinName)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBaseBuilding.GetAnimationName = function(self, animType)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandMinimapIconBaseBuilding:GetAnimationName(animType)
   if not self._animationNames then
     self._animationNames = {}
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.IN] = "UIHomelandMinimapIconBaseBuilding_in"
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.OUT] = "UIHomelandMinimapIconBaseBuilding_out"
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.SELECT] = "UIHomelandMinimapIconBaseBuilding_Selected_in"
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.UNSELECT] = "UIHomelandMinimapIconBaseBuilding_Selected_out"
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.EXPANSION] = "UIHomelandMinimapIconBaseBuilding_expansion"
+    self._animationNames[MinimapIconAnimationType.IN] = "UIHomelandMinimapIconBaseBuilding_in"
+    self._animationNames[MinimapIconAnimationType.OUT] = "UIHomelandMinimapIconBaseBuilding_out"
+    self._animationNames[MinimapIconAnimationType.SELECT] = "UIHomelandMinimapIconBaseBuilding_Selected_in"
+    self._animationNames[MinimapIconAnimationType.UNSELECT] = "UIHomelandMinimapIconBaseBuilding_Selected_out"
+    self._animationNames[MinimapIconAnimationType.EXPANSION] = "UIHomelandMinimapIconBaseBuilding_expansion"
   end
-  return (self._animationNames)[animType]
+  return self._animationNames[animType]
 end
-
-

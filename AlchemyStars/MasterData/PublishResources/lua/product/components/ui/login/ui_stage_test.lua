@@ -1,40 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/login/ui_stage_test.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIStageTestController", UIController)
 UIStageTestController = UIStageTestController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIStageTestController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIStageTestController:OnShow(uiParams)
   self._sceneInput = self:GetUIComponent("InputField", "InputField")
   self._PetIDInputFieldInput = self:GetUIComponent("InputField", "PetIDInputField")
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._sceneInput).text = "ftzc"
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (UnityEngine.Application).targetFrameRate = 500
+  self._sceneInput.text = "ftzc"
+  UnityEngine.Application.targetFrameRate = 500
   self._petPrefabRes = {}
   self._petBattleAniRes = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTestController.BtnBackOnClick = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIStageTestController:BtnBackOnClick()
   self:SwitchState(UIStateType.Login)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTestController.BtnSwitchOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local nextSceneName = (self._sceneInput).text
+function UIStageTestController:BtnSwitchOnClick()
+  local nextSceneName = self._sceneInput.text
   if nextSceneName == "pet" then
     self:LoadPet(1400402)
     self:LoadPet(1300521)
@@ -42,83 +23,52 @@ UIStageTestController.BtnSwitchOnClick = function(self)
     self:LoadPet(1400571)
     self:LoadPet(1500331)
   else
-    ;
-    ((GameGlobal.UIStateManager)()):ShowBusy(true)
-    ;
-    ((GameGlobal.UIStateManager)()):Lock("BtnBackOnClick")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.SwitchScene, self, nextSceneName)
+    GameGlobal.UIStateManager():ShowBusy(true)
+    GameGlobal.UIStateManager():Lock("BtnBackOnClick")
+    GameGlobal.TaskManager():StartTask(self.SwitchScene, self, nextSceneName)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTestController.SwitchScene = function(self, TT, nextSceneName)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.GameLogic)()):LoadScene(TT, nextSceneName)
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("BtnBackOnClick")
-  ;
-  ((GameGlobal.UIStateManager)()):ShowBusy(false)
+function UIStageTestController:SwitchScene(TT, nextSceneName)
+  GameGlobal.GameLogic():LoadScene(TT, nextSceneName)
+  GameGlobal.UIStateManager():UnLock("BtnBackOnClick")
+  GameGlobal.UIStateManager():ShowBusy(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTestController.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (UnityEngine.Application).targetFrameRate = 30
+function UIStageTestController:OnHide()
+  UnityEngine.Application.targetFrameRate = 30
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTestController.BtnLod0OnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (LODManager.Instance):SetLODLevel(0)
+function UIStageTestController:BtnLod0OnClick()
+  LODManager.Instance:SetLODLevel(0)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTestController.BtnLod1OnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (LODManager.Instance):SetLODLevel(1)
+function UIStageTestController:BtnLod1OnClick()
+  LODManager.Instance:SetLODLevel(1)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTestController.BtnLod2OnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (LODManager.Instance):SetLODLevel(2)
+function UIStageTestController:BtnLod2OnClick()
+  LODManager.Instance:SetLODLevel(2)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTestController.BtnPetOnClick = function(self)
-  -- function num : 0_8
-  local petid = (self._PetIDInputFieldInput).text
+function UIStageTestController:BtnPetOnClick()
+  local petid = self._PetIDInputFieldInput.text
   self:LoadPet(petid)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTestController.BtnUnloadPetOnClick = function(self)
-  -- function num : 0_9
-  local petid = (self._PetIDInputFieldInput).text
-  local petrequest = (self._petPrefabRes)[petid]
+function UIStageTestController:BtnUnloadPetOnClick()
+  local petid = self._PetIDInputFieldInput.text
+  local petrequest = self._petPrefabRes[petid]
   if petrequest ~= nil then
     petrequest:Dispose()
   end
-  local anirequest = (self._petBattleAniRes)[petid]
+  local anirequest = self._petBattleAniRes[petid]
   if anirequest ~= nil then
     anirequest:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTestController.BtnTeamOnClick = function(self)
-  -- function num : 0_10
+function UIStageTestController:BtnTeamOnClick()
   self:LoadPet(1400402)
   self:LoadPet(1300521)
   self:LoadPet(1400161)
@@ -126,45 +76,29 @@ UIStageTestController.BtnTeamOnClick = function(self)
   self:LoadPet(1500331)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTestController.LoadPet = function(self, petID)
-  -- function num : 0_11 , upvalues : _ENV
-  (Log.debug)("UIStageTestController:LoadPet", petID)
+function UIStageTestController:LoadPet(petID)
+  Log.debug("UIStageTestController:LoadPet", petID)
   local assetname = petID .. ".prefab"
-  local request = (ResourceManager:GetInstance()):SyncLoadAsset(assetname, LoadType.GameObject)
+  local request = ResourceManager:GetInstance():SyncLoadAsset(assetname, LoadType.GameObject)
   if request == nil then
-    (Log.fatal)("LoadGameObject failed", "[" .. assetname .. "]")
-    return 
+    Log.fatal("LoadGameObject failed", "[" .. assetname .. "]")
+    return
   end
   local u3dGo = request.Obj
   u3dGo:SetActive(true)
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (u3dGo.transform).position = Vector3((math.random)(-4, 4), 0, (math.random)(-4, 4))
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._petPrefabRes)[petID] = request
+  u3dGo.transform.position = Vector3(math.random(-4, 4), 0, math.random(-4, 4))
+  self._petPrefabRes[petID] = request
   local ani_battle_name = petID .. "_battle.prefab"
-  local ani_request = (ResourceManager:GetInstance()):SyncLoadAsset(ani_battle_name, LoadType.GameObject)
+  local ani_request = ResourceManager:GetInstance():SyncLoadAsset(ani_battle_name, LoadType.GameObject)
   if ani_request == nil then
-    (Log.fatal)("LoadGameObject failed", "[" .. ani_battle_name .. "]")
-    return 
+    Log.fatal("LoadGameObject failed", "[" .. ani_battle_name .. "]")
+    return
   end
-  local animatorController = ((ani_request.Obj):GetComponent(typeof(UnityEngine.Animator))).runtimeAnimatorController
+  local animatorController = ani_request.Obj:GetComponent(typeof(UnityEngine.Animator)).runtimeAnimatorController
   if animatorController == nil then
-    (Log.error)("[ani] getAnimatorController Error", ani_request.m_Name)
+    Log.error("[ani] getAnimatorController Error", ani_request.m_Name)
   end
-  ;
-  (u3dGo:GetComponentInChildren(typeof(UnityEngine.Animator))).runtimeAnimatorController = animatorController
-  ;
-  (ani_request.Obj):SetActive(false)
-  -- DECOMPILER ERROR at PC97: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._petBattleAniRes)[petID] = ani_request
+  u3dGo:GetComponentInChildren(typeof(UnityEngine.Animator)).runtimeAnimatorController = animatorController
+  ani_request.Obj:SetActive(false)
+  self._petBattleAniRes[petID] = ani_request
 end
-
-

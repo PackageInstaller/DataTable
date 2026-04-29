@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/helper/h3d_unscaled_timer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("h3d_timer")
 _class("H3DUnscaledTimer", H3DTimer)
 H3DUnscaledTimer = H3DUnscaledTimer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-H3DUnscaledTimer.Constructor = function(self)
-  -- function num : 0_0
+function H3DUnscaledTimer:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DUnscaledTimer._GetCurrentTime = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  return (GameGlobal:GetInstance()):GetCurrentUnscaledTime()
+function H3DUnscaledTimer:_GetCurrentTime()
+  return GameGlobal:GetInstance():GetCurrentUnscaledTime()
 end
-
-

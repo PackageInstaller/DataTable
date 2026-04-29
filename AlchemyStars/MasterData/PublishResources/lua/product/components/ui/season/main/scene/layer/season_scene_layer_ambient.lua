@@ -1,79 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/scene/layer/season_scene_layer_ambient.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("season_scene_layer_base")
 _class("SeasonSceneLayerAmbient", SeasonSceneLayerBase)
 SeasonSceneLayerAmbient = SeasonSceneLayerAmbient
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonSceneLayerAmbient.Constructor = function(self, sceneRoot)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonSceneLayerAmbient:Constructor(sceneRoot)
   self._time = 1
-  self._ambientLayer = (self._sceneRootTransform):Find(SeasonSceneLayer.Ambient)
+  self._ambientLayer = self._sceneRootTransform:Find(SeasonSceneLayer.Ambient)
   self._ambientEffects = {}
   self:_CacheAmbientRenderer()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerAmbient.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((SeasonSceneLayerAmbient.super).Dispose)(self)
-  ;
-  (table.clear)(self._ambientEffects)
+function SeasonSceneLayerAmbient:Dispose()
+  SeasonSceneLayerAmbient.super.Dispose(self)
+  table.clear(self._ambientEffects)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerAmbient.UnLock = function(self, zoneMask, zoneID2Animation)
-  -- function num : 0_2 , upvalues : _ENV
-  local unlockZoneIDs = (SeasonTool:GetInstance()):GetZonesByZoneMask(zoneMask)
-  for zoneid,effects in pairs(self._ambientEffects) do
-    for key,effect in pairs(effects) do
-      effect:SetActive((table.icontains)(unlockZoneIDs, zoneid))
+function SeasonSceneLayerAmbient:UnLock(zoneMask, zoneID2Animation)
+  local unlockZoneIDs = SeasonTool:GetInstance():GetZonesByZoneMask(zoneMask)
+  for zoneid, effects in pairs(self._ambientEffects) do
+    for key, effect in pairs(effects) do
+      effect:SetActive(table.icontains(unlockZoneIDs, zoneid))
     end
   end
-  for zoneid,zoneRenderers in pairs(self._renderers) do
+  for zoneid, zoneRenderers in pairs(self._renderers) do
     local alpha = 0
-    if (table.icontains)(unlockZoneIDs, zoneid) then
+    if table.icontains(unlockZoneIDs, zoneid) then
       alpha = 1
     end
-    for key,renderer in pairs(zoneRenderers) do
-      if zoneid == zoneID2Animation and renderer.material then
-        (renderer.material):DOFloat(alpha, "AlphaValue", self._time)
-      end
-      if renderer.material then
-        (renderer.material):SetFloat("AlphaValue", alpha)
+    for key, renderer in pairs(zoneRenderers) do
+      if zoneid == zoneID2Animation then
+        if renderer.material then
+          renderer.material:DOFloat(alpha, "AlphaValue", self._time)
+        end
+      elseif renderer.material then
+        renderer.material:SetFloat("AlphaValue", alpha)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerAmbient._CacheAmbientRenderer = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonSceneLayerAmbient:_CacheAmbientRenderer()
   if self._ambientLayer then
-    local zoneCount = (self._ambientLayer).childCount
-    if zoneCount > 0 then
+    local zoneCount = self._ambientLayer.childCount
+    if 0 < zoneCount then
       for i = 0, zoneCount - 1 do
-        local zone = (self._ambientLayer):GetChild(i)
+        local zone = self._ambientLayer:GetChild(i)
         if zone then
           local zoneid = i + 1
           local childCount = zone.childCount
           for j = 0, childCount - 1 do
             local ambient = zone:GetChild(j)
-            -- DECOMPILER ERROR at PC32: Confused about usage of register: R14 in 'UnsetPending'
-
-            if not (self._ambientEffects)[zoneid] then
-              (self._ambientEffects)[zoneid] = {}
+            if not self._ambientEffects[zoneid] then
+              self._ambientEffects[zoneid] = {}
             end
-            ;
-            (table.insert)((self._ambientEffects)[zoneid], ambient.gameObject)
-            local renderers = (ambient.gameObject):GetComponentsInChildren(typeof(UnityEngine.Renderer))
-            if renderers.Length > 0 then
+            table.insert(self._ambientEffects[zoneid], ambient.gameObject)
+            local renderers = ambient.gameObject:GetComponentsInChildren(typeof(UnityEngine.Renderer))
+            if 0 < renderers.Length then
               for k = 0, renderers.Length - 1 do
                 self:InsertMeshRender(zoneid, renderers[k])
               end
@@ -84,5 +65,3 @@ SeasonSceneLayerAmbient._CacheAmbientRenderer = function(self)
     end
   end
 end
-
-

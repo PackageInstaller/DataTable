@@ -1,150 +1,92 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_credits/ui_credits.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICredits", UIController)
 UICredits = UICredits
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICredits.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
-  self.tran = (self:GetGameObject()).transform
+function UICredits:OnShow(uiParam)
+  self.tran = self:GetGameObject().transform
   self.txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
   self.goBtns = self:GetGameObject("btns")
-  ;
-  (self.goBtns):SetActive(false)
+  self.goBtns:SetActive(false)
   local btns = self:GetUIComponent("UISelectObjectPath", "btns")
   self._backBtns = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_0_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, nil)
-  local credits = (Cfg.cfg_credits)()
-  local len = (table.count)(credits)
+  end, nil)
+  local credits = Cfg.cfg_credits()
+  local len = table.count(credits)
   local pool = self:GetUIComponent("UISelectObjectPath", "vlg")
   pool:SpawnObjects("UICreditsItem", len)
   local items = pool:GetAllSpawnList()
-  local txts = {self.txtTitle}
-  for i,cfgv in ipairs(credits) do
-    local title = (StringTable.Get)(cfgv.title)
-    local strNames = (StringTable.Get)(cfgv.names)
-    local tName = (string.split)(strNames, ";")
+  local txts = {
+    self.txtTitle
+  }
+  for i, cfgv in ipairs(credits) do
+    local title = StringTable.Get(cfgv.title)
+    local strNames = StringTable.Get(cfgv.names)
+    local tName = string.split(strNames, ";")
     local uiCreditsItem = items[i]
-    ;
-    (uiCreditsItem.txtTitle):SetText(title)
-    local len = (table.count)(tName)
-    -- DECOMPILER ERROR at PC79: Confused about usage of register: R18 in 'UnsetPending'
-
-    if len >= 7 then
-      (uiCreditsItem.glg).constraintCount = 3
+    uiCreditsItem.txtTitle:SetText(title)
+    local len = table.count(tName)
+    if 7 <= len then
+      uiCreditsItem.glg.constraintCount = 3
     else
-      -- DECOMPILER ERROR at PC82: Confused about usage of register: R18 in 'UnsetPending'
-
-      ;
-      (uiCreditsItem.glg).constraintCount = 1
+      uiCreditsItem.glg.constraintCount = 1
     end
-    ;
-    (uiCreditsItem.pool):SpawnObjects("UICreditsNameItem", len)
-    local itemsUICreditsNameItem = (uiCreditsItem.pool):GetAllSpawnList()
-    for j,uiCreditsNameItem in ipairs(itemsUICreditsNameItem) do
-      (uiCreditsNameItem.txtName):SetText(tName[j])
-      ;
-      (table.insert)(txts, uiCreditsNameItem.txtName)
+    uiCreditsItem.pool:SpawnObjects("UICreditsNameItem", len)
+    local itemsUICreditsNameItem = uiCreditsItem.pool:GetAllSpawnList()
+    for j, uiCreditsNameItem in ipairs(itemsUICreditsNameItem) do
+      uiCreditsNameItem.txtName:SetText(tName[j])
+      table.insert(txts, uiCreditsNameItem.txtName)
     end
-    ;
-    (table.insert)(txts, uiCreditsItem.txtTitle)
+    table.insert(txts, uiCreditsItem.txtTitle)
   end
   self.tranVlg = self:GetUIComponent("RectTransform", "vlg")
   self.tranC = self:GetUIComponent("RectTransform", "c")
   local beginY = -200
-  local endY = 28400 + ((self.tranC).rect).height
+  local endY = 28400 + self.tranC.rect.height
   local duration = (endY - beginY) * 0.005
-  -- DECOMPILER ERROR at PC135: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self.tranVlg).anchoredPosition = Vector2(0, beginY)
-  self.tweener = (((self.tranVlg):DOAnchorPosY(endY, duration)):OnComplete(function()
-    -- function num : 0_0_1 , upvalues : self
+  self.tranVlg.anchoredPosition = Vector2(0, beginY)
+  self.tweener = self.tranVlg:DOAnchorPosY(endY, duration):OnComplete(function()
     self:CloseDialog()
-  end
-)):SetEase(((DG.Tweening).Ease).Linear)
+  end):SetEase(DG.Tweening.Ease.Linear)
   local poolEffs = self:GetUIComponent("UISelectObjectPath", "effs")
-  poolEffs:SpawnObjects("UICreditsEffItem", (table.count)(txts))
+  poolEffs:SpawnObjects("UICreditsEffItem", table.count(txts))
   self.itemsEff = poolEffs:GetAllSpawnList()
-  for i,uiitem in ipairs(self.itemsEff) do
+  for i, uiitem in ipairs(self.itemsEff) do
     uiitem:Flush(txts[i])
   end
-  self._cam = (self:GetGameObject("Camera")):GetComponent("Camera")
-  local uiCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UICredits")
-  -- DECOMPILER ERROR at PC191: Confused about usage of register: R13 in 'UnsetPending'
-
-  ;
-  ((self._cam).transform).parent = (uiCamera.transform).parent
-  -- DECOMPILER ERROR at PC199: Confused about usage of register: R13 in 'UnsetPending'
-
-  ;
-  ((self._cam).transform).localPosition = Vector3(0, 0, -10)
-  -- DECOMPILER ERROR at PC204: Confused about usage of register: R13 in 'UnsetPending'
-
-  ;
-  ((self._cam).transform).localScale = Vector3.one
-  -- DECOMPILER ERROR at PC217: Confused about usage of register: R13 in 'UnsetPending'
-
-  ;
-  (self._cam).targetTexture = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
+  self._cam = self:GetGameObject("Camera"):GetComponent("Camera")
+  local uiCamera = GameGlobal.UIStateManager():GetControllerCamera("UICredits")
+  self._cam.transform.parent = uiCamera.transform.parent
+  self._cam.transform.localPosition = Vector3(0, 0, -10)
+  self._cam.transform.localScale = Vector3.one
+  self._cam.targetTexture = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICredits.OnHide = function(self)
-  -- function num : 0_1
+function UICredits:OnHide()
   if self.tweener then
-    (self.tweener):Kill()
+    self.tweener:Kill()
     self.tweener = nil
   end
-  ;
-  ((self._cam).targetTexture):Release()
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._cam).targetTexture = nil
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._cam).transform).parent = self.tran
+  self._cam.targetTexture:Release()
+  self._cam.targetTexture = nil
+  self._cam.transform.parent = self.tran
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICredits.bgOnClick = function(self, go)
-  -- function num : 0_2
+function UICredits:bgOnClick(go)
   self:ShowHideBtns()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICredits.ShowHideBtns = function(self)
-  -- function num : 0_3
-  if (self.goBtns).activeInHierarchy then
-    (self.goBtns):SetActive(false)
+function UICredits:ShowHideBtns()
+  if self.goBtns.activeInHierarchy then
+    self.goBtns:SetActive(false)
   else
-    ;
-    (self.goBtns):SetActive(true)
+    self.goBtns:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICredits.OnUpdate = function(self, dt)
-  -- function num : 0_4 , upvalues : _ENV
-  for i,uiitem in ipairs(self.itemsEff) do
+function UICredits:OnUpdate(dt)
+  for i, uiitem in ipairs(self.itemsEff) do
     uiitem:OnUpdate()
-    ;
-    ((self._cam).targetTexture):SetGlobalShaderProperty("RTUICredits")
+    self._cam.targetTexture:SetGlobalShaderProperty("RTUICredits")
   end
 end
-
-

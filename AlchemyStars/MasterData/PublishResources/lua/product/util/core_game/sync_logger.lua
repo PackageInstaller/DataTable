@@ -1,82 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/sync_logger.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SyncLogger", Object)
 SyncLogger = SyncLogger
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SyncLogger.Constructor = function(self, world)
-  -- function num : 0_0
+function SyncLogger:Constructor(world)
   self._world = world
   self._seq = 1
   self._logs = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncLogger.CheckEnabled = function(self, enable)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
+function SyncLogger:CheckEnabled(enable)
   if enable ~= nil then
     _G.ENABLE_SYNC_LOG = enable
   else
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-    _G.ENABLE_SYNC_LOG = (self._world):IsDevelopEnv()
+    _G.ENABLE_SYNC_LOG = self._world:IsDevelopEnv()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncLogger.Trace = function(self, t)
-  -- function num : 0_2 , upvalues : _ENV
+function SyncLogger:Trace(t)
   if not _G.ENABLE_SYNC_LOG then
-    return 
+    return
   end
   t.seq = self._seq
-  t.tim = (os.date)("%H:%M:%S", (os.time)())
-  local gamefsm = (self._world):GameFSM()
+  t.tim = os.date("%H:%M:%S", os.time())
+  local gamefsm = self._world:GameFSM()
   if gamefsm then
     t.fsm = GetEnumKey("GameStateID", gamefsm:CurStateID())
   end
-  local f1 = (debug.getinfo)(2, "n")
+  local f1 = debug.getinfo(2, "n")
   if f1 then
     t._f1 = f1.name
-    local f2 = (debug.getinfo)(3, "n")
+    local f2 = debug.getinfo(3, "n")
     if f2 then
       t._f2 = f2.name
-      local f3 = (debug.getinfo)(4, "n")
+      local f3 = debug.getinfo(4, "n")
       if f3 then
         t._f3 = f3.name
       end
     end
   end
-  do
-    ;
-    (table.insert)(self._logs, t)
-    self._seq = self._seq + 1
-  end
+  table.insert(self._logs, t)
+  self._seq = self._seq + 1
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncLogger.EchoLog = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SyncLogger:EchoLog()
   local s = "return " .. echo(self._logs)
   self._logs = {}
   return s
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncLogger.LocalLog = function(self)
-  -- function num : 0_4
+function SyncLogger:LocalLog()
   local log = self._logs
   self._logs = {}
   return log
 end
-
-

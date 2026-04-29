@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_fullscreen_except_safe_zone.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 Scope_FullscreenExceptSafeZone_SafeAreaMode = {TrapCenter = 1}
 _enum("Scope_FullscreenExceptSafeZone_SafeAreaMode", Scope_FullscreenExceptSafeZone_SafeAreaMode)
 require("scope_base")
 _class("SkillScopeCalculator_FullscreenExceptSafeZone", SkillScopeCalculator_Base)
 SkillScopeCalculator_FullscreenExceptSafeZone = SkillScopeCalculator_FullscreenExceptSafeZone
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_FullscreenExceptSafeZone.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  if not (self._gridFilter)._world then
+function SkillScopeCalculator_FullscreenExceptSafeZone:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  if not self._gridFilter._world then
     return SkillScopeResult:New(SkillScopeType.FullscreenExceptSafeZone, Vector2.zero, {}, {})
   end
   local safeAreaMode = scopeParam.safeAreaMode
@@ -22,33 +15,30 @@ SkillScopeCalculator_FullscreenExceptSafeZone.CalcRange = function(self, scopeTy
   local safeAreaScopeParam = scopeParam.safeAreaScopeParam
   local calculator = SkillScopeCalculator:New(self._gridFilter)
   local tv2SafeArea = {}
-  for _,v2Center in ipairs(tv2SafeAreaCenter) do
+  for _, v2Center in ipairs(tv2SafeAreaCenter) do
     local scopeResult = calculator:ComputeScopeRange(safeAreaScopeType, safeAreaScopeParam, v2Center, safeAreaBodyArea, casterDir, nTargetType, casterPos, casterEntity)
     if scopeResult:GetAttackRange() then
-      (table.appendArray)(tv2SafeArea, scopeResult:GetAttackRange())
+      table.appendArray(tv2SafeArea, scopeResult:GetAttackRange())
     end
   end
   local safeAreaIndexBoolDic = {}
-  for _,v2 in ipairs(tv2SafeArea) do
-    local index = (Vector2.Pos2Index)(v2)
+  for _, v2 in ipairs(tv2SafeArea) do
+    local index = Vector2.Pos2Index(v2)
     safeAreaIndexBoolDic[index] = true
   end
   local attackRange = {}
   local wholeRange = {}
-  local lsvcBoard = ((self._gridFilter)._world):GetService("BoardLogic")
-  local board = (((self._gridFilter)._world):GetBoardEntity()):Board()
+  local lsvcBoard = self._gridFilter._world:GetService("BoardLogic")
+  local board = self._gridFilter._world:GetBoardEntity():Board()
   local arr = board:GetBlockFlagArray()
-  for x,col in pairs(arr) do
-    for y,block in pairs(col) do
-      local grid = Vector2(R34_PC91, y)
-      R34_PC91 = Vector2
-      R34_PC91 = R34_PC91.Pos2Index
-      R34_PC91 = R34_PC91(grid)
-      local gridPosIndex = nil
+  for x, col in pairs(arr) do
+    for y, block in pairs(col) do
+      local grid = Vector2(x, y)
+      local gridPosIndex = Vector2.Pos2Index(grid)
       if not safeAreaIndexBoolDic[gridPosIndex] then
-        (table.insert)(wholeRange, grid)
+        table.insert(wholeRange, grid)
         if not lsvcBoard:IsPosBlock(grid, BlockFlag.SkillSkip) then
-          (table.insert)(attackRange, grid)
+          table.insert(attackRange, grid)
         end
       end
     end
@@ -57,29 +47,21 @@ SkillScopeCalculator_FullscreenExceptSafeZone.CalcRange = function(self, scopeTy
   return result
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_FullscreenExceptSafeZone._GetSafeAreaCenter = function(self, safeAreaMode, safeAreaParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local world = (self._gridFilter)._world
+function SkillScopeCalculator_FullscreenExceptSafeZone:_GetSafeAreaCenter(safeAreaMode, safeAreaParam)
+  local world = self._gridFilter._world
   local tv2CenterPos = {}
   local tv2BodyArea = {}
   if safeAreaMode == Scope_FullscreenExceptSafeZone_SafeAreaMode.TrapCenter then
-    local globalTrapGroup = world:GetGroupEntities((world.BW_WEMatchers).Trap)
-    for _,eTrap in ipairs(globalTrapGroup) do
-      if (table.icontains)(safeAreaParam, (eTrap:Trap()):GetTrapID()) then
-        local bodyArea = (eTrap:BodyArea()):GetArea()
-        if #tv2BodyArea < #bodyArea then
+    local globalTrapGroup = world:GetGroupEntities(world.BW_WEMatchers.Trap)
+    for _, eTrap in ipairs(globalTrapGroup) do
+      if table.icontains(safeAreaParam, eTrap:Trap():GetTrapID()) then
+        local bodyArea = eTrap:BodyArea():GetArea()
+        if #bodyArea > #tv2BodyArea then
           tv2BodyArea = bodyArea
         end
-        ;
-        (table.insert)(tv2CenterPos, eTrap:GetGridPosition())
+        table.insert(tv2CenterPos, eTrap:GetGridPosition())
       end
     end
   end
-  do
-    return tv2CenterPos, tv2BodyArea
-  end
+  return tv2CenterPos, tv2BodyArea
 end
-
-

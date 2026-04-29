@@ -1,160 +1,110 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/main/ui_n28_main_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28MainEnter", UIMainLobbyMainCampaignBase)
 UIN28MainEnter = UIN28MainEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28MainEnter.GetComponent = function(self)
-  -- function num : 0_0
+function UIN28MainEnter:GetComponent()
   self._new = self:GetGameObject("new")
   self._red = self:GetGameObject("red")
-  ;
-  (self._new):SetActive(false)
-  ;
-  (self._red):SetActive(false)
+  self._new:SetActive(false)
+  self._red:SetActive(false)
   self._tipspanel1 = self:GetGameObject("tipspanel1")
   self._tipspanel2 = self:GetGameObject("tipspanel2")
   self._tipspanel3 = self:GetGameObject("tipspanel3")
   self._tipspanel4 = self:GetGameObject("tipspanel4")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28MainEnter.RefreshView = function(self)
-  -- function num : 0_1
-  (self._new):SetActive(false)
-  ;
-  (self._red):SetActive(false)
-  if (self._activityConst):IsShowEntryNew() then
-    (self._new):SetActive(true)
-    return 
+function UIN28MainEnter:RefreshView()
+  self._new:SetActive(false)
+  self._red:SetActive(false)
+  if self._activityConst:IsShowEntryNew() then
+    self._new:SetActive(true)
+    return
   end
-  if (self._activityConst):IsShowEntryRed() then
-    (self._red):SetActive(true)
+  if self._activityConst:IsShowEntryRed() then
+    self._red:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28MainEnter.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN28MainEnter:OnShow(uiParams)
   self:GetComponent()
   self._activityConst = UIActivityN28Const:New()
   self:RequestCampaign()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28MainEnter.OnHide = function(self)
-  -- function num : 0_3
+function UIN28MainEnter:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28MainEnter.SetData_uiMainLobbyController = function(self, controller)
-  -- function num : 0_4
+function UIN28MainEnter:SetData_uiMainLobbyController(controller)
   self._uiMainLobbyController = controller
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28MainEnter.RequestCampaign = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN28MainEnter:RequestCampaign()
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
     local lockName = "UIN28MainEnterRequestCampaign"
     self:Lock(lockName)
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    ;
-    (self._activityConst):LoadData(TT, res)
+    self._activityConst:LoadData(TT, res)
     self:Flush()
     self:FlushNewRed()
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28MainEnter.Flush = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._tipspanel1):SetActive(false)
-  ;
-  (self._tipspanel2):SetActive(false)
-  ;
-  (self._tipspanel3):SetActive(false)
-  ;
-  (self._tipspanel4):SetActive(false)
-  local status, time = (self._activityConst):GetTryPetComponentStatus()
+function UIN28MainEnter:Flush()
+  self._tipspanel1:SetActive(false)
+  self._tipspanel2:SetActive(false)
+  self._tipspanel3:SetActive(false)
+  self._tipspanel4:SetActive(false)
+  local status, time = self._activityConst:GetTryPetComponentStatus()
   if status == ActivityN28ComponentStatus.Open then
-    (self._tipspanel4):SetActive(true)
-    return 
+    self._tipspanel4:SetActive(true)
+    return
   end
-  local status, time = (self._activityConst):EnterGetHardLineMissionComponentStatus()
+  local status, time = self._activityConst:EnterGetHardLineMissionComponentStatus()
   if status == ActivityN28ComponentStatus.Open then
-    (self._tipspanel2):SetActive(true)
-    return 
+    self._tipspanel2:SetActive(true)
+    return
   end
-  local status, time = (self._activityConst):GetAVGGameComponentStatus()
+  local status, time = self._activityConst:GetAVGGameComponentStatus()
   if status == ActivityN28ComponentStatus.Open then
-    (self._tipspanel1):SetActive(true)
-    return 
+    self._tipspanel1:SetActive(true)
+    return
   end
-  local status, time = (self._activityConst):GetShopComponentStatus()
+  local status, time = self._activityConst:GetShopComponentStatus()
   if status == ActivityN28ComponentStatus.Open then
-    (self._tipspanel3):SetActive(true)
-    return 
+    self._tipspanel3:SetActive(true)
+    return
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28MainEnter.FlushNewRed = function(self)
-  -- function num : 0_7
-  (self._new):SetActive(false)
-  ;
-  (self._red):SetActive(false)
-  if (self._activityConst):IsShowEntryNew() then
-    (self._new):SetActive(true)
-    return 
+function UIN28MainEnter:FlushNewRed()
+  self._new:SetActive(false)
+  self._red:SetActive(false)
+  if self._activityConst:IsShowEntryNew() then
+    self._new:SetActive(true)
+    return
   end
-  if (self._activityConst):IsShowEntryRed() then
-    (self._red):SetActive(true)
+  if self._activityConst:IsShowEntryRed() then
+    self._red:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28MainEnter.BtnOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.Enter, self)
+function UIN28MainEnter:BtnOnClick(go)
+  GameGlobal.TaskManager():StartTask(self.Enter, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28MainEnter.Enter = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN28MainEnter:Enter(TT)
   self:Lock("UIN28MainEnter_Enter")
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (self._activityConst):LoadData(TT, res)
-  do
-    if res and not res:GetSucc() then
-      local campModule = (GameGlobal.GetModule)(CampaignModule)
-      campModule:CheckErrorCode(res.m_result, ((self._activityConst):GetCampaignId()), nil, nil)
-      self:UnLock("UIN28MainEnter_Enter")
-      return 
-    end
-    ;
-    (CutsceneManager.ExcuteCutsceneIn_Shot)()
-    self:SwitchState(UIStateType.UIActivityN28MainController)
+  self._activityConst:LoadData(TT, res)
+  if res and not res:GetSucc() then
+    local campModule = GameGlobal.GetModule(CampaignModule)
+    campModule:CheckErrorCode(res.m_result, self._activityConst:GetCampaignId(), nil, nil)
     self:UnLock("UIN28MainEnter_Enter")
+    return
   end
+  CutsceneManager.ExcuteCutsceneIn_Shot()
+  self:SwitchState(UIStateType.UIActivityN28MainController)
+  self:UnLock("UIN28MainEnter_Enter")
 end
-
-

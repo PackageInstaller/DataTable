@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/pop_star/ui_widget_pop_star_mark_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetPopStarMarkInfo", UICustomWidget)
 UIWidgetPopStarMarkInfo = UIWidgetPopStarMarkInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetPopStarMarkInfo.OnShow = function(self)
-  -- function num : 0_0
-  self._rtMark = (self:GetGameObject()).transform
+function UIWidgetPopStarMarkInfo:OnShow()
+  self._rtMark = self:GetGameObject().transform
   self._markInfo = self:GetGameObject("markInfo")
   self._markedInfo = self:GetGameObject("markedInfo")
   self._txtMarkScore = self:GetUIComponent("UILocalizationText", "txtMarkScore")
@@ -18,51 +11,31 @@ UIWidgetPopStarMarkInfo.OnShow = function(self)
   self._passed = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarMarkInfo.Init = function(self, posX, num)
-  -- function num : 0_1 , upvalues : _ENV
-  local tmpPos = (self._rtMark).anchoredPosition3D
+function UIWidgetPopStarMarkInfo:Init(posX, num)
+  local tmpPos = self._rtMark.anchoredPosition3D
   tmpPos.x = posX
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rtMark).anchoredPosition3D = tmpPos
-  ;
-  (self._txtMarkScore):SetText(tostring(num))
-  ;
-  (self._txtMarkedScore):SetText(tostring(num))
+  self._rtMark.anchoredPosition3D = tmpPos
+  self._txtMarkScore:SetText(tostring(num))
+  self._txtMarkedScore:SetText(tostring(num))
   self._baseNum = num
   self._passed = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarMarkInfo.RefreshPassState = function(self, num)
-  -- function num : 0_2
+function UIWidgetPopStarMarkInfo:RefreshPassState(num)
   if self._passed == true then
-    return 
+    return
   end
-  if self._baseNum <= num then
-    (self._markInfo):SetActive(false)
-    ;
-    (self._markedInfo):SetActive(true)
+  if num >= self._baseNum then
+    self._markInfo:SetActive(false)
+    self._markedInfo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarMarkInfo.ResetNum = function(self, num)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._txtMarkScore):SetText(tostring(num))
-  ;
-  (self._txtMarkedScore):SetText(tostring(num))
+function UIWidgetPopStarMarkInfo:ResetNum(num)
+  self._txtMarkScore:SetText(tostring(num))
+  self._txtMarkedScore:SetText(tostring(num))
   self._baseNum = num
   self._passed = false
-  ;
-  (self._markInfo):SetActive(true)
-  ;
-  (self._markedInfo):SetActive(false)
+  self._markInfo:SetActive(true)
+  self._markedInfo:SetActive(false)
 end
-
-

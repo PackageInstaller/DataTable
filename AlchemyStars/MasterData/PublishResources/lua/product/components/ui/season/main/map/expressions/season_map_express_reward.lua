@@ -1,89 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/expressions/season_map_express_reward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapExpressReward", SeasonMapExpressBase)
 SeasonMapExpressReward = SeasonMapExpressReward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapExpressReward.Constructor = function(self, cfg, eventPoint)
-  -- function num : 0_0 , upvalues : _ENV
-  self._content = (self._cfg).Reward
-  self._seasonManager = ((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()
+function SeasonMapExpressReward:Constructor(cfg, eventPoint)
+  self._content = self._cfg.Reward
+  self._seasonManager = GameGlobal.GetUIModule(SeasonModule):SeasonManager()
   self._rewards = {}
   self._delayShow = false
   self._time = 0
-  self._autoBinder = AutoEventBinder:New((GameGlobal.EventDispatcher)())
+  self._autoBinder = AutoEventBinder:New(GameGlobal.EventDispatcher())
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressReward.Update = function(self, deltaTime)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonMapExpressReward:Update(deltaTime)
   if self._state == SeasonExpressState.Playing and self._delayShow then
     self._time = self._time - deltaTime
     if self._time <= 0 then
       self._delayShow = false
-      ;
-      (self._seasonManager):UnLock("reward")
-      ;
-      (UISeasonHelper.ShowUIGetRewards)(self._rewards)
+      self._seasonManager:UnLock("reward")
+      UISeasonHelper.ShowUIGetRewards(self._rewards)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressReward.Dispose = function(self)
-  -- function num : 0_2
-  ((self.super).Dispose)(self)
-  ;
-  (self._autoBinder):UnBindAllEvents()
+function SeasonMapExpressReward:Dispose()
+  self.super.Dispose(self)
+  self._autoBinder:UnBindAllEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressReward.OnPlay = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (table.clear)(self._rewards)
-  for _,value in pairs(self._content) do
+function SeasonMapExpressReward:OnPlay()
+  table.clear(self._rewards)
+  for _, value in pairs(self._content) do
     local roleAsset = RoleAsset:New()
     roleAsset.assetid = value[1]
     roleAsset.count = value[2]
-    ;
-    (table.insert)(self._rewards, roleAsset)
+    table.insert(self._rewards, roleAsset)
   end
   self._time = 0
-  local controller = ((GameGlobal.UIStateManager)()):GetController((UISeasonHelper.CurSeasonSceneUI)())
-  do
-    if controller then
-      local playing, time = controller:IsPlayAnimation()
-      if playing then
-        self._time = time * 1000
-      end
+  local controller = GameGlobal.UIStateManager():GetController(UISeasonHelper.CurSeasonSceneUI())
+  if controller then
+    local playing, time = controller:IsPlayAnimation()
+    if playing then
+      self._time = time * 1000
     end
-    ;
-    (self._autoBinder):BindEvent(GameEventType.OnUIGetItemCloseInQuest, self, self._OnCallBack)
-    self._delayShow = self._time > 0
-    self._state = SeasonExpressState.Playing
-    if self._delayShow then
-      (self._seasonManager):Lock("reward")
-    else
-      (UISeasonHelper.ShowUIGetRewards)(self._rewards)
-    end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  end
+  self._autoBinder:BindEvent(GameEventType.OnUIGetItemCloseInQuest, self, self._OnCallBack)
+  self._delayShow = self._time > 0
+  self._state = SeasonExpressState.Playing
+  if self._delayShow then
+    self._seasonManager:Lock("reward")
+  else
+    UISeasonHelper.ShowUIGetRewards(self._rewards)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressReward._OnCallBack = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._autoBinder):UnBindAllEvents()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.SeasonRewardShowEnd)
+function SeasonMapExpressReward:_OnCallBack()
+  self._autoBinder:UnBindAllEvents()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.SeasonRewardShowEnd)
   self:Next()
 end
-
-

@@ -1,42 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n13/build/ui_n13_build_score.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN13BuildScore", UICustomWidget)
 UIN13BuildScore = UIN13BuildScore
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN13BuildScore.OnShow = function(self)
-  -- function num : 0_0
+function UIN13BuildScore:OnShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildScore.SetData = function(self, type)
-  -- function num : 0_1 , upvalues : _ENV
-  local url = (UIActivityN13Helper.GetCoinItemIconName)(type)
-  local count = (UIActivityN13Helper.GetCoinItemCount)(type)
+function UIN13BuildScore:SetData(type)
+  local url = UIActivityN13Helper.GetCoinItemIconName(type)
+  local count = UIActivityN13Helper.GetCoinItemCount(type)
   self:_SetRawImage("_icon", url)
-  local preZero = (UIActivityHelper.GetZeroStrFrontNum)(7, count)
-  local fmtStr = (string.format)("<color=#5e5e5e>%s</color><color=#f2c641>%s</color>", preZero, tostring(count))
+  local preZero = UIActivityHelper.GetZeroStrFrontNum(7, count)
+  local fmtStr = string.format("<color=#5e5e5e>%s</color><color=#f2c641>%s</color>", preZero, tostring(count))
   self:_SetText("_txt", fmtStr)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildScore._SetRawImage = function(self, widgetName, url)
-  -- function num : 0_2
+function UIN13BuildScore:_SetRawImage(widgetName, url)
   local obj = self:GetUIComponent("RawImageLoader", widgetName)
   obj:LoadImage(url)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildScore._SetText = function(self, widgetName, txt)
-  -- function num : 0_3
+function UIN13BuildScore:_SetText(widgetName, txt)
   local obj = self:GetUIComponent("UILocalizationText", widgetName)
   obj:SetText(txt)
 end
-
-

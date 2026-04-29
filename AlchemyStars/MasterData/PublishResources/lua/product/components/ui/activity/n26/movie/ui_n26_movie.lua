@@ -1,53 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n26/movie/ui_n26_movie.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN26Movie", UIController)
 UIN26Movie = UIN26Movie
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN26Movie.Constructor = function(self, ui_root_transform)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN26Movie:Constructor(ui_root_transform)
   self._isInHomeland = false
   self._atlas = self:GetAsset("UIN23.spriteatlas", LoadType.SpriteAtlas)
-  self._campaign_module = (GameGlobal.GetModule)(CampaignModule)
+  self._campaign_module = GameGlobal.GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26Movie.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN26Movie:OnShow(uiParams)
   self._isInHomeland = uiParams[1]
   if self._isInHomeland then
-    ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self
-    self:RemoveRed(TT)
-  end
-)
+    GameGlobal.TaskManager():StartTask(function(TT)
+      self:RemoveRed(TT)
+    end)
   end
   self:InitWidget()
   self:InitFilmItem()
   self:_SetTimer()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26Movie.RemoveRed = function(self, TT)
-  -- function num : 0_2
+function UIN26Movie:RemoveRed(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26Movie.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+function UIN26Movie:OnHide()
+  self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26Movie.InitWidget = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN26Movie:InitWidget()
   self._movieContent = self:GetUIComponent("UILocalizationText", "movieContent")
   self._goBtn = self:GetUIComponent("Image", "goBtn")
   self._rewardContent = self:GetUIComponent("UISelectObjectPath", "rewardContent")
@@ -62,162 +41,116 @@ UIN26Movie.InitWidget = function(self)
   self._endText = self:GetUIComponent("UILocalizationText", "endText")
   self._secondText = self:GetUIComponent("UILocalizationText", "secondText")
   self._itemContent = self:GetUIComponent("UISelectObjectPath", "itemContent")
-  ;
-  (self._movieContent):SetText((StringTable.Get)("str_movie_campaign_intro"))
-  local cfg = (Cfg.cfg_global)({})
-  local rewards = (cfg.homeland_movie_task_reward).ArrayValue
-  local len = (table.count)(rewards)
+  self._movieContent:SetText(StringTable.Get("str_movie_campaign_intro"))
+  local cfg = Cfg.cfg_global({})
+  local rewards = cfg.homeland_movie_task_reward.ArrayValue
+  local len = table.count(rewards)
   local index = 1
-  self._widgets = (self._rewardContent):SpawnObjects("UIItemHomeland", len)
-  for i,v in pairs(rewards) do
+  self._widgets = self._rewardContent:SpawnObjects("UIItemHomeland", len)
+  for i, v in pairs(rewards) do
     local rew = {}
     rew.assetid = v
     rew.count = nil
-    ;
-    ((self._widgets)[index]):Flush(rew)
+    self._widgets[index]:Flush(rew)
     index = index + 1
   end
   if self._isInHomeland then
-    (self:GetGameObject("goBtn")):SetActive(false)
-    ;
-    (self._tipsObj):SetActive(true)
-    ;
-    (self._tips):SetText((StringTable.Get)("str_movie_enter_text_1"))
-    ;
-    (self._bottomBG):SetActive(true)
+    self:GetGameObject("goBtn"):SetActive(false)
+    self._tipsObj:SetActive(true)
+    self._tips:SetText(StringTable.Get("str_movie_enter_text_1"))
+    self._bottomBG:SetActive(true)
   else
-    ;
-    (self._bottomBG):SetActive(false)
+    self._bottomBG:SetActive(false)
   end
-  ;
-  (self._secondText):SetText((StringTable.Get)("str_movie_enter_text_2"))
-  ;
-  (self._newText):SetText((StringTable.Get)("str_movie_enter_text_3"))
-  ;
-  (self._endText):SetText((StringTable.Get)("str_movie_enter_text_4"))
-  ;
-  (self._countText):SetText((StringTable.Get)("str_movie_enter_text_5"))
+  self._secondText:SetText(StringTable.Get("str_movie_enter_text_2"))
+  self._newText:SetText(StringTable.Get("str_movie_enter_text_3"))
+  self._endText:SetText(StringTable.Get("str_movie_enter_text_4"))
+  self._countText:SetText(StringTable.Get("str_movie_enter_text_5"))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26Movie.InitFilmItem = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN26Movie:InitFilmItem()
   self._movieDataHelper = MovieDataHelper:New()
-  local data = (self._movieDataHelper):SortAnonymous()
+  local data = self._movieDataHelper:SortAnonymous()
   local index = 1
-  self._cfgAnonymousLetter = (Cfg.cfg_homeland_anonymous_letter)({})
-  self._cfgmovice = (Cfg.cfg_homeland_movice)({})
-  self._cfgitem = (Cfg.cfg_item)({})
-  self._widgets = (self._itemContent):SpawnObjects("UIN26MovieItem", 3)
-  for i,v in pairs(data) do
+  self._cfgAnonymousLetter = Cfg.cfg_homeland_anonymous_letter({})
+  self._cfgmovice = Cfg.cfg_homeland_movice({})
+  self._cfgitem = Cfg.cfg_item({})
+  self._widgets = self._itemContent:SpawnObjects("UIN26MovieItem", 3)
+  for i, v in pairs(data) do
     local rew = {}
-    rew.anonymousId = ((self._cfgAnonymousLetter)[v]).ID
-    local movieId = ((self._cfgAnonymousLetter)[v]).MovieId
-    local itemId = ((self._cfgmovice)[movieId]).UnlockItem
+    rew.anonymousId = self._cfgAnonymousLetter[v].ID
+    local movieId = self._cfgAnonymousLetter[v].MovieId
+    local itemId = self._cfgmovice[movieId].UnlockItem
     rew.item = itemId
-    rew.icon = ((self._cfgitem)[itemId]).Icon
-    ;
-    ((self._widgets)[index]):SetData(rew)
+    rew.icon = self._cfgitem[itemId].Icon
+    self._widgets[index]:SetData(rew)
     index = index + 1
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26Movie._SetTimer = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._timeEvent = (UIActivityHelper.StartTimerEvent)(self._timeEvent, function()
-    -- function num : 0_6_0 , upvalues : self
-    local havenew = (self._movieDataHelper):ShowOrNot()
+function UIN26Movie:_SetTimer()
+  self._timeEvent = UIActivityHelper.StartTimerEvent(self._timeEvent, function()
+    local havenew = self._movieDataHelper:ShowOrNot()
     local str = self:_SetTimeStr()
     if str and havenew == false then
-      (self._countDownObj):SetActive(true)
-      ;
-      (self._time):SetText(str)
-      ;
-      (self:GetGameObject("newText")):SetActive(false)
-      ;
-      (self:GetGameObject("endText")):SetActive(false)
-    else
-      if havenew then
-        (self:GetGameObject("newText")):SetActive(true)
-        ;
-        (self:GetGameObject("endText")):SetActive(false)
-        ;
-        (self._countDownObj):SetActive(false)
-      else
-        if havenew == false and str == nil then
-          (self:GetGameObject("endText")):SetActive(true)
-          ;
-          (self:GetGameObject("newText")):SetActive(false)
-          ;
-          (self._countDownObj):SetActive(false)
-        end
-      end
+      self._countDownObj:SetActive(true)
+      self._time:SetText(str)
+      self:GetGameObject("newText"):SetActive(false)
+      self:GetGameObject("endText"):SetActive(false)
+    elseif havenew then
+      self:GetGameObject("newText"):SetActive(true)
+      self:GetGameObject("endText"):SetActive(false)
+      self._countDownObj:SetActive(false)
+    elseif havenew == false and str == nil then
+      self:GetGameObject("endText"):SetActive(true)
+      self:GetGameObject("newText"):SetActive(false)
+      self._countDownObj:SetActive(false)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26Movie._SetTimeStr = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN26Movie:_SetTimeStr()
   local count = {}
-  local countdown = nil
+  local countdown
   self._movieDataHelper = MovieDataHelper:New()
-  local id = (self._movieDataHelper):GetAllAnonymousId()
-  for k,v in ipairs(id) do
-    countdown = (self._movieDataHelper):GetAnonymousCountdownTimeById(v)
-    if countdown > 0 then
-      (table.insert)(count, countdown)
+  local id = self._movieDataHelper:GetAllAnonymousId()
+  for k, v in ipairs(id) do
+    countdown = self._movieDataHelper:GetAnonymousCountdownTimeById(v)
+    if 0 < countdown then
+      table.insert(count, countdown)
     end
   end
   if #count ~= 0 then
-    countdown = (table.min)(count)
-    local str = (self._movieDataHelper):GetFormatTimerStr(countdown)
+    countdown = table.min(count)
+    local str = self._movieDataHelper:GetFormatTimerStr(countdown)
     return str
   else
-    do
-      do return nil end
-    end
+    return nil
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26Movie.CloseBtnOnClick = function(self)
-  -- function num : 0_8
+function UIN26Movie:CloseBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26Movie.GoBtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN26Movie:GoBtnOnClick()
   if self._isInHomeland then
-    return 
+    return
   else
     self._functionId = 34
-    local functionLockCfg = (Cfg.cfg_module_unlock)[self._functionId]
+    local functionLockCfg = Cfg.cfg_module_unlock[self._functionId]
     if not functionLockCfg then
-      (Log.debug)("don\'t have function config")
-      return 
+      Log.debug("don't have function config")
+      return
     end
-    local module = (GameGlobal.GetModule)(RoleModule)
-    do
-      if module:CheckModuleUnlock(self._functionId) == false then
-        local cfg = (Cfg.cfg_module_unlock)[self._functionId]
-        if cfg then
-          (ToastManager.ShowToast)((StringTable.Get)(cfg.Tips))
-        end
-        return 
+    local module = GameGlobal.GetModule(RoleModule)
+    if module:CheckModuleUnlock(self._functionId) == false then
+      local cfg = Cfg.cfg_module_unlock[self._functionId]
+      if cfg then
+        ToastManager.ShowToast(StringTable.Get(cfg.Tips))
       end
-      ;
-      (((GameGlobal.GetModule)(HomelandModule)):GetUIModule()):LoadHomeland()
+      return
     end
+    GameGlobal.GetModule(HomelandModule):GetUIModule():LoadHomeland()
   end
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_blink_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseBlinkParam", SkillPhaseParamBase)
 SkillPhaseBlinkParam = SkillPhaseBlinkParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseBlinkParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseBlinkParam:Constructor(t)
   self.castEffectID = t.castEffectID
   self.castAnimation = t.castAnimation
   self.castDuration = t.castDuration
@@ -19,25 +12,23 @@ SkillPhaseBlinkParam.Constructor = function(self, t)
   self.appearDuration = t.appearDuration
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseBlinkParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseBlinkParam:GetPhaseType()
   return SkillViewPhaseType.Blink
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseBlinkParam.GetCacheTable = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseBlinkParam:GetCacheTable()
   local t = {}
   if self.castEffectID and self.castEffectID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.castEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self.castEffectID].ResPath,
+      1
+    })
   end
   if self.appearEffectID and self.appearEffectID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.appearEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self.appearEffectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

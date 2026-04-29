@@ -1,17 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/role/1701101/cfg_skill_view_130110.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 1, 1, 0, 0, 
-{castEffectID = 2438, castAnimation = "Atk", castLongAnimation = "Atk_Long", atkEffectDelay = 0, longAtkEffectDelay = 133, hitPointDelay = 100, longHitPointDelay = 233, onHitAnimation = "Hit", hitEffectID = 2439, castTotalTime = 333, longCastTotalTime = 500, hpDelayTime = 0}
-}
-, 
-{2, 2, 43, 1, 1, 0, 
-{audioID = 2280, atkSoundDelay = 0, longAtkSoundDelay = 133, audioType = 1}
-}
+  {
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    {
+      castEffectID = 2438,
+      castAnimation = "Atk",
+      castLongAnimation = "Atk_Long",
+      atkEffectDelay = 0,
+      longAtkEffectDelay = 133,
+      hitPointDelay = 100,
+      longHitPointDelay = 233,
+      onHitAnimation = "Hit",
+      hitEffectID = 2439,
+      castTotalTime = 333,
+      longCastTotalTime = 500,
+      hpDelayTime = 0
+    }
+  },
+  {
+    2,
+    2,
+    43,
+    1,
+    1,
+    0,
+    {
+      audioID = 2280,
+      atkSoundDelay = 0,
+      longAtkSoundDelay = 133,
+      audioType = 1
+    }
+  }
 }
 return config, "ID", key
-

@@ -1,108 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/bullet_time_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BulletTimeComponent", Object)
 BulletTimeComponent = BulletTimeComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BulletTimeComponent.Constructor = function(self)
-  -- function num : 0_0
+function BulletTimeComponent:Constructor()
   self._enableBulletTime = false
   self._entityIDList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletTimeComponent.IsEnableBullteTime = function(self)
-  -- function num : 0_1
+function BulletTimeComponent:IsEnableBullteTime()
   return self._enableBulletTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletTimeComponent.SetEnableBullteTime = function(self, enable)
-  -- function num : 0_2
+function BulletTimeComponent:SetEnableBullteTime(enable)
   self._enableBulletTime = enable
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletTimeComponent.GetBulletTimeEntityIDList = function(self)
-  -- function num : 0_3
+function BulletTimeComponent:GetBulletTimeEntityIDList()
   return self._entityIDList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletTimeComponent.AddBulletTimeEntityID = function(self, entityID)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._entityIDList)[#self._entityIDList + 1] = entityID
+function BulletTimeComponent:AddBulletTimeEntityID(entityID)
+  self._entityIDList[#self._entityIDList + 1] = entityID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletTimeComponent.ResetBulletTimeData = function(self)
-  -- function num : 0_5
+function BulletTimeComponent:ResetBulletTimeData()
   self._enableBulletTime = false
   self._entityIDList = {}
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletTimeComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_6
+function BulletTimeComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletTimeComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_7
+function BulletTimeComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.BulletTime = function(self)
-  -- function num : 0_8
-  return self:GetComponent((self.WEComponentsEnum).BulletTime)
+function Entity:BulletTime()
+  return self:GetComponent(self.WEComponentsEnum.BulletTime)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasBulletTime = function(self)
-  -- function num : 0_9
-  return self:HasComponent((self.WEComponentsEnum).BulletTime)
+function Entity:HasBulletTime()
+  return self:HasComponent(self.WEComponentsEnum.BulletTime)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddBulletTime = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).BulletTime
+function Entity:AddBulletTime()
+  local index = self.WEComponentsEnum.BulletTime
   local component = BulletTimeComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceBulletTime = function(self, isEnalbeBulletTime)
-  -- function num : 0_11
-  local index = (self.WEComponentsEnum).BulletTime
+function Entity:ReplaceBulletTime(isEnalbeBulletTime)
+  local index = self.WEComponentsEnum.BulletTime
   local component = self:BulletTime()
   component:SetEnableBullteTime(isEnalbeBulletTime)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveBulletTime = function(self)
-  -- function num : 0_12
+function Entity:RemoveBulletTime()
   if self:HasBulletTime() then
-    self:RemoveComponent((self.WEComponentsEnum).BulletTime)
+    self:RemoveComponent(self.WEComponentsEnum.BulletTime)
   end
 end
-
-

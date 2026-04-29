@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/general/ui_set_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISetController", UIController)
 UISetController = UISetController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISetController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISetController:OnShow(uiParams)
   self:AttachEvent(GameEventType.ColorBlindUpdate, self.FlushColorBlind)
   self:AttachEvent(GameEventType.ChangeBindBtnStatus, self.RefreshButtonStatus)
   self:AttachEvent(GameEventType.UIBlackChange, self.InitResolutionBangWidth)
@@ -16,10 +9,10 @@ UISetController.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.ActiveUILoginLIRoot, self.ActiveUILoginLIRoot)
   self._initiating = true
   self.uiCanvasRect = self:GetUIComponent("RectTransform", "UICanvas")
-  self.localDBKey = ((GameGlobal.GetModule)(RoleModule)):SkillAnimationLocalDBKey()
-  self.bgmGlobal = ((Cfg.cfg_global).bgm_volume).FloatValue
-  self.voiceGlobal = ((Cfg.cfg_global).voice_volume).FloatValue
-  self.soundGlobal = ((Cfg.cfg_global).sound_volume).FloatValue
+  self.localDBKey = GameGlobal.GetModule(RoleModule):SkillAnimationLocalDBKey()
+  self.bgmGlobal = Cfg.cfg_global.bgm_volume.FloatValue
+  self.voiceGlobal = Cfg.cfg_global.voice_volume.FloatValue
+  self.soundGlobal = Cfg.cfg_global.sound_volume.FloatValue
   self._antiTexGo = self:GetGameObject("antiTex")
   self._antiValueGo = self:GetGameObject("System_Antialiasing")
   self._autoFightGo = self:GetGameObject("System_AutoFight")
@@ -55,117 +48,103 @@ UISetController.OnShow = function(self, uiParams)
   self.imgColorBlind = self:GetUIComponent("Image", "imgColorBlind")
   self.txtColorBlind = self:GetUIComponent("UILocalizationText", "txtColorBlind")
   self.commonTopRoot = self:GetUIComponent("UISelectObjectPath", "LeftTopAnchor")
-  self.backBtns = (self.commonTopRoot):SpawnObject("UICommonTopButton")
-  ;
-  (self.backBtns):SetData(function()
-    -- function num : 0_0_0 , upvalues : self
+  self.backBtns = self.commonTopRoot:SpawnObject("UICommonTopButton")
+  self.backBtns:SetData(function()
     self:CloseDialog()
-  end
-)
+  end)
   local content = self:GetGameObject("UserWindowContent")
   self._userWindowContent = content.transform
   self._item = self:GetGameObject("Item")
-  self.btnSystemTabButtonValueChange = function(isOn)
-    -- function num : 0_0_1 , upvalues : self, _ENV
+  
+  function self.btnSystemTabButtonValueChange(isOn)
     if not self._initiating then
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
     end
-    ;
-    (self.systemWindow):SetActive(isOn)
-    ;
-    (self.systemWindowScrollGo):SetActive(isOn)
-    ;
-    (self._langRoot):SetActive(isOn)
-    ;
-    (self._langOptGo):SetActive(isOn)
+    self.systemWindow:SetActive(isOn)
+    self.systemWindowScrollGo:SetActive(isOn)
+    self._langRoot:SetActive(isOn)
+    self._langOptGo:SetActive(isOn)
   end
-
-  self.btnVoiceTabButtonValueChange = function(isOn)
-    -- function num : 0_0_2 , upvalues : self, _ENV
+  
+  function self.btnVoiceTabButtonValueChange(isOn)
     if not self._initiating then
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
     end
-    ;
-    (self.volumeWindow):SetActive(isOn)
-    ;
-    (self._langRoot):SetActive(not isOn)
-    ;
-    (self._langOptGo):SetActive(not isOn)
+    self.volumeWindow:SetActive(isOn)
+    self._langRoot:SetActive(not isOn)
+    self._langOptGo:SetActive(not isOn)
   end
-
-  self.btnUsermTabButtonValueChange = function(isOn)
-    -- function num : 0_0_3 , upvalues : self, _ENV
+  
+  function self.btnUsermTabButtonValueChange(isOn)
     if not self._initiating then
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
     end
-    ;
-    (self.userWindow):SetActive(isOn)
-    ;
-    (self._langRoot):SetActive(not isOn)
-    ;
-    (self._langOptGo):SetActive(not isOn)
+    self.userWindow:SetActive(isOn)
+    self._langRoot:SetActive(not isOn)
+    self._langOptGo:SetActive(not isOn)
   end
-
-  ;
-  ((self.btnSystem).onValueChanged):AddListener(self.btnSystemTabButtonValueChange)
-  ;
-  ((self.btnVoice).onValueChanged):AddListener(self.btnVoiceTabButtonValueChange)
-  ;
-  ((self.btnUser).onValueChanged):AddListener(self.btnUsermTabButtonValueChange)
-  self._initSettingValue = {bgmVolume = 100, soundVolume = 100, voiceVolume = 100, bgmMute = false, soundMute = false, voiceMute = false, GraphicsLevel = 3, skillAnmiIndex = 1, AntiIndex = 1, HighFrameIndex = 1, BangWidth = 0, danSwitch = true, AutoFightIndex = 1}
+  
+  self.btnSystem.onValueChanged:AddListener(self.btnSystemTabButtonValueChange)
+  self.btnVoice.onValueChanged:AddListener(self.btnVoiceTabButtonValueChange)
+  self.btnUser.onValueChanged:AddListener(self.btnUsermTabButtonValueChange)
+  self._initSettingValue = {
+    bgmVolume = 100,
+    soundVolume = 100,
+    voiceVolume = 100,
+    bgmMute = false,
+    soundMute = false,
+    voiceMute = false,
+    GraphicsLevel = 3,
+    skillAnmiIndex = 1,
+    AntiIndex = 1,
+    HighFrameIndex = 1,
+    BangWidth = 0,
+    danSwitch = true,
+    AutoFightIndex = 1
+  }
   self:InitToggleGraphicsAndSkillAnimation()
   self:InitToggleShowDan()
   self:InitResolutionBangWidth()
   self:InitVolumeWindow()
   self:SetPcSliderStatus()
-  ;
-  (self.btnSystemTabButtonValueChange)(true)
-  ;
-  (self.btnVoiceTabButtonValueChange)(false)
-  ;
-  (self.btnUsermTabButtonValueChange)(false)
+  self.btnSystemTabButtonValueChange(true)
+  self.btnVoiceTabButtonValueChange(false)
+  self.btnUsermTabButtonValueChange(false)
   self:InitButtonOnPressEffect()
   self:SetLodSetting()
   self:SetHighFrame()
   self:SetAutoFightLinkline()
   self:SetAutoFightRecordState()
   self._initiating = false
-  if (SDKProxy:GetInstance()):IsInternationalSDK() == true then
-    (UIHelper.SetActive)(self:GetGameObject("nameGo"), false)
-    ;
-    (UIHelper.SetActive)(self:GetGameObject("btnTexUrl3"), false)
+  if SDKProxy:GetInstance():IsInternationalSDK() == true then
+    UIHelper.SetActive(self:GetGameObject("nameGo"), false)
+    UIHelper.SetActive(self:GetGameObject("btnTexUrl3"), false)
   else
-    ;
-    (UIHelper.SetActive)(self:GetGameObject("btnTexUrl4"), false)
+    UIHelper.SetActive(self:GetGameObject("btnTexUrl4"), false)
   end
   self._hasRequestBtnStatus = false
   self:RefreshButtonStatus()
   self:RefreshUserWindow()
   self._enterSettingValue = {}
-  for key,value in pairs(self._initSettingValue) do
-    -- DECOMPILER ERROR at PC334: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self._enterSettingValue)[key] = value
+  for key, value in pairs(self._initSettingValue) do
+    self._enterSettingValue[key] = value
   end
   self:FlushColorBlind()
   self:RefreshLanguage()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.SetHighFrame = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISetController:SetHighFrame()
   local count = 2
   local toggleGroupHighFrame = self:GetUIComponent("ToggleGroup", "GroupHighFrame")
   local groupHighFrameLoader = self:GetUIComponent("UISelectObjectPath", "GroupHighFrame")
   groupHighFrameLoader:SpawnObjects("UISetControllerSelectTabBtn", count)
   self._allHighFrameToggle = groupHighFrameLoader:GetAllSpawnList()
-  for i,v in ipairs(self._allHighFrameToggle) do
-    if i <= count then
+  for i, v in ipairs(self._allHighFrameToggle) do
+    if count >= i then
       v:Init(i, "str_set_skill_animation_setting_", toggleGroupHighFrame, self.OnClickHighFrameBtn, self)
     end
   end
-  local highFrameStatus = (GameGlobal.GetHighFrameStatus)()
+  local highFrameStatus = GameGlobal.GetHighFrameStatus()
   if highFrameStatus then
     self._indexHighFrame = 1
   else
@@ -174,83 +153,56 @@ UISetController.SetHighFrame = function(self)
   self:OnClickHighFrameBtn(self._indexHighFrame)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.OnClickHighFrameBtn = function(self, index)
-  -- function num : 0_2 , upvalues : _ENV
+function UISetController:OnClickHighFrameBtn(index)
   if not self._initiating then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   end
   if self._initiating then
     self:SetHighFrameStatus(index)
-  else
-    if self._indexHighFrame ~= index and index == 1 then
-      local tmpIndex = index
-      do
-        index = self._indexHighFrame
-        if self:ShowHighFrameTps() then
-          (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, (StringTable.Get)("str_set_highframe_setting_title"), (StringTable.Get)("str_set_highframe_setting_tips1"))
-        else
-          ;
-          (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, (StringTable.Get)("str_set_highframe_setting_title"), (StringTable.Get)("str_set_highframe_setting_tips"), function(param)
-    -- function num : 0_2_0 , upvalues : self, tmpIndex
-    self:SetHighFrameStatus(tmpIndex)
-  end
-)
-        end
-      end
+  elseif self._indexHighFrame ~= index and index == 1 then
+    local tmpIndex = index
+    index = self._indexHighFrame
+    if self:ShowHighFrameTps() then
+      PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, StringTable.Get("str_set_highframe_setting_title"), StringTable.Get("str_set_highframe_setting_tips1"))
+    else
+      PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, StringTable.Get("str_set_highframe_setting_title"), StringTable.Get("str_set_highframe_setting_tips"), function(param)
+        self:SetHighFrameStatus(tmpIndex)
+      end)
     end
   end
-  do
-    self:SetHighFrameStatus(index)
-  end
+  self:SetHighFrameStatus(index)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.SetHighFrameStatus = function(self, index)
-  -- function num : 0_3 , upvalues : _ENV
+function UISetController:SetHighFrameStatus(index)
   if index == 1 then
-    (GameGlobal.SetHighFrameStatus)(true)
+    GameGlobal.SetHighFrameStatus(true)
   else
-    ;
-    (GameGlobal.SetHighFrameStatus)(false)
+    GameGlobal.SetHighFrameStatus(false)
   end
-  if self._indexHighFrame and (self._allHighFrameToggle)[self._indexHighFrame] then
-    ((self._allHighFrameToggle)[self._indexHighFrame]):Select(false)
+  if self._indexHighFrame and self._allHighFrameToggle[self._indexHighFrame] then
+    self._allHighFrameToggle[self._indexHighFrame]:Select(false)
   end
   self._indexHighFrame = index
-  if self._indexHighFrame and (self._allHighFrameToggle)[self._indexHighFrame] then
-    ((self._allHighFrameToggle)[self._indexHighFrame]):Select(true)
+  if self._indexHighFrame and self._allHighFrameToggle[self._indexHighFrame] then
+    self._allHighFrameToggle[self._indexHighFrame]:Select(true)
   end
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._initSettingValue).HighFrameIndex = index
+  self._initSettingValue.HighFrameIndex = index
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.ShowHighFrameTps = function(self)
-  -- function num : 0_4
+function UISetController:ShowHighFrameTps()
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.SetLodSetting = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISetController:SetLodSetting()
   local showChoose = false
   if APPVER130 then
     showChoose = true
   end
-  ;
-  (self._antiTexGo):SetActive(showChoose)
-  ;
-  (self._antiValueGo):SetActive(showChoose)
+  self._antiTexGo:SetActive(showChoose)
+  self._antiValueGo:SetActive(showChoose)
   if showChoose then
     self._openAntialiasing = true
-    local value = (LocalDB.GetString)("CloseAntialiasing", "null")
+    local value = LocalDB.GetString("CloseAntialiasing", "null")
     if value == "close" then
       self._openAntialiasing = false
     else
@@ -260,18 +212,14 @@ UISetController.SetLodSetting = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.InitLodSettingGroup = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISetController:InitLodSettingGroup()
   local count = 2
   self.toggleGroupAnti = self:GetUIComponent("ToggleGroup", "GroupAntialiasing")
   self.toggleGroupAntiPath = self:GetUIComponent("UISelectObjectPath", "GroupAntialiasing")
-  ;
-  (self.toggleGroupAntiPath):SpawnObjects("UISetControllerSelectTabBtn", count)
-  self.allAntiToggle = (self.toggleGroupAntiPath):GetAllSpawnList()
-  for i,v in ipairs(self.allAntiToggle) do
-    if i <= count then
+  self.toggleGroupAntiPath:SpawnObjects("UISetControllerSelectTabBtn", count)
+  self.allAntiToggle = self.toggleGroupAntiPath:GetAllSpawnList()
+  for i, v in ipairs(self.allAntiToggle) do
+    if count >= i then
       v:Init(i, "str_set_skill_animation_setting_", self.toggleGroupAnti, self.OnClickAntiTabBtn, self)
     end
   end
@@ -282,34 +230,25 @@ UISetController.InitLodSettingGroup = function(self)
   self:OnClickAntiTabBtn(idx, true, true)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.OnClickAntiTabBtn = function(self, index, force, first)
-  -- function num : 0_7 , upvalues : _ENV
+function UISetController:OnClickAntiTabBtn(index, force, first)
   if not force and self.indexAnti == index then
-    return 
+    return
   end
   if not self._initiating then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   end
-  if self.indexAnti and (self.allAntiToggle)[self.indexAnti] then
-    ((self.allAntiToggle)[self.indexAnti]):Select(false)
+  if self.indexAnti and self.allAntiToggle[self.indexAnti] then
+    self.allAntiToggle[self.indexAnti]:Select(false)
   end
   self.indexAnti = index
-  if self.indexAnti and (self.allAntiToggle)[self.indexAnti] then
-    ((self.allAntiToggle)[self.indexAnti]):Select(true)
+  if self.indexAnti and self.allAntiToggle[self.indexAnti] then
+    self.allAntiToggle[self.indexAnti]:Select(true)
   end
   self:SetAnti(first, index)
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._initSettingValue).AntiIndex = index
+  self._initSettingValue.AntiIndex = index
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.SetAnti = function(self, first, index)
-  -- function num : 0_8 , upvalues : _ENV
+function UISetController:SetAnti(first, index)
   if not first then
     self._openAntialiasing = false
     local value = "close"
@@ -317,467 +256,317 @@ UISetController.SetAnti = function(self, first, index)
       self._openAntialiasing = true
       value = "open"
     end
-    ;
-    (LocalDB.SetString)("CloseAntialiasing", value)
-    ;
-    (Log.debug)("###[UISetController] SetAnti value --> ", value)
+    LocalDB.SetString("CloseAntialiasing", value)
+    Log.debug("###[UISetController] SetAnti value --> ", value)
     self:SetAntiSetting()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.SetAntiSetting = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local setting = (LODManager.Instance).setting
+function UISetController:SetAntiSetting()
+  local setting = LODManager.Instance.setting
   setting.IsOpenAntialiasing = self._openAntialiasing
-  local currLevel = (LODManager.Instance):GetLODLevel()
-  ;
-  (Log.debug)("###[UISetController] SetAnti currLevel --> ", currLevel)
+  local currLevel = LODManager.Instance:GetLODLevel()
+  Log.debug("###[UISetController] SetAnti currLevel --> ", currLevel)
   if currLevel == 2 then
     setting.isOpenImageProcess = self._openAntialiasing
   end
-  ;
-  (Log.debug)("###[UISetController] SetAnti IsOpenAntialiasing --> ", tostring(setting.IsOpenAntialiasing))
-  ;
-  (Log.debug)("###[UISetController] SetAnti isOpenImageProcess --> ", tostring(setting.isOpenImageProcess))
-  ;
-  (Log.debug)("###[UISetController] SetAnti set succ !")
+  Log.debug("###[UISetController] SetAnti IsOpenAntialiasing --> ", tostring(setting.IsOpenAntialiasing))
+  Log.debug("###[UISetController] SetAnti isOpenImageProcess --> ", tostring(setting.isOpenImageProcess))
+  Log.debug("###[UISetController] SetAnti set succ !")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.SetPcSliderStatus = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UISetController:SetPcSliderStatus()
   if IsPc() then
-    (self._mobileGraphicsChooseTips):SetActive(false)
-    ;
-    (self._specialShapedScreenTabText):SetActive(false)
-    ;
-    (self._systemScreenObj):SetActive(false)
+    self._mobileGraphicsChooseTips:SetActive(false)
+    self._specialShapedScreenTabText:SetActive(false)
+    self._systemScreenObj:SetActive(false)
   else
-    ;
-    (self._mobileGraphicsChooseTips):SetActive(true)
-    ;
-    (self._specialShapedScreenTabText):SetActive(true)
-    ;
-    (self._systemScreenObj):SetActive(true)
+    self._mobileGraphicsChooseTips:SetActive(true)
+    self._specialShapedScreenTabText:SetActive(true)
+    self._systemScreenObj:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.InitButtonOnPressEffect = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UISetController:InitButtonOnPressEffect()
   self.btnLogout = self:GetUIComponent("Button", "btnLogout")
   self.btnLogoutSelect = self:GetGameObject("BtnLogoutSelect")
-  local gv = (HelperProxy:GetInstance()):GetGameVersion()
+  local gv = HelperProxy:GetInstance():GetGameVersion()
   if IsPc() then
-    ((self.btnLogout).gameObject):SetActive(false)
+    self.btnLogout.gameObject:SetActive(false)
   else
-    ;
-    ((self.btnLogout).gameObject):SetActive(true)
+    self.btnLogout.gameObject:SetActive(true)
   end
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self.btnLogout).gameObject), UIEvent.Press, function(go)
-    -- function num : 0_11_0 , upvalues : self
-    (self.btnLogoutSelect):SetActive(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self.btnLogout).gameObject), UIEvent.Release, function(go)
-    -- function num : 0_11_1 , upvalues : self
-    (self.btnLogoutSelect):SetActive(false)
-  end
-)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self.btnLogout.gameObject), UIEvent.Press, function(go)
+    self.btnLogoutSelect:SetActive(true)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self.btnLogout.gameObject), UIEvent.Release, function(go)
+    self.btnLogoutSelect:SetActive(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.CheckAutoFightRed = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
-  if not (LocalDB.HasKey)("FirstAutoFightRecord" .. roleModule:GetPstId()) then
-    (self._goSystemRed):SetActive(true)
-    return 
+function UISetController:CheckAutoFightRed()
+  local roleModule = GameGlobal.GetModule(RoleModule)
+  if not LocalDB.HasKey("FirstAutoFightRecord" .. roleModule:GetPstId()) then
+    self._goSystemRed:SetActive(true)
+    return
   end
-  self.chessCfg = (Cfg.cfg_item_chess)({})
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
+  self.chessCfg = Cfg.cfg_item_chess({})
+  self.itemModule = GameGlobal.GetModule(ItemModule)
   local hasNew = false
-  for _,v in pairs(self.chessCfg) do
-    local items = (self.itemModule):GetItemByTempId(v.ID)
-    for _,vitem in pairs(items) do
+  for _, v in pairs(self.chessCfg) do
+    local items = self.itemModule:GetItemByTempId(v.ID)
+    for _, vitem in pairs(items) do
       self.item = vitem
     end
-    if self.item and (self.item):IsNewOverlay() then
-      (self._goSystemRed):SetActive(true)
-      return 
+    if self.item and self.item:IsNewOverlay() then
+      self._goSystemRed:SetActive(true)
+      return
     end
   end
-  ;
-  (self._goSystemRed):SetActive(false)
+  self._goSystemRed:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.InitVolumeWindow = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UISetController:InitVolumeWindow()
   self.volumeRoot = self:GetUIComponent("UISelectObjectPath", "VolumeRoot")
-  ;
-  (self.volumeRoot):SpawnObjects("UISetControllerToggleSlider", 3)
-  self.volumeControllerList = (self.volumeRoot):GetAllSpawnList()
-  local sliderStrTitle = {"str_set_volume_music", "str_set_volume_sound", "str_set_volume_dialogue"}
-  local sliderlocalDBKey = {"MusicVolumeKey", "SoundVolumeKey", "VoiceVolumeKey"}
-  local togglelocalDBKey = {"MusicVolumeOnKey", "SoundVolumeOnKey", "VoiceVolumeOnKey"}
-  for i,v in ipairs(self.volumeControllerList) do
+  self.volumeRoot:SpawnObjects("UISetControllerToggleSlider", 3)
+  self.volumeControllerList = self.volumeRoot:GetAllSpawnList()
+  local sliderStrTitle = {
+    "str_set_volume_music",
+    "str_set_volume_sound",
+    "str_set_volume_dialogue"
+  }
+  local sliderlocalDBKey = {
+    "MusicVolumeKey",
+    "SoundVolumeKey",
+    "VoiceVolumeKey"
+  }
+  local togglelocalDBKey = {
+    "MusicVolumeOnKey",
+    "SoundVolumeOnKey",
+    "VoiceVolumeOnKey"
+  }
+  for i, v in ipairs(self.volumeControllerList) do
     if i <= 3 then
       v:Init(i, sliderStrTitle[i], sliderlocalDBKey[i], togglelocalDBKey[i], self.OnToggleSliderComponentValueChanged, self)
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.OnToggleSliderComponentValueChanged = function(self, index, sliderValue, toggleValue)
-  -- function num : 0_14 , upvalues : _ENV
-  local newSliderValue = toggleValue > 0 and sliderValue / 100 or 0
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R5 in 'UnsetPending'
-
+function UISetController:OnToggleSliderComponentValueChanged(index, sliderValue, toggleValue)
+  local newSliderValue = 0 < toggleValue and sliderValue / 100 or 0
   if index == 1 then
-    (self._initSettingValue).bgmVolume = sliderValue
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._initSettingValue).bgmMute = toggleValue == 0 and true or false
-    ;
-    (AudioHelperController.SetBgmVolume)(newSliderValue * self.bgmGlobal)
-  else
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R5 in 'UnsetPending'
-
-    if index == 2 then
-      (self._initSettingValue).soundVolume = sliderValue
-      -- DECOMPILER ERROR at PC35: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._initSettingValue).soundMute = toggleValue == 0 and true or false
-      ;
-      (AudioHelperController.SetSoundVolume)(newSliderValue * self.voiceGlobal)
-    else
-      -- DECOMPILER ERROR at PC45: Confused about usage of register: R5 in 'UnsetPending'
-
-      if index == 3 then
-        (self._initSettingValue).voiceVolume = sliderValue
-        -- DECOMPILER ERROR at PC53: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._initSettingValue).voiceMute = toggleValue == 0 and true or false
-        ;
-        (AudioHelperController.SetVoiceVolume)(newSliderValue * self.soundGlobal)
-      end
-    end
+    self._initSettingValue.bgmVolume = sliderValue
+    self._initSettingValue.bgmMute = toggleValue == 0 and true or false
+    AudioHelperController.SetBgmVolume(newSliderValue * self.bgmGlobal)
+  elseif index == 2 then
+    self._initSettingValue.soundVolume = sliderValue
+    self._initSettingValue.soundMute = toggleValue == 0 and true or false
+    AudioHelperController.SetSoundVolume(newSliderValue * self.voiceGlobal)
+  elseif index == 3 then
+    self._initSettingValue.voiceVolume = sliderValue
+    self._initSettingValue.voiceMute = toggleValue == 0 and true or false
+    AudioHelperController.SetVoiceVolume(newSliderValue * self.soundGlobal)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.InitToggleGraphicsAndSkillAnimation = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UISetController:InitToggleGraphicsAndSkillAnimation()
   self.tabGroupCount = 3
   self.toggleGroupGraphics = self:GetUIComponent("ToggleGroup", "GroupGraphics")
   self.toggleGroupGraphicsPath = self:GetUIComponent("UISelectObjectPath", "GroupGraphics")
-  ;
-  (self.toggleGroupGraphicsPath):SpawnObjects("UISetControllerSelectTabBtn", self.tabGroupCount)
-  self.allGraphicsToggle = (self.toggleGroupGraphicsPath):GetAllSpawnList()
-  for i,v in ipairs(self.allGraphicsToggle) do
+  self.toggleGroupGraphicsPath:SpawnObjects("UISetControllerSelectTabBtn", self.tabGroupCount)
+  self.allGraphicsToggle = self.toggleGroupGraphicsPath:GetAllSpawnList()
+  for i, v in ipairs(self.allGraphicsToggle) do
     if i <= self.tabGroupCount then
       v:Init(i, "str_set_graphics_setting_", self.toggleGroupGraphics, self.OnClickGraphicsTabBtn, self)
     end
   end
-  self.lodLevel = self.tabGroupCount - (LODManager.Instance):GetLODLevel()
+  self.lodLevel = self.tabGroupCount - LODManager.Instance:GetLODLevel()
   self:OnClickGraphicsTabBtn(self.lodLevel, true, true)
   self.toggleGroupSkill = self:GetUIComponent("ToggleGroup", "GroupSkill")
   self.toggleGroupSkillPath = self:GetUIComponent("UISelectObjectPath", "GroupSkill")
-  ;
-  (self.toggleGroupSkillPath):SpawnObjects("UISetControllerSelectTabBtn", self.tabGroupCount)
-  self.allSkillToggle = (self.toggleGroupSkillPath):GetAllSpawnList()
-  for i,v in ipairs(self.allSkillToggle) do
+  self.toggleGroupSkillPath:SpawnObjects("UISetControllerSelectTabBtn", self.tabGroupCount)
+  self.allSkillToggle = self.toggleGroupSkillPath:GetAllSpawnList()
+  for i, v in ipairs(self.allSkillToggle) do
     if i <= self.tabGroupCount then
       v:Init(i, "str_set_skill_animation_setting_", self.toggleGroupSkill, self.OnClickSkillTabBtn, self)
     end
   end
-  self.skillPermission = (LocalDB.GetInt)(self.localDBKey, SkillAnimationPermissionType.Open)
+  self.skillPermission = LocalDB.GetInt(self.localDBKey, SkillAnimationPermissionType.Open)
   self:OnClickSkillTabBtn(self.skillPermission, true, true)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.InitToggleShowDan = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local l_role_module = (GameGlobal.GetModule)(RoleModule)
+function UISetController:InitToggleShowDan()
+  local l_role_module = GameGlobal.GetModule(RoleModule)
   local curSwitch = l_role_module:GetBadgeSwitch()
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._initSettingValue).danSwitch = curSwitch
+  self._initSettingValue.danSwitch = curSwitch
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.InitResolutionBangWidth = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local safeAreaExist = (ResolutionManager.SafeAreaExist)()
+function UISetController:InitResolutionBangWidth()
+  local safeAreaExist = ResolutionManager.SafeAreaExist()
   local bangWidthPercent = 100
   if safeAreaExist then
-    local key, registeredKey = (ResolutionManager.BangWidthLocalDBKey)()
-    local isBangWidthRegistered = (LocalDB.GetInt)(registeredKey)
-    if isBangWidthRegistered > 0 then
-      bangWidthPercent = (LocalDB.GetInt)(key)
-      if bangWidthPercent > 100 then
+    local key, registeredKey = ResolutionManager.BangWidthLocalDBKey()
+    local isBangWidthRegistered = LocalDB.GetInt(registeredKey)
+    if 0 < isBangWidthRegistered then
+      bangWidthPercent = LocalDB.GetInt(key)
+      if 100 < bangWidthPercent then
         bangWidthPercent = 100
       end
     end
   end
-  do
-    self.screenBangSliderBackgroundOn = self:GetUIComponent("Image", "BackgroundOn")
-    self.screenBangSliderFillOn = self:GetUIComponent("Image", "FillOn")
-    self.screenBangSliderImageOn = self:GetUIComponent("Image", "ImageOn")
-    self.comSlider = self:GetUIComponent("Slider", "Slider")
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.comSlider).value = bangWidthPercent
-    self:RefreshScreenBangSliderEnable(safeAreaExist)
-    self.txt = self:GetUIComponent("Text", "info")
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.txt).text = bangWidthPercent
-    -- DECOMPILER ERROR at PC56: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._initSettingValue).BangWidth = bangWidthPercent
-    self.sliderCB = function(value)
-    -- function num : 0_17_0 , upvalues : _ENV, self
-    local percent = (math.floor)(value)
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.txt).text = percent
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._initSettingValue).BangWidth = percent
-    local width = (math.ceil)((ResolutionManager.GetBangCanvasPixelWidthByPercent)(percent / 100))
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIBangWidthChange, width)
-    ;
-    (ResolutionManager.InvokeBangWidthChangedListeners)(width)
-    local key, registeredKey = (ResolutionManager.BangWidthLocalDBKey)()
-    ;
-    (LocalDB.SetInt)(registeredKey, 1)
-    ;
-    (LocalDB.SetInt)(key, percent)
+  self.screenBangSliderBackgroundOn = self:GetUIComponent("Image", "BackgroundOn")
+  self.screenBangSliderFillOn = self:GetUIComponent("Image", "FillOn")
+  self.screenBangSliderImageOn = self:GetUIComponent("Image", "ImageOn")
+  self.comSlider = self:GetUIComponent("Slider", "Slider")
+  self.comSlider.value = bangWidthPercent
+  self:RefreshScreenBangSliderEnable(safeAreaExist)
+  self.txt = self:GetUIComponent("Text", "info")
+  self.txt.text = bangWidthPercent
+  self._initSettingValue.BangWidth = bangWidthPercent
+  
+  function self.sliderCB(value)
+    local percent = math.floor(value)
+    self.txt.text = percent
+    self._initSettingValue.BangWidth = percent
+    local width = math.ceil(ResolutionManager.GetBangCanvasPixelWidthByPercent(percent / 100))
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIBangWidthChange, width)
+    ResolutionManager.InvokeBangWidthChangedListeners(width)
+    local key, registeredKey = ResolutionManager.BangWidthLocalDBKey()
+    LocalDB.SetInt(registeredKey, 1)
+    LocalDB.SetInt(key, percent)
   end
-
-    ;
-    ((self.comSlider).onValueChanged):AddListener(self.sliderCB)
-  end
+  
+  self.comSlider.onValueChanged:AddListener(self.sliderCB)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.RefreshScreenBangSliderEnable = function(self, enabled)
-  -- function num : 0_18
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.comSlider).interactable = enabled
+function UISetController:RefreshScreenBangSliderEnable(enabled)
+  self.comSlider.interactable = enabled
   if enabled then
+  else
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.OnSetLocalDB = function(self)
-  -- function num : 0_19
+function UISetController:OnSetLocalDB()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.OnClickGraphicsTabBtn = function(self, index, force, first)
-  -- function num : 0_20 , upvalues : _ENV
+function UISetController:OnClickGraphicsTabBtn(index, force, first)
   if not force and self.indexGraphics == index then
-    return 
+    return
   end
   if not self._initiating then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   end
-  if self.indexGraphics and (self.allGraphicsToggle)[self.indexGraphics] then
-    ((self.allGraphicsToggle)[self.indexGraphics]):Select(false)
+  if self.indexGraphics and self.allGraphicsToggle[self.indexGraphics] then
+    self.allGraphicsToggle[self.indexGraphics]:Select(false)
   end
   self.indexGraphics = index
-  if self.indexGraphics and (self.allGraphicsToggle)[self.indexGraphics] then
-    ((self.allGraphicsToggle)[self.indexGraphics]):Select(true)
+  if self.indexGraphics and self.allGraphicsToggle[self.indexGraphics] then
+    self.allGraphicsToggle[self.indexGraphics]:Select(true)
   end
   self:SetGraphics(first, index)
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._initSettingValue).GraphicsLevel = index
+  self._initSettingValue.GraphicsLevel = index
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.SetGraphics = function(self, first, index)
-  -- function num : 0_21 , upvalues : _ENV
+function UISetController:SetGraphics(first, index)
   if not first then
-    (LODManager.Instance):SetLODLevel(self.tabGroupCount - index)
-    ;
-    (GameGlobal.SetTargetFrameRate)()
-    ;
-    (GameGlobal.SetQualityByLodLevel)()
+    LODManager.Instance:SetLODLevel(self.tabGroupCount - index)
+    GameGlobal.SetTargetFrameRate()
+    GameGlobal.SetQualityByLodLevel()
     if APPVER130 then
       self:SetAntiSetting()
     end
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.OnClickSkillTabBtn = function(self, index, force, first)
-  -- function num : 0_22 , upvalues : _ENV
+function UISetController:OnClickSkillTabBtn(index, force, first)
   if not force and self.indexSkill == index then
-    return 
+    return
   end
   if not self._initiating then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   end
-  if self.indexSkill and (self.allSkillToggle)[self.indexSkill] then
-    ((self.allSkillToggle)[self.indexSkill]):Select(false)
+  if self.indexSkill and self.allSkillToggle[self.indexSkill] then
+    self.allSkillToggle[self.indexSkill]:Select(false)
   end
   self.indexSkill = index
-  if self.indexSkill and (self.allSkillToggle)[self.indexSkill] then
-    ((self.allSkillToggle)[self.indexSkill]):Select(true)
+  if self.indexSkill and self.allSkillToggle[self.indexSkill] then
+    self.allSkillToggle[self.indexSkill]:Select(true)
   end
   self:SetSkill(first, index)
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._initSettingValue).skillAnmiIndex = index
+  self._initSettingValue.skillAnmiIndex = index
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.SetSkill = function(self, first, index)
-  -- function num : 0_23 , upvalues : _ENV
+function UISetController:SetSkill(first, index)
   if not first then
-    (LocalDB.SetInt)(self.localDBKey, index)
+    LocalDB.SetInt(self.localDBKey, index)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.SetBangWidth = function(self, value)
-  -- function num : 0_24 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._initSettingValue).BangWidth = value
+function UISetController:SetBangWidth(value)
+  self._initSettingValue.BangWidth = value
   self.bangWidth = self.configBangWidth * value / 100
-  local percentageInt = (Mathf.Ceil)(value)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.txt).text = percentageInt
+  local percentageInt = Mathf.Ceil(value)
+  self.txt.text = percentageInt
   return self.bangWidth
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.GetWidthBlackOnce = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  self.widthBlack = (Mathf.Floor)(0.052083333333333 * ((self.uiCanvasRect).sizeDelta).x)
+function UISetController:GetWidthBlackOnce()
+  self.widthBlack = Mathf.Floor(0.052083333333333336 * self.uiCanvasRect.sizeDelta.x)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.OnHide = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  ((self.comSlider).onValueChanged):RemoveListener(self.sliderCB)
-  ;
-  ((self.btnSystem).onValueChanged):RemoveListener(self.btnSystemTabButtonValueChange)
-  ;
-  ((self.btnVoice).onValueChanged):RemoveListener(self.btnVoiceTabButtonValueChange)
-  ;
-  ((self.btnUser).onValueChanged):RemoveListener(self.btnUsermTabButtonValueChange)
+function UISetController:OnHide()
+  self.comSlider.onValueChanged:RemoveListener(self.sliderCB)
+  self.btnSystem.onValueChanged:RemoveListener(self.btnSystemTabButtonValueChange)
+  self.btnVoice.onValueChanged:RemoveListener(self.btnVoiceTabButtonValueChange)
+  self.btnUser.onValueChanged:RemoveListener(self.btnUsermTabButtonValueChange)
   self:SendNewSettingTLog()
   self:DetachEvent(GameEventType.ColorBlindUpdate, self.FlushColorBlind)
   self:DetachEvent(GameEventType.ChangeBindBtnStatus, self.RefreshButtonStatus)
   self:ActiveUILoginLIRoot(false)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.SendNewSettingTLog = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UISetController:SendNewSettingTLog()
   if self._settingTlogSended then
-    return 
+    return
   end
   local l_reportSvc = false
-  for key,value in pairs(self._initSettingValue) do
-    if (self._enterSettingValue)[key] ~= value then
+  for key, value in pairs(self._initSettingValue) do
+    if self._enterSettingValue[key] ~= value then
       l_reportSvc = true
       break
     end
   end
-  do
-    if l_reportSvc then
-      local l_role_module = (GameGlobal.GetModule)(RoleModule)
-      l_role_module:PushNewSettingTLog(self._initSettingValue)
-      self._settingTlogSended = true
-    end
+  if l_reportSvc then
+    local l_role_module = GameGlobal.GetModule(RoleModule)
+    l_role_module:PushNewSettingTLog(self._initSettingValue)
+    self._settingTlogSended = true
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.BtnLogoutOnClick = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UISetController:BtnLogoutOnClick()
   self:OnSetLocalDB()
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_set_logout_describe"), function(param)
-    -- function num : 0_28_0 , upvalues : self, _ENV
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_set_logout_describe"), function(param)
     self:Lock("LogoutTask")
     self:SendNewSettingTLog()
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.LogoutTask, self)
-  end
-, nil, function(param)
-    -- function num : 0_28_1 , upvalues : _ENV
-    (Log.debug)("sale cancel. .")
-  end
-, nil)
+    GameGlobal.TaskManager():StartTask(self.LogoutTask, self)
+  end, nil, function(param)
+    Log.debug("sale cancel. .")
+  end, nil)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.LogoutTask = function(self, TT)
-  -- function num : 0_29 , upvalues : _ENV
-  local loginmodule = (GameGlobal.GetModule)(LoginModule)
+function UISetController:LogoutTask(TT)
+  local loginmodule = GameGlobal.GetModule(LoginModule)
   loginmodule:Logout("setController logout")
-  ;
-  ((GameGlobal.GameLogic)()):BackToLogin(false, LoginModule, "player logout", false)
+  GameGlobal.GameLogic():BackToLogin(false, LoginModule, "player logout", false)
   self:UnLock("LogoutTask")
   ClearPlayerPrefsOnLogOut()
-  ;
-  ((UnityEngine.PlayerPrefs).SetString)("SingleUserData", "")
+  UnityEngine.PlayerPrefs.SetString("SingleUserData", "")
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.NeedAdjustAnchorInfo = function(self, curBangWidth)
-  -- function num : 0_30 , upvalues : _ENV
-  local blackWidth = ((ResolutionManager.BlackWidth)())
-  -- DECOMPILER ERROR at PC3: Overwrote pending register: R3 in 'AssignReg'
-
-  local bangWidth = .end
-  if curBangWidth and curBangWidth >= 0 then
+function UISetController:NeedAdjustAnchorInfo(curBangWidth)
+  local blackWidth = ResolutionManager.BlackWidth()
+  local bangWidth
+  if curBangWidth and 0 <= curBangWidth then
     bangWidth = curBangWidth
   end
   if blackWidth <= bangWidth then
@@ -786,80 +575,53 @@ UISetController.NeedAdjustAnchorInfo = function(self, curBangWidth)
   return false
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.ActiveUILoginLIRoot = function(self, active)
-  -- function num : 0_31 , upvalues : _ENV
-  (Log.debug)("###[lua LI] ActiveUILoginLIRoot active:", active)
+function UISetController:ActiveUILoginLIRoot(active)
+  Log.debug("###[lua LI] ActiveUILoginLIRoot active:", active)
   if self._m_UILoginLIRoot then
-    (self._m_UILoginLIRoot):SetActive(active)
+    self._m_UILoginLIRoot:SetActive(active)
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.BtnUserCenterOnClick = function(self, go)
-  -- function num : 0_32 , upvalues : _ENV
+function UISetController:BtnUserCenterOnClick(go)
   if _G.APPVER1190 and not IsPc() then
-    self._m_UILoginLIRoot = (UIHelper.GetGameObject)("UILoginLIRoot.prefab")
-    self._m_LI_UI_ROOT = (((self._m_UILoginLIRoot).transform):Find("m_LI_UI_Root")).gameObject
+    self._m_UILoginLIRoot = UIHelper.GetGameObject("UILoginLIRoot.prefab")
+    self._m_LI_UI_ROOT = self._m_UILoginLIRoot.transform:Find("m_LI_UI_Root").gameObject
     self:ActiveUILoginLIRoot(true)
-    ;
-    (Log.debug)("###[lua LI] SetUIRoot!")
-    ;
-    (SDKProxy:GetInstance()):OpenAccountCenter(self._m_LI_UI_ROOT)
+    Log.debug("###[lua LI] SetUIRoot!")
+    SDKProxy:GetInstance():OpenAccountCenter(self._m_LI_UI_ROOT)
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.BtnUrl1OnClick = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  local url = (StringTable.Get)("str_set_url_button_url_1")
-  if (SDKProxy:GetInstance()):IsInternationalSDK() == true then
-    url = (StringTable.Get)("str_set_url_button_url_jp_1")
+function UISetController:BtnUrl1OnClick()
+  local url = StringTable.Get("str_set_url_button_url_1")
+  if SDKProxy:GetInstance():IsInternationalSDK() == true then
+    url = StringTable.Get("str_set_url_button_url_jp_1")
   end
-  ;
-  (SDKProxy:GetInstance()):OpenUrl(url)
+  SDKProxy:GetInstance():OpenUrl(url)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.BtnUrl2OnClick = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  local url = (StringTable.Get)("str_set_url_button_url_2")
-  if (SDKProxy:GetInstance()):IsInternationalSDK() == true then
-    url = (StringTable.Get)("str_set_url_button_url_jp_2")
+function UISetController:BtnUrl2OnClick()
+  local url = StringTable.Get("str_set_url_button_url_2")
+  if SDKProxy:GetInstance():IsInternationalSDK() == true then
+    url = StringTable.Get("str_set_url_button_url_jp_2")
   end
-  ;
-  (SDKProxy:GetInstance()):OpenUrl(url)
+  SDKProxy:GetInstance():OpenUrl(url)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.BtnUrl3OnClick = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  local url = (StringTable.Get)("str_set_url_button_url_3")
-  ;
-  (SDKProxy:GetInstance()):OpenUrl(url)
+function UISetController:BtnUrl3OnClick()
+  local url = StringTable.Get("str_set_url_button_url_3")
+  SDKProxy:GetInstance():OpenUrl(url)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.BtnUrl4OnClick = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  local url = (StringTable.Get)("str_set_url_button_url_jp_5")
-  ;
-  (SDKProxy:GetInstance()):OpenUrl(url)
+function UISetController:BtnUrl4OnClick()
+  local url = StringTable.Get("str_set_url_button_url_jp_5")
+  SDKProxy:GetInstance():OpenUrl(url)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.RefreshUserWindow = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function UISetController:RefreshUserWindow()
   for i = 0, UISetUserInfoType.Max - 1 do
     if self:IsShowSetUserInfoItem(i) then
-      local go = ((UnityEngine.GameObject).Instantiate)(self._item, self._userWindowContent)
+      local go = UnityEngine.GameObject.Instantiate(self._item, self._userWindowContent)
       go:SetActive(true)
       local com = self:GetUIComponentDynamic("UISelectObjectPath", go)
       local item = com:SpawnObject("UISetUserInfoItem")
@@ -868,405 +630,296 @@ UISetController.RefreshUserWindow = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.IsShowSetUserInfoItem = function(self, setUserInfoType)
-  -- function num : 0_38 , upvalues : _ENV
-  do
-    if setUserInfoType == UISetUserInfoType.AgeConfirm then
-      local roleModule = (GameGlobal.GetModule)(RoleModule)
-      return roleModule:IsJapanZone()
-    end
-    return true
+function UISetController:IsShowSetUserInfoItem(setUserInfoType)
+  if setUserInfoType == UISetUserInfoType.AgeConfirm then
+    local roleModule = GameGlobal.GetModule(RoleModule)
+    return roleModule:IsJapanZone()
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.RefreshButtonStatus = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function UISetController:RefreshButtonStatus()
   self:ShowLiUserCenter()
-  ;
-  (Log.debug)("###[lxs] check new app !")
+  Log.debug("###[lxs] check new app !")
   if self:IsLiNewApp() then
-    (self.btnBind):SetActive(true)
-    ;
-    (self.btnChangePasswd):SetActive(false)
-    return 
+    self.btnBind:SetActive(true)
+    self.btnChangePasswd:SetActive(false)
+    return
   end
-  ;
-  (self.btnChangePasswd):SetActive(false)
-  ;
-  (self.btnBind):SetActive(false)
+  self.btnChangePasswd:SetActive(false)
+  self.btnBind:SetActive(false)
   if GetPlatformOS() ~= ClientRuntimeOS.CRO_PC then
-    local gv = (HelperProxy:GetInstance()):GetGameVersion()
-    local channelId = (((GameGlobal.GameLogic)()).ClientInfo).m_login_source
-    local authModule = (GameGlobal.GetModule)(AuthInternationalModule)
+    local gv = HelperProxy:GetInstance():GetGameVersion()
+    local channelId = GameGlobal.GameLogic().ClientInfo.m_login_source
+    local authModule = GameGlobal.GetModule(AuthInternationalModule)
     local queryUserInfoRet = authModule:GetQueryUserInfo()
     if APPVER125 and gv == GameVersionType.INTL then
       if channelId == MobileClientLoginChannel.MCLC_GUEST then
-        (self.btnBind):SetActive(true)
+        self.btnBind:SetActive(true)
       else
-        if queryUserInfoRet.RetCode == (INTL.INTLErrorCode).SUCCESS and queryUserInfoRet.BindList then
-          local channelList = (SDKProxy:GetInstance()):GetBindChannel(queryUserInfoRet.BindList)
+        if queryUserInfoRet.RetCode == INTL.INTLErrorCode.SUCCESS and queryUserInfoRet.BindList then
+          local channelList = SDKProxy:GetInstance():GetBindChannel(queryUserInfoRet.BindList)
           if channelList[MobileClientLoginChannel.MCLC_DMM] == true then
-            (self.btnBind):SetActive(true)
+            self.btnBind:SetActive(true)
           end
-          if channelId == MobileClientLoginChannel.MCLC_TWITTER and (channelList[(EngineGameHelper.SAIchannelId)()] == true or channelList[MobileClientLoginChannel.MCLC_DMM] == true) then
-            (self.btnBind):SetActive(true)
+          if channelId == MobileClientLoginChannel.MCLC_TWITTER and (channelList[EngineGameHelper.SAIchannelId()] == true or channelList[MobileClientLoginChannel.MCLC_DMM] == true) then
+            self.btnBind:SetActive(true)
           end
-        else
-          do
-            if self._hasRequestBtnStatus == false then
-              self._hasRequestBtnStatus = true
-              ;
-              ((GameGlobal.TaskManager)()):StartTask(self.RefreshButtonStatusCoro, self)
-            end
-            if channelId == (EngineGameHelper.SAIchannelId)() then
-              (self.btnChangePasswd):SetActive(true)
-            end
-            if channelId == (EngineGameHelper.SAIchannelId)() then
-              (self.btnChangePasswd):SetActive(true)
-            else
-              if channelId == MobileClientLoginChannel.MCLC_GUEST then
-                (self.btnBind):SetActive(true)
-              else
-                if channelId == MobileClientLoginChannel.MCLC_TWITTER and queryUserInfoRet.RetCode == (INTL.INTLErrorCode).SUCCESS and queryUserInfoRet.BindList then
-                  local channelList = (SDKProxy:GetInstance()):GetBindChannel(queryUserInfoRet.BindList)
-                  if channelList[(EngineGameHelper.SAIchannelId)()] == true or channelList[MobileClientLoginChannel.MCLC_DMM] == true then
-                    (self.btnBind):SetActive(true)
-                  end
-                end
-              end
-            end
-          end
+        elseif self._hasRequestBtnStatus == false then
+          self._hasRequestBtnStatus = true
+          GameGlobal.TaskManager():StartTask(self.RefreshButtonStatusCoro, self)
         end
+        if channelId == EngineGameHelper.SAIchannelId() then
+          self.btnChangePasswd:SetActive(true)
+        end
+      end
+    elseif channelId == EngineGameHelper.SAIchannelId() then
+      self.btnChangePasswd:SetActive(true)
+    elseif channelId == MobileClientLoginChannel.MCLC_GUEST then
+      self.btnBind:SetActive(true)
+    elseif channelId == MobileClientLoginChannel.MCLC_TWITTER and queryUserInfoRet.RetCode == INTL.INTLErrorCode.SUCCESS and queryUserInfoRet.BindList then
+      local channelList = SDKProxy:GetInstance():GetBindChannel(queryUserInfoRet.BindList)
+      if channelList[EngineGameHelper.SAIchannelId()] == true or channelList[MobileClientLoginChannel.MCLC_DMM] == true then
+        self.btnBind:SetActive(true)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.ShowLiUserCenter = function(self)
-  -- function num : 0_40 , upvalues : _ENV
-  local tex = nil
+function UISetController:ShowLiUserCenter()
+  local tex
   if self:IsLiNewApp() then
     tex = "str_set_bind_btn_name_LI"
   else
     tex = "str_set_bind_btn_name"
   end
-  ;
-  (self.UserCenterText):SetText((StringTable.Get)(tex))
+  self.UserCenterText:SetText(StringTable.Get(tex))
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.IsLiNewApp = function(self)
-  -- function num : 0_41 , upvalues : _ENV
+function UISetController:IsLiNewApp()
   local new = false
   if _G.APPVER1190 and not IsPc() then
     new = true
   end
   if _G.APPVER1190 then
-    (Log.debug)("###[lxs] check new app ! 1190")
+    Log.debug("###[lxs] check new app ! 1190")
   end
   if not IsPc() then
-    (Log.debug)("###[lxs] check new app ! not pc")
+    Log.debug("###[lxs] check new app ! not pc")
   end
   return new
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.RefreshButtonStatusCoro = function(self, TT)
-  -- function num : 0_42 , upvalues : _ENV
-  local ret = (SDKProxy:GetInstance()):QueryUserInfo(TT)
+function UISetController:RefreshButtonStatusCoro(TT)
+  local ret = SDKProxy:GetInstance():QueryUserInfo(TT)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.HelpBtnOnClick = function(self)
-  -- function num : 0_43 , upvalues : _ENV
+function UISetController:HelpBtnOnClick()
   if IsPc() then
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_set_pc_help_pop_tips"))
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_set_pc_help_pop_tips"))
   else
     self:Lock("UISetController:HelpBtnOnClick")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.HelpBtnOnClickCoro, self)
+    GameGlobal.TaskManager():StartTask(self.HelpBtnOnClickCoro, self)
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.HelpBtnOnClickCoro = function(self, TT)
-  -- function num : 0_44 , upvalues : _ENV
-  (SDKProxy:GetInstance()):LaunchCustomerUI(TT)
+function UISetController:HelpBtnOnClickCoro(TT)
+  SDKProxy:GetInstance():LaunchCustomerUI(TT)
   self:UnLock("UISetController:HelpBtnOnClick")
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.BtnChangePasswdOnClick = function(self)
-  -- function num : 0_45 , upvalues : _ENV
-  if (SDKProxy:GetInstance()):IsInternationalSDK() then
+function UISetController:BtnChangePasswdOnClick()
+  if SDKProxy:GetInstance():IsInternationalSDK() then
     self:ShowDialog("UISetChangePasswdController")
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.BtnBindOnClick = function(self)
-  -- function num : 0_46 , upvalues : _ENV
+function UISetController:BtnBindOnClick()
   if self:IsLiNewApp() then
     self:BtnUserCenterOnClick()
-    return 
+    return
   end
   self:Lock("UISetController:BtnBindOnClick")
-  local authModule = (GameGlobal.GetModule)(AuthInternationalModule)
+  local authModule = GameGlobal.GetModule(AuthInternationalModule)
   local queryUserInfoRet = authModule:GetQueryUserInfo()
-  if queryUserInfoRet.RetCode == (INTL.INTLErrorCode).SUCCESS then
+  if queryUserInfoRet.RetCode == INTL.INTLErrorCode.SUCCESS then
     self:ShowBindChannelDialog(queryUserInfoRet)
   else
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.BindBtnOnClickCoro, self)
+    GameGlobal.TaskManager():StartTask(self.BindBtnOnClickCoro, self)
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.BindBtnOnClickCoro = function(self, TT)
-  -- function num : 0_47 , upvalues : _ENV
-  local ret = (SDKProxy:GetInstance()):QueryUserInfo(TT)
-  if ret.RetCode == (INTL.INTLErrorCode).SUCCESS then
+function UISetController:BindBtnOnClickCoro(TT)
+  local ret = SDKProxy:GetInstance():QueryUserInfo(TT)
+  if ret.RetCode == INTL.INTLErrorCode.SUCCESS then
     if ret.BindList then
       self:ShowBindChannelDialog(ret)
     else
-      ;
-      (Log.error)("异常情况")
+      Log.error("异常情况")
     end
   else
-    ;
-    (UICommonHelper:GetInstance()):HandleLoginErrorCode(ret.RetCode, ret.ThirdCode)
+    UICommonHelper:GetInstance():HandleLoginErrorCode(ret.RetCode, ret.ThirdCode)
   end
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.ShowBindChannelDialog = function(self, ret)
-  -- function num : 0_48 , upvalues : _ENV
-  local channelList = (SDKProxy:GetInstance()):GetBindChannel(ret.BindList)
-  local channelId = (((GameGlobal.GameLogic)()).ClientInfo).m_login_source
-  local gv = (HelperProxy:GetInstance()):GetGameVersion()
+function UISetController:ShowBindChannelDialog(ret)
+  local channelList = SDKProxy:GetInstance():GetBindChannel(ret.BindList)
+  local channelId = GameGlobal.GameLogic().ClientInfo.m_login_source
+  local gv = HelperProxy:GetInstance():GetGameVersion()
   if channelId ~= MobileClientLoginChannel.MCLC_GUEST then
     if gv == GameVersionType.INTL then
       if channelId == MobileClientLoginChannel.MCLC_TWITTER then
+      else
         channelList = {}
         channelList[MobileClientLoginChannel.MCLC_DMM] = true
-        channelList[MobileClientLoginChannel.MCLC_DMM] = false
-        self:ShowDialog("UISetBindChannelController", channelList)
-        self:UnLock("UISetController:BtnBindOnClick")
       end
+    else
+      channelList[MobileClientLoginChannel.MCLC_DMM] = false
     end
   end
+  self:ShowDialog("UISetBindChannelController", channelList)
+  self:UnLock("UISetController:BtnBindOnClick")
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.CheckRed = function(self)
-  -- function num : 0_49
+function UISetController:CheckRed()
   self:FlushColorBlindRed()
   self:CheckAutoFightRed()
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.FlushColorBlind = function(self)
-  -- function num : 0_50 , upvalues : _ENV
-  local chessId = (UIPropertyHelper:GetInstance()):GetChessItemID()
-  local chessCfg = (Cfg.cfg_item_chess)({ID = chessId})
-  local chessItemCfg = (Cfg.cfg_item)({ID = chessId})
+function UISetController:FlushColorBlind()
+  local chessId = UIPropertyHelper:GetInstance():GetChessItemID()
+  local chessCfg = Cfg.cfg_item_chess({ID = chessId})
+  local chessItemCfg = Cfg.cfg_item({ID = chessId})
   if chessCfg then
     local cfg = chessCfg[1]
     local itemCfg = chessItemCfg[1]
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.imgColorBlind).sprite = (self.atlas):GetSprite(cfg.thumbnail)
-    ;
-    (self.txtColorBlind):SetText((StringTable.Get)(itemCfg.Name))
+    self.imgColorBlind.sprite = self.atlas:GetSprite(cfg.thumbnail)
+    self.txtColorBlind:SetText(StringTable.Get(itemCfg.Name))
     self:FlushColorBlindRed()
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.FlushColorBlindRed = function(self)
-  -- function num : 0_51 , upvalues : _ENV
-  self.chessCfg = (Cfg.cfg_item_chess)({})
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
+function UISetController:FlushColorBlindRed()
+  self.chessCfg = Cfg.cfg_item_chess({})
+  self.itemModule = GameGlobal.GetModule(ItemModule)
   local hasNew = false
-  for _,v in pairs(self.chessCfg) do
-    local items = (self.itemModule):GetItemByTempId(v.ID)
-    for _,vitem in pairs(items) do
+  for _, v in pairs(self.chessCfg) do
+    local items = self.itemModule:GetItemByTempId(v.ID)
+    for _, vitem in pairs(items) do
       self.item = vitem
     end
-    if self.item and (self.item):IsNewOverlay() then
+    if self.item and self.item:IsNewOverlay() then
       hasNew = true
     end
   end
-  ;
-  (self.colorBlindRed):SetActive(hasNew)
+  self.colorBlindRed:SetActive(hasNew)
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.btnColorBlindOnClick = function(self)
-  -- function num : 0_52
+function UISetController:btnColorBlindOnClick()
   self:ShowDialog("UIColorBlind")
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.btnCreditsOnClick = function(self)
-  -- function num : 0_53
+function UISetController:btnCreditsOnClick()
   self:ShowDialog("UICredits")
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.RefreshLanguage = function(self)
-  -- function num : 0_54 , upvalues : _ENV
+function UISetController:RefreshLanguage()
   local enable = false
-  local version = (HelperProxy:GetInstance()):GetGameVersion()
+  local version = HelperProxy:GetInstance():GetGameVersion()
   if version == GameVersionType.USA then
     enable = true
-  else
-    if version == GameVersionType.INTL then
-      enable = true
-    else
-    end
+  elseif version == GameVersionType.INTL then
+    enable = true
+  elseif version == GameVersionType.HMT then
   end
-  if version ~= GameVersionType.HMT or not enable then
-    (self._langTitle):SetActive(false)
-    ;
-    (self._langRoot):SetActive(false)
-    ;
-    (self._langOptGo):SetActive(false)
-    ;
-    (self._langSystem):SetActive(false)
-    ;
-    (Log.warn)("当前版本屏蔽设置语言功能")
-    return 
+  if not enable then
+    self._langTitle:SetActive(false)
+    self._langRoot:SetActive(false)
+    self._langOptGo:SetActive(false)
+    self._langSystem:SetActive(false)
+    Log.warn("当前版本屏蔽设置语言功能")
+    return
   end
-  local curLan = (Localization.GetCurLanguage)()
-  local ls = {[1] = LanguageType.zh, [2] = LanguageType.tw, [4] = LanguageType.us, [8] = LanguageType.kr, [16] = LanguageType.jp, [32] = LanguageType.pt, [64] = LanguageType.es, [128] = LanguageType.idn, [256] = LanguageType.th}
-  local cfgs = (Cfg.cfg_language)({})
+  local curLan = Localization.GetCurLanguage()
+  local ls = {
+    [1] = LanguageType.zh,
+    [2] = LanguageType.tw,
+    [4] = LanguageType.us,
+    [8] = LanguageType.kr,
+    [16] = LanguageType.jp,
+    [32] = LanguageType.pt,
+    [64] = LanguageType.es,
+    [128] = LanguageType.idn,
+    [256] = LanguageType.th
+  }
+  local cfgs = Cfg.cfg_language({})
   if EDITOR and not cfgs[1] then
-    cfgs[1] = {ID = 1, Index = 1, Text = "str_set_language_cn", Sprite = "install_shezhi_zi1"}
+    cfgs[1] = {
+      ID = 1,
+      Index = 1,
+      Text = "str_set_language_cn",
+      Sprite = "install_shezhi_zi1"
+    }
   end
-  cfgs = (table.toArray)(cfgs)
-  ;
-  (table.sort)(cfgs, function(a, b)
-    -- function num : 0_54_0
-    do return a.Index < b.Index end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  local widgets = (self._langItems):SpawnObjects("UISettingLanguageItem", #cfgs)
+  cfgs = table.toArray(cfgs)
+  table.sort(cfgs, function(a, b)
+    return a.Index < b.Index
+  end)
+  local widgets = self._langItems:SpawnObjects("UISettingLanguageItem", #cfgs)
   local cur = -1
-  for i,cfg in ipairs(cfgs) do
-    (widgets[i]):SetData(cfg, ls[cfg.ID], (self.atlas):GetSprite(cfg.Sprite))
-    ;
-    (widgets[i]):Refresh(curLan)
+  for i, cfg in ipairs(cfgs) do
+    widgets[i]:SetData(cfg, ls[cfg.ID], self.atlas:GetSprite(cfg.Sprite))
+    widgets[i]:Refresh(curLan)
     if ls[cfg.ID] == curLan then
       cur = i
     end
   end
-  local layouts = ((self._langFromAnchor).gameObject):GetComponentsInParent(typeof((UnityEngine.UI).HorizontalOrVerticalLayoutGroup), true)
+  local layouts = self._langFromAnchor.gameObject:GetComponentsInParent(typeof(UnityEngine.UI.HorizontalOrVerticalLayoutGroup), true)
   for i = 0, layouts.Length - 1 do
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(((layouts[i]).gameObject):GetComponent("RectTransform"))
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(layouts[i].gameObject:GetComponent("RectTransform"))
   end
-  local pos = ((self._langFromAnchor).position):Clone()
-  -- DECOMPILER ERROR at PC164: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._langTargetAnchor).position = pos
-  local sprite = nil
+  local pos = self._langFromAnchor.position:Clone()
+  self._langTargetAnchor.position = pos
+  local sprite
   if cfgs[cur] then
-    sprite = (self.atlas):GetSprite((cfgs[cur]).Sprite)
+    sprite = self.atlas:GetSprite(cfgs[cur].Sprite)
   end
-  -- DECOMPILER ERROR at PC178: Confused about usage of register: R11 in 'UnsetPending'
-
   if sprite then
-    (self._langImage).sprite = sprite
+    self._langImage.sprite = sprite
   end
   self._langWidgets = widgets
   self._langShow = false
-  ;
-  (self._langWindow):SetActive(false)
-  -- DECOMPILER ERROR at PC190: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._langBtnImage).sprite = (self.atlas):GetSprite("install_shezhi_icon11")
+  self._langWindow:SetActive(false)
+  self._langBtnImage.sprite = self.atlas:GetSprite("install_shezhi_icon11")
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.LanguageBtnOnClick = function(self)
-  -- function num : 0_55 , upvalues : _ENV
+function UISetController:LanguageBtnOnClick()
   self._langShow = not self._langShow
   if self._langShow then
-    local curLan = (Localization.GetCurLanguage)()
-    for _,w in pairs(self._langWidgets) do
+    local curLan = Localization.GetCurLanguage()
+    for _, w in pairs(self._langWidgets) do
       w:Refresh(curLan)
     end
-    local pos = ((self._langFromAnchor).position):Clone()
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._langTargetAnchor).position = pos
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._langWindowAnchor).position = pos
-    ;
-    (self._langWindow):SetActive(true)
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._langBtnImage).sprite = (self.atlas):GetSprite("install_shezhi_icon12")
+    local pos = self._langFromAnchor.position:Clone()
+    self._langTargetAnchor.position = pos
+    self._langWindowAnchor.position = pos
+    self._langWindow:SetActive(true)
+    self._langBtnImage.sprite = self.atlas:GetSprite("install_shezhi_icon12")
   else
-    do
-      ;
-      (self._langWindow):SetActive(false)
-      -- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._langBtnImage).sprite = (self.atlas):GetSprite("install_shezhi_icon11")
-    end
+    self._langWindow:SetActive(false)
+    self._langBtnImage.sprite = self.atlas:GetSprite("install_shezhi_icon11")
   end
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.lan_windowOnClick = function(self)
-  -- function num : 0_56
+function UISetController:lan_windowOnClick()
   self._langShow = false
-  ;
-  (self._langWindow):SetActive(false)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._langBtnImage).sprite = (self.atlas):GetSprite("install_shezhi_icon11")
+  self._langWindow:SetActive(false)
+  self._langBtnImage.sprite = self.atlas:GetSprite("install_shezhi_icon11")
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.SetAutoFightLinkline = function(self)
-  -- function num : 0_57 , upvalues : _ENV
+function UISetController:SetAutoFightLinkline()
   self._autoFightEnhanced = false
-  local value = (LocalDB.GetString)("AutoFightLinkLine", "normal")
+  local value = LocalDB.GetString("AutoFightLinkLine", "normal")
   if value == "enhanced" then
     self._autoFightEnhanced = true
   else
@@ -1275,18 +928,14 @@ UISetController.SetAutoFightLinkline = function(self)
   self:InitAutoFightSettingGroup()
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.InitAutoFightSettingGroup = function(self)
-  -- function num : 0_58 , upvalues : _ENV
+function UISetController:InitAutoFightSettingGroup()
   local count = 2
   self.toggleGroupAutoFight = self:GetUIComponent("ToggleGroup", "GroupAutoFight")
   self.toggleGroupAutoFightPath = self:GetUIComponent("UISelectObjectPath", "GroupAutoFight")
-  ;
-  (self.toggleGroupAutoFightPath):SpawnObjects("UISetControllerSelectTabBtn", count)
-  self.allAutoFightToggle = (self.toggleGroupAutoFightPath):GetAllSpawnList()
-  for i,v in ipairs(self.allAutoFightToggle) do
-    if i <= count then
+  self.toggleGroupAutoFightPath:SpawnObjects("UISetControllerSelectTabBtn", count)
+  self.allAutoFightToggle = self.toggleGroupAutoFightPath:GetAllSpawnList()
+  for i, v in ipairs(self.allAutoFightToggle) do
+    if count >= i then
       v:Init(i, "str_set_auto_fight_", self.toggleGroupAutoFight, self.OnClickAutoFightTabBtn, self)
     end
   end
@@ -1297,41 +946,31 @@ UISetController.InitAutoFightSettingGroup = function(self)
   self:OnClickAutoFightTabBtn(idx, true)
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.OnClickAutoFightTabBtn = function(self, index, force)
-  -- function num : 0_59 , upvalues : _ENV
+function UISetController:OnClickAutoFightTabBtn(index, force)
   if not force and self.indexAutoFight == index then
-    return 
+    return
   end
   if not self._initiating then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   end
   if not force and index == 2 then
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, (StringTable.Get)("str_set_auto_fight_warning_title"), (StringTable.Get)("str_set_auto_fight_warning"), function()
-    -- function num : 0_59_0 , upvalues : self
-    self:SetAutoFight(2)
-  end
-, nil, function()
-    -- function num : 0_59_1 , upvalues : self
-    self:SetAutoFight(1)
-  end
-)
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, StringTable.Get("str_set_auto_fight_warning_title"), StringTable.Get("str_set_auto_fight_warning"), function()
+      self:SetAutoFight(2)
+    end, nil, function()
+      self:SetAutoFight(1)
+    end)
   else
     self:SetAutoFight(index)
   end
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.SetAutoFight = function(self, index)
-  -- function num : 0_60 , upvalues : _ENV
-  if self.indexAutoFight and (self.allAutoFightToggle)[self.indexAutoFight] then
-    ((self.allAutoFightToggle)[self.indexAutoFight]):Select(false)
+function UISetController:SetAutoFight(index)
+  if self.indexAutoFight and self.allAutoFightToggle[self.indexAutoFight] then
+    self.allAutoFightToggle[self.indexAutoFight]:Select(false)
   end
   self.indexAutoFight = index
-  if self.indexAutoFight and (self.allAutoFightToggle)[self.indexAutoFight] then
-    ((self.allAutoFightToggle)[self.indexAutoFight]):Select(true)
+  if self.indexAutoFight and self.allAutoFightToggle[self.indexAutoFight] then
+    self.allAutoFightToggle[self.indexAutoFight]:Select(true)
   end
   self._autoFightEnhanced = false
   local value = "normal"
@@ -1339,26 +978,16 @@ UISetController.SetAutoFight = function(self, index)
     self._autoFightEnhanced = true
     value = "enhanced"
   end
-  ;
-  (LocalDB.SetString)("AutoFightLinkLine", value)
-  ;
-  (Log.debug)("###[UISetController] SetAutoFight value --> ", value)
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
+  LocalDB.SetString("AutoFightLinkLine", value)
+  Log.debug("###[UISetController] SetAutoFight value --> ", value)
   BattleConst.AutoFightMoveEnhanced = self._autoFightEnhanced
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._initSettingValue).AutoFightIndex = index
+  self._initSettingValue.AutoFightIndex = index
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.SetAutoFightRecordState = function(self)
-  -- function num : 0_61 , upvalues : _ENV
+function UISetController:SetAutoFightRecordState()
   self._autoFightRecord = false
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
-  if not (LocalDB.HasKey)("AutoFightRecord" .. roleModule:GetPstId()) or (LocalDB.GetInt)("AutoFightRecord" .. roleModule:GetPstId()) == 0 then
+  local roleModule = GameGlobal.GetModule(RoleModule)
+  if not LocalDB.HasKey("AutoFightRecord" .. roleModule:GetPstId()) or LocalDB.GetInt("AutoFightRecord" .. roleModule:GetPstId()) == 0 then
     self._autoFightRecord = false
   else
     self._autoFightRecord = true
@@ -1366,23 +995,19 @@ UISetController.SetAutoFightRecordState = function(self)
   self:InitAutoFightRecordSettingGroup()
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.InitAutoFightRecordSettingGroup = function(self)
-  -- function num : 0_62 , upvalues : _ENV
+function UISetController:InitAutoFightRecordSettingGroup()
   local count = 2
   self.toggleGroupAutoFightRecord = self:GetUIComponent("ToggleGroup", "GroupAutoFightRecord")
   self.toggleGroupAutoFightRecordPath = self:GetUIComponent("UISelectObjectPath", "GroupAutoFightRecord")
-  ;
-  (self.toggleGroupAutoFightRecordPath):SpawnObjects("UISetControllerSelectTabRedPointBtn", count)
-  self.allAutoFightRecordToggle = (self.toggleGroupAutoFightRecordPath):GetAllSpawnList()
-  for i,v in ipairs(self.allAutoFightRecordToggle) do
-    if i <= count then
+  self.toggleGroupAutoFightRecordPath:SpawnObjects("UISetControllerSelectTabRedPointBtn", count)
+  self.allAutoFightRecordToggle = self.toggleGroupAutoFightRecordPath:GetAllSpawnList()
+  for i, v in ipairs(self.allAutoFightRecordToggle) do
+    if count >= i then
       v:Init(i, "str_set_skill_animation_setting_", self.toggleGroupAutoFightRecord, self.OnClickAutoFightRecordTabBtn, self)
     end
     v:SetRed(false)
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
-    if i == 1 and not (LocalDB.HasKey)("FirstAutoFightRecord" .. roleModule:GetPstId()) then
+    local roleModule = GameGlobal.GetModule(RoleModule)
+    if i == 1 and not LocalDB.HasKey("FirstAutoFightRecord" .. roleModule:GetPstId()) then
       v:SetRed(true)
     end
   end
@@ -1393,41 +1018,33 @@ UISetController.InitAutoFightRecordSettingGroup = function(self)
   self:OnClickAutoFightRecordTabBtn(idx, true)
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.OnClickAutoFightRecordTabBtn = function(self, index, force)
-  -- function num : 0_63 , upvalues : _ENV
+function UISetController:OnClickAutoFightRecordTabBtn(index, force)
   if not force and self.indexAutoFightRecord == index then
-    return 
+    return
   end
   if not self._initiating then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   end
   self:SetAutoFightRecord(index)
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetController.SetAutoFightRecord = function(self, index)
-  -- function num : 0_64 , upvalues : _ENV
-  if self.indexAutoFightRecord and (self.allAutoFightRecordToggle)[self.indexAutoFightRecord] then
-    ((self.allAutoFightRecordToggle)[self.indexAutoFightRecord]):Select(false)
+function UISetController:SetAutoFightRecord(index)
+  if self.indexAutoFightRecord and self.allAutoFightRecordToggle[self.indexAutoFightRecord] then
+    self.allAutoFightRecordToggle[self.indexAutoFightRecord]:Select(false)
   end
   self.indexAutoFightRecord = index
-  if self.indexAutoFightRecord and (self.allAutoFightRecordToggle)[self.indexAutoFightRecord] then
-    ((self.allAutoFightRecordToggle)[self.indexAutoFightRecord]):Select(true)
+  if self.indexAutoFightRecord and self.allAutoFightRecordToggle[self.indexAutoFightRecord] then
+    self.allAutoFightRecordToggle[self.indexAutoFightRecord]:Select(true)
   end
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   if index == 1 then
     self._autoFightRecord = true
-    ;
-    (LocalDB.SetInt)("AutoFightRecord" .. roleModule:GetPstId(), 1)
-    ;
-    (LocalDB.SetInt)("FirstAutoFightRecord" .. roleModule:GetPstId(), 1)
-    self.allAutoFightRecordToggle = (self.toggleGroupAutoFightRecordPath):GetAllSpawnList()
-    for i,v in ipairs(self.allAutoFightRecordToggle) do
-      local roleModule = (GameGlobal.GetModule)(RoleModule)
-      if i == 1 and not (LocalDB.HasKey)("FirstAutoFightRecord" .. roleModule:GetPstId()) then
+    LocalDB.SetInt("AutoFightRecord" .. roleModule:GetPstId(), 1)
+    LocalDB.SetInt("FirstAutoFightRecord" .. roleModule:GetPstId(), 1)
+    self.allAutoFightRecordToggle = self.toggleGroupAutoFightRecordPath:GetAllSpawnList()
+    for i, v in ipairs(self.allAutoFightRecordToggle) do
+      local roleModule = GameGlobal.GetModule(RoleModule)
+      if i == 1 and not LocalDB.HasKey("FirstAutoFightRecord" .. roleModule:GetPstId()) then
         v:SetRed(true)
       else
         v:SetRed(false)
@@ -1436,13 +1053,9 @@ UISetController.SetAutoFightRecord = function(self, index)
     self:CheckRed()
   end
   if index == 2 then
-    (LocalDB.SetInt)("AutoFightRecord" .. roleModule:GetPstId(), 0)
-    ;
-    (LocalDB.SetInt)("BattleAutoFight" .. roleModule:GetPstId(), 0)
+    LocalDB.SetInt("AutoFightRecord" .. roleModule:GetPstId(), 0)
+    LocalDB.SetInt("BattleAutoFight" .. roleModule:GetPstId(), 0)
     self._autoFightRecord = false
   end
-  ;
-  (Log.debug)("###[UISetController] SetAutoFightRecord value --> ", value)
+  Log.debug("###[UISetController] SetAutoFightRecord value --> ", value)
 end
-
-

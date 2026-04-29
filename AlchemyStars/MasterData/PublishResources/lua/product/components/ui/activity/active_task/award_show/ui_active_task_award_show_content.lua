@@ -1,97 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/active_task/award_show/ui_active_task_award_show_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActiveTaskAwardShowIContent", UICustomWidget)
 UIActiveTaskAwardShowIContent = UIActiveTaskAwardShowIContent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActiveTaskAwardShowIContent.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActiveTaskAwardShowIContent:OnShow()
   self._gridSize = Vector2(135, 135)
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskAwardShowIContent.OnHide = function(self)
-  -- function num : 0_1
+function UIActiveTaskAwardShowIContent:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskAwardShowIContent._GetComponent = function(self)
-  -- function num : 0_2
+function UIActiveTaskAwardShowIContent:_GetComponent()
   self._title = self:GetUIComponent("UILocalizationText", "title")
   self._itemContent = self:GetUIComponent("UISelectObjectPath", "itemContent")
   self._itemContentLayout = self:GetUIComponent("GridLayoutGroup", "itemContent")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskAwardShowIContent.SetData = function(self, data, level, clickCallback)
-  -- function num : 0_3
+function UIActiveTaskAwardShowIContent:SetData(data, level, clickCallback)
   self._data = data
   self._level = level
   self._clickCallback = clickCallback
   self:InitCompoent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskAwardShowIContent.InitCompoent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActiveTaskAwardShowIContent:InitCompoent()
   local titleTxt = "str_n32_turn_card_prize" .. self._level
-  ;
-  (self._title):SetText((StringTable.Get)(titleTxt))
-  local height = (self._gridSize).y
-  local width = (self._gridSize).x
+  self._title:SetText(StringTable.Get(titleTxt))
+  local height = self._gridSize.y
+  local width = self._gridSize.x
   if self._level == 1 then
-    height = (self._gridSize).y * 2
-    width = (self._gridSize).x * 2
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._itemContentLayout).cellSize = Vector2(270, 270)
-  else
-    if self._level == 2 then
-      width = (self._gridSize).x * 2
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._itemContentLayout).cellSize = Vector2(270, 135)
-    else
-      -- DECOMPILER ERROR at PC51: Confused about usage of register: R4 in 'UnsetPending'
-
-      if self._level == 3 then
-        (self._itemContentLayout).cellSize = Vector2(135, 135)
-        -- DECOMPILER ERROR at PC53: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._itemContentLayout).constraintCount = 5
-      end
-    end
+    height = self._gridSize.y * 2
+    width = self._gridSize.x * 2
+    self._itemContentLayout.cellSize = Vector2(270, 270)
+  elseif self._level == 2 then
+    width = self._gridSize.x * 2
+    self._itemContentLayout.cellSize = Vector2(270, 135)
+  elseif self._level == 3 then
+    self._itemContentLayout.cellSize = Vector2(135, 135)
+    self._itemContentLayout.constraintCount = 5
   end
-  -- DECOMPILER ERROR at PC59: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._itemContentLayout).cellSize = Vector2(width, height + 50)
-  self._items = (self._itemContent):SpawnObjects("UIActiveTaskAwardShowItem", (table.count)(self._data))
+  self._itemContentLayout.cellSize = Vector2(width, height + 50)
+  self._items = self._itemContent:SpawnObjects("UIActiveTaskAwardShowItem", table.count(self._data))
   local idx = 1
-  for i,v in pairs(self._data) do
-    ((self._items)[idx]):SetData(R12_PC80, v, self._clickCallback)
+  for i, v in pairs(self._data) do
+    self._items[idx]:SetData(i, v, self._clickCallback)
     idx = idx + 1
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskAwardShowIContent.Close = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  for _,v in pairs(self._items) do
+function UIActiveTaskAwardShowIContent:Close()
+  for _, v in pairs(self._items) do
     v:Close()
   end
 end
-
-

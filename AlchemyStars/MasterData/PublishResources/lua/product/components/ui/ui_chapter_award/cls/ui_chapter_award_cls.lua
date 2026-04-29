@@ -1,78 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chapter_award/cls/ui_chapter_award_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChapterAwardData", Object)
 ChapterAwardData = ChapterAwardData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChapterAwardData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ChapterAwardData:Constructor()
   self.chapter_data = {}
-  self.cfg = (Cfg.cfg_mission_chapter_award)()
+  self.cfg = Cfg.cfg_mission_chapter_award()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChapterAwardData.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  for k,v in pairs(self.cfg) do
+function ChapterAwardData:Init()
+  for k, v in pairs(self.cfg) do
     local c = ChapterAwardChapter:New()
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.chapter_data)[v.ChapterID] = c
+    self.chapter_data[v.ChapterID] = c
     local serverChapterData = self:GetServerChapterDataByChapterId(v.ChapterID)
     if serverChapterData then
       c:UpdateStarCount(serverChapterData.star_count)
     end
     c.grades = {}
-    for i,iv in ipairs(v.AwardItemIDList) do
+    for i, iv in ipairs(v.AwardItemIDList) do
       local g = ChapterAwardGrade:New()
-      ;
-      (table.insert)(c.grades, g)
+      table.insert(c.grades, g)
       g.chapter_id = v.ChapterID
       g.star_count = iv.StarCount
       g.awards = {}
       local arr = self:GetSortedArr(iv.AwardItemList)
       if arr then
-        for i,v in ipairs(arr) do
-          (table.insert)(g.awards, v)
+        for i, v in ipairs(arr) do
+          table.insert(g.awards, v)
         end
       end
-      do
-        do
-          g:UpdateCollected(serverChapterData)
-          -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
-      end
+      g:UpdateCollected(serverChapterData)
     end
     c.previewAward = {}
     if v.previewAward then
-      for index,iv in ipairs(v.previewAward) do
+      for index, iv in ipairs(v.previewAward) do
         local g = ChapterAwardPreview:New()
         g.startMissionId = iv[1]
         g.endMissionId = iv[2]
         g.index = iv[3]
         g.awardIndex = iv[4]
-        ;
-        (table.insert)(c.previewAward, g)
+        table.insert(c.previewAward, g)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChapterAwardData.GetSortedArr = function(self, list)
-  -- function num : 0_2 , upvalues : _ENV
+function ChapterAwardData:GetSortedArr(list)
   if not list then
-    return 
+    return
   end
   local vecSort = SortedArray:New(Algorithm.COMPARE_CUSTOM, DiscoveryStage._LessComparer)
-  for i,v in ipairs(list) do
+  for i, v in ipairs(list) do
     local award = Award:New()
     award:InitWithCount(v.ItemID, v.Count)
     vecSort:Insert(award)
@@ -80,74 +56,53 @@ ChapterAwardData.GetSortedArr = function(self, list)
   return vecSort.elements
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChapterAwardData._LessComparer = function(nItemIDA, nItemIDB)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfgItemA = (Cfg.cfg_item)[nItemIDA.id]
-  local cfgItemB = (Cfg.cfg_item)[nItemIDB.id]
+function ChapterAwardData._LessComparer(nItemIDA, nItemIDB)
+  local cfgItemA = Cfg.cfg_item[nItemIDA.id]
+  local cfgItemB = Cfg.cfg_item[nItemIDB.id]
   if not cfgItemA or not cfgItemB then
     return 0
   end
   if cfgItemA.Color < cfgItemB.Color then
     return -1
+  elseif cfgItemA.Color > cfgItemB.Color then
+    return 1
+  elseif nItemIDA.id < nItemIDB.id then
+    return 1
+  elseif nItemIDA.id > nItemIDB.id then
+    return -1
   else
-    if cfgItemB.Color < cfgItemA.Color then
-      return 1
-    else
-      if nItemIDA.id < nItemIDB.id then
-        return 1
-      else
-        if nItemIDB.id < nItemIDA.id then
-          return -1
-        else
-          return 0
-        end
-      end
-    end
+    return 0
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChapterAwardData.GetServerChapterDataByChapterId = function(self, chapterId)
-  -- function num : 0_4 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(MissionModule)
+function ChapterAwardData:GetServerChapterDataByChapterId(chapterId)
+  local module = GameGlobal.GetModule(MissionModule)
   local serverData = module:GetChapterInfo()
-  for i,v in pairs(serverData) do
+  for i, v in pairs(serverData) do
     if chapterId == v.chapter_id then
       return v
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChapterAwardData.GetChapterAwardChapterByChapterId = function(self, chapterId)
-  -- function num : 0_5
-  return (self.chapter_data)[chapterId]
+function ChapterAwardData:GetChapterAwardChapterByChapterId(chapterId)
+  return self.chapter_data[chapterId]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChapterAwardData.ChapterListCanCollect = function(self, chapterMap)
-  -- function num : 0_6 , upvalues : _ENV
-  for id,val in pairs(chapterMap) do
-    if (self.chapter_data)[id] and ((self.chapter_data)[id]):CanCollect() then
+function ChapterAwardData:ChapterListCanCollect(chapterMap)
+  for id, val in pairs(chapterMap) do
+    if self.chapter_data[id] and self.chapter_data[id]:CanCollect() then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChapterAwardData.CanCollectWithoutChapter = function(self, data, chapterid)
-  -- function num : 0_7 , upvalues : _ENV
+function ChapterAwardData:CanCollectWithoutChapter(data, chapterid)
   local section = data:GetDiscoverySectionByChapterId(chapterid)
   local chapters = section.chapterIds
-  for id,value in pairs(chapters) do
-    if (self.chapter_data)[id] and id ~= chapterid and ((self.chapter_data)[id]):CanCollect() then
+  for id, value in pairs(chapters) do
+    if self.chapter_data[id] and id ~= chapterid and self.chapter_data[id]:CanCollect() then
       return true
     end
   end
@@ -156,26 +111,18 @@ end
 
 _class("ChapterAwardChapter", Object)
 ChapterAwardChapter = ChapterAwardChapter
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
 
-ChapterAwardChapter.Constructor = function(self)
-  -- function num : 0_8
+function ChapterAwardChapter:Constructor()
   self.star_count = 0
   self.grades = {}
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ChapterAwardChapter.UpdateStarCount = function(self, star_count)
-  -- function num : 0_9
+function ChapterAwardChapter:UpdateStarCount(star_count)
   self.star_count = star_count
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ChapterAwardChapter.CanCollect = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  for i,v in ipairs(self.grades) do
+function ChapterAwardChapter:CanCollect()
+  for i, v in ipairs(self.grades) do
     if v:CanCollect(self.star_count) then
       return true
     end
@@ -185,24 +132,19 @@ end
 
 _class("ChapterAwardGrade", Object)
 ChapterAwardGrade = ChapterAwardGrade
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
 
-ChapterAwardGrade.Constructor = function(self)
-  -- function num : 0_11
+function ChapterAwardGrade:Constructor()
   self.chapter_id = 0
   self.star_count = 0
   self.awards = {}
   self.collected = false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ChapterAwardGrade.UpdateCollected = function(self, serverChapterData)
-  -- function num : 0_12 , upvalues : _ENV
+function ChapterAwardGrade:UpdateCollected(serverChapterData)
   if not serverChapterData then
-    return 
+    return
   end
-  for i,v in ipairs(serverChapterData.receive_star_award_list) do
+  for i, v in ipairs(serverChapterData.receive_star_award_list) do
     if self.star_count == v then
       self.collected = true
       break
@@ -210,11 +152,8 @@ ChapterAwardGrade.UpdateCollected = function(self, serverChapterData)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ChapterAwardGrade.CanCollect = function(self, chapterStarCount)
-  -- function num : 0_13
-  if not self.collected and self.star_count <= chapterStarCount then
+function ChapterAwardGrade:CanCollect(chapterStarCount)
+  if not self.collected and chapterStarCount >= self.star_count then
     return true
   end
   return false
@@ -222,14 +161,10 @@ end
 
 _class("ChapterAwardPreview", Object)
 ChapterAwardPreview = ChapterAwardPreview
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
 
-ChapterAwardPreview.Constructor = function(self)
-  -- function num : 0_14
+function ChapterAwardPreview:Constructor()
   self.startMissionId = 0
   self.endMissionId = 0
   self.index = 1
   self.awardIndex = 1
 end
-
-

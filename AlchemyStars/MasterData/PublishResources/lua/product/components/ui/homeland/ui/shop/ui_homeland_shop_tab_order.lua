@@ -1,107 +1,69 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/shop/ui_homeland_shop_tab_order.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandShopTabOrder", UICustomWidget)
 UIHomelandShopTabOrder = UIHomelandShopTabOrder
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandShopTabOrder.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandShopTabOrder:OnShow(uiParams)
   self._isOpen = true
   self._firstReqTime = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrder.OnHide = function(self)
-  -- function num : 0_1
+function UIHomelandShopTabOrder:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrder.SetData = function(self, shop_info)
-  -- function num : 0_2
+function UIHomelandShopTabOrder:SetData(shop_info)
   self._shop_info = shop_info
   self._infos = self:_GetDynamicListData()
   self:_SetDynamicList()
   self:_SetRefreshText()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrder._GetDynamicListData = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandShopTabOrder:_GetDynamicListData()
   local tb = {}
-  for i,v in pairs((self._shop_info).goods_info) do
+  for i, v in pairs(self._shop_info.goods_info) do
     tb[i + 1] = v
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrder._SetDynamicList = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandShopTabOrder:_SetDynamicList()
   if not self._dynamicListHelper then
     self._dynamicListHelper = UIActivityDynamicListHelper:New(self, self:GetUIComponent("UIDynamicScrollView", "_dynamicList"), "UIHomelandShopTabOrderListItem", function(listItem, itemIndex)
-    -- function num : 0_4_0 , upvalues : self
-    local info = (self._infos)[itemIndex]
-    listItem:SetData(itemIndex, info)
-    if itemIndex == 1 then
-      self._firstSubmitBtnObj = listItem:GetSubmitBtn()
-    end
-  end
-)
+      local info = self._infos[itemIndex]
+      listItem:SetData(itemIndex, info)
+      if itemIndex == 1 then
+        self._firstSubmitBtnObj = listItem:GetSubmitBtn()
+      end
+    end)
   end
   local itemCount = #self._infos
   local itemCountPerRow = 1
-  ;
-  (self._dynamicListHelper):Refresh(itemCount, itemCountPerRow)
+  self._dynamicListHelper:Refresh(itemCount, itemCountPerRow)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrder._SetRefreshText = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local itemCount, maxCount = (UIHomelandShopHelper.GetGoodsRefreshCount)()
-  local endTime = (self._shop_info).goods_refresh_time
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_remainingTimePool", "UIActivityCommonRemainingTime")
-  local text = (StringTable.Get)("str_homeland_shop_tab_order_refresh_text", itemCount, maxCount)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(obj, "txtDesc", text)
+function UIHomelandShopTabOrder:_SetRefreshText()
+  local itemCount, maxCount = UIHomelandShopHelper.GetGoodsRefreshCount()
+  local endTime = self._shop_info.goods_refresh_time
+  local obj = UIWidgetHelper.SpawnObject(self, "_remainingTimePool", "UIActivityCommonRemainingTime")
+  local text = StringTable.Get("str_homeland_shop_tab_order_refresh_text", itemCount, maxCount)
+  UIWidgetHelper.SetLocalizationText(obj, "txtDesc", text)
   if maxCount <= itemCount then
     obj:SetData(0, nil, nil)
-    local text3 = (StringTable.Get)("str_homeland_shop_tab_order_refresh_text_3")
-    ;
-    (UIWidgetHelper.SetLocalizationText)(obj, "txtTime", text3)
+    local text3 = StringTable.Get("str_homeland_shop_tab_order_refresh_text_3")
+    UIWidgetHelper.SetLocalizationText(obj, "txtTime", text3)
   else
-    do
-      obj:SetCustomTimeStr_Common_1()
-      obj:SetAdvanceText("str_homeland_shop_tab_order_refresh_text_2")
-      obj:SetData(endTime, nil, function(first)
-    -- function num : 0_5_0 , upvalues : _ENV, self
-    if not first then
-      (UIHomelandShopHelper.Start_HomelandShopRefreshReq)(5)
-    else
-      if self._firstReqTime then
-        (UIHomelandShopHelper.Start_HomelandShopRefreshReq)(5)
+    obj:SetCustomTimeStr_Common_1()
+    obj:SetAdvanceText("str_homeland_shop_tab_order_refresh_text_2")
+    obj:SetData(endTime, nil, function(first)
+      if not first then
+        UIHomelandShopHelper.Start_HomelandShopRefreshReq(5)
+      elseif self._firstReqTime then
+        UIHomelandShopHelper.Start_HomelandShopRefreshReq(5)
         self._firstReqTime = false
       end
-    end
-  end
-)
-    end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrder.GetSubmitBtn = function(self)
-  -- function num : 0_6
-  return (self._firstSubmitBtnObj)[1]
+function UIHomelandShopTabOrder:GetSubmitBtn()
+  return self._firstSubmitBtnObj[1]
 end
-
-

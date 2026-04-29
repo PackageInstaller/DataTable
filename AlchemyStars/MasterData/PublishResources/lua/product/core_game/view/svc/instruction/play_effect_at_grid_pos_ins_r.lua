@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_effect_at_grid_pos_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayEffectAGridPosInstruction", BaseInstruction)
 PlayEffectAGridPosInstruction = PlayEffectAGridPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayEffectAGridPosInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayEffectAGridPosInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._posX = tonumber(paramList.gridPosX)
   self._posY = tonumber(paramList.gridPosY)
@@ -22,13 +15,9 @@ PlayEffectAGridPosInstruction.Constructor = function(self, paramList)
     self._dirY = tonumber(paramList.gridDirY)
   end
   self._dirOnPickup = tonumber(paramList.dirOnPickup) == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectAGridPosInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayEffectAGridPosInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local sEffect = world:GetService("Effect")
   local pos = Vector2(self._posX, self._posY)
@@ -41,27 +30,20 @@ PlayEffectAGridPosInstruction.DoInstruction = function(self, TT, casterEntity, p
       dir = v2PickupPos - casterEntity:GetGridPosition()
     end
   end
-  do
-    local effectEntity = sEffect:CreateWorldPositionDirectionEffect(self._effectID, pos, dir)
-  end
+  local effectEntity = sEffect:CreateWorldPositionDirectionEffect(self._effectID, pos, dir)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectAGridPosInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayEffectAGridPosInstruction:GetCacheResource()
   local t = {}
-  do
-    if self._effectID and self._effectID > 0 then
-      local effectCfg = (Cfg.cfg_effect)[self._effectID]
-      if effectCfg == nil then
-        (Log.exception)("找不到特效配置,ID是：", self._effectID)
-      end
-      ;
-      (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+  if self._effectID and self._effectID > 0 then
+    local effectCfg = Cfg.cfg_effect[self._effectID]
+    if effectCfg == nil then
+      Log.exception("找不到特效配置,ID是：", self._effectID)
     end
-    return t
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
+  return t
 end
-
-

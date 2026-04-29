@@ -1,43 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/battle_exit_loading_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BattleExitLoadingHandler", LoadingHandler)
 BattleExitLoadingHandler = BattleExitLoadingHandler
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BattleExitLoadingHandler.PreLoadBeforeLoadLevel = function(self, TT)
-  -- function num : 0_0
+function BattleExitLoadingHandler:PreLoadBeforeLoadLevel(TT)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleExitLoadingHandler.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  (LoadingHandler.PreLoadAfterLoadLevel)(self, TT, ...)
+function BattleExitLoadingHandler:PreLoadAfterLoadLevel(TT, ...)
+  LoadingHandler.PreLoadAfterLoadLevel(self, TT, ...)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleExitLoadingHandler.OnLoadingFinish = function(self, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  local loadingParams = {...}
+function BattleExitLoadingHandler:OnLoadingFinish(...)
+  local loadingParams = {
+    ...
+  }
   local statetype = loadingParams[1]
   local stateparam = loadingParams[2]
   if statetype == UIStateType.UIDiscovery then
-    (DiscoveryData.EnterStateUIDiscovery)(4)
+    DiscoveryData.EnterStateUIDiscovery(4)
   else
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(statetype, stateparam)
+    GameGlobal.UIStateManager():SwitchState(statetype, stateparam)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleExitLoadingHandler.LoadingType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function BattleExitLoadingHandler:LoadingType()
   return LoadingType.BOTTOM
 end
-
-

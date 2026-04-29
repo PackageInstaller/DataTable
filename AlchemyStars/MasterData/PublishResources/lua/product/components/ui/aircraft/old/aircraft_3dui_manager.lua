@@ -1,139 +1,88 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/old/aircraft_3dui_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Aircraft3DUIManager", Object)
 Aircraft3DUIManager = Aircraft3DUIManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Aircraft3DUIManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.canvasRoot = (((UnityEngine.GameObject).Find)("Aircraft3DUICanvas")).transform
-  self.aircraftModule = (GameGlobal.GetModule)(AircraftModule)
+function Aircraft3DUIManager:Constructor()
+  self.canvasRoot = UnityEngine.GameObject.Find("Aircraft3DUICanvas").transform
+  self.aircraftModule = GameGlobal.GetModule(AircraftModule)
   self.scale = 0.03
   self.uiDic = {}
   self._isShow = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Aircraft3DUIManager.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  for _,ui in pairs(self.uiDic) do
+function Aircraft3DUIManager:Dispose()
+  for _, ui in pairs(self.uiDic) do
     ui:OnDestroy()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Aircraft3DUIManager.RefreshUI = function(self, spaceId, roomData, roomGo)
-  -- function num : 0_2
-  local ui = (self.uiDic)[spaceId]
+function Aircraft3DUIManager:RefreshUI(spaceId, roomData, roomGo)
+  local ui = self.uiDic[spaceId]
   local state = self:GetUIState(spaceId)
   if ui then
     ui:Refresh(roomData, state)
   else
     ui = self:CreateUI(state, roomGo)
     ui:Show(roomData, state, spaceId)
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.uiDic)[spaceId] = ui
+    self.uiDic[spaceId] = ui
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Aircraft3DUIManager.LoadUIAsset = function(self, roomGo)
-  -- function num : 0_3 , upvalues : _ENV
+function Aircraft3DUIManager:LoadUIAsset(roomGo)
   local box = roomGo:GetComponent(typeof(UnityEngine.BoxCollider))
-  local pos = (roomGo.transform).position + box.center - (roomGo.transform).forward * ((box.size).z / 2)
+  local pos = roomGo.transform.position + box.center - roomGo.transform.forward * (box.size.z / 2)
   local size = box.size
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset("RoomUIBase.prefab", LoadType.GameObject)
-  ;
-  ((req.Obj).transform):SetParent(self.canvasRoot)
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((req.Obj).transform).position = pos
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((req.Obj).transform).localScale = Vector3(1, 1, 1)
-  ;
-  (req.Obj):SetActive(true)
-  local rect = (req.Obj):GetComponent(typeof(UnityEngine.RectTransform))
+  local req = ResourceManager:GetInstance():SyncLoadAsset("RoomUIBase.prefab", LoadType.GameObject)
+  req.Obj.transform:SetParent(self.canvasRoot)
+  req.Obj.transform.position = pos
+  req.Obj.transform.localScale = Vector3(1, 1, 1)
+  req.Obj:SetActive(true)
+  local rect = req.Obj:GetComponent(typeof(UnityEngine.RectTransform))
   rect.sizeDelta = Vector2(size.x / self.scale, size.y / self.scale)
-  rect.eulerAngles = (roomGo.transform).eulerAngles
+  rect.eulerAngles = roomGo.transform.eulerAngles
   return req
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Aircraft3DUIManager.GetState = function(self, idx)
-  -- function num : 0_4
-  return ((self.uiDic)[idx]):GetState()
+function Aircraft3DUIManager:GetState(idx)
+  return self.uiDic[idx]:GetState()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Aircraft3DUIManager.OnEnterRoom = function(self, spaceID)
-  -- function num : 0_5
-  ((self.uiDic)[spaceID]):EnterRoom()
+function Aircraft3DUIManager:OnEnterRoom(spaceID)
+  self.uiDic[spaceID]:EnterRoom()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Aircraft3DUIManager.OnExitRoom = function(self, spaceID)
-  -- function num : 0_6
-  ((self.uiDic)[spaceID]):ExitRoom()
+function Aircraft3DUIManager:OnExitRoom(spaceID)
+  self.uiDic[spaceID]:ExitRoom()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Aircraft3DUIManager.CreateUI = function(self, state, roomGo)
-  -- function num : 0_7 , upvalues : _ENV
+function Aircraft3DUIManager:CreateUI(state, roomGo)
   local uiReq = self:LoadUIAsset(roomGo)
   return AircraftRoom3DUI:New(uiReq, roomGo)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Aircraft3DUIManager.IsShow = function(self)
-  -- function num : 0_8
+function Aircraft3DUIManager:IsShow()
   return self._isShow
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Aircraft3DUIManager.SetUIActive = function(self, active)
-  -- function num : 0_9
-  ((self.canvasRoot).gameObject):SetActive(active)
+function Aircraft3DUIManager:SetUIActive(active)
+  self.canvasRoot.gameObject:SetActive(active)
   self._isShow = active
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Aircraft3DUIManager.GetUIIndex = function(self, _uiGo)
-  -- function num : 0_10
+function Aircraft3DUIManager:GetUIIndex(_uiGo)
   for i = 1, #self.uiViews do
-    if (self.uiViews)[i] == _uiGo then
+    if self.uiViews[i] == _uiGo then
       return i
     end
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Aircraft3DUIManager.GetUIState = function(self, _idx)
-  -- function num : 0_11 , upvalues : _ENV
-  local spaceData = (self.aircraftModule):GetSpaceInfo(_idx)
-  local buildType = (((Cfg.cfg_aircraft_space)[_idx]).BuildType)[1]
+function Aircraft3DUIManager:GetUIState(_idx)
+  local spaceData = self.aircraftModule:GetSpaceInfo(_idx)
+  local buildType = Cfg.cfg_aircraft_space[_idx].BuildType[1]
   if spaceData == nil then
     if buildType == nil then
-      (Log.fatal)("[aircraft] space idx error: ", _idx)
+      Log.fatal("[aircraft] space idx error: ", _idx)
       return nil
     end
     if buildType == AirRoomType.AisleRoom then
@@ -143,7 +92,7 @@ Aircraft3DUIManager.GetUIState = function(self, _idx)
     end
   else
     local spaceState = spaceData.space_status
-    local roomData = (self.aircraftModule):GetRoom(_idx)
+    local roomData = self.aircraftModule:GetRoom(_idx)
     local isAisle = buildType == AirRoomType.AisleRoom
     if isAisle then
       if spaceState == SpaceState.SpaceStateNeedClean then
@@ -153,13 +102,13 @@ Aircraft3DUIManager.GetUIState = function(self, _idx)
           return AirUIState.AisleNotOpen
         end
       elseif spaceState == SpaceState.SpaceStateCleaning then
-        (Log.exception)("[Aircraft] 严重错误，过道状态为清理中")
+        Log.exception("[Aircraft] 严重错误，过道状态为清理中")
       elseif spaceState == SpaceState.SpaceStateEmpty then
         return AirUIState.AisleUnbuild
       elseif spaceState == SpaceState.SpaceStateFull then
         return AirUIState.Aisle
       else
-        (Log.fatal)("[aircraft] space state error: ", "Idx: ", _idx, " SpaceState: ", spaceState)
+        Log.fatal("[aircraft] space state error: ", "Idx: ", _idx, " SpaceState: ", spaceState)
         return nil
       end
     elseif spaceState == SpaceState.SpaceStateNeedClean then
@@ -177,7 +126,7 @@ Aircraft3DUIManager.GetUIState = function(self, _idx)
     elseif spaceState == SpaceState.SpaceStateUpgrading then
       return AirUIState.RoomUpgrading
     elseif spaceState == SpaceState.SpaceStateDegrading then
-      if roomData:Level() <= 1 then
+      if 1 >= roomData:Level() then
         return AirUIState.RoomTearing
       else
         return AirUIState.RoomDegrading
@@ -193,7 +142,7 @@ Aircraft3DUIManager.GetUIState = function(self, _idx)
         elseif purityState == PurifyRoomStatus.WAITING_COLLECT_AWARD then
           return AirUIState.EvilClearEnd
         else
-          (Log.fatal)("[aircraft] purify room state error: state-->", purityState)
+          Log.fatal("[aircraft] purify room state error: state-->", purityState)
           return nil
         end
       elseif roomType == AirRoomType.MazeRoom or roomType == AirRoomType.PrismRoom or roomType == AirRoomType.TowerRoom then
@@ -208,25 +157,16 @@ Aircraft3DUIManager.GetUIState = function(self, _idx)
         return AirUIState.RoomIdle
       end
     else
-      (Log.fatal)("[aircraft] space state error: ", "Idx: ", _idx, " state: ", spaceState)
+      Log.fatal("[aircraft] space state error: ", "Idx: ", _idx, " state: ", spaceState)
       return nil
     end
   end
-  -- DECOMPILER ERROR: 26 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Aircraft3DUIManager.CanConnectToSpace = function(self, spaceID)
-  -- function num : 0_12
+function Aircraft3DUIManager:CanConnectToSpace(spaceID)
   return true
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Aircraft3DUIManager.GetBtnGuide = function(self, spaceId)
-  -- function num : 0_13
-  return ((self.uiDic)[spaceId]):GetBtnGuide()
+function Aircraft3DUIManager:GetBtnGuide(spaceId)
+  return self.uiDic[spaceId]:GetBtnGuide()
 end
-
-

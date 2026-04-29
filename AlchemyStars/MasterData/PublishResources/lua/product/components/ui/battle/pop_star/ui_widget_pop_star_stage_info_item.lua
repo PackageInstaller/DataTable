@@ -1,28 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/pop_star/ui_widget_pop_star_stage_info_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetPopStarStageInfoItem", UICustomWidget)
 UIWidgetPopStarStageInfoItem = UIWidgetPopStarStageInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetPopStarStageInfoItem.OnShow = function(self)
-  -- function num : 0_0
+function UIWidgetPopStarStageInfoItem:OnShow()
   self._txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarStageInfoItem.OnHide = function(self)
-  -- function num : 0_1
+function UIWidgetPopStarStageInfoItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarStageInfoItem.Init = function(self, desc)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._txtDesc):SetText((StringTable.Get)(desc))
+function UIWidgetPopStarStageInfoItem:Init(desc)
+  self._txtDesc:SetText(StringTable.Get(desc))
 end
-
-

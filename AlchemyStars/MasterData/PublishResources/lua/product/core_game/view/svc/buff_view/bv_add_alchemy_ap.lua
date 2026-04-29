@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_add_alchemy_ap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddAlchemyAP", BuffViewBase)
 BuffViewAddAlchemyAP = BuffViewAddAlchemyAP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddAlchemyAP.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local featureSvcRender = (self._world):GetService("FeatureRender")
+function BuffViewAddAlchemyAP:PlayView(TT)
+  local featureSvcRender = self._world:GetService("FeatureRender")
   if featureSvcRender then
-    featureSvcRender:NotifyAlchemyAPChange(TT, (self._buffResult)._finalAP, (self._buffResult)._finalLevel, (self._buffResult)._ap)
+    featureSvcRender:NotifyAlchemyAPChange(TT, self._buffResult._finalAP, self._buffResult._finalLevel, self._buffResult._ap)
   end
-  local playBuffSvc = (self._world):GetService("PlayBuff")
-  local arr = (self._buffResult):GetBuffArray()
-  for i,v in ipairs(arr) do
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  local arr = self._buffResult:GetBuffArray()
+  for i, v in ipairs(arr) do
     local eid, seq = v[1], v[2]
-    ;
-    (Log.debug)("BuffViewAddAlchemyAP entityid=", eid, "buffseq=", seq, "trace: ")
-    local entity = (self._world):GetEntityByID(eid)
+    Log.debug("BuffViewAddAlchemyAP entityid=", eid, "buffseq=", seq, "trace: ")
+    local entity = self._world:GetEntityByID(eid)
     if entity then
-      local inst = (entity:BuffView()):GetBuffViewInstance(seq)
+      local inst = entity:BuffView():GetBuffViewInstance(seq)
       if inst then
         playBuffSvc:PlayAddBuff(TT, inst)
       end
     end
   end
 end
-
-

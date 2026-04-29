@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/config/luckland_level_config_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LLLevelConfigData", Object)
 LLLevelConfigData = LLLevelConfigData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LLLevelConfigData.Constructor = function(self, configMng)
-  -- function num : 0_0
+function LLLevelConfigData:Constructor(configMng)
   self._configMng = configMng
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LLLevelConfigData.ParseLevelConfig = function(self, levelID)
-  -- function num : 0_1 , upvalues : _ENV
+function LLLevelConfigData:ParseLevelConfig(levelID)
   self._levelID = levelID
-  local levelConfigData = (Cfg.cfg_luckland_client_mission)[levelID]
+  local levelConfigData = Cfg.cfg_luckland_client_mission[levelID]
   if not levelConfigData then
-    (Log.exception)("[LuckLand] ParseLevelConfig not find levelID = ", levelID)
-    return 
+    Log.exception("[LuckLand] ParseLevelConfig not find levelID = ", levelID)
+    return
   end
   self._levelRoundCount = levelConfigData.GameRound
   self._initGold = levelConfigData.InitMoney
@@ -34,16 +24,13 @@ LLLevelConfigData.ParseLevelConfig = function(self, levelID)
   self._affixList = levelConfigData.AffixList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLLevelConfigData._ParseMonsters = function(self, roundMonsterStrArray)
-  -- function num : 0_2 , upvalues : _ENV
+function LLLevelConfigData:_ParseMonsters(roundMonsterStrArray)
   local monsterList = {}
-  for _,strVal in ipairs(roundMonsterStrArray) do
-    local strArray = (string.split)(strVal, "|")
+  for _, strVal in ipairs(roundMonsterStrArray) do
+    local strArray = string.split(strVal, "|")
     if #strArray < 3 then
-      (Log.exception)("[LuckLand] ParseRoundMonsters size error, roundMonsters = ", strVal)
-      return 
+      Log.exception("[LuckLand] ParseRoundMonsters size error, roundMonsters = ", strVal)
+      return
     end
     local round = tonumber(strArray[1])
     local monsterID = tonumber(strArray[2])
@@ -54,96 +41,59 @@ LLLevelConfigData._ParseMonsters = function(self, roundMonsterStrArray)
   return monsterList
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLLevelConfigData.GetLevelID = function(self)
-  -- function num : 0_3
+function LLLevelConfigData:GetLevelID()
   return self._levelID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LLLevelConfigData.GetLevelRoundCount = function(self)
-  -- function num : 0_4
+function LLLevelConfigData:GetLevelRoundCount()
   return self._levelRoundCount
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LLLevelConfigData.GetInitGold = function(self)
-  -- function num : 0_5
+function LLLevelConfigData:GetInitGold()
   return self._initGold
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LLLevelConfigData.GetInitMaxHP = function(self)
-  -- function num : 0_6
+function LLLevelConfigData:GetInitMaxHP()
   return self._initMaxHP
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LLLevelConfigData.GetBuildingList = function(self)
-  -- function num : 0_7
+function LLLevelConfigData:GetBuildingList()
   return self._buildingList
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LLLevelConfigData.GetBackpackPetList = function(self)
-  -- function num : 0_8
+function LLLevelConfigData:GetBackpackPetList()
   return self._backpackPetList
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LLLevelConfigData.GetMonsterList = function(self)
-  -- function num : 0_9
+function LLLevelConfigData:GetMonsterList()
   return self._monsterList
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LLLevelConfigData.GetHardRateByRound = function(self, roundCount)
-  -- function num : 0_10
+function LLLevelConfigData:GetHardRateByRound(roundCount)
   local count = #self._roundHardRateList
-  if count < roundCount then
-    return (self._roundHardRateList)[count]
+  if roundCount > count then
+    return self._roundHardRateList[count]
   end
-  return (self._roundHardRateList)[roundCount]
+  return self._roundHardRateList[roundCount]
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LLLevelConfigData.GetReDrawCostRate = function(self)
-  -- function num : 0_11
+function LLLevelConfigData:GetReDrawCostRate()
   return self._reDrawCostRate
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LLLevelConfigData.GetDeleteCostRate = function(self)
-  -- function num : 0_12
+function LLLevelConfigData:GetDeleteCostRate()
   return self._deleteCostRate
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LLLevelConfigData.GetAffixList = function(self)
-  -- function num : 0_13
+function LLLevelConfigData:GetAffixList()
   return self._affixList
 end
 
 _class("LLLevelConfigMonsterData", Object)
 LLLevelConfigMonsterData = LLLevelConfigMonsterData
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
 
-LLLevelConfigMonsterData.Constructor = function(self, id, round, money)
-  -- function num : 0_14
+function LLLevelConfigMonsterData:Constructor(id, round, money)
   self.id = id
   self.round = round
   self.money = money
 end
-
-

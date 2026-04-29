@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_monster_move_front_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParamMonsterMoveFrontAttack", SkillEffectParamBase)
 SkillEffectParamMonsterMoveFrontAttack = SkillEffectParamMonsterMoveFrontAttack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamMonsterMoveFrontAttack.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamMonsterMoveFrontAttack:Constructor(t)
   self._skillID = t.skillID
   self._moveStep = t.moveStep
   if t.AIMove ~= nil then
@@ -19,32 +12,18 @@ SkillEffectParamMonsterMoveFrontAttack.Constructor = function(self, t)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamMonsterMoveFrontAttack.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamMonsterMoveFrontAttack:GetEffectType()
   return SkillEffectType.MonsterMoveFrontAttack
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamMonsterMoveFrontAttack.GetCheckSkillID = function(self)
-  -- function num : 0_2
+function SkillEffectParamMonsterMoveFrontAttack:GetCheckSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamMonsterMoveFrontAttack.GetMoveStep = function(self)
-  -- function num : 0_3
+function SkillEffectParamMonsterMoveFrontAttack:GetMoveStep()
   return self._moveStep
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamMonsterMoveFrontAttack.IsAIMove = function(self)
-  -- function num : 0_4
+function SkillEffectParamMonsterMoveFrontAttack:IsAIMove()
   return self._isAIMove
 end
-
-

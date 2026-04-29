@@ -1,81 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/collect_card/receive/ui_collect_card_receive.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICollectCardReceive", UIController)
 UICollectCardReceive = UICollectCardReceive
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICollectCardReceive.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UICollectCardReceive:LoadDataOnEnter(TT, res, uiParams)
   self._cardCom = uiParams[3]
-  ;
-  (self._cardCom):HandleClearSendCardInfoReq(TT, res)
+  self._cardCom:HandleClearSendCardInfoReq(TT, res)
   if res and res:GetSucc() then
     local result = res:GetResult()
-    ;
-    (Log.error)("###[UICollectCardReceive] HandleClearSendCardInfoReq fail,result:", result)
+    Log.error("###[UICollectCardReceive] HandleClearSendCardInfoReq fail,result:", result)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardReceive.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UICollectCardReceive:OnShow(uiParams)
   self._cards = uiParams[1]
   self._cb = uiParams[2]
   self:GetComponents()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardReceive.GetComponents = function(self)
-  -- function num : 0_2
+function UICollectCardReceive:GetComponents()
   self._pool = self:GetUIComponent("UISelectObjectPath", "Pool")
-  self._ScrollRect = ((((self:GetUIComponent("Transform", "Pool")).parent).parent).gameObject):GetComponent("ScrollRect")
+  self._ScrollRect = self:GetUIComponent("Transform", "Pool").parent.parent.gameObject:GetComponent("ScrollRect")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardReceive.OnValue = function(self)
-  -- function num : 0_3
+function UICollectCardReceive:OnValue()
   self:SetPool()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardReceive.SetPool = function(self)
-  -- function num : 0_4
-  (self._pool):SpawnObjects("UICollectCardReceiveItem", #self._cards)
-  local pools = (self._pool):GetAllSpawnList()
+function UICollectCardReceive:SetPool()
+  self._pool:SpawnObjects("UICollectCardReceiveItem", #self._cards)
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, #self._cards do
     local item = pools[i]
-    local info = (self._cards)[i]
+    local info = self._cards[i]
     item:SetData(i, info)
   end
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._ScrollRect).enabled = #self._cards > 15
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._ScrollRect.enabled = #self._cards > 15
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardReceive.BtnOnClick = function(self, go)
-  -- function num : 0_5
+function UICollectCardReceive:BtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardReceive.OnHide = function(self)
-  -- function num : 0_6
+function UICollectCardReceive:OnHide()
   if self._cb then
-    (self._cb)()
+    self._cb()
   end
 end
-
-

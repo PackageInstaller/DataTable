@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/chess_pet_attack_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("ChessPetAttackSystem", MainStateSystem)
 ChessPetAttackSystem = ChessPetAttackSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ChessPetAttackSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ChessPetAttackSystem:_GetMainStateID()
   return GameStateID.ChessPetAttack
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetAttackSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChessPetAttackFinish, 1)
+function ChessPetAttackSystem:_OnMainStateEnter(TT)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChessPetAttackFinish, 1)
 end
-
-

@@ -1,19 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_boss_buff_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBossBuffInfo", UICustomWidget)
 UIBossBuffInfo = UIBossBuffInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBossBuffInfo.OnShow = function(self)
-  -- function num : 0_0
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
+function UIBossBuffInfo:OnShow()
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
   self.buttonClose = self:GetUIComponent("Button", "buttonClose")
   self._scrollView = self:GetUIComponent("ScrollRect", "ScrollView")
-  ;
-  ((self._scrollView).gameObject):SetActive(false)
+  self._scrollView.gameObject:SetActive(false)
   self._pool = self:GetUIComponent("UISelectObjectPath", "Content")
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "Canvas")
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
@@ -22,99 +14,65 @@ UIBossBuffInfo.OnShow = function(self)
   self._maxCount = 5
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossBuffInfo.OnHide = function(self)
-  -- function num : 0_1
+function UIBossBuffInfo:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossBuffInfo.Init = function(self, entityid, tplId, hpBarType)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBossBuffInfo:Init(entityid, tplId, hpBarType)
   self._entityId = entityid
   self._tplId = tplId
   self._totalCount = 0
   local arr = {}
   self._eliteIDArray = {}
   if hpBarType == HPBarType.EliteBoss or hpBarType == HPBarType.EliteMonster then
-    self._eliteIDArray = (BattleStatHelper.GetEliteIDArray)(entityid, tplId)
-    ;
-    (table.appendArray)(arr, self._eliteIDArray)
+    self._eliteIDArray = BattleStatHelper.GetEliteIDArray(entityid, tplId)
+    table.appendArray(arr, self._eliteIDArray)
   end
-  self._buffArray = (InnerGameHelperRender.GetUIBuffViewArray)(entityid, false)
-  ;
-  (table.appendArray)(arr, self._buffArray)
-  if not arr then
-    self._showArray = {}
-    self._totalCount = #self._showArray
-    if self._totalCount == 0 then
-      return 
-    end
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._contentRect).anchoredPosition = Vector2(0, 0)
-    self:SetCanvasShow(true)
-    self:_InitListView()
-    ;
-    ((self._scrollView).gameObject):SetActive(true)
-    ;
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._contentRect)
-    local scrollRectHeight = ((self._scrollRect).sizeDelta).y
-    local contentRectHeight = ((self._contentRect).sizeDelta).y
-    -- DECOMPILER ERROR at PC78: Confused about usage of register: R7 in 'UnsetPending'
-
-    if scrollRectHeight < contentRectHeight then
-      (self._scrollView).enabled = true
-    else
-      -- DECOMPILER ERROR at PC81: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._scrollView).enabled = false
-    end
+  self._buffArray = InnerGameHelperRender.GetUIBuffViewArray(entityid, false)
+  table.appendArray(arr, self._buffArray)
+  self._showArray = arr or {}
+  self._totalCount = #self._showArray
+  if self._totalCount == 0 then
+    return
+  end
+  self._contentRect.anchoredPosition = Vector2(0, 0)
+  self:SetCanvasShow(true)
+  self:_InitListView()
+  self._scrollView.gameObject:SetActive(true)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._contentRect)
+  local scrollRectHeight = self._scrollRect.sizeDelta.y
+  local contentRectHeight = self._contentRect.sizeDelta.y
+  if scrollRectHeight < contentRectHeight then
+    self._scrollView.enabled = true
+  else
+    self._scrollView.enabled = false
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossBuffInfo.SetCanvasShow = function(self, show)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not show or not 1 then
-    (self._canvasGroup).alpha = not self._canvasGroup or 0
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._canvasGroup).blocksRaycasts = show
+function UIBossBuffInfo:SetCanvasShow(show)
+  if self._canvasGroup then
+    self._canvasGroup.alpha = show and 1 or 0
+    self._canvasGroup.blocksRaycasts = show
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossBuffInfo._InitListView = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._pool):SpawnObjects("UIBossBuffItem", self._totalCount)
-  local arr = (self._pool):GetAllSpawnList()
-  for idx,item in ipairs(arr) do
-    local eliteCount = (table.count)(self._eliteIDArray)
+function UIBossBuffInfo:_InitListView()
+  self._pool:SpawnObjects("UIBossBuffItem", self._totalCount)
+  local arr = self._pool:GetAllSpawnList()
+  for idx, item in ipairs(arr) do
+    local eliteCount = table.count(self._eliteIDArray)
     if idx <= eliteCount then
-      item:InitElite(idx, (self._eliteIDArray)[idx])
+      item:InitElite(idx, self._eliteIDArray[idx])
     else
-      item:InitBuff(idx, (self._buffArray)[idx - eliteCount])
+      item:InitBuff(idx, self._buffArray[idx - eliteCount])
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossBuffInfo.buttonCloseOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIBossBuffInfo", input = "buttonCloseOnClick", 
-args = {}
-})
+function UIBossBuffInfo:buttonCloseOnClick()
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIBossBuffInfo",
+    input = "buttonCloseOnClick",
+    args = {}
+  })
   self:SetCanvasShow(false)
 end
-
-

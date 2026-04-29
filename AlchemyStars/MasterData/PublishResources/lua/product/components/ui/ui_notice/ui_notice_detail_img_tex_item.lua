@@ -1,59 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_notice/ui_notice_detail_img_tex_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UINoticeDetailImgTexItem", UICustomWidget)
 UINoticeDetailImgTexItem = UINoticeDetailImgTexItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UINoticeDetailImgTexItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UINoticeDetailImgTexItem:OnShow(uiParams)
   self._title = self:GetUIComponent("UIRichText", "title")
   self._msg = self:GetUIComponent("UIRichText", "msg")
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeDetailImgTexItem.SetData = function(self, notice)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._title):SetText(notice.title)
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._title).onHrefClick = function(hrefName)
-    -- function num : 0_1_0 , upvalues : _ENV
-    (SDKProxy:GetInstance()):OpenUrl(hrefName)
+function UINoticeDetailImgTexItem:SetData(notice)
+  self._title:SetText(notice.title)
+  
+  function self._title.onHrefClick(hrefName)
+    SDKProxy:GetInstance():OpenUrl(hrefName)
   end
-
-  ;
-  (self._msg):SetText(notice.content)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._msg).onHrefClick = function(hrefName)
-    -- function num : 0_1_1 , upvalues : _ENV
-    (SDKProxy:GetInstance()):OpenUrl(hrefName)
+  
+  self._msg:SetText(notice.content)
+  
+  function self._msg.onHrefClick(hrefName)
+    SDKProxy:GetInstance():OpenUrl(hrefName)
   end
-
-  if (string.isnullorempty)(notice.texture) then
-    ((self._icon).gameObject):SetActive(false)
+  
+  if string.isnullorempty(notice.texture) then
+    self._icon.gameObject:SetActive(false)
   else
-    ;
-    ((self._icon).gameObject):SetActive(true)
-    ;
-    (self._icon):LoadImage(notice.texture)
+    self._icon.gameObject:SetActive(true)
+    self._icon:LoadImage(notice.texture)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeDetailImgTexItem.OnHide = function(self)
-  -- function num : 0_2
+function UINoticeDetailImgTexItem:OnHide()
   self._title = nil
   self._msg = nil
   self._icon = nil
 end
-
-

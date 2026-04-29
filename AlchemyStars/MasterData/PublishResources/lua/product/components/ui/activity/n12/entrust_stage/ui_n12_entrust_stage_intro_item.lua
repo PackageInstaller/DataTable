@@ -1,32 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/entrust_stage/ui_n12_entrust_stage_intro_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12EntrustStageIntroItem", UICustomWidget)
 UIN12EntrustStageIntroItem = UIN12EntrustStageIntroItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12EntrustStageIntroItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN12EntrustStageIntroItem:OnShow(uiParams)
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageIntroItem._GetComponent = function(self)
-  -- function num : 0_1
+function UIN12EntrustStageIntroItem:_GetComponent()
   self.txtHead = self:GetUIComponent("UILocalizationText", "txtHead")
   self.txtBody = self:GetUIComponent("UILocalizationText", "txtBody")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageIntroItem.Flush = function(self, head, body)
-  -- function num : 0_2
-  (self.txtHead):SetText(head)
-  ;
-  (self.txtBody):SetText(body)
+function UIN12EntrustStageIntroItem:Flush(head, body)
+  self.txtHead:SetText(head)
+  self.txtBody:SetText(body)
 end
-
-

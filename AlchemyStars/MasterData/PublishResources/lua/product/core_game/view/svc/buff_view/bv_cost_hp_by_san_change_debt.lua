@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_cost_hp_by_san_change_debt.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewCostHPBySanChangeDebt", BuffViewBase)
 BuffViewCostHPBySanChangeDebt = BuffViewCostHPBySanChangeDebt
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewCostHPBySanChangeDebt.IsNotifyMatch = function(self, notify)
-  -- function num : 0_0 , upvalues : _ENV
-  local nt = (self._buffResult):GetLogicNotify()
+function BuffViewCostHPBySanChangeDebt:IsNotifyMatch(notify)
+  local nt = self._buffResult:GetLogicNotify()
   if nt and notify and nt:GetNotifyType() == NotifyType.SanValueChange and notify:GetNotifyType() == NotifyType.SanValueChange then
     local ntTimes = nt:GetModifyTimes()
     local notifyTimes = notify:GetModifyTimes()
     return ntTimes == notifyTimes
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewCostHPBySanChangeDebt.PlayView = function(self, TT)
-  -- function num : 0_1
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+function BuffViewCostHPBySanChangeDebt:PlayView(TT)
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayDamageBuff(TT, self)
 end
-
-

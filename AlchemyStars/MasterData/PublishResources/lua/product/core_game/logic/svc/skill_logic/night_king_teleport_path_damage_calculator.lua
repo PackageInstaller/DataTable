@@ -1,138 +1,95 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_logic/night_king_teleport_path_damage_calculator.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("NightKingTeleportPathDamageCalculator", Object)
 NightKingTeleportPathDamageCalculator = NightKingTeleportPathDamageCalculator
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-NightKingTeleportPathDamageCalculator.Constructor = function(self, world)
-  -- function num : 0_0
+function NightKingTeleportPathDamageCalculator:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-NightKingTeleportPathDamageCalculator.Calculate = function(self, casterEntity, skillEffectCalcParam, finalScopeFilterParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = ((casterEntity:SkillContext()):GetResultContainer())
-  local teleportResult = nil
+function NightKingTeleportPathDamageCalculator:Calculate(casterEntity, skillEffectCalcParam, finalScopeFilterParam)
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
+  local teleportResult
   local skillEffectResult_Teleport_Array = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Teleport)
-  if #skillEffectResult_Teleport_Array > 0 then
+  if 0 < #skillEffectResult_Teleport_Array then
     teleportResult = skillEffectResult_Teleport_Array[1]
   end
   if not teleportResult then
-    return 
+    return
   end
   local telPath = teleportResult:GetRenderTeleportPath()
-  if #telPath <= 1 or #telPath == 1 then
-    do return  end
-    local startPos = teleportResult:GetPosOld()
-    local finishPos = teleportResult:GetPosNew()
-    local results = {}
-    local renderTelLastPos = startPos
-    for index,tarPos in ipairs(telPath) do
-      if index ~= #telPath then
-        local damageStageIndex = index
-        local damageResults = self:_CalcTeleportToTrapDamage(casterEntity, skillEffectCalcParam, renderTelLastPos, tarPos, damageStageIndex)
-        ;
-        (table.appendArray)(results, damageResults)
-      else
-        do
-          local damageStageIndex = index
-          do
-            do
-              local damageResults = self:_CalcTeleportToFinalDamage(casterEntity, skillEffectCalcParam, renderTelLastPos, tarPos, damageStageIndex)
-              ;
-              (table.appendArray)(results, damageResults)
-              renderTelLastPos = tarPos
-              -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
-      end
-    end
-    for _,v in ipairs(results) do
-      skillEffectResultContainer:AddEffectResult(v)
-    end
-    return results
+  if 1 < #telPath then
+  elseif #telPath == 1 then
+  else
+    return
   end
+  local startPos = teleportResult:GetPosOld()
+  local finishPos = teleportResult:GetPosNew()
+  local results = {}
+  local renderTelLastPos = startPos
+  for index, tarPos in ipairs(telPath) do
+    if index ~= #telPath then
+      local damageStageIndex = index
+      local damageResults = self:_CalcTeleportToTrapDamage(casterEntity, skillEffectCalcParam, renderTelLastPos, tarPos, damageStageIndex)
+      table.appendArray(results, damageResults)
+    else
+      local damageStageIndex = index
+      local damageResults = self:_CalcTeleportToFinalDamage(casterEntity, skillEffectCalcParam, renderTelLastPos, tarPos, damageStageIndex)
+      table.appendArray(results, damageResults)
+    end
+    renderTelLastPos = tarPos
+  end
+  for _, v in ipairs(results) do
+    skillEffectResultContainer:AddEffectResult(v)
+  end
+  return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-NightKingTeleportPathDamageCalculator._CalcTeleportToTrapDamage = function(self, casterEntity, skillEffectCalcParam, fromPos, toPos, damageStageIndex)
-  -- function num : 0_2 , upvalues : _ENV
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+function NightKingTeleportPathDamageCalculator:_CalcTeleportToTrapDamage(casterEntity, skillEffectCalcParam, fromPos, toPos, damageStageIndex)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalc = utilScopeSvc:GetSkillScopeCalc()
   local casterPos = casterEntity:GetGridPosition()
   local scopeType = skillEffectCalcParam:GetPathDamageScopeType()
   local scopeParam = skillEffectCalcParam:GetPathDamageScopeParam()
   local targetType = skillEffectCalcParam:GetPathDamageTargetType()
-  local scopeResult = scopeCalc:ComputeScopeRange(scopeType, scopeParam, {fromPos, toPos}, (casterEntity:BodyArea()):GetArea(), casterEntity:GetGridDirection(), targetType, casterEntity:GetGridPosition())
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+  local scopeResult = scopeCalc:ComputeScopeRange(scopeType, scopeParam, {fromPos, toPos}, casterEntity:BodyArea():GetArea(), casterEntity:GetGridDirection(), targetType, casterEntity:GetGridPosition())
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local targetIDList = utilScopeSvc:SelectSkillTarget(casterEntity, targetType, scopeResult)
   local results = {}
-  for index,targetID in ipairs(targetIDList) do
-    local targetEntity = (self._world):GetEntityByID(R24_PC50)
-    local damageCalcParam = SkillEffectCalcParam:New(casterEntity:GetID(), {R27_PC57}, R27_PC57, skillID, scopeResult:GetAttackRange(), toPos, targetEntity:GetGridPosition())
-    -- DECOMPILER ERROR at PC66: Overwrote pending register: R24 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC67: Overwrote pending register: R24 in 'AssignReg'
-
-    R24_PC50 = R24_PC50(R24_PC50, self._world)
-    local skillEffectCalc = nil
-    -- DECOMPILER ERROR at PC71: Overwrote pending register: R27 in 'AssignReg'
-
-    local result = skillEffectCalc:DoSkillEffectCalculator(R27_PC57)
-    -- DECOMPILER ERROR at PC74: Overwrote pending register: R27 in 'AssignReg'
-
-    for index,dmgResult in ipairs(R27_PC57) do
+  for index, targetID in ipairs(targetIDList) do
+    local targetEntity = self._world:GetEntityByID(targetID)
+    local damageCalcParam = SkillEffectCalcParam:New(casterEntity:GetID(), {targetID}, skillEffectCalcParam, skillID, scopeResult:GetAttackRange(), toPos, targetEntity:GetGridPosition())
+    local skillEffectCalc = SkillEffectCalc_Damage:New(self._world)
+    local result = skillEffectCalc:DoSkillEffectCalculator(damageCalcParam)
+    for index, dmgResult in ipairs(result) do
       dmgResult._damageStageIndex = damageStageIndex
     end
-    ;
-    (table.appendArray)(results, result)
+    table.appendArray(results, result)
   end
   return results
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-NightKingTeleportPathDamageCalculator._CalcTeleportToFinalDamage = function(self, casterEntity, skillEffectCalcParam, fromPos, toPos, damageStageIndex)
-  -- function num : 0_3 , upvalues : _ENV
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+function NightKingTeleportPathDamageCalculator:_CalcTeleportToFinalDamage(casterEntity, skillEffectCalcParam, fromPos, toPos, damageStageIndex)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalc = utilScopeSvc:GetSkillScopeCalc()
   local casterPos = casterEntity:GetGridPosition()
   local scopeType = skillEffectCalcParam:GetFinalDamageScopeType()
   local scopeParam = skillEffectCalcParam:GetFinalDamageScopeParam()
   local targetType = skillEffectCalcParam:GetFinalDamageTargetType()
-  local scopeResult = scopeCalc:ComputeScopeRange(scopeType, scopeParam, toPos, (casterEntity:BodyArea()):GetArea(), casterEntity:GetGridDirection(), targetType, casterPos)
+  local scopeResult = scopeCalc:ComputeScopeRange(scopeType, scopeParam, toPos, casterEntity:BodyArea():GetArea(), casterEntity:GetGridDirection(), targetType, casterPos)
   local targetIDList = utilScopeSvc:SelectSkillTarget(casterEntity, targetType, scopeResult)
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local results = {}
-  for index,targetID in ipairs(targetIDList) do
-    local targetEntity = (self._world):GetEntityByID(targetID)
+  for index, targetID in ipairs(targetIDList) do
+    local targetEntity = self._world:GetEntityByID(targetID)
     local damageCalcParam = SkillEffectCalcParam:New(casterEntity:GetID(), {targetID}, skillEffectCalcParam, skillID, scopeResult:GetAttackRange(), toPos, targetEntity:GetGridPosition())
     local skillEffectCalc = SkillEffectCalc_Damage:New(self._world)
     local result = skillEffectCalc:DoSkillEffectCalculator(damageCalcParam)
-    for index,dmgResult in ipairs(result) do
+    for index, dmgResult in ipairs(result) do
       dmgResult._damageStageIndex = damageStageIndex
     end
-    ;
-    (table.appendArray)(results, result)
+    table.appendArray(results, result)
   end
   return results
 end
-
-

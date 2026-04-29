@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chat/ui_chat_blacklist_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChatBlackListItem", UICustomWidget)
 UIChatBlackListItem = UIChatBlackListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChatBlackListItem.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UIChatBlackListItem:OnShow(uiParam)
   self._headBg = self:GetUIComponent("UICircleMaskLoader", "headBg")
   self._head_bg_rect = self:GetUIComponent("RectTransform", "headBg")
   self._head_bg_mask_rect = self:GetUIComponent("RectTransform", "headBgMask")
@@ -25,58 +18,30 @@ UIChatBlackListItem.OnShow = function(self, uiParam)
   self._danBadgeGenRect = self:GetUIComponent("RectTransform", "DanBadgeSimpleGen")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatBlackListItem.Refresh = function(self, friendData, chatFriendManager)
-  -- function num : 0_1 , upvalues : _ENV
+function UIChatBlackListItem:Refresh(friendData, chatFriendManager)
   self._chatFriendManager = chatFriendManager
   self._friendData = friendData
-  ;
-  (self._headBg):LoadImage((self._friendData):GetHeadBgName())
-  local iconName, iconTag = (self._friendData):GetHeadIconName()
-  ;
-  (self._head):LoadImage(iconName)
-  if not (string.isnullorempty)(iconTag) then
-    (HelperProxy:GetInstance()):GetHeadIconSizeWithTag(self._headRect, iconTag)
+  self._headBg:LoadImage(self._friendData:GetHeadBgName())
+  local iconName, iconTag = self._friendData:GetHeadIconName()
+  self._head:LoadImage(iconName)
+  if not string.isnullorempty(iconTag) then
+    HelperProxy:GetInstance():GetHeadIconSizeWithTag(self._headRect, iconTag)
   end
-  ;
-  (self._frame):LoadImage((self._friendData):GetHeadFrameName())
-  ;
-  (UIWorldBossHelper.InitOtherDanBadgeSimple)(self._danBadgeGen, self._danBadgeGenGo, self._danBadgeGenRect, (self._friendData):GetWorldBossInfo())
-  ;
-  (HelperProxy:GetInstance()):GetHeadBgSizeWithTag(self._head_bg_rect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadBgMaskSizeWithTag(self._head_bg_mask_rect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadFrameSizeWithTag(self._frameRect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadRootSizeWithTag(self._head_root_rect, RoleHeadFrameSizeType.Size3)
-  -- DECOMPILER ERROR at PC73: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._name).text = (self._friendData):GetName()
-  -- DECOMPILER ERROR at PC84: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._level).text = (StringTable.Get)("str_chat_level", tostring((self._friendData):GetLevel()))
-  -- DECOMPILER ERROR at PC89: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._id).text = (self._friendData):GetShowFriendId()
+  self._frame:LoadImage(self._friendData:GetHeadFrameName())
+  UIWorldBossHelper.InitOtherDanBadgeSimple(self._danBadgeGen, self._danBadgeGenGo, self._danBadgeGenRect, self._friendData:GetWorldBossInfo())
+  HelperProxy:GetInstance():GetHeadBgSizeWithTag(self._head_bg_rect)
+  HelperProxy:GetInstance():GetHeadBgMaskSizeWithTag(self._head_bg_mask_rect)
+  HelperProxy:GetInstance():GetHeadFrameSizeWithTag(self._frameRect)
+  HelperProxy:GetInstance():GetHeadRootSizeWithTag(self._head_root_rect, RoleHeadFrameSizeType.Size3)
+  self._name.text = self._friendData:GetName()
+  self._level.text = StringTable.Get("str_chat_level", tostring(self._friendData:GetLevel()))
+  self._id.text = self._friendData:GetShowFriendId()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatBlackListItem.HeadBtnOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  self:ShowDialog("UIPlayerInfoController", PlayerInfoFrom.Chat, (self._friendData):GetFriendId(), self._chatFriendManager)
+function UIChatBlackListItem:HeadBtnOnClick(go)
+  self:ShowDialog("UIPlayerInfoController", PlayerInfoFrom.Chat, self._friendData:GetFriendId(), self._chatFriendManager)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatBlackListItem.RemoveBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIChatBlackListItem:RemoveBtnOnClick(go)
   self:ShowDialog("UIChatRemoveBlacklistController", self._friendData, self._chatFriendManager)
 end
-
-

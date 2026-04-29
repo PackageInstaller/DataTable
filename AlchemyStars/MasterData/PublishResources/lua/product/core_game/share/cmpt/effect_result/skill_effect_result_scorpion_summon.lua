@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_scorpion_summon.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectResult_ScorpionSummon", SkillEffectResultBase)
 SkillEffectResult_ScorpionSummon = SkillEffectResult_ScorpionSummon
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_ScorpionSummon.Constructor = function(self, nSummonType, summonID, positions)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectResult_ScorpionSummon:Constructor(nSummonType, summonID, positions)
   self._summonType = nSummonType
   self._summonID = summonID
   self._positions = positions
@@ -17,60 +10,34 @@ SkillEffectResult_ScorpionSummon.Constructor = function(self, nSummonType, summo
   self._monsters = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ScorpionSummon.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResult_ScorpionSummon:GetEffectType()
   return SkillEffectType.ScorpionSummon
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ScorpionSummon.GetSummonType = function(self)
-  -- function num : 0_2
+function SkillEffectResult_ScorpionSummon:GetSummonType()
   return self._summonType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ScorpionSummon.GetSummonID = function(self)
-  -- function num : 0_3
+function SkillEffectResult_ScorpionSummon:GetSummonID()
   return self._summonID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ScorpionSummon.GetSummonPositions = function(self)
-  -- function num : 0_4
+function SkillEffectResult_ScorpionSummon:GetSummonPositions()
   return self._positions
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ScorpionSummon.SetGroupID = function(self, groupID)
-  -- function num : 0_5
+function SkillEffectResult_ScorpionSummon:SetGroupID(groupID)
   self._groupID = groupID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ScorpionSummon.GetGroupID = function(self)
-  -- function num : 0_6
+function SkillEffectResult_ScorpionSummon:GetGroupID()
   return self._groupID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ScorpionSummon.AddSummonResult = function(self, monster)
-  -- function num : 0_7 , upvalues : _ENV
-  (table.insert)(self._monsters, monster)
+function SkillEffectResult_ScorpionSummon:AddSummonResult(monster)
+  table.insert(self._monsters, monster)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ScorpionSummon.GetSummonResult = function(self)
-  -- function num : 0_8
+function SkillEffectResult_ScorpionSummon:GetSummonResult()
   return self._monsters
 end
-
-

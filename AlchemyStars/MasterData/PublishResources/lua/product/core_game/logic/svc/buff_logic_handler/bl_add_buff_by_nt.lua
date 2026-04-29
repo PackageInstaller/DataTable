@@ -1,55 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_add_buff_by_nt.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddBuffByAddBuff", BuffLogicBase)
 BuffLogicAddBuffByAddBuff = BuffLogicAddBuffByAddBuff
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddBuffByAddBuff.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.prob then
-    self.prob = {}
-  end
+function BuffLogicAddBuffByAddBuff:Constructor(buffInstance, logicParam)
+  self.prob = logicParam.prob or {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddBuffByAddBuff.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicAddBuffByAddBuff:DoLogic(notify)
   if notify:GetNotifyType() == NotifyType.AfterEntityAddBuff then
     local buffID = notify:GetBuffId()
     local target = notify:GetNotifyEntity()
     local result = BuffResultAddBuff:New()
-    local owner = (self._buffInstance):Entity()
-    local caster = (self._buffInstance):Context() and ((self._buffInstance):Context()).casterEntity or owner
-    local randomSvc = (self._world):GetService("RandomLogic")
+    local owner = self._buffInstance:Entity()
+    local caster = self._buffInstance:Context() and self._buffInstance:Context().casterEntity or owner
+    local randomSvc = self._world:GetService("RandomLogic")
     local bAdd = false
-    for _,probNum in ipairs(self.prob) do
+    for _, probNum in ipairs(self.prob) do
       local rand = randomSvc:LogicRand(1, 100)
-      if rand <= probNum then
+      if probNum >= rand then
         local buffSource = BuffSource:New(BuffSourceType.Buff, caster:GetID())
-        local world = (self._buffInstance):World()
+        local world = self._buffInstance:World()
         local buffSvc = world:GetService("BuffLogic")
         local ins = buffSvc:AddBuff(buffID, target, {casterEntity = caster}, buffSource, nil, true)
         if ins then
           bAdd = true
           result:AddBuffData(target:GetID(), ins:BuffSeq())
-          ;
-          (Log.debug)("AddBuffByAddBuff TargetID:", target:GetID(), " BuffID:", buffID, " BuffSeq:", ins:BuffSeq())
+          Log.debug("AddBuffByAddBuff TargetID:", target:GetID(), " BuffID:", buffID, " BuffSeq:", ins:BuffSeq())
         end
       else
         break
       end
     end
-    do
-      if bAdd then
-        result:SetAddBuffSeq(notify:GetBuffSeq())
-        return result
-      end
+    if bAdd then
+      result:SetAddBuffSeq(notify:GetBuffSeq())
+      return result
     end
   end
 end
-
-

@@ -1,53 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_pull_around_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillPullAroundPhase", PlaySkillPhaseBase)
 PlaySkillPullAroundPhase = PlaySkillPullAroundPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillPullAroundPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillPullAroundPhase:PlayFlight(TT, casterEntity, phaseParam)
   local pullAroundParam = phaseParam
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local result = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.PullAround)
   local beHitbackEntityID = result:GetTargetID()
   local targetPos = result:GetGridPos()
   local pieceChangeTable = result:GetGridElementChangeTable()
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local targetEntity = (self._world):GetEntityByID(beHitbackEntityID)
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local targetEntity = self._world:GetEntityByID(beHitbackEntityID)
   local emptyGrids = {}
-  for pos,pieceType in pairs(pieceChangeTable) do
+  for pos, pieceType in pairs(pieceChangeTable) do
     emptyGrids[#emptyGrids + 1] = boardServiceRender:CreateEmptyGridEffectEntity(pos)
   end
   local damageResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Damage)
   local skillID = skillEffectResultContainer:GetSkillID()
   if damageResult then
-    local beHitParam = ((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(pullAroundParam:GetHitAnimationName())):SetHandleBeHitParam_DamageInfo(damageResult:GetDamageInfo(1))):SetHandleBeHitParam_DamagePos(damageResult:GetGridPos())):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(false)):SetHandleBeHitParam_SkillID(skillID)
-    ;
-    (self:SkillService()):HandleBeHit(TT, beHitParam)
+    local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(pullAroundParam:GetHitAnimationName()):SetHandleBeHitParam_DamageInfo(damageResult:GetDamageInfo(1)):SetHandleBeHitParam_DamagePos(damageResult:GetGridPos()):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(false):SetHandleBeHitParam_SkillID(skillID)
+    self:SkillService():HandleBeHit(TT, beHitParam)
   else
-    do
-      targetEntity:SetAnimatorControllerTriggers({pullAroundParam:GetHitAnimationName()})
-      local gridPos = boardServiceRender:GetRealEntityGridPos(targetEntity)
-      targetEntity:AddGridMove(pullAroundParam:GetMoveSpeed(), targetPos, gridPos)
-      while targetEntity:GridMove() do
-        YIELD(TT)
-      end
-      for i = 1, #emptyGrids do
-        (self._world):DestroyEntity(emptyGrids[i])
-      end
-      for pos,pieceType in pairs(pieceChangeTable) do
-        boardServiceRender:ReCreateGridEntity(pieceType, pos, false)
-      end
-      local utilDataSvc = (self._world):GetService("UtilData")
-      if utilDataSvc:CanChangePieceToGray() then
-        boardServiceRender:ReCreateGridEntity(PieceType.None, (targetEntity:GridLocation()).Position)
-      end
-    end
+    targetEntity:SetAnimatorControllerTriggers({
+      pullAroundParam:GetHitAnimationName()
+    })
+  end
+  local gridPos = boardServiceRender:GetRealEntityGridPos(targetEntity)
+  targetEntity:AddGridMove(pullAroundParam:GetMoveSpeed(), targetPos, gridPos)
+  while targetEntity:GridMove() do
+    YIELD(TT)
+  end
+  for i = 1, #emptyGrids do
+    self._world:DestroyEntity(emptyGrids[i])
+  end
+  for pos, pieceType in pairs(pieceChangeTable) do
+    boardServiceRender:ReCreateGridEntity(pieceType, pos, false)
+  end
+  local utilDataSvc = self._world:GetService("UtilData")
+  if utilDataSvc:CanChangePieceToGray() then
+    boardServiceRender:ReCreateGridEntity(PieceType.None, targetEntity:GridLocation().Position)
   end
 end
-
-

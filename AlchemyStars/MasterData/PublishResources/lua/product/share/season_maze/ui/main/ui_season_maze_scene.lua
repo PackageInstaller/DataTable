@@ -1,59 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/ui_season_maze_scene.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeScene", UIController)
 UISeasonMazeScene = UISeasonMazeScene
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeScene.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonMazeScene:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.GetSMazeEnterPlot = function(self)
-  -- function num : 0_1
-  local storyid = nil
-  local seasonObj = (self._module):CurSeasonObj()
-  local comInfo = (seasonObj:GetMazeComponent()):GetComponentInfo()
+function UISeasonMazeScene:GetSMazeEnterPlot()
+  local storyid
+  local seasonObj = self._module:CurSeasonObj()
+  local comInfo = seasonObj:GetMazeComponent():GetComponentInfo()
   if comInfo.m_first_story_id and comInfo.m_first_story_id > 0 then
     storyid = comInfo.m_first_story_id
   end
   return storyid
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.PlayPlot = function(self)
-  -- function num : 0_2
+function UISeasonMazeScene:PlayPlot()
   local storyid = self:GetSMazeEnterPlot()
   self:ShowDialog("UIStoryController", storyid)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
-  self._module = (GameGlobal.GetModule)(SeasonMazeModule)
+function UISeasonMazeScene:OnShow(uiParams)
+  self._module = GameGlobal.GetModule(SeasonMazeModule)
   self:InitWidget()
-  local plotBtnCb = nil
-  local topBtn = (self.topBtn):SpawnObject("UISMazeCommonTopButton")
+  local plotBtnCb
+  local topBtn = self.topBtn:SpawnObject("UISMazeCommonTopButton")
   topBtn:SetData(function()
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    ((self._module):UIModule()):ExitTo(UIStateType.UISeasonMazeMain)
-  end
-, function()
-    -- function num : 0_3_1 , upvalues : _ENV
-    (UISeasonMazeModule.OpenHelpUI)(UISeasonMazeHelperTabIndex.Temp1, 2)
-  end
-, function()
-    -- function num : 0_3_2 , upvalues : self, _ENV
-    ((self._module):UIModule()):ExitTo(UIStateType.UIMain)
-  end
-, nil, nil, nil, nil, plotBtnCb)
+    self._module:UIModule():ExitTo(UIStateType.UISeasonMazeMain)
+  end, function()
+    UISeasonMazeModule.OpenHelpUI(UISeasonMazeHelperTabIndex.Temp1, 2)
+  end, function()
+    self._module:UIModule():ExitTo(UIStateType.UIMain)
+  end, nil, nil, nil, nil, plotBtnCb)
   self:SetUISeasonMazeCard()
   self:SetUISeasonMazeTopIcon()
   self:SetUISeasonMazeBossAtk()
@@ -69,70 +47,51 @@ UISeasonMazeScene.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.OnAfterUILayerChanged)
   self:AttachEvent(GameEventType.GuideDone, self.GuideDone)
   self:AttachEvent(GameEventType.OnUISeasonMazeAttChanged, self.OnUISeasonMazeAttChanged)
-  ;
-  (SMazeAdaptor.OnShowMainUI)()
+  SMazeAdaptor.OnShowMainUI()
   self:Lock("UISeasonMazeScene_EnterAni")
   self:StartTask(function(TT)
-    -- function num : 0_3_3 , upvalues : _ENV, self
     YIELD(TT, 500)
     self:UnLock("UISeasonMazeScene_EnterAni")
     self:_CheckGuide()
-  end
-)
-  local seasonMazeId = (self._module):CurSeasonMazeID()
-  local cfg = (Cfg.cfg_season_maze_client)[seasonMazeId]
+  end)
+  local seasonMazeId = self._module:CurSeasonMazeID()
+  local cfg = Cfg.cfg_season_maze_client[seasonMazeId]
   if cfg then
-    (AudioHelperController.PlayBGM)(cfg.Bgm, AudioConstValue.BGMCrossFadeTime)
+    AudioHelperController.PlayBGM(cfg.Bgm, AudioConstValue.BGMCrossFadeTime)
   else
-    ;
-    (Log.error)("cfg_season_maze_client can\'t find maze id ", seasonMazeId)
+    Log.error("cfg_season_maze_client can't find maze id ", seasonMazeId)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene._CheckGuide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUIShare.UISeasonMazeScene)
+function UISeasonMazeScene:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUIShare.UISeasonMazeScene)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.OnAfterUILayerChanged = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local topui = ((GameGlobal.UIStateManager)()):IsTopUI(self:GetName())
-  if ((GameGlobal.UIStateManager)()):IsShow("UISpiritDetailLookCgAndSpineController") and ((GameGlobal.UIStateManager)()):IsTopUI("UISpiritDetailLookCgAndSpineController") then
+function UISeasonMazeScene:OnAfterUILayerChanged()
+  local topui = GameGlobal.UIStateManager():IsTopUI(self:GetName())
+  if GameGlobal.UIStateManager():IsShow("UISpiritDetailLookCgAndSpineController") and GameGlobal.UIStateManager():IsTopUI("UISpiritDetailLookCgAndSpineController") then
     topui = true
   end
-  ;
-  ((GameGlobal.EngineInput)()).multiTouchEnabled = topui
-  ;
-  (Log.info)("设置秘境多点触控:", not topui)
+  GameGlobal.EngineInput().multiTouchEnabled = topui
+  Log.info("设置秘境多点触控:", not topui)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.OnUpdate = function(self, dtMS)
-  -- function num : 0_6
-  if not ((self._module):UIModule()):IsRunning() then
-    return 
+function UISeasonMazeScene:OnUpdate(dtMS)
+  if not self._module:UIModule():IsRunning() then
+    return
   end
   if self._seasonMazeOvalArea then
-    (self._seasonMazeOvalArea):Update(dtMS)
+    self._seasonMazeOvalArea:Update(dtMS)
   end
   if self.UISeasonMazeCardWidget then
-    (self.UISeasonMazeCardWidget):OnUpdate(dtMS)
+    self.UISeasonMazeCardWidget:OnUpdate(dtMS)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.InitWidget = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonMazeScene:InitWidget()
   self.topBtn = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._testText = self:GetUIComponent("UILocalizationText", "TestText")
-  ;
-  ((self._testText).gameObject):SetActive((EngineGameHelper.IsDevelopmentBuild)())
+  self._testText.gameObject:SetActive(EngineGameHelper.IsDevelopmentBuild())
   self.UISeasonMazeCard = self:GetUIComponent("UISelectObjectPath", "UISeasonMazeCard")
   self.UISeasonMazeTopIcon = self:GetUIComponent("UISelectObjectPath", "UISeasonMazeTopIcon")
   self.UISeasonMazeBossAtk = self:GetUIComponent("UISelectObjectPath", "UISeasonMazeBossAtk")
@@ -142,294 +101,204 @@ UISeasonMazeScene.InitWidget = function(self)
   self.UISeasonMazeActiveItem = self:GetUIComponent("UISelectObjectPath", "UISeasonMazeActiveItem")
   self.UISeasonMazeWorldBoss = self:GetUIComponent("UISelectObjectPath", "UISeasonMazeWorldBoss")
   self.UISeasonMazeRoomTest = self:GetUIComponent("UISelectObjectPath", "UISeasonMazeRoomTest")
-  self.UISeasonMazeRoomTestWidget = (self.UISeasonMazeRoomTest):SpawnObject("UISeasonMazeRoomTest")
-  self._seasonMazeManger = ((self._module):UIModule()):SeasonMazeManager()
-  self._camera = ((self._seasonMazeManger):SeasonMazeCameraManager()):Camera()
+  self.UISeasonMazeRoomTestWidget = self.UISeasonMazeRoomTest:SpawnObject("UISeasonMazeRoomTest")
+  self._seasonMazeManger = self._module:UIModule():SeasonMazeManager()
+  self._camera = self._seasonMazeManger:SeasonMazeCameraManager():Camera()
   self._layer1 = self:GetGameObject("Layer1")
   self._layer2 = self:GetGameObject("Layer2")
   self._layer3 = self:GetGameObject("Layer3")
   self._black = self:GetUIComponent("Image", "black")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.SetUISeasonMazeActiveItem = function(self)
-  -- function num : 0_8
+function UISeasonMazeScene:SetUISeasonMazeActiveItem()
   if self.UISeasonMazeActiveItem then
     if not self.UISeasonMazeActiveItemWidget then
-      self.UISeasonMazeActiveItemWidget = (self.UISeasonMazeActiveItem):SpawnObject("UISeasonMazeActiveItem")
+      self.UISeasonMazeActiveItemWidget = self.UISeasonMazeActiveItem:SpawnObject("UISeasonMazeActiveItem")
     end
-    ;
-    (self.UISeasonMazeActiveItemWidget):SetData()
-    ;
-    (self.UISeasonMazeActiveItemWidget):SetShowUiCb(function(active)
-    -- function num : 0_8_0 , upvalues : self
-    self:ShowUiWithoutItem(active)
-  end
-)
+    self.UISeasonMazeActiveItemWidget:SetData()
+    self.UISeasonMazeActiveItemWidget:SetShowUiCb(function(active)
+      self:ShowUiWithoutItem(active)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.HideActiveItemTip = function(self)
-  -- function num : 0_9
-  (self.UISeasonMazeActiveItemWidget):CloseItemInfoOnClick()
+function UISeasonMazeScene:HideActiveItemTip()
+  self.UISeasonMazeActiveItemWidget:CloseItemInfoOnClick()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.ShowUiWithoutItem = function(self, active)
-  -- function num : 0_10
-  (self._layer1):SetActive(active)
-  ;
-  (self._layer2):SetActive(true)
-  ;
-  (self._layer3):SetActive(active)
+function UISeasonMazeScene:ShowUiWithoutItem(active)
+  self._layer1:SetActive(active)
+  self._layer2:SetActive(true)
+  self._layer3:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.OnUISeasonMazeAttChanged = function(self)
-  -- function num : 0_11
+function UISeasonMazeScene:OnUISeasonMazeAttChanged()
   self:SetUISeasonMazeWorldBoss()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.SetUISeasonMazeRoomInfo = function(self, type, id, pos)
-  -- function num : 0_12 , upvalues : _ENV
+function UISeasonMazeScene:SetUISeasonMazeRoomInfo(type, id, pos)
   if self.UISeasonMazeRoomInfo then
     if not self.UISeasonMazeRoomInfoWidget then
-      self.UISeasonMazeRoomInfoWidget = (self.UISeasonMazeRoomInfo):SpawnObject("UISeasonMazeRoomInfo")
+      self.UISeasonMazeRoomInfoWidget = self.UISeasonMazeRoomInfo:SpawnObject("UISeasonMazeRoomInfo")
     end
-    local screenPos = (self._camera):WorldToScreenPoint(pos)
-    local camera2d = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
-    local res, posui = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(self.UISeasonMazeRoomInfoRt, screenPos, camera2d, nil)
-    local cfg_room_view = (Cfg.cfg_season_maze_room_view)[type]
-    local desc, title = nil, nil
+    local screenPos = self._camera:WorldToScreenPoint(pos)
+    local camera2d = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
+    local res, posui = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(self.UISeasonMazeRoomInfoRt, screenPos, camera2d, nil)
+    local cfg_room_view = Cfg.cfg_season_maze_room_view[type]
+    local desc, title
     if type == SeasonMazeRoomType.SMRT_Resource then
-      local roomCfg = (Cfg.cfg_component_season_maze_room_res)[id]
-      local resourceRoom = (cfg_room_view.CustomParam)[roomCfg.ResType]
+      local roomCfg = Cfg.cfg_component_season_maze_room_res[id]
+      local resourceRoom = cfg_room_view.CustomParam[roomCfg.ResType]
       desc = resourceRoom.Desc
       title = resourceRoom.Name
     else
-      do
-        desc = cfg_room_view.Desc
-        title = cfg_room_view.Name
-        ;
-        (self.UISeasonMazeRoomInfoWidget):SetData(posui, title, desc)
-      end
+      desc = cfg_room_view.Desc
+      title = cfg_room_view.Name
     end
+    self.UISeasonMazeRoomInfoWidget:SetData(posui, title, desc)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.SetUISeasonMazeTransportPointInfo = function(self, pos)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonMazeScene:SetUISeasonMazeTransportPointInfo(pos)
   if self.UISeasonMazeRoomInfo then
     if not self.UISeasonMazeRoomInfoWidget then
-      self.UISeasonMazeRoomInfoWidget = (self.UISeasonMazeRoomInfo):SpawnObject("UISeasonMazeRoomInfo")
+      self.UISeasonMazeRoomInfoWidget = self.UISeasonMazeRoomInfo:SpawnObject("UISeasonMazeRoomInfo")
     end
-    local screenPos = (self._camera):WorldToScreenPoint(pos)
-    local camera2d = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
-    local res, posui = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(self.UISeasonMazeRoomInfoRt, screenPos, camera2d, nil)
-    local desc, title = nil, nil
+    local screenPos = self._camera:WorldToScreenPoint(pos)
+    local camera2d = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
+    local res, posui = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(self.UISeasonMazeRoomInfoRt, screenPos, camera2d, nil)
+    local desc, title
     desc = "str_season_maze_transport_point_desc"
     title = "str_season_maze_transport_point_name"
-    ;
-    (self.UISeasonMazeRoomInfoWidget):SetData(posui, title, desc)
+    self.UISeasonMazeRoomInfoWidget:SetData(posui, title, desc)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.SetUISeasonMazeCard = function(self)
-  -- function num : 0_14
+function UISeasonMazeScene:SetUISeasonMazeCard()
   if self.UISeasonMazeCard then
     if not self.UISeasonMazeCardWidget then
-      self.UISeasonMazeCardWidget = (self.UISeasonMazeCard):SpawnObject("UISeasonMazeCard")
+      self.UISeasonMazeCardWidget = self.UISeasonMazeCard:SpawnObject("UISeasonMazeCard")
     end
-    ;
-    (self.UISeasonMazeCardWidget):SetData(nil)
+    self.UISeasonMazeCardWidget:SetData(nil)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.ShowCard = function(self, ids, closeAnim)
-  -- function num : 0_15
+function UISeasonMazeScene:ShowCard(ids, closeAnim)
   if self.UISeasonMazeCardWidget then
-    (self.UISeasonMazeCardWidget):SetData(ids, closeAnim)
+    self.UISeasonMazeCardWidget:SetData(ids, closeAnim)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.ReSetCards = function(self)
-  -- function num : 0_16
+function UISeasonMazeScene:ReSetCards()
   if self.UISeasonMazeCardWidget then
-    (self.UISeasonMazeCardWidget):ReSet()
+    self.UISeasonMazeCardWidget:ReSet()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.SetUISeasonMazeTopIcon = function(self)
-  -- function num : 0_17
+function UISeasonMazeScene:SetUISeasonMazeTopIcon()
   if self.UISeasonMazeTopIcon then
     if not self.UISeasonMazeTopIconWidget then
-      self.UISeasonMazeTopIconWidget = (self.UISeasonMazeTopIcon):SpawnObject("UISeasonMazeTopIcon")
+      self.UISeasonMazeTopIconWidget = self.UISeasonMazeTopIcon:SpawnObject("UISeasonMazeTopIcon")
     end
-    ;
-    (self.UISeasonMazeTopIconWidget):SetData()
+    self.UISeasonMazeTopIconWidget:SetData()
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.SetUISeasonMazeBackRoom = function(self)
-  -- function num : 0_18
+function UISeasonMazeScene:SetUISeasonMazeBackRoom()
   if self.UISeasonMazeBackRoom then
     if not self.UISeasonMazeBackRoomWidget then
-      self.UISeasonMazeBackRoomWidget = (self.UISeasonMazeBackRoom):SpawnObject("UISeasonMazeBackRoom")
+      self.UISeasonMazeBackRoomWidget = self.UISeasonMazeBackRoom:SpawnObject("UISeasonMazeBackRoom")
     end
-    ;
-    (self.UISeasonMazeBackRoomWidget):SetData()
+    self.UISeasonMazeBackRoomWidget:SetData()
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.SetUISeasonMazeBossAtk = function(self)
-  -- function num : 0_19
+function UISeasonMazeScene:SetUISeasonMazeBossAtk()
   if self.UISeasonMazeBossAtk then
     if not self.UISeasonMazeBossAtkWidget then
-      self.UISeasonMazeBossAtkWidget = (self.UISeasonMazeBossAtk):SpawnObject("UISeasonMazeBossAtk")
+      self.UISeasonMazeBossAtkWidget = self.UISeasonMazeBossAtk:SpawnObject("UISeasonMazeBossAtk")
     end
-    ;
-    (self.UISeasonMazeBossAtkWidget):SetData()
+    self.UISeasonMazeBossAtkWidget:SetData()
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.SetUISeasonMazeWorldBoss = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UISeasonMazeScene:SetUISeasonMazeWorldBoss()
   if self.UISeasonMazeWorldBoss then
-    local seasonObj = (self._module):CurSeasonObj()
-    local comInfo = (seasonObj:GetMazeComponent()):GetComponentInfo()
+    local seasonObj = self._module:CurSeasonObj()
+    local comInfo = seasonObj:GetMazeComponent():GetComponentInfo()
     local component = seasonObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
     local curTucket = component:GetAttrValue(SeasonMazeAttrType.SMAT_WorldBossTicket)
     if curTucket == 0 then
-      return 
+      return
     end
     if comInfo.hard < 4 then
-      return 
+      return
     end
     if not self.UISeasonMazeWorldBossWidget then
-      self.UISeasonMazeWorldBossWidget = (self.UISeasonMazeWorldBoss):SpawnObject("UISeasonMazeWorldBoss")
+      self.UISeasonMazeWorldBossWidget = self.UISeasonMazeWorldBoss:SpawnObject("UISeasonMazeWorldBoss")
     end
-    ;
-    (self.UISeasonMazeWorldBossWidget):SetData()
+    self.UISeasonMazeWorldBossWidget:SetData()
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene._OnGameStateChanged = function(self, type)
-  -- function num : 0_21 , upvalues : _ENV
-  if (EngineGameHelper.IsDevelopmentBuild)() then
-    (self._testText):SetText(type)
+function UISeasonMazeScene:_OnGameStateChanged(type)
+  if EngineGameHelper.IsDevelopmentBuild() then
+    self._testText:SetText(type)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.SetUISeasonMazeOvalArea = function(self)
-  -- function num : 0_22
+function UISeasonMazeScene:SetUISeasonMazeOvalArea()
   if not self._seasonMazeOvalArea then
     local widget = self:GetUIComponent("UISelectObjectPath", "UISeasonMazeOvalArea")
     self._seasonMazeOvalArea = widget:SpawnObject("UISeasonMazeOvalArea")
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.SetUISeasonMazeHud = function(self)
-  -- function num : 0_23
+function UISeasonMazeScene:SetUISeasonMazeHud()
   if not self.UISeasonMazeHud then
     local widget = self:GetUIComponent("UISelectObjectPath", "UISeasonMazeHud")
     self.UISeasonMazeHud = widget:SpawnObject("UISeasonMazeHud")
-    ;
-    (self.UISeasonMazeHud):SetData()
+    self.UISeasonMazeHud:SetData()
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.GetToastTimeline = function(self, assets)
-  -- function num : 0_24
-  return (self.UISeasonMazeHud):GetToastTimeline(assets)
+function UISeasonMazeScene:GetToastTimeline(assets)
+  return self.UISeasonMazeHud:GetToastTimeline(assets)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.SetUISeasonMazeRoundTip = function(self)
-  -- function num : 0_25
+function UISeasonMazeScene:SetUISeasonMazeRoundTip()
   if not self.UISeasonMazeRoundTip then
     local widget = self:GetUIComponent("UISelectObjectPath", "UISeasonMazeRoundTip")
     self.UISeasonMazeRoundTip = widget:SpawnObject("UISeasonMazeRoundTip")
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.GetRoundTip = function(self)
-  -- function num : 0_26
+function UISeasonMazeScene:GetRoundTip()
   return self.UISeasonMazeRoundTip
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.TransEndPoint = function(self, time)
-  -- function num : 0_27 , upvalues : _ENV
+function UISeasonMazeScene:TransEndPoint(time)
   if self._black then
-    (self._black):DOColor(Color(0, 0, 0, 0), time)
+    self._black:DOColor(Color(0, 0, 0, 0), time)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.TransStartPoint = function(self, time)
-  -- function num : 0_28 , upvalues : _ENV
+function UISeasonMazeScene:TransStartPoint(time)
   if self._black then
-    (self._black):DOColor(Color(0, 0, 0, 1), time)
+    self._black:DOColor(Color(0, 0, 0, 1), time)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.GetMiddleCard = function(self)
-  -- function num : 0_29
-  return (self.UISeasonMazeCardWidget):GetMiddleCard()
+function UISeasonMazeScene:GetMiddleCard()
+  return self.UISeasonMazeCardWidget:GetMiddleCard()
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.GuideDone = function(self)
-  -- function num : 0_30
+function UISeasonMazeScene:GuideDone()
   self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScene.BossAtkAnim = function(self)
-  -- function num : 0_31
+function UISeasonMazeScene:BossAtkAnim()
   if self.UISeasonMazeBossAtkWidget then
-    (self.UISeasonMazeBossAtkWidget):BossAtkAnim()
+    self.UISeasonMazeBossAtkWidget:BossAtkAnim()
   end
 end
-
-

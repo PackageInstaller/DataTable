@@ -1,117 +1,69 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/render_chess_path_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RenderChessPathComponent", Object)
 RenderChessPathComponent = RenderChessPathComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RenderChessPathComponent.Constructor = function(self, chessPath, chessPetEntityID, walkResultList, pickUpPos)
-  -- function num : 0_0
+function RenderChessPathComponent:Constructor(chessPath, chessPetEntityID, walkResultList, pickUpPos)
   self._chessPath = chessPath
   self._chessPetEntityID = chessPetEntityID
   self._pickUpPos = pickUpPos
   self._walkResultList = walkResultList
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChessPathComponent.ClearRenderChessPath = function(self)
-  -- function num : 0_1
+function RenderChessPathComponent:ClearRenderChessPath()
   self._chessPath = {}
   self._chessPetEntityID = -1
   self._walkResultList = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChessPathComponent.GetRenderChessPath = function(self)
-  -- function num : 0_2
+function RenderChessPathComponent:GetRenderChessPath()
   return self._chessPath
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChessPathComponent.SetRenderChessPath = function(self, chessPath)
-  -- function num : 0_3
+function RenderChessPathComponent:SetRenderChessPath(chessPath)
   self._chessPath = chessPath
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChessPathComponent.GetRenderChessPetEntityID = function(self)
-  -- function num : 0_4
+function RenderChessPathComponent:GetRenderChessPetEntityID()
   return self._chessPetEntityID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChessPathComponent.SetRenderChessPetEntityID = function(self, chessPetEntityID)
-  -- function num : 0_5
+function RenderChessPathComponent:SetRenderChessPetEntityID(chessPetEntityID)
   self._chessPetEntityID = chessPetEntityID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChessPathComponent.GetRenderWalkResultList = function(self)
-  -- function num : 0_6
+function RenderChessPathComponent:GetRenderWalkResultList()
   return self._walkResultList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChessPathComponent.SetRenderWalkResultList = function(self, walkResultList)
-  -- function num : 0_7
+function RenderChessPathComponent:SetRenderWalkResultList(walkResultList)
   self._walkResultList = walkResultList
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChessPathComponent.GetRenderPickUpPos = function(self)
-  -- function num : 0_8
+function RenderChessPathComponent:GetRenderPickUpPos()
   return self._pickUpPos
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RenderChessPath = function(self)
-  -- function num : 0_9
-  return self:GetComponent((self.WEComponentsEnum).RenderChessPath)
+function Entity:RenderChessPath()
+  return self:GetComponent(self.WEComponentsEnum.RenderChessPath)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasRenderChessPath = function(self)
-  -- function num : 0_10
-  return self:HasComponent((self.WEComponentsEnum).RenderChessPath)
+function Entity:HasRenderChessPath()
+  return self:HasComponent(self.WEComponentsEnum.RenderChessPath)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddRenderChessPath = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderChessPath
+function Entity:AddRenderChessPath()
+  local index = self.WEComponentsEnum.RenderChessPath
   local component = RenderChessPathComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceRenderChessPath = function(self, chessPath, chessPetEntityID, walkResultList, pickUpPos)
-  -- function num : 0_12 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderChessPath
+function Entity:ReplaceRenderChessPath(chessPath, chessPetEntityID, walkResultList, pickUpPos)
+  local index = self.WEComponentsEnum.RenderChessPath
   local component = RenderChessPathComponent:New(chessPath, chessPetEntityID, walkResultList, pickUpPos)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveRenderChessPath = function(self)
-  -- function num : 0_13
+function Entity:RemoveRenderChessPath()
   if self:HasRenderChessPath() then
-    self:RemoveComponent((self.WEComponentsEnum).RenderChessPath)
+    self:RemoveComponent(self.WEComponentsEnum.RenderChessPath)
   end
 end
-
-

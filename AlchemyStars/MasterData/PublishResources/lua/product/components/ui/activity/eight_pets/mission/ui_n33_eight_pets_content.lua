@@ -1,42 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/eight_pets/mission/ui_n33_eight_pets_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UIN33EightPetsContent", UISideEnterCenterContentBase)
 UIN33EightPetsContent = UIN33EightPetsContent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN33EightPetsContent.DoInit = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN33EightPetsContent:DoInit(params)
   self._params = {}
-  for k,v in pairs(params) do
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._params)[k] = v
+  for k, v in pairs(params) do
+    self._params[k] = v
   end
   self._inAnimationCompleted = false
   self._cdEnd = {tick = 0, period = 30000}
   self._campaign = self._data
-  self._eightComponent = (self._campaign):GetComponent(ECampaignN33EightPetsMissionComponentID.ECAMPAIGN_N33_Eight_Pets_MISSION)
+  self._eightComponent = self._campaign:GetComponent(ECampaignN33EightPetsMissionComponentID.ECAMPAIGN_N33_Eight_Pets_MISSION)
   self:EnableUpdate(true)
   self:InitWidget()
   self:CreateMission()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsContent.DoShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN33EightPetsContent:DoShow()
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
+    self._campaign:ClearCampaignNew(TT)
+  end)
   if not self:InActivityTime() then
-    (self._campaign):CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED, nil, nil)
-    return 
+    self._campaign:CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED, nil, nil)
+    return
   end
   self:FlushEndDuration()
   self:FlushMission()
@@ -46,39 +32,23 @@ UIN33EightPetsContent.DoShow = function(self)
   self:UnlockAnimation()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsContent.DoHide = function(self)
-  -- function num : 0_2
+function UIN33EightPetsContent:DoHide()
   self._inAnimationCompleted = false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsContent.DoDestroy = function(self)
-  -- function num : 0_3
+function UIN33EightPetsContent:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsContent.DoUpdate = function(self, deltaTimeMS)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._cdEnd).tick = (self._cdEnd).tick + deltaTimeMS
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._cdEnd).period <= (self._cdEnd).tick then
-    (self._cdEnd).tick = 0
+function UIN33EightPetsContent:DoUpdate(deltaTimeMS)
+  self._cdEnd.tick = self._cdEnd.tick + deltaTimeMS
+  if self._cdEnd.tick >= self._cdEnd.period then
+    self._cdEnd.tick = 0
     self:FlushEndDuration()
     self:FlushMissionLocked()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsContent.InitWidget = function(self)
-  -- function num : 0_5
+function UIN33EightPetsContent:InitWidget()
   self._descContent = self:GetUIComponent("UILocalizationText", "descContent")
   self._rmValue = self:GetUIComponent("UILocalizationText", "rmValue")
   self._missionScrollView = self:GetUIComponent("ScrollRect", "missionScrollView")
@@ -87,12 +57,16 @@ UIN33EightPetsContent.InitWidget = function(self)
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsContent.GetFormatTimerStr = function(self, deltaTime, txtColor)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN33EightPetsContent:GetFormatTimerStr(deltaTime, txtColor)
   if self._idFormatTimer == nil then
-    self._idFormatTimer = {day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_error_107", clrFormat = "<color=#%s>%s</color>"}
+    self._idFormatTimer = {
+      day = "str_activity_common_day",
+      hour = "str_activity_common_hour",
+      min = "str_activity_common_minute",
+      zero = "str_activity_common_less_minute",
+      over = "str_activity_error_107",
+      clrFormat = "<color=#%s>%s</color>"
+    }
   end
   if txtColor == nil then
     txtColor = "171412"
@@ -101,65 +75,46 @@ UIN33EightPetsContent.GetFormatTimerStr = function(self, deltaTime, txtColor)
   local hour = 0
   local min = 0
   local second = 0
-  if deltaTime >= 0 then
-    day = (UIActivityHelper.Time2Str)(deltaTime)
+  if 0 <= deltaTime then
+    day, hour, min, second = UIActivityHelper.Time2Str(deltaTime)
   end
-  local timeStr = nil
+  local timeStr
   local id = self._idFormatTimer
-  if day > 0 and hour > 0 then
-    timeStr = (string.format)(id.clrFormat, txtColor, day) .. (StringTable.Get)(id.day)
-    timeStr = timeStr .. (string.format)(id.clrFormat, txtColor, hour) .. (StringTable.Get)(id.hour)
+  if 0 < day and 0 < hour then
+    timeStr = string.format(id.clrFormat, txtColor, day) .. StringTable.Get(id.day)
+    timeStr = timeStr .. string.format(id.clrFormat, txtColor, hour) .. StringTable.Get(id.hour)
+  elseif 0 < day then
+    timeStr = string.format(id.clrFormat, txtColor, day) .. StringTable.Get(id.day)
+  elseif 0 < hour and 0 < min then
+    timeStr = string.format(id.clrFormat, txtColor, hour) .. StringTable.Get(id.hour)
+    timeStr = timeStr .. string.format(id.clrFormat, txtColor, min) .. StringTable.Get(id.min)
+  elseif 0 < hour then
+    timeStr = string.format(id.clrFormat, txtColor, hour) .. StringTable.Get(id.hour)
+  elseif 0 < min then
+    timeStr = string.format(id.clrFormat, txtColor, min) .. StringTable.Get(id.min)
   else
-    if day > 0 then
-      timeStr = (string.format)(id.clrFormat, txtColor, day) .. (StringTable.Get)(id.day)
-    else
-      if hour > 0 and min > 0 then
-        timeStr = (string.format)(id.clrFormat, txtColor, hour) .. (StringTable.Get)(id.hour)
-        timeStr = timeStr .. (string.format)(id.clrFormat, txtColor, min) .. (StringTable.Get)(id.min)
-      else
-        if hour > 0 then
-          timeStr = (string.format)(id.clrFormat, txtColor, hour) .. (StringTable.Get)(id.hour)
-        else
-          if min > 0 then
-            timeStr = (string.format)(id.clrFormat, txtColor, min) .. (StringTable.Get)(id.min)
-          else
-            timeStr = (string.format)(id.clrFormat, txtColor, (StringTable.Get)(id.zero))
-          end
-        end
-      end
-    end
+    timeStr = string.format(id.clrFormat, txtColor, StringTable.Get(id.zero))
   end
   return timeStr
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsContent.FlushEndDuration = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local endTime = ((self._eightComponent):GetComponentInfo()).m_close_time
+function UIN33EightPetsContent:FlushEndDuration()
+  local endTime = self._eightComponent:GetComponentInfo().m_close_time
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local deltaTime = (math.max)(endTime - curTime, 0)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local deltaTime = math.max(endTime - curTime, 0)
   local timerStr = self:GetFormatTimerStr(deltaTime)
-  ;
-  (self._rmValue):SetText(timerStr)
+  self._rmValue:SetText(timerStr)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsContent.InActivityTime = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local endTime = ((self._eightComponent):GetComponentInfo()).m_close_time
+function UIN33EightPetsContent:InActivityTime()
+  local endTime = self._eightComponent:GetComponentInfo().m_close_time
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  do return curTime <= endTime end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  return endTime >= curTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsContent.NormalizeNode = function(self, rt, anchoredPosition)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN33EightPetsContent:NormalizeNode(rt, anchoredPosition)
   rt.pivot = Vector2.one * 0.5
   rt.localScale = Vector3.one
   rt.anchorMin = Vector2(0.5, 1)
@@ -168,74 +123,66 @@ UIN33EightPetsContent.NormalizeNode = function(self, rt, anchoredPosition)
   rt.anchoredPosition = anchoredPosition
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsContent.CreateMission = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local componentID = (self._eightComponent):GetComponentCfgId()
-  local allMission = (Cfg.cfg_component_eight_pets_mission)({ComponentID = componentID})
+function UIN33EightPetsContent:CreateMission()
+  local componentID = self._eightComponent:GetComponentCfgId()
+  local allMission = Cfg.cfg_component_eight_pets_mission({ComponentID = componentID})
   self._missions = {}
-  for k,v in pairs(allMission) do
-    local level = {structName = "UIN33EightPetsContent::Level", cfgEight = v, cfgMission = (Cfg.cfg_eight_pets_mission)[v.CampaignMissionId], isVisible = false, isLocked = false, nodeWidget = nil, lineWidget = nil}
-    ;
-    (table.insert)(self._missions, level)
+  for k, v in pairs(allMission) do
+    local level = {
+      structName = "UIN33EightPetsContent::Level",
+      cfgEight = v,
+      cfgMission = Cfg.cfg_eight_pets_mission[v.CampaignMissionId],
+      isVisible = false,
+      isLocked = false,
+      nodeWidget = nil,
+      lineWidget = nil
+    }
+    table.insert(self._missions, level)
   end
-  ;
-  (table.sort)(self._missions, function(a, b)
-    -- function num : 0_10_0
-    do return (a.cfgEight).ID < (b.cfgEight).ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._missions, function(a, b)
+    return a.cfgEight.ID < b.cfgEight.ID
+  end)
   local count = #self._missions
-  self._widgetNode = (self._missionContent):SpawnObjects("UIN33EightPetsNode", count)
-  self._widgetLine = (self._lineContent):SpawnObjects("UIN33EightPetsLine", count)
-  for k,v in pairs(self._missions) do
-    local uiWidget = (self._widgetNode)[k]
+  self._widgetNode = self._missionContent:SpawnObjects("UIN33EightPetsNode", count)
+  self._widgetLine = self._lineContent:SpawnObjects("UIN33EightPetsLine", count)
+  for k, v in pairs(self._missions) do
+    local uiWidget = self._widgetNode[k]
     v.nodeWidget = uiWidget
     local view = uiWidget:View()
-    local anchoredPosition = Vector2((v.cfgEight).NodePosX, (v.cfgEight).NodePosY)
+    local anchoredPosition = Vector2(v.cfgEight.NodePosX, v.cfgEight.NodePosY)
     self:NormalizeNode(view.transform, anchoredPosition)
-    local uiWidget = (self._widgetLine)[k]
+    local uiWidget = self._widgetLine[k]
     v.lineWidget = uiWidget
     local view = uiWidget:View()
-    local anchoredPosition = Vector2((v.cfgEight).LinePosX, (v.cfgEight).LinePosY)
+    local anchoredPosition = Vector2(v.cfgEight.LinePosX, v.cfgEight.LinePosY)
     self:NormalizeNode(view.transform, anchoredPosition)
   end
-  ;
-  ((self._widgetLine)[count]):SetTail(true)
+  self._widgetLine[count]:SetTail(true)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsContent.IsTimeLocked = function(self, node)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN33EightPetsContent:IsTimeLocked(node)
   if node == nil then
     return false
   end
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local isTimeLocked = false
-  if (node.cfgMission).OpenTime == nil then
+  if node.cfgMission.OpenTime == nil then
     isTimeLocked = false
   else
-    local unlockTime = loginModule:GetTimeStampByTimeStr((node.cfgMission).OpenTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+    local unlockTime = loginModule:GetTimeStampByTimeStr(node.cfgMission.OpenTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
     isTimeLocked = curTime < unlockTime
   end
-  do return isTimeLocked end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return isTimeLocked
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsContent.FlushMission = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local mapPass = ((self._eightComponent):GetComponentInfo()).m_pass_mission_info
+function UIN33EightPetsContent:FlushMission()
+  local mapPass = self._eightComponent:GetComponentInfo().m_pass_mission_info
   local isVisible = true
   local isLocked = false
   local isTimeLocked = false
-  for k,v in pairs(self._missions) do
+  for k, v in pairs(self._missions) do
     isTimeLocked = self:IsTimeLocked(v)
     v.isVisible = isVisible
     v.isLocked = isLocked
@@ -244,22 +191,14 @@ UIN33EightPetsContent.FlushMission = function(self)
     widget:SetData(self, v, isVisible, isLocked, isTimeLocked)
     local widget = v.lineWidget
     widget:SetData(self, v, isVisible, isLocked or isTimeLocked)
-    if not isLocked then
-      isVisible = not isTimeLocked
-    else
-      isVisible = false
-    end
-    isLocked = mapPass[(v.cfgMission).MissionID] == nil
+    isVisible = not isLocked and not isTimeLocked
+    isLocked = mapPass[v.cfgMission.MissionID] == nil
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsContent.FlushMissionLocked = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIN33EightPetsContent:FlushMissionLocked()
   local unlockAnimation = false
-  for k,v in pairs(self._missions) do
+  for k, v in pairs(self._missions) do
     local widget = v.nodeWidget
     widget:FlushLocked()
     if widget:IsTimeLocked() and not self:IsTimeLocked(v) then
@@ -274,176 +213,127 @@ UIN33EightPetsContent.FlushMissionLocked = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsContent.FlushPreferred = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN33EightPetsContent:FlushPreferred()
   local theMaxY = 0
-  for k,v in pairs(self._missions) do
+  for k, v in pairs(self._missions) do
     if v.isVisible then
-      local transform = ((v.nodeWidget):GetGameObject()).transform
-      theMaxY = (math.max)(theMaxY, -(transform.anchoredPosition).y)
+      local transform = v.nodeWidget:GetGameObject().transform
+      theMaxY = math.max(theMaxY, -transform.anchoredPosition.y)
     end
   end
   theMaxY = theMaxY + 200
-  local content = ((self._missionContent):Engine()).transform
+  local content = self._missionContent:Engine().transform
   local sizeDelta = content.sizeDelta
   sizeDelta.y = theMaxY
   content.sizeDelta = sizeDelta
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._missionScrollView).verticalNormalizedPosition = 0
+  self._missionScrollView.verticalNormalizedPosition = 0
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsContent.FlushDescription = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local mission = nil
-  for k,v in pairs(self._missions) do
-    if not (v.nodeWidget):IsLocked() then
-      local isLocked = (v.nodeWidget):IsTimeLocked()
-    end
+function UIN33EightPetsContent:FlushDescription()
+  local mission
+  for k, v in pairs(self._missions) do
+    local isLocked = v.nodeWidget:IsLocked() or v.nodeWidget:IsTimeLocked()
     if not isLocked then
       mission = v
     end
   end
   local desc = ""
   if mission ~= nil then
-    desc = (StringTable.Get)((mission.cfgMission).Desc)
+    desc = StringTable.Get(mission.cfgMission.Desc)
   end
-  ;
-  (self._descContent):SetText(desc)
+  self._descContent:SetText(desc)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsContent.GetUnlockNode = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  if not (self._eightComponent):IsPrevPassInfoValid() then
-    return 
+function UIN33EightPetsContent:GetUnlockNode()
+  if not self._eightComponent:IsPrevPassInfoValid() then
+    return
   end
-  local unlockMission = nil
-  local prevPassInfo = (self._eightComponent):GetPrevPassInfo()
-  local mapPass = ((self._eightComponent):GetComponentInfo()).m_pass_mission_info
-  for k,v in pairs(mapPass) do
+  local unlockMission
+  local prevPassInfo = self._eightComponent:GetPrevPassInfo()
+  local mapPass = self._eightComponent:GetComponentInfo().m_pass_mission_info
+  for k, v in pairs(mapPass) do
     if prevPassInfo[k] == nil then
       unlockMission = k
       break
     end
   end
-  do
-    local unlockNode, unlockNextNode = nil, nil
-    for k,v in pairs(self._missions) do
-      if (v.cfgEight).CampaignMissionId == unlockMission then
-        unlockNode = (self._missions)[k + 1]
-        unlockNextNode = (self._missions)[k + 2]
-        if self:IsTimeLocked(unlockNode) then
-          unlockNode, unlockNextNode = nil
-        end
-        break
+  local unlockNode, unlockNextNode
+  for k, v in pairs(self._missions) do
+    if v.cfgEight.CampaignMissionId == unlockMission then
+      unlockNode = self._missions[k + 1]
+      unlockNextNode = self._missions[k + 2]
+      if self:IsTimeLocked(unlockNode) then
+        unlockNode = nil
+        unlockNextNode = nil
       end
-    end
-    do
-      return unlockNode, unlockNextNode
+      break
     end
   end
+  return unlockNode, unlockNextNode
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsContent.InAnimation = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIN33EightPetsContent:InAnimation()
   local lockName = "UIN33EightPetsContent:InAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_17_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    ;
-    (self._animation):Play("effanim_UIN33EightPetsContent_in")
+    self._animation:Play("effanim_UIN33EightPetsContent_in")
     YIELD(TT, 333)
     self:UnLock(lockName)
     self._inAnimationCompleted = true
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsContent.UnlockAnimation = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local unlockNode, unlockNextNode = nil, nil
-  unlockNode = self:GetUnlockNode()
+function UIN33EightPetsContent:UnlockAnimation()
+  local unlockNode, unlockNextNode
+  unlockNode, unlockNextNode = self:GetUnlockNode()
   if unlockNode == nil then
-    return 
+    return
   end
-  ;
-  (self._eightComponent):SavePrevPassInfo()
+  self._eightComponent:SavePrevPassInfo()
   local lockName = "UIN33EightPetsContent:UnlockAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_18_0 , upvalues : self, lockName, unlockNode, unlockNextNode, _ENV
     self:Lock(lockName)
     local hideLocked = false
-    ;
-    (unlockNode.nodeWidget):SetData(self, unlockNode, unlockNode.isVisible, true, false)
+    unlockNode.nodeWidget:SetData(self, unlockNode, unlockNode.isVisible, true, false)
     if hideLocked and unlockNextNode ~= nil then
-      (unlockNode.lineWidget):SetData(self, unlockNode, false, true, false)
-      ;
-      (unlockNextNode.nodeWidget):SetData(self, unlockNextNode, false, true, false)
+      unlockNode.lineWidget:SetData(self, unlockNode, false, true, false)
+      unlockNextNode.nodeWidget:SetData(self, unlockNextNode, false, true, false)
     end
     while not self._inAnimationCompleted do
       YIELD(TT)
     end
-    local openName = (unlockNode.nodeWidget):GetAnimationOpenName(unlockNode)
-    ;
-    (unlockNode.nodeWidget):Flush(true)
-    ;
-    (unlockNode.nodeWidget):PlayAnimation(openName)
+    local openName = unlockNode.nodeWidget:GetAnimationOpenName(unlockNode)
+    unlockNode.nodeWidget:Flush(true)
+    unlockNode.nodeWidget:PlayAnimation(openName)
     YIELD(TT, 333)
-    ;
-    (unlockNode.nodeWidget):SetData(self, unlockNode, unlockNode.isVisible, unlockNode.isLocked, unlockNode.isTimeLocked)
+    unlockNode.nodeWidget:SetData(self, unlockNode, unlockNode.isVisible, unlockNode.isLocked, unlockNode.isTimeLocked)
     if hideLocked and unlockNextNode ~= nil then
-      (unlockNode.lineWidget):SetData(self, unlockNode, unlockNode.isVisible, unlockNode.isLocked, unlockNode.isTimeLocked)
-      ;
-      (unlockNextNode.nodeWidget):SetData(self, unlockNextNode, unlockNextNode.isVisible, unlockNextNode.isLocked, unlockNextNode.isTimeLocked)
-      local inName = (unlockNextNode.nodeWidget):GetAnimationInName(unlockNode)
-      ;
-      (unlockNextNode.nodeWidget):PlayAnimation(inName)
+      unlockNode.lineWidget:SetData(self, unlockNode, unlockNode.isVisible, unlockNode.isLocked, unlockNode.isTimeLocked)
+      unlockNextNode.nodeWidget:SetData(self, unlockNextNode, unlockNextNode.isVisible, unlockNextNode.isLocked, unlockNextNode.isTimeLocked)
+      local inName = unlockNextNode.nodeWidget:GetAnimationInName(unlockNode)
+      unlockNextNode.nodeWidget:PlayAnimation(inName)
     end
-    do
-      self:UnLock(lockName)
-    end
-  end
-)
+    self:UnLock(lockName)
+  end)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsContent.OnNodeClick = function(self, go, nodeData)
-  -- function num : 0_19 , upvalues : _ENV
+function UIN33EightPetsContent:OnNodeClick(go, nodeData)
   if not self:InActivityTime() then
-    (self._campaign):CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED, nil, nil)
+    self._campaign:CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED, nil, nil)
+  elseif nodeData.nodeWidget:IsTimeLocked() then
+    ToastManager.ShowToast(StringTable.Get("str_n33_ep_m_locktime_prompt"))
+  elseif nodeData.nodeWidget:IsLocked() then
+    ToastManager.ShowToast(StringTable.Get("str_n33_ep_m_lock_prompt"))
   else
-    if (nodeData.nodeWidget):IsTimeLocked() then
-      (ToastManager.ShowToast)((StringTable.Get)("str_n33_ep_m_locktime_prompt"))
-    else
-      if (nodeData.nodeWidget):IsLocked() then
-        (ToastManager.ShowToast)((StringTable.Get)("str_n33_ep_m_lock_prompt"))
-      else
-        ;
-        (self._eightComponent):SavePrevPassInfo()
-        self:ShowDialog("UIN33EightPetsStage", nodeData)
-      end
-    end
+    self._eightComponent:SavePrevPassInfo()
+    self:ShowDialog("UIN33EightPetsStage", nodeData)
   end
 end
 
 _class("UIN33EightPetsNode", UICustomWidget)
 UIN33EightPetsNode = UIN33EightPetsNode
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN33EightPetsNode.OnShow = function(self)
-  -- function num : 0_20
+function UIN33EightPetsNode:OnShow()
   self._uiNormal = self:GetUIComponent("Image", "uiNormal")
   self._uiBoss = self:GetUIComponent("Image", "uiBoss")
   self._uiLocked = self:GetUIComponent("Image", "uiLocked")
@@ -454,37 +344,22 @@ UIN33EightPetsNode.OnShow = function(self)
   self._timeLockGo = self:GetGameObject("timeLock")
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsNode.OnHide = function(self)
-  -- function num : 0_21
+function UIN33EightPetsNode:OnHide()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsNode.IsVisible = function(self)
-  -- function num : 0_22
+function UIN33EightPetsNode:IsVisible()
   return self._isVisible
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsNode.IsLocked = function(self)
-  -- function num : 0_23
+function UIN33EightPetsNode:IsLocked()
   return self._isLocked
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsNode.IsTimeLocked = function(self)
-  -- function num : 0_24
+function UIN33EightPetsNode:IsTimeLocked()
   return self._isTimeLocked
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsNode.SetData = function(self, eightPets, data, isVisible, isLocked, isTimeLocked)
-  -- function num : 0_25
+function UIN33EightPetsNode:SetData(eightPets, data, isVisible, isLocked, isTimeLocked)
   self._eightPets = eightPets
   self._data = data
   self._isVisible = isVisible
@@ -493,73 +368,50 @@ UIN33EightPetsNode.SetData = function(self, eightPets, data, isVisible, isLocked
   self:Flush(false)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsNode.Flush = function(self, lockedCover)
-  -- function num : 0_26 , upvalues : _ENV
-  (self:GetGameObject()):SetActive(self._isVisible)
-  ;
-  (self._nameNormal):SetText((StringTable.Get)(((self._data).cfgMission).Name))
-  ;
-  (self._nameBoss):SetText((StringTable.Get)(((self._data).cfgMission).Name))
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._uiNormal).color = Color.white
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._uiBoss).color = Color.white
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._uiLocked).color = Color.white
-  if not self._isLocked then
-    local isLocked = self._isTimeLocked
-  end
-  if ((self._data).cfgMission).Type == 2 then
-    ((self._uiNormal).gameObject):SetActive(not lockedCover)
-    ;
-    ((self._uiBoss).gameObject):SetActive(((self._data).cfgMission).Type == 2)
-    ;
-    ((self._uiLocked).gameObject):SetActive(isLocked)
-    ;
-    ((self._uiNormal).gameObject):SetActive((((self._data).cfgMission).Type ~= 2 and not isLocked))
-    ;
-    ((self._uiBoss).gameObject):SetActive((((self._data).cfgMission).Type == 2 and not isLocked))
-    ;
-    ((self._uiLocked).gameObject):SetActive(isLocked)
-    self:FlushLocked()
-    -- DECOMPILER ERROR: 8 unprocessed JMP targets
-  end
-end
-
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsNode.FlushLocked = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  if self._isTimeLocked then
-    (self._timeLockGo):SetActive(true)
-    local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-    local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-    local loginModule = (GameGlobal.GetModule)(LoginModule)
-    local unlockTime = loginModule:GetTimeStampByTimeStr(((self._data).cfgMission).OpenTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-    local cdText = (StringTable.Get)("str_n33_ep_m_locktime_cd", self:GetFormatTimerStr(unlockTime - curTime))
-    ;
-    (self._lockText):SetText(cdText)
+function UIN33EightPetsNode:Flush(lockedCover)
+  self:GetGameObject():SetActive(self._isVisible)
+  self._nameNormal:SetText(StringTable.Get(self._data.cfgMission.Name))
+  self._nameBoss:SetText(StringTable.Get(self._data.cfgMission.Name))
+  self._uiNormal.color = Color.white
+  self._uiBoss.color = Color.white
+  self._uiLocked.color = Color.white
+  local isLocked = self._isLocked or self._isTimeLocked
+  if lockedCover then
+    self._uiNormal.gameObject:SetActive(self._data.cfgMission.Type ~= 2)
+    self._uiBoss.gameObject:SetActive(self._data.cfgMission.Type == 2)
+    self._uiLocked.gameObject:SetActive(isLocked)
   else
-    do
-      ;
-      (self._timeLockGo):SetActive(false)
-    end
+    self._uiNormal.gameObject:SetActive(self._data.cfgMission.Type ~= 2 and not isLocked)
+    self._uiBoss.gameObject:SetActive(self._data.cfgMission.Type == 2 and not isLocked)
+    self._uiLocked.gameObject:SetActive(isLocked)
+  end
+  self:FlushLocked()
+end
+
+function UIN33EightPetsNode:FlushLocked()
+  if self._isTimeLocked then
+    self._timeLockGo:SetActive(true)
+    local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+    local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+    local loginModule = GameGlobal.GetModule(LoginModule)
+    local unlockTime = loginModule:GetTimeStampByTimeStr(self._data.cfgMission.OpenTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+    local cdText = StringTable.Get("str_n33_ep_m_locktime_cd", self:GetFormatTimerStr(unlockTime - curTime))
+    self._lockText:SetText(cdText)
+  else
+    self._timeLockGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsNode.GetFormatTimerStr = function(self, deltaTime, txtColor)
-  -- function num : 0_28 , upvalues : _ENV
-  local id = {day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_error_107", format = "%s%s", clrFormat = "<color=#%s>%s</color>"}
+function UIN33EightPetsNode:GetFormatTimerStr(deltaTime, txtColor)
+  local id = {
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_error_107",
+    format = "%s%s",
+    clrFormat = "<color=#%s>%s</color>"
+  }
   local clrFormat = id.clrFormat
   if txtColor == nil then
     clrFormat = id.format
@@ -569,74 +421,51 @@ UIN33EightPetsNode.GetFormatTimerStr = function(self, deltaTime, txtColor)
   local hour = 0
   local min = 0
   local second = 0
-  if deltaTime >= 0 then
-    day = (UIActivityHelper.Time2Str)(deltaTime)
+  if 0 <= deltaTime then
+    day, hour, min, second = UIActivityHelper.Time2Str(deltaTime)
   end
-  local timeStr = nil
-  if day > 0 and hour > 0 then
-    timeStr = (string.format)(clrFormat, txtColor, day) .. (StringTable.Get)(id.day)
-    timeStr = timeStr .. (string.format)(clrFormat, txtColor, hour) .. (StringTable.Get)(id.hour)
+  local timeStr
+  if 0 < day and 0 < hour then
+    timeStr = string.format(clrFormat, txtColor, day) .. StringTable.Get(id.day)
+    timeStr = timeStr .. string.format(clrFormat, txtColor, hour) .. StringTable.Get(id.hour)
+  elseif 0 < day then
+    timeStr = string.format(clrFormat, txtColor, day) .. StringTable.Get(id.day)
+  elseif 0 < hour and 0 < min then
+    timeStr = string.format(clrFormat, txtColor, hour) .. StringTable.Get(id.hour)
+    timeStr = timeStr .. string.format(clrFormat, txtColor, min) .. StringTable.Get(id.min)
+  elseif 0 < hour then
+    timeStr = string.format(clrFormat, txtColor, hour) .. StringTable.Get(id.hour)
+  elseif 0 < min then
+    timeStr = string.format(clrFormat, txtColor, min) .. StringTable.Get(id.min)
   else
-    if day > 0 then
-      timeStr = (string.format)(clrFormat, txtColor, day) .. (StringTable.Get)(id.day)
-    else
-      if hour > 0 and min > 0 then
-        timeStr = (string.format)(clrFormat, txtColor, hour) .. (StringTable.Get)(id.hour)
-        timeStr = timeStr .. (string.format)(clrFormat, txtColor, min) .. (StringTable.Get)(id.min)
-      else
-        if hour > 0 then
-          timeStr = (string.format)(clrFormat, txtColor, hour) .. (StringTable.Get)(id.hour)
-        else
-          if min > 0 then
-            timeStr = (string.format)(clrFormat, txtColor, min) .. (StringTable.Get)(id.min)
-          else
-            timeStr = (string.format)(clrFormat, txtColor, (StringTable.Get)(id.zero))
-          end
-        end
-      end
-    end
+    timeStr = string.format(clrFormat, txtColor, StringTable.Get(id.zero))
   end
   return timeStr
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsNode.BtnOnClick = function(self, go)
-  -- function num : 0_29
-  (self._eightPets):OnNodeClick(go, self._data)
+function UIN33EightPetsNode:BtnOnClick(go)
+  self._eightPets:OnNodeClick(go, self._data)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsNode.GetAnimationInName = function(self, unlockNode)
-  -- function num : 0_30
-  local inName = nil
+function UIN33EightPetsNode:GetAnimationInName(unlockNode)
+  local inName
   if unlockNode == self._data then
     inName = "effanim_UIN33EightPetsNode_Lock_in"
+  elseif self._data.isLocked then
+    inName = "effanim_UIN33EightPetsNode_Lock_in"
+  elseif self._data.isTimeLocked then
+    inName = "effanim_UIN33EightPetsNode_Lock_in"
+  elseif self._data.cfgMission.Type == 2 then
+    inName = "effanim_UIN33EightPetsNode_Boss_in"
   else
-    if (self._data).isLocked then
-      inName = "effanim_UIN33EightPetsNode_Lock_in"
-    else
-      if (self._data).isTimeLocked then
-        inName = "effanim_UIN33EightPetsNode_Lock_in"
-      else
-        if ((self._data).cfgMission).Type == 2 then
-          inName = "effanim_UIN33EightPetsNode_Boss_in"
-        else
-          inName = "effanim_UIN33EightPetsNode_Normal_in"
-        end
-      end
-    end
+    inName = "effanim_UIN33EightPetsNode_Normal_in"
   end
   return inName
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsNode.GetAnimationOpenName = function(self, unlockNode)
-  -- function num : 0_31
-  local openName = nil
-  if ((self._data).cfgMission).Type == 2 then
+function UIN33EightPetsNode:GetAnimationOpenName(unlockNode)
+  local openName
+  if self._data.cfgMission.Type == 2 then
     openName = "effanim_UIN33EightPetsNode_openBoss"
   else
     openName = "effanim_UIN33EightPetsNode_openNormal"
@@ -644,47 +473,30 @@ UIN33EightPetsNode.GetAnimationOpenName = function(self, unlockNode)
   return openName
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsNode.PlayAnimation = function(self, animName)
-  -- function num : 0_32
-  (self._animation):Play(animName)
+function UIN33EightPetsNode:PlayAnimation(animName)
+  self._animation:Play(animName)
 end
 
 _class("UIN33EightPetsLine", UICustomWidget)
 UIN33EightPetsLine = UIN33EightPetsLine
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN33EightPetsLine.Constructor = function(self)
-  -- function num : 0_33
+function UIN33EightPetsLine:Constructor()
   self._isTail = false
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsLine.OnShow = function(self)
-  -- function num : 0_34
+function UIN33EightPetsLine:OnShow()
   self._imgRootLoader = self:GetUIComponent("RawImageLoader", "imgRoot")
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsLine.OnHide = function(self)
-  -- function num : 0_35
+function UIN33EightPetsLine:OnHide()
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsLine.SetTail = function(self)
-  -- function num : 0_36
+function UIN33EightPetsLine:SetTail()
   self._isTail = true
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsLine.SetData = function(self, eightPets, data, isVisible, isLocked)
-  -- function num : 0_37
+function UIN33EightPetsLine:SetData(eightPets, data, isVisible, isLocked)
   self._eightPets = eightPets
   self._data = data
   self._isVisible = isVisible
@@ -692,22 +504,12 @@ UIN33EightPetsLine.SetData = function(self, eightPets, data, isVisible, isLocked
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsLine.Flush = function(self)
-  -- function num : 0_38
+function UIN33EightPetsLine:Flush()
   local isVisible = self._isVisible
+  isVisible = isVisible and not self._isLocked
+  isVisible = isVisible and not self._isTail
+  self:GetGameObject():SetActive(isVisible)
   if isVisible then
-    isVisible = not self._isLocked
-  end
-  if isVisible then
-    isVisible = not self._isTail
-  end
-  ;
-  (self:GetGameObject()):SetActive(isVisible)
-  if isVisible then
-    (self._imgRootLoader):LoadImage(((self._data).cfgEight).LineImage)
+    self._imgRootLoader:LoadImage(self._data.cfgEight.LineImage)
   end
 end
-
-

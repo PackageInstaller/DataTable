@@ -1,25 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_caster_cancle_preview_anim_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayCasterCancelPreviewAnimInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayCasterCancelPreviewAnimInstruction = SkillPreviewPlayCasterCancelPreviewAnimInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayCasterCancelPreviewAnimInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewPlayCasterCancelPreviewAnimInstruction:Constructor(params)
   self._anim = params.Anim or "AtkUltPreviewCancel"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayCasterCancelPreviewAnimInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1
+function SkillPreviewPlayCasterCancelPreviewAnimInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = previewContext:GetWorld()
   local previewActiveSkillSvc = world:GetService("PreviewActiveSkill")
   previewActiveSkillSvc:PlayCasterPreviewAnim(casterEntity, false, self._anim)
 end
-
-

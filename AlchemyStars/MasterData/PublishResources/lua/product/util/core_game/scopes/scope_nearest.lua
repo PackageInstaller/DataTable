@@ -1,24 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_nearest.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_Nearest", SkillScopeCalculator_Base)
 SkillScopeCalculator_Nearest = SkillScopeCalculator_Nearest
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_Nearest.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_Nearest:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local target_pos = centerPos
   local limit = scopeParam
-  local monsterList, monsterPosList = (self._gridFilter):SelectNearestMonsterOnPos(target_pos, limit)
+  local monsterList, monsterPosList = self._gridFilter:SelectNearestMonsterOnPos(target_pos, limit)
   local ids = {}
-  for _,m in pairs(monsterList) do
+  for _, m in pairs(monsterList) do
     ids[#ids + 1] = m:GetID()
   end
   local result = SkillScopeResult:New(SkillScopeType.Nearest, target_pos, monsterPosList, monsterPosList, ids)
   return result
 end
-
-

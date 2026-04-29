@@ -1,35 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/collage/ui_season_maze_collage_content_relic.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeCollageContentRelic", UISeasonMazeCollageContentBase)
 UISeasonMazeCollageContentRelic = UISeasonMazeCollageContentRelic
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeCollageContentRelic.OnShow = function(self)
-  -- function num : 0_0
+function UISeasonMazeCollageContentRelic:OnShow()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentRelic.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMazeCollageContentRelic:InitWidget()
   self:InitCommonWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentRelic.GetCollageType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeCollageContentRelic:GetCollageType()
   return SeasonMazeCollageType.Relic
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentRelic.SpawnListItem = function(self, scrollView, rowIndex)
-  -- function num : 0_3
+function UISeasonMazeCollageContentRelic:SpawnListItem(scrollView, rowIndex)
   if rowIndex < 0 then
     return nil
   end
@@ -43,20 +27,15 @@ UISeasonMazeCollageContentRelic.SpawnListItem = function(self, scrollView, rowIn
   for i = 1, self._itemCountPerRow do
     local subItem = rowList[i]
     local itemIndex = rowIndex * self._itemCountPerRow + i
-    if #self._dataList < itemIndex then
-      (subItem:GetGameObject()):SetActive(false)
+    if itemIndex > #self._dataList then
+      subItem:GetGameObject():SetActive(false)
     else
-      ;
-      (subItem:GetGameObject()):SetActive(true)
-      local d = (self._dataList)[itemIndex]
+      subItem:GetGameObject():SetActive(true)
+      local d = self._dataList[itemIndex]
       subItem:SetData(d, rowIndex, function(itemID, pos)
-    -- function num : 0_3_0 , upvalues : self
-    self:OnItemClick(itemID, pos)
-  end
-)
+        self:OnItemClick(itemID, pos)
+      end)
     end
   end
   return item
 end
-
-

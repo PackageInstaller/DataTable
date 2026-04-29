@@ -1,66 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_front_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_move_base")
 _class("ActionMoveFrontAttack", ActionMoveBase)
 ActionMoveFrontAttack = ActionMoveFrontAttack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMoveFrontAttack.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionMoveFrontAttack:Constructor()
   self.m_nextPosList = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByNear)
-  ;
-  (self.m_nextPosList):AllowDuplicate()
+  self.m_nextPosList:AllowDuplicate()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveFrontAttack.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionMoveFrontAttack.super).Reset)(self)
-  ;
-  (self.m_nextPosList):Clear()
+function ActionMoveFrontAttack:Reset()
+  ActionMoveFrontAttack.super.Reset(self)
+  self.m_nextPosList:Clear()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveFrontAttack.InitTargetPosList = function(self, listPosTarget)
-  -- function num : 0_2 , upvalues : _ENV
-  local posSelf = (self.m_entityOwn):GetGridPosition()
+function ActionMoveFrontAttack:InitTargetPosList(listPosTarget)
+  local posSelf = self.m_entityOwn:GetGridPosition()
   local nSkillID = self:GetLogicData(1)
   local cSkillID = self:GetLogicData(-1)
   if cSkillID then
     nSkillID = cSkillID
   end
-  local selfBodyArea = ((self.m_entityOwn):BodyArea()):GetArea()
+  local selfBodyArea = self.m_entityOwn:BodyArea():GetArea()
   if nSkillID <= 0 then
-    return 
+    return
   end
   local range = {}
-  ;
-  (self.m_nextPosList):Clear()
-  for _,targetPos in ipairs(listPosTarget) do
+  self.m_nextPosList:Clear()
+  for _, targetPos in ipairs(listPosTarget) do
     local walkRange = self:_ComputeSkillRange(nSkillID, targetPos, selfBodyArea)
     for i = 1, #walkRange do
       local posWork = walkRange[i]
       if self:IsPosAccessible(posWork) then
-        range[#range + 1] = (Vector2.Pos2Index)(posWork)
-        ;
-        (AINewNode.InsertSortedArray)(self.m_nextPosList, posSelf, posWork, i)
+        range[#range + 1] = Vector2.Pos2Index(posWork)
+        AINewNode.InsertSortedArray(self.m_nextPosList, posSelf, posWork, i)
       end
     end
   end
-  self:PrintDebugLog("MoveRange=", (table.concat)(range, " "))
+  self:PrintDebugLog("MoveRange=", table.concat(range, " "))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveFrontAttack.FindNewTargetPos = function(self)
-  -- function num : 0_3
-  local posDefault = ((self.m_entityOwn):AI()):GetTargetPos()
+function ActionMoveFrontAttack:FindNewTargetPos()
+  local posDefault = self.m_entityOwn:AI():GetTargetPos()
   return self:FindPosValid(self.m_nextPosList, posDefault)
 end
-
-

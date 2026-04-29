@@ -1,18 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/ui_medal_list/ui_medal_list_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalListController", UIController)
 UIMedalListController = UIMedalListController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalListController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.medalModule = (GameGlobal.GetModule)(MedalModule)
-  self.data = (UIMedalListData.New)()
-  ;
-  (self.data):Init((self.medalModule).client_medal_info)
+function UIMedalListController:Constructor()
+  self.medalModule = GameGlobal.GetModule(MedalModule)
+  self.data = UIMedalListData.New()
+  self.data:Init(self.medalModule.client_medal_info)
   self.curFilterItem = nil
   self.curSelectMedalItem = nil
   self.curSelectMedalData = nil
@@ -22,28 +14,17 @@ UIMedalListController.Constructor = function(self)
   self._dynamicListSize = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIMedalListController:OnShow(uiParams)
   self:InitWidget()
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self
     self:InitFilters(TT)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListController.OnHide = function(self)
-  -- function num : 0_2
+function UIMedalListController:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListController.InitWidget = function(self)
-  -- function num : 0_3
+function UIMedalListController:InitWidget()
   self.txtProgress = self:GetUIComponent("UILocalizationText", "txtProgress")
   self.tabsList = self:GetUIComponent("UISelectObjectPath", "tabsList")
   self.emptyList = self:GetGameObject("emptyList")
@@ -53,112 +34,83 @@ UIMedalListController.InitWidget = function(self)
   self._ani = self:GetUIComponent("Animation", "_ani")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListController.InitFilters = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  local filters = (self.data):GetFilterIds()
+function UIMedalListController:InitFilters(TT)
+  local filters = self.data:GetFilterIds()
   self.filters = filters
   local len = #filters
-  ;
-  (self.tabsList):SpawnObjects("UIMedalListTab", len)
-  local tabs = (self.tabsList):GetAllSpawnList()
+  self.tabsList:SpawnObjects("UIMedalListTab", len)
+  local tabs = self.tabsList:GetAllSpawnList()
   self.tabItems = tabs
   for i = 1, #tabs do
     local item = tabs[i]
-    local filterInfo = (self.data):GetFilterInfoById(filters[i])
+    local filterInfo = self.data:GetFilterInfoById(filters[i])
     if i == 1 then
       self.curFilterItem = item
     end
     item:SetData(filterInfo, i == 1, function(item)
-    -- function num : 0_4_0 , upvalues : self
-    self:OnFilterClicked(item)
-  end
-)
-    ;
-    (item:GetGameObject()):SetActive(i == 1)
+      self:OnFilterClicked(item)
+    end)
+    item:GetGameObject():SetActive(i == 1)
   end
   self:RefreshFiltersNew()
   self:RefreshItemList()
   for i = 2, #tabs do
     YIELD(TT, 50)
     local item = tabs[i]
-    ;
-    (item:GetGameObject()):SetActive(true)
+    item:GetGameObject():SetActive(true)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListController.RefreshFiltersNew = function(self)
-  -- function num : 0_5
+function UIMedalListController:RefreshFiltersNew()
   local tabs = self.tabItems
   for i = 1, #tabs do
     local item = tabs[i]
-    local bNew = (self.data):IsFilterNew((self.filters)[i])
+    local bNew = self.data:IsFilterNew(self.filters[i])
     item:SetNew(bNew)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListController.OnFilterClicked = function(self, item)
-  -- function num : 0_6
+function UIMedalListController:OnFilterClicked(item)
   if self.curFilterItem == item then
-    return 
+    return
   end
-  ;
-  (self._ani):Play("uieff_UIMedalListController_in2")
+  self._ani:Play("uieff_UIMedalListController_in2")
   if self.curFilterItem then
-    (self.curFilterItem):SetSelect(false, true)
+    self.curFilterItem:SetSelect(false, true)
   end
   self.curFilterItem = item
-  ;
-  (self.curFilterItem):SetSelect(true, true)
+  self.curFilterItem:SetSelect(true, true)
   self:RefreshItemList()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListController.RefreshItemList = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIMedalListController:RefreshItemList()
   if not self.curFilterItem then
-    return 
+    return
   end
   self.curSelectMedalItem = nil
   self.curSelectMedalData = nil
-  local filter = (self.curFilterItem):GetFilterID()
-  self.curMedalList = (self.data):GetItemsByFilter(filter)
+  local filter = self.curFilterItem:GetFilterID()
+  self.curMedalList = self.data:GetItemsByFilter(filter)
   local len = #self.curMedalList
-  ;
-  (self.emptyList):SetActive(len == 0)
-  if len > 0 then
-    self.curSelectMedalData = (self.curMedalList)[1]
+  self.emptyList:SetActive(len == 0)
+  if 0 < len then
+    self.curSelectMedalData = self.curMedalList[1]
     self._itemCountPerRow = 4
-    self._dynamicListSize = (math.floor)((len - 1) / self._itemCountPerRow + 1)
+    self._dynamicListSize = math.floor((len - 1) / self._itemCountPerRow + 1)
     if not self.isDynamicSvInited then
       self.isDynamicSvInited = true
-      ;
-      (self.dynamicSv):InitListView(self._dynamicListSize, function(scrollView, index)
-    -- function num : 0_7_0 , upvalues : self
-    return self:_SpawnListItem(scrollView, index)
-  end
-)
+      self.dynamicSv:InitListView(self._dynamicListSize, function(scrollView, index)
+        return self:_SpawnListItem(scrollView, index)
+      end)
     else
       self:_RefreshItemScroll(self._dynamicListSize, self.dynamicSv)
     end
   end
   self:RefreshMedalDetail()
-  ;
-  (self.txtProgress):SetText("<color=#f3d39b>" .. (self.data).receiveMedalCount .. "</color>/" .. (self.data).allMedalCount)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self.txtProgress:SetText("<color=#f3d39b>" .. self.data.receiveMedalCount .. "</color>/" .. self.data.allMedalCount)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListController._SpawnListItem = function(self, scrollView, rowIndex)
-  -- function num : 0_8
+function UIMedalListController:_SpawnListItem(scrollView, rowIndex)
   if rowIndex < 0 then
     return nil
   end
@@ -172,145 +124,101 @@ UIMedalListController._SpawnListItem = function(self, scrollView, rowIndex)
   for i = 1, self._itemCountPerRow do
     local subItem = rowList[i]
     local itemIndex = rowIndex * self._itemCountPerRow + i
-    if #self.curMedalList < itemIndex then
-      (subItem:GetGameObject()):SetActive(false)
+    if itemIndex > #self.curMedalList then
+      subItem:GetGameObject():SetActive(false)
     else
-      ;
-      (subItem:GetGameObject()):SetActive(true)
+      subItem:GetGameObject():SetActive(true)
       self:_RefreshMedalItem(subItem, itemIndex)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListController._RefreshItemScroll = function(self, count, list)
-  -- function num : 0_9
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UIMedalListController:_RefreshItemScroll(count, list)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(count)
   list:MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((list.ScrollRect).content).localPosition = contentPos
+  list.ScrollRect.content.localPosition = contentPos
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListController._RefreshMedalItem = function(self, item, index)
-  -- function num : 0_10
-  local medalData = nil
+function UIMedalListController:_RefreshMedalItem(item, index)
+  local medalData
   if self.curMedalList then
-    medalData = (self.curMedalList)[index]
+    medalData = self.curMedalList[index]
   end
-  if medalData:GetTemplID() ~= (self.curSelectMedalData):GetTemplID() then
-    do
-      local isSelect = not medalData
-      item:SetData(medalData, isSelect, function(item)
-    -- function num : 0_10_0 , upvalues : self
-    self:OnMedalItemClicked(item)
-  end
-)
-      if isSelect then
-        self.curSelectMedalItem = item
-      end
-      -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if medalData then
+    local isSelect = medalData:GetTemplID() == self.curSelectMedalData:GetTemplID()
+    item:SetData(medalData, isSelect, function(item)
+      self:OnMedalItemClicked(item)
+    end)
+    if isSelect then
+      self.curSelectMedalItem = item
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListController.OnMedalItemClicked = function(self, item)
-  -- function num : 0_11
+function UIMedalListController:OnMedalItemClicked(item)
   local itemId = item:GetID()
-  if (self.curSelectMedalData):GetTemplID() == itemId then
+  if self.curSelectMedalData:GetTemplID() == itemId then
     self:CancleNew()
-    return 
+    return
   end
   if self.curSelectMedalItem then
-    (self.curSelectMedalItem):SetSelect(false)
+    self.curSelectMedalItem:SetSelect(false)
   end
   self.curSelectMedalItem = item
   self.curSelectMedalData = item:GetData()
-  ;
-  (self.curSelectMedalItem):SetSelect(true)
+  self.curSelectMedalItem:SetSelect(true)
   self:RefreshMedalDetail()
   self:CancleNew()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListController.CancleNew = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  if (self.curSelectMedalData):IsNew() then
-    local pstId = (self.curSelectMedalData):GetPstId()
-    do
-      local tmpId = (self.curSelectMedalData):GetID()
-      if pstId then
-        self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : self, _ENV, pstId, tmpId
-    self:Lock("UIMedalList:MedalItemSelect")
-    local itemModule = self:GetModule(ItemModule)
-    itemModule:SetItemUnnew(TT, pstId)
-    ;
-    (self.curSelectMedalItem):SetNewReviewed()
-    ;
-    (self.data):SetUnNew(tmpId)
-    self:RefreshFiltersNew()
-    self:UnLock("UIMedalList:MedalItemSelect")
-  end
-)
-      end
+function UIMedalListController:CancleNew()
+  if self.curSelectMedalData:IsNew() then
+    local pstId = self.curSelectMedalData:GetPstId()
+    local tmpId = self.curSelectMedalData:GetID()
+    if pstId then
+      self:StartTask(function(TT)
+        self:Lock("UIMedalList:MedalItemSelect")
+        local itemModule = self:GetModule(ItemModule)
+        itemModule:SetItemUnnew(TT, pstId)
+        self.curSelectMedalItem:SetNewReviewed()
+        self.data:SetUnNew(tmpId)
+        self:RefreshFiltersNew()
+        self:UnLock("UIMedalList:MedalItemSelect")
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListController.RefreshMedalDetail = function(self)
-  -- function num : 0_13
+function UIMedalListController:RefreshMedalDetail()
   if self.curSelectMedalData then
-    (self.itemDetail):SetData(self.curSelectMedalData)
+    self.itemDetail:SetData(self.curSelectMedalData)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListController.BtnBackOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
-  local newIds = (self.data):GetAllNewPstId()
+function UIMedalListController:BtnBackOnClick(go)
+  local newIds = self.data:GetAllNewPstId()
   if #newIds < 1 then
     self:CloseWithAni()
   else
     self:StartTask(function(TT)
-    -- function num : 0_14_0 , upvalues : self, _ENV, newIds
-    self:Lock("UIMedalList:MedalItemCancelAllNew")
-    local itemModule = self:GetModule(ItemModule)
-    itemModule:SetItemListUnnew(TT, newIds)
-    self:UnLock("UIMedalList:MedalItemCancelAllNew")
-    self:CloseWithAni()
-  end
-)
+      self:Lock("UIMedalList:MedalItemCancelAllNew")
+      local itemModule = self:GetModule(ItemModule)
+      itemModule:SetItemListUnnew(TT, newIds)
+      self:UnLock("UIMedalList:MedalItemCancelAllNew")
+      self:CloseWithAni()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListController.CloseWithAni = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIMedalListController:CloseWithAni()
   self:StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : self, _ENV
     local lockName = "UIMedalListController_PlayAnimOut()"
     self:Lock(lockName)
-    ;
-    (self._ani):Play("uieff_UIMedalListController_out")
+    self._ani:Play("uieff_UIMedalListController_out")
     YIELD(TT, 450)
     self:UnLock(lockName)
     self:CloseDialog()
-  end
-, self)
+  end, self)
 end
-
-

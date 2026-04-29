@@ -1,42 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_refine_panel_unlock.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipRefinePanelUnLock", UICustomWidget)
 UIPetEquipRefinePanelUnLock = UIPetEquipRefinePanelUnLock
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipRefinePanelUnLock.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._petModule = ((GameGlobal.GameLogic)()):GetModule(PetModule)
-  self._roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIPetEquipRefinePanelUnLock:OnShow(uiParams)
+  self._petModule = GameGlobal.GameLogic():GetModule(PetModule)
+  self._roleModule = GameGlobal.GetModule(RoleModule)
   self:InitWidget()
-  self._waitTime = ((Cfg.cfg_global).shakeWaitTime).IntValue or 2000
-  self._shakeX = ((Cfg.cfg_global).shakeOffsetX).IntValue or 10
-  self._shakeY = ((Cfg.cfg_global).shakeOffsetY).IntValue or 10
+  self._waitTime = Cfg.cfg_global.shakeWaitTime.IntValue or 2000
+  self._shakeX = Cfg.cfg_global.shakeOffsetX.IntValue or 10
+  self._shakeY = Cfg.cfg_global.shakeOffsetY.IntValue or 10
   self:AttachEvent(GameEventType.ItemCountChanged, self._FlushItemsCount)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPetEquipRefinePanelUnLock:OnHide()
   if self._goldTweer then
-    (self._goldTweer):Kill()
+    self._goldTweer:Kill()
     self._goldTweer = nil
   end
   if self.goldEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.goldEvent)
+    GameGlobal.Timer():CancelEvent(self.goldEvent)
     self.goldEvent = nil
   end
   self:StopTween()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.InitWidget = function(self)
-  -- function num : 0_2
+function UIPetEquipRefinePanelUnLock:InitWidget()
   self.attrPool = self:GetUIComponent("UISelectObjectPath", "attr")
   self.skillPool = self:GetUIComponent("UISelectObjectPath", "skill")
   self.attr2Pool = self:GetUIComponent("UISelectObjectPath", "attr2")
@@ -62,413 +49,275 @@ UIPetEquipRefinePanelUnLock.InitWidget = function(self)
   self.cannotrefineTipsGo = self:GetGameObject("cannotrefineTipsGo")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.SetData = function(self, index, petData, refineSuccCall, petEquipController, refinePanel)
-  -- function num : 0_3
+function UIPetEquipRefinePanelUnLock:SetData(index, petData, refineSuccCall, petEquipController, refinePanel)
   self.refineIndex = index
   self.petData = petData
   self.refineSuccCall = refineSuccCall
   self.petEquipController = petEquipController
   self.refinePanel = refinePanel
-  ;
-  (self.txtEffName):SetText(self:GetPreEffName(index))
-  ;
-  (self.txtEffName2):SetText(self:GetPreEffName(index))
+  self.txtEffName:SetText(self:GetPreEffName(index))
+  self.txtEffName2:SetText(self:GetPreEffName(index))
   self:RefreshAll()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.RefreshAll = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local refineLv = (self.petData):GetEquipRefineLv()
+function UIPetEquipRefinePanelUnLock:RefreshAll()
+  local refineLv = self.petData:GetEquipRefineLv()
   local canRefine = false
   local refineFinish = false
   if self.refineIndex == 1 then
     canRefine = true
-    refineFinish = self.refineIndex <= refineLv
+    refineFinish = refineLv >= self.refineIndex
   else
     canRefine = self.refineIndex - refineLv <= 1
-    refineFinish = self.refineIndex <= refineLv
+    refineFinish = refineLv >= self.refineIndex
   end
   self.canRefine = canRefine
   self.refineFinish = refineFinish
   if refineFinish then
-    (self.canRefineGo):SetActive(false)
-    ;
-    (self.cannotRefineGo):SetActive(true)
+    self.canRefineGo:SetActive(false)
+    self.cannotRefineGo:SetActive(true)
     self:RefreshAttrAndSkill2(refineFinish)
   else
-    (self.canRefineGo):SetActive(true)
-    ;
-    (self.cannotRefineGo):SetActive(false)
-    ;
-    (self.refineBtnGo):SetActive(self.canRefine)
-    ;
-    (self.cannotrefineTipsGo):SetActive(not self.canRefine)
+    self.canRefineGo:SetActive(true)
+    self.cannotRefineGo:SetActive(false)
+    self.refineBtnGo:SetActive(self.canRefine)
+    self.cannotrefineTipsGo:SetActive(not self.canRefine)
     self:RefreshConsume(refineFinish)
     self:RefreshAttrAndSkill()
-    ;
-    (self._refineBtnTex):SetText((StringTable.Get)("str_pet_equip_refine"))
+    self._refineBtnTex:SetText(StringTable.Get("str_pet_equip_refine"))
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.RefreshConsume = function(self, refineFinish)
-  -- function num : 0_5
+function UIPetEquipRefinePanelUnLock:RefreshConsume(refineFinish)
   if self._consumItem then
-    (self._consumItem):StopTween()
+    self._consumItem:StopTween()
     self._consumItem = nil
   end
   self.refineFinish = refineFinish
   local dataList, cost = self:GetConsumDataList()
   self._materialItemInfos = dataList
   self._needGoldCount = cost
-  ;
-  (self.needcoin):SetText(cost)
+  self.needcoin:SetText(cost)
   local len = #dataList
-  ;
-  (self.cunsumeListPool):ClearWidgets()
-  local itemList = (self.cunsumeListPool):SpawnObjects("UIConsumaItem", len)
+  self.cunsumeListPool:ClearWidgets()
+  local itemList = self.cunsumeListPool:SpawnObjects("UIConsumaItem", len)
   self._materialItemList = itemList
   for i = 1, len do
     local subItem = itemList[i]
     subItem:SetData(self.petData, dataList[i], i, refineFinish, function(itemID, condition, pos)
-    -- function num : 0_5_0 , upvalues : self
-    self:SetItemTip(itemID, condition, pos)
-  end
-)
+      self:SetItemTip(itemID, condition, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.GetConsumDataList = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIPetEquipRefinePanelUnLock:GetConsumDataList()
   local dataList = {}
   local costGold = 0
-  local refineCfg = (UIPetEquipHelper.GetRefineCfg)((self.petData):GetTemplateID(), self.refineIndex)
+  local refineCfg = UIPetEquipHelper.GetRefineCfg(self.petData:GetTemplateID(), self.refineIndex)
   if not refineCfg then
     return dataList, costGold
   end
   if self.refineIndex == 1 then
     local strCondition = refineCfg.UnLockCondition
-    local conditions = (StrToArray2:GetInstance()):GetArray(strCondition, "&", ",", nil, true)
+    local conditions = StrToArray2:GetInstance():GetArray(strCondition, "&", ",", nil, true)
     if conditions then
-      for _,subCondition in pairs(conditions) do
+      for _, subCondition in pairs(conditions) do
         local conditionId = subCondition[1]
-        do
-          if ConditionType.CT_PetGradeLevel == conditionId and subCondition[4] then
+        if ConditionType.CT_PetGradeLevel == conditionId then
+          if subCondition[4] then
             local levelCondition = {}
             levelCondition.ConditionType = "Level"
             levelCondition.condition = tonumber(subCondition[4])
-            ;
-            (table.insert)(dataList, levelCondition)
+            table.insert(dataList, levelCondition)
           end
-          do
-            if ConditionType.CT_PeAffinityLevel == conditionId and subCondition[3] then
-              local affinityCondition = {}
-              affinityCondition.ConditionType = "Affinity"
-              affinityCondition.condition = tonumber(subCondition[3])
-              ;
-              (table.insert)(dataList, affinityCondition)
-            end
-            -- DECOMPILER ERROR at PC72: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
+        elseif ConditionType.CT_PeAffinityLevel == conditionId and subCondition[3] then
+          local affinityCondition = {}
+          affinityCondition.ConditionType = "Affinity"
+          affinityCondition.condition = tonumber(subCondition[3])
+          table.insert(dataList, affinityCondition)
         end
       end
     end
   end
-  do
-    local cunsumeItems = refineCfg.NeedItem
-    for _,item in pairs(cunsumeItems) do
-      local itemCondition = {}
-      local itemId = tonumber(item[1])
-      local itemNum = tonumber(item[2])
-      if itemId == RoleAssetID.RoleAssetGold then
-        costGold = itemNum
-      else
-        itemCondition.ConditionType = "Consum"
-        itemCondition.ID = itemId
-        itemCondition.condition = itemNum
-        ;
-        (table.insert)(dataList, itemCondition)
-      end
+  local cunsumeItems = refineCfg.NeedItem
+  for _, item in pairs(cunsumeItems) do
+    local itemCondition = {}
+    local itemId = tonumber(item[1])
+    local itemNum = tonumber(item[2])
+    if itemId == RoleAssetID.RoleAssetGold then
+      costGold = itemNum
+    else
+      itemCondition.ConditionType = "Consum"
+      itemCondition.ID = itemId
+      itemCondition.condition = itemNum
+      table.insert(dataList, itemCondition)
     end
-    return dataList, costGold
   end
+  return dataList, costGold
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.RefreshAttrAndSkill = function(self)
-  -- function num : 0_7
+function UIPetEquipRefinePanelUnLock:RefreshAttrAndSkill()
   if not self.attr then
-    self.attr = (self.attrPool):SpawnObject("UIPetEquipRefineAttr")
+    self.attr = self.attrPool:SpawnObject("UIPetEquipRefineAttr")
   end
-  ;
-  (self.attr):SetData((self.petData):GetTemplateID(), self.refineIndex)
+  self.attr:SetData(self.petData:GetTemplateID(), self.refineIndex)
   if not self.skill then
-    self.skill = (self.skillPool):SpawnObject("UIPetEquipRefineSkill")
+    self.skill = self.skillPool:SpawnObject("UIPetEquipRefineSkill")
   end
-  ;
-  (self.skill):SetData((self.petData):GetTemplateID(), self.refineIndex)
+  self.skill:SetData(self.petData:GetTemplateID(), self.refineIndex)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.RefreshAttrAndSkill2 = function(self, refineFinish)
-  -- function num : 0_8
+function UIPetEquipRefinePanelUnLock:RefreshAttrAndSkill2(refineFinish)
   if not self.attr2 then
-    self.attr2 = (self.attr2Pool):SpawnObject("UIPetEquipRefineAttr")
+    self.attr2 = self.attr2Pool:SpawnObject("UIPetEquipRefineAttr")
   end
-  ;
-  (self.attr2):SetData((self.petData):GetTemplateID(), self.refineIndex)
+  self.attr2:SetData(self.petData:GetTemplateID(), self.refineIndex)
   if not self.skill2 then
-    self.skill2 = (self.skill2Pool):SpawnObject("UIPetEquipRefineSkill")
+    self.skill2 = self.skill2Pool:SpawnObject("UIPetEquipRefineSkill")
   end
-  ;
-  (self.skill2):SetData((self.petData):GetTemplateID(), self.refineIndex)
-  ;
-  (self.refineFinishGo):SetActive(refineFinish)
-  ;
-  (self.cannotrefineTipsGo):SetActive(not refineFinish)
+  self.skill2:SetData(self.petData:GetTemplateID(), self.refineIndex)
+  self.refineFinishGo:SetActive(refineFinish)
+  self.cannotrefineTipsGo:SetActive(not refineFinish)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.RefineBtnOnClick = function(self, go)
-  -- function num : 0_9
+function UIPetEquipRefinePanelUnLock:RefineBtnOnClick(go)
   if self:CheckMaterialItems() then
-    local bagNum = (self._roleModule):GetGold()
+    local bagNum = self._roleModule:GetGold()
     if bagNum < self._needGoldCount then
       self:GoldDOShakePosition()
-      return 
+      return
     end
-    local pstID = (self.petData):GetPstID()
+    local pstID = self.petData:GetPstID()
     self:StartRefine(pstID)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.StartRefine = function(self, pstID)
-  -- function num : 0_10 , upvalues : _ENV
+function UIPetEquipRefinePanelUnLock:StartRefine(pstID)
   self:Lock("UIPetEquipRefinePanelUnLock:StartRefine")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.RefineCallback, self, pstID)
+  GameGlobal.TaskManager():StartTask(self.RefineCallback, self, pstID)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.RefineCallback = function(self, TT, pstID)
-  -- function num : 0_11 , upvalues : _ENV
-  local res = (self._petModule):ReqUpEquipRefineLvUp(TT, pstID)
+function UIPetEquipRefinePanelUnLock:RefineCallback(TT, pstID)
+  local res = self._petModule:ReqUpEquipRefineLvUp(TT, pstID)
   if res:GetSucc() then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N29RefineSuccess)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N29RefineSuccess)
     if self.petEquipController then
-      (self.petEquipController):ShowRefineSuccEffect(TT)
+      self.petEquipController:ShowRefineSuccEffect(TT)
       YIELD(TT, 2000)
     end
     if self.refineIndex == 3 then
       self:RefreshAll()
     end
     if self.refineSuccCall then
-      (self.refineSuccCall)()
+      self.refineSuccCall()
     end
     YIELD(TT, 350)
   else
-    ;
-    (Log.fatal)(pstID .. "  refine  failed !!! result --> ", res:GetResult())
+    Log.fatal(pstID .. "  refine  failed !!! result --> ", res:GetResult())
   end
   self:UnLock("UIPetEquipRefinePanelUnLock:StartRefine")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.CheckMaterialItems = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIPetEquipRefinePanelUnLock:CheckMaterialItems()
   local isOk, index = self:CheckIndexMaterialItems()
-  do
-    if isOk == false then
-      local item = (self._materialItemList)[index]
-      self._consumItem = item
-      item:DOShakePosition()
-      ;
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundUIMaterialNotEnough)
-      return false
-    end
-    return true
+  if isOk == false then
+    local item = self._materialItemList[index]
+    self._consumItem = item
+    item:DOShakePosition()
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundUIMaterialNotEnough)
+    return false
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.CheckIndexMaterialItems = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIPetEquipRefinePanelUnLock:CheckIndexMaterialItems()
   if self._materialItemInfos == nil then
     return true, 1
   end
-  for index,itemInfo in pairs(self._materialItemInfos) do
+  for index, itemInfo in pairs(self._materialItemInfos) do
     if itemInfo.ConditionType == "Level" then
-      local petLevel = (self.petData):GetPetLevel()
+      local petLevel = self.petData:GetPetLevel()
       if petLevel < itemInfo.condition then
         return false, index
       end
+    elseif itemInfo.ConditionType == "Affinity" then
+      local petAffinity = self.petData:GetPetAffinityLevel()
+      if petAffinity < itemInfo.condition then
+        return false, index
+      end
+    elseif itemInfo.ConditionType == "Coin" then
+      local bagNum = self._roleModule:GetGold()
+      if bagNum < itemInfo.condition then
+        return false, -1
+      end
     else
-      do
-        if itemInfo.ConditionType == "Affinity" then
-          local petAffinity = (self.petData):GetPetAffinityLevel()
-          if petAffinity < itemInfo.condition then
-            return false, index
-          end
-        else
-          do
-            if itemInfo.ConditionType == "Coin" then
-              local bagNum = (self._roleModule):GetGold()
-              if bagNum < itemInfo.condition then
-                return false, -1
-              end
-            else
-              do
-                do
-                  local bagNum = (self._roleModule):GetAssetCount(itemInfo.ID)
-                  if bagNum < itemInfo.condition then
-                    return false, index
-                  end
-                  -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
-            end
-          end
-        end
+      local bagNum = self._roleModule:GetAssetCount(itemInfo.ID)
+      if bagNum < itemInfo.condition then
+        return false, index
       end
     end
   end
   return true, 1
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.GoldDOShakePosition = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  if self._goldTweer and (self._goldTweer):IsPlaying() then
-    return 
+function UIPetEquipRefinePanelUnLock:GoldDOShakePosition()
+  if self._goldTweer and self._goldTweer:IsPlaying() then
+    return
   end
   if self._goldTweer then
-    (self._goldTweer):Kill()
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._consumeRect).anchoredPosition = Vector2(0, 0)
+    self._goldTweer:Kill()
+    self._consumeRect.anchoredPosition = Vector2(0, 0)
   end
   self:SetColor(false)
-  self._goldTweer = ((self._consumeRect):DOShakePosition(1, Vector3(self._shakeX, self._shakeY, 0))):OnComplete(function()
-    -- function num : 0_14_0 , upvalues : self
+  self._goldTweer = self._consumeRect:DOShakePosition(1, Vector3(self._shakeX, self._shakeY, 0)):OnComplete(function()
     self:StartTimer()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.StopTween = function(self)
-  -- function num : 0_15
+function UIPetEquipRefinePanelUnLock:StopTween()
   if self._consumItem then
-    (self._consumItem):StopTween()
+    self._consumItem:StopTween()
     self._consumItem = nil
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.SetItemTip = function(self, itemID, condition, pos)
-  -- function num : 0_16 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIItemGetPathController", itemID, nil, nil, condition)
+function UIPetEquipRefinePanelUnLock:SetItemTip(itemID, condition, pos)
+  GameGlobal.UIStateManager():ShowDialog("UIItemGetPathController", itemID, nil, nil, condition)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.StartTimer = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIPetEquipRefinePanelUnLock:StartTimer()
   if self.goldEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.goldEvent)
+    GameGlobal.Timer():CancelEvent(self.goldEvent)
     self.goldEvent = nil
   end
-  self.goldEvent = ((GameGlobal.Timer)()):AddEvent(self._waitTime, function()
-    -- function num : 0_17_0 , upvalues : self
+  self.goldEvent = GameGlobal.Timer():AddEvent(self._waitTime, function()
     self:SetColor(true)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.SetColor = function(self, isDefaultColor)
-  -- function num : 0_18 , upvalues : _ENV
-  local color = nil
+function UIPetEquipRefinePanelUnLock:SetColor(isDefaultColor)
+  local color
   if isDefaultColor then
     color = Color(0.96, 0.81, 0.14)
   else
     color = Color(1, 0.4, 0.32)
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
   if color ~= nil then
-    (self._leftLine).color = color
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._consumeName).color = color
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._coinBg).color = color
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._needcoin).color = color
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._rightLine).color = color
+    self._leftLine.color = color
+    self._consumeName.color = color
+    self._coinBg.color = color
+    self._needcoin.color = color
+    self._rightLine.color = color
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.PlayAni = function(self, aniName)
-  -- function num : 0_19
+function UIPetEquipRefinePanelUnLock:PlayAni(aniName)
   if self.animation then
-    (self.animation):Play(aniName)
+    self.animation:Play(aniName)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.PLayInAni = function(self)
-  -- function num : 0_20
+function UIPetEquipRefinePanelUnLock:PLayInAni()
   if not self.refineFinish then
     self:PlayAni("uieff_UIPetEquipRefinePanelUnLock_in")
   else
@@ -476,10 +325,7 @@ UIPetEquipRefinePanelUnLock.PLayInAni = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.PLayOutAni = function(self)
-  -- function num : 0_21
+function UIPetEquipRefinePanelUnLock:PLayOutAni()
   if not self.refineFinish then
     self:PlayAni("uieff_UIPetEquipRefinePanelUnLock_out")
   else
@@ -487,46 +333,30 @@ UIPetEquipRefinePanelUnLock.PLayOutAni = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock._FlushItemsCount = function(self)
-  -- function num : 0_22
+function UIPetEquipRefinePanelUnLock:_FlushItemsCount()
   if self.canRefine then
     self:RefreshConsume(self.refineFinish)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.GetPreEffName = function(self, index)
-  -- function num : 0_23 , upvalues : _ENV
+function UIPetEquipRefinePanelUnLock:GetPreEffName(index)
   local lanKey = "str_pet_equip_refine_preview_1"
   if index == 2 then
     lanKey = "str_pet_equip_refine_preview_2"
-  else
-    if index == 3 then
-      lanKey = "str_pet_equip_refine_preview_3"
-    end
+  elseif index == 3 then
+    lanKey = "str_pet_equip_refine_preview_3"
   end
-  return (StringTable.Get)(lanKey)
+  return StringTable.Get(lanKey)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.TipsBtnOnClick = function(self, go)
-  -- function num : 0_24
+function UIPetEquipRefinePanelUnLock:TipsBtnOnClick(go)
   if self.refinePanel then
-    (self.refinePanel):ShowTips(go)
+    self.refinePanel:ShowTips(go)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanelUnLock.TipsBtn2OnClick = function(self, go)
-  -- function num : 0_25
+function UIPetEquipRefinePanelUnLock:TipsBtn2OnClick(go)
   if self.refinePanel then
-    (self.refinePanel):ShowTips(go)
+    self.refinePanel:ShowTips(go)
   end
 end
-
-

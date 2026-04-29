@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/ui_s4_trade_crew_manager_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4TradeCrewManagerItem", UICustomWidget)
 UIS4TradeCrewManagerItem = UIS4TradeCrewManagerItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4TradeCrewManagerItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIS4TradeCrewManagerItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewManagerItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIS4TradeCrewManagerItem:InitWidget()
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._layoutElement = self:GetUIComponent("LayoutElement", "Obj")
   self._BGRect = self:GetUIComponent("RectTransform", "Bg")
@@ -23,48 +13,21 @@ UIS4TradeCrewManagerItem.InitWidget = function(self)
   self._iconRect = self:GetUIComponent("RectTransform", "Icon")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewManagerItem.SetData = function(self, id)
-  -- function num : 0_2 , upvalues : _ENV
+function UIS4TradeCrewManagerItem:SetData(id)
   self._id = id
   if self._id then
-    local cfg = (Cfg.cfg_component_business_seaman)[self._id]
-    ;
-    (self._icon):LoadImage(cfg.Icon)
-    ;
-    ((self._icon).gameObject):SetActive(true)
+    local cfg = Cfg.cfg_component_business_seaman[self._id]
+    self._icon:LoadImage(cfg.Icon)
+    self._icon.gameObject:SetActive(true)
   else
-    do
-      ;
-      ((self._icon).gameObject):SetActive(false)
-    end
+    self._icon.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewManagerItem.SetLayout = function(self, Width, Height, BGRect, ImageRect)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R5 in 'UnsetPending'
-
-  (self._layoutElement).preferredWidth = Width
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._layoutElement).preferredHeight = Height
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._BGRect).sizeDelta = BGRect
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._ImageRect).localScale = ImageRect
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._iconRect).localScale = ImageRect
+function UIS4TradeCrewManagerItem:SetLayout(Width, Height, BGRect, ImageRect)
+  self._layoutElement.preferredWidth = Width
+  self._layoutElement.preferredHeight = Height
+  self._BGRect.sizeDelta = BGRect
+  self._ImageRect.localScale = ImageRect
+  self._iconRect.localScale = ImageRect
 end
-
-

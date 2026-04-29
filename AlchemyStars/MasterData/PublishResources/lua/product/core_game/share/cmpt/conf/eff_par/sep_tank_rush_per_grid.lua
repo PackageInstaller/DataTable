@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_tank_rush_per_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParam_TankRushPerGrid", SkillEffectParamBase)
 SkillEffectParam_TankRushPerGrid = SkillEffectParam_TankRushPerGrid
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_TankRushPerGrid.Constructor = function(self, t, petId, effectIndex, skillType, grade, awaking)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParam_TankRushPerGrid:Constructor(t, petId, effectIndex, skillType, grade, awaking)
   self._damageParam = SkillDamageEffectParam:New(t.damageParam, petId, effectIndex, skillType, grade, awaking)
   self._hitbackParam = SkillHitBackEffectParam:New(t.hitbackParam, petId, effectIndex, skillType, grade, awaking)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_TankRushPerGrid.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_TankRushPerGrid:GetEffectType()
   return SkillEffectType.TankRushPerGrid
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_TankRushPerGrid.GetDamageParam = function(self)
-  -- function num : 0_2
+function SkillEffectParam_TankRushPerGrid:GetDamageParam()
   return self._damageParam
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_TankRushPerGrid.GetHitBackParam = function(self)
-  -- function num : 0_3
+function SkillEffectParam_TankRushPerGrid:GetHitBackParam()
   return self._hitbackParam
 end
-
-

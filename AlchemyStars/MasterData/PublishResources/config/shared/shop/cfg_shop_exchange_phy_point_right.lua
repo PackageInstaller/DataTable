@@ -1,33 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/shop/cfg_shop_exchange_phy_point_right.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Times = 2, CostID = 3, CostCount = 4, ReplyCount = 5}
+local key = {
+  ID = 1,
+  Times = 2,
+  CostID = 3,
+  CostCount = 4,
+  ReplyCount = 5
+}
 local config = {
-{1, 
-{1, 1}
-, 3000003, 30, 60}
-, 
-{2, 
-{2, 2}
-, 3000003, 40, 60}
-, 
-{3, 
-{3, 4}
-, 3000003, 60, 60}
-, 
-{4, 
-{5, 6}
-, 3000003, 100, 60}
-, 
-{5, 
-{7, 8}
-, 3000003, 150, 60}
-, 
-{6, 
-{9, 10}
-, 3000003, 200, 60}
+  {
+    1,
+    {1, 1},
+    3000003,
+    30,
+    60
+  },
+  {
+    2,
+    {2, 2},
+    3000003,
+    40,
+    60
+  },
+  {
+    3,
+    {3, 4},
+    3000003,
+    60,
+    60
+  },
+  {
+    4,
+    {5, 6},
+    3000003,
+    100,
+    60
+  },
+  {
+    5,
+    {7, 8},
+    3000003,
+    150,
+    60
+  },
+  {
+    6,
+    {9, 10},
+    3000003,
+    200,
+    60
+  }
 }
 return config, "ID", key
-

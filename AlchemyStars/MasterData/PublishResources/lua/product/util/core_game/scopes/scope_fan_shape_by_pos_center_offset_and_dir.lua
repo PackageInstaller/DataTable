@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_fan_shape_by_pos_center_offset_and_dir.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_FanShapeByPosCenterOffsetAndDir", SkillScopeCalculator_Base)
 SkillScopeCalculator_FanShapeByPosCenterOffsetAndDir = SkillScopeCalculator_FanShapeByPosCenterOffsetAndDir
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_FanShapeByPosCenterOffsetAndDir.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_FanShapeByPosCenterOffsetAndDir:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local offsetX = scopeParam[1]
   local offsetY = scopeParam[2]
   if offsetX == nil or offsetY == nil then
-    (Log.debug)("FanShapeByPosCenterOffsetAndDir offset is nil.")
-    return 
+    Log.debug("FanShapeByPosCenterOffsetAndDir offset is nil.")
+    return
   end
   local startPos = Vector2(centerPos.x + offsetX, centerPos.y + offsetY)
   local index = 0
@@ -24,12 +17,10 @@ SkillScopeCalculator_FanShapeByPosCenterOffsetAndDir.CalcRange = function(self, 
     index = index + 1
     for j = 0, xStep do
       local pos = Vector2(startPos.x + j, startPos.y - i)
-      ;
-      (table.insert)(wholePosList, pos)
-      if j > 0 then
+      table.insert(wholePosList, pos)
+      if 0 < j then
         local leftPos = Vector2(startPos.x - j, startPos.y - i)
-        ;
-        (table.insert)(wholePosList, leftPos)
+        table.insert(wholePosList, leftPos)
       end
     end
     if index == 3 then
@@ -40,5 +31,3 @@ SkillScopeCalculator_FanShapeByPosCenterOffsetAndDir.CalcRange = function(self, 
   local result = SkillScopeResult:New(SkillScopeType.FanShapeByPosCenterOffsetAndDir, centerPos, wholePosList, wholePosList, nil)
   return result
 end
-
-

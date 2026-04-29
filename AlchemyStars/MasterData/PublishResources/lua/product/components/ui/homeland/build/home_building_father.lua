@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/build/home_building_father.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeBuildingFather", HomeBuilding)
 HomeBuildingFather = HomeBuildingFather
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeBuildingFather.Constructor = function(self, insID, architecture, cfg)
-  -- function num : 0_0 , upvalues : _ENV
+function HomeBuildingFather:Constructor(insID, architecture, cfg)
   self._cfg = cfg
-  self._cfgFatherArch = (Cfg.cfg_item_father_architecture)[cfg.ID]
+  self._cfgFatherArch = Cfg.cfg_item_father_architecture[cfg.ID]
   self._children = {}
   self._childrenFree = {}
   self._childrenFixed = {}
@@ -22,83 +15,60 @@ HomeBuildingFather.Constructor = function(self, insID, architecture, cfg)
   self:InitFreeArea()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.OnModelChanged = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomeBuildingFather:OnModelChanged()
   self._interactPointAreaMap = {}
-  ;
-  ((HomeBuildingFather.super).OnModelChanged)(self)
+  HomeBuildingFather.super.OnModelChanged(self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.RefreshInteractPoint = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((HomeBuildingFather.super).RefreshInteractPoint)(self)
+function HomeBuildingFather:RefreshInteractPoint()
+  HomeBuildingFather.super.RefreshInteractPoint(self)
   self._areaList = {}
-  self._areaTrans = (self._transform):Find("Area")
+  self._areaTrans = self._transform:Find("Area")
   local childCount = 0
   if self._areaTrans ~= nil then
-    childCount = (self._areaTrans).childCount
+    childCount = self._areaTrans.childCount
   end
   for i = 1, childCount do
-    (table.insert)(self._areaList, HomeBuildingFatherArea:New((self._areaTrans):GetChild(i - 1), self))
+    table.insert(self._areaList, HomeBuildingFatherArea:New(self._areaTrans:GetChild(i - 1), self))
   end
   for i = 1, #self._areaList do
-    ((self._areaList)[i]):RefreshInteractPoint()
-    ;
-    ((self._areaList)[i]):RefreshObstacleUnlock()
+    self._areaList[i]:RefreshInteractPoint()
+    self._areaList[i]:RefreshObstacleUnlock()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.ResetInteractPoint = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomeBuildingFather:ResetInteractPoint()
   if self._areaList then
     for i = 1, #self._areaList do
-      ((self._areaList)[i]):Dispose()
+      self._areaList[i]:Dispose()
     end
     self._areaList = nil
   end
-  ;
-  ((HomeBuildingFather.super).ResetInteractPoint)(self)
+  HomeBuildingFather.super.ResetInteractPoint(self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.RegisterInteractPoint = function(self, index, HomeBuildingFatherArea)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._interactPointAreaMap)[index] = HomeBuildingFatherArea
+function HomeBuildingFather:RegisterInteractPoint(index, HomeBuildingFatherArea)
+  self._interactPointAreaMap[index] = HomeBuildingFatherArea
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.GetInteractPosition = function(self, index)
-  -- function num : 0_5 , upvalues : _ENV
-  local area = (self._interactPointAreaMap)[index]
+function HomeBuildingFather:GetInteractPosition(index)
+  local area = self._interactPointAreaMap[index]
   if not area then
-    return ((HomeBuildingFather.super).GetInteractPosition)(self, index)
+    return HomeBuildingFather.super.GetInteractPosition(self, index)
   end
   return area:GetInteractPosition(index)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.Clean = function(self, index)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg = (Cfg.cfg_archeticture_hangpoint)[index]
+function HomeBuildingFather:Clean(index)
+  local cfg = Cfg.cfg_archeticture_hangpoint[index]
   if not cfg then
     BuildError("cfg_archeticture_hangpoint中找不到id为", index, "的配置")
-    return 
+    return
   end
-  local area = (self._interactPointAreaMap)[index]
+  local area = self._interactPointAreaMap[index]
   if not area then
     BuildError("找不到包含障碍物id为", index, "的区域")
-    return 
+    return
   end
   if cfg.Cost then
     self:CleanConfirm(index, cfg)
@@ -107,101 +77,79 @@ HomeBuildingFather.Clean = function(self, index)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.CleanConfirm = function(self, index, cfg)
-  -- function num : 0_7 , upvalues : _ENV
+function HomeBuildingFather:CleanConfirm(index, cfg)
   local costStr = ""
-  for index,costs in ipairs(cfg.Cost) do
-    if index > 1 then
-      costStr = costStr .. (StringTable.Get)("str_homeland_build_child_drop_error_seperator")
+  for index, costs in ipairs(cfg.Cost) do
+    if 1 < index then
+      costStr = costStr .. StringTable.Get("str_homeland_build_child_drop_error_seperator")
     end
-    costStr = costStr .. (StringTable.Get)(((Cfg.cfg_item)[costs[1]]).Name) .. "*" .. costs[2]
+    costStr = costStr .. StringTable.Get(Cfg.cfg_item[costs[1]].Name) .. "*" .. costs[2]
   end
-  local title = nil
-  local desc = (StringTable.Get)("str_homeland_build_clean", costStr)
-  local leftBtn = {(StringTable.Get)("str_common_cancel"), function(param)
-    -- function num : 0_7_0
-  end
-}
-  local rightBtn = {(StringTable.Get)("str_common_ok"), function()
-    -- function num : 0_7_1 , upvalues : self, index, cfg
-    self:CleanEffect(index, cfg.FinishEffectId)
-  end
-}
+  local title
+  local desc = StringTable.Get("str_homeland_build_clean", costStr)
+  local leftBtn = {
+    StringTable.Get("str_common_cancel"),
+    function(param)
+    end
+  }
+  local rightBtn = {
+    StringTable.Get("str_common_ok"),
+    function()
+      self:CleanEffect(index, cfg.FinishEffectId)
+    end
+  }
   self:ShowDialog("UIHomelandMessageBox", title, desc, leftBtn, rightBtn, true)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.CleanEffect = function(self, hangPointID, FinishEffectId)
-  -- function num : 0_8 , upvalues : _ENV
+function HomeBuildingFather:CleanEffect(hangPointID, FinishEffectId)
   if FinishEffectId then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIHomelandTaskFinishEffect", FinishEffectId, nil, self:GetInteractPosition(hangPointID), function()
-    -- function num : 0_8_0 , upvalues : _ENV, self, hangPointID
-    ((GameGlobal.TaskManager)()):StartTask(self.CleanProc, self, hangPointID)
-  end
-)
+    GameGlobal.UIStateManager():ShowDialog("UIHomelandTaskFinishEffect", FinishEffectId, nil, self:GetInteractPosition(hangPointID), function()
+      GameGlobal.TaskManager():StartTask(self.CleanProc, self, hangPointID)
+    end)
   else
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.CleanProc, self, hangPointID)
+    GameGlobal.TaskManager():StartTask(self.CleanProc, self, hangPointID)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.CleanProc = function(self, TT, hangPointID)
-  -- function num : 0_9 , upvalues : _ENV
-  local area = (self._interactPointAreaMap)[hangPointID]
+function HomeBuildingFather:CleanProc(TT, hangPointID)
+  local area = self._interactPointAreaMap[hangPointID]
   if not area then
     BuildError("找不到包含障碍物id为", hangPointID, "的区域")
-    return 
+    return
   end
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("HomeBuildingFather:Clean")
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
+  GameGlobal.UIStateManager():Lock("HomeBuildingFather:Clean")
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
   local res = homelandModule:HandleUnlockHangPoint(TT, self:PstID(), hangPointID)
   if res:GetSucc() then
     self:EnableInteractPointByIndex(hangPointID, false)
     area:Clean(hangPointID)
     self:CreateChildBuildingByClean(TT, hangPointID)
-    ;
-    ((self._homelandClient):SceneManager()):BuildNavMeshAsync()
+    self._homelandClient:SceneManager():BuildNavMeshAsync()
     self:OnHangPointCleaned(hangPointID)
-    local uiHomeModule = (GameGlobal.GetUIModule)(HomelandModule)
+    local uiHomeModule = GameGlobal.GetUIModule(HomelandModule)
     self._client = uiHomeModule:GetClient()
-    ;
-    ((self._client):SceneManager()):WaterDepthCmdUpdateAllRender()
+    self._client:SceneManager():WaterDepthCmdUpdateAllRender()
   else
-    do
-      BuildError("清理失败 错误码：", res:GetResult())
-      ;
-      ((GameGlobal.UIStateManager)()):UnLock("HomeBuildingFather:Clean")
-    end
+    BuildError("清理失败 错误码：", res:GetResult())
   end
+  GameGlobal.UIStateManager():UnLock("HomeBuildingFather:Clean")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.OnHangPointCleaned = function(self, hangPointID)
-  -- function num : 0_10
+function HomeBuildingFather:OnHangPointCleaned(hangPointID)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.CreateChildBuildingByClean = function(self, TT, pointID)
-  -- function num : 0_11 , upvalues : _ENV
-  local area = (self._interactPointAreaMap)[pointID]
+function HomeBuildingFather:CreateChildBuildingByClean(TT, pointID)
+  local area = self._interactPointAreaMap[pointID]
   if not area then
     BuildError("找不到包含障碍物id为", pointID, "的区域")
-    return 
+    return
   end
   local newAdd = {}
   local buildingList = {}
   local idTransListMap = area:GetHangPointChildBuilingNodes(pointID)
-  for id,transList in pairs(idTransListMap) do
-    local canBuildCount = ((self._homelandClient):BuildManager()):GetBuildCount(id)
-    if canBuildCount > 0 then
+  for id, transList in pairs(idTransListMap) do
+    local canBuildCount = self._homelandClient:BuildManager():GetBuildCount(id)
+    if 0 < canBuildCount then
       local buildCount = #transList
       if canBuildCount < buildCount then
         buildCount = canBuildCount
@@ -213,99 +161,81 @@ HomeBuildingFather.CreateChildBuildingByClean = function(self, TT, pointID)
         local data = Architecture:New()
         data.asset_id = id
         data.parent = self:GetBuildId()
-        data.pos_x = (BuildHelper.ToInt)(pos.x)
-        data.pos_y = (BuildHelper.ToInt)(pos.y)
-        data.pos_z = (BuildHelper.ToInt)(pos.z)
-        data.rot = (math.floor)((trans.eulerAngles).y)
+        data.pos_x = BuildHelper.ToInt(pos.x)
+        data.pos_y = BuildHelper.ToInt(pos.y)
+        data.pos_z = BuildHelper.ToInt(pos.z)
+        data.rot = math.floor(trans.eulerAngles.y)
         data.pstid = 0
-        local building = (BuildHelper.CreateBuilding)(data)
+        local building = BuildHelper.CreateBuilding(data)
         self:AddChild(building)
         buildingList[#buildingList + 1] = building
         newAdd[#newAdd + 1] = building:GetServerData()
       end
     end
   end
-  if #newAdd > 0 then
-    local res, resAddList = ((GameGlobal.GetModule)(HomelandModule)):HomelandBuild(TT, newAdd, {}, {})
+  if 0 < #newAdd then
+    local res, resAddList = GameGlobal.GetModule(HomelandModule):HomelandBuild(TT, newAdd, {}, {})
     if res:GetSucc() then
       for i = 1, #buildingList do
-        ((self._homelandClient):BuildManager()):AfterCreateChildBuilding(buildingList[i])
-        local serverData = (buildingList[i]):GetArchitecture()
-        for _,arch in ipairs(resAddList) do
+        self._homelandClient:BuildManager():AfterCreateChildBuilding(buildingList[i])
+        local serverData = buildingList[i]:GetArchitecture()
+        for _, arch in ipairs(resAddList) do
           if serverData.asset_id == arch.asset_id and serverData.pos_x == arch.pos_x and serverData.pos_y == arch.pos_y and serverData.pos_z == arch.pos_z then
             serverData.pstid = arch.pstid
           end
         end
       end
     else
-      do
-        local code = res:GetResult()
-        if code == HomeLandErrorType.E_CONFIG_ERROR or HomeLandErrorType.E_SCENE_NOT_ARCHITECTURE <= code and code <= HomeLandErrorType.E_BUILD_MAX_LIMIT then
-          (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_build_error" .. code))
-        else
-          ;
-          (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_build_unknownerror", code))
-        end
+      local code = res:GetResult()
+      if code == HomeLandErrorType.E_CONFIG_ERROR or code >= HomeLandErrorType.E_SCENE_NOT_ARCHITECTURE and code <= HomeLandErrorType.E_BUILD_MAX_LIMIT then
+        ToastManager.ShowHomeToast(StringTable.Get("str_homeland_build_error" .. code))
+      else
+        ToastManager.ShowHomeToast(StringTable.Get("str_homeland_build_unknownerror", code))
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.HasArea = function(self, areaTrans)
-  -- function num : 0_12
+function HomeBuildingFather:HasArea(areaTrans)
   for i = 1, #self._areaList do
-    if ((self._areaList)[i])._trans == areaTrans then
+    if self._areaList[i]._trans == areaTrans then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.GetArea = function(self, areaTrans)
-  -- function num : 0_13
+function HomeBuildingFather:GetArea(areaTrans)
   for i = 1, #self._areaList do
-    if ((self._areaList)[i])._trans == areaTrans then
-      return ((self._areaList)[i]):GetHomeArea()
+    if self._areaList[i]._trans == areaTrans then
+      return self._areaList[i]:GetHomeArea()
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.GetHangPointPosByID = function(self, hangPointID)
-  -- function num : 0_14 , upvalues : _ENV
-  local area = (self._interactPointAreaMap)[hangPointID]
+function HomeBuildingFather:GetHangPointPosByID(hangPointID)
+  local area = self._interactPointAreaMap[hangPointID]
   if not area then
     BuildError("找不到包含障碍物id为", hangPointID, "的区域")
-    return 
+    return
   end
   return area:GetInteractPosition(hangPointID)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.GetObstacles = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function HomeBuildingFather:GetObstacles()
   local obstacles = {}
   for i = 1, #self._areaList do
-    local areaObs = ((self._areaList)[i]):GetObstacles()
-    for _,ob in ipairs(areaObs) do
+    local areaObs = self._areaList[i]:GetObstacles()
+    for _, ob in ipairs(areaObs) do
       obstacles[#obstacles + 1] = ob
     end
   end
   return obstacles
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.IsAreaCleaned = function(self, areaID)
-  -- function num : 0_16
+function HomeBuildingFather:IsAreaCleaned(areaID)
   for i = 1, #self._areaList do
-    local area = (self._areaList)[i]
+    local area = self._areaList[i]
     if area:GetID() == areaID then
       return area:IsAllCleaned()
     end
@@ -313,117 +243,81 @@ HomeBuildingFather.IsAreaCleaned = function(self, areaID)
   return false
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.AddChild = function(self, building)
-  -- function num : 0_17 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._children)[building:InsID()] = building
+function HomeBuildingFather:AddChild(building)
+  self._children[building:InsID()] = building
   building.Parent = self
   building:SetParentAssetID(self:GetBuildId())
-  ;
-  (building._transform):SetParent(self._transform, true)
-  local sonCfg = (Cfg.cfg_item_son_architecture)[building:GetBuildId()]
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
+  building._transform:SetParent(self._transform, true)
+  local sonCfg = Cfg.cfg_item_son_architecture[building:GetBuildId()]
   if sonCfg == nil then
-    (self._childrenFree)[building:InsID()] = building
+    self._childrenFree[building:InsID()] = building
   else
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R3 in 'UnsetPending'
-
     if sonCfg.FatherSlot ~= nil then
-      (self._childrenFixed)[sonCfg.FatherSlot] = building
+      self._childrenFixed[sonCfg.FatherSlot] = building
+    else
     end
   end
   self:FlushFixedReplaceNode()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.RemoveChild = function(self, building)
-  -- function num : 0_18 , upvalues : _ENV
+function HomeBuildingFather:RemoveChild(building)
   if building == nil then
-    return 
+    return
   end
-  local sonCfg = (Cfg.cfg_item_son_architecture)[building:GetBuildId()]
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
+  local sonCfg = Cfg.cfg_item_son_architecture[building:GetBuildId()]
   if sonCfg == nil then
-    (self._childrenFree)[building:InsID()] = nil
+    self._childrenFree[building:InsID()] = nil
   else
     if sonCfg.FatherSlot ~= nil then
-      local fixedChild = (self._childrenFixed)[sonCfg.FatherSlot]
-      -- DECOMPILER ERROR at PC25: Confused about usage of register: R4 in 'UnsetPending'
-
+      local fixedChild = self._childrenFixed[sonCfg.FatherSlot]
       if fixedChild == building then
-        (self._childrenFixed)[sonCfg.FatherSlot] = nil
+        self._childrenFixed[sonCfg.FatherSlot] = nil
       end
+    else
     end
   end
-  do
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._children)[building:InsID()] = nil
-    building.Parent = nil
-    building:SetParentAssetID(0)
-    ;
-    (building._transform):SetParent(((self._homelandClient):SceneManager()):BuildingRootTrans(), true)
-    self:FlushFixedReplaceNode()
-  end
+  self._children[building:InsID()] = nil
+  building.Parent = nil
+  building:SetParentAssetID(0)
+  building._transform:SetParent(self._homelandClient:SceneManager():BuildingRootTrans(), true)
+  self:FlushFixedReplaceNode()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.SetPos = function(self, pos)
-  -- function num : 0_19 , upvalues : _ENV
-  ((HomeBuildingFather.super).SetPos)(self, pos)
-  for _,childBuilding in pairs(self._children) do
+function HomeBuildingFather:SetPos(pos)
+  HomeBuildingFather.super.SetPos(self, pos)
+  for _, childBuilding in pairs(self._children) do
     childBuilding:UpdatePos()
     childBuilding:UpdateAABB()
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.SetRotY = function(self, y)
-  -- function num : 0_20 , upvalues : _ENV
-  ((HomeBuildingFather.super).SetRotY)(self, y)
-  for _,childBuilding in pairs(self._children) do
+function HomeBuildingFather:SetRotY(y)
+  HomeBuildingFather.super.SetRotY(self, y)
+  for _, childBuilding in pairs(self._children) do
     childBuilding:UpdatePos()
     childBuilding:UpdateRotY()
     childBuilding:UpdateAABB()
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.Delete = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  ((HomeBuildingFather.super).Delete)(self)
-  for _,childBuilding in pairs(self._children) do
+function HomeBuildingFather:Delete()
+  HomeBuildingFather.super.Delete(self)
+  for _, childBuilding in pairs(self._children) do
     childBuilding:Delete()
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.ShowBuilding = function(self, show)
-  -- function num : 0_22
-  (self._go):SetActive(show)
+function HomeBuildingFather:ShowBuilding(show)
+  self._go:SetActive(show)
   self._active = show
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.CheckInArea = function(self, areaID, building)
-  -- function num : 0_23 , upvalues : _ENV
+function HomeBuildingFather:CheckInArea(areaID, building)
   for i = 1, #self._areaList do
-    if ((self._areaList)[i]):GetID() == areaID then
-      local area = ((self._areaList)[i]):GetHomeArea()
+    if self._areaList[i]:GetID() == areaID then
+      local area = self._areaList[i]:GetHomeArea()
       local points = building:GetPoints()
-      for _,point in ipairs(points) do
+      for _, point in ipairs(points) do
         if not area:Contains(point) then
           return false
         end
@@ -433,94 +327,64 @@ HomeBuildingFather.CheckInArea = function(self, areaID, building)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.InitFixedReplaceNode = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function HomeBuildingFather:InitFixedReplaceNode()
   local slotsCount = 0
-  local fatherFixedSlots = (self._cfgFatherArch).FixedSlots
+  local fatherFixedSlots = self._cfgFatherArch.FixedSlots
   if fatherFixedSlots ~= nil then
     slotsCount = #fatherFixedSlots
   end
-  local cfg_fixed_positions = (Cfg.cfg_homeland_building_fixed_position)({})
+  local cfg_fixed_positions = Cfg.cfg_homeland_building_fixed_position({})
   for i = 1, slotsCount do
     local fatherSlot = fatherFixedSlots[i]
     local cfg_fixed_position = cfg_fixed_positions[fatherSlot]
-    local replaceNode = nil
+    local replaceNode
     if cfg_fixed_position ~= nil then
       replaceNode = cfg_fixed_position.ReplaceNode
     end
     if replaceNode ~= nil then
       local replacedTransform = self:FindRecursively(replaceNode)
-      -- DECOMPILER ERROR at PC26: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self._fixedReplaceNode)[fatherSlot] = replacedTransform
+      self._fixedReplaceNode[fatherSlot] = replacedTransform
     end
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.FlushFixedReplaceNode = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  for k,v in pairs(self._fixedReplaceNode) do
-    local fixedBuilding = (self._childrenFixed)[k]
+function HomeBuildingFather:FlushFixedReplaceNode()
+  for k, v in pairs(self._fixedReplaceNode) do
+    local fixedBuilding = self._childrenFixed[k]
     local isVisible = false
     if fixedBuilding == nil then
       isVisible = true
-    else
-      if fixedBuilding:IsDelete() then
-        isVisible = true
-      end
+    elseif fixedBuilding:IsDelete() then
+      isVisible = true
     end
-    ;
-    (v.gameObject):SetActive(isVisible)
+    v.gameObject:SetActive(isVisible)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.GetAllChildren = function(self)
-  -- function num : 0_26
+function HomeBuildingFather:GetAllChildren()
   return self._children
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.GetChild = function(self, insId)
-  -- function num : 0_27
-  return (self._children)[insId]
+function HomeBuildingFather:GetChild(insId)
+  return self._children[insId]
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.GetAllFreeChildren = function(self)
-  -- function num : 0_28
+function HomeBuildingFather:GetAllFreeChildren()
   return self._childrenFree
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.GetFreeChild = function(self, insId)
-  -- function num : 0_29
-  return (self._childrenFree)[insId]
+function HomeBuildingFather:GetFreeChild(insId)
+  return self._childrenFree[insId]
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.GetFixedChild = function(self, slotId)
-  -- function num : 0_30
-  return (self._childrenFixed)[slotId]
+function HomeBuildingFather:GetFixedChild(slotId)
+  return self._childrenFixed[slotId]
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.InitFreeArea = function(self)
-  -- function num : 0_31
+function HomeBuildingFather:InitFreeArea()
   local count = 0
-  local cfgFreeArea = (self._cfgFatherArch).FreeArea
-  local cfgFreeAreaBlackList = (self._cfgFatherArch).FreeAreaBlackList
+  local cfgFreeArea = self._cfgFatherArch.FreeArea
+  local cfgFreeAreaBlackList = self._cfgFatherArch.FreeAreaBlackList
   if cfgFreeArea ~= nil then
     count = #cfgFreeArea
   else
@@ -528,10 +392,7 @@ HomeBuildingFather.InitFreeArea = function(self)
   end
   for i = 1, count do
     local id = cfgFreeArea[i]
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._dicFreeArea)[id] = id
+    self._dicFreeArea[id] = id
   end
   if cfgFreeAreaBlackList ~= nil then
     count = #cfgFreeAreaBlackList
@@ -540,127 +401,83 @@ HomeBuildingFather.InitFreeArea = function(self)
   end
   for i = 1, count do
     local id = cfgFreeAreaBlackList[i]
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._dicFreeAreaBlackList)[id] = id
+    self._dicFreeAreaBlackList[id] = id
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.IsFreeArea = function(self, areaID)
-  -- function num : 0_32
-  do return (self._dicFreeArea)[areaID] == areaID end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomeBuildingFather:IsFreeArea(areaID)
+  return self._dicFreeArea[areaID] == areaID
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.GetAllFreeArea = function(self)
-  -- function num : 0_33
+function HomeBuildingFather:GetAllFreeArea()
   return self._dicFreeArea
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.InFreeAreaBlackList = function(self, buildingId)
-  -- function num : 0_34
-  do return (self._dicFreeAreaBlackList)[buildingId] == buildingId end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomeBuildingFather:InFreeAreaBlackList(buildingId)
+  return self._dicFreeAreaBlackList[buildingId] == buildingId
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.ShowBuildingArea = function(self, areaId, isShow, showMindMesh)
-  -- function num : 0_35 , upvalues : _ENV
-  do
-    if self._showBuildingArea ~= nil then
-      local homeArea = (self._showBuildingArea):GetHomeArea()
-      homeArea:ShowArea(false)
+function HomeBuildingFather:ShowBuildingArea(areaId, isShow, showMindMesh)
+  if self._showBuildingArea ~= nil then
+    local homeArea = self._showBuildingArea:GetHomeArea()
+    homeArea:ShowArea(false)
+  end
+  self._showBuildingArea = nil
+  for k, v in pairs(self._areaList) do
+    if v:GetID() == areaId then
+      self._showBuildingArea = v
+      break
     end
+  end
+  if self._showBuildingArea ~= nil then
+    local homeArea = self._showBuildingArea:GetHomeArea()
+    homeArea:ShowArea(isShow)
+  end
+  if not isShow then
     self._showBuildingArea = nil
-    for k,v in pairs(self._areaList) do
-      if v:GetID() == areaId then
-        self._showBuildingArea = v
-        break
-      end
-    end
-    do
-      do
-        if self._showBuildingArea ~= nil then
-          local homeArea = (self._showBuildingArea):GetHomeArea()
-          homeArea:ShowArea(isShow)
-        end
-        if not isShow then
-          self._showBuildingArea = nil
-        end
-      end
-    end
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.IsShowBuildingArea = function(self, areaId)
-  -- function num : 0_36
+function HomeBuildingFather:IsShowBuildingArea(areaId)
   if self._showBuildingArea == nil then
     return false
   end
-  do return (self._showBuildingArea):GetID() == areaId end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return self._showBuildingArea:GetID() == areaId
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.ShowMovieFreeAreaEffect = function(self, bShow)
-  -- function num : 0_37 , upvalues : _ENV
+function HomeBuildingFather:ShowMovieFreeAreaEffect(bShow)
   if not self.movieFreeObj then
-    self.movieFreeObj = (GameObjectHelper.FindChild)(self._transform, "52710031-2")
+    self.movieFreeObj = GameObjectHelper.FindChild(self._transform, "52710031-2")
   end
   if self.movieFreeObj then
-    ((self.movieFreeObj).gameObject):SetActive(bShow)
+    self.movieFreeObj.gameObject:SetActive(bShow)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.GetPrepareMovieSceneFocusPoint = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function HomeBuildingFather:GetPrepareMovieSceneFocusPoint()
   if not self._movieCamera01 then
-    self._movieCamera01 = (GameObjectHelper.FindChild)(self._transform, "MovieCamera01")
+    self._movieCamera01 = GameObjectHelper.FindChild(self._transform, "MovieCamera01")
   end
   return self._movieCamera01
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.GetPrepareMoviePropFocusPoint = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function HomeBuildingFather:GetPrepareMoviePropFocusPoint()
   if not self._movieCamera02 then
-    self._movieCamera02 = (GameObjectHelper.FindChild)(self._transform, "MovieCamera02")
+    self._movieCamera02 = GameObjectHelper.FindChild(self._transform, "MovieCamera02")
   end
   return self._movieCamera02
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.GetPrepareMovieActorFocusPoint = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function HomeBuildingFather:GetPrepareMovieActorFocusPoint()
   if not self._movieCamera03 then
-    self._movieCamera03 = (GameObjectHelper.FindChild)(self._transform, "MovieCamera03")
+    self._movieCamera03 = GameObjectHelper.FindChild(self._transform, "MovieCamera03")
   end
   return self._movieCamera03
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFather.GetPrepareMovieResultFocusPoint = function(self)
-  -- function num : 0_41 , upvalues : _ENV
+function HomeBuildingFather:GetPrepareMovieResultFocusPoint()
   if not self._endCamera then
-    self._endCamera = (GameObjectHelper.FindChild)(self._transform, "EndingCamera")
+    self._endCamera = GameObjectHelper.FindChild(self._transform, "EndingCamera")
   end
   return self._endCamera
 end
-
-

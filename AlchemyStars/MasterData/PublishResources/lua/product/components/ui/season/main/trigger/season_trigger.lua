@@ -1,65 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/trigger/season_trigger.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonTrigger", Object)
 SeasonTrigger = SeasonTrigger
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonTrigger.Constructor = function(self, seasonID, root)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonTrigger:Constructor(seasonID, root)
   self._root = root
   self._triggers = {}
-  self._seasonModule = (GameGlobal.GetModule)(SeasonModule)
+  self._seasonModule = GameGlobal.GetModule(SeasonModule)
   self:_CreateAllTrigger()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTrigger.FindTrigger = function(self, triggerId)
-  -- function num : 0_1
-  return (self._triggers)[triggerId]
+function SeasonTrigger:FindTrigger(triggerId)
+  return self._triggers[triggerId]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTrigger.Update = function(self, deltaTime)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,trigger in pairs(self._triggers) do
+function SeasonTrigger:Update(deltaTime)
+  for _, trigger in pairs(self._triggers) do
     trigger:Update(deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTrigger.Dispose = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,trigger in pairs(self._triggers) do
+function SeasonTrigger:Dispose()
+  for _, trigger in pairs(self._triggers) do
     trigger:Dispose()
   end
-  ;
-  (table.clear)(self._triggers)
+  table.clear(self._triggers)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTrigger._CreateAllTrigger = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfgs = nil
-  local seasonID = ((self._seasonModule).uiModule):GetSeasonID()
-  if ((self._seasonModule).uiModule):IsBackTrack() then
-    cfgs = (Cfg.cfg_season_map_trigger)({BacktrackID = seasonID})
+function SeasonTrigger:_CreateAllTrigger()
+  local cfgs
+  local seasonID = self._seasonModule.uiModule:GetSeasonID()
+  if self._seasonModule.uiModule:IsBackTrack() then
+    cfgs = Cfg.cfg_season_map_trigger({BacktrackID = seasonID})
   else
-    cfgs = (Cfg.cfg_season_map_trigger)({SeasonID = seasonID})
+    cfgs = Cfg.cfg_season_map_trigger({SeasonID = seasonID})
   end
   if cfgs then
-    for id,cfg in pairs(cfgs) do
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R8 in 'UnsetPending'
-
-      (self._triggers)[cfg.ID] = SeasonTriggerBase:New(self._root, cfg)
+    for id, cfg in pairs(cfgs) do
+      self._triggers[cfg.ID] = SeasonTriggerBase:New(self._root, cfg)
     end
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/talent/skill_tree/ui_season_talent_tree_info_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTalentTreeInfoItem", UICustomWidget)
 UISeasonTalentTreeInfoItem = UISeasonTalentTreeInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTalentTreeInfoItem.OnShow = function(self)
-  -- function num : 0_0
+function UISeasonTalentTreeInfoItem:OnShow()
   self._isActive = true
   self._select = self:GetGameObject("Select")
   self._unSelect = self:GetGameObject("UnSelect")
@@ -36,52 +29,39 @@ UISeasonTalentTreeInfoItem.OnShow = function(self)
   self._Arrow = self:GetGameObject("Arrow")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeInfoItem.RefreshData = function(self, com, skillData, selectSkill, isClickSkill)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonTalentTreeInfoItem:RefreshData(com, skillData, selectSkill, isClickSkill)
   self.com = com
-  self.comCfgID = (self.com):GetComponentCfgId()
-  self.comInfo = (self.com):GetComponentInfo()
-  self.slotCount = (table.count)(((self.comInfo).m_talent_info).m_skill_solt)
+  self.comCfgID = self.com:GetComponentCfgId()
+  self.comInfo = self.com:GetComponentInfo()
+  self.slotCount = table.count(self.comInfo.m_talent_info.m_skill_solt)
   self.skillData = skillData
   self.selectSkill = selectSkill
   if isClickSkill then
     if self._timer then
-      ((GameGlobal.Timer)()):CancelEvent(self._timer)
+      GameGlobal.Timer():CancelEvent(self._timer)
     end
-    ;
-    (self._anim):Stop()
-    ;
-    (self._anim):Play("uianim_UISeasonTalentTree_Info")
-    self._timer = ((GameGlobal.Timer)()):AddEvent(133, function()
-    -- function num : 0_1_0 , upvalues : self
-    self:Select()
-  end
-)
+    self._anim:Stop()
+    self._anim:Play("uianim_UISeasonTalentTree_Info")
+    self._timer = GameGlobal.Timer():AddEvent(133, function()
+      self:Select()
+    end)
   else
     self:Select()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeInfoItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonTalentTreeInfoItem:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
   self._isActive = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeInfoItem.SetData = function(self, com, skillData, selectSkill, upCallback, buyCallback)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonTalentTreeInfoItem:SetData(com, skillData, selectSkill, upCallback, buyCallback)
   self.com = com
-  self.comCfgID = (self.com):GetComponentCfgId()
-  self.comInfo = (self.com):GetComponentInfo()
-  self.slotCount = (table.count)(((self.comInfo).m_talent_info).m_skill_solt)
+  self.comCfgID = self.com:GetComponentCfgId()
+  self.comInfo = self.com:GetComponentInfo()
+  self.slotCount = table.count(self.comInfo.m_talent_info.m_skill_solt)
   self.skillData = skillData
   self.upCallback = upCallback
   self.buyCallback = buyCallback
@@ -89,35 +69,26 @@ UISeasonTalentTreeInfoItem.SetData = function(self, com, skillData, selectSkill,
   self:Select()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeInfoItem.Select = function(self)
-  -- function num : 0_4
-  (self._select):SetActive(self.selectSkill ~= nil)
-  ;
-  (self._unSelect):SetActive(self.selectSkill == nil)
+function UISeasonTalentTreeInfoItem:Select()
+  self._select:SetActive(self.selectSkill ~= nil)
+  self._unSelect:SetActive(self.selectSkill == nil)
   if self.selectSkill then
     self:ShowRootIdInfo()
   else
     self:ShowPassiveAddition()
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeInfoItem.ShowPassiveAddition = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local skillMap = (self.skillData):RootIDMap()
+function UISeasonTalentTreeInfoItem:ShowPassiveAddition()
+  local skillMap = self.skillData:RootIDMap()
   local usingList = {}
-  for key,value in pairs(skillMap) do
+  for key, value in pairs(skillMap) do
     if value.type == SeasonTalentSkillType.Passive and value.level > 0 then
-      (table.insert)(usingList, value)
+      table.insert(usingList, value)
     end
   end
-  ;
-  (self._descPoolGo):SetActive((table.count)(usingList) > 0)
-  if (table.count)(usingList) > 0 then
+  self._descPoolGo:SetActive(0 < table.count(usingList))
+  if 0 < table.count(usingList) then
     local wordList = {}
     local attack = 0
     local defense = 0
@@ -127,7 +98,11 @@ UISeasonTalentTreeInfoItem.ShowPassiveAddition = function(self)
     local activeskill = 0
     for i = 1, #usingList do
       local skill = usingList[i]
-      local cfg = ((Cfg.cfg_component_talent_tree_skill)({ComponentID = self.comCfgID, SkillTypeID = skill.rootid, Level = skill.level}))[1]
+      local cfg = Cfg.cfg_component_talent_tree_skill({
+        ComponentID = self.comCfgID,
+        SkillTypeID = skill.rootid,
+        Level = skill.level
+      })[1]
       if cfg.Attack then
         attack = attack + cfg.Attack
       end
@@ -147,69 +122,54 @@ UISeasonTalentTreeInfoItem.ShowPassiveAddition = function(self)
         activeskill = activeskill + cfg.activeskill
       end
     end
-    if attack > 0 then
+    if 0 < attack then
       local attackStr = "<color=#49fff4>+" .. attack .. "</color>"
-      local desc = (StringTable.Get)("str_season_talent_tree_skil_info_attack", attackStr)
-      ;
-      (table.insert)(wordList, desc)
+      local desc = StringTable.Get("str_season_talent_tree_skil_info_attack", attackStr)
+      table.insert(wordList, desc)
     end
-    if defense > 0 then
+    if 0 < defense then
       local defenseStr = "<color=#49fff4>+" .. defense .. "</color>"
-      local desc = (StringTable.Get)("str_season_talent_tree_skil_info_defense", defenseStr)
-      ;
-      (table.insert)(wordList, desc)
+      local desc = StringTable.Get("str_season_talent_tree_skil_info_defense", defenseStr)
+      table.insert(wordList, desc)
     end
-    if hp > 0 then
+    if 0 < hp then
       local hpStr = "<color=#49fff4>+" .. hp .. "</color>"
-      local desc = (StringTable.Get)("str_season_talent_tree_skil_info_hp", hpStr)
-      ;
-      (table.insert)(wordList, desc)
+      local desc = StringTable.Get("str_season_talent_tree_skil_info_hp", hpStr)
+      table.insert(wordList, desc)
     end
-    if point > 0 then
+    if 0 < point then
       local pointStr = "<color=#49fff4>" .. point .. "</color>"
-      local desc = (StringTable.Get)("str_season_talent_tree_skil_info_linecount", pointStr)
-      ;
-      (table.insert)(wordList, desc)
+      local desc = StringTable.Get("str_season_talent_tree_skil_info_linecount", pointStr)
+      table.insert(wordList, desc)
     end
-    if pointMax > 0 then
+    if 0 < pointMax then
       local pointMaxStr = "<color=#49fff4>" .. pointMax .. "</color>"
-      local desc = (StringTable.Get)("str_season_talent_tree_skil_info_linemax", pointMaxStr)
-      ;
-      (table.insert)(wordList, desc)
+      local desc = StringTable.Get("str_season_talent_tree_skil_info_linemax", pointMaxStr)
+      table.insert(wordList, desc)
     end
-    if activeskill > 0 then
+    if 0 < activeskill then
       local activeskillStr = "<color=#49fff4>" .. activeskill .. "</color>"
-      local desc = (StringTable.Get)("str_season_talent_tree_desc_106", activeskillStr)
-      ;
-      (table.insert)(wordList, desc)
+      local desc = StringTable.Get("str_season_talent_tree_desc_106", activeskillStr)
+      table.insert(wordList, desc)
     end
     local countStr = "<color=#49fff4>" .. self.slotCount .. "</color>"
-    local slotCountDesc = (StringTable.Get)("str_season_talent_tree_skil_info_slot", countStr)
-    ;
-    (table.insert)(wordList, slotCountDesc)
-    ;
-    (self._descPool):SpawnObjects("UISeasonTalentTreeInfoDesc", #wordList)
-    local pools = (self._descPool):GetAllSpawnList()
+    local slotCountDesc = StringTable.Get("str_season_talent_tree_skil_info_slot", countStr)
+    table.insert(wordList, slotCountDesc)
+    self._descPool:SpawnObjects("UISeasonTalentTreeInfoDesc", #wordList)
+    local pools = self._descPool:GetAllSpawnList()
     for i = 1, #wordList do
       local item = pools[i]
       local desc = wordList[i]
       item:SetData(desc)
     end
-    ;
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._descPoolRT)
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._descPoolRT)
   end
-  -- DECOMPILER ERROR: 14 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeInfoItem.ShowRootIdInfo = function(self)
-  -- function num : 0_6
-  local lock = (self.selectSkill).lock
-  ;
-  (self._lock):SetActive(lock)
-  ;
-  (self._unLock):SetActive(not lock)
+function UISeasonTalentTreeInfoItem:ShowRootIdInfo()
+  local lock = self.selectSkill.lock
+  self._lock:SetActive(lock)
+  self._unLock:SetActive(not lock)
   if lock then
     self:ShowLock()
   else
@@ -219,123 +179,103 @@ UISeasonTalentTreeInfoItem.ShowRootIdInfo = function(self)
   self:ShowLvPool()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeInfoItem.ShowLvPool = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local rootid = (self.selectSkill).rootid
-  local level = (self.selectSkill).level
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self.comCfgID, SkillTypeID = rootid})
+function UISeasonTalentTreeInfoItem:ShowLvPool()
+  local rootid = self.selectSkill.rootid
+  local level = self.selectSkill.level
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = self.comCfgID,
+    SkillTypeID = rootid
+  })
   local maxLevel = #cfgs
-  ;
-  (self._lvPool):SpawnObjects("UISeasonTalentTreeInfoLv", maxLevel)
-  local pools = (self._lvPool):GetAllSpawnList()
+  self._lvPool:SpawnObjects("UISeasonTalentTreeInfoLv", maxLevel)
+  local pools = self._lvPool:GetAllSpawnList()
   for i = 1, maxLevel do
     local item = pools[i]
     local lv = i
-    local desc = nil
+    local desc
     if i == 1 then
       lv = nil
-      local cfgs2 = nil
-      if level > 0 then
-        cfgs2 = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self.comCfgID, SkillTypeID = rootid, Level = level})
+      local cfgs2
+      if 0 < level then
+        cfgs2 = Cfg.cfg_component_talent_tree_skill({
+          ComponentID = self.comCfgID,
+          SkillTypeID = rootid,
+          Level = level
+        })
       else
-        cfgs2 = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self.comCfgID, SkillTypeID = rootid, Level = 1})
+        cfgs2 = Cfg.cfg_component_talent_tree_skill({
+          ComponentID = self.comCfgID,
+          SkillTypeID = rootid,
+          Level = 1
+        })
       end
       local cfg = cfgs2[1]
-      desc = (StringTable.Get)(cfg.CurrentDesc)
+      desc = StringTable.Get(cfg.CurrentDesc)
     else
-      do
-        local cfgs2 = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self.comCfgID, SkillTypeID = rootid, Level = lv})
-        do
-          do
-            local cfg = cfgs2[1]
-            desc = (StringTable.Get)(cfg.UpDesc)
-            item:SetData(lv, level, desc)
-            -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
+      local cfgs2 = Cfg.cfg_component_talent_tree_skill({
+        ComponentID = self.comCfgID,
+        SkillTypeID = rootid,
+        Level = lv
+      })
+      local cfg = cfgs2[1]
+      desc = StringTable.Get(cfg.UpDesc)
     end
+    item:SetData(lv, level, desc)
   end
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._lvPoolRT)
-  ;
-  ((GameGlobal.Timer)()):AddEvent(20, function()
-    -- function num : 0_7_0 , upvalues : self
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._lvPoolRT)
+  GameGlobal.Timer():AddEvent(20, function()
     if self._isActive then
-      local height = ((self._lvPoolRT).sizeDelta).y
-      if height > 384 then
-        (self._Arrow):SetActive(true)
+      local height = self._lvPoolRT.sizeDelta.y
+      if 384 < height then
+        self._Arrow:SetActive(true)
       else
-        ;
-        (self._Arrow):SetActive(false)
+        self._Arrow:SetActive(false)
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeInfoItem.ShowIcon = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local rootid = (self.selectSkill).rootid
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self.comCfgID, SkillTypeID = rootid, Level = 1})
+function UISeasonTalentTreeInfoItem:ShowIcon()
+  local rootid = self.selectSkill.rootid
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = self.comCfgID,
+    SkillTypeID = rootid,
+    Level = 1
+  })
   local cfg = cfgs[1]
   if cfg.Icon then
-    (self._icon):LoadImage(cfg.Icon)
+    self._icon:LoadImage(cfg.Icon)
   end
   if cfg.Name then
-    (self._skillName):SetText((StringTable.Get)(cfg.Name))
+    self._skillName:SetText(StringTable.Get(cfg.Name))
   end
-  local typeName = nil
-  if (self.selectSkill).type == SeasonTalentSkillType.Passive then
+  local typeName
+  if self.selectSkill.type == SeasonTalentSkillType.Passive then
     typeName = "str_season_talent_tree_skil_type_1"
-  else
-    if (self.selectSkill).type == SeasonTalentSkillType.Normal then
-      typeName = "str_season_talent_tree_skil_type_3"
-    else
-      if (self.selectSkill).type == SeasonTalentSkillType.Power then
-        typeName = "str_season_talent_tree_skil_type_2"
-      end
-    end
+  elseif self.selectSkill.type == SeasonTalentSkillType.Normal then
+    typeName = "str_season_talent_tree_skil_type_3"
+  elseif self.selectSkill.type == SeasonTalentSkillType.Power then
+    typeName = "str_season_talent_tree_skil_type_2"
   end
-  ;
-  (self._skillType):SetText((StringTable.Get)(typeName))
+  self._skillType:SetText(StringTable.Get(typeName))
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeInfoItem.ShowLock = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local tips = nil
-  local type = (self.selectSkill).type
+function UISeasonTalentTreeInfoItem:ShowLock()
+  local tips
+  local type = self.selectSkill.type
   if type == SeasonTalentSkillType.Passive then
-    local preid = nil
-    local passiveList = (self.skillData):PassiveCfgList()
-    for index,value in ipairs(passiveList) do
-      if value.SkillTypeID ~= (self.selectSkill).rootid then
-        do
-          preid = value.SkillTypeID
-          -- DECOMPILER ERROR at PC21: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC21: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+    local preid
+    local passiveList = self.skillData:PassiveCfgList()
+    for index, value in ipairs(passiveList) do
+      if value.SkillTypeID == self.selectSkill.rootid then
+        break
       end
+      preid = value.SkillTypeID
     end
     if not preid then
-      (Log.error)("###[UISeasonTalentTreeInfoItem] 错误,获取前置核心没获取到，currid:", (self.selectSkill).rootid)
+      Log.error("###[UISeasonTalentTreeInfoItem] 错误,获取前置核心没获取到，currid:", self.selectSkill.rootid)
     else
-      local rootidmap = (self.skillData):RootIDMap()
+      local rootidmap = self.skillData:RootIDMap()
       local preCls = rootidmap[preid]
       if preCls.lock then
         tips = "str_season_talent_tree_skil_info_lock"
@@ -344,183 +284,142 @@ UISeasonTalentTreeInfoItem.ShowLock = function(self)
       end
     end
   else
-    do
-      tips = "str_season_talent_tree_skil_info_lock"
-      ;
-      (self._lockTips):SetText((StringTable.Get)(tips))
-    end
+    tips = "str_season_talent_tree_skil_info_lock"
   end
+  self._lockTips:SetText(StringTable.Get(tips))
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeInfoItem.ShowUnLock = function(self)
-  -- function num : 0_10
-  local level = (self.selectSkill).level
-  ;
-  (self._buy):SetActive(level == 0)
-  ;
-  (self._upLv):SetActive(level > 0)
-  if level > 0 then
+function UISeasonTalentTreeInfoItem:ShowUnLock()
+  local level = self.selectSkill.level
+  self._buy:SetActive(level == 0)
+  self._upLv:SetActive(0 < level)
+  if 0 < level then
     self:ShowUpLv()
   else
     self:ShowBuy()
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeInfoItem.ShowBuy = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonTalentTreeInfoItem:ShowBuy()
   self._buyCostEnough = true
-  local rootid = (self.selectSkill).rootid
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self.comCfgID, SkillTypeID = rootid, Level = 1})
+  local rootid = self.selectSkill.rootid
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = self.comCfgID,
+    SkillTypeID = rootid,
+    Level = 1
+  })
   local cfg = cfgs[1]
-  do
-    if cfg.Price then
-      local tex = nil
-      if (self.selectSkill):Enough() then
-        tex = "<color=#f2f0ff>" .. cfg.Price .. "</color>"
-      else
-        tex = "<color=#ff5656>" .. cfg.Price .. "</color>"
-      end
-      ;
-      (self._buyCost):SetText(tex)
-    end
-    local type = (self.selectSkill).type
-    if type == SeasonTalentSkillType.Passive then
-      ((self._preCost).gameObject):SetActive(true)
-      local idx, preList = (self.skillData):GetSkillIdxAndPreSkill(rootid)
-      if idx == 1 then
-        ((self._preCost).gameObject):SetActive(false)
-      else
-        ;
-        ((self._preCost).gameObject):SetActive(true)
-        local allCost = 0
-        for index,prerootid in ipairs(preList) do
-          local tempCost = (self.skillData):GetSkillCostCount(prerootid, SeasonTalentSkillType.Passive)
-          allCost = allCost + tempCost
-        end
-        local needCost = cfg.NeedCost
-        if not needCost then
-          (Log.error)("###[UISeasonTalentTreeInfoItem] 错误,needCost 为空，rootid:", rootid)
-        end
-        local allCostStr = nil
-        if needCost <= allCost then
-          allCostStr = allCost
-        else
-          allCostStr = "<color=#ff5656>" .. allCost .. "</color>"
-          self._buyCostEnough = false
-        end
-        local preNumber = allCostStr .. "/" .. needCost
-        local tips = (StringTable.Get)("str_season_talent_tree_skil_info_pre", preNumber)
-        ;
-        (self._preCost):SetText(tips)
-      end
+  if cfg.Price then
+    local tex
+    if self.selectSkill:Enough() then
+      tex = "<color=#f2f0ff>" .. cfg.Price .. "</color>"
     else
-      do
-        ;
-        ((self._preCost).gameObject):SetActive(false)
-      end
+      tex = "<color=#ff5656>" .. cfg.Price .. "</color>"
     end
+    self._buyCost:SetText(tex)
+  end
+  local type = self.selectSkill.type
+  if type == SeasonTalentSkillType.Passive then
+    self._preCost.gameObject:SetActive(true)
+    local idx, preList = self.skillData:GetSkillIdxAndPreSkill(rootid)
+    if idx == 1 then
+      self._preCost.gameObject:SetActive(false)
+    else
+      self._preCost.gameObject:SetActive(true)
+      local allCost = 0
+      for index, prerootid in ipairs(preList) do
+        local tempCost = self.skillData:GetSkillCostCount(prerootid, SeasonTalentSkillType.Passive)
+        allCost = allCost + tempCost
+      end
+      local needCost = cfg.NeedCost
+      if not needCost then
+        Log.error("###[UISeasonTalentTreeInfoItem] 错误,needCost 为空，rootid:", rootid)
+      end
+      local allCostStr
+      if allCost >= needCost then
+        allCostStr = allCost
+      else
+        allCostStr = "<color=#ff5656>" .. allCost .. "</color>"
+        self._buyCostEnough = false
+      end
+      local preNumber = allCostStr .. "/" .. needCost
+      local tips = StringTable.Get("str_season_talent_tree_skil_info_pre", preNumber)
+      self._preCost:SetText(tips)
+    end
+  else
+    self._preCost.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeInfoItem.ShowUpLv = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local level = (self.selectSkill).level
-  local rootid = (self.selectSkill).rootid
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self.comCfgID, SkillTypeID = rootid})
+function UISeasonTalentTreeInfoItem:ShowUpLv()
+  local level = self.selectSkill.level
+  local rootid = self.selectSkill.rootid
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = self.comCfgID,
+    SkillTypeID = rootid
+  })
   local maxLevel = #cfgs
-  ;
-  (self._maxLv):SetActive(maxLevel <= level)
-  ;
-  (self._upBtn):SetActive(level < maxLevel)
-  if (self.selectSkill).type == SeasonTalentSkillType.Passive and maxLevel <= level then
-    (self._effGo):SetActive(true)
+  self._maxLv:SetActive(level >= maxLevel)
+  self._upBtn:SetActive(level < maxLevel)
+  if self.selectSkill.type == SeasonTalentSkillType.Passive and level >= maxLevel then
+    self._effGo:SetActive(true)
   else
-    (self._effGo):SetActive(false)
+    self._effGo:SetActive(false)
   end
   if level < maxLevel then
-    local cfgs2 = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self.comCfgID, SkillTypeID = rootid, Level = level + 1})
+    local cfgs2 = Cfg.cfg_component_talent_tree_skill({
+      ComponentID = self.comCfgID,
+      SkillTypeID = rootid,
+      Level = level + 1
+    })
     local cfg = cfgs2[1]
-    local tex = nil
-    if (self.selectSkill):Enough() then
+    local tex
+    if self.selectSkill:Enough() then
       tex = "<color=#f2f0ff>" .. cfg.UpgradeCost .. "</color>"
     else
       tex = "<color=#ff5656>" .. cfg.UpgradeCost .. "</color>"
     end
-    ;
-    (self._upCost):SetText(tex)
+    self._upCost:SetText(tex)
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeInfoItem.UpBtnOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  do
-    if not (self.selectSkill):Enough() then
-      local tips = (StringTable.Get)("str_season_talent_tree_info_not_enough")
-      ;
-      (ToastManager.ShowToast)(tips)
-      return 
-    end
-    ;
-    (self._anim):Stop()
-    ;
-    (self._anim):Play("uianim_UISeasonTalentTree_Info_upgrade")
-    if self._timer then
-      ((GameGlobal.Timer)()):CancelEvent(self._timer)
-    end
-    self._timer = ((GameGlobal.Timer)()):AddEvent(200, function()
-    -- function num : 0_13_0 , upvalues : self
+function UISeasonTalentTreeInfoItem:UpBtnOnClick(go)
+  if not self.selectSkill:Enough() then
+    local tips = StringTable.Get("str_season_talent_tree_info_not_enough")
+    ToastManager.ShowToast(tips)
+    return
+  end
+  self._anim:Stop()
+  self._anim:Play("uianim_UISeasonTalentTree_Info_upgrade")
+  if self._timer then
+    GameGlobal.Timer():CancelEvent(self._timer)
+  end
+  self._timer = GameGlobal.Timer():AddEvent(200, function()
     if self.upCallback then
-      (self.upCallback)()
+      self.upCallback()
     end
-  end
-)
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeInfoItem.BuyBtnOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
-  do
-    if not self._buyCostEnough then
-      local tips = (StringTable.Get)("str_season_talent_tree_pre_cost")
-      ;
-      (ToastManager.ShowToast)(tips)
-      return 
-    end
-    do
-      if not (self.selectSkill):Enough() then
-        local tips = (StringTable.Get)("str_season_talent_tree_info_not_enough")
-        ;
-        (ToastManager.ShowToast)(tips)
-        return 
-      end
-      ;
-      (self._anim):Stop()
-      ;
-      (self._anim):Play("uianim_UISeasonTalentTree_Info_upgrade")
-      if self._timer then
-        ((GameGlobal.Timer)()):CancelEvent(self._timer)
-      end
-      self._timer = ((GameGlobal.Timer)()):AddEvent(200, function()
-    -- function num : 0_14_0 , upvalues : self
+function UISeasonTalentTreeInfoItem:BuyBtnOnClick(go)
+  if not self._buyCostEnough then
+    local tips = StringTable.Get("str_season_talent_tree_pre_cost")
+    ToastManager.ShowToast(tips)
+    return
+  end
+  if not self.selectSkill:Enough() then
+    local tips = StringTable.Get("str_season_talent_tree_info_not_enough")
+    ToastManager.ShowToast(tips)
+    return
+  end
+  self._anim:Stop()
+  self._anim:Play("uianim_UISeasonTalentTree_Info_upgrade")
+  if self._timer then
+    GameGlobal.Timer():CancelEvent(self._timer)
+  end
+  self._timer = GameGlobal.Timer():AddEvent(200, function()
     if self.buyCallback then
-      (self.buyCallback)()
+      self.buyCallback()
     end
-  end
-)
-    end
-  end
+  end)
 end
-
-

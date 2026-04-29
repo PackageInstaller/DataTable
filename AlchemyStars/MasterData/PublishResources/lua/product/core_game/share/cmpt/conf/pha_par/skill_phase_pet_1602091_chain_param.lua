@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_pet_1602091_chain_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhasePet1602091ChainParam", SkillPhaseParamBase)
 SkillPhasePet1602091ChainParam = SkillPhasePet1602091ChainParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhasePet1602091ChainParam.GetPhaseType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhasePet1602091ChainParam:GetPhaseType()
   return SkillViewPhaseType.Pet1602091Chain
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePet1602091ChainParam.Constructor = function(self, t)
-  -- function num : 0_1
+function SkillPhasePet1602091ChainParam:Constructor(t)
   self._animatorTriggerName = t.animatorTriggerName
   self._highJumpEffectDelay = t.highJumpEffectDelay
   self._highJumpEffectID = t.highJumpEffectID
@@ -32,19 +22,14 @@ SkillPhasePet1602091ChainParam.Constructor = function(self, t)
   self._appearDelay = t.appearDelay
 end
 
-local sinsert = function(t, v)
-  -- function num : 0_2 , upvalues : _ENV
+local function sinsert(t, v)
   if not v then
-    return 
+    return
   end
-  ;
-  (table.insert)(t, v)
+  table.insert(t, v)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhasePet1602091ChainParam.GetCacheTable = function(self)
-  -- function num : 0_3 , upvalues : sinsert
+function SkillPhasePet1602091ChainParam:GetCacheTable()
   local t = {}
   sinsert(t, self:GetEffectResCacheInfo(self._highJumpEffectID))
   sinsert(t, self:GetEffectResCacheInfo(self._diveTrajectoryEffectID))
@@ -54,95 +39,54 @@ SkillPhasePet1602091ChainParam.GetCacheTable = function(self)
   return t
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhasePet1602091ChainParam.GetAnimatorTrigger = function(self)
-  -- function num : 0_4
+function SkillPhasePet1602091ChainParam:GetAnimatorTrigger()
   return self._animatorTriggerName
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhasePet1602091ChainParam.GetHighJumpEffectDelay = function(self)
-  -- function num : 0_5
+function SkillPhasePet1602091ChainParam:GetHighJumpEffectDelay()
   return self._highJumpEffectDelay
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhasePet1602091ChainParam.GetHighJumpEffectID = function(self)
-  -- function num : 0_6
+function SkillPhasePet1602091ChainParam:GetHighJumpEffectID()
   return self._highJumpEffectID
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhasePet1602091ChainParam.GetDiveDelay = function(self)
-  -- function num : 0_7
+function SkillPhasePet1602091ChainParam:GetDiveDelay()
   return self._diveDelay
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhasePet1602091ChainParam.GetDiveTrajectoryEffectID = function(self)
-  -- function num : 0_8
+function SkillPhasePet1602091ChainParam:GetDiveTrajectoryEffectID()
   return self._diveTrajectoryEffectID
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhasePet1602091ChainParam.GetDiveEffectFlyTime = function(self)
-  -- function num : 0_9
+function SkillPhasePet1602091ChainParam:GetDiveEffectFlyTime()
   return self._diveEffectFlyTime
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhasePet1602091ChainParam.GetGroundHitEffectID = function(self)
-  -- function num : 0_10
+function SkillPhasePet1602091ChainParam:GetGroundHitEffectID()
   return self._groundHitEffectID
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhasePet1602091ChainParam.GetHitDelay = function(self)
-  -- function num : 0_11
+function SkillPhasePet1602091ChainParam:GetHitDelay()
   return self._hitDelay
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhasePet1602091ChainParam.GetDisappearDelay = function(self)
-  -- function num : 0_12
+function SkillPhasePet1602091ChainParam:GetDisappearDelay()
   return self._disappearDelay
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhasePet1602091ChainParam.GetDisappearEffectID = function(self)
-  -- function num : 0_13
+function SkillPhasePet1602091ChainParam:GetDisappearEffectID()
   return self._disappearEffectID
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhasePet1602091ChainParam.GetAppearEffectDelay = function(self)
-  -- function num : 0_14
+function SkillPhasePet1602091ChainParam:GetAppearEffectDelay()
   return self._appearEffectDelay
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhasePet1602091ChainParam.GetAppearEffectID = function(self)
-  -- function num : 0_15
+function SkillPhasePet1602091ChainParam:GetAppearEffectID()
   return self._appearEffectID
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhasePet1602091ChainParam.GetAppearDelay = function(self)
-  -- function num : 0_16
+function SkillPhasePet1602091ChainParam:GetAppearDelay()
   return self._appearDelay
 end
-
-

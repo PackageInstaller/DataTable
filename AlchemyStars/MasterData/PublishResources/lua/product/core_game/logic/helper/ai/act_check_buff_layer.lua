@@ -1,58 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/act_check_buff_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCheckBuffLayer", AINewNode)
 ActionCheckBuffLayer = ActionCheckBuffLayer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckBuffLayer.InitializeNode = function(self, cfg, context, parentNode, configData)
-  -- function num : 0_0 , upvalues : _ENV
-  ((ActionCheckBuffLayer.super).InitializeNode)(self, cfg, context, parentNode, configData)
+function ActionCheckBuffLayer:InitializeNode(cfg, context, parentNode, configData)
+  ActionCheckBuffLayer.super.InitializeNode(self, cfg, context, parentNode, configData)
   self._buffID = configData[1]
   self._comparisonType = configData[2]
   self._comparisonParam = configData[3]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionCheckBuffLayer.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local buffCmp = (self.m_entityOwn):BuffComponent()
+function ActionCheckBuffLayer:OnUpdate()
+  local buffCmp = self.m_entityOwn:BuffComponent()
   local buffInstance = buffCmp:GetBuffById(self._buffID)
   if buffInstance then
-    local satisfied = nil
+    local satisfied
     local layer = buffInstance:GetLayerCount()
-    if layer ~= self._comparisonParam then
-      satisfied = self._comparisonType ~= ComparisonOperator.EQ
-      if layer == self._comparisonParam then
-        satisfied = self._comparisonType ~= ComparisonOperator.NE
-        if self._comparisonParam >= layer then
-          satisfied = self._comparisonType ~= ComparisonOperator.GT
-          if self._comparisonParam > layer then
-            satisfied = self._comparisonType ~= ComparisonOperator.GE
-            if layer >= self._comparisonParam then
-              satisfied = self._comparisonType ~= ComparisonOperator.LT
-              if layer > self._comparisonParam then
-                do
-                  satisfied = self._comparisonType ~= ComparisonOperator.LE
-                  if satisfied then
-                    return AINewNodeStatus.Success
-                  else
-                    return AINewNodeStatus.Failure
-                  end
-                  do return AINewNodeStatus.Failure end
-                  -- DECOMPILER ERROR: 14 unprocessed JMP targets
-                end
-              end
-            end
-          end
-        end
-      end
+    if self._comparisonType == ComparisonOperator.EQ then
+      satisfied = layer == self._comparisonParam
+    elseif self._comparisonType == ComparisonOperator.NE then
+      satisfied = layer ~= self._comparisonParam
+    elseif self._comparisonType == ComparisonOperator.GT then
+      satisfied = layer > self._comparisonParam
+    elseif self._comparisonType == ComparisonOperator.GE then
+      satisfied = layer >= self._comparisonParam
+    elseif self._comparisonType == ComparisonOperator.LT then
+      satisfied = layer < self._comparisonParam
+    elseif self._comparisonType == ComparisonOperator.LE then
+      satisfied = layer <= self._comparisonParam
+    end
+    if satisfied then
+      return AINewNodeStatus.Success
+    else
+      return AINewNodeStatus.Failure
     end
   end
+  return AINewNodeStatus.Failure
 end
-
-

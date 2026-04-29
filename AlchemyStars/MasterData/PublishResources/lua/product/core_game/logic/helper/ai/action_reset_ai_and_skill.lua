@@ -1,42 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_reset_ai_and_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionResetAIAndSkill", AINewNode)
 ActionResetAIAndSkill = ActionResetAIAndSkill
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionResetAIAndSkill.Constructor = function(self)
-  -- function num : 0_0
+function ActionResetAIAndSkill:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionResetAIAndSkill.OnBegin = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ActionResetAIAndSkill:OnBegin()
   self:SetRuntimeData("RoundCount", 0)
   self:SetRuntimeData("NextRoundCount", 1)
-  local MonsterID = ((self.m_entityOwn):MonsterID()):GetMonsterID()
-  local cfgService = (self._world):GetService("Config")
+  local MonsterID = self.m_entityOwn:MonsterID():GetMonsterID()
+  local cfgService = self._world:GetService("Config")
   local monsterConfigData = cfgService:GetMonsterConfigData()
   local crazySkillList = monsterConfigData:GetMonsterSkillIDs(MonsterID)
   self:SetSkillList(crazySkillList)
-  ;
-  (self.m_logicOwn):ReSelectWorkSkill()
+  self.m_logicOwn:ReSelectWorkSkill()
   self:PrintLog("重置回合数和技能列表")
   local aiList = monsterConfigData:GetMonsterAIID(MonsterID)
   if aiList[1] then
-    (self.m_entityOwn):ReplaceAI(AILogicPeriodType.Main, {(aiList[1])[1]}, (aiList[1])[2])
+    self.m_entityOwn:ReplaceAI(AILogicPeriodType.Main, {
+      aiList[1][1]
+    }, aiList[1][2])
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionResetAIAndSkill.OnUpdate = function(self, dt)
-  -- function num : 0_2 , upvalues : _ENV
+function ActionResetAIAndSkill:OnUpdate(dt)
   return AINewNodeStatus.Success
 end
-
-

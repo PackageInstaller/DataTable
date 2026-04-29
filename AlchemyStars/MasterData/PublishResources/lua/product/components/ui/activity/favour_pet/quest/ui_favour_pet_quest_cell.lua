@@ -1,107 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/favour_pet/quest/ui_favour_pet_quest_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFavourPetQuestCell", UICustomWidget)
 UIFavourPetQuestCell = UIFavourPetQuestCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFavourPetQuestCell.SetData = function(self, index, campaign, quest, status, clickCallback, tipsCallback)
-  -- function num : 0_0 , upvalues : _ENV
+function UIFavourPetQuestCell:SetData(index, campaign, quest, status, clickCallback, tipsCallback)
   self._index = index
   self._campaign = campaign
   self._quest = quest:QuestInfo()
-  if not status then
-    self._state = CampaignQuestStatus.CQS_Over
-    self._clickCallback = clickCallback
-    self._tipsCallback = tipsCallback
-    self:_Refresh()
-  end
+  self._state = status or CampaignQuestStatus.CQS_Over
+  self._clickCallback = clickCallback
+  self._tipsCallback = tipsCallback
+  self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestCell._Refresh = function(self)
-  -- function num : 0_1
+function UIFavourPetQuestCell:_Refresh()
   self:_SetTitle()
   self:_SetItem()
   self:_SetState(self._state)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestCell.PlayAnimationInSequence = function(self, index)
-  -- function num : 0_2 , upvalues : _ENV
+function UIFavourPetQuestCell:PlayAnimationInSequence(index)
   local animName, duration = "uieff_UIFavourPet_Quest_Cell_in", 333
   local delay = index * 66
-  ;
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", "_root", animName, delay, duration, nil, false)
+  UIWidgetHelper.PlayAnimationInSequence(self, "_anim", "_root", animName, delay, duration, nil, false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestCell._SetTitle = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local title = (StringTable.Get)((self._quest).CondDesc)
-  local cur, total = (self._quest).cur_progress, (self._quest).total_progress
-  local text = (string.format)("%s(%s/%s)", title, cur, total)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtDescProg", text)
+function UIFavourPetQuestCell:_SetTitle()
+  local title = StringTable.Get(self._quest.CondDesc)
+  local cur, total = self._quest.cur_progress, self._quest.total_progress
+  local text = string.format("%s(%s/%s)", title, cur, total)
+  UIWidgetHelper.SetLocalizationText(self, "_txtDescProg", text)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestCell._SetItem = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self._quest).rewards then
-    local roleAsset = ((self._quest).rewards)[1]
-  end
-  ;
-  (UIWidgetHelper.SetItemIcon)(self, roleAsset.assetid, "_rewardIcon")
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_rewardCount", "*" .. roleAsset.count)
+function UIFavourPetQuestCell:_SetItem()
+  local roleAsset = self._quest.rewards and self._quest.rewards[1]
+  UIWidgetHelper.SetItemIcon(self, roleAsset.assetid, "_rewardIcon")
+  UIWidgetHelper.SetLocalizationText(self, "_rewardCount", "*" .. roleAsset.count)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestCell._SetState = function(self, state)
-  -- function num : 0_5 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-[CampaignQuestStatus.CQS_NotStart] = {"state_NotStart", "_bg_Mask"}
-, 
-[CampaignQuestStatus.CQS_Accepted] = {"state_Accepted"}
-, 
-[CampaignQuestStatus.CQS_Completed] = {"state_Completed"}
-, 
-[CampaignQuestStatus.CQS_Taken] = {"state_Taken", "_bg_Mask"}
-, 
-[CampaignQuestStatus.CQS_Over] = {"state_Over", "_bg_Mask"}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+function UIFavourPetQuestCell:_SetState(state)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    [CampaignQuestStatus.CQS_NotStart] = {
+      "state_NotStart",
+      "_bg_Mask"
+    },
+    [CampaignQuestStatus.CQS_Accepted] = {
+      "state_Accepted"
+    },
+    [CampaignQuestStatus.CQS_Completed] = {
+      "state_Completed"
+    },
+    [CampaignQuestStatus.CQS_Taken] = {
+      "state_Taken",
+      "_bg_Mask"
+    },
+    [CampaignQuestStatus.CQS_Over] = {"state_Over", "_bg_Mask"}
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestCell.RewardOnClick = function(self, go)
-  -- function num : 0_6
+function UIFavourPetQuestCell:RewardOnClick(go)
   if self._tipsCallback then
-    if (self._quest).rewards then
-      local roleAsset = ((self._quest).rewards)[1]
-    end
-    ;
-    (self._tipsCallback)(roleAsset.assetid, (go.transform).position)
+    local roleAsset = self._quest.rewards and self._quest.rewards[1]
+    self._tipsCallback(roleAsset.assetid, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestCell.CompletedBtnOnClick = function(self, go)
-  -- function num : 0_7
+function UIFavourPetQuestCell:CompletedBtnOnClick(go)
   if self._clickCallback then
-    (self._clickCallback)(self._quest)
+    self._clickCallback(self._quest)
   end
 end
-
-

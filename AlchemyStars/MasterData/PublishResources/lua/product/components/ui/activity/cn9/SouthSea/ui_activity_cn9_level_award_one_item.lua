@@ -1,68 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn9/SouthSea/ui_activity_cn9_level_award_one_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIACtivityCN9LevelAwardOneItem", UICustomWidget)
 UIACtivityCN9LevelAwardOneItem = UIACtivityCN9LevelAwardOneItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIACtivityCN9LevelAwardOneItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIACtivityCN9LevelAwardOneItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIACtivityCN9LevelAwardOneItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIACtivityCN9LevelAwardOneItem:InitWidget()
   self.icon = self:GetUIComponent("RawImageLoader", "Icon")
   self.got = self:GetGameObject("Got")
   self._Count = self:GetUIComponent("UILocalizationText", "Count")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIACtivityCN9LevelAwardOneItem.SetData = function(self, award, ClickCB)
-  -- function num : 0_2
+function UIACtivityCN9LevelAwardOneItem:SetData(award, ClickCB)
   self.award = award
-  self.id = (self.award)[1]
+  self.id = self.award[1]
   self.click = ClickCB
   self:_SetIcon()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIACtivityCN9LevelAwardOneItem._SetIcon = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local itemId = (self.award)[1]
-  local count = (self.award)[2]
-  self._cfg_item = (Cfg.cfg_item)[itemId]
+function UIACtivityCN9LevelAwardOneItem:_SetIcon()
+  local itemId = self.award[1]
+  local count = self.award[2]
+  self._cfg_item = Cfg.cfg_item[itemId]
   if self._cfg_item == nil then
-    (Log.fatal)("[quest] error --> cfg_item is nil ! id --> " .. itemId)
-    return 
+    Log.fatal("[quest] error --> cfg_item is nil ! id --> " .. itemId)
+    return
   end
-  local icon = (self._cfg_item).Icon
-  ;
-  (self.icon):LoadImage(icon)
-  ;
-  (self._Count):SetText(count)
+  local icon = self._cfg_item.Icon
+  self.icon:LoadImage(icon)
+  self._Count:SetText(count)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIACtivityCN9LevelAwardOneItem.ClickBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIACtivityCN9LevelAwardOneItem:ClickBtnOnClick(go)
   if self.click then
-    (self.click)(self.id)
+    self.click(self.id)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIACtivityCN9LevelAwardOneItem.SetPass = function(self, pass)
-  -- function num : 0_5
-  (self.got):SetActive(pass)
+function UIACtivityCN9LevelAwardOneItem:SetPass(pass)
+  self.got:SetActive(pass)
 end
-
-

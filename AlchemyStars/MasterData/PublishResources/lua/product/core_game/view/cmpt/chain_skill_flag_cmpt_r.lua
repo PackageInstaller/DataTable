@@ -1,55 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/chain_skill_flag_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChainSkillFlagComponent", Object)
 ChainSkillFlagComponent = ChainSkillFlagComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChainSkillFlagComponent.Constructor = function(self)
-  -- function num : 0_0
+function ChainSkillFlagComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ChainSkillFlag = function(self)
-  -- function num : 0_1
-  return self:GetComponent((self.WEComponentsEnum).ChainSkillFlag)
+function Entity:ChainSkillFlag()
+  return self:GetComponent(self.WEComponentsEnum.ChainSkillFlag)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasChainSkillFlag = function(self)
-  -- function num : 0_2
-  return self:HasComponent((self.WEComponentsEnum).ChainSkillFlag)
+function Entity:HasChainSkillFlag()
+  return self:HasComponent(self.WEComponentsEnum.ChainSkillFlag)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddChainSkillFlag = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ChainSkillFlag
+function Entity:AddChainSkillFlag()
+  local index = self.WEComponentsEnum.ChainSkillFlag
   local component = ChainSkillFlagComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceChainSkillFlag = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ChainSkillFlag
+function Entity:ReplaceChainSkillFlag()
+  local index = self.WEComponentsEnum.ChainSkillFlag
   local component = ChainSkillFlagComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveChainSkillFlag = function(self)
-  -- function num : 0_5
+function Entity:RemoveChainSkillFlag()
   if self:HasChainSkillFlag() then
-    self:RemoveComponent((self.WEComponentsEnum).ChainSkillFlag)
+    self:RemoveComponent(self.WEComponentsEnum.ChainSkillFlag)
   end
 end
-
-

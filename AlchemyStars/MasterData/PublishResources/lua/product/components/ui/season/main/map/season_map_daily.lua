@@ -1,21 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/season_map_daily.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapDaily", Object)
 SeasonMapDaily = SeasonMapDaily
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapDaily.Constructor = function(self, manager, compoentID, loader)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMapDaily:Constructor(manager, compoentID, loader)
   self._seasonMapManager = manager
-  local cfgs = (Cfg.cfg_component_season_daily)({ComponentID = compoentID})
+  local cfgs = Cfg.cfg_component_season_daily({ComponentID = compoentID})
   if cfgs then
     self._dailyComponentCfg = cfgs[1]
   else
-    ;
-    (Log.warn)("SeasonMapDaily cfg_component_season_daily error.")
+    Log.warn("SeasonMapDaily cfg_component_season_daily error.")
   end
   self._state = SeasonDailyState.Lock
   self._isUnlock = true
@@ -24,125 +16,82 @@ SeasonMapDaily.Constructor = function(self, manager, compoentID, loader)
   self._resetPhase = SeasonResetPhase.None
   self._checkTime = 0
   self._serverInfoEmpty = false
-  self._autoBinder = AutoEventBinder:New((GameGlobal.EventDispatcher)())
-  ;
-  (self._autoBinder):BindEvent(GameEventType.OnSeasonDailyReset, self, self._OnSeasonDailyReset)
+  self._autoBinder = AutoEventBinder:New(GameGlobal.EventDispatcher())
+  self._autoBinder:BindEvent(GameEventType.OnSeasonDailyReset, self, self._OnSeasonDailyReset)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.Update = function(self, deltaTime)
-  -- function num : 0_1 , upvalues : _ENV
-  for id,eventPoint in pairs(self._eventPoints) do
+function SeasonMapDaily:Update(deltaTime)
+  for id, eventPoint in pairs(self._eventPoints) do
     eventPoint:Update(deltaTime)
   end
   self:_CheckReset(deltaTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,eventPoint in pairs(self._eventPoints) do
+function SeasonMapDaily:Dispose()
+  for _, eventPoint in pairs(self._eventPoints) do
     eventPoint:Dispose()
   end
-  ;
-  (table.clear)(self._eventPoints)
+  table.clear(self._eventPoints)
   self._resetPhase = SeasonResetPhase.None
-  ;
-  (self._autoBinder):UnBindAllEvents()
+  self._autoBinder:UnBindAllEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.AddEventPoint = function(self, cfgMission)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonMapDaily:AddEventPoint(cfgMission)
   if not cfgMission then
-    return 
+    return
   end
   local missionID = cfgMission.ID
-  if (self._eventPoints)[missionID] then
-    return 
+  if self._eventPoints[missionID] then
+    return
   end
-  local cfgEventPoint = (Cfg.cfg_season_map_eventpoint)[missionID]
+  local cfgEventPoint = Cfg.cfg_season_map_eventpoint[missionID]
   if cfgEventPoint then
     local eventPoint = SeasonMapEventPointDaily:New(self, cfgMission, cfgEventPoint)
     if eventPoint:GetResName() then
-      (self._loader):LoadResource(eventPoint)
+      self._loader:LoadResource(eventPoint)
     else
       eventPoint:CreateVirtualPoint()
     end
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._eventPoints)[missionID] = eventPoint
+    self._eventPoints[missionID] = eventPoint
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.GetEventPoint = function(self, id)
-  -- function num : 0_4
-  return (self._eventPoints)[id]
+function SeasonMapDaily:GetEventPoint(id)
+  return self._eventPoints[id]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.GetEventPoints = function(self)
-  -- function num : 0_5
+function SeasonMapDaily:GetEventPoints()
   return self._eventPoints
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.ComponentCfg = function(self)
-  -- function num : 0_6
+function SeasonMapDaily:ComponentCfg()
   return self._dailyComponentCfg
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.SetState = function(self, state)
-  -- function num : 0_7 , upvalues : _ENV
+function SeasonMapDaily:SetState(state)
   self._state = state
   self:SetUnlock(self._state == SeasonDailyState.Unlock)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.GetState = function(self)
-  -- function num : 0_8
+function SeasonMapDaily:GetState()
   return self._state
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.IsUnlock = function(self)
-  -- function num : 0_9
+function SeasonMapDaily:IsUnlock()
   return self._isUnlock
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.SetUnlock = function(self, unlock)
-  -- function num : 0_10
+function SeasonMapDaily:SetUnlock(unlock)
   self._isUnlock = unlock
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.GetServerInfoEmpty = function(self)
-  -- function num : 0_11
+function SeasonMapDaily:GetServerInfoEmpty()
   return self._serverInfoEmpty
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.CheckEventPointCondition = function(self, map)
-  -- function num : 0_12 , upvalues : _ENV
+function SeasonMapDaily:CheckEventPointCondition(map)
   if self._isUnlock then
-    for id,eventPoint in pairs(self._eventPoints) do
+    for id, eventPoint in pairs(self._eventPoints) do
       local result, progress = eventPoint:CheckCondition(map)
       if result then
         eventPoint:PlayExpress(progress, SeasonExpressTriggerType.Passive)
@@ -151,28 +100,19 @@ SeasonMapDaily.CheckEventPointCondition = function(self, map)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.GetEventPointsByType = function(self, eventPointType, force)
-  -- function num : 0_13 , upvalues : _ENV
-  local result = nil
-  for _,eventPoint in pairs(self._eventPoints) do
-    if (eventPoint:DiffAble() and eventPoint:ModeAble()) or force then
-      if not result then
-        result = {}
-      end
-      ;
-      (table.insert)(result, eventPoint)
+function SeasonMapDaily:GetEventPointsByType(eventPointType, force)
+  local result
+  for _, eventPoint in pairs(self._eventPoints) do
+    if eventPoint:EventPointType() == eventPointType and (eventPoint:DiffAble() and eventPoint:ModeAble() or force) then
+      result = result or {}
+      table.insert(result, eventPoint)
     end
   end
   return result
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.EventPointPlaying = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  for _,eventPoint in pairs(self._eventPoints) do
+function SeasonMapDaily:EventPointPlaying()
+  for _, eventPoint in pairs(self._eventPoints) do
     local isPlaying, id = eventPoint:IsPlaying()
     if isPlaying then
       return isPlaying, id
@@ -181,156 +121,116 @@ SeasonMapDaily.EventPointPlaying = function(self)
   return false, nil
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.GetAllPRIDs = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function SeasonMapDaily:GetAllPRIDs()
   local ids = {}
-  for _,eventPoint in pairs(self._eventPoints) do
-    (table.insert)(ids, eventPoint:PRID())
+  for _, eventPoint in pairs(self._eventPoints) do
+    table.insert(ids, eventPoint:PRID())
   end
   return ids
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.TrySyncPRIDs = function(self, SuccCallBack)
-  -- function num : 0_16 , upvalues : _ENV
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
-  local componentInfo = (seasonModule:GetCurSeasonObj()):GetComponentInfo(ECCampaignSeasonComponentID.SEASON_MISSION)
-  local serverInfo = (componentInfo.m_daily_info).m_save_info
+function SeasonMapDaily:TrySyncPRIDs(SuccCallBack)
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
+  local componentInfo = seasonModule:GetCurSeasonObj():GetComponentInfo(ECCampaignSeasonComponentID.SEASON_MISSION)
+  local serverInfo = componentInfo.m_daily_info.m_save_info
   local change = false
   local ids = {}
-  if (table.count)(serverInfo) <= 0 then
+  if table.count(serverInfo) <= 0 then
     self._serverInfoEmpty = true
   end
-  for _,eventPoint in pairs(self._eventPoints) do
+  for _, eventPoint in pairs(self._eventPoints) do
     change = change or serverInfo[eventPoint:GetID()] ~= eventPoint:PRID()
     ids[eventPoint:GetID()] = eventPoint:PRID()
   end
   if change then
-    (Log.info)("SeasonMapDaily TrySyncRPIDs.")
-    ;
-    ((GameGlobal.UIStateManager)()):Lock("SeasonMapDailyTrySyncRPIDs")
-    ;
-    (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_16_0 , upvalues : _ENV, ids, SuccCallBack
-    local res = ((GameGlobal.GetModule)(SeasonModule)):HandleSeasonPointClientData(TT, ids)
-    if res:GetSucc() and SuccCallBack then
-      SuccCallBack()
-    end
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("SeasonMapDailyTrySyncRPIDs")
-  end
-, self)
+    Log.info("SeasonMapDaily TrySyncRPIDs.")
+    GameGlobal.UIStateManager():Lock("SeasonMapDailyTrySyncRPIDs")
+    TaskManager:GetInstance():StartTask(function(TT)
+      local res = GameGlobal.GetModule(SeasonModule):HandleSeasonPointClientData(TT, ids)
+      if res:GetSucc() and SuccCallBack then
+        SuccCallBack()
+      end
+      GameGlobal.UIStateManager():UnLock("SeasonMapDailyTrySyncRPIDs")
+    end, self)
   else
-    (Log.info)("SeasonMapDaily no change.")
+    Log.info("SeasonMapDaily no change.")
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.MoveToEventPoint = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function SeasonMapDaily:MoveToEventPoint()
   if self._state == SeasonDailyState.Unlock then
-    local uiSeasonModule = (GameGlobal.GetUIModule)(SeasonModule)
-    local player = ((uiSeasonModule:SeasonManager()):SeasonPlayerManager()):GetPlayer()
+    local uiSeasonModule = GameGlobal.GetUIModule(SeasonModule)
+    local player = uiSeasonModule:SeasonManager():SeasonPlayerManager():GetPlayer()
     local position = player:RealPosition()
     local minDistance = 0
-    local targetEventPoint = nil
-    for _,eventPoint in pairs(self._eventPoints) do
-      local distance = (Vector3.Distance)(position, eventPoint:Position())
+    local targetEventPoint
+    for _, eventPoint in pairs(self._eventPoints) do
+      local distance = Vector3.Distance(position, eventPoint:Position())
       if not targetEventPoint then
         minDistance = distance
         targetEventPoint = eventPoint
-      else
-        if distance < minDistance then
-          minDistance = distance
-          targetEventPoint = eventPoint
-        end
+      elseif distance < minDistance then
+        minDistance = distance
+        targetEventPoint = eventPoint
       end
     end
     if targetEventPoint then
-      (uiSeasonModule:SeasonManager()):AutoMoveToEventPoint(targetEventPoint:GetID())
+      uiSeasonModule:SeasonManager():AutoMoveToEventPoint(targetEventPoint:GetID())
     end
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily._OnSeasonDailyReset = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function SeasonMapDaily:_OnSeasonDailyReset()
   self._checkTime = 0
-  if (self._seasonMapManager):EventPointPlaying() then
+  if self._seasonMapManager:EventPointPlaying() then
     self._resetPhase = SeasonResetPhase.Waiting
   else
     self:Reset()
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.Reset = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function SeasonMapDaily:Reset()
   self._resetPhase = SeasonResetPhase.Reseting
-  for _,eventPoint in pairs(self._eventPoints) do
+  for _, eventPoint in pairs(self._eventPoints) do
     local cfg = eventPoint:GetEventPointCfg()
     eventPoint:RandomPR(cfg.PRP)
   end
   self:TrySyncPRIDs(function()
-    -- function num : 0_19_0 , upvalues : _ENV, self
-    for _,eventPoint in pairs(self._eventPoints) do
+    for _, eventPoint in pairs(self._eventPoints) do
       eventPoint:ResetPR()
     end
     self._resetPhase = SeasonResetPhase.Success
-    ;
-    (self._seasonMapManager):CalcDailyState()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSeasonDailyResetSucc)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)((self._dailyComponentCfg).RefreshText))
-    ;
-    (Log.info)("SeasonMapDaily Reset success.")
-  end
-)
+    self._seasonMapManager:CalcDailyState()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSeasonDailyResetSucc)
+    ToastManager.ShowToast(StringTable.Get(self._dailyComponentCfg.RefreshText))
+    Log.info("SeasonMapDaily Reset success.")
+  end)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily._CheckReset = function(self, deltaTime)
-  -- function num : 0_20 , upvalues : _ENV
+function SeasonMapDaily:_CheckReset(deltaTime)
   if self._resetPhase == SeasonResetPhase.Waiting then
     self._checkTime = self._checkTime + deltaTime
     if self._checkTime >= 5000 then
       self._checkTime = 0
-      if not (self._seasonMapManager):EventPointPlaying() then
+      if not self._seasonMapManager:EventPointPlaying() then
         self:Reset()
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.SwitchMapMode = function(self, mapMode)
-  -- function num : 0_21 , upvalues : _ENV
-  for _,eventPoint in pairs(self._eventPoints) do
+function SeasonMapDaily:SwitchMapMode(mapMode)
+  for _, eventPoint in pairs(self._eventPoints) do
     if eventPoint:IsUnlock() then
       eventPoint:SwitchMapMode(mapMode)
     end
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapDaily.TryResumeExpress = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  for _,eventPoint in pairs(self._eventPoints) do
+function SeasonMapDaily:TryResumeExpress()
+  for _, eventPoint in pairs(self._eventPoints) do
     if eventPoint:IsUnlock() then
       eventPoint:TryResumeExpress()
     end
   end
 end
-
-

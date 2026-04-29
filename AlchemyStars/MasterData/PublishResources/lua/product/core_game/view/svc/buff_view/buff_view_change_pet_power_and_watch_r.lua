@@ -1,41 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_change_pet_power_and_watch_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangePetPowerAndWatch", BuffViewBase)
 BuffViewChangePetPowerAndWatch = BuffViewChangePetPowerAndWatch
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangePetPowerAndWatch.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local petPowerStateList = (self._buffResult):GetPetPowerList()
-  for _,petPowerState in pairs(petPowerStateList) do
+function BuffViewChangePetPowerAndWatch:PlayView(TT)
+  local petPowerStateList = self._buffResult:GetPetPowerList()
+  for _, petPowerState in pairs(petPowerStateList) do
     self:_PlayView(TT, petPowerState)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewChangePetPowerAndWatch._PlayView = function(self, TT, petPowerState)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewChangePetPowerAndWatch:_PlayView(TT, petPowerState)
   local entityID = petPowerState.petEntityID
   local petPstID = petPowerState.petPstID
   local curPower = petPowerState.power
   local ready = petPowerState.ready
   local requireNTPowerReady = petPowerState.requireNTPowerReady
-  ;
-  (Log.debug)("BuffViewChangePetPowerAndWatch() pet entity=", entityID, " power=", curPower, " ready=", ready)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetPowerChange, petPstID, curPower, true)
+  Log.debug("BuffViewChangePetPowerAndWatch() pet entity=", entityID, " power=", curPower, " ready=", ready)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PetPowerChange, petPstID, curPower, true)
   if ready then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, ready)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, ready)
   end
   if requireNTPowerReady then
-    local notify = NTPowerReady:New((self._world):GetEntityByID(entityID))
-    ;
-    ((self._world):GetService("PlayBuff")):PlayBuffView(TT, notify)
+    local notify = NTPowerReady:New(self._world:GetEntityByID(entityID))
+    self._world:GetService("PlayBuff"):PlayBuffView(TT, notify)
   end
 end
-
-

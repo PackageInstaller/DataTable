@@ -1,61 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/general/cutscene_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CutsceneManager", Singleton)
 CutsceneManager = CutsceneManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneManager.Init = function(self, uiRootGameObject)
-  -- function num : 0_0 , upvalues : _ENV
-  self._cutsceneRoot = ((uiRootGameObject.transform):Find("UICameras/depth_high/UI/CutSceneCanvas")).gameObject
-  self._highDepthCamera = ((uiRootGameObject.transform):Find("UICameras/depth_high/Camera")):GetComponent(typeof(UnityEngine.Camera))
+function CutsceneManager:Init(uiRootGameObject)
+  self._cutsceneRoot = uiRootGameObject.transform:Find("UICameras/depth_high/UI/CutSceneCanvas").gameObject
+  self._highDepthCamera = uiRootGameObject.transform:Find("UICameras/depth_high/Camera"):GetComponent(typeof(UnityEngine.Camera))
   self._cutsceneList = {}
   self._cutsceneConfig = CutSceneConfig:New()
   self._config = nil
   self._flag = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneManager.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CutsceneManager:Dispose()
   self._cutsceneRoot = nil
-  for _,value in pairs(self._cutsceneList) do
-    (UIHelper.DestroyGameObject)(value)
+  for _, value in pairs(self._cutsceneList) do
+    UIHelper.DestroyGameObject(value)
   end
   self._cutsceneList = nil
   self._cutsceneConfig = nil
   self._config = nil
-  ;
-  ((CutsceneManager.super).Dispose)(self)
+  CutsceneManager.super.Dispose(self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneManager.ExcuteCutsceneIn_Shot = function()
-  -- function num : 0_2 , upvalues : _ENV
+function CutsceneManager.ExcuteCutsceneIn_Shot()
   local self = CutsceneManager:GetInstance()
   local commonRedName = "UICutSceneCommon.prefab"
   local lockKey = "Cutscene_Common_Lock"
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._cutsceneList)[commonRedName] then
-    (self._cutsceneList)[commonRedName] = (UIHelper.GetGameObject)(commonRedName)
+  if not self._cutsceneList[commonRedName] then
+    self._cutsceneList[commonRedName] = UIHelper.GetGameObject(commonRedName)
   end
-  local go = (self._cutsceneList)[commonRedName]
-  ;
-  (go.transform):SetParent((self._cutsceneRoot).transform, false)
+  local go = self._cutsceneList[commonRedName]
+  go.transform:SetParent(self._cutsceneRoot.transform, false)
   go:SetActive(false)
-  local raw = go:GetComponentInChildren(typeof((UnityEngine.UI).RawImage))
+  local raw = go:GetComponentInChildren(typeof(UnityEngine.UI.RawImage))
   raw.color = Color(1, 1, 1, 1)
   local mat = raw.material
   mat:SetFloat("_AlphaScale", 1)
   local shot = go:GetComponentInChildren(typeof(H3DUIBlurHelper))
   local rectTransform = shot:GetComponent("RectTransform")
-  local w = ((rectTransform.rect).size).x
-  local h = ((rectTransform.rect).size).y
+  local w = rectTransform.rect.size.x
+  local h = rectTransform.rect.size.y
   shot:CleanRenderTexture()
   shot.width = w
   shot.height = h
@@ -70,140 +53,101 @@ CutsceneManager.ExcuteCutsceneIn_Shot = function()
   end
   shot:RefreshBlurTexture()
   go:SetActive(true)
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockKey)
+  GameGlobal.UIStateManager():Lock(lockKey)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneManager.ExcuteCutsceneOut_Shot = function()
-  -- function num : 0_3 , upvalues : _ENV
+function CutsceneManager.ExcuteCutsceneOut_Shot()
   local self = CutsceneManager:GetInstance()
   local commonRedName = "UICutSceneCommon.prefab"
   local lockKey = "Cutscene_Common_Lock"
   if not self._cutsceneList then
-    return 
+    return
   end
-  if not (self._cutsceneList)[commonRedName] then
-    return 
+  if not self._cutsceneList[commonRedName] then
+    return
   end
-  local go = (self._cutsceneList)[commonRedName]
+  local go = self._cutsceneList[commonRedName]
   local shot = go:GetComponentInChildren(typeof(H3DUIBlurHelper))
-  local raw = go:GetComponentInChildren(typeof((UnityEngine.UI).RawImage))
+  local raw = go:GetComponentInChildren(typeof(UnityEngine.UI.RawImage))
   local mat = raw.material
   local animTime = 0.5
-  ;
-  (mat:DOFloat(0, "_AlphaScale", animTime)):OnComplete(function()
-    -- function num : 0_3_0 , upvalues : shot, self, _ENV, go, commonRedName, lockKey
+  mat:DOFloat(0, "_AlphaScale", animTime):OnComplete(function()
     if shot then
       shot:CleanRenderTexture()
     end
     if self._cutsceneRoot then
-      (UIHelper.DestroyGameObject)(go)
-      -- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-      ;
-      (self._cutsceneList)[commonRedName] = nil
+      UIHelper.DestroyGameObject(go)
+      self._cutsceneList[commonRedName] = nil
     end
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockKey)
-  end
-)
+    GameGlobal.UIStateManager():UnLock(lockKey)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneManager.ExcuteCutsceneIn = function(uiStateType, callBack, noLock)
-  -- function num : 0_4 , upvalues : _ENV
+function CutsceneManager.ExcuteCutsceneIn(uiStateType, callBack, noLock)
   local self = CutsceneManager:GetInstance()
   self._flag = false
   if self._config then
-    (Log.error)("[CutsceneManager] cutscene is running : " .. (self._config).ResName)
+    Log.error("[CutsceneManager] cutscene is running : " .. self._config.ResName)
   end
-  self._config = ((self._cutsceneConfig).config)[uiStateType]
+  self._config = self._cutsceneConfig.config[uiStateType]
   if self._config then
-    (Log.info)("[CutsceneManager] ExcuteCutsceneIn : " .. (self._config).ResName)
+    Log.info("[CutsceneManager] ExcuteCutsceneIn : " .. self._config.ResName)
   end
   if not self._config and callBack then
     callBack()
   else
-    local destoryDelayOutCfg = (self._config).OnlyEnter and (self._config).DestoryDelayOut or 0
-    local callbackDelay = (self._config).CallBackDelayIn and (self._config).CallBackDelayIn or 0
+    local destoryDelayOutCfg = self._config.OnlyEnter and self._config.DestoryDelayOut or 0
+    local callbackDelay = self._config.CallBackDelayIn and self._config.CallBackDelayIn or 0
     if not noLock then
-      ((GameGlobal.UIStateManager)()):Lock("Cutscene" .. (self._config).ResName .. "Lock")
+      GameGlobal.UIStateManager():Lock("Cutscene" .. self._config.ResName .. "Lock")
     end
-    self:_ExcuteCutscene((self._config).ResName, (self._config).AnimationIn, callBack, callbackDelay, destoryDelayOutCfg)
+    self:_ExcuteCutscene(self._config.ResName, self._config.AnimationIn, callBack, callbackDelay, destoryDelayOutCfg)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneManager.ExcuteCutsceneOut = function(callback)
-  -- function num : 0_5 , upvalues : _ENV
+function CutsceneManager.ExcuteCutsceneOut(callback)
   local self = CutsceneManager:GetInstance()
   if self._config then
-    ((GameGlobal.UIStateManager)()):UnLock("Cutscene" .. (self._config).ResName .. "Lock")
-    self:_ExcuteCutscene((self._config).ResName, (self._config).AnimationOut, nil, 0, (self._config).DestoryDelayOut, callback)
+    GameGlobal.UIStateManager():UnLock("Cutscene" .. self._config.ResName .. "Lock")
+    self:_ExcuteCutscene(self._config.ResName, self._config.AnimationOut, nil, 0, self._config.DestoryDelayOut, callback)
     self._config = nil
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneManager._ExcuteCutscene = function(self, resName, anim, callback, callbackDelay, destroyDelay, outCallback)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R7 in 'UnsetPending'
-
-  if not (self._cutsceneList)[resName] then
-    (self._cutsceneList)[resName] = (UIHelper.GetGameObject)(resName)
+function CutsceneManager:_ExcuteCutscene(resName, anim, callback, callbackDelay, destroyDelay, outCallback)
+  if not self._cutsceneList[resName] then
+    self._cutsceneList[resName] = UIHelper.GetGameObject(resName)
   end
-  local cutsceneObj = (self._cutsceneList)[resName]
+  local cutsceneObj = self._cutsceneList[resName]
   if cutsceneObj == nil then
-    (Log.error)("动效资源不存在:" .. resName)
-    return 
+    Log.error("动效资源不存在:" .. resName)
+    return
   end
-  ;
-  (cutsceneObj.transform):SetParent((self._cutsceneRoot).transform, false)
+  cutsceneObj.transform:SetParent(self._cutsceneRoot.transform, false)
   local animCmp = cutsceneObj:GetComponentInChildren(typeof(UnityEngine.Animation))
   if not animCmp then
-    (Log.error)("动效资源" .. resName .. "不包含Animation组件")
-  else
-    if anim then
-      animCmp:Play(anim)
-    end
+    Log.error("动效资源" .. resName .. "不包含Animation组件")
+  elseif anim then
+    animCmp:Play(anim)
   end
-  ;
-  ((GameGlobal.Timer)()):AddEvent(callbackDelay, function()
-    -- function num : 0_6_0 , upvalues : self
+  GameGlobal.Timer():AddEvent(callbackDelay, function()
     self._flag = true
-  end
-)
+  end)
   if callback then
-    ((GameGlobal.Timer)()):AddEvent(callbackDelay, callback)
+    GameGlobal.Timer():AddEvent(callbackDelay, callback)
   end
-  if destroyDelay > 0 then
-    ((GameGlobal.Timer)()):AddEvent(destroyDelay, function()
-    -- function num : 0_6_1 , upvalues : outCallback, _ENV, cutsceneObj, self, resName
-    if outCallback then
-      outCallback()
-    end
-    ;
-    (UIHelper.DestroyGameObject)(cutsceneObj)
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._cutsceneList)[resName] = nil
-  end
-)
+  if 0 < destroyDelay then
+    GameGlobal.Timer():AddEvent(destroyDelay, function()
+      if outCallback then
+        outCallback()
+      end
+      UIHelper.DestroyGameObject(cutsceneObj)
+      self._cutsceneList[resName] = nil
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneManager.GetSceneFlag = function()
-  -- function num : 0_7 , upvalues : _ENV
+function CutsceneManager.GetSceneFlag()
   local self = CutsceneManager:GetInstance()
   return self._flag
 end
-
-

@@ -1,37 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_backpack/ui_homeland_decompose.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandDecompose", UIController)
 UIHomelandDecompose = UIHomelandDecompose
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandDecompose.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._homelandModule = (GameGlobal.GetUIModule)(HomelandModule)
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
-  self._homelandClient = (self._homelandModule):GetClient()
-  self._buildManager = (self._homelandClient):BuildManager()
+function UIHomelandDecompose:Constructor()
+  self._homelandModule = GameGlobal.GetUIModule(HomelandModule)
+  self._itemModule = GameGlobal.GetModule(ItemModule)
+  self._homelandClient = self._homelandModule:GetClient()
+  self._buildManager = self._homelandClient:BuildManager()
   self._maxCount = 100
   self._curCount = 0
   self._atlas = self:GetAsset("UIHomelandShop.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDecompose.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandDecompose:OnShow(uiParams)
   self._item = uiParams[1]
-  self._cfg = (self._item):GetTemplate()
+  self._cfg = self._item:GetTemplate()
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDecompose._GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandDecompose:_GetComponents()
   self.uianim = self:GetUIComponent("Animation", "uianim")
   self._title = self:GetUIComponent("UILocalizationText", "Title")
   self._itemIcon = self:GetUIComponent("RawImageLoader", "ItemIcon")
@@ -45,231 +32,151 @@ UIHomelandDecompose._GetComponents = function(self)
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._slider = self:GetUIComponent("Slider", "Slider")
   self._countValue = self:GetUIComponent("UILocalizationText", "CountValue")
-  ;
-  ((self._slider).onValueChanged):AddListener(function()
-    -- function num : 0_2_0 , upvalues : self, _ENV
-    self._curCount = (math.min)(self._maxCount, (math.ceil)((self._slider).value))
-    ;
-    (self._countValue):SetText(self._curCount)
-  end
-)
+  self._slider.onValueChanged:AddListener(function()
+    self._curCount = math.min(self._maxCount, math.ceil(self._slider.value))
+    self._countValue:SetText(self._curCount)
+  end)
   self._btnConfirm = self:GetUIComponent("Image", "btnConfirm")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDecompose._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local totalCount = (self._item):GetCount()
-  local unPutCount = (self._buildManager):GetBuildCount((self._cfg).ID)
+function UIHomelandDecompose:_OnValue()
+  local totalCount = self._item:GetCount()
+  local unPutCount = self._buildManager:GetBuildCount(self._cfg.ID)
   self._maxCount = unPutCount
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._slider).maxValue = self._maxCount
+  self._slider.maxValue = self._maxCount
   self._curCount = 0
-  ;
-  (self._itemIcon):LoadImage((self._cfg).Icon)
-  ;
-  (self._itemName):SetText((StringTable.Get)((self._cfg).Name))
-  ;
-  (self._decomposeCount):SetText(self._maxCount)
-  ;
-  (self._putCount):SetText(totalCount - unPutCount)
+  self._itemIcon:LoadImage(self._cfg.Icon)
+  self._itemName:SetText(StringTable.Get(self._cfg.Name))
+  self._decomposeCount:SetText(self._maxCount)
+  self._putCount:SetText(totalCount - unPutCount)
   self:_RefreshSlider()
-  ;
-  (self._decompose):SetActive(false)
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R3 in 'UnsetPending'
-
+  self._decompose:SetActive(false)
   if self._maxCount <= 0 then
-    (self._btnConfirm).sprite = (self._atlas):GetSprite("n17_shop_btn06")
+    self._btnConfirm.sprite = self._atlas:GetSprite("n17_shop_btn06")
   else
-    -- DECOMPILER ERROR at PC55: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._btnConfirm).sprite = (self._atlas):GetSprite("n17_shop_btn09")
+    self._btnConfirm.sprite = self._atlas:GetSprite("n17_shop_btn09")
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDecompose.CloseBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIHomelandDecompose:CloseBtnOnClick(go)
   self:PlayUIHomelandDecomposeOut(function()
-    -- function num : 0_4_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDecompose.PlayUIHomelandDecomposeOut = function(self, callback)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandDecompose:PlayUIHomelandDecomposeOut(callback)
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV, callback
     local key = "UIHomelandDecomposePlayUIHomelandDecomposeOut"
     self:Lock(key)
-    ;
-    (self.uianim):Play("uieffanim_N17_UIHomelandDecompose_out")
+    self.uianim:Play("uieffanim_N17_UIHomelandDecompose_out")
     YIELD(TT, 200)
     self:UnLock(key)
     if callback then
       callback()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDecompose.DecomposeBtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandDecompose:DecomposeBtnOnClick(go)
   if self._maxCount == 0 then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_tree_decompose_notice3"))
-    return 
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_tree_decompose_notice3"))
+    return
   end
-  if self._curCount <= 0 then
-    return 
+  if 0 >= self._curCount then
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, _ENV
-    (self._decompose):SetActive(true)
+    self._decompose:SetActive(true)
     self:_SetDecomposeUIInfo()
     local key = "UIHomelandDecomposeDecomposeBtnOnClick"
     self:Lock(key)
-    ;
-    (self.animDecompose):Play("uieffanim_N17_UIHomelandDecompose_in2")
+    self.animDecompose:Play("uieffanim_N17_UIHomelandDecompose_in2")
     YIELD(TT, 367)
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDecompose.ReduceBtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  self._curCount = (math.max)(0, self._curCount - 1)
+function UIHomelandDecompose:ReduceBtnOnClick(go)
+  self._curCount = math.max(0, self._curCount - 1)
   self:_RefreshSlider()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDecompose.AddBtnOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  self._curCount = (math.min)(self._curCount + 1, self._maxCount)
+function UIHomelandDecompose:AddBtnOnClick(go)
+  self._curCount = math.min(self._curCount + 1, self._maxCount)
   self:_RefreshSlider()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDecompose._RefreshSlider = function(self)
-  -- function num : 0_9
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._slider).value = self._curCount
-  ;
-  (self._countValue):SetText(self._curCount)
+function UIHomelandDecompose:_RefreshSlider()
+  self._slider.value = self._curCount
+  self._countValue:SetText(self._curCount)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDecompose._SetDecomposeUIInfo = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local str = (StringTable.Get)((self._cfg).Name)
+function UIHomelandDecompose:_SetDecomposeUIInfo()
+  local str = StringTable.Get(self._cfg.Name)
   str = str .. "*" .. self._curCount
-  local tipsStr = (StringTable.Get)("str_homeland_decompose_tips", str)
-  ;
-  (self._decomposeTips):SetText(tipsStr)
-  local cfgDecompose = (Cfg.cfg_item_decompose)[(self._cfg).ID]
+  local tipsStr = StringTable.Get("str_homeland_decompose_tips", str)
+  self._decomposeTips:SetText(tipsStr)
+  local cfgDecompose = Cfg.cfg_item_decompose[self._cfg.ID]
   if not cfgDecompose then
-    (Log.error)("UIHomelandDecompose cfg_item_decompose error! " .. (self._cfg).ID)
+    Log.error("UIHomelandDecompose cfg_item_decompose error! " .. self._cfg.ID)
   end
   self._decomposeResult = {}
   local count = #cfgDecompose.Output
   self._maxGotItemCellCount = 10
-  self._items = (self._content):SpawnObjects("UIHomelandDecomposeItem", self._maxGotItemCellCount)
+  self._items = self._content:SpawnObjects("UIHomelandDecomposeItem", self._maxGotItemCellCount)
   self._showItemData = {}
   for i = 1, count do
-    if i <= count then
+    if count >= i then
       local roleAsset = {}
-      roleAsset.assetid = ((cfgDecompose.Output)[i])[1]
-      roleAsset.count = ((cfgDecompose.Output)[i])[2] * self._curCount
-      -- DECOMPILER ERROR at PC63: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self._showItemData)[i] = roleAsset
-      ;
-      (table.insert)(self._decomposeResult, roleAsset)
+      roleAsset.assetid = cfgDecompose.Output[i][1]
+      roleAsset.count = cfgDecompose.Output[i][2] * self._curCount
+      self._showItemData[i] = roleAsset
+      table.insert(self._decomposeResult, roleAsset)
+    else
     end
   end
-  local onSelect = function(idx)
-    -- function num : 0_10_0
+  
+  local function onSelect(idx)
   end
-
+  
   for i = 1, self._maxGotItemCellCount do
-    ((self._items)[i]):SetData(i, (self._showItemData)[i], onSelect)
+    self._items[i]:SetData(i, self._showItemData[i], onSelect)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDecompose.CancleBtnOnClick = function(self, go)
-  -- function num : 0_11
+function UIHomelandDecompose:CancleBtnOnClick(go)
   self:PlayUIHomelandDecomposeOut2(function()
-    -- function num : 0_11_0 , upvalues : self
-    (self._decompose):SetActive(false)
-  end
-)
+    self._decompose:SetActive(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDecompose.PlayUIHomelandDecomposeOut2 = function(self, callback)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHomelandDecompose:PlayUIHomelandDecomposeOut2(callback)
   self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : self, _ENV, callback
     local key = "UIHomelandDecomposeCancleBtnOnClick"
     self:Lock(key)
-    ;
-    (self.animDecompose):Play("uieffanim_N17_UIHomelandDecompose_out2")
+    self.animDecompose:Play("uieffanim_N17_UIHomelandDecompose_out2")
     YIELD(TT, 200)
     if callback then
       callback()
     end
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDecompose.OnSureBtnOnClick = function(self, go)
-  -- function num : 0_13
+function UIHomelandDecompose:OnSureBtnOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_13_0 , upvalues : self
     local key = "UIHomelandDecompose"
     self:Lock(key)
-    local res = (self._itemModule):ItemDecomposeByTemplate(TT, (self._cfg).ID, self._curCount)
+    local res = self._itemModule:ItemDecomposeByTemplate(TT, self._cfg.ID, self._curCount)
     self:UnLock(key)
     if res and res:GetSucc() then
       self:ShowDialog("UIHomeShowAwards", self._decomposeResult, function()
-      -- function num : 0_13_0_0 , upvalues : self
-      self:PlayUIHomelandDecomposeOut2(function()
-        -- function num : 0_13_0_0_0 , upvalues : self
-        self:PlayUIHomelandDecomposeOut(function()
-          -- function num : 0_13_0_0_0_0 , upvalues : self
-          self:CloseDialog()
-        end
-)
-      end
-)
+        self:PlayUIHomelandDecomposeOut2(function()
+          self:PlayUIHomelandDecomposeOut(function()
+            self:CloseDialog()
+          end)
+        end)
+      end)
     end
-)
-    end
-  end
-, self)
+  end, self)
 end
-
-

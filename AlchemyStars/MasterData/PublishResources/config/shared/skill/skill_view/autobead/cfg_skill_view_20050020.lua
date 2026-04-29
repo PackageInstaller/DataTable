@@ -1,21 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/autobead/cfg_skill_view_20050020.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 43, 1, 0, 0, 
-{audioID = 2444, audioType = 1}
-}
-, 
-{2, 2, 0, 1, 1, 0, 
-{" DataSelectDamage,damageIndex=1; PlayFlyEffectCasterToTarget,flyEffectID = 160167107,flyTime = 150,flyTrace = 1,isBlock =0,label=doAgain; Wait,waitTime=50; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; Wait,waitTime=800; "}
-}
-, 
-{3, 3, 0, 1, 1, 150, 
-{" DataSelectDamage,damageIndex=1; PlayTargetBeHitEffect,hitEffectID=160167106,; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=160167106,turnToTarget=1,deathClear=0,label=doAgain; Wait,waitTime=50; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; Wait,waitTime=800; "}
-}
+  {
+    1,
+    1,
+    43,
+    1,
+    0,
+    0,
+    {audioID = 2444, audioType = 1}
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    1,
+    0,
+    {
+      " DataSelectDamage,damageIndex=1; PlayFlyEffectCasterToTarget,flyEffectID = 160167107,flyTime = 150,flyTrace = 1,isBlock =0,label=doAgain; Wait,waitTime=50; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; Wait,waitTime=800; "
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    1,
+    1,
+    150,
+    {
+      " DataSelectDamage,damageIndex=1; PlayTargetBeHitEffect,hitEffectID=160167106,; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=160167106,turnToTarget=1,deathClear=0,label=doAgain; Wait,waitTime=50; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; Wait,waitTime=800; "
+    }
+  }
 }
 return config, "ID", key
-

@@ -1,88 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/animation/aircraft_affinity_anim.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftAffinityAnim", Object)
 AircraftAffinityAnim = AircraftAffinityAnim
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftAffinityAnim.Constructor = function(self, petGameObject, award, affinityTip, onFinish)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftAffinityAnim:Constructor(petGameObject, award, affinityTip, onFinish)
   self._resReqs = {}
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset("uieff_other_light_1.prefab", LoadType.GameObject)
+  local req = ResourceManager:GetInstance():SyncLoadAsset("uieff_other_light_1.prefab", LoadType.GameObject)
   self._lightEft = req.Obj
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self._lightEft).transform).position = (petGameObject.transform).position
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._resReqs)[#self._resReqs + 1] = req
+  self._lightEft.transform.position = petGameObject.transform.position
+  self._resReqs[#self._resReqs + 1] = req
   local tls = {}
   tls[#tls + 1] = EZTL_Callback:New(function()
-    -- function num : 0_0_0 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, true, "AircraftAffinityAnim")
-    ;
-    (self._lightEft):SetActive(true)
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIAircraftUnlockFileController", (StringTable.Get)("str_aircraft_review_story"), (StringTable.Get)("str_aircraft_review_story_en"))
-  end
-, "打开ui")
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, true, "AircraftAffinityAnim")
+    self._lightEft:SetActive(true)
+    GameGlobal.UIStateManager():ShowDialog("UIAircraftUnlockFileController", StringTable.Get("str_aircraft_review_story"), StringTable.Get("str_aircraft_review_story_en"))
+  end, "打开ui")
   tls[#tls + 1] = EZTL_Wait:New(3000, "等3秒")
   tls[#tls + 1] = EZTL_Callback:New(function()
-    -- function num : 0_0_1 , upvalues : self, _ENV
-    (self._lightEft):SetActive(false)
-    ;
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIAircraftUnlockFileController")
-  end
-, "关闭ui")
+    self._lightEft:SetActive(false)
+    GameGlobal.UIStateManager():CloseDialog("UIAircraftUnlockFileController")
+  end, "关闭ui")
   if affinityTip then
     tls[#tls + 1] = EZTL_Callback:New(function()
-    -- function num : 0_0_2 , upvalues : _ENV, affinityTip
-    (ToastManager.ShowToast)(affinityTip)
-  end
-, "toast")
+      ToastManager.ShowToast(affinityTip)
+    end, "toast")
     tls[#tls + 1] = EZTL_Wait:New(1500, "等toast1.5秒")
   end
   if award then
     tls[#tls + 1] = EZTL_Callback:New(function()
-    -- function num : 0_0_3 , upvalues : _ENV, award, onFinish
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", award, onFinish)
-  end
-, "获得物品弹窗")
+      GameGlobal.UIStateManager():ShowDialog("UIGetItemController", award, onFinish)
+    end, "获得物品弹窗")
   end
   tls[#tls + 1] = EZTL_Callback:New(function()
-    -- function num : 0_0_4 , upvalues : self, _ENV
     self:Dispose()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, false, "AircraftAffinityAnim")
-  end
-, "动画播完，析构")
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, false, "AircraftAffinityAnim")
+  end, "动画播完，析构")
   self._timeLine = EZTL_Sequence:New(tls, "动画总时间线，串行")
   self._player = EZTL_Player:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftAffinityAnim.Play = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._player):IsPlaying() then
-    (Log.fatal)("正在播放动画")
-    return 
+function AircraftAffinityAnim:Play()
+  if self._player:IsPlaying() then
+    Log.fatal("正在播放动画")
+    return
   end
-  ;
-  (self._player):Play(self._timeLine)
+  self._player:Play(self._timeLine)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftAffinityAnim.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,req in ipairs(self._resReqs) do
+function AircraftAffinityAnim:Dispose()
+  for _, req in ipairs(self._resReqs) do
     req:Dispose()
   end
 end
-
-

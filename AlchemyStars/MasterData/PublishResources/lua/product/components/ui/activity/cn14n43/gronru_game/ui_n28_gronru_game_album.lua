@@ -1,122 +1,83 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/gronru_game/ui_n28_gronru_game_album.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28GronruGameAlbum", UICustomWidget)
 UIN28GronruGameAlbum = UIN28GronruGameAlbum
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28GronruGameAlbum.Constructor = function(self)
-  -- function num : 0_0
+function UIN28GronruGameAlbum:Constructor()
   self._defaultPage = nil
   self._defaultProject = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAlbum.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN28GronruGameAlbum:OnShow(uiParams)
   self._uiPageContent = self:GetUIComponent("UISelectObjectPath", "uiPageContent")
   self._uiProjectContent = self:GetUIComponent("UISelectObjectPath", "uiProjectRoot")
-  self._uiProjectRoot = (self._uiProjectContent):Engine()
+  self._uiProjectRoot = self._uiProjectContent:Engine()
   self._uiEmptyRoot = self:GetUIComponent("RectTransform", "uiEmptyRoot")
   self:CreatePagePool()
   self:CreateProjectPool()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAlbum.OnHide = function(self)
-  -- function num : 0_2
+function UIN28GronruGameAlbum:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAlbum.CreatePagePool = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN28GronruGameAlbum:CreatePagePool()
   self._pagePool = {}
-  local allPage = (Cfg.cfg_n28_gronru_album_page)({})
-  for k,v in pairs(allPage) do
-    (table.insert)(self._pagePool, v)
+  local allPage = Cfg.cfg_n28_gronru_album_page({})
+  for k, v in pairs(allPage) do
+    table.insert(self._pagePool, v)
     if self._defaultPage == nil and v.OpenType == UIN28GronruPlatformType.Album_Page_Game then
       self._defaultPage = v
     end
   end
-  ;
-  (table.sort)(self._pagePool, function(a, b)
-    -- function num : 0_3_0
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._pagePool, function(a, b)
+    return a.ID < b.ID
+  end)
   if self._defaultPage == nil then
-    self._defaultPage = (self._pagePool)[1]
+    self._defaultPage = self._pagePool[1]
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAlbum.CreateProjectPool = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN28GronruGameAlbum:CreateProjectPool()
   self._projectPool = {}
-  local allProject = (Cfg.cfg_n28_gronru_album_project)({})
-  for k,v in pairs(allProject) do
-    (table.insert)(self._projectPool, v)
+  local allProject = Cfg.cfg_n28_gronru_album_project({})
+  for k, v in pairs(allProject) do
+    table.insert(self._projectPool, v)
     if self._defaultProject == nil and v.OpenType == UIN28GronruPlatformType.Album_Project_Adventure then
       self._defaultProject = v
     end
   end
-  ;
-  (table.sort)(self._projectPool, function(a, b)
-    -- function num : 0_4_0
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._projectPool, function(a, b)
+    return a.ID < b.ID
+  end)
   if self._defaultProject == nil then
-    self._defaultProject = (self._projectPool)[1]
+    self._defaultProject = self._projectPool[1]
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAlbum.GetDefaultProject = function(self)
-  -- function num : 0_5
+function UIN28GronruGameAlbum:GetDefaultProject()
   return self._defaultProject
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAlbum.Flush = function(self)
-  -- function num : 0_6
+function UIN28GronruGameAlbum:Flush()
   self:FlushPage()
   self:FlushProject()
   self:OpenPage(self._defaultPage, true, true)
   self:OpenProject(self._defaultProject)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAlbum.FlushPage = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN28GronruGameAlbum:FlushPage()
   local dataCount = #self._pagePool
-  self._pageUiPool = (self._uiPageContent):SpawnObjects("UIN28GronruGameAlbumPage", dataCount)
-  for k,v in pairs(self._pagePool) do
-    local ui = (self._pageUiPool)[k]
+  self._pageUiPool = self._uiPageContent:SpawnObjects("UIN28GronruGameAlbumPage", dataCount)
+  for k, v in pairs(self._pagePool) do
+    local ui = self._pageUiPool[k]
     ui:Flush(self, v)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAlbum.FlushProject = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN28GronruGameAlbum:FlushProject()
   local missionComponent = self:CallUIMethod("UIN28GronruPlatform", "GetMissionComponent")
   local dataCount = #self._projectPool
-  self._projectUiPool = (self._uiProjectContent):SpawnObjects("UIN28GronruGameAlbumProject", dataCount)
-  for k,v in pairs(self._projectPool) do
-    local ui = (self._projectUiPool)[k]
+  self._projectUiPool = self._uiProjectContent:SpawnObjects("UIN28GronruGameAlbumProject", dataCount)
+  for k, v in pairs(self._projectPool) do
+    local ui = self._projectUiPool[k]
     ui:Flush(self, v)
     if v.OpenType == UIN28GronruPlatformType.Album_Project_Adventure then
       ui:ShowRed(missionComponent:MissionCanRecvReward())
@@ -124,40 +85,30 @@ UIN28GronruGameAlbum.FlushProject = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAlbum.OpenPage = function(self, cfgPage, switchPage, switchContent)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN28GronruGameAlbum:OpenPage(cfgPage, switchPage, switchContent)
   if switchPage then
-    (self:RootUIOwner()):BrowserPath(true, (StringTable.Get)(cfgPage.Name))
-    ;
-    (self:RootUIOwner()):BrowserPath(false, nil)
-    for k,v in pairs(self._pagePool) do
-      local ui = (self._pageUiPool)[k]
+    self:RootUIOwner():BrowserPath(true, StringTable.Get(cfgPage.Name))
+    self:RootUIOwner():BrowserPath(false, nil)
+    for k, v in pairs(self._pagePool) do
+      local ui = self._pageUiPool[k]
       ui:SetHighlight(v.ID == cfgPage.ID)
     end
   end
   if switchContent then
     if cfgPage.OpenType == UIN28GronruPlatformType.Album_Page_Empty then
-      ((self._uiProjectRoot).gameObject):SetActive(false)
-      ;
-      ((self._uiEmptyRoot).gameObject):SetActive(true)
+      self._uiProjectRoot.gameObject:SetActive(false)
+      self._uiEmptyRoot.gameObject:SetActive(true)
     elseif cfgPage.OpenType == UIN28GronruPlatformType.Album_Page_Game then
-      ((self._uiProjectRoot).gameObject):SetActive(true)
-      ;
-      ((self._uiEmptyRoot).gameObject):SetActive(false)
+      self._uiProjectRoot.gameObject:SetActive(true)
+      self._uiEmptyRoot.gameObject:SetActive(false)
     end
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAlbum.OpenPageAnimation = function(self, cfgPage)
-  -- function num : 0_10 , upvalues : _ENV
-  local oldHighlight, newHighlight = nil, nil
-  for k,v in pairs(self._pagePool) do
-    local ui = (self._pageUiPool)[k]
+function UIN28GronruGameAlbum:OpenPageAnimation(cfgPage)
+  local oldHighlight, newHighlight
+  for k, v in pairs(self._pagePool) do
+    local ui = self._pageUiPool[k]
     if ui:IsHighlight() then
       oldHighlight = ui
     end
@@ -168,36 +119,23 @@ UIN28GronruGameAlbum.OpenPageAnimation = function(self, cfgPage)
   if oldHighlight ~= nil then
     oldHighlight:ShowNormalHighlight(true, true)
     oldHighlight:PlayAnimation("UIN28GronruGameAlbumPage_out", 117, function()
-    -- function num : 0_10_0 , upvalues : self, cfgPage
-    self:OpenPage(cfgPage, false, true)
-  end
-)
+      self:OpenPage(cfgPage, false, true)
+    end)
   end
   if newHighlight ~= nil then
     newHighlight:ShowNormalHighlight(true, true)
     newHighlight:PlayAnimation("UIN28GronruGameAlbumPage_in", 333, function()
-    -- function num : 0_10_1 , upvalues : self, cfgPage
-    self:OpenPage(cfgPage, true, true)
-  end
-)
+      self:OpenPage(cfgPage, true, true)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAlbum.OpenProject = function(self, cfgProject)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN28GronruGameAlbum:OpenProject(cfgProject)
   if cfgProject.OpenType == UIN28GronruPlatformType.Album_Project_Empty then
-    ((self._uiProjectRoot).gameObject):SetActive(false)
-    ;
-    ((self._uiEmptyRoot).gameObject):SetActive(true)
-  else
-    if cfgProject.OpenType == UIN28GronruPlatformType.Album_Project_Adventure then
-      ((self._uiProjectRoot).gameObject):SetActive(true)
-      ;
-      ((self._uiEmptyRoot).gameObject):SetActive(false)
-    end
+    self._uiProjectRoot.gameObject:SetActive(false)
+    self._uiEmptyRoot.gameObject:SetActive(true)
+  elseif cfgProject.OpenType == UIN28GronruPlatformType.Album_Project_Adventure then
+    self._uiProjectRoot.gameObject:SetActive(true)
+    self._uiEmptyRoot.gameObject:SetActive(false)
   end
 end
-
-

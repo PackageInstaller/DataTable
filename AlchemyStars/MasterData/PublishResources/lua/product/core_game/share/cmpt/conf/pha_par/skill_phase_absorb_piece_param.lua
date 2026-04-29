@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_absorb_piece_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseAbsorbPieceParam", SkillPhaseParamBase)
 SkillPhaseAbsorbPieceParam = SkillPhaseAbsorbPieceParam
 local AbsorbPiecePlayType = {Normal = 1}
 _enum("AbsorbPiecePlayType", AbsorbPiecePlayType)
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillPhaseAbsorbPieceParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseAbsorbPieceParam:Constructor(t)
   self._scopeDelay = t.scopeDelay
   self._changeDelay = t.changeDelay
   self._displayDelay = t.displayDelay
@@ -19,59 +12,39 @@ SkillPhaseAbsorbPieceParam.Constructor = function(self, t)
   self._gridPlayType = t.gridPlayType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseAbsorbPieceParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local t = nil
+function SkillPhaseAbsorbPieceParam:GetCacheTable()
+  local t
   if self._gridEffectID ~= 0 then
     t = {
-{((Cfg.cfg_effect)[self._gridEffectID]).ResPath, 1}
-}
+      {
+        Cfg.cfg_effect[self._gridEffectID].ResPath,
+        1
+      }
+    }
   end
   return t
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseAbsorbPieceParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseAbsorbPieceParam:GetPhaseType()
   return SkillViewPhaseType.AbsorbPieceAnimation
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseAbsorbPieceParam.GetScopeDelay = function(self)
-  -- function num : 0_3
+function SkillPhaseAbsorbPieceParam:GetScopeDelay()
   return self._scopeDelay
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseAbsorbPieceParam.GetGridPlayType = function(self)
-  -- function num : 0_4
+function SkillPhaseAbsorbPieceParam:GetGridPlayType()
   return self._gridPlayType
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseAbsorbPieceParam.GetChangeDelay = function(self)
-  -- function num : 0_5
+function SkillPhaseAbsorbPieceParam:GetChangeDelay()
   return self._changeDelay
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseAbsorbPieceParam.GetDisPlayDelay = function(self)
-  -- function num : 0_6
+function SkillPhaseAbsorbPieceParam:GetDisPlayDelay()
   return self._displayDelay
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseAbsorbPieceParam.GetGridEffectID = function(self)
-  -- function num : 0_7
+function SkillPhaseAbsorbPieceParam:GetGridEffectID()
   return self._gridEffectID
 end
-
-

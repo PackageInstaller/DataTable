@@ -1,204 +1,103 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/piece_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PieceServiceRender", Object)
 PieceServiceRender = PieceServiceRender
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PieceServiceRender.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function PieceServiceRender:Constructor(world)
   self._world = world
-  local chessItemID = (UIPropertyHelper:GetInstance()):GetChessItemID()
-  local itemChessConfig = (Cfg.cfg_item_chess)[chessItemID]
+  local chessItemID = UIPropertyHelper:GetInstance():GetChessItemID()
+  local itemChessConfig = Cfg.cfg_item_chess[chessItemID]
   self._pieceSkinID = itemChessConfig.pieceSkinID
   self._hasGridLineInCfg = itemChessConfig.hasGridLine
-  self._piecePrefabConfigDefault = (Cfg.cfg_piece_prefab)[1]
-  self._piecePrefabConfig = (Cfg.cfg_piece_prefab)[self._pieceSkinID]
+  self._piecePrefabConfigDefault = Cfg.cfg_piece_prefab[1]
+  self._piecePrefabConfig = Cfg.cfg_piece_prefab[self._pieceSkinID]
   self._pieceLayerConfig = Cfg.cfg_piece_layer
   self.applyPieceAnimation = {}
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.applyPieceAnimation).Normal = self._ApplyPieceNormal
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.applyPieceAnimation).Birth = self._ApplyPieceBirth
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.applyPieceAnimation).Dark = self._ApplyPieceDark
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.applyPieceAnimation).Up = self._ApplyPieceUp
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.applyPieceAnimation).Down = self._ApplyPieceDown
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.applyPieceAnimation).LinkIn = self._ApplyPieceLinkIn
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.applyPieceAnimation).LinkOut = self._ApplyPieceLinkOut
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.applyPieceAnimation).LinkDone = self._ApplyPieceLinkDone
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.applyPieceAnimation).MoveDone = self._ApplyPieceMoveDone
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.applyPieceAnimation).DarkByParam = self._ApplyPieceDarkByParam
-  -- DECOMPILER ERROR at PC59: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.applyPieceAnimation).UltBlack = self._ApplyPieceUltBlack
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.applyPieceAnimation).UltSliver = self._ApplyPieceUltSliver
-  -- DECOMPILER ERROR at PC65: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.applyPieceAnimation).UltGray = self._ApplyPieceUltGray
-  -- DECOMPILER ERROR at PC68: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.applyPieceAnimation).UltColor = self._ApplyPieceUltColor
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.applyPieceAnimation).UltAtkColor = self._ApplyPieceUltAtkColor
-  -- DECOMPILER ERROR at PC74: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.applyPieceAnimation).UltInvalid = self._ApplyPieceUltInvalid
-  -- DECOMPILER ERROR at PC77: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.applyPieceAnimation).UltAdd = self._ApplyPieceUltAdd
-  -- DECOMPILER ERROR at PC80: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.applyPieceAnimation).UltReflash = self._ApplyPieceUltReflash
+  self.applyPieceAnimation.Normal = self._ApplyPieceNormal
+  self.applyPieceAnimation.Birth = self._ApplyPieceBirth
+  self.applyPieceAnimation.Dark = self._ApplyPieceDark
+  self.applyPieceAnimation.Up = self._ApplyPieceUp
+  self.applyPieceAnimation.Down = self._ApplyPieceDown
+  self.applyPieceAnimation.LinkIn = self._ApplyPieceLinkIn
+  self.applyPieceAnimation.LinkOut = self._ApplyPieceLinkOut
+  self.applyPieceAnimation.LinkDone = self._ApplyPieceLinkDone
+  self.applyPieceAnimation.MoveDone = self._ApplyPieceMoveDone
+  self.applyPieceAnimation.DarkByParam = self._ApplyPieceDarkByParam
+  self.applyPieceAnimation.UltBlack = self._ApplyPieceUltBlack
+  self.applyPieceAnimation.UltSliver = self._ApplyPieceUltSliver
+  self.applyPieceAnimation.UltGray = self._ApplyPieceUltGray
+  self.applyPieceAnimation.UltColor = self._ApplyPieceUltColor
+  self.applyPieceAnimation.UltAtkColor = self._ApplyPieceUltAtkColor
+  self.applyPieceAnimation.UltInvalid = self._ApplyPieceUltInvalid
+  self.applyPieceAnimation.UltAdd = self._ApplyPieceUltAdd
+  self.applyPieceAnimation.UltReflash = self._ApplyPieceUltReflash
   self._pieceAnimationClips = nil
-  self._pieceAnimationContainerPrefab = (ResourceManager:GetInstance()):SyncLoadAsset("PieceAnimationClipList.prefab", LoadType.GameObject)
-  do
-    if self._pieceAnimationContainerPrefab and (self._pieceAnimationContainerPrefab).Obj then
-      local pieceAnimation = ((self._pieceAnimationContainerPrefab).Obj):GetComponent("Animation")
-      if pieceAnimation then
-        self._pieceAnimationClips = (HelperProxy:GetInstance()):GetAllAnimationClip(pieceAnimation)
-      end
+  self._pieceAnimationContainerPrefab = ResourceManager:GetInstance():SyncLoadAsset("PieceAnimationClipList.prefab", LoadType.GameObject)
+  if self._pieceAnimationContainerPrefab and self._pieceAnimationContainerPrefab.Obj then
+    local pieceAnimation = self._pieceAnimationContainerPrefab.Obj:GetComponent("Animation")
+    if pieceAnimation then
+      self._pieceAnimationClips = HelperProxy:GetInstance():GetAllAnimationClip(pieceAnimation)
     end
-    self._hasGridLineWithBoardMode = nil
   end
+  self._hasGridLineWithBoardMode = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.Initialize = function(self)
-  -- function num : 0_1
+function PieceServiceRender:Initialize()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.GetPieceHasGridLine = function(self)
-  -- function num : 0_2
+function PieceServiceRender:GetPieceHasGridLine()
   return self._hasGridLineInCfg
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetHasGridLineWithBoardMode = function(self, show)
-  -- function num : 0_3
+function PieceServiceRender:SetHasGridLineWithBoardMode(show)
   self._hasGridLineWithBoardMode = show
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.GetHasGridLineWithBoardMode = function(self)
-  -- function num : 0_4
+function PieceServiceRender:GetHasGridLineWithBoardMode()
   return self._hasGridLineWithBoardMode
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.GetPieceLayerConfig = function(self)
-  -- function num : 0_5
+function PieceServiceRender:GetPieceLayerConfig()
   return self._pieceLayerConfig
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.GetPiecePrefabConfig = function(self)
-  -- function num : 0_6
+function PieceServiceRender:GetPiecePrefabConfig()
   return self._piecePrefabConfig
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.GetPiecePrefabConfigDefault = function(self)
-  -- function num : 0_7
+function PieceServiceRender:GetPiecePrefabConfigDefault()
   return self._piecePrefabConfigDefault
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.GetPieceConfigBase = function(self)
-  -- function num : 0_8
+function PieceServiceRender:GetPieceConfigBase()
   return "gezi_base.prefab"
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.GetGridPrefabPathConfig = function(self, gridTypeString)
-  -- function num : 0_9 , upvalues : _ENV
+function PieceServiceRender:GetGridPrefabPathConfig(gridTypeString)
   local piecePrefabConfig = self:GetPiecePrefabConfig()
   local gridPrefabPath = piecePrefabConfig[gridTypeString]
-  do
-    if gridPrefabPath == nil then
-      local piecePrefabConfigDefault = self:GetPiecePrefabConfigDefault()
-      gridPrefabPath = piecePrefabConfigDefault[gridTypeString]
-    end
-    if not gridPrefabPath or gridPrefabPath == "" then
-      (Log.error)("[GetGridPrefabPathConfig] cant find prefab with key=" .. gridTypeString .. "   " .. (debug.traceback)())
-    end
-    return gridPrefabPath
+  if gridPrefabPath == nil then
+    local piecePrefabConfigDefault = self:GetPiecePrefabConfigDefault()
+    gridPrefabPath = piecePrefabConfigDefault[gridTypeString]
   end
+  if not gridPrefabPath or gridPrefabPath == "" then
+    Log.error("[GetGridPrefabPathConfig] cant find prefab with key=" .. gridTypeString .. "   " .. debug.traceback())
+  end
+  return gridPrefabPath
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.GetGridPrefabPath = function(self, gridType)
-  -- function num : 0_10
+function PieceServiceRender:GetGridPrefabPath(gridType)
   local gridTypeString = self:_GetGridTypeString(gridType)
   local gridPrefabPath = self:GetGridPrefabPathConfig(gridTypeString)
   return gridPrefabPath
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.GetGridPrefabPathFinal = function(self, pieceType, pieceEffectType)
-  -- function num : 0_11
+function PieceServiceRender:GetGridPrefabPathFinal(pieceType, pieceEffectType)
   local gridEffectStr = self:_GetGridEffectTypeString(pieceEffectType)
   local gridTypeStr = self:_GetGridTypeString(pieceType)
   local piecePrefabKey = gridEffectStr .. gridTypeStr
   return piecePrefabKey
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._GetGridEffectTypeString = function(self, pieceEffectType)
-  -- function num : 0_12 , upvalues : _ENV
+function PieceServiceRender:_GetGridEffectTypeString(pieceEffectType)
   if pieceEffectType == PieceEffectType.Normal then
     return ""
   else
@@ -207,10 +106,7 @@ PieceServiceRender._GetGridEffectTypeString = function(self, pieceEffectType)
   return ""
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._GetGridTypeString = function(self, pieceType)
-  -- function num : 0_13 , upvalues : _ENV
+function PieceServiceRender:_GetGridTypeString(pieceType)
   if pieceType == PieceType.None then
     return "Gray"
   else
@@ -219,10 +115,7 @@ PieceServiceRender._GetGridTypeString = function(self, pieceType)
   return "Gray"
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceEntityPieceType = function(self, pieceEntity, pieceType)
-  -- function num : 0_14 , upvalues : _ENV
+function PieceServiceRender:SetPieceEntityPieceType(pieceEntity, pieceType)
   pieceEntity:ReplacePiece(pieceType)
   local pieceComponent = pieceEntity:Piece()
   local hasInitAsset = pieceComponent:HasInitAsset()
@@ -230,56 +123,45 @@ PieceServiceRender.SetPieceEntityPieceType = function(self, pieceEntity, pieceTy
     local pieceBase = self:GetPieceConfigBase()
     pieceEntity:ReplaceAsset(NativeUnityPrefabAsset:New(pieceBase))
     pieceComponent:SetInitAsset()
-    local pieceBasePrefabObj = (pieceEntity:View()):GetGameObject()
+    local pieceBasePrefabObj = pieceEntity:View():GetGameObject()
   end
-  do
-    local curAnim = pieceComponent:GetPieceAnimName()
-    self:_OnHidePiecePrefabSameLayer(pieceEntity, curAnim)
-    local pieceEffectType = pieceComponent:GetRenderPieceEffectType()
-    local piecePrefabKey = self:GetGridPrefabPathFinal(pieceType, pieceEffectType)
-    self:_OnShowPiecePrefab(pieceEntity, piecePrefabKey)
-  end
+  local curAnim = pieceComponent:GetPieceAnimName()
+  self:_OnHidePiecePrefabSameLayer(pieceEntity, curAnim)
+  local pieceEffectType = pieceComponent:GetRenderPieceEffectType()
+  local piecePrefabKey = self:GetGridPrefabPathFinal(pieceType, pieceEffectType)
+  self:_OnShowPiecePrefab(pieceEntity, piecePrefabKey)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.GetPieceAnimation = function(self, pos)
-  -- function num : 0_15
+function PieceServiceRender:GetPieceAnimation(pos)
   local pieceEntity = self:FindPieceEntity(pos)
   if not pieceEntity then
-    return 
+    return
   end
   local pieceComponent = pieceEntity:Piece()
   local curAnim = pieceComponent:GetPieceAnimName()
   return curAnim
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceAnimation = function(self, pos, anim, force, param)
-  -- function num : 0_16
+function PieceServiceRender:SetPieceAnimation(pos, anim, force, param)
   local pieceEntity = self:FindPieceEntity(pos)
   if not pieceEntity then
-    return 
+    return
   end
   local pieceComponent = pieceEntity:Piece()
   local curAnim = pieceComponent:GetPieceAnimName()
   if curAnim == anim and not force then
-    return 
+    return
   end
   self:_OnHidePiecePrefabSameLayer(pieceEntity, curAnim, anim)
   self:_OnCheckShowCurPieceTypePrefab(pieceEntity)
   pieceComponent:SetPieceAnimName(anim)
-  local applyFunc = (self.applyPieceAnimation)[anim]
+  local applyFunc = self.applyPieceAnimation[anim]
   if applyFunc ~= nil then
     applyFunc(self, pos, pieceEntity, anim, param)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.ResetPieceAnimation = function(self, pos)
-  -- function num : 0_17
+function PieceServiceRender:ResetPieceAnimation(pos)
   local curAnim = self:GetPieceAnimation(pos)
   if curAnim then
     local forcePlay = true
@@ -287,64 +169,47 @@ PieceServiceRender.ResetPieceAnimation = function(self, pos)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._InitAnimation = function(self, gameObject)
-  -- function num : 0_18 , upvalues : _ENV
+function PieceServiceRender:_InitAnimation(gameObject)
   local anim = gameObject:GetComponent(typeof(UnityEngine.Animation))
-  if not anim then
-    anim = gameObject:AddComponent(typeof(UnityEngine.Animation))
-  end
+  anim = anim or gameObject:AddComponent(typeof(UnityEngine.Animation))
   if not self._pieceAnimationClips then
-    return 
+    return
   end
-  for i = 0, (self._pieceAnimationClips).Length - 1 do
-    if (self._pieceAnimationClips)[i] ~= nil then
-      anim:AddClip((self._pieceAnimationClips)[i], ((self._pieceAnimationClips)[i]).name)
+  for i = 0, self._pieceAnimationClips.Length - 1 do
+    if self._pieceAnimationClips[i] ~= nil then
+      anim:AddClip(self._pieceAnimationClips[i], self._pieceAnimationClips[i].name)
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetAllPieceNormal = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local pieceGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Piece)
-  for _,e in ipairs(pieceGroup:GetEntities()) do
+function PieceServiceRender:SetAllPieceNormal()
+  local pieceGroup = self._world:GetGroup(self._world.BW_WEMatchers.Piece)
+  for _, e in ipairs(pieceGroup:GetEntities()) do
     local pos = e:GetGridPosition()
     self:SetPieceAnimNormal(pos)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetAllPieceDark = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local pieceGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Piece)
-  for _,e in ipairs(pieceGroup:GetEntities()) do
+function PieceServiceRender:SetAllPieceDark()
+  local pieceGroup = self._world:GetGroup(self._world.BW_WEMatchers.Piece)
+  for _, e in ipairs(pieceGroup:GetEntities()) do
     local pos = e:GetGridPosition()
     self:SetPieceAnimDark(pos)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetAllPieceDarkParam = function(self, duration, endValue)
-  -- function num : 0_21 , upvalues : _ENV
-  local pieceGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Piece)
-  for _,e in ipairs(pieceGroup:GetEntities()) do
+function PieceServiceRender:SetAllPieceDarkParam(duration, endValue)
+  local pieceGroup = self._world:GetGroup(self._world.BW_WEMatchers.Piece)
+  for _, e in ipairs(pieceGroup:GetEntities()) do
     local pos = e:GetGridPosition()
     self:SetPieceAnimDarkParam(pos, duration, endValue)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.RefreshMonsterPiece = function(self, targetEntity, bUp)
-  -- function num : 0_22 , upvalues : _ENV
+function PieceServiceRender:RefreshMonsterPiece(targetEntity, bUp)
   local renderPos = targetEntity:GetRenderGridPosition()
-  local area = (targetEntity:BodyArea()):GetArea()
-  for i,p in ipairs(area) do
+  local area = targetEntity:BodyArea():GetArea()
+  for i, p in ipairs(area) do
     local posWork = renderPos + p
     if bUp then
       self:SetPieceAnimUp(posWork)
@@ -354,192 +219,121 @@ PieceServiceRender.RefreshMonsterPiece = function(self, targetEntity, bUp)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceAnimBirth = function(self, pos)
-  -- function num : 0_23
+function PieceServiceRender:SetPieceAnimBirth(pos)
   self:SetPieceAnimation(pos, "Birth")
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceAnimNormal = function(self, pos, force)
-  -- function num : 0_24
+function PieceServiceRender:SetPieceAnimNormal(pos, force)
   self:SetPieceAnimation(pos, "Normal", force)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceAnimDark = function(self, pos)
-  -- function num : 0_25
+function PieceServiceRender:SetPieceAnimDark(pos)
   self:SetPieceAnimation(pos, "Dark")
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceAnimDarkParam = function(self, pos, duration, endValue)
-  -- function num : 0_26
+function PieceServiceRender:SetPieceAnimDarkParam(pos, duration, endValue)
   self:SetPieceAnimation(pos, "DarkByParam", false, {duration, endValue})
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceAnimUp = function(self, pos)
-  -- function num : 0_27
+function PieceServiceRender:SetPieceAnimUp(pos)
   self:SetPieceAnimation(pos, "Up")
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceAnimDown = function(self, pos)
-  -- function num : 0_28
+function PieceServiceRender:SetPieceAnimDown(pos)
   self:SetPieceAnimation(pos, "Down")
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceAnimLinkIn = function(self, pos)
-  -- function num : 0_29
+function PieceServiceRender:SetPieceAnimLinkIn(pos)
   self:SetPieceAnimation(pos, "LinkIn")
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceAnimLinkOut = function(self, pos)
-  -- function num : 0_30
+function PieceServiceRender:SetPieceAnimLinkOut(pos)
   self:SetPieceAnimation(pos, "LinkOut")
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceAnimLinkDone = function(self, pos)
-  -- function num : 0_31
+function PieceServiceRender:SetPieceAnimLinkDone(pos)
   self:SetPieceAnimation(pos, "LinkDone")
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceAnimMoveDone = function(self, pos)
-  -- function num : 0_32
+function PieceServiceRender:SetPieceAnimMoveDone(pos)
   self:SetPieceAnimation(pos, "MoveDone")
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceAnimBlack = function(self, pos)
-  -- function num : 0_33
+function PieceServiceRender:SetPieceAnimBlack(pos)
   self:SetPieceAnimation(pos, "UltBlack")
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceAnimSliver = function(self, pos)
-  -- function num : 0_34
+function PieceServiceRender:SetPieceAnimSliver(pos)
   self:SetPieceAnimation(pos, "UltSliver")
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceAnimGray = function(self, pos)
-  -- function num : 0_35
+function PieceServiceRender:SetPieceAnimGray(pos)
   self:SetPieceAnimation(pos, "UltGray")
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceAnimColor = function(self, pos, pieceType)
-  -- function num : 0_36
+function PieceServiceRender:SetPieceAnimColor(pos, pieceType)
   local force = false
   self:SetPieceAnimation(pos, "UltColor", force, {pieceType})
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceAnimAtkColor = function(self, pos)
-  -- function num : 0_37
+function PieceServiceRender:SetPieceAnimAtkColor(pos)
   self:SetPieceAnimation(pos, "UltAtkColor")
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceAnimInvalid = function(self, pos)
-  -- function num : 0_38
+function PieceServiceRender:SetPieceAnimInvalid(pos)
   self:SetPieceAnimation(pos, "UltInvalid")
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceAnimAdd = function(self, pos)
-  -- function num : 0_39
+function PieceServiceRender:SetPieceAnimAdd(pos)
   self:SetPieceAnimation(pos, "UltAdd")
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceAnimReflash = function(self, pos)
-  -- function num : 0_40
+function PieceServiceRender:SetPieceAnimReflash(pos)
   self:SetPieceAnimation(pos, "UltReflash")
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceGameoejectPlayAnim = function(self, gameObject, animName)
-  -- function num : 0_41 , upvalues : _ENV
+function PieceServiceRender:SetPieceGameoejectPlayAnim(gameObject, animName)
   if not gameObject then
-    return 
+    return
   end
   local anim = gameObject:GetComponent("Animation")
   if not anim then
-    return 
+    return
   end
   if anim.isPlaying then
-    anim:PlayQueued(animName, (UnityEngine.QueueMode).CompleteOthers)
+    anim:PlayQueued(animName, UnityEngine.QueueMode.CompleteOthers)
   else
     anim:Play(animName)
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceGameoejectPlayAnimList = function(self, gameObject, animNameList)
-  -- function num : 0_42 , upvalues : _ENV
+function PieceServiceRender:SetPieceGameoejectPlayAnimList(gameObject, animNameList)
   if not gameObject then
-    return 
+    return
   end
   local anim = gameObject:GetComponent("Animation")
   if not anim then
-    return 
+    return
   end
-  for _,v in ipairs(animNameList) do
-    anim:PlayQueued(v, (UnityEngine.QueueMode).CompleteOthers)
+  for _, v in ipairs(animNameList) do
+    anim:PlayQueued(v, UnityEngine.QueueMode.CompleteOthers)
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceEntityPlayAnim = function(self, pieceEntity, animName)
-  -- function num : 0_43
+function PieceServiceRender:SetPieceEntityPlayAnim(pieceEntity, animName)
   local pieceComponent = pieceEntity:Piece()
-  if not pieceComponent then
-    pieceComponent = pieceEntity:PieceFake()
-  end
+  pieceComponent = pieceComponent or pieceEntity:PieceFake()
   local curPiecePrefabObj = pieceComponent:GetBaseLayerObj()
   if not curPiecePrefabObj then
-    return 
+    return
   end
   self:SetPieceGameoejectPlayAnim(curPiecePrefabObj, animName)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceEntityBirth = function(self, pieceEntity)
-  -- function num : 0_44
+function PieceServiceRender:SetPieceEntityBirth(pieceEntity)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceEntityAnimNormal = function(self, pieceEntity)
-  -- function num : 0_45
+function PieceServiceRender:SetPieceEntityAnimNormal(pieceEntity)
   local pieceComponent = pieceEntity:Piece()
   local curAnim = pieceComponent:GetPieceAnimName()
   self:_OnHidePiecePrefabSameLayer(pieceEntity, curAnim)
@@ -547,64 +341,43 @@ PieceServiceRender.SetPieceEntityAnimNormal = function(self, pieceEntity)
   self:_ApplyPieceNormal(nil, pieceEntity)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceEntityAnimDark = function(self, pieceEntity)
-  -- function num : 0_46
+function PieceServiceRender:SetPieceEntityAnimDark(pieceEntity)
   self:_ApplyPieceDark(nil, pieceEntity)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceFakeEntityAnimDark = function(self, gridFakeEntity)
-  -- function num : 0_47
+function PieceServiceRender:SetPieceFakeEntityAnimDark(gridFakeEntity)
   self:_ApplyPieceDark(nil, gridFakeEntity)
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._ApplyPieceNormal = function(self, pos, pieceEntity, anim)
-  -- function num : 0_48
-  local startValue = nil
+function PieceServiceRender:_ApplyPieceNormal(pos, pieceEntity, anim)
+  local startValue
   local endValue = 1
   local duration = 0
   self:SetMaterialDarkness(pieceEntity, startValue, endValue, duration)
   self:_OnPlayAnimaNormalWithGridLine(pieceEntity)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._ApplyPieceBirth = function(self, pos, pieceEntity, anim)
-  -- function num : 0_49
+function PieceServiceRender:_ApplyPieceBirth(pos, pieceEntity, anim)
   self:SetPieceEntityPlayAnim(pieceEntity, "Anim_gezi_1001_birth")
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._ApplyPieceDark = function(self, pos, pieceEntity, anim)
-  -- function num : 0_50
-  local startValue = nil
+function PieceServiceRender:_ApplyPieceDark(pos, pieceEntity, anim)
+  local startValue
   local endValue = 0.5
   local duration = 0.16
   self:SetMaterialDarkness(pieceEntity, startValue, endValue, duration)
   self:_HasGridLineSendCellRenderEvent(pieceEntity, false)
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._ApplyPieceDarkByParam = function(self, pos, pieceEntity, anim, params)
-  -- function num : 0_51
-  local startValue = nil
+function PieceServiceRender:_ApplyPieceDarkByParam(pos, pieceEntity, anim, params)
+  local startValue
   local endValue = params and params[2] or 0.5
   local duration = params and params[1] or 0.16
   self:SetMaterialDarkness(pieceEntity, startValue, endValue, duration)
   self:_HasGridLineSendCellRenderEvent(pieceEntity, false)
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._ApplyPieceUp = function(self, pos, pieceEntity, anim)
-  -- function num : 0_52
+function PieceServiceRender:_ApplyPieceUp(pos, pieceEntity, anim)
   local startValue = 0.5
   local endValue = 1
   local duration = 0.16
@@ -612,10 +385,7 @@ PieceServiceRender._ApplyPieceUp = function(self, pos, pieceEntity, anim)
   self:_OnPlayAnimaNormalWithGridLine(pieceEntity)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._ApplyPieceDown = function(self, pos, pieceEntity, anim)
-  -- function num : 0_53
+function PieceServiceRender:_ApplyPieceDown(pos, pieceEntity, anim)
   local startValue = 1
   local endValue = 0.5
   local duration = 0.16
@@ -623,106 +393,67 @@ PieceServiceRender._ApplyPieceDown = function(self, pos, pieceEntity, anim)
   self:_OnPlayAnimaNormalWithGridLine(pieceEntity)
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._ApplyPieceLinkIn = function(self, pos, pieceEntity, anim)
-  -- function num : 0_54 , upvalues : _ENV
+function PieceServiceRender:_ApplyPieceLinkIn(pos, pieceEntity, anim)
   local pieceComponent = pieceEntity:Piece()
   local pieceType = GetEnumKey("PieceType", pieceComponent:GetPieceType())
   local linkInPrefabKey = "LinkIn" .. tostring(pieceType)
   self:_OnShowPiecePrefab(pieceEntity, linkInPrefabKey)
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._ApplyPieceLinkOut = function(self, pos, pieceEntity, anim)
-  -- function num : 0_55
+function PieceServiceRender:_ApplyPieceLinkOut(pos, pieceEntity, anim)
   self:SetPieceEntityPlayAnim(pieceEntity, "Anim_gezi_1001_linkout")
   self:SetPieceAnimation(pos, "Normal")
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._ApplyPieceLinkDone = function(self, pos, pieceEntity, anim)
-  -- function num : 0_56
+function PieceServiceRender:_ApplyPieceLinkDone(pos, pieceEntity, anim)
   self:SetPieceAnimation(pos, "Normal")
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._ApplyPieceMoveDone = function(self, pos, pieceEntity, anim)
-  -- function num : 0_57
+function PieceServiceRender:_ApplyPieceMoveDone(pos, pieceEntity, anim)
   self:_OnShowPiecePrefab(pieceEntity, "MoveDone")
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._ApplyPieceUltBlack = function(self, pos, pieceEntity, anim)
-  -- function num : 0_58
+function PieceServiceRender:_ApplyPieceUltBlack(pos, pieceEntity, anim)
   self:_OnShowPiecePrefab(pieceEntity, "UltBlack")
   self:_HasGridLineSendCellRenderEvent(pieceEntity, true)
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._ApplyPieceUltSliver = function(self, pos, pieceEntity, anim)
-  -- function num : 0_59
+function PieceServiceRender:_ApplyPieceUltSliver(pos, pieceEntity, anim)
   self:_OnShowPiecePrefab(pieceEntity, "UltSliver")
   self:_HasGridLineSendCellRenderEvent(pieceEntity, true)
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._ApplyPieceUltGray = function(self, pos, pieceEntity, anim)
-  -- function num : 0_60
+function PieceServiceRender:_ApplyPieceUltGray(pos, pieceEntity, anim)
   self:_OnShowPiecePrefab(pieceEntity, "UltGray")
   self:_HasGridLineSendCellRenderEvent(pieceEntity, true)
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._ApplyPieceUltColor = function(self, pos, pieceEntity, anim, param)
-  -- function num : 0_61 , upvalues : _ENV
+function PieceServiceRender:_ApplyPieceUltColor(pos, pieceEntity, anim, param)
   local pieceType = param[1]
   local pieceType = GetEnumKey("PieceType", pieceType)
   local linkInPrefabKey = "UltColor" .. tostring(pieceType)
   self:_OnShowPiecePrefab(pieceEntity, linkInPrefabKey)
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._ApplyPieceUltAtkColor = function(self, pos, pieceEntity, anim)
-  -- function num : 0_62
+function PieceServiceRender:_ApplyPieceUltAtkColor(pos, pieceEntity, anim)
   self:_OnShowPiecePrefab(pieceEntity, "UltAtkColor")
   self:_HasGridLineSendCellRenderEvent(pieceEntity, true)
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._ApplyPieceUltInvalid = function(self, pos, pieceEntity, anim)
-  -- function num : 0_63
+function PieceServiceRender:_ApplyPieceUltInvalid(pos, pieceEntity, anim)
   self:SetPieceEntityPlayAnim(pieceEntity, "Anim_gezi_1001_invalid")
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._ApplyPieceUltAdd = function(self, pos, pieceEntity, anim)
-  -- function num : 0_64
+function PieceServiceRender:_ApplyPieceUltAdd(pos, pieceEntity, anim)
   self:SetPieceEntityPlayAnim(pieceEntity, "Anim_gezi_ult_add")
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._ApplyPieceUltReflash = function(self, pos, pieceEntity, anim)
-  -- function num : 0_65
+function PieceServiceRender:_ApplyPieceUltReflash(pos, pieceEntity, anim)
   self:_OnShowPiecePrefab(pieceEntity, "UltReflash")
   self:_HasGridLineSendCellRenderEvent(pieceEntity, true)
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._OnCheckHasGridLine = function(self)
-  -- function num : 0_66
+function PieceServiceRender:_OnCheckHasGridLine()
   local hasGridLine = self:GetPieceHasGridLine()
   if hasGridLine ~= 1 then
     return false
@@ -732,22 +463,17 @@ PieceServiceRender._OnCheckHasGridLine = function(self)
     return false
   end
   if hasGridLineWithBoardMode == nil then
-    local renderBoardEntity = (self._world):GetRenderBoardEntity()
+    local renderBoardEntity = self._world:GetRenderBoardEntity()
     local renderBoardCmpt = renderBoardEntity:RenderBoard()
     local brillantLineObj = renderBoardCmpt:GetBrillantGridObj()
     if brillantLineObj == nil or brillantLineObj.activeInHierarchy == false then
       return false
     end
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._OnPlayAnimaNormalWithGridLine = function(self, pieceEntity)
-  -- function num : 0_67
+function PieceServiceRender:_OnPlayAnimaNormalWithGridLine(pieceEntity)
   self:SetPieceEntityPlayAnim(pieceEntity, "Anim_gezi_1001_normal")
   local checkHasGridLine = self:_OnCheckHasGridLine()
   if checkHasGridLine then
@@ -757,13 +483,10 @@ PieceServiceRender._OnPlayAnimaNormalWithGridLine = function(self, pieceEntity)
   end
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._HasGridLineSendCellRenderEvent = function(self, pieceEntity, showLine)
-  -- function num : 0_68
+function PieceServiceRender:_HasGridLineSendCellRenderEvent(pieceEntity, showLine)
   local checkHasGridLine = self:_OnCheckHasGridLine()
   if checkHasGridLine == false then
-    return 
+    return
   end
   if showLine then
     self:SetPieceEntityPlayAnim(pieceEntity, "Anim_gezi_Event_CellRender_OnDisable")
@@ -772,10 +495,7 @@ PieceServiceRender._HasGridLineSendCellRenderEvent = function(self, pieceEntity,
   end
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._OnCheckShowCurPieceTypePrefab = function(self, pieceEntity)
-  -- function num : 0_69
+function PieceServiceRender:_OnCheckShowCurPieceTypePrefab(pieceEntity)
   local pieceComponent = pieceEntity:Piece()
   local pieceType = pieceComponent:GetPieceType()
   local pieceEffectType = pieceComponent:GetRenderPieceEffectType()
@@ -783,29 +503,20 @@ PieceServiceRender._OnCheckShowCurPieceTypePrefab = function(self, pieceEntity)
   self:_OnShowPiecePrefab(pieceEntity, piecePrefabKey)
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.CheckPiecePrefabValid = function(self, prefab)
-  -- function num : 0_70 , upvalues : _ENV
-  if (tolua.isnull)(prefab) or prefab == nil then
-    do return not ((GameGlobal.GetModule)(SkillPerfModule)):IsBeginPerf() end
-    do return prefab end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function PieceServiceRender:CheckPiecePrefabValid(prefab)
+  if GameGlobal.GetModule(SkillPerfModule):IsBeginPerf() then
+    return not tolua.isnull(prefab) and prefab ~= nil
   end
+  return prefab
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._OnShowPiecePrefab = function(self, pieceEntity, piecePrefabKey)
-  -- function num : 0_71 , upvalues : _ENV
+function PieceServiceRender:_OnShowPiecePrefab(pieceEntity, piecePrefabKey)
   local pieceComponent = pieceEntity:Piece()
-  if not pieceComponent then
-    pieceComponent = pieceEntity:PieceFake()
-  end
+  pieceComponent = pieceComponent or pieceEntity:PieceFake()
   local layerName = self:_OnGetPieceLayerName(piecePrefabKey)
   local curPiecePrefabKey = pieceComponent:OnGetLayerPrefabName(layerName)
   if curPiecePrefabKey == piecePrefabKey then
-    return 
+    return
   end
   local curPiecePrefabObj = pieceComponent:OnGetLayerPrefabObj(layerName)
   if self:CheckPiecePrefabValid(curPiecePrefabObj) then
@@ -813,36 +524,31 @@ PieceServiceRender._OnShowPiecePrefab = function(self, pieceEntity, piecePrefabK
   end
   local piecePrefabObj = pieceComponent:GetPiecePrefabObj(piecePrefabKey)
   if not piecePrefabObj then
-    local sEntity = (self._world):GetService("RenderEntity")
+    local sEntity = self._world:GetService("RenderEntity")
     local gridPrefabEntity = sEntity:CreateRenderEntity(EntityConfigIDRender.GridPrefab)
     local piecePrefabPath = self:GetGridPrefabPathConfig(piecePrefabKey)
     if piecePrefabPath then
       gridPrefabEntity:ReplaceAsset(NativeUnityPrefabAsset:New(piecePrefabPath))
     end
     if gridPrefabEntity:View() then
-      piecePrefabObj = (gridPrefabEntity:View()):GetGameObject()
+      piecePrefabObj = gridPrefabEntity:View():GetGameObject()
       pieceComponent:SetPiecePrefabObj(layerName, piecePrefabKey, piecePrefabObj, gridPrefabEntity)
       self:_InitAnimation(piecePrefabObj)
     end
   end
-  do
-    pieceComponent:OnSetLayerPrefab(layerName, piecePrefabKey, piecePrefabObj)
-    if self:CheckPiecePrefabValid(piecePrefabObj) then
-      piecePrefabObj:SetActive(true)
-    end
+  pieceComponent:OnSetLayerPrefab(layerName, piecePrefabKey, piecePrefabObj)
+  if self:CheckPiecePrefabValid(piecePrefabObj) then
+    piecePrefabObj:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._OnHidePiecePrefabSameLayer = function(self, pieceEntity, lastAnimaName, newAnimaName)
-  -- function num : 0_72
+function PieceServiceRender:_OnHidePiecePrefabSameLayer(pieceEntity, lastAnimaName, newAnimaName)
   local layerName = self:_OnGetPieceLayerName(lastAnimaName)
   if not layerName then
-    return 
+    return
   end
   if layerName ~= "EffectLayer" then
-    return 
+    return
   end
   local pieceComponent = pieceEntity:Piece()
   local curPiecePrefabObj = pieceComponent:OnGetLayerPrefabObj(layerName)
@@ -850,50 +556,34 @@ PieceServiceRender._OnHidePiecePrefabSameLayer = function(self, pieceEntity, las
   pieceComponent:OnSetLayerPrefabName(layerName, nil)
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._OnHideCurPiecePrefabObj = function(self, piecePrefabObj, lastAnimaName)
-  -- function num : 0_73 , upvalues : _ENV
+function PieceServiceRender:_OnHideCurPiecePrefabObj(piecePrefabObj, lastAnimaName)
   if piecePrefabObj and tostring(piecePrefabObj) ~= "null" then
     local playAnimNameOut = self:_OnGetPiecePlayAnimNameOut(lastAnimaName)
-    do
-      if playAnimNameOut then
-        ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_73_0 , upvalues : self, piecePrefabObj, playAnimNameOut, lastAnimaName, _ENV
-    self:SetPieceGameoejectPlayAnim(piecePrefabObj, playAnimNameOut)
-    local animaTime = self:_OnGetPiecePlayAnimNameOutTime(lastAnimaName)
-    YIELD(TT, animaTime)
-    piecePrefabObj:SetActive(false)
-  end
-)
-      else
+    if playAnimNameOut then
+      GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+        self:SetPieceGameoejectPlayAnim(piecePrefabObj, playAnimNameOut)
+        local animaTime = self:_OnGetPiecePlayAnimNameOutTime(lastAnimaName)
+        YIELD(TT, animaTime)
         piecePrefabObj:SetActive(false)
-      end
+      end)
+    else
+      piecePrefabObj:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._OnGetPiecePlayAnimNameOut = function(self, animName)
-  -- function num : 0_74
-  local pieceLayerConfig = (self:GetPieceLayerConfig())[animName]
+function PieceServiceRender:_OnGetPiecePlayAnimNameOut(animName)
+  local pieceLayerConfig = self:GetPieceLayerConfig()[animName]
   return pieceLayerConfig.PlayAnimNameOut
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._OnGetPiecePlayAnimNameOutTime = function(self, animName)
-  -- function num : 0_75
-  local pieceLayerConfig = (self:GetPieceLayerConfig())[animName]
+function PieceServiceRender:_OnGetPiecePlayAnimNameOutTime(animName)
+  local pieceLayerConfig = self:GetPieceLayerConfig()[animName]
   return pieceLayerConfig.PlayAnimNameOutTime
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._OnGetPieceLayerName = function(self, animName)
-  -- function num : 0_76
-  local pieceLayerConfig = (self:GetPieceLayerConfig())[animName]
+function PieceServiceRender:_OnGetPieceLayerName(animName)
+  local pieceLayerConfig = self:GetPieceLayerConfig()[animName]
   local layerName = "BaseLayer"
   if pieceLayerConfig then
     layerName = pieceLayerConfig.Layer
@@ -901,14 +591,9 @@ PieceServiceRender._OnGetPieceLayerName = function(self, animName)
   return layerName
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetMaterialDarkness = function(self, pieceEntity, startValue, endValue, duration)
-  -- function num : 0_77
+function PieceServiceRender:SetMaterialDarkness(pieceEntity, startValue, endValue, duration)
   local pieceComponent = pieceEntity:Piece()
-  if not pieceComponent then
-    pieceComponent = pieceEntity:PieceFake()
-  end
+  pieceComponent = pieceComponent or pieceEntity:PieceFake()
   local curPiecePrefabObj = pieceComponent:GetBaseLayerObj()
   local lastDoTween = pieceComponent:GetDoTweenMaterialDarkness()
   if lastDoTween then
@@ -918,82 +603,65 @@ PieceServiceRender.SetMaterialDarkness = function(self, pieceEntity, startValue,
   pieceComponent:SetDoTweenMaterialDarkness(doTween)
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetGameObjectMaterialDarkness = function(self, gameObject, startValue, endValue, duration)
-  -- function num : 0_78 , upvalues : _ENV
+function PieceServiceRender:SetGameObjectMaterialDarkness(gameObject, startValue, endValue, duration)
   if not gameObject or tostring(gameObject) == "null" then
-    return 
+    return
   end
   local csMeshRenderer = gameObject:GetComponentInChildren(typeof(UnityEngine.MeshRenderer))
   if not csMeshRenderer or tostring(csMeshRenderer) == "null" then
-    return 
+    return
   end
   local csMaterial = csMeshRenderer.material
   if not csMaterial or tostring(csMaterial) == "null" then
-    return 
+    return
   end
-  local tween = (csMaterial:DOFloat(endValue, "_Darkness", duration)):SetEase(((DG.Tweening).Ease).InOutQuad)
+  local tween = csMaterial:DOFloat(endValue, "_Darkness", duration):SetEase(DG.Tweening.Ease.InOutQuad)
   return tween
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.RefreshMonsterAreaOutLine = function(self, TT)
-  -- function num : 0_79 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PieceServiceRender:RefreshMonsterAreaOutLine(TT)
+  local utilDataSvc = self._world:GetService("UtilData")
   local round = utilDataSvc:GetStatCurWaveTotalRoundCount()
   local waveIndex = utilDataSvc:GetStatCurWaveIndex()
-  local renderEntityService = (self._world):GetService("RenderEntity")
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,e in ipairs(monsterGroup:GetEntities()) do
+  local renderEntityService = self._world:GetService("RenderEntity")
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(monsterGroup:GetEntities()) do
     if not e:HasDeadFlag() and e:View() then
       renderEntityService:DestroyMonsterAreaOutLineEntity(e)
     end
   end
   YIELD(TT)
-  for _,e in ipairs(monsterGroup:GetEntities()) do
-    if not e:HasGhost() and not e:HasGuideGhost() and not e:HasDeadFlag() and e:View() and not utilDataSvc:IsAIAttachState(e, round, waveIndex) and (e:MonsterID()):IsNeedOutLine() then
+  for _, e in ipairs(monsterGroup:GetEntities()) do
+    if not e:HasGhost() and not e:HasGuideGhost() and not e:HasDeadFlag() and e:View() and not utilDataSvc:IsAIAttachState(e, round, waveIndex) and e:MonsterID():IsNeedOutLine() then
       renderEntityService:CreateMonsterAreaOutlineEntity(e)
     end
   end
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.GetSelectMonsterShadowPosList = function(self, selectEntityIDs)
-  -- function num : 0_80 , upvalues : _ENV
+function PieceServiceRender:GetSelectMonsterShadowPosList(selectEntityIDs)
   local shadowPosList = {}
   local monsterShadowPosList = self:GetMonsterShadowPosList(selectEntityIDs)
-  ;
-  (table.appendArray)(shadowPosList, monsterShadowPosList)
+  table.appendArray(shadowPosList, monsterShadowPosList)
   local trapShadowPosList = self:GetTrapShadowPosList(selectEntityIDs)
-  ;
-  (table.appendArray)(shadowPosList, trapShadowPosList)
+  table.appendArray(shadowPosList, trapShadowPosList)
   return shadowPosList
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender._IsCanSelectShadow = function(self, selectEntityIDs, entityID)
-  -- function num : 0_81 , upvalues : _ENV
+function PieceServiceRender:_IsCanSelectShadow(selectEntityIDs, entityID)
   local canSelectShadow = true
-  if selectEntityIDs and (table.count)(selectEntityIDs) > 0 and not (table.icontains)(selectEntityIDs, entityID) then
+  if selectEntityIDs and table.count(selectEntityIDs) > 0 and not table.icontains(selectEntityIDs, entityID) then
     canSelectShadow = false
   end
   return canSelectShadow
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.GetMonsterShadowPosList = function(self, selectEntityIDs)
-  -- function num : 0_82 , upvalues : _ENV
+function PieceServiceRender:GetMonsterShadowPosList(selectEntityIDs)
   local shadowPosList = {}
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local round = utilDataSvc:GetStatCurWaveTotalRoundCount()
   local waveIndex = utilDataSvc:GetStatCurWaveIndex()
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,e in ipairs(monsterGroup:GetEntities()) do
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(monsterGroup:GetEntities()) do
     local canSelectShadow = self:_IsCanSelectShadow(selectEntityIDs, e:GetID())
     if not e:HasOutsideRegion() and not e:HasGhost() and not e:HasGuideGhost() and canSelectShadow then
       local monsterGridPos = e:GetGridPosition()
@@ -1008,34 +676,17 @@ PieceServiceRender.GetMonsterShadowPosList = function(self, selectEntityIDs)
           end
         end
       else
-        do
-          do
-            shadowPosList[#shadowPosList + 1] = monsterGridPos
-            -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        shadowPosList[#shadowPosList + 1] = monsterGridPos
       end
     end
   end
   return shadowPosList
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.GetTrapShadowPosList = function(self, selectEntityIDs)
-  -- function num : 0_83 , upvalues : _ENV
+function PieceServiceRender:GetTrapShadowPosList(selectEntityIDs)
   local shadowPosList = {}
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-  for _,e in ipairs(trapGroup:GetEntities()) do
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  for _, e in ipairs(trapGroup:GetEntities()) do
     local canSelectShadow = self:_IsCanSelectShadow(selectEntityIDs, e:GetID())
     local trapGridPos = e:GetGridPosition()
     if e:HasBodyArea() and canSelectShadow then
@@ -1049,29 +700,16 @@ PieceServiceRender.GetTrapShadowPosList = function(self, selectEntityIDs)
         end
       end
     else
-      do
-        do
-          shadowPosList[#shadowPosList + 1] = trapGridPos
-          -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      shadowPosList[#shadowPosList + 1] = trapGridPos
     end
   end
   return shadowPosList
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.GetChessPetShadowPosList = function(self)
-  -- function num : 0_84 , upvalues : _ENV
+function PieceServiceRender:GetChessPetShadowPosList()
   local shadowPosList = {}
-  local chessPetGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).ChessPetRender)
-  for _,e in ipairs(chessPetGroup:GetEntities()) do
+  local chessPetGroup = self._world:GetGroup(self._world.BW_WEMatchers.ChessPetRender)
+  for _, e in ipairs(chessPetGroup:GetEntities()) do
     local chessPetGridPos = e:GetGridPosition()
     if e:HasBodyArea() then
       local bodyAreaCmpt = e:BodyArea()
@@ -1081,75 +719,47 @@ PieceServiceRender.GetChessPetShadowPosList = function(self)
         shadowPosList[#shadowPosList + 1] = chessPetGridPos + curAreaPos
       end
     else
-      do
-        do
-          shadowPosList[#shadowPosList + 1] = chessPetGridPos
-          -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      shadowPosList[#shadowPosList + 1] = chessPetGridPos
     end
   end
   return shadowPosList
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.RefreshPieceAnim = function(self)
-  -- function num : 0_85 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PieceServiceRender:RefreshPieceAnim()
+  local utilDataSvc = self._world:GetService("UtilData")
   local shadowPosList = {}
   local monsterShadowPosList = self:GetMonsterShadowPosList()
-  ;
-  (table.appendArray)(shadowPosList, monsterShadowPosList)
+  table.appendArray(shadowPosList, monsterShadowPosList)
   local trapShadowPosList = self:GetTrapShadowPosList()
-  ;
-  (table.appendArray)(shadowPosList, trapShadowPosList)
+  table.appendArray(shadowPosList, trapShadowPosList)
   local chessPetShadowPosList = self:GetChessPetShadowPosList()
-  ;
-  (table.appendArray)(shadowPosList, chessPetShadowPosList)
+  table.appendArray(shadowPosList, chessPetShadowPosList)
   self:HandleTeamPlayerPiece(shadowPosList)
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.HandleTeamPlayerPiece = function(self, shadowPosList)
-  -- function num : 0_86 , upvalues : _ENV
-  local trapServiceRender = (self._world):GetService("TrapRender")
-  local pieceMultiServiceRender = (self._world):GetService("PieceMulti")
-  local pieceGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Piece)
-  for _,e in ipairs(pieceGroup:GetEntities()) do
+function PieceServiceRender:HandleTeamPlayerPiece(shadowPosList)
+  local trapServiceRender = self._world:GetService("TrapRender")
+  local pieceMultiServiceRender = self._world:GetService("PieceMulti")
+  local pieceGroup = self._world:GetGroup(self._world.BW_WEMatchers.Piece)
+  for _, e in ipairs(pieceGroup:GetEntities()) do
     local pos = e:GetGridPosition()
     if e:HasOutsideRegion() then
       local outsideRegion = e:OutsideRegion()
       local boardIndex = outsideRegion:GetBoardIndex()
       pieceMultiServiceRender:SetPieceAnimDown(boardIndex, pos)
     end
-    do
-      do
-        if (table.icontains)(shadowPosList, pos) then
-          self:SetPieceAnimDown(pos)
-          trapServiceRender:ShowHideTrapAtPos(pos, false)
-        else
-          self:SetPieceAnimNormal(pos)
-          trapServiceRender:ShowHideTrapAtPos(pos, true)
-        end
-        -- DECOMPILER ERROR at PC55: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if table.icontains(shadowPosList, pos) then
+      self:SetPieceAnimDown(pos)
+      trapServiceRender:ShowHideTrapAtPos(pos, false)
+    else
+      self:SetPieceAnimNormal(pos)
+      trapServiceRender:ShowHideTrapAtPos(pos, true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.ResetPieceEffectRender = function(self, pos)
-  -- function num : 0_87 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PieceServiceRender:ResetPieceEffectRender(pos)
+  local utilDataSvc = self._world:GetService("UtilData")
   local pieceEffectType = utilDataSvc:GetBoardPieceEffectType(pos)
   if pieceEffectType == nil then
     pieceEffectType = PieceEffectType.Normal
@@ -1157,27 +767,21 @@ PieceServiceRender.ResetPieceEffectRender = function(self, pos)
   self:SetPieceRenderEffect(pos, pieceEffectType)
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceRenderEffect = function(self, pos, effectType, notPlayAnim)
-  -- function num : 0_88
+function PieceServiceRender:SetPieceRenderEffect(pos, effectType, notPlayAnim)
   local curPieceEffectType = self:GetPieceEffectType(pos)
   if curPieceEffectType == effectType then
-    return 
+    return
   end
   local pieceEntity = self:FindPieceEntity(pos)
   local pieceComponent = pieceEntity:Piece()
   pieceComponent:SetRenderPieceEffectType(effectType)
   if notPlayAnim then
-    return 
+    return
   end
   self:ResetPieceAnimation(pos)
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.GetPieceEffectType = function(self, pos)
-  -- function num : 0_89 , upvalues : _ENV
+function PieceServiceRender:GetPieceEffectType(pos)
   local pieceEntity = self:FindPieceEntity(pos)
   if not pieceEntity then
     return PieceEffectType.Normal
@@ -1187,78 +791,54 @@ PieceServiceRender.GetPieceEffectType = function(self, pos)
   return curPieceEffectType
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.RemovePrismAt = function(self, pos)
-  -- function num : 0_90 , upvalues : _ENV
-  local boardServiceR = (self._world):GetService("BoardRender")
+function PieceServiceRender:RemovePrismAt(pos)
+  local boardServiceR = self._world:GetService("BoardRender")
   local pieceEntity = self:FindPieceEntity(pos)
   if not pieceEntity then
-    return 
+    return
   end
   self:SetPieceRenderEffect(pos, PieceEffectType.Normal)
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.FindPieceEntity = function(self, pos)
-  -- function num : 0_91
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function PieceServiceRender:FindPieceEntity(pos)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderBoardCmpt = renderBoardEntity:RenderBoard()
   return renderBoardCmpt:GetGridRenderEntity(pos)
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.DestroyPieceEntity = function(self, pieceEntity)
-  -- function num : 0_92
+function PieceServiceRender:DestroyPieceEntity(pieceEntity)
   local pieceComponent = pieceEntity:Piece()
+  pieceComponent = pieceComponent or pieceEntity:PieceFake()
   if not pieceComponent then
-    pieceComponent = pieceEntity:PieceFake()
+    return
   end
-  if not pieceComponent then
-    return 
-  end
-  ;
-  (self._world):DestroyEntity(pieceEntity)
+  self._world:DestroyEntity(pieceEntity)
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.RevertPieceShowRangeByGameObj = function(self, gameObj)
-  -- function num : 0_93 , upvalues : _ENV
-  ((UnityEngine.Shader).DisableKeyword)("_CELL_SELF_CLIP")
+function PieceServiceRender:RevertPieceShowRangeByGameObj(gameObj)
+  UnityEngine.Shader.DisableKeyword("_CELL_SELF_CLIP")
   local meshRenderer = gameObj:GetComponentInChildren(typeof(UnityEngine.MeshRenderer))
   meshRenderer:SetPropertyBlock(nil)
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.RevertPieceShowRange = function(self, entity)
-  -- function num : 0_94
-  local gridGameObj = ((entity:View()).ViewWrapper).GameObject
+function PieceServiceRender:RevertPieceShowRange(entity)
+  local gridGameObj = entity:View().ViewWrapper.GameObject
   self:RevertPieceShowRangeByGameObj(gridGameObj)
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceShowRange = function(self, entity, pos)
-  -- function num : 0_95 , upvalues : _ENV
-  ((UnityEngine.Shader).EnableKeyword)("_CELL_SELF_CLIP")
-  local gridGameObj = ((entity:View()).ViewWrapper).GameObject
+function PieceServiceRender:SetPieceShowRange(entity, pos)
+  UnityEngine.Shader.EnableKeyword("_CELL_SELF_CLIP")
+  local gridGameObj = entity:View().ViewWrapper.GameObject
   local meshRenderer = gridGameObj:GetComponentInChildren(typeof(UnityEngine.MeshRenderer))
-  local _mpb = (UnityEngine.MaterialPropertyBlock):New()
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local _mpb = UnityEngine.MaterialPropertyBlock:New()
+  local boardServiceRender = self._world:GetService("BoardRender")
   local renderPos = boardServiceRender:GridPosition2LocationPos(pos, entity)
   local posV4 = Vector4(renderPos.x - 0.5, renderPos.x + 0.5, renderPos.z - 0.5, renderPos.z + 0.5)
   _mpb:SetVector("_H3DGZ_SelfClipParams", Vector4(renderPos.x - 0.5, renderPos.x + 0.5, renderPos.z - 0.5, renderPos.z + 0.5))
   meshRenderer:SetPropertyBlock(_mpb)
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetPieceFakeEntityPieceType = function(self, pieceFakeEntity, pieceType)
-  -- function num : 0_96 , upvalues : _ENV
+function PieceServiceRender:SetPieceFakeEntityPieceType(pieceFakeEntity, pieceType)
   pieceFakeEntity:ReplacePieceFake(pieceType)
   local pieceFakeComponent = pieceFakeEntity:PieceFake()
   local hasInitAsset = pieceFakeComponent:HasInitAsset()
@@ -1266,63 +846,45 @@ PieceServiceRender.SetPieceFakeEntityPieceType = function(self, pieceFakeEntity,
     local pieceBase = self:GetPieceConfigBase()
     pieceFakeEntity:ReplaceAsset(NativeUnityPrefabAsset:New(pieceBase))
     pieceFakeComponent:SetInitAsset()
-    local pieceBasePrefabObj = (pieceFakeEntity:View()):GetGameObject()
+    local pieceBasePrefabObj = pieceFakeEntity:View():GetGameObject()
     pieceBasePrefabObj.name = "gezi_base_fake"
   end
-  do
-    local pieceEffectType = pieceFakeComponent:GetRenderPieceEffectType()
-    local piecePrefabKey = self:GetGridPrefabPathFinal(pieceType, pieceEffectType)
-    self:_OnShowPiecePrefab(pieceFakeEntity, piecePrefabKey)
-  end
+  local pieceEffectType = pieceFakeComponent:GetRenderPieceEffectType()
+  local piecePrefabKey = self:GetGridPrefabPathFinal(pieceType, pieceEffectType)
+  self:_OnShowPiecePrefab(pieceFakeEntity, piecePrefabKey)
 end
 
--- DECOMPILER ERROR at PC299: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.FindPieceFakeEntity = function(self, pos)
-  -- function num : 0_97
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function PieceServiceRender:FindPieceFakeEntity(pos)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderBoardSpliceComponent = renderBoardEntity:RenderBoardSplice()
   local gridEntity = renderBoardSpliceComponent:GetGridRenderEntity(pos)
   return gridEntity
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.OnSetTrapViewWithPieceExtraLayer = function(self, trapEntity, pos)
-  -- function num : 0_98 , upvalues : _ENV
+function PieceServiceRender:OnSetTrapViewWithPieceExtraLayer(trapEntity, pos)
   if not trapEntity:HasView() then
-    return 
+    return
   end
   local pieceEntity = self:FindPieceEntity(pos)
   if not pieceEntity then
-    return 
+    return
   end
   local pieceComponent = pieceEntity:Piece()
   local extraLayerTransform = pieceComponent:OnGetLayerTransform("ExtraLayer")
-  local trapObj = ((trapEntity:View()).ViewWrapper).GameObject
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (trapObj.transform).parent = extraLayerTransform
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R7 in 'UnsetPending'
-
-  if (trapObj.transform).localPosition ~= Vector3.zero then
-    (trapObj.transform).localPosition = Vector3.zero
+  local trapObj = trapEntity:View().ViewWrapper.GameObject
+  trapObj.transform.parent = extraLayerTransform
+  if trapObj.transform.localPosition ~= Vector3.zero then
+    trapObj.transform.localPosition = Vector3.zero
   end
   if not APPVER_LAYERORDER then
-    return 
+    return
   end
-  local tLayerOrderComponent = (trapObj.gameObject):GetComponentInChildren(typeof(TLayerOrderComponent))
+  local tLayerOrderComponent = trapObj.gameObject:GetComponentInChildren(typeof(TLayerOrderComponent))
   if tLayerOrderComponent then
-    ((UnityEngine.GameObject).Destroy)(tLayerOrderComponent)
+    UnityEngine.GameObject.Destroy(tLayerOrderComponent)
   end
 end
 
--- DECOMPILER ERROR at PC305: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceServiceRender.SetEffectEntityParentWithPiecePos = function(self, effectEntity, pos)
-  -- function num : 0_99
+function PieceServiceRender:SetEffectEntityParentWithPiecePos(effectEntity, pos)
   effectEntity:SetLocationHeight(0.01)
 end
-
-

@@ -1,66 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/pet_dead_flag_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PetDeadFlagComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-PetDeadFlagComponent.Constructor = function(self)
-  -- function num : 0_0
+function PetDeadFlagComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-PetDeadFlagComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_1
+function PetDeadFlagComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-PetDeadFlagComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_2
+function PetDeadFlagComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PetDeadFlag = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).PetDeadFlag)
+function Entity:PetDeadFlag()
+  return self:GetComponent(self.WEComponentsEnum.PetDeadFlag)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPetDeadFlag = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).PetDeadFlag)
+function Entity:HasPetDeadFlag()
+  return self:HasComponent(self.WEComponentsEnum.PetDeadFlag)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPetDeadFlag = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PetDeadFlag
+function Entity:AddPetDeadFlag()
+  local index = self.WEComponentsEnum.PetDeadFlag
   local component = PetDeadFlagComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePetDeadFlag = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PetDeadFlag
+function Entity:ReplacePetDeadFlag()
+  local index = self.WEComponentsEnum.PetDeadFlag
   local component = PetDeadFlagComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePetDeadFlag = function(self)
-  -- function num : 0_7
+function Entity:RemovePetDeadFlag()
   if self:HasPetDeadFlag() then
-    self:RemoveComponent((self.WEComponentsEnum).PetDeadFlag)
+    self:RemoveComponent(self.WEComponentsEnum.PetDeadFlag)
   end
 end
-
-

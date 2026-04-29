@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/active_skill_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("ActiveSkillSystem", MainStateSystem)
 ActiveSkillSystem = ActiveSkillSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActiveSkillSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActiveSkillSystem:_GetMainStateID()
   return GameStateID.ActiveSkill
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function ActiveSkillSystem:_OnMainStateEnter(TT)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local casterEntity = self:_GetActiveSkillCasterEntity(teamEntity)
   self:_DoRenderCheckNoGhost(TT, teamEntity, casterEntity)
   self:_DoRenderPreActiveSkillStart(TT)
@@ -72,44 +62,37 @@ ActiveSkillSystem._OnMainStateEnter = function(self, TT)
   self:_DoRenderGuideActiveSkillRealEnd(TT, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoLogicActiveSkillMonsterDead = function(self, teamEntity, casterEntity)
-  -- function num : 0_2
+function ActiveSkillSystem:_DoLogicActiveSkillMonsterDead(teamEntity, casterEntity)
   local deadMonsterList = self:_DoLogicMonsterDead()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoLogicCalcAntiAttack = function(self, casterEntity)
-  -- function num : 0_3 , upvalues : _ENV
+function ActiveSkillSystem:_DoLogicCalcAntiAttack(casterEntity)
   local monsterEntityIDArray = {}
   if not casterEntity:HasPetPstID() then
     return monsterEntityIDArray
   end
-  local buffSvc = (self.world):GetService("BuffLogic")
+  local buffSvc = self.world:GetService("BuffLogic")
   if buffSvc:IsPetNotTriggerAntiAttack(casterEntity) then
     return monsterEntityIDArray
   end
-  local aiService = (self.world):GetService("AI")
+  local aiService = self.world:GetService("AI")
   local orderArray = aiService:StatLogicOrders(AILogicPeriodType.Anti)
   aiService:RunAiLogic_WaitEnd(AILogicPeriodType.Anti)
   local refreshAntiEntityIDList = {}
-  local triggerSvc = (self._world):GetService("Trigger")
-  for _,orderElement in ipairs(orderArray) do
-    for _,aiEntity in ipairs(orderElement[2]) do
+  local triggerSvc = self._world:GetService("Trigger")
+  for _, orderElement in ipairs(orderArray) do
+    for _, aiEntity in ipairs(orderElement[2]) do
       local nt = NTMonsterPostAntiAttack:New(aiEntity)
       triggerSvc:Notify(nt)
-      ;
-      (table.insert)(monsterEntityIDArray, aiEntity:GetID())
+      table.insert(monsterEntityIDArray, aiEntity:GetID())
       local aiCmpt = aiEntity:AI()
       if aiCmpt:GetAntiSkill() then
-        (table.insert)(refreshAntiEntityIDList, aiEntity:GetID())
+        table.insert(refreshAntiEntityIDList, aiEntity:GetID())
       end
     end
   end
-  local cBattleStat = (self.world):BattleStat()
-  if #monsterEntityIDArray > 0 then
+  local cBattleStat = self.world:BattleStat()
+  if 0 < #monsterEntityIDArray then
     cBattleStat:SetLastAntiTriggerEntityID(casterEntity:GetID())
   else
     cBattleStat:SetLastAntiTriggerEntityID(nil)
@@ -117,189 +100,135 @@ ActiveSkillSystem._DoLogicCalcAntiAttack = function(self, casterEntity)
   return monsterEntityIDArray, refreshAntiEntityIDList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._GetActiveSkillCasterEntity = function(self, teamEntity)
-  -- function num : 0_4
+function ActiveSkillSystem:_GetActiveSkillCasterEntity(teamEntity)
   local activeSkillCmpt = teamEntity:ActiveSkill()
   local casterPetEntityID = activeSkillCmpt:GetActiveSkillCasterEntityID()
-  local casterEntity = (self._world):GetEntityByID(casterPetEntityID)
+  local casterEntity = self._world:GetEntityByID(casterPetEntityID)
   return casterEntity
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._IsPetCastActiveSkill = function(self, teamEntity)
-  -- function num : 0_5
-  local shareDataSvc = (self._world):GetService("UtilData")
+function ActiveSkillSystem:_IsPetCastActiveSkill(teamEntity)
+  local shareDataSvc = self._world:GetService("UtilData")
   return shareDataSvc:IsPetCastActiveSkill(teamEntity)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoLogicCastActiveSkill = function(self, teamEntity, casterEntity)
-  -- function num : 0_6 , upvalues : _ENV
+function ActiveSkillSystem:_DoLogicCastActiveSkill(teamEntity, casterEntity)
   local ntBeforeActiveSkillAttackStart = NTBeforeActiveSkillAttackStart:New(casterEntity)
-  ;
-  ((self._world):GetService("Trigger")):Notify(ntBeforeActiveSkillAttackStart)
+  self._world:GetService("Trigger"):Notify(ntBeforeActiveSkillAttackStart)
   local activeSkillCmpt = teamEntity:ActiveSkill()
   local activeSkillID = activeSkillCmpt:GetActiveSkillID()
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   skillEffectResultContainer:Clear()
   local playerElementCmpt = casterEntity:Element()
   if playerElementCmpt then
     playerElementCmpt:SetUseSecondaryType(false)
   end
-  ;
-  (Log.debug)("CastActiveSkill skillID=", activeSkillID, " entity=", casterEntity:GetID())
-  ;
-  (Log.info)("Skill Record cast skill, ActiveSkillSystem active skillID=", activeSkillID, " casterEntityID=", casterEntity:GetID())
-  local uniqueBattleStat = (self._world):BattleStat()
+  Log.debug("CastActiveSkill skillID=", activeSkillID, " entity=", casterEntity:GetID())
+  Log.info("Skill Record cast skill, ActiveSkillSystem active skillID=", activeSkillID, " casterEntityID=", casterEntity:GetID())
+  local uniqueBattleStat = self._world:BattleStat()
   uniqueBattleStat:AffixBeginSkillDamageRecord(casterEntity:GetID(), activeSkillID)
-  local logicService = (self._world):GetService("SkillLogic")
+  local logicService = self._world:GetService("SkillLogic")
   if self:_IsSkillInvalidated(casterEntity, activeSkillID) then
     skillEffectResultContainer:SetIsInvalidated(true)
   else
     logicService:CalcSkillEffect(casterEntity, activeSkillID, SkillType.Active)
   end
   local affixRecordSkillDamageTargetCount = uniqueBattleStat:AffixEndSkillDamageRecordAndGetCount(casterEntity:GetID(), activeSkillID)
-  ;
-  (Log.info)("Skill Record end skill, ActiveSkillSystem active skillID=", activeSkillID, " casterEntityID=", casterEntity:GetID(), " targetCount:", affixRecordSkillDamageTargetCount)
+  Log.info("Skill Record end skill, ActiveSkillSystem active skillID=", activeSkillID, " casterEntityID=", casterEntity:GetID(), " targetCount:", affixRecordSkillDamageTargetCount)
   if casterEntity:HasPetPstID() then
     local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
     local totalDamage = 0
     if damageResultArray then
-      for _,damageResult in ipairs(damageResultArray) do
+      for _, damageResult in ipairs(damageResultArray) do
         totalDamage = totalDamage + damageResult:GetTotalDamage()
       end
     end
-    do
-      local notifyData = NTActiveSkillAttackEnd:New(casterEntity, activeSkillID)
-      notifyData:InitSkillResult(activeSkillID, skillEffectResultContainer:GetScopeResult())
-      notifyData:SetSkillDamageTargetCount(affixRecordSkillDamageTargetCount)
-      ;
-      ((self._world):GetService("Trigger")):Notify(notifyData)
-      local ntASAEBeforeMonsterDead = NTActiveSkillAttackEndBeforeMonsterDead:New(casterEntity, activeSkillID)
-      ntASAEBeforeMonsterDead:InitSkillResult(activeSkillID, skillEffectResultContainer:GetScopeResult())
-      ;
-      ((self._world):GetService("Trigger")):Notify(ntASAEBeforeMonsterDead)
-      ;
-      ((self._world):GetService("Trigger")):Notify(NTActiveSkillDamageEnd:New(casterEntity, totalDamage))
-      ;
-      ((self._world):GetService("Trigger")):Notify(NTAfterPetSkillDamage:New(casterEntity, activeSkillID))
-      local costCasterHPResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.CostCasterHP)
-      local costCasterHP = 0
-      if costCasterHPResultArray then
-        for _,costResult in ipairs(costCasterHPResultArray) do
-          local damageInfo = costResult:GetDamageInfo()
-          local damageValue = damageInfo:GetDamageValue()
-          local damageOnHpValue = damageInfo:GetChangeHP()
-          costCasterHP = costCasterHP + -1 * damageOnHpValue
-        end
-      end
-      do
-        do
-          ;
-          ((self._world):GetService("Trigger")):Notify(NTActiveSkillCostCasterHPEnd:New(casterEntity, costCasterHP))
-          ;
-          ((self._world):GetDataLogger()):AddDataLog("OnActiveSkillEnd", casterEntity, activeSkillID, totalDamage)
-          do
-            if casterEntity:HasTrapID() then
-              local notifyData = NTTrapActiveSkillEnd:New(casterEntity, activeSkillID)
-              ;
-              ((self._world):GetService("Trigger")):Notify(notifyData)
-            end
-            local svc = (self._world):GetService("L2R")
-            svc:L2RActiveAttackData(casterEntity, activeSkillID)
-            svc:L2RBoardLogicData()
-          end
-        end
+    local notifyData = NTActiveSkillAttackEnd:New(casterEntity, activeSkillID)
+    notifyData:InitSkillResult(activeSkillID, skillEffectResultContainer:GetScopeResult())
+    notifyData:SetSkillDamageTargetCount(affixRecordSkillDamageTargetCount)
+    self._world:GetService("Trigger"):Notify(notifyData)
+    local ntASAEBeforeMonsterDead = NTActiveSkillAttackEndBeforeMonsterDead:New(casterEntity, activeSkillID)
+    ntASAEBeforeMonsterDead:InitSkillResult(activeSkillID, skillEffectResultContainer:GetScopeResult())
+    self._world:GetService("Trigger"):Notify(ntASAEBeforeMonsterDead)
+    self._world:GetService("Trigger"):Notify(NTActiveSkillDamageEnd:New(casterEntity, totalDamage))
+    self._world:GetService("Trigger"):Notify(NTAfterPetSkillDamage:New(casterEntity, activeSkillID))
+    local costCasterHPResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.CostCasterHP)
+    local costCasterHP = 0
+    if costCasterHPResultArray then
+      for _, costResult in ipairs(costCasterHPResultArray) do
+        local damageInfo = costResult:GetDamageInfo()
+        local damageValue = damageInfo:GetDamageValue()
+        local damageOnHpValue = damageInfo:GetChangeHP()
+        costCasterHP = costCasterHP + -1 * damageOnHpValue
       end
     end
+    self._world:GetService("Trigger"):Notify(NTActiveSkillCostCasterHPEnd:New(casterEntity, costCasterHP))
+    self._world:GetDataLogger():AddDataLog("OnActiveSkillEnd", casterEntity, activeSkillID, totalDamage)
+  elseif casterEntity:HasTrapID() then
+    local notifyData = NTTrapActiveSkillEnd:New(casterEntity, activeSkillID)
+    self._world:GetService("Trigger"):Notify(notifyData)
   end
+  local svc = self._world:GetService("L2R")
+  svc:L2RActiveAttackData(casterEntity, activeSkillID)
+  svc:L2RBoardLogicData()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._IsSkillInvalidated = function(self, casterEntity, activeSkillID)
-  -- function num : 0_7
-  local utilData = (self._world):GetService("UtilData")
+function ActiveSkillSystem:_IsSkillInvalidated(casterEntity, activeSkillID)
+  local utilData = self._world:GetService("UtilData")
   return utilData:IsSkillInvalidated(casterEntity, activeSkillID)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoLogicUpdateBattleStat = function(self, teamEntity, casterEntity)
-  -- function num : 0_8 , upvalues : _ENV
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).DeadMark)
-  local battleStatCmpt = (self._world):BattleStat()
+function ActiveSkillSystem:_DoLogicUpdateBattleStat(teamEntity, casterEntity)
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.DeadMark)
+  local battleStatCmpt = self._world:BattleStat()
   battleStatCmpt:SetOneActiveSkillKillCount(teamEntity, #monsterGroup:GetEntities())
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local resultDic = skillEffectResultContainer:GetEffectResultDict()
-  for k,v in pairs(resultDic) do
+  for k, v in pairs(resultDic) do
     battleStatCmpt:StatisticsColorSkillCount(teamEntity, k)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoLogicCalcIsFinalAttack = function(self)
-  -- function num : 0_9
-  local battleService = (self._world):GetService("Battle")
+function ActiveSkillSystem:_DoLogicCalcIsFinalAttack()
+  local battleService = self._world:GetService("Battle")
   local isFinalAttack = battleService:IsFinalAttack()
   return isFinalAttack
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoLogicTrapDeadSkill = function(self)
-  -- function num : 0_10
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function ActiveSkillSystem:_DoLogicTrapDeadSkill()
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   trapServiceLogic:CalcActiveSkillDeadTrapDeadSkill()
   self:_DoLogicTrapDie()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoLogicResetPickUp = function(self, teamEntity)
-  -- function num : 0_11
+function ActiveSkillSystem:_DoLogicResetPickUp(teamEntity)
   local logicPickUpCmpt = teamEntity:LogicPickUp()
   logicPickUpCmpt:ResetLogicPickUp()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoLogicSwitchMainState = function(self, teamEntity)
-  -- function num : 0_12 , upvalues : _ENV
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function ActiveSkillSystem:_DoLogicSwitchMainState(teamEntity)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local isTriggerDimension = boardServiceLogic:IsPlayerOnDimension(teamEntity)
   local nextState = self:_DoCheckNextState(teamEntity)
   if isTriggerDimension then
     if nextState == 2 then
-      ((self._world):BattleStat()):SetTriggerDimensionFlag(TriggerDimensionFlag.RoundResult)
-    else
-      if nextState == 1 then
-        ((self._world):BattleStat()):SetTriggerDimensionFlag(TriggerDimensionFlag.WaitInput)
-      end
+      self._world:BattleStat():SetTriggerDimensionFlag(TriggerDimensionFlag.RoundResult)
+    elseif nextState == 1 then
+      self._world:BattleStat():SetTriggerDimensionFlag(TriggerDimensionFlag.WaitInput)
     end
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.ActiveSkillFinish, 3)
+    self._world:EventDispatcher():Dispatch(GameEventType.ActiveSkillFinish, 3)
   else
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.ActiveSkillFinish, nextState)
+    self._world:EventDispatcher():Dispatch(GameEventType.ActiveSkillFinish, nextState)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoCheckNextState = function(self, teamEntity)
-  -- function num : 0_13
-  local battleStatCmpt = (self._world):BattleStat()
+function ActiveSkillSystem:_DoCheckNextState(teamEntity)
+  local battleStatCmpt = self._world:BattleStat()
   local nextState = 0
   if battleStatCmpt:AssignWaveResult() then
     nextState = 1
   else
-    local battleService = (self._world):GetService("Battle")
+    local battleService = self._world:GetService("Battle")
     local allMonsterDead = battleService:CheckAllMonstersDead(teamEntity)
     local specificTrapDead = battleService:CheckSpecificTrapDead()
     if allMonsterDead and specificTrapDead then
@@ -310,94 +239,71 @@ ActiveSkillSystem._DoCheckNextState = function(self, teamEntity)
         nextState = 2
       end
     else
-      do
-        nextState = 1
-        do
-          local waveFinish = battleService:BattleCalculation(teamEntity)
-          if waveFinish then
-            nextState = 2
-          end
-          return nextState
-        end
-      end
+      nextState = 1
+    end
+    local waveFinish = battleService:BattleCalculation(teamEntity)
+    if waveFinish then
+      nextState = 2
     end
   end
+  return nextState
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoLogicActiveSkillEnd = function(self, teamEntity, casterEntity)
-  -- function num : 0_14
+function ActiveSkillSystem:_DoLogicActiveSkillEnd(teamEntity, casterEntity)
   casterEntity:RemoveActiveSkillPickUpComponent()
   local activeSkillCmpt = teamEntity:ActiveSkill()
   activeSkillCmpt:SetActiveSkillID(nil, nil)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoLogicWaitTeleportFinish = function(self, teamEntity, casterEntity, posCasterOld)
-  -- function num : 0_15 , upvalues : _ENV
+function ActiveSkillSystem:_DoLogicWaitTeleportFinish(teamEntity, casterEntity, posCasterOld)
   local posCasterNew = casterEntity:GetGridPosition()
   local bHaveTeleport = posCasterNew ~= posCasterOld
   if not bHaveTeleport then
-    local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+    local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
     local teleportResultNew = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Teleport, 1)
     if teleportResultNew then
       local targetEntityID = teleportResultNew:GetTargetID()
-      local targetEntity = (self._world):GetEntityByID(targetEntityID)
+      local targetEntity = self._world:GetEntityByID(targetEntityID)
       if targetEntity and (targetEntity:HasTeam() or targetEntity:HasPet()) then
         local targetTeamEntity = targetEntity
         if targetTeamEntity:HasPet() then
-          targetTeamEntity = (targetEntity:Pet()):GetOwnerTeamEntity()
+          targetTeamEntity = targetEntity:Pet():GetOwnerTeamEntity()
         end
-        local isLocalTeam = ((self._world):Player()):IsLocalTeamEntity(targetTeamEntity)
+        local isLocalTeam = self._world:Player():IsLocalTeamEntity(targetTeamEntity)
         if isLocalTeam then
           bHaveTeleport = true
         end
       end
     end
   end
-  local listTrapTrigger = nil
-  do
-    if bHaveTeleport then
-      local sTrapLogic = (self._world):GetService("TrapLogic")
-      listTrapTrigger = sTrapLogic:TriggerTrapByTeleport(teamEntity, true)
-    end
-    do return listTrapTrigger end
-    -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  local listTrapTrigger
+  if bHaveTeleport then
+    local sTrapLogic = self._world:GetService("TrapLogic")
+    listTrapTrigger = sTrapLogic:TriggerTrapByTeleport(teamEntity, true)
   end
+  return listTrapTrigger
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoLogicCalcBuffAntiAttack = function(self, teamEntity, casterEntity)
-  -- function num : 0_16 , upvalues : _ENV
+function ActiveSkillSystem:_DoLogicCalcBuffAntiAttack(teamEntity, casterEntity)
   local isPetActiveSkill = self:_IsPetCastActiveSkill(teamEntity)
   if isPetActiveSkill then
     local ntActiveSkillAntiAttack = NTActiveSkillAntiAttack:New(casterEntity)
-    ;
-    ((self._world):GetService("Trigger")):Notify(ntActiveSkillAntiAttack)
+    self._world:GetService("Trigger"):Notify(ntActiveSkillAntiAttack)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoLogicGetActiveSkillID = function(self, teamEntity)
-  -- function num : 0_17
+function ActiveSkillSystem:_DoLogicGetActiveSkillID(teamEntity)
   local activeSkillCmpt = teamEntity:ActiveSkill()
   local activeSkillID = activeSkillCmpt:GetActiveSkillID()
   return activeSkillID
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoLogicRefreshAntiAttackParam = function(self, refreshAntiEntityIDList)
-  -- function num : 0_18 , upvalues : _ENV
-  if not refreshAntiEntityIDList or (table.count)(refreshAntiEntityIDList) == 0 then
-    return 
+function ActiveSkillSystem:_DoLogicRefreshAntiAttackParam(refreshAntiEntityIDList)
+  if not refreshAntiEntityIDList or table.count(refreshAntiEntityIDList) == 0 then
+    return
   end
-  for _,entityID in ipairs(refreshAntiEntityIDList) do
-    local entity = (self._world):GetEntityByID(entityID)
+  for _, entityID in ipairs(refreshAntiEntityIDList) do
+    local entity = self._world:GetEntityByID(entityID)
     local attributeCmpt = entity:Attributes()
     local roundCount = "MaxAntiSkillCountPerRound"
     local curValue = attributeCmpt:GetAttribute(roundCount)
@@ -414,144 +320,73 @@ ActiveSkillSystem._DoLogicRefreshAntiAttackParam = function(self, refreshAntiEnt
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._ClearShareSkillResult = function(self)
-  -- function num : 0_19
-  local boardEntity = (self._world):GetBoardEntity()
+function ActiveSkillSystem:_ClearShareSkillResult()
+  local boardEntity = self._world:GetBoardEntity()
   boardEntity:ReplaceShareSkillResult()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderCheckNoGhost = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_20
+function ActiveSkillSystem:_DoRenderCheckNoGhost(TT, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderPreActiveSkillStart = function(self, TT)
-  -- function num : 0_21
+function ActiveSkillSystem:_DoRenderPreActiveSkillStart(TT)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderNotifyActiveSkillStart = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_22
+function ActiveSkillSystem:_DoRenderNotifyActiveSkillStart(TT, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderGuidActiveSkill = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_23
+function ActiveSkillSystem:_DoRenderGuidActiveSkill(TT, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderWaitPlaySkillTaskFinish = function(self, TT)
-  -- function num : 0_24
+function ActiveSkillSystem:_DoRenderWaitPlaySkillTaskFinish(TT)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderWaitTeleportFinish = function(self, TT, listTrapTrigger, teamEntity, casterEntity)
-  -- function num : 0_25
+function ActiveSkillSystem:_DoRenderWaitTeleportFinish(TT, listTrapTrigger, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderResetPieceAnim = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_26
+function ActiveSkillSystem:_DoRenderResetPieceAnim(TT, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderResetPreview = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_27
+function ActiveSkillSystem:_DoRenderResetPreview(TT, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderNotifyActiveSkillFinish = function(self, TT, teamEntity, casterEntity, skillID)
-  -- function num : 0_28
+function ActiveSkillSystem:_DoRenderNotifyActiveSkillFinish(TT, teamEntity, casterEntity, skillID)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderNotifyActiveFinishBeforeMonsterDead = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_29
+function ActiveSkillSystem:_DoRenderNotifyActiveFinishBeforeMonsterDead(TT, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderGuideActiveSkillEnd = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_30
+function ActiveSkillSystem:_DoRenderGuideActiveSkillEnd(TT, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderGuideActiveSkillRealEnd = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_31
+function ActiveSkillSystem:_DoRenderGuideActiveSkillRealEnd(TT, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderShowAfterActiveSkill = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_32
+function ActiveSkillSystem:_DoRenderShowAfterActiveSkill(TT, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderPlayActiveSkill = function(self, isFinalAttack, teamEntity, casterEntity)
-  -- function num : 0_33
+function ActiveSkillSystem:_DoRenderPlayActiveSkill(isFinalAttack, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderInWave = function(self, TT, traps, monsters)
-  -- function num : 0_34
+function ActiveSkillSystem:_DoRenderInWave(TT, traps, monsters)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderMonsterDead = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_35
+function ActiveSkillSystem:_DoRenderMonsterDead(TT, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderPlayAntiAttack = function(self, TT, monsterEntityIDArray)
-  -- function num : 0_36
+function ActiveSkillSystem:_DoRenderPlayAntiAttack(TT, monsterEntityIDArray)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderResetPickUp = function(self)
-  -- function num : 0_37
+function ActiveSkillSystem:_DoRenderResetPickUp()
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderActiveSkillEnd = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_38
+function ActiveSkillSystem:_DoRenderActiveSkillEnd(TT, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderPlayBuffAntiAttack = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_39
+function ActiveSkillSystem:_DoRenderPlayBuffAntiAttack(TT, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderRefreshAntiAttackParam = function(self, TT, refreshAntiEntityIDList)
-  -- function num : 0_40
+function ActiveSkillSystem:_DoRenderRefreshAntiAttackParam(TT, refreshAntiEntityIDList)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillSystem._DoRenderPopStarHideCasterEntity = function(self, TT, casterEntity)
-  -- function num : 0_41
+function ActiveSkillSystem:_DoRenderPopStarHideCasterEntity(TT, casterEntity)
 end
-
-

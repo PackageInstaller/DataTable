@@ -1,21 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_backpack/cls/ui_homeland_backpack_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBackpackData", Object)
 UIHomelandBackpackData = UIHomelandBackpackData
 local TABLE_CLEAR = table.clear
--- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
 
-UIHomelandBackpackData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.mUIHomeland = (self.mHomeland):GetUIModule()
-  self.homelandClient = (self.mUIHomeland):GetClient()
-  self.homeBuildManager = (self.homelandClient):BuildManager()
-  self.mItem = (GameGlobal.GetModule)(ItemModule)
-  self.mRole = (GameGlobal.GetModule)(RoleModule)
+function UIHomelandBackpackData:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.mUIHomeland = self.mHomeland:GetUIModule()
+  self.homelandClient = self.mUIHomeland:GetClient()
+  self.homeBuildManager = self.homelandClient:BuildManager()
+  self.mItem = GameGlobal.GetModule(ItemModule)
+  self.mRole = GameGlobal.GetModule(RoleModule)
   self.filters = {}
   self.list = {}
   self.mapRed = {}
@@ -23,101 +16,62 @@ UIHomelandBackpackData.Constructor = function(self)
   self.toolTabType = 2
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpackData.Init = function(self)
-  -- function num : 0_1
-  local clientHomelandInfo = (self.mHomeland).m_homeland_info
+function UIHomelandBackpackData:Init()
+  local clientHomelandInfo = self.mHomeland.m_homeland_info
   self:InitFilter()
   self:InitList()
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpackData.InitFilter = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandBackpackData:InitFilter()
   self.filters = {}
   self.mapRed = {}
-  local cfg_item = (Cfg.cfg_item)()
-  for _,cfgv in pairs(cfg_item) do
+  local cfg_item = Cfg.cfg_item()
+  for _, cfgv in pairs(cfg_item) do
     local filter = cfgv.TabType
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R8 in 'UnsetPending'
-
-    if filter and not (self.filters)[filter] then
-      (self.filters)[filter] = HomelandBackpackFilter:New(filter)
-      -- DECOMPILER ERROR at PC26: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self.mapRed)[filter] = {}
+    if filter and not self.filters[filter] then
+      self.filters[filter] = HomelandBackpackFilter:New(filter)
+      self.mapRed[filter] = {}
     end
   end
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpackData.InitList = function(self)
-  -- function num : 0_3 , upvalues : TABLE_CLEAR, _ENV
-  local listAll = (self.mItem):GetAllInBagItemInfos()
+function UIHomelandBackpackData:InitList()
+  local listAll = self.mItem:GetAllInBagItemInfos()
   self.list = {}
   TABLE_CLEAR(self.toolRed)
-  for _,item in ipairs(listAll) do
+  for _, item in ipairs(listAll) do
     local tpl = item:GetTemplate()
     local showType = tpl.ShowType or 1
     if showType & 2 == 2 then
       local filter = tpl.TabType
-      local filteredItems = (self.mapRed)[filter]
+      local filteredItems = self.mapRed[filter]
       local tplId = item:GetTemplateID()
       local pstID = item:GetID()
       if filteredItems then
-        local cfg_item = (Cfg.cfg_item)[tplId]
+        local cfg_item = Cfg.cfg_item[tplId]
         if cfg_item and cfg_item.ShowNew and cfg_item.ShowNew == 1 and item:IsHomelandNew() then
           filteredItems[pstID] = true
         else
           filteredItems[pstID] = nil
         end
-        ;
-        (table.insert)(self.list, item)
+        table.insert(self.list, item)
       else
-        do
-          do
-            ;
-            (Log.warn)("### invalid filter. filter = ", filter)
-            -- DECOMPILER ERROR at PC68: Confused about usage of register: R13 in 'UnsetPending'
-
-            if filter == self.toolTabType then
-              if self:_CheckLevelup(tplId) == true then
-                (self.toolRed)[pstID] = true
-              else
-                -- DECOMPILER ERROR at PC71: Confused about usage of register: R13 in 'UnsetPending'
-
-                ;
-                (self.toolRed)[pstID] = nil
-              end
-            end
-            -- DECOMPILER ERROR at PC72: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC72: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC72: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC72: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC72: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        Log.warn("### invalid filter. filter = ", filter)
+      end
+      if filter == self.toolTabType then
+        if self:_CheckLevelup(tplId) == true then
+          self.toolRed[pstID] = true
+        else
+          self.toolRed[pstID] = nil
         end
       end
     end
   end
-  ;
-  (self.mItem):SortItems(self.list)
+  self.mItem:SortItems(self.list)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpackData._CheckLevelup = function(self, tplId)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg_item_tool_upgrade = (Cfg.cfg_item_tool_upgrade)[tplId]
+function UIHomelandBackpackData:_CheckLevelup(tplId)
+  local cfg_item_tool_upgrade = Cfg.cfg_item_tool_upgrade[tplId]
   if not cfg_item_tool_upgrade then
     return false
   end
@@ -125,23 +79,20 @@ UIHomelandBackpackData._CheckLevelup = function(self, tplId)
   if not cfgCost then
     return false
   end
-  for _,value in ipairs(cfgCost) do
+  for _, value in ipairs(cfgCost) do
     local assetid = value[1]
     local cost = value[2]
-    local c = (self.mRole):GetAssetCount(assetid) or 0
-    if c < cost then
+    local c = self.mRole:GetAssetCount(assetid) or 0
+    if cost > c then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpackData.GetFilterById = function(self, id)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandBackpackData:GetFilterById(id)
   if self.filters then
-    for _,f in pairs(self.filters) do
+    for _, f in pairs(self.filters) do
       if f.id == id then
         return f
       end
@@ -149,12 +100,9 @@ UIHomelandBackpackData.GetFilterById = function(self, id)
   end
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpackData.GetItemById = function(self, id)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandBackpackData:GetItemById(id)
   if self.list then
-    for _,item in ipairs(self.list) do
+    for _, item in ipairs(self.list) do
       if id == item:GetID() then
         return item
       end
@@ -162,20 +110,13 @@ UIHomelandBackpackData.GetItemById = function(self, id)
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpackData.IsEnough = function(assetId, cost)
-  -- function num : 0_7 , upvalues : _ENV
-  local count = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(assetId)
+function UIHomelandBackpackData.IsEnough(assetId, cost)
+  local count = GameGlobal.GetModule(ItemModule):GetItemCount(assetId)
   local isEnough = cost <= count
-  do return isEnough end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return isEnough
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpackData.Compare = function(self, compValues, i)
-  -- function num : 0_8
+function UIHomelandBackpackData:Compare(compValues, i)
   local cv = compValues[i]
   local l, r, asc = cv[1], cv[2], cv[3]
   if l == r then
@@ -185,157 +126,123 @@ UIHomelandBackpackData.Compare = function(self, compValues, i)
     else
       return false
     end
+  elseif asc then
+    return l > r
   else
-    if r >= l then
-      do return not asc end
-      do return l < r end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
-    end
+    return l < r
   end
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpackData.CheckCode = function(result)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHomelandBackpackData.CheckCode(result)
   if result == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
     return true
   end
-  local msg = (StringTable.Get)("str_homeland_error_code_" .. result)
-  ;
-  (ToastManager.ShowHomeToast)(msg)
+  local msg = StringTable.Get("str_homeland_error_code_" .. result)
+  ToastManager.ShowHomeToast(msg)
   return false
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpackData.GetHomelandBackpackToolItemByTplId = function(self, tplId)
-  -- function num : 0_10 , upvalues : _ENV
+function UIHomelandBackpackData:GetHomelandBackpackToolItemByTplId(tplId)
   if not self.toolItems then
     self.toolItems = {}
   end
-  local tpl = (Cfg.cfg_item)[tplId]
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
+  local tpl = Cfg.cfg_item[tplId]
   if tpl and tpl.TabType == 2 then
-    if not (self.toolItems)[tplId] then
-      (self.toolItems)[tplId] = HomelandBackpackToolItem:New(tplId)
+    if not self.toolItems[tplId] then
+      self.toolItems[tplId] = HomelandBackpackToolItem:New(tplId)
     end
-    return (self.toolItems)[tplId]
+    return self.toolItems[tplId]
   else
-    ;
-    (Log.warn)("### ", tplId)
+    Log.warn("### ", tplId)
   end
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpackData.GetHomelandPathItemDataListByTplId = function(self, tplId)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHomelandBackpackData:GetHomelandPathItemDataListByTplId(tplId)
   if not self.mapItemGetPaths then
     self.mapItemGetPaths = {}
   end
-  local itemGetPaths = (self.mapItemGetPaths)[tplId]
+  local itemGetPaths = self.mapItemGetPaths[tplId]
   if itemGetPaths then
     return itemGetPaths
   else
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.mapItemGetPaths)[tplId] = {}
-    local cfg_item_gift = (Cfg.cfg_item_gift)({ItemGiftType = ItemGiftType.ItemGiftType_Choose})
+    self.mapItemGetPaths[tplId] = {}
+    local cfg_item_gift = Cfg.cfg_item_gift({
+      ItemGiftType = ItemGiftType.ItemGiftType_Choose
+    })
     if cfg_item_gift then
-      for key,cfgv in pairs(cfg_item_gift) do
+      for key, cfgv in pairs(cfg_item_gift) do
         local tplId = cfgv.ID
-        local count = (self.mItem):GetItemCount(tplId)
-        if count > 0 then
+        local count = self.mItem:GetItemCount(tplId)
+        if 0 < count then
           local itemList = cfgv.ItemList
-          for _,ids in ipairs(itemList) do
+          for _, ids in ipairs(itemList) do
             local id = ids[1]
             if id == tplId then
               local t = UIHomelandGetPathItemData:New()
               t:SetGiftWay(tplId)
-              ;
-              (table.insert)((self.mapItemGetPaths)[tplId], t)
+              table.insert(self.mapItemGetPaths[tplId], t)
               break
             end
           end
         end
       end
     end
-    do
-      local cfg_item_getway = (Cfg.cfg_item_getway)[tplId]
-      if cfg_item_getway then
-        local count = (table.count)(cfg_item_getway)
-        for i = 1, count - 1 do
-          local cfgv = cfg_item_getway["Getway" .. i]
-          if cfgv then
-            local t = UIHomelandGetPathItemData:New()
-            t:SetData(cfgv)
-            if t:CheckChapter() then
-              (table.insert)((self.mapItemGetPaths)[tplId], t)
-            end
+    local cfg_item_getway = Cfg.cfg_item_getway[tplId]
+    if cfg_item_getway then
+      local count = table.count(cfg_item_getway)
+      for i = 1, count - 1 do
+        local cfgv = cfg_item_getway["Getway" .. i]
+        if cfgv then
+          local t = UIHomelandGetPathItemData:New()
+          t:SetData(cfgv)
+          if t:CheckChapter() then
+            table.insert(self.mapItemGetPaths[tplId], t)
           end
         end
       end
-      do
-        return (self.mapItemGetPaths)[tplId]
-      end
     end
   end
+  return self.mapItemGetPaths[tplId]
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpackData.IsNew = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHomelandBackpackData:IsNew()
   if self.mapRed then
-    for filter,red in pairs(self.mapRed) do
+    for filter, red in pairs(self.mapRed) do
       if self:IsFilterNew(filter) then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpackData.IsFilterNew = function(self, filter)
-  -- function num : 0_13 , upvalues : _ENV
+function UIHomelandBackpackData:IsFilterNew(filter)
   if self.mapRed then
-    local mapFilter = (self.mapRed)[filter]
+    local mapFilter = self.mapRed[filter]
     if mapFilter then
-      for pstId,b in pairs(mapFilter) do
+      for pstId, b in pairs(mapFilter) do
         if self:IsItemNew(filter, pstId) then
           return true
         end
       end
     end
   end
-  do
-    if filter == self.toolTabType then
-      for _,item in ipairs(self.list) do
-        local tpl = item:GetTemplate()
-        if tpl.TabType == filter then
-          local pstId = item:GetID()
-          if self:IsItemNew(filter, pstId) then
-            return true
-          end
+  if filter == self.toolTabType then
+    for _, item in ipairs(self.list) do
+      local tpl = item:GetTemplate()
+      if tpl.TabType == filter then
+        local pstId = item:GetID()
+        if self:IsItemNew(filter, pstId) then
+          return true
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpackData.IsItemNew = function(self, filter, pstId)
-  -- function num : 0_14
+function UIHomelandBackpackData:IsItemNew(filter, pstId)
   if self.mapRed then
-    local mapFilter = (self.mapRed)[filter]
+    local mapFilter = self.mapRed[filter]
     if mapFilter then
       local b = mapFilter[pstId]
       if b then
@@ -343,30 +250,22 @@ UIHomelandBackpackData.IsItemNew = function(self, filter, pstId)
       end
     end
   end
-  do
-    if filter == self.toolTabType and (self.toolRed)[pstId] then
-      return true
-    end
-    return false
-  end
-end
-
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpackData.IsItemLvSatisfy = function(self, pstId)
-  -- function num : 0_15
-  if (self.toolRed)[pstId] then
+  if filter == self.toolTabType and self.toolRed[pstId] then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
+function UIHomelandBackpackData:IsItemLvSatisfy(pstId)
+  if self.toolRed[pstId] then
+    return true
+  end
+  return false
+end
 
-UIHomelandBackpackData.UnnewItem = function(self, filter, pstId)
-  -- function num : 0_16
+function UIHomelandBackpackData:UnnewItem(filter, pstId)
   if self.mapRed then
-    local mapFilter = (self.mapRed)[filter]
+    local mapFilter = self.mapRed[filter]
     if mapFilter then
       mapFilter[pstId] = nil
     end
@@ -375,25 +274,21 @@ end
 
 _class("HomelandBackpackFilter", Object)
 HomelandBackpackFilter = HomelandBackpackFilter
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
 
-HomelandBackpackFilter.Constructor = function(self, filter)
-  -- function num : 0_17 , upvalues : _ENV
+function HomelandBackpackFilter:Constructor(filter)
   self.id = filter
-  self.name = (StringTable.Get)("str_homeland_backpack_filter_" .. filter)
+  self.name = StringTable.Get("str_homeland_backpack_filter_" .. filter)
 end
 
 _class("HomelandBackpackToolItem", Object)
 HomelandBackpackToolItem = HomelandBackpackToolItem
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
 
-HomelandBackpackToolItem.Constructor = function(self, tplId)
-  -- function num : 0_18 , upvalues : _ENV
+function HomelandBackpackToolItem:Constructor(tplId)
   self.tplId = tplId
-  local cfg_item_tool_upgrade = (Cfg.cfg_item_tool_upgrade)[tplId]
+  local cfg_item_tool_upgrade = Cfg.cfg_item_tool_upgrade[tplId]
   if not cfg_item_tool_upgrade then
-    (Log.error)("### no data in cfg_item_tool_upgrade.", tplId)
-    return 
+    Log.error("### no data in cfg_item_tool_upgrade.", tplId)
+    return
   end
   self.type = cfg_item_tool_upgrade.ToolType
   self.param = cfg_item_tool_upgrade.param
@@ -402,90 +297,69 @@ HomelandBackpackToolItem.Constructor = function(self, tplId)
   self.cost = {}
   local cfgCost = cfg_item_tool_upgrade.Cost
   if cfgCost then
-    for index,value in ipairs(cfgCost) do
+    for index, value in ipairs(cfgCost) do
       local ra = RoleAsset:New()
       ra.assetid = value[1]
       ra.count = value[2]
-      ;
-      (table.insert)(self.cost, ra)
+      table.insert(self.cost, ra)
     end
   end
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandBackpackToolItem.IsLevelMax = function(self)
-  -- function num : 0_19
-  if self.tplIdNextLv > 0 then
-    do
-      local b = not self.tplIdNextLv
-      do return b end
-      -- DECOMPILER ERROR: 2 unprocessed JMP targets
-    end
+function HomelandBackpackToolItem:IsLevelMax()
+  if self.tplIdNextLv then
+    local b = self.tplIdNextLv <= 0
+    return b
   end
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandBackpackToolItem.IsCostEnough = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  if self.cost and (table.count)(self.cost) > 0 then
-    for _,c in ipairs(self.cost) do
-      if not (UIForgeData.IsEnough)(c.assetid, c.count) then
+function HomelandBackpackToolItem:IsCostEnough()
+  if self.cost and table.count(self.cost) > 0 then
+    for _, c in ipairs(self.cost) do
+      if not UIForgeData.IsEnough(c.assetid, c.count) then
         return false
       end
     end
   end
-  do
-    return true
-  end
+  return true
 end
 
-_enum("HomelandBackpackToolItemType", {Axe = 1, FishingRod = 2, End = -1})
+_enum("HomelandBackpackToolItemType", {
+  Axe = 1,
+  FishingRod = 2,
+  End = -1
+})
 HomelandBackpackToolItemType = HomelandBackpackToolItemType
 _class("UIHomelandGetPathItemData", UICustomWidget)
 UIHomelandGetPathItemData = UIHomelandGetPathItemData
--- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
 
-UIHomelandGetPathItemData.Constructor = function(self)
-  -- function num : 0_21
+function UIHomelandGetPathItemData:Constructor()
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandGetPathItemData.SetData = function(self, cfg)
-  -- function num : 0_22 , upvalues : _ENV
+function UIHomelandGetPathItemData:SetData(cfg)
   self.type = tonumber(cfg[1])
   if self.type == GetWayItemType.Text then
     self.desc = cfg[2]
-  else
-    if self.type == GetWayItemType.Jump then
-      self.desc = cfg[2]
-      self.jumpId = tonumber(cfg[3])
-    end
+  elseif self.type == GetWayItemType.Jump then
+    self.desc = cfg[2]
+    self.jumpId = tonumber(cfg[3])
   end
   self.randomType = tonumber(cfg[4])
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandGetPathItemData.SetGiftWay = function(self, tplId)
-  -- function num : 0_23 , upvalues : _ENV
+function UIHomelandGetPathItemData:SetGiftWay(tplId)
   self.type = GetWayItemType.Use
   self.useItemId = tplId
-  local cfg = (Cfg.cfg_item)[self.useItemId]
+  local cfg = Cfg.cfg_item[self.useItemId]
   if not cfg then
-    (Log.error)("###[UIHomelandGetPathItemData] cfg is nil ! id --> ", self.useItemId)
+    Log.error("###[UIHomelandGetPathItemData] cfg is nil ! id --> ", self.useItemId)
   end
   self.desc = cfg.Name
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandGetPathItemData.CheckChapter = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIHomelandGetPathItemData:CheckChapter()
   if self.type == GetWayItemType.Jump then
-    local mMission = (GameGlobal.GetModule)(MissionModule)
+    local mMission = GameGlobal.GetModule(MissionModule)
     local discoveryData = mMission:GetDiscoveryData()
     if self.desc == "str_item_get_discovery" then
       local chapter = discoveryData:GetChapterByStageId(self.jumpId)
@@ -496,113 +370,88 @@ UIHomelandGetPathItemData.CheckChapter = function(self)
       end
     end
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandGetPathItemData.GetDesc = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  local strDesc = (StringTable.Get)(self.desc)
+function UIHomelandGetPathItemData:GetDesc()
+  local strDesc = StringTable.Get(self.desc)
   local strDesc1 = self:CreateGetWayString(strDesc, self.jumpId)
   local enable, extraStr = self:CheckEnable(self.jumpId)
-  local randomText = nil
+  local randomText
   if self.type == GetWayItemType.Use then
-    local count = (self.mItem):GetItemCount(self.useItemId)
-    randomText = (StringTable.Get)("str_item_public_get_path_owned", count)
+    local count = self.mItem:GetItemCount(self.useItemId)
+    randomText = StringTable.Get("str_item_public_get_path_owned", count)
   else
-    do
-      randomText = (UIEnum.ItemRandomStr)(self.randomType)
-      if not (string.isnullorempty)(randomText) then
-        randomText = "【" .. randomText .. "】"
-      end
-      local strDesc1 = strDesc1 .. extraStr
-      return strDesc1
-    end
+    randomText = UIEnum.ItemRandomStr(self.randomType)
   end
+  if not string.isnullorempty(randomText) then
+    randomText = "【" .. randomText .. "】"
+  end
+  local strDesc1 = strDesc1 .. extraStr
+  return strDesc1
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandGetPathItemData.CreateGetWayString = function(self, str, jumpId)
-  -- function num : 0_26 , upvalues : _ENV
-  local cfg = (Cfg.cfg_jump)[jumpId]
+function UIHomelandGetPathItemData:CreateGetWayString(str, jumpId)
+  local cfg = Cfg.cfg_jump[jumpId]
   if cfg and cfg.JumpID == UIJumpType.UI_JumpMission then
-    local missionId = (cfg.JumpParam)[1]
-    local cfg_mission = (Cfg.cfg_mission)[missionId]
-    local strStageIdx = (DiscoveryStage.GetStageIndexString)(missionId)
-    local strStageName = (StringTable.Get)(cfg_mission.Name)
-    local args = {strStageIdx .. " " .. strStageName}
+    local missionId = cfg.JumpParam[1]
+    local cfg_mission = Cfg.cfg_mission[missionId]
+    local strStageIdx = DiscoveryStage.GetStageIndexString(missionId)
+    local strStageName = StringTable.Get(cfg_mission.Name)
+    local args = {
+      strStageIdx .. " " .. strStageName
+    }
     if args then
       for i = 1, #args do
         local p = "{" .. tostring(i - 1) .. "}"
-        str = (string.gsub)(str, p, args[i])
+        str = string.gsub(str, p, args[i])
       end
     end
   end
-  do
-    return str
-  end
+  return str
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandGetPathItemData.CheckEnable = function(self, jumpId)
-  -- function num : 0_27 , upvalues : _ENV
-  local cfg = (Cfg.cfg_jump)[jumpId]
+function UIHomelandGetPathItemData:CheckEnable(jumpId)
+  local cfg = Cfg.cfg_jump[jumpId]
   local unlock = true
   local extraStr = ""
   if cfg then
     local jumpType = cfg.JumpID
     if jumpType == UIJumpType.UI_JumpMission then
-      local missionId = (cfg.JumpParam)[1]
+      local missionId = cfg.JumpParam[1]
       local mission_md = self:GetModule(MissionModule)
       local _, _unlock = mission_md:GetMissionGetWayDetails(missionId)
       unlock = _unlock
     else
-      do
-        local jumpModule = (self:GetModule(QuestModule)).uiModule
-        local unLockIDs = jumpModule:GetUnLockId(jumpType)
-        if unLockIDs then
-          local module = (GameGlobal.GetModule)(RoleModule)
-          for index,unLockID in ipairs(unLockIDs) do
-            local u = module:CheckModuleUnlock(unLockID)
-            if u == false then
-              unlock = false
-              break
-            end
+      local jumpModule = self:GetModule(QuestModule).uiModule
+      local unLockIDs = jumpModule:GetUnLockId(jumpType)
+      if unLockIDs then
+        local module = GameGlobal.GetModule(RoleModule)
+        for index, unLockID in ipairs(unLockIDs) do
+          local u = module:CheckModuleUnlock(unLockID)
+          if u == false then
+            unlock = false
+            break
           end
-          do
-            if unlock and jumpType == UIJumpType.UI_JumpAircraft then
-              local jumpSpace = (cfg.JumpParam)[1]
-              if jumpSpace == OpenAircraftParamType.Spaceid then
-                local spaceId = (cfg.JumpParam)[2]
-                local aircraftModule = self:GetModule(AircraftModule)
-                if spaceId > 0 then
-                  local state = aircraftModule:GetSpaceStatus(spaceId)
-                  if state and state == SpaceState.SpaceStateFull then
-                    local room = aircraftModule:GetRoom(spaceId)
-                    if room and room:GetRoomType() == AirRoomType.SmeltRoom then
-                      local matid = self.tplId
-                      local lock = aircraftModule:IsSmeltItemLock(matid)
-                      if lock then
-                        unlock = false
-                      end
-                    end
-                  else
-                    do
-                      do
-                        unlock = false
-                        if not unlock then
-                          extraStr = (StringTable.Get)("str_item_get_lock")
-                        end
-                        return unlock, extraStr
-                      end
-                    end
+        end
+        if unlock and jumpType == UIJumpType.UI_JumpAircraft then
+          local jumpSpace = cfg.JumpParam[1]
+          if jumpSpace == OpenAircraftParamType.Spaceid then
+            local spaceId = cfg.JumpParam[2]
+            local aircraftModule = self:GetModule(AircraftModule)
+            if 0 < spaceId then
+              local state = aircraftModule:GetSpaceStatus(spaceId)
+              if state and state == SpaceState.SpaceStateFull then
+                local room = aircraftModule:GetRoom(spaceId)
+                if room and room:GetRoomType() == AirRoomType.SmeltRoom then
+                  local matid = self.tplId
+                  local lock = aircraftModule:IsSmeltItemLock(matid)
+                  if lock then
+                    unlock = false
                   end
                 end
+              else
+                unlock = false
               end
             end
           end
@@ -610,6 +459,8 @@ UIHomelandGetPathItemData.CheckEnable = function(self, jumpId)
       end
     end
   end
+  if not unlock then
+    extraStr = StringTable.Get("str_item_get_lock")
+  end
+  return unlock, extraStr
 end
-
-

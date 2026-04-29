@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/activity/loginAward/ui_cn7_n36_total_login_award_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN7N36TotalLoginAwardController", UIController)
 UICN7N36TotalLoginAwardController = UICN7N36TotalLoginAwardController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN7N36TotalLoginAwardController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN7N36TotalLoginAwardController:Constructor()
   self._campaignTypeId = ECampaignType.CAMPAIGN_TYPE_EVERESCUEPLAN
   self._componentTypeId = ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_CUMULATIVE_LOGIN
   self._event = nil
@@ -19,166 +12,131 @@ UICN7N36TotalLoginAwardController.Constructor = function(self)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._InitCmpt = function(self, TT, res, forceSend)
-  -- function num : 0_1 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UICN7N36TotalLoginAwardController:_InitCmpt(TT, res, forceSend)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, self._campaignTypeId, self._componentTypeId)
+  self._campaign:LoadCampaignInfo(TT, res, self._campaignTypeId, self._componentTypeId)
   if not res:GetSucc() then
     if not self.isAutoPopShow then
-      campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+      campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
     end
     self:OnAutoPopOpenFail()
-    return 
+    return
   end
   if forceSend then
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+    self._campaign:ReLoadCampaignInfo_Force(TT, res)
     if not res:GetSucc() then
       if not self.isAutoPopShow then
-        campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+        campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
       end
       self:OnAutoPopOpenFail()
-      return 
+      return
     end
   end
   if res:GetSucc() then
     local svrTimeModule = self:GetModule(SvrTimeModule)
-    local svrTime = (math.floor)(svrTimeModule:GetServerTime() / 1000)
-    local component = (self._campaign):GetComponent(self._componentTypeId)
+    local svrTime = math.floor(svrTimeModule:GetServerTime() / 1000)
+    local component = self._campaign:GetComponent(self._componentTypeId)
     local componentInfo = component:GetComponentInfo()
-    local sampleInfo = (self._campaign):GetSample()
+    local sampleInfo = self._campaign:GetSample()
     if sampleInfo then
-      self._nextRefreshTime = (sampleInfo.m_extend_info_time)[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_NEXT_REFRESH_TIME]
-      self._complateFlag = (sampleInfo.m_extend_info)[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_CUMULATIVE_LOGIN_COMPLATE]
+      self._nextRefreshTime = sampleInfo.m_extend_info_time[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_NEXT_REFRESH_TIME]
+      self._complateFlag = sampleInfo.m_extend_info[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_CUMULATIVE_LOGIN_COMPLATE]
     end
     if component then
       self._cumulativeLoginCmpt = component
-      local cmptInfo = (self._cumulativeLoginCmpt):GetComponentInfo()
+      local cmptInfo = self._cumulativeLoginCmpt:GetComponentInfo()
       if cmptInfo then
         local openTime = cmptInfo.m_unlock_time
         local closeTime = cmptInfo.m_close_time
-        local now = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
-        if now < openTime then
+        local now = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
+        if openTime > now then
           if not self.isAutoPopShow then
-            (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_110"))
+            ToastManager.ShowToast(StringTable.Get("str_activity_error_110"))
           end
           res:SetSucc(false)
           self:OnAutoPopOpenFail()
-          return 
-        else
-          if closeTime < now then
-            if not self.isAutoPopShow then
-              (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_107"))
-            end
-            res:SetSucc(false)
-            self:OnAutoPopOpenFail()
-            return 
+          return
+        elseif closeTime < now then
+          if not self.isAutoPopShow then
+            ToastManager.ShowToast(StringTable.Get("str_activity_error_107"))
           end
+          res:SetSucc(false)
+          self:OnAutoPopOpenFail()
+          return
         end
         self._cmptCloseTime = cmptInfo.m_close_time
-        self._componentFullId = (self._cumulativeLoginCmpt):GetComponetCfgId((self._campaign)._id, cmptInfo.m_component_id)
+        self._componentFullId = self._cumulativeLoginCmpt:GetComponetCfgId(self._campaign._id, cmptInfo.m_component_id)
       end
     end
   else
-    do
-      if not self.isAutoPopShow then
-        campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-      end
-      self:OnAutoPopOpenFail()
-      do return  end
+    if not self.isAutoPopShow then
+      campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
     end
+    self:OnAutoPopOpenFail()
+    return
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController.OnAutoPopOpenFail = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN7N36TotalLoginAwardController:OnAutoPopOpenFail()
   if self.isAutoPopShow then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MainLobbyAutoOpenTryFail)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.MainLobbyAutoOpenTryFail)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController.CloseDialogWithAnim = function(self)
-  -- function num : 0_3
+function UICN7N36TotalLoginAwardController:CloseDialogWithAnim()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController.OnShow = function(self, uiParams)
-  -- function num : 0_4 , upvalues : _ENV
-  local clientCfg = (Cfg.cfg_activity_total_login_client)[self._componentFullId]
-  if not clientCfg.ShowLastAward then
-    self._showLast = not clientCfg or false
-    ;
-    (Log.error)("###[UICN7N36TotalLoginAwardController] clientCfg is nil ! id --> ", self._componentFullId)
-    self:InitWidget()
-    self:_InitScrollPos()
-    self:AddListener()
+function UICN7N36TotalLoginAwardController:OnShow(uiParams)
+  local clientCfg = Cfg.cfg_activity_total_login_client[self._componentFullId]
+  if clientCfg then
+    self._showLast = clientCfg.ShowLastAward or false
+  else
+    Log.error("###[UICN7N36TotalLoginAwardController] clientCfg is nil ! id --> ", self._componentFullId)
   end
+  self:InitWidget()
+  self:_InitScrollPos()
+  self:AddListener()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UICN7N36TotalLoginAwardController:OnHide()
   if self._refreshTaskID then
-    ((GameGlobal.TaskManager)()):KillTask(self._refreshTaskID)
+    GameGlobal.TaskManager():KillTask(self._refreshTaskID)
     self._refreshTaskID = nil
   end
   if self._event then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._event)
+    GameGlobal.RealTimer():CancelEvent(self._event)
     self._event = nil
   end
   if self._nextRefreshEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._nextRefreshEvent)
+    GameGlobal.RealTimer():CancelEvent(self._nextRefreshEvent)
     self._nextRefreshEvent = nil
   end
   self:DetachListener()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController.AddListener = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UICN7N36TotalLoginAwardController:AddListener()
   self:AttachEvent(GameEventType.OnActivityTotalAwardCellSelect, self.OnActivityTotalAwardCellSelect)
   self:AttachEvent(GameEventType.ActivityCloseEvent, self.OnActivityCloseEvent)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController.DetachListener = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UICN7N36TotalLoginAwardController:DetachListener()
   self:DetachEvent(GameEventType.OnActivityTotalAwardCellSelect, self.OnActivityTotalAwardCellSelect)
   self:DetachEvent(GameEventType.ActivityCloseEvent, self.OnActivityCloseEvent)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController.OnActivityCloseEvent = function(self, id)
-  -- function num : 0_8 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UICN7N36TotalLoginAwardController:OnActivityCloseEvent(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController.OnActivityTotalAwardCellSelect = function(self, days)
-  -- function num : 0_9
+function UICN7N36TotalLoginAwardController:OnActivityTotalAwardCellSelect(days)
   self._curSelectedDayNum = days
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_10
+function UICN7N36TotalLoginAwardController:LoadDataOnEnter(TT, res, uiParams)
   if uiParams[1] then
     self.isAutoPopShow = uiParams[1]
   else
@@ -193,17 +151,14 @@ UICN7N36TotalLoginAwardController.LoadDataOnEnter = function(self, TT, res, uiPa
   self:_InitCmpt(TT, res, self.isAutoPopShow)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController.InitWidget = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UICN7N36TotalLoginAwardController:InitWidget()
   self._refreshTaskID = nil
   self._curSelectedDayNum = -1
   self._rootAnim = self:GetUIComponent("Animation", "Root")
   self._bgImgLoader = self:GetUIComponent("RawImageLoader", "Bg")
   self._centerBgImgLoader = self:GetUIComponent("RawImageLoader", "CenterBg")
   self._sideImgLoader = self:GetUIComponent("RawImageLoader", "SideImg")
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
   self._titleText = self:GetUIComponent("UILocalizationText", "TitleText")
   self._restTimeText = self:GetUIComponent("UILocalizationText", "RestTimeText")
   self._restTimeAreaGo = self:GetGameObject("RestTimeArea")
@@ -226,86 +181,43 @@ UICN7N36TotalLoginAwardController.InitWidget = function(self)
   self:_OnValueNextRefreshRemainingTime()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._FillCfgUiRes = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UICN7N36TotalLoginAwardController:_FillCfgUiRes()
   if not self._componentFullId then
-    return 
+    return
   end
-  local clientCfg = (Cfg.cfg_activity_total_login_client)[self._componentFullId]
+  local clientCfg = Cfg.cfg_activity_total_login_client[self._componentFullId]
   if clientCfg then
-    (self._titleText):SetText((StringTable.Get)(clientCfg.Title, clientCfg.TitleParam))
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-    if (self._titleText).preferredHeight > 100 then
-      (self._titleText).fontSize = 32
-      -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._titleText).lineSpacing = 0.7
+    self._titleText:SetText(StringTable.Get(clientCfg.Title, clientCfg.TitleParam))
+    if self._titleText.preferredHeight > 100 then
+      self._titleText.fontSize = 32
+      self._titleText.lineSpacing = 0.7
     end
-    ;
-    (self._bgImgLoader):LoadImage(clientCfg.BgImage)
-    ;
-    (self._centerBgImgLoader):LoadImage(clientCfg.CenterBgImage)
-    ;
-    (self._sideImgLoader):LoadImage(clientCfg.SideImage)
+    self._bgImgLoader:LoadImage(clientCfg.BgImage)
+    self._centerBgImgLoader:LoadImage(clientCfg.CenterBgImage)
+    self._sideImgLoader:LoadImage(clientCfg.SideImage)
     self._cfg_cell_data = {}
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._cfg_cell_data).NormalBg = clientCfg.NormalBg
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._cfg_cell_data).SpecialBg = clientCfg.SpecialBg
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._cfg_cell_data).AwardParticecleF = clientCfg.AwardParticecleF
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._cfg_cell_data).AwardParticecleB = clientCfg.AwardParticecleB
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._cfg_cell_data).LastDataImg = clientCfg.LastDataImg
-    -- DECOMPILER ERROR at PC57: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._cfg_cell_data).NormalTextColor = clientCfg.NormalTextColor
-    -- DECOMPILER ERROR at PC60: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._cfg_cell_data).SpecialTextColor = clientCfg.SpecialTextColor
+    self._cfg_cell_data.NormalBg = clientCfg.NormalBg
+    self._cfg_cell_data.SpecialBg = clientCfg.SpecialBg
+    self._cfg_cell_data.AwardParticecleF = clientCfg.AwardParticecleF
+    self._cfg_cell_data.AwardParticecleB = clientCfg.AwardParticecleB
+    self._cfg_cell_data.LastDataImg = clientCfg.LastDataImg
+    self._cfg_cell_data.NormalTextColor = clientCfg.NormalTextColor
+    self._cfg_cell_data.SpecialTextColor = clientCfg.SpecialTextColor
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController.CloseBtnOnClick = function(self, go)
-  -- function num : 0_13
+function UICN7N36TotalLoginAwardController:CloseBtnOnClick(go)
   self:CloseDialogWithAnim()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._InitData = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UICN7N36TotalLoginAwardController:_InitData()
   self._data = {}
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._data).cells = {}
+  self._data.cells = {}
   if self._cumulativeLoginCmpt then
-    local cmptInfo = (self._cumulativeLoginCmpt):GetComponentInfo()
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
+    local cmptInfo = self._cumulativeLoginCmpt:GetComponentInfo()
     if cmptInfo then
-      (self._data).next_refresh_time = cmptInfo.m_m_next_refresh_time
-      for key,value in pairs(cmptInfo.m_cumulative_info) do
+      self._data.next_refresh_time = cmptInfo.m_m_next_refresh_time
+      for key, value in pairs(cmptInfo.m_cumulative_info) do
         local rewardInfo = value
         local day = value.m_login_days
         local cellData = DActivityTotalLoginAwardCell:New()
@@ -313,54 +225,34 @@ UICN7N36TotalLoginAwardController._InitData = function(self)
         cellData._dayNum = value.m_login_days
         cellData._isSpecial = value.m_is_special
         cellData._items = {}
-        for rewardIndex,rewardValue in ipairs(value.m_rewards) do
+        for rewardIndex, rewardValue in ipairs(value.m_rewards) do
           local itemInfo = RoleAsset:New()
           itemInfo.assetid = rewardValue.assetid
           itemInfo.count = rewardValue.count
-          ;
-          (table.insert)(cellData._items, itemInfo)
+          table.insert(cellData._items, itemInfo)
         end
-        ;
-        (table.insert)((self._data).cells, cellData)
+        table.insert(self._data.cells, cellData)
       end
     end
-    do
-      ;
-      (table.sort)((self._data).cells, function(e1, e2)
-    -- function num : 0_14_0
-    do return e1._dayNum < e2._dayNum end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-      if self._showLast then
-        self._lastData = ((self._data).cells)[#(self._data).cells]
-        local tmpData = (self._data).cells
-        ;
-        (table.remove)(tmpData, #tmpData)
-        -- DECOMPILER ERROR at PC83: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._data).cells = tmpData
-      end
+    table.sort(self._data.cells, function(e1, e2)
+      return e1._dayNum < e2._dayNum
+    end)
+    if self._showLast then
+      self._lastData = self._data.cells[#self._data.cells]
+      local tmpData = self._data.cells
+      table.remove(tmpData, #tmpData)
+      self._data.cells = tmpData
     end
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._InitDayRewardList = function(self)
-  -- function num : 0_15
-  (self._dayRewardList):InitListView(#(self._data).cells, function(scrollview, index)
-    -- function num : 0_15_0 , upvalues : self
+function UICN7N36TotalLoginAwardController:_InitDayRewardList()
+  self._dayRewardList:InitListView(#self._data.cells, function(scrollview, index)
     return self:_OnGetRewardCell(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._OnGetRewardCell = function(self, scrollview, index)
-  -- function num : 0_16
+function UICN7N36TotalLoginAwardController:_OnGetRewardCell(scrollview, index)
   local item = scrollview:NewListViewItem("CellItem")
   local cellPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -371,41 +263,30 @@ UICN7N36TotalLoginAwardController._OnGetRewardCell = function(self, scrollview, 
   local itemWidget = rowList[1]
   if itemWidget then
     local itemIndex = index + 1
-    local cellData = ((self._data).cells)[itemIndex]
+    local cellData = self._data.cells[itemIndex]
     itemWidget:InitData(cellData, self._cfg_cell_data, function(matid, pos)
-    -- function num : 0_16_0 , upvalues : self
-    self:ShowItemInfo(matid, pos)
-  end
-, function(days)
-    -- function num : 0_16_1 , upvalues : self
-    self:GetTotalAward(days)
-  end
-, false)
+      self:ShowItemInfo(matid, pos)
+    end, function(days)
+      self:GetTotalAward(days)
+    end, false)
     if cellData and cellData._dayNum == self._curSelectedDayNum then
       itemWidget:SetSelected(true)
     else
       itemWidget:SetSelected(false)
     end
-    if #(self._data).cells < itemIndex then
-      (itemWidget:GetGameObject()):SetActive(false)
+    if itemIndex > #self._data.cells then
+      itemWidget:GetGameObject():SetActive(false)
+    else
     end
   end
-  do
-    return item
-  end
+  return item
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController.ShowItemInfo = function(self, matid, pos)
-  -- function num : 0_17
-  (self._tips):SetData(matid, pos)
+function UICN7N36TotalLoginAwardController:ShowItemInfo(matid, pos)
+  self._tips:SetData(matid, pos)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._InitScrollPos = function(self)
-  -- function num : 0_18
+function UICN7N36TotalLoginAwardController:_InitScrollPos()
   local firstItemIndex = self:_GetFirstShowItemIndex()
   if firstItemIndex < 0 then
     firstItemIndex = 0
@@ -413,364 +294,271 @@ UICN7N36TotalLoginAwardController._InitScrollPos = function(self)
   self:_MoveScrollToItemIndex(firstItemIndex)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._MoveScrollToItemIndex = function(self, itemIndex)
-  -- function num : 0_19
-  (self._dayRewardList):MovePanelToItemIndex(itemIndex, 0)
-  ;
-  (self._dayRewardList):FinishSnapImmediately()
+function UICN7N36TotalLoginAwardController:_MoveScrollToItemIndex(itemIndex)
+  self._dayRewardList:MovePanelToItemIndex(itemIndex, 0)
+  self._dayRewardList:FinishSnapImmediately()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._GetFirstShowItemIndex = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UICN7N36TotalLoginAwardController:_GetFirstShowItemIndex()
   local cellIndex = 1
-  for index,value in ipairs((self._data).cells) do
+  for index, value in ipairs(self._data.cells) do
     if value:CanReceive() then
       cellIndex = index
       break
     end
   end
-  do
-    return cellIndex - 1
-  end
+  return cellIndex - 1
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController.GetTotalAward = function(self, days)
-  -- function num : 0_21
+function UICN7N36TotalLoginAwardController:GetTotalAward(days)
   self:Lock("UICN7N36TotalLoginAwardController:GetTotalAward(id)")
   self:StartTask(self.OnGetTotalAward, self, days)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController.OnGetTotalAward = function(self, TT, days)
-  -- function num : 0_22 , upvalues : _ENV
+function UICN7N36TotalLoginAwardController:OnGetTotalAward(TT, days)
   if self._cumulativeLoginCmpt then
     local res = AsyncRequestRes:New()
-    ;
-    ((GameGlobal.GetModule)(ItemModule)):CommonAutoConversionEventOpen(true)
-    local awards = (self._cumulativeLoginCmpt):HandleReceiveCumulativeLoginReward(TT, res, days)
-    ;
-    ((GameGlobal.GetModule)(ItemModule)):CommonAutoConversionEventOpen(false)
-    self._autoConversionList = ((GameGlobal.GetModule)(ItemModule)):GetConverList()
+    GameGlobal.GetModule(ItemModule):CommonAutoConversionEventOpen(true)
+    local awards = self._cumulativeLoginCmpt:HandleReceiveCumulativeLoginReward(TT, res, days)
+    GameGlobal.GetModule(ItemModule):CommonAutoConversionEventOpen(false)
+    self._autoConversionList = GameGlobal.GetModule(ItemModule):GetConverList()
     self:UnLock("UICN7N36TotalLoginAwardController:GetTotalAward(id)")
     if res == nil then
-      return 
+      return
     end
     if res:GetSucc() then
-      if awards ~= nil and #awards > 0 then
+      if awards ~= nil and 0 < #awards then
         self:_ShowAwards(awards, days)
       end
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SummerTwoLoginRed)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.SummerTwoLoginRed)
     else
-      local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-      campaignModule:CheckErrorCode(res:GetResult(), (self._campaign)._id, function()
-    -- function num : 0_22_0 , upvalues : self
-    self:_ForceRefresh()
-  end
-, function()
-    -- function num : 0_22_1 , upvalues : self
-    self:CloseDialog()
-  end
-)
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      campaignModule:CheckErrorCode(res:GetResult(), self._campaign._id, function()
+        self:_ForceRefresh()
+      end, function()
+        self:CloseDialog()
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._ShowAwards = function(self, awards, days)
-  -- function num : 0_23 , upvalues : _ENV
+function UICN7N36TotalLoginAwardController:_ShowAwards(awards, days)
   local tempPets = {}
-  if #awards > 0 then
+  if 0 < #awards then
     for i = 1, #awards do
-      local ispet = (self._petModule):IsPetID((awards[i]).assetid)
+      local ispet = self._petModule:IsPetID(awards[i].assetid)
       if ispet then
-        (table.insert)(tempPets, awards[i])
+        table.insert(tempPets, awards[i])
       end
     end
   end
-  do
-    local cbFunc = function()
-    -- function num : 0_23_0 , upvalues : _ENV, days
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnActivityTotalAwardGot, days)
+  
+  local function cbFunc()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnActivityTotalAwardGot, days)
   end
-
-    if #tempPets > 0 then
-      self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_23_1 , upvalues : _ENV, self, awards, cbFunc
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
+  
+  if 0 < #tempPets then
+    self:ShowDialog("UIPetObtain", tempPets, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      self:ShowDialog("UIGetItemController", awards, function()
+        if self._autoConversionList and next(self._autoConversionList) then
+          GameGlobal.UIStateManager():ShowDialog("UICommonConversionController", self._autoConversionList, function()
+            cbFunc()
+          end)
+        else
+          cbFunc()
+        end
+      end)
+    end)
+  else
     self:ShowDialog("UIGetItemController", awards, function()
-      -- function num : 0_23_1_0 , upvalues : self, _ENV, cbFunc
       if self._autoConversionList and next(self._autoConversionList) then
-        ((GameGlobal.UIStateManager)()):ShowDialog("UICommonConversionController", self._autoConversionList, function()
-        -- function num : 0_23_1_0_0 , upvalues : cbFunc
-        cbFunc()
-      end
-)
+        GameGlobal.UIStateManager():ShowDialog("UICommonConversionController", self._autoConversionList, function()
+          cbFunc()
+        end)
       else
         cbFunc()
       end
-    end
-)
-  end
-)
-    else
-      self:ShowDialog("UIGetItemController", awards, function()
-    -- function num : 0_23_2 , upvalues : self, _ENV, cbFunc
-    if self._autoConversionList and next(self._autoConversionList) then
-      ((GameGlobal.UIStateManager)()):ShowDialog("UICommonConversionController", self._autoConversionList, function()
-      -- function num : 0_23_2_0 , upvalues : cbFunc
-      cbFunc()
-    end
-)
-    else
-      cbFunc()
-    end
-  end
-)
-    end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._SetListCellCount = function(self)
-  -- function num : 0_24
-  (self._dayRewardList):SetListItemCount(#(self._data).cells, false)
+function UICN7N36TotalLoginAwardController:_SetListCellCount()
+  self._dayRewardList:SetListItemCount(#self._data.cells, false)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._ForceRefresh = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UICN7N36TotalLoginAwardController:_ForceRefresh()
   self._refreshTaskID = self:StartTask(function(TT)
-    -- function num : 0_25_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
     self:_InitCmpt(TT, res, true)
     if res and res:GetSucc() then
       self:_InitData()
       self:_SetListCellCount()
-      ;
-      (self._dayRewardList):RefreshAllShownItem()
+      self._dayRewardList:RefreshAllShownItem()
       self:_InitScrollPos()
       self:_OnValueRemainingTime()
       self:_OnValueNextRefreshRemainingTime()
       self:_ShowLastData()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._ShowLastData = function(self)
-  -- function num : 0_26
+function UICN7N36TotalLoginAwardController:_ShowLastData()
   if self._showLast then
-    (self._lastDataPoolGo):SetActive(true)
+    self._lastDataPoolGo:SetActive(true)
     if not self._lastDataItem then
-      self._lastDataItem = (self._lastDataPool):SpawnObject("UICN7N36TotalLoginAwardCell")
+      self._lastDataItem = self._lastDataPool:SpawnObject("UICN7N36TotalLoginAwardCell")
     end
-    local active = (self._cfg_cell_data).LastDataImg ~= nil
-    ;
-    (self._lastDataImgGo):SetActive(active)
+    local active = self._cfg_cell_data.LastDataImg ~= nil
+    self._lastDataImgGo:SetActive(active)
     if active then
-      (self._lastDataImg):LoadImage((self._cfg_cell_data).LastDataImg)
+      self._lastDataImg:LoadImage(self._cfg_cell_data.LastDataImg)
     end
-    ;
-    (self._lastDataItem):InitData(self._lastData, self._cfg_cell_data, function(matid, pos)
-    -- function num : 0_26_0 , upvalues : self
-    self:ShowItemInfo(matid, pos)
-  end
-, function(days)
-    -- function num : 0_26_1 , upvalues : self
-    self:GetTotalAward(days)
-  end
-, true)
+    self._lastDataItem:InitData(self._lastData, self._cfg_cell_data, function(matid, pos)
+      self:ShowItemInfo(matid, pos)
+    end, function(days)
+      self:GetTotalAward(days)
+    end, true)
   else
-    (self._lastDataPoolGo):SetActive(false)
+    self._lastDataPoolGo:SetActive(false)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._OnValueRemainingTime = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UICN7N36TotalLoginAwardController:_OnValueRemainingTime()
   self:_ShowRemainingTime()
   if self._event then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._event)
+    GameGlobal.RealTimer():CancelEvent(self._event)
     self._event = nil
   end
-  self._event = ((GameGlobal.RealTimer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_27_0 , upvalues : self
+  self._event = GameGlobal.RealTimer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:_ShowRemainingTime()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._ShowRemainingTime = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UICN7N36TotalLoginAwardController:_ShowRemainingTime()
   local stopTime = self._cmptCloseTime
-  local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
+  local nowTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
   local remainingTime = stopTime - nowTime
   if remainingTime <= 0 then
     if self._event then
-      ((GameGlobal.RealTimer)()):CancelEvent(self._event)
+      GameGlobal.RealTimer():CancelEvent(self._event)
       self._event = nil
     end
-    ;
-    (self._restTimeAreaGo):SetActive(false)
+    self._restTimeAreaGo:SetActive(false)
     remainingTime = 0
   else
-    ;
-    (self._restTimeAreaGo):SetActive(true)
+    self._restTimeAreaGo:SetActive(true)
   end
-  ;
-  (self._restTimeText):SetText(self:_GetFormatString(remainingTime))
+  self._restTimeText:SetText(self:_GetFormatString(remainingTime))
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._GetFormatString = function(self, stamp)
-  -- function num : 0_29 , upvalues : _ENV
+function UICN7N36TotalLoginAwardController:_GetFormatString(stamp)
   local formatStr = "%s <color=#%s>%s</color>"
-  local descStr = (StringTable.Get)("str_activity_common_login_reward_remainingtime")
+  local descStr = StringTable.Get("str_activity_common_login_reward_remainingtime")
   local colorStr = "FFFFFF"
-  local timeStr = (UIActivityHelper.GetFormatTimerStr)(stamp)
-  local showStr = (string.format)(formatStr, descStr, colorStr, timeStr)
+  local timeStr = UIActivityHelper.GetFormatTimerStr(stamp)
+  local showStr = string.format(formatStr, descStr, colorStr, timeStr)
   return showStr
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._OnValueNextRefreshRemainingTime = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UICN7N36TotalLoginAwardController:_OnValueNextRefreshRemainingTime()
   local isAllUnlocked = self:_IsAllRewardUnlocked()
   local isNotEnoughTime = false
   if not isAllUnlocked then
     local stopTime = self._cmptCloseTime
-    local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
+    local nowTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
     local remainingTime = stopTime - nowTime
     local nextTime = self._nextRefreshTime
-  end
-  if nextTime and nextTime < stopTime then
-    do
+    if nextTime and stopTime > nextTime then
+    else
       isNotEnoughTime = true
-      if isAllUnlocked or isNotEnoughTime then
-        if self._nextRefreshEvent then
-          ((GameGlobal.RealTimer)()):CancelEvent(self._nextRefreshEvent)
-          self._nextRefreshEvent = nil
-        end
-        ;
-        (self._nextTimeAreaGo):SetActive(false)
-        return 
-      end
-      self:_ShowNextRefreshRemainingTime()
-      if self._nextRefreshEvent then
-        ((GameGlobal.RealTimer)()):CancelEvent(self._nextRefreshEvent)
-        self._nextRefreshEvent = nil
-      end
-      self._nextRefreshEvent = ((GameGlobal.RealTimer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_30_0 , upvalues : self
-    self:_ShowNextRefreshRemainingTime()
-  end
-)
     end
   end
+  if isAllUnlocked or isNotEnoughTime then
+    if self._nextRefreshEvent then
+      GameGlobal.RealTimer():CancelEvent(self._nextRefreshEvent)
+      self._nextRefreshEvent = nil
+    end
+    self._nextTimeAreaGo:SetActive(false)
+    return
+  end
+  self:_ShowNextRefreshRemainingTime()
+  if self._nextRefreshEvent then
+    GameGlobal.RealTimer():CancelEvent(self._nextRefreshEvent)
+    self._nextRefreshEvent = nil
+  end
+  self._nextRefreshEvent = GameGlobal.RealTimer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+    self:_ShowNextRefreshRemainingTime()
+  end)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._ShowNextRefreshRemainingTime = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function UICN7N36TotalLoginAwardController:_ShowNextRefreshRemainingTime()
   if not self._nextRefreshTime then
-    (self._nextTimeAreaGo):SetActive(false)
-    return 
+    self._nextTimeAreaGo:SetActive(false)
+    return
   end
   local nextTime = self._nextRefreshTime
-  local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
+  local nowTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
   local remainingTime = nextTime - nowTime
   local isNotEnoughTime = false
   local stopTime = self._cmptCloseTime
   local stopRemainTime = stopTime - nowTime
-  if stopTime <= nextTime then
+  if nextTime >= stopTime then
     isNotEnoughTime = true
   end
   if remainingTime <= 0 or isNotEnoughTime then
     if self._nextRefreshEvent then
-      ((GameGlobal.RealTimer)()):CancelEvent(self._nextRefreshEvent)
+      GameGlobal.RealTimer():CancelEvent(self._nextRefreshEvent)
       self._nextRefreshEvent = nil
     end
-    ;
-    (self._nextTimeAreaGo):SetActive(false)
+    self._nextTimeAreaGo:SetActive(false)
     remainingTime = 0
-    if nextTime > 0 and remainingTime <= 0 then
+    if 0 < nextTime and remainingTime <= 0 then
       self:_ForceRefresh()
     end
-    return 
+    return
   else
-    ;
-    (self._nextTimeAreaGo):SetActive(true)
+    self._nextTimeAreaGo:SetActive(true)
   end
-  ;
-  (self._nextTimeText):SetText(self:_GetNextRefreshFormatString(remainingTime))
+  self._nextTimeText:SetText(self:_GetNextRefreshFormatString(remainingTime))
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._GetNextRefreshFormatString = function(self, stamp)
-  -- function num : 0_32 , upvalues : _ENV
+function UICN7N36TotalLoginAwardController:_GetNextRefreshFormatString(stamp)
   local formatStr = "%s <color=#%s>%s</color>"
-  local descStr = (StringTable.Get)("str_activity_common_login_reward_next_remain_time")
+  local descStr = StringTable.Get("str_activity_common_login_reward_next_remain_time")
   local colorStr = "F89001"
-  local timeStr = (UIActivityHelper.GetFormatTimerStr)(stamp)
-  local showStr = (string.format)(formatStr, descStr, colorStr, timeStr)
+  local timeStr = UIActivityHelper.GetFormatTimerStr(stamp)
+  local showStr = string.format(formatStr, descStr, colorStr, timeStr)
   return showStr
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._IsAllRewardUnlocked = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  for index,value in ipairs((self._data).cells) do
+function UICN7N36TotalLoginAwardController:_IsAllRewardUnlocked()
+  for index, value in ipairs(self._data.cells) do
     if not value:Unlocked() then
       return false
     end
   end
-  if self._lastData and not (self._lastData):Unlocked() then
+  if self._lastData and not self._lastData:Unlocked() then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardController._ShowLastAward = function(self)
-  -- function num : 0_34 , upvalues : _ENV
+function UICN7N36TotalLoginAwardController:_ShowLastAward()
   self._item1 = self:GetUIComponent("UISelectObjectPath", "Item1")
   self._item2 = self:GetUIComponent("UISelectObjectPath", "Item2")
-  self._items = {self._item1, self._item2}
-  for index,value in ipairs(self._items) do
+  self._items = {
+    self._item1,
+    self._item2
+  }
+  for index, value in ipairs(self._items) do
     value:SpawnObject("UICN7N36TotalLoginAwardItem")
     local widgets = value:GetAllSpawnList()
-    for indexWidget,valueWidget in ipairs(widgets) do
-      valueWidget:SetData(((((self._data).cells)[8])._items)[index], function(matid, pos)
-    -- function num : 0_34_0 , upvalues : self
-    self:ShowItemInfo(matid, pos)
-  end
-, true)
+    for indexWidget, valueWidget in ipairs(widgets) do
+      valueWidget:SetData(self._data.cells[8]._items[index], function(matid, pos)
+        self:ShowItemInfo(matid, pos)
+      end, true)
     end
   end
 end
-
-

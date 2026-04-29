@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_attack_animation_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillAttackAnimationPhase", PlaySkillPhaseBase)
 PlaySkillAttackAnimationPhase = PlaySkillAttackAnimationPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillAttackAnimationPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillAttackAnimationPhase:PlayFlight(TT, casterEntity, phaseParam)
   local attackAnimParam = phaseParam
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local isFinalAttack = skillEffectResultContainer:IsFinalAttack()
   local damageResultAll = {}
@@ -22,7 +15,7 @@ PlaySkillAttackAnimationPhase.PlayFlight = function(self, TT, casterEntity, phas
     damageResultAll = skillEffectResultContainer:GetEffectResultByArrayAll(SkillEffectType.Damage)
   end
   if not damageResultAll then
-    return 
+    return
   end
   local targetEntityList = {}
   local castDamageList = {}
@@ -34,7 +27,7 @@ PlaySkillAttackAnimationPhase.PlayFlight = function(self, TT, casterEntity, phas
     local castDamage = damageResult:GetDamageInfo(attackAnimParam:GetDamageIndex())
     local damagePos = damageResult:GetGridPos()
     local beAttackEntityID = damageResult:GetTargetID()
-    local targetEntity = (self._world):GetEntityByID(beAttackEntityID)
+    local targetEntity = self._world:GetEntityByID(beAttackEntityID)
     if targetEntity then
       if damageResult:GetNormalAttackDouble() == true then
         self._normalAttackDoubleIndex = i
@@ -43,200 +36,158 @@ PlaySkillAttackAnimationPhase.PlayFlight = function(self, TT, casterEntity, phas
         self._normalAttackIndex = damageResult:GetNormalAttackIndex()
         castDamage:SetNormalAttackIndex(self._normalAttackIndex)
       end
-      ;
-      (table.insert)(targetEntityList, targetEntity)
-      ;
-      (table.insert)(castDamageList, castDamage)
-      ;
-      (table.insert)(damagePosList, damagePos)
+      table.insert(targetEntityList, targetEntity)
+      table.insert(castDamageList, castDamage)
+      table.insert(damagePosList, damagePos)
     end
   end
   self:_PlayAttack(TT, casterEntity, targetEntityList, attackAnimParam, castDamageList, isFinalAttack, skillID, damagePosList, skillEffectResultContainer)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillAttackAnimationPhase._PlayAttack = function(self, TT, casterEntity, targetEntityList, attackAnimParam, damageList, isFinalAttack, skillID, damagePosList, skillEffectResultContainer)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillAttackAnimationPhase:_PlayAttack(TT, casterEntity, targetEntityList, attackAnimParam, damageList, isFinalAttack, skillID, damagePosList, skillEffectResultContainer)
   local targetEntity = targetEntityList[1]
   if targetEntity then
     local skillService = self:SkillService()
-    local boardServiceRender = (self._world):GetService("BoardRender")
+    local boardServiceRender = self._world:GetService("BoardRender")
     local gridRenderPos = boardServiceRender:GridPos2RenderPos(damagePosList[1])
-    local resvc = (self._world):GetService("RenderEntity")
+    local resvc = self._world:GetService("RenderEntity")
     resvc:TurnToTarget(casterEntity, targetEntity, nil, gridRenderPos)
   end
-  do
-    local isSlantAttack = nil
-    local attackPos = casterEntity:GetRenderGridPosition()
-    do
-      if damagePosList[1] and attackPos.x ~= (damagePosList[1]).x and attackPos.y ~= (damagePosList[1]).y and attackAnimParam:GetSlantCastEffectID() then
-        isSlantAttack = true
-      end
-      local isLastNormalAttack = skillEffectResultContainer:IsLastNormalAttackAtOnGrid()
-      local attackAnimName = attackAnimParam:GetAnimationName(isLastNormalAttack, isSlantAttack)
-      if attackAnimName then
-        if attackAnimParam:IsUsePermanentEffectPlayAnim() then
-          local rootName = attackAnimParam:GetPermanentEffSpecialAnimRoot()
-          self:_PermanentEffectPlayAnim(casterEntity, attackAnimName, rootName)
-        else
-          do
-            casterEntity:SetAnimatorControllerTriggers({attackAnimName})
-            local attackEffectID = attackAnimParam:GetCastEffectID(isSlantAttack)
-            do
-              if attackEffectID and attackEffectID > 0 then
-                local atkEffectDelay = attackAnimParam:GetHitEffectDelay(isLastNormalAttack, isSlantAttack)
-                ;
-                ((GameGlobal.TaskManager)()):CoreGameStartTask(function()
-    -- function num : 0_1_0 , upvalues : atkEffectDelay, _ENV, TT, self, casterEntity, attackEffectID, targetEntity
-    if atkEffectDelay ~= 0 then
-      YIELD(TT, atkEffectDelay)
-    end
-    local effectSvc = (self._world):GetService("Effect")
-    local e = casterEntity
-    if effectSvc:GetEffectHolder(attackEffectID) == "target" then
-      e = targetEntity
-    end
-    if e then
-      effectSvc:CreateEffect(attackEffectID, e)
+  local isSlantAttack
+  local attackPos = casterEntity:GetRenderGridPosition()
+  if damagePosList[1] and attackPos.x ~= damagePosList[1].x and attackPos.y ~= damagePosList[1].y and attackAnimParam:GetSlantCastEffectID() then
+    isSlantAttack = true
+  end
+  local isLastNormalAttack = skillEffectResultContainer:IsLastNormalAttackAtOnGrid()
+  local attackAnimName = attackAnimParam:GetAnimationName(isLastNormalAttack, isSlantAttack)
+  if attackAnimName then
+    if attackAnimParam:IsUsePermanentEffectPlayAnim() then
+      local rootName = attackAnimParam:GetPermanentEffSpecialAnimRoot()
+      self:_PermanentEffectPlayAnim(casterEntity, attackAnimName, rootName)
+    else
+      casterEntity:SetAnimatorControllerTriggers({attackAnimName})
     end
   end
-)
-              end
-              local hitPointDelay = attackAnimParam:GetHitPointDelay(isLastNormalAttack, isSlantAttack) or 0
-              local hitPointDelaySecond = attackAnimParam:GetHitPointDelaySecond(isLastNormalAttack) or 0
-              do
-                if hitPointDelay > 0 then
-                  YIELD(TT, hitPointDelay)
-                end
-                local resultAddComboNum = {}
-                if casterEntity:HasPetPstID() and not skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AddComboNum) then
-                  resultAddComboNum = {}
-                end
-                local oriBeAttackPos = skillEffectResultContainer:GetNormalAttackBeAttackOriPos()
-                for i = 1, #targetEntityList do
-                  local targetEntity = targetEntityList[i]
-                  local damagePos = damagePosList[i]
-                  local damage = damageList[i]
-                  local isAddCombo = false
-                  if i == 1 or (table.count)(resultAddComboNum) > 0 or self._normalAttackDoubleIndex == i then
-                    isAddCombo = true
-                  end
-                  local curIsFinalAttack = not isFinalAttack or i == #targetEntityList
-                  local taskid = ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_1_1 , upvalues : i, hitPointDelaySecond, _ENV, hitPointDelay, self, casterEntity, targetEntity, attackAnimParam, isSlantAttack, damage, damagePos, curIsFinalAttack, skillID, isAddCombo, oriBeAttackPos
-    if i ~= 1 and i ~= 3 and hitPointDelaySecond ~= 0 then
-      YIELD(TT, hitPointDelaySecond - hitPointDelay)
-    end
-    self:_WaitPlayHandleBeHit(TT, casterEntity, targetEntity, attackAnimParam, isSlantAttack, damage, damagePos, curIsFinalAttack, skillID, isAddCombo, oriBeAttackPos)
-  end
-)
-                end
-                local castTotalTime = nil
-                local remainTime = nil
-                YIELD(TT, targetEntity)
-                -- DECOMPILER ERROR at PC168: Overwrote pending register: R24 in 'AssignReg'
-
-                -- DECOMPILER ERROR at PC169: Overwrote pending register: R24 in 'AssignReg'
-
-                if isFinalAttack == true then
-                  YIELD(TT, targetEntity)
-                end
-                -- DECOMPILER ERROR: 4 unprocessed JMP targets
-              end
-            end
-          end
-        end
+  local attackEffectID = attackAnimParam:GetCastEffectID(isSlantAttack)
+  if attackEffectID and 0 < attackEffectID then
+    local atkEffectDelay = attackAnimParam:GetHitEffectDelay(isLastNormalAttack, isSlantAttack)
+    GameGlobal.TaskManager():CoreGameStartTask(function()
+      if atkEffectDelay ~= 0 then
+        YIELD(TT, atkEffectDelay)
       end
+      local effectSvc = self._world:GetService("Effect")
+      local e = casterEntity
+      if "target" == effectSvc:GetEffectHolder(attackEffectID) then
+        e = targetEntity
+      end
+      if e then
+        effectSvc:CreateEffect(attackEffectID, e)
+      end
+    end)
+  end
+  local hitPointDelay = attackAnimParam:GetHitPointDelay(isLastNormalAttack, isSlantAttack) or 0
+  local hitPointDelaySecond = attackAnimParam:GetHitPointDelaySecond(isLastNormalAttack) or 0
+  if 0 < hitPointDelay then
+    YIELD(TT, hitPointDelay)
+  end
+  local resultAddComboNum = {}
+  if casterEntity:HasPetPstID() then
+    resultAddComboNum = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AddComboNum) or {}
+  end
+  local oriBeAttackPos = skillEffectResultContainer:GetNormalAttackBeAttackOriPos()
+  for i = 1, #targetEntityList do
+    local targetEntity = targetEntityList[i]
+    local damagePos = damagePosList[i]
+    local damage = damageList[i]
+    local isAddCombo = false
+    if i == 1 or 0 < table.count(resultAddComboNum) or self._normalAttackDoubleIndex == i then
+      isAddCombo = true
     end
+    local curIsFinalAttack = isFinalAttack and i == #targetEntityList
+    local taskid = GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      if i ~= 1 and i ~= 3 and hitPointDelaySecond ~= 0 then
+        YIELD(TT, hitPointDelaySecond - hitPointDelay)
+      end
+      self:_WaitPlayHandleBeHit(TT, casterEntity, targetEntity, attackAnimParam, isSlantAttack, damage, damagePos, curIsFinalAttack, skillID, isAddCombo, oriBeAttackPos)
+    end)
+  end
+  local castTotalTime = attackAnimParam:GetCastTotalTime(isLastNormalAttack)
+  local remainTime = castTotalTime - hitPointDelay
+  YIELD(TT, remainTime)
+  if isFinalAttack == true then
+    YIELD(TT, BattleConst.FreezeDuration)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillAttackAnimationPhase._WaitPlayHandleBeHit = function(self, TT, casterEntity, targetEntity, attackAnimParam, isSlantAttack, damage, damagePos, isFinalAttack, skillID, isAddCombo, oriBeAttackPos)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySkillAttackAnimationPhase:_WaitPlayHandleBeHit(TT, casterEntity, targetEntity, attackAnimParam, isSlantAttack, damage, damagePos, isFinalAttack, skillID, isAddCombo, oriBeAttackPos)
   if casterEntity:HasPetPstID() then
-    local renderBoardEntity = (self._world):GetRenderBoardEntity()
-    local normalAtkResultCmpt = (renderBoardEntity:LogicResult()):GetLogicResult(LogicStepType.NormalAttack)
+    local renderBoardEntity = self._world:GetRenderBoardEntity()
+    local normalAtkResultCmpt = renderBoardEntity:LogicResult():GetLogicResult(LogicStepType.NormalAttack)
     local attackPos = casterEntity:GetRenderGridPosition()
     local curNormalSkill = normalAtkResultCmpt:GetNormalSkillSequenceWithAttackGridData(skillID, damagePos, attackPos)
     if curNormalSkill then
-      local timeService = (self._world):GetService("Time")
+      local timeService = self._world:GetService("Time")
       local preNormalSkill = normalAtkResultCmpt:GetNormalSkillSequenceWithOrder(curNormalSkill.order - 1)
       local beforeWaitTime = timeService:GetCurrentTimeMs()
       local preDamageValue = 0
-      local preDamageResult = nil
+      local preDamageResult
       if preNormalSkill then
-        preDamageResult = (preNormalSkill.attackGridData):GetEffectResultByArrayAll(SkillEffectType.Damage)
+        preDamageResult = preNormalSkill.attackGridData:GetEffectResultByArrayAll(SkillEffectType.Damage)
         if preDamageResult then
           local preDamageResultLast = preDamageResult[#preDamageResult]
           local preDamageInfo = preDamageResultLast:GetDamageInfo(attackAnimParam:GetDamageIndex())
           preDamageValue = preDamageInfo:GetDamageValue()
         else
-          do
-            preDamageResult = (preNormalSkill.attackGridData):GetEffectResultByArrayAll(SkillEffectType.AddBlood)
-            if preDamageResult then
-              local preDamageResultLast = preDamageResult[#preDamageResult]
-              local preDamageInfo = preDamageResultLast:GetDamageInfo(attackAnimParam:GetDamageIndex())
-              preDamageValue = preDamageInfo:GetDamageValue()
-            end
-            do
-              while curNormalSkill.order > 1 and preNormalSkill.playStartTime == 0 and preDamageValue == 0 and preDamageResult do
-                YIELD(TT)
-                preNormalSkill = normalAtkResultCmpt:GetNormalSkillSequenceWithOrder(curNormalSkill.order - 1)
-              end
-              do
-                local afterWaitTime = timeService:GetCurrentTimeMs()
-                normalAtkResultCmpt:SetCurPlayNormalSkillPlayStartTime(curNormalSkill.order, afterWaitTime)
-                if isAddCombo then
-                  local renderBattleSvc = (self._world):GetService("RenderBattle")
-                  local curComboNum = renderBattleSvc:GetComboNum()
-                  curComboNum = curComboNum + 1
-                  renderBattleSvc:SetComboNum(curComboNum)
-                  local nt = NTNormalAttackCalcEnd:New(casterEntity, targetEntity, attackPos, damagePos)
-                  nt:SetSkillID(skillID)
-                  nt:SetSkillType(SkillType.Normal)
-                  nt:SetNormalAttackIndex(self._normalAttackIndex)
-                  ;
-                  ((self._world):GetService("PlayBuff")):PlayBuffView(TT, nt)
-                  if oriBeAttackPos then
-                    local nt1 = NTNormalAttackCalcEndUseOriPos:New(casterEntity, targetEntity, attackPos, oriBeAttackPos)
-                    nt1:SetSkillID(skillID)
-                    nt1:SetSkillType(SkillType.Normal)
-                    nt1:SetNormalAttackIndex(self._normalAttackIndex)
-                    ;
-                    ((self._world):GetService("PlayBuff")):PlayBuffView(TT, nt1)
-                  end
-                end
-                do
-                  isFinalAttack = false
-                  local hitAnimName = attackAnimParam:GetHitAnimation()
-                  local hitEffectID = attackAnimParam:GetHitEffectID(isSlantAttack)
-                  local hitTurn2Target = attackAnimParam:HitTurnToTarget()
-                  local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(hitAnimName)):SetHandleBeHitParam_HitEffectID(hitEffectID)):SetHandleBeHitParam_DamageInfo(damage)):SetHandleBeHitParam_DamagePos(damagePos)):SetHandleBeHitParam_HitTurnTarget(hitTurn2Target)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(isFinalAttack)):SetHandleBeHitParam_SkillID(skillID)
-                  ;
-                  (self:SkillService()):HandleBeHit(TT, beHitParam)
-                end
-              end
-            end
+          preDamageResult = preNormalSkill.attackGridData:GetEffectResultByArrayAll(SkillEffectType.AddBlood)
+          if preDamageResult then
+            local preDamageResultLast = preDamageResult[#preDamageResult]
+            local preDamageInfo = preDamageResultLast:GetDamageInfo(attackAnimParam:GetDamageIndex())
+            preDamageValue = preDamageInfo:GetDamageValue()
           end
         end
       end
+      while curNormalSkill.order > 1 and preNormalSkill.playStartTime == 0 and preDamageValue == 0 and preDamageResult do
+        YIELD(TT)
+        preNormalSkill = normalAtkResultCmpt:GetNormalSkillSequenceWithOrder(curNormalSkill.order - 1)
+      end
+      local afterWaitTime = timeService:GetCurrentTimeMs()
+      normalAtkResultCmpt:SetCurPlayNormalSkillPlayStartTime(curNormalSkill.order, afterWaitTime)
     end
+    if isAddCombo then
+      local renderBattleSvc = self._world:GetService("RenderBattle")
+      local curComboNum = renderBattleSvc:GetComboNum()
+      curComboNum = curComboNum + 1
+      renderBattleSvc:SetComboNum(curComboNum)
+      local nt = NTNormalAttackCalcEnd:New(casterEntity, targetEntity, attackPos, damagePos)
+      nt:SetSkillID(skillID)
+      nt:SetSkillType(SkillType.Normal)
+      nt:SetNormalAttackIndex(self._normalAttackIndex)
+      self._world:GetService("PlayBuff"):PlayBuffView(TT, nt)
+      if oriBeAttackPos then
+        local nt1 = NTNormalAttackCalcEndUseOriPos:New(casterEntity, targetEntity, attackPos, oriBeAttackPos)
+        nt1:SetSkillID(skillID)
+        nt1:SetSkillType(SkillType.Normal)
+        nt1:SetNormalAttackIndex(self._normalAttackIndex)
+        self._world:GetService("PlayBuff"):PlayBuffView(TT, nt1)
+      end
+    end
+  else
+    isFinalAttack = false
   end
+  local hitAnimName = attackAnimParam:GetHitAnimation()
+  local hitEffectID = attackAnimParam:GetHitEffectID(isSlantAttack)
+  local hitTurn2Target = attackAnimParam:HitTurnToTarget()
+  local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(hitAnimName):SetHandleBeHitParam_HitEffectID(hitEffectID):SetHandleBeHitParam_DamageInfo(damage):SetHandleBeHitParam_DamagePos(damagePos):SetHandleBeHitParam_HitTurnTarget(hitTurn2Target):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(isFinalAttack):SetHandleBeHitParam_SkillID(skillID)
+  self:SkillService():HandleBeHit(TT, beHitParam)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillAttackAnimationPhase._PermanentEffectPlayAnim = function(self, casterEntity, animName, rootName)
-  -- function num : 0_3 , upvalues : _ENV
+function PlaySkillAttackAnimationPhase:_PermanentEffectPlayAnim(casterEntity, animName, rootName)
   local effectHolderCmpt = casterEntity:EffectHolder()
   if effectHolderCmpt then
-    local renderBattle = (self._world):GetService("RenderBattle")
+    local renderBattle = self._world:GetService("RenderBattle")
     local permanentEffectList = effectHolderCmpt:GetPermanentEffect()
-    for index,effectID in ipairs(permanentEffectList) do
-      local effectEntity = (self._world):GetEntityByID(effectID)
+    for index, effectID in ipairs(permanentEffectList) do
+      local effectEntity = self._world:GetEntityByID(effectID)
       if effectEntity then
         if rootName then
           effectEntity:SetSpecialAnimRoot(rootName)
@@ -246,5 +197,3 @@ PlaySkillAttackAnimationPhase._PermanentEffectPlayAnim = function(self, casterEn
     end
   end
 end
-
-

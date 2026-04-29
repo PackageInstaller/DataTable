@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_plm/ui_haute_couture_draw_get_item_cell_detail_plm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawGetItemCellDetailPLM", UICustomWidget)
 UIHauteCoutureDrawGetItemCellDetailPLM = UIHauteCoutureDrawGetItemCellDetailPLM
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawGetItemCellDetailPLM.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHauteCoutureDrawGetItemCellDetailPLM:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawGetItemCellDetailPLM.InitWidget = function(self)
-  -- function num : 0_1
+function UIHauteCoutureDrawGetItemCellDetailPLM:InitWidget()
   local item = self:GetUIComponent("UISelectObjectPath", "item")
   self.item = item:SpawnObject("UIHauteCoutureDrawGetItemCellPLM")
   self.txt_name = self:GetUIComponent("UILocalizationText", "txt_name")
@@ -23,22 +13,13 @@ UIHauteCoutureDrawGetItemCellDetailPLM.InitWidget = function(self)
   self.txt_desc = self:GetUIComponent("UILocalizationText", "txt_desc")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawGetItemCellDetailPLM.SetData = function(self, itemInfo)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.item):SetData(itemInfo, false, nil)
-  ;
-  (self.item):EnableInteract(false)
-  ;
-  (self.txt_name):SetText((StringTable.Get)(itemInfo.item_name))
-  ;
-  (self.txt_desc):SetText((StringTable.Get)(itemInfo.simple_desc))
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIHauteCoutureDrawGetItemCellDetailPLM:SetData(itemInfo)
+  self.item:SetData(itemInfo, false, nil)
+  self.item:EnableInteract(false)
+  self.txt_name:SetText(StringTable.Get(itemInfo.item_name))
+  self.txt_desc:SetText(StringTable.Get(itemInfo.simple_desc))
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local c = roleModule:GetAssetCount(itemInfo.item_id) or 0
-  local front = (StringTable.Get)("str_senior_skin_draw_num_qt")
-  ;
-  (self.txt_have):SetText(front .. c)
+  local front = StringTable.Get("str_senior_skin_draw_num_qt")
+  self.txt_have:SetText(front .. c)
 end
-
-

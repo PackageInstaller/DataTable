@@ -1,217 +1,144 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/domitory/home_secret_msg.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeSecretMsg", Object)
 HomeSecretMsg = HomeSecretMsg
-local SecretMsgType = {Single = 1, Double = 2, DoubleSameRoom = 3}
+local SecretMsgType = {
+  Single = 1,
+  Double = 2,
+  DoubleSameRoom = 3
+}
 _enum("SecretMsgType", SecretMsgType)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-HomeSecretMsg.Constructor = function(self)
-  -- function num : 0_0
+function HomeSecretMsg:Constructor()
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeSecretMsg.Init = function(self, id, petID1, petID2)
-  -- function num : 0_1 , upvalues : _ENV, SecretMsgType
+function HomeSecretMsg:Init(id, petID1, petID2)
   self._id = id
   self._petID1 = petID1
   self._petID2 = petID2
-  local cfg = (Cfg.cfg_homeland_pet_secret_msg)[id]
+  local cfg = Cfg.cfg_homeland_pet_secret_msg[id]
   if cfg == nil then
     BuildError("找不到秘闻配置:", id)
   end
-  if not (Cfg.cfg_pet)[petID1] then
+  if not Cfg.cfg_pet[petID1] then
     BuildError("cfg_pet找不到配置:", petID1)
   end
-  if petID2 and not (Cfg.cfg_pet)[petID2] then
+  if petID2 and not Cfg.cfg_pet[petID2] then
     BuildError("cfg_pet找不到配置:", petID2)
   end
   self._type = nil
   if cfg.Type == 1 then
     self._type = SecretMsgType.Single
-  else
-    if cfg.Type == 2 then
-      if cfg.SameRoom == true then
-        self._type = SecretMsgType.DoubleSameRoom
-      else
-        self._type = SecretMsgType.Double
-      end
+  elseif cfg.Type == 2 then
+    if cfg.SameRoom == true then
+      self._type = SecretMsgType.DoubleSameRoom
+    else
+      self._type = SecretMsgType.Double
     end
   end
   if self._type == SecretMsgType.Single then
-    local pet1Name = (StringTable.Get)(((Cfg.cfg_pet)[petID1]).Name)
-    self._content = (StringTable.Get)(cfg.Content, pet1Name)
-  else
-    do
-      if self._type == SecretMsgType.Double then
-        local pet1Name = (StringTable.Get)(((Cfg.cfg_pet)[petID1]).Name)
-        local pet2Name = (StringTable.Get)(((Cfg.cfg_pet)[petID2]).Name)
-        self._content = (StringTable.Get)(cfg.Content, pet1Name, pet2Name)
-      else
-        do
-          if self._type == SecretMsgType.DoubleSameRoom then
-            local pet1Name = (StringTable.Get)(((Cfg.cfg_pet)[petID1]).Name)
-            local pet2Name = (StringTable.Get)(((Cfg.cfg_pet)[petID2]).Name)
-            self._content = (StringTable.Get)(cfg.Content, pet1Name, pet2Name)
-          end
-        end
-      end
-    end
+    local pet1Name = StringTable.Get(Cfg.cfg_pet[petID1].Name)
+    self._content = StringTable.Get(cfg.Content, pet1Name)
+  elseif self._type == SecretMsgType.Double then
+    local pet1Name = StringTable.Get(Cfg.cfg_pet[petID1].Name)
+    local pet2Name = StringTable.Get(Cfg.cfg_pet[petID2].Name)
+    self._content = StringTable.Get(cfg.Content, pet1Name, pet2Name)
+  elseif self._type == SecretMsgType.DoubleSameRoom then
+    local pet1Name = StringTable.Get(Cfg.cfg_pet[petID1].Name)
+    local pet2Name = StringTable.Get(Cfg.cfg_pet[petID2].Name)
+    self._content = StringTable.Get(cfg.Content, pet1Name, pet2Name)
   end
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeSecretMsg.Decode = function(self, tb)
-  -- function num : 0_2
+function HomeSecretMsg:Decode(tb)
   local id = tb[1]
   local pet1 = tb[2]
   local pet2 = tb[3]
   self:Init(id, pet1, pet2)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeSecretMsg.Encode = function(self)
-  -- function num : 0_3 , upvalues : SecretMsgType
+function HomeSecretMsg:Encode()
   local tb = {}
   if self._type == SecretMsgType.Single then
     tb[1] = self._id
     tb[2] = self._petID1
-  else
-    if self._type == SecretMsgType.Double then
-      tb[1] = self._id
-      tb[2] = self._petID1
-      tb[3] = self._petID2
-    else
-      if self._type == SecretMsgType.DoubleSameRoom then
-        tb[1] = self._id
-        tb[2] = self._petID1
-        tb[3] = self._petID2
-      end
-    end
+  elseif self._type == SecretMsgType.Double then
+    tb[1] = self._id
+    tb[2] = self._petID1
+    tb[3] = self._petID2
+  elseif self._type == SecretMsgType.DoubleSameRoom then
+    tb[1] = self._id
+    tb[2] = self._petID1
+    tb[3] = self._petID2
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeSecretMsg.Content = function(self)
-  -- function num : 0_4
+function HomeSecretMsg:Content()
   return self._content
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeSecretMsg.ID = function(self)
-  -- function num : 0_5
+function HomeSecretMsg:ID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeSecretMsg.Equal = function(self, id, pet1, pet2)
-  -- function num : 0_6
-  do return self._id == id and self._petID1 == pet1 and self._petID2 == pet2 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomeSecretMsg:Equal(id, pet1, pet2)
+  return self._id == id and self._petID1 == pet1 and self._petID2 == pet2
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeSecretMsg.Random = function(petsInDomitory, count, excluded)
-  -- function num : 0_7 , upvalues : _ENV, SecretMsgType
+function HomeSecretMsg.Random(petsInDomitory, count, excluded)
   local list = {}
-  for roomID,pets in pairs(petsInDomitory) do
-    for _,petID in ipairs(pets) do
-      if petID > 0 then
-        local pet = (Cfg.cfg_homeland_pet)[petID]
+  for roomID, pets in pairs(petsInDomitory) do
+    for _, petID in ipairs(pets) do
+      if 0 < petID then
+        local pet = Cfg.cfg_homeland_pet[petID]
         if pet == nil then
           BuildError("cfg_homeland_pet中缺少配置:", petID)
         end
         local msgs = pet.SecretMsg
-        if msgs and #msgs > 0 then
-          for __,msgInfo in ipairs(msgs) do
+        if msgs and 0 < #msgs then
+          for __, msgInfo in ipairs(msgs) do
             local msgID = msgInfo[1]
             if list[msgID] == nil then
               list[msgID] = {}
             end
-            local type = (HomeSecretMsg.GetType)(msgID)
+            local type = HomeSecretMsg.GetType(msgID)
             if type == SecretMsgType.Single then
-              (table.insert)(list[msgID], petID)
-            else
-              -- DECOMPILER ERROR at PC58: Confused about usage of register: R23 in 'UnsetPending'
-
-              if type == SecretMsgType.Double then
-                if (list[msgID])[1] == nil then
-                  (list[msgID])[1] = {}
+              table.insert(list[msgID], petID)
+            elseif type == SecretMsgType.Double then
+              if list[msgID][1] == nil then
+                list[msgID][1] = {}
+              end
+              if list[msgID][2] == nil then
+                list[msgID][2] = {}
+              end
+              local group = msgInfo[2]
+              if group then
+                if group ~= 1 and group ~= 2 then
+                  Log.exception("双人秘闻分组只能配1或2，星灵ID:", petID, "秘闻ID:", msgID)
                 end
-                -- DECOMPILER ERROR at PC65: Confused about usage of register: R23 in 'UnsetPending'
-
-                if (list[msgID])[2] == nil then
-                  (list[msgID])[2] = {}
-                end
-                local group = msgInfo[2]
-                if group then
-                  if group ~= 1 and group ~= 2 then
-                    (Log.exception)("双人秘闻分组只能配1或2，星灵ID:", petID, "秘闻ID:", msgID)
-                  end
-                  ;
-                  (table.insert)((list[msgID])[group], petID)
-                else
-                  ;
-                  (table.insert)((list[msgID])[1], petID)
-                  ;
-                  (table.insert)((list[msgID])[2], petID)
-                end
+                table.insert(list[msgID][group], petID)
               else
-                do
-                  -- DECOMPILER ERROR at PC109: Confused about usage of register: R23 in 'UnsetPending'
-
-                  if type == SecretMsgType.DoubleSameRoom then
-                    if (list[msgID])[roomID] == nil then
-                      (list[msgID])[roomID] = {}
-                    end
-                    -- DECOMPILER ERROR at PC118: Confused about usage of register: R23 in 'UnsetPending'
-
-                    if ((list[msgID])[roomID])[1] == nil then
-                      ((list[msgID])[roomID])[1] = {}
-                    end
-                    -- DECOMPILER ERROR at PC127: Confused about usage of register: R23 in 'UnsetPending'
-
-                    if ((list[msgID])[roomID])[2] == nil then
-                      ((list[msgID])[roomID])[2] = {}
-                    end
-                    local group = msgInfo[2]
-                    if group then
-                      if group ~= 1 and group ~= 2 then
-                        (Log.exception)("双人秘闻分组只能配1或2，星灵ID:", petID, "秘闻ID:", msgID)
-                      end
-                      ;
-                      (table.insert)(((list[msgID])[roomID])[group], petID)
-                    else
-                      ;
-                      (table.insert)(((list[msgID])[roomID])[1], petID)
-                      ;
-                      (table.insert)(((list[msgID])[roomID])[2], petID)
-                    end
-                  end
-                  do
-                    -- DECOMPILER ERROR at PC164: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC164: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC164: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC164: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC164: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
+                table.insert(list[msgID][1], petID)
+                table.insert(list[msgID][2], petID)
+              end
+            elseif type == SecretMsgType.DoubleSameRoom then
+              if list[msgID][roomID] == nil then
+                list[msgID][roomID] = {}
+              end
+              if list[msgID][roomID][1] == nil then
+                list[msgID][roomID][1] = {}
+              end
+              if list[msgID][roomID][2] == nil then
+                list[msgID][roomID][2] = {}
+              end
+              local group = msgInfo[2]
+              if group then
+                if group ~= 1 and group ~= 2 then
+                  Log.exception("双人秘闻分组只能配1或2，星灵ID:", petID, "秘闻ID:", msgID)
                 end
+                table.insert(list[msgID][roomID][group], petID)
+              else
+                table.insert(list[msgID][roomID][1], petID)
+                table.insert(list[msgID][roomID][2], petID)
               end
             end
           end
@@ -219,119 +146,116 @@ HomeSecretMsg.Random = function(petsInDomitory, count, excluded)
       end
     end
   end
-  local countExcept = function(tb, target)
-    -- function num : 0_7_0 , upvalues : _ENV
+  
+  local function countExcept(tb, target)
     local count = 0
-    for _,value in pairs(tb) do
+    for _, value in pairs(tb) do
       if value ~= target then
         count = count + 1
       end
     end
     return count
   end
-
-  for msgID,data in pairs(list) do
-    local type = (HomeSecretMsg.GetType)(msgID)
+  
+  for msgID, data in pairs(list) do
+    local type = HomeSecretMsg.GetType(msgID)
     local canTrigger = false
     if type == SecretMsgType.Single then
       canTrigger = true
-    else
-      if type == SecretMsgType.Double then
-        local group1 = data[1]
-        local group2 = data[2]
+    elseif type == SecretMsgType.Double then
+      local group1 = data[1]
+      local group2 = data[2]
+      if #group1 == 0 or #group2 == 0 then
+        canTrigger = false
+      else
+        for _, petID in ipairs(group1) do
+          local count = countExcept(group2, petID)
+          if 0 < count then
+            canTrigger = true
+            break
+          end
+        end
+      end
+    elseif type == SecretMsgType.DoubleSameRoom then
+      for roomID, groups in pairs(data) do
+        local group1 = groups[1]
+        local group2 = groups[2]
         if #group1 == 0 or #group2 == 0 then
           canTrigger = false
         else
-          for _,petID in ipairs(group1) do
-            local count = countExcept(group2, R21_PC205)
-            if count > 0 then
+          for _, petID in ipairs(group1) do
+            local count = countExcept(group2, petID)
+            if 0 < count then
               canTrigger = true
               break
             end
           end
         end
-      else
-        do
-          if type == SecretMsgType.DoubleSameRoom then
-            for roomID,groups in pairs(data) do
-              local group1 = groups[1]
-              local group2 = groups[2]
-              if #group1 == 0 or #group2 == 0 then
-                canTrigger = false
-              else
-                for _,petID in ipairs(group1) do
-                  local count = countExcept(group2, petID)
-                  if count > 0 then
-                    canTrigger = true
-                    break
-                  end
-                end
-              end
-            end
-          end
-          do
-            if (canTrigger or canTrigger) and excluded then
-              for _,msgInstance in ipairs(excluded) do
-                if msgID == msgInstance:ID() then
-                  canTrigger = false
-                  break
-                end
-              end
-            end
-            do
-              do
-                if not canTrigger then
-                  list[msgID] = nil
-                end
-                -- DECOMPILER ERROR at PC267: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC267: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC267: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC267: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC267: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC267: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC267: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
-          end
+        if canTrigger then
+          break
         end
       end
+    end
+    if canTrigger and excluded then
+      for _, msgInstance in ipairs(excluded) do
+        if msgID == msgInstance:ID() then
+          canTrigger = false
+          break
+        end
+      end
+    end
+    if not canTrigger then
+      list[msgID] = nil
     end
   end
   local elements = {}
   local idx = 1
-  for msgID,data in pairs(list) do
-    local weight = ((Cfg.cfg_homeland_pet_secret_msg)[msgID]).Weight
+  for msgID, data in pairs(list) do
+    local weight = Cfg.cfg_homeland_pet_secret_msg[msgID].Weight
     elements[idx] = {msgID, weight}
     idx = idx + 1
   end
-  ;
-  (HomeSecretMsg.RandomByWeight)(elements)
-  local count = (math.min)(count, #elements)
+  HomeSecretMsg.RandomByWeight(elements)
+  local count = math.min(count, #elements)
   local msgs = {}
   for i = 1, count do
-    local msgID = (elements[i])[1]
-    local type = (HomeSecretMsg.GetType)(msgID)
+    local msgID = elements[i][1]
+    local type = HomeSecretMsg.GetType(msgID)
     local data = list[msgID]
     local msg = HomeSecretMsg:New()
     if type == SecretMsgType.Single then
-      local petID = data[(math.random)(1, #data)]
+      local petID = data[math.random(1, #data)]
       msg:Init(msgID, petID)
-    else
-      do
-        if type == SecretMsgType.Double then
-          local group1 = (table.shuffle)(data[1])
-          local group2 = ((table.shuffle)(data[2]))
-          local pet1, pet2 = nil, nil
-          for _,petID1 in ipairs(group1) do
-            local found = false
-            for __,petID2 in ipairs(group2) do
+    elseif type == SecretMsgType.Double then
+      local group1 = table.shuffle(data[1])
+      local group2 = table.shuffle(data[2])
+      local pet1, pet2
+      for _, petID1 in ipairs(group1) do
+        local found = false
+        for __, petID2 in ipairs(group2) do
+          if petID1 ~= petID2 then
+            pet1 = petID1
+            pet2 = petID2
+            found = true
+            break
+          end
+        end
+        if found then
+          break
+        end
+      end
+      msg:Init(msgID, pet1, pet2)
+    elseif type == SecretMsgType.DoubleSameRoom then
+      local pet1, pet2
+      for roomID, groups in pairs(data) do
+        local found = false
+        local group1 = groups[1]
+        local group2 = groups[2]
+        if 0 < #group1 and 0 < #group2 then
+          table.shuffle(group1)
+          table.shuffle(group2)
+          for _, petID1 in ipairs(group1) do
+            for __, petID2 in ipairs(group2) do
               if petID1 ~= petID2 then
                 pet1 = petID1
                 pet2 = petID2
@@ -339,152 +263,64 @@ HomeSecretMsg.Random = function(petsInDomitory, count, excluded)
                 break
               end
             end
-          end
-          do
-            if not found then
-              do
-                msg:Init(msgID, pet1, pet2)
-                if type == SecretMsgType.DoubleSameRoom then
-                  local pet1, pet2 = nil, nil
-                  for roomID,groups in pairs(data) do
-                    local found = false
-                    local group1 = groups[1]
-                    local group2 = groups[2]
-                    if #group1 > 0 and #group2 > 0 then
-                      (table.shuffle)(group1)
-                      ;
-                      (table.shuffle)(group2)
-                      for _,petID1 in ipairs(group1) do
-                        for __,petID2 in ipairs(group2) do
-                          if petID1 ~= petID2 then
-                            pet1 = petID1
-                            pet2 = petID2
-                            found = true
-                            break
-                          end
-                        end
-                      end
-                    end
-                  end
-                  do
-                    if found or not found then
-                      do
-                        do
-                          msg:Init(msgID, pet1, pet2)
-                          msgs[i] = msg
-                          -- DECOMPILER ERROR at PC419: LeaveBlock: unexpected jumping out DO_STMT
-
-                          -- DECOMPILER ERROR at PC419: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                          -- DECOMPILER ERROR at PC419: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC419: LeaveBlock: unexpected jumping out DO_STMT
-
-                          -- DECOMPILER ERROR at PC419: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                          -- DECOMPILER ERROR at PC419: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC419: LeaveBlock: unexpected jumping out DO_STMT
-
-                          -- DECOMPILER ERROR at PC419: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                          -- DECOMPILER ERROR at PC419: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC419: LeaveBlock: unexpected jumping out DO_STMT
-
-                          -- DECOMPILER ERROR at PC419: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                          -- DECOMPILER ERROR at PC419: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC419: LeaveBlock: unexpected jumping out DO_STMT
-
-                          -- DECOMPILER ERROR at PC419: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                          -- DECOMPILER ERROR at PC419: LeaveBlock: unexpected jumping out IF_STMT
-
-                        end
-                      end
-                    end
-                  end
-                end
-              end
+            if found then
+              break
             end
           end
         end
+        if found then
+          break
+        end
       end
+      msg:Init(msgID, pet1, pet2)
     end
+    msgs[i] = msg
   end
   return msgs
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeSecretMsg.GetType = function(id)
-  -- function num : 0_8 , upvalues : _ENV, SecretMsgType
-  local cfg = (Cfg.cfg_homeland_pet_secret_msg)[id]
+function HomeSecretMsg.GetType(id)
+  local cfg = Cfg.cfg_homeland_pet_secret_msg[id]
   if cfg == nil then
     BuildError("找不到秘闻配置:", id)
   end
-  local type = nil
+  local type
   if cfg.Type == 1 then
     type = SecretMsgType.Single
-  else
-    if cfg.Type == 2 then
-      if cfg.SameRoom == true then
-        type = SecretMsgType.DoubleSameRoom
-      else
-        type = SecretMsgType.Double
-      end
+  elseif cfg.Type == 2 then
+    if cfg.SameRoom == true then
+      type = SecretMsgType.DoubleSameRoom
+    else
+      type = SecretMsgType.Double
     end
   end
   return type
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeSecretMsg.RandomByWeight = function(elements)
-  -- function num : 0_9 , upvalues : _ENV
+function HomeSecretMsg.RandomByWeight(elements)
   local total = #elements
   local totalWight = 0
-  for _,item in ipairs(elements) do
+  for _, item in ipairs(elements) do
     totalWight = totalWight + item[2]
   end
   local cur = 1
-  while 1 do
-    if cur <= total then
-      local r = (math.random)(1, totalWight)
-      local tmp = 0
-      local target = cur
-      for i = cur, total - cur + 1 do
-        tmp = tmp + (elements[i])[2]
-        if r <= tmp then
-          target = i
-          break
-        end
-      end
-      do
-        totalWight = totalWight - (elements[target])[2]
-        do
-          do
-            if cur ~= target then
-              local t = elements[cur]
-              elements[cur] = elements[target]
-              elements[target] = t
-            end
-            cur = cur + 1
-            -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+  while total >= cur do
+    local r = math.random(1, totalWight)
+    local tmp = 0
+    local target = cur
+    for i = cur, total - cur + 1 do
+      tmp = tmp + elements[i][2]
+      if r <= tmp then
+        target = i
+        break
       end
     end
+    totalWight = totalWight - elements[target][2]
+    if cur ~= target then
+      local t = elements[cur]
+      elements[cur] = elements[target]
+      elements[target] = t
+    end
+    cur = cur + 1
   end
 end
-
-

@@ -1,109 +1,104 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_tank_rush_per_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_TankRushPerGrid", SkillEffectCalc_Base)
 SkillEffectCalc_TankRushPerGrid = SkillEffectCalc_TankRushPerGrid
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_TankRushPerGrid.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_TankRushPerGrid:DoSkillEffectCalculator(skillEffectCalcParam)
   local resultArray = {}
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local casterPos = casterEntity:GetGridPosition()
-  local casterBodyArea = (casterEntity:BodyArea()):GetArea()
-  local targetTeamID = (skillEffectCalcParam.targetEntityIDs)[1]
-  local targetEntity = (self._world):GetEntityByID(targetTeamID)
+  local casterBodyArea = casterEntity:BodyArea():GetArea()
+  local targetTeamID = skillEffectCalcParam.targetEntityIDs[1]
+  local targetEntity = self._world:GetEntityByID(targetTeamID)
   if not targetEntity then
     return {}
   end
   local targetPos = targetEntity:GetGridPosition()
-  if (table.Vector2Include)(skillEffectCalcParam.skillRange, targetPos) then
+  if table.Vector2Include(skillEffectCalcParam.skillRange, targetPos) then
     local r = self:_RushToTarget(targetEntity, targetPos, skillEffectCalcParam, true)
     if r then
-      (table.insert)(resultArray, r)
+      table.insert(resultArray, r)
     end
   else
-    do
-      local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-      local nearestGridArray = {}
-      local nearestDistance = 999
-      for _,v2 in ipairs(skillEffectCalcParam.skillRange) do
-        local dis = (Vector2.Distance)(v2, targetPos)
-        if self:IsPosAccessibleForEntity(casterEntity, v2) then
-          if dis < nearestDistance then
-            nearestGridArray = {v2}
-            nearestDistance = dis
-          else
-            if nearestDistance == dis then
-              (table.insert)(nearestGridArray, v2)
-            end
-          end
+    local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+    local nearestGridArray = {}
+    local nearestDistance = 999
+    for _, v2 in ipairs(skillEffectCalcParam.skillRange) do
+      local dis = Vector2.Distance(v2, targetPos)
+      if self:IsPosAccessibleForEntity(casterEntity, v2) then
+        if nearestDistance > dis then
+          nearestGridArray = {v2}
+          nearestDistance = dis
+        elseif nearestDistance == dis then
+          table.insert(nearestGridArray, v2)
         end
       end
-      if #nearestGridArray > 0 then
-        local minX = casterPos.x
-        local minY = casterPos.y
-        local maxX = casterPos.x
-        local maxY = casterPos.y
-        for _,v in ipairs(casterBodyArea) do
-          local v2 = casterPos + v
-          if v2.x < minX then
-            minX = v2.x
-          end
-          if maxX < v2.x then
-            maxX = v2.x
-          end
-          if v2.y < minY then
-            minY = v2.y
-          end
-          if maxY < v2.y then
-            maxY = v2.y
-          end
+    end
+    if 0 < #nearestGridArray then
+      local minX = casterPos.x
+      local minY = casterPos.y
+      local maxX = casterPos.x
+      local maxY = casterPos.y
+      for _, v in ipairs(casterBodyArea) do
+        local v2 = casterPos + v
+        if minX > v2.x then
+          minX = v2.x
         end
-        local nearestGrid, secondaryGrid = nil, nil
-        for _,v2 in ipairs(nearestGridArray) do
-          if minX <= v2.x and v2.x <= maxX then
-            nearestGrid = v2
-          else
-            secondaryGrid = v2
-          end
+        if maxX < v2.x then
+          maxX = v2.x
         end
-        local selectedGridPos = nearestGrid or secondaryGrid
-        local r = self:_RushToTarget(targetEntity, selectedGridPos, skillEffectCalcParam, false)
-        if r then
-          (table.insert)(resultArray, r)
+        if minY > v2.y then
+          minY = v2.y
+        end
+        if maxY < v2.y then
+          maxY = v2.y
         end
       end
-      do
-        return resultArray
+      local nearestGrid, secondaryGrid
+      for _, v2 in ipairs(nearestGridArray) do
+        if minX <= v2.x and maxX >= v2.x then
+          nearestGrid = v2
+        else
+          secondaryGrid = v2
+        end
+      end
+      local selectedGridPos = nearestGrid or secondaryGrid
+      local r = self:_RushToTarget(targetEntity, selectedGridPos, skillEffectCalcParam, false)
+      if r then
+        table.insert(resultArray, r)
       end
     end
   end
+  return resultArray
 end
 
-local isPosSafeForBody = function(v2, bodyArea, range)
-  -- function num : 0_1 , upvalues : _ENV
-  for _,body in ipairs(bodyArea) do
+local function isPosSafeForBody(v2, bodyArea, range)
+  for _, body in ipairs(bodyArea) do
     local v = v2 + body
-    if not (table.Vector2Include)(range, v) then
+    if not table.Vector2Include(range, v) then
       return false
     end
   end
   return true
 end
 
-local searchDirs = {Vector2.down, Vector2.up, Vector2.left, Vector2.right, (Vector2.New)(-1, -1), (Vector2.New)(1, 1), (Vector2.New)(-1, 1), (Vector2.New)(1, -1)}
-local generateLogicGridPosMap = function(range, casterBodyArea)
-  -- function num : 0_2 , upvalues : _ENV, isPosSafeForBody, searchDirs
+local searchDirs = {
+  Vector2.down,
+  Vector2.up,
+  Vector2.left,
+  Vector2.right,
+  Vector2.New(-1, -1),
+  Vector2.New(1, 1),
+  Vector2.New(-1, 1),
+  Vector2.New(1, -1)
+}
+
+local function generateLogicGridPosMap(range, casterBodyArea)
   local logicGridPosMap = {}
-  for _,v2 in ipairs(range) do
-    local index = (Vector2.Pos2Index)(v2)
+  for _, v2 in ipairs(range) do
+    local index = Vector2.Pos2Index(v2)
     if isPosSafeForBody(v2, casterBodyArea, range) then
       logicGridPosMap[index] = v2
     else
-      for _,dir in ipairs(searchDirs) do
+      for _, dir in ipairs(searchDirs) do
         local v = v2 + dir
         if isPosSafeForBody(v, casterBodyArea, range) then
           logicGridPosMap[index] = v
@@ -115,153 +110,116 @@ local generateLogicGridPosMap = function(range, casterBodyArea)
   return logicGridPosMap
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectCalc_TankRushPerGrid._RushToTarget = function(self, targetEntity, targetPos, skillEffectCalcParam, calcDamage)
-  -- function num : 0_3 , upvalues : generateLogicGridPosMap, _ENV, isPosSafeForBody
+function SkillEffectCalc_TankRushPerGrid:_RushToTarget(targetEntity, targetPos, skillEffectCalcParam, calcDamage)
   local effectParam = skillEffectCalcParam:GetSkillEffectParam()
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local casterPos = casterEntity:GetGridPosition()
-  local casterBodyArea = (casterEntity:BodyArea()):GetArea()
+  local casterBodyArea = casterEntity:BodyArea():GetArea()
   local logicGridPosMap = generateLogicGridPosMap(skillEffectCalcParam.skillRange, casterBodyArea)
-  local targetPosIndex = (Vector2.Pos2Index)(targetPos)
+  local targetPosIndex = Vector2.Pos2Index(targetPos)
   local targetLogicGridPos = logicGridPosMap[targetPosIndex]
   if not targetLogicGridPos then
-    (Log.error)("TankRushPerGrid: bad target pos index: ", targetPosIndex)
-    return 
+    Log.error("TankRushPerGrid: bad target pos index: ", targetPosIndex)
+    return
   end
   local dir = targetLogicGridPos - casterPos
   if dir.x > 0 then
     dir.x = 1
-  else
-    if dir.x < 0 then
-      dir.x = -1
-    end
+  elseif dir.x < 0 then
+    dir.x = -1
   end
-  if dir.y > 0 then
+  if 0 < dir.y then
     dir.y = 1
-  else
-    if dir.y < 0 then
-      dir.y = -1
-    end
+  elseif 0 > dir.y then
+    dir.y = -1
   end
   if dir == Vector2.zero then
-    return 
+    return
   end
   local fullCasterBodyPos = {}
-  for _,v in ipairs(casterBodyArea) do
-    (table.insert)(fullCasterBodyPos, casterPos + v)
+  for _, v in ipairs(casterBodyArea) do
+    table.insert(fullCasterBodyPos, casterPos + v)
   end
-  local utilData = (self._world):GetService("UtilData")
-  if not casterEntity:HasMonsterID() or not (casterEntity:MonsterID()):GetMonsterBlockData() then
-    local blockFlag = BlockFlag.LinkLine
-  end
+  local utilData = self._world:GetService("UtilData")
+  local blockFlag = casterEntity:HasMonsterID() and casterEntity:MonsterID():GetMonsterBlockData() or BlockFlag.LinkLine
   local targetRushPos = casterPos
-  while 1 do
-    while 1 do
-      local v2 = targetRushPos + dir
-      local isPosSafe = isPosSafeForBody(v2, casterBodyArea, skillEffectCalcParam.skillRange)
-      if isPosSafe and not (table.Vector2Include)(fullCasterBodyPos, v2) then
-        isPosSafe = utilData:IsPosBlock(v2, blockFlag)
-      end
-      if isPosSafeForBody(v2, casterBodyArea, skillEffectCalcParam.skillRange) then
-        targetRushPos = v2
-        -- DECOMPILER ERROR at PC110: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC110: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
-    end
-    break
-  end
-  do
-    local walkResArray = {}
-    local isCasterDead = false
-    local isRushFinished = true
-    local utilScope = (self._world):GetService("UtilScopeCalc")
-    local directLineCalc = SkillScopeCalculator_DirectLineExpand:New(utilScope)
-    local targetSelector = (SkillScopeTargetSelector:New(self._world))
-    local damageScopeResult, damageTargetIDArray = nil, nil
-    local currentPos = casterPos:Clone()
-    while 1 do
-      if currentPos ~= targetRushPos and currentPos ~= targetRushPos then
-        currentPos = currentPos + dir
-        if not self:IsPosAccessibleForEntity(casterEntity, currentPos) then
-          isRushFinished = false
-          break
-        end
-        if calcDamage then
-          local scopeResult = directLineCalc:CalcRange(SkillScopeType.DirectLineExpand, {0, 1}, currentPos, casterBodyArea, dir)
-          local selectResult = targetSelector:DoSelectSkillTarget(casterEntity, SkillTargetType.Pet, scopeResult, skillEffectCalcParam.skillID)
-          if #selectResult > 0 then
-            damageScopeResult = scopeResult
-            damageTargetIDArray = selectResult
-          end
-        end
-        do
-          do
-            local walkRes, isDead = self:MoveAndGenerateWalkResult(casterEntity, currentPos)
-            ;
-            (table.insert)(walkResArray, walkRes)
-            if isDead then
-              isCasterDead = true
-              break
-            end
-            -- DECOMPILER ERROR at PC182: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC182: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC182: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
-    end
-    if #walkResArray == 0 then
-      return 
-    end
-    casterEntity:SetGridDirection(dir)
-    local damageResults, hitbackResults = nil, nil
-    if calcDamage and damageScopeResult and damageTargetIDArray then
-      local damageCalc = SkillEffectCalc_Damage:New(self._world)
-      local damageCalcParam = SkillEffectCalcParam:New(skillEffectCalcParam.casterEntityID, damageTargetIDArray, effectParam:GetDamageParam(), skillEffectCalcParam.skillID, damageScopeResult:GetAttackRange(), currentPos, currentPos)
-      damageResults = damageCalc:DoSkillEffectCalculator(damageCalcParam)
-      if damageResults and #damageResults > 0 then
-        local hitbackCalc = SkillEffectCalc_HitBack:New(self._world)
-        local hitbackCalcParam = SkillEffectCalcParam:New(skillEffectCalcParam.casterEntityID, skillEffectCalcParam.targetEntityIDs, effectParam:GetHitBackParam(), skillEffectCalcParam.skillID, skillEffectCalcParam.skillRange, currentPos, currentPos)
-        hitbackResults = hitbackCalc:DoSkillEffectCalculator(hitbackCalcParam)
-      end
-    end
-    do
-      return SkillEffectResult_TankRushPerGrid:New(walkResArray, damageResults, hitbackResults, isCasterDead)
+  while true do
+    local v2 = targetRushPos + dir
+    local isPosSafe = isPosSafeForBody(v2, casterBodyArea, skillEffectCalcParam.skillRange)
+    isPosSafe = isPosSafe and (table.Vector2Include(fullCasterBodyPos, v2) or utilData:IsPosBlock(v2, blockFlag))
+    if isPosSafeForBody(v2, casterBodyArea, skillEffectCalcParam.skillRange) then
+      targetRushPos = v2
+    else
+      break
     end
   end
+  local walkResArray = {}
+  local isCasterDead = false
+  local isRushFinished = true
+  local utilScope = self._world:GetService("UtilScopeCalc")
+  local directLineCalc = SkillScopeCalculator_DirectLineExpand:New(utilScope)
+  local targetSelector = SkillScopeTargetSelector:New(self._world)
+  local damageScopeResult, damageTargetIDArray
+  local currentPos = casterPos:Clone()
+  if currentPos ~= targetRushPos then
+    while currentPos ~= targetRushPos do
+      currentPos = currentPos + dir
+      if not self:IsPosAccessibleForEntity(casterEntity, currentPos) then
+        isRushFinished = false
+        break
+      end
+      if calcDamage then
+        local scopeResult = directLineCalc:CalcRange(SkillScopeType.DirectLineExpand, {0, 1}, currentPos, casterBodyArea, dir)
+        local selectResult = targetSelector:DoSelectSkillTarget(casterEntity, SkillTargetType.Pet, scopeResult, skillEffectCalcParam.skillID)
+        if 0 < #selectResult then
+          damageScopeResult = scopeResult
+          damageTargetIDArray = selectResult
+        end
+      end
+      local walkRes, isDead = self:MoveAndGenerateWalkResult(casterEntity, currentPos)
+      table.insert(walkResArray, walkRes)
+      if isDead then
+        isCasterDead = true
+        break
+      end
+    end
+  end
+  if #walkResArray == 0 then
+    return
+  end
+  casterEntity:SetGridDirection(dir)
+  local damageResults, hitbackResults
+  if calcDamage and damageScopeResult and damageTargetIDArray then
+    local damageCalc = SkillEffectCalc_Damage:New(self._world)
+    local damageCalcParam = SkillEffectCalcParam:New(skillEffectCalcParam.casterEntityID, damageTargetIDArray, effectParam:GetDamageParam(), skillEffectCalcParam.skillID, damageScopeResult:GetAttackRange(), currentPos, currentPos)
+    damageResults = damageCalc:DoSkillEffectCalculator(damageCalcParam)
+    if damageResults and 0 < #damageResults then
+      local hitbackCalc = SkillEffectCalc_HitBack:New(self._world)
+      local hitbackCalcParam = SkillEffectCalcParam:New(skillEffectCalcParam.casterEntityID, skillEffectCalcParam.targetEntityIDs, effectParam:GetHitBackParam(), skillEffectCalcParam.skillID, skillEffectCalcParam.skillRange, currentPos, currentPos)
+      hitbackResults = hitbackCalc:DoSkillEffectCalculator(hitbackCalcParam)
+    end
+  end
+  return SkillEffectResult_TankRushPerGrid:New(walkResArray, damageResults, hitbackResults, isCasterDead)
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectCalc_TankRushPerGrid.IsPosAccessibleForEntity = function(self, e, pos)
-  -- function num : 0_4 , upvalues : _ENV
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function SkillEffectCalc_TankRushPerGrid:IsPosAccessibleForEntity(e, pos)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local monsterIDCmpt = e:MonsterID()
   local nMonsterBlockData = monsterIDCmpt:GetMonsterBlockData()
   local coverList = e:GetCoverAreaList(pos)
   local coverListSelf = e:GetCoverAreaList(e:GetGridPosition())
   for i = 1, #coverList do
     local posWork = coverList[i]
-    if not (table.icontains)(coverListSelf, posWork) and boardServiceLogic:IsPosBlock(posWork, nMonsterBlockData) then
+    if not table.icontains(coverListSelf, posWork) and boardServiceLogic:IsPosBlock(posWork, nMonsterBlockData) then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectCalc_TankRushPerGrid.MoveAndGenerateWalkResult = function(self, e, pos)
-  -- function num : 0_5 , upvalues : _ENV
-  local sBoard = (self._world):GetService("BoardLogic")
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function SkillEffectCalc_TankRushPerGrid:MoveAndGenerateWalkResult(e, pos)
+  local sBoard = self._world:GetService("BoardLogic")
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   local selfPos = e:GetGridPosition()
   local walkRes = MonsterMoveGridResult:New()
   sBoard:UpdateEntityBlockFlag(e, e:GetGridPosition(), pos)
@@ -269,7 +227,7 @@ SkillEffectCalc_TankRushPerGrid.MoveAndGenerateWalkResult = function(self, e, po
   e:SetGridDirection(pos - selfPos)
   walkRes:SetWalkPos(pos)
   local listTrapWork, listTrapResult = trapServiceLogic:TriggerTrapByEntity(e, TrapTriggerOrigin.MonsterGridMove)
-  for i,trapEntity in ipairs(listTrapWork) do
+  for i, trapEntity in ipairs(listTrapWork) do
     local skillEffectResultContainer = listTrapResult[i]
     local aiResult = AISkillResult:New()
     aiResult:SetResultContainer(skillEffectResultContainer)
@@ -277,5 +235,3 @@ SkillEffectCalc_TankRushPerGrid.MoveAndGenerateWalkResult = function(self, e, po
   end
   return walkRes, e:HasDeadMark()
 end
-
-

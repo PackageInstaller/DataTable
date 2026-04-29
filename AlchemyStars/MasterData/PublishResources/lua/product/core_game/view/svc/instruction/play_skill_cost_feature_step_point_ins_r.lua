@@ -1,31 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_skill_cost_feature_step_point_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlaySkillCostFeatureStepPointInstruction", BaseInstruction)
 PlaySkillCostFeatureStepPointInstruction = PlaySkillCostFeatureStepPointInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillCostFeatureStepPointInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillCostFeatureStepPointInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local rsvcFeature = world:GetService("FeatureRender")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SkillCostFeatureStepPoint)
   if not resultArray then
-    return 
+    return
   end
-  for _,result in ipairs(resultArray) do
+  for _, result in ipairs(resultArray) do
     local oldVal = result:GetOldVal()
     local curVal = result:GetCurVal()
     local costVal = result:GetCostVal()
     rsvcFeature:NotifyStepPointChange(curVal, oldVal)
-    local teamEntity = (world:Player()):GetCurrentTeamEntity()
+    local teamEntity = world:Player():GetCurrentTeamEntity()
     local nt = NTFeatureStepPointSkillCost:New(teamEntity, curVal, oldVal, costVal)
-    ;
-    (world:GetService("PlayBuff")):PlayBuffView(TT, nt)
+    world:GetService("PlayBuff"):PlayBuffView(TT, nt)
   end
 end
-
-

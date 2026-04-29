@@ -1,321 +1,225 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_auto_fight.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetAutoFight", UICustomWidget)
 UIWidgetAutoFight = UIWidgetAutoFight
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetAutoFight.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetAutoFight:OnShow(uiParams)
   self.enableFakeInput = true
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetAutoFight.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWidgetAutoFight:InitWidget()
   self._uiAtlas = self:GetAsset("UIBattle.spriteatlas", LoadType.SpriteAtlas)
   self._autoBtnNormalSpriteName = "thread_junei_btn3"
   self._autoBtnPressedSpriteName = "thread_junei_btn4"
   self._autoBtnLockSpriteName = "thread_zd_suo1"
   self:SetIsAutoFighting(false)
   self._banAutoFightBtn = false
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
-  if (LocalDB.HasKey)("AutoFightRecord" .. roleModule:GetPstId()) and (LocalDB.GetInt)("AutoFightRecord" .. roleModule:GetPstId()) == 1 then
+  local roleModule = GameGlobal.GetModule(RoleModule)
+  if LocalDB.HasKey("AutoFightRecord" .. roleModule:GetPstId()) and LocalDB.GetInt("AutoFightRecord" .. roleModule:GetPstId()) == 1 then
     self.IsAutoFightRecord = true
   else
     self.IsAutoFightRecord = false
   end
-  if (LocalDB.HasKey)("BattleAutoFight" .. roleModule:GetPstId()) and (LocalDB.GetInt)("BattleAutoFight" .. roleModule:GetPstId()) == 1 then
+  if LocalDB.HasKey("BattleAutoFight" .. roleModule:GetPstId()) and LocalDB.GetInt("BattleAutoFight" .. roleModule:GetPstId()) == 1 then
     self.IsBattleAutoFight = true
   else
     self.IsBattleAutoFight = false
   end
   self.useGuide = false
   self._goAutoFightMask = self:GetGameObject("imgAutoFightMask")
-  ;
-  (self._goAutoFightMask):SetActive(false)
+  self._goAutoFightMask:SetActive(false)
   self._autoFightBtn = self:GetGameObject("btnAutoFight")
   self._autoFightImage = self:GetUIComponent("Image", "btnAutoFight")
-  self._autoFightForbiddenStr = (StringTable.Get)("str_battle_forbidden_operation_in_autofight")
+  self._autoFightForbiddenStr = StringTable.Get("str_battle_forbidden_operation_in_autofight")
   self.autoParam = self:CheckAutoEnable()
-  if (self.autoParam).bShow then
-    (self._autoFightBtn):SetActive(true)
-    -- DECOMPILER ERROR at PC102: Confused about usage of register: R2 in 'UnsetPending'
-
-    if (self.autoParam).bEnable then
-      (self._autoFightImage).sprite = (self._uiAtlas):GetSprite(self._autoBtnNormalSpriteName)
-      if (self.autoParam).bSerialRunning then
+  if self.autoParam.bShow then
+    self._autoFightBtn:SetActive(true)
+    if self.autoParam.bEnable then
+      self._autoFightImage.sprite = self._uiAtlas:GetSprite(self._autoBtnNormalSpriteName)
+      if self.autoParam.bSerialRunning then
         self:BtnAutoFightOnClick()
-      else
-        if self.IsBattleAutoFight then
-          self:BtnAutoFightOnClick()
-        end
+      elseif self.IsBattleAutoFight then
+        self:BtnAutoFightOnClick()
       end
     else
-      -- DECOMPILER ERROR at PC121: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._autoFightImage).sprite = (self._uiAtlas):GetSprite(self._autoBtnLockSpriteName)
+      self._autoFightImage.sprite = self._uiAtlas:GetSprite(self._autoBtnLockSpriteName)
     end
   else
-    ;
-    (self._autoFightBtn):SetActive(false)
+    self._autoFightBtn:SetActive(false)
   end
   self._autoBtnPool = self:GetUIComponent("UISelectObjectPath", "auto")
   self._manualBtns = self:GetGameObject("manual")
   self:RegisterEvent()
   self._stencil = self:GetUIComponent("Slider", "stencil")
-  -- DECOMPILER ERROR at PC144: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._stencil).value = 0
+  self._stencil.value = 0
   self._stencilViewValue = self:GetUIComponent("UILocalizationText", "stencilValue")
-  -- DECOMPILER ERROR at PC151: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._stencilViewValue).text = "0"
-  ;
-  ((self._stencil).onValueChanged):AddListener(function(value)
-    -- function num : 0_1_0 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-    (self._stencilViewValue).text = value
-    ;
-    ((UnityEngine.Shader).SetGlobalFloat)("_outlineWidthTest", tonumber(value))
-  end
-)
+  self._stencilViewValue.text = "0"
+  self._stencil.onValueChanged:AddListener(function(value)
+    self._stencilViewValue.text = value
+    UnityEngine.Shader.SetGlobalFloat("_outlineWidthTest", tonumber(value))
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetAutoFight.SetData = function(self, matchEnterData, chessPanelPool)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetAutoFight:SetData(matchEnterData, chessPanelPool)
   if matchEnterData:GetMatchType() == MatchType.MT_Chess and chessPanelPool then
-    (self:GetGameObject("fightCtrl")):SetActive(false)
+    self:GetGameObject("fightCtrl"):SetActive(false)
     if self:IsAutoFighting() then
       self:BtnAutoFightOnClick()
     end
-    ;
-    (self:GetGameObject("chessRTBtn")):SetActive(true)
+    self:GetGameObject("chessRTBtn"):SetActive(true)
     local timeSpeedPool = self:GetUIComponent("UISelectObjectPath", "chessTimeSpeed")
     self.timeSpeed = timeSpeedPool:SpawnObject("UIBattleTimeSpeed")
   else
-    do
-      ;
-      (self:GetGameObject("fightCtrl")):SetActive(true)
-      ;
-      (self:GetGameObject("chessRTBtn")):SetActive(false)
-      do
-        local timeSpeedPool = self:GetUIComponent("UISelectObjectPath", "timeSpeed")
-        self.timeSpeed = timeSpeedPool:SpawnObject("UIBattleTimeSpeed")
-        local serialMd = self:GetModule(SerialAutoFightModule)
-        if serialMd:IsRunning() and not self:IsAutoFighting() then
-          self:BtnAutoFightOnClick()
-        end
-        if serialMd:IsRunning() and serialMd:GetTotalCount() > 1 then
-          self._autoBtn = (self._autoBtnPool):SpawnObject("UIWidgetSerialButton")
-          ;
-          (self._autoBtn):SetData(OpenUISerialFightInfoState.InGame)
-          ;
-          (self._manualBtns):SetActive(false)
-        end
-        self:AttachEvent(GameEventType.CancelSerialAutoFight, self.OnCancelSerialAutoFight)
-      end
-    end
+    self:GetGameObject("fightCtrl"):SetActive(true)
+    self:GetGameObject("chessRTBtn"):SetActive(false)
+    local timeSpeedPool = self:GetUIComponent("UISelectObjectPath", "timeSpeed")
+    self.timeSpeed = timeSpeedPool:SpawnObject("UIBattleTimeSpeed")
   end
+  local serialMd = self:GetModule(SerialAutoFightModule)
+  if serialMd:IsRunning() and not self:IsAutoFighting() then
+    self:BtnAutoFightOnClick()
+  end
+  if serialMd:IsRunning() and serialMd:GetTotalCount() > 1 then
+    self._autoBtn = self._autoBtnPool:SpawnObject("UIWidgetSerialButton")
+    self._autoBtn:SetData(OpenUISerialFightInfoState.InGame)
+    self._manualBtns:SetActive(false)
+  end
+  self:AttachEvent(GameEventType.CancelSerialAutoFight, self.OnCancelSerialAutoFight)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetAutoFight.RegisterEvent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWidgetAutoFight:RegisterEvent()
   self:AttachEvent(GameEventType.BanAutoFightBtn, self.OnBanAutoFightBtn)
   self:AttachEvent(GameEventType.GuidePlayerShow, self.OnGuidePlayerShow)
   self:AttachEvent(GameEventType.ShowGuideStep, self.OnShowGuideStep)
   self:AttachEvent(GameEventType.FinishGuideStep, self.OnFinishGuideStep)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetAutoFight.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIWidgetAutoFight:OnHide()
   local bSerialRunning = false
   if self.autoParam ~= nil then
-    bSerialRunning = (self.autoParam).bSerialRunning
+    bSerialRunning = self.autoParam.bSerialRunning
   end
-  do
-    if not self.useGuide and self.IsAutoFightRecord and not bSerialRunning and (self:GetGameObject("fightCtrl")).activeSelf then
-      local roleModule = (GameGlobal.GetModule)(RoleModule)
-      ;
-      (LocalDB.SetInt)("BattleAutoFight" .. roleModule:GetPstId(), self:IsAutoFighting() and 1 or 0)
-    end
-    self:DetachEvent(GameEventType.BanAutoFightBtn, self.OnBanAutoFightBtn)
-    self:DetachEvent(GameEventType.GuidePlayerShow, self.OnGuidePlayerShow)
-    self:DetachEvent(GameEventType.ShowGuideStep, self.OnShowGuideStep)
-    self:DetachEvent(GameEventType.FinishGuideStep, self.OnFinishGuideStep)
+  if not self.useGuide and self.IsAutoFightRecord and not bSerialRunning and self:GetGameObject("fightCtrl").activeSelf then
+    local roleModule = GameGlobal.GetModule(RoleModule)
+    LocalDB.SetInt("BattleAutoFight" .. roleModule:GetPstId(), self:IsAutoFighting() and 1 or 0)
   end
+  self:DetachEvent(GameEventType.BanAutoFightBtn, self.OnBanAutoFightBtn)
+  self:DetachEvent(GameEventType.GuidePlayerShow, self.OnGuidePlayerShow)
+  self:DetachEvent(GameEventType.ShowGuideStep, self.OnShowGuideStep)
+  self:DetachEvent(GameEventType.FinishGuideStep, self.OnFinishGuideStep)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetAutoFight.CheckAutoEnable = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  return ((GameGlobal.GetUIModule)(MatchModule)):CheckAutoEnable()
+function UIWidgetAutoFight:CheckAutoEnable()
+  return GameGlobal.GetUIModule(MatchModule):CheckAutoEnable()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetAutoFight.IsAutoFighting = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  return ((GameGlobal.GetUIModule)(MatchModule)):IsAutoFighting()
+function UIWidgetAutoFight:IsAutoFighting()
+  return GameGlobal.GetUIModule(MatchModule):IsAutoFighting()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetAutoFight.SetIsAutoFighting = function(self, isAutoFighting)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.GetUIModule)(MatchModule)):SetIsAutoFighting(isAutoFighting)
+function UIWidgetAutoFight:SetIsAutoFighting(isAutoFighting)
+  GameGlobal.GetUIModule(MatchModule):SetIsAutoFighting(isAutoFighting)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetAutoFight.OnBanAutoFightBtn = function(self, val)
-  -- function num : 0_8
+function UIWidgetAutoFight:OnBanAutoFightBtn(val)
   self._banAutoFightBtn = val
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetAutoFight.BtnAutoFightOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIWidgetAutoFight", input = "BtnAutoFightOnClick", 
-args = {}
-})
-  if (self.autoParam).bShow == false then
-    return 
+function UIWidgetAutoFight:BtnAutoFightOnClick(go)
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIWidgetAutoFight",
+    input = "BtnAutoFightOnClick",
+    args = {}
+  })
+  if self.autoParam.bShow == false then
+    return
   end
-  if (self.autoParam).bEnable == false then
-    (ToastManager.ShowToast)((StringTable.Get)((self.autoParam).disableMsg))
-    return 
+  if self.autoParam.bEnable == false then
+    ToastManager.ShowToast(StringTable.Get(self.autoParam.disableMsg))
+    return
   end
-  local coreGameStateID = (GameGlobal:GetInstance()):CoreGameStateID()
-  -- DECOMPILER ERROR at PC64: Unhandled construct in 'MakeBoolean' P1
-
-  if self._banAutoFightBtn and (coreGameStateID == GameStateID.MirageEnter or coreGameStateID == GameStateID.MirageWaitInput or coreGameStateID == GameStateID.MirageRoleTurnor or coreGameStateID == GameStateID.MirageMonsterTurn or coreGameStateID == GameStateID.MirageEnd) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_battle_auto_disable_BossYou"))
+  local coreGameStateID = GameGlobal:GetInstance():CoreGameStateID()
+  if self._banAutoFightBtn then
+    if coreGameStateID == GameStateID.MirageEnter or coreGameStateID == GameStateID.MirageWaitInput or coreGameStateID == GameStateID.MirageRoleTurnor or coreGameStateID == GameStateID.MirageMonsterTurn or coreGameStateID == GameStateID.MirageEnd then
+      ToastManager.ShowToast(StringTable.Get("str_battle_auto_disable_BossYou"))
+    end
+    return
   end
-  do return  end
   if coreGameStateID == GameStateID.PreviewActiveSkill or coreGameStateID == GameStateID.PickUpActiveSkillTarget or coreGameStateID == GameStateID.PickUpChainSkillTarget then
-    return 
+    return
   end
   self:SetIsAutoFighting(not self:IsAutoFighting())
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("FightClick", {"BtnAutoFightOnClick", self:IsAutoFighting() and 1 or 0}, false, true)
-  -- DECOMPILER ERROR at PC110: Confused about usage of register: R3 in 'UnsetPending'
-
+  GameGlobal.UAReportForceGuideEvent("FightClick", {
+    "BtnAutoFightOnClick",
+    self:IsAutoFighting() and 1 or 0
+  }, false, true)
   if self:IsAutoFighting() then
-    (self._autoFightImage).sprite = (self._uiAtlas):GetSprite(self._autoBtnPressedSpriteName)
+    self._autoFightImage.sprite = self._uiAtlas:GetSprite(self._autoBtnPressedSpriteName)
   else
-    -- DECOMPILER ERROR at PC117: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._autoFightImage).sprite = (self._uiAtlas):GetSprite(self._autoBtnNormalSpriteName)
+    self._autoFightImage.sprite = self._uiAtlas:GetSprite(self._autoBtnNormalSpriteName)
   end
-  ;
-  (self._goAutoFightMask):SetActive(self:IsAutoFighting())
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AutoFight, self:IsAutoFighting())
-  local md = (GameGlobal.GetModule)(SerialAutoFightModule)
+  self._goAutoFightMask:SetActive(self:IsAutoFighting())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AutoFight, self:IsAutoFighting())
+  local md = GameGlobal.GetModule(SerialAutoFightModule)
   if not self:IsAutoFighting() and md:IsRunning() then
     md:CancelSerialAutoFight()
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_battle_serial_fight_finished"))
+    ToastManager.ShowToast(StringTable.Get("str_battle_serial_fight_finished"))
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClickUI2ClosePreviewMonster)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ClickUI2ClosePreviewMonster)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetAutoFight.ImgAutoFightMaskOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
-  (ToastManager.ShowToast)(self._autoFightForbiddenStr)
+function UIWidgetAutoFight:ImgAutoFightMaskOnClick(go)
+  ToastManager.ShowToast(self._autoFightForbiddenStr)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetAutoFight.OnCancelSerialAutoFight = function(self)
-  -- function num : 0_11
+function UIWidgetAutoFight:OnCancelSerialAutoFight()
   if self._autoBtn then
-    (self._autoBtn):Hide()
+    self._autoBtn:Hide()
   end
-  ;
-  (self._manualBtns):SetActive(true)
+  self._manualBtns:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetAutoFight.GetSpeedBtn = function(self)
-  -- function num : 0_12
+function UIWidgetAutoFight:GetSpeedBtn()
   if self.timeSpeed then
-    (self.timeSpeed):ForceDefaultSpeed()
-    return (self.timeSpeed):GetGameObject("img")
+    self.timeSpeed:ForceDefaultSpeed()
+    return self.timeSpeed:GetGameObject("img")
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetAutoFight.OnGuidePlayerShow = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIWidgetAutoFight:OnGuidePlayerShow()
   local trigger = false
-  if (self.autoParam).bShow and (self.autoParam).bEnable and (self.autoParam).bTriggerGuideBattle then
-    trigger = true
-  else
-    trigger = false
+  if self.autoParam.bShow and self.autoParam.bEnable then
+    if self.autoParam.bTriggerGuideBattle then
+      trigger = true
+    else
+      trigger = false
+    end
   end
   if not trigger then
-    return 
+    return
   end
   local guideModule = self:GetModule(GuideModule)
   if guideModule:GuideInProgress() then
-    return 
+    return
   end
-  local matchModule = (GameGlobal.GetModule)(MatchModule)
+  local matchModule = GameGlobal.GetModule(MatchModule)
   local enterData = matchModule:GetMatchEnterData()
   local matchType = enterData:GetMatchType()
   if matchType == MatchType.MT_Mission then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideMissionAutoBattle)
-  else
-    if matchType == MatchType.MT_ResDungeon then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideResAutoBattle)
-    end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideMissionAutoBattle)
+  elseif matchType == MatchType.MT_ResDungeon then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideResAutoBattle)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetAutoFight.OnShowGuideStep = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIWidgetAutoFight:OnShowGuideStep()
   self.useGuide = true
-  if (GuideHelper.GuideInProgress)() and self:IsAutoFighting() then
+  if GuideHelper.GuideInProgress() and self:IsAutoFighting() then
     self:BtnAutoFightOnClick()
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetAutoFight.OnFinishGuideStep = function(self)
-  -- function num : 0_15
+function UIWidgetAutoFight:OnFinishGuideStep()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetAutoFight.GetCurMainStateID = function(self)
-  -- function num : 0_16
+function UIWidgetAutoFight:GetCurMainStateID()
 end
-
-

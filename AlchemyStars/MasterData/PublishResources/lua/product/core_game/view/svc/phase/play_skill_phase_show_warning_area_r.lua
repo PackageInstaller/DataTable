@@ -1,35 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_phase_show_warning_area_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillPhase_ShowWarningArea", PlaySkillPhaseBase)
 PlaySkillPhase_ShowWarningArea = PlaySkillPhase_ShowWarningArea
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillPhase_ShowWarningArea.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillPhase_ShowWarningArea:PlayFlight(TT, casterEntity, phaseParam)
   local showWarningAreaParam = phaseParam
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local effectResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.ShowWarningArea)
   if effectResult == nil then
-    (Log.fatal)("PlaySkillPhase_ShowWarningArea can not find result")
-    return 
+    Log.fatal("PlaySkillPhase_ShowWarningArea can not find result")
+    return
   end
   local posList = effectResult:GetWarningPosList()
   self:_ShowWarningArea(casterEntity, posList, showWarningAreaParam)
   self:_ShowWaringDeathArea(casterEntity, posList, showWarningAreaParam)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhase_ShowWarningArea._ShowWarningArea = function(self, casterEntity, listPosWarning, showWarningAreaParam)
-  -- function num : 0_1 , upvalues : _ENV
-  if listPosWarning == nil or #listPosWarning <= 0 then
-    return 
+function PlaySkillPhase_ShowWarningArea:_ShowWarningArea(casterEntity, listPosWarning, showWarningAreaParam)
+  if nil == listPosWarning or #listPosWarning <= 0 then
+    return
   end
-  local renderEntityService = (self._world):GetService("RenderEntity")
+  local renderEntityService = self._world:GetService("RenderEntity")
   local areaRes = showWarningAreaParam:GetAreaRes()
   local hasDeadWaring = showWarningAreaParam:HasDeadWaring()
   local outlineEntityList = renderEntityService:CreateAreaOutlineEntity(listPosWarning, EntityConfigIDRender.WarningArea)
@@ -39,73 +29,49 @@ PlaySkillPhase_ShowWarningArea._ShowWarningArea = function(self, casterEntity, l
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhase_ShowWarningArea._ShowWaringDeathArea = function(self, casterEntity, listPosWarning, showWarningAreaParam)
-  -- function num : 0_2 , upvalues : _ENV
-  if listPosWarning == nil or #listPosWarning <= 0 then
-    return 
+function PlaySkillPhase_ShowWarningArea:_ShowWaringDeathArea(casterEntity, listPosWarning, showWarningAreaParam)
+  if nil == listPosWarning or #listPosWarning <= 0 then
+    return
   end
-  local renderEntityService = (self._world):GetService("RenderEntity")
+  local renderEntityService = self._world:GetService("RenderEntity")
   local areaRes = showWarningAreaParam:GetAreaRes()
   local hasDeadWaring = showWarningAreaParam:HasDeadWaring()
   if not hasDeadWaring then
-    return 
+    return
   end
-  local renderEntityService = (self._world):GetService("RenderEntity")
-  for _,pos in ipairs(listPosWarning) do
+  local renderEntityService = self._world:GetService("RenderEntity")
+  for _, pos in ipairs(listPosWarning) do
     local entity = renderEntityService:CreateDeathRangeEntity(pos, EntityConfigIDRender.WaringDeathArea)
     entity:ReplaceDamageWarningAreaElement(casterEntity:GetID(), EntityConfigIDRender.WaringDeathArea)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhase_ShowWarningArea._ShowWarningCenterText = function(self, casterEntity, showWarningAreaParam, effectResult)
-  -- function num : 0_3 , upvalues : _ENV
+function PlaySkillPhase_ShowWarningArea:_ShowWarningCenterText(casterEntity, showWarningAreaParam, effectResult)
   local type = showWarningAreaParam:GetWarningCenterPosType()
   local gridPosList = {}
   if type == WarningCenterPosType.CasterPos then
-    local gridPos = (casterEntity:GridLocation()).Position
-    ;
-    (table.insert)(gridPosList, gridPos)
-  else
-    do
-      if type == WarningCenterPosType.GridPos then
-        gridPosList = showWarningAreaParam:GetGridPosList()
-      else
-        if type == WarningCenterPosType.CasterPosOffSet then
-          local dir = Vector2(((casterEntity:GridLocation()):GetGridDir()).x, ((casterEntity:GridLocation()):GetGridDir()).y)
-          local offset = showWarningAreaParam:GetOffSet()
-          local offSetPos = dir:Mul(offset)
-          local gridPos = (casterEntity:GridLocation()).Position + offSetPos
-          ;
-          (table.insert)(gridPosList, gridPos)
-        else
-          do
-            if type == WarningCenterPosType.EffectPos then
-              gridPosList = effectResult:GetCenterList()
-            end
-            self:_CreateEffect(casterEntity, showWarningAreaParam:GetTextEffectID(), gridPosList)
-          end
-        end
-      end
-    end
+    local gridPos = casterEntity:GridLocation().Position
+    table.insert(gridPosList, gridPos)
+  elseif type == WarningCenterPosType.GridPos then
+    gridPosList = showWarningAreaParam:GetGridPosList()
+  elseif type == WarningCenterPosType.CasterPosOffSet then
+    local dir = Vector2(casterEntity:GridLocation():GetGridDir().x, casterEntity:GridLocation():GetGridDir().y)
+    local offset = showWarningAreaParam:GetOffSet()
+    local offSetPos = dir:Mul(offset)
+    local gridPos = casterEntity:GridLocation().Position + offSetPos
+    table.insert(gridPosList, gridPos)
+  elseif type == WarningCenterPosType.EffectPos then
+    gridPosList = effectResult:GetCenterList()
   end
+  self:_CreateEffect(casterEntity, showWarningAreaParam:GetTextEffectID(), gridPosList)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhase_ShowWarningArea._CreateEffect = function(self, casterEntity, effectID, gridPosList)
-  -- function num : 0_4 , upvalues : _ENV
-  local effectService = (self._world):GetService("Effect")
+function PlaySkillPhase_ShowWarningArea:_CreateEffect(casterEntity, effectID, gridPosList)
+  local effectService = self._world:GetService("Effect")
   local entityList = {}
-  for k,v in ipairs(gridPosList) do
+  for k, v in ipairs(gridPosList) do
     local entity = effectService:CreateUIEffect(casterEntity, effectID, v)
-    ;
-    (table.insert)(entityList, entity)
+    table.insert(entityList, entity)
   end
   return entityList
 end
-
-

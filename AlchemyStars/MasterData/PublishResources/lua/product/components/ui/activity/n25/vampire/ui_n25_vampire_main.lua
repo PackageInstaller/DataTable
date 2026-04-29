@@ -1,59 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/vampire/ui_n25_vampire_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25VampireMain", UIController)
 UIN25VampireMain = UIN25VampireMain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25VampireMain.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN25VampireMain:Constructor()
   self.mCampaign = self:GetModule(CampaignModule)
-  self.data = (self.mCampaign):GetN25Data()
-  self.strsLeftTime = {"str_n25_left_time_d_h", "str_n25_left_time_d", "str_n25_left_time_h_m", "str_n25_left_time_h", "str_n25_left_time_m"}
+  self.data = self.mCampaign:GetN25Data()
+  self.strsLeftTime = {
+    "str_n25_left_time_d_h",
+    "str_n25_left_time_d",
+    "str_n25_left_time_h_m",
+    "str_n25_left_time_h",
+    "str_n25_left_time_m"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireMain.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  res = (self.data):RequestCampaign(TT, ECampaignType.CAMPAIGN_TYPE_N25, res)
-  if (N25Data.CheckCode)(res) then
-    (self.data):InitVampire()
+function UIN25VampireMain:LoadDataOnEnter(TT, res, uiParams)
+  res = self.data:RequestCampaign(TT, ECampaignType.CAMPAIGN_TYPE_N25, res)
+  if N25Data.CheckCode(res) then
+    self.data:InitVampire()
     self._activityConst = UIActivityN25Const:New()
-    ;
-    (self._activityConst):LoadData(TT, res)
+    self._activityConst:LoadData(TT, res)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireMain.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  local spine, bgm = (self._activityConst):GetSpineAndBgm()
+function UIN25VampireMain:OnShow(uiParams)
+  local spine, bgm = self._activityConst:GetSpineAndBgm()
   if bgm then
-    (AudioHelperController.PlayBGM)(bgm, AudioConstValue.BGMCrossFadeTime)
+    AudioHelperController.PlayBGM(bgm, AudioConstValue.BGMCrossFadeTime)
   end
   local TopBtn = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   local backBtns = TopBtn:SpawnObject("UINewCommonTopButton")
   backBtns:SetData(function()
-    -- function num : 0_2_0 , upvalues : self, _ENV
     if not self:CheckCampaignOpen() then
       self:SwitchState(UIStateType.UIMain)
-      return 
+      return
     end
     self:SwitchState(UIStateType.UIActivityN25MainController)
-  end
-, function()
-    -- function num : 0_2_1 , upvalues : self
+  end, function()
     self:ShowDialog("UIN25VampireTalentIntro", "str_n25_vampire_main_intro_title", "str_n25_vampire_main_intro_")
-  end
-, function()
-    -- function num : 0_2_2 , upvalues : self, _ENV
+  end, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-)
+  end)
   self.txtLeftTime = self:GetUIComponent("RollingText", "txtLeftTime")
   self.redTalentTree = self:GetGameObject("redTalentTree")
   self.redChallengeTask = self:GetGameObject("redChallengeTask")
@@ -62,198 +48,131 @@ UIN25VampireMain.OnShow = function(self, uiParams)
   self.poolPet = self:GetUIComponent("UISelectObjectPath", "Content")
   self.shot = self:GetUIComponent("RawImage", "shot")
   self.imgRT = uiParams[1]
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R6 in 'UnsetPending'
-
   if self.imgRT then
-    (self.shot).color = Color.white
-    -- DECOMPILER ERROR at PC65: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.shot).texture = self.imgRT
+    self.shot.color = Color.white
+    self.shot.texture = self.imgRT
   else
-    -- DECOMPILER ERROR at PC70: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.shot).color = Color.black
+    self.shot.color = Color.black
   end
-  self.teActivity = (UIActivityHelper.StartTimerEvent)(self.teActivity, function()
-    -- function num : 0_2_3 , upvalues : self
+  self.teActivity = UIActivityHelper.StartTimerEvent(self.teActivity, function()
     self:FlushCDActivity()
-  end
-, 60000)
+  end, 60000)
   self:Flush()
   self:PlayEnterAnim()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireMain.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN25VampireMain:OnHide()
   if self.imgRT then
-    (self.imgRT):Release()
+    self.imgRT:Release()
     self.imgRT = nil
   end
-  self.teActivity = (UIActivityHelper.CancelTimerEvent)(self.teActivity)
+  self.teActivity = UIActivityHelper.CancelTimerEvent(self.teActivity)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireMain.PlayEnterAnim = function(self)
-  -- function num : 0_4
+function UIN25VampireMain:PlayEnterAnim()
   self:StartTask(self.PlayEnterAnimCoro, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireMain.PlayEnterAnimCoro = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN25VampireMain:PlayEnterAnimCoro(TT)
   self:Lock("UIN25VampireMain_PlayEnterAnimCoro")
   YIELD(TT, 600)
   self:UnLock("UIN25VampireMain_PlayEnterAnimCoro")
   self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireMain._CheckGuide = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN25VampireMain)
+function UIN25VampireMain:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN25VampireMain)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireMain.Flush = function(self)
-  -- function num : 0_7
+function UIN25VampireMain:Flush()
   self:FlushCDActivity()
   self:FlushRedPointTalentTree()
   self:FlushRedPointChallengeTask()
   self:FlushPetPool()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireMain.FlushCDActivity = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
-  local endTime = (self.data):GetVimpireEndTime()
+function UIN25VampireMain:FlushCDActivity()
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
+  local endTime = self.data:GetVimpireEndTime()
   if nowTimestamp < endTime then
-    (UIForge.FlushCDText)(self.txtLeftTime, endTime, self.strsLeftTime, false)
+    UIForge.FlushCDText(self.txtLeftTime, endTime, self.strsLeftTime, false)
   else
-    ;
-    (self.txtLeftTime):RefreshText((StringTable.Get)("str_activity_finished"))
-    self.teActivity = (UIActivityHelper.CancelTimerEvent)(self.teActivity)
+    self.txtLeftTime:RefreshText(StringTable.Get("str_activity_finished"))
+    self.teActivity = UIActivityHelper.CancelTimerEvent(self.teActivity)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireMain.FlushRedPointTalentTree = function(self)
-  -- function num : 0_9
+function UIN25VampireMain:FlushRedPointTalentTree()
   if self.data then
-    local red = (self.data):CheckRedTalentTree()
-    local condition = (self._activityConst):CheckBloodSuckerMissionJoind(10008)
-    ;
-    (self.redTalentTree):SetActive(not red or condition)
-    ;
-    (self.talentTreeLock):SetActive(not condition)
+    local red = self.data:CheckRedTalentTree()
+    local condition = self._activityConst:CheckBloodSuckerMissionJoind(10008)
+    self.redTalentTree:SetActive(red and condition)
+    self.talentTreeLock:SetActive(not condition)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireMain.FlushRedPointChallengeTask = function(self)
-  -- function num : 0_10
+function UIN25VampireMain:FlushRedPointChallengeTask()
   if self.data then
-    local red = (self._activityConst):GetTaskRedPoint()
-    local condition = (self._activityConst):CheckBloodSuckerMissionJoind(10008)
-    ;
-    (self.redChallengeTask):SetActive(not red or condition)
-    ;
-    (self.challengeTaskLock):SetActive(not condition)
+    local red = self._activityConst:GetTaskRedPoint()
+    local condition = self._activityConst:CheckBloodSuckerMissionJoind(10008)
+    self.redChallengeTask:SetActive(red and condition)
+    self.challengeTaskLock:SetActive(not condition)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireMain.FlushPetPool = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local len = (table.count)((self.data).pets)
-  ;
-  (self.poolPet):SpawnObjects("UIN25VampirePetItem", len)
-  local uis = (self.poolPet):GetAllSpawnList()
-  for i,pet in pairs((self.data).pets) do
+function UIN25VampireMain:FlushPetPool()
+  local len = table.count(self.data.pets)
+  self.poolPet:SpawnObjects("UIN25VampirePetItem", len)
+  local uis = self.poolPet:GetAllSpawnList()
+  for i, pet in pairs(self.data.pets) do
     local ui = uis[i]
-    do
-      local tplId = pet:TplId()
-      ui:Flush(tplId, function()
-    -- function num : 0_11_0 , upvalues : _ENV, self, tplId
-    (UIN25VampireUtil.ShowTryPetInfoUI)((self.data):GetComponentCfgId(), tplId)
-  end
-)
-    end
+    local tplId = pet:TplId()
+    ui:Flush(tplId, function()
+      UIN25VampireUtil.ShowTryPetInfoUI(self.data:GetComponentCfgId(), tplId)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireMain.BtnTalentTreeOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN25VampireMain:BtnTalentTreeOnClick(go)
   if not self:CheckCondition() then
-    return 
+    return
   end
   if not self:CheckCampaignOpen() then
-    return 
+    return
   end
   self:SwitchState(UIStateType.UIN25VampireTalentTree)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireMain.BtnChallengeTaskOnClick = function(self, go)
-  -- function num : 0_13
+function UIN25VampireMain:BtnChallengeTaskOnClick(go)
   if not self:CheckCondition() then
-    return 
+    return
   end
   if not self:CheckCampaignOpen() then
-    return 
+    return
   end
   self:ShowDialog("UIN25VampireChallengeTask")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireMain.BtnLevelOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN25VampireMain:BtnLevelOnClick(go)
   if not self:CheckCampaignOpen() then
-    return 
+    return
   end
   self:SwitchState(UIStateType.UIN25VampireLevel)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireMain.CheckCampaignOpen = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local isOpen = ((self.data):GetActivityCampaign()):CheckCampaignOpen()
+function UIN25VampireMain:CheckCampaignOpen()
+  local isOpen = self.data:GetActivityCampaign():CheckCampaignOpen()
   if not isOpen then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
   end
   return isOpen
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireMain.CheckCondition = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local condition = (self._activityConst):CheckBloodSuckerMissionJoind(10008)
-  do
-    if not condition then
-      local cfg = (Cfg.cfg_component_bloodsucker)({CampaignMissionID = 10008})
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_n25_vampire_main_locktip", (StringTable.Get)((cfg[1]).MissionName)))
-    end
-    return condition
+function UIN25VampireMain:CheckCondition()
+  local condition = self._activityConst:CheckBloodSuckerMissionJoind(10008)
+  if not condition then
+    local cfg = Cfg.cfg_component_bloodsucker({CampaignMissionID = 10008})
+    ToastManager.ShowToast(StringTable.Get("str_n25_vampire_main_locktip", StringTable.Get(cfg[1].MissionName)))
   end
+  return condition
 end
-
-

@@ -1,38 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_calc_scope_piece_anim_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayCalcScopePieceAnimInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayCalcScopePieceAnimInstruction = SkillPreviewPlayCalcScopePieceAnimInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayCalcScopePieceAnimInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayCalcScopePieceAnimInstruction:Constructor(params)
   self._scopeAnim = params.ScopeAnim
   self._skillID = tonumber(params.skillID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayCalcScopePieceAnimInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1
+function SkillPreviewPlayCalcScopePieceAnimInstruction:DoInstruction(TT, casterEntity, previewContext)
   if not self._skillID then
-    return 
+    return
   end
   local world = previewContext:GetWorld()
   local casterPos = casterEntity:GetGridPosition()
-  local bodyArea = (casterEntity:BodyArea()):GetArea()
+  local bodyArea = casterEntity:BodyArea():GetArea()
   local configService = world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(self._skillID)
   local utilScopeSvc = world:GetService("UtilScopeCalc")
   local scopeResult = utilScopeSvc:CalcSkillScope(skillConfigData, casterPos, casterEntity)
   if not scopeResult then
-    return 
+    return
   end
   local previewActiveSkillService = world:GetService("PreviewActiveSkill")
   previewActiveSkillService:DoConvert(scopeResult:GetAttackRange(), self._scopeAnim)
 end
-
-

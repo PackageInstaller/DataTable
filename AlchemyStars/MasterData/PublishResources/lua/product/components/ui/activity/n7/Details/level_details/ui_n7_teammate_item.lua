@@ -1,41 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/Details/level_details/ui_n7_teammate_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN7TeammateItem", UICustomWidget)
 UIN7TeammateItem = UIN7TeammateItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN7TeammateItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN7TeammateItem:OnShow(uiParams)
   self:_GetComonent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7TeammateItem.SetData = function(self, pet)
-  -- function num : 0_1
+function UIN7TeammateItem:SetData(pet)
   self._pet = pet
   self:ShowItem()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7TeammateItem.ShowItem = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN7TeammateItem:ShowItem()
   if self._pet then
-    local petModule = (GameGlobal.GetModule)(PetModule)
+    local petModule = GameGlobal.GetModule(PetModule)
     local uiModule = petModule.uiModule
     self._skillDetailInfos = uiModule:GetSkillDetailInfoBySkillTypeHideExtra(self._pet)
-    local skillCount = (table.count)(self._skillDetailInfos)
+    local skillCount = table.count(self._skillDetailInfos)
     local skills = self:GetUIComponent("UISelectObjectPath", "item")
     skills:SpawnObjects("UIShopPetSkillItem", skillCount)
     self._skillsSpawns = skills:GetAllSpawnList()
     if self._skillsSpawns then
       for i = 1, skillCount do
-        local item = (self._skillsSpawns)[i]
-        local skill_info = (self._skillDetailInfos)[i]
+        local item = self._skillsSpawns[i]
+        local skill_info = self._skillDetailInfos[i]
         local skill_list = skill_info.skillList
         item:Flush(i, self._pet, skill_list)
       end
@@ -43,18 +30,10 @@ UIN7TeammateItem.ShowItem = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7TeammateItem.HideItem = function(self)
-  -- function num : 0_3
+function UIN7TeammateItem:HideItem()
   self:DisposeCustomWidgets()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7TeammateItem._GetComonent = function(self)
-  -- function num : 0_4
+function UIN7TeammateItem:_GetComonent()
   self._item = self:GetUIComponent("UISelectObjectPath", "item")
 end
-
-

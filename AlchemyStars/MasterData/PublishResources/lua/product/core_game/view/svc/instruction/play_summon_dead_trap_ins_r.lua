@@ -1,92 +1,72 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_summon_dead_trap_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlaySummonDeadTrapInstruction", BaseInstruction)
 PlaySummonDeadTrapInstruction = PlaySummonDeadTrapInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySummonDeadTrapInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySummonDeadTrapInstruction:Constructor(paramList)
   self._trapID = tonumber(paramList.trapID)
   self._effectID = tonumber(paramList.effectID)
   self._interval = tonumber(paramList.interval)
   self._materialAnim = tonumber(paramList.materialAnim)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySummonDeadTrapInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySummonDeadTrapInstruction:GetCacheResource()
   local t = {}
   if self._trapID then
-    local cfgTrap = (Cfg.cfg_trap)[self._trapID]
+    local cfgTrap = Cfg.cfg_trap[self._trapID]
     if cfgTrap then
-      for i,resPath in ipairs(cfgTrap.ResPath) do
-        (table.insert)(t, {resPath, 1})
+      for i, resPath in ipairs(cfgTrap.ResPath) do
+        table.insert(t, {resPath, 1})
       end
     end
   end
-  do
-    do
-      if self._effectID then
-        local cfgfx = (Cfg.cfg_effect)[self._effectID]
-        if cfgfx then
-          (table.insert)(t, {cfgfx.ResPath, 1})
-        end
-      end
-      return t
+  if self._effectID then
+    local cfgfx = Cfg.cfg_effect[self._effectID]
+    if cfgfx then
+      table.insert(t, {
+        cfgfx.ResPath,
+        1
+      })
     end
   end
+  return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySummonDeadTrapInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySummonDeadTrapInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   if not skillEffectResultContainer then
-    return 
+    return
   end
   local trapResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SummonTrap)
   if trapResultArray then
     for i = 1, #trapResultArray do
       local result = trapResultArray[i]
-      do
-        local summonTrapID = result:GetTrapID()
-        if summonTrapID == self._trapID then
+      local summonTrapID = result:GetTrapID()
+      if summonTrapID == self._trapID then
+        do
           local index = i
-          ;
-          ((GameGlobal.TaskManager)()):CoreGameStartTask(function()
-    -- function num : 0_2_0 , upvalues : self, _ENV, TT, index, world, result
-    if self._interval then
-      YIELD(TT, (index - 1) * self._interval)
-    end
-    self:_ShowTrapFromSummonTrap(TT, world, result)
-  end
-)
+          GameGlobal.TaskManager():CoreGameStartTask(function()
+            if self._interval then
+              YIELD(TT, (index - 1) * self._interval)
+            end
+            self:_ShowTrapFromSummonTrap(TT, world, result)
+          end)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySummonDeadTrapInstruction._ShowTrapFromSummonTrap = function(self, TT, world, result)
-  -- function num : 0_3 , upvalues : _ENV
+function PlaySummonDeadTrapInstruction:_ShowTrapFromSummonTrap(TT, world, result)
   local posSummon = result:GetPos()
   local dirSummon = result:GetDir()
   local trapID = result:GetTrapID()
   local entityIDList = result:GetTrapIDList()
   if #entityIDList == 0 then
-    return 
+    return
   end
-  local trapEntity = nil
-  for _,entityID in ipairs(entityIDList) do
+  local trapEntity
+  for _, entityID in ipairs(entityIDList) do
     local eTrap = world:GetEntityByID(entityID)
     local cTrap = eTrap:TrapID()
     if cTrap and cTrap:GetTrapID() == trapID then
@@ -95,25 +75,18 @@ PlaySummonDeadTrapInstruction._ShowTrapFromSummonTrap = function(self, TT, world
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySummonDeadTrapInstruction._ShowTrap = function(self, TT, world, trapEntity, posSummon, dirSummon)
-  -- function num : 0_4
+function PlaySummonDeadTrapInstruction:_ShowTrap(TT, world, trapEntity, posSummon, dirSummon)
   trapEntity:SetPosition(posSummon)
   if dirSummon then
     trapEntity:SetDirection(dirSummon)
   end
   local trapServiceRender = world:GetService("TrapRender")
   trapServiceRender:CreateSingleTrapRender(TT, trapEntity, true)
-  do
-    if self._effectID and self._effectID > 0 then
-      local effectService = world:GetService("Effect")
-      effectService:CreateWorldPositionDirectionEffect(self._effectID, posSummon, dirSummon)
-    end
-    if self._materialAnim then
-      trapEntity:PlayMaterialAnim(self._materialAnim)
-    end
+  if self._effectID and self._effectID > 0 then
+    local effectService = world:GetService("Effect")
+    effectService:CreateWorldPositionDirectionEffect(self._effectID, posSummon, dirSummon)
+  end
+  if self._materialAnim then
+    trapEntity:PlayMaterialAnim(self._materialAnim)
   end
 end
-
-

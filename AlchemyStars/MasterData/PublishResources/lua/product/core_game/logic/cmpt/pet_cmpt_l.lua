@@ -1,61 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/pet_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PetComponent", Object)
 PetComponent = PetComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PetComponent.Constructor = function(self)
-  -- function num : 0_0
+function PetComponent:Constructor()
   self._teamEntity = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PetComponent.GetOwnerTeamEntity = function(self)
-  -- function num : 0_1
+function PetComponent:GetOwnerTeamEntity()
   return self._teamEntity
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PetComponent.SetOwnerTeamEntity = function(self, entity)
-  -- function num : 0_2
+function PetComponent:SetOwnerTeamEntity(entity)
   self._teamEntity = entity
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Pet = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).Pet)
+function Entity:Pet()
+  return self:GetComponent(self.WEComponentsEnum.Pet)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPet = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).Pet)
+function Entity:HasPet()
+  return self:HasComponent(self.WEComponentsEnum.Pet)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPet = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Pet
+function Entity:AddPet()
+  local index = self.WEComponentsEnum.Pet
   local component = PetComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePet = function(self)
-  -- function num : 0_6
+function Entity:RemovePet()
   if self:HasPet() then
-    self:RemoveComponent((self.WEComponentsEnum).Pet)
+    self:RemoveComponent(self.WEComponentsEnum.Pet)
   end
 end
-
-

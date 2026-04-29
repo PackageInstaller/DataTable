@@ -1,8 +1,2 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/combined_complete_condition_mode.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 CombinedCompleteConditionMode = {And = 1, Or = 2}
 _enum("CombinedCompleteConditionMode", CombinedCompleteConditionMode)
-

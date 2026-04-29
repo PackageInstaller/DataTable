@@ -1,60 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/build/ui_homeland_build.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBuild", UIController)
 UIHomelandBuild = UIHomelandBuild
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBuild.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandBuild:OnShow(uiParams)
   self._topBtns = self:GetUIComponent("UISelectObjectPath", "TopBtns")
   self._mobileBuildControlGO = self:GetGameObject("MobileBuildControl")
   self._mobileBuildConWidgetPool = self:GetUIComponent("UISelectObjectPath", "MobileBuildControl")
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  self._uiHomelandModule = (self._homelandModule):GetUIModule()
-  self._homelandClient = (self._uiHomelandModule):GetClient()
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
+  self._uiHomelandModule = self._homelandModule:GetUIModule()
+  self._homelandClient = self._uiHomelandModule:GetClient()
   self:Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuild.OnHide = function(self)
-  -- function num : 0_1
+function UIHomelandBuild:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuild.Init = function(self)
-  -- function num : 0_2
-  (self._mobileBuildControlGO):SetActive(true)
-  self._uiWidgetBuildCtrl = (self._mobileBuildConWidgetPool):SpawnObject("UIWidgetHomelandBuildController")
+function UIHomelandBuild:Init()
+  self._mobileBuildControlGO:SetActive(true)
+  self._uiWidgetBuildCtrl = self._mobileBuildConWidgetPool:SpawnObject("UIWidgetHomelandBuildController")
   local poolEdit = self:GetUIComponent("UISelectObjectPath", "edit")
   self._uiEdit = poolEdit:SpawnObject("UIHomelandBuildEdit")
-  ;
-  (self._uiEdit):SetUIWidgetHomelandBuildController(self._uiWidgetBuildCtrl)
+  self._uiEdit:SetUIWidgetHomelandBuildController(self._uiWidgetBuildCtrl)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuild.GetGuideItem = function(self)
-  -- function num : 0_3
-  return (self._uiEdit):GetFirstItem()
+function UIHomelandBuild:GetGuideItem()
+  return self._uiEdit:GetFirstItem()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuild.GetSpecialTag = function(self)
-  -- function num : 0_4
-  return (self._uiEdit):GetSpecialTag()
+function UIHomelandBuild:GetSpecialTag()
+  return self._uiEdit:GetSpecialTag()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuild.GetSpecialLand = function(self)
-  -- function num : 0_5
-  return (self._uiEdit):GetSpecialLand()
+function UIHomelandBuild:GetSpecialLand()
+  return self._uiEdit:GetSpecialLand()
 end
-
-

@@ -1,64 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/chain_skill_range_outline_entity_dic.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChainSkillRangeOutlineEntityDic", Object)
 ChainSkillRangeOutlineEntityDic = ChainSkillRangeOutlineEntityDic
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChainSkillRangeOutlineEntityDic.Constructor = function(self)
-  -- function num : 0_0
+function ChainSkillRangeOutlineEntityDic:Constructor()
   self._petOutlineEntityDic = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkillRangeOutlineEntityDic.ClearChainSkillOutlineEntityDic = function(self)
-  -- function num : 0_1
+function ChainSkillRangeOutlineEntityDic:ClearChainSkillOutlineEntityDic()
   self._petOutlineEntityDic = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkillRangeOutlineEntityDic.GetChainSkillOutlineEntityDic = function(self)
-  -- function num : 0_2
+function ChainSkillRangeOutlineEntityDic:GetChainSkillOutlineEntityDic()
   return self._petOutlineEntityDic
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkillRangeOutlineEntityDic.GetChainSkillOutlineEntityCount = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  return (table.count)(self._petOutlineEntityDic)
+function ChainSkillRangeOutlineEntityDic:GetChainSkillOutlineEntityCount()
+  return table.count(self._petOutlineEntityDic)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkillRangeOutlineEntityDic.AddPetChainSkillOutlineRange = function(self, previewIndex)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._petOutlineEntityDic)[previewIndex] = {}
+function ChainSkillRangeOutlineEntityDic:AddPetChainSkillOutlineRange(previewIndex)
+  self._petOutlineEntityDic[previewIndex] = {}
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkillRangeOutlineEntityDic.AddChainSkillRangeOutlineEntityID = function(self, previewIndex, outlineEntityID)
-  -- function num : 0_5
-  local entityIDList = (self._petOutlineEntityDic)[previewIndex]
+function ChainSkillRangeOutlineEntityDic:AddChainSkillRangeOutlineEntityID(previewIndex, outlineEntityID)
+  local entityIDList = self._petOutlineEntityDic[previewIndex]
   entityIDList[#entityIDList + 1] = outlineEntityID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkillRangeOutlineEntityDic.HasPreviewIndex = function(self, previewIndex)
-  -- function num : 0_6 , upvalues : _ENV
-  if not (self._petOutlineEntityDic)[previewIndex] then
+function ChainSkillRangeOutlineEntityDic:HasPreviewIndex(previewIndex)
+  if not self._petOutlineEntityDic[previewIndex] then
     return false
   else
-    return next((self._petOutlineEntityDic)[previewIndex])
+    return next(self._petOutlineEntityDic[previewIndex])
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_stage/ui_stage_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIStageItem", UICustomWidget)
 UIStageItem = UIStageItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIStageItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIStageItem:OnShow()
   self._tgl = self:GetUIComponent("Toggle", "tgl")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   local starsYellow = self:GetUIComponent("UISelectObjectPath", "starsYellow")
@@ -21,74 +14,43 @@ UIStageItem.OnShow = function(self)
   self._v = nil
   self._ctrl = nil
   self._idx = 0
-  self.OnValueChanged = function(isOn)
-    -- function num : 0_0_0 , upvalues : self, _ENV, starsBlueGo
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-    if not isOn or not Color.black then
-      (self._txtName).color = Color.white
-      starsBlueGo:SetActive(isOn)
-    end
+  
+  function self.OnValueChanged(isOn)
+    self._txtName.color = isOn and Color.black or Color.white
+    starsBlueGo:SetActive(isOn)
   end
-
-  ;
-  ((self._tgl).onValueChanged):AddListener(self.OnValueChanged)
+  
+  self._tgl.onValueChanged:AddListener(self.OnValueChanged)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageItem.OnHide = function(self)
-  -- function num : 0_1
-  ((self._tgl).onValueChanged):RemoveListener(self.OnValueChanged)
+function UIStageItem:OnHide()
+  self._tgl.onValueChanged:RemoveListener(self.OnValueChanged)
   self._tgl = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageItem.Init = function(self, idx, tglGroup, ctrl)
-  -- function num : 0_2
+function UIStageItem:Init(idx, tglGroup, ctrl)
   self._idx = idx
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._tgl).group = tglGroup
+  self._tgl.group = tglGroup
   self._ctrl = ctrl
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageItem.Flush = function(self, v)
-  -- function num : 0_3 , upvalues : _ENV
+function UIStageItem:Flush(v)
   self._v = v
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._txtName).text = (self._v).stageIdx .. " " .. (self._v).name
-  for i,v in ipairs(self._starsItemYellow) do
-    v:Flush(i <= (self._v).star)
+  self._txtName.text = self._v.stageIdx .. " " .. self._v.name
+  for i, v in ipairs(self._starsItemYellow) do
+    v:Flush(i <= self._v.star)
   end
-  for i,v in ipairs(self._starsItemBlue) do
-    v:Flush(i <= (self._v).star)
-  end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
-end
-
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageItem.Select = function(self)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._tgl).isOn = true
-end
-
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageItem.tglOnClick = function(self, go)
-  -- function num : 0_5
-  if (self._tgl).isOn then
-    (self._ctrl):Flush(self._idx)
+  for i, v in ipairs(self._starsItemBlue) do
+    v:Flush(i <= self._v.star)
   end
 end
 
+function UIStageItem:Select()
+  self._tgl.isOn = true
+end
 
+function UIStageItem:tglOnClick(go)
+  if self._tgl.isOn then
+    self._ctrl:Flush(self._idx)
+  end
+end

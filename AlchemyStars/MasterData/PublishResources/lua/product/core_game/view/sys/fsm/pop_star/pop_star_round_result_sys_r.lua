@@ -1,58 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/pop_star/pop_star_round_result_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pop_star_round_result_system")
 _class("PopStarRoundResultSystem_Render", PopStarRoundResultSystem)
 PopStarRoundResultSystem_Render = PopStarRoundResultSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarRoundResultSystem_Render._DoRenderTrapAction = function(self, TT)
-  -- function num : 0_0
-  local playAISvc = (self._world):GetService("PlayAI")
+function PopStarRoundResultSystem_Render:_DoRenderTrapAction(TT)
+  local playAISvc = self._world:GetService("PlayAI")
   if playAISvc == nil then
-    return 
+    return
   end
   playAISvc:DoCommonRountine(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundResultSystem_Render._DoRenderTrapState = function(self, TT, traps)
-  -- function num : 0_1 , upvalues : _ENV
-  local trapServiceRender = (self._world):GetService("TrapRender")
+function PopStarRoundResultSystem_Render:_DoRenderTrapState(TT, traps)
+  local trapServiceRender = self._world:GetService("TrapRender")
   trapServiceRender:RenderTrapState(TT, TrapDestroyType.DestroyAtRoundResult, traps)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundResultSystem_Render._DoRenderNotifyRoundTurnEnd = function(self, TT, teamEntity)
-  -- function num : 0_2 , upvalues : _ENV
-  local svc = (self._world):GetService("PlayBuff")
+function PopStarRoundResultSystem_Render:_DoRenderNotifyRoundTurnEnd(TT, teamEntity)
+  local svc = self._world:GetService("PlayBuff")
   svc:PlayBuffView(TT, NTRoundTurnEnd:New(teamEntity))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundResultSystem_Render._DoRenderShowRoundEnd = function(self, TT, isBattleEnd)
-  -- function num : 0_3 , upvalues : _ENV
-  local utilStatSvc = (self._world):GetService("UtilData")
-  local l_role_module = (GameGlobal.GetModule)(RoleModule)
+function PopStarRoundResultSystem_Render:_DoRenderShowRoundEnd(TT, isBattleEnd)
+  local utilStatSvc = self._world:GetService("UtilData")
+  local l_role_module = GameGlobal.GetModule(RoleModule)
   if not l_role_module:CheckModuleUnlock(GameModuleID.MD_ForceGuideEnd) then
-    local attrGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Attributes)
+    local attrGroup = self._world:GetGroup(self._world.BW_WEMatchers.Attributes)
     local l_strTemp = ""
-    for i,e in ipairs(attrGroup:GetEntities()) do
-      local l_ePetMonster = nil
+    for i, e in ipairs(attrGroup:GetEntities()) do
+      local l_ePetMonster
       local l_templateId = 0
       if e:HasMonsterID() then
         l_ePetMonster = "monster"
-        l_templateId = (e:MonsterID()):GetMonsterID()
-      else
-        if e:HasTeam() then
-          l_ePetMonster = "team"
-          l_templateId = 0
-        end
+        l_templateId = e:MonsterID():GetMonsterID()
+      elseif e:HasTeam() then
+        l_ePetMonster = "team"
+        l_templateId = 0
       end
       if l_ePetMonster ~= nil then
         local val = utilStatSvc:GetCurrentLogicHP(e)
@@ -62,9 +44,6 @@ PopStarRoundResultSystem_Render._DoRenderShowRoundEnd = function(self, TT, isBat
       end
     end
     local curRound = utilStatSvc:GetStatCurWaveRoundNum()
-    ;
-    (GameGlobal.UAReportForceGuideEvent)("FightRoundInfo", {curRound, l_strTemp}, false, true)
+    GameGlobal.UAReportForceGuideEvent("FightRoundInfo", {curRound, l_strTemp}, false, true)
   end
 end
-
-

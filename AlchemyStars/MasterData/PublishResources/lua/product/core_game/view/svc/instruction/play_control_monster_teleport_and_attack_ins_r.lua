@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_control_monster_teleport_and_attack_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayControlMonsterTeleportAndAttackInstruction", BaseInstruction)
 PlayControlMonsterTeleportAndAttackInstruction = PlayControlMonsterTeleportAndAttackInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayControlMonsterTeleportAndAttackInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayControlMonsterTeleportAndAttackInstruction:Constructor(paramList)
   self._hitEffectID = tonumber(paramList.hitEffectID)
   self._hitAnimName = paramList.hitAnimName or "Hit"
   self._turnToTarget = tonumber(paramList.turnToTarget) or 1
@@ -26,103 +19,72 @@ PlayControlMonsterTeleportAndAttackInstruction.Constructor = function(self, para
   self._teleportDurationTime = tonumber(paramList.teleportDurationTime) or 500
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayControlMonsterTeleportAndAttackInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayControlMonsterTeleportAndAttackInstruction:GetCacheResource()
   local t = {}
   if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    })
   end
-  if self._damageEffectID and self._damageEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._damageEffectID]).ResPath, 1})
+  if self._damageEffectID and 0 < self._damageEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._damageEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayControlMonsterTeleportAndAttackInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayControlMonsterTeleportAndAttackInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local teleportAndAttackResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.ControlMonsterTeleportAndAttack)
   if not teleportAndAttackResult then
-    return 
+    return
   end
   self._needWaitTeleport = false
   self._needWaitDamage = false
   local targetMonsterEntityID = teleportAndAttackResult:GetTargetMonsterEntityID()
   local targetMonsterEntity = world:GetEntityByID(targetMonsterEntityID)
   local teleportResults = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Teleport)
-  if teleportResults and (table.count)(teleportResults) > 0 then
+  if teleportResults and table.count(teleportResults) > 0 then
     self._needWaitTeleport = true
-    for _,result in pairs(teleportResults) do
-      do
-        local targetEntityID = result:GetTargetID()
-        if targetEntityID == casterEntity:GetID() then
-          ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self, casterEntity, result
-    self:_PlayCasterTeleportResult(TT, casterEntity, result)
+    for _, result in pairs(teleportResults) do
+      local targetEntityID = result:GetTargetID()
+      if targetEntityID == casterEntity:GetID() then
+        GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+          self:_PlayCasterTeleportResult(TT, casterEntity, result)
+        end)
+      else
+        local targetEntity = world:GetEntityByID(targetEntityID)
+        GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+          self:_PlayTargetTeleportResult(TT, targetEntity, result)
+        end)
+      end
+    end
   end
-)
-        else
-          local targetEntity = world:GetEntityByID(targetEntityID)
-          ;
-          ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_2_1 , upvalues : self, targetEntity, result
-    self:_PlayTargetTeleportResult(TT, targetEntity, result)
-  end
-)
+  local damageResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Damage)
+  if damageResult then
+    local beAttackEntityID = damageResult:GetTargetID()
+    local targetEntity = world:GetEntityByID(beAttackEntityID)
+    if targetEntity then
+      self._needWaitDamage = true
+      GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+        if self._needWaitTeleport == true then
+          YIELD(TT, self._damageWaitTime)
         end
-      end
+        self:_PlayDamageResult(TT, targetMonsterEntity, damageResult, skillID)
+      end)
     end
   end
-  do
-    local damageResult = nil
-    if skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Damage) then
-      local beAttackEntityID = nil
-      -- DECOMPILER ERROR at PC73: Overwrote pending register: R13 in 'AssignReg'
-
-      damageResult = damageResult(beAttackEntityID, (skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Damage)):GetTargetID())
-      local targetEntity = nil
-      if damageResult then
-        self._needWaitDamage = true
-        -- DECOMPILER ERROR at PC79: Overwrote pending register: R14 in 'AssignReg'
-
-        -- DECOMPILER ERROR at PC80: Overwrote pending register: R14 in 'AssignReg'
-
-        beAttackEntityID = beAttackEntityID()
-        beAttackEntityID, targetEntity = beAttackEntityID:CoreGameStartTask, beAttackEntityID
-        beAttackEntityID(targetEntity, function(TT)
-    -- function num : 0_2_2 , upvalues : self, _ENV, targetMonsterEntity, damageResult, skillID
-    if self._needWaitTeleport == true then
-      YIELD(TT, self._damageWaitTime)
-    end
-    self:_PlayDamageResult(TT, targetMonsterEntity, damageResult, skillID)
-  end
-)
-      end
-    end
-    do
-      while 1 do
-        if self._needWaitTeleport == true or self._needWaitDamage == true then
-          YIELD(damageResult)
-          -- DECOMPILER ERROR at PC94: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC94: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
-    end
+  while self._needWaitTeleport == true or self._needWaitDamage == true do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayControlMonsterTeleportAndAttackInstruction._PlayCasterTeleportResult = function(self, TT, entity, teleportResult)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayControlMonsterTeleportAndAttackInstruction:_PlayCasterTeleportResult(TT, entity, teleportResult)
   local world = entity:GetOwnerWorld()
   local posOld = teleportResult:GetPosOld()
   local posNew = teleportResult:GetPosNew()
@@ -137,7 +99,7 @@ PlayControlMonsterTeleportAndAttackInstruction._PlayCasterTeleportResult = funct
   entity:SetLocation(posNew, dirNew)
   local trapIDList = teleportResult:GetTriggerTrapIDList()
   local trapEntityList = {}
-  for _,trapID in ipairs(trapIDList) do
+  for _, trapID in ipairs(trapIDList) do
     local trapEntity = world:GetEntityByID(trapID)
     trapEntityList[#trapEntityList + 1] = trapEntity
   end
@@ -147,32 +109,30 @@ PlayControlMonsterTeleportAndAttackInstruction._PlayCasterTeleportResult = funct
   playBuffService:PlayBuffView(TT, NTTeleport:New(entity, posOld, posNew))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayControlMonsterTeleportAndAttackInstruction._PlayTargetTeleportResult = function(self, TT, entity, teleportResult)
-  -- function num : 0_4 , upvalues : _ENV
+function PlayControlMonsterTeleportAndAttackInstruction:_PlayTargetTeleportResult(TT, entity, teleportResult)
   YIELD(TT, self._teleportWaitTime)
   local world = entity:GetOwnerWorld()
   local posOld = teleportResult:GetPosOld()
   local posNew = teleportResult:GetPosNew()
   local dirNew = teleportResult:GetDirNew()
   entity:SetDirection(dirNew)
-  entity:SetAnimatorControllerTriggers({self._teleportAnim})
+  entity:SetAnimatorControllerTriggers({
+    self._teleportAnim
+  })
   entity:PlayMaterialAnim(self._teleportMaterialAnim)
   local playSkillInstructionService = world:GetService("PlaySkillInstruction")
   playSkillInstructionService:Teleport(TT, entity, RoleShowType.TeleportHide2Sky, false, teleportResult)
   playSkillInstructionService:Teleport(TT, entity, RoleShowType.TeleportMove, false, teleportResult)
   YIELD(TT, self._teleportDurationTime)
-  entity:SetAnimatorControllerTriggers({self._teleportFinishAnim})
+  entity:SetAnimatorControllerTriggers({
+    self._teleportFinishAnim
+  })
   playSkillInstructionService:Teleport(TT, entity, RoleShowType.TeleportShow, false, teleportResult)
   playSkillInstructionService:Teleport(TT, entity, RoleShowType.BuffNotify, false, teleportResult)
   self._needWaitTeleport = false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayControlMonsterTeleportAndAttackInstruction._PlayCasterControlGridDown = function(self, casterEntity, enable)
-  -- function num : 0_5 , upvalues : _ENV
+function PlayControlMonsterTeleportAndAttackInstruction:_PlayCasterControlGridDown(casterEntity, enable)
   if casterEntity:MonsterID() then
     local monsterIDCmpt = casterEntity:MonsterID()
     monsterIDCmpt:SetNeedGridDownEnable(enable == 1)
@@ -180,7 +140,7 @@ PlayControlMonsterTeleportAndAttackInstruction._PlayCasterControlGridDown = func
     local trapRender = casterEntity:TrapRender()
     trapRender:SetNeedGridDownEnable(enable == 1)
   else
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local bodyAreaCmpt = casterEntity:BodyArea()
@@ -196,17 +156,15 @@ PlayControlMonsterTeleportAndAttackInstruction._PlayCasterControlGridDown = func
       pieceSvc:SetPieceAnimNormal(pos)
     end
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayControlMonsterTeleportAndAttackInstruction._PlayDamageResult = function(self, TT, entity, damageResult, skillID)
-  -- function num : 0_6 , upvalues : _ENV
+function PlayControlMonsterTeleportAndAttackInstruction:_PlayDamageResult(TT, entity, damageResult, skillID)
   local world = entity:GetOwnerWorld()
-  entity:SetAnimatorControllerTriggers({self._damageAnim})
+  entity:SetAnimatorControllerTriggers({
+    self._damageAnim
+  })
   YIELD(TT, self._damageEffectWaitTime)
-  local effect = (world:GetService("Effect")):CreateEffect(self._damageEffectID, entity)
+  local effect = world:GetService("Effect"):CreateEffect(self._damageEffectID, entity)
   YIELD(TT, self._damageTextWaitTime)
   local beAttackEntityID = damageResult:GetTargetID()
   local targetEntity = world:GetEntityByID(beAttackEntityID)
@@ -214,11 +172,9 @@ PlayControlMonsterTeleportAndAttackInstruction._PlayDamageResult = function(self
   local damageGridPos = damageResult:GetGridPos()
   local playFinalAttack = false
   local deathClear = false
-  local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(entity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(self._hitAnimName)):SetHandleBeHitParam_HitEffectID(self._hitEffectID)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damageGridPos)):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget)):SetHandleBeHitParam_DeathClear(deathClear)):SetHandleBeHitParam_IsFinalHit(playFinalAttack)):SetHandleBeHitParam_SkillID(skillID)
+  local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(entity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(self._hitAnimName):SetHandleBeHitParam_HitEffectID(self._hitEffectID):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damageGridPos):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget):SetHandleBeHitParam_DeathClear(deathClear):SetHandleBeHitParam_IsFinalHit(playFinalAttack):SetHandleBeHitParam_SkillID(skillID)
   local playSkillService = world:GetService("PlaySkill")
   playSkillService:HandleBeHit(TT, beHitParam)
   YIELD(TT, self._damageDurationTime)
   self._needWaitDamage = false
 end
-
-

@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_Team", SkillScopeCalculator_Base)
 SkillScopeCalculator_Team = SkillScopeCalculator_Team
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_Team.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_Team:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local world = casterEntity:GetOwnerWorld()
-  local teamEntity = (world:Player()):GetCurrentTeamEntity()
-  local listPos = {teamEntity:GetGridPosition()}
+  local teamEntity = world:Player():GetCurrentTeamEntity()
+  local listPos = {
+    teamEntity:GetGridPosition()
+  }
   local result = SkillScopeResult:New(SkillScopeType.Team, centerPos, listPos, listPos)
   return result
 end
-
-

@@ -1,66 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_damage_by_select_piece_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamDamageBySelectPieceCount", SkillEffectParamBase)
 SkillEffectParamDamageBySelectPieceCount = SkillEffectParamDamageBySelectPieceCount
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamDamageBySelectPieceCount.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamDamageBySelectPieceCount:Constructor(t)
   self._percent = t.percent
   self._formulaID = t.formulaID
-  if not t.baseValue then
-    self._baseValue = self._percent
-    self._changeValue = t.changeValue or 0
-    if not t.pieceTypeList then
-      self._pieceTypeList = {}
-    end
-  end
+  self._baseValue = t.baseValue or self._percent
+  self._changeValue = t.changeValue or 0
+  self._pieceTypeList = t.pieceTypeList or {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamDamageBySelectPieceCount.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamDamageBySelectPieceCount:GetEffectType()
   return SkillEffectType.DamageBySelectPieceCount
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamDamageBySelectPieceCount.GetDamageFormulaID = function(self)
-  -- function num : 0_2
+function SkillEffectParamDamageBySelectPieceCount:GetDamageFormulaID()
   return self._formulaID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamDamageBySelectPieceCount.GetDamagePercent = function(self)
-  -- function num : 0_3
+function SkillEffectParamDamageBySelectPieceCount:GetDamagePercent()
   return self._percent
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamDamageBySelectPieceCount.GetBaseValue = function(self)
-  -- function num : 0_4
+function SkillEffectParamDamageBySelectPieceCount:GetBaseValue()
   return self._baseValue
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamDamageBySelectPieceCount.GetChangeValue = function(self)
-  -- function num : 0_5
+function SkillEffectParamDamageBySelectPieceCount:GetChangeValue()
   return self._changeValue
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamDamageBySelectPieceCount.GetPieceTypeList = function(self)
-  -- function num : 0_6
+function SkillEffectParamDamageBySelectPieceCount:GetPieceTypeList()
   return self._pieceTypeList
 end
-
-

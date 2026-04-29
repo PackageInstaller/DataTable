@@ -1,80 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_sailing_plan/ui_shop_sailing_plan_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopSailingPlanHelper", Object)
 UIShopSailingPlanHelper = UIShopSailingPlanHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopSailingPlanHelper.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopSailingPlanHelper:Constructor()
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_INLAND_SAILING
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo_Local(self._campaignType)
+  self._campaign:LoadCampaignInfo_Local(self._campaignType)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanHelper.CheckActive = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local mainSample = (self._campaign):GetSample()
+function UIShopSailingPlanHelper:CheckActive()
+  local mainSample = self._campaign:GetSample()
   local hide = false
   local pass = false
   if mainSample then
     hide = mainSample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_HIDE)
     local camid = mainSample.id
-    local cfg_client = (Cfg.cfg_shop_sailing_plan_client)[camid]
+    local cfg_client = Cfg.cfg_shop_sailing_plan_client[camid]
     if not cfg_client then
-      (Log.error)("###[UIShopSailingPlanHelper] cfg_client is nil ! id :", camid)
+      Log.error("###[UIShopSailingPlanHelper] cfg_client is nil ! id :", camid)
     end
     local missionid = cfg_client.MissionID
     if missionid then
-      local missionModule = (GameGlobal.GetModule)(MissionModule)
+      local missionModule = GameGlobal.GetModule(MissionModule)
       pass = missionModule:IsPassMissionID(missionid)
     end
   end
-  do
-    ;
-    (Log.debug)("###[UIShopSailingPlanHelper] hide:", hide, "|pass:", pass)
-    if pass then
-      return not hide
-    end
-  end
+  Log.debug("###[UIShopSailingPlanHelper] hide:", hide, "|pass:", pass)
+  return pass and not hide
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanHelper.CheckNew = function(self)
-  -- function num : 0_2
+function UIShopSailingPlanHelper:CheckNew()
   local active = self:CheckActive()
   if not active then
     return false
   end
-  return (self._campaign):CheckCampaignNew()
+  return self._campaign:CheckCampaignNew()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanHelper.CheckRed = function(self)
-  -- function num : 0_3
+function UIShopSailingPlanHelper:CheckRed()
   local active = self:CheckActive()
   if not active then
     return false
   end
-  return (self._campaign):CheckCampaignRed()
+  return self._campaign:CheckCampaignRed()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanHelper.SetNew = function(self, new)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
+function UIShopSailingPlanHelper:SetNew(new)
+  GameGlobal.TaskManager():StartTask(function(TT)
+    self._campaign:ClearCampaignNew(TT)
+  end)
 end
-
-

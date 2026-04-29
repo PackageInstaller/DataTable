@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/task/homeland_task_group.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeTaskGroup", Object)
 HomeTaskGroup = HomeTaskGroup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeTaskGroup.Constructor = function(self, groupID, groupCfg, taskmanager, serverData)
-  -- function num : 0_0
+function HomeTaskGroup:Constructor(groupID, groupCfg, taskmanager, serverData)
   self._groupID = groupID
   self._taskItems = {}
   self._taskmanager = taskmanager
@@ -17,319 +10,219 @@ HomeTaskGroup.Constructor = function(self, groupID, groupCfg, taskmanager, serve
   self._runningTask = nil
   self._groupCfg = groupCfg
   self._groupData = serverData
-  self._homelandTaskManagerHelper = (self._taskmanager):GetHomelandTaskManagerHelper()
+  self._homelandTaskManagerHelper = self._taskmanager:GetHomelandTaskManagerHelper()
   self:CreateTaskItems()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.SortTaskItems = function(self)
-  -- function num : 0_1
+function HomeTaskGroup:SortTaskItems()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.CreateTaskItems = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local list = (self._homelandTaskManagerHelper):GetSortedTaskItems(self._groupID)
+function HomeTaskGroup:CreateTaskItems()
+  local list = self._homelandTaskManagerHelper:GetSortedTaskItems(self._groupID)
   if not list then
-    (Log.fatal)("HomeTaskGroup:CreateTaskItems  groupID :" .. self._groupID .. "is nil")
-    return 
+    Log.fatal("HomeTaskGroup:CreateTaskItems  groupID :" .. self._groupID .. "is nil")
+    return
   end
-  for index,value in pairs(list) do
-    local cfg = (self._homelandTaskManagerHelper):GetTaskItemCfg(value.ID)
+  for index, value in pairs(list) do
+    local cfg = self._homelandTaskManagerHelper:GetTaskItemCfg(value.ID)
     local taskItem = HomeTaskItem:New(value.ID, cfg, self)
-    ;
-    (table.insert)(self._taskItems, taskItem)
+    table.insert(self._taskItems, taskItem)
   end
   self:SetServerData(self._groupData)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.SetServerData = function(self, serverData)
-  -- function num : 0_3
+function HomeTaskGroup:SetServerData(serverData)
   if serverData then
     self._groupData = serverData
   end
   for i = 1, #self._groupData do
     for k = 1, #self._taskItems do
-      if ((self._taskItems)[k]):GetTaskID() == ((self._groupData)[i]):ID() then
-        ((self._taskItems)[k]):SetServerInfo((self._groupData)[i])
+      if self._taskItems[k]:GetTaskID() == self._groupData[i]:ID() then
+        self._taskItems[k]:SetServerInfo(self._groupData[i])
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.Dispose = function(self)
-  -- function num : 0_4
+function HomeTaskGroup:Dispose()
   if self._taskItems and #self._taskItems > 0 then
     for i = 1, #self._taskItems do
-      ((self._taskItems)[i]):Dispose()
+      self._taskItems[i]:Dispose()
     end
   end
-  do
-    self._taskItems = nil
-    if self._runningTask then
-      (self._runningTask):Dispose()
-    end
-    self._runningTask = nil
-    self._groupID = nil
-    self._groupData = nil
-    self._groupCfg = nil
+  self._taskItems = nil
+  if self._runningTask then
+    self._runningTask:Dispose()
   end
+  self._runningTask = nil
+  self._groupID = nil
+  self._groupData = nil
+  self._groupCfg = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.StartRun = function(self)
-  -- function num : 0_5
+function HomeTaskGroup:StartRun()
   if self._taskmanager then
-    (self._taskmanager):OnTaskGroupStart(self._groupID)
+    self._taskmanager:OnTaskGroupStart(self._groupID)
   end
   self:SetRun()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.EndRun = function(self)
-  -- function num : 0_6
+function HomeTaskGroup:EndRun()
   if self._taskmanager then
-    (self._taskmanager):OnTaskGroupEnd(self._groupID)
+    self._taskmanager:OnTaskGroupEnd(self._groupID)
   end
   if self._runningTask then
-    (self._runningTask):EndRun()
+    self._runningTask:EndRun()
     self._runningTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.Update = function(self, deltaTimeMS)
-  -- function num : 0_7
+function HomeTaskGroup:Update(deltaTimeMS)
   if self._runningTask then
-    (self._runningTask):Update(deltaTimeMS)
+    self._runningTask:Update(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.GetGroupID = function(self)
-  -- function num : 0_8
+function HomeTaskGroup:GetGroupID()
   return self._groupID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.GetGroupAcceptCondition = function(self)
-  -- function num : 0_9
-  return (self._groupCfg).AcceptCondition
+function HomeTaskGroup:GetGroupAcceptCondition()
+  return self._groupCfg.AcceptCondition
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.GetGroupType = function(self)
-  -- function num : 0_10
-  return (self._groupCfg).GroupType
+function HomeTaskGroup:GetGroupType()
+  return self._groupCfg.GroupType
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.GetGroupPriority = function(self)
-  -- function num : 0_11
-  return (self._groupCfg).Priority
+function HomeTaskGroup:GetGroupPriority()
+  return self._groupCfg.Priority
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.GetGroupInfo = function(self)
-  -- function num : 0_12
-  return (self._groupCfg).GroupTitle, (self._groupCfg).GroupContent
+function HomeTaskGroup:GetGroupInfo()
+  return self._groupCfg.GroupTitle, self._groupCfg.GroupContent
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.GetRewardItems = function(self)
-  -- function num : 0_13
-  return (self._groupCfg).Rewardtems
+function HomeTaskGroup:GetRewardItems()
+  return self._groupCfg.Rewardtems
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.CheckFinished = function(self)
-  -- function num : 0_14
+function HomeTaskGroup:CheckFinished()
   if not self._taskItems or #self._taskItems == 0 then
     return false
   end
   for i = 1, #self._taskItems do
-    if not ((self._taskItems)[i]):GetTaskFinished() then
+    if not self._taskItems[i]:GetTaskFinished() then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.OnTaskGroupFinished = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.OnTaskGroupFinishedCoro, self)
+function HomeTaskGroup:OnTaskGroupFinished()
+  GameGlobal.TaskManager():StartTask(self.OnTaskGroupFinishedCoro, self)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.OnTaskGroupFinishedCoro = function(self, TT)
-  -- function num : 0_16 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("HomeTaskGroup:OnTaskGroupFinishedCoro")
+function HomeTaskGroup:OnTaskGroupFinishedCoro(TT)
+  GameGlobal.UIStateManager():Lock("HomeTaskGroup:OnTaskGroupFinishedCoro")
   local afterRewardEvent = false
-  local res, replyEvent = ((self._taskmanager):GetHomelandModule()):HandleHomelandTaskGroupTakeReq(TT, self._groupID)
+  local res, replyEvent = self._taskmanager:GetHomelandModule():HandleHomelandTaskGroupTakeReq(TT, self._groupID)
   if res:GetSucc() then
-    (Log.info)("[HomelandTask]任务组结束 领奖成功 任务id:" .. self._groupID)
+    Log.info("[HomelandTask]任务组结束 领奖成功 任务id:" .. self._groupID)
     local assetList = replyEvent.rewards
-    if #assetList > 0 then
+    if 0 < #assetList then
       afterRewardEvent = true
-      ;
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIHomeShowAwards", assetList, function()
-    -- function num : 0_16_0 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnHomeLandTaskGroupSubmitAfterReward, self._groupID)
-  end
-, false, nil)
+      GameGlobal.UIStateManager():ShowDialog("UIHomeShowAwards", assetList, function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnHomeLandTaskGroupSubmitAfterReward, self._groupID)
+      end, false, nil)
     end
   else
-    do
-      ;
-      (Log.fatal)("[HomeTaskItem] HomeTaskItem:HandleHomelandFinishTaskReq, res:" .. res:GetResult())
-      ;
-      ((GameGlobal.UIStateManager)()):UnLock("HomeTaskGroup:OnTaskGroupFinishedCoro")
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnHomeLandTaskGroupSubmit, self._groupID)
-      if not afterRewardEvent then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnHomeLandTaskGroupSubmitAfterReward, self._groupID)
-      end
-    end
+    Log.fatal("[HomeTaskItem] HomeTaskItem:HandleHomelandFinishTaskReq, res:" .. res:GetResult())
+  end
+  GameGlobal.UIStateManager():UnLock("HomeTaskGroup:OnTaskGroupFinishedCoro")
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnHomeLandTaskGroupSubmit, self._groupID)
+  if not afterRewardEvent then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnHomeLandTaskGroupSubmitAfterReward, self._groupID)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.MoveNextTask = function(self)
-  -- function num : 0_17
+function HomeTaskGroup:MoveNextTask()
   local nextIndex = self._runningTaskIndex + 1
-  self._runningTaskIndex = #self._taskItems < nextIndex and -1 or nextIndex
+  self._runningTaskIndex = nextIndex > #self._taskItems and -1 or nextIndex
   if self._runningTaskIndex < 0 then
-    return 
+    return
   end
-  if (self._taskItems)[nextIndex] then
-    self._runningTask = (self._taskItems)[nextIndex]
-    self._runningTaskId = ((self._taskItems)[nextIndex]):GetTaskID()
+  if self._taskItems[nextIndex] then
+    self._runningTask = self._taskItems[nextIndex]
+    self._runningTaskId = self._taskItems[nextIndex]:GetTaskID()
   end
   return self._runningTask
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.CheckCanReceive = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
+function HomeTaskGroup:CheckCanReceive()
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
   local now = time_mod:GetServerTime() / 1000
-  do return (self._groupCfg).StartTime < now and now < (self._groupCfg).EndTime end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return now > self._groupCfg.StartTime and now < self._groupCfg.EndTime
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.GetTaskManager = function(self)
-  -- function num : 0_19
+function HomeTaskGroup:GetTaskManager()
   return self._taskmanager
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.GetRunningTaskItem = function(self)
-  -- function num : 0_20
+function HomeTaskGroup:GetRunningTaskItem()
   return self._runningTask
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.SetRun = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  for index,value in ipairs(self._taskItems) do
+function HomeTaskGroup:SetRun()
+  for index, value in ipairs(self._taskItems) do
     if not value:GetTaskFinished() then
       self._runningTask = value
       self._runningTaskIndex = index
       break
     end
   end
-  do
-    if not self._runningTask then
-      return 
-    end
-    self._runningTaskId = (self._runningTask):GetTaskID()
-    ;
-    (self._runningTask):StartRun()
+  if not self._runningTask then
+    return
   end
+  self._runningTaskId = self._runningTask:GetTaskID()
+  self._runningTask:StartRun()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.GetRuningTaskId = function(self)
-  -- function num : 0_22
+function HomeTaskGroup:GetRuningTaskId()
   return self._runningTaskId
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.GetRuningTask = function(self)
-  -- function num : 0_23
+function HomeTaskGroup:GetRuningTask()
   return self._runningTask
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.CheckFinishAll = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function HomeTaskGroup:CheckFinishAll()
   local finish = true
-  for index,value in pairs(self._taskItems) do
+  for index, value in pairs(self._taskItems) do
     if not value:GetTaskFinished() then
       finish = false
       break
     end
   end
-  do
-    return finish
-  end
+  return finish
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.GetTaskItems = function(self)
-  -- function num : 0_25
+function HomeTaskGroup:GetTaskItems()
   return self._taskItems
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.SetUnlock = function(self, islock)
-  -- function num : 0_26
+function HomeTaskGroup:SetUnlock(islock)
   self._isLock = islock
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTaskGroup.GetRunTaskItem = function(self)
-  -- function num : 0_27
+function HomeTaskGroup:GetRunTaskItem()
   if not self._taskItems or #self._taskItems == 0 then
-    return 
+    return
   end
   for i = 1, #self._taskItems do
-    if not ((self._taskItems)[i]):GetTaskFinished() then
-      return (self._taskItems)[i]
+    if not self._taskItems[i]:GetTaskFinished() then
+      return self._taskItems[i]
     end
   end
-  return 
+  return
 end
-
-

@@ -1,35 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/backpack/ui_season_maze_select_relic_popup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeSelectRelicPopUp", UIController)
 UISeasonMazeSelectRelicPopUp = UISeasonMazeSelectRelicPopUp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeSelectRelicPopUp.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonMazeSelectRelicPopUp:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISeasonMazeSelectRelicPopUp:OnShow(uiParams)
   self:InitWidget()
   self:InitUI()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.OnHide = function(self)
-  -- function num : 0_2
+function UISeasonMazeSelectRelicPopUp:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMazeSelectRelicPopUp:InitWidget()
   self.anim = self:GetUIComponent("Animation", "_anim")
   self.cardPool = self:GetUIComponent("UISelectObjectPath", "CardPool")
   self.titleText = self:GetUIComponent("UILocalizationText", "TitleText")
@@ -49,8 +33,7 @@ UISeasonMazeSelectRelicPopUp.InitWidget = function(self)
   self.guideImg = self:GetUIComponent("Image", "GuideImg")
   self.skipAddMoneyBtnText = self:GetUIComponent("UILocalizationText", "SkipAddMoneyBtnText")
   self.DetailPopRoot = self:GetGameObject("DetailPop")
-  ;
-  (self.DetailPopRoot):SetActive(false)
+  self.DetailPopRoot:SetActive(false)
   self.PopTitleText = self:GetUIComponent("UILocalizationText", "PopTitleText")
   self.PoDetailTex = self:GetUIComponent("UILocalizedTMP", "PoDetailTex")
   self.SuitDetail = self:GetGameObject("SuitDetail")
@@ -62,83 +45,76 @@ UISeasonMazeSelectRelicPopUp.InitWidget = function(self)
   self.PoDetai3lTex = self:GetUIComponent("UILocalizedTMP", "PoDetai3lTex")
   self.DetailTipsRootRectTf = self:GetUIComponent("RectTransform", "DetailTipsRoot")
   self.FreeTextObj = self:GetGameObject("FreeText")
-  ;
-  (self.FreeTextObj):SetActive(false)
+  self.FreeTextObj:SetActive(false)
   self.FreeImgObj = self:GetGameObject("FreeImg")
-  ;
-  (self.FreeImgObj):SetActive(false)
+  self.FreeImgObj:SetActive(false)
   local topTips = self:GetUIComponent("UISelectObjectPath", "topTips")
   self._toptipsInfo = topTips:SpawnObject("UITopTipsContextSMaze")
-  self._type2topID = {[SeasonMazeTopIconType.Money] = 9001002, [SeasonMazeTopIconType.MoneyAdd] = 9001003, [SeasonMazeTopIconType.Ms] = 9001001}
+  self._type2topID = {
+    [SeasonMazeTopIconType.Money] = 9001002,
+    [SeasonMazeTopIconType.MoneyAdd] = 9001003,
+    [SeasonMazeTopIconType.Ms] = 9001001
+  }
   self.TopToonAnchorObj = self:GetGameObject("TopToonAnchor")
   self:AttachEvent(GameEventType.OnSeasonMazeShowRewardsFinish, self.OnSeasonMazeShowRewardsFinish)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.InitUI = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMazeSelectRelicPopUp:InitUI()
   self.selectRelicEff = {}
   self.totalCount = 4
-  self._module = (GameGlobal.GetModule)(MazeModule)
+  self._module = GameGlobal.GetModule(MazeModule)
   if self._module == nil then
-    (Log.fatal)("[error] maze --> module == nil !")
+    Log.fatal("[error] maze --> module == nil !")
   end
-  self._cfg = (Cfg.cfg_item)({})
+  self._cfg = Cfg.cfg_item({})
   if self._cfg == nil then
-    (Log.fatal)("[error] maze --> _cfg == nil !")
+    Log.fatal("[error] maze --> _cfg == nil !")
   end
-  self.seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self.uiSeasonMazeModule = (self.seasonMazeModule):UIModule()
-  self._seasonMazeObj = (self.seasonMazeModule):CurSeasonObj()
-  self._component = (self._seasonMazeObj):GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
-  self._componentInfo = (self._component):GetComponentInfo()
-  self._comCfgID = (self._component):GetComponentCfgId()
-  self._cfg_global = (Cfg.cfg_component_season_maze_global)[self._comCfgID]
-  local ranRelicInfo = (self._componentInfo).relic_random
+  self.seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self.uiSeasonMazeModule = self.seasonMazeModule:UIModule()
+  self._seasonMazeObj = self.seasonMazeModule:CurSeasonObj()
+  self._component = self._seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+  self._componentInfo = self._component:GetComponentInfo()
+  self._comCfgID = self._component:GetComponentCfgId()
+  self._cfg_global = Cfg.cfg_component_season_maze_global[self._comCfgID]
+  local ranRelicInfo = self._componentInfo.relic_random
   if ranRelicInfo == nil then
-    (Log.fatal)("[error] maze --> ranRelic == nil !")
-    return 
+    Log.fatal("[error] maze --> ranRelic == nil !")
+    return
   end
   local ranRelic = ranRelicInfo.ids
   local resetNuM = ranRelicInfo.reset_cnt
-  local curMoney = (self._component):GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
-  ;
-  (self.curMoneyText):SetText("" .. curMoney)
-  ;
-  (self.skipAddMoneyBtnText):SetText("+" .. (self._cfg_global).RelicSkip)
-  self.a_redraw = ((self._cfg_global).RelicParam)[1]
-  self.b_redraw = ((self._cfg_global).RelicParam)[2]
-  self.c_redraw = ((self._cfg_global).RelicParam)[3]
+  local curMoney = self._component:GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
+  self.curMoneyText:SetText("" .. curMoney)
+  self.skipAddMoneyBtnText:SetText("+" .. self._cfg_global.RelicSkip)
+  self.a_redraw = self._cfg_global.RelicParam[1]
+  self.b_redraw = self._cfg_global.RelicParam[2]
+  self.c_redraw = self._cfg_global.RelicParam[3]
   self:RefreshReDrawText()
   local relics = {}
-  self.mazeRelics = (self.uiSeasonMazeModule):GetSeasonMazeRelics()
-  for key,value in pairs(self.mazeRelics) do
+  self.mazeRelics = self.uiSeasonMazeModule:GetSeasonMazeRelics()
+  for key, value in pairs(self.mazeRelics) do
     relics[#relics + 1] = key
   end
   self._bagItemInfo = self:Relic_SortItems(relics)
   self._randItemInfo = self:Relic_SortItems(ranRelic)
   self.defaultIndex = 1
   self.totalCount = #ranRelic
-  self._relicArea = (UIWidgetHelper.SpawnObjects)(self, "CardPool", "UIseasonMazeSelectRelicItem", self.totalCount)
+  self._relicArea = UIWidgetHelper.SpawnObjects(self, "CardPool", "UIseasonMazeSelectRelicItem", self.totalCount)
   for i = 1, #self._relicArea do
-    local item = (self._relicArea)[i]
+    local item = self._relicArea[i]
     if item then
-      item:SetData((self._randItemInfo)[i], function(selectIndex)
-    -- function num : 0_4_0 , upvalues : self
-    self.defaultIndex = selectIndex
-    for j = 1, #self._relicArea do
-      local otherItem = (self._relicArea)[j]
-      if j ~= selectIndex then
-        otherItem:UnSelectItem()
-      end
-    end
-  end
-, i, function(index)
-    -- function num : 0_4_1 , upvalues : self
-    self:RefreshDetilUI(index)
-  end
-)
+      item:SetData(self._randItemInfo[i], function(selectIndex)
+        self.defaultIndex = selectIndex
+        for j = 1, #self._relicArea do
+          local otherItem = self._relicArea[j]
+          if j ~= selectIndex then
+            otherItem:UnSelectItem()
+          end
+        end
+      end, i, function(index)
+        self:RefreshDetilUI(index)
+      end)
       if i == 1 then
         item:SelectItem()
       end
@@ -146,348 +122,267 @@ UISeasonMazeSelectRelicPopUp.InitUI = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.Relic_SortItems = function(self, items)
-  -- function num : 0_5
+function UISeasonMazeSelectRelicPopUp:Relic_SortItems(items)
   return items
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.GetSeasonMazeCfg = function(self, hardLevel)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_season_maze)({ComponentID = self.cmptId})
-  if cfgs and (table.count)(cfgs) > 0 then
-    for _,v in pairs(cfgs) do
+function UISeasonMazeSelectRelicPopUp:GetSeasonMazeCfg(hardLevel)
+  local cfgs = Cfg.cfg_component_season_maze({
+    ComponentID = self.cmptId
+  })
+  if cfgs and table.count(cfgs) > 0 then
+    for _, v in pairs(cfgs) do
       if v.Hard == hardLevel then
         return v
       end
     end
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.RefreshReDrawText = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local curMoney = (self._component):GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
-  local ranRelicInfo = (self._componentInfo).relic_random
+function UISeasonMazeSelectRelicPopUp:RefreshReDrawText()
+  local curMoney = self._component:GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
+  local ranRelicInfo = self._componentInfo.relic_random
   local resetNuM = ranRelicInfo.reset_cnt
-  local rerollNum = (self._component):GetAttrValue(SeasonMazeAttrType.SMAT_Free_Reroll_Num)
-  local priceAttr = (self._component):GetAttrValue(SeasonMazeAttrType.SMAT_Goods_Price_Percent)
+  local rerollNum = self._component:GetAttrValue(SeasonMazeAttrType.SMAT_Free_Reroll_Num)
+  local priceAttr = self._component:GetAttrValue(SeasonMazeAttrType.SMAT_Goods_Price_Percent)
   if priceAttr == nil then
     priceAttr = 0
   end
   local redrawCost = 6
   if resetNuM < rerollNum then
     resetNuM = resetNuM - rerollNum + 1
-    redrawCost = self:CalcResetCost(resetNuM, (self._cfg_global).RelicParam)
+    redrawCost = self:CalcResetCost(resetNuM, self._cfg_global.RelicParam)
     if redrawCost == 0 then
       redrawCost = 6
     end
-    ;
-    (self.reExtractBtnText):SetText("-" .. redrawCost)
-    ;
-    (self.FreeTextObj):SetActive(true)
-    ;
-    (self.FreeImgObj):SetActive(true)
-    ;
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.reExtractBtnTextRectTf)
-    return 
+    self.reExtractBtnText:SetText("-" .. redrawCost)
+    self.FreeTextObj:SetActive(true)
+    self.FreeImgObj:SetActive(true)
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.reExtractBtnTextRectTf)
+    return
   else
-    ;
-    (self.FreeTextObj):SetActive(false)
-    ;
-    (self.FreeImgObj):SetActive(false)
+    self.FreeTextObj:SetActive(false)
+    self.FreeImgObj:SetActive(false)
     resetNuM = resetNuM - rerollNum + 1
-    redrawCost = self:CalcResetCost(resetNuM, (self._cfg_global).RelicParam)
+    redrawCost = self:CalcResetCost(resetNuM, self._cfg_global.RelicParam)
   end
   if curMoney < redrawCost then
-    (self.reExtractBtnText):SetText("<color=#FF0000>-" .. redrawCost .. "</color>")
+    self.reExtractBtnText:SetText("<color=#FF0000>-" .. redrawCost .. "</color>")
   else
-    ;
-    (self.reExtractBtnText):SetText("-" .. redrawCost)
+    self.reExtractBtnText:SetText("-" .. redrawCost)
   end
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.reExtractBtnTextRectTf)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.reExtractBtnTextRectTf)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.CalcResetCost = function(self, resetCount, cfgParam)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonMazeSelectRelicPopUp:CalcResetCost(resetCount, cfgParam)
   local x = resetCount or 0
   local cfg_reset = cfgParam
   local a = cfg_reset[1]
   local b = cfg_reset[2]
   local c = cfg_reset[3]
-  if not a or not b or not c then
-    (Log.error)("###[UISeasonMaze_Campsites_Base] self._cfg_global.PetParam is nil !")
+  if not (a and b) or not c then
+    Log.error("###[UISeasonMaze_Campsites_Base] self._cfg_global.PetParam is nil !")
   end
   local baseCost = a * x ^ 2 + b * x + c
   local shopParam = 1
-  local comInfo = (self._component):GetComponentInfo()
-  local priceAttr = (self._component):GetAttrValue(SeasonMazeAttrType.SMAT_Goods_Price_Percent)
+  local comInfo = self._component:GetComponentInfo()
+  local priceAttr = self._component:GetAttrValue(SeasonMazeAttrType.SMAT_Goods_Price_Percent)
   local currentHard = comInfo.hard
   local seasonMazeCfg = self:GetSeasonMazeCfg(currentHard)
   if seasonMazeCfg then
     local bossInfos = comInfo.boss_info
-    local bossCount = (table.count)(bossInfos)
+    local bossCount = table.count(bossInfos)
     for i = 0, bossCount - 1 do
       local bossInfo = bossInfos[i]
       if bossInfo.do_cnt ~= -1 then
-        shopParam = ((seasonMazeCfg.ShopIndex)[i + 1] + priceAttr) / 1000
+        shopParam = (seasonMazeCfg.ShopIndex[i + 1] + priceAttr) / 1000
         break
       end
     end
   end
-  do
-    local cost = baseCost * (shopParam)
-    cost = (lmathext.round)(cost)
-    return cost
-  end
+  local cost = baseCost * shopParam
+  cost = lmathext.round(cost)
+  return cost
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.BgOnClick = function(self, go)
-  -- function num : 0_9
+function UISeasonMazeSelectRelicPopUp:BgOnClick(go)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.CardBagBtnOnClick = function(self, go)
-  -- function num : 0_10
+function UISeasonMazeSelectRelicPopUp:CardBagBtnOnClick(go)
   self:ShowDialog("UISeasonMazeBackPackController", 2)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.SkipBtnOnClick = function(self, go)
-  -- function num : 0_11
+function UISeasonMazeSelectRelicPopUp:SkipBtnOnClick(go)
   self:_Skip()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.ReExtractBtnOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  local ranRelicInfo = (self._componentInfo).relic_random
-  local curMoney = (self._component):GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
-  local rerollNum = (self._component):GetAttrValue(SeasonMazeAttrType.SMAT_Free_Reroll_Num)
+function UISeasonMazeSelectRelicPopUp:ReExtractBtnOnClick(go)
+  local ranRelicInfo = self._componentInfo.relic_random
+  local curMoney = self._component:GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
+  local rerollNum = self._component:GetAttrValue(SeasonMazeAttrType.SMAT_Free_Reroll_Num)
   local resetNuM = ranRelicInfo.reset_cnt
   local redrawCost = self.a_redraw * resetNuM * resetNuM + self.b_redraw * resetNuM + self.c_redraw
-  if resetNuM < rerollNum then
+  if rerollNum > resetNuM then
     redrawCost = 0
   else
     resetNuM = resetNuM - rerollNum
-    redrawCost = self.a_redraw * (resetNuM) * (resetNuM) + self.b_redraw * (resetNuM) + self.c_redraw
+    redrawCost = self.a_redraw * resetNuM * resetNuM + self.b_redraw * resetNuM + self.c_redraw
   end
-  if redrawCost < curMoney then
+  if curMoney > redrawCost then
     self:_Redraw()
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_maze_select_relic_unenough_money"))
+    ToastManager.ShowToast(StringTable.Get("str_season_maze_select_relic_unenough_money"))
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.CheckGetBtnOnClick = function(self, go)
-  -- function num : 0_13
+function UISeasonMazeSelectRelicPopUp:CheckGetBtnOnClick(go)
   self:_Select()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.CancleRedrawBtnOnClick = function(self, go)
-  -- function num : 0_14
+function UISeasonMazeSelectRelicPopUp:CancleRedrawBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.QuickRedrawBtnOnClick = function(self, go)
-  -- function num : 0_15
+function UISeasonMazeSelectRelicPopUp:QuickRedrawBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.ClosePopBtnOnClick = function(self, go)
-  -- function num : 0_16
-  (self.DetailPopRoot):SetActive(false)
+function UISeasonMazeSelectRelicPopUp:ClosePopBtnOnClick(go)
+  self.DetailPopRoot:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp._Select = function(self)
-  -- function num : 0_17
+function UISeasonMazeSelectRelicPopUp:_Select()
   self:StartTask(self._ReqSelectRelic, self, self.defaultIndex - 1)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp._ReqSelectRelic = function(self, TT, idx)
-  -- function num : 0_18 , upvalues : _ENV
-  if (GameGlobal.GetModule)(SeasonMazeModule) == nil or ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj() == nil then
-    (Log.error)("圣物选择失败, 没有赛季秘境数据")
+function UISeasonMazeSelectRelicPopUp:_ReqSelectRelic(TT, idx)
+  if GameGlobal.GetModule(SeasonMazeModule) == nil or GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj() == nil then
+    Log.error("圣物选择失败, 没有赛季秘境数据")
     self:AnimClose()
-    return 
+    return
   end
-  local cpt = (((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()):GetMazeComponent()
+  local cpt = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj():GetMazeComponent()
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
-  local relicID = (((cpt:GetComponentInfo()).relic_random).ids)[idx + 1]
+  local relicID = cpt:GetComponentInfo().relic_random.ids[idx + 1]
   local response = cpt:HandleSeasonMazeChooseRelic(TT, res, idx, 0)
   if res:GetSucc() then
-    (Log.info)("选择圣物成功:", idx)
+    Log.info("选择圣物成功:", idx)
     local reward = {}
-    do
-      do
-        if relicID and relicID > 0 then
-          local relicEft = SeasonMazeEffect:New()
-          relicEft.type = SeasonMazeEffectType.SMET_Relic
-          relicEft.id = relicID
-          relicEft.value_min = 1
-          relicEft.value_max = 1
-          ;
-          (table.insert)(reward, relicEft)
-        end
-        if response.reward and #response.reward > 0 then
-          (table.appendArray)(reward, response.reward)
-        end
-        local ranRelicInfo = (self._componentInfo).relic_random
-        if #ranRelicInfo.group_num >= 1 then
-          YIELD(TT)
-          for j = 1, #self._relicArea do
-            local otherItem = (self._relicArea)[j]
-            otherItem:UnSelectItem()
-            if j == 1 then
-              otherItem:SelectItem()
-            end
-          end
-          self._componentInfo = (self._component):GetComponentInfo()
-          local ranRelicInfo = (self._componentInfo).relic_random
-          self:RefreshUI(ranRelicInfo)
-          self._waitGetRewardsFinishCb = function()
-    -- function num : 0_18_0 , upvalues : _ENV, reward
-    (SMazeAdaptor.OnRelicObtained)(reward, SMazeRelicReason.ChooseRelic)
-  end
-
-          local showRewards = {}
-          for index,value in ipairs(response.reward) do
-            local reward = value
-            if reward.type == SeasonMazeEffectType.SMET_Relic then
-              (table.insert)(showRewards, reward)
-            end
-          end
-          ;
-          (SeasonMazeTool:GetInstance()):ShowUIGetRewards(showRewards)
-        else
-          do
-            self._waitGetRewardsFinishCb = function()
-    -- function num : 0_18_1 , upvalues : _ENV, reward, self
-    (SMazeAdaptor.OnRelicObtained)(reward, SMazeRelicReason.ChooseRelicLastTime)
-    self:AnimClose()
-  end
-
-            local showRewards = {}
-            for index,value in ipairs(response.reward) do
-              local reward = value
-              if reward.type == SeasonMazeEffectType.SMET_Relic then
-                (table.insert)(showRewards, reward)
-              end
-            end
-            ;
-            (SeasonMazeTool:GetInstance()):ShowUIGetRewards(showRewards)
-          end
-        end
-        do
-          ;
-          (Log.error)("圣物选择失败:", res:GetResult())
+    if relicID and 0 < relicID then
+      local relicEft = SeasonMazeEffect:New()
+      relicEft.type = SeasonMazeEffectType.SMET_Relic
+      relicEft.id = relicID
+      relicEft.value_min = 1
+      relicEft.value_max = 1
+      table.insert(reward, relicEft)
+    end
+    if response.reward and 0 < #response.reward then
+      table.appendArray(reward, response.reward)
+    end
+    local ranRelicInfo = self._componentInfo.relic_random
+    if 1 <= #ranRelicInfo.group_num then
+      YIELD(TT)
+      for j = 1, #self._relicArea do
+        local otherItem = self._relicArea[j]
+        otherItem:UnSelectItem()
+        if j == 1 then
+          otherItem:SelectItem()
         end
       end
+      self._componentInfo = self._component:GetComponentInfo()
+      local ranRelicInfo = self._componentInfo.relic_random
+      self:RefreshUI(ranRelicInfo)
+      
+      function self._waitGetRewardsFinishCb()
+        SMazeAdaptor.OnRelicObtained(reward, SMazeRelicReason.ChooseRelic)
+      end
+      
+      local showRewards = {}
+      for index, value in ipairs(response.reward) do
+        local reward = value
+        if reward.type == SeasonMazeEffectType.SMET_Relic then
+          table.insert(showRewards, reward)
+        end
+      end
+      SeasonMazeTool:GetInstance():ShowUIGetRewards(showRewards)
+    else
+      function self._waitGetRewardsFinishCb()
+        SMazeAdaptor.OnRelicObtained(reward, SMazeRelicReason.ChooseRelicLastTime)
+        
+        self:AnimClose()
+      end
+      
+      do
+        local showRewards = {}
+        for index, value in ipairs(response.reward) do
+          local reward = value
+          if reward.type == SeasonMazeEffectType.SMET_Relic then
+            table.insert(showRewards, reward)
+          end
+        end
+        SeasonMazeTool:GetInstance():ShowUIGetRewards(showRewards)
+      end
     end
+  else
+    Log.error("圣物选择失败:", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp._Skip = function(self)
-  -- function num : 0_19
+function UISeasonMazeSelectRelicPopUp:_Skip()
   self:StartTask(self._ReqSkipRelic, self, self.defaultIndex - 1)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp._ReqSkipRelic = function(self, TT, idx)
-  -- function num : 0_20 , upvalues : _ENV
-  if (GameGlobal.GetModule)(SeasonMazeModule) == nil or ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj() == nil then
-    (Log.error)("圣物跳过失败, 没有赛季秘境数据")
+function UISeasonMazeSelectRelicPopUp:_ReqSkipRelic(TT, idx)
+  if GameGlobal.GetModule(SeasonMazeModule) == nil or GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj() == nil then
+    Log.error("圣物跳过失败, 没有赛季秘境数据")
     self:AnimClose()
-    return 
+    return
   end
-  local cpt = (((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()):GetMazeComponent()
+  local cpt = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj():GetMazeComponent()
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
   cpt:HandleSeasonMazeChooseRelic(TT, res, idx, 2)
   if res:GetSucc() then
-    (Log.info)("跳过圣物成功:", idx)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_maze_select_relic_skip_add_money"))
-    local ranRelicInfo = (self._componentInfo).relic_random
+    Log.info("跳过圣物成功:", idx)
+    ToastManager.ShowToast(StringTable.Get("str_season_maze_select_relic_skip_add_money"))
+    local ranRelicInfo = self._componentInfo.relic_random
     if #ranRelicInfo.group_num >= 1 then
       YIELD(TT)
-      self._componentInfo = (self._component):GetComponentInfo()
-      local ranRelicInfo = (self._componentInfo).relic_random
+      self._componentInfo = self._component:GetComponentInfo()
+      local ranRelicInfo = self._componentInfo.relic_random
       self:RefreshUI(ranRelicInfo)
     else
-      do
-        do
-          ;
-          (SMazeAdaptor.OnRelicObtained)({}, SMazeRelicReason.ChooseRelicLastTime)
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUISeasonMazeAttChanged, SeasonMazeAttrType.SMAT_Gold)
-          self:AnimClose()
-          ;
-          (Log.error)("圣物跳过失败:", res:GetResult())
-          if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-            return 
-          end
-        end
-      end
+      SMazeAdaptor.OnRelicObtained({}, SMazeRelicReason.ChooseRelicLastTime)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUISeasonMazeAttChanged, SeasonMazeAttrType.SMAT_Gold)
+      self:AnimClose()
+    end
+  else
+    Log.error("圣物跳过失败:", res:GetResult())
+    if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp._Redraw = function(self)
-  -- function num : 0_21
+function UISeasonMazeSelectRelicPopUp:_Redraw()
   self:StartTask(self._ReqRedrawRelic, self, self.defaultIndex - 1)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp._ReqRedrawRelic = function(self, TT, idx)
-  -- function num : 0_22 , upvalues : _ENV
-  if (GameGlobal.GetModule)(SeasonMazeModule) == nil or ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj() == nil then
-    (Log.error)("圣物重抽失败, 没有赛季秘境数据")
+function UISeasonMazeSelectRelicPopUp:_ReqRedrawRelic(TT, idx)
+  if GameGlobal.GetModule(SeasonMazeModule) == nil or GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj() == nil then
+    Log.error("圣物重抽失败, 没有赛季秘境数据")
     self:AnimClose()
-    return 
+    return
   end
-  local cpt = (((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()):GetMazeComponent()
+  local cpt = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj():GetMazeComponent()
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
   local ranRelicInfo = cpt:HandleSeasonMazeChooseRelic(TT, res, idx, 1)
   if res:GetSucc() then
-    (Log.info)("重抽成功:", idx)
+    Log.info("重抽成功:", idx)
     YIELD(TT)
     for j = 1, #self._relicArea do
-      local otherItem = (self._relicArea)[j]
+      local otherItem = self._relicArea[j]
       otherItem:UnSelectItem()
       if j == 1 then
         otherItem:SelectItem()
@@ -495,231 +390,163 @@ UISeasonMazeSelectRelicPopUp._ReqRedrawRelic = function(self, TT, idx)
     end
     self:RefreshUI(ranRelicInfo.relic_random)
   else
-    ;
-    (Log.error)("圣物重抽失败:", res:GetResult())
+    Log.error("圣物重抽失败:", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.RefreshUI = function(self, ranRelicInfo)
-  -- function num : 0_23 , upvalues : _ENV
+function UISeasonMazeSelectRelicPopUp:RefreshUI(ranRelicInfo)
   local ranRelic = ranRelicInfo.ids
   local resetNuM = ranRelicInfo.reset_cnt
   self._randItemInfo = self:Relic_SortItems(ranRelic)
   self.defaultIndex = 1
   self.totalCount = #ranRelic
-  self._relicArea = (UIWidgetHelper.SpawnObjects)(self, "CardPool", "UIseasonMazeSelectRelicItem", self.totalCount)
+  self._relicArea = UIWidgetHelper.SpawnObjects(self, "CardPool", "UIseasonMazeSelectRelicItem", self.totalCount)
   for i = 1, #self._relicArea do
-    local item = (self._relicArea)[i]
+    local item = self._relicArea[i]
     if item then
-      item:SetData((self._randItemInfo)[i], function(selectIndex)
-    -- function num : 0_23_0 , upvalues : self
-    self.defaultIndex = selectIndex
-    for j = 1, #self._relicArea do
-      local otherItem = (self._relicArea)[j]
-      if j ~= selectIndex then
-        otherItem:UnSelectItem()
-      end
-    end
-  end
-, i, function(index)
-    -- function num : 0_23_1 , upvalues : self
-    self:RefreshDetilUI(index)
-  end
-)
+      item:SetData(self._randItemInfo[i], function(selectIndex)
+        self.defaultIndex = selectIndex
+        for j = 1, #self._relicArea do
+          local otherItem = self._relicArea[j]
+          if j ~= selectIndex then
+            otherItem:UnSelectItem()
+          end
+        end
+      end, i, function(index)
+        self:RefreshDetilUI(index)
+      end)
       if i == 1 then
         item:SelectItem()
       end
     end
   end
-  local curMoney = (self._component):GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
-  ;
-  (self.curMoneyText):SetText("" .. curMoney)
+  local curMoney = self._component:GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
+  self.curMoneyText:SetText("" .. curMoney)
   local resetNuM = ranRelicInfo.reset_cnt
   self:RefreshReDrawText()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.RefreshDetilUI = function(self, index)
-  -- function num : 0_24 , upvalues : _ENV
-  local pos = (self.DetailTipsRootRectTf).anchoredPosition
+function UISeasonMazeSelectRelicPopUp:RefreshDetilUI(index)
+  local pos = self.DetailTipsRootRectTf.anchoredPosition
   if index == 1 then
     pos.x = -304
-  else
-    if index == 2 then
-      pos.x = 87
-    else
-      if index == 3 then
-        pos.x = 522
-      else
-        if index == 4 then
-          pos.x = 717
-        end
-      end
-    end
+  elseif index == 2 then
+    pos.x = 87
+  elseif index == 3 then
+    pos.x = 522
+  elseif index == 4 then
+    pos.x = 717
   end
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.DetailTipsRootRectTf).anchoredPosition = pos
-  ;
-  (self.DetailPopRoot):SetActive(true)
-  local curitem = (self._relicArea)[index]
-  local itemCfgid = (self._randItemInfo)[index]
-  local itemcfg = (Cfg.cfg_item_relic)[itemCfgid]
+  self.DetailTipsRootRectTf.anchoredPosition = pos
+  self.DetailPopRoot:SetActive(true)
+  local curitem = self._relicArea[index]
+  local itemCfgid = self._randItemInfo[index]
+  local itemcfg = Cfg.cfg_item_relic[itemCfgid]
   if itemcfg == nil then
-    (Log.fatal)("[error] maze --> _cfg == nil ! id --> " .. itemCfgid)
-    ;
-    (self.DetailPopRoot):SetActive(false)
-    return 
+    Log.fatal("[error] maze --> _cfg == nil ! id --> " .. itemCfgid)
+    self.DetailPopRoot:SetActive(false)
+    return
   end
   if itemcfg.DetailPopTips ~= nil then
     self:RefreshEffect(itemcfg.DetailPopTips)
   else
-    ;
-    (self.EffectDetail):SetActive(false)
-    ;
-    (self.EffectDetail2):SetActive(false)
+    self.EffectDetail:SetActive(false)
+    self.EffectDetail2:SetActive(false)
   end
   if itemcfg.SuiteID == nil or itemcfg.SuiteID == 0 then
-    (self.SuitDetail):SetActive(false)
+    self.SuitDetail:SetActive(false)
   else
-    ;
-    (self.SuitDetail):SetActive(true)
+    self.SuitDetail:SetActive(true)
     self:RefreshSuit(itemcfg.SuiteID)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.RefreshEffect = function(self, effects)
-  -- function num : 0_25 , upvalues : _ENV
+function UISeasonMazeSelectRelicPopUp:RefreshEffect(effects)
   if #effects == 1 then
     local hrefID = effects[1]
-    local cfgv = (Cfg.cfg_season_maze_relic_href_desc)[hrefID]
+    local cfgv = Cfg.cfg_season_maze_relic_href_desc[hrefID]
     if not cfgv then
-      return 
+      return
     end
-    local name = (StringTable.Get)(cfgv.Name)
-    local desc = (StringTable.Get)(cfgv.Desc)
-    ;
-    (self.EffectDetail):SetActive(true)
-    ;
-    (self.EffectDetail2):SetActive(false)
-    ;
-    (self.PopTitle2Text):SetText(name)
-    ;
-    (self.PoDetai2lTex):SetText(desc)
-  else
-    do
-      if #effects == 2 then
-        local hrefID1 = effects[1]
-        local cfgv = (Cfg.cfg_season_maze_relic_href_desc)[hrefID1]
-        if not cfgv then
-          return 
-        end
-        local name1 = (StringTable.Get)(cfgv.Name)
-        local desc1 = (StringTable.Get)(cfgv.Desc)
-        ;
-        (self.EffectDetail):SetActive(true)
-        ;
-        (self.PopTitle2Text):SetText(name1)
-        ;
-        (self.PoDetai2lTex):SetText(desc1)
-        local hrefID2 = effects[2]
-        local cfgv2 = (Cfg.cfg_season_maze_relic_href_desc)[hrefID2]
-        if not cfgv2 then
-          return 
-        end
-        local name2 = (StringTable.Get)(cfgv2.Name)
-        local desc2 = (StringTable.Get)(cfgv2.Desc)
-        ;
-        (self.EffectDetail2):SetActive(true)
-        ;
-        (self.PopTitle3Text):SetText(name2)
-        ;
-        (self.PoDetai3lTex):SetText(desc2)
-      else
-        do
-          if #effects > 2 then
-            (Log.fatal)("[error] maze 效果数量大于2显示不下")
-          end
-        end
-      end
+    local name = StringTable.Get(cfgv.Name)
+    local desc = StringTable.Get(cfgv.Desc)
+    self.EffectDetail:SetActive(true)
+    self.EffectDetail2:SetActive(false)
+    self.PopTitle2Text:SetText(name)
+    self.PoDetai2lTex:SetText(desc)
+  elseif #effects == 2 then
+    local hrefID1 = effects[1]
+    local cfgv = Cfg.cfg_season_maze_relic_href_desc[hrefID1]
+    if not cfgv then
+      return
     end
+    local name1 = StringTable.Get(cfgv.Name)
+    local desc1 = StringTable.Get(cfgv.Desc)
+    self.EffectDetail:SetActive(true)
+    self.PopTitle2Text:SetText(name1)
+    self.PoDetai2lTex:SetText(desc1)
+    local hrefID2 = effects[2]
+    local cfgv2 = Cfg.cfg_season_maze_relic_href_desc[hrefID2]
+    if not cfgv2 then
+      return
+    end
+    local name2 = StringTable.Get(cfgv2.Name)
+    local desc2 = StringTable.Get(cfgv2.Desc)
+    self.EffectDetail2:SetActive(true)
+    self.PopTitle3Text:SetText(name2)
+    self.PoDetai3lTex:SetText(desc2)
+  elseif 2 < #effects then
+    Log.fatal("[error] maze 效果数量大于2显示不下")
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.RefreshSuit = function(self, suiteID)
-  -- function num : 0_26 , upvalues : _ENV
+function UISeasonMazeSelectRelicPopUp:RefreshSuit(suiteID)
   local curSuitCount = 0
-  local suite_cfg = (Cfg.cfg_component_season_maze_suit)[suiteID]
+  local suite_cfg = Cfg.cfg_component_season_maze_suit[suiteID]
   if suite_cfg == nil then
-    (self.SuitDetail):SetActive(false)
-    return 
+    self.SuitDetail:SetActive(false)
+    return
   end
   local suits = suite_cfg.RelicList
   local suitEffect = suite_cfg.SuitEffect
   for i = 1, #suits do
     local id = suits[i]
-    if (table.icontains)(self._bagItemInfo, id) then
+    if table.icontains(self._bagItemInfo, id) then
       curSuitCount = curSuitCount + 1
     end
   end
-  do
-    if not (table.icontains)(self._randItemInfo, id) then
-      local suitPercent = "" .. curSuitCount .. "/" .. #suits
-      ;
-      (self.PopTitleText):SetText((StringTable.Get)(suite_cfg.Name) .. "(" .. suitPercent .. ")")
-      local tips = ""
-      for j = 1, #suite_cfg.Words do
-        local tip = (suite_cfg.Words)[j]
-        local singleEff = suitEffect[j]
-        if singleEff[1] <= curSuitCount then
-          tips = tips .. "<color=#de8800>" .. (StringTable.Get)(tip) .. "</color>" .. "\n"
-        else
-          tips = tips .. "<color=#1c1c1c>" .. (StringTable.Get)(tip) .. "</color>" .. "\n"
-        end
-      end
-      ;
-      (self.PoDetailTex):SetText(tips)
+  if not table.icontains(self._randItemInfo, id) then
+  end
+  local suitPercent = "" .. curSuitCount .. "/" .. #suits
+  self.PopTitleText:SetText(StringTable.Get(suite_cfg.Name) .. "(" .. suitPercent .. ")")
+  local tips = ""
+  for j = 1, #suite_cfg.Words do
+    local tip = suite_cfg.Words[j]
+    local singleEff = suitEffect[j]
+    if curSuitCount >= singleEff[1] then
+      tips = tips .. "<color=#de8800>" .. StringTable.Get(tip) .. "</color>" .. "\n"
+    else
+      tips = tips .. "<color=#1c1c1c>" .. StringTable.Get(tip) .. "</color>" .. "\n"
     end
   end
+  self.PoDetailTex:SetText(tips)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.AnimClose = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  (self.anim):Play("uieffanim_UISeasonMazeSelectRelicPopUp_out")
-  local timerEvent = ((GameGlobal.Timer)()):AddEventTimes(200, TimerTriggerCount.Once, function()
-    -- function num : 0_27_0 , upvalues : self
+function UISeasonMazeSelectRelicPopUp:AnimClose()
+  self.anim:Play("uieffanim_UISeasonMazeSelectRelicPopUp_out")
+  local timerEvent = GameGlobal.Timer():AddEventTimes(200, TimerTriggerCount.Once, function()
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.MoneyBgOnClick = function(self, go)
-  -- function num : 0_28 , upvalues : _ENV
-  local topid = (self._type2topID)[SeasonMazeTopIconType.Money]
-  ;
-  (self._toptipsInfo):SetData(topid, self.TopToonAnchorObj)
+function UISeasonMazeSelectRelicPopUp:MoneyBgOnClick(go)
+  local topid = self._type2topID[SeasonMazeTopIconType.Money]
+  self._toptipsInfo:SetData(topid, self.TopToonAnchorObj)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectRelicPopUp.OnSeasonMazeShowRewardsFinish = function(self, flag)
-  -- function num : 0_29
+function UISeasonMazeSelectRelicPopUp:OnSeasonMazeShowRewardsFinish(flag)
   if self._waitGetRewardsFinishCb then
-    (self._waitGetRewardsFinishCb)()
+    self._waitGetRewardsFinishCb()
     self._waitGetRewardsFinishCb = nil
   end
 end
-
-

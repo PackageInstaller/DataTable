@@ -1,29 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/week_tower/ui_week_tower_node_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWeekTowerNodeItem", UICustomWidget)
 UIWeekTowerNodeItem = UIWeekTowerNodeItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWeekTowerNodeItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._type2pos = {[0] = -106, [1] = 106}
+function UIWeekTowerNodeItem:OnShow(uiParams)
+  self._type2pos = {
+    [0] = -106,
+    [1] = 106
+  }
   self._type2size = {
-[1] = {[1] = Vector3(0.9, 0.9, 0.9), [2] = Vector3(1, 1, 1)}
-, 
-[2] = {[1] = Vector3(0.85, 0.85, 0.85), [2] = Vector3(1, 1, 1)}
-}
-  self._uiModule = (GameGlobal.GetUIModule)(LostAreaModule)
+    [1] = {
+      [1] = Vector3(0.9, 0.9, 0.9),
+      [2] = Vector3(1, 1, 1)
+    },
+    [2] = {
+      [1] = Vector3(0.85, 0.85, 0.85),
+      [2] = Vector3(1, 1, 1)
+    }
+  }
+  self._uiModule = GameGlobal.GetUIModule(LostAreaModule)
   self:GetComponents()
   self:AttachEvent(GameEventType.OnUIWeekTowerNodeItemClick, self.OnUIWeekTowerNodeItemClick)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerNodeItem.OnUIWeekTowerNodeItemClick = function(self, index)
-  -- function num : 0_1
+function UIWeekTowerNodeItem:OnUIWeekTowerNodeItemClick(index)
   if self._index == index then
     self:Select(true)
   else
@@ -31,41 +29,27 @@ UIWeekTowerNodeItem.OnUIWeekTowerNodeItemClick = function(self, index)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerNodeItem.Select = function(self, select)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIWeekTowerNodeItem:Select(select)
   if select then
-    (self._scale).localScale = ((self._type2size)[self._type])[2]
+    self._scale.localScale = self._type2size[self._type][2]
   else
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._scale).localScale = ((self._type2size)[self._type])[1]
+    self._scale.localScale = self._type2size[self._type][1]
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerNodeItem.SetData = function(self, index, _missionCount, data, callback, width, open)
-  -- function num : 0_3
+function UIWeekTowerNodeItem:SetData(index, _missionCount, data, callback, width, open)
   self._index = index
   self._missionCount = _missionCount
   self._missionData = data
   self._callback = callback
   self._width = width
   self._open = open
-  self._upOrDown = (self._missionData):GetNodeUpOrDown()
-  self._showLineY = (self._missionData):ShowLineY()
+  self._upOrDown = self._missionData:GetNodeUpOrDown()
+  self._showLineY = self._missionData:ShowLineY()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerNodeItem.GetComponents = function(self)
-  -- function num : 0_4
+function UIWeekTowerNodeItem:GetComponents()
   self._go = self:GetGameObject("rect")
   self._nameTex = self:GetUIComponent("UILocalizationText", "name")
   self._nameTex2 = self:GetUIComponent("UILocalizationText", "name2")
@@ -80,106 +64,64 @@ UIWeekTowerNodeItem.GetComponents = function(self)
   self._stars = {}
   self._emptyStars = {}
   for i = 1, 3 do
-    -- DECOMPILER ERROR at PC64: Confused about usage of register: R5 in 'UnsetPending'
-
-    (self._stars)[i] = self:GetGameObject("star" .. i)
-    -- DECOMPILER ERROR at PC71: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._emptyStars)[i] = self:GetGameObject("starEmpty" .. i)
+    self._stars[i] = self:GetGameObject("star" .. i)
+    self._emptyStars[i] = self:GetGameObject("starEmpty" .. i)
   end
   self._notOpen = self:GetGameObject("notOpen")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerNodeItem.Active = function(self, active)
-  -- function num : 0_5
-  (self._go):SetActive(active)
+function UIWeekTowerNodeItem:Active(active)
+  self._go:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerNodeItem.OnValue = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._type = (self._missionData):GetType()
-  local name = (self._missionData):GetMissionName()
-  ;
-  (self._nameTex):SetText(name)
-  local name2 = (self._missionData):GetMissionName2()
-  ;
-  (self._nameTex2):SetText(name2)
-  local passState = (self._missionData):GetPassTime()
-  ;
-  (self._lock):SetActive(false)
-  ;
-  (self._notOpen):SetActive(passState ~= UILostLandMissionLockType.LOCK and not self._open)
-  ;
-  (self._clean):SetActive(passState == UILostLandMissionLockType.PASS)
-  ;
-  (self._iconMaskGo):SetActive(passState == UILostLandMissionLockType.LOCK or not self._open or passState == UILostLandMissionLockType.PASS)
-  -- DECOMPILER ERROR at PC70: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._lineX1).sizeDelta = Vector2(self._width * 0.5, ((self._lineX1).sizeDelta).y)
-  -- DECOMPILER ERROR at PC79: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._lineX2).sizeDelta = Vector2(self._width * 0.5, ((self._lineX1).sizeDelta).y)
-  local pos = Vector2(0, (self._type2pos)[self._upOrDown])
-  -- DECOMPILER ERROR at PC87: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._pos).anchoredPosition = pos
+function UIWeekTowerNodeItem:OnValue()
+  self._type = self._missionData:GetType()
+  local name = self._missionData:GetMissionName()
+  self._nameTex:SetText(name)
+  local name2 = self._missionData:GetMissionName2()
+  self._nameTex2:SetText(name2)
+  local passState = self._missionData:GetPassTime()
+  self._lock:SetActive(false)
+  self._notOpen:SetActive(passState == UILostLandMissionLockType.LOCK or not self._open)
+  self._clean:SetActive(passState == UILostLandMissionLockType.PASS)
+  self._iconMaskGo:SetActive(passState == UILostLandMissionLockType.LOCK or not self._open or passState == UILostLandMissionLockType.PASS)
+  self._lineX1.sizeDelta = Vector2(self._width * 0.5, self._lineX1.sizeDelta.y)
+  self._lineX2.sizeDelta = Vector2(self._width * 0.5, self._lineX1.sizeDelta.y)
+  local pos = Vector2(0, self._type2pos[self._upOrDown])
+  self._pos.anchoredPosition = pos
   if self._index == 1 then
-    ((self._lineX1).gameObject):SetActive(false)
+    self._lineX1.gameObject:SetActive(false)
   else
-    ((self._lineX1).gameObject):SetActive(true)
+    self._lineX1.gameObject:SetActive(true)
   end
   if self._index == self._missionCount then
-    ((self._lineX2).gameObject):SetActive(false)
+    self._lineX2.gameObject:SetActive(false)
   else
-    ((self._lineX2).gameObject):SetActive(true)
+    self._lineX2.gameObject:SetActive(true)
   end
   if self._showLineY then
-    (self._lineY):SetActive(true)
+    self._lineY:SetActive(true)
   else
-    (self._lineY):SetActive(false)
+    self._lineY:SetActive(false)
   end
-  local threeStarConds = (self._missionData):Get3StarConditions()
+  local threeStarConds = self._missionData:Get3StarConditions()
   for i = 1, 3 do
     local cond = threeStarConds[i]
-    if cond then
-      local hasStar = cond.satisfy
-    end
-    ;
-    ((self._stars)[i]):SetActive(hasStar)
-    ;
-    ((self._emptyStars)[i]):SetActive(not hasStar)
+    local hasStar = cond and cond.satisfy
+    self._stars[i]:SetActive(hasStar)
+    self._emptyStars[i]:SetActive(not hasStar)
   end
-  -- DECOMPILER ERROR: 11 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerNodeItem.Open = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIWeekTowerNodeItem:Open()
   self._open = true
-  local passState = (self._missionData):GetPassTime()
-  ;
-  (self._notOpen):SetActive((self._missionData):GetPassTime() ~= UILostLandMissionLockType.LOCK and not self._open)
-  ;
-  (self._iconMaskGo):SetActive(passState == UILostLandMissionLockType.LOCK or not self._open or passState == UILostLandMissionLockType.PASS)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  local passState = self._missionData:GetPassTime()
+  self._notOpen:SetActive(self._missionData:GetPassTime() == UILostLandMissionLockType.LOCK or not self._open)
+  self._iconMaskGo:SetActive(passState == UILostLandMissionLockType.LOCK or not self._open or passState == UILostLandMissionLockType.PASS)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerNodeItem.bgOnClick = function(self, go)
-  -- function num : 0_8
+function UIWeekTowerNodeItem:bgOnClick(go)
   if self._callback then
-    (self._callback)(self._index, not self._open)
+    self._callback(self._index, not self._open)
   end
 end
-
-

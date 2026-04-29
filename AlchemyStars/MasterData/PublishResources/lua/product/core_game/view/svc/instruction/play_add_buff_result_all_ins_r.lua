@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_add_buff_result_all_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayAddBuffResultAllInstruction", BaseInstruction)
 PlayAddBuffResultAllInstruction = PlayAddBuffResultAllInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayAddBuffResultAllInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayAddBuffResultAllInstruction:Constructor(paramList)
   if paramList.stageIndex then
     self._stageIndex = tonumber(paramList.stageIndex)
   end
@@ -19,63 +12,52 @@ PlayAddBuffResultAllInstruction.Constructor = function(self, paramList)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAddBuffResultAllInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayAddBuffResultAllInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local playBuffService = world:GetService("PlayBuff")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local buffResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AddBuff, self._stageIndex)
-  if not buffResultArray or (table.count)(buffResultArray) == 0 then
-    return 
+  if not buffResultArray or table.count(buffResultArray) == 0 then
+    return
   end
-  for _,v in pairs(buffResultArray) do
+  for _, v in pairs(buffResultArray) do
     local eid = v:GetEntityID()
     local targetEntity = world:GetEntityByID(eid)
     local buffArray = v:GetAddBuffResult()
     local isRemove = v:GetIsRemove()
     if targetEntity and buffArray then
-      for _,seq in pairs(buffArray) do
-        (Log.debug)("PlayTargetAddBuff entityid=", eid, " buffseq=", seq, " isRemove=", isRemove)
-        local buffViewInst = (targetEntity:BuffView()):GetBuffViewInstance(seq)
+      for _, seq in pairs(buffArray) do
+        Log.debug("PlayTargetAddBuff entityid=", eid, " buffseq=", seq, " isRemove=", isRemove)
+        local buffViewInst = targetEntity:BuffView():GetBuffViewInstance(seq)
         if buffViewInst then
           local buffID = buffViewInst:BuffID()
           local buffEffectType = buffViewInst:GetBuffEffectType()
           if isRemove then
             local checkOk = false
-            if self._checkUnload and buffViewInst:IsUnload() then
+            if self._checkUnload then
+              if buffViewInst:IsUnload() then
+                checkOk = true
+              end
+            else
               checkOk = true
             end
-            checkOk = true
             if checkOk then
               playBuffService:PlayRemoveBuff(TT, buffViewInst, NTBuffUnload:New())
             end
           else
-            do
-              do
-                local checkOk = false
-                if self._checkUnload and not buffViewInst:IsUnload() then
-                  checkOk = true
-                end
+            local checkOk = false
+            if self._checkUnload then
+              if not buffViewInst:IsUnload() then
                 checkOk = true
-                if checkOk then
-                  if v:GetBuffInitLayer() then
-                    (targetEntity:BuffView()):SetBuffValue(buffViewInst._buffLayerName, v:GetBuffInitLayer())
-                  end
-                  playBuffService:PlayAddBuff(TT, buffViewInst, casterEntity:GetID())
-                end
-                -- DECOMPILER ERROR at PC117: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC117: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC117: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC117: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC117: LeaveBlock: unexpected jumping out IF_STMT
-
               end
+            else
+              checkOk = true
+            end
+            if checkOk then
+              if v:GetBuffInitLayer() then
+                targetEntity:BuffView():SetBuffValue(buffViewInst._buffLayerName, v:GetBuffInitLayer())
+              end
+              playBuffService:PlayAddBuff(TT, buffViewInst, casterEntity:GetID())
             end
           end
         end
@@ -83,5 +65,3 @@ PlayAddBuffResultAllInstruction.DoInstruction = function(self, TT, casterEntity,
     end
   end
 end
-
-

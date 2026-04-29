@@ -1,38 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/pet_interact/ui_home_pet_follow_list.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomePetFollowList", UIController)
 UIHomePetFollowList = UIHomePetFollowList
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomePetFollowList.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomePetFollowList:OnShow(uiParams)
   self._callback = uiParams[1]
   self._pool = self:GetUIComponent("UISelectObjectPath", "Content")
   self._downMask = self:GetGameObject("downMask")
   self:RefreshList()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetFollowList.RefreshList = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local homeModule = (GameGlobal.GetModule)(HomelandModule)
+function UIHomePetFollowList:RefreshList()
+  local homeModule = GameGlobal.GetModule(HomelandModule)
   local uiHomeModule = homeModule:GetUIModule()
   local homeClient = uiHomeModule:GetClient()
-  local followList = (homeClient:PetManager()):GetFollowPets()
-  local count = (table.count)(followList)
+  local followList = homeClient:PetManager():GetFollowPets()
+  local count = table.count(followList)
   if count <= 0 then
     self:CloseDialog()
-    return 
+    return
   end
-  ;
-  (self._downMask):SetActive(count > 3)
-  ;
-  (self._pool):SpawnObjects("UIHomePetFollowListItem", count)
-  local items = (self._pool):GetAllSpawnList()
+  self._downMask:SetActive(3 < count)
+  self._pool:SpawnObjects("UIHomePetFollowListItem", count)
+  local items = self._pool:GetAllSpawnList()
   for i = 1, #items do
     local item = items[i]
     local pet = followList[i]
@@ -40,58 +28,43 @@ UIHomePetFollowList.RefreshList = function(self)
       item:Active(true)
       local last = i == count
       item:SetData(i, pet, function(pet)
-    -- function num : 0_1_0 , upvalues : self
-    self:ItemClick(pet)
-  end
-, last)
+        self:ItemClick(pet)
+      end, last)
     else
       item:Active(false)
     end
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetFollowList.ItemClick = function(self, pet)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomePetFollowList:ItemClick(pet)
   self._delPet = pet
   local title = ""
-  local desc = (StringTable.Get)("str_homeland_pet_interact_dont_follow")
-  local leftBtn = {(StringTable.Get)("str_common_cancel"), function(param)
-    -- function num : 0_2_0
-  end
-}
-  local rightBtn = {(StringTable.Get)("str_common_ok"), function(param)
-    -- function num : 0_2_1 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnHomeInteractFollow, false, self._delPet)
-    self:RefreshList()
-  end
-}
+  local desc = StringTable.Get("str_homeland_pet_interact_dont_follow")
+  local leftBtn = {
+    StringTable.Get("str_common_cancel"),
+    function(param)
+    end
+  }
+  local rightBtn = {
+    StringTable.Get("str_common_ok"),
+    function(param)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnHomeInteractFollow, false, self._delPet)
+      self:RefreshList()
+    end
+  }
   self:ShowDialog("UIHomelandMessageBox", title, desc, leftBtn, rightBtn)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetFollowList.BgOnClick = function(self, go)
-  -- function num : 0_3
+function UIHomePetFollowList:BgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetFollowList.OnHide = function(self)
-  -- function num : 0_4
+function UIHomePetFollowList:OnHide()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetFollowList.ShapeBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIHomePetFollowList:ShapeBtnOnClick(go)
   self:ShowDialog("UIHomePetFollow")
 end
-
-

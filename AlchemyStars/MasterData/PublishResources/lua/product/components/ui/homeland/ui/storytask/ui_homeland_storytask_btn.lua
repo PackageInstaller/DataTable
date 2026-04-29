@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/storytask/ui_homeland_storytask_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandStoryTaskBtn", UICustomWidget)
 UIHomelandStoryTaskBtn = UIHomelandStoryTaskBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandStoryTaskBtn.SetData = function(self, data, controller, selectId)
-  -- function num : 0_0
+function UIHomelandStoryTaskBtn:SetData(data, controller, selectId)
   self._controller = controller
   self._data = data
   self._taskId = data.ID
@@ -23,10 +16,7 @@ UIHomelandStoryTaskBtn.SetData = function(self, data, controller, selectId)
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskBtn.Refresh = function(self)
-  -- function num : 0_1
+function UIHomelandStoryTaskBtn:Refresh()
   local state = self:_CheckState()
   self:_SetState(state)
   self:_SetText(state)
@@ -34,10 +24,7 @@ UIHomelandStoryTaskBtn.Refresh = function(self)
   self:_SetWidgetShow("tracePoint", self._isTrace)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskBtn._CheckState = function(self)
-  -- function num : 0_2
+function UIHomelandStoryTaskBtn:_CheckState()
   local state = 2
   if self._selectId == self._taskId then
     state = 1
@@ -51,54 +38,37 @@ UIHomelandStoryTaskBtn._CheckState = function(self)
   return state
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskBtn._SetState = function(self, state)
-  -- function num : 0_3 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"bg_select"}
-, 
-{"bg_normal"}
-, 
-{"bg_lock", "icon_lock"}
-, 
-{"bg_finish", "icon_finish"}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
-  ;
-  (self:GetGameObject("bg_selectlock")):SetActive(state == 3 and self._selectId == self._taskId)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIHomelandStoryTaskBtn:_SetState(state)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {"bg_select"},
+    {"bg_normal"},
+    {"bg_lock", "icon_lock"},
+    {
+      "bg_finish",
+      "icon_finish"
+    }
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
+  self:GetGameObject("bg_selectlock"):SetActive(state == 3 and self._selectId == self._taskId)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskBtn._SetText = function(self, state)
-  -- function num : 0_4 , upvalues : _ENV
-  local tb = {"#ffffff", "#6b6b6b", "#6a6969", "#848484"}
-  local text = (UIActivityHelper.GetColorText)(tb[state], (StringTable.Get)((self._data).GroupsListTitle))
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "text", text)
+function UIHomelandStoryTaskBtn:_SetText(state)
+  local tb = {
+    "#ffffff",
+    "#6b6b6b",
+    "#6a6969",
+    "#848484"
+  }
+  local text = UIActivityHelper.GetColorText(tb[state], StringTable.Get(self._data.GroupsListTitle))
+  UIWidgetHelper.SetLocalizationText(self, "text", text)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskBtn._SetWidgetShow = function(self, widgetName, isShow)
-  -- function num : 0_5
-  if isShow then
-    isShow = self._isUnLock
-  end
-  ;
-  (self:GetGameObject(widgetName)):SetActive(isShow)
+function UIHomelandStoryTaskBtn:_SetWidgetShow(widgetName, isShow)
+  isShow = isShow and self._isUnLock
+  self:GetGameObject(widgetName):SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskBtn.BtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._controller):SetNewPoint(self._taskId)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIHomelandStoryTaskBtnSelect, (self._data).ID)
+function UIHomelandStoryTaskBtn:BtnOnClick(go)
+  self._controller:SetNewPoint(self._taskId)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIHomelandStoryTaskBtnSelect, self._data.ID)
 end
-
-

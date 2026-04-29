@@ -1,38 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_Base", Object)
 SkillEffectCalc_Base = SkillEffectCalc_Base
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_Base.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_Base:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_Base.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_Base:DoSkillEffectCalculator(skillEffectCalcParam)
   local tResultArray = {}
   local teidTarget = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(teidTarget) do
+  for _, targetID in ipairs(teidTarget) do
     local result = self:CalculateOnSingleTarget(skillEffectCalcParam, targetID)
     if result then
-      (table.insert)(tResultArray, result)
+      table.insert(tResultArray, result)
     end
   end
   return tResultArray
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_Base.CalculateOnSingleTarget = function(self, skillEffectCalcParam, targetID)
-  -- function num : 0_2 , upvalues : _ENV
-  (Log.exception)("NotImplementedException: function is not implemented. ")
+function SkillEffectCalc_Base:CalculateOnSingleTarget(skillEffectCalcParam, targetID)
+  Log.exception("NotImplementedException: function is not implemented. ")
 end
-
-

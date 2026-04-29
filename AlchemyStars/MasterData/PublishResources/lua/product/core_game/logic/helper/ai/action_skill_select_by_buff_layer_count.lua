@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_skill_select_by_buff_layer_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionSkillSelectByBuffLayerCount", ActionCastSkillBase)
 ActionSkillSelectByBuffLayerCount = ActionSkillSelectByBuffLayerCount
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSkillSelectByBuffLayerCount.Constructor = function(self)
-  -- function num : 0_0
+function ActionSkillSelectByBuffLayerCount:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSelectByBuffLayerCount.GetWorkSkillID = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ActionSkillSelectByBuffLayerCount:GetWorkSkillID()
   local skillID = self:GetLogicData(1)
   self._skillListIndex = self:GetLogicData(-1)
   self._buffID = self:GetLogicData(-2)
   local vecSkillLists = self:GetConfigSkillList()
   local skillList = vecSkillLists[self._skillListIndex]
-  local skillListCount = (table.count)(skillList)
-  local buffCmp = (self.m_entityOwn):BuffComponent()
+  local skillListCount = table.count(skillList)
+  local buffCmp = self.m_entityOwn:BuffComponent()
   for i = 1, skillListCount do
     local targetBuffID = self._buffID + i
     local buffInstance = buffCmp:GetBuffById(targetBuffID)
@@ -31,9 +21,5 @@ ActionSkillSelectByBuffLayerCount.GetWorkSkillID = function(self)
       break
     end
   end
-  do
-    return skillID
-  end
+  return skillID
 end
-
-

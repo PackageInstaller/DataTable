@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/wishing/collect/ui_build_collect_coin_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBuildCollectCoinItem", UICustomWidget)
 UIBuildCollectCoinItem = UIBuildCollectCoinItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBuildCollectCoinItem.Constructor = function(self)
-  -- function num : 0_0
+function UIBuildCollectCoinItem:Constructor()
   self._wishingPlot = {}
   self:ClearWishingPlot()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBuildCollectCoinItem:OnShow(uiParams)
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._selectGo = self:GetGameObject("Select")
@@ -26,242 +16,159 @@ UIBuildCollectCoinItem.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.HomeLandEventChange, self.OnHomeLandEventChanged)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinItem.Refresh = function(self, collectCoin, coinData)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBuildCollectCoinItem:Refresh(collectCoin, coinData)
   self._coinData = coinData
   self._collectCoin = collectCoin
-  ;
-  (self._nameLabel):SetText((self._coinData):GetName())
-  ;
-  (self._canCollectText):SetText((StringTable.Get)("str_homeland_throw_coin"))
-  ;
-  (self._iconLoader):LoadImage((self._coinData):GetIcon())
-  if (self._coinData):HasCollect() then
-    (self._canCollectGo):SetActive(false)
-    ;
-    (self._canCollectLable):SetActive(false)
+  self._nameLabel:SetText(self._coinData:GetName())
+  self._canCollectText:SetText(StringTable.Get("str_homeland_throw_coin"))
+  self._iconLoader:LoadImage(self._coinData:GetIcon())
+  if self._coinData:HasCollect() then
+    self._canCollectGo:SetActive(false)
+    self._canCollectLable:SetActive(false)
   else
-    ;
-    (self._canCollectGo):SetActive((HomelandWishingConst.CanCollectCoin)((self._coinData):GetCoinId()))
-    ;
-    (self._canCollectLable):SetActive((HomelandWishingConst.CanCollectCoin)((self._coinData):GetCoinId()))
+    self._canCollectGo:SetActive(HomelandWishingConst.CanCollectCoin(self._coinData:GetCoinId()))
+    self._canCollectLable:SetActive(HomelandWishingConst.CanCollectCoin(self._coinData:GetCoinId()))
   end
-  ;
-  (self._selectGo):SetActive((self._collectCoin):GetCurrentSelectCoinData() == self._coinData)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._selectGo:SetActive(self._collectCoin:GetCurrentSelectCoinData() == self._coinData)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinItem.GetCoinData = function(self)
-  -- function num : 0_3
+function UIBuildCollectCoinItem:GetCoinData()
   return self._coinData
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinItem.SetSelectStatus = function(self, selected)
-  -- function num : 0_4
-  (self._selectGo):SetActive(selected)
+function UIBuildCollectCoinItem:SetSelectStatus(selected)
+  self._selectGo:SetActive(selected)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinItem.BtnOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if not (self._coinData):HasCollect() and (HomelandWishingConst.CanCollectCoin)((self._coinData):GetCoinId()) then
-    ((GameGlobal.TaskManager)()):StartTask(self.CollectCoro, self)
-    return 
+function UIBuildCollectCoinItem:BtnOnClick()
+  if not self._coinData:HasCollect() and HomelandWishingConst.CanCollectCoin(self._coinData:GetCoinId()) then
+    GameGlobal.TaskManager():StartTask(self.CollectCoro, self)
+    return
   end
-  ;
-  (self._collectCoin):SelectItem(self)
+  self._collectCoin:SelectItem(self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinItem.CollectCoro = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._wishingPlot).recvEvent = true
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioThrowCoin)
+function UIBuildCollectCoinItem:CollectCoro(TT)
+  self._wishingPlot.recvEvent = true
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioThrowCoin)
   self:Lock("UIBuildCollectCoinItem_CollectCoro")
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  local ret = homelandModule:ApplyCollectItem(TT, (self._coinData):GetCoinId())
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
+  local ret = homelandModule:ApplyCollectItem(TT, self._coinData:GetCoinId())
   self:UnLock("UIBuildCollectCoinItem_CollectCoro")
   if ret:GetSucc() then
-    (self._collectCoin):SetStatus(false)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideHomelandMainUI, false, true)
-    local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
-    do
-      local homelandClient = homeLandModule:GetClient()
-      local characterController = (homelandClient:CharacterManager()):MainCharacterController()
-      characterController:SetAnimatorTrigger("throw_coins")
-      local effect1 = self:AttachModel((self._coinData):GetEffect1(), (self._coinData):GetEffect1AttachPath())
-      local effect2 = self:AttachModel((self._coinData):GetEffect2(), (self._coinData):GetEffect2AttachPath())
-      YIELD(TT, 1430)
-      if effect1 then
-        effect1:Dispose()
-        effect1 = nil
+    self._collectCoin:SetStatus(false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideHomelandMainUI, false, true)
+    local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
+    local homelandClient = homeLandModule:GetClient()
+    local characterController = homelandClient:CharacterManager():MainCharacterController()
+    characterController:SetAnimatorTrigger("throw_coins")
+    local effect1 = self:AttachModel(self._coinData:GetEffect1(), self._coinData:GetEffect1AttachPath())
+    local effect2 = self:AttachModel(self._coinData:GetEffect2(), self._coinData:GetEffect2AttachPath())
+    YIELD(TT, 1430)
+    if effect1 then
+      effect1:Dispose()
+      effect1 = nil
+    end
+    YIELD(TT, 1600)
+    if effect2 then
+      effect2:Dispose()
+      effect2 = nil
+    end
+    
+    local function func()
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideHomelandMainUI, true, true)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.WishingAddCollectCoin, self._coinData:GetCoinId())
+      self._collectCoin:SelectItem(self)
+      self._collectCoin:SetStatus(true)
+      self._collectCoin:RefershData()
+      self._collectCoin:RefreshUI()
+      self:CollectCoroCheckStory(TT, homelandModule)
+    end
+    
+    local collectRewards = self._collectCoin:GetCollectCoinRewards()
+    local currentTask = collectRewards:GetCurrentTask()
+    if currentTask and currentTask:GetWishingCoinCount() <= HomelandWishingConst.GetCollectCoinCounts() then
+      local currentRewards = currentTask:GetRewards()
+      local rewards = {}
+      for i = 1, #currentRewards do
+        local roleAsset = RoleAsset:New()
+        rewards[#rewards + 1] = roleAsset
+        roleAsset.assetid = currentRewards[i][1]
+        roleAsset.count = currentRewards[i][2]
       end
-      YIELD(TT, 1600)
-      if effect2 then
-        effect2:Dispose()
-        effect2 = nil
-      end
-      local func = function()
-    -- function num : 0_6_0 , upvalues : _ENV, self, TT, homelandModule
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideHomelandMainUI, true, true)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.WishingAddCollectCoin, (self._coinData):GetCoinId())
-    ;
-    (self._collectCoin):SelectItem(self)
-    ;
-    (self._collectCoin):SetStatus(true)
-    ;
-    (self._collectCoin):RefershData()
-    ;
-    (self._collectCoin):RefreshUI()
-    self:CollectCoroCheckStory(TT, homelandModule)
+      self:ShowDialog("UIHomeShowAwards", rewards, function()
+        func()
+      end)
+    else
+      func()
+    end
+  else
+    self:ClearWishingPlot()
+    Log.error("投放许愿币错误", ret:GetResult())
   end
+end
 
-      local collectRewards = (self._collectCoin):GetCollectCoinRewards()
-      do
-        local currentTask = collectRewards:GetCurrentTask()
-        if currentTask and currentTask:GetWishingCoinCount() <= (HomelandWishingConst.GetCollectCoinCounts)() then
-          local currentRewards = currentTask:GetRewards()
-          local rewards = {}
-          for i = 1, #currentRewards do
-            local roleAsset = RoleAsset:New()
-            rewards[#rewards + 1] = roleAsset
-            roleAsset.assetid = (currentRewards[i])[1]
-            roleAsset.count = (currentRewards[i])[2]
-          end
-          self:ShowDialog("UIHomeShowAwards", rewards, function()
-    -- function num : 0_6_1 , upvalues : func
-    func()
+function UIBuildCollectCoinItem:CollectCoroCheckStory(TT, homelandModule)
+  local cfg
+  local playStory = self._wishingPlot.playStory
+  if playStory then
+    local cfgEvents = Cfg.cfg_homeland_event({})
+    cfg = cfgEvents[self._wishingPlot.eventID]
   end
-)
-        else
-          do
-            func()
-          end
+  if cfg then
+    local eventID = self._wishingPlot.eventID
+    local homelandModule = homelandModule.uiModule
+    local homelandClient = homelandModule:GetClient()
+    
+    local function fnFinishEvent()
+      local wishBuilding
+      local buildManager = homelandClient:BuildManager()
+      local buildings = buildManager:GetBuildings()
+      for k, v in pairs(buildings) do
+        if v:GetBuildType() == ArchitectureSubType.Wishing_Pool then
+          wishBuilding = v
+          break
         end
-        self:ClearWishingPlot()
-        ;
-        (Log.error)("投放许愿币错误", ret:GetResult())
       end
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowInteractUI)
+      GameGlobal.UIStateManager():ShowDialog("UIBuildCollectCoin", wishBuilding)
     end
+    
+    local function fnStoryEnd()
+      local homelandEventMgr = homelandClient:HomeEventManager()
+      homelandEventMgr:SetFinishStoryEvent(fnFinishEvent)
+    end
+    
+    CutsceneManager.ExcuteCutsceneIn(UIStateType.UIHomeStoryController, function()
+      GameGlobal.UIStateManager():SwitchState(UIStateType.UIHomeStoryController, eventID, fnStoryEnd)
+    end)
+  end
+  self:ClearWishingPlot()
+end
+
+function UIBuildCollectCoinItem:OnHomeLandEventChanged(erase_event_id, trigger_immediately_event)
+  if self._wishingPlot.recvEvent and trigger_immediately_event ~= 0 then
+    self._wishingPlot.recvEvent = false
+    self._wishingPlot.playStory = true
+    self._wishingPlot.eventID = trigger_immediately_event
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinItem.CollectCoroCheckStory = function(self, TT, homelandModule)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg = nil
-  local playStory = (self._wishingPlot).playStory
-  do
-    if playStory then
-      local cfgEvents = (Cfg.cfg_homeland_event)({})
-      do
-        cfg = cfgEvents[(self._wishingPlot).eventID]
-      end
-    end
-    if cfg then
-      local eventID = (self._wishingPlot).eventID
-      local homelandModule = homelandModule.uiModule
-      local homelandClient = homelandModule:GetClient()
-      local fnFinishEvent = function()
-    -- function num : 0_7_0 , upvalues : homelandClient, _ENV
-    local wishBuilding = nil
-    local buildManager = homelandClient:BuildManager()
-    local buildings = buildManager:GetBuildings()
-    for k,v in pairs(buildings) do
-      if v:GetBuildType() == ArchitectureSubType.Wishing_Pool then
-        wishBuilding = v
-        break
-      end
-    end
-    do
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowInteractUI)
-      ;
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIBuildCollectCoin", wishBuilding)
-    end
-  end
-
-      local fnStoryEnd = function()
-    -- function num : 0_7_1 , upvalues : homelandClient, fnFinishEvent
-    local homelandEventMgr = homelandClient:HomeEventManager()
-    homelandEventMgr:SetFinishStoryEvent(fnFinishEvent)
-  end
-
-      ;
-      (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIHomeStoryController, function()
-    -- function num : 0_7_2 , upvalues : _ENV, eventID, fnStoryEnd
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIHomeStoryController, eventID, fnStoryEnd)
-  end
-)
-    end
-    do
-      self:ClearWishingPlot()
-    end
-  end
+function UIBuildCollectCoinItem:ClearWishingPlot()
+  self._wishingPlot.recvEvent = false
+  self._wishingPlot.playStory = false
+  self._wishingPlot.eventID = 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinItem.OnHomeLandEventChanged = function(self, erase_event_id, trigger_immediately_event)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self._wishingPlot).recvEvent and trigger_immediately_event ~= 0 then
-    (self._wishingPlot).recvEvent = false
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._wishingPlot).playStory = true
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._wishingPlot).eventID = trigger_immediately_event
-  end
-end
-
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinItem.ClearWishingPlot = function(self)
-  -- function num : 0_9
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._wishingPlot).recvEvent = false
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._wishingPlot).playStory = false
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._wishingPlot).eventID = 0
-end
-
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinItem.AttachModel = function(self, res, transPath)
-  -- function num : 0_10 , upvalues : _ENV
-  local attachedModel = (ResourceManager:GetInstance()):SyncLoadAsset(res, LoadType.GameObject)
+function UIBuildCollectCoinItem:AttachModel(res, transPath)
+  local attachedModel = ResourceManager:GetInstance():SyncLoadAsset(res, LoadType.GameObject)
   if not attachedModel or not attachedModel.Obj then
-    (Log.error)("加载资源失败:" .. res)
+    Log.error("加载资源失败:" .. res)
     return nil
   end
   local go = attachedModel.Obj
   go:SetActive(true)
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
   local characterManager = homelandClient:CharacterManager()
   local playerTran = characterManager:GetCharacterTransform()
@@ -273,10 +180,5 @@ UIBuildCollectCoinItem.AttachModel = function(self, res, transPath)
   return attachedModel
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinItem.ReleaseAttachedModel = function(self)
-  -- function num : 0_11
+function UIBuildCollectCoinItem:ReleaseAttachedModel()
 end
-
-

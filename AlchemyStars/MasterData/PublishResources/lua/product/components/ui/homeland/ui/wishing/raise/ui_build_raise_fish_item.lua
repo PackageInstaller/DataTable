@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/wishing/raise/ui_build_raise_fish_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBuildRaiseFishItem", UICustomWidget)
 UIBuildRaiseFishItem = UIBuildRaiseFishItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBuildRaiseFishItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBuildRaiseFishItem:OnShow(uiParams)
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._countLabel = self:GetUIComponent("UILocalizationText", "Count")
   self._quatyImg = self:GetUIComponent("Image", "Quaty")
@@ -16,36 +9,19 @@ UIBuildRaiseFishItem.OnShow = function(self, uiParams)
   self.atlas = self:GetAsset("UIHomelandBackpack.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishItem.OnHide = function(self)
-  -- function num : 0_1
+function UIBuildRaiseFishItem:OnHide()
   self.atlas = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishItem.Refresh = function(self, raiseFish, raiseFishData)
-  -- function num : 0_2
+function UIBuildRaiseFishItem:Refresh(raiseFish, raiseFishData)
   self._raiseFishData = raiseFishData
-  ;
-  (self._iconLoader):LoadImage(raiseFishData:GetIcon())
-  ;
-  (self._countLabel):SetText(raiseFishData:GetCount())
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._quatyImg).sprite = (self.atlas):GetSprite("n17_shop_kuang0" .. raiseFishData:GetColor())
+  self._iconLoader:LoadImage(raiseFishData:GetIcon())
+  self._countLabel:SetText(raiseFishData:GetCount())
+  self._quatyImg.sprite = self.atlas:GetSprite("n17_shop_kuang0" .. raiseFishData:GetColor())
   self._raiseFish = raiseFish
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishItem.BtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._raiseFish):RaiseFish(self._raiseFishData)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioFishJumpIntoWater)
+function UIBuildRaiseFishItem:BtnOnClick(go)
+  self._raiseFish:RaiseFish(self._raiseFishData)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioFishJumpIntoWater)
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/base_world.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("world")
 _class("BaseWorld", World)
 BaseWorld = BaseWorld
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BaseWorld.Constructor = function(self, worldInfo)
-  -- function num : 0_0 , upvalues : _ENV
+function BaseWorld:Constructor(worldInfo)
   self.BW_WorldInfo = worldInfo
   self.BW_WEComponentsEnum = worldInfo.BWCC_EComponentsEnum
   self.BW_WEMatchers = worldInfo.BWCC_EMatchers
@@ -25,125 +18,82 @@ BaseWorld.Constructor = function(self, worldInfo)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((BaseWorld.super).Dispose)(self)
+function BaseWorld:Dispose()
+  BaseWorld.super.Dispose(self)
   self:DestroyAllEntity()
   self:DestroyAllGroup()
   self:DestroyServices()
-  local uniqueCmptCount = (self.BW_UniqueComponents):Size()
+  local uniqueCmptCount = self.BW_UniqueComponents:Size()
   for cmptIndex = 1, uniqueCmptCount do
-    local uniqueCmpt = (self.BW_UniqueComponents):GetAt(cmptIndex)
+    local uniqueCmpt = self.BW_UniqueComponents:GetAt(cmptIndex)
     if uniqueCmpt.Dispose ~= nil then
       uniqueCmpt:Dispose()
     end
   end
-  ;
-  (self.BW_UniqueComponents):Clear()
-  ;
-  (self.BW_Ev_OnUniqueComponentReplaced):Clear()
+  self.BW_UniqueComponents:Clear()
+  self.BW_Ev_OnUniqueComponentReplaced:Clear()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.DestroyAllEntity = function(self)
-  -- function num : 0_2
+function BaseWorld:DestroyAllEntity()
   local i = 1
-  while 1 do
-    while 1 do
-      local entity = (self._entities):GetAt(1)
-      if entity ~= nil then
-        self:DestroyEntity(entity)
-        i = i + 1
-        -- DECOMPILER ERROR at PC11: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC11: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  while true do
+    local entity = self._entities:GetAt(1)
+    if entity ~= nil then
+      self:DestroyEntity(entity)
+      i = i + 1
+    else
+      break
     end
-    break
   end
-  do
-    ;
-    (self._entities):Clear()
-  end
+  self._entities:Clear()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.DestroyAllGroup = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,group in ipairs(self._groups) do
+function BaseWorld:DestroyAllGroup()
+  for _, group in ipairs(self._groups) do
     if group then
       group:Dispose()
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.DestroyServices = function(self)
-  -- function num : 0_4
-  if (self.BW_Services).Dispose then
-    (self.BW_Services):Dispose()
+function BaseWorld:DestroyServices()
+  if self.BW_Services.Dispose then
+    self.BW_Services:Dispose()
   end
   self.BW_Services = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.DestroySystems = function(self)
-  -- function num : 0_5
+function BaseWorld:DestroySystems()
   self.BW_Systems = nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.CreateEntity = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local e = ((BaseWorld.super).CreateEntity)(self)
+function BaseWorld:CreateEntity()
+  local e = BaseWorld.super.CreateEntity(self)
   e.WEComponentsEnum = self.BW_WEComponentsEnum
-  ;
-  (e.Ev_OnComponentAdded):AddEvent(self, self.Internal_onComponentAdded)
-  ;
-  (e.Ev_OnComponentRemoved):AddEvent(self, self.Internal_onComponentRemoved)
-  ;
-  (e.Ev_OnComponentReplaced):AddEvent(self, self.Internal_onComponentReplaced)
+  e.Ev_OnComponentAdded:AddEvent(self, self.Internal_onComponentAdded)
+  e.Ev_OnComponentRemoved:AddEvent(self, self.Internal_onComponentRemoved)
+  e.Ev_OnComponentReplaced:AddEvent(self, self.Internal_onComponentReplaced)
   return e
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.DestroyEntity = function(self, entity)
-  -- function num : 0_7 , upvalues : _ENV
-  return ((BaseWorld.super).DestroyEntity)(self, entity)
+function BaseWorld:DestroyEntity(entity)
+  return BaseWorld.super.DestroyEntity(self, entity)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.Internal_onComponentAdded = function(self, entity, index, component)
-  -- function num : 0_8
+function BaseWorld:Internal_onComponentAdded(entity, index, component)
   component.WEC_OwnerEntity = entity
   if component.WEC_PostInitialize then
     component:WEC_PostInitialize(entity)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.Internal_onComponentRemoved = function(self, entity, index, component)
-  -- function num : 0_9
+function BaseWorld:Internal_onComponentRemoved(entity, index, component)
   if component.WEC_PostRemoved then
     component:WEC_PostRemoved()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.Internal_onComponentReplaced = function(self, entity, index, previousComponent, newComponent)
-  -- function num : 0_10
+function BaseWorld:Internal_onComponentReplaced(entity, index, previousComponent, newComponent)
   if previousComponent ~= newComponent then
     if previousComponent.WEC_PostRemoved then
       previousComponent:WEC_PostRemoved()
@@ -157,10 +107,7 @@ BaseWorld.Internal_onComponentReplaced = function(self, entity, index, previousC
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.EnterWorld = function(self)
-  -- function num : 0_11
+function BaseWorld:EnterWorld()
   self:Internal_CreateServices()
   self:Internal_CreateComponents()
   self:Internal_CreateSystems()
@@ -169,22 +116,16 @@ BaseWorld.EnterWorld = function(self)
   systems:Initialize()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.UpdateWorld = function(self, deltaTimeMS)
-  -- function num : 0_12
+function BaseWorld:UpdateWorld(deltaTimeMS)
   local systems = self.BW_Systems
   if not systems then
-    return 
+    return
   end
   systems:Execute()
   systems:Cleanup()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.ExitWorld = function(self)
-  -- function num : 0_13
+function BaseWorld:ExitWorld()
   local systems = self.BW_Systems
   if systems ~= nil then
     systems:TearDown()
@@ -193,138 +134,92 @@ BaseWorld.ExitWorld = function(self)
   self:DestroySystems()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.GetUniqueComponent = function(self, index)
-  -- function num : 0_14 , upvalues : _ENV
+function BaseWorld:GetUniqueComponent(index)
   if EDITOR and self._checkCrossSide then
     local available = self:_CheckUniqueCmptAvailableInRenderSide(index)
     if not available then
       local cmptName = self:_GetUniqueComponentNameByIndex(index)
       local fullCmptName = cmptName .. "Component"
-      ;
-      (Log.exception)(fullCmptName, " not available in render side.", " ", (Log.traceback)())
+      Log.exception(fullCmptName, " not available in render side.", " ", Log.traceback())
     end
   end
-  do
-    return (self.BW_UniqueComponents):Find(index)
-  end
+  return self.BW_UniqueComponents:Find(index)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld._GetUniqueComponentNameByIndex = function(self, index)
-  -- function num : 0_15
-  local cmptName = (((self.BW_WorldInfo).BWCC_WUniqueComponentsEnum).EL_RawStrArray)[index]
+function BaseWorld:_GetUniqueComponentNameByIndex(index)
+  local cmptName = self.BW_WorldInfo.BWCC_WUniqueComponentsEnum.EL_RawStrArray[index]
   return cmptName
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld._CheckUniqueCmptAvailableInRenderSide = function(self, index)
-  -- function num : 0_16 , upvalues : _ENV
-  local debugInfo = (debug.getinfo)(3, "S")
+function BaseWorld:_CheckUniqueCmptAvailableInRenderSide(index)
+  local debugInfo = debug.getinfo(3, "S")
   if debugInfo == nil then
     return true
   end
   local filePath = debugInfo.short_src
-  local isRenderFile = (string.find)(filePath, "_r.lua")
-  local available = (self.BW_WorldInfo):UniqueCmptAvailableInRender(index)
+  local isRenderFile = string.find(filePath, "_r.lua")
+  local available = self.BW_WorldInfo:UniqueCmptAvailableInRender(index)
   if isRenderFile then
     return available
   end
   return true
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.HasUniqueComponent = function(self, index)
-  -- function num : 0_17
-  do return (self.BW_UniqueComponents):Find(index) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function BaseWorld:HasUniqueComponent(index)
+  return self.BW_UniqueComponents:Find(index) ~= nil
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.HasUniqueComponents = function(self, indices)
-  -- function num : 0_18 , upvalues : _ENV
-  for _,v in pairs(indices) do
-    if (self.BW_UniqueComponents):Find(v) == nil then
+function BaseWorld:HasUniqueComponents(indices)
+  for _, v in pairs(indices) do
+    if self.BW_UniqueComponents:Find(v) == nil then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.HasAnyUniqueComponent = function(self, indices)
-  -- function num : 0_19 , upvalues : _ENV
-  for _,v in pairs(indices) do
-    if (self.BW_UniqueComponents):Find(v) ~= nil then
+function BaseWorld:HasAnyUniqueComponent(indices)
+  for _, v in pairs(indices) do
+    if self.BW_UniqueComponents:Find(v) ~= nil then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.SetUniqueComponent = function(self, index, cmpt)
-  -- function num : 0_20
+function BaseWorld:SetUniqueComponent(index, cmpt)
   if not self:HasUniqueComponent(index) then
-    (self.BW_UniqueComponents):Insert(index, cmpt)
-    ;
-    (self.BW_Ev_OnUniqueComponentReplaced)(self, index, nil, cmpt)
-    return 
+    self.BW_UniqueComponents:Insert(index, cmpt)
+    self.BW_Ev_OnUniqueComponentReplaced(self, index, nil, cmpt)
+    return
   end
-  local previousCmpt = (self.BW_UniqueComponents):Find(index)
+  local previousCmpt = self.BW_UniqueComponents:Find(index)
   if previousCmpt ~= cmpt then
     if cmpt == nil then
-      (self.BW_UniqueComponents):Remove(index)
+      self.BW_UniqueComponents:Remove(index)
     else
-      ;
-      (self.BW_UniqueComponents):Modify(index, cmpt)
+      self.BW_UniqueComponents:Modify(index, cmpt)
     end
-    ;
-    (self.BW_Ev_OnUniqueComponentReplaced)(self, index, previousCmpt, cmpt)
+    self.BW_Ev_OnUniqueComponentReplaced(self, index, previousCmpt, cmpt)
     if previousCmpt.Dispose then
       previousCmpt:Dispose()
     end
   else
-    ;
-    (self.BW_Ev_OnUniqueComponentReplaced)(self, index, previousCmpt, cmpt)
+    self.BW_Ev_OnUniqueComponentReplaced(self, index, previousCmpt, cmpt)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.GetEntityByID = function(self, entityID)
-  -- function num : 0_21
+function BaseWorld:GetEntityByID(entityID)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.WorldHandleCommands = function(self, command_list)
-  -- function num : 0_22
+function BaseWorld:WorldHandleCommands(command_list)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.Internal_CreateSystems = function(self)
-  -- function num : 0_23
+function BaseWorld:Internal_CreateSystems()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.Internal_CreateComponents = function(self)
-  -- function num : 0_24
+function BaseWorld:Internal_CreateComponents()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.Internal_CreateServices = function(self)
-  -- function num : 0_25
+function BaseWorld:Internal_CreateServices()
 end
-
-

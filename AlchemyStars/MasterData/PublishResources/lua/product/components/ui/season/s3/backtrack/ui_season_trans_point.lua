@@ -1,76 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/backtrack/ui_season_trans_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTransPoint", UICustomWidget)
 UISeasonTransPoint = UISeasonTransPoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTransPoint.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonTransPoint:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTransPoint.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonTransPoint:InitWidget()
   self._rectTransform = self:GetUIComponent("RectTransform", "RectTransform")
   self._unSelectCanvasGroup = self:GetUIComponent("CanvasGroup", "unSelect")
   self._selectGo = self:GetGameObject("select")
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTransPoint.SetData = function(self, cfgEvent, pos, scale, clickCb)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R5 in 'UnsetPending'
-
-  (self._rectTransform).localScale = Vector3(scale, scale, scale)
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = pos
+function UISeasonTransPoint:SetData(cfgEvent, pos, scale, clickCb)
+  self._rectTransform.localScale = Vector3(scale, scale, scale)
+  self._rectTransform.anchoredPosition = pos
   self._cfgEvent = cfgEvent
   self._clickCb = clickCb
-  ;
-  (self._selectGo):SetActive(false)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._unSelectCanvasGroup).alpha = 1
+  self._selectGo:SetActive(false)
+  self._unSelectCanvasGroup.alpha = 1
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTransPoint.SetSelect = function(self, bSelect)
-  -- function num : 0_3
+function UISeasonTransPoint:SetSelect(bSelect)
   if bSelect then
-    (self._selectGo):SetActive(true)
-    ;
-    (self._animation):Play("uianim_UISeasonTransPoint_select")
+    self._selectGo:SetActive(true)
+    self._animation:Play("uianim_UISeasonTransPoint_select")
   else
-    ;
-    (self._animation):Play("uianim_UISeasonTransPoint_unSelect")
+    self._animation:Play("uianim_UISeasonTransPoint_unSelect")
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTransPoint.GetCfg = function(self)
-  -- function num : 0_4
+function UISeasonTransPoint:GetCfg()
   return self._cfgEvent
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTransPoint.BtnOnClick = function(self, go)
-  -- function num : 0_5
+function UISeasonTransPoint:BtnOnClick(go)
   if self._clickCb then
-    (self._clickCb)(self)
+    self._clickCb(self)
   end
 end
-
-

@@ -1,80 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_story/ui_quest_small_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestSmallAwardItem", UICustomWidget)
 UIQuestSmallAwardItem = UIQuestSmallAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestSmallAwardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIQuestSmallAwardItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSmallAwardItem.SetData = function(self, index, cfg, callback, scale)
-  -- function num : 0_1 , upvalues : _ENV
-  if not scale then
-    self._scale = UIItemScale.Level3
-    self:_GetComponents()
-    self._index = index
-    self._cfg = cfg
-    self._callback = callback
-    local cfg_item = (Cfg.cfg_item)[(self._cfg).assetid]
-    if cfg_item == nil then
-      (Log.fatal)("[quest] error --> cfg_item is nil ! id --> " .. (self._cfg).assetid)
-      return 
-    end
-    self._cg = cfg_item.Icon
-    self._colorEnum = cfg_item.Color
-    self:_OnValue()
+function UIQuestSmallAwardItem:SetData(index, cfg, callback, scale)
+  self._scale = scale or UIItemScale.Level3
+  self:_GetComponents()
+  self._index = index
+  self._cfg = cfg
+  self._callback = callback
+  local cfg_item = Cfg.cfg_item[self._cfg.assetid]
+  if cfg_item == nil then
+    Log.fatal("[quest] error --> cfg_item is nil ! id --> " .. self._cfg.assetid)
+    return
   end
+  self._cg = cfg_item.Icon
+  self._colorEnum = cfg_item.Color
+  self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSmallAwardItem.OnHide = function(self)
-  -- function num : 0_2
+function UIQuestSmallAwardItem:OnHide()
   self._cg = nil
   self._index = nil
   self._callback = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSmallAwardItem._GetComponents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIQuestSmallAwardItem:_GetComponents()
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItemForQuest")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base, self._scale)
-  ;
-  (self.uiItem):SetClickCallBack(function(go)
-    -- function num : 0_3_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.Base, self._scale)
+  self.uiItem:SetClickCallBack(function(go)
     self:bgOnClick(go)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSmallAwardItem._OnValue = function(self)
-  -- function num : 0_4
+function UIQuestSmallAwardItem:_OnValue()
   local icon = self._cg
   local quality = self._colorEnum
-  local text1 = (self._cfg).count
-  ;
-  (self.uiItem):SetData({icon = icon, quality = quality, text1 = text1, itemId = (self._cfg).assetid})
+  local text1 = self._cfg.count
+  self.uiItem:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = text1,
+    itemId = self._cfg.assetid
+  })
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSmallAwardItem.bgOnClick = function(self, go)
-  -- function num : 0_5
+function UIQuestSmallAwardItem:bgOnClick(go)
   if self._callback then
-    (self._callback)((self._cfg).assetid, (go.transform).position)
+    self._callback(self._cfg.assetid, go.transform.position)
   end
 end
-
-

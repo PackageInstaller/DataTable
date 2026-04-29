@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/cutscene/cutscene_change_fog_color_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("cutscene_base_ins_r")
 _class("CutsceneChangeFogColorInstruction", CutsceneBaseInstruction)
 CutsceneChangeFogColorInstruction = CutsceneChangeFogColorInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneChangeFogColorInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function CutsceneChangeFogColorInstruction:Constructor(paramList)
   self._duration = tonumber(paramList.duration)
   self._colorR = tonumber(paramList.colorR) or 255
   self._colorG = tonumber(paramList.colorG) or 255
@@ -17,33 +10,25 @@ CutsceneChangeFogColorInstruction.Constructor = function(self, paramList)
   self._colorA = tonumber(paramList.colorA) or 255
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneChangeFogColorInstruction.DoInstruction = function(self, TT, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function CutsceneChangeFogColorInstruction:DoInstruction(TT, phaseContext)
   local world = phaseContext:GetCutsceneWorld()
-  local goRenderSetting = ((UnityEngine.GameObject).Find)("[H3DRenderSetting]")
+  local goRenderSetting = UnityEngine.GameObject.Find("[H3DRenderSetting]")
   local csRenderSetting = goRenderSetting:GetComponent("H3DRenderSetting")
   local flogColor = csRenderSetting.FlogColor
   local targetColor = Color(self._colorR / 255, self._colorG / 255, self._colorB / 255, self._colorA / 255)
   local runTime = 0
   self._duration = self._duration / 1000
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : runTime, self, _ENV, flogColor, targetColor, csRenderSetting
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     while runTime <= self._duration do
-      runTime = runTime + (UnityEngine.Time).deltaTime
+      runTime = runTime + UnityEngine.Time.deltaTime
       local timePercent = runTime / self._duration
-      local colorR = (Mathf.Clamp)(timePercent, flogColor.r, targetColor.r)
-      local colorG = (Mathf.Clamp)(timePercent, flogColor.g, targetColor.g)
-      local colorB = (Mathf.Clamp)(timePercent, flogColor.b, targetColor.b)
-      local colorA = (Mathf.Clamp)(timePercent, flogColor.a, targetColor.a)
+      local colorR = Mathf.Clamp(timePercent, flogColor.r, targetColor.r)
+      local colorG = Mathf.Clamp(timePercent, flogColor.g, targetColor.g)
+      local colorB = Mathf.Clamp(timePercent, flogColor.b, targetColor.b)
+      local colorA = Mathf.Clamp(timePercent, flogColor.a, targetColor.a)
       local newColor = Color(colorR, colorG, colorB, colorA)
       csRenderSetting.FlogColor = newColor
       YIELD(TT)
     end
-  end
-)
+  end)
 end
-
-

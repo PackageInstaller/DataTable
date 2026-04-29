@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_charge_curse_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultChargeCurseHP", BuffResultBase)
 BuffResultChargeCurseHP = BuffResultChargeCurseHP
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChargeCurseHP.Constructor = function(self, entityID, val, changedVal, showDamage, showDamageElementType)
-  -- function num : 0_0
+function BuffResultChargeCurseHP:Constructor(entityID, val, changedVal, showDamage, showDamageElementType)
   self._entityID = entityID
   self._curseHPVal = val
   self._changedVal = changedVal
@@ -17,39 +10,22 @@ BuffResultChargeCurseHP.Constructor = function(self, entityID, val, changedVal, 
   self._showDamageElementType = showDamageElementType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChargeCurseHP.GetChangedVal = function(self)
-  -- function num : 0_1
+function BuffResultChargeCurseHP:GetChangedVal()
   return self._changedVal
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChargeCurseHP.GetEntityID = function(self)
-  -- function num : 0_2
+function BuffResultChargeCurseHP:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChargeCurseHP.GetCurseHPVal = function(self)
-  -- function num : 0_3
+function BuffResultChargeCurseHP:GetCurseHPVal()
   return self._curseHPVal
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChargeCurseHP.GetShowDamage = function(self)
-  -- function num : 0_4
+function BuffResultChargeCurseHP:GetShowDamage()
   return self._showDamage
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChargeCurseHP.GetShowDamageElementType = function(self)
-  -- function num : 0_5
+function BuffResultChargeCurseHP:GetShowDamageElementType()
   return self._showDamageElementType
 end
-
-

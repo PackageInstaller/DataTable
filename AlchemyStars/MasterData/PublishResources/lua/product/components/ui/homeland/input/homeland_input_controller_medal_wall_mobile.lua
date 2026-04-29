@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/input/homeland_input_controller_medal_wall_mobile.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homeland_input_controller_medal_wall_base")
 _class("HomelandInputControllerMedalWallMobile", HomelandInputControllerMedalWallBase)
 HomelandInputControllerMedalWallMobile = HomelandInputControllerMedalWallMobile
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandInputControllerMedalWallMobile.Constructor = function(self, homelandClient)
-  -- function num : 0_0
+function HomelandInputControllerMedalWallMobile:Constructor(homelandClient)
   self._homelandClient = homelandClient
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerMedalWallMobile.Init = function(self, mainCharacterController, medalWallCameraController)
-  -- function num : 0_1 , upvalues : _ENV
-  ((HomelandInputControllerMedalWallMobile.super).Init)(self, mainCharacterController, medalWallCameraController)
-  self._homelandBuildManager = (self._homelandClient):BuildManager()
+function HomelandInputControllerMedalWallMobile:Init(mainCharacterController, medalWallCameraController)
+  HomelandInputControllerMedalWallMobile.super.Init(self, mainCharacterController, medalWallCameraController)
+  self._homelandBuildManager = self._homelandClient:BuildManager()
   self._medalWallCamera = medalWallCameraController:CameraCmp()
   self._inputMoveVec = Vector2.zero
   self._movementVec = nil
@@ -27,55 +17,37 @@ HomelandInputControllerMedalWallMobile.Init = function(self, mainCharacterContro
   self._moveYFactor = MedalWallConfig.MobileMoveYFactor
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerMedalWallMobile.Leave = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function HomelandInputControllerMedalWallMobile:Leave()
   self._inputMoveVec = Vector2.zero
   self._movementVec = nil
   self._moveInput = false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerMedalWallMobile.Update = function(self, deltaTimeMS)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandInputControllerMedalWallMobile:Update(deltaTimeMS)
   if self._moveInput then
-    if (self._inputMoveVec).x ~= 0 or (self._inputMoveVec).y ~= 0 then
-      self._movementVec = Vector3((self._inputMoveVec).x, (self._inputMoveVec).y, 0)
+    if self._inputMoveVec.x ~= 0 or self._inputMoveVec.y ~= 0 then
+      self._movementVec = Vector3(self._inputMoveVec.x, self._inputMoveVec.y, 0)
     else
       self._movementVec = nil
     end
     self._moveInput = false
   end
   if self._movementVec then
-    local movementVec = (self._movementVec):SetNormalize() * self:_GetMoveSpeed() * deltaTimeMS / 1000
-    ;
-    (self._medalWallCameraController):HandleMove(movementVec.x, movementVec.y)
+    local movementVec = self._movementVec:SetNormalize() * self:_GetMoveSpeed() * deltaTimeMS / 1000
+    self._medalWallCameraController:HandleMove(movementVec.x, movementVec.y)
     self._movementVec = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerMedalWallMobile.HandleMove = function(self, moveVec)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandInputControllerMedalWallMobile:HandleMove(moveVec)
   self._inputMoveVec = Vector2(moveVec.x * self._moveXFactor, moveVec.y * self._moveYFactor)
   self._moveInput = true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerMedalWallMobile.HandleScale = function(self, scale)
-  -- function num : 0_5
-  (self._medalWallCameraController):HandleScale(scale)
+function HomelandInputControllerMedalWallMobile:HandleScale(scale)
+  self._medalWallCameraController:HandleScale(scale)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerMedalWallMobile.HandleMedalClick = function(self, pos)
-  -- function num : 0_6
-  (self._homelandBuildManager):OnClickMedal((self._medalWallCamera):ScreenPointToRay(pos))
+function HomelandInputControllerMedalWallMobile:HandleMedalClick(pos)
+  self._homelandBuildManager:OnClickMedal(self._medalWallCamera:ScreenPointToRay(pos))
 end
-
-

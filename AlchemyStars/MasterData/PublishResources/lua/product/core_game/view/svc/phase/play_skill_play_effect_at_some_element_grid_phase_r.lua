@@ -1,38 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_play_effect_at_some_element_grid_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillPlayEffectAtSomeElementGridPhase", PlaySkillPhaseBase)
 PlaySkillPlayEffectAtSomeElementGridPhase = PlaySkillPlayEffectAtSomeElementGridPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillPlayEffectAtSomeElementGridPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillPlayEffectAtSomeElementGridPhase:PlayFlight(TT, casterEntity, phaseParam)
   local effectIDArray = phaseParam:GetEffectIDArray()
   local targetElementArray = phaseParam:GetTargetElementArray()
-  local pieceGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Piece)
-  for _,param in pairs(targetElementArray) do
+  local pieceGroup = self._world:GetGroup(self._world.BW_WEMatchers.Piece)
+  for _, param in pairs(targetElementArray) do
     local elementType = tonumber(param)
-    for _,pieceEntity in pairs(pieceGroup:GetEntities()) do
+    for _, pieceEntity in pairs(pieceGroup:GetEntities()) do
       local pieceCmpt = pieceEntity:Piece()
       if pieceCmpt.Type == elementType then
-        self:_PlayEffect((pieceEntity:GridLocation()).Position, effectIDArray)
+        self:_PlayEffect(pieceEntity:GridLocation().Position, effectIDArray)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPlayEffectAtSomeElementGridPhase._PlayEffect = function(self, gridPos, effectIDArray)
-  -- function num : 0_1 , upvalues : _ENV
-  for _,param in ipairs(effectIDArray) do
+function PlaySkillPlayEffectAtSomeElementGridPhase:_PlayEffect(gridPos, effectIDArray)
+  for _, param in ipairs(effectIDArray) do
     local effectID = tonumber(param)
-    ;
-    ((self._world):GetService("Effect")):CreateWorldPositionEffect(effectID, gridPos)
+    self._world:GetService("Effect"):CreateWorldPositionEffect(effectID, gridPos)
   end
 end
-
-

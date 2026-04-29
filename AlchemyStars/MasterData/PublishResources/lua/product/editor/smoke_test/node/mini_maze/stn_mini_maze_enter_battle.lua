@@ -1,35 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/mini_maze/stn_mini_maze_enter_battle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("MiniMaze_EnterBattle", Common_AsyncBase)
 MiniMaze_EnterBattle = MiniMaze_EnterBattle
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MiniMaze_EnterBattle.TaskFunc = function(self, TT, status)
-  -- function num : 0_0 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
-  local params = {runData:GetMissionID(), ECampaignMissionComponentId.ECampaignMissionComponentId_Bloodsucker, runData:GetComponentConfigID()}
-  local game = (GameGlobal.GetModule)(GameMatchModule)
+function MiniMaze_EnterBattle:TaskFunc(TT, status)
+  local runData = self.m_pManager:GetMissionRunData()
+  local params = {
+    runData:GetMissionID(),
+    ECampaignMissionComponentId.ECampaignMissionComponentId_Bloodsucker,
+    runData:GetComponentConfigID()
+  }
+  local game = GameGlobal.GetModule(GameMatchModule)
   local createInfo = game:GetMatchCreateInfo(MatchType.MT_MiniMaze, params)
-  ;
-  (UIN25VampireUtil.EnterBattle)(TT, runData:GetMissionID())
+  UIN25VampireUtil.EnterBattle(TT, runData:GetMissionID())
   YIELD(TT, 1000)
   for i = 1, 3 do
     local res = game:StartMatchTask(TT, MatchType.MT_MiniMaze, TestConst.MissionTeamIndex, createInfo)
     if res:GetSucc() then
       status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
       status:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
-      return 
+      return
     end
     YIELD(TT, 10000)
   end
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
   status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
-  ;
-  (self._manager):Exception_DeclareExceptionThrew("对局创建失败")
+  self._manager:Exception_DeclareExceptionThrew("对局创建失败")
 end
-
-

@@ -1,57 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n15/review/ui_n15_main_controller_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN15MainControllerReview", UIController)
 UIN15MainControllerReview = UIN15MainControllerReview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN15MainControllerReview.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN15MainControllerReview:Constructor()
   self._loginModule = self:GetModule(LoginModule)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._campaignModule = self:GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainControllerReview.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN15MainControllerReview:LoadDataOnEnter(TT, res, uiParams)
   self._campaign = UIActivityCampaign:New()
-  if (self._campaign)._type == -1 or (self._campaign)._id == -1 then
-    (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_REVIEW_N15)
+  if self._campaign._type == -1 or self._campaign._id == -1 then
+    self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_REVIEW_N15)
   end
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
-  self._process = (self._campaignModule):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_REVIEW_N15)
-  self._line_mission_cpt = (self._campaign):GetComponent(ECampaignReviewN15ComponentID.ECAMPAIGN_REVIEW_ReviewN15_LINE_MISSION)
-  self._line_mission_info = (self._campaign):GetComponentInfo(ECampaignReviewN15ComponentID.ECAMPAIGN_REVIEW_ReviewN15_LINE_MISSION)
+  self._process = self._campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_REVIEW_N15)
+  self._line_mission_cpt = self._campaign:GetComponent(ECampaignReviewN15ComponentID.ECAMPAIGN_REVIEW_ReviewN15_LINE_MISSION)
+  self._line_mission_info = self._campaign:GetComponentInfo(ECampaignReviewN15ComponentID.ECAMPAIGN_REVIEW_ReviewN15_LINE_MISSION)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainControllerReview.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN15MainControllerReview:OnShow(uiParams)
   self:_InitParams(uiParams)
   self:_InitWidget()
   self:_RefView()
   self:_PlayAudio()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainControllerReview.OnHide = function(self)
-  -- function num : 0_3
+function UIN15MainControllerReview:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainControllerReview._InitParams = function(self, uiParams)
-  -- function num : 0_4
+function UIN15MainControllerReview:_InitParams(uiParams)
   self._componentState = {}
   self._reds = {}
   self._news = {}
@@ -60,151 +41,86 @@ UIN15MainControllerReview._InitParams = function(self, uiParams)
   self._isOpen = true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainControllerReview._InitWidget = function(self)
-  -- function num : 0_5
+function UIN15MainControllerReview:_InitWidget()
   self._line_state_i = self:GetGameObject("_line_state_i")
   self._line_state_ii = self:GetGameObject("_line_state_ii")
   self._line_state_iii = self:GetGameObject("_line_state_iii")
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._objs)["0"] = self:GetGameObject("_need_hide_i")
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._objs)["1"] = self:GetGameObject("_need_hide_ii")
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._objs)["2"] = self:GetGameObject("_need_hide_iii")
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._objs)["3"] = self:GetGameObject("_need_hide_iiii")
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._objs)["4"] = self:GetGameObject("cover")
+  self._objs["0"] = self:GetGameObject("_need_hide_i")
+  self._objs["1"] = self:GetGameObject("_need_hide_ii")
+  self._objs["2"] = self:GetGameObject("_need_hide_iii")
+  self._objs["3"] = self:GetGameObject("_need_hide_iiii")
+  self._objs["4"] = self:GetGameObject("cover")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainControllerReview._RefView = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN15MainControllerReview:_RefView()
   local back_btn = self:GetUIComponent("UISelectObjectPath", "_backBtn")
   self._commonTopBtn = back_btn:SpawnObject("UICommonTopButton")
-  ;
-  (self._commonTopBtn):SetData(function()
-    -- function num : 0_6_0 , upvalues : self, _ENV
+  self._commonTopBtn:SetData(function()
     self:SwitchState(UIStateType.UIActivityReview)
-  end
-, nil, nil, false, function()
-    -- function num : 0_6_1 , upvalues : self
+  end, nil, nil, false, function()
     self:_ShowBgSpine(true)
-  end
-)
+  end)
   self:_ClearNewFlag()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainControllerReview._ShowBgSpine = function(self, showSpine, animationName)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN15MainControllerReview:_ShowBgSpine(showSpine, animationName)
   self._showSpine = showSpine
   if animationName then
-    (self._animation):Play(animationName)
+    self._animation:Play(animationName)
   else
-    for _,need_hide in pairs(self._objs) do
+    for _, need_hide in pairs(self._objs) do
       need_hide:SetActive(not showSpine)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainControllerReview._RefAllState = function(self, remain_time)
-  -- function num : 0_8
+function UIN15MainControllerReview:_RefAllState(remain_time)
   self:_RefRaffleState(remain_time)
   self:_RefLineState(remain_time)
   self:_RefRedState(remain_time)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainControllerReview._RefRaffleState = function(self, remain_time)
-  -- function num : 0_9
+function UIN15MainControllerReview:_RefRaffleState(remain_time)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainControllerReview._RefLineState = function(self, remain_time)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN15MainControllerReview:_RefLineState(remain_time)
   local remainTime = 0
-  local curtime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  remainTime = (self._line_mission_info).m_close_time - curtime
-  local lock = remainTime > 0
-  ;
-  (self._line_state_i):SetActive(not lock)
-  ;
-  (self._line_state_ii):SetActive(not lock)
-  ;
-  (self._line_state_iii):SetActive(not lock)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local curtime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  remainTime = self._line_mission_info.m_close_time - curtime
+  local lock = 0 < remainTime
+  self._line_state_i:SetActive(not lock)
+  self._line_state_ii:SetActive(not lock)
+  self._line_state_iii:SetActive(not lock)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainControllerReview._RefRedState = function(self, remain_time)
-  -- function num : 0_11
+function UIN15MainControllerReview:_RefRedState(remain_time)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainControllerReview._ClearNewFlag = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  if not ((self._campaign):GetSample()):GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW) then
-    return 
+function UIN15MainControllerReview:_ClearNewFlag()
+  if not self._campaign:GetSample():GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW) then
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
-    ;
-    ((GameGlobal.GetModule)(CampaignModule)):CampaignClearNewFlag(TT, res, (self._campaign)._id)
+    GameGlobal.GetModule(CampaignModule):CampaignClearNewFlag(TT, res, self._campaign._id)
     if res:GetSucc() then
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainControllerReview.BgBtnOnClick = function(self)
-  -- function num : 0_13
+function UIN15MainControllerReview:BgBtnOnClick()
   if self._showSpine then
     self:_ShowBgSpine(false)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainControllerReview.NormalLevelBtnOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
-  (self._campaignModule):CampaignSwitchState(true, UIStateType.UIN15LineMissionControllerReview, UIStateType.UIMain, nil, (self._campaign)._id)
+function UIN15MainControllerReview:NormalLevelBtnOnClick(go)
+  self._campaignModule:CampaignSwitchState(true, UIStateType.UIN15LineMissionControllerReview, UIStateType.UIMain, nil, self._campaign._id)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainControllerReview._PlayAudio = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN15MainControllerReview:_PlayAudio()
   self:StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : _ENV
     YIELD(TT, 125)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N15SwitchState)
-  end
-, self)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N15SwitchState)
+  end, self)
 end
-
-

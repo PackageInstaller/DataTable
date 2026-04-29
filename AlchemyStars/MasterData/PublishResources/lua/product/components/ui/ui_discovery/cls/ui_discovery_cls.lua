@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/cls/ui_discovery_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DiscoveryData", Object)
 DiscoveryData = DiscoveryData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DiscoveryData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function DiscoveryData:Constructor()
   self.cell_size = Vector2.zero
   self.fairy_land_pos = Vector2.zero
   self.chapters = {}
@@ -24,57 +17,42 @@ DiscoveryData.Constructor = function(self)
   self.sections = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.Init = function(self, cfg_discovery)
-  -- function num : 0_1 , upvalues : _ENV
-  self._module = (GameGlobal.GetModule)(MissionModule)
+function DiscoveryData:Init(cfg_discovery)
+  self._module = GameGlobal.GetModule(MissionModule)
   local v2 = cfg_discovery.cell_size
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.cell_size).x = v2.x
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.cell_size).y = v2.y
+  self.cell_size.x = v2.x
+  self.cell_size.y = v2.y
   self.row = cfg_discovery.row
   self.col = cfg_discovery.col
   v2 = cfg_discovery.fairy_land_pos
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.fairy_land_pos).x = v2.x
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.fairy_land_pos).y = v2.y
-  for k,v in pairs(cfg_discovery.chapterBeginPos) do
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self.chapter_begin_pos)[k] = Vector2((v.pos).x, (v.pos).y)
+  self.fairy_land_pos.x = v2.x
+  self.fairy_land_pos.y = v2.y
+  for k, v in pairs(cfg_discovery.chapterBeginPos) do
+    self.chapter_begin_pos[k] = Vector2(v.pos.x, v.pos.y)
   end
-  for k,v in pairs(cfg_discovery.nextChapter) do
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self.next_chapter)[k] = {pos = Vector2((v.pos).x, (v.pos).y), chapterId = v.chapterId, lastNodeId = v.lastNode}
+  for k, v in pairs(cfg_discovery.nextChapter) do
+    self.next_chapter[k] = {
+      pos = Vector2(v.pos.x, v.pos.y),
+      chapterId = v.chapterId,
+      lastNodeId = v.lastNode
+    }
   end
-  local cfg_mission_chapter = (table.cloneconf)((Cfg.cfg_mission_chapter)())
+  local cfg_mission_chapter = table.cloneconf(Cfg.cfg_mission_chapter())
   if not cfg_mission_chapter then
-    (Log.fatal)("### DiscoveryData:Init cfg_mission_chapter is nil.")
+    Log.fatal("### DiscoveryData:Init cfg_mission_chapter is nil.")
   end
   self.chapters = {}
   local chapterId = 0
   local idx = 1
   local fullIdx = 0
-  for k,v in pairs(cfg_mission_chapter) do
+  for k, v in pairs(cfg_mission_chapter) do
     local mainChapterId = v.MainChapterID
     local stageId = v.MissionID
     local wayPointId = v.WayPointID
     local stage = DiscoveryStage:New()
     stage:Init(stageId, wayPointId)
     local node = DiscoveryNode:New()
-    local cfgNode = (cfg_discovery.map_nodes)[wayPointId]
+    local cfgNode = cfg_discovery.map_nodes[wayPointId]
     node:Init(wayPointId, cfgNode, v.Type)
     if v.Type == 1 then
       if chapterId ~= mainChapterId then
@@ -87,29 +65,21 @@ DiscoveryData.Init = function(self, cfg_discovery)
       node.idx = idx
       node.fullIdx = fullIdx
     end
-    -- DECOMPILER ERROR at PC118: Confused about usage of register: R18 in 'UnsetPending'
-
-    if not (self.chapters)[mainChapterId] then
-      (self.chapters)[mainChapterId] = DiscoveryChapter:New()
-      ;
-      ((self.chapters)[mainChapterId]):Init(mainChapterId)
+    if not self.chapters[mainChapterId] then
+      self.chapters[mainChapterId] = DiscoveryChapter:New()
+      self.chapters[mainChapterId]:Init(mainChapterId)
     end
-    ;
-    (table.insert)(node.stages, stage)
-    ;
-    (table.insert)(((self.chapters)[mainChapterId]).nodes, node)
+    table.insert(node.stages, stage)
+    table.insert(self.chapters[mainChapterId].nodes, node)
   end
-  for chapterId,chapter in pairs(self.chapters) do
-    for i,node in ipairs(chapter.nodes) do
-      for j,line in ipairs(cfg_discovery.lines) do
-        -- DECOMPILER ERROR at PC162: Confused about usage of register: R22 in 'UnsetPending'
-
+  for chapterId, chapter in pairs(self.chapters) do
+    for i, node in ipairs(chapter.nodes) do
+      for j, line in ipairs(cfg_discovery.lines) do
         if node.id == line.s then
-          if not (chapter.lines)[line.s] then
-            (chapter.lines)[line.s] = {}
+          if not chapter.lines[line.s] then
+            chapter.lines[line.s] = {}
           end
-          ;
-          (table.insert)((chapter.lines)[line.s], line.e)
+          table.insert(chapter.lines[line.s], line.e)
         end
       end
     end
@@ -117,117 +87,66 @@ DiscoveryData.Init = function(self, cfg_discovery)
   self:InitSections()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.InitSections = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function DiscoveryData:InitSections()
   self.sections = {}
-  for chapterId,chapter in pairs(self.chapters) do
+  for chapterId, chapter in pairs(self.chapters) do
     local stage = chapter:Get1stStage()
     if stage then
       local sectionId = stage.sectionId
-      -- DECOMPILER ERROR at PC19: Confused about usage of register: R8 in 'UnsetPending'
-
-      if not (self.sections)[sectionId] then
-        (self.sections)[sectionId] = DiscoverySection:New()
-        -- DECOMPILER ERROR at PC22: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        ((self.sections)[sectionId]).id = sectionId
-        -- DECOMPILER ERROR at PC31: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        ((self.sections)[sectionId]).index_name = (StringTable.Get)("str_chapter_section_index_" .. sectionId)
-        -- DECOMPILER ERROR at PC40: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        ((self.sections)[sectionId]).name = (StringTable.Get)("str_chapter_section_name_" .. sectionId)
-        local betweenChapters = ((Cfg.cfg_global).ui_discovery_between_chapters).ArrayValue
-        -- DECOMPILER ERROR at PC55: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        ((self.sections)[sectionId]).isBetween = (table.icontains)(betweenChapters, sectionId) or false
-        -- DECOMPILER ERROR at PC62: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        ((self.sections)[sectionId]).icon = ((Cfg.cfg_discovery_section)[sectionId]).icon
+      if not self.sections[sectionId] then
+        self.sections[sectionId] = DiscoverySection:New()
+        self.sections[sectionId].id = sectionId
+        self.sections[sectionId].index_name = StringTable.Get("str_chapter_section_index_" .. sectionId)
+        self.sections[sectionId].name = StringTable.Get("str_chapter_section_name_" .. sectionId)
+        local betweenChapters = Cfg.cfg_global.ui_discovery_between_chapters.ArrayValue
+        self.sections[sectionId].isBetween = table.icontains(betweenChapters, sectionId) or false
+        self.sections[sectionId].icon = Cfg.cfg_discovery_section[sectionId].icon
       end
-      do
-        do
-          -- DECOMPILER ERROR at PC72: Confused about usage of register: R8 in 'UnsetPending'
-
-          if not (((self.sections)[sectionId]).chapterIds)[chapterId] then
-            (((self.sections)[sectionId]).chapterIds)[chapterId] = true
-          end
-          -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      if not self.sections[sectionId].chapterIds[chapterId] then
+        self.sections[sectionId].chapterIds[chapterId] = true
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetChapters = function(self)
-  -- function num : 0_3
+function DiscoveryData:GetChapters()
   return self:GetVisibleChapters()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetVisibleChapters = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function DiscoveryData:GetVisibleChapters()
   local dict = {}
   if self.chapters then
-    for k,v in pairs(self.chapters) do
+    for k, v in pairs(self.chapters) do
       if v:State() then
         dict[k] = v
       end
     end
   end
-  do
-    return dict
-  end
+  return dict
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetVisibleChaptersOfSection = function(self, sectionId)
-  -- function num : 0_5 , upvalues : _ENV
+function DiscoveryData:GetVisibleChaptersOfSection(sectionId)
   local vChapters = {}
   if self.chapters then
-    for k,chapter in pairs(self.chapters) do
+    for k, chapter in pairs(self.chapters) do
       if chapter:GetSectionId() == sectionId and chapter:State() then
-        (table.insert)(vChapters, chapter)
+        table.insert(vChapters, chapter)
       end
     end
   end
-  do
-    return vChapters
-  end
+  return vChapters
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.Update = function(self, passStages, canActiveStages)
-  -- function num : 0_6 , upvalues : _ENV
-  for k,v in pairs(self.chapters) do
+function DiscoveryData:Update(passStages, canActiveStages)
+  for k, v in pairs(self.chapters) do
     v:UpdateState()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetNodeDataByStageId = function(self, stageId)
-  -- function num : 0_7 , upvalues : _ENV
-  for _,chapter in pairs(self.chapters) do
-    for _,node in ipairs(chapter.nodes) do
-      for _,stage in ipairs(node.stages) do
+function DiscoveryData:GetNodeDataByStageId(stageId)
+  for _, chapter in pairs(self.chapters) do
+    for _, node in ipairs(chapter.nodes) do
+      for _, stage in ipairs(node.stages) do
         if stage.id == stageId then
           return node
         end
@@ -237,28 +156,20 @@ DiscoveryData.GetNodeDataByStageId = function(self, stageId)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetCanMoveNodeDataByStageId = function(self, stageId)
-  -- function num : 0_8
+function DiscoveryData:GetCanMoveNodeDataByStageId(stageId)
   local node = self:GetNodeDataByStageId(stageId)
   local stage = node:GetStageById(stageId)
   if not stage.state then
     local nodeT = self:GetCanPlayNode()
     return nodeT
   else
-    do
-      do return node end
-    end
+    return node
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetNodeDataByNodeId = function(self, nodeId)
-  -- function num : 0_9 , upvalues : _ENV
-  for _,chapter in pairs(self.chapters) do
-    for _,node in ipairs(chapter.nodes) do
+function DiscoveryData:GetNodeDataByNodeId(nodeId)
+  for _, chapter in pairs(self.chapters) do
+    for _, node in ipairs(chapter.nodes) do
       if node.id == nodeId then
         return node
       end
@@ -267,30 +178,22 @@ DiscoveryData.GetNodeDataByNodeId = function(self, nodeId)
   return nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetPosByNodeId = function(self, nodeId, isV3)
-  -- function num : 0_10 , upvalues : _ENV
+function DiscoveryData:GetPosByNodeId(nodeId, isV3)
   local node = self:GetNodeDataByNodeId(nodeId)
-  if node and (not isV3 or not Vector3((node.pos).x, (node.pos).y)) then
-    do return node.pos end
-    if not isV3 or not Vector3.zero then
-      return Vector2.zero
-    end
+  if node then
+    return isV3 and Vector3(node.pos.x, node.pos.y) or node.pos
   end
+  return isV3 and Vector3.zero or Vector2.zero
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetCanReviewStorys = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function DiscoveryData:GetCanReviewStorys()
   local stages = {}
-  for _,chapter in pairs(self.chapters) do
-    for _,node in ipairs(chapter.nodes) do
+  for _, chapter in pairs(self.chapters) do
+    for _, node in ipairs(chapter.nodes) do
       if node:State() == DiscoveryStageState.Nomal then
-        local stage = (node.stages)[1]
+        local stage = node.stages[1]
         if stage:IsThereStory() then
-          (table.insert)(stages, stage)
+          table.insert(stages, stage)
         end
       end
     end
@@ -298,27 +201,21 @@ DiscoveryData.GetCanReviewStorys = function(self)
   return stages
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetStoryByStageIdStoryType = function(self, stageId, storyType)
-  -- function num : 0_12
+function DiscoveryData:GetStoryByStageIdStoryType(stageId, storyType)
   local node = self:GetNodeDataByStageId(stageId)
   if node then
-    return (((node.stages)[1]).story):GetStoryByStoryType(storyType)
+    return node.stages[1].story:GetStoryByStoryType(storyType)
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetChapterByStageId = function(self, stageId)
-  -- function num : 0_13 , upvalues : _ENV
+function DiscoveryData:GetChapterByStageId(stageId)
   if stageId == 0 then
     return self:Get1stChapter()
   end
-  for _,chapter in pairs(self.chapters) do
-    for _,node in ipairs(chapter.nodes) do
-      for _,stage in ipairs(node.stages) do
+  for _, chapter in pairs(self.chapters) do
+    for _, node in ipairs(chapter.nodes) do
+      for _, stage in ipairs(node.stages) do
         if stage.id == stageId then
           return chapter
         end
@@ -327,40 +224,28 @@ DiscoveryData.GetChapterByStageId = function(self, stageId)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.Get1stChapter = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  for k,v in pairs(self.chapters) do
-    do return v end
+function DiscoveryData:Get1stChapter()
+  for k, v in pairs(self.chapters) do
+    return v
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetLastChapter = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local last = nil
+function DiscoveryData:GetLastChapter()
+  local last
   local chapters = self:GetChapters()
-  for k,v in pairs(chapters) do
+  for k, v in pairs(chapters) do
     last = v
   end
   return last
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetChapterByChapterId = function(self, chapterId)
-  -- function num : 0_16
-  return (self.chapters)[chapterId]
+function DiscoveryData:GetChapterByChapterId(chapterId)
+  return self.chapters[chapterId]
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetCanPlayChapterNode = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function DiscoveryData:GetCanPlayChapterNode()
   local chapters = self:GetChapters()
-  for _,chapter in pairs(chapters) do
+  for _, chapter in pairs(chapters) do
     local node = chapter:Get1stCanPlayNode()
     if node then
       return chapter, node
@@ -368,14 +253,11 @@ DiscoveryData.GetCanPlayChapterNode = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetCanPlayNode = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local nodeT = nil
+function DiscoveryData:GetCanPlayNode()
+  local nodeT
   local chapters = self:GetChapters()
-  for _,chapter in pairs(chapters) do
-    for _,node in ipairs(chapter.nodes) do
+  for _, chapter in pairs(chapters) do
+    for _, node in ipairs(chapter.nodes) do
       if node:State() then
         nodeT = node
       end
@@ -384,62 +266,45 @@ DiscoveryData.GetCanPlayNode = function(self)
   return nodeT
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetCurPosNode = function(self)
-  -- function num : 0_19
+function DiscoveryData:GetCurPosNode()
   if self._curPosNodeId == 0 then
     local fstChapter = self:Get1stChapter()
     local fstNode = fstChapter:Get1stNode()
     return fstNode
   end
-  do
-    if self._curPosNodeId < 0 then
-      self._curPosNodeId = 0
-      return self:GetCurPosNode()
-    end
-    local node = self:GetNodeDataByNodeId(self._curPosNodeId)
-    return node
+  if self._curPosNodeId < 0 then
+    self._curPosNodeId = 0
+    return self:GetCurPosNode()
   end
+  local node = self:GetNodeDataByNodeId(self._curPosNodeId)
+  return node
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.SetCurPosNodeId = function(self, nodeId)
-  -- function num : 0_20
+function DiscoveryData:SetCurPosNodeId(nodeId)
   if nodeId < 0 then
-    return 
+    return
   end
   self._curPosNodeId = nodeId
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetCurPosChapter = function(self)
-  -- function num : 0_21
+function DiscoveryData:GetCurPosChapter()
   local node = self:GetCurPosNode()
   if node then
     return node:GetChapter()
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.FirstFinishMissionID = function(self, missionid)
-  -- function num : 0_22
+function DiscoveryData:FirstFinishMissionID(missionid)
   self.firstMissionID = missionid
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.UpdatePosByEnter = function(self, enterFlag, param)
-  -- function num : 0_23 , upvalues : _ENV
+function DiscoveryData:UpdatePosByEnter(enterFlag, param)
   if enterFlag == 1 then
     local canPlayChapter, canPlayNode = self:GetCanPlayChapterNode()
     if canPlayChapter and canPlayNode then
       self:SetCurPosNodeId(canPlayNode.id)
     else
-      local module = (GameGlobal.GetModule)(MissionModule)
+      local module = GameGlobal.GetModule(MissionModule)
       local stageId = module:GetCurMissionID()
       local chapter = self:GetChapterByStageId(stageId)
       if not chapter or not chapter:State() then
@@ -448,104 +313,68 @@ DiscoveryData.UpdatePosByEnter = function(self, enterFlag, param)
       local fstNode = chapter:Get1stNode()
       self:SetCurPosNodeId(fstNode.id)
     end
-  else
-    do
-      if enterFlag == 2 then
-        local chapterId = param
-        local chapter = self:GetChapterByChapterId(chapterId)
-        local node = chapter:Get1stCanPlayNode()
-        if node then
-          self:SetCurPosNodeId(node.id)
-        else
-          local fstNode = chapter:Get1stNode()
-          self:SetCurPosNodeId(fstNode.id)
-        end
-      else
-        do
-          if enterFlag == 3 then
-            local stageId = param
-            local node = self:GetNodeDataByStageId(stageId)
-            self:SetCurPosNodeId(node.id)
-            self.showUIStage = true
-          else
-            do
-              if enterFlag == 4 then
-                local canPlayChapter, canPlayNode = self:GetCanPlayChapterNode()
-                if canPlayChapter and canPlayNode then
-                  local fstNode = canPlayChapter:Get1stNode()
-                  if fstNode.id == canPlayNode.id and canPlayNode:IsFirstShow() then
-                    self:SetCurPosNodeId(canPlayNode.id)
-                  end
-                end
-              else
-                do
-                  if enterFlag == 5 then
-                    local stageId = param
-                    local node = self:GetNodeDataByStageId(stageId)
-                    self:SetCurPosNodeId(node.id)
-                  else
-                    do
-                      if enterFlag == 6 then
-                        local stageId = param
-                        local node = self:GetCanMoveNodeDataByStageId(stageId)
-                        self:SetCurPosNodeId(node.id)
-                        self.showUIStage = true
-                      else
-                        do
-                          if enterFlag == 7 then
-                            local stageId = param
-                            local grassData = ((GameGlobal.GetModule)(CampaignModule)):GetGraveRobberData()
-                            if stageId then
-                              local nodeGrass = grassData:GetNodeByStageId(stageId)
-                              local chapter = self:GetChapterByChapterId(nodeGrass.chapterId)
-                              local node = chapter:Get1stNode()
-                              self:SetCurPosNodeId(node.id)
-                              grassData:SaveGrassNodeFirst(nodeGrass)
-                            else
-                              do
-                                local canPlayGrassNode = grassData:GetCanPlayNode()
-                                local chapter = self:GetChapterByChapterId(canPlayGrassNode.chapterId)
-                                do
-                                  local canPlayMainNode = chapter:Get1stNode()
-                                  self:SetCurPosNodeId(canPlayMainNode.id)
-                                  grassData:SaveGrassNodeFirst(canPlayGrassNode)
-                                  if enterFlag == 8 then
-                                    self._isDiff = true
-                                    local uiDiffModule = (GameGlobal.GetUIModule)(DifficultyMissionModule)
-                                    uiDiffModule:SetMoveNodePos(param)
-                                  else
-                                    do
-                                      if enterFlag == 9 then
-                                        self._showDiffStage = true
-                                        self._showNodeID = param
-                                        self._isDiff = true
-                                        local uiDiffModule = (GameGlobal.GetUIModule)(DifficultyMissionModule)
-                                        uiDiffModule:SetMoveNodePos(param)
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+  elseif enterFlag == 2 then
+    local chapterId = param
+    local chapter = self:GetChapterByChapterId(chapterId)
+    local node = chapter:Get1stCanPlayNode()
+    if node then
+      self:SetCurPosNodeId(node.id)
+    else
+      local fstNode = chapter:Get1stNode()
+      self:SetCurPosNodeId(fstNode.id)
+    end
+  elseif enterFlag == 3 then
+    local stageId = param
+    local node = self:GetNodeDataByStageId(stageId)
+    self:SetCurPosNodeId(node.id)
+    self.showUIStage = true
+  elseif enterFlag == 4 then
+    local canPlayChapter, canPlayNode = self:GetCanPlayChapterNode()
+    if canPlayChapter and canPlayNode then
+      local fstNode = canPlayChapter:Get1stNode()
+      if fstNode.id == canPlayNode.id and canPlayNode:IsFirstShow() then
+        self:SetCurPosNodeId(canPlayNode.id)
       end
     end
+  elseif enterFlag == 5 then
+    local stageId = param
+    local node = self:GetNodeDataByStageId(stageId)
+    self:SetCurPosNodeId(node.id)
+  elseif enterFlag == 6 then
+    local stageId = param
+    local node = self:GetCanMoveNodeDataByStageId(stageId)
+    self:SetCurPosNodeId(node.id)
+    self.showUIStage = true
+  elseif enterFlag == 7 then
+    local stageId = param
+    local grassData = GameGlobal.GetModule(CampaignModule):GetGraveRobberData()
+    if stageId then
+      local nodeGrass = grassData:GetNodeByStageId(stageId)
+      local chapter = self:GetChapterByChapterId(nodeGrass.chapterId)
+      local node = chapter:Get1stNode()
+      self:SetCurPosNodeId(node.id)
+      grassData:SaveGrassNodeFirst(nodeGrass)
+    else
+      local canPlayGrassNode = grassData:GetCanPlayNode()
+      local chapter = self:GetChapterByChapterId(canPlayGrassNode.chapterId)
+      local canPlayMainNode = chapter:Get1stNode()
+      self:SetCurPosNodeId(canPlayMainNode.id)
+      grassData:SaveGrassNodeFirst(canPlayGrassNode)
+    end
+  elseif enterFlag == 8 then
+    self._isDiff = true
+    local uiDiffModule = GameGlobal.GetUIModule(DifficultyMissionModule)
+    uiDiffModule:SetMoveNodePos(param)
+  elseif enterFlag == 9 then
+    self._showDiffStage = true
+    self._showNodeID = param
+    self._isDiff = true
+    local uiDiffModule = GameGlobal.GetUIModule(DifficultyMissionModule)
+    uiDiffModule:SetMoveNodePos(param)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetDiffNodeInfo = function(self)
-  -- function num : 0_24
+function DiscoveryData:GetDiffNodeInfo()
   if self._isDiff then
     self._isDiff = false
     return true
@@ -553,43 +382,30 @@ DiscoveryData.GetDiffNodeInfo = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.EnterStateUIDiscovery = function(enterFlag, param)
-  -- function num : 0_25 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(MissionModule)
+function DiscoveryData.EnterStateUIDiscovery(enterFlag, param)
+  local module = GameGlobal.GetModule(MissionModule)
   local data = module:GetDiscoveryData()
   data:UpdatePosByEnter(enterFlag, param)
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIDiscovery")
+  GameGlobal.UIStateManager():ShowDialog("UIDiscovery")
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.IsChapterReachUnlockTime = function(self, chapterId)
-  -- function num : 0_26
+function DiscoveryData:IsChapterReachUnlockTime(chapterId)
   local chapter = self:GetChapterByChapterId(chapterId)
   local isUnlock = chapter:IsReachUnlockTime()
   return isUnlock
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetDiscoverySectionBySectionId = function(self, sectionId)
-  -- function num : 0_27 , upvalues : _ENV
-  for _,section in pairs(self.sections) do
+function DiscoveryData:GetDiscoverySectionBySectionId(sectionId)
+  for _, section in pairs(self.sections) do
     if sectionId == section.id then
       return section
     end
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetDiscoverySectionByChapterId = function(self, chapterId)
-  -- function num : 0_28 , upvalues : _ENV
-  for _,section in pairs(self.sections) do
-    for cId,b in pairs(section.chapterIds) do
+function DiscoveryData:GetDiscoverySectionByChapterId(chapterId)
+  for _, section in pairs(self.sections) do
+    for cId, b in pairs(section.chapterIds) do
       if chapterId == cId then
         return section
       end
@@ -597,69 +413,54 @@ DiscoveryData.GetDiscoverySectionByChapterId = function(self, chapterId)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryData.GetDiscoveryLastSection = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  local len = (table.count)(self.sections)
-  local last = (self.sections)[len]
+function DiscoveryData:GetDiscoveryLastSection()
+  local len = table.count(self.sections)
+  local last = self.sections[len]
   return last
 end
 
 _class("DiscoverySection", Object)
 DiscoverySection = DiscoverySection
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
 
-DiscoverySection.Constructor = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function DiscoverySection:Constructor()
   self.id = 0
   self.index_name = ""
   self.name = ""
   self.chapterIds = {}
   self.isBetween = false
   self.icon = ""
-  self.data = ((GameGlobal.GetModule)(MissionModule)):GetDiscoveryData()
+  self.data = GameGlobal.GetModule(MissionModule):GetDiscoveryData()
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoverySection.State = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function DiscoverySection:State()
   local completeCount = 0
-  for chapterId,b in pairs(self.chapterIds) do
-    local chapter = (self.data):GetChapterByChapterId(chapterId)
+  for chapterId, b in pairs(self.chapterIds) do
+    local chapter = self.data:GetChapterByChapterId(chapterId)
     if chapter then
       local state = chapter:State()
       if state == DiscoveryStageState.CanPlay then
         return DiscoveryStageState.CanPlay, chapterId
-      else
-        if state == DiscoveryStageState.Nomal then
-          completeCount = completeCount + 1
-        end
+      elseif state == DiscoveryStageState.Nomal then
+        completeCount = completeCount + 1
       end
     end
   end
-  if completeCount == (table.count)(self.chapterIds) then
+  if completeCount == table.count(self.chapterIds) then
     return DiscoveryStageState.Nomal
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoverySection.CanCollect = function(self)
-  -- function num : 0_32
-  local chapterAwardData = (self.data).chapterAwardData
+function DiscoverySection:CanCollect()
+  local chapterAwardData = self.data.chapterAwardData
   local red = chapterAwardData:ChapterListCanCollect(self.chapterIds)
   return red
 end
 
 _class("DiscoveryChapter", Object)
 DiscoveryChapter = DiscoveryChapter
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
 
-DiscoveryChapter.Constructor = function(self)
-  -- function num : 0_33
+function DiscoveryChapter:Constructor()
   self.id = 0
   self.index_name = ""
   self.index_name_en = ""
@@ -669,33 +470,24 @@ DiscoveryChapter.Constructor = function(self)
   self.lines = {}
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryChapter.Init = function(self, id)
-  -- function num : 0_34 , upvalues : _ENV
+function DiscoveryChapter:Init(id)
   self.id = id
-  self.index_name = (StringTable.Get)("str_chapter_idx_" .. id)
-  self.index_name_en = (StringTable.Get)("str_chapter_idx_" .. id .. "_en")
-  self.name = (StringTable.Get)("str_chapter_" .. id)
-  self.name_en = (StringTable.Get)("str_chapter_" .. id .. "_en")
+  self.index_name = StringTable.Get("str_chapter_idx_" .. id)
+  self.index_name_en = StringTable.Get("str_chapter_idx_" .. id .. "_en")
+  self.name = StringTable.Get("str_chapter_" .. id)
+  self.name_en = StringTable.Get("str_chapter_" .. id .. "_en")
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryChapter.UpdateState = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  for _,node in ipairs(self.nodes) do
+function DiscoveryChapter:UpdateState()
+  for _, node in ipairs(self.nodes) do
     node:UpdateState()
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryChapter.IsComplete = function(self)
-  -- function num : 0_36 , upvalues : _ENV
+function DiscoveryChapter:IsComplete()
   local totalCount = 0
   local passCount = 0
-  for _,node in ipairs(self.nodes) do
+  for _, node in ipairs(self.nodes) do
     if node.type == DiscoveryNodeType.Main then
       totalCount = totalCount + 1
       if node:State() == DiscoveryStageState.Nomal then
@@ -703,16 +495,12 @@ DiscoveryChapter.IsComplete = function(self)
       end
     end
   end
-  do return totalCount == passCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return totalCount == passCount
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryChapter.IsThreeComplete = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function DiscoveryChapter:IsThreeComplete()
   local three = true
-  for _,node in ipairs(self.nodes) do
+  for _, node in ipairs(self.nodes) do
     if node.type == DiscoveryNodeType.Main or node.type == DiscoveryNodeType.Branch then
       local stages = node.stages
       if next(stages) then
@@ -729,69 +517,50 @@ DiscoveryChapter.IsThreeComplete = function(self)
   return three
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryChapter.Get1stNode = function(self)
-  -- function num : 0_38 , upvalues : _ENV
-  for _,node in ipairs(self.nodes) do
+function DiscoveryChapter:Get1stNode()
+  for _, node in ipairs(self.nodes) do
     if node.idx == 1 then
       return node
     end
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryChapter.Get1stStage = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function DiscoveryChapter:Get1stStage()
   local node = self:Get1stNode()
   if node then
-    for _,stage in ipairs(node.stages) do
-      do return stage end
+    for _, stage in ipairs(node.stages) do
+      return stage
     end
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryChapter.Get1stCanPlayNode = function(self)
-  -- function num : 0_40 , upvalues : _ENV
-  for _,node in ipairs(self.nodes) do
+function DiscoveryChapter:Get1stCanPlayNode()
+  for _, node in ipairs(self.nodes) do
     if node.type == DiscoveryNodeType.Main and node:State() == DiscoveryStageState.CanPlay then
       return node
     end
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryChapter.State = function(self)
-  -- function num : 0_41 , upvalues : _ENV
-  do
-    if self:IsReachUnlockTime() then
-      local completeCount = 0
-      for _,node in ipairs(self.nodes) do
-        local state = node:State()
-        if state == DiscoveryStageState.CanPlay then
-          return DiscoveryStageState.CanPlay
-        else
-          if state == DiscoveryStageState.Nomal then
-            completeCount = completeCount + 1
-          end
-        end
-      end
-      if completeCount == (table.count)(self.nodes) then
-        return DiscoveryStageState.Nomal
+function DiscoveryChapter:State()
+  if self:IsReachUnlockTime() then
+    local completeCount = 0
+    for _, node in ipairs(self.nodes) do
+      local state = node:State()
+      if state == DiscoveryStageState.CanPlay then
+        return DiscoveryStageState.CanPlay
+      elseif state == DiscoveryStageState.Nomal then
+        completeCount = completeCount + 1
       end
     end
-    return nil
+    if completeCount == table.count(self.nodes) then
+      return DiscoveryStageState.Nomal
+    end
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryChapter.PrevNode = function(self, nodeId)
-  -- function num : 0_42 , upvalues : _ENV
+function DiscoveryChapter:PrevNode(nodeId)
   local prevStageId = 0
   local node = self:GetNodeByNodeId(nodeId)
   if node then
@@ -799,66 +568,49 @@ DiscoveryChapter.PrevNode = function(self, nodeId)
     if fstNode.id == node.id then
       return nil
     end
-    for istage,vstage in ipairs(node.stages) do
-      prevStageId = tonumber((vstage.prevStageId)[1])
-      do break end
+    for istage, vstage in ipairs(node.stages) do
+      prevStageId = tonumber(vstage.prevStageId[1])
+      break
     end
   end
-  do
-    local data = self:GetDiscoveryData()
-    local node = data:GetNodeDataByStageId(prevStageId)
-    return node
-  end
+  local data = self:GetDiscoveryData()
+  local node = data:GetNodeDataByStageId(prevStageId)
+  return node
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryChapter.GetDiscoveryData = function(self)
-  -- function num : 0_43 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(MissionModule)
+function DiscoveryChapter:GetDiscoveryData()
+  local module = GameGlobal.GetModule(MissionModule)
   return module:GetDiscoveryData()
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryChapter.GetNodeByNodeId = function(self, nodeId)
-  -- function num : 0_44 , upvalues : _ENV
-  for _,node in ipairs(self.nodes) do
+function DiscoveryChapter:GetNodeByNodeId(nodeId)
+  for _, node in ipairs(self.nodes) do
     if node.id == nodeId then
       return node
     end
   end
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryChapter.GetSectionId = function(self)
-  -- function num : 0_45
+function DiscoveryChapter:GetSectionId()
   local stage = self:Get1stStage()
   return stage.sectionId
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryChapter.IsReachUnlockTime = function(self)
-  -- function num : 0_46 , upvalues : _ENV
-  local cfg = ((Cfg.cfg_global).ui_chapter_unlock_time).TableValue
+function DiscoveryChapter:IsReachUnlockTime()
+  local cfg = Cfg.cfg_global.ui_chapter_unlock_time.TableValue
   if not cfg then
     return false
   end
   local unlockTimestamp = cfg[self.id] or 0
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   local isUnlock = unlockTimestamp < nowTimestamp
-  do return isUnlock end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return isUnlock
 end
 
 _class("DiscoveryNode", Object)
 DiscoveryNode = DiscoveryNode
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
 
-DiscoveryNode.Constructor = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function DiscoveryNode:Constructor()
   self.id = 0
   self.idx = 0
   self.fullIdx = 0
@@ -867,194 +619,134 @@ DiscoveryNode.Constructor = function(self)
   self.pos = Vector2.zero
   self.stages = {}
   self.type = DiscoveryNodeType.Main
-  self._missionModule = (GameGlobal.GetModule)(MissionModule)
+  self._missionModule = GameGlobal.GetModule(MissionModule)
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryNode.Init = function(self, id, nodeV, type)
-  -- function num : 0_48 , upvalues : _ENV
+function DiscoveryNode:Init(id, nodeV, type)
   if not nodeV then
-    (Log.fatal)("### no waypoint in cfg_discovery. WayPointID=", id)
+    Log.fatal("### no waypoint in cfg_discovery. WayPointID=", id)
   end
   self.id = id
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.pos).x = (nodeV.pos).x
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.pos).y = (nodeV.pos).y
-  local cfgv = (Cfg.cfg_waypoint)[id]
+  self.pos.x = nodeV.pos.x
+  self.pos.y = nodeV.pos.y
+  local cfgv = Cfg.cfg_waypoint[id]
   if cfgv then
     self.monstercg = cfgv.MonsterCG
-    self.name = (StringTable.Get)(cfgv.Name)
+    self.name = StringTable.Get(cfgv.Name)
   end
   if type == 1 then
     self.type = DiscoveryNodeType.Main
-  else
-    if type == 2 then
-      self.type = DiscoveryNodeType.Branch
-    end
+  elseif type == 2 then
+    self.type = DiscoveryNodeType.Branch
   end
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryNode.UpdateState = function(self)
-  -- function num : 0_49 , upvalues : _ENV
-  for i,v in ipairs(self.stages) do
-    local passStage = (self._missionModule):GetPassMissionById(v.id)
-    local canActiveSatge = (self._missionModule):GetCanActiveMissionById(v.id)
-    do
-      do
-        if passStage then
-          local starCount, completeStarList = (self._missionModule):ParseStarInfo(passStage.star)
-          v:UpdateStar(starCount)
-          v:UpdateCondition(completeStarList)
-          v:UpdateState(DiscoveryStageState.Nomal)
-        end
-        if canActiveSatge then
-          v:UpdateStar(0)
-          v:UpdateState(DiscoveryStageState.CanPlay)
-        end
-        -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+function DiscoveryNode:UpdateState()
+  for i, v in ipairs(self.stages) do
+    local passStage = self._missionModule:GetPassMissionById(v.id)
+    local canActiveSatge = self._missionModule:GetCanActiveMissionById(v.id)
+    if passStage then
+      local starCount, completeStarList = self._missionModule:ParseStarInfo(passStage.star)
+      v:UpdateStar(starCount)
+      v:UpdateCondition(completeStarList)
+      v:UpdateState(DiscoveryStageState.Nomal)
+    end
+    if canActiveSatge then
+      v:UpdateStar(0)
+      v:UpdateState(DiscoveryStageState.CanPlay)
     end
   end
   if self.id then
-    (Log.debug)("###[DiscoveryNode] UpdateState pass mission id : ", self.id)
+    Log.debug("###[DiscoveryNode] UpdateState pass mission id : ", self.id)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryNodeStateChange, self.id)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryNodeStateChange, self.id)
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryNode.State = function(self)
-  -- function num : 0_50 , upvalues : _ENV
+function DiscoveryNode:State()
   if self.stages then
     local passCount = 0
     local canActiveCount = 0
-    for i,v in ipairs(self.stages) do
+    for i, v in ipairs(self.stages) do
       if v.state == DiscoveryStageState.Nomal then
         passCount = passCount + 1
-      else
-        if v.state == DiscoveryStageState.CanPlay then
-          canActiveCount = canActiveCount + 1
-        end
+      elseif v.state == DiscoveryStageState.CanPlay then
+        canActiveCount = canActiveCount + 1
       end
     end
-    if passCount > 0 then
+    if 0 < passCount then
       return DiscoveryStageState.Nomal
     end
-    if canActiveCount > 0 then
+    if 0 < canActiveCount then
       return DiscoveryStageState.CanPlay
     end
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryNode.LevelReach = function(self)
-  -- function num : 0_51 , upvalues : _ENV
+function DiscoveryNode:LevelReach()
   if GameSingle then
     return true
   end
-  for i,v in ipairs(self.stages) do
-    do return v:LevelReach() end
+  for i, v in ipairs(self.stages) do
+    return v:LevelReach()
   end
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryNode.GetStageType = function(self)
-  -- function num : 0_52 , upvalues : _ENV
-  for i,v in ipairs(self.stages) do
-    do return v.type end
+function DiscoveryNode:GetStageType()
+  for i, v in ipairs(self.stages) do
+    return v.type
   end
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryNode.GetCanPlayStages = function(self)
-  -- function num : 0_53 , upvalues : _ENV
+function DiscoveryNode:GetCanPlayStages()
   local stages = {}
-  for i,v in ipairs(self.stages) do
+  for i, v in ipairs(self.stages) do
     if v.state then
-      (table.insert)(stages, v)
+      table.insert(stages, v)
     end
   end
   return stages
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryNode.GetStageById = function(self, stageId)
-  -- function num : 0_54 , upvalues : _ENV
+function DiscoveryNode:GetStageById(stageId)
   if self.stages and #self.stages > 0 then
-    for i,v in ipairs(self.stages) do
+    for i, v in ipairs(self.stages) do
       if v.id == stageId then
         return v
       end
     end
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryNode.IsFirstShow = function(self)
-  -- function num : 0_55 , upvalues : _ENV
+function DiscoveryNode:IsFirstShow()
   local playerPrefsKey = self:GetFirstShowKey()
-  local isFirst = ((UnityEngine.PlayerPrefs).GetInt)(playerPrefsKey, 0)
-  do return isFirst == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local isFirst = UnityEngine.PlayerPrefs.GetInt(playerPrefsKey, 0)
+  return isFirst == 0
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryNode.SaveIsFirstShow = function(self)
-  -- function num : 0_56 , upvalues : _ENV
+function DiscoveryNode:SaveIsFirstShow()
   local playerPrefsKey = self:GetFirstShowKey()
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(playerPrefsKey, 1)
+  UnityEngine.PlayerPrefs.SetInt(playerPrefsKey, 1)
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryNode.GetFirstShowKey = function(self)
-  -- function num : 0_57
+function DiscoveryNode:GetFirstShowKey()
   local playerPrefsKey = self:GetPstId() .. "DiscoveryNodeIsFirstShow" .. self.id
   return playerPrefsKey
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryNode.GetPstId = function(self)
-  -- function num : 0_58 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function DiscoveryNode:GetPstId()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   return roleModule:GetPstId()
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryNode.GetChapter = function(self)
-  -- function num : 0_59 , upvalues : _ENV
+function DiscoveryNode:GetChapter()
   if self.stages then
-    for i,v in ipairs(self.stages) do
-      do return v:GetChapter() end
+    for i, v in ipairs(self.stages) do
+      return v:GetChapter()
     end
   end
 end
 
 local DiscoveryNodeType = {Main = 1, Branch = 2}
 _enum("DiscoveryNodeType", DiscoveryNodeType)
-

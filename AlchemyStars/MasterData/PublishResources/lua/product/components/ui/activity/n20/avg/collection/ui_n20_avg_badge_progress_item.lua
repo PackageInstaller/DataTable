@@ -1,91 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/collection/ui_n20_avg_badge_progress_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20AVGBadgeProgressItem", UICustomWidget)
 UIN20AVGBadgeProgressItem = UIN20AVGBadgeProgressItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20AVGBadgeProgressItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN20AVGData()
+function UIN20AVGBadgeProgressItem:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN20AVGData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGBadgeProgressItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self.rt = (self:GetGameObject()):GetComponent(typeof(UnityEngine.RectTransform))
-  ;
-  (UICommonHelper:GetInstance()):RectTransformAnchor2Left(self.rt)
+function UIN20AVGBadgeProgressItem:OnShow()
+  self.rt = self:GetGameObject():GetComponent(typeof(UnityEngine.RectTransform))
+  UICommonHelper:GetInstance():RectTransformAnchor2Left(self.rt)
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
   self.got = self:GetGameObject("got")
   self.canGet = self:GetGameObject("canGet")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGBadgeProgressItem.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgIcon):DestoryLastImage()
+function UIN20AVGBadgeProgressItem:OnHide()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGBadgeProgressItem.Flush = function(self, id, callback)
-  -- function num : 0_3
+function UIN20AVGBadgeProgressItem:Flush(id, callback)
   self.callback = callback
-  self.badgeStage = (self.data):GetBadgeStageById(id)
-  ;
-  (self.imgIcon):LoadImage((self.badgeStage):AwardIcon())
-  ;
-  (self.txtCount):SetText((self.badgeStage):AwardCount())
+  self.badgeStage = self.data:GetBadgeStageById(id)
+  self.imgIcon:LoadImage(self.badgeStage:AwardIcon())
+  self.txtCount:SetText(self.badgeStage:AwardCount())
   self:FlushState()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGBadgeProgressItem.FlushPos = function(self, pos)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.rt).anchoredPosition = pos
+function UIN20AVGBadgeProgressItem:FlushPos(pos)
+  self.rt.anchoredPosition = pos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGBadgeProgressItem.FlushState = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local state = (self.badgeStage):State()
+function UIN20AVGBadgeProgressItem:FlushState()
+  local state = self.badgeStage:State()
   if state then
     if state == AVGAwardState.CanGet then
-      (self.got):SetActive(false)
-      ;
-      (self.canGet):SetActive(true)
+      self.got:SetActive(false)
+      self.canGet:SetActive(true)
     else
-      ;
-      (self.got):SetActive(true)
-      ;
-      (self.canGet):SetActive(false)
+      self.got:SetActive(true)
+      self.canGet:SetActive(false)
     end
   else
-    ;
-    (self.got):SetActive(false)
-    ;
-    (self.canGet):SetActive(false)
+    self.got:SetActive(false)
+    self.canGet:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGBadgeProgressItem.btnOnClick = function(self, go)
-  -- function num : 0_6
+function UIN20AVGBadgeProgressItem:btnOnClick(go)
   if self.callback then
     self:callback()
   end
 end
-
-

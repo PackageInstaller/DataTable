@@ -1,68 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/balance/ui_season_balance_qa_evidence.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBalanceQAEvidence", UICustomWidget)
 UISeasonBalanceQAEvidence = UISeasonBalanceQAEvidence
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBalanceQAEvidence.Constructor = function(self)
-  -- function num : 0_0
+function UISeasonBalanceQAEvidence:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceQAEvidence.OnShow = function(self)
-  -- function num : 0_1
+function UISeasonBalanceQAEvidence:OnShow()
   self._desc = self:GetUIComponent("UILocalizationText", "desc")
   self._alpha = self:GetUIComponent("CanvasGroup", "alpha")
   self._anim = self:GetUIComponent("Animation", "alpha")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceQAEvidence.PlayAnim = function(self, yieldTime)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  if yieldTime > 0 then
-    (self._alpha).alpha = 0
+function UISeasonBalanceQAEvidence:PlayAnim(yieldTime)
+  if 0 < yieldTime then
+    self._alpha.alpha = 0
     if self._timer then
-      ((GameGlobal.Timer)()):CancelEvent(self._timer)
+      GameGlobal.Timer():CancelEvent(self._timer)
     end
-    self._timer = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_2_0 , upvalues : self
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._alpha).alpha = 1
-    ;
-    (self._anim):Play("uieffanim_UISeasonBalanceQAEvidence_in")
-  end
-)
+    self._timer = GameGlobal.Timer():AddEvent(yieldTime, function()
+      self._alpha.alpha = 1
+      self._anim:Play("uieffanim_UISeasonBalanceQAEvidence_in")
+    end)
   else
-    ;
-    (self._anim):Play("uieffanim_UISeasonBalanceQAEvidence_in")
+    self._anim:Play("uieffanim_UISeasonBalanceQAEvidence_in")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceQAEvidence.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonBalanceQAEvidence:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceQAEvidence.SetData = function(self, idx, cfg)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonBalanceQAEvidence:SetData(idx, cfg)
   self._idx = idx
   self._cfg = cfg
-  ;
-  (self._desc):SetText((StringTable.Get)((self._cfg).Desc))
+  self._desc:SetText(StringTable.Get(self._cfg.Desc))
 end
-
-

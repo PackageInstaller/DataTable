@@ -1,47 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_make_phantom.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_MakePhantom", Object)
 SkillEffectCalc_MakePhantom = SkillEffectCalc_MakePhantom
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_MakePhantom.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_MakePhantom:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MakePhantom.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_MakePhantom:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillParam = skillEffectCalcParam.skillEffectParam
-  local caster = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local caster = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local pos = self:FindLocationsForPhantom(caster)
   local attrCmpt = caster:Attributes()
-  local hpPercent = (caster:Attributes()):GetCurrentHP() / attrCmpt:CalcMaxHp()
-  return SkillMakePhantomEffectResult:New(skillEffectCalcParam.casterEntityID, hpPercent, skillParam:GetTargetID(), pos, (caster:GridLocation()):GetGridDir())
+  local hpPercent = caster:Attributes():GetCurrentHP() / attrCmpt:CalcMaxHp()
+  return SkillMakePhantomEffectResult:New(skillEffectCalcParam.casterEntityID, hpPercent, skillParam:GetTargetID(), pos, caster:GridLocation():GetGridDir())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MakePhantom.FindLocationsForPhantom = function(self, caster)
-  -- function num : 0_2 , upvalues : _ENV
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
-  local bodyArea = (caster:BodyArea()):GetArea()
+function SkillEffectCalc_MakePhantom:FindLocationsForPhantom(caster)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local bodyArea = caster:BodyArea():GetArea()
   local pos = caster:GetGridPosition()
-  local comparer = function(pos1, pos2)
-    -- function num : 0_2_0 , upvalues : _ENV, pos
-    local dis1 = (math.abs)(pos1.x - pos.x) + (math.abs)(pos1.y - pos.y)
-    local dis2 = (math.abs)(pos2.x - pos.x) + (math.abs)(pos2.y - pos.y)
-    if dis2 < dis1 then
+  
+  local function comparer(pos1, pos2)
+    local dis1 = math.abs(pos1.x - pos.x) + math.abs(pos1.y - pos.y)
+    local dis2 = math.abs(pos2.x - pos.x) + math.abs(pos2.y - pos.y)
+    if dis1 > dis2 then
       return 1
     else
       return -1
     end
   end
-
+  
   local boardMaxX = boardServiceLogic:GetCurBoardMaxX()
   local boardMaxY = boardServiceLogic:GetCurBoardMaxY()
   local validPos = {}
@@ -49,7 +36,7 @@ SkillEffectCalc_MakePhantom.FindLocationsForPhantom = function(self, caster)
     for y = 1, boardMaxY do
       local cur = Vector2(x, y)
       local bodyAreaCheckOk = true
-      for index,bodyOff in ipairs(bodyArea) do
+      for index, bodyOff in ipairs(bodyArea) do
         local bodyPos = cur + bodyOff
         if boardServiceLogic:IsPosBlock(bodyPos, BlockFlag.SummonTrap) then
           bodyAreaCheckOk = false
@@ -64,34 +51,22 @@ SkillEffectCalc_MakePhantom.FindLocationsForPhantom = function(self, caster)
   local filter = {}
   filter.X = {}
   filter.Y = {}
-  for _,area in ipairs(bodyArea) do
+  for _, area in ipairs(bodyArea) do
     local p = pos + area
-    -- DECOMPILER ERROR at PC69: Confused about usage of register: R17 in 'UnsetPending'
-
-    ;
-    (filter.X)[p.x] = true
-    -- DECOMPILER ERROR at PC72: Confused about usage of register: R17 in 'UnsetPending'
-
-    ;
-    (filter.Y)[p.y] = true
+    filter.X[p.x] = true
+    filter.Y[p.y] = true
   end
-  for _,p in ipairs(validPos) do
+  for _, p in ipairs(validPos) do
     local valid = true
-    for __,area in ipairs(bodyArea) do
+    for __, area in ipairs(bodyArea) do
       local _temp = p + area
-      if (filter.X)[_temp.x] or (filter.Y)[_temp.y] or not (table.icontains)(validPos, _temp) then
+      if filter.X[_temp.x] or filter.Y[_temp.y] or not table.icontains(validPos, _temp) then
         valid = false
         break
       end
     end
-    do
-      do
-        if valid then
-          heap:Enqueue(p)
-        end
-        -- DECOMPILER ERROR at PC111: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if valid then
+      heap:Enqueue(p)
     end
   end
   local target = heap:Peek()
@@ -99,8 +74,8 @@ SkillEffectCalc_MakePhantom.FindLocationsForPhantom = function(self, caster)
     return target
   end
   heap = Heap:New(Heap.CPM_CUSTOM, comparer)
-  for _,p in ipairs(validPos) do
-    if not (filter.X)[p.x] and not (filter.Y)[p.y] and (table.icontains)(validPos, p) then
+  for _, p in ipairs(validPos) do
+    if not filter.X[p.x] and not filter.Y[p.y] and table.icontains(validPos, p) then
       heap:Enqueue(p)
     end
   end
@@ -109,16 +84,13 @@ SkillEffectCalc_MakePhantom.FindLocationsForPhantom = function(self, caster)
     return target
   end
   heap = Heap:New(Heap.CPM_CUSTOM, comparer)
-  for _,p in ipairs(validPos) do
+  for _, p in ipairs(validPos) do
     heap:Enqueue(p)
   end
   target = heap:Peek()
   if target then
     return target
   end
-  ;
-  (Log.fatal)("[幽灵] 找不到幻象生成位置")
+  Log.fatal("[幽灵] 找不到幻象生成位置")
   return nil
 end
-
-

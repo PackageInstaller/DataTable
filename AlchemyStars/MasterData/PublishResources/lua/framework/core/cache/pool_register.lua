@@ -1,19 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/cache/pool_register.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local _PoolType = {Role = "Role", Effect = "Effect", SpriteAtlas = "SpriteAtlas"}
+local _PoolType = {
+  Role = "Role",
+  Effect = "Effect",
+  SpriteAtlas = "SpriteAtlas"
+}
 _enum("PoolType", _PoolType)
 PoolType = PoolType
 _staticClass("PoolRegister")
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-PoolRegister.RegisterPools = function(self, poolManager)
-  -- function num : 0_0 , upvalues : _ENV
+function PoolRegister:RegisterPools(poolManager)
   poolManager:CreatePool(PoolType.Role, LoadType.GameObject, 3)
   poolManager:CreatePool(PoolType.Effect, LoadType.GameObject, 10)
   poolManager:CreatePool(PoolType.SpriteAtlas, LoadType.SpriteAtlas, 2)
 end
-
-

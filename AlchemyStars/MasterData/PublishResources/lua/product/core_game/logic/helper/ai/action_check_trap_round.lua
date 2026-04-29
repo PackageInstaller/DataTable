@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_check_trap_round.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCheckTrapRound", AINewNode)
 ActionCheckTrapRound = ActionCheckTrapRound
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckTrapRound.OnUpdate = function(self, dt)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionCheckTrapRound:OnUpdate(dt)
   local val = self:GetLogicData(-1)
   local allowMoreThanMax = self:GetLogicData(-2) == 1
-  local attrCmpt = (self.m_entityOwn):Attributes()
+  local attrCmpt = self.m_entityOwn:Attributes()
   local totalRound = attrCmpt:GetAttribute("TotalRound")
   local curRound = attrCmpt:GetAttribute("CurrentRound")
   if allowMoreThanMax then
@@ -26,7 +19,4 @@ ActionCheckTrapRound.OnUpdate = function(self, dt)
     end
     return AINewNodeStatus.Failure
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
-
-

@@ -1,299 +1,233 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/preview_chain_attack_range_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewChainAttackRangeSystem_Render", ReactiveSystem)
 PreviewChainAttackRangeSystem_Render = PreviewChainAttackRangeSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewChainAttackRangeSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function PreviewChainAttackRangeSystem_Render:Constructor(world)
   self._world = world
   self._configService = world:GetService("Config")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainAttackRangeSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local c = Collector:New({world:GetGroup((world.BW_WEMatchers).PreviewChainPath)}, {"Added"})
+function PreviewChainAttackRangeSystem_Render:GetTrigger(world)
+  local c = Collector:New({
+    world:GetGroup(world.BW_WEMatchers.PreviewChainPath)
+  }, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainAttackRangeSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2 , upvalues : _ENV
-  local autoSvc = (self._world):GetService("AutoFight")
+function PreviewChainAttackRangeSystem_Render:Filter(entity)
+  local autoSvc = self._world:GetService("AutoFight")
   if autoSvc:IsRunning() then
     return false
   end
-  if (self._world):MatchType() == MatchType.MT_Chess then
+  if self._world:MatchType() == MatchType.MT_Chess then
     return false
   end
   return entity:HasPreviewChainPath()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainAttackRangeSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
-  local reBoard = (self._world):GetRenderBoardEntity()
+function PreviewChainAttackRangeSystem_Render:ExecuteEntities(entities)
+  local reBoard = self._world:GetRenderBoardEntity()
   self.previewChainSkillRangeCmpt = reBoard:PreviewChainSkillRange()
   self:_DestroyChainSkillRange()
-  self.chainSkillRangeDic = (self.previewChainSkillRangeCmpt):GetChainSkillRangeOutlineDic()
+  self.chainSkillRangeDic = self.previewChainSkillRangeCmpt:GetChainSkillRangeOutlineDic()
   self.chainPreviewMonsterBehaviorCmpt = reBoard:ChainPreviewMonsterBehavior()
   for i = 1, #entities do
     self:_RenderChainAttackRange(entities[i])
   end
 end
 
-local OutlineDirType = {Up = 1, Down = 2, Left = 3, Right = 4, LeftUp = 5, RightUp = 6, RightDown = 7, LeftDown = 8}
-local OutlineType = {Short = 1, LeftShort = 2, RightShort = 3, Long = 4}
--- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
+local OutlineDirType = {
+  Up = 1,
+  Down = 2,
+  Left = 3,
+  Right = 4,
+  LeftUp = 5,
+  RightUp = 6,
+  RightDown = 7,
+  LeftDown = 8
+}
+local OutlineType = {
+  Short = 1,
+  LeftShort = 2,
+  RightShort = 3,
+  Long = 4
+}
 
-PreviewChainAttackRangeSystem_Render._RenderChainAttackRange = function(self, previewEntity)
-  -- function num : 0_4 , upvalues : _ENV
+function PreviewChainAttackRangeSystem_Render:_RenderChainAttackRange(previewEntity)
   local previewChainPathCmpt = previewEntity:PreviewChainPath()
   local chainPath = previewChainPathCmpt:GetPreviewChainPath()
   if chainPath == nil then
-    return 
+    return
   end
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local chainPieceType = previewChainPathCmpt:GetPreviewPieceType()
   local chainPathNum = #chainPath
   local lastChainPathPoint = chainPath[chainPathNum]
-  if (self._world):MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
+  if self._world:MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
     lastChainPathPoint = chainPath[1]
   end
-  local previewEntity = (self._world):GetPreviewEntity()
+  local previewEntity = self._world:GetPreviewEntity()
   local selectPetCmpt = previewEntity:PreviewChainSelectPet()
   local petIDList = selectPetCmpt:GetRenderPetList()
   local previewIndex = 0
   local previewPstIDAndSkill = {}
-  for _,petEntityID in ipairs(petIDList) do
-    local petEntity = (self._world):GetEntityByID(petEntityID)
+  for _, petEntityID in ipairs(petIDList) do
+    local petEntity = self._world:GetEntityByID(petEntityID)
     local petCanChainAttack = utilData:OnCheckPetCanCastChainSkill(petEntityID)
     if petCanChainAttack ~= false then
       local chainSkillID = selectPetCmpt:GetPreviewChainSelectPetSkillID(petEntityID)
       local skillSelectMode, preViewType, scopeType = self:_GetSkillPreviewMode(chainSkillID)
       local scopeResult = selectPetCmpt:GetPreviewChainSelectPetScopeResult(petEntityID)
       local outlinePieceType = utilData:GetEntityElementType(petEntity)
-      do
-        if (self._world):MatchType() == MatchType.MT_PopStarPro then
-          local isMatch, isActiveFetters = utilData:IsMatchPieceType(petEntityID, chainPieceType)
-          if isMatch and isActiveFetters then
-            outlinePieceType = chainPieceType
-          end
+      if self._world:MatchType() == MatchType.MT_PopStarPro then
+        local isMatch, isActiveFetters = utilData:IsMatchPieceType(petEntityID, chainPieceType)
+        if isMatch and isActiveFetters then
+          outlinePieceType = chainPieceType
         end
-        local atkRange = scopeResult:GetAttackRange()
-        if atkRange then
-          local hasTarget = true
-          previewIndex = previewIndex + 1
-          ;
-          (self.previewChainSkillRangeCmpt):AddChainSkillAttackElementType(previewIndex, outlinePieceType)
-          if preViewType ~= SkillPreviewType.AddHPChainSkill then
-            if preViewType == SkillPreviewType.ScopeSingleChainSkill or preViewType == SkillPreviewType.ScopeSingleChainSkillInScope54 and scopeType == SkillScopeType.NearestInSquareRing then
-              local allTargetIDs = scopeResult:GetTargetIDs()
-              if next(allTargetIDs) then
-                self:_CreateSingleEntitySnipeEffect(previewIndex, allTargetIDs)
-                ;
-                (self.chainSkillRangeDic):AddPetChainSkillOutlineRange(previewIndex)
-                self:_CreateOutlineRangeEntity(scopeResult:GetAttackRange(), PieceType.None, previewIndex, lastChainPathPoint, scopeResult:GetCenterPos())
-                self:_AddPetPreviewTypeByPreviewIndex(previewIndex, PreviewChainSkillType.RangeAndSingleEntity)
-                ;
-                (table.insert)(previewPstIDAndSkill, {pstID = (petEntity:PetPstID()):GetPstID(), index = (petEntity:SkillInfo()):GetChainSkillLevel(chainSkillID)})
-              else
-                hasTarget = false
-                previewIndex = previewIndex - 1
-              end
+      end
+      local atkRange = scopeResult:GetAttackRange()
+      if atkRange then
+        local hasTarget = true
+        previewIndex = previewIndex + 1
+        self.previewChainSkillRangeCmpt:AddChainSkillAttackElementType(previewIndex, outlinePieceType)
+        if preViewType ~= SkillPreviewType.AddHPChainSkill then
+          if preViewType == SkillPreviewType.ScopeSingleChainSkill or preViewType == SkillPreviewType.ScopeSingleChainSkillInScope54 and scopeType == SkillScopeType.NearestInSquareRing then
+            local allTargetIDs = scopeResult:GetTargetIDs()
+            if next(allTargetIDs) then
+              self:_CreateSingleEntitySnipeEffect(previewIndex, allTargetIDs)
+              self.chainSkillRangeDic:AddPetChainSkillOutlineRange(previewIndex)
+              self:_CreateOutlineRangeEntity(scopeResult:GetAttackRange(), PieceType.None, previewIndex, lastChainPathPoint, scopeResult:GetCenterPos())
+              self:_AddPetPreviewTypeByPreviewIndex(previewIndex, PreviewChainSkillType.RangeAndSingleEntity)
+              table.insert(previewPstIDAndSkill, {
+                pstID = petEntity:PetPstID():GetPstID(),
+                index = petEntity:SkillInfo():GetChainSkillLevel(chainSkillID)
+              })
             else
-              do
-                if preViewType == SkillPreviewType.SkillEffect191InChain then
-                  local skillConfigData = (self._configService):GetSkillConfigData(chainSkillID)
-                  local effectArray = utilData:GetLatestEffectParamArray(petEntityID, chainSkillID)
-                  local is191Found = false
-                  local centerScopeResult = nil
-                  for _,effect in ipairs(effectArray) do
-                    if effect:GetEffectType() == SkillEffectType.DynamicCenterDamage then
-                      is191Found = true
-                      local centerScopeType = effect:GetCenterScopeType()
-                      local centerScopeParam = effect:GetCenterScopeParam()
-                      local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-                      local scopeCal = SkillScopeCalculator:New(utilScopeSvc)
-                      if not lastChainPathPoint then
-                        do
-                          centerScopeResult = scopeCal:ComputeScopeRange(centerScopeType, centerScopeParam, petEntity:GetGridPosition(), (petEntity:BodyArea()):GetArea(), petEntity:GetGridDirection(), SkillTargetType.Monster, petEntity:GetGridPosition(), petEntity)
-                          do break end
-                          -- DECOMPILER ERROR at PC210: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                          -- DECOMPILER ERROR at PC210: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC210: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                          -- DECOMPILER ERROR at PC210: LeaveBlock: unexpected jumping out IF_STMT
-
-                        end
-                      end
-                    end
-                  end
-                  if not is191Found then
-                    hasTarget = false
-                    previewIndex = previewIndex - 1
-                  else
-                    ;
-                    (self.chainSkillRangeDic):AddPetChainSkillOutlineRange(previewIndex)
-                    self:_CreateOutlineRangeEntity(centerScopeResult:GetAttackRange(), outlinePieceType, previewIndex, lastChainPathPoint, centerScopeResult:GetCenterPos())
-                    self:_AddPetPreviewTypeByPreviewIndex(previewIndex, PreviewChainSkillType.Range)
-                    ;
-                    (table.insert)(previewPstIDAndSkill, {pstID = (petEntity:PetPstID()):GetPstID(), index = (petEntity:SkillInfo()):GetChainSkillLevel(chainSkillID)})
-                  end
-                else
-                  do
-                    if preViewType == SkillPreviewType.PetChainRobotBomb then
-                      local skillEffectArray = utilData:GetLatestEffectParamArray(petEntityID, chainSkillID)
-                      local targetSkillEffectParamList = {}
-                      for index,config in ipairs(skillEffectArray) do
-                        if config:GetEffectType() == SkillEffectType.RobotBomb then
-                          (table.insert)(targetSkillEffectParamList, config)
-                        end
-                      end
-                      if (table.count)(targetSkillEffectParamList) == 0 then
-                        hasTarget = false
-                        previewIndex = previewIndex - 1
-                      end
-                      local resultArray = {}
-                      for _,skillEffectParam in ipairs(targetSkillEffectParamList) do
-                        local calcParam = SkillEffectCalcParam:New(petEntityID, {-1}, skillEffectParam, chainSkillID, (scopeResult:GetAttackRange()), nil, petEntity:GetGridPosition(), lastChainPathPoint, scopeResult:GetWholeGridRange())
-                        local calc_RobotBomb = SkillEffectCalc_RobotBomb:New(self._world)
-                        local skillResultArray = calc_RobotBomb:DoSkillEffectCalculator(calcParam, true)
-                        if skillResultArray and (table.count)(skillResultArray) > 0 then
-                          (table.appendArray)(resultArray, skillResultArray)
-                        end
-                      end
-                      if resultArray and (table.count)(resultArray) > 0 then
-                        (self.chainSkillRangeDic):AddPetChainSkillOutlineRange(previewIndex)
-                        for _,v in ipairs(resultArray) do
-                          local resultRobotBomb = v
-                          local explosionRange = resultRobotBomb.explosionRange
-                          if explosionRange and (table.count)(explosionRange) > 0 then
-                            self:_CreateOutlineRangeEntity(explosionRange, outlinePieceType, previewIndex, lastChainPathPoint, nil)
-                          end
-                        end
-                        self:_AddPetPreviewTypeByPreviewIndex(previewIndex, PreviewChainSkillType.Range)
-                        ;
-                        (table.insert)(previewPstIDAndSkill, {pstID = (petEntity:PetPstID()):GetPstID(), index = (petEntity:SkillInfo()):GetChainSkillLevel(chainSkillID)})
-                      else
-                        hasTarget = false
-                        previewIndex = previewIndex - 1
-                      end
-                    else
-                      do
-                        if skillSelectMode == SkillTargetSelectionMode.Grid then
-                          (self.chainSkillRangeDic):AddPetChainSkillOutlineRange(previewIndex)
-                          self:_CreateOutlineRangeEntity(scopeResult:GetAttackRange(), outlinePieceType, previewIndex, lastChainPathPoint, scopeResult:GetCenterPos())
-                          self:_AddPetPreviewTypeByPreviewIndex(previewIndex, PreviewChainSkillType.Range)
-                          ;
-                          (table.insert)(previewPstIDAndSkill, {pstID = (petEntity:PetPstID()):GetPstID(), index = (petEntity:SkillInfo()):GetChainSkillLevel(chainSkillID)})
-                        else
-                          if skillSelectMode == SkillTargetSelectionMode.Entity then
-                            local allTargetIDs = scopeResult:GetTargetIDs()
-                            if next(allTargetIDs) then
-                              self:_CreateSingleEntitySnipeEffect(previewIndex, allTargetIDs)
-                              self:_AddPetPreviewTypeByPreviewIndex(previewIndex, PreviewChainSkillType.SingleEntity)
-                              ;
-                              (table.insert)(previewPstIDAndSkill, {pstID = (petEntity:PetPstID()):GetPstID(), index = (petEntity:SkillInfo()):GetChainSkillLevel(chainSkillID)})
-                            else
-                              hasTarget = false
-                              previewIndex = previewIndex - 1
-                            end
-                          end
-                        end
-                        do
-                          do
-                            self:_AddAddHPPet(previewIndex, petEntity)
-                            self:_AddPetPreviewTypeByPreviewIndex(previewIndex, PreviewChainSkillType.AddHP)
-                            ;
-                            (table.insert)(previewPstIDAndSkill, {pstID = (petEntity:PetPstID()):GetPstID(), index = (petEntity:SkillInfo()):GetChainSkillLevel(chainSkillID)})
-                            if hasTarget then
-                              (self.previewChainSkillRangeCmpt):AddPreviewPetID(previewIndex, petEntity:GetID())
-                            end
-                            -- DECOMPILER ERROR at PC503: LeaveBlock: unexpected jumping out DO_STMT
-
-                            -- DECOMPILER ERROR at PC503: LeaveBlock: unexpected jumping out DO_STMT
-
-                            -- DECOMPILER ERROR at PC503: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                            -- DECOMPILER ERROR at PC503: LeaveBlock: unexpected jumping out IF_STMT
-
-                            -- DECOMPILER ERROR at PC503: LeaveBlock: unexpected jumping out DO_STMT
-
-                            -- DECOMPILER ERROR at PC503: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                            -- DECOMPILER ERROR at PC503: LeaveBlock: unexpected jumping out IF_STMT
-
-                            -- DECOMPILER ERROR at PC503: LeaveBlock: unexpected jumping out DO_STMT
-
-                            -- DECOMPILER ERROR at PC503: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                            -- DECOMPILER ERROR at PC503: LeaveBlock: unexpected jumping out IF_STMT
-
-                            -- DECOMPILER ERROR at PC503: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                            -- DECOMPILER ERROR at PC503: LeaveBlock: unexpected jumping out IF_STMT
-
-                            -- DECOMPILER ERROR at PC503: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                            -- DECOMPILER ERROR at PC503: LeaveBlock: unexpected jumping out IF_STMT
-
-                            -- DECOMPILER ERROR at PC503: LeaveBlock: unexpected jumping out DO_STMT
-
-                            -- DECOMPILER ERROR at PC503: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                            -- DECOMPILER ERROR at PC503: LeaveBlock: unexpected jumping out IF_STMT
-
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
+              hasTarget = false
+              previewIndex = previewIndex - 1
+            end
+          elseif preViewType == SkillPreviewType.SkillEffect191InChain then
+            local skillConfigData = self._configService:GetSkillConfigData(chainSkillID)
+            local effectArray = utilData:GetLatestEffectParamArray(petEntityID, chainSkillID)
+            local is191Found = false
+            local centerScopeResult
+            for _, effect in ipairs(effectArray) do
+              if effect:GetEffectType() == SkillEffectType.DynamicCenterDamage then
+                is191Found = true
+                local centerScopeType = effect:GetCenterScopeType()
+                local centerScopeParam = effect:GetCenterScopeParam()
+                local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+                local scopeCal = SkillScopeCalculator:New(utilScopeSvc)
+                centerScopeResult = scopeCal:ComputeScopeRange(centerScopeType, centerScopeParam, lastChainPathPoint or petEntity:GetGridPosition(), petEntity:BodyArea():GetArea(), petEntity:GetGridDirection(), SkillTargetType.Monster, petEntity:GetGridPosition(), petEntity)
+                break
               end
             end
+            if not is191Found then
+              hasTarget = false
+              previewIndex = previewIndex - 1
+            else
+              self.chainSkillRangeDic:AddPetChainSkillOutlineRange(previewIndex)
+              self:_CreateOutlineRangeEntity(centerScopeResult:GetAttackRange(), outlinePieceType, previewIndex, lastChainPathPoint, centerScopeResult:GetCenterPos())
+              self:_AddPetPreviewTypeByPreviewIndex(previewIndex, PreviewChainSkillType.Range)
+              table.insert(previewPstIDAndSkill, {
+                pstID = petEntity:PetPstID():GetPstID(),
+                index = petEntity:SkillInfo():GetChainSkillLevel(chainSkillID)
+              })
+            end
+          elseif preViewType == SkillPreviewType.PetChainRobotBomb then
+            local skillEffectArray = utilData:GetLatestEffectParamArray(petEntityID, chainSkillID)
+            local targetSkillEffectParamList = {}
+            for index, config in ipairs(skillEffectArray) do
+              if config:GetEffectType() == SkillEffectType.RobotBomb then
+                table.insert(targetSkillEffectParamList, config)
+              end
+            end
+            if table.count(targetSkillEffectParamList) == 0 then
+              hasTarget = false
+              previewIndex = previewIndex - 1
+            end
+            local resultArray = {}
+            for _, skillEffectParam in ipairs(targetSkillEffectParamList) do
+              local calcParam = SkillEffectCalcParam:New(petEntityID, {-1}, skillEffectParam, chainSkillID, scopeResult:GetAttackRange(), nil, petEntity:GetGridPosition(), lastChainPathPoint, scopeResult:GetWholeGridRange())
+              local calc_RobotBomb = SkillEffectCalc_RobotBomb:New(self._world)
+              local skillResultArray = calc_RobotBomb:DoSkillEffectCalculator(calcParam, true)
+              if skillResultArray and 0 < table.count(skillResultArray) then
+                table.appendArray(resultArray, skillResultArray)
+              end
+            end
+            if resultArray and 0 < table.count(resultArray) then
+              self.chainSkillRangeDic:AddPetChainSkillOutlineRange(previewIndex)
+              for _, v in ipairs(resultArray) do
+                local resultRobotBomb = v
+                local explosionRange = resultRobotBomb.explosionRange
+                if explosionRange and 0 < table.count(explosionRange) then
+                  self:_CreateOutlineRangeEntity(explosionRange, outlinePieceType, previewIndex, lastChainPathPoint, nil)
+                end
+              end
+              self:_AddPetPreviewTypeByPreviewIndex(previewIndex, PreviewChainSkillType.Range)
+              table.insert(previewPstIDAndSkill, {
+                pstID = petEntity:PetPstID():GetPstID(),
+                index = petEntity:SkillInfo():GetChainSkillLevel(chainSkillID)
+              })
+            else
+              hasTarget = false
+              previewIndex = previewIndex - 1
+            end
+          elseif skillSelectMode == SkillTargetSelectionMode.Grid then
+            self.chainSkillRangeDic:AddPetChainSkillOutlineRange(previewIndex)
+            self:_CreateOutlineRangeEntity(scopeResult:GetAttackRange(), outlinePieceType, previewIndex, lastChainPathPoint, scopeResult:GetCenterPos())
+            self:_AddPetPreviewTypeByPreviewIndex(previewIndex, PreviewChainSkillType.Range)
+            table.insert(previewPstIDAndSkill, {
+              pstID = petEntity:PetPstID():GetPstID(),
+              index = petEntity:SkillInfo():GetChainSkillLevel(chainSkillID)
+            })
+          elseif skillSelectMode == SkillTargetSelectionMode.Entity then
+            local allTargetIDs = scopeResult:GetTargetIDs()
+            if next(allTargetIDs) then
+              self:_CreateSingleEntitySnipeEffect(previewIndex, allTargetIDs)
+              self:_AddPetPreviewTypeByPreviewIndex(previewIndex, PreviewChainSkillType.SingleEntity)
+              table.insert(previewPstIDAndSkill, {
+                pstID = petEntity:PetPstID():GetPstID(),
+                index = petEntity:SkillInfo():GetChainSkillLevel(chainSkillID)
+              })
+            else
+              hasTarget = false
+              previewIndex = previewIndex - 1
+            end
           end
+        else
+          self:_AddAddHPPet(previewIndex, petEntity)
+          self:_AddPetPreviewTypeByPreviewIndex(previewIndex, PreviewChainSkillType.AddHP)
+          table.insert(previewPstIDAndSkill, {
+            pstID = petEntity:PetPstID():GetPstID(),
+            index = petEntity:SkillInfo():GetChainSkillLevel(chainSkillID)
+          })
+        end
+        if hasTarget then
+          self.previewChainSkillRangeCmpt:AddPreviewPetID(previewIndex, petEntity:GetID())
         end
       end
     end
   end
-  for _,data in ipairs(previewPstIDAndSkill) do
+  for _, data in ipairs(previewPstIDAndSkill) do
     local pstID = data.pstID
     local index = data.index
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.UpdateBuffLayerActiveSkillEnergyPreview, {pstID = pstID, index = index})
+    self._world:EventDispatcher():Dispatch(GameEventType.UpdateBuffLayerActiveSkillEnergyPreview, {pstID = pstID, index = index})
   end
-  if previewIndex > 0 then
-    (self.previewChainSkillRangeCmpt):SetPreviewTypeIndex(1)
-    ;
-    (self.previewChainSkillRangeCmpt):SetPreviewStartTime(0)
+  if 0 < previewIndex then
+    self.previewChainSkillRangeCmpt:SetPreviewTypeIndex(1)
+    self.previewChainSkillRangeCmpt:SetPreviewStartTime(0)
   end
-  if previewIndex > 1 then
-    (self.previewChainSkillRangeCmpt):SetChainSkillRangeFlash(true)
+  if 1 < previewIndex then
+    self.previewChainSkillRangeCmpt:SetChainSkillRangeFlash(true)
   else
-    ;
-    (self.previewChainSkillRangeCmpt):SetChainSkillRangeFlash(false)
+    self.previewChainSkillRangeCmpt:SetChainSkillRangeFlash(false)
   end
-  ;
-  (self.chainPreviewMonsterBehaviorCmpt):SetChainPath(chainPath)
-  ;
-  (self.chainPreviewMonsterBehaviorCmpt):SetNeedRefresh(true)
+  self.chainPreviewMonsterBehaviorCmpt:SetChainPath(chainPath)
+  self.chainPreviewMonsterBehaviorCmpt:SetNeedRefresh(true)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-PreviewChainAttackRangeSystem_Render._GetSkillPreviewMode = function(self, chainSkillID)
-  -- function num : 0_5
-  local skillConfigData = (self._configService):GetSkillConfigData(chainSkillID)
+function PreviewChainAttackRangeSystem_Render:_GetSkillPreviewMode(chainSkillID)
+  local skillConfigData = self._configService:GetSkillConfigData(chainSkillID)
   local preViewType = skillConfigData:GetSkillPreviewType()
   local scopeType = skillConfigData:GetSkillScopeType()
   local skillFilter = skillConfigData:GetScopeFilterParam()
@@ -301,14 +235,11 @@ PreviewChainAttackRangeSystem_Render._GetSkillPreviewMode = function(self, chain
   return skillSelectMode, preViewType, scopeType
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R2 in 'UnsetPending'
-
-PreviewChainAttackRangeSystem_Render._CreateOutlineRangeEntity = function(self, chainAttackGridData, pieceType, previewIndex, lastChainPathPoint, centerPos)
-  -- function num : 0_6 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local entityPoolService = (self._world):GetService("EntityPool")
+function PreviewChainAttackRangeSystem_Render:_CreateOutlineRangeEntity(chainAttackGridData, pieceType, previewIndex, lastChainPathPoint, centerPos)
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local entityPoolService = self._world:GetService("EntityPool")
   local chainAttackRangeCache = {}
-  for _,pos in pairs(chainAttackGridData) do
+  for _, pos in pairs(chainAttackGridData) do
     local x = pos.x
     local t = chainAttackRangeCache[x]
     if not t then
@@ -317,21 +248,20 @@ PreviewChainAttackRangeSystem_Render._CreateOutlineRangeEntity = function(self, 
     end
     t[pos.y] = true
   end
-  local isContainPos = function(posList, pos)
-    -- function num : 0_6_0
+  
+  local function isContainPos(posList, pos)
     local t = posList[pos.x]
     if not t then
       return false
     end
-    do return t[pos.y] == true end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+    return t[pos.y] == true
   end
-
-  local tranRenderSvc = (self._world):GetService("TransformRenderer")
-  if centerPos and centerPos._className == "Vector2" and not (table.icontains)(chainAttackGridData, centerPos) then
-    (table.insert)(chainAttackGridData, centerPos)
+  
+  local tranRenderSvc = self._world:GetService("TransformRenderer")
+  if centerPos and centerPos._className == "Vector2" and not table.icontains(chainAttackGridData, centerPos) then
+    table.insert(chainAttackGridData, centerPos)
   end
-  for _,pos in pairs(chainAttackGridData) do
+  for _, pos in pairs(chainAttackGridData) do
     local roundPosList = boardServiceRender:GetRoundPosList(pos)
     for i = 1, #roundPosList do
       local roundPos = roundPosList[i]
@@ -344,40 +274,30 @@ PreviewChainAttackRangeSystem_Render._CreateOutlineRangeEntity = function(self, 
         local outlineDir = roundPos - pos
         local outlineDirType = boardServiceRender:GetOutlineDirType(outlineDir)
         self:_SetOutlineEntityPosAndDir(pos, cacheEntity, outlineDirType, BattleConst.CacheHeight)
-        ;
-        (self.chainSkillRangeDic):AddChainSkillRangeOutlineEntityID(previewIndex, cacheEntity:GetID())
+        self.chainSkillRangeDic:AddChainSkillRangeOutlineEntityID(previewIndex, cacheEntity:GetID())
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-PreviewChainAttackRangeSystem_Render._SetOutlineEntityPosAndDir = function(self, pos, outlineEntity, outlineDirType, renderHeight)
-  -- function num : 0_7 , upvalues : _ENV, OutlineDirType
+function PreviewChainAttackRangeSystem_Render:_SetOutlineEntityPosAndDir(pos, outlineEntity, outlineDirType, renderHeight)
   local gridOutlineRadius = 0.52
   local outlinePos = pos
   local outlineDir = Vector2(0, 0)
   if outlineDirType == OutlineDirType.Up then
     outlinePos = pos + Vector2(0, gridOutlineRadius)
     outlineDir = Vector2(0, 1)
-  else
-    if outlineDirType == OutlineDirType.Down then
-      outlinePos = pos + Vector2(0, -gridOutlineRadius)
-      outlineDir = Vector2(0, -1)
-    else
-      if outlineDirType == OutlineDirType.Left then
-        outlinePos = pos + Vector2(-gridOutlineRadius, 0)
-        outlineDir = Vector2(-1, 0)
-      else
-        if outlineDirType == OutlineDirType.Right then
-          outlinePos = pos + Vector2(gridOutlineRadius, 0)
-          outlineDir = Vector2(1, 0)
-        end
-      end
-    end
+  elseif outlineDirType == OutlineDirType.Down then
+    outlinePos = pos + Vector2(0, -gridOutlineRadius)
+    outlineDir = Vector2(0, -1)
+  elseif outlineDirType == OutlineDirType.Left then
+    outlinePos = pos + Vector2(-gridOutlineRadius, 0)
+    outlineDir = Vector2(-1, 0)
+  elseif outlineDirType == OutlineDirType.Right then
+    outlinePos = pos + Vector2(gridOutlineRadius, 0)
+    outlineDir = Vector2(1, 0)
   end
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   local locationPos = boardServiceRender:GridPosition2LocationPos(outlinePos, outlineEntity)
   local locationDir = boardServiceRender:GridDir2LocationDir(outlineDir)
   if renderHeight then
@@ -388,73 +308,37 @@ PreviewChainAttackRangeSystem_Render._SetOutlineEntityPosAndDir = function(self,
     location:SetPosition(locationPos)
     location:SetDirection(locationDir)
   else
-    ;
-    (Log.fatal)("### LocationComponent nil")
+    Log.fatal("### LocationComponent nil")
   end
-  local tranRenderSvc = (self._world):GetService("TransformRenderer")
+  local tranRenderSvc = self._world:GetService("TransformRenderer")
   tranRenderSvc:SetEntityLocation(outlineEntity, locationPos, locationDir)
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-PreviewChainAttackRangeSystem_Render._DestroyChainSkillRange = function(self)
-  -- function num : 0_8
-  local renderBattleService = (self._world):GetService("RenderBattle")
+function PreviewChainAttackRangeSystem_Render:_DestroyChainSkillRange()
+  local renderBattleService = self._world:GetService("RenderBattle")
   renderBattleService:ClearChainSkillPreviewRenderData()
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-PreviewChainAttackRangeSystem_Render._CreateSingleEntitySnipeEffect = function(self, preViewIndex, entityList)
-  -- function num : 0_9 , upvalues : _ENV
-  local effectSrv = (self._world):GetService("Effect")
-  for i,id in ipairs(entityList) do
-    if not (self.previewChainSkillRangeCmpt):HasSnipeEffect(id) then
-      local entity = (self._world):GetEntityByID(id)
+function PreviewChainAttackRangeSystem_Render:_CreateSingleEntitySnipeEffect(preViewIndex, entityList)
+  local effectSrv = self._world:GetService("Effect")
+  for i, id in ipairs(entityList) do
+    if not self.previewChainSkillRangeCmpt:HasSnipeEffect(id) then
+      local entity = self._world:GetEntityByID(id)
       if entity then
         local effectEntity = effectSrv:CreateEffect(BattleConst.ChainSkillSnipeEffectID, entity, false)
-        ;
-        (self.previewChainSkillRangeCmpt):AddSnipeEffect(id, effectEntity)
+        self.previewChainSkillRangeCmpt:AddSnipeEffect(id, effectEntity)
       else
-        do
-          do
-            do
-              ;
-              (Log.fatal)("_CreateSingleEntitySnipeEffect failed,holder is null")
-              ;
-              (self.previewChainSkillRangeCmpt):AddChainSkillSingleEntityDic(preViewIndex, id)
-              -- DECOMPILER ERROR at PC41: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC41: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC41: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC41: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC41: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC41: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
+        Log.fatal("_CreateSingleEntitySnipeEffect failed,holder is null")
       end
     end
+    self.previewChainSkillRangeCmpt:AddChainSkillSingleEntityDic(preViewIndex, id)
   end
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-PreviewChainAttackRangeSystem_Render._AddAddHPPet = function(self, previewIndex, petEntity)
-  -- function num : 0_10
-  (self.previewChainSkillRangeCmpt):AddChainSkillAddHPPetDic(previewIndex, petEntity:GetID())
+function PreviewChainAttackRangeSystem_Render:_AddAddHPPet(previewIndex, petEntity)
+  self.previewChainSkillRangeCmpt:AddChainSkillAddHPPetDic(previewIndex, petEntity:GetID())
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
-
-PreviewChainAttackRangeSystem_Render._AddPetPreviewTypeByPreviewIndex = function(self, previewIndex, previewType)
-  -- function num : 0_11
-  (self.previewChainSkillRangeCmpt):SetPreviewTypeByPreviewIndex(previewIndex, previewType)
+function PreviewChainAttackRangeSystem_Render:_AddPetPreviewTypeByPreviewIndex(previewIndex, previewType)
+  self.previewChainSkillRangeCmpt:SetPreviewTypeByPreviewIndex(previewIndex, previewType)
 end
-
-

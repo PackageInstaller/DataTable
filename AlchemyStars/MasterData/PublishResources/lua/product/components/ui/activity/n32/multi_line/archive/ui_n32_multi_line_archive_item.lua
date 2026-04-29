@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n32/multi_line/archive/ui_n32_multi_line_archive_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN32MultiLineArchiveItem", UICustomWidget)
 UIN32MultiLineArchiveItem = UIN32MultiLineArchiveItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN32MultiLineArchiveItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN32MultiLineArchiveItem:OnShow(uiParams)
   self:InitComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchiveItem.InitComponent = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN32MultiLineArchiveItem:InitComponent()
   self._spreadContent = false
   self._state = 1
   self._text = self:GetUIComponent("UILocalizationText", "text")
@@ -27,91 +17,63 @@ UIN32MultiLineArchiveItem.InitComponent = function(self)
   self._drag = self:GetGameObject("drag")
   self._contentGo = self:GetGameObject("content")
   self._contentText = self:GetUIComponent("UILocalizationText", "archiveText")
-  local etl = (UICustomUIEventListener.Get)(self._drag)
+  local etl = UICustomUIEventListener.Get(self._drag)
   self:AddUICustomEventListener(etl, UIEvent.Click, function(go)
-    -- function num : 0_1_0 , upvalues : self
     self:LockOnClick(go)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchiveItem.InitUI = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._btnImg).sprite = (self._atlas):GetSprite("n32_dzm_rwda_di01")
+function UIN32MultiLineArchiveItem:InitUI()
+  self._btnImg.sprite = self._atlas:GetSprite("n32_dzm_rwda_di01")
   local titleText = ""
   if self._hadGot then
-    titleText = (self._info).DocTitle
+    titleText = self._info.DocTitle
   end
-  ;
-  (self._text):SetText((StringTable.Get)(titleText))
+  self._text:SetText(StringTable.Get(titleText))
   if self._hadPassed then
-    titleText = (self._info).UnPassTitle
+    titleText = self._info.UnPassTitle
   else
     titleText = "str_n32_multiline_doc_lock"
   end
   if self._hadGot then
-    titleText = (self._info).DocDesc
+    titleText = self._info.DocDesc
   end
-  ;
-  (self._contentText):SetText((StringTable.Get)(titleText))
-  ;
-  (self._lockGo):SetActive(not self._hadGot)
-  ;
-  (self._locktext):SetText((StringTable.Get)("str_n32_multiline_lock_pet_title"))
-  ;
-  (self._btn):SetActive(false)
-  ;
-  (self._contentGo):SetActive(true)
+  self._contentText:SetText(StringTable.Get(titleText))
+  self._lockGo:SetActive(not self._hadGot)
+  self._locktext:SetText(StringTable.Get("str_n32_multiline_lock_pet_title"))
+  self._btn:SetActive(false)
+  self._contentGo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchiveItem.Refresh = function(self, index, hadGot, hadPassed, selectIndex)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN32MultiLineArchiveItem:Refresh(index, hadGot, hadPassed, selectIndex)
   if selectIndex ~= self._index then
     self._spreadContent = false
   end
   local img = self._spreadContent and "n32_dzm_rwda_di02" or "n32_dzm_rwda_di01"
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._btnImg).sprite = (self._atlas):GetSprite(img)
+  self._btnImg.sprite = self._atlas:GetSprite(img)
   self._hadGot = hadGot
   self._hadPassed = hadPassed
   local titleText = ""
   if self._hadGot then
-    titleText = (self._info).DocTitle
+    titleText = self._info.DocTitle
   end
-  ;
-  (self._text):SetText((StringTable.Get)(titleText))
+  self._text:SetText(StringTable.Get(titleText))
   if self._hadPassed then
-    titleText = (self._info).UnPassTitle
+    titleText = self._info.UnPassTitle
   else
     titleText = "str_n32_multiline_doc_lock"
   end
   if self._hadGot then
-    titleText = (self._info).DocDesc
+    titleText = self._info.DocDesc
   end
-  ;
-  (self._contentText):SetText((StringTable.Get)(titleText))
-  ;
-  (self._locktext):SetText((StringTable.Get)("str_n32_multiline_lock_pet_title"))
-  ;
-  (self._lockGo):SetActive(not self._hadGot)
-  ;
-  (self._btn):SetActive(self._hadPassed)
-  ;
-  (self._contentGo):SetActive(true)
+  self._contentText:SetText(StringTable.Get(titleText))
+  self._locktext:SetText(StringTable.Get("str_n32_multiline_lock_pet_title"))
+  self._lockGo:SetActive(not self._hadGot)
+  self._btn:SetActive(self._hadPassed)
+  self._contentGo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchiveItem.SetData = function(self, index, fileId, info, hadGot, hadPassed, callBack)
-  -- function num : 0_4
+function UIN32MultiLineArchiveItem:SetData(index, fileId, info, hadGot, hadPassed, callBack)
   self._index = index
   self._fileId = fileId
   self._info = info[1]
@@ -121,30 +83,22 @@ UIN32MultiLineArchiveItem.SetData = function(self, index, fileId, info, hadGot, 
   self:InitUI()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchiveItem.BtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIN32MultiLineArchiveItem:BtnOnClick(go)
   self._spreadContent = not self._spreadContent
   if self._callBack then
-    (self._callBack)(self._index, self._fileId, self._spreadContent)
+    self._callBack(self._index, self._fileId, self._spreadContent)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchiveItem.LockOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN32MultiLineArchiveItem:LockOnClick(go)
   if self._hadPassed and self._hadGot then
-    return 
+    return
   end
   if self._hadPassed then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n32_multiline_lock_tips2"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_n32_multiline_lock_tips2"))
+    return
   end
   if not self._hadGot then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n32_multiline_lock_tips1"))
+    ToastManager.ShowToast(StringTable.Get("str_n32_multiline_lock_tips1"))
   end
 end
-
-

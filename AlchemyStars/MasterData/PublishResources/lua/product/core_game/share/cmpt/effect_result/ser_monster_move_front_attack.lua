@@ -1,46 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_monster_move_front_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectMonsterMoveFrontAttackResult", SkillEffectResultBase)
 SkillEffectMonsterMoveFrontAttackResult = SkillEffectMonsterMoveFrontAttackResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectMonsterMoveFrontAttackResult.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectMonsterMoveFrontAttackResult:GetEffectType()
   return SkillEffectType.MonsterMoveFrontAttack
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveFrontAttackResult.Constructor = function(self, walkResultList, isDead)
-  -- function num : 0_1
+function SkillEffectMonsterMoveFrontAttackResult:Constructor(walkResultList, isDead)
   self._walkResultList = walkResultList
   self._isDead = isDead
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveFrontAttackResult.GetWalkResultList = function(self)
-  -- function num : 0_2
+function SkillEffectMonsterMoveFrontAttackResult:GetWalkResultList()
   return self._walkResultList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveFrontAttackResult.IsCasterDead = function(self)
-  -- function num : 0_3
+function SkillEffectMonsterMoveFrontAttackResult:IsCasterDead()
   return self._isDead
 end
 
 _class("MonsterMoveFrontAttackResult", MonsterWalkResult)
 MonsterMoveFrontAttackResult = MonsterMoveFrontAttackResult
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterMoveFrontAttackResult.Constructor = function(self)
-  -- function num : 0_4
+function MonsterMoveFrontAttackResult:Constructor()
 end
-
-

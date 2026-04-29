@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_inland_pet_skin.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignPetSkin", ICampaignComponentLocalProcessBase)
 CCampaignPetSkin = CCampaignPetSkin
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignPetSkin.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignPetSkin:Constructor()
   self._randomLotteryComponent = nil
   self._randomLotteryCompInfo = nil
   self._buyGiftComponent = nil
@@ -18,67 +11,46 @@ CCampaignPetSkin.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPetSkin.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignPetSkin:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_INLAND_PET_SKIN
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPetSkin.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignPetSkin:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPetSkin.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignPetSkin:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetRandomLotteryComponent()
   self:_GetBuyGiftComponent()
   self:_GetPower2ItemComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPetSkin._GetRandomLotteryComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._randomLotteryComponent = (self._campaignObj):GetComponent(ECampaignPetSkinComponentID.RANDOMLOTTERY)
+function CCampaignPetSkin:_GetRandomLotteryComponent()
+  self._randomLotteryComponent = self._campaignObj:GetComponent(ECampaignPetSkinComponentID.RANDOMLOTTERY)
   if not self._randomLotteryComponent then
-    return 
+    return
   end
-  self._randomLotteryCompInfo = (self._randomLotteryComponent):ComponentInfo()
+  self._randomLotteryCompInfo = self._randomLotteryComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPetSkin._GetBuyGiftComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._buyGiftComponent = (self._campaignObj):GetComponent(ECampaignPetSkinComponentID.BUYGIFT)
+function CCampaignPetSkin:_GetBuyGiftComponent()
+  self._buyGiftComponent = self._campaignObj:GetComponent(ECampaignPetSkinComponentID.BUYGIFT)
   if not self._buyGiftComponent then
-    return 
+    return
   end
-  self._buyGiftComponentInfo = (self._buyGiftComponent):ComponentInfo()
+  self._buyGiftComponentInfo = self._buyGiftComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPetSkin._GetPower2ItemComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._powerShopComponent = (self._campaignObj):GetComponent(ECampaignPetSkinComponentID.SHOPEXCHANGE)
+function CCampaignPetSkin:_GetPower2ItemComponent()
+  self._powerShopComponent = self._campaignObj:GetComponent(ECampaignPetSkinComponentID.SHOPEXCHANGE)
   if not self._powerShopComponent then
-    return 
+    return
   end
-  self._powerShopCompInfo = (self._powerShopComponent):ComponentInfo()
+  self._powerShopCompInfo = self._powerShopComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPetSkin.GetComponent = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignPetSkin:GetComponent(componentID)
   if ECampaignPetSkinComponentID.RANDOMLOTTERY == componentID then
     return self._randomLotteryComponent
   end
@@ -91,10 +63,7 @@ CCampaignPetSkin.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPetSkin.GetComponentInfo = function(self, componentID)
-  -- function num : 0_8 , upvalues : _ENV
+function CCampaignPetSkin:GetComponentInfo(componentID)
   if ECampaignPetSkinComponentID.RANDOMLOTTERY == componentID then
     return self._randomLotteryCompInfo
   end
@@ -107,15 +76,8 @@ CCampaignPetSkin.GetComponentInfo = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPetSkin.GetEntryNew = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignPetSkin:GetEntryNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_INLAND_PET_SKIN)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
-
-

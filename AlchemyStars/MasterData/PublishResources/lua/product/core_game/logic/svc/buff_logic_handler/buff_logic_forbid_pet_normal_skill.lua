@@ -1,40 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_forbid_pet_normal_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicForbidPetNormalSkill", BuffLogicBase)
 BuffLogicForbidPetNormalSkill = BuffLogicForbidPetNormalSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicForbidPetNormalSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicForbidPetNormalSkill:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicForbidPetNormalSkill.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("ForbidPetNormalSkill", true)
+function BuffLogicForbidPetNormalSkill:DoLogic(notify)
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("ForbidPetNormalSkill", true)
 end
 
 _class("BuffLogicUndoForbidPetNormalSkill", BuffLogicBase)
 BuffLogicUndoForbidPetNormalSkill = BuffLogicUndoForbidPetNormalSkill
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUndoForbidPetNormalSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicUndoForbidPetNormalSkill:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicUndoForbidPetNormalSkill.DoLogic = function(self)
-  -- function num : 0_3
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("ForbidPetNormalSkill", nil)
+function BuffLogicUndoForbidPetNormalSkill:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("ForbidPetNormalSkill", nil)
 end
-
-

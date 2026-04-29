@@ -1,88 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_lost_land/ui_lost_land_award_view_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILostLandAwardViewController", UIController)
 UILostLandAwardViewController = UILostLandAwardViewController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILostLandAwardViewController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UILostLandAwardViewController:OnShow(uiParams)
   self._enterData = uiParams[1]
   self:GetComponents()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandAwardViewController.GetComponents = function(self)
-  -- function num : 0_1
+function UILostLandAwardViewController:GetComponents()
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._awardPool = self:GetUIComponent("UISelectObjectPath", "Content")
   local itemTips = self:GetUIComponent("UISelectObjectPath", "itemTips")
   self._selectInfo = itemTips:SpawnObject("UISelectInfo")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandAwardViewController.OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UILostLandAwardViewController:OnValue()
   self:GetAwardList()
   self:InitListView()
-  ;
-  (self._name):SetText((StringTable.Get)("str_lost_land_enter_award_view_title", (self._enterData):GetName()))
+  self._name:SetText(StringTable.Get("str_lost_land_enter_award_view_title", self._enterData:GetName()))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandAwardViewController.GetAwardList = function(self)
-  -- function num : 0_3
-  self._awardList = (self._enterData):GetViewAward()
+function UILostLandAwardViewController:GetAwardList()
+  self._awardList = self._enterData:GetViewAward()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandAwardViewController.InitListView = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._count = (table.count)(self._awardList)
-  ;
-  (self._awardPool):SpawnObjects("UILostLandAwardViewItem", self._count)
+function UILostLandAwardViewController:InitListView()
+  self._count = table.count(self._awardList)
+  self._awardPool:SpawnObjects("UILostLandAwardViewItem", self._count)
   self:SetDataListViewItem()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandAwardViewController.SetDataListViewItem = function(self)
-  -- function num : 0_5
-  local pools = (self._awardPool):GetAllSpawnList()
+function UILostLandAwardViewController:SetDataListViewItem()
+  local pools = self._awardPool:GetAllSpawnList()
   for i = 1, #pools do
     local item = pools[i]
     if i <= self._count then
       item:Active(true)
-      item:SetData((self._awardList)[i], function(id, pos)
-    -- function num : 0_5_0 , upvalues : self
-    self:ItemInfo(id, pos)
-  end
-)
+      item:SetData(self._awardList[i], function(id, pos)
+        self:ItemInfo(id, pos)
+      end)
     else
       item:Active(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandAwardViewController.ItemInfo = function(self, id, pos)
-  -- function num : 0_6
-  (self._selectInfo):SetData(id, pos)
+function UILostLandAwardViewController:ItemInfo(id, pos)
+  self._selectInfo:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandAwardViewController.bgOnClick = function(self, go)
-  -- function num : 0_7
+function UILostLandAwardViewController:bgOnClick(go)
   self:CloseDialog()
 end
-
-

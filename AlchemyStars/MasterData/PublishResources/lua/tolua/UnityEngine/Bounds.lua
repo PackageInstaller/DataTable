@@ -1,17 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/UnityEngine/Bounds.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local rawget = rawget
-local setmetatable = setmetatable
-local type = type
-local Vector3 = Vector3
+local rawget = _ENV.rawget
+local setmetatable = _ENV.setmetatable
+local type = _ENV.type
+local Vector3 = _ENV.Vector3
 local zero = Vector3.zero
-local Bounds = {center = Vector3.zero, extents = Vector3.zero, _className = "Bounds"}
-local get = (tolua.initget)(Bounds)
-Bounds.__index = function(t, k)
-  -- function num : 0_0 , upvalues : rawget, Bounds, get
+local Bounds = {
+  center = Vector3.zero,
+  extents = Vector3.zero,
+  _className = "Bounds"
+}
+local get = tolua.initget(Bounds)
+
+function Bounds.__index(t, k)
   local var = rawget(Bounds, k)
   if var == nil then
     var = rawget(get, k)
@@ -22,131 +21,131 @@ Bounds.__index = function(t, k)
   return var
 end
 
-Bounds.__call = function(t, center, size)
-  -- function num : 0_1 , upvalues : setmetatable, Bounds
-  return setmetatable({center = center, extents = size * 0.5}, Bounds)
+function Bounds.__call(t, center, size)
+  return setmetatable({
+    center = center,
+    extents = size * 0.5
+  }, Bounds)
 end
 
-Bounds.New = function(center, size)
-  -- function num : 0_2 , upvalues : setmetatable, Bounds
-  return setmetatable({center = center, extents = size * 0.5}, Bounds)
+function Bounds.New(center, size)
+  return setmetatable({
+    center = center,
+    extents = size * 0.5
+  }, Bounds)
 end
 
-Bounds.Get = function(self)
-  -- function num : 0_3
+function Bounds:Get()
   local size = self:GetSize()
   return self.center, size
 end
 
-Bounds.GetSize = function(self)
-  -- function num : 0_4
+function Bounds:GetSize()
   return self.extents * 2
 end
 
-Bounds.SetSize = function(self, value)
-  -- function num : 0_5
+function Bounds:SetSize(value)
   self.extents = value * 0.5
 end
 
-Bounds.GetMin = function(self)
-  -- function num : 0_6
+function Bounds:GetMin()
   return self.center - self.extents
 end
 
-Bounds.SetMin = function(self, value)
-  -- function num : 0_7
+function Bounds:SetMin(value)
   self:SetMinMax(value, self:GetMax())
 end
 
-Bounds.GetMax = function(self)
-  -- function num : 0_8
+function Bounds:GetMax()
   return self.center + self.extents
 end
 
-Bounds.SetMax = function(self, value)
-  -- function num : 0_9
+function Bounds:SetMax(value)
   self:SetMinMax(self:GetMin(), value)
 end
 
-Bounds.SetMinMax = function(self, min, max)
-  -- function num : 0_10
+function Bounds:SetMinMax(min, max)
   self.extents = (max - min) * 0.5
   self.center = min + self.extents
 end
 
-Bounds.Encapsulate = function(self, point)
-  -- function num : 0_11 , upvalues : Vector3
-  self:SetMinMax((Vector3.Min)(self:GetMin(), point), (Vector3.Max)(self:GetMax(), point))
+function Bounds:Encapsulate(point)
+  self:SetMinMax(Vector3.Min(self:GetMin(), point), Vector3.Max(self:GetMax(), point))
 end
 
-Bounds.Expand = function(self, amount)
-  -- function num : 0_12 , upvalues : type, Vector3
+function Bounds:Expand(amount)
   if type(amount) == "number" then
     amount = amount * 0.5
-    ;
-    (self.extents):Add((Vector3.New)(amount, amount, amount))
+    self.extents:Add(Vector3.New(amount, amount, amount))
   else
-    ;
-    (self.extents):Add(amount * 0.5)
+    self.extents:Add(amount * 0.5)
   end
 end
 
-Bounds.Intersects = function(self, bounds)
-  -- function num : 0_13
+function Bounds:Intersects(bounds)
   local min = self:GetMin()
   local max = self:GetMax()
   local min2 = bounds:GetMin()
   local max2 = bounds:GetMax()
-  do return min.x <= max2.x and min2.x <= max.x and min.y <= max2.y and min2.y <= max.y and min.z <= max2.z and min2.z <= max.z end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return min.x <= max2.x and max.x >= min2.x and min.y <= max2.y and max.y >= min2.y and min.z <= max2.z and max.z >= min2.z
 end
 
-Bounds.Contains = function(self, p)
-  -- function num : 0_14
+function Bounds:Contains(p)
   local min = self:GetMin()
   local max = self:GetMax()
-  if p.x < min.x or p.y < min.y or p.z < min.z or max.x < p.x or max.y < p.y or max.z < p.z then
+  if p.x < min.x or p.y < min.y or p.z < min.z or p.x > max.x or p.y > max.y or p.z > max.z then
     return false
   end
   return true
 end
 
-Bounds.IntersectRay = function(self, ray)
-  -- function num : 0_15 , upvalues : _ENV
+function Bounds:IntersectRay(ray)
   local tmin = -Mathf.Infinity
   local tmax = Mathf.Infinity
-  local t0, t1, f = nil, nil, nil
+  local t0, t1, f
   local t = self:GetCenter() - ray:GetOrigin()
-  local p = {t.x, t.y, t.z}
+  local p = {
+    t.x,
+    t.y,
+    t.z
+  }
   t = self.extents
-  local extent = {t.x, t.y, t.z}
+  local extent = {
+    t.x,
+    t.y,
+    t.z
+  }
   t = ray:GetDirection()
-  local dir = {t.x, t.y, t.z}
+  local dir = {
+    t.x,
+    t.y,
+    t.z
+  }
   for i = 1, 3 do
     f = 1 / dir[i]
-    t0 = (p[i] + extent[i]) * (f)
-    t1 = (p[i] - extent[i]) * (f)
+    t0 = (p[i] + extent[i]) * f
+    t1 = (p[i] - extent[i]) * f
     if t0 < t1 then
       if tmin < t0 then
         tmin = t0
       end
-      if t1 < tmax then
+      if tmax > t1 then
         tmax = t1
       end
-      if tmax < tmin then
+      if tmin > tmax then
         return false
       end
       if tmax < 0 then
         return false
       end
     else
-      if tmin < t1 then
+      if t1 > tmin then
         tmin = t1
       end
       if t0 < tmax then
         tmax = t0
       end
-      if tmax < tmin then
+      if tmin > tmax then
         return false
       end
       if tmax < 0 then
@@ -157,25 +156,30 @@ Bounds.IntersectRay = function(self, ray)
   return true, tmin
 end
 
-Bounds.ClosestPoint = function(self, point)
-  -- function num : 0_16 , upvalues : _ENV
+function Bounds:ClosestPoint(point)
   local t = point - self:GetCenter()
-  local closest = {t.x, t.y, t.z}
+  local closest = {
+    t.x,
+    t.y,
+    t.z
+  }
   local et = self.extents
-  local extent = {et.x, et.y, et.z}
+  local extent = {
+    et.x,
+    et.y,
+    et.z
+  }
   local distance = 0
-  local delta = nil
+  local delta
   for i = 1, 3 do
     if closest[i] < -extent[i] then
       delta = closest[i] + extent[i]
-      distance = distance + (delta) * (delta)
+      distance = distance + delta * delta
       closest[i] = -extent[i]
-    else
-      if extent[i] < closest[i] then
-        delta = closest[i] - extent[i]
-        distance = distance + (delta) * (delta)
-        closest[i] = extent[i]
-      end
+    elseif closest[i] > extent[i] then
+      delta = closest[i] - extent[i]
+      distance = distance + delta * delta
+      closest[i] = extent[i]
     end
   end
   if distance == 0 then
@@ -186,29 +190,22 @@ Bounds.ClosestPoint = function(self, point)
   end
 end
 
-Bounds.Destroy = function(self)
-  -- function num : 0_17
+function Bounds:Destroy()
   self.center = nil
   self.size = nil
 end
 
-Bounds.__tostring = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  return (string.format)("Center: %s, Extents %s", tostring(self.center), tostring(self.extents))
+function Bounds:__tostring()
+  return string.format("Center: %s, Extents %s", tostring(self.center), tostring(self.extents))
 end
 
-Bounds.__eq = function(a, b)
-  -- function num : 0_19
-  do return a.center == b.center and a.extents == b.extents end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function Bounds.__eq(a, b)
+  return a.center == b.center and a.extents == b.extents
 end
 
 get.size = Bounds.GetSize
 get.min = Bounds.GetMin
 get.max = Bounds.GetMax
--- DECOMPILER ERROR at PC62: Confused about usage of register: R7 in 'UnsetPending'
-
 UnityEngine.Bounds = Bounds
 setmetatable(Bounds, Bounds)
 return Bounds
-

@@ -1,49 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/review/ui_black_fight_paper_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBlackFightPaperReview", UIController)
 UIBlackFightPaperReview = UIBlackFightPaperReview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBlackFightPaperReview.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local mCampaign = (GameGlobal.GetModule)(CampaignModule)
+function UIBlackFightPaperReview:Constructor()
+  local mCampaign = GameGlobal.GetModule(CampaignModule)
   self.data = mCampaign:GetN7DataReview()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightPaperReview.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBlackFightPaperReview:OnShow(uiParams)
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_1_0 , upvalues : self
+  self._backBtn:SetData(function()
     self:CloseDialog()
-  end
-, nil, nil, false)
+  end, nil, nil, false)
   self.btnPrev = self:GetGameObject("BtnPrev")
   self.btnNext = self:GetGameObject("BtnNext")
   self.txtPage = self:GetUIComponent("UILocalizationText", "txtPage")
   self.svRect = self:GetUIComponent("RectTransform", "sv")
   self.svHelper = H3DScrollViewHelper:New(self, "sv", "UIBlackFightPaperItemReview", function(index, uiWidget)
-    -- function num : 0_1_1 , upvalues : self
-    uiWidget:Flush(((self.data).papers)[index])
+    uiWidget:Flush(self.data.papers[index])
     return uiWidget
-  end
-, nil, nil)
-  ;
-  (self.svHelper):SetEndSnappingCallback(function(index, item)
-    -- function num : 0_1_2 , upvalues : self
+  end, nil, nil)
+  self.svHelper:SetEndSnappingCallback(function(index, item)
     self.curIdx = self.tempIndex
     self:Flush()
-  end
-)
-  self.totalCount = (table.count)((self.data).papers)
-  local existNotReadPaper, paper = (self.data):ExistNotReadPaper()
+  end)
+  self.totalCount = table.count(self.data.papers)
+  local existNotReadPaper, paper = self.data:ExistNotReadPaper()
   if existNotReadPaper then
     self.curIdx = paper.idx
   else
@@ -51,96 +33,64 @@ UIBlackFightPaperReview.OnShow = function(self, uiParams)
   end
   self.tempIndex = self.curIdx
   self.preIndex = 0
-  ;
-  (self.svHelper):Init(self.totalCount, self.curIdx, Vector2(((self.svRect).rect).width, ((self.svRect).rect).height))
+  self.svHelper:Init(self.totalCount, self.curIdx, Vector2(self.svRect.rect.width, self.svRect.rect.height))
   self:Flush()
   self:FlushPage(self.tempIndex)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightPaperReview.OnHide = function(self)
-  -- function num : 0_2
+function UIBlackFightPaperReview:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightPaperReview.Flush = function(self)
-  -- function num : 0_3
-  (self.data):ReadPaper(self.curIdx)
+function UIBlackFightPaperReview:Flush()
+  self.data:ReadPaper(self.curIdx)
   if self.curIdx == 1 then
-    (self.btnPrev):SetActive(false)
-    ;
-    (self.btnNext):SetActive(true)
+    self.btnPrev:SetActive(false)
+    self.btnNext:SetActive(true)
+  elseif self.curIdx == self.totalCount then
+    self.btnPrev:SetActive(true)
+    self.btnNext:SetActive(false)
   else
-    if self.curIdx == self.totalCount then
-      (self.btnPrev):SetActive(true)
-      ;
-      (self.btnNext):SetActive(false)
-    else
-      ;
-      (self.btnPrev):SetActive(true)
-      ;
-      (self.btnNext):SetActive(true)
-    end
+    self.btnPrev:SetActive(true)
+    self.btnNext:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightPaperReview.FlushPage = function(self, cur)
-  -- function num : 0_4 , upvalues : _ENV
+function UIBlackFightPaperReview:FlushPage(cur)
   local str = cur .. "/" .. self.totalCount
-  ;
-  (self.txtPage):SetText((StringTable.Get)("str_n7_black_fight_page", str))
+  self.txtPage:SetText(StringTable.Get("str_n7_black_fight_page", str))
   if self.preIndex ~= cur then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N7ReadPaper)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N7ReadPaper)
     self.preIndex = cur
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightPaperReview.BtnPrevOnClick = function(self, go)
-  -- function num : 0_5
+function UIBlackFightPaperReview:BtnPrevOnClick(go)
   self:CoOnClick(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightPaperReview.BtnNextOnClick = function(self, go)
-  -- function num : 0_6
+function UIBlackFightPaperReview:BtnNextOnClick(go)
   self:CoOnClick(true)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightPaperReview.CoOnClick = function(self, isNext)
-  -- function num : 0_7 , upvalues : _ENV
+function UIBlackFightPaperReview:CoOnClick(isNext)
   local canPage = false
-  -- DECOMPILER ERROR at PC7: Unhandled construct in 'MakeBoolean' P1
-
-  if isNext and self.curIdx < self.totalCount then
-    canPage = true
-    self.tempIndex = self.curIdx + 1
-  end
-  if self.curIdx > 1 then
+  if isNext then
+    if self.curIdx < self.totalCount then
+      canPage = true
+      self.tempIndex = self.curIdx + 1
+    end
+  elseif self.curIdx > 1 then
     canPage = true
     self.tempIndex = self.curIdx - 1
   end
   if canPage then
     self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV
-    local key = "UIBlackFightPaperReviewCoOnClick"
-    self:Lock(key)
-    ;
-    (self.svHelper):MovePanelToIndex(self.tempIndex)
-    self:FlushPage(self.tempIndex)
-    YIELD(TT, 836)
-    self:UnLock(key)
-  end
-, self)
+      local key = "UIBlackFightPaperReviewCoOnClick"
+      self:Lock(key)
+      self.svHelper:MovePanelToIndex(self.tempIndex)
+      self:FlushPage(self.tempIndex)
+      YIELD(TT, 836)
+      self:UnLock(key)
+    end, self)
   end
 end
-
-

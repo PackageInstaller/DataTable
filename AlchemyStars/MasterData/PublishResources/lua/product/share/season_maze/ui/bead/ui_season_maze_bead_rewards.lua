@@ -1,107 +1,78 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/bead/ui_season_maze_bead_rewards.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeBeadRewards", UIController)
 UISeasonMazeBeadRewards = UISeasonMazeBeadRewards
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeBeadRewards.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonMazeBeadRewards:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadRewards.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeBeadRewards:OnShow(uiParams)
   self._ids = uiParams[1]
   self._callBack = uiParams[2]
-  self._seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self._seasonMazeObj = (self._seasonMazeModule):CurSeasonObj()
-  self._component = (self._seasonMazeObj):GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
-  self._componentInfo = (self._component):GetComponentInfo()
+  self._seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self._seasonMazeObj = self._seasonMazeModule:CurSeasonObj()
+  self._component = self._seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+  self._componentInfo = self._component:GetComponentInfo()
   self:InitWidget()
   self:_FilterData()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadRewards.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonMazeBeadRewards:InitWidget()
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._itemTips = self:GetUIComponent("UISelectObjectPath", "ItemTips")
-  self._tips = (self._itemTips):SpawnObject("UISeasonMazeBeadTips")
+  self._tips = self._itemTips:SpawnObject("UISeasonMazeBeadTips")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadRewards._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._content):SpawnObjects("UISeasonMazeBeadItem", 5)
-  self._widgets = (self._content):GetAllSpawnList()
-  for _,widget in ipairs(self._widgets) do
+function UISeasonMazeBeadRewards:_OnValue()
+  self._content:SpawnObjects("UISeasonMazeBeadItem", 5)
+  self._widgets = self._content:GetAllSpawnList()
+  for _, widget in ipairs(self._widgets) do
     widget:SetScale(0.8)
   end
   self:ShowFive()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadRewards._FilterData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMazeBeadRewards:_FilterData()
   self._fiveArray = {}
   self._arrayIndex = 1
-  if (table.count)(self._ids) > 0 then
+  if table.count(self._ids) > 0 then
     local count = 1
     local arrayIndex = 1
-    for _,uid in ipairs(self._ids) do
-      if count > 5 then
+    for _, uid in ipairs(self._ids) do
+      if 5 < count then
         count = 1
         arrayIndex = arrayIndex + 1
       end
-      -- DECOMPILER ERROR at PC25: Confused about usage of register: R8 in 'UnsetPending'
-
-      if not (self._fiveArray)[arrayIndex] then
-        (self._fiveArray)[arrayIndex] = {}
+      if not self._fiveArray[arrayIndex] then
+        self._fiveArray[arrayIndex] = {}
       end
       if count <= 5 then
-        (table.insert)((self._fiveArray)[arrayIndex], uid)
+        table.insert(self._fiveArray[arrayIndex], uid)
         count = count + 1
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadRewards.ShowFive = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  for key,widget in ipairs(self._widgets) do
-    local id = ((self._fiveArray)[self._arrayIndex])[key]
+function UISeasonMazeBeadRewards:ShowFive()
+  for key, widget in ipairs(self._widgets) do
+    local id = self._fiveArray[self._arrayIndex][key]
     if id then
       widget:SetActive(true)
       widget:SetData(nil, self:ForgeData(id), function(uid, id, position)
-    -- function num : 0_5_0 , upvalues : self
-    self:ShowTips(uid, id, position)
-  end
-, SeasonMazeBeadItemType.Reward)
+        self:ShowTips(uid, id, position)
+      end, SeasonMazeBeadItemType.Reward)
     else
       widget:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadRewards.CloseBtnOnClick = function(self, go)
-  -- function num : 0_6
-  if #self._fiveArray <= self._arrayIndex then
+function UISeasonMazeBeadRewards:CloseBtnOnClick(go)
+  if self._arrayIndex >= #self._fiveArray then
     self:CloseDialog()
     if self._callBack then
-      (self._callBack)()
+      self._callBack()
     end
   else
     self._arrayIndex = self._arrayIndex + 1
@@ -109,48 +80,25 @@ UISeasonMazeBeadRewards.CloseBtnOnClick = function(self, go)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadRewards.ShowTips = function(self, uid, id, position)
-  -- function num : 0_7
-  (self._tips):SetData(uid, id, position)
+function UISeasonMazeBeadRewards:ShowTips(uid, id, position)
+  self._tips:SetData(uid, id, position)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadRewards.ForgeData = function(self, id)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonMazeBeadRewards:ForgeData(id)
   local data = SeasonMazeAutoBeadClient:New()
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (data.bead_info).unique_id = 0
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (data.bead_info).cfg_id = id
+  data.bead_info.unique_id = 0
+  data.bead_info.cfg_id = id
   return data
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadRewards.InSlot = function(self, uid)
-  -- function num : 0_9
+function UISeasonMazeBeadRewards:InSlot(uid)
   return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadRewards.IsLock = function(self, data, itemType)
-  -- function num : 0_10
+function UISeasonMazeBeadRewards:IsLock(data, itemType)
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadRewards.IsMark = function(self, data, itemType)
-  -- function num : 0_11
+function UISeasonMazeBeadRewards:IsMark(data, itemType)
   return false
 end
-
-

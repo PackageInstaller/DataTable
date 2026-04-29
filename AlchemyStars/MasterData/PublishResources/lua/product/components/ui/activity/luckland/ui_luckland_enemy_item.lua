@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/ui_luckland_enemy_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandEnemyItem", UICustomWidget)
 UILuckLandEnemyItem = UILuckLandEnemyItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandEnemyItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UILuckLandEnemyItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEnemyItem.InitWidget = function(self)
-  -- function num : 0_1
+function UILuckLandEnemyItem:InitWidget()
   self.singleatkIcon = self:GetUIComponent("Image", "SingleatkIcon")
   self.enemyAtkText = self:GetUIComponent("UILocalizationText", "EnemyAtkText")
   self.singleHeartIcon = self:GetUIComponent("Image", "SingleHeartIcon")
@@ -28,12 +18,10 @@ UILuckLandEnemyItem.InitWidget = function(self)
   self.rootRectTf = self:GetUIComponent("RectTransform", "Root")
   self.enemyRawIcon = self:GetUIComponent("RawImage", "EnemyIcon")
   self.readybg = self:GetGameObject("readybg")
-  ;
-  (self.readybg):SetActive(false)
+  self.readybg:SetActive(false)
   self.countDownRawImgLoader = self:GetUIComponent("RawImageLoader", "EnemyIcon")
   self.tipsBg = self:GetGameObject("TipsBg")
-  ;
-  (self.tipsBg):SetActive(false)
+  self.tipsBg:SetActive(false)
   self.tipsBgtTf = self:GetUIComponent("RectTransform", "TipsBg")
   self.skillNameText = self:GetUIComponent("UILocalizationText", "SkillNameText")
   self.skillTipsText = self:GetUIComponent("UILocalizationText", "SkillTipsText")
@@ -43,238 +31,154 @@ UILuckLandEnemyItem.InitWidget = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEnemyItem.SetData = function(self, data, index, parentTf, closeCB)
-  -- function num : 0_2 , upvalues : _ENV
+function UILuckLandEnemyItem:SetData(data, index, parentTf, closeCB)
   self.closeCB = closeCB
   self.data = data
   self.getedDemand = 1
   self.getedDemand = 0
-  ;
-  (self.enemyAtkText):SetText(self:GetDemandMoney())
-  ;
-  (self.enemyHeartText):SetText(((self.data):GetEnemyEntity()):GetDemandRound() + 1)
-  ;
-  (((((self.enemyAtkText).gameObject).transform).parent).gameObject):SetActive(false)
-  ;
-  (((((self.enemyAtkText).gameObject).transform).parent).gameObject):SetActive(true)
+  self.enemyAtkText:SetText(self:GetDemandMoney())
+  self.enemyHeartText:SetText(self.data:GetEnemyEntity():GetDemandRound() + 1)
+  self.enemyAtkText.gameObject.transform.parent.gameObject:SetActive(false)
+  self.enemyAtkText.gameObject.transform.parent.gameObject:SetActive(true)
   if self.tipsRectTf then
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.tipsRectTf)
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.tipsRectTf)
   end
-  ;
-  ((self.rootRectTf).transform):SetParent(parentTf)
-  ;
-  ((self.rootRectTf).gameObject):SetActive(true)
-  local buffArray = ((self.data):GetEnemyEntity()):GetBuffArray()
-  if #buffArray > 0 then
+  self.rootRectTf.transform:SetParent(parentTf)
+  self.rootRectTf.gameObject:SetActive(true)
+  local buffArray = self.data:GetEnemyEntity():GetBuffArray()
+  if 0 < #buffArray then
     self.mainSkill = buffArray[1]
   else
     self.mainSkill = nil
   end
   self:SetIndexPos(index)
   if self:GetDead() then
-    ((self.rootRectTf).gameObject):SetActive(false)
+    self.rootRectTf.gameObject:SetActive(false)
   else
-    ;
-    ((self.rootRectTf).gameObject):SetActive(true)
+    self.rootRectTf.gameObject:SetActive(true)
   end
   self:RefreshSkill()
   if self.BigEnemyTIPSText then
-    (self.BigEnemyTIPSText):SetText((StringTable.Get)("str_luckland_attack_warning", ((self.data):GetEnemyEntity()):GetDemandRound() + 1, self:GetDemandMoney()))
+    self.BigEnemyTIPSText:SetText(StringTable.Get("str_luckland_attack_warning", self.data:GetEnemyEntity():GetDemandRound() + 1, self:GetDemandMoney()))
     if self.tipsRectTf then
-      (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.tipsRectTf)
+      UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.tipsRectTf)
     end
-    ;
-    (self.enemyIcon):LoadImage((self.data):GetEnemyBigIcon())
+    self.enemyIcon:LoadImage(self.data:GetEnemyBigIcon())
   else
-    ;
-    (self.enemyIcon):LoadImage((self.data):GetEnemyIcon())
+    self.enemyIcon:LoadImage(self.data:GetEnemyIcon())
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEnemyItem.RefreshSkill = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UILuckLandEnemyItem:RefreshSkill()
   if self.mainSkill then
-    local configData = (self.mainSkill):BuffConfigData()
+    local configData = self.mainSkill:BuffConfigData()
     local name = configData:GetName()
     local icon = configData:GetIcon()
     local desc = configData:GetDesc()
-    ;
-    (self.skillNameText):SetText((StringTable.Get)(name))
-    ;
-    (self.skillTipsText):SetText((StringTable.Get)(desc))
-    ;
-    (self.skillIcon):LoadImage(icon)
-    ;
-    ((self.skillIcon).gameObject):SetActive(true)
+    self.skillNameText:SetText(StringTable.Get(name))
+    self.skillTipsText:SetText(StringTable.Get(desc))
+    self.skillIcon:LoadImage(icon)
+    self.skillIcon.gameObject:SetActive(true)
   else
-    do
-      ;
-      ((self.skillIcon).gameObject):SetActive(false)
-    end
+    self.skillIcon.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEnemyItem.SetReadyEnemy = function(self)
-  -- function num : 0_4
-  ((self.singleHeartIcon).gameObject):SetActive(false)
-  ;
-  ((self.enemyHeartText).gameObject):SetActive(false)
-  ;
-  (self.readybg):SetActive(true)
-  local anchorPos = (self.tipsBgtTf).anchoredPosition
+function UILuckLandEnemyItem:SetReadyEnemy()
+  self.singleHeartIcon.gameObject:SetActive(false)
+  self.enemyHeartText.gameObject:SetActive(false)
+  self.readybg:SetActive(true)
+  local anchorPos = self.tipsBgtTf.anchoredPosition
   anchorPos.x = -30
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.tipsBgtTf).anchoredPosition = anchorPos
+  self.tipsBgtTf.anchoredPosition = anchorPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEnemyItem.SetIndexPos = function(self, index)
-  -- function num : 0_5 , upvalues : _ENV
+function UILuckLandEnemyItem:SetIndexPos(index)
   if index == -1 then
-    return 
+    return
   end
   local singleSize = Vector2(314, 162)
   local originSize = Vector2(singleSize.x / 2, 0)
   local targetPos = originSize + (index - 1) * Vector2(singleSize.x, 0)
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.rootRectTf).anchoredPosition = targetPos
+  self.rootRectTf.anchoredPosition = targetPos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEnemyItem.CastSkill = function(self)
-  -- function num : 0_6
-  local pos = (self.rootRectTf).anchoredPosition
+function UILuckLandEnemyItem:CastSkill()
+  local pos = self.rootRectTf.anchoredPosition
   pos.y = pos.y - 100
-  ;
-  (self.rootRectTf):DOPunchAnchorPos(pos, 0.25, 1)
+  self.rootRectTf:DOPunchAnchorPos(pos, 0.25, 1)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEnemyItem.DeadShow = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((self.rootRectTf).transform):DOPunchScale(Vector3(-0.1, -0.1, -0.1), 0.8, 1)
+function UILuckLandEnemyItem:DeadShow()
+  self.rootRectTf.transform:DOPunchScale(Vector3(-0.1, -0.1, -0.1), 0.8, 1)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEnemyItem.EnemyBeAtkShow = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UILuckLandEnemyItem:EnemyBeAtkShow()
   if self.BigEnemyTIPSText then
-    (self.BigEnemyTIPSText):SetText((StringTable.Get)("str_luckland_attack_warning", ((self.data):GetEnemyEntity()):GetDemandRound() + 1, self:GetDemandMoney()))
+    self.BigEnemyTIPSText:SetText(StringTable.Get("str_luckland_attack_warning", self.data:GetEnemyEntity():GetDemandRound() + 1, self:GetDemandMoney()))
     if self.tipsRectTf then
-      (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.tipsRectTf)
+      UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.tipsRectTf)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEnemyItem.GetEnemyAtk = function(self)
-  -- function num : 0_9
+function UILuckLandEnemyItem:GetEnemyAtk()
   if self:GetDead() then
     return 0
   end
-  return (self.data):GetEnemyAtk()
+  return self.data:GetEnemyAtk()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEnemyItem.CloseTipsBg = function(self)
-  -- function num : 0_10
-  (self.tipsBg):SetActive(false)
+function UILuckLandEnemyItem:CloseTipsBg()
+  self.tipsBg:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEnemyItem.GetDead = function(self)
-  -- function num : 0_11
-  return ((self.data):GetEnemyEntity()):IsDead()
+function UILuckLandEnemyItem:GetDead()
+  return self.data:GetEnemyEntity():IsDead()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEnemyItem.GetHP = function(self)
-  -- function num : 0_12
-  return (self.data):GetEnemyHp()
+function UILuckLandEnemyItem:GetHP()
+  return self.data:GetEnemyHp()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEnemyItem.SetGetedDemand = function(self, geted)
-  -- function num : 0_13
+function UILuckLandEnemyItem:SetGetedDemand(geted)
   self.getedDemand = geted
-  ;
-  (self.enemyAtkText):SetText(self:GetDemandMoney())
+  self.enemyAtkText:SetText(self:GetDemandMoney())
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEnemyItem.SetBeAtkDemand = function(self, beAtk)
-  -- function num : 0_14
-  local demand = ((self.data):GetEnemyEntity()):GetDemandMoney()
+function UILuckLandEnemyItem:SetBeAtkDemand(beAtk)
+  local demand = self.data:GetEnemyEntity():GetDemandMoney()
   if beAtk < demand then
     demand = demand - beAtk
   else
     demand = 0
   end
-  ;
-  ((self.data):GetEnemyEntity()):SetDemandMoney(demand)
+  self.data:GetEnemyEntity():SetDemandMoney(demand)
   self:EnemyBeAtkShow()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEnemyItem.GetDemandMoney = function(self)
-  -- function num : 0_15
-  return ((self.data):GetEnemyEntity()):GetDemandMoney() - self.getedDemand
+function UILuckLandEnemyItem:GetDemandMoney()
+  return self.data:GetEnemyEntity():GetDemandMoney() - self.getedDemand
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEnemyItem.GetDemandRound = function(self)
-  -- function num : 0_16
-  return ((self.data):GetEnemyEntity()):GetDemandRound()
+function UILuckLandEnemyItem:GetDemandRound()
+  return self.data:GetEnemyEntity():GetDemandRound()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEnemyItem.RefreshUI = function(self)
-  -- function num : 0_17
-  (self.enemyAtkText):SetText(self:GetDemandMoney())
-  ;
-  (self.enemyHeartText):SetText(((self.data):GetEnemyEntity()):GetDemandRound() + 1)
+function UILuckLandEnemyItem:RefreshUI()
+  self.enemyAtkText:SetText(self:GetDemandMoney())
+  self.enemyHeartText:SetText(self.data:GetEnemyEntity():GetDemandRound() + 1)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEnemyItem.BgOnClick = function(self)
-  -- function num : 0_18
+function UILuckLandEnemyItem:BgOnClick()
   if self.closeCB then
-    (self.closeCB)()
+    self.closeCB()
   end
   if self.mainSkill ~= nil then
-    (self.tipsBg):SetActive(true)
+    self.tipsBg:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEnemyItem.TipsBgOnClick = function(self)
-  -- function num : 0_19
-  (self.tipsBg):SetActive(false)
+function UILuckLandEnemyItem:TipsBgOnClick()
+  self.tipsBg:SetActive(false)
 end
-
-

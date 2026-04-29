@@ -1,29 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_replace_buff_id.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetReplaceBuffID", BuffLogicBase)
 BuffLogicSetReplaceBuffID = BuffLogicSetReplaceBuffID
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetReplaceBuffID.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetReplaceBuffID:Constructor(buffInstance, logicParam)
   self._buffEffectType = logicParam.buffEffectType
   self._replaceBuffID = logicParam.replaceBuffID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetReplaceBuffID.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicSetReplaceBuffID:DoLogic()
   local ownerEntity = self:GetEntity()
   local buffComp = ownerEntity:BuffComponent()
   if not buffComp then
-    return 
+    return
   end
-  local key = (string.format)(BattleConst.BVK_ReplaceBuffIDFormat, self._buffEffectType)
+  local key = string.format(BattleConst.BVK_ReplaceBuffIDFormat, self._buffEffectType)
   buffComp:SetBuffValue(key, self._replaceBuffID)
 end
-
-

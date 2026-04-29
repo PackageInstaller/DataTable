@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_bomb_bullet_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseBombBulletParam", SkillPhaseParamBase)
 SkillPhaseBombBulletParam = SkillPhaseBombBulletParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseBombBulletParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseBombBulletParam:Constructor(t)
   self._bulletEffectId = t.bulletEffectId
   self._oneGridFlyTime = t.oneGridFlyTime
   self._bombEffectId = t.bombEffectId
@@ -22,10 +15,7 @@ SkillPhaseBombBulletParam.Constructor = function(self, t)
   self._audioId = t.audioID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseBombBulletParam.GetCacheTable = function(self)
-  -- function num : 0_1
+function SkillPhaseBombBulletParam:GetCacheTable()
   local listID = {}
   self:AddEffectIDToListID(listID, self._bulletEffectId)
   self:AddEffectIDToListID(listID, self._bombEffectId)
@@ -34,91 +24,52 @@ SkillPhaseBombBulletParam.GetCacheTable = function(self)
   return self:GetCacheTableFromListID(listID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseBombBulletParam.GetSoundCacheTable = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseBombBulletParam:GetSoundCacheTable()
   local t = {}
-  ;
-  (table.insert)(t, self._audioId)
+  table.insert(t, self._audioId)
   return t
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseBombBulletParam.GetAudioId = function(self)
-  -- function num : 0_3
+function SkillPhaseBombBulletParam:GetAudioId()
   return self._audioId
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseBombBulletParam.GetPhaseType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillPhaseBombBulletParam:GetPhaseType()
   return SkillViewPhaseType.BombBullet
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseBombBulletParam.GetBulletEffectId = function(self)
-  -- function num : 0_5
+function SkillPhaseBombBulletParam:GetBulletEffectId()
   return self._bulletEffectId
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseBombBulletParam.GetOnGridFlyTime = function(self)
-  -- function num : 0_6
+function SkillPhaseBombBulletParam:GetOnGridFlyTime()
   return self._oneGridFlyTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseBombBulletParam.GetBombEffectId = function(self)
-  -- function num : 0_7
+function SkillPhaseBombBulletParam:GetBombEffectId()
   return self._bombEffectId
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseBombBulletParam.GetBombDelayTime = function(self)
-  -- function num : 0_8
+function SkillPhaseBombBulletParam:GetBombDelayTime()
   return self._bombDelayTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseBombBulletParam.GetBombEffectId2 = function(self)
-  -- function num : 0_9
+function SkillPhaseBombBulletParam:GetBombEffectId2()
   return self._bombEffectId2
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseBombBulletParam.GetDamageDelayTime = function(self)
-  -- function num : 0_10
+function SkillPhaseBombBulletParam:GetDamageDelayTime()
   return self._damageDelayTime
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseBombBulletParam.GetHitAnimName = function(self)
-  -- function num : 0_11
+function SkillPhaseBombBulletParam:GetHitAnimName()
   return self._hitAnimName
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseBombBulletParam.GetHitEffectId = function(self)
-  -- function num : 0_12
+function SkillPhaseBombBulletParam:GetHitEffectId()
   return self._hitEffectId
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseBombBulletParam.GetDelayTime = function(self)
-  -- function num : 0_13
+function SkillPhaseBombBulletParam:GetDelayTime()
   return self._delayTime
 end
-
-

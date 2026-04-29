@@ -1,8 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/kr/activity/n10/str_n10.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_n10_name = "코바야시네", str_n10_sub_name = "메이드래곤", str_n10_remaining_time = "남은 시간", str_n10_activity_intro = "이벤트 설명", str_n10_story_replay = "스토리 회상", str_n10_battle_pass = "특별 사건부", str_n10_login_award = "로그인 보상", str_n10_pet = "첫인사", str_n10_shop = "보상 상점", str_n10_activity_remaining_time = "수령 남은 시간: ", str_n10_drop_time = "이벤트 남은 시간: ", str_n10_intro_title = "메이드래곤의 휴일 이벤트 설명", str_n10_intro_content = "[접시] 아이템 획득:\n1. 이벤트 기간에 프리즘을 소모하는 메인 스테이지 또는 자원 정비 스테이지를 완료하면 일정 수량의 [접시]를 획득할 수 있습니다.\n2. 이벤트 종료 시 이상의 스테이지에서 더는 [접시]를 드롭하지 않습니다.\n\n[접시] 아이템 사용:\n1. 이벤트 기간에 [접시]를 소모해 [토르의 주방]에서 요리를 받을 수 있습니다.\n2. 이벤트 종료 후에도 [토르의 주방]은 3일간 개방됩니다. 기간 내에 [접시]를 사용해 요리를 받아 주세요. [토르의 주방]이 닫힌 후 사용하지 않은 접시는 1:10의 비율에 따라 나이티움으로 전환됩니다.", str_n10_lottery_one = "1회 받기", str_n10_lottery_multi = "10회 받기", str_n10_lottery_intro_title = "테이블 설명", str_n10_lottery_intro_content = "1. 이벤트 기간에 5개의 [테이블]이 개방되며, 각 [테이블]은 요리를 100회 받을 수 있습니다.\n2. [접시]를 소모해 요리를 받을 수 있습니다.\n3. 현재 테이블의 [메인 요리]를 모두 받으면 다음 [테이블]이 개방되며, 이전 [테이블]의 요리도 계속해서 받을 수 있습니다.\n4. [토르의 주방]이 닫히면 남은 [접시]는 1:10의 비율에 따라 나이티움으로 교환됩니다.", str_n10_lottery_pool = "{1}번 테이블", str_n10_shop_no_item_tips = "해당 테이블의 모든 요리를 획득해 더는 요리를 받을 수 없습니다!", str_n10_shop_box_unlock_intro = "<color=#F6A201>{1}번 테이블</color>의 메인 요리를 모두 획득해야만 해당 테이블이 개방됩니다!", str_n10_shop_award_rest_num = "잔여", str_n10_shop_number_1 = "1", str_n10_shop_number_2 = "2", str_n10_shop_number_3 = "3", str_n10_shop_number_4 = "4", str_n10_shop_number_5 = "5", str_n10_shop_number_6 = "6", str_n10_shop_number_7 = "7", str_n10_shop_number_8 = "8", str_n10_shop_number_9 = "9", str_n10_shop_number_10 = "10", str_n10_shop_number_99 = "99", str_n10_shop_new_box_unlock_title = "신규 테이블 개방", str_n10_shop_open_next_text = "{1}번 테이블의 메인 요리를 모두 획득해 {2}번 테이블이 개방됩니다!", str_n10_shop_loop_box_reset_tips = "모든 메인 요리를 획득해 테이블이 초기화됩니다.", str_n10_shop_draw_once_more_text = "접시 {1}개를 소모해 계속 요리를 받겠습니까?", str_n10_rule_description = "규칙 설명", str_n10_draw_shop_box_locked = "테이블 미개방", str_n10_shop_intro_title = "테이블 설명", str_n10_shop_intro_content = "1. 이벤트 기간에 5개의 [테이블]이 개방되며, 각 [테이블]은 요리를 100회 받을 수 있습니다.\n2. [접시]를 소모해 요리를 받을 수 있습니다.\n3. 현재 테이블의 [메인 요리]를 모두 받으면 다음 [테이블]이 개방되며, 이전 [테이블]의 요리도 계속해서 받을 수 있습니다.\n4. [토르의 주방]이 닫히면 남은 [접시]는 1:10의 비율에 따라 나이티움으로 교환됩니다.", str_n10_sign_title = "이벤트 기간에 {1}일 누적 로그인 시\n루맘버와 한정 아바타 획득!"}
+local config = {
+  str_n10_name = "코바야시네",
+  str_n10_sub_name = "메이드래곤",
+  str_n10_remaining_time = "남은 시간",
+  str_n10_activity_intro = "이벤트 설명",
+  str_n10_story_replay = "스토리 회상",
+  str_n10_battle_pass = "특별 사건부",
+  str_n10_login_award = "로그인 보상",
+  str_n10_pet = "첫인사",
+  str_n10_shop = "보상 상점",
+  str_n10_activity_remaining_time = "수령 남은 시간: ",
+  str_n10_drop_time = "이벤트 남은 시간: ",
+  str_n10_intro_title = "메이드래곤의 휴일 이벤트 설명",
+  str_n10_intro_content = "[접시] 아이템 획득:\n1. 이벤트 기간에 프리즘을 소모하는 메인 스테이지 또는 자원 정비 스테이지를 완료하면 일정 수량의 [접시]를 획득할 수 있습니다.\n2. 이벤트 종료 시 이상의 스테이지에서 더는 [접시]를 드롭하지 않습니다.\n\n[접시] 아이템 사용:\n1. 이벤트 기간에 [접시]를 소모해 [토르의 주방]에서 요리를 받을 수 있습니다.\n2. 이벤트 종료 후에도 [토르의 주방]은 3일간 개방됩니다. 기간 내에 [접시]를 사용해 요리를 받아 주세요. [토르의 주방]이 닫힌 후 사용하지 않은 접시는 1:10의 비율에 따라 나이티움으로 전환됩니다.",
+  str_n10_lottery_one = "1회 받기",
+  str_n10_lottery_multi = "10회 받기",
+  str_n10_lottery_intro_title = "테이블 설명",
+  str_n10_lottery_intro_content = "1. 이벤트 기간에 5개의 [테이블]이 개방되며, 각 [테이블]은 요리를 100회 받을 수 있습니다.\n2. [접시]를 소모해 요리를 받을 수 있습니다.\n3. 현재 테이블의 [메인 요리]를 모두 받으면 다음 [테이블]이 개방되며, 이전 [테이블]의 요리도 계속해서 받을 수 있습니다.\n4. [토르의 주방]이 닫히면 남은 [접시]는 1:10의 비율에 따라 나이티움으로 교환됩니다.",
+  str_n10_lottery_pool = "{1}번 테이블",
+  str_n10_shop_no_item_tips = "해당 테이블의 모든 요리를 획득해 더는 요리를 받을 수 없습니다!",
+  str_n10_shop_box_unlock_intro = "<color=#F6A201>{1}번 테이블</color>의 메인 요리를 모두 획득해야만 해당 테이블이 개방됩니다!",
+  str_n10_shop_award_rest_num = "잔여",
+  str_n10_shop_number_1 = "1",
+  str_n10_shop_number_2 = "2",
+  str_n10_shop_number_3 = "3",
+  str_n10_shop_number_4 = "4",
+  str_n10_shop_number_5 = "5",
+  str_n10_shop_number_6 = "6",
+  str_n10_shop_number_7 = "7",
+  str_n10_shop_number_8 = "8",
+  str_n10_shop_number_9 = "9",
+  str_n10_shop_number_10 = "10",
+  str_n10_shop_number_99 = "99",
+  str_n10_shop_new_box_unlock_title = "신규 테이블 개방",
+  str_n10_shop_open_next_text = "{1}번 테이블의 메인 요리를 모두 획득해 {2}번 테이블이 개방됩니다!",
+  str_n10_shop_loop_box_reset_tips = "모든 메인 요리를 획득해 테이블이 초기화됩니다.",
+  str_n10_shop_draw_once_more_text = "접시 {1}개를 소모해 계속 요리를 받겠습니까?",
+  str_n10_rule_description = "규칙 설명",
+  str_n10_draw_shop_box_locked = "테이블 미개방",
+  str_n10_shop_intro_title = "테이블 설명",
+  str_n10_shop_intro_content = "1. 이벤트 기간에 5개의 [테이블]이 개방되며, 각 [테이블]은 요리를 100회 받을 수 있습니다.\n2. [접시]를 소모해 요리를 받을 수 있습니다.\n3. 현재 테이블의 [메인 요리]를 모두 받으면 다음 [테이블]이 개방되며, 이전 [테이블]의 요리도 계속해서 받을 수 있습니다.\n4. [토르의 주방]이 닫히면 남은 [접시]는 1:10의 비율에 따라 나이티움으로 교환됩니다.",
+  str_n10_sign_title = "이벤트 기간에 {1}일 누적 로그인 시\n루맘버와 한정 아바타 획득!"
+}
 return config
-

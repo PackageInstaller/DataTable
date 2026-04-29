@@ -1,76 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_precondition_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftPreconditionController", UIController)
 UIAircraftPreconditionController = UIAircraftPreconditionController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftPreconditionController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftPreconditionController:OnShow(uiParams)
   self:InitWidget()
   self.roomData = uiParams[1]
   self.conditions = uiParams[2]
   self.onClose = uiParams[3]
-  self.airData = ((GameGlobal.GameLogic)()):GetModule(AircraftModule)
+  self.airData = GameGlobal.GameLogic():GetModule(AircraftModule)
   self:CheckPrecondition()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftPreconditionController.InitWidget = function(self)
-  -- function num : 0_1
+function UIAircraftPreconditionController:InitWidget()
   self.conditionLayout = self:GetUIComponent("UISelectObjectPath", "ConditionLayout")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftPreconditionController.CheckPrecondition = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftPreconditionController:CheckPrecondition()
   local numFormat = "<color=#ff4242>%s</color>/%s"
   local conds = self.conditions
   local count = #conds
-  if count > 0 then
-    (self.conditionLayout):SpawnObjects("UIAircraftPreconditionItem", count)
-    local items = (self.conditionLayout):GetAllSpawnList()
+  if 0 < count then
+    self.conditionLayout:SpawnObjects("UIAircraftPreconditionItem", count)
+    local items = self.conditionLayout:GetAllSpawnList()
     for i = 1, count do
       local cond = conds[i]
       local type = cond.Type
       local level = cond.Level
       local need = cond.Need
       local had = cond.Had
-      local name = nil
+      local name
       if type == 0 then
-        name = (StringTable.Get)("str_aircraft_tip_any_room")
+        name = StringTable.Get("str_aircraft_tip_any_room")
       else
-        name = (StringTable.Get)((self.airData):GetRoomNameByType(type))
+        name = StringTable.Get(self.airData:GetRoomNameByType(type))
       end
-      local level_need = (StringTable.Get)("str_aircraft_tip_level_count", level, need)
-      ;
-      (items[i]):SetData(level_need, name, (string.format)(numFormat, had, need))
+      local level_need = StringTable.Get("str_aircraft_tip_level_count", level, need)
+      items[i]:SetData(level_need, name, string.format(numFormat, had, need))
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftPreconditionController.ButtonConditionConfirmOnClick = function(self, go)
-  -- function num : 0_3
+function UIAircraftPreconditionController:ButtonConditionConfirmOnClick(go)
   if self.onClose then
-    (self.onClose)()
+    self.onClose()
   end
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftPreconditionController.ButtonConditionCancelOnClick = function(self, go)
-  -- function num : 0_4
+function UIAircraftPreconditionController:ButtonConditionCancelOnClick(go)
   if self.onClose then
-    (self.onClose)()
+    self.onClose()
   end
   self:CloseDialog()
 end
-
-

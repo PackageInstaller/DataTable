@@ -1,34 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/pop_star_pro/stn_pop_star_pro_enter_battle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("PopStarPro_EnterBattle", Common_AsyncBase)
 PopStarPro_EnterBattle = PopStarPro_EnterBattle
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarPro_EnterBattle.TaskFunc = function(self, TT, status)
-  -- function num : 0_0 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
-  local params = {runData:GetMissionID(), runData:GetComponentEnumID(), 
-{[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = runData:GetComponentConfigID()}
-}
-  local game = (GameGlobal.GetModule)(GameMatchModule)
+function PopStarPro_EnterBattle:TaskFunc(TT, status)
+  local runData = self.m_pManager:GetMissionRunData()
+  local params = {
+    runData:GetMissionID(),
+    runData:GetComponentEnumID(),
+    {
+      [ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = runData:GetComponentConfigID()
+    }
+  }
+  local game = GameGlobal.GetModule(GameMatchModule)
   local createInfo = game:GetMatchCreateInfo(MatchType.MT_PopStarPro, params)
   for i = 1, 3 do
     local res = game:StartMatchTask(TT, MatchType.MT_PopStarPro, TestConst.MissionTeamIndex, createInfo)
     if res:GetSucc() then
       status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
       status:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
-      return 
+      return
     end
     YIELD(TT, 10000)
   end
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
   status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
-  ;
-  (self._manager):Exception_DeclareExceptionThrew("对局创建失败")
+  self._manager:Exception_DeclareExceptionThrew("对局创建失败")
 end
-
-

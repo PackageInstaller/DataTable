@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/main/ui_activity_returnsystem_tab_login_award_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReturnSystemTabLoginAwardCell", UICustomWidget)
 UIActivityReturnSystemTabLoginAwardCell = UIActivityReturnSystemTabLoginAwardCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReturnSystemTabLoginAwardCell.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityReturnSystemTabLoginAwardCell:Constructor()
   self.imgPetOffset = Vector2(0, -200)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabLoginAwardCell.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityReturnSystemTabLoginAwardCell:OnShow()
   self.imgBG = self:GetGameObject("imgBG")
   self.imgBGLight = self:GetGameObject("imgBGLight")
   self.txtDay = self:GetUIComponent("UILocalizationText", "txtDay")
   self.imgPet = self:GetUIComponent("RawImageLoader", "imgPet")
-  self.tranPet = (self:GetGameObject("imgPet")):GetComponent(typeof(UnityEngine.RectTransform))
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.tranPet).anchoredPosition = self.imgPetOffset
+  self.tranPet = self:GetGameObject("imgPet"):GetComponent(typeof(UnityEngine.RectTransform))
+  self.tranPet.anchoredPosition = self.imgPetOffset
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self.awards = self:GetUIComponent("UISelectObjectPath", "awards")
   self.got = self:GetGameObject("got")
@@ -32,86 +19,54 @@ UIActivityReturnSystemTabLoginAwardCell.OnShow = function(self)
   self.locked = self:GetGameObject("locked")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabLoginAwardCell.OnHide = function(self)
-  -- function num : 0_2
+function UIActivityReturnSystemTabLoginAwardCell:OnHide()
   if self.imgPet then
-    (self.imgPet):DestoryLastImage()
+    self.imgPet:DestoryLastImage()
     self.imgPet = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabLoginAwardCell.Flush = function(self, loginAward, getRewardCallback, tipsCallback)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityReturnSystemTabLoginAwardCell:Flush(loginAward, getRewardCallback, tipsCallback)
   self.loginAward = loginAward
   self._getRewardCallback = getRewardCallback
   self._tipsCallback = tipsCallback
   if loginAward.status == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV then
-    (self.imgBG):SetActive(false)
-    ;
-    (self.imgBGLight):SetActive(true)
+    self.imgBG:SetActive(false)
+    self.imgBGLight:SetActive(true)
   else
-    ;
-    (self.imgBG):SetActive(true)
-    ;
-    (self.imgBGLight):SetActive(false)
+    self.imgBG:SetActive(true)
+    self.imgBGLight:SetActive(false)
   end
   local day = loginAward.day
-  ;
-  (self.txtDay):SetText("Day " .. day)
-  ;
-  (self.imgPet):DestoryLastImage()
-  ;
-  (self.imgPet):LoadImage(loginAward.petIcon)
-  ;
-  (self.txtName):SetText(loginAward.petAwardName)
+  self.txtDay:SetText("Day " .. day)
+  self.imgPet:DestoryLastImage()
+  self.imgPet:LoadImage(loginAward.petIcon)
+  self.txtName:SetText(loginAward.petAwardName)
   self:FlushAwards(loginAward.awards)
   if loginAward.status == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED then
-    (self.got):SetActive(true)
-    ;
-    (self.canGet):SetActive(false)
-    ;
-    (self.locked):SetActive(false)
-  else
-    if loginAward.status == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV then
-      (self.got):SetActive(false)
-      ;
-      (self.canGet):SetActive(true)
-      ;
-      (self.locked):SetActive(false)
-    else
-      if loginAward.status == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK then
-        (self.got):SetActive(false)
-        ;
-        (self.canGet):SetActive(false)
-        ;
-        (self.locked):SetActive(true)
-      end
-    end
+    self.got:SetActive(true)
+    self.canGet:SetActive(false)
+    self.locked:SetActive(false)
+  elseif loginAward.status == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV then
+    self.got:SetActive(false)
+    self.canGet:SetActive(true)
+    self.locked:SetActive(false)
+  elseif loginAward.status == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK then
+    self.got:SetActive(false)
+    self.canGet:SetActive(false)
+    self.locked:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabLoginAwardCell.FlushAwards = function(self, awards)
-  -- function num : 0_4 , upvalues : _ENV
-  local len = (table.count)(awards)
-  ;
-  (self.awards):SpawnObjects("UIActivityReturnSystemTabLoginAwardItem", len)
-  local uiAwards = (self.awards):GetAllSpawnList()
-  for i,uiAward in ipairs(uiAwards) do
+function UIActivityReturnSystemTabLoginAwardCell:FlushAwards(awards)
+  local len = table.count(awards)
+  self.awards:SpawnObjects("UIActivityReturnSystemTabLoginAwardItem", len)
+  local uiAwards = self.awards:GetAllSpawnList()
+  for i, uiAward in ipairs(uiAwards) do
     uiAward:Flush(awards[i], self._tipsCallback)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabLoginAwardCell.imgCanGetOnClick = function(self, go)
-  -- function num : 0_5
-  (self._getRewardCallback)(self.loginAward)
+function UIActivityReturnSystemTabLoginAwardCell:imgCanGetOnClick(go)
+  self._getRewardCallback(self.loginAward)
 end
-
-

@@ -1,19 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_add_auto_bead_point_by_teleport_distance_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddAutoBeadPointByTeleportDistance", BuffViewBase)
 BuffViewAddAutoBeadPointByTeleportDistance = BuffViewAddAutoBeadPointByTeleportDistance
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddAutoBeadPointByTeleportDistance.PlayView = function(self, TT)
-  -- function num : 0_0
+function BuffViewAddAutoBeadPointByTeleportDistance:PlayView(TT)
   local result = self._buffResult
-  local autoBeadServiceRender = (self._world):GetService("AutoBeadRender")
+  local autoBeadServiceRender = self._world:GetService("AutoBeadRender")
   if autoBeadServiceRender then
     autoBeadServiceRender:NotifyAutoBeadPointChange(result:GetCurAutoBeadPoint(), result:GetOldAutoBeadPoint())
   end
 end
-
-

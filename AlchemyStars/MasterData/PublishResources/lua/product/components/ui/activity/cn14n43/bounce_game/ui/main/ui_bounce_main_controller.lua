@@ -1,59 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/ui/main/ui_bounce_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("bounce_controller")
 _class("UIBounceMainController", UIController)
 UIBounceMainController = UIBounceMainController
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBounceMainController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBounceMainController:Constructor()
   self.coreController = nil
   self.levelId = 0
   self.isBoss = false
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._loginModule = self:GetModule(LoginModule)
-  self.aniName = {[1] = "uieff_UIBounceMainController_in_aniBgs", [2] = "uieff_UIBounceMainController_in_boss"}
+  self.aniName = {
+    [1] = "uieff_UIBounceMainController_in_aniBgs",
+    [2] = "uieff_UIBounceMainController_in_boss"
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBounceMainController:LoadDataOnEnter(TT, res)
   self._campaign = UIActivityCampaign:New()
   local campaignModule = self:GetModule(CampaignModule)
   self._campaignModule = campaignModule
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N28_MINI_GAME, ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N28_MINI_GAME, ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
-  local sample = (self._campaign):GetSample()
+  local sample = self._campaign:GetSample()
   self._endTime = sample.end_time
-  self._component = (self._campaign):GetComponent(ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
-  self._componentInfo = (self._campaign):GetComponentInfo(ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
-  local openTime = (self._componentInfo).m_unlock_time
+  self._component = self._campaign:GetComponent(ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
+  self._componentInfo = self._campaign:GetComponentInfo(ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
+  local openTime = self._componentInfo.m_unlock_time
   local closeTime = self._endTime
-  local nowtime = (self._svrTimeModule):GetServerTime() / 1000
-  if nowtime < openTime then
+  local nowtime = self._svrTimeModule:GetServerTime() / 1000
+  if openTime > nowtime then
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN
     campaignModule:ShowErrorToast(res.m_result, true)
-    return 
+    return
   end
   if closeTime < nowtime then
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
     campaignModule:ShowErrorToast(res.m_result, true)
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBounceMainController:OnShow(uiParams)
   self.levelId = uiParams[1]
   if BounceDebug.TestLevelId then
     self.levelId = BounceDebug.TestLevelId
@@ -65,25 +54,18 @@ UIBounceMainController.OnShow = function(self, uiParams)
   self:InitView()
   self:InitCore()
   self:StartAnim()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_3
+function UIBounceMainController:OnUpdate(deltaTimeMS)
   if self.coreController then
-    (self.coreController):OnUpdate(deltaTimeMS)
+    self.coreController:OnUpdate(deltaTimeMS)
   end
   if self.inputView then
-    (self.inputView):OnUpdate()
+    self.inputView:OnUpdate()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.InitWidget = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIBounceMainController:InitWidget()
   self._atlas = self:GetAsset("UIN28MinigameIn.spriteatlas", LoadType.SpriteAtlas)
   self.gameCanvasRt = self:GetUIComponent("RectTransform", "gameCanvas")
   self.uiGo = self:GetGameObject("ui")
@@ -114,13 +96,8 @@ UIBounceMainController.InitWidget = function(self)
   self.historyScoreItems = {}
   self.curScoreItems = {}
   for i = 1, 4 do
-    -- DECOMPILER ERROR at PC135: Confused about usage of register: R10 in 'UnsetPending'
-
-    (self.historyScoreItems)[i] = (((self.historyScore).transform):GetChild(i - 1)):GetComponent(typeof((UnityEngine.UI).Image))
-    -- DECOMPILER ERROR at PC149: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self.curScoreItems)[i] = (((self.curScore).transform):GetChild(i - 1)):GetComponent(typeof((UnityEngine.UI).Image))
+    self.historyScoreItems[i] = self.historyScore.transform:GetChild(i - 1):GetComponent(typeof(UnityEngine.UI.Image))
+    self.curScoreItems[i] = self.curScore.transform:GetChild(i - 1):GetComponent(typeof(UnityEngine.UI.Image))
   end
   self.slider = self:GetUIComponent("Slider", "slider")
   self.historyScorePar = self:GetGameObject("historyScorePar")
@@ -141,496 +118,292 @@ UIBounceMainController.InitWidget = function(self)
   self.nowHp = {}
   self.maxHp = {}
   for i = 1, 2 do
-    -- DECOMPILER ERROR at PC238: Confused about usage of register: R10 in 'UnsetPending'
-
-    (self.nowHp)[i] = (((self.nowGo).transform):GetChild(i - 1)):GetComponent(typeof((UnityEngine.UI).Image))
-    -- DECOMPILER ERROR at PC252: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self.maxHp)[i] = (((self.maxGo).transform):GetChild(i - 1)):GetComponent(typeof((UnityEngine.UI).Image))
+    self.nowHp[i] = self.nowGo.transform:GetChild(i - 1):GetComponent(typeof(UnityEngine.UI.Image))
+    self.maxHp[i] = self.maxGo.transform:GetChild(i - 1):GetComponent(typeof(UnityEngine.UI.Image))
   end
   self.bgRaws = {}
   local bgMark = 4
   for i = 1, bgMark do
-    -- DECOMPILER ERROR at PC272: Confused about usage of register: R11 in 'UnsetPending'
-
-    (self.bgRaws)[i] = (((self.lv1Go).transform):GetChild(i - 1)):GetComponent(typeof(RawImageLoader))
+    self.bgRaws[i] = self.lv1Go.transform:GetChild(i - 1):GetComponent(typeof(RawImageLoader))
   end
-  for i = 1, ((self.moveNode1Go).transform).childCount do
-    -- DECOMPILER ERROR at PC292: Confused about usage of register: R11 in 'UnsetPending'
-
-    (self.bgRaws)[i + bgMark] = (((self.moveNode1Go).transform):GetChild(i - 1)):GetComponent(typeof(RawImageLoader))
+  for i = 1, self.moveNode1Go.transform.childCount do
+    self.bgRaws[i + bgMark] = self.moveNode1Go.transform:GetChild(i - 1):GetComponent(typeof(RawImageLoader))
   end
   self.bgImgs = {}
-  for i = 1, ((self.lv2Go).transform).childCount do
-    -- DECOMPILER ERROR at PC315: Confused about usage of register: R11 in 'UnsetPending'
-
-    (self.bgImgs)[i] = (((self.lv2Go).transform):GetChild(i - 1)):GetComponent(typeof((UnityEngine.UI).Image))
+  for i = 1, self.lv2Go.transform.childCount do
+    self.bgImgs[i] = self.lv2Go.transform:GetChild(i - 1):GetComponent(typeof(UnityEngine.UI.Image))
   end
   self.guideRt = {}
   for i = 1, 8 do
     local key = "guide542008" .. i
     local guideRt = self:GetUIComponent("RectTransform", key)
-    -- DECOMPILER ERROR at PC331: Confused about usage of register: R13 in 'UnsetPending'
-
-    ;
-    (self.guideRt)[key] = guideRt
+    self.guideRt[key] = guideRt
   end
   for i = 1, 6 do
     local key = "guide542009" .. i
     local guideRt = self:GetUIComponent("RectTransform", key)
-    -- DECOMPILER ERROR at PC345: Confused about usage of register: R13 in 'UnsetPending'
-
-    ;
-    (self.guideRt)[key] = guideRt
+    self.guideRt[key] = guideRt
   end
-  -- DECOMPILER ERROR at PC352: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.guideRt).guide5420111 = self:GetUIComponent("RectTransform", "guide5420111")
-  -- DECOMPILER ERROR at PC358: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.guideRt).guide5420121 = self:GetUIComponent("RectTransform", "guide5420121")
+  self.guideRt.guide5420111 = self:GetUIComponent("RectTransform", "guide5420111")
+  self.guideRt.guide5420121 = self:GetUIComponent("RectTransform", "guide5420121")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.InitView = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self.resultView):Init(function()
-    -- function num : 0_5_0 , upvalues : self
+function UIBounceMainController:InitView()
+  self.resultView:Init(function()
     if self:CheckActivityOver() then
-      return 
+      return
     end
     self:QuickGame()
-  end
-, function()
-    -- function num : 0_5_1 , upvalues : self
+  end, function()
     if self:CheckActivityOver() then
-      return 
+      return
     end
     self:RestartGame()
-  end
-)
-  ;
-  (self.resumeView):Init(function()
-    -- function num : 0_5_2 , upvalues : self, _ENV
-    (self.coreController):ChgFsmState(StateBounce.Battle)
-  end
-)
-  ;
-  (self.pauseView):Init(function()
-    -- function num : 0_5_3 , upvalues : self, _ENV
-    if not (self.coreController):IsOvering() then
-      (self.backBtn):SetActive(true)
-      ;
-      (self.coreController):ChgFsmState(StateBounce.Over)
+  end)
+  self.resumeView:Init(function()
+    self.coreController:ChgFsmState(StateBounce.Battle)
+  end)
+  self.pauseView:Init(function()
+    if not self.coreController:IsOvering() then
+      self.backBtn:SetActive(true)
+      self.coreController:ChgFsmState(StateBounce.Over)
     end
-  end
-, function()
-    -- function num : 0_5_4 , upvalues : self, _ENV
-    if not (self.coreController):IsOvering() then
-      (self.backBtn):SetActive(true)
-      ;
-      (self.coreController):ChgFsmState(StateBounce.Resume)
+  end, function()
+    if not self.coreController:IsOvering() then
+      self.backBtn:SetActive(true)
+      self.coreController:ChgFsmState(StateBounce.Resume)
       self:PlayAllMove()
     end
-  end
-)
-  ;
-  (self.inputView):Init(function(fromPC)
-    -- function num : 0_5_5 , upvalues : _ENV, self
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BoucneInfo)
-    ;
-    (self.coreController):OnAttack(fromPC)
-  end
-, function(fromPC)
-    -- function num : 0_5_6 , upvalues : _ENV, self
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BoucneInfo)
-    ;
-    (self.coreController):OnJump(fromPC)
-  end
-)
+  end)
+  self.inputView:Init(function(fromPC)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BoucneInfo)
+    self.coreController:OnAttack(fromPC)
+  end, function(fromPC)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BoucneInfo)
+    self.coreController:OnJump(fromPC)
+  end)
   for i = 1, 4 do
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R5 in 'UnsetPending'
-
-    ((self.historyScoreItems)[i]).sprite = (self._atlas):GetSprite("N28_yrj_jngq_figure0" .. 0)
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    ((self.curScoreItems)[i]).sprite = (self._atlas):GetSprite("N28_yrj_jngq_figure0" .. 0)
+    self.historyScoreItems[i].sprite = self._atlas:GetSprite("N28_yrj_jngq_figure0" .. 0)
+    self.curScoreItems[i].sprite = self._atlas:GetSprite("N28_yrj_jngq_figure0" .. 0)
   end
   for i = 1, 2 do
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R5 in 'UnsetPending'
-
-    ((self.maxHp)[i]).sprite = (self._atlas):GetSprite("N28_yrj_jngq_figure1" .. 9)
-    -- DECOMPILER ERROR at PC63: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    ((self.nowHp)[i]).sprite = (self._atlas):GetSprite("N28_yrj_jngq_figure1" .. 0)
+    self.maxHp[i].sprite = self._atlas:GetSprite("N28_yrj_jngq_figure1" .. 9)
+    self.nowHp[i].sprite = self._atlas:GetSprite("N28_yrj_jngq_figure1" .. 0)
   end
-  ;
-  (self.aniBgs):SetActive(not self.isBoss)
-  ;
-  (self.bossBgs):SetActive(self.isBoss)
-  ;
-  (self.hpGo):SetActive(false)
-  local index = (math.random)(1, 3)
+  self.aniBgs:SetActive(not self.isBoss)
+  self.bossBgs:SetActive(self.isBoss)
+  self.hpGo:SetActive(false)
+  local index = math.random(1, 3)
   for i = 1, #self.bgRaws do
-    local str = (((UIN28GronruGameConst.bgData)[index])[1])[i]
-    ;
-    ((self.bgRaws)[i]):LoadImage(str)
+    local str = UIN28GronruGameConst.bgData[index][1][i]
+    self.bgRaws[i]:LoadImage(str)
   end
   for i = 1, #self.bgImgs do
-    local str = (((UIN28GronruGameConst.bgData)[index])[2])[i]
-    -- DECOMPILER ERROR at PC115: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self.bgImgs)[i]).sprite = (self._atlas):GetSprite(str)
+    local str = UIN28GronruGameConst.bgData[index][2][i]
+    self.bgImgs[i].sprite = self._atlas:GetSprite(str)
   end
-  ;
-  (self.night):SetActive(index == 3)
+  self.night:SetActive(index == 3)
   local str = self.levelId == 7 and "N28_yrj_gzdt_cbbg06" or "N28_yrj_gzdt_cbbg01"
-  ;
-  (self.bossImage):LoadImage(str)
+  self.bossImage:LoadImage(str)
   self:CreateMoveNode()
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.InitCore = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIBounceMainController:InitCore()
   self.coreController = BounceController:New()
-  ;
-  (self.coreController):Init(self, self.levelId, self.selectPlayer, self.historyBestScore)
-  ;
-  (self.coreController):SetPlayerChangeStateRefUICallFun(function(isLeaveGround)
-    -- function num : 0_6_0 , upvalues : self
-    (self.inputView):ChangeJumpAttackBtnActive(isLeaveGround)
-  end
-)
-  ;
-  (self.historyScorePar):SetActive(self.levelId == 7)
+  self.coreController:Init(self, self.levelId, self.selectPlayer, self.historyBestScore)
+  self.coreController:SetPlayerChangeStateRefUICallFun(function(isLeaveGround)
+    self.inputView:ChangeJumpAttackBtnActive(isLeaveGround)
+  end)
+  self.historyScorePar:SetActive(self.levelId == 7)
   self:SetHistoryScore()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.GetPrepareView = function(self)
-  -- function num : 0_7
+function UIBounceMainController:GetPrepareView()
   return self.prepareView, self.prepareGo
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.GetResultView = function(self)
-  -- function num : 0_8
+function UIBounceMainController:GetResultView()
   return self.resultView, self.resultGo
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.GetResumeView = function(self)
-  -- function num : 0_9
+function UIBounceMainController:GetResumeView()
   return self.resumeView, self.resumeGo
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.GetPauseView = function(self)
-  -- function num : 0_10
+function UIBounceMainController:GetPauseView()
   return self.pauseView, self.pauseGo
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.SetViewVisibleByBouceState = function(self, state)
-  -- function num : 0_11 , upvalues : _ENV
-  (self.prepareGo):SetActive(state == StateBounce.Prepare)
-  ;
-  (self.resultGo):SetActive(false)
-  ;
-  (self.resumeGo):SetActive(state == StateBounce.Resume)
-  ;
-  (self.pauseGo):SetActive(state == StateBounce.Pause)
-  ;
-  (self.inputGo):SetActive(true)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function UIBounceMainController:SetViewVisibleByBouceState(state)
+  self.prepareGo:SetActive(state == StateBounce.Prepare)
+  self.resultGo:SetActive(false)
+  self.resumeGo:SetActive(state == StateBounce.Resume)
+  self.pauseGo:SetActive(state == StateBounce.Pause)
+  self.inputGo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.BackBtnOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BoucneInfo)
-  if (self.coreController):IsOvering() then
+function UIBounceMainController:BackBtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BoucneInfo)
+  if self.coreController:IsOvering() then
     self:CloseDialog()
-    return 
+    return
   end
-  ;
-  (self.backBtn):SetActive(false)
-  ;
-  (self.coreController):ChgFsmState(StateBounce.Pause)
+  self.backBtn:SetActive(false)
+  self.coreController:ChgFsmState(StateBounce.Pause)
   self:PauseAllMove()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.QuickGame = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BoucneInfo)
-  ;
-  (self.coreController):OnQuick()
+function UIBounceMainController:QuickGame()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BoucneInfo)
+  self.coreController:OnQuick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.RestartGame = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BoucneInfo)
+function UIBounceMainController:RestartGame()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BoucneInfo)
   for i = 1, 4 do
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
-    ((self.curScoreItems)[i]).sprite = (self._atlas):GetSprite("N28_yrj_jngq_figure0" .. 0)
+    self.curScoreItems[i].sprite = self._atlas:GetSprite("N28_yrj_jngq_figure0" .. 0)
   end
-  ;
-  ((self.coreController):GetGameData()):AddHistoryBestScore()
-  ;
-  (self.coreController):OnRestartGame()
+  self.coreController:GetGameData():AddHistoryBestScore()
+  self.coreController:OnRestartGame()
   self:SetHistoryScore()
-  ;
-  (self.hpGo):SetActive(false)
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.slider).value = 1
+  self.hpGo:SetActive(false)
+  self.slider.value = 1
   self:StartMoveBG()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.GetCanvasRt = function(self)
-  -- function num : 0_15
+function UIBounceMainController:GetCanvasRt()
   return self.gameCanvasRt
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.MonsterDead = function(self, monsterId)
-  -- function num : 0_16
+function UIBounceMainController:MonsterDead(monsterId)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.ScoreChange = function(self, score)
-  -- function num : 0_17 , upvalues : _ENV
-  local res = (UIN28GronruGameConst.GetScoreFont)(score)
+function UIBounceMainController:ScoreChange(score)
+  local res = UIN28GronruGameConst.GetScoreFont(score)
   for i = 1, 4 do
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R7 in 'UnsetPending'
-
-    ((self.curScoreItems)[i]).sprite = (self._atlas):GetSprite("N28_yrj_jngq_figure0" .. res[i])
+    self.curScoreItems[i].sprite = self._atlas:GetSprite("N28_yrj_jngq_figure0" .. res[i])
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.ShowHPProgress = function(self, serializeId, maxValue)
-  -- function num : 0_18 , upvalues : _ENV
-  local nums = (UIN28GronruGameConst.GetScoreFont)(maxValue)
+function UIBounceMainController:ShowHPProgress(serializeId, maxValue)
+  local nums = UIN28GronruGameConst.GetScoreFont(maxValue)
   for i = 1, 2 do
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R8 in 'UnsetPending'
-
-    ((self.nowHp)[i]).sprite = (self._atlas):GetSprite("N28_yrj_jngq_figure1" .. nums[i + 2])
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((self.maxHp)[i]).sprite = (self._atlas):GetSprite("N28_yrj_jngq_figure1" .. nums[i + 2])
+    self.nowHp[i].sprite = self._atlas:GetSprite("N28_yrj_jngq_figure1" .. nums[i + 2])
+    self.maxHp[i].sprite = self._atlas:GetSprite("N28_yrj_jngq_figure1" .. nums[i + 2])
   end
-  ;
-  (self.hpGo):SetActive(true)
+  self.hpGo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.HideHPProgress = function(self, serializeId)
-  -- function num : 0_19
-  (self.hpGo):SetActive(false)
+function UIBounceMainController:HideHPProgress(serializeId)
+  self.hpGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.HPProgressChange = function(self, serializeId, currentValue, maxValue)
-  -- function num : 0_20 , upvalues : _ENV
-  local nums = nil
+function UIBounceMainController:HPProgressChange(serializeId, currentValue, maxValue)
+  local nums
   for i = 1, 2 do
-    nums = (UIN28GronruGameConst.GetScoreFont)(currentValue)
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    ((self.nowHp)[i]).sprite = (self._atlas):GetSprite("N28_yrj_jngq_figure1" .. nums[i + 2])
-    nums = (UIN28GronruGameConst.GetScoreFont)(maxValue)
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    ((self.maxHp)[i]).sprite = (self._atlas):GetSprite("N28_yrj_jngq_figure1" .. nums[i + 2])
+    nums = UIN28GronruGameConst.GetScoreFont(currentValue)
+    self.nowHp[i].sprite = self._atlas:GetSprite("N28_yrj_jngq_figure1" .. nums[i + 2])
+    nums = UIN28GronruGameConst.GetScoreFont(maxValue)
+    self.maxHp[i].sprite = self._atlas:GetSprite("N28_yrj_jngq_figure1" .. nums[i + 2])
   end
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.slider).value = currentValue / maxValue
+  self.slider.value = currentValue / maxValue
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.BounceMissionSettle = function(self, missionId, killNum, killBossNum, cost_time, callback)
-  -- function num : 0_21 , upvalues : _ENV
+function UIBounceMainController:BounceMissionSettle(missionId, killNum, killBossNum, cost_time, callback)
   self:StartTask(function(TT)
-    -- function num : 0_21_0 , upvalues : _ENV, self, missionId, killNum, killBossNum, cost_time, callback
     local asyncRes = AsyncRequestRes:New()
-    asyncRes = (self._component):HandleBounceMissionSettle(TT, asyncRes, missionId, killNum, killBossNum, cost_time, callback)
-    if not asyncRes or not asyncRes:GetSucc() or callback then
+    asyncRes = self._component:HandleBounceMissionSettle(TT, asyncRes, missionId, killNum, killBossNum, cost_time, callback)
+    if not (asyncRes and asyncRes:GetSucc()) or callback then
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.ShowResult = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local data = ((self.coreController):GetGameData()).targetMonster
+function UIBounceMainController:ShowResult()
+  local data = self.coreController:GetGameData().targetMonster
   self:StartTask(function(TT)
-    -- function num : 0_22_0 , upvalues : self, _ENV
     self:Lock("UIBounceMainController:ShowResult")
     local res = AsyncRequestRes:New()
-    ;
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+    self._campaign:ReLoadCampaignInfo_Force(TT, res)
     self:PlayMissionStory(self.levelId)
     self:StopAllMove()
     self:UnLock("UIBounceMainController:ShowResult")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.PlayMissionStory = function(self, index)
-  -- function num : 0_23 , upvalues : _ENV
-  local roleId = (self._loginModule):GetRoleShowID()
+function UIBounceMainController:PlayMissionStory(index)
+  local roleId = self._loginModule:GetRoleShowID()
   local key = index
-  if (UIN28GronruGameConst.CheckStoryLocalDb)(roleId, key, false) then
-    (self.resultGo):SetActive(true)
-    ;
-    (self.resultView):FlushUI((self.coreController):GetGameData())
-    return 
+  if UIN28GronruGameConst.CheckStoryLocalDb(roleId, key, false) then
+    self.resultGo:SetActive(true)
+    self.resultView:FlushUI(self.coreController:GetGameData())
+    return
   end
-  local storyId = (((self.coreController):GetGameData()).levelCfg).LastStoryId
+  local storyId = self.coreController:GetGameData().levelCfg.LastStoryId
   if storyId then
     if index == 6 then
-      if ((self.coreController):GetGameData()):GetKilledBoss() then
-        ((GameGlobal.GetModule)(StoryModule)):StartStory(storyId, function()
-    -- function num : 0_23_0 , upvalues : _ENV, roleId, key, self
-    (UIN28GronruGameConst.SetStoryLocalDb)(roleId, key, false)
-    ;
-    (self.resultGo):SetActive(true)
-    ;
-    (self.resultView):FlushUI((self.coreController):GetGameData())
-  end
-)
+      if self.coreController:GetGameData():GetKilledBoss() then
+        GameGlobal.GetModule(StoryModule):StartStory(storyId, function()
+          UIN28GronruGameConst.SetStoryLocalDb(roleId, key, false)
+          self.resultGo:SetActive(true)
+          self.resultView:FlushUI(self.coreController:GetGameData())
+        end)
       else
-        ;
-        (self.resultGo):SetActive(true)
-        ;
-        (self.resultView):FlushUI((self.coreController):GetGameData())
+        self.resultGo:SetActive(true)
+        self.resultView:FlushUI(self.coreController:GetGameData())
       end
     else
-      ;
-      ((GameGlobal.GetModule)(StoryModule)):StartStory(storyId, function()
-    -- function num : 0_23_1 , upvalues : _ENV, roleId, key, self
-    (UIN28GronruGameConst.SetStoryLocalDb)(roleId, key, false)
-    ;
-    (self.resultGo):SetActive(true)
-    ;
-    (self.resultView):FlushUI((self.coreController):GetGameData())
-  end
-)
+      GameGlobal.GetModule(StoryModule):StartStory(storyId, function()
+        UIN28GronruGameConst.SetStoryLocalDb(roleId, key, false)
+        self.resultGo:SetActive(true)
+        self.resultView:FlushUI(self.coreController:GetGameData())
+      end)
     end
   else
-    ;
-    (self.resultGo):SetActive(true)
-    ;
-    (self.resultView):FlushUI((self.coreController):GetGameData())
+    self.resultGo:SetActive(true)
+    self.resultView:FlushUI(self.coreController:GetGameData())
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.SetHistoryScore = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local data = (self.coreController):GetGameData()
-  local res = (UIN28GronruGameConst.GetScoreFont)(data.historyBestScore)
+function UIBounceMainController:SetHistoryScore()
+  local data = self.coreController:GetGameData()
+  local res = UIN28GronruGameConst.GetScoreFont(data.historyBestScore)
   for i = 1, 4 do
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R7 in 'UnsetPending'
-
-    ((self.historyScoreItems)[i]).sprite = (self._atlas):GetSprite("N28_yrj_jngq_figure0" .. res[i])
+    self.historyScoreItems[i].sprite = self._atlas:GetSprite("N28_yrj_jngq_figure0" .. res[i])
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.StartAnim = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIBounceMainController:StartAnim()
   self:StartTask(function(TT)
-    -- function num : 0_25_0 , upvalues : self, _ENV
     self:Lock("UIBounceMainController:StartAnim")
-    if self.levelId < 6 or not (self.aniName)[2] then
-      local anistr = (self.aniName)[1]
-    end
-    ;
-    (self._anim):Play(anistr)
+    local anistr = self.levelId >= 6 and self.aniName[2] or self.aniName[1]
+    self._anim:Play(anistr)
     YIELD(TT, 333)
     self:UnLock("UIBounceMainController:StartAnim")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.GetGuideRt = function(self, guideStepKey)
-  -- function num : 0_26
-  return (self.guideRt)[guideStepKey]
+function UIBounceMainController:GetGuideRt(guideStepKey)
+  return self.guideRt[guideStepKey]
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.SetGuideStepShow = function(self, guideStepKey)
-  -- function num : 0_27
-  local rt = (self.guideRt)[guideStepKey]
+function UIBounceMainController:SetGuideStepShow(guideStepKey)
+  local rt = self.guideRt[guideStepKey]
   if rt then
-    (rt.gameObject):SetActive(true)
+    rt.gameObject:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.SetGuidePosition = function(self, key, position)
-  -- function num : 0_28
+function UIBounceMainController:SetGuidePosition(key, position)
   local rt = self:GetGuideRt(key)
   if rt then
     rt.anchoredPosition = position
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.CheckActivityOver = function(self)
-  -- function num : 0_29
+function UIBounceMainController:CheckActivityOver()
   local closeTime = self._endTime
-  local nowtime = (self._svrTimeModule):GetServerTime() / 1000
+  local nowtime = self._svrTimeModule:GetServerTime() / 1000
   if closeTime < nowtime then
     self:CloseDialog()
     return true
@@ -638,43 +411,24 @@ UIBounceMainController.CheckActivityOver = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.CreateMoveNode = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UIBounceMainController:CreateMoveNode()
   if self.isBoss then
     for i = 1, 3 do
-      local copyMoveNode1 = ((UnityEngine.GameObject).Instantiate)(self["BossMoveNode" .. i], (self["BossMoveNode" .. i]).transform)
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (copyMoveNode1.transform).localPosition = Vector3((math.abs)(UIN28GronruGameConst["BossNodeMoveX_" .. i]), 0, 0)
+      local copyMoveNode1 = UnityEngine.GameObject.Instantiate(self["BossMoveNode" .. i], self["BossMoveNode" .. i].transform)
+      copyMoveNode1.transform.localPosition = Vector3(math.abs(UIN28GronruGameConst["BossNodeMoveX_" .. i]), 0, 0)
     end
   else
-    do
-      local copyMoveNode1 = ((UnityEngine.GameObject).Instantiate)(self.moveNode1Go, (self.moveNode1Go).transform)
-      -- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (copyMoveNode1.transform).localPosition = Vector3((math.abs)(UIN28GronruGameConst.plainMoveX), 0, 0)
-      do
-        local copyLv2 = ((UnityEngine.GameObject).Instantiate)(self.lv2Go, (self.lv2Go).transform)
-        -- DECOMPILER ERROR at PC71: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (copyLv2.transform).localPosition = Vector3((math.abs)(UIN28GronruGameConst.smallItemsMoveX), 0, 0)
-        self:StartMoveBG()
-      end
-    end
+    local copyMoveNode1 = UnityEngine.GameObject.Instantiate(self.moveNode1Go, self.moveNode1Go.transform)
+    copyMoveNode1.transform.localPosition = Vector3(math.abs(UIN28GronruGameConst.plainMoveX), 0, 0)
+    local copyLv2 = UnityEngine.GameObject.Instantiate(self.lv2Go, self.lv2Go.transform)
+    copyLv2.transform.localPosition = Vector3(math.abs(UIN28GronruGameConst.smallItemsMoveX), 0, 0)
   end
+  self:StartMoveBG()
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.StartMoveBG = function(self)
-  -- function num : 0_31
+function UIBounceMainController:StartMoveBG()
   if self.isBoss then
-    (self.bossThrone):SetActive(false)
+    self.bossThrone:SetActive(false)
     self:MoveBOSSBG_1()
     self:MoveBOSSBG_2()
     self:MoveBOSSBG_3()
@@ -684,155 +438,86 @@ UIBounceMainController.StartMoveBG = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.MoveBG_MoveNode1 = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  ((self.moveNode1Go).transform).localPosition = Vector3.zero
-  local t = (math.abs)(UIN28GronruGameConst.plainMoveX / UIN28GronruGameConst.plainMoveSpeed)
-  ;
-  ((((self.moveNode1Go).transform):DOLocalMoveX(UIN28GronruGameConst.plainMoveX, t)):SetEase(((DG.Tweening).Ease).Linear)):OnComplete(function()
-    -- function num : 0_32_0 , upvalues : self
+function UIBounceMainController:MoveBG_MoveNode1()
+  self.moveNode1Go.transform.localPosition = Vector3.zero
+  local t = math.abs(UIN28GronruGameConst.plainMoveX / UIN28GronruGameConst.plainMoveSpeed)
+  self.moveNode1Go.transform:DOLocalMoveX(UIN28GronruGameConst.plainMoveX, t):SetEase(DG.Tweening.Ease.Linear):OnComplete(function()
     self:MoveBG_MoveNode1()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.MoveBG_Lv2 = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  ((self.lv2Go).transform).localPosition = Vector3.zero
-  local t = (math.abs)(UIN28GronruGameConst.smallItemsMoveX / UIN28GronruGameConst.smallItemsMoveSpeed)
-  ;
-  ((((self.lv2Go).transform):DOLocalMoveX(UIN28GronruGameConst.smallItemsMoveX, t)):SetEase(((DG.Tweening).Ease).Linear)):OnComplete(function()
-    -- function num : 0_33_0 , upvalues : self
+function UIBounceMainController:MoveBG_Lv2()
+  self.lv2Go.transform.localPosition = Vector3.zero
+  local t = math.abs(UIN28GronruGameConst.smallItemsMoveX / UIN28GronruGameConst.smallItemsMoveSpeed)
+  self.lv2Go.transform:DOLocalMoveX(UIN28GronruGameConst.smallItemsMoveX, t):SetEase(DG.Tweening.Ease.Linear):OnComplete(function()
     self:MoveBG_Lv2()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.MoveBOSSBG_1 = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  ((self.BossMoveNode1).transform).localPosition = Vector3.zero
-  local t = (math.abs)(UIN28GronruGameConst.BossNodeMoveX_1 / UIN28GronruGameConst.BossNodeMoveSpeed_1)
-  ;
-  ((((self.BossMoveNode1).transform):DOLocalMoveX(UIN28GronruGameConst.BossNodeMoveX_1, t)):SetEase(((DG.Tweening).Ease).Linear)):OnComplete(function()
-    -- function num : 0_34_0 , upvalues : self
+function UIBounceMainController:MoveBOSSBG_1()
+  self.BossMoveNode1.transform.localPosition = Vector3.zero
+  local t = math.abs(UIN28GronruGameConst.BossNodeMoveX_1 / UIN28GronruGameConst.BossNodeMoveSpeed_1)
+  self.BossMoveNode1.transform:DOLocalMoveX(UIN28GronruGameConst.BossNodeMoveX_1, t):SetEase(DG.Tweening.Ease.Linear):OnComplete(function()
     self:MoveBOSSBG_1()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.MoveBOSSBG_2 = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  ((self.BossMoveNode2).transform).localPosition = Vector3.zero
-  local t = (math.abs)(UIN28GronruGameConst.BossNodeMoveX_2 / UIN28GronruGameConst.BossNodeMoveSpeed_2)
-  ;
-  ((((self.BossMoveNode2).transform):DOLocalMoveX(UIN28GronruGameConst.BossNodeMoveX_2, t)):SetEase(((DG.Tweening).Ease).Linear)):OnComplete(function()
-    -- function num : 0_35_0 , upvalues : self
+function UIBounceMainController:MoveBOSSBG_2()
+  self.BossMoveNode2.transform.localPosition = Vector3.zero
+  local t = math.abs(UIN28GronruGameConst.BossNodeMoveX_2 / UIN28GronruGameConst.BossNodeMoveSpeed_2)
+  self.BossMoveNode2.transform:DOLocalMoveX(UIN28GronruGameConst.BossNodeMoveX_2, t):SetEase(DG.Tweening.Ease.Linear):OnComplete(function()
     self:MoveBOSSBG_2()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.MoveBOSSBG_3 = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  ((self.BossMoveNode3).transform).localPosition = Vector3.zero
-  local t = (math.abs)(UIN28GronruGameConst.BossNodeMoveX_3 / UIN28GronruGameConst.BossNodeMoveSpeed_3)
-  ;
-  ((((self.BossMoveNode3).transform):DOLocalMoveX(UIN28GronruGameConst.BossNodeMoveX_3, t)):SetEase(((DG.Tweening).Ease).Linear)):OnComplete(function()
-    -- function num : 0_36_0 , upvalues : self
+function UIBounceMainController:MoveBOSSBG_3()
+  self.BossMoveNode3.transform.localPosition = Vector3.zero
+  local t = math.abs(UIN28GronruGameConst.BossNodeMoveX_3 / UIN28GronruGameConst.BossNodeMoveSpeed_3)
+  self.BossMoveNode3.transform:DOLocalMoveX(UIN28GronruGameConst.BossNodeMoveX_3, t):SetEase(DG.Tweening.Ease.Linear):OnComplete(function()
     self:MoveBOSSBG_3()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.PauseMoveBOSSBG_ShowBoss = function(self)
-  -- function num : 0_37
-  (self.bossThrone):SetActive(true)
+function UIBounceMainController:PauseMoveBOSSBG_ShowBoss()
+  self.bossThrone:SetActive(true)
   for i = 1, 3 do
-    ((self["BossMoveNode" .. i]).transform):DOKill()
+    self["BossMoveNode" .. i].transform:DOKill()
   end
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.PauseAllMove = function(self)
-  -- function num : 0_38
+function UIBounceMainController:PauseAllMove()
   if self.isBoss then
     for i = 1, 3 do
-      ((self["BossMoveNode" .. i]).transform):DOPause()
+      self["BossMoveNode" .. i].transform:DOPause()
     end
   else
-    do
-      ;
-      ((self.moveNode1Go).transform):DOPause()
-      ;
-      ((self.lv2Go).transform):DOPause()
-    end
+    self.moveNode1Go.transform:DOPause()
+    self.lv2Go.transform:DOPause()
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.StopAllMove = function(self)
-  -- function num : 0_39
+function UIBounceMainController:StopAllMove()
   if self.isBoss then
     for i = 1, 3 do
-      ((self["BossMoveNode" .. i]).transform):DOKill()
+      self["BossMoveNode" .. i].transform:DOKill()
     end
   else
-    do
-      ;
-      ((self.moveNode1Go).transform):DOKill()
-      ;
-      ((self.lv2Go).transform):DOKill()
-    end
+    self.moveNode1Go.transform:DOKill()
+    self.lv2Go.transform:DOKill()
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.PlayAllMove = function(self)
-  -- function num : 0_40
+function UIBounceMainController:PlayAllMove()
   if self.isBoss then
     for i = 1, 3 do
-      ((self["BossMoveNode" .. i]).transform):DOPlay()
+      self["BossMoveNode" .. i].transform:DOPlay()
     end
   else
-    do
-      ;
-      ((self.moveNode1Go).transform):DOPlay()
-      ;
-      ((self.lv2Go).transform):DOPlay()
-    end
+    self.moveNode1Go.transform:DOPlay()
+    self.lv2Go.transform:DOPlay()
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceMainController.OnHide = function(self)
-  -- function num : 0_41
+function UIBounceMainController:OnHide()
   self:StopAllMove()
 end
-
-

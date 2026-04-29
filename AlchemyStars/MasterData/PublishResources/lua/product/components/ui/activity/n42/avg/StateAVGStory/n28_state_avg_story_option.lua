@@ -1,143 +1,94 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/StateAVGStory/n28_state_avg_story_option.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N28StateAVGStoryOption", N28StateAVGStoryBase)
 N28StateAVGStoryOption = N28StateAVGStoryOption
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N28StateAVGStoryOption.OnEnter = function(self, TT, ...)
-  -- function num : 0_0
+function N28StateAVGStoryOption:OnEnter(TT, ...)
   self:Init()
-  self.poolOptions = (self.ui).poolOptions
-  self.poolInfluence = (self.ui).poolInfluence
+  self.poolOptions = self.ui.poolOptions
+  self.poolInfluence = self.ui.poolInfluence
   self:ShowHideOption(true)
   self:ShowHideButtonAuto(false)
   self:ShowHideButtonShowHideUI(false)
   self:ShowHideButtonNext(false)
-  self.storyManager = (self.data):StoryManager()
-  local storyId = (self.storyManager):GetCurStoryID()
-  local paragraphId = (self.storyManager):GetCurParagraphID()
-  local sectionIdx = (self.storyManager):GetCurSectionIndex()
+  self.storyManager = self.data:StoryManager()
+  local storyId = self.storyManager:GetCurStoryID()
+  local paragraphId = self.storyManager:GetCurParagraphID()
+  local sectionIdx = self.storyManager:GetCurSectionIndex()
   self:FlushOptions(storyId, paragraphId, sectionIdx)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryOption.OnExit = function(self, TT)
-  -- function num : 0_1
+function N28StateAVGStoryOption:OnExit(TT)
   self:ShowHideOption(false)
   self:ShowHideButtonAuto(true)
   self:ShowHideButtonShowHideUI(true)
   self:ShowHideButtonNext(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryOption.FlushOptions = function(self, storyId, paragraphId, sectionIdx)
-  -- function num : 0_2 , upvalues : _ENV
-  local node = (self.data):GetNodeByStoryId(storyId)
+function N28StateAVGStoryOption:FlushOptions(storyId, paragraphId, sectionIdx)
+  local node = self.data:GetNodeByStoryId(storyId)
   local paragraph = node:GetParagraphByParagraphId(paragraphId)
   local dialog = paragraph:GetDialogBySectionIdx(sectionIdx)
   local options = dialog:GetVisibleOptions()
-  if not options or (table.count)(options) <= 0 then
+  if not options or table.count(options) <= 0 then
     AVGLog("Not exist visible options. [storyId = " .. storyId .. "] [paragraphId = " .. paragraphId .. "] [sectionIdx=" .. sectionIdx .. "]")
-    ;
-    (self.fsm):ChangeState(StateAVGStory.Play)
-    return 
+    self.fsm:ChangeState(StateAVGStory.Play)
+    return
   end
-  local len = (table.count)(options)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28AVGShowPanel)
-  ;
-  (self.poolOptions):SpawnObjects("UIN28AVGStoryOption", len)
-  local uis = (self.poolOptions):GetAllSpawnList()
-  for i,option in ipairs(options) do
-    do
-      local ui = uis[i]
-      ui:Flush(option, len, function()
-    -- function num : 0_2_0 , upvalues : _ENV, self, option
-    ((GameGlobal.TaskManager)()):StartTask(function(TT)
-      -- function num : 0_2_0_0 , upvalues : _ENV, self, option
-      local key = "N28StateAVGStoryOptionChooseOption"
-      ;
-      ((GameGlobal.UIStateManager)()):Lock(key)
-      ;
-      ((self.ui).goOptionsAnim):Play("uieff_UIN28AVGStory_goOption_out")
-      YIELD(TT, 333)
-      local com = (self.data):GetComponentAVG()
-      local res = AsyncRequestRes:New()
-      local ret = com:HandleManualChoose(TT, res, option.id)
-      if (N28AVGData.CheckCode)(res) then
-        local nextParagraphId = option:NextParagraphId()
-        ;
-        (self.storyManager):SetNextParagraphID(nextParagraphId)
-        self:NextNodeId(option.nextNodeId)
-        self:DialogEnd(option.paragraphId, option.sectionIdx)
-        local playerName = ((GameGlobal.GetModule)(RoleModule)):GetName()
-        ;
-        (self.storyManager):AddDialogRecord(playerName, option:Content(), 1, true)
-        ;
-        (self.ui):SetSelectedOptionId(option.id, true)
-        ;
-        (self.fsm):ChangeState(StateAVGStory.Play)
-      else
-        do
-          ;
-          (Log.fatal)("### HandleManualChoose failed. ", option.storyId, option.paragraphId, option.sectionIdx, option.index)
-          ;
-          ((GameGlobal.UIStateManager)()):UnLock(key)
+  local len = table.count(options)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28AVGShowPanel)
+  self.poolOptions:SpawnObjects("UIN28AVGStoryOption", len)
+  local uis = self.poolOptions:GetAllSpawnList()
+  for i, option in ipairs(options) do
+    local ui = uis[i]
+    ui:Flush(option, len, function()
+      GameGlobal.TaskManager():StartTask(function(TT)
+        local key = "N28StateAVGStoryOptionChooseOption"
+        GameGlobal.UIStateManager():Lock(key)
+        self.ui.goOptionsAnim:Play("uieff_UIN28AVGStory_goOption_out")
+        YIELD(TT, 333)
+        local com = self.data:GetComponentAVG()
+        local res = AsyncRequestRes:New()
+        local ret = com:HandleManualChoose(TT, res, option.id)
+        if N28AVGData.CheckCode(res) then
+          local nextParagraphId = option:NextParagraphId()
+          self.storyManager:SetNextParagraphID(nextParagraphId)
+          self:NextNodeId(option.nextNodeId)
+          self:DialogEnd(option.paragraphId, option.sectionIdx)
+          local playerName = GameGlobal.GetModule(RoleModule):GetName()
+          self.storyManager:AddDialogRecord(playerName, option:Content(), 1, true)
+          self.ui:SetSelectedOptionId(option.id, true)
+          self.fsm:ChangeState(StateAVGStory.Play)
+        else
+          Log.fatal("### HandleManualChoose failed. ", option.storyId, option.paragraphId, option.sectionIdx, option.index)
         end
-      end
-    end
-, self)
-  end
-, uis)
-    end
+        GameGlobal.UIStateManager():UnLock(key)
+      end, self)
+    end, uis)
   end
   self:FlushInfluence(options)
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("N28StateAVGStoryOption_FlushOptions")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_2_1 , upvalues : _ENV
+  GameGlobal.UIStateManager():Lock("N28StateAVGStoryOption_FlushOptions")
+  GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT, 500)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("N28StateAVGStoryOption_FlushOptions")
-  end
-, self)
+    GameGlobal.UIStateManager():UnLock("N28StateAVGStoryOption_FlushOptions")
+  end, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryOption.FlushInfluence = function(self, options)
-  -- function num : 0_3
-  self.influence = (self.poolInfluence):SpawnObject("UIN28AVGStoryInfluence")
-  ;
-  (self.influence):Flush(options)
+function N28StateAVGStoryOption:FlushInfluence(options)
+  self.influence = self.poolInfluence:SpawnObject("UIN28AVGStoryInfluence")
+  self.influence:Flush(options)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryOption.DialogEnd = function(self, paragraphId, sectionIdx)
-  -- function num : 0_4
+function N28StateAVGStoryOption:DialogEnd(paragraphId, sectionIdx)
   local storyEntity = self:GetStoryDialogEntity(paragraphId, sectionIdx)
   if storyEntity then
     storyEntity:_DialogEnd()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryOption.GetStoryDialogEntity = function(self, paragraphId, sectionIdx)
-  -- function num : 0_5
-  local node = (self.data):CurNode()
+function N28StateAVGStoryOption:GetStoryDialogEntity(paragraphId, sectionIdx)
+  local node = self.data:CurNode()
   local paragraph = node:GetParagraphByParagraphId(paragraphId)
   local dialog = paragraph:GetDialogBySectionIdx(sectionIdx)
   local entityId = dialog.refEntityId
-  local storyEntity = ((self.storyManager)._storyEntityList)[entityId]
+  local storyEntity = self.storyManager._storyEntityList[entityId]
   return storyEntity
 end
-
-

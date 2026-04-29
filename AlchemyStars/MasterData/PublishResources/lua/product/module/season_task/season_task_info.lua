@@ -1,127 +1,129 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/season_task/season_task_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local SeasonTaskErrorType = {E_SEASONTASK_ERROR_TYPE_SUCCESS = 0, E_SEASONTASK_ERROR_TYPE_FAILURE = 1, E_SEASONTASK_LOAD_ERROR = 2, E_SEASONTASK_SAVE_ERROR = 3, E_SEASONTASK_ERROR_UNLOCK = 4, E_SEASONTASK_ERROR_CASTLE_ID = 100, E_SEASONTASK_ERROR_CASTLE_LV = 101, E_SEASONTASK_ERROR_CASTLE_LV_LOCK = 102, E_SEASONTASK_ERROR_CASTLE_TIME = 103, E_SEASONTASK_ERROR_DEBRISMISSION = 150, E_SEASONTASK_ERROR_DEBRISMISSION_LOCK = 151, E_SEASONTASK_ERROR_DEBRISMISSION_REPEAT = 152}
+local SeasonTaskErrorType = {
+  E_SEASONTASK_ERROR_TYPE_SUCCESS = 0,
+  E_SEASONTASK_ERROR_TYPE_FAILURE = 1,
+  E_SEASONTASK_LOAD_ERROR = 2,
+  E_SEASONTASK_SAVE_ERROR = 3,
+  E_SEASONTASK_ERROR_UNLOCK = 4,
+  E_SEASONTASK_ERROR_CASTLE_ID = 100,
+  E_SEASONTASK_ERROR_CASTLE_LV = 101,
+  E_SEASONTASK_ERROR_CASTLE_LV_LOCK = 102,
+  E_SEASONTASK_ERROR_CASTLE_TIME = 103,
+  E_SEASONTASK_ERROR_DEBRISMISSION = 150,
+  E_SEASONTASK_ERROR_DEBRISMISSION_LOCK = 151,
+  E_SEASONTASK_ERROR_DEBRISMISSION_REPEAT = 152
+}
 _enum("SeasonTaskErrorType", SeasonTaskErrorType)
 local TaskStageType = {LINETASK = 0, RANDOMTASK = 1}
 _enum("TaskStageType", TaskStageType)
 _class("TaskNode", Object)
 TaskNode = TaskNode
--- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
 
-TaskNode.Constructor = function(self)
-  -- function num : 0_0
+function TaskNode:Constructor()
   self.node_id = 0
   self.is_finish = false
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
 TaskNode._proto = {
-[1] = {"node_id", "int"}
-, 
-[2] = {"is_finish", "bool"}
+  [1] = {"node_id", "int"},
+  [2] = {"is_finish", "bool"}
 }
 _class("OneSeasonTaskInfo", Object)
 OneSeasonTaskInfo = OneSeasonTaskInfo
--- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
 
-OneSeasonTaskInfo.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV, TaskStageType
+function OneSeasonTaskInfo:Constructor()
   self.season_task_list_id = 0
   self.cur_line_task = TaskNode:New()
   self.cur_rand_task = {}
   self.stage = TaskStageType.LINETASK
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R2 in 'UnsetPending'
-
 OneSeasonTaskInfo._proto = {
-[1] = {"season_task_list_id", "int"}
-, 
-[2] = {"cur_line_task", "TaskNode"}
-, 
-[3] = {"cur_rand_task", "list<TaskNode>"}
-, 
-[4] = {"stage", "int"}
+  [1] = {
+    "season_task_list_id",
+    "int"
+  },
+  [2] = {
+    "cur_line_task",
+    "TaskNode"
+  },
+  [3] = {
+    "cur_rand_task",
+    "list<TaskNode>"
+  },
+  [4] = {"stage", "int"}
 }
 _class("EvenPointInfo", Object)
 EvenPointInfo = EvenPointInfo
--- DECOMPILER ERROR at PC86: Confused about usage of register: R2 in 'UnsetPending'
 
-EvenPointInfo.Constructor = function(self)
-  -- function num : 0_2
+function EvenPointInfo:Constructor()
   self.event_id = 0
   self.status = 0
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R2 in 'UnsetPending'
-
 EvenPointInfo._proto = {
-[1] = {"event_id", "int"}
-, 
-[2] = {"status", "int"}
+  [1] = {"event_id", "int"},
+  [2] = {"status", "int"}
 }
 _class("QuestProgress", Object)
 QuestProgress = QuestProgress
--- DECOMPILER ERROR at PC108: Confused about usage of register: R2 in 'UnsetPending'
 
-QuestProgress.Constructor = function(self)
-  -- function num : 0_3
+function QuestProgress:Constructor()
   self.quest_id = 0
   self.event_infos = {}
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R2 in 'UnsetPending'
-
 QuestProgress._proto = {
-[1] = {"quest_id", "int"}
-, 
-[2] = {"event_infos", "map<int,EvenPointInfo>"}
+  [1] = {"quest_id", "int"},
+  [2] = {
+    "event_infos",
+    "map<int,EvenPointInfo>"
+  }
 }
 _class("ClientQuestProgressInfo", Object)
 ClientQuestProgressInfo = ClientQuestProgressInfo
--- DECOMPILER ERROR at PC130: Confused about usage of register: R2 in 'UnsetPending'
 
-ClientQuestProgressInfo.Constructor = function(self)
-  -- function num : 0_4
+function ClientQuestProgressInfo:Constructor()
   self.line_quest_progress_info = {}
   self.rand_quest_progress_info = {}
   self.eventpoint_info = {}
 end
 
--- DECOMPILER ERROR at PC148: Confused about usage of register: R2 in 'UnsetPending'
-
 ClientQuestProgressInfo._proto = {
-[1] = {"line_quest_progress_info", "map<int,QuestProgress>"}
-, 
-[2] = {"rand_quest_progress_info", "map<int,QuestProgress>"}
-, 
-[3] = {"eventpoint_info", "map<int,EvenPointInfo>"}
+  [1] = {
+    "line_quest_progress_info",
+    "map<int,QuestProgress>"
+  },
+  [2] = {
+    "rand_quest_progress_info",
+    "map<int,QuestProgress>"
+  },
+  [3] = {
+    "eventpoint_info",
+    "map<int,EvenPointInfo>"
+  }
 }
 _class("client_season_task_info", Object)
 client_season_task_info = client_season_task_info
--- DECOMPILER ERROR at PC157: Confused about usage of register: R2 in 'UnsetPending'
 
-client_season_task_info.Constructor = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function client_season_task_info:Constructor()
   self.season_task_list_id = 0
   self.cur_line_task = TaskNode:New()
   self.cur_rand_task = {}
   self.stage = 0
 end
 
--- DECOMPILER ERROR at PC180: Confused about usage of register: R2 in 'UnsetPending'
-
 client_season_task_info._proto = {
-[1] = {"season_task_list_id", "int"}
-, 
-[2] = {"cur_line_task", "TaskNode"}
-, 
-[3] = {"cur_rand_task", "list<TaskNode>"}
-, 
-[4] = {"stage", "int"}
+  [1] = {
+    "season_task_list_id",
+    "int"
+  },
+  [2] = {
+    "cur_line_task",
+    "TaskNode"
+  },
+  [3] = {
+    "cur_rand_task",
+    "list<TaskNode>"
+  },
+  [4] = {"stage", "int"}
 }
-

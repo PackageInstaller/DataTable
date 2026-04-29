@@ -1,40 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_auto_bead_skill_damage_rand_twice.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetAutoBeadSkillDamageRandTwice", BuffLogicBase)
 BuffLogicSetAutoBeadSkillDamageRandTwice = BuffLogicSetAutoBeadSkillDamageRandTwice
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetAutoBeadSkillDamageRandTwice.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetAutoBeadSkillDamageRandTwice:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetAutoBeadSkillDamageRandTwice.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
+function BuffLogicSetAutoBeadSkillDamageRandTwice:DoLogic(notify)
+  local e = self._buffInstance:Entity()
   local buffComponent = e:BuffComponent()
   buffComponent:SetBuffValue("AutoBeadDamageRandTwice", 1)
 end
 
 _class("BuffLogicResetAutoBeadSkillDamageRandTwice", BuffLogicBase)
 BuffLogicResetAutoBeadSkillDamageRandTwice = BuffLogicResetAutoBeadSkillDamageRandTwice
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetAutoBeadSkillDamageRandTwice.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetAutoBeadSkillDamageRandTwice:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetAutoBeadSkillDamageRandTwice.DoLogic = function(self, notify)
-  -- function num : 0_3
-  local e = (self._buffInstance):Entity()
+function BuffLogicResetAutoBeadSkillDamageRandTwice:DoLogic(notify)
+  local e = self._buffInstance:Entity()
   local buffComponent = e:BuffComponent()
   buffComponent:SetBuffValue("AutoBeadDamageRandTwice", nil)
 end
-
-

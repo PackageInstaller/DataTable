@@ -1,15 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n9/shop/ui_activity_shop_controller_n9.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityShopControllerN9", UIActivityShopControllerBase)
 UIActivityShopControllerN9 = UIActivityShopControllerN9
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityShopControllerN9.DefaultBackFunc = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityShopControllerN9:DefaultBackFunc()
   self:SwitchState(UIStateType.UIActivityN9MainController)
 end
-
-

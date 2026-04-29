@@ -1,65 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/graph/line/ui_n28_avg_graph_line_straight.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGGraphLineStraight", UICustomWidget)
 UIN28AVGGraphLineStraight = UIN28AVGGraphLineStraight
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGGraphLineStraight.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN28AVGData()
+function UIN28AVGGraphLineStraight:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN28AVGData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphLineStraight.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self.rt = (self:GetGameObject()):GetComponent(typeof(UnityEngine.RectTransform))
-  ;
-  (UICommonHelper:GetInstance()):RectTransformAnchor2Left(self.rt)
+function UIN28AVGGraphLineStraight:OnShow()
+  self.rt = self:GetGameObject():GetComponent(typeof(UnityEngine.RectTransform))
+  UICommonHelper:GetInstance():RectTransformAnchor2Left(self.rt)
   self.root = self:GetUIComponent("RectTransform", "root")
   self.dot = self:GetGameObject("dot")
   self.solid = self:GetGameObject("solid")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphLineStraight.OnHide = function(self)
-  -- function num : 0_2
+function UIN28AVGGraphLineStraight:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphLineStraight.Flush = function(self, s, e, isDot)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN28AVGGraphLineStraight:Flush(s, e, isDot)
   local vec = e - s
   local vec3From, vec3To = Vector3.right, Vector3(vec.x, vec.y, 0)
-  local quat = (Quaternion.FromToRotation)(vec3From, vec3To)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.rt).anchoredPosition = s
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.rt).localRotation = quat
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.root).sizeDelta = Vector2((Vector2.Magnitude)(vec), ((self.root).sizeDelta).y)
+  local quat = Quaternion.FromToRotation(vec3From, vec3To)
+  self.rt.anchoredPosition = s
+  self.rt.localRotation = quat
+  self.root.sizeDelta = Vector2(Vector2.Magnitude(vec), self.root.sizeDelta.y)
   if isDot then
-    (self.dot):SetActive(true)
-    ;
-    (self.solid):SetActive(false)
+    self.dot:SetActive(true)
+    self.solid:SetActive(false)
   else
-    ;
-    (self.dot):SetActive(false)
-    ;
-    (self.solid):SetActive(true)
+    self.dot:SetActive(false)
+    self.solid:SetActive(true)
   end
 end
-
-

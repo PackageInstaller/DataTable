@@ -1,37 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_set_grid_maintain_color_for_supply.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectResultSetGridMaintainColorForSupply", SkillEffectResultBase)
 SkillEffectResultSetGridMaintainColorForSupply = SkillEffectResultSetGridMaintainColorForSupply
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultSetGridMaintainColorForSupply.Constructor = function(self, posList, maintainColor)
-  -- function num : 0_0
+function SkillEffectResultSetGridMaintainColorForSupply:Constructor(posList, maintainColor)
   self._posList = posList
   self._maintainColor = maintainColor
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSetGridMaintainColorForSupply.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultSetGridMaintainColorForSupply:GetEffectType()
   return SkillEffectType.SetGridMaintainColorForSupply
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSetGridMaintainColorForSupply.GetPosList = function(self)
-  -- function num : 0_2
+function SkillEffectResultSetGridMaintainColorForSupply:GetPosList()
   return self._posList
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSetGridMaintainColorForSupply.GetMaintainColor = function(self)
-  -- function num : 0_3
+function SkillEffectResultSetGridMaintainColorForSupply:GetMaintainColor()
   return self._maintainColor
 end
-
-

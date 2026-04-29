@@ -1,19 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_cast_skill_by_ai_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCastSkillByAIParam", ActionCastSkillBase)
 ActionCastSkillByAIParam = ActionCastSkillByAIParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCastSkillByAIParam.GetWorkSkillID = function(self)
-  -- function num : 0_0
+function ActionCastSkillByAIParam:GetWorkSkillID()
   local skills = self:GetConfigSkillList()
   local idx = self:GetLogicData(-1) or 1
   local skillId = skills[idx]
   return skillId
 end
-
-

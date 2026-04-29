@@ -1,67 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/prvw_chain_path_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewChainPathComponent", Object)
 PreviewChainPathComponent = PreviewChainPathComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewChainPathComponent.Constructor = function(self, chainPath, elementType, lastElementType)
-  -- function num : 0_0 , upvalues : _ENV
-  if not chainPath then
-    self._chainPath = {}
-    if not elementType then
-      self._elementType = PieceType.None
-      if not lastElementType then
-        self._lastElementType = PieceType.None
-        self._chainNum = 0
-        if #self._chainPath > 0 then
-          self._chainNum = #self._chainPath - 1
-        end
-        self._nearbyGridRadius = {}
-        self._bMoveBack = false
-        self._firstElementType = nil
-        self._firstElementIndex = -1
-        self._linkLineState = false
-        self._linkLineType = ELinkLineType.ELLT_LINE_Common
-      end
-    end
+function PreviewChainPathComponent:Constructor(chainPath, elementType, lastElementType)
+  self._chainPath = chainPath or {}
+  self._elementType = elementType or PieceType.None
+  self._lastElementType = lastElementType or PieceType.None
+  self._chainNum = 0
+  if #self._chainPath > 0 then
+    self._chainNum = #self._chainPath - 1
   end
+  self._nearbyGridRadius = {}
+  self._bMoveBack = false
+  self._firstElementType = nil
+  self._firstElementIndex = -1
+  self._linkLineState = false
+  self._linkLineType = ELinkLineType.ELLT_LINE_Common
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainPathComponent.SetLinkLineType = function(self, type)
-  -- function num : 0_1
+function PreviewChainPathComponent:SetLinkLineType(type)
   self._linkLineType = type
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainPathComponent.GetLinkLineType = function(self)
-  -- function num : 0_2
+function PreviewChainPathComponent:GetLinkLineType()
   return self._linkLineType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainPathComponent.GetPreviewChainPath = function(self)
-  -- function num : 0_3
+function PreviewChainPathComponent:GetPreviewChainPath()
   return self._chainPath
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainPathComponent.GetPreviewPieceType = function(self)
-  -- function num : 0_4
+function PreviewChainPathComponent:GetPreviewPieceType()
   return self._elementType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainPathComponent.SetPreviewChainPath = function(self, chainPath, elementType)
-  -- function num : 0_5
+function PreviewChainPathComponent:SetPreviewChainPath(chainPath, elementType)
   self._chainPath = chainPath
   self._elementType = elementType
   if chainPath then
@@ -71,41 +43,26 @@ PreviewChainPathComponent.SetPreviewChainPath = function(self, chainPath, elemen
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainPathComponent.GetPreviewChainNum = function(self)
-  -- function num : 0_6
+function PreviewChainPathComponent:GetPreviewChainNum()
   return self._chainNum
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainPathComponent.GetPreviewChainTotalCount = function(self)
-  -- function num : 0_7
+function PreviewChainPathComponent:GetPreviewChainTotalCount()
   return #self._chainPath
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainPathComponent.ClearPreviewChainPath = function(self)
-  -- function num : 0_8
+function PreviewChainPathComponent:ClearPreviewChainPath()
   self._chainPath = {}
   self._firstElementType = nil
   self._firstElementIndex = -1
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainPathComponent.SetGridRadius = function(self, nearbyGridRadius)
-  -- function num : 0_9
+function PreviewChainPathComponent:SetGridRadius(nearbyGridRadius)
   self._nearbyGridRadius = nearbyGridRadius
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainPathComponent.GetGridRadius = function(self, gridPos)
-  -- function num : 0_10 , upvalues : _ENV
-  for k,v in pairs(self._nearbyGridRadius) do
+function PreviewChainPathComponent:GetGridRadius(gridPos)
+  for k, v in pairs(self._nearbyGridRadius) do
     if k == gridPos then
       return v
     end
@@ -113,98 +70,62 @@ PreviewChainPathComponent.GetGridRadius = function(self, gridPos)
   return GridRadiusType.Default
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainPathComponent.GetMoveBack = function(self)
-  -- function num : 0_11
+function PreviewChainPathComponent:GetMoveBack()
   return self._bMoveBack
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainPathComponent.SetMoveBack = function(self, bMoveBack)
-  -- function num : 0_12
+function PreviewChainPathComponent:SetMoveBack(bMoveBack)
   self._bMoveBack = bMoveBack
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainPathComponent.SetFirstElementData = function(self, elementType, index)
-  -- function num : 0_13
+function PreviewChainPathComponent:SetFirstElementData(elementType, index)
   self._firstElementType = elementType
   self._firstElementIndex = index
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainPathComponent.GetFirstElementData = function(self)
-  -- function num : 0_14
+function PreviewChainPathComponent:GetFirstElementData()
   return self._firstElementType, self._firstElementIndex
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainPathComponent.IsLinkLine = function(self)
-  -- function num : 0_15
+function PreviewChainPathComponent:IsLinkLine()
   return self._linkLineState
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainPathComponent.SetLinkLineState = function(self, stage)
-  -- function num : 0_16
+function PreviewChainPathComponent:SetLinkLineState(stage)
   self._linkLineState = stage
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PreviewChainPath = function(self)
-  -- function num : 0_17
-  return self:GetComponent((self.WEComponentsEnum).PreviewChainPath)
+function Entity:PreviewChainPath()
+  return self:GetComponent(self.WEComponentsEnum.PreviewChainPath)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPreviewChainPath = function(self)
-  -- function num : 0_18
-  return self:HasComponent((self.WEComponentsEnum).PreviewChainPath)
+function Entity:HasPreviewChainPath()
+  return self:HasComponent(self.WEComponentsEnum.PreviewChainPath)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPreviewChainPath = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewChainPath
+function Entity:AddPreviewChainPath()
+  local index = self.WEComponentsEnum.PreviewChainPath
   local component = PreviewChainPathComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePreviewChainPath = function(self, chainPath, elementType, lastElementType, inheritLinkLineType)
-  -- function num : 0_20 , upvalues : _ENV
-  local linkLineType = nil
+function Entity:ReplacePreviewChainPath(chainPath, elementType, lastElementType, inheritLinkLineType)
+  local linkLineType
   if inheritLinkLineType then
-    linkLineType = (self:PreviewLinkLine()):GetLinkLineType()
+    linkLineType = self:PreviewLinkLine():GetLinkLineType()
   end
-  local index = (self.WEComponentsEnum).PreviewChainPath
+  local index = self.WEComponentsEnum.PreviewChainPath
   local component = PreviewChainPathComponent:New(chainPath, elementType, lastElementType)
-  if chainPath and #chainPath > 0 then
+  if chainPath and 0 < #chainPath then
     component:SetLinkLineState(true)
   end
   component:SetLinkLineType(linkLineType)
   self:ReplaceComponent(index, component)
-  ;
-  (Log.debug)("UpdatePath----elemType:", elementType, " laseElemType:", lastElementType, (Log.traceback)())
+  Log.debug("UpdatePath----elemType:", elementType, " laseElemType:", lastElementType, Log.traceback())
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePreviewChainPath = function(self)
-  -- function num : 0_21
+function Entity:RemovePreviewChainPath()
   if self:HasPreviewChainPath() then
-    self:RemoveComponent((self.WEComponentsEnum).PreviewChainPath)
+    self:RemoveComponent(self.WEComponentsEnum.PreviewChainPath)
   end
 end
-
-

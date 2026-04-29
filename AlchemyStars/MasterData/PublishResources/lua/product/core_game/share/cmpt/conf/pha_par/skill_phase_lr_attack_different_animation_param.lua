@@ -1,21 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_lr_attack_different_animation_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseLRAttackDifferentAnimationParam", SkillPhaseParamBase)
 SkillPhaseLRAttackDifferentAnimationParam = SkillPhaseLRAttackDifferentAnimationParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseLRAttackDifferentAnimationParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhaseLRAttackDifferentAnimationParam:Constructor(t)
   self._castEffectID = t.castEffectID
-  local castAnimationStrs = (string.split)(t.castAnimationStr, ",")
+  local castAnimationStrs = string.split(t.castAnimationStr, ",")
   self._castLAnimation = castAnimationStrs[1]
   self._castRAnimation = castAnimationStrs[2]
   self._blurDelay = t.blurDelay
-  local blurStrs = (string.split)(t.blurEffectId, ",")
+  local blurStrs = string.split(t.blurEffectId, ",")
   self._lBlurEffectID = tonumber(blurStrs[1])
   self._rBlurEffectID = tonumber(blurStrs[2])
   self._hitPointDelay = t.hitPointDelay
@@ -23,42 +16,51 @@ SkillPhaseLRAttackDifferentAnimationParam.Constructor = function(self, t)
   self._hitEffectID = t.hitEffectID
   self._overDelay = t.overDelay
   if t.audioID ~= nil then
-    self._lAudioID = tonumber((t.audioID)[1])
-    self._rAudioID = tonumber((t.audioID)[2])
+    self._lAudioID = tonumber(t.audioID[1])
+    self._rAudioID = tonumber(t.audioID[2])
     if t.audioDelay ~= nil then
-      self._lAudioDelay = tonumber((t.audioDelay)[1])
-      self._rAudioDelay = tonumber((t.audioDelay)[2])
+      self._lAudioDelay = tonumber(t.audioDelay[1])
+      self._rAudioDelay = tonumber(t.audioDelay[2])
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackDifferentAnimationParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseLRAttackDifferentAnimationParam:GetCacheTable()
   local t = {}
   if self._castEffectID and self._castEffectID ~= 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._castEffectID]).ResPath, 1}
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._castEffectID].ResPath,
+      1
+    }
   end
   if self._lBlurEffectID and self._lBlurEffectID ~= 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._lBlurEffectID]).ResPath, 1}
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._lBlurEffectID].ResPath,
+      1
+    }
   end
   if self._rBlurEffectID and self._rBlurEffectID ~= 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._rBlurEffectID]).ResPath, 1}
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._rBlurEffectID].ResPath,
+      1
+    }
   end
-  if self._hitEffectID and (self._hitEffectID)[1] and (self._hitEffectID)[1] ~= 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[(self._hitEffectID)[1]]).ResPath, 1}
+  if self._hitEffectID and self._hitEffectID[1] and self._hitEffectID[1] ~= 0 then
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._hitEffectID[1]].ResPath,
+      1
+    }
   end
-  if self._hitEffectID and (self._hitEffectID)[2] and (self._hitEffectID)[2] ~= 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[(self._hitEffectID)[2]]).ResPath, 1}
+  if self._hitEffectID and self._hitEffectID[2] and self._hitEffectID[2] ~= 0 then
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._hitEffectID[2]].ResPath,
+      1
+    }
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackDifferentAnimationParam.GetSoundCacheTable = function(self)
-  -- function num : 0_2
+function SkillPhaseLRAttackDifferentAnimationParam:GetSoundCacheTable()
   local t = {}
   if self._lAudioID and self._lAudioID ~= 0 then
     t[#t + 1] = self._lAudioID
@@ -69,109 +71,62 @@ SkillPhaseLRAttackDifferentAnimationParam.GetSoundCacheTable = function(self)
   return t
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackDifferentAnimationParam.GetPhaseType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillPhaseLRAttackDifferentAnimationParam:GetPhaseType()
   return SkillViewPhaseType.LRAttackDifferentAnimation
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackDifferentAnimationParam.GetCastEffectID = function(self)
-  -- function num : 0_4
+function SkillPhaseLRAttackDifferentAnimationParam:GetCastEffectID()
   return self._castEffectID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackDifferentAnimationParam.GetLAnimationName = function(self)
-  -- function num : 0_5
+function SkillPhaseLRAttackDifferentAnimationParam:GetLAnimationName()
   return self._castLAnimation
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackDifferentAnimationParam.GetRAnimationName = function(self)
-  -- function num : 0_6
+function SkillPhaseLRAttackDifferentAnimationParam:GetRAnimationName()
   return self._castRAnimation
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackDifferentAnimationParam.GetBlurDelay = function(self)
-  -- function num : 0_7
+function SkillPhaseLRAttackDifferentAnimationParam:GetBlurDelay()
   return self._blurDelay
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackDifferentAnimationParam.GetLBlurEffectID = function(self)
-  -- function num : 0_8
+function SkillPhaseLRAttackDifferentAnimationParam:GetLBlurEffectID()
   return self._lBlurEffectID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackDifferentAnimationParam.GetRBlurEffectID = function(self)
-  -- function num : 0_9
+function SkillPhaseLRAttackDifferentAnimationParam:GetRBlurEffectID()
   return self._rBlurEffectID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackDifferentAnimationParam.GetHitPointDelay = function(self)
-  -- function num : 0_10
+function SkillPhaseLRAttackDifferentAnimationParam:GetHitPointDelay()
   return self._hitPointDelay
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackDifferentAnimationParam.GetHitAnimation = function(self)
-  -- function num : 0_11
+function SkillPhaseLRAttackDifferentAnimationParam:GetHitAnimation()
   return self._hitAnimation
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackDifferentAnimationParam.GetHitEffectID = function(self)
-  -- function num : 0_12
+function SkillPhaseLRAttackDifferentAnimationParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackDifferentAnimationParam.GetOverDelay = function(self)
-  -- function num : 0_13
+function SkillPhaseLRAttackDifferentAnimationParam:GetOverDelay()
   return self._overDelay
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackDifferentAnimationParam.GetLeftAudioID = function(self)
-  -- function num : 0_14
+function SkillPhaseLRAttackDifferentAnimationParam:GetLeftAudioID()
   return self._lAudioID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackDifferentAnimationParam.GetLeftAudioDelay = function(self)
-  -- function num : 0_15
+function SkillPhaseLRAttackDifferentAnimationParam:GetLeftAudioDelay()
   return self._rAudioDelay
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackDifferentAnimationParam.GetRightAudioID = function(self)
-  -- function num : 0_16
+function SkillPhaseLRAttackDifferentAnimationParam:GetRightAudioID()
   return self._rAudioID
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackDifferentAnimationParam.GetRightAudioDelay = function(self)
-  -- function num : 0_17
+function SkillPhaseLRAttackDifferentAnimationParam:GetRightAudioDelay()
   return self._rAudioDelay
 end
-
-

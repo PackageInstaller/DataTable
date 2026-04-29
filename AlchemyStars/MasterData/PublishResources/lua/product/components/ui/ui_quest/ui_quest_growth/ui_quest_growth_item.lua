@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_growth/ui_quest_growth_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestGrowthItem", UICustomWidget)
 UIQuestGrowthItem = UIQuestGrowthItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestGrowthItem._GetComponents = function(self)
-  -- function num : 0_0
+function UIQuestGrowthItem:_GetComponents()
   self._questBGList = self:GetUIComponent("UISelectObjectPath", "v")
   self._questListAnim = self:GetUIComponent("Animation", "v")
   self._stage1GO = self:GetGameObject("stage1")
@@ -43,8 +36,7 @@ UIQuestGrowthItem._GetComponents = function(self)
   self._unselectedOlddaybgDone = self:GetGameObject("olddayBGDone")
   self._unselectedDayGo = self:GetGameObject("UnselectedDay")
   self._unselectedDayTxt = self:GetUIComponent("Text", "oldday")
-  ;
-  (self._unselectedDayGo):SetActive(false)
+  self._unselectedDayGo:SetActive(false)
   self._selectedDayCanvasGroup = self:GetUIComponent("CanvasGroup", "selectedDay")
   self._unselectedDayCanvasGroup = self:GetUIComponent("CanvasGroup", "UnselectedDay")
   self._unselectedungoal = self:GetGameObject("ungoal")
@@ -53,526 +45,341 @@ UIQuestGrowthItem._GetComponents = function(self)
   self._unselectedungoalBGDone = self:GetGameObject("ungoalBGDone")
   self._unselectedGoaGo = self:GetGameObject("unselectedGoal")
   self._unselectedGoaTxt = self:GetUIComponent("Text", "ungoal")
-  ;
-  (self._unselectedGoaGo):SetActive(false)
+  self._unselectedGoaGo:SetActive(false)
   self._selectedGoalCanvasGroup = self:GetUIComponent("CanvasGroup", "selectedGoal")
   self._unselectedGoalCanvasGroup = self:GetUIComponent("CanvasGroup", "unselectedGoal")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIQuestGrowthItem:OnShow(uiParams)
   self._questListGO = self:GetGameObject("v")
-  self._questListInitLocalPos = ((self._questListGO).transform).localPosition
+  self._questListInitLocalPos = self._questListGO.transform.localPosition
   self._transition = self:GetUIComponent("ATransitionComponent", "UIQuestGrowthItem")
   self._anim = self:GetUIComponent("Animation", "UIQuestGrowthItem")
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "UIQuestGrowthItem")
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).blocksRaycasts = false
+  self._canvasGroup.blocksRaycasts = false
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIQuestGrowthItem:OnHide()
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   if self._event then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._event)
+    GameGlobal.RealTimer():CancelEvent(self._event)
     self._event = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem.OnClose = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIQuestGrowthItem:OnClose()
   self._isOpen = false
   if self._event then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._event)
+    GameGlobal.RealTimer():CancelEvent(self._event)
     self._event = nil
   end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._anim).enabled = true
-  ;
-  (self._anim):Stop()
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).alpha = 0
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).blocksRaycasts = false
+  self._anim.enabled = true
+  self._anim:Stop()
+  self._canvasGroup.alpha = 0
+  self._canvasGroup.blocksRaycasts = false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem.RefrenshList = function(self, anim, switchDayOrGoal)
-  -- function num : 0_4
-  if not self._tabIndex then
-    self:_SetTabSelect((self._questModule):GetLatestIndex_QuestGrowthTab())
-    self:_Refresh_TabBtn()
-    self:_Refresh_DayBtn()
-    self:_Refresh_GoalBtn()
-    self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, anim
+function UIQuestGrowthItem:RefrenshList(anim, switchDayOrGoal)
+  self:_SetTabSelect(self._tabIndex or self._questModule:GetLatestIndex_QuestGrowthTab())
+  self:_Refresh_TabBtn()
+  self:_Refresh_DayBtn()
+  self:_Refresh_GoalBtn()
+  self:StartTask(function(TT)
     self:_Refresh_QuestList(TT, anim)
-  end
-)
-    if anim then
-      self:_Refresh_Feather(not switchDayOrGoal)
-    end
-  end
+  end)
+  self:_Refresh_Feather(anim and not switchDayOrGoal)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem.SetData = function(self, type)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._canvasGroup).alpha = 1
-  ;
-  (self._transition):PlayEnterAnimation(true)
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).blocksRaycasts = true
+function UIQuestGrowthItem:SetData(type)
+  self._canvasGroup.alpha = 1
+  self._transition:PlayEnterAnimation(true)
+  self._canvasGroup.blocksRaycasts = true
   self._isOpen = true
   self:_GetComponents()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
-  self._petModule = (GameGlobal.GetModule)(PetModule)
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
+  self._questModule = GameGlobal.GetModule(QuestModule)
   self._type = type
   self:_SetDayBtn()
   self:_SetGoalBtn()
   self:RefrenshList(true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem._Refresh_TabBtn = function(self)
-  -- function num : 0_6
-  local lock = (self._questModule):CheckQuestIILock(1)
-  ;
-  (self._stage2lock):SetActive(lock)
-  ;
-  (self._stage1red):SetActive((self._questModule):GetGrowthRedPointNum() > 0)
-  ;
-  (self._stage2red):SetActive((self._questModule):GetStage2GrowthRedPointNum() > 0)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIQuestGrowthItem:_Refresh_TabBtn()
+  local lock = self._questModule:CheckQuestIILock(1)
+  self._stage2lock:SetActive(lock)
+  self._stage1red:SetActive(self._questModule:GetGrowthRedPointNum() > 0)
+  self._stage2red:SetActive(0 < self._questModule:GetStage2GrowthRedPointNum())
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem._SetTabSelect = function(self, index)
-  -- function num : 0_7 , upvalues : _ENV
+function UIQuestGrowthItem:_SetTabSelect(index)
   if self._tabIndex == index then
-    return 
+    return
   end
   self._tabIndex = index
-  ;
-  (self._stage1GO):SetActive(index == 1)
-  ;
-  (self._stage1rGO):SetActive(index == 1)
-  ;
-  (self._stage2GO):SetActive(index == 2)
-  ;
-  (self._stage2rGO):SetActive(index == 2)
+  self._stage1GO:SetActive(index == 1)
+  self._stage1rGO:SetActive(index == 1)
+  self._stage2GO:SetActive(index == 2)
+  self._stage2rGO:SetActive(index == 2)
   if index == 1 then
-    ((self._stageBG).transform):DOMove(((self._stage1Tab).transform).position, 0.2)
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
+    self._stageBG.transform:DOMove(self._stage1Tab.transform.position, 0.2)
+    self._stage1txt.color = Color.white
+    self._stage2txt.color = Color(0.29411764705882354, 0.2901960784313726, 0.2901960784313726, 1)
+    self:_SetDaySelect(self._dayIndex or self._questModule:GetLatestIndex_QuestGrowthDay())
+  else
+    self._stageBG.transform:DOMove(self._stage2Tab.transform.position, 0.2)
+    self._stage2txt.color = Color.white
+    self._stage1txt.color = Color(0.29411764705882354, 0.2901960784313726, 0.2901960784313726, 1)
+    self:_SetGoalSelect(self._goalIndex or self._questModule:GetLatestIndex_QuestGrowthGoal())
+  end
+end
 
-    ;
-    (self._stage1txt).color = Color.white
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._stage2txt).color = Color(0.29411764705882, 0.29019607843137, 0.29019607843137, 1)
-    if not self._dayIndex then
-      self:_SetDaySelect((self._questModule):GetLatestIndex_QuestGrowthDay())
-      ;
-      ((self._stageBG).transform):DOMove(((self._stage2Tab).transform).position, 0.2)
-      -- DECOMPILER ERROR at PC75: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._stage2txt).color = Color.white
-      -- DECOMPILER ERROR at PC83: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._stage1txt).color = Color(0.29411764705882, 0.29019607843137, 0.29019607843137, 1)
-      if not self._goalIndex then
-        self:_SetGoalSelect((self._questModule):GetLatestIndex_QuestGrowthGoal())
-        -- DECOMPILER ERROR: 8 unprocessed JMP targets
+function UIQuestGrowthItem:_SetDayBtn()
+  local cfgs = Cfg.cfg_quest_growth_day({})
+  self._dayBtns = UIWidgetHelper.SpawnObjects(self, "_dayBtns", "UIQuestGrowthTabBtn", #cfgs)
+  for i, v in ipairs(self._dayBtns) do
+    local lock = self._questModule:CheckQuestLock(i)
+    local done = self._questModule:IsGrowthQuestAllTaken(true, i)
+    v:SetData(i, lock, done, function(index)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
+      if self:_SetDaySelect(index) then
+        self:RefrenshList(true, true)
       end
-    end
+    end, function(index)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
+      UIWidgetHelper.SetAnimationPlay(v, "anim", "uieff_Quest_GrowthDayItem_Lock")
+      ToastManager.ShowToast(StringTable.Get("str_quest_base_growth_login_and_open", index))
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem._SetDayBtn = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_quest_growth_day)({})
-  self._dayBtns = (UIWidgetHelper.SpawnObjects)(self, "_dayBtns", "UIQuestGrowthTabBtn", #cfgs)
-  for i,v in ipairs(self._dayBtns) do
-    do
-      local lock = (self._questModule):CheckQuestLock(i)
-      local done = (self._questModule):IsGrowthQuestAllTaken(true, i)
-      v:SetData(i, lock, done, function(index)
-    -- function num : 0_8_0 , upvalues : _ENV, self
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
-    if self:_SetDaySelect(index) then
-      self:RefrenshList(true, true)
-    end
-  end
-, function(index)
-    -- function num : 0_8_1 , upvalues : _ENV, v
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
-    ;
-    (UIWidgetHelper.SetAnimationPlay)(v, "anim", "uieff_Quest_GrowthDayItem_Lock")
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_quest_base_growth_login_and_open", index))
-  end
-)
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem._Refresh_DayBtn = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIQuestGrowthItem:_Refresh_DayBtn()
   if self._dayBtns then
-    for i,v in ipairs(self._dayBtns) do
-      local red = (self._questModule):GetGrowthRedPointNum(i)
-      ;
-      (v:GetGameObject("red")):SetActive(red > 0)
-      if v:IsLock() and not (self._questModule):CheckQuestLock(i) then
+    for i, v in ipairs(self._dayBtns) do
+      local red = self._questModule:GetGrowthRedPointNum(i)
+      v:GetGameObject("red"):SetActive(0 < red)
+      if v:IsLock() and not self._questModule:CheckQuestLock(i) then
         v:Unlock()
       end
-      if not v:IsDone() and (self._questModule):IsGrowthQuestAllTaken(true, i) then
+      if not v:IsDone() and self._questModule:IsGrowthQuestAllTaken(true, i) then
         v:Done()
       end
       if i == self._dayIndex then
-        local red = (self._questModule):GetGrowthRedPointNum(i)
-        ;
-        (self._selectedDayRed):SetActive(red > 0)
-        local done = (self._questModule):IsGrowthQuestAllTaken(true, i)
-        ;
-        (self._selectedDayBG):SetActive(not done)
-        ;
-        (self._selectedDayBGDone):SetActive(done)
+        local red = self._questModule:GetGrowthRedPointNum(i)
+        self._selectedDayRed:SetActive(0 < red)
+        local done = self._questModule:IsGrowthQuestAllTaken(true, i)
+        self._selectedDayBG:SetActive(not done)
+        self._selectedDayBGDone:SetActive(done)
       end
     end
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem._SetDaySelect = function(self, index)
-  -- function num : 0_10 , upvalues : _ENV
+function UIQuestGrowthItem:_SetDaySelect(index)
   if self._dayIndex == index then
     return false
   end
   if not self._dayIndex then
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)((self:GetGameObject("_dayBtns")).transform)
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self:GetGameObject("_dayBtns").transform)
   end
   if self._dayIndex ~= nil then
     self:_SetUnDaySelect(self._dayIndex)
   end
   self._dayIndex = index
-  ;
-  (self._selectedDayGO):SetActive(false)
-  ;
-  (self._selectedDayGO):SetActive(true)
-  local pos = ((((self._dayBtns)[index]):GetGameObject()).transform).position
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._selectedDayGO).transform).position = pos
-  self.doTe1 = ((self._selectedDayGO).transform):DOMoveX((((((self._dayBtns)[index]):GetGameObject()).transform).position).x, 0.35)
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._selectedDayTxt).text = index
-  local red = (self._questModule):GetGrowthRedPointNum(index)
-  ;
-  (self._selectedDayRed):SetActive(red > 0)
-  do return true end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._selectedDayGO:SetActive(false)
+  self._selectedDayGO:SetActive(true)
+  local pos = self._dayBtns[index]:GetGameObject().transform.position
+  self._selectedDayGO.transform.position = pos
+  self.doTe1 = self._selectedDayGO.transform:DOMoveX(self._dayBtns[index]:GetGameObject().transform.position.x, 0.35)
+  self._selectedDayTxt.text = index
+  local red = self._questModule:GetGrowthRedPointNum(index)
+  self._selectedDayRed:SetActive(0 < red)
+  return true
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem._SetUnDaySelect = function(self, index)
-  -- function num : 0_11
-  (self._unselectedDayGo):SetActive(false)
-  ;
-  (self._unselectedDayGo):SetActive(true)
-  ;
-  ((self._dayBtns)[index]):UnSelect()
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._unselectedDayGo).transform).position = ((((self._dayBtns)[index]):GetGameObject()).transform).position
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._unselectedDayTxt).text = index
-  local red = (self._questModule):GetGrowthRedPointNum(index)
-  ;
-  (self._unselectedOlddayred):SetActive(red > 0)
-  local done = (self._questModule):IsGrowthQuestAllTaken(false, index)
-  ;
-  (self._unselectedOlddaybg):SetActive(not done)
-  ;
-  (self._unselectedOlddaybgDone):SetActive(done)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIQuestGrowthItem:_SetUnDaySelect(index)
+  self._unselectedDayGo:SetActive(false)
+  self._unselectedDayGo:SetActive(true)
+  self._dayBtns[index]:UnSelect()
+  self._unselectedDayGo.transform.position = self._dayBtns[index]:GetGameObject().transform.position
+  self._unselectedDayTxt.text = index
+  local red = self._questModule:GetGrowthRedPointNum(index)
+  self._unselectedOlddayred:SetActive(0 < red)
+  local done = self._questModule:IsGrowthQuestAllTaken(false, index)
+  self._unselectedOlddaybg:SetActive(not done)
+  self._unselectedOlddaybgDone:SetActive(done)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem._SetGoalBtn = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_quest_growth_goal)({})
-  self._goalBtns = (UIWidgetHelper.SpawnObjects)(self, "_goalBtns", "UIQuestGrowthTabBtn", #cfgs)
-  for i,v in ipairs(self._goalBtns) do
-    do
-      local lock = (self._questModule):CheckQuestIILock(i)
-      local done = (self._questModule):IsGrowthQuestAllTaken(false, i)
-      v:SetData(i, lock, done, function(index)
-    -- function num : 0_12_0 , upvalues : _ENV, self
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
-    if self:_SetGoalSelect(index) then
-      self:RefrenshList(true, true)
-    end
-  end
-, function(index)
-    -- function num : 0_12_1 , upvalues : _ENV, v
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
-    ;
-    (UIWidgetHelper.SetAnimationPlay)(v, "anim", "uieff_Quest_GrowthDayItem_Lock")
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_quest_base_growth_tab_goal_lock"))
-  end
-)
-    end
+function UIQuestGrowthItem:_SetGoalBtn()
+  local cfgs = Cfg.cfg_quest_growth_goal({})
+  self._goalBtns = UIWidgetHelper.SpawnObjects(self, "_goalBtns", "UIQuestGrowthTabBtn", #cfgs)
+  for i, v in ipairs(self._goalBtns) do
+    local lock = self._questModule:CheckQuestIILock(i)
+    local done = self._questModule:IsGrowthQuestAllTaken(false, i)
+    v:SetData(i, lock, done, function(index)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
+      if self:_SetGoalSelect(index) then
+        self:RefrenshList(true, true)
+      end
+    end, function(index)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
+      UIWidgetHelper.SetAnimationPlay(v, "anim", "uieff_Quest_GrowthDayItem_Lock")
+      ToastManager.ShowToast(StringTable.Get("str_quest_base_growth_tab_goal_lock"))
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem._Refresh_GoalBtn = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIQuestGrowthItem:_Refresh_GoalBtn()
   if self._goalBtns then
-    for i,v in ipairs(self._goalBtns) do
-      local red = (self._questModule):GetStage2GrowthRedPointNum(i)
-      ;
-      (v:GetGameObject("red")):SetActive(red > 0)
-      if v:IsLock() and not (self._questModule):CheckQuestIILock(i) then
+    for i, v in ipairs(self._goalBtns) do
+      local red = self._questModule:GetStage2GrowthRedPointNum(i)
+      v:GetGameObject("red"):SetActive(0 < red)
+      if v:IsLock() and not self._questModule:CheckQuestIILock(i) then
         v:Unlock()
       end
-      if not v:IsDone() and (self._questModule):IsGrowthQuestAllTaken(false, i) then
+      if not v:IsDone() and self._questModule:IsGrowthQuestAllTaken(false, i) then
         v:Done()
       end
       if i == self._goalIndex then
-        local red = (self._questModule):GetStage2GrowthRedPointNum(i)
-        ;
-        (self._selectedGoalRed):SetActive(red > 0)
-        local done = (self._questModule):IsGrowthQuestAllTaken(false, i)
-        ;
-        (self._selectedGoalBG):SetActive(not done)
-        ;
-        (self._selectedGoalBGDone):SetActive(done)
+        local red = self._questModule:GetStage2GrowthRedPointNum(i)
+        self._selectedGoalRed:SetActive(0 < red)
+        local done = self._questModule:IsGrowthQuestAllTaken(false, i)
+        self._selectedGoalBG:SetActive(not done)
+        self._selectedGoalBGDone:SetActive(done)
       end
     end
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem._SetGoalSelect = function(self, index)
-  -- function num : 0_14 , upvalues : _ENV
+function UIQuestGrowthItem:_SetGoalSelect(index)
   if self._goalIndex == index then
     return false
   end
   if not self._goalIndex then
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)((self:GetGameObject("_goalBtns")).transform)
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self:GetGameObject("_goalBtns").transform)
   end
   if self._goalIndex ~= nil then
     self:_SetUnGoalSelect(self._goalIndex)
   end
   self._goalIndex = index
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._selectedGoalGO).transform).position = ((((self._goalBtns)[index]):GetGameObject()).transform).position
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectedGoalTxt).text = index
-  local red = (self._questModule):GetStage2GrowthRedPointNum(index)
-  ;
-  (self._selectedGoalRed):SetActive(red > 0)
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._selectedGoalCanvasGroup).alpha = 0
-  ;
-  (self._selectedGoalCanvasGroup):DOFade(1, 0.5)
-  do return true end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._selectedGoalGO.transform.position = self._goalBtns[index]:GetGameObject().transform.position
+  self._selectedGoalTxt.text = index
+  local red = self._questModule:GetStage2GrowthRedPointNum(index)
+  self._selectedGoalRed:SetActive(0 < red)
+  self._selectedGoalCanvasGroup.alpha = 0
+  self._selectedGoalCanvasGroup:DOFade(1, 0.5)
+  return true
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem._SetUnGoalSelect = function(self, index)
-  -- function num : 0_15
-  (self._unselectedGoaGo):SetActive(true)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._unselectedGoaGo).transform).position = ((((self._goalBtns)[index]):GetGameObject()).transform).position
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._unselectedGoaTxt).text = index
-  ;
-  ((self._goalBtns)[index]):UnSelect()
-  local red = (self._questModule):GetStage2GrowthRedPointNum(index)
-  ;
-  (self._unselectedungoalRed):SetActive(red > 0)
-  local done = (self._questModule):IsGrowthQuestAllTaken(true, index)
-  ;
-  (self._unselectedungoalBG):SetActive(not done)
-  ;
-  (self._unselectedungoalBGDone):SetActive(done)
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._unselectedGoalCanvasGroup).alpha = 1
-  ;
-  (self._unselectedGoalCanvasGroup):DOFade(0, 0.55)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIQuestGrowthItem:_SetUnGoalSelect(index)
+  self._unselectedGoaGo:SetActive(true)
+  self._unselectedGoaGo.transform.position = self._goalBtns[index]:GetGameObject().transform.position
+  self._unselectedGoaTxt.text = index
+  self._goalBtns[index]:UnSelect()
+  local red = self._questModule:GetStage2GrowthRedPointNum(index)
+  self._unselectedungoalRed:SetActive(0 < red)
+  local done = self._questModule:IsGrowthQuestAllTaken(true, index)
+  self._unselectedungoalBG:SetActive(not done)
+  self._unselectedungoalBGDone:SetActive(done)
+  self._unselectedGoalCanvasGroup.alpha = 1
+  self._unselectedGoalCanvasGroup:DOFade(0, 0.55)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem._Refresh_QuestList = function(self, TT, anim)
-  -- function num : 0_16 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ((self._questListGO).transform).localPosition = self._questListInitLocalPos
-  local list = {(self._questModule):GetQuestByDayIndex(self._dayIndex), (self._questModule):GetQuestIIByStage(self._goalIndex)}
+function UIQuestGrowthItem:_Refresh_QuestList(TT, anim)
+  self._questListGO.transform.localPosition = self._questListInitLocalPos
+  local list = {
+    self._questModule:GetQuestByDayIndex(self._dayIndex),
+    self._questModule:GetQuestIIByStage(self._goalIndex)
+  }
   local tempList = list[self._tabIndex]
-  local awardQuestList = {tempList[10], tempList[11], tempList[12]}
+  local awardQuestList = {
+    tempList[10],
+    tempList[11],
+    tempList[12]
+  }
   local questIndexDic = {}
   questIndexDic[tempList[10]] = 1
   questIndexDic[tempList[11]] = 2
   questIndexDic[tempList[12]] = 3
-  ;
-  (table.sort)(awardQuestList, function(a, b)
-    -- function num : 0_16_0 , upvalues : _ENV
+  table.sort(awardQuestList, function(a, b)
     local aStatus = a:Status()
     local bStatus = b:Status()
-    if (a:QuestInfo()).LayoutIdx >= (b:QuestInfo()).LayoutIdx then
-      do return aStatus ~= bStatus end
-      if aStatus == QuestStatus.QUEST_Completed then
-        return true
-      elseif bStatus == QuestStatus.QUEST_Completed then
-        return false
-      else
-        return aStatus < bStatus
-      end
-      -- DECOMPILER ERROR: 6 unprocessed JMP targets
+    if aStatus == bStatus then
+      return a:QuestInfo().LayoutIdx < b:QuestInfo().LayoutIdx
+    elseif aStatus == QuestStatus.QUEST_Completed then
+      return true
+    elseif bStatus == QuestStatus.QUEST_Completed then
+      return false
+    else
+      return aStatus < bStatus
     end
-  end
-)
+  end)
   if anim then
-    (self._questListAnim):Stop()
+    self._questListAnim:Stop()
   end
-  ;
-  (self._questBGList):AsyncSpawnObjects(TT, "UIQuestGrowthQuestBGItem", 3)
-  local questBGs = (self._questBGList):GetAllSpawnList()
-  for index,ui in ipairs(questBGs) do
+  self._questBGList:AsyncSpawnObjects(TT, "UIQuestGrowthQuestBGItem", 3)
+  local questBGs = self._questBGList:GetAllSpawnList()
+  for index, ui in ipairs(questBGs) do
     local quest = awardQuestList[index]
     local sortedId = questIndexDic[quest]
     ui:Flush(TT, sortedId, tempList, function()
-    -- function num : 0_16_1 , upvalues : self, anim
-    self:RefrenshList(anim)
-  end
-, anim)
+      self:RefrenshList(anim)
+    end, anim)
   end
   if anim then
-    (self._questListAnim):Play("uieffanim_UIQuestGrowthQuestBGItem_in")
+    self._questListAnim:Play("uieffanim_UIQuestGrowthQuestBGItem_in")
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem._Refresh_Feather = function(self, anim)
-  -- function num : 0_17 , upvalues : _ENV
-  local hadTexs = {(self._questModule):GetFeatherCount(), (self._questModule):GetStage2FeatherCount()}
+function UIQuestGrowthItem:_Refresh_Feather(anim)
+  local hadTexs = {
+    self._questModule:GetFeatherCount(),
+    self._questModule:GetStage2FeatherCount()
+  }
   local hadTex = hadTexs[self._tabIndex]
-  local maxVals = {((Cfg.cfg_global).GrowthQuestCount).IntValue, ((Cfg.cfg_global).GrowthQuestCount2).IntValue}
+  local maxVals = {
+    Cfg.cfg_global.GrowthQuestCount.IntValue,
+    Cfg.cfg_global.GrowthQuestCount2.IntValue
+  }
   local maxValue = maxVals[self._tabIndex]
-  local cfg_feather = (Cfg.cfg_quest_growth_feather)({QuestStage = self._tabIndex})
+  local cfg_feather = Cfg.cfg_quest_growth_feather({
+    QuestStage = self._tabIndex
+  })
   if cfg_feather then
     local count = #cfg_feather
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._featherImage).fillAmount = hadTex / maxValue
-    ;
-    (self._stageProgressTxt):SetText(hadTex .. "/" .. maxValue)
-    local rect = (self._featherPoolGo):GetComponent("RectTransform")
-    local width = (rect.sizeDelta).x
-    ;
-    (self._featherPool):SpawnObjects("UIQuestGrowthFeatherItem", count)
-    self._featherItems = (self._featherPool):GetAllSpawnList()
+    self._featherImage.fillAmount = hadTex / maxValue
+    self._stageProgressTxt:SetText(hadTex .. "/" .. maxValue)
+    local rect = self._featherPoolGo:GetComponent("RectTransform")
+    local width = rect.sizeDelta.x
+    self._featherPool:SpawnObjects("UIQuestGrowthFeatherItem", count)
+    self._featherItems = self._featherPool:GetAllSpawnList()
     local lastWidth = 0
     for i = 1, count do
-      local needCount = (cfg_feather[i]).NeedCount
+      local needCount = cfg_feather[i].NeedCount
       local itemWidth = width / maxValue * needCount
-      local reward = (cfg_feather[i]).Reward
-      local id = (reward[1])[1]
-      local rewardCount = (reward[1])[2]
+      local reward = cfg_feather[i].Reward
+      local id = reward[1][1]
+      local rewardCount = reward[1][2]
       local showAnimDelay = 0.055 * (i - 1)
-      ;
-      ((self._featherItems)[i]):SetData(self._tabIndex, (cfg_feather[i]).ID, itemWidth, lastWidth, id, rewardCount, needCount, hadTex, showAnimDelay, anim)
+      self._featherItems[i]:SetData(self._tabIndex, cfg_feather[i].ID, itemWidth, lastWidth, id, rewardCount, needCount, hadTex, showAnimDelay, anim)
       lastWidth = itemWidth
     end
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem._ClearNew = function(self, index)
-  -- function num : 0_18 , upvalues : _ENV
+function UIQuestGrowthItem:_ClearNew(index)
   if index == 2 then
-    local new = (self._questModule):GetNewPoint(QuestType.QT_Growth)
+    local new = self._questModule:GetNewPoint(QuestType.QT_Growth)
     if new then
-      (self._questModule):SetGrowthNewPoint()
+      self._questModule:SetGrowthNewPoint()
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem.lookOnClick = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIQuestGrowthItem:lookOnClick()
   local id = self._bigAwardPetID
-  ;
-  (Log.info)("UIQuestGrowthItem:lookOnClick() id = ", id)
+  Log.info("UIQuestGrowthItem:lookOnClick() id = ", id)
   if id then
     local itemModule = self:GetModule(ItemModule)
     if itemModule:IsChoosePetGift(id) then
@@ -583,105 +390,70 @@ UIQuestGrowthItem.lookOnClick = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem.Stage1AwardBtnOnClick = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local id = ((Cfg.cfg_global).UIQuestGrowthLookIcon).IntValue
+function UIQuestGrowthItem:Stage1AwardBtnOnClick()
+  local id = Cfg.cfg_global.UIQuestGrowthLookIcon.IntValue
   self:ShowDialog("UIShopPetDetailController", id)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem.Stage2AwardBtnOnClick = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local id = ((Cfg.cfg_global).UIQuestGrowthLookIcon_2).IntValue
+function UIQuestGrowthItem:Stage2AwardBtnOnClick()
+  local id = Cfg.cfg_global.UIQuestGrowthLookIcon_2.IntValue
   self:ShowDialog("UIPetBackPackBox", id, true)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem.Stage1btnOnClick = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+function UIQuestGrowthItem:Stage1btnOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
   if self._tabIndex == 1 then
-    return 
+    return
   end
   self:_SetTabSelect(1)
   self:RefrenshList(true)
   self:_ClearNew(1)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem.Stage2btnOnClick = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+function UIQuestGrowthItem:Stage2btnOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
   if self._tabIndex == 2 then
-    return 
+    return
   end
   self:_ClearNew(2)
-  if (self._questModule):CheckQuestIILock(1) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_quest_base_growth_tab_btn_lock"))
-    return 
+  if self._questModule:CheckQuestIILock(1) then
+    ToastManager.ShowToast(StringTable.Get("str_quest_base_growth_tab_btn_lock"))
+    return
   end
   self:_SetTabSelect(2)
   self:RefrenshList(true)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem.OnUIGetItemCloseInQuest = function(self, type)
-  -- function num : 0_24
+function UIQuestGrowthItem:OnUIGetItemCloseInQuest(type)
   if self._isOpen then
     self:RefrenshList()
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem.getOnClick = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIQuestGrowthItem:getOnClick()
   self:Lock("UIQuestGet")
-  ;
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
   self:StartTask(self.OngetOnClick, self)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem.OngetOnClick = function(self, TT)
-  -- function num : 0_26 , upvalues : _ENV
-  local petquest = (self._questModule):GetQuestByDay(0)
-  local res, msg = (self._questModule):TakeQuestReward(TT, ((petquest[0]):QuestInfo()).quest_id)
+function UIQuestGrowthItem:OngetOnClick(TT)
+  local petquest = self._questModule:GetQuestByDay(0)
+  local res, msg = self._questModule:TakeQuestReward(TT, petquest[0]:QuestInfo().quest_id)
   self:UnLock("UIQuestGet")
   if self.uiOwner == nil then
-    return 
+    return
   end
   if res:GetSucc() then
     local rewards = msg.rewards
-    do
-      self:ShowDialog("UIPetObtain", rewards, function()
-    -- function num : 0_26_0 , upvalues : _ENV, self, rewards
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    self:ShowDialog("UIGetItemController", rewards, function()
-      -- function num : 0_26_0_0 , upvalues : _ENV
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Growth)
-    end
-)
-  end
-)
-    end
+    self:ShowDialog("UIPetObtain", rewards, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      self:ShowDialog("UIGetItemController", rewards, function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Growth)
+      end)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthItem.GetAward = function(self, index)
-  -- function num : 0_27
-  if self.awards and (self.awards)[index] then
-    return ((self.awards)[index]):GetGameObject("bg")
-  end
+function UIQuestGrowthItem:GetAward(index)
+  return self.awards and self.awards[index] and self.awards[index]:GetGameObject("bg")
 end
-
-

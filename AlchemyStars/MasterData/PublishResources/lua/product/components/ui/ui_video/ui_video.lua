@@ -1,32 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_video/ui_video.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIVideo", UIController)
 UIVideo = UIVideo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIVideo.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIVideo:OnShow(uiParams)
   self._onVideoComplete = uiParams[1]
-  ;
-  (AudioHelperController.PauseBGM)()
-  local url = (ResourceManager:GetInstance()):GetAssetPath("pv.mp4", LoadType.VideoClip)
-  if EDITOR and self._onVideoComplete then
-    (self._onVideoComplete)()
-  end
-  if self._onVideoComplete then
-    (self._onVideoComplete)()
+  AudioHelperController.PauseBGM()
+  local url = ResourceManager:GetInstance():GetAssetPath("pv.mp4", LoadType.VideoClip)
+  if EDITOR then
+    if self._onVideoComplete then
+      self._onVideoComplete()
+    end
+  elseif self._onVideoComplete then
+    self._onVideoComplete()
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVideo.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (AudioHelperController.UnpauseBGM)()
+function UIVideo:OnHide()
+  AudioHelperController.UnpauseBGM()
   self._onVideoComplete = nil
 end
-
-

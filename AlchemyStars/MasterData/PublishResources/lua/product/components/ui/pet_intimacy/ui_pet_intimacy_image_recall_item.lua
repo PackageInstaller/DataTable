@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet_intimacy/ui_pet_intimacy_image_recall_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetIntimacyImageRecallItem", UICustomWidget)
 UIPetIntimacyImageRecallItem = UIPetIntimacyImageRecallItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetIntimacyImageRecallItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIPetIntimacyImageRecallItem:OnShow(uiParams)
   self._titleLabel = self:GetUIComponent("UILocalizationText", "Title")
   self._conditionLabel = self:GetUIComponent("UILocalizationText", "Condition")
   self._conditionRollingText = self:GetUIComponent("RollingText", "Condition")
@@ -24,10 +17,7 @@ UIPetIntimacyImageRecallItem.OnShow = function(self, uiParams)
   self._collect = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyImageRecallItem.Refresh = function(self, intimacyMainController, intimacyImageRecall, petData, data)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPetIntimacyImageRecallItem:Refresh(intimacyMainController, intimacyImageRecall, petData, data)
   if GameSingle then
     data.collect = true
     data.isOpen = true
@@ -37,76 +27,46 @@ UIPetIntimacyImageRecallItem.Refresh = function(self, intimacyMainController, in
   self._petData = petData
   self._data = data
   self._collect = data.collect
-  ;
-  (self._memoryPicLoader):LoadImage((self._data).icon)
-  ;
-  (self._indexLabel):SetText((self._data).index)
-  ;
-  (self._petNameLabel):SetText((StringTable.Get)((self._petData):GetPetName()))
-  ;
-  (self._titleLabel):SetText((StringTable.Get)((self._data).title))
-  ;
-  (self._collectGo):SetActive(self._collect)
+  self._memoryPicLoader:LoadImage(self._data.icon)
+  self._indexLabel:SetText(self._data.index)
+  self._petNameLabel:SetText(StringTable.Get(self._petData:GetPetName()))
+  self._titleLabel:SetText(StringTable.Get(self._data.title))
+  self._collectGo:SetActive(self._collect)
   self:RefreshSelectedStatus()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyImageRecallItem.RefreshSelectedStatus = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._data).isOpen then
-    (self._conditionGo):SetActive(false)
-    ;
-    (self._memoryPicGo):SetActive(true)
-    ;
-    (self._titleGo):SetActive(true)
-    if (self._data).isSelected then
-      (self._selectedFrameGo):SetActive(true)
-      ;
-      (self._unSelectedGo):SetActive(false)
+function UIPetIntimacyImageRecallItem:RefreshSelectedStatus()
+  if self._data.isOpen then
+    self._conditionGo:SetActive(false)
+    self._memoryPicGo:SetActive(true)
+    self._titleGo:SetActive(true)
+    if self._data.isSelected then
+      self._selectedFrameGo:SetActive(true)
+      self._unSelectedGo:SetActive(false)
     else
-      ;
-      (self._selectedFrameGo):SetActive(false)
-      ;
-      (self._unSelectedGo):SetActive(true)
+      self._selectedFrameGo:SetActive(false)
+      self._unSelectedGo:SetActive(true)
     end
   else
-    ;
-    (self._conditionGo):SetActive(true)
-    ;
-    (self._memoryPicGo):SetActive(false)
-    ;
-    (self._selectedFrameGo):SetActive(false)
-    ;
-    (self._unSelectedGo):SetActive(false)
-    ;
-    (self._titleGo):SetActive(false)
+    self._conditionGo:SetActive(true)
+    self._memoryPicGo:SetActive(false)
+    self._selectedFrameGo:SetActive(false)
+    self._unSelectedGo:SetActive(false)
+    self._titleGo:SetActive(false)
     local conditionStr = ""
-    do
-      if (self._data).condition then
-        local condition = (Cfg.pet_intimacy_condition)[(self._data).condition]
-        conditionStr = (StringTable.Get)(condition.Des)
-      end
-      -- DECOMPILER ERROR at PC74: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._conditionLabel).text = conditionStr
-      ;
-      (self._conditionRollingText):RefreshText(conditionStr)
+    if self._data.condition then
+      local condition = Cfg.pet_intimacy_condition[self._data.condition]
+      conditionStr = StringTable.Get(condition.Des)
     end
+    self._conditionLabel.text = conditionStr
+    self._conditionRollingText:RefreshText(conditionStr)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyImageRecallItem.ButtonImageRecallOnClick = function(self, go)
-  -- function num : 0_3
-  if not (self._data).isOpen then
-    return 
+function UIPetIntimacyImageRecallItem:ButtonImageRecallOnClick(go)
+  if not self._data.isOpen then
+    return
   end
-  ;
-  (self._intimacyImageRecall):OnItemClicked(self, self._data)
+  self._intimacyImageRecall:OnItemClicked(self, self._data)
   self:ShowDialog("UIPetIntimacyImageRecallController", self._data, self._petData)
 end
-
-

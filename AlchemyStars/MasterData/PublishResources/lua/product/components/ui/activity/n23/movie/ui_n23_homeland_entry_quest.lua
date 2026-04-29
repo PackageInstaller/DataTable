@@ -1,53 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n23/movie/ui_n23_homeland_entry_quest.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN23HomelandEntryQuest", Object)
 UIN23HomelandEntryQuest = UIN23HomelandEntryQuest
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN23HomelandEntryQuest.Constructor = function(self, campaign)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN23HomelandEntryQuest:Constructor(campaign)
   self._campaign = campaign
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_N23
   self._componentId = ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23HomelandEntryQuest.GetNew = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local pangolinComp = (self._campaign):GetComponent(self._componentId)
+function UIN23HomelandEntryQuest:GetNew()
+  local pangolinComp = self._campaign:GetComponent(self._componentId)
   local new = pangolinComp:NewTaskRed()
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
   local unlock = homelandModule:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_STORY_TASK)
   if not unlock then
     return false
   end
-  do return new ~= nil and new > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return new ~= nil and 0 < new
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23HomelandEntryQuest.GetRedCount = function(self)
-  -- function num : 0_2
+function UIN23HomelandEntryQuest:GetRedCount()
   return 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23HomelandEntryQuest.OpenUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
+function UIN23HomelandEntryQuest:OpenUI()
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
   local unlock = homelandModule:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_STORY_TASK)
   if not unlock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_homeland_storytask_minigame_tip"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_homeland_storytask_minigame_tip"))
+    return
   end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIHomelandStoryTaskSimpleController", 2, self._campaignType, ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN)
+  GameGlobal.UIStateManager():ShowDialog("UIHomelandStoryTaskSimpleController", 2, self._campaignType, ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN)
 end
-
-

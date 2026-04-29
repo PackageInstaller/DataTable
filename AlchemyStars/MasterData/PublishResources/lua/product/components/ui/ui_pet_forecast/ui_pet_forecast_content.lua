@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_forecast/ui_pet_forecast_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UIPetForecastContent", UISideEnterCenterContentBase)
 UIPetForecastContent = UIPetForecastContent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetForecastContent.DoInit = function(self, params)
-  -- function num : 0_0
+function UIPetForecastContent:DoInit(params)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.DoShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPetForecastContent:DoShow()
   self._forecastData = self._data
   self._obj_title = self:GetGameObject("title")
   self._obj_titleEn = self:GetGameObject("titleEn")
@@ -23,48 +13,33 @@ UIPetForecastContent.DoShow = function(self)
   self:_SetDebugBtn()
   self:AttachEvent(GameEventType.ShowItemTips, self.ShowTips)
   self:AttachEvent(GameEventType.RolePropertyChanged, self.ItemCountChanged)
-  self.te = (UIActivityHelper.StartTimerEvent)(self.te, function()
-    -- function num : 0_1_0 , upvalues : self
+  self.te = UIActivityHelper.StartTimerEvent(self.te, function()
     self:FlushLeftTime()
-  end
-)
+  end)
   self.curSelectDay = 0
-  self.fsm = (StateMachineManager:GetInstance()):CreateStateMachine("StatePetForecast", StatePetForecast)
-  ;
-  (self.fsm):SetData(self)
-  ;
-  (self.fsm):Init(StatePetForecast.Init)
-  if self._forecastData and (self._forecastData).id > 0 then
-    local id = (self._forecastData).id
-    local key = (UIPetForecastEnter.GetLocalDBKey)(id)
-    ;
-    (LocalDB.SetInt)(key, 1)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CampaignComponentStepChange, -1, nil, nil)
+  self.fsm = StateMachineManager:GetInstance():CreateStateMachine("StatePetForecast", StatePetForecast)
+  self.fsm:SetData(self)
+  self.fsm:Init(StatePetForecast.Init)
+  if self._forecastData and 0 < self._forecastData.id then
+    local id = self._forecastData.id
+    local key = UIPetForecastEnter.GetLocalDBKey(id)
+    LocalDB.SetInt(key, 1)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.CampaignComponentStepChange, -1, nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.DoHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (UIWidgetHelper.ClearWidgets)(self, "_tipsPool")
+function UIPetForecastContent:DoHide()
+  UIWidgetHelper.ClearWidgets(self, "_tipsPool")
   self:Close()
-  self.te = (UIActivityHelper.CancelTimerEvent)(self.te)
+  self.te = UIActivityHelper.CancelTimerEvent(self.te)
   self:DetachEvent(GameEventType.ShowItemTips, self.ShowTips)
   self:DetachEvent(GameEventType.RolePropertyChanged, self.ItemCountChanged)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.DoDestroy = function(self)
-  -- function num : 0_3
+function UIPetForecastContent:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.RequestPrediction = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIPetForecastContent:RequestPrediction(TT)
   local lockName = "UIPetForecastContent_RequestPrediction"
   self:Lock(lockName)
   local res = AsyncRequestRes:New()
@@ -72,54 +47,37 @@ UIPetForecastContent.RequestPrediction = function(self, TT)
   if not self._dataLoader then
     self._dataLoader = UIPetForecastDataLoader:New()
   end
-  self._data = (self._dataLoader):LoadData(TT, res)
+  self._data = self._dataLoader:LoadData(TT, res)
   self._forecastData = self._data
   self:Flush()
   self:UnLock(lockName)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.Init = function(self)
-  -- function num : 0_5
+function UIPetForecastContent:Init()
   self:_SetUIByCfg()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent._SetUIByCfg = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local mainBg = (self._forecastData):GetCfg_cg("mainBg")
-  ;
-  (self:GetGameObject("mainBg")):SetActive(mainBg ~= nil)
+function UIPetForecastContent:_SetUIByCfg()
+  local mainBg = self._forecastData:GetCfg_cg("mainBg")
+  self:GetGameObject("mainBg"):SetActive(mainBg ~= nil)
   if mainBg then
-    (UIWidgetHelper.SetRawImage)(self, "mainBg", mainBg)
+    UIWidgetHelper.SetRawImage(self, "mainBg", mainBg)
   end
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "ComicBg", (self._forecastData):GetCfg_cg("bg"))
+  UIWidgetHelper.SetRawImage(self, "ComicBg", self._forecastData:GetCfg_cg("bg"))
   local trans = self:GetUIComponent("RectTransform", "TitleBg")
-  trans.anchoredPosition = (self._forecastData).posTitle
-  trans.sizeDelta = (self._forecastData).sizeTitle
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "TitleBg", (self._forecastData):GetCfg_cg("bgTitle"))
-  ;
-  (self._forecastData):SetObjColor(self, "Image", "imgLeftTime", "colorLeftTimeBG")
-  ;
-  (self._forecastData):SetObjColor(self, "Image", "imgClock", "colorLeftTimeHint")
-  ;
-  (self._forecastData):SetObjColor(self, "UILocalizationText", "txtLeftTimeHint", "colorLeftTimeHint")
-  ;
-  (self._forecastData):SetObjColor(self, "UILocalizationText", "txtLeftTime", "colorLeftTime")
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  trans.anchoredPosition = self._forecastData.posTitle
+  trans.sizeDelta = self._forecastData.sizeTitle
+  UIWidgetHelper.SetRawImage(self, "TitleBg", self._forecastData:GetCfg_cg("bgTitle"))
+  self._forecastData:SetObjColor(self, "Image", "imgLeftTime", "colorLeftTimeBG")
+  self._forecastData:SetObjColor(self, "Image", "imgClock", "colorLeftTimeHint")
+  self._forecastData:SetObjColor(self, "UILocalizationText", "txtLeftTimeHint", "colorLeftTimeHint")
+  self._forecastData:SetObjColor(self, "UILocalizationText", "txtLeftTime", "colorLeftTime")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.Flush = function(self, isShow)
-  -- function num : 0_7 , upvalues : _ENV
+function UIPetForecastContent:Flush(isShow)
   if not self._forecastData then
-    (Log.warn)("### self._forecastData nil.")
-    return 
+    Log.warn("### self._forecastData nil.")
+    return
   end
   self:FlushLeftTime()
   self:FlushDesc()
@@ -129,191 +87,135 @@ UIPetForecastContent.Flush = function(self, isShow)
   self:_SetShareBtn("normal")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.FlushLeftTime = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIPetForecastContent:FlushLeftTime()
   local text = ""
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
-  if self._forecastData and nowTimestamp < (self._forecastData).endTime then
-    local leftSeconds = (UICommonHelper.CalcLeftSeconds)((self._forecastData).endTime)
-    local d, h, m, s = (UICommonHelper.S2DHMS)(leftSeconds)
-    if d >= 1 then
-      text = (StringTable.Get)("str_prediction_left_time_d_h", (math.floor)(d), (math.floor)(h))
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
+  if self._forecastData and nowTimestamp < self._forecastData.endTime then
+    local leftSeconds = UICommonHelper.CalcLeftSeconds(self._forecastData.endTime)
+    local d, h, m, s = UICommonHelper.S2DHMS(leftSeconds)
+    if 1 <= d then
+      text = StringTable.Get("str_prediction_left_time_d_h", math.floor(d), math.floor(h))
+    elseif 1 <= h then
+      text = StringTable.Get("str_prediction_left_time_h_m", math.floor(h), math.floor(m))
+    elseif 1 <= m then
+      text = StringTable.Get("str_prediction_left_time_m", math.floor(m))
     else
-      if h >= 1 then
-        text = (StringTable.Get)("str_prediction_left_time_h_m", (math.floor)(h), (math.floor)(m))
-      else
-        if m >= 1 then
-          text = (StringTable.Get)("str_prediction_left_time_m", (math.floor)(m))
-        else
-          text = (StringTable.Get)("str_prediction_left_time_m", "<" .. 1)
-        end
-      end
+      text = StringTable.Get("str_prediction_left_time_m", "<" .. 1)
     end
   else
-    do
-      text = (StringTable.Get)("str_prediction_error_code_1")
-      ;
-      (UIActivityHelper.CancelTimerEvent)(self.te)
-      ;
-      (UIWidgetHelper.SetLocalizationText)(self, "txtLeftTime", text)
-    end
+    text = StringTable.Get("str_prediction_error_code_1")
+    UIActivityHelper.CancelTimerEvent(self.te)
   end
+  UIWidgetHelper.SetLocalizationText(self, "txtLeftTime", text)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.FlushDesc = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local name = ((GameGlobal.GetModule)(RoleModule)):GetName()
-  if (string.isnullorempty)(name) then
-    name = (StringTable.Get)("str_guide_moren_name")
+function UIPetForecastContent:FlushDesc()
+  local name = GameGlobal.GetModule(RoleModule):GetName()
+  if string.isnullorempty(name) then
+    name = StringTable.Get("str_guide_moren_name")
   end
   local str = ""
   if self.curSelectDay == 0 then
-    str = (StringTable.Get)("str_prediction_info_" .. (self._forecastData).id, name)
+    str = StringTable.Get("str_prediction_info_" .. self._forecastData.id, name)
   else
-    str = (StringTable.Get)("str_prediction_info_" .. (self._forecastData).id .. "_" .. self.curSelectDay, name)
+    str = StringTable.Get("str_prediction_info_" .. self._forecastData.id .. "_" .. self.curSelectDay, name)
   end
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "txtDesc", str)
+  UIWidgetHelper.SetLocalizationText(self, "txtDesc", str)
   local sv = self:GetUIComponent("ScrollRect", "sv")
   sv.verticalNormalizedPosition = 1
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent._SetComic = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local len = (table.count)((self._forecastData).pieces)
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_comicImg", "UIPetForecastComic", len)
-  for i,v in ipairs(objs) do
+function UIPetForecastContent:_SetComic()
+  local len = table.count(self._forecastData.pieces)
+  local objs = UIWidgetHelper.SpawnObjects(self, "_comicImg", "UIPetForecastComic", len)
+  for i, v in ipairs(objs) do
     v:SetData(i, self._forecastData)
   end
   local selectDay = self.curSelectDay
   local isSelected = selectDay ~= 0
-  do
-    if isSelected then
-      local selectImg = (self._forecastData):GetCfg_imgs(selectDay, "select")
-      ;
-      (UIWidgetHelper.SetRawImage)(self, "_selectedImg", selectImg)
-    end
-    ;
-    (self:GetGameObject("_selectedImg")):SetActive(isSelected)
-    ;
-    (UIWidgetHelper.SetRawImage)(self, "ComicFrame", (self._forecastData):GetCfg_cg("comicFrame"))
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if isSelected then
+    local selectImg = self._forecastData:GetCfg_imgs(selectDay, "select")
+    UIWidgetHelper.SetRawImage(self, "_selectedImg", selectImg)
   end
+  self:GetGameObject("_selectedImg"):SetActive(isSelected)
+  UIWidgetHelper.SetRawImage(self, "ComicFrame", self._forecastData:GetCfg_cg("comicFrame"))
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent._SetPieceBtn = function(self, isShow)
-  -- function num : 0_11 , upvalues : _ENV
-  if isShow == nil and (self._forecastData):IsAllAccepted() then
-    isShow = (self._forecastData):HasNewPieceImage()
+function UIPetForecastContent:_SetPieceBtn(isShow)
+  if isShow == nil then
+    isShow = self._forecastData:IsAllAccepted() and self._forecastData:HasNewPieceImage()
   end
-  local len = (table.count)((self._forecastData).pieces)
-  local pieceList = (UIWidgetHelper.SpawnObjects)(self, "_pieceBtn", "UIPetForecastBtn", len)
-  for i,v in ipairs(pieceList) do
+  local len = table.count(self._forecastData.pieces)
+  local pieceList = UIWidgetHelper.SpawnObjects(self, "_pieceBtn", "UIPetForecastBtn", len)
+  for i, v in ipairs(pieceList) do
     v:Flush(i, function(day)
-    -- function num : 0_11_0 , upvalues : len, _ENV, self
-    if day < 1 or len < day then
-      (Log.fatal)("### invalid param. day = ", day)
-      return 
-    end
-    self.curSelectDay = self.curSelectDay == day and 0 or day
-    self:Flush()
-  end
-, isShow, function()
-    -- function num : 0_11_1 , upvalues : self
-    self:Flush()
-  end
-, self._isDebug)
+      if day < 1 or day > len then
+        Log.fatal("### invalid param. day = ", day)
+        return
+      end
+      self.curSelectDay = self.curSelectDay == day and 0 or day
+      self:Flush()
+    end, isShow, function()
+      self:Flush()
+    end, self._isDebug)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent._SetDrawCardPet = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local isShow = (self._forecastData):IsAllAccepted()
-  local data = (self._forecastData).pets
-  ;
-  (self:GetGameObject("_drawCardPetInfo")):SetActive(isShow)
+function UIPetForecastContent:_SetDrawCardPet()
+  local isShow = self._forecastData:IsAllAccepted()
+  local data = self._forecastData.pets
+  self:GetGameObject("_drawCardPetInfo"):SetActive(isShow)
   if not isShow or not data then
-    return 
+    return
   end
-  local lenPets = (table.count)(data)
-  local pets = (UIWidgetHelper.SpawnObjects)(self, "_drawCardPetInfo", "UIDrawCardPetInfoLoader", lenPets)
-  local views = (UIWidgetHelper.SpawnObjects)(self, "_view", "UIPetForecastViewItem", lenPets)
-  for i,v in ipairs(pets) do
+  local lenPets = table.count(data)
+  local pets = UIWidgetHelper.SpawnObjects(self, "_drawCardPetInfo", "UIDrawCardPetInfoLoader", lenPets)
+  local views = UIWidgetHelper.SpawnObjects(self, "_view", "UIPetForecastViewItem", lenPets)
+  for i, v in ipairs(pets) do
     local pet = data[i]
     v:SetData(2, pet.petId, Vector2.zero, function(id)
-    -- function num : 0_12_0 , upvalues : self
-    self:ShowDialog("UIShopPetDetailController", id)
-  end
-)
+      self:ShowDialog("UIShopPetDetailController", id)
+    end)
     local v05 = Vector2.one * 0.5
-    ;
-    (self._forecastData):SetObjTransform(v, v05, v05, pet.pos)
-    ;
-    (views[i]):Flush(pet.petId)
+    self._forecastData:SetObjTransform(v, v05, v05, pet.pos)
+    views[i]:Flush(pet.petId)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.ShowTips = function(self, matid, pos)
-  -- function num : 0_13 , upvalues : _ENV
-  (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
+function UIPetForecastContent:ShowTips(matid, pos)
+  UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.Close = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (self.fsm):ChangeState(StatePetForecast.NewUnlockClose)
+function UIPetForecastContent:Close()
+  self.fsm:ChangeState(StatePetForecast.NewUnlockClose)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.ItemCountChanged = function(self)
-  -- function num : 0_15
+function UIPetForecastContent:ItemCountChanged()
   self:StartTask(self.RequestPrediction, self)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.ShareBtnOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
+function UIPetForecastContent:ShareBtnOnClick(go)
   self:Lock("UIPetForecastShare")
   self:StartTask(function(TT)
-    -- function num : 0_16_0 , upvalues : self, _ENV
     self:_SetShareUI("share")
     YIELD(TT)
     self:ShowDialog("UIShare", "UISideEnterCenterController", ShareAnchorType.CenterRight, function()
-      -- function num : 0_16_0_0 , upvalues : self
       self:_SetShareUI("normal")
-    end
-, ShareAnchorType.TopCenter, nil, nil, ShareSceneType.CampaignPreView)
+    end, ShareAnchorType.TopCenter, nil, nil, ShareSceneType.CampaignPreView)
     self:UnLock("UIPetForecastShare")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent._SetShareUI = function(self, state)
-  -- function num : 0_17 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-share = {"shareBg"}
-, 
-normal = {"ComicBg", "TitleBg", "RightBottom"}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+function UIPetForecastContent:_SetShareUI(state)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    share = {"shareBg"},
+    normal = {
+      "ComicBg",
+      "TitleBg",
+      "RightBottom"
+    }
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
   self:_SetShareBtn(state)
   local regionRect = self:GetUIComponent("RectTransform", "ComicRegion")
   if not self._defaultPos then
@@ -321,7 +223,7 @@ normal = {"ComicBg", "TitleBg", "RightBottom"}
   end
   if state == "share" then
     self:SetCenterUIHide(true)
-    regionRect.anchoredPosition = Vector2((self._defaultPos).x, (self._defaultPos).y - 140)
+    regionRect.anchoredPosition = Vector2(self._defaultPos.x, self._defaultPos.y - 140)
     regionRect.localScale = Vector2(0.95, 0.95)
   else
     self:SetCenterUIHide(false)
@@ -330,131 +232,92 @@ normal = {"ComicBg", "TitleBg", "RightBottom"}
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent._SetShareBtn = function(self, state)
-  -- function num : 0_18 , upvalues : _ENV
+function UIPetForecastContent:_SetShareBtn(state)
   local shareBtn = self:GetGameObject("ShareBtn")
-  local isZh = (UIActivityZhHelper.IsZh)()
+  local isZh = UIActivityZhHelper.IsZh()
   if isZh == false then
     shareBtn:SetActive(false)
-    return 
+    return
   end
-  local canShare = (self:GetModule(ShareModule)):CanShare()
-  local allAccepted = (self._forecastData):IsAllAccepted()
-  local isShow = not canShare or not allAccepted or state ~= "share"
+  local canShare = self:GetModule(ShareModule):CanShare()
+  local allAccepted = self._forecastData:IsAllAccepted()
+  local isShow = canShare and allAccepted and state ~= "share"
   shareBtn:SetActive(isShow)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent._SetDebugBtn = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local isShow = (UIActivityHelper.CheckDebugOpen)()
-  ;
-  (self:GetGameObject("DebugBtn")):SetActive(isShow)
+function UIPetForecastContent:_SetDebugBtn()
+  local isShow = UIActivityHelper.CheckDebugOpen()
+  self:GetGameObject("DebugBtn"):SetActive(isShow)
   self._isDebug = false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.DebugBtnOnClick = function(self, go)
-  -- function num : 0_20
+function UIPetForecastContent:DebugBtnOnClick(go)
   self._isDebug = not self._isDebug
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.IsPlaying = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIPetForecastContent:IsPlaying()
   if self.isPlaying then
-    for _,b in ipairs(self.isPlaying) do
+    for _, b in ipairs(self.isPlaying) do
       if b then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.PlayPetForecastView = function(self, view)
-  -- function num : 0_22 , upvalues : _ENV
-  if view and (self._forecastData):IsAllAccepted() and (self._forecastData):HasNewPieceImage() then
+function UIPetForecastContent:PlayPetForecastView(view)
+  if view and self._forecastData:IsAllAccepted() and self._forecastData:HasNewPieceImage() then
     self.isPlaying = {}
-    for i,p in ipairs(view.parallel) do
-      do
-        -- DECOMPILER ERROR at PC19: Confused about usage of register: R7 in 'UnsetPending'
-
-        (self.isPlaying)[i] = true
-        self:StartTask(function(TT)
-    -- function num : 0_22_0 , upvalues : i, self, _ENV, p
-    local key = "UIPetForecastPlayPetForecastView" .. i
-    self:Lock(key)
-    for _,command in ipairs(p.commands) do
-      local nameFunc = "PlayPetForecastViewCommand" .. command.name
-      local func = self[nameFunc]
-      if func then
-        func(self, TT, command.params)
-      else
-        ;
-        (Log.fatal)("### no function name: ", nameFunc)
-      end
-    end
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.isPlaying)[i] = false
-    self:UnLock(key)
-  end
-, self)
-      end
+    for i, p in ipairs(view.parallel) do
+      self.isPlaying[i] = true
+      self:StartTask(function(TT)
+        local key = "UIPetForecastPlayPetForecastView" .. i
+        self:Lock(key)
+        for _, command in ipairs(p.commands) do
+          local nameFunc = "PlayPetForecastViewCommand" .. command.name
+          local func = self[nameFunc]
+          if func then
+            func(self, TT, command.params)
+          else
+            Log.fatal("### no function name: ", nameFunc)
+          end
+        end
+        self.isPlaying[i] = false
+        self:UnLock(key)
+      end, self)
     end
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.PlayPetForecastViewCommandWait = function(self, TT, params)
-  -- function num : 0_23 , upvalues : _ENV
-  if not params[1] then
-    local ms = tonumber(not params or "0")
+function UIPetForecastContent:PlayPetForecastViewCommandWait(TT, params)
+  if params then
+    local ms = tonumber(params[1] or "0")
     YIELD(TT, ms)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.PlayPetForecastViewCommandPlayEffect = function(self, TT, params)
-  -- function num : 0_24 , upvalues : _ENV
-  if not params[1] then
-    local effectName = (not params or "") .. ".prefab"
+function UIPetForecastContent:PlayPetForecastViewCommandPlayEffect(TT, params)
+  if params then
+    local effectName = (params[1] or "") .. ".prefab"
     local nodeName = params[2] or ""
     local tranParent = self:GetUIComponent("Transform", nodeName)
     if not tranParent then
-      (Log.error)("###[UIPetForecast] no node:", nodeName)
-      return 
+      Log.error("###[UIPetForecast] no node:", nodeName)
+      return
     end
     local tranChild = tranParent:Find(effectName)
     if tranChild then
-      (tranChild.gameObject):SetActive(true)
+      tranChild.gameObject:SetActive(true)
     else
-      local effReq = (ResourceManager:GetInstance()):SyncLoadAsset(effectName, LoadType.GameObject)
+      local effReq = ResourceManager:GetInstance():SyncLoadAsset(effectName, LoadType.GameObject)
       if not effReq then
-        (Log.error)("###[UIPetForecast] effReq is nil !")
+        Log.error("###[UIPetForecast] effReq is nil !")
       end
-      -- DECOMPILER ERROR at PC49: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self.dictEffect)[effectName] = effReq
+      self.dictEffect[effectName] = effReq
       local child = effReq.Obj
-      ;
-      (child.transform):SetParent(tranParent)
+      child.transform:SetParent(tranParent)
       local rect = child:GetComponent("RectTransform")
       rect.anchoredPosition = Vector2.zero
       rect.localScale = Vector3.one
@@ -464,39 +327,34 @@ UIPetForecastContent.PlayPetForecastViewCommandPlayEffect = function(self, TT, p
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.PlayPetForecastViewCommandPlayAudio = function(self, TT, params)
-  -- function num : 0_25 , upvalues : _ENV
-  if not params[1] then
-    local audioId = tonumber(not params or "0")
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(audioId)
+function UIPetForecastContent:PlayPetForecastViewCommandPlayAudio(TT, params)
+  if params then
+    local audioId = tonumber(params[1] or "0")
+    AudioHelperController.PlayUISoundAutoRelease(audioId)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.PlayPetForecastViewCommandReplaceImage = function(self, TT, params)
-  -- function num : 0_26
+function UIPetForecastContent:PlayPetForecastViewCommandReplaceImage(TT, params)
   self:Flush(true)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastContent.PlayPetForecastViewCommandPlayAnim = function(self, TT, params)
-  -- function num : 0_27 , upvalues : _ENV
-  if not params[1] then
-    local nodeName = not params or ""
+function UIPetForecastContent:PlayPetForecastViewCommandPlayAnim(TT, params)
+  if params then
+    local nodeName = params[1] or ""
+    local tranAnimNode = self:GetUIComponent("Animation", nodeName)
+    if not tranAnimNode then
+      Log.error("###[UIPetForecast] no node:", tranAnimNode)
+      return
+    end
+    tranAnimNode:Play()
   end
-  local tranAnimNode = self:GetUIComponent("Animation", nodeName)
-  if not tranAnimNode then
-    (Log.error)("###[UIPetForecast] no node:", tranAnimNode)
-    return 
-  end
-  tranAnimNode:Play()
 end
 
-local StatePetForecast = {Init = 0, Normal = 1, NewUnlockLast = 2, NewUnlockNormal = 3, NewUnlockClose = 4}
+local StatePetForecast = {
+  Init = 0,
+  Normal = 1,
+  NewUnlockLast = 2,
+  NewUnlockNormal = 3,
+  NewUnlockClose = 4
+}
 _enum("StatePetForecast", StatePetForecast)
-

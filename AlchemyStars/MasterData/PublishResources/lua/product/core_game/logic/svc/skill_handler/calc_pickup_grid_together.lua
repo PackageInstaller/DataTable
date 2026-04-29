@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_pickup_grid_together.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_PickUpGridTogether", SkillEffectCalc_Base)
 SkillEffectCalc_PickUpGridTogether = SkillEffectCalc_PickUpGridTogether
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_PickUpGridTogether.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_PickUpGridTogether:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PickUpGridTogether.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_PickUpGridTogether:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillEffectParam = skillEffectCalcParam.skillEffectParam
   local skillRange = skillEffectCalcParam.skillRange
   local rangeCount = #skillRange
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local component = casterEntity:ActiveSkillPickUpComponent()
   local pickVec = component:GetAllValidPickUpGridPos()
   local pickupPos = pickVec[1]
@@ -32,31 +22,18 @@ SkillEffectCalc_PickUpGridTogether.DoSkillEffectCalculator = function(self, skil
     local gridData = gridDataList[i]
     if pieceType == gridData:GetGridType() and gridData:IsCanConvert() and i ~= replaceIndex then
       local tmpData = gridData
-      ;
-      (Log.info)("ReplaceIndex:", replaceIndex, "Type:", gridData:GetGridType(), " GridPos:", gridData:GetGridPos())
+      Log.info("ReplaceIndex:", replaceIndex, "Type:", gridData:GetGridType(), " GridPos:", gridData:GetGridPos())
       local j = replaceIndex
-      while 1 do
-        if j <= i then
-          local tmpR = self:FindCanTogetherGrid(gridDataList, j, i, 1)
-          if tmpR then
-            (Log.info)("DownToUp Index:", tmpR, "Pos:", skillRange[tmpR], " NewType:", tmpData:GetGridType())
-            local tempGridData = gridDataList[tmpR]
-            gridDataList[tmpR] = tmpData
-            tmpData = tempGridData
-            j = tmpR
-          end
-          do
-            do
-              j = j + 1
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+      while i >= j do
+        local tmpR = self:FindCanTogetherGrid(gridDataList, j, i, 1)
+        if tmpR then
+          Log.info("DownToUp Index:", tmpR, "Pos:", skillRange[tmpR], " NewType:", tmpData:GetGridType())
+          local tempGridData = gridDataList[tmpR]
+          gridDataList[tmpR] = tmpData
+          tmpData = tempGridData
+          j = tmpR
         end
+        j = j + 1
       end
       replaceIndex = replaceIndex + 1
     end
@@ -65,46 +42,31 @@ SkillEffectCalc_PickUpGridTogether.DoSkillEffectCalculator = function(self, skil
   for i = pickupIndex, 1, -1 do
     local gridData = gridDataList[i]
     if pieceType == gridData:GetGridType() and gridData:IsCanConvert() and i ~= replaceIndex then
-      (Log.info)("ReplaceIndex:", replaceIndex, "GridPos:", gridData:GetGridPos())
+      Log.info("ReplaceIndex:", replaceIndex, "GridPos:", gridData:GetGridPos())
       local tmpData = gridData
       local j = replaceIndex
-      while 1 do
-        if i <= j then
-          local tmpR = self:FindCanTogetherGrid(gridDataList, j, i, -1)
-          if tmpR then
-            (Log.info)("UpToDown Index:", tmpR, "Pos:", skillRange[tmpR], " NewType:", tmpData:GetGridType())
-            local tempGridData = gridDataList[tmpR]
-            gridDataList[tmpR] = tmpData
-            tmpData = tempGridData
-            j = tmpR
-          end
-          do
-            do
-              j = j - 1
-              -- DECOMPILER ERROR at PC129: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC129: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC129: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+      while i <= j do
+        local tmpR = self:FindCanTogetherGrid(gridDataList, j, i, -1)
+        if tmpR then
+          Log.info("UpToDown Index:", tmpR, "Pos:", skillRange[tmpR], " NewType:", tmpData:GetGridType())
+          local tempGridData = gridDataList[tmpR]
+          gridDataList[tmpR] = tmpData
+          tmpData = tempGridData
+          j = tmpR
         end
+        j = j - 1
       end
       replaceIndex = replaceIndex - 1
     end
   end
-  for i,pos in ipairs(skillRange) do
-    (gridDataList[i]):SetGridPos(pos)
+  for i, pos in ipairs(skillRange) do
+    gridDataList[i]:SetGridPos(pos)
   end
   local results = SkillEffectResult_PickUpGridTogether:New(gridDataList)
   return results
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PickUpGridTogether.FindCanTogetherGrid = function(self, gridDataList, beginIndex, endIndex, step)
-  -- function num : 0_2
+function SkillEffectCalc_PickUpGridTogether:FindCanTogetherGrid(gridDataList, beginIndex, endIndex, step)
   for i = beginIndex, endIndex, step do
     local gridData = gridDataList[i]
     if gridData:IsCanConvert() then
@@ -113,34 +75,25 @@ SkillEffectCalc_PickUpGridTogether.FindCanTogetherGrid = function(self, gridData
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PickUpGridTogether.FindPickIndex = function(self, range, pickPos)
-  -- function num : 0_3 , upvalues : _ENV
-  for i,v in ipairs(range) do
+function SkillEffectCalc_PickUpGridTogether:FindPickIndex(range, pickPos)
+  for i, v in ipairs(range) do
     if v.x == pickPos.x and v.y == pickPos.y then
       return i
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PickUpGridTogether.BuildData = function(self, skillRange)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillEffectCalc_PickUpGridTogether:BuildData(skillRange)
   local ret = {}
-  local utilDataSvc = (self._world):GetService("UtilData")
-  for i,pos in ipairs(skillRange) do
+  local utilDataSvc = self._world:GetService("UtilData")
+  for i, pos in ipairs(skillRange) do
     local pieceType = utilDataSvc:GetPieceType(pos)
     local canConvert = utilDataSvc:IsPosCanConvertGridElement(pos)
     if pieceType == PieceType.None then
       canConvert = false
     end
     local data = PickUpGridTogetherData:New(pieceType, pos, canConvert)
-    ;
-    (table.insert)(ret, data)
+    table.insert(ret, data)
   end
   return ret
 end
-
-

@@ -1,65 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/build/ui_season_build_reward_item_s3.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBuildRewardItemS3", UICustomWidget)
 UISeasonBuildRewardItemS3 = UISeasonBuildRewardItemS3
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBuildRewardItemS3.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonBuildRewardItemS3:OnShow(uiParams)
   self:InitWidget()
-  self._atlas = (self:RootUIOwner()):GetAsset("UIS3Build.spriteatlas", LoadType.SpriteAtlas)
+  self._atlas = self:RootUIOwner():GetAsset("UIS3Build.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildRewardItemS3.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonBuildRewardItemS3:InitWidget()
   self.item = self:GetUIComponent("RawImageLoader", "item")
   self.imgColor = self:GetUIComponent("Image", "imgColor")
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
   self.maskGo = self:GetGameObject("mask")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildRewardItemS3.SetData = function(self, itemId, itemCount, clickCb)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonBuildRewardItemS3:SetData(itemId, itemCount, clickCb)
   self._clickCb = clickCb
   self._itemId = itemId
-  ;
-  (self.txtCount):SetText("x" .. itemCount)
-  local cfg = (Cfg.cfg_item)[itemId]
+  self.txtCount:SetText("x" .. itemCount)
+  local cfg = Cfg.cfg_item[itemId]
   if cfg then
-    (self.item):LoadImage(cfg.Icon)
+    self.item:LoadImage(cfg.Icon)
     local color = cfg.Color
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.imgColor).sprite = (self._atlas):GetSprite("exp_s3_map_gq_se0" .. color)
+    self.imgColor.sprite = self._atlas:GetSprite("exp_s3_map_gq_se0" .. color)
   end
-  do
-    ;
-    (self.maskGo):SetActive(false)
-  end
+  self.maskGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildRewardItemS3.ItemBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UISeasonBuildRewardItemS3:ItemBtnOnClick(go)
   if self._clickCb then
-    (self._clickCb)(self._itemId, (go.transform).position)
+    self._clickCb(self._itemId, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildRewardItemS3.ShowMask = function(self, bMask)
-  -- function num : 0_4
-  (self.maskGo):SetActive(bMask)
+function UISeasonBuildRewardItemS3:ShowMask(bMask)
+  self.maskGo:SetActive(bMask)
 end
-
-

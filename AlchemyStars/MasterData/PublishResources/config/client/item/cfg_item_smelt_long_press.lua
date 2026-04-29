@@ -1,29 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/item/cfg_item_smelt_long_press.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {Grade = 1, Value = 2}
 local config = {
-[0] = {0, 
-{
-{1, 5}
-, 
-{2, 10}
-, 
-{3, 20}
-, 
-{5, 50}
-, 
-{7, 100}
-, 
-{9, 150}
-, 
-{12, 180}
-, 
-{16, 200}
-}
-}
+  [0] = {
+    0,
+    {
+      {1, 5},
+      {2, 10},
+      {3, 20},
+      {5, 50},
+      {7, 100},
+      {9, 150},
+      {12, 180},
+      {16, 200}
+    }
+  }
 }
 return config, "Grade", key
-

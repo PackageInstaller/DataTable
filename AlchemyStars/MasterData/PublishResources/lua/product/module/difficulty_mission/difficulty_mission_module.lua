@@ -1,97 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/difficulty_mission/difficulty_mission_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DifficultyMissionModule", GameModule)
 DifficultyMissionModule = DifficultyMissionModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DifficultyMissionModule.Constructor = function(self)
-  -- function num : 0_0
+function DifficultyMissionModule:Constructor()
   self.m_difficulty_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((DifficultyMissionModule.super).Init)(self)
-  ;
-  (self.caller):RegisterPushHandler(PushOneParentInfoChange, self.HandleParentInfoChange, self)
-  ;
-  (self.caller):RegisterPushHandler(PushCurFormationChange, self.HandleFormationChange, self)
+function DifficultyMissionModule:Init()
+  DifficultyMissionModule.super.Init(self)
+  self.caller:RegisterPushHandler(PushOneParentInfoChange, self.HandleParentInfoChange, self)
+  self.caller:RegisterPushHandler(PushCurFormationChange, self.HandleFormationChange, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionModule.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.caller):UnRegisterPushHandler(PushOneParentInfoChange)
-  ;
-  (self.caller):UnRegisterPushHandler(PushCurFormationChange)
-  ;
-  ((DifficultyMissionModule.super).Dispose)(self)
+function DifficultyMissionModule:Dispose()
+  self.caller:UnRegisterPushHandler(PushOneParentInfoChange)
+  self.caller:UnRegisterPushHandler(PushCurFormationChange)
+  DifficultyMissionModule.super.Dispose(self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionModule.HandleFormationChange = function(self, msg)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_difficulty_mission_info).pet_list = msg.formation_pet_list
-  ;
-  (self:GetUIModule()):FlushTeam(msg.formation_pet_list)
+function DifficultyMissionModule:HandleFormationChange(msg)
+  self.m_difficulty_mission_info.pet_list = msg.formation_pet_list
+  self:GetUIModule():FlushTeam(msg.formation_pet_list)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionModule.HandleParentInfoChange = function(self, msg)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_difficulty_mission_info).cur_parent_id = msg.cur_mission_id
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self.m_difficulty_mission_info).infos)[(msg.info).parent_mission_id] = msg.info
+function DifficultyMissionModule:HandleParentInfoChange(msg)
+  self.m_difficulty_mission_info.cur_parent_id = msg.cur_mission_id
+  self.m_difficulty_mission_info.infos[msg.info.parent_mission_id] = msg.info
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionModule.Module_ConvertDiffMatchResult = function(self, recvResult)
-  -- function num : 0_5 , upvalues : _ENV
+function DifficultyMissionModule:Module_ConvertDiffMatchResult(recvResult)
   local uiMatchResult = UI_MatchResult:New()
   uiMatchResult.m_nMatchType = MatchType.MT_DifficultyMission
   uiMatchResult.m_nID = recvResult.sub_mission_id
   uiMatchResult.m_parent_mission_id = recvResult.parent_mission_id
   uiMatchResult.m_enties = recvResult.entries
   uiMatchResult.m_vecAwardNormal = recvResult.rewards
-  local cfg = (Cfg.cfg_difficulty_sub_mission)[recvResult.sub_mission_id]
-  local name = (StringTable.Get)(cfg.MissionName)
+  local cfg = Cfg.cfg_difficulty_sub_mission[recvResult.sub_mission_id]
+  local name = StringTable.Get(cfg.MissionName)
   uiMatchResult.m_stShowName = name
   return uiMatchResult
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionModule.HandleGetDifficultyMissionData = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
+function DifficultyMissionModule:HandleGetDifficultyMissionData(TT)
   if GameSingle then
-    (self.m_difficulty_mission_info).infos = {}
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.m_difficulty_mission_info).pet_list = {}
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.m_difficulty_mission_info).cur_parent_id = 111006
-    local cfg_difficulty_parent_missions = (Cfg.cfg_difficulty_parent_mission)({})
-    for k,v in pairs(cfg_difficulty_parent_missions) do
+    self.m_difficulty_mission_info.infos = {}
+    self.m_difficulty_mission_info.pet_list = {}
+    self.m_difficulty_mission_info.cur_parent_id = 111006
+    local cfg_difficulty_parent_missions = Cfg.cfg_difficulty_parent_mission({})
+    for k, v in pairs(cfg_difficulty_parent_missions) do
       if v.ID < 100 or v.ID > 110000 then
         local info = ParentMissionInfo:New()
         info.complete_enties = {}
@@ -104,42 +59,33 @@ DifficultyMissionModule.HandleGetDifficultyMissionData = function(self, TT)
           subInfo.max_left_turn = 0
           subInfo.pet_list = {}
           subInfo.mission_id = subMissions[i]
-          ;
-          (table.insert)(info.sub_mission_infos, subInfo)
+          table.insert(info.sub_mission_infos, subInfo)
         end
-        -- DECOMPILER ERROR at PC57: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        ((self.m_difficulty_mission_info).infos)[v.ID] = info
+        self.m_difficulty_mission_info.infos[v.ID] = info
       end
     end
-    return 
+    return
   end
-  do
-    local AsyncRes = AsyncRequestRes:New()
-    local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyDifficultyMissionInfoReq)
-    local reply = self:Call(TT, request)
-    if reply.res ~= CallResultType.Normal then
-      AsyncRes:SetResult(HomeLandErrorType.E_DIFFICULTYMISSION_ERROR_UNLOCK)
-      return AsyncRes
-    end
-    local replyEvent = reply.msg
-    if replyEvent.nRet == DifficultyMissionErrorType.E_DIFFICULTYMISSION_ERROR_TYPE_SUCCESS then
-      self.m_difficulty_mission_info = replyEvent.Data
-      AsyncRes:SetSucc(true)
-    else
-      AsyncRes:SetResult(replyEvent.nRet)
-    end
+  local AsyncRes = AsyncRequestRes:New()
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyDifficultyMissionInfoReq)
+  local reply = self:Call(TT, request)
+  if reply.res ~= CallResultType.Normal then
+    AsyncRes:SetResult(HomeLandErrorType.E_DIFFICULTYMISSION_ERROR_UNLOCK)
     return AsyncRes
   end
+  local replyEvent = reply.msg
+  if replyEvent.nRet == DifficultyMissionErrorType.E_DIFFICULTYMISSION_ERROR_TYPE_SUCCESS then
+    self.m_difficulty_mission_info = replyEvent.Data
+    AsyncRes:SetSucc(true)
+  else
+    AsyncRes:SetResult(replyEvent.nRet)
+  end
+  return AsyncRes
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionModule.HandleChangeFormation = function(self, TT, parent_mission_id, sub_id, pet_list)
-  -- function num : 0_7 , upvalues : _ENV
+function DifficultyMissionModule:HandleChangeFormation(TT, parent_mission_id, sub_id, pet_list)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyChangeFormationReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyChangeFormationReq)
   request.parent_mission_id = parent_mission_id
   request.formation_pet_list = pet_list
   request.sub_mission_id = sub_id
@@ -157,12 +103,9 @@ DifficultyMissionModule.HandleChangeFormation = function(self, TT, parent_missio
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionModule.HandleResetSubMissionRecord = function(self, TT, parent_mission_id, sub_mission_id)
-  -- function num : 0_8 , upvalues : _ENV
+function DifficultyMissionModule:HandleResetSubMissionRecord(TT, parent_mission_id, sub_mission_id)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventResetSubMissionRecordReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventResetSubMissionRecordReq)
   request.parent_mission_id = parent_mission_id
   request.sub_mission_id = sub_mission_id
   local reply = self:Call(TT, request)
@@ -179,11 +122,8 @@ DifficultyMissionModule.HandleResetSubMissionRecord = function(self, TT, parent_
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMissionModule.ReqParentMissionPassData = function(self, TT, nId)
-  -- function num : 0_9 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyParentMissionPassDataReq)
+function DifficultyMissionModule:ReqParentMissionPassData(TT, nId)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyParentMissionPassDataReq)
   request.nMissionId = nId
   local reply = self:Call(TT, request)
   local AsyncRes = AsyncRequestRes:New()
@@ -195,5 +135,3 @@ DifficultyMissionModule.ReqParentMissionPassData = function(self, TT, nId)
   AsyncRes:SetSucc(true)
   return AsyncRes, replyEvent.info
 end
-
-

@@ -1,71 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_sealed_curse.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("br_sealed_curse")
 _class("BuffLogicSetSealedCurse", BuffLogicBase)
 BuffLogicSetSealedCurse = BuffLogicSetSealedCurse
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetSealedCurse.DoLogic = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicSetSealedCurse:DoLogic()
+  local e = self._buffInstance:Entity()
   if not e:HasPetPstID() then
-    return 
+    return
   end
-  ;
-  (e:BuffComponent()):SetFlag(BuffFlags.SealedCurse)
-  return BuffResultSealedCurse:New((self._buffInstance):BuffSeq(), true)
+  e:BuffComponent():SetFlag(BuffFlags.SealedCurse)
+  return BuffResultSealedCurse:New(self._buffInstance:BuffSeq(), true)
 end
 
 _class("BuffLogicResetSealedCurse", BuffLogicBase)
 BuffLogicResetSealedCurse = BuffLogicResetSealedCurse
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetSealedCurse.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicResetSealedCurse:DoLogic()
+  local e = self._buffInstance:Entity()
   if not e:HasPetPstID() then
-    return 
+    return
   end
-  ;
-  (e:BuffComponent()):ResetFlag(BuffFlags.SealedCurse)
+  e:BuffComponent():ResetFlag(BuffFlags.SealedCurse)
   local shouldReady = false
-  local localSkillID = (e:SkillInfo()):GetActiveSkillID()
+  local localSkillID = e:SkillInfo():GetActiveSkillID()
   if not localSkillID then
     local petPstIDComponent = e:PetPstID()
     local petPstID = petPstIDComponent:GetPstID()
-    local petData = (self._world):GetPetData(petPstID)
+    local petData = self._world:GetPetData(petPstID)
     localSkillID = petData:GetPetActiveSkill()
   end
-  do
-    local configService = (self._world):GetService("Config")
-    local skillConfigData = configService:GetSkillConfigData(localSkillID)
-    local attributesComponent = e:Attributes()
-    if skillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
-      local currentPower = attributesComponent:GetAttribute("LegendPower")
-      if skillConfigData:GetSkillTriggerParam() <= currentPower then
-        shouldReady = true
-      end
-    else
-      do
-        do
-          local currentPower = attributesComponent:GetAttribute("Power")
-          if currentPower <= 0 then
-            shouldReady = true
-          end
-          do
-            if shouldReady then
-              local blsvc = (self._world):GetService("BuffLogic")
-              blsvc:ChangePetActiveSkillReady(e, 1)
-            end
-            return BuffResultSealedCurse:New((self._buffInstance):BuffSeq(), false)
-          end
-        end
-      end
+  local configService = self._world:GetService("Config")
+  local skillConfigData = configService:GetSkillConfigData(localSkillID)
+  local attributesComponent = e:Attributes()
+  if skillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
+    local currentPower = attributesComponent:GetAttribute("LegendPower")
+    if currentPower >= skillConfigData:GetSkillTriggerParam() then
+      shouldReady = true
+    end
+  else
+    local currentPower = attributesComponent:GetAttribute("Power")
+    if currentPower <= 0 then
+      shouldReady = true
     end
   end
+  if shouldReady then
+    local blsvc = self._world:GetService("BuffLogic")
+    blsvc:ChangePetActiveSkillReady(e, 1)
+  end
+  return BuffResultSealedCurse:New(self._buffInstance:BuffSeq(), false)
 end
-
-

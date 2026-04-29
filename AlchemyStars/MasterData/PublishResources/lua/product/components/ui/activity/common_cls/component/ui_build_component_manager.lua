@@ -1,105 +1,69 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_cls/component/ui_build_component_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBuildComponentManager", Object)
 UIBuildComponentManager = UIBuildComponentManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBuildComponentManager.Constructor = function(self, buildComponent)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBuildComponentManager:Constructor(buildComponent)
   self._buildComponent = buildComponent
   self._buildComponentInfo = buildComponent:GetComponentInfo()
-  local componentCfgId = (self._buildComponent):GetComponentCfgId()
+  local componentCfgId = self._buildComponent:GetComponentCfgId()
   self._buildItemData = UIBuildComponentBuildItemData:New(componentCfgId)
   self._picnicItemData = UIBuildComponentPicnicData:New(componentCfgId)
   self._buildingList = self:_InitBuildingList()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager._InitBuildingList = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local tb_out = (self._buildItemData):GetBuildItemIdList()
-  ;
-  (table.sort)(tb_out, function(a, b)
-    -- function num : 0_1_0 , upvalues : self
+function UIBuildComponentManager:_InitBuildingList()
+  local tb_out = self._buildItemData:GetBuildItemIdList()
+  table.sort(tb_out, function(a, b)
     local data_a = self:GetBuildCurStatusData(a)
     local data_b = self:GetBuildCurStatusData(b)
-    local layer_a = (self._buildItemData):GetLayer(data_a)
-    local layer_b = (self._buildItemData):GetLayer(data_b)
-    if layer_a >= layer_b then
-      do return layer_a == layer_b end
-      do return a < b end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    local layer_a = self._buildItemData:GetLayer(data_a)
+    local layer_b = self._buildItemData:GetLayer(data_b)
+    if layer_a ~= layer_b then
+      return layer_a < layer_b
     end
-  end
-)
+    return a < b
+  end)
   return tb_out
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetBuildCurStatus = function(self, buildItemId)
-  -- function num : 0_2
-  local buildItemInfos = (self._buildComponentInfo).build_item_infos
+function UIBuildComponentManager:GetBuildCurStatus(buildItemId)
+  local buildItemInfos = self._buildComponentInfo.build_item_infos
   local buildingInfo = buildItemInfos[buildItemId]
   if buildingInfo then
-    local statusList = (self._buildItemData):GetBuildItemStatusList(buildItemId)
+    local statusList = self._buildItemData:GetBuildItemStatusList(buildItemId)
     for i = #statusList, 1, -1 do
       if buildingInfo.mask & statusList[i] > 0 then
         return statusList[i]
       end
     end
   end
-  do
-    return 0
-  end
+  return 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetBuildCurStatusData = function(self, buildItemId)
-  -- function num : 0_3
+function UIBuildComponentManager:GetBuildCurStatusData(buildItemId)
   local status = self:GetBuildCurStatus(buildItemId)
-  return (self._buildItemData):GetBuildItemData(buildItemId, status)
+  return self._buildItemData:GetBuildItemData(buildItemId, status)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetBuildNextStatus = function(self, buildItemId, status)
-  -- function num : 0_4 , upvalues : _ENV
-  local statusList = (self._buildItemData):GetBuildItemStatusList(buildItemId)
-  local cur = (table.ikey)(statusList, status)
+function UIBuildComponentManager:GetBuildNextStatus(buildItemId, status)
+  local statusList = self._buildItemData:GetBuildItemStatusList(buildItemId)
+  local cur = table.ikey(statusList, status)
   if cur and cur + 1 <= #statusList then
     return statusList[cur + 1]
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.CheckBuildStatusComplete = function(self, buildItemId, targetStatus)
-  -- function num : 0_5
+function UIBuildComponentManager:CheckBuildStatusComplete(buildItemId, targetStatus)
   local status = self:GetBuildCurStatus(buildItemId)
-  do return targetStatus <= status end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return targetStatus <= status
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.CheckNextStatusComplete = function(self, buildItemId, status)
-  -- function num : 0_6
+function UIBuildComponentManager:CheckNextStatusComplete(buildItemId, status)
   local nextStatus = self:GetBuildNextStatus(buildItemId, status)
-  do return nextStatus and self:CheckBuildStatusComplete(buildItemId, nextStatus) end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return not nextStatus or self:CheckBuildStatusComplete(buildItemId, nextStatus)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.CheckBuildStatusUnlock = function(self, buildItemId, status)
-  -- function num : 0_7 , upvalues : _ENV
-  local id, st = (self._buildItemData):GetNeedBuildItemIdAndStatus(buildItemId, status)
+function UIBuildComponentManager:CheckBuildStatusUnlock(buildItemId, status)
+  local id, st = self._buildItemData:GetNeedBuildItemIdAndStatus(buildItemId, status)
   if id == 0 then
     return true
   end
@@ -110,50 +74,37 @@ UIBuildComponentManager.CheckBuildStatusUnlock = function(self, buildItemId, sta
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.IsNextStatusUnlock = function(self, buildItemId)
-  -- function num : 0_8 , upvalues : _ENV
+function UIBuildComponentManager:IsNextStatusUnlock(buildItemId)
   local status = self:GetBuildCurStatus(buildItemId)
   local nextStatus = self:GetBuildNextStatus(buildItemId, status)
   if not nextStatus then
-    (Log.debug)("UIBuildComponentManager:IsNextStatusUnlock() nextStatus = nil")
+    Log.debug("UIBuildComponentManager:IsNextStatusUnlock() nextStatus = nil")
     return nil
   end
   return self:CheckBuildStatusUnlock(buildItemId, nextStatus)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.HaveCanBuilding = function(self, itemCount)
-  -- function num : 0_9 , upvalues : _ENV
-  for _,v in pairs(self._buildingList) do
+function UIBuildComponentManager:HaveCanBuilding(itemCount)
+  for _, v in pairs(self._buildingList) do
     local data = self:GetBuildCurStatus(v)
-    if not self:GetCostCount(data) then
-      local cost = self:IsAllStatusComplete(v) or not self:IsNextStatusUnlock(v) or 0
-    end
-    if cost <= itemCount then
-      return true
+    if not self:IsAllStatusComplete(v) and self:IsNextStatusUnlock(v) then
+      local cost = self:GetCostCount(data) or 0
+      if itemCount >= cost then
+        return true
+      end
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.IsAllStatusComplete = function(self, buildItemId)
-  -- function num : 0_10
+function UIBuildComponentManager:IsAllStatusComplete(buildItemId)
   local status = self:GetBuildCurStatus(buildItemId)
-  local list = (self._buildItemData):GetBuildItemStatusList(buildItemId)
-  do return status == list[#list] end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local list = self._buildItemData:GetBuildItemStatusList(buildItemId)
+  return status == list[#list]
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.IsAllBuildingComplete = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  for _,v in ipairs(self._buildingList) do
+function UIBuildComponentManager:IsAllBuildingComplete()
+  for _, v in ipairs(self._buildingList) do
     if not self:IsAllStatusComplete(v) then
       return false
     end
@@ -161,63 +112,51 @@ UIBuildComponentManager.IsAllBuildingComplete = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetBuildRewardList = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local tb_in = (self._buildItemData):GetBuildItemDataMap()
+function UIBuildComponentManager:GetBuildRewardList()
+  local tb_in = self._buildItemData:GetBuildItemDataMap()
   local tb_out = {}
-  for buildItemId,statusMap in pairs(tb_in) do
-    for status,cfg in pairs(statusMap) do
+  for buildItemId, statusMap in pairs(tb_in) do
+    for status, cfg in pairs(statusMap) do
       local reward = self:GetBuildReward(buildItemId, status)
-      if not self:CheckBuildStatusComplete(buildItemId, status) or not 2 then
-        do
-          (table.insert)(tb_out, {buildItemId = buildItemId, status = status, name = self:GetName(buildItemId), state = not reward or #reward <= 0 or 1, reward = reward})
-          -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      if reward and 0 < #reward then
+        table.insert(tb_out, {
+          buildItemId = buildItemId,
+          status = status,
+          name = self:GetName(buildItemId),
+          state = self:CheckBuildStatusComplete(buildItemId, status) and 2 or 1,
+          reward = reward
+        })
       end
     end
   end
-  ;
-  (table.sort)(tb_out, function(a, b)
-    -- function num : 0_12_0
-    if (a.buildItemId ~= b.buildItemId or a.status >= b.status) and a.buildItemId >= b.buildItemId then
-      do return a.state ~= b.state end
-      do return a.state < b.state end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  table.sort(tb_out, function(a, b)
+    if a.state == b.state then
+      return a.buildItemId == b.buildItemId and a.status < b.status or a.buildItemId < b.buildItemId
+    else
+      return a.state < b.state
     end
-  end
-)
+  end)
   return tb_out
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.CalcBuildUnlockStep = function(self, buildItemId, status)
-  -- function num : 0_13 , upvalues : _ENV
+function UIBuildComponentManager:CalcBuildUnlockStep(buildItemId, status)
   local status = self:GetBuildNextStatus(buildItemId, status)
   local step = 1
   while not self:CheckBuildStatusUnlock(buildItemId, status) do
     if status ~= UIBuildComponentBuildStatus.Init then
       step = step + 1
     end
-    buildItemId = (self._buildItemData):GetNeedBuildItemIdAndStatus(buildItemId, status)
+    buildItemId, status = self._buildItemData:GetNeedBuildItemIdAndStatus(buildItemId, status)
   end
   return step
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.CalcBuildUnlockProgress = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local tb_in = (self._buildItemData):GetBuildItemDataMap()
+function UIBuildComponentManager:CalcBuildUnlockProgress()
+  local tb_in = self._buildItemData:GetBuildItemDataMap()
   local all = 0
   local unlock = 0
-  for buildItemId,statusMap in pairs(tb_in) do
-    for status,cfg in pairs(statusMap) do
+  for buildItemId, statusMap in pairs(tb_in) do
+    for status, cfg in pairs(statusMap) do
       if status ~= UIBuildComponentBuildStatus.Init then
         all = all + 1
         if self:CheckBuildStatusComplete(buildItemId, status) then
@@ -229,85 +168,63 @@ UIBuildComponentManager.CalcBuildUnlockProgress = function(self)
   return unlock, all
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.CheckCanPicnic = function(self, buildItemId)
-  -- function num : 0_15
+function UIBuildComponentManager:CheckCanPicnic(buildItemId)
   local complete = self:CheckPicnicStatusComplete(buildItemId)
   local noStory = not self:CheckPicnicHaveStory()
   local lockTime = self:CheckPicnicLockTime(buildItemId)
   local nextCfg = self:CheckPicnicHaveNextCfg()
-  return not complete or not noStory or not lockTime or nextCfg
+  return complete and noStory and lockTime and nextCfg
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.CheckPicnicStatusComplete = function(self, buildItemId)
-  -- function num : 0_16 , upvalues : _ENV
+function UIBuildComponentManager:CheckPicnicStatusComplete(buildItemId)
   return self:CheckBuildStatusComplete(buildItemId, UIBuildComponentBuildStatus.Picnic)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.CheckPicnicStoryUnlock = function(self, seq)
-  -- function num : 0_17
+function UIBuildComponentManager:CheckPicnicStoryUnlock(seq)
   local cur = self:GetPicnicCurSeq()
-  do return seq <= cur end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return seq <= cur
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.CheckPicnicHaveStory = function(self)
-  -- function num : 0_18
-  return ((self._buildComponentInfo).m_picnic_info).m_have_story
+function UIBuildComponentManager:CheckPicnicHaveStory()
+  return self._buildComponentInfo.m_picnic_info.m_have_story
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.CheckPicnicLockTime = function(self, buildItemId)
-  -- function num : 0_19 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local nextFood = (((self._buildComponentInfo).m_picnic_info).m_next_food)[buildItemId] or 0
-  do return nextFood <= curTime end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIBuildComponentManager:CheckPicnicLockTime(buildItemId)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local nextFood = self._buildComponentInfo.m_picnic_info.m_next_food[buildItemId] or 0
+  return curTime >= nextFood
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.CheckPicnicHaveNextCfg = function(self)
-  -- function num : 0_20
+function UIBuildComponentManager:CheckPicnicHaveNextCfg()
   local seq = self:GetPicnicCurSeq() + 1
   local cfg = self:GetPicnicData(seq)
-  do return cfg ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return cfg ~= nil
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetPicnicCurSeq = function(self)
-  -- function num : 0_21
-  return ((self._buildComponentInfo).m_picnic_info).m_times
+function UIBuildComponentManager:GetPicnicCurSeq()
+  return self._buildComponentInfo.m_picnic_info.m_times
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetUnPlayStoryList = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIBuildComponentManager:GetUnPlayStoryList()
   local tb_out = {}
-  for buildItemId,buildingInfo in pairs((self._buildComponentInfo).build_item_infos) do
-    local maskList = (self._buildItemData):GetBuildItemStatusList(buildItemId)
+  for buildItemId, buildingInfo in pairs(self._buildComponentInfo.build_item_infos) do
+    local maskList = self._buildItemData:GetBuildItemStatusList(buildItemId)
     for i = 2, #maskList do
       local v1, v2 = maskList[i], maskList[i - 1]
       local mask = buildingInfo.mask
       local storyMask = buildingInfo.story_mask
-      if mask & v1 > 0 and storyMask & v1 == 0 then
-        local data = (self._buildItemData):GetBuildItemData(buildItemId, v2)
-        local storyType = (self._buildItemData):GetStoryType(data)
-        local storyId = (self._buildItemData):GetStoryId(data)
-        if storyId and storyId > 0 then
-          (table.insert)(tb_out, {storyType, storyId, v2, buildItemId})
+      if 0 < mask & v1 and storyMask & v1 == 0 then
+        local data = self._buildItemData:GetBuildItemData(buildItemId, v2)
+        local storyType = self._buildItemData:GetStoryType(data)
+        local storyId = self._buildItemData:GetStoryId(data)
+        if storyId and 0 < storyId then
+          table.insert(tb_out, {
+            storyType,
+            storyId,
+            v2,
+            buildItemId
+          })
         end
       end
     end
@@ -315,348 +232,205 @@ UIBuildComponentManager.GetUnPlayStoryList = function(self)
   return tb_out
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetCanReviewStory = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIBuildComponentManager:GetCanReviewStory()
   local tb_out = {}
-  for _,buildItemId in pairs(self._buildingList) do
+  for _, buildItemId in pairs(self._buildingList) do
     local status = self:GetBuildCurStatus(buildItemId)
-    local maskList = (self._buildItemData):GetBuildItemStatusList(buildItemId)
-    for _,v in ipairs(maskList) do
-      if v ~= status then
-        local data = (self._buildItemData):GetBuildItemData(buildItemId, v)
-        do
-          local id = (self._buildItemData):GetStoryReviewId(data)
-          if id and id > 0 then
-            (table.insert)(tb_out, id)
-          end
-          -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+    local maskList = self._buildItemData:GetBuildItemStatusList(buildItemId)
+    for _, v in ipairs(maskList) do
+      if v == status then
+        break
+      end
+      local data = self._buildItemData:GetBuildItemData(buildItemId, v)
+      local id = self._buildItemData:GetStoryReviewId(data)
+      if id and 0 < id then
+        table.insert(tb_out, id)
       end
     end
   end
-  ;
-  (table.sort)(tb_out, function(a, b)
-    -- function num : 0_23_0
-    do return a < b end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(tb_out, function(a, b)
+    return a < b
+  end)
   return tb_out
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetBuildDataStoryReviewIdMap = function(self)
-  -- function num : 0_24
-  return (self._buildItemData):GetBuildDataStoryReviewIdMap()
+function UIBuildComponentManager:GetBuildDataStoryReviewIdMap()
+  return self._buildItemData:GetBuildDataStoryReviewIdMap()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetPicnicDataStoryReviewIdMap = function(self)
-  -- function num : 0_25
-  return (self._picnicItemData):GetPicnicDataStoryReviewIdMap()
+function UIBuildComponentManager:GetPicnicDataStoryReviewIdMap()
+  return self._picnicItemData:GetPicnicDataStoryReviewIdMap()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.IsFirstEnterBuilding = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIBuildComponentManager:IsFirstEnterBuilding()
   local key = self:GetFirstEnterBuildingKey()
-  local value = ((UnityEngine.PlayerPrefs).GetInt)(key, 0)
-  do return value == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local value = UnityEngine.PlayerPrefs.GetInt(key, 0)
+  return value == 0
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.EnterBuilding = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UIBuildComponentManager:EnterBuilding()
   local key = self:GetFirstEnterBuildingKey()
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+  UnityEngine.PlayerPrefs.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetFirstEnterBuildingKey = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIBuildComponentManager:GetFirstEnterBuildingKey()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
-  local componentCfgId = (self._buildComponent):GetComponentCfgId()
+  local componentCfgId = self._buildComponent:GetComponentCfgId()
   local key = "UIBuildComponentManager_GetFirstEnterBuildingKey_" .. componentCfgId .. "_" .. pstId
   return key
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetBuildItemIdList = function(self)
-  -- function num : 0_29
+function UIBuildComponentManager:GetBuildItemIdList()
   return self._buildingList
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetBuildItemIdList_Picnic = function(self)
-  -- function num : 0_30
-  return (self._buildItemData):GetBuildItemIdList_Picnic()
+function UIBuildComponentManager:GetBuildItemIdList_Picnic()
+  return self._buildItemData:GetBuildItemIdList_Picnic()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetName = function(self, buildItemId)
-  -- function num : 0_31
+function UIBuildComponentManager:GetName(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  return (self._buildItemData):GetName(data)
+  return self._buildItemData:GetName(data)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetStatusName = function(self, buildItemId)
-  -- function num : 0_32
+function UIBuildComponentManager:GetStatusName(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  return (self._buildItemData):GetStatusName(data)
+  return self._buildItemData:GetStatusName(data)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetIcon = function(self, buildItemId)
-  -- function num : 0_33
+function UIBuildComponentManager:GetIcon(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  return (self._buildItemData):GetIcon(data)
+  return self._buildItemData:GetIcon(data)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetSpine = function(self, buildItemId)
-  -- function num : 0_34
+function UIBuildComponentManager:GetSpine(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  return (self._buildItemData):GetSpine(data)
+  return self._buildItemData:GetSpine(data)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetDes = function(self, buildItemId)
-  -- function num : 0_35
+function UIBuildComponentManager:GetDes(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  return (self._buildItemData):GetDes(data)
+  return self._buildItemData:GetDes(data)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetCostItemId = function(self)
-  -- function num : 0_36
-  return (self._buildItemData):GetBuildDataItemId()
+function UIBuildComponentManager:GetCostItemId()
+  return self._buildItemData:GetBuildDataItemId()
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetCostCount = function(self, buildItemId)
-  -- function num : 0_37
+function UIBuildComponentManager:GetCostCount(buildItemId)
   local status = self:GetBuildCurStatus(buildItemId)
   local nextStatus = self:GetBuildNextStatus(buildItemId, status)
-  local data = (self._buildItemData):GetBuildItemData(buildItemId, nextStatus)
-  if data then
-    return (self._buildItemData):GetCostCount(data)
-  end
+  local data = self._buildItemData:GetBuildItemData(buildItemId, nextStatus)
+  return data and self._buildItemData:GetCostCount(data)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetBuildReward = function(self, buildItemId, status)
-  -- function num : 0_38
-  local data = (self._buildItemData):GetBuildItemData(buildItemId, status)
-  if data then
-    return (self._buildItemData):GetBuildReward(data)
-  end
+function UIBuildComponentManager:GetBuildReward(buildItemId, status)
+  local data = self._buildItemData:GetBuildItemData(buildItemId, status)
+  return data and self._buildItemData:GetBuildReward(data)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetBuildStoryId = function(self, buildItemId, status)
-  -- function num : 0_39
-  local data = (self._buildItemData):GetBuildItemData(buildItemId, status)
-  if data then
-    return (self._buildItemData):GetStoryId(data)
-  end
+function UIBuildComponentManager:GetBuildStoryId(buildItemId, status)
+  local data = self._buildItemData:GetBuildItemData(buildItemId, status)
+  return data and self._buildItemData:GetStoryId(data)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetCompleteStoryId = function(self, buildItemId)
-  -- function num : 0_40
+function UIBuildComponentManager:GetCompleteStoryId(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  return data and (self._buildItemData):GetStoryId(data) or 0
+  return data and self._buildItemData:GetStoryId(data) or 0
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetCompleteStoryType = function(self, buildItemId)
-  -- function num : 0_41
+function UIBuildComponentManager:GetCompleteStoryType(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  return data and (self._buildItemData):GetStoryType(data) or 0
+  return data and self._buildItemData:GetStoryType(data) or 0
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetWidgetDesPos = function(self, buildItemId)
-  -- function num : 0_42 , upvalues : _ENV
+function UIBuildComponentManager:GetWidgetDesPos(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  if not data or not (self._buildItemData):GetWidgetDesPos(data) then
-    return Vector2(0, 0)
-  end
+  return data and self._buildItemData:GetWidgetDesPos(data) or Vector2(0, 0)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetWidgetPos = function(self, buildItemId)
-  -- function num : 0_43 , upvalues : _ENV
+function UIBuildComponentManager:GetWidgetPos(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  if not data or not (self._buildItemData):GetWidgetPos(data) then
-    return Vector2(0, 0)
-  end
+  return data and self._buildItemData:GetWidgetPos(data) or Vector2(0, 0)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetIconPos = function(self, buildItemId)
-  -- function num : 0_44 , upvalues : _ENV
+function UIBuildComponentManager:GetIconPos(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  if not data or not (self._buildItemData):GetIconPos(data) then
-    return Vector2(0, 0)
-  end
+  return data and self._buildItemData:GetIconPos(data) or Vector2(0, 0)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetIconWidth = function(self, buildItemId)
-  -- function num : 0_45
+function UIBuildComponentManager:GetIconWidth(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  return data and (self._buildItemData):GetIconWidth(data) or 0
+  return data and self._buildItemData:GetIconWidth(data) or 0
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetIconHeight = function(self, buildItemId)
-  -- function num : 0_46
+function UIBuildComponentManager:GetIconHeight(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  return data and (self._buildItemData):GetIconHeight(data) or 0
+  return data and self._buildItemData:GetIconHeight(data) or 0
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetIconRotate = function(self, buildItemId)
-  -- function num : 0_47
+function UIBuildComponentManager:GetIconRotate(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  return data and (self._buildItemData):GetIconRotate(data) or 0
+  return data and self._buildItemData:GetIconRotate(data) or 0
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetTriggerPos = function(self, buildItemId)
-  -- function num : 0_48 , upvalues : _ENV
+function UIBuildComponentManager:GetTriggerPos(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  if not data or not (self._buildItemData):GetTriggerPos(data) then
-    return Vector2(0, 0)
-  end
+  return data and self._buildItemData:GetTriggerPos(data) or Vector2(0, 0)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetTriggerWidth = function(self, buildItemId)
-  -- function num : 0_49
+function UIBuildComponentManager:GetTriggerWidth(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  return data and (self._buildItemData):GetTriggerWidth(data) or 0
+  return data and self._buildItemData:GetTriggerWidth(data) or 0
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetTriggerHeight = function(self, buildItemId)
-  -- function num : 0_50
+function UIBuildComponentManager:GetTriggerHeight(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  return data and (self._buildItemData):GetTriggerHeight(data) or 0
+  return data and self._buildItemData:GetTriggerHeight(data) or 0
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetTriggerRotate = function(self, buildItemId)
-  -- function num : 0_51
+function UIBuildComponentManager:GetTriggerRotate(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  return data and (self._buildItemData):GetTriggerRotate(data) or 0
+  return data and self._buildItemData:GetTriggerRotate(data) or 0
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetEffectAreaPos = function(self, buildItemId)
-  -- function num : 0_52 , upvalues : _ENV
+function UIBuildComponentManager:GetEffectAreaPos(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  if not data or not (self._buildItemData):GetEffectAreaPos(data) then
-    return Vector2(0, 0)
-  end
+  return data and self._buildItemData:GetEffectAreaPos(data) or Vector2(0, 0)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetEffectAreaScale = function(self, buildItemId)
-  -- function num : 0_53
+function UIBuildComponentManager:GetEffectAreaScale(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  return data and (self._buildItemData):GetEffectAreaScale(data) or 1
+  return data and self._buildItemData:GetEffectAreaScale(data) or 1
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetLayer = function(self, buildItemId)
-  -- function num : 0_54
+function UIBuildComponentManager:GetLayer(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  return data and (self._buildItemData):GetLayer(data) or 0
+  return data and self._buildItemData:GetLayer(data) or 0
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.IsShow = function(self, buildItemId)
-  -- function num : 0_55
+function UIBuildComponentManager:IsShow(buildItemId)
   local data = self:GetBuildCurStatusData(buildItemId)
-  return data and (self._buildItemData):IsShow(data) or false
+  return data and self._buildItemData:IsShow(data) or false
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetPicnicData = function(self, seq)
-  -- function num : 0_56
-  return (self._picnicItemData):GetPicnicData(seq)
+function UIBuildComponentManager:GetPicnicData(seq)
+  return self._picnicItemData:GetPicnicData(seq)
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetPicnicFixedPetIdList = function(self, seq, count)
-  -- function num : 0_57
-  return (self._picnicItemData):GetPicnicFixedPetIdList(seq, count)
+function UIBuildComponentManager:GetPicnicFixedPetIdList(seq, count)
+  return self._picnicItemData:GetPicnicFixedPetIdList(seq, count)
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetPicnicPet = function(self, seq)
-  -- function num : 0_58
-  return (self._picnicItemData):GetPicnicPet(seq)
+function UIBuildComponentManager:GetPicnicPet(seq)
+  return self._picnicItemData:GetPicnicPet(seq)
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetPicnicRewardList = function(self, seq)
-  -- function num : 0_59
-  return (self._picnicItemData):GetPicnicRewardList(seq)
+function UIBuildComponentManager:GetPicnicRewardList(seq)
+  return self._picnicItemData:GetPicnicRewardList(seq)
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentManager.GetPicnicStory = function(self, seq)
-  -- function num : 0_60
-  return (self._picnicItemData):GetPicnicStory(seq)
+function UIBuildComponentManager:GetPicnicStory(seq)
+  return self._picnicItemData:GetPicnicStory(seq)
 end
-
-

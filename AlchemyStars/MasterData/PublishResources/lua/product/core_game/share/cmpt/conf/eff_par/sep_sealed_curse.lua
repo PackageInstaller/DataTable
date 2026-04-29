@@ -1,42 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_sealed_curse.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 SkillEffect_SealedCurse_SealMode = {SwapWithNewTeamLeader = 1, CastFormerLeaderToTail = 2}
 _enum("SkillEffect_SealedCurse_SealMode", SkillEffect_SealedCurse_SealMode)
 require("skill_damage_effect_param")
 _class("SkillEffectParam_SealedCurse", SkillDamageEffectParam)
 SkillEffectParam_SealedCurse = SkillEffectParam_SealedCurse
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_SealedCurse.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParam_SealedCurse:Constructor(t)
   self._curseBuffID = t.curseBuffID
-  if not t.changeTeamLeaderMode then
-    self._changeTeamLeaderMode = SkillEffect_SealedCurse_SealMode.SwapWithNewTeamLeader
-  end
+  self._changeTeamLeaderMode = t.changeTeamLeaderMode or SkillEffect_SealedCurse_SealMode.SwapWithNewTeamLeader
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_SealedCurse.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_SealedCurse:GetEffectType()
   return SkillEffectType.SealedCurse
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_SealedCurse.GetCurseBuffID = function(self)
-  -- function num : 0_2
+function SkillEffectParam_SealedCurse:GetCurseBuffID()
   return self._curseBuffID
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_SealedCurse.GetChangeTeamLeaderMode = function(self)
-  -- function num : 0_3
+function SkillEffectParam_SealedCurse:GetChangeTeamLeaderMode()
   return self._changeTeamLeaderMode
 end
-
-

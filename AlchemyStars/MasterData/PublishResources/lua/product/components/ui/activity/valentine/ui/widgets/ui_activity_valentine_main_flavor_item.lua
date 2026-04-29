@@ -1,55 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/valentine/ui/widgets/ui_activity_valentine_main_flavor_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityValentineMainFlavorItem", UICustomWidget)
 UIActivityValentineMainFlavorItem = UIActivityValentineMainFlavorItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityValentineMainFlavorItem.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityValentineMainFlavorItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainFlavorItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityValentineMainFlavorItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainFlavorItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIActivityValentineMainFlavorItem:_GetComponents()
   self._hookImg = self:GetUIComponent("Image", "hookImg")
   self._foodName = self:GetUIComponent("UILocalizationText", "foodName")
   self._hookImgObj = self:GetGameObject("hookImg")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainFlavorItem.SetData = function(self, cfg, isDone)
-  -- function num : 0_3
+function UIActivityValentineMainFlavorItem:SetData(cfg, isDone)
   self._cfg = cfg
   self:InitData(isDone)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainFlavorItem.InitData = function(self, isDone)
-  -- function num : 0_4 , upvalues : _ENV
-  local questModule = (GameGlobal.GetModule)(QuestModule)
-  local taskId = (self._cfg).TaskID
+function UIActivityValentineMainFlavorItem:InitData(isDone)
+  local questModule = GameGlobal.GetModule(QuestModule)
+  local taskId = self._cfg.TaskID
   local task = questModule:GetQuest(taskId)
-  ;
-  (self._foodName):SetText((StringTable.Get)((self._cfg).Info))
-  if isDone or task and QuestStatus.QUEST_Completed <= task:Status() then
-    (self._hookImgObj):SetActive(true)
+  self._foodName:SetText(StringTable.Get(self._cfg.Info))
+  if isDone or task and task:Status() >= QuestStatus.QUEST_Completed then
+    self._hookImgObj:SetActive(true)
   else
-    ;
-    (self._hookImgObj):SetActive(false)
+    self._hookImgObj:SetActive(false)
   end
 end
-
-

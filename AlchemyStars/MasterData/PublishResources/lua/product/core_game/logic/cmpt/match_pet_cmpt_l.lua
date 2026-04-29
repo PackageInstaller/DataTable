@@ -1,63 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/match_pet_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MatchPetComponent", Object)
 MatchPetComponent = MatchPetComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MatchPetComponent.Constructor = function(self, matchPet)
-  -- function num : 0_0
+function MatchPetComponent:Constructor(matchPet)
   self._matchPet = matchPet
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPetComponent.GetMatchPet = function(self)
-  -- function num : 0_1
+function MatchPetComponent:GetMatchPet()
   return self._matchPet
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.MatchPet = function(self)
-  -- function num : 0_2
-  return self:GetComponent((self.WEComponentsEnum).MatchPet)
+function Entity:MatchPet()
+  return self:GetComponent(self.WEComponentsEnum.MatchPet)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasMatchPet = function(self)
-  -- function num : 0_3
-  return self:HasComponent((self.WEComponentsEnum).MatchPet)
+function Entity:HasMatchPet()
+  return self:HasComponent(self.WEComponentsEnum.MatchPet)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddMatchPet = function(self, matchPet)
-  -- function num : 0_4 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MatchPet
+function Entity:AddMatchPet(matchPet)
+  local index = self.WEComponentsEnum.MatchPet
   local component = MatchPetComponent:New(matchPet)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceMatchPet = function(self, matchPet)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MatchPet
+function Entity:ReplaceMatchPet(matchPet)
+  local index = self.WEComponentsEnum.MatchPet
   local component = MatchPetComponent:New(matchPet)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveMatchPet = function(self)
-  -- function num : 0_6
+function Entity:RemoveMatchPet()
   if self:HasMatchPet() then
-    self:RemoveComponent((self.WEComponentsEnum).MatchPet)
+    self:RemoveComponent(self.WEComponentsEnum.MatchPet)
   end
 end
-
-

@@ -1,96 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/sakura/ui_sakura_draw_shop/ui_sakura_draw_shop_award_row_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISakuraDrawShopAwardRowCell", UICustomWidget)
 UISakuraDrawShopAwardRowCell = UISakuraDrawShopAwardRowCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISakuraDrawShopAwardRowCell.Constructor = function(self)
-  -- function num : 0_0
+function UISakuraDrawShopAwardRowCell:Constructor()
   self.rowCellItemNum = 3
   self._cellGens = {}
   self._awardCells = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopAwardRowCell.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISakuraDrawShopAwardRowCell:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopAwardRowCell.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISakuraDrawShopAwardRowCell:InitWidget()
   self.cellsArea = self:GetUIComponent("UISelectObjectPath", "CellsArea")
   self._cellsGen1 = self:GetUIComponent("UISelectObjectPath", "CellGen1")
   self._cellsGen2 = self:GetUIComponent("UISelectObjectPath", "CellGen2")
   self._cellsGen3 = self:GetUIComponent("UISelectObjectPath", "CellGen3")
-  ;
-  (table.insert)(self._cellGens, self._cellsGen1)
-  ;
-  (table.insert)(self._cellGens, self._cellsGen2)
-  ;
-  (table.insert)(self._cellGens, self._cellsGen3)
-  for index,value in ipairs(self._cellGens) do
+  table.insert(self._cellGens, self._cellsGen1)
+  table.insert(self._cellGens, self._cellsGen2)
+  table.insert(self._cellGens, self._cellsGen3)
+  for index, value in ipairs(self._cellGens) do
     local cellCtrl = value:SpawnObject("UISakuraDrawShopAwardCell")
-    ;
-    (table.insert)(self._awardCells, cellCtrl)
+    table.insert(self._awardCells, cellCtrl)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopAwardRowCell.SetData = function(self)
-  -- function num : 0_3
+function UISakuraDrawShopAwardRowCell:SetData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopAwardRowCell.InitData = function(self, data, itemInfoCallBack)
-  -- function num : 0_4
+function UISakuraDrawShopAwardRowCell:InitData(data, itemInfoCallBack)
   self._data = data
   self._itemInfoCallback = itemInfoCallBack
   self:_fillCells()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopAwardRowCell._GenCells = function(self)
-  -- function num : 0_5
+function UISakuraDrawShopAwardRowCell:_GenCells()
   if not self.cells then
-    (self.cellsArea):SpawnObjects("UISakuraDrawShopAwardCell", self.rowCellItemNum)
-    self.cells = (self.cellsArea):GetAllSpawnList()
+    self.cellsArea:SpawnObjects("UISakuraDrawShopAwardCell", self.rowCellItemNum)
+    self.cells = self.cellsArea:GetAllSpawnList()
   end
   for i = 1, #self.cells do
-    if #self._data < i then
-      (((self.cells)[i]):GetGameObject()):SetActive(false)
+    if i > #self._data then
+      self.cells[i]:GetGameObject():SetActive(false)
     else
-      ;
-      (((self.cells)[i]):GetGameObject()):SetActive(true)
-      ;
-      ((self.cells)[i]):InitData((self._data)[i], self._itemInfoCallback)
+      self.cells[i]:GetGameObject():SetActive(true)
+      self.cells[i]:InitData(self._data[i], self._itemInfoCallback)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopAwardRowCell._fillCells = function(self)
-  -- function num : 0_6
+function UISakuraDrawShopAwardRowCell:_fillCells()
   for i = 1, #self._awardCells do
-    if #self._data < i then
-      (((self._awardCells)[i]):GetGameObject()):SetActive(false)
+    if i > #self._data then
+      self._awardCells[i]:GetGameObject():SetActive(false)
     else
-      ;
-      (((self._awardCells)[i]):GetGameObject()):SetActive(true)
-      ;
-      ((self._awardCells)[i]):InitData((self._data)[i], self._itemInfoCallback)
+      self._awardCells[i]:GetGameObject():SetActive(true)
+      self._awardCells[i]:InitData(self._data[i], self._itemInfoCallback)
     end
   end
 end
-
-

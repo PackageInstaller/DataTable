@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_skill_cost_feature_step_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParam_SkillCostFeatureStepPoint", SkillEffectParamBase)
 SkillEffectParam_SkillCostFeatureStepPoint = SkillEffectParam_SkillCostFeatureStepPoint
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_SkillCostFeatureStepPoint.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_SkillCostFeatureStepPoint:Constructor(t)
   self._val = t.val
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_SkillCostFeatureStepPoint.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_SkillCostFeatureStepPoint:GetEffectType()
   return SkillEffectType.SkillCostFeatureStepPoint
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_SkillCostFeatureStepPoint.GetCostStepPointValue = function(self)
-  -- function num : 0_2
+function SkillEffectParam_SkillCostFeatureStepPoint:GetCostStepPointValue()
   return self._val
 end
-
-

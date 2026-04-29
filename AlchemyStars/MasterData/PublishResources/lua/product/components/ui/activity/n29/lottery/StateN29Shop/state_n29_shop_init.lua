@@ -1,23 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/lottery/StateN29Shop/state_n29_shop_init.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateN29ShopInit", StateN29ShopBase)
 StateN29ShopInit = StateN29ShopInit
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateN29ShopInit.OnEnter = function(self, TT, ...)
-  -- function num : 0_0
+function StateN29ShopInit:OnEnter(TT, ...)
   self:Init()
-  ;
-  (self._uiModule):LockAchievementFinishPanel(false)
+  self._uiModule:LockAchievementFinishPanel(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateN29ShopInit.OnExit = function(self, TT)
-  -- function num : 0_1
+function StateN29ShopInit:OnExit(TT)
 end
-
-

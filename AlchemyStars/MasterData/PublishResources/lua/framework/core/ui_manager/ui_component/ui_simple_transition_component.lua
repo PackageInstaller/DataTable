@@ -1,89 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_component/ui_simple_transition_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISimpleTransitionComponent", UIComponent)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UISimpleTransitionComponent.Constructor = function(self)
-  -- function num : 0_0
-  self._fadeTime = 0.33333333333333
+function UISimpleTransitionComponent:Constructor()
+  self._fadeTime = 0.3333333333333333
   self._moveTime = 0.5
   self._moveDistance = 50
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleTransitionComponent.AfterShow = function(self, TT)
-  -- function num : 0_1
+function UISimpleTransitionComponent:AfterShow(TT)
   self:PlayEnterAnim(TT)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleTransitionComponent.BeforeHide = function(self, TT)
-  -- function num : 0_2
+function UISimpleTransitionComponent:BeforeHide(TT)
   self:PlayLeaveAnim(TT)
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleTransitionComponent.PlayEnterAnim = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  local safeAreaNode = (((self.uiController):GetGameObject()).transform):Find("UICanvas/SafeArea")
+function UISimpleTransitionComponent:PlayEnterAnim(TT)
+  local safeAreaNode = self.uiController:GetGameObject().transform:Find("UICanvas/SafeArea")
   if not safeAreaNode then
-    return 
+    return
   end
-  local canvasGroup = (safeAreaNode.gameObject):GetComponent(typeof(UnityEngine.CanvasGroup))
-  if not canvasGroup then
-    canvasGroup = (safeAreaNode.gameObject):AddComponent(typeof(UnityEngine.CanvasGroup))
-  end
-  do
-    if (self.registerInfo).fadeBlurMask then
-      local blurMaskTrans = (((((self.uiController):GetGameObject()).transform).parent).parent):Find("BGMaskCanvas/BlurMask")
-      if blurMaskTrans then
-        self._blurMask = (blurMaskTrans.gameObject):GetComponent(typeof((UnityEngine.UI).RawImage))
-      end
+  local canvasGroup = safeAreaNode.gameObject:GetComponent(typeof(UnityEngine.CanvasGroup))
+  canvasGroup = canvasGroup or safeAreaNode.gameObject:AddComponent(typeof(UnityEngine.CanvasGroup))
+  if self.registerInfo.fadeBlurMask then
+    local blurMaskTrans = self.uiController:GetGameObject().transform.parent.parent:Find("BGMaskCanvas/BlurMask")
+    if blurMaskTrans then
+      self._blurMask = blurMaskTrans.gameObject:GetComponent(typeof(UnityEngine.UI.RawImage))
     end
-    self._safeAreaNode = safeAreaNode
-    self._canvasGroup = canvasGroup
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._canvasGroup).alpha = 0
-    ;
-    (self._canvasGroup):DOFade(1, self._fadeTime)
-    -- DECOMPILER ERROR at PC70: Confused about usage of register: R4 in 'UnsetPending'
-
-    if self._blurMask then
-      (self._blurMask).color = Color(1, 1, 1, 0)
-      ;
-      (self._blurMask):DOFade(1, self._fadeTime)
-    end
-    -- DECOMPILER ERROR at PC83: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._safeAreaNode).localPosition = Vector3(0, -self._moveDistance, 0)
-    ;
-    ((self._safeAreaNode):DOLocalMoveY(0, self._moveTime)):SetEase(((DG.Tweening).Ease).OutCirc)
-    YIELD(TT, self._moveTime * 1000)
   end
+  self._safeAreaNode = safeAreaNode
+  self._canvasGroup = canvasGroup
+  self._canvasGroup.alpha = 0
+  self._canvasGroup:DOFade(1, self._fadeTime)
+  if self._blurMask then
+    self._blurMask.color = Color(1, 1, 1, 0)
+    self._blurMask:DOFade(1, self._fadeTime)
+  end
+  self._safeAreaNode.localPosition = Vector3(0, -self._moveDistance, 0)
+  self._safeAreaNode:DOLocalMoveY(0, self._moveTime):SetEase(DG.Tweening.Ease.OutCirc)
+  YIELD(TT, self._moveTime * 1000)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleTransitionComponent.PlayLeaveAnim = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UISimpleTransitionComponent:PlayLeaveAnim(TT)
   if not self._canvasGroup then
-    return 
+    return
   end
-  ;
-  (self._canvasGroup):DOFade(0, self._fadeTime)
+  self._canvasGroup:DOFade(0, self._fadeTime)
   if self._blurMask then
-    (self._blurMask):DOFade(0, self._fadeTime)
+    self._blurMask:DOFade(0, self._fadeTime)
   end
   YIELD(TT, self._fadeTime * 1000)
 end
-
-

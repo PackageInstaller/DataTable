@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/common_line_mission/ui_common_line_mission_awards_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICommonLineMissionAwardsEntry", UICustomWidget)
 UICommonLineMissionAwardsEntry = UICommonLineMissionAwardsEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICommonLineMissionAwardsEntry.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UICommonLineMissionAwardsEntry:OnShow(uiParams)
   self.awardProgressTxt = self:GetUIComponent("UILocalizationText", "AwardProgress")
   self.awardProgressShadowTxt = self:GetUIComponent("UILocalizationText", "AwardProgressShadow")
   self.awardRed = self:GetGameObject("AwardRed")
@@ -16,21 +9,20 @@ UICommonLineMissionAwardsEntry.OnShow = function(self, uiParams)
   self._gotStarCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionAwardsEntry.SetData = function(self, campaign, checkCampaiginCloseFunc)
-  -- function num : 0_1 , upvalues : _ENV
+function UICommonLineMissionAwardsEntry:SetData(campaign, checkCampaiginCloseFunc)
   self._campaign = campaign
-  local lineCmpt = (self._campaign):GetComponent(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_MISSION)
+  local lineCmpt = self._campaign:GetComponent(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_MISSION)
   local lineCmptInfo = lineCmpt:ComponentInfo()
   local passMissionMap = lineCmptInfo.m_pass_mission_info
-  local missionCfgList = (Cfg.cfg_component_line_mission)({ComponentID = lineCmpt:GetComponentCfgId()})
+  local missionCfgList = Cfg.cfg_component_line_mission({
+    ComponentID = lineCmpt:GetComponentCfgId()
+  })
   local totalStarCount = 0
   self._gotStarCount = 0
   for i = 1, #missionCfgList do
     local missionCfg = missionCfgList[i]
     local id = missionCfg.CampaignMissionId
-    local missionInfoCfg = (Cfg.cfg_campaign_mission)[id]
+    local missionInfoCfg = Cfg.cfg_campaign_mission[id]
     if missionInfoCfg.Type == MissionType.MissionType_Fight_Normal or missionInfoCfg.Type == MissionType.MissionType_Fight_Boss then
       totalStarCount = totalStarCount + 3
     end
@@ -41,31 +33,21 @@ UICommonLineMissionAwardsEntry.SetData = function(self, campaign, checkCampaigin
       self._gotStarCount = self._gotStarCount + starCount
     end
   end
-  ;
-  (self.awardProgressTxt):SetText(self._gotStarCount .. "/" .. totalStarCount)
+  self.awardProgressTxt:SetText(self._gotStarCount .. "/" .. totalStarCount)
   if self.awardProgressShadowTxt then
-    (self.awardProgressShadowTxt):SetText(self._gotStarCount .. "/<color=#f2d385>" .. totalStarCount .. "</color>")
+    self.awardProgressShadowTxt:SetText(self._gotStarCount .. "/<color=#f2d385>" .. totalStarCount .. "</color>")
   end
   self:RefreshRed()
   self._checkCampaignCloseFunc = checkCampaiginCloseFunc
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionAwardsEntry.RefreshRed = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local redAward = (self._campaign):CheckComponentRed(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_TASK)
-  ;
-  (self.awardRed):SetActive(redAward)
+function UICommonLineMissionAwardsEntry:RefreshRed()
+  local redAward = self._campaign:CheckComponentRed(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_TASK)
+  self.awardRed:SetActive(redAward)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionAwardsEntry.AwardBtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if not (self._checkCampaignCloseFunc)() then
-    self:ShowDialog("UICommonLineMissionAwards", (self._campaign):GetComponent(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_TASK), self._checkCampaignCloseFunc, self._gotStarCount)
+function UICommonLineMissionAwardsEntry:AwardBtnOnClick()
+  if not self._checkCampaignCloseFunc() then
+    self:ShowDialog("UICommonLineMissionAwards", self._campaign:GetComponent(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_TASK), self._checkCampaignCloseFunc, self._gotStarCount)
   end
 end
-
-

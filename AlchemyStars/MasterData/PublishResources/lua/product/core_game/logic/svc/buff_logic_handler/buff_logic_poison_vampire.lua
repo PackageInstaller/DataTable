@@ -1,41 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_poison_vampire.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetPoisonVampire", BuffLogicBase)
 BuffLogicSetPoisonVampire = BuffLogicSetPoisonVampire
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetPoisonVampire.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetPoisonVampire:Constructor(buffInstance, logicParam)
   self._mulValue = logicParam.mulValue or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetPoisonVampire.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("PoisonVampire", self._mulValue)
+function BuffLogicSetPoisonVampire:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("PoisonVampire", self._mulValue)
 end
 
 _class("BuffLogicResetPoisonVampire", BuffLogicBase)
 BuffLogicResetPoisonVampire = BuffLogicResetPoisonVampire
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetPoisonVampire.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetPoisonVampire:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetPoisonVampire.DoLogic = function(self)
-  -- function num : 0_3
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("PoisonVampire", 0)
+function BuffLogicResetPoisonVampire:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("PoisonVampire", 0)
 end
-
-

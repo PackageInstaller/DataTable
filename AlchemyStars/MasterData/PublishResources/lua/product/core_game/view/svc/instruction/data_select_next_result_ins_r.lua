@@ -1,20 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/data_select_next_result_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("data_select_result_ins_r")
 _class("DataSelectNextResultInstruction", DataSelectResultInstruction)
 DataSelectNextResultInstruction = DataSelectNextResultInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSelectNextResultInstruction.GetIndex = function(self)
-  -- function num : 0_0
-  local currentIndex = (self._currentPhaseContext):GetCurResultIndexByType(self:GetEffectType())
+function DataSelectNextResultInstruction:GetIndex()
+  local currentIndex = self._currentPhaseContext:GetCurResultIndexByType(self:GetEffectType())
   if currentIndex ~= -1 then
     currentIndex = currentIndex + 1
   end
   return currentIndex
 end
-
-

@@ -1,57 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/new_year_luck_bag/ui_activity_new_year_luck_bag_anim_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("entity")
 _class("UIActivityNewYearLuckBagAnimController", UIController)
 UIActivityNewYearLuckBagAnimController = UIActivityNewYearLuckBagAnimController
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityNewYearLuckBagAnimController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityNewYearLuckBagAnimController:OnShow(uiParams)
   self._randomLotteryComponentInfo = uiParams[1]
-  self.drawList = (self._randomLotteryComponentInfo).m_draw
+  self.drawList = self._randomLotteryComponentInfo.m_draw
   self.uiCtrl = uiParams[2]
   self._storyComp = uiParams[3]
-  self._curLevel = ((self.drawList)[#self.drawList]).random_type
+  self._curLevel = self.drawList[#self.drawList].random_type
   self:GetComponents()
   self:InitComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagAnimController.GetComponents = function(self)
-  -- function num : 0_1
+function UIActivityNewYearLuckBagAnimController:GetComponents()
   self._levelObjs = {}
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelObjs)[1] = self:GetGameObject("level1")
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelObjs)[2] = self:GetGameObject("level2")
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelObjs)[3] = self:GetGameObject("level3")
+  self._levelObjs[1] = self:GetGameObject("level1")
+  self._levelObjs[2] = self:GetGameObject("level2")
+  self._levelObjs[3] = self:GetGameObject("level3")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagAnimController.InitComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((self._levelObjs)[self._curLevel]):SetActive(true)
+function UIActivityNewYearLuckBagAnimController:InitComponents()
+  self._levelObjs[self._curLevel]:SetActive(true)
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self, _ENV
     self:Lock("UIActivityNewYearLuckBagAnimController:InitComponents")
     YIELD(TT, 2000)
     self:ShowDialog("UIActivityNewYearLuckBagController", self._randomLotteryComponentInfo, self.uiCtrl, self._storyComp)
     self:CloseDialog()
     self:UnLock("UIActivityNewYearLuckBagAnimController:InitComponents")
-  end
-)
+  end)
 end
-
-

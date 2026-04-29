@@ -1,8 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/condition/condition_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ConditionType = {CT_NONE = 0, CT_RoleLevel = 1, CT_MissionID = 2, CT_ModuleUnlock = 4, CT_ExMissionID = 6, CT_ResDungeonID = 7, CT_TowerID = 8, CT_TowerType = 9, CT_UnlockHeadNum = 10, CT_AirRoomTypeY = 201, CT_AirRoomLevelY = 205, CT_PetYElementZLevel = 300, CT_PetYStar = 301, CT_PetYAffinity = 302, CT_PetEnterAirRoom = 307, CT_PetYElementZStar = 308, CT_PetGradeY = 309, CT_PetAwakeY = 310, CT_PetGradeLevel = 312, CT_PetAwakeLevel = 313, CT_PeAffinityLevel = 314, CT_PetGradeTo = 315, CT_FriendTeamPetsGradeLevel = 316, CT_PetEquipLv = 318, CT_PetNumEquipLv = 319, CT_ItemCount = 501, CT_BattleWinYTZID = 700, CT_PlayerLogin = 800, CT_PlayerChangeLogin = 803, CT_TotalComStoryEventNum = 900, CT_QuestChatPetCompleteNum = 902, CT_QuestChatTotalCompleteNum = 903, CT_AircraftUpdateAmusementNum = 905, CT_AircraftUpdateAmusementType = 906, CT_ComPetStoryEventNum = 907, CT_ComAssignStoryEventNum = 908, CT_Ambient = 909, CT_FurnitureNum = 910, CT_QuestChatIsReaded = 917, CT_CampaignAVGHPCompare = 1230, CT_CampaignAVGAffinityCompare = 1231, CT_CampaignAVGChooseManual_InNode = 1232, CT_CampaignAVGChooseManual = 1233, CT_CampaignAVGComplateEnding = 1234}
+local ConditionType = {
+  CT_NONE = 0,
+  CT_RoleLevel = 1,
+  CT_MissionID = 2,
+  CT_ModuleUnlock = 4,
+  CT_ExMissionID = 6,
+  CT_ResDungeonID = 7,
+  CT_TowerID = 8,
+  CT_TowerType = 9,
+  CT_UnlockHeadNum = 10,
+  CT_AirRoomTypeY = 201,
+  CT_AirRoomLevelY = 205,
+  CT_PetYElementZLevel = 300,
+  CT_PetYStar = 301,
+  CT_PetYAffinity = 302,
+  CT_PetEnterAirRoom = 307,
+  CT_PetYElementZStar = 308,
+  CT_PetGradeY = 309,
+  CT_PetAwakeY = 310,
+  CT_PetGradeLevel = 312,
+  CT_PetAwakeLevel = 313,
+  CT_PeAffinityLevel = 314,
+  CT_PetGradeTo = 315,
+  CT_FriendTeamPetsGradeLevel = 316,
+  CT_PetEquipLv = 318,
+  CT_PetNumEquipLv = 319,
+  CT_ItemCount = 501,
+  CT_BattleWinYTZID = 700,
+  CT_PlayerLogin = 800,
+  CT_PlayerChangeLogin = 803,
+  CT_TotalComStoryEventNum = 900,
+  CT_QuestChatPetCompleteNum = 902,
+  CT_QuestChatTotalCompleteNum = 903,
+  CT_AircraftUpdateAmusementNum = 905,
+  CT_AircraftUpdateAmusementType = 906,
+  CT_ComPetStoryEventNum = 907,
+  CT_ComAssignStoryEventNum = 908,
+  CT_Ambient = 909,
+  CT_FurnitureNum = 910,
+  CT_QuestChatIsReaded = 917,
+  CT_CampaignAVGHPCompare = 1230,
+  CT_CampaignAVGAffinityCompare = 1231,
+  CT_CampaignAVGChooseManual_InNode = 1232,
+  CT_CampaignAVGChooseManual = 1233,
+  CT_CampaignAVGComplateEnding = 1234
+}
 _enum("ConditionType", ConditionType)
-

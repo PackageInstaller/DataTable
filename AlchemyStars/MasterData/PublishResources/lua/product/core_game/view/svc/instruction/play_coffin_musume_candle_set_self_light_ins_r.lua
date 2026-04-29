@@ -1,42 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_coffin_musume_candle_set_self_light_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayCoffinMusumeCandleSetSelfLightInstruction", BaseInstruction)
 PlayCoffinMusumeCandleSetSelfLightInstruction = PlayCoffinMusumeCandleSetSelfLightInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCoffinMusumeCandleSetSelfLightInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCoffinMusumeCandleSetSelfLightInstruction:Constructor(paramList)
   self._candleEffectID = tonumber(paramList.candleEffectID)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCoffinMusumeCandleSetSelfLightInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayCoffinMusumeCandleSetSelfLightInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local result = routineComponent:GetEffectResultByArray(SkillEffectType.CoffinMusumeSetCandleLight)
   if not result then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local e = world:GetEntityByID(result:GetEntityID())
   if e then
     local hasEffect = e:HasEffectHolder()
-    if hasEffect then
-      local effectIDEntityDic = (e:EffectHolder()):GetEffectIDEntityDic()
-    end
-    hasEffect = not hasEffect or not effectIDEntityDic[self._candleEffectID] or #effectIDEntityDic[self._candleEffectID] > 0
+    local effectIDEntityDic = hasEffect and e:EffectHolder():GetEffectIDEntityDic()
+    hasEffect = hasEffect and effectIDEntityDic[self._candleEffectID] and #effectIDEntityDic[self._candleEffectID] > 0
     if not hasEffect then
       local fxsvc = world:GetService("Effect")
       fxsvc:CreateEffect(self._candleEffectID, e)
     end
   end
-  ;
-  (world:GetService("PlayBuff")):PlayBuffView(TT, NTCoffinMusumeSkillChangeLight:New({result:GetEntityID()}))
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  world:GetService("PlayBuff"):PlayBuffView(TT, NTCoffinMusumeSkillChangeLight:New({
+    result:GetEntityID()
+  }))
 end
-
-

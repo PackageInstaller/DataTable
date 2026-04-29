@@ -1,22 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common/helper/ui_activity_custom_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ActivityComponentStatus = {None = 0, Open = 1, Close = 2, TimeLock = 3, MissionLock = 4, ActivityEnd = 5}
+local ActivityComponentStatus = {
+  None = 0,
+  Open = 1,
+  Close = 2,
+  TimeLock = 3,
+  MissionLock = 4,
+  ActivityEnd = 5
+}
 _enum("ActivityComponentStatus", ActivityComponentStatus)
 _class("UIActivityCustomHelper", Object)
 UIActivityCustomHelper = UIActivityCustomHelper
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityCustomHelper.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityCustomHelper:Constructor()
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCustomHelper.CheckComponentStatus = function(component)
-  -- function num : 0_1 , upvalues : ActivityComponentStatus, _ENV
+function UIActivityCustomHelper.CheckComponentStatus(component)
   if not component then
     return ActivityComponentStatus.Close, 0
   end
@@ -24,18 +21,18 @@ UIActivityCustomHelper.CheckComponentStatus = function(component)
   if not info then
     return ActivityComponentStatus.Close, 0
   end
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  if info.m_close_time <= curTime then
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  if curTime >= info.m_close_time then
     return ActivityComponentStatus.Close, 0
   end
   local opentTime = info.m_open_time
   local unLockTime = info.m_unlock_time
   local time = opentTime
-  if time < unLockTime then
+  if unLockTime > time then
     time = unLockTime
   end
-  if time < curTime then
+  if curTime > time then
     if (next(info.m_unlock_items) or info.m_need_mission_id ~= 0) and not info.m_b_unlock then
       return ActivityComponentStatus.MissionLock, 0
     end
@@ -44,165 +41,115 @@ UIActivityCustomHelper.CheckComponentStatus = function(component)
   return ActivityComponentStatus.TimeLock, time - curTime
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCustomHelper.GetTimeString = function(seconds, dayStr, hourStr, minusStr, lessOneMinusStr)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityCustomHelper.GetTimeString(seconds, dayStr, hourStr, minusStr, lessOneMinusStr)
   if seconds < 0 then
     seconds = 0
   end
-  if not dayStr then
-    dayStr = "str_activity_day"
-  end
-  if not hourStr then
-    hourStr = "str_activity_hour"
-  end
-  if not minusStr then
-    minusStr = "str_activity_minus"
-  end
-  if not lessOneMinusStr then
-    lessOneMinusStr = "str_activity_less_one_minus"
-  end
+  dayStr = dayStr or "str_activity_day"
+  hourStr = hourStr or "str_activity_hour"
+  minusStr = minusStr or "str_activity_minus"
+  lessOneMinusStr = lessOneMinusStr or "str_activity_less_one_minus"
   local timeStr = ""
-  local day = (math.floor)(seconds / 3600 / 24)
-  if day > 0 then
+  local day = math.floor(seconds / 3600 / 24)
+  if 0 < day then
     seconds = seconds - day * 3600 * 24
-    local hour = (math.floor)((seconds) / 3600)
-    timeStr = (StringTable.Get)(dayStr, day)
-    if hour > 0 then
-      timeStr = timeStr .. (StringTable.Get)(hourStr, hour)
+    local hour = math.floor(seconds / 3600)
+    timeStr = StringTable.Get(dayStr, day)
+    if 0 < hour then
+      timeStr = timeStr .. StringTable.Get(hourStr, hour)
+    end
+  elseif 60 <= seconds then
+    local hour = math.floor(seconds / 3600)
+    seconds = seconds - hour * 3600
+    if 0 < hour then
+      timeStr = StringTable.Get(hourStr, hour)
+    end
+    local minus = math.floor(seconds / 60)
+    if 0 < minus then
+      timeStr = timeStr .. StringTable.Get(minusStr, minus)
     end
   else
-    do
-      if seconds >= 60 then
-        local hour = (math.floor)((seconds) / 3600)
-        seconds = seconds - hour * 3600
-        if hour > 0 then
-          timeStr = (StringTable.Get)(hourStr, hour)
-        end
-        local minus = (math.floor)((seconds) / 60)
-        if minus > 0 then
-          timeStr = timeStr .. (StringTable.Get)(minusStr, minus)
-        end
-      else
-        do
-          timeStr = (StringTable.Get)(lessOneMinusStr)
-          return timeStr
-        end
-      end
-    end
+    timeStr = StringTable.Get(lessOneMinusStr)
   end
+  return timeStr
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCustomHelper.GetItemCountStr = function(byteCount, count, preColor, countColor)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityCustomHelper.GetItemCountStr(byteCount, count, preColor, countColor)
   local dight = 0
   local tmpCount = count
   if tmpCount < 0 then
     tmpCount = -tmpCount
   end
-  while tmpCount > 0 do
-    tmpCount = (math.floor)(tmpCount / 10)
+  while 0 < tmpCount do
+    tmpCount = math.floor(tmpCount / 10)
     dight = dight + 1
   end
   local pre = ""
-  if count >= 0 then
-    for i = 1, byteCount - (dight) do
+  if 0 <= count then
+    for i = 1, byteCount - dight do
       pre = pre .. "0"
     end
   else
-    do
-      for i = 1, byteCount - (dight) - 1 do
-        pre = pre .. "0"
-      end
-      do
-        if count > 0 then
-          return (string.format)("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
-        else
-          if count == 0 then
-            return (string.format)("<color=" .. preColor .. ">%s</color>", pre)
-          else
-            return (string.format)("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
-          end
-        end
-      end
+    for i = 1, byteCount - dight - 1 do
+      pre = pre .. "0"
     end
+  end
+  if 0 < count then
+    return string.format("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
+  elseif count == 0 then
+    return string.format("<color=" .. preColor .. ">%s</color>", pre)
+  else
+    return string.format("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCustomHelper.ShowRewards = function(rewards, callback)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityCustomHelper.ShowRewards(rewards, callback)
   local petIdList = {}
-  local mPet = (GameGlobal.GetModule)(PetModule)
-  for _,reward in pairs(rewards) do
+  local mPet = GameGlobal.GetModule(PetModule)
+  for _, reward in pairs(rewards) do
     if mPet:IsPetID(reward.assetid) then
-      (table.insert)(petIdList, reward)
+      table.insert(petIdList, reward)
     end
   end
-  if (table.count)(petIdList) > 0 then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIPetObtain", petIdList, function()
-    -- function num : 0_4_0 , upvalues : _ENV, rewards, callback
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", rewards, function()
-      -- function num : 0_4_0_0 , upvalues : callback
-      if callback then
-        callback()
-      end
-    end
-)
+  if table.count(petIdList) > 0 then
+    GameGlobal.UIStateManager():ShowDialog("UIPetObtain", petIdList, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      GameGlobal.UIStateManager():ShowDialog("UIGetItemController", rewards, function()
+        if callback then
+          callback()
+        end
+      end)
+    end)
+    return
   end
-)
-    return 
-  end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", rewards, function()
-    -- function num : 0_4_1 , upvalues : callback
+  GameGlobal.UIStateManager():ShowDialog("UIGetItemController", rewards, function()
     if callback then
       callback()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCustomHelper.GetNewFlagKey = function(id)
-  -- function num : 0_5 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityCustomHelper.GetNewFlagKey(id)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. id
   return key
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCustomHelper.GetNewFlagStatus = function(id)
-  -- function num : 0_6 , upvalues : _ENV
-  local key = (UIActivityCustomHelper.GetNewFlagKey)(id)
-  if not ((UnityEngine.PlayerPrefs).HasKey)(key) then
+function UIActivityCustomHelper.GetNewFlagStatus(id)
+  local key = UIActivityCustomHelper.GetNewFlagKey(id)
+  if not UnityEngine.PlayerPrefs.HasKey(key) then
     return true
   end
-  local value = ((UnityEngine.PlayerPrefs).GetInt)(key)
-  do return value == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local value = UnityEngine.PlayerPrefs.GetInt(key)
+  return value == 0
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCustomHelper.SetNewFlagStatus = function(id, status)
-  -- function num : 0_7 , upvalues : _ENV
-  local key = (UIActivityCustomHelper.GetNewFlagKey)(id)
+function UIActivityCustomHelper.SetNewFlagStatus(id, status)
+  local key = UIActivityCustomHelper.GetNewFlagKey(id)
   if status then
-    ((UnityEngine.PlayerPrefs).SetInt)(key, 0)
+    UnityEngine.PlayerPrefs.SetInt(key, 0)
   else
-    ;
-    ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+    UnityEngine.PlayerPrefs.SetInt(key, 1)
   end
 end
-
-

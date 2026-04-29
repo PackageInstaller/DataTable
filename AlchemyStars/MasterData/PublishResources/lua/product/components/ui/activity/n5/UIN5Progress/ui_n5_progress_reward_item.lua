@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/UIN5Progress/ui_n5_progress_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN5ProgressRewardItem", UICustomWidget)
 UIN5ProgressRewardItem = UIN5ProgressRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN5ProgressRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN5ProgressRewardItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressRewardItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN5ProgressRewardItem:InitWidget()
   self._iconImg = self:GetUIComponent("RawImageLoader", "_icon")
   self._iconRawImg = self:GetUIComponent("RawImage", "icon")
   self._iconRect = self:GetUIComponent("RectTransform", "_icon")
@@ -26,167 +16,106 @@ UIN5ProgressRewardItem.InitWidget = function(self)
   self._redPointArea = self:GetGameObject("_redPointArea")
   self._bigAwardArea = self:GetGameObject("_bigAwardArea")
   if self._iconObj then
-    self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._iconObj), UIEvent.BeginDrag, function(pointData)
-    -- function num : 0_1_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.N5ProgressScrollDragBegin)
-  end
-)
+    self:AddUICustomEventListener(UICustomUIEventListener.Get(self._iconObj), UIEvent.BeginDrag, function(pointData)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.N5ProgressScrollDragBegin)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressRewardItem.SetData = function(self, index, state, bSpecial, cfg, callback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN5ProgressRewardItem:SetData(index, state, bSpecial, cfg, callback)
   self:InitWidget()
   self._index = index
   self._state = state
   self._isSpecialAward = bSpecial
   self._cfg = cfg
   self._callback = callback
-  local cfg_item = (Cfg.cfg_item)[(self._cfg).assetid]
+  local cfg_item = Cfg.cfg_item[self._cfg.assetid]
   if cfg_item == nil then
-    (Log.fatal)("[quest] error --> cfg_item is nil ! id --> " .. (self._cfg).assetid)
-    return 
+    Log.fatal("[quest] error --> cfg_item is nil ! id --> " .. self._cfg.assetid)
+    return
   end
   self._cg = cfg_item.Icon
   self._colorEnum = cfg_item.Color
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressRewardItem.OnHide = function(self)
-  -- function num : 0_3
+function UIN5ProgressRewardItem:OnHide()
   self._cg = nil
   self._index = nil
   self._callback = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressRewardItem._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN5ProgressRewardItem:_OnValue()
   local icon = self._cg
-  local num = (self._cfg).count
-  local itemId = (self._cfg).assetid
+  local num = self._cfg.count
+  local itemId = self._cfg.assetid
   self:SetIcon(icon, itemId)
   self:SetNumText(num, true)
-  ;
-  (self._redPointArea):SetActive(self._state == UIActivityProgressRewardState.STATE_UNLOCK)
-  ;
-  (self._bigAwardArea):SetActive(self._isSpecialAward)
+  self._redPointArea:SetActive(self._state == UIActivityProgressRewardState.STATE_UNLOCK)
+  self._bigAwardArea:SetActive(self._isSpecialAward)
   self:_SetGray(self._state == UIActivityProgressRewardState.STATE_RECEIVED)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressRewardItem.iconOnClick = function(self, go)
-  -- function num : 0_5
+function UIN5ProgressRewardItem:iconOnClick(go)
   if self._callback then
-    (self._callback)((self._cfg).assetid, (go.transform).position)
+    self._callback(self._cfg.assetid, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressRewardItem.SetIcon = function(self, name, itemId)
-  -- function num : 0_6 , upvalues : _ENV
-  if not (string.isnullorempty)(name) then
+function UIN5ProgressRewardItem:SetIcon(name, itemId)
+  if not string.isnullorempty(name) then
     self:ShowIcon(true, itemId)
-    ;
-    (self._iconImg):LoadImage(name)
+    self._iconImg:LoadImage(name)
   else
     self:ShowIcon(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressRewardItem.ShowIcon = function(self, show, itemId)
-  -- function num : 0_7
-  (self._iconObj):SetActive(show)
+function UIN5ProgressRewardItem:ShowIcon(show, itemId)
+  self._iconObj:SetActive(show)
   self:SetIconOffset(itemId)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressRewardItem.SetIconOffset = function(self, itemId)
-  -- function num : 0_8 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIN5ProgressRewardItem:SetIconOffset(itemId)
   if self:_IsPet(itemId) then
-    (self._iconRect).anchoredPosition = Vector2(0, 0)
+    self._iconRect.anchoredPosition = Vector2(0, 0)
   else
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._iconRect).anchoredPosition = Vector2(0, 5)
+    self._iconRect.anchoredPosition = Vector2(0, 5)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressRewardItem._SetGray = function(self, bGray)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN5ProgressRewardItem:_SetGray(bGray)
   local tarColor = Color.white
   if bGray then
     tarColor = Color(1, 1, 1, 0.4)
   end
-  ;
-  (self._iconImg):SetColor(tarColor)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._numTexBg).color = tarColor
+  self._iconImg:SetColor(tarColor)
+  self._numTexBg.color = tarColor
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressRewardItem._IsPet = function(self, id)
-  -- function num : 0_10 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet)({ID = id})
+function UIN5ProgressRewardItem:_IsPet(id)
+  local cfg = Cfg.cfg_pet({ID = id})
   return cfg and true or false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressRewardItem.SetNumText = function(self, text, showNumber)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN5ProgressRewardItem:SetNumText(text, showNumber)
   if text ~= nil then
     local show = false
     if type(text) == "number" then
       local num = text
-      if num <= 0 then
-        do
-          do
-            show = showNumber
-            show = show
-            ;
-            (self._numTex):SetText((HelperProxy:GetInstance()):FormatItemCount(num))
-            if type(text) == "string" then
-              show = not (string.isnullorempty)(text)
-              ;
-              (self._numTex):SetText(text)
-            end
-            self:ShowNumText(show)
-            self:ShowNumText(false)
-            -- DECOMPILER ERROR: 6 unprocessed JMP targets
-          end
-        end
-      end
+      show = 0 < num or showNumber
+      self._numTex:SetText(HelperProxy:GetInstance():FormatItemCount(num))
+    elseif type(text) == "string" then
+      show = not string.isnullorempty(text)
+      self._numTex:SetText(text)
     end
+    self:ShowNumText(show)
+  else
+    self:ShowNumText(false)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressRewardItem.ShowNumText = function(self, show)
-  -- function num : 0_12
-  (self._numTexObj):SetActive(show)
-  ;
-  (self._numTexBgObj):SetActive(show)
+function UIN5ProgressRewardItem:ShowNumText(show)
+  self._numTexObj:SetActive(show)
+  self._numTexBgObj:SetActive(show)
 end
-
-

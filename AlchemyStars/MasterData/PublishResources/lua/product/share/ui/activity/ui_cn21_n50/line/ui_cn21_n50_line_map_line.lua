@@ -1,40 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn21_n50/line/ui_cn21_n50_line_map_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN21N50LineMapLine", UICustomWidget)
 UICN21N50LineMapLine = UICN21N50LineMapLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN21N50LineMapLine.OnShow = function(self)
-  -- function num : 0_0
+function UICN21N50LineMapLine:OnShow()
   self._rect = self:GetUIComponent("RectTransform", "shape")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50LineMapLine.OnHide = function(self)
-  -- function num : 0_1
+function UICN21N50LineMapLine:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50LineMapLine.Flush = function(self, from, to)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN21N50LineMapLine:Flush(from, to)
   local trans = self:GetUIComponent("RectTransform", "shape")
   trans.anchorMax = Vector2(0, 0.5)
   trans.anchorMin = Vector2(0, 0.5)
-  local type = from.y < to.y and 2 or 1
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-[1] = {"line2"}
-, 
-[2] = {"line1"}
-})
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, type)
+  local type = to.y > from.y and 2 or 1
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    [1] = {"line2"},
+    [2] = {"line1"}
+  })
+  UIWidgetHelper.SetObjGroupShow(objs, type)
   local anchoredPosition = from
   trans.anchoredPosition = anchoredPosition
 end
-
-

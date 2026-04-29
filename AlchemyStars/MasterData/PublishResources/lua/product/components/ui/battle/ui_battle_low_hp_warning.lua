@@ -1,25 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_low_hp_warning.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleLowHPWarning", UICustomWidget)
 UIBattleLowHPWarning = UIBattleLowHPWarning
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleLowHPWarning.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBattleLowHPWarning:OnShow()
   self._lowHpWarning = self:GetGameObject("LowHpWarning")
-  ;
-  (self._lowHpWarning):SetActive(false)
+  self._lowHpWarning:SetActive(false)
   self:AttachEvent(GameEventType.ShowHideLowHpWarning, self.ShowHideLowHpWarning)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleLowHPWarning.ShowHideLowHpWarning = function(self, b)
-  -- function num : 0_1
-  (self._lowHpWarning):SetActive(b)
+function UIBattleLowHPWarning:ShowHideLowHpWarning(b)
+  self._lowHpWarning:SetActive(b)
 end
-
-

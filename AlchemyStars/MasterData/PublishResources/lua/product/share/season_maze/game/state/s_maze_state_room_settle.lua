@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/state/s_maze_state_room_settle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("s_maze_state_base")
 _class("SMazeState_RoomSettle", SMazeStateBase)
 SMazeState_RoomSettle = SMazeState_RoomSettle
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeState_RoomSettle.OnEnter = function(self, node, dontTigger)
-  -- function num : 0_0
+function SMazeState_RoomSettle:OnEnter(node, dontTigger)
   self._node = node
   local room = node:Room()
   self._settleRoom = room
@@ -18,215 +11,160 @@ SMazeState_RoomSettle.OnEnter = function(self, node, dontTigger)
   else
     self:_Log("开始房间UI的结算:", room:ID(), room:Type())
     room:Trigger()
-    ;
-    ((self._manager):Player()):InteractOnRoom(room:Type())
+    self._manager:Player():InteractOnRoom(room:Type())
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeState_RoomSettle.OnExit = function(self)
-  -- function num : 0_1
+function SMazeState_RoomSettle:OnExit()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeState_RoomSettle.SettleFinish = function(self, room)
-  -- function num : 0_2 , upvalues : _ENV
+function SMazeState_RoomSettle:SettleFinish(room)
   if not self._settleRoom then
     self:_LogError("当前没有正在结算中的房间")
-    return 
+    return
   end
-  if room:ID() ~= (self._settleRoom):ID() then
-    self:_LogError("结算房间id不一致:", room:ID(), (self._settleRoom):ID())
-    return 
+  if room:ID() ~= self._settleRoom:ID() then
+    self:_LogError("结算房间id不一致:", room:ID(), self._settleRoom:ID())
+    return
   end
-  local targetId = (room:Node()):TransRoomTargetID()
-  if room:Type() == SeasonMazeRoomType.SMRT_Transfor and targetId and targetId > 0 then
+  local targetId = room:Node():TransRoomTargetID()
+  if room:Type() == SeasonMazeRoomType.SMRT_Transfor and targetId and 0 < targetId then
     self:_StartRoomTrans(room)
   else
     self:StartTask(self._OnSettleFinish, self, room)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeState_RoomSettle.CurRoom = function(self)
-  -- function num : 0_3
+function SMazeState_RoomSettle:CurRoom()
   return self._settleRoom
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeState_RoomSettle._OnSettleFinish = function(self, TT, room)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._manager):Lock("RoomSettleWait")
+function SMazeState_RoomSettle:_OnSettleFinish(TT, room)
+  self._manager:Lock("RoomSettleWait")
   YIELD(TT, 100)
-  ;
-  (self._manager):UnLock("RoomSettleWait")
+  self._manager:UnLock("RoomSettleWait")
   if not self._valid then
-    return 
+    return
   end
-  if not room:GetAndClearAwardAssets() then
-    local roomAssets = {}
-  end
+  local roomAssets = room:GetAndClearAwardAssets() or {}
   if #roomAssets == 0 then
     self:_Log("房间无奖励:", room:ID(), room:Type())
   end
-  ;
-  (SeasonMazeTool:GetInstance()):SortAsset(roomAssets)
+  SeasonMazeTool:GetInstance():SortAsset(roomAssets)
   local goldCount = 0
-  for index,value in ipairs(roomAssets) do
+  for index, value in ipairs(roomAssets) do
     if value:Type() == SeasonMazeEffectType.SMET_Pro and value:SubParam() == SeasonMazeAttrType.SMAT_Gold then
       goldCount = goldCount + value:Count()
     end
   end
-  if goldCount > 0 then
-    (self._manager):PlayGetGold(TT, goldCount)
+  if 0 < goldCount then
+    self._manager:PlayGetGold(TT, goldCount)
   end
   self:PlayAssetToast(TT, roomAssets)
-  local cpt = (self._manager):GetMazeComponent()
+  local cpt = self._manager:GetMazeComponent()
   if cpt:CurOperate() == SeasonMazeActionState.SMAS_NewHand then
-    (self._machine):ChangeStateTo(SMazeState_Levelup)
-    return 
-  else
-    if cpt:CurOperate() == SeasonMazeActionState.SMAS_Relic then
-      self:_Log("房间解锁完在roomend之前需要选择一次圣物")
-      ;
-      (self._machine):ChangeStateTo(SMazeState_ChooseRelic)
-      return 
-    end
+    self._machine:ChangeStateTo(SMazeState_Levelup)
+    return
+  elseif cpt:CurOperate() == SeasonMazeActionState.SMAS_Relic then
+    self:_Log("房间解锁完在roomend之前需要选择一次圣物")
+    self._machine:ChangeStateTo(SMazeState_ChooseRelic)
+    return
   end
   self:_ReqFinish(TT)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeState_RoomSettle._ReqFinish = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
-  local cpt = (self._manager):GetMazeComponent()
+function SMazeState_RoomSettle:_ReqFinish(TT)
+  local cpt = self._manager:GetMazeComponent()
   local settleRes = AsyncRequestRes:New()
   self:Lock("SMazeState_RoomSettle.HandleSeasonMazeRoomEnd")
   cpt:HandleSeasonMazeRoomEnd(TT, settleRes)
   self:UnLock("SMazeState_RoomSettle.HandleSeasonMazeRoomEnd")
   if not self._valid then
-    return 
+    return
   end
-  ;
-  (self._node):SetState(SMazeNodeState.UnReachable)
+  self._node:SetState(SMazeNodeState.UnReachable)
   if not settleRes:GetSucc() then
     self:_LogError("结算房间消息失败:", settleRes:GetResult())
-    if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(settleRes) then
-      return 
+    if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(settleRes) then
+      return
     end
-    return 
+    return
   end
   self:_Log("房间逻辑结算完毕切状态")
-  if ((self._node):Room()):Type() == SeasonMazeRoomType.SMRT_PVE then
-    ((self._manager):Player()):SetBattleRoomState(false)
-    ;
-    ((self._manager):Player()):PlayAnimation(SeasonMazePlayerAnimation.Stand)
+  if self._node:Room():Type() == SeasonMazeRoomType.SMRT_PVE then
+    self._manager:Player():SetBattleRoomState(false)
+    self._manager:Player():PlayAnimation(SeasonMazePlayerAnimation.Stand)
   end
   if cpt:CurOperate() == SeasonMazeActionState.SMAS_Relic then
-    (self._machine):ChangeStateTo(SMazeState_ChooseRelic)
-    return 
+    self._machine:ChangeStateTo(SMazeState_ChooseRelic)
+    return
+  elseif cpt:CurOperate() == SeasonMazeActionState.SMAS_BossBattle then
+    self:_Log("房间结算完boss突袭 回合数:", cpt:GetAttrValue(SeasonMazeAttrType.SMAT_Round))
+    self._machine:ChangeStateTo(SMazeState_BossAttack)
+    return
+  elseif cpt:CurOperate() == SeasonMazeActionState.SMAS_BreakPet then
+    self:_Log("房间结算完选择满破星灵")
+    self._machine:ChangeStateTo(SMazeState_ChooseFullPet)
+    return
+  elseif cpt:CurOperate() == SeasonMazeActionState.SMAS_NewHand then
+    self:_Log("房间结算完升级了")
+    self._machine:ChangeStateTo(SMazeState_Levelup)
+    return
   else
-    if cpt:CurOperate() == SeasonMazeActionState.SMAS_BossBattle then
-      self:_Log("房间结算完boss突袭 回合数:", cpt:GetAttrValue(SeasonMazeAttrType.SMAT_Round))
-      ;
-      (self._machine):ChangeStateTo(SMazeState_BossAttack)
-      return 
-    else
-      if cpt:CurOperate() == SeasonMazeActionState.SMAS_BreakPet then
-        self:_Log("房间结算完选择满破星灵")
-        ;
-        (self._machine):ChangeStateTo(SMazeState_ChooseFullPet)
-        return 
-      else
-        if cpt:CurOperate() == SeasonMazeActionState.SMAS_NewHand then
-          self:_Log("房间结算完升级了")
-          ;
-          (self._machine):ChangeStateTo(SMazeState_Levelup)
-          return 
-        else
-          ;
-          (self._machine):ChangeStateTo(SMazeState_RoundEnd, self._node)
-        end
-      end
-    end
+    self._machine:ChangeStateTo(SMazeState_RoundEnd, self._node)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeState_RoomSettle._TransformPosEffect = function(self, cb)
-  -- function num : 0_6 , upvalues : _ENV
+function SMazeState_RoomSettle:_TransformPosEffect(cb)
   local tls = {}
   local lock = EZTL_Callback:New(function()
-    -- function num : 0_6_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):Lock("SMazeState_RoomSettle:TransformPosEffect")
-  end
-, "锁屏")
-  ;
-  (table.insert)(tls, lock)
-  local para = EZTL_Parallel:New({EZTL_Sequence:New({EZTL_Wait:New(100, "等0.1秒"), EZTL_Callback:New(function()
-    -- function num : 0_6_1 , upvalues : self
-    (((self._manager):Player()):PlayerRoot()):SetActive(false)
-  end
-, "隐藏")}), EZTL_Callback:New(function()
-    -- function num : 0_6_2 , upvalues : _ENV, self
-    local pos = (SMazeAdaptor.PlayerHeadPos)()
-    ;
-    ((self._manager):Player()):PlayEffect("TransStartPoint", pos)
-  end
-, "加载资源"), EZTL_Callback:New(function()
-    -- function num : 0_6_3 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):CallUIMethod("UISeasonMazeScene", "TransStartPoint", 0.7)
-  end
-, "黑屏"), EZTL_Wait:New(700, "等0.7秒")}, EZTL_EndTag.All, nil, "加载资源，黑屏")
-  ;
-  (table.insert)(tls, para)
+    GameGlobal.UIStateManager():Lock("SMazeState_RoomSettle:TransformPosEffect")
+  end, "锁屏")
+  table.insert(tls, lock)
+  local para = EZTL_Parallel:New({
+    EZTL_Sequence:New({
+      EZTL_Wait:New(100, "等0.1秒"),
+      EZTL_Callback:New(function()
+        self._manager:Player():PlayerRoot():SetActive(false)
+      end, "隐藏")
+    }),
+    EZTL_Callback:New(function()
+      local pos = SMazeAdaptor.PlayerHeadPos()
+      self._manager:Player():PlayEffect("TransStartPoint", pos)
+    end, "加载资源"),
+    EZTL_Callback:New(function()
+      GameGlobal.UIStateManager():CallUIMethod("UISeasonMazeScene", "TransStartPoint", 0.7)
+    end, "黑屏"),
+    EZTL_Wait:New(700, "等0.7秒")
+  }, EZTL_EndTag.All, nil, "加载资源，黑屏")
+  table.insert(tls, para)
   local callback = EZTL_Callback:New(function()
-    -- function num : 0_6_4 , upvalues : cb
     if cb then
       cb()
     end
-  end
-, "传送")
-  ;
-  (table.insert)(tls, callback)
-  local para2 = EZTL_Parallel:New({EZTL_Callback:New(function()
-    -- function num : 0_6_5 , upvalues : self, _ENV
-    (((self._manager):Player()):PlayerRoot()):SetActive(true)
-    local pos = (SMazeAdaptor.PlayerHeadPos)()
-    ;
-    ((self._manager):Player()):PlayEffect("TransEndPoint", pos)
-  end
-, "显示特效"), EZTL_Callback:New(function()
-    -- function num : 0_6_6 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):CallUIMethod("UISeasonMazeScene", "TransEndPoint", 0.7)
-  end
-, "取消黑屏"), EZTL_Wait:New(700, "等0.7秒")}, EZTL_EndTag.All, nil, "加载资源，黑屏")
-  ;
-  (table.insert)(tls, para2)
+  end, "传送")
+  table.insert(tls, callback)
+  local para2 = EZTL_Parallel:New({
+    EZTL_Callback:New(function()
+      self._manager:Player():PlayerRoot():SetActive(true)
+      local pos = SMazeAdaptor.PlayerHeadPos()
+      self._manager:Player():PlayEffect("TransEndPoint", pos)
+    end, "显示特效"),
+    EZTL_Callback:New(function()
+      GameGlobal.UIStateManager():CallUIMethod("UISeasonMazeScene", "TransEndPoint", 0.7)
+    end, "取消黑屏"),
+    EZTL_Wait:New(700, "等0.7秒")
+  }, EZTL_EndTag.All, nil, "加载资源，黑屏")
+  table.insert(tls, para2)
   local unlock = EZTL_Callback:New(function()
-    -- function num : 0_6_7 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):UnLock("SMazeState_PlayerMove:TransformPosEffect")
-  end
-, "解锁")
-  ;
-  (table.insert)(tls, unlock)
+    GameGlobal.UIStateManager():UnLock("SMazeState_PlayerMove:TransformPosEffect")
+  end, "解锁")
+  table.insert(tls, unlock)
   local seq = EZTL_Sequence:New(tls)
-  ;
-  (self._manager):PlayEZTL(seq)
+  self._manager:PlayEZTL(seq)
   return seq
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeState_RoomSettle._StartRoomTrans = function(self, room)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._machine):ChangeStateTo(SMazeState_PlayerMove, 1, true)
+function SMazeState_RoomSettle:_StartRoomTrans(room)
+  self._machine:ChangeStateTo(SMazeState_PlayerMove, 1, true)
 end
-
-

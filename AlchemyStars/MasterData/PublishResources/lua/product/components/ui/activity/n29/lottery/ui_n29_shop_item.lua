@@ -1,25 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/lottery/ui_n29_shop_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN29ShopItem", UICustomWidget)
 UIN29ShopItem = UIN29ShopItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN29ShopItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.size = {big = Vector2(361, 344), small = Vector2(299, 324)}
+function UIN29ShopItem:Constructor()
+  self.size = {
+    big = Vector2(361, 344),
+    small = Vector2(299, 324)
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ShopItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN29ShopItem:OnShow(uiParams)
   self.atlas = self:GetAsset("UIN29Lottery.spriteatlas", LoadType.SpriteAtlas)
   self.go = self:GetGameObject()
-  ;
-  (self.go):SetActive(false)
+  self.go:SetActive(false)
   self.anim = self:GetUIComponent("Animation", "UIN29ShopItem")
   self.big = self:GetGameObject("big")
   self.bgBig = self:GetUIComponent("Image", "bgBig")
@@ -38,123 +30,80 @@ UIN29ShopItem.OnShow = function(self, uiParams)
   self.imgIconSmallShadow = self:GetUIComponent("RawImageLoader", "imgIconSmallShadow")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ShopItem.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgIconBig):DestoryLastImage()
-  ;
-  (self.imgIconSmall):DestoryLastImage()
+function UIN29ShopItem:OnHide()
+  self.imgIconBig:DestoryLastImage()
+  self.imgIconSmall:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ShopItem.InitData = function(self, data, itemInfoCallback, unlock)
-  -- function num : 0_3
+function UIN29ShopItem:InitData(data, itemInfoCallback, unlock)
   self._data = data
   self._unlock = unlock
-  self._itemId = (self._data).m_item_id
-  self._itemCount = (self._data).m_lottery_limit_count
-  self._itemRestCount = (self._data).m_lottery_count
+  self._itemId = self._data.m_item_id
+  self._itemCount = self._data.m_lottery_limit_count
+  self._itemRestCount = self._data.m_lottery_count
   self._itemInfoCallback = itemInfoCallback
   self:FillUi()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ShopItem.FillUi = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local itemCfg = (Cfg.cfg_item)[self._itemId]
+function UIN29ShopItem:FillUi()
+  local itemCfg = Cfg.cfg_item[self._itemId]
   if itemCfg then
     local res = itemCfg.Icon
     local hasRest = self._itemRestCount > 0
-    local itemCount = (self._data).m_count
+    local itemCount = self._data.m_count
     local showNumberTex = "x" .. itemCount
-    local showTimesTex = nil
-    local canGet = not self._unlock or hasRest
-    if (self._data).m_is_big_reward then
+    local showTimesTex
+    local canGet = self._unlock and hasRest
+    if self._data.m_is_big_reward then
       showTimesTex = "<color=#fffae7>" .. self._itemRestCount .. "</color>" .. "<color=#b9b2aa>/" .. self._itemCount .. "</color>"
-      ;
-      (self.big):SetActive(true)
-      ;
-      (self.small):SetActive(false)
-      ;
-      (self.imgIconBig):LoadImage(res)
-      ;
-      (self.imgIconBigShadow):LoadImage(res)
-      ;
-      (self.txtCountItemBig):SetText(showNumberTex)
-      ;
-      (self.txtCountAwardBig):SetText(showTimesTex)
-      ;
-      (self.bigMaskGo):SetActive(not canGet)
+      self.big:SetActive(true)
+      self.small:SetActive(false)
+      self.imgIconBig:LoadImage(res)
+      self.imgIconBigShadow:LoadImage(res)
+      self.txtCountItemBig:SetText(showNumberTex)
+      self.txtCountAwardBig:SetText(showTimesTex)
+      self.bigMaskGo:SetActive(not canGet)
     else
       showTimesTex = "<color=#9a7c5f>" .. self._itemRestCount .. "</color>" .. "<color=#292624>/" .. self._itemCount .. "</color>"
-      ;
-      (self.big):SetActive(false)
-      ;
-      (self.small):SetActive(true)
-      ;
-      (self.imgIconSmall):LoadImage(res)
-      ;
-      (self.imgIconSmallShadow):LoadImage(res)
-      ;
-      (self.txtCountItemSmall):SetText(showNumberTex)
-      ;
-      (self.txtCountAwardSmall):SetText(showTimesTex)
-      ;
-      (self.smallMaskGo):SetActive(not canGet)
+      self.big:SetActive(false)
+      self.small:SetActive(true)
+      self.imgIconSmall:LoadImage(res)
+      self.imgIconSmallShadow:LoadImage(res)
+      self.txtCountItemSmall:SetText(showNumberTex)
+      self.txtCountAwardSmall:SetText(showTimesTex)
+      self.smallMaskGo:SetActive(not canGet)
     end
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ShopItem.ShowHide = function(self, isShow)
-  -- function num : 0_5
-  (self.go):SetActive(isShow)
+function UIN29ShopItem:ShowHide(isShow)
+  self.go:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ShopItem.PlayAnim = function(self, idx)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN29ShopItem:PlayAnim(idx)
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : idx, _ENV, self
-    if idx > 1 then
+    if 1 < idx then
       YIELD(TT, (idx - 1) * 60)
     end
-    ;
-    (self.go):SetActive(true)
+    self.go:SetActive(true)
     local key = "UIN29ShopItemPlayAnim" .. self._itemId
     self:Lock(key)
-    if (self._data).m_is_big_reward then
-      (self.anim):Play("uieff_UIN29ShopItem_big")
+    if self._data.m_is_big_reward then
+      self.anim:Play("uieff_UIN29ShopItem_big")
     else
-      ;
-      (self.anim):Play("uieff_UIN29ShopItem_small")
+      self.anim:Play("uieff_UIN29ShopItem_small")
     end
     YIELD(TT, 867)
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ShopItem.PlayOutAnim = function(self)
-  -- function num : 0_7
-  (self.anim):Play("uieff_UIN29ShopItem_out")
+function UIN29ShopItem:PlayOutAnim()
+  self.anim:Play("uieff_UIN29ShopItem_out")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ShopItem.BgOnClick = function(self, go)
-  -- function num : 0_8
+function UIN29ShopItem:BgOnClick(go)
   if self._itemInfoCallback then
-    (self._itemInfoCallback)((self._data).m_item_id, (go.transform).position)
+    self._itemInfoCallback(self._data.m_item_id, go.transform.position)
   end
 end
-
-

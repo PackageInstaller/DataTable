@@ -1,63 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_csi_by_hp_per.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillIncreaseByHPPercent", BuffLogicBase)
 BuffLogicChangeSkillIncreaseByHPPercent = BuffLogicChangeSkillIncreaseByHPPercent
 local ChangeSkillIncreaseByHPPercentCalcType = {CurrentHP = 1, LossHP = 2}
 _enum("ChangeSkillIncreaseByHPPercentCalcType", ChangeSkillIncreaseByHPPercentCalcType)
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicChangeSkillIncreaseByHPPercent.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : ChangeSkillIncreaseByHPPercentCalcType
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._buffInstance)._effectList = logicParam.effectList
+function BuffLogicChangeSkillIncreaseByHPPercent:Constructor(buffInstance, logicParam)
+  self._buffInstance._effectList = logicParam.effectList
   self._maxSkillIncrease = logicParam.maxSkillIncrease
   self._entity = buffInstance._entity
   self._hpCalcType = logicParam.hpCalcType or ChangeSkillIncreaseByHPPercentCalcType.CurrentHP
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeSkillIncreaseByHPPercent.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : ChangeSkillIncreaseByHPPercentCalcType, _ENV
+function BuffLogicChangeSkillIncreaseByHPPercent:DoLogic(notify)
   local e = self._entity
-  local battleSvc = (self._world):GetService("Battle")
+  local battleSvc = self._world:GetService("Battle")
   local curHP, maxHp = battleSvc:GetCasterHP(e)
-  local hpPercent = nil
+  local hpPercent
   if self._hpCalcType == ChangeSkillIncreaseByHPPercentCalcType.CurrentHP then
     hpPercent = curHP / maxHp
-  else
-    if self._hpCalcType == ChangeSkillIncreaseByHPPercentCalcType.LossHP then
-      hpPercent = 1 - curHP / maxHp
-    end
+  elseif self._hpCalcType == ChangeSkillIncreaseByHPPercentCalcType.LossHP then
+    hpPercent = 1 - curHP / maxHp
   end
-  local changeValue = (hpPercent) * self._maxSkillIncrease
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
+  local changeValue = hpPercent * self._maxSkillIncrease
+  for _, paramType in ipairs(self._buffInstance._effectList) do
     if changeValue ~= 0 then
-      (self._buffLogicService):ChangeSkillIncrease(self._entity, (self._buffInstance)._buffSeq, paramType, changeValue)
+      self._buffLogicService:ChangeSkillIncrease(self._entity, self._buffInstance._buffSeq, paramType, changeValue)
     end
   end
 end
 
 _class("BuffLogicRemoveChangeSkillIncreaseByHPPercent", BuffLogicBase)
 BuffLogicRemoveChangeSkillIncreaseByHPPercent = BuffLogicRemoveChangeSkillIncreaseByHPPercent
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicRemoveChangeSkillIncreaseByHPPercent.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveChangeSkillIncreaseByHPPercent:Constructor(buffInstance, logicParam)
   self._entity = buffInstance._entity
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicRemoveChangeSkillIncreaseByHPPercent.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillIncrease(self._entity, (self._buffInstance):BuffSeq(), paramType)
+function BuffLogicRemoveChangeSkillIncreaseByHPPercent:DoLogic()
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillIncrease(self._entity, self._buffInstance:BuffSeq(), paramType)
   end
 end
-
-

@@ -1,76 +1,122 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/optimize/performance_world.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_world")
 local PerformanceModeConfig = {
-Systems = {
-{Name = "Loading", Type = "LoadingSystem", ClientType = "ClientLoadingSystem_Render"}
-, 
-{Name = "HitbackSystem_Render", Type = "HitbackSystem_Render"}
-, 
-{Name = "GridMoveSystem_Render", Type = "GridMoveSystem_Render"}
-, 
-{Name = "AnimatorControllerSystem_Render", Type = "AnimatorControllerSystem_Render"}
-}
-, 
-UniqueComponents = {
-MainCameraComponent = {}
-}
-, 
-Services = {
-{Name = "Config", Type = "ConfigService"}
-, 
-{Name = "BoardRender", Type = "BoardServiceRender"}
-, 
-{Name = "Piece", Type = "PieceServiceRender"}
-, 
-{Name = "TransformRenderer", Type = "TransformServiceRenderer"}
-, 
-{Name = "Time", Type = "ClientTimeService"}
-, 
-{Name = "ResourcesPool", Type = "ResourcesPoolService"}
-, 
-{Name = "Resource", Type = "UnityResourceService"}
-, 
-{Name = "RenderEntity", Type = "RenderEntityService"}
-, 
-{Name = "Loading", Type = "LoadingServiceRender"}
-, 
-{Name = "Effect", Type = "EffectService"}
-, 
-{Name = "Camera", Type = "CameraService"}
-, 
-{Name = "Affix", Type = "AffixService"}
-, 
-{Name = "Talent", Type = "TalentService"}
-, 
-{Name = "LogicEntity", Type = "LogicEntityService"}
-, 
-{Name = "PerformanceListener", Type = "PerformanceListenerServiceRender"}
-, 
-{Name = "TrapRender", Type = "TrapServiceRender"}
-, 
-{Name = "RandomLogic", Type = "RandomServiceLogic"}
-, 
-{Name = "CreateMonsterPos", Type = "CreateMonsterPosService"}
-, 
-{Name = "UtilData", Type = "UtilDataServiceShare"}
-, 
-{Name = "BoardLogic", Type = "BoardServiceLogic"}
-, 
-{Name = "Maze", Type = "MazeService"}
-, 
-{Name = "BattleDamageStatisticsLogic", Type = "BattleDamageStatisticsServiceLogic"}
-}
+  Systems = {
+    {
+      Name = "Loading",
+      Type = "LoadingSystem",
+      ClientType = "ClientLoadingSystem_Render"
+    },
+    {
+      Name = "HitbackSystem_Render",
+      Type = "HitbackSystem_Render"
+    },
+    {
+      Name = "GridMoveSystem_Render",
+      Type = "GridMoveSystem_Render"
+    },
+    {
+      Name = "AnimatorControllerSystem_Render",
+      Type = "AnimatorControllerSystem_Render"
+    }
+  },
+  UniqueComponents = {
+    MainCameraComponent = {}
+  },
+  Services = {
+    {
+      Name = "Config",
+      Type = "ConfigService"
+    },
+    {
+      Name = "BoardRender",
+      Type = "BoardServiceRender"
+    },
+    {
+      Name = "Piece",
+      Type = "PieceServiceRender"
+    },
+    {
+      Name = "TransformRenderer",
+      Type = "TransformServiceRenderer"
+    },
+    {
+      Name = "Time",
+      Type = "ClientTimeService"
+    },
+    {
+      Name = "ResourcesPool",
+      Type = "ResourcesPoolService"
+    },
+    {
+      Name = "Resource",
+      Type = "UnityResourceService"
+    },
+    {
+      Name = "RenderEntity",
+      Type = "RenderEntityService"
+    },
+    {
+      Name = "Loading",
+      Type = "LoadingServiceRender"
+    },
+    {
+      Name = "Effect",
+      Type = "EffectService"
+    },
+    {
+      Name = "Camera",
+      Type = "CameraService"
+    },
+    {
+      Name = "Affix",
+      Type = "AffixService"
+    },
+    {
+      Name = "Talent",
+      Type = "TalentService"
+    },
+    {
+      Name = "LogicEntity",
+      Type = "LogicEntityService"
+    },
+    {
+      Name = "PerformanceListener",
+      Type = "PerformanceListenerServiceRender"
+    },
+    {
+      Name = "TrapRender",
+      Type = "TrapServiceRender"
+    },
+    {
+      Name = "RandomLogic",
+      Type = "RandomServiceLogic"
+    },
+    {
+      Name = "CreateMonsterPos",
+      Type = "CreateMonsterPosService"
+    },
+    {
+      Name = "UtilData",
+      Type = "UtilDataServiceShare"
+    },
+    {
+      Name = "BoardLogic",
+      Type = "BoardServiceLogic"
+    },
+    {
+      Name = "Maze",
+      Type = "MazeService"
+    },
+    {
+      Name = "BattleDamageStatisticsLogic",
+      Type = "BattleDamageStatisticsServiceLogic"
+    }
+  }
 }
 _class("PerformanceWorld", BaseWorld)
 PerformanceWorld = PerformanceWorld
--- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
 
-PerformanceWorld.Constructor = function(self, worldInfo)
-  -- function num : 0_0 , upvalues : _ENV
+function PerformanceWorld:Constructor(worldInfo)
   self._id = 0
   self._checkCrossSide = false
   local wEComponents = ComponentsLookup:New({})
@@ -86,277 +132,177 @@ PerformanceWorld.Constructor = function(self, worldInfo)
   self.BW_WEComponentsEnum = wEComponents
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.GetCameraObj = function(self)
-  -- function num : 0_1
-  return ((self._world)._request).Obj
+function PerformanceWorld:GetCameraObj()
+  return self._world._request.Obj
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.SetSceneGO = function(self, sceneGO)
-  -- function num : 0_2
+function PerformanceWorld:SetSceneGO(sceneGO)
   self._sceneGO = sceneGO
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.GetSceneGO = function(self)
-  -- function num : 0_3
+function PerformanceWorld:GetSceneGO()
   return self._sceneGO
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.GetRunningPosition = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function PerformanceWorld:GetRunningPosition()
   return WorldRunPostion.Performance
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.EventDispatcher = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  return (GameGlobal.EventDispatcher)()
+function PerformanceWorld:EventDispatcher()
+  return GameGlobal.EventDispatcher()
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.GetService = function(self, service_name)
-  -- function num : 0_6
+function PerformanceWorld:GetService(service_name)
   if self.BW_Services then
-    return (self.BW_Services):GetService(service_name)
+    return self.BW_Services:GetService(service_name)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.Internal_CreateComponents = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (CutsceneWorldAssembler.AssembleCutsceneWorldComponentsBase)(self)
-  ;
-  (CutsceneWorldAssembler.AssembleCutsceneWorldComponents)(self)
+function PerformanceWorld:Internal_CreateComponents()
+  CutsceneWorldAssembler.AssembleCutsceneWorldComponentsBase(self)
+  CutsceneWorldAssembler.AssembleCutsceneWorldComponents(self)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.Internal_CreateSystems = function(self)
-  -- function num : 0_8 , upvalues : _ENV, PerformanceModeConfig
+function PerformanceWorld:Internal_CreateSystems()
   self.BW_Systems = Systems:New()
   local systemList = {}
   local systemIndexList = {}
   local gamemode_config = PerformanceModeConfig
   for i = 1, #gamemode_config.Systems do
-    local system_config = (gamemode_config.Systems)[i]
+    local system_config = gamemode_config.Systems[i]
     local system_type = system_config.Type
-    local new_system = (Classes[system_type]):New(self)
-    ;
-    (self.BW_Systems):Add(new_system)
+    local new_system = Classes[system_type]:New(self)
+    self.BW_Systems:Add(new_system)
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.Internal_CreateServices = function(self)
-  -- function num : 0_9 , upvalues : _ENV, PerformanceModeConfig
+function PerformanceWorld:Internal_CreateServices()
   self.BW_Services = ServicesProvider:New()
   local gamemode_config = PerformanceModeConfig
   for i = 1, #gamemode_config.Services do
-    local service_config = (gamemode_config.Services)[i]
+    local service_config = gamemode_config.Services[i]
     local newService = self:_CreateCutsceneService(service_config)
     if newService then
-      (self.BW_Services):AddService(service_config.Name, newService)
+      self.BW_Services:AddService(service_config.Name, newService)
     end
   end
-  ;
-  (self.BW_Services):InitServices()
+  self.BW_Services:InitServices()
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld._CreateCutsceneService = function(self, serviceTypeConfig)
-  -- function num : 0_10 , upvalues : _ENV
+function PerformanceWorld:_CreateCutsceneService(serviceTypeConfig)
   local service_type = serviceTypeConfig.Type
   local service_name = serviceTypeConfig.Name
-  local newService = nil
+  local newService
   local pClass = Classes[service_type]
-  if pClass == nil then
-    (Log.error)("-----------Services:Error, Add Service = ", service_type)
+  if nil == pClass then
+    Log.error("-----------Services:Error, Add Service = ", service_type)
   end
   newService = pClass:New(self)
   return newService
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.IDGenerator = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  return (GameGlobal.GameEventListenerIDGenerator)()
+function PerformanceWorld:IDGenerator()
+  return GameGlobal.GameEventListenerIDGenerator()
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.UpdateWorld = function(self, deltaTimeMS)
-  -- function num : 0_12 , upvalues : _ENV
-  ((PerformanceWorld.super).UpdateWorld)(self, deltaTimeMS)
+function PerformanceWorld:UpdateWorld(deltaTimeMS)
+  PerformanceWorld.super.UpdateWorld(self, deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.GetWorldTimer = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  return (GameGlobal.Timer)()
+function PerformanceWorld:GetWorldTimer()
+  return GameGlobal.Timer()
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.IsDevelopEnv = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  do return Log.loglevel < ELogLevel.None end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function PerformanceWorld:IsDevelopEnv()
+  return Log.loglevel < ELogLevel.None
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.SetEntityIdByEntityConfigId = function(self, entity, entityConfigId)
-  -- function num : 0_15
+function PerformanceWorld:SetEntityIdByEntityConfigId(entity, entityConfigId)
   self._id = self._id + 1
   entity:SetID(self._id)
-  ;
-  (self._entities):Insert(self._id, entity)
+  self._entities:Insert(self._id, entity)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.SetRenderBoardEntity = function(self, e)
-  -- function num : 0_16
+function PerformanceWorld:SetRenderBoardEntity(e)
   self._renderBoardEntity = e
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.GetRenderBoardEntity = function(self)
-  -- function num : 0_17
+function PerformanceWorld:GetRenderBoardEntity()
   return self._renderBoardEntity
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.Internal_CreateComponents = function(self)
-  -- function num : 0_18 , upvalues : _ENV, PerformanceModeConfig
-  (WorldAssembler.AssembleWorldComponents)(self, PerformanceModeConfig)
+function PerformanceWorld:Internal_CreateComponents()
+  WorldAssembler.AssembleWorldComponents(self, PerformanceModeConfig)
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.GetBoardEntity = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function PerformanceWorld:GetBoardEntity()
   if EDITOR and CHECK_RENDER_ACCESS_LOGIC then
-    local debugInfo = (debug.getinfo)(2, "S")
+    local debugInfo = debug.getinfo(2, "S")
     local filePath = debugInfo.short_src
-    local renderIndex = (string.find)(filePath, "_r.lua")
+    local renderIndex = string.find(filePath, "_r.lua")
     if renderIndex ~= nil then
-      (Log.exception)("render file :", filePath, " call GetBoardEntity() ", (Log.traceback)())
+      Log.exception("render file :", filePath, " call GetBoardEntity() ", Log.traceback())
       return nil
     end
   end
-  do
-    return self._boardEntity
-  end
+  return self._boardEntity
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.GameFSM = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function PerformanceWorld:GameFSM()
   if EDITOR and CHECK_RENDER_ACCESS_LOGIC then
-    local debugInfo = (debug.getinfo)(2, "S")
+    local debugInfo = debug.getinfo(2, "S")
     local filePath = debugInfo.short_src
-    local renderIndex = (string.find)(filePath, "_r.lua")
+    local renderIndex = string.find(filePath, "_r.lua")
     if renderIndex ~= nil then
-      (Log.exception)("render file :", filePath, " call GameFSM() ", (Log.traceback)())
+      Log.exception("render file :", filePath, " call GameFSM() ", Log.traceback())
       return nil
     end
   end
-  do
-    return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).GameFSM)
-  end
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.GameFSM)
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.HasGameFSM = function(self)
-  -- function num : 0_21
-  do return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).GameFSM) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function PerformanceWorld:HasGameFSM()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.GameFSM) ~= nil
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.AddGameFSM = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).GameFSM
+function PerformanceWorld:AddGameFSM()
+  local index = self.BW_UniqueComponentsEnum.GameFSM
   local component = GameFSMComponent:New(self)
   component:Initialize()
   self:SetUniqueComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.RemoveGameFSM = function(self)
-  -- function num : 0_23
+function PerformanceWorld:RemoveGameFSM()
   if self:HasGameFSM() then
-    self:SetUniqueComponent((self.BW_UniqueComponentsEnum).GameFSM, nil)
+    self:SetUniqueComponent(self.BW_UniqueComponentsEnum.GameFSM, nil)
   end
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.MainCamera = function(self)
-  -- function num : 0_24
-  return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).MainCamera)
+function PerformanceWorld:MainCamera()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.MainCamera)
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.HasMainCamera = function(self)
-  -- function num : 0_25
-  do return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).MainCamera) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function PerformanceWorld:HasMainCamera()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.MainCamera) ~= nil
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.AddMainCamera = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).MainCamera
+function PerformanceWorld:AddMainCamera()
+  local index = self.BW_UniqueComponentsEnum.MainCamera
   local component = MainCameraComponent:New(self)
   component:Initialize()
   self:SetUniqueComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.RemoveMainCamera = function(self)
-  -- function num : 0_27
+function PerformanceWorld:RemoveMainCamera()
   if self:HasMainCamera() then
-    self:SetUniqueComponent((self.BW_UniqueComponentsEnum).MainCamera, nil)
+    self:SetUniqueComponent(self.BW_UniqueComponentsEnum.MainCamera, nil)
   end
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.MatchType = function(self)
-  -- function num : 0_28
+function PerformanceWorld:MatchType()
   return self._matchType
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R1 in 'UnsetPending'
-
-PerformanceWorld.SetBoardEntity = function(self, boardEntity)
-  -- function num : 0_29
+function PerformanceWorld:SetBoardEntity(boardEntity)
   self._boardEntity = boardEntity
 end
-
-

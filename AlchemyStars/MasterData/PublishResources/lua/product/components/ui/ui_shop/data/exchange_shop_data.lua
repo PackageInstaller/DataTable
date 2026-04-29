@@ -1,325 +1,181 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/data/exchange_shop_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ExchangeShopData", Object)
 ExchangeShopData = ExchangeShopData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ExchangeShopData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ExchangeShopData:Constructor()
   self._shopGoods = {
-[MarketType.Shop_XingZuan] = {}
-, 
-[MarketType.Shop_HuiYao] = {}
-, 
-[MarketType.Shop_GuangPo] = {}
-, 
-[MarketType.Shop_HongPiao] = {}
-, 
-[MarketType.Shop_Season] = {}
-, 
-[MarketType.Shop_BlackMarket] = {}
-}
+    [MarketType.Shop_XingZuan] = {},
+    [MarketType.Shop_HuiYao] = {},
+    [MarketType.Shop_GuangPo] = {},
+    [MarketType.Shop_HongPiao] = {},
+    [MarketType.Shop_Season] = {},
+    [MarketType.Shop_BlackMarket] = {}
+  }
   self.maxCount = 999
   self.costType = RoleAssetID.RoleAssetGlow
   self.refreshTime = {}
   self.today_refreshed_count = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeShopData.SetData = function(self)
-  -- function num : 0_1
+function ExchangeShopData:SetData()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeShopData.GetGoods = function(self, shopType)
-  -- function num : 0_2
-  return (self._shopGoods)[shopType]
+function ExchangeShopData:GetGoods(shopType)
+  return self._shopGoods[shopType]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeShopData.AddGoods = function(self, shop, goodsInfo, cfg)
-  -- function num : 0_3 , upvalues : _ENV
-  local data = nil
+function ExchangeShopData:AddGoods(shop, goodsInfo, cfg)
+  local data
   if shop == MarketType.Shop_BlackMarket then
     data = ExchangeShopBlackMarketGoods:New()
   else
     data = ExchangeShopGoods:New()
   end
   data:Refresh(goodsInfo, cfg)
-  ;
-  (table.insert)((self._shopGoods)[shop], data)
+  table.insert(self._shopGoods[shop], data)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeShopData.RefreshData = function(self, shop)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.GetModule)(ShopModule))
-  local module = nil
-  local info, cfgs = nil, nil
+function ExchangeShopData:RefreshData(shop)
+  local module = GameGlobal.GetModule(ShopModule)
+  local info, cfgs
   if shop == MarketType.Shop_XingZuan then
-    info = module:GetXingzuanData()
-    -- DECOMPILER ERROR at PC18: Overwrote pending register: R7 in 'AssignReg'
-
-    ;
-    (table.clear)((self._shopGoods)[R7_PC11])
-  else
-    -- DECOMPILER ERROR at PC29: Overwrote pending register: R4 in 'AssignReg'
-
-    if shop == MarketType.Shop_HuiYao then
-      info = module:GetHuiyaoData()
-      -- DECOMPILER ERROR at PC34: Overwrote pending register: R7 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC35: Overwrote pending register: R7 in 'AssignReg'
-
-      ;
-      (table.clear)((self._shopGoods)[R7_PC11])
-    else
-      -- DECOMPILER ERROR at PC46: Overwrote pending register: R4 in 'AssignReg'
-
-      if shop == MarketType.Shop_GuangPo then
-        info = module:GetGlowData()
-        -- DECOMPILER ERROR at PC51: Overwrote pending register: R7 in 'AssignReg'
-
-        -- DECOMPILER ERROR at PC52: Overwrote pending register: R7 in 'AssignReg'
-
-        ;
-        (table.clear)((self._shopGoods)[R7_PC11])
-      else
-        -- DECOMPILER ERROR at PC63: Overwrote pending register: R4 in 'AssignReg'
-
-        if shop == MarketType.Shop_HongPiao then
-          info = module:GetHongPiaoData()
-          -- DECOMPILER ERROR at PC68: Overwrote pending register: R7 in 'AssignReg'
-
-          -- DECOMPILER ERROR at PC69: Overwrote pending register: R7 in 'AssignReg'
-
-          ;
-          (table.clear)((self._shopGoods)[R7_PC11])
-        else
-          -- DECOMPILER ERROR at PC80: Overwrote pending register: R4 in 'AssignReg'
-
-          if shop == MarketType.Shop_Season then
-            info = module:GetSeasonData()
-            -- DECOMPILER ERROR at PC85: Overwrote pending register: R7 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC86: Overwrote pending register: R7 in 'AssignReg'
-
-            ;
-            (table.clear)((self._shopGoods)[R7_PC11])
-          else
-            -- DECOMPILER ERROR at PC97: Overwrote pending register: R4 in 'AssignReg'
-
-            if shop == MarketType.Shop_BlackMarket then
-              info = module:ExchangeGetBlackMarketData()
-              -- DECOMPILER ERROR at PC102: Overwrote pending register: R7 in 'AssignReg'
-
-              -- DECOMPILER ERROR at PC103: Overwrote pending register: R7 in 'AssignReg'
-
-              ;
-              (table.clear)((self._shopGoods)[R7_PC11])
-            end
-          end
-        end
-      end
-    end
+    info, cfgs, _ = module:GetXingzuanData()
+    table.clear(self._shopGoods[MarketType.Shop_XingZuan])
+  elseif shop == MarketType.Shop_HuiYao then
+    info, cfgs, _ = module:GetHuiyaoData()
+    table.clear(self._shopGoods[MarketType.Shop_HuiYao])
+  elseif shop == MarketType.Shop_GuangPo then
+    info, cfgs, _ = module:GetGlowData()
+    table.clear(self._shopGoods[MarketType.Shop_GuangPo])
+  elseif shop == MarketType.Shop_HongPiao then
+    info, cfgs, _ = module:GetHongPiaoData()
+    table.clear(self._shopGoods[MarketType.Shop_HongPiao])
+  elseif shop == MarketType.Shop_Season then
+    info, cfgs, _ = module:GetSeasonData()
+    table.clear(self._shopGoods[MarketType.Shop_Season])
+  elseif shop == MarketType.Shop_BlackMarket then
+    info, cfgs, _ = module:ExchangeGetBlackMarketData()
+    table.clear(self._shopGoods[MarketType.Shop_BlackMarket])
   end
   if info then
-    for _,goods in pairs(info.goods) do
+    for _, goods in pairs(info.goods) do
       local cfg = cfgs[goods.goods_id]
       self:AddGoods(shop, goods, cfg)
     end
   end
-  do
-    local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-    local now = (math.floor)(timeModule:GetServerTime() / 1000)
-    self._refreshTime = now + module:GetExchangeRefreshTime()
-    if not info.today_refreshed_count then
-      self.today_refreshed_count = not info or 0
-      self:SetRefreshInfo(info.cur_level_id)
-    end
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
+  local now = math.floor(timeModule:GetServerTime() / 1000)
+  self._refreshTime = now + module:GetExchangeRefreshTime()
+  if info then
+    self.today_refreshed_count = info.today_refreshed_count or 0
+    self:SetRefreshInfo(info.cur_level_id)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeShopData.RefreshTime = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  return self._refreshTime - (math.floor)(timeModule:GetServerTime() / 1000)
+function ExchangeShopData:RefreshTime()
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
+  return self._refreshTime - math.floor(timeModule:GetServerTime() / 1000)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeShopData.SetRefreshInfo = function(self, shopLevelId)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg = (Cfg.cfg_shop_level)[shopLevelId]
+function ExchangeShopData:SetRefreshInfo(shopLevelId)
+  local cfg = Cfg.cfg_shop_level[shopLevelId]
   if cfg then
-    local a = (string.split)(cfg.RefreshPrice, "|")
+    local a = string.split(cfg.RefreshPrice, "|")
     self.maxCount = cfg.RefreshMax
     self.costType = cfg.RefreshCostType
     for index = 1, self.maxCount do
       local count = index
-      if not a[index] then
-        do
-          local consume = tonumber(a[#a])
-          -- DECOMPILER ERROR at PC27: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (self.refreshTime)[count] = consume
-          -- DECOMPILER ERROR at PC28: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC28: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      local consume = tonumber(a[index] or a[#a])
+      self.refreshTime[count] = consume
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeShopData.GetCurCount = function(self)
-  -- function num : 0_7
+function ExchangeShopData:GetCurCount()
   return self.today_refreshed_count
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeShopData.GetMaxCount = function(self)
-  -- function num : 0_8
+function ExchangeShopData:GetMaxCount()
   return self.maxCount
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeShopData.GetCostType = function(self)
-  -- function num : 0_9
+function ExchangeShopData:GetCostType()
   return self.costType
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeShopData.GetConsume = function(self)
-  -- function num : 0_10
+function ExchangeShopData:GetConsume()
   local count = self.today_refreshed_count + 1
-  if self.maxCount < count then
+  if count > self.maxCount then
     count = self.maxCount
   end
-  return (self.refreshTime)[count]
+  return self.refreshTime[count]
 end
 
 _class("ExchangeShopGoods", DShopSecretGoodBase)
 ExchangeShopGoods = ExchangeShopGoods
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-ExchangeShopGoods.ShowRemain = function(self)
-  -- function num : 0_11
+function ExchangeShopGoods:ShowRemain()
   return true
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeShopGoods.IsUnLimit = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  do return (self.cfg)[ConfigKey.ConfigKey_SaleNum] == SpecialNum.MysteryGoodsUnlimitedNum end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function ExchangeShopGoods:IsUnLimit()
+  return self.cfg[ConfigKey.ConfigKey_SaleNum] == SpecialNum.MysteryGoodsUnlimitedNum
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeShopGoods.GetSeasonSaleTag = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  if self.cfg then
-    local saleTag = (self.cfg)[ConfigKey.ConfigKey_SaleTag]
-  end
+function ExchangeShopGoods:GetSeasonSaleTag()
+  local saleTag = self.cfg and self.cfg[ConfigKey.ConfigKey_SaleTag]
   if saleTag and saleTag == 1 then
     return 1
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeShopGoods.GrandPrize = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local cfg = (Cfg.cfg_shop_season_goods)[self.goodId]
-  do
-    if cfg then
-      local grandPrize = cfg.GrandPrize
-      return not grandPrize or grandPrize == 1
-    end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function ExchangeShopGoods:GrandPrize()
+  local cfg = Cfg.cfg_shop_season_goods[self.goodId]
+  if cfg then
+    local grandPrize = cfg.GrandPrize
+    return grandPrize and grandPrize == 1
   end
+  return false
 end
 
 _class("ExchangeShopBlackMarketGoods", ExchangeShopGoods)
 ExchangeShopBlackMarketGoods = ExchangeShopBlackMarketGoods
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
 
-ExchangeShopBlackMarketGoods.Refresh = function(self, goodinfo, goodconfig)
-  -- function num : 0_15 , upvalues : _ENV
-  (ExchangeShopGoods.Refresh)(self, goodinfo, goodconfig)
+function ExchangeShopBlackMarketGoods:Refresh(goodinfo, goodconfig)
+  ExchangeShopGoods.Refresh(self, goodinfo, goodconfig)
   if not self.cfg then
-    (Log.error)("服务器传来的商品配置缺失 商品id：" .. tostring(self.goodId) .. " 防御..使用本地配置")
-    self.localCfg = (Cfg.cfg_shop_blackmarket_goods)[self.goodId]
+    Log.error("服务器传来的商品配置缺失 商品id：" .. tostring(self.goodId) .. " 防御..使用本地配置")
+    self.localCfg = Cfg.cfg_shop_blackmarket_goods[self.goodId]
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeShopBlackMarketGoods.GetSaleTag = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local saleTag = (self.cfg and (self.cfg)[ConfigKey.ConfigKey_SaleTag]) or (self.localCfg and (self.localCfg).SaleTag) or 0
+function ExchangeShopBlackMarketGoods:GetSaleTag()
+  local saleTag = self.cfg and self.cfg[ConfigKey.ConfigKey_SaleTag] or self.localCfg and self.localCfg.SaleTag or 0
   if saleTag == 1 then
     return 1
-  else
-    if self.discount > 0 and self.discount < 100 then
-      return self.discount
-    else
-      if saleTag == 0 then
-        return 0
-      end
-    end
+  elseif 0 < self.discount and self.discount < 100 then
+    return self.discount
+  elseif saleTag == 0 then
+    return 0
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeShopBlackMarketGoods.ShowRemain = function(self)
-  -- function num : 0_17
+function ExchangeShopBlackMarketGoods:ShowRemain()
   return false
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeShopBlackMarketGoods.ShowSaleTag = function(self)
-  -- function num : 0_18
+function ExchangeShopBlackMarketGoods:ShowSaleTag()
   return true
 end
 
 _class("ExchangeSeasonShopViewData", Object)
 ExchangeSeasonShopViewData = ExchangeSeasonShopViewData
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
 
-ExchangeSeasonShopViewData.Constructor = function(self)
-  -- function num : 0_19
+function ExchangeSeasonShopViewData:Constructor()
   self.sin = false
   self.list = {}
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeSeasonShopViewData.AddData = function(self, exchangeShopGoods)
-  -- function num : 0_20 , upvalues : _ENV
-  (table.insert)(self.list, exchangeShopGoods)
+function ExchangeSeasonShopViewData:AddData(exchangeShopGoods)
+  table.insert(self.list, exchangeShopGoods)
 end
-
-

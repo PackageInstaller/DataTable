@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/collection/ui_n20_avg_collection_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20AVGCollectionItem", UICustomWidget)
 UIN20AVGCollectionItem = UIN20AVGCollectionItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20AVGCollectionItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN20AVGData()
+function UIN20AVGCollectionItem:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN20AVGData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGCollectionItem.OnShow = function(self)
-  -- function num : 0_1
+function UIN20AVGCollectionItem:OnShow()
   self.normal = self:GetGameObject("normal")
   self.lock = self:GetGameObject("lock")
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
@@ -26,83 +16,51 @@ UIN20AVGCollectionItem.OnShow = function(self)
   self.new = self:GetGameObject("new")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGCollectionItem.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgIcon):DestoryLastImage()
+function UIN20AVGCollectionItem:OnHide()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGCollectionItem.Flush = function(self, endId, clickCallback)
-  -- function num : 0_3
+function UIN20AVGCollectionItem:Flush(endId, clickCallback)
   self.endId = endId
-  local ending = (self.data):GetEndingById(endId)
+  local ending = self.data:GetEndingById(endId)
   local state = ending:AwardState()
   if state then
-    (self.normal):SetActive(true)
-    ;
-    (self.lock):SetActive(false)
-    local node = (self.data):GetNodeByEndId(ending.id)
-    ;
-    (self.imgIcon):LoadImage(node.cg)
-    ;
-    (self.txtName):SetText(ending.title)
+    self.normal:SetActive(true)
+    self.lock:SetActive(false)
+    local node = self.data:GetNodeByEndId(ending.id)
+    self.imgIcon:LoadImage(node.cg)
+    self.txtName:SetText(ending.title)
   else
-    do
-      ;
-      (self.normal):SetActive(false)
-      ;
-      (self.lock):SetActive(true)
-      self.clickCallback = clickCallback
-      self:FlushNew()
-      self:FlushRed()
-    end
+    self.normal:SetActive(false)
+    self.lock:SetActive(true)
   end
+  self.clickCallback = clickCallback
+  self:FlushNew()
+  self:FlushRed()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGCollectionItem.FlushNew = function(self)
-  -- function num : 0_4
-  local ending = (self.data):GetEndingById(self.endId)
+function UIN20AVGCollectionItem:FlushNew()
+  local ending = self.data:GetEndingById(self.endId)
   local hasNew = ending:HasNew()
-  ;
-  (self.new):SetActive(hasNew)
+  self.new:SetActive(hasNew)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGCollectionItem.FlushRed = function(self)
-  -- function num : 0_5
-  local ending = (self.data):GetEndingById(self.endId)
+function UIN20AVGCollectionItem:FlushRed()
+  local ending = self.data:GetEndingById(self.endId)
   local hasRed = ending:HasRed()
-  ;
-  (self.red):SetActive(hasRed)
+  self.red:SetActive(hasRed)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGCollectionItem.FlushSelect = function(self, isSelect)
-  -- function num : 0_6
-  (self.select):SetActive(isSelect)
+function UIN20AVGCollectionItem:FlushSelect(isSelect)
+  self.select:SetActive(isSelect)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGCollectionItem.EndId = function(self)
-  -- function num : 0_7
+function UIN20AVGCollectionItem:EndId()
   return self.endId
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGCollectionItem.btnOnClick = function(self, go)
-  -- function num : 0_8
+function UIN20AVGCollectionItem:btnOnClick(go)
   if self.clickCallback then
     self:clickCallback()
   end
 end
-
-

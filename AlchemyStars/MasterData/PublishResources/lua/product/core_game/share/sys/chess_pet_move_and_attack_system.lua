@@ -1,29 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/chess_pet_move_and_attack_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("ChessPetMoveAndAttackSystem", MainStateSystem)
 ChessPetMoveAndAttackSystem = ChessPetMoveAndAttackSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ChessPetMoveAndAttackSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ChessPetMoveAndAttackSystem:_GetMainStateID()
   return GameStateID.ChessPetMoveAndAttack
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetMoveAndAttackSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function ChessPetMoveAndAttackSystem:_OnMainStateEnter(TT)
+  local boardEntity = self._world:GetBoardEntity()
   local logicChessPathComponent = boardEntity:LogicChessPath()
   local chessPath = logicChessPathComponent:GetLogicChessPath()
   local entityID = logicChessPathComponent:GetLogicChessPetEntityID()
   local pickUpPos = logicChessPathComponent:GetLogicPickUpPos()
-  local chessPetEntity = (self._world):GetEntityByID(entityID)
-  local svc = (self._world):GetService("L2R")
+  local chessPetEntity = self._world:GetEntityByID(entityID)
+  local svc = self._world:GetService("L2R")
   self:_DoLogicChessPetMove()
   svc:L2RChessPathData()
   self:_DoRenderChessPetMove(TT)
@@ -34,59 +24,35 @@ ChessPetMoveAndAttackSystem._OnMainStateEnter = function(self, TT)
   local castSkillTaskID = self:_DoRenderChessPetAttack(TT)
   self:_WaitTasksEnd(TT, {castSkillTaskID})
   self:_DoRenderChessPetFinishAttack(TT)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChessPetMoveAndAttackFinish, 1)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChessPetMoveAndAttackFinish, 1)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetMoveAndAttackSystem._DoLogicChessPetMove = function(self)
-  -- function num : 0_2
-  local chessLogic = (self._world):GetService("ChessLogic")
+function ChessPetMoveAndAttackSystem:_DoLogicChessPetMove()
+  local chessLogic = self._world:GetService("ChessLogic")
   chessLogic:DoChessPetPathMove()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetMoveAndAttackSystem._DoLogicChessPetAttack = function(self)
-  -- function num : 0_3
-  local chessLogic = (self._world):GetService("ChessLogic")
+function ChessPetMoveAndAttackSystem:_DoLogicChessPetAttack()
+  local chessLogic = self._world:GetService("ChessLogic")
   chessLogic:DoChessPetAttack()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetMoveAndAttackSystem._DoLogicSetChessPetDir = function(self, chessPetEntity, pickUpPos, targetMovePos)
-  -- function num : 0_4
+function ChessPetMoveAndAttackSystem:_DoLogicSetChessPetDir(chessPetEntity, pickUpPos, targetMovePos)
   if pickUpPos then
-    local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+    local utilScopeSvc = self._world:GetService("UtilScopeCalc")
     local dir = utilScopeSvc:GetChessEntityGridDirWithPickUpPos(chessPetEntity, pickUpPos, targetMovePos)
     chessPetEntity:SetGridDirection(dir)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetMoveAndAttackSystem._DoRenderChessPetMove = function(self, TT)
-  -- function num : 0_5
+function ChessPetMoveAndAttackSystem:_DoRenderChessPetMove(TT)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetMoveAndAttackSystem._DoRenderChessPetAttack = function(self, TT)
-  -- function num : 0_6
+function ChessPetMoveAndAttackSystem:_DoRenderChessPetAttack(TT)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetMoveAndAttackSystem._DoRenderSetChessPetDir = function(self, TT, chessPetEntity)
-  -- function num : 0_7
+function ChessPetMoveAndAttackSystem:_DoRenderSetChessPetDir(TT, chessPetEntity)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetMoveAndAttackSystem._DoRenderChessPetFinishAttack = function(self, TT)
-  -- function num : 0_8
+function ChessPetMoveAndAttackSystem:_DoRenderChessPetFinishAttack(TT)
 end
-
-

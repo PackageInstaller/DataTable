@@ -1,52 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_feature_persona_skill_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetFeaturePersonaSkillInfo", UICustomWidget)
 UIWidgetFeaturePersonaSkillInfo = UIWidgetFeaturePersonaSkillInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetFeaturePersonaSkillInfo.OnShow = function(self)
-  -- function num : 0_0
+function UIWidgetFeaturePersonaSkillInfo:OnShow()
   self.oneLineHeight = 154
   self.twoLineHeight = 176
   self.threeLineHeight = 189
   self.lineMaxWidth = 678
   local sop = self:GetUIComponent("UISelectObjectPath", "preattack")
   sop:SpawnObject("UIPreAttackItem")
-  self.preAttackCell = (sop:GetAllSpawnList())[1]
-  ;
-  (self.preAttackCell):Enable(false)
+  self.preAttackCell = sop:GetAllSpawnList()[1]
+  self.preAttackCell:Enable(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkillInfo.ShowPreAttack = function(self)
-  -- function num : 0_1
+function UIWidgetFeaturePersonaSkillInfo:ShowPreAttack()
   if self.preAttackCell then
-    (self.preAttackCell):SetData(self.petPstId, self.skillID, false)
+    self.preAttackCell:SetData(self.petPstId, self.skillID, false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkillInfo.OnHide = function(self)
-  -- function num : 0_2
+function UIWidgetFeaturePersonaSkillInfo:OnHide()
   self._cannotCastReason = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkillInfo.ResetSkillCanCast = function(self)
-  -- function num : 0_3
+function UIWidgetFeaturePersonaSkillInfo:ResetSkillCanCast()
   self._cannotCastReason = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkillInfo.Init = function(self, featureType, skillID, maxEnergy, leftEnergy, canCast, castCallback, cancelCallBack)
-  -- function num : 0_4 , upvalues : _ENV
+function UIWidgetFeaturePersonaSkillInfo:Init(featureType, skillID, maxEnergy, leftEnergy, canCast, castCallback, cancelCallBack)
   self.featureType = featureType
   self.skillID = skillID
   self.leftPower = leftEnergy
@@ -66,141 +46,99 @@ UIWidgetFeaturePersonaSkillInfo.Init = function(self, featureType, skillID, maxE
     txtGo.color = Color.white
   else
     btnGo.interactable = false
-    txtGo.color = Color(0.48235294117647, 0.48235294117647, 0.48235294117647, 1)
+    txtGo.color = Color(0.4823529411764706, 0.4823529411764706, 0.4823529411764706, 1)
   end
-  local skillData = (ConfigServiceHelper.GetSkillConfigData)(self.skillID)
-  skillName:SetText((StringTable.Get)(skillData:GetSkillName()))
+  local skillData = ConfigServiceHelper.GetSkillConfigData(self.skillID)
+  skillName:SetText(StringTable.Get(skillData:GetSkillName()))
   if skillData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
-    (skillCD.gameObject):SetActive(false)
+    skillCD.gameObject:SetActive(false)
   else
-    ;
-    (skillCD.gameObject):SetActive(true)
+    skillCD.gameObject:SetActive(true)
     local MaxPower = skillData:GetSkillTriggerParam()
-    local cdOff = (BattleStatHelper.GetAllFeatureSkillCdOff)()
-    local specificCdOff = (BattleStatHelper.GetSpecificFeatureSkillCdOff)(self.featureType)
+    local cdOff = BattleStatHelper.GetAllFeatureSkillCdOff()
+    local specificCdOff = BattleStatHelper.GetSpecificFeatureSkillCdOff(self.featureType)
     MaxPower = MaxPower + cdOff + specificCdOff
     if MaxPower < 0 then
       MaxPower = 0
     end
-    skillCD:SetText((string.format)((StringTable.Get)("str_common_cooldown_round"), MaxPower))
+    skillCD:SetText(string.format(StringTable.Get("str_common_cooldown_round"), MaxPower))
   end
-  do
-    local mask = self:GetUIComponent("RevolvingTextWithDynamicScroll", "mask")
-    mask:OnRefreshRevolving()
-    local skillDescString = skillData:GetPetSkillDes()
-    local skillDescUtf8Len = #skillDescString
-    skillDesc:SetText(skillDescString)
-    local skillInfo = self:GetGameObject("skillInfo")
-    skillInfo:SetActive(true)
-    ;
-    (UIHelper.RefreshLayout)(self:GetUIComponent("RectTransform", "skillInfo"))
-    self._cancelSkillInfo = self:GetGameObject("cancelSkillInfo")
-    ;
-    (self._cancelSkillInfo):SetActive(false)
-  end
+  local mask = self:GetUIComponent("RevolvingTextWithDynamicScroll", "mask")
+  mask:OnRefreshRevolving()
+  local skillDescString = skillData:GetPetSkillDes()
+  local skillDescUtf8Len = #skillDescString
+  skillDesc:SetText(skillDescString)
+  local skillInfo = self:GetGameObject("skillInfo")
+  skillInfo:SetActive(true)
+  UIHelper.RefreshLayout(self:GetUIComponent("RectTransform", "skillInfo"))
+  self._cancelSkillInfo = self:GetGameObject("cancelSkillInfo")
+  self._cancelSkillInfo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkillInfo.BtnGoOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIWidgetFeaturePersonaSkillInfo", input = "btnGoOnClick", 
-args = {}
-})
+function UIWidgetFeaturePersonaSkillInfo:BtnGoOnClick()
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIWidgetFeaturePersonaSkillInfo",
+    input = "btnGoOnClick",
+    args = {}
+  })
   if not self.canCast then
     if not self:MissionCanCast() then
-      local text = (StringTable.Get)("str_match_pickup_skill_limit")
-      ;
-      (ToastManager.ShowToast)(text)
+      local text = StringTable.Get("str_match_pickup_skill_limit")
+      ToastManager.ShowToast(text)
+    elseif not BattleStatHelper.CheckCanCastActiveSkill_TeamLeaderCondi(self.petPstId, self.skillID) then
+      local text = StringTable.Get("str_battle_team_leader_active_skill_disabled")
+      ToastManager.ShowToast(text)
+    elseif self._cannotCastReason then
+      local textKey = ActiveSkillCannotCastReasonText[self._cannotCastReason]
+      local text = StringTable.Get(textKey)
+      ToastManager.ShowToast(text)
     else
-      do
-        if not (BattleStatHelper.CheckCanCastActiveSkill_TeamLeaderCondi)(self.petPstId, self.skillID) then
-          local text = (StringTable.Get)("str_battle_team_leader_active_skill_disabled")
-          ;
-          (ToastManager.ShowToast)(text)
-        else
-          do
-            if self._cannotCastReason then
-              local textKey = ActiveSkillCannotCastReasonText[self._cannotCastReason]
-              local text = (StringTable.Get)(textKey)
-              ;
-              (ToastManager.ShowToast)(text)
-            else
-              do
-                do
-                  local text = (StringTable.Get)("str_match_cannot_cast_skill_reason")
-                  ;
-                  (ToastManager.ShowToast)(text)
-                  if self.castCallback and self.canCast then
-                    local skillConfigData = (ConfigServiceHelper.GetSkillConfigData)(self.skillID)
-                    local pickUpType = skillConfigData:GetSkillPickType()
-                    if self:MissionCanCast() then
-                      (self.castCallback)(self.skillID, pickUpType)
-                    else
-                      local text = (StringTable.Get)("str_match_pickup_skill_limit")
-                      ;
-                      (ToastManager.ShowToast)(text)
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+      local text = StringTable.Get("str_match_cannot_cast_skill_reason")
+      ToastManager.ShowToast(text)
+    end
+  end
+  if self.castCallback and self.canCast then
+    local skillConfigData = ConfigServiceHelper.GetSkillConfigData(self.skillID)
+    local pickUpType = skillConfigData:GetSkillPickType()
+    if self:MissionCanCast() then
+      self.castCallback(self.skillID, pickUpType)
+    else
+      local text = StringTable.Get("str_match_pickup_skill_limit")
+      ToastManager.ShowToast(text)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkillInfo.MissionCanCast = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIWidgetFeaturePersonaSkillInfo:MissionCanCast()
   do return true end
-  local matchModule = (GameGlobal.GetModule)(MatchModule)
+  local matchModule = GameGlobal.GetModule(MatchModule)
   local enterData = matchModule:GetMatchEnterData()
   if enterData:GetMatchType() == MatchType.MT_Mission then
-    local currentMissionId = (enterData:GetMissionCreateInfo()).mission_id
-    local current_mission_cfg = (Cfg.cfg_mission)[currentMissionId]
+    local currentMissionId = enterData:GetMissionCreateInfo().mission_id
+    local current_mission_cfg = Cfg.cfg_mission[currentMissionId]
     if current_mission_cfg == nil then
       return true
     end
     local missionCanCast = current_mission_cfg.CastSkillLimit
     return missionCanCast
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkillInfo.ShowCancelBtn = function(self, isShow)
-  -- function num : 0_7
-  (self._cancelSkillInfo):SetActive(isShow)
+function UIWidgetFeaturePersonaSkillInfo:ShowCancelBtn(isShow)
+  self._cancelSkillInfo:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkillInfo.GetCastSkillBtn = function(self)
-  -- function num : 0_8
+function UIWidgetFeaturePersonaSkillInfo:GetCastSkillBtn()
   return self._castBtn
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkillInfo.GetCurActiveSkillID = function(self)
-  -- function num : 0_9
+function UIWidgetFeaturePersonaSkillInfo:GetCurActiveSkillID()
   return self.skillID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkillInfo.CancelSkillBtnOnClick = function(self, go)
-  -- function num : 0_10
+function UIWidgetFeaturePersonaSkillInfo:CancelSkillBtnOnClick(go)
   if self.cancelCallBack then
-    (self.cancelCallBack)()
+    self.cancelCallBack()
   end
 end
-
-

@@ -1,87 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/ui_summer_1/ui_summer_1_intro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummer1Intro", UIController)
 UISummer1Intro = UISummer1Intro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummer1Intro.OnShow = function(self, uiParams)
-  -- function num : 0_0
-  self.anim = (self:GetGameObject()):GetComponent("Animation")
+function UISummer1Intro:OnShow(uiParams)
+  self.anim = self:GetGameObject():GetComponent("Animation")
   self.Content = self:GetUIComponent("UISelectObjectPath", "Content")
   self:Flush()
   self:PlayAnim(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Intro.OnHide = function(self)
-  -- function num : 0_1
+function UISummer1Intro:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Intro.Flush = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISummer1Intro:Flush()
   local n = 0
-  while 1 do
+  while true do
     n = n + 1
-    local keyHead = (StringTable.Has)("str_summer_i_activity_intro_head_" .. n)
+    local keyHead = StringTable.Has("str_summer_i_activity_intro_head_" .. n)
     if not keyHead then
       n = n - 1
       break
     end
   end
-  do
-    if n <= 0 then
-      (Log.fatal)("### no [str_summer_i_activity_intro_head_n] in str_summer")
-      return 
-    end
-    ;
-    (self.Content):SpawnObjects("UISummer1IntroItem", n)
-    local uis = (self.Content):GetAllSpawnList()
-    for i,ui in ipairs(uis) do
-      local head = (StringTable.Get)("str_summer_i_activity_intro_head_" .. i)
-      local body = (StringTable.Get)("str_summer_i_activity_intro_body_" .. i)
-      ui:Flush(head, body)
-    end
+  if n <= 0 then
+    Log.fatal("### no [str_summer_i_activity_intro_head_n] in str_summer")
+    return
+  end
+  self.Content:SpawnObjects("UISummer1IntroItem", n)
+  local uis = self.Content:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
+    local head = StringTable.Get("str_summer_i_activity_intro_head_" .. i)
+    local body = StringTable.Get("str_summer_i_activity_intro_body_" .. i)
+    ui:Flush(head, body)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Intro.btnCloseOnClick = function(self, go)
-  -- function num : 0_3
+function UISummer1Intro:btnCloseOnClick(go)
   self:PlayAnim(false, function()
-    -- function num : 0_3_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Intro.PlayAnim = function(self, isIn, callback)
-  -- function num : 0_4 , upvalues : _ENV
+function UISummer1Intro:PlayAnim(isIn, callback)
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, isIn, _ENV, callback
     self:Lock("UISummer1IntroPlayAnim")
     if isIn then
-      (self.anim):Play("uieff_Activity_UISummer1Intro_In")
+      self.anim:Play("uieff_Activity_UISummer1Intro_In")
       YIELD(TT, 500)
     else
-      ;
-      (self.anim):Play("uieff_Activity_UISummer1Intro_Out")
+      self.anim:Play("uieff_Activity_UISummer1Intro_Out")
       YIELD(TT, 500)
     end
     self:UnLock("UISummer1IntroPlayAnim")
     if callback then
       callback()
     end
-  end
-, self)
+  end, self)
 end
-
-

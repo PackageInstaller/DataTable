@@ -1,114 +1,80 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_component/ui_transition_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITransitionComponent", UIComponent)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UITransitionComponent.Constructor = function(self)
-  -- function num : 0_0
+function UITransitionComponent:Constructor()
   self.enterAnims = nil
   self.leaveAnims = nil
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UITransitionComponent.AfterShow = function(self, TT)
-  -- function num : 0_1
+function UITransitionComponent:AfterShow(TT)
   self:PlayEnterAnim(TT)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UITransitionComponent.BeforeHide = function(self, TT)
-  -- function num : 0_2
-  if not (self.uiController).SkipTransitionAmin then
+function UITransitionComponent:BeforeHide(TT)
+  if not self.uiController.SkipTransitionAmin then
     self:PlayLeaveAnim(TT)
   end
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-UITransitionComponent.PlayEnterAnim = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function UITransitionComponent:PlayEnterAnim(TT)
   if not self.enterAnims then
     self.enterAnims = SortedArray:New(Algorithm.COMPARE_CUSTOM, function(anim1, anim2)
-    -- function num : 0_3_0
-    if anim2.EnterTime < anim1.EnterTime then
-      return -1
-    else
-      if anim1.EnterTime == anim2.EnterTime then
+      if anim1.EnterTime > anim2.EnterTime then
+        return -1
+      elseif anim1.EnterTime == anim2.EnterTime then
         return 0
       else
         return 1
       end
-    end
-  end
-)
-    local resCmps = (UIHelper.GetAllTransitionComponents)((self.uiController):GetGameObject())
+    end)
+    local resCmps = UIHelper.GetAllTransitionComponents(self.uiController:GetGameObject())
     if resCmps then
       for i = 1, resCmps.Length do
-        (self.enterAnims):Insert(resCmps[i - 1])
+        self.enterAnims:Insert(resCmps[i - 1])
       end
     end
   end
-  do
-    for i = 1, (self.enterAnims):Size() do
-      ((self.enterAnims):GetAt(i)):PlayEnterAnimation(true)
-    end
-    local enterTime = 0
-    if (self.enterAnims):Size() > 0 then
-      enterTime = ((self.enterAnims):GetAt(1)).EnterTime
-    end
-    YIELD(TT, enterTime)
+  for i = 1, self.enterAnims:Size() do
+    self.enterAnims:GetAt(i):PlayEnterAnimation(true)
   end
+  local enterTime = 0
+  if self.enterAnims:Size() > 0 then
+    enterTime = self.enterAnims:GetAt(1).EnterTime
+  end
+  YIELD(TT, enterTime)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-UITransitionComponent.PlayLeaveAnim = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UITransitionComponent:PlayLeaveAnim(TT)
   if not self.leaveAnims then
     self.leaveAnims = SortedArray:New(Algorithm.COMPARE_CUSTOM, function(anim1, anim2)
-    -- function num : 0_4_0
-    if anim2.RestTime < anim1.RestTime then
-      return -1
-    else
-      if anim1.RestTime == anim2.RestTime then
+      if anim1.RestTime > anim2.RestTime then
+        return -1
+      elseif anim1.RestTime == anim2.RestTime then
         return 0
       else
         return 1
       end
-    end
-  end
-)
-    local resCmps = (UIHelper.GetAllTransitionComponents)((self.uiController):GetGameObject())
+    end)
+    local resCmps = UIHelper.GetAllTransitionComponents(self.uiController:GetGameObject())
     if resCmps then
       for i = 1, resCmps.Length do
-        (self.leaveAnims):Insert(resCmps[i - 1])
+        self.leaveAnims:Insert(resCmps[i - 1])
       end
     end
   end
-  do
-    for i = 1, (self.leaveAnims):Size() do
-      ((self.leaveAnims):GetAt(i)):PlayLeaveAnimation(true)
-    end
-    local restTime = 0
-    if (self.leaveAnims):Size() > 0 then
-      restTime = ((self.leaveAnims):GetAt(1)).RestTime
-    end
-    for i = 1, (self.leaveAnims):Size() do
-      local anim = (((self.leaveAnims):GetAt(i)).gameObject):GetComponent("Animation")
-      anim.enabled = true
-      ;
-      (anim:get_Item((anim.clip).name)).time = ((self.leaveAnims):GetAt(i)).EnterTime / 1000
-    end
-    YIELD(TT, restTime)
-    if restTime > 0 then
-      YIELD(TT)
-    end
+  for i = 1, self.leaveAnims:Size() do
+    self.leaveAnims:GetAt(i):PlayLeaveAnimation(true)
+  end
+  local restTime = 0
+  if self.leaveAnims:Size() > 0 then
+    restTime = self.leaveAnims:GetAt(1).RestTime
+  end
+  for i = 1, self.leaveAnims:Size() do
+    local anim = self.leaveAnims:GetAt(i).gameObject:GetComponent("Animation")
+    anim.enabled = true
+    anim:get_Item(anim.clip.name).time = self.leaveAnims:GetAt(i).EnterTime / 1000
+  end
+  YIELD(TT, restTime)
+  if 0 < restTime then
+    YIELD(TT)
   end
 end
-
-

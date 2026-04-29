@@ -1,91 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_ruguelike/ui_rugue_like_defeated_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIRugueLikeDefeatedController", UIController)
 UIRugueLikeDefeatedController = UIRugueLikeDefeatedController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIRugueLikeDefeatedController.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UIRugueLikeDefeatedController:OnShow(uiParam)
   local show_save = uiParam[1]
   if show_save then
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_maze_sava_archieve_or_not"), function(param)
-    -- function num : 0_0_0 , upvalues : self, _ENV
-    self:SaveBattleArchive(true)
-    ;
-    ((GameGlobal.UIStateManager)()):Lock("SaveBattleArchive")
-  end
-, nil, function(param)
-    -- function num : 0_0_1 , upvalues : self
-    self:SaveBattleArchive(false)
-  end
-, nil)
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_maze_sava_archieve_or_not"), function(param)
+      self:SaveBattleArchive(true)
+      GameGlobal.UIStateManager():Lock("SaveBattleArchive")
+    end, nil, function(param)
+      self:SaveBattleArchive(false)
+    end, nil)
   else
     self:SaveBattleArchive(false)
   end
-  local funcModule = (self:GetModule(RoleModule)).uiModule
+  local funcModule = self:GetModule(RoleModule).uiModule
   funcModule:LockAchievementFinishPanel(false)
   local againFightBtn = self:GetGameObject("againFightBtn")
-  local againActive = (HelperProxy:GetInstance()):AgainFightActive(MatchType.MT_Maze, false)
+  local againActive = HelperProxy:GetInstance():AgainFightActive(MatchType.MT_Maze, false)
   againFightBtn:SetActive(againActive)
   self:AttachEvent(GameEventType.MazeInfoUpdate, function()
-    -- function num : 0_0_2 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):UnLock("SaveBattleArchive")
-  end
-)
+    GameGlobal.UIStateManager():UnLock("SaveBattleArchive")
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeDefeatedController.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):UnLock("SaveBattleArchive")
+function UIRugueLikeDefeatedController:OnHide()
+  GameGlobal.UIStateManager():UnLock("SaveBattleArchive")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeDefeatedController.bgOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (GameGlobal:GetInstance()):ExitCoreGame()
-  ;
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Maze_Enter, "mj_01")
+function UIRugueLikeDefeatedController:bgOnClick()
+  GameGlobal:GetInstance():ExitCoreGame()
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Maze_Enter, "mj_01")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeDefeatedController.againFightBtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local ctx = (self:GetModule(MissionModule)):TeamCtx()
-  local teamInfo = (self:GetModule(MazeModule)):GetFormationInfo()
+function UIRugueLikeDefeatedController:againFightBtnOnClick()
+  local ctx = self:GetModule(MissionModule):TeamCtx()
+  local teamInfo = self:GetModule(MazeModule):GetFormationInfo()
   ctx:InitMazeTeam(teamInfo)
-  ;
-  (GameGlobal:GetInstance()):ExitCoreGame()
-  local ctx = (self:GetModule(MissionModule)):TeamCtx()
+  GameGlobal:GetInstance():ExitCoreGame()
+  local ctx = self:GetModule(MissionModule):TeamCtx()
   ctx:SetFightAgain(true)
   ctx:ShowDialogUITeams(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeDefeatedController.SaveBattleArchive = function(self, save)
-  -- function num : 0_4 , upvalues : _ENV
-  local md = (GameGlobal.GetModule)(MatchModule)
+function UIRugueLikeDefeatedController:SaveBattleArchive(save)
+  local md = GameGlobal.GetModule(MatchModule)
   local result = md:GetMatchResult()
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((result.maze_result)[1]).save_archive = save
+  result.maze_result[1].save_archive = save
   md:GameOver(result)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeDefeatedController.bgOnClick_MazeTest = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (GameGlobal:GetInstance()):ExitCoreGame()
+function UIRugueLikeDefeatedController:bgOnClick_MazeTest()
+  GameGlobal:GetInstance():ExitCoreGame()
   self:CloseDialog()
 end
-
-

@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s8/help/ui_s8_helper_banner_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS8HelperBannerItem", UICustomWidget)
 UIS8HelperBannerItem = UIS8HelperBannerItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS8HelperBannerItem.OnShow = function(self)
-  -- function num : 0_0
+function UIS8HelperBannerItem:OnShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS8HelperBannerItem.OnHide = function(self)
-  -- function num : 0_1
+function UIS8HelperBannerItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS8HelperBannerItem.SetData = function(self, cfg, callbcak, begindrag, drag, enddrag)
-  -- function num : 0_2 , upvalues : _ENV
+function UIS8HelperBannerItem:SetData(cfg, callbcak, begindrag, drag, enddrag)
   self._cfg = cfg
   self._callback = callbcak
   self._beginDrag = begindrag
@@ -28,46 +15,33 @@ UIS8HelperBannerItem.SetData = function(self, cfg, callbcak, begindrag, drag, en
   self._endDrag = enddrag
   self._btn = self:GetGameObject("btn")
   self._icon = self:GetUIComponent("RawImageLoader", "ad")
-  ;
-  (self._icon):LoadImage(((self._cfg).data).Icon)
+  self._icon:LoadImage(self._cfg.data.Icon)
   self._descGo = self:GetGameObject("Desc")
   self._desc = self:GetUIComponent("UILocalizationText", "Desc")
   self._titleGo = self:GetGameObject("Title")
   self._title = self:GetUIComponent("UILocalizationText", "Title")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btn), UIEvent.BeginDrag, self._beginDrag)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btn), UIEvent.Drag, self._drag)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btn), UIEvent.EndDrag, self._endDrag)
-  if ((self._cfg).data).Title then
-    (self._titleGo):SetActive(true)
-    ;
-    (self._title):SetText((StringTable.Get)(((self._cfg).data).Title))
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btn), UIEvent.BeginDrag, self._beginDrag)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btn), UIEvent.Drag, self._drag)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btn), UIEvent.EndDrag, self._endDrag)
+  if self._cfg.data.Title then
+    self._titleGo:SetActive(true)
+    self._title:SetText(StringTable.Get(self._cfg.data.Title))
   else
-    ;
-    (self._title):SetActive(false)
+    self._title:SetActive(false)
   end
-  if ((self._cfg).data).Desc then
-    (self._descGo):SetActive(true)
-    ;
-    (self._desc):SetText((StringTable.Get)(((self._cfg).data).Desc))
+  if self._cfg.data.Desc then
+    self._descGo:SetActive(true)
+    self._desc:SetText(StringTable.Get(self._cfg.data.Desc))
   else
-    ;
-    (self._descGo):SetActive(false)
+    self._descGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS8HelperBannerItem.BtnOnClick = function(self)
-  -- function num : 0_3
+function UIS8HelperBannerItem:BtnOnClick()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS8HelperBannerItem.Dispose = function(self)
-  -- function num : 0_4
+function UIS8HelperBannerItem:Dispose()
   self._cfg = nil
   self._callback = nil
   self._icon = nil
 end
-
-

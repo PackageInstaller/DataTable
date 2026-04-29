@@ -1,51 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/mirage_force_close_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MirageForceCloseCommand", IEntityCommand)
 MirageForceCloseCommand = MirageForceCloseCommand
--- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
 MirageForceCloseCommand.CommandType = "MirageForceClose"
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
 
-MirageForceCloseCommand.Constructor = function(self)
-  -- function num : 0_0
+function MirageForceCloseCommand:Constructor()
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageForceCloseCommand.GetCommandType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function MirageForceCloseCommand:GetCommandType()
   return MirageForceCloseCommand.CommandType
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageForceCloseCommand.GetExecStateID = function(self, runAtClient)
-  -- function num : 0_2
+function MirageForceCloseCommand:GetExecStateID(runAtClient)
   return 0
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageForceCloseCommand.IsExecExcluded = function(self)
-  -- function num : 0_3
+function MirageForceCloseCommand:IsExecExcluded()
   return 1
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageForceCloseCommand.DependRoundCount = function(self)
-  -- function num : 0_4
+function MirageForceCloseCommand:DependRoundCount()
   return true
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageForceCloseCommand.ToNetMessage = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function MirageForceCloseCommand:ToNetMessage()
   local msg = CEventMirageForceCloseCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
@@ -55,15 +31,10 @@ MirageForceCloseCommand.ToNetMessage = function(self)
   return msg
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageForceCloseCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_6
+function MirageForceCloseCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
   self.IsAutoFight = msg.IsAutoFight
   self.CmdIndex = msg.CmdIndex
 end
-
-

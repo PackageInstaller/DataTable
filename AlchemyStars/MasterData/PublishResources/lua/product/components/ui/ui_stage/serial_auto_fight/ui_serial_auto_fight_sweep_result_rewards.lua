@@ -1,41 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_stage/serial_auto_fight/ui_serial_auto_fight_sweep_result_rewards.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISerialAutoFightSweepResultRewards", UICustomWidget)
 UISerialAutoFightSweepResultRewards = UISerialAutoFightSweepResultRewards
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISerialAutoFightSweepResultRewards.OnShow = function(self)
-  -- function num : 0_0
+function UISerialAutoFightSweepResultRewards:OnShow()
   self._listData = {}
   self._curProgress = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultRewards.OnHide = function(self)
-  -- function num : 0_1
+function UISerialAutoFightSweepResultRewards:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultRewards.SetStyleUI = function(self, styleName)
-  -- function num : 0_2 , upvalues : _ENV
+function UISerialAutoFightSweepResultRewards:SetStyleUI(styleName)
   self._styleName = styleName
-  ;
-  (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "line01", self, "_line")
-  ;
-  (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "titleColor", self, "_txtTitle")
-  ;
-  (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "titleColor", self, "_txtProgress")
+  UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "line01", self, "_line")
+  UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "titleColor", self, "_txtTitle")
+  UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "titleColor", self, "_txtProgress")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultRewards.SetData = function(self, maxProgress, tipsCallback)
-  -- function num : 0_3
+function UISerialAutoFightSweepResultRewards:SetData(maxProgress, tipsCallback)
   self._tipsCallback = tipsCallback
   self._listData = {}
   self._curProgress = 0
@@ -43,35 +24,24 @@ UISerialAutoFightSweepResultRewards.SetData = function(self, maxProgress, tipsCa
   self:_SetProgress(self._curProgress, self._maxProgress)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultRewards.Refresh = function(self, curProgress, matchRes)
-  -- function num : 0_4 , upvalues : _ENV
+function UISerialAutoFightSweepResultRewards:Refresh(curProgress, matchRes)
   if curProgress ~= #self._listData + 1 then
-    (Log.error)("UISerialAutoFightSweepResultRewards:Refresh() curProgress wrong")
-    return 
+    Log.error("UISerialAutoFightSweepResultRewards:Refresh() curProgress wrong")
+    return
   end
   self._curProgress = curProgress
   self:_SetProgress(self._curProgress, self._maxProgress)
-  ;
-  (table.insert)(self._listData, matchRes)
+  table.insert(self._listData, matchRes)
   self:_SetDynamicList()
   self:_DynamicListPlayAnimation()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultRewards._SetProgress = function(self, curProgress, maxProgress)
-  -- function num : 0_5 , upvalues : _ENV
-  local str = (StringTable.Get)("str_battle_auto_fight_sweep_progress", curProgress, maxProgress)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtProgress", str)
+function UISerialAutoFightSweepResultRewards:_SetProgress(curProgress, maxProgress)
+  local str = StringTable.Get("str_battle_auto_fight_sweep_progress", curProgress, maxProgress)
+  UIWidgetHelper.SetLocalizationText(self, "_txtProgress", str)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultRewards._GetRewards = function(self, matchRes)
-  -- function num : 0_6
+function UISerialAutoFightSweepResultRewards:_GetRewards(matchRes)
   local allRewards = {}
   self:_AppendRewards(allRewards, "m_activity_rewards", matchRes.m_activity_rewards)
   self:_AppendRewards(allRewards, "m_back_rewards", matchRes.m_back_rewards)
@@ -84,67 +54,47 @@ UISerialAutoFightSweepResultRewards._GetRewards = function(self, matchRes)
   return allRewards
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultRewards._AppendRewards = function(self, tb, type, rewards)
-  -- function num : 0_7 , upvalues : _ENV
-  if not rewards then
-    rewards = {}
-  end
+function UISerialAutoFightSweepResultRewards:_AppendRewards(tb, type, rewards)
+  rewards = rewards or {}
   self:_RemoveExp(rewards)
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   itemModule:BattleResultSortAsset(rewards)
-  for i,roleAsset in ipairs(rewards) do
-    (table.insert)(tb, {type = type, roleAsset = roleAsset})
+  for i, roleAsset in ipairs(rewards) do
+    table.insert(tb, {type = type, roleAsset = roleAsset})
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultRewards._RemoveExp = function(self, rewards)
-  -- function num : 0_8 , upvalues : _ENV
+function UISerialAutoFightSweepResultRewards:_RemoveExp(rewards)
   local eraseIDList = {}
-  for i,roleAsset in ipairs(rewards) do
+  for i, roleAsset in ipairs(rewards) do
     if roleAsset.assetid == RoleAssetID.RoleAssetExp then
-      (table.insert)(eraseIDList, roleAsset)
+      table.insert(eraseIDList, roleAsset)
     end
   end
-  for i,v in ipairs(eraseIDList) do
-    (table.removev)(rewards, v)
+  for i, v in ipairs(eraseIDList) do
+    table.removev(rewards, v)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultRewards._SetDynamicList = function(self, matchRes)
-  -- function num : 0_9 , upvalues : _ENV
+function UISerialAutoFightSweepResultRewards:_SetDynamicList(matchRes)
   local svRect = self:GetUIComponent("ScrollRect", "DynamicList")
   if not self._dynamicListHelper then
     self._dynamicList = self:GetUIComponent("UIDynamicScrollView", "DynamicList")
     self._dynamicListHelper = UIActivityDynamicListHelper:New(self, self._dynamicList, "UISerialAutoFightSweepResultItem", function(listItem, itemIndex)
-    -- function num : 0_9_0 , upvalues : self, svRect
-    listItem:SetStyleUI(self._styleName)
-    local rewards = self:_GetRewards((self._listData)[itemIndex])
-    listItem:SetData(#self._listData, itemIndex, rewards, svRect, self._tipsCallback)
-  end
-)
+      listItem:SetStyleUI(self._styleName)
+      local rewards = self:_GetRewards(self._listData[itemIndex])
+      listItem:SetData(#self._listData, itemIndex, rewards, svRect, self._tipsCallback)
+    end)
   end
   local itemCount = #self._listData
   local itemCountPerRow = 1
-  ;
-  (self._dynamicListHelper):Refresh(itemCount, itemCountPerRow)
-  ;
-  (self._dynamicList):MovePanelToItemIndex(itemCount, 0)
+  self._dynamicListHelper:Refresh(itemCount, itemCountPerRow)
+  self._dynamicList:MovePanelToItemIndex(itemCount, 0)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultRewards._DynamicListPlayAnimation = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local tb = (self._dynamicListHelper):GetVisibleItem()
-  for _,v in ipairs(tb) do
-    (v.item):PlayAnimationIn(v.index)
+function UISerialAutoFightSweepResultRewards:_DynamicListPlayAnimation()
+  local tb = self._dynamicListHelper:GetVisibleItem()
+  for _, v in ipairs(tb) do
+    v.item:PlayAnimationIn(v.index)
   end
 end
-
-

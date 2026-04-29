@@ -1,80 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/collages/ui_season_s3_collages.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonS3Collages", UIController)
 UISeasonS3Collages = UISeasonS3Collages
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonS3Collages.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonS3Collages:OnShow(uiParams)
   self:InitWidget()
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_backBtns", "UICommonTopButton")
+  local obj = UIWidgetHelper.SpawnObject(self, "_backBtns", "UICommonTopButton")
   obj:SetData(function()
-    -- function num : 0_0_0 , upvalues : self
     self:StartTask(self._OnExit, self)
-  end
-, function()
-    -- function num : 0_0_1 , upvalues : _ENV
-    (UISeasonHelper.ShowSeasonHelperBook)(UISeasonHelperTabIndex.Collage)
-  end
-, nil, true, nil)
+  end, function()
+    UISeasonHelper.ShowSeasonHelperBook(UISeasonHelperTabIndex.Collage)
+  end, nil, true, nil)
   self._collection = nil
   self._cg = nil
   self._music = nil
-  self._curSeasonobj = ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonObj()
-  local uiModule = (GameGlobal.GetUIModule)(SeasonModule)
-  self._seasonID = (self._curSeasonobj):GetSeasonID()
+  self._curSeasonobj = GameGlobal.GetModule(SeasonModule):GetCurSeasonObj()
+  local uiModule = GameGlobal.GetUIModule(SeasonModule)
+  self._seasonID = self._curSeasonobj:GetSeasonID()
   if self._seasonID ~= UISeasonID.S3 then
-    (Log.exception)("当前赛季不是s3")
+    Log.exception("当前赛季不是s3")
   end
   self._collageData = uiModule:GetCollageData()
-  ;
-  (self._collageData):FlushAllCollages()
+  self._collageData:FlushAllCollages()
   local collectionBtn = self:GetUIComponent("UISelectObjectPath", "CollectionBtn")
   self._collectionBtn = collectionBtn:SpawnObject("UISeasonS3CollageBtn")
-  ;
-  (self._collectionBtn):SetData(1, function()
-    -- function num : 0_0_2 , upvalues : self
+  self._collectionBtn:SetData(1, function()
     self:CollectionBtnOnClick()
-  end
-, self._collageData)
+  end, self._collageData)
   local cgBtn = self:GetUIComponent("UISelectObjectPath", "CGBtn")
   self._cgBtn = cgBtn:SpawnObject("UISeasonS3CollageBtn")
-  ;
-  (self._cgBtn):SetData(2, function()
-    -- function num : 0_0_3 , upvalues : self
+  self._cgBtn:SetData(2, function()
     self:CGBtnOnClick()
-  end
-, self._collageData)
+  end, self._collageData)
   local musicBtn = self:GetUIComponent("UISelectObjectPath", "MusicBtn")
   self._musicBtn = musicBtn:SpawnObject("UISeasonS3CollageBtn")
-  ;
-  (self._musicBtn):SetData(3, function()
-    -- function num : 0_0_4 , upvalues : self
+  self._musicBtn:SetData(3, function()
     self:MusicBtnOnClick()
-  end
-, self._collageData)
+  end, self._collageData)
   self:CollectionBtnOnClick(nil, true)
   self:RefreshNew()
   self:AttachEvent(GameEventType.UISeasonS1OnSelectCollageItem, self.RefreshNew)
-  ;
-  (self._anim):Play("uieffanim_UISeasonS3Collages_in")
+  self._anim:Play("uieffanim_UISeasonS3Collages_in")
   self._active = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS3Collages.OnHide = function(self)
-  -- function num : 0_1
+function UISeasonS3Collages:OnHide()
   self._active = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS3Collages.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonS3Collages:InitWidget()
   self.topBtns = self:GetUIComponent("UISelectObjectPath", "TopBtns")
   self.collectionTab = self:GetUIComponent("UISelectObjectPath", "CollectionTab")
   self.cGTab = self:GetUIComponent("UISelectObjectPath", "CGlTab")
@@ -88,117 +60,79 @@ UISeasonS3Collages.InitWidget = function(self)
   self._anim = self:GetUIComponent("Animation", "SafeArea")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS3Collages.CollectionBtnOnClick = function(self, go, onEnter)
-  -- function num : 0_3 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSlideDynamic)
+function UISeasonS3Collages:CollectionBtnOnClick(go, onEnter)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSlideDynamic)
   if not self._collection then
-    self._collection = (self.collectionTab):SpawnObject("UISeasonS3CollectionTab")
-    ;
-    (self._collection):SetData(self._collageData, onEnter)
+    self._collection = self.collectionTab:SpawnObject("UISeasonS3CollectionTab")
+    self._collection:SetData(self._collageData, onEnter)
   end
-  ;
-  (self._collection):SetShow(true)
+  self._collection:SetShow(true)
   if self._cg then
-    (self._cg):SetShow(false)
+    self._cg:SetShow(false)
   end
   if self._music then
-    (self._music):SetShow(false)
+    self._music:SetShow(false)
   end
-  ;
-  (self._collectionBtn):SetSelect(true)
-  ;
-  (self._cgBtn):SetSelect(false)
-  ;
-  (self._musicBtn):SetSelect(false)
+  self._collectionBtn:SetSelect(true)
+  self._cgBtn:SetSelect(false)
+  self._musicBtn:SetSelect(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS3Collages.CGBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSlideDynamic)
+function UISeasonS3Collages:CGBtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSlideDynamic)
   if not self._cg then
-    self._cg = (self.cGTab):SpawnObject("UISeasonS3CGTab")
-    ;
-    (self._cg):SetData(self._collageData, self._curSeasonobj)
+    self._cg = self.cGTab:SpawnObject("UISeasonS3CGTab")
+    self._cg:SetData(self._collageData, self._curSeasonobj)
   end
-  ;
-  (self._cg):SetShow(true)
+  self._cg:SetShow(true)
   if self._collection then
-    (self._collection):SetShow(false)
+    self._collection:SetShow(false)
   end
   if self._music then
-    (self._music):SetShow(false)
+    self._music:SetShow(false)
   end
-  ;
-  (self._collectionBtn):SetSelect(false)
-  ;
-  (self._cgBtn):SetSelect(true)
-  ;
-  (self._musicBtn):SetSelect(false)
+  self._collectionBtn:SetSelect(false)
+  self._cgBtn:SetSelect(true)
+  self._musicBtn:SetSelect(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS3Collages.MusicBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSlideDynamic)
+function UISeasonS3Collages:MusicBtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSlideDynamic)
   if not self._music then
-    self._music = (self.musicTab):SpawnObject("UISeasonS3MusicTab")
-    ;
-    (self._music):SetData(self._collageData)
+    self._music = self.musicTab:SpawnObject("UISeasonS3MusicTab")
+    self._music:SetData(self._collageData)
   end
-  ;
-  (self._music):SetShow(true)
+  self._music:SetShow(true)
   if self._collection then
-    (self._collection):SetShow(false)
+    self._collection:SetShow(false)
   end
   if self._cg then
-    (self._cg):SetShow(false)
+    self._cg:SetShow(false)
   end
-  ;
-  (self._collectionBtn):SetSelect(false)
-  ;
-  (self._cgBtn):SetSelect(false)
-  ;
-  (self._musicBtn):SetSelect(true)
+  self._collectionBtn:SetSelect(false)
+  self._cgBtn:SetSelect(false)
+  self._musicBtn:SetSelect(true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS3Collages.RefreshNew = function(self)
-  -- function num : 0_6
-  (self._collectionBtn):RefreshNew()
-  ;
-  (self._cgBtn):RefreshNew()
-  ;
-  (self._musicBtn):RefreshNew()
+function UISeasonS3Collages:RefreshNew()
+  self._collectionBtn:RefreshNew()
+  self._cgBtn:RefreshNew()
+  self._musicBtn:RefreshNew()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS3Collages.GetGuideItem = function(self)
-  -- function num : 0_7
+function UISeasonS3Collages:GetGuideItem()
   if self._collection then
-    return (self._collection):GetGuideItem()
+    return self._collection:GetGuideItem()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS3Collages._OnExit = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonS3Collages:_OnExit(TT)
   self:Lock("UISeasonS3Collages._OnExit")
-  ;
-  (self._anim):Play("uieffanim_UISeasonS3Collages_out")
+  self._anim:Play("uieffanim_UISeasonS3Collages_out")
   YIELD(TT, 250)
   self:UnLock("UISeasonS3Collages._OnExit")
   if not self._active then
-    return 
+    return
   end
   self:CloseDialog()
 end
-
-

@@ -1,28 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/ui_choose_sort_btn_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChooseSortBtnItem", UICustomWidget)
 UIChooseSortBtnItem = UIChooseSortBtnItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChooseSortBtnItem.Constructor = function(self)
-  -- function num : 0_0
-  self.ElementSpriteName = {[1] = "bing_color", [2] = "huo_color", [3] = "sen_color", [4] = "lei_color", [5] = "wu_color"}
+function UIChooseSortBtnItem:Constructor()
+  self.ElementSpriteName = {
+    [1] = "bing_color",
+    [2] = "huo_color",
+    [3] = "sen_color",
+    [4] = "lei_color",
+    [5] = "wu_color"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortBtnItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIChooseSortBtnItem:OnShow(uiParams)
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortBtnItem.GetComponents = function(self)
-  -- function num : 0_2
+function UIChooseSortBtnItem:GetComponents()
   self._arrow = self:GetUIComponent("Image", "arrow")
   self._arrowGo = self:GetGameObject("arrow")
   self._name = self:GetUIComponent("UILocalizationText", "name")
@@ -30,10 +23,7 @@ UIChooseSortBtnItem.GetComponents = function(self)
   self._elementTypeImg = self:GetUIComponent("Image", "eleImage")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortBtnItem.SetData = function(self, index, cfg, currentSortParams, currentSortOrder, callback, eleType)
-  -- function num : 0_3
+function UIChooseSortBtnItem:SetData(index, cfg, currentSortParams, currentSortOrder, callback, eleType)
   self:GetComponents()
   self._index = index
   self._cfg = cfg
@@ -44,80 +34,49 @@ UIChooseSortBtnItem.SetData = function(self, index, cfg, currentSortParams, curr
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortBtnItem.OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._name):SetText((StringTable.Get)((self._cfg).Name))
-  ;
-  ((self._elementTypeImg).gameObject):SetActive(false)
+function UIChooseSortBtnItem:OnValue()
+  self._name:SetText(StringTable.Get(self._cfg.Name))
+  self._elementTypeImg.gameObject:SetActive(false)
   self:Flush(self._currSortParams, self._currentSortOrder, self._eleType)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSortBtnItem.bgOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._cfg).Type == PetSortType.Element then
+function UIChooseSortBtnItem:bgOnClick()
+  if self._cfg.Type == PetSortType.Element then
     local petModule = self:GetModule(PetModule)
     local currentElementSortTypeOrder = petModule.PetSortElementIndex
     petModule:SavePetSortElementIndex(currentElementSortTypeOrder % 5 + 1)
   end
-  do
-    if self._callback then
-      (self._callback)(self._index)
-    end
+  if self._callback then
+    self._callback(self._index)
   end
 end
 
-local defaultColor = Color(0.29411764705882, 0.29019607843137, 0.29019607843137, 1)
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
+local defaultColor = Color(0.29411764705882354, 0.2901960784313726, 0.2901960784313726, 1)
 
-UIChooseSortBtnItem.Flush = function(self, params, order, eleType)
-  -- function num : 0_6 , upvalues : _ENV, defaultColor
+function UIChooseSortBtnItem:Flush(params, order, eleType)
   self._eleType = eleType
-  if params == (self._cfg).Type then
-    (self._arrowGo):SetActive(true)
-    ;
-    (self._selectImgGo):SetActive(true)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._name).color = Color.white
-    Color(0.98823529411765, 0.90980392156863, 0.007843137254902, 1)
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R4 in 'UnsetPending'
-
+  if params == self._cfg.Type then
+    self._arrowGo:SetActive(true)
+    self._selectImgGo:SetActive(true)
+    self._name.color = Color.white
+    Color(0.9882352941176471, 0.9098039215686274, 0.00784313725490196, 1)
     if order == PetSortOrder.Ascending then
-      ((self._arrowGo).transform).localRotation = (Quaternion.Euler)(0, 0, 180)
+      self._arrowGo.transform.localRotation = Quaternion.Euler(0, 0, 180)
     else
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      ((self._arrowGo).transform).localRotation = Quaternion.identity
+      self._arrowGo.transform.localRotation = Quaternion.identity
     end
   else
-    ;
-    (self._arrowGo):SetActive(false)
-    ;
-    (self._selectImgGo):SetActive(false)
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._name).color = defaultColor
+    self._arrowGo:SetActive(false)
+    self._selectImgGo:SetActive(false)
+    self._name.color = defaultColor
   end
-  if (self._cfg).ID == PetSortType.Element then
-    (self._arrowGo):SetActive(false)
-    ;
-    ((self._elementTypeImg).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC79: Confused about usage of register: R4 in 'UnsetPending'
-
+  if self._cfg.ID == PetSortType.Element then
+    self._arrowGo:SetActive(false)
+    self._elementTypeImg.gameObject:SetActive(true)
     if self._eleType ~= 0 then
-      (self._elementTypeImg).sprite = (self.atlasProperty):GetSprite((self.ElementSpriteName)[self._eleType])
+      self._elementTypeImg.sprite = self.atlasProperty:GetSprite(self.ElementSpriteName[self._eleType])
     end
   else
-    ;
-    ((self._elementTypeImg).gameObject):SetActive(false)
+    self._elementTypeImg.gameObject:SetActive(false)
   end
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/ui_luckland_single_select_card_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandSingleSelectCardItem", UICustomWidget)
 UILuckLandSingleSelectCardItem = UILuckLandSingleSelectCardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandSingleSelectCardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UILuckLandSingleSelectCardItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleSelectCardItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UILuckLandSingleSelectCardItem:InitWidget()
   self.singleCard = self:GetUIComponent("UISelectObjectPath", "SingleCard")
   self.skillTipsText = self:GetUIComponent("UILocalizationText", "SkillTipsText")
   self.characterNameText = self:GetUIComponent("UILocalizationText", "CharacterNameText")
@@ -27,80 +17,50 @@ UILuckLandSingleSelectCardItem.InitWidget = function(self)
   self.selectTagObj = self:GetGameObject("SelectTag")
   self._anim = self:GetUIComponent("Animation", "UILuckLandSingleSelectCardItem")
   self.toggle = self:GetUIComponent("Toggle", "UILuckLandSingleSelectCardItem")
-  self.OntoggleValueChanged = function(isOn)
-    -- function num : 0_1_0 , upvalues : self, _ENV
+  
+  function self.OntoggleValueChanged(isOn)
     if isOn then
-      (self.toggleCallBack)(self.index)
-      ;
-      (self.selectTagObj):SetActive(true)
-      ;
-      (self._anim):Play("uieff_UILuckLandSingleSelectCardItem_click")
+      self.toggleCallBack(self.index)
+      self.selectTagObj:SetActive(true)
+      self._anim:Play("uieff_UILuckLandSingleSelectCardItem_click")
     else
-      ;
-      (self._anim):Stop()
-      ;
-      (self.SelectTagBGObj):SetActive(true)
-      -- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self.selectTagBG).color = Color(1, 1, 1, 1)
+      self._anim:Stop()
+      self.SelectTagBGObj:SetActive(true)
+      self.selectTagBG.color = Color(1, 1, 1, 1)
     end
   end
-
-  ;
-  ((self.toggle).onValueChanged):AddListener(self.OntoggleValueChanged)
+  
+  self.toggle.onValueChanged:AddListener(self.OntoggleValueChanged)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleSelectCardItem.SetData = function(self, cardData, index, toggleGroup, toggleCallBack)
-  -- function num : 0_2 , upvalues : _ENV
+function UILuckLandSingleSelectCardItem:SetData(cardData, index, toggleGroup, toggleCallBack)
   self.cardData = cardData
   self.index = index
   self.toggleCallBack = toggleCallBack
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.toggle).group = toggleGroup
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R5 in 'UnsetPending'
-
+  self.toggle.group = toggleGroup
   if self.index == 1 then
-    (self.toggle).isOn = false
-    self:InitUI()
-    ;
-    (self.selectTagObj):SetActive(false)
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.selectTagBG).color = Color(1, 1, 1, 1)
   end
+  self.toggle.isOn = false
+  self:InitUI()
+  self.selectTagObj:SetActive(false)
+  self.selectTagBG.color = Color(1, 1, 1, 1)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleSelectCardItem.InitUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UILuckLandSingleSelectCardItem:InitUI()
   local getCardCount = 1
-  ;
-  (self.characterNameText):SetText((StringTable.Get)(((self.cardData):Cfg()).CardName))
-  ;
-  (self.skillTipsText):SetText((StringTable.Get)(((self.cardData):Cfg()).CardTips))
-  local cardStarCount = ((self.cardData):Cfg()).CardStar
-  self.CardAreaList = (UIWidgetHelper.SpawnObjects)(self, "Star", "UILuckLandStarItem", cardStarCount)
+  self.characterNameText:SetText(StringTable.Get(self.cardData:Cfg().CardName))
+  self.skillTipsText:SetText(StringTable.Get(self.cardData:Cfg().CardTips))
+  local cardStarCount = self.cardData:Cfg().CardStar
+  self.CardAreaList = UIWidgetHelper.SpawnObjects(self, "Star", "UILuckLandStarItem", cardStarCount)
   for i = 1, #self.CardAreaList do
   end
-  self.CardAreaList = (UIWidgetHelper.SpawnObjects)(self, "SingleCard", "UILuckLandSingleCard", 1)
+  self.CardAreaList = UIWidgetHelper.SpawnObjects(self, "SingleCard", "UILuckLandSingleCard", 1)
   for i = 1, #self.CardAreaList do
-    local item = (self.CardAreaList)[i]
+    local item = self.CardAreaList[i]
     item:SetData(self.cardData)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleSelectCardItem.CardData = function(self)
-  -- function num : 0_4
+function UILuckLandSingleSelectCardItem:CardData()
   return self.cardData
 end
-
-

@@ -1,252 +1,127 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/complete_cond_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CompleteConditionService", BaseService)
 CompleteConditionService = CompleteConditionService
-CompleteConditionCheckFlagType = {[1] = "Hero", [2] = "MonsterID", [3] = "Trap", Hero = 1, Monster = 2, Trap = 3}
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
+CompleteConditionCheckFlagType = {
+  [1] = "Hero",
+  [2] = "MonsterID",
+  [3] = "Trap",
+  Hero = 1,
+  Monster = 2,
+  Trap = 3
+}
 
-CompleteConditionService.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function CompleteConditionService:Constructor(world)
   self._completeConditionFunc = {}
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.AllMonsterDead] = CCAllMonsterDead:New(world)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.CollectItems] = CCCollectItems:New(world)
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.WaveEnd] = CCWaveEnd:New(world)
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.RuneDisappear] = CCRuneDisappear:New(world)
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.AllBossNotSurvival] = CCAllBossNotSurvival:New(world)
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.MonsterEscape] = CCMonsterEscape:New(world)
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.RoundCountLimit] = CCRoundCountLimit:New(world)
-  -- DECOMPILER ERROR at PC65: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.ArriveAtPos] = CCArriveAtPos:New(world)
-  -- DECOMPILER ERROR at PC73: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.MonsterDead] = CCMonsterDead:New(world)
-  -- DECOMPILER ERROR at PC81: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.AllRefreshMonsterDead] = CCAllRefreshMonsterDead:New(world)
-  -- DECOMPILER ERROR at PC89: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.AllRefreshMonsterDeadOrRoundCountLimit] = CCAllRefreshMonsterDeadOrRoundCountLimit:New(world)
-  -- DECOMPILER ERROR at PC97: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.CheckFlagBuffCount] = CCCheckFlagBuffCount:New(world)
-  -- DECOMPILER ERROR at PC105: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.AssignWaveAndRandomNextWave] = CCAssignWaveAndRandomNextWave:New(world)
-  -- DECOMPILER ERROR at PC113: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.KillAnyMonsterCount] = CKillAnyMonsterCount:New(world)
-  -- DECOMPILER ERROR at PC121: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.UpHoldAndKillAllInternalRefreshMonster] = CCUpHoldAndKillAnyMonsterWave:New(world)
-  -- DECOMPILER ERROR at PC129: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.AllMonsterNotSurvival] = CCAllMonsterNotSurvival:New(world)
-  -- DECOMPILER ERROR at PC137: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.RemotePlayerDead] = CCRemotePlayerDead:New(world)
-  -- DECOMPILER ERROR at PC145: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.AllConfigMonsterDead] = CCAllConfigMonsterDead:New(world)
-  -- DECOMPILER ERROR at PC153: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.AllConfigMonsterHPLock] = CCAllConfigMonsterHPLock:New(world)
-  -- DECOMPILER ERROR at PC161: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.TrapTypeDeadAndAllMonsterDead] = CCTrapTypeDeadAndAllMonsterDead:New(world)
-  -- DECOMPILER ERROR at PC169: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.RoundCountLimitAndCheckMonsterEscape] = CCRoundCountLimitAndCheckMonsterEscape:New(world)
-  -- DECOMPILER ERROR at PC177: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.ChessEscape] = CCChessEscape:New(world)
-  -- DECOMPILER ERROR at PC185: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.SelectChessEscape] = CCChessEscape:New(world)
-  -- DECOMPILER ERROR at PC193: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.CompareMonsterNumber] = CCCompareMonsterNumber:New(world)
-  -- DECOMPILER ERROR at PC201: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.OnlySpecifiedMonsterSurvival] = CCOnlySpecifiedMonsterSurvival:New(world)
-  -- DECOMPILER ERROR at PC209: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.AllMonsterNotSurvivaldifferent] = CCAllMonsterNotSurvival:New(world)
-  -- DECOMPILER ERROR at PC217: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.ComparePopStarNumber] = CCComparePopStarNumber:New(world)
-  -- DECOMPILER ERROR at PC225: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.KillSpecificMonsterCount] = CCKillSpecificMonsterCount:New(world)
-  -- DECOMPILER ERROR at PC233: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.KillMoreThanPetMonster] = CCKillMoreThanPetMonster:New(world)
-  -- DECOMPILER ERROR at PC241: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._completeConditionFunc)[CompleteConditionType.AllMonsterDeadOrCollectItems] = CCAllMonsterDeadOrCollectItems:New(world)
+  self._completeConditionFunc[CompleteConditionType.AllMonsterDead] = CCAllMonsterDead:New(world)
+  self._completeConditionFunc[CompleteConditionType.CollectItems] = CCCollectItems:New(world)
+  self._completeConditionFunc[CompleteConditionType.WaveEnd] = CCWaveEnd:New(world)
+  self._completeConditionFunc[CompleteConditionType.RuneDisappear] = CCRuneDisappear:New(world)
+  self._completeConditionFunc[CompleteConditionType.AllBossNotSurvival] = CCAllBossNotSurvival:New(world)
+  self._completeConditionFunc[CompleteConditionType.MonsterEscape] = CCMonsterEscape:New(world)
+  self._completeConditionFunc[CompleteConditionType.RoundCountLimit] = CCRoundCountLimit:New(world)
+  self._completeConditionFunc[CompleteConditionType.ArriveAtPos] = CCArriveAtPos:New(world)
+  self._completeConditionFunc[CompleteConditionType.MonsterDead] = CCMonsterDead:New(world)
+  self._completeConditionFunc[CompleteConditionType.AllRefreshMonsterDead] = CCAllRefreshMonsterDead:New(world)
+  self._completeConditionFunc[CompleteConditionType.AllRefreshMonsterDeadOrRoundCountLimit] = CCAllRefreshMonsterDeadOrRoundCountLimit:New(world)
+  self._completeConditionFunc[CompleteConditionType.CheckFlagBuffCount] = CCCheckFlagBuffCount:New(world)
+  self._completeConditionFunc[CompleteConditionType.AssignWaveAndRandomNextWave] = CCAssignWaveAndRandomNextWave:New(world)
+  self._completeConditionFunc[CompleteConditionType.KillAnyMonsterCount] = CKillAnyMonsterCount:New(world)
+  self._completeConditionFunc[CompleteConditionType.UpHoldAndKillAllInternalRefreshMonster] = CCUpHoldAndKillAnyMonsterWave:New(world)
+  self._completeConditionFunc[CompleteConditionType.AllMonsterNotSurvival] = CCAllMonsterNotSurvival:New(world)
+  self._completeConditionFunc[CompleteConditionType.RemotePlayerDead] = CCRemotePlayerDead:New(world)
+  self._completeConditionFunc[CompleteConditionType.AllConfigMonsterDead] = CCAllConfigMonsterDead:New(world)
+  self._completeConditionFunc[CompleteConditionType.AllConfigMonsterHPLock] = CCAllConfigMonsterHPLock:New(world)
+  self._completeConditionFunc[CompleteConditionType.TrapTypeDeadAndAllMonsterDead] = CCTrapTypeDeadAndAllMonsterDead:New(world)
+  self._completeConditionFunc[CompleteConditionType.RoundCountLimitAndCheckMonsterEscape] = CCRoundCountLimitAndCheckMonsterEscape:New(world)
+  self._completeConditionFunc[CompleteConditionType.ChessEscape] = CCChessEscape:New(world)
+  self._completeConditionFunc[CompleteConditionType.SelectChessEscape] = CCChessEscape:New(world)
+  self._completeConditionFunc[CompleteConditionType.CompareMonsterNumber] = CCCompareMonsterNumber:New(world)
+  self._completeConditionFunc[CompleteConditionType.OnlySpecifiedMonsterSurvival] = CCOnlySpecifiedMonsterSurvival:New(world)
+  self._completeConditionFunc[CompleteConditionType.AllMonsterNotSurvivaldifferent] = CCAllMonsterNotSurvival:New(world)
+  self._completeConditionFunc[CompleteConditionType.ComparePopStarNumber] = CCComparePopStarNumber:New(world)
+  self._completeConditionFunc[CompleteConditionType.KillSpecificMonsterCount] = CCKillSpecificMonsterCount:New(world)
+  self._completeConditionFunc[CompleteConditionType.KillMoreThanPetMonster] = CCKillMoreThanPetMonster:New(world)
+  self._completeConditionFunc[CompleteConditionType.AllMonsterDeadOrCollectItems] = CCAllMonsterDeadOrCollectItems:New(world)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-CompleteConditionService.IsDoneCompleteCondition = function(self, conditionType, conditionParam, combinedConditionArguments)
-  -- function num : 0_1 , upvalues : _ENV
+function CompleteConditionService:IsDoneCompleteCondition(conditionType, conditionParam, combinedConditionArguments)
   if conditionType == CompleteConditionType.CombinedCompleteCondition then
     return self:_IsDoneCombinedCondition(conditionParam, combinedConditionArguments)
   end
-  local checker = (self._completeConditionFunc)[conditionType]
+  local checker = self._completeConditionFunc[conditionType]
   if not checker then
-    (Log.fatal)("IsDoneCompleteCondition() not find checker! conditionType=", conditionType)
+    Log.fatal("IsDoneCompleteCondition() not find checker! conditionType=", conditionType)
     return false
   end
   return checker:CheckCondition(conditionParam)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-CompleteConditionService._IsDoneCombinedCondition = function(self, conditionParam, combinedConditionArguments)
-  -- function num : 0_2 , upvalues : _ENV
-  local mode = (conditionParam[1])[1]
+function CompleteConditionService:_IsDoneCombinedCondition(conditionParam, combinedConditionArguments)
+  local mode = conditionParam[1][1]
   local conditionA = combinedConditionArguments.conditionA
   local conditionParamA = combinedConditionArguments.conditionParamA
   local conditionB = combinedConditionArguments.conditionB
   local conditionParamB = combinedConditionArguments.conditionParamB
   local resultA, paramA = self:IsDoneCompleteCondition(conditionA, conditionParamA)
   local resultB, paramB = self:IsDoneCompleteCondition(conditionB, conditionParamB)
-  if not paramA then
-    paramA = {}
-  end
+  paramA = paramA or {}
   paramA.isCompleted = resultA
-  if not paramB then
-    paramB = {}
-  end
+  paramB = paramB or {}
   paramB.isCompleted = resultB
-  local uniqueBattleStat = (self._world):BattleStat()
+  local uniqueBattleStat = self._world:BattleStat()
   uniqueBattleStat:AppendCombinedConditionRecord(resultA, resultB)
-  if resultA then
-    do return mode ~= CombinedCompleteConditionMode.And or resultB, paramA, paramB end
-    if mode == CombinedCompleteConditionMode.Or then
-      if resultA then
-        return true, paramA, paramB
-      end
-      return resultB, paramA, paramB
+  if mode == CombinedCompleteConditionMode.And then
+    return resultA and resultB, paramA, paramB
+  elseif mode == CombinedCompleteConditionMode.Or then
+    if resultA then
+      return true, paramA, paramB
     end
+    return resultB, paramA, paramB
   end
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-CompleteConditionService.GetArchivedData = function(self, conditionType)
-  -- function num : 0_3
-  local checker = (self._completeConditionFunc)[conditionType]
+function CompleteConditionService:GetArchivedData(conditionType)
+  local checker = self._completeConditionFunc[conditionType]
   return checker:GetArchivedData()
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-CompleteConditionService.SetArchivedData = function(self, conditionType, data)
-  -- function num : 0_4
-  local checker = (self._completeConditionFunc)[conditionType]
+function CompleteConditionService:SetArchivedData(conditionType, data)
+  local checker = self._completeConditionFunc[conditionType]
   checker:SetArchivedData(data)
 end
 
 _class("ComplateConditionBase", Object)
 ComplateConditionBase = ComplateConditionBase
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
 
-ComplateConditionBase.Constructor = function(self, world)
-  -- function num : 0_5
+function ComplateConditionBase:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R0 in 'UnsetPending'
-
-ComplateConditionBase.CheckCondition = function(self, conditionParam)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.exception)("CheckCondition() not implemented! cls=", self._className)
+function ComplateConditionBase:CheckCondition(conditionParam)
+  Log.exception("CheckCondition() not implemented! cls=", self._className)
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R0 in 'UnsetPending'
-
-ComplateConditionBase.GetArchivedData = function(self)
-  -- function num : 0_7
+function ComplateConditionBase:GetArchivedData()
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R0 in 'UnsetPending'
-
-ComplateConditionBase.SetArchivedData = function(self, data)
-  -- function num : 0_8
+function ComplateConditionBase:SetArchivedData(data)
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R0 in 'UnsetPending'
-
-ComplateConditionBase._CalcMonsterCount = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local monster_group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+function ComplateConditionBase:_CalcMonsterCount()
+  local monster_group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   local monster_entities = monster_group:GetEntities()
   local count = 0
-  for k,v in ipairs(monster_entities) do
+  for k, v in ipairs(monster_entities) do
     local monsterIDCmpt = v:MonsterID()
-    if monsterIDCmpt then
-      local skipComplateCondition = monsterIDCmpt:GetSkipComplateCondition()
-    end
+    local skipComplateCondition = monsterIDCmpt and monsterIDCmpt:GetSkipComplateCondition()
     if not v:HasDeadMark() and not skipComplateCondition then
       count = count + 1
     end
   end
-  local offBoardMonsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).OffBoardMonster)
+  local offBoardMonsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.OffBoardMonster)
   local offBoardMonsterEntities = offBoardMonsterGroup:GetEntities()
-  for k,v in ipairs(offBoardMonsterEntities) do
+  for k, v in ipairs(offBoardMonsterEntities) do
     local monsterIDCmpt = v:MonsterID()
-    if monsterIDCmpt then
-      local skipComplateCondition = monsterIDCmpt:GetSkipComplateCondition()
-    end
+    local skipComplateCondition = monsterIDCmpt and monsterIDCmpt:GetSkipComplateCondition()
     if not v:HasDeadMark() and not skipComplateCondition then
       count = count + 1
     end
@@ -254,10 +129,7 @@ ComplateConditionBase._CalcMonsterCount = function(self)
   return count
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R0 in 'UnsetPending'
-
-ComplateConditionBase._IsAllMonsterDead = function(self)
-  -- function num : 0_10
+function ComplateConditionBase:_IsAllMonsterDead()
   local count = self:_CalcMonsterCount()
   if count <= 0 then
     return true
@@ -267,10 +139,8 @@ end
 
 _class("CCAllMonsterDead", ComplateConditionBase)
 CCAllMonsterDead = CCAllMonsterDead
--- DECOMPILER ERROR at PC61: Confused about usage of register: R0 in 'UnsetPending'
 
-CCAllMonsterDead.CheckCondition = function(self, conditionParam)
-  -- function num : 0_11
+function CCAllMonsterDead:CheckCondition(conditionParam)
   local monster_count = self:_CalcMonsterCount()
   if monster_count <= 0 then
     return true
@@ -280,74 +150,56 @@ end
 
 _class("CCCollectItems", ComplateConditionBase)
 CCCollectItems = CCCollectItems
--- DECOMPILER ERROR at PC70: Confused about usage of register: R0 in 'UnsetPending'
 
-CCCollectItems.CheckCondition = function(self, conditionParam)
-  -- function num : 0_12
-  local maxCollectCount = (conditionParam[1])[2]
-  local curCollectNum = ((self._world):BattleStat()):GetDropCollectNum()
+function CCCollectItems:CheckCondition(conditionParam)
+  local maxCollectCount = conditionParam[1][2]
+  local curCollectNum = self._world:BattleStat():GetDropCollectNum()
   if maxCollectCount <= curCollectNum then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R0 in 'UnsetPending'
-
-CCCollectItems.GetArchivedData = function(self)
-  -- function num : 0_13
-  local curCollectNum = ((self._world):BattleStat()):GetDropCollectNum()
+function CCCollectItems:GetArchivedData()
+  local curCollectNum = self._world:BattleStat():GetDropCollectNum()
   return curCollectNum
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R0 in 'UnsetPending'
-
-CCCollectItems.SetArchivedData = function(self, data)
-  -- function num : 0_14
-  ((self._world):BattleStat()):SetDropCollectNum(data)
+function CCCollectItems:SetArchivedData(data)
+  self._world:BattleStat():SetDropCollectNum(data)
 end
 
 _class("CCAllMonsterDeadOrCollectItems", ComplateConditionBase)
 CCAllMonsterDeadOrCollectItems = CCAllMonsterDeadOrCollectItems
--- DECOMPILER ERROR at PC85: Confused about usage of register: R0 in 'UnsetPending'
 
-CCAllMonsterDeadOrCollectItems.CheckCondition = function(self, conditionParam)
-  -- function num : 0_15
+function CCAllMonsterDeadOrCollectItems:CheckCondition(conditionParam)
   local monster_count = self:_CalcMonsterCount()
   if monster_count <= 0 then
     return true
   end
-  local maxCollectCount = (conditionParam[1])[2]
-  local curCollectNum = ((self._world):BattleStat()):GetDropCollectNum()
+  local maxCollectCount = conditionParam[1][2]
+  local curCollectNum = self._world:BattleStat():GetDropCollectNum()
   if maxCollectCount <= curCollectNum then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R0 in 'UnsetPending'
-
-CCAllMonsterDeadOrCollectItems.GetArchivedData = function(self)
-  -- function num : 0_16
-  local curCollectNum = ((self._world):BattleStat()):GetDropCollectNum()
+function CCAllMonsterDeadOrCollectItems:GetArchivedData()
+  local curCollectNum = self._world:BattleStat():GetDropCollectNum()
   return curCollectNum
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R0 in 'UnsetPending'
-
-CCAllMonsterDeadOrCollectItems.SetArchivedData = function(self, data)
-  -- function num : 0_17
-  ((self._world):BattleStat()):SetDropCollectNum(data)
+function CCAllMonsterDeadOrCollectItems:SetArchivedData(data)
+  self._world:BattleStat():SetDropCollectNum(data)
 end
 
 _class("CCWaveEnd", ComplateConditionBase)
 CCWaveEnd = CCWaveEnd
--- DECOMPILER ERROR at PC100: Confused about usage of register: R0 in 'UnsetPending'
 
-CCWaveEnd.CheckCondition = function(self, conditionParam)
-  -- function num : 0_18
+function CCWaveEnd:CheckCondition(conditionParam)
   local isAllMonsterDead = self:_IsAllMonsterDead()
-  local hasNextWave = ((self._world):BattleStat()):HasNextWave()
+  local hasNextWave = self._world:BattleStat():HasNextWave()
   if isAllMonsterDead == true and hasNextWave == false then
     return true
   end
@@ -356,12 +208,10 @@ end
 
 _class("CCRuneDisappear", ComplateConditionBase)
 CCRuneDisappear = CCRuneDisappear
--- DECOMPILER ERROR at PC109: Confused about usage of register: R0 in 'UnsetPending'
 
-CCRuneDisappear.CheckCondition = function(self, conditionParam)
-  -- function num : 0_19 , upvalues : _ENV
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-  for i,e in ipairs(trapGroup:GetEntities()) do
+function CCRuneDisappear:CheckCondition(conditionParam)
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  for i, e in ipairs(trapGroup:GetEntities()) do
     local trapCmpt = e:Trap()
     if trapCmpt:IsRuneChange() then
       return false
@@ -372,27 +222,23 @@ end
 
 _class("CCAllBossNotSurvival", ComplateConditionBase)
 CCAllBossNotSurvival = CCAllBossNotSurvival
--- DECOMPILER ERROR at PC118: Confused about usage of register: R0 in 'UnsetPending'
 
-CCAllBossNotSurvival.CheckCondition = function(self, conditionParam)
-  -- function num : 0_20 , upvalues : _ENV
-  local hasNextWave = ((self._world):BattleStat()):HasNextWave()
+function CCAllBossNotSurvival:CheckCondition(conditionParam)
+  local hasNextWave = self._world:BattleStat():HasNextWave()
   local param = conditionParam[1]
   local monsterIDList = {}
-  for _,strID in ipairs(param) do
-    (table.insert)(monsterIDList, tonumber(strID))
+  for _, strID in ipairs(param) do
+    table.insert(monsterIDList, tonumber(strID))
   end
-  local monster_group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+  local monster_group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   local monster_entities = monster_group:GetEntities()
   local count = 0
-  for _,id in ipairs(monsterIDList) do
-    for k,v in ipairs(monster_entities) do
+  for _, id in ipairs(monsterIDList) do
+    for k, v in ipairs(monster_entities) do
       local monsterEntity = v
-      if v:HasMonsterID() and (v:MonsterID()):GetMonsterID() == id then
+      if v:HasMonsterID() and v:MonsterID():GetMonsterID() == id then
         local monsterIDCmpt = v:MonsterID()
-        if monsterIDCmpt then
-          local skipComplateCondition = monsterIDCmpt:GetSkipComplateCondition()
-        end
+        local skipComplateCondition = monsterIDCmpt and monsterIDCmpt:GetSkipComplateCondition()
         if not monsterEntity:HasDeadMark() and not skipComplateCondition then
           return false
         end
@@ -408,22 +254,17 @@ end
 
 _class("CCMonsterEscape", ComplateConditionBase)
 CCMonsterEscape = CCMonsterEscape
--- DECOMPILER ERROR at PC127: Confused about usage of register: R0 in 'UnsetPending'
 
-CCMonsterEscape.Constructor = function(self)
-  -- function num : 0_21
+function CCMonsterEscape:Constructor()
   self._escapeCount = 0
   self._archivedCount = 0
 end
 
--- DECOMPILER ERROR at PC130: Confused about usage of register: R0 in 'UnsetPending'
-
-CCMonsterEscape.CheckCondition = function(self, conditionParam)
-  -- function num : 0_22 , upvalues : _ENV
-  local entityGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterEscape)
+function CCMonsterEscape:CheckCondition(conditionParam)
+  local entityGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterEscape)
   local es = entityGroup:GetEntities()
   local nEscape = 0
-  for _,e in ipairs(es) do
+  for _, e in ipairs(es) do
     local monsterEscapeComponent = e:MonsterEscape()
     if monsterEscapeComponent and monsterEscapeComponent:IsEscapeSuccess() then
       nEscape = nEscape + 1
@@ -431,140 +272,118 @@ CCMonsterEscape.CheckCondition = function(self, conditionParam)
   end
   local nLimitCount = conditionParam[1]
   self._escapeCount = nEscape
-  do return nLimitCount < nEscape end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nEscape > nLimitCount
 end
 
--- DECOMPILER ERROR at PC133: Confused about usage of register: R0 in 'UnsetPending'
-
-CCMonsterEscape.GetArchivedData = function(self)
-  -- function num : 0_23
+function CCMonsterEscape:GetArchivedData()
   return self._escapeCount
 end
 
--- DECOMPILER ERROR at PC136: Confused about usage of register: R0 in 'UnsetPending'
-
-CCMonsterEscape.SetArchivedData = function(self, data)
-  -- function num : 0_24
+function CCMonsterEscape:SetArchivedData(data)
   self._archivedCount = data
 end
 
 _class("CCRoundCountLimit", ComplateConditionBase)
 CCRoundCountLimit = CCRoundCountLimit
--- DECOMPILER ERROR at PC145: Confused about usage of register: R0 in 'UnsetPending'
 
-CCRoundCountLimit.CheckCondition = function(self, conditionParam)
-  -- function num : 0_25
-  local battleStatCmpt = (self._world):BattleStat()
+function CCRoundCountLimit:CheckCondition(conditionParam)
+  local battleStatCmpt = self._world:BattleStat()
   local nRoundNow = battleStatCmpt:GetCurWaveTotalRoundCount()
-  local nRoundLimit = (conditionParam[1])[1]
+  local nRoundLimit = conditionParam[1][1]
   local levelSupplementRoundCount = battleStatCmpt:GetLevelSupplementRoundCount()
   local nRoundMax = nRoundLimit + levelSupplementRoundCount
-  if nRoundMax < nRoundNow then
-    return true, {current = nRoundNow - 1, full = nRoundMax}
+  if nRoundNow > nRoundMax then
+    return true, {
+      current = nRoundNow - 1,
+      full = nRoundMax
+    }
   end
-  return false, {current = nRoundNow - 1, full = nRoundMax}
+  return false, {
+    current = nRoundNow - 1,
+    full = nRoundMax
+  }
 end
 
--- DECOMPILER ERROR at PC148: Confused about usage of register: R0 in 'UnsetPending'
-
-CCRoundCountLimit.GetArchivedData = function(self)
-  -- function num : 0_26
-  local battleStatCmpt = (self._world):BattleStat()
+function CCRoundCountLimit:GetArchivedData()
+  local battleStatCmpt = self._world:BattleStat()
   local nRoundNow = battleStatCmpt:GetCurWaveTotalRoundCount()
   return nRoundNow
 end
 
--- DECOMPILER ERROR at PC151: Confused about usage of register: R0 in 'UnsetPending'
-
-CCRoundCountLimit.SetArchivedData = function(self, data)
-  -- function num : 0_27
-  local battleStatCmpt = (self._world):BattleStat()
+function CCRoundCountLimit:SetArchivedData(data)
+  local battleStatCmpt = self._world:BattleStat()
   battleStatCmpt:SetCurWaveTotalRoundCount(data)
 end
 
 _class("CCRoundCountLimitAndCheckMonsterEscape", ComplateConditionBase)
 CCRoundCountLimitAndCheckMonsterEscape = CCRoundCountLimitAndCheckMonsterEscape
--- DECOMPILER ERROR at PC160: Confused about usage of register: R0 in 'UnsetPending'
 
-CCRoundCountLimitAndCheckMonsterEscape.Constructor = function(self)
-  -- function num : 0_28
+function CCRoundCountLimitAndCheckMonsterEscape:Constructor()
   self._escapeCount = 0
   self._archivedCount = 0
 end
 
--- DECOMPILER ERROR at PC163: Confused about usage of register: R0 in 'UnsetPending'
-
-CCRoundCountLimitAndCheckMonsterEscape.CheckCondition = function(self, conditionParam)
-  -- function num : 0_29
+function CCRoundCountLimitAndCheckMonsterEscape:CheckCondition(conditionParam)
   local escapeOk, escapeParam = self:_CheckEscape(conditionParam)
-  do
-    if escapeOk then
-      local roundOk = self:_CheckRound(conditionParam)
-      if roundOk then
-        return true, escapeParam
-      end
+  if escapeOk then
+    local roundOk = self:_CheckRound(conditionParam)
+    if roundOk then
+      return true, escapeParam
     end
-    return false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC166: Confused about usage of register: R0 in 'UnsetPending'
-
-CCRoundCountLimitAndCheckMonsterEscape._CheckRound = function(self, conditionParam)
-  -- function num : 0_30
-  local battleStatCmpt = (self._world):BattleStat()
+function CCRoundCountLimitAndCheckMonsterEscape:_CheckRound(conditionParam)
+  local battleStatCmpt = self._world:BattleStat()
   local nRoundNow = battleStatCmpt:GetCurWaveTotalRoundCount()
-  local nRoundLimit = (conditionParam[1])[1]
+  local nRoundLimit = conditionParam[1][1]
   local levelSupplementRoundCount = battleStatCmpt:GetLevelSupplementRoundCount()
   local nRoundMax = nRoundLimit + levelSupplementRoundCount
-  if nRoundMax < nRoundNow then
-    return true, {current = nRoundNow - 1, full = nRoundMax}
+  if nRoundNow > nRoundMax then
+    return true, {
+      current = nRoundNow - 1,
+      full = nRoundMax
+    }
   end
-  return false, {current = nRoundNow - 1, full = nRoundMax}
+  return false, {
+    current = nRoundNow - 1,
+    full = nRoundMax
+  }
 end
 
--- DECOMPILER ERROR at PC169: Confused about usage of register: R0 in 'UnsetPending'
-
-CCRoundCountLimitAndCheckMonsterEscape._CheckEscape = function(self, conditionParam)
-  -- function num : 0_31
-  local battleStatCmpt = (self._world):BattleStat()
-  local nLimitCount = (conditionParam[1])[2]
+function CCRoundCountLimitAndCheckMonsterEscape:_CheckEscape(conditionParam)
+  local battleStatCmpt = self._world:BattleStat()
+  local nLimitCount = conditionParam[1][2]
   local nEscape = battleStatCmpt:GetMonsterEscapeNum()
   self._escapeCount = nEscape
-  do return nEscape < nLimitCount, {current = self._escapeCount, full = nLimitCount} end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nLimitCount > nEscape, {
+    current = self._escapeCount,
+    full = nLimitCount
+  }
 end
 
--- DECOMPILER ERROR at PC172: Confused about usage of register: R0 in 'UnsetPending'
-
-CCRoundCountLimitAndCheckMonsterEscape.GetArchivedData = function(self)
-  -- function num : 0_32
+function CCRoundCountLimitAndCheckMonsterEscape:GetArchivedData()
   local data = {}
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local nRoundNow = battleStatCmpt:GetCurWaveTotalRoundCount()
   data.nRoundNow = nRoundNow
   data.escapeCount = self._escapeCount
   return data
 end
 
--- DECOMPILER ERROR at PC175: Confused about usage of register: R0 in 'UnsetPending'
-
-CCRoundCountLimitAndCheckMonsterEscape.SetArchivedData = function(self, data)
-  -- function num : 0_33
-  local battleStatCmpt = (self._world):BattleStat()
+function CCRoundCountLimitAndCheckMonsterEscape:SetArchivedData(data)
+  local battleStatCmpt = self._world:BattleStat()
   battleStatCmpt:SetCurWaveTotalRoundCount(data.nRoundNow)
   self._archivedCount = data.escapeCount
 end
 
 _class("CCArriveAtPos", ComplateConditionBase)
 CCArriveAtPos = CCArriveAtPos
--- DECOMPILER ERROR at PC184: Confused about usage of register: R0 in 'UnsetPending'
 
-CCArriveAtPos.CheckCondition = function(self, conditionParam)
-  -- function num : 0_34 , upvalues : _ENV
-  local ePlayer = ((self._world):Player()):GetLocalTeamEntity()
-  if ePlayer and (ePlayer:GridLocation()).Position == Vector2((conditionParam[1])[1], (conditionParam[1])[2]) then
+function CCArriveAtPos:CheckCondition(conditionParam)
+  local ePlayer = self._world:Player():GetLocalTeamEntity()
+  if ePlayer and ePlayer:GridLocation().Position == Vector2(conditionParam[1][1], conditionParam[1][2]) then
     return true
   end
   return false
@@ -572,19 +391,17 @@ end
 
 _class("CCMonsterDead", ComplateConditionBase)
 CCMonsterDead = CCMonsterDead
--- DECOMPILER ERROR at PC193: Confused about usage of register: R0 in 'UnsetPending'
 
-CCMonsterDead.CheckCondition = function(self, conditionParam)
-  -- function num : 0_35 , upvalues : _ENV
+function CCMonsterDead:CheckCondition(conditionParam)
   local monsterIDList = {}
-  for _,monsterID in ipairs(conditionParam[1]) do
-    (table.insert)(monsterIDList, tonumber(monsterID))
+  for _, monsterID in ipairs(conditionParam[1]) do
+    table.insert(monsterIDList, tonumber(monsterID))
   end
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local totalDeadMonsterIDList = battleStatCmpt:GetTotalDeadMonsterIDList()
-  for _,id in ipairs(monsterIDList) do
+  for _, id in ipairs(monsterIDList) do
     local bFind = false
-    for k,v in ipairs(totalDeadMonsterIDList) do
+    for k, v in ipairs(totalDeadMonsterIDList) do
       if v:GetMonsterID() == id then
         bFind = true
       end
@@ -598,21 +415,18 @@ end
 
 _class("CCAllRefreshMonsterDead", ComplateConditionBase)
 CCAllRefreshMonsterDead = CCAllRefreshMonsterDead
--- DECOMPILER ERROR at PC202: Confused about usage of register: R0 in 'UnsetPending'
 
-CCAllRefreshMonsterDead.CheckCondition = function(self, conditionParam)
-  -- function num : 0_36 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function CCAllRefreshMonsterDead:CheckCondition(conditionParam)
+  local battleStatCmpt = self._world:BattleStat()
   local totalDeadMonsterIDList = battleStatCmpt:GetTotalDeadMonsterIDList()
-  local levelConfigData = ((self._world):GetService("Config")):GetLevelConfigData()
+  local levelConfigData = self._world:GetService("Config"):GetLevelConfigData()
   local monsterIds = levelConfigData:GetAllMonsterID()
   local monsterIdsCopy = {}
-  ;
-  (table.appendArray)(monsterIdsCopy, monsterIds)
-  for _,monsterDeadParam in ipairs(totalDeadMonsterIDList) do
+  table.appendArray(monsterIdsCopy, monsterIds)
+  for _, monsterDeadParam in ipairs(totalDeadMonsterIDList) do
     local deadMonsterID = monsterDeadParam:GetMonsterID()
-    if (table.intable)(monsterIdsCopy, deadMonsterID) then
-      (table.removev)(monsterIdsCopy, deadMonsterID)
+    if table.intable(monsterIdsCopy, deadMonsterID) then
+      table.removev(monsterIdsCopy, deadMonsterID)
     end
   end
   if #monsterIdsCopy == 0 then
@@ -623,11 +437,9 @@ end
 
 _class("CCAllRefreshMonsterDeadOrRoundCountLimit", ComplateConditionBase)
 CCAllRefreshMonsterDeadOrRoundCountLimit = CCAllRefreshMonsterDeadOrRoundCountLimit
--- DECOMPILER ERROR at PC211: Confused about usage of register: R0 in 'UnsetPending'
 
-CCAllRefreshMonsterDeadOrRoundCountLimit.CheckCondition = function(self, conditionParam)
-  -- function num : 0_37 , upvalues : _ENV
-  local ccsvc = (self._world):GetService("CompleteCondition")
+function CCAllRefreshMonsterDeadOrRoundCountLimit:CheckCondition(conditionParam)
+  local ccsvc = self._world:GetService("CompleteCondition")
   local _roundCountLimit = ccsvc:IsDoneCompleteCondition(CompleteConditionType.RoundCountLimit, conditionParam)
   local _allRefreshMonsterDead = ccsvc:IsDoneCompleteCondition(CompleteConditionType.AllRefreshMonsterDead, conditionParam)
   if _roundCountLimit or _allRefreshMonsterDead then
@@ -636,26 +448,20 @@ CCAllRefreshMonsterDeadOrRoundCountLimit.CheckCondition = function(self, conditi
   return false
 end
 
--- DECOMPILER ERROR at PC214: Confused about usage of register: R0 in 'UnsetPending'
-
-CCAllRefreshMonsterDeadOrRoundCountLimit.GetArchivedData = function(self)
-  -- function num : 0_38
+function CCAllRefreshMonsterDeadOrRoundCountLimit:GetArchivedData()
   local data = {}
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local waveDeadMonsterIDList = battleStatCmpt:GetCurWaveDeadMonsterIDList()
   data.deadMonsterIDList = waveDeadMonsterIDList
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local nRoundNow = battleStatCmpt:GetCurWaveTotalRoundCount()
   data.waveRoundCount = nRoundNow
   return data
 end
 
--- DECOMPILER ERROR at PC217: Confused about usage of register: R0 in 'UnsetPending'
-
-CCAllRefreshMonsterDeadOrRoundCountLimit.SetArchivedData = function(self, data)
-  -- function num : 0_39 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
-  for i,monsterID in ipairs(data.deadMonsterIDList) do
+function CCAllRefreshMonsterDeadOrRoundCountLimit:SetArchivedData(data)
+  local battleStatCmpt = self._world:BattleStat()
+  for i, monsterID in ipairs(data.deadMonsterIDList) do
     battleStatCmpt:AddDeadMonsterID(monsterID)
   end
   battleStatCmpt:SetCurWaveTotalRoundCount(data.waveRoundCount)
@@ -663,13 +469,11 @@ end
 
 _class("CCAssignWaveAndRandomNextWave", ComplateConditionBase)
 CCAssignWaveAndRandomNextWave = CCAssignWaveAndRandomNextWave
--- DECOMPILER ERROR at PC226: Confused about usage of register: R0 in 'UnsetPending'
 
-CCAssignWaveAndRandomNextWave.CheckCondition = function(self, conditionParam)
-  -- function num : 0_40 , upvalues : _ENV
+function CCAssignWaveAndRandomNextWave:CheckCondition(conditionParam)
   local baseParamInfoIndex = LevelCompleteAssignWaveParamExp.BaseLevelCompleteCond
   local param = conditionParam[1]
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local nCurWave = battleStatCmpt:GetCurWaveIndex()
   local l_nAssignWave = param[LevelCompleteAssignWaveParamExp.AssignWaveEnd]
   local l_nBaseCompleteConditionType = param[baseParamInfoIndex]
@@ -677,99 +481,79 @@ CCAssignWaveAndRandomNextWave.CheckCondition = function(self, conditionParam)
   if nCurWave == l_nAssignWave then
     if l_nBaseCompleteConditionType and l_nBaseCompleteConditionType ~= CompleteConditionType.WaveEnd then
       local baseParam = {}
-      local baseParamCount = (table.count)(param)
+      local baseParamCount = table.count(param)
       if baseParamInfoIndex < baseParamCount then
         for i = baseParamInfoIndex + 1, baseParamCount do
           baseParam[i - baseParamInfoIndex] = param[i]
         end
       end
-      do
-        do
-          local ccsvc = (self._world):GetService("CompleteCondition")
-          isFinish = ccsvc:IsDoneCompleteCondition(l_nBaseCompleteConditionType, baseParam)
-          isFinish = self:_IsAllMonsterDead()
-          do return isFinish end
-          if l_nAssignWave < nCurWave then
-            return true
-          else
-            return false
-          end
-        end
-      end
+      local ccsvc = self._world:GetService("CompleteCondition")
+      isFinish = ccsvc:IsDoneCompleteCondition(l_nBaseCompleteConditionType, baseParam)
+    else
+      isFinish = self:_IsAllMonsterDead()
     end
+    return isFinish
+  elseif nCurWave > l_nAssignWave then
+    return true
+  else
+    return false
   end
 end
 
 _class("CCCheckFlagBuffCount", ComplateConditionBase)
 CCCheckFlagBuffCount = CCCheckFlagBuffCount
--- DECOMPILER ERROR at PC235: Confused about usage of register: R0 in 'UnsetPending'
 
-CCCheckFlagBuffCount.CheckCondition = function(self, conditionParam)
-  -- function num : 0_41 , upvalues : _ENV
+function CCCheckFlagBuffCount:CheckCondition(conditionParam)
   local param = conditionParam[1]
   local targetType = param[1]
   local flagID = param[2]
   local requiredCount = param[3]
   local entities = {}
   if targetType == CompleteConditionCheckFlagType.Hero then
-    (table.insert)(entities, ((self._world):Player()):GetLocalTeamEntity())
+    table.insert(entities, self._world:Player():GetLocalTeamEntity())
   else
-    local groupMatcher = ((self._world).BW_WEMatchers)[CompleteConditionCheckFlagType[targetType]]
-    local group = (self._world):GetGroup(groupMatcher)
+    local groupMatcher = self._world.BW_WEMatchers[CompleteConditionCheckFlagType[targetType]]
+    local group = self._world:GetGroup(groupMatcher)
     if not group then
-      (Log.fatal)("No entity group for targetType ", tostring(targetType))
+      Log.fatal("No entity group for targetType ", tostring(targetType))
       return false
     end
     entities = group:GetEntities()
   end
-  do
-    if #entities == 0 then
-      return false
-    end
-    local currentMaxCount = 0
-    for _,entity in ipairs(entities) do
-      currentMaxCount = (math.max)(currentMaxCount, self:_GetFlagBuffCount(R17_PC58, flagID))
-    end
-    do return requiredCount <= currentMaxCount end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  if #entities == 0 then
+    return false
   end
+  local currentMaxCount = 0
+  for _, entity in ipairs(entities) do
+    currentMaxCount = math.max(currentMaxCount, self:_GetFlagBuffCount(entity, flagID))
+  end
+  return requiredCount <= currentMaxCount
 end
 
--- DECOMPILER ERROR at PC238: Confused about usage of register: R0 in 'UnsetPending'
-
-CCCheckFlagBuffCount._GetFlagBuffCount = function(self, entity, flagID)
-  -- function num : 0_42 , upvalues : _ENV
+function CCCheckFlagBuffCount:_GetFlagBuffCount(entity, flagID)
   if not entity:HasBuff() then
     return 0
   end
   local buffComponent = entity:BuffComponent()
-  local flagKey = (string.format)(BattleConst.FlagBuffOverlayKeyFormatter, flagID)
+  local flagKey = string.format(BattleConst.FlagBuffOverlayKeyFormatter, flagID)
   return buffComponent:GetBuffValue(flagKey) or 0
 end
 
--- DECOMPILER ERROR at PC241: Confused about usage of register: R0 in 'UnsetPending'
-
-CCCheckFlagBuffCount.GetArchivedData = function(self)
-  -- function num : 0_43
+function CCCheckFlagBuffCount:GetArchivedData()
 end
 
--- DECOMPILER ERROR at PC244: Confused about usage of register: R0 in 'UnsetPending'
-
-CCCheckFlagBuffCount.SetArchivedData = function(self, data)
-  -- function num : 0_44
+function CCCheckFlagBuffCount:SetArchivedData(data)
 end
 
 _class("CKillAnyMonsterCount", ComplateConditionBase)
 CKillAnyMonsterCount = CKillAnyMonsterCount
--- DECOMPILER ERROR at PC253: Confused about usage of register: R0 in 'UnsetPending'
 
-CKillAnyMonsterCount.CheckCondition = function(self, conditionParam)
-  -- function num : 0_45 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function CKillAnyMonsterCount:CheckCondition(conditionParam)
+  local battleStatCmpt = self._world:BattleStat()
   local totalDeadMonsterIDList = battleStatCmpt:GetCurWaveDeadMonsterIDList()
-  local deadMonsterCount = (table.count)(totalDeadMonsterIDList)
-  local needKillCount = (conditionParam[1])[1]
-  if needKillCount <= deadMonsterCount then
+  local deadMonsterCount = table.count(totalDeadMonsterIDList)
+  local needKillCount = conditionParam[1][1]
+  if deadMonsterCount >= needKillCount then
     return true, {current = deadMonsterCount, full = needKillCount}
   end
   return false, {current = deadMonsterCount, full = needKillCount}
@@ -777,34 +561,28 @@ end
 
 _class("CCUpHoldAndKillAnyMonsterWave", CCAllRefreshMonsterDead)
 CCUpHoldAndKillAnyMonsterWave = CCUpHoldAndKillAnyMonsterWave
--- DECOMPILER ERROR at PC262: Confused about usage of register: R0 in 'UnsetPending'
 
-CCUpHoldAndKillAnyMonsterWave.CheckCondition = function(self, conditionParam)
-  -- function num : 0_46 , upvalues : _ENV
-  return ((CCUpHoldAndKillAnyMonsterWave.super).CheckCondition)(self, conditionParam)
+function CCUpHoldAndKillAnyMonsterWave:CheckCondition(conditionParam)
+  return CCUpHoldAndKillAnyMonsterWave.super.CheckCondition(self, conditionParam)
 end
 
 _class("CCAllMonsterNotSurvival", ComplateConditionBase)
 CCAllMonsterNotSurvival = CCAllMonsterNotSurvival
--- DECOMPILER ERROR at PC271: Confused about usage of register: R0 in 'UnsetPending'
 
-CCAllMonsterNotSurvival.CheckCondition = function(self, conditionParam)
-  -- function num : 0_47 , upvalues : _ENV
+function CCAllMonsterNotSurvival:CheckCondition(conditionParam)
   local monsterIDList = {}
-  for _,strID in ipairs(conditionParam[1]) do
-    (table.insert)(monsterIDList, tonumber(strID))
+  for _, strID in ipairs(conditionParam[1]) do
+    table.insert(monsterIDList, tonumber(strID))
   end
-  local monster_group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+  local monster_group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   local monster_entities = monster_group:GetEntities()
   local count = 0
-  for _,id in ipairs(monsterIDList) do
-    for k,v in ipairs(monster_entities) do
+  for _, id in ipairs(monsterIDList) do
+    for k, v in ipairs(monster_entities) do
       local monsterEntity = v
-      if v:HasMonsterID() and (v:MonsterID()):GetMonsterID() == id then
+      if v:HasMonsterID() and v:MonsterID():GetMonsterID() == id then
         local monsterIDCmpt = v:MonsterID()
-        if monsterIDCmpt then
-          local skipComplateCondition = monsterIDCmpt:GetSkipComplateCondition()
-        end
+        local skipComplateCondition = monsterIDCmpt and monsterIDCmpt:GetSkipComplateCondition()
         if not monsterEntity:HasDeadMark() and not skipComplateCondition then
           return false
         end
@@ -816,11 +594,9 @@ end
 
 _class("CCRemotePlayerDead", ComplateConditionBase)
 CCRemotePlayerDead = CCRemotePlayerDead
--- DECOMPILER ERROR at PC280: Confused about usage of register: R0 in 'UnsetPending'
 
-CCRemotePlayerDead.CheckCondition = function(self, conditionParam)
-  -- function num : 0_48
-  local remoteTeamEntity = ((self._world):Player()):GetRemoteTeamEntity()
+function CCRemotePlayerDead:CheckCondition(conditionParam)
+  local remoteTeamEntity = self._world:Player():GetRemoteTeamEntity()
   if remoteTeamEntity and remoteTeamEntity:HasTeamDeadMark() then
     return true
   end
@@ -829,36 +605,24 @@ end
 
 _class("CCAllConfigMonsterDead", ComplateConditionBase)
 CCAllConfigMonsterDead = CCAllConfigMonsterDead
--- DECOMPILER ERROR at PC289: Confused about usage of register: R0 in 'UnsetPending'
 
-CCAllConfigMonsterDead.CheckCondition = function(self, conditionParam)
-  -- function num : 0_49 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
-  for i,param in ipairs(conditionParam) do
+function CCAllConfigMonsterDead:CheckCondition(conditionParam)
+  local battleStatCmpt = self._world:BattleStat()
+  for i, param in ipairs(conditionParam) do
     if type(param) == "number" and not battleStatCmpt:IsMonsterHasDead(param) then
       return false
     end
     if type(param) == "table" then
       local noOne = true
-      for _,v in ipairs(param) do
+      for _, v in ipairs(param) do
         local monsterID = tonumber(v)
         if battleStatCmpt:IsMonsterHasDead(monsterID) then
           noOne = false
           break
         end
       end
-      do
-        do
-          if noOne then
-            return false
-          end
-          -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      if noOne then
+        return false
       end
     end
   end
@@ -867,26 +631,24 @@ end
 
 _class("CCAllConfigMonsterHPLock", ComplateConditionBase)
 CCAllConfigMonsterHPLock = CCAllConfigMonsterHPLock
--- DECOMPILER ERROR at PC298: Confused about usage of register: R0 in 'UnsetPending'
 
-CCAllConfigMonsterHPLock.CheckCondition = function(self, conditionParam)
-  -- function num : 0_50 , upvalues : _ENV
+function CCAllConfigMonsterHPLock:CheckCondition(conditionParam)
   local monsterClassIDTable = conditionParam[1]
   local lockHPDic = {}
-  local bufflsvc = (self._world):GetService("BuffLogic")
-  local GLOBALmonsterGroupEntities = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).MonsterID)
-  for _,entity in ipairs(GLOBALmonsterGroupEntities) do
+  local bufflsvc = self._world:GetService("BuffLogic")
+  local GLOBALmonsterGroupEntities = self._world:GetGroupEntities(self._world.BW_WEMatchers.MonsterID)
+  for _, entity in ipairs(GLOBALmonsterGroupEntities) do
     if not entity:HasDeadMark() then
       local cMonsterID = entity:MonsterID()
       local monsterClassID = cMonsterID:GetMonsterClassID()
-      if (table.icontains)(monsterClassIDTable, monsterClassID) then
+      if table.icontains(monsterClassIDTable, monsterClassID) then
         local hasLockHPBuff, isLock = bufflsvc:CheckEntityLockHP(entity)
         if hasLockHPBuff then
-          local curHp = (entity:Attributes()):GetCurrentHP()
-          local maxHp = (entity:Attributes()):CalcMaxHp()
+          local curHp = entity:Attributes():GetCurrentHP()
+          local maxHp = entity:Attributes():CalcMaxHp()
           local leftHPPercent = curHp / maxHp * 100
           local lockHPPercent = bufflsvc:GetLockHPInfo(entity)
-          if lockHPPercent > 0 then
+          if 0 < lockHPPercent then
             lockHPDic[monsterClassID] = true
           end
         end
@@ -894,30 +656,26 @@ CCAllConfigMonsterHPLock.CheckCondition = function(self, conditionParam)
     end
   end
   local isAllConfigMonsterHPLock = true
-  for _,classID in ipairs(monsterClassIDTable) do
-    if isAllConfigMonsterHPLock then
-      isAllConfigMonsterHPLock = lockHPDic[classID]
-    end
+  for _, classID in ipairs(monsterClassIDTable) do
+    isAllConfigMonsterHPLock = isAllConfigMonsterHPLock and lockHPDic[classID]
   end
   return isAllConfigMonsterHPLock
 end
 
 _class("CCTrapTypeDeadAndAllMonsterDead", ComplateConditionBase)
 CCTrapTypeDeadAndAllMonsterDead = CCTrapTypeDeadAndAllMonsterDead
--- DECOMPILER ERROR at PC307: Confused about usage of register: R0 in 'UnsetPending'
 
-CCTrapTypeDeadAndAllMonsterDead.CheckCondition = function(self, conditionParam)
-  -- function num : 0_51 , upvalues : _ENV
-  local trapType = (conditionParam[1])[1]
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-  for i,e in ipairs(trapGroup:GetEntities()) do
+function CCTrapTypeDeadAndAllMonsterDead:CheckCondition(conditionParam)
+  local trapType = conditionParam[1][1]
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  for i, e in ipairs(trapGroup:GetEntities()) do
     local trapCmpt = e:Trap()
     if trapCmpt:GetTrapType() == trapType and not e:HasDeadMark() then
       return false
     end
   end
   local monster_count = self:_CalcMonsterCount()
-  if monster_count > 0 then
+  if 0 < monster_count then
     return false
   end
   return true
@@ -925,92 +683,68 @@ end
 
 _class("CCChessEscape", ComplateConditionBase)
 CCChessEscape = CCChessEscape
--- DECOMPILER ERROR at PC316: Confused about usage of register: R0 in 'UnsetPending'
 
-CCChessEscape.Constructor = function(self)
-  -- function num : 0_52
+function CCChessEscape:Constructor()
   self._escapeCount = 0
   self._archivedCount = 0
 end
 
--- DECOMPILER ERROR at PC319: Confused about usage of register: R0 in 'UnsetPending'
-
-CCChessEscape.CheckCondition = function(self, conditionParam)
-  -- function num : 0_53 , upvalues : _ENV
-  local limitCount = (conditionParam[1])[1]
-  local targetChessClassID = (conditionParam[1])[2] or 0
+function CCChessEscape:CheckCondition(conditionParam)
+  local limitCount = conditionParam[1][1]
+  local targetChessClassID = conditionParam[1][2] or 0
   local monster_count = self:_CalcMonsterCount()
   if monster_count <= 0 then
     return true, {current = limitCount, full = limitCount}
   end
-  local entityGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterEscape)
+  local entityGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterEscape)
   local es = entityGroup:GetEntities()
   local nEscape = 0
-  for _,e in ipairs(es) do
+  for _, e in ipairs(es) do
     local monsterEscapeComponent = e:MonsterEscape()
     local chessPetCmpt = e:ChessPet()
-    -- DECOMPILER ERROR at PC45: Unhandled construct in 'MakeBoolean' P1
-
-    if monsterEscapeComponent and monsterEscapeComponent:IsEscapeSuccess() and chessPetCmpt and targetChessClassID ~= 0 then
-      local chessPetClassID = chessPetCmpt:GetChessPetClassID()
-      if targetChessClassID == chessPetClassID then
-        nEscape = nEscape + 1
-      end
-    else
-      do
-        do
+    if monsterEscapeComponent and monsterEscapeComponent:IsEscapeSuccess() and chessPetCmpt then
+      if targetChessClassID ~= 0 then
+        local chessPetClassID = chessPetCmpt:GetChessPetClassID()
+        if targetChessClassID == chessPetClassID then
           nEscape = nEscape + 1
-          -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_STMT
-
         end
+      else
+        nEscape = nEscape + 1
       end
     end
   end
   self._escapeCount = nEscape
-  do return limitCount <= nEscape, {current = nEscape, full = limitCount} end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return limitCount <= nEscape, {current = nEscape, full = limitCount}
 end
 
 _class("CCCompareMonsterNumber", ComplateConditionBase)
 CCCompareMonsterNumber = CCCompareMonsterNumber
--- DECOMPILER ERROR at PC328: Confused about usage of register: R0 in 'UnsetPending'
 
-CCCompareMonsterNumber.CheckCondition = function(self, conditionParam)
-  -- function num : 0_54 , upvalues : _ENV
-  if not (conditionParam[1])[1] then
-    local type = ConditionCompareType.Equal
-  end
-  local count = (conditionParam[1])[2] or 0
+function CCCompareMonsterNumber:CheckCondition(conditionParam)
+  local type = conditionParam[1][1] or ConditionCompareType.Equal
+  local count = conditionParam[1][2] or 0
   local curCount = self:_CalcMonsterCount()
   return CompareFunByType(type, curCount, count)
 end
 
 _class("CCOnlySpecifiedMonsterSurvival", ComplateConditionBase)
 CCOnlySpecifiedMonsterSurvival = CCOnlySpecifiedMonsterSurvival
--- DECOMPILER ERROR at PC337: Confused about usage of register: R0 in 'UnsetPending'
 
-CCOnlySpecifiedMonsterSurvival.CheckCondition = function(self, conditionParam)
-  -- function num : 0_55 , upvalues : _ENV
+function CCOnlySpecifiedMonsterSurvival:CheckCondition(conditionParam)
   local monsterIDList = {}
-  for _,strID in ipairs(conditionParam[1]) do
-    (table.insert)(monsterIDList, tonumber(strID))
+  for _, strID in ipairs(conditionParam[1]) do
+    table.insert(monsterIDList, tonumber(strID))
   end
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   local monsters = monsterGroup:GetEntities()
-  for k,v in ipairs(monsters) do
-    local monsterID = nil
+  for k, v in ipairs(monsters) do
+    local monsterID
     if v:HasMonsterID() then
-      monsterID = (v:MonsterID()):GetMonsterID()
+      monsterID = v:MonsterID():GetMonsterID()
     end
-    if monsterID and not (table.icontains)(monsterIDList, monsterID) then
+    if monsterID and not table.icontains(monsterIDList, monsterID) then
       local monsterIDCmpt = v:MonsterID()
-      if monsterIDCmpt then
-        local skipComplateCondition = monsterIDCmpt:GetSkipComplateCondition()
-      end
+      local skipComplateCondition = monsterIDCmpt and monsterIDCmpt:GetSkipComplateCondition()
       if not v:HasDeadMark() and not skipComplateCondition then
         return false
       end
@@ -1021,12 +755,10 @@ end
 
 _class("CCComparePopStarNumber", ComplateConditionBase)
 CCComparePopStarNumber = CCComparePopStarNumber
--- DECOMPILER ERROR at PC346: Confused about usage of register: R0 in 'UnsetPending'
 
-CCComparePopStarNumber.CheckCondition = function(self, conditionParam)
-  -- function num : 0_56
-  local popNumMax = (conditionParam[1])[1]
-  local popStarSvc = (self._world):GetService("PopStarLogic")
+function CCComparePopStarNumber:CheckCondition(conditionParam)
+  local popNumMax = conditionParam[1][1]
+  local popStarSvc = self._world:GetService("PopStarLogic")
   local curNum = popStarSvc:GetPopGridNum()
   if popNumMax <= curNum then
     return true
@@ -1036,16 +768,14 @@ end
 
 _class("CCKillSpecificMonsterCount", ComplateConditionBase)
 CCKillSpecificMonsterCount = CCKillSpecificMonsterCount
--- DECOMPILER ERROR at PC355: Confused about usage of register: R0 in 'UnsetPending'
 
-CCKillSpecificMonsterCount.CheckCondition = function(self, conditionParam)
-  -- function num : 0_57 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
-  local specificMonsterID = (conditionParam[1])[1]
-  local needKillCount = (conditionParam[1])[2]
+function CCKillSpecificMonsterCount:CheckCondition(conditionParam)
+  local battleStatCmpt = self._world:BattleStat()
+  local specificMonsterID = conditionParam[1][1]
+  local needKillCount = conditionParam[1][2]
   local totalDeadMonsterIDList = battleStatCmpt:GetCurWaveDeadMonsterIDList()
   local specificMonsetDeadCount = 0
-  for index,value in ipairs(totalDeadMonsterIDList) do
+  for index, value in ipairs(totalDeadMonsterIDList) do
     if value == specificMonsterID then
       specificMonsetDeadCount = specificMonsetDeadCount + 1
     end
@@ -1058,17 +788,15 @@ end
 
 _class("CCKillMoreThanPetMonster", ComplateConditionBase)
 CCKillMoreThanPetMonster = CCKillMoreThanPetMonster
--- DECOMPILER ERROR at PC364: Confused about usage of register: R0 in 'UnsetPending'
 
-CCKillMoreThanPetMonster.CheckCondition = function(self, conditionParam)
-  -- function num : 0_58
-  local targetMonsterID = (conditionParam[1])[1]
-  local battleStatCmpt = (self._world):BattleStat()
+function CCKillMoreThanPetMonster:CheckCondition(conditionParam)
+  local targetMonsterID = conditionParam[1][1]
+  local battleStatCmpt = self._world:BattleStat()
   local levelRoundCount = battleStatCmpt:GetLevelLeftRoundCount()
   if levelRoundCount ~= 0 then
     return false
   end
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local monsterKilledCountAll = battleStatCmpt:GetMonsterKilledCount()
   local monsterKilledCountByTargetMonster = battleStatCmpt:GetMonsterKilledCountByMonsterID(targetMonsterID)
   local monsterKilledCountByPet = monsterKilledCountAll - monsterKilledCountByTargetMonster
@@ -1077,5 +805,3 @@ CCKillMoreThanPetMonster.CheckCondition = function(self, conditionParam)
   end
   return false
 end
-
-

@@ -1,24 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn6/line/ui_cn6_n35_line_map_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_activity_line_level_node_base")
 _class("UICN6N35LineMapNode", UIActivityLineLevelNodeBase)
 UICN6N35LineMapNode = UICN6N35LineMapNode
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN6N35LineMapNode.OnInit = function(self)
-  -- function num : 0_0
+function UICN6N35LineMapNode:OnInit()
   self._anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN6N35LineMapNode.PlayAnimation = function(self)
-  -- function num : 0_1
-  if not self._anim or ((((self._rectTransform).anchoredPosition).y <= 0 or ((self._rectTransform).anchoredPosition).y <= 0)) then
+function UICN6N35LineMapNode:PlayAnimation()
+  if not self._anim or self._rectTransform.anchoredPosition.y > 0 then
+  elseif self._rectTransform.anchoredPosition.y <= 0 then
   end
 end
-
-

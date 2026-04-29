@@ -1,121 +1,86 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw/ui_haute_couture_draw_rules_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawRulesController", UIController)
 UIHauteCoutureDrawRulesController = UIHauteCoutureDrawRulesController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawRulesController.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawRulesController:Constructor()
   self._probablityTable = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHauteCoutureDrawRulesController:OnShow(uiParams)
   self._isReview = uiParams[1] or false
   local prizes = uiParams[2]
-  if not uiParams[3] then
-    local replacedIdx = {}
-  end
+  local replacedIdx = uiParams[3] or {}
   local items = self:GetUIComponent("UISelectObjectPath", "items")
   local pros = self:GetUIComponent("Transform", "Pros")
   items:SpawnObjects("UISeniorSKinProItems", 10)
   local itemWidgets = items:GetAllSpawnList()
   for i = 1, 10 do
     local prizeCfg = prizes[i]
-    local prize, normalPrize = nil, nil
-    if (table.icontains)(replacedIdx, i) then
-      normalPrize = {prizeCfg.ReplaceRewardID, prizeCfg.ReplaceRewardCount}
+    local prize, normalPrize
+    if table.icontains(replacedIdx, i) then
+      normalPrize = {
+        prizeCfg.ReplaceRewardID,
+        prizeCfg.ReplaceRewardCount
+      }
     else
-      normalPrize = {prizeCfg.RewardID, prizeCfg.RewardCount}
+      normalPrize = {
+        prizeCfg.RewardID,
+        prizeCfg.RewardCount
+      }
     end
     if prizeCfg.AppendGlow and prizeCfg.AppendGlow > 0 then
       prize = {
-{RoleAssetID.RoleAssetGlow, prizeCfg.AppendGlow}
-, normalPrize}
+        {
+          RoleAssetID.RoleAssetGlow,
+          prizeCfg.AppendGlow
+        },
+        normalPrize
+      }
     else
       prize = {normalPrize}
     end
-    ;
-    (itemWidgets[i]):SetData(prize)
-    ;
-    ((pros:GetChild(i - 1)):GetComponent(typeof(UILocalizationText))):SetText(prizeCfg.BaseProb)
+    itemWidgets[i]:SetData(prize)
+    pros:GetChild(i - 1):GetComponent(typeof(UILocalizationText)):SetText(prizeCfg.BaseProb)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesController.maskOnClick = function(self)
-  -- function num : 0_2
+function UIHauteCoutureDrawRulesController:maskOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesController._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._ruleGrid).constraintCount = #self._prizes + 1
-  local items = (self._ruleGridPool):SpawnObjects("UIHauteCoutureDrawRuleItem", (self._maxRows + 1) * (self._maxCols + 1))
+function UIHauteCoutureDrawRulesController:_OnValue()
+  self._ruleGrid.constraintCount = #self._prizes + 1
+  local items = self._ruleGridPool:SpawnObjects("UIHauteCoutureDrawRuleItem", (self._maxRows + 1) * (self._maxCols + 1))
   local currentCount = 1
   for i = 1, self._maxRows + 1 do
-    do
-      if i > 1 then
-        local cfg = (Cfg.cfg_item)[((self._prizes)[i - 1]).RewardID]
-        ;
-        (items[currentCount]):SetImg(cfg.Icon, ((self._prizes)[i - 1]).RewardCount)
-      end
-      for j = 1, self._maxCols + 1 do
-        (items[currentCount]):SetData(i, j)
-        ;
-        (items[currentCount]):SetProbablity("0.01%")
-        currentCount = currentCount + 1
-      end
-      -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out DO_STMT
-
+    if 1 < i then
+      local cfg = Cfg.cfg_item[self._prizes[i - 1].RewardID]
+      items[currentCount]:SetImg(cfg.Icon, self._prizes[i - 1].RewardCount)
+    end
+    for j = 1, self._maxCols + 1 do
+      items[currentCount]:SetData(i, j)
+      items[currentCount]:SetProbablity("0.01%")
+      currentCount = currentCount + 1
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesController.CalculateProbablity = function(self, row, col)
-  -- function num : 0_4 , upvalues : _ENV
-  for k,v in pairs(self._prizes) do
+function UIHauteCoutureDrawRulesController:CalculateProbablity(row, col)
+  for k, v in pairs(self._prizes) do
     local prizeIndex = 1
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._probablityTable)[prizeIndex] = {}
+    self._probablityTable[prizeIndex] = {}
     for i = 1, #self._prizes do
       local index = 1
-      -- DECOMPILER ERROR at PC25: Confused about usage of register: R14 in 'UnsetPending'
-
-      if v.RareLevel ~= 0 and v.RareLevel ~= nil and self._ < index then
-        ((self._probablityTable)[prizeIndex])[i] = "0.00%"
+      if v.RareLevel ~= 0 and v.RareLevel ~= nil and index > self._ then
+        self._probablityTable[prizeIndex][i] = "0.00%"
         index = index + 1
       end
     end
     if v.RareLevel ~= 0 and v.RareLevel ~= nil then
       for i = 1, v.RareLevel do
-        -- DECOMPILER ERROR at PC40: Confused about usage of register: R13 in 'UnsetPending'
-
-        ((self._probablityTable)[prizeIndex])[i] = "0.00%"
+        self._probablityTable[prizeIndex][i] = "0.00%"
       end
+    else
     end
-    do
-      do
-        prizeIndex = prizeIndex + 1
-        -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    prizeIndex = prizeIndex + 1
   end
 end
-
-

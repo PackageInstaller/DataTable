@@ -1,126 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/hard_level/ui_activity_n22_hardlevel_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN22HardLevelItem", UICustomWidget)
 UIActivityN22HardLevelItem = UIActivityN22HardLevelItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN22HardLevelItem.Constructor = function(self, uiview)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN22HardLevelItem:Constructor(uiview)
   self._view = uiview
   self:OnShow()
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._press), UIEvent.Press, function(go)
-    -- function num : 0_0_0
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._press), UIEvent.Release, function(go)
-    -- function num : 0_0_1
-  end
-)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._press), UIEvent.Press, function(go)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._press), UIEvent.Release, function(go)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN22HardLevelItem.OnShow = function(self)
-  -- function num : 0_1
-  self._titleImg = (self._view):GetUIComponent("Image", "TitleBg")
-  self._normal = (self._view):GetUIComponent("Image", "normal")
-  self._pass = (self._view):GetUIComponent("Image", "pass")
-  self._close = (self._view):GetUIComponent("Image", "close")
-  self._clickimg = (self._view):GetUIComponent("Image", "clickimg")
-  self._press = (self._view):GetGameObject("press")
-  self._name = (self._view):GetUIComponent("UILocalizationText", "name")
-  self._nameRoot = (self._view):GetGameObject("nameRoot")
-  self._animation = (self._view):GetUIComponent("Animation", "anim")
-  self._localPos = (((self._view).transform).localPosition):Clone()
+function UIActivityN22HardLevelItem:OnShow()
+  self._titleImg = self._view:GetUIComponent("Image", "TitleBg")
+  self._normal = self._view:GetUIComponent("Image", "normal")
+  self._pass = self._view:GetUIComponent("Image", "pass")
+  self._close = self._view:GetUIComponent("Image", "close")
+  self._clickimg = self._view:GetUIComponent("Image", "clickimg")
+  self._press = self._view:GetGameObject("press")
+  self._name = self._view:GetUIComponent("UILocalizationText", "name")
+  self._nameRoot = self._view:GetGameObject("nameRoot")
+  self._animation = self._view:GetUIComponent("Animation", "anim")
+  self._localPos = self._view.transform.localPosition:Clone()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN22HardLevelItem.OnHide = function(self)
-  -- function num : 0_2
+function UIActivityN22HardLevelItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN22HardLevelItem.SetData = function(self, idx, cfg, passInfo, cur, atlas)
-  -- function num : 0_3 , upvalues : _ENV
-  local levelCfg = (UIActivtiyN22HardLevelController.LevelCfg)[idx]
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._titleImg).sprite = atlas:GetSprite(levelCfg.title)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._normal).sprite = atlas:GetSprite(levelCfg.normal)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._pass).sprite = atlas:GetSprite(levelCfg.close)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._close).sprite = atlas:GetSprite(levelCfg.close)
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._clickimg).sprite = atlas:GetSprite(levelCfg.click)
-  ;
-  ((self._clickimg).gameObject):SetActive(false)
+function UIActivityN22HardLevelItem:SetData(idx, cfg, passInfo, cur, atlas)
+  local levelCfg = UIActivtiyN22HardLevelController.LevelCfg[idx]
+  self._titleImg.sprite = atlas:GetSprite(levelCfg.title)
+  self._normal.sprite = atlas:GetSprite(levelCfg.normal)
+  self._pass.sprite = atlas:GetSprite(levelCfg.close)
+  self._close.sprite = atlas:GetSprite(levelCfg.close)
+  self._clickimg.sprite = atlas:GetSprite(levelCfg.click)
+  self._clickimg.gameObject:SetActive(false)
   if idx < cur then
     if not passInfo then
-      (Log.exception)("没有通关信息：", idx)
+      Log.exception("没有通关信息：", idx)
     end
-    ;
-    ((self._pass).gameObject):SetActive(true)
-    ;
-    ((self._close).gameObject):SetActive(false)
+    self._pass.gameObject:SetActive(true)
+    self._close.gameObject:SetActive(false)
+  elseif cur < idx then
+    self._pass.gameObject:SetActive(false)
+    self._close.gameObject:SetActive(true)
   else
-    if cur < idx then
-      ((self._pass).gameObject):SetActive(false)
-      ;
-      ((self._close).gameObject):SetActive(true)
-    else
-      ;
-      ((self._normal).gameObject):SetActive(true)
-      ;
-      ((self._pass).gameObject):SetActive(false)
-      ;
-      ((self._close).gameObject):SetActive(false)
-    end
+    self._normal.gameObject:SetActive(true)
+    self._pass.gameObject:SetActive(false)
+    self._close.gameObject:SetActive(false)
   end
-  local missionCfg = (Cfg.cfg_campaign_mission)[cfg.CampaignMissionId]
-  ;
-  (self._name):SetText((StringTable.Get)(missionCfg.Name))
+  local missionCfg = Cfg.cfg_campaign_mission[cfg.CampaignMissionId]
+  self._name:SetText(StringTable.Get(missionCfg.Name))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN22HardLevelItem.LocalPosition = function(self)
-  -- function num : 0_4
+function UIActivityN22HardLevelItem:LocalPosition()
   return self._localPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN22HardLevelItem.Anim_Pass = function(self)
-  -- function num : 0_5
+function UIActivityN22HardLevelItem:Anim_Pass()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN22HardLevelItem.Anim_Open = function(self)
-  -- function num : 0_6
+function UIActivityN22HardLevelItem:Anim_Open()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN22HardLevelItem.SetActive = function(self, bShow)
-  -- function num : 0_7
-  ((self._view).gameObject):SetActive(bShow)
+function UIActivityN22HardLevelItem:SetActive(bShow)
+  self._view.gameObject:SetActive(bShow)
 end
-
-

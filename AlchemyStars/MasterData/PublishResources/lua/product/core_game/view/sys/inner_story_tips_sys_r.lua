@@ -1,104 +1,75 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/inner_story_tips_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("InnerStoryTipsSystem_Render", ReactiveSystem)
 InnerStoryTipsSystem_Render = InnerStoryTipsSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-InnerStoryTipsSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function InnerStoryTipsSystem_Render:Constructor(world)
   self._world = world
   self._configService = world:GetService("Config")
   self._timeService = world:GetService("Time")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerStoryTipsSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = world:GetGroup((world.BW_WEMatchers).InnerStoryTips)
+function InnerStoryTipsSystem_Render:GetTrigger(world)
+  local group = world:GetGroup(world.BW_WEMatchers.InnerStoryTips)
   local c = Collector:New({group}, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerStoryTipsSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2
+function InnerStoryTipsSystem_Render:Filter(entity)
   return entity:HasInnerStoryTipsComponent()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerStoryTipsSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3 , upvalues : _ENV
-  for i,e in ipairs(entities) do
+function InnerStoryTipsSystem_Render:ExecuteEntities(entities)
+  for i, e in ipairs(entities) do
     if e:HasInnerStoryTipsComponent() then
-      ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoStoryTips, self, e)
+      GameGlobal.TaskManager():CoreGameStartTask(self._DoStoryTips, self, e)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerStoryTipsSystem_Render._DoStoryTips = function(self, TT, tipsEntity)
-  -- function num : 0_4 , upvalues : _ENV
+function InnerStoryTipsSystem_Render:_DoStoryTips(TT, tipsEntity)
   local storyTipsComponent = tipsEntity:InnerStoryTipsComponent()
-  local speakerEntity = (self._world):GetEntityByID(storyTipsComponent:GetEntityID())
-  local speakerGridPos = (speakerEntity:GridLocation()).Position
+  local speakerEntity = self._world:GetEntityByID(storyTipsComponent:GetEntityID())
+  local speakerGridPos = speakerEntity:GridLocation().Position
   local HorizontalOffSet, direction = self:GetTipsHorizontalOffSet(speakerGridPos)
   local offSet = Vector3(0, storyTipsComponent:GetOffset(), 0) + HorizontalOffSet
-  local renderOffset = self:_CalcSkinnedMeshPos(((speakerEntity:View()).ViewWrapper).GameObject, offSet)
-  local levelConfigData = (self._configService):GetLevelConfigData()
+  local renderOffset = self:_CalcSkinnedMeshPos(speakerEntity:View().ViewWrapper.GameObject, offSet)
+  local levelConfigData = self._configService:GetLevelConfigData()
   local tipsList = levelConfigData:GetStoryTipsList(storyTipsComponent:GetTipsID())
   while not tipsEntity:View() do
     YIELD(TT)
-    if not (GameGlobal:GetInstance()):IsCoreGameRunning() then
-      return 
+    if not GameGlobal:GetInstance():IsCoreGameRunning() then
+      return
     end
   end
-  local go = ((tipsEntity:View()).ViewWrapper).GameObject
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R13 in 'UnsetPending'
-
-  ;
-  (go.transform).position = renderOffset
+  local go = tipsEntity:View().ViewWrapper.GameObject
+  go.transform.position = renderOffset
   local uiview = go:GetComponent("UIView")
   local bgGO = uiview:GetGameObject("bg")
   local textGO = uiview:GetGameObject("StoryText")
   self:Rotate(TT, bgGO, textGO, direction)
-  for _,v in ipairs(tipsList) do
-    local beginTime = (self._timeService):GetCurrentTimeMs()
+  for _, v in ipairs(tipsList) do
+    local beginTime = self._timeService:GetCurrentTimeMs()
     local duration = v:GetDuration()
     go:SetActive(true)
     local text = uiview:GetUIComponent("UILocalizationText", "StoryText")
     text:SetText(v:GetText())
-    while (self._timeService):GetCurrentTimeMs() < beginTime + duration do
-      if speakerEntity and speakerEntity:View() and ((speakerEntity:View()).ViewWrapper).GameObject then
-        renderOffset = self:_CalcSkinnedMeshPos(((speakerEntity:View()).ViewWrapper).GameObject, offSet)
-        -- DECOMPILER ERROR at PC118: Confused about usage of register: R24 in 'UnsetPending'
-
-        ;
-        (go.transform).position = renderOffset
+    while beginTime + duration > self._timeService:GetCurrentTimeMs() do
+      if speakerEntity and speakerEntity:View() and speakerEntity:View().ViewWrapper.GameObject then
+        renderOffset = self:_CalcSkinnedMeshPos(speakerEntity:View().ViewWrapper.GameObject, offSet)
+        go.transform.position = renderOffset
       end
       YIELD(TT)
-      if not (GameGlobal:GetInstance()):IsCoreGameRunning() then
-        return 
+      if not GameGlobal:GetInstance():IsCoreGameRunning() then
+        return
       end
     end
     go:SetActive(false)
     YIELD(TT, BattleConst.StoryTipsHideIntervalDuration)
   end
   tipsEntity:RemoveInnerStoryTipsComponent()
-  ;
-  (self._world):DestroyEntity(tipsEntity)
+  self._world:DestroyEntity(tipsEntity)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerStoryTipsSystem_Render._HasView = function(self, e)
-  -- function num : 0_5
+function InnerStoryTipsSystem_Render:_HasView(e)
   local viewCmpt = e:View()
   if viewCmpt == nil then
     return false
@@ -110,71 +81,47 @@ InnerStoryTipsSystem_Render._HasView = function(self, e)
   return true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerStoryTipsSystem_Render.Rotate = function(self, TT, bgGO, textGO, direction)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R5 in 'UnsetPending'
-
+function InnerStoryTipsSystem_Render:Rotate(TT, bgGO, textGO, direction)
   if direction == "Right" then
-    (bgGO.transform).localRotation = (Quaternion.Euler)(0, 180, 0)
+    bgGO.transform.localRotation = Quaternion.Euler(0, 180, 0)
     YIELD(TT)
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (textGO.transform).localRotation = (Quaternion.Euler)(0, 180, 0)
+    textGO.transform.localRotation = Quaternion.Euler(0, 180, 0)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerStoryTipsSystem_Render.GetTipsHorizontalOffSet = function(self, gridPos)
-  -- function num : 0_7 , upvalues : _ENV
-  for _,v in ipairs(BattleConst.StoryTipsLeftGridPosList) do
+function InnerStoryTipsSystem_Render:GetTipsHorizontalOffSet(gridPos)
+  for _, v in ipairs(BattleConst.StoryTipsLeftGridPosList) do
     if gridPos.x == v[1] and gridPos.y == v[2] then
       return Vector3(BattleConst.StoryTipsLeftOffSet, 0, 0), "Left"
     end
   end
-  for _,v in ipairs(BattleConst.StoryTipsRightGridPosList) do
+  for _, v in ipairs(BattleConst.StoryTipsRightGridPosList) do
     if gridPos.x == v[1] and gridPos.y == v[2] then
       return Vector3(BattleConst.StoryTipsRightOffSet, 0, 0), "Right"
     end
   end
-  -- DECOMPILER ERROR at PC51: Overwrote pending register: R3 in 'AssignReg'
-
-  return (Vector3(0, 0, 0))
+  return Vector3(0, 0, 0), nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerStoryTipsSystem_Render._CalcSkinnedMeshPos = function(self, ownerObj, buff_offset)
-  -- function num : 0_8 , upvalues : _ENV
-  local owner_entity_render_pos = (ownerObj.transform).position
-  local skinnedMeshRender = (GameObjectHelper.FindFirstSkinedMeshRender)(ownerObj)
+function InnerStoryTipsSystem_Render:_CalcSkinnedMeshPos(ownerObj, buff_offset)
+  local owner_entity_render_pos = ownerObj.transform.position
+  local skinnedMeshRender = GameObjectHelper.FindFirstSkinedMeshRender(ownerObj)
   if skinnedMeshRender ~= nil then
-    local skinnedMeshPosition = (skinnedMeshRender.transform).position + Vector3(buff_offset.x, buff_offset.y, 0)
-    local meshExtents = (GameObjectHelper.FindFirstSkinedMeshRenderBoundsExtent)(ownerObj)
+    local skinnedMeshPosition = skinnedMeshRender.transform.position + Vector3(buff_offset.x, buff_offset.y, 0)
+    local meshExtents = GameObjectHelper.FindFirstSkinedMeshRenderBoundsExtent(ownerObj)
     local convertExtents = Vector3(0, meshExtents.x * 2, 0)
     local targetPos = skinnedMeshPosition + convertExtents
     owner_entity_render_pos = self:_CalcGridHUDWorldPos(targetPos)
   else
-    do
-      ;
-      (Log.fatal)("ownerObj", ownerObj.name, "has no skinned mesh")
-      return owner_entity_render_pos
-    end
+    Log.fatal("ownerObj", ownerObj.name, "has no skinned mesh")
   end
+  return owner_entity_render_pos
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerStoryTipsSystem_Render._CalcGridHUDWorldPos = function(self, gridRenderPos)
-  -- function num : 0_9
-  local camera = ((self._world):MainCamera()):Camera()
+function InnerStoryTipsSystem_Render:_CalcGridHUDWorldPos(gridRenderPos)
+  local camera = self._world:MainCamera():Camera()
   local screenPos = camera:WorldToScreenPoint(gridRenderPos)
-  local hudCamera = ((self._world):MainCamera()):HUDCamera()
+  local hudCamera = self._world:MainCamera():HUDCamera()
   local hudWorldPos = hudCamera:ScreenToWorldPoint(screenPos)
   return hudWorldPos
 end
-
-

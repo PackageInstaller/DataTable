@@ -1,23 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/command_handler/mirage_force_close_cmd_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("command_base_handler")
 _class("MirageForceCloseCommandHandler", CommandBaseHandler)
 MirageForceCloseCommandHandler = MirageForceCloseCommandHandler
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MirageForceCloseCommandHandler.DoHandleCommand = function(self, cmd)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.notice)("Handle MirageForceCloseCommand")
-  local mirageSvc = (self._world):GetService("MirageLogic")
+function MirageForceCloseCommandHandler:DoHandleCommand(cmd)
+  Log.notice("Handle MirageForceCloseCommand")
+  local mirageSvc = self._world:GetService("MirageLogic")
   mirageSvc:SetMirageForceClose(true)
-  local gameFsmCmpt = (self._world):GameFSM()
+  local gameFsmCmpt = self._world:GameFSM()
   local gameFsmStateID = gameFsmCmpt:CurStateID()
   if gameFsmStateID == GameStateID.MirageWaitInput then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.MirageWaitInputFinish, 2)
+    self._world:EventDispatcher():Dispatch(GameEventType.MirageWaitInputFinish, 2)
   end
 end
-
-

@@ -1,35 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/calc_scope_all_chess_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("CalcScopeAllChessPet", SkillScopeCalculator_Base)
 CalcScopeAllChessPet = CalcScopeAllChessPet
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CalcScopeAllChessPet.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local chessPetEntityList, chessPetPosList = (self._gridFilter):SelectAllChessPet(casterEntity)
-  local world = (self._gridFilter)._world
+function CalcScopeAllChessPet:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local chessPetEntityList, chessPetPosList = self._gridFilter:SelectAllChessPet(casterEntity)
+  local world = self._gridFilter._world
   local utilSvc = world:GetService("UtilData")
   local scopePosList = {}
-  for _,pos in ipairs(chessPetPosList) do
+  for _, pos in ipairs(chessPetPosList) do
     local traps = utilSvc:GetTrapsAtPos(pos)
     if traps then
       local hasBadGrid = false
-      for index,e in ipairs(traps) do
-        if (e:Trap()):GetTrapType() == TrapType.BadGrid then
+      for index, e in ipairs(traps) do
+        if e:Trap():GetTrapType() == TrapType.BadGrid then
           hasBadGrid = true
         end
       end
       if not hasBadGrid then
-        (table.insert)(scopePosList, pos)
+        table.insert(scopePosList, pos)
       end
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.AllChessPet, casterPos, scopePosList, scopePosList)
   return result
 end
-
-

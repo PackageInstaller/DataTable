@@ -1,25 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_decrease_max_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewDecreaseMaxHP", BuffViewBase)
 BuffViewDecreaseMaxHP = BuffViewDecreaseMaxHP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewDecreaseMaxHP.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local playDamageSvc = (self._world):GetService("PlayDamage")
+function BuffViewDecreaseMaxHP:PlayView(TT)
+  local playDamageSvc = self._world:GetService("PlayDamage")
   local result = self._buffResult
   local damageInfo = result:GetDamageInfo()
   local entityID = result:GetEntityID()
   local ret = result:GetMaxHPResult()
-  for k,v in pairs(ret) do
-    local e = (self._world):GetEntityByID(k)
+  for k, v in pairs(ret) do
+    local e = self._world:GetEntityByID(k)
     e:ReplaceMaxHP(v)
   end
-  local entityWork = (self._world):GetEntityByID(entityID)
+  local entityWork = self._world:GetEntityByID(entityID)
   playDamageSvc:UpdateTargetHPBar(TT, entityWork, damageInfo)
 end
-
-

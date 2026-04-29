@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_choose_target.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetChooseTarget", UICustomWidget)
 UIWidgetChooseTarget = UIWidgetChooseTarget
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetChooseTarget.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWidgetChooseTarget:Constructor()
   self:AttachEvent(GameEventType.RefreshPickUpNum, self.RefreshPickUpNum)
   self:AttachEvent(GameEventType.ChangePickUpText, self.ChangePickUpText)
   self:AttachEvent(GameEventType.PuzzleUICountDownOver, self.HandleActiveSkillConfirm)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChooseTarget.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWidgetChooseTarget:OnShow()
   self.enableFakeInput = true
   self._curActiveSkillID = -1
   self._curPetPstID = -1
@@ -31,320 +21,193 @@ UIWidgetChooseTarget.OnShow = function(self)
   self._chooseDirection = self:GetGameObject("direction")
   self._choosePuzzleObj = self:GetGameObject("puzzle")
   self._txtPuzzle = self:GetUIComponent("UILocalizationText", "txtPuzzle")
-  ;
-  (self._txtPuzzle):SetText((StringTable.Get)("str_battle_choose_puzzle"))
+  self._txtPuzzle:SetText(StringTable.Get("str_battle_choose_puzzle"))
   self._chooseDirText = self:GetUIComponent("UILocalizationText", "DirectionText")
-  ;
-  (self._chooseDirText):SetText((StringTable.Get)("str_battle_choose_dir"))
+  self._chooseDirText:SetText(StringTable.Get("str_battle_choose_dir"))
   self._chooseConfimText = self:GetUIComponent("UILocalizationText", "ActiveSkillConfigText")
-  ;
-  (self._chooseConfimText):SetText((StringTable.Get)("str_common_cancel"))
+  self._chooseConfimText:SetText(StringTable.Get("str_common_cancel"))
   self._choosePreText = self:GetUIComponent("UILocalizationText", "PreText")
-  ;
-  (self._choosePreText):SetText((StringTable.Get)("str_battle_choose_select"))
+  self._choosePreText:SetText(StringTable.Get("str_battle_choose_select"))
   self._chooseNumText = self:GetUIComponent("UILocalizationText", "SelectTargetNumText")
-  ;
-  (self._chooseNumText):SetText("0")
+  self._chooseNumText:SetText("0")
   self._activeSkillCancelBtn = self:GetUIComponent("Button", "btnActiveSkillCancel")
   self._activeSkillCancelBtnGO = self:GetGameObject("btnActiveSkillCancel")
-  -- DECOMPILER ERROR at PC102: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._activeSkillCancelBtn).interactable = true
+  self._activeSkillCancelBtn.interactable = true
   self._btnConfirmActiveSkill = self:GetUIComponent("Button", "btnActiveSkillConfirm")
   self._btnConfirmActiveSkillGO = self:GetGameObject("btnActiveSkillConfirm")
-  -- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._btnConfirmActiveSkill).interactable = false
-  ;
-  (self._btnConfirmActiveSkillGO):SetActive(false)
+  self._btnConfirmActiveSkill.interactable = false
+  self._btnConfirmActiveSkillGO:SetActive(false)
   self._btnConfirmActiveSkillGray = self:GetUIComponent("Button", "btnActiveSkillConfirmGray")
   self._btnConfirmActiveSkillGrayGO = self:GetGameObject("btnActiveSkillConfirmGray")
-  ;
-  (self._btnConfirmActiveSkillGrayGO):SetActive(true)
-  -- DECOMPILER ERROR at PC132: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._btnConfirmActiveSkillGray).interactable = true
+  self._btnConfirmActiveSkillGrayGO:SetActive(true)
+  self._btnConfirmActiveSkillGray.interactable = true
   self._btnconfirmText = self:GetUIComponent("UILocalizationText", "ConfirmText")
-  ;
-  (self._btnconfirmText):SetText((StringTable.Get)("str_battle_confirm_cast"))
+  self._btnconfirmText:SetText(StringTable.Get("str_battle_confirm_cast"))
   self._btnconfirmTextGray = self:GetUIComponent("UILocalizationText", "GrayConfirmText")
-  ;
-  (self._btnconfirmText):SetText((StringTable.Get)("str_battle_confirm_cast"))
+  self._btnconfirmText:SetText(StringTable.Get("str_battle_confirm_cast"))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChooseTarget.OnHide = function(self)
-  -- function num : 0_2
+function UIWidgetChooseTarget:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChooseTarget.InitChooseTargetWidget = function(self, skillID, petPstID)
-  -- function num : 0_3
+function UIWidgetChooseTarget:InitChooseTargetWidget(skillID, petPstID)
   self._curActiveSkillID = skillID
   self._curPetPstID = petPstID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChooseTarget.ShowChooseTargetPanel = function(self, isShow)
-  -- function num : 0_4
-  (self._chooseTargetPanel):SetActive(isShow)
+function UIWidgetChooseTarget:ShowChooseTargetPanel(isShow)
+  self._chooseTargetPanel:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChooseTarget.ChangePickUpText = function(self, state, param)
-  -- function num : 0_5 , upvalues : _ENV
+function UIWidgetChooseTarget:ChangePickUpText(state, param)
   if state == SkillPickUpTextStateType.Rotate or state == SkillPickUpTextStateType.Switch or state == SkillPickUpTextStateType.ChooseDir or state == SkillPickUpTextStateType.ColOrRow or state == SkillPickUpTextStateType.Puzzle then
-    (self._choosehlg):SetActive(false)
+    self._choosehlg:SetActive(false)
   else
-    ;
-    (self._choosehlg):SetActive(true)
+    self._choosehlg:SetActive(true)
   end
-  ;
-  (self._chooseColOrRow):SetActive(state == SkillPickUpTextStateType.ColOrRow)
-  ;
-  (self._chooseRotate):SetActive(state == SkillPickUpTextStateType.Rotate)
-  ;
-  (self._chooseSwitch):SetActive(state == SkillPickUpTextStateType.Switch)
-  ;
-  (self._chooseDirection):SetActive(state == SkillPickUpTextStateType.ChooseDir)
-  ;
-  (self._choosePuzzleObj):SetActive(state == SkillPickUpTextStateType.Puzzle)
+  self._chooseColOrRow:SetActive(state == SkillPickUpTextStateType.ColOrRow)
+  self._chooseRotate:SetActive(state == SkillPickUpTextStateType.Rotate)
+  self._chooseSwitch:SetActive(state == SkillPickUpTextStateType.Switch)
+  self._chooseDirection:SetActive(state == SkillPickUpTextStateType.ChooseDir)
+  self._choosePuzzleObj:SetActive(state == SkillPickUpTextStateType.Puzzle)
   if state == SkillPickUpTextStateType.Normal then
-    (self._chooseDirText):SetText((StringTable.Get)("str_battle_choose_point"))
+    self._chooseDirText:SetText(StringTable.Get("str_battle_choose_point"))
   elseif state == SkillPickUpTextStateType.Tel then
-    (self._chooseDirText):SetText((StringTable.Get)("str_battle_choose_monster_tel_pos"))
+    self._chooseDirText:SetText(StringTable.Get("str_battle_choose_monster_tel_pos"))
   elseif state == SkillPickUpTextStateType.Direction then
-    (self._chooseDirText):SetText((StringTable.Get)("str_battle_choose_dir"))
+    self._chooseDirText:SetText(StringTable.Get("str_battle_choose_dir"))
   elseif state == SkillPickUpTextStateType.Target then
-    (self._chooseDirText):SetText((StringTable.Get)("str_battle_choose_target"))
+    self._chooseDirText:SetText(StringTable.Get("str_battle_choose_target"))
   elseif state == SkillPickUpTextStateType.ChangePreText then
     if param then
-      (self._choosePreText):SetText((StringTable.Get)("str_battle_choose_select"))
+      self._choosePreText:SetText(StringTable.Get("str_battle_choose_select"))
     else
-      (self._choosePreText):SetText((StringTable.Get)("str_battle_akxy_feature_ui_selected"))
+      self._choosePreText:SetText(StringTable.Get("str_battle_akxy_feature_ui_selected"))
     end
   end
-  -- DECOMPILER ERROR: 11 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChooseTarget.SetChooseUIText = function(self, pickUpType)
-  -- function num : 0_6 , upvalues : _ENV
-  local skillConfigData = (ConfigServiceHelper.GetSkillConfigData)(self._curActiveSkillID, self._curPetPstID)
+function UIWidgetChooseTarget:SetChooseUIText(pickUpType)
+  local skillConfigData = ConfigServiceHelper.GetSkillConfigData(self._curActiveSkillID, self._curPetPstID)
   local pickUpParam = skillConfigData:GetSkillPickParam()
   local pickUpCount = pickUpParam[1]
-  ;
-  (self._choosePreText):SetText((StringTable.Get)("str_battle_choose_select"))
+  self._choosePreText:SetText(StringTable.Get("str_battle_choose_select"))
   self._pickUpType = pickUpType
-  ;
-  ((((self._chooseNumText).transform).parent).gameObject):SetActive(true)
+  self._chooseNumText.transform.parent.gameObject:SetActive(true)
   if pickUpType == SkillPickUpType.Instruction or pickUpType == SkillPickUpType.PickAndTeleportInst or pickUpType == SkillPickUpType.PickDiffPowerInstruction or pickUpType == SkillPickUpType.Akexiya or pickUpType == SkillPickUpType.Yeliya or pickUpType == SkillPickUpType.Hati then
-    (self._chooseNumText):SetText(tostring(pickUpCount))
-    ;
-    (self._chooseDirText):SetText((StringTable.Get)("str_battle_choose_point"))
-  else
-    if pickUpType == SkillPickUpType.DirectionInstruction then
-      (self._chooseNumText):SetText(tostring(pickUpCount))
-      ;
-      (self._chooseDirText):SetText((StringTable.Get)("str_battle_choose_dir"))
-    else
-      if pickUpType == SkillPickUpType.ColorInstruction then
-        (self._chooseNumText):SetText(tostring(pickUpCount))
-        ;
-        (self._chooseDirText):SetText((StringTable.Get)("str_battle_choose_color"))
-      else
-        if pickUpType == SkillPickUpType.PickAndDirectionInstruction or pickUpType == SkillPickUpType.PickOnePosAndRotate or pickUpType == SkillPickUpType.LineAndDirectionInstruction or pickUpType == SkillPickUpType.PickAndDirectionInstruction2 then
-          (self._chooseNumText):SetText(tostring(1))
-          ;
-          (self._chooseDirText):SetText((StringTable.Get)("str_battle_choose_point"))
-        else
-          if pickUpType == SkillPickUpType.PickDirOrSelf then
-            (self._chooseNumText):SetText(tostring(pickUpCount))
-            ;
-            (self._chooseDirText):SetText((StringTable.Get)("str_battle_choose_point_or_dir"))
-          else
-            if pickUpType == SkillPickUpType.LinkLine then
-              (self._choosePreText):SetText((StringTable.Get)("str_battle_choose_link"))
-              ;
-              (self._chooseNumText):SetText(tostring(pickUpCount))
-              ;
-              (self._chooseDirText):SetText((StringTable.Get)("str_battle_choose_point"))
-            else
-              if pickUpType == SkillPickUpType.PickUpGridTogether then
-                (self._chooseNumText):SetText(tostring("1"))
-                ;
-                (self._chooseDirText):SetText((StringTable.Get)("str_battle_choose_point"))
-              else
-                if pickUpType == SkillPickUpType.Puzzle then
-                  (self._chooseNumText):SetText(tostring("1"))
-                  ;
-                  (self._chooseDirText):SetText((StringTable.Get)("str_battle_choose_point"))
-                else
-                  if pickUpType == SkillPickUpType.PickUpUIAndTrap and (pickUpCount ~= 0 or not 1) then
-                    (self._chooseNumText):SetText(tostring(pickUpCount))
-                    ;
-                    (self._chooseDirText):SetText((StringTable.Get)("str_battle_choose_point"))
-                  else
-                    if pickUpType == SkillPickUpType.AlGorePickUp and (pickUpCount ~= 0 or not 1) then
-                      (self._choosePreText):SetText((StringTable.Get)("str_battle_akxy_feature_ui_selected"))
-                      ;
-                      (self._chooseNumText):SetText(tostring(pickUpCount))
-                      ;
-                      (self._chooseDirText):SetText((StringTable.Get)("str_battle_choose_point"))
-                    else
-                      if pickUpType == SkillPickUpType.PickUpAndTurnTetris then
-                        (self._chooseNumText):SetText(tostring(pickUpCount))
-                        ;
-                        (self._chooseDirText):SetText((StringTable.Get)("str_battle_choose_point"))
-                      else
-                        if pickUpType == SkillPickUpType.LinkLineSP then
-                          (self._choosePreText):SetText((StringTable.Get)("str_battle_choose_link"))
-                          ;
-                          (self._chooseDirText):SetText((StringTable.Get)("str_battle_choose_point"))
-                          ;
-                          (self._btnConfirmActiveSkillGrayGO):SetActive(false)
-                        else
-                          if pickUpType == SkillPickUpType.Moye then
-                            (self._choosePreText):SetText((StringTable.Get)("str_battle_choose_link_moye"))
-                            ;
-                            ((((self._chooseNumText).transform).parent).gameObject):SetActive(false)
-                            ;
-                            (self._chooseDirText):SetText("")
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+    self._chooseNumText:SetText(tostring(pickUpCount))
+    self._chooseDirText:SetText(StringTable.Get("str_battle_choose_point"))
+  elseif pickUpType == SkillPickUpType.DirectionInstruction then
+    self._chooseNumText:SetText(tostring(pickUpCount))
+    self._chooseDirText:SetText(StringTable.Get("str_battle_choose_dir"))
+  elseif pickUpType == SkillPickUpType.ColorInstruction then
+    self._chooseNumText:SetText(tostring(pickUpCount))
+    self._chooseDirText:SetText(StringTable.Get("str_battle_choose_color"))
+  elseif pickUpType == SkillPickUpType.PickAndDirectionInstruction or pickUpType == SkillPickUpType.PickOnePosAndRotate or pickUpType == SkillPickUpType.LineAndDirectionInstruction or pickUpType == SkillPickUpType.PickAndDirectionInstruction2 then
+    self._chooseNumText:SetText(tostring(1))
+    self._chooseDirText:SetText(StringTable.Get("str_battle_choose_point"))
+  elseif pickUpType == SkillPickUpType.PickDirOrSelf then
+    self._chooseNumText:SetText(tostring(pickUpCount))
+    self._chooseDirText:SetText(StringTable.Get("str_battle_choose_point_or_dir"))
+  elseif pickUpType == SkillPickUpType.LinkLine then
+    self._choosePreText:SetText(StringTable.Get("str_battle_choose_link"))
+    self._chooseNumText:SetText(tostring(pickUpCount))
+    self._chooseDirText:SetText(StringTable.Get("str_battle_choose_point"))
+  elseif pickUpType == SkillPickUpType.PickUpGridTogether then
+    self._chooseNumText:SetText(tostring("1"))
+    self._chooseDirText:SetText(StringTable.Get("str_battle_choose_point"))
+  elseif pickUpType == SkillPickUpType.Puzzle then
+    self._chooseNumText:SetText(tostring("1"))
+    self._chooseDirText:SetText(StringTable.Get("str_battle_choose_point"))
+  elseif pickUpType == SkillPickUpType.PickUpUIAndTrap then
+    pickUpCount = pickUpCount == 0 and 1 or pickUpCount
+    self._chooseNumText:SetText(tostring(pickUpCount))
+    self._chooseDirText:SetText(StringTable.Get("str_battle_choose_point"))
+  elseif pickUpType == SkillPickUpType.AlGorePickUp then
+    pickUpCount = pickUpCount == 0 and 1 or pickUpCount
+    self._choosePreText:SetText(StringTable.Get("str_battle_akxy_feature_ui_selected"))
+    self._chooseNumText:SetText(tostring(pickUpCount))
+    self._chooseDirText:SetText(StringTable.Get("str_battle_choose_point"))
+  elseif pickUpType == SkillPickUpType.PickUpAndTurnTetris then
+    self._chooseNumText:SetText(tostring(pickUpCount))
+    self._chooseDirText:SetText(StringTable.Get("str_battle_choose_point"))
+  elseif pickUpType == SkillPickUpType.LinkLineSP then
+    self._choosePreText:SetText(StringTable.Get("str_battle_choose_link"))
+    self._chooseDirText:SetText(StringTable.Get("str_battle_choose_point"))
+    self._btnConfirmActiveSkillGrayGO:SetActive(false)
+  elseif pickUpType == SkillPickUpType.Moye then
+    self._choosePreText:SetText(StringTable.Get("str_battle_choose_link_moye"))
+    self._chooseNumText.transform.parent.gameObject:SetActive(false)
+    self._chooseDirText:SetText("")
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChooseTarget.RefreshPickUpNum = function(self, canPickUpNum)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._chooseNumText):SetText(canPickUpNum)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+function UIWidgetChooseTarget:RefreshPickUpNum(canPickUpNum)
+  self._chooseNumText:SetText(canPickUpNum)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   if self._pickUpType == SkillPickUpType.LinkLineSP then
-    (self._btnConfirmActiveSkillGrayGO):SetActive(false)
+    self._btnConfirmActiveSkillGrayGO:SetActive(false)
   end
   if self._pickUpType == SkillPickUpType.Puzzle and canPickUpNum == 0 then
     self._canStartPuzzle = true
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChooseTarget.SetPickUpActiveBtnState = function(self, canCastState)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._btnConfirmActiveSkill).interactable = canCastState
-  ;
-  (self._btnConfirmActiveSkillGO):SetActive(canCastState)
-  ;
-  (self._btnConfirmActiveSkillGrayGO):SetActive(not canCastState)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._btnConfirmActiveSkillGray).interactable = not canCastState
+function UIWidgetChooseTarget:SetPickUpActiveBtnState(canCastState)
+  self._btnConfirmActiveSkill.interactable = canCastState
+  self._btnConfirmActiveSkillGO:SetActive(canCastState)
+  self._btnConfirmActiveSkillGrayGO:SetActive(not canCastState)
+  self._btnConfirmActiveSkillGray.interactable = not canCastState
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChooseTarget.BtnActiveSkillCancelOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  if (BattleStatHelper.GetAutoFightStat)() then
-    return 
+function UIWidgetChooseTarget:BtnActiveSkillCancelOnClick()
+  if BattleStatHelper.GetAutoFightStat() then
+    return
   end
   self:HandleActiveSkillCancel()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChooseTarget.HandleActiveSkillCancel = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UICancelChooseTarget)
+function UIWidgetChooseTarget:HandleActiveSkillCancel()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UICancelChooseTarget)
   self:SetPickUpActiveBtnState(false)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCancel)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCancel)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChooseTarget.BtnActiveSkillConfirmOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  if (BattleStatHelper.GetAutoFightStat)() then
-    return 
+function UIWidgetChooseTarget:BtnActiveSkillConfirmOnClick()
+  if BattleStatHelper.GetAutoFightStat() then
+    return
   end
   if self._pickUpType == SkillPickUpType.Puzzle and self._canStartPuzzle then
     self:HandleEnterPuzzle()
-    return 
+    return
   end
   self:HandleActiveSkillConfirm()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChooseTarget.BtnActiveSkillConfirmGrayOnClick = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  if (BattleStatHelper.GetAutoFightStat)() then
-    return 
+function UIWidgetChooseTarget:BtnActiveSkillConfirmGrayOnClick()
+  if BattleStatHelper.GetAutoFightStat() then
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIChooseTargetGray)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIChooseTargetGray)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChooseTarget.HandleActiveSkillConfirm = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIChooseTargetConfirm)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowPuzzleUI, false)
+function UIWidgetChooseTarget:HandleActiveSkillConfirm()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIChooseTargetConfirm)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowPuzzleUI, false)
   self:ShowChooseTargetPanel(false)
   self:SetPickUpActiveBtnState(false)
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
   if self._pickUpType == SkillPickUpType.Puzzle then
-    (self._activeSkillCancelBtn).interactable = true
-    ;
-    (self._activeSkillCancelBtnGO):SetActive(true)
+    self._activeSkillCancelBtn.interactable = true
+    self._activeSkillCancelBtnGO:SetActive(true)
   end
   self._pickUpType = SkillPickUpType.None
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChooseTarget.HandleEnterPuzzle = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIWidgetChooseTarget:HandleEnterPuzzle()
   self:ChangePickUpText(SkillPickUpTextStateType.Puzzle)
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._activeSkillCancelBtn).interactable = false
-  ;
-  (self._activeSkillCancelBtnGO):SetActive(false)
-  ;
-  (self._btnconfirmText):SetText((StringTable.Get)("str_battle_choose_confim"))
+  self._activeSkillCancelBtn.interactable = false
+  self._activeSkillCancelBtnGO:SetActive(false)
+  self._btnconfirmText:SetText(StringTable.Get("str_battle_choose_confim"))
   self._canStartPuzzle = false
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIChooseEnterPuzzle)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIChooseEnterPuzzle)
 end
-
-

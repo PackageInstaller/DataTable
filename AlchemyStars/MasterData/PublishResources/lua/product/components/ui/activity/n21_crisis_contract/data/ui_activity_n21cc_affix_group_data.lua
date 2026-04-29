@@ -1,24 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21_crisis_contract/data/ui_activity_n21cc_affix_group_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local UIActivityN21CCAffixGroupType = {SelfGain = 1, EnemyGain = 2}
 _enum("UIActivityN21CCAffixGroupType", UIActivityN21CCAffixGroupType)
 _class("UIActivityN21CCAffixGroupsData", Object)
 UIActivityN21CCAffixGroupsData = UIActivityN21CCAffixGroupsData
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityN21CCAffixGroupsData.Constructor = function(self, affixIds, selectIds)
-  -- function num : 0_0 , upvalues : UIActivityN21CCAffixGroupType, _ENV
+function UIActivityN21CCAffixGroupsData:Constructor(affixIds, selectIds)
   self._affixDatas = {}
   if not affixIds then
-    return 
+    return
   end
   self._type = UIActivityN21CCAffixGroupType.SelfGain
   self._unlockScore = 0
   for i = 1, #affixIds do
-    local cfg = (Cfg.cfg_component_mission_affix)[affixIds[i]]
+    local cfg = Cfg.cfg_component_mission_affix[affixIds[i]]
     if i == 1 then
       self._type = cfg.GainType
       self._unlockScore = cfg.UnLockScore
@@ -32,39 +25,19 @@ UIActivityN21CCAffixGroupsData.Constructor = function(self, affixIds, selectIds)
         end
       end
     end
-    do
-      do
-        local affixData = UIActivityN21CCAffixData:New(cfg, isSelected, self)
-        -- DECOMPILER ERROR at PC46: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._affixDatas)[#self._affixDatas + 1] = affixData
-        -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    local affixData = UIActivityN21CCAffixData:New(cfg, isSelected, self)
+    self._affixDatas[#self._affixDatas + 1] = affixData
   end
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCAffixGroupsData.GetAffixDatas = function(self)
-  -- function num : 0_1
+function UIActivityN21CCAffixGroupsData:GetAffixDatas()
   return self._affixDatas
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCAffixGroupsData.GetType = function(self)
-  -- function num : 0_2
+function UIActivityN21CCAffixGroupsData:GetType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCAffixGroupsData.GetUnLockScore = function(self)
-  -- function num : 0_3
+function UIActivityN21CCAffixGroupsData:GetUnLockScore()
   return self._unlockScore
 end
-
-

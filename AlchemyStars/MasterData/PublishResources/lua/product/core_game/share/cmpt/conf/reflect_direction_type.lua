@@ -1,11 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/reflect_direction_type.lua 
+ReflectDirectionType = {
+  Heng = 1,
+  Shu = 2,
+  Pie = 3,
+  Na = 4
+}
 
--- params : ...
--- function num : 0 , upvalues : _ENV
-ReflectDirectionType = {Heng = 1, Shu = 2, Pie = 3, Na = 4}
-CalcReflectPos = function(srcPos, centerPos, reflectType)
-  -- function num : 0_0 , upvalues : _ENV
+function CalcReflectPos(srcPos, centerPos, reflectType)
   local tarPos = Vector2(srcPos.x, srcPos.y)
   if srcPos == centerPos then
     return tarPos
@@ -14,33 +14,19 @@ CalcReflectPos = function(srcPos, centerPos, reflectType)
     local dir = centerPos - srcPos
     tarPos.x = centerPos.x + dir.x
     return tarPos
-  else
-    do
-      if reflectType == ReflectDirectionType.Shu then
-        local dir = centerPos - srcPos
-        tarPos.y = centerPos.y + dir.y
-        return tarPos
-      else
-        do
-          if reflectType == ReflectDirectionType.Na then
-            local orignal = srcPos - centerPos
-            orignal.x = orignal.y
-            tarPos = orignal + centerPos
-            return tarPos
-          else
-            do
-              if reflectType == ReflectDirectionType.Pie then
-                local orignal = srcPos - centerPos
-                orignal.x = -orignal.y
-                tarPos = orignal + centerPos
-                return tarPos
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif reflectType == ReflectDirectionType.Shu then
+    local dir = centerPos - srcPos
+    tarPos.y = centerPos.y + dir.y
+    return tarPos
+  elseif reflectType == ReflectDirectionType.Na then
+    local orignal = srcPos - centerPos
+    orignal.x, orignal.y = orignal.y, orignal.x
+    tarPos = orignal + centerPos
+    return tarPos
+  elseif reflectType == ReflectDirectionType.Pie then
+    local orignal = srcPos - centerPos
+    orignal.x, orignal.y = -orignal.y, -orignal.x
+    tarPos = orignal + centerPos
+    return tarPos
   end
 end
-
-

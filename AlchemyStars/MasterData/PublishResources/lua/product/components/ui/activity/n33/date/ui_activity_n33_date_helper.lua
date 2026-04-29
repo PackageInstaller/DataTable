@@ -1,43 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/date/ui_activity_n33_date_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN33DateHelper", Object)
 UIActivityN33DateHelper = UIActivityN33DateHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN33DateHelper.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityN33DateHelper:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateHelper.CheckFirstStoryIsPlay = function()
-  -- function num : 0_1 , upvalues : _ENV
-  local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
+function UIActivityN33DateHelper.CheckFirstStoryIsPlay()
+  local open_id = GameGlobal.GameLogic():GetOpenId()
   local txt = "UIActivityN33DateHelper.CheckFirstStoryPlay" .. open_id
-  local num = (LocalDB.GetInt)(txt)
+  local num = LocalDB.GetInt(txt)
   if num ~= 1 then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateHelper.CancelFirstStoryPlay = function()
-  -- function num : 0_2 , upvalues : _ENV
-  local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
+function UIActivityN33DateHelper.CancelFirstStoryPlay()
+  local open_id = GameGlobal.GameLogic():GetOpenId()
   local txt = "UIActivityN33DateHelper.CheckFirstStoryPlay" .. open_id
-  ;
-  (LocalDB.SetInt)(txt, 1)
+  LocalDB.SetInt(txt, 1)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateHelper.GetDateStatus = function(campaign)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN33DateHelper.GetDateStatus(campaign)
   if not campaign then
     return false, false, 0
   end
@@ -46,86 +29,80 @@ UIActivityN33DateHelper.GetDateStatus = function(campaign)
   if not compInfo then
     return false, false, 0
   end
-  local closeTime = (comp.m_component_info).m_close_time
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local closeTime = comp.m_component_info.m_close_time
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   if closeTime < curTime then
     return false, false, 0
   end
-  local isNew = not (UIActivityN33DateHelper.CheckFirstStoryIsPlay)()
+  local isNew = not UIActivityN33DateHelper.CheckFirstStoryIsPlay()
   local canReceive = false
   local allFullLevel = true
   local storyNum = 0
-  if (table.count)(compInfo.arch_infos) == 0 then
+  if table.count(compInfo.arch_infos) == 0 then
     return false, false, 0
   end
-  for _,v in pairs(compInfo.arch_infos) do
-    allFullLevel = not allFullLevel or v.level == 4
-    local cfg = ((Cfg.cfg_component_simulation_operation)({ArchitectureId = v.arch_id, Level = v.level}))[1]
-    if cfg.LimitNum * 0.5 <= v.coin_num + v.default_coin then
+  for _, v in pairs(compInfo.arch_infos) do
+    allFullLevel = allFullLevel and v.level == 4
+    local cfg = Cfg.cfg_component_simulation_operation({
+      ArchitectureId = v.arch_id,
+      Level = v.level
+    })[1]
+    if v.coin_num + v.default_coin >= cfg.LimitNum * 0.5 then
       canReceive = true
       break
     end
   end
   if allFullLevel then
-    local cfgs = (Cfg.cfg_component_simulation_operation_story)({})
-    for _,storyCfg in pairs(cfgs) do
-      if not (table.icontains)(compInfo.story_list, storyCfg.ID) then
-        local buildConditions = storyCfg.PreCondition
-        local storyConditions = storyCfg.PreStory
-        local isStoryOver = true
-        if storyConditions then
-          for _,v in pairs(storyConditions) do
-            local isInvited = (table.icontains)(compInfo.story_list, v)
-            if not isInvited then
-              isStoryOver = false
-              break
-            end
+  end
+  local cfgs = Cfg.cfg_component_simulation_operation_story({})
+  for _, storyCfg in pairs(cfgs) do
+    if not table.icontains(compInfo.story_list, storyCfg.ID) then
+      local buildConditions = storyCfg.PreCondition
+      local storyConditions = storyCfg.PreStory
+      local isStoryOver = true
+      if storyConditions then
+        for _, v in pairs(storyConditions) do
+          local isInvited = table.icontains(compInfo.story_list, v)
+          if not isInvited then
+            isStoryOver = false
+            break
           end
-        end
-        local isBuildOver = true
-        if buildConditions then
-          for _,v in pairs(buildConditions) do
-            local id = v[1]
-            local needLevel = v[2]
-            local isGetTargetLevel = needLevel <= ((compInfo.arch_infos)[id]).level
-            if not isGetTargetLevel then
-              isBuildOver = false
-              break
-            end
-          end
-        end
-        if isStoryOver and isBuildOver and buildConditions then
-          storyNum = storyNum + 1
         end
       end
+      local isBuildOver = true
+      if buildConditions then
+        for _, v in pairs(buildConditions) do
+          local id = v[1]
+          local needLevel = v[2]
+          local isGetTargetLevel = needLevel <= compInfo.arch_infos[id].level
+          if not isGetTargetLevel then
+            isBuildOver = false
+            break
+          end
+        end
+      end
+      if isStoryOver and isBuildOver and buildConditions then
+        storyNum = storyNum + 1
+      end
     end
-    do return isNew, canReceive, storyNum end
-    -- DECOMPILER ERROR: 11 unprocessed JMP targets
   end
+  return isNew, canReceive, storyNum
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateHelper.GetDateBuildLvel = function(campaign, buildID)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN33DateHelper.GetDateBuildLvel(campaign, buildID)
   local comp = campaign:GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_SIMULATION_OPERATION)
   local compInfo = campaign:GetComponentInfo(ECampaignN33ComponentID.ECAMPAIGN_N33_SIMULATION_OPERATION)
-  if (table.count)(compInfo.arch_infos) < 1 then
+  if table.count(compInfo.arch_infos) < 1 then
     return 1
   end
-  return ((compInfo.arch_infos)[buildID]).level
+  return compInfo.arch_infos[buildID].level
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateHelper.CheckDateOpen = function(campaign)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN33DateHelper.CheckDateOpen(campaign)
   local compInfo = campaign:GetComponentInfo(ECampaignN33ComponentID.ECAMPAIGN_N33_SIMULATION_OPERATION)
-  if (table.count)(compInfo.arch_infos) < 1 then
+  if table.count(compInfo.arch_infos) < 1 then
     return false
   end
   return true
 end
-
-

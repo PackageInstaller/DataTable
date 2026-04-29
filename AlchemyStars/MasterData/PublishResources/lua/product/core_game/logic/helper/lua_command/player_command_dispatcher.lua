@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/player_command_dispatcher.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayerCommandDispatcher", IEntityCommandDispatcher)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayerCommandDispatcher.Constructor = function(self, world)
-  -- function num : 0_0
+function PlayerCommandDispatcher:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerCommandDispatcher.HandleCommand = function(self, cmd)
-  -- function num : 0_1
-  local cmdHandler = (self._world):GetPlayerCommandHandler()
+function PlayerCommandDispatcher:HandleCommand(cmd)
+  local cmdHandler = self._world:GetPlayerCommandHandler()
   cmdHandler:AddCommand(cmd)
   cmdHandler:HandleCommand()
 end
-
-

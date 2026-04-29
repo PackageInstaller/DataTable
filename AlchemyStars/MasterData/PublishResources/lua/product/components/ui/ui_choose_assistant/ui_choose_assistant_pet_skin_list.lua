@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/ui_choose_assistant_pet_skin_list.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChooseAssistantPetSkinList", UICustomWidget)
 UIChooseAssistantPetSkinList = UIChooseAssistantPetSkinList
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChooseAssistantPetSkinList.Constructor = function(self)
-  -- function num : 0_0
+function UIChooseAssistantPetSkinList:Constructor()
   self._cardWidth = 400
   self._cardHeight = 115
   self._lastContentPosX = 0
@@ -16,40 +9,28 @@ UIChooseAssistantPetSkinList.Constructor = function(self)
   self._disableDrag = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantPetSkinList.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIChooseAssistantPetSkinList:OnShow(uiParams)
   self._isScrollReady = false
   self._refreshUiCallBack = nil
   self._checkIsCurSkinCallBack = nil
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantPetSkinList.InitWidget = function(self)
-  -- function num : 0_2
+function UIChooseAssistantPetSkinList:InitWidget()
   self._content = self:GetUIComponent("RectTransform", "Content")
   self._scrollRect = self:GetUIComponent("ScrollRect", "SkinsList")
   self._swithArrowAreaGo = self:GetGameObject("SwithArrowArea")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantPetSkinList.SetData = function(self)
-  -- function num : 0_3
+function UIChooseAssistantPetSkinList:SetData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantPetSkinList.RefreshData = function(self, data)
-  -- function num : 0_4
+function UIChooseAssistantPetSkinList:RefreshData(data)
   self._isScrollReady = false
   self:DisposeCustomWidgets()
   self._data = data
-  local _skinsCellCount = #(self._data).skinList
-  local _asCellCount = #(self._data).aslist
+  local _skinsCellCount = #self._data.skinList
+  local _asCellCount = #self._data.aslist
   self._skinsCellCount = _skinsCellCount + _asCellCount
   self._count = self._skinsCellCount
   self._curSelSkinIndex = 1
@@ -58,62 +39,41 @@ UIChooseAssistantPetSkinList.RefreshData = function(self, data)
   self._isScrollReady = true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantPetSkinList.SetRefreshUiCallBack = function(self, callBack)
-  -- function num : 0_5
+function UIChooseAssistantPetSkinList:SetRefreshUiCallBack(callBack)
   self._refreshUiCallBack = callBack
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantPetSkinList.SetCheckIsCurSkinCallBack = function(self, callBack)
-  -- function num : 0_6
+function UIChooseAssistantPetSkinList:SetCheckIsCurSkinCallBack(callBack)
   self._checkIsCurSkinCallBack = callBack
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantPetSkinList._CreateScrollItem = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIChooseAssistantPetSkinList:_CreateScrollItem()
   if self._disableDrag then
-    (self._scrollRect).vertical = false
+    self._scrollRect.vertical = false
+  elseif self._count <= 1 then
+    self._scrollRect.vertical = false
   else
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-    if self._count <= 1 then
-      (self._scrollRect).vertical = false
-    else
-      -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._scrollRect).vertical = true
-    end
+    self._scrollRect.vertical = true
   end
   self._itemPool = self:GetUIComponent("UISelectObjectPath", "Content")
-  ;
-  (self._itemPool):SpawnObjects("UIChooseAssistantPetSkinCard", self._skinsCellCount)
-  local items = (self._itemPool):GetAllSpawnList()
+  self._itemPool:SpawnObjects("UIChooseAssistantPetSkinCard", self._skinsCellCount)
+  local items = self._itemPool:GetAllSpawnList()
   self._items = items
   self._datas = {}
   local datas2 = {}
-  for i = 1, #(self._data).skinList do
-    local data = ((self._data).skinList)[i]
-    ;
-    (table.insert)(datas2, data)
+  for i = 1, #self._data.skinList do
+    local data = self._data.skinList[i]
+    table.insert(datas2, data)
   end
-  for i = 1, #(self._data).aslist do
-    local data = ((self._data).aslist)[i]
-    ;
-    (table.insert)(datas2, data)
+  for i = 1, #self._data.aslist do
+    local data = self._data.aslist[i]
+    table.insert(datas2, data)
   end
   local insertNewIdx = 0
   local igCount = 0
   for i = 1, #datas2 do
     local data = datas2[i]
-    local cur = (self._checkIsCurSkinCallBack)(data.petid, data.grade, data.skinid, data.asid)
+    local cur = self._checkIsCurSkinCallBack(data.petid, data.grade, data.skinid, data.asid)
     local new = self:CheckIsNew(data.asid)
     if new then
       igCount = igCount + 1
@@ -123,131 +83,102 @@ UIChooseAssistantPetSkinList._CreateScrollItem = function(self)
       break
     end
   end
-  do
-    if insertNewIdx ~= 0 then
-      insertNewIdx = insertNewIdx - (igCount)
+  if insertNewIdx ~= 0 then
+    insertNewIdx = insertNewIdx - igCount
+  end
+  local tmpDatas = {}
+  local removeIdxs = {}
+  local cfg_tmp = Cfg.cfg_only_assistant({})
+  for i = 1, #datas2 do
+    local data = datas2[i]
+    local asid = data.asid
+    local new = self:CheckIsNew(asid)
+    if new then
+      table.insert(tmpDatas, data)
+      table.insert(removeIdxs, i)
     end
-    local tmpDatas = {}
-    local removeIdxs = {}
-    local cfg_tmp = (Cfg.cfg_only_assistant)({})
-    for i = 1, #datas2 do
-      local data = datas2[i]
-      local asid = data.asid
-      local new = self:CheckIsNew(asid)
-      if new then
-        (table.insert)(tmpDatas, data)
-        ;
-        (table.insert)(removeIdxs, i)
+  end
+  for i = #removeIdxs, 1, -1 do
+    table.remove(datas2, removeIdxs[i])
+  end
+  for i = 1, #tmpDatas do
+    table.insert(datas2, i + insertNewIdx, tmpDatas[i])
+  end
+  for i = 1, #datas2 do
+    local data = datas2[i]
+    table.insert(self._datas, data)
+  end
+  for i = 1, self._skinsCellCount do
+    local itemGo = items[i]:GetGameObject()
+    local skinData = self._datas[i]
+    items[i]:SetCheckIsCurSkinCallBack(self._checkIsCurSkinCallBack)
+    local skinCfg = MatchPet.GetPetSkinCfg()
+    items[i]:SetData(skinData, i, function(idx)
+      if self._count <= 1 then
+        return
       end
-    end
-    for i = #removeIdxs, 1, -1 do
-      (table.remove)(datas2, removeIdxs[i])
-    end
-    for i = 1, #tmpDatas do
-      (table.insert)(datas2, i + (insertNewIdx), tmpDatas[i])
-    end
-    for i = 1, #datas2 do
-      local data = datas2[i]
-      ;
-      (table.insert)(self._datas, data)
-    end
-    for i = 1, self._skinsCellCount do
-      local itemGo = (items[i]):GetGameObject()
-      local skinData = (self._datas)[i]
-      ;
-      (items[i]):SetCheckIsCurSkinCallBack(self._checkIsCurSkinCallBack)
-      local skinCfg = (MatchPet.GetPetSkinCfg)()
-      ;
-      (items[i]):SetData(skinData, i, function(idx)
-    -- function num : 0_7_0 , upvalues : self
-    if self._count <= 1 then
-      return 
-    end
-    self:_SelectSkinCellIdx(idx)
-    self:_SetMoveToCurSelIdx()
-    self._isDarging = false
+      self:_SelectSkinCellIdx(idx)
+      self:_SetMoveToCurSelIdx()
+      self._isDarging = false
+    end, function(eventData)
+      if self._disableDrag then
+        return
+      end
+      if self._count <= 1 then
+        return
+      end
+      self._bDragPosY = eventData.position.y
+      self._DragBeginPos = eventData.position
+      self._isDarging = true
+    end, function(eventData)
+    end, function(eventData)
+      if self._disableDrag then
+        return
+      end
+      if self._count <= 1 then
+        return
+      end
+      local finalIdx = 1
+      if self._listOrderCmpt then
+        finalIdx = self._listOrderCmpt:CalculateNewIndexByDragPos(self._DragBeginPos, eventData.position, self._curSelSkinIndex)
+      end
+      self:_SelectSkinCellIdx(finalIdx)
+      self:_SetMoveToCurSelIdx()
+      self._isDarging = false
+    end)
   end
-, function(eventData)
-    -- function num : 0_7_1 , upvalues : self
-    if self._disableDrag then
-      return 
-    end
-    if self._count <= 1 then
-      return 
-    end
-    self._bDragPosY = (eventData.position).y
-    self._DragBeginPos = eventData.position
-    self._isDarging = true
-  end
-, function(eventData)
-    -- function num : 0_7_2
-  end
-, function(eventData)
-    -- function num : 0_7_3 , upvalues : self
-    if self._disableDrag then
-      return 
-    end
-    if self._count <= 1 then
-      return 
-    end
-    local finalIdx = 1
-    if self._listOrderCmpt then
-      finalIdx = (self._listOrderCmpt):CalculateNewIndexByDragPos(self._DragBeginPos, eventData.position, self._curSelSkinIndex)
-    end
-    self:_SelectSkinCellIdx(finalIdx)
-    self:_SetMoveToCurSelIdx()
-    self._isDarging = false
-  end
-)
-    end
-    ;
-    (ui_list_middle_on_top_component.InitListLayout)(self._content, self._items, self._cardWidth, self._cardHeight, false, true)
-    self._listOrderCmpt = ui_list_middle_on_top_component:New(self._items, self._scrollRect, self._content, false, true)
-    ;
-    (self._listOrderCmpt):SetCustomScrollBar(self:GetGameObject("CustomScrollBar"), self:GetGameObject("ScrollSlidingArea"), self:GetGameObject("ScrollHandle"))
-  end
+  ui_list_middle_on_top_component.InitListLayout(self._content, self._items, self._cardWidth, self._cardHeight, false, true)
+  self._listOrderCmpt = ui_list_middle_on_top_component:New(self._items, self._scrollRect, self._content, false, true)
+  self._listOrderCmpt:SetCustomScrollBar(self:GetGameObject("CustomScrollBar"), self:GetGameObject("ScrollSlidingArea"), self:GetGameObject("ScrollHandle"))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantPetSkinList.CheckIsNew = function(self, asid)
-  -- function num : 0_8 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIChooseAssistantPetSkinList:CheckIsNew(asid)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local itemDatas = itemModule:GetItemByTempId(asid)
-  if itemDatas and (table.count)(itemDatas) > 0 then
-    local item_data = nil
-    for key,value in pairs(itemDatas) do
+  if itemDatas and table.count(itemDatas) > 0 then
+    local item_data
+    for key, value in pairs(itemDatas) do
       item_data = value
-      do break end
+      break
     end
-    do
-      local isNew = item_data:IsNewOverlay()
-      do
-        local pstid = item_data:GetID()
-        do return isNew, pstid end
-        return false
-      end
-    end
+    local isNew = item_data:IsNewOverlay()
+    local pstid = item_data:GetID()
+    return isNew, pstid
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantPetSkinList._SetMoveToCurSelIdx = function(self)
-  -- function num : 0_9
+function UIChooseAssistantPetSkinList:_SetMoveToCurSelIdx()
   self._targetPosY = 0
   if self._listOrderCmpt then
-    self._targetPosY = (self._listOrderCmpt):CalcPosParam(self._curSelSkinIndex)
+    self._targetPosY = self._listOrderCmpt:CalcPosParam(self._curSelSkinIndex)
   end
   if self._listOrderCmpt then
-    (self._listOrderCmpt):RefreshListOrder()
+    self._listOrderCmpt:RefreshListOrder()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantPetSkinList._SelectSkinCellIdx = function(self, idx, bNoAnim)
-  -- function num : 0_10 , upvalues : _ENV
+function UIChooseAssistantPetSkinList:_SelectSkinCellIdx(idx, bNoAnim)
   local useAnim = true
   if bNoAnim then
     useAnim = false
@@ -256,215 +187,152 @@ UIChooseAssistantPetSkinList._SelectSkinCellIdx = function(self, idx, bNoAnim)
     useAnim = false
   end
   useAnim = false
-  local bLeft = self._curSelSkinIndex <= idx
+  local bLeft = idx >= self._curSelSkinIndex
   self._curSelSkinIndex = idx
   if useAnim then
     if bLeft then
       self:PlayLeftOut()
-      -- DECOMPILER ERROR at PC31: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._timeEvents)._swithLeftTimeEvent = ((GameGlobal.Timer)()):AddEvent(((self._animNames).left_out).time_len, function()
-    -- function num : 0_10_0 , upvalues : self
-    self:_RefreshUiByCurSkinIndex()
-    self:PlayLeftIn()
-  end
-)
+      self._timeEvents._swithLeftTimeEvent = GameGlobal.Timer():AddEvent(self._animNames.left_out.time_len, function()
+        self:_RefreshUiByCurSkinIndex()
+        self:PlayLeftIn()
+      end)
     else
       self:PlayRightOut()
-      -- DECOMPILER ERROR at PC45: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._timeEvents)._swithLeftTimeEvent = ((GameGlobal.Timer)()):AddEvent(((self._animNames).right_out).time_len, function()
-    -- function num : 0_10_1 , upvalues : self
-    self:_RefreshUiByCurSkinIndex()
-    self:PlayRightIn()
-  end
-)
+      self._timeEvents._swithLeftTimeEvent = GameGlobal.Timer():AddEvent(self._animNames.right_out.time_len, function()
+        self:_RefreshUiByCurSkinIndex()
+        self:PlayRightIn()
+      end)
     end
   else
     self:_RefreshUiByCurSkinIndex()
   end
   self:RemoveNew()
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantPetSkinList.RemoveNew = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local data = (self._datas)[self._curSelSkinIndex]
+function UIChooseAssistantPetSkinList:RemoveNew()
+  local data = self._datas[self._curSelSkinIndex]
   if data then
     local asid = data.asid
     if asid then
       local isNew, pstid = self:CheckIsNew(asid)
-      do
-        if isNew then
-          self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : _ENV, pstid
-    local itemModule = (GameGlobal.GetModule)(ItemModule)
-    itemModule:SetItemUnnewOverlay(TT, pstid)
-  end
-)
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnRemoveAsCardNew, asid)
-        end
+      if isNew then
+        self:StartTask(function(TT)
+          local itemModule = GameGlobal.GetModule(ItemModule)
+          itemModule:SetItemUnnewOverlay(TT, pstid)
+        end)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnRemoveAsCardNew, asid)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantPetSkinList._RefreshUiByCurSkinIndex = function(self)
-  -- function num : 0_12
+function UIChooseAssistantPetSkinList:_RefreshUiByCurSkinIndex()
   if self._refreshUiCallBack then
-    local data = (self._datas)[self._curSelSkinIndex]
-    ;
-    (self._refreshUiCallBack)(data.petid, data.grade, data.skinid, data.asid)
+    local data = self._datas[self._curSelSkinIndex]
+    self._refreshUiCallBack(data.petid, data.grade, data.skinid, data.asid)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantPetSkinList.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_13 , upvalues : _ENV
+function UIChooseAssistantPetSkinList:OnUpdate(deltaTimeMS)
   if self._isScrollReady then
     if self._count <= 1 then
-      return 
+      return
     end
     if not self._isDarging then
-      local absDis = (math.abs)(((self._content).anchoredPosition).y - self._targetPosY)
-      if absDis > 1 then
+      local absDis = math.abs(self._content.anchoredPosition.y - self._targetPosY)
+      if 1 < absDis then
         local moveTime = 0.5
-        -- DECOMPILER ERROR at PC35: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._content).anchoredPosition = Vector2(((self._content).anchoredPosition).x, (Mathf.Lerp)(((self._content).anchoredPosition).y, self._targetPosY, moveTime))
+        self._content.anchoredPosition = Vector2(self._content.anchoredPosition.x, Mathf.Lerp(self._content.anchoredPosition.y, self._targetPosY, moveTime))
       else
-        do
-          do
-            -- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-            ;
-            (self._content).anchoredPosition = Vector2(((self._content).anchoredPosition).x, self._targetPosY)
-            if self._listOrderCmpt then
-              (self._listOrderCmpt):OnUpdate(deltaTimeMS)
-            end
-          end
-        end
+        self._content.anchoredPosition = Vector2(self._content.anchoredPosition.x, self._targetPosY)
       end
+    end
+    if self._listOrderCmpt then
+      self._listOrderCmpt:OnUpdate(deltaTimeMS)
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantPetSkinList._selDefaultIndex = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIChooseAssistantPetSkinList:_selDefaultIndex()
   local defaultIndex = 1
   local datas = {}
-  for i = 1, #(self._data).skinList do
-    (table.insert)(datas, ((self._data).skinList)[i])
+  for i = 1, #self._data.skinList do
+    table.insert(datas, self._data.skinList[i])
   end
-  for i = 1, #(self._data).aslist do
-    (table.insert)(datas, ((self._data).aslist)[i])
+  for i = 1, #self._data.aslist do
+    table.insert(datas, self._data.aslist[i])
   end
   if self._checkIsCurSkinCallBack then
     for i = 1, self._skinsCellCount do
       local skinData = datas[i]
-      local isCur = (self._checkIsCurSkinCallBack)(skinData.petid, skinData.grade, skinData.skinid, skinData.asid)
+      local isCur = self._checkIsCurSkinCallBack(skinData.petid, skinData.grade, skinData.skinid, skinData.asid)
       if isCur then
         defaultIndex = i
         break
       end
     end
   end
-  do
-    self:_SelectSkinCellIdx(defaultIndex, true)
-    self:_SetMoveToCurSelIdx()
-  end
+  self:_SelectSkinCellIdx(defaultIndex, true)
+  self:_SetMoveToCurSelIdx()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantPetSkinList.Arrow1BtnOnClick = function(self, go)
-  -- function num : 0_15
+function UIChooseAssistantPetSkinList:Arrow1BtnOnClick(go)
   if self._curSelSkinIndex == 1 then
-    return 
+    return
   end
   self._curSelSkinIndex = self._curSelSkinIndex - 1
   self:_SelectSkinCellIdx(self._curSelSkinIndex)
   self:_SetMoveToCurSelIdx()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantPetSkinList.Arrow2BtnOnClick = function(self, go)
-  -- function num : 0_16
+function UIChooseAssistantPetSkinList:Arrow2BtnOnClick(go)
   if self._curSelSkinIndex == self._skinsCellCount then
-    return 
+    return
   end
   self._curSelSkinIndex = self._curSelSkinIndex + 1
   self:_SelectSkinCellIdx(self._curSelSkinIndex)
   self:_SetMoveToCurSelIdx()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantPetSkinList._beginDragScrollBar = function(self, eventData)
-  -- function num : 0_17
+function UIChooseAssistantPetSkinList:_beginDragScrollBar(eventData)
   if self._disableDrag then
-    return 
+    return
   end
   if self._count <= 1 then
-    return 
+    return
   end
-  self._bDragPosY = (eventData.position).y
+  self._bDragPosY = eventData.position.y
   self._DragBeginPos = eventData.position
   self._isDarging = true
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantPetSkinList._dragScrollBar = function(self, eventData)
-  -- function num : 0_18 , upvalues : _ENV
+function UIChooseAssistantPetSkinList:_dragScrollBar(eventData)
   if self._disableDrag then
-    return 
+    return
   end
   if self._count <= 1 then
-    return 
+    return
   end
-  local deltaY = -(eventData.delta).y
-  local conPos = (self._content).anchoredPosition
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._content).anchoredPosition = Vector2(conPos.x, conPos.y + deltaY)
+  local deltaY = -eventData.delta.y
+  local conPos = self._content.anchoredPosition
+  self._content.anchoredPosition = Vector2(conPos.x, conPos.y + deltaY)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantPetSkinList._endDragScrollBar = function(self, eventData)
-  -- function num : 0_19 , upvalues : _ENV
+function UIChooseAssistantPetSkinList:_endDragScrollBar(eventData)
   if self._disableDrag then
-    return 
+    return
   end
   if self._count <= 1 then
-    return 
+    return
   end
   local finalIdx = 1
   if self._listOrderCmpt then
     local endPos = eventData.position
-    local conEndPosY = (self._DragBeginPos).y - (endPos.y - (self._DragBeginPos).y)
+    local conEndPosY = self._DragBeginPos.y - (endPos.y - self._DragBeginPos.y)
     local conEndPos = Vector2(endPos.x, conEndPosY)
-    finalIdx = (self._listOrderCmpt):CalculateNewIndexByDragPos(self._DragBeginPos, conEndPos, self._curSelSkinIndex)
+    finalIdx = self._listOrderCmpt:CalculateNewIndexByDragPos(self._DragBeginPos, conEndPos, self._curSelSkinIndex)
   end
-  do
-    self:_SelectSkinCellIdx(finalIdx)
-    self:_SetMoveToCurSelIdx()
-    self._isDarging = false
-  end
+  self:_SelectSkinCellIdx(finalIdx)
+  self:_SetMoveToCurSelIdx()
+  self._isDarging = false
 end
-
-

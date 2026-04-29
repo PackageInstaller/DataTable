@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_death_bomb.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectDeathBombResult", SkillEffectResultBase)
 SkillEffectDeathBombResult = SkillEffectDeathBombResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectDeathBombResult.Constructor = function(self, damageResults, bombScopeResult)
-  -- function num : 0_0
+function SkillEffectDeathBombResult:Constructor(damageResults, bombScopeResult)
   self._damageResults = damageResults
   self._bombScopeResult = bombScopeResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDeathBombResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectDeathBombResult:GetEffectType()
   return SkillEffectType.DeathBomb
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDeathBombResult.GetDamageResults = function(self)
-  -- function num : 0_2
+function SkillEffectDeathBombResult:GetDamageResults()
   return self._damageResults
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDeathBombResult.GetBombScopeResult = function(self)
-  -- function num : 0_3
+function SkillEffectDeathBombResult:GetBombScopeResult()
   return self._bombScopeResult
 end
-
-

@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_cast_selected_skill_by_total_round.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCastSelectedSkillByTotalRound", ActionCastSkillBase)
 ActionCastSelectedSkillByTotalRound = ActionCastSelectedSkillByTotalRound
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCastSelectedSkillByTotalRound.Constructor = function(self)
-  -- function num : 0_0
+function ActionCastSelectedSkillByTotalRound:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionCastSelectedSkillByTotalRound.GetWorkSkillID = function(self)
-  -- function num : 0_1
+function ActionCastSelectedSkillByTotalRound:GetWorkSkillID()
   local skillCount = self:GetLogicData(-1)
   local totalRound = self:GetLogicData(-2)
   local skillId = self:GetLogicData(-3)
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local levelTotalRoundCount = battleStatCmpt:GetLevelTotalRoundCount()
   local roundCount = levelTotalRoundCount % skillCount
   if totalRound ~= roundCount then
@@ -27,5 +17,3 @@ ActionCastSelectedSkillByTotalRound.GetWorkSkillID = function(self)
   end
   return skillId
 end
-
-

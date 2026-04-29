@@ -1,45 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_teleport_and_turn_bodyarea.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParam_TeleportAndTurnBodyArea", SkillEffectParamBase)
 SkillEffectParam_TeleportAndTurnBodyArea = SkillEffectParam_TeleportAndTurnBodyArea
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_TeleportAndTurnBodyArea.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParam_TeleportAndTurnBodyArea:Constructor(t)
   local fixedPosData = t.fixedPosData
   self._posList = {}
-  for i,v in ipairs(fixedPosData) do
-    local pos = Vector2((v.pos)[1], (v.pos)[2])
+  for i, v in ipairs(fixedPosData) do
+    local pos = Vector2(v.pos[1], v.pos[2])
     local newDir = v.dir
-    ;
-    (table.insert)(self._posList, {pos = pos, dir = newDir})
+    table.insert(self._posList, {pos = pos, dir = newDir})
   end
   self.ignoreBlock = t.ignoreBlock
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_TeleportAndTurnBodyArea.IsIgnoreBlock = function(self)
-  -- function num : 0_1
+function SkillEffectParam_TeleportAndTurnBodyArea:IsIgnoreBlock()
   return self.ignoreBlock
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_TeleportAndTurnBodyArea.GetEffectType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectParam_TeleportAndTurnBodyArea:GetEffectType()
   return SkillEffectType.TeleportAndTurnBodyArea
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_TeleportAndTurnBodyArea.GetFixedPosList = function(self)
-  -- function num : 0_3
+function SkillEffectParam_TeleportAndTurnBodyArea:GetFixedPosList()
   return self._posList
 end
-
-

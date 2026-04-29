@@ -1,35 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_addhpcur.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAddHPCur", BuffLogicBase)
 BuffLogicAddHPCur = BuffLogicAddHPCur
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddHPCur.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddHPCur:Constructor(buffInstance, logicParam)
   self._mulValue = logicParam.mulValue or 0
   self._addValue = logicParam.addValue or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddHPCur.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicAddHPCur:DoLogic()
+  local e = self._buffInstance:Entity()
   if e:HasPetPstID() then
-    e = (e:Pet()):GetOwnerTeamEntity()
+    e = e:Pet():GetOwnerTeamEntity()
   end
   local attrCmpt = e:Attributes()
   local max_hp = attrCmpt:CalcMaxHp()
-  local cur_hp = (e:Attributes()):GetCurrentHP()
+  local cur_hp = e:Attributes():GetCurrentHP()
   if cur_hp <= 0 then
-    return 
+    return
   end
   local add_value = cur_hp * self._mulValue + self._addValue
-  add_value = (math.floor)(add_value)
+  add_value = math.floor(add_value)
   cur_hp = cur_hp + add_value
   if cur_hp < 0 then
     cur_hp = 0
@@ -38,11 +28,9 @@ BuffLogicAddHPCur.DoLogic = function(self)
     add_value = max_hp - cur_hp
     cur_hp = max_hp
   end
-  local calcDamage = (self._world):GetService("CalcDamage")
+  local calcDamage = self._world:GetService("CalcDamage")
   local damageInfo = DamageInfo:New(add_value, DamageType.Recover)
   calcDamage:AddTargetHP(e:GetID(), damageInfo)
   local result = BuffResultAddHP:New(damageInfo)
   return result
 end
-
-

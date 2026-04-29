@@ -1,39 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/target/lltc_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LLTCBase", Object)
 LLTCBase = LLTCBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTCBase.Constructor = function(self, param)
-  -- function num : 0_0
+function LLTCBase:Constructor(param)
   self._param = param
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LLTCBase.CalculateTarget = function(self, buffOwner)
-  -- function num : 0_1
+function LLTCBase:CalculateTarget(buffOwner)
   return {}
 end
 
 _class("LLTCNone", LLTCBase)
 LLTCNone = LLTCNone
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTCNone.CalculateTarget = function(self, buffOwner)
-  -- function num : 0_2
+function LLTCNone:CalculateTarget(buffOwner)
   return {}
 end
 
 _class("LLTCSelf", LLTCBase)
 LLTCSelf = LLTCSelf
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTCSelf.CalculateTarget = function(self, buffOwner)
-  -- function num : 0_3
+function LLTCSelf:CalculateTarget(buffOwner)
   local es = {}
   es[#es + 1] = buffOwner
   return es
@@ -41,83 +27,86 @@ end
 
 _class("LLTCTagPet", LLTCBase)
 LLTCTagPet = LLTCTagPet
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTCTagPet.CalculateTarget = function(self, buffOwner)
-  -- function num : 0_4 , upvalues : _ENV
+function LLTCTagPet:CalculateTarget(buffOwner)
   local es = {}
-  local tagList = (self._param).tagList
+  local tagList = self._param.tagList
   local isAnd = false
-  isAnd = not (self._param).isAnd or (self._param).isAnd == 1
+  if self._param.isAnd then
+    isAnd = self._param.isAnd == 1
+  end
   local isContainSelf = true
-  isContainSelf = not (self._param).containSelf or (self._param).containSelf == 1
-  local dis = (self._param).dis
+  if self._param.containSelf then
+    isContainSelf = self._param.containSelf == 1
+  end
+  local dis = self._param.dis
   local gameModule = buffOwner:GetLuckLandModule()
   local entityMng = gameModule:GetEntityMng()
   local pets = entityMng:GetFightPets()
-  for _,pet in ipairs(pets) do
+  for _, pet in ipairs(pets) do
     if not pet:HasDeleteFlag() and (buffOwner:ID() ~= pet:ID() or isContainSelf) then
       local isMatch = entityMng:CheckPetTagMatch(pet, tagList, isAnd)
-      -- DECOMPILER ERROR at PC67: Unhandled construct in 'MakeBoolean' P1
-
-      if isMatch and dis and (LuckLandTriggerTool.Distance)(pet, buffOwner) <= dis then
-        es[#es + 1] = pet
+      if isMatch then
+        if dis then
+          if dis >= LuckLandTriggerTool.Distance(pet, buffOwner) then
+            es[#es + 1] = pet
+          end
+        else
+          es[#es + 1] = pet
+        end
       end
     end
-    es[#es + 1] = pet
   end
-  do return es end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
+  return es
 end
 
 _class("LLTCTIDPet", LLTCBase)
 LLTCTIDPet = LLTCTIDPet
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTCTIDPet.CalculateTarget = function(self, buffOwner)
-  -- function num : 0_5 , upvalues : _ENV
+function LLTCTIDPet:CalculateTarget(buffOwner)
   local es = {}
-  local dis = (self._param).dis
-  local tIDList = (self._param).IDList
+  local dis = self._param.dis
+  local tIDList = self._param.IDList
   local isContainSelf = true
-  isContainSelf = not (self._param).containSelf or (self._param).containSelf == 1
+  if self._param.containSelf then
+    isContainSelf = self._param.containSelf == 1
+  end
   local gameModule = buffOwner:GetLuckLandModule()
   local entityMng = gameModule:GetEntityMng()
   local pets = entityMng:GetFightPets()
-  for _,pet in ipairs(pets) do
-    -- DECOMPILER ERROR at PC57: Unhandled construct in 'MakeBoolean' P1
-
-    if not pet:HasDeleteFlag() and (buffOwner:ID() ~= pet:ID() or isContainSelf) and (table.icontains)(tIDList, pet:GetTemplateID()) and dis and (LuckLandTriggerTool.Distance)(pet, buffOwner) <= dis then
-      es[#es + 1] = pet
+  for _, pet in ipairs(pets) do
+    if not pet:HasDeleteFlag() and (buffOwner:ID() ~= pet:ID() or isContainSelf) and table.icontains(tIDList, pet:GetTemplateID()) then
+      if dis then
+        if dis >= LuckLandTriggerTool.Distance(pet, buffOwner) then
+          es[#es + 1] = pet
+        end
+      else
+        es[#es + 1] = pet
+      end
     end
-    es[#es + 1] = pet
   end
-  do return es end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  return es
 end
 
 _class("LLTCRandomPet", LLTCBase)
 LLTCRandomPet = LLTCRandomPet
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTCRandomPet.CalculateTarget = function(self, buffOwner)
-  -- function num : 0_6 , upvalues : _ENV
+function LLTCRandomPet:CalculateTarget(buffOwner)
   local es = {}
   local gameModule = buffOwner:GetLuckLandModule()
   local entityMng = gameModule:GetEntityMng()
   local pets = entityMng:GetFightPets()
   local petIDList = {}
-  for _,pet in ipairs(pets) do
-    (table.insert)(petIDList, pet:ID())
+  for _, pet in ipairs(pets) do
+    table.insert(petIDList, pet:ID())
   end
-  for i = 1, (self._param).count do
-    if #petIDList > 0 then
-      local randVal = (math.random)(1, #petIDList)
+  for i = 1, self._param.count do
+    if 0 < #petIDList then
+      local randVal = math.random(1, #petIDList)
       local randID = petIDList[randVal]
       local pet = entityMng:GetPetByID(randID)
       es[#es + 1] = pet
-      ;
-      (table.removev)(petIDList, randID)
+      table.removev(petIDList, randID)
     end
   end
   return es
@@ -125,97 +114,89 @@ end
 
 _class("LLTCNearestTagPet", LLTCBase)
 LLTCNearestTagPet = LLTCNearestTagPet
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTCNearestTagPet.CalculateTarget = function(self, buffOwner)
-  -- function num : 0_7
+function LLTCNearestTagPet:CalculateTarget(buffOwner)
   return {}
 end
 
 _class("LLTCAllPet", LLTCBase)
 LLTCAllPet = LLTCAllPet
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTCAllPet.CalculateTarget = function(self, buffOwner)
-  -- function num : 0_8 , upvalues : _ENV
+function LLTCAllPet:CalculateTarget(buffOwner)
   local es = {}
   local gameModule = buffOwner:GetLuckLandModule()
   local entityMng = gameModule:GetEntityMng()
   local pets = entityMng:GetFightPets()
   local isContainSelf = true
-  isContainSelf = not self._param or not (self._param).containSelf or (self._param).containSelf == 1
-  for _,pet in ipairs(pets) do
+  if self._param and self._param.containSelf then
+    isContainSelf = self._param.containSelf == 1
+  end
+  for _, pet in ipairs(pets) do
     if not pet:HasDeleteFlag() and (buffOwner:ID() ~= pet:ID() or isContainSelf) then
       es[#es + 1] = pet
     end
   end
-  do return es end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  return es
 end
 
 _class("LLTCAllMonster", LLTCBase)
 LLTCAllMonster = LLTCAllMonster
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTCAllMonster.CalculateTarget = function(self, buffOwner)
-  -- function num : 0_9 , upvalues : _ENV
+function LLTCAllMonster:CalculateTarget(buffOwner)
   local es = {}
   local gameModule = buffOwner:GetLuckLandModule()
   local entityMng = gameModule:GetEntityMng()
   local monsters = entityMng:GetFightMonsters()
   local isContainSelf = true
-  isContainSelf = not (self._param).containSelf or (self._param).containSelf == 1
-  for _,monster in ipairs(monsters) do
+  if self._param.containSelf then
+    isContainSelf = self._param.containSelf == 1
+  end
+  for _, monster in ipairs(monsters) do
     if not monster:IsDead() and (buffOwner:ID() ~= monster:ID() or isContainSelf) then
       es[#es + 1] = monster
     end
   end
-  do return es end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  return es
 end
 
 _class("LLTCDistancePet", LLTCBase)
 LLTCDistancePet = LLTCDistancePet
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTCDistancePet.CalculateTarget = function(self, buffOwner)
-  -- function num : 0_10 , upvalues : _ENV
+function LLTCDistancePet:CalculateTarget(buffOwner)
   local es = {}
-  local dis = (self._param).dis
+  local dis = self._param.dis
   local isContainSelf = true
-  isContainSelf = not (self._param).containSelf or (self._param).containSelf == 1
+  if self._param.containSelf then
+    isContainSelf = self._param.containSelf == 1
+  end
   local gameModule = buffOwner:GetLuckLandModule()
   local entityMng = gameModule:GetEntityMng()
   local pets = entityMng:GetFightPets()
-  for _,pet in ipairs(pets) do
-    if not pet:HasDeleteFlag() and (buffOwner:ID() ~= pet:ID() or isContainSelf) and dis and (LuckLandTriggerTool.Distance)(pet, buffOwner) <= dis then
+  for _, pet in ipairs(pets) do
+    if not pet:HasDeleteFlag() and (buffOwner:ID() ~= pet:ID() or isContainSelf) and dis and dis >= LuckLandTriggerTool.Distance(pet, buffOwner) then
       es[#es + 1] = pet
     end
   end
-  do return es end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  return es
 end
 
 _class("LLTCPosPets", LLTCBase)
 LLTCPosPets = LLTCPosPets
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTCPosPets.CalculateTarget = function(self, buffOwner)
-  -- function num : 0_11 , upvalues : _ENV
+function LLTCPosPets:CalculateTarget(buffOwner)
   local es = {}
-  local posType = (self._param).posType
+  local posType = self._param.posType
   local isContainSelf = true
-  isContainSelf = not (self._param).containSelf or (self._param).containSelf == 1
+  if self._param.containSelf then
+    isContainSelf = self._param.containSelf == 1
+  end
   local gameModule = buffOwner:GetLuckLandModule()
   local entityMng = gameModule:GetEntityMng()
   local pets = entityMng:GetFightPets()
-  for _,pet in ipairs(pets) do
-    if not pet:HasDeleteFlag() and (buffOwner:ID() ~= pet:ID() or isContainSelf) and posType and (LuckLandTriggerTool.CheckPetPos)(posType, pet) then
+  for _, pet in ipairs(pets) do
+    if not pet:HasDeleteFlag() and (buffOwner:ID() ~= pet:ID() or isContainSelf) and posType and LuckLandTriggerTool.CheckPetPos(posType, pet) then
       es[#es + 1] = pet
     end
   end
-  do return es end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  return es
 end
-
-

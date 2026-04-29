@@ -1,141 +1,78 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_remove_buff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultRemoveBuff", BuffResultBase)
 BuffResultRemoveBuff = BuffResultRemoveBuff
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultRemoveBuff.Constructor = function(self)
-  -- function num : 0_0
+function BuffResultRemoveBuff:Constructor()
   self._removedInfo = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveBuff.AddRemovedInfo = function(self, eid, tSeqID)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.insert)(self._removedInfo, {eid = eid, tSeqID = tSeqID})
+function BuffResultRemoveBuff:AddRemovedInfo(eid, tSeqID)
+  table.insert(self._removedInfo, {eid = eid, tSeqID = tSeqID})
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveBuff.GetBuffArray = function(self)
-  -- function num : 0_2
+function BuffResultRemoveBuff:GetBuffArray()
   return self._removedInfo
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveBuff.SetRandHalfDamageIndex = function(self, val)
-  -- function num : 0_3
+function BuffResultRemoveBuff:SetRandHalfDamageIndex(val)
   self._randHalfDamageIndex = val
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveBuff.GetRandHalfDamageIndex = function(self)
-  -- function num : 0_4
+function BuffResultRemoveBuff:GetRandHalfDamageIndex()
   return self._randHalfDamageIndex
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveBuff.GetWalkPos = function(self)
-  -- function num : 0_5
+function BuffResultRemoveBuff:GetWalkPos()
   return self._walkPos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveBuff.SetWalkPos = function(self, walkPos)
-  -- function num : 0_6
+function BuffResultRemoveBuff:SetWalkPos(walkPos)
   self._walkPos = walkPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveBuff.SetBlack = function(self, black)
-  -- function num : 0_7
+function BuffResultRemoveBuff:SetBlack(black)
   self._black = black
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveBuff.GetBlack = function(self)
-  -- function num : 0_8
+function BuffResultRemoveBuff:GetBlack()
   return self._black
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveBuff.SetNotifyEntityID = function(self, id)
-  -- function num : 0_9
+function BuffResultRemoveBuff:SetNotifyEntityID(id)
   self._notifyEntityID = id
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveBuff.GetNotifyEntityID = function(self)
-  -- function num : 0_10
+function BuffResultRemoveBuff:GetNotifyEntityID()
   return self._notifyEntityID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveBuff.SetNotifyChainSkillId = function(self, v)
-  -- function num : 0_11
+function BuffResultRemoveBuff:SetNotifyChainSkillId(v)
   self._notifyChainSkillId = v
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveBuff.GetNotifyChainSkillId = function(self)
-  -- function num : 0_12
+function BuffResultRemoveBuff:GetNotifyChainSkillId()
   return self._notifyChainSkillId
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveBuff.SetNotifyChainSkillTimeIndex = function(self, v)
-  -- function num : 0_13
+function BuffResultRemoveBuff:SetNotifyChainSkillTimeIndex(v)
   self._notifyChainSkillTimeIndex = v
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveBuff.GetNotifyChainSkillTimeIndex = function(self)
-  -- function num : 0_14
+function BuffResultRemoveBuff:GetNotifyChainSkillTimeIndex()
   return self._notifyChainSkillTimeIndex
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveBuff.SetNotifyChainSkillStageIndex = function(self, v)
-  -- function num : 0_15
+function BuffResultRemoveBuff:SetNotifyChainSkillStageIndex(v)
   self._notifyChainSkillStageIndex = v
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveBuff.GetNotifyChainSkillStageIndex = function(self)
-  -- function num : 0_16
+function BuffResultRemoveBuff:GetNotifyChainSkillStageIndex()
   return self._notifyChainSkillStageIndex
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveBuff.SetAutoBeadSkillIndex = function(self, skillIndex)
-  -- function num : 0_17
+function BuffResultRemoveBuff:SetAutoBeadSkillIndex(skillIndex)
   self._autoBeadSkillIndex = skillIndex
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveBuff.GetAutoBeadSkillIndex = function(self)
-  -- function num : 0_18
+function BuffResultRemoveBuff:GetAutoBeadSkillIndex()
   return self._autoBeadSkillIndex
 end
-
-

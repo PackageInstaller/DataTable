@@ -1,84 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/share_skill_result_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ShareSkillResultComponent", Object)
 ShareSkillResultComponent = ShareSkillResultComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ShareSkillResultComponent.Constructor = function(self)
-  -- function num : 0_0
+function ShareSkillResultComponent:Constructor()
   self._entityContainer = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ShareSkillResultComponent.AddEntityResult = function(self, entityID, skillResult)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._entityContainer)[entityID] then
-    (self._entityContainer)[entityID] = SkillEffectResultContainer:New()
+function ShareSkillResultComponent:AddEntityResult(entityID, skillResult)
+  if not self._entityContainer[entityID] then
+    self._entityContainer[entityID] = SkillEffectResultContainer:New()
   end
-  local resultContainer = (self._entityContainer)[entityID]
+  local resultContainer = self._entityContainer[entityID]
   local result = skillResult:Clone()
   resultContainer:AddEffectResult(result)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ShareSkillResultComponent.GetResultContainerByEntityID = function(self, entityID)
-  -- function num : 0_2
-  return (self._entityContainer)[entityID]
+function ShareSkillResultComponent:GetResultContainerByEntityID(entityID)
+  return self._entityContainer[entityID]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ShareSkillResultComponent.Clear = function(self)
-  -- function num : 0_3
+function ShareSkillResultComponent:Clear()
   self._entityContainer = {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ShareSkillResult = function(self)
-  -- function num : 0_4
-  return self:GetComponent((self.WEComponentsEnum).ShareSkillResult)
+function Entity:ShareSkillResult()
+  return self:GetComponent(self.WEComponentsEnum.ShareSkillResult)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasShareSkillResult = function(self)
-  -- function num : 0_5
-  return self:HasComponent((self.WEComponentsEnum).ShareSkillResult)
+function Entity:HasShareSkillResult()
+  return self:HasComponent(self.WEComponentsEnum.ShareSkillResult)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddShareSkillResult = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ShareSkillResult
+function Entity:AddShareSkillResult()
+  local index = self.WEComponentsEnum.ShareSkillResult
   local component = ShareSkillResultComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceShareSkillResult = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ShareSkillResult
+function Entity:ReplaceShareSkillResult()
+  local index = self.WEComponentsEnum.ShareSkillResult
   local component = ShareSkillResultComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveShareSkillResult = function(self)
-  -- function num : 0_8
+function Entity:RemoveShareSkillResult()
   if self:HasShareSkillResult() then
-    self:RemoveComponent((self.WEComponentsEnum).ShareSkillResult)
+    self:RemoveComponent(self.WEComponentsEnum.ShareSkillResult)
   end
 end
-
-

@@ -1,29 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/chain_attack_state_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("ChainAttackStateSystem", MainStateSystem)
 ChainAttackStateSystem = ChainAttackStateSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ChainAttackStateSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ChainAttackStateSystem:_GetMainStateID()
   return GameStateID.ChainAttack
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  if ((self._world):MatchType() == MatchType.MT_BlackFist or (self._world):MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro) and self:_IsBattleEnd() then
+function ChainAttackStateSystem:_OnMainStateEnter(TT)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  if (self._world:MatchType() == MatchType.MT_BlackFist or self._world:MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro) and self:_IsBattleEnd() then
     self:_DoLogicClearChainPath(teamEntity)
     self:_DoRenderClearChainPath()
     self:_DoLogicClearElementSecondaryType(teamEntity)
     self:_DoLogicGotoNextState(false, teamEntity)
-    return 
+    return
   end
   self:_DoLogicBeforeCalcChain()
   self:_DoRenderBeforeCalcChain(TT)
@@ -66,170 +56,113 @@ ChainAttackStateSystem._OnMainStateEnter = function(self, TT)
   self:_DoLogicGotoNextState(isAuroraTime, teamEntity, isActiveSkillLinkLine)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoLogicBeforeCalcChain = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function ChainAttackStateSystem:_DoLogicBeforeCalcChain()
   local ntBeforeCalcChainSkill = NTBeforeCalcChainSkill:New()
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local logicChainPathCmpt = teamEntity:LogicChainPath()
   local logicPath = logicChainPathCmpt:GetLogicChainPath()
-  ntBeforeCalcChainSkill:SetChainCount((table.count)(logicPath))
-  ;
-  ((self._world):GetService("Trigger")):Notify(ntBeforeCalcChainSkill)
+  ntBeforeCalcChainSkill:SetChainCount(table.count(logicPath))
+  self._world:GetService("Trigger"):Notify(ntBeforeCalcChainSkill)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoLogicCalcChainSkill = function(self, teamEntity)
-  -- function num : 0_3
-  local chainAttackServiceLogic = (self._world):GetService("ChainAttackLogic")
+function ChainAttackStateSystem:_DoLogicCalcChainSkill(teamEntity)
+  local chainAttackServiceLogic = self._world:GetService("ChainAttackLogic")
   chainAttackServiceLogic:_DoLogicCalcChainSkill(teamEntity)
-  local svc = (self._world):GetService("L2R")
+  local svc = self._world:GetService("L2R")
   svc:L2RChainAttackData(teamEntity)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoLogicMonsterDeadEx = function(self)
-  -- function num : 0_4
-  local sMonsterShowLogic = (self._world):GetService("MonsterShowLogic")
+function ChainAttackStateSystem:_DoLogicMonsterDeadEx()
+  local sMonsterShowLogic = self._world:GetService("MonsterShowLogic")
   local drops, deadEntityIDList = sMonsterShowLogic:DoAllMonsterDeadLogic(true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoLogicGotoNextState = function(self, isAuroraTime, teamEntity, isLinkLineActiveSkill)
-  -- function num : 0_5 , upvalues : _ENV
-  local battle_service = (self._world):GetService("Battle")
+function ChainAttackStateSystem:_DoLogicGotoNextState(isAuroraTime, teamEntity, isLinkLineActiveSkill)
+  local battle_service = self._world:GetService("Battle")
   if self:_IsBattleEnd() or battle_service:IsWavePreEnd(teamEntity) == true then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.ChainAttackFinish, 3)
+    self._world:EventDispatcher():Dispatch(GameEventType.ChainAttackFinish, 3)
+  elseif isAuroraTime then
+    self._world:EventDispatcher():Dispatch(GameEventType.ChainAttackFinish, 2)
+  elseif isLinkLineActiveSkill then
+    local battleStatCmpt = self._world:BattleStat()
+    battleStatCmpt:SetActiveSkillLinkLineState(false, nil)
+    self._world:EventDispatcher():Dispatch(GameEventType.ChainAttackFinish, 2)
+  elseif self._world:MatchType() == MatchType.MT_BlackFist then
+    self._world:EventDispatcher():Dispatch(GameEventType.ChainAttackFinish, 3)
   else
-    if isAuroraTime then
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.ChainAttackFinish, 2)
-    else
-      if isLinkLineActiveSkill then
-        local battleStatCmpt = (self._world):BattleStat()
-        battleStatCmpt:SetActiveSkillLinkLineState(false, nil)
-        ;
-        ((self._world):EventDispatcher()):Dispatch(GameEventType.ChainAttackFinish, 2)
-      else
-        do
-          if (self._world):MatchType() == MatchType.MT_BlackFist then
-            ((self._world):EventDispatcher()):Dispatch(GameEventType.ChainAttackFinish, 3)
-          else
-            ;
-            ((self._world):EventDispatcher()):Dispatch(GameEventType.ChainAttackFinish, 1)
-          end
-        end
-      end
-    end
+    self._world:EventDispatcher():Dispatch(GameEventType.ChainAttackFinish, 1)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoLogicNotifyChainAttackFinish = function(self, isAuroraTime, teamEntity)
-  -- function num : 0_6 , upvalues : _ENV
-  local battle_service = (self._world):GetService("Battle")
-  if not self:_IsBattleEnd() then
-    if battle_service:IsWavePreEnd(teamEntity) ~= true or isAuroraTime then
-      local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-      local ntChainAttackFinish = NTChainAttackFinish:New(teamEntity)
-      ;
-      ((self._world):GetService("Trigger")):Notify(ntChainAttackFinish)
-      do return ntChainAttackFinish end
-    end
+function ChainAttackStateSystem:_DoLogicNotifyChainAttackFinish(isAuroraTime, teamEntity)
+  local battle_service = self._world:GetService("Battle")
+  if self:_IsBattleEnd() or battle_service:IsWavePreEnd(teamEntity) == true then
+  elseif isAuroraTime then
+  else
+    local teamEntity = self._world:Player():GetCurrentTeamEntity()
+    local ntChainAttackFinish = NTChainAttackFinish:New(teamEntity)
+    self._world:GetService("Trigger"):Notify(ntChainAttackFinish)
+    return ntChainAttackFinish
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoLogicCheckIsActiveSkillLinkLine = function(self, teamEntity)
-  -- function num : 0_7
-  local battleStatCmpt = (self._world):BattleStat()
+function ChainAttackStateSystem:_DoLogicCheckIsActiveSkillLinkLine(teamEntity)
+  local battleStatCmpt = self._world:BattleStat()
   local isActiveSkillLinkLine = battleStatCmpt:IsActiveSkillLinkLine()
   return isActiveSkillLinkLine
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoLogicCheckAuroraTime = function(self, teamEntity)
-  -- function num : 0_8 , upvalues : _ENV
-  local sMonsterShowLogic = (self._world):GetService("MonsterShowLogic")
-  local battle_service = (self._world):GetService("Battle")
-  local affixService = (self._world):GetService("Affix")
-  local battleStatCmpt = (self._world):BattleStat()
+function ChainAttackStateSystem:_DoLogicCheckAuroraTime(teamEntity)
+  local sMonsterShowLogic = self._world:GetService("MonsterShowLogic")
+  local battle_service = self._world:GetService("Battle")
+  local affixService = self._world:GetService("Affix")
+  local battleStatCmpt = self._world:BattleStat()
   local oldIsAuroraTime = battleStatCmpt:IsRoundAuroraTime()
-  local roundAuroraTimeOk = oldIsAuroraTime and affixService:IsNoAuroraTimeLimit()
+  local roundAuroraTimeOk = not oldIsAuroraTime or affixService:IsNoAuroraTimeLimit()
   local isCloseAuroraTimeByLinkStep = false
-  if (self._world):LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
+  if self._world:LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
     isCloseAuroraTimeByLinkStep = true
   end
-  -- DECOMPILER ERROR at PC65: Unhandled construct in 'MakeBoolean' P3
-
-  -- DECOMPILER ERROR at PC65: Unhandled construct in 'MakeBoolean' P3
-
-  -- DECOMPILER ERROR at PC65: Unhandled construct in 'MakeBoolean' P3
-
-  local isAuroraTime = (isCloseAuroraTimeByLinkStep or battleStatCmpt:IsRoundSuperChain()) and not sMonsterShowLogic:IsAllMonsterHasDeadMark() and not battle_service:PlayerIsDead(teamEntity) and not affixService:IsCloseAuroraTime()
-  local buffSvc = (self._world):GetService("BuffLogic")
-  if buffSvc:IsForceEnterAuroraTime(teamEntity) and roundAuroraTimeOk then
-    if not sMonsterShowLogic:IsAllMonsterHasDeadMark() then
-      isAuroraTime = not battle_service:PlayerIsDead(teamEntity)
-    else
-      isAuroraTime = false
-    end
+  local isAuroraTime = not isCloseAuroraTimeByLinkStep and battleStatCmpt:IsRoundSuperChain() and self._world.BW_WorldInfo.enable_aurora_time and roundAuroraTimeOk and battleStatCmpt:GuideShowStarTime(self._world.BW_WorldInfo.missionID) and not sMonsterShowLogic:IsAllMonsterHasDeadMark() and not battle_service:PlayerIsDead(teamEntity) and not affixService:IsCloseAuroraTime()
+  local buffSvc = self._world:GetService("BuffLogic")
+  if buffSvc:IsForceEnterAuroraTime(teamEntity) then
+    isAuroraTime = roundAuroraTimeOk and not sMonsterShowLogic:IsAllMonsterHasDeadMark() and not battle_service:PlayerIsDead(teamEntity)
   end
-  do
-    if (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze and isAuroraTime then
-      local seasonMazeSvc = (self._world):GetService("SeasonMaze")
-      seasonMazeSvc:AddMsAndGoldCoin()
-    end
-    if buffSvc:IsCloseEnterAuroraTime(teamEntity) then
-      isAuroraTime = false
-    end
-    if isAuroraTime then
-      battleStatCmpt:SetRoundAuroraTime(true)
-      battleStatCmpt:AddAuroraTimeCount()
-      if oldIsAuroraTime then
-        battleStatCmpt:SetReEnterAuroraTime(true)
-        local isReEnterClose = true
-        self:_DoLogicCloseAuroraTime(isReEnterClose)
-      end
-      local chainPath = (teamEntity:LogicChainPath()):GetLogicChainPath()
-      ;
-      ((self._world):GetService("Trigger")):Notify(NTEnterAuroraTime:New(chainPath[1], teamEntity))
-      ;
-      ((self._world):GetService("Trigger")):Notify(NTEnterAuroraTimeInChainSys:New(chainPath[1], teamEntity))
-    end
-    do return isAuroraTime end
-    -- DECOMPILER ERROR: 11 unprocessed JMP targets
+  if self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze and isAuroraTime then
+    local seasonMazeSvc = self._world:GetService("SeasonMaze")
+    seasonMazeSvc:AddMsAndGoldCoin()
   end
+  if buffSvc:IsCloseEnterAuroraTime(teamEntity) then
+    isAuroraTime = false
+  end
+  if isAuroraTime then
+    battleStatCmpt:SetRoundAuroraTime(true)
+    battleStatCmpt:AddAuroraTimeCount()
+    if oldIsAuroraTime then
+      battleStatCmpt:SetReEnterAuroraTime(true)
+      local isReEnterClose = true
+      self:_DoLogicCloseAuroraTime(isReEnterClose)
+    end
+    local chainPath = teamEntity:LogicChainPath():GetLogicChainPath()
+    self._world:GetService("Trigger"):Notify(NTEnterAuroraTime:New(chainPath[1], teamEntity))
+    self._world:GetService("Trigger"):Notify(NTEnterAuroraTimeInChainSys:New(chainPath[1], teamEntity))
+  end
+  return isAuroraTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoLogicCalc3StarProgress = function(self)
-  -- function num : 0_9
-  local starService = (self._world):GetService("Star3Calc")
+function ChainAttackStateSystem:_DoLogicCalc3StarProgress()
+  local starService = self._world:GetService("Star3Calc")
   starService:Calc3StarProgress()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoLogicCalcBonusObjective = function(self)
-  -- function num : 0_10
-  local bonusService = (self._world):GetService("BonusCalc")
+function ChainAttackStateSystem:_DoLogicCalcBonusObjective()
+  local bonusService = self._world:GetService("BonusCalc")
   bonusService:CalcBonusObjective()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoLogicClearChainPath = function(self, teamEntity)
-  -- function num : 0_11 , upvalues : _ENV
-  local teamMembers = (teamEntity:Team()):GetTeamPetEntities()
-  for i,e in ipairs(teamMembers) do
+function ChainAttackStateSystem:_DoLogicClearChainPath(teamEntity)
+  local teamMembers = teamEntity:Team():GetTeamPetEntities()
+  for i, e in ipairs(teamMembers) do
     local skillPetData = e:SkillPetAttackData()
     skillPetData:ClearPetAttackData()
   end
@@ -237,168 +170,108 @@ ChainAttackStateSystem._DoLogicClearChainPath = function(self, teamEntity)
   logicChainPathCmpt:ClearLogicChainPath()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoLogicClearElementSecondaryType = function(self, teamEntity)
-  -- function num : 0_12 , upvalues : _ENV
-  local teamMembers = (teamEntity:Team()):GetTeamPetEntities()
-  for i,e in ipairs(teamMembers) do
+function ChainAttackStateSystem:_DoLogicClearElementSecondaryType(teamEntity)
+  local teamMembers = teamEntity:Team():GetTeamPetEntities()
+  for i, e in ipairs(teamMembers) do
     local playerElementCmpt = e:Element()
     if playerElementCmpt then
       playerElementCmpt:SetUseSecondaryType(false)
     end
   end
-  local fettersSvc = (self._world):GetService("Fetters")
+  local fettersSvc = self._world:GetService("Fetters")
   if fettersSvc then
-    for _,petEntity in ipairs(teamMembers) do
+    for _, petEntity in ipairs(teamMembers) do
       fettersSvc:SetFettersActive(petEntity, false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoLogicPlayerBuffDelayed = function(self, teamEntity)
-  -- function num : 0_13
-  local buffLogicService = (self._world):GetService("BuffLogic")
+function ChainAttackStateSystem:_DoLogicPlayerBuffDelayed(teamEntity)
+  local buffLogicService = self._world:GetService("BuffLogic")
   buffLogicService:CalcPlayerBuffDelayedTurn(teamEntity)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoLogicCalcAutoBeadSkill = function(self, teamEntity)
-  -- function num : 0_14
-  local autoBeadServiceLogic = (self._world):GetService("AutoBeadLogic")
+function ChainAttackStateSystem:_DoLogicCalcAutoBeadSkill(teamEntity)
+  local autoBeadServiceLogic = self._world:GetService("AutoBeadLogic")
   local holderEntity = autoBeadServiceLogic:GetAutoBeadSkillHolder(teamEntity)
   if not holderEntity then
     return false
   end
-  local autoBeadServiceLogic = (self._world):GetService("AutoBeadLogic")
+  local autoBeadServiceLogic = self._world:GetService("AutoBeadLogic")
   autoBeadServiceLogic:_DoLogicCalcAutoBeadSkill(teamEntity)
-  local svc = (self._world):GetService("L2R")
+  local svc = self._world:GetService("L2R")
   svc:L2RAutoBeadkSkillData(teamEntity)
   return true
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoLogicActiveSkillLinkLineRestorePos = function(self, teamEntity, isActiveSkillLinkLine)
-  -- function num : 0_15 , upvalues : _ENV
+function ChainAttackStateSystem:_DoLogicActiveSkillLinkLineRestorePos(teamEntity, isActiveSkillLinkLine)
   if not isActiveSkillLinkLine then
-    return 
+    return
   end
-  local battleStatCmpt = (self._world):BattleStat()
-  local casterEntity = (self._world):GetEntityByID(battleStatCmpt:GetActiveSkillLinkLineCasterEntityID())
+  local battleStatCmpt = self._world:BattleStat()
+  local casterEntity = self._world:GetEntityByID(battleStatCmpt:GetActiveSkillLinkLineCasterEntityID())
   local casterPos = teamEntity:GetGridPosition()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local sourcePos, sourceDir = utilDataSvc:GetLogicActiveSkillLinkLineTeamPos()
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   boardServiceLogic:UpdateEntityBlockFlag(teamEntity, casterPos, sourcePos)
   teamEntity:SetGridPosition(sourcePos)
-  local pets = (teamEntity:Team()):GetTeamPetEntities()
-  for _,entityPet in ipairs(pets) do
+  local pets = teamEntity:Team():GetTeamPetEntities()
+  for _, entityPet in ipairs(pets) do
     entityPet:SetGridLocation(sourcePos, sourceDir)
   end
   self:_DoRestoreTeamLeader(teamEntity)
-  ;
-  ((self._world):GetService("Trigger")):Notify(NTActiveSkillLinkLineChainAttackFinish:New(casterEntity, casterPos))
+  self._world:GetService("Trigger"):Notify(NTActiveSkillLinkLineChainAttackFinish:New(casterEntity, casterPos))
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoRestoreTeamLeader = function(self, teamEntity)
-  -- function num : 0_16
+function ChainAttackStateSystem:_DoRestoreTeamLeader(teamEntity)
   local teamCmpt = teamEntity:Team()
   local teamLeaderEntityID = teamCmpt:GetOriginalTeamLeaderID()
   if teamLeaderEntityID then
-    local teamLeaderEntity = (self._world):GetEntityByID(teamLeaderEntityID)
+    local teamLeaderEntity = self._world:GetEntityByID(teamLeaderEntityID)
     teamEntity:SetTeamLeaderPetEntity(teamLeaderEntity)
     teamCmpt:SetOriginalTeamLeaderID(nil)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoRenderBeforeCalcChain = function(self, TT)
-  -- function num : 0_17
+function ChainAttackStateSystem:_DoRenderBeforeCalcChain(TT)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoRenderShowSuperChainSkill = function(self, TT)
-  -- function num : 0_18
+function ChainAttackStateSystem:_DoRenderShowSuperChainSkill(TT)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoRenderShowChainAttack = function(self, TT, teamEntity)
-  -- function num : 0_19
+function ChainAttackStateSystem:_DoRenderShowChainAttack(TT, teamEntity)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoRenderClearLastAttack = function(self)
-  -- function num : 0_20
+function ChainAttackStateSystem:_DoRenderClearLastAttack()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoRenderInWave = function(self, TT, traps, monsters)
-  -- function num : 0_21
+function ChainAttackStateSystem:_DoRenderInWave(TT, traps, monsters)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoRenderNotifyEnterAuroraTimeInChainSys = function(self, TT, isAuroraTime)
-  -- function num : 0_22
+function ChainAttackStateSystem:_DoRenderNotifyEnterAuroraTimeInChainSys(TT, isAuroraTime)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoRenderClearChainPath = function(self)
-  -- function num : 0_23
+function ChainAttackStateSystem:_DoRenderClearChainPath()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoRenderWaitPlaySkillTaskFinish = function(self, TT)
-  -- function num : 0_24
+function ChainAttackStateSystem:_DoRenderWaitPlaySkillTaskFinish(TT)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoRenderPlayerBuffDelayed = function(self, TT)
-  -- function num : 0_25
+function ChainAttackStateSystem:_DoRenderPlayerBuffDelayed(TT)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoRenderResetAuroraTimeState = function(self, TT)
-  -- function num : 0_26
+function ChainAttackStateSystem:_DoRenderResetAuroraTimeState(TT)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._WaitChainAttackTrapTaskEnd = function(self, TT)
-  -- function num : 0_27
+function ChainAttackStateSystem:_WaitChainAttackTrapTaskEnd(TT)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoRenderShowAutoBeadSkill = function(self, TT, teamEntity)
-  -- function num : 0_28
+function ChainAttackStateSystem:_DoRenderShowAutoBeadSkill(TT, teamEntity)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoRenderNotifyChainAttackFinish = function(self, TT, teamEntity, ntChainAttackFinish)
-  -- function num : 0_29
+function ChainAttackStateSystem:_DoRenderNotifyChainAttackFinish(TT, teamEntity, ntChainAttackFinish)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainAttackStateSystem._DoRenderActiveSkillLinkLineRestorePos = function(self, teamEntity, isActiveSkillLinkLine)
-  -- function num : 0_30
+function ChainAttackStateSystem:_DoRenderActiveSkillLinkLineRestorePos(teamEntity, isActiveSkillLinkLine)
 end
-
-

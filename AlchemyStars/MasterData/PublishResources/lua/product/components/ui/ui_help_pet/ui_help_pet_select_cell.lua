@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_help_pet/ui_help_pet_select_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHelpPetSelectCell", UICustomWidget)
 UIHelpPetSelectCell = UIHelpPetSelectCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHelpPetSelectCell.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHelpPetSelectCell:OnShow()
   self._uiPetDeTailAtlas = self:GetAsset("UIPetDetail.spriteatlas", LoadType.SpriteAtlas)
   self._atlasAwake = self:GetAsset("UIAwake.spriteatlas", LoadType.SpriteAtlas)
   self.petModule = self:GetModule(PetModule)
@@ -36,44 +29,31 @@ UIHelpPetSelectCell.OnShow = function(self)
   self._levelText = self:GetUIComponent("UILocalizationText", "levelValue")
   self._shouGO = self:GetGameObject("shou")
   self._chooseGO = self:GetGameObject("choose")
-  ;
-  (self._chooseGO):SetActive(false)
+  self._chooseGO:SetActive(false)
   self._imgBG = self:GetGameObject("btngo")
-  local etl = (UICustomUIEventListener.Get)(self._imgBG)
+  local etl = UICustomUIEventListener.Get(self._imgBG)
   self._danBadgeGen = self:GetUIComponent("UISelectObjectPath", "DanBadgeSimpleGen")
   self._danBadgeGenGo = self:GetGameObject("DanBadgeSimpleGen")
   self._danBadgeGenRect = self:GetUIComponent("RectTransform", "DanBadgeSimpleGen")
   self:AddUICustomEventListener(etl, UIEvent.Press, function(go)
-    -- function num : 0_0_0 , upvalues : self
     if self._chooseGO then
-      (self._chooseGO):SetActive(true)
+      self._chooseGO:SetActive(true)
     end
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Click, function(go)
-    -- function num : 0_0_1 , upvalues : self
     self:btngoOnClick()
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Release, function(go)
-    -- function num : 0_0_2 , upvalues : self
     if self._chooseGO then
-      (self._chooseGO):SetActive(false)
+      self._chooseGO:SetActive(false)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSelectCell.OnHide = function(self)
-  -- function num : 0_1
+function UIHelpPetSelectCell:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSelectCell.SetData = function(self, data, index, playerData)
-  -- function num : 0_2
+function UIHelpPetSelectCell:SetData(data, index, playerData)
   self.data = data
   self.playerData = playerData
   self.index = index
@@ -85,54 +65,44 @@ UIHelpPetSelectCell.SetData = function(self, data, index, playerData)
   self:PlayerHeader()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSelectCell.ConstructPet = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHelpPetSelectCell:ConstructPet()
   local tempData = pet_data:New()
-  tempData.template_id = (self.data).m_nTemplateID
-  tempData.current_skin = (self.data).m_nSkinID
+  tempData.template_id = self.data.m_nTemplateID
+  tempData.current_skin = self.data.m_nSkinID
   local oriPet = Pet:New(tempData)
-  tempData.grade = (self.data).m_nGrade
-  tempData.level = (self.data).m_nLevel
-  tempData.awakening = (self.data).m_nAwake
-  tempData.equip_lv = (self.data).m_nEquipLevel
-  tempData.awake_lock = (self.data).m_nAwakeLock
-  tempData.equip_refine_lv = (self.data).m_nEquipRefineLevel
+  tempData.grade = self.data.m_nGrade
+  tempData.level = self.data.m_nLevel
+  tempData.awakening = self.data.m_nAwake
+  tempData.equip_lv = self.data.m_nEquipLevel
+  tempData.awake_lock = self.data.m_nAwakeLock
+  tempData.equip_refine_lv = self.data.m_nEquipRefineLevel
   oriPet:SetData(tempData)
   oriPet:CalAttr()
-  local pet, isEnhanced = (UIPetModule.ProcessSinglePetEnhance)(oriPet)
+  local pet, isEnhanced = UIPetModule.ProcessSinglePetEnhance(oriPet)
   self:RefreshEnhanceFlagArea(isEnhanced)
   self.pet = pet
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSelectCell.SetHaveState = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHelpPetSelectCell:SetHaveState()
   if not self.pet then
-    return 
+    return
   end
-  local petId = (self.pet):GetTemplateID()
-  local cfgv = (Cfg.cfg_pet)[petId]
-  local grade = (self.pet):GetPetGrade()
-  local skinId = (self.pet):GetSkinId()
+  local petId = self.pet:GetTemplateID()
+  local cfgv = Cfg.cfg_pet[petId]
+  local grade = self.pet:GetPetGrade()
+  local skinId = self.pet:GetSkinId()
   if not cfgv then
-    (Log.fatal)("### [error] cfg_pet no pet. id = [", petId, "]")
+    Log.fatal("### [error] cfg_pet no pet. id = [", petId, "]")
   end
-  local helpIcon = (HelperProxy:GetInstance()):GetPetVideo(petId, grade, skinId, PetSkinEffectPath.CARD_HELP_SELECT)
+  local helpIcon = HelperProxy:GetInstance():GetPetVideo(petId, grade, skinId, PetSkinEffectPath.CARD_HELP_SELECT)
   if helpIcon then
-    (self.cg):LoadImage(helpIcon)
+    self.cg:LoadImage(helpIcon)
   else
-    ;
-    (Log.fatal)("### [error] pet [", petId, "] no helpIcon")
+    Log.fatal("### [error] pet [", petId, "] no helpIcon")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSelectCell.btngoOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHelpPetSelectCell:btngoOnClick()
   local _module = self:GetModule(MissionModule)
   local ctx = _module:TeamCtx()
   local _teams = ctx:Teams()
@@ -141,295 +111,204 @@ UIHelpPetSelectCell.btngoOnClick = function(self)
     local team = _teams:Get(curTeamId)
     if team then
       local count = 0
-      for index,pstid in ipairs(team:GetPets()) do
+      for index, pstid in ipairs(team:GetPets()) do
         if index < 5 and pstid <= 0 then
           count = count + 1
         end
       end
       if count == 4 then
-        (ToastManager.ShowToast)((StringTable.Get)("str_help_pet_xyjfgl"))
-        return 
+        ToastManager.ShowToast(StringTable.Get("str_help_pet_xyjfgl"))
+        return
       end
       if self:_CheckReplaceSpPet(team) then
-        return 
+        return
       end
     end
   end
-  do
-    local firstAttr = (self.pet):GetPetFirstElement()
-    ;
-    (self.helpPetModule):UI_SetSelectHelpPetPstId(firstAttr, (self.data).m_nPstID)
-    ;
-    ((GameGlobal.UIStateManager)()):CloseDialog("UITeamChangeController")
-    ;
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIHelpPetSelectController")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryChangeTeamData, curTeamId)
-  end
+  local firstAttr = self.pet:GetPetFirstElement()
+  self.helpPetModule:UI_SetSelectHelpPetPstId(firstAttr, self.data.m_nPstID)
+  GameGlobal.UIStateManager():CloseDialog("UITeamChangeController")
+  GameGlobal.UIStateManager():CloseDialog("UIHelpPetSelectController")
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryChangeTeamData, curTeamId)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSelectCell.btndetailOnClick = function(self)
-  -- function num : 0_6
+function UIHelpPetSelectCell:btndetailOnClick()
   self:ShowDialog("UIHelpPetInfoController", self.data)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSelectCell.RefreshLevelInfo = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local curGrateMaxLevel = (self.pet):GetMaxLevel()
-  local curLevel = (self.pet):GetPetLevel()
-  ;
-  (self._levelText):SetText(curLevel)
-  ;
-  (self.nameTxt):SetText((StringTable.Get)((self.pet):GetPetName()))
+function UIHelpPetSelectCell:RefreshLevelInfo()
+  local curGrateMaxLevel = self.pet:GetMaxLevel()
+  local curLevel = self.pet:GetPetLevel()
+  self._levelText:SetText(curLevel)
+  self.nameTxt:SetText(StringTable.Get(self.pet:GetPetName()))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSelectCell.ShowStarLevel = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local petStar = (self.pet):GetPetStar()
-  local awakenStep = (self.pet):GetPetAwakening()
-  local awakenLock = (self.pet):GetAwakeMatch()
-  ;
-  (self._stars):SpawnObjects("UIPetIntimacyStar", petStar)
-  local stars = (self._stars):GetAllSpawnList()
+function UIHelpPetSelectCell:ShowStarLevel()
+  local petStar = self.pet:GetPetStar()
+  local awakenStep = self.pet:GetPetAwakening()
+  local awakenLock = self.pet:GetAwakeMatch()
+  self._stars:SpawnObjects("UIPetIntimacyStar", petStar)
+  local stars = self._stars:GetAllSpawnList()
   for i = 1, #stars do
-    local isBackBreak = awakenLock < i and i <= awakenStep
-    ;
-    (stars[i]):Refresh(i <= awakenStep, isBackBreak)
+    local isBackBreak = i > awakenLock and i <= awakenStep
+    stars[i]:Refresh(i <= awakenStep, isBackBreak)
   end
   local pet = self.pet
   local petId = pet:GetTemplateID()
   local awaken = pet:GetPetGrade()
-  local spriteName = (UIPetModule.GetAwakeSpriteName)(petId, awaken)
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self._awakeCount).sprite = (self._atlasAwake):GetSprite(spriteName)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local spriteName = UIPetModule.GetAwakeSpriteName(petId, awaken)
+  self._awakeCount.sprite = self._atlasAwake:GetSprite(spriteName)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSelectCell.ShowElement = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg_pet_element = (Cfg.cfg_pet_element)({})
+function UIHelpPetSelectCell:ShowElement()
+  local cfg_pet_element = Cfg.cfg_pet_element({})
   if cfg_pet_element then
-    local f = (self.pet):GetPetFirstElement()
-    local s = (self.pet):GetPetSecondElement()
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._firstElement).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[f]).Icon))
-    if s and s > 0 then
-      (self._secondBg):SetActive(true)
-      ;
-      ((self._secondElement).gameObject):SetActive(true)
-      -- DECOMPILER ERROR at PC48: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._secondElement).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[s]).Icon))
+    local f = self.pet:GetPetFirstElement()
+    local s = self.pet:GetPetSecondElement()
+    self._firstElement.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[f].Icon))
+    if s and 0 < s then
+      self._secondBg:SetActive(true)
+      self._secondElement.gameObject:SetActive(true)
+      self._secondElement.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[s].Icon))
     else
-      ;
-      ((self._secondElement).gameObject):SetActive(false)
-      ;
-      (self._secondBg):SetActive(false)
+      self._secondElement.gameObject:SetActive(false)
+      self._secondBg:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSelectCell.PlayerHeader = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local headIcon = (HelperProxy:GetInstance()):GetHeadIconDefaultID()
-  local headBg = (HelperProxy:GetInstance()):GetHeadBgDefaultID()
-  local headFrame = (HelperProxy:GetInstance()):GetHeadFrameDefaultID()
+function UIHelpPetSelectCell:PlayerHeader()
+  local headIcon = HelperProxy:GetInstance():GetHeadIconDefaultID()
+  local headBg = HelperProxy:GetInstance():GetHeadBgDefaultID()
+  local headFrame = HelperProxy:GetInstance():GetHeadFrameDefaultID()
   local playerNick = ""
   if self.playerData then
-    headIcon = (self.playerData).head
-    headBg = (self.playerData).head_bg
-    headFrame = (self.playerData).frame_id
-    playerNick = (self.playerData).nick
-    if (self.data).m_nSourceType == EnumHelpSourceType.E_HelpSource_System then
-      local showID = (self.loginModule):GetShowIdByPstId((self.playerData).pstid)
-      ;
-      (self.yuanzhuLeiXingTxt):SetText("ID : " .. showID)
-      ;
-      (self._shouGO):SetActive(false)
-    else
-      do
-        if (self.data).m_nSourceType == EnumHelpSourceType.E_HelpSource_Friend then
-          (self.yuanzhuLeiXingTxt):SetText((StringTable.Get)("str_help_pet_hyyz"))
-          ;
-          (self._shouGO):SetActive(true)
-        end
-        if UNITY_DEBUG then
-          if (self.data).m_nSourceType == EnumHelpSourceType.E_HelpSource_Default then
-            (self.yuanzhuLeiXingTxt):SetText((self.data).m_nTemplateID)
-          else
-            local showID = (self.loginModule):GetShowIdByPstId((self.data).m_nPlayerID)
-            ;
-            (self.yuanzhuLeiXingTxt):SetText(showID)
-          end
-        else
-          do
-            ;
-            (self.yuanzhuLeiXingTxt):SetText("")
-            ;
-            (self._shouGO):SetActive(false)
-            local randomUserID = ((GameGlobal.UIStateManager)()):CallUIMethod("UIHelpPetSelectController", "GetRandomDefaultUserID")
-            do
-              local randomUserCfg = (Cfg.cfg_help_pet_default_users)[randomUserID]
-              headIcon = randomUserCfg.HeadID
-              playerNick = (StringTable.Get)(randomUserCfg.NameKey)
-              ;
-              (self.roleNameTxt):SetText(playerNick)
-              self:SetHead(headIcon, headBg, headFrame)
-              local equipLevel = (self.data).m_nEquipLevel
-              if self.pet then
-                equipLevel = (self.pet):GetEquipLv()
-              end
-              if equipLevel > 0 then
-                ((self.zhuangbeiTxt).gameObject):SetActive(false)
-                self:_SetEquipLv()
-              else
-                ;
-                (self.zhuangbeiTxt):SetText((StringTable.Get)("str_help_pet_wlg"))
-              end
-              if self.playerData then
-                local roleWorldBossInfo = (self.playerData).world_boss_info
-                ;
-                (UIWorldBossHelper.InitOtherDanBadgeSimple)(self._danBadgeGen, self._danBadgeGenGo, self._danBadgeGenRect, roleWorldBossInfo)
-              else
-                do
-                  if self._danBadgeGenGo then
-                    (self._danBadgeGenGo):SetActive(false)
-                  end
-                  self:UnLock("HelpPet_HandleSearchFriend")
-                end
-              end
-            end
-          end
-        end
-      end
+    headIcon = self.playerData.head
+    headBg = self.playerData.head_bg
+    headFrame = self.playerData.frame_id
+    playerNick = self.playerData.nick
+    if self.data.m_nSourceType == EnumHelpSourceType.E_HelpSource_System then
+      local showID = self.loginModule:GetShowIdByPstId(self.playerData.pstid)
+      self.yuanzhuLeiXingTxt:SetText("ID : " .. showID)
+      self._shouGO:SetActive(false)
+    elseif self.data.m_nSourceType == EnumHelpSourceType.E_HelpSource_Friend then
+      self.yuanzhuLeiXingTxt:SetText(StringTable.Get("str_help_pet_hyyz"))
+      self._shouGO:SetActive(true)
     end
+  else
+    if UNITY_DEBUG then
+      if self.data.m_nSourceType == EnumHelpSourceType.E_HelpSource_Default then
+        self.yuanzhuLeiXingTxt:SetText(self.data.m_nTemplateID)
+      else
+        local showID = self.loginModule:GetShowIdByPstId(self.data.m_nPlayerID)
+        self.yuanzhuLeiXingTxt:SetText(showID)
+      end
+    else
+      self.yuanzhuLeiXingTxt:SetText("")
+    end
+    self._shouGO:SetActive(false)
+    local randomUserID = GameGlobal.UIStateManager():CallUIMethod("UIHelpPetSelectController", "GetRandomDefaultUserID")
+    local randomUserCfg = Cfg.cfg_help_pet_default_users[randomUserID]
+    headIcon = randomUserCfg.HeadID
+    playerNick = StringTable.Get(randomUserCfg.NameKey)
   end
+  self.roleNameTxt:SetText(playerNick)
+  self:SetHead(headIcon, headBg, headFrame)
+  local equipLevel = self.data.m_nEquipLevel
+  if self.pet then
+    equipLevel = self.pet:GetEquipLv()
+  end
+  if 0 < equipLevel then
+    self.zhuangbeiTxt.gameObject:SetActive(false)
+    self:_SetEquipLv()
+  else
+    self.zhuangbeiTxt:SetText(StringTable.Get("str_help_pet_wlg"))
+  end
+  if self.playerData then
+    local roleWorldBossInfo = self.playerData.world_boss_info
+    UIWorldBossHelper.InitOtherDanBadgeSimple(self._danBadgeGen, self._danBadgeGenGo, self._danBadgeGenRect, roleWorldBossInfo)
+  elseif self._danBadgeGenGo then
+    self._danBadgeGenGo:SetActive(false)
+  end
+  self:UnLock("HelpPet_HandleSearchFriend")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSelectCell._SetEquipLv = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_equipLv", "UIPetEquipLvIcon")
+function UIHelpPetSelectCell:_SetEquipLv()
+  local obj = UIWidgetHelper.SpawnObject(self, "_equipLv", "UIPetEquipLvIcon")
   obj:SetData(self.pet, true, "Lv.")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSelectCell.SetHead = function(self, head, headbg, frame)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHelpPetSelectCell:SetHead(head, headbg, frame)
   local headIcon = head
-  local cfg_header = (Cfg.cfg_role_head_image)[headIcon]
+  local cfg_header = Cfg.cfg_role_head_image[headIcon]
   if cfg_header then
-    (self._head_icon):LoadImage(cfg_header.Icon)
-    ;
-    (HelperProxy:GetInstance()):GetHeadIconSizeWithTag(self._head_icon_rect, cfg_header.Tag)
+    self._head_icon:LoadImage(cfg_header.Icon)
+    HelperProxy:GetInstance():GetHeadIconSizeWithTag(self._head_icon_rect, cfg_header.Tag)
   else
-    ;
-    (Log.fatal)("###main - cfg_header is nil ! id - ", headIcon)
+    Log.fatal("###main - cfg_header is nil ! id - ", headIcon)
   end
   local headFrame = frame
   if not headFrame or headFrame == 0 then
-    (Log.warn)("[Tower] 找不到头像框，使用默认1001。id：", frame)
-    headFrame = (HelperProxy:GetInstance()):GetHeadFrameDefaultID()
+    Log.warn("[Tower] 找不到头像框，使用默认1001。id：", frame)
+    headFrame = HelperProxy:GetInstance():GetHeadFrameDefaultID()
   end
-  local cfg_head_frame = (Cfg.cfg_role_head_frame)[headFrame]
-  ;
-  (self._head_frame):LoadImage(cfg_head_frame.Icon)
-  ;
-  (HelperProxy:GetInstance()):GetHeadBgSizeWithTag(self._head_bg_rect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadBgMaskSizeWithTag(self._head_bg_mask_rect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadFrameSizeWithTag(self._head_frame_rect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadRootSizeWithTag(self._head_root, RoleHeadFrameSizeType.Size1)
+  local cfg_head_frame = Cfg.cfg_role_head_frame[headFrame]
+  self._head_frame:LoadImage(cfg_head_frame.Icon)
+  HelperProxy:GetInstance():GetHeadBgSizeWithTag(self._head_bg_rect)
+  HelperProxy:GetInstance():GetHeadBgMaskSizeWithTag(self._head_bg_mask_rect)
+  HelperProxy:GetInstance():GetHeadFrameSizeWithTag(self._head_frame_rect)
+  HelperProxy:GetInstance():GetHeadRootSizeWithTag(self._head_root, RoleHeadFrameSizeType.Size1)
   local headBg = headbg
-  local cfg_head_bg = (Cfg.cfg_player_head_bg)[headBg]
-  do
-    if not cfg_head_bg then
-      local bid = (HelperProxy:GetInstance()):GetHeadBgDefaultID()
-      cfg_head_bg = (Cfg.cfg_player_head_bg)[bid]
-    end
-    ;
-    (self._head_bg):LoadImage(cfg_head_bg.Icon)
+  local cfg_head_bg = Cfg.cfg_player_head_bg[headBg]
+  if not cfg_head_bg then
+    local bid = HelperProxy:GetInstance():GetHeadBgDefaultID()
+    cfg_head_bg = Cfg.cfg_player_head_bg[bid]
   end
+  self._head_bg:LoadImage(cfg_head_bg.Icon)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSelectCell._CheckReplaceSpPet = function(self, team)
-  -- function num : 0_13 , upvalues : _ENV
+function UIHelpPetSelectCell:_CheckReplaceSpPet(team)
   local pets = {}
-  for i,petPstID in ipairs(team:GetPets()) do
-    if petPstID and petPstID > 0 then
-      local pet = (self.petModule):GetPet(petPstID)
-      ;
-      (table.insert)(pets, pet:GetTemplateID())
+  for i, petPstID in ipairs(team:GetPets()) do
+    if petPstID and 0 < petPstID then
+      local pet = self.petModule:GetPet(petPstID)
+      table.insert(pets, pet:GetTemplateID())
     end
   end
   if next(pets) then
-    local inner, sp = (HelperProxy:GetInstance()):CheckBinderID(pets, (self.data).m_nTemplateID)
+    local inner, sp = HelperProxy:GetInstance():CheckBinderID(pets, self.data.m_nTemplateID)
     if inner then
-      local pet = (self.petModule):GetPetByTemplateId(sp)
+      local pet = self.petModule:GetPetByTemplateId(sp)
       self:StartTask(self._ReqReplace, self, pet:GetPstID())
       return true
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSelectCell._ReqReplace = function(self, TT, bReplacedPetPstID)
-  -- function num : 0_14 , upvalues : _ENV
-  local controller = ((GameGlobal.UIStateManager)()):GetController("UITeamChangeController")
+function UIHelpPetSelectCell:_ReqReplace(TT, bReplacedPetPstID)
+  local controller = GameGlobal.UIStateManager():GetController("UITeamChangeController")
   controller:HelpPetReplaceFormationPet(TT, self.data, bReplacedPetPstID)
-  local firstAttr = (self.pet):GetPetFirstElement()
-  ;
-  (self.helpPetModule):UI_SetSelectHelpPetPstId(firstAttr, (self.data).m_nPstID)
-  ;
-  ((GameGlobal.UIStateManager)()):CloseDialog("UITeamChangeController")
-  ;
-  ((GameGlobal.UIStateManager)()):CloseDialog("UIHelpPetSelectController")
+  local firstAttr = self.pet:GetPetFirstElement()
+  self.helpPetModule:UI_SetSelectHelpPetPstId(firstAttr, self.data.m_nPstID)
+  GameGlobal.UIStateManager():CloseDialog("UITeamChangeController")
+  GameGlobal.UIStateManager():CloseDialog("UIHelpPetSelectController")
   local _module = self:GetModule(MissionModule)
   local ctx = _module:TeamCtx()
   local _teams = ctx:Teams()
   local curTeamId = ctx:GetCurrTeamId()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryChangeTeamData, curTeamId)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryChangeTeamData, curTeamId)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetSelectCell.RefreshEnhanceFlagArea = function(self, isEnhanced)
-  -- function num : 0_15
+function UIHelpPetSelectCell:RefreshEnhanceFlagArea(isEnhanced)
   local flagGo = self:GetGameObject("EnhanceFlagArea")
   local flagSop = self:GetUIComponent("UISelectObjectPath", "EnhanceFlagArea")
   if not flagGo then
-    return 
+    return
   end
   flagGo:SetActive(isEnhanced)
   if isEnhanced then
     local flagWidget = flagSop:SpawnObject("UIPetEnhancedFlag")
+  else
   end
 end
-
-

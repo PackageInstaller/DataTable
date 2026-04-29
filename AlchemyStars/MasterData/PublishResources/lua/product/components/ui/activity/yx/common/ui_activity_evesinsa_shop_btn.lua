@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/yx/common/ui_activity_evesinsa_shop_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityEveSinsaShopBtn", UICustomWidget)
 UIActivityEveSinsaShopBtn = UIActivityEveSinsaShopBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityEveSinsaShopBtn._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityEveSinsaShopBtn:_GetComponents()
   self._icon = self:GetUIComponent("RawImageLoader", "_icon")
   self._numText = self:GetUIComponent("UILocalizationText", "_numText")
   self._titleText = self:GetUIComponent("UILocalizationText", "_titleText")
@@ -16,108 +9,67 @@ UIActivityEveSinsaShopBtn._GetComponents = function(self)
   self._red = self:GetGameObject("_red")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaShopBtn.OnShow = function(self)
-  -- function num : 0_1
+function UIActivityEveSinsaShopBtn:OnShow()
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaShopBtn.OnHide = function(self)
-  -- function num : 0_2
+function UIActivityEveSinsaShopBtn:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaShopBtn.SetData = function(self, campaign, redFlag, disableClick)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityEveSinsaShopBtn:SetData(campaign, redFlag, disableClick)
   self._campaign = campaign
   self._redFlag = redFlag
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R4 in 'UnsetPending'
-
   if disableClick then
-    (self._canvasGroup).blocksRaycasts = false
+    self._canvasGroup.blocksRaycasts = false
   else
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._canvasGroup).blocksRaycasts = true
+    self._canvasGroup.blocksRaycasts = true
   end
   self:_AttachEvents()
-  local shopCfg = (Cfg.cfg_activity_shop_common_client)[(self._campaign)._id]
+  local shopCfg = Cfg.cfg_activity_shop_common_client[self._campaign._id]
   self._currencyId = shopCfg.CurrencyId
-  local totalNum = (ClientCampaignShop.GetMoney)(self._currencyId)
-  ;
-  (self._numText):SetText(totalNum)
-  ;
-  (self._icon):LoadImage((ClientCampaignShop.GetCurrencyImageName)(shopCfg.CurrencyId))
+  local totalNum = ClientCampaignShop.GetMoney(self._currencyId)
+  self._numText:SetText(totalNum)
+  self._icon:LoadImage(ClientCampaignShop.GetCurrencyImageName(shopCfg.CurrencyId))
   if self._titleText then
-    (self._titleText):SetText((StringTable.Get)("str_activity_evesinsa_shop_name"))
+    self._titleText:SetText(StringTable.Get("str_activity_evesinsa_shop_name"))
   end
   self:_CheckActivityShopRedPoint()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaShopBtn.btnOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.info)("UIActivityEveSinsaShopBtn:btnOnClick")
-  ;
-  (ClientCampaignShop.OpenCampaignShop)((self._campaign)._type, (self._campaign)._id)
+function UIActivityEveSinsaShopBtn:btnOnClick()
+  Log.info("UIActivityEveSinsaShopBtn:btnOnClick")
+  ClientCampaignShop.OpenCampaignShop(self._campaign._type, self._campaign._id)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaShopBtn._AttachEvents = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityEveSinsaShopBtn:_AttachEvents()
   if self._redFlag then
     self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   end
   self:AttachEvent(GameEventType.ItemCountChanged, self._OnItemCountChanged)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaShopBtn._DetachEvents = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityEveSinsaShopBtn:_DetachEvents()
   if self._redFlag then
     self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   end
   self:DetachEvent(GameEventType.ItemCountChanged, self._OnItemCountChanged)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaShopBtn._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_7
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UIActivityEveSinsaShopBtn:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:_CheckActivityShopRedPoint()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaShopBtn._OnItemCountChanged = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local totalNum = (ClientCampaignShop.GetMoney)(self._currencyId)
-  ;
-  (self._numText):SetText(totalNum)
+function UIActivityEveSinsaShopBtn:_OnItemCountChanged()
+  local totalNum = ClientCampaignShop.GetMoney(self._currencyId)
+  self._numText:SetText(totalNum)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaShopBtn._CheckActivityShopRedPoint = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityEveSinsaShopBtn:_CheckActivityShopRedPoint()
   if self._red then
-    if self._redFlag then
-      local bShow = (self._campaign):CheckComponentRed(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_EXCHANGE1, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_EXCHANGE2)
-    end
-    ;
-    (self._red):SetActive(bShow)
+    local bShow = self._redFlag and self._campaign:CheckComponentRed(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_EXCHANGE1, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_EXCHANGE2)
+    self._red:SetActive(bShow)
   end
 end
-
-

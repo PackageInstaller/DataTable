@@ -1,44 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_condition.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipCondition", UICustomWidget)
 UIPetEquipCondition = UIPetEquipCondition
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipCondition.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIPetEquipCondition:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipCondition.InitWidget = function(self)
-  -- function num : 0_1
+function UIPetEquipCondition:InitWidget()
   self.imgEnoughGo = self:GetGameObject("imgEnough")
   self.imgNoneEnoughGo = self:GetGameObject("imgNoneEnough")
   self.txtCondition = self:GetUIComponent("UILocalizationText", "txtCondition")
   self.txtValue = self:GetUIComponent("UILocalizationText", "txtValue")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipCondition.SetData = function(self, isEnough, conditionStr, valueStr)
-  -- function num : 0_2
-  (self.imgEnoughGo):SetActive(isEnough)
-  ;
-  (self.imgNoneEnoughGo):SetActive(not isEnough)
+function UIPetEquipCondition:SetData(isEnough, conditionStr, valueStr)
+  self.imgEnoughGo:SetActive(isEnough)
+  self.imgNoneEnoughGo:SetActive(not isEnough)
   if isEnough then
-    (self.txtCondition):SetText("<color=#1fecd6>" .. conditionStr .. "</color>")
-    ;
-    (self.txtValue):SetText("<color=#1fecd6>" .. valueStr .. "</color>")
+    self.txtCondition:SetText("<color=#1fecd6>" .. conditionStr .. "</color>")
+    self.txtValue:SetText("<color=#1fecd6>" .. valueStr .. "</color>")
   else
-    ;
-    (self.txtCondition):SetText(conditionStr)
-    ;
-    (self.txtValue):SetText(valueStr)
+    self.txtCondition:SetText(conditionStr)
+    self.txtValue:SetText(valueStr)
   end
 end
-
-

@@ -1,54 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet_intimacy/ui_pet_intimacy_stumbles.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetIntimacyStumbles", UIController)
 UIPetIntimacyStumbles = UIPetIntimacyStumbles
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetIntimacyStumbles.Constructor = function(self)
-  -- function num : 0_0
+function UIPetIntimacyStumbles:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyStumbles.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIPetIntimacyStumbles:OnShow(uiParams)
   self._pet = uiParams[1]
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyStumbles.OnHide = function(self)
-  -- function num : 0_2
+function UIPetIntimacyStumbles:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyStumbles.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local level = (self._pet):GetPetAffinityLevel()
-  local maxLevel = (self._pet):GetPetAffinityMaxLevel()
-  local cfg = (Cfg.cfg_pet_affinity)({PetID = (self._pet):GetTemplateID()})
+function UIPetIntimacyStumbles:Flush()
+  local level = self._pet:GetPetAffinityLevel()
+  local maxLevel = self._pet:GetPetAffinityMaxLevel()
+  local cfg = Cfg.cfg_pet_affinity({
+    PetID = self._pet:GetTemplateID()
+  })
   if cfg then
-    local len = (table.count)(cfg)
-    ;
-    (self._content):SpawnObjects("UIPetIntimacyStumblesItem", len)
-    local arr = (self._content):GetAllSpawnList()
-    for lv,item in ipairs(arr) do
+    local len = table.count(cfg)
+    self._content:SpawnObjects("UIPetIntimacyStumblesItem", len)
+    local arr = self._content:GetAllSpawnList()
+    for lv, item in ipairs(arr) do
       item:Flush(lv, self._pet)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyStumbles.bgOnClick = function(self, go)
-  -- function num : 0_4
+function UIPetIntimacyStumbles:bgOnClick(go)
   self:CloseDialog()
 end
-
-

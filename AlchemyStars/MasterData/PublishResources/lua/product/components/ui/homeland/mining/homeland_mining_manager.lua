@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/mining/homeland_mining_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandMiningManager", Object)
 HomelandMiningManager = HomelandMiningManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandMiningManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandMiningManager:Constructor()
   self._ores = {}
   self._interactCfgID = 14
   self._beforeDropPeriod = 900
@@ -18,192 +11,140 @@ HomelandMiningManager.Constructor = function(self)
   self._currentTaskID = nil
   self._timerEvent = nil
   self._dropNeedCutTimes = 0
-  self._itemUpgradeCallback = (GameHelper:GetInstance()):CreateCallback(self.OnItemUpgrade, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnItemUpgrade, self._itemUpgradeCallback)
-  self._itemChangeCallback = (GameHelper:GetInstance()):CreateCallback(self.OnItemChange, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.ItemCountChanged, self._itemChangeCallback)
-  self._callOresRefresh = (GameHelper:GetInstance()):CreateCallback(self.CallOresRefresh, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.HomelandOreRefresh, self._callOresRefresh)
-  self._refreshOreInfo = (GameHelper:GetInstance()):CreateCallback(self.RefreshOreInfo, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.HomelandRefreshOreInfo, self._refreshOreInfo)
+  self._itemUpgradeCallback = GameHelper:GetInstance():CreateCallback(self.OnItemUpgrade, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnItemUpgrade, self._itemUpgradeCallback)
+  self._itemChangeCallback = GameHelper:GetInstance():CreateCallback(self.OnItemChange, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.ItemCountChanged, self._itemChangeCallback)
+  self._callOresRefresh = GameHelper:GetInstance():CreateCallback(self.CallOresRefresh, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.HomelandOreRefresh, self._callOresRefresh)
+  self._refreshOreInfo = GameHelper:GetInstance():CreateCallback(self.RefreshOreInfo, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.HomelandRefreshOreInfo, self._refreshOreInfo)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMiningManager.Init = function(self, homelandClient)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandMiningManager:Init(homelandClient)
   self._isActive = true
   self._homelandClient = homelandClient
-  self._interactPointManager = (self._homelandClient):InteractPointManager()
-  self._charCtrl = ((self._homelandClient):CharacterManager()):MainCharacterController()
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
+  self._interactPointManager = self._homelandClient:InteractPointManager()
+  self._charCtrl = self._homelandClient:CharacterManager():MainCharacterController()
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
   local sceneManager = homelandClient:SceneManager()
-  local oresRoot = (sceneManager:SceneRootTrans()):Find("Ores")
+  local oresRoot = sceneManager:SceneRootTrans():Find("Ores")
   if oresRoot then
     for i = 0, oresRoot.childCount - 1 do
       local oreTrans = oresRoot:GetChild(i)
       local oreID = tonumber(oreTrans.name)
       if oreID then
-        local oreCfg = (Cfg.cfg_homeland_mine)[oreID]
-        if oreCfg and not (self._ores)[oreID] then
+        local oreCfg = Cfg.cfg_homeland_mine[oreID]
+        if oreCfg and not self._ores[oreID] then
           local ore = HomelandOre:New(oreID, oreTrans.gameObject, oreCfg, self)
-          ;
-          (self._interactPointManager):AddBuildInteractPoint(ore, i, self._interactCfgID)
-          -- DECOMPILER ERROR at PC62: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          (self._ores)[oreID] = ore
+          self._interactPointManager:AddBuildInteractPoint(ore, i, self._interactCfgID)
+          self._ores[oreID] = ore
         end
       end
     end
   end
-  do
-    self:RefreshOreInfo()
-    self:RefreshPickAxeInfo()
-  end
+  self:RefreshOreInfo()
+  self:RefreshPickAxeInfo()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMiningManager.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnItemUpgrade, self._itemUpgradeCallback)
-  ;
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.ItemCountChanged, self._itemChangeCallback)
-  ;
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.HomelandOreRefresh, self._callOresRefresh)
-  ;
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.HomelandRefreshOreInfo, self._refreshOreInfo)
+function HomelandMiningManager:Dispose()
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnItemUpgrade, self._itemUpgradeCallback)
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.ItemCountChanged, self._itemChangeCallback)
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.HomelandOreRefresh, self._callOresRefresh)
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.HomelandRefreshOreInfo, self._refreshOreInfo)
   self:StopDigTask()
   self._ores = nil
   self._isActive = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMiningManager.RefreshOreInfo = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandMiningManager:RefreshOreInfo()
   local oreInfoList = {}
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, self, oreInfoList
-    ((GameGlobal.UIStateManager)()):Lock("HomelandMiningManager:RefreshOreInfo")
-    local res = (self._homelandModule):HomelandGetMiningInfo(TT)
-    do
-      if res:GetSucc() then
-        local oreInfoDic = {}
-        oreInfoList = (((self._homelandModule).m_homeland_info).mining_info).infos
-        for i = 1, #oreInfoList do
-          oreInfoDic[(oreInfoList[i]).mine_id] = oreInfoList[i]
-        end
-        for id,ore in pairs(self._ores) do
-          local oreInfo = oreInfoDic[id]
-          if oreInfo then
-            ore:SetOreServerData(oreInfo)
-          end
-        end
-        self:CallOresRefresh()
+  TaskManager:GetInstance():StartTask(function(TT)
+    GameGlobal.UIStateManager():Lock("HomelandMiningManager:RefreshOreInfo")
+    local res = self._homelandModule:HomelandGetMiningInfo(TT)
+    if res:GetSucc() then
+      local oreInfoDic = {}
+      oreInfoList = self._homelandModule.m_homeland_info.mining_info.infos
+      for i = 1, #oreInfoList do
+        oreInfoDic[oreInfoList[i].mine_id] = oreInfoList[i]
       end
-      ;
-      ((GameGlobal.UIStateManager)()):UnLock("HomelandMiningManager:RefreshOreInfo")
+      for id, ore in pairs(self._ores) do
+        local oreInfo = oreInfoDic[id]
+        if oreInfo then
+          ore:SetOreServerData(oreInfo)
+        end
+      end
+      self:CallOresRefresh()
     end
-  end
-, self)
+    GameGlobal.UIStateManager():UnLock("HomelandMiningManager:RefreshOreInfo")
+  end, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMiningManager.ResetTimer = function(self)
-  -- function num : 0_4
+function HomelandMiningManager:ResetTimer()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMiningManager.RefreshPickAxeInfo = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandMiningManager:RefreshPickAxeInfo()
   local lastDropNeedCutTimes = self._dropNeedCutTimes
-  local pickAxeCfg = ((GameGlobal.GetUIModule)(HomelandModule)):GetCurrentToolCfg(ToolType.TT_PICK)
+  local pickAxeCfg = GameGlobal.GetUIModule(HomelandModule):GetCurrentToolCfg(ToolType.TT_PICK)
   if pickAxeCfg then
     self._dropNeedCutTimes = pickAxeCfg.param
   else
     self._dropNeedCutTimes = 0
   end
   if self._dropNeedCutTimes ~= lastDropNeedCutTimes then
-    local ore = (self._ores)[self._lastCutOreID]
+    local ore = self._ores[self._lastCutOreID]
     if ore then
       ore:ClearCutTimes()
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMiningManager.HavePickAxe = function(self)
-  -- function num : 0_6
-  do return self._dropNeedCutTimes > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandMiningManager:HavePickAxe()
+  return self._dropNeedCutTimes > 0
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMiningManager.CutOre = function(self, ore)
-  -- function num : 0_7 , upvalues : _ENV
+function HomelandMiningManager:CutOre(ore)
   if not self._charCtrl then
-    return 
+    return
   end
-  if (self._charCtrl):State() == HomelandActorStateType.Dash then
-    return 
+  if self._charCtrl:State() == HomelandActorStateType.Dash then
+    return
   end
   if not ore:CheckCanCut() then
-    (Log.fatal)("Mining ore  id:" .. ore:ID() .. " total times max")
-    return 
+    Log.fatal("Mining ore  id:" .. ore:ID() .. " total times max")
+    return
   end
-  self._currentTaskID = ((GameGlobal.TaskManager)()):StartTask(self.CutOreProcess, self, ore)
+  self._currentTaskID = GameGlobal.TaskManager():StartTask(self.CutOreProcess, self, ore)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMiningManager.IsCutting = function(self)
-  -- function num : 0_8
-  do return self._currentTaskID ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandMiningManager:IsCutting()
+  return self._currentTaskID ~= nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMiningManager._GetNearestPoint = function(self, points, check)
-  -- function num : 0_9 , upvalues : _ENV
+function HomelandMiningManager:_GetNearestPoint(points, check)
   if not self._charCtrl then
-    return 
+    return
   end
-  local charPos = (self._charCtrl):Position()
+  local charPos = self._charCtrl:Position()
   local nearestDis = math.huge
-  local nearestPoint = nil
+  local nearestPoint
   for i = 1, #points do
     local point = points[i]
     local ore = point:GetBuild()
-    local checkRet = check and ore:CheckCanCut()
+    local checkRet = not check or ore:CheckCanCut()
     if point:IsTrigger(charPos) and checkRet then
       local dis = point:GetDistance(charPos)
-      if dis > 0 and dis < nearestDis then
+      if 0 < dis and nearestDis > dis then
         nearestDis = dis
         nearestPoint = point
       end
     end
   end
-  do return nearestPoint end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return nearestPoint
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMiningManager.GetNearestOreCanCut = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local points = (self._interactPointManager):GetPoints(InteractPointType.Mining)
+function HomelandMiningManager:GetNearestOreCanCut()
+  local points = self._interactPointManager:GetPoints(InteractPointType.Mining)
   local point = self:_GetNearestPoint(points, true)
   if point then
     return point:GetBuild()
@@ -215,181 +156,134 @@ HomelandMiningManager.GetNearestOreCanCut = function(self)
   return nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMiningManager.CutOreProcess = function(self, TT, ore)
-  -- function num : 0_11 , upvalues : _ENV
-  local player = (self._charCtrl):Transform()
+function HomelandMiningManager:CutOreProcess(TT, ore)
+  local player = self._charCtrl:Transform()
   if not player then
-    return 
+    return
   end
-  local vec = ore:GetInteractPosition() - (self._charCtrl):Position()
+  local vec = ore:GetInteractPosition() - self._charCtrl:Position()
   local normal = vec:Normalize()
   local dis = vec:Magnitude()
   local radius = ore:GetCutRadius()
-  if radius + 0.1 < dis then
-    local target = normal * (dis - radius + 0.1) + (self._charCtrl):Position()
-    local success = (self._charCtrl):NavigateToPos(TT, target)
+  if dis > radius + 0.1 then
+    local target = normal * (dis - radius + 0.1) + self._charCtrl:Position()
+    local success = self._charCtrl:NavigateToPos(TT, target)
     if not success then
       self._currentTaskID = nil
       self:OnTaskOver()
-      return 
+      return
     end
   end
-  do
-    ;
-    (self._charCtrl):SetForbiddenMove(true, true)
-    local forward = ore:GetPlayerDirection(self._charCtrl)
-    ;
-    (self._charCtrl):SetForward(forward)
-    if (self._charCtrl):State() ~= HomelandActorStateType.Pick then
-      (self._charCtrl):SetHoldPick()
-      YIELD(TT, self._aniPeriod)
-    end
-    ;
-    (self._charCtrl):SetAnimatorTrigger("WavePick")
-    local trans = ore:GetOreEffectPos(self._charCtrl)
-    self:PlayHitEff(trans)
-    ;
-    (AudioHelperController.PlayUISoundAutoReleaseDelay)(CriAudioIDConst.HomelandAudioMining, 500)
-    YIELD(TT, self._beforeDropPeriod)
-    local oreID = ore:ID()
-    do
-      if self._lastCutOreID ~= oreID then
-        local ore = (self._ores)[self._lastCutOreID]
-        if ore then
-          ore:ClearCutTimes()
-        end
-        self._lastCutOreID = oreID
-      end
-      local cutTimes = ore:IncreaseCutTimes()
-      ;
-      (Log.fatal)("Felling ore  id:" .. oreID .. " total times:" .. cutTimes)
-      if self._dropNeedCutTimes <= cutTimes then
-        local homelandModule = (GameGlobal.GetModule)(HomelandModule)
-        local res, assetList = homelandModule:HomelandMining(TT, oreID, cutTimes)
-        ;
-        (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioJumpOutGift)
-        if res:GetSucc() then
-          ore:ClearCutTimes()
-          ore:IncreaseDropTimes()
-          local asset = assetList[1]
-          if #assetList > 0 then
-            local itemCfg = (Cfg.cfg_item)[asset.assetid]
-            ;
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomeShowUIBubble, (StringTable.Get)("str_homeland_collect_item", (StringTable.Get)(itemCfg.Name), asset.count), itemCfg.Icon)
-          end
-        else
-          do
-            do
-              ;
-              (Log.fatal)("[Homeland] HomelandMiningManager:CutOreProcess HomelandMining fail, res:" .. res:GetResult())
-              ore:ResetClearTimer()
-              YIELD(TT, self._afterDropPeriod)
-              ;
-              (self._charCtrl):SetForbiddenMove(false)
-              self:OnTaskOver()
-              self._currentTaskID = nil
-            end
-          end
-        end
-      end
-    end
+  self._charCtrl:SetForbiddenMove(true, true)
+  local forward = ore:GetPlayerDirection(self._charCtrl)
+  self._charCtrl:SetForward(forward)
+  if self._charCtrl:State() ~= HomelandActorStateType.Pick then
+    self._charCtrl:SetHoldPick()
+    YIELD(TT, self._aniPeriod)
   end
+  self._charCtrl:SetAnimatorTrigger("WavePick")
+  local trans = ore:GetOreEffectPos(self._charCtrl)
+  self:PlayHitEff(trans)
+  AudioHelperController.PlayUISoundAutoReleaseDelay(CriAudioIDConst.HomelandAudioMining, 500)
+  YIELD(TT, self._beforeDropPeriod)
+  local oreID = ore:ID()
+  if self._lastCutOreID ~= oreID then
+    local ore = self._ores[self._lastCutOreID]
+    if ore then
+      ore:ClearCutTimes()
+    end
+    self._lastCutOreID = oreID
+  end
+  local cutTimes = ore:IncreaseCutTimes()
+  Log.fatal("Felling ore  id:" .. oreID .. " total times:" .. cutTimes)
+  if cutTimes >= self._dropNeedCutTimes then
+    local homelandModule = GameGlobal.GetModule(HomelandModule)
+    local res, assetList = homelandModule:HomelandMining(TT, oreID, cutTimes)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioJumpOutGift)
+    if res:GetSucc() then
+      ore:ClearCutTimes()
+      ore:IncreaseDropTimes()
+      local asset = assetList[1]
+      if 0 < #assetList then
+        local itemCfg = Cfg.cfg_item[asset.assetid]
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.HomeShowUIBubble, StringTable.Get("str_homeland_collect_item", StringTable.Get(itemCfg.Name), asset.count), itemCfg.Icon)
+      end
+    else
+      Log.fatal("[Homeland] HomelandMiningManager:CutOreProcess HomelandMining fail, res:" .. res:GetResult())
+    end
+  else
+    ore:ResetClearTimer()
+  end
+  YIELD(TT, self._afterDropPeriod)
+  self._charCtrl:SetForbiddenMove(false)
+  self:OnTaskOver()
+  self._currentTaskID = nil
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMiningManager.OnTaskOver = function(self)
-  -- function num : 0_12
+function HomelandMiningManager:OnTaskOver()
   if self._hitEffect then
-    (self._hitEffect):Dispose()
+    self._hitEffect:Dispose()
     self._hitEffect = nil
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMiningManager.StopDigTask = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function HomelandMiningManager:StopDigTask()
   if self._currentTaskID then
-    ((GameGlobal.TaskManager)()):KillTask(self._currentTaskID)
+    GameGlobal.TaskManager():KillTask(self._currentTaskID)
     self._currentTaskID = nil
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMiningManager.OnItemUpgrade = function(self, tplID)
-  -- function num : 0_14 , upvalues : _ENV
-  local pickAxeCfg = (Cfg.cfg_item_tool_upgrade)[tplID]
+function HomelandMiningManager:OnItemUpgrade(tplID)
+  local pickAxeCfg = Cfg.cfg_item_tool_upgrade[tplID]
   if not pickAxeCfg then
-    return 
+    return
   end
   if pickAxeCfg.ToolType == ToolType.TT_PICK then
     self:RefreshPickAxeInfo()
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMiningManager.OnItemChange = function(self)
-  -- function num : 0_15
+function HomelandMiningManager:OnItemChange()
   self:RefreshPickAxeInfo()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMiningManager.CallOresRefresh = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function HomelandMiningManager:CallOresRefresh()
   local oreInfoList = {}
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_16_0 , upvalues : self, oreInfoList, _ENV
+  TaskManager:GetInstance():StartTask(function(TT)
     if not self._isActive then
-      return 
+      return
     end
-    local res = (self._homelandModule):HomelandGetMiningInfo(TT)
+    local res = self._homelandModule:HomelandGetMiningInfo(TT)
     if not self._isActive then
-      return 
+      return
     end
     if res:GetSucc() then
       local oreInfoDic = {}
-      oreInfoList = (((self._homelandModule).m_homeland_info).mining_info).infos
+      oreInfoList = self._homelandModule.m_homeland_info.mining_info.infos
       for i = 1, #oreInfoList do
-        oreInfoDic[(oreInfoList[i]).mine_id] = oreInfoList[i]
+        oreInfoDic[oreInfoList[i].mine_id] = oreInfoList[i]
       end
-      for id,ore in pairs(self._ores) do
+      for id, ore in pairs(self._ores) do
         local oreInfo = oreInfoDic[id]
         if oreInfo then
           ore:SetRefreshTime(oreInfo.next_refresh_time)
         end
       end
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMiningManager.PlayHitEff = function(self, root)
-  -- function num : 0_17 , upvalues : _ENV
+function HomelandMiningManager:PlayHitEff(root)
   if not self._hitEffect then
-    self._hitEffect = (ResourceManager:GetInstance()):SyncLoadAsset("eff_jy_mine_axe_hit.prefab", LoadType.GameObject)
+    self._hitEffect = ResourceManager:GetInstance():SyncLoadAsset("eff_jy_mine_axe_hit.prefab", LoadType.GameObject)
   end
-  local player = (self._charCtrl):Transform()
+  local player = self._charCtrl:Transform()
   local effectTra = player:Find(root)
-  if effectTra and (self._hitEffect).Obj then
-    ((self._hitEffect).Obj):SetActive(false)
-    ;
-    (((self._hitEffect).Obj).transform):SetParent(effectTra, false)
-    ;
-    ((self._hitEffect).Obj):SetActive(true)
-    -- DECOMPILER ERROR at PC49: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (((self._hitEffect).Obj).transform).localPosition = Vector3(-0.2944, -0.044, 0.474)
+  if effectTra and self._hitEffect.Obj then
+    self._hitEffect.Obj:SetActive(false)
+    self._hitEffect.Obj.transform:SetParent(effectTra, false)
+    self._hitEffect.Obj:SetActive(true)
+    self._hitEffect.Obj.transform.localPosition = Vector3(-0.2944, -0.044, 0.474)
   end
 end
-
-

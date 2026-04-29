@@ -1,61 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n31/SecondAnniversary/ui_n31_second_anniversary_misc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UIN31SecondAnniversaryToolFunctions = {GetRemainTime = function(time)
-  -- function num : 0_0 , upvalues : _ENV
-  local day, hour, minute = nil, nil, nil
-  day = (math.floor)(time / 86400)
-  hour = (math.floor)(time / 3600) % 24
-  minute = (math.floor)(time / 60) % 60
-  local timestring = ""
-  if day > 0 then
-    timestring = day .. (StringTable.Get)("str_activity_common_day")
-    if hour > 0 then
-      timestring = timestring .. hour .. (StringTable.Get)("str_activity_common_hour")
-    end
-  else
-    if hour > 0 then
-      timestring = hour .. (StringTable.Get)("str_activity_common_hour")
-      if minute > 0 then
-        timestring = timestring .. minute .. (StringTable.Get)("str_activity_common_minute")
+local UIN31SecondAnniversaryToolFunctions = {
+  GetRemainTime = function(time)
+    local day, hour, minute
+    day = math.floor(time / 86400)
+    hour = math.floor(time / 3600) % 24
+    minute = math.floor(time / 60) % 60
+    local timestring = ""
+    if 0 < day then
+      timestring = day .. StringTable.Get("str_activity_common_day")
+      if 0 < hour then
+        timestring = timestring .. hour .. StringTable.Get("str_activity_common_hour")
       end
+    elseif 0 < hour then
+      timestring = hour .. StringTable.Get("str_activity_common_hour")
+      if 0 < minute then
+        timestring = timestring .. minute .. StringTable.Get("str_activity_common_minute")
+      end
+    elseif 0 < minute then
+      timestring = minute .. StringTable.Get("str_activity_common_minute")
     else
-      if minute > 0 then
-        timestring = minute .. (StringTable.Get)("str_activity_common_minute")
-      else
-        timestring = (StringTable.Get)("str_activity_common_less_minute")
-      end
+      timestring = StringTable.Get("str_activity_common_less_minute")
     end
+    return timestring
+  end,
+  GetSignRemainTime = function(time)
+    local hour, minute
+    hour = math.floor(time / 3600) % 24
+    minute = math.floor(time / 60) % 60
+    hour = hour < 0 and 0 or hour
+    minute = minute < 0 and 0 or minute
+    if hour < 10 then
+      hour = "0" .. hour
+    end
+    if minute < 10 then
+      minute = "0" .. minute
+    end
+    return hour .. ":" .. minute
+  end,
+  GetLocalDBInt = function(key, defaultValue)
+    local loginModule = GameGlobal.GetModule(LoginModule)
+    return LocalDB.GetInt(key .. loginModule:GetRoleShowID(), defaultValue)
+  end,
+  SetLocalDBInt = function(key, value)
+    local loginModule = GameGlobal.GetModule(LoginModule)
+    return LocalDB.SetInt(key .. loginModule:GetRoleShowID(), value)
   end
-  return timestring
-end
-, GetSignRemainTime = function(time)
-  -- function num : 0_1 , upvalues : _ENV
-  local hour, minute = nil, nil
-  hour = (math.floor)(time / 3600) % 24
-  minute = (math.floor)(time / 60) % 60
-  -- DECOMPILER ERROR at PC25: Unhandled construct in 'MakeBoolean' P3
-
-  if (((hour >= 0 or not 0) and minute >= 0)) or hour < 10 then
-    hour = "0" .. hour
-  end
-  if minute < 10 then
-    minute = "0" .. minute
-  end
-  return hour .. ":" .. minute
-end
-, GetLocalDBInt = function(key, defaultValue)
-  -- function num : 0_2 , upvalues : _ENV
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  return (LocalDB.GetInt)(key .. loginModule:GetRoleShowID(), defaultValue)
-end
-, SetLocalDBInt = function(key, value)
-  -- function num : 0_3 , upvalues : _ENV
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  return (LocalDB.SetInt)(key .. loginModule:GetRoleShowID(), value)
-end
 }
 _enum("UIN31SecondAnniversaryToolFunctions", UIN31SecondAnniversaryToolFunctions)
-

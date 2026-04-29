@@ -1,23 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/popstar_mission/cfg_popstar_prop_refresh.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, TrapID = 2, PopNumRandomInterval = 3}
+local key = {
+  ID = 1,
+  TrapID = 2,
+  PopNumRandomInterval = 3
+}
 local config = {
-[5319001] = {5319001, 20001001, 
-{
-{30, 80}
-, 
-{100, 150}
-, 
-{150, 200}
-, 
-{280, 320}
-, 
-{420, 430}
-}
-}
+  [5319001] = {
+    5319001,
+    20001001,
+    {
+      {30, 80},
+      {100, 150},
+      {150, 200},
+      {280, 320},
+      {420, 430}
+    }
+  }
 }
 return config, "ID", key
-

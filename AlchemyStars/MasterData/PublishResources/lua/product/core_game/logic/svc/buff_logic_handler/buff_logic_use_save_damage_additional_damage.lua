@@ -1,68 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_use_save_damage_additional_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicUseSaveDamageAdditionalDamage", BuffLogicBase)
 BuffLogicUseSaveDamageAdditionalDamage = BuffLogicUseSaveDamageAdditionalDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUseSaveDamageAdditionalDamage.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicUseSaveDamageAdditionalDamage:Constructor(buffInstance, logicParam)
   self._mulValue = logicParam.mulValue or 0
   self._addValue = logicParam.addValue or 0
-  if not logicParam.damageType then
-    self._damageType = DamageType.Recover
-    self._effectID = logicParam.effectID
-  end
+  self._damageType = logicParam.damageType or DamageType.Recover
+  self._effectID = logicParam.effectID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicUseSaveDamageAdditionalDamage.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicUseSaveDamageAdditionalDamage:DoLogic(notify)
+  local e = self._buffInstance:Entity()
   if e:HasDeadMark() or e:HasPetDeadMark() then
-    return 
+    return
   end
   local attrCmpt = e:Attributes()
   local max_hp = attrCmpt:CalcMaxHp()
   local cur_hp = attrCmpt:GetCurrentHP()
   if cur_hp <= 0 then
-    return 
+    return
   end
-  local curSaveSkillDamage = (e:BuffComponent()):GetBuffValue("SaveSkillDamage") or 0
+  local curSaveSkillDamage = e:BuffComponent():GetBuffValue("SaveSkillDamage") or 0
   if curSaveSkillDamage == 0 then
-    return 
+    return
   end
-  ;
-  (e:BuffComponent()):SetBuffValue("SaveSkillDamage", 0)
+  e:BuffComponent():SetBuffValue("SaveSkillDamage", 0)
   local damageValue = curSaveSkillDamage * (1 + self._mulValue) + self._addValue
-  local changeHp = (math.floor)(damageValue)
+  local changeHp = math.floor(damageValue)
   if max_hp < changeHp + cur_hp then
     changeHp = max_hp - cur_hp
   end
-  local teamEntity = nil
+  local teamEntity
   if e:HasTeam() then
     teamEntity = e
-  else
-    if e:HasPet() then
-      teamEntity = (e:Pet()):GetOwnerTeamEntity()
-    end
+  elseif e:HasPet() then
+    teamEntity = e:Pet():GetOwnerTeamEntity()
   end
-  if changeHp > 0 then
-    if teamEntity and (teamEntity:Attributes()):GetAttribute("BuffForbidCure") then
-      return 
-    else
-      if (e:Attributes()):GetAttribute("BuffForbidCure") then
-        return 
-      end
+  if 0 < changeHp then
+    if teamEntity and teamEntity:Attributes():GetAttribute("BuffForbidCure") then
+      return
+    elseif e:Attributes():GetAttribute("BuffForbidCure") then
+      return
     end
   end
   if changeHp < 0 then
-    changeHp = -(changeHp)
+    changeHp = -changeHp
   end
-  local calcDamage = (self._world):GetService("CalcDamage")
+  local calcDamage = self._world:GetService("CalcDamage")
   local damageInfo = DamageInfo:New(damageValue, self._damageType)
   damageInfo:SetChangeHP(changeHp)
   if self._damageType == DamageType.Recover then
@@ -71,5 +54,3 @@ BuffLogicUseSaveDamageAdditionalDamage.DoLogic = function(self, notify)
   local result = BuffResultUseSaveDamageAdditionalDamage:New(damageInfo, self._effectID)
   return result
 end
-
-

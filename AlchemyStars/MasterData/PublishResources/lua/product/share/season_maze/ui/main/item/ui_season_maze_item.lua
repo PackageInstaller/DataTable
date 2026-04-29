@@ -1,115 +1,79 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/item/ui_season_maze_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeItem", UICustomWidget)
 UISeasonMazeItem = UISeasonMazeItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self._seasonMazeObj = (self._seasonMazeModule):CurSeasonObj()
-  self._component = (self._seasonMazeObj):GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
-  self._comInfo = (self._component):GetComponentInfo()
+function UISeasonMazeItem:OnShow(uiParams)
+  self._seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self._seasonMazeObj = self._seasonMazeModule:CurSeasonObj()
+  self._component = self._seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+  self._comInfo = self._component:GetComponentInfo()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMazeItem:InitWidget()
   self._items = self:GetUIComponent("UISelectObjectPath", "Items")
   self._obj = self:GetGameObject("Obj")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeItem.SetData = function(self, data, tips, scale)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeItem:SetData(data, tips, scale)
   self._data = data
   self._tips = tips
-  if not scale then
-    scale = 1
-  end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._obj).transform).localScale = Vector3(scale, scale, 1)
-  self._itemWidget = (self._items):SpawnObject("UIItem")
-  ;
-  (self._itemWidget):SetForm(UIItemForm.Base)
-  ;
-  (self._itemWidget):SetClickCallBack(function(go)
-    -- function num : 0_2_0 , upvalues : self
+  scale = scale or 1
+  self._obj.transform.localScale = Vector3(scale, scale, 1)
+  self._itemWidget = self._items:SpawnObject("UIItem")
+  self._itemWidget:SetForm(UIItemForm.Base)
+  self._itemWidget:SetClickCallBack(function(go)
     self:ShowTips(go)
-  end
-)
+  end)
   local icon, quality, count = self:GetItemInfo()
-  ;
-  (self._itemWidget):SetData({icon = icon, quality = quality, text1 = count})
+  self._itemWidget:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = count
+  })
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeItem.BtnOnClick = function(self, go)
-  -- function num : 0_3
+function UISeasonMazeItem:BtnOnClick(go)
   self:_ShowTips(go)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeItem._ShowTips = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMazeItem:_ShowTips(go)
   if not self._tips then
-    return 
+    return
   end
   local totalCount = 0
-  if (self._data).type == SeasonMazeEffectType.SMET_Pro then
-    totalCount = (self._component):GetAttrValue((self._data).id)
-  else
-    if (self._data).type == SeasonMazeEffectType.SMET_Bead and (self._comInfo).m_auto_bead_map then
-      for _,value in pairs((self._comInfo).m_auto_bead_map) do
+  if self._data.type == SeasonMazeEffectType.SMET_Pro then
+    totalCount = self._component:GetAttrValue(self._data.id)
+  elseif self._data.type == SeasonMazeEffectType.SMET_Bead then
+    if self._comInfo.m_auto_bead_map then
+      for _, value in pairs(self._comInfo.m_auto_bead_map) do
         local bead = value
-        if (self._data).id == (bead.bead_info).cfg_id then
+        if self._data.id == bead.bead_info.cfg_id then
           totalCount = totalCount + 1
         end
       end
     end
+  else
+    totalCount = GameGlobal.GetModule(RoleModule):GetAssetCount(self._data.id)
   end
-  do
-    totalCount = ((GameGlobal.GetModule)(RoleModule)):GetAssetCount((self._data).id)
-    ;
-    (self._tips):SetSeasonMazeData(self._data, totalCount, (go.transform).position)
-  end
+  self._tips:SetSeasonMazeData(self._data, totalCount, go.transform.position)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeItem.GetItemInfo = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local icon, quality, count = nil, nil, nil
-  if (self._data).type == SeasonMazeEffectType.SMET_Pro then
-    local cfg = (Cfg.cfg_season_maze_attribute)[(self._data).id]
+function UISeasonMazeItem:GetItemInfo()
+  local icon, quality, count
+  if self._data.type == SeasonMazeEffectType.SMET_Pro then
+    local cfg = Cfg.cfg_season_maze_attribute[self._data.id]
     if cfg then
       icon = cfg.ItemIcon
       quality = cfg.Quality
-      count = (self._data).value_min
+      count = self._data.value_min
     end
   else
-    do
-      do
-        local cfg = (Cfg.cfg_item)[(self._data).id]
-        if cfg then
-          icon = cfg.Icon
-          quality = cfg.Color
-          count = (self._data).value_min
-        end
-        return icon, quality, count
-      end
+    local cfg = Cfg.cfg_item[self._data.id]
+    if cfg then
+      icon = cfg.Icon
+      quality = cfg.Color
+      count = self._data.value_min
     end
   end
+  return icon, quality, count
 end
-
-

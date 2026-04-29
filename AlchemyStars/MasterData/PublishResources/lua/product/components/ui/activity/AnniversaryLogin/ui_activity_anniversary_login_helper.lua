@@ -1,28 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/AnniversaryLogin/ui_activity_anniversary_login_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityAnniversaryLoginHelper", Object)
 UIActivityAnniversaryLoginHelper = UIActivityAnniversaryLoginHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityAnniversaryLoginHelper.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityAnniversaryLoginHelper:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginHelper.CheckComponentRedPoint = function(campaign, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  if not campaign or not campaign:GetLocalProcess() or not campaign:CheckCampaignOpen() then
+function UIActivityAnniversaryLoginHelper.CheckComponentRedPoint(campaign, ...)
+  if not (campaign and campaign:GetLocalProcess()) or not campaign:CheckCampaignOpen() then
     return false
   end
-  local args = {...}
-  for _,v in pairs(args) do
+  local args = {
+    ...
+  }
+  for _, v in pairs(args) do
     local component = campaign:GetComponent(v)
     local list = component:GetTimeRewardsList()
-    for __,vv in ipairs(list) do
+    for __, vv in ipairs(list) do
       if vv.rec_reward_status == ETimeRewardRewardStatus.E_TIME_REWARD_CAN_RECV then
         return true
       end
@@ -31,11 +23,6 @@ UIActivityAnniversaryLoginHelper.CheckComponentRedPoint = function(campaign, ...
   return false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginHelper.CheckCampaignRedPoint = function(campaign)
-  -- function num : 0_2 , upvalues : _ENV
-  return (UIActivityAnniversaryLoginHelper.CheckComponentRedPoint)(campaign, ECampaignAnniversaryComponentID.ECAMPAIGN_ANNIVERSARY, ECampaignAnniversaryComponentID.ECAMPAIGN_RESOURCE_BOX)
+function UIActivityAnniversaryLoginHelper.CheckCampaignRedPoint(campaign)
+  return UIActivityAnniversaryLoginHelper.CheckComponentRedPoint(campaign, ECampaignAnniversaryComponentID.ECAMPAIGN_ANNIVERSARY, ECampaignAnniversaryComponentID.ECAMPAIGN_RESOURCE_BOX)
 end
-
-

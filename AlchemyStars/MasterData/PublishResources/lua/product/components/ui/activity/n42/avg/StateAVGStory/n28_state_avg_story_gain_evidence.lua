@@ -1,55 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/StateAVGStory/n28_state_avg_story_gain_evidence.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N28StateAVGStoryGainEvidence", N28StateAVGStoryBase)
 N28StateAVGStoryGainEvidence = N28StateAVGStoryGainEvidence
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N28StateAVGStoryGainEvidence.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
+function N28StateAVGStoryGainEvidence:OnEnter(TT, ...)
   self:Init()
-  self.eventCfg = (table.unpack)({...})
-  self.poolGainEvidence = (self.ui).poolGainEvidence
+  self.eventCfg, self.uiDialog = table.unpack({
+    ...
+  })
+  self.poolGainEvidence = self.ui.poolGainEvidence
   self:ShowHideButtonAuto(false)
   self:ShowHideButtonShowHideUI(false)
   self:ShowHideButtonNext(false)
   self:ShowHideGainEvidence(true)
-  self.storyManager = (self.data):StoryManager()
+  self.storyManager = self.data:StoryManager()
   self:FlushEvidence()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryGainEvidence.OnExit = function(self, TT)
-  -- function num : 0_1
+function N28StateAVGStoryGainEvidence:OnExit(TT)
   self:ShowHideButtonAuto(true)
   self:ShowHideButtonShowHideUI(true)
   self:ShowHideButtonNext(true)
   self:ShowHideGainEvidence(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryGainEvidence.Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (N28StateAVGStoryBase.Init)(self)
+function N28StateAVGStoryGainEvidence:Init()
+  N28StateAVGStoryBase.Init(self)
   self.curEvienceIdx = 1
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryGainEvidence.FlushEvidence = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self.evidenceIDList = (self.eventCfg).Params
-  local evidenceID = (self.evidenceIDList)[self.curEvienceIdx]
+function N28StateAVGStoryGainEvidence:FlushEvidence()
+  self.evidenceIDList = self.eventCfg.Params
+  local evidenceID = self.evidenceIDList[self.curEvienceIdx]
   local evidenceCfg = self:GetEvidenceCfg(evidenceID)
   local curEvidences = self:GetEvidenceDataInCache()
-  local isAdd = (self.eventCfg).Type == N28StateAVGEvent.AddEvidence
-  local sameTypeEvidenceID = nil
+  local isAdd = self.eventCfg.Type == N28StateAVGEvent.AddEvidence
+  local sameTypeEvidenceID
   local hasEvidence = false
-  for _,eid in pairs(curEvidences) do
+  for _, eid in pairs(curEvidences) do
     local cfg = self:GetEvidenceCfg(eid)
     if cfg.EvidenceType == evidenceCfg.EvidenceType then
       sameTypeEvidenceID = cfg.ID
@@ -62,128 +48,95 @@ N28StateAVGStoryGainEvidence.FlushEvidence = function(self)
   self:SaveEvidenceDataToCache(sameTypeEvidenceID, evidenceID)
   local isNewGet = self._gainEvidenceState == N28StateAVGEvidenceGainState.New
   if isNewGet or self._gainEvidenceState == N28StateAVGEvidenceGainState.LevelUp then
-    local ui = (self.poolGainEvidence):SpawnObject("UIN28AVGStoryGainEvidence")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN42AVGStoryGainEvidence)
-    local guideModule = (GameGlobal.GetModule)(GuideModule)
+    local ui = self.poolGainEvidence:SpawnObject("UIN28AVGStoryGainEvidence")
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN42AVGStoryGainEvidence)
+    local guideModule = GameGlobal.GetModule(GuideModule)
     local isGuiding = guideModule:IsGuideProcess(542003)
     if isGuiding then
-      (self.storyManager):ForceJumpStop(true)
+      self.storyManager:ForceJumpStop(true)
     end
     if isNewGet then
-      local lastEvidenceCfg = self:GetEvidenceCfg(sameTypeEvidenceID)
-      if (self.uiDialog)._auto then
-        do
-          ui:Flush(evidenceCfg, not isGuiding, isNewGet, lastEvidenceCfg, function()
-    -- function num : 0_3_0 , upvalues : self
-    self:HandleNextEvidence()
-  end
-)
-          self:HandleNextEvidence()
-          -- DECOMPILER ERROR: 10 unprocessed JMP targets
-        end
-      end
     end
+    local lastEvidenceCfg = self:GetEvidenceCfg(sameTypeEvidenceID)
+    ui:Flush(evidenceCfg, self.uiDialog._auto and not isGuiding, isNewGet, lastEvidenceCfg, function()
+      self:HandleNextEvidence()
+    end)
+  else
+    self:HandleNextEvidence()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryGainEvidence.HandleNextEvidence = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function N28StateAVGStoryGainEvidence:HandleNextEvidence()
   if self.curEvienceIdx < #self.evidenceIDList then
     self.curEvienceIdx = self.curEvienceIdx + 1
     self:FlushEvidence()
   else
-    ;
-    (self.uiDialog):DoNextAVGEvent()
-    ;
-    (self.fsm):ChangeState(StateAVGStory.Play)
+    self.uiDialog:DoNextAVGEvent()
+    self.fsm:ChangeState(StateAVGStory.Play)
   end
-  ;
-  (self.storyManager):ForceJumpStop(false)
+  self.storyManager:ForceJumpStop(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryGainEvidence.CheckAVGEvidenceGainState = function(self, isAdd, hasEvidence, sameTypeEvidenceID)
-  -- function num : 0_5 , upvalues : _ENV
+function N28StateAVGStoryGainEvidence:CheckAVGEvidenceGainState(isAdd, hasEvidence, sameTypeEvidenceID)
   local curEvidenceGainState = N28StateAVGEvidenceGainState.None
   if isAdd then
     if hasEvidence then
       curEvidenceGainState = N28StateAVGEvidenceGainState.Duplicate
+    elseif sameTypeEvidenceID then
+      curEvidenceGainState = N28StateAVGEvidenceGainState.LevelUp
     else
-      if sameTypeEvidenceID then
-        curEvidenceGainState = N28StateAVGEvidenceGainState.LevelUp
-      else
-        curEvidenceGainState = N28StateAVGEvidenceGainState.New
-      end
+      curEvidenceGainState = N28StateAVGEvidenceGainState.New
     end
+  elseif hasEvidence then
+    curEvidenceGainState = N28StateAVGEvidenceGainState.Delete
   else
-    if hasEvidence then
-      curEvidenceGainState = N28StateAVGEvidenceGainState.Delete
-    else
-      curEvidenceGainState = N28StateAVGEvidenceGainState.Duplicate
-    end
+    curEvidenceGainState = N28StateAVGEvidenceGainState.Duplicate
   end
   return curEvidenceGainState
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryGainEvidence.SaveEvidenceDataToCache = function(self, sameTypeEvidenceID, evidenceID)
-  -- function num : 0_6 , upvalues : _ENV
+function N28StateAVGStoryGainEvidence:SaveEvidenceDataToCache(sameTypeEvidenceID, evidenceID)
   if self._gainEvidenceState == N28StateAVGEvidenceGainState.LevelUp then
     self:ChangeEvidenceDataInCache(sameTypeEvidenceID, false)
     self:ChangeEvidenceDataInCache(evidenceID, true)
     self:SaveEvidence(evidenceID)
-  else
-    if self._gainEvidenceState == N28StateAVGEvidenceGainState.New then
-      self:ChangeEvidenceDataInCache(evidenceID, true)
-      self:SaveEvidence(evidenceID)
-    else
-      if self._gainEvidenceState == N28StateAVGEvidenceGainState.Delete then
-        self:ChangeEvidenceDataInCache(evidenceID, false)
-      end
-    end
+  elseif self._gainEvidenceState == N28StateAVGEvidenceGainState.New then
+    self:ChangeEvidenceDataInCache(evidenceID, true)
+    self:SaveEvidence(evidenceID)
+  elseif self._gainEvidenceState == N28StateAVGEvidenceGainState.Delete then
+    self:ChangeEvidenceDataInCache(evidenceID, false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryGainEvidence.GetEvidenceCfg = function(self, eid)
-  -- function num : 0_7 , upvalues : _ENV
-  local evidenceCfg = (Cfg.cfg_component_avg_evidence)({ID = eid})
+function N28StateAVGStoryGainEvidence:GetEvidenceCfg(eid)
+  local evidenceCfg = Cfg.cfg_component_avg_evidence({ID = eid})
   if evidenceCfg then
     return evidenceCfg[1]
   end
   return {}
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryGainEvidence.SaveEvidence = function(self, eid)
-  -- function num : 0_8 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : _ENV, self, eid
+function N28StateAVGStoryGainEvidence:SaveEvidence(eid)
+  GameGlobal.TaskManager():StartTask(function(TT)
     local key = "N28StateAVGStoryGainEvidenceSave"
-    ;
-    ((GameGlobal.UIStateManager)()):Lock(key)
-    local com = (self.data):GetComponentAVG()
+    GameGlobal.UIStateManager():Lock(key)
+    local com = self.data:GetComponentAVG()
     local res = AsyncRequestRes:New()
     local ret = com:HandleGainEvidence(TT, res, eid)
-    if (N28AVGData.CheckCode)(res) then
-      (Log.debug)("N28StateAVGStoryGainEvidence success")
+    if N28AVGData.CheckCode(res) then
+      Log.debug("N28StateAVGStoryGainEvidence success")
     else
-      ;
-      (Log.fatal)("### N28StateAVGStoryGainEvidence failed. ")
+      Log.fatal("### N28StateAVGStoryGainEvidence failed. ")
     end
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(key)
-  end
-, self)
+    GameGlobal.UIStateManager():UnLock(key)
+  end, self)
 end
 
-local N28StateAVGEvidenceGainState = {New = 0, LevelUp = 1, Delete = 2, Duplicate = 3, None = 4}
+local N28StateAVGEvidenceGainState = {
+  New = 0,
+  LevelUp = 1,
+  Delete = 2,
+  Duplicate = 3,
+  None = 4
+}
 _enum("N28StateAVGEvidenceGainState", N28StateAVGEvidenceGainState)
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_replace_chain.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetReplaceChain", BuffLogicBase)
 BuffLogicSetReplaceChain = BuffLogicSetReplaceChain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetReplaceChain.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetReplaceChain:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetReplaceChain.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicSetReplaceChain:DoLogic()
+  local e = self._buffInstance:Entity()
   local buffComponent = e:BuffComponent()
   local replaceEntityID = buffComponent:GetBuffValue("EffectReplaceEntityID")
   buffComponent:SetBuffValue("ReplaceEntityID", replaceEntityID)
@@ -25,21 +15,14 @@ end
 
 _class("BuffLogicResetReplaceChain", BuffLogicBase)
 BuffLogicResetReplaceChain = BuffLogicResetReplaceChain
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetReplaceChain.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetReplaceChain:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetReplaceChain.DoLogic = function(self)
-  -- function num : 0_3
-  local e = (self._buffInstance):Entity()
+function BuffLogicResetReplaceChain:DoLogic()
+  local e = self._buffInstance:Entity()
   local buffComponent = e:BuffComponent()
-  local entityService = (self._world):GetService("LogicEntity")
+  local entityService = self._world:GetService("LogicEntity")
   buffComponent:SetBuffValue("ReplaceEntityID", nil)
   return true
 end
-
-

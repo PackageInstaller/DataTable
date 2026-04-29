@@ -1,46 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_feature_death.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicFeatureDeath", BuffLogicBase)
 BuffLogicFeatureDeath = BuffLogicFeatureDeath
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicFeatureDeath.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicFeatureDeath:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicFeatureDeath.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._entity):HasDeadMark() then
-    return 
+function BuffLogicFeatureDeath:DoLogic(notify)
+  if self._entity:HasDeadMark() then
+    return
   end
-  local skillLogic = (self._world):GetService("SkillLogic")
-  local curHp = ((self._entity):Attributes()):GetCurrentHP()
-  ;
-  ((self._entity):Attributes()):Modify("HP", 0)
-  if (self._entity):HasMonsterID() then
-    local sMonsterShowLogic = (self._world):GetService("MonsterShowLogic")
-    ;
-    (self._entity):AddDeadMark()
+  local skillLogic = self._world:GetService("SkillLogic")
+  local curHp = self._entity:Attributes():GetCurrentHP()
+  self._entity:Attributes():Modify("HP", 0)
+  if self._entity:HasMonsterID() then
+    local sMonsterShowLogic = self._world:GetService("MonsterShowLogic")
+    self._entity:AddDeadMark()
     sMonsterShowLogic:DoLogicFeatureDead(self._entity)
+  elseif self._entity:HasTrapID() then
+    local trapServiceLogic = self._world:GetService("TrapLogic")
+    trapServiceLogic:DoTrapFeatureDead(self._entity)
   else
-    do
-      if (self._entity):HasTrapID() then
-        local trapServiceLogic = (self._world):GetService("TrapLogic")
-        trapServiceLogic:DoTrapFeatureDead(self._entity)
-      else
-        do
-          do return  end
-          local buffResult = BuffResultFeatureDeath:New((self._entity):GetID())
-          return buffResult
-        end
-      end
-    end
+    return
   end
+  local buffResult = BuffResultFeatureDeath:New(self._entity:GetID())
+  return buffResult
 end
-
-

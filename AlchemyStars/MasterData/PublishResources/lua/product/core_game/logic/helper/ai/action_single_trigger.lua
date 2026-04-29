@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_single_trigger.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionSingleTrigger", AINewNode)
 ActionSingleTrigger = ActionSingleTrigger
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSingleTrigger.Constructor = function(self)
-  -- function num : 0_0
+function ActionSingleTrigger:Constructor()
   self.m_nWorkIndexX = 1
   self.m_nWorkSkillID = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSingleTrigger.InitializeNode = function(self, cfg, context, parentNode, configData)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionSingleTrigger.super).InitializeNode)(self, cfg, context, parentNode, configData)
+function ActionSingleTrigger:InitializeNode(cfg, context, parentNode, configData)
+  ActionSingleTrigger.super.InitializeNode(self, cfg, context, parentNode, configData)
   if configData then
     if type(configData) == "table" then
       self.m_nWorkIndexX = configData[1]
@@ -28,32 +18,21 @@ ActionSingleTrigger.InitializeNode = function(self, cfg, context, parentNode, co
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSingleTrigger.Update = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function ActionSingleTrigger:Update()
   self.m_nWorkSkillID = self:_GetConfigSkillID()
   return AINewNodeStatus.Success
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSingleTrigger.GetActionSkillID = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if ((self.m_entityOwn):BuffComponent()):HasFlag(BuffFlags.Benumb) then
+function ActionSingleTrigger:GetActionSkillID()
+  if self.m_entityOwn:BuffComponent():HasFlag(BuffFlags.Benumb) then
     return 0
   end
   return self.m_nWorkSkillID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSingleTrigger._GetConfigSkillID = function(self)
-  -- function num : 0_4
+function ActionSingleTrigger:_GetConfigSkillID()
   local vecSkillList = self:GetConfigSkillList()
   if vecSkillList then
     return vecSkillList[self.m_nWorkIndexX]
   end
 end
-
-

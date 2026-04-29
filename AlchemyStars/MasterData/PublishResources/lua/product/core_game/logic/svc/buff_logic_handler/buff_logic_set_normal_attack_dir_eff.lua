@@ -1,33 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_normal_attack_dir_eff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSetNormalAttackDirEff", BuffLogicBase)
 BuffLogicSetNormalAttackDirEff = BuffLogicSetNormalAttackDirEff
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetNormalAttackDirEff.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.effectDirList then
-    self._effectDirList = {}
-    self._animName = logicParam.animName
-    self._waitTime = logicParam.waitTime
-    self._remove = logicParam.remove
-    self._effectID = logicParam.effectID
-  end
+function BuffLogicSetNormalAttackDirEff:Constructor(buffInstance, logicParam)
+  self._effectDirList = logicParam.effectDirList or {}
+  self._animName = logicParam.animName
+  self._waitTime = logicParam.waitTime
+  self._remove = logicParam.remove
+  self._effectID = logicParam.effectID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetNormalAttackDirEff.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local curRound = ((self._world):BattleStat()):GetGameRoundCount()
-  local cPetPstID = (self._entity):PetPstID()
-  local curRoundHadSave = (table.clone)(cPetPstID:GetRoundNormalAttackDirTable(curRound))
+function BuffLogicSetNormalAttackDirEff:DoLogic(notify)
+  local curRound = self._world:BattleStat():GetGameRoundCount()
+  local cPetPstID = self._entity:PetPstID()
+  local curRoundHadSave = table.clone(cPetPstID:GetRoundNormalAttackDirTable(curRound))
   local result = BuffResultSetNormalAttackDirEff:New(self._effectDirList, self._animName, self._waitTime, self._remove, self._effectID, curRoundHadSave)
   return result
 end
-
-

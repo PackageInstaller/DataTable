@@ -1,40 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_absorb_piece.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_AbsorbPiece", Object)
 SkillEffectCalc_AbsorbPiece = SkillEffectCalc_AbsorbPiece
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_AbsorbPiece.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_AbsorbPiece:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_AbsorbPiece.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_AbsorbPiece:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillAbsorbPieceEffectParam = skillEffectCalcParam.skillEffectParam
   local targetPieceType = skillAbsorbPieceEffectParam:GetPieceType()
   local targetPieceCount = skillAbsorbPieceEffectParam:GetPieceCount()
   local scopeList = skillEffectCalcParam.skillRange
-  local attacker = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-  local centerPos = (attacker:GridLocation()):GetGridPos()
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local attacker = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local centerPos = attacker:GridLocation():GetGridPos()
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local absorbPieceList = boardServiceLogic:FindPieceElementByTypeCountAndCenterFromParam(centerPos, targetPieceType, targetPieceCount, scopeList)
   local absorbResult = SkillAbsorbPieceEffectResult:New()
   absorbResult:SetAbsorbPieceList(absorbPieceList)
-  local gameFsmCmpt = (self._world):GameFSM()
+  local gameFsmCmpt = self._world:GameFSM()
   local gameFsmStateID = gameFsmCmpt:CurStateID()
-  do
-    if gameFsmStateID ~= GameStateID.PreviewActiveSkill then
-      local newGridPosList = boardServiceLogic:SupplyPieceList(absorbPieceList)
-      absorbResult:SetNewPieceList(newGridPosList)
-    end
-    return absorbResult
+  if gameFsmStateID ~= GameStateID.PreviewActiveSkill then
+    local newGridPosList = boardServiceLogic:SupplyPieceList(absorbPieceList)
+    absorbResult:SetNewPieceList(newGridPosList)
   end
+  return absorbResult
 end
-
-

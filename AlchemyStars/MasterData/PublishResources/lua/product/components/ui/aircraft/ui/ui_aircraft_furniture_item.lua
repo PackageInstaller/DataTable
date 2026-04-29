@@ -1,47 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_furniture_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftFurnitureItem", UICustomWidget)
 UIAircraftFurnitureItem = UIAircraftFurnitureItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftFurnitureItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._aircraftModule = ((GameGlobal.GameLogic)()):GetModule(AircraftModule)
+function UIAircraftFurnitureItem:OnShow(uiParams)
+  self._aircraftModule = GameGlobal.GameLogic():GetModule(AircraftModule)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftFurnitureItem.SetData = function(self, furnitureInfo)
-  -- function num : 0_1 , upvalues : _ENV
-  local item_cfg = (Cfg.cfg_item)({})
-  local furnitureNameID = (item_cfg[furnitureInfo.nAssetId]).Name
-  local furnitureName = (StringTable.Get)(furnitureNameID)
-  ;
-  (self._name):SetText(furnitureName)
-  ;
-  (self._num):SetText("x" .. furnitureInfo.count)
-  ;
-  (self._addNum):SetText(furnitureInfo.baseAmbient)
+function UIAircraftFurnitureItem:SetData(furnitureInfo)
+  local item_cfg = Cfg.cfg_item({})
+  local furnitureNameID = item_cfg[furnitureInfo.nAssetId].Name
+  local furnitureName = StringTable.Get(furnitureNameID)
+  self._name:SetText(furnitureName)
+  self._num:SetText("x" .. furnitureInfo.count)
+  self._addNum:SetText(furnitureInfo.baseAmbient)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftFurnitureItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIAircraftFurnitureItem:_GetComponents()
   self._name = self:GetUIComponent("Text", "Name")
   self._num = self:GetUIComponent("Text", "Num")
   self._addNum = self:GetUIComponent("Text", "AddNum")
   self._extaAdd = self:GetUIComponent("Text", "ExtaAdd")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftFurnitureItem._OnRefresh = function(self)
-  -- function num : 0_3
+function UIAircraftFurnitureItem:_OnRefresh()
 end
-
-

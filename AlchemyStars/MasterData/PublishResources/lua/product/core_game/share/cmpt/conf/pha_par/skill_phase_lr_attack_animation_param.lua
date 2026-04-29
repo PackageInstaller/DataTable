@@ -1,21 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_lr_attack_animation_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseLRAttackAnimationParam", SkillPhaseParamBase)
 SkillPhaseLRAttackAnimationParam = SkillPhaseLRAttackAnimationParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseLRAttackAnimationParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhaseLRAttackAnimationParam:Constructor(t)
   self._castEffectID = t.castEffectID
-  local castAnimationStrs = (string.split)(t.castAnimationStr, ",")
+  local castAnimationStrs = string.split(t.castAnimationStr, ",")
   self._castLAnimation = castAnimationStrs[1]
   self._castRAnimation = castAnimationStrs[2]
   self._blurDelay = tonumber(t.blurDelay)
-  local blurStrs = (string.split)(t.blurEffectId, ",")
+  local blurStrs = string.split(t.blurEffectId, ",")
   self._lBlurEffectID = tonumber(blurStrs[1])
   self._rBlurEffectID = tonumber(blurStrs[2])
   self._hitPointDelay = t.hitPointDelay
@@ -24,101 +17,75 @@ SkillPhaseLRAttackAnimationParam.Constructor = function(self, t)
   self._overDelay = t.overDelay
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackAnimationParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseLRAttackAnimationParam:GetCacheTable()
   local t = {}
   if self._castEffectID and self._castEffectID ~= 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._castEffectID]).ResPath, 1}
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._castEffectID].ResPath,
+      1
+    }
   end
   if self._lBlurEffectID and self._lBlurEffectID ~= 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._lBlurEffectID]).ResPath, 1}
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._lBlurEffectID].ResPath,
+      1
+    }
   end
   if self._rBlurEffectID and self._rBlurEffectID ~= 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._rBlurEffectID]).ResPath, 1}
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._rBlurEffectID].ResPath,
+      1
+    }
   end
   if self._hitEffectID and self._hitEffectID ~= 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1}
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    }
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackAnimationParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseLRAttackAnimationParam:GetPhaseType()
   return SkillViewPhaseType.LRAttackAnimation
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackAnimationParam.GetCastEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseLRAttackAnimationParam:GetCastEffectID()
   return self._castEffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackAnimationParam.GetLAnimationName = function(self)
-  -- function num : 0_4
+function SkillPhaseLRAttackAnimationParam:GetLAnimationName()
   return self._castLAnimation
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackAnimationParam.GetRAnimationName = function(self)
-  -- function num : 0_5
+function SkillPhaseLRAttackAnimationParam:GetRAnimationName()
   return self._castRAnimation
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackAnimationParam.GetBlurDelay = function(self)
-  -- function num : 0_6
+function SkillPhaseLRAttackAnimationParam:GetBlurDelay()
   return self._blurDelay
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackAnimationParam.GetLBlurEffectID = function(self)
-  -- function num : 0_7
+function SkillPhaseLRAttackAnimationParam:GetLBlurEffectID()
   return self._lBlurEffectID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackAnimationParam.GetRBlurEffectID = function(self)
-  -- function num : 0_8
+function SkillPhaseLRAttackAnimationParam:GetRBlurEffectID()
   return self._rBlurEffectID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackAnimationParam.GetHitPointDelay = function(self)
-  -- function num : 0_9
+function SkillPhaseLRAttackAnimationParam:GetHitPointDelay()
   return self._hitPointDelay
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackAnimationParam.GetHitAnimation = function(self)
-  -- function num : 0_10
+function SkillPhaseLRAttackAnimationParam:GetHitAnimation()
   return self._hitAnimation
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackAnimationParam.GetHitEffectID = function(self)
-  -- function num : 0_11
+function SkillPhaseLRAttackAnimationParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLRAttackAnimationParam.GetOverDelay = function(self)
-  -- function num : 0_12
+function SkillPhaseLRAttackAnimationParam:GetOverDelay()
   return self._overDelay
 end
-
-

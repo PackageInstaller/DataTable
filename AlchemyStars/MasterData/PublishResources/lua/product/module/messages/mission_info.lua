@@ -1,43 +1,83 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/messages/mission_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local EFirstPassCanIgnorPowerMission = {EFirstPassCanIgnorPowerMission_1_1 = 4001010, EFirstPassCanIgnorPowerMission_1_2 = 4001020, EFirstPassCanIgnorPowerMission_1_3 = 4001030}
+local EFirstPassCanIgnorPowerMission = {
+  EFirstPassCanIgnorPowerMission_1_1 = 4001010,
+  EFirstPassCanIgnorPowerMission_1_2 = 4001020,
+  EFirstPassCanIgnorPowerMission_1_3 = 4001030
+}
 _enum("EFirstPassCanIgnorPowerMission", EFirstPassCanIgnorPowerMission)
-local MissionType = {MissionType_None = 0, MissionType_Fight_Normal = 1, MissionType_Fight_Boss = 2, MissionType_Story = 3, MissionType_Chat = 4}
+local MissionType = {
+  MissionType_None = 0,
+  MissionType_Fight_Normal = 1,
+  MissionType_Fight_Boss = 2,
+  MissionType_Story = 3,
+  MissionType_Chat = 4
+}
 _enum("MissionType", MissionType)
 local FormationPetPlaceType = {FormationPetPlaceType_None = 0}
 _enum("FormationPetPlaceType", FormationPetPlaceType)
-local WayPointType = {WayPointType_None = 0, WayPointType_Main = 1, WayPointType_Branch = 2, WayPointType_Guide = 3, WayPointType_S = 4}
+local WayPointType = {
+  WayPointType_None = 0,
+  WayPointType_Main = 1,
+  WayPointType_Branch = 2,
+  WayPointType_Guide = 3,
+  WayPointType_S = 4
+}
 _enum("WayPointType", WayPointType)
-local BonusObjectiveType = {NoAdditional = 0, Health = 1, LastWaveRoundNum = 2, SuperChainCount = 3, ActiveSkillCount = 4, AllElementTeam = 5, SelectElement = 6, MatchNum = 7, TrapAttackTimes = 8, TrapAttackDammage = 9, TrapAttackTotalTimes = 10, TrapAttackTotalDamage = 11, SmashTrapCount = 12, SmashTrapTotalCount = 13, TotalMatchPropertyNum = 14, OnceMatchPropertyNum = 15, OnceMatchNorAttTimes = 16, ColorSkillCount = 17, AuroraTimeCount = 18, PlayerBeHitCount = 19, CompelHelpPet = 20, ForbidHelpPet = 21, KillMonstersInLimitedRound = 22, KillMonstersWithBuff = 23, CollectItems = 24, UIChangeTeamLeaderCount = 25, HitBySkill = 26, ChessDeadPlayerPawnCount = 27, MonsterEscapeLessThan = 28, PopStarNumber = 29, BossHealth = 30}
+local BonusObjectiveType = {
+  NoAdditional = 0,
+  Health = 1,
+  LastWaveRoundNum = 2,
+  SuperChainCount = 3,
+  ActiveSkillCount = 4,
+  AllElementTeam = 5,
+  SelectElement = 6,
+  MatchNum = 7,
+  TrapAttackTimes = 8,
+  TrapAttackDammage = 9,
+  TrapAttackTotalTimes = 10,
+  TrapAttackTotalDamage = 11,
+  SmashTrapCount = 12,
+  SmashTrapTotalCount = 13,
+  TotalMatchPropertyNum = 14,
+  OnceMatchPropertyNum = 15,
+  OnceMatchNorAttTimes = 16,
+  ColorSkillCount = 17,
+  AuroraTimeCount = 18,
+  PlayerBeHitCount = 19,
+  CompelHelpPet = 20,
+  ForbidHelpPet = 21,
+  KillMonstersInLimitedRound = 22,
+  KillMonstersWithBuff = 23,
+  CollectItems = 24,
+  UIChangeTeamLeaderCount = 25,
+  HitBySkill = 26,
+  ChessDeadPlayerPawnCount = 27,
+  MonsterEscapeLessThan = 28,
+  PopStarNumber = 29,
+  BossHealth = 30
+}
 _enum("BonusObjectiveType", BonusObjectiveType)
-local ActiveStoryType = {ActiveStoryType_None = 0, ActiveStoryType_BeforeBattle = 1, ActiveStoryType_AfterBattle = 2}
+local ActiveStoryType = {
+  ActiveStoryType_None = 0,
+  ActiveStoryType_BeforeBattle = 1,
+  ActiveStoryType_AfterBattle = 2
+}
 _enum("ActiveStoryType", ActiveStoryType)
 _class("mission_drop_item", Object)
 mission_drop_item = mission_drop_item
--- DECOMPILER ERROR at PC86: Confused about usage of register: R6 in 'UnsetPending'
 
-mission_drop_item.Constructor = function(self)
-  -- function num : 0_0
+function mission_drop_item:Constructor()
   self.item_id = 0
   self.item_count = 0
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R6 in 'UnsetPending'
-
 mission_drop_item._proto = {
-[1] = {"item_id", "int"}
-, 
-[2] = {"item_count", "int"}
+  [1] = {"item_id", "int"},
+  [2] = {"item_count", "int"}
 }
 _class("mission_info", Object)
 mission_info = mission_info
--- DECOMPILER ERROR at PC108: Confused about usage of register: R6 in 'UnsetPending'
 
-mission_info.Constructor = function(self)
-  -- function num : 0_1
+function mission_info:Constructor()
   self.id = 0
   self.type = 0
   self.waypoint_type = 0
@@ -45,175 +85,156 @@ mission_info.Constructor = function(self)
   self.pass_without_help = 0
 end
 
--- DECOMPILER ERROR at PC136: Confused about usage of register: R6 in 'UnsetPending'
-
 mission_info._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"type", "int"}
-, 
-[3] = {"waypoint_type", "int"}
-, 
-[4] = {"star", "int"}
-, 
-[5] = {"pass_without_help", "int"}
+  [1] = {"id", "int"},
+  [2] = {"type", "int"},
+  [3] = {
+    "waypoint_type",
+    "int"
+  },
+  [4] = {"star", "int"},
+  [5] = {
+    "pass_without_help",
+    "int"
+  }
 }
 _class("mission_data", Object)
 mission_data = mission_data
--- DECOMPILER ERROR at PC145: Confused about usage of register: R6 in 'UnsetPending'
 
-mission_data.Constructor = function(self)
-  -- function num : 0_2
+function mission_data:Constructor()
   self.pstid = 0
   self.mission_id = 0
   self.pass_mission = {}
 end
 
--- DECOMPILER ERROR at PC163: Confused about usage of register: R6 in 'UnsetPending'
-
 mission_data._proto = {
-[1] = {"pstid", "int64"}
-, 
-[2] = {"mission_id", "int"}
-, 
-[3] = {"pass_mission", "list<mission_info>"}
+  [1] = {"pstid", "int64"},
+  [2] = {"mission_id", "int"},
+  [3] = {
+    "pass_mission",
+    "list<mission_info>"
+  }
 }
 _class("formation_info", Object)
 formation_info = formation_info
--- DECOMPILER ERROR at PC172: Confused about usage of register: R6 in 'UnsetPending'
 
-formation_info.Constructor = function(self)
-  -- function num : 0_3
+function formation_info:Constructor()
   self.id = 0
   self.name = ""
   self.pet_list = {}
 end
 
--- DECOMPILER ERROR at PC190: Confused about usage of register: R6 in 'UnsetPending'
-
 formation_info._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"name", "string"}
-, 
-[3] = {"pet_list", "list<int64>"}
+  [1] = {"id", "int"},
+  [2] = {"name", "string"},
+  [3] = {
+    "pet_list",
+    "list<int64>"
+  }
 }
 _class("main_formation_infos", Object)
 main_formation_infos = main_formation_infos
--- DECOMPILER ERROR at PC199: Confused about usage of register: R6 in 'UnsetPending'
 
-main_formation_infos.Constructor = function(self)
-  -- function num : 0_4
+function main_formation_infos:Constructor()
   self.fromation_list = {}
 end
 
--- DECOMPILER ERROR at PC207: Confused about usage of register: R6 in 'UnsetPending'
-
 main_formation_infos._proto = {
-[1] = {"fromation_list", "list<formation_info>"}
+  [1] = {
+    "fromation_list",
+    "list<formation_info>"
+  }
 }
 _class("already_return_power_mission_info", Object)
 already_return_power_mission_info = already_return_power_mission_info
--- DECOMPILER ERROR at PC216: Confused about usage of register: R6 in 'UnsetPending'
 
-already_return_power_mission_info.Constructor = function(self)
-  -- function num : 0_5
+function already_return_power_mission_info:Constructor()
   self.mission_id_list = {}
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R6 in 'UnsetPending'
-
 already_return_power_mission_info._proto = {
-[1] = {"mission_id_list", "list<int>"}
+  [1] = {
+    "mission_id_list",
+    "list<int>"
+  }
 }
 _class("cam_mission_info", Object)
 cam_mission_info = cam_mission_info
--- DECOMPILER ERROR at PC233: Confused about usage of register: R6 in 'UnsetPending'
 
-cam_mission_info.Constructor = function(self)
-  -- function num : 0_6
+function cam_mission_info:Constructor()
   self.mission_id = 0
   self.star = 0
   self.pass_without_help = 0
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R6 in 'UnsetPending'
-
 cam_mission_info._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"star", "int"}
-, 
-[3] = {"pass_without_help", "int"}
+  [1] = {"mission_id", "int"},
+  [2] = {"star", "int"},
+  [3] = {
+    "pass_without_help",
+    "int"
+  }
 }
 _class("mission_story_info", Object)
 mission_story_info = mission_story_info
--- DECOMPILER ERROR at PC260: Confused about usage of register: R6 in 'UnsetPending'
 
-mission_story_info.Constructor = function(self)
-  -- function num : 0_7
+function mission_story_info:Constructor()
   self.id = 0
   self.active_story_type = 0
 end
 
--- DECOMPILER ERROR at PC273: Confused about usage of register: R6 in 'UnsetPending'
-
 mission_story_info._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"active_story_type", "int"}
+  [1] = {"id", "int"},
+  [2] = {
+    "active_story_type",
+    "int"
+  }
 }
 _class("mission_story_data", Object)
 mission_story_data = mission_story_data
--- DECOMPILER ERROR at PC282: Confused about usage of register: R6 in 'UnsetPending'
 
-mission_story_data.Constructor = function(self)
-  -- function num : 0_8
+function mission_story_data:Constructor()
   self.active_story_map = {}
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R6 in 'UnsetPending'
-
 mission_story_data._proto = {
-[1] = {"active_story_map", "map<int,mission_story_info>"}
+  [1] = {
+    "active_story_map",
+    "map<int,mission_story_info>"
+  }
 }
 _class("mission_chapter_award_info", Object)
 mission_chapter_award_info = mission_chapter_award_info
--- DECOMPILER ERROR at PC299: Confused about usage of register: R6 in 'UnsetPending'
 
-mission_chapter_award_info.Constructor = function(self)
-  -- function num : 0_9
+function mission_chapter_award_info:Constructor()
   self.chapter_id = 0
   self.receive_star_award_list = {}
 end
 
--- DECOMPILER ERROR at PC312: Confused about usage of register: R6 in 'UnsetPending'
-
 mission_chapter_award_info._proto = {
-[1] = {"chapter_id", "int"}
-, 
-[2] = {"receive_star_award_list", "list<int>"}
+  [1] = {"chapter_id", "int"},
+  [2] = {
+    "receive_star_award_list",
+    "list<int>"
+  }
 }
 _class("mission_chapter_award_data", Object)
 mission_chapter_award_data = mission_chapter_award_data
--- DECOMPILER ERROR at PC321: Confused about usage of register: R6 in 'UnsetPending'
 
-mission_chapter_award_data.Constructor = function(self)
-  -- function num : 0_10
+function mission_chapter_award_data:Constructor()
   self.receive_star_award_map = {}
 end
 
--- DECOMPILER ERROR at PC329: Confused about usage of register: R6 in 'UnsetPending'
-
 mission_chapter_award_data._proto = {
-[1] = {"receive_star_award_map", "map<int,mission_chapter_award_info>"}
+  [1] = {
+    "receive_star_award_map",
+    "map<int,mission_chapter_award_info>"
+  }
 }
 _class("mission_pass_pet_info", Object)
 mission_pass_pet_info = mission_pass_pet_info
--- DECOMPILER ERROR at PC338: Confused about usage of register: R6 in 'UnsetPending'
 
-mission_pass_pet_info.Constructor = function(self)
-  -- function num : 0_11
+function mission_pass_pet_info:Constructor()
   self.template_id = 0
   self.level = 0
   self.grade = 0
@@ -224,31 +245,26 @@ mission_pass_pet_info.Constructor = function(self)
   self.awake_lock = 0
 end
 
--- DECOMPILER ERROR at PC381: Confused about usage of register: R6 in 'UnsetPending'
-
 mission_pass_pet_info._proto = {
-[1] = {"template_id", "int"}
-, 
-[2] = {"level", "int"}
-, 
-[3] = {"grade", "int"}
-, 
-[4] = {"awakening", "int"}
-, 
-[5] = {"skin_id", "int"}
-, 
-[6] = {"equip_lv", "int"}
-, 
-[7] = {"equip_refine_lv", "int"}
-, 
-[8] = {"awake_lock", "int"}
+  [1] = {
+    "template_id",
+    "int"
+  },
+  [2] = {"level", "int"},
+  [3] = {"grade", "int"},
+  [4] = {"awakening", "int"},
+  [5] = {"skin_id", "int"},
+  [6] = {"equip_lv", "int"},
+  [7] = {
+    "equip_refine_lv",
+    "int"
+  },
+  [8] = {"awake_lock", "int"}
 }
 _class("mission_pass_info", Object)
 mission_pass_info = mission_pass_info
--- DECOMPILER ERROR at PC390: Confused about usage of register: R6 in 'UnsetPending'
 
-mission_pass_info.Constructor = function(self)
-  -- function num : 0_12
+function mission_pass_info:Constructor()
   self.pstid = 0
   self.mission_id = 0
   self.nick = ""
@@ -259,27 +275,24 @@ mission_pass_info.Constructor = function(self)
   self.frame_id = 0
 end
 
--- DECOMPILER ERROR at PC433: Confused about usage of register: R6 in 'UnsetPending'
-
 mission_pass_info._proto = {
-[1] = {"pstid", "int64"}
-, 
-[2] = {"mission_id", "int"}
-, 
-[3] = {"nick", "string"}
-, 
-[4] = {"head", "int"}
-, 
-[5] = {"head_bg", "int"}
-, 
-[6] = {"formation_info", "list<mission_pass_pet_info>"}
-, 
-[7] = {"pass_time", "time"}
-, 
-[8] = {"frame_id", "int"}
+  [1] = {"pstid", "int64"},
+  [2] = {"mission_id", "int"},
+  [3] = {"nick", "string"},
+  [4] = {"head", "int"},
+  [5] = {"head_bg", "int"},
+  [6] = {
+    "formation_info",
+    "list<mission_pass_pet_info>"
+  },
+  [7] = {"pass_time", "time"},
+  [8] = {"frame_id", "int"}
 }
 local FormationPetLeaderSeat = {LeaderSeat = 1}
 _enum("FormationPetLeaderSeat", FormationPetLeaderSeat)
-local ChapterType = {ChapterType_None = 0, ChapterType_Main = 1, ChapterType_Branch = 2}
+local ChapterType = {
+  ChapterType_None = 0,
+  ChapterType_Main = 1,
+  ChapterType_Branch = 2
+}
 _enum("ChapterType", ChapterType)
-

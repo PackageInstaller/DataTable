@@ -1,108 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_combat/components/main_fsm_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("IFSM", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-IFSM.UpdateFSM = function(self, dt)
-  -- function num : 0_0
+function IFSM:UpdateFSM(dt)
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-IFSM.CurrentStateType = function(self)
-  -- function num : 0_1
+function IFSM:CurrentStateType()
 end
 
 _class("MainFSMComponent", Object)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
 
-MainFSMComponent.Constructor = function(self, configID)
-  -- function num : 0_2
+function MainFSMComponent:Constructor(configID)
   self.createInfo = {ConfigID = configID}
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-MainFSMComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_3 , upvalues : _ENV
+function MainFSMComponent:WEC_PostInitialize(owner)
   local createInfo = self.createInfo
   createInfo.OwnerEntity = owner
-  self.fsmImp = (FSMFactory:GetInstance()):CreateFSM(createInfo)
+  self.fsmImp = FSMFactory:GetInstance():CreateFSM(createInfo)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-MainFSMComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (FSMFactory:GetInstance()):DestroyFSM(self.fsmImp)
+function MainFSMComponent:WEC_PostRemoved()
+  FSMFactory:GetInstance():DestroyFSM(self.fsmImp)
   self.fsmImp = nil
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-MainFSMComponent.CurStateID = function(self)
-  -- function num : 0_5
-  return (self.fsmImp):CurrentStateType()
+function MainFSMComponent:CurStateID()
+  return self.fsmImp:CurrentStateType()
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-MainFSMComponent.HandleCommand = function(self, cmd)
-  -- function num : 0_6
-  if (self.fsmImp).HandleCommand then
-    return (self.fsmImp):HandleCommand(cmd)
+function MainFSMComponent:HandleCommand(cmd)
+  if self.fsmImp.HandleCommand then
+    return self.fsmImp:HandleCommand(cmd)
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-MainFSMComponent.Update = function(self, delta_time)
-  -- function num : 0_7
-  return (self.fsmImp):Update(delta_time)
+function MainFSMComponent:Update(delta_time)
+  return self.fsmImp:Update(delta_time)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.MainFSM = function(self)
-  -- function num : 0_8
-  return self:GetComponent((self.WEComponentsEnum).MainFSM)
+function Entity:MainFSM()
+  return self:GetComponent(self.WEComponentsEnum.MainFSM)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasMainFSM = function(self)
-  -- function num : 0_9
-  return self:HasComponent((self.WEComponentsEnum).MainFSM)
+function Entity:HasMainFSM()
+  return self:HasComponent(self.WEComponentsEnum.MainFSM)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddMainFSM = function(self, configID)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MainFSM
+function Entity:AddMainFSM(configID)
+  local index = self.WEComponentsEnum.MainFSM
   local component = MainFSMComponent:New(configID)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceMainFSM = function(self, configID)
-  -- function num : 0_11 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MainFSM
+function Entity:ReplaceMainFSM(configID)
+  local index = self.WEComponentsEnum.MainFSM
   local component = MainFSMComponent:New(configID)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveMainFSM = function(self)
-  -- function num : 0_12
+function Entity:RemoveMainFSM()
   if self:HasMainFSM() then
-    self:RemoveComponent((self.WEComponentsEnum).MainFSM)
+    self:RemoveComponent(self.WEComponentsEnum.MainFSM)
   end
 end
-
-

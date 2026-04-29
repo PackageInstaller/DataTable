@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_four_valid_p_dis_caster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_FourValidPointDistanceCaster", SkillScopeCalculator_Base)
 SkillScopeCalculator_FourValidPointDistanceCaster = SkillScopeCalculator_FourValidPointDistanceCaster
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_FourValidPointDistanceCaster.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
-  local world = (self._gridFilter)._world
+function SkillScopeCalculator_FourValidPointDistanceCaster:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
+  local world = self._gridFilter._world
   local utilData = world:GetService("UtilData")
   local cross_area = {}
   local wholeArea = {}
@@ -19,28 +12,22 @@ SkillScopeCalculator_FourValidPointDistanceCaster.CalcRange = function(self, sco
   local down = Vector2(centerPos.x, centerPos.y - distance)
   local left = Vector2(centerPos.x - distance, centerPos.y)
   local right = Vector2(centerPos.x + distance, centerPos.y)
-  ;
-  (table.insert)(wholeArea, up)
-  ;
-  (table.insert)(wholeArea, down)
-  ;
-  (table.insert)(wholeArea, left)
-  ;
-  (table.insert)(wholeArea, right)
+  table.insert(wholeArea, up)
+  table.insert(wholeArea, down)
+  table.insert(wholeArea, left)
+  table.insert(wholeArea, right)
   if utilData:IsValidPiecePos(up) then
-    (table.insert)(cross_area, up)
+    table.insert(cross_area, up)
   end
   if utilData:IsValidPiecePos(down) then
-    (table.insert)(cross_area, down)
+    table.insert(cross_area, down)
   end
   if utilData:IsValidPiecePos(left) then
-    (table.insert)(cross_area, left)
+    table.insert(cross_area, left)
   end
   if utilData:IsValidPiecePos(right) then
-    (table.insert)(cross_area, right)
+    table.insert(cross_area, right)
   end
   local result = SkillScopeResult:New(SkillScopeType.FrontAndObliqueOffset, centerPos, cross_area, wholeArea)
   return result
 end
-
-

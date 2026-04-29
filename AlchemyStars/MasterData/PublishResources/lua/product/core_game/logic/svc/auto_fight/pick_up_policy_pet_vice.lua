@@ -1,70 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_pet_vice.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_PetVice", PickUpPolicy_Base)
 PickUpPolicy_PetVice = PickUpPolicy_PetVice
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_PetVice.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0
+function PickUpPolicy_PetVice:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
   local activeSkillID = calcParam.activeSkillID
   local policyParam = calcParam.policyParam
-  local casterPos = (petEntity:GridLocation()).Position
+  local casterPos = petEntity:GridLocation().Position
   local pickPosList, atkPosList, targetIds, extraParam = self:_CalPickPosPolicy_PetVice(petEntity, activeSkillID)
   return pickPosList, atkPosList, targetIds, extraParam
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetVice._CalPickPosPolicy_PetVice = function(self, petEntity, activeSkillID)
-  -- function num : 0_1 , upvalues : _ENV
-  local targetEntity = nil
-  local utilSvc = (self._world):GetService("UtilData")
-  local utilData = (self._world):GetService("UtilData")
-  local configService = (self._world):GetService("Config")
+function PickUpPolicy_PetVice:_CalPickPosPolicy_PetVice(petEntity, activeSkillID)
+  local targetEntity
+  local utilSvc = self._world:GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
+  local configService = self._world:GetService("Config")
   local extraBoardPosRange = utilData:GetExtraBoardPosList()
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    targetEntity = (((petEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    targetEntity = petEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
   else
     local bossEntityList = {}
     local targetEntityList = {}
-    local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+    local utilScopeSvc = self._world:GetService("UtilScopeCalc")
     local monsterList, monsterPosList = utilScopeSvc:SelectAllMonster(petEntity)
-    for i,e in ipairs(monsterList) do
-      local gridPos = (e:GridLocation()):GetGridPos()
-      local bodyArea = (e:BodyArea()):GetArea()
+    for i, e in ipairs(monsterList) do
+      local gridPos = e:GridLocation():GetGridPos()
+      local bodyArea = e:BodyArea():GetArea()
       local hasCacPickPos = false
-      for _,value in pairs(bodyArea) do
+      for _, value in pairs(bodyArea) do
         local workPos = gridPos + value
         if self:_IsPosCanPick(workPos, true, true, utilSvc, extraBoardPosRange) then
           hasCacPickPos = true
           break
         end
       end
-      do
-        do
-          if hasCacPickPos then
-            if e:HasBoss() then
-              (table.insert)(bossEntityList, e)
-            end
-            ;
-            (table.insert)(targetEntityList, e)
-          end
-          -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out DO_STMT
-
+      if hasCacPickPos then
+        if e:HasBoss() then
+          table.insert(bossEntityList, e)
         end
+        table.insert(targetEntityList, e)
       end
     end
-    if (table.count)(bossEntityList) > 0 then
+    if table.count(bossEntityList) > 0 then
       targetEntityList = bossEntityList
     end
     local skillConfigData = configService:GetSkillConfigData(activeSkillID)
     local policyParam = skillConfigData:GetAutoFightPickPosPolicyParam()
-    for i,e in ipairs(targetEntityList) do
+    for i, e in ipairs(targetEntityList) do
       local buffCmp = e:BuffComponent()
       if buffCmp then
         local buffEffect = policyParam[1]
@@ -74,42 +57,34 @@ PickUpPolicy_PetVice._CalPickPosPolicy_PetVice = function(self, petEntity, activ
         end
       end
     end
-    do
-      if not targetEntity then
-        local maxHP = 0
-        for i,e in ipairs(targetEntityList) do
-          local hp = (e:Attributes()):GetCurrentHP()
-          if not targetEntity or maxHP < hp then
-            maxHP = hp
-            targetEntity = e
-          end
-        end
-      end
-      do
-        if not targetEntity then
-          return {}, {}, {}
-        end
-        local retScopeResult = {}
-        local retTargetIds = {}
-        local pickPos = (targetEntity:GridLocation()):GetGridPos()
-        if not self:_IsPosCanPick(pickPos, true, true, utilSvc, extraBoardPosRange) then
-          local bodyArea = (targetEntity:BodyArea()):GetArea()
-          for _,value in pairs(bodyArea) do
-            local workPos = pickPos + value
-            local isCanPickPos = self:_IsPosCanPick(workPos, true, true, utilSvc, extraBoardPosRange)
-            if isCanPickPos then
-              pickPos = workPos
-              break
-            end
-          end
-        end
-        do
-          retScopeResult = self:_CalcSkillScopeResultAndTargets_PickUpPolicy(petEntity, activeSkillID, pickPos)
-          return {pickPos}, retScopeResult:GetAttackRange(), retTargetIds
+    if not targetEntity then
+      local maxHP = 0
+      for i, e in ipairs(targetEntityList) do
+        local hp = e:Attributes():GetCurrentHP()
+        if not targetEntity or maxHP < hp then
+          maxHP = hp
+          targetEntity = e
         end
       end
     end
   end
+  if not targetEntity then
+    return {}, {}, {}
+  end
+  local retScopeResult = {}
+  local retTargetIds = {}
+  local pickPos = targetEntity:GridLocation():GetGridPos()
+  if not self:_IsPosCanPick(pickPos, true, true, utilSvc, extraBoardPosRange) then
+    local bodyArea = targetEntity:BodyArea():GetArea()
+    for _, value in pairs(bodyArea) do
+      local workPos = pickPos + value
+      local isCanPickPos = self:_IsPosCanPick(workPos, true, true, utilSvc, extraBoardPosRange)
+      if isCanPickPos then
+        pickPos = workPos
+        break
+      end
+    end
+  end
+  retScopeResult, retTargetIds = self:_CalcSkillScopeResultAndTargets_PickUpPolicy(petEntity, activeSkillID, pickPos)
+  return {pickPos}, retScopeResult:GetAttackRange(), retTargetIds
 end
-
-

@@ -1,24 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_award_pool_detail_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardAwardPoolDetailController", UIController)
 UIDrawCardAwardPoolDetailController = UIDrawCardAwardPoolDetailController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardAwardPoolDetailController.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
-  self._btnStateTb = {false, false, false}
+function UIDrawCardAwardPoolDetailController:OnShow(uiParam)
+  self._btnStateTb = {
+    false,
+    false,
+    false
+  }
   self._poolInfo = uiParam[1]
-  self._poolData = (self._poolInfo).poolData
-  self.cfg = (Cfg.cfg_recruit_pool_view)[(self._poolData).performance_id]
-  self._count = #(self.cfg).PoolDetailSubTitle
+  self._poolData = self._poolInfo.poolData
+  self.cfg = Cfg.cfg_recruit_pool_view[self._poolData.performance_id]
+  self._count = #self.cfg.PoolDetailSubTitle
   self.title = self:GetUIComponent("UILocalizationText", "title")
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.title).text = (StringTable.Get)((self.cfg).PoolDetailTitle)
+  self.title.text = StringTable.Get(self.cfg.PoolDetailTitle)
   self._intruduce = self:GetGameObject("intruduce")
   self._rate = self:GetGameObject("rate")
   self._conversion = self:GetGameObject("Conversion")
@@ -36,19 +30,13 @@ UIDrawCardAwardPoolDetailController.OnShow = function(self, uiParam)
   self._atlas = self:GetAsset("UIDrawCard.spriteatlas", LoadType.SpriteAtlas)
   self:SetData()
   self._btnImgTb = {}
-  ;
-  (table.insert)(self._btnImgTb, self._ruletag)
-  ;
-  (table.insert)(self._btnImgTb, self._ratetag)
-  ;
-  (table.insert)(self._btnImgTb, self._conversiontag)
+  table.insert(self._btnImgTb, self._ruletag)
+  table.insert(self._btnImgTb, self._ratetag)
+  table.insert(self._btnImgTb, self._conversiontag)
   self._textTb = {}
-  ;
-  (table.insert)(self._textTb, self._ruleText)
-  ;
-  (table.insert)(self._textTb, self._rateText)
-  ;
-  (table.insert)(self._textTb, self._conText)
+  table.insert(self._textTb, self._ruleText)
+  table.insert(self._textTb, self._rateText)
+  table.insert(self._textTb, self._conText)
   self:AttachEvent(GameEventType.ShowItemTips, self.ShowTips)
   local tipspool = self:GetUIComponent("UISelectObjectPath", "tipspool")
   self._tipsPoolObj = self:GetGameObject("tipspool")
@@ -59,185 +47,106 @@ UIDrawCardAwardPoolDetailController.OnShow = function(self, uiParam)
   self:RuletagOnClick()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardPoolDetailController.SetData = function(self)
-  -- function num : 0_1
+function UIDrawCardAwardPoolDetailController:SetData()
   self:StartTask(self.CreateItems, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardPoolDetailController.CreateItems = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDrawCardAwardPoolDetailController:CreateItems(TT)
   self:Lock("UIDrawCardAwardPoolDetailController")
   YIELD(TT)
-  ;
-  (self._rate):SetActive(true)
-  ;
-  (self._rateTip):SetActive(true)
-  local item = (self.RateContent):SpawnObject("UIDrawCardAwardDetailItemNew")
+  self._rate:SetActive(true)
+  self._rateTip:SetActive(true)
+  local item = self.RateContent:SpawnObject("UIDrawCardAwardDetailItemNew")
   local gambleModule = self:GetModule(GambleModule)
-  local isOpen, wishCount = gambleModule:IsOpenOptional((self._poolInfo).index)
-  local wishPool = nil
+  local isOpen, wishCount = gambleModule:IsOpenOptional(self._poolInfo.index)
+  local wishPool
   if isOpen and wishCount == ElementType.ElementType_Yellow then
-    wishPool = gambleModule:GetOptionalPool((self._poolInfo).index)
+    wishPool = gambleModule:GetOptionalPool(self._poolInfo.index)
   end
   item:SetWishPool(isOpen, wishPool)
-  item:SetData(((self.cfg).PoolDetailSubTitle)[2], ((self.cfg).PoolDetail)[2], (self._poolData).performance_id)
+  item:SetData(self.cfg.PoolDetailSubTitle[2], self.cfg.PoolDetail[2], self._poolData.performance_id)
   self:UnLock("UIDrawCardAwardPoolDetailController")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardPoolDetailController.ShowTips = function(self, itemId, pos)
-  -- function num : 0_3
-  (self._tipsPoolObj):SetActive(true)
-  ;
-  (self._tips):SetData(itemId, pos)
+function UIDrawCardAwardPoolDetailController:ShowTips(itemId, pos)
+  self._tipsPoolObj:SetActive(true)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardPoolDetailController.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIDrawCardAwardPoolDetailController:OnHide()
   self:DetachEvent(GameEventType.ShowItemTips, self.ShowTips)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardPoolDetailController.ChangeState = function(self, index)
-  -- function num : 0_5 , upvalues : _ENV
-  for i,v in pairs(self._btnStateTb) do
+function UIDrawCardAwardPoolDetailController:ChangeState(index)
+  for i, v in pairs(self._btnStateTb) do
     if v then
-      local img = (self._btnImgTb)[i]
-      img.sprite = (self._atlas):GetSprite("card_pool_sm_btn02")
-      local text = (self._textTb)[i]
-      text.color = Color(0.94901960784314, 0.94901960784314, 0.94901960784314)
+      local img = self._btnImgTb[i]
+      img.sprite = self._atlas:GetSprite("card_pool_sm_btn02")
+      local text = self._textTb[i]
+      text.color = Color(0.9490196078431372, 0.9490196078431372, 0.9490196078431372)
     end
-    do
-      do
-        v = false
-        -- DECOMPILER ERROR at PC22: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    v = false
   end
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._btnStateTb)[index] = true
-  local whiteImg = (self._btnImgTb)[index]
-  whiteImg.sprite = (self._atlas):GetSprite("card_pool_sm_btn01")
-  local text = (self._textTb)[index]
-  text.color = Color(0.19607843137255, 0.19607843137255, 0.19607843137255)
+  self._btnStateTb[index] = true
+  local whiteImg = self._btnImgTb[index]
+  whiteImg.sprite = self._atlas:GetSprite("card_pool_sm_btn01")
+  local text = self._textTb[index]
+  text.color = Color(0.19607843137254902, 0.19607843137254902, 0.19607843137254902)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardPoolDetailController.CloseOnClick = function(self)
-  -- function num : 0_6
+function UIDrawCardAwardPoolDetailController:CloseOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardPoolDetailController.RuletagOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIDrawCardAwardPoolDetailController:RuletagOnClick()
   self:DetachEvent(GameEventType.ShowItemTips, self.ShowTips)
   self:HideAllItem()
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._intruduceRect).anchoredPosition = self._intruducePos
-  local item = (self.content):SpawnObject("UIDrawCardAwardDetailItemNew")
-  item:SetData(((self.cfg).PoolDetailSubTitle)[1], ((self.cfg).PoolDetail)[1])
+  self._intruduceRect.anchoredPosition = self._intruducePos
+  local item = self.content:SpawnObject("UIDrawCardAwardDetailItemNew")
+  item:SetData(self.cfg.PoolDetailSubTitle[1], self.cfg.PoolDetail[1])
   self:ChangeState(1)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardPoolDetailController.RatetagOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIDrawCardAwardPoolDetailController:RatetagOnClick()
   self:DetachEvent(GameEventType.ShowItemTips, self.ShowTips)
   self:HideAllItem()
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rateRect).anchoredPosition = self._ratePos
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rateTipRect).anchoredPosition = self._rateTipPos
+  self._rateRect.anchoredPosition = self._ratePos
+  self._rateTipRect.anchoredPosition = self._rateTipPos
   self:ChangeState(2)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardPoolDetailController.ConversiontagOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIDrawCardAwardPoolDetailController:ConversiontagOnClick()
   self:AttachEvent(GameEventType.ShowItemTips, self.ShowTips)
   self:HideAllItem()
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conversionRect).anchoredPosition = self._conversionPos
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conversTipRect).anchoredPosition = self._conversTipPos
-  ;
-  (self._tipsPoolObj):SetActive(true)
-  ;
-  (self.converseContent):SpawnObjects("UIDrawCardAwardConversionItem", 4)
-  local items = (self.converseContent):GetAllSpawnList()
-  for idx,value in ipairs(items) do
+  self._conversionRect.anchoredPosition = self._conversionPos
+  self._conversTipRect.anchoredPosition = self._conversTipPos
+  self._tipsPoolObj:SetActive(true)
+  self.converseContent:SpawnObjects("UIDrawCardAwardConversionItem", 4)
+  local items = self.converseContent:GetAllSpawnList()
+  for idx, value in ipairs(items) do
     value:SetData(idx)
   end
   self:ChangeState(3)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardPoolDetailController.RecordAllItemPos = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  self._intruduceRect = (self._intruduce):GetComponent(typeof(UnityEngine.RectTransform))
-  self._rateRect = (self._rate):GetComponent(typeof(UnityEngine.RectTransform))
-  self._rateTipRect = (self._rateTip):GetComponent(typeof(UnityEngine.RectTransform))
-  self._conversionRect = (self._conversion):GetComponent(typeof(UnityEngine.RectTransform))
-  self._conversTipRect = (self._conversTip):GetComponent(typeof(UnityEngine.RectTransform))
-  self._intruducePos = (self._intruduceRect).anchoredPosition
-  self._ratePos = (self._rateRect).anchoredPosition
-  self._rateTipPos = (self._rateTipRect).anchoredPosition
-  self._conversionPos = (self._conversionRect).anchoredPosition
-  self._conversTipPos = (self._conversTipRect).anchoredPosition
+function UIDrawCardAwardPoolDetailController:RecordAllItemPos()
+  self._intruduceRect = self._intruduce:GetComponent(typeof(UnityEngine.RectTransform))
+  self._rateRect = self._rate:GetComponent(typeof(UnityEngine.RectTransform))
+  self._rateTipRect = self._rateTip:GetComponent(typeof(UnityEngine.RectTransform))
+  self._conversionRect = self._conversion:GetComponent(typeof(UnityEngine.RectTransform))
+  self._conversTipRect = self._conversTip:GetComponent(typeof(UnityEngine.RectTransform))
+  self._intruducePos = self._intruduceRect.anchoredPosition
+  self._ratePos = self._rateRect.anchoredPosition
+  self._rateTipPos = self._rateTipRect.anchoredPosition
+  self._conversionPos = self._conversionRect.anchoredPosition
+  self._conversTipPos = self._conversTipRect.anchoredPosition
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardPoolDetailController.HideAllItem = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._intruduceRect).anchoredPosition = Vector2(9999, 9999)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rateRect).anchoredPosition = Vector2(9999, 9999)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rateTipRect).anchoredPosition = Vector2(9999, 9999)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conversionRect).anchoredPosition = Vector2(9999, 9999)
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conversTipRect).anchoredPosition = Vector2(9999, 9999)
-  ;
-  (self._tipsPoolObj):SetActive(false)
+function UIDrawCardAwardPoolDetailController:HideAllItem()
+  self._intruduceRect.anchoredPosition = Vector2(9999, 9999)
+  self._rateRect.anchoredPosition = Vector2(9999, 9999)
+  self._rateTipRect.anchoredPosition = Vector2(9999, 9999)
+  self._conversionRect.anchoredPosition = Vector2(9999, 9999)
+  self._conversTipRect.anchoredPosition = Vector2(9999, 9999)
+  self._tipsPoolObj:SetActive(false)
 end
-
-

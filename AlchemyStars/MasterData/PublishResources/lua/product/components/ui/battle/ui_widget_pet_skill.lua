@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_pet_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetPetSkill", UICustomWidget)
 UIWidgetPetSkill = UIWidgetPetSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetPetSkill.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWidgetPetSkill:OnShow()
   self.enableFakeInput = true
   self.oneLineHeight = 154
   self.twoLineHeight = 176
@@ -16,96 +9,61 @@ UIWidgetPetSkill.OnShow = function(self)
   self.lineMaxWidth = 678
   local sop = self:GetUIComponent("UISelectObjectPath", "preattack")
   sop:SpawnObject("UIPreAttackItem")
-  self.preAttackCell = (sop:GetAllSpawnList())[1]
-  ;
-  (self.preAttackCell):Enable(false)
+  self.preAttackCell = sop:GetAllSpawnList()[1]
+  self.preAttackCell:Enable(false)
   self:AttachEvent(GameEventType.BattleUIRefreshActiveSkillCastButtonState, self._RefreshCastButtonState)
   self.activeSkillCheckPass = true
   self._objEquipRefineUpPos = self:GetGameObject("objEquipRefineUpPos")
   self._objEquipRefineDownPos = self:GetGameObject("objEquipRefineDownPos")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetSkill.HideSelf = function(self)
-  -- function num : 0_1
+function UIWidgetPetSkill:HideSelf()
   self._isShow = false
-  ;
-  (self:GetGameObject()):SetActive(false)
+  self:GetGameObject():SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetSkill.ShowSelf = function(self)
-  -- function num : 0_2
+function UIWidgetPetSkill:ShowSelf()
   self._isShow = true
-  ;
-  (self:GetGameObject()):SetActive(true)
+  self:GetGameObject():SetActive(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetSkill.SetUiPos = function(self, position)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self:GetGameObject()).transform).position = position
+function UIWidgetPetSkill:SetUiPos(position)
+  self:GetGameObject().transform.position = position
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetSkill.GetPetSkillBtn = function(self)
-  -- function num : 0_4
+function UIWidgetPetSkill:GetPetSkillBtn()
   local btn = self:GetGameObject("btnGo")
   return btn
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetSkill.SetPetPstId = function(self, petPstId)
-  -- function num : 0_5 , upvalues : _ENV
+function UIWidgetPetSkill:SetPetPstId(petPstId)
   self.petPstId = petPstId
-  local enterData = ((GameGlobal.GetModule)(MatchModule)):GetMatchEnterData()
-  local matchPets = (InnerGameHelperRender.GetLocalMatchPets)()
+  local enterData = GameGlobal.GetModule(MatchModule):GetMatchEnterData()
+  local matchPets = InnerGameHelperRender.GetLocalMatchPets()
   self.pet = matchPets[self.petPstId]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetSkill.SetPet = function(self, pet)
-  -- function num : 0_6
+function UIWidgetPetSkill:SetPet(pet)
   self.pet = pet
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetSkill.ShowPreAttack = function(self)
-  -- function num : 0_7
+function UIWidgetPetSkill:ShowPreAttack()
   if self.preAttackCell then
-    (self.preAttackCell):SetData(self.petPstId, self.skillID, false)
+    self.preAttackCell:SetData(self.petPstId, self.skillID, false)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetSkill.OnHide = function(self)
-  -- function num : 0_8
+function UIWidgetPetSkill:OnHide()
   self.activeSkillCheckPass = true
   self._cannotCastReason = nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetSkill.ResetSkillCanCast = function(self)
-  -- function num : 0_9
+function UIWidgetPetSkill:ResetSkillCanCast()
   self.activeSkillCheckPass = true
   self._cannotCastReason = nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetSkill.Init = function(self, skillID, maxEnergy, leftEnergy, canCast, castCallback, petPstID)
-  -- function num : 0_10 , upvalues : _ENV
+function UIWidgetPetSkill:Init(skillID, maxEnergy, leftEnergy, canCast, castCallback, petPstID)
   self.skillID = skillID
   self.leftPower = leftEnergy
   self.castCallback = castCallback
@@ -123,16 +81,15 @@ UIWidgetPetSkill.Init = function(self, skillID, maxEnergy, leftEnergy, canCast, 
     txtGo.color = Color.white
   else
     btnGo.interactable = false
-    txtGo.color = Color(0.48235294117647, 0.48235294117647, 0.48235294117647, 1)
+    txtGo.color = Color(0.4823529411764706, 0.4823529411764706, 0.4823529411764706, 1)
   end
-  local skillData = (ConfigServiceHelper.GetSkillConfigData)(self.skillID, petPstID)
-  skillName:SetText((StringTable.Get)(skillData:GetSkillName()))
-  if (UILogicPetHelper.ShowSkillEnergy)(skillData:GetSkillTriggerType()) then
-    (skillCD.gameObject):SetActive(true)
-    skillCD:SetText((string.format)((StringTable.Get)("str_common_cooldown_round"), skillData:GetSkillTriggerParam()))
+  local skillData = ConfigServiceHelper.GetSkillConfigData(self.skillID, petPstID)
+  skillName:SetText(StringTable.Get(skillData:GetSkillName()))
+  if UILogicPetHelper.ShowSkillEnergy(skillData:GetSkillTriggerType()) then
+    skillCD.gameObject:SetActive(true)
+    skillCD:SetText(string.format(StringTable.Get("str_common_cooldown_round"), skillData:GetSkillTriggerParam()))
   else
-    ;
-    (skillCD.gameObject):SetActive(false)
+    skillCD.gameObject:SetActive(false)
   end
   local mask = self:GetUIComponent("RevolvingTextWithDynamicScroll", "mask")
   mask:OnRefreshRevolving()
@@ -141,197 +98,136 @@ UIWidgetPetSkill.Init = function(self, skillID, maxEnergy, leftEnergy, canCast, 
   if extraParam and extraParam[SkillTriggerTypeExtraParam.SanChangeByRoundCastTimes] then
     local baseCost = extraParam[SkillTriggerTypeExtraParam.SanValue]
     local modCost = extraParam[SkillTriggerTypeExtraParam.SanChangeByRoundCastTimes]
-    local curTimes = (BattleStatHelper.GetCurRoundDoActiveSkillTimes)(self.petPstId)
+    local curTimes = BattleStatHelper.GetCurRoundDoActiveSkillTimes(self.petPstId)
     local curCost = baseCost + modCost * curTimes
-    ;
-    (table.insert)(descForceParam, tostring(curCost))
+    table.insert(descForceParam, tostring(curCost))
   end
-  do
-    local skillDescString = skillData:GetPetSkillDes(descForceParam)
-    local skillDescUtf8Len = #skillDescString
-    self.skillDesc = skillDesc
-    if not self:CheckRefineSkillReplace(self.skillID) then
-      skillDesc:SetText(skillDescString)
-    end
-    local skillInfo = self:GetGameObject("skillInfo")
-    skillInfo:SetActive(true)
-    ;
-    (UIHelper.RefreshLayout)(self:GetUIComponent("RectTransform", "skillInfo"))
-    local skillInfoTrans = (bgRectTransform.parent).parent
-    local isAdapteHead = (InnerGameHelperRender.UICheckIsFifthPet)(self.petPstId)
-    local tmpPos = skillInfoTrans.anchoredPosition3D
-    tmpPos.y = 0
-    if skillInfoTrans and isAdapteHead then
-      local baseHeight = 170
-      local heightDef = (bgRectTransform.sizeDelta).y - baseHeight
-      if heightDef > 0 then
-        tmpPos.y = heightDef / 2
-      end
-    end
-    do
-      skillInfoTrans.anchoredPosition3D = tmpPos
-      local cancelSkillInfo = self:GetGameObject("cancelSkillInfo")
-      cancelSkillInfo:SetActive(false)
-      local skillConfigData = (ConfigServiceHelper.GetSkillConfigData)(self.skillID)
-      local pickUpType = skillConfigData:GetSkillPickType()
+  local skillDescString = skillData:GetPetSkillDes(descForceParam)
+  local skillDescUtf8Len = #skillDescString
+  self.skillDesc = skillDesc
+  if not self:CheckRefineSkillReplace(self.skillID) then
+    skillDesc:SetText(skillDescString)
+  end
+  local skillInfo = self:GetGameObject("skillInfo")
+  skillInfo:SetActive(true)
+  UIHelper.RefreshLayout(self:GetUIComponent("RectTransform", "skillInfo"))
+  local skillInfoTrans = bgRectTransform.parent.parent
+  local isAdapteHead = InnerGameHelperRender.UICheckIsFifthPet(self.petPstId)
+  local tmpPos = skillInfoTrans.anchoredPosition3D
+  tmpPos.y = 0
+  if skillInfoTrans and isAdapteHead then
+    local baseHeight = 170
+    local heightDef = bgRectTransform.sizeDelta.y - baseHeight
+    if 0 < heightDef then
+      tmpPos.y = heightDef / 2
     end
   end
+  skillInfoTrans.anchoredPosition3D = tmpPos
+  local cancelSkillInfo = self:GetGameObject("cancelSkillInfo")
+  cancelSkillInfo:SetActive(false)
+  local skillConfigData = ConfigServiceHelper.GetSkillConfigData(self.skillID)
+  local pickUpType = skillConfigData:GetSkillPickType()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetSkill.btnGoOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIWidgetPetSkill", input = "btnGoOnClick", 
-args = {}
-})
+function UIWidgetPetSkill:btnGoOnClick()
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIWidgetPetSkill",
+    input = "btnGoOnClick",
+    args = {}
+  })
   if not self.canCast or not self.activeSkillCheckPass then
-    local reasonByBuffSetCanNotReadyReason = (BattleStatHelper.CheckCanCastActiveSkill_GetCantReadyReasonByBuff)(self.petPstId, self.skillID)
+    local reasonByBuffSetCanNotReadyReason = BattleStatHelper.CheckCanCastActiveSkill_GetCantReadyReasonByBuff(self.petPstId, self.skillID)
     if not self:MissionCanCast() then
-      local text = (StringTable.Get)("str_match_pickup_skill_limit")
-      ;
-      (ToastManager.ShowToast)(text)
+      local text = StringTable.Get("str_match_pickup_skill_limit")
+      ToastManager.ShowToast(text)
+    elseif reasonByBuffSetCanNotReadyReason then
+      local textKey = ActiveSkillCannotCastReasonText[reasonByBuffSetCanNotReadyReason]
+      local text = StringTable.Get(textKey)
+      ToastManager.ShowToast(text)
+    elseif not BattleStatHelper.CheckCanCastActiveSkill_TeamLeaderCondi(self.petPstId, self.skillID) then
+      local text = StringTable.Get("str_battle_team_leader_active_skill_disabled")
+      ToastManager.ShowToast(text)
+    elseif self._cannotCastReason then
+      local textKey = ActiveSkillCannotCastReasonText[self._cannotCastReason]
+      local text = StringTable.Get(textKey)
+      ToastManager.ShowToast(text)
     else
-      do
-        if reasonByBuffSetCanNotReadyReason then
-          local textKey = ActiveSkillCannotCastReasonText[reasonByBuffSetCanNotReadyReason]
-          local text = (StringTable.Get)(textKey)
-          ;
-          (ToastManager.ShowToast)(text)
-        else
-          do
-            if not (BattleStatHelper.CheckCanCastActiveSkill_TeamLeaderCondi)(self.petPstId, self.skillID) then
-              local text = (StringTable.Get)("str_battle_team_leader_active_skill_disabled")
-              ;
-              (ToastManager.ShowToast)(text)
-            else
-              do
-                if self._cannotCastReason then
-                  local textKey = ActiveSkillCannotCastReasonText[self._cannotCastReason]
-                  local text = (StringTable.Get)(textKey)
-                  ;
-                  (ToastManager.ShowToast)(text)
-                else
-                  do
-                    do
-                      local text = (StringTable.Get)("str_match_cannot_cast_skill_reason")
-                      ;
-                      (ToastManager.ShowToast)(text)
-                      do
-                        if not (BattleStatHelper.CheckCanCastActiveSkill_SwapPetTeamOrder)(self.petPstId, self.skillID) then
-                          local text = (StringTable.Get)("str_battle_hebo_cannot_change_pos_with_cursed_pet")
-                          ;
-                          (ToastManager.ShowToast)(text)
-                          return 
-                        end
-                        if self.castCallback and self.canCast and self.activeSkillCheckPass then
-                          local skillConfigData = (ConfigServiceHelper.GetSkillConfigData)(self.skillID)
-                          local pickUpType = skillConfigData:GetSkillPickType()
-                          if self:MissionCanCast() then
-                            (self.castCallback)(self.skillID, pickUpType)
-                          else
-                            local text = (StringTable.Get)("str_match_pickup_skill_limit")
-                            ;
-                            (ToastManager.ShowToast)(text)
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+      local text = StringTable.Get("str_match_cannot_cast_skill_reason")
+      ToastManager.ShowToast(text)
+    end
+  end
+  if not BattleStatHelper.CheckCanCastActiveSkill_SwapPetTeamOrder(self.petPstId, self.skillID) then
+    local text = StringTable.Get("str_battle_hebo_cannot_change_pos_with_cursed_pet")
+    ToastManager.ShowToast(text)
+    return
+  end
+  if self.castCallback and self.canCast and self.activeSkillCheckPass then
+    local skillConfigData = ConfigServiceHelper.GetSkillConfigData(self.skillID)
+    local pickUpType = skillConfigData:GetSkillPickType()
+    if self:MissionCanCast() then
+      self.castCallback(self.skillID, pickUpType)
+    else
+      local text = StringTable.Get("str_match_pickup_skill_limit")
+      ToastManager.ShowToast(text)
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetSkill.MissionCanCast = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local matchModule = (GameGlobal.GetModule)(MatchModule)
+function UIWidgetPetSkill:MissionCanCast()
+  local matchModule = GameGlobal.GetModule(MatchModule)
   local enterData = matchModule:GetMatchEnterData()
   if enterData:GetMatchType() == MatchType.MT_Mission then
-    local currentMissionId = (enterData:GetMissionCreateInfo()).mission_id
-    local current_mission_cfg = (Cfg.cfg_mission)[currentMissionId]
+    local currentMissionId = enterData:GetMissionCreateInfo().mission_id
+    local current_mission_cfg = Cfg.cfg_mission[currentMissionId]
     if current_mission_cfg == nil then
       return true
     end
     local missionCanCast = current_mission_cfg.CastSkillLimit
     return missionCanCast
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetSkill.ShowCancelBtn = function(self, isShow)
-  -- function num : 0_13
+function UIWidgetPetSkill:ShowCancelBtn(isShow)
   local skillInfo = self:GetGameObject("skillInfo")
   skillInfo:SetActive(false)
   local cancelSkillInfo = self:GetGameObject("cancelSkillInfo")
   cancelSkillInfo:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetSkill.GetCastSkillBtn = function(self)
-  -- function num : 0_14
+function UIWidgetPetSkill:GetCastSkillBtn()
   return self._castBtn
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetSkill.GetCurActiveSkillID = function(self)
-  -- function num : 0_15
+function UIWidgetPetSkill:GetCurActiveSkillID()
   return self.skillID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetSkill._RefreshCastButtonState = function(self, result, reason)
-  -- function num : 0_16
+function UIWidgetPetSkill:_RefreshCastButtonState(result, reason)
   if self._isShow then
     self.activeSkillCheckPass = result
     self._cannotCastReason = reason
-    -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._castBtn).interactable = result
+    self._castBtn.interactable = result
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetSkill.GetEquipRefineUpPosObj = function(self)
-  -- function num : 0_17
+function UIWidgetPetSkill:GetEquipRefineUpPosObj()
   return self._objEquipRefineUpPos
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetSkill.GetEquipRefineDownPosObj = function(self)
-  -- function num : 0_18
+function UIWidgetPetSkill:GetEquipRefineDownPosObj()
   return self._objEquipRefineDownPos
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetSkill.CheckRefineSkillReplace = function(self, skillId)
-  -- function num : 0_19 , upvalues : _ENV
+function UIWidgetPetSkill:CheckRefineSkillReplace(skillId)
   if not self.pet or not skillId then
     return false
   end
-  local refineLv = (self.pet):GetEquipRefineLv()
+  local refineLv = self.pet:GetEquipRefineLv()
   if refineLv < 1 then
     return false
   end
-  local refineConfig = (UIPetEquipHelper.GetRefineCfg)((self.pet):GetTemplateID(), refineLv)
+  local refineConfig = UIPetEquipHelper.GetRefineCfg(self.pet:GetTemplateID(), refineLv)
   if not refineConfig then
     return false
   end
@@ -339,17 +235,16 @@ UIWidgetPetSkill.CheckRefineSkillReplace = function(self, skillId)
   if not replaceData then
     return false
   end
-  local newDesc = nil
-  for k,v in pairs(replaceData) do
+  local newDesc
+  for k, v in pairs(replaceData) do
     newDesc = v[skillId]
-  end
-  do
-    if (newDesc and newDesc ~= "") or newDesc then
-      (self.skillDesc):SetText((StringTable.Get)(newDesc))
-      return true
+    if newDesc and newDesc ~= "" then
+      break
     end
-    return false
   end
+  if newDesc then
+    self.skillDesc:SetText(StringTable.Get(newDesc))
+    return true
+  end
+  return false
 end
-
-

@@ -1,71 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_res_instance/client_res_intance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ClientResInstance", Object)
 ClientResInstance = ClientResInstance
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientResInstance.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ClientResInstance:Constructor()
   self.entryDatas = {}
   self:InitEntryConfig()
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstid = roleModule:GetPstId()
-  self.resInstanceLocalDBKey = {[DungeonType.DungeonType_Coin] = pstid .. "DungeonType_Coin", 
-[DungeonType.DungeonType_Experience] = {[DungeonSubType.DungeonSubType_Blue] = pstid .. "DungeonSubType_Blue", [DungeonSubType.DungeonSubType_Red] = pstid .. "DungeonSubType_Red", [DungeonSubType.DungeonSubType_Green] = pstid .. "DungeonSubType_Green", [DungeonSubType.DungeonSubType_Yellow] = pstid .. "DungeonSubType_Yellow"}
-, [DungeonType.DungeonType_AircraftMaterial] = pstid .. "DungeonType_AircraftMaterial", [DungeonType.DungeonType_equip] = pstid .. "DungeonType_AircraftEquip"}
+  self.resInstanceLocalDBKey = {
+    [DungeonType.DungeonType_Coin] = pstid .. "DungeonType_Coin",
+    [DungeonType.DungeonType_Experience] = {
+      [DungeonSubType.DungeonSubType_Blue] = pstid .. "DungeonSubType_Blue",
+      [DungeonSubType.DungeonSubType_Red] = pstid .. "DungeonSubType_Red",
+      [DungeonSubType.DungeonSubType_Green] = pstid .. "DungeonSubType_Green",
+      [DungeonSubType.DungeonSubType_Yellow] = pstid .. "DungeonSubType_Yellow"
+    },
+    [DungeonType.DungeonType_AircraftMaterial] = pstid .. "DungeonType_AircraftMaterial",
+    [DungeonType.DungeonType_equip] = pstid .. "DungeonType_AircraftEquip"
+  }
   self.resInstanceSubLocalDBKey = pstid .. "ResInstanceSubLocalDBKey"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientResInstance.InitEntryConfig = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local entrys = (Cfg.cfg_res_instance_entry)({})
-  for id,cfg in ipairs(entrys) do
+function ClientResInstance:InitEntryConfig()
+  local entrys = Cfg.cfg_res_instance_entry({})
+  for id, cfg in ipairs(entrys) do
     local e = UIResInstanceEntryData:New(cfg)
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.entryDatas)[e:GetMainType()] = e
+    self.entryDatas[e:GetMainType()] = e
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientResInstance.GetEntryCount = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  return (table.count)(self.entryDatas)
+function ClientResInstance:GetEntryCount()
+  return table.count(self.entryDatas)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientResInstance.GetEntryDatas = function(self)
-  -- function num : 0_3
+function ClientResInstance:GetEntryDatas()
   return self.entryDatas
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientResInstance.GetEntryById = function(self, entryId)
-  -- function num : 0_4
-  return (self.entryDatas)[entryId]
+function ClientResInstance:GetEntryById(entryId)
+  return self.entryDatas[entryId]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientResInstance.GetInstanceById = function(self, entryId, instanceId)
-  -- function num : 0_5
-  return ((self.entryDatas)[entryId])[instanceId]
+function ClientResInstance:GetInstanceById(entryId, instanceId)
+  return self.entryDatas[entryId][instanceId]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientResInstance.GetMainTypeByInstanceId = function(self, instanceId)
-  -- function num : 0_6 , upvalues : _ENV
-  for mainType,entry in pairs(self.entryDatas) do
+function ClientResInstance:GetMainTypeByInstanceId(instanceId)
+  for mainType, entry in pairs(self.entryDatas) do
     local instanceData = entry:GetInstanceById(instanceId)
     if instanceData then
       return mainType
@@ -74,36 +54,22 @@ ClientResInstance.GetMainTypeByInstanceId = function(self, instanceId)
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientResInstance.GetExpInstanceList = function(self, subType)
-  -- function num : 0_7 , upvalues : _ENV
-  return ((self.entryDatas)[DungeonType.DungeonType_Experience]):GetExpInstanceList(subType)
+function ClientResInstance:GetExpInstanceList(subType)
+  return self.entryDatas[DungeonType.DungeonType_Experience]:GetExpInstanceList(subType)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientResInstance.GetExpInstanceListSort = function(self, subType)
-  -- function num : 0_8 , upvalues : _ENV
-  return ((self.entryDatas)[DungeonType.DungeonType_Experience]):GetExpInstanceListSort(subType)
+function ClientResInstance:GetExpInstanceListSort(subType)
+  return self.entryDatas[DungeonType.DungeonType_Experience]:GetExpInstanceListSort(subType)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientResInstance.GetNormalInstanceList = function(self, mainType)
-  -- function num : 0_9
-  return ((self.entryDatas)[mainType]):GetInstanceList(mainType)
+function ClientResInstance:GetNormalInstanceList(mainType)
+  return self.entryDatas[mainType]:GetInstanceList(mainType)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientResInstance.GetLocalDBKey = function(self, mainType, subType)
-  -- function num : 0_10 , upvalues : _ENV
+function ClientResInstance:GetLocalDBKey(mainType, subType)
   if mainType == DungeonType.DungeonType_Experience then
-    return ((self.resInstanceLocalDBKey)[mainType])[subType]
+    return self.resInstanceLocalDBKey[mainType][subType]
   else
-    return (self.resInstanceLocalDBKey)[mainType]
+    return self.resInstanceLocalDBKey[mainType]
   end
 end
-
-

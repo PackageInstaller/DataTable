@@ -1,39 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/run_data/blackfist_run_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("elemental_run_data")
 _class("TestRobotBlackFistRunData", TestRobotElementalRunData)
 TestRobotBlackFistRunData = TestRobotBlackFistRunData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotBlackFistRunData.Constructor = function(self)
-  -- function num : 0_0
+function TestRobotBlackFistRunData:Constructor()
   self._missionID = 5041004
   self._campainParams = {504001705, 61}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotBlackFistRunData.ParseLevelData = function(self, arg)
-  -- function num : 0_1 , upvalues : _ENV
-  local s = (string.split)(arg, ",")
+function TestRobotBlackFistRunData:ParseLevelData(arg)
+  local s = string.split(arg, ",")
   self._missionID = tonumber(s[1])
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotBlackFistRunData.GetEnterMatchParam = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  return {self._missionID, ECampaignMissionComponentId.ECampaignMissionComponentId_Blackfist, self._campainParams}
+function TestRobotBlackFistRunData:GetEnterMatchParam()
+  return {
+    self._missionID,
+    ECampaignMissionComponentId.ECampaignMissionComponentId_Blackfist,
+    self._campainParams
+  }
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotBlackFistRunData.GetComponentConfigID = function(self)
-  -- function num : 0_3
-  return (self._campainParams)[1]
+function TestRobotBlackFistRunData:GetComponentConfigID()
+  return self._campainParams[1]
 end
-
-

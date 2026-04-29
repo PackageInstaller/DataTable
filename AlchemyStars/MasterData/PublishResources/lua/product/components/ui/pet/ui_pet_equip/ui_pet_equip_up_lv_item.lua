@@ -1,170 +1,123 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_up_lv_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipUpLvItem", UICustomWidget)
 UIPetEquipUpLvItem = UIPetEquipUpLvItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipUpLvItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._waitTime = ((Cfg.cfg_global).shakeWaitTime).IntValue or 2000
-  self._shakeX = ((Cfg.cfg_global).shakeOffsetX).IntValue or 10
-  self._shakeY = ((Cfg.cfg_global).shakeOffsetY).IntValue or 10
+function UIPetEquipUpLvItem:Constructor()
+  self._waitTime = Cfg.cfg_global.shakeWaitTime.IntValue or 2000
+  self._shakeX = Cfg.cfg_global.shakeOffsetX.IntValue or 10
+  self._shakeY = Cfg.cfg_global.shakeOffsetY.IntValue or 10
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIPetEquipUpLvItem:OnShow(uiParams)
   self._rect = self:GetUIComponent("RectTransform", "uiitem")
   self._uiItemPool = self:GetUIComponent("UISelectObjectPath", "uiitem")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvItem.SetData = function(self, itemInfo)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPetEquipUpLvItem:SetData(itemInfo)
   local itemid = itemInfo[1]
   local roleModule = self:GetModule(RoleModule)
   local count = roleModule:GetAssetCount(itemid)
   local needCount = itemInfo[2]
   self._matInfo = UIPetEquipUpLvItemData:New(itemid, count, needCount)
-  self._uiItem = (self._uiItemPool):SpawnObject("UIItem")
-  ;
-  (self._uiItem):SetForm(UIItemForm.Base, UIItemScale.Level2)
-  ;
-  (self._uiItem):SetClickCallBack(function()
-    -- function num : 0_2_0 , upvalues : self
+  self._uiItem = self._uiItemPool:SpawnObject("UIItem")
+  self._uiItem:SetForm(UIItemForm.Base, UIItemScale.Level2)
+  self._uiItem:SetClickCallBack(function()
     self:_ShowTipBtnOnClick()
-  end
-)
+  end)
   self:_UIItemSetData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvItem._ShowTipBtnOnClick = function(self)
-  -- function num : 0_3
-  self:ShowDialog("UIItemGetPathController", (self._matInfo).id, nil, nil, (self._matInfo).needCount)
+function UIPetEquipUpLvItem:_ShowTipBtnOnClick()
+  self:ShowDialog("UIItemGetPathController", self._matInfo.id, nil, nil, self._matInfo.needCount)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvItem.FlushCount = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIPetEquipUpLvItem:FlushCount()
   local roleModule = self:GetModule(RoleModule)
-  local count = roleModule:GetAssetCount((self._matInfo).id)
-  ;
-  (self._matInfo):FlushCount(count)
+  local count = roleModule:GetAssetCount(self._matInfo.id)
+  self._matInfo:FlushCount(count)
   self:_UIItemSetData()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvItem._UIItemSetData = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local itemConfig = (Cfg.cfg_item)[(self._matInfo).id]
+function UIPetEquipUpLvItem:_UIItemSetData()
+  local itemConfig = Cfg.cfg_item[self._matInfo.id]
   if not itemConfig then
-    (Log.error)("###[UIPetEquipUpLvItem] cfg_item is nil ! id --> ", (self._matInfo).id)
-    return 
+    Log.error("###[UIPetEquipUpLvItem] cfg_item is nil ! id --> ", self._matInfo.id)
+    return
   end
-  local itemId = (self._matInfo).id
+  local itemId = self._matInfo.id
   local icon = itemConfig.Icon
   local quality = itemConfig.Color
-  local str, showCount = nil, nil
-  if (self._matInfo).count > 9999 then
+  local str, showCount
+  if self._matInfo.count > 9999 then
     showCount = "9999+"
+  elseif self._matInfo.count < 0 then
+    showCount = 0
   else
-    if (self._matInfo).count < 0 then
-      showCount = 0
-    else
-      showCount = (self._matInfo).count
-    end
+    showCount = self._matInfo.count
   end
-  if (self._matInfo):CheckEnough() then
-    str = "<color=#ffd300>" .. showCount .. "</color><color=#ffffff>/</color><color=#ffd300>" .. (self._matInfo).needCount .. "</color>"
+  if self._matInfo:CheckEnough() then
+    str = "<color=#ffd300>" .. showCount .. "</color><color=#ffffff>/</color><color=#ffd300>" .. self._matInfo.needCount .. "</color>"
   else
-    str = "<color=#ff0000>" .. showCount .. "</color><color=#ffffff>/</color><color=#ffffff>" .. (self._matInfo).needCount .. "</color>"
+    str = "<color=#ff0000>" .. showCount .. "</color><color=#ffffff>/</color><color=#ffffff>" .. self._matInfo.needCount .. "</color>"
   end
-  ;
-  (self._uiItem):SetData({icon = icon, quality = quality, text1 = str, itemId = itemId})
+  self._uiItem:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = str,
+    itemId = itemId
+  })
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvItem.Blink = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if self.tweer and (self.tweer):IsPlaying() then
-    return 
+function UIPetEquipUpLvItem:Blink()
+  if self.tweer and self.tweer:IsPlaying() then
+    return
   end
-  local showCount = nil
-  if (self._matInfo).count > 9999 then
+  local showCount
+  if self._matInfo.count > 9999 then
     showCount = "9999+"
+  elseif self._matInfo.count < 0 then
+    showCount = 0
   else
-    if (self._matInfo).count < 0 then
-      showCount = 0
-    else
-      showCount = (self._matInfo).count
-    end
+    showCount = self._matInfo.count
   end
-  local str = "<color=#ff0000>" .. showCount .. "/" .. (self._matInfo).needCount .. "</color>"
-  ;
-  (self._uiItem):SetData({text1 = str})
-  self.tweer = ((self._rect):DOShakePosition(1, Vector3(self._shakeX, self._shakeY, 0))):OnComplete(function()
-    -- function num : 0_6_0 , upvalues : self
+  local str = "<color=#ff0000>" .. showCount .. "/" .. self._matInfo.needCount .. "</color>"
+  self._uiItem:SetData({text1 = str})
+  self.tweer = self._rect:DOShakePosition(1, Vector3(self._shakeX, self._shakeY, 0)):OnComplete(function()
     self:StartTimer()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvItem.StartTimer = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIPetEquipUpLvItem:StartTimer()
   if self.event then
-    ((GameGlobal.Timer)()):CancelEvent(self.event)
+    GameGlobal.Timer():CancelEvent(self.event)
     self.event = nil
   end
-  self.event = ((GameGlobal.Timer)()):AddEvent(self._waitTime, function()
-    -- function num : 0_7_0 , upvalues : self
-    local str, showCount = nil, nil
-    if (self._matInfo).count > 9999 then
+  self.event = GameGlobal.Timer():AddEvent(self._waitTime, function()
+    local str, showCount
+    if self._matInfo.count > 9999 then
       showCount = "9999+"
+    elseif self._matInfo.count < 0 then
+      showCount = 0
     else
-      if (self._matInfo).count < 0 then
-        showCount = 0
-      else
-        showCount = (self._matInfo).count
-      end
+      showCount = self._matInfo.count
     end
-    if (self._matInfo):CheckEnough() then
-      str = "<color=#ffd300>" .. showCount .. "</color><color=#ffffff>/</color><color=#ffd300>" .. (self._matInfo).needCount .. "</color>"
+    if self._matInfo:CheckEnough() then
+      str = "<color=#ffd300>" .. showCount .. "</color><color=#ffffff>/</color><color=#ffd300>" .. self._matInfo.needCount .. "</color>"
     else
-      str = "<color=#ff0000>" .. showCount .. "</color><color=#ffffff>/</color><color=#ffffff>" .. (self._matInfo).needCount .. "</color>"
+      str = "<color=#ff0000>" .. showCount .. "</color><color=#ffffff>/</color><color=#ffffff>" .. self._matInfo.needCount .. "</color>"
     end
-    ;
-    (self._uiItem):SetData({text1 = str})
-  end
-)
+    self._uiItem:SetData({text1 = str})
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvItem.CheckEnough = function(self)
-  -- function num : 0_8
-  return (self._matInfo):CheckEnough()
+function UIPetEquipUpLvItem:CheckEnough()
+  return self._matInfo:CheckEnough()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvItem.GetGapsCount = function(self)
-  -- function num : 0_9
-  local needCount = (self._matInfo).needCount
-  local count = (self._matInfo).count
-  local id = (self._matInfo).id
-  if count < needCount then
+function UIPetEquipUpLvItem:GetGapsCount()
+  local needCount = self._matInfo.needCount
+  local count = self._matInfo.count
+  local id = self._matInfo.id
+  if needCount > count then
     local mat = {}
     mat.id = id
     mat.count = needCount - count
@@ -172,16 +125,13 @@ UIPetEquipUpLvItem.GetGapsCount = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvItem.OnHide = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIPetEquipUpLvItem:OnHide()
   if self.event then
-    ((GameGlobal.Timer)()):CancelEvent(self.event)
+    GameGlobal.Timer():CancelEvent(self.event)
     self.event = nil
   end
   if self.tweer then
-    (self.tweer):Kill(false)
+    self.tweer:Kill(false)
     self.tweer = nil
   end
   self._uiitem = nil
@@ -194,28 +144,17 @@ end
 
 _class("UIPetEquipUpLvItemData", Object)
 UIPetEquipUpLvItemData = UIPetEquipUpLvItemData
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipUpLvItemData.Constructor = function(self, id, count, needCount)
-  -- function num : 0_11
+function UIPetEquipUpLvItemData:Constructor(id, count, needCount)
   self.id = id
   self.count = count
   self.needCount = needCount
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvItemData.FlushCount = function(self, count)
-  -- function num : 0_12
+function UIPetEquipUpLvItemData:FlushCount(count)
   self.count = count
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvItemData.CheckEnough = function(self)
-  -- function num : 0_13
-  do return self.needCount <= self.count end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIPetEquipUpLvItemData:CheckEnough()
+  return self.count >= self.needCount
 end
-
-

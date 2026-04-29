@@ -1,31 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/UIN5BattleField/ui_n5_battlefield_enemyinfo_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN5BattleFieldEnemyInfoItem", UICustomWidget)
 UIN5BattleFieldEnemyInfoItem = UIN5BattleFieldEnemyInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN5BattleFieldEnemyInfoItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN5BattleFieldEnemyInfoItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldEnemyInfoItem._GetComponents = function(self)
-  -- function num : 0_1
+function UIN5BattleFieldEnemyInfoItem:_GetComponents()
   self._indexText = self:GetUIComponent("UILocalizationText", "Index")
   self._militaryExpliot = self:GetUIComponent("UILocalizationText", "MilitaryExpliot")
   self._enemyMsg = self:GetUIComponent("UISelectObjectPath", "Enemy")
-  self._animation = (self:GetGameObject()):GetComponent("Animation")
+  self._animation = self:GetGameObject():GetComponent("Animation")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldEnemyInfoItem.SetData = function(self, index, totalIndex, waveId, cfg_conquest_level_wave)
-  -- function num : 0_2
+function UIN5BattleFieldEnemyInfoItem:SetData(index, totalIndex, waveId, cfg_conquest_level_wave)
   self._index = index
   self._indexTotal = totalIndex
   self._waveId = waveId
@@ -34,146 +21,110 @@ UIN5BattleFieldEnemyInfoItem.SetData = function(self, index, totalIndex, waveId,
   self:_PlayAnimation()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldEnemyInfoItem._PlayAnimation = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN5BattleFieldEnemyInfoItem:_PlayAnimation()
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, self
     YIELD(TT, (self._index - 1) * 33)
-    ;
-    (self._animation):Play("uieff_N5_Level_Info_Enemy_Item_In")
-  end
-, self)
+    self._animation:Play("uieff_N5_Level_Info_Enemy_Item_In")
+  end, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldEnemyInfoItem._SetEnemyList = function(self)
-  -- function num : 0_4
-  (self._indexText):SetText(self._index .. "/" .. self._indexTotal)
-  ;
-  (self._militaryExpliot):SetText(((self._cfg_conquest_level_wave).WaveFirstPassAward)[2])
-  self._enemyWidget = (self._enemyMsg):SpawnObject("UIN5BattleFieldEnemyMsg")
+function UIN5BattleFieldEnemyInfoItem:_SetEnemyList()
+  self._indexText:SetText(self._index .. "/" .. self._indexTotal)
+  self._militaryExpliot:SetText(self._cfg_conquest_level_wave.WaveFirstPassAward[2])
+  self._enemyWidget = self._enemyMsg:SpawnObject("UIN5BattleFieldEnemyMsg")
   local monsterIds = self:_GetMonsterIDs()
-  ;
-  (self._enemyWidget):SetData(monsterIds, self._index == 1)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._enemyWidget:SetData(monsterIds, self._index == 1)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldEnemyInfoItem._GetMonsterIDs = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN5BattleFieldEnemyInfoItem:_GetMonsterIDs()
   local ids = {}
   if self._waveId then
     ids = self:_UniqueBookShowClassId()
   else
-    ;
-    (Log.error)((string.format)("battlefield enemy info error. waveId: %d", self._waveId))
+    Log.error(string.format("battlefield enemy info error. waveId: %d", self._waveId))
   end
   return ids
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldEnemyInfoItem._UniqueClassIdElementType = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN5BattleFieldEnemyInfoItem:_UniqueClassIdElementType()
   local classId_elementType = {}
-  local callBack = function(monsterId)
-    -- function num : 0_6_0 , upvalues : _ENV, classId_elementType
-    local cfgMonster = (Cfg.cfg_monster)[monsterId]
+  
+  local function callBack(monsterId)
+    local cfgMonster = Cfg.cfg_monster[monsterId]
     if cfgMonster ~= nil and cfgMonster.ClassID > 0 then
       if not classId_elementType[cfgMonster.ClassID] then
         classId_elementType[cfgMonster.ClassID] = {}
-        -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-        if not (classId_elementType[cfgMonster.ClassID])[cfgMonster.ElementType] then
-          (classId_elementType[cfgMonster.ClassID])[cfgMonster.ElementType] = {}
+        if not classId_elementType[cfgMonster.ClassID][cfgMonster.ElementType] then
+          classId_elementType[cfgMonster.ClassID][cfgMonster.ElementType] = {}
         end
       end
-      -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (classId_elementType[cfgMonster.ClassID])[cfgMonster.ElementType] = cfgMonster
+      classId_elementType[cfgMonster.ClassID][cfgMonster.ElementType] = cfgMonster
     end
   end
-
-  local cfgWave = (Cfg.cfg_monster_wave)[self._waveId]
+  
+  local cfgWave = Cfg.cfg_monster_wave[self._waveId]
   if cfgWave then
-    local cfgRefresh = (Cfg.cfg_refresh)[cfgWave.WaveBeginRefreshID]
+    local cfgRefresh = Cfg.cfg_refresh[cfgWave.WaveBeginRefreshID]
     local refreshIdList = cfgRefresh.MonsterRefreshIDList
-    for key,value in pairs(refreshIdList) do
-      local cfgRefreshMonster = ((Cfg.cfg_refresh_monster)[value]).MonsterIDList
+    for key, value in pairs(refreshIdList) do
+      local cfgRefreshMonster = Cfg.cfg_refresh_monster[value].MonsterIDList
       if cfgRefreshMonster then
-        for key1,value1 in pairs(cfgRefreshMonster) do
+        for key1, value1 in pairs(cfgRefreshMonster) do
           callBack(value1)
         end
       end
     end
   end
-  do
-    return classId_elementType
-  end
+  return classId_elementType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldEnemyInfoItem._UniqueBookShowClassId = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN5BattleFieldEnemyInfoItem:_UniqueBookShowClassId()
   local monsters = self:_UniqueClassIdElementType()
   local newMonsters = {}
-  for key,datas in pairs(monsters) do
-    for key,cfg in pairs(datas) do
-      (table.insert)(newMonsters, cfg)
+  for key, datas in pairs(monsters) do
+    for key, cfg in pairs(datas) do
+      table.insert(newMonsters, cfg)
     end
   end
   local newMonsters2 = {}
   local keys = {}
-  for index,value in ipairs(newMonsters) do
-    local cfg = (Cfg.cfg_monster_class)[value.ClassID]
+  for index, value in ipairs(newMonsters) do
+    local cfg = Cfg.cfg_monster_class[value.ClassID]
     if not newMonsters2[cfg.bookShowClassId] then
       newMonsters2[cfg.bookShowClassId] = value
-      ;
-      (table.insert)(keys, cfg.bookShowClassId)
+      table.insert(keys, cfg.bookShowClassId)
     end
   end
   local a = {}
-  for key,data in pairs(newMonsters2) do
-    (table.insert)(a, data)
+  for key, data in pairs(newMonsters2) do
+    table.insert(a, data)
   end
-  ;
-  (table.sort)(a, function(a, b)
-    -- function num : 0_7_0 , upvalues : _ENV
+  table.sort(a, function(a, b)
     local classIdA = a.ClassID
     local classIdB = b.ClassID
-    local clsA = (Cfg.cfg_monster_class)[classIdA]
-    local clsB = (Cfg.cfg_monster_class)[classIdB]
+    local clsA = Cfg.cfg_monster_class[classIdA]
+    local clsB = Cfg.cfg_monster_class[classIdB]
     local isBossA = clsA.MonsterType == 2 and 1 or 0
     local isBossB = clsB.MonsterType == 2 and 1 or 0
     if isBossA == isBossB then
       local isBodyAreaA = #clsA.Area
       local isBodyAreaB = #clsB.Area
-      if clsB.ID >= clsA.ID then
-        do
-          do return isBodyAreaA ~= isBodyAreaB end
-          do return isBodyAreaB < isBodyAreaA end
-          do return isBossB < isBossA end
-          -- DECOMPILER ERROR: 6 unprocessed JMP targets
-        end
+      if isBodyAreaA == isBodyAreaB then
+        return clsA.ID > clsB.ID
+      else
+        return isBodyAreaA > isBodyAreaB
       end
+    else
+      return isBossA > isBossB
     end
-  end
-)
+  end)
   local newMonsterIds = {}
-  local count = (table.count)(newMonsters2)
-  if count > 5 then
+  local count = table.count(newMonsters2)
+  if 5 < count then
     count = 5
   end
   for i = 1, count do
-    (table.insert)(newMonsterIds, (a[i]).ID)
+    table.insert(newMonsterIds, a[i].ID)
   end
   return newMonsterIds
 end
-
-

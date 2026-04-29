@@ -1,8 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/effect_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local EffectType = {Bind = 1, FollowHead = 2, Path = 3, UI = 4, VirtualBind = 5, ScreenEffPoint = 6, Hit = 7, MAx = 99}
+local EffectType = {
+  Bind = 1,
+  FollowHead = 2,
+  Path = 3,
+  UI = 4,
+  VirtualBind = 5,
+  ScreenEffPoint = 6,
+  Hit = 7,
+  MAx = 99.0
+}
 _enum("EffectType", EffectType)
-

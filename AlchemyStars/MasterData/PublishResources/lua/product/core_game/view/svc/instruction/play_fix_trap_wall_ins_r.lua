@@ -1,41 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_fix_trap_wall_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayFixTrapWallInstruction", BaseInstruction)
 PlayFixTrapWallInstruction = PlayFixTrapWallInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayFixTrapWallInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayFixTrapWallInstruction:Constructor(paramList)
   self._stageIndex = tonumber(paramList.stageIndex) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayFixTrapWallInstruction.GetCacheResource = function(self)
-  -- function num : 0_1
+function PlayFixTrapWallInstruction:GetCacheResource()
   local t = {}
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayFixTrapWallInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayFixTrapWallInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.FixTrapWall, self._stageIndex)
   if resultArray == nil then
-    (Log.fatal)("PlayFixTrapWallInstruction, result is nil.")
-    return 
+    Log.fatal("PlayFixTrapWallInstruction, result is nil.")
+    return
   end
   local result = resultArray[1]
   if result == nil then
-    (Log.fatal)("PlayFixTrapWallInstruction, result is nil.")
-    return 
+    Log.fatal("PlayFixTrapWallInstruction, result is nil.")
+    return
   end
   local isAdd = result:GetIsAdd()
   local trapWallPosList = result:GetFixTrapWallPosList()
@@ -47,10 +34,10 @@ PlayFixTrapWallInstruction.DoInstruction = function(self, TT, casterEntity, phas
     renderTrapWallComponent = renderBoardEntity:RenderTrapWall()
   end
   if isAdd then
-    for _,trapWallPos in ipairs(trapWallPosList) do
+    for _, trapWallPos in ipairs(trapWallPosList) do
       local dir = Vector2(0, 0)
       local effectID = BattleConst.TrapWallEffectIDW
-      if trapWallPos.x ~= (math.ceil)(trapWallPos.x) then
+      if trapWallPos.x ~= math.ceil(trapWallPos.x) then
         dir = Vector2(1, 0)
         effectID = BattleConst.TrapWallEffectIDL
       end
@@ -58,20 +45,16 @@ PlayFixTrapWallInstruction.DoInstruction = function(self, TT, casterEntity, phas
       renderTrapWallComponent:AddEffectEntity(effEntity:GetID(), trapWallPos)
     end
   else
-    do
-      for _,pos in ipairs(trapWallPosList) do
-        local trapWall = renderTrapWallComponent:GetTrapWall(pos)
-        if trapWall then
-          local entityID = trapWall:GetEffectEntityID()
-          local effectEntity = world:GetEntityByID(entityID)
-          if effectEntity then
-            world:DestroyEntity(effectEntity)
-          end
-          renderTrapWallComponent:RemoveTrapWall(pos)
+    for _, pos in ipairs(trapWallPosList) do
+      local trapWall = renderTrapWallComponent:GetTrapWall(pos)
+      if trapWall then
+        local entityID = trapWall:GetEffectEntityID()
+        local effectEntity = world:GetEntityByID(entityID)
+        if effectEntity then
+          world:DestroyEntity(effectEntity)
         end
+        renderTrapWallComponent:RemoveTrapWall(pos)
       end
     end
   end
 end
-
-

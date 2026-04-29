@@ -1,33 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/season/stn_season_gm_pass_camp_mission.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("Season_GM_PassCampMission", Common_AsyncBase)
 Season_GM_PassCampMission = Season_GM_PassCampMission
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Season_GM_PassCampMission.Constructor = function(self, _manager)
-  -- function num : 0_0
+function Season_GM_PassCampMission:Constructor(_manager)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Season_GM_PassCampMission.TaskFunc = function(self, TT, status)
-  -- function num : 0_1 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function Season_GM_PassCampMission:TaskFunc(TT, status)
+  local runData = self.m_pManager:GetMissionRunData()
   local missionID = runData:GetMissionID()
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local res = AsyncRequestRes:New()
   campaignModule:GetCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_INLAND_SEASON)
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
   local seasonObj = seasonModule:GetCurSeasonObj()
   local seasonMissionComponent = seasonObj:GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
   local componentID = seasonMissionComponent:GetCampaignMissionComponentId()
   local paramKeyMap = seasonMissionComponent:GetCampaignMissionParamKeyMap()
-  ;
-  (self._manager):AsyncGM_PassCampMission(TT, status, componentID, paramKeyMap[1], missionID)
+  self._manager:AsyncGM_PassCampMission(TT, status, componentID, paramKeyMap[1], missionID)
 end
-
-

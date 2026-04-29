@@ -1,13 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/pickup_chess_pet_state_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PickUpChessPetStateSystem_Render", UniqueReactiveSystem)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpChessPetStateSystem_Render.IsInterested = function(self, index, previousComponent, component)
-  -- function num : 0_0 , upvalues : _ENV
+function PickUpChessPetStateSystem_Render:IsInterested(index, previousComponent, component)
   if component == nil then
     return false
   end
@@ -20,20 +13,11 @@ PickUpChessPetStateSystem_Render.IsInterested = function(self, index, previousCo
   return false
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessPetStateSystem_Render.ExecuteWorld = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
+function PickUpChessPetStateSystem_Render:ExecuteWorld(world)
   self._world = world
-  ;
-  (Log.notice)("### PickUpChessPetStateSystem ExecuteWorld")
+  Log.notice("### PickUpChessPetStateSystem ExecuteWorld")
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessPetStateSystem_Render.Filter = function(self, world)
-  -- function num : 0_2
+function PickUpChessPetStateSystem_Render:Filter(world)
   return true
 end
-
-

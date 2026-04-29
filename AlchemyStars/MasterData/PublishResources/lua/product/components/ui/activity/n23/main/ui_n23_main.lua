@@ -1,64 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n23/main/ui_n23_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN23Main", UIController)
 UIN23Main = UIN23Main
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN23Main.Constructor = function(self, ui_root_transform)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN23Main:Constructor(ui_root_transform)
   self.mCampaign = self:GetModule(CampaignModule)
-  self.data = (self.mCampaign):GetN23Data()
-  self.strsLeftTime = {"str_n23_left_time_d_h", "str_n23_left_time_d", "str_n23_left_time_h_m", "str_n23_left_time_h", "str_n23_left_time_m"}
-  self.strsLineLeftTime = {"str_n23_line_left_time_d_h", "str_n23_line_left_time_d", "str_n23_line_left_time_h_m", "str_n23_line_left_time_h", "str_n23_line_left_time_m"}
-  self.strsAdventureUnlockCD = {"str_n23_adventure_unlock_left_time_d_h", "str_n23_adventure_unlock_left_time_d", "str_n23_adventure_unlock_left_time_h_m", "str_n23_adventure_unlock_left_time_h", "str_n23_adventure_unlock_left_time_m"}
-  self.strsAdventureCloseCD = {"str_n23_adventure_close_left_time_d_h", "str_n23_adventure_close_left_time_d", "str_n23_adventure_close_left_time_h_m", "str_n23_adventure_close_left_time_h", "str_n23_adventure_close_left_time_m"}
+  self.data = self.mCampaign:GetN23Data()
+  self.strsLeftTime = {
+    "str_n23_left_time_d_h",
+    "str_n23_left_time_d",
+    "str_n23_left_time_h_m",
+    "str_n23_left_time_h",
+    "str_n23_left_time_m"
+  }
+  self.strsLineLeftTime = {
+    "str_n23_line_left_time_d_h",
+    "str_n23_line_left_time_d",
+    "str_n23_line_left_time_h_m",
+    "str_n23_line_left_time_h",
+    "str_n23_line_left_time_m"
+  }
+  self.strsAdventureUnlockCD = {
+    "str_n23_adventure_unlock_left_time_d_h",
+    "str_n23_adventure_unlock_left_time_d",
+    "str_n23_adventure_unlock_left_time_h_m",
+    "str_n23_adventure_unlock_left_time_h",
+    "str_n23_adventure_unlock_left_time_m"
+  }
+  self.strsAdventureCloseCD = {
+    "str_n23_adventure_close_left_time_d_h",
+    "str_n23_adventure_close_left_time_d",
+    "str_n23_adventure_close_left_time_h_m",
+    "str_n23_adventure_close_left_time_h",
+    "str_n23_adventure_close_left_time_m"
+  }
   self.CampaignType23 = ECampaignType.CAMPAIGN_TYPE_N23
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
-  (self.data):RequestCampaign(TT, self.CampaignType23, res)
+function UIN23Main:LoadDataOnEnter(TT, res, uiParams)
+  self.data:RequestCampaign(TT, self.CampaignType23, res)
   if res and not res:GetSucc() then
-    (self.mCampaign):CheckErrorCode(res.m_result, (self.mCampaign)._id, nil, nil)
-    return 
+    self.mCampaign:CheckErrorCode(res.m_result, self.mCampaign._id, nil, nil)
+    return
   end
   self:LoadDataOnEnter_BattlePass(TT, res)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.LoadDataOnEnter_BattlePass = function(self, TT, res)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN23Main:LoadDataOnEnter_BattlePass(TT, res)
   self._battlepassCampaign = UIActivityCampaign:New()
-  ;
-  (self._battlepassCampaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
+  self._battlepassCampaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
-  (N23Data.SetPrefsMain)()
+function UIN23Main:OnShow(uiParams)
+  N23Data.SetPrefsMain()
   self.imgRT = uiParams[1]
-  self.anim = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
+  self.anim = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
   self.rt = self:GetUIComponent("RawImage", "Eff")
   local btns = self:GetUIComponent("UISelectObjectPath", "btns")
   self._backBtns = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_3_0 , upvalues : self, _ENV
+  self._backBtns:SetData(function()
     self:SwitchState(UIStateType.UIMain)
-  end
-, nil, nil, false, function()
-    -- function num : 0_3_1 , upvalues : self
-    (self.SafeArea):SetActive(false)
-  end
-)
+  end, nil, nil, false, function()
+    self.SafeArea:SetActive(false)
+  end)
   self.SafeArea = self:GetGameObject("SafeArea")
   self.imgFilm = self:GetUIComponent("Image", "BtnFilm")
   self.imgAdventure = self:GetUIComponent("Image", "BtnAdventure")
@@ -86,71 +88,50 @@ UIN23Main.OnShow = function(self, uiParams)
   self.txtShopLow = self:GetUIComponent("UILocalizationText", "txtShopLow")
   self.txtShop = self:GetUIComponent("UILocalizationText", "txtShop")
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
-  self.teActivity = (UIActivityHelper.StartTimerEvent)(self.teActivity, function()
-    -- function num : 0_3_2 , upvalues : self
+  self.teActivity = UIActivityHelper.StartTimerEvent(self.teActivity, function()
     self:FlushCDActivity()
-  end
-, 60000)
+  end, 60000)
   self:PlayAnim(function()
-    -- function num : 0_3_3 , upvalues : self
     self:_CheckGuide()
-  end
-)
+  end)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN23Main:OnHide()
   if self.imgRT then
-    (self.imgRT):Release()
+    self.imgRT:Release()
     self.imgRT = nil
   end
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
-  self.teActivity = (UIActivityHelper.CancelTimerEvent)(self.teActivity)
+  self.teActivity = UIActivityHelper.CancelTimerEvent(self.teActivity)
   self:CancelTimerEventNormal()
   self:CancelTimerEventAdventure()
   self.data = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.CancelTimerEventNormal = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN23Main:CancelTimerEventNormal()
   if self.teNormal then
-    ((GameGlobal.Timer)()):CancelEvent(self.teNormal)
+    GameGlobal.Timer():CancelEvent(self.teNormal)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.CancelTimerEventAdventure = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN23Main:CancelTimerEventAdventure()
   if self.teAdventure then
-    ((GameGlobal.Timer)()):CancelEvent(self.teAdventure)
+    GameGlobal.Timer():CancelEvent(self.teAdventure)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_7
-  do
-    if self.data then
-      local cType, cId = (self.data):GetCampaignTypeId()
-      if cId == campaign_id then
-        self:Flush()
-      end
+function UIN23Main:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self.data then
+    local cType, cId = self.data:GetCampaignTypeId()
+    if cId == campaign_id then
+      self:Flush()
     end
-    self:FlushRedPointBattlePass()
   end
+  self:FlushRedPointBattlePass()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.Flush = function(self)
-  -- function num : 0_8
+function UIN23Main:Flush()
   self:FlushRedPointBattlePass()
   self:FlushRedPointAward()
   self:FlushRedPointFilm()
@@ -163,454 +144,294 @@ UIN23Main.Flush = function(self)
   self:FlushCDActivity()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.PlayAnim = function(self, callback)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN23Main:PlayAnim(callback)
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV, callback
     if self.imgRT then
       local key = "UIN23MainPlayAnim"
       self:Lock(key)
-      -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.rt).texture = self.imgRT
-      ;
-      (self.anim):Play()
+      self.rt.texture = self.imgRT
+      self.anim:Play()
       YIELD(TT, 2333)
       self:UnLock(key)
     else
-      do
-        do
-          local state = (self.anim):get_Item("uieff_UIN23Main_in")
-          state.normalizedTime = 1
-          ;
-          (self.anim):Play()
-          if callback then
-            callback()
-          end
-        end
-      end
+      local state = self.anim:get_Item("uieff_UIN23Main_in")
+      state.normalizedTime = 1
+      self.anim:Play()
     end
-  end
-, self)
+    if callback then
+      callback()
+    end
+  end, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.FlushShop = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local s = (self.data):GetStateShop()
+function UIN23Main:FlushShop()
+  local s = self.data:GetStateShop()
   if s == UISummerOneEnterBtnState.Normal then
-    (self.imgShopLock):SetActive(false)
+    self.imgShopLock:SetActive(false)
   else
-    ;
-    (self.imgShopLock):SetActive(true)
+    self.imgShopLock:SetActive(true)
   end
-  local c = (self.data):GetComponentShop()
+  local c = self.data:GetComponentShop()
   local icon, count = c:GetCostItemIconText()
   local c1 = "#847d7b"
   local c2 = "#ffe671"
-  local text = (UIActivityHelper.FormatNumber_PreZero)(7, count, c1, c2)
-  ;
-  (self.txtShop):SetText(text)
-  ;
-  (self.txtShopLow):SetText(count)
+  local text = UIActivityHelper.FormatNumber_PreZero(7, count, c1, c2)
+  self.txtShop:SetText(text)
+  self.txtShopLow:SetText(count)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.FlushRedPointBattlePass = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local bShow = (UIActivityHelper.CheckCampaignSampleRedPoint)(self._battlepassCampaign)
-  ;
-  (self.redBattlePass):SetActive(bShow)
+function UIN23Main:FlushRedPointBattlePass()
+  local bShow = UIActivityHelper.CheckCampaignSampleRedPoint(self._battlepassCampaign)
+  self.redBattlePass:SetActive(bShow)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.FlushRedPointAward = function(self)
-  -- function num : 0_12
+function UIN23Main:FlushRedPointAward()
   if self.data then
-    local red = (self.data):CheckRedAward()
-    ;
-    (self.redAward):SetActive(red)
+    local red = self.data:CheckRedAward()
+    self.redAward:SetActive(red)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.FlushRedPointFilm = function(self)
-  -- function num : 0_13
-  do
-    if self.data then
-      local red = (self.data):CheckRedFilm()
-      ;
-      (self.redFilm):SetActive(red)
-    end
-    self:FlushNewFilm()
-  end
-end
-
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.FlushRedPointAdventure = function(self)
-  -- function num : 0_14
-  do
-    if self.data then
-      local red = (self.data):CheckRedAdventure()
-      ;
-      (self.redAdventure):SetActive(red)
-    end
-    self:FlushNewAdventure()
-  end
-end
-
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.FlushRedPointStageNormal = function(self)
-  -- function num : 0_15
-  do
-    if self.data then
-      local red = (self.data):CheckRedNormal()
-      ;
-      (self.redStageNormal):SetActive(red)
-    end
-    self:FlushNewLine()
-  end
-end
-
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.FlushRedPointShop = function(self)
-  -- function num : 0_16
-  do
-    if self.data then
-      local red = (self.data):CheckRedShop()
-      ;
-      (self.redShop):SetActive(red)
-    end
-    self:FlushNewShop()
-  end
-end
-
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.FlushNewFilm = function(self)
-  -- function num : 0_17
+function UIN23Main:FlushRedPointFilm()
   if self.data then
-    local new = (self.data):CheckNewFilm()
-    ;
-    (self.newFilm):SetActive(new)
+    local red = self.data:CheckRedFilm()
+    self.redFilm:SetActive(red)
   end
+  self:FlushNewFilm()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.FlushNewAdventure = function(self)
-  -- function num : 0_18
+function UIN23Main:FlushRedPointAdventure()
   if self.data then
-    local new = (self.data):CheckNewAdventure()
-    ;
-    (self.newAdventure):SetActive(new)
+    local red = self.data:CheckRedAdventure()
+    self.redAdventure:SetActive(red)
   end
+  self:FlushNewAdventure()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.FlushNewLine = function(self)
-  -- function num : 0_19
+function UIN23Main:FlushRedPointStageNormal()
   if self.data then
-    local new = (self.data):CheckNewLine()
-    ;
-    (self.newLine):SetActive(new)
+    local red = self.data:CheckRedNormal()
+    self.redStageNormal:SetActive(red)
   end
+  self:FlushNewLine()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.FlushNewShop = function(self)
-  -- function num : 0_20
+function UIN23Main:FlushRedPointShop()
   if self.data then
-    local new = (self.data):CheckNewShop()
-    ;
-    (self.newShop):SetActive(new)
+    local red = self.data:CheckRedShop()
+    self.redShop:SetActive(red)
+  end
+  self:FlushNewShop()
+end
+
+function UIN23Main:FlushNewFilm()
+  if self.data then
+    local new = self.data:CheckNewFilm()
+    self.newFilm:SetActive(new)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
+function UIN23Main:FlushNewAdventure()
+  if self.data then
+    local new = self.data:CheckNewAdventure()
+    self.newAdventure:SetActive(new)
+  end
+end
 
-UIN23Main.FlushCDActivity = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
-  local cs = (self.data):GetCampaignSample()
+function UIN23Main:FlushNewLine()
+  if self.data then
+    local new = self.data:CheckNewLine()
+    self.newLine:SetActive(new)
+  end
+end
+
+function UIN23Main:FlushNewShop()
+  if self.data then
+    local new = self.data:CheckNewShop()
+    self.newShop:SetActive(new)
+  end
+end
+
+function UIN23Main:FlushCDActivity()
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
+  local cs = self.data:GetCampaignSample()
   if nowTimestamp < cs.end_time then
-    (UIForge.FlushCDText)(self.txtStageLeftTime, cs.end_time, self.strsLeftTime, false)
+    UIForge.FlushCDText(self.txtStageLeftTime, cs.end_time, self.strsLeftTime, false)
   else
-    ;
-    (self.txtStageLeftTime):RefreshText((StringTable.Get)("str_activity_finished"))
-    self.teActivity = (UIActivityHelper.CancelTimerEvent)(self.teActivity)
+    self.txtStageLeftTime:RefreshText(StringTable.Get("str_activity_finished"))
+    self.teActivity = UIActivityHelper.CancelTimerEvent(self.teActivity)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.FlushAdventureLeftTime = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
-  local cInfo = (self.data):GetComponentInfoAdventure()
+function UIN23Main:FlushAdventureLeftTime()
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
+  local cInfo = self.data:GetComponentInfoAdventure()
   if nowTimestamp < cInfo.m_unlock_time then
+  else
     self:CancelTimerEventAdventure()
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.RegisterTimeEvent = function(self, seconds, componentId)
-  -- function num : 0_23 , upvalues : _ENV
+function UIN23Main:RegisterTimeEvent(seconds, componentId)
   if componentId == ECampaignN23ComponentID.ECAMPAIGN_N23_LINE_MISSION then
     self:CancelTimerEventNormal()
+  elseif componentId == ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN then
+    self:CancelTimerEventAdventure()
   else
-    if componentId == ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN then
-      self:CancelTimerEventAdventure()
-    else
-      ;
-      (Log.warn)("### RegisterTimeEvent componentId=", componentId)
-      return 
-    end
+    Log.warn("### RegisterTimeEvent componentId=", componentId)
+    return
   end
   if seconds < 60 then
     seconds = 60
   end
   local ms = seconds * 1000
-  local te = ((GameGlobal.Timer)()):AddEvent(ms, function()
-    -- function num : 0_23_0 , upvalues : self, componentId, _ENV
+  local te = GameGlobal.Timer():AddEvent(ms, function()
     self:StartTask(function(TT)
-      -- function num : 0_23_0_0 , upvalues : self, componentId, _ENV
       if self.data then
-        (self.data):RequestCampaign(TT)
+        self.data:RequestCampaign(TT)
         if componentId == ECampaignN23ComponentID.ECAMPAIGN_N23_LINE_MISSION then
           self:FlushNormalStage()
-        else
-          if componentId == ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN then
-            self:FlushStateAdventure()
-          end
+        elseif componentId == ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN then
+          self:FlushStateAdventure()
         end
       end
-    end
-, self)
-  end
-)
+    end, self)
+  end)
   if componentId == ECampaignN23ComponentID.ECAMPAIGN_N23_LINE_MISSION then
     self.teNormal = te
-  else
-    if componentId == ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN then
-      self.teAdventure = te
-    end
+  elseif componentId == ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN then
+    self.teAdventure = te
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.FlushStateAdventure = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  (self.imgFilmLock):SetActive(true)
-  ;
-  (self.imgAdventureLock):SetActive(true)
-  local cInfo = (self.data):GetComponentInfoAdventure()
+function UIN23Main:FlushStateAdventure()
+  self.imgFilmLock:SetActive(true)
+  self.imgAdventureLock:SetActive(true)
+  local cInfo = self.data:GetComponentInfoAdventure()
   if not cInfo then
-    (Log.fatal)("### cInfo nil.")
-    return 
+    Log.fatal("### cInfo nil.")
+    return
   end
   local componentId = ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN
-  local state = (self.data):GetStateAdventure()
+  local state = self.data:GetStateAdventure()
   if state == UISummerOneEnterBtnState.NotOpen then
     local unlockTime = cInfo.m_unlock_time
-    self:RegisterTimeEvent((UICommonHelper.CalcLeftSeconds)(unlockTime), componentId)
-    ;
-    (UIForge.FlushCDText)(self.txtLeftTimeAdventure, unlockTime, self.strsAdventureUnlockCD, false)
-    ;
-    (UIForge.FlushCDText)(self.txtLeftTimeFilm, unlockTime, self.strsAdventureUnlockCD, false)
+    self:RegisterTimeEvent(UICommonHelper.CalcLeftSeconds(unlockTime), componentId)
+    UIForge.FlushCDText(self.txtLeftTimeAdventure, unlockTime, self.strsAdventureUnlockCD, false)
+    UIForge.FlushCDText(self.txtLeftTimeFilm, unlockTime, self.strsAdventureUnlockCD, false)
+  elseif state == UISummerOneEnterBtnState.Closed then
+    self:CancelTimerEventAdventure()
+    local strFinished = StringTable.Get("str_activity_finished")
+    self.txtLeftTimeAdventure:RefreshText(strFinished)
+    self.txtLeftTimeFilm:RefreshText(strFinished)
+  elseif state == UISummerOneEnterBtnState.Normal then
+    self.imgFilmLock:SetActive(false)
+    self.imgAdventureLock:SetActive(false)
+    local closeTime = cInfo.m_close_time
+    self:RegisterTimeEvent(UICommonHelper.CalcLeftSeconds(closeTime), componentId)
+    UIForge.FlushCDText(self.txtLeftTimeAdventure, closeTime, self.strsAdventureCloseCD, false)
+    UIForge.FlushCDText(self.txtLeftTimeFilm, closeTime, self.strsAdventureCloseCD, false)
   else
-    do
-      if state == UISummerOneEnterBtnState.Closed then
-        self:CancelTimerEventAdventure()
-        local strFinished = (StringTable.Get)("str_activity_finished")
-        ;
-        (self.txtLeftTimeAdventure):RefreshText(strFinished)
-        ;
-        (self.txtLeftTimeFilm):RefreshText(strFinished)
-      else
-        do
-          if state == UISummerOneEnterBtnState.Normal then
-            (self.imgFilmLock):SetActive(false)
-            ;
-            (self.imgAdventureLock):SetActive(false)
-            local closeTime = cInfo.m_close_time
-            self:RegisterTimeEvent((UICommonHelper.CalcLeftSeconds)(closeTime), componentId)
-            ;
-            (UIForge.FlushCDText)(self.txtLeftTimeAdventure, closeTime, self.strsAdventureCloseCD, false)
-            ;
-            (UIForge.FlushCDText)(self.txtLeftTimeFilm, closeTime, self.strsAdventureCloseCD, false)
-          else
-            do
-              ;
-              (Log.fatal)("### state=", state)
-              self:FlushRedPointFilm()
-              self:FlushRedPointAdventure()
-            end
-          end
-        end
-      end
-    end
+    Log.fatal("### state=", state)
   end
+  self:FlushRedPointFilm()
+  self:FlushRedPointAdventure()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.FlushNormalStage = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  (self.imgStageNormalLock):SetActive(true)
-  local cInfo = (self.data):GetComponentInfoNormal()
+function UIN23Main:FlushNormalStage()
+  self.imgStageNormalLock:SetActive(true)
+  local cInfo = self.data:GetComponentInfoNormal()
   if not cInfo then
-    (Log.fatal)("### GetComponentInfoNormal nil.")
-    return 
+    Log.fatal("### GetComponentInfoNormal nil.")
+    return
   end
   local componentId = ECampaignN23ComponentID.ECAMPAIGN_N23_LINE_MISSION
-  local state = (self.data):GetStateNormal()
-  if state ~= UISummerOneEnterBtnState.NotOpen or state == UISummerOneEnterBtnState.Closed then
+  local state = self.data:GetStateNormal()
+  if state == UISummerOneEnterBtnState.NotOpen then
+  elseif state == UISummerOneEnterBtnState.Closed then
     self:CancelTimerEventNormal()
-    ;
-    (self.txtLeftTimeStageNormal):RefreshText((StringTable.Get)("str_activity_finished"))
+    self.txtLeftTimeStageNormal:RefreshText(StringTable.Get("str_activity_finished"))
+  elseif state == UISummerOneEnterBtnState.Normal then
+    self.imgStageNormalLock:SetActive(false)
+    local closeTime = cInfo.m_close_time
+    local leftSeconds = UICommonHelper.CalcLeftSeconds(closeTime)
+    self:RegisterTimeEvent(leftSeconds, componentId)
+    UIForge.FlushCDText(self.txtLeftTimeStageNormal, closeTime, self.strsLineLeftTime, false)
   else
-    if state == UISummerOneEnterBtnState.Normal then
-      (self.imgStageNormalLock):SetActive(false)
-      local closeTime = cInfo.m_close_time
-      local leftSeconds = (UICommonHelper.CalcLeftSeconds)(closeTime)
-      self:RegisterTimeEvent(leftSeconds, componentId)
-      ;
-      (UIForge.FlushCDText)(self.txtLeftTimeStageNormal, closeTime, self.strsLineLeftTime, false)
-    else
-      do
-        ;
-        (Log.fatal)("### state=", state)
-        self:FlushRedPointStageNormal()
-      end
-    end
+    Log.fatal("### state=", state)
   end
+  self:FlushRedPointStageNormal()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.BgOnClick = function(self, go)
-  -- function num : 0_26
-  (self.SafeArea):SetActive(true)
+function UIN23Main:BgOnClick(go)
+  self.SafeArea:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.BtnIntroOnClick = function(self, go)
-  -- function num : 0_27
+function UIN23Main:BtnIntroOnClick(go)
   self:ShowDialog("UIIntroLoader", "UIN23Intro")
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.BtnBattlePassOnClick = function(self, go)
-  -- function num : 0_28 , upvalues : _ENV
-  ((UIActivityBattlePassHelper.OpenMainController)())(self._battlepassCampaign)
+function UIN23Main:BtnBattlePassOnClick(go)
+  UIActivityBattlePassHelper.OpenMainController()(self._battlepassCampaign)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.BtnLoginAwardOnClick = function(self, go)
-  -- function num : 0_29 , upvalues : _ENV
+function UIN23Main:BtnLoginAwardOnClick(go)
   self:ShowDialog("UIActivityTotalLoginAwardController", false, self.CampaignType23, ECampaignN23ComponentID.ECAMPAIGN_N23_CUMULATIVE_LOGIN)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.BtnFilmOnClick = function(self, go)
-  -- function num : 0_30 , upvalues : _ENV
-  local state = (self.data):GetStateAdventure()
+function UIN23Main:BtnFilmOnClick(go)
+  local state = self.data:GetStateAdventure()
   if self:CheckComponentState(state) then
     self:ShowDialog("UIN23Movie")
-    ;
-    (N23Data.SetPrefsFilm)()
+    N23Data.SetPrefsFilm()
     self:FlushNewFilm()
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.BtnAdventureOnClick = function(self, go)
-  -- function num : 0_31 , upvalues : _ENV
+function UIN23Main:BtnAdventureOnClick(go)
   self:ShowDialog("UIHomelandStoryTaskSimpleController", 1, self.CampaignType23, ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN)
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
   self:StartTask(function(TT)
-    -- function num : 0_31_0 , upvalues : homelandModule, _ENV
     local res = homelandModule:HomelandStoryTaskMoudleUnlockReq()
     if res:GetSucc() then
       res = homelandModule:HomelandStoryTaskUnlockReq(TT, 3)
       if res:GetSucc() then
-        (Log.info)("UIN23Main:BtnAdventureOnClick() Success, id = ", 3)
+        Log.info("UIN23Main:BtnAdventureOnClick() Success, id = ", 3)
       else
-        ;
-        (Log.fatal)("UIN23Main:BtnAdventureOnClick() error, id = ", 3)
+        Log.fatal("UIN23Main:BtnAdventureOnClick() error, id = ", 3)
       end
     end
-  end
-, self)
-  ;
-  (N23Data.SetPrefsAdventure)()
+  end, self)
+  N23Data.SetPrefsAdventure()
   self:FlushNewAdventure()
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.BtnStageNormalOnClick = function(self, go)
-  -- function num : 0_32 , upvalues : _ENV
-  local state = (self.data):GetStateNormal()
+function UIN23Main:BtnStageNormalOnClick(go)
+  local state = self.data:GetStateNormal()
   if self:CheckComponentState(state) then
     self:SwitchState(UIStateType.UIN23Line)
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.BtnShopOnClick = function(self, go)
-  -- function num : 0_33 , upvalues : _ENV
-  local cType, cId = (self.data):GetCampaignTypeId()
-  ;
-  (ClientCampaignShop.OpenCampaignShop)(cType, cId)
+function UIN23Main:BtnShopOnClick(go)
+  local cType, cId = self.data:GetCampaignTypeId()
+  ClientCampaignShop.OpenCampaignShop(cType, cId)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main.CheckComponentState = function(self, btnState)
-  -- function num : 0_34 , upvalues : _ENV
+function UIN23Main:CheckComponentState(btnState)
   if btnState == UISummerOneEnterBtnState.Normal then
     return true
   end
   local errType = 0
   if btnState == UISummerOneEnterBtnState.NotOpen then
     errType = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN
-  else
-    if btnState == UISummerOneEnterBtnState.Closed then
-      errType = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
-    end
+  elseif btnState == UISummerOneEnterBtnState.Closed then
+    errType = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
   end
-  ;
-  (self.mCampaign):ShowErrorToast(errType, true)
+  self.mCampaign:ShowErrorToast(errType, true)
   return false
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Main._CheckGuide = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN23Main)
+function UIN23Main:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN23Main)
 end
-
-

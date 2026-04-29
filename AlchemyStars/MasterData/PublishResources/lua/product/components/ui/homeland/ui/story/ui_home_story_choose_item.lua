@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/story/ui_home_story_choose_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeStoryChooseItem", UICustomWidget)
 UIHomeStoryChooseItem = UIHomeStoryChooseItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeStoryChooseItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomeStoryChooseItem:OnShow(uiParams)
   self._text = self:GetUIComponent("UILocalizationText", "text")
   self._contentSizeFitter = self:GetUIComponent("ContentSizeFitter", "layout")
   self._layoutRt = self:GetUIComponent("RectTransform", "layout")
@@ -21,97 +14,54 @@ UIHomeStoryChooseItem.OnShow = function(self, uiParams)
   self:ShowChatIcon(false, nil)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStoryChooseItem.Active = function(self, active)
-  -- function num : 0_1
-  (self._go):SetActive(active)
+function UIHomeStoryChooseItem:Active(active)
+  self._go:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStoryChooseItem.SetData = function(self, idx, txt, callback, type, leftCount, rightCount, PetFishClue)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomeStoryChooseItem:SetData(idx, txt, callback, type, leftCount, rightCount, PetFishClue)
   self._idx = idx
   self._leftCount = leftCount
   self._rightCount = rightCount
   self._PetFishClue = PetFishClue
   self._callback = callback
-  ;
-  (self._text):SetText(txt)
+  self._text:SetText(txt)
   local showType = false
   if type then
     showType = true
   end
-  ;
-  (self._typeGo):SetActive(showType)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R9 in 'UnsetPending'
-
-  if (self._text).preferredWidth > 322 then
-    (self._contentSizeFitter).enabled = false
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._layoutRt).sizeDelta = Vector2(322, 100)
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._text).resizeTextForBestFit = true
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._text).verticalOverflow = (UnityEngine.VerticalWrapMode).Truncate
+  self._typeGo:SetActive(showType)
+  if self._text.preferredWidth > 322 then
+    self._contentSizeFitter.enabled = false
+    self._layoutRt.sizeDelta = Vector2(322, 100)
+    self._text.resizeTextForBestFit = true
+    self._text.verticalOverflow = UnityEngine.VerticalWrapMode.Truncate
   else
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._contentSizeFitter).enabled = true
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._text).resizeTextForBestFit = false
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._text).verticalOverflow = (UnityEngine.VerticalWrapMode).Overflow
+    self._contentSizeFitter.enabled = true
+    self._text.resizeTextForBestFit = false
+    self._text.verticalOverflow = UnityEngine.VerticalWrapMode.Overflow
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStoryChooseItem.SetNewStatus = function(self, status)
-  -- function num : 0_3
-  (self._new):SetActive(status)
+function UIHomeStoryChooseItem:SetNewStatus(status)
+  self._new:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStoryChooseItem.bgOnClick = function(self, go)
-  -- function num : 0_4
+function UIHomeStoryChooseItem:bgOnClick(go)
   if self._callback then
-    (self._callback)(self._idx, self._leftCount, self._rightCount, self._PetFishClue)
+    self._callback(self._idx, self._leftCount, self._rightCount, self._PetFishClue)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStoryChooseItem.ShowChatIcon = function(self, inShow, iconName)
-  -- function num : 0_5
+function UIHomeStoryChooseItem:ShowChatIcon(inShow, iconName)
   local paddingLeft = 0
   if inShow then
-    (self._chatIcon):LoadImage(iconName)
+    self._chatIcon:LoadImage(iconName)
     paddingLeft = 0
   else
     paddingLeft = 0
   end
-  local padding = (self._layoutHorz).padding
+  local padding = self._layoutHorz.padding
   padding.left = paddingLeft
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._layoutHorz).padding = padding
-  ;
-  ((self._chatIconImg).gameObject):SetActive(inShow)
+  self._layoutHorz.padding = padding
+  self._chatIconImg.gameObject:SetActive(inShow)
 end
-
-

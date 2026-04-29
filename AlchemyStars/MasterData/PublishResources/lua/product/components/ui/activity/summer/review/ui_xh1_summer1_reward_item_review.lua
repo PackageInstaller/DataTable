@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/review/ui_xh1_summer1_reward_item_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXH1Summer1RewardItemReview", UICustomWidget)
 UIXH1Summer1RewardItemReview = UIXH1Summer1RewardItemReview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXH1Summer1RewardItemReview.OnShow = function(self)
-  -- function num : 0_0
+function UIXH1Summer1RewardItemReview:OnShow()
   self._hasGet = self:GetGameObject("HasGet")
   self._canGet = self:GetGameObject("CanGet")
   self._unComplete = self:GetGameObject("UnComplete")
@@ -18,61 +11,37 @@ UIXH1Summer1RewardItemReview.OnShow = function(self)
   self._countLabel = self:GetUIComponent("UILocalizationText", "Count")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Summer1RewardItemReview.SetData = function(self, data, callback, collectCallback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIXH1Summer1RewardItemReview:SetData(data, callback, collectCallback)
   self._data = data
   self._callback = callback
   self._collectCallback = collectCallback
-  ;
-  (self._hasGet):SetActive(false)
-  ;
-  (self._canGet):SetActive(false)
-  ;
-  (self._unComplete):SetActive(false)
-  if (self._data).status == 1 then
-    (self._hasGet):SetActive(true)
-  else
-    if (self._data).status == 2 then
-      (self._canGet):SetActive(true)
-    else
-      if (self._data).status == 3 then
-        (self._unComplete):SetActive(true)
-      end
-    end
+  self._hasGet:SetActive(false)
+  self._canGet:SetActive(false)
+  self._unComplete:SetActive(false)
+  if self._data.status == 1 then
+    self._hasGet:SetActive(true)
+  elseif self._data.status == 2 then
+    self._canGet:SetActive(true)
+  elseif self._data.status == 3 then
+    self._unComplete:SetActive(true)
   end
-  local processStr = (math.floor)(data.progress)
-  ;
-  (self._percentLabel):SetText(processStr .. "%")
-  local roleAsset = ((self._data).rewards)[1]
-  local cfg = (Cfg.cfg_item)[roleAsset.assetid]
-  ;
-  (self._iconLoader):LoadImage(cfg.Icon)
-  ;
-  (self._countLabel):SetText(roleAsset.count)
+  local processStr = math.floor(data.progress)
+  self._percentLabel:SetText(processStr .. "%")
+  local roleAsset = self._data.rewards[1]
+  local cfg = Cfg.cfg_item[roleAsset.assetid]
+  self._iconLoader:LoadImage(cfg.Icon)
+  self._countLabel:SetText(roleAsset.count)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Summer1RewardItemReview.IconOnClick = function(self)
-  -- function num : 0_2
+function UIXH1Summer1RewardItemReview:IconOnClick()
   if self._callback then
-    local roleAsset = ((self._data).rewards)[1]
-    ;
-    (self._callback)(roleAsset, ((self._icon).transform).position)
+    local roleAsset = self._data.rewards[1]
+    self._callback(roleAsset, self._icon.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Summer1RewardItemReview.CanGetOnClick = function(self, go)
-  -- function num : 0_3
-  (self._collectCallback)((self._data).progress)
-  ;
-  (self._hasGet):SetActive(true)
-  ;
-  (self._canGet):SetActive(false)
+function UIXH1Summer1RewardItemReview:CanGetOnClick(go)
+  self._collectCallback(self._data.progress)
+  self._hasGet:SetActive(true)
+  self._canGet:SetActive(false)
 end
-
-

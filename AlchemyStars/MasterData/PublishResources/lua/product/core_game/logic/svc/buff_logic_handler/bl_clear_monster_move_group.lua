@@ -1,25 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_clear_monster_move_group.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicClearMonsterMoveGroup", BuffLogicBase)
 BuffLogicClearMonsterMoveGroup = BuffLogicClearMonsterMoveGroup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicClearMonsterMoveGroup.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicClearMonsterMoveGroup:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicClearMonsterMoveGroup.DoLogic = function(self)
-  -- function num : 0_1
-  local monsterIDCmpt = (self._entity):MonsterID()
+function BuffLogicClearMonsterMoveGroup:DoLogic()
+  local monsterIDCmpt = self._entity:MonsterID()
   if not monsterIDCmpt then
-    return 
+    return
   end
   monsterIDCmpt:SetMoveGroupID(nil)
 end
-
-

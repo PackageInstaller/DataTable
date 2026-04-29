@@ -1,67 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/closing/ui_homeland_movie_replace_record_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMovieReplaceRecordItem", UICustomWidget)
 UIHomelandMovieReplaceRecordItem = UIHomelandMovieReplaceRecordItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMovieReplaceRecordItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandMovieReplaceRecordItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieReplaceRecordItem.SetData = function(self, pstId, record)
-  -- function num : 0_1
+function UIHomelandMovieReplaceRecordItem:SetData(pstId, record)
   self._pstId = pstId
   self._record = record
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieReplaceRecordItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandMovieReplaceRecordItem:_GetComponents()
   self._recordNameTex = self:GetUIComponent("UILocalizationText", "recordName")
   self._makeTimeTex = self:GetUIComponent("UILocalizationText", "makeTime")
   self._starList = self:GetGameObject("starList")
   self._fullStarIcon = self:GetGameObject("FullStarIcon")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieReplaceRecordItem._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._recordNameTex):SetText((self._record).name)
-  local str = TimeToDate4((self._record).date, "min")
-  ;
-  (self._makeTimeTex):SetText(str)
-  local totalScore = (MovieDataManager:GetInstance()):CaculateTotalScore(self._record)
-  local integerTotalScore = (math.floor)(totalScore)
-  for i = 0, ((self._starList).transform).childCount - 1 do
-    local star = ((self._starList).transform):GetChild(i)
+function UIHomelandMovieReplaceRecordItem:_OnValue()
+  self._recordNameTex:SetText(self._record.name)
+  local str = TimeToDate4(self._record.date, "min")
+  self._makeTimeTex:SetText(str)
+  local totalScore = MovieDataManager:GetInstance():CaculateTotalScore(self._record)
+  local integerTotalScore = math.floor(totalScore)
+  for i = 0, self._starList.transform.childCount - 1 do
+    local star = self._starList.transform:GetChild(i)
     local score = i + 1
-    if score <= integerTotalScore then
-      ((star:Find("Full")).gameObject):SetActive(true)
-    else
-      if i + 0.5 < totalScore then
-        ((star:Find("Half")).gameObject):SetActive(true)
-      end
+    if integerTotalScore >= score then
+      star:Find("Full").gameObject:SetActive(true)
+    elseif totalScore > i + 0.5 then
+      star:Find("Half").gameObject:SetActive(true)
     end
   end
   if integerTotalScore == 5 then
-    (self._fullStarIcon):SetActive(true)
+    self._fullStarIcon:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieReplaceRecordItem.BtnOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIHomelandMovieReplaceRecordSelect, self._pstId)
+function UIHomelandMovieReplaceRecordItem:BtnOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIHomelandMovieReplaceRecordSelect, self._pstId)
 end
-
-

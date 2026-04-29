@@ -1,56 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_pet_trap_move.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamPetTrapMove", SkillEffectParamBase)
 SkillEffectParamPetTrapMove = SkillEffectParamPetTrapMove
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamPetTrapMove.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamPetTrapMove:Constructor(t)
   self._moveStep = t.moveStep
   self._moveType = t.moveType
   self._moveParam = t.moveParam
   self._canMoveTrapLevel = t.canMoveTrapLevel
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamPetTrapMove.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamPetTrapMove:GetEffectType()
   return SkillEffectType.PetTrapMove
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamPetTrapMove.GetMoveStep = function(self)
-  -- function num : 0_2
+function SkillEffectParamPetTrapMove:GetMoveStep()
   return self._moveStep
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamPetTrapMove.GetMoveType = function(self)
-  -- function num : 0_3
+function SkillEffectParamPetTrapMove:GetMoveType()
   return self._moveType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamPetTrapMove.GetMoveParam = function(self)
-  -- function num : 0_4
+function SkillEffectParamPetTrapMove:GetMoveParam()
   return self._moveParam
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamPetTrapMove.GetCanMoveTrapLevel = function(self)
-  -- function num : 0_5
+function SkillEffectParamPetTrapMove:GetCanMoveTrapLevel()
   return self._canMoveTrapLevel
 end
 
-local PetTrapMoveType = {CloseToTeam = 1, AwayFromTeam = 2, FixedPos = 3, SkillPos = 4, Loop = 5, MAX = 9}
+local PetTrapMoveType = {
+  CloseToTeam = 1,
+  AwayFromTeam = 2,
+  FixedPos = 3,
+  SkillPos = 4,
+  Loop = 5,
+  MAX = 9
+}
 _enum("PetTrapMoveType", PetTrapMoveType)
-

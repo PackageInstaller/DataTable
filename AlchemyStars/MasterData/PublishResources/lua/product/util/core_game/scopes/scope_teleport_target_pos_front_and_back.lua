@@ -1,23 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_teleport_target_pos_front_and_back.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_TeleportTargetPosFrontAndBack", SkillScopeCalculator_Base)
 SkillScopeCalculator_TeleportTargetPosFrontAndBack = SkillScopeCalculator_TeleportTargetPosFrontAndBack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_TeleportTargetPosFrontAndBack.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local resultContainer = (casterEntity:SkillContext()):GetResultContainer()
+function SkillScopeCalculator_TeleportTargetPosFrontAndBack:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local resultContainer = casterEntity:SkillContext():GetResultContainer()
   local teleportResult = resultContainer:GetEffectResultByArray(SkillEffectType.Teleport)
   if not teleportResult then
-    (Log.warn)(self._className, "施法者没有执行过瞬移")
+    Log.warn(self._className, "施法者没有执行过瞬移")
     return SkillScopeResult:New(SkillScopeType.TeleportTargetPosFrontAndBack, casterEntity, {}, {})
   end
   if not teleportResult:GetPosNew() or teleportResult:GetPosNew() == teleportResult:GetPosOld() then
-    (Log.warn)(self._className, "瞬移无效-无落点或新旧位置相同")
+    Log.warn(self._className, "瞬移无效-无落点或新旧位置相同")
     return SkillScopeResult:New(SkillScopeType.TeleportTargetPosFrontAndBack, casterEntity, {}, {})
   end
   local posNew = teleportResult:GetPosNew()
@@ -33,26 +26,17 @@ SkillScopeCalculator_TeleportTargetPosFrontAndBack.CalcRange = function(self, sc
   return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_TeleportTargetPosFrontAndBack._GetSimplifiedV2Direction = function(self, v2)
-  -- function num : 0_1
+function SkillScopeCalculator_TeleportTargetPosFrontAndBack:_GetSimplifiedV2Direction(v2)
   local v = v2:Clone()
   if v.x > 0 then
     v.x = 1
-  else
-    if v.x < 0 then
-      v.x = -1
-    end
+  elseif v.x < 0 then
+    v.x = -1
   end
-  if v.y > 0 then
+  if 0 < v.y then
     v.y = 1
-  else
-    if v.y < 0 then
-      v.y = -1
-    end
+  elseif 0 > v.y then
+    v.y = -1
   end
   return v
 end
-
-

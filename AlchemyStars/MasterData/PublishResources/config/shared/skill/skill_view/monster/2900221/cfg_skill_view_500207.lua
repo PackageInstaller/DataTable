@@ -1,33 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2900221/cfg_skill_view_500207.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCloseMonsterPreviewRange; "}
-}
-, 
-{2, 2, 38, 1, 0, 0, 
-{
-effectIDList = {953}
-}
-}
-, 
-{3, 3, 0, 1, 0, 0, 
-{" PlayCasterAnimation,animName = Skill03L; PlayCasterBindEffect,effectID=955; PlayAudio,audioID = 6051,audioType=1; "}
-}
-, 
-{4, 4, 0, 1, 0, 0, 
-{" PlayAbsorbPieceEffect,flyEffectID=817,offsetX=0,offsetY=0.5,offsetZ=0,flySpeed=1,targetPos=Hit,waitFlyEffectTime=500; PlayCasterAddBuff,buffID=40043; "}
-}
-, 
-{5, 5, 38, 2, 4, 500, 
-{
-effectIDList = {817, 821, 952}
-}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCloseMonsterPreviewRange; "
+    }
+  },
+  {
+    2,
+    2,
+    38,
+    1,
+    0,
+    0,
+    {
+      effectIDList = {953}
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName = Skill03L; PlayCasterBindEffect,effectID=955; PlayAudio,audioID = 6051,audioType=1; "
+    }
+  },
+  {
+    4,
+    4,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayAbsorbPieceEffect,flyEffectID=817,offsetX=0,offsetY=0.5,offsetZ=0,flySpeed=1,targetPos=Hit,waitFlyEffectTime=500; PlayCasterAddBuff,buffID=40043; "
+    }
+  },
+  {
+    5,
+    5,
+    38,
+    2,
+    4,
+    500,
+    {
+      effectIDList = {
+        817,
+        821,
+        952
+      }
+    }
+  }
 }
 return config, "ID", key
-

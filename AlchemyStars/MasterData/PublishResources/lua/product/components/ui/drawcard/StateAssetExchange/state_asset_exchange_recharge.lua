@@ -1,59 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/StateAssetExchange/state_asset_exchange_recharge.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateAssetExchangeRecharge", State)
 StateAssetExchangeRecharge = StateAssetExchangeRecharge
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateAssetExchangeRecharge.Init = function(self)
-  -- function num : 0_0
+function StateAssetExchangeRecharge:Init()
   self._fsm = self:GetFsm()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAssetExchangeRecharge.OnEnter = function(self, TT, ...)
-  -- function num : 0_1 , upvalues : _ENV
+function StateAssetExchangeRecharge:OnEnter(TT, ...)
   self:Init()
-  if (EngineGameHelper.EnableAppleVerifyBulletin)() and self._fsm then
-    (ToastManager.ShowToast)((StringTable.Get)("str_pay_yj_not_enough_cant_exchange"))
-    ;
-    (self._fsm):ChangeState(StateAssetExchange.Init)
-    return 
+  if EngineGameHelper.EnableAppleVerifyBulletin() and self._fsm then
+    ToastManager.ShowToast(StringTable.Get("str_pay_yj_not_enough_cant_exchange"))
+    self._fsm:ChangeState(StateAssetExchange.Init)
+    return
   end
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_pay_res_not_enough_goto_recharge"), function(param)
-    -- function num : 0_1_0 , upvalues : self, _ENV
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_pay_res_not_enough_goto_recharge"), function(param)
     if self._fsm then
-      local mShop = (GameGlobal.GetModule)(ShopModule)
-      ;
-      (mShop:GetClientShop()):OpenRechargeShop()
-      ;
-      (self._fsm):ChangeState(StateAssetExchange.Init)
+      local mShop = GameGlobal.GetModule(ShopModule)
+      mShop:GetClientShop():OpenRechargeShop()
+      self._fsm:ChangeState(StateAssetExchange.Init)
     end
-  end
-, nil, function(param)
-    -- function num : 0_1_1 , upvalues : self, _ENV
+  end, nil, function(param)
     if self._fsm then
-      (self._fsm):ChangeState(StateAssetExchange.Init)
+      self._fsm:ChangeState(StateAssetExchange.Init)
     end
-  end
-, nil)
+  end, nil)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAssetExchangeRecharge.OnExit = function(self, TT)
-  -- function num : 0_2
+function StateAssetExchangeRecharge:OnExit(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAssetExchangeRecharge.Destroy = function(self)
-  -- function num : 0_3
+function StateAssetExchangeRecharge:Destroy()
   self._fsm = nil
 end
-
-

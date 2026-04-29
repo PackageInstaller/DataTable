@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/talent/line_mission/ui_season_talent_line_stage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTalentLineStage", UIController)
 UISeasonTalentLineStage = UISeasonTalentLineStage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTalentLineStage._GetComponents = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonTalentLineStage:_GetComponents()
   self._enemy_normal = self:GetUIComponent("UISelectObjectPath", "enemy_normal")
   self._sop = self:GetUIComponent("UISelectObjectPath", "conditions")
   self._conditionsGo = self:GetGameObject("conditions")
@@ -16,7 +9,7 @@ UISeasonTalentLineStage._GetComponents = function(self)
   self:AttachEvent(GameEventType.ShowItemTips, self.ShowTips)
   local s = self:GetUIComponent("UISelectObjectPath", "itemTips")
   self._tips = s:SpawnObject("UISelectInfo")
-  self._seasonModule = (GameGlobal.GetModule)(SeasonModule)
+  self._seasonModule = GameGlobal.GetModule(SeasonModule)
   self.panelBattleInfoGo = self:GetGameObject("PanelBattleInfo")
   self.panelAwardsInfoGo = self:GetGameObject("PanelAwardsInfo")
   self.wordsContentNormal = self:GetUIComponent("UISelectObjectPath", "WordsNormalContent")
@@ -30,10 +23,7 @@ UISeasonTalentLineStage._GetComponents = function(self)
   self._panelBattleInfoTipGo = self:GetGameObject("BattleInfoPanelTip")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonTalentLineStage:OnShow(uiParams)
   self._gradeAtlas = self:GetAsset("UIAwake.spriteatlas", LoadType.SpriteAtlas)
   self._module = self:GetModule(MissionModule)
   self._missionID = uiParams[1]
@@ -42,19 +32,15 @@ UISeasonTalentLineStage.OnShow = function(self, uiParams)
   self._curPanel = UISeasonLevelStagePanelMode.AwardsInfo
   self:_GetComponents()
   self:Init()
-  ;
-  (self._anim):Play("uieff_UISeasonLevelStageS3_In")
+  self._anim:Play("uieff_UISeasonLevelStageS3_In")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.HasPassThreeStar = function(self, missionCfg)
-  -- function num : 0_2
+function UISeasonTalentLineStage:HasPassThreeStar(missionCfg)
   local missionId = missionCfg.CampaignMissionId
-  if not (self._missionFinishInfo)[missionId] then
+  if not self._missionFinishInfo[missionId] then
     return false
   end
-  local missionFinishInfo = (self._missionFinishInfo)[missionId]
+  local missionFinishInfo = self._missionFinishInfo[missionId]
   if missionCfg.ThreeStarCondition1 and missionFinishInfo.star & 1 == 0 then
     return false
   end
@@ -67,194 +53,136 @@ UISeasonTalentLineStage.HasPassThreeStar = function(self, missionCfg)
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.GetSortedArr = function(self, awardType, cfg, stageAwardType)
-  -- function num : 0_3 , upvalues : _ENV
-  local list = (UICommonHelper:GetInstance()):GetDropByAwardType(awardType, cfg)
+function UISeasonTalentLineStage:GetSortedArr(awardType, cfg, stageAwardType)
+  local list = UICommonHelper:GetInstance():GetDropByAwardType(awardType, cfg)
   local vecSort = SortedArray:New(Algorithm.COMPARE_CUSTOM, DiscoveryStage._LessComparer)
   if list then
-    for i,v in ipairs(list) do
+    for i, v in ipairs(list) do
       local award = Award:New()
       award:InitWithCount(v.ItemID, v.Count, v.Type)
       award:FlushType(stageAwardType)
       vecSort:Insert(award)
     end
   end
-  do
-    return vecSort.elements
-  end
+  return vecSort.elements
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.ProcessAward = function(self, missionCfg)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonTalentLineStage:ProcessAward(missionCfg)
   local awards = {}
   if not self:HasPassThreeStar(missionCfg) then
     local awardsStar = self:GetSortedArr(AwardType.ThreeStar, missionCfg, StageAwardType.Star)
     if awardsStar then
-      for i,v in ipairs(awardsStar) do
+      for i, v in ipairs(awardsStar) do
         awards[#awards + 1] = v
       end
     end
   end
-  do
-    if not (self._missionFinishInfo)[self._missionID] then
-      local awardsFirst = self:GetSortedArr(AwardType.First, missionCfg, StageAwardType.First)
-      if awardsFirst then
-        for i,v in ipairs(awardsFirst) do
-          awards[#awards + 1] = v
-        end
-      end
-    end
-    do
-      local normalArr = self:GetSortedArr(AwardType.Pass, missionCfg, StageAwardType.Normal)
-      if normalArr then
-        for i,v in ipairs(normalArr) do
-          awards[#awards + 1] = v
-        end
-      end
-      do
-        return awards
+  if not self._missionFinishInfo[self._missionID] then
+    local awardsFirst = self:GetSortedArr(AwardType.First, missionCfg, StageAwardType.First)
+    if awardsFirst then
+      for i, v in ipairs(awardsFirst) do
+        awards[#awards + 1] = v
       end
     end
   end
+  local normalArr = self:GetSortedArr(AwardType.Pass, missionCfg, StageAwardType.Normal)
+  if normalArr then
+    for i, v in ipairs(normalArr) do
+      awards[#awards + 1] = v
+    end
+  end
+  return awards
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.RefreshWordsArea = function(self)
-  -- function num : 0_5
-  (self.wordsNormalGo):SetActive(true)
+function UISeasonTalentLineStage:RefreshWordsArea()
+  self.wordsNormalGo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.InitWords = function(self)
-  -- function num : 0_6
+function UISeasonTalentLineStage:InitWords()
   self:_InitWords(self.wordsContentNormal, self._missionID)
   self:RefreshWordsArea()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage._InitWords = function(self, sop, missionId)
-  -- function num : 0_7 , upvalues : _ENV
-  local missionCfg = (Cfg.cfg_campaign_mission)[missionId]
+function UISeasonTalentLineStage:_InitWords(sop, missionId)
+  local missionCfg = Cfg.cfg_campaign_mission[missionId]
   local wordsTb = {}
   local usedWordIDList = {}
   local buff = missionCfg.BaseWordBuff
   if buff then
-    if type(buff) ~= "table" or not buff then
-      local words = {buff}
-    end
-    for _,wordId in ipairs(buff) do
-      if not (table.icontains)(usedWordIDList, wordId) then
-        (table.insert)(wordsTb, self:_GetWordDesc(missionId, wordId))
-        ;
-        (table.insert)(usedWordIDList, wordId)
+    local words = type(buff) == "table" and buff or {buff}
+    for _, wordId in ipairs(buff) do
+      if not table.icontains(usedWordIDList, wordId) then
+        table.insert(wordsTb, self:_GetWordDesc(missionId, wordId))
+        table.insert(usedWordIDList, wordId)
       end
     end
   end
-  do
-    local data = wordsTb
-    local count = #data
-    sop:SpawnObjects("UIStageWordItem", count)
-    local pools = sop:GetAllSpawnList()
-    for i = 1, #pools do
-      local item = pools[i]
-      local tex = data[i]
-      item:SetData(tex)
-    end
+  local data = wordsTb
+  local count = #data
+  sop:SpawnObjects("UIStageWordItem", count)
+  local pools = sop:GetAllSpawnList()
+  for i = 1, #pools do
+    local item = pools[i]
+    local tex = data[i]
+    item:SetData(tex)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage._GetWordDesc = function(self, levelId, wordId)
-  -- function num : 0_8 , upvalues : _ENV
-  local word = (Cfg.cfg_word_buff)[wordId]
+function UISeasonTalentLineStage:_GetWordDesc(levelId, wordId)
+  local word = Cfg.cfg_word_buff[wordId]
   if not word then
-    (Log.exception)("cfg_word_buff 中找不到词缀:", wordId, "levelId:", levelId)
+    Log.exception("cfg_word_buff 中找不到词缀:", wordId, "levelId:", levelId)
   end
-  local name = (StringTable.Get)((word.Word)[1])
-  local desc = (StringTable.Get)(word.Desc)
+  local name = StringTable.Get(word.Word[1])
+  local desc = StringTable.Get(word.Desc)
   local tex = "【" .. name .. "】 " .. desc
   return tex
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.RefreshPanelShow = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self.panelAwardsInfoGo):SetActive(self._curPanel == UISeasonLevelStagePanelMode.AwardsInfo)
-  ;
-  (self.panelBattleInfoGo):SetActive(self._curPanel == UISeasonLevelStagePanelMode.BattleInfo)
-  ;
-  (self._panelAwardsTipGo):SetActive(self._curPanel == UISeasonLevelStagePanelMode.AwardsInfo)
-  ;
-  (self._panelBattleInfoTipGo):SetActive(self._curPanel == UISeasonLevelStagePanelMode.BattleInfo)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UISeasonTalentLineStage:RefreshPanelShow()
+  self.panelAwardsInfoGo:SetActive(self._curPanel == UISeasonLevelStagePanelMode.AwardsInfo)
+  self.panelBattleInfoGo:SetActive(self._curPanel == UISeasonLevelStagePanelMode.BattleInfo)
+  self._panelAwardsTipGo:SetActive(self._curPanel == UISeasonLevelStagePanelMode.AwardsInfo)
+  self._panelBattleInfoTipGo:SetActive(self._curPanel == UISeasonLevelStagePanelMode.BattleInfo)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.RefreshPanelText = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
+function UISeasonTalentLineStage:RefreshPanelText()
   if self._curPanel == UISeasonLevelStagePanelMode.AwardsInfo then
-    (self._awardsPanelBtnText).color = Color(0.404, 0.302, 0.259, 1)
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._battleInfoPanelBtnText).color = Color(0.592, 0.51, 0.447, 1)
+    self._awardsPanelBtnText.color = Color(0.404, 0.302, 0.259, 1)
+    self._battleInfoPanelBtnText.color = Color(0.592, 0.51, 0.447, 1)
   else
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._awardsPanelBtnText).color = Color(0.592, 0.51, 0.447, 1)
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._battleInfoPanelBtnText).color = Color(0.404, 0.302, 0.259, 1)
+    self._awardsPanelBtnText.color = Color(0.592, 0.51, 0.447, 1)
+    self._battleInfoPanelBtnText.color = Color(0.404, 0.302, 0.259, 1)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.InitAllAwards = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+function UISeasonTalentLineStage:InitAllAwards()
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   local awards = self:ProcessAward(missionCfg)
   if not awards then
-    return 
+    return
   end
-  local count = (table.count)(awards)
+  local count = table.count(awards)
   local grid = self:GetUIComponent("GridLayoutGroup", "Content")
   local contentSizeFilter = self:GetUIComponent("ContentSizeFitter", "Content")
   local contentRect = self:GetUIComponent("RectTransform", "Content")
-  if count > 4 then
-    grid.childAlignment = (UnityEngine.TextAnchor).MiddleLeft
+  if 4 < count then
+    grid.childAlignment = UnityEngine.TextAnchor.MiddleLeft
     contentSizeFilter.enabled = true
   else
-    grid.childAlignment = (UnityEngine.TextAnchor).MiddleCenter
+    grid.childAlignment = UnityEngine.TextAnchor.MiddleCenter
     contentSizeFilter.enabled = false
   end
   contentRect.localPosition = Vector3(0, 0, 0)
   local sop = self:GetUIComponent("UISelectObjectPath", "Content")
   sop:SpawnObjects("UISeasonStageAwardItemS4", count)
   local list = sop:GetAllSpawnList()
-  for i,v in ipairs(list) do
+  for i, v in ipairs(list) do
     v:Flush(awards[i])
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.Init = function(self)
-  -- function num : 0_12
+function UISeasonTalentLineStage:Init()
   self:RefreshPanelShow()
   self:RefreshPanelText()
   self:InitChapterName()
@@ -266,22 +194,19 @@ UISeasonTalentLineStage.Init = function(self)
   self:RefreshWordsArea()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.UpdateCondition = function(self, three_star_condition, conditions)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonTalentLineStage:UpdateCondition(three_star_condition, conditions)
   local l_cur_star_num = 0
-  for index,value in ipairs(three_star_condition) do
+  for index, value in ipairs(three_star_condition) do
     if value.satisfy == true then
       l_cur_star_num = l_cur_star_num + 1
     end
   end
   local l_finish_star_num = #conditions
-  for index,value in ipairs(three_star_condition) do
+  for index, value in ipairs(three_star_condition) do
     if l_finish_star_num == l_cur_star_num then
       value:FlushSatisfy(false)
     end
-    for i,v in ipairs(conditions) do
+    for i, v in ipairs(conditions) do
       if v == index then
         value:FlushSatisfy(true)
       end
@@ -289,104 +214,84 @@ UISeasonTalentLineStage.UpdateCondition = function(self, three_star_condition, c
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.BtnFightOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
-  local ctx = (self._module):TeamCtx()
-  ctx:Init(TeamOpenerType.Campaign, {self._missionID, (self._component):GetCampaignMissionComponentId(), (self._component):GetCampaignMissionParamKeyMap()})
+function UISeasonTalentLineStage:BtnFightOnClick(go)
+  local ctx = self._module:TeamCtx()
+  ctx:Init(TeamOpenerType.Campaign, {
+    self._missionID,
+    self._component:GetCampaignMissionComponentId(),
+    self._component:GetCampaignMissionParamKeyMap()
+  })
   ctx:ShowDialogUITeams()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.ShowTips = function(self, itemId, pos)
-  -- function num : 0_15
-  (self._tips):SetData(itemId, pos)
+function UISeasonTalentLineStage:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.BgOnClick = function(self)
-  -- function num : 0_16
+function UISeasonTalentLineStage:BgOnClick()
   self:Close()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.InitChapterName = function(self)
-  -- function num : 0_17
+function UISeasonTalentLineStage:InitChapterName()
   self:_InitChapterName(self._chapterNormalNameText, self._missionID)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage._InitChapterName = function(self, text, missionId)
-  -- function num : 0_18 , upvalues : _ENV
-  local missionCfg = (Cfg.cfg_campaign_mission)[missionId]
+function UISeasonTalentLineStage:_InitChapterName(text, missionId)
+  local missionCfg = Cfg.cfg_campaign_mission[missionId]
   if text and missionCfg then
-    text:SetText((StringTable.Get)(missionCfg.Name))
+    text:SetText(StringTable.Get(missionCfg.Name))
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.RefreshThreeStarArea = function(self, playAnim, animDelay)
-  -- function num : 0_19 , upvalues : _ENV
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+function UISeasonTalentLineStage:RefreshThreeStarArea(playAnim, animDelay)
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   local threeStarConditions = {}
   if missionCfg.IgnoreThreeStar and missionCfg.IgnoreThreeStar == 0 then
-    local ids = {missionCfg.ThreeStarCondition1, missionCfg.ThreeStarCondition2, missionCfg.ThreeStarCondition3}
-    for i,v in ipairs(ids) do
+    local ids = {
+      missionCfg.ThreeStarCondition1,
+      missionCfg.ThreeStarCondition2,
+      missionCfg.ThreeStarCondition3
+    }
+    for i, v in ipairs(ids) do
       local cond = StageCondition:New()
       cond:Init(i, v)
-      ;
-      (table.insert)(threeStarConditions, cond)
+      table.insert(threeStarConditions, cond)
     end
-    if (self._missionFinishInfo)[self._missionID] then
-      local starCount, completeStarList = (self._module):ParseStarInfo(((self._missionFinishInfo)[self._missionID]).star)
+    if self._missionFinishInfo[self._missionID] then
+      local starCount, completeStarList = self._module:ParseStarInfo(self._missionFinishInfo[self._missionID].star)
       self:UpdateCondition(threeStarConditions, completeStarList)
     end
   end
-  do
-    if #threeStarConditions > 0 then
-      (self._conditionsGo):SetActive(true)
-      ;
-      (self._conditionNo):SetActive(false)
-      ;
-      (self._sop):SpawnObjects("UISeasonConditionItem", #threeStarConditions)
-      self._conditions = (self._sop):GetAllSpawnList()
-      for i,v in ipairs(self._conditions) do
-        if v:IsEnable() then
-          v:Flush(threeStarConditions[i], i)
-          if playAnim then
-            v:SetWaitAnim()
-          end
+  if 0 < #threeStarConditions then
+    self._conditionsGo:SetActive(true)
+    self._conditionNo:SetActive(false)
+    self._sop:SpawnObjects("UISeasonConditionItem", #threeStarConditions)
+    self._conditions = self._sop:GetAllSpawnList()
+    for i, v in ipairs(self._conditions) do
+      if v:IsEnable() then
+        v:Flush(threeStarConditions[i], i)
+        if playAnim then
+          v:SetWaitAnim()
         end
       end
-      if playAnim then
-        self:PlayAnimThreeStarArea(animDelay)
-      end
-    else
-      ;
-      (self._conditionsGo):SetActive(false)
-      ;
-      (self._conditionNo):SetActive(true)
     end
+    if playAnim then
+      self:PlayAnimThreeStarArea(animDelay)
+    end
+  else
+    self._conditionsGo:SetActive(false)
+    self._conditionNo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.PlayAnimThreeStarArea = function(self, totalAnimDelay)
-  -- function num : 0_20 , upvalues : _ENV
+function UISeasonTalentLineStage:PlayAnimThreeStarArea(totalAnimDelay)
   if self._conditions then
     local eachCellAnimDelay = 50
     local cellDelay = 50
     if totalAnimDelay then
       cellDelay = cellDelay + totalAnimDelay
     end
-    for i,v in ipairs(self._conditions) do
+    for i, v in ipairs(self._conditions) do
       if v:IsEnable() then
         v:PlayAnim(cellDelay)
         cellDelay = cellDelay + eachCellAnimDelay
@@ -395,79 +300,52 @@ UISeasonTalentLineStage.PlayAnimThreeStarArea = function(self, totalAnimDelay)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.InitEnemys = function(self)
-  -- function num : 0_21
+function UISeasonTalentLineStage:InitEnemys()
   self:_InitEnemy(self._enemy_normal, self._missionID)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage._InitEnemy = function(self, sop, missionId)
-  -- function num : 0_22 , upvalues : _ENV
-  local missionCfg = (Cfg.cfg_campaign_mission)[missionId]
+function UISeasonTalentLineStage:_InitEnemy(sop, missionId)
+  local missionCfg = Cfg.cfg_campaign_mission[missionId]
   local enemyObj = sop:SpawnObject("UIStageEnemy")
   local recommendAwaken = missionCfg.RecommendAwaken and missionCfg.RecommendAwaken or 0
   local recommendLV = missionCfg.RecommendLV and missionCfg.RecommendLV or 0
-  local color = (Color(1, 1, 1, 1))
-  local enemyTitleBgSprite, enemyTitleBg2Sprite = nil, nil
-  if not missionCfg.FightLevel then
-    enemyObj:Flush(recommendAwaken, recommendLV, missionCfg.LevelID, color, enemyTitleBgSprite, enemyTitleBg2Sprite, true, true, true)
-  end
+  local color = Color(1, 1, 1, 1)
+  local enemyTitleBgSprite, enemyTitleBg2Sprite
+  enemyObj:Flush(recommendAwaken, recommendLV, missionCfg.FightLevel or missionCfg.LevelID, color, enemyTitleBgSprite, enemyTitleBg2Sprite, true, true, true)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.RefreshRecommendLv = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UISeasonTalentLineStage:RefreshRecommendLv()
   local imgGrade = self:GetUIComponent("Image", "imgGrade")
   local lvText = self:GetUIComponent("UILocalizationText", "RecommendLvText")
-  local cfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  local cfg = Cfg.cfg_campaign_mission[self._missionID]
   local recommendAwaken = cfg.RecommendAwaken and cfg.RecommendAwaken or 0
   local recommendLV = cfg.RecommendLV and cfg.RecommendLV or 0
-  imgGrade.sprite = (self._gradeAtlas):GetSprite((UIPetModule.GetAwakeSpriteNameByParam)(3, recommendAwaken))
+  imgGrade.sprite = self._gradeAtlas:GetSprite(UIPetModule.GetAwakeSpriteNameByParam(3, recommendAwaken))
   local lvStr = tostring(recommendLV)
   lvText:SetText(lvStr)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.Close = function(self)
-  -- function num : 0_24
+function UISeasonTalentLineStage:Close()
   self:_CloseDialogWithAnim()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage._CloseDialogWithAnim = function(self, callback)
-  -- function num : 0_25 , upvalues : _ENV
-  (UIWidgetHelper.PlayAnimation)(self, "UICanvas", "uieff_UISeasonLevelStageS3_out", 433, function()
-    -- function num : 0_25_0 , upvalues : callback, self
+function UISeasonTalentLineStage:_CloseDialogWithAnim(callback)
+  UIWidgetHelper.PlayAnimation(self, "UICanvas", "uieff_UISeasonLevelStageS3_out", 433, function()
     if callback then
       callback()
     end
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.BattleInfoPanelBtnOnClick = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UISeasonTalentLineStage:BattleInfoPanelBtnOnClick()
   self._curPanel = UISeasonLevelStagePanelMode.BattleInfo
   self:RefreshPanelShow()
   self:RefreshPanelText()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineStage.AwardsPanelBtnOnClick = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UISeasonTalentLineStage:AwardsPanelBtnOnClick()
   self._curPanel = UISeasonLevelStagePanelMode.AwardsInfo
   self:RefreshPanelShow()
   self:RefreshPanelText()
 end
-
-

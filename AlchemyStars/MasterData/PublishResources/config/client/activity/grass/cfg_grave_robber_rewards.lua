@@ -1,17 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/grass/cfg_grave_robber_rewards.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {ID = 1, AssetidID = 2}
 local config = {
-{1, 3000003}
-, 
-{2, 3410103}
-, 
-{3, 3410203}
-, 
-{4, 3000002}
+  {1, 3000003},
+  {2, 3410103},
+  {3, 3410203},
+  {4, 3000002}
 }
 return config, "ID", key
-

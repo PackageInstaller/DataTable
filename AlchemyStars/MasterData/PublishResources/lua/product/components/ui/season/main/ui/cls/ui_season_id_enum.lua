@@ -1,8 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/cls/ui_season_id_enum.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UISeasonID = {S1 = 8001, S2 = 8002, S3 = 8003, S4 = 8004, S5 = 8005, S6 = 8006, S7 = 8007, S8 = 8008}
+local UISeasonID = {
+  S1 = 8001,
+  S2 = 8002,
+  S3 = 8003,
+  S4 = 8004,
+  S5 = 8005,
+  S6 = 8006,
+  S7 = 8007,
+  S8 = 8008
+}
 _enum("UISeasonID", UISeasonID)
-

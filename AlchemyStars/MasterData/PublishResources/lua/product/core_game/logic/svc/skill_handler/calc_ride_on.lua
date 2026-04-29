@@ -1,82 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_ride_on.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_RideOn", Object)
 SkillEffectCalc_RideOn = SkillEffectCalc_RideOn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_RideOn.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_RideOn:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
-  self._rideSvc = (self._world):GetService("RideLogic")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
+  self._rideSvc = self._world:GetService("RideLogic")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_RideOn.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local fixedPos = nil
-  if (skillEffectCalcParam.skillRange)._className and (skillEffectCalcParam.skillRange)._className == "Vector2" then
+function SkillEffectCalc_RideOn:DoSkillEffectCalculator(skillEffectCalcParam)
+  local fixedPos
+  if skillEffectCalcParam.skillRange._className and skillEffectCalcParam.skillRange._className == "Vector2" then
     fixedPos = skillEffectCalcParam.skillRange
   else
-    fixedPos = (skillEffectCalcParam.skillRange)[1]
+    fixedPos = skillEffectCalcParam.skillRange[1]
   end
   if not fixedPos then
-    return 
+    return
   end
-  local casterEntity = ((self._world):GetEntityByID(skillEffectCalcParam.casterEntityID))
-  local curMountID = nil
-  do
-    if casterEntity:HasRide() then
-      local rideCmpt = casterEntity:Ride()
-      curMountID = rideCmpt:GetMountID()
-    end
-    local effectParam = skillEffectCalcParam.skillEffectParam
-    local monsterClassID = effectParam:GetMonsterClassID()
-    local monsterMountID, teleportPos = self:CalcMonsterState(monsterClassID, fixedPos)
-    if monsterMountID and curMountID == monsterMountID then
-      return 
-    end
-    local trapID = effectParam:GetTrapID()
-    local utilDataSvc = (self._world):GetService("UtilData")
-    local finalPos = fixedPos
-    if teleportPos then
-      finalPos = teleportPos
-    end
-    local trapMountID = utilDataSvc:GetTrapAtPosByTrapID(finalPos, trapID)
-    if trapMountID and curMountID == trapMountID then
-      return 
-    end
-    local summonPosList = {}
-    if not trapMountID then
-      (table.insert)(summonPosList, finalPos)
-    end
-    local height = effectParam:GetTrapHeight()
-    local centerOffset = Vector2.zero
-    if monsterMountID then
-      height = effectParam:GetMonsterHeight()
-      centerOffset = effectParam:GetMonsterOffset()
-    end
-    local casterPos = casterEntity:GetGridPosition()
-    local result = SkillEffectRideOnResult:New(curMountID, casterPos, monsterMountID, trapMountID, trapID, summonPosList, height, centerOffset)
-    return result
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local curMountID
+  if casterEntity:HasRide() then
+    local rideCmpt = casterEntity:Ride()
+    curMountID = rideCmpt:GetMountID()
   end
+  local effectParam = skillEffectCalcParam.skillEffectParam
+  local monsterClassID = effectParam:GetMonsterClassID()
+  local monsterMountID, teleportPos = self:CalcMonsterState(monsterClassID, fixedPos)
+  if monsterMountID and curMountID == monsterMountID then
+    return
+  end
+  local trapID = effectParam:GetTrapID()
+  local utilDataSvc = self._world:GetService("UtilData")
+  local finalPos = fixedPos
+  if teleportPos then
+    finalPos = teleportPos
+  end
+  local trapMountID = utilDataSvc:GetTrapAtPosByTrapID(finalPos, trapID)
+  if trapMountID and curMountID == trapMountID then
+    return
+  end
+  local summonPosList = {}
+  if not trapMountID then
+    table.insert(summonPosList, finalPos)
+  end
+  local height = effectParam:GetTrapHeight()
+  local centerOffset = Vector2.zero
+  if monsterMountID then
+    height = effectParam:GetMonsterHeight()
+    centerOffset = effectParam:GetMonsterOffset()
+  end
+  local casterPos = casterEntity:GetGridPosition()
+  local result = SkillEffectRideOnResult:New(curMountID, casterPos, monsterMountID, trapMountID, trapID, summonPosList, height, centerOffset)
+  return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_RideOn.CalcMonsterState = function(self, monsterClassID, fixedPos)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_RideOn:CalcMonsterState(monsterClassID, fixedPos)
   if not monsterClassID then
     return nil
   end
-  local monsterEntity = nil
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,e in ipairs(monsterGroup:GetEntities()) do
-    if not e:HasDeadMark() and monsterClassID == (e:MonsterID()):GetMonsterClassID() then
+  local monsterEntity
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(monsterGroup:GetEntities()) do
+    if not e:HasDeadMark() and monsterClassID == e:MonsterID():GetMonsterClassID() then
       monsterEntity = e
     end
   end
@@ -89,9 +74,9 @@ SkillEffectCalc_RideOn.CalcMonsterState = function(self, monsterClassID, fixedPo
     if not buffCmpt:HasBuffEffect(BuffEffectType.Palsy) then
       return monsterEntity:GetID()
     else
-      local bodyArea = (monsterEntity:BodyArea()):GetArea()
+      local bodyArea = monsterEntity:BodyArea():GetArea()
       local pos = monsterEntity:GetGridPosition()
-      for _,bodyPos in ipairs(bodyArea) do
+      for _, bodyPos in ipairs(bodyArea) do
         local curPos = pos + bodyPos
         if curPos == fixedPos then
           needChangePos = true
@@ -100,26 +85,22 @@ SkillEffectCalc_RideOn.CalcMonsterState = function(self, monsterClassID, fixedPo
       end
     end
   end
-  do
-    if not needChangePos then
-      return nil, nil
-    end
-    local centerPos = monsterEntity:GetGridPosition()
-    local bodyArea = (monsterEntity:BodyArea()):GetArea()
-    local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-    local skillCalc = utilScopeSvc:GetSkillScopeCalc()
-    local boardSvc = (self._world):GetService("BoardLogic")
-    local maxLen = boardSvc:GetCurBoardMaxLen()
-    for ringCount = 1, maxLen do
-      local scopeRes = skillCalc:ComputeScopeRange(SkillScopeType.AroundBodyArea, {0, ringCount}, centerPos, bodyArea)
-      local posList = scopeRes:GetAttackRange()
-      for _,value in ipairs(posList) do
-        if not utilScopeSvc:IsPosHaveMonsterOrPet(value) then
-          return nil, value
-        end
+  if not needChangePos then
+    return nil, nil
+  end
+  local centerPos = monsterEntity:GetGridPosition()
+  local bodyArea = monsterEntity:BodyArea():GetArea()
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local skillCalc = utilScopeSvc:GetSkillScopeCalc()
+  local boardSvc = self._world:GetService("BoardLogic")
+  local maxLen = boardSvc:GetCurBoardMaxLen()
+  for ringCount = 1, maxLen do
+    local scopeRes = skillCalc:ComputeScopeRange(SkillScopeType.AroundBodyArea, {0, ringCount}, centerPos, bodyArea)
+    local posList = scopeRes:GetAttackRange()
+    for _, value in ipairs(posList) do
+      if not utilScopeSvc:IsPosHaveMonsterOrPet(value) then
+        return nil, value
       end
     end
   end
 end
-
-

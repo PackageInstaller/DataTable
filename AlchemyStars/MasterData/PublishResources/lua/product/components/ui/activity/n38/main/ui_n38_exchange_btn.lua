@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n38/main/ui_n38_exchange_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN38_ExchangeBtn", UICustomWidget)
 UIN38_ExchangeBtn = UIN38_ExchangeBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN38_ExchangeBtn.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN38_ExchangeBtn:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38_ExchangeBtn.InitWidget = function(self)
-  -- function num : 0_1
+function UIN38_ExchangeBtn:InitWidget()
   self.redGO = self:GetGameObject("Red")
   self.newGO = self:GetGameObject("New")
   self.lockGO = self:GetGameObject("Lock")
@@ -23,68 +13,48 @@ UIN38_ExchangeBtn.InitWidget = function(self)
   self.icon = self:GetUIComponent("RawImageLoader", "Icon")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38_ExchangeBtn.SetData = function(self, activityConst)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN38_ExchangeBtn:SetData(activityConst)
   self._activityConst = activityConst
-  self._component = (self._activityConst):GetShopComponent()
-  local icon, count = (self._component):GetCostItemIconText()
+  self._component, self._componentInfo = self._activityConst:GetShopComponent()
+  local icon, count = self._component:GetCostItemIconText()
   if icon then
-    (self.icon):LoadImage(icon)
+    self.icon:LoadImage(icon)
   end
-  ;
-  (self.count):SetText((UIN38Helper.GetItemCountStr)(7, count, "#8D8D8D", "#ffd146"))
-  local openTime = (self._componentInfo).m_unlock_time
-  local closeTime = (self._componentInfo).m_close_time
-  local nowTime = (self:GetModule(SvrTimeModule)):GetServerTime() / 1000
-  if nowTime < openTime then
-    (self.lockGO):SetActive(true)
+  self.count:SetText(UIN38Helper.GetItemCountStr(7, count, "#8D8D8D", "#ffd146"))
+  local openTime = self._componentInfo.m_unlock_time
+  local closeTime = self._componentInfo.m_close_time
+  local nowTime = self:GetModule(SvrTimeModule):GetServerTime() / 1000
+  if openTime > nowTime then
+    self.lockGO:SetActive(true)
+  elseif closeTime <= nowTime then
+    self.lockGO:SetActive(true)
   else
-    if closeTime <= nowTime then
-      (self.lockGO):SetActive(true)
-    else
-      ;
-      (self.lockGO):SetActive(false)
-    end
+    self.lockGO:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38_ExchangeBtn.SetNewRedPoint = function(self)
-  -- function num : 0_3
-  if (self.lockGO).activeSelf then
-    (self.newGO):SetActive(false)
-    ;
-    (self.redGO):SetActive(false)
-    return 
+function UIN38_ExchangeBtn:SetNewRedPoint()
+  if self.lockGO.activeSelf then
+    self.newGO:SetActive(false)
+    self.redGO:SetActive(false)
+    return
   end
-  local showNew = (self._activityConst):IsShowShopNew()
+  local showNew = self._activityConst:IsShowShopNew()
   if showNew then
-    (self.newGO):SetActive(true)
-    ;
-    (self.redGO):SetActive(false)
+    self.newGO:SetActive(true)
+    self.redGO:SetActive(false)
   else
-    ;
-    (self.newGO):SetActive(false)
-    local showRed = (self._activityConst):IsShowShopRed()
-    ;
-    (self.redGO):SetActive(showRed)
+    self.newGO:SetActive(false)
+    local showRed = self._activityConst:IsShowShopRed()
+    self.redGO:SetActive(showRed)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38_ExchangeBtn.BtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self._activityConst):IsActivityEnd() then
+function UIN38_ExchangeBtn:BtnOnClick(go)
+  if self._activityConst:IsActivityEnd() then
     self:SwitchState(UIStateType.UIMain)
   else
     self:ShowDialog("UIN38Shop")
-    ;
-    (self._activityConst):ClearShopNew()
+    self._activityConst:ClearShopNew()
   end
 end
-
-

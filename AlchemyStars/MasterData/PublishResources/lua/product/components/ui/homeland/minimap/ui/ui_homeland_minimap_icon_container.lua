@@ -1,18 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/ui_homeland_minimap_icon_container.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local MinimapIconAnimationType = {IN = 1, OUT = 2, SELECT = 3, UNSELECT = 4, EXPANSION = 5}
+local MinimapIconAnimationType = {
+  IN = 1,
+  OUT = 2,
+  SELECT = 3,
+  UNSELECT = 4,
+  EXPANSION = 5
+}
 _enum("MinimapIconAnimationType", MinimapIconAnimationType)
 _class("UIHomelandMinimapIconContainer", UICustomWidget)
 UIHomelandMinimapIconContainer = UIHomelandMinimapIconContainer
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
 
-UIHomelandMinimapIconContainer.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandMinimapIconContainer:OnShow(uiParams)
   self._go = self:GetGameObject()
-  self._tran = (self._go).transform
+  self._tran = self._go.transform
   self._iconLoader = self:GetUIComponent("UISelectObjectPath", "IconLoader")
   self._iconTran = self:GetUIComponent("RectTransform", "IconLoader")
   self._iconWidget = nil
@@ -23,96 +22,68 @@ UIHomelandMinimapIconContainer.OnShow = function(self, uiParams)
   self._cacheScale = nil
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.OnHide = function(self)
-  -- function num : 0_1
+function UIHomelandMinimapIconContainer:OnHide()
   self:Release()
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.Update = function(self)
-  -- function num : 0_2
+function UIHomelandMinimapIconContainer:Update()
   self:UpdateTransform()
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.UpdateTransform = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandMinimapIconContainer:UpdateTransform()
   if not self._iconData then
-    return 
+    return
   end
-  if (self._iconData):CanShow((self._miniMap):GetMapScale()) == false then
+  if self._iconData:CanShow(self._miniMap:GetMapScale()) == false then
     self:SetStatus(false, true)
   else
     self:SetStatus(true, true)
   end
-  local tran = (self._iconData):GetTransform()
+  local tran = self._iconData:GetTransform()
   if not tran or tran == null then
-    return 
+    return
   end
   local pos = tran.position
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R3 in 'UnsetPending'
-
-  if self._cachePosition == pos and self._cacheScale == (self._miniMap):GetMapScale() then
-    (self._iconTran).anchoredPosition = self._cacheMapPosition
-    -- DECOMPILER ERROR at PC50: Confused about usage of register: R3 in 'UnsetPending'
-
-    if (self._iconData):GetCanRotate() then
-      (self._iconTran).eulerAngles = self._cacheRotate
+  if self._cachePosition == pos and self._cacheScale == self._miniMap:GetMapScale() then
+    self._iconTran.anchoredPosition = self._cacheMapPosition
+    if self._iconData:GetCanRotate() then
+      self._iconTran.eulerAngles = self._cacheRotate
     end
-    return 
+    return
   end
   self._cachePosition = pos
-  local len = (HomelandMinimapConst.RealMapMaxPosition)() - (HomelandMinimapConst.RealMapMinPosition)()
-  local dis = pos - (HomelandMinimapConst.RealMapMinPosition)()
+  local len = HomelandMinimapConst.RealMapMaxPosition() - HomelandMinimapConst.RealMapMinPosition()
+  local dis = pos - HomelandMinimapConst.RealMapMinPosition()
   local xPercent = dis.x / len.x
   local yPercent = dis.z / len.z
-  local uiMapSize = (HomelandMinimapConst.GetMapSize)()
-  local mapSizeX = uiMapSize.x * (self._miniMap):GetMapScale()
-  local mapSizeY = uiMapSize.y * (self._miniMap):GetMapScale()
-  self._cacheMapPosition = (self._miniMap):GetMapCenterPosition() + Vector2(-mapSizeX / 2 + mapSizeX * xPercent, -mapSizeY / 2 + mapSizeY * yPercent)
-  -- DECOMPILER ERROR at PC100: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._iconTran).anchoredPosition = self._cacheMapPosition
-  if (self._iconData):GetCanRotate() then
-    self._cacheRotate = Vector3(0, 0, -(tran.eulerAngles).y + 180)
-    -- DECOMPILER ERROR at PC117: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._iconTran).eulerAngles = self._cacheRotate
+  local uiMapSize = HomelandMinimapConst.GetMapSize()
+  local mapSizeX = uiMapSize.x * self._miniMap:GetMapScale()
+  local mapSizeY = uiMapSize.y * self._miniMap:GetMapScale()
+  self._cacheMapPosition = self._miniMap:GetMapCenterPosition() + Vector2(-mapSizeX / 2 + mapSizeX * xPercent, -mapSizeY / 2 + mapSizeY * yPercent)
+  self._iconTran.anchoredPosition = self._cacheMapPosition
+  if self._iconData:GetCanRotate() then
+    self._cacheRotate = Vector3(0, 0, -tran.eulerAngles.y + 180)
+    self._iconTran.eulerAngles = self._cacheRotate
   end
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.CanShow = function(self)
-  -- function num : 0_4
-  return (self._iconWidget):CanShow()
+function UIHomelandMinimapIconContainer:CanShow()
+  return self._iconWidget:CanShow()
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.Init = function(self, minimap)
-  -- function num : 0_5
+function UIHomelandMinimapIconContainer:Init(minimap)
   self._miniMap = minimap
   self:SetStatus(false)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.SetStatus = function(self, status, playAnim)
-  -- function num : 0_6 , upvalues : MinimapIconAnimationType
+function UIHomelandMinimapIconContainer:SetStatus(status, playAnim)
   if self._isShow == status then
-    return 
+    return
   end
   if playAnim then
     local animation = self:GetAnimation()
     if not animation then
-      (self:GetGameObject()):SetActive(status)
+      self:GetGameObject():SetActive(status)
     else
       local animName = ""
       if status then
@@ -120,182 +91,122 @@ UIHomelandMinimapIconContainer.SetStatus = function(self, status, playAnim)
       else
         animName = self:GetAnimationName(MinimapIconAnimationType.OUT)
       end
-      -- DECOMPILER ERROR at PC39: Unhandled construct in 'MakeBoolean' P1
-
-      if animName ~= nil and animName ~= "" and self._isShow ~= status then
-        (self:GetGameObject()):SetActive(true)
-        animation:Play(animName)
+      if animName ~= nil and animName ~= "" then
+        if self._isShow ~= status then
+          self:GetGameObject():SetActive(true)
+          animation:Play(animName)
+        end
+      else
+        self:GetGameObject():SetActive(status)
       end
     end
-    ;
-    (self:GetGameObject()):SetActive(status)
   else
-    do
-      ;
-      (self:GetGameObject()):SetActive(status)
-      self._isShow = status
-    end
+    self:GetGameObject():SetActive(status)
   end
+  self._isShow = status
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.PlayIconShowAnim = function(self)
-  -- function num : 0_7 , upvalues : MinimapIconAnimationType
-  if (self._iconData):CanShow((self._miniMap):GetMapScale()) == false then
+function UIHomelandMinimapIconContainer:PlayIconShowAnim()
+  if self._iconData:CanShow(self._miniMap:GetMapScale()) == false then
     self:SetStatus(false, false)
-    return 
+    return
   end
   local animation = self:GetAnimation()
   if animation then
     local animName = self:GetAnimationName(MinimapIconAnimationType.IN)
     if animName ~= nil and animName ~= "" then
-      (self:GetGameObject()):SetActive(true)
+      self:GetGameObject():SetActive(true)
       animation:Play(animName)
     end
   end
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.PlayIconHideAnim = function(self)
-  -- function num : 0_8 , upvalues : MinimapIconAnimationType
-  if (self._iconData):CanShow((self._miniMap):GetMapScale()) == false then
+function UIHomelandMinimapIconContainer:PlayIconHideAnim()
+  if self._iconData:CanShow(self._miniMap:GetMapScale()) == false then
     self:SetStatus(false, false)
-    return 
+    return
   end
   local animation = self:GetAnimation()
   if animation then
     local animName = self:GetAnimationName(MinimapIconAnimationType.OUT)
     if animName ~= nil and animName ~= "" then
-      (self:GetGameObject()):SetActive(true)
+      self:GetGameObject():SetActive(true)
       animation:Play(animName)
     end
   end
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.Refresh = function(self, iconData)
-  -- function num : 0_9
+function UIHomelandMinimapIconContainer:Refresh(iconData)
   self._iconData = iconData
   self:Release()
-  ;
-  ((self._iconLoader).dynamicInfoOfEngine):SetObjectName(iconData:GetPrefabName())
-  self._iconWidget = (self._iconLoader):SpawnObject(iconData:GetScriptName())
-  ;
-  (self._iconWidget):InternalInitialize(self._iconData, (self._miniMap):GetMapStatus())
+  self._iconLoader.dynamicInfoOfEngine:SetObjectName(iconData:GetPrefabName())
+  self._iconWidget = self._iconLoader:SpawnObject(iconData:GetScriptName())
+  self._iconWidget:InternalInitialize(self._iconData, self._miniMap:GetMapStatus())
   self:SetStatus(true)
   self:UpdateTransform()
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.Release = function(self)
-  -- function num : 0_10
+function UIHomelandMinimapIconContainer:Release()
   if self._iconWidget then
-    (self._iconWidget):Release()
+    self._iconWidget:Release()
   end
   self._isShow = false
-  do
-    if (self._iconLoader).uiCustomWidgets then
-      local uiCustomWidgets = (self._iconLoader).uiCustomWidgets
-      for i = 1, #uiCustomWidgets do
-        local uiCustomWidget = uiCustomWidgets[i]
-        uiCustomWidget:UnLoad()
-        uiCustomWidget:Dispose()
-      end
-      -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._iconLoader).uiCustomWidgets = {}
+  if self._iconLoader.uiCustomWidgets then
+    local uiCustomWidgets = self._iconLoader.uiCustomWidgets
+    for i = 1, #uiCustomWidgets do
+      local uiCustomWidget = uiCustomWidgets[i]
+      uiCustomWidget:UnLoad()
+      uiCustomWidget:Dispose()
     end
-    self._iconWidget = nil
+    self._iconLoader.uiCustomWidgets = {}
   end
+  self._iconWidget = nil
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.GetIconPosition = function(self)
-  -- function num : 0_11
-  return (self._iconTran).anchoredPosition
+function UIHomelandMinimapIconContainer:GetIconPosition()
+  return self._iconTran.anchoredPosition
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.GetIconMultiSelectPosition = function(self)
-  -- function num : 0_12
-  return (self._iconTran).anchoredPosition + self:GetIconMultiSelectPositionOffset()
+function UIHomelandMinimapIconContainer:GetIconMultiSelectPosition()
+  return self._iconTran.anchoredPosition + self:GetIconMultiSelectPositionOffset()
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.GetIconMultiSelectPositionOffset = function(self)
-  -- function num : 0_13
-  return (self._iconWidget):GetIconMultiSelectPositionOffset()
+function UIHomelandMinimapIconContainer:GetIconMultiSelectPositionOffset()
+  return self._iconWidget:GetIconMultiSelectPositionOffset()
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.GetIconWorldPosition = function(self)
-  -- function num : 0_14
-  return (self._iconTran).position
+function UIHomelandMinimapIconContainer:GetIconWorldPosition()
+  return self._iconTran.position
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.GetIconRotation = function(self)
-  -- function num : 0_15
-  return (self._iconTran).eulerAngles
+function UIHomelandMinimapIconContainer:GetIconRotation()
+  return self._iconTran.eulerAngles
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.GetIconWidget = function(self)
-  -- function num : 0_16
+function UIHomelandMinimapIconContainer:GetIconWidget()
   return self._iconWidget
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.GetAnimation = function(self)
-  -- function num : 0_17
-  return (self._iconWidget):GetAnimation()
+function UIHomelandMinimapIconContainer:GetAnimation()
+  return self._iconWidget:GetAnimation()
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.GetAnimationName = function(self, animType)
-  -- function num : 0_18
-  return (self._iconWidget):GetAnimationName(animType)
+function UIHomelandMinimapIconContainer:GetAnimationName(animType)
+  return self._iconWidget:GetAnimationName(animType)
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.SetAsFirstSibling = function(self)
-  -- function num : 0_19
-  (self._tran):SetAsFirstSibling()
+function UIHomelandMinimapIconContainer:SetAsFirstSibling()
+  self._tran:SetAsFirstSibling()
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.SetAsLastSibling = function(self)
-  -- function num : 0_20
-  (self._tran):SetAsLastSibling()
+function UIHomelandMinimapIconContainer:SetAsLastSibling()
+  self._tran:SetAsLastSibling()
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.SetSiblingIndex = function(self, index)
-  -- function num : 0_21
-  (self._tran):SetSiblingIndex(index)
+function UIHomelandMinimapIconContainer:SetSiblingIndex(index)
+  self._tran:SetSiblingIndex(index)
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandMinimapIconContainer.GetIconData = function(self)
-  -- function num : 0_22
+function UIHomelandMinimapIconContainer:GetIconData()
   return self._iconData
 end
-
-

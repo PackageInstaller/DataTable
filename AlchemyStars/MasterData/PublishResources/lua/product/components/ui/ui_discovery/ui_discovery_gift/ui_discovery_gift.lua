@@ -1,107 +1,77 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_gift/ui_discovery_gift.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiscoveryGift", UICustomWidget)
 UIDiscoveryGift = UIDiscoveryGift
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiscoveryGift.Constructor = function(self)
-  -- function num : 0_0
+function UIDiscoveryGift:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryGift.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._shopModule = (GameGlobal.GetModule)(ShopModule)
-  self._GiftData = (self._shopModule):GetGiftMarketData()
+function UIDiscoveryGift:OnShow()
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._shopModule = GameGlobal.GetModule(ShopModule)
+  self._GiftData, self._GiftCfg = self._shopModule:GetGiftMarketData()
   self:AttachEvent(GameEventType.ActivityCurrencyBuySuccess, self.OnCurrencyBuySuccess)
   self:AttachEvent(GameEventType.MidasPayError, self.OnCurrencyBuyError)
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryGift.OnCurrencyBuySuccess = function(self, gotid)
-  -- function num : 0_2 , upvalues : _ENV
-  (Log.debug)("###[lxs] OnCurrencyBuySuccess")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.RequestGiftData, self, gotid)
+function UIDiscoveryGift:OnCurrencyBuySuccess(gotid)
+  Log.debug("###[lxs] OnCurrencyBuySuccess")
+  GameGlobal.TaskManager():StartTask(self.RequestGiftData, self, gotid)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryGift.RequestGiftData = function(self, TT, gotid)
-  -- function num : 0_3 , upvalues : _ENV
+function UIDiscoveryGift:RequestGiftData(TT, gotid)
   self:Lock("UIDiscoveryGift:RequestGiftData")
-  local resGift = (self._shopModule):ApplyGiftMarketData(TT)
+  local resGift = self._shopModule:ApplyGiftMarketData(TT)
   self:UnLock("UIDiscoveryGift:RequestGiftData")
   if resGift:GetSucc() then
-    self._GiftData = (self._shopModule):GetGiftMarketData()
+    self._GiftData, self._GiftCfg = self._shopModule:GetGiftMarketData()
     self:RefreshPool(gotid)
   else
     local result = resGift:GetResult()
-    ;
-    (Log.error)("###[UIDiscoveryGift] ApplyGiftMarketData fail ! result:", result)
+    Log.error("###[UIDiscoveryGift] ApplyGiftMarketData fail ! result:", result)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryGift.OnCurrencyBuyError = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.debug)("###[lxs] OnCurrencyBuyError")
+function UIDiscoveryGift:OnCurrencyBuyError()
+  Log.debug("###[lxs] OnCurrencyBuyError")
   self:RefreshPool()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryGift.OnHide = function(self)
-  -- function num : 0_5
+function UIDiscoveryGift:OnHide()
   self:UnLock("UIDiscoveryGift:RequestGiftData")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryGift.SetData = function(self, hide)
-  -- function num : 0_6 , upvalues : _ENV
-  self._shopModule = (GameGlobal.GetModule)(ShopModule)
+function UIDiscoveryGift:SetData(hide)
+  self._shopModule = GameGlobal.GetModule(ShopModule)
   self._hide = hide
   self:RefreshPool()
   self:AutoShowGiftController()
 end
 
 local localkey = "UIDiscoveryGift"
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
 
-UIDiscoveryGift.AutoShowGiftController = function(self)
-  -- function num : 0_7 , upvalues : _ENV, localkey
+function UIDiscoveryGift:AutoShowGiftController()
   self._module = self:GetModule(MissionModule)
-  self._data = (self._module):GetDiscoveryData()
-  local firstMissionID = (self._data).firstMissionID
+  self._data = self._module:GetDiscoveryData()
+  local firstMissionID = self._data.firstMissionID
   if not firstMissionID then
-    return 
+    return
   end
   if self._innerList and next(self._innerList) then
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
-    local pstid = (roleModule:GetPstId())
-    local show = nil
-    for index,value in ipairs(self._innerList) do
+    local roleModule = GameGlobal.GetModule(RoleModule)
+    local pstid = roleModule:GetPstId()
+    local show
+    for index, value in ipairs(self._innerList) do
       local giftid = value.gift_id
-      local cfg_gift = (Cfg.cfg_shop_giftmarket_goods)[giftid]
+      local cfg_gift = Cfg.cfg_shop_giftmarket_goods[giftid]
       local LockMission = cfg_gift.LockMission
-      if LockMission and LockMission > 0 and firstMissionID == LockMission then
+      if LockMission and 0 < LockMission and firstMissionID == LockMission then
         local key = localkey .. giftid .. pstid
-        local val = (LocalDB.GetInt)(key, 0)
+        local val = LocalDB.GetInt(key, 0)
         if val == 0 then
           local good = value
-          local cfgv = (self._GiftCfg)[giftid]
+          local cfgv = self._GiftCfg[giftid]
           self:ShowDialog("UIDiscoveryGiftController", good, cfgv)
-          ;
-          (LocalDB.SetInt)(key, 1)
+          LocalDB.SetInt(key, 1)
           break
         end
       end
@@ -109,62 +79,49 @@ UIDiscoveryGift.AutoShowGiftController = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDiscoveryGift.RefreshPool = function(self, gotid)
-  -- function num : 0_8 , upvalues : _ENV
+function UIDiscoveryGift:RefreshPool(gotid)
   if not self._hide then
-    (self:GetGameObject()):SetActive(true)
-    local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+    self:GetGameObject():SetActive(true)
+    local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
     local svrTime = svrTimeModule:GetServerTime() * 0.001
-    local giftList = (self._GiftData).goods
+    local giftList = self._GiftData.goods
     local showList = {}
-    local cfgs = (Cfg.cfg_shop_giftmarket_goods)({})
-    for k,v in pairs(giftList) do
+    local cfgs = Cfg.cfg_shop_giftmarket_goods({})
+    for k, v in pairs(giftList) do
       local giftid = v.gift_id
       local cfg = cfgs[giftid]
       local type = cfg.GiftType
       if type == ShopGiftType.SGT_CommonTime then
-        (table.insert)(showList, v)
+        table.insert(showList, v)
       end
     end
-    ;
-    (Log.debug)("###[UIDiscoveryGift] start show gift list ! count:", (table.count)(showList))
+    Log.debug("###[UIDiscoveryGift] start show gift list ! count:", table.count(showList))
     if showList and next(showList) then
       self._innerList = {}
-      for index,value in ipairs(showList) do
-        (Log.debug)("###[UIDiscoveryGift] giftList gift id :", value.gift_id)
-        if value.deadline_time > 0 and (math.floor)(value.deadline_time - svrTime) > 0 then
-          (Log.debug)("###[UIDiscoveryGift] innerList gift id :", value)
+      for index, value in ipairs(showList) do
+        Log.debug("###[UIDiscoveryGift] giftList gift id :", value.gift_id)
+        if value.deadline_time > 0 and 0 < math.floor(value.deadline_time - svrTime) then
+          Log.debug("###[UIDiscoveryGift] innerList gift id :", value)
           if gotid and gotid == value.gift_id then
-            (Log.debug)("###[UIDiscoveryGift] gotid : ", gotid)
+            Log.debug("###[UIDiscoveryGift] gotid : ", gotid)
           else
-            ;
-            (table.insert)(self._innerList, value)
+            table.insert(self._innerList, value)
           end
         end
       end
       local len = #self._innerList
-      ;
-      (self._pool):SpawnObjects("UIDiscoveryGiftItem", len)
-      local pools = (self._pool):GetAllSpawnList()
+      self._pool:SpawnObjects("UIDiscoveryGiftItem", len)
+      local pools = self._pool:GetAllSpawnList()
       for i = 1, len do
         local item = pools[i]
-        local good = (self._innerList)[i]
-        local cfgv = (self._GiftCfg)[good.gift_id]
+        local good = self._innerList[i]
+        local cfgv = self._GiftCfg[good.gift_id]
         item:SetData(good, cfgv, function()
-    -- function num : 0_8_0 , upvalues : self
-    self:RefreshPool()
-  end
-)
+          self:RefreshPool()
+        end)
       end
       return true
     end
   end
-  do
-    ;
-    (self:GetGameObject()):SetActive(false)
-  end
+  self:GetGameObject():SetActive(false)
 end
-
-

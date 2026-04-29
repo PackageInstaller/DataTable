@@ -1,141 +1,101 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass/ui_activity_battlepass_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBattlePassHelper", Object)
 UIActivityBattlePassHelper = UIActivityBattlePassHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBattlePassHelper.OpenMainController = function(...)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIBattlePassCN1MainController", ...)
+function UIActivityBattlePassHelper.OpenMainController(...)
+  GameGlobal.UIStateManager():ShowDialog("UIBattlePassCN1MainController", ...)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.OpenBuyGiftResultController = function(...)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIBattlePassCN1BuyGiftResultController", ...)
+function UIActivityBattlePassHelper.OpenBuyGiftResultController(...)
+  GameGlobal.UIStateManager():ShowDialog("UIBattlePassCN1BuyGiftResultController", ...)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.OpenBuyGiftController = function(...)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIBattlePassCN1BuyGiftController", ...)
+function UIActivityBattlePassHelper.OpenBuyGiftController(...)
+  GameGlobal.UIStateManager():ShowDialog("UIBattlePassCN1BuyGiftController", ...)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.OpenBuyLevelController = function(...)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIBattlePassCN1BuyLevelController", ...)
+function UIActivityBattlePassHelper.OpenBuyLevelController(...)
+  GameGlobal.UIStateManager():ShowDialog("UIBattlePassCN1BuyLevelController", ...)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.OpenPreviewController = function(...)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIBattlePassCN1PreviewController", ...)
+function UIActivityBattlePassHelper.OpenPreviewController(...)
+  GameGlobal.UIStateManager():ShowDialog("UIBattlePassCN1PreviewController", ...)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.LoadDataOnEnter = function(TT, res)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityBattlePassHelper.LoadDataOnEnter(TT, res)
   local campaignType = ECampaignType.CAMPAIGN_TYPE_BATTLEPASS
   local componentIds = {}
-  local campaign = (UIActivityHelper.LoadDataOnEnter)(TT, res, campaignType, componentIds)
+  local campaign = UIActivityHelper.LoadDataOnEnter(TT, res, campaignType, componentIds)
   return campaign
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.ComponentId_Quest = function(idx)
-  -- function num : 0_6 , upvalues : _ENV
-  local tb = {ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3}
+function UIActivityBattlePassHelper.ComponentId_Quest(idx)
+  local tb = {
+    ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1,
+    ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2,
+    ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3
+  }
   return tb[idx]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.Component_Quest = function(campaign, idx)
-  -- function num : 0_7 , upvalues : _ENV
-  local cmptId = (UIActivityBattlePassHelper.ComponentId_Quest)(idx)
+function UIActivityBattlePassHelper.Component_Quest(campaign, idx)
+  local cmptId = UIActivityBattlePassHelper.ComponentId_Quest(idx)
   local component = campaign:GetComponent(cmptId)
   local componentInfo = campaign:GetComponentInfo(cmptId)
   return cmptId, component, componentInfo
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.Component_LVReward = function(campaign)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityBattlePassHelper.Component_LVReward(campaign)
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD
   local component = campaign:GetComponent(cmptId)
   local componentInfo = campaign:GetComponentInfo(cmptId)
   return cmptId, component, componentInfo
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.Component_BuyGift = function(campaign)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityBattlePassHelper.Component_BuyGift(campaign)
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT
   local component = campaign:GetComponent(cmptId)
   local componentInfo = campaign:GetComponentInfo(cmptId)
   return cmptId, component, componentInfo
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.GetAllGiftLocalPrice = function(campaign)
-  -- function num : 0_10 , upvalues : _ENV
-  local cmptId, component, componentInfo = (UIActivityBattlePassHelper.Component_BuyGift)(campaign)
+function UIActivityBattlePassHelper.GetAllGiftLocalPrice(campaign)
+  local cmptId, component, componentInfo = UIActivityBattlePassHelper.Component_BuyGift(campaign)
   component:GetAllGiftLocalPrice()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.CheckIsLevelMax = function(campaign)
-  -- function num : 0_11 , upvalues : _ENV
-  local cmptId, component, componentInfo = (UIActivityBattlePassHelper.Component_LVReward)(campaign)
+function UIActivityBattlePassHelper.CheckIsLevelMax(campaign)
+  local cmptId, component, componentInfo = UIActivityBattlePassHelper.Component_LVReward(campaign)
   return component and component:CheckIsLevelMax() or false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.GetLvRewardCfg = function(campaign)
-  -- function num : 0_12 , upvalues : _ENV
-  local cmptId, component, componentInfo = (UIActivityBattlePassHelper.Component_LVReward)(campaign)
+function UIActivityBattlePassHelper.GetLvRewardCfg(campaign)
+  local cmptId, component, componentInfo = UIActivityBattlePassHelper.Component_LVReward(campaign)
   if component then
     local cfg1, cfg2 = component:GetSpecialRewardCfg()
     return cfg1, cfg2
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.IsExtraLevelReward = function(campaign, roleAsset)
-  -- function num : 0_13 , upvalues : _ENV
-  local cmptId, component, componentInfo = (UIActivityBattlePassHelper.Component_LVReward)(campaign)
-  if component then
-    return component:IsExtraLevelReward(roleAsset)
-  end
+function UIActivityBattlePassHelper.IsExtraLevelReward(campaign, roleAsset)
+  local cmptId, component, componentInfo = UIActivityBattlePassHelper.Component_LVReward(campaign)
+  return component and component:IsExtraLevelReward(roleAsset)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.CheckComponentRedPoint = function(campaign, ...)
-  -- function num : 0_14 , upvalues : _ENV
-  if not campaign or not campaign:GetLocalProcess() or not campaign:CheckCampaignOpen() then
+function UIActivityBattlePassHelper.CheckComponentRedPoint(campaign, ...)
+  if not (campaign and campaign:GetLocalProcess()) or not campaign:CheckCampaignOpen() then
     return false
   end
-  local extra = not (UIActivityBattlePassHelper.CheckIsLevelMax)(campaign)
-  local componentExtraCondition = {[ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD] = true, [ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1] = extra, [ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2] = extra, [ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3] = extra}
-  local args = {...}
-  for _,v in pairs(args) do
+  local extra = not UIActivityBattlePassHelper.CheckIsLevelMax(campaign)
+  local componentExtraCondition = {
+    [ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD] = true,
+    [ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1] = extra,
+    [ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2] = extra,
+    [ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3] = extra
+  }
+  local args = {
+    ...
+  }
+  for _, v in pairs(args) do
     if componentExtraCondition[v] and campaign:CheckComponentRed(v) then
       return true
     end
@@ -143,108 +103,73 @@ UIActivityBattlePassHelper.CheckComponentRedPoint = function(campaign, ...)
   return false
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.CheckCampaignRedPoint = function(campaign)
-  -- function num : 0_15 , upvalues : _ENV
-  local redQuest = (UIActivityBattlePassHelper.CalcRed_Quest)(campaign, 1, 2, 3)
-  local redReward = (UIActivityBattlePassHelper.CalcRed_Reward)(campaign)
+function UIActivityBattlePassHelper.CheckCampaignRedPoint(campaign)
+  local redQuest = UIActivityBattlePassHelper.CalcRed_Quest(campaign, 1, 2, 3)
+  local redReward = UIActivityBattlePassHelper.CalcRed_Reward(campaign)
   return redQuest or redReward
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.CalcRed_Quest = function(campaign, ...)
-  -- function num : 0_16 , upvalues : _ENV
-  local params = {...}
+function UIActivityBattlePassHelper.CalcRed_Quest(campaign, ...)
+  local params = {
+    ...
+  }
   local tb = {}
-  for _,v in ipairs(params) do
-    (table.insert)(tb, (UIActivityBattlePassHelper.ComponentId_Quest)(v))
+  for _, v in ipairs(params) do
+    table.insert(tb, UIActivityBattlePassHelper.ComponentId_Quest(v))
   end
-  return (UIActivityBattlePassHelper.CheckComponentRedPoint)(campaign, (table.unpack)(tb))
+  return UIActivityBattlePassHelper.CheckComponentRedPoint(campaign, table.unpack(tb))
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.CalcRed_Reward = function(campaign)
-  -- function num : 0_17 , upvalues : _ENV
+function UIActivityBattlePassHelper.CalcRed_Reward(campaign)
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD
-  return (UIActivityBattlePassHelper.CheckComponentRedPoint)(campaign, cmptId)
+  return UIActivityBattlePassHelper.CheckComponentRedPoint(campaign, cmptId)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.SetSpecialImg = function(campaign, obj, img, dialogName, desc1, desc2)
-  -- function num : 0_18 , upvalues : _ENV
-  local cfg = (UIActivityBattlePassHelper.GetLvRewardCfg)(campaign)
+function UIActivityBattlePassHelper.SetSpecialImg(campaign, obj, img, dialogName, desc1, desc2)
+  local cfg = UIActivityBattlePassHelper.GetLvRewardCfg(campaign)
   local icon = cfg.SpecialRewardImage
   local descPos1 = cfg.SpeicalRewardDescPos1
   local descPos2 = cfg.SpeicalRewardDescPos2
-  if not (string.isnullorempty)(icon) then
+  if not string.isnullorempty(icon) then
     img:LoadImage(icon)
-    ;
-    (UICG.SetTransform)(obj.transform, dialogName, icon)
+    UICG.SetTransform(obj.transform, dialogName, icon)
   end
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (desc1.transform).localPosition = Vector3(not desc1 or not descPos1 or 0, not descPos1[1] and descPos1[2] or 0, 0)
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (desc2.transform).localPosition = Vector3(not desc2 or not descPos2 or 0, not descPos2[1] and descPos2[2] or 0, 0)
+  if desc1 and descPos1 then
+    desc1.transform.localPosition = Vector3(descPos1[1] or 0, descPos1[2] or 0, 0)
+  end
+  if desc2 and descPos2 then
+    desc2.transform.localPosition = Vector3(descPos2[1] or 0, descPos2[2] or 0, 0)
+  end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.GetStrIdInCampaign = function(campaign, strId)
-  -- function num : 0_19
+function UIActivityBattlePassHelper.GetStrIdInCampaign(campaign, strId)
   return strId .. "_campaignid_" .. campaign._id
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.SetSpecialImgInfo = function(campaign, uiView, widgetName1, widgetName2)
-  -- function num : 0_20 , upvalues : _ENV
+function UIActivityBattlePassHelper.SetSpecialImgInfo(campaign, uiView, widgetName1, widgetName2)
   local id = campaign and campaign._id or -1
-  local cfg = (Cfg.cfg_battle_pass_special_img)[id]
+  local cfg = Cfg.cfg_battle_pass_special_img[id]
   if cfg == nil then
-    return 
+    return
   end
   local uiName = uiView and uiView:GetName() or ""
   local url = cfg.rawImageName
-  if uiName ~= "UIBattlePassCN1RewardMain" or not cfg.RewardMainPos then
-    local pos = cfg.BuyGiftPos
-  end
-  ;
-  (uiView:GetGameObject(widgetName1)):SetActive(true)
-  ;
-  (UIWidgetHelper.SetAnchoredPosition)(uiView, widgetName1, pos[1], pos[2])
-  ;
-  (UIWidgetHelper.SetRawImage)(uiView, widgetName2, url)
+  local pos = uiName == "UIBattlePassCN1RewardMain" and cfg.RewardMainPos or cfg.BuyGiftPos
+  uiView:GetGameObject(widgetName1):SetActive(true)
+  UIWidgetHelper.SetAnchoredPosition(uiView, widgetName1, pos[1], pos[2])
+  UIWidgetHelper.SetRawImage(uiView, widgetName2, url)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassHelper.SetSkinBtnInfo = function(campaign, index, uiView, widgetName, callback)
-  -- function num : 0_21 , upvalues : _ENV
+function UIActivityBattlePassHelper.SetSkinBtnInfo(campaign, index, uiView, widgetName, callback)
   local id = campaign and campaign._id or -1
-  local cfg = (Cfg.cfg_battle_pass_skin_btn)[id]
+  local cfg = Cfg.cfg_battle_pass_skin_btn[id]
   if cfg == nil then
-    return 
+    return
   end
-  if index ~= 1 or not cfg.SkinAClass then
-    local className = cfg.SkinBClass
-  end
-  if index ~= 1 or not cfg.SkinAPrefab then
-    local prefabName = cfg.SkinBPrefab
-  end
-  if index ~= 1 or not cfg.SkinAPos then
-    local pos = cfg.SkinBPos
-  end
-  local obj = (UIWidgetHelper.SpawnObject)(uiView, widgetName, className, prefabName)
+  local className = index == 1 and cfg.SkinAClass or cfg.SkinBClass
+  local prefabName = index == 1 and cfg.SkinAPrefab or cfg.SkinBPrefab
+  local pos = index == 1 and cfg.SkinAPos or cfg.SkinBPos
+  local obj = UIWidgetHelper.SpawnObject(uiView, widgetName, className, prefabName)
   obj:SetData(campaign, index, callback)
   obj:SetPos(pos)
 end
-
-

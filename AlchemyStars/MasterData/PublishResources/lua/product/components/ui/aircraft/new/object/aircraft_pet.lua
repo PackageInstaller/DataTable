@@ -1,78 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftPet", Object)
 AircraftPet = AircraftPet
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftPet.Constructor = function(self, petData, main)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftPet:Constructor(petData, main)
   self._petData = petData
   self._main = main
-  self._tmpID = (self._petData):TmpID()
-  self._prefabName = (self._petData):Prefab()
-  local id = (string.gsub)(self._prefabName, ".prefab", "")
+  self._tmpID = self._petData:TmpID()
+  self._prefabName = self._petData:Prefab()
+  local id = string.gsub(self._prefabName, ".prefab", "")
   self._skinID = tonumber(id)
-  self._clothSkinID = (self._petData):SkinID()
-  self._petShell = (GameObjectHelper.CreateEmpty)(self._skinID .. "_shell", nil)
-  self._shellTransform = (self._petShell).transform
+  self._clothSkinID = self._petData:SkinID()
+  self._petShell = GameObjectHelper.CreateEmpty(self._skinID .. "_shell", nil)
+  self._shellTransform = self._petShell.transform
   self._state = AirPetState.None
   self._currentFurnitureType = 0
   self._occupyFurnitureInstanceID = 0
-  local cfg = (Cfg.cfg_aircraft_pet)[self._tmpID]
+  local cfg = Cfg.cfg_aircraft_pet[self._tmpID]
   if not cfg then
     AirError("aircraft_pet表中找不到配置：", self._tmpID)
   end
-  self._navMeshAgent = (self._petShell):AddComponent(typeof((UnityEngine.AI).NavMeshAgent))
-  self._navMeshObstacle = (self._petShell):AddComponent(typeof((UnityEngine.AI).NavMeshObstacle))
-  -- DECOMPILER ERROR at PC79: Confused about usage of register: R5 in 'UnsetPending'
-
+  self._navMeshAgent = self._petShell:AddComponent(typeof(UnityEngine.AI.NavMeshAgent))
+  self._navMeshObstacle = self._petShell:AddComponent(typeof(UnityEngine.AI.NavMeshObstacle))
   if cfg.NaviRadius > 0.5 then
-    (self._navMeshAgent).agentTypeID = (HelperProxy:GetInstance()):GetNavAgentID(AircraftNavAgent.Oversize)
+    self._navMeshAgent.agentTypeID = HelperProxy:GetInstance():GetNavAgentID(AircraftNavAgent.Oversize)
   else
-    -- DECOMPILER ERROR at PC89: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._navMeshAgent).agentTypeID = (HelperProxy:GetInstance()):GetNavAgentID(AircraftNavAgent.Normal)
+    self._navMeshAgent.agentTypeID = HelperProxy:GetInstance():GetNavAgentID(AircraftNavAgent.Normal)
   end
-  -- DECOMPILER ERROR at PC91: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).angularSpeed = 1000
-  -- DECOMPILER ERROR at PC93: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).stoppingDistance = 0.1
-  -- DECOMPILER ERROR at PC96: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).radius = cfg.NaviRadius
-  -- DECOMPILER ERROR at PC98: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).autoBraking = false
-  -- DECOMPILER ERROR at PC100: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).enabled = false
-  -- DECOMPILER ERROR at PC106: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._navMeshObstacle).shape = ((UnityEngine.AI).NavMeshObstacleShape).Capsule
-  -- DECOMPILER ERROR at PC109: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._navMeshObstacle).radius = cfg.NaviRadius
-  -- DECOMPILER ERROR at PC111: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._navMeshObstacle).carving = true
-  -- DECOMPILER ERROR at PC113: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._navMeshObstacle).enabled = false
+  self._navMeshAgent.angularSpeed = 1000
+  self._navMeshAgent.stoppingDistance = 0.1
+  self._navMeshAgent.radius = cfg.NaviRadius
+  self._navMeshAgent.autoBraking = false
+  self._navMeshAgent.enabled = false
+  self._navMeshObstacle.shape = UnityEngine.AI.NavMeshObstacleShape.Capsule
+  self._navMeshObstacle.radius = cfg.NaviRadius
+  self._navMeshObstacle.carving = true
+  self._navMeshObstacle.enabled = false
   self._isShow = false
   self._alive = true
   self._mainAction = nil
@@ -82,729 +43,488 @@ AircraftPet.Constructor = function(self, petData, main)
   self._lastSectenceAction = nil
   self._socialGroupTalkAction = nil
   self._wisperTime = nil
-  self._wisperWeight = ((Cfg.cfg_aircraft_pet)[self._tmpID]).WhisperWeight
+  self._wisperWeight = Cfg.cfg_aircraft_pet[self._tmpID].WhisperWeight
   self._naviRadius = cfg.NaviRadius
   self._specialAction = {}
   self._presentGameObject = nil
-  self._petName = (StringTable.Get)(((Cfg.cfg_pet)[self._tmpID]).Name)
+  self._petName = StringTable.Get(Cfg.cfg_pet[self._tmpID].Name)
   self._ownerName = ""
-  self.cfg_aircraft_weapon_tex_2_unload = (Cfg.cfg_aircraft_weapon_tex_2_unload)()
+  self.cfg_aircraft_weapon_tex_2_unload = Cfg.cfg_aircraft_weapon_tex_2_unload()
   self._moveSpeed = 0.9
-  local speedCfg = (Cfg.cfg_pet_move_speed)[self._skinID]
+  local speedCfg = Cfg.cfg_pet_move_speed[self._skinID]
   if speedCfg and speedCfg.AircraftSpeed then
     self._moveSpeed = speedCfg.AircraftSpeed
     AirLog("星灵移速读取配置:", self._skinID, ",", self._moveSpeed)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function AircraftPet:Dispose()
   self:Hide()
   if self._mainAction then
-    if not (self._mainAction):IsOver() then
-      (self._mainAction):Stop()
+    if not self._mainAction:IsOver() then
+      self._mainAction:Stop()
     end
-    ;
-    (self._mainAction):Dispose()
+    self._mainAction:Dispose()
   end
-  if (self._viceAction):Size() > 0 then
-    (self._viceAction):ForEach(function(action)
-    -- function num : 0_1_0
-    action:Dispose()
+  if self._viceAction:Size() > 0 then
+    self._viceAction:ForEach(function(action)
+      action:Dispose()
+    end)
   end
-)
-  end
-  for _,action in pairs(self._specialAction) do
+  for _, action in pairs(self._specialAction) do
     action:Dispose()
   end
   self._specialAction = {}
   if self._defaultFaceAction then
-    (self._defaultFaceAction):Dispose()
+    self._defaultFaceAction:Dispose()
   end
   self._defaultFaceAction = nil
   if self._petDataChangeHandler then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.PetDataChangeEvent, self._petDataChangeHandler)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.PetDataChangeEvent, self._petDataChangeHandler)
   end
   self._alive = false
-  ;
-  ((UnityEngine.Object).Destroy)(self._petShell)
+  UnityEngine.Object.Destroy(self._petShell)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.IsAlive = function(self)
-  -- function num : 0_2
+function AircraftPet:IsAlive()
   return self._alive
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.Update = function(self, deltaTimeMS)
-  -- function num : 0_3 , upvalues : _ENV
+function AircraftPet:Update(deltaTimeMS)
   if not self._alive then
-    return 
+    return
   end
   if self._mainAction then
-    (self._mainAction):Update(deltaTimeMS)
-    if (self._mainAction):IsOver() then
+    self._mainAction:Update(deltaTimeMS)
+    if self._mainAction:IsOver() then
       AirLog("[AircraftPet] 主行为结束：", self:TemplateID())
     end
   end
-  if (self._viceAction):Size() > 0 then
+  if self._viceAction:Size() > 0 then
     local removes = {}
-    for idx,value in ipairs((self._viceAction).elements) do
+    for idx, value in ipairs(self._viceAction.elements) do
       local action = value
       action:Update(deltaTimeMS)
       if action:IsOver() then
         removes[#removes + 1] = idx
       end
     end
-    for _,idx in ipairs(removes) do
-      (self._viceAction):RemoveAt(idx)
+    for _, idx in ipairs(removes) do
+      self._viceAction:RemoveAt(idx)
     end
   end
-  do
-    if self._sectenceAction then
-      (self._sectenceAction):Update(deltaTimeMS)
-      if (self._sectenceAction):IsOver() then
-        self._sectenceAction = nil
+  if self._sectenceAction then
+    self._sectenceAction:Update(deltaTimeMS)
+    if self._sectenceAction:IsOver() then
+      self._sectenceAction = nil
+    end
+  end
+  if self._lastSectenceAction then
+    self._lastSectenceAction:Update(deltaTimeMS)
+    if self._lastSectenceAction:IsOver() then
+      self._lastSectenceAction = nil
+    end
+  end
+  if self._socialGroupTalkAction then
+    self._socialGroupTalkAction:Update(deltaTimeMS)
+    if self._socialGroupTalkAction:IsOver() then
+      self._socialGroupTalkAction = nil
+    end
+  end
+  if self._specialAction then
+    for _k, action in pairs(self._specialAction) do
+      action:Update(deltaTimeMS)
+      if action:IsOver() then
+        self._sectenceAction[_k] = nil
       end
     end
-    if self._lastSectenceAction then
-      (self._lastSectenceAction):Update(deltaTimeMS)
-      if (self._lastSectenceAction):IsOver() then
-        self._lastSectenceAction = nil
-      end
+  end
+  if self:HasFaceAction() then
+    self:DefaultFaceActionOver()
+  elseif self._defaultFaceAction then
+    self._defaultFaceAction:Update(deltaTimeMS)
+    if self._defaultFaceAction:IsOver() then
+      self:DefaultFaceActionOver()
     end
-    if self._socialGroupTalkAction then
-      (self._socialGroupTalkAction):Update(deltaTimeMS)
-      if (self._socialGroupTalkAction):IsOver() then
-        self._socialGroupTalkAction = nil
-      end
-    end
-    if self._specialAction then
-      for _k,action in pairs(self._specialAction) do
-        action:Update(deltaTimeMS)
-        -- DECOMPILER ERROR at PC109: Confused about usage of register: R7 in 'UnsetPending'
-
-        if action:IsOver() then
-          (self._sectenceAction)[_k] = nil
-        end
-      end
-    end
-    do
-      if self:HasFaceAction() then
-        self:DefaultFaceActionOver()
-      else
-        if self._defaultFaceAction then
-          (self._defaultFaceAction):Update(deltaTimeMS)
-          if (self._defaultFaceAction):IsOver() then
-            self:DefaultFaceActionOver()
-          end
-        else
-          self:CreateDefaultFaceAction(deltaTimeMS)
-        end
-      end
-    end
+  else
+    self:CreateDefaultFaceAction(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.DefaultFaceActionOver = function(self)
-  -- function num : 0_4
+function AircraftPet:DefaultFaceActionOver()
   if self._defaultFaceAction then
-    (self._defaultFaceAction):Dispose()
+    self._defaultFaceAction:Dispose()
     self._defaultFaceAction = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.CreateDefaultFaceAction = function(self, deltaTimeMS)
-  -- function num : 0_5 , upvalues : _ENV
-  local bubble = nil
-  if (math.random)(1, 2) == 1 then
+function AircraftPet:CreateDefaultFaceAction(deltaTimeMS)
+  local bubble
+  if math.random(1, 2) == 1 then
     bubble = 4001
   else
     bubble = 4002
   end
-  local delayTime = (math.random)(3, 5) * 1000
+  local delayTime = math.random(3, 5) * 1000
   self._defaultFaceAction = AirActionFace:New(self, bubble, delayTime)
-  ;
-  (self._defaultFaceAction):Start()
+  self._defaultFaceAction:Start()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.HasFaceAction = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if self._mainAction and (self._mainAction):GetActionType() == AircraftActionType.Face and not (self._mainAction):IsOver() then
+function AircraftPet:HasFaceAction()
+  if self._mainAction and self._mainAction:GetActionType() == AircraftActionType.Face and not self._mainAction:IsOver() then
     return true
   end
-  if self._viceAction and (self._viceAction):Size() > 0 then
-    for idx,value in ipairs((self._viceAction).elements) do
+  if self._viceAction and self._viceAction:Size() > 0 then
+    for idx, value in ipairs(self._viceAction.elements) do
       local action = value
       if action:GetActionType() == AircraftActionType.Face and not action:IsOver() then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.PetName = function(self)
-  -- function num : 0_7
+function AircraftPet:PetName()
   return self._petName
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.PstID = function(self)
-  -- function num : 0_8
-  return (self._petData):PstID()
+function AircraftPet:PstID()
+  return self._petData:PstID()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.TemplateID = function(self)
-  -- function num : 0_9
+function AircraftPet:TemplateID()
   return self._tmpID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SkinID = function(self)
-  -- function num : 0_10
+function AircraftPet:SkinID()
   return self._skinID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.ClothSkinID = function(self)
-  -- function num : 0_11
+function AircraftPet:ClothSkinID()
   return self._clothSkinID
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetState = function(self)
-  -- function num : 0_12
+function AircraftPet:GetState()
   return self._state
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetState = function(self, state)
-  -- function num : 0_13
+function AircraftPet:SetState(state)
   self._state = state
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetSpace = function(self, id)
-  -- function num : 0_14
+function AircraftPet:SetSpace(id)
   self._spaceID = id
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetSpace = function(self)
-  -- function num : 0_15
+function AircraftPet:GetSpace()
   return self._spaceID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetRandomActionCfgID = function(self, id)
-  -- function num : 0_16
+function AircraftPet:SetRandomActionCfgID(id)
   self._randomActionCfgID = id
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetRandomActionCfgID = function(self)
-  -- function num : 0_17
+function AircraftPet:GetRandomActionCfgID()
   return self._randomActionCfgID
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetWanderingArea = function(self, area)
-  -- function num : 0_18
+function AircraftPet:SetWanderingArea(area)
   self._wanderingArea = area
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetWanderingArea = function(self)
-  -- function num : 0_19
+function AircraftPet:GetWanderingArea()
   return self._wanderingArea
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetBelongArea = function(self, area)
-  -- function num : 0_20
+function AircraftPet:SetBelongArea(area)
   self._belongArea = area
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetBelongArea = function(self)
-  -- function num : 0_21
+function AircraftPet:GetBelongArea()
   return self._belongArea
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetAsWorkingPet = function(self)
-  -- function num : 0_22
+function AircraftPet:SetAsWorkingPet()
   self._isWorking = true
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.IsWorkingPet = function(self)
-  -- function num : 0_23
+function AircraftPet:IsWorkingPet()
   return self._isWorking
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetAsLeavingPet = function(self)
-  -- function num : 0_24
+function AircraftPet:SetAsLeavingPet()
   self._isLeaving = true
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.IsLeavingPet = function(self)
-  -- function num : 0_25
-  do return self._isLeaving == true end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftPet:IsLeavingPet()
+  return self._isLeaving == true
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetFurnitureType = function(self)
-  -- function num : 0_26
+function AircraftPet:GetFurnitureType()
   return self._currentFurnitureType
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetFurnitureType = function(self, fType)
-  -- function num : 0_27
+function AircraftPet:SetFurnitureType(fType)
   self._currentFurnitureType = fType
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetOccupyFurniture = function(self, insID)
-  -- function num : 0_28
+function AircraftPet:SetOccupyFurniture(insID)
   self._occupyFurnitureInstanceID = insID
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetOccupyFurniture = function(self)
-  -- function num : 0_29
+function AircraftPet:GetOccupyFurniture()
   return self._occupyFurnitureInstanceID
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetFloor = function(self, floor)
-  -- function num : 0_30 , upvalues : _ENV
+function AircraftPet:SetFloor(floor)
   if floor == nil then
-    (Log.exception)("楼层为空：", self:TemplateID(), "，", (debug.traceback)())
-    ;
-    (Log.fatal)("楼层为空--：", self:TemplateID())
+    Log.exception("楼层为空：", self:TemplateID(), "，", debug.traceback())
+    Log.fatal("楼层为空--：", self:TemplateID())
   end
   self._floor = floor
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetFloor = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function AircraftPet:GetFloor()
   if self._floor == nil then
-    (Log.fatal)("[AircraftPet] 星灵的楼层为空：", self:TemplateID())
+    Log.fatal("[AircraftPet] 星灵的楼层为空：", self:TemplateID())
   end
   return self._floor
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetTargetFloor = function(self, target)
-  -- function num : 0_32
+function AircraftPet:SetTargetFloor(target)
   self._targetFloor = target
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetTargetFloor = function(self)
-  -- function num : 0_33
+function AircraftPet:GetTargetFloor()
   return self._targetFloor
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetFloorTargetAction = function(self, action)
-  -- function num : 0_34
+function AircraftPet:SetFloorTargetAction(action)
   self._elevatorTargetAction = action
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetFloorTargetAction = function(self)
-  -- function num : 0_35
+function AircraftPet:GetFloorTargetAction()
   return self._elevatorTargetAction
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.TryStopFloorTargetAction = function(self)
-  -- function num : 0_36 , upvalues : _ENV
+function AircraftPet:TryStopFloorTargetAction()
   if self._elevatorTargetAction then
-    (self._elevatorTargetAction):Stop()
+    self._elevatorTargetAction:Stop()
     self._elevatorTargetAction = nil
     AirLog("跨层行为被打断：", self._tmpID)
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetMoveToAction = function(self, action)
-  -- function num : 0_37
+function AircraftPet:SetMoveToAction(action)
   self._moveToDoAction = action
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetMoveToDoAction = function(self)
-  -- function num : 0_38
+function AircraftPet:GetMoveToDoAction()
   return self._moveToDoAction
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetMovingTargetArea = function(self, area)
-  -- function num : 0_39
+function AircraftPet:SetMovingTargetArea(area)
   self._movingTargetArea = area
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetMovingTargetArea = function(self)
-  -- function num : 0_40
+function AircraftPet:GetMovingTargetArea()
   return self._movingTargetArea
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetWaitElevatorTime = function(self, time)
-  -- function num : 0_41
+function AircraftPet:SetWaitElevatorTime(time)
   self._waitElevatorTime = time
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetWaitElevatorTime = function(self)
-  -- function num : 0_42
+function AircraftPet:GetWaitElevatorTime()
   return self._waitElevatorTime
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetEnterTime = function(self, time)
-  -- function num : 0_43
+function AircraftPet:SetEnterTime(time)
   self._enterTime = time
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetEnterTime = function(self)
-  -- function num : 0_44
+function AircraftPet:GetEnterTime()
   return self._enterTime
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetAsVisitPet = function(self)
-  -- function num : 0_45
+function AircraftPet:SetAsVisitPet()
   self._isVisitPet = true
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.IsVisitPet = function(self)
-  -- function num : 0_46
-  do return self._isVisitPet == true end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftPet:IsVisitPet()
+  return self._isVisitPet == true
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetVisitGift = function(self, has)
-  -- function num : 0_47
+function AircraftPet:SetVisitGift(has)
   self._hasVisitGift = has
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.HasVisitGift = function(self)
-  -- function num : 0_48
+function AircraftPet:HasVisitGift()
   return self._hasVisitGift
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.Affinity = function(self)
-  -- function num : 0_49 , upvalues : _ENV
+function AircraftPet:Affinity()
   if self._isVisitPet then
     return 0
   else
-    local petModule = (GameGlobal.GetModule)(PetModule)
-    return (petModule:GetPetByTemplateId(self._tmpID)):GetPetAffinityExp()
+    local petModule = GameGlobal.GetModule(PetModule)
+    return petModule:GetPetByTemplateId(self._tmpID):GetPetAffinityExp()
   end
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.AwakeLevel = function(self)
-  -- function num : 0_50
-  return (self._petData):Awake()
+function AircraftPet:AwakeLevel()
+  return self._petData:Awake()
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetGiftFlag = function(self, flag)
-  -- function num : 0_51
+function AircraftPet:SetGiftFlag(flag)
   self._hasPreset = flag
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.IsGiftPet = function(self)
-  -- function num : 0_52
+function AircraftPet:IsGiftPet()
   return self._hasPreset
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetIDWithRandomWeight = function(self, randomWeights)
-  -- function num : 0_53 , upvalues : _ENV
+function AircraftPet:GetIDWithRandomWeight(randomWeights)
   local id = 0
   local all = 0
   local weightTab = {}
   for i = 1, #randomWeights do
-    all = all + (randomWeights[i])[2]
+    all = all + randomWeights[i][2]
     local weightTabItem = {}
-    weightTabItem.id = (randomWeights[i])[1]
+    weightTabItem.id = randomWeights[i][1]
     weightTabItem.weight = all
-    ;
-    (table.insert)(weightTab, weightTabItem)
+    table.insert(weightTab, weightTabItem)
   end
-  local randomNumber = (math.random)(1, all)
+  local randomNumber = math.random(1, all)
   for i = 1, #weightTab do
-    if randomNumber <= (weightTab[i]).weight then
-      id = (weightTab[i]).id
+    if randomNumber <= weightTab[i].weight then
+      id = weightTab[i].id
       break
     end
   end
-  do
-    return id
-  end
+  return id
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.StartMainAction = function(self, action)
-  -- function num : 0_54
-  if self._mainAction and not (self._mainAction):IsOver() then
-    (self._mainAction):Stop()
+function AircraftPet:StartMainAction(action)
+  if self._mainAction and not self._mainAction:IsOver() then
+    self._mainAction:Stop()
   end
   self._mainAction = action
-  ;
-  (self._mainAction):Start()
+  self._mainAction:Start()
   self:StopAllViceAction()
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.StopMainAction = function(self)
-  -- function num : 0_55
-  if self._mainAction and not (self._mainAction):IsOver() then
-    (self._mainAction):Stop()
+function AircraftPet:StopMainAction()
+  if self._mainAction and not self._mainAction:IsOver() then
+    self._mainAction:Stop()
     self._mainAction = nil
   end
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.StartIdleAction = function(self)
-  -- function num : 0_56 , upvalues : _ENV
+function AircraftPet:StartIdleAction()
   local action = AirActionEmpty:New(self)
   self:StartMainAction(action)
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.IsMainActionOver = function(self)
-  -- function num : 0_57
+function AircraftPet:IsMainActionOver()
   if self._mainAction == nil then
     return true
   end
-  return (self._mainAction):IsOver()
+  return self._mainAction:IsOver()
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.StartViceAction = function(self, action)
-  -- function num : 0_58
+function AircraftPet:StartViceAction(action)
   action:Start()
-  ;
-  (self._viceAction):PushBack(action)
+  self._viceAction:PushBack(action)
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.StartSentenceAction = function(self, action)
-  -- function num : 0_59
+function AircraftPet:StartSentenceAction(action)
   if self._sectenceAction then
-    if self._lastSectenceAction and not (self._lastSectenceAction):IsOver() then
-      (self._lastSectenceAction):Stop()
+    if self._lastSectenceAction and not self._lastSectenceAction:IsOver() then
+      self._lastSectenceAction:Stop()
     end
     self._lastSectenceAction = self._sectenceAction
-    ;
-    (self._lastSectenceAction):StartClose()
+    self._lastSectenceAction:StartClose()
   end
   self._sectenceAction = action
-  ;
-  (self._sectenceAction):Start()
+  self._sectenceAction:Start()
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.StartSpecialAction = function(self, actionType, action)
-  -- function num : 0_60
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._specialAction)[actionType] = action
+function AircraftPet:StartSpecialAction(actionType, action)
+  self._specialAction[actionType] = action
   action:Start()
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetPresentObject = function(self, object)
-  -- function num : 0_61
+function AircraftPet:SetPresentObject(object)
   self._presentGameObject = object
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetPresentObject = function(self)
-  -- function num : 0_62
+function AircraftPet:GetPresentObject()
   return self._presentGameObject
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.StopSpecialAction = function(self, actionType)
-  -- function num : 0_63
-  if (self._specialAction)[actionType] then
-    ((self._specialAction)[actionType]):Stop()
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._specialAction)[actionType] = nil
+function AircraftPet:StopSpecialAction(actionType)
+  if self._specialAction[actionType] then
+    self._specialAction[actionType]:Stop()
+    self._specialAction[actionType] = nil
   end
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.StopSentenceAction = function(self)
-  -- function num : 0_64
+function AircraftPet:StopSentenceAction()
   if self._sectenceAction then
-    if self._lastSectenceAction and not (self._lastSectenceAction):IsOver() then
-      (self._lastSectenceAction):Stop()
+    if self._lastSectenceAction and not self._lastSectenceAction:IsOver() then
+      self._lastSectenceAction:Stop()
     end
     self._lastSectenceAction = self._sectenceAction
-    ;
-    (self._lastSectenceAction):StartClose()
+    self._lastSectenceAction:StartClose()
     self._sectenceAction = nil
   end
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.DoingSentence = function(self)
-  -- function num : 0_65
-  if self._sectenceAction then
-    return not (self._sectenceAction):IsOver()
-  end
+function AircraftPet:DoingSentence()
+  return self._sectenceAction and not self._sectenceAction:IsOver()
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetSocialGroupTalk = function(self, action)
-  -- function num : 0_66
-  if self._socialGroupTalkAction and self._socialGroupTalkAction and not (self._socialGroupTalkAction):IsOver() then
-    (self._socialGroupTalkAction):Stop()
+function AircraftPet:SetSocialGroupTalk(action)
+  if self._socialGroupTalkAction and self._socialGroupTalkAction and not self._socialGroupTalkAction:IsOver() then
+    self._socialGroupTalkAction:Stop()
   end
   self._socialGroupTalkAction = action
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.StopSocialGroupTalk = function(self)
-  -- function num : 0_67
-  if self._socialGroupTalkAction and self._socialGroupTalkAction and not (self._socialGroupTalkAction):IsOver() then
-    (self._socialGroupTalkAction):Stop()
-  end
-  self._socialGroupTalkAction = nil
-end
-
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.StopAllViceAction = function(self)
-  -- function num : 0_68
-  (self._viceAction):ForEach(function(a)
-    -- function num : 0_68_0
-    local action = a
-    action:Stop()
-  end
-)
-  ;
-  (self._viceAction):Clear()
-  if self._sectenceAction then
-    (self._sectenceAction):StartClose()
-    self._sectenceAction = nil
-  end
-  if self._lastSectenceAction then
-    (self._lastSectenceAction):Stop()
-    self._lastSectenceAction = nil
-  end
+function AircraftPet:StopSocialGroupTalk()
   if self._socialGroupTalkAction then
-    (self._socialGroupTalkAction):Stop()
+    if self._socialGroupTalkAction and not self._socialGroupTalkAction:IsOver() then
+      self._socialGroupTalkAction:Stop()
+    end
     self._socialGroupTalkAction = nil
   end
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
+function AircraftPet:StopAllViceAction()
+  self._viceAction:ForEach(function(a)
+    local action = a
+    action:Stop()
+  end)
+  self._viceAction:Clear()
+  if self._sectenceAction then
+    self._sectenceAction:StartClose()
+    self._sectenceAction = nil
+  end
+  if self._lastSectenceAction then
+    self._lastSectenceAction:Stop()
+    self._lastSectenceAction = nil
+  end
+  if self._socialGroupTalkAction then
+    self._socialGroupTalkAction:Stop()
+    self._socialGroupTalkAction = nil
+  end
+end
 
-AircraftPet.Encode = function(self)
-  -- function num : 0_69 , upvalues : _ENV
+function AircraftPet:Encode()
   if self:IsWorkingPet() then
-    return 
+    return
   end
   local t = {}
   t.floor = self._floor
@@ -813,59 +533,48 @@ AircraftPet.Encode = function(self)
   t.remainTime = 0
   if self._state == AirPetState.Wandering then
     if self._mainAction == nil then
-      (Log.exception)("[AircraftPet] 漫游主行为为空，无法序列化：", self:TemplateID())
+      Log.exception("[AircraftPet] 漫游主行为为空，无法序列化：", self:TemplateID())
     end
-    if (self._mainAction)._className ~= "AirActionWandering" and (self._mainAction)._className ~= "AirActionMoveAndWandering" then
-      if (self._mainAction)._className == "AirActionStand" then
-        (Log.exception)("[AircraftPet] 漫游主行为类型错误：", (self._mainAction)._className)
-        local time = (self._mainAction):CurrentTime()
-        do
-          local duration = (self._mainAction):Duration()
-          t.remainTime = (math.floor)(duration - time)
-          t.area = self._wanderingArea
-          t.actionIndex = self._randomActionCfgID
-          do return t end
-          if self._state == AirPetState.OnFurniture then
-            if self._mainAction == nil then
-              (Log.exception)("[AircraftPet] 家具主行为为空，无法序列化：", self:TemplateID())
-            end
-            if (self._mainAction)._className ~= "AirActionOnFurniture" then
-              if (self._mainAction)._className == "AirActionMoveAndFurniture" then
-                (Log.exception)("[AircraftPet] 家具主行为类型错误：", (self._mainAction)._className, "，ID：", self:TemplateID())
-                local time = (self._mainAction):CurrentTime()
-                do
-                  local duration = (self._mainAction):Duration()
-                  t.remainTime = (math.floor)(duration - time)
-                  t.furnID = (self._mainAction):GetEncodeInfo()
-                  t.actionIndex = self._randomActionCfgID
-                  do return t end
-                  if self._state == AirPetState.Social then
-                    t.airSocialActionType = self._socialActionType
-                    t.socialRound = self._socialRound or 1
-                    t.socialFurnitureId = self._socialFurnitureKey
-                    t.socialPointHolderIndex = self._socialPointHolderIndex
-                    t.socialLocationIndex = self._socialLocationIndex
-                    t.socialAreaType = self._socialAreaType
-                    t.socialPetCount = self._socialPetCount
-                    t.remainTime = self._socialRemainTime or 0
-                    return t
-                  else
-                    return nil
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+    if self._mainAction._className == "AirActionWandering" or self._mainAction._className == "AirActionMoveAndWandering" or self._mainAction._className == "AirActionStand" then
+    else
+      Log.exception("[AircraftPet] 漫游主行为类型错误：", self._mainAction._className)
     end
+    local time = self._mainAction:CurrentTime()
+    local duration = self._mainAction:Duration()
+    t.remainTime = math.floor(duration - time)
+    t.area = self._wanderingArea
+    t.actionIndex = self._randomActionCfgID
+    return t
+  elseif self._state == AirPetState.OnFurniture then
+    if self._mainAction == nil then
+      Log.exception("[AircraftPet] 家具主行为为空，无法序列化：", self:TemplateID())
+    end
+    if self._mainAction._className == "AirActionOnFurniture" or self._mainAction._className == "AirActionMoveAndFurniture" then
+    else
+      Log.exception("[AircraftPet] 家具主行为类型错误：", self._mainAction._className, "，ID：", self:TemplateID())
+    end
+    local time = self._mainAction:CurrentTime()
+    local duration = self._mainAction:Duration()
+    t.remainTime = math.floor(duration - time)
+    t.furnID, t.point = self._mainAction:GetEncodeInfo()
+    t.actionIndex = self._randomActionCfgID
+    return t
+  elseif self._state == AirPetState.Social then
+    t.airSocialActionType = self._socialActionType
+    t.socialRound = self._socialRound or 1
+    t.socialFurnitureId = self._socialFurnitureKey
+    t.socialPointHolderIndex = self._socialPointHolderIndex
+    t.socialLocationIndex = self._socialLocationIndex
+    t.socialAreaType = self._socialAreaType
+    t.socialPetCount = self._socialPetCount
+    t.remainTime = self._socialRemainTime or 0
+    return t
+  else
+    return nil
   end
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.Decode = function(self, t, time, main)
-  -- function num : 0_70 , upvalues : _ENV
+function AircraftPet:Decode(t, time, main)
   self._floor = t.floor
   self._state = t.state
   self._belongArea = t.belongArea
@@ -881,72 +590,56 @@ AircraftPet.Decode = function(self, t, time, main)
     local action = AirActionWandering:New(self, holder, time, "恢复的漫游行为", main)
     main:StartInitAction(self, action, t.actionIndex)
     return true
-  else
-    do
-      if self._state == AirPetState.OnFurniture then
-        local furn = main:GetFurnitureByKey(t.furnID)
-        if furn == nil then
-          AirLog("反序列化找不到家具：", t.furnID)
-          return false
-        end
-        if furn:IsPointOccupied(t.point) then
-          return false
-        end
-        AirLog("家具交互反序列化占据一个点，家具ID：", furn:CfgID(), "，索引：", t.point)
-        local point = furn:OccupyPointByIndex(t.point)
-        local cond = AircraftPetFurPointCondition:New(self, furn, nil, point)
-        self:SetOccupyFurniture(furn:InstanceID())
-        local action = AirActionOnFurniture:New(self, furn, point, cond, time, true)
-        main:StartInitAction(self, action, t.actionIndex)
-        return true
-      else
-        do
-          if self._state == AirPetState.Social then
-            self._socialAreaType = t.socialAreaType
-            local holder = main:GetPointHolder(self._socialAreaType)
-            local pos = main:GetInitPos(holder)
-            self:SetPosition(pos)
-            self._socialActionType = t.airSocialActionType
-            self._socialRound = t.socialRound
-            self._socialFurnitureKey = t.socialFurnitureId
-            self._socialPointHolderIndex = t.socialPointHolderIndex
-            self._socialLocationIndex = t.socialLocationIndex
-            self._socialPetCount = t.socialPetCount
-            self._socialRemainTime = t.remainTime
-            ;
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AirForceTriggerSocialAction, self)
-            return true
-          end
-        end
-      end
+  elseif self._state == AirPetState.OnFurniture then
+    local furn = main:GetFurnitureByKey(t.furnID)
+    if furn == nil then
+      AirLog("反序列化找不到家具：", t.furnID)
+      return false
     end
+    if furn:IsPointOccupied(t.point) then
+      return false
+    end
+    AirLog("家具交互反序列化占据一个点，家具ID：", furn:CfgID(), "，索引：", t.point)
+    local point = furn:OccupyPointByIndex(t.point)
+    local cond = AircraftPetFurPointCondition:New(self, furn, nil, point)
+    self:SetOccupyFurniture(furn:InstanceID())
+    local action = AirActionOnFurniture:New(self, furn, point, cond, time, true)
+    main:StartInitAction(self, action, t.actionIndex)
+    return true
+  elseif self._state == AirPetState.Social then
+    self._socialAreaType = t.socialAreaType
+    local holder = main:GetPointHolder(self._socialAreaType)
+    local pos = main:GetInitPos(holder)
+    self:SetPosition(pos)
+    self._socialActionType = t.airSocialActionType
+    self._socialRound = t.socialRound
+    self._socialFurnitureKey = t.socialFurnitureId
+    self._socialPointHolderIndex = t.socialPointHolderIndex
+    self._socialLocationIndex = t.socialLocationIndex
+    self._socialPetCount = t.socialPetCount
+    self._socialRemainTime = t.remainTime
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AirForceTriggerSocialAction, self)
+    return true
   end
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetInteractFurnitures = function(self)
-  -- function num : 0_71 , upvalues : _ENV
+function AircraftPet:GetInteractFurnitures()
   if not self._interactFurnitures then
     self._interactFurnitures = {
-{AirFurnitureType.RestChair}
-}
+      {
+        AirFurnitureType.RestChair
+      }
+    }
   end
   return self._interactFurnitures
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetRandomFace = function(self)
-  -- function num : 0_72 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_pet)[self._tmpID]
+function AircraftPet:GetRandomFace()
+  local cfg = Cfg.cfg_aircraft_pet[self._tmpID]
   return cfg and self:GetIDWithRandomWeight(cfg.CharactorFace) or 1
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.ResetSocialParam = function(self)
-  -- function num : 0_73
+function AircraftPet:ResetSocialParam()
   self:SetSocialActionType()
   self:SetSocialRound()
   self:SetSocialFurnitureKey()
@@ -957,180 +650,104 @@ AircraftPet.ResetSocialParam = function(self)
   self:SetSocialPetCount()
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetSocialActionType = function(self, type)
-  -- function num : 0_74
+function AircraftPet:SetSocialActionType(type)
   self._socialActionType = type
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetSocialActionType = function(self)
-  -- function num : 0_75
+function AircraftPet:GetSocialActionType()
   return self._socialActionType
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetSocialRound = function(self, round)
-  -- function num : 0_76
+function AircraftPet:SetSocialRound(round)
   self._socialRound = round
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetSocialRound = function(self)
-  -- function num : 0_77
+function AircraftPet:GetSocialRound()
   return self._socialRound
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetSocialFurnitureKey = function(self, furnitureKey)
-  -- function num : 0_78
+function AircraftPet:SetSocialFurnitureKey(furnitureKey)
   self._socialFurnitureKey = furnitureKey
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetSocialFurnitureKey = function(self)
-  -- function num : 0_79
+function AircraftPet:GetSocialFurnitureKey()
   return self._socialFurnitureKey
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetSocialRemainTime = function(self, time)
-  -- function num : 0_80
+function AircraftPet:SetSocialRemainTime(time)
   self._socialRemainTime = time
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetSocialRemainTime = function(self)
-  -- function num : 0_81
+function AircraftPet:GetSocialRemainTime()
   return self._socialRemainTime
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetSocialLocationIndex = function(self, index)
-  -- function num : 0_82
+function AircraftPet:SetSocialLocationIndex(index)
   self._socialLocationIndex = index
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetSocialLocationIndex = function(self)
-  -- function num : 0_83
+function AircraftPet:GetSocialLocationIndex()
   return self._socialLocationIndex
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetSocialPointHolderIndex = function(self, pointHolderIndex)
-  -- function num : 0_84
+function AircraftPet:SetSocialPointHolderIndex(pointHolderIndex)
   self._socialPointHolderIndex = pointHolderIndex
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetSocialPointHolderIndex = function(self)
-  -- function num : 0_85
+function AircraftPet:GetSocialPointHolderIndex()
   return self._socialPointHolderIndex
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetSocialAreaType = function(self, type)
-  -- function num : 0_86
+function AircraftPet:SetSocialAreaType(type)
   self._socialAreaType = type
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetSocialAreaType = function(self)
-  -- function num : 0_87
+function AircraftPet:GetSocialAreaType()
   return self._socialAreaType
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetSocialPetCount = function(self, count)
-  -- function num : 0_88
+function AircraftPet:SetSocialPetCount(count)
   self._socialPetCount = count
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetSocialPetCount = function(self)
-  -- function num : 0_89
+function AircraftPet:GetSocialPetCount()
   return self._socialPetCount
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.NaviRadius = function(self)
-  -- function num : 0_90
+function AircraftPet:NaviRadius()
   return self._naviRadius
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetMoveTarget = function(self, t)
-  -- function num : 0_91
+function AircraftPet:SetMoveTarget(t)
   self._moveTarget = t
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetMoveTarget = function(self)
-  -- function num : 0_92
+function AircraftPet:GetMoveTarget()
   return self._moveTarget
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.HasMoveTarget = function(self)
-  -- function num : 0_93
-  do return self._moveTarget ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftPet:HasMoveTarget()
+  return self._moveTarget ~= nil
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetMoveAction = function(self, action)
-  -- function num : 0_94
+function AircraftPet:SetMoveAction(action)
   self._moveAction = action
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetMoveAction = function(self)
-  -- function num : 0_95
+function AircraftPet:GetMoveAction()
   return self._moveAction
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.IsCloserToMe = function(self, targetPetTempId)
-  -- function num : 0_96
+function AircraftPet:IsCloserToMe(targetPetTempId)
   return self:_IsRelationPet(targetPetTempId, true, "CloserType", "CloserParam")
 end
 
--- DECOMPILER ERROR at PC299: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.IsFarAwayFromMe = function(self, targetPetTempId)
-  -- function num : 0_97
+function AircraftPet:IsFarAwayFromMe(targetPetTempId)
   return self:_IsRelationPet(targetPetTempId, false, "FarAwayType", "FarAwayParam")
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet._IsRelationPet = function(self, targetPetTempId, isCloser, typeStr, paramStr)
-  -- function num : 0_98 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_pet)[self:TemplateID()]
+function AircraftPet:_IsRelationPet(targetPetTempId, isCloser, typeStr, paramStr)
+  local cfg = Cfg.cfg_aircraft_pet[self:TemplateID()]
   if not cfg then
     return false
   end
@@ -1138,7 +755,7 @@ AircraftPet._IsRelationPet = function(self, targetPetTempId, isCloser, typeStr, 
   if not type then
     return false
   end
-  local relationPets = nil
+  local relationPets
   if isCloser then
     relationPets = self._closerPets
   else
@@ -1148,537 +765,351 @@ AircraftPet._IsRelationPet = function(self, targetPetTempId, isCloser, typeStr, 
     relationPets = {}
     local param = cfg[paramStr]
     if type == AirRelationType.Pets then
-      for index,petTempId in ipairs(param) do
+      for index, petTempId in ipairs(param) do
         relationPets[petTempId] = true
       end
-    else
-      do
-        if type == AirRelationType.ShiLi then
-          for index,shili in ipairs(param) do
-            local pets = (AirHelper.GetPetTempIdsByShiLi)(shili)
-            for key,petTempId in pairs(pets) do
-              relationPets[petTempId] = true
-            end
-          end
-        end
-        do
-          do
-            if isCloser then
-              self._closerPets = relationPets
-            else
-              self._farAwayPets = relationPets
-            end
-            if type == AirRelationType.All then
-              return true
-            else
-              return relationPets[targetPetTempId]
-            end
-          end
+    elseif type == AirRelationType.ShiLi then
+      for index, shili in ipairs(param) do
+        local pets = AirHelper.GetPetTempIdsByShiLi(shili)
+        for key, petTempId in pairs(pets) do
+          relationPets[petTempId] = true
         end
       end
     end
+    if isCloser then
+      self._closerPets = relationPets
+    else
+      self._farAwayPets = relationPets
+    end
+  end
+  if type == AirRelationType.All then
+    return true
+  else
+    return relationPets[targetPetTempId]
   end
 end
 
--- DECOMPILER ERROR at PC305: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetWisperTime = function(self)
-  -- function num : 0_99
+function AircraftPet:GetWisperTime()
   return self._wisperTime or 0
 end
 
--- DECOMPILER ERROR at PC308: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetWisperTime = function(self, time)
-  -- function num : 0_100
+function AircraftPet:SetWisperTime(time)
   self._wisperTime = time
 end
 
--- DECOMPILER ERROR at PC311: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.WisperWeight = function(self)
-  -- function num : 0_101
+function AircraftPet:WisperWeight()
   return self._wisperWeight
 end
 
--- DECOMPILER ERROR at PC314: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetExtraAnim = function(self, anim)
-  -- function num : 0_102 , upvalues : _ENV
+function AircraftPet:SetExtraAnim(anim)
   if self._isShow and anim then
-    (HelperProxy:GetInstance()):AddAnimTo(anim, self._animation)
-  else
-    if self._isShow and anim == nil and self._extraAnim then
-      (HelperProxy:GetInstance()):RemoveAnimTo(self._extraAnim, self._animation)
-    end
+    HelperProxy:GetInstance():AddAnimTo(anim, self._animation)
+  elseif self._isShow and anim == nil and self._extraAnim then
+    HelperProxy:GetInstance():RemoveAnimTo(self._extraAnim, self._animation)
   end
   self._extraAnim = anim
 end
 
--- DECOMPILER ERROR at PC317: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.PrefabName = function(self)
-  -- function num : 0_103
+function AircraftPet:PrefabName()
   return self._prefabName
 end
 
--- DECOMPILER ERROR at PC320: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.Show = function(self, req)
-  -- function num : 0_104 , upvalues : _ENV
+function AircraftPet:Show(req)
   self._isShow = true
   self._assetReq = req
   self._petGO = req:PetGameObject()
-  self._petTransform = (self._petGO).transform
-  ;
-  (GameObjectHelper.SetGameObjectLayer)(self._petGO, AircraftLayer.Pet)
-  ;
-  (GameObjectHelper.AddVolumeComponent)(self._petGO)
-  self._animation = ((self._petTransform):Find("Root")):GetComponent(typeof(UnityEngine.Animation))
-  local clickAnim = (self._animation):get_Item(AirPetAnimName.Click)
+  self._petTransform = self._petGO.transform
+  GameObjectHelper.SetGameObjectLayer(self._petGO, AircraftLayer.Pet)
+  GameObjectHelper.AddVolumeComponent(self._petGO)
+  self._animation = self._petTransform:Find("Root"):GetComponent(typeof(UnityEngine.Animation))
+  local clickAnim = self._animation:get_Item(AirPetAnimName.Click)
   if clickAnim == nil then
     AirError("严重错误，找不到点击动作：", self._tmpID)
   end
-  local head = (GameObjectHelper.FindChild)(self._petTransform, "Bip001 Head")
+  local head = GameObjectHelper.FindChild(self._petTransform, "Bip001 Head")
   if not head then
     AirError("[AircraftPet] 严重错误：找不到头部挂点，星灵ID:", self:TemplateID())
   end
   self._headSlot = head
-  local bip = (GameObjectHelper.FindChild)((self._petGO).transform, "Bip001")
+  local bip = GameObjectHelper.FindChild(self._petGO.transform, "Bip001")
   if bip == nil then
     AirError("[AircraftPet] 严重错误，找不到模型根骨骼：", self:TemplateID())
   end
-  local collider = (bip.gameObject):AddComponent(typeof(UnityEngine.BoxCollider))
-  local cfg = (Cfg.cfg_aircraft_pet)[self._tmpID]
+  local collider = bip.gameObject:AddComponent(typeof(UnityEngine.BoxCollider))
+  local cfg = Cfg.cfg_aircraft_pet[self._tmpID]
   if not cfg then
     AirError("aircraft_pet表中找不到配置：", self._tmpID)
   end
-  collider.size = Vector3((cfg.BoxSize)[1], (cfg.BoxSize)[3], (cfg.BoxSize)[2])
+  collider.size = Vector3(cfg.BoxSize[1], cfg.BoxSize[3], cfg.BoxSize[2])
   collider.center = Vector3(0, 0, 0)
   self._collider = collider
-  self.clickEffCfg = (Cfg.cfg_aircraft_click_eff)[self._skinID]
-  if self.clickEffCfg and (self.clickEffCfg).EffName then
-    self.clickEffReq = (ResourceManager:GetInstance()):SyncLoadAsset((self.clickEffCfg).EffName .. ".prefab", LoadType.GameObject)
-    self.clickEff = (self.clickEffReq).Obj
-    -- DECOMPILER ERROR at PC130: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self.clickEff).transform).localScale = Vector3.one
-    local cfgPos = (self.clickEffCfg).PosOffset
+  self.clickEffCfg = Cfg.cfg_aircraft_click_eff[self._skinID]
+  if self.clickEffCfg and self.clickEffCfg.EffName then
+    self.clickEffReq = ResourceManager:GetInstance():SyncLoadAsset(self.clickEffCfg.EffName .. ".prefab", LoadType.GameObject)
+    self.clickEff = self.clickEffReq.Obj
+    self.clickEff.transform.localScale = Vector3.one
+    local cfgPos = self.clickEffCfg.PosOffset
     self.clickEffOffset = Vector3(cfgPos[1], cfgPos[2], cfgPos[3])
   end
-  do
-    local face_name = self._skinID .. "_face"
-    local face = (GameObjectHelper.FindChild)((self._petGO).transform, face_name)
-    if face then
-      local render = (face.gameObject):GetComponent(typeof(UnityEngine.SkinnedMeshRenderer))
-      if not render then
-        AirError("面部表情节点上找不到SkinnedMeshRenderer：", face_name)
-      else
-        self._faceMat = render.material
-      end
+  local face_name = self._skinID .. "_face"
+  local face = GameObjectHelper.FindChild(self._petGO.transform, face_name)
+  if face then
+    local render = face.gameObject:GetComponent(typeof(UnityEngine.SkinnedMeshRenderer))
+    if not render then
+      AirError("面部表情节点上找不到SkinnedMeshRenderer：", face_name)
     else
-      do
-        AirError("找不到面部表情节点：", face_name)
-        if self._extraAnim then
-          (HelperProxy:GetInstance()):AddAnimTo(self._extraAnim, self._animation)
-        end
-        ;
-        (self._petTransform):SetParent(self._shellTransform)
-        local petScale = ((Cfg.cfg_aircraft_camera).petScale).Value
-        -- DECOMPILER ERROR at PC196: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        ((self._petGO).transform).localScale = Vector3(petScale, petScale, petScale)
-        -- DECOMPILER ERROR at PC200: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._petTransform).localPosition = Vector3.zero
-        -- DECOMPILER ERROR at PC204: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._petTransform).localRotation = Quaternion.identity
-        local root = (self._petTransform):Find("Root")
-        for i = 0, root.childCount - 1 do
-          local child = root:GetChild(i)
-          if (string.find)(child.name, "weapon") then
-            (child.gameObject):SetActive(false)
-          end
-        end
-        self._selectAnim = (self._petGO):GetComponent(typeof(UnityEngine.Animation))
-        if not self._selectAnim then
-          self._selectAnim = (self._petGO):AddComponent(typeof(UnityEngine.Animation))
-          -- DECOMPILER ERROR at PC249: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          (self._selectAnim).playAutomatically = false
-          ;
-          (self._selectAnim):AddClip(req:ClickAnimClip(), "aircraft_select")
-        end
-        self._outLine = (root.gameObject):GetComponent(typeof(OutlineComponent))
-        if not self._outLine then
-          self._outLine = (root.gameObject):AddComponent(typeof(OutlineComponent))
-          -- DECOMPILER ERROR at PC274: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          (self._outLine).blurNum = 3
-          -- DECOMPILER ERROR at PC276: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          (self._outLine).intensity = 2.5
-          -- DECOMPILER ERROR at PC278: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          (self._outLine).outlineSize = 1
-          -- DECOMPILER ERROR at PC283: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          (self._outLine).blendType = (OutlineComponent.BlendType).Blend
-          -- DECOMPILER ERROR at PC285: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          (self._outLine).enabled = false
-        end
-        ;
-        (self._petGO):SetActive(true)
-        if self._curAnim then
-          (self._animation):CrossFade(self._curAnim, 0)
-          local time = (self._main):Time() - self._curAnimPlayTime
-          local animState = (self._animation):get_Item(self._curAnim)
-          if animState then
-            local duration = (math.floor)(animState.length * 1000)
-            local t = time % duration
-            animState.enabled = true
-            animState.time = t
-            ;
-            (HelperProxy:GetInstance()):TriggerAircraftAnimationEvent(self._animation, self._curAnim, t)
-          else
-            do
-              local log = "[Aircraft_Exception]星灵没有动作:" .. self._curAnim .. "，id:" .. self._skinID
-              AirException(log)
-            end
-          end
-        end
-      end
+      self._faceMat = render.material
+    end
+  else
+    AirError("找不到面部表情节点：", face_name)
+  end
+  if self._extraAnim then
+    HelperProxy:GetInstance():AddAnimTo(self._extraAnim, self._animation)
+  end
+  self._petTransform:SetParent(self._shellTransform)
+  local petScale = Cfg.cfg_aircraft_camera.petScale.Value
+  self._petGO.transform.localScale = Vector3(petScale, petScale, petScale)
+  self._petTransform.localPosition = Vector3.zero
+  self._petTransform.localRotation = Quaternion.identity
+  local root = self._petTransform:Find("Root")
+  for i = 0, root.childCount - 1 do
+    local child = root:GetChild(i)
+    if string.find(child.name, "weapon") then
+      child.gameObject:SetActive(false)
+    end
+  end
+  self._selectAnim = self._petGO:GetComponent(typeof(UnityEngine.Animation))
+  if not self._selectAnim then
+    self._selectAnim = self._petGO:AddComponent(typeof(UnityEngine.Animation))
+    self._selectAnim.playAutomatically = false
+    self._selectAnim:AddClip(req:ClickAnimClip(), "aircraft_select")
+  end
+  self._outLine = root.gameObject:GetComponent(typeof(OutlineComponent))
+  if not self._outLine then
+    self._outLine = root.gameObject:AddComponent(typeof(OutlineComponent))
+    self._outLine.blurNum = 3
+    self._outLine.intensity = 2.5
+    self._outLine.outlineSize = 1
+    self._outLine.blendType = OutlineComponent.BlendType.Blend
+    self._outLine.enabled = false
+  end
+  self._petGO:SetActive(true)
+  if self._curAnim then
+    self._animation:CrossFade(self._curAnim, 0)
+    local time = self._main:Time() - self._curAnimPlayTime
+    local animState = self._animation:get_Item(self._curAnim)
+    if animState then
+      local duration = math.floor(animState.length * 1000)
+      local t = time % duration
+      animState.enabled = true
+      animState.time = t
+      HelperProxy:GetInstance():TriggerAircraftAnimationEvent(self._animation, self._curAnim, t)
+    else
+      local log = "[Aircraft_Exception]星灵没有动作:" .. self._curAnim .. "，id:" .. self._skinID
+      AirException(log)
     end
   end
 end
 
--- DECOMPILER ERROR at PC323: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.Hide = function(self)
-  -- function num : 0_105
+function AircraftPet:Hide()
   if not self._isShow then
-    return 
+    return
   end
   self._isShow = false
-  ;
-  (self._assetReq):Dispose()
+  self._assetReq:Dispose()
   self._assetReq = nil
   if self._sectenceAction then
-    (self._sectenceAction):Stop()
+    self._sectenceAction:Stop()
     self._sectenceAction = nil
   end
   if self._lastSectenceAction then
-    (self._lastSectenceAction):Stop()
+    self._lastSectenceAction:Stop()
     self._lastSectenceAction = nil
   end
   if self.clickEffReq then
-    (self.clickEffReq):Dispose()
+    self.clickEffReq:Dispose()
     self.clickEffReq = nil
   end
   if self._MaterialAnimationContainer then
-    (self._MaterialAnimationContainer):Dispose()
+    self._MaterialAnimationContainer:Dispose()
     self._MaterialAnimationContainer = nil
   end
   self._faceMat = nil
 end
 
--- DECOMPILER ERROR at PC326: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.UnloadWeaponTexture = function(self, root)
-  -- function num : 0_106 , upvalues : _ENV
-  local cfgv = (self.cfg_aircraft_weapon_tex_2_unload)[self._tmpID]
+function AircraftPet:UnloadWeaponTexture(root)
+  local cfgv = self.cfg_aircraft_weapon_tex_2_unload[self._tmpID]
   if not cfgv then
-    return 
+    return
   end
-  local propertyNames = {"_MainTex", "_ShadowColorTex", "_SLHTex", "_EffectTex"}
-  for goname,tname in pairs(cfgv) do
-    local tranWeapon = (root.transform):Find(goname)
+  local propertyNames = {
+    "_MainTex",
+    "_ShadowColorTex",
+    "_SLHTex",
+    "_EffectTex"
+  }
+  for goname, tname in pairs(cfgv) do
+    local tranWeapon = root.transform:Find(goname)
     if tranWeapon then
       local go = tranWeapon.gameObject
       local smr = go:GetComponent(typeof(UnityEngine.SkinnedMeshRenderer))
       local m = smr.material
-      for _,propertyName in ipairs(propertyNames) do
+      for _, propertyName in ipairs(propertyNames) do
         local texture = m:GetTexture(propertyName)
-        if texture and (table.icontains)(tname, texture.name) then
+        if texture and table.icontains(tname, texture.name) then
           m:SetTexture(propertyName, nil)
-          ;
-          ((UnityEngine.Resources).UnloadAsset)(texture)
+          UnityEngine.Resources.UnloadAsset(texture)
         end
       end
     else
-      do
-        do
-          ;
-          (Log.warn)("### tranWeapon nil.", goname)
-          -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      Log.warn("### tranWeapon nil.", goname)
     end
   end
 end
 
--- DECOMPILER ERROR at PC329: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.HeadPos = function(self)
-  -- function num : 0_107 , upvalues : _ENV
+function AircraftPet:HeadPos()
   if self._isShow then
-    return (self._headSlot).position
+    return self._headSlot.position
   else
-    return (self._shellTransform).position + Vector3(0, 1.5, 0)
+    return self._shellTransform.position + Vector3(0, 1.5, 0)
   end
 end
 
--- DECOMPILER ERROR at PC332: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetFaceMat = function(self)
-  -- function num : 0_108
+function AircraftPet:GetFaceMat()
   if self._isShow then
     return self._faceMat
   end
 end
 
--- DECOMPILER ERROR at PC335: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GameObject = function(self)
-  -- function num : 0_109
+function AircraftPet:GameObject()
   return self._petShell
 end
 
--- DECOMPILER ERROR at PC338: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.Transform = function(self)
-  -- function num : 0_110
+function AircraftPet:Transform()
   return self._shellTransform
 end
 
--- DECOMPILER ERROR at PC341: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetPosition = function(self, pos)
-  -- function num : 0_111
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._shellTransform).position = pos
+function AircraftPet:SetPosition(pos)
+  self._shellTransform.position = pos
 end
 
--- DECOMPILER ERROR at PC344: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetRotation = function(self, rot)
-  -- function num : 0_112
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._shellTransform).rotation = rot
+function AircraftPet:SetRotation(rot)
+  self._shellTransform.rotation = rot
 end
 
--- DECOMPILER ERROR at PC347: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetEuler = function(self, v3)
-  -- function num : 0_113
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._shellTransform).eulerAngles = v3
+function AircraftPet:SetEuler(v3)
+  self._shellTransform.eulerAngles = v3
 end
 
--- DECOMPILER ERROR at PC350: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.Anim_CrossFade = function(self, name, time)
-  -- function num : 0_114
+function AircraftPet:Anim_CrossFade(name, time)
   self._curAnim = name
-  self._curAnimPlayTime = (self._main):Time()
+  self._curAnimPlayTime = self._main:Time()
   if not self._isShow then
-    return 
+    return
   end
   if time then
-    (self._animation):CrossFade(name, time)
+    self._animation:CrossFade(name, time)
   else
-    ;
-    (self._animation):CrossFade(name, 0.2)
+    self._animation:CrossFade(name, 0.2)
   end
 end
 
--- DECOMPILER ERROR at PC353: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.Anim_Walk = function(self)
-  -- function num : 0_115 , upvalues : _ENV
+function AircraftPet:Anim_Walk()
   self:Anim_CrossFade(AirPetAnimName.Walk)
 end
 
--- DECOMPILER ERROR at PC356: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.Anim_Stand = function(self)
-  -- function num : 0_116 , upvalues : _ENV
+function AircraftPet:Anim_Stand()
   self:Anim_CrossFade(AirPetAnimName.Stand)
 end
 
--- DECOMPILER ERROR at PC359: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.Anim_Sit = function(self)
-  -- function num : 0_117 , upvalues : _ENV
+function AircraftPet:Anim_Sit()
   self:Anim_CrossFade(AirPetAnimName.Sit)
 end
 
--- DECOMPILER ERROR at PC362: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.Anim_Stop = function(self)
-  -- function num : 0_118
+function AircraftPet:Anim_Stop()
   if not self._isShow then
-    return 
+    return
   end
-  ;
-  (self._animation):Stop()
+  self._animation:Stop()
 end
 
--- DECOMPILER ERROR at PC365: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.Anim_Click = function(self, animName)
-  -- function num : 0_119 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
+function AircraftPet:Anim_Click(animName)
   if self.clickEff then
-    ((self.clickEff).transform).rotation = (self._petTransform).rotation
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self.clickEff).transform).position = (self._petTransform).position + self.clickEffOffset
-    ;
-    (self.clickEff):SetActive(false)
-    ;
-    (self.clickEff):SetActive(true)
+    self.clickEff.transform.rotation = self._petTransform.rotation
+    self.clickEff.transform.position = self._petTransform.position + self.clickEffOffset
+    self.clickEff:SetActive(false)
+    self.clickEff:SetActive(true)
   end
   if animName then
-    local animState = (self._animation):get_Item(animName)
+    local animState = self._animation:get_Item(animName)
     if animState then
       self:Anim_CrossFade(animName)
     else
       self:Anim_CrossFade(AirPetAnimName.Click)
     end
   else
-    do
-      self:Anim_CrossFade(AirPetAnimName.Click)
-    end
+    self:Anim_CrossFade(AirPetAnimName.Click)
   end
 end
 
--- DECOMPILER ERROR at PC368: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.WorldPosition = function(self)
-  -- function num : 0_120
-  return (self._shellTransform).position
+function AircraftPet:WorldPosition()
+  return self._shellTransform.position
 end
 
--- DECOMPILER ERROR at PC371: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.Animation = function(self)
-  -- function num : 0_121
+function AircraftPet:Animation()
   if self._isShow then
     return self._animation
   end
 end
 
--- DECOMPILER ERROR at PC374: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetNaviEnable = function(self, enable)
-  -- function num : 0_122
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._navMeshAgent).enabled = enable
+function AircraftPet:SetNaviEnable(enable)
+  self._navMeshAgent.enabled = enable
 end
 
--- DECOMPILER ERROR at PC377: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.NaviMesh = function(self)
-  -- function num : 0_123
+function AircraftPet:NaviMesh()
   return self._navMeshAgent
 end
 
--- DECOMPILER ERROR at PC380: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetAsObstacle = function(self)
-  -- function num : 0_124
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._navMeshObstacle).enabled = true
+function AircraftPet:SetAsObstacle()
+  self._navMeshObstacle.enabled = true
 end
 
--- DECOMPILER ERROR at PC383: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.NaviObstacle = function(self)
-  -- function num : 0_125
+function AircraftPet:NaviObstacle()
   return self._navMeshObstacle
 end
 
--- DECOMPILER ERROR at PC386: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.PlaySelectAnim = function(self)
-  -- function num : 0_126
+function AircraftPet:PlaySelectAnim()
   if self._selectAnim then
-    (self._selectAnim):Play("aircraft_select")
+    self._selectAnim:Play("aircraft_select")
   end
 end
 
--- DECOMPILER ERROR at PC389: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.StopMatAnim = function(self)
-  -- function num : 0_127
+function AircraftPet:StopMatAnim()
 end
 
--- DECOMPILER ERROR at PC392: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetOwnerName = function(self, ownerName)
-  -- function num : 0_128
+function AircraftPet:SetOwnerName(ownerName)
   self._ownerName = ownerName
 end
 
--- DECOMPILER ERROR at PC395: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetOwnerName = function(self)
-  -- function num : 0_129
+function AircraftPet:GetOwnerName()
   return self._ownerName
 end
 
--- DECOMPILER ERROR at PC398: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetMainActionName = function(self)
-  -- function num : 0_130
+function AircraftPet:GetMainActionName()
   if self._mainAction then
-    return (self._mainAction)._className
+    return self._mainAction._className
   end
 end
 
--- DECOMPILER ERROR at PC401: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.GetMoveSpeed = function(self)
-  -- function num : 0_131
+function AircraftPet:GetMoveSpeed()
   return self._moveSpeed
 end
 
--- DECOMPILER ERROR at PC404: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.SetEffectCollider = function(self, eftCollider)
-  -- function num : 0_132
+function AircraftPet:SetEffectCollider(eftCollider)
   self._eftCollider = eftCollider
 end
 
--- DECOMPILER ERROR at PC407: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPet.CheckCollider = function(self, collider)
-  -- function num : 0_133
+function AircraftPet:CheckCollider(collider)
   if self._collider and self._collider == collider then
     return true
   end
@@ -1687,5 +1118,3 @@ AircraftPet.CheckCollider = function(self, collider)
   end
   return false
 end
-
-

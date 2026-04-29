@@ -1,147 +1,95 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n19/main/ui_n19_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN19MainController", UIController)
 UIN19MainController = UIN19MainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN19MainController._SetRemainingTime = function(self, widgetName, extraId, descId, endTime, customTimeStr)
-  -- function num : 0_0 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UIN19MainController:_SetRemainingTime(widgetName, extraId, descId, endTime, customTimeStr)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   if customTimeStr then
     obj:SetCustomTimeStr_Common_1()
   end
   obj:SetExtraText("txtDesc", nil, extraId)
   obj:SetAdvanceText(descId)
   obj:SetData(endTime, nil, function()
-    -- function num : 0_0_0 , upvalues : self
     self:_UpdateTime()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController._SetCommonTopButton = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_backBtns", "UICommonTopButton")
+function UIN19MainController:_SetCommonTopButton()
+  local obj = UIWidgetHelper.SpawnObject(self, "_backBtns", "UICommonTopButton")
   obj:SetData(function()
-    -- function num : 0_1_0 , upvalues : self
     self:_Back()
-  end
-, nil, nil, false, function()
-    -- function num : 0_1_1 , upvalues : self
+  end, nil, nil, false, function()
     self:_HideUI()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController._Back = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN19MainController:_Back()
   self:SwitchState(UIStateType.UIMain)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController._HideUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self:GetGameObject("_backBtns")):SetActive(false)
-  ;
-  (self:GetGameObject("_showBtn")):SetActive(true)
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", "eff_UIN19MainController_out", 500, nil)
+function UIN19MainController:_HideUI()
+  self:GetGameObject("_backBtns"):SetActive(false)
+  self:GetGameObject("_showBtn"):SetActive(true)
+  UIWidgetHelper.PlayAnimation(self, "_anim", "eff_UIN19MainController_out", 500, nil)
   if self._lineLevelBtn then
-    (UIWidgetHelper.PlayAnimation)(self._lineLevelBtn, "_anim", "eff_UIN19LineLevelBtn_out", 500, nil)
+    UIWidgetHelper.PlayAnimation(self._lineLevelBtn, "_anim", "eff_UIN19LineLevelBtn_out", 500, nil)
   end
   if self._miniGameBtn then
-    (UIWidgetHelper.PlayAnimation)(self._miniGameBtn, "_anim", "eff_UIN19MiniGameBtn_out", 500, nil)
+    UIWidgetHelper.PlayAnimation(self._miniGameBtn, "_anim", "eff_UIN19MiniGameBtn_out", 500, nil)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController._ShowUI = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self:GetGameObject("_backBtns")):SetActive(true)
-  ;
-  (self:GetGameObject("_showBtn")):SetActive(false)
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", "eff_UIN19MainController_in2", 667, nil)
+function UIN19MainController:_ShowUI()
+  self:GetGameObject("_backBtns"):SetActive(true)
+  self:GetGameObject("_showBtn"):SetActive(false)
+  UIWidgetHelper.PlayAnimation(self, "_anim", "eff_UIN19MainController_in2", 667, nil)
   if self._lineLevelBtn then
-    (UIWidgetHelper.PlayAnimation)(self._lineLevelBtn, "_anim", "eff_UIN19LineLevelBtn_in", 667, nil)
+    UIWidgetHelper.PlayAnimation(self._lineLevelBtn, "_anim", "eff_UIN19LineLevelBtn_in", 667, nil)
   end
   if self._miniGameBtn then
-    (UIWidgetHelper.PlayAnimation)(self._miniGameBtn, "_anim", "eff_UIN19MiniGameBtn_in", 667, nil)
+    UIWidgetHelper.PlayAnimation(self._miniGameBtn, "_anim", "eff_UIN19MiniGameBtn_in", 667, nil)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController._SetBg = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local url = (UIActivityHelper.GetCampaignMainBg)(self._campaign, 1)
+function UIN19MainController:_SetBg()
+  local url = UIActivityHelper.GetCampaignMainBg(self._campaign, 1)
   if url then
-    (UIWidgetHelper.SetRawImage)(self, "_mainBg", url)
+    UIWidgetHelper.SetRawImage(self, "_mainBg", url)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController._SetSpine = function(self)
-  -- function num : 0_6
+function UIN19MainController:_SetSpine()
   local obj = self:GetUIComponent("SpineLoader", "_spine")
   obj:LoadSpine("n19_kv_2_spine_idle")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController._SetImgRT = function(self, imgRT)
-  -- function num : 0_7
-  do
-    if imgRT ~= nil then
-      local rt = self:GetUIComponent("RawImage", "rt")
-      rt.texture = imgRT
-      return true
-    end
-    return false
+function UIN19MainController:_SetImgRT(imgRT)
+  if imgRT ~= nil then
+    local rt = self:GetUIComponent("RawImage", "rt")
+    rt.texture = imgRT
+    return true
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController._CheckGuide = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN19MainController)
+function UIN19MainController:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN19MainController)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN19MainController:LoadDataOnEnter(TT, res, uiParams)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_N19_COMMON
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, self._campaignType, ECampaignN19CommonComponentID.HARD_LEVEL, ECampaignN19CommonComponentID.COMMON_LEVEL, ECampaignN19CommonComponentID.PANGOLIN)
+  self._campaign:LoadCampaignInfo(TT, res, self._campaignType, ECampaignN19CommonComponentID.HARD_LEVEL, ECampaignN19CommonComponentID.COMMON_LEVEL, ECampaignN19CommonComponentID.PANGOLIN)
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, nil, nil)
-    return 
+    self._campaign:CheckErrorCode(res.m_result, nil, nil)
+    return
   end
-  ;
-  (self._campaign):ClearCampaignNew(TT)
+  self._campaign:ClearCampaignNew(TT)
   self._bp_campaign = UIActivityCampaign:New()
   local bp_res = AsyncRequestRes:New()
-  ;
-  (self._bp_campaign):LoadCampaignInfo(TT, bp_res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
+  self._bp_campaign:LoadCampaignInfo(TT, bp_res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController.OnShow = function(self, uiParams)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN19MainController:OnShow(uiParams)
   self:_AttachEvents()
   self._isOpen = true
   self:_SetBg()
@@ -149,167 +97,118 @@ UIN19MainController.OnShow = function(self, uiParams)
   self:_SetSpine()
   self:_UpdateTime()
   self:_Refresh()
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", "eff_UIN19MainController_in", 1000, function()
-    -- function num : 0_10_0 , upvalues : self
+  UIWidgetHelper.PlayAnimation(self, "_anim", "eff_UIN19MainController_in", 1000, function()
     self:_CheckGuide()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController.OnHide = function(self)
-  -- function num : 0_11
+function UIN19MainController:OnHide()
   self:_DetachEvents()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController.Destroy = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  self._bpMatReq = (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self._bpMatReq)
+function UIN19MainController:Destroy()
+  self._bpMatReq = UIWidgetHelper.DisposeLocalizedTMPMaterial(self._bpMatReq)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController._Refresh = function(self)
-  -- function num : 0_13
+function UIN19MainController:_Refresh()
   self:_SetBattlePassBtn(self._bp_campaign)
   self:_SetLineLevelBtn()
   self:_SetMiniGameBtn()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController._UpdateTime = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local stop = ((self._campaign):GetSample()).end_time
+function UIN19MainController:_UpdateTime()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local stop = self._campaign:GetSample().end_time
   if curTime < stop then
     self:_SetRemainingTime("_remainingTimePool", "", "str_n19_main_remaining_time", stop, true)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController._SetBattlePassBtn = function(self, bp_campaign)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN19MainController:_SetBattlePassBtn(bp_campaign)
   local useStateUI = false
   local open_sample = bp_campaign:CheckCampaignOpen()
-  do
-    if open_sample then
-      local obj = (UIWidgetHelper.SpawnObject)(self, "_battlePassBtn", "UIActivityCommonCampaignEnter")
-      obj:SetData(bp_campaign, useStateUI)
-      self._bpMatReq = (UIWidgetHelper.SetLocalizedTMPMaterial)(obj, "_txtTitle", "uieff_uin19_main_battlepass.mat", self._bpMatReq)
-    end
-    local obj = self:GetGameObject(widgetName)
-    obj:SetActive(open_sample)
+  if open_sample then
+    local obj = UIWidgetHelper.SpawnObject(self, "_battlePassBtn", "UIActivityCommonCampaignEnter")
+    obj:SetData(bp_campaign, useStateUI)
+    self._bpMatReq = UIWidgetHelper.SetLocalizedTMPMaterial(obj, "_txtTitle", "uieff_uin19_main_battlepass.mat", self._bpMatReq)
   end
+  local obj = self:GetGameObject(widgetName)
+  obj:SetActive(open_sample)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController._SetLineLevelBtn = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN19MainController:_SetLineLevelBtn()
   local componentId = ECampaignN19CommonComponentID.COMMON_LEVEL
-  local component = (self._campaign):GetComponent(componentId)
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_lineLevelBtn", "UIActivityCommonComponentEnterLock")
+  local component = self._campaign:GetComponent(componentId)
+  local obj = UIWidgetHelper.SpawnObject(self, "_lineLevelBtn", "UIActivityCommonComponentEnterLock")
   obj:SetRed("_red", function()
-    -- function num : 0_16_0 , upvalues : component
     return component:HaveRedPoint()
-  end
-)
+  end)
   local tb = {
-{"state_lock", "time_lock"}
-, 
-{"state_lock"}
-, 
-{"state_unlock"}
-, 
-{"state_close"}
-}
+    {"state_lock", "time_lock"},
+    {"state_lock"},
+    {
+      "state_unlock"
+    },
+    {
+      "state_close"
+    }
+  }
   obj:SetWidgetNameGroup(tb)
   obj:SetData(self._campaign, componentId, function()
-    -- function num : 0_16_1 , upvalues : self, _ENV
-    ((self._campaign)._campaign_module):CampaignSwitchState(true, UIStateType.UIN19LineMissionController, UIStateType.UIMain, nil, (self._campaign)._id)
-  end
-)
+    self._campaign._campaign_module:CampaignSwitchState(true, UIStateType.UIN19LineMissionController, UIStateType.UIMain, nil, self._campaign._id)
+  end)
   self._lineLevelBtn = obj
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController._SetMiniGameBtn = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIN19MainController:_SetMiniGameBtn()
   local componentId = ECampaignN19CommonComponentID.PANGOLIN
-  local component = (self._campaign):GetComponent(componentId)
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_miniGameBtn", "UIActivityCommonComponentEnterLock")
+  local component = self._campaign:GetComponent(componentId)
+  local obj = UIWidgetHelper.SpawnObject(self, "_miniGameBtn", "UIActivityCommonComponentEnterLock")
   obj:SetNew("_new", function()
-    -- function num : 0_17_0 , upvalues : component
     local new = component:NewTaskRed("N19TaskComp", "red")
     local comNew = component:GetPrefsComponentNew("N19TaskComp")
-    do return (new ~= nil and new > 0) or comNew < 1 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    return new ~= nil and 0 < new or comNew < 1
+  end)
   obj:SetRed("_red", function()
-    -- function num : 0_17_1 , upvalues : component
     return component:HaveRedPoint()
-  end
-)
+  end)
   local unlockTime = component and component:ComponentUnLockTime() or 0
   obj:SetActivityCommonRemainingTime("_timePool_lock", "str_n19_minigame_remaining_time", unlockTime, true)
   local tb = {
-{"state_lock", "time_lock"}
-, 
-{"state_lock"}
-, 
-{"state_unlock"}
-, 
-{"state_close"}
-}
+    {"state_lock", "time_lock"},
+    {"state_lock"},
+    {
+      "state_unlock"
+    },
+    {
+      "state_close"
+    }
+  }
   obj:SetWidgetNameGroup(tb)
   obj:SetData(self._campaign, componentId, function()
-    -- function num : 0_17_2 , upvalues : self, componentId
     self:ShowDialog("UIHomelandStoryTaskSimpleController", 1, self._campaignType, componentId)
-  end
-)
+  end)
   self._miniGameBtn = obj
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController.ShowBtnOnClick = function(self, go)
-  -- function num : 0_18
+function UIN19MainController:ShowBtnOnClick(go)
   self:_ShowUI()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController._AttachEvents = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIN19MainController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController._DetachEvents = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIN19MainController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.AfterUILayerChanged, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19MainController._CheckActivityClose = function(self, id)
-  -- function num : 0_21 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIN19MainController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
-
-

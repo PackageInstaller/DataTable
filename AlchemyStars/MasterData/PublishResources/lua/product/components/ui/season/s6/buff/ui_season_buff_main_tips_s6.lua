@@ -1,32 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s6/buff/ui_season_buff_main_tips_s6.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBuffMainTipsS6", UIController)
 UISeasonBuffMainTipsS6 = UISeasonBuffMainTipsS6
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBuffMainTipsS6.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonBuffMainTipsS6:OnShow(uiParams)
   self._offset = self:GetUIComponent("RectTransform", "offset")
   self.contentText = self:GetUIComponent("UILocalizationText", "Content")
-  self._anim = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
+  self._anim = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffMainTipsS6.CloseOnClick = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonBuffMainTipsS6:CloseOnClick()
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self, _ENV
-    (self._anim):Play("uieff_UISeasonBuffMainTipsS5_out")
+    self._anim:Play("uieff_UISeasonBuffMainTipsS5_out")
     YIELD(TT, 200)
     if self.view then
       self:CloseDialog()
     end
-  end
-)
+  end)
 end
-
-

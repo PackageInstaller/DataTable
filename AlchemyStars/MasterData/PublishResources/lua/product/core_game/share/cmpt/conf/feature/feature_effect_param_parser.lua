@@ -1,156 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/feature/feature_effect_param_parser.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureEffectParamParser", Object)
 FeatureEffectParamParser = FeatureEffectParamParser
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureEffectParamParser.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function FeatureEffectParamParser:Constructor()
   self._effectParamClassDict = {}
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.Sanity] = FeatureEffectParamSan
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.DayNight] = FeatureEffectParamDayNight
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.PersonaSkill] = FeatureEffectParamPersonaSkill
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.Card] = FeatureEffectParamCard
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.MasterSkill] = FeatureEffectParamMasterSkill
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.Scan] = FeatureEffectParamScan
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.MasterSkillRecover] = FeatureEffectParamMasterSkillRecover
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.MasterSkillTeleport] = FeatureEffectParamMasterSkillTeleport
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.TrapCount] = FeatureEffectParamTrapCount
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.PopStar] = FeatureEffectParamPopStar
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.TrapDefence] = FeatureEffectParamTrapDefence
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.PopStar1] = FeatureEffectParamPopStar
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.PopStar2] = FeatureEffectParamPopStar
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.PopStar3] = FeatureEffectParamPopStar
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.PopStar4] = FeatureEffectParamPopStar
-  -- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.PopStar5] = FeatureEffectParamPopStar
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.PopStar6] = FeatureEffectParamPopStar
-  -- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.PopStar7] = FeatureEffectParamPopStar
-  -- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.PopStar8] = FeatureEffectParamPopStar
-  -- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.PopStar9] = FeatureEffectParamPopStar
-  -- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.PopStar10] = FeatureEffectParamPopStar
-  -- DECOMPILER ERROR at PC111: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.Shop] = FeatureEffectParamShop
-  -- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.StepPoint] = FeatureEffectParamStepPoint
-  -- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.BanPetSkill] = FeatureEffectParamBanPetSkill
-  -- DECOMPILER ERROR at PC126: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.TalentSkill1] = FeatureEffectParamMasterSkill
-  -- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.TalentSkill2] = FeatureEffectParamMasterSkill
-  -- DECOMPILER ERROR at PC136: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.TalentSkill3] = FeatureEffectParamMasterSkill
-  -- DECOMPILER ERROR at PC141: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.TalentSkill4] = FeatureEffectParamMasterSkill
-  -- DECOMPILER ERROR at PC146: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.TalentSkill5] = FeatureEffectParamMasterSkill
-  -- DECOMPILER ERROR at PC151: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.AlgorithmUpgrade] = FeatureEffectParamAlgorithmUpgrade
-  -- DECOMPILER ERROR at PC156: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.AutoBeadPowerInfo] = FeatureEffectParamAutoBeadPowerInfo
-  -- DECOMPILER ERROR at PC161: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.Alchemy] = FeatureEffectParamAlchemy
-  -- DECOMPILER ERROR at PC166: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[FeatureType.TetrisGame] = FeatureEffectParamTetris
+  self._effectParamClassDict[FeatureType.Sanity] = FeatureEffectParamSan
+  self._effectParamClassDict[FeatureType.DayNight] = FeatureEffectParamDayNight
+  self._effectParamClassDict[FeatureType.PersonaSkill] = FeatureEffectParamPersonaSkill
+  self._effectParamClassDict[FeatureType.Card] = FeatureEffectParamCard
+  self._effectParamClassDict[FeatureType.MasterSkill] = FeatureEffectParamMasterSkill
+  self._effectParamClassDict[FeatureType.Scan] = FeatureEffectParamScan
+  self._effectParamClassDict[FeatureType.MasterSkillRecover] = FeatureEffectParamMasterSkillRecover
+  self._effectParamClassDict[FeatureType.MasterSkillTeleport] = FeatureEffectParamMasterSkillTeleport
+  self._effectParamClassDict[FeatureType.TrapCount] = FeatureEffectParamTrapCount
+  self._effectParamClassDict[FeatureType.PopStar] = FeatureEffectParamPopStar
+  self._effectParamClassDict[FeatureType.TrapDefence] = FeatureEffectParamTrapDefence
+  self._effectParamClassDict[FeatureType.PopStar1] = FeatureEffectParamPopStar
+  self._effectParamClassDict[FeatureType.PopStar2] = FeatureEffectParamPopStar
+  self._effectParamClassDict[FeatureType.PopStar3] = FeatureEffectParamPopStar
+  self._effectParamClassDict[FeatureType.PopStar4] = FeatureEffectParamPopStar
+  self._effectParamClassDict[FeatureType.PopStar5] = FeatureEffectParamPopStar
+  self._effectParamClassDict[FeatureType.PopStar6] = FeatureEffectParamPopStar
+  self._effectParamClassDict[FeatureType.PopStar7] = FeatureEffectParamPopStar
+  self._effectParamClassDict[FeatureType.PopStar8] = FeatureEffectParamPopStar
+  self._effectParamClassDict[FeatureType.PopStar9] = FeatureEffectParamPopStar
+  self._effectParamClassDict[FeatureType.PopStar10] = FeatureEffectParamPopStar
+  self._effectParamClassDict[FeatureType.Shop] = FeatureEffectParamShop
+  self._effectParamClassDict[FeatureType.StepPoint] = FeatureEffectParamStepPoint
+  self._effectParamClassDict[FeatureType.BanPetSkill] = FeatureEffectParamBanPetSkill
+  self._effectParamClassDict[FeatureType.TalentSkill1] = FeatureEffectParamMasterSkill
+  self._effectParamClassDict[FeatureType.TalentSkill2] = FeatureEffectParamMasterSkill
+  self._effectParamClassDict[FeatureType.TalentSkill3] = FeatureEffectParamMasterSkill
+  self._effectParamClassDict[FeatureType.TalentSkill4] = FeatureEffectParamMasterSkill
+  self._effectParamClassDict[FeatureType.TalentSkill5] = FeatureEffectParamMasterSkill
+  self._effectParamClassDict[FeatureType.AlgorithmUpgrade] = FeatureEffectParamAlgorithmUpgrade
+  self._effectParamClassDict[FeatureType.AutoBeadPowerInfo] = FeatureEffectParamAutoBeadPowerInfo
+  self._effectParamClassDict[FeatureType.Alchemy] = FeatureEffectParamAlchemy
+  self._effectParamClassDict[FeatureType.TetrisGame] = FeatureEffectParamTetris
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamParser.ParseFeatureEffectParam = function(self, featureType, effectParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local classType = (self._effectParamClassDict)[featureType]
+function FeatureEffectParamParser:ParseFeatureEffectParam(featureType, effectParam)
+  local classType = self._effectParamClassDict[featureType]
   if classType == nil then
-    (Log.error)("ParseFeatureEffectParam cant find featureType ", featureType)
+    Log.error("ParseFeatureEffectParam cant find featureType ", featureType)
   end
   local paramDataObj = classType:New(effectParam)
   if paramDataObj then
@@ -158,5 +49,3 @@ FeatureEffectParamParser.ParseFeatureEffectParam = function(self, featureType, e
   end
   return paramDataObj
 end
-
-

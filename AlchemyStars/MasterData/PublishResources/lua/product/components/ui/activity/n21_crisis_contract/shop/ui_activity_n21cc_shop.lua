@@ -1,42 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21_crisis_contract/shop/ui_activity_n21cc_shop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN21CCShop", UIController)
 UIActivityN21CCShop = UIActivityN21CCShop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN21CCShop.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN21CCShop:LoadDataOnEnter(TT, res, uiParams)
   self._activityConst = UIActivityN21CCConst:New()
-  ;
-  (self._activityConst):LoadData(TT, res)
-  self._rewardDatas = (self._activityConst):GetShopDatas()
+  self._activityConst:LoadData(TT, res)
+  self._rewardDatas = self._activityConst:GetShopDatas()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShop.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN21CCShop:OnShow(uiParams)
   self:AttachEvent(GameEventType.N21CCGetScoreReward, self.RefreshRewardList)
   self:AttachEvent(GameEventType.N21CCShopRewardItemClick, self.ShowItemInfo)
   self._topBtn = self:GetGameObject("TopBtn")
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   local backBtn = btns:SpawnObject("UICommonTopButton")
   backBtn:SetData(function()
-    -- function num : 0_1_0 , upvalues : self, _ENV
     self:StartTask(function(TT)
-      -- function num : 0_1_0_0 , upvalues : _ENV, self
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.N21CCPlayMainFocusAnim)
-      ;
-      (self._anim):Play("UIActivityN21CCShop_out")
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.N21CCPlayMainFocusAnim)
+      self._anim:Play("UIActivityN21CCShop_out")
       YIELD(TT, 333)
       self:CloseDialog()
-    end
-)
-  end
-, nil, nil, true)
+    end)
+  end, nil, nil, true)
   self._bossListLoader = self:GetUIComponent("UISelectObjectPath", "BossList")
   self._itemsLoader = self:GetUIComponent("UISelectObjectPath", "Items")
   self._bossIconLoader = self:GetUIComponent("RawImageLoader", "BossIcon")
@@ -50,67 +34,49 @@ UIActivityN21CCShop.OnShow = function(self, uiParams)
   local index = 1
   if missionId then
     for i = 1, #self._rewardDatas do
-      local bossData = (self._rewardDatas)[i]
+      local bossData = self._rewardDatas[i]
       if bossData:IsMission(missionId) then
         index = i
         break
       end
     end
   end
-  do
-    self:Init(index)
-    self:PlayEnterAnim()
-  end
+  self:Init(index)
+  self:PlayEnterAnim()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShop.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN21CCShop:OnHide()
   self:DetachEvent(GameEventType.N21CCGetScoreReward, self.RefreshRewardList)
   self:DetachEvent(GameEventType.N21CCShopRewardItemClick, self.ShowItemInfo)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShop.Init = function(self, index)
-  -- function num : 0_3
+function UIActivityN21CCShop:Init(index)
   if #self._rewardDatas <= 0 then
-    return 
+    return
   end
-  ;
-  (self._bossListLoader):SpawnObjects("UIActivityN21CCShopBossItem", #self._rewardDatas)
-  local items = (self._bossListLoader):GetAllSpawnList()
+  self._bossListLoader:SpawnObjects("UIActivityN21CCShopBossItem", #self._rewardDatas)
+  local items = self._bossListLoader:GetAllSpawnList()
   for i = 1, #items do
-    local bossData = (self._rewardDatas)[i]
+    local bossData = self._rewardDatas[i]
     local item = items[i]
     item:Refresh(bossData, function(bossItem)
-    -- function num : 0_3_0 , upvalues : self
-    self:PlaySelectBossAnim(bossItem)
-    self:SelectBoss(bossItem)
-  end
-)
+      self:PlaySelectBossAnim(bossItem)
+      self:SelectBoss(bossItem)
+    end)
   end
   if items and items[index] then
     self:SelectBoss(items[index])
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShop.PlayEnterAnim = function(self)
-  -- function num : 0_4
+function UIActivityN21CCShop:PlayEnterAnim()
   self:StartTask(self.PlayEnterAnimCoro, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShop.PlayEnterAnimCoro = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN21CCShop:PlayEnterAnimCoro(TT)
   self:Lock("UIActivityN21CCShop_PlayEnterAnimCoro")
-  ;
-  (self._anim):Play("UIActivityN21CCShop_in")
-  local items = (self._itemsLoader):GetAllSpawnList()
+  self._anim:Play("UIActivityN21CCShop_in")
+  local items = self._itemsLoader:GetAllSpawnList()
   for i = 1, #items do
     local item = items[i]
     item:PlayAnim()
@@ -119,114 +85,85 @@ UIActivityN21CCShop.PlayEnterAnimCoro = function(self, TT)
   self:UnLock("UIActivityN21CCShop_PlayEnterAnimCoro")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShop.PlaySelectBossAnim = function(self, bossItem)
-  -- function num : 0_6
+function UIActivityN21CCShop:PlaySelectBossAnim(bossItem)
   if not bossItem then
-    return 
+    return
   end
   if self._currentBossItem == bossItem then
-    return 
+    return
   end
-  ;
-  (self._anim):Play("UIActivityN21CCShop_zhuanhuan")
+  self._anim:Play("UIActivityN21CCShop_zhuanhuan")
   self._playAnim = true
   local bossData = bossItem:GetBossData()
-  ;
-  (self._scoreLabel):SetText(0)
-  ;
-  (self._scoreShadowLabel):SetText(0)
+  self._scoreLabel:SetText(0)
+  self._scoreShadowLabel:SetText(0)
   self._length = 500
   self._targetValue = bossData:GetTotalScore()
   self._speed = self._targetValue / self._length
   self._currentVaue = 0
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShop.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityN21CCShop:OnUpdate(deltaTimeMS)
   if not self._playAnim then
-    return 
+    return
   end
   self._currentVaue = self._currentVaue + deltaTimeMS * self._speed
-  self._currentVaue = (math.floor)(self._currentVaue)
-  if self._targetValue <= self._currentVaue then
+  self._currentVaue = math.floor(self._currentVaue)
+  if self._currentVaue >= self._targetValue then
     self._playAnim = false
     self._currentVaue = self._targetValue
   end
-  ;
-  (self._scoreLabel):SetText(self._currentVaue)
-  ;
-  (self._scoreShadowLabel):SetText(self._currentVaue)
+  self._scoreLabel:SetText(self._currentVaue)
+  self._scoreShadowLabel:SetText(self._currentVaue)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShop.ShowItemInfo = function(self, matid, pos)
-  -- function num : 0_8
-  (self._tips):SetData(matid, pos)
+function UIActivityN21CCShop:ShowItemInfo(matid, pos)
+  self._tips:SetData(matid, pos)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShop.SelectBoss = function(self, bossItem)
-  -- function num : 0_9
+function UIActivityN21CCShop:SelectBoss(bossItem)
   if not bossItem then
-    return 
+    return
   end
   if self._currentBossItem == bossItem then
-    return 
+    return
   end
   if self._currentBossItem then
-    (self._currentBossItem):SetSelectStatus(false)
+    self._currentBossItem:SetSelectStatus(false)
   end
   self._currentBossItem = bossItem
   bossItem:SetSelectStatus(true)
   self:RefreshRewardList()
   local bossData = bossItem:GetBossData()
-  ;
-  (self._bossIconLoader):LoadImage(bossData:GetBossBigIcon())
-  ;
-  (self._scoreLabel):SetText(bossData:GetTotalScore())
-  ;
-  (self._scoreShadowLabel):SetText(bossData:GetTotalScore())
+  self._bossIconLoader:LoadImage(bossData:GetBossBigIcon())
+  self._scoreLabel:SetText(bossData:GetTotalScore())
+  self._scoreShadowLabel:SetText(bossData:GetTotalScore())
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShop.RefreshRewardList = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityN21CCShop:RefreshRewardList()
   if not self._currentBossItem then
-    return 
+    return
   end
-  local bossData = (self._currentBossItem):GetBossData()
+  local bossData = self._currentBossItem:GetBossData()
   bossData:Refresh()
   local datas = bossData:GetRewardDatas()
-  ;
-  (self._itemsLoader):SpawnObjects("UIActivityN21CCShopItem", #datas)
-  local items = (self._itemsLoader):GetAllSpawnList()
+  self._itemsLoader:SpawnObjects("UIActivityN21CCShopItem", #datas)
+  local items = self._itemsLoader:GetAllSpawnList()
   for i = 1, #items do
     local data = datas[i]
     local item = items[i]
     item:Refresh(data, function(data)
-    -- function num : 0_10_0 , upvalues : self, _ENV
-    if (self._activityConst):IsActivityEnd() then
-      (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
-      self:SwitchState(UIStateType.UIMain)
-      return 
-    end
-    self:StartTask(self.GetSingleReward, self, data)
-  end
-)
+      if self._activityConst:IsActivityEnd() then
+        ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
+        self:SwitchState(UIStateType.UIMain)
+        return
+      end
+      self:StartTask(self.GetSingleReward, self, data)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShop.GetSingleReward = function(self, TT, data)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityN21CCShop:GetSingleReward(TT, data)
   self:Lock("UIActivityN21CCShop_GetSingleReward")
   local personProgress1Component = data:GetProgressComponent()
   local res = AsyncRequestRes:New()
@@ -234,63 +171,45 @@ UIActivityN21CCShop.GetSingleReward = function(self, TT, data)
   personProgress1Component:HandleReceiveReward(TT, res, data:GetProgress())
   if res:GetSucc() then
     data:SetStatus(UIActivityN21CCShopRewardStatus.HasGet)
-    ;
-    (UIActivityN21CCConst.ShowRewards)(data:GetRewards(), function()
-    -- function num : 0_11_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.N21CCGetScoreReward)
-  end
-)
+    UIActivityN21CCConst.ShowRewards(data:GetRewards(), function()
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.N21CCGetScoreReward)
+    end)
   else
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
     campaignModule:CheckErrorCode(res.m_result)
   end
-  do
-    self:UnLock("UIActivityN21CCShop_GetSingleReward")
-  end
+  self:UnLock("UIActivityN21CCShop_GetSingleReward")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShop.BtnGetOnClick = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  if (self._activityConst):IsActivityEnd() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+function UIActivityN21CCShop:BtnGetOnClick()
+  if self._activityConst:IsActivityEnd() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
-  local bossData = (self._currentBossItem):GetBossData()
+  local bossData = self._currentBossItem:GetBossData()
   if bossData == nil or bossData:HasCanGetReward() == false then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n20_crisis_contract_cannot_getrewards_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_n20_crisis_contract_cannot_getrewards_tips"))
+    return
   end
   self:StartTask(self.GetReward, self)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShop.GetReward = function(self, TT)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityN21CCShop:GetReward(TT)
   self:Lock("UIActivityN21CCShop_GetRewarda")
-  local bossData = (self._currentBossItem):GetBossData()
+  local bossData = self._currentBossItem:GetBossData()
   local personProgress1Component = bossData:GetProgressComponent()
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   local rewards = personProgress1Component:HandleOneKeyReceiveRewards(TT, res)
   if res:GetSucc() then
     bossData:GetAllRewards()
-    ;
-    (UIActivityN21CCConst.ShowRewards)(rewards, function()
-    -- function num : 0_13_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.N21CCGetScoreReward)
-  end
-)
+    UIActivityN21CCConst.ShowRewards(rewards, function()
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.N21CCGetScoreReward)
+    end)
   else
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
     campaignModule:CheckErrorCode(res.m_result)
   end
-  do
-    self:UnLock("UIActivityN21CCShop_GetRewarda")
-  end
+  self:UnLock("UIActivityN21CCShop_GetRewarda")
 end
-
-

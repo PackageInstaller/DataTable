@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/gamble/gamble_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PrizePoolInfo", Object)
 PrizePoolInfo = PrizePoolInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PrizePoolInfo.Constructor = function(self)
-  -- function num : 0_0
+function PrizePoolInfo:Constructor()
   self.prize_pool_id = 0
   self.seq_id = 0
   self.cost1_id = 0
@@ -38,168 +31,195 @@ PrizePoolInfo.Constructor = function(self)
   self.prize_group_id = 0
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
 PrizePoolInfo._proto = {
-[1] = {"prize_pool_id", "int"}
-, 
-[2] = {"seq_id", "int"}
-, 
-[3] = {"cost1_id", "int"}
-, 
-[4] = {"cost2_id", "int"}
-, 
-[5] = {"one_shake_price1", "int"}
-, 
-[6] = {"one_shake_price2", "int"}
-, 
-[7] = {"one_shake_discount1_price", "int"}
-, 
-[8] = {"one_shake_discount2_price", "int"}
-, 
-[9] = {"multiple_shake_price1", "int"}
-, 
-[10] = {"multiple_shake_price2", "int"}
-, 
-[11] = {"multiple_shake_times", "int"}
-, 
-[12] = {"multiple_shake_discount1_price", "int"}
-, 
-[13] = {"multiple_shake_discount2_price", "int"}
-, 
-[14] = {"performance_id", "int"}
-, 
-[15] = {"close_type", "int"}
-, 
-[16] = {"extend_data", "int"}
-, 
-[17] = {"open_time", "int"}
-, 
-[18] = {"prize_pool_type", "int"}
-, 
-[19] = {"close_condition2", "time"}
-, 
-[20] = {"remain_free_count", "int"}
-, 
-[21] = {"next_refresh_free_time", "time"}
-, 
-[22] = {"free_campaign_end_time", "time"}
-, 
-[23] = {"mul_remain_free_count", "int"}
-, 
-[24] = {"mul_next_refresh_free_time", "time"}
-, 
-[25] = {"mul_free_campaign_end_time", "time"}
-, 
-[26] = {"pre_use_ticket", "int"}
-, 
-[27] = {"prize_group_id", "int"}
+  [1] = {
+    "prize_pool_id",
+    "int"
+  },
+  [2] = {"seq_id", "int"},
+  [3] = {"cost1_id", "int"},
+  [4] = {"cost2_id", "int"},
+  [5] = {
+    "one_shake_price1",
+    "int"
+  },
+  [6] = {
+    "one_shake_price2",
+    "int"
+  },
+  [7] = {
+    "one_shake_discount1_price",
+    "int"
+  },
+  [8] = {
+    "one_shake_discount2_price",
+    "int"
+  },
+  [9] = {
+    "multiple_shake_price1",
+    "int"
+  },
+  [10] = {
+    "multiple_shake_price2",
+    "int"
+  },
+  [11] = {
+    "multiple_shake_times",
+    "int"
+  },
+  [12] = {
+    "multiple_shake_discount1_price",
+    "int"
+  },
+  [13] = {
+    "multiple_shake_discount2_price",
+    "int"
+  },
+  [14] = {
+    "performance_id",
+    "int"
+  },
+  [15] = {"close_type", "int"},
+  [16] = {
+    "extend_data",
+    "int"
+  },
+  [17] = {"open_time", "int"},
+  [18] = {
+    "prize_pool_type",
+    "int"
+  },
+  [19] = {
+    "close_condition2",
+    "time"
+  },
+  [20] = {
+    "remain_free_count",
+    "int"
+  },
+  [21] = {
+    "next_refresh_free_time",
+    "time"
+  },
+  [22] = {
+    "free_campaign_end_time",
+    "time"
+  },
+  [23] = {
+    "mul_remain_free_count",
+    "int"
+  },
+  [24] = {
+    "mul_next_refresh_free_time",
+    "time"
+  },
+  [25] = {
+    "mul_free_campaign_end_time",
+    "time"
+  },
+  [26] = {
+    "pre_use_ticket",
+    "int"
+  },
+  [27] = {
+    "prize_group_id",
+    "int"
+  }
 }
 local EPrizePoolExtInfoType = {EPPEIT_NIPP = 0, EPPEIT_OPP = 1}
 _enum("EPrizePoolExtInfoType", EPrizePoolExtInfoType)
 _class("PrizePoolExternInfo", Object)
 PrizePoolExternInfo = PrizePoolExternInfo
--- DECOMPILER ERROR at PC162: Confused about usage of register: R1 in 'UnsetPending'
 
-PrizePoolExternInfo.Constructor = function(self)
-  -- function num : 0_1
+function PrizePoolExternInfo:Constructor()
   self.param_pool = {}
   self.times = 0
   self.id = 0
 end
 
--- DECOMPILER ERROR at PC180: Confused about usage of register: R1 in 'UnsetPending'
-
 PrizePoolExternInfo._proto = {
-[1] = {"param_pool", "list<int>"}
-, 
-[2] = {"times", "int"}
-, 
-[3] = {"id", "int"}
+  [1] = {"param_pool", "list<int>"},
+  [2] = {"times", "int"},
+  [3] = {"id", "int"}
 }
 _class("PrizePoolShakedTime", Object)
 PrizePoolShakedTime = PrizePoolShakedTime
--- DECOMPILER ERROR at PC189: Confused about usage of register: R1 in 'UnsetPending'
 
-PrizePoolShakedTime.Constructor = function(self)
-  -- function num : 0_2
+function PrizePoolShakedTime:Constructor()
   self.pool_2_time = {}
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R1 in 'UnsetPending'
-
 PrizePoolShakedTime._proto = {
-[1] = {"pool_2_time", "map<int,int>"}
+  [1] = {
+    "pool_2_time",
+    "map<int,int>"
+  }
 }
 _class("FreeTimeInfo", Object)
 FreeTimeInfo = FreeTimeInfo
--- DECOMPILER ERROR at PC206: Confused about usage of register: R1 in 'UnsetPending'
 
-FreeTimeInfo.Constructor = function(self)
-  -- function num : 0_3
+function FreeTimeInfo:Constructor()
   self.last_refresh_time = 0
   self.remain_times = 0
   self.mul_last_refresh_time = 0
   self.mul_remain_times = 0
 end
 
--- DECOMPILER ERROR at PC229: Confused about usage of register: R1 in 'UnsetPending'
-
 FreeTimeInfo._proto = {
-[1] = {"last_refresh_time", "time"}
-, 
-[2] = {"remain_times", "int"}
-, 
-[3] = {"mul_last_refresh_time", "time"}
-, 
-[4] = {"mul_remain_times", "int"}
+  [1] = {
+    "last_refresh_time",
+    "time"
+  },
+  [2] = {
+    "remain_times",
+    "int"
+  },
+  [3] = {
+    "mul_last_refresh_time",
+    "time"
+  },
+  [4] = {
+    "mul_remain_times",
+    "int"
+  }
 }
 _class("RemainShakedTime", Object)
 RemainShakedTime = RemainShakedTime
--- DECOMPILER ERROR at PC238: Confused about usage of register: R1 in 'UnsetPending'
 
-RemainShakedTime.Constructor = function(self)
-  -- function num : 0_4
+function RemainShakedTime:Constructor()
   self.pool_2_info = {}
 end
 
--- DECOMPILER ERROR at PC246: Confused about usage of register: R1 in 'UnsetPending'
-
 RemainShakedTime._proto = {
-[1] = {"pool_2_info", "map<int,FreeTimeInfo>"}
+  [1] = {
+    "pool_2_info",
+    "map<int,FreeTimeInfo>"
+  }
 }
 _class("special_pool_data", Object)
 special_pool_data = special_pool_data
--- DECOMPILER ERROR at PC255: Confused about usage of register: R1 in 'UnsetPending'
 
-special_pool_data.Constructor = function(self)
-  -- function num : 0_5
+function special_pool_data:Constructor()
   self.pool_id = 0
   self.begin_time = 0
   self.end_time = 0
 end
 
--- DECOMPILER ERROR at PC273: Confused about usage of register: R1 in 'UnsetPending'
-
 special_pool_data._proto = {
-[1] = {"pool_id", "int"}
-, 
-[2] = {"begin_time", "time"}
-, 
-[3] = {"end_time", "time"}
+  [1] = {"pool_id", "int"},
+  [2] = {"begin_time", "time"},
+  [3] = {"end_time", "time"}
 }
 _class("special_pool", Object)
 special_pool = special_pool
--- DECOMPILER ERROR at PC282: Confused about usage of register: R1 in 'UnsetPending'
 
-special_pool.Constructor = function(self)
-  -- function num : 0_6
+function special_pool:Constructor()
   self.pools = {}
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R1 in 'UnsetPending'
-
 special_pool._proto = {
-[1] = {"pools", "map<int,special_pool_data>"}
+  [1] = {
+    "pools",
+    "map<int,special_pool_data>"
+  }
 }
-

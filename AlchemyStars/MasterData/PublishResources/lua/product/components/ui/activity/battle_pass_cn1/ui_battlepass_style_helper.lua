@@ -1,74 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_cn1/ui_battlepass_style_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattlePassStyleHelper", Object)
 UIBattlePassStyleHelper = UIBattlePassStyleHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattlePassStyleHelper.GetStyleInfo = function(campaign, uiView, extra)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBattlePassStyleHelper.GetStyleInfo(campaign, uiView, extra)
   local uiName = uiView and uiView:GetName() or ""
-  if not extra then
-    extra = ""
-  end
+  extra = extra or ""
   local name = uiName .. extra
   if campaign == nil or name == nil then
-    return 
+    return
   end
-  local getCfg = function(tb, cfgName, uiName)
-    -- function num : 0_0_0 , upvalues : _ENV
-    if not (Cfg[cfgName])({uiName = uiName}) then
-      local cfgs = {}
-    end
-    for _,v in ipairs(cfgs) do
+  
+  local function getCfg(tb, cfgName, uiName)
+    local cfgs = Cfg[cfgName]({uiName = uiName}) or {}
+    for _, v in ipairs(cfgs) do
       tb[v.ID] = v
     end
   end
-
+  
   local tb = {}
   getCfg(tb, "cfg_battle_pass_style_default", name)
   getCfg(tb, "cfg_battle_pass_style_" .. campaign._id, name)
   local cfgs = {}
-  for _,v in pairs(tb) do
-    (table.insert)(cfgs, v)
+  for _, v in pairs(tb) do
+    table.insert(cfgs, v)
   end
-  ;
-  (table.sort)(cfgs, function(a, b)
-    -- function num : 0_0_1
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(cfgs, function(a, b)
+    return a.ID < b.ID
+  end)
   if cfgs == nil then
-    (Log.info)("UIBattlePassStyleHelper.GetStyleInfo() cfgs == nil! campaignId=", campaign._id, " uiName=", name)
+    Log.info("UIBattlePassStyleHelper.GetStyleInfo() cfgs == nil! campaignId=", campaign._id, " uiName=", name)
   end
   return cfgs
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName = function(campaign, uiView, extra)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfgs = (UIBattlePassStyleHelper.GetStyleInfo)(campaign, uiView, extra)
+function UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName(campaign, uiView, extra)
+  local cfgs = UIBattlePassStyleHelper.GetStyleInfo(campaign, uiView, extra)
   local tb = {}
-  for _,v in ipairs(cfgs) do
+  for _, v in ipairs(cfgs) do
     tb[v.widgetName] = v
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassStyleHelper.FitStyle_Widget = function(campaign, uiView)
-  -- function num : 0_2 , upvalues : _ENV
-  if not (UIBattlePassStyleHelper.GetStyleInfo)(campaign, uiView) then
-    local styleInfos = {}
-  end
-  for _,v in ipairs(styleInfos) do
-    (UIStyleHelper.FitStyle_Widget)(v, uiView, v.widgetName)
+function UIBattlePassStyleHelper.FitStyle_Widget(campaign, uiView)
+  local styleInfos = UIBattlePassStyleHelper.GetStyleInfo(campaign, uiView) or {}
+  for _, v in ipairs(styleInfos) do
+    UIStyleHelper.FitStyle_Widget(v, uiView, v.widgetName)
   end
 end
-
-

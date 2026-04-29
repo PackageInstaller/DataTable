@@ -1,52 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/stn_ui_caller_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("CTestRobot_UICaller", CTestRobot_Base)
 CTestRobot_UICaller = CTestRobot_UICaller
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CTestRobot_UICaller.Constructor = function(self, pManger, stName, stFunction, ...)
-  -- function num : 0_0
+function CTestRobot_UICaller:Constructor(pManger, stName, stFunction, ...)
   self.m_stName = stName
   self.m_stFunction = stFunction
-  self.m_listParam = {...}
+  self.m_listParam = {
+    ...
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CTestRobot_UICaller.OnWorking = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CTestRobot_UICaller:OnWorking()
   self:_CallFunction()
-  return ((CTestRobot_UICaller.super).OnWorking)(self)
+  return CTestRobot_UICaller.super.OnWorking(self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CTestRobot_UICaller._FindUI = function(self, stName)
-  -- function num : 0_2
-  local pUIManger = ((self.m_pGameCenter).UIStateManager)()
+function CTestRobot_UICaller:_FindUI(stName)
+  local pUIManger = self.m_pGameCenter.UIStateManager()
   return pUIManger:GetController(stName)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CTestRobot_UICaller._CallFunction = function(self, ...)
-  -- function num : 0_3 , upvalues : _ENV
+function CTestRobot_UICaller:_CallFunction(...)
   local pFindUI = self:_FindUI(self.m_stName)
-  if pFindUI == nil then
+  if nil == pFindUI then
     self:PrintLog("UICaller Not Find UI, UI = ", self.m_stName, ", Caller = ", self.m_stFunction)
-    return 
+    return
   end
   local pFunction = pFindUI[self.m_stFunction]
-  if pFunction == nil then
+  if nil == pFunction then
     self:PrintLog("UICaller Not Find Function, UI = ", self.m_stName, ", Caller = ", self.m_stFunction)
-    return 
+    return
   end
   self:PrintLog("UICaller, UI = ", self.m_stName, ", Caller = ", self.m_stFunction)
-  return pFunction(pFindUI, (table.unpack)(self.m_listParam))
+  return pFunction(pFindUI, table.unpack(self.m_listParam))
 end
-
-

@@ -1,13 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/story/event_chapter/event_story_S5jieweizuo_7_0.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-return {ComponentID = "0", 
-Entities = {
-[1] = {EntityID = 1, Name = "有角色名背景的对话框背景", Resource = "StoryDialog.prefab", Type = "Dialog"}
+return {
+  ComponentID = "0",
+  Entities = {
+    [1] = {
+      EntityID = 1,
+      Name = "有角色名背景的对话框背景",
+      Resource = "StoryDialog.prefab",
+      Type = "Dialog"
+    }
+  },
+  ID = 50760701,
+  Name = "event_story_S5jieweizuo_7_0",
+  Paragraphs = {},
+  StartParagraph = 1
 }
-, ID = 50760701, Name = "event_story_S5jieweizuo_7_0", 
-Paragraphs = {}
-, StartParagraph = 1}
-

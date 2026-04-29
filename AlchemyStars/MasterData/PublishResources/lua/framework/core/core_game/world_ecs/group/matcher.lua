@@ -1,22 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_ecs/group/matcher.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Matcher", Object)
 Matcher = Matcher
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Matcher.Constructor = function(self, allOfIndices, anyOfIndices, noneOfIndices)
-  -- function num : 0_0 , upvalues : _ENV
+function Matcher:Constructor(allOfIndices, anyOfIndices, noneOfIndices)
   local indices = {}
-  for _,v in ipairs(allOfIndices) do
+  for _, v in ipairs(allOfIndices) do
     indices[v] = true
   end
-  for _,v in ipairs(anyOfIndices) do
+  for _, v in ipairs(anyOfIndices) do
     indices[v] = true
   end
-  for _,v in ipairs(noneOfIndices) do
+  for _, v in ipairs(noneOfIndices) do
     indices[v] = true
   end
   self.indices = indices
@@ -25,18 +18,10 @@ Matcher.Constructor = function(self, allOfIndices, anyOfIndices, noneOfIndices)
   self._noneOfIndices = noneOfIndices
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Matcher.Matches = function(self, entity)
-  -- function num : 0_1
+function Matcher:Matches(entity)
   local indices = self.indices
   local allOfIndices = self._allOfIndices
   local anyOfIndices = self._anyOfIndices
   local noneOfIndices = self._noneOfIndices
-  -- DECOMPILER ERROR at PC30: Unhandled construct in 'MakeBoolean' P3
-
-  do return (allOfIndices == nil or entity:HasComponents(allOfIndices)) and anyOfIndices ~= nil and #anyOfIndices ~= 0 and noneOfIndices ~= nil and #noneOfIndices ~= 0 and not entity:HasAnyComponent(noneOfIndices) end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return (allOfIndices == nil or entity:HasComponents(allOfIndices)) and (anyOfIndices == nil or #anyOfIndices == 0 or entity:HasAnyComponent(anyOfIndices)) and (noneOfIndices == nil or #noneOfIndices == 0 or not entity:HasAnyComponent(noneOfIndices))
 end
-
-

@@ -1,339 +1,266 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/main/ui_activity_returnsystem_main_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UIActivityReturnSystemMainContent", UISideEnterCenterContentBase)
 UIActivityReturnSystemMainContent = UIActivityReturnSystemMainContent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReturnSystemMainContent.DoInit = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
-  if params then
-    self._campaignType = params.campaign_type
-    if not params or not params.component_ids then
-      self._componentIds = {}
-      if params then
-        self._campaignId = params.campaign_id
-        self._campaignType = (UIActivityReturnSystemHelper.GetCampaignType)()
-        self._campaign = self._data
-      end
-    end
-  end
+function UIActivityReturnSystemMainContent:DoInit(params)
+  self._campaignType = params and params.campaign_type
+  self._componentIds = params and params.component_ids or {}
+  self._campaignId = params and params.campaign_id
+  self._campaignType = UIActivityReturnSystemHelper.GetCampaignType()
+  self._campaign = self._data
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent.DoShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityReturnSystemMainContent:DoShow(uiParams)
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
-  local component = (UIActivityReturnSystemHelper.GetComponentByTabName)(self._campaign, "gift", 1)
-  if not self.isBoostIntro and uiParams then
-    self.isBoostIntro = uiParams[1]
-    if not self._tabIndex then
-      local curIdx = self:_CalcFirstIndex()
-    end
-    self:InitWidget()
-    self:_SetCharImgText()
-    self:_SetRemainingTime_Main()
-    self:_InitTabBtns()
-    self:_OnTabBtnSelected(curIdx)
-    self:ShowHideTabBtns()
-    self:_AttachEvents()
-  end
+    self._campaign:ClearCampaignNew(TT)
+  end)
+  local component = UIActivityReturnSystemHelper.GetComponentByTabName(self._campaign, "gift", 1)
+  self.isBoostIntro = self.isBoostIntro or uiParams and uiParams[1]
+  local curIdx = self._tabIndex or self:_CalcFirstIndex()
+  self:InitWidget()
+  self:_SetCharImgText()
+  self:_SetRemainingTime_Main()
+  self:_InitTabBtns()
+  self:_OnTabBtnSelected(curIdx)
+  self:ShowHideTabBtns()
+  self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent.DoHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (UIWidgetHelper.ClearWidgets)(self, "_tipsPool")
+function UIActivityReturnSystemMainContent:DoHide()
+  UIWidgetHelper.ClearWidgets(self, "_tipsPool")
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent.DoDestroy = function(self)
-  -- function num : 0_3
+function UIActivityReturnSystemMainContent:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._ForceRefresh = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityReturnSystemMainContent:_ForceRefresh()
   if self._refreshTaskID ~= nil then
-    return 
+    return
   end
   self._refreshTaskID = self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    ;
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+    self._campaign:ReLoadCampaignInfo_Force(TT, res)
     if res and res:GetSucc() then
       self:_Refresh()
     end
     self._refreshTaskID = nil
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._Refresh = function(self)
-  -- function num : 0_5
+function UIActivityReturnSystemMainContent:_Refresh()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._CalcFirstIndex = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityReturnSystemMainContent:_CalcFirstIndex()
   local curIdx = 1
-  local component = (UIActivityReturnSystemHelper.GetComponentByTabName)(self._campaign, "welecome", 1)
+  local component = UIActivityReturnSystemHelper.GetComponentByTabName(self._campaign, "welecome", 1)
   if component:IsRecvBackReward() then
-    self._const_QuestPageIndex = (UIActivityReturnSystemHelper.GetTabIndexByTabName)("quest")
+    self._const_QuestPageIndex = UIActivityReturnSystemHelper.GetTabIndexByTabName("quest")
     curIdx = self._const_QuestPageIndex
   end
   if self.isBoostIntro then
-    self._const_BoostPageIndex = (UIActivityReturnSystemHelper.GetTabIndexByTabName)("boost")
+    self._const_BoostPageIndex = UIActivityReturnSystemHelper.GetTabIndexByTabName("boost")
     curIdx = self._const_BoostPageIndex
   end
   return curIdx
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent.InitWidget = function(self)
-  -- function num : 0_7
-  self._tabPages = {self:_GetSpawnComponent("tabPageWelecome", "UIActivityReturnSystemWelecome"), self:_GetSpawnComponent("tabPageLogin", "UIActivityReturnSystemTabLogin"), self:_GetSpawnComponent("tabPageQuest", "UIActivityReturnSystemTabQuest"), self:_GetSpawnComponent("tabPageShop", "UIActivityReturnSystemTabShop"), self:_GetSpawnComponent("tabPageBoost", "UIActivityReturnSystemTabBoost")}
+function UIActivityReturnSystemMainContent:InitWidget()
+  self._tabPages = {
+    self:_GetSpawnComponent("tabPageWelecome", "UIActivityReturnSystemWelecome"),
+    self:_GetSpawnComponent("tabPageLogin", "UIActivityReturnSystemTabLogin"),
+    self:_GetSpawnComponent("tabPageQuest", "UIActivityReturnSystemTabQuest"),
+    self:_GetSpawnComponent("tabPageShop", "UIActivityReturnSystemTabShop"),
+    self:_GetSpawnComponent("tabPageBoost", "UIActivityReturnSystemTabBoost")
+  }
   self._flexibleWidgetName = {
-{"FlexibleGroup"}
-, 
-{"FlexibleGroup2"}
-, 
-{"FlexibleGroup2"}
-, 
-{"FlexibleGroup"}
-, 
-{"FlexibleGroup2"}
-}
-  self.strID = {"str_return_system_btn_welecome", "str_return_system_btn_sign", "str_return_system_btn_mission", "str_return_system_btn_shop", "str_return_system_btn_assistance"}
+    {
+      "FlexibleGroup"
+    },
+    {
+      "FlexibleGroup2"
+    },
+    {
+      "FlexibleGroup2"
+    },
+    {
+      "FlexibleGroup"
+    },
+    {
+      "FlexibleGroup2"
+    }
+  }
+  self.strID = {
+    "str_return_system_btn_welecome",
+    "str_return_system_btn_sign",
+    "str_return_system_btn_mission",
+    "str_return_system_btn_shop",
+    "str_return_system_btn_assistance"
+  }
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._SetRemainingTime_Main = function(self)
-  -- function num : 0_8
-  if self._campaign then
-    local sample = (self._campaign):GetSample()
-  end
+function UIActivityReturnSystemMainContent:_SetRemainingTime_Main()
+  local sample = self._campaign and self._campaign:GetSample()
   local endTime = sample and sample.end_time or 0
   local descId = "str_return_system_time_main"
   self:_SetRemainingTime("remainingTimePool", descId, endTime)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._SetRemainingTime_Tab = function(self, descId, endTime)
-  -- function num : 0_9
+function UIActivityReturnSystemMainContent:_SetRemainingTime_Tab(descId, endTime)
   self:_SetRemainingTime("remainingTimePool_Tab", descId, endTime)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._SetRemainingTime = function(self, widgetName, descId, endTime)
-  -- function num : 0_10 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UIActivityReturnSystemMainContent:_SetRemainingTime(widgetName, descId, endTime)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   obj:SetCustomTimeStr_Common_1()
   obj:SetExtraRollingText()
   obj:SetAdvanceText(descId)
   obj:SetData(endTime, nil, nil)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._SetCharImgText = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityReturnSystemMainContent:_SetCharImgText()
   local charImg_title = self:GetUIComponent("UILocalizationText", "charImg_title")
   local charImg_desc = self:GetUIComponent("UILocalizationText", "charImg_desc")
   local petId = 1500331
-  local cfgv = (Cfg.cfg_pet)[petId]
+  local cfgv = Cfg.cfg_pet[petId]
   if not cfgv then
-    (Log.fatal)("### no pet in cfg_pet.petId=", petId)
-    return 
+    Log.fatal("### no pet in cfg_pet.petId=", petId)
+    return
   end
-  charImg_title:SetText((StringTable.Get)(cfgv.Name))
-  local content = (HelperProxy:GetInstance()):ReplacePlayerName((StringTable.Get)("str_return_system_greetings"))
+  charImg_title:SetText(StringTable.Get(cfgv.Name))
+  local content = HelperProxy:GetInstance():ReplacePlayerName(StringTable.Get("str_return_system_greetings"))
   charImg_desc:SetText(content)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._InitTabBtns = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityReturnSystemMainContent:_InitTabBtns()
   self._tabBtnPool = self:GetUIComponent("UISelectObjectPath", "tabBtnPool")
-  ;
-  (self._tabBtnPool):SpawnObjects("UIActivityReturnSystemTabBtn", (table.count)(self.strID))
-  local list = (self._tabBtnPool):GetAllSpawnList()
-  for i,v in ipairs(list) do
-    v:SetData(R9_PC24, self.strID, function(idx)
-    -- function num : 0_12_0 , upvalues : self
-    self:_OnTabBtnSelected(idx)
-  end
-)
+  self._tabBtnPool:SpawnObjects("UIActivityReturnSystemTabBtn", table.count(self.strID))
+  local list = self._tabBtnPool:GetAllSpawnList()
+  for i, v in ipairs(list) do
+    v:SetData(i, self.strID, function(idx)
+      self:_OnTabBtnSelected(idx)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._SetTabBtnSelected = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local list = (self._tabBtnPool):GetAllSpawnList()
-  for i,v in ipairs(list) do
+function UIActivityReturnSystemMainContent:_SetTabBtnSelected()
+  local list = self._tabBtnPool:GetAllSpawnList()
+  for i, v in ipairs(list) do
     v:SetSelected(self._tabIndex == i)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._SetTabBtnRedPoint = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local list = (self._tabBtnPool):GetAllSpawnList()
-  for i,v in ipairs(list) do
+function UIActivityReturnSystemMainContent:_SetTabBtnRedPoint()
+  local list = self._tabBtnPool:GetAllSpawnList()
+  for i, v in ipairs(list) do
     local red = false
-    local ids = (UIActivityReturnSystemHelper.GetComponentIdByTabIndex)(i)
-    for _,vv in ipairs(ids) do
-      local show = (self._campaign):CheckComponentRed(vv)
-      if not red then
-        red = show
-      end
+    local ids = UIActivityReturnSystemHelper.GetComponentIdByTabIndex(i)
+    for _, vv in ipairs(ids) do
+      local show = self._campaign:CheckComponentRed(vv)
+      red = red or show
     end
-    local shopIndex = (UIActivityReturnSystemHelper.GetTabIndexByTabName)("shop")
+    local shopIndex = UIActivityReturnSystemHelper.GetTabIndexByTabName("shop")
     if i == shopIndex then
-      red = (UIActivityReturnSystemHelper.GetShopRedPoint)()
+      red = UIActivityReturnSystemHelper.GetShopRedPoint()
     end
     v:SetRedPoint(red)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._SetTabPageSelected = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  for i,v in ipairs(self._tabPages) do
-    (v:GetGameObject()):SetActive(i == self._tabIndex)
+function UIActivityReturnSystemMainContent:_SetTabPageSelected()
+  for i, v in ipairs(self._tabPages) do
+    v:GetGameObject():SetActive(i == self._tabIndex)
   end
-  ;
-  ((self._tabPages)[self._tabIndex]):SetData(self._campaign, function(endTime, hide)
-    -- function num : 0_15_0 , upvalues : self, _ENV
+  self._tabPages[self._tabIndex]:SetData(self._campaign, function(endTime, hide)
     if not hide then
-      local strDescId = {nil, "str_return_system_time_login", "str_return_system_time_quest", nil, nil, "str_return_system_time_boost"}
+      local strDescId = {
+        nil,
+        "str_return_system_time_login",
+        "str_return_system_time_quest",
+        nil,
+        nil,
+        "str_return_system_time_boost"
+      }
       local descId = strDescId[self._tabIndex]
-      if not (string.isnullorempty)(descId) then
+      if not string.isnullorempty(descId) then
         self:_SetRemainingTime_Tab(descId, endTime)
       end
-      for _,v in pairs((self._flexibleWidgetName)[self._tabIndex]) do
-        (self:GetGameObject(v)):SetActive(true)
+      for _, v in pairs(self._flexibleWidgetName[self._tabIndex]) do
+        self:GetGameObject(v):SetActive(true)
       end
     else
-      do
-        for _,v in pairs((self._flexibleWidgetName)[self._tabIndex]) do
-          (self:GetGameObject(R9_PC47)):SetActive(R9_PC47)
-        end
+      for _, v in pairs(self._flexibleWidgetName[self._tabIndex]) do
+        self:GetGameObject(v):SetActive(false)
       end
     end
-  end
-, function(matid, pos)
-    -- function num : 0_15_1 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
-  end
-, self.isBoostIntro)
-  local shopIndex = (UIActivityReturnSystemHelper.GetTabIndexByTabName)("shop")
-  ;
-  ((self._tabPages)[shopIndex]):SetTopTips(function(id, go)
-    -- function num : 0_15_2 , upvalues : _ENV, self
-    local topTips = (UIWidgetHelper.SpawnObject)(self, "_topTips", "UITopTipsContext")
+  end, function(matid, pos)
+    UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
+  end, self.isBoostIntro)
+  local shopIndex = UIActivityReturnSystemHelper.GetTabIndexByTabName("shop")
+  self._tabPages[shopIndex]:SetTopTips(function(id, go)
+    local topTips = UIWidgetHelper.SpawnObject(self, "_topTips", "UITopTipsContext")
     topTips:SetData(id, go)
-  end
-)
+  end)
   self:_CheckRedPointAll()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._OnTabBtnSelected = function(self, index)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityReturnSystemMainContent:_OnTabBtnSelected(index)
   if index == self._tabIndex then
-    return 
+    return
   end
   local preIndex = self._tabIndex
   self._tabIndex = index
-  if preIndex then
-    local pre = ((self._flexibleWidgetName)[preIndex])[1]
-  end
-  if index then
-    local next = ((self._flexibleWidgetName)[index])[1]
-  end
-  local change = (pre and next and pre ~= next) or pre == "FlexibleGroup2"
+  local pre = preIndex and self._flexibleWidgetName[preIndex][1]
+  local next = index and self._flexibleWidgetName[index][1]
+  local change = pre and next and pre ~= next or pre == "FlexibleGroup2"
   if change then
     local preAnimName, preDuration = self:_GetAnimInfo(pre, "out")
-    do
-      local nextAnimName, nextDuration = self:_GetAnimInfo(next, "in")
-      ;
-      (UIWidgetHelper.PlayAnimation)(self, pre, preAnimName, preDuration, function()
-    -- function num : 0_16_0 , upvalues : self, pre, next, _ENV, nextAnimName
-    (self:GetGameObject(pre)):SetActive(false)
-    ;
-    (self:GetGameObject(next)):SetActive(true)
-    ;
-    (UIWidgetHelper.SetAnimationPlay)(self, next, nextAnimName)
-    self:_SetTabBtnSelected()
-    self:_SetTabPageSelected()
-  end
-)
-    end
+    local nextAnimName, nextDuration = self:_GetAnimInfo(next, "in")
+    UIWidgetHelper.PlayAnimation(self, pre, preAnimName, preDuration, function()
+      self:GetGameObject(pre):SetActive(false)
+      self:GetGameObject(next):SetActive(true)
+      UIWidgetHelper.SetAnimationPlay(self, next, nextAnimName)
+      self:_SetTabBtnSelected()
+      self:_SetTabPageSelected()
+    end)
   else
-    local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, self._flexibleWidgetName)
-    ;
-    (UIWidgetHelper.SetObjGroupShow)(objs, index)
+    local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, self._flexibleWidgetName)
+    UIWidgetHelper.SetObjGroupShow(objs, index)
     self:_SetTabBtnSelected()
     self:_SetTabPageSelected()
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._GetAnimInfo = function(self, name, type)
-  -- function num : 0_17
+function UIActivityReturnSystemMainContent:_GetAnimInfo(name, type)
   local tb = {}
   tb.FlexibleGroup = {
-["in"] = {"uieff_Return_left_in", 250}
-, 
-out = {"uieff_Return_left_out", 167}
-}
+    ["in"] = {
+      "uieff_Return_left_in",
+      250
+    },
+    out = {
+      "uieff_Return_left_out",
+      167
+    }
+  }
   tb.FlexibleGroup2 = {
-["in"] = {"uieff_TimeTab_in", 267}
-, 
-out = {"uieff_TimeTab_out", 200}
-}
-  return ((tb[name])[type])[1], ((tb[name])[type])[2]
+    ["in"] = {
+      "uieff_TimeTab_in",
+      267
+    },
+    out = {
+      "uieff_TimeTab_out",
+      200
+    }
+  }
+  return tb[name][type][1], tb[name][type][2]
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent.ShowHideTabBtns = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIActivityReturnSystemMainContent:ShowHideTabBtns()
   if self.isBoostIntro then
-    local list = (self._tabBtnPool):GetAllSpawnList()
-    for i,v in ipairs(list) do
+    local list = self._tabBtnPool:GetAllSpawnList()
+    for i, v in ipairs(list) do
       if i ~= self._const_BoostPageIndex then
         v:ShowHideRoot(self.isBoostIntro)
       end
@@ -341,91 +268,58 @@ UIActivityReturnSystemMainContent.ShowHideTabBtns = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent.StoryBtnOnClick = function(self, go)
-  -- function num : 0_19 , upvalues : _ENV
-  local storyId = (UIActivityHelper.GetCampaignFirstEnterStoryID)(self._campaign, 1)
+function UIActivityReturnSystemMainContent:StoryBtnOnClick(go)
+  local storyId = UIActivityHelper.GetCampaignFirstEnterStoryID(self._campaign, 1)
   if storyId then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIStoryController", storyId)
+    GameGlobal.UIStateManager():ShowDialog("UIStoryController", storyId)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent.IntroBtnOnClick = function(self, go)
-  -- function num : 0_20
+function UIActivityReturnSystemMainContent:IntroBtnOnClick(go)
   self:ShowDialog("UIActivityReturnSystemIntro")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._AttachEvents = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIActivityReturnSystemMainContent:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:AttachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._DetachEvents = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIActivityReturnSystemMainContent:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:DetachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._CheckActivityClose = function(self, id)
-  -- function num : 0_23 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIActivityReturnSystemMainContent:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_24
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UIActivityReturnSystemMainContent:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:_CheckRedPointAll()
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._CheckRedPointAll = function(self)
-  -- function num : 0_25
+function UIActivityReturnSystemMainContent:_CheckRedPointAll()
   self:_SetTabBtnRedPoint()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent.OnUIGetItemCloseInQuest = function(self, type)
-  -- function num : 0_26 , upvalues : _ENV
+function UIActivityReturnSystemMainContent:OnUIGetItemCloseInQuest(type)
   self:_SetTabPageSelected()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CampaignComponentStepChange, (self._campaign)._id, nil, nil)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CampaignComponentStepChange, self._campaign._id, nil, nil)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._OnQuestUpdate = function(self)
-  -- function num : 0_27
+function UIActivityReturnSystemMainContent:_OnQuestUpdate()
   self:_SetTabPageSelected()
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemMainContent._GetSpawnComponent = function(self, widgetName, className)
-  -- function num : 0_28
+function UIActivityReturnSystemMainContent:_GetSpawnComponent(widgetName, className)
   local sop = self:GetUIComponent("UISelectObjectPath", widgetName)
   local obj = sop:SpawnObject(className)
   return obj
 end
-
-

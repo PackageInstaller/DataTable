@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_color_palette_charge.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultColorPaletteCharge", SkillEffectResultBase)
 SkillEffectResultColorPaletteCharge = SkillEffectResultColorPaletteCharge
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultColorPaletteCharge.Constructor = function(self, pieceType, entityID)
-  -- function num : 0_0
+function SkillEffectResultColorPaletteCharge:Constructor(pieceType, entityID)
   self._pieceType = pieceType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultColorPaletteCharge.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultColorPaletteCharge:GetEffectType()
   return SkillEffectType.ColorPaletteCharge
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultColorPaletteCharge.GetPieceType = function(self)
-  -- function num : 0_2
+function SkillEffectResultColorPaletteCharge:GetPieceType()
   return self._pieceType
 end
-
-

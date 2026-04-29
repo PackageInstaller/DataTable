@@ -1,122 +1,82 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_notice/ui_notice_detail_img_tex.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UINoticeDetailImgTex", UICustomWidget)
 UINoticeDetailImgTex = UINoticeDetailImgTex
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UINoticeDetailImgTex.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UINoticeDetailImgTex:OnShow(uiParams)
   self._title = self:GetUIComponent("UIRichText", "title")
   self._itemPool = self:GetUIComponent("UISelectObjectPath", "Content")
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeDetailImgTex.Constructor = function(self)
-  -- function num : 0_1
+function UINoticeDetailImgTex:Constructor()
   self._first = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeDetailImgTex.SetData = function(self, noticeInfo)
-  -- function num : 0_2 , upvalues : _ENV
+function UINoticeDetailImgTex:SetData(noticeInfo)
   local content = self:GetUIComponent("RectTransform", "Content")
-  content.anchoredPosition = Vector2((content.anchoredPosition).x, 0)
-  local tab = (cjson.decode)(noticeInfo.Text_NoticeContent)
+  content.anchoredPosition = Vector2(content.anchoredPosition.x, 0)
+  local tab = cjson.decode(noticeInfo.Text_NoticeContent)
   if tab then
-    (self._title):SetText(tab.title)
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._title).onHrefClick = function(hrefName)
-    -- function num : 0_2_0 , upvalues : _ENV
-    (SDKProxy:GetInstance()):OpenUrl(hrefName)
-  end
-
+    self._title:SetText(tab.title)
+    
+    function self._title.onHrefClick(hrefName)
+      SDKProxy:GetInstance():OpenUrl(hrefName)
+    end
+    
     self._notices = tab.notices
     if self._first then
-      (self._itemPool):SpawnObjects("UINoticeDetailImgTexItem", #self._notices)
-      self._items = (self._itemPool):GetAllSpawnList()
+      self._itemPool:SpawnObjects("UINoticeDetailImgTexItem", #self._notices)
+      self._items = self._itemPool:GetAllSpawnList()
       for i = 1, #self._notices do
-        ((self._items)[i]):SetData((self._notices)[i])
+        self._items[i]:SetData(self._notices[i])
       end
       self._first = false
     else
-      ;
-      (self._itemPool):SpawnObjects("UINoticeDetailImgTexItem", #self._notices)
-      self._items = (self._itemPool):GetAllSpawnList()
+      self._itemPool:SpawnObjects("UINoticeDetailImgTexItem", #self._notices)
+      self._items = self._itemPool:GetAllSpawnList()
       for i = 1, #self._notices do
-        if (self._items)[i] then
-          ((self._items)[i]):SetData((self._notices)[i])
+        if self._items[i] then
+          self._items[i]:SetData(self._notices[i])
         end
       end
     end
   else
-    do
-      ;
-      (Log.fatal)("###notice json decode fail ! content --> ", noticeInfo.Text_NoticeContent)
-      ;
-      (Log.debug)("###[UINoticeDetailImgTex] 刷新公告布局")
-      self:Lock("RefreshNoticeLayout")
-      if self._event then
-        ((GameGlobal.Timer)()):CancelEvent(self._event)
-        self._event = nil
-      end
-      self._event = ((GameGlobal.Timer)()):AddEvent(1, function()
-    -- function num : 0_2_1 , upvalues : _ENV, content, self
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(content)
+    Log.fatal("###notice json decode fail ! content --> ", noticeInfo.Text_NoticeContent)
+  end
+  Log.debug("###[UINoticeDetailImgTex] 刷新公告布局")
+  self:Lock("RefreshNoticeLayout")
+  if self._event then
+    GameGlobal.Timer():CancelEvent(self._event)
+    self._event = nil
+  end
+  self._event = GameGlobal.Timer():AddEvent(1, function()
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(content)
     self:UnLock("RefreshNoticeLayout")
-  end
-)
-    end
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeDetailImgTex.AnimFade = function(self)
-  -- function num : 0_3
-  (self._anim):Play("uieff_Notice_DetailImgTex_Fade")
+function UINoticeDetailImgTex:AnimFade()
+  self._anim:Play("uieff_Notice_DetailImgTex_Fade")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeDetailImgTex.AnimShow = function(self)
-  -- function num : 0_4
-  (self._anim):Play("uieff_Notice_DetailImgTex_Show")
+function UINoticeDetailImgTex:AnimShow()
+  self._anim:Play("uieff_Notice_DetailImgTex_Show")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeDetailImgTex.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UINoticeDetailImgTex:OnHide()
   self._title = nil
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeDetailImgTex._InitScrollView = function(self)
-  -- function num : 0_6
-  (self._noticesScrollView):InitListView(#self._notices, function(scrollView, index)
-    -- function num : 0_6_0 , upvalues : self
+function UINoticeDetailImgTex:_InitScrollView()
+  self._noticesScrollView:InitListView(#self._notices, function(scrollView, index)
     return self:InitListItem(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeDetailImgTex.InitListItem = function(self, scrollView, index)
-  -- function num : 0_7
+function UINoticeDetailImgTex:InitListItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -125,8 +85,6 @@ UINoticeDetailImgTex.InitListItem = function(self, scrollView, index)
   item.IsInitHandlerCalled = true
   local btn = rowPool:SpawnObject("UINoticeDetailImgTexItem")
   local idx = index + 1
-  btn:SetData((self._notices)[idx])
+  btn:SetData(self._notices[idx])
   return item
 end
-
-

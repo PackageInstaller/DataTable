@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/cls/ui_medal_list_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalListData", Object)
 UIMedalListData = UIMedalListData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalListData.Constructor = function(self)
-  -- function num : 0_0
+function UIMedalListData:Constructor()
   self.filterIds = {}
   self.fileterIdMap = {}
   self.client_medal_info = nil
@@ -19,63 +12,39 @@ UIMedalListData.Constructor = function(self)
   self.receiveMedalCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListData.Init = function(self, client_medal_info, visit)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMedalListData:Init(client_medal_info, visit)
   self.client_medal_info = client_medal_info
   self.visit = visit
-  local tabs = (Cfg.cfg_item_medal_tab)({})
-  ;
-  (table.sort)(tabs, function(a, b)
-    -- function num : 0_1_0
-    do return a.Order < b.Order end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  local tabs = Cfg.cfg_item_medal_tab({})
+  table.sort(tabs, function(a, b)
+    return a.Order < b.Order
+  end)
   self.filterIds = {}
-  ;
-  (table.insert)(self.filterIds, 0)
-  for _,v in pairs(tabs) do
-    (table.insert)(self.filterIds, v.ID)
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.fileterIdMap)[v.ID] = true
+  table.insert(self.filterIds, 0)
+  for _, v in pairs(tabs) do
+    table.insert(self.filterIds, v.ID)
+    self.fileterIdMap[v.ID] = true
   end
-  for _,v in pairs(self.client_medal_info) do
+  for _, v in pairs(self.client_medal_info) do
     local tmpId = v.medal_id
-    local medalItem = (self.items)[tmpId]
-    if not medalItem then
-      medalItem = UIMedalItemData:New()
-    end
+    local medalItem = self.items[tmpId]
+    medalItem = medalItem or UIMedalItemData:New()
     medalItem:Init(v)
-    -- DECOMPILER ERROR at PC49: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self.items)[tmpId] = medalItem
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R11 in 'UnsetPending'
-
+    self.items[tmpId] = medalItem
     if not visit and medalItem:IsNew() then
-      (self.newItemsId)[tmpId] = medalItem:GetPstId()
+      self.newItemsId[tmpId] = medalItem:GetPstId()
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListData.GetFilterIds = function(self)
-  -- function num : 0_2
+function UIMedalListData:GetFilterIds()
   return self.filterIds
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListData.GetFilterInfoById = function(self, filter)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMedalListData:GetFilterInfoById(filter)
   local r = {}
   r.ID = filter
-  local tab = (Cfg.cfg_item_medal_tab)[filter]
+  local tab = Cfg.cfg_item_medal_tab[filter]
   if tab then
     r.Name = tab.Name
     r.Icon = tab.Icon
@@ -86,40 +55,37 @@ UIMedalListData.GetFilterInfoById = function(self, filter)
   return r
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListData.GetItemsByFilter = function(self, filter)
-  -- function num : 0_4 , upvalues : _ENV
+function UIMedalListData:GetItemsByFilter(filter)
   if filter == 0 then
     self.allMedalCount = 0
     self.receiveMedalCount = 0
   end
   local list = {}
-  for k,v in pairs(self.items) do
+  for k, v in pairs(self.items) do
     local tmpl = v:GetTempl()
-    if tmpl and (filter == 0 or filter == tmpl.Tab) and not v:IsReceive() and tmpl.IsShow then
-      (table.insert)(list, v)
-      if filter == 0 then
-        self.allMedalCount = self.allMedalCount + 1
+    if tmpl and (filter == 0 or filter == tmpl.Tab) then
+      if not v:IsReceive() then
+        if tmpl.IsShow then
+          table.insert(list, v)
+          if filter == 0 then
+            self.allMedalCount = self.allMedalCount + 1
+          end
+        end
+      else
+        table.insert(list, v)
+        if filter == 0 then
+          self.allMedalCount = self.allMedalCount + 1
+          self.receiveMedalCount = self.receiveMedalCount + 1
+        end
       end
-    end
-    ;
-    (table.insert)(list, v)
-    if filter == 0 then
-      self.allMedalCount = self.allMedalCount + 1
-      self.receiveMedalCount = self.receiveMedalCount + 1
     end
   end
   self:_Sort(list)
   return list
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListData._Sort = function(self, list)
-  -- function num : 0_5 , upvalues : _ENV
-  (table.sort)(list, function(a, b)
-    -- function num : 0_5_0
+function UIMedalListData:_Sort(list)
+  table.sort(list, function(a, b)
     local aNew = a:IsNew()
     local bNew = b:IsNew()
     if aNew ~= bNew then
@@ -134,28 +100,23 @@ UIMedalListData._Sort = function(self, list)
     local cfgItemB = b:GetTemplateItem()
     local orderA = cfgItemA.BagSortIndex
     local orderB = cfgItemB.BagSortIndex
-    if orderB >= orderA then
-      do return orderA == orderB end
-      local colorA = cfgItemA.Color
-      local colorB = cfgItemB.Color
-      if colorB >= colorA then
-        do return colorA == colorB end
-        do return cfgItemA.ID < cfgItemB.ID end
-        -- DECOMPILER ERROR: 5 unprocessed JMP targets
-      end
+    if orderA ~= orderB then
+      return orderA > orderB
     end
-  end
-)
+    local colorA = cfgItemA.Color
+    local colorB = cfgItemB.Color
+    if colorA ~= colorB then
+      return colorA > colorB
+    end
+    return cfgItemA.ID < cfgItemB.ID
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListData.IsNew = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIMedalListData:IsNew()
   if self.visit then
     return false
   end
-  for k,v in pairs(self.newItemsId) do
+  for k, v in pairs(self.newItemsId) do
     if v then
       return true
     end
@@ -163,17 +124,14 @@ UIMedalListData.IsNew = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListData.IsFilterNew = function(self, filter)
-  -- function num : 0_7 , upvalues : _ENV
+function UIMedalListData:IsFilterNew(filter)
   if self.visit or filter == 0 then
     return false
   end
-  for k,v in pairs(self.newItemsId) do
+  for k, v in pairs(self.newItemsId) do
     if v then
-      local item = (self.items)[k]
-      if (item:GetTempl()).Tab == filter then
+      local item = self.items[k]
+      if item:GetTempl().Tab == filter then
         return true
       end
     end
@@ -181,28 +139,18 @@ UIMedalListData.IsFilterNew = function(self, filter)
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListData.SetUnNew = function(self, id)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self.newItemsId)[id] then
-    (self.newItemsId)[id] = nil
+function UIMedalListData:SetUnNew(id)
+  if self.newItemsId[id] then
+    self.newItemsId[id] = nil
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListData.GetAllNewPstId = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIMedalListData:GetAllNewPstId()
   local r = {}
-  for k,v in pairs(self.newItemsId) do
+  for k, v in pairs(self.newItemsId) do
     if v then
-      (table.insert)(r, v)
+      table.insert(r, v)
     end
   end
   return r
 end
-
-

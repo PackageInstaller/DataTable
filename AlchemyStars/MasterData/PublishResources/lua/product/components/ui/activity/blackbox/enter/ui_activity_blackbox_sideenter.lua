@@ -1,101 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/blackbox/enter/ui_activity_blackbox_sideenter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBlackBoxSideEnter", UICustomWidget)
 UIActivityBlackBoxSideEnter = UIActivityBlackBoxSideEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBlackBoxSideEnter.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityBlackBoxSideEnter:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxSideEnter.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityBlackBoxSideEnter:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxSideEnter.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityBlackBoxSideEnter:OnHide()
   self._activityData = nil
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxSideEnter._GetComponents = function(self)
-  -- function num : 0_3
+function UIActivityBlackBoxSideEnter:_GetComponents()
   self._txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
   self._bg = self:GetUIComponent("RawImageLoader", "bg")
   self._red = self:GetGameObject("red")
   self._new = self:GetGameObject("new")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxSideEnter.SetData = function(self)
-  -- function num : 0_4
+function UIActivityBlackBoxSideEnter:SetData()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxSideEnter.BtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  local isOver = (self._activityData):CheckTaskIsOver()
+function UIActivityBlackBoxSideEnter:BtnOnClick(go)
+  local isOver = self._activityData:CheckTaskIsOver()
   if isOver then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n27_valentine_y_offline"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_n27_valentine_y_offline"))
+    return
   end
   self:ShowDialog("UIActivityBlackBoxMain")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxSideEnter.OnSideEnterLoad = function(self, TT, setShowCallback, setNewRedCallback)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityBlackBoxSideEnter:OnSideEnterLoad(TT, setShowCallback, setNewRedCallback)
   self._setShowCallback = setShowCallback
   self._setNewRedCallback = setNewRedCallback
   self:Lock("UIActivityBlackBoxSideEnter")
   local res = AsyncRequestRes:New()
   self._activityData = ActivityBlackBoxData:New()
-  ;
-  (self._activityData):LoadData(TT, res)
+  self._activityData:LoadData(TT, res)
   self:UnLock("UIActivityBlackBoxSideEnter")
-  self._campain = (self._activityData):GetCampaign()
-  local isOpen = (self._campain):CheckCampaignOpen()
+  self._campain = self._activityData:GetCampaign()
+  local isOpen = self._campain:CheckCampaignOpen()
   if not isOpen then
-    (self._setShowCallback)(false)
-    return 
+    self._setShowCallback(false)
+    return
   end
-  ;
-  (self._setShowCallback)(true)
+  self._setShowCallback(true)
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
-  local showNew = (self._activityData):GetEntryNew()
-  local showRed = (self._activityData):GetEntryRed()
-  ;
-  (self._setNewRedCallback)(showNew, showRed)
+  local showNew = self._activityData:GetEntryNew()
+  local showRed = self._activityData:GetEntryRed()
+  self._setNewRedCallback(showNew, showRed)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxSideEnter.GetSideEnterRawImage = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local campainId = (self._activityData):GetCampaignID()
-  local cfg = (Cfg.cfg_campaign)[campainId]
-  if cfg then
-    return cfg.SideEnterIcon
-  end
+function UIActivityBlackBoxSideEnter:GetSideEnterRawImage()
+  local campainId = self._activityData:GetCampaignID()
+  local cfg = Cfg.cfg_campaign[campainId]
+  return cfg and cfg.SideEnterIcon
 end
-
-

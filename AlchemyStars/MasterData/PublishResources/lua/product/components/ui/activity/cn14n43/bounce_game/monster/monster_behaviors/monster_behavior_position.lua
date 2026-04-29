@@ -1,79 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/monster/monster_behaviors/monster_behavior_position.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("monster_behavior_base")
 _class("MonsterBeHaviorPosition", MonsterBeHaviorBase)
 MonsterBeHaviorPosition = MonsterBeHaviorPosition
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterBeHaviorPosition.Name = function(self)
-  -- function num : 0_0
+function MonsterBeHaviorPosition:Name()
   return "MonsterBeHaviorPosition"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorPosition.SetData = function(self, initPosition)
-  -- function num : 0_1 , upvalues : _ENV
+function MonsterBeHaviorPosition:SetData(initPosition)
   self._initPosition = Vector2:New()
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._initPosition).x = initPosition[1]
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._initPosition).y = initPosition[2]
+  self._initPosition.x = initPosition[1]
+  self._initPosition.y = initPosition[2]
   self:SetPosition(self._initPosition)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorPosition.GetPosition = function(self)
-  -- function num : 0_2
+function MonsterBeHaviorPosition:GetPosition()
   return self._curPostion
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorPosition.SetPosition = function(self, poistion)
-  -- function num : 0_3 , upvalues : _ENV
+function MonsterBeHaviorPosition:SetPosition(poistion)
   self._curPostion = poistion
-  ;
-  (self:GetBehavior(MonsterBeHaviorView:Name())):SetPosition(poistion)
+  self:GetBehavior(MonsterBeHaviorView:Name()):SetPosition(poistion)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorPosition.ResetPosition = function(self)
-  -- function num : 0_4
+function MonsterBeHaviorPosition:ResetPosition()
   self:SetPosition(self._curPostion)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorPosition.OnInit = function(self, param)
-  -- function num : 0_5
+function MonsterBeHaviorPosition:OnInit(param)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorPosition.OnShow = function(self)
-  -- function num : 0_6
+function MonsterBeHaviorPosition:OnShow()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorPosition.OnReset = function(self)
-  -- function num : 0_7
+function MonsterBeHaviorPosition:OnReset()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorPosition.OnRelease = function(self)
-  -- function num : 0_8
+function MonsterBeHaviorPosition:OnRelease()
 end
-
-

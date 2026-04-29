@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n4/crisisContract/main/ui_activity_n4_cc_level_elements.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN4CCLevelElement", UICustomWidget)
 UIActivityN4CCLevelElement = UIActivityN4CCLevelElement
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN4CCLevelElement.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN4CCLevelElement:OnShow(uiParams)
   self:InitWidget()
   self._atlas = self:GetAsset("UIN4CC.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelElement.InitWidget = function(self)
-  -- function num : 0_1
+function UIActivityN4CCLevelElement:InitWidget()
   self.element1 = self:GetUIComponent("Image", "element1")
   self.element2 = self:GetUIComponent("Image", "element2")
   self.element1Go = self:GetGameObject("element1")
   self.element2Go = self:GetGameObject("element2")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelElement.SetData = function(self, e1, e2)
-  -- function num : 0_2
-  (self.element1Go):SetActive(e1 ~= nil)
-  ;
-  (self.element2Go):SetActive(e2 ~= nil)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
+function UIActivityN4CCLevelElement:SetData(e1, e2)
+  self.element1Go:SetActive(e1 ~= nil)
+  self.element2Go:SetActive(e2 ~= nil)
   if e1 then
-    (self.element1).sprite = (self._atlas):GetSprite(e1)
+    self.element1.sprite = self._atlas:GetSprite(e1)
   end
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
   if e2 then
-    (self.element1).sprite = (self._atlas):GetSprite(e2)
+    self.element1.sprite = self._atlas:GetSprite(e2)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
-
-

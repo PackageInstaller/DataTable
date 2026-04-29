@@ -1,95 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chat/ui_chat_dont__friend_tips_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChatDontFriendTipsController", UIController)
 UIChatDontFriendTipsController = UIChatDontFriendTipsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChatDontFriendTipsController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIChatDontFriendTipsController:OnShow(uiParams)
   self._friendData = uiParams[1]
   self._chatFriendManager = uiParams[2]
   self:_GetComponents()
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatDontFriendTipsController._GetComponents = function(self)
-  -- function num : 0_1
+function UIChatDontFriendTipsController:_GetComponents()
   self._tipsLabel = self:GetUIComponent("UILocalizationText", "Tips")
   self._sednAddFriendBtnOnGo = self:GetGameObject("SendAddFriendBtnOn")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatDontFriendTipsController._Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._tipsLabel).text = (StringTable.Get)("str_chat_is_not_your_friend_tips")
+function UIChatDontFriendTipsController:_Init()
+  self._tipsLabel.text = StringTable.Get("str_chat_is_not_your_friend_tips")
   self._sendAddFriendMessage = false
-  ;
-  (self._sednAddFriendBtnOnGo):SetActive(self._sendAddFriendMessage)
+  self._sednAddFriendBtnOnGo:SetActive(self._sendAddFriendMessage)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatDontFriendTipsController.SendAddFriendBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIChatDontFriendTipsController:SendAddFriendBtnOnClick(go)
   if self._sendAddFriendMessage then
     self._sendAddFriendMessage = false
   else
     self._sendAddFriendMessage = true
   end
-  ;
-  (self._sednAddFriendBtnOnGo):SetActive(self._sendAddFriendMessage)
+  self._sednAddFriendBtnOnGo:SetActive(self._sendAddFriendMessage)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatDontFriendTipsController.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIChatDontFriendTipsController:ConfirmBtnOnClick(go)
   if not self._sendAddFriendMessage then
     self:CloseDialog()
-    return 
+    return
   end
   self:Lock("ConfirmBtnOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._SendAddFriendMsg, self)
+  GameGlobal.TaskManager():StartTask(self._SendAddFriendMsg, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatDontFriendTipsController._SendAddFriendMsg = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
-  local socialModule = (GameGlobal.GetModule)(SocialModule)
-  local res = socialModule:InvitationFriend(TT, (self._friendData):GetFriendId())
+function UIChatDontFriendTipsController:_SendAddFriendMsg(TT)
+  local socialModule = GameGlobal.GetModule(SocialModule)
+  local res = socialModule:InvitationFriend(TT, self._friendData:GetFriendId())
   if not res:GetSucc() then
     local retCode = res:GetResult()
     if retCode == SocialErrorCode.SOCIAL_INVITATION_MUTUAL_SUCCESS then
-      (ToastManager.ShowToast)((StringTable.Get)("str_chat_is_your_friend"))
+      ToastManager.ShowToast(StringTable.Get("str_chat_is_your_friend"))
     else
-      ;
-      (self._chatFriendManager):HandleErrorMsgCode(retCode)
+      self._chatFriendManager:HandleErrorMsgCode(retCode)
     end
   else
-    do
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_chat_send_request_add_friend_success"))
-      self:UnLock("ConfirmBtnOnClick")
-      self:CloseDialog()
-    end
+    ToastManager.ShowToast(StringTable.Get("str_chat_send_request_add_friend_success"))
   end
-end
-
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatDontFriendTipsController.CancelBtnOnClick = function(self, go)
-  -- function num : 0_6
+  self:UnLock("ConfirmBtnOnClick")
   self:CloseDialog()
 end
 
-
+function UIChatDontFriendTipsController:CancelBtnOnClick(go)
+  self:CloseDialog()
+end

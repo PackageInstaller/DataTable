@@ -1,42 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_guard_damage_from_team_member.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicGuardDamageFromTeamMember", BuffLogicBase)
 BuffLogicGuardDamageFromTeamMember = BuffLogicGuardDamageFromTeamMember
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicGuardDamageFromTeamMember.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicGuardDamageFromTeamMember:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicGuardDamageFromTeamMember.DoLogic = function(self, notify)
-  -- function num : 0_1
-  if not (self._entity):HasMonsterID() then
-    return 
+function BuffLogicGuardDamageFromTeamMember:DoLogic(notify)
+  if not self._entity:HasMonsterID() then
+    return
   end
-  local cpt = ((self._buffInstance):Entity()):Attributes()
+  local cpt = self._buffInstance:Entity():Attributes()
   cpt:SetSimpleAttribute("BuffGuardDamageFromTeamMember", 1)
 end
 
 _class("BuffLogicRemoveGuardDamageFromTeamMember", BuffLogicBase)
 BuffLogicRemoveGuardDamageFromTeamMember = BuffLogicRemoveGuardDamageFromTeamMember
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveGuardDamageFromTeamMember.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveGuardDamageFromTeamMember:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveGuardDamageFromTeamMember.DoLogic = function(self, notify)
-  -- function num : 0_3
-  local cpt = ((self._buffInstance):Entity()):Attributes()
+function BuffLogicRemoveGuardDamageFromTeamMember:DoLogic(notify)
+  local cpt = self._buffInstance:Entity():Attributes()
   cpt:RemoveSimpleAttribute("BuffGuardDamageFromTeamMember")
 end
-
-

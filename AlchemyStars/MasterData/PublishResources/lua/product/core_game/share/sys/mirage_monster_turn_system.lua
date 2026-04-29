@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/mirage_monster_turn_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("MirageMonsterTurnSystem", MainStateSystem)
 MirageMonsterTurnSystem = MirageMonsterTurnSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MirageMonsterTurnSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function MirageMonsterTurnSystem:_GetMainStateID()
   return GameStateID.MirageMonsterTurn
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageMonsterTurnSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.info)("MirageMonsterTurnSystem:Begin")
+function MirageMonsterTurnSystem:_OnMainStateEnter(TT)
+  Log.info("MirageMonsterTurnSystem:Begin")
   self:_DoRenderHidePetInfo(TT)
   self:_DoRenderMirageClearWarningArea(TT)
   local traps = self:_DoLogicMirageCastTrapSkill()
@@ -25,79 +15,51 @@ MirageMonsterTurnSystem._OnMainStateEnter = function(self, TT)
   local battleResult = self:_IsBattleEnd()
   if battleResult then
     self:_SwitchToRoundResult()
-    return 
+    return
   end
   local warningTraps = self:_DoLogicMirageCastTrapWarningSkill()
   self:_DoRenderMiragePlayTrapWarningSkill(TT, warningTraps)
-  ;
-  (Log.info)("MirageMonsterTurnSystem:End")
+  Log.info("MirageMonsterTurnSystem:End")
   self:_DoLogicSwitchMainFsmState()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageMonsterTurnSystem._DoLogicSwitchMainFsmState = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local mirageSvc = (self.world):GetService("MirageLogic")
+function MirageMonsterTurnSystem:_DoLogicSwitchMainFsmState()
+  local mirageSvc = self.world:GetService("MirageLogic")
   local isForceClose = mirageSvc:IsMirageForceClose()
   if isForceClose then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.MirageMonsterTurnFinish, 2)
-    return 
+    self._world:EventDispatcher():Dispatch(GameEventType.MirageMonsterTurnFinish, 2)
+    return
   end
   local IsMirageOpen = mirageSvc:IsMirageOpen()
   if IsMirageOpen then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.MirageMonsterTurnFinish, 1)
+    self._world:EventDispatcher():Dispatch(GameEventType.MirageMonsterTurnFinish, 1)
   else
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.MirageMonsterTurnFinish, 2)
+    self._world:EventDispatcher():Dispatch(GameEventType.MirageMonsterTurnFinish, 2)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageMonsterTurnSystem._SwitchToRoundResult = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.MirageMonsterTurnFinish, 2)
+function MirageMonsterTurnSystem:_SwitchToRoundResult()
+  self._world:EventDispatcher():Dispatch(GameEventType.MirageMonsterTurnFinish, 2)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageMonsterTurnSystem._DoLogicMirageCastTrapSkill = function(self)
-  -- function num : 0_4
-  local mirageSvc = (self.world):GetService("MirageLogic")
+function MirageMonsterTurnSystem:_DoLogicMirageCastTrapSkill()
+  local mirageSvc = self.world:GetService("MirageLogic")
   return mirageSvc:DoMirageCastTrapSkill()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageMonsterTurnSystem._DoLogicMirageCastTrapWarningSkill = function(self)
-  -- function num : 0_5
-  local mirageSvc = (self.world):GetService("MirageLogic")
+function MirageMonsterTurnSystem:_DoLogicMirageCastTrapWarningSkill()
+  local mirageSvc = self.world:GetService("MirageLogic")
   return mirageSvc:DoMirageCastTrapWarningSkill()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageMonsterTurnSystem._DoRenderHidePetInfo = function(self, TT)
-  -- function num : 0_6
+function MirageMonsterTurnSystem:_DoRenderHidePetInfo(TT)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageMonsterTurnSystem._DoRenderMirageClearWarningArea = function(self, TT)
-  -- function num : 0_7
+function MirageMonsterTurnSystem:_DoRenderMirageClearWarningArea(TT)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageMonsterTurnSystem._DoRenderMiragePlayTrapSkill = function(self, TT, traps)
-  -- function num : 0_8
+function MirageMonsterTurnSystem:_DoRenderMiragePlayTrapSkill(TT, traps)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageMonsterTurnSystem._DoRenderMiragePlayTrapWarningSkill = function(self, TT, traps)
-  -- function num : 0_9
+function MirageMonsterTurnSystem:_DoRenderMiragePlayTrapWarningSkill(TT, traps)
 end
-
-

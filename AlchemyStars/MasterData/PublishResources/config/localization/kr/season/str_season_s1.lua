@@ -1,8 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/kr/season/str_season_s1.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_season_s1_main_btn_medal = "동행 세트", str_season_s1_main_btn_collage = "이브의 수집품 상자", str_season_s1_main_btn_exchange = "기억의 공방", str_season_s1_main_btn_quest = "기억의 조각", str_season_s1_main_btn_go = "꿈의 세계", str_season_s1_main_btn_intro = "이벤트 설명", str_season_s1_main_btn_story = "스토리 회상", str_season_s1_main_btn_fin = "수집 완료", str_season_s1_main_btn_lock = "탐색이 종료되었습니다.", str_season_s1_main_btn_over = "탐색이 종료되었습니다.", str_season_s1_main_time_action = "꿈의 탐색 남은 시간 {1}", str_season_s1_main_time_exchange = "공방 교환 남은 시간 {1}", str_season_s1_exchange_desc = "“내 새 치마 어때, 예뻐? 헤헷...\n          그럼 다음에 같이 사러 가줄래?”", str_season_s1_exchange_detail = "미리보기", str_season_s1_exchange_remain = "{1} 남음", str_season_s1_exchange_buy = "구매", str_season_s1_exchange_buy_count = "구매 수량", str_season_s1_collection = "이름 없는 보물", str_season_s1_cg = "과거의 상처", str_season_s1_music = "기억의 소리", str_season_s1_soldout = "매진", str_season_s1_quest_tab = "꿈의 세계", str_season_s1_quest_tab_with_space = "꿈의 세계", str_season_s1_quest_desc_1 = "수집한 조각을 터치해 상세정보 보기", str_season_s1_share_tip = "“난 계속해서 살아갈 거야...\n         내가 아끼고 사랑하는 사람들이랑 같이!”", str_season_s1_backtrack_map_list_name = "망각과 소생의 날", str_season_s1_backtrack_map_list_title = "레디젤 렌치 - 이브의 꿈", str_season_s1_backtrack_map_list_desc = "뜨거운 모래바람 속 따스한 부락, 주거지, 테일스트리트, 크림슨 밸리... 모든 곳에 이브의 추억이 담겨 있다."}
+local config = {
+  str_season_s1_main_btn_medal = "동행 세트",
+  str_season_s1_main_btn_collage = "이브의 수집품 상자",
+  str_season_s1_main_btn_exchange = "기억의 공방",
+  str_season_s1_main_btn_quest = "기억의 조각",
+  str_season_s1_main_btn_go = "꿈의 세계",
+  str_season_s1_main_btn_intro = "이벤트 설명",
+  str_season_s1_main_btn_story = "스토리 회상",
+  str_season_s1_main_btn_fin = "수집 완료",
+  str_season_s1_main_btn_lock = "탐색이 종료되었습니다.",
+  str_season_s1_main_btn_over = "탐색이 종료되었습니다.",
+  str_season_s1_main_time_action = "꿈의 탐색 남은 시간 {1}",
+  str_season_s1_main_time_exchange = "공방 교환 남은 시간 {1}",
+  str_season_s1_exchange_desc = "“내 새 치마 어때, 예뻐? 헤헷...\n          그럼 다음에 같이 사러 가줄래?”",
+  str_season_s1_exchange_detail = "미리보기",
+  str_season_s1_exchange_remain = "{1} 남음",
+  str_season_s1_exchange_buy = "구매",
+  str_season_s1_exchange_buy_count = "구매 수량",
+  str_season_s1_collection = "이름 없는 보물",
+  str_season_s1_cg = "과거의 상처",
+  str_season_s1_music = "기억의 소리",
+  str_season_s1_soldout = "매진",
+  str_season_s1_quest_tab = "꿈의 세계",
+  str_season_s1_quest_tab_with_space = "꿈의 세계",
+  str_season_s1_quest_desc_1 = "수집한 조각을 터치해 상세정보 보기",
+  str_season_s1_share_tip = "“난 계속해서 살아갈 거야...\n         내가 아끼고 사랑하는 사람들이랑 같이!”",
+  str_season_s1_backtrack_map_list_name = "망각과 소생의 날",
+  str_season_s1_backtrack_map_list_title = "레디젤 렌치 - 이브의 꿈",
+  str_season_s1_backtrack_map_list_desc = "뜨거운 모래바람 속 따스한 부락, 주거지, 테일스트리트, 크림슨 밸리... 모든 곳에 이브의 추억이 담겨 있다."
+}
 return config
-

@@ -1,55 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/hud_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HUDComponent", Object)
 HUDComponent = HUDComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HUDComponent.Constructor = function(self)
-  -- function num : 0_0
+function HUDComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HUD = function(self)
-  -- function num : 0_1
-  return self:GetComponent((self.WEComponentsEnum).HUD)
+function Entity:HUD()
+  return self:GetComponent(self.WEComponentsEnum.HUD)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasHUD = function(self)
-  -- function num : 0_2
-  return self:HasComponent((self.WEComponentsEnum).HUD)
+function Entity:HasHUD()
+  return self:HasComponent(self.WEComponentsEnum.HUD)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddHUD = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).HUD
+function Entity:AddHUD()
+  local index = self.WEComponentsEnum.HUD
   local component = HUDComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceHUD = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).HUD
+function Entity:ReplaceHUD()
+  local index = self.WEComponentsEnum.HUD
   local component = HUDComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveHUD = function(self)
-  -- function num : 0_5
+function Entity:RemoveHUD()
   if self:HasHUD() then
-    self:RemoveComponent((self.WEComponentsEnum).HUD)
+    self:RemoveComponent(self.WEComponentsEnum.HUD)
   end
 end
-
-

@@ -1,106 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_target_hp_slider_blink_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayTargetHpSliderBlinkInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayTargetHpSliderBlinkInstruction = SkillPreviewPlayTargetHpSliderBlinkInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayTargetHpSliderBlinkInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayTargetHpSliderBlinkInstruction:Constructor(params)
   self._compareType = tonumber(params.compareType)
   self._compareParam = tonumber(params.compareParam)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayTargetHpSliderBlinkInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayTargetHpSliderBlinkInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = previewContext:GetWorld()
   local targetIDList = previewContext:GetTargetEntityIDList()
-  targetIDList = (table.unique)(targetIDList)
-  for _,id in pairs(targetIDList) do
+  targetIDList = table.unique(targetIDList)
+  for _, id in pairs(targetIDList) do
     local entity = world:GetEntityByID(id)
     if entity and entity:HasView() and entity:HasHP() then
-      local percent = (entity:HP()):GetRedHP() / (entity:HP()):GetMaxHP()
+      local percent = entity:HP():GetRedHP() / entity:HP():GetMaxHP()
       local satisfied = false
-      if percent ~= self._compareParam then
-        satisfied = self._compareType ~= ComparisonOperator.EQ
-        if percent == self._compareParam then
-          satisfied = self._compareType ~= ComparisonOperator.NE
-          if self._compareParam >= percent then
-            satisfied = self._compareType ~= ComparisonOperator.GT
-            if self._compareParam > percent then
-              satisfied = self._compareType ~= ComparisonOperator.GE
-              if percent >= self._compareParam then
-                satisfied = self._compareType ~= ComparisonOperator.LT
-                if percent > self._compareParam then
-                  do
-                    satisfied = self._compareType ~= ComparisonOperator.LE
-                    if satisfied then
-                      (world:EventDispatcher()):Dispatch(GameEventType.HPSliderBlink, entity:GetID(), true)
-                    end
-                    -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
-                end
-              end
-            end
-          end
-        end
+      if self._compareType == ComparisonOperator.EQ then
+        satisfied = percent == self._compareParam
+      elseif self._compareType == ComparisonOperator.NE then
+        satisfied = percent ~= self._compareParam
+      elseif self._compareType == ComparisonOperator.GT then
+        satisfied = percent > self._compareParam
+      elseif self._compareType == ComparisonOperator.GE then
+        satisfied = percent >= self._compareParam
+      elseif self._compareType == ComparisonOperator.LT then
+        satisfied = percent < self._compareParam
+      elseif self._compareType == ComparisonOperator.LE then
+        satisfied = percent <= self._compareParam
+      end
+      if satisfied then
+        world:EventDispatcher():Dispatch(GameEventType.HPSliderBlink, entity:GetID(), true)
       end
     end
   end
-  -- DECOMPILER ERROR: 13 unprocessed JMP targets
 end
 
 _class("SkillPreviewStopTargetHpSliderBlinkInstruction", SkillPreviewBaseInstruction)
 SkillPreviewStopTargetHpSliderBlinkInstruction = SkillPreviewStopTargetHpSliderBlinkInstruction
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewStopTargetHpSliderBlinkInstruction.Constructor = function(self, params)
-  -- function num : 0_2
+function SkillPreviewStopTargetHpSliderBlinkInstruction:Constructor(params)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewStopTargetHpSliderBlinkInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillPreviewStopTargetHpSliderBlinkInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = previewContext:GetWorld()
-  local monsterGroup = world:GetGroup((world.BW_WEMatchers).MonsterID)
-  for _,entity in ipairs(monsterGroup:GetEntities()) do
+  local monsterGroup = world:GetGroup(world.BW_WEMatchers.MonsterID)
+  for _, entity in ipairs(monsterGroup:GetEntities()) do
     if entity and entity:HasView() and entity:HasHP() then
-      (world:EventDispatcher()):Dispatch(GameEventType.HPSliderBlink, entity:GetID(), false)
+      world:EventDispatcher():Dispatch(GameEventType.HPSliderBlink, entity:GetID(), false)
     end
   end
 end
-
-

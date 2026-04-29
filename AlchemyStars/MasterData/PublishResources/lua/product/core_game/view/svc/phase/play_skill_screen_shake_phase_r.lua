@@ -1,19 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_screen_shake_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillScreenShakePhase", PlaySkillPhaseBase)
 PlaySkillScreenShakePhase = PlaySkillScreenShakePhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillScreenShakePhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillScreenShakePhase:PlayFlight(TT, casterEntity, phaseParam)
   local screenShakePhaseParam = phaseParam
-  local cameraService = (self._world):GetService("Camera")
+  local cameraService = self._world:GetService("Camera")
   local cameraShakeParam = CameraShakeParams:New(screenShakePhaseParam:GetDelay(), screenShakePhaseParam:GetIntensity(), screenShakePhaseParam:GetMainVibAngle(), screenShakePhaseParam:GetDuration(), screenShakePhaseParam:GetVibrato(), screenShakePhaseParam:GetDecayRate(), screenShakePhaseParam:GetAngleRandomness(), screenShakePhaseParam:GetIntenseRandomness())
   cameraService:PlayCameraShake(cameraShakeParam)
 end
-
-

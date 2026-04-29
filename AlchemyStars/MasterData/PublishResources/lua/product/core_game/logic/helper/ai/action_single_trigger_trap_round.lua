@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_single_trigger_trap_round.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionSingleTriggerTrapRound", AINewNode)
 ActionSingleTriggerTrapRound = ActionSingleTriggerTrapRound
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSingleTriggerTrapRound.Constructor = function(self)
-  -- function num : 0_0
+function ActionSingleTriggerTrapRound:Constructor()
   self.m_nWorkIndexX = 1
   self._skillID = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSingleTriggerTrapRound.InitializeNode = function(self, cfg, context, parentNode, configData)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionSingleTriggerTrapRound.super).InitializeNode)(self, cfg, context, parentNode, configData)
+function ActionSingleTriggerTrapRound:InitializeNode(cfg, context, parentNode, configData)
+  ActionSingleTriggerTrapRound.super.InitializeNode(self, cfg, context, parentNode, configData)
   if configData then
     if type(configData) == "table" then
       self.m_nWorkIndexX = configData[1]
@@ -28,32 +18,22 @@ ActionSingleTriggerTrapRound.InitializeNode = function(self, cfg, context, paren
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSingleTriggerTrapRound.Update = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function ActionSingleTriggerTrapRound:Update()
   local vecSkillLists = self:GetConfigSkillList()
-  if not self:GetGameRountNow() then
-    local nGameRound = not vecSkillLists or 1
-  end
-  do
+  if vecSkillLists then
+    local nGameRound = self:GetGameRountNow() or 1
     local useRound = nGameRound % #vecSkillLists
     if useRound == 0 then
       useRound = #vecSkillLists
     end
     self._skillID = vecSkillLists[useRound]
-    return AINewNodeStatus.Success
   end
+  return AINewNodeStatus.Success
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSingleTriggerTrapRound.GetActionSkillID = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if ((self.m_entityOwn):BuffComponent()):HasFlag(BuffFlags.Benumb) then
+function ActionSingleTriggerTrapRound:GetActionSkillID()
+  if self.m_entityOwn:BuffComponent():HasFlag(BuffFlags.Benumb) then
     return 0
   end
   return self._skillID
 end
-
-

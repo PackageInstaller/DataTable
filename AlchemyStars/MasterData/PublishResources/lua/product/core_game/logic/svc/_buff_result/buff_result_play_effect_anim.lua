@@ -1,39 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_play_effect_anim.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultPlayEffectAnim", BuffResultBase)
 BuffResultPlayEffectAnim = BuffResultPlayEffectAnim
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultPlayEffectAnim.Constructor = function(self, objName, animName, waitTime)
-  -- function num : 0_0
+function BuffResultPlayEffectAnim:Constructor(objName, animName, waitTime)
   self._objName = objName
   self._animName = animName
   self._waitTime = waitTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultPlayEffectAnim.GetObjName = function(self)
-  -- function num : 0_1
+function BuffResultPlayEffectAnim:GetObjName()
   return self._objName
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultPlayEffectAnim.GetAnimName = function(self)
-  -- function num : 0_2
+function BuffResultPlayEffectAnim:GetAnimName()
   return self._animName
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultPlayEffectAnim.GetWaitTime = function(self)
-  -- function num : 0_3
+function BuffResultPlayEffectAnim:GetWaitTime()
   return self._waitTime
 end
-
-

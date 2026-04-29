@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/camera/aircraft_camera_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftCameraManager", Object)
 AircraftCameraManager = AircraftCameraManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftCameraManager.Constructor = function(self, main)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftCameraManager:Constructor(main)
   self._main = main
-  self._inputManager = (self._main):Input()
+  self._inputManager = self._main:Input()
   self._enable = false
   self._camera = nil
   self._majorCamera = AircraftCamera:New()
@@ -18,390 +11,254 @@ AircraftCameraManager.Constructor = function(self, main)
   self._showNavMenu = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._camera = (((UnityEngine.GameObject).Find)("Main Camera")):GetComponent("Camera")
+function AircraftCameraManager:Init()
+  self._camera = UnityEngine.GameObject.Find("Main Camera"):GetComponent("Camera")
   if not self._camera then
-    (Log.fatal)("[aircraft] main camera not found")
+    Log.fatal("[aircraft] main camera not found")
     return false
   end
-  self._cameraT = (self._camera).transform
-  ;
-  (self._majorCamera):Init(self._camera, self._inputManager, function(results)
-    -- function num : 0_1_0 , upvalues : self
+  self._cameraT = self._camera.transform
+  self._majorCamera:Init(self._camera, self._inputManager, function(results)
     self:OnClickRoom(results)
-  end
-)
+  end)
   self._enable = true
-  self._hideUIPosZ = ((Cfg.cfg_aircraft_camera).uiHidePosX).Value
-  self._focusZ_centerroom = ((Cfg.cfg_aircraft_camera).focus_centerroom_dis).Value
-  self._focusZ_restroom = ((Cfg.cfg_aircraft_camera).focus_restroom_dis).Value
-  self._focusZ_workroom = ((Cfg.cfg_aircraft_camera).focus_workroom_dis).Value
-  self._levelupZ_centerroom = ((Cfg.cfg_aircraft_camera).levelup_centerroom_dis).Value
-  self._levelupZ_restroom = ((Cfg.cfg_aircraft_camera).levelup_restroom_dis).Value
-  self._levelupZ_workroom = ((Cfg.cfg_aircraft_camera).levelup_workroom_dis).Value
-  self._focusPetPosZ = ((Cfg.cfg_aircraft_camera).focusPetPosZ).Value
-  self._hideNavMenuPosZ = ((Cfg.cfg_aircraft_camera).hideUIAirNavMenuPosZ).Value
+  self._hideUIPosZ = Cfg.cfg_aircraft_camera.uiHidePosX.Value
+  self._focusZ_centerroom = Cfg.cfg_aircraft_camera.focus_centerroom_dis.Value
+  self._focusZ_restroom = Cfg.cfg_aircraft_camera.focus_restroom_dis.Value
+  self._focusZ_workroom = Cfg.cfg_aircraft_camera.focus_workroom_dis.Value
+  self._levelupZ_centerroom = Cfg.cfg_aircraft_camera.levelup_centerroom_dis.Value
+  self._levelupZ_restroom = Cfg.cfg_aircraft_camera.levelup_restroom_dis.Value
+  self._levelupZ_workroom = Cfg.cfg_aircraft_camera.levelup_workroom_dis.Value
+  self._focusPetPosZ = Cfg.cfg_aircraft_camera.focusPetPosZ.Value
+  self._hideNavMenuPosZ = Cfg.cfg_aircraft_camera.hideUIAirNavMenuPosZ.Value
   self._navMenuCamPosX = -0.03
   self._navMenuCamPosY = 0.291
   self._navMenuCamPosZ = -189
-  self._petFixedY = ((Cfg.cfg_aircraft_camera).petFixedOffsetY).Value
-  self._petDistanceRate = ((Cfg.cfg_aircraft_camera).petDistanceParam).Value
-  self._backPosZ = ((Cfg.cfg_aircraft_camera).backPosZ).Value
-  self._ScaleCancelPos = ((Cfg.cfg_aircraft_const).ScaleCancelPos).IntValue
+  self._petFixedY = Cfg.cfg_aircraft_camera.petFixedOffsetY.Value
+  self._petDistanceRate = Cfg.cfg_aircraft_camera.petDistanceParam.Value
+  self._backPosZ = Cfg.cfg_aircraft_camera.backPosZ.Value
+  self._ScaleCancelPos = Cfg.cfg_aircraft_const.ScaleCancelPos.IntValue
   self._showSentence = true
   self._freeAnim = nil
   AirLog("AircraftCameraManager Init Done")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.OnClickRoom = function(self, results)
-  -- function num : 0_2
-  (self._main):OnClickRoom(results)
+function AircraftCameraManager:OnClickRoom(results)
+  self._main:OnClickRoom(results)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.Dispose = function(self)
-  -- function num : 0_3
+function AircraftCameraManager:Dispose()
   self._enable = false
-  ;
-  (self._majorCamera):Dispose()
+  self._majorCamera:Dispose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_4 , upvalues : _ENV
+function AircraftCameraManager:Update(deltaTimeMS)
   if not self._enable then
-    return 
+    return
   end
   if self._freeAnim then
-    (self._freeAnim):Update(deltaTimeMS)
+    self._freeAnim:Update(deltaTimeMS)
   else
-    ;
-    (self._majorCamera):Update(deltaTimeMS)
+    self._majorCamera:Update(deltaTimeMS)
   end
-  local p = (self._cameraT).position
+  local p = self._cameraT.position
   if p.z < self._ScaleCancelPos and self._showSentence then
     self._showSentence = false
-    ;
-    (self._main):StopInteraction()
-  else
-    if self._ScaleCancelPos < p.z and not self._showSentence then
-      self._showSentence = true
-    end
+    self._main:StopInteraction()
+  elseif p.z > self._ScaleCancelPos and not self._showSentence then
+    self._showSentence = true
   end
-  if self._hideUIPosZ < p.z and self._showUI then
+  if p.z > self._hideUIPosZ and self._showUI then
     self._showUI = false
-    ;
-    (self._main):Set3DUIActive(false)
-    ;
-    (self._main):SetClickTexActive(false)
-    ;
-    (self._main):SetCamNearbyState(true)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.Active)
-  else
-    if p.z < self._hideUIPosZ and not self._showUI then
-      self._showUI = true
-      ;
-      (self._main):Set3DUIActive(true)
-      ;
-      (self._main):SetClickTexActive(true)
-      ;
-      (self._main):SetCamNearbyState(false)
-    end
+    self._main:Set3DUIActive(false)
+    self._main:SetClickTexActive(false)
+    self._main:SetCamNearbyState(true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.Active)
+  elseif p.z < self._hideUIPosZ and not self._showUI then
+    self._showUI = true
+    self._main:Set3DUIActive(true)
+    self._main:SetClickTexActive(true)
+    self._main:SetCamNearbyState(false)
   end
-  if self._hideNavMenuPosZ < p.z and self._showNavMenu then
+  if p.z > self._hideNavMenuPosZ and self._showNavMenu then
     self._showNavMenu = false
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAirNavMenuActive, false)
-  else
-    if p.z < self._hideNavMenuPosZ and not self._showNavMenu then
-      self._showNavMenu = true
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAirNavMenuActive, true)
-    end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAirNavMenuActive, false)
+  elseif p.z < self._hideNavMenuPosZ and not self._showNavMenu then
+    self._showNavMenu = true
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAirNavMenuActive, true)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.Check3DUI = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local p = (self._cameraT).position
-  if self._hideUIPosZ < p.z then
-    (self._main):Set3DUIActive(false)
+function AircraftCameraManager:Check3DUI()
+  local p = self._cameraT.position
+  if p.z > self._hideUIPosZ then
+    self._main:Set3DUIActive(false)
     self._showUI = false
-  else
-    if p.z < self._hideUIPosZ then
-      self._showUI = true
-      ;
-      (self._main):Set3DUIActive(true)
-    end
+  elseif p.z < self._hideUIPosZ then
+    self._showUI = true
+    self._main:Set3DUIActive(true)
   end
-  if self._hideNavMenuPosZ < p.z then
+  if p.z > self._hideNavMenuPosZ then
     self._showNavMenu = false
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAirNavMenuActive, false)
-  else
-    if p.z < self._hideNavMenuPosZ then
-      self._showNavMenu = true
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAirNavMenuActive, true)
-    end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAirNavMenuActive, false)
+  elseif p.z < self._hideNavMenuPosZ then
+    self._showNavMenu = true
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAirNavMenuActive, true)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.GetCamera = function(self)
-  -- function num : 0_6
+function AircraftCameraManager:GetCamera()
   return self._camera
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.SetActive = function(self, active)
-  -- function num : 0_7
+function AircraftCameraManager:SetActive(active)
   self._enable = active
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.FocusRoom = function(self, room, callback, time)
-  -- function num : 0_8 , upvalues : _ENV
-  local pos = (room:CenterPosition())
-  local z = nil
+function AircraftCameraManager:FocusRoom(room, callback, time)
+  local pos = room:CenterPosition()
+  local z
   if room:Area() == nil then
     z = self._focusZ_workroom
+  elseif room:Area() == AirRestAreaType.CenterRoom then
+    z = self._focusZ_centerroom
   else
-    if room:Area() == AirRestAreaType.CenterRoom then
-      z = self._focusZ_centerroom
-    else
-      z = self._focusZ_restroom
-    end
+    z = self._focusZ_restroom
   end
-  ;
-  (self._majorCamera):MoveAnim(Vector3(pos.x, pos.y - 1, z), callback, time)
+  self._majorCamera:MoveAnim(Vector3(pos.x, pos.y - 1.0, z), callback, time)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.AnimFocusRoom = function(self, room, callback, time)
-  -- function num : 0_9 , upvalues : _ENV
-  local pos = (room:CenterPosition())
-  local z = nil
+function AircraftCameraManager:AnimFocusRoom(room, callback, time)
+  local pos = room:CenterPosition()
+  local z
   if room:Area() == nil then
     z = self._levelupZ_workroom
+  elseif room:Area() == AirRestAreaType.CenterRoom then
+    z = self._levelupZ_centerroom
   else
-    if room:Area() == AirRestAreaType.CenterRoom then
-      z = self._levelupZ_centerroom
-    else
-      z = self._levelupZ_restroom
-    end
+    z = self._levelupZ_restroom
   end
-  ;
-  (self._majorCamera):MoveAnim(Vector3(pos.x, pos.y - 1, z), callback, time)
+  self._majorCamera:MoveAnim(Vector3(pos.x, pos.y - 1.0, z), callback, time)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.FocusPet = function(self, petPos, callback, time)
-  -- function num : 0_10 , upvalues : _ENV
+function AircraftCameraManager:FocusPet(petPos, callback, time)
   local dis = petPos.z - self._focusPetPosZ
   local offsetY = dis * self._petDistanceRate + self._petFixedY
-  ;
-  (self._majorCamera):MoveAnim(Vector3(petPos.x, petPos.y + offsetY, self._focusPetPosZ), callback, time)
+  self._majorCamera:MoveAnim(Vector3(petPos.x, petPos.y + offsetY, self._focusPetPosZ), callback, time)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.FocusPos = function(self, pos, callback)
-  -- function num : 0_11 , upvalues : _ENV
-  (self._majorCamera):MoveAnim(Vector3(pos.x, pos.y, self._focusPetPosZ), callback)
+function AircraftCameraManager:FocusPos(pos, callback)
+  self._majorCamera:MoveAnim(Vector3(pos.x, pos.y, self._focusPetPosZ), callback)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.MoveToNavMenuPos = function(self, callback, movetime)
-  -- function num : 0_12 , upvalues : _ENV
-  (self._majorCamera):MoveAnim(Vector3(self._navMenuCamPosX, self._navMenuCamPosY, self._navMenuCamPosZ), callback, movetime)
+function AircraftCameraManager:MoveToNavMenuPos(callback, movetime)
+  self._majorCamera:MoveAnim(Vector3(self._navMenuCamPosX, self._navMenuCamPosY, self._navMenuCamPosZ), callback, movetime)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.SetCameraToNavMenuPos = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  (self._majorCamera):SetCameraToNavMenuPos(Vector3(self._navMenuCamPosX, self._navMenuCamPosY, self._navMenuCamPosZ))
+function AircraftCameraManager:SetCameraToNavMenuPos()
+  self._majorCamera:SetCameraToNavMenuPos(Vector3(self._navMenuCamPosX, self._navMenuCamPosY, self._navMenuCamPosZ))
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.MoveToFarest = function(self, callback)
-  -- function num : 0_14
-  (self._majorCamera):MoveToFar(callback)
+function AircraftCameraManager:MoveToFarest(callback)
+  self._majorCamera:MoveToFar(callback)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.MoveToPosNotTime = function(self, tpos, cb)
-  -- function num : 0_15
-  (self._majorCamera):MoveToPosNotTime(tpos, cb)
+function AircraftCameraManager:MoveToPosNotTime(tpos, cb)
+  self._majorCamera:MoveToPosNotTime(tpos, cb)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.MoveBack = function(self)
-  -- function num : 0_16
-  (self._majorCamera):MoveBack(self._backPosZ)
+function AircraftCameraManager:MoveBack()
+  self._majorCamera:MoveBack(self._backPosZ)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.TryBack = function(self)
-  -- function num : 0_17
-  if (self._majorCamera):IsFocusing() then
-    (self._majorCamera):CloseFocus()
+function AircraftCameraManager:TryBack()
+  if self._majorCamera:IsFocusing() then
+    self._majorCamera:CloseFocus()
+    return false
+  elseif self._cameraT.position.z > self._backPosZ then
+    self:MoveBack()
     return false
   else
-    if self._backPosZ < ((self._cameraT).position).z then
-      self:MoveBack()
-      return false
-    else
-      return true
-    end
+    return true
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.GetPosXZ = function(self)
-  -- function num : 0_18
-  local _x = (((self._camera).transform).position).x
-  local _z = (((self._camera).transform).position).z
+function AircraftCameraManager:GetPosXZ()
+  local _x = self._camera.transform.position.x
+  local _z = self._camera.transform.position.z
   return _x, _z
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.GetCurrentCameraPos = function(self)
-  -- function num : 0_19
-  return ((self._camera).transform).position
+function AircraftCameraManager:GetCurrentCameraPos()
+  return self._camera.transform.position
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.GetNavMenuTargetCameraPos = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function AircraftCameraManager:GetNavMenuTargetCameraPos()
   return Vector3(self._navMenuCamPosX, self._navMenuCamPosY, self._navMenuCamPosZ)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.GetFarPoint = function(self)
-  -- function num : 0_21
-  return (self._majorCamera):FarPoint()
+function AircraftCameraManager:GetFarPoint()
+  return self._majorCamera:FarPoint()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.GetDecorateViewPoint = function(self)
-  -- function num : 0_22
-  return (self._majorCamera):DecorateViewPoint()
+function AircraftCameraManager:GetDecorateViewPoint()
+  return self._majorCamera:DecorateViewPoint()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.Reset = function(self)
-  -- function num : 0_23
-  (self._majorCamera):Reset()
+function AircraftCameraManager:Reset()
+  self._majorCamera:Reset()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.ResetFov = function(self)
-  -- function num : 0_24
-  (self._majorCamera):ResetFov()
+function AircraftCameraManager:ResetFov()
+  self._majorCamera:ResetFov()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.LookRandomStoryCameraAnimStart = function(self, look, duration)
-  -- function num : 0_25 , upvalues : _ENV
+function AircraftCameraManager:LookRandomStoryCameraAnimStart(look, duration)
   if look then
-    self._beforeAnimPos = (self._cameraT).position
-    local targetLookStoryPos1 = Vector3((self._beforeAnimPos).x, (self._beforeAnimPos).y - 0.85, (self._beforeAnimPos).z + 5)
-    local targetLookStoryPos2 = Vector3((self._beforeAnimPos).x, (self._beforeAnimPos).y - 0.9, (self._beforeAnimPos).z + 6)
+    self._beforeAnimPos = self._cameraT.position
+    local targetLookStoryPos1 = Vector3(self._beforeAnimPos.x, self._beforeAnimPos.y - 0.85, self._beforeAnimPos.z + 5)
+    local targetLookStoryPos2 = Vector3(self._beforeAnimPos.x, self._beforeAnimPos.y - 0.9, self._beforeAnimPos.z + 6)
     local timeLength1 = duration * 0.7
     local timeLength2 = duration * 0.2
     local targetPos = {}
-    ;
-    (table.insert)(targetPos, targetLookStoryPos1)
-    ;
-    (table.insert)(targetPos, targetLookStoryPos2)
+    table.insert(targetPos, targetLookStoryPos1)
+    table.insert(targetPos, targetLookStoryPos2)
     local timeLength = {}
-    ;
-    (table.insert)(timeLength, timeLength1)
-    ;
-    (table.insert)(timeLength, timeLength2)
+    table.insert(timeLength, timeLength1)
+    table.insert(timeLength, timeLength2)
     self._freeAnim = AircraftLerpMultiAnim:New(self._cameraT, self._beforeAnimPos, targetPos, timeLength, function()
-    -- function num : 0_25_0 , upvalues : self
-    self:SetActive(false)
-  end
-)
+      self:SetActive(false)
+    end)
   else
-    do
-      -- DECOMPILER ERROR at PC64: Confused about usage of register: R3 in 'UnsetPending'
-
-      if self._beforeAnimPos then
-        (self._cameraT).position = self._beforeAnimPos
-      end
-      self._beforeAnimPos = nil
-      self._freeAnim = nil
-      self:SetActive(true)
+    if self._beforeAnimPos then
+      self._cameraT.position = self._beforeAnimPos
     end
+    self._beforeAnimPos = nil
+    self._freeAnim = nil
+    self:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.CheckAirNavMenuCanActive = function(self)
-  -- function num : 0_26
+function AircraftCameraManager:CheckAirNavMenuCanActive()
   return self._showNavMenu
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.SetJoyStick = function(self, stick, onStart, focus, onEnd)
-  -- function num : 0_27
-  (self._majorCamera):SetStick(stick, onStart, focus, onEnd)
+function AircraftCameraManager:SetJoyStick(stick, onStart, focus, onEnd)
+  self._majorCamera:SetStick(stick, onStart, focus, onEnd)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.FocusPoint = function(self)
-  -- function num : 0_28
-  return (self._majorCamera):FocusPoint()
+function AircraftCameraManager:FocusPoint()
+  return self._majorCamera:FocusPoint()
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCameraManager.SetHudCameraActive = function(self, active)
-  -- function num : 0_29
-  (self._majorCamera):SetHudCameraActive(active)
+function AircraftCameraManager:SetHudCameraActive(active)
+  self._majorCamera:SetHudCameraActive(active)
 end
 
 _class("AircraftFader", Object)
 AircraftFader = AircraftFader
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftFader.Constructor = function(self, cur, target, duration)
-  -- function num : 0_30
+function AircraftFader:Constructor(cur, target, duration)
   self._duaration = duration * 1000
   self._timer = 0
   self._from = cur
@@ -409,35 +266,24 @@ AircraftFader.Constructor = function(self, cur, target, duration)
   self.Alpha = self._from
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFader.Update = function(self, deltaTimeMS)
-  -- function num : 0_31 , upvalues : _ENV
+function AircraftFader:Update(deltaTimeMS)
   self._timer = self._timer + deltaTimeMS
-  local p = (math.min)(self._timer / self._duaration, 1)
+  local p = math.min(self._timer / self._duaration, 1)
   if self._from < self._to then
     self.Alpha = self._from + (self._to - self._from) * p
-  else
-    if self._to < self._from then
-      self.Alpha = self._from - (self._from - self._to) * p
-    end
+  elseif self._from > self._to then
+    self.Alpha = self._from - (self._from - self._to) * p
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftFader.Complete = function(self)
-  -- function num : 0_32
-  do return self._duaration < self._timer end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftFader:Complete()
+  return self._timer > self._duaration
 end
 
 _class("AircraftLerpAnim", Object)
 AircraftLerpAnim = AircraftLerpAnim
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftLerpAnim.Constructor = function(self, origin, target, duration, callback)
-  -- function num : 0_33
+function AircraftLerpAnim:Constructor(origin, target, duration, callback)
   self._origin = origin
   self._target = target
   self._duration = duration
@@ -445,52 +291,38 @@ AircraftLerpAnim.Constructor = function(self, origin, target, duration, callback
   self._timer = 0
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftLerpAnim.CallBack = function(self)
-  -- function num : 0_34
+function AircraftLerpAnim:CallBack()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftLerpAnim.Update = function(self, deltaTimeMS)
-  -- function num : 0_35 , upvalues : _ENV
+function AircraftLerpAnim:Update(deltaTimeMS)
   if self._timer < self._duration then
     self._timer = self._timer + deltaTimeMS
     local t = self._timer / self._duration
-    return (Vector3.Lerp)(self._origin, self._target, t)
+    return Vector3.Lerp(self._origin, self._target, t)
   else
-    do
-      do return self._target end
-    end
+    return self._target
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftLerpAnim.IsComplete = function(self)
-  -- function num : 0_36
-  do return self._duration < self._timer end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftLerpAnim:IsComplete()
+  return self._timer > self._duration
 end
 
 _class("AircraftLerpMultiAnim", Object)
 AircraftLerpMultiAnim = AircraftLerpMultiAnim
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftLerpMultiAnim.Constructor = function(self, transform, origin, targetTab, timeLengthTab, callback)
-  -- function num : 0_37 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, true, "AircraftLerpMultiAnim")
+function AircraftLerpMultiAnim:Constructor(transform, origin, targetTab, timeLengthTab, callback)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, true, "AircraftLerpMultiAnim")
   self._transform = transform
   self._origin = origin
   self._targetTab = targetTab
   self._timeLengthTab = timeLengthTab
   self._allTimeLength = 0
   for i = 1, #self._timeLengthTab do
-    self._allTimeLength = self._allTimeLength + (self._timeLengthTab)[i]
+    self._allTimeLength = self._allTimeLength + self._timeLengthTab[i]
   end
   self._timer = 0
   self._targetIndex = 1
@@ -498,96 +330,62 @@ AircraftLerpMultiAnim.Constructor = function(self, transform, origin, targetTab,
   self._finishCB = callback
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftLerpMultiAnim.Update = function(self, deltaTimeMS)
-  -- function num : 0_38 , upvalues : _ENV
+function AircraftLerpMultiAnim:Update(deltaTimeMS)
   if self._complete then
-    return 
+    return
   end
-  if self._timer < (self._timeLengthTab)[self._targetIndex] then
-    local t = self._timer / (self._timeLengthTab)[self._targetIndex]
+  if self._timer < self._timeLengthTab[self._targetIndex] then
+    local t = self._timer / self._timeLengthTab[self._targetIndex]
     self._timer = self._timer + deltaTimeMS
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._transform).position = (Vector3.Lerp)(self._origin, (self._targetTab)[self._targetIndex], t)
+    self._transform.position = Vector3.Lerp(self._origin, self._targetTab[self._targetIndex], t)
   else
-    do
-      local returnPos = (self._targetTab)[self._targetIndex]
-      if self._targetIndex < #self._timeLengthTab then
-        self._origin = (self._targetTab)[self._targetIndex]
-        self._targetIndex = self._targetIndex + 1
-        self._timer = 0
-        -- DECOMPILER ERROR at PC46: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._transform).position = returnPos
-      else
-        self._complete = true
-        -- DECOMPILER ERROR at PC50: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._transform).position = returnPos
-        if self._finishCB then
-          (self._finishCB)()
-        end
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, false, "AircraftLerpMultiAnim")
+    local returnPos = self._targetTab[self._targetIndex]
+    if self._targetIndex < #self._timeLengthTab then
+      self._origin = self._targetTab[self._targetIndex]
+      self._targetIndex = self._targetIndex + 1
+      self._timer = 0
+      self._transform.position = returnPos
+    else
+      self._complete = true
+      self._transform.position = returnPos
+      if self._finishCB then
+        self._finishCB()
       end
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, false, "AircraftLerpMultiAnim")
     end
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftLerpMultiAnim.IsComplete = function(self)
-  -- function num : 0_39
+function AircraftLerpMultiAnim:IsComplete()
   return self._complete
 end
 
 _class("AircraftRotLerpAnim", Object)
 AircraftRotLerpAnim = AircraftRotLerpAnim
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftRotLerpAnim.Constructor = function(self, origin, target, duration)
-  -- function num : 0_40
+function AircraftRotLerpAnim:Constructor(origin, target, duration)
   self._origin = origin
   self._target = target
   self._duration = duration
   self._timer = 0
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRotLerpAnim.CallBack = function(self)
-  -- function num : 0_41
+function AircraftRotLerpAnim:CallBack()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRotLerpAnim.Update = function(self, deltaTimeMS)
-  -- function num : 0_42 , upvalues : _ENV
+function AircraftRotLerpAnim:Update(deltaTimeMS)
   if self._timer < self._duration then
     local t = self._timer / self._duration
     self._timer = self._timer + deltaTimeMS
-    return (Quaternion.Lerp)(self._origin, self._target, t)
+    return Quaternion.Lerp(self._origin, self._target, t)
   else
-    do
-      do return self._target end
-    end
+    return self._target
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRotLerpAnim.IsComplete = function(self)
-  -- function num : 0_43
-  do return self._duration < self._timer end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftRotLerpAnim:IsComplete()
+  return self._timer > self._duration
 end
-
-

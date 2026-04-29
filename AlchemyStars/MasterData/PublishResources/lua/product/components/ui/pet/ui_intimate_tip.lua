@@ -1,41 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_intimate_tip.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIIntimateTip", UICustomWidget)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UIIntimateTip.Constructor = function(self)
-  -- function num : 0_0
+function UIIntimateTip:Constructor()
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UIIntimateTip.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIIntimateTip:OnShow(uiParams)
   self._rectTranform = self:GetUIComponent("RectTransform", "")
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UIIntimateTip.SetData = function(self)
-  -- function num : 0_2
+function UIIntimateTip:SetData()
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-UIIntimateTip.UpdateToast = function(self, TT, textContent)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._toastRoot):SetActive(true)
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._toastRoot).transform).localPosition = self._original
-  ;
-  (self._toastText):SetText(textContent)
-  local startTime = (GameGlobal:GetInstance()):GetCurrentTime()
+function UIIntimateTip:UpdateToast(TT, textContent)
+  self._toastRoot:SetActive(true)
+  self._toastRoot.transform.localPosition = self._original
+  self._toastText:SetText(textContent)
+  local startTime = GameGlobal:GetInstance():GetCurrentTime()
   local lastTime = startTime
 end
-
-

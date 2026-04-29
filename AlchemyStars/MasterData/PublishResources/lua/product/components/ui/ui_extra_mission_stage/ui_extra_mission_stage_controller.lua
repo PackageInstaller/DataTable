@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_extra_mission_stage/ui_extra_mission_stage_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIExtraMissionStageController", UIController)
 UIExtraMissionStageController = UIExtraMissionStageController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIExtraMissionStageController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIExtraMissionStageController:LoadDataOnEnter(TT, res, uiParams)
   self._module = self:GetModule(ExtMissionModule)
   self._extraMissionID = uiParams[1]
   local idx = 0
-  for i,v in (HelperProxy:GetInstance()):pairsByKeys((Cfg.cfg_extra_mission)({})) do
+  for i, v in HelperProxy:GetInstance():pairsByKeys(Cfg.cfg_extra_mission({})) do
     local cfg_ext = v
     idx = idx + 1
     if v.ExtMissionID == self._extraMissionID then
@@ -20,94 +13,75 @@ UIExtraMissionStageController.LoadDataOnEnter = function(self, TT, res, uiParams
       break
     end
   end
-  do
-    if not self._extraMissionIdx then
-      (Log.fatal)("### calc self._extraMissionIdx is nil ! id --> ", self._extraMissionID)
-    end
-    self._cfg_extra_mission = (Cfg.cfg_extra_mission)[self._extraMissionID]
-    if self._cfg_extra_mission == nil then
-      (Log.fatal)("###[error] extraMissionStage --> self._cfg_extra_misiso is nil! extid --> ", self._extraMissionID)
-    end
-    self._stageID = uiParams[2]
-    if self._stageID == nil then
-      self._stageID = self:GetStageID()
-    else
-      self._stageIdx = self:GetStageIdx(self._stageID)
-    end
-    self._cfg_extra_mission_task = (Cfg.cfg_extra_mission_task)[self._stageID]
-    if self._cfg_extra_mission_task == nil then
-      (Log.fatal)("###[error] extraMissionStage --> self._cfg_extra_mission_task is nil! stageid --> ", self._stageID)
-    end
-    local resT = (self._module):Request_GetDetail_ExtMission(TT, self._extraMissionID)
-    if resT:GetSucc() then
-      res:SetSucc(true)
-    else
-      res:SetSucc(false)
-    end
+  if not self._extraMissionIdx then
+    Log.fatal("### calc self._extraMissionIdx is nil ! id --> ", self._extraMissionID)
+  end
+  self._cfg_extra_mission = Cfg.cfg_extra_mission[self._extraMissionID]
+  if self._cfg_extra_mission == nil then
+    Log.fatal("###[error] extraMissionStage --> self._cfg_extra_misiso is nil! extid --> ", self._extraMissionID)
+  end
+  self._stageID = uiParams[2]
+  if self._stageID == nil then
+    self._stageID, self._stageIdx = self:GetStageID()
+  else
+    self._stageIdx = self:GetStageIdx(self._stageID)
+  end
+  self._cfg_extra_mission_task = Cfg.cfg_extra_mission_task[self._stageID]
+  if self._cfg_extra_mission_task == nil then
+    Log.fatal("###[error] extraMissionStage --> self._cfg_extra_mission_task is nil! stageid --> ", self._stageID)
+  end
+  local resT = self._module:Request_GetDetail_ExtMission(TT, self._extraMissionID)
+  if resT:GetSucc() then
+    res:SetSucc(true)
+  else
+    res:SetSucc(false)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIExtraMissionStageController:OnShow(uiParams)
   self._atlas = self:GetAsset("UIExtraMissionStage.spriteatlas", LoadType.SpriteAtlas)
   if self._stageID == nil then
-    (Log.fatal)("###ext stage -- stageid is nil !")
-    return 
+    Log.fatal("###ext stage -- stageid is nil !")
+    return
   end
   self:GetComponents()
-  if (self._cfg_extra_mission).ImgThemeLow then
-    (self._imgThemeLow):LoadImage((self._cfg_extra_mission).ImgThemeLow)
+  if self._cfg_extra_mission.ImgThemeLow then
+    self._imgThemeLow:LoadImage(self._cfg_extra_mission.ImgThemeLow)
   end
   self:FlushStage()
   self._bg = self:GetUIComponent("RawImageLoader", "bg")
-  ;
-  (self._bg):LoadImage((self._cfg_extra_mission).ExtMissionBigImgBlur)
+  self._bg:LoadImage(self._cfg_extra_mission.ExtMissionBigImgBlur)
   self:OnValue()
   self:AttachEvent(GameEventType.ShowItemTips, self.ShowItemTips)
   self:AttachEvent(GameEventType.CancelRedPoint, self.CancelRedPoint)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.FlushStage = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local c = (self._cfg_extra_mission).ExtTaskList
+function UIExtraMissionStageController:FlushStage()
+  local c = self._cfg_extra_mission.ExtTaskList
   if #c ~= 6 then
-    (Log.fatal)("###taskList count ~= 6 ! extid --> ", self._extraMissionID)
-    return 
+    Log.fatal("###taskList count ~= 6 ! extid --> ", self._extraMissionID)
+    return
   end
-  ;
-  (self._puzzle):SpawnObjects("UIExtPuzzleItem", #c)
-  self._puzzles = (self._puzzle):GetAllSpawnList()
+  self._puzzle:SpawnObjects("UIExtPuzzleItem", #c)
+  self._puzzles = self._puzzle:GetAllSpawnList()
   for i = 1, #c do
-    ((self._puzzles)[i]):SetData(i, self._extraMissionID, self._extraMissionIdx, ((self._cfg_extra_mission).ExtTaskList)[i], self._stageIdx, function(idx)
-    -- function num : 0_2_0 , upvalues : self
-    self:OnPuzzleItemClick(idx)
-  end
-)
+    self._puzzles[i]:SetData(i, self._extraMissionID, self._extraMissionIdx, self._cfg_extra_mission.ExtTaskList[i], self._stageIdx, function(idx)
+      self:OnPuzzleItemClick(idx)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.OnPuzzleItemClick = function(self, idx)
-  -- function num : 0_3
-  ((self._puzzles)[self._stageIdx]):Select(false)
+function UIExtraMissionStageController:OnPuzzleItemClick(idx)
+  self._puzzles[self._stageIdx]:Select(false)
   self:RefreshInfo(idx)
-  ;
-  ((self._puzzles)[self._stageIdx]):Select(true)
+  self._puzzles[self._stageIdx]:Select(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._info = (self._module):UI_GetExtTaskDetail(self._extraMissionID, self._stageID)
-  self._cfg_extra_mission_task = (Cfg.cfg_extra_mission_task)[self._stageID]
+function UIExtraMissionStageController:OnValue()
+  self._info = self._module:UI_GetExtTaskDetail(self._extraMissionID, self._stageID)
+  self._cfg_extra_mission_task = Cfg.cfg_extra_mission_task[self._stageID]
   if self._cfg_extra_mission_task == nil then
-    (Log.fatal)("###[error] extraMissionStage --> self._cfg_extra_mission_task is nil! stageid --> ", self._stageID)
+    Log.fatal("###[error] extraMissionStage --> self._cfg_extra_mission_task is nil! stageid --> ", self._stageID)
   end
   self:StageIsDown()
   self:SetInfo()
@@ -118,124 +92,82 @@ UIExtraMissionStageController.OnValue = function(self)
   self:AwardRed()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.StageIsDown = function(self)
-  -- function num : 0_5
-  local star = (self._module):UI_GetExtTaskState(self._extraMissionID, self._stageID)
-  ;
-  (self._tongguan):SetActive(star > 0)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIExtraMissionStageController:StageIsDown()
+  local star = self._module:UI_GetExtTaskState(self._extraMissionID, self._stageID)
+  self._tongguan:SetActive(0 < star)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.AwardRed = function(self)
-  -- function num : 0_6
-  local red = (self._module):UI_GetExtAwardRed(self._extraMissionID)
-  ;
-  (self._red):SetActive(red)
+function UIExtraMissionStageController:AwardRed()
+  local red = self._module:UI_GetExtAwardRed(self._extraMissionID)
+  self._red:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.SetInfo = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._txtDesc):SetText((self._info).m_stDesc)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._txtDescRect).anchoredPosition = Vector2(((self._txtDescRect).anchoredPosition).x, 0)
-  ;
-  (self._txtTitle):SetText((self._info).m_stName)
-  ;
-  (self._txtTitleIdx):SetText(self._extraMissionIdx .. "-" .. self._stageIdx)
+function UIExtraMissionStageController:SetInfo()
+  self._txtDesc:SetText(self._info.m_stDesc)
+  self._txtDescRect.anchoredPosition = Vector2(self._txtDescRect.anchoredPosition.x, 0)
+  self._txtTitle:SetText(self._info.m_stName)
+  self._txtTitleIdx:SetText(self._extraMissionIdx .. "-" .. self._stageIdx)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.EnemyInfo = function(self)
-  -- function num : 0_8
-  local enemy = (self._enemyMsg):SpawnObject("UIEnemyMsg")
-  enemy:SetData((self._cfg_extra_mission_task).FightLevel)
+function UIExtraMissionStageController:EnemyInfo()
+  local enemy = self._enemyMsg:SpawnObject("UIEnemyMsg")
+  enemy:SetData(self._cfg_extra_mission_task.FightLevel)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.Conditions = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  if (table.count)((self._info).m_vecCondition) > 0 then
-    (self._conditionsGo):SetActive(true)
-    ;
-    (self._conditionNo):SetActive(false)
-    ;
-    (self._sop):SpawnObjects("UIConditionItem", (table.count)((self._info).m_vecCondition))
-    self._conditions = (self._sop):GetAllSpawnList()
-    for i,v in ipairs(self._conditions) do
+function UIExtraMissionStageController:Conditions()
+  if table.count(self._info.m_vecCondition) > 0 then
+    self._conditionsGo:SetActive(true)
+    self._conditionNo:SetActive(false)
+    self._sop:SpawnObjects("UIConditionItem", table.count(self._info.m_vecCondition))
+    self._conditions = self._sop:GetAllSpawnList()
+    for i, v in ipairs(self._conditions) do
       local condition = StageCondition:New()
-      condition:FlushSatisfy((((self._info).m_vecCondition)[i]).m_bPass)
-      condition:Init(i, (((self._info).m_vecCondition)[i]).m_nID)
+      condition:FlushSatisfy(self._info.m_vecCondition[i].m_bPass)
+      condition:Init(i, self._info.m_vecCondition[i].m_nID)
       v:Flush(condition, i)
     end
   else
-    do
-      ;
-      (self._conditionsGo):SetActive(false)
-      ;
-      (self._conditionNo):SetActive(true)
-    end
+    self._conditionsGo:SetActive(false)
+    self._conditionNo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.RecommendLV = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local reLV = (self._cfg_extra_mission_task).RecommendLV
-  local needLV = (self._cfg_extra_mission_task).NeedLevel
-  local reAwaken = (self._cfg_extra_mission_task).RecommendAwaken
+function UIExtraMissionStageController:RecommendLV()
+  local reLV = self._cfg_extra_mission_task.RecommendLV
+  local needLV = self._cfg_extra_mission_task.NeedLevel
+  local reAwaken = self._cfg_extra_mission_task.RecommendAwaken
   if reAwaken == 0 then
-    ((self._recommendLV).gameObject):SetActive(false)
+    self._recommendLV.gameObject:SetActive(false)
   else
-    ;
-    ((self._recommendLV).gameObject):SetActive(true)
-    ;
-    (self._recommendLV):SetText((StringTable.Get)("str_pet_config_common_advance") .. "<size=29>" .. reAwaken .. "</size>")
+    self._recommendLV.gameObject:SetActive(true)
+    self._recommendLV:SetText(StringTable.Get("str_pet_config_common_advance") .. "<size=29>" .. reAwaken .. "</size>")
   end
   if reLV then
-    (self._recommendLV2):SetText("LV." .. reLV)
+    self._recommendLV2:SetText("LV." .. reLV)
   end
-  local lv = (self:GetModule(RoleModule)):GetLevel()
-  if lv < needLV then
+  local lv = self:GetModule(RoleModule):GetLevel()
+  if needLV > lv then
     self._reach = false
   else
     self._reach = true
   end
-  ;
-  (self._reachGo):SetActive(not self._reach)
-  local needPower = (self._info).m_nExpendPower
-  ;
-  (self._txtCost):SetText(needPower)
+  self._reachGo:SetActive(not self._reach)
+  local needPower = self._info.m_nExpendPower
+  self._txtCost:SetText(needPower)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.RefreshInfo = function(self, idx)
-  -- function num : 0_11
-  local stagelist = (self._cfg_extra_mission).ExtTaskList
+function UIExtraMissionStageController:RefreshInfo(idx)
+  local stagelist = self._cfg_extra_mission.ExtTaskList
   self._stageID = stagelist[idx]
   self._stageIdx = idx
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.GetStageID = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local stageid = nil
+function UIExtraMissionStageController:GetStageID()
+  local stageid
   local idx = 0
-  local extState = (self._module):UI_GetExtMissionState(self._extraMissionID)
-  local stagelist = (self._cfg_extra_mission).ExtTaskList
+  local extState = self._module:UI_GetExtMissionState(self._extraMissionID)
+  local stagelist = self._cfg_extra_mission.ExtTaskList
   if extState == EnumExtMissionState.Down then
     stageid = stagelist[1]
     idx = 1
@@ -243,21 +175,17 @@ UIExtraMissionStageController.GetStageID = function(self)
     for i = 1, #stagelist do
       stageid = stagelist[i]
       idx = i
-      local star = (self._module):UI_GetExtTaskState(self._extraMissionID, stageid)
+      local star = self._module:UI_GetExtTaskState(self._extraMissionID, stageid)
+      if star <= 0 then
+        break
+      end
     end
   end
-  do
-    if star > 0 then
-      return stageid, idx
-    end
-  end
+  return stageid, idx
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.GetStageIdx = function(self, stageid)
-  -- function num : 0_13
-  local stagelist = (self._cfg_extra_mission).ExtTaskList
+function UIExtraMissionStageController:GetStageIdx(stageid)
+  local stagelist = self._cfg_extra_mission.ExtTaskList
   for i = 1, #stagelist do
     local stageidT = stagelist[i]
     if stageidT == stageid then
@@ -267,24 +195,15 @@ UIExtraMissionStageController.GetStageIdx = function(self, stageid)
   return 1
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.ShowItemTips = function(self, itemID, pos)
-  -- function num : 0_14
-  (self._selectInfo):SetData(itemID, pos)
+function UIExtraMissionStageController:ShowItemTips(itemID, pos)
+  self._selectInfo:SetData(itemID, pos)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.CancelRedPoint = function(self, extid)
-  -- function num : 0_15
+function UIExtraMissionStageController:CancelRedPoint(extid)
   self:AwardRed()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.GetComponents = function(self)
-  -- function num : 0_16
+function UIExtraMissionStageController:GetComponents()
   self._txtTitleIdx = self:GetUIComponent("UILocalizationText", "txtTitleIdx")
   self._txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
   self._txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
@@ -295,7 +214,7 @@ UIExtraMissionStageController.GetComponents = function(self)
   self._imgThemeLow = self:GetUIComponent("RawImageLoader", "imgThemeLow")
   self._power = self:GetUIComponent("Transform", "power")
   self._powerPool = self:GetUIComponent("UISelectObjectPath", "powerpool")
-  local powerPool = (self._powerPool):SpawnObject("UIPowerInfo")
+  local powerPool = self._powerPool:SpawnObject("UIPowerInfo")
   powerPool:SetData(self._power)
   self._recommendLV = self:GetUIComponent("UILocalizationText", "recommendLV")
   self._recommendLV2 = self:GetUIComponent("UILocalizationText", "recommendLV2")
@@ -311,266 +230,203 @@ UIExtraMissionStageController.GetComponents = function(self)
   self._tongguan = self:GetGameObject("tongguan")
   local ltBtns = self:GetUIComponent("UISelectObjectPath", "btns")
   self._backBtn = ltBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_16_0 , upvalues : self
+  self._backBtn:SetData(function()
     self:CloseController()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.CloseController = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIExtraMissionStageController:CloseController()
   self:SwitchState(UIStateType.UIExtraMission, self._extraMissionID)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.OnHide = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIExtraMissionStageController:OnHide()
   self:DetachEvent(GameEventType.ShowItemTips, self.ShowItemTips)
   self:DetachEvent(GameEventType.CancelRedPoint, self.CancelRedPoint)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.InitAwards = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIExtraMissionStageController:InitAwards()
   local awards = self:FormatAwards()
-  local count = (table.count)(awards)
+  local count = table.count(awards)
   if count <= 0 then
-    local grid = self:GetUIComponent("GridLayoutGroup", "Content")
-    local contentSizeFilter = self:GetUIComponent("ContentSizeFitter", "Content")
-    local contentRect = self:GetUIComponent("RectTransform", "Content")
-    if count > 6 then
-      grid.childAlignment = (UnityEngine.TextAnchor).MiddleLeft
-      contentSizeFilter.enabled = true
-    else
-      grid.childAlignment = (UnityEngine.TextAnchor).MiddleCenter
-      contentSizeFilter.enabled = false
-    end
-    contentRect.localPosition = Vector3(0, 0, 0)
-    local sop = self:GetUIComponent("UISelectObjectPath", "Content")
-    sop:SpawnObjects("UIAwardItem", count)
-    local list = sop:GetAllSpawnList()
-    for i,v in ipairs(list) do
-      v:Flush(awards[i])
-    end
+  end
+  local grid = self:GetUIComponent("GridLayoutGroup", "Content")
+  local contentSizeFilter = self:GetUIComponent("ContentSizeFitter", "Content")
+  local contentRect = self:GetUIComponent("RectTransform", "Content")
+  if 6 < count then
+    grid.childAlignment = UnityEngine.TextAnchor.MiddleLeft
+    contentSizeFilter.enabled = true
+  else
+    grid.childAlignment = UnityEngine.TextAnchor.MiddleCenter
+    contentSizeFilter.enabled = false
+  end
+  contentRect.localPosition = Vector3(0, 0, 0)
+  local sop = self:GetUIComponent("UISelectObjectPath", "Content")
+  sop:SpawnObjects("UIAwardItem", count)
+  local list = sop:GetAllSpawnList()
+  for i, v in ipairs(list) do
+    v:Flush(awards[i])
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController._InitAllAwards = function(self)
-  -- function num : 0_20
+function UIExtraMissionStageController:_InitAllAwards()
   return self:InitAwards()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController._GetActivityAwardsAndInit = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIExtraMissionStageController:_GetActivityAwardsAndInit()
   self:StartTask(function(TT)
-    -- function num : 0_21_0 , upvalues : _ENV, self
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
     local res, rewards = campaignModule:HandleCampaignGetMatchMissionExReward(TT, MatchType.MT_ExtMission, self._stageID)
     if res:GetSucc() then
       local items = {}
       local itemconfig = Cfg.cfg_item
-      for i = 1, (table.count)(rewards) do
+      for i = 1, table.count(rewards) do
         local _data = {}
-        _data.id = (rewards[i]).assetid
+        _data.id = rewards[i].assetid
         local config = itemconfig[_data.id]
         if config ~= nil then
           _data.icon = config.Icon
           _data.color = config.Color
         end
         _data.type = StageAwardType.Activity
-        _data.count = (rewards[i]).count
-        ;
-        (table.insert)(items, _data)
+        _data.count = rewards[i].count
+        table.insert(items, _data)
       end
       self._activity_rewards = items
     end
-    do
-      self:InitAwards()
-    end
-  end
-, self)
+    self:InitAwards()
+  end, self)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController._InsertActivityReward = function(self, rewards)
-  -- function num : 0_22 , upvalues : _ENV
-  local count = (table.count)(self._activity_rewards)
+function UIExtraMissionStageController:_InsertActivityReward(rewards)
+  local count = table.count(self._activity_rewards)
   if count <= 0 then
     return rewards
   end
-  ;
-  (table.appendArray)(self._activity_rewards, rewards)
+  table.appendArray(self._activity_rewards, rewards)
   return self._activity_rewards
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.fightBtnOnClick = function(self, go)
-  -- function num : 0_23 , upvalues : _ENV
+function UIExtraMissionStageController:fightBtnOnClick(go)
   if self._reach == false then
-    return 
+    return
   end
   if not self:IsPowerEnough() then
     self:ShowDialog("UIGetPhyPointController")
-    return 
+    return
   end
   local missionModule = self:GetModule(MissionModule)
-  local extMissionData = {[1] = self._extraMissionID, [2] = self._stageID}
+  local extMissionData = {
+    [1] = self._extraMissionID,
+    [2] = self._stageID
+  }
   local ctx = missionModule:TeamCtx()
   ctx:Init(TeamOpenerType.ExtMission, extMissionData)
-  if (DiscoveryStage.IsGuideStageId)(self._stageID) then
+  if DiscoveryStage.IsGuideStageId(self._stageID) then
     self:ShowDialog("UITeamsGuide")
   else
     self:ShowDialog("UITeams")
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.IsPowerEnough = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIExtraMissionStageController:IsPowerEnough()
   local roleModule = self:GetModule(RoleModule)
   local leftPower = roleModule:GetAssetCount(RoleAssetID.RoleAssetPhyPoint)
-  do return (self._info).m_nExpendPower <= leftPower end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return leftPower >= self._info.m_nExpendPower
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.ShowTips = function(self, itemId, pos)
-  -- function num : 0_25
-  (self._tips):SetData(itemId, pos)
+function UIExtraMissionStageController:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.bgOnClick = function(self)
-  -- function num : 0_26
+function UIExtraMissionStageController:bgOnClick()
   self:CloseController()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.btnChapterAwardOnClick = function(self)
-  -- function num : 0_27
+function UIExtraMissionStageController:btnChapterAwardOnClick()
   self:ShowDialog("UIExtraMissionAwardController", self._extraMissionID)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.btnPlotOnClick = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UIExtraMissionStageController:btnPlotOnClick()
   local canReviewStages = {}
   local stages = self:GetAllPassStage()
   for i = 1, #stages do
-    local cfg_task = (Cfg.cfg_extra_mission_task)[stages[i]]
+    local cfg_task = Cfg.cfg_extra_mission_task[stages[i]]
     if cfg_task then
       local curStage = DiscoveryStage:New()
       curStage.id = cfg_task.ExtTaskID
-      curStage.longDesc = (StringTable.Get)(cfg_task.TaskDesc .. "_long")
-      curStage.name = (StringTable.Get)(cfg_task.TaskName)
+      curStage.longDesc = StringTable.Get(cfg_task.TaskDesc .. "_long")
+      curStage.name = StringTable.Get(cfg_task.TaskName)
       curStage.stageIdx = self._extraMissionIdx .. "-" .. i
       local storyList = DiscoveryStoryList:New()
       local slist = {}
       storyList.stageId = cfg_task.ExtTaskID
       local wayPoint = cfg_task.WayPointID
-      local cfg_way_point = (Cfg.cfg_extra_mission_story)[wayPoint]
+      local cfg_way_point = Cfg.cfg_extra_mission_story[wayPoint]
       for i = 1, #cfg_way_point.StoryID do
         local story = DiscoveryStory:New()
-        story:Init((cfg_way_point.StoryID)[i], (cfg_way_point.StoryActiveType)[i])
-        ;
-        (table.insert)(slist, story)
+        story:Init(cfg_way_point.StoryID[i], cfg_way_point.StoryActiveType[i])
+        table.insert(slist, story)
       end
       storyList.list = slist
       curStage.story = storyList
-      ;
-      (table.insert)(canReviewStages, curStage)
+      table.insert(canReviewStages, curStage)
     end
   end
-  if (table.count)(canReviewStages) <= 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_extra_mission_public_no_story_review"))
-    return 
+  if table.count(canReviewStages) <= 0 then
+    ToastManager.ShowToast(StringTable.Get("str_extra_mission_public_no_story_review"))
+    return
   end
   local tempStage = canReviewStages[1]
   self:ShowDialog("UIPlot", tempStage, canReviewStages, true)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.GetAllPassStage = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UIExtraMissionStageController:GetAllPassStage()
   local stages = {}
-  local tempStages = (self._module):UI_GetPassExtTask(self._extraMissionID)
+  local tempStages = self._module:UI_GetPassExtTask(self._extraMissionID)
   for i = 1, #tempStages do
-    (table.insert)(stages, tempStages[i])
+    table.insert(stages, tempStages[i])
   end
   return stages
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.FormatAwards = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  local cfg = (Cfg.cfg_extra_mission_task)[self._stageID]
+function UIExtraMissionStageController:FormatAwards()
+  local cfg = Cfg.cfg_extra_mission_task[self._stageID]
   local awards = {}
   if not self:HasPassThreeStar() then
     local awardsStar = self:GetSortedArr(AwardType.ThreeStar, cfg, StageAwardType.Star)
     if awardsStar then
-      for i,v in ipairs(awardsStar) do
+      for i, v in ipairs(awardsStar) do
         awards[#awards + 1] = v
       end
     end
   end
-  do
-    if not self:HasPassFirst() then
-      local awardsFirst = self:GetSortedArr(AwardType.First, cfg, StageAwardType.First)
-      if awardsFirst then
-        for i,v in ipairs(awardsFirst) do
-          awards[#awards + 1] = v
-        end
-      end
-    end
-    do
-      local normalArr = self:GetSortedArr(AwardType.Pass, cfg, StageAwardType.Normal)
-      if normalArr then
-        for i,v in ipairs(normalArr) do
-          awards[#awards + 1] = v
-        end
-      end
-      do
-        return awards
+  if not self:HasPassFirst() then
+    local awardsFirst = self:GetSortedArr(AwardType.First, cfg, StageAwardType.First)
+    if awardsFirst then
+      for i, v in ipairs(awardsFirst) do
+        awards[#awards + 1] = v
       end
     end
   end
+  local normalArr = self:GetSortedArr(AwardType.Pass, cfg, StageAwardType.Normal)
+  if normalArr then
+    for i, v in ipairs(normalArr) do
+      awards[#awards + 1] = v
+    end
+  end
+  return awards
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.HasPassFirst = function(self)
-  -- function num : 0_31
-  local star = (self._module):UI_GetExtTaskState(self._extraMissionID, self._stageID)
-  if star and star > 0 then
+function UIExtraMissionStageController:HasPassFirst()
+  local star = self._module:UI_GetExtTaskState(self._extraMissionID, self._stageID)
+  if star and 0 < star then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.HasPassThreeStar = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  for index,value in ipairs((self._info).m_vecCondition) do
+function UIExtraMissionStageController:HasPassThreeStar()
+  for index, value in ipairs(self._info.m_vecCondition) do
     if not value.m_bPass then
       return false
     end
@@ -578,44 +434,28 @@ UIExtraMissionStageController.HasPassThreeStar = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.GetSortedArr = function(self, awardType, cfg, stageAwardType)
-  -- function num : 0_33 , upvalues : _ENV
-  local list = (UICommonHelper:GetInstance()):GetDropByAwardType(awardType, cfg)
+function UIExtraMissionStageController:GetSortedArr(awardType, cfg, stageAwardType)
+  local list = UICommonHelper:GetInstance():GetDropByAwardType(awardType, cfg)
   local vecSort = SortedArray:New(Algorithm.COMPARE_CUSTOM, UIExtraMissionStageController._LessComparer)
   if list then
-    for i,v in ipairs(list) do
+    for i, v in ipairs(list) do
       local award = Award:New()
       award:InitWithCount(v.ItemID, v.Count, v.Type)
       award:FlushType(stageAwardType)
       vecSort:Insert(award)
     end
   end
-  do
-    return vecSort.elements
-  end
+  return vecSort.elements
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController._LessComparer = function(nItemIDA, nItemIDB)
-  -- function num : 0_34
+function UIExtraMissionStageController._LessComparer(nItemIDA, nItemIDB)
   return -1
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.threeStarTipsBtnOnClick = function(self, go)
-  -- function num : 0_35
+function UIExtraMissionStageController:threeStarTipsBtnOnClick(go)
   self:ShowDialog("UIThreeStarTips")
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStageController.ShowSerialRewards = function(self)
-  -- function num : 0_36 , upvalues : _ENV
+function UIExtraMissionStageController:ShowSerialRewards()
   self:ShowDialog("UISerialAutoFightInfo", OpenUISerialFightInfoState.Finished)
 end
-
-

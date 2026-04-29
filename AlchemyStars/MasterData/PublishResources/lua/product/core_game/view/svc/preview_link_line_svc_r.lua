@@ -1,28 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview_link_line_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewLinkLineService", LinkLineService)
 PreviewLinkLineService = PreviewLinkLineService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewLinkLineService.StartLinkLine = function(self, touchPos, offset)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeBossHPBuffButtonRayCast, false)
-  local previewEntity = (self._world):GetPreviewEntity()
+function PreviewLinkLineService:StartLinkLine(touchPos, offset)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeBossHPBuffButtonRayCast, false)
+  local previewEntity = self._world:GetPreviewEntity()
   local previewLinkLineCmpt = previewEntity:PreviewLinkLine()
   local chainPath = previewLinkLineCmpt:GetPreviewChainPath()
   if chainPath == nil then
     return false
   end
-  local guideService = (self._world):GetService("Guide")
+  local guideService = self._world:GetService("Guide")
   guideService:HandlePLLBeginDragTrigger(touchPos)
-  local linkageRenderService = (self._world):GetService("LinkageRender")
+  local linkageRenderService = self._world:GetService("LinkageRender")
   linkageRenderService:HideAllLinkDot()
   linkageRenderService:DestroyAllLinkLine()
   linkageRenderService:DestroyLinkedGridEffect()
-  if #chainPath > 0 then
+  if 0 < #chainPath then
     self:CancelAllLinkPosPieceType(chainPath)
   end
   self:_DoDrag(touchPos, offset)
@@ -31,87 +24,72 @@ PreviewLinkLineService.StartLinkLine = function(self, touchPos, offset)
   self:StartBulletTime()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService.GetLinkLineCount = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local pickUpCmpt = (self._world):PickUp()
+function PreviewLinkLineService:GetLinkLineCount()
+  local pickUpCmpt = self._world:PickUp()
   local skillID = pickUpCmpt:GetCurActiveSkillID()
   local pstID = pickUpCmpt:GetCurActiveSkillPetPstID()
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local petEntity = utilData:GetEntityByPstID(pstID)
-  do
-    if not petEntity then
-      local entityID = pickUpCmpt:GetEntityID()
-      petEntity = (self._world):GetEntityByID(entityID)
-    end
-    if not petEntity then
-      return 
-    end
-    local cfgSvc = (self._world):GetService("Config")
-    local cfgData = cfgSvc:GetSkillConfigData(skillID, petEntity)
-    if not cfgData then
-      return 
-    end
-    local renderBoardEntity = (self._world):GetRenderBoardEntity()
-    local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
-    if pickUpTargetCmpt:GetPickUpTargetType() == SkillPickUpType.LinkLineSP then
-      local utilDataSvc = (self._world):GetService("UtilData")
-      return utilDataSvc:GetPet1702361LinkLineStep(petEntity, skillID)
-    else
-      do
-        do return (cfgData:GetSkillPickParam())[1] or 0 end
-      end
-    end
+  if not petEntity then
+    local entityID = pickUpCmpt:GetEntityID()
+    petEntity = self._world:GetEntityByID(entityID)
+  end
+  if not petEntity then
+    return
+  end
+  local cfgSvc = self._world:GetService("Config")
+  local cfgData = cfgSvc:GetSkillConfigData(skillID, petEntity)
+  if not cfgData then
+    return
+  end
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
+  if pickUpTargetCmpt:GetPickUpTargetType() == SkillPickUpType.LinkLineSP then
+    local utilDataSvc = self._world:GetService("UtilData")
+    return utilDataSvc:GetPet1702361LinkLineStep(petEntity, skillID)
+  else
+    return cfgData:GetSkillPickParam()[1] or 0
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService.GetCurPickUpParam = function(self)
-  -- function num : 0_2
-  local pickUpCmpt = (self._world):PickUp()
+function PreviewLinkLineService:GetCurPickUpParam()
+  local pickUpCmpt = self._world:PickUp()
   local skillID = pickUpCmpt:GetCurActiveSkillID()
   local pstID = pickUpCmpt:GetCurActiveSkillPetPstID()
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local petEntity = utilData:GetEntityByPstID(pstID)
-  do
-    if not petEntity then
-      local entityID = pickUpCmpt:GetEntityID()
-      petEntity = (self._world):GetEntityByID(entityID)
-    end
-    if not petEntity then
-      return 
-    end
-    local cfgSvc = (self._world):GetService("Config")
-    local cfgData = cfgSvc:GetSkillConfigData(skillID, petEntity)
-    if not cfgData then
-      return 
-    end
-    return cfgData:GetSkillPickParam()
+  if not petEntity then
+    local entityID = pickUpCmpt:GetEntityID()
+    petEntity = self._world:GetEntityByID(entityID)
   end
+  if not petEntity then
+    return
+  end
+  local cfgSvc = self._world:GetService("Config")
+  local cfgData = cfgSvc:GetSkillConfigData(skillID, petEntity)
+  if not cfgData then
+    return
+  end
+  return cfgData:GetSkillPickParam()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService.SetMonsterShadowPosListDown = function(self, animDown)
-  -- function num : 0_3 , upvalues : _ENV
+function PreviewLinkLineService:SetMonsterShadowPosListDown(animDown)
   local pickUpParam = self:GetCurPickUpParam()
   local isLinkMonster = pickUpParam[3] or 0
   if isLinkMonster ~= 1 then
-    return 
+    return
   end
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderChainPathComponent = renderBoardEntity:RenderChainPath()
-  local pieceSvc = (self._world):GetService("Piece")
+  local pieceSvc = self._world:GetService("Piece")
   local chainAcrossMonster = renderChainPathComponent:GetChainAcrossMonster()
   if chainAcrossMonster then
     local monsterShadowPosList = renderChainPathComponent:GetChainMonsterShadowPosList()
-    if not monsterShadowPosList or (table.count)(monsterShadowPosList) == 0 then
+    if not monsterShadowPosList or table.count(monsterShadowPosList) == 0 then
       monsterShadowPosList = pieceSvc:GetMonsterShadowPosList()
     end
     renderChainPathComponent:SetChainMonsterShadowPosList(monsterShadowPosList)
-    for i,pos in ipairs(monsterShadowPosList) do
+    for i, pos in ipairs(monsterShadowPosList) do
       if animDown then
         pieceSvc:SetPieceAnimDown(pos)
       else
@@ -119,88 +97,77 @@ PreviewLinkLineService.SetMonsterShadowPosListDown = function(self, animDown)
       end
     end
   end
-  do
-    local chainAcrossMonsterIDList = renderChainPathComponent:GetChainAcrossMonsterIDList()
-    if chainAcrossMonsterIDList and (table.count)(chainAcrossMonsterIDList) > 0 then
-      local selectMonsterShadowPosList = renderChainPathComponent:GetChainSelectMonsterShadowPosList()
-      if not selectMonsterShadowPosList or (table.count)(selectMonsterShadowPosList) == 0 then
-        selectMonsterShadowPosList = pieceSvc:GetSelectMonsterShadowPosList(chainAcrossMonsterIDList)
-      end
-      renderChainPathComponent:SetChainSelectMonsterShadowPosList(selectMonsterShadowPosList)
-      for i,pos in ipairs(selectMonsterShadowPosList) do
-        if animDown then
-          pieceSvc:SetPieceAnimDown(pos)
-        else
-          pieceSvc:SetPieceAnimNormal(pos)
-        end
-      end
+  local chainAcrossMonsterIDList = renderChainPathComponent:GetChainAcrossMonsterIDList()
+  if chainAcrossMonsterIDList and 0 < table.count(chainAcrossMonsterIDList) then
+    local selectMonsterShadowPosList = renderChainPathComponent:GetChainSelectMonsterShadowPosList()
+    if not selectMonsterShadowPosList or table.count(selectMonsterShadowPosList) == 0 then
+      selectMonsterShadowPosList = pieceSvc:GetSelectMonsterShadowPosList(chainAcrossMonsterIDList)
     end
-    do
+    renderChainPathComponent:SetChainSelectMonsterShadowPosList(selectMonsterShadowPosList)
+    for i, pos in ipairs(selectMonsterShadowPosList) do
       if animDown then
-        renderChainPathComponent:SetConnectAreaRenderCantRefresh(true)
+        pieceSvc:SetPieceAnimDown(pos)
+      else
+        pieceSvc:SetPieceAnimNormal(pos)
       end
     end
   end
+  if animDown then
+    renderChainPathComponent:SetConnectAreaRenderCantRefresh(true)
+  end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService._DoDrag = function(self, touchPos, offset)
-  -- function num : 0_4 , upvalues : _ENV
-  local previewEntity = (self._world):GetPreviewEntity()
+function PreviewLinkLineService:_DoDrag(touchPos, offset)
+  local previewEntity = self._world:GetPreviewEntity()
   local previewLinkLineCmpt = previewEntity:PreviewLinkLine()
   local chainPath = previewLinkLineCmpt:GetPreviewChainPath()
   local playerPosition = self:GetPlayerPos()
   if not self:IsPosCanLink(touchPos, chainPath) then
-    return 
+    return
   end
-  local pieceSvc = (self._world):GetService("Piece")
+  local pieceSvc = self._world:GetService("Piece")
   local pieceEntity = pieceSvc:FindPieceEntity(touchPos)
   if not pieceEntity then
-    (Log.fatal)("[touch] 连线坐标：" .. tostring(touchPos) .. " 位置的格子无法获取到！")
-    return 
+    Log.fatal("[touch] 连线坐标：" .. tostring(touchPos) .. " 位置的格子无法获取到！")
+    return
   end
   if #chainPath == 0 then
     local pickUpType = self:GetCurPickUpType()
-    if pickUpType == SkillPickUpType.Moye and self:_MoyeCheckFirstPosition(touchPos) then
-      self:_InitChainPath(chainPath, touchPos)
+    if pickUpType == SkillPickUpType.Moye then
+      if self:_MoyeCheckFirstPosition(touchPos) then
+        self:_InitChainPath(chainPath, touchPos)
+      end
+    else
+      self:_InitChainPath(chainPath, playerPosition)
     end
-    self:_InitChainPath(chainPath, playerPosition)
     self:CalcPathPoint(touchPos, offset)
     if self:IsNeedShowLinkageNumForCostStep() then
       self:_ShowLinkageInfo(chainPath)
-      local reBoard = (self._world):GetRenderBoardEntity()
+      local reBoard = self._world:GetRenderBoardEntity()
       local previewChainSkillRangeCmpt = reBoard:PreviewChainSkillRange()
       previewChainSkillRangeCmpt:EnablePreviewChainSkillRange(true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService._StartCameraMove = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
-  local gridTouchComponent = (self._world):GridTouch()
+function PreviewLinkLineService:_StartCameraMove(TT)
+  local gridTouchComponent = self._world:GridTouch()
   local touchState = gridTouchComponent:GetGridTouchStateID()
   if touchState == GridTouchStateID.PLLEndDrag then
-    (Log.notice)("current is end drag state,stop insert chain path")
-    return 
+    Log.notice("current is end drag state,stop insert chain path")
+    return
   end
-  local cameraCmpt = (self._world):MainCamera()
+  local cameraCmpt = self._world:MainCamera()
   cameraCmpt:DoMoveCamera(true)
   self:AllMonsterAndTrapTrans(true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService._InitChainPath = function(self, chainPath, touchPosition)
-  -- function num : 0_6 , upvalues : _ENV
-  (table.insert)(chainPath, touchPosition)
-  ;
-  (Log.info)("[touch] Init chain path insert ", (table.tostring)(chainPath))
+function PreviewLinkLineService:_InitChainPath(chainPath, touchPosition)
+  table.insert(chainPath, touchPosition)
+  Log.info("[touch] Init chain path insert ", table.tostring(chainPath))
   local elementType = PieceType.None
-  local previewEntity = (self._world):GetPreviewEntity()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local previewEntity = self._world:GetPreviewEntity()
+  local utilDataSvc = self._world:GetService("UtilData")
   if utilDataSvc:IsPreviewNeedShowLinkageNumForCostStep() then
     previewEntity:ReplacePreviewLinkLine(chainPath, elementType, PieceType.None, true)
     previewEntity:ReplacePreviewChainPath(chainPath, PieceType.Any, PieceType.Any, true)
@@ -210,110 +177,88 @@ PreviewLinkLineService._InitChainPath = function(self, chainPath, touchPosition)
   self:NotifyPickUpTargetChange()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService.CancelChainPath = function(self)
-  -- function num : 0_7
+function PreviewLinkLineService:CancelChainPath()
   if not self._world then
-    return 
+    return
   end
-  local syncMoveServiceRender = (self._world):GetService("SyncMoveRender")
+  local syncMoveServiceRender = self._world:GetService("SyncMoveRender")
   if syncMoveServiceRender then
     syncMoveServiceRender:ClearPreview()
   end
   self:AllMonsterAndTrapTrans(false)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService.QuickResponse = function(self, chainPath, touchPos, pieceType)
-  -- function num : 0_8 , upvalues : _ENV
+function PreviewLinkLineService:QuickResponse(chainPath, touchPos, pieceType)
   if not chainPath then
     return nil
   end
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   if not boardServiceRender:IsSameCrossPos(chainPath[#chainPath], touchPos) then
     return nil
   end
   local lastPos = chainPath[#chainPath]
-  do
-    if touchPos.y >= lastPos.y or not -1 then
-      local step = lastPos.x ~= touchPos.x or 1
-    end
+  if lastPos.x == touchPos.x then
+    local step = lastPos.y > touchPos.y and -1 or 1
     for y = lastPos.y + step, touchPos.y, step do
       local pos = Vector2(lastPos.x, y)
-      if not (table.icontains)(chainPath, pos) and self:IsPosCanLink(pos, chainPath) then
-        local newPieceType = self:InsertPieceToChainPath(chainPath, pos, pieceType)
-        if newPieceType then
-          do
-            if newPieceType and pieceType ~= newPieceType then
-              pieceType = newPieceType
-            end
-            -- DECOMPILER ERROR at PC65: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC65: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC65: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC65: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+      if not (not table.icontains(chainPath, pos) and self:IsPosCanLink(pos, chainPath)) then
+        break
+      end
+      local newPieceType = self:InsertPieceToChainPath(chainPath, pos, pieceType)
+      if not newPieceType then
+        break
+      end
+      if newPieceType and pieceType ~= newPieceType then
+        pieceType = newPieceType
       end
     end
-    if touchPos.x >= lastPos.x or not -1 then
-      local step = lastPos.y ~= touchPos.y or 1
-    end
+  elseif lastPos.y == touchPos.y then
+    local step = lastPos.x > touchPos.x and -1 or 1
     for x = lastPos.x + step, touchPos.x, step do
       local pos = Vector2(x, lastPos.y)
-      if not (table.icontains)(chainPath, pos) and self:IsPosCanLink(pos, chainPath) then
-        do
-          local newPieceType = self:InsertPieceToChainPath(chainPath, pos, pieceType)
-          if newPieceType and newPieceType and pieceType ~= newPieceType then
-            pieceType = newPieceType
-          end
-          -- DECOMPILER ERROR at PC113: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC113: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      if not (not table.icontains(chainPath, pos) and self:IsPosCanLink(pos, chainPath)) then
+        break
+      end
+      local newPieceType = self:InsertPieceToChainPath(chainPath, pos, pieceType)
+      if not newPieceType then
+        break
+      end
+      if newPieceType and pieceType ~= newPieceType then
+        pieceType = newPieceType
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService.CalcPathPoint = function(self, touchPos, offset)
-  -- function num : 0_9 , upvalues : _ENV
-  local previewEntity = (self._world):GetPreviewEntity()
+function PreviewLinkLineService:CalcPathPoint(touchPos, offset)
+  local previewEntity = self._world:GetPreviewEntity()
   local previewLinkLineCmpt = previewEntity:PreviewLinkLine()
   local chainPath = previewLinkLineCmpt:GetPreviewChainPath()
   local pieceType = previewLinkLineCmpt:GetPreviewPieceType()
   previewLinkLineCmpt:SetMoveBack(false)
   if chainPath == nil or #chainPath == 0 then
-    return 
+    return
   end
   local chainPathCount = #chainPath
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   if not self:IsPosCanLink(touchPos, chainPath) then
-    return 
+    return
   end
   local radiusType = previewLinkLineCmpt:GetGridRadius(touchPos)
   local radius = self:GetRadius(radiusType)
-  local offsetLen = (Vector2.Magnitude)(offset)
+  local offsetLen = Vector2.Magnitude(offset)
   local lastLinkPosition = chainPath[chainPathCount]
   local lastButOneLinkPosition = chainPath[chainPathCount - 1]
-  if chainPathCount > 1 and touchPos == lastButOneLinkPosition then
+  if 1 < chainPathCount and touchPos == lastButOneLinkPosition then
     previewLinkLineCmpt:SetMoveBack(true)
-    if offsetLen < radius then
+    if radius > offsetLen then
       pieceType = self:_UndoLink(chainPath)
       self:UpdateLastPathAroundRadius(chainPath, pieceType)
       if self:IsNeedShowLinkageNumForCostStep() then
         self:_ShowLinkageInfo(chainPath)
       end
     end
-    return 
+    return
   end
   local goBackCount = self:_QuickGoBack(chainPath, touchPos)
   if goBackCount and goBackCount ~= 0 then
@@ -322,49 +267,38 @@ PreviewLinkLineService.CalcPathPoint = function(self, touchPos, offset)
       pieceType = self:_UndoLink(chainPath)
     end
     self:UpdateLastPathAroundRadius(chainPath, pieceType)
-    return 
+    return
   end
   if touchPos == lastLinkPosition then
-    return 
-  else
-    if utilDataSvc:IsAdjacentPos(lastLinkPosition, touchPos) then
-      if radius <= offsetLen then
-        return 
-      end
-      self:InsertPieceToChainPath(chainPath, touchPos, pieceType)
-    else
-      self:QuickResponse(chainPath, touchPos, pieceType)
+    return
+  elseif utilDataSvc:IsAdjacentPos(lastLinkPosition, touchPos) then
+    if radius <= offsetLen then
+      return
     end
+    self:InsertPieceToChainPath(chainPath, touchPos, pieceType)
+  else
+    self:QuickResponse(chainPath, touchPos, pieceType)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService._ShowLinkageInfo = function(self, chainPath)
-  -- function num : 0_10
-  local linkageRenderService = (self._world):GetService("LinkageRender")
+function PreviewLinkLineService:_ShowLinkageInfo(chainPath)
+  local linkageRenderService = self._world:GetService("LinkageRender")
   linkageRenderService:ShowLinkageInfo(chainPath)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService._OnPieceRemoveFromChain = function(self, pos)
-  -- function num : 0_11
-  local pieceSvc = (self._world):GetService("Piece")
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
+function PreviewLinkLineService:_OnPieceRemoveFromChain(pos)
+  local pieceSvc = self._world:GetService("Piece")
+  local utilDataSvc = self._world:GetService("UtilData")
+  local env = self._world:GetPreviewEntity():PreviewEnv()
   if env:IsPrismPiece(pos) then
     pieceSvc:ResetPieceEffectRender(pos)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService._OnPieceInsertIntoChain = function(self, piecePos)
-  -- function num : 0_12 , upvalues : _ENV
-  local boardsvc = (self._world):GetService("BoardRender")
-  local pieceSvc = (self._world):GetService("Piece")
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
+function PreviewLinkLineService:_OnPieceInsertIntoChain(piecePos)
+  local boardsvc = self._world:GetService("BoardRender")
+  local pieceSvc = self._world:GetService("Piece")
+  local env = self._world:GetPreviewEntity():PreviewEnv()
   if env:IsPrismPiece(piecePos) then
     local pickUpType = self:GetCurPickUpType()
     if pickUpType ~= SkillPickUpType.Moye and pickUpType ~= SkillPickUpType.LinkLine then
@@ -373,48 +307,41 @@ PreviewLinkLineService._OnPieceInsertIntoChain = function(self, piecePos)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService._UndoLink = function(self, chainPath)
-  -- function num : 0_13 , upvalues : _ENV
-  local utilData = (self._world):GetService("UtilData")
+function PreviewLinkLineService:_UndoLink(chainPath)
+  local utilData = self._world:GetService("UtilData")
   local superChainCount = utilData:GetCurrentTeamSuperChainCount()
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
+  local env = self._world:GetPreviewEntity():PreviewEnv()
   local linkLineIndex = #chainPath - 2
   if superChainCount < linkLineIndex then
     linkLineIndex = superChainCount
   end
-  if linkLineIndex >= 1 then
-    (AudioHelperController.PlayInnerGameSfx)(linkLineIndex + CriAudioIDConst.SoundCoreGameLinkLineStart - 1)
+  if 1 <= linkLineIndex then
+    AudioHelperController.PlayInnerGameSfx(linkLineIndex + CriAudioIDConst.SoundCoreGameLinkLineStart - 1)
   end
   local pos = chainPath[#chainPath]
-  local pieceSvc = (self._world):GetService("Piece")
+  local pieceSvc = self._world:GetService("Piece")
   local pieceEntity = pieceSvc:FindPieceEntity(pos)
   if pieceEntity then
     self:_OnPieceRemoveFromChain(pos)
   end
-  ;
-  (table.remove)(chainPath, #chainPath)
+  table.remove(chainPath, #chainPath)
   local lastpos = chainPath[#chainPath]
   local lastElementType = env:GetPieceType(lastpos)
   return lastElementType
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService.InsertPieceToChainPath = function(self, chainPath, piecePos, pieceType)
-  -- function num : 0_14 , upvalues : _ENV
-  if (table.icontains)(chainPath, piecePos) then
-    return 
+function PreviewLinkLineService:InsertPieceToChainPath(chainPath, piecePos, pieceType)
+  if table.icontains(chainPath, piecePos) then
+    return
   end
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local utilDataSvc = self._world:GetService("UtilData")
+  local env = self._world:GetPreviewEntity():PreviewEnv()
   if not utilDataSvc:IsAdjacentPos(chainPath[#chainPath], piecePos) then
-    return 
+    return
   end
   if not boardServiceRender:IsInPlayerArea(piecePos) then
-    return 
+    return
   end
   if utilDataSvc:IsPreviewNeedShowLinkageNumForCostStep() then
     pieceType = 0
@@ -422,27 +349,25 @@ PreviewLinkLineService.InsertPieceToChainPath = function(self, chainPath, pieceP
     pieceType = env:GetPieceType(piecePos)
   end
   if not self:_MoyeCheck(piecePos, pieceType) then
-    return 
+    return
   end
-  local guideService = (self._world):GetService("Guide")
+  local guideService = self._world:GetService("Guide")
   local isMatchGuidePath = guideService:HandlePLLDragTrigger(piecePos)
   if isMatchGuidePath ~= true then
-    return 
+    return
   end
-  ;
-  (Log.debug)("InsertPos X:" .. piecePos.x .. " Y:" .. piecePos.y .. ">>>>>>1")
-  ;
-  (table.insert)(chainPath, piecePos)
-  local utilData = (self._world):GetService("UtilData")
+  Log.debug("InsertPos X:" .. piecePos.x .. " Y:" .. piecePos.y .. ">>>>>>1")
+  table.insert(chainPath, piecePos)
+  local utilData = self._world:GetService("UtilData")
   local superChainCount = utilData:GetCurrentTeamSuperChainCount()
   local linkLineIndex = #chainPath - 1
   if superChainCount < linkLineIndex then
     linkLineIndex = superChainCount
   end
-  if linkLineIndex >= 1 then
-    (AudioHelperController.PlayInnerGameSfx)(linkLineIndex + CriAudioIDConst.SoundCoreGameLinkLineStart - 1)
+  if 1 <= linkLineIndex then
+    AudioHelperController.PlayInnerGameSfx(linkLineIndex + CriAudioIDConst.SoundCoreGameLinkLineStart - 1)
   end
-  local pieceSvc = (self._world):GetService("Piece")
+  local pieceSvc = self._world:GetService("Piece")
   local pieceEntity = pieceSvc:FindPieceEntity(piecePos)
   if pieceEntity then
     self:_OnPieceInsertIntoChain(piecePos)
@@ -454,18 +379,15 @@ PreviewLinkLineService.InsertPieceToChainPath = function(self, chainPath, pieceP
   return pieceType
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService._QuickStayGoBack = function(self, chainPath, touchPos)
-  -- function num : 0_15 , upvalues : _ENV
-  if not (table.icontains)(chainPath, touchPos) then
+function PreviewLinkLineService:_QuickStayGoBack(chainPath, touchPos)
+  if not table.icontains(chainPath, touchPos) then
     return nil
   end
   if touchPos == chainPath[#chainPath] then
     return nil
   end
-  local timeService = (self._world):GetService("Time")
-  local gridTouchComponent = (self._world):GridTouch()
+  local timeService = self._world:GetService("Time")
+  local gridTouchComponent = self._world:GridTouch()
   if gridTouchComponent:GetStayTouchDuration(timeService:GetCurrentTimeMs()) < BattleConst.GoBackStayTime then
     return nil
   end
@@ -478,23 +400,18 @@ PreviewLinkLineService._QuickStayGoBack = function(self, chainPath, touchPos)
       break
     end
   end
-  do
-    goBackCount = goBackCount - 1
-    return goBackCount
-  end
+  goBackCount = goBackCount - 1
+  return goBackCount
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService._QuickGoBack = function(self, chainPath, touchPos)
-  -- function num : 0_16 , upvalues : _ENV
+function PreviewLinkLineService:_QuickGoBack(chainPath, touchPos)
   if not chainPath then
     return nil
   end
-  if (table.icontains)(chainPath, touchPos) then
+  if table.icontains(chainPath, touchPos) then
     return self:_QuickStayGoBack(chainPath, touchPos)
   end
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   if not boardServiceRender:IsSameCrossPos(chainPath[#chainPath], touchPos) then
     return nil
   end
@@ -508,53 +425,40 @@ PreviewLinkLineService._QuickGoBack = function(self, chainPath, touchPos)
   local goBackCount = 0
   local goBackPosList = {}
   local tmpPosList = {}
-  if touchPos.y >= lastPos.y or not -1 then
-    local step = lastPos.x ~= touchPos.x or 1
-  end
-  for y = lastPos.y, touchPos.y, step do
-    local pos = Vector2(lastPos.x, y)
-    ;
-    (table.insert)(tmpPosList, pos)
-  end
-  do
-    if touchPos.x >= lastPos.x or not -1 then
-      local step = lastPos.y ~= touchPos.y or 1
+  if lastPos.x == touchPos.x then
+    local step = lastPos.y > touchPos.y and -1 or 1
+    for y = lastPos.y, touchPos.y, step do
+      local pos = Vector2(lastPos.x, y)
+      table.insert(tmpPosList, pos)
     end
+  elseif lastPos.y == touchPos.y then
+    local step = lastPos.x > touchPos.x and -1 or 1
     for x = lastPos.x, touchPos.x, step do
       local pos = Vector2(x, lastPos.y)
-      ;
-      (table.insert)(tmpPosList, pos)
+      table.insert(tmpPosList, pos)
     end
-    do
-      if #tmpPosList > 0 then
-        for i = #chainPath, 1, -1 do
-          local pos = chainPath[i]
-          -- DECOMPILER ERROR at PC130: Unhandled construct in 'MakeBoolean' P1
-
-          if (table.icontains)(tmpPosList, pos) and (#goBackPosList == 0 or (math.abs)(i - (goBackPosList[#goBackPosList])[2]) == 1) then
-            (table.insert)(goBackPosList, {pos, i})
-            goBackCount = goBackCount + 1
-          else
-            break
-          end
-        end
-        do
-          ;
-          (table.removev)(goBackPosList, goBackPosList[#goBackPosList])
-          goBackCount = goBackCount - 1
-          return goBackCount
+  end
+  if 0 < #tmpPosList then
+    for i = #chainPath, 1, -1 do
+      local pos = chainPath[i]
+      if table.icontains(tmpPosList, pos) then
+        if #goBackPosList == 0 or math.abs(i - goBackPosList[#goBackPosList][2]) == 1 then
+          table.insert(goBackPosList, {pos, i})
+          goBackCount = goBackCount + 1
+        else
+          break
         end
       end
     end
+    table.removev(goBackPosList, goBackPosList[#goBackPosList])
+    goBackCount = goBackCount - 1
   end
+  return goBackCount
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService.UpdateLastPathAroundRadius = function(self, chainPath, chainPieceType)
-  -- function num : 0_17 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local previewEntity = (self._world):GetPreviewEntity()
+function PreviewLinkLineService:UpdateLastPathAroundRadius(chainPath, chainPieceType)
+  local utilDataSvc = self._world:GetService("UtilData")
+  local previewEntity = self._world:GetPreviewEntity()
   self:NotifyPickUpTargetChange()
   if utilDataSvc:IsPreviewNeedShowLinkageNumForCostStep() then
     previewEntity:ReplacePreviewChainPath(chainPath, PieceType.Any, PieceType.Any, true)
@@ -565,65 +469,51 @@ PreviewLinkLineService.UpdateLastPathAroundRadius = function(self, chainPath, ch
   local endGridPos = chainPath[#chainPath]
   local endNearbyGridPosList = utilDataSvc:GetRoundGrid(endGridPos)
   local nearbyGridRadius = {}
-  for _,v in pairs(endNearbyGridPosList) do
+  for _, v in pairs(endNearbyGridPosList) do
     local gridPos = Vector2(v.x, v.y)
     local gridRoundPosList = utilDataSvc:GetRoundGrid(gridPos, function(pos)
-    -- function num : 0_17_0 , upvalues : _ENV, endNearbyGridPosList
-    if (table.icontains)(endNearbyGridPosList, pos) then
-      return true
-    end
-    return false
-  end
-)
+      if table.icontains(endNearbyGridPosList, pos) then
+        return true
+      end
+      return false
+    end)
     if gridPos.x == endGridPos.x or gridPos.y == endGridPos.y then
       if #gridRoundPosList ~= 0 then
         nearbyGridRadius[gridPos] = GridRadiusType.NearBy
       else
         nearbyGridRadius[gridPos] = GridRadiusType.Default
       end
+    elseif #gridRoundPosList ~= 0 then
+      nearbyGridRadius[gridPos] = GridRadiusType.Diagonal
     else
-      if #gridRoundPosList ~= 0 then
-        nearbyGridRadius[gridPos] = GridRadiusType.Diagonal
-      else
-        nearbyGridRadius[gridPos] = GridRadiusType.Default
-      end
+      nearbyGridRadius[gridPos] = GridRadiusType.Default
     end
   end
   local previewLinkLineCmpt = previewEntity:PreviewLinkLine()
   previewLinkLineCmpt:SetGridRadius(nearbyGridRadius)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService.GetRadius = function(self, radiusType)
-  -- function num : 0_18 , upvalues : _ENV
-  local config = (Cfg.cfg_link_line_sensing_area)[1]
+function PreviewLinkLineService:GetRadius(radiusType)
+  local config = Cfg.cfg_link_line_sensing_area[1]
   if radiusType == GridRadiusType.Default then
     return config.DefaultRadius
-  else
-    if radiusType == GridRadiusType.Diagonal then
-      return config.DiagonalRadius
-    else
-      if radiusType == GridRadiusType.NearBy then
-        return config.NearbyRadius
-      end
-    end
+  elseif radiusType == GridRadiusType.Diagonal then
+    return config.DiagonalRadius
+  elseif radiusType == GridRadiusType.NearBy then
+    return config.NearbyRadius
   end
   return config.DefaultRadius
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService.NotifyPickUpTargetChange = function(self)
-  -- function num : 0_19
-  local pickUpCmpt = (self._world):PickUp()
+function PreviewLinkLineService:NotifyPickUpTargetChange()
+  local pickUpCmpt = self._world:PickUp()
   local skillID = pickUpCmpt:GetCurActiveSkillID()
   local pstID = pickUpCmpt:GetCurActiveSkillPetPstID()
   local entityID = pickUpCmpt:GetEntityID()
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID)
   local activeSkillPickUpType = skillConfigData:GetSkillPickType()
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   pickUpTargetCmpt:SetPickUpTargetType(activeSkillPickUpType)
   pickUpTargetCmpt:SetCurActiveSkillInfo(skillID, pstID)
@@ -631,24 +521,19 @@ PreviewLinkLineService.NotifyPickUpTargetChange = function(self)
   renderBoardEntity:ReplacePickUpTarget()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService.ConvertLinkPosPieceType = function(self, pos)
-  -- function num : 0_20 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PreviewLinkLineService:ConvertLinkPosPieceType(pos)
+  local utilDataSvc = self._world:GetService("UtilData")
   if not utilDataSvc:IsPreviewNeedShowLinkageNumForCostStep() then
     local pickUpParam = self:GetCurPickUpParam()
-    if not pickUpParam[2] then
-      local pieceType = PieceType.Blue
-    end
-    local boardServiceR = (self._world):GetService("BoardRender")
-    local env = ((self._world):GetPreviewEntity()):PreviewEnv()
+    local pieceType = pickUpParam[2] or PieceType.Blue
+    local boardServiceR = self._world:GetService("BoardRender")
+    local env = self._world:GetPreviewEntity():PreviewEnv()
     local curType = env:GetPieceType(pos)
     local pickUpType = self:GetCurPickUpType()
     if pickUpType and pickUpType == SkillPickUpType.Moye then
       return curType
     end
-    if utilDataSvc:GetMonsterAtPos(pos) or not utilDataSvc:IsPosCanConvertGridElement(pos) or pieceType == curType then
+    if not (not utilDataSvc:GetMonsterAtPos(pos) and utilDataSvc:IsPosCanConvertGridElement(pos)) or pieceType == curType then
       return curType
     end
     env:SetPieceType(pos, pieceType)
@@ -657,38 +542,29 @@ PreviewLinkLineService.ConvertLinkPosPieceType = function(self, pos)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService.CancelLinkPosPieceType = function(self, pos)
-  -- function num : 0_21
-  local boardServiceR = (self._world):GetService("BoardRender")
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PreviewLinkLineService:CancelLinkPosPieceType(pos)
+  local boardServiceR = self._world:GetService("BoardRender")
+  local env = self._world:GetPreviewEntity():PreviewEnv()
+  local utilDataSvc = self._world:GetService("UtilData")
   local pieceType = utilDataSvc:GetPieceType(pos)
   local previewPieceType = env:GetPieceType(pos)
   if previewPieceType == pieceType then
-    return 
+    return
   end
   env:SetPieceType(pos, pieceType)
-  local pieceSvc = (self._world):GetService("Piece")
+  local pieceSvc = self._world:GetService("Piece")
   pieceSvc:ResetPieceEffectRender(pos)
   boardServiceR:ReCreateGridEntity(pieceType, pos, false, true)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService.CancelAllLinkPosPieceType = function(self, chainPath)
-  -- function num : 0_22 , upvalues : _ENV
-  for _,pos in pairs(chainPath) do
+function PreviewLinkLineService:CancelAllLinkPosPieceType(chainPath)
+  for _, pos in pairs(chainPath) do
     self:CancelLinkPosPieceType(pos)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService.IsPosCanLink = function(self, pos, chainPath)
-  -- function num : 0_23 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PreviewLinkLineService:IsPosCanLink(pos, chainPath)
+  local utilDataSvc = self._world:GetService("UtilData")
   if not utilDataSvc:IsValidPiecePos(pos) then
     return false
   end
@@ -708,112 +584,94 @@ PreviewLinkLineService.IsPosCanLink = function(self, pos, chainPath)
   local lastPos = chainPath[#chainPath]
   local isPosMonster = false
   local pickUpType = self:GetCurPickUpType()
-  if not pickUpType or pickUpType ~= SkillPickUpType.Moye then
-    if utilDataSvc:GetMonsterAtPos(lastPos) == nil then
-      isPosMonster = not linkMonster
-      isMaxLink = not utilDataSvc:GetMonsterAtPos(pos) or linkCount <= #chainPath - 2
-      do
-        if pickUpType == SkillPickUpType.LinkLineSP then
-          local playerPosition = (((self._world):Player()):GetLocalTeamEntity()):GetGridPosition()
-          if playerPosition == pos then
-            return false
-          end
-        end
-        local isPosExit = utilDataSvc:IsPosExit(lastPos)
-        local isPosDimensionDoor = utilDataSvc:IsPosDimensionDoor(lastPos)
-        local isBreakLastPos = isMaxLink or isPosMonster or isPosExit or isPosDimensionDoor
-        if isBreakLastPos and not (table.icontains)(chainPath, pos) then
-          return false
-        end
-        if utilDataSvc:IsPosBlockForPreviewLinkLine(pos, linkMonster) then
-          return false
-        end
-        do return true end
-        -- DECOMPILER ERROR: 13 unprocessed JMP targets
-      end
+  if linkMonster then
+    if not pickUpType or pickUpType ~= SkillPickUpType.Moye then
+      isPosMonster = utilDataSvc:GetMonsterAtPos(lastPos) ~= nil
+    end
+    if utilDataSvc:GetMonsterAtPos(pos) then
+      isMaxLink = linkCount <= #chainPath - 2
     end
   end
+  if pickUpType == SkillPickUpType.LinkLineSP then
+    local playerPosition = self._world:Player():GetLocalTeamEntity():GetGridPosition()
+    if playerPosition == pos then
+      return false
+    end
+  end
+  local isPosExit = utilDataSvc:IsPosExit(lastPos)
+  local isPosDimensionDoor = utilDataSvc:IsPosDimensionDoor(lastPos)
+  local isBreakLastPos = isMaxLink or isPosMonster or isPosExit or isPosDimensionDoor
+  if isBreakLastPos and not table.icontains(chainPath, pos) then
+    return false
+  end
+  if utilDataSvc:IsPosBlockForPreviewLinkLine(pos, linkMonster) then
+    return false
+  end
+  return true
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService.CalcReplaceChainPreviewParamsPet1502051 = function(self, e, chainPath)
-  -- function num : 0_24 , upvalues : _ENV
+function PreviewLinkLineService:CalcReplaceChainPreviewParamsPet1502051(e, chainPath)
   local skillInfoCmpt = e:SkillInfo()
-  local chainRule = (skillInfoCmpt._chainSkillIDSelector):GetRule()
+  local chainRule = skillInfoCmpt._chainSkillIDSelector:GetRule()
   local firstChainRule = chainRule[1]
   local chainSkillID = firstChainRule.Skill
-  local configSvc = (self._world):GetService("Config")
+  local configSvc = self._world:GetService("Config")
   local firstChainConfig = configSvc:GetSkillConfigData(chainSkillID)
   local previewType = firstChainConfig:GetSkillPreviewType()
   if previewType ~= SkillPreviewType.Pet1502051Chain then
-    return 
+    return
   end
   local previewParam = firstChainConfig:GetSkillPreviewParam()
   local rangeSkillID = previewParam.SkillID
   local rangeIncludeTrap = previewParam.IsTrapIncluded
   local includedTrapType = previewParam.TrapType
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalc = SkillScopeCalculator:New(utilScopeSvc)
   local skillConfigData = configSvc:GetSkillConfigData(rangeSkillID)
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local extraCount = 0
-  for _,v2 in ipairs(chainPath) do
+  for _, v2 in ipairs(chainPath) do
     if utilData:FindPieceElement(v2) == PieceType.Blue then
-      local scopeResult = scopeCalc:ComputeScopeRange(skillConfigData:GetSkillScopeType(), skillConfigData:GetSkillScopeParam(), v2, (e:BodyArea()):GetArea(), e:GetGridDirection(), SkillTargetType.Monster, e:GetGridPosition(), e)
-      local targetSelector = (self._world):GetSkillScopeTargetSelector()
-      if not targetSelector:_SelectMonsterDeadOrAlive(e, scopeResult, rangeSkillID, skillConfigData:GetSkillTargetTypeParam()) then
-        local tEntityID = {}
-      end
-      if #tEntityID == 0 and rangeIncludeTrap and includedTrapType then
-        if not targetSelector:_SelectTrap(e, scopeResult, rangeSkillID, skillConfigData:GetSkillTargetTypeParam(), false) then
-          local selected = {}
-        end
-        tEntityID = {}
-        for id,_ in pairs(selected) do
-          (table.insert)(tEntityID, id)
-        end
-        for _,id in ipairs(tEntityID) do
-          local trapEntity = (self._world):GetEntityByID(id)
-          local cTrap = trapEntity:TrapRender()
-          local trapType = cTrap:GetTrapType()
-          if (table.icontains)(includedTrapType, trapType) then
-            extraCount = extraCount + 1
-            ;
-            (Log.info)("CalcReplaceChainPreviewParamsPet1502051: trap in range", v2)
-            break
+      local scopeResult = scopeCalc:ComputeScopeRange(skillConfigData:GetSkillScopeType(), skillConfigData:GetSkillScopeParam(), v2, e:BodyArea():GetArea(), e:GetGridDirection(), SkillTargetType.Monster, e:GetGridPosition(), e)
+      local targetSelector = self._world:GetSkillScopeTargetSelector()
+      local tEntityID = targetSelector:_SelectMonsterDeadOrAlive(e, scopeResult, rangeSkillID, skillConfigData:GetSkillTargetTypeParam()) or {}
+      if #tEntityID == 0 then
+        if rangeIncludeTrap and includedTrapType then
+          local selected = targetSelector:_SelectTrap(e, scopeResult, rangeSkillID, skillConfigData:GetSkillTargetTypeParam(), false) or {}
+          tEntityID = {}
+          for id, _ in pairs(selected) do
+            table.insert(tEntityID, id)
+          end
+          for _, id in ipairs(tEntityID) do
+            local trapEntity = self._world:GetEntityByID(id)
+            local cTrap = trapEntity:TrapRender()
+            local trapType = cTrap:GetTrapType()
+            if table.icontains(includedTrapType, trapType) then
+              extraCount = extraCount + 1
+              Log.info("CalcReplaceChainPreviewParamsPet1502051: trap in range", v2)
+              break
+            end
           end
         end
-      end
-    end
-    do
-      do
+      else
         extraCount = extraCount + 1
-        ;
-        (Log.info)("CalcReplaceChainPreviewParamsPet1502051: monster in range", v2)
-        -- DECOMPILER ERROR at PC150: LeaveBlock: unexpected jumping out DO_STMT
-
+        Log.info("CalcReplaceChainPreviewParamsPet1502051: monster in range", v2)
       end
     end
   end
-  ;
-  (Log.info)("CalcReplaceChainPreviewParamsPet1502051: extra count: ", extraCount)
-  local fix = (e:RenderAttributes()):GetAttribute("ChainSkillReleaseFix") or 0
-  local chainCountMul = (e:RenderAttributes()):GetAttribute("ChainSkillReleaseMul") or 0
-  local utilCalc = (self._world):GetService("UtilCalc")
-  local utilData = (self._world):GetService("UtilData")
+  Log.info("CalcReplaceChainPreviewParamsPet1502051: extra count: ", extraCount)
+  local fix = e:RenderAttributes():GetAttribute("ChainSkillReleaseFix") or 0
+  local chainCountMul = e:RenderAttributes():GetAttribute("ChainSkillReleaseMul") or 0
+  local utilCalc = self._world:GetService("UtilCalc")
+  local utilData = self._world:GetService("UtilData")
   local chainCount, useless = utilCalc:GetChainDamageRateAtIndex(chainPath, #chainPath)
-  local fixedChainCount = (math.ceil)((chainCount + fix) * (1 + chainCountMul)) + (extraCount)
-  if not utilData:GetEntityBuffValue(e, "ChangeExtraChainSkillReleaseFixForSkill") then
-    local chainExtraFix = {}
-  end
+  local fixedChainCount = math.ceil((chainCount + fix) * (1 + chainCountMul)) + extraCount
+  local chainExtraFix = utilData:GetEntityBuffValue(e, "ChangeExtraChainSkillReleaseFixForSkill") or {}
   local skillID = utilData:GetChainSkillByChainCount(e, fixedChainCount, chainExtraFix)
-  ;
-  (Log.info)("CalcReplaceChainPreviewParamsPet1502051: fixed chain count: ", fixedChainCount)
-  ;
-  (Log.info)("CalcReplaceChainPreviewParamsPet1502051: skillID: ", skillID)
+  Log.info("CalcReplaceChainPreviewParamsPet1502051: fixed chain count: ", fixedChainCount)
+  Log.info("CalcReplaceChainPreviewParamsPet1502051: skillID: ", skillID)
   if skillID == 0 then
-    return 
+    return
   end
   local replacedChainSkillConfig = configSvc:GetSkillConfigData(skillID)
   local scopeResult = utilScopeSvc:CalcSkillScopeForChainSkillPreview(replacedChainSkillConfig, chainPath[#chainPath], e)
@@ -821,14 +679,14 @@ PreviewLinkLineService.CalcReplaceChainPreviewParamsPet1502051 = function(self, 
   local skillTargetType = replacedChainSkillConfig:GetSkillTargetType()
   local entityIDArray = selector:DoSelectSkillTarget(e, skillTargetType, scopeResult, chainSkillID)
   local attackRange = scopeResult:GetAttackRange()
-  for _,gridPos in ipairs(attackRange) do
-    for _,targetEntityID in ipairs(entityIDArray) do
-      local targetEntity = (self._world):GetEntityByID(targetEntityID)
+  for _, gridPos in ipairs(attackRange) do
+    for _, targetEntityID in ipairs(entityIDArray) do
+      local targetEntity = self._world:GetEntityByID(targetEntityID)
       local gridLocationCmpt = targetEntity:GridLocation()
       local bodyAreaCmpt = targetEntity:BodyArea()
       local bodyAreaList = bodyAreaCmpt:GetArea()
-      for i,bodyArea in ipairs(bodyAreaList) do
-        local curBodyPos = Vector2((gridLocationCmpt.Position).x + bodyArea.x, (gridLocationCmpt.Position).y + bodyArea.y)
+      for i, bodyArea in ipairs(bodyAreaList) do
+        local curBodyPos = Vector2(gridLocationCmpt.Position.x + bodyArea.x, gridLocationCmpt.Position.y + bodyArea.y)
         if curBodyPos == gridPos then
           scopeResult:AddTargetIDAndPos(targetEntityID, gridPos)
         end
@@ -838,52 +696,41 @@ PreviewLinkLineService.CalcReplaceChainPreviewParamsPet1502051 = function(self, 
   return skillID, scopeResult
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService.GetCurPickUpType = function(self)
-  -- function num : 0_25
-  local pickUpCmpt = (self._world):PickUp()
+function PreviewLinkLineService:GetCurPickUpType()
+  local pickUpCmpt = self._world:PickUp()
   local skillID = pickUpCmpt:GetCurActiveSkillID()
   local pstID = pickUpCmpt:GetCurActiveSkillPetPstID()
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local petEntity = utilData:GetEntityByPstID(pstID)
-  do
-    if not petEntity then
-      local entityID = pickUpCmpt:GetEntityID()
-      petEntity = (self._world):GetEntityByID(entityID)
-    end
-    if not petEntity then
-      return 
-    end
-    local cfgSvc = (self._world):GetService("Config")
-    local cfgData = cfgSvc:GetSkillConfigData(skillID, petEntity)
-    if not cfgData then
-      return 
-    end
-    return cfgData:GetSkillPickType()
+  if not petEntity then
+    local entityID = pickUpCmpt:GetEntityID()
+    petEntity = self._world:GetEntityByID(entityID)
   end
+  if not petEntity then
+    return
+  end
+  local cfgSvc = self._world:GetService("Config")
+  local cfgData = cfgSvc:GetSkillConfigData(skillID, petEntity)
+  if not cfgData then
+    return
+  end
+  return cfgData:GetSkillPickType()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService._GetSkillConfigData = function(self)
-  -- function num : 0_26
-  local pickUpCmpt = (self._world):PickUp()
+function PreviewLinkLineService:_GetSkillConfigData()
+  local pickUpCmpt = self._world:PickUp()
   local skillID = pickUpCmpt:GetCurActiveSkillID()
   local pstID = pickUpCmpt:GetCurActiveSkillPetPstID()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local petEntityId = utilDataSvc:GetEntityIDByPstID(pstID)
-  local petEntity = (self._world):GetEntityByID(petEntityId)
-  local configService = (self._world):GetService("Config")
+  local petEntity = self._world:GetEntityByID(petEntityId)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID, petEntity)
   return skillConfigData
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService._MoyeCheck = function(self, gridPos, pieceType)
-  -- function num : 0_27 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PreviewLinkLineService:_MoyeCheck(gridPos, pieceType)
+  local utilDataSvc = self._world:GetService("UtilData")
   local skillConfigData = self:_GetSkillConfigData()
   local activeSkillPickUpType = skillConfigData:GetSkillPickType()
   if activeSkillPickUpType == SkillPickUpType.Moye then
@@ -897,68 +744,48 @@ PreviewLinkLineService._MoyeCheck = function(self, gridPos, pieceType)
       end
     end
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService._CheckTrapSatisfied = function(self, trapIds, gridPos, utilDataSvc)
-  -- function num : 0_28 , upvalues : _ENV
-  if trapIds and #trapIds > 0 then
+function PreviewLinkLineService:_CheckTrapSatisfied(trapIds, gridPos, utilDataSvc)
+  if trapIds and 0 < #trapIds then
     local traps = utilDataSvc:GetTrapsAtPos(gridPos)
-    for _,trap in pairs(traps) do
-      local trapId = (trap:TrapRender()):GetTrapID()
-      if (table.icontains)(trapIds, trapId) then
+    for _, trap in pairs(traps) do
+      local trapId = trap:TrapRender():GetTrapID()
+      if table.icontains(trapIds, trapId) then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService._MoyeCheckFirstPosition = function(self, gridPosition)
-  -- function num : 0_29 , upvalues : _ENV
-  local pickUpCmpt = (self._world):PickUp()
+function PreviewLinkLineService:_MoyeCheckFirstPosition(gridPosition)
+  local pickUpCmpt = self._world:PickUp()
   local pstID = pickUpCmpt:GetCurActiveSkillPetPstID()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local petEntityId = utilDataSvc:GetEntityIDByPstID(pstID)
-  local petEntity = (self._world):GetEntityByID(petEntityId)
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local petEntity = self._world:GetEntityByID(petEntityId)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local skillConfigData = self:_GetSkillConfigData()
   local firstPickupPos = gridPosition
-  if not (skillConfigData._pickUpParam).firstPickValidScopeList then
-    local firstPickUpValidScopeList = self:_ParseScopeList({})
-    if not utilScopeSvc:BuildScopeGridList(firstPickUpValidScopeList, petEntity) then
-      local validGridList = {}
-    end
-    if #validGridList > 0 then
-      return (table.Vector2Include)(validGridList, firstPickupPos)
-    else
-      return true
-    end
+  local firstPickUpValidScopeList = self:_ParseScopeList(skillConfigData._pickUpParam.firstPickValidScopeList or {})
+  local validGridList = utilScopeSvc:BuildScopeGridList(firstPickUpValidScopeList, petEntity) or {}
+  if 0 < #validGridList then
+    return table.Vector2Include(validGridList, firstPickupPos)
+  else
+    return true
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineService._ParseScopeList = function(self, list)
-  -- function num : 0_30 , upvalues : _ENV
+function PreviewLinkLineService:_ParseScopeList(list)
   local parser = SkillScopeParamParser:New()
   local t = {}
-  for _,v in ipairs(list) do
+  for _, v in ipairs(list) do
     local param = SkillPreviewScopeParam:New(v)
     local data = parser:ParseScopeParam(v.ScopeType, v.ScopeParam)
     param:SetScopeParamData(data)
-    ;
-    (table.insert)(t, param)
+    table.insert(t, param)
   end
   return t
 end
-
-

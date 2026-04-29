@@ -1,8 +1,2 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_empty_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICommonEmptyItems", UICustomWidget)
 UICommonEmptyItems = UICommonEmptyItems
-

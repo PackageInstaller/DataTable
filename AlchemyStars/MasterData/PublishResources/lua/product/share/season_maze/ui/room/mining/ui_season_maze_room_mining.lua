@@ -1,35 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/room/mining/ui_season_maze_room_mining.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRoomMining", UISeasonMazeRoomBase)
 UISeasonMazeRoomMining = UISeasonMazeRoomMining
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoomMining.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonMazeRoomMining:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomMining.OnShowUI = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeRoomMining:OnShowUI(uiParams)
   self:InitWidget()
-  self._seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self._seasonMazeObj = (self._seasonMazeModule):CurSeasonObj()
-  self._component = (self._seasonMazeObj):GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
-  self.cfgId = (self._roomInfo).cfg_id
+  self._seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self._seasonMazeObj = self._seasonMazeModule:CurSeasonObj()
+  self._component = self._seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+  self.cfgId = self._roomInfo.cfg_id
   self.miningCfg = self:GetMiningCfg()
   self.curSelectPet = nil
-  self.petJsonIcon = {[2001] = "epg_gqxq_icon08", [2002] = "epg_gqxq_icon06", [2003] = "epg_gqxq_icon07", [2004] = "epg_gqxq_icon09"}
-  self.petElementIcon = {[1] = "spirit_shuxing2_icon", [2] = "spirit_shuxing3_icon", [3] = "spirit_shuxing1_icon", [4] = "spirit_shuxing4_icon"}
+  self.petJsonIcon = {
+    [2001] = "epg_gqxq_icon08",
+    [2002] = "epg_gqxq_icon06",
+    [2003] = "epg_gqxq_icon07",
+    [2004] = "epg_gqxq_icon09"
+  }
+  self.petElementIcon = {
+    [1] = "spirit_shuxing2_icon",
+    [2] = "spirit_shuxing3_icon",
+    [3] = "spirit_shuxing1_icon",
+    [4] = "spirit_shuxing4_icon"
+  }
   self._atlasPetElement = self:GetAsset("UIPetElement.spriteatlas", LoadType.SpriteAtlas)
   self._uiSeasonMazeModule = self:GetUIModule(SeasonMazeModule)
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+  local missionModule = GameGlobal.GetModule(MissionModule)
   local context = missionModule:TeamCtx()
-  context:InitSeasonMazeTeam((self._comInfo).m_formation_list)
+  context:InitSeasonMazeTeam(self._comInfo.m_formation_list)
   context:Init(TeamOpenerType.SeasonMaze, {})
   self:SetDispatchRound()
   self:SetDispatchRewardDesc()
@@ -37,27 +37,20 @@ UISeasonMazeRoomMining.OnShowUI = function(self, uiParams)
   self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomMining._CheckGuide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUIShare.UISeasonMazeRoomMining)
+function UISeasonMazeRoomMining:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUIShare.UISeasonMazeRoomMining)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomMining.GetMiningCfg = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_season_maze_room_ore)({ID = self.cfgId})
-  if cfgs and #cfgs > 0 then
+function UISeasonMazeRoomMining:GetMiningCfg()
+  local cfgs = Cfg.cfg_component_season_maze_room_ore({
+    ID = self.cfgId
+  })
+  if cfgs and 0 < #cfgs then
     return cfgs[1]
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomMining.InitWidget = function(self)
-  -- function num : 0_4
+function UISeasonMazeRoomMining:InitWidget()
   self.professionImg = self:GetUIComponent("Image", "profession")
   self.mainElementImg = self:GetUIComponent("Image", "MainElement")
   self.RewardDescText = self:GetUIComponent("UILocalizationText", "RewardDesc")
@@ -67,39 +60,30 @@ UISeasonMazeRoomMining.InitWidget = function(self)
   self._rountSelectPool = self:GetUIComponent("UISelectObjectPath", "roundSelect")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomMining.SetDispatchRound = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfgNums = (self.miningCfg).RoundCount
+function UISeasonMazeRoomMining:SetDispatchRound()
+  local cfgNums = self.miningCfg.RoundCount
   local len = #cfgNums
-  self._roundWidget = (self._rountSelectPool):SpawnObjects("UISeasonMazeRoundSelBtn", len)
-  for i,subWiget in ipairs(self._roundWidget) do
+  self._roundWidget = self._rountSelectPool:SpawnObjects("UISeasonMazeRoundSelBtn", len)
+  for i, subWiget in ipairs(self._roundWidget) do
     subWiget:SetData(cfgNums[i], function(num)
-    -- function num : 0_5_0 , upvalues : self
-    self:_OnRoundNumSelect(num)
-  end
-)
+      self:_OnRoundNumSelect(num)
+    end)
   end
   self._selectRoundNum = 0
-  self._hasResourceEffect = (self._component):GetAttrValue(SeasonMazeAttrType.SMAT_Resource_Percent) > 0
+  self._hasResourceEffect = 0 < self._component:GetAttrValue(SeasonMazeAttrType.SMAT_Resource_Percent)
   if self._hasResourceEffect then
     self:_OnRoundNumSelect(cfgNums[len])
   end
   self:RefreshReward()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomMining._OnRoundNumSelect = function(self, num)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonMazeRoomMining:_OnRoundNumSelect(num)
   if self._hasResourceEffect and num < self._selectRoundNum then
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_maze_ore_room_tips_extra1"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_season_maze_ore_room_tips_extra1"))
+    return
   end
   self._selectRoundNum = num
-  for i,v in ipairs(self._roundWidget) do
+  for i, v in ipairs(self._roundWidget) do
     local bSelect = num == v:GetRoundNum()
     v:SetSelect(bSelect)
     if bSelect then
@@ -107,94 +91,64 @@ UISeasonMazeRoomMining._OnRoundNumSelect = function(self, num)
     end
   end
   self:RefreshReward()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomMining.SetDispatchRewardDesc = function(self)
-  -- function num : 0_7
-  self.onceGolds = (self.miningCfg).OnceGolds
-  self.roundGolds = (self.miningCfg).RoundGolds
+function UISeasonMazeRoomMining:SetDispatchRewardDesc()
+  self.onceGolds = self.miningCfg.OnceGolds
+  self.roundGolds = self.miningCfg.RoundGolds
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomMining.RefreshReward = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonMazeRoomMining:RefreshReward()
   if self._selectRoundNum == 0 then
-    (self.RewardDescText):SetText((StringTable.Get)("str_season_maze_ore_room_tips_choose_round2"))
+    self.RewardDescText:SetText(StringTable.Get("str_season_maze_ore_room_tips_choose_round2"))
   else
     local idx = self._selectRoundServerIndex + 1
-    local onceGold = ((self.miningCfg).OnceGolds)[idx]
-    local roundGold = ((self.miningCfg).RoundGolds)[idx]
-    ;
-    (self.RewardDescText):SetText((StringTable.Get)("str_season_maze_ore_room_reward", onceGold, roundGold))
+    local onceGold = self.miningCfg.OnceGolds[idx]
+    local roundGold = self.miningCfg.RoundGolds[idx]
+    self.RewardDescText:SetText(StringTable.Get("str_season_maze_ore_room_reward", onceGold, roundGold))
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomMining.PetSelectOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  local allPets = (self._uiSeasonMazeModule):GetSeasonMazePets()
+function UISeasonMazeRoomMining:PetSelectOnClick(go)
+  local allPets = self._uiSeasonMazeModule:GetSeasonMazePets()
   self:ShowDialog("UISeasonMazeTeamChangeController", allPets, function(pstid)
-    -- function num : 0_9_0 , upvalues : self, allPets, _ENV
     self.curSelectPet = allPets[pstid]
-    ;
-    (self.petHeadIconObj):SetActive(true)
-    local head = (HelperProxy:GetInstance()):GetPetHead((self.curSelectPet):GetTemplateID(), (self.curSelectPet):GetPetGrade(), (self.curSelectPet):GetSkinId(), PetSkinEffectPath.HEAD_ICON_DISPATCH)
-    ;
-    (self.petHeadIcon):LoadImage(head)
-  end
-)
+    self.petHeadIconObj:SetActive(true)
+    local head = HelperProxy:GetInstance():GetPetHead(self.curSelectPet:GetTemplateID(), self.curSelectPet:GetPetGrade(), self.curSelectPet:GetSkinId(), PetSkinEffectPath.HEAD_ICON_DISPATCH)
+    self.petHeadIcon:LoadImage(head)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomMining.StartButtonOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonMazeRoomMining:StartButtonOnClick(go)
   if self._selectRoundNum < 1 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_maze_ore_room_tips_choose_round2"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_season_maze_ore_room_tips_choose_round2"))
+    return
   end
   if not self.curSelectPet then
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_maze_ore_room_tips_choose_pet"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_season_maze_ore_room_tips_choose_pet"))
+    return
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnReqFinishRoom, self)
+  GameGlobal.TaskManager():StartTask(self.OnReqFinishRoom, self)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomMining.OnReqFinishRoom = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonMazeRoomMining:OnReqFinishRoom(TT)
   local res = AsyncRequestRes:New()
   self:Lock("UISeasonMazeRoomMining:ReqFinishRoom")
-  self._response = (self._component):HandleSeasonMazeOre(TT, res, (self.curSelectPet):GetTemplateID(), true, self._selectRoundServerIndex)
+  self._response = self._component:HandleSeasonMazeOre(TT, res, self.curSelectPet:GetTemplateID(), true, self._selectRoundServerIndex)
   self:UnLock("UISeasonMazeRoomMining:ReqFinishRoom")
   if res and res:GetSucc() then
-    self:OnHideUI((self._response).reward)
+    self:OnHideUI(self._response.reward)
   else
     local result = res:GetResult()
-    ;
-    (Log.error)("###[UISeasonMazeRoomMining] HandleSeasonMazeOre fail ! result : ", result)
-    if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-      return 
+    Log.error("###[UISeasonMazeRoomMining] HandleSeasonMazeOre fail ! result : ", result)
+    if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomMining.GiveUpButtonOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  (UISeasonMazeModule.PopMsgBox)((StringTable.Get)("str_season_maze_room_ore_title"), (StringTable.Get)("str_season_maze_room_ore_give_up_confirm"), SeasonMazeMsgBoxType.OkCancel, function()
-    -- function num : 0_12_0 , upvalues : self
+function UISeasonMazeRoomMining:GiveUpButtonOnClick(go)
+  UISeasonMazeModule.PopMsgBox(StringTable.Get("str_season_maze_room_ore_title"), StringTable.Get("str_season_maze_room_ore_give_up_confirm"), SeasonMazeMsgBoxType.OkCancel, function()
     self:OnHideUI()
-  end
-)
+  end)
 end
-
-

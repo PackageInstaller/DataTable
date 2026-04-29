@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_switch_2grid_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParamSwitch2GridTrap", SkillDamageEffectParam)
 SkillEffectParamSwitch2GridTrap = SkillEffectParamSwitch2GridTrap
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamSwitch2GridTrap.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamSwitch2GridTrap:Constructor(t)
   self._trapID = t.trapID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSwitch2GridTrap.GetTrapID = function(self)
-  -- function num : 0_1
+function SkillEffectParamSwitch2GridTrap:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSwitch2GridTrap.GetEffectType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectParamSwitch2GridTrap:GetEffectType()
   return SkillEffectType.Switch2GridTrap
 end
-
-

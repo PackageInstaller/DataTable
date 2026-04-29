@@ -1,79 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_gift/ui_discovery_gift_controller_award.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiscoveryGiftControllerAward", UICustomWidget)
 UIDiscoveryGiftControllerAward = UIDiscoveryGiftControllerAward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiscoveryGiftControllerAward.Constructor = function(self)
-  -- function num : 0_0
+function UIDiscoveryGiftControllerAward:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryGiftControllerAward.OnShow = function(self)
-  -- function num : 0_1
+function UIDiscoveryGiftControllerAward:OnShow()
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._tex = self:GetUIComponent("UILocalizationText", "tex")
   self._anim = self:GetUIComponent("Animation", "UIDiscoveryGiftControllerAward")
   self._alpha = self:GetUIComponent("CanvasGroup", "Root")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryGiftControllerAward.OnHide = function(self)
-  -- function num : 0_2
+function UIDiscoveryGiftControllerAward:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryGiftControllerAward.SetData = function(self, award, click, yieldTime)
-  -- function num : 0_3 , upvalues : _ENV
+function UIDiscoveryGiftControllerAward:SetData(award, click, yieldTime)
   self._click = click
   self._award = award
-  local assetid = (self._award).templateId
-  local count = (self._award).count
+  local assetid = self._award.templateId
+  local count = self._award.count
   self._itemid = assetid
-  local cfg = (Cfg.cfg_item)[assetid]
-  ;
-  (self._icon):LoadImage(cfg.Icon)
-  ;
-  (self._tex):SetText(count)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R7 in 'UnsetPending'
-
-  if yieldTime and yieldTime > 0 then
-    (self._alpha).alpha = 0
-    self._timer = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_3_0 , upvalues : self
-    (self._anim):Play("uieff_UIDiscoveryGiftControllerAward_in")
-  end
-)
+  local cfg = Cfg.cfg_item[assetid]
+  self._icon:LoadImage(cfg.Icon)
+  self._tex:SetText(count)
+  if yieldTime and 0 < yieldTime then
+    self._alpha.alpha = 0
+    self._timer = GameGlobal.Timer():AddEvent(yieldTime, function()
+      self._anim:Play("uieff_UIDiscoveryGiftControllerAward_in")
+    end)
   else
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._alpha).alpha = 1
+    self._alpha.alpha = 1
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryGiftControllerAward.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIDiscoveryGiftControllerAward:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryGiftControllerAward.IconOnClick = function(self, go)
-  -- function num : 0_5
+function UIDiscoveryGiftControllerAward:IconOnClick(go)
   if self._click then
-    (self._click)(self._itemid, (go.transform).position)
+    self._click(self._itemid, go.transform.position)
   end
 end
-
-

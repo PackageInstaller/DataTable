@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn17n46/fishing_game/ui_cn17_n46_fishing_game_ranking_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN17N46FishingGameRankingListItem", UICustomWidget)
 UICN17N46FishingGameRankingListItem = UICN17N46FishingGameRankingListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN17N46FishingGameRankingListItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN17N46FishingGameRankingListItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameRankingListItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN17N46FishingGameRankingListItem:InitWidget()
   self.rankImg = self:GetUIComponent("Image", "rankImg")
   self.rankText = self:GetUIComponent("UILocalizedTMP", "rankText")
   self.rankImgObj = self:GetGameObject("rankImg")
@@ -28,147 +18,100 @@ UICN17N46FishingGameRankingListItem.InitWidget = function(self)
   self.rank1ImgObj = self:GetGameObject("rank1")
   self.rank2ImgObj = self:GetGameObject("rank2")
   self.rank3ImgObj = self:GetGameObject("rank3")
-  ;
-  (self.rank1ImgObj):SetActive(false)
-  ;
-  (self.rank2ImgObj):SetActive(false)
-  ;
-  (self.rank3ImgObj):SetActive(false)
+  self.rank1ImgObj:SetActive(false)
+  self.rank2ImgObj:SetActive(false)
+  self.rank3ImgObj:SetActive(false)
   self.selfBgObj = self:GetGameObject("selfBg")
-  ;
-  (self.selfBgObj):SetActive(false)
+  self.selfBgObj:SetActive(false)
   self.selectQunObj = self:GetGameObject("selectQun")
-  ;
-  (self.selectQunObj):SetActive(false)
-  self.atlas = (self:RootUIOwner()):GetAsset("SeasonMaze.spriteatlas", LoadType.SpriteAtlas)
+  self.selectQunObj:SetActive(false)
+  self.atlas = self:RootUIOwner():GetAsset("SeasonMaze.spriteatlas", LoadType.SpriteAtlas)
   self.rootObj = self:GetGameObject("root")
-  self.nameColor = {[1] = "a0853f", [2] = "658091", [3] = "af9175"}
+  self.nameColor = {
+    [1] = "a0853f",
+    [2] = "658091",
+    [3] = "af9175"
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameRankingListItem.SetNull = function(self)
-  -- function num : 0_2
-  (self.rootObj):SetActive(false)
+function UICN17N46FishingGameRankingListItem:SetNull()
+  self.rootObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameRankingListItem.SetData = function(self, rank, playerName, damage, headBgID, headIconID, frameID, isRealPlayer, isMyself, pstid, isInScroll)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.rootObj):SetActive(true)
-  ;
-  (self.rank1ImgObj):SetActive(false)
-  ;
-  (self.rank2ImgObj):SetActive(false)
-  ;
-  (self.rank3ImgObj):SetActive(false)
+function UICN17N46FishingGameRankingListItem:SetData(rank, playerName, damage, headBgID, headIconID, frameID, isRealPlayer, isMyself, pstid, isInScroll)
+  self.rootObj:SetActive(true)
+  self.rank1ImgObj:SetActive(false)
+  self.rank2ImgObj:SetActive(false)
+  self.rank3ImgObj:SetActive(false)
   self.pstid = pstid
   self.isRealPlayer = isRealPlayer
   self.isMyself = isMyself
   self.isInScroll = isInScroll
   if not self.isInScroll then
-    (self.selfBgObj):SetActive(true)
-    ;
-    (self.selectQunObj):SetActive(false)
+    self.selfBgObj:SetActive(true)
+    self.selectQunObj:SetActive(false)
   else
-    ;
-    (self.selfBgObj):SetActive(false)
-    ;
-    (self.selectQunObj):SetActive(self.isMyself)
+    self.selfBgObj:SetActive(false)
+    self.selectQunObj:SetActive(self.isMyself)
   end
-  if not isRealPlayer or not playerName then
-    local name = (StringTable.Get)(playerName)
-  end
+  local name = isRealPlayer and playerName or StringTable.Get(playerName)
   if rank <= 3 then
-    local str1 = "<color=#" .. (self.nameColor)[rank] .. ">" .. rank .. "</color>"
+    local str1 = "<color=#" .. self.nameColor[rank] .. ">" .. rank .. "</color>"
     if rank == 1 then
-      (self.rank1ImgObj):SetActive(true)
-      ;
-      (self.rankText):SetText(str1)
-    else
-      if rank == 2 then
-        (self.rank2ImgObj):SetActive(true)
-        ;
-        (self.rankText):SetText(str1)
-      else
-        if rank == 3 then
-          (self.rank3ImgObj):SetActive(true)
-          ;
-          (self.rankText):SetText(str1)
-        end
-      end
+      self.rank1ImgObj:SetActive(true)
+      self.rankText:SetText(str1)
+    elseif rank == 2 then
+      self.rank2ImgObj:SetActive(true)
+      self.rankText:SetText(str1)
+    elseif rank == 3 then
+      self.rank3ImgObj:SetActive(true)
+      self.rankText:SetText(str1)
     end
-    ;
-    (self.rankTextObj):SetActive(true)
+    self.rankTextObj:SetActive(true)
   else
-    do
-      do
-        local str = rank .. ""
-        if rank > 100 then
-          str = "100+"
-        end
-        ;
-        (self.rankText):SetText(str)
-        ;
-        (self.rankTextObj):SetActive(true)
-        ;
-        (self.name):SetText(name)
-        local bgIconName, iconTag = (HelperProxy:GetInstance()):GetHeadBgName(headBgID)
-        ;
-        (self.headBg):LoadImage(bgIconName)
-        local iconName, iconTag = (HelperProxy:GetInstance()):GetHeadIconName(headIconID)
-        ;
-        (self.head):LoadImage(iconName)
-        if frameID ~= nil then
-          local frameName, iconTag = (HelperProxy:GetInstance()):GetHeadFrameName(frameID)
-          ;
-          ((self.frame).gameObject):SetActive(true)
-          ;
-          (self.frame):LoadImage(frameName)
-        else
-          do
-            ;
-            ((self.frame).gameObject):SetActive(false)
-            local len = (string.len)(damage .. "")
-            local str = ""
-            if len < 8 then
-              local holder = ""
-              for i = 1, 8 - len do
-                holder = holder .. "0"
-              end
-              str = damage
-            else
-              do
-                str = damage .. ""
-                ;
-                (self.damage):SetText(str)
-              end
-            end
-          end
-        end
-      end
+    local str = rank .. ""
+    if 100 < rank then
+      str = "100+"
     end
+    self.rankText:SetText(str)
+    self.rankTextObj:SetActive(true)
   end
+  self.name:SetText(name)
+  local bgIconName, iconTag = HelperProxy:GetInstance():GetHeadBgName(headBgID)
+  self.headBg:LoadImage(bgIconName)
+  local iconName, iconTag = HelperProxy:GetInstance():GetHeadIconName(headIconID)
+  self.head:LoadImage(iconName)
+  if frameID ~= nil then
+    local frameName, iconTag = HelperProxy:GetInstance():GetHeadFrameName(frameID)
+    self.frame.gameObject:SetActive(true)
+    self.frame:LoadImage(frameName)
+  else
+    self.frame.gameObject:SetActive(false)
+  end
+  local len = string.len(damage .. "")
+  local str = ""
+  if len < 8 then
+    local holder = ""
+    for i = 1, 8 - len do
+      holder = holder .. "0"
+    end
+    str = damage
+  else
+    str = damage .. ""
+  end
+  self.damage:SetText(str)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameRankingListItem.BgOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UICN17N46FishingGameRankingListItem:BgOnClick()
   if not self.isRealPlayer then
-    return 
+    return
   end
   if self.isMyself then
     self:ShowDialog("UIPlayerInfoController", PlayerInfoFrom.MainLobby)
-    return 
+    return
   end
   local chatFriendManager = ChatFriendManager:New()
   chatFriendManager:Request(false, true, true, function(mgr)
-    -- function num : 0_4_0 , upvalues : self, _ENV
     self:ShowDialog("UIPlayerInfoController", PlayerInfoFrom.WorldBoss, self.pstid, mgr)
-  end
-)
+  end)
 end
-
-

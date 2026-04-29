@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_attack_effect_animation_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillAttackEffectAnimationPhase", PlaySkillPhaseBase)
 PlaySkillAttackEffectAnimationPhase = PlaySkillAttackEffectAnimationPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillAttackEffectAnimationPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillAttackEffectAnimationPhase:PlayFlight(TT, casterEntity, phaseParam)
   local attackAnimParam = phaseParam
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local isFinalAttack = skillEffectResultContainer:IsFinalAttack()
   local attackAnimName = attackAnimParam:GetAnimationName()
   if attackAnimName then
@@ -20,63 +13,47 @@ PlaySkillAttackEffectAnimationPhase.PlayFlight = function(self, TT, casterEntity
   end
   local attackEffectID = attackAnimParam:GetCastEffectID()
   if attackEffectID then
-    local effectSvc = (self._world):GetService("Effect")
-    if effectSvc:GetEffectHolder(attackEffectID) ~= "target" then
+    local effectSvc = self._world:GetService("Effect")
+    if "target" ~= effectSvc:GetEffectHolder(attackEffectID) then
       local e = casterEntity
       effectSvc:CreateEffect(attackEffectID, e)
     end
   end
-  do
-    local skillID = skillEffectResultContainer:GetSkillID()
-    local taskidArray = {}
-    local index = 1
-    while 1 do
-      local damageResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Damage, index)
-      if damageResult then
-        local castDamage = damageResult:GetDamageInfo(1)
-        local beAttackEntityID = damageResult:GetTargetID()
-        local targetEntity = (self._world):GetEntityByID(beAttackEntityID)
-        do
-          local curDeadTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self.PlayOneAttack, self, casterEntity, targetEntity, attackAnimParam, castDamage, isFinalAttack, damageResult:GetGridPos(), skillID)
-          ;
-          (table.insert)(taskidArray, curDeadTaskID)
-          index = index + 1
-          -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  local skillID = skillEffectResultContainer:GetSkillID()
+  local taskidArray = {}
+  local index = 1
+  while true do
+    local damageResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Damage, index)
+    if not damageResult then
+      break
     end
-    JOIN_TASK_ARRAY(TT, taskidArray)
+    local castDamage = damageResult:GetDamageInfo(1)
+    local beAttackEntityID = damageResult:GetTargetID()
+    local targetEntity = self._world:GetEntityByID(beAttackEntityID)
+    local curDeadTaskID = GameGlobal.TaskManager():CoreGameStartTask(self.PlayOneAttack, self, casterEntity, targetEntity, attackAnimParam, castDamage, isFinalAttack, damageResult:GetGridPos(), skillID)
+    table.insert(taskidArray, curDeadTaskID)
+    index = index + 1
   end
+  JOIN_TASK_ARRAY(TT, taskidArray)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillAttackEffectAnimationPhase.PlayOneAttack = function(self, TT, casterEntity, targetEntity, attackAnimParam, damage, isFinalAttack, damageTextPos, skillID)
-  -- function num : 0_1 , upvalues : _ENV
-  local resvc = (self._world):GetService("RenderEntity")
+function PlaySkillAttackEffectAnimationPhase:PlayOneAttack(TT, casterEntity, targetEntity, attackAnimParam, damage, isFinalAttack, damageTextPos, skillID)
+  local resvc = self._world:GetService("RenderEntity")
   resvc:TurnToTarget(casterEntity, targetEntity)
   local hitPointDelay = attackAnimParam:GetHitPointDelay()
-  if hitPointDelay > 0 then
+  if 0 < hitPointDelay then
     YIELD(TT, hitPointDelay)
   end
   if targetEntity ~= nil then
     local hitAnimName = attackAnimParam:GetHitAnimation()
     local hitEffectID = attackAnimParam:GetHitEffectID()
-    local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(hitAnimName)):SetHandleBeHitParam_HitEffectID(hitEffectID)):SetHandleBeHitParam_DamageInfo(damage)):SetHandleBeHitParam_DamagePos(damageTextPos)):SetHandleBeHitParam_HitTurnTarget(attackAnimParam:HitTurnToTarget())):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(isFinalAttack)):SetHandleBeHitParam_SkillID(skillID)
-    ;
-    (self:SkillService()):HandleBeHit(TT, beHitParam)
+    local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(hitAnimName):SetHandleBeHitParam_HitEffectID(hitEffectID):SetHandleBeHitParam_DamageInfo(damage):SetHandleBeHitParam_DamagePos(damageTextPos):SetHandleBeHitParam_HitTurnTarget(attackAnimParam:HitTurnToTarget()):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(isFinalAttack):SetHandleBeHitParam_SkillID(skillID)
+    self:SkillService():HandleBeHit(TT, beHitParam)
   end
-  do
-    local castTotalTime = attackAnimParam:GetCastTotalTime()
-    local remainTime = castTotalTime - hitPointDelay
-    YIELD(TT, remainTime)
-    if isFinalAttack == true then
-      YIELD(TT, BattleConst.FreezeDuration)
-    end
+  local castTotalTime = attackAnimParam:GetCastTotalTime()
+  local remainTime = castTotalTime - hitPointDelay
+  YIELD(TT, remainTime)
+  if isFinalAttack == true then
+    YIELD(TT, BattleConst.FreezeDuration)
   end
 end
-
-

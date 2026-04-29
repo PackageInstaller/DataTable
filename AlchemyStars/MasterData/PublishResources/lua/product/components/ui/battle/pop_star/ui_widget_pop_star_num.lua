@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/pop_star/ui_widget_pop_star_num.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetPopStarNum", UICustomWidget)
 UIWidgetPopStarNum = UIWidgetPopStarNum
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetPopStarNum.Constructor = function(self)
-  -- function num : 0_0
+function UIWidgetPopStarNum:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarNum.OnShow = function(self)
-  -- function num : 0_1
+function UIWidgetPopStarNum:OnShow()
   self._anim = self:GetUIComponent("Animation", "UIWidgetPopStarNum")
   self._root = self:GetGameObject("root")
   self._selectRect = self:GetUIComponent("RectTransform", "root")
@@ -27,52 +17,31 @@ UIWidgetPopStarNum.OnShow = function(self)
   self:SetSuperGridVisible(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarNum.OnHide = function(self)
-  -- function num : 0_2
+function UIWidgetPopStarNum:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarNum.SetSuperGridVisible = function(self, visible)
-  -- function num : 0_3
-  (self._goLeftParenthesis):SetActive(visible)
-  ;
-  (self._goAdd):SetActive(visible)
-  ;
-  (self._goSuperGridCount):SetActive(visible)
-  ;
-  (self._goRightParenthesis):SetActive(visible)
+function UIWidgetPopStarNum:SetSuperGridVisible(visible)
+  self._goLeftParenthesis:SetActive(visible)
+  self._goAdd:SetActive(visible)
+  self._goSuperGridCount:SetActive(visible)
+  self._goRightParenthesis:SetActive(visible)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarNum.Init = function(self, normalGridNum, superGridNum)
-  -- function num : 0_4 , upvalues : _ENV
-  (self:GetGameObject()):SetActive(true)
-  ;
-  (self._txtNormalGridCount):SetText(tostring(normalGridNum))
-  if superGridNum and superGridNum > 0 then
-    (self._txtSuperGridCount):SetText(tostring(superGridNum))
+function UIWidgetPopStarNum:Init(normalGridNum, superGridNum)
+  self:GetGameObject():SetActive(true)
+  self._txtNormalGridCount:SetText(tostring(normalGridNum))
+  if superGridNum and 0 < superGridNum then
+    self._txtSuperGridCount:SetText(tostring(superGridNum))
     self:SetSuperGridVisible(true)
   else
     self:SetSuperGridVisible(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarNum.HideNum = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
-    (self._anim):Play("uieff_UIWidgetPopStarNum_out")
+function UIWidgetPopStarNum:HideNum()
+  GameGlobal.TaskManager():StartTask(function(TT)
+    self._anim:Play("uieff_UIWidgetPopStarNum_out")
     YIELD(TT, 500)
-    ;
-    (self:GetGameObject()):SetActive(false)
-  end
-)
+    self:GetGameObject():SetActive(false)
+  end)
 end
-
-

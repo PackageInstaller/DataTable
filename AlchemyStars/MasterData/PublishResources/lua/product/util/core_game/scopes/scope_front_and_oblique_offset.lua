@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_front_and_oblique_offset.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_FrontAndObliqueOffset", SkillScopeCalculator_Base)
 SkillScopeCalculator_FrontAndObliqueOffset = SkillScopeCalculator_FrontAndObliqueOffset
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_FrontAndObliqueOffset.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local world = (self._gridFilter)._world
+function SkillScopeCalculator_FrontAndObliqueOffset:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local world = self._gridFilter._world
   local utilData = world:GetService("UtilData")
   local cross_area = {}
   local wholeArea = {}
@@ -20,68 +13,48 @@ SkillScopeCalculator_FrontAndObliqueOffset.CalcRange = function(self, scopeType,
   if attack == -1 then
     local result = SkillScopeResult:New(SkillScopeType.FrontAndObliqueOffset, centerPos, {targetPos}, {targetPos})
     return result
-  else
-    do
-      if attack == -2 then
-        cross_area = self:CalcMultiCenterCrossList(targetPos, 1)
-        local result = SkillScopeResult:New(SkillScopeType.FrontAndObliqueOffset, centerPos, cross_area, wholeArea)
-        return result
+  elseif attack == -2 then
+    cross_area, wholeArea = self:CalcMultiCenterCrossList(targetPos, 1)
+    local result = SkillScopeResult:New(SkillScopeType.FrontAndObliqueOffset, centerPos, cross_area, wholeArea)
+    return result
+  end
+  local blockGridTrapPosList = self._gridFilter:GetBlockGridTrapPosList()
+  local blockMovePosList = self._gridFilter:GetBlockMovePosList()
+  local blocks = {}
+  table.appendArray(blocks, blockGridTrapPosList)
+  table.appendArray(blocks, blockMovePosList)
+  if table.icontains(blocks, targetPos) then
+    local battleFlags = world:BattleFlags()
+    local monsterList, monsterPosList = self._gridFilter:SelectAllMonster(casterEntity)
+    local curEntityID
+    for _, monster in pairs(monsterList) do
+      local monsterGridPos = monster:GetGridPosition()
+      if monsterGridPos == centerPos then
+        curEntityID = monster:GetID()
+        break
       end
-      do
-        local blockGridTrapPosList = (self._gridFilter):GetBlockGridTrapPosList()
-        local blockMovePosList = (self._gridFilter):GetBlockMovePosList()
-        local blocks = {}
-        ;
-        (table.appendArray)(blocks, blockGridTrapPosList)
-        ;
-        (table.appendArray)(blocks, blockMovePosList)
-        if (table.icontains)(blocks, targetPos) then
-          local battleFlags = world:BattleFlags()
-          local monsterList, monsterPosList = (self._gridFilter):SelectAllMonster(casterEntity)
-          local curEntityID = nil
-          for _,monster in pairs(monsterList) do
-            local monsterGridPos = monster:GetGridPosition()
-            if monsterGridPos == centerPos then
-              curEntityID = monster:GetID()
-              break
-            end
-          end
-          do
-            local lastObliqueOffset = battleFlags:GetFrontAndObliqueOffsetData(curEntityID)
-            if not lastObliqueOffset then
-              lastObliqueOffset = Vector2(1, 0)
-            end
-            lastObliqueOffset = -lastObliqueOffset
-            targetPos = targetPos + lastObliqueOffset
-            do
-              local isValidGrid = utilData:IsValidPiecePos(targetPos)
-              if (table.icontains)(blocks, targetPos) or not isValidGrid then
-                lastObliqueOffset = -lastObliqueOffset
-                targetPos = targetPos + lastObliqueOffset * 2
-                isValidGrid = utilData:IsValidPiecePos(targetPos)
-                if (table.icontains)(blocks, targetPos) or not isValidGrid then
-                  targetPos = centerPos
-                end
-              end
-              do
-                if attack == 0 then
-                  local result = SkillScopeResult:New(SkillScopeType.FrontAndObliqueOffset, centerPos, {targetPos}, {targetPos})
-                  return result
-                end
-                -- DECOMPILER ERROR at PC156: Overwrote pending register: R12 in 'AssignReg'
-
-                if targetPos then
-                  cross_area = self:CalcMultiCenterCrossList(targetPos, 1)
-                end
-                local result = SkillScopeResult:New(SkillScopeType.FrontAndObliqueOffset, centerPos, cross_area, wholeArea)
-                return result
-              end
-            end
-          end
-        end
+    end
+    local lastObliqueOffset = battleFlags:GetFrontAndObliqueOffsetData(curEntityID)
+    lastObliqueOffset = lastObliqueOffset or Vector2(1, 0)
+    lastObliqueOffset = -lastObliqueOffset
+    targetPos = targetPos + lastObliqueOffset
+    local isValidGrid = utilData:IsValidPiecePos(targetPos)
+    if table.icontains(blocks, targetPos) or not isValidGrid then
+      lastObliqueOffset = -lastObliqueOffset
+      targetPos = targetPos + lastObliqueOffset * 2
+      isValidGrid = utilData:IsValidPiecePos(targetPos)
+      if table.icontains(blocks, targetPos) or not isValidGrid then
+        targetPos = centerPos
       end
     end
   end
+  if attack == 0 then
+    local result = SkillScopeResult:New(SkillScopeType.FrontAndObliqueOffset, centerPos, {targetPos}, {targetPos})
+    return result
+  end
+  if targetPos then
+    cross_area, wholeArea = self:CalcMultiCenterCrossList(targetPos, 1)
+  end
+  local result = SkillScopeResult:New(SkillScopeType.FrontAndObliqueOffset, centerPos, cross_area, wholeArea)
+  return result
 end
-
-

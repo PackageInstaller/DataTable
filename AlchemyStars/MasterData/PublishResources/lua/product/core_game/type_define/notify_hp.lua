@@ -1,308 +1,183 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/notify_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("NTHPCChange", INotifyBase)
 NTHPCChange = NTHPCChange
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-NTHPCChange.GetNotifyType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.exception)("notify object not have notify type!")
+function NTHPCChange:GetNotifyType()
+  Log.exception("notify object not have notify type!")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-NTHPCChange.IsHPIncrease = function(self)
-  -- function num : 0_1
-  do return self._changeHP > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function NTHPCChange:IsHPIncrease()
+  return self._changeHP > 0
 end
 
 _class("NTMonsterHPCChange", NTHPCChange)
 NTMonsterHPCChange = NTMonsterHPCChange
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-NTMonsterHPCChange.Constructor = function(self, entity, hp, maxhp, notifyIndex)
-  -- function num : 0_2
+function NTMonsterHPCChange:Constructor(entity, hp, maxhp, notifyIndex)
   self._ownerEntity = entity
   self.hp = hp
   self.maxhp = maxhp
   self.notifyIndex = notifyIndex
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.GetNotifyIndex = function(self)
-  -- function num : 0_3
+function NTMonsterHPCChange:GetNotifyIndex()
   return self.notifyIndex
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.GetNotifyType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function NTMonsterHPCChange:GetNotifyType()
   return NotifyType.MonsterHPCChange
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.GetNotifyEntity = function(self)
-  -- function num : 0_5
+function NTMonsterHPCChange:GetNotifyEntity()
   return self._ownerEntity
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.GetMaxHP = function(self)
-  -- function num : 0_6
+function NTMonsterHPCChange:GetMaxHP()
   return self.maxhp
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.GetHP = function(self)
-  -- function num : 0_7
+function NTMonsterHPCChange:GetHP()
   return self.hp
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.GetHPPercent = function(self)
-  -- function num : 0_8
+function NTMonsterHPCChange:GetHPPercent()
   return self.hp / self.maxhp * 100
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.SetChangeHP = function(self, changeHP)
-  -- function num : 0_9
+function NTMonsterHPCChange:SetChangeHP(changeHP)
   self._changeHP = changeHP
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.GetChangeHP = function(self)
-  -- function num : 0_10
+function NTMonsterHPCChange:GetChangeHP()
   return self._changeHP
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.SetDamageSrcEntityID = function(self, srcID)
-  -- function num : 0_11
+function NTMonsterHPCChange:SetDamageSrcEntityID(srcID)
   self._damageSrcEntityID = srcID
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.GetDamageSrcEntityID = function(self)
-  -- function num : 0_12
+function NTMonsterHPCChange:GetDamageSrcEntityID()
   return self._damageSrcEntityID
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.SetDamageType = function(self, damageType)
-  -- function num : 0_13
+function NTMonsterHPCChange:SetDamageType(damageType)
   self._damageType = damageType
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.GetDamageType = function(self)
-  -- function num : 0_14
+function NTMonsterHPCChange:GetDamageType()
   return self._damageType
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.SetAttackPos = function(self, attackPos)
-  -- function num : 0_15
+function NTMonsterHPCChange:SetAttackPos(attackPos)
   self._attackPos = attackPos
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.GetAttackPos = function(self)
-  -- function num : 0_16
+function NTMonsterHPCChange:GetAttackPos()
   return self._attackPos
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.SetAttackEntityID = function(self, attackEntityID)
-  -- function num : 0_17
+function NTMonsterHPCChange:SetAttackEntityID(attackEntityID)
   self._attackEntityID = attackEntityID
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.GetAttackEntityID = function(self)
-  -- function num : 0_18
+function NTMonsterHPCChange:GetAttackEntityID()
   return self._attackEntityID
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.SetDamageInfo = function(self, damageInfo)
-  -- function num : 0_19
+function NTMonsterHPCChange:SetDamageInfo(damageInfo)
   self._damageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.GetDamageInfo = function(self)
-  -- function num : 0_20
+function NTMonsterHPCChange:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.SetCumulativeTriggerNum = function(self, num, key)
-  -- function num : 0_21
+function NTMonsterHPCChange:SetCumulativeTriggerNum(num, key)
   if not self._cumulativeTriggerNum then
     self._cumulativeTriggerNum = {}
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._cumulativeTriggerNum)[key] = num
+  self._cumulativeTriggerNum[key] = num
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterHPCChange.GetCumulativeTriggerNum = function(self, key)
-  -- function num : 0_22
+function NTMonsterHPCChange:GetCumulativeTriggerNum(key)
   if not self._cumulativeTriggerNum then
     self._cumulativeTriggerNum = {}
   end
-  return (self._cumulativeTriggerNum)[key]
+  return self._cumulativeTriggerNum[key]
 end
 
 _class("NTTrapHpChange", NTHPCChange)
 NTTrapHpChange = NTTrapHpChange
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
 
-NTTrapHpChange.Constructor = function(self, entity, hp, maxhp)
-  -- function num : 0_23
+function NTTrapHpChange:Constructor(entity, hp, maxhp)
   self._ownerEntity = entity
   self.hp = hp
   self.maxhp = maxhp
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTrapHpChange.GetNotifyType = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function NTTrapHpChange:GetNotifyType()
   return NotifyType.TrapHpChange
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTrapHpChange.GetNotifyEntity = function(self)
-  -- function num : 0_25
+function NTTrapHpChange:GetNotifyEntity()
   return self._ownerEntity
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTrapHpChange.GetHP = function(self)
-  -- function num : 0_26
+function NTTrapHpChange:GetHP()
   return self.hp
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTrapHpChange.GetMaxHP = function(self)
-  -- function num : 0_27
+function NTTrapHpChange:GetMaxHP()
   return self.maxhp
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTrapHpChange.GetHPPercent = function(self)
-  -- function num : 0_28
+function NTTrapHpChange:GetHPPercent()
   return self.hp / self.maxhp * 100
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTrapHpChange.SetChangeHP = function(self, changeHP)
-  -- function num : 0_29
+function NTTrapHpChange:SetChangeHP(changeHP)
   self._changeHP = changeHP
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTrapHpChange.GetChangeHP = function(self)
-  -- function num : 0_30
+function NTTrapHpChange:GetChangeHP()
   return self._changeHP
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTrapHpChange.SetDamageSrcEntityID = function(self, srcID)
-  -- function num : 0_31
+function NTTrapHpChange:SetDamageSrcEntityID(srcID)
   self._damageSrcEntityID = srcID
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTrapHpChange.GetDamageSrcEntityID = function(self)
-  -- function num : 0_32
+function NTTrapHpChange:GetDamageSrcEntityID()
   return self._damageSrcEntityID
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTrapHpChange.SetDamageType = function(self, damageType)
-  -- function num : 0_33
+function NTTrapHpChange:SetDamageType(damageType)
   self._damageType = damageType
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTrapHpChange.GetDamageType = function(self)
-  -- function num : 0_34
+function NTTrapHpChange:GetDamageType()
   return self._damageType
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTrapHpChange.SetDamageInfo = function(self, damageInfo)
-  -- function num : 0_35
+function NTTrapHpChange:SetDamageInfo(damageInfo)
   self._damageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTrapHpChange.GetDamageInfo = function(self)
-  -- function num : 0_36
+function NTTrapHpChange:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTrapHpChange.SetAttackPos = function(self, attackPos)
-  -- function num : 0_37
+function NTTrapHpChange:SetAttackPos(attackPos)
   self._attackPos = attackPos
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTrapHpChange.GetAttackPos = function(self)
-  -- function num : 0_38
+function NTTrapHpChange:GetAttackPos()
   return self._attackPos
 end
 
 _class("NTPlayerHPChange", NTHPCChange)
 NTPlayerHPChange = NTPlayerHPChange
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
 
-NTPlayerHPChange.Constructor = function(self, entity, hp, maxhp, hpSpilled, changeHp, damageSrcEntity)
-  -- function num : 0_39
+function NTPlayerHPChange:Constructor(entity, hp, maxhp, hpSpilled, changeHp, damageSrcEntity)
   self._ownerEntity = entity
   self.hp = hp
   self.maxhp = maxhp
@@ -312,116 +187,66 @@ NTPlayerHPChange.Constructor = function(self, entity, hp, maxhp, hpSpilled, chan
   self._damageSrcEntity = damageSrcEntity
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerHPChange.GetNotifyType = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function NTPlayerHPChange:GetNotifyType()
   return NotifyType.PlayerHPChange
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerHPChange.GetNotifyEntity = function(self)
-  -- function num : 0_41
+function NTPlayerHPChange:GetNotifyEntity()
   return self._ownerEntity
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerHPChange.GetDamageSrcEntity = function(self)
-  -- function num : 0_42
+function NTPlayerHPChange:GetDamageSrcEntity()
   return self._damageSrcEntity
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerHPChange.GetDamageSrcEntityID = function(self)
-  -- function num : 0_43
+function NTPlayerHPChange:GetDamageSrcEntityID()
   return self._damageSrcEntity
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerHPChange.GetHPSpilled = function(self)
-  -- function num : 0_44
+function NTPlayerHPChange:GetHPSpilled()
   return self.hpSpilled
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerHPChange.GetChangeHP = function(self)
-  -- function num : 0_45
+function NTPlayerHPChange:GetChangeHP()
   return self.changeHp
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerHPChange.GetMaxHP = function(self)
-  -- function num : 0_46
+function NTPlayerHPChange:GetMaxHP()
   return self.maxhp
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerHPChange.GetHP = function(self)
-  -- function num : 0_47
+function NTPlayerHPChange:GetHP()
   return self.hp
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerHPChange.GetHPPercent = function(self)
-  -- function num : 0_48
+function NTPlayerHPChange:GetHPPercent()
   return self.hp / self.maxhp * 100
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerHPChange.NeedCheckGameTurn = function(self)
-  -- function num : 0_49
+function NTPlayerHPChange:NeedCheckGameTurn()
   return false
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerHPChange.SetDamageType = function(self, damageType)
-  -- function num : 0_50
+function NTPlayerHPChange:SetDamageType(damageType)
   self._damageType = damageType
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerHPChange.GetDamageType = function(self)
-  -- function num : 0_51
+function NTPlayerHPChange:GetDamageType()
   return self._damageType
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerHPChange.SetAttackPos = function(self, attackPos)
-  -- function num : 0_52
+function NTPlayerHPChange:SetAttackPos(attackPos)
   self._attackPos = attackPos
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerHPChange.GetAttackPos = function(self)
-  -- function num : 0_53
+function NTPlayerHPChange:GetAttackPos()
   return self._attackPos
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerHPChange.SetDamageInfo = function(self, damageInfo)
-  -- function num : 0_54
+function NTPlayerHPChange:SetDamageInfo(damageInfo)
   self._damageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerHPChange.GetDamageInfo = function(self)
-  -- function num : 0_55
+function NTPlayerHPChange:GetDamageInfo()
   return self._damageInfo
 end
-
-

@@ -1,44 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/shop/ui_n33_lottery_get_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_get_item_controller")
 require("ui_n33_lottery_get_item_row_item")
 _class("UIN33LotteryGetItem", UIGetItemController)
 UIN33LotteryGetItem = UIN33LotteryGetItem
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN33LotteryGetItem._SpawnGetItemControllerItem = function(self, rowPool, count)
-  -- function num : 0_0
+function UIN33LotteryGetItem:_SpawnGetItemControllerItem(rowPool, count)
   rowPool:SpawnObjects("UIN33LotteryGetItemRowItem", count)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33LotteryGetItem._GetItemCallBack = function(self)
-  -- function num : 0_1
-  local callback = function(type, id, count)
-    -- function num : 0_1_0 , upvalues : self
+function UIN33LotteryGetItem:_GetItemCallBack()
+  local function callback(type, id, count)
     self:OnItemSelect(type, id, count)
   end
-
+  
   return callback
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33LotteryGetItem.OnItemSelect = function(self, type, id, count)
-  -- function num : 0_2
+function UIN33LotteryGetItem:OnItemSelect(type, id, count)
   if not self._selectInfo then
-    self._selectInfo = (self.selectInfoPool):SpawnObject("UIN33ShopSelectInfo")
+    self._selectInfo = self.selectInfoPool:SpawnObject("UIN33ShopSelectInfo")
   end
   local data = {}
   data.m_reward_type = type
   data.m_item_id = id
   data.m_lottery_count = count
-  ;
-  (self._selectInfo):SetData(data, nil, true, 0, true)
+  self._selectInfo:SetData(data, nil, true, 0, true)
 end
-
-

@@ -1,72 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/aircraft/aircraft_room/aircraft_evil_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("aircraft_room_base")
 _class("AircraftEvilRoom", AircraftRoomBase)
 AircraftEvilRoom = AircraftEvilRoom
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftEvilRoom.Constructor = function(self)
-  -- function num : 0_0
+function AircraftEvilRoom:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftEvilRoom.SetClientData = function(self, client_data)
-  -- function num : 0_1
+function AircraftEvilRoom:SetClientData(client_data)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftEvilRoom.GetEvilRoomConfig = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_evil_room)[self._roomid]
+function AircraftEvilRoom:GetEvilRoomConfig()
+  local cfg = Cfg.cfg_aircraft_evil_room[self._roomid]
   return cfg
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftEvilRoom.GetStoreLimit = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_evil_room)[self._roomid]
+function AircraftEvilRoom:GetStoreLimit()
+  local cfg = Cfg.cfg_aircraft_evil_room[self._roomid]
   local pet_add_cell = 1
   return cfg.CellCount, pet_add_cell
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftEvilRoom.GetSearchEvilStar = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_evil_room)[self._roomid]
+function AircraftEvilRoom:GetSearchEvilStar()
+  local cfg = Cfg.cfg_aircraft_evil_room[self._roomid]
   local pet_add_star = 1
-  return (cfg.SearchEvilCount)[1], (cfg.SearchEvilCount)[2], pet_add_star
+  return cfg.SearchEvilCount[1], cfg.SearchEvilCount[2], pet_add_star
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftEvilRoom.GetEvils = function(self)
-  -- function num : 0_5
+function AircraftEvilRoom:GetEvils()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftEvilRoom.ReleaseEvil = function(self, evil_id)
-  -- function num : 0_6
+function AircraftEvilRoom:ReleaseEvil(evil_id)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftEvilRoom.GetUpgradeInfo = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function AircraftEvilRoom:GetUpgradeInfo()
   local room_cfg = self:GetConfig()
-  local next_cfg = (Cfg.cfg_aircraft_room)[room_cfg.NextLevelID]
+  local next_cfg = Cfg.cfg_aircraft_room[room_cfg.NextLevelID]
   if next_cfg == nil then
     return nil
   end
   local cur_evilroom_cfg = self:GetEvilRoomConfig()
-  local next_evilroom_cfg = (Cfg.cfg_aircraft_evil_room)[room_cfg.NextLevelID]
+  local next_evilroom_cfg = Cfg.cfg_aircraft_evil_room[room_cfg.NextLevelID]
   if next_evilroom_cfg == nil then
     return nil
   end
@@ -81,26 +53,19 @@ AircraftEvilRoom.GetUpgradeInfo = function(self)
   local cur_pet_number = room_cfg.PetNum
   local next_pet_number = next_cfg.PetNum
   return {
-{cur_cell_count, next_cell_count}
-, 
-{cur_search_evil_star, next_search_evil_star}
-, 
-{cur_refresh_count, next_refresh_count}
-, 
-{cur_search_count, next_search_count}
-, 
-{cur_pet_number, next_pet_number}
-}
+    {cur_cell_count, next_cell_count},
+    {cur_search_evil_star, next_search_evil_star},
+    {cur_refresh_count, next_refresh_count},
+    {cur_search_count, next_search_count},
+    {cur_pet_number, next_pet_number}
+  }
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftEvilRoom.GetDegradeInfo = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function AircraftEvilRoom:GetDegradeInfo()
   local room_cfg = self:GetConfig()
-  local prev_cfg = (Cfg.cfg_aircraft_room)[room_cfg.PrevLevelID]
+  local prev_cfg = Cfg.cfg_aircraft_room[room_cfg.PrevLevelID]
   local cur_evilroom_cfg = self:GetEvilRoomConfig()
-  local prev_evilroom_cfg = (Cfg.cfg_aircraft_evil_room)[room_cfg.PrevLevelID]
+  local prev_evilroom_cfg = Cfg.cfg_aircraft_evil_room[room_cfg.PrevLevelID]
   local cur_cell_count = cur_evilroom_cfg.CellCount
   local prev_cell_count = 0
   if prev_evilroom_cfg ~= nil then
@@ -127,16 +92,10 @@ AircraftEvilRoom.GetDegradeInfo = function(self)
     prev_pet_number = prev_cfg.PetNum
   end
   return {
-{cur_cell_count, prev_cell_count}
-, 
-{cur_search_evil_star, prev_search_evil_star}
-, 
-{cur_refresh_count, prev_refresh_count}
-, 
-{cur_search_count, prev_search_count}
-, 
-{cur_pet_number, prev_pet_number}
-}
+    {cur_cell_count, prev_cell_count},
+    {cur_search_evil_star, prev_search_evil_star},
+    {cur_refresh_count, prev_refresh_count},
+    {cur_search_count, prev_search_count},
+    {cur_pet_number, prev_pet_number}
+  }
 end
-
-

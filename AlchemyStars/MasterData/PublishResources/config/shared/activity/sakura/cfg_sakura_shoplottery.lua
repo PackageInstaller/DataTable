@@ -1,11 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/activity/sakura/cfg_sakura_shoplottery.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Cost = 2, Times = 3, TCost = 4}
+local key = {
+  ID = 1,
+  Cost = 2,
+  Times = 3,
+  TCost = 4
+}
 local config = {
-{1, 100, 10, 1000}
+  {
+    1,
+    100,
+    10,
+    1000
+  }
 }
 return config, "ID", key
-

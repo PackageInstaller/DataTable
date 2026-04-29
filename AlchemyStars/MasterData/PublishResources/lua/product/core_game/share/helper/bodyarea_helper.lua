@@ -1,71 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/helper/bodyarea_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BodyAreaHelper", Object)
 BodyAreaHelper = BodyAreaHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BodyAreaHelper.IsPosInBodyArea = function(bodyArea, pos)
-  -- function num : 0_0 , upvalues : _ENV
-  for i,v in ipairs(bodyArea) do
+function BodyAreaHelper.IsPosInBodyArea(bodyArea, pos)
+  for i, v in ipairs(bodyArea) do
     if v.x == pos.x and v.y == pos.y then
       return true
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BodyAreaHelper.GetBodyAreaLeft = function(area)
-  -- function num : 0_1
-  local x = (area[1]).x
+function BodyAreaHelper.GetBodyAreaLeft(area)
+  local x = area[1].x
   for i = 2, #area do
-    if (area[i]).x < x then
-      x = (area[i]).x
+    if x > area[i].x then
+      x = area[i].x
     end
   end
   return x
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BodyAreaHelper.GetBodyAreaRight = function(area)
-  -- function num : 0_2
-  local x = (area[1]).x
+function BodyAreaHelper.GetBodyAreaRight(area)
+  local x = area[1].x
   for i = 2, #area do
-    if x < (area[i]).x then
-      x = (area[i]).x
+    if x < area[i].x then
+      x = area[i].x
     end
   end
   return x
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BodyAreaHelper.GetBodyAreaUp = function(area)
-  -- function num : 0_3
-  local y = (area[1]).y
+function BodyAreaHelper.GetBodyAreaUp(area)
+  local y = area[1].y
   for i = 2, #area do
-    if y < (area[i]).y then
-      y = (area[i]).y
+    if y < area[i].y then
+      y = area[i].y
     end
   end
   return y
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BodyAreaHelper.GetBodyAreaDown = function(area)
-  -- function num : 0_4
-  local y = (area[1]).y
+function BodyAreaHelper.GetBodyAreaDown(area)
+  local y = area[1].y
   for i = 2, #area do
-    if (area[i]).y < y then
-      y = (area[i]).y
+    if y > area[i].y then
+      y = area[i].y
     end
   end
   return y
 end
-
-

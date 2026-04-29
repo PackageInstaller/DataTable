@@ -1,83 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/review/ui_summer_2_main_controller_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummer2MainControllerReview", UIController)
 UISummer2MainControllerReview = UISummer2MainControllerReview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummer2MainControllerReview.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UISummer2MainControllerReview:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_REVIEW_N4, ECampaignReviewN4ComponentID.ECAMPAIGN_REVIEW_ReviewN4_STORY)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_REVIEW_N4, ECampaignReviewN4ComponentID.ECAMPAIGN_REVIEW_ReviewN4_STORY)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-  self._localProcess = (self._campaign):GetLocalProcess()
-  local storyComponent = (self._localProcess):GetComponent(ECampaignReviewN4ComponentID.ECAMPAIGN_REVIEW_ReviewN4_STORY)
-  local storyInfo = (self._localProcess):GetComponentInfo(ECampaignReviewN4ComponentID.ECAMPAIGN_REVIEW_ReviewN4_STORY)
-  local cfg_campaign = (Cfg.cfg_campaign)[(self._campaign)._id]
-  self._activeTitle1 = (StringTable.Get)(cfg_campaign.CampaignName)
-  self._activeTitle2 = (StringTable.Get)(cfg_campaign.CampaignSubtitle)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
+  self._localProcess = self._campaign:GetLocalProcess()
+  local storyComponent = self._localProcess:GetComponent(ECampaignReviewN4ComponentID.ECAMPAIGN_REVIEW_ReviewN4_STORY)
+  local storyInfo = self._localProcess:GetComponentInfo(ECampaignReviewN4ComponentID.ECAMPAIGN_REVIEW_ReviewN4_STORY)
+  local cfg_campaign = Cfg.cfg_campaign[self._campaign._id]
+  self._activeTitle1 = StringTable.Get(cfg_campaign.CampaignName)
+  self._activeTitle2 = StringTable.Get(cfg_campaign.CampaignSubtitle)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer2MainControllerReview.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISummer2MainControllerReview:OnShow(uiParams)
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_1_0 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(self.CloseCoro, self)
-  end
-, nil, nil, false, function()
-    -- function num : 0_1_1 , upvalues : self
+  self._backBtn:SetData(function()
+    GameGlobal.TaskManager():StartTask(self.CloseCoro, self)
+  end, nil, nil, false, function()
     self:HideBtnOnClick()
-  end
-)
+  end)
   self._title1Label = self:GetUIComponent("UILocalizationText", "Title1")
   self._title1ShadowLabel = self:GetUIComponent("UILocalizationText", "Title1Shadow")
   self._title2Label = self:GetUIComponent("UILocalizationText", "Title2")
   self._title2ShadowLabel = self:GetUIComponent("UILocalizationText", "Title2Shadow")
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._title1Label).text = self._activeTitle1
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._title1ShadowLabel).text = self._activeTitle1
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._title2Label).text = self._activeTitle2
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._title2ShadowLabel).text = self._activeTitle2
+  self._title1Label.text = self._activeTitle1
+  self._title1ShadowLabel.text = self._activeTitle1
+  self._title2Label.text = self._activeTitle2
+  self._title2ShadowLabel.text = self._activeTitle2
   self._shot = self:GetUIComponent("RawImage", "shot")
   self._rt = uiParams[1]
-  ;
-  ((self._shot).gameObject):SetActive(self._rt ~= nil)
-  -- DECOMPILER ERROR at PC68: Confused about usage of register: R3 in 'UnsetPending'
-
+  self._shot.gameObject:SetActive(self._rt ~= nil)
   if self._rt then
-    (self._shot).texture = self._rt
+    self._shot.texture = self._rt
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer2MainControllerReview.HideBtnOnClick = function(self)
-  -- function num : 0_2
+function UISummer2MainControllerReview:HideBtnOnClick()
   local btnPanel1 = self:GetGameObject("BtnPanel1")
   btnPanel1:SetActive(false)
   local btnPanel2 = self:GetGameObject("BtnPanel2")
@@ -88,10 +52,7 @@ UISummer2MainControllerReview.HideBtnOnClick = function(self)
   showBtn:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer2MainControllerReview.ShowBtnOnClick = function(self)
-  -- function num : 0_3
+function UISummer2MainControllerReview:ShowBtnOnClick()
   local btnPanel1 = self:GetGameObject("BtnPanel1")
   btnPanel1:SetActive(true)
   local btnPanel2 = self:GetGameObject("BtnPanel2")
@@ -102,21 +63,12 @@ UISummer2MainControllerReview.ShowBtnOnClick = function(self)
   showBtn:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer2MainControllerReview._SetSpine = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._spine = (UIWidgetHelper.SetSpineLoad)(self, "Spine", "summer_bg_tu2_spine_idle")
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._spine).skeleton).color = Color(1, 1, 1, 0)
+function UISummer2MainControllerReview:_SetSpine()
+  self._spine = UIWidgetHelper.SetSpineLoad(self, "Spine", "summer_bg_tu2_spine_idle")
+  self._spine.skeleton.color = Color(1, 1, 1, 0)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer2MainControllerReview._PlayIn = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
+function UISummer2MainControllerReview:_PlayIn(TT)
   self:Lock("UISummer2MainControllerReview_PlayIn")
   self._playin = true
   YIELD(TT, 667)
@@ -124,33 +76,19 @@ UISummer2MainControllerReview._PlayIn = function(self, TT)
   self:UnLock("UISummer2MainControllerReview_PlayIn")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer2MainControllerReview.OnUpdateOld = function(self, deltaTimeMS)
-  -- function num : 0_6
+function UISummer2MainControllerReview:OnUpdateOld(deltaTimeMS)
   if self._playin and self._spine then
     local obj = self:GetUIComponent("SpineLoader", "Spine")
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((self._spine).skeleton).color = obj.color
+    self._spine.skeleton.color = obj.color
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer2MainControllerReview.CloseCoro = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function UISummer2MainControllerReview:CloseCoro(TT)
   self:Lock("UISummerActivityTwoMainController_CloseCoro")
   self:SwitchState(UIStateType.UIActivityReview)
   self:UnLock("UISummerActivityTwoMainController_CloseCoro")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer2MainControllerReview.PlotBtnOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UISummer2MainControllerReview:PlotBtnOnClick()
   self:ShowDialog("UISummerActivityTwoPlotDetailController", ECampaignType.CAMPAIGN_TYPE_REVIEW_N4, ECampaignReviewN4ComponentID.ECAMPAIGN_REVIEW_ReviewN4_STORY)
 end
-
-

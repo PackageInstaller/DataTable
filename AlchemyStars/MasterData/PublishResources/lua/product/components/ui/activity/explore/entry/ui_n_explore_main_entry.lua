@@ -1,69 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/explore/entry/ui_n_explore_main_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_main_lobby_main_campaign_base")
 _class("UINExploreMainEntry", UIMainLobbyMainCampaignBase)
 UINExploreMainEntry = UINExploreMainEntry
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UINExploreMainEntry.SetData = function(self, sampleInfo, controller)
-  -- function num : 0_0 , upvalues : _ENV
+function UINExploreMainEntry:SetData(sampleInfo, controller)
   self.sampleInfo = sampleInfo
   self._controller = controller
-  self._campaignType = (UINExploreHelper.GetCampaignType)()
+  self._campaignType = UINExploreHelper.GetCampaignType()
   self:_RequestCampaign()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UINExploreMainEntry._RequestCampaign = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UINExploreMainEntry:_RequestCampaign()
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self, _ENV
     local lockName = "UINExploreMainEntry:_RequestCampaign"
     self:Lock(lockName)
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    self._campaign = (UIActivityHelper.LoadCampaign)(TT, res, self._campaignType)
+    self._campaign = UIActivityHelper.LoadCampaign(TT, res, self._campaignType)
     self:_Refresh()
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UINExploreMainEntry._Refresh = function(self)
-  -- function num : 0_2
+function UINExploreMainEntry:_Refresh()
   self:_CheckPoint()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UINExploreMainEntry._CheckPoint = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UINExploreMainEntry:_CheckPoint()
   if self._campaign then
-    local new = (UINExploreHelper.CalcNew)(self._campaign)
-    local red = (UINExploreHelper.CalcRed)(self._campaign)
-    ;
-    (UIWidgetHelper.SetNewAndReds)(self, new, red, "new", "red")
+    local new = UINExploreHelper.CalcNew(self._campaign)
+    local red = UINExploreHelper.CalcRed(self._campaign)
+    UIWidgetHelper.SetNewAndReds(self, new, red, "new", "red")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UINExploreMainEntry.BtnOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((UINExploreMainEntry.super).BtnOnClick)(self)
+function UINExploreMainEntry:BtnOnClick()
+  UINExploreMainEntry.super.BtnOnClick(self)
   local main = self._controller
-  ;
-  (UIActivityHelper.Snap)(main._screenShot, ((main:GetUIComponent("RectTransform", "SafeArea")).rect).size, ((GameGlobal.UIStateManager)()):GetControllerCamera(main:GetName()), function(cache_rt)
-    -- function num : 0_4_0 , upvalues : self
+  UIActivityHelper.Snap(main._screenShot, main:GetUIComponent("RectTransform", "SafeArea").rect.size, GameGlobal.UIStateManager():GetControllerCamera(main:GetName()), function(cache_rt)
     self:ShowDialog("UINExploreMainController", cache_rt)
-  end
-)
+  end)
 end
-
-

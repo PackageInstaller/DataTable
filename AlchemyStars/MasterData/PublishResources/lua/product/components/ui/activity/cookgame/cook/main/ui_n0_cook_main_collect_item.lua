@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cookgame/cook/main/ui_n0_cook_main_collect_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN0CookMainCollectItem", UICustomWidget)
 UIN0CookMainCollectItem = UIN0CookMainCollectItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN0CookMainCollectItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN0CookMainCollectItem:OnShow(uiParams)
   self._atlas = self:GetAsset("CookGame.spriteatlas", LoadType.SpriteAtlas)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMainCollectItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIN0CookMainCollectItem:InitWidget()
   self.collectNumText = self:GetUIComponent("UILocalizationText", "collectNumText")
   self.rewardPool = self:GetUIComponent("UISelectObjectPath", "rewardPool")
   self.canReceive = self:GetGameObject("canReceive")
@@ -26,84 +16,55 @@ UIN0CookMainCollectItem.InitWidget = function(self)
   self.animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMainCollectItem.SetData = function(self, collectData, callback, itemClickCall)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN0CookMainCollectItem:SetData(collectData, callback, itemClickCall)
   self.callback = callback
   self.itemClickCall = itemClickCall
   if not collectData then
-    (Log.error)("UIN0CookMainCollectItem collectDara is nil")
-    return 
+    Log.error("UIN0CookMainCollectItem collectDara is nil")
+    return
   end
   local cfg = collectData.cfg
   self.collectId = cfg.CollectID
   local status = collectData.status
-  ;
-  (self.canReceive):SetActive(status == NewYearDinner_Status.E_NewYearDinner_Status_CAN_RECV)
-  ;
-  (self.hasReceive):SetActive(status == NewYearDinner_Status.E_NewYearDinner_Status_RECVED)
+  self.canReceive:SetActive(status == NewYearDinner_Status.E_NewYearDinner_Status_CAN_RECV)
+  self.hasReceive:SetActive(status == NewYearDinner_Status.E_NewYearDinner_Status_RECVED)
   local isUnReach = status == NewYearDinner_Status.E_NewYearDinner_Status_LOCK or status == NewYearDinner_Status.E_NewYearDinner_Status_UN_FINISH
-  ;
-  (self.unReach):SetActive(isUnReach)
+  self.unReach:SetActive(isUnReach)
   self:InitReward(cfg.Reward)
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R7 in 'UnsetPending'
-
   if isUnReach then
-    (self.imgBg).sprite = (self._atlas):GetSprite("n0_xyx_di02")
-    ;
-    (self.collectNumText):SetText("<color=#ffdf80>" .. cfg.Count .. "</color>")
+    self.imgBg.sprite = self._atlas:GetSprite("n0_xyx_di02")
+    self.collectNumText:SetText("<color=#ffdf80>" .. cfg.Count .. "</color>")
   else
-    -- DECOMPILER ERROR at PC69: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self.imgBg).sprite = (self._atlas):GetSprite("n0_xyx_di03")
-    ;
-    (self.collectNumText):SetText(cfg.Count)
+    self.imgBg.sprite = self._atlas:GetSprite("n0_xyx_di03")
+    self.collectNumText:SetText(cfg.Count)
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMainCollectItem.InitReward = function(self, rewards)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN0CookMainCollectItem:InitReward(rewards)
   local len = #rewards
-  local items = (self.rewardPool):SpawnObjects("UIN0CookRewardItem", len)
-  for k,v in ipairs(items) do
+  local items = self.rewardPool:SpawnObjects("UIN0CookRewardItem", len)
+  for k, v in ipairs(items) do
     local rewardData = rewards[k]
     local tplId = rewardData[1]
     local num = rewardData[2]
     v:SetData(tplId, num, function(tplId, pos)
-    -- function num : 0_3_0 , upvalues : self
-    if self.itemClickCall then
-      (self.itemClickCall)(tplId, pos)
-    end
-  end
-)
+      if self.itemClickCall then
+        self.itemClickCall(tplId, pos)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMainCollectItem.ReceiveBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIN0CookMainCollectItem:ReceiveBtnOnClick(go)
   if self.callback then
-    (self.callback)(self.collectId)
+    self.callback(self.collectId)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMainCollectItem.PlayEnterAni = function(self)
-  -- function num : 0_5
-  (self.animation):Play()
+function UIN0CookMainCollectItem:PlayEnterAni()
+  self.animation:Play()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMainCollectItem.SetVisible = function(self, visible)
-  -- function num : 0_6
-  (self:GetGameObject()):SetActive(visible)
+function UIN0CookMainCollectItem:SetVisible(visible)
+  self:GetGameObject():SetActive(visible)
 end
-
-

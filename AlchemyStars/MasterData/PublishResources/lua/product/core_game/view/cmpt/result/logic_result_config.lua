@@ -1,7 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/result/logic_result_config.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-LogicStepType = {Init = 1, Loading = 2, NormalAttack = 3, ChainAttack = 4, ActiveAttack = 5, MonsterMove = 6, WaveEnter = 7, FeatureAttack = 8, MirageMove = 9, MirageWarning = 10, AutoBeadAttack = 11}
-
+LogicStepType = {
+  Init = 1,
+  Loading = 2,
+  NormalAttack = 3,
+  ChainAttack = 4,
+  ActiveAttack = 5,
+  MonsterMove = 6,
+  WaveEnter = 7,
+  FeatureAttack = 8,
+  MirageMove = 9,
+  MirageWarning = 10,
+  AutoBeadAttack = 11
+}

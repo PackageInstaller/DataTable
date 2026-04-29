@@ -1,23 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_pet_zeta1.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_PetZeta1", PickUpPolicy_Base)
 PickUpPolicy_PetZeta1 = PickUpPolicy_PetZeta1
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_PetZeta1.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PickUpPolicy_PetZeta1:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
   local activeSkillID = calcParam.activeSkillID
   local policyParam = calcParam.policyParam
-  local casterPos = (petEntity:GridLocation()).Position
-  local curBodyArea = (petEntity:BodyArea()):GetArea()
-  local configService = (self._world):GetService("Config")
+  local casterPos = petEntity:GridLocation().Position
+  local curBodyArea = petEntity:BodyArea():GetArea()
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(activeSkillID)
-  local pickUpNum = tonumber((skillConfigData._pickUpParam)[1])
+  local pickUpNum = tonumber(skillConfigData._pickUpParam[1])
   local hasPieces = {}
   local colorPaletteComponent = petEntity:ColorPalette()
   if colorPaletteComponent then
@@ -25,43 +18,36 @@ PickUpPolicy_PetZeta1.CalcAutoFightPickUpPolicy = function(self, calcParam)
   end
   local needPieces = {}
   for i = 1, 4 do
-    if not (table.intable)(hasPieces, i) then
-      (table.insert)(needPieces, i)
+    if not table.intable(hasPieces, i) then
+      table.insert(needPieces, i)
     end
   end
   local pickPosList = {}
   local targetIDs = {}
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
-  for i = 1, (table.count)(needPieces) do
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  for i = 1, table.count(needPieces) do
     local needPiece = needPieces[i]
     local pieceRange = boardServiceLogic:GetGridPosByPieceType({needPiece})
-    local pieceCount = (table.count)(pieceRange)
-    if pieceRange and pieceCount > 0 then
-      local randomIndex = (math.random)(1, pieceCount)
+    local pieceCount = table.count(pieceRange)
+    if pieceRange and 0 < pieceCount then
+      local randomIndex = math.random(1, pieceCount)
       local randomPos = pieceRange[randomIndex]
-      ;
-      (table.insert)(pickPosList, randomPos)
+      table.insert(pickPosList, randomPos)
     end
   end
-  do
-    while pickUpNum < (table.count)(pickPosList) do
-      (table.removev)(pickPosList, pickPosList[#pickPosList])
-    end
-    if (table.count)(pickPosList) < pickUpNum then
-      local validPosIdxList, validPosList = self:_CalcPickUpValidGridList(petEntity, activeSkillID)
-      while (table.count)(pickPosList) < pickUpNum do
-        local randomIndex = (math.random)(1, #validPosList)
-        local randomPos = validPosList[randomIndex]
-        local curPieceType = boardServiceLogic:GetPieceType(randomPos)
-        if (table.icontains)(pickPosList, randomPos) or curPieceType ~= PieceType.None then
-          (table.insert)(pickPosList, randomPos)
-        end
+  while pickUpNum < table.count(pickPosList) do
+    table.removev(pickPosList, pickPosList[#pickPosList])
+  end
+  if pickUpNum > table.count(pickPosList) then
+    local validPosIdxList, validPosList = self:_CalcPickUpValidGridList(petEntity, activeSkillID)
+    while pickUpNum > table.count(pickPosList) do
+      local randomIndex = math.random(1, #validPosList)
+      local randomPos = validPosList[randomIndex]
+      local curPieceType = boardServiceLogic:GetPieceType(randomPos)
+      if not table.icontains(pickPosList, randomPos) and curPieceType ~= PieceType.None then
+        table.insert(pickPosList, randomPos)
       end
     end
-    do
-      return pickPosList, pickPosList, targetIDs
-    end
   end
+  return pickPosList, pickPosList, targetIDs
 end
-
-

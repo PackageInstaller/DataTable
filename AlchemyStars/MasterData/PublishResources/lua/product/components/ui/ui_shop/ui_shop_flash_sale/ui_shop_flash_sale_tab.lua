@@ -1,146 +1,98 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_flash_sale/ui_shop_flash_sale_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopFlashSaleTab", UICustomWidget)
 UIShopFlashSaleTab = UIShopFlashSaleTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopFlashSaleTab.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopFlashSaleTab:Constructor()
   self.shopModule = self:GetModule(ShopModule)
-  self.clientShop = (self.shopModule):GetClientShop()
-  self._data = (self.clientShop):GetFlashSaleShopData()
+  self.clientShop = self.shopModule:GetClientShop()
+  self._data = self.clientShop:GetFlashSaleShopData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopFlashSaleTab.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopFlashSaleTab:OnShow(uiParams)
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._anim = self:GetUIComponent("Animation", "UIShopFlashSaleTab")
   self:Flush()
   self:AttachEvent(GameEventType.UpdateFlashSaleShop, self.Flush)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopFlashSaleTab.OnHide = function(self)
-  -- function num : 0_2
+function UIShopFlashSaleTab:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopFlashSaleTab.Flush = function(self, uniqueid)
-  -- function num : 0_3 , upvalues : _ENV
-  if not uniqueid then
-    uniqueid = (self.uiOwner).curMainTabUniqueid
-  end
-  self._componentID = (self.uiOwner):GetComponentIDByUniqueID(uniqueid)
-  self._flashsaleLocalProcess = (self.uiOwner):GetFlashSaleLocalProgress()
-  self._componentInfo = (self._flashsaleLocalProcess):GetComponentInfo(self._componentID)
-  self._items = self:_FilterData((self._data):GetGoods(), (self._componentInfo).m_campaign_gift_list)
+function UIShopFlashSaleTab:Flush(uniqueid)
+  uniqueid = uniqueid or self.uiOwner.curMainTabUniqueid
+  self._componentID = self.uiOwner:GetComponentIDByUniqueID(uniqueid)
+  self._flashsaleLocalProcess = self.uiOwner:GetFlashSaleLocalProgress()
+  self._componentInfo = self._flashsaleLocalProcess:GetComponentInfo(self._componentID)
+  self._items = self:_FilterData(self._data:GetGoods(), self._componentInfo.m_campaign_gift_list)
   if not self._items then
-    return 
+    return
   end
-  ;
-  (self._content):SpawnObjects("UIShopFlashSaleItemContainer", (table.count)(self._items))
-  self.uiItems = (self._content):GetAllSpawnList()
-  for i,uiItem in ipairs(self.uiItems) do
-    local item = (self._items)[i]
+  self._content:SpawnObjects("UIShopFlashSaleItemContainer", table.count(self._items))
+  self.uiItems = self._content:GetAllSpawnList()
+  for i, uiItem in ipairs(self.uiItems) do
+    local item = self._items[i]
     if item then
-      uiItem:Flush((self._items)[i])
+      uiItem:Flush(self._items[i])
     else
-      ;
-      (Log.fatal)("### item nil. i=", i)
+      Log.fatal("### item nil. i=", i)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopFlashSaleTab.JumpItem = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  if not (self._param)[4] then
-    local jumpId = not self._param or 0
-  end
-  if jumpId then
-    for i,item in ipairs(self._items) do
-      if item and item:GetId() == jumpId then
-        ((self.uiItems)[i]):OpenUIShopFlashSaleDetail()
+function UIShopFlashSaleTab:JumpItem()
+  if self._param then
+    local jumpId = self._param[4] or 0
+    if jumpId then
+      for i, item in ipairs(self._items) do
+        if item and item:GetId() == jumpId then
+          self.uiItems[i]:OpenUIShopFlashSaleDetail()
+        end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopFlashSaleTab.Update = function(self, deltaTimeMS)
-  -- function num : 0_5
+function UIShopFlashSaleTab:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopFlashSaleTab.SetData = function(self, param)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopTabChange, ShopMainTabType.FlashSale)
+function UIShopFlashSaleTab:SetData(param)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopTabChange, ShopMainTabType.FlashSale)
   self._param = param
   self:JumpItem()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopFlashSaleTab.RefreshPanel = function(self, subTabType)
-  -- function num : 0_7
+function UIShopFlashSaleTab:RefreshPanel(subTabType)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopFlashSaleTab.ExcuteHideLogic = function(self, callBack)
-  -- function num : 0_8
+function UIShopFlashSaleTab:ExcuteHideLogic(callBack)
   if callBack then
     callBack(self)
   end
   self._param = nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopFlashSaleTab._FilterData = function(self, allGoods, filterList)
-  -- function num : 0_9 , upvalues : _ENV
-  local checkFunction = function(id)
-    -- function num : 0_9_0 , upvalues : _ENV, filterList
-    for _,value in pairs(filterList) do
+function UIShopFlashSaleTab:_FilterData(allGoods, filterList)
+  local function checkFunction(id)
+    for _, value in pairs(filterList) do
       if value.m_gift_id == id then
         return true
       end
     end
     return false
   end
-
+  
   local result = {}
-  for _,goods in ipairs(allGoods) do
+  for _, goods in ipairs(allGoods) do
     if checkFunction(goods:GetId()) then
-      (table.insert)(result, goods)
+      table.insert(result, goods)
     end
   end
   return result
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopFlashSaleTab.ShowSelf = function(self)
-  -- function num : 0_10
-  (self._anim):Stop()
-  ;
-  (self._anim):Play()
+function UIShopFlashSaleTab:ShowSelf()
+  self._anim:Stop()
+  self._anim:Play()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopFlashSaleTab.HideSelf = function(self)
-  -- function num : 0_11
+function UIShopFlashSaleTab:HideSelf()
 end
-
-

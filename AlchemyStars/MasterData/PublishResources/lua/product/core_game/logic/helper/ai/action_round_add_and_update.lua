@@ -1,37 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_round_add_and_update.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_save_round_count")
 _class("ActionRound_AddAndUpdate", ActionRoundBase)
 ActionRound_AddAndUpdate = ActionRound_AddAndUpdate
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionRound_AddAndUpdate.Constructor = function(self)
-  -- function num : 0_0
+function ActionRound_AddAndUpdate:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionRound_AddAndUpdate.OnBegin = function(self)
-  -- function num : 0_1
+function ActionRound_AddAndUpdate:OnBegin()
   local nLoopLimit = self:GetRuntimeData("SkillCount") or 1
   local nOldRoundData = self.m_nRoundData
   self.m_nRoundData = self:_SaveRoundCount(nOldRoundData, nLoopLimit)
   local nSaveGameRound = self:GetRuntimeData("GameRound")
   self:SetRuntimeData("GameRound", nil)
-  ;
-  (self.m_logicOwn):ReSelectWorkSkill()
+  self.m_logicOwn:ReSelectWorkSkill()
   self:SetRuntimeData("GameRound", nSaveGameRound)
   self:PrintLog("更新当前回合技能, nOldRount = ", nOldRoundData, ", nNewRount", self.m_nRoundData)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionRound_AddAndUpdate.OnUpdate = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function ActionRound_AddAndUpdate:OnUpdate()
   return AINewNodeStatus.Success
 end
-
-

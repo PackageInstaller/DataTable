@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n16/subject/main/ui_n16_subject_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN16SubjectRewardItem", UICustomWidget)
 UIN16SubjectRewardItem = UIN16SubjectRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN16SubjectRewardItem.OnShow = function(self)
-  -- function num : 0_0
+function UIN16SubjectRewardItem:OnShow()
   self._iconImgLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._iconImgRaw = self:GetUIComponent("RawImage", "Icon")
   self._iconImg = self:GetUIComponent("RawImage", "Icon")
@@ -20,76 +13,38 @@ UIN16SubjectRewardItem.OnShow = function(self)
   self._go = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16SubjectRewardItem.OnHide = function(self)
-  -- function num : 0_1
+function UIN16SubjectRewardItem:OnHide()
   self._EMIMat = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16SubjectRewardItem.Refresh = function(self, reward, hasComplete)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN16SubjectRewardItem:Refresh(reward, hasComplete)
   self._rewardId = reward[1]
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._countLabel).text = reward[2]
-  local ItemTempleate = (Cfg.cfg_item)[self._rewardId]
-  ;
-  (self._iconImgLoader):LoadImage(ItemTempleate.Icon)
+  self._countLabel.text = reward[2]
+  local ItemTempleate = Cfg.cfg_item[self._rewardId]
+  self._iconImgLoader:LoadImage(ItemTempleate.Icon)
   if hasComplete then
-    (self._countBg):SetActive(false)
-    ;
-    (self._hasGetCountBg):SetActive(true)
+    self._countBg:SetActive(false)
+    self._hasGetCountBg:SetActive(true)
     self:SetRawImageGray(true)
   else
-    ;
-    (self._countBg):SetActive(true)
-    ;
-    (self._hasGetCountBg):SetActive(false)
+    self._countBg:SetActive(true)
+    self._hasGetCountBg:SetActive(false)
     self:SetRawImageGray(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16SubjectRewardItem.SetRawImageGray = function(self, gray)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIN16SubjectRewardItem:SetRawImageGray(gray)
   if gray then
-    (self._iconImgRaw).color = (Color.New)(1, 1, 1, 0.58823529411765)
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._countLabel).color = (Color.New)(1, 1, 1, 0.58823529411765)
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._hasGetCountImg).color = (Color.New)(1, 1, 1, 0.58823529411765)
+    self._iconImgRaw.color = Color.New(1.0, 1.0, 1.0, 0.5882352941176471)
+    self._countLabel.color = Color.New(1.0, 1.0, 1.0, 0.5882352941176471)
+    self._hasGetCountImg.color = Color.New(1.0, 1.0, 1.0, 0.5882352941176471)
   else
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._iconImgRaw).color = (Color.New)(1, 1, 1, 1)
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._countLabel).color = (Color.New)(1, 1, 1, 1)
-    -- DECOMPILER ERROR at PC56: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._hasGetCountImg).color = (Color.New)(1, 1, 1, 1)
+    self._iconImgRaw.color = Color.New(1.0, 1.0, 1.0, 1.0)
+    self._countLabel.color = Color.New(1.0, 1.0, 1.0, 1.0)
+    self._hasGetCountImg.color = Color.New(1.0, 1.0, 1.0, 1.0)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16SubjectRewardItem.BtnOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN16SubjectRewardItemClicked, self._rewardId, ((self._go).transform).position)
+function UIN16SubjectRewardItem:BtnOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN16SubjectRewardItemClicked, self._rewardId, self._go.transform.position)
 end
-
-

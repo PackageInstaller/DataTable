@@ -1,47 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/interact/interact_point_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("InteractPointManager", Object)
 InteractPointManager = InteractPointManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-InteractPointManager.Constructor = function(self)
-  -- function num : 0_0
+function InteractPointManager:Constructor()
   self._interactPoints = {}
   self._interactAreas = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractPointManager.Init = function(self, homelandClient)
-  -- function num : 0_1
+function InteractPointManager:Init(homelandClient)
   self._homelandCharacterManager = homelandClient:CharacterManager()
   self._triggerInteractPoints = {}
   self._client = homelandClient
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractPointManager.Dispose = function(self)
-  -- function num : 0_2
+function InteractPointManager:Dispose()
   for i = 1, #self._interactPoints do
-    ((self._interactPoints)[i]):Dispose()
+    self._interactPoints[i]:Dispose()
   end
   self._interactPoints = nil
   self._triggerInteractPoints = nil
   self._homelandCharacterManager = nil
   for i = 1, #self._interactAreas do
-    ((self._interactAreas)[i]):Dispose()
+    self._interactAreas[i]:Dispose()
   end
   self._interactAreas = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractPointManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_3 , upvalues : _ENV
+function InteractPointManager:Update(deltaTimeMS)
   if self._last_update_time == nil then
     self._last_update_time = 0
   end
@@ -50,16 +34,16 @@ InteractPointManager.Update = function(self, deltaTimeMS)
   end
   self._cur_time = self._cur_time + deltaTimeMS
   if self._cur_time - self._last_update_time < 200 then
-    return 
+    return
   end
   self._last_update_time = self._cur_time
-  local characterTransform = (self._homelandCharacterManager):GetCharacterTransform()
+  local characterTransform = self._homelandCharacterManager:GetCharacterTransform()
   if not characterTransform then
-    return 
+    return
   end
   local characterPostion = characterTransform.position
   for i = 1, #self._interactAreas do
-    local interactArea = (self._interactAreas)[i]
+    local interactArea = self._interactAreas[i]
     if interactArea:IsActive() then
       if interactArea:IsTrigger(characterPostion) then
         interactArea:InteractArea()
@@ -69,14 +53,14 @@ InteractPointManager.Update = function(self, deltaTimeMS)
     end
   end
   for i = #self._interactAreas, 1, -1 do
-    local interactArea = (self._interactAreas)[i]
+    local interactArea = self._interactAreas[i]
     if not interactArea:IsActive() then
-      (table.remove)(self._interactAreas, i)
+      table.remove(self._interactAreas, i)
     end
   end
   for i = 1, #self._interactPoints do
-    local interactPoint = (self._interactPoints)[i]
-    if (self._homelandCharacterManager):CharacterInteractable(interactPoint:GetPointType()) and interactPoint:IsTrigger(characterPostion) and interactPoint:Interactable() then
+    local interactPoint = self._interactPoints[i]
+    if self._homelandCharacterManager:CharacterInteractable(interactPoint:GetPointType()) and interactPoint:IsTrigger(characterPostion) and interactPoint:Interactable() then
       self:_AddTriggerPoint(interactPoint)
     else
       self:_RemoveTriggerPoint(interactPoint)
@@ -84,190 +68,123 @@ InteractPointManager.Update = function(self, deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractPointManager.GetPoints = function(self, typeFilter)
-  -- function num : 0_4 , upvalues : _ENV
+function InteractPointManager:GetPoints(typeFilter)
   local points = {}
   for i = 1, #self._interactPoints do
-    if ((self._interactPoints)[i]):GetPointType() == typeFilter then
-      (table.insert)(points, (self._interactPoints)[i])
+    if self._interactPoints[i]:GetPointType() == typeFilter then
+      table.insert(points, self._interactPoints[i])
     end
   end
   return points
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractPointManager._AddTriggerPoint = function(self, point)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.EnterBuildInteract, point)
-  if (self._triggerInteractPoints)[point] then
-    return 
+function InteractPointManager:_AddTriggerPoint(point)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.EnterBuildInteract, point)
+  if self._triggerInteractPoints[point] then
+    return
   end
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._triggerInteractPoints)[point] = true
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowInteractUI)
+  self._triggerInteractPoints[point] = true
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowInteractUI)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractPointManager._RemoveTriggerPoint = function(self, point)
-  -- function num : 0_6 , upvalues : _ENV
-  if not (self._triggerInteractPoints)[point] then
-    return 
+function InteractPointManager:_RemoveTriggerPoint(point)
+  if not self._triggerInteractPoints[point] then
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LeaveBuildInteract, point)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._triggerInteractPoints)[point] = nil
-  for k,v in pairs(self._triggerInteractPoints) do
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.LeaveBuildInteract, point)
+  self._triggerInteractPoints[point] = nil
+  for k, v in pairs(self._triggerInteractPoints) do
     if k and v then
-      return 
+      return
     end
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HideInteractUI)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HideInteractUI)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractPointManager.ShowDialog = function(self, name, ...)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog(name, ...)
+function InteractPointManager:ShowDialog(name, ...)
+  GameGlobal.UIStateManager():ShowDialog(name, ...)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractPointManager.CloseDialog = function(self, name)
-  -- function num : 0_8 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):CloseDialog(name)
+function InteractPointManager:CloseDialog(name)
+  GameGlobal.UIStateManager():CloseDialog(name)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractPointManager.AddBuildInteractPoint = function(self, build, index, interactPointCfgId)
-  -- function num : 0_9 , upvalues : _ENV
-  if (self._client):IsVisit() then
+function InteractPointManager:AddBuildInteractPoint(build, index, interactPointCfgId)
+  if self._client:IsVisit() then
     return self:_AddVisitPoint(build, index, interactPointCfgId)
   else
     local interactPoint = InteractPoint:New(build, index, interactPointCfgId)
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._interactPoints)[#self._interactPoints + 1] = interactPoint
+    self._interactPoints[#self._interactPoints + 1] = interactPoint
     return interactPoint
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractPointManager.RemoveBuildInteractPoint = function(self, interactPoint)
-  -- function num : 0_10 , upvalues : _ENV
+function InteractPointManager:RemoveBuildInteractPoint(interactPoint)
   if not self._interactPoints then
-    return 
+    return
   end
   for i = 1, #self._interactPoints do
-    if (self._interactPoints)[i] == interactPoint then
-      (table.remove)(self._interactPoints, i)
+    if self._interactPoints[i] == interactPoint then
+      table.remove(self._interactPoints, i)
       self:_RemoveTriggerPoint(interactPoint)
-      return 
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractPointManager.GetInteractPoints = function(self)
-  -- function num : 0_11
+function InteractPointManager:GetInteractPoints()
   return self._interactPoints
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractPointManager.AddBuildInteractArea = function(self, build, distance)
-  -- function num : 0_12 , upvalues : _ENV
+function InteractPointManager:AddBuildInteractArea(build, distance)
   local interactArea = InteractArea:New(build, distance)
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._interactAreas)[#self._interactAreas + 1] = interactArea
+  self._interactAreas[#self._interactAreas + 1] = interactArea
   return interactArea
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractPointManager.RemoveBuildInteractArea = function(self, interactArea)
-  -- function num : 0_13 , upvalues : _ENV
+function InteractPointManager:RemoveBuildInteractArea(interactArea)
   if not self._interactAreas then
-    return 
+    return
   end
   for i = 1, #self._interactAreas do
-    if (self._interactAreas)[i] == interactArea then
-      (table.remove)(self._interactAreas, i)
+    if self._interactAreas[i] == interactArea then
+      table.remove(self._interactAreas, i)
       interactArea:UnInteractArea()
-      return 
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractPointManager.GetInteractAreas = function(self)
-  -- function num : 0_14
+function InteractPointManager:GetInteractAreas()
   return self._interactAreas
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractPointManager._AddVisitPoint = function(self, build, index, interactPointCfgId)
-  -- function num : 0_15 , upvalues : _ENV
-  local interactPoint = nil
-  local cfg = (Cfg.cfg_building_interact_point)[interactPointCfgId]
+function InteractPointManager:_AddVisitPoint(build, index, interactPointCfgId)
+  local interactPoint
+  local cfg = Cfg.cfg_building_interact_point[interactPointCfgId]
   if cfg.FunctionType == InteractPointType.Build then
-    local uiModule = (GameGlobal.GetUIModule)(HomelandModule)
+    local uiModule = GameGlobal.GetUIModule(HomelandModule)
     interactPointCfgId = InteractPointType.Visit_Build
     interactPoint = InteractPoint:New(build, index, interactPointCfgId)
-  else
-    do
-      if cfg.FunctionType == InteractPointType.Storehouse then
-        local uiModule = (GameGlobal.GetUIModule)(HomelandModule)
-        if (uiModule:GetVisitUIInfo()):HasGift() then
-          interactPointCfgId = InteractPointType.Visit_GetGift
-          interactPoint = InteractPoint:New(build, index, interactPointCfgId)
-        end
-      else
-        do
-          if cfg.FunctionType == InteractPointType.Breed then
-            local uiModule = (GameGlobal.GetUIModule)(HomelandModule)
-            local info = (uiModule:GetVisitInfo()).cultivation_info
-            local land = build
-            if (info.land_cultivation_infos)[land:PstID()] and not land:IsMature() then
-              interactPointCfgId = InteractPointType.Visit_Water
-              interactPoint = InteractPoint:New(build, index, interactPointCfgId)
-            end
-          else
-            do
-              if cfg.FunctionType == InteractPointType.ShowMedalWall and not build:IsShabby() then
-                interactPoint = InteractPoint:New(build, index, interactPointCfgId)
-              end
-              -- DECOMPILER ERROR at PC103: Confused about usage of register: R6 in 'UnsetPending'
-
-              if interactPoint then
-                (self._interactPoints)[#self._interactPoints + 1] = interactPoint
-              end
-              return interactPoint
-            end
-          end
-        end
-      end
+  elseif cfg.FunctionType == InteractPointType.Storehouse then
+    local uiModule = GameGlobal.GetUIModule(HomelandModule)
+    if uiModule:GetVisitUIInfo():HasGift() then
+      interactPointCfgId = InteractPointType.Visit_GetGift
+      interactPoint = InteractPoint:New(build, index, interactPointCfgId)
     end
+  elseif cfg.FunctionType == InteractPointType.Breed then
+    local uiModule = GameGlobal.GetUIModule(HomelandModule)
+    local info = uiModule:GetVisitInfo().cultivation_info
+    local land = build
+    if info.land_cultivation_infos[land:PstID()] and not land:IsMature() then
+      interactPointCfgId = InteractPointType.Visit_Water
+      interactPoint = InteractPoint:New(build, index, interactPointCfgId)
+    end
+  elseif cfg.FunctionType == InteractPointType.ShowMedalWall and not build:IsShabby() then
+    interactPoint = InteractPoint:New(build, index, interactPointCfgId)
   end
+  if interactPoint then
+    self._interactPoints[#self._interactPoints + 1] = interactPoint
+  end
+  return interactPoint
 end
-
-

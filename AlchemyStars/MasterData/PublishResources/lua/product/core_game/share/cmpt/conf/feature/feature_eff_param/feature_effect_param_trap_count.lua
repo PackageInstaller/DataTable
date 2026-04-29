@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/feature/feature_eff_param/feature_effect_param_trap_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureEffectParamTrapCount", FeatureEffectParamBase)
 FeatureEffectParamTrapCount = FeatureEffectParamTrapCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureEffectParamTrapCount.Constructor = function(self, t)
-  -- function num : 0_0
+function FeatureEffectParamTrapCount:Constructor(t)
   if not t then
-    return 
+    return
   end
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTrapCount._RefreshData = function(self, t)
-  -- function num : 0_1
+function FeatureEffectParamTrapCount:_RefreshData(t)
   if not t then
-    return 
+    return
   end
   if t.TargetTrapIDList then
     self._targetTrapIDList = t.TargetTrapIDList
@@ -36,39 +26,22 @@ FeatureEffectParamTrapCount._RefreshData = function(self, t)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTrapCount.GetFeatureType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function FeatureEffectParamTrapCount:GetFeatureType()
   return FeatureType.TrapCount
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTrapCount.GetTargetTrapIDList = function(self)
-  -- function num : 0_3
+function FeatureEffectParamTrapCount:GetTargetTrapIDList()
   return self._targetTrapIDList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTrapCount.GetMaxCount = function(self)
-  -- function num : 0_4
+function FeatureEffectParamTrapCount:GetMaxCount()
   return self._maxCount
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTrapCount.GetIcon = function(self)
-  -- function num : 0_5
+function FeatureEffectParamTrapCount:GetIcon()
   return self._icon
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTrapCount.GetTitleStr = function(self)
-  -- function num : 0_6
+function FeatureEffectParamTrapCount:GetTitleStr()
   return self._titleStr
 end
-
-

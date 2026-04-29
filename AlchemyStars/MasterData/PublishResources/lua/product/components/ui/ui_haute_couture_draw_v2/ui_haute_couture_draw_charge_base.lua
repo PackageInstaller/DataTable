@@ -1,120 +1,82 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/ui_haute_couture_draw_charge_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawChargeBase", UICustomWidget)
 UIHauteCoutureDrawChargeBase = UIHauteCoutureDrawChargeBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawChargeBase.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawChargeBase:Constructor()
   self.controller = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeBase.InitWidgetsBase = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHauteCoutureDrawChargeBase:InitWidgetsBase()
   self.controller = self.uiOwner
-  self._ctx = (self.controller)._ctx
+  self._ctx = self.controller._ctx
   local btns = self:GetUIComponent("UISelectObjectPath", "topbtn")
   self._backBtn = btns:SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_1_0 , upvalues : self
-    (self.controller):CloseDialog()
-  end
-, nil, nil, true)
+  self._backBtn:SetData(function()
+    self.controller:CloseDialog()
+  end, nil, nil, true)
   local currency = self:GetUIComponent("UISelectObjectPath", "currencyMenu")
   self._topTips = currency:SpawnObject("UINewCurrencyMenu")
-  ;
-  (self._topTips):SetData({(HauteCouture:GetInstance()).CostCoinId}, true)
-  ;
-  (self._topTips):ShowHideTSFBtn(true)
+  self._topTips:SetData({
+    HauteCouture:GetInstance().CostCoinId
+  }, true)
+  self._topTips:ShowHideTSFBtn(true)
   self._itemPool = self:GetUIComponent("UISelectObjectPath", "Content")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeBase._OnValueBase = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local ids = ((self.controller)._buyComponet):GetAllGiftIDByType(CampaignGiftType.ECGT_SENIOR_SKIN)
-  local onclick = function(id)
-    -- function num : 0_2_0 , upvalues : self
+function UIHauteCoutureDrawChargeBase:_OnValueBase()
+  local ids = self.controller._buyComponet:GetAllGiftIDByType(CampaignGiftType.ECGT_SENIOR_SKIN)
+  
+  local function onclick(id)
     self:buyGift(id)
   end
-
-  self._items = (self._itemPool):SpawnObjects(self:GetItemImpl(), (table.count)(ids))
-  local closeTime = (((self.controller)._buyComponet):GetComponentInfo()).m_close_time
-  for i,uiItem in ipairs(self._items) do
+  
+  self._items = self._itemPool:SpawnObjects(self:GetItemImpl(), table.count(ids))
+  local closeTime = self.controller._buyComponet:GetComponentInfo().m_close_time
+  for i, uiItem in ipairs(self._items) do
     uiItem:SetData(ids[i], onclick, closeTime)
   end
   self:RefreshPrice()
   self:AttachEvent(GameEventType.PayGetLocalPriceFinished, self.RefreshPrice)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeBase.GetItemImpl = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (Log.error)("UIHauteCoutureDrawChargeBase:GetItemImpl should be inherited")
+function UIHauteCoutureDrawChargeBase:GetItemImpl()
+  Log.error("UIHauteCoutureDrawChargeBase:GetItemImpl should be inherited")
   return ""
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeBase.RefreshPrice = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  for i,uiItem in ipairs(self._items) do
-    local price = ((self.controller)._buyComponet):GetGiftPriceForShowById(uiItem:GetID())
+function UIHauteCoutureDrawChargeBase:RefreshPrice()
+  for i, uiItem in ipairs(self._items) do
+    local price = self.controller._buyComponet:GetGiftPriceForShowById(uiItem:GetID())
     uiItem:SetPrice(price)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeBase.AddEventBase = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHauteCoutureDrawChargeBase:AddEventBase()
   self:AttachEvent(GameEventType.ActivityCurrencyBuySuccess, self.OnBuySuccess)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeBase.RemoveEventBase = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHauteCoutureDrawChargeBase:RemoveEventBase()
   self:DetachEvent(GameEventType.ActivityCurrencyBuySuccess, self.OnBuySuccess)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeBase.buyGift = function(self, id)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHauteCoutureDrawChargeBase:buyGift(id)
   local type = CampaignGiftType.ECGT_SENIOR_SKIN
   self._buyID = id
-  ;
-  (Log.debug)("请求购买礼包:", self._buyID)
-  ;
-  ((self.controller)._buyComponet):BuyGift(id, 1, type)
+  Log.debug("请求购买礼包:", self._buyID)
+  self.controller._buyComponet:BuyGift(id, 1, type)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeBase.OnBuySuccess = function(self, id)
-  -- function num : 0_8 , upvalues : _ENV
-  (Log.debug)("购买礼包成功:", self._buyID)
-  local cfg = ((Cfg.cfg_component_buy_gift)({GiftID = self._buyID}))[1]
+function UIHauteCoutureDrawChargeBase:OnBuySuccess(id)
+  Log.debug("购买礼包成功:", self._buyID)
+  local cfg = Cfg.cfg_component_buy_gift({
+    GiftID = self._buyID
+  })[1]
   self._buyID = nil
-  local id = ((cfg.ExtraAward)[1])[1]
-  local count = ((cfg.ExtraAward)[1])[2]
+  local id = cfg.ExtraAward[1][1]
+  local count = cfg.ExtraAward[1][2]
   local asset = RoleAsset:New()
   asset.assetid = id
   asset.count = count
   local awards = {asset}
-  self:ShowDialog("UIHauteCoutureDrawGetItemV2Controller", awards, (StringTable.Get)("str_pay_gain_goods"), true, function()
-    -- function num : 0_8_0
-  end
-, self._ctx)
+  self:ShowDialog("UIHauteCoutureDrawGetItemV2Controller", awards, StringTable.Get("str_pay_gain_goods"), true, function()
+  end, self._ctx)
 end
-
-

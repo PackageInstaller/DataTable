@@ -1,21 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_change_grid_prism.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectResultChangeGridPrism", SkillEffectResultBase)
 SkillEffectResultChangeGridPrism = SkillEffectResultChangeGridPrism
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultChangeGridPrism.Constructor = function(self)
-  -- function num : 0_0
+function SkillEffectResultChangeGridPrism:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeGridPrism.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultChangeGridPrism:GetEffectType()
   return SkillEffectType.ChangeGridPrism
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n30/Entrust/event/ui_n30_entrust_event.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N30EntrustEvent", Object)
 N30EntrustEvent = N30EntrustEvent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N30EntrustEvent.Constructor = function(self, node, cfg)
-  -- function num : 0_0
+function N30EntrustEvent:Constructor(node, cfg)
   self._parent = node
   self._cfg = cfg
   self._isVisible = false
@@ -16,187 +9,119 @@ N30EntrustEvent.Constructor = function(self, node, cfg)
   self._isPass = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.DebugName = function(self)
-  -- function num : 0_1
+function N30EntrustEvent:DebugName()
   return "Base"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.CreateEvent = function(self, node, cfg)
-  -- function num : 0_2
+function N30EntrustEvent:CreateEvent(node, cfg)
   local eventType = cfg.EventType
-  local c = (self._dic)[eventType]
+  local c = self._dic[eventType]
   if c ~= nil then
     return c:New(node, cfg, eventType)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.Class = function(self, child, base, eventType)
-  -- function num : 0_3 , upvalues : _ENV
+function N30EntrustEvent:Class(child, base, eventType)
   if self._dic == nil then
     self._dic = {}
   end
   _class(child, base)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._dic)[eventType] = _G[child]
+  self._dic[eventType] = _G[child]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.Node = function(self)
-  -- function num : 0_4
+function N30EntrustEvent:Node()
   return self._parent
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.ID = function(self)
-  -- function num : 0_5
-  return (self._cfg).EventID
+function N30EntrustEvent:ID()
+  return self._cfg.EventID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.Cfg = function(self)
-  -- function num : 0_6
+function N30EntrustEvent:Cfg()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.EventType = function(self)
-  -- function num : 0_7
-  return (self._cfg).EventType
+function N30EntrustEvent:EventType()
+  return self._cfg.EventType
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.ParamTeamID = function(self)
-  -- function num : 0_8
-  if (self._cfg).Params == nil then
+function N30EntrustEvent:ParamTeamID()
+  if self._cfg.Params == nil then
     return nil
   end
-  return (((self._cfg).Params)[1]).TeamID
+  return self._cfg.Params[1].TeamID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.ParamBannerID = function(self)
-  -- function num : 0_9
-  if (self._cfg).Params == nil then
+function N30EntrustEvent:ParamBannerID()
+  if self._cfg.Params == nil then
     return nil
   end
-  return (((self._cfg).Params)[1]).BannerID
+  return self._cfg.Params[1].BannerID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.ParamBannerType = function(self)
-  -- function num : 0_10
-  if (self._cfg).Params == nil then
+function N30EntrustEvent:ParamBannerType()
+  if self._cfg.Params == nil then
     return nil
   end
-  return (((self._cfg).Params)[1]).BannerType
+  return self._cfg.Params[1].BannerType
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.ParamStoryID = function(self)
-  -- function num : 0_11
-  if (self._cfg).Params == nil then
+function N30EntrustEvent:ParamStoryID()
+  if self._cfg.Params == nil then
     return nil
   end
-  return (((self._cfg).Params)[1]).StoryID
+  return self._cfg.Params[1].StoryID
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.ParamHard = function(self)
-  -- function num : 0_12
-  if (self._cfg).Params == nil then
+function N30EntrustEvent:ParamHard()
+  if self._cfg.Params == nil then
     return false
   end
-  do return (((self._cfg).Params)[1]).Type == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return self._cfg.Params[1].Type == 1
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.ParamHead = function(self)
-  -- function num : 0_13
-  if (self._cfg).Params == nil then
+function N30EntrustEvent:ParamHead()
+  if self._cfg.Params == nil then
     return nil
   end
-  return (((self._cfg).Params)[1]).Head
+  return self._cfg.Params[1].Head
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.ParamShowNumber = function(self)
-  -- function num : 0_14
-  if (self._cfg).Params == nil then
+function N30EntrustEvent:ParamShowNumber()
+  if self._cfg.Params == nil then
     return false
   end
-  do return (((self._cfg).Params)[1]).ShowNumber == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return self._cfg.Params[1].ShowNumber == 1
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.ParamDesc = function(self)
-  -- function num : 0_15
-  if (self._cfg).Params == nil then
+function N30EntrustEvent:ParamDesc()
+  if self._cfg.Params == nil then
     return nil
   end
-  return (((self._cfg).Params)[1]).Desc
+  return self._cfg.Params[1].Desc
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.EntrustData = function(self)
-  -- function num : 0_16
-  return (self._parent):EntrustData()
+function N30EntrustEvent:EntrustData()
+  return self._parent:EntrustData()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.IsVisible = function(self)
-  -- function num : 0_17
+function N30EntrustEvent:IsVisible()
   return self._isVisible
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.IsLocked = function(self)
-  -- function num : 0_18
+function N30EntrustEvent:IsLocked()
   return self._isLocked
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.IsPass = function(self)
-  -- function num : 0_19
+function N30EntrustEvent:IsPass()
   return self._isPass
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.GetIconBgName = function(self)
-  -- function num : 0_20
+function N30EntrustEvent:GetIconBgName()
   return nil
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.GetIconName = function(self)
-  -- function num : 0_21
+function N30EntrustEvent:GetIconName()
   if self._isPass then
     return "n30_wt_ld_icon14"
   else
@@ -204,133 +129,85 @@ N30EntrustEvent.GetIconName = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.GetWidgetName = function(self)
-  -- function num : 0_22
+function N30EntrustEvent:GetWidgetName()
   return nil
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustEvent.OnArrived = function(self, ui)
-  -- function num : 0_23
+function N30EntrustEvent:OnArrived(ui)
   ui:ShowDialog("UIN30EntrustEvent", self)
 end
 
 _class("N30EntrustLine", Object)
 N30EntrustLine = N30EntrustLine
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
 
-N30EntrustLine.Constructor = function(self, node, cfg)
-  -- function num : 0_24
+function N30EntrustLine:Constructor(node, cfg)
   self._parent = node
   self._cfg = cfg
   self._isVisible = false
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustLine.CreateLine = function(self, node, cfg)
-  -- function num : 0_25
+function N30EntrustLine:CreateLine(node, cfg)
   return self:New(node, cfg)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustLine.Node = function(self)
-  -- function num : 0_26
+function N30EntrustLine:Node()
   return self._parent
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustLine.ID = function(self)
-  -- function num : 0_27
-  return (self.cfg).ID
+function N30EntrustLine:ID()
+  return self.cfg.ID
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustLine.Cfg = function(self)
-  -- function num : 0_28
+function N30EntrustLine:Cfg()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustLine.EntrustData = function(self)
-  -- function num : 0_29
-  return (self._parent):EntrustData()
+function N30EntrustLine:EntrustData()
+  return self._parent:EntrustData()
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustLine.IsVisible = function(self)
-  -- function num : 0_30
+function N30EntrustLine:IsVisible()
   return self._isVisible
 end
 
 _class("UIN30EntrustEventWidget", UICustomWidget)
 UIN30EntrustEventWidget = UIN30EntrustEventWidget
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN30EntrustEventWidget.ShowClose = function(self)
-  -- function num : 0_31
+function UIN30EntrustEventWidget:ShowClose()
   return true
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustEventWidget.GetTitle = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  local cfg = (self._event):Cfg()
+function UIN30EntrustEventWidget:GetTitle()
+  local cfg = self._event:Cfg()
   if cfg.PointName ~= nil then
-    return (StringTable.Get)(cfg.PointName)
+    return StringTable.Get(cfg.PointName)
   else
     return nil
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustEventWidget.GetIcon = function(self)
-  -- function num : 0_33
+function UIN30EntrustEventWidget:GetIcon()
   return nil
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustEventWidget.SetEvent = function(self, event)
-  -- function num : 0_34
+function UIN30EntrustEventWidget:SetEvent(event)
   self._event = event
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustEventWidget.Refresh = function(self)
-  -- function num : 0_35
+function UIN30EntrustEventWidget:Refresh()
 end
 
 _class("UIN30EntrustEvent", UIController)
 UIN30EntrustEvent = UIN30EntrustEvent
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN30EntrustEvent.Constructor = function(self)
-  -- function num : 0_36
+function UIN30EntrustEvent:Constructor()
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustEvent.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_37
+function UIN30EntrustEvent:LoadDataOnEnter(TT, res, uiParams)
   self._event = uiParams[1]
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustEvent.OnShow = function(self, uiParams)
-  -- function num : 0_38
+function UIN30EntrustEvent:OnShow(uiParams)
   self._btnClose = self:GetUIComponent("RectTransform", "btnClose")
   self._uiTitle = self:GetUIComponent("RectTransform", "uiTitle")
   self._txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
@@ -343,83 +220,56 @@ UIN30EntrustEvent.OnShow = function(self, uiParams)
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustEvent.OnHide = function(self)
-  -- function num : 0_39
+function UIN30EntrustEvent:OnHide()
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustEvent.BtnCloseOnClick = function(self, go)
-  -- function num : 0_40
+function UIN30EntrustEvent:BtnCloseOnClick(go)
   self:CloseDialogAnimation()
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustEvent.Refresh = function(self)
-  -- function num : 0_41
+function UIN30EntrustEvent:Refresh()
   local isShowClose = true
-  local eventTitle, iconUrl = nil, nil
-  local widgetName = (self._event):GetWidgetName()
-  ;
-  (((self._uiEvent):Engine()).gameObject):SetActive(widgetName ~= nil)
+  local eventTitle, iconUrl
+  local widgetName = self._event:GetWidgetName()
+  self._uiEvent:Engine().gameObject:SetActive(widgetName ~= nil)
   if widgetName ~= nil then
-    ((self._uiEvent):Engine()):SetObjectName(widgetName .. ".prefab")
-    self._widgetEvent = (self._uiEvent):SpawnObject(widgetName)
-    ;
-    (self._widgetEvent):SetEvent(self._event)
-    ;
-    (self._widgetEvent):Refresh()
-    isShowClose = (self._widgetEvent):ShowClose()
-    eventTitle = (self._widgetEvent):GetTitle()
-    iconUrl = (self._widgetEvent):GetIcon()
+    self._uiEvent:Engine():SetObjectName(widgetName .. ".prefab")
+    self._widgetEvent = self._uiEvent:SpawnObject(widgetName)
+    self._widgetEvent:SetEvent(self._event)
+    self._widgetEvent:Refresh()
+    isShowClose = self._widgetEvent:ShowClose()
+    eventTitle = self._widgetEvent:GetTitle()
+    iconUrl = self._widgetEvent:GetIcon()
   end
-  ;
-  ((self._btnClose).gameObject):SetActive(isShowClose)
-  ;
-  ((self._uiFinish).gameObject):SetActive((self._event):IsPass())
-  ;
-  ((self._uiTitle).gameObject):SetActive(eventTitle ~= nil)
+  self._btnClose.gameObject:SetActive(isShowClose)
+  self._uiFinish.gameObject:SetActive(self._event:IsPass())
+  self._uiTitle.gameObject:SetActive(eventTitle ~= nil)
   if eventTitle ~= nil then
-    (self._txtTitle):SetText(eventTitle)
+    self._txtTitle:SetText(eventTitle)
   end
-  ;
-  ((self._uiIcon).gameObject):SetActive(iconUrl ~= nil)
+  self._uiIcon.gameObject:SetActive(iconUrl ~= nil)
   if iconUrl ~= nil then
-    (self._uiIcon):LoadImage(iconUrl)
+    self._uiIcon:LoadImage(iconUrl)
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustEvent.RewardItemInfo = function(self, reward, go)
-  -- function num : 0_42
-  local deltaPosition = (go.transform).position - ((self._safeArea).transform).position
+function UIN30EntrustEvent:RewardItemInfo(reward, go)
+  local deltaPosition = go.transform.position - self._safeArea.transform.position
   self:ShowDialog("UIN30EntrustItemInfo", reward, deltaPosition)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustEvent.CloseDialogAnimation = function(self, cbFinish)
-  -- function num : 0_43 , upvalues : _ENV
+function UIN30EntrustEvent:CloseDialogAnimation(cbFinish)
   local lockName = "UIN30EntrustEvent:CloseDialogAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_43_0 , upvalues : self, lockName, _ENV, cbFinish
     self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_N30_EntrustEvent_out")
+    self._animation:Play("uieff_N30_EntrustEvent_out")
     YIELD(TT, 200)
     self:UnLock(lockName)
     self:CloseDialog()
     if cbFinish then
       cbFinish()
     end
-  end
-)
+  end)
 end
 
 return N30EntrustEvent, N30EntrustLine
-

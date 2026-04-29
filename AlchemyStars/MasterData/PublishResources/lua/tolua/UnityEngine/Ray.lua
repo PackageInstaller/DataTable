@@ -1,15 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/UnityEngine/Ray.lua 
+local rawget = _ENV.rawget
+local setmetatable = _ENV.setmetatable
+local Vector3 = _ENV.Vector3
+local Ray = {
+  direction = Vector3.zero,
+  origin = Vector3.zero
+}
+local get = tolua.initget(Ray)
 
--- params : ...
--- function num : 0 , upvalues : _ENV
-local rawget = rawget
-local setmetatable = setmetatable
-local Vector3 = Vector3
-local Ray = {direction = Vector3.zero, origin = Vector3.zero}
-local get = (tolua.initget)(Ray)
-Ray.__index = function(t, k)
-  -- function num : 0_0 , upvalues : rawget, Ray, get
+function Ray.__index(t, k)
   local var = rawget(Ray, k)
   if var == nil then
     var = rawget(get, k)
@@ -20,13 +18,11 @@ Ray.__index = function(t, k)
   return var
 end
 
-Ray.__call = function(t, direction, origin)
-  -- function num : 0_1 , upvalues : Ray
-  return (Ray.New)(direction, origin)
+function Ray.__call(t, direction, origin)
+  return Ray.New(direction, origin)
 end
 
-Ray.New = function(direction, origin)
-  -- function num : 0_2 , upvalues : setmetatable, Ray
+function Ray.New(direction, origin)
   local ray = {}
   ray.direction = direction:Normalize()
   ray.origin = origin
@@ -34,28 +30,22 @@ Ray.New = function(direction, origin)
   return ray
 end
 
-Ray.GetPoint = function(self, distance)
-  -- function num : 0_3
+function Ray:GetPoint(distance)
   local dir = self.direction * distance
   dir:Add(self.origin)
   return dir
 end
 
-Ray.Get = function(self)
-  -- function num : 0_4
+function Ray:Get()
   local o = self.origin
   local d = self.direction
   return o.x, o.y, o.z, d.x, d.y, d.z
 end
 
-Ray.__tostring = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  return (string.format)("Origin:(%f,%f,%f),Dir:(%f,%f, %f)", (self.origin).x, (self.origin).y, (self.origin).z, (self.direction).x, (self.direction).y, (self.direction).z)
+function Ray:__tostring()
+  return string.format("Origin:(%f,%f,%f),Dir:(%f,%f, %f)", self.origin.x, self.origin.y, self.origin.z, self.direction.x, self.direction.y, self.direction.z)
 end
-
--- DECOMPILER ERROR at PC25: Confused about usage of register: R5 in 'UnsetPending'
 
 UnityEngine.Ray = Ray
 setmetatable(Ray, Ray)
 return Ray
-

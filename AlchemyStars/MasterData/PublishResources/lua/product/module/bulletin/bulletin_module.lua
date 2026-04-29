@@ -1,38 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/bulletin/bulletin_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BulletinModule", GameModule)
 BulletinModule = BulletinModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BulletinModule.Constructor = function(self)
-  -- function num : 0_0
+function BulletinModule:Constructor()
   self.token = nil
   self.current_server = nil
   self.server_list = nil
   self.current_gateway = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletinModule.Init = function(self)
-  -- function num : 0_1
+function BulletinModule:Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletinModule.GetServerInfo = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function BulletinModule:GetServerInfo(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestGetServerInfo)
-  ;
-  (Log.warn)("BulletinModule:GetServerInfo request created", request)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestGetServerInfo)
+  Log.warn("BulletinModule:GetServerInfo request created", request)
   local reply = self:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("BulletinModule:GetServerInfo send message failed")
+    Log.fatal("BulletinModule:GetServerInfo send message failed")
     return res
   end
   local replyEvent = CEventReplyGetServerInfo(reply.msg)
@@ -45,44 +31,37 @@ BulletinModule.GetServerInfo = function(self, TT)
   return res
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletinModule.GetDefaultServerInfo = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function BulletinModule:GetDefaultServerInfo(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestGetDefaultServerInfo)
-  request.login_info = ((GameGlobal.GameLogic)()).msdkAuthorityInfo
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestGetDefaultServerInfo)
+  request.login_info = GameGlobal.GameLogic().msdkAuthorityInfo
   local reply = self:Call(TT, request)
   if not reply:Succ() then
-    (Log.error)("[login] BulletinModule: Call CEventRequestGetDefaultServerInfo error reply:Succ()")
+    Log.error("[login] BulletinModule: Call CEventRequestGetDefaultServerInfo error reply:Succ()")
     return res
   end
   local replyEvent = CEventReplyGetDefaultServerInfo(reply.msg)
   if replyEvent == nil then
-    (Log.error)("[login] BulletinModule: CEventReplyGetDefaultServerInfo replyEvent == nil")
+    Log.error("[login] BulletinModule: CEventReplyGetDefaultServerInfo replyEvent == nil")
     return res
   end
   res:SetSucc(true)
   res:SetResult(replyEvent.ret)
   self.current_server = replyEvent.default_server
   self.current_gateway = replyEvent.default_gateway
-  self.token = (NetToken.NewBySerial)((replyEvent.token).type, (replyEvent.token).serial, (replyEvent.token).token_id)
+  self.token = NetToken.NewBySerial(replyEvent.token.type, replyEvent.token.serial, replyEvent.token.token_id)
   if APPVERNETSTAT then
-    (self.caller):UpdateNetworkCfgInfo(replyEvent.net_cfg_info)
+    self.caller:UpdateNetworkCfgInfo(replyEvent.net_cfg_info)
   end
-  ;
-  (Log.info)("[login] BulletinModule:GetDefaultServerInfo result ", replyEvent.ret)
+  Log.info("[login] BulletinModule:GetDefaultServerInfo result ", replyEvent.ret)
   return res
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletinModule.GetLoginInfo = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function BulletinModule:GetLoginInfo(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestGetLoginInfo)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestGetLoginInfo)
   local reply = self:Call(TT, request)
   if not reply:Succ() then
     return res
@@ -93,21 +72,18 @@ BulletinModule.GetLoginInfo = function(self, TT)
   end
   res:SetSucc(true)
   res:SetResult(replyEvent.ret)
-  self.token = (NetToken.NewBySerial)((replyEvent.token).type, (replyEvent.token).serial, (replyEvent.token).token_id)
+  self.token = NetToken.NewBySerial(replyEvent.token.type, replyEvent.token.serial, replyEvent.token.token_id)
   return res
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletinModule.QuickGetServerInfo = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
+function BulletinModule:QuickGetServerInfo(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestQuickGetServerInfo)
-  request.login_info = ((GameGlobal.GameLogic)()).msdkAuthorityInfo
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestQuickGetServerInfo)
+  request.login_info = GameGlobal.GameLogic().msdkAuthorityInfo
   local reply = self:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("BulletinModule:QuickGetServerInfo send message failed")
+    Log.fatal("BulletinModule:QuickGetServerInfo send message failed")
     return res
   end
   local replyEvent = CEventReplyQuickGetServerInfo(reply.msg)
@@ -116,24 +92,21 @@ BulletinModule.QuickGetServerInfo = function(self, TT)
   end
   res:SetSucc(true)
   res:SetResult(replyEvent.ret)
-  self.token = (NetToken.NewBySerial)((replyEvent.token).type, (replyEvent.token).serial, (replyEvent.token).token_id)
+  self.token = NetToken.NewBySerial(replyEvent.token.type, replyEvent.token.serial, replyEvent.token.token_id)
   self.server_list = replyEvent.server_list
   self.current_server = replyEvent.default_server
   self.current_gateway = replyEvent.default_gateway
   return res
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletinModule.QuickGetDefaultServerInfo = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function BulletinModule:QuickGetDefaultServerInfo(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestQuickGetDefaultServerInfo)
-  request.login_info = ((GameGlobal.GameLogic)()).msdkAuthorityInfo
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestQuickGetDefaultServerInfo)
+  request.login_info = GameGlobal.GameLogic().msdkAuthorityInfo
   local reply = self:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("BulletinModule:QuickGetDefaultServerInfo send message failed")
+    Log.fatal("BulletinModule:QuickGetDefaultServerInfo send message failed")
     return res
   end
   local replyEvent = CEventReplyQuickGetDefaultServerInfo(reply.msg)
@@ -142,23 +115,20 @@ BulletinModule.QuickGetDefaultServerInfo = function(self, TT)
   end
   res:SetSucc(true)
   res:SetResult(replyEvent.ret)
-  self.token = (NetToken.NewBySerial)((replyEvent.token).type, (replyEvent.token).serial, (replyEvent.token).token_id)
+  self.token = NetToken.NewBySerial(replyEvent.token.type, replyEvent.token.serial, replyEvent.token.token_id)
   self.current_server = replyEvent.default_server
   self.current_gateway = replyEvent.default_gateway
   return res
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletinModule.RequestTempMailMaintain = function(self, TT, mailAddr)
-  -- function num : 0_7 , upvalues : _ENV
+function BulletinModule:RequestTempMailMaintain(TT, mailAddr)
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestMailMaintainInfo)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestMailMaintainInfo)
   request.mail = mailAddr
   local reply = self:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("BulletinModule:RequestTempMailMaintain send message failed")
+    Log.fatal("BulletinModule:RequestTempMailMaintain send message failed")
     return res, nil
   end
   local replyEvent = CEventReplyMailMaintainInfo(reply.msg)
@@ -168,5 +138,3 @@ BulletinModule.RequestTempMailMaintain = function(self, TT, mailAddr)
   res:SetSucc(true)
   return res, replyEvent
 end
-
-

@@ -1,8 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/kr/str_toast_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_toast_manager_module_not_open = "기능 잠김", str_toast_manager_module_now_not_open = "기능 미개방", str_toast_manager_not_open = "잠김", str_toast_manager_now_not_open = "현재 잠김", str_toast_manager_module_not_dispark = "기능 미개방", str_toast_manager_test_time_module_now_not_open = "테스트 단계로, 아직 기능이 해제되지 않았습니다.", str_toast_manager_module_is_not_open = "기능 미개방", str_toast_manager_passage_not_open = "통로 잠김", str_toast_manager_space_not_open = "공간 잠김", str_toast_manager_test_time_module_not_open = "테스트 버전에서 오픈되지 않은 기능입니다.", str_toast_manager_not_finish_plot_cant_review = "완료하지 않은 스토리는 회상할 수 없습니다.", str_toast_manager_main_room_cant_down_lv = "함교 레벨은 하락하지 않습니다.", str_toast_manager_star_power_is_not_enough = "루미나가 부족합니다. 더 많은 루미나 저장실의 잠금 해제와 레벨업이 필요합니다.", str_toast_manager_aircraft_passage = "통로", str_toast_manager_evil_spirits_in_purification = "악귀 정화 중", str_toast_manager_evil_spirits_in_purification_complete = "악귀 정화 완료", str_toast_manager_unlock_new_files = "새 파일 잠금 해제", str_toast_manager_there_is_no_open_prize_pool = "오픈된 소집이 없습니다.", str_toast_manager_no_recharge_interface = "충전 메뉴가 없습니다.", str_toast_manager_the_input_user_id_is_null = "[Login] 입력한 계정이 없어서, 디바이스 id를 사용하여 로그인합니다.", str_toast_manager_please_check_the_user_files = "아래 <color=#ffbb00>사용자 계약과 개인정보 보호 안내</color>에 동의를 체크하시면 게임을 시작할 수 있어요.", str_toast_manager_no_enemy_info = "적 정보 없음", str_toast_manager_res_controller_open_unusual = "자원 던전 오픈 상태 이상:", str_toast_manager_time_limited_TAB_closed = "제한시간 탭 닫힘", str_toast_manager_function_not_open_yet = "오픈되지 않은 기능입니다", str_toast_manager_function_not_open_yet_en = "THIS FUNCTION IS NOT OPEN YET"}
+local config = {
+  str_toast_manager_module_not_open = "기능 잠김",
+  str_toast_manager_module_now_not_open = "기능 미개방",
+  str_toast_manager_not_open = "잠김",
+  str_toast_manager_now_not_open = "현재 잠김",
+  str_toast_manager_module_not_dispark = "기능 미개방",
+  str_toast_manager_test_time_module_now_not_open = "테스트 단계로, 아직 기능이 해제되지 않았습니다.",
+  str_toast_manager_module_is_not_open = "기능 미개방",
+  str_toast_manager_passage_not_open = "통로 잠김",
+  str_toast_manager_space_not_open = "공간 잠김",
+  str_toast_manager_test_time_module_not_open = "테스트 버전에서 오픈되지 않은 기능입니다.",
+  str_toast_manager_not_finish_plot_cant_review = "완료하지 않은 스토리는 회상할 수 없습니다.",
+  str_toast_manager_main_room_cant_down_lv = "함교 레벨은 하락하지 않습니다.",
+  str_toast_manager_star_power_is_not_enough = "루미나가 부족합니다. 더 많은 루미나 저장실의 잠금 해제와 레벨업이 필요합니다.",
+  str_toast_manager_aircraft_passage = "통로",
+  str_toast_manager_evil_spirits_in_purification = "악귀 정화 중",
+  str_toast_manager_evil_spirits_in_purification_complete = "악귀 정화 완료",
+  str_toast_manager_unlock_new_files = "새 파일 잠금 해제",
+  str_toast_manager_there_is_no_open_prize_pool = "오픈된 소집이 없습니다.",
+  str_toast_manager_no_recharge_interface = "충전 메뉴가 없습니다.",
+  str_toast_manager_the_input_user_id_is_null = "[Login] 입력한 계정이 없어서, 디바이스 id를 사용하여 로그인합니다.",
+  str_toast_manager_please_check_the_user_files = "아래 <color=#ffbb00>사용자 계약과 개인정보 보호 안내</color>에 동의를 체크하시면 게임을 시작할 수 있어요.",
+  str_toast_manager_no_enemy_info = "적 정보 없음",
+  str_toast_manager_res_controller_open_unusual = "자원 던전 오픈 상태 이상:",
+  str_toast_manager_time_limited_TAB_closed = "제한시간 탭 닫힘",
+  str_toast_manager_function_not_open_yet = "오픈되지 않은 기능입니다",
+  str_toast_manager_function_not_open_yet_en = "THIS FUNCTION IS NOT OPEN YET"
+}
 return config
-

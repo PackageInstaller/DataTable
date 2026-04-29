@@ -1,46 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_record_pet_absorb_super_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicRecordPetAbsorbSuperGrid", BuffLogicBase)
 BuffLogicRecordPetAbsorbSuperGrid = BuffLogicRecordPetAbsorbSuperGrid
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRecordPetAbsorbSuperGrid.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicRecordPetAbsorbSuperGrid:Constructor(buffInstance, logicParam)
   self._key = "PetAbsorbSuperGridCount"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRecordPetAbsorbSuperGrid.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local buffComponent = (self._entity):BuffComponent()
+function BuffLogicRecordPetAbsorbSuperGrid:DoLogic(notify)
+  local buffComponent = self._entity:BuffComponent()
   if not buffComponent then
-    return 
+    return
   end
   buffComponent:AddBuffValue(self._key, 1)
 end
 
 _class("BuffLogicClearRecordPetAbsorbSuperGrid", BuffLogicBase)
 BuffLogicClearRecordPetAbsorbSuperGrid = BuffLogicClearRecordPetAbsorbSuperGrid
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicClearRecordPetAbsorbSuperGrid.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicClearRecordPetAbsorbSuperGrid:Constructor(buffInstance, logicParam)
   self._key = "PetAbsorbSuperGridCount"
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicClearRecordPetAbsorbSuperGrid.DoLogic = function(self, notify)
-  -- function num : 0_3
-  local buffComponent = (self._entity):BuffComponent()
+function BuffLogicClearRecordPetAbsorbSuperGrid:DoLogic(notify)
+  local buffComponent = self._entity:BuffComponent()
   if not buffComponent then
-    return 
+    return
   end
   buffComponent:SetBuffValue(self._key, 0)
 end
-
-

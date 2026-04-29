@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_damage_based_on_pick_up_rect_effect_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillDamageBasedOnPickUpRectEffectParam", SkillEffectParamBase)
 SkillDamageBasedOnPickUpRectEffectParam = SkillDamageBasedOnPickUpRectEffectParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillDamageBasedOnPickUpRectEffectParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillDamageBasedOnPickUpRectEffectParam:Constructor(t)
   self._percent = t.percent
   self._formulaID = t.formulaID
   self._multiple = t.multiple or 1
@@ -17,41 +10,24 @@ SkillDamageBasedOnPickUpRectEffectParam.Constructor = function(self, t)
   self._rectY = 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageBasedOnPickUpRectEffectParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillDamageBasedOnPickUpRectEffectParam:GetEffectType()
   return SkillEffectType.DamageBasedOnPickUpRect
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageBasedOnPickUpRectEffectParam.GetMultiple = function(self)
-  -- function num : 0_2
+function SkillDamageBasedOnPickUpRectEffectParam:GetMultiple()
   return self._multiple
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageBasedOnPickUpRectEffectParam.GetDamagePercent = function(self)
-  -- function num : 0_3
-  local damageEffectParam = self._multiple / (self._rectX + self._rectY) * (self._percent)[1]
+function SkillDamageBasedOnPickUpRectEffectParam:GetDamagePercent()
+  local damageEffectParam = self._multiple / (self._rectX + self._rectY) * self._percent[1]
   return {damageEffectParam}
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageBasedOnPickUpRectEffectParam.GetDamageFormulaID = function(self)
-  -- function num : 0_4
+function SkillDamageBasedOnPickUpRectEffectParam:GetDamageFormulaID()
   return self._formulaID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageBasedOnPickUpRectEffectParam.SetSkillRangeRectParam = function(self, rectX, rectY)
-  -- function num : 0_5
+function SkillDamageBasedOnPickUpRectEffectParam:SetSkillRangeRectParam(rectX, rectY)
   self._rectX = rectX
   self._rectY = rectY
 end
-
-

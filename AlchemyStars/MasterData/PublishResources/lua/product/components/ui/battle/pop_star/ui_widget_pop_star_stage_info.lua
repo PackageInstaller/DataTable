@@ -1,85 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/pop_star/ui_widget_pop_star_stage_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetPopStarStageInfo", UICustomWidget)
 UIWidgetPopStarStageInfo = UIWidgetPopStarStageInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetPopStarStageInfo.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWidgetPopStarStageInfo:OnShow()
   self._anim = self:GetUIComponent("Animation", "UIWidgetPopStarStageInfo")
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "Canvas")
   self:SetCanvasShow(false)
   self._scrollView = self:GetUIComponent("ScrollRect", "ScrollView")
-  ;
-  ((self._scrollView).gameObject):SetActive(false)
+  self._scrollView.gameObject:SetActive(false)
   self._rtScrollView = self:GetUIComponent("RectTransform", "ScrollView")
   self._contentPool = self:GetUIComponent("UISelectObjectPath", "Content")
   self._rtContent = self:GetUIComponent("RectTransform", "Content")
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._rtContent)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._rtContent)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarStageInfo.OnHide = function(self)
-  -- function num : 0_1
+function UIWidgetPopStarStageInfo:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarStageInfo.SetCanvasShow = function(self, show)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not show or not 1 then
-    (self._canvasGroup).alpha = not self._canvasGroup or 0
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._canvasGroup).blocksRaycasts = show
+function UIWidgetPopStarStageInfo:SetCanvasShow(show)
+  if self._canvasGroup then
+    self._canvasGroup.alpha = show and 1 or 0
+    self._canvasGroup.blocksRaycasts = show
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarStageInfo.Init = function(self, buffIDList)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWidgetPopStarStageInfo:Init(buffIDList)
   self:SetCanvasShow(true)
-  ;
-  (self._anim):Play("uieff_UIWidgetPopStarStageInfo_in")
+  self._anim:Play("uieff_UIWidgetPopStarStageInfo_in")
   self:_InitListView(buffIDList)
-  ;
-  ((self._scrollView).gameObject):SetActive(true)
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._rtContent)
+  self._scrollView.gameObject:SetActive(true)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._rtContent)
   self:_RefreshContentRT()
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, self
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     YIELD(TT)
     self:_RefreshContentRT()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarStageInfo._InitListView = function(self, buffIDList)
-  -- function num : 0_4 , upvalues : _ENV
+function UIWidgetPopStarStageInfo:_InitListView(buffIDList)
   local cacheCount = #buffIDList
   if cacheCount == 0 then
     cacheCount = 1
   end
-  local arr = (self._contentPool):SpawnObjects("UIWidgetPopStarStageInfoItem", cacheCount)
-  for idx,item in ipairs(arr) do
+  local arr = self._contentPool:SpawnObjects("UIWidgetPopStarStageInfoItem", cacheCount)
+  for idx, item in ipairs(arr) do
     if #buffIDList == 0 then
       item:Init("str_n31_popstar_battle_no_stage_buff")
     else
       local buffID = buffIDList[idx]
-      local cfgBuff = (ConfigServiceHelper.GetBuffConfigData)(buffID)
+      local cfgBuff = ConfigServiceHelper.GetBuffConfigData(buffID)
       if cfgBuff then
         item:Init(cfgBuff:GetBuffDesc())
       end
@@ -87,37 +55,23 @@ UIWidgetPopStarStageInfo._InitListView = function(self, buffIDList)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarStageInfo._RefreshContentRT = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-  if ((self._rtContent).sizeDelta).y < 488 then
-    (self._rtScrollView).sizeDelta = Vector2(((self._rtScrollView).sizeDelta).x, ((self._rtContent).sizeDelta).y + 40)
+function UIWidgetPopStarStageInfo:_RefreshContentRT()
+  if self._rtContent.sizeDelta.y < 488 then
+    self._rtScrollView.sizeDelta = Vector2(self._rtScrollView.sizeDelta.x, self._rtContent.sizeDelta.y + 40)
   else
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._rtScrollView).sizeDelta = Vector2(((self._rtScrollView).sizeDelta).x, 528)
+    self._rtScrollView.sizeDelta = Vector2(self._rtScrollView.sizeDelta.x, 528)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPopStarStageInfo.BtnCloseOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIWidgetPopStarStageInfo", input = "BtnCloseOnClick", 
-args = {}
-})
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, _ENV
-    (self._anim):Play("uieff_UIWidgetPopStarStageInfo_out")
+function UIWidgetPopStarStageInfo:BtnCloseOnClick()
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIWidgetPopStarStageInfo",
+    input = "BtnCloseOnClick",
+    args = {}
+  })
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+    self._anim:Play("uieff_UIWidgetPopStarStageInfo_out")
     YIELD(TT, 500)
     self:SetCanvasShow(false)
-  end
-)
+  end)
 end
-
-

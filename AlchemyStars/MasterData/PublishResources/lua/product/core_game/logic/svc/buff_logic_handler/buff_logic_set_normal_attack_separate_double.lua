@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_normal_attack_separate_double.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetNormalAttackSeparateDouble", BuffLogicBase)
 BuffLogicSetNormalAttackSeparateDouble = BuffLogicSetNormalAttackSeparateDouble
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetNormalAttackSeparateDouble.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetNormalAttackSeparateDouble:Constructor(buffInstance, logicParam)
   self._count = logicParam.count
   self._skillID = logicParam.skillID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetNormalAttackSeparateDouble.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("NormalAttackSeparateDoubleCount", self._count)
-  ;
-  (e:BuffComponent()):SetBuffValue("NormalAttackSeparateDoubleSkillID", self._skillID)
+function BuffLogicSetNormalAttackSeparateDouble:DoLogic(notify)
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("NormalAttackSeparateDoubleCount", self._count)
+  e:BuffComponent():SetBuffValue("NormalAttackSeparateDoubleSkillID", self._skillID)
 end
 
 _class("BuffLogicResetNormalAttackSeparateDouble", BuffLogicBase)
 BuffLogicResetNormalAttackSeparateDouble = BuffLogicResetNormalAttackSeparateDouble
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetNormalAttackSeparateDouble.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetNormalAttackSeparateDouble:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetNormalAttackSeparateDouble.DoLogic = function(self, notify)
-  -- function num : 0_3
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("NormalAttackSeparateDoubleCount", nil)
-  ;
-  (e:BuffComponent()):SetBuffValue("NormalAttackSeparateDoubleSkillID", nil)
+function BuffLogicResetNormalAttackSeparateDouble:DoLogic(notify)
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("NormalAttackSeparateDoubleCount", nil)
+  e:BuffComponent():SetBuffValue("NormalAttackSeparateDoubleSkillID", nil)
 end
-
-

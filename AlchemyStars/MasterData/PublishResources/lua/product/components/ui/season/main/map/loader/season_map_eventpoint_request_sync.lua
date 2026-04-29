@@ -1,62 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/loader/season_map_eventpoint_request_sync.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapEventPointRequestSync", Object)
 SeasonMapEventPointRequestSync = SeasonMapEventPointRequestSync
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapEventPointRequestSync.Constructor = function(self, id, resName)
-  -- function num : 0_0
+function SeasonMapEventPointRequestSync:Constructor(id, resName)
   self._id = id
   self._resName = resName
   self._gameObject = nil
   self._request = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointRequestSync.ID = function(self)
-  -- function num : 0_1
+function SeasonMapEventPointRequestSync:ID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointRequestSync.ResName = function(self)
-  -- function num : 0_2
+function SeasonMapEventPointRequestSync:ResName()
   return self._resName
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointRequestSync.GameObject = function(self)
-  -- function num : 0_3
+function SeasonMapEventPointRequestSync:GameObject()
   return self._gameObject
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointRequestSync.Dispose = function(self)
-  -- function num : 0_4
+function SeasonMapEventPointRequestSync:Dispose()
   if self._request then
-    (self._request):Dispose()
+    self._request:Dispose()
     self._request = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointRequestSync.Load = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.info)("Start sync loading season eventpoint", self._id)
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset(self._resName, LoadType.GameObject)
+function SeasonMapEventPointRequestSync:Load()
+  Log.info("Start sync loading season eventpoint", self._id)
+  local req = ResourceManager:GetInstance():SyncLoadAsset(self._resName, LoadType.GameObject)
   if not req then
-    (Log.error)("Failed to load the season eventpoint asset.", self._resName)
+    Log.error("Failed to load the season eventpoint asset.", self._resName)
   end
   self._request = req
   self._gameObject = req.Obj
 end
-
-

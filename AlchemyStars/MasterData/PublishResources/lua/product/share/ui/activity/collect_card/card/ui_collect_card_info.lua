@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/collect_card/card/ui_collect_card_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICollectCardInfo", UIController)
 UICollectCardInfo = UICollectCardInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICollectCardInfo.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UICollectCardInfo:OnShow(uiParam)
   self._cfg = uiParam[1]
   self._haveCount = uiParam[2]
   self._cardComInfo = uiParam[3]
@@ -17,10 +10,7 @@ UICollectCardInfo.OnShow = function(self, uiParam)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardInfo.GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICollectCardInfo:GetComponents()
   self._iconGo = self:GetGameObject("IconGo")
   self._iconMask = self:GetGameObject("IconMask")
   self._icon = self:GetUIComponent("RawImageLoader", "icontmp")
@@ -45,16 +35,11 @@ UICollectCardInfo.GetComponents = function(self)
   local btns = self:GetUIComponent("UISelectObjectPath", "topbtn")
   local backBtn = btns:SpawnObject("UINewCommonTopButton")
   backBtn:SetData(function()
-    -- function num : 0_1_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardInfo.OnValue = function(self)
-  -- function num : 0_2
+function UICollectCardInfo:OnValue()
   self:SetPool()
   self:SetNumber()
   self:SetShareBtn()
@@ -62,80 +47,55 @@ UICollectCardInfo.OnValue = function(self)
   self:Select()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardInfo.SetNumber = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cardList = (self._cfg).CardList
-  ;
-  (self._number):SetText(self._haveCount .. "/" .. #cardList)
-  ;
-  (self._nameTex):SetText((StringTable.Get)((self._cfg).Name))
+function UICollectCardInfo:SetNumber()
+  local cardList = self._cfg.CardList
+  self._number:SetText(self._haveCount .. "/" .. #cardList)
+  self._nameTex:SetText(StringTable.Get(self._cfg.Name))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardInfo.GetCardCount = function(self, cardid)
-  -- function num : 0_4
-  local count = ((self._cardComInfo).card)[cardid]
-  if not count then
-    count = 0
-  end
+function UICollectCardInfo:GetCardCount(cardid)
+  local count = self._cardComInfo.card[cardid]
+  count = count or 0
   return count
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardInfo.SortList = function(self, list)
-  -- function num : 0_5 , upvalues : _ENV
+function UICollectCardInfo:SortList(list)
   local sortList = {}
-  for key,value in pairs(list) do
-    (table.insert)(sortList, value)
+  for key, value in pairs(list) do
+    table.insert(sortList, value)
   end
-  ;
-  (table.sort)(sortList, function(a, b)
-    -- function num : 0_5_0 , upvalues : _ENV
-    local cfg_a = (Cfg.cfg_component_collect_card)[a]
-    local cfg_b = (Cfg.cfg_component_collect_card)[b]
-    if a >= b then
-      do return cfg_a.Type ~= cfg_b.Type end
-      do return cfg_a.Type == 1 end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  table.sort(sortList, function(a, b)
+    local cfg_a = Cfg.cfg_component_collect_card[a]
+    local cfg_b = Cfg.cfg_component_collect_card[b]
+    if cfg_a.Type == cfg_b.Type then
+      return a < b
+    else
+      return cfg_a.Type == 1
     end
-  end
-)
+  end)
   return sortList
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardInfo.SetPool = function(self)
-  -- function num : 0_6
-  local cardList = (self._cfg).CardList
+function UICollectCardInfo:SetPool()
+  local cardList = self._cfg.CardList
   local sortList = self:SortList(cardList)
-  ;
-  (self._pool):SpawnObjects("UICollectCardInfoItem", #sortList)
-  local pools = (self._pool):GetAllSpawnList()
+  self._pool:SpawnObjects("UICollectCardInfoItem", #sortList)
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, #sortList do
     local item = pools[i]
     local card = sortList[i]
     local count = self:GetCardCount(card)
     item:SetData(card, function(id)
-    -- function num : 0_6_0 , upvalues : self
-    self:OnCardItemClick(id)
-  end
-, count)
+      self:OnCardItemClick(id)
+    end, count)
   end
   self._selectID = sortList[1]
   self._selectCount = self:GetCardCount(self._selectID)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardInfo.Select = function(self)
-  -- function num : 0_7
-  local cardList = (self._cfg).CardList
-  local pools = (self._pool):GetAllSpawnList()
+function UICollectCardInfo:Select()
+  local cardList = self._cfg.CardList
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, #cardList do
     local item = pools[i]
     item:Select(self._selectID)
@@ -143,12 +103,9 @@ UICollectCardInfo.Select = function(self)
   self:SetShareBtn()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardInfo.OnCardItemClick = function(self, id, count)
-  -- function num : 0_8
+function UICollectCardInfo:OnCardItemClick(id, count)
   if self._selectID == id then
-    return 
+    return
   end
   self._selectID = id
   self._selectCount = self:GetCardCount(self._selectID)
@@ -156,100 +113,67 @@ UICollectCardInfo.OnCardItemClick = function(self, id, count)
   self:Select()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardInfo.SetIcon = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self._iconGo):SetActive(self._selectID ~= nil)
-  do
-    if self._selectID then
-      local cfg = (Cfg.cfg_component_collect_card)[self._selectID]
-      if self._newMatObj then
-        self._newMatObj = self._newMatObj
-      end
-      self._newMatObj = self:GetAsset(cfg.IconBig .. ".mat", LoadType.Mat)
-      ;
-      (self._specialBg):SetActive(cfg.Type == 2)
-      ;
-      (self._normalBg):SetActive(cfg.Type == 1)
+function UICollectCardInfo:SetIcon()
+  self._iconGo:SetActive(self._selectID ~= nil)
+  if self._selectID then
+    local cfg = Cfg.cfg_component_collect_card[self._selectID]
+    if self._newMatObj then
+      self._newMatObj = self._newMatObj
     end
-    ;
-    (self._iconMask):SetActive(self._selectCount == 0)
-    local tmpMainTex = ((self._iconRawImage).material):GetTexture("_MainTex")
-    self._mainTexNew = tmpMainTex
-    if self._oldID then
-      (self._iconNewTr):SetAsFirstSibling()
-      local tmp = self._iconNew
-      self._iconNew = self._iconOld
-      self._iconOld = tmp
-      local tmp2 = self._iconNewTr
-      self._iconNewTr = self._iconOldTr
-      self._iconOldTr = tmp2
-      local tmp3 = self._animName2
-      self._animName2 = self._animName1
-      self._animName1 = tmp3
-      local animName = self._animName2
-      ;
-      (self._anim):Stop()
-      ;
-      (self._anim):Play(animName)
-    else
-      self._oldID = true
-    end
-    local MatNew = (self._newMatObj):GetTexture("_MainTex")
-    ;
-    ((self._iconNew).material):SetTexture("_MainTex", MatNew)
-    do
-      if self._oldMatObj then
-        local MatOld = (self._oldMatObj):GetTexture("_MainTex")
-        ;
-        ((self._iconOld).material):SetTexture("_MainTex", MatOld)
-      end
-      -- DECOMPILER ERROR: 9 unprocessed JMP targets
-    end
+    self._newMatObj = self:GetAsset(cfg.IconBig .. ".mat", LoadType.Mat)
+    self._specialBg:SetActive(cfg.Type == 2)
+    self._normalBg:SetActive(cfg.Type == 1)
+  end
+  self._iconMask:SetActive(self._selectCount == 0)
+  local tmpMainTex = self._iconRawImage.material:GetTexture("_MainTex")
+  self._mainTexNew = tmpMainTex
+  if self._oldID then
+    self._iconNewTr:SetAsFirstSibling()
+    local tmp = self._iconNew
+    self._iconNew = self._iconOld
+    self._iconOld = tmp
+    local tmp2 = self._iconNewTr
+    self._iconNewTr = self._iconOldTr
+    self._iconOldTr = tmp2
+    local tmp3 = self._animName2
+    self._animName2 = self._animName1
+    self._animName1 = tmp3
+    local animName = self._animName2
+    self._anim:Stop()
+    self._anim:Play(animName)
+  else
+    self._oldID = true
+  end
+  local MatNew = self._newMatObj:GetTexture("_MainTex")
+  self._iconNew.material:SetTexture("_MainTex", MatNew)
+  if self._oldMatObj then
+    local MatOld = self._oldMatObj:GetTexture("_MainTex")
+    self._iconOld.material:SetTexture("_MainTex", MatOld)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardInfo.OnHide = function(self)
-  -- function num : 0_10
+function UICollectCardInfo:OnHide()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardInfo.SetShareBtn = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_collect_card)[self._selectID]
+function UICollectCardInfo:SetShareBtn()
+  local cfg = Cfg.cfg_component_collect_card[self._selectID]
   local cardType = cfg.Type
-  ;
-  (self._shareGo):SetActive(not self:IsInland() or (self._selectCount == 0 and cardType == 1))
+  self._shareGo:SetActive(self:IsInland() and self._selectCount == 0 and cardType == 1)
   if self:IsInland() and self._selectCount == 0 and cardType == 1 then
-    local info = ((GameGlobal.GameLogic)()).ClientInfo
+    local info = GameGlobal.GameLogic().ClientInfo
     local source = info.m_login_source
-    ;
-    (self._qqGo):SetActive(source ~= MobileClientLoginChannel.MCLC_WX)
-    ;
-    (self._wxGo):SetActive(source == MobileClientLoginChannel.MCLC_WX)
+    self._qqGo:SetActive(source ~= MobileClientLoginChannel.MCLC_WX)
+    self._wxGo:SetActive(source == MobileClientLoginChannel.MCLC_WX)
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardInfo.BtnOnClick = function(self, go)
-  -- function num : 0_12
+function UICollectCardInfo:BtnOnClick(go)
   self:ShowDialog("UICollectCardShare", self._selectID)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardInfo.IsInland = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UICollectCardInfo:IsInland()
   if IsInland then
     return true
   end
   return false
 end
-
-

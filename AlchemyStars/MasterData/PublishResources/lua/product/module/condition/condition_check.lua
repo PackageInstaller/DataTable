@@ -1,92 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/condition/condition_check.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ConditionCheck", Singleton)
 ConditionCheck = ConditionCheck
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ConditionCheck.Constructor = function(self)
-  -- function num : 0_0
+function ConditionCheck:Constructor()
   self:_InitCheckFunction()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ConditionCheck._InitCheckFunction = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._CheckFunction = {[ConditionType.CT_PetGradeLevel] = self._CheckPetGradeLevel, [ConditionType.CT_PetAwakeLevel] = self._CheckPetAwakeLevel, [ConditionType.CT_PeAffinityLevel] = self._CheckPetAffinityLevel, [ConditionType.CT_PetEquipLv] = self._CheckPetEquipLv}
+function ConditionCheck:_InitCheckFunction()
+  self._CheckFunction = {
+    [ConditionType.CT_PetGradeLevel] = self._CheckPetGradeLevel,
+    [ConditionType.CT_PetAwakeLevel] = self._CheckPetAwakeLevel,
+    [ConditionType.CT_PeAffinityLevel] = self._CheckPetAffinityLevel,
+    [ConditionType.CT_PetEquipLv] = self._CheckPetEquipLv
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ConditionCheck.Check = function(self, condition, outTxt, customeKey)
-  -- function num : 0_2 , upvalues : _ENV
+function ConditionCheck:Check(condition, outTxt, customeKey)
   if not condition or not condition[1] then
-    (Log.error)("ConditionCheck err: " .. condition)
+    Log.error("ConditionCheck err: " .. condition)
     return false
   end
   local conditionId = condition[1]
-  local checkFunction = (self._CheckFunction)[conditionId]
+  local checkFunction = self._CheckFunction[conditionId]
   if checkFunction then
     return checkFunction(self, condition, outTxt, customeKey)
   else
-    ;
-    (Log.error)("ConditionCheck unsupport condition, need expand " .. conditionId)
+    Log.error("ConditionCheck unsupport condition, need expand " .. conditionId)
     return false
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ConditionCheck._GenTxt = function(self, conditonId, customeKey, ...)
-  -- function num : 0_3 , upvalues : _ENV
+function ConditionCheck:_GenTxt(conditonId, customeKey, ...)
   local lanKey = customeKey
-  do
-    if not lanKey then
-      local cfg = (Cfg.cfg_condition_common_show)[conditonId]
-      if not cfg then
-        (Log.error)("ConditionCheck err: can\'t find cfg_condition_common_show with id = " .. conditonId)
-        return nil
-      end
-      lanKey = cfg.Show
+  if not lanKey then
+    local cfg = Cfg.cfg_condition_common_show[conditonId]
+    if not cfg then
+      Log.error("ConditionCheck err: can't find cfg_condition_common_show with id = " .. conditonId)
+      return nil
     end
-    return (StringTable.Get)(lanKey, ...)
+    lanKey = cfg.Show
   end
+  return StringTable.Get(lanKey, ...)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ConditionCheck._CheckPetGradeLevel = function(self, condition, outTxt, customeKey)
-  -- function num : 0_4 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
+function ConditionCheck:_CheckPetGradeLevel(condition, outTxt, customeKey)
+  local petModule = GameGlobal.GetModule(PetModule)
   local conditionId = condition[1]
   local nPetTemplateID = condition[2]
   local nLimitGrade = condition[3]
   local nLimitLevel = condition[4]
-  if not nLimitGrade then
-    nLimitGrade = 0
-  end
-  local str = nil
+  nLimitGrade = nLimitGrade or 0
+  local str
   local petFind = petModule:GetPetByTemplateId(nPetTemplateID)
-  if petFind == nil then
+  if nil == petFind then
     if outTxt then
       str = self:_GenTxt(conditionId, customeKey, nLimitGrade, nLimitLevel)
     end
     return false, str, 0, nLimitGrade, 0, nLimitLevel
   end
   local petGrade = petFind:GetPetGrade()
-  if petGrade < nLimitGrade then
+  if nLimitGrade > petGrade then
     if outTxt then
       str = self:_GenTxt(conditionId, customeKey, nLimitGrade, nLimitLevel)
     end
     return false, str, petGrade, nLimitGrade, 0, nLimitLevel
   end
-  if not nLimitLevel then
-    nLimitLevel = 0
-  end
-  if petFind:GetPetLevel() < nLimitLevel then
+  nLimitLevel = nLimitLevel or 0
+  if nLimitLevel > petFind:GetPetLevel() then
     if outTxt then
       str = self:_GenTxt(conditionId, customeKey, nLimitGrade, nLimitLevel)
     end
@@ -98,20 +77,15 @@ ConditionCheck._CheckPetGradeLevel = function(self, condition, outTxt, customeKe
   return true, str, petGrade, nLimitGrade, petFind:GetPetLevel(), nLimitLevel
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ConditionCheck._CheckPetAwakeLevel = function(self, condition, outTxt, customeKey)
-  -- function num : 0_5 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
+function ConditionCheck:_CheckPetAwakeLevel(condition, outTxt, customeKey)
+  local petModule = GameGlobal.GetModule(PetModule)
   local conditionId = condition[1]
   local nPetTemplateID = condition[2]
   local nLimitAwake = condition[3]
-  if not nLimitAwake then
-    nLimitAwake = 0
-  end
-  local str = nil
+  nLimitAwake = nLimitAwake or 0
+  local str
   local petFind = petModule:GetPetByTemplateId(nPetTemplateID)
-  if petFind == nil then
+  if nil == petFind then
     if outTxt then
       str = self:_GenTxt(conditionId, customeKey, nLimitAwake)
     end
@@ -122,24 +96,18 @@ ConditionCheck._CheckPetAwakeLevel = function(self, condition, outTxt, customeKe
   if outTxt then
     str = self:_GenTxt(conditionId, customeKey, nLimitAwake)
   end
-  do return ret, str, petAwaken, nLimitAwake end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return ret, str, petAwaken, nLimitAwake
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ConditionCheck._CheckPetAffinityLevel = function(self, condition, outTxt, customeKey)
-  -- function num : 0_6 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
+function ConditionCheck:_CheckPetAffinityLevel(condition, outTxt, customeKey)
+  local petModule = GameGlobal.GetModule(PetModule)
   local conditionId = condition[1]
   local nPetTemplateID = condition[2]
   local nLimitAffinity = condition[3]
-  if not nLimitAffinity then
-    nLimitAffinity = 0
-  end
-  local str = nil
+  nLimitAffinity = nLimitAffinity or 0
+  local str
   local petFind = petModule:GetPetByTemplateId(nPetTemplateID)
-  if petFind == nil then
+  if nil == petFind then
     if outTxt then
       str = self:_GenTxt(conditionId, customeKey, nLimitAffinity)
     end
@@ -150,24 +118,18 @@ ConditionCheck._CheckPetAffinityLevel = function(self, condition, outTxt, custom
   if outTxt then
     str = self:_GenTxt(conditionId, customeKey, nLimitAffinity)
   end
-  do return ret, str, petAffinityLevel, nLimitAffinity end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return ret, str, petAffinityLevel, nLimitAffinity
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ConditionCheck._CheckPetEquipLv = function(self, condition, outTxt, customeKey)
-  -- function num : 0_7 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
+function ConditionCheck:_CheckPetEquipLv(condition, outTxt, customeKey)
+  local petModule = GameGlobal.GetModule(PetModule)
   local conditionId = condition[1]
   local nPetTemplateID = condition[2]
   local nLimitEquipLevel = condition[3]
-  if not nLimitEquipLevel then
-    nLimitEquipLevel = 0
-  end
-  local str = nil
+  nLimitEquipLevel = nLimitEquipLevel or 0
+  local str
   local petFind = petModule:GetPetByTemplateId(nPetTemplateID)
-  if petFind == nil then
+  if nil == petFind then
     if outTxt then
       str = self:_GenTxt(conditionId, customeKey, nLimitEquipLevel)
     end
@@ -178,8 +140,5 @@ ConditionCheck._CheckPetEquipLv = function(self, condition, outTxt, customeKey)
   if outTxt then
     str = self:_GenTxt(conditionId, customeKey, nLimitEquipLevel)
   end
-  do return ret, str, petEquipLv, nLimitEquipLevel end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return ret, str, petEquipLv, nLimitEquipLevel
 end
-
-

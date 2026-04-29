@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/UIBlackFight/ui_black_fight_paper_element.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBlackFightPaperElement", UICustomWidget)
 UIBlackFightPaperElement = UIBlackFightPaperElement
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBlackFightPaperElement.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBlackFightPaperElement:OnShow()
   self.goTypes = {}
-  for k,t in pairs(BlackFightPaperElementType) do
+  for k, t in pairs(BlackFightPaperElementType) do
     local go = self:GetGameObject("type" .. t)
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.goTypes)[t] = go
+    self.goTypes[t] = go
   end
   self.go0 = self:GetGameObject("go0")
   self.txt1 = self:GetUIComponent("UILocalizationText", "txt1")
@@ -28,39 +18,28 @@ UIBlackFightPaperElement.OnShow = function(self)
   self.atlas = self:GetAsset("UIN7.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightPaperElement.OnHide = function(self)
-  -- function num : 0_1
-  (self.img2):DestoryLastImage()
-  ;
-  (self.img4):DestoryLastImage()
-  ;
-  (self.img5):DestoryLastImage()
+function UIBlackFightPaperElement:OnHide()
+  self.img2:DestoryLastImage()
+  self.img4:DestoryLastImage()
+  self.img5:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightPaperElement.Flush = function(self, e)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBlackFightPaperElement:Flush(e)
   if not e then
-    return 
+    return
   end
-  for k,go in pairs(self.goTypes) do
+  for k, go in pairs(self.goTypes) do
     go:SetActive(k == e.type)
   end
   if e.type == BlackFightPaperElementType.Empty then
-    ((self.go0):GetComponent("RectTransform")).sizeDelta = e.whImg
+    self.go0:GetComponent("RectTransform").sizeDelta = e.whImg
   elseif e.type == BlackFightPaperElementType.Text then
     self:FlushText(e, self.txt1)
   elseif e.type == BlackFightPaperElementType.RawImage then
     self:FlushRawImage(e, self.img2)
   elseif e.type == BlackFightPaperElementType.Image then
-    ((self.img3):GetComponent("RectTransform")).sizeDelta = e.whImg
-    -- DECOMPILER ERROR at PC64: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.img3).sprite = (self.atlas):GetSprite(e.name)
+    self.img3:GetComponent("RectTransform").sizeDelta = e.whImg
+    self.img3.sprite = self.atlas:GetSprite(e.name)
   elseif e.type == BlackFightPaperElementType.RawImageText then
     self:FlushRawImage(e, self.img4)
     self:FlushText(e, self.txt4)
@@ -68,29 +47,20 @@ UIBlackFightPaperElement.Flush = function(self, e)
     self:FlushText(e, self.txt5)
     self:FlushRawImage(e, self.img5)
   else
-    (Log.fatal)("### invalid type. type=", e.type)
+    Log.fatal("### invalid type. type=", e.type)
   end
-  -- DECOMPILER ERROR: 9 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightPaperElement.FlushText = function(self, e, txt)
-  -- function num : 0_3 , upvalues : _ENV
-  (txt:GetComponent("RectTransform")).sizeDelta = e.whText
-  if not (string.isnullorempty)(e.font) then
+function UIBlackFightPaperElement:FlushText(e, txt)
+  txt:GetComponent("RectTransform").sizeDelta = e.whText
+  if not string.isnullorempty(e.font) then
     txt:SwitchFont(e.font)
   end
-  txt:SetText((StringTable.Get)(e.text))
+  txt:SetText(StringTable.Get(e.text))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightPaperElement.FlushRawImage = function(self, e, img)
-  -- function num : 0_4
-  (img:GetComponent("RectTransform")).sizeDelta = e.whImg
+function UIBlackFightPaperElement:FlushRawImage(e, img)
+  img:GetComponent("RectTransform").sizeDelta = e.whImg
   img:DestoryLastImage()
   img:LoadImage(e.name)
 end
-
-

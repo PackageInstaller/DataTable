@@ -1,55 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_coffin_musume_change_def.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicCoffinMusumeChangeDefenceByCandle", BuffLogicBase)
 BuffLogicCoffinMusumeChangeDefenceByCandle = BuffLogicCoffinMusumeChangeDefenceByCandle
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicCoffinMusumeChangeDefenceByCandle.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicCoffinMusumeChangeDefenceByCandle:Constructor(buffInstance, logicParam)
   self._trapID = tonumber(logicParam.trapID)
   self._mulVal = tonumber(logicParam.mulVal)
   self._uiText = logicParam.uiText
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicCoffinMusumeChangeDefenceByCandle.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicCoffinMusumeChangeDefenceByCandle:DoLogic()
   local candleCount = 0
   local tLightCandleID = {}
-  local globalTrapEntities = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).Trap)
-  for _,eTrap in ipairs(globalTrapEntities) do
-    if not (eTrap:Trap()):GetTrapID() ~= self._trapID and eTrap:HasBuff() and (eTrap:BuffComponent()):GetBuffValue(BattleConst.CandleLightKey) == 1 then
+  local globalTrapEntities = self._world:GetGroupEntities(self._world.BW_WEMatchers.Trap)
+  for _, eTrap in ipairs(globalTrapEntities) do
+    if not eTrap:Trap():GetTrapID() ~= self._trapID and eTrap:HasBuff() and eTrap:BuffComponent():GetBuffValue(BattleConst.CandleLightKey) == 1 then
       candleCount = candleCount + 1
-      ;
-      (table.insert)(tLightCandleID, eTrap:GetID())
+      table.insert(tLightCandleID, eTrap:GetID())
     end
   end
-  ;
-  (self._buffLogicService):RemoveBaseDefence(self._entity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage)
-  local val = self._mulVal * (candleCount)
-  ;
-  (self._buffLogicService):ChangeBaseDefence(self._entity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage, val)
+  self._buffLogicService:RemoveBaseDefence(self._entity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage)
+  local val = self._mulVal * candleCount
+  self._buffLogicService:ChangeBaseDefence(self._entity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage, val)
   return BuffResultCoffinMusumeChangeDefenceByCandle:New(tLightCandleID, self._uiText, val)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicCoffinMusumeChangeDefenceByCandle.DoOverlap = function(self)
-  -- function num : 0_2
+function BuffLogicCoffinMusumeChangeDefenceByCandle:DoOverlap()
   return self:DoLogic()
 end
 
 _class("BuffLogicResetCoffinMusumeChangeDefence", BuffLogicBase)
 BuffLogicResetCoffinMusumeChangeDefence = BuffLogicResetCoffinMusumeChangeDefence
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetCoffinMusumeChangeDefence.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._buffLogicService):RemoveBaseDefence(self._entity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage)
+function BuffLogicResetCoffinMusumeChangeDefence:DoLogic()
+  self._buffLogicService:RemoveBaseDefence(self._entity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage)
 end
-
-

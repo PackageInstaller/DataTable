@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_stage/serial_auto_fight/ui_serial_auto_fight_option.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISerialAutoFightOption", UIController)
 UISerialAutoFightOption = UISerialAutoFightOption
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISerialAutoFightOption.GetParams = function(self)
-  -- function num : 0_0
+function UISerialAutoFightOption:GetParams()
   return self._params
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._ParseParams = function(self, params)
-  -- function num : 0_1
+function UISerialAutoFightOption:_ParseParams(params)
   self._matchType = params.matchType
   self._stageId = params.stageId
   self._needPower = params.needPower
@@ -30,420 +20,320 @@ UISerialAutoFightOption._ParseParams = function(self, params)
   self._titleWhenOnlyShowSweep = params.titleWhenOnlyShowSweep
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption.Constructor = function(self)
-  -- function num : 0_2
+function UISerialAutoFightOption:Constructor()
   self._titleState_One = 1
   self._titleState_Two = 2
   self._titleStateWidget = {
-{"_title"}
-, 
-{"_tabBtns"}
-}
+    {"_title"},
+    {"_tabBtns"}
+  }
   self._tabIndex_Sweep = 1
   self._tabIndex_Fight = 2
-  self._tabTitle = {"str_battle_auto_fight_option_title_sweep", "str_battle_auto_fight_option_title_fight"}
+  self._tabTitle = {
+    "str_battle_auto_fight_option_title_sweep",
+    "str_battle_auto_fight_option_title_fight"
+  }
   self._tabWidget = {
-{"IntroBtn", "_costTicket"}
-, 
-{}
-}
+    {
+      "IntroBtn",
+      "_costTicket"
+    },
+    {}
+  }
   self._target_Hide = 1
   self._target_Show = 2
   self._targetWidget = {
-{"_bg1", "_space1_1", "_space1_2"}
-, 
-{"_bg2", "_targetItem"}
-}
+    {
+      "_bg1",
+      "_space1_1",
+      "_space1_2"
+    },
+    {
+      "_bg2",
+      "_targetItem"
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UISerialAutoFightOption:OnShow(uiParams)
   self._powerID = RoleAssetID.RoleAssetPhyPoint
   self._needTicket = 1
   self._fightCount = 1
-  self._tipsCallback = function(matid, pos)
-    -- function num : 0_3_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
+  
+  function self._tipsCallback(matid, pos)
+    UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
   end
-
+  
   self._params = uiParams[1]
   self:_ParseParams(self._params)
   if self._campParams then
-    self._pointComp = (self._campParams)._pointComp
+    self._pointComp = self._campParams._pointComp
   end
   if self._pointComp then
-    local cmpID = (self._pointComp):GetComponentCfgId()
-    local pointCfg = (self._pointComp):GetActionPointConfig()
-    local itemCfg = (Cfg.cfg_top_tips)[pointCfg.ItemID]
-    ;
-    (UIWidgetHelper.SetImageSprite)(self, "Icon", "UICommon.spriteatlas", itemCfg.Icon)
+    local cmpID = self._pointComp:GetComponentCfgId()
+    local pointCfg = self._pointComp:GetActionPointConfig()
+    local itemCfg = Cfg.cfg_top_tips[pointCfg.ItemID]
+    UIWidgetHelper.SetImageSprite(self, "Icon", "UICommon.spriteatlas", itemCfg.Icon)
     self._powerID = pointCfg.ItemID
   else
-    do
-      self._powerID = RoleAssetID.RoleAssetPhyPoint
-      if self._campParams and (self._campParams)._campType then
-        self._campType = (self._campParams)._campType
-      end
-      if self._campParams and (self._campParams)._forceTitleState then
-        self._forceTitleState = (self._campParams)._forceTitleState
-      end
-      if self._campParams and (self._campParams)._needTicket then
-        self._needTicket = (self._campParams)._needTicket
-      end
-      if self._campParams and (self._campParams)._componentId then
-        self._componentId = (self._campParams)._componentId
-      end
-      if self._campParams and (self._campParams)._campaignMissionParams then
-        self._campaignMissionParams = (self._campParams)._campaignMissionParams
-      end
-      self:_SetStyleUI(self._matchType)
-      local titleState = self:_SetTitleState()
-      self:_SetTargetState(self._trackData)
-      if self._onlyShowSweep and titleState ~= self._titleState_Two then
-        (Log.error)("UISerialAutoFightOption 扫荡模式不满足，不可以onlyShowSweep")
-        self._onlyShowSweep = nil
-      end
-      self._tabIndex = self:_CalcFirstIndex(titleState, self._unlock, toIndex)
-      if self._onlyShowSweep then
-        self._tabIndex = 1
-      end
-      self:_SetTabBtns()
-      ;
-      ((self._tabBtns)[self._tabIndex_Sweep]):SetLock(not self._unlock)
-      self:_SetTabSelect(self._tabIndex)
-      self:_RefreshUI()
-      local jumpData = ((GameGlobal.GetModule)(SerialAutoFightModule)):GetJumpData()
-      jumpData:Track_Option(self:GetParams())
-      if self._onlyShowTarget then
-        self:ShowTargetItem(self._onlyShowTarget)
-      end
-      if self._onlyShowSweep then
-        local tabBtnRoot = self:GetGameObject("_tabBtns")
-        tabBtnRoot:SetActive(false)
-        local txtGo = self:GetGameObject("_title")
-        txtGo:SetActive(true)
-        local titleTxt = self:GetUIComponent("UILocalizationText", "_title")
-        if self._titleWhenOnlyShowSweep then
-          titleTxt:SetText(self._titleWhenOnlyShowSweep)
-        end
-      end
-      do
-        self:_AttachEvents()
-      end
+    self._powerID = RoleAssetID.RoleAssetPhyPoint
+  end
+  if self._campParams and self._campParams._campType then
+    self._campType = self._campParams._campType
+  end
+  if self._campParams and self._campParams._forceTitleState then
+    self._forceTitleState = self._campParams._forceTitleState
+  end
+  if self._campParams and self._campParams._needTicket then
+    self._needTicket = self._campParams._needTicket
+  end
+  if self._campParams and self._campParams._componentId then
+    self._componentId = self._campParams._componentId
+  end
+  if self._campParams and self._campParams._campaignMissionParams then
+    self._campaignMissionParams = self._campParams._campaignMissionParams
+  end
+  self:_SetStyleUI(self._matchType)
+  local titleState = self:_SetTitleState()
+  self:_SetTargetState(self._trackData)
+  if self._onlyShowSweep and titleState ~= self._titleState_Two then
+    Log.error("UISerialAutoFightOption 扫荡模式不满足，不可以onlyShowSweep")
+    self._onlyShowSweep = nil
+  end
+  self._tabIndex = self:_CalcFirstIndex(titleState, self._unlock, toIndex)
+  if self._onlyShowSweep then
+    self._tabIndex = 1
+  end
+  self:_SetTabBtns()
+  self._tabBtns[self._tabIndex_Sweep]:SetLock(not self._unlock)
+  self:_SetTabSelect(self._tabIndex)
+  self:_RefreshUI()
+  local jumpData = GameGlobal.GetModule(SerialAutoFightModule):GetJumpData()
+  jumpData:Track_Option(self:GetParams())
+  if self._onlyShowTarget then
+    self:ShowTargetItem(self._onlyShowTarget)
+  end
+  if self._onlyShowSweep then
+    local tabBtnRoot = self:GetGameObject("_tabBtns")
+    tabBtnRoot:SetActive(false)
+    local txtGo = self:GetGameObject("_title")
+    txtGo:SetActive(true)
+    local titleTxt = self:GetUIComponent("UILocalizationText", "_title")
+    if self._titleWhenOnlyShowSweep then
+      titleTxt:SetText(self._titleWhenOnlyShowSweep)
     end
   end
+  self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption.OnHide = function(self)
-  -- function num : 0_4
+function UISerialAutoFightOption:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._SetStyleUI = function(self, matchType)
-  -- function num : 0_5 , upvalues : _ENV
-  local tb = {[MatchType.MT_Mission] = nil, [MatchType.MT_ResDungeon] = "dark", [MatchType.MT_Season] = "season"}
+function UISerialAutoFightOption:_SetStyleUI(matchType)
+  local tb = {
+    [MatchType.MT_Mission] = nil,
+    [MatchType.MT_ResDungeon] = "dark",
+    [MatchType.MT_Season] = "season"
+  }
   self._styleName = tb[matchType]
   if self._styleName == nil then
-    return 
+    return
   end
-  ;
-  (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "bg_di05", self, "_bg1")
-  ;
-  (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "bg_di04", self, "_bg2")
-  ;
-  (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "di08", self, "_titleBg")
-  ;
-  (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "kuang03", self, "_fightCountBg")
-  ;
-  (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "optionColor", self, "_title")
-  ;
-  (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "optionColor", self, "_cost")
-  ;
-  (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "optionColor", self, "_costPowerCount")
-  ;
-  (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "optionColor", self, "_costTicketCount")
-  ;
-  (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "optionColor2", self, "_fightCountShadow")
-  ;
-  (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "optionFightBtnBg", self, "_fightBtnBg")
-  ;
-  (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "optionFightBtnImg", self, "_fightBtnImg")
+  UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "bg_di05", self, "_bg1")
+  UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "bg_di04", self, "_bg2")
+  UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "di08", self, "_titleBg")
+  UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "kuang03", self, "_fightCountBg")
+  UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "optionColor", self, "_title")
+  UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "optionColor", self, "_cost")
+  UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "optionColor", self, "_costPowerCount")
+  UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "optionColor", self, "_costTicketCount")
+  UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "optionColor2", self, "_fightCountShadow")
+  UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "optionFightBtnBg", self, "_fightBtnBg")
+  UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "optionFightBtnImg", self, "_fightBtnImg")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._SetTitleState = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISerialAutoFightOption:_SetTitleState()
   local aircraftModule = self:GetModule(AircraftModule)
   local room = aircraftModule:GetResRoom()
-  if not room or not self._titleState_Two then
-    local state = self._titleState_One
-  end
+  local state = room and self._titleState_Two or self._titleState_One
   if self._forceTitleState then
     state = self._forceTitleState
   end
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, self._titleStateWidget)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, state)
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, self._titleStateWidget)
+  UIWidgetHelper.SetObjGroupShow(objs, state)
   return state
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._SetTargetState = function(self, trackData)
-  -- function num : 0_7 , upvalues : _ENV
-  local jumpData = ((GameGlobal.GetModule)(SerialAutoFightModule)):GetJumpData()
+function UISerialAutoFightOption:_SetTargetState(trackData)
+  local jumpData = GameGlobal.GetModule(SerialAutoFightModule):GetJumpData()
   local isShow = jumpData:IsShowTargetItem(trackData)
-  if not isShow or not self._target_Show then
-    local state = self._target_Hide
-  end
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, self._targetWidget)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, state)
+  local state = isShow and self._target_Show or self._target_Hide
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, self._targetWidget)
+  UIWidgetHelper.SetObjGroupShow(objs, state)
   if isShow then
     local itemId, itemCondition = jumpData:GetTargetItem()
     self:_SetTargetItem(itemId, itemCondition)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption.ShowTargetItem = function(self, targetItem)
-  -- function num : 0_8 , upvalues : _ENV
+function UISerialAutoFightOption:ShowTargetItem(targetItem)
   local itemId = targetItem[1]
   local itemCondition = targetItem[2]
-  local isShow = not itemId or (itemId > 0 and not itemCondition or itemCondition > 0)
-  if not isShow or not self._target_Show then
-    local state = self._target_Hide
-  end
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, self._targetWidget)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, state)
+  local isShow = itemId and 0 < itemId and itemCondition and 0 < itemCondition
+  local state = isShow and self._target_Show or self._target_Hide
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, self._targetWidget)
+  UIWidgetHelper.SetObjGroupShow(objs, state)
   if isShow then
     self:_SetTargetItem(itemId, itemCondition)
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._SetTabSelect = function(self, index)
-  -- function num : 0_9 , upvalues : _ENV
+function UISerialAutoFightOption:_SetTabSelect(index)
   self._tabIndex = index
   for i = 1, #self._tabBtns do
-    ((self._tabBtns)[i]):SetSelected(i == index)
+    self._tabBtns[i]:SetSelected(i == index)
   end
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, self._tabWidget)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, index)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, self._tabWidget)
+  UIWidgetHelper.SetObjGroupShow(objs, index)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._SetTabBtns = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UISerialAutoFightOption:_SetTabBtns()
   local title = self._tabTitle
-  self._tabBtns = (UIWidgetHelper.SpawnObjects)(self, "_tabBtns", "UIActivityCommonTextTabBtn", #title)
-  for i,v in ipairs(self._tabBtns) do
+  self._tabBtns = UIWidgetHelper.SpawnObjects(self, "_tabBtns", "UIActivityCommonTextTabBtn", #title)
+  for i, v in ipairs(self._tabBtns) do
     v:SetData(i, {
-indexWidgets = {
-{"bgOff_1", "bgOn_1"}
-, 
-{"bgOff_2", "bgOn_2"}
-}
-, 
-onoffWidgets = {
-{"OnBtn"}
-, 
-{"OffBtn"}
-}
-, 
-lockWidgets = {
-{"iconLock"}
-, 
-{}
-}
-, 
-titleWidgets = {"txtTitle_off", "txtTitle_on"}
-, titleText = (StringTable.Get)(title[i]), callback = function(index, isOffBtnClick)
-    -- function num : 0_10_0 , upvalues : self
-    if isOffBtnClick then
-      self:_SetTabSelect(index)
-      self:_RefreshUI()
-    end
-  end
-, lockCallback = function()
-    -- function num : 0_10_1 , upvalues : _ENV
-    (ToastManager.ShowToast)((StringTable.Get)("str_battle_auto_needStar"))
-  end
-})
-    ;
-    (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "optionTabBtnOff1", v, "bgOff_1")
-    ;
-    (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "optionTabBtnOn1", v, "bgOn_1")
-    ;
-    (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "optionTabBtnOff2", v, "bgOff_2")
-    ;
-    (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "optionTabBtnOn2", v, "bgOn_2")
-    ;
-    (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "optionTitleColorOff", v, "txtTitle_off")
-    ;
-    (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "optionTitleColorOn", v, "txtTitle_on")
+      indexWidgets = {
+        {"bgOff_1", "bgOn_1"},
+        {"bgOff_2", "bgOn_2"}
+      },
+      onoffWidgets = {
+        {"OnBtn"},
+        {"OffBtn"}
+      },
+      lockWidgets = {
+        {"iconLock"},
+        {}
+      },
+      titleWidgets = {
+        "txtTitle_off",
+        "txtTitle_on"
+      },
+      titleText = StringTable.Get(title[i]),
+      callback = function(index, isOffBtnClick)
+        if isOffBtnClick then
+          self:_SetTabSelect(index)
+          self:_RefreshUI()
+        end
+      end,
+      lockCallback = function()
+        ToastManager.ShowToast(StringTable.Get("str_battle_auto_needStar"))
+      end
+    })
+    UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "optionTabBtnOff1", v, "bgOff_1")
+    UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "optionTabBtnOn1", v, "bgOn_1")
+    UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "optionTabBtnOff2", v, "bgOff_2")
+    UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "optionTabBtnOn2", v, "bgOn_2")
+    UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "optionTitleColorOff", v, "txtTitle_off")
+    UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "optionTitleColorOn", v, "txtTitle_on")
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._RefreshUI = function(self)
-  -- function num : 0_11
+function UISerialAutoFightOption:_RefreshUI()
   self:_SetFightCount(self._fightCount)
   self:_SetCostPower(self._fightCount)
   self:_SetCostTicket(self._fightCount)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._SetTargetItem = function(self, itemId, itemCondition)
-  -- function num : 0_12 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_targetItemPool", "UISerialAutoFightSweepResultTargetItem")
+function UISerialAutoFightOption:_SetTargetItem(itemId, itemCondition)
+  local obj = UIWidgetHelper.SpawnObject(self, "_targetItemPool", "UISerialAutoFightSweepResultTargetItem")
   obj:SetStyleUI(self._styleName)
   obj:SetData(1, itemId, itemCondition, self._tipsCallback)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._SetFightCount = function(self, count)
-  -- function num : 0_13 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "_fightCount", count)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_fightCountShadow", count)
+function UISerialAutoFightOption:_SetFightCount(count)
+  UIWidgetHelper.SetLocalizationText(self, "_fightCount", count)
+  UIWidgetHelper.SetLocalizationText(self, "_fightCountShadow", count)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._SetCostPower = function(self, count)
-  -- function num : 0_14
+function UISerialAutoFightOption:_SetCostPower(count)
   local n, t = self:_CalcPower(count)
   self:_SetChangeColorText("_costPowerCount", n, t)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._SetCostTicket = function(self, count)
-  -- function num : 0_15 , upvalues : _ENV
+function UISerialAutoFightOption:_SetCostTicket(count)
   local n, t = self:_CalcTicket(count)
   self:_SetChangeColorText("_costTicketCount", n, t)
   if self._needTicket <= 0 then
-    local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, self._tabWidget)
-    ;
-    (UIWidgetHelper.SetObjGroupShow)(objs, 2)
+    local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, self._tabWidget)
+    UIWidgetHelper.SetObjGroupShow(objs, 2)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._SetChangeColorText = function(self, widgetName, n, t)
-  -- function num : 0_16 , upvalues : _ENV
-  if n > t or not t then
-    local tc = (UIActivityHelper.GetColorText)("#FF0000", t)
-  end
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, widgetName, tc .. "/" .. n)
+function UISerialAutoFightOption:_SetChangeColorText(widgetName, n, t)
+  local tc = n <= t and t or UIActivityHelper.GetColorText("#FF0000", t)
+  UIWidgetHelper.SetLocalizationText(self, widgetName, tc .. "/" .. n)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._CalcFirstIndex = function(self, titleState, unlock, param)
-  -- function num : 0_17
+function UISerialAutoFightOption:_CalcFirstIndex(titleState, unlock, param)
   if titleState == self._titleState_One or not unlock then
     return self._tabIndex_Fight
   end
   local n, t = self:_CalcTicket(1)
   local index = self._tabIndex_Fight
-  if n > 0 then
-    if t <= 0 or not self._tabIndex_Sweep then
-      index = self._tabIndex_Fight
-      index = self._tabIndex_Sweep
-      return index
-    end
+  if 0 < n then
+    index = 0 < t and self._tabIndex_Sweep or self._tabIndex_Fight
+  else
+    index = self._tabIndex_Sweep
   end
+  return index
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._CalcFightCount = function(self, newCount)
-  -- function num : 0_18 , upvalues : _ENV
+function UISerialAutoFightOption:_CalcFightCount(newCount)
   local min, max = 1, 99
   local err = newCount < min and "str_battle_serial_auto_fight_min_count" or nil
-  if (max < newCount and "str_common_max_num") or not (string.isnullorempty)(err) then
-    (ToastManager.ShowToast)((StringTable.Get)(err))
-    return 
+  err = newCount > max and "str_common_max_num" or err
+  if not string.isnullorempty(err) then
+    ToastManager.ShowToast(StringTable.Get(err))
+    return
   end
-  self._fightCount = (Mathf.Clamp)(newCount, min, max)
+  self._fightCount = Mathf.Clamp(newCount, min, max)
   self:_RefreshUI()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._CalcMinCount = function(self)
-  -- function num : 0_19
+function UISerialAutoFightOption:_CalcMinCount()
   local min, max = 1, 99
   return min
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._CalcMaxCount = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UISerialAutoFightOption:_CalcMaxCount()
   local min, max = 1, 99
   local n, t = self:_CalcPower(1)
-  if n > 0 or not max then
-    local pCount = t / n
-  end
+  local pCount = n <= 0 and max or t / n
   local tCount = max
-  do
-    if self._tabIndex == self._tabIndex_Sweep then
-      local n, t = self:_CalcTicket(1)
-      tCount = t / n
-    end
-    local count = (Mathf.Floor)((Mathf.Min)(pCount, tCount))
-    return (Mathf.Clamp)(count, min, max)
+  if self._tabIndex == self._tabIndex_Sweep then
+    local n, t = self:_CalcTicket(1)
+    tCount = t / n
   end
+  local count = Mathf.Floor(Mathf.Min(pCount, tCount))
+  return Mathf.Clamp(count, min, max)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._CalcPower = function(self, count)
-  -- function num : 0_21 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UISerialAutoFightOption:_CalcPower(count)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local total = roleModule:GetAssetCount(self._powerID)
   local need = count * self._needPower
   return need, total
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._CalcTicket = function(self, count)
-  -- function num : 0_22 , upvalues : _ENV
+function UISerialAutoFightOption:_CalcTicket(count)
   local resModule = self:GetModule(ResDungeonModule)
   local total = resModule:GetDoubleResNum()
   local need = count * self._needTicket
   return need, total
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._CheckPower = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UISerialAutoFightOption:_CheckPower()
   local n, t = self:_CalcPower(self._fightCount)
   if n <= t then
     return true
@@ -451,151 +341,98 @@ UISerialAutoFightOption._CheckPower = function(self)
   if self._powerID == RoleAssetID.RoleAssetPhyPoint then
     self:ShowDialog("UIGetPhyPointController")
   else
-    local name = (StringTable.Get)(((Cfg.cfg_item)[self._powerID]).Name)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_point_not_enough2", name))
+    local name = StringTable.Get(Cfg.cfg_item[self._powerID].Name)
+    ToastManager.ShowToast(StringTable.Get("str_activity_point_not_enough2", name))
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._CheckTicket = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UISerialAutoFightOption:_CheckTicket()
   local n, t = self:_CalcTicket(self._fightCount)
   if n <= t then
     return true
   end
-  ;
-  (ToastManager.ShowToast)((StringTable.Get)("str_battle_auto_fight_sweep_msg_desc"))
+  ToastManager.ShowToast(StringTable.Get("str_battle_auto_fight_sweep_msg_desc"))
   return false
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._DoAutoFight = function(self)
-  -- function num : 0_25
+function UISerialAutoFightOption:_DoAutoFight()
   if self._autoFightCallback then
-    (self._autoFightCallback)(self._fightCount)
+    self._autoFightCallback(self._fightCount)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._DoAutoSweep = function(self)
-  -- function num : 0_26
+function UISerialAutoFightOption:_DoAutoSweep()
   self:ShowDialog("UISerialAutoFightSweepResult", self._styleName, self._matchType, self._stageId, self._fightCount, self._trackData, self._componentId, self._campaignMissionParams, self._onlyShowSweep)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption.BgOnClick = function(self)
-  -- function num : 0_27
+function UISerialAutoFightOption:BgOnClick()
   self:_CloseDialogWithAnim()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption.FightBtnOnClick = function(self)
-  -- function num : 0_28
+function UISerialAutoFightOption:FightBtnOnClick()
   if self._checkFunction and not self:_checkFunction() then
-    return 
+    return
   end
   if self._tabIndex == self._tabIndex_Fight then
     if not self:_CheckPower() then
-      return 
+      return
     end
     self:_CloseDialogWithAnim(function()
-    -- function num : 0_28_0 , upvalues : self
-    self:_DoAutoFight()
-  end
-)
-  else
-    if self._tabIndex == self._tabIndex_Sweep then
-      if not self:_CheckTicket() then
-        return 
-      end
-      if not self:_CheckPower() then
-        return 
-      end
-      self:_CloseDialogWithAnim(function()
-    -- function num : 0_28_1 , upvalues : self
-    self:_DoAutoSweep()
-  end
-)
+      self:_DoAutoFight()
+    end)
+  elseif self._tabIndex == self._tabIndex_Sweep then
+    if not self:_CheckTicket() then
+      return
     end
+    if not self:_CheckPower() then
+      return
+    end
+    self:_CloseDialogWithAnim(function()
+      self:_DoAutoSweep()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption.MinBtnOnClick = function(self)
-  -- function num : 0_29
+function UISerialAutoFightOption:MinBtnOnClick()
   local newCount = self:_CalcMinCount()
   self:_CalcFightCount(newCount)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption.SubBtnOnClick = function(self)
-  -- function num : 0_30
+function UISerialAutoFightOption:SubBtnOnClick()
   local newCount = self._fightCount - 1
   self:_CalcFightCount(newCount)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption.AddBtnOnClick = function(self)
-  -- function num : 0_31
+function UISerialAutoFightOption:AddBtnOnClick()
   local newCount = self._fightCount + 1
   self:_CalcFightCount(newCount)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption.MaxBtnOnClick = function(self)
-  -- function num : 0_32
+function UISerialAutoFightOption:MaxBtnOnClick()
   local newCount = self:_CalcMaxCount()
   self:_CalcFightCount(newCount)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption.IntroBtnOnClick = function(self)
-  -- function num : 0_33
+function UISerialAutoFightOption:IntroBtnOnClick()
   self:ShowDialog("UISetAutoFightIntroduce")
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._AttachEvents = function(self)
-  -- function num : 0_34 , upvalues : _ENV
+function UISerialAutoFightOption:_AttachEvents()
   self:AttachEvent(GameEventType.RolePropertyChanged, self._RefreshUI)
   self:AttachEvent(GameEventType.ItemCountChanged, self._RefreshUI)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._DetachEvents = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function UISerialAutoFightOption:_DetachEvents()
   self:DetachEvent(GameEventType.RolePropertyChanged, self._RefreshUI)
   self:DetachEvent(GameEventType.ItemCountChanged, self._RefreshUI)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightOption._CloseDialogWithAnim = function(self, callback)
-  -- function num : 0_36 , upvalues : _ENV
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", "uieff_UISerialAutoFightOption_out", 200, function()
-    -- function num : 0_36_0 , upvalues : callback, self
+function UISerialAutoFightOption:_CloseDialogWithAnim(callback)
+  UIWidgetHelper.PlayAnimation(self, "_anim", "uieff_UISerialAutoFightOption_out", 200, function()
     if callback then
       callback()
     end
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

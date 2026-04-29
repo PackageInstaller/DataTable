@@ -1,39 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_teams/ui_pet_chain_skill_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetChainSkillItem", UICustomWidget)
 UIPetChainSkillItem = UIPetChainSkillItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetChainSkillItem.OnShow = function(self)
-  -- function num : 0_0
+function UIPetChainSkillItem:OnShow()
   self._txtId = self:GetUIComponent("UILocalizationText", "txtId")
   self._imgSelect = self:GetUIComponent("Image", "imgSelect")
-  ;
-  ((self._imgSelect).gameObject):SetActive(false)
+  self._imgSelect.gameObject:SetActive(false)
   self._skill = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetChainSkillItem.Flush = function(self, v)
-  -- function num : 0_1
+function UIPetChainSkillItem:Flush(v)
   self._skill = v
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._txtId).text = v.chainCount
+  self._txtId.text = v.chainCount
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetChainSkillItem.FlushSelect = function(self, id, len)
-  -- function num : 0_2
-  ;
-  ((self._imgSelect).gameObject):SetActive(len > 1 and id == (self._skill).id)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIPetChainSkillItem:FlushSelect(id, len)
+  self._imgSelect.gameObject:SetActive(1 < len and id == self._skill.id)
 end
-
-

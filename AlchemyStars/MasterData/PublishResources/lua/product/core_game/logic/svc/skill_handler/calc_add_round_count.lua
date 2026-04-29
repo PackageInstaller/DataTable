@@ -1,25 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_add_round_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_AddRoundCount", Object)
 SkillEffectCalc_AddRoundCount = SkillEffectCalc_AddRoundCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_AddRoundCount.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_AddRoundCount:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_AddRoundCount.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1
+function SkillEffectCalc_AddRoundCount:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillAddRoundParam = skillEffectCalcParam.skillEffectParam
   local addRoundCount = skillAddRoundParam:GetAddRoundCount()
-  local mazeService = (self._world):GetService("Maze")
+  local mazeService = self._world:GetService("Maze")
   mazeService:AddLight(addRoundCount)
 end
-
-

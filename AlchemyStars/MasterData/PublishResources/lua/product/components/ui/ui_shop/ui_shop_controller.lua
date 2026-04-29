@@ -1,173 +1,130 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopController", UIController)
 UIShopController = UIShopController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopController:Constructor()
   self.curMainTabType = nil
   self.curMainTabUniqueid = 0
   self.shopModule = self:GetModule(ShopModule)
-  self.clientShop = (self.shopModule):GetClientShop()
-  self.mRedDot = (GameGlobal.GetModule)(RedDotModule)
+  self.clientShop = self.shopModule:GetClientShop()
+  self.mRedDot = GameGlobal.GetModule(RedDotModule)
   self._refreshTaskID = nil
   self._refreshSubTaskID = nil
   self:OnApplicationFocus(true)
-  self._homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+  self._homeLandModule = GameGlobal.GetUIModule(HomelandModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopController:LoadDataOnEnter(TT, res, uiParams)
   self._openFromCampaign = self:_OpenFromCampaign(uiParams)
   self.params = uiParams
-  if not self.params or not (self.params)[2] then
-    local mainTabType = ShopMainTabType.Exchange
-  end
+  local mainTabType = self.params and self.params[2] or ShopMainTabType.Exchange
   if mainTabType ~= ShopMainTabType.Secret and mainTabType ~= ShopMainTabType.Exchange and mainTabType ~= ShopMainTabType.Homeland then
     mainTabType = ShopMainTabType.Secret
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R5 in 'UnsetPending'
-
-    if self.params and (self.params)[3] then
-      (self.params)[3] = MarketType.Shop_BlackMarket
+    if self.params and self.params[3] then
+      self.params[3] = MarketType.Shop_BlackMarket
     end
   end
-  if (self.params and (self.params)[3]) or (self.clientShop):SendProtocal(TT, mainTabType, MarketType.Shop_BlackMarket) then
+  if self.clientShop:SendProtocal(TT, mainTabType, self.params and self.params[3] or MarketType.Shop_BlackMarket) then
     res:SetSucc(true)
-    ;
-    (self.clientShop):SendProtocal(TT, ShopMainTabType.Skins)
+    self.clientShop:SendProtocal(TT, ShopMainTabType.Skins)
     if mainTabType ~= ShopMainTabType.Recommend and mainTabType ~= ShopMainTabType.MonthCard and mainTabType ~= ShopMainTabType.Recharge then
-      (self.clientShop):SendProtocal(TT, ShopMainTabType.Recommend)
+      self.clientShop:SendProtocal(TT, ShopMainTabType.Recommend)
     end
   else
     res:SetSucc(false)
   end
   if self.params ~= nil and #self.params >= 4 then
-    local shopId = (self.params)[4]
-    local cfgv = (Cfg.cfg_shop_giftmarket_goods)[shopId]
+    local shopId = self.params[4]
+    local cfgv = Cfg.cfg_shop_giftmarket_goods[shopId]
     if cfgv ~= nil and cfgv.ShowInSkinsTab then
-      self.params = {uiParams[1], ShopMainTabType.Skins, uiParams[3], uiParams[4]}
-      mainTabType = (self.params)[2]
+      self.params = {
+        uiParams[1],
+        ShopMainTabType.Skins,
+        uiParams[3],
+        uiParams[4]
+      }
+      mainTabType = self.params[2]
     end
   end
-  do
-    do
-      if mainTabType == ShopMainTabType.Skins then
-        local followTabType = ShopMainTabType.Gift
-        if (self.params and (self.params)[3]) or (self.clientShop):SendProtocal(TT, followTabType, MarketType.Shop_BlackMarket) then
-          res:SetSucc(res:GetSucc())
-        else
-          res:SetSucc(false)
-        end
-      end
-      ;
-      (self.clientShop):SendCampaign(TT, ShopMainTabType.Secret, subTabType)
-      local sailingPlanHelper = UIShopSailingPlanHelper:New()
-      local active = sailingPlanHelper:CheckActive()
-      if active then
-        self:GetSailingPlanShop(TT)
-      end
-      self:BattlePassData(TT)
+  if mainTabType == ShopMainTabType.Skins then
+    local followTabType = ShopMainTabType.Gift
+    if self.clientShop:SendProtocal(TT, followTabType, self.params and self.params[3] or MarketType.Shop_BlackMarket) then
+      res:SetSucc(res:GetSucc())
+    else
+      res:SetSucc(false)
     end
   end
+  self.clientShop:SendCampaign(TT, ShopMainTabType.Secret, subTabType)
+  local sailingPlanHelper = UIShopSailingPlanHelper:New()
+  local active = sailingPlanHelper:CheckActive()
+  if active then
+    self:GetSailingPlanShop(TT)
+  end
+  self:BattlePassData(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController._OpenFromCampaign = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  if uiParams then
-    local mainTabType = uiParams[2]
-  end
-  if uiParams then
-    local shopCfgId = uiParams[3]
-  end
-  if uiParams then
-    local campaign = uiParams[4]
-  end
+function UIShopController:_OpenFromCampaign(uiParams)
+  local mainTabType = uiParams and uiParams[2]
+  local shopCfgId = uiParams and uiParams[3]
+  local campaign = uiParams and uiParams[4]
   if mainTabType ~= ShopMainTabType.Secret then
-    return 
+    return
   end
   return campaign
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.BattlePassData = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  (Log.debug)("###[UIShopController] start load battle pass campaign data !")
+function UIShopController:BattlePassData(TT)
+  Log.debug("###[UIShopController] start load battle pass campaign data !")
   local res = AsyncRequestRes:New()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   if not res:GetSucc() then
-    (Log.error)("###[UIShopController] battle pass shop data is fail ! result:", res:GetResult())
+    Log.error("###[UIShopController] battle pass shop data is fail ! result:", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.OnShow = function(self, uiParams)
-  -- function num : 0_4 , upvalues : _ENV
+function UIShopController:OnShow(uiParams)
   self._checkMonthCardTips = uiParams[5]
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIShop)
-  if self.params then
-    local mainTabType = (self.params)[2]
-  end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIShop)
+  local mainTabType = self.params and self.params[2]
   if mainTabType ~= ShopMainTabType.Secret and mainTabType ~= ShopMainTabType.Exchange and mainTabType ~= ShopMainTabType.Homeland then
     mainTabType = ShopMainTabType.Secret
   end
   self:AddListener()
   local topButton = self:GetUIComponent("UISelectObjectPath", "topbtn")
   self.topButton = topButton:SpawnObject("UINewCommonTopButton")
-  self._lastBGMResName = (AudioHelperController.GetCurrentBgm)()
-  local hideHomeBtn = (self._homeLandModule):IsRunning()
-  ;
-  (self.topButton):SetData(function()
-    -- function num : 0_4_0 , upvalues : _ENV, self
-    local curUIState = ((GameGlobal.UIStateManager)()):CurUIStateType()
+  self._lastBGMResName = AudioHelperController.GetCurrentBgm()
+  local hideHomeBtn = self._homeLandModule:IsRunning()
+  self.topButton:SetData(function()
+    local curUIState = GameGlobal.UIStateManager():CurUIStateType()
     if curUIState == UIStateType.UIShopController then
       self:SwitchState(UIStateType.UIMain)
     else
       if self._openFromCampaign then
-        (self._openFromCampaign):CheckCampaignClose_ShowClientError()
+        self._openFromCampaign:CheckCampaignClose_ShowClientError()
       end
       self:CloseDialog()
     end
-  end
-, nil, nil, hideHomeBtn)
+  end, nil, nil, hideHomeBtn)
   local sop = self:GetUIComponent("UISelectObjectPath", "mainmenu")
   self.shopCurrencyMenu = sop:SpawnObject("UICurrencyMenu_Shop")
   local mainToggle = self:GetUIComponent("UISelectObjectPath", "maintoggle")
-  ;
-  (self.clientShop):ResetUniqueid()
-  local tabDatas = (self.clientShop):GetMainTabDatas()
+  self.clientShop:ResetUniqueid()
+  local tabDatas = self.clientShop:GetMainTabDatas()
   mainToggle:SpawnObjects("UIShopMainTabBtn", #tabDatas)
   self.allTab = mainToggle:GetAllSpawnList()
   local tabs = mainToggle:GetAllSpawnList()
-  for i,tab in ipairs(tabs) do
+  for i, tab in ipairs(tabs) do
     local tabData = tabDatas[i]
-    -- DECOMPILER ERROR at PC88: Confused about usage of register: R15 in 'UnsetPending'
-
-    ;
-    (self.allTab)[tabData:GetUniqueID()] = tab
+    self.allTab[tabData:GetUniqueID()] = tab
     tab:Init(tabData, self.OnClickTabBtn, self)
     local childIdx = self:GetChildIndex(tabData)
     local itemGo = tab:GetGameObject()
-    ;
-    (itemGo.transform):SetSiblingIndex(childIdx)
+    itemGo.transform:SetSiblingIndex(childIdx)
     itemGo.name = childIdx
-    if tab:GetTabType() == mainTabType and childIdx >= 7 then
-      local parentSv = nil
-      local transform = (mainToggle:Engine()).transform
+    if tab:GetTabType() == mainTabType and 7 <= childIdx then
+      local parentSv
+      local transform = mainToggle:Engine().transform
       while parentSv == nil and transform ~= nil do
         transform = transform.parent
         parentSv = transform:GetComponent("ScrollRect")
@@ -180,87 +137,66 @@ UIShopController.OnShow = function(self, uiParams)
   self:InitBg()
   self:InitPlayerSpine()
   self._refreshTaskID = nil
-  do
-    if self._checkMonthCardTips then
-      local isRed, isTips, state = (self.shopModule):ShowMonthCardRedPoint()
-      if isRed then
-        mainTabType = ShopMainTabType.MonthCard
-      end
+  if self._checkMonthCardTips then
+    local isRed, isTips, state = self.shopModule:ShowMonthCardRedPoint()
+    if isRed then
+      mainTabType = ShopMainTabType.MonthCard
     end
-    if not mainTabType then
-      mainTabType = ShopMainTabType.Exchange
-    end
-    self:OnClickTabBtn(mainTabType, true)
-    ;
-    (self:GetModule(PetModule)):GetAllPetsSnapshoot()
-    local mRole = (GameGlobal.GetModule)(RoleModule)
-    local isUnLock = mRole:CheckModuleUnlock(GameModuleID.MD_Shop)
-    for i,tab in ipairs(self.allTab) do
-      local go = tab:GetGameObject()
-      if false and tab:GetTabType() ~= ShopMainTabType.Gift and tab:GetTabType() ~= ShopMainTabType.Exchange and tab:GetTabType() ~= ShopMainTabType.Secret then
-        go:SetActive(false)
-      else
-        if isUnLock then
-          if tab:GetTabType() == ShopMainTabType.Skins then
-            tab:CheckSkinTabHide()
-          else
-            if tab:GetTabType() == ShopMainTabType.Homeland then
-              tab:CheckHomelandTabHide()
-            else
-              go:SetActive(true)
-            end
-          end
-        else
-          local mainTabType = (tabDatas[i]):GetMainTab()
-          if mainTabType == ShopMainTabType.Recharge or mainTabType == ShopMainTabType.Gift then
-            go:SetActive(true)
-          else
-            go:SetActive(false)
-          end
-        end
-      end
-      do
-        do
-          tab:Select(tab:GetTabType() == mainTabType)
-          -- DECOMPILER ERROR at PC246: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
-      end
-    end
-    self:CoFlushTabNew()
-    self:AttachEvent(GameEventType.ShopNew, self.CoFlushTabNew)
-    ;
-    (self.mRedDot):ListenRedDot({[RedDotType.RDT_SHOP_GIFT_NEW] = GameEventType.ShopNew, [RedDotType.RDT_SHOP_SIGN_NEW] = GameEventType.ShopNew})
-    self:CheckMonthCardTips(self._checkMonthCardTips)
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
   end
+  mainTabType = mainTabType or ShopMainTabType.Exchange
+  self:OnClickTabBtn(mainTabType, true)
+  self:GetModule(PetModule):GetAllPetsSnapshoot()
+  local mRole = GameGlobal.GetModule(RoleModule)
+  local isUnLock = mRole:CheckModuleUnlock(GameModuleID.MD_Shop)
+  for i, tab in ipairs(self.allTab) do
+    local go = tab:GetGameObject()
+    if false and tab:GetTabType() ~= ShopMainTabType.Gift and tab:GetTabType() ~= ShopMainTabType.Exchange and tab:GetTabType() ~= ShopMainTabType.Secret then
+      go:SetActive(false)
+    elseif isUnLock then
+      if tab:GetTabType() == ShopMainTabType.Skins then
+        tab:CheckSkinTabHide()
+      elseif tab:GetTabType() == ShopMainTabType.Homeland then
+        tab:CheckHomelandTabHide()
+      else
+        go:SetActive(true)
+      end
+    else
+      local mainTabType = tabDatas[i]:GetMainTab()
+      if mainTabType == ShopMainTabType.Recharge or mainTabType == ShopMainTabType.Gift then
+        go:SetActive(true)
+      else
+        go:SetActive(false)
+      end
+    end
+    tab:Select(tab:GetTabType() == mainTabType)
+  end
+  self:CoFlushTabNew()
+  self:AttachEvent(GameEventType.ShopNew, self.CoFlushTabNew)
+  self.mRedDot:ListenRedDot({
+    [RedDotType.RDT_SHOP_GIFT_NEW] = GameEventType.ShopNew,
+    [RedDotType.RDT_SHOP_SIGN_NEW] = GameEventType.ShopNew
+  })
+  self:CheckMonthCardTips(self._checkMonthCardTips)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.GetChildIndex = function(self, data)
-  -- function num : 0_5 , upvalues : _ENV
-  local tabDatas = (self.clientShop):GetMainTabDatas()
+function UIShopController:GetChildIndex(data)
+  local tabDatas = self.clientShop:GetMainTabDatas()
   local idx = data:GetSortIndex()
   local retIndex = 0
-  for key,value in pairs(tabDatas) do
+  for key, value in pairs(tabDatas) do
     local valIdx = value:GetSortIndex()
-    if valIdx < idx then
+    if idx > valIdx then
       retIndex = retIndex + 1
     end
   end
   return retIndex
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.OnHide = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (AudioHelperController.PlayBGM)(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideTSFBtn, false)
+function UIShopController:OnHide()
+  AudioHelperController.PlayBGM(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideTSFBtn, false)
   if self._refreshTaskID then
-    ((GameGlobal.TaskManager)()):KillTask(self._refreshTaskID)
+    GameGlobal.TaskManager():KillTask(self._refreshTaskID)
     self._refreshTaskID = nil
   end
   self:DetachEvent(GameEventType.ChangeShopBg, self.ChangeShopBg)
@@ -268,806 +204,540 @@ UIShopController.OnHide = function(self)
   self:DetachEvent(GameEventType.OpenShop, self.OpenShop)
   self:DetachEvent(GameEventType.ApplicationFocus, self.OnApplicationFocus)
   self:DetachEvent(GameEventType.ShopNew, self.CoFlushTabNew)
-  ;
-  (self.mRedDot):UnListenRedDot({RedDotType.RDT_SHOP_GIFT_NEW, RedDotType.RDT_SHOP_SIGN_NEW})
+  self.mRedDot:UnListenRedDot({
+    RedDotType.RDT_SHOP_GIFT_NEW,
+    RedDotType.RDT_SHOP_SIGN_NEW
+  })
   self.allTab = nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.AddListener = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIShopController:AddListener()
   self:AttachEvent(GameEventType.ChangeShopBg, self.ChangeShopBg)
   self:AttachEvent(GameEventType.ShopTabChange, self.ShopTabChange)
   self:AttachEvent(GameEventType.OpenShop, self.OpenShop)
   self:AttachEvent(GameEventType.ApplicationFocus, self.OnApplicationFocus)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.CheckIsOpen = function(mainTabType)
-  -- function num : 0_8 , upvalues : _ENV
+function UIShopController.CheckIsOpen(mainTabType)
   if mainTabType == ShopMainTabType.Recharge or mainTabType == ShopMainTabType.Gift then
     return not UIConst.IsShieldPay
   end
   return true
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.OpenShop = function(self, mainTabType)
-  -- function num : 0_9 , upvalues : _ENV
-  if not mainTabType then
-    self:OnClickTabBtn(ShopMainTabType.Recommend)
-  end
+function UIShopController:OpenShop(mainTabType)
+  self:OnClickTabBtn(mainTabType or ShopMainTabType.Recommend)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.OnClickTabBtn = function(self, mainTabType, first, uniqueid)
-  -- function num : 0_10 , upvalues : _ENV
+function UIShopController:OnClickTabBtn(mainTabType, first, uniqueid)
+  uniqueid = uniqueid or self:GetUniqueIDByMainTabType(mainTabType)
   if not uniqueid then
-    uniqueid = self:GetUniqueIDByMainTabType(mainTabType)
-  end
-  if not uniqueid then
-    return 
+    return
   end
   if self.curMainTabUniqueid == uniqueid then
-    return 
+    return
   end
-  if not (UIShopController.CheckIsOpen)(mainTabType) then
-    return 
+  if not UIShopController.CheckIsOpen(mainTabType) then
+    return
   end
   if first then
     self:RefreshPanel(mainTabType, first, uniqueid)
+  elseif mainTabType == ShopMainTabType.Skins then
+    self:RefreshTask(mainTabType, ShopMainTabType.Gift, uniqueid)
   else
-    if mainTabType == ShopMainTabType.Skins then
-      self:RefreshTask(mainTabType, ShopMainTabType.Gift, uniqueid)
-    else
-      self:RefreshTask(mainTabType, nil, uniqueid)
-    end
+    self:RefreshTask(mainTabType, nil, uniqueid)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.RefreshTask = function(self, mainTabType, followTabType, uniqueid)
-  -- function num : 0_11 , upvalues : _ENV
+function UIShopController:RefreshTask(mainTabType, followTabType, uniqueid)
   if self._refreshTaskID then
-    ((GameGlobal.TaskManager)()):KillTask(self._refreshTaskID)
+    GameGlobal.TaskManager():KillTask(self._refreshTaskID)
     self._refreshTaskID = nil
   end
   if self._refreshSubTaskID then
-    ((GameGlobal.TaskManager)()):KillTask(self._refreshSubTaskID)
+    GameGlobal.TaskManager():KillTask(self._refreshSubTaskID)
     self._refreshSubTaskID = nil
   end
   local reqRemainCount = 1
-  local fnRefreshPanel = function()
-    -- function num : 0_11_0 , upvalues : reqRemainCount, self, mainTabType, uniqueid
+  
+  local function fnRefreshPanel()
     reqRemainCount = reqRemainCount - 1
     if reqRemainCount == 0 then
       self:RefreshPanel(mainTabType, false, uniqueid)
     end
   end
-
+  
   if followTabType ~= nil then
     reqRemainCount = reqRemainCount + 1
     self._refreshSubTaskID = self:StartTask(function(TT)
-    -- function num : 0_11_1 , upvalues : self, followTabType, _ENV, uniqueid, fnRefreshPanel
-    self:Lock("UIShopController:RefreshTask_SubTask")
-    if (self.params and (self.params)[3]) or not (self.clientShop):SendProtocal(TT, followTabType, MarketType.Shop_BlackMarket, uniqueid) then
-      return 
-    end
-    fnRefreshPanel()
-    self:UnLock("UIShopController:RefreshTask_SubTask")
-  end
-, self)
+      self:Lock("UIShopController:RefreshTask_SubTask")
+      if not self.clientShop:SendProtocal(TT, followTabType, self.params and self.params[3] or MarketType.Shop_BlackMarket, uniqueid) then
+        return
+      end
+      fnRefreshPanel()
+      self:UnLock("UIShopController:RefreshTask_SubTask")
+    end, self)
   end
   self._refreshTaskID = self:StartTask(function(TT)
-    -- function num : 0_11_2 , upvalues : self, mainTabType, _ENV, uniqueid, fnRefreshPanel
     self:Lock("UIShopController:RefreshTask_MainTask")
-    if self.params then
-      local subTabType = (self.params)[3]
-    end
+    local subTabType = self.params and self.params[3]
     if mainTabType == ShopMainTabType.Secret then
-      subTabType = (self.clientShop):SendCampaign(TT, mainTabType, subTabType)
+      subTabType = self.clientShop:SendCampaign(TT, mainTabType, subTabType)
     end
-    if not (self.clientShop):SendProtocal(TT, mainTabType, self.params and (self.params)[3] or subTabType, uniqueid) then
-      return 
+    if not self.clientShop:SendProtocal(TT, mainTabType, self.params and self.params[3] or subTabType, uniqueid) then
+      return
     end
     fnRefreshPanel()
     self:UnLock("UIShopController:RefreshTask_MainTask")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.RefreshPanel = function(self, mainTabType, first, uniqueid)
-  -- function num : 0_12 , upvalues : _ENV
+function UIShopController:RefreshPanel(mainTabType, first, uniqueid)
   if self.curMainTabUniqueid > 0 then
-    ((self.allTab)[self.curMainTabUniqueid]):Select(false)
+    self.allTab[self.curMainTabUniqueid]:Select(false)
   end
   self.curMainTabType = mainTabType
   self.curMainTabUniqueid = uniqueid
   if self.curMainTabUniqueid > 0 then
-    ((self.allTab)[self.curMainTabUniqueid]):Select(true, first)
+    self.allTab[self.curMainTabUniqueid]:Select(true, first)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideTSFBtn, mainTabType == ShopMainTabType.Recharge or mainTabType == ShopMainTabType.Gift or mainTabType == ShopMainTabType.Skins)
-  local tabCanvasGroup, tab = nil, nil
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideTSFBtn, mainTabType == ShopMainTabType.Recharge or mainTabType == ShopMainTabType.Gift or mainTabType == ShopMainTabType.Skins)
+  local tabCanvasGroup, tab
   if self.curMainTabType == ShopMainTabType.Recommend then
-    do
-      if not self.shopRecommendTab then
-        local sop = self:GetUIComponent("UISelectObjectPath", "UIShopRecommendTab")
-        self.shopRecommendTab = sop:SpawnObject("UIShopRecommendTab")
-        self.shopRecommendTab_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopRecommendTab")
-        -- DECOMPILER ERROR at PC65: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (self.shopRecommendTab_CanvasGroup).alpha = 0
-        -- DECOMPILER ERROR at PC67: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (self.shopRecommendTab_CanvasGroup).blocksRaycasts = false
-      end
-      tab = self.shopRecommendTab
-      tabCanvasGroup = self.shopRecommendTab_CanvasGroup
-      if self.curMainTabType == ShopMainTabType.Secret then
-        do
-          if not self.shopSecretTab then
-            local sop = self:GetUIComponent("UISelectObjectPath", "UIShopSecretTab")
-            self.shopSecretTab = sop:SpawnObject("UIShopSecretTab")
-            self.shopSecretTab_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopSecretTab")
-            -- DECOMPILER ERROR at PC93: Confused about usage of register: R7 in 'UnsetPending'
-
-            ;
-            (self.shopSecretTab_CanvasGroup).alpha = 0
-            -- DECOMPILER ERROR at PC95: Confused about usage of register: R7 in 'UnsetPending'
-
-            ;
-            (self.shopSecretTab_CanvasGroup).blocksRaycasts = false
-          end
-          tab = self.shopSecretTab
-          tabCanvasGroup = self.shopSecretTab_CanvasGroup
-          if self.curMainTabType == ShopMainTabType.Exchange then
-            do
-              if not self.exchangeTab then
-                local sop = self:GetUIComponent("UISelectObjectPath", "UIShopExchangeTab")
-                self.exchangeTab = sop:SpawnObject("UIShopExchangeTab")
-                self.exchangeTab_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopExchangeTab")
-                -- DECOMPILER ERROR at PC121: Confused about usage of register: R7 in 'UnsetPending'
-
-                ;
-                (self.exchangeTab_CanvasGroup).alpha = 0
-                -- DECOMPILER ERROR at PC123: Confused about usage of register: R7 in 'UnsetPending'
-
-                ;
-                (self.exchangeTab_CanvasGroup).blocksRaycasts = false
-              end
-              tab = self.exchangeTab
-              tabCanvasGroup = self.exchangeTab_CanvasGroup
-              if self.curMainTabType == ShopMainTabType.Recharge then
-                do
-                  if not self.shopRechargeTab then
-                    local sop = self:GetUIComponent("UISelectObjectPath", "UIShopRechargeTab")
-                    self.shopRechargeTab = sop:SpawnObject("UIShopRechargeTab")
-                    self.shopRechargeTab_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopRechargeTab")
-                    -- DECOMPILER ERROR at PC149: Confused about usage of register: R7 in 'UnsetPending'
-
-                    ;
-                    (self.shopRechargeTab_CanvasGroup).alpha = 0
-                    -- DECOMPILER ERROR at PC151: Confused about usage of register: R7 in 'UnsetPending'
-
-                    ;
-                    (self.shopRechargeTab_CanvasGroup).blocksRaycasts = false
-                  end
-                  tab = self.shopRechargeTab
-                  tabCanvasGroup = self.shopRechargeTab_CanvasGroup
-                  if self.curMainTabType == ShopMainTabType.Gift then
-                    do
-                      if not self.shopGiftPackTab then
-                        local sop = self:GetUIComponent("UISelectObjectPath", "UIShopGiftPackTab")
-                        self.shopGiftPackTab = sop:SpawnObject("UIShopGiftPackTab")
-                        self.shopGiftPackTab_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopGiftPackTab")
-                        -- DECOMPILER ERROR at PC177: Confused about usage of register: R7 in 'UnsetPending'
-
-                        ;
-                        (self.shopGiftPackTab_CanvasGroup).alpha = 0
-                        -- DECOMPILER ERROR at PC179: Confused about usage of register: R7 in 'UnsetPending'
-
-                        ;
-                        (self.shopGiftPackTab_CanvasGroup).blocksRaycasts = false
-                      end
-                      tab = self.shopGiftPackTab
-                      tabCanvasGroup = self.shopGiftPackTab_CanvasGroup
-                      if self.curMainTabType == ShopMainTabType.Skins then
-                        do
-                          if not self.shopSkinsPackTab then
-                            local sop = self:GetUIComponent("UISelectObjectPath", "UIShopSkinsTab")
-                            self.shopSkinsPackTab = sop:SpawnObject("UIShopSkinsTab")
-                            self.shopSkinsPackTab_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopSkinsTab")
-                            -- DECOMPILER ERROR at PC205: Confused about usage of register: R7 in 'UnsetPending'
-
-                            ;
-                            (self.shopSkinsPackTab_CanvasGroup).alpha = 0
-                            -- DECOMPILER ERROR at PC207: Confused about usage of register: R7 in 'UnsetPending'
-
-                            ;
-                            (self.shopSkinsPackTab_CanvasGroup).blocksRaycasts = false
-                          end
-                          tab = self.shopSkinsPackTab
-                          tabCanvasGroup = self.shopSkinsPackTab_CanvasGroup
-                          if self.curMainTabType == ShopMainTabType.Homeland then
-                            do
-                              if not self.shopHomelandTab then
-                                local sop = self:GetUIComponent("UISelectObjectPath", "UIShopHomelandTab")
-                                self.shopHomelandTab = sop:SpawnObject("UIShopHomelandTab")
-                                self.shopHomelandTab_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopHomelandTab")
-                                -- DECOMPILER ERROR at PC233: Confused about usage of register: R7 in 'UnsetPending'
-
-                                ;
-                                (self.shopHomelandTab_CanvasGroup).alpha = 0
-                                -- DECOMPILER ERROR at PC235: Confused about usage of register: R7 in 'UnsetPending'
-
-                                ;
-                                (self.shopHomelandTab_CanvasGroup).blocksRaycasts = false
-                              end
-                              tab = self.shopHomelandTab
-                              tabCanvasGroup = self.shopHomelandTab_CanvasGroup
-                              if self.curMainTabType == ShopMainTabType.FlashSale then
-                                do
-                                  if not self.shopFlashSale then
-                                    local sop = self:GetUIComponent("UISelectObjectPath", "UIShopFlashSaleTab")
-                                    self.shopFlashSale = sop:SpawnObject("UIShopFlashSaleTab")
-                                    self.shopFlashSale_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopFlashSaleTab")
-                                    -- DECOMPILER ERROR at PC261: Confused about usage of register: R7 in 'UnsetPending'
-
-                                    ;
-                                    (self.shopFlashSale_CanvasGroup).alpha = 0
-                                    -- DECOMPILER ERROR at PC263: Confused about usage of register: R7 in 'UnsetPending'
-
-                                    ;
-                                    (self.shopFlashSale_CanvasGroup).blocksRaycasts = false
-                                  end
-                                  tab = self.shopFlashSale
-                                  tabCanvasGroup = self.shopFlashSale_CanvasGroup
-                                  if self.curMainTabType == ShopMainTabType.SailingPlan then
-                                    do
-                                      if not self.shopSailingPlan then
-                                        local sop = self:GetUIComponent("UISelectObjectPath", "UIShopSailingPlanTab")
-                                        self.shopSailingPlan = sop:SpawnObject("UIShopSailingPlanTab")
-                                        self.shopSailingPlan_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopSailingPlanTab")
-                                        -- DECOMPILER ERROR at PC289: Confused about usage of register: R7 in 'UnsetPending'
-
-                                        ;
-                                        (self.shopSailingPlan_CanvasGroup).alpha = 0
-                                        -- DECOMPILER ERROR at PC291: Confused about usage of register: R7 in 'UnsetPending'
-
-                                        ;
-                                        (self.shopSailingPlan_CanvasGroup).blocksRaycasts = false
-                                      end
-                                      tab = self.shopSailingPlan
-                                      tabCanvasGroup = self.shopSailingPlan_CanvasGroup
-                                      if self.curMainTabType == ShopMainTabType.MonthCard then
-                                        do
-                                          if not self.shopMonthCard then
-                                            local sop = self:GetUIComponent("UISelectObjectPath", "UIShopMonthCardTab")
-                                            self.shopMonthCard = sop:SpawnObject("UIShopMonthCardTab")
-                                            self.shopMonthCard_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopMonthCardTab")
-                                            -- DECOMPILER ERROR at PC317: Confused about usage of register: R7 in 'UnsetPending'
-
-                                            ;
-                                            (self.shopMonthCard_CanvasGroup).alpha = 0
-                                            -- DECOMPILER ERROR at PC319: Confused about usage of register: R7 in 'UnsetPending'
-
-                                            ;
-                                            (self.shopMonthCard_CanvasGroup).blocksRaycasts = false
-                                          end
-                                          tab = self.shopMonthCard
-                                          tabCanvasGroup = self.shopMonthCard_CanvasGroup
-                                          ;
-                                          (Log.fatal)("### unvalid mainTabType. self.mainTabType = ", self.curMainTabType)
-                                          do
-                                            if self.tab then
-                                              local tab = self.tab
-                                              ;
-                                              (self.tab):ExcuteHideLogic(function(_tab)
-    -- function num : 0_12_0
-    if _tab:View() then
-      _tab:HideSelf()
+    if not self.shopRecommendTab then
+      local sop = self:GetUIComponent("UISelectObjectPath", "UIShopRecommendTab")
+      self.shopRecommendTab = sop:SpawnObject("UIShopRecommendTab")
+      self.shopRecommendTab_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopRecommendTab")
+      self.shopRecommendTab_CanvasGroup.alpha = 0
+      self.shopRecommendTab_CanvasGroup.blocksRaycasts = false
     end
+    tab = self.shopRecommendTab
+    tabCanvasGroup = self.shopRecommendTab_CanvasGroup
+  elseif self.curMainTabType == ShopMainTabType.Secret then
+    if not self.shopSecretTab then
+      local sop = self:GetUIComponent("UISelectObjectPath", "UIShopSecretTab")
+      self.shopSecretTab = sop:SpawnObject("UIShopSecretTab")
+      self.shopSecretTab_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopSecretTab")
+      self.shopSecretTab_CanvasGroup.alpha = 0
+      self.shopSecretTab_CanvasGroup.blocksRaycasts = false
+    end
+    tab = self.shopSecretTab
+    tabCanvasGroup = self.shopSecretTab_CanvasGroup
+  elseif self.curMainTabType == ShopMainTabType.Exchange then
+    if not self.exchangeTab then
+      local sop = self:GetUIComponent("UISelectObjectPath", "UIShopExchangeTab")
+      self.exchangeTab = sop:SpawnObject("UIShopExchangeTab")
+      self.exchangeTab_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopExchangeTab")
+      self.exchangeTab_CanvasGroup.alpha = 0
+      self.exchangeTab_CanvasGroup.blocksRaycasts = false
+    end
+    tab = self.exchangeTab
+    tabCanvasGroup = self.exchangeTab_CanvasGroup
+  elseif self.curMainTabType == ShopMainTabType.Recharge then
+    if not self.shopRechargeTab then
+      local sop = self:GetUIComponent("UISelectObjectPath", "UIShopRechargeTab")
+      self.shopRechargeTab = sop:SpawnObject("UIShopRechargeTab")
+      self.shopRechargeTab_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopRechargeTab")
+      self.shopRechargeTab_CanvasGroup.alpha = 0
+      self.shopRechargeTab_CanvasGroup.blocksRaycasts = false
+    end
+    tab = self.shopRechargeTab
+    tabCanvasGroup = self.shopRechargeTab_CanvasGroup
+  elseif self.curMainTabType == ShopMainTabType.Gift then
+    if not self.shopGiftPackTab then
+      local sop = self:GetUIComponent("UISelectObjectPath", "UIShopGiftPackTab")
+      self.shopGiftPackTab = sop:SpawnObject("UIShopGiftPackTab")
+      self.shopGiftPackTab_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopGiftPackTab")
+      self.shopGiftPackTab_CanvasGroup.alpha = 0
+      self.shopGiftPackTab_CanvasGroup.blocksRaycasts = false
+    end
+    tab = self.shopGiftPackTab
+    tabCanvasGroup = self.shopGiftPackTab_CanvasGroup
+  elseif self.curMainTabType == ShopMainTabType.Skins then
+    if not self.shopSkinsPackTab then
+      local sop = self:GetUIComponent("UISelectObjectPath", "UIShopSkinsTab")
+      self.shopSkinsPackTab = sop:SpawnObject("UIShopSkinsTab")
+      self.shopSkinsPackTab_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopSkinsTab")
+      self.shopSkinsPackTab_CanvasGroup.alpha = 0
+      self.shopSkinsPackTab_CanvasGroup.blocksRaycasts = false
+    end
+    tab = self.shopSkinsPackTab
+    tabCanvasGroup = self.shopSkinsPackTab_CanvasGroup
+  elseif self.curMainTabType == ShopMainTabType.Homeland then
+    if not self.shopHomelandTab then
+      local sop = self:GetUIComponent("UISelectObjectPath", "UIShopHomelandTab")
+      self.shopHomelandTab = sop:SpawnObject("UIShopHomelandTab")
+      self.shopHomelandTab_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopHomelandTab")
+      self.shopHomelandTab_CanvasGroup.alpha = 0
+      self.shopHomelandTab_CanvasGroup.blocksRaycasts = false
+    end
+    tab = self.shopHomelandTab
+    tabCanvasGroup = self.shopHomelandTab_CanvasGroup
+  elseif self.curMainTabType == ShopMainTabType.FlashSale then
+    if not self.shopFlashSale then
+      local sop = self:GetUIComponent("UISelectObjectPath", "UIShopFlashSaleTab")
+      self.shopFlashSale = sop:SpawnObject("UIShopFlashSaleTab")
+      self.shopFlashSale_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopFlashSaleTab")
+      self.shopFlashSale_CanvasGroup.alpha = 0
+      self.shopFlashSale_CanvasGroup.blocksRaycasts = false
+    end
+    tab = self.shopFlashSale
+    tabCanvasGroup = self.shopFlashSale_CanvasGroup
+  elseif self.curMainTabType == ShopMainTabType.SailingPlan then
+    if not self.shopSailingPlan then
+      local sop = self:GetUIComponent("UISelectObjectPath", "UIShopSailingPlanTab")
+      self.shopSailingPlan = sop:SpawnObject("UIShopSailingPlanTab")
+      self.shopSailingPlan_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopSailingPlanTab")
+      self.shopSailingPlan_CanvasGroup.alpha = 0
+      self.shopSailingPlan_CanvasGroup.blocksRaycasts = false
+    end
+    tab = self.shopSailingPlan
+    tabCanvasGroup = self.shopSailingPlan_CanvasGroup
+  elseif self.curMainTabType == ShopMainTabType.MonthCard then
+    if not self.shopMonthCard then
+      local sop = self:GetUIComponent("UISelectObjectPath", "UIShopMonthCardTab")
+      self.shopMonthCard = sop:SpawnObject("UIShopMonthCardTab")
+      self.shopMonthCard_CanvasGroup = self:GetUIComponent("CanvasGroup", "UIShopMonthCardTab")
+      self.shopMonthCard_CanvasGroup.alpha = 0
+      self.shopMonthCard_CanvasGroup.blocksRaycasts = false
+    end
+    tab = self.shopMonthCard
+    tabCanvasGroup = self.shopMonthCard_CanvasGroup
+  else
+    Log.fatal("### unvalid mainTabType. self.mainTabType = ", self.curMainTabType)
   end
-)
-                                            end
-                                            -- DECOMPILER ERROR at PC340: Confused about usage of register: R6 in 'UnsetPending'
-
-                                            if self.tabCanvasGroup then
-                                              (self.tabCanvasGroup).alpha = 0
-                                              -- DECOMPILER ERROR at PC342: Confused about usage of register: R6 in 'UnsetPending'
-
-                                              ;
-                                              (self.tabCanvasGroup).blocksRaycasts = false
-                                            end
-                                            self.tab = tab
-                                            self.tabCanvasGroup = tabCanvasGroup
-                                            if self.tab then
-                                              (self.tab):SetData(self.params)
-                                              ;
-                                              (self.tab):ShowSelf()
-                                              self.params = nil
-                                            end
-                                            -- DECOMPILER ERROR at PC360: Confused about usage of register: R6 in 'UnsetPending'
-
-                                            if self.tabCanvasGroup then
-                                              (self.tabCanvasGroup).alpha = 1
-                                              -- DECOMPILER ERROR at PC362: Confused about usage of register: R6 in 'UnsetPending'
-
-                                              ;
-                                              (self.tabCanvasGroup).blocksRaycasts = true
-                                            end
-                                            -- DECOMPILER ERROR: 26 unprocessed JMP targets
-                                          end
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+  if self.tab then
+    local tab = self.tab
+    self.tab:ExcuteHideLogic(function(_tab)
+      if _tab:View() then
+        _tab:HideSelf()
       end
-    end
+    end)
+  end
+  if self.tabCanvasGroup then
+    self.tabCanvasGroup.alpha = 0
+    self.tabCanvasGroup.blocksRaycasts = false
+  end
+  self.tab = tab
+  self.tabCanvasGroup = tabCanvasGroup
+  if self.tab then
+    self.tab:SetData(self.params)
+    self.tab:ShowSelf()
+    self.params = nil
+  end
+  if self.tabCanvasGroup then
+    self.tabCanvasGroup.alpha = 1
+    self.tabCanvasGroup.blocksRaycasts = true
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.CoFlushTabNew = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIShopController:CoFlushTabNew()
   self:StartTask(function(TT)
-    -- function num : 0_13_0 , upvalues : self, _ENV
-    local res = (self.mRedDot):RequestRedDotStatus(TT, {RedDotType.RDT_SHOP_GIFT_NEW, RedDotType.RDT_SHOP_SIGN_NEW})
+    local res = self.mRedDot:RequestRedDotStatus(TT, {
+      RedDotType.RDT_SHOP_GIFT_NEW,
+      RedDotType.RDT_SHOP_SIGN_NEW
+    })
     if not self.allTab then
-      return 
+      return
     end
-    local tabDatas = (self.clientShop):GetMainTabDatas()
-    for i,tab in ipairs(self.allTab) do
+    local tabDatas = self.clientShop:GetMainTabDatas()
+    for i, tab in ipairs(self.allTab) do
       local isShow = false
       if res then
-        local mainTabType = (tabDatas[i]):GetMainTab()
-        if not res[RedDotType.RDT_SHOP_GIFT_NEW] then
-          isShow = mainTabType ~= ShopMainTabType.Gift or false
-          if not res[RedDotType.RDT_SHOP_SIGN_NEW] then
-            isShow = mainTabType ~= ShopMainTabType.Skins or false
-            if mainTabType == ShopMainTabType.Homeland then
-              isShow = (self.shopModule):GetHomelandShopTabNew()
-            else
-              if mainTabType == ShopMainTabType.Recharge then
-                isShow = (self.shopModule):GetRechargeTabNew()
-              else
-                if mainTabType == ShopMainTabType.FlashSale then
-                  isShow = self:GetFlashSaleNew(tab:GetComponentID())
-                else
-                  if mainTabType == ShopMainTabType.SailingPlan then
-                    local sailingPlanHelper = UIShopSailingPlanHelper:New()
-                    isShow = sailingPlanHelper:CheckNew()
-                  else
-                    do
-                      do
-                        do
-                          if mainTabType == ShopMainTabType.Exchange then
-                            isShow = (self.shopModule):GetExchangeTabNew()
-                          else
-                            if mainTabType == ShopMainTabType.Secret then
-                              isShow = (self.shopModule):GetSecretTabNew()
-                            end
-                          end
-                          tab:FlushNew(isShow)
-                          -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out DO_STMT
-
-                          -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out DO_STMT
-
-                          -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                          -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                          -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                          -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                          -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                          -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                          -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                          -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out IF_STMT
-
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
+        local mainTabType = tabDatas[i]:GetMainTab()
+        if mainTabType == ShopMainTabType.Gift then
+          isShow = res[RedDotType.RDT_SHOP_GIFT_NEW] or false
+        elseif mainTabType == ShopMainTabType.Skins then
+          isShow = res[RedDotType.RDT_SHOP_SIGN_NEW] or false
+        elseif mainTabType == ShopMainTabType.Homeland then
+          isShow = self.shopModule:GetHomelandShopTabNew()
+        elseif mainTabType == ShopMainTabType.Recharge then
+          isShow = self.shopModule:GetRechargeTabNew()
+        elseif mainTabType == ShopMainTabType.FlashSale then
+          isShow = self:GetFlashSaleNew(tab:GetComponentID())
+        elseif mainTabType == ShopMainTabType.SailingPlan then
+          local sailingPlanHelper = UIShopSailingPlanHelper:New()
+          isShow = sailingPlanHelper:CheckNew()
+        elseif mainTabType == ShopMainTabType.Exchange then
+          isShow = self.shopModule:GetExchangeTabNew()
+        elseif mainTabType == ShopMainTabType.Secret then
+          isShow = self.shopModule:GetSecretTabNew()
         end
       end
+      tab:FlushNew(isShow)
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.ShowTab = function(self, params)
-  -- function num : 0_14
+function UIShopController:ShowTab(params)
   self.params = params
-  local mainTabType = (self.params)[2] or 1
+  local mainTabType = self.params[2] or 1
   self:OnClickTabBtn(mainTabType)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_15
+function UIShopController:OnUpdate(deltaTimeMS)
   if self.tab then
-    (self.tab):Update(deltaTimeMS)
+    self.tab:Update(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.InitBg = function(self)
-  -- function num : 0_16
+function UIShopController:InitBg()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.ChangeShopBg = function(self, mainTabType, bgName)
-  -- function num : 0_17
+function UIShopController:ChangeShopBg(mainTabType, bgName)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.ShopTabChange = function(self, mainTabType, subTabType)
-  -- function num : 0_18 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._spineCanvasGroup).alpha = not self._spineCanvasGroup or (mainTabType == ShopMainTabType.Recommend and 1) or 0
+function UIShopController:ShopTabChange(mainTabType, subTabType)
+  if self._spineCanvasGroup then
+    self._spineCanvasGroup.alpha = mainTabType == ShopMainTabType.Recommend and 1 or 0
+  end
   if mainTabType == ShopMainTabType.Recommend then
-    (self.shopCurrencyMenu):SetData({RoleAssetID.RoleAssetGold, RoleAssetID.RoleAssetGlow})
-  else
-    if mainTabType == ShopMainTabType.Secret then
-      if subTabType == MarketType.Shop_BlackMarket then
-        (self.shopCurrencyMenu):SetData({RoleAssetID.RoleAssetGold, RoleAssetID.RoleAssetGlow})
-      else
-        if subTabType == MarketType.Shop_MysteryMarket then
-          (self.shopCurrencyMenu):SetData({RoleAssetID.RoleAssetMazeCoin})
-        else
-          if subTabType == MarketType.Shop_WorldBoss then
-            (self.shopCurrencyMenu):SetData({RoleAssetID.RoleAssetWorldBossCoin, RoleAssetID.RoleAssetWorldBossCoin2})
-          else
-            if MarketType.Shop_CampaignMarket <= subTabType then
-              local shopCampaign, shopCampaignCfg = (self.clientShop):GetSecretCampaign(subTabType)
-              local shopComponent = shopCampaign:GetComponent(shopCampaignCfg.ComponentID)
-              local item_id = shopComponent:GetCostItemId()
-              ;
-              (self.shopCurrencyMenu):SetData({item_id}, true)
-            else
-              do
-                if subTabType == MarketType.Shop_BattlePass then
-                  (self.shopCurrencyMenu):SetData(self:GetBattlePassCoin((self.shopSecretTab):GetNestSubTab()), true, false)
-                else
-                  if subTabType == MarketType.Shop_Season then
-                    (self.shopCurrencyMenu):SetData({RoleAssetID.RoleAssetHistory})
-                  end
-                end
-                if mainTabType == ShopMainTabType.Exchange then
-                  if subTabType == MarketType.Shop_XingZuan then
-                    (self.shopCurrencyMenu):SetData({RoleAssetID.RoleAssetXingZuan})
-                  else
-                    if subTabType == MarketType.Shop_HuiYao then
-                      (self.shopCurrencyMenu):SetData({RoleAssetID.RoleAssetHuiYao})
-                    else
-                      if subTabType == MarketType.Shop_GuangPo then
-                        (self.shopCurrencyMenu):SetData({RoleAssetID.RoleAssetGlow})
-                      else
-                        if subTabType == MarketType.Shop_HongPiao then
-                          (self.shopCurrencyMenu):SetData({RoleAssetID.RoleAssetHongPiao})
-                        else
-                          if subTabType == MarketType.Shop_Season then
-                            (self.shopCurrencyMenu):SetData({RoleAssetID.RoleAssetHistory})
-                          else
-                            if subTabType == MarketType.Shop_BlackMarket then
-                              (self.shopCurrencyMenu):SetData({RoleAssetID.RoleAssetGold, RoleAssetID.RoleAssetGlow})
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                else
-                  if mainTabType == ShopMainTabType.Recharge then
-                    (self.shopCurrencyMenu):SetData({RoleAssetID.RoleAssetDiamond}, true)
-                  else
-                    if mainTabType == ShopMainTabType.Gift then
-                      (self.shopCurrencyMenu):SetData({RoleAssetID.RoleAssetDiamond, RoleAssetID.RoleAssetGlow})
-                    else
-                      if mainTabType == ShopMainTabType.Skins then
-                        (self.shopCurrencyMenu):SetData({RoleAssetID.RoleAssetDiamond})
-                      else
-                        if mainTabType == ShopMainTabType.Homeland then
-                          (self.shopCurrencyMenu):SetData({RoleAssetID.RoleAssetFurnitureCoin, RoleAssetID.RoleAssetGlow})
-                        else
-                          if mainTabType == ShopMainTabType.FlashSale then
-                            (self.shopCurrencyMenu):SetData({RoleAssetID.RoleAssetDiamond, RoleAssetID.RoleAssetGlow})
-                          else
-                            if mainTabType == ShopMainTabType.SailingPlan then
-                              (self.shopCurrencyMenu):SetData({RoleAssetID.RoleAssetDiamond, RoleAssetID.RoleAssetGlow})
-                            else
-                              if mainTabType == ShopMainTabType.MonthCard then
-                                (self.shopCurrencyMenu):SetData({RoleAssetID.RoleAssetDiamond, RoleAssetID.RoleAssetGlow})
-                              else
-                                ;
-                                (Log.warn)("### invalid mainTabType.", mainTabType)
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+    self.shopCurrencyMenu:SetData({
+      RoleAssetID.RoleAssetGold,
+      RoleAssetID.RoleAssetGlow
+    })
+  elseif mainTabType == ShopMainTabType.Secret then
+    if subTabType == MarketType.Shop_BlackMarket then
+      self.shopCurrencyMenu:SetData({
+        RoleAssetID.RoleAssetGold,
+        RoleAssetID.RoleAssetGlow
+      })
+    elseif subTabType == MarketType.Shop_MysteryMarket then
+      self.shopCurrencyMenu:SetData({
+        RoleAssetID.RoleAssetMazeCoin
+      })
+    elseif subTabType == MarketType.Shop_WorldBoss then
+      self.shopCurrencyMenu:SetData({
+        RoleAssetID.RoleAssetWorldBossCoin,
+        RoleAssetID.RoleAssetWorldBossCoin2
+      })
+    elseif subTabType >= MarketType.Shop_CampaignMarket then
+      local shopCampaign, shopCampaignCfg = self.clientShop:GetSecretCampaign(subTabType)
+      local shopComponent = shopCampaign:GetComponent(shopCampaignCfg.ComponentID)
+      local item_id = shopComponent:GetCostItemId()
+      self.shopCurrencyMenu:SetData({item_id}, true)
+    elseif subTabType == MarketType.Shop_BattlePass then
+      self.shopCurrencyMenu:SetData(self:GetBattlePassCoin(self.shopSecretTab:GetNestSubTab()), true, false)
+    elseif subTabType == MarketType.Shop_Season then
+      self.shopCurrencyMenu:SetData({
+        RoleAssetID.RoleAssetHistory
+      })
     end
+  elseif mainTabType == ShopMainTabType.Exchange then
+    if subTabType == MarketType.Shop_XingZuan then
+      self.shopCurrencyMenu:SetData({
+        RoleAssetID.RoleAssetXingZuan
+      })
+    elseif subTabType == MarketType.Shop_HuiYao then
+      self.shopCurrencyMenu:SetData({
+        RoleAssetID.RoleAssetHuiYao
+      })
+    elseif subTabType == MarketType.Shop_GuangPo then
+      self.shopCurrencyMenu:SetData({
+        RoleAssetID.RoleAssetGlow
+      })
+    elseif subTabType == MarketType.Shop_HongPiao then
+      self.shopCurrencyMenu:SetData({
+        RoleAssetID.RoleAssetHongPiao
+      })
+    elseif subTabType == MarketType.Shop_Season then
+      self.shopCurrencyMenu:SetData({
+        RoleAssetID.RoleAssetHistory
+      })
+    elseif subTabType == MarketType.Shop_BlackMarket then
+      self.shopCurrencyMenu:SetData({
+        RoleAssetID.RoleAssetGold,
+        RoleAssetID.RoleAssetGlow
+      })
+    end
+  elseif mainTabType == ShopMainTabType.Recharge then
+    self.shopCurrencyMenu:SetData({
+      RoleAssetID.RoleAssetDiamond
+    }, true)
+  elseif mainTabType == ShopMainTabType.Gift then
+    self.shopCurrencyMenu:SetData({
+      RoleAssetID.RoleAssetDiamond,
+      RoleAssetID.RoleAssetGlow
+    })
+  elseif mainTabType == ShopMainTabType.Skins then
+    self.shopCurrencyMenu:SetData({
+      RoleAssetID.RoleAssetDiamond
+    })
+  elseif mainTabType == ShopMainTabType.Homeland then
+    self.shopCurrencyMenu:SetData({
+      RoleAssetID.RoleAssetFurnitureCoin,
+      RoleAssetID.RoleAssetGlow
+    })
+  elseif mainTabType == ShopMainTabType.FlashSale then
+    self.shopCurrencyMenu:SetData({
+      RoleAssetID.RoleAssetDiamond,
+      RoleAssetID.RoleAssetGlow
+    })
+  elseif mainTabType == ShopMainTabType.SailingPlan then
+    self.shopCurrencyMenu:SetData({
+      RoleAssetID.RoleAssetDiamond,
+      RoleAssetID.RoleAssetGlow
+    })
+  elseif mainTabType == ShopMainTabType.MonthCard then
+    self.shopCurrencyMenu:SetData({
+      RoleAssetID.RoleAssetDiamond,
+      RoleAssetID.RoleAssetGlow
+    })
+  else
+    Log.warn("### invalid mainTabType.", mainTabType)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.GetMainTab = function(self, mainTabType)
-  -- function num : 0_19 , upvalues : _ENV
+function UIShopController:GetMainTab(mainTabType)
   if self.allTab then
-    for i,v in ipairs(self.allTab) do
-      if (v.shopMainTabData):GetMainTab() == mainTabType then
+    for i, v in ipairs(self.allTab) do
+      if v.shopMainTabData:GetMainTab() == mainTabType then
         return v:GetGameObject("pic")
       end
     end
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.GetSecretGood = function(self, index)
-  -- function num : 0_20
-  if self.shopSecretTab then
-    return (self.shopSecretTab):GetGood(index)
-  end
+function UIShopController:GetSecretGood(index)
+  return self.shopSecretTab and self.shopSecretTab:GetGood(index)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.GetBattlePassCoin = function(self, nestSubTabIndex)
-  -- function num : 0_21 , upvalues : _ENV
+function UIShopController:GetBattlePassCoin(nestSubTabIndex)
   local battlePassCoinList = {}
   local battlePassCoinIndex = {}
-  for id,cfg in pairs((Cfg.cfg_shop_battlepass_goods)()) do
-    local payState = {[BattlePassMarketType.Shop_BattlePass_Pay] = 1, [BattlePassMarketType.Shop_BattlePass_Free] = 0}
+  for id, cfg in pairs(Cfg.cfg_shop_battlepass_goods()) do
+    local payState = {
+      [BattlePassMarketType.Shop_BattlePass_Pay] = 1,
+      [BattlePassMarketType.Shop_BattlePass_Free] = 0
+    }
     if payState[nestSubTabIndex] == cfg.PayType then
       if cfg.SaleType and battlePassCoinIndex[cfg.SaleType] == nil then
         battlePassCoinIndex[cfg.SaleType] = {}
-        ;
-        (table.insert)(battlePassCoinList, cfg.SaleType)
+        table.insert(battlePassCoinList, cfg.SaleType)
       end
       if cfg.ConvertType and battlePassCoinIndex[cfg.ConvertType] == nil then
         battlePassCoinIndex[cfg.ConvertType] = {}
-        ;
-        (table.insert)(battlePassCoinList, cfg.ConvertType)
+        table.insert(battlePassCoinList, cfg.ConvertType)
       end
     end
   end
   return battlePassCoinList
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.InitPlayerSpine = function(self)
-  -- function num : 0_22
+function UIShopController:InitPlayerSpine()
   local spineHolder = self:GetUIComponent("RectTransform", "spineHolder")
   local sop = self:GetUIComponent("UISelectObjectPath", "UIShopRecommendTab")
   local tab = sop:SpawnObject("UIShopRecommendTab")
   tab:Enable(false)
-  spineHolder:SetParent((tab:GetGameObject()).transform, false)
+  spineHolder:SetParent(tab:GetGameObject().transform, false)
   spineHolder:SetSiblingIndex(0)
   self.spinePlaying = false
   self._spine = self:GetUIComponent("SpineLoader", "spine")
   self._spineCanvasGroup = self:GetUIComponent("CanvasGroup", "spine")
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._spineCanvasGroup).alpha = 0
+  self._spineCanvasGroup.alpha = 0
   self:StartTask(self.WelPlayerSpine, self)
   self:InitInteractWord()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.InitInteractWord = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  self.interactWords = (string.split)((StringTable.Get)("str_shop_interact_wel_word"), "|")
+function UIShopController:InitInteractWord()
+  self.interactWords = string.split(StringTable.Get("str_shop_interact_wel_word"), "|")
   self.stack = Stack:New()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.WelPlayerSpine = function(self, TT)
-  -- function num : 0_24
-  (self._spine):DestroyCurrentSpine()
+function UIShopController:WelPlayerSpine(TT)
+  self._spine:DestroyCurrentSpine()
   self.spinePlaying = true
   self:IdlePlayerSpine()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.IdlePlayerSpine = function(self)
-  -- function num : 0_25
+function UIShopController:IdlePlayerSpine()
   if self.spinePlaying then
     self.spinePlaying = false
-    ;
-    (self._spine):DestroyCurrentSpine()
-    ;
-    (self._spine):LoadSpine("duya_spine_idle")
+    self._spine:DestroyCurrentSpine()
+    self._spine:LoadSpine("duya_spine_idle")
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.GetInteractWord = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  if (self.stack):Size() <= 0 then
+function UIShopController:GetInteractWord()
+  if self.stack:Size() <= 0 then
     local count = 0
     local all = #self.interactWords
     while count < all do
-      local index = (math.random)(1, all)
-      if not (self.stack):Contains(index) then
-        (self.stack):Push(index)
+      local index = math.random(1, all)
+      if not self.stack:Contains(index) then
+        self.stack:Push(index)
         count = count + 1
       end
     end
   end
-  do
-    return (self.interactWords)[(self.stack):Pop()]
-  end
+  return self.interactWords[self.stack:Pop()]
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.OnApplicationFocus = function(self, isFocus)
-  -- function num : 0_27
+function UIShopController:OnApplicationFocus(isFocus)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.ServiceBtnOnClick = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  (HelperProxy:GetInstance()):OpenServiceUrl("str_login_service_url_shop")
-  ;
-  (GameGlobal.ReportCustomEvent)("TDMReportTlog", "CustomerServiceFlow", {2})
+function UIShopController:ServiceBtnOnClick()
+  HelperProxy:GetInstance():OpenServiceUrl("str_login_service_url_shop")
+  GameGlobal.ReportCustomEvent("TDMReportTlog", "CustomerServiceFlow", {2})
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.GetSailingPlanShop = function(self, TT)
-  -- function num : 0_29 , upvalues : _ENV
+function UIShopController:GetSailingPlanShop(TT)
   local res = AsyncRequestRes:New()
   self._sailingPlanCampaign = UIActivityCampaign:New()
-  ;
-  (self._sailingPlanCampaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_INLAND_SAILING, ECCampaignInlandSailingComponentID.BUY_GIFT, ECCampaignInlandSailingComponentID.QUEST)
-  ;
-  (self._sailingPlanCampaign):ReLoadCampaignInfo_Force(TT, res)
+  self._sailingPlanCampaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_INLAND_SAILING, ECCampaignInlandSailingComponentID.BUY_GIFT, ECCampaignInlandSailingComponentID.QUEST)
+  self._sailingPlanCampaign:ReLoadCampaignInfo_Force(TT, res)
   if not res:GetSucc() then
-    (Log.error)("UIShopController No sailing plan.")
+    Log.error("UIShopController No sailing plan.")
   end
-  local component = (self._sailingPlanCampaign):GetComponent(ECCampaignInlandSailingComponentID.BUY_GIFT)
+  local component = self._sailingPlanCampaign:GetComponent(ECCampaignInlandSailingComponentID.BUY_GIFT)
   component:GetAllGiftLocalPrice()
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.GetSailingPlanLocalProgress = function(self)
-  -- function num : 0_30
-  local localProcess = (self._sailingPlanCampaign):GetLocalProcess()
+function UIShopController:GetSailingPlanLocalProgress()
+  local localProcess = self._sailingPlanCampaign:GetLocalProcess()
   return localProcess
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.GetSailingPlanID = function(self)
-  -- function num : 0_31
-  return (self._sailingPlanCampaign)._id
+function UIShopController:GetSailingPlanID()
+  return self._sailingPlanCampaign._id
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.GetFlashSaleShop = function(self, TT)
-  -- function num : 0_32 , upvalues : _ENV
+function UIShopController:GetFlashSaleShop(TT)
   local res = AsyncRequestRes:New()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SHOP_HELPER, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper1, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper2, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper3, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper4, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper5, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper6, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper7, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper8, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper9, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper0)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SHOP_HELPER, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper1, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper2, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper3, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper4, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper5, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper6, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper7, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper8, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper9, ECCampaignShopInlandComponentID.ECAMPAIGN_INLAND_ShopHelper0)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   if not res:GetSucc() then
-    (Log.info)("UIShopController No FlashSale.")
+    Log.info("UIShopController No FlashSale.")
   end
-  self._flashsaleLocalProcess = (self._campaign):GetLocalProcess()
+  self._flashsaleLocalProcess = self._campaign:GetLocalProcess()
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.InsertFalshSaleTab = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function UIShopController:InsertFalshSaleTab()
   if self._flashsaleLocalProcess then
-    (self.clientShop):RemoveMainType(ShopMainTabType.FlashSale)
-    local components = (self._flashsaleLocalProcess):GetComponents()
-    for id,value in pairs(components) do
+    self.clientShop:RemoveMainType(ShopMainTabType.FlashSale)
+    local components = self._flashsaleLocalProcess:GetComponents()
+    for id, value in pairs(components) do
       if value:ComponentIsOpen() then
-        (self.clientShop):InsertMainType(ShopMainTabType.FlashSale, id)
+        self.clientShop:InsertMainType(ShopMainTabType.FlashSale, id)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.InsertSailingPlanTab = function(self)
-  -- function num : 0_34 , upvalues : _ENV
+function UIShopController:InsertSailingPlanTab()
   local sailingPlanHelper = UIShopSailingPlanHelper:New()
   local active = sailingPlanHelper:CheckActive()
-  ;
-  (self.clientShop):RemoveMainType(ShopMainTabType.SailingPlan)
+  self.clientShop:RemoveMainType(ShopMainTabType.SailingPlan)
   if active then
-    (self.clientShop):InsertMainType(ShopMainTabType.SailingPlan)
+    self.clientShop:InsertMainType(ShopMainTabType.SailingPlan)
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.GetUniqueIDByMainTabType = function(self, tabType)
-  -- function num : 0_35 , upvalues : _ENV
+function UIShopController:GetUniqueIDByMainTabType(tabType)
   if tabType then
-    for _,tab in ipairs(self.allTab) do
+    for _, tab in ipairs(self.allTab) do
       if tab:GetTabType() == tabType then
         return tab:GetUniqueID()
       end
@@ -1075,12 +745,9 @@ UIShopController.GetUniqueIDByMainTabType = function(self, tabType)
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.GetComponentIDByUniqueID = function(self, uniqueid)
-  -- function num : 0_36 , upvalues : _ENV
+function UIShopController:GetComponentIDByUniqueID(uniqueid)
   if uniqueid then
-    for _,tab in ipairs(self.allTab) do
+    for _, tab in ipairs(self.allTab) do
       if tab:GetUniqueID() == uniqueid then
         return tab:GetComponentID()
       end
@@ -1088,26 +755,20 @@ UIShopController.GetComponentIDByUniqueID = function(self, uniqueid)
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.GetFlashSaleLocalProgress = function(self)
-  -- function num : 0_37
+function UIShopController:GetFlashSaleLocalProgress()
   return self._flashsaleLocalProcess
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.GetFlashSaleNew = function(self, componentID)
-  -- function num : 0_38 , upvalues : _ENV
+function UIShopController:GetFlashSaleNew(componentID)
   if not self._flashsaleLocalProcess then
     return false
   end
-  local components = (self._flashsaleLocalProcess):GetComponents()
-  for id,value in pairs(components) do
+  local components = self._flashsaleLocalProcess:GetComponents()
+  for id, value in pairs(components) do
     if id == componentID and value:ComponentIsOpen() then
       local buyGiftComponentInfo = value:GetComponentInfo()
-      for _,campaignGiftInfo in pairs(buyGiftComponentInfo.m_campaign_gift_list) do
-        local record = (UIShopToolFunctions.GetLocalDBInt)(campaignGiftInfo.m_gift_id, 0)
+      for _, campaignGiftInfo in pairs(buyGiftComponentInfo.m_campaign_gift_list) do
+        local record = UIShopToolFunctions.GetLocalDBInt(campaignGiftInfo.m_gift_id, 0)
         if record <= 0 then
           return true
         end
@@ -1117,42 +778,31 @@ UIShopController.GetFlashSaleNew = function(self, componentID)
   return false
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.CheckMonthCardTips = function(self, check)
-  -- function num : 0_39 , upvalues : _ENV
+function UIShopController:CheckMonthCardTips(check)
   if check == true then
-    local monthCardInfo = (self.shopModule):GetMonthCardInfo()
+    local monthCardInfo = self.shopModule:GetMonthCardInfo()
     if monthCardInfo then
-      local isRed, isTips, state = (self.shopModule):ShowMonthCardRedPoint()
+      local isRed, isTips, state = self.shopModule:ShowMonthCardRedPoint()
       if isTips then
-        local saveKey, tipsKey = nil, nil
+        local saveKey, tipsKey
         if state == 2 then
-          saveKey = (self.shopModule):GetMonthCardWillOutDataTipsKey(monthCardInfo)
+          saveKey = self.shopModule:GetMonthCardWillOutDataTipsKey(monthCardInfo)
           tipsKey = "str_shop_month_card_will_out_data"
-        else
-          if state == 3 then
-            saveKey = (self.shopModule):GetMonthCardOutDataTipsKey(monthCardInfo)
-            tipsKey = "str_shop_month_card_out_data"
-          end
+        elseif state == 3 then
+          saveKey = self.shopModule:GetMonthCardOutDataTipsKey(monthCardInfo)
+          tipsKey = "str_shop_month_card_out_data"
         end
         if saveKey and tipsKey then
-          (ToastManager.ShowToast)((StringTable.Get)(tipsKey))
-          ;
-          (LocalDB.SetInt)(saveKey, 1)
+          ToastManager.ShowToast(StringTable.Get(tipsKey))
+          LocalDB.SetInt(saveKey, 1)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopController.FlushCampaignLimitedTime = function(self)
-  -- function num : 0_40 , upvalues : _ENV
-  for i,tab in ipairs(self.allTab) do
+function UIShopController:FlushCampaignLimitedTime()
+  for i, tab in ipairs(self.allTab) do
     tab:FlushCampaignLimitedTime()
   end
 end
-
-

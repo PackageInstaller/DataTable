@@ -1,161 +1,104 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/affix/affix_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("IAffixParam", Object)
 IAffixParam = IAffixParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-IAffixParam.Constructor = function(self, t, typeID, index)
-  -- function num : 0_0
+function IAffixParam:Constructor(t, typeID, index)
   self._affixType = t.affixType
   self._configTypeID = typeID
   self._configIndex = index
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-IAffixParam.GetAffixType = function(self)
-  -- function num : 0_1
+function IAffixParam:GetAffixType()
   return self._affixType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-IAffixParam.GetAffixConfigTypeID = function(self)
-  -- function num : 0_2
+function IAffixParam:GetAffixConfigTypeID()
   return self._configTypeID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-IAffixParam.GetConfigIndex = function(self)
-  -- function num : 0_3
+function IAffixParam:GetConfigIndex()
   return self._configIndex
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-IAffixParam.Init = function(self, world)
-  -- function num : 0_4
+function IAffixParam:Init(world)
 end
 
 _class("AffixChangePetAttrParam", IAffixParam)
 AffixChangePetAttrParam = AffixChangePetAttrParam
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixChangePetAttrParam.Constructor = function(self, t)
-  -- function num : 0_5
+function AffixChangePetAttrParam:Constructor(t)
   self._type = t.type
   self._percent = t.percent or 1
   self._count = t.count or 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangePetAttrParam.GetType = function(self)
-  -- function num : 0_6
+function AffixChangePetAttrParam:GetType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangePetAttrParam.CalcAttr = function(self, attrNum)
-  -- function num : 0_7 , upvalues : _ENV
-  return (math.floor)(attrNum * self._percent + self._count)
+function AffixChangePetAttrParam:CalcAttr(attrNum)
+  return math.floor(attrNum * self._percent + self._count)
 end
 
 _class("AffixChangePetChainCountParam", IAffixParam)
 AffixChangePetChainCountParam = AffixChangePetChainCountParam
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixChangePetChainCountParam.Constructor = function(self, t)
-  -- function num : 0_8
+function AffixChangePetChainCountParam:Constructor(t)
   self._percent = t.percent or 1
   self._count = t.count or 0
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangePetChainCountParam.CalcChainCount = function(self, sourceChainCount)
-  -- function num : 0_9 , upvalues : _ENV
-  return (math.floor)(self._percent * sourceChainCount + self._count)
+function AffixChangePetChainCountParam:CalcChainCount(sourceChainCount)
+  return math.floor(self._percent * sourceChainCount + self._count)
 end
 
 _class("AffixChangeMonsterAttrParam", IAffixParam)
 AffixChangeMonsterAttrParam = AffixChangeMonsterAttrParam
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixChangeMonsterAttrParam.Constructor = function(self, t)
-  -- function num : 0_10 , upvalues : _ENV
+function AffixChangeMonsterAttrParam:Constructor(t)
   self._monsterID = t.monsterID
   self._attack = t.attack
   self._hp = t.hp
   self._defence = t.defence
   if not t.attack and not t.hp and not t.defence then
-    (Log.exception)("Parse  AffixChangeMonsterAttrParam Failed")
+    Log.exception("Parse  AffixChangeMonsterAttrParam Failed")
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeMonsterAttrParam.GetMonsterID = function(self)
-  -- function num : 0_11
+function AffixChangeMonsterAttrParam:GetMonsterID()
   return self._monsterID
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeMonsterAttrParam.GetMonsterAttack = function(self)
-  -- function num : 0_12
+function AffixChangeMonsterAttrParam:GetMonsterAttack()
   return self._attack
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeMonsterAttrParam.GetMonsterHP = function(self)
-  -- function num : 0_13
+function AffixChangeMonsterAttrParam:GetMonsterHP()
   return self._hp
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeMonsterAttrParam.GetMonsterDefence = function(self)
-  -- function num : 0_14
+function AffixChangeMonsterAttrParam:GetMonsterDefence()
   return self._defence
 end
 
 _class("AffixReplaceMonsterAIParam", IAffixParam)
 AffixReplaceMonsterAIParam = AffixReplaceMonsterAIParam
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixReplaceMonsterAIParam.Constructor = function(self, t)
-  -- function num : 0_15
+function AffixReplaceMonsterAIParam:Constructor(t)
   self._monsterID = t.monsterID
   self._sourceAIID = t.sourceAIID
   self._aiType = t.aiType
   self._targetAIID = t.targetAIID
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceMonsterAIParam.GetMonsterID = function(self)
-  -- function num : 0_16
+function AffixReplaceMonsterAIParam:GetMonsterID()
   return self._monsterID
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceMonsterAIParam.GetAIType = function(self)
-  -- function num : 0_17
+function AffixReplaceMonsterAIParam:GetAIType()
   return self._aiType
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceMonsterAIParam.ReplaceAI = function(self, sourceAIID)
-  -- function num : 0_18
+function AffixReplaceMonsterAIParam:ReplaceAI(sourceAIID)
   if sourceAIID == self._sourceAIID then
     return self._targetAIID
   end
@@ -164,26 +107,18 @@ end
 
 _class("AffixReplaceMonsterSkillIDParam", IAffixParam)
 AffixReplaceMonsterSkillIDParam = AffixReplaceMonsterSkillIDParam
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixReplaceMonsterSkillIDParam.Constructor = function(self, t)
-  -- function num : 0_19
+function AffixReplaceMonsterSkillIDParam:Constructor(t)
   self._monsterID = t.monsterID
   self._sourceSkillID = t.sourceSkillID
   self._targetSkillID = t.targetSkillID
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceMonsterSkillIDParam.GetMonsterID = function(self)
-  -- function num : 0_20
+function AffixReplaceMonsterSkillIDParam:GetMonsterID()
   return self._monsterID
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceMonsterSkillIDParam.ReplaceSkillID = function(self, sourceSkillID)
-  -- function num : 0_21
+function AffixReplaceMonsterSkillIDParam:ReplaceSkillID(sourceSkillID)
   if sourceSkillID == self._sourceSkillID then
     return self._targetSkillID
   end
@@ -192,10 +127,8 @@ end
 
 _class("AffixChangeTrapAttrParam", IAffixParam)
 AffixChangeTrapAttrParam = AffixChangeTrapAttrParam
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixChangeTrapAttrParam.Constructor = function(self, t)
-  -- function num : 0_22 , upvalues : _ENV
+function AffixChangeTrapAttrParam:Constructor(t)
   self._trapID = t.trapID
   self._attack = t.attack
   self._hp = t.hp
@@ -203,390 +136,265 @@ AffixChangeTrapAttrParam.Constructor = function(self, t)
   self._defence = t.defence
   self._trapPower = t.trapPower
   if not t.attack and not t.hp and not t.defence and not t.maxHP and not t.trapPower then
-    (Log.exception)("Parse  AffixChangeTrapAttrParam Failed")
+    Log.exception("Parse  AffixChangeTrapAttrParam Failed")
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeTrapAttrParam.GetTrapID = function(self)
-  -- function num : 0_23
+function AffixChangeTrapAttrParam:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeTrapAttrParam.GetTrapAttack = function(self)
-  -- function num : 0_24
+function AffixChangeTrapAttrParam:GetTrapAttack()
   return self._attack
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeTrapAttrParam.GetTrapHP = function(self)
-  -- function num : 0_25
+function AffixChangeTrapAttrParam:GetTrapHP()
   return self._hp
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeTrapAttrParam.GetTrapMaxHP = function(self)
-  -- function num : 0_26
+function AffixChangeTrapAttrParam:GetTrapMaxHP()
   return self._maxHP
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeTrapAttrParam.GetTrapDefence = function(self)
-  -- function num : 0_27
+function AffixChangeTrapAttrParam:GetTrapDefence()
   return self._defence
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeTrapAttrParam.GetTrapPower = function(self)
-  -- function num : 0_28
+function AffixChangeTrapAttrParam:GetTrapPower()
   return self._trapPower
 end
 
 _class("AffixPlayerBeHitCountParam", IAffixParam)
 AffixPlayerBeHitCountParam = AffixPlayerBeHitCountParam
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixPlayerBeHitCountParam.Constructor = function(self, t)
-  -- function num : 0_29
+function AffixPlayerBeHitCountParam:Constructor(t)
   self._beHitCount = t.beHitCount
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixPlayerBeHitCountParam.GetPlayerBeHitCount = function(self)
-  -- function num : 0_30
+function AffixPlayerBeHitCountParam:GetPlayerBeHitCount()
   return self._beHitCount
 end
 
 _class("AffixReplaceLevelCompleteTypeParam", IAffixParam)
 AffixReplaceLevelCompleteTypeParam = AffixReplaceLevelCompleteTypeParam
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixReplaceLevelCompleteTypeParam.Constructor = function(self, t)
-  -- function num : 0_31
+function AffixReplaceLevelCompleteTypeParam:Constructor(t)
   self._type = t.type
   self._param = t.param
   self._useInLastWave = t.useInLastWave or true
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceLevelCompleteTypeParam.GetType = function(self)
-  -- function num : 0_32
+function AffixReplaceLevelCompleteTypeParam:GetType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceLevelCompleteTypeParam.GetParam = function(self)
-  -- function num : 0_33
+function AffixReplaceLevelCompleteTypeParam:GetParam()
   return self._param
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceLevelCompleteTypeParam.IsUseInLastWave = function(self)
-  -- function num : 0_34
+function AffixReplaceLevelCompleteTypeParam:IsUseInLastWave()
   return self._useInLastWave
 end
 
 _class("AffixAddBuffParam", IAffixParam)
 AffixAddBuffParam = AffixAddBuffParam
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixAddBuffParam.Constructor = function(self, t)
-  -- function num : 0_35 , upvalues : _ENV
+function AffixAddBuffParam:Constructor(t)
   if type(t.affixBuffIDList) == "number" then
-    self._affixBuffIDList = {t.affixBuffIDList}
+    self._affixBuffIDList = {
+      t.affixBuffIDList
+    }
   else
     self._affixBuffIDList = t.affixBuffIDList
   end
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixAddBuffParam.GetAffixBuffIDList = function(self)
-  -- function num : 0_36
+function AffixAddBuffParam:GetAffixBuffIDList()
   return self._affixBuffIDList
 end
 
 _class("AffixChangeWaveIDParamBase", IAffixParam)
 AffixChangeWaveIDParamBase = AffixChangeWaveIDParamBase
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixChangeWaveIDParamBase.Constructor = function(self, t)
-  -- function num : 0_37 , upvalues : _ENV
+function AffixChangeWaveIDParamBase:Constructor(t)
   self._waveNum = t.waveNum
   self._sourceID = t.sourceID
   self._targetID = t.targetID
   if not t.sourceID or not t.targetID then
-    (Log.exception)("sourceID:", t.sourceID, "targetID:", t.targetID)
+    Log.exception("sourceID:", t.sourceID, "targetID:", t.targetID)
   end
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeWaveIDParamBase.GetSourceID = function(self)
-  -- function num : 0_38
+function AffixChangeWaveIDParamBase:GetSourceID()
   return self._sourceID
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeWaveIDParamBase.GetTargetID = function(self)
-  -- function num : 0_39
+function AffixChangeWaveIDParamBase:GetTargetID()
   return self._targetID
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeWaveIDParamBase.GetWaveNum = function(self)
-  -- function num : 0_40
+function AffixChangeWaveIDParamBase:GetWaveNum()
   return self._waveNum
 end
 
 _class("AffixAddWaveIDParamBase", IAffixParam)
 AffixAddWaveIDParamBase = AffixAddWaveIDParamBase
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixAddWaveIDParamBase.Constructor = function(self, t)
-  -- function num : 0_41 , upvalues : _ENV
+function AffixAddWaveIDParamBase:Constructor(t)
   self._waveNum = t.waveNum
   self._id = t.id
-  self._pos = Vector2((t.pos)[1], (t.pos)[2])
-  if not t.id or not t.pos or #t.pos ~= 2 then
-    (Log.exception)("id:", t.id, "pos:", t.pos)
+  self._pos = Vector2(t.pos[1], t.pos[2])
+  if not (t.id and t.pos) or #t.pos ~= 2 then
+    Log.exception("id:", t.id, "pos:", t.pos)
   end
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixAddWaveIDParamBase.GetWaveNum = function(self)
-  -- function num : 0_42
+function AffixAddWaveIDParamBase:GetWaveNum()
   return self._waveNum
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixAddWaveIDParamBase.GetID = function(self)
-  -- function num : 0_43
+function AffixAddWaveIDParamBase:GetID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixAddWaveIDParamBase.GetPos = function(self)
-  -- function num : 0_44
+function AffixAddWaveIDParamBase:GetPos()
   return self._pos
 end
 
 _class("AffixChangeWaveInternalIDParamBase", AffixChangeWaveIDParamBase)
 AffixChangeWaveInternalIDParamBase = AffixChangeWaveInternalIDParamBase
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixChangeWaveInternalIDParamBase.Constructor = function(self, t)
-  -- function num : 0_45
+function AffixChangeWaveInternalIDParamBase:Constructor(t)
   self._refreshID = t.refreshID
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeWaveInternalIDParamBase.GetRefreshID = function(self)
-  -- function num : 0_46
+function AffixChangeWaveInternalIDParamBase:GetRefreshID()
   return self._refreshID
 end
 
 _class("AffixAddWaveInternalIDParamBase", AffixAddWaveIDParamBase)
 AffixAddWaveInternalIDParamBase = AffixAddWaveInternalIDParamBase
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixAddWaveInternalIDParamBase.Constructor = function(self, t)
-  -- function num : 0_47
+function AffixAddWaveInternalIDParamBase:Constructor(t)
   self._refreshID = t.refreshID
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixAddWaveInternalIDParamBase.GetRefreshID = function(self)
-  -- function num : 0_48
+function AffixAddWaveInternalIDParamBase:GetRefreshID()
   return self._refreshID
 end
 
 _class("AffixAddWaveTrapIDAndPosParamBase", AffixAddWaveIDParamBase)
 AffixAddWaveTrapIDAndPosParamBase = AffixAddWaveTrapIDAndPosParamBase
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixAddWaveTrapIDAndPosParamBase.Constructor = function(self, t)
-  -- function num : 0_49 , upvalues : _ENV
-  self._rotation = Vector2((t.rotation)[0], (t.rotation)[1])
+function AffixAddWaveTrapIDAndPosParamBase:Constructor(t)
+  self._rotation = Vector2(t.rotation[0], t.rotation[1])
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixAddWaveTrapIDAndPosParamBase.GetRotation = function(self)
-  -- function num : 0_50
+function AffixAddWaveTrapIDAndPosParamBase:GetRotation()
   return self._rotation
 end
 
 _class("AffixAddWaveInternalTrapIDAndPosParam", AffixAddWaveInternalIDParamBase)
 AffixAddWaveInternalTrapIDAndPosParam = AffixAddWaveInternalTrapIDAndPosParam
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixAddWaveInternalTrapIDAndPosParam.Constructor = function(self, t)
-  -- function num : 0_51 , upvalues : _ENV
-  self._rotation = Vector2((t.rotation)[0], (t.rotation)[1])
+function AffixAddWaveInternalTrapIDAndPosParam:Constructor(t)
+  self._rotation = Vector2(t.rotation[0], t.rotation[1])
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixAddWaveInternalTrapIDAndPosParam.GetRotation = function(self)
-  -- function num : 0_52
+function AffixAddWaveInternalTrapIDAndPosParam:GetRotation()
   return self._rotation
 end
 
 _class("AffixChangeAllMonsterAttrParam", IAffixParam)
 AffixChangeAllMonsterAttrParam = AffixChangeAllMonsterAttrParam
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixChangeAllMonsterAttrParam.Constructor = function(self, t)
-  -- function num : 0_53
+function AffixChangeAllMonsterAttrParam:Constructor(t)
   self._paramY = t.paramY
   self._paramZ = t.paramZ
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeAllMonsterAttrParam.GetParamY = function(self)
-  -- function num : 0_54
+function AffixChangeAllMonsterAttrParam:GetParamY()
   return self._paramY
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeAllMonsterAttrParam.GetParamZ = function(self)
-  -- function num : 0_55
+function AffixChangeAllMonsterAttrParam:GetParamZ()
   return self._paramZ
 end
 
 _class("AffixChangeLevelRoundParam", IAffixParam)
 AffixChangeLevelRoundParam = AffixChangeLevelRoundParam
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixChangeLevelRoundParam.Constructor = function(self, t)
-  -- function num : 0_56
+function AffixChangeLevelRoundParam:Constructor(t)
   self._change = t.change
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeLevelRoundParam.GetChange = function(self)
-  -- function num : 0_57
+function AffixChangeLevelRoundParam:GetChange()
   return self._change
 end
 
 _class("AffixChangeWaveInternalParam", IAffixParam)
 AffixChangeWaveInternalParam = AffixChangeWaveInternalParam
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixChangeWaveInternalParam.Constructor = function(self, t)
-  -- function num : 0_58
+function AffixChangeWaveInternalParam:Constructor(t)
   self._waveNum = t.waveNum
   self._refreshIndex = t.refreshIndex
   self._param = t.param
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeWaveInternalParam.GetWaveNum = function(self)
-  -- function num : 0_59
+function AffixChangeWaveInternalParam:GetWaveNum()
   return self._waveNum
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeWaveInternalParam.GetRefreshIndex = function(self)
-  -- function num : 0_60
+function AffixChangeWaveInternalParam:GetRefreshIndex()
   return self._refreshIndex
 end
 
--- DECOMPILER ERROR at PC299: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangeWaveInternalParam.GetParam = function(self)
-  -- function num : 0_61
+function AffixChangeWaveInternalParam:GetParam()
   return self._param
 end
 
 _class("AffixAddWaveInternalParam", IAffixParam)
 AffixAddWaveInternalParam = AffixAddWaveInternalParam
--- DECOMPILER ERROR at PC308: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixAddWaveInternalParam.Constructor = function(self, t)
-  -- function num : 0_62
+function AffixAddWaveInternalParam:Constructor(t)
   self._refreshID = t.refreshID
   self._type = t.type
   self._param = t.param
   self._waveNum = t.waveNum
 end
 
--- DECOMPILER ERROR at PC311: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixAddWaveInternalParam.GetParam = function(self)
-  -- function num : 0_63
+function AffixAddWaveInternalParam:GetParam()
   return self._param
 end
 
--- DECOMPILER ERROR at PC314: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixAddWaveInternalParam.GetRefreshID = function(self)
-  -- function num : 0_64
+function AffixAddWaveInternalParam:GetRefreshID()
   return self._refreshID
 end
 
--- DECOMPILER ERROR at PC317: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixAddWaveInternalParam.GetType = function(self)
-  -- function num : 0_65
+function AffixAddWaveInternalParam:GetType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC320: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixAddWaveInternalParam.GetWaveNum = function(self)
-  -- function num : 0_66
+function AffixAddWaveInternalParam:GetWaveNum()
   return self._waveNum
 end
 
 _class("AffixReplaceMonsterBuffParam", IAffixParam)
 AffixReplaceMonsterBuffParam = AffixReplaceMonsterBuffParam
--- DECOMPILER ERROR at PC329: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixReplaceMonsterBuffParam.Constructor = function(self, t)
-  -- function num : 0_67 , upvalues : _ENV
+function AffixReplaceMonsterBuffParam:Constructor(t)
   self._monsterID = t.monsterID
   self._buffList = t.buffList
   if not t.buffList or type(t.buffList) ~= "table" then
-    (Log.exception)("Parse  AffixReplaceMonsterBuffParam Failed")
+    Log.exception("Parse  AffixReplaceMonsterBuffParam Failed")
   end
 end
 
--- DECOMPILER ERROR at PC332: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceMonsterBuffParam.GetMonsterID = function(self)
-  -- function num : 0_68
+function AffixReplaceMonsterBuffParam:GetMonsterID()
   return self._monsterID
 end
 
--- DECOMPILER ERROR at PC335: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceMonsterBuffParam.GetBuffList = function(self)
-  -- function num : 0_69
+function AffixReplaceMonsterBuffParam:GetBuffList()
   return self._buffList
 end
 
@@ -594,28 +402,20 @@ _class("AffixAddMonsterBuffParam", AffixReplaceMonsterBuffParam)
 AffixAddMonsterBuffParam = AffixAddMonsterBuffParam
 _class("AffixReplaceMonsterEliteBuffParam", IAffixParam)
 AffixReplaceMonsterEliteBuffParam = AffixReplaceMonsterEliteBuffParam
--- DECOMPILER ERROR at PC350: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixReplaceMonsterEliteBuffParam.Constructor = function(self, t)
-  -- function num : 0_70 , upvalues : _ENV
+function AffixReplaceMonsterEliteBuffParam:Constructor(t)
   self._monsterID = t.monsterID
   self._eliteBuffList = t.eliteBuffList
   if not t.eliteBuffList or type(t.eliteBuffList) ~= "table" then
-    (Log.exception)("Parse", self._className, " Failed")
+    Log.exception("Parse", self._className, " Failed")
   end
 end
 
--- DECOMPILER ERROR at PC353: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceMonsterEliteBuffParam.GetMonsterID = function(self)
-  -- function num : 0_71
+function AffixReplaceMonsterEliteBuffParam:GetMonsterID()
   return self._monsterID
 end
 
--- DECOMPILER ERROR at PC356: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceMonsterEliteBuffParam.GetEliteBuffList = function(self)
-  -- function num : 0_72
+function AffixReplaceMonsterEliteBuffParam:GetEliteBuffList()
   return self._eliteBuffList
 end
 
@@ -623,10 +423,8 @@ _class("AffixAddMonsterEliteBuffParam", AffixReplaceMonsterEliteBuffParam)
 AffixAddMonsterEliteBuffParam = AffixAddMonsterEliteBuffParam
 _class("AffixReplaceTrapSkillParam", IAffixParam)
 AffixReplaceTrapSkillParam = AffixReplaceTrapSkillParam
--- DECOMPILER ERROR at PC371: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixReplaceTrapSkillParam.Constructor = function(self, t)
-  -- function num : 0_73
+function AffixReplaceTrapSkillParam:Constructor(t)
   self._trapID = t.trapID
   self._triggerSkillID = t.Trigger
   self._appearSkillID = t.Appear
@@ -634,65 +432,42 @@ AffixReplaceTrapSkillParam.Constructor = function(self, t)
   self._activeSkillID = t.Active
 end
 
--- DECOMPILER ERROR at PC374: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceTrapSkillParam.GetTrapID = function(self)
-  -- function num : 0_74
+function AffixReplaceTrapSkillParam:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC377: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceTrapSkillParam.GetTriggerSkillID = function(self)
-  -- function num : 0_75
+function AffixReplaceTrapSkillParam:GetTriggerSkillID()
   return self._triggerSkillID
 end
 
--- DECOMPILER ERROR at PC380: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceTrapSkillParam.GetAppearSkillID = function(self)
-  -- function num : 0_76
+function AffixReplaceTrapSkillParam:GetAppearSkillID()
   return self._appearSkillID
 end
 
--- DECOMPILER ERROR at PC383: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceTrapSkillParam.GetDieSkillID = function(self)
-  -- function num : 0_77
+function AffixReplaceTrapSkillParam:GetDieSkillID()
   return self._dieSkillID
 end
 
--- DECOMPILER ERROR at PC386: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceTrapSkillParam.GetActiveSkillID = function(self)
-  -- function num : 0_78
+function AffixReplaceTrapSkillParam:GetActiveSkillID()
   return self._activeSkillID
 end
 
 _class("AffixReplaceTrapBuffParam", IAffixParam)
 AffixReplaceTrapBuffParam = AffixReplaceTrapBuffParam
--- DECOMPILER ERROR at PC395: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixReplaceTrapBuffParam.Constructor = function(self, t)
-  -- function num : 0_79 , upvalues : _ENV
+function AffixReplaceTrapBuffParam:Constructor(t)
   self._trapID = t.trapID
   self._buffList = t.buffList
   if not t.buffList or type(t.buffList) ~= "table" then
-    (Log.exception)("Parse", self._className, " Failed")
+    Log.exception("Parse", self._className, " Failed")
   end
 end
 
--- DECOMPILER ERROR at PC398: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceTrapBuffParam.GetTrapID = function(self)
-  -- function num : 0_80
+function AffixReplaceTrapBuffParam:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC401: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceTrapBuffParam.GetBuffList = function(self)
-  -- function num : 0_81
+function AffixReplaceTrapBuffParam:GetBuffList()
   return self._buffList
 end
 
@@ -700,177 +475,117 @@ _class("AffixAddTrapBuffParam", AffixReplaceTrapBuffParam)
 AffixAddTrapBuffParam = AffixAddTrapBuffParam
 _class("AffixReplaceMonsterSpSkillParam", IAffixParam)
 AffixReplaceMonsterSpSkillParam = AffixReplaceMonsterSpSkillParam
--- DECOMPILER ERROR at PC416: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixReplaceMonsterSpSkillParam.Constructor = function(self, t)
-  -- function num : 0_82 , upvalues : _ENV
+function AffixReplaceMonsterSpSkillParam:Constructor(t)
   self._monsterID = t.monsterID
   self._skillType = t.skillType
   self._skillID = t.skillID
-  if not self._monsterID or not self._skillType or not self._skillID then
-    (Log.exception)("Parse", self._className, "Failed")
+  if not (self._monsterID and self._skillType) or not self._skillID then
+    Log.exception("Parse", self._className, "Failed")
   end
 end
 
--- DECOMPILER ERROR at PC419: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceMonsterSpSkillParam.GetMonsterID = function(self)
-  -- function num : 0_83
+function AffixReplaceMonsterSpSkillParam:GetMonsterID()
   return self._monsterID
 end
 
--- DECOMPILER ERROR at PC422: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceMonsterSpSkillParam.GetSkillType = function(self)
-  -- function num : 0_84
+function AffixReplaceMonsterSpSkillParam:GetSkillType()
   return self._skillType
 end
 
--- DECOMPILER ERROR at PC425: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceMonsterSpSkillParam.GetSkillID = function(self)
-  -- function num : 0_85
+function AffixReplaceMonsterSpSkillParam:GetSkillID()
   return self._skillID
 end
 
 _class("AffixChangePieceRefreshTypeParam", IAffixParam)
 AffixChangePieceRefreshTypeParam = AffixChangePieceRefreshTypeParam
--- DECOMPILER ERROR at PC434: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixChangePieceRefreshTypeParam.Constructor = function(self, t)
-  -- function num : 0_86 , upvalues : _ENV
-  if not t.dir or not Vector2((t.dir)[1], (t.dir)[2]) then
-    self._dir = Vector2.down
-    if not t.refreshType then
-      self._refreshType = PieceRefreshType.FallingDown
-      self._gapTrapID = t.gapTrapID or 0
-    end
-  end
+function AffixChangePieceRefreshTypeParam:Constructor(t)
+  self._dir = t.dir and Vector2(t.dir[1], t.dir[2]) or Vector2.down
+  self._refreshType = t.refreshType or PieceRefreshType.FallingDown
+  self._gapTrapID = t.gapTrapID or 0
 end
 
--- DECOMPILER ERROR at PC437: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangePieceRefreshTypeParam.GetFallingDirection = function(self)
-  -- function num : 0_87
+function AffixChangePieceRefreshTypeParam:GetFallingDirection()
   return self._dir
 end
 
--- DECOMPILER ERROR at PC440: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangePieceRefreshTypeParam.GetPieceRefreshType = function(self)
-  -- function num : 0_88
+function AffixChangePieceRefreshTypeParam:GetPieceRefreshType()
   return self._refreshType
 end
 
--- DECOMPILER ERROR at PC443: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangePieceRefreshTypeParam.GetGapTrapID = function(self)
-  -- function num : 0_89
+function AffixChangePieceRefreshTypeParam:GetGapTrapID()
   return self._gapTrapID
 end
 
 _class("AffixReplaceFeatureModule", IAffixParam)
 AffixReplaceFeatureModule = AffixReplaceFeatureModule
--- DECOMPILER ERROR at PC452: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixReplaceFeatureModule.Constructor = function(self, t)
-  -- function num : 0_90
+function AffixReplaceFeatureModule:Constructor(t)
   self._table = t.configTable
 end
 
--- DECOMPILER ERROR at PC455: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplaceFeatureModule.GetConfigTable = function(self)
-  -- function num : 0_91
-  return {feature = self._table}
+function AffixReplaceFeatureModule:GetConfigTable()
+  return {
+    feature = self._table
+  }
 end
 
 _class("AffixReplacePieceGenWeightParam", IAffixParam)
 AffixReplacePieceGenWeightParam = AffixReplacePieceGenWeightParam
--- DECOMPILER ERROR at PC464: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixReplacePieceGenWeightParam.Constructor = function(self, t)
-  -- function num : 0_92
+function AffixReplacePieceGenWeightParam:Constructor(t)
   self._generatePieceAmount = t.GeneratePieceAmount
   self._generatePieceWeight = t.GeneratePieceWeight
   self._supplyPieceWeight = t.SupplyPieceWeight
 end
 
--- DECOMPILER ERROR at PC467: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplacePieceGenWeightParam.GetGeneratePieceAmount = function(self)
-  -- function num : 0_93
+function AffixReplacePieceGenWeightParam:GetGeneratePieceAmount()
   return self._generatePieceAmount
 end
 
--- DECOMPILER ERROR at PC470: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplacePieceGenWeightParam.GetGeneratePieceWeight = function(self)
-  -- function num : 0_94
+function AffixReplacePieceGenWeightParam:GetGeneratePieceWeight()
   return self._generatePieceWeight
 end
 
--- DECOMPILER ERROR at PC473: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixReplacePieceGenWeightParam.GetSupplyPieceWeight = function(self)
-  -- function num : 0_95
+function AffixReplacePieceGenWeightParam:GetSupplyPieceWeight()
   return self._supplyPieceWeight
 end
 
 _class("AffixIncreasePetNoDefenceDamageParam", IAffixParam)
 AffixIncreasePetNoDefenceDamageParam = AffixIncreasePetNoDefenceDamageParam
--- DECOMPILER ERROR at PC482: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixIncreasePetNoDefenceDamageParam.Constructor = function(self, t)
-  -- function num : 0_96
+function AffixIncreasePetNoDefenceDamageParam:Constructor(t)
   self._increasePercent = t.IncreasePercent
 end
 
--- DECOMPILER ERROR at PC485: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixIncreasePetNoDefenceDamageParam.GetIncreasePercent = function(self)
-  -- function num : 0_97
+function AffixIncreasePetNoDefenceDamageParam:GetIncreasePercent()
   return self._increasePercent
 end
 
 _class("AffixChangePetAddBuffMaxRoundParam", IAffixParam)
 AffixChangePetAddBuffMaxRoundParam = AffixChangePetAddBuffMaxRoundParam
--- DECOMPILER ERROR at PC494: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixChangePetAddBuffMaxRoundParam.Constructor = function(self, t)
-  -- function num : 0_98
+function AffixChangePetAddBuffMaxRoundParam:Constructor(t)
   self._flagNum = t.FlagNum
   self._changeRound = t.ChangeRound
 end
 
--- DECOMPILER ERROR at PC497: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangePetAddBuffMaxRoundParam.GetEffectFlagNum = function(self)
-  -- function num : 0_99
+function AffixChangePetAddBuffMaxRoundParam:GetEffectFlagNum()
   return self._flagNum
 end
 
--- DECOMPILER ERROR at PC500: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixChangePetAddBuffMaxRoundParam.GetChangeRound = function(self)
-  -- function num : 0_100
+function AffixChangePetAddBuffMaxRoundParam:GetChangeRound()
   return self._changeRound
 end
 
 _class("AffixAddChainPathNumParam", IAffixParam)
 AffixAddChainPathNumParam = AffixAddChainPathNumParam
--- DECOMPILER ERROR at PC509: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixAddChainPathNumParam.Constructor = function(self, t)
-  -- function num : 0_101
+function AffixAddChainPathNumParam:Constructor(t)
   self._addChainPathNumt = t.AddChainPathNum
 end
 
--- DECOMPILER ERROR at PC512: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixAddChainPathNumParam.GetAddChainPathNum = function(self)
-  -- function num : 0_102
+function AffixAddChainPathNumParam:GetAddChainPathNum()
   return self._addChainPathNumt
 end
-
-

@@ -1,33 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_count_down.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAddCountDown", BuffLogicBase)
 BuffLogicAddCountDown = BuffLogicAddCountDown
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddCountDown.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddCountDown:Constructor(buffInstance, logicParam)
   self._value = logicParam.value
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-  end
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddCountDown.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local svc = (self._world):GetService("BuffLogic")
+function BuffLogicAddCountDown:DoLogic(notify)
+  local svc = self._world:GetService("BuffLogic")
   local addValue = self._value
   local curCountDown, buffInstance = svc:AddCountDown(self._entity, self._layerType, addValue)
   if not buffInstance then
-    return 
+    return
   end
   local buffResult = BuffResultAddCountDown:New(curCountDown, buffInstance:BuffSeq(), self._layerType)
   return buffResult
 end
-
-

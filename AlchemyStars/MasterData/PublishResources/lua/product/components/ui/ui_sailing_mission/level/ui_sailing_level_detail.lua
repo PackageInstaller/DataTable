@@ -1,28 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sailing_mission/level/ui_sailing_level_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISailingLevelDetail", UIController)
 UISailingLevelDetail = UISailingLevelDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISailingLevelDetail.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._sailingMissionModule = (GameGlobal.GetModule)(SailingMissionModule)
-  ;
-  (self._sailingMissionModule):HandleGetSailingMissionData(TT)
+function UISailingLevelDetail:LoadDataOnEnter(TT, res, uiParams)
+  self._sailingMissionModule = GameGlobal.GetModule(SailingMissionModule)
+  self._sailingMissionModule:HandleGetSailingMissionData(TT)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingLevelDetail.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISailingLevelDetail:OnShow(uiParams)
   self._layerId = uiParams[1]
   self._missionId = uiParams[2]
-  ;
-  (self._sailingMissionModule):CacheFilterPetsLayerAndMissionId(self._layerId, self._missionId)
-  local cfg = (Cfg.cfg_sailing_mission)[self._missionId]
+  self._sailingMissionModule:CacheFilterPetsLayerAndMissionId(self._layerId, self._missionId)
+  local cfg = Cfg.cfg_sailing_mission[self._missionId]
   self._atlas = self:GetAsset("UIStage.spriteatlas", LoadType.SpriteAtlas)
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
   self._reLvLabel = self:GetUIComponent("UILocalizationText", "ReLv")
@@ -37,119 +25,89 @@ UISailingLevelDetail.OnShow = function(self, uiParams)
   self._enemyObj = enemyInfo:SpawnObject("UIStageEnemy")
   local recommendAwaken = cfg.RecommendAwaken
   local recommendLV = cfg.RecommendLV
-  ;
-  (self._reLvLabel):SetText((StringTable.Get)("str_sailing_mission_level_detail_awaken_and_level", recommendAwaken, recommendLV))
-  local color = (Color(1, 1, 1, 1))
-  local enemyTitleBgSprite, enemyTitleBg2Sprite = nil, nil
+  self._reLvLabel:SetText(StringTable.Get("str_sailing_mission_level_detail_awaken_and_level", recommendAwaken, recommendLV))
+  local color = Color(1, 1, 1, 1)
+  local enemyTitleBgSprite, enemyTitleBg2Sprite
   if cfg.type == 2 then
-    color = Color(0.21176470588235, 0.21176470588235, 0.21176470588235, 1)
-    enemyTitleBgSprite = (self._atlas):GetSprite("map_guanqia_tiao3")
-    enemyTitleBg2Sprite = (self._atlas):GetSprite("map_guanqia_tiao4")
+    color = Color(0.21176470588235294, 0.21176470588235294, 0.21176470588235294, 1)
+    enemyTitleBgSprite = self._atlas:GetSprite("map_guanqia_tiao3")
+    enemyTitleBg2Sprite = self._atlas:GetSprite("map_guanqia_tiao4")
   else
-    color = Color(0.21176470588235, 0.21176470588235, 0.21176470588235, 1)
-    enemyTitleBgSprite = (self._atlas):GetSprite("map_bantou4_frame")
-    enemyTitleBg2Sprite = (self._atlas):GetSprite("map_bantou15_frame")
+    color = Color(0.21176470588235294, 0.21176470588235294, 0.21176470588235294, 1)
+    enemyTitleBgSprite = self._atlas:GetSprite("map_bantou4_frame")
+    enemyTitleBg2Sprite = self._atlas:GetSprite("map_bantou15_frame")
   end
-  ;
-  (self._enemyObj):Flush(recommendAwaken, recommendLV, cfg.FightLevel, color, enemyTitleBgSprite, enemyTitleBg2Sprite, true, true)
+  self._enemyObj:Flush(recommendAwaken, recommendLV, cfg.FightLevel, color, enemyTitleBgSprite, enemyTitleBg2Sprite, true, true)
   self._tb = {}
   local buff = cfg.BaseWordBuff
   if buff then
-    for _,wordId in ipairs(buff) do
-      (table.insert)(self._tb, self:GetWordDesc(cfg.ID, wordId))
+    for _, wordId in ipairs(buff) do
+      table.insert(self._tb, self:GetWordDesc(cfg.ID, wordId))
     end
   end
-  do
-    self._show = #self._tb ~= 0
-    -- DECOMPILER ERROR at PC167: Confused about usage of register: R10 in 'UnsetPending'
-
-    if self._show then
-      (self._alpha).alpha = 1
-    else
-      -- DECOMPILER ERROR at PC170: Confused about usage of register: R10 in 'UnsetPending'
-
-      (self._alpha).alpha = 0.4
-    end
-    ;
-    (self._nameLabel):SetText((StringTable.Get)(cfg.MissionName))
-    local icon = cfg.BossLevelIcon
-    ;
-    (self._iconLoader):LoadImage(icon)
-    ;
-    (UICG.SetTransform)((self._iconLoader).transform, self:GetName(), icon)
-    self:RefreshPets()
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self._show = #self._tb ~= 0
+  if self._show then
+    self._alpha.alpha = 1
+  else
+    self._alpha.alpha = 0.4
   end
+  self._nameLabel:SetText(StringTable.Get(cfg.MissionName))
+  local icon = cfg.BossLevelIcon
+  self._iconLoader:LoadImage(icon)
+  UICG.SetTransform(self._iconLoader.transform, self:GetName(), icon)
+  self:RefreshPets()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingLevelDetail.OnHide = function(self)
-  -- function num : 0_2
+function UISailingLevelDetail:OnHide()
   self._atlas = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingLevelDetail.GetWordDesc = function(self, levelId, wordId)
-  -- function num : 0_3 , upvalues : _ENV
-  local word = (Cfg.cfg_word_buff)[wordId]
+function UISailingLevelDetail:GetWordDesc(levelId, wordId)
+  local word = Cfg.cfg_word_buff[wordId]
   if not word then
-    (Log.exception)("cfg_word_buff 中找不到词缀:", wordId, "levelId:", levelId)
+    Log.exception("cfg_word_buff 中找不到词缀:", wordId, "levelId:", levelId)
   end
-  local name = (StringTable.Get)((word.Word)[1])
-  local desc = (StringTable.Get)(word.Desc)
+  local name = StringTable.Get(word.Word[1])
+  local desc = StringTable.Get(word.Desc)
   local tex = "【" .. name .. "】 " .. desc
   return tex
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingLevelDetail.RefreshPets = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISailingLevelDetail:RefreshPets()
   local scale = 1
   local teamCount = 5
-  ;
-  (self._team):SpawnObjects("UISailingLevelTeamItem", teamCount)
-  local pools = (self._team):GetAllSpawnList()
-  local pets = (self._sailingMissionModule):GetMissionTeams(self._layerId, self._missionId)
+  self._team:SpawnObjects("UISailingLevelTeamItem", teamCount)
+  local pools = self._team:GetAllSpawnList()
+  local pets = self._sailingMissionModule:GetMissionTeams(self._layerId, self._missionId)
   local isPstId = true
-  if (DiscoveryStage.IsGuideStageId)(self._missionId) then
-    if pets and #pets > 0 then
+  if DiscoveryStage.IsGuideStageId(self._missionId) then
+    if pets and 0 < #pets then
       isPstId = false
-      local cfg = (Cfg.cfg_mission_guide)[self._missionId]
+      local cfg = Cfg.cfg_mission_guide[self._missionId]
       pets = {}
       for i = 1, #cfg.BattlePetList do
         local pet = {}
-        for j = 1, #(cfg.BattlePetList)[i] do
-          pet[#pet + 1] = ((cfg.BattlePetList)[i])[j]
+        for j = 1, #cfg.BattlePetList[i] do
+          pet[#pet + 1] = cfg.BattlePetList[i][j]
         end
         pets[#pets + 1] = pet
       end
     else
-      do
-        pets = {}
-        for i = 1, #pools do
-          local item = pools[i]
-          local pstid = pets[i]
-          item:SetData(pstid, scale, isPstId)
-        end
-      end
+      pets = {}
     end
+  end
+  for i = 1, #pools do
+    local item = pools[i]
+    local pstid = pets[i]
+    item:SetData(pstid, scale, isPstId)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingLevelDetail.BtnCloseOnClick = function(self)
-  -- function num : 0_5
+function UISailingLevelDetail:BtnCloseOnClick()
   self:StartTask(self.Close, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingLevelDetail.Close = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function UISailingLevelDetail:Close(TT)
   self:Lock("UISailingLevelDetail_Close")
   local anim = self:GetUIComponent("Animation", "Anim")
   anim:Play("uieff_UISailingLevelDetail_out")
@@ -158,79 +116,59 @@ UISailingLevelDetail.Close = function(self, TT)
   self:UnLock("UISailingLevelDetail_Close")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingLevelDetail.BtnRestrainOnClick = function(self)
-  -- function num : 0_7
+function UISailingLevelDetail:BtnRestrainOnClick()
   self:ShowDialog("UISailingElementTips")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingLevelDetail.BtnWordOnClick = function(self)
-  -- function num : 0_8
+function UISailingLevelDetail:BtnWordOnClick()
   if self._show then
     self:ShowDialog("UISailingWordTips", self._tb)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingLevelDetail.BtnResetTeamOnClick = function(self)
-  -- function num : 0_9
-  local pets = (self._sailingMissionModule):GetMissionTeams(self._layerId, self._missionId)
+function UISailingLevelDetail:BtnResetTeamOnClick()
+  local pets = self._sailingMissionModule:GetMissionTeams(self._layerId, self._missionId)
   if pets == nil or #pets <= 0 then
-    return 
+    return
   end
   self:ShowDialog("UISailingLevelResetTeam", function()
-    -- function num : 0_9_0 , upvalues : self
     self:StartTask(self.ResetTeamRequest, self)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingLevelDetail.ResetTeamRequest = function(self, TT)
-  -- function num : 0_10
+function UISailingLevelDetail:ResetTeamRequest(TT)
   self:Lock("UISailingLevelDetail_ResetTeamRequest")
-  ;
-  (self._sailingMissionModule):HandleResetMissionRecord(TT, self._layerId, self._missionId)
+  self._sailingMissionModule:HandleResetMissionRecord(TT, self._layerId, self._missionId)
   self:RefreshPets()
   self:UnLock("UISailingLevelDetail_ResetTeamRequest")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingLevelDetail.BtnStartBattleOnClick = function(self)
-  -- function num : 0_11
+function UISailingLevelDetail:BtnStartBattleOnClick()
   self:StartTask(self.StartBattle, self)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingLevelDetail.StartBattle = function(self, TT)
-  -- function num : 0_12 , upvalues : _ENV
+function UISailingLevelDetail:StartBattle(TT)
   self:Lock("UISailingLevelDetail_StartBattle")
-  local pets = (self._sailingMissionModule):GetMissionTeams(self._layerId, self._missionId)
-  if pets and #pets > 0 and not (DiscoveryStage.IsGuideStageId)(self._missionId) then
-    (self._sailingMissionModule):HandleChangeFormation(TT, self._layerId, self._missionId, pets)
-  end
-  do
-    local teamCache = (self._sailingMissionModule):GetTeamCache()
-    if teamCache and (teamCache.layer_id ~= self._layerId or teamCache.mission_id ~= self._missionId) then
-      (self._sailingMissionModule):HandleChangeFormation(TT, self._layerId, self._missionId, {})
+  local pets = self._sailingMissionModule:GetMissionTeams(self._layerId, self._missionId)
+  if pets and 0 < #pets then
+    if not DiscoveryStage.IsGuideStageId(self._missionId) then
+      self._sailingMissionModule:HandleChangeFormation(TT, self._layerId, self._missionId, pets)
     end
-    ;
-    (self._sailingMissionModule):CacheHistoryMissionCount()
-    local missiontModule = (GameGlobal.GetModule)(MissionModule)
-    local ctx = missiontModule:TeamCtx()
-    local teamCache = (self._sailingMissionModule):GetTeamCache()
-    ctx:InitSailingTeams(teamCache)
-    ctx:Init(TeamOpenerType.Sailing, {self._layerId, self._missionId})
-    ctx:ShowDialogUITeams(false)
-    self:UnLock("UISailingLevelDetail_StartBattle")
+  else
+    local teamCache = self._sailingMissionModule:GetTeamCache()
+    if teamCache and (teamCache.layer_id ~= self._layerId or teamCache.mission_id ~= self._missionId) then
+      self._sailingMissionModule:HandleChangeFormation(TT, self._layerId, self._missionId, {})
+    end
   end
+  self._sailingMissionModule:CacheHistoryMissionCount()
+  local missiontModule = GameGlobal.GetModule(MissionModule)
+  local ctx = missiontModule:TeamCtx()
+  local teamCache = self._sailingMissionModule:GetTeamCache()
+  ctx:InitSailingTeams(teamCache)
+  ctx:Init(TeamOpenerType.Sailing, {
+    self._layerId,
+    self._missionId
+  })
+  ctx:ShowDialogUITeams(false)
+  self:UnLock("UISailingLevelDetail_StartBattle")
 end
-
-

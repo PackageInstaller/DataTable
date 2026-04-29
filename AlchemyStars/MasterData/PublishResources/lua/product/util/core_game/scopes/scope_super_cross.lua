@@ -1,27 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_super_cross.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_SuperCross", SkillScopeCalculator_Base)
 SkillScopeCalculator_SuperCross = SkillScopeCalculator_SuperCross
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_SuperCross.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_SuperCross:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local bodyAreaArray = bodyArea
   local size = scopeParam
-  local cross_result = (self._hub):ComputeScopeRange(SkillScopeType.CrossExceptBlock, {scopeParam}, centerPos, bodyArea, casterDir, nTargetType, centerPos)
+  local cross_result = self._hub:ComputeScopeRange(SkillScopeType.CrossExceptBlock, {scopeParam}, centerPos, bodyArea, casterDir, nTargetType, centerPos)
   local cross_range = cross_result:GetAttackRange()
   local cross_total_range = cross_result:GetWholeGridRange()
-  local x_result = (self._hub):ComputeScopeRange(SkillScopeType.XScopeType, {1}, centerPos, bodyArea, casterDir, nTargetType, centerPos)
+  local x_result = self._hub:ComputeScopeRange(SkillScopeType.XScopeType, {1}, centerPos, bodyArea, casterDir, nTargetType, centerPos)
   local x_range = x_result:GetAttackRange()
-  for _,pos in ipairs(x_range) do
+  for _, pos in ipairs(x_range) do
     self:_InsertTargetGrid(cross_range, pos, cross_total_range)
   end
   local result = SkillScopeResult:New(SkillScopeType.SuperCross, centerPos, cross_range, cross_total_range)
   return result
 end
-
-

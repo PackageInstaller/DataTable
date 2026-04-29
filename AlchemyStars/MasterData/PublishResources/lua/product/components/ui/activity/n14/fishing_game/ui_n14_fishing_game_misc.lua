@@ -1,35 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n14/fishing_game/ui_n14_fishing_game_misc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FishingGameOrder", Object)
 FishingGameOrder = FishingGameOrder
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FishingGameOrder.Constructor = function(self, ...)
-  -- function num : 0_0
-  local param = {...}
+function FishingGameOrder:Constructor(...)
+  local param = {
+    ...
+  }
   self.orderCount = param[1]
   self.finishTime = param[2]
   self.detailInfo = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FishingGameOrder.Clear = function(self)
-  -- function num : 0_1
+function FishingGameOrder:Clear()
   self.orderCount = 0
   self.finishTime = 0
 end
 
 _class("FishingGameFishGroup", Object)
 FishingGameFishGroup = FishingGameFishGroup
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-FishingGameFishGroup.Constructor = function(self, ...)
-  -- function num : 0_2
-  local param = {...}
+function FishingGameFishGroup:Constructor(...)
+  local param = {
+    ...
+  }
   self.fishId = param[1]
   self.fishMin = param[2]
   self.fishMax = param[3]
@@ -41,11 +33,11 @@ end
 
 _class("FishingGameLevelInfo", Object)
 FishingGameLevelInfo = FishingGameLevelInfo
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-FishingGameLevelInfo.Constructor = function(self, ...)
-  -- function num : 0_3 , upvalues : _ENV
-  local param = {...}
+function FishingGameLevelInfo:Constructor(...)
+  local param = {
+    ...
+  }
   self.fishInfo = param[1]
   self.orderInfo = param[2]
   self.totalFish = param[3]
@@ -54,89 +46,61 @@ FishingGameLevelInfo.Constructor = function(self, ...)
   self.normalFishInfo = {}
   self:CheckTotalFish()
   self:CalNormalFish()
-  self.fishTypeCount = (table.count)(self.normalFishInfo)
+  self.fishTypeCount = table.count(self.normalFishInfo)
   self.currentTotalFish = self.totalFish
   self.orderDetailInfo = self:GenerateOrderInfo(self.orderInfo)
   self.allFishInfo = self:GenerateFishInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FishingGameLevelInfo.CheckTotalFish = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function FishingGameLevelInfo:CheckTotalFish()
   local total = 0
-  for i = 1, (table.count)(self.fishInfo) do
-    total = total + ((self.fishInfo)[i])[3]
+  for i = 1, table.count(self.fishInfo) do
+    total = total + self.fishInfo[i][3]
   end
   if total < self.totalFish then
     self.totalFish = total
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-FishingGameLevelInfo.GenerateFishInfo = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function FishingGameLevelInfo:GenerateFishInfo()
   local allfishGroupList = {}
   local genCount = 0
-  for i = 1, (table.count)(self.fishInfo) do
-    local fishId = ((self.fishInfo)[i])[1]
-    local fishGroup = FishingGameFishGroup:New(fishId, ((self.fishInfo)[i])[2], ((self.fishInfo)[i])[3], ((Cfg.cfg_fishing_fish)({ID = ((self.fishInfo)[i])[1]}))[1])
+  for i = 1, table.count(self.fishInfo) do
+    local fishId = self.fishInfo[i][1]
+    local fishGroup = FishingGameFishGroup:New(fishId, self.fishInfo[i][2], self.fishInfo[i][3], Cfg.cfg_fishing_fish({
+      ID = self.fishInfo[i][1]
+    })[1])
     for j = 1, fishGroup.fishMin do
       fishGroup.currentCount = fishGroup.currentCount + 1
       genCount = genCount + 1
-    end
-    do
-      if self.totalFish >= genCount then
-        do
-          allfishGroupList[fishId] = fishGroup
-          -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+      if genCount > self.totalFish then
+        break
       end
     end
+    allfishGroupList[fishId] = fishGroup
   end
-  while 1 do
-    if genCount < self.totalFish and genCount < self.totalFish then
+  if genCount < self.totalFish then
+    while genCount < self.totalFish do
       local notFullFishType = {}
-      for k,v in pairs(allfishGroupList) do
+      for k, v in pairs(allfishGroupList) do
         local fishGroup = v
         if fishGroup.currentCount < fishGroup.fishMax then
           notFullFishType[#notFullFishType + 1] = fishGroup.fishId
         end
       end
-      if #notFullFishType ~= 0 then
-        do
-          local r = (math.random)(1, #notFullFishType)
-          genCount = genCount + 1
-          -- DECOMPILER ERROR at PC82: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (allfishGroupList[notFullFishType[r]]).currentCount = (allfishGroupList[notFullFishType[r]]).currentCount + 1
-          -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      if #notFullFishType == 0 then
+        break
       end
+      local r = math.random(1, #notFullFishType)
+      genCount = genCount + 1
+      allfishGroupList[notFullFishType[r]].currentCount = allfishGroupList[notFullFishType[r]].currentCount + 1
     end
   end
   return allfishGroupList
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-FishingGameLevelInfo.CatchFish = function(self, fishId)
-  -- function num : 0_6 , upvalues : _ENV
-  for k,v in pairs(self.allFishInfo) do
+function FishingGameLevelInfo:CatchFish(fishId)
+  for k, v in pairs(self.allFishInfo) do
     if k == fishId then
       v.currentCount = v.currentCount - 1
       self.currentTotalFish = self.currentTotalFish - 1
@@ -145,12 +109,9 @@ FishingGameLevelInfo.CatchFish = function(self, fishId)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-FishingGameLevelInfo.GenerateFish = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function FishingGameLevelInfo:GenerateFish()
   local currentTotal = 0
-  for k,v in pairs(self.allFishInfo) do
+  for k, v in pairs(self.allFishInfo) do
     currentTotal = currentTotal + v.currentCount
     if v.currentCount < v.fishMin then
       v.currentCount = v.currentCount + 1
@@ -158,47 +119,35 @@ FishingGameLevelInfo.GenerateFish = function(self)
       return k
     end
   end
-  if self.totalFish <= currentTotal then
+  if currentTotal >= self.totalFish then
     return -1
   end
   local notFullFishType = {}
-  for k,v in pairs(self.allFishInfo) do
+  for k, v in pairs(self.allFishInfo) do
     if v.currentCount < v.fishMax then
       notFullFishType[#notFullFishType + 1] = k
     end
   end
-  local r = (math.random)(1, #notFullFishType)
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self.allFishInfo)[notFullFishType[r]]).currentCount = ((self.allFishInfo)[notFullFishType[r]]).currentCount + 1
+  local r = math.random(1, #notFullFishType)
+  self.allFishInfo[notFullFishType[r]].currentCount = self.allFishInfo[notFullFishType[r]].currentCount + 1
   self.currentTotalFish = self.currentTotalFish + 1
   return notFullFishType[r]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-FishingGameLevelInfo.CalNormalFish = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function FishingGameLevelInfo:CalNormalFish()
   local normalFishTypeCount = 0
-  for _,v in pairs(self.fishInfo) do
+  for _, v in pairs(self.fishInfo) do
     if v[1] ~= FishingFishType.Octopus and v[1] ~= FishingFishType.Puffer then
       normalFishTypeCount = normalFishTypeCount + 1
-      -- DECOMPILER ERROR at PC17: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self.normalFishInfo)[normalFishTypeCount] = v
+      self.normalFishInfo[normalFishTypeCount] = v
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-FishingGameLevelInfo.GenerateOrderInfo = function(self, orderInfo)
-  -- function num : 0_9 , upvalues : _ENV
+function FishingGameLevelInfo:GenerateOrderInfo(orderInfo)
   local orderDetailList = {}
-  local orderCount = (table.count)(orderInfo)
-  if orderCount > 0 then
+  local orderCount = table.count(orderInfo)
+  if 0 < orderCount then
     for i = 1, orderCount do
       local orderBaseInfo = orderInfo[i]
       orderDetailList[i] = FishingGameOrder:New(orderBaseInfo[1], orderBaseInfo[2])
@@ -206,57 +155,57 @@ FishingGameLevelInfo.GenerateOrderInfo = function(self, orderInfo)
       local typeFishCountList = {}
       local lastFishIndex = 0
       for j = 1, orderBaseInfo[1] do
-        local currentFishIndex = (Mathf.Random)(1, self.fishTypeCount)
-        while 1 do
-          if currentFishIndex == lastFishIndex or typeFishCountList[currentFishIndex] == 2 then
-            currentFishIndex = (Mathf.Random)(1, self.fishTypeCount)
-            -- DECOMPILER ERROR at PC41: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC41: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        local currentFishIndex = Mathf.Random(1, self.fishTypeCount)
+        while currentFishIndex == lastFishIndex or typeFishCountList[currentFishIndex] == 2 do
+          currentFishIndex = Mathf.Random(1, self.fishTypeCount)
         end
         lastFishIndex = currentFishIndex
-        orderFishList[j] = ((self.normalFishInfo)[currentFishIndex])[1]
+        orderFishList[j] = self.normalFishInfo[currentFishIndex][1]
         if typeFishCountList[orderFishList[j]] then
           typeFishCountList[orderFishList[j]] = typeFishCountList[orderFishList[j]] + 1
         else
           typeFishCountList[orderFishList[j]] = 1
         end
       end
-      -- DECOMPILER ERROR at PC61: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (orderDetailList[i]).detailInfo = orderFishList
+      orderDetailList[i].detailInfo = orderFishList
     end
   end
-  do
-    return orderDetailList
-  end
+  return orderDetailList
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-FishingGameLevelInfo.PoolIsFull = function(self)
-  -- function num : 0_10
-  do return self.totalFish <= self.currentTotalFish end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function FishingGameLevelInfo:PoolIsFull()
+  return self.currentTotalFish >= self.totalFish
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-FishingGameLevelInfo.PoolIsEmpty = function(self)
-  -- function num : 0_11
-  do return self.currentTotalFish == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function FishingGameLevelInfo:PoolIsEmpty()
+  return self.currentTotalFish == 0
 end
 
-local FishingGameState = {Start = 1, Playing = 2, Pause = 3, Skill = 4, SkillAnim = 5, Over = 6}
+local FishingGameState = {
+  Start = 1,
+  Playing = 2,
+  Pause = 3,
+  Skill = 4,
+  SkillAnim = 5,
+  Over = 6
+}
 _enum("FishingGameState", FishingGameState)
-local FishingGameRewardState = {HasReceive = 1, NotReceive = 2, NotReach = 3}
+local FishingGameRewardState = {
+  HasReceive = 1,
+  NotReceive = 2,
+  NotReach = 3
+}
 _enum("FishingGameRewardState", FishingGameRewardState)
-local FishingFishState = {Swimming = 1, Rotate = 2, Die = 3, Born = 4}
+local FishingFishState = {
+  Swimming = 1,
+  Rotate = 2,
+  Die = 3,
+  Born = 4
+}
 _enum("FishingFishState", FishingFishState)
-local FishingFishType = {Other = 1, Puffer = 6, Octopus = 7}
+local FishingFishType = {
+  Other = 1,
+  Puffer = 6,
+  Octopus = 7
+}
 _enum("FishingFishType", FishingFishType)
-

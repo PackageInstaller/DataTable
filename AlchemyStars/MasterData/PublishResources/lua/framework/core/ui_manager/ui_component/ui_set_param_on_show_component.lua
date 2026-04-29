@@ -1,18 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_component/ui_set_param_on_show_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISetParamOnShowComponent", UIComponent)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UISetParamOnShowComponent.Show = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISetParamOnShowComponent:Show()
   if self.registerInfo then
-    for key,value in pairs(self.registerInfo) do
-      (self.uiController):SetComponentSharedParam(key, value)
+    for key, value in pairs(self.registerInfo) do
+      self.uiController:SetComponentSharedParam(key, value)
     end
   end
 end
-
-

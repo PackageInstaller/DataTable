@@ -1,40 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_defender_change_formula_id.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicDefenderChangeFormulaID", BuffLogicBase)
 BuffLogicDefenderChangeFormulaID = BuffLogicDefenderChangeFormulaID
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDefenderChangeFormulaID.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicDefenderChangeFormulaID:Constructor(buffInstance, logicParam)
   self._replaceDic = logicParam.replaceDic
   self._isRevert = logicParam.isRevert or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDefenderChangeFormulaID.GetBuffValueKey = function(self)
-  -- function num : 0_1
+function BuffLogicDefenderChangeFormulaID:GetBuffValueKey()
   return "DefenderChangeFormulaIDDic"
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDefenderChangeFormulaID.DoLogic = function(self, notify)
-  -- function num : 0_2 , upvalues : _ENV
-  local cBuff = (self._entity):BuffComponent()
+function BuffLogicDefenderChangeFormulaID:DoLogic(notify)
+  local cBuff = self._entity:BuffComponent()
   local bvk = self:GetBuffValueKey()
   local savedDic = {}
   if not cBuff:GetBuffValue(bvk) then
     cBuff:SetBuffValue(bvk, savedDic)
   else
-    savedDic = (table.cloneconf)(cBuff:GetBuffValue(bvk))
+    savedDic = table.cloneconf(cBuff:GetBuffValue(bvk))
   end
   if self._replaceDic then
-    for key,value in pairs(self._replaceDic) do
+    for key, value in pairs(self._replaceDic) do
       if self._isRevert and self._isRevert == 1 then
         savedDic[key] = nil
       else
@@ -42,9 +29,5 @@ BuffLogicDefenderChangeFormulaID.DoLogic = function(self, notify)
       end
     end
   end
-  do
-    cBuff:SetBuffValue(bvk, savedDic)
-  end
+  cBuff:SetBuffValue(bvk, savedDic)
 end
-
-

@@ -1,36 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_voice_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayVoiceInstruction", BaseInstruction)
 PlayVoiceInstruction = PlayVoiceInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayVoiceInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayVoiceInstruction:Constructor(paramList)
   self._voiceID = tonumber(paramList.voiceID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayVoiceInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  if ((GameGlobal.GetModule)(SkillPerfModule)):IsBeginPerf() then
-    return 
+function PlayVoiceInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  if GameGlobal.GetModule(SkillPerfModule):IsBeginPerf() then
+    return
   end
-  ;
-  (InnerGameHelperRender.InnerGamePlayPetVoid)(self._voiceID, casterEntity)
+  InnerGameHelperRender.InnerGamePlayPetVoid(self._voiceID, casterEntity)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayVoiceInstruction.GetCacheVoice = function(self)
-  -- function num : 0_2
+function PlayVoiceInstruction:GetCacheVoice()
   if self._voiceID and self._voiceID > 0 then
-    return {self._voiceID}
+    return {
+      self._voiceID
+    }
   end
 end
-
-

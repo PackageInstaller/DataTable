@@ -1,25 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_item/ui_heart_item_star.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHeartItemStar", UICustomWidget)
 UIHeartItemStar = UIHeartItemStar
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHeartItemStar.Constructor = function(self)
-  -- function num : 0_0
+function UIHeartItemStar:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartItemStar.SetData = function(self, sp)
-  -- function num : 0_1
+function UIHeartItemStar:SetData(sp)
   self._starImg = self:GetUIComponent("Image", "img")
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._starImg).sprite = sp
+  self._starImg.sprite = sp
 end
-
-

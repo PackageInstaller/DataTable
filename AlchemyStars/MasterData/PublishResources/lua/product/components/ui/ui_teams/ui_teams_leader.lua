@@ -1,50 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_teams/ui_teams_leader.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITeamsLeader", UICustomWidget)
 UITeamsLeader = UITeamsLeader
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITeamsLeader.OnShow = function(self)
-  -- function num : 0_0
+function UITeamsLeader:OnShow()
   self._slot = self:GetGameObject("slot")
-  ;
-  (self._slot):SetActive(false)
+  self._slot:SetActive(false)
   self._slotOpen = false
   self._btnLeaderGO = self:GetGameObject("btnTeamLeader")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamsLeader.Flush = function(self, leader, isGuide)
-  -- function num : 0_1 , upvalues : _ENV
+function UITeamsLeader:Flush(leader, isGuide)
   if isGuide then
     self._leader = isGuide
-    ;
-    (self._btnLeaderGO):SetActive(isGuide)
+    self._btnLeaderGO:SetActive(isGuide)
   else
     local petModule = self:GetModule(PetModule)
     self._leader = petModule:GetPet(leader)
-    ;
-    (self._btnLeaderGO):SetActive(self._leader ~= nil)
+    self._btnLeaderGO:SetActive(self._leader ~= nil)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamsLeader.BtnTeamLeaderOnClick = function(self, go)
-  -- function num : 0_2
+function UITeamsLeader:BtnTeamLeaderOnClick(go)
   if self._leader then
     self._slotOpen = not self._slotOpen
-    ;
-    (self._slot):SetActive(self._slotOpen)
+    self._slot:SetActive(self._slotOpen)
   else
-    ;
-    (self._slot):SetActive(false)
+    self._slot:SetActive(false)
   end
 end
-
-

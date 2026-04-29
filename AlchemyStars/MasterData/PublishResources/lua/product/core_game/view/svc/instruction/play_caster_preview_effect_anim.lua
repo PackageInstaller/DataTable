@@ -1,31 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_preview_effect_anim.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterPreviewEffectAnimationInstruction", BaseInstruction)
 PlayCasterPreviewEffectAnimationInstruction = PlayCasterPreviewEffectAnimationInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterPreviewEffectAnimationInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayCasterPreviewEffectAnimationInstruction:Constructor(paramList)
   self._animName = paramList.anim
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterPreviewEffectAnimationInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterPreviewEffectAnimationInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
   local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
   local effectIDList = activeSkillPickUpComponent:GetPickUpEffectEntityIDArray()
-  for i,id in ipairs(effectIDList) do
-    local effectEntity = (self._world):GetEntityByID(id)
-    local effectGO = (effectEntity:View()):GetGameObject()
-    local anim = (effectGO.gameObject):GetComponent("Animation")
+  for i, id in ipairs(effectIDList) do
+    local effectEntity = self._world:GetEntityByID(id)
+    local effectGO = effectEntity:View():GetGameObject()
+    local anim = effectGO.gameObject:GetComponent("Animation")
     anim:Play(self._animName)
   end
 end
-
-

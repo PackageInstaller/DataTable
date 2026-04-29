@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_conduct_damage_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayConductDamageInstruction", BaseInstruction)
 PlayConductDamageInstruction = PlayConductDamageInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayConductDamageInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayConductDamageInstruction:Constructor(paramList)
   self._hitEffectID = tonumber(paramList.hitEffectID)
   self._hitAnimName = paramList.hitAnimName
   self._turnToTarget = tonumber(paramList.turnToTarget)
@@ -17,27 +10,21 @@ PlayConductDamageInstruction.Constructor = function(self, paramList)
   self._chainEffectID = tonumber(paramList.chainEffectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayConductDamageInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayConductDamageInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local results = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.ConductDamage)
   if not results then
-    return 
+    return
   end
-  for _,result in ipairs(results) do
+  for _, result in ipairs(results) do
     self:PlaySingleResult(TT, casterEntity, phaseContext, result)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayConductDamageInstruction.PlaySingleResult = function(self, TT, casterEntity, phaseContext, result)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayConductDamageInstruction:PlaySingleResult(TT, casterEntity, phaseContext, result)
   local atomDataArray = result:GetAtomDataArray()
   if #atomDataArray == 0 then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local fxsvc = world:GetService("Effect")
@@ -45,39 +32,31 @@ PlayConductDamageInstruction.PlaySingleResult = function(self, TT, casterEntity,
   local eCenterEntity = world:GetEntityByID(lastBeginnerID)
   fxsvc:CreateBeHitEffect(self._hitEffectID, eCenterEntity)
   local playSkillService = world:GetService("PlaySkill")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
-  for _,atom in ipairs(atomDataArray) do
+  for _, atom in ipairs(atomDataArray) do
     local damageResult = atom:GetDamageResult()
     local targetID = damageResult:GetTargetID()
     local eLast = world:GetEntityByID(lastBeginnerID)
     local eTarget = world:GetEntityByID(targetID)
     if eLast:HasView() and eTarget:HasView() then
-      local goLast = (eLast:View()):GetGameObject()
-      local goTarget = (eTarget:View()):GetGameObject()
+      local goLast = eLast:View():GetGameObject()
+      local goTarget = eTarget:View():GetGameObject()
       if goLast and tostring(goLast) ~= "null" and goTarget and tostring(goTarget) ~= "null" then
         local eLineFx = fxsvc:CreateEffect(self._chainEffectID, eLast)
         YIELD(TT)
-        if eLineFx and eLineFx:View() and (eLineFx:View()):GetGameObject() then
-          local goLine = (eLineFx:View()):GetGameObject()
+        if eLineFx and eLineFx:View() and eLineFx:View():GetGameObject() then
+          local goLine = eLineFx:View():GetGameObject()
           local csLineRenderer = goLine:GetComponentInChildren(typeof(UnityEngine.LineRenderer))
           csLineRenderer.useWorldSpace = true
-          csLineRenderer:SetPosition(0, (goLast.transform).position)
-          csLineRenderer:SetPosition(1, (goTarget.transform).position)
+          csLineRenderer:SetPosition(0, goLast.transform.position)
+          csLineRenderer:SetPosition(1, goTarget.transform.position)
         end
       end
     end
-    do
-      local playFinalAttack = playSkillService:GetFinalAttack(world, casterEntity, phaseContext)
-      do
-        local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(eTarget)):SetHandleBeHitParam_HitAnimName(self._hitAnimName)):SetHandleBeHitParam_HitEffectID(self._hitEffectID)):SetHandleBeHitParam_DamageInfo(damageResult:GetDamageInfo(1))):SetHandleBeHitParam_DamagePos(damageResult:GetGridPos())):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget)):SetHandleBeHitParam_DeathClear(self._deathClear)):SetHandleBeHitParam_IsFinalHit(playFinalAttack)):SetHandleBeHitParam_SkillID(skillID)
-        playSkillService:HandleBeHit(TT, beHitParam)
-        lastBeginnerID = targetID
-        -- DECOMPILER ERROR at PC159: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    local playFinalAttack = playSkillService:GetFinalAttack(world, casterEntity, phaseContext)
+    local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(eTarget):SetHandleBeHitParam_HitAnimName(self._hitAnimName):SetHandleBeHitParam_HitEffectID(self._hitEffectID):SetHandleBeHitParam_DamageInfo(damageResult:GetDamageInfo(1)):SetHandleBeHitParam_DamagePos(damageResult:GetGridPos()):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget):SetHandleBeHitParam_DeathClear(self._deathClear):SetHandleBeHitParam_IsFinalHit(playFinalAttack):SetHandleBeHitParam_SkillID(skillID)
+    playSkillService:HandleBeHit(TT, beHitParam)
+    lastBeginnerID = targetID
   end
 end
-
-

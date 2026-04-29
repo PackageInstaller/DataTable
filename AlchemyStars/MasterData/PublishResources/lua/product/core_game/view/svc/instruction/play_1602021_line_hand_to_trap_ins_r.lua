@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_1602021_line_hand_to_trap_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Play1602021LineHandToTrapInstruction", BaseInstruction)
 Play1602021LineHandToTrapInstruction = Play1602021LineHandToTrapInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Play1602021LineHandToTrapInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function Play1602021LineHandToTrapInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._handObjectName = paramList.handObjectName
   self._knifeHandleObjectName = paramList.knifeHandleObjectName
@@ -17,63 +10,56 @@ Play1602021LineHandToTrapInstruction.Constructor = function(self, paramList)
   self._p3YOffset = tonumber(paramList.p3YOffset)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Play1602021LineHandToTrapInstruction.GetCacheResource = function(self)
-  -- function num : 0_1
-  return {self:GetEffectResCacheInfo(self._effectID)}
+function Play1602021LineHandToTrapInstruction:GetCacheResource()
+  return {
+    self:GetEffectResCacheInfo(self._effectID)
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Play1602021LineHandToTrapInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(self._TaskFixLine, self, casterEntity, phaseContext)
+function Play1602021LineHandToTrapInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  GameGlobal.TaskManager():CoreGameStartTask(self._TaskFixLine, self, casterEntity, phaseContext)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Play1602021LineHandToTrapInstruction._TaskFixLine = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_3 , upvalues : _ENV
+function Play1602021LineHandToTrapInstruction:_TaskFixLine(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local routineCmpt = (casterEntity:SkillRoutine()):GetResultContainer()
+  local routineCmpt = casterEntity:SkillRoutine():GetResultContainer()
   if not routineCmpt then
-    return 
+    return
   end
   local resultArray = routineCmpt:GetEffectResultsAsArray(SkillEffectType.DestroyTrap)
   if not resultArray then
-    return 
+    return
   end
   local result = resultArray[1]
   if not result then
-    return 
+    return
   end
   local eID = result:GetEntityID()
   local eTrap = world:GetEntityByID(eID)
   if not eTrap then
-    return 
+    return
   end
-  if not eTrap:HasView() or not (eTrap:View()):GetGameObject() or tostring((eTrap:View()):GetGameObject()) == "null" then
-    return 
+  if not (eTrap:HasView() and eTrap:View():GetGameObject()) or tostring(eTrap:View():GetGameObject()) == "null" then
+    return
   end
   local fxsvc = world:GetService("Effect")
   local fx = fxsvc:CreateWorldPositionDirectionEffect(self._effectID, casterEntity:GetGridPosition(), result:GetTrapPos() - casterEntity:GetGridPosition())
-  local csgo = (fx:View()):GetGameObject()
+  local csgo = fx:View():GetGameObject()
   local renderers = csgo:GetComponentsInChildren(typeof(UnityEngine.LineRenderer), true)
-  local csCasterGO = (casterEntity:View()):GetGameObject()
-  local csHandTransform = (GameObjectHelper.FindChild)(csCasterGO.transform, self._handObjectName)
-  local csTrapGO = (eTrap:View()):GetGameObject()
-  local csKnifeHandleTransform = (GameObjectHelper.FindChild)(csTrapGO.transform, self._knifeHandleObjectName)
+  local csCasterGO = casterEntity:View():GetGameObject()
+  local csHandTransform = GameObjectHelper.FindChild(csCasterGO.transform, self._handObjectName)
+  local csTrapGO = eTrap:View():GetGameObject()
+  local csKnifeHandleTransform = GameObjectHelper.FindChild(csTrapGO.transform, self._knifeHandleObjectName)
   local boardServiceRender = world:GetService("BoardRender")
   local v3GridPos = boardServiceRender:GridPos2RenderPos(result:GetTrapPos())
   local ctrl = fx:EffectController()
   while ctrl.CurrentTime < ctrl.Duration do
-    local p1 = (Vector3.New)((csHandTransform.position).x, self._p1YOffset, (csHandTransform.position).z)
-    local p2 = (Vector3.New)((csKnifeHandleTransform.position).x, self._p2YOffset, (csKnifeHandleTransform.position).z)
-    local p3 = (Vector3.New)(v3GridPos.x, self._p3YOffset, v3GridPos.z)
-    local invp1 = (csgo.transform):InverseTransformPoint(p1)
-    local invp2 = (csgo.transform):InverseTransformPoint(p2)
-    local invp3 = (csgo.transform):InverseTransformPoint(p3)
+    local p1 = Vector3.New(csHandTransform.position.x, self._p1YOffset, csHandTransform.position.z)
+    local p2 = Vector3.New(csKnifeHandleTransform.position.x, self._p2YOffset, csKnifeHandleTransform.position.z)
+    local p3 = Vector3.New(v3GridPos.x, self._p3YOffset, v3GridPos.z)
+    local invp1 = csgo.transform:InverseTransformPoint(p1)
+    local invp2 = csgo.transform:InverseTransformPoint(p2)
+    local invp3 = csgo.transform:InverseTransformPoint(p3)
     for i = 0, renderers.Length - 1 do
       local line = renderers[i]
       line:SetPosition(0, invp1)
@@ -83,5 +69,3 @@ Play1602021LineHandToTrapInstruction._TaskFixLine = function(self, TT, casterEnt
     YIELD(TT)
   end
 end
-
-

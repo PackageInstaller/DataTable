@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_215_and_splash_pre_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("Play215AndSplashPreDamageInstruction", BaseInstruction)
 Play215AndSplashPreDamageInstruction = Play215AndSplashPreDamageInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Play215AndSplashPreDamageInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function Play215AndSplashPreDamageInstruction:Constructor(paramList)
   self._damageStageIndex = tonumber(paramList.damageStageIndex)
   self._splashDamageStageIndex = tonumber(paramList.splashDamageStageIndex)
   self._damageHitEffect = tonumber(paramList.damageHitEffect)
@@ -21,50 +14,41 @@ Play215AndSplashPreDamageInstruction.Constructor = function(self, paramList)
   self._paramList = paramList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Play215AndSplashPreDamageInstruction.GetCacheAudio = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function Play215AndSplashPreDamageInstruction:GetCacheAudio()
   local t = {}
   if self._beHitAudioID and self._beHitAudioID > 0 then
-    (table.insert)(t, self._beHitAudioID)
+    table.insert(t, self._beHitAudioID)
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Play215AndSplashPreDamageInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function Play215AndSplashPreDamageInstruction:GetCacheResource()
   local t = {}
   local damageHitEffectPath = self:GetEffectResCacheInfo(self._damageHitEffect)
   if damageHitEffectPath then
-    (table.insert)(t, damageHitEffectPath)
+    table.insert(t, damageHitEffectPath)
   end
   local splashHitEffectPath = self:GetEffectResCacheInfo(self._splashHitEffect)
   if splashHitEffectPath then
-    (table.insert)(t, splashHitEffectPath)
+    table.insert(t, splashHitEffectPath)
   end
   return t
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Play215AndSplashPreDamageInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_3 , upvalues : _ENV
+function Play215AndSplashPreDamageInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
-  local resContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local resContainer = casterEntity:SkillRoutine():GetResultContainer()
   local damageResults = resContainer:GetEffectResultsAsArray(SkillEffectType.Damage, self._damageStageIndex)
   local splashResults = resContainer:GetEffectResultsAsArray(SkillEffectType.SplashDamage, self._splashDamageStageIndex)
   local skillID = resContainer:GetSkillID()
-  self._playSkillService = (self._world):GetService("PlaySkill")
-  self._playDamageService = (self._world):GetService("PlayDamage")
-  self._effectService = (self._world):GetService("Effect")
-  local damageShowType = ((self._world):GetService("PlayDamage")):SingleOrGrid(skillID)
+  self._playSkillService = self._world:GetService("PlaySkill")
+  self._playDamageService = self._world:GetService("PlayDamage")
+  self._effectService = self._world:GetService("Effect")
+  local damageShowType = self._world:GetService("PlayDamage"):SingleOrGrid(skillID)
   local isFinalHit = resContainer:IsFinalAttack()
   local taskIDList = {}
   local maxDamageIndex = 1
-  for i,results in ipairs(damageResults) do
+  for i, results in ipairs(damageResults) do
     if maxDamageIndex < results:GetDamageIndex() then
       maxDamageIndex = results:GetDamageIndex()
     end
@@ -72,38 +56,33 @@ Play215AndSplashPreDamageInstruction.DoInstruction = function(self, TT, casterEn
   for i = 1, maxDamageIndex do
     local playNormalDamageResult = {}
     local playSplashDamageResult = {}
-    for _,results in ipairs(damageResults) do
+    for _, results in ipairs(damageResults) do
       if results:GetDamageIndex() == i then
-        (table.insert)(playNormalDamageResult, results)
+        table.insert(playNormalDamageResult, results)
       end
     end
-    for _,splashResult in ipairs(splashResults) do
+    for _, splashResult in ipairs(splashResults) do
       local splashDamageResults = splashResult:GetDamageResults()
-      for _,splashDamageResult in ipairs(splashDamageResults) do
+      for _, splashDamageResult in ipairs(splashDamageResults) do
         if splashDamageResult:GetDamageIndex() == i then
-          (table.insert)(playSplashDamageResult, splashDamageResult)
+          table.insert(playSplashDamageResult, splashDamageResult)
         end
       end
     end
-    local taskIDs = self:_PlayDamageInfo(TT, playNormalDamageResult, playSplashDamageResult, casterEntity, not isFinalHit or i == maxDamageIndex, skillID, damageShowType)
-    ;
-    (table.appendArray)(taskIDList, taskIDs)
+    local taskIDs = self:_PlayDamageInfo(TT, playNormalDamageResult, playSplashDamageResult, casterEntity, isFinalHit and i == maxDamageIndex, skillID, damageShowType)
+    table.appendArray(taskIDList, taskIDs)
     if self._damageWaitTime > 0 then
       YIELD(TT, self._damageWaitTime)
     end
   end
-  while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDList) do
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDList) do
     YIELD(TT)
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Play215AndSplashPreDamageInstruction.PlayAudio = function(self, casterEntity)
-  -- function num : 0_4 , upvalues : _ENV
+function Play215AndSplashPreDamageInstruction:PlayAudio(casterEntity)
   if self._beHitAudioID then
-    local playingID = (AudioHelperController.PlayInnerGameSfx)(self._beHitAudioID)
+    local playingID = AudioHelperController.PlayInnerGameSfx(self._beHitAudioID)
     local effectCpmt = casterEntity:EffectHolder()
     if not effectCpmt then
       casterEntity:AddEffectHolder()
@@ -113,14 +92,11 @@ Play215AndSplashPreDamageInstruction.PlayAudio = function(self, casterEntity)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Play215AndSplashPreDamageInstruction._PlayDamageInfo = function(self, TT, playNormalDamageResult, playSplashDamageResult, casterEntity, finalAttack, skillID, damageShowType)
-  -- function num : 0_5 , upvalues : _ENV
+function Play215AndSplashPreDamageInstruction:_PlayDamageInfo(TT, playNormalDamageResult, playSplashDamageResult, casterEntity, finalAttack, skillID, damageShowType)
   local casterPos = casterEntity:GetRenderGridPosition()
-  for _,damageResult in ipairs(playNormalDamageResult) do
+  for _, damageResult in ipairs(playNormalDamageResult) do
     local targetID = damageResult:GetTargetID()
-    local targetEntity = (self._world):GetEntityByID(targetID)
+    local targetEntity = self._world:GetEntityByID(targetID)
     local damageInfo = damageResult:GetDamageInfo(1)
     local damageGridPos = damageResult:GetGridPos()
     self:PlayBeHitEffect(targetEntity, casterEntity, damageInfo, damageShowType)
@@ -131,76 +107,59 @@ Play215AndSplashPreDamageInstruction._PlayDamageInfo = function(self, TT, playNo
   local totalTaskID = {}
   local hasFinalAttack = false
   self:PlayAudio(casterEntity)
-  for _,damageResult in ipairs(playNormalDamageResult) do
+  for _, damageResult in ipairs(playNormalDamageResult) do
     local targetID = damageResult:GetTargetID()
-    local targetEntity = (self._world):GetEntityByID(targetID)
+    local targetEntity = self._world:GetEntityByID(targetID)
     local damageInfo = damageResult:GetDamageInfo(1)
     local damageGridPos = damageResult:GetGridPos()
-    local playBuffSvc = (self._world):GetService("PlayBuff")
+    local playBuffSvc = self._world:GetService("PlayBuff")
     playBuffSvc:_OnAttackStart(TT, skillID, casterEntity, targetEntity, casterPos, damageGridPos, damageInfo)
     if finalAttack and not hasFinalAttack then
       hasFinalAttack = true
-      local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+      local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
       local finalAttackEntityID = skillEffectResultContainer:GetFinalAttackEntityID()
-      -- DECOMPILER ERROR at PC85: Unhandled construct in 'MakeBoolean' P1
-
-      if finalAttackEntityID and finalAttackEntityID == targetEntity:GetID() then
-        (self._playSkillService):FreezeFrame(targetEntity)
+      if finalAttackEntityID then
+        if finalAttackEntityID == targetEntity:GetID() then
+          self._playSkillService:FreezeFrame(targetEntity)
+        end
+      else
+        self._playSkillService:FreezeFrame(targetEntity)
       end
     end
-    do
-      ;
-      (self._playSkillService):FreezeFrame(targetEntity)
-      self:TurnToTarget(casterEntity, targetEntity)
-      self:PlayDamageText(damageResult, damageInfo, targetEntity, skillID)
-      do
-        local nTaskID = self:PlayBeHitAnim(TT, damageResult, damageInfo, targetEntity, casterEntity, skillID)
-        ;
-        (table.insert)(totalTaskID, nTaskID)
-        -- DECOMPILER ERROR at PC114: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    self:TurnToTarget(casterEntity, targetEntity)
+    self:PlayDamageText(damageResult, damageInfo, targetEntity, skillID)
+    local nTaskID = self:PlayBeHitAnim(TT, damageResult, damageInfo, targetEntity, casterEntity, skillID)
+    table.insert(totalTaskID, nTaskID)
   end
-  for _,damageResult in ipairs(playSplashDamageResult) do
+  for _, damageResult in ipairs(playSplashDamageResult) do
     local targetID = damageResult:GetTargetID()
-    local targetEntity = (self._world):GetEntityByID(targetID)
+    local targetEntity = self._world:GetEntityByID(targetID)
     local damageInfo = damageResult:GetDamageInfo(1)
     local damageGridPos = damageResult:GetGridPos()
-    local playBuffSvc = (self._world):GetService("PlayBuff")
+    local playBuffSvc = self._world:GetService("PlayBuff")
     playBuffSvc:_OnAttackStart(TT, skillID, casterEntity, targetEntity, casterPos, damageGridPos, damageInfo)
     if finalAttack and not hasFinalAttack then
       hasFinalAttack = true
-      local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+      local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
       local finalAttackEntityID = skillEffectResultContainer:GetFinalAttackEntityID()
-      -- DECOMPILER ERROR at PC164: Unhandled construct in 'MakeBoolean' P1
-
-      if finalAttackEntityID and finalAttackEntityID == targetEntity:GetID() then
-        (self._playSkillService):FreezeFrame(targetEntity)
+      if finalAttackEntityID then
+        if finalAttackEntityID == targetEntity:GetID() then
+          self._playSkillService:FreezeFrame(targetEntity)
+        end
+      else
+        self._playSkillService:FreezeFrame(targetEntity)
       end
     end
-    do
-      ;
-      (self._playSkillService):FreezeFrame(targetEntity)
-      self:TurnToTarget(casterEntity, targetEntity)
-      self:PlayDamageText(damageResult, damageInfo, targetEntity, skillID)
-      do
-        local nTaskID = self:PlayBeHitAnim(TT, damageResult, damageInfo, targetEntity, casterEntity, skillID)
-        ;
-        (table.insert)(totalTaskID, nTaskID)
-        -- DECOMPILER ERROR at PC193: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    self:TurnToTarget(casterEntity, targetEntity)
+    self:PlayDamageText(damageResult, damageInfo, targetEntity, skillID)
+    local nTaskID = self:PlayBeHitAnim(TT, damageResult, damageInfo, targetEntity, casterEntity, skillID)
+    table.insert(totalTaskID, nTaskID)
   end
   return totalTaskID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Play215AndSplashPreDamageInstruction.PlayBeHitEffect = function(self, targetEntity, casterEntity, damageGridPos, damageShowType)
-  -- function num : 0_6
-  local beHitEffectEntity = (self._effectService):CreateBeHitEffect(self._damageHitEffect, targetEntity, damageShowType, damageGridPos)
+function Play215AndSplashPreDamageInstruction:PlayBeHitEffect(targetEntity, casterEntity, damageGridPos, damageShowType)
+  local beHitEffectEntity = self._effectService:CreateBeHitEffect(self._damageHitEffect, targetEntity, damageShowType, damageGridPos)
   if beHitEffectEntity ~= nil then
     local effectCtrl = beHitEffectEntity:EffectController()
     if effectCtrl ~= nil and casterEntity ~= nil then
@@ -209,47 +168,36 @@ Play215AndSplashPreDamageInstruction.PlayBeHitEffect = function(self, targetEnti
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Play215AndSplashPreDamageInstruction.PlayBeHitAnim = function(self, TT, damageResult, damageInfo, targetEntity, casterEntity, skillID)
-  -- function num : 0_7 , upvalues : _ENV
+function Play215AndSplashPreDamageInstruction:PlayBeHitAnim(TT, damageResult, damageInfo, targetEntity, casterEntity, skillID)
   local guard = damageInfo:GetDamageType() == DamageType.Guard
   local miss = damageInfo:GetDamageType() == DamageType.Miss
   if not guard and not miss and self._hitAnimName and not damageInfo:IsHPShieldGuard() then
-    targetEntity:SetAnimatorControllerTriggers({self._hitAnimName})
+    targetEntity:SetAnimatorControllerTriggers({
+      self._hitAnimName
+    })
   end
   local scopeResult = damageResult:GetSkillEffectScopeResult()
   local attackPos = casterEntity:GetRenderGridPosition()
   local beAttackPos = damageResult:GetGridPos()
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:_OnAttackEnd(TT, skillID, casterEntity, targetEntity, attackPos, beAttackPos, damageInfo)
-  local nTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask((self._playSkillService).PlayHitTrap, self._playSkillService, casterEntity, targetEntity)
-  do return nTaskID end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  local nTaskID = GameGlobal.TaskManager():CoreGameStartTask(self._playSkillService.PlayHitTrap, self._playSkillService, casterEntity, targetEntity)
+  return nTaskID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Play215AndSplashPreDamageInstruction.TurnToTarget = function(self, casterEntity, targetEntity)
-  -- function num : 0_8
-  local resvc = (self._world):GetService("RenderEntity")
+function Play215AndSplashPreDamageInstruction:TurnToTarget(casterEntity, targetEntity)
+  local resvc = self._world:GetService("RenderEntity")
   resvc:TurnToTarget(targetEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Play215AndSplashPreDamageInstruction.PlayDamageText = function(self, damageResult, damageInfo, targetEntity, skillID)
-  -- function num : 0_9
+function Play215AndSplashPreDamageInstruction:PlayDamageText(damageResult, damageInfo, targetEntity, skillID)
   local damageGridPos = damageResult:GetGridPos()
-  local damageShowType = (self._playDamageService):SingleOrGrid(skillID)
+  local damageShowType = self._playDamageService:SingleOrGrid(skillID)
   damageInfo:SetShowType(damageShowType)
   damageInfo:SetRenderGridPos(damageGridPos)
-  ;
-  (self._playDamageService):AsyncUpdateHPAndDisplayDamage(targetEntity, damageInfo)
+  self._playDamageService:AsyncUpdateHPAndDisplayDamage(targetEntity, damageInfo)
   local mtrAni = targetEntity:MaterialAnimationComponent()
   if mtrAni then
     mtrAni:PlayHit()
   end
 end
-
-

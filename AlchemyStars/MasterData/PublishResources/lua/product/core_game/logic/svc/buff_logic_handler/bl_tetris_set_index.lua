@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_tetris_set_index.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicTetrisSetIndex", BuffLogicBase)
 BuffLogicTetrisSetIndex = BuffLogicTetrisSetIndex
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicTetrisSetIndex.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicTetrisSetIndex:Constructor(buffInstance, logicParam)
   self._index = logicParam.index
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicTetrisSetIndex.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local featureSvcL = (self._world):GetService("FeatureLogic")
+function BuffLogicTetrisSetIndex:DoLogic(notify)
+  local featureSvcL = self._world:GetService("FeatureLogic")
   local newTetrisType = featureSvcL:SetTetrisIndex(self._index)
-  ;
-  (Log.fatal)("BuffLogicTetrisSetIndex index:", self._index, "NewTetrisType:", newTetrisType)
+  Log.fatal("BuffLogicTetrisSetIndex index:", self._index, "NewTetrisType:", newTetrisType)
   local result = BuffResultTetrisRandom:New(self._index, newTetrisType)
   return result
 end
-
-

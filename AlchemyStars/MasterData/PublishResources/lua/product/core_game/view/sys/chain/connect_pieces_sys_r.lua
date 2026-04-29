@@ -1,79 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/chain/connect_pieces_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ConnectPiecesSystem_Render", ReactiveSystem)
 ConnectPiecesSystem_Render = ConnectPiecesSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ConnectPiecesSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function ConnectPiecesSystem_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectPiecesSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local c = Collector:New({world:GetGroup((world.BW_WEMatchers).PreviewChainPath)}, {"Added"})
+function ConnectPiecesSystem_Render:GetTrigger(world)
+  local c = Collector:New({
+    world:GetGroup(world.BW_WEMatchers.PreviewChainPath)
+  }, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectPiecesSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._world):MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
+function ConnectPiecesSystem_Render:Filter(entity)
+  if self._world:MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
     return false
   end
-  local autoSvc = (self._world):GetService("AutoFight")
-  if entity:HasPreviewChainPath() then
-    return not autoSvc:IsRunning()
-  end
+  local autoSvc = self._world:GetService("AutoFight")
+  return entity:HasPreviewChainPath() and not autoSvc:IsRunning()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectPiecesSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,e in ipairs(entities) do
+function ConnectPiecesSystem_Render:ExecuteEntities(entities)
+  for _, e in ipairs(entities) do
     local entity = e
     local chainPathCmp = entity:PreviewChainPath()
     local chain_path = chainPathCmp:GetPreviewChainPath()
     local piece_type = chainPathCmp:GetPreviewPieceType()
-    if chain_path and #chain_path >= 2 then
+    if chain_path and 2 <= #chain_path then
       local connect_pieces = self:_CalcConnectPieces(e, chain_path, chainPathCmp, piece_type)
       e:ReplaceConnectPieces(connect_pieces, piece_type)
-    else
-      do
-        do
-          if chain_path and #chain_path <= 1 then
-            e:ReplaceConnectPieces({}, PieceType.None)
-          end
-          -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+    elseif chain_path and #chain_path <= 1 then
+      e:ReplaceConnectPieces({}, PieceType.None)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectPiecesSystem_Render._CalcConnectPieces = function(self, e, chain_path, chainPathCmp, piece_type)
-  -- function num : 0_4 , upvalues : _ENV
+function ConnectPiecesSystem_Render:_CalcConnectPieces(e, chain_path, chainPathCmp, piece_type)
   local connect_pieces = {}
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local viewDataEntity = (self._world):GetRenderBoardEntity()
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local viewDataEntity = self._world:GetRenderBoardEntity()
   local waveDataCmpt = viewDataEntity:WaveData()
   local isExitWave = waveDataCmpt:IsExitWave()
   local exitPos = waveDataCmpt:GetExitWavePos()
-  local linkLineSvc = (self._world):GetService("LinkLine")
+  local linkLineSvc = self._world:GetService("LinkLine")
   local isTwoChain = linkLineSvc:IsTwoColorChain()
   local firstElementType, firstElementIndex = chainPathCmp:GetFirstElementData()
   local isSecondColor = false
@@ -84,64 +53,52 @@ ConnectPiecesSystem_Render._CalcConnectPieces = function(self, e, chain_path, ch
     local lastPos = chain_path[#chain_path]
     connect_pieces = self:_CalcSurrondCanLinkList(lastPos, chain_path)
   else
-    do
-      if isExitWave and exitPos == chain_path[(table.count)(chain_path)] then
-        connect_pieces = chain_path
-      else
-        connect_pieces = boardServiceRender:CalcConnectPieces(chain_path, piece_type, chainPathCmp:GetMoveBack(), e)
-      end
-      if firstElementIndex > 0 then
-        for checkIndex = 2, #chain_path do
-          local curPoint = chain_path[checkIndex]
-          local isContain = (table.icontains)(connect_pieces, curPoint)
-          if not isContain then
-            (table.insert)(connect_pieces, curPoint)
-          end
+    if isExitWave and exitPos == chain_path[table.count(chain_path)] then
+      connect_pieces = chain_path
+    else
+      connect_pieces = boardServiceRender:CalcConnectPieces(chain_path, piece_type, chainPathCmp:GetMoveBack(), e)
+    end
+    if 0 < firstElementIndex then
+      for checkIndex = 2, #chain_path do
+        local curPoint = chain_path[checkIndex]
+        local isContain = table.icontains(connect_pieces, curPoint)
+        if not isContain then
+          table.insert(connect_pieces, curPoint)
         end
-      end
-      do
-        return connect_pieces
       end
     end
   end
+  return connect_pieces
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectPiecesSystem_Render._CalcSurrondCanLinkList = function(self, center, chainPath)
-  -- function num : 0_5 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
-  local utilDataSvc = (self._world):GetService("UtilData")
+function ConnectPiecesSystem_Render:_CalcSurrondCanLinkList(center, chainPath)
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local env = self._world:GetPreviewEntity():PreviewEnv()
+  local utilDataSvc = self._world:GetService("UtilData")
   local connect_pieces = {}
   for i = -1, 1 do
     for j = -1, 1 do
       local pos = Vector2(center.x + i, center.y + j)
       if utilDataSvc:IsValidPiecePos(pos) then
         local piece_type = env:GetPieceType(pos)
-        if boardServiceRender:IsPosCanLinkLine(pos, chainPath) then
-          local canLinkLine = not utilDataSvc:IsPosBlockLinkLineForChain(pos)
-        end
+        local canLinkLine = boardServiceRender:IsPosCanLinkLine(pos, chainPath) and not utilDataSvc:IsPosBlockLinkLineForChain(pos)
         if canLinkLine then
-          (table.insert)(connect_pieces, pos)
+          table.insert(connect_pieces, pos)
         end
       end
     end
   end
   for index = 2, #chainPath do
     local curPoint = chainPath[index]
-    local hasPoint = (table.icontains)(connect_pieces, curPoint)
+    local hasPoint = table.icontains(connect_pieces, curPoint)
     if not hasPoint then
-      (table.insert)(connect_pieces, curPoint)
+      table.insert(connect_pieces, curPoint)
     end
   end
   return connect_pieces
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectPiecesSystem_Render._CheckNeedUpdateConnectPieces = function(self, entity)
-  -- function num : 0_6 , upvalues : _ENV
+function ConnectPiecesSystem_Render:_CheckNeedUpdateConnectPieces(entity)
   local chainPathCmp = entity:PreviewChainPath()
   local chainPath = chainPathCmp:GetPreviewChainPath()
   local chainCount = #chainPath
@@ -157,30 +114,25 @@ ConnectPiecesSystem_Render._CheckNeedUpdateConnectPieces = function(self, entity
   if isDimensionDoor then
     return true
   end
-  local previewEntity = (self._world):GetPreviewEntity()
+  local previewEntity = self._world:GetPreviewEntity()
   local envCmpt = previewEntity:PreviewEnv()
   if envCmpt:GetNeedUpdateConnectPieces() then
     envCmpt:SetNeedUpdateConnectPieces(false)
     return true
   end
   local lastPosPieceType = envCmpt:GetPieceType(lastPos)
-  do
-    if lastPosPieceType ~= PieceType.Any then
-      local isAllAny = self:_IsPreChainPathAllAny(chainPath)
-      if isAllAny then
-        return true
-      end
+  if lastPosPieceType ~= PieceType.Any then
+    local isAllAny = self:_IsPreChainPathAllAny(chainPath)
+    if isAllAny then
+      return true
     end
-    return false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectPiecesSystem_Render._IsPreChainPathAllAny = function(self, chainPath)
-  -- function num : 0_7 , upvalues : _ENV
+function ConnectPiecesSystem_Render:_IsPreChainPathAllAny(chainPath)
   local chainCount = #chainPath
-  local previewEntity = (self._world):GetPreviewEntity()
+  local previewEntity = self._world:GetPreviewEntity()
   local envCmpt = previewEntity:PreviewEnv()
   for index = 2, chainCount - 1 do
     local curChainPos = chainPath[index]
@@ -192,11 +144,8 @@ ConnectPiecesSystem_Render._IsPreChainPathAllAny = function(self, chainPath)
   return true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectPiecesSystem_Render._IsCurrentChainExitPos = function(self, lastPos)
-  -- function num : 0_8
-  local viewDataEntity = (self._world):GetRenderBoardEntity()
+function ConnectPiecesSystem_Render:_IsCurrentChainExitPos(lastPos)
+  local viewDataEntity = self._world:GetRenderBoardEntity()
   local waveDataCmpt = viewDataEntity:WaveData()
   local isExitWave = waveDataCmpt:IsExitWave()
   local exitPos = waveDataCmpt:GetExitWavePos()
@@ -206,12 +155,7 @@ ConnectPiecesSystem_Render._IsCurrentChainExitPos = function(self, lastPos)
   return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectPiecesSystem_Render._IsCurrentChainDimensionDoor = function(self, lastPos)
-  -- function num : 0_9
-  local utilData = (self._world):GetService("UtilData")
+function ConnectPiecesSystem_Render:_IsCurrentChainDimensionDoor(lastPos)
+  local utilData = self._world:GetService("UtilData")
   return utilData:IsPosDimensionDoor(lastPos)
 end
-
-

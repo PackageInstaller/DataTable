@@ -1,82 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/SpecialTask/SpecialTask/ui_special_task_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISpecialTaskAwardItem", UICustomWidget)
 UISpecialTaskAwardItem = UISpecialTaskAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISpecialTaskAwardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISpecialTaskAwardItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskAwardItem._GetComponents = function(self)
-  -- function num : 0_1
+function UISpecialTaskAwardItem:_GetComponents()
   self._bg = self:GetUIComponent("Image", "bg")
   self._imgIcon = self:GetUIComponent("RawImageLoader", "ImgIcon")
   self._txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
   self._CountBg = self:GetUIComponent("Image", "CountBg")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskAwardItem.SetData = function(self, roleAsset, callback, lock, id)
-  -- function num : 0_2 , upvalues : _ENV
+function UISpecialTaskAwardItem:SetData(roleAsset, callback, lock, id)
   self.roleAsset = roleAsset
   self._callback = callback
   self._lock = lock
   self._id = id
-  local cfg = (Cfg.cfg_item)[roleAsset[1]]
+  local cfg = Cfg.cfg_item[roleAsset[1]]
   local icon = cfg.Icon
   local count = roleAsset[2]
-  ;
-  (self._imgIcon):LoadImage(icon)
-  ;
-  (self._txtCount):SetText(self:FormatCount(count))
+  self._imgIcon:LoadImage(icon)
+  self._txtCount:SetText(self:FormatCount(count))
   self:_SetImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskAwardItem._SetImage = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_special_task)[self._id]
+function UISpecialTaskAwardItem:_SetImage()
+  local cfg = Cfg.cfg_special_task[self._id]
   local atlasName = cfg.Atlas .. ".spriteatlas"
   self._atlas = self:GetAsset(atlasName, LoadType.SpriteAtlas)
   if not self._atlas then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._bg).sprite = (self._atlas):GetSprite(cfg.AwardBG)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._CountBg).sprite = (self._atlas):GetSprite(cfg.AwardCountBG)
+  self._bg.sprite = self._atlas:GetSprite(cfg.AwardBG)
+  self._CountBg.sprite = self._atlas:GetSprite(cfg.AwardCountBG)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskAwardItem.ImgIconOnClick = function(self, go)
-  -- function num : 0_4
+function UISpecialTaskAwardItem:ImgIconOnClick(go)
   if not self._lock and self._callback then
-    (self._callback)((self.roleAsset)[1], (go.transform).position)
+    self._callback(self.roleAsset[1], go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskAwardItem.FormatCount = function(self, count)
-  -- function num : 0_5 , upvalues : _ENV
+function UISpecialTaskAwardItem:FormatCount(count)
   if count < 1000 then
     return count
   end
-  return (math.floor)(count / 1000) .. "k"
+  return math.floor(count / 1000) .. "k"
 end
-
-

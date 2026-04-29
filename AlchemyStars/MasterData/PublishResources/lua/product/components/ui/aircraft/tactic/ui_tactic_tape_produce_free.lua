@@ -1,109 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/tactic/ui_tactic_tape_produce_free.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITacticTapeProduceFree", UIController)
 UITacticTapeProduceFree = UITacticTapeProduceFree
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITacticTapeProduceFree.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UITacticTapeProduceFree:OnShow(uiParams)
   self:InitWidget()
   self._airModule = self:GetModule(AircraftModule)
-  self._tacticRoom = (self._airModule):GetRoomByRoomType(AirRoomType.TacticRoom)
+  self._tacticRoom = self._airModule:GetRoomByRoomType(AirRoomType.TacticRoom)
   self._timeModule = self:GetModule(SvrTimeModule)
-  ;
-  (self.times):SetText((StringTable.Get)("str_aircraft_tactic_free_make_count", (self._tacticRoom):GetWeeklyFreeMakeCount(), (self._tacticRoom):GetWeeklyFreeMakeLimit()))
+  self.times:SetText(StringTable.Get("str_aircraft_tactic_free_make_count", self._tacticRoom:GetWeeklyFreeMakeCount(), self._tacticRoom:GetWeeklyFreeMakeLimit()))
   self._timerHolder = UITimerHolder:New()
-  ;
-  (self._timerHolder):StartTimerInfinite("Countdown", 1000, function()
-    -- function num : 0_0_0 , upvalues : self
+  self._timerHolder:StartTimerInfinite("Countdown", 1000, function()
     self:tick()
-  end
-)
+  end)
   self:tick()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeProduceFree.OnHide = function(self)
-  -- function num : 0_1
-  (self._timerHolder):Dispose()
+function UITacticTapeProduceFree:OnHide()
+  self._timerHolder:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeProduceFree.tick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local now = (math.floor)((self._timeModule):GetServerTime() / 1000)
-  local timeStr = (HelperProxy:GetInstance()):FormatTime_3((self._tacticRoom):GetNextResetTime() - now)
+function UITacticTapeProduceFree:tick()
+  local now = math.floor(self._timeModule:GetServerTime() / 1000)
+  local timeStr = HelperProxy:GetInstance():FormatTime_3(self._tacticRoom:GetNextResetTime() - now)
   if self._timeStr ~= timeStr then
     self._timeStr = timeStr
-    ;
-    (self.countdown):SetText((StringTable.Get)("str_aircraft_tactic_free_make_time", timeStr))
+    self.countdown:SetText(StringTable.Get("str_aircraft_tactic_free_make_time", timeStr))
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeProduceFree.InitWidget = function(self)
-  -- function num : 0_3
+function UITacticTapeProduceFree:InitWidget()
   self.times = self:GetUIComponent("UILocalizationText", "times")
   self.countdown = self:GetUIComponent("UILocalizationText", "countdown")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeProduceFree.cancelBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UITacticTapeProduceFree:cancelBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeProduceFree.okBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  local count = #(self._tacticRoom):GetCartridgeList() + (self._tacticRoom):GetCartridgeGiftCount()
-  if count == (self._tacticRoom):GetCartridgeLimit() - 1 then
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_aircraft_tactic_free_make_tip2"), function(param)
-    -- function num : 0_5_0 , upvalues : self
-    self:StartTask(self.makeFree, self)
-  end
-, nil, function(param)
-    -- function num : 0_5_1
-  end
-, nil)
+function UITacticTapeProduceFree:okBtnOnClick(go)
+  local count = #self._tacticRoom:GetCartridgeList() + self._tacticRoom:GetCartridgeGiftCount()
+  if count == self._tacticRoom:GetCartridgeLimit() - 1 then
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_aircraft_tactic_free_make_tip2"), function(param)
+      self:StartTask(self.makeFree, self)
+    end, nil, function(param)
+    end, nil)
   else
     self:StartTask(self.makeFree, self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeProduceFree.makeFree = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function UITacticTapeProduceFree:makeFree(TT)
   self:Lock(self:GetName())
-  local res = (self._airModule):RequestMakeCartridgeFree(TT)
+  local res = self._airModule:RequestMakeCartridgeFree(TT)
   self:UnLock(self:GetName())
   if res:GetSucc() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_aircraft_tactic_free_make_success"))
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftTacticRefreshTapeList)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshRoomUI, (self._tacticRoom):SpaceId())
+    ToastManager.ShowToast(StringTable.Get("str_aircraft_tactic_free_make_success"))
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftTacticRefreshTapeList)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshRoomUI, self._tacticRoom:SpaceId())
     self:CloseDialog()
   else
-    ;
-    (self._airModule):GetErrorMsg(res:GetResult())
+    self._airModule:GetErrorMsg(res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeProduceFree.blankOnClick = function(self, go)
-  -- function num : 0_7
+function UITacticTapeProduceFree:blankOnClick(go)
   self:CloseDialog()
 end
-
-

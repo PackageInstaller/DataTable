@@ -1,149 +1,150 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_teleport.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 require("skill_effect_param_base")
-local EnumSkillEffectParam_Teleport = {PickUp = 0, User = 1, CrossFarest = 2, Forward = 3, UserPointArray = 4, SkillRange_Far = 5, SkillRange_Near = 6, SkillScopePos = 7, TeleportTargetToCasterPos = 8, TeleportTargetToPickPos = 9, TeleportTargetToSquareRing = 10, TeleportExitBoard = 11, CurPosBeforeSkillRangeNearest = 12, SkillScopePosFirst = 13, TargetPos = 14, UseTeleportAndSummonTrapLastResult = 15, SkillScopeRandPos = 16, RoninKenshiStep = 17, NingKingJump = 18, TeleportMountForward = 19, UseMountTeleportExtraPos = 20, CasterGridDirectionForward = 21, TeleportPosByTargetPos = 22, TeleportTargetToCasterPosValid = 23, Boss2904001 = 24, TeleportTargetToFirstPickPos = 25, TargetAroundNearestCaster = 26, TargetPosWithCasterBody = 27, PickUpWithPath = 28, TargetAroundTrap = 29, TargetAroundCalcCurBodyAreaAndDirCanDiffusion = 30, TrunToTargetOnSite = 31, TeleportWithScopeAndTrunToTarget = 32, FourHorsemenApproachPlayer = 33, FourHorsemenAvoidPlayer = 34, BossDriller = 35, HostOriginalPosSquareRing = 36, NightKingTeleportRecordCalcState = 37, NightKingDoubleCrossTeleport = 38, NightKingTeleportWithPath = 39, TargetTeleportSelectPos = 40, PickUpAndSetDir = 41, Boss2905701Move = 42, Boss2905701BackToPos = 43, Boss2905701MovePlayerToTrap = 44, SkillRange_FarAndDir = 45, SkillRangeFixed4 = 46, CasterGridDirectionForward2 = 47, JumpBack = 48, Monster2003801 = 49, Boss2906201 = 50, AlignTargetX = 51, AlignTargetY = 52, MultiJumpBack = 53, AngleFreeLineThroughTeamToEdge = 54, JumpToAppointDir = 55, ThroughTarget = 56, SkillRangeFarNoBlock = 57, AntiClockWiseOnBoardEdge = 58, ScopeNearestSelectPos = 59}
+local EnumSkillEffectParam_Teleport = {
+  PickUp = 0,
+  User = 1,
+  CrossFarest = 2,
+  Forward = 3,
+  UserPointArray = 4,
+  SkillRange_Far = 5,
+  SkillRange_Near = 6,
+  SkillScopePos = 7,
+  TeleportTargetToCasterPos = 8,
+  TeleportTargetToPickPos = 9,
+  TeleportTargetToSquareRing = 10,
+  TeleportExitBoard = 11,
+  CurPosBeforeSkillRangeNearest = 12,
+  SkillScopePosFirst = 13,
+  TargetPos = 14,
+  UseTeleportAndSummonTrapLastResult = 15,
+  SkillScopeRandPos = 16,
+  RoninKenshiStep = 17,
+  NingKingJump = 18,
+  TeleportMountForward = 19,
+  UseMountTeleportExtraPos = 20,
+  CasterGridDirectionForward = 21,
+  TeleportPosByTargetPos = 22,
+  TeleportTargetToCasterPosValid = 23,
+  Boss2904001 = 24,
+  TeleportTargetToFirstPickPos = 25,
+  TargetAroundNearestCaster = 26,
+  TargetPosWithCasterBody = 27,
+  PickUpWithPath = 28,
+  TargetAroundTrap = 29,
+  TargetAroundCalcCurBodyAreaAndDirCanDiffusion = 30,
+  TrunToTargetOnSite = 31,
+  TeleportWithScopeAndTrunToTarget = 32,
+  FourHorsemenApproachPlayer = 33,
+  FourHorsemenAvoidPlayer = 34,
+  BossDriller = 35,
+  HostOriginalPosSquareRing = 36,
+  NightKingTeleportRecordCalcState = 37,
+  NightKingDoubleCrossTeleport = 38,
+  NightKingTeleportWithPath = 39,
+  TargetTeleportSelectPos = 40,
+  PickUpAndSetDir = 41,
+  Boss2905701Move = 42,
+  Boss2905701BackToPos = 43,
+  Boss2905701MovePlayerToTrap = 44,
+  SkillRange_FarAndDir = 45,
+  SkillRangeFixed4 = 46,
+  CasterGridDirectionForward2 = 47,
+  JumpBack = 48,
+  Monster2003801 = 49,
+  Boss2906201 = 50,
+  AlignTargetX = 51,
+  AlignTargetY = 52,
+  MultiJumpBack = 53,
+  AngleFreeLineThroughTeamToEdge = 54,
+  JumpToAppointDir = 55,
+  ThroughTarget = 56,
+  SkillRangeFarNoBlock = 57,
+  AntiClockWiseOnBoardEdge = 58,
+  ScopeNearestSelectPos = 59
+}
 _enum("EnumSkillEffectParam_Teleport", EnumSkillEffectParam_Teleport)
 _class("SkillEffectParam_Teleport", SkillEffectParamBase)
 SkillEffectParam_Teleport = SkillEffectParam_Teleport
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillEffectParam_Teleport.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
-  if not t.teleport then
-    self.m_nTeleportType = t.Teleport
-    self.m_posUser = t.userPoint
-    self.m_dirUser = t.userDir
-    self.m_resetDirection = tonumber(t.resetDirection) == 1
-    self._trapID = t.trapID or 0
-    self._boss2904001CrossMaxLength = t.boss2904001CrossMaxLength
-    self._boss2904001RotatedCrossMaxLength = t.boss2904001RotatedCrossMaxLength
-    self._horsemenMonsterClassID = t.horsemenMonsterClassID
-    self._bossNightKingPathTrapID = t.bossNightKingPathTrapID
-    self._checkBlock = t.checkBlock or 0
-    self._boss2905701MoveTrapID = t.boss2905701MoveTrapID
-    self._boss2905701BackToPosX = t.boss2905701BackToPosX
-    self._boss2905701BackToPosY = t.boss2905701BackToPosY
-    self._boss2905701MovePlayerToTrapIDArray = t.boss2905701MovePlayerToTrapIDArray
-    self._forwardDis = t.forwardDis or 1
-    self._monster2003801CheckSkillID = t.monster2003801CheckSkillID
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
-  end
+function SkillEffectParam_Teleport:Constructor(t)
+  self.m_nTeleportType = t.teleport or t.Teleport
+  self.m_posUser = t.userPoint
+  self.m_dirUser = t.userDir
+  self.m_resetDirection = tonumber(t.resetDirection) == 1
+  self._trapID = t.trapID or 0
+  self._boss2904001CrossMaxLength = t.boss2904001CrossMaxLength
+  self._boss2904001RotatedCrossMaxLength = t.boss2904001RotatedCrossMaxLength
+  self._horsemenMonsterClassID = t.horsemenMonsterClassID
+  self._bossNightKingPathTrapID = t.bossNightKingPathTrapID
+  self._checkBlock = t.checkBlock or 0
+  self._boss2905701MoveTrapID = t.boss2905701MoveTrapID
+  self._boss2905701BackToPosX = t.boss2905701BackToPosX
+  self._boss2905701BackToPosY = t.boss2905701BackToPosY
+  self._boss2905701MovePlayerToTrapIDArray = t.boss2905701MovePlayerToTrapIDArray
+  self._forwardDis = t.forwardDis or 1
+  self._monster2003801CheckSkillID = t.monster2003801CheckSkillID
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_Teleport.GetForwardDis = function(self)
-  -- function num : 0_1
+function SkillEffectParam_Teleport:GetForwardDis()
   return self._forwardDis
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_Teleport.GetEffectType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectParam_Teleport:GetEffectType()
   return SkillEffectType.Teleport
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_Teleport.GetTeleportType = function(self)
-  -- function num : 0_3
+function SkillEffectParam_Teleport:GetTeleportType()
   return self.m_nTeleportType
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_Teleport.GetUserPoint = function(self)
-  -- function num : 0_4
+function SkillEffectParam_Teleport:GetUserPoint()
   return self.m_posUser
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_Teleport.GetUserDir = function(self)
-  -- function num : 0_5
+function SkillEffectParam_Teleport:GetUserDir()
   return self.m_dirUser
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_Teleport.IsResetDirection = function(self)
-  -- function num : 0_6
+function SkillEffectParam_Teleport:IsResetDirection()
   return self.m_resetDirection
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_Teleport.GetTrapID = function(self)
-  -- function num : 0_7
+function SkillEffectParam_Teleport:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_Teleport.GetBoss2904001CrossMaxLength = function(self)
-  -- function num : 0_8
+function SkillEffectParam_Teleport:GetBoss2904001CrossMaxLength()
   return self._boss2904001CrossMaxLength
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_Teleport.GetBoss2904001RotatedCrossMaxLength = function(self)
-  -- function num : 0_9
+function SkillEffectParam_Teleport:GetBoss2904001RotatedCrossMaxLength()
   return self._boss2904001RotatedCrossMaxLength
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_Teleport.GetHorsemenMonsterClassID = function(self)
-  -- function num : 0_10
+function SkillEffectParam_Teleport:GetHorsemenMonsterClassID()
   return self._horsemenMonsterClassID
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_Teleport.GetBossNightKingPathTrapID = function(self)
-  -- function num : 0_11
+function SkillEffectParam_Teleport:GetBossNightKingPathTrapID()
   return self._bossNightKingPathTrapID
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_Teleport.GetCheckBlock = function(self)
-  -- function num : 0_12
+function SkillEffectParam_Teleport:GetCheckBlock()
   return self._checkBlock
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_Teleport.GetBoss2905701MoveTrapID = function(self)
-  -- function num : 0_13
+function SkillEffectParam_Teleport:GetBoss2905701MoveTrapID()
   return self._boss2905701MoveTrapID
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_Teleport.GetBoss2905701BackToPos = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  return (Vector2.New)(self._boss2905701BackToPosX, self._boss2905701BackToPosY)
+function SkillEffectParam_Teleport:GetBoss2905701BackToPos()
+  return Vector2.New(self._boss2905701BackToPosX, self._boss2905701BackToPosY)
 end
 
--- DECOMPILER ERROR at PC124: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_Teleport.GetBoss2905701MovePlayerToTrapIDArray = function(self)
-  -- function num : 0_15
+function SkillEffectParam_Teleport:GetBoss2905701MovePlayerToTrapIDArray()
   return self._boss2905701MovePlayerToTrapIDArray
 end
 
--- DECOMPILER ERROR at PC127: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_Teleport.GetMonster2003801CheckSkillID = function(self)
-  -- function num : 0_16
+function SkillEffectParam_Teleport:GetMonster2003801CheckSkillID()
   return self._monster2003801CheckSkillID
 end
-
-

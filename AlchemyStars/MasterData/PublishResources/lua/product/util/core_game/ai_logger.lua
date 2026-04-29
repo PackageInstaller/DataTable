@@ -1,157 +1,161 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/ai_logger.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AILogger", Object)
 AILogger = AILogger
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AILogger.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function AILogger:Constructor(world)
   self._logs = {}
   self._world = world
-  self._logDate = (os.date)("%y%m%d%H%M%S")
+  self._logDate = os.date("%y%m%d%H%M%S")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AILogger.SaveAILog = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function AILogger:SaveAILog()
   if not EDITOR then
-    return 
+    return
   end
-  ;
-  ((self._world):GetDetailMatchLogger()):SaveAILog()
+  self._world:GetDetailMatchLogger():SaveAILog()
   if not _G.ENABLE_MATCH_LOG then
-    return 
+    return
   end
   local dir = EngineGameHelper.StoragePath .. "AILog/"
-  ;
-  (App.MakeDir)(dir)
+  App.MakeDir(dir)
   local _filePath = dir .. "AILog" .. self._logDate .. ".lua"
-  local file = (io.open)(_filePath, "w+")
+  local file = io.open(_filePath, "w+")
   file:write("AIDebugInfo={")
-  file:write("\n\t")
-  for monsterID,i in pairs(self._logs) do
-    local stMonsterID = "  [ \'" .. monsterID .. "\' ] = \n\t  { \n\t"
+  file:write([[
+
+	]])
+  for monsterID, i in pairs(self._logs) do
+    local stMonsterID = "  [ '" .. monsterID .. [[
+' ] = 
+	  { 
+	]]
     file:write(stMonsterID)
-    for aiConfig,o in pairs(i) do
-      local stAIConfig = "[ " .. tostring(aiConfig) .. " ] = \n\t  { \n\t"
+    for aiConfig, o in pairs(i) do
+      local stAIConfig = "[ " .. tostring(aiConfig) .. [[
+ ] = 
+	  { 
+	]]
       file:write(stAIConfig)
-      for round,q in ipairs(o) do
-        local stRound = "  [ " .. tostring(round) .. " ] = \n\t  { \n\t"
+      for round, q in ipairs(o) do
+        local stRound = "  [ " .. tostring(round) .. [[
+ ] = 
+	  { 
+	]]
         file:write(stRound)
-        for runCount,x in ipairs(q) do
-          local stRunCount = "    [ " .. tostring(runCount) .. " ] = \n\t { \n\t"
+        for runCount, x in ipairs(q) do
+          local stRunCount = "    [ " .. tostring(runCount) .. [[
+ ] = 
+	 { 
+	]]
           file:write(stRunCount)
-          for index,t in ipairs(x) do
-            local stIndex = "    [ " .. tostring(index) .. " ] = \n\t { \n\t"
+          for index, t in ipairs(x) do
+            local stIndex = "    [ " .. tostring(index) .. [[
+ ] = 
+	 { 
+	]]
             file:write(stIndex)
-            local st = "     TreeID=" .. tostring(t.TreeID) .. ",\n\t"
+            local st = "     TreeID=" .. tostring(t.TreeID) .. [[
+,
+	]]
             file:write(st)
-            st = "     Type=" .. tostring(t.Type) .. ",\n\t"
+            st = "     Type=" .. tostring(t.Type) .. [[
+,
+	]]
             file:write(st)
-            do
-              if t.SlotID then
-                local slot = "     SlotID=" .. tostring(t.SlotID) .. ",\n\t"
-                file:write(slot)
-              end
-              do
-                do
-                  if t.Info then
-                    local Info = "     Info=\'" .. tostring(t.Info) .. "\',\n\t"
-                    file:write(Info)
-                  end
-                  file:write("\n\t")
-                  file:write("},")
-                  -- DECOMPILER ERROR at PC149: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC149: LeaveBlock: unexpected jumping out DO_STMT
-
-                end
-              end
+            if t.SlotID then
+              local slot = "     SlotID=" .. tostring(t.SlotID) .. [[
+,
+	]]
+              file:write(slot)
             end
+            if t.Info then
+              local Info = "     Info='" .. tostring(t.Info) .. [[
+',
+	]]
+              file:write(Info)
+            end
+            file:write([[
+
+	]])
+            file:write("},")
           end
-          file:write("\n\t")
+          file:write([[
+
+	]])
           file:write("},")
         end
-        file:write("\n\t")
+        file:write([[
+
+	]])
         file:write("},")
-        file:write("\n\t")
+        file:write([[
+
+	]])
       end
-      file:write("\n\t")
+      file:write([[
+
+	]])
       file:write("},")
-      file:write("\n\t")
+      file:write([[
+
+	]])
     end
-    file:write("\n\t")
+    file:write([[
+
+	]])
     file:write("},")
-    file:write("\n\t")
+    file:write([[
+
+	]])
   end
   file:write("}")
-  file:write("\n\t")
-  ;
-  (io.close)(file)
+  file:write([[
+
+	]])
+  io.close(file)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AILogger.InitDataStruct = function(self, monsterID, entityID, round, runCount, aiConfigID)
-  -- function num : 0_2 , upvalues : _ENV
+function AILogger:InitDataStruct(monsterID, entityID, round, runCount, aiConfigID)
   local monster = tostring(monsterID) .. "." .. tostring(entityID)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R7 in 'UnsetPending'
-
-  if not (self._logs)[monster] then
-    (self._logs)[monster] = {}
+  if not self._logs[monster] then
+    self._logs[monster] = {}
   end
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R7 in 'UnsetPending'
-
-  if not ((self._logs)[monster])[aiConfigID] then
-    ((self._logs)[monster])[aiConfigID] = {}
+  if not self._logs[monster][aiConfigID] then
+    self._logs[monster][aiConfigID] = {}
   end
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R7 in 'UnsetPending'
-
-  if not (((self._logs)[monster])[aiConfigID])[round] then
-    (((self._logs)[monster])[aiConfigID])[round] = {}
+  if not self._logs[monster][aiConfigID][round] then
+    self._logs[monster][aiConfigID][round] = {}
   end
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R7 in 'UnsetPending'
-
-  if not ((((self._logs)[monster])[aiConfigID])[round])[runCount] then
-    ((((self._logs)[monster])[aiConfigID])[round])[runCount] = {}
+  if not self._logs[monster][aiConfigID][round][runCount] then
+    self._logs[monster][aiConfigID][round][runCount] = {}
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AILogger.AddToLogFile = function(self, monsterID, entityID, round, runCount, aiConfigID, t)
-  -- function num : 0_3 , upvalues : _ENV
+function AILogger:AddToLogFile(monsterID, entityID, round, runCount, aiConfigID, t)
   local monster = tostring(monsterID) .. "." .. tostring(entityID)
-  ;
-  (table.insert)(((((self._logs)[monster])[aiConfigID])[round])[runCount], t)
+  table.insert(self._logs[monster][aiConfigID][round][runCount], t)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AILogger.AddAIStreamLog = function(self, monsterID, entityID, round, runCount, aiConfigID, aiTreeID, slotID)
-  -- function num : 0_4 , upvalues : _ENV
+function AILogger:AddAIStreamLog(monsterID, entityID, round, runCount, aiConfigID, aiTreeID, slotID)
   self:InitDataStruct(monsterID, entityID, round, runCount, aiConfigID)
-  local t = {Type = AILogDataType.AISteamLog, TreeID = aiTreeID, SlotID = slotID}
+  local t = {
+    Type = AILogDataType.AISteamLog,
+    TreeID = aiTreeID,
+    SlotID = slotID
+  }
   self:AddToLogFile(monsterID, entityID, round, runCount, aiConfigID, t)
-  ;
-  ((self._world):GetDetailMatchLogger()):AddAIStreamLog(monsterID, entityID, round, runCount, aiConfigID, aiTreeID, slotID)
+  self._world:GetDetailMatchLogger():AddAIStreamLog(monsterID, entityID, round, runCount, aiConfigID, aiTreeID, slotID)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AILogger.AddAIDebugInfoLog = function(self, monsterID, entityID, round, runCount, aiConfigID, aiTreeID, info)
-  -- function num : 0_5 , upvalues : _ENV
+function AILogger:AddAIDebugInfoLog(monsterID, entityID, round, runCount, aiConfigID, aiTreeID, info)
   self:InitDataStruct(monsterID, entityID, round, runCount, aiConfigID)
-  local t = {Type = AILogDataType.AIDebugLog, TreeID = aiTreeID, Info = info}
+  local t = {
+    Type = AILogDataType.AIDebugLog,
+    TreeID = aiTreeID,
+    Info = info
+  }
   self:AddToLogFile(monsterID, entityID, round, runCount, aiConfigID, t)
-  ;
-  ((self._world):GetDetailMatchLogger()):AddAIDebugInfoLog(monsterID, entityID, round, runCount, aiConfigID, aiTreeID, info)
+  self._world:GetDetailMatchLogger():AddAIDebugInfoLog(monsterID, entityID, round, runCount, aiConfigID, aiTreeID, info)
 end
 
 local AILogDataType = {AISteamLog = 1, AIDebugLog = 2}
 _enum("AILogDataType", AILogDataType)
-

@@ -1,36 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_diff_mission/ui_diff_result_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiffResultItem", UICustomWidget)
 UIDiffResultItem = UIDiffResultItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiffResultItem.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UIDiffResultItem:OnShow(uiParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffResultItem.GetComponents = function(self)
-  -- function num : 0_1
+function UIDiffResultItem:GetComponents()
   self._desc = self:GetUIComponent("RollingText", "desc")
   self._animGo = self:GetGameObject("finish")
-  ;
-  (self._animGo):SetActive(false)
+  self._animGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffResultItem.SetData = function(self, tex, anim)
-  -- function num : 0_2
+function UIDiffResultItem:SetData(tex, anim)
   self:GetComponents()
-  ;
-  (self._desc):RefreshText(tex)
+  self._desc:RefreshText(tex)
   if anim then
-    (self._animGo):SetActive(true)
+    self._animGo:SetActive(true)
   end
 end
-
-

@@ -1,12 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_skill_num_param_by_combo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local _RevertChangesByBuffSeq = function(world, buffInstance, buffSeq)
-  -- function num : 0_0
+local function _RevertChangesByBuffSeq(world, buffInstance, buffSeq)
   if not buffInstance._cfg_change_skill_numerical_parameter_by_combo then
-    return 
+    return
   end
   local results = buffInstance._cfg_change_skill_numerical_parameter_by_combo
   local cfgdecorsvc = world:GetService("ConfigDecoration")
@@ -18,64 +12,53 @@ end
 
 _class("BuffLogicChangeSkillNumericalParameterByCombo", BuffLogicBase)
 BuffLogicChangeSkillNumericalParameterByCombo = BuffLogicChangeSkillNumericalParameterByCombo
--- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicChangeSkillNumericalParameterByCombo.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeSkillNumericalParameterByCombo:Constructor(buffInstance, logicParam)
   if type(logicParam.skillID) == "number" then
-    self._skillID = {logicParam.skillID}
+    self._skillID = {
+      logicParam.skillID
+    }
   else
     self._skillID = logicParam.skillID
   end
   self._effectIndex = logicParam.effectIndex
-  if not logicParam.append then
-    self._append = {}
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R3 in 'UnsetPending'
-
-    if not (self._buffInstance)._cfg_change_skill_numerical_parameter_by_combo then
-      (self._buffInstance)._cfg_change_skill_numerical_parameter_by_combo = {}
-    end
+  self._append = logicParam.append or {}
+  if not self._buffInstance._cfg_change_skill_numerical_parameter_by_combo then
+    self._buffInstance._cfg_change_skill_numerical_parameter_by_combo = {}
   end
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeSkillNumericalParameterByCombo.DoLogic = function(self)
-  -- function num : 0_2 , upvalues : _RevertChangesByBuffSeq, _ENV
-  local bsvc = (self:GetWorld()):GetService("Battle")
+function BuffLogicChangeSkillNumericalParameterByCombo:DoLogic()
+  local bsvc = self:GetWorld():GetService("Battle")
   local combo = bsvc:GetLogicComboNum()
   _RevertChangesByBuffSeq(self:GetWorld(), self._buffInstance, self:GetBuffSeq())
   local append = {}
-  for key,value in pairs(self._append) do
+  for key, value in pairs(self._append) do
     append[key] = value * combo
   end
-  for _,skillID in ipairs(self._skillID) do
-    local cfgdecorsvc = (self:GetWorld()):GetService("ConfigDecoration")
+  for _, skillID in ipairs(self._skillID) do
+    local cfgdecorsvc = self:GetWorld():GetService("ConfigDecoration")
     cfgdecorsvc:DecorateSkillEffect(self:GetBuffSeq(), self:GetEntity(), skillID, self._effectIndex, append, {}, {}, {})
-    local result = {buffSeqID = self:GetBuffSeq(), entityID = (self:GetEntity()):GetID(), skillID = skillID, effectIndex = self._effectIndex, append = append, 
-set = {}
-, 
-remove = {}
-}
-    ;
-    (table.insert)((self._buffInstance)._cfg_change_skill_numerical_parameter_by_combo, result)
+    local result = {
+      buffSeqID = self:GetBuffSeq(),
+      entityID = self:GetEntity():GetID(),
+      skillID = skillID,
+      effectIndex = self._effectIndex,
+      append = append,
+      set = {},
+      remove = {}
+    }
+    table.insert(self._buffInstance._cfg_change_skill_numerical_parameter_by_combo, result)
   end
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeSkillNumericalParameterByCombo.DoOverlap = function(self)
-  -- function num : 0_3
+function BuffLogicChangeSkillNumericalParameterByCombo:DoOverlap()
   return self:DoLogic()
 end
 
 _class("BuffLogicRevertSkillNumericalParameterByCombo", BuffLogicBase)
 BuffLogicRevertSkillNumericalParameterByCombo = BuffLogicRevertSkillNumericalParameterByCombo
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicRevertSkillNumericalParameterByCombo.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _RevertChangesByBuffSeq
+function BuffLogicRevertSkillNumericalParameterByCombo:DoLogic()
   _RevertChangesByBuffSeq(self:GetWorld(), self._buffInstance, self:GetBuffSeq())
 end
-
-

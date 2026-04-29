@@ -1,11 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/n12/cfg_n12_entrust_anim.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, StageNodeDelayTime = 2, StageLineDelayTime = 3, StageLineTime = 4, StageExploreTime = 5, LevelNodeDelayTime = 6, LevelLineTime = 7}
+local key = {
+  ID = 1,
+  StageNodeDelayTime = 2,
+  StageLineDelayTime = 3,
+  StageLineTime = 4,
+  StageExploreTime = 5,
+  LevelNodeDelayTime = 6,
+  LevelLineTime = 7
+}
 local config = {
-{1, 66, 100, 100, 500, 300, 333}
+  {
+    1,
+    66,
+    100,
+    100,
+    500,
+    300,
+    333
+  }
 }
 return config, "ID", key
-

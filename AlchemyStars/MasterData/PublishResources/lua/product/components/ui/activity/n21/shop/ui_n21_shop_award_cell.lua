@@ -1,76 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21/shop/ui_n21_shop_award_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN21ShopAwardCell", UICustomWidget)
 UIN21ShopAwardCell = UIN21ShopAwardCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN21ShopAwardCell.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN21ShopAwardCell:OnShow(uiParams)
   self.atlas = self:GetAsset("UIN21.spriteatlas", LoadType.SpriteAtlas)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21ShopAwardCell._GetComponents = function(self)
-  -- function num : 0_1
+function UIN21ShopAwardCell:_GetComponents()
   self.itemIcon = self:GetUIComponent("RawImageLoader", "ItemIcon")
   self.itemNumText = self:GetUIComponent("UILocalizationText", "ItemNumText")
   self.itemNumArea = self:GetGameObject("ItemNumArea")
   self._star = self:GetGameObject("BigAwardFlag")
   self._starImg = self:GetUIComponent("Image", "BigAwardFlag")
   self.restNumText = self:GetUIComponent("UILocalizationText", "RestNumText")
-  self._animation = ((self.view).gameObject):GetComponent("Animation")
+  self._animation = self.view.gameObject:GetComponent("Animation")
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "Animation")
   self._img = self:GetUIComponent("Image", "Bg")
   self._itemNumBgImg = self:GetUIComponent("Image", "ItemNumBg")
   self.go = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21ShopAwardCell.InitData = function(self, data, itemInfoCallback, unlock, delayTime)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN21ShopAwardCell:InitData(data, itemInfoCallback, unlock, delayTime)
   self._data = data
   self._unlock = unlock
-  self._itemId = (self._data).m_item_id
-  self._itemCount = (self._data).m_lottery_limit_count
-  self._itemRestCount = (self._data).m_lottery_count
+  self._itemId = self._data.m_item_id
+  self._itemCount = self._data.m_lottery_limit_count
+  self._itemRestCount = self._data.m_lottery_count
   self._itemInfoCallback = itemInfoCallback
   self:FillUi()
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
-  if delayTime > 0 then
-    (self._canvasGroup).alpha = 0
+  if 0 < delayTime then
+    self._canvasGroup.alpha = 0
     if self._timer then
-      ((GameGlobal.Timer)()):CancelEvent(self._timer)
+      GameGlobal.Timer():CancelEvent(self._timer)
     end
-    self._timer = ((GameGlobal.Timer)()):AddEvent(delayTime * 60, function()
-    -- function num : 0_2_0 , upvalues : self
-    (self._animation):Play("UIN21ShopAwardCell")
-  end
-)
+    self._timer = GameGlobal.Timer():AddEvent(delayTime * 60, function()
+      self._animation:Play("UIN21ShopAwardCell")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21ShopAwardCell.FillUi = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local itemCfg = (Cfg.cfg_item)[self._itemId]
+function UIN21ShopAwardCell:FillUi()
+  local itemCfg = Cfg.cfg_item[self._itemId]
   if itemCfg then
     local res = itemCfg.Icon
-    ;
-    (self.itemIcon):LoadImage(res)
-    local itemCount = (self._data).m_count
-    local showNumberTex, showTimesTex, bgSprite, starSprite, numSprite = nil, nil, nil, nil, nil
+    self.itemIcon:LoadImage(res)
+    local itemCount = self._data.m_count
+    local showNumberTex, showTimesTex, bgSprite, starSprite, numSprite
     if self._unlock and self._itemRestCount > 0 then
       showNumberTex = "<color=#ce8a4e>" .. itemCount .. "</color>"
       showTimesTex = "<color=#eee3d6>" .. self._itemRestCount .. "/" .. self._itemCount .. "</color>"
-      if (self._data).m_is_big_reward then
+      if self._data.m_is_big_reward then
         bgSprite = "n21_shop_goods1"
       else
         bgSprite = "n21_shop_goods3"
@@ -84,48 +63,28 @@ UIN21ShopAwardCell.FillUi = function(self)
       starSprite = "n21_shop_star2"
       numSprite = "n21_shop_count2"
     end
-    ;
-    (self.itemNumText):SetText(showNumberTex)
-    ;
-    (self.restNumText):SetText(showTimesTex)
-    -- DECOMPILER ERROR at PC66: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._img).sprite = (self.atlas):GetSprite(bgSprite)
-    -- DECOMPILER ERROR at PC72: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._itemNumBgImg).sprite = (self.atlas):GetSprite(numSprite)
-    if (self._data).m_is_big_reward then
-      (self._star):SetActive(true)
-      -- DECOMPILER ERROR at PC86: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._starImg).sprite = (self.atlas):GetSprite(starSprite)
+    self.itemNumText:SetText(showNumberTex)
+    self.restNumText:SetText(showTimesTex)
+    self._img.sprite = self.atlas:GetSprite(bgSprite)
+    self._itemNumBgImg.sprite = self.atlas:GetSprite(numSprite)
+    if self._data.m_is_big_reward then
+      self._star:SetActive(true)
+      self._starImg.sprite = self.atlas:GetSprite(starSprite)
     else
-      ;
-      (self._star):SetActive(false)
+      self._star:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21ShopAwardCell.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN21ShopAwardCell:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21ShopAwardCell.BgOnClick = function(self, go)
-  -- function num : 0_5
+function UIN21ShopAwardCell:BgOnClick(go)
   if self._itemInfoCallback then
-    (self._itemInfoCallback)((self._data).m_item_id, (go.transform).position)
+    self._itemInfoCallback(self._data.m_item_id, go.transform.position)
   end
 end
-
-

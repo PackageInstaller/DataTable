@@ -1,171 +1,110 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/dispatch/ui_n34_dispatch_localdb.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN34DispatchLocalDb", Object)
 UIN34DispatchLocalDb = UIN34DispatchLocalDb
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN34DispatchLocalDb.Constructor = function(self)
-  -- function num : 0_0
+function UIN34DispatchLocalDb:Constructor()
   self._Viewed = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchLocalDb.GetModule = function(self, gameModuleProto)
-  -- function num : 0_1 , upvalues : _ENV
-  return (GameGlobal.GetModule)(gameModuleProto)
+function UIN34DispatchLocalDb:GetModule(gameModuleProto)
+  return GameGlobal.GetModule(gameModuleProto)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchLocalDb.GetDBViewedKey = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN34DispatchLocalDb:GetDBViewedKey()
   local key = "UIN34DispatchLocalDb::Viewed"
   local roleModule = self:GetModule(RoleModule)
   return roleModule:GetPstId() .. key
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchLocalDb.ViewedLoadDB = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN34DispatchLocalDb:ViewedLoadDB()
   local dbKey = self:GetDBViewedKey()
-  local content = (LocalDB.GetString)(dbKey, "")
-  local fnString = (string.format)("return {%s}", content)
+  local content = LocalDB.GetString(dbKey, "")
+  local fnString = string.format("return {%s}", content)
   local fnTable = load(fnString)
   local dbData = fnTable()
   self._Viewed = dbData
-  for k,v in pairs(dbData) do
+  for k, v in pairs(dbData) do
     local lookup = {}
-    for sk,sv in pairs(v) do
+    for sk, sv in pairs(v) do
       lookup[sv] = sv
     end
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._Viewed)[k] = lookup
+    self._Viewed[k] = lookup
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchLocalDb.ViewedSaveDB = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN34DispatchLocalDb:ViewedSaveDB()
   local content = ""
-  for k,v in pairs(self._Viewed) do
+  for k, v in pairs(self._Viewed) do
     local mission = ""
-    for sk,sv in pairs(v) do
-      mission = mission .. (string.format)("%d, ", sv)
+    for sk, sv in pairs(v) do
+      mission = mission .. string.format("%d, ", sv)
     end
-    content = content .. (string.format)("[%d] = {%s}, ", k, mission)
+    content = content .. string.format("[%d] = {%s}, ", k, mission)
   end
   local dbKey = self:GetDBViewedKey()
-  ;
-  (LocalDB.SetString)(dbKey, content)
+  LocalDB.SetString(dbKey, content)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchLocalDb.ClearDB = function(self)
-  -- function num : 0_5
+function UIN34DispatchLocalDb:ClearDB()
   self._Viewed = {}
   self:ViewedSaveDB()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchLocalDb.IsViewed = function(self, archId)
-  -- function num : 0_6 , upvalues : _ENV
-  local optionsData = (self._Viewed)[archId]
+function UIN34DispatchLocalDb:IsViewed(archId)
+  local optionsData = self._Viewed[archId]
   if optionsData == nil then
     return false
   end
-  local cfgArch = (Cfg.cfg_component_dispatch_arch)[archId]
+  local cfgArch = Cfg.cfg_component_dispatch_arch[archId]
   if cfgArch == nil then
-    (Log.exception)("cfg_component_dispatch_arch中找不到配置:", archId)
+    Log.exception("cfg_component_dispatch_arch中找不到配置:", archId)
     return false
   end
   local options = {}
-  local openList = {cfgArch.DispatchTalk}
-  do
-    while #openList ~= 0 do
-      local loopList = openList
-      openList = {}
-      for k,v in pairs(loopList) do
-        local cfgTalk = (Cfg.cfg_mission_multiline_talk)[v]
-        if cfgTalk == nil then
-          (Log.exception)("cfg_mission_multiline_talk中找不到配置:", v)
-        else
-          if cfgTalk.AnswerID ~= nil then
-            (table.insert)(options, cfgTalk)
-            for ak,av in pairs(cfgTalk.AnswerID) do
-              (table.insert)(openList, av)
-            end
-          else
-            do
-              do
-                if cfgTalk.NextWord ~= nil then
-                  (table.insert)(openList, cfgTalk.NextWord)
-                end
-                -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
-          end
+  local openList = {
+    cfgArch.DispatchTalk
+  }
+  while #openList ~= 0 do
+    local loopList = openList
+    openList = {}
+    for k, v in pairs(loopList) do
+      local cfgTalk = Cfg.cfg_mission_multiline_talk[v]
+      if cfgTalk == nil then
+        Log.exception("cfg_mission_multiline_talk中找不到配置:", v)
+      elseif cfgTalk.AnswerID ~= nil then
+        table.insert(options, cfgTalk)
+        for ak, av in pairs(cfgTalk.AnswerID) do
+          table.insert(openList, av)
         end
+      elseif cfgTalk.NextWord ~= nil then
+        table.insert(openList, cfgTalk.NextWord)
       end
     end
-    local viewedDialogue = true
-    for k,v in pairs(options) do
-      local findOption = false
-      for ak,av in pairs(v.AnswerID) do
-        if optionsData[av] ~= nil then
-          findOption = true
-          break
-        end
-      end
-      do
-        do
-          if not findOption then
-            viewedDialogue = false
-            break
-          end
-          -- DECOMPILER ERROR at PC95: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
-      end
-    end
-    return viewedDialogue, optionsData
   end
+  local viewedDialogue = true
+  for k, v in pairs(options) do
+    local findOption = false
+    for ak, av in pairs(v.AnswerID) do
+      if optionsData[av] ~= nil then
+        findOption = true
+        break
+      end
+    end
+    if not findOption then
+      viewedDialogue = false
+      break
+    end
+  end
+  return viewedDialogue, optionsData
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchLocalDb.Viewed = function(self, archId, options)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN34DispatchLocalDb:Viewed(archId, options)
   if options == nil then
     options = {}
   end
   local lookup = {}
-  for k,v in pairs(options) do
+  for k, v in pairs(options) do
     lookup[v] = v
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._Viewed)[archId] = lookup
+  self._Viewed[archId] = lookup
   self:ViewedSaveDB()
 end
-
-

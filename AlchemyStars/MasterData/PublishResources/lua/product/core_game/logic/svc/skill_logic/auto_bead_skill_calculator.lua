@@ -1,59 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_logic/auto_bead_skill_calculator.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AutoBeadSkillCalculator", Object)
 AutoBeadSkillCalculator = AutoBeadSkillCalculator
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AutoBeadSkillCalculator.Constructor = function(self, world)
-  -- function num : 0_0
+function AutoBeadSkillCalculator:Constructor(world)
   self._world = world
   self._targetSelector = world:GetSkillScopeTargetSelector()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadSkillCalculator.DoCalculateAutoBeadSkill = function(self, teamEntity, skillCastPos)
-  -- function num : 0_1
+function AutoBeadSkillCalculator:DoCalculateAutoBeadSkill(teamEntity, skillCastPos)
   self:_CalcAutoBeadSkill(teamEntity, skillCastPos)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadSkillCalculator._CalcChainPathRate = function(self, teamEntity)
-  -- function num : 0_2
+function AutoBeadSkillCalculator:_CalcChainPathRate(teamEntity)
   local logicChainPathCmpt = teamEntity:LogicChainPath()
   local chainPath = logicChainPathCmpt:GetLogicChainPath()
   return logicChainPathCmpt:GetChainRateAtIndex(#chainPath)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadSkillCalculator._CalcAutoBeadSkill = function(self, teamEntity, castPos)
-  -- function num : 0_3 , upvalues : _ENV
-  local autoBeadServiceLogic = (self._world):GetService("AutoBeadLogic")
+function AutoBeadSkillCalculator:_CalcAutoBeadSkill(teamEntity, castPos)
+  local autoBeadServiceLogic = self._world:GetService("AutoBeadLogic")
   local holderEntity = autoBeadServiceLogic:GetAutoBeadSkillHolder(teamEntity)
   if not holderEntity then
-    return 
+    return
   end
   local autoBeadCmpt = holderEntity:LogicAutoBead()
   if not autoBeadCmpt then
-    return 
+    return
   end
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   self:_OnSetSkillAutoBeadAttackData(holderEntity)
   local skillList = {}
   local skillDataList = {}
   local dataList = autoBeadCmpt:GetAutoBeadInnerDataList()
-  for index,data in ipairs(dataList) do
+  for index, data in ipairs(dataList) do
     local innerData = data
     local skillID = innerData:GetAutoBeadSkillID()
-    if skillID and skillID > 0 then
-      (table.insert)(skillList, skillID)
-      ;
-      (table.insert)(skillDataList, innerData)
+    if skillID and 0 < skillID then
+      table.insert(skillList, skillID)
+      table.insert(skillDataList, innerData)
     end
   end
   local attack = 5000
@@ -61,14 +44,13 @@ AutoBeadSkillCalculator._CalcAutoBeadSkill = function(self, teamEntity, castPos)
   attributeCmpt:Modify("Attack", attack)
   local autoBeadCmpt = holderEntity:LogicAutoBead()
   if not autoBeadCmpt then
-    return 
+    return
   end
-  ;
-  (Log.debug)("[AutoBeadSkill] begin cast")
-  local randomSvc = (self._world):GetService("RandomLogic")
+  Log.debug("[AutoBeadSkill] begin cast")
+  local randomSvc = self._world:GetService("RandomLogic")
   local power = autoBeadCmpt:GetAutoBeadPower()
   local loopTurnIndex = 1
-  while power > 0 do
+  while 0 < power do
     local skillBeadCount = #skillDataList
     for i = 1, skillBeadCount do
       local autoBeadData = skillDataList[i]
@@ -76,96 +58,67 @@ AutoBeadSkillCalculator._CalcAutoBeadSkill = function(self, teamEntity, castPos)
       local skillID = autoBeadData:GetAutoBeadSkillID()
       local extraIndex = 1
       local extraCount = 1
-      while 1 do
-        if extraIndex <= extraCount then
-          local comboRate = autoBeadData:GetAutoBeadAttr(ESeasonMazeAutoBeadAttr.ESeasonMazeAutoBeadAttr_Combo)
-          local repeatRate = comboRate / 1000
-          local repeatIndex = 1
-          local repeatCount = 1
-          local repeatLimit = 50
-          while repeatIndex <= repeatCount do
-            (Log.debug)("[AutoBeadSkill] cast skillID:", skillID, " beadID:", autoBeadID, " loop:", loopTurnIndex, " extra:", extraIndex, " repeat:", repeatIndex)
-            self:_CalcOneAutoBeedSkill(teamEntity, skillID, autoBeadID, loopTurnIndex, i, extraIndex, repeatIndex)
-            repeatIndex = repeatIndex + 1
-            local r = randomSvc:LogicRand()
-            if r < repeatRate then
-              repeatCount = repeatCount + 1
-              ;
-              (Log.debug)("[AutoBeadSkill] skillID:", skillID, " beadID:", autoBeadID, " caclRepeat, rate:", repeatRate, " random:", r, " repeat+1")
-            else
-              ;
-              (Log.debug)("[AutoBeadSkill] skillID:", skillID, " beadID:", autoBeadID, " caclRepeat, rate:", repeatRate, " random:", r, " no repeat")
-            end
-            if repeatLimit < repeatCount then
-              repeatCount = repeatLimit
-            end
+      while extraIndex <= extraCount do
+        local comboRate = autoBeadData:GetAutoBeadAttr(ESeasonMazeAutoBeadAttr.ESeasonMazeAutoBeadAttr_Combo)
+        local repeatRate = comboRate / 1000
+        local repeatIndex = 1
+        local repeatCount = 1
+        local repeatLimit = 50
+        while repeatIndex <= repeatCount do
+          Log.debug("[AutoBeadSkill] cast skillID:", skillID, " beadID:", autoBeadID, " loop:", loopTurnIndex, " extra:", extraIndex, " repeat:", repeatIndex)
+          self:_CalcOneAutoBeedSkill(teamEntity, skillID, autoBeadID, loopTurnIndex, i, extraIndex, repeatIndex)
+          repeatIndex = repeatIndex + 1
+          local r = randomSvc:LogicRand()
+          if repeatRate > r then
+            repeatCount = repeatCount + 1
+            Log.debug("[AutoBeadSkill] skillID:", skillID, " beadID:", autoBeadID, " caclRepeat, rate:", repeatRate, " random:", r, " repeat+1")
+          else
+            Log.debug("[AutoBeadSkill] skillID:", skillID, " beadID:", autoBeadID, " caclRepeat, rate:", repeatRate, " random:", r, " no repeat")
           end
-          do
-            if extraIndex == 1 then
-              local extraRate = autoBeadData:GetAutoBeadExtraRate()
-              if extraRate and extraRate > 0 then
-                local r = randomSvc:LogicRand()
-                if r < extraRate then
-                  extraCount = extraCount + 1
-                  ;
-                  (Log.debug)("[AutoBeadSkill] skillID:", skillID, " beadID:", autoBeadID, " caclExtra, rate:", extraRate, " random:", r, " has extra")
-                else
-                  ;
-                  (Log.debug)("[AutoBeadSkill] skillID:", skillID, " beadID:", autoBeadID, " caclExtra, rate:", extraRate, " random:", r, " no extra")
-                end
-              end
-            end
-            do
-              do
-                extraIndex = extraIndex + 1
-                -- DECOMPILER ERROR at PC194: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC194: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC194: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC194: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
+          if repeatLimit < repeatCount then
+            repeatCount = repeatLimit
+          end
+        end
+        if extraIndex == 1 then
+          local extraRate = autoBeadData:GetAutoBeadExtraRate()
+          if extraRate and 0 < extraRate then
+            local r = randomSvc:LogicRand()
+            if extraRate > r then
+              extraCount = extraCount + 1
+              Log.debug("[AutoBeadSkill] skillID:", skillID, " beadID:", autoBeadID, " caclExtra, rate:", extraRate, " random:", r, " has extra")
+            else
+              Log.debug("[AutoBeadSkill] skillID:", skillID, " beadID:", autoBeadID, " caclExtra, rate:", extraRate, " random:", r, " no extra")
             end
           end
         end
+        extraIndex = extraIndex + 1
       end
     end
     power = power - 1
     loopTurnIndex = loopTurnIndex + 1
-    if #skillDataList > 0 then
+    if 0 < #skillDataList then
       local costPoint = autoBeadCmpt:GetAutoBeadPointEachPower()
       autoBeadServiceLogic:SubAutoBeadPoint(teamEntity, costPoint)
     end
   end
-  do
-    ;
-    (Log.debug)("[AutoBeadSkill] end cast")
-  end
+  Log.debug("[AutoBeadSkill] end cast")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadSkillCalculator._OnSetSkillAutoBeadAttackData = function(self, holderEntity)
-  -- function num : 0_4
+function AutoBeadSkillCalculator:_OnSetSkillAutoBeadAttackData(holderEntity)
   local autoBeadAttackDataCmpt = holderEntity:SkillAutoBeadAttackData()
   autoBeadAttackDataCmpt:ClearAutoBeadAttackData()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadSkillCalculator._AutoBeedSkillHasNoTarget = function(self, casterEntity, skillID, castPos)
-  -- function num : 0_5 , upvalues : _ENV
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local configService = (self._world):GetService("Config")
-  local boardEntity = (self._world):GetBoardEntity()
+function AutoBeadSkillCalculator:_AutoBeedSkillHasNoTarget(casterEntity, skillID, castPos)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local configService = self._world:GetService("Config")
+  local boardEntity = self._world:GetBoardEntity()
   local boardCmpt = boardEntity:Board()
   local skillConfigData = configService:GetSkillConfigData(skillID, casterEntity)
-  local svcCfgDeco = (self._world):GetService("ConfigDecoration")
-  local skillEffectArray = (svcCfgDeco:GetLatestEffectParamArray(casterEntity:GetID(), skillID))
-  local effectType191, effectType203 = nil, nil
-  for _,effect in ipairs(skillEffectArray) do
+  local svcCfgDeco = self._world:GetService("ConfigDecoration")
+  local skillEffectArray = svcCfgDeco:GetLatestEffectParamArray(casterEntity:GetID(), skillID)
+  local effectType191, effectType203
+  for _, effect in ipairs(skillEffectArray) do
     if effect:GetEffectType() == SkillEffectType.DynamicCenterDamage then
       effectType191 = effect
     end
@@ -173,48 +126,37 @@ AutoBeadSkillCalculator._AutoBeedSkillHasNoTarget = function(self, casterEntity,
       effectType203 = effect
     end
   end
-  local scopeResult = nil
+  local scopeResult
   local targetList = {}
   if effectType191 then
     local calc191 = SkillEffectCalc_DynamicCenterDamage:New(self._world)
-    targetList = calc191:SelectCenter(casterEntity, effectType191, castPos)
+    targetList, scopeResult = calc191:SelectCenter(casterEntity, effectType191, castPos)
+  elseif effectType203 then
+    local calc203 = SkillEffectCalc_DynamicScopeChainDamage:New(self._world)
+    scopeResult = calc203:CalcChainReplaceScope(casterEntity, effectType203)
+    targetList = self:_CalcTargetListInScopeResult(casterEntity, scopeResult, skillID)
   else
-    do
-      if effectType203 then
-        local calc203 = SkillEffectCalc_DynamicScopeChainDamage:New(self._world)
-        -- DECOMPILER ERROR at PC73: Overwrote pending register: R13 in 'AssignReg'
-
-        targetList = self:_CalcTargetListInScopeResult(casterEntity, scopeResult, skillID)
-      else
-        do
-          -- DECOMPILER ERROR at PC86: Overwrote pending register: R13 in 'AssignReg'
-
-          boardCmpt:ClearTmpPieceType()
-          targetList = self:_CalcTargetListInScopeResult(casterEntity, scopeResult, skillID)
-          if #targetList <= 0 then
-            return true
-          end
-          return false
-        end
-      end
-    end
+    scopeResult = utilScopeSvc:CalcSkillScope(skillConfigData, castPos, casterEntity)
+    boardCmpt:ClearTmpPieceType()
+    targetList = self:_CalcTargetListInScopeResult(casterEntity, scopeResult, skillID)
   end
+  if #targetList <= 0 then
+    return true
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadSkillCalculator._CalcOneAutoBeedSkill = function(self, teamEntity, skillID, autoBeadID, loopTurnIndex, beadIndex, extraIndex, repeatIndex)
-  -- function num : 0_6 , upvalues : _ENV
-  local autoBeadServiceLogic = (self._world):GetService("AutoBeadLogic")
+function AutoBeadSkillCalculator:_CalcOneAutoBeedSkill(teamEntity, skillID, autoBeadID, loopTurnIndex, beadIndex, extraIndex, repeatIndex)
+  local autoBeadServiceLogic = self._world:GetService("AutoBeadLogic")
   local holderEntity = autoBeadServiceLogic:GetAutoBeadSkillHolder(teamEntity)
   if not holderEntity then
-    return 
+    return
   end
   local casterEntity = holderEntity
   local castPos = casterEntity:GetGridPosition()
-  local battleService = (self._world):GetService("Battle")
+  local battleService = self._world:GetService("Battle")
   if self:_AutoBeedSkillHasNoTarget(casterEntity, skillID, castPos) then
-    return 
+    return
   end
   local autoBeadAttackDataCmpt = holderEntity:SkillAutoBeadAttackData()
   local curList = autoBeadAttackDataCmpt:GetAutoBeadAttackDataList()
@@ -224,15 +166,13 @@ AutoBeadSkillCalculator._CalcOneAutoBeedSkill = function(self, teamEntity, skill
   local autoBeadAttackData = autoBeadAttackDataCmpt:GetAutoBeadAttackData(curSkillIndex)
   local isFinalAttackBeforeSkill = battleService:IsFinalAttack()
   local nTAutoBeadSkillEachStart = NTAutoBeadSkillEachStart:New(holderEntity, skillID, autoBeadID)
-  ;
-  ((self._world):GetService("Trigger")):Notify(nTAutoBeadSkillEachStart)
-  local skillLogicSvc = (self._world):GetService("SkillLogic")
+  self._world:GetService("Trigger"):Notify(nTAutoBeadSkillEachStart)
+  local skillLogicSvc = self._world:GetService("SkillLogic")
   skillLogicSvc:CalcSkillEffect(holderEntity, skillID)
   local nTAutoBeadSkillEachEnd = NTAutoBeadSkillEachEnd:New(holderEntity, skillID, autoBeadID)
   nTAutoBeadSkillEachEnd:SetAutoBeadSkillIndex(curSkillIndex)
-  ;
-  ((self._world):GetService("Trigger")):Notify(nTAutoBeadSkillEachEnd)
-  local skillEffectResultContainer = (holderEntity:SkillContext()):GetResultContainer()
+  self._world:GetService("Trigger"):Notify(nTAutoBeadSkillEachEnd)
+  local skillEffectResultContainer = holderEntity:SkillContext():GetResultContainer()
   skillEffectResultContainer:SetSkillID(skillID)
   autoBeadAttackData:SetResultContainer(skillEffectResultContainer)
   self:_HandleAutoBeadAttackDead(holderEntity:GetID(), curSkillIndex, skillID)
@@ -244,24 +184,18 @@ AutoBeadSkillCalculator._CalcOneAutoBeedSkill = function(self, teamEntity, skill
   holderEntity:ReplaceSkillContext()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadSkillCalculator._CalcTargetListInScopeResult = function(self, casterEntity, scopeResult, skillID)
-  -- function num : 0_7
-  local configService = (self._world):GetService("Config")
+function AutoBeadSkillCalculator:_CalcTargetListInScopeResult(casterEntity, scopeResult, skillID)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID, casterEntity)
   local skillTargetType = skillConfigData:GetSkillTargetType()
-  local targetEntityIDArray = (self._targetSelector):DoSelectSkillTarget(casterEntity, skillTargetType, scopeResult, skillID)
+  local targetEntityIDArray = self._targetSelector:DoSelectSkillTarget(casterEntity, skillTargetType, scopeResult, skillID)
   return targetEntityIDArray
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadSkillCalculator._HandleAutoBeadAttackDead = function(self, casterEntityID, skillIndex, autoBeadSkillID)
-  -- function num : 0_8 , upvalues : _ENV
-  local sMonsterShowLogic = (self._world):GetService("MonsterShowLogic")
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,e in ipairs(monsterGroup:GetEntities()) do
+function AutoBeadSkillCalculator:_HandleAutoBeadAttackDead(casterEntityID, skillIndex, autoBeadSkillID)
+  local sMonsterShowLogic = self._world:GetService("MonsterShowLogic")
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(monsterGroup:GetEntities()) do
     local result = sMonsterShowLogic:AddMonsterDeadMark(e)
     local deadMarkCmpt = e:DeadMark()
     if result and deadMarkCmpt and not deadMarkCmpt:GetDeadCasterID() and not e:HasShowDeath() then
@@ -269,9 +203,9 @@ AutoBeadSkillCalculator._HandleAutoBeadAttackDead = function(self, casterEntityI
       deadMarkCmpt:SetAutoBeadAttackIndex(skillIndex)
     end
   end
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).TrapID)
-  for _,e in ipairs(trapGroup:GetEntities()) do
+  local trapServiceLogic = self._world:GetService("TrapLogic")
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.TrapID)
+  for _, e in ipairs(trapGroup:GetEntities()) do
     trapServiceLogic:AddTrapDeadMark(e)
     local deadMarkCmpt = e:DeadMark()
     if deadMarkCmpt and not deadMarkCmpt:GetDeadCasterID() then
@@ -281,5 +215,3 @@ AutoBeadSkillCalculator._HandleAutoBeadAttackDead = function(self, casterEntityI
   end
   sMonsterShowLogic:DoAllMonsterDeadLogic()
 end
-
-

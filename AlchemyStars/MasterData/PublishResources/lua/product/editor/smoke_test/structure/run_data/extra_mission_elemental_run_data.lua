@@ -1,33 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/run_data/extra_mission_elemental_run_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("elemental_run_data")
 _class("ElementalExtraMissionRunData", TestRobotElementalRunData)
 ElementalExtraMissionRunData = ElementalExtraMissionRunData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ElementalExtraMissionRunData.ParseLevelData = function(self, rawargs)
-  -- function num : 0_0 , upvalues : _ENV
-  local s = (string.split)(rawargs, ",")
+function ElementalExtraMissionRunData:ParseLevelData(rawargs)
+  local s = string.split(rawargs, ",")
   self._extChapterID = tonumber(s[1])
   self._extMissionID = tonumber(s[2])
   self._missionID = self._extMissionID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalExtraMissionRunData.GetExtChapterID = function(self)
-  -- function num : 0_1
+function ElementalExtraMissionRunData:GetExtChapterID()
   return self._extChapterID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalExtraMissionRunData.GetExtMissionID = function(self)
-  -- function num : 0_2
+function ElementalExtraMissionRunData:GetExtMissionID()
   return self._extMissionID
 end
-
-

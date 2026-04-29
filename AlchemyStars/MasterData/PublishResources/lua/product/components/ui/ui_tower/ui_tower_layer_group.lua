@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_tower/ui_tower_layer_group.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITowerLayerGroup", UICustomWidget)
 UITowerLayerGroup = UITowerLayerGroup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITowerLayerGroup.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UITowerLayerGroup:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerLayerGroup.InitWidget = function(self)
-  -- function num : 0_1
+function UITowerLayerGroup:InitWidget()
   self.bg = self:GetUIComponent("RawImageLoader", "bg")
   self.bgObj = self:GetGameObject("bg")
   self.point1 = self:GetUIComponent("UISelectObjectPath", "point1")
@@ -30,83 +20,51 @@ UITowerLayerGroup.InitWidget = function(self)
   self.line5 = self:GetUIComponent("RectTransform", "line5")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerLayerGroup.SetData = function(self, groupIdx, groupCfg, layerStart, layerCfg, nextGroupFirstPos, curLayer, passAll, curSelect, onSelect)
-  -- function num : 0_2 , upvalues : _ENV
+function UITowerLayerGroup:SetData(groupIdx, groupCfg, layerStart, layerCfg, nextGroupFirstPos, curLayer, passAll, curSelect, onSelect)
   local cfg = groupCfg[groupIdx]
-  local posCfg = (Cfg.cfg_tower_layer_position)[cfg.Pos]
-  ;
-  (self.bg):LoadImage(cfg.Bg)
-  local l_lastValueLayerNum = nil
+  local posCfg = Cfg.cfg_tower_layer_position[cfg.Pos]
+  self.bg:LoadImage(cfg.Bg)
+  local l_lastValueLayerNum
   for i = 1, 5 do
     local point = self["point" .. i]
     local pointCfg = posCfg["Pos" .. i]
-    local rect = ((point.dynamicInfoOfEngine).gameObject):GetComponent(typeof(UnityEngine.RectTransform))
+    local rect = point.dynamicInfoOfEngine.gameObject:GetComponent(typeof(UnityEngine.RectTransform))
     local pos = Vector2(pointCfg[1], pointCfg[2])
     rect.anchoredPosition = pos
     if not layerCfg[layerStart + i] then
       local line = self["line" .. i]
-      ;
-      (line.gameObject):SetActive(false)
+      line.gameObject:SetActive(false)
     else
-      do
-        local item = point:SpawnObject("UITowerLayerItem")
-        item:SetData(pointCfg[3], layerCfg[layerStart + i], curLayer, passAll, curSelect, onSelect)
-        l_lastValueLayerNum = i
-        if layerCfg[layerStart + i + 1] == nil then
-          local line = self["line" .. i]
-          ;
-          (line.gameObject):SetActive(false)
-        else
-          do
-            local to = nil
-            if i == 5 then
-              if nextGroupFirstPos == nil then
-                ((self.line5).gameObject):SetActive(false)
-              else
-                ;
-                ((self.line5).gameObject):SetActive(true)
-                to = nextGroupFirstPos
-              end
-            else
-              local lastCfg = posCfg["Pos" .. i + 1]
-              to = Vector2(lastCfg[1], lastCfg[2])
-              local line = self["line" .. i]
-              ;
-              (line.gameObject):SetActive(true)
-            end
-            do
-              if to then
-                local delta = to - pos
-                local rot = (Quaternion.FromToRotation)(Vector3.right, Vector3(delta.x, delta.y, 0))
-                local line = self["line" .. i]
-                line.rotation = rot
-                line.sizeDelta = Vector2((Vector2.Distance)(pos, to), (line.sizeDelta).y)
-                line.anchoredPosition = pos
-              end
-              do
-                -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
+      local item = point:SpawnObject("UITowerLayerItem")
+      item:SetData(pointCfg[3], layerCfg[layerStart + i], curLayer, passAll, curSelect, onSelect)
+      l_lastValueLayerNum = i
+      if layerCfg[layerStart + i + 1] == nil then
+        local line = self["line" .. i]
+        line.gameObject:SetActive(false)
+      else
+        local to
+        if i == 5 then
+          if nextGroupFirstPos == nil then
+            self.line5.gameObject:SetActive(false)
+          else
+            self.line5.gameObject:SetActive(true)
+            to = nextGroupFirstPos
           end
+        else
+          local lastCfg = posCfg["Pos" .. i + 1]
+          to = Vector2(lastCfg[1], lastCfg[2])
+          local line = self["line" .. i]
+          line.gameObject:SetActive(true)
+        end
+        if to then
+          local delta = to - pos
+          local rot = Quaternion.FromToRotation(Vector3.right, Vector3(delta.x, delta.y, 0))
+          local line = self["line" .. i]
+          line.rotation = rot
+          line.sizeDelta = Vector2(Vector2.Distance(pos, to), line.sizeDelta.y)
+          line.anchoredPosition = pos
         end
       end
     end
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_add_blood.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectResult_AddBlood", SkillEffectResultBase)
 SkillEffectResult_AddBlood = SkillEffectResult_AddBlood
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_AddBlood.Constructor = function(self, nType, nData, posGrid, stageIndex)
-  -- function num : 0_0
+function SkillEffectResult_AddBlood:Constructor(nType, nData, posGrid, stageIndex)
   self.m_nType = nType
   self.m_nData = nData
   self.m_posGrid = posGrid
@@ -17,89 +10,51 @@ SkillEffectResult_AddBlood.Constructor = function(self, nType, nData, posGrid, s
   self.m_stageIndex = stageIndex
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_AddBlood.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResult_AddBlood:GetEffectType()
   return SkillEffectType.AddBlood
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_AddBlood.SetAddData = function(self, nTargetID, nCurAdd)
-  -- function num : 0_2
+function SkillEffectResult_AddBlood:SetAddData(nTargetID, nCurAdd)
   self.m_nTargetID = nTargetID
   self.m_nCurAdd = nCurAdd
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_AddBlood.SetAddValue = function(self, nCurAdd)
-  -- function num : 0_3
+function SkillEffectResult_AddBlood:SetAddValue(nCurAdd)
   self.m_nCurAdd = nCurAdd
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_AddBlood.GetGridPos = function(self)
-  -- function num : 0_4
+function SkillEffectResult_AddBlood:GetGridPos()
   return self.m_posGrid
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_AddBlood.GetType = function(self)
-  -- function num : 0_5
+function SkillEffectResult_AddBlood:GetType()
   return self.m_nType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_AddBlood.GetData = function(self)
-  -- function num : 0_6
+function SkillEffectResult_AddBlood:GetData()
   return self.m_nData
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_AddBlood.GetTargetID = function(self)
-  -- function num : 0_7
+function SkillEffectResult_AddBlood:GetTargetID()
   return self.m_nTargetID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_AddBlood.GetAddValue = function(self)
-  -- function num : 0_8
+function SkillEffectResult_AddBlood:GetAddValue()
   return self.m_nCurAdd
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_AddBlood.SetDamageInfo = function(self, nDamageInfo)
-  -- function num : 0_9
+function SkillEffectResult_AddBlood:SetDamageInfo(nDamageInfo)
   self.m_nDamageInfo = nDamageInfo
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_AddBlood.GetDamageInfo = function(self)
-  -- function num : 0_10
+function SkillEffectResult_AddBlood:GetDamageInfo()
   return self.m_nDamageInfo
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_AddBlood.GetStageIndex = function(self)
-  -- function num : 0_11
+function SkillEffectResult_AddBlood:GetStageIndex()
   return self.m_stageIndex
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_AddBlood.GetDamageStageIndex = function(self)
-  -- function num : 0_12
+function SkillEffectResult_AddBlood:GetDamageStageIndex()
   return self.m_stageIndex
 end
-
-

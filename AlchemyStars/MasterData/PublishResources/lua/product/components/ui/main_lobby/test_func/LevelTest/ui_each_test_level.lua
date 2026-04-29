@@ -1,42 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/test_func/LevelTest/ui_each_test_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEachTestLevel", UICustomWidget)
 UIEachTestLevel = UIEachTestLevel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEachTestLevel.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIEachTestLevel:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEachTestLevel.InitWidget = function(self)
-  -- function num : 0_1
+function UIEachTestLevel:InitWidget()
   self.title = self:GetUIComponent("UILocalizationText", "title")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEachTestLevel.SetData = function(self, LevelList, BtnCallBack)
-  -- function num : 0_2
+function UIEachTestLevel:SetData(LevelList, BtnCallBack)
   self.LevelList = LevelList
   self.LevelID = LevelList[1]
   self.BtnCallBack = BtnCallBack
-  ;
-  (self.title):SetText(self.LevelID)
+  self.title:SetText(self.LevelID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEachTestLevel.BtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIEachTestLevel:BtnOnClick(go)
   if self.BtnCallBack then
-    (self.BtnCallBack)(self.LevelID)
+    self.BtnCallBack(self.LevelID)
   end
 end
-
-

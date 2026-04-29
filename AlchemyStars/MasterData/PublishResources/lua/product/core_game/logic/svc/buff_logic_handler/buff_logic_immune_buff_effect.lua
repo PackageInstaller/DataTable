@@ -1,33 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_immune_buff_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicImmuneBuffEffect", BuffLogicBase)
 BuffLogicImmuneBuffEffect = BuffLogicImmuneBuffEffect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicImmuneBuffEffect.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicImmuneBuffEffect:Constructor(buffInstance, logicParam)
   self._effectList = logicParam.effectList
   self._keyImmuneBuffEffect = "ImmuneBuffEffect"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicImmuneBuffEffect.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicImmuneBuffEffect:DoLogic(notify)
   if not self._effectList then
-    return 
+    return
   end
-  local e = (self._buffInstance):Entity()
+  local e = self._buffInstance:Entity()
   local cBuff = e:BuffComponent()
-  if not cBuff:GetBuffValue(self._keyImmuneBuffEffect) then
-    local arr = {}
-  end
-  for i,v in ipairs(self._effectList) do
-    if not (table.icontains)(arr, v) then
-      (table.insert)(arr, v)
+  local arr = cBuff:GetBuffValue(self._keyImmuneBuffEffect) or {}
+  for i, v in ipairs(self._effectList) do
+    if not table.icontains(arr, v) then
+      table.insert(arr, v)
     end
   end
   cBuff:SetBuffValue(self._keyImmuneBuffEffect, arr)
@@ -35,33 +23,24 @@ end
 
 _class("BuffLogicRemoveImmuneBuffEffect", BuffLogicBase)
 BuffLogicRemoveImmuneBuffEffect = BuffLogicRemoveImmuneBuffEffect
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveImmuneBuffEffect.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
-  if not logicParam.effectList then
-    self._effectList = {}
-    self._keyImmuneBuffEffect = "ImmuneBuffEffect"
-  end
+function BuffLogicRemoveImmuneBuffEffect:Constructor(buffInstance, logicParam)
+  self._effectList = logicParam.effectList or {}
+  self._keyImmuneBuffEffect = "ImmuneBuffEffect"
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveImmuneBuffEffect.DoLogic = function(self, notify)
-  -- function num : 0_3 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicRemoveImmuneBuffEffect:DoLogic(notify)
+  local e = self._buffInstance:Entity()
   local cBuff = e:BuffComponent()
   local arr = cBuff:GetBuffValue(self._keyImmuneBuffEffect)
   if not arr then
-    return 
+    return
   end
   local arrNew = {}
-  for i,v in ipairs(arr) do
-    if not (table.icontains)(self._effectList, v) then
-      (table.insert)(arrNew, v)
+  for i, v in ipairs(arr) do
+    if not table.icontains(self._effectList, v) then
+      table.insert(arrNew, v)
     end
   end
   cBuff:SetBuffValue(self._keyImmuneBuffEffect, arrNew)
 end
-
-

@@ -1,38 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_change_body_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_ChangeBodyArea", Object)
 SkillEffectCalc_ChangeBodyArea = SkillEffectCalc_ChangeBodyArea
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ChangeBodyArea.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_ChangeBodyArea:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ChangeBodyArea.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_ChangeBodyArea:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillEffectParam = skillEffectCalcParam.skillEffectParam
   local bodyArea = skillEffectParam:GetBodyArea()
   local newBodyArea = {}
-  for i,v in ipairs(bodyArea) do
+  for i, v in ipairs(bodyArea) do
     local pos = Vector2(v[1], v[2])
-    ;
-    (table.insert)(newBodyArea, pos)
+    table.insert(newBodyArea, pos)
   end
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local result = SkillEffectResultChangeBodyArea:New(targetID, newBodyArea)
     if result then
-      (table.insert)(results, result)
+      table.insert(results, result)
     end
   end
   return results
 end
-
-

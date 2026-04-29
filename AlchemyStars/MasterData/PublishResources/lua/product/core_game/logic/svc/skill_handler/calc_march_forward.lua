@@ -1,35 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_march_forward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_MarchForward", Object)
 SkillEffectCalc_MarchForward = SkillEffectCalc_MarchForward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_MarchForward.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_MarchForward:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MarchForward.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+function SkillEffectCalc_MarchForward:DoSkillEffectCalculator(skillEffectCalcParam)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
   local param = skillEffectCalcParam:GetSkillEffectParam()
   local maxMarchStep = param:GetMaxMarchStep()
   local marchStepKey = param:GetMarchBuffValueKey()
   if self:IsArriveTargetPos(casterEntity, marchStepKey, maxMarchStep) then
-    return 
+    return
   end
   local step = param:GetStep()
   local dir = param:GetDir()
-  local boardSvc = (self._world):GetService("BoardLogic")
+  local boardSvc = self._world:GetService("BoardLogic")
   local buffCmpt = casterEntity:BuffComponent()
   if not buffCmpt then
-    return 
+    return
   end
   local isCasterDead = false
   local isMarchEnd = false
@@ -41,8 +31,7 @@ SkillEffectCalc_MarchForward.DoSkillEffectCalculator = function(self, skillEffec
     boardSvc:UpdateEntityBlockFlag(casterEntity, posSelf, pos)
     casterEntity:SetGridPosition(pos)
     casterEntity:SetGridDirection(dir)
-    ;
-    (table.insert)(posWalkResultList, walkRes)
+    table.insert(posWalkResultList, walkRes)
     walkRes:SetWalkPos(pos)
     self:_OnArrivePos(casterEntity, walkRes)
     if casterEntity:HasDeadMark() then
@@ -51,7 +40,7 @@ SkillEffectCalc_MarchForward.DoSkillEffectCalculator = function(self, skillEffec
     end
     buffCmpt:AddBuffValue(marchStepKey, 1)
     if self:IsArriveTargetPos(casterEntity, marchStepKey, maxMarchStep) then
-      local triggerSvc = (self._world):GetService("Trigger")
+      local triggerSvc = self._world:GetService("Trigger")
       local nt = NTMarchEnd:New()
       triggerSvc:Notify(nt)
       isMarchEnd = true
@@ -59,18 +48,12 @@ SkillEffectCalc_MarchForward.DoSkillEffectCalculator = function(self, skillEffec
       break
     end
   end
-  do
-    local result = SkillEffectMarchForwardResult:New(posWalkResultList, isCasterDead, isMarchEnd)
-    return {result}
-  end
+  local result = SkillEffectMarchForwardResult:New(posWalkResultList, isCasterDead, isMarchEnd)
+  return {result}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MarchForward._OnArrivePos = function(self, casterEntity, walkRes)
-  -- function num : 0_2 , upvalues : _ENV
-  local filter = function(e)
-    -- function num : 0_2_0 , upvalues : casterEntity
+function SkillEffectCalc_MarchForward:_OnArrivePos(casterEntity, walkRes)
+  local function filter(e)
     if e:HasDeadMark() or e:GetID() == casterEntity:GetID() then
       return false
     end
@@ -79,30 +62,28 @@ SkillEffectCalc_MarchForward._OnArrivePos = function(self, casterEntity, walkRes
     end
     return false
   end
-
-  local boardEntity = (self._world):GetBoardEntity()
+  
+  local boardEntity = self._world:GetBoardEntity()
   local boardComponent = boardEntity:Board()
-  local boardSvc = (self._world):GetService("BoardLogic")
-  local bodyArea = (casterEntity:BodyArea()):GetArea()
+  local boardSvc = self._world:GetService("BoardLogic")
+  local bodyArea = casterEntity:BodyArea():GetArea()
   local dir = casterEntity:GetGridDirection()
   local curPos = casterEntity:GetGridPosition()
-  for _,value in ipairs(bodyArea) do
+  for _, value in ipairs(bodyArea) do
     local pos = curPos + value
     local entityList = boardComponent:GetPieceEntities(pos, filter)
-    for _,e in ipairs(entityList) do
+    for _, e in ipairs(entityList) do
       local posNew = pos + dir
       walkRes:AddMoveEntity(e:GetID(), pos, posNew)
       if e:HasTeam() then
         local teamEntity = e
-        local pets = (teamEntity:Team()):GetTeamPetEntities()
-        for _,entity in ipairs(pets) do
+        local pets = teamEntity:Team():GetTeamPetEntities()
+        for _, entity in ipairs(pets) do
           entity:SetGridLocation(posNew, dir)
-          ;
-          (entity:GridLocation()):SetMoveLastPosition(posNew)
+          entity:GridLocation():SetMoveLastPosition(posNew)
         end
         teamEntity:SetGridLocation(posNew, dir)
-        ;
-        (teamEntity:GridLocation()):SetMoveLastPosition(posNew)
+        teamEntity:GridLocation():SetMoveLastPosition(posNew)
         boardSvc:RemoveEntityBlockFlag(teamEntity, pos)
         if boardSvc:GetCanConvertGridElement(pos) then
           local tSupplyOld = boardSvc:SupplyPieceList({pos})
@@ -112,35 +93,22 @@ SkillEffectCalc_MarchForward._OnArrivePos = function(self, casterEntity, walkRes
             walkRes:AddConvertInfo(pos, supplyOld.color)
           end
         end
-        do
-          do
-            self:_TriggerTrap(teamEntity, walkRes, TrapTriggerOrigin.Hitback)
-            if boardSvc:GetCanConvertGridElement(posNew) then
-              boardSvc:SetPieceTypeLogic(PieceType.None, posNew)
-              walkRes:AddConvertInfo(posNew, PieceType.None)
-            end
-            boardSvc:SetEntityBlockFlag(teamEntity, posNew)
-            -- DECOMPILER ERROR at PC126: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC126: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC126: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        self:_TriggerTrap(teamEntity, walkRes, TrapTriggerOrigin.Hitback)
+        if boardSvc:GetCanConvertGridElement(posNew) then
+          boardSvc:SetPieceTypeLogic(PieceType.None, posNew)
+          walkRes:AddConvertInfo(posNew, PieceType.None)
         end
+        boardSvc:SetEntityBlockFlag(teamEntity, posNew)
       end
     end
   end
   self:_TriggerTrap(casterEntity, walkRes, TrapTriggerOrigin.MonsterGridMove)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MarchForward._TriggerTrap = function(self, casterEntity, walkRes, triggerOri)
-  -- function num : 0_3 , upvalues : _ENV
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function SkillEffectCalc_MarchForward:_TriggerTrap(casterEntity, walkRes, triggerOri)
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   local listTrapWork, listTrapResult = trapServiceLogic:TriggerTrapByEntity(casterEntity, triggerOri)
-  for i,e in ipairs(listTrapWork) do
+  for i, e in ipairs(listTrapWork) do
     local trapEntity = e
     local skillEffectResultContainer = listTrapResult[i]
     local aiResult = AISkillResult:New()
@@ -149,10 +117,7 @@ SkillEffectCalc_MarchForward._TriggerTrap = function(self, casterEntity, walkRes
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MarchForward.IsArriveTargetPos = function(self, casterEntity, buffValueKey, marchStep)
-  -- function num : 0_4
+function SkillEffectCalc_MarchForward:IsArriveTargetPos(casterEntity, buffValueKey, marchStep)
   local buffCmpt = casterEntity:BuffComponent()
   if not buffCmpt then
     return false
@@ -163,5 +128,3 @@ SkillEffectCalc_MarchForward.IsArriveTargetPos = function(self, casterEntity, bu
   end
   return false
 end
-
-

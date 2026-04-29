@@ -1,44 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/map/ui_n12_map_banner_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_n12_map_controller")
 _class("UIN12MapBannerController", UIN12MapController)
 UIN12MapBannerController = UIN12MapBannerController
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12MapBannerController.OnValue = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN12MapBannerController:OnValue()
   local cfg = self:Cfg()
-  local params = (cfg.Params)[1]
+  local params = cfg.Params[1]
   local bannerid = params.BannerID
   local bannerType = params.BannerType
   if bannerType == 1 then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIStoryController", bannerid, function()
-    -- function num : 0_0_0 , upvalues : self
+    GameGlobal.UIStateManager():ShowDialog("UIStoryController", bannerid, function()
+      self:OnStoryEnd()
+    end)
+  elseif bannerType == 2 then
+    GameGlobal.UIStateManager():ShowDialog("UIStoryBanner", bannerid, StoryBannerShowType.HalfPortrait, function()
+      self:OnStoryEnd()
+    end)
+  elseif bannerType == 3 then
     self:OnStoryEnd()
-  end
-)
-  else
-    if bannerType == 2 then
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIStoryBanner", bannerid, StoryBannerShowType.HalfPortrait, function()
-    -- function num : 0_0_1 , upvalues : self
-    self:OnStoryEnd()
-  end
-)
-    else
-      if bannerType == 3 then
-        self:OnStoryEnd()
-      end
-    end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapBannerController.OnStoryEnd = function(self)
-  -- function num : 0_1
+function UIN12MapBannerController:OnStoryEnd()
   self._got = self:CheckFinish()
   if self._got then
     self:CloseDialog()
@@ -47,24 +29,14 @@ UIN12MapBannerController.OnStoryEnd = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapBannerController.OnFinishEvent = function(self, rewards)
-  -- function num : 0_2 , upvalues : _ENV
-  self:ShowDialog("UIN12MapGetRewardsController", (StringTable.Get)("str_n12_map_get_rewards_title"), rewards, function()
-    -- function num : 0_2_0 , upvalues : self
+function UIN12MapBannerController:OnFinishEvent(rewards)
+  self:ShowDialog("UIN12MapGetRewardsController", StringTable.Get("str_n12_map_get_rewards_title"), rewards, function()
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapBannerController.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN12MapBannerController:OnHide()
   if not self._got then
-    (UIActivityN12Helper.N12_MapNode_Over)(self._nodeid, self._stageid, self._component)
+    UIActivityN12Helper.N12_MapNode_Over(self._nodeid, self._stageid, self._component)
   end
 end
-
-

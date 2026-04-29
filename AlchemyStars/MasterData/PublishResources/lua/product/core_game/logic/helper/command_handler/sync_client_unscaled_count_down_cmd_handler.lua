@@ -1,50 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/command_handler/sync_client_unscaled_count_down_cmd_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("command_base_handler")
 _class("SyncClientUnscaledCountDownCommandHandler", CommandBaseHandler)
 SyncClientUnscaledCountDownCommandHandler = SyncClientUnscaledCountDownCommandHandler
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SyncClientUnscaledCountDownCommandHandler.DoHandleCommand = function(self, cmd)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.notice)("Handle SyncClientUnscaledCountDownCommand")
+function SyncClientUnscaledCountDownCommandHandler:DoHandleCommand(cmd)
+  Log.notice("Handle SyncClientUnscaledCountDownCommand")
   local flagID = cmd:GetCmdFlagID()
   local state = cmd:GetCmdState()
   local checkValid = false
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).UnscaledCountDownLogic)
-  for i,e in ipairs(group:GetEntities()) do
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.UnscaledCountDownLogic)
+  for i, e in ipairs(group:GetEntities()) do
     local cmpt = e:UnscaledCountDownLogic()
-    ;
-    (Log.debug)("SyncClientUnscaledCountDownCommand cmpt flagID:", cmpt:GetFlagID(), " isActive:", cmpt:GetIsActive())
-    if flagID == cmpt:GetFlagID() and cmpt:GetIsActive() then
-      cmpt:SetIsWaitTrigger(true)
-      checkValid = true
+    Log.debug("SyncClientUnscaledCountDownCommand cmpt flagID:", cmpt:GetFlagID(), " isActive:", cmpt:GetIsActive())
+    if flagID == cmpt:GetFlagID() then
+      if cmpt:GetIsActive() then
+        cmpt:SetIsWaitTrigger(true)
+        checkValid = true
+      end
+      break
     end
-    do break end
   end
-  do
-    if not checkValid then
-      (Log.fatal)("SyncClientUnscaledCountDownCommand invalid")
-      return 
+  if not checkValid then
+    Log.fatal("SyncClientUnscaledCountDownCommand invalid")
+    return
+  end
+  local gameFsmCmpt = self._world:GameFSM()
+  local gameFsmStateID = gameFsmCmpt:CurStateID()
+  if gameFsmStateID == GameStateID.WaitInput then
+    local isWaitMove = false
+    local teamEntity = self._world:Player():GetCurrentTeamEntity()
+    local logicChainPathCmpt = teamEntity:LogicChainPath()
+    local chainPathData = logicChainPathCmpt:GetLogicChainPath()
+    if chainPathData and 0 < #chainPathData then
+      isWaitMove = true
     end
-    local gameFsmCmpt = (self._world):GameFSM()
-    local gameFsmStateID = gameFsmCmpt:CurStateID()
-    if gameFsmStateID == GameStateID.WaitInput then
-      local isWaitMove = false
-      local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-      local logicChainPathCmpt = teamEntity:LogicChainPath()
-      local chainPathData = logicChainPathCmpt:GetLogicChainPath()
-      if chainPathData and #chainPathData > 0 then
-        isWaitMove = true
-      end
-      if not isWaitMove then
-        ((self._world):EventDispatcher()):Dispatch(GameEventType.WaitInputFinish, 12)
-      end
+    if not isWaitMove then
+      self._world:EventDispatcher():Dispatch(GameEventType.WaitInputFinish, 12)
     end
   end
 end
-
-

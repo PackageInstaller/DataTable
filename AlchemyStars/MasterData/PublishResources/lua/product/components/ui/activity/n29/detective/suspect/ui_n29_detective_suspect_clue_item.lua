@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/suspect/ui_n29_detective_suspect_clue_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN29DetectiveSuspectClueItem", UICustomWidget)
 UIN29DetectiveSuspectClueItem = UIN29DetectiveSuspectClueItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN29DetectiveSuspectClueItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN29DetectiveSuspectClueItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectClueItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIN29DetectiveSuspectClueItem:InitWidget()
   self._tip = self:GetGameObject("tip")
   self._haveClicked = self:GetGameObject("haveClicked")
   self._clue = self:GetUIComponent("Image", "Clue")
@@ -23,105 +13,65 @@ UIN29DetectiveSuspectClueItem.InitWidget = function(self)
   self._clueSize = self:GetUIComponent("RectTransform", "Clue")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectClueItem.SetData = function(self, suspiciousId, severList, psdId, playStory, time)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN29DetectiveSuspectClueItem:SetData(suspiciousId, severList, psdId, playStory, time)
   self.suspiciousId = suspiciousId
   self._severList = severList
   self._psdId = psdId
   self.playStory = playStory
   self.checkTime = time
   if self.checkTime then
-    (self.checkTime)()
+    self.checkTime()
   end
-  local cfg = (Cfg.cfg_component_detective_suspicious)[self.suspiciousId]
+  local cfg = Cfg.cfg_component_detective_suspicious[self.suspiciousId]
   self.clue = cfg.ClueId
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectClueItem.SetPivos = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._rectTransform).anchorMax = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMin = Vector2(0.5, 0.5)
+function UIN29DetectiveSuspectClueItem:SetPivos()
+  self._rectTransform.anchorMax = Vector2(0.5, 0.5)
+  self._rectTransform.anchorMin = Vector2(0.5, 0.5)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectClueItem.SetPosition = function(self, position, size)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._rectTransform).anchoredPosition = Vector2(position[1], position[2])
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._clueSize).sizeDelta = Vector2(size[1], size[2])
+function UIN29DetectiveSuspectClueItem:SetPosition(position, size)
+  self._rectTransform.anchoredPosition = Vector2(position[1], position[2])
+  self._clueSize.sizeDelta = Vector2(size[1], size[2])
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectClueItem.ClueOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  do
-    if self.checkTime then
-      local isOpen = (self.checkTime)()
-      if not isOpen then
-        return 
-      end
+function UIN29DetectiveSuspectClueItem:ClueOnClick()
+  if self.checkTime then
+    local isOpen = self.checkTime()
+    if not isOpen then
+      return
     end
-    local cfg = (Cfg.cfg_component_detective_suspicious)[self.suspiciousId]
-    local storyId = cfg.StoryId
-    local hasClick = (UIN29DetectiveHelper.IsInList)(self.clue, self._severList)
-    if hasClick then
-      (ToastManager.ShowToast)((StringTable.Get)("str_n29_detective_have_clicked_suspicious_item"))
-    else
-      if self.playStory then
-        (Log.fatal)("点击可疑点" .. self.suspiciousId)
-        ;
-        (self.playStory)(storyId, self.suspiciousId)
-      end
-    end
+  end
+  local cfg = Cfg.cfg_component_detective_suspicious[self.suspiciousId]
+  local storyId = cfg.StoryId
+  local hasClick = UIN29DetectiveHelper.IsInList(self.clue, self._severList)
+  if hasClick then
+    ToastManager.ShowToast(StringTable.Get("str_n29_detective_have_clicked_suspicious_item"))
+  elseif self.playStory then
+    Log.fatal("点击可疑点" .. self.suspiciousId)
+    self.playStory(storyId, self.suspiciousId)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectClueItem.GetClue = function(self)
-  -- function num : 0_6
+function UIN29DetectiveSuspectClueItem:GetClue()
   return self.suspiciousId
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveSuspectClueItem.SetTips = function(self, bool)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN29DetectiveSuspectClueItem:SetTips(bool)
   if self.checkTime then
-    (self.checkTime)()
+    self.checkTime()
   end
   if bool then
-    if (UIN29DetectiveHelper.IsInList)(self.clue, self._severList) then
-      (self._haveClicked):SetActive(true)
-      ;
-      (self._tip):SetActive(false)
+    if UIN29DetectiveHelper.IsInList(self.clue, self._severList) then
+      self._haveClicked:SetActive(true)
+      self._tip:SetActive(false)
     else
-      ;
-      (self._haveClicked):SetActive(false)
-      ;
-      (self._tip):SetActive(true)
+      self._haveClicked:SetActive(false)
+      self._tip:SetActive(true)
     end
   else
-    ;
-    (self._haveClicked):SetActive(false)
-    ;
-    (self._tip):SetActive(false)
+    self._haveClicked:SetActive(false)
+    self._tip:SetActive(false)
   end
 end
-
-

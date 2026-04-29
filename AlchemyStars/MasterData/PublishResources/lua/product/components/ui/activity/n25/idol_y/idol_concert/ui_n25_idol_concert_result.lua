@@ -1,64 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/idol_concert/ui_n25_idol_concert_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolConcertResult", UIController)
 UIN25IdolConcertResult = UIN25IdolConcertResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolConcertResult.Constructor = function(self)
-  -- function num : 0_0
+function UIN25IdolConcertResult:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertResult.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._campaign = (UIActivityCampaign.New)()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N25, ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
+function UIN25IdolConcertResult:LoadDataOnEnter(TT, res, uiParams)
+  self._campaign = UIActivityCampaign.New()
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N25, ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, function()
-    -- function num : 0_1_0
+    self._campaign:CheckErrorCode(res.m_result, function()
+    end, function()
+      self:SwitchState(UIStateType.UIMain)
+    end)
   end
-, function()
-    -- function num : 0_1_1 , upvalues : self, _ENV
-    self:SwitchState(UIStateType.UIMain)
-  end
-)
-  end
-  self.component = (self._campaign):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
+  self.component = self._campaign:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertResult.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN25IdolConcertResult:OnShow(uiParams)
   self.succ = uiParams[1]
   self.currentTurn = uiParams[2]
   self.gapFansNumber = uiParams[3]
   self.callback = uiParams[4]
-  ;
-  (CutsceneManager.ExcuteCutsceneOut)()
+  CutsceneManager.ExcuteCutsceneOut()
   self:GetComponents()
   self:OnValue()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN25IdolCheckState, self:GetName())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN25IdolCheckState, self:GetName())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertResult.GetComponents = function(self)
-  -- function num : 0_3
+function UIN25IdolConcertResult:GetComponents()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtn")
   self.backBtns = backBtns:SpawnObject("UINewCommonTopButton")
-  ;
-  (self.backBtns):SetData(function()
-    -- function num : 0_3_0 , upvalues : self
+  self.backBtns:SetData(function()
     self:Close()
-  end
-, nil, nil, true)
+  end, nil, nil, true)
   self.spineRect = self:GetUIComponent("RectTransform", "spine")
   self.spine = self:GetUIComponent("SpineLoader", "spine")
   self.succC = self:GetGameObject("succC")
@@ -74,18 +48,14 @@ UIN25IdolConcertResult.GetComponents = function(self)
   self.anim = self:GetUIComponent("Animation", "Center")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertResult.OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local type, spine, title, offset, inAnim, loopAnim, yieldTime = nil, nil, nil, nil, nil, nil, nil
+function UIN25IdolConcertResult:OnValue()
+  local type, spine, title, offset, inAnim, loopAnim, yieldTime
   if self.succ then
     type = UIIdolResultType.ConcertSucc
     spine = "n25_g_win_spine_idle"
     title = "str_n25_idol_y_concert_succ_title"
     offset = Vector2(-283, -170)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N25IdolSuccess)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N25IdolSuccess)
     inAnim = "uieff_UIN25IdolConcertResult_succC_in"
     yieldTime = 500
     loopAnim = "uieff_UIN25IdolConcertResult_succC_loop"
@@ -94,160 +64,109 @@ UIN25IdolConcertResult.OnValue = function(self)
     spine = "n25_g_fail_spine_idle"
     title = "str_n25_idol_y_concert_fail_title"
     offset = Vector2(-283, -219)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioLose)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioLose)
     inAnim = "uieff_UIN25IdolConcertResult_failc_in"
     yieldTime = 1000
     loopAnim = "uieff_UIN25IdolConcertResult_failc_loop"
   end
   self:Lock("UIN25IdolConcertResult:InAnim")
-  ;
-  (self.anim):Play(inAnim)
+  self.anim:Play(inAnim)
   if self.event then
-    ((GameGlobal.Timer)()):CancelEvent(self.event)
+    GameGlobal.Timer():CancelEvent(self.event)
   end
-  self.event = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_4_0 , upvalues : self, loopAnim
+  self.event = GameGlobal.Timer():AddEvent(yieldTime, function()
     self:UnLock("UIN25IdolConcertResult:InAnim")
-    ;
-    (self.anim):Play(loopAnim)
-  end
-)
+    self.anim:Play(loopAnim)
+  end)
   self:ConcertFailReq()
-  ;
-  (self.gapFans):SetText(self.gapFansNumber)
-  -- DECOMPILER ERROR at PC70: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.spineRect).anchoredPosition = offset
-  ;
-  (self.spine):LoadSpine(spine)
-  ;
-  (self.title):SetText((StringTable.Get)(title))
-  ;
-  (self.succC):SetActive(self.succ)
-  ;
-  (self.failC):SetActive(not self.succ)
-  ;
-  (self.succGo):SetActive(self.succ)
-  ;
-  (self.failGo):SetActive(not self.succ)
-  local cfgs = (Cfg.cfg_n25_concert)({Turn = self.currentTurn})
-  if cfgs and (table.count)(cfgs) > 0 then
+  self.gapFans:SetText(self.gapFansNumber)
+  self.spineRect.anchoredPosition = offset
+  self.spine:LoadSpine(spine)
+  self.title:SetText(StringTable.Get(title))
+  self.succC:SetActive(self.succ)
+  self.failC:SetActive(not self.succ)
+  self.succGo:SetActive(self.succ)
+  self.failGo:SetActive(not self.succ)
+  local cfgs = Cfg.cfg_n25_concert({
+    Turn = self.currentTurn
+  })
+  if cfgs and table.count(cfgs) > 0 then
     self.cfg = cfgs[1]
-    local desc1, desc2 = nil, nil
+    local desc1, desc2
     if self.succ then
-      desc1 = (self.cfg).Desc1
-      desc2 = (self.cfg).Desc2
+      desc1 = self.cfg.Desc1
+      desc2 = self.cfg.Desc2
     else
-      desc1 = (self.cfg).Desc1
-      desc2 = (self.cfg).Desc2
+      desc1 = self.cfg.Desc1
+      desc2 = self.cfg.Desc2
     end
-    local s_desc1 = (self.cfg).SuccDesc1
-    local s_desc2 = (self.cfg).SuccDesc2
-    local f_desc1 = (self.cfg).FailDesc1
-    local f_desc2 = (self.cfg).FailDesc2
-    ;
-    (self.succDesc1):SetText((StringTable.Get)(s_desc1) or "")
-    ;
-    (self.succDesc2):SetText((StringTable.Get)(s_desc2) or "")
-    ;
-    (self.failDesc1):SetText((StringTable.Get)(f_desc1) or "")
-    ;
-    (self.failDesc2):SetText((StringTable.Get)(f_desc2) or "")
+    local s_desc1 = self.cfg.SuccDesc1
+    local s_desc2 = self.cfg.SuccDesc2
+    local f_desc1 = self.cfg.FailDesc1
+    local f_desc2 = self.cfg.FailDesc2
+    self.succDesc1:SetText(StringTable.Get(s_desc1) or "")
+    self.succDesc2:SetText(StringTable.Get(s_desc2) or "")
+    self.failDesc1:SetText(StringTable.Get(f_desc1) or "")
+    self.failDesc2:SetText(StringTable.Get(f_desc2) or "")
   else
-    do
-      ;
-      (Log.error)("###[UIN25IdolConcertResult] cfgs is nil! turn :", self.currentTurn)
-    end
+    Log.error("###[UIN25IdolConcertResult] cfgs is nil! turn :", self.currentTurn)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertResult.ConcertFailReq = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.SendReq, self)
+function UIN25IdolConcertResult:ConcertFailReq()
+  GameGlobal.TaskManager():StartTask(self.SendReq, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertResult.SendReq = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN25IdolConcertResult:SendReq(TT)
   self:Lock("UIN25IdolConcertResult:SendReq")
   local res = AsyncRequestRes:New()
-  ;
-  (self.component):HandleIdolConcertFail(TT, res, self.succ)
+  self.component:HandleIdolConcertFail(TT, res, self.succ)
   self:UnLock("UIN25IdolConcertResult:SendReq")
   if res:GetSucc() then
-    (Log.debug)("###[UIN25IdolConcertResult] HandleIdolConcertFail succ ")
+    Log.debug("###[UIN25IdolConcertResult] HandleIdolConcertFail succ ")
   else
     local result = res:GetResult()
-    ;
-    (Log.fatal)("###[UIN25IdolConcertResult] HandleIdolConcertFail fail ,result:", result)
+    Log.fatal("###[UIN25IdolConcertResult] HandleIdolConcertFail fail ,result:", result)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertResult.BgOnClick = function(self, go)
-  -- function num : 0_7
+function UIN25IdolConcertResult:BgOnClick(go)
   self:Close()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertResult.Close = function(self)
-  -- function num : 0_8
-  local after = (self.cfg).AfterStory
+function UIN25IdolConcertResult:Close()
+  local after = self.cfg.AfterStory
   if after and self.succ then
     self:ShowDialog("UIN25IdolStoryController", after, function()
-    -- function num : 0_8_0 , upvalues : self
-    self:Over()
-  end
-)
+      self:Over()
+    end)
   else
     self:Over()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertResult.OnHide = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN25IdolConcertResult:OnHide()
   self:UnLock("UIN25IdolConcertResult:InAnim")
   if self.event then
-    ((GameGlobal.Timer)()):CancelEvent(self.event)
+    GameGlobal.Timer():CancelEvent(self.event)
   end
   if self.callback then
-    (self.callback)()
+    self.callback()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertResult.Over = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local type = (self.cfg).Type
+function UIN25IdolConcertResult:Over()
+  local type = self.cfg.Type
   if type == 2 then
-    (CutsceneManager.ExcuteCutsceneIn)("UIN25Idol_Common_Switch", function()
-    -- function num : 0_10_0 , upvalues : self
-    self:ShowDialog("UIN25IdolSumUp")
-  end
-)
+    CutsceneManager.ExcuteCutsceneIn("UIN25Idol_Common_Switch", function()
+      self:ShowDialog("UIN25IdolSumUp")
+    end)
+  elseif self.succ then
+    CutsceneManager.ExcuteCutsceneIn("UIN25Idol_Common_Switch", function()
+      self:CloseDialog()
+      CutsceneManager.ExcuteCutsceneOut()
+    end)
   else
-    if self.succ then
-      (CutsceneManager.ExcuteCutsceneIn)("UIN25Idol_Common_Switch", function()
-    -- function num : 0_10_1 , upvalues : self, _ENV
-    self:CloseDialog()
-    ;
-    (CutsceneManager.ExcuteCutsceneOut)()
-  end
-)
-    else
-      self:SwitchState(UIStateType.UIN25IdolLogin)
-    end
+    self:SwitchState(UIStateType.UIN25IdolLogin)
   end
 end
-
-

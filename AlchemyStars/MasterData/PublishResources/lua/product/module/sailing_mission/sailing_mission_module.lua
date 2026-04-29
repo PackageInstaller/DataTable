@@ -1,75 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/sailing_mission/sailing_mission_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SailingMissionModule", GameModule)
 SailingMissionModule = SailingMissionModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SailingMissionModule.Constructor = function(self)
-  -- function num : 0_0
+function SailingMissionModule:Constructor()
   self.m_sailing_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((SailingMissionModule.super).Init)(self)
-  ;
-  (self.caller):RegisterPushHandler(SailingPushOneLayerInfoChange, self.HandleLayerInfoChange, self)
-  ;
-  (self.caller):RegisterPushHandler(SailingPushCurFormationChange, self.HandleFormationChange, self)
+function SailingMissionModule:Init()
+  SailingMissionModule.super.Init(self)
+  self.caller:RegisterPushHandler(SailingPushOneLayerInfoChange, self.HandleLayerInfoChange, self)
+  self.caller:RegisterPushHandler(SailingPushCurFormationChange, self.HandleFormationChange, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.caller):UnRegisterPushHandler(SailingPushOneLayerInfoChange)
-  ;
-  (self.caller):UnRegisterPushHandler(SailingPushCurFormationChange)
-  ;
-  ((SailingMissionModule.super).Dispose)(self)
+function SailingMissionModule:Dispose()
+  self.caller:UnRegisterPushHandler(SailingPushOneLayerInfoChange)
+  self.caller:UnRegisterPushHandler(SailingPushCurFormationChange)
+  SailingMissionModule.super.Dispose(self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.HandleFormationChange = function(self, msg)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_sailing_mission_info).team_cache = msg.team_cache
+function SailingMissionModule:HandleFormationChange(msg)
+  self.m_sailing_mission_info.team_cache = msg.team_cache
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.HandleLayerInfoChange = function(self, msg)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_sailing_mission_info).max_layer_id = msg.max_layer_id
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_sailing_mission_info).cur_exploration_progress = msg.cur_exploration_progress
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_sailing_mission_info).history_exploration_progress = msg.history_exploration_progress
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self.m_sailing_mission_info).infos)[(msg.info).layer_id] = msg.info
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SailingMissionLayerInfoChanged, (msg.info).layer_id)
+function SailingMissionModule:HandleLayerInfoChange(msg)
+  self.m_sailing_mission_info.max_layer_id = msg.max_layer_id
+  self.m_sailing_mission_info.cur_exploration_progress = msg.cur_exploration_progress
+  self.m_sailing_mission_info.history_exploration_progress = msg.history_exploration_progress
+  self.m_sailing_mission_info.infos[msg.info.layer_id] = msg.info
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SailingMissionLayerInfoChanged, msg.info.layer_id)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.Module_ConvertSailingMatchResult = function(self, recvResult)
-  -- function num : 0_5 , upvalues : _ENV
+function SailingMissionModule:Module_ConvertSailingMatchResult(recvResult)
   local uiMatchResult = UI_MatchResult:New()
   uiMatchResult.m_nMatchType = MatchType.MT_SailingMission
   uiMatchResult.m_nID = recvResult.mission_id
@@ -77,18 +37,15 @@ SailingMissionModule.Module_ConvertSailingMatchResult = function(self, recvResul
   uiMatchResult.layer_mission_num = recvResult.layer_mission_num
   uiMatchResult.cur_max_layer = recvResult.cur_max_layer
   uiMatchResult.history_exploration_progress = recvResult.history_exploration_progress
-  local cfg = (Cfg.cfg_sailing_mission)[recvResult.mission_id]
-  local name = (StringTable.Get)(cfg.MissionName)
+  local cfg = Cfg.cfg_sailing_mission[recvResult.mission_id]
+  local name = StringTable.Get(cfg.MissionName)
   uiMatchResult.m_stShowName = name
   return uiMatchResult
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.HandleGetSailingMissionData = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function SailingMissionModule:HandleGetSailingMissionData(TT)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplySailingMissionInfoReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplySailingMissionInfoReq)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     AsyncRes:SetResult(HomeLandErrorType.E_SAILINGMISSION_ERROR_UNLOCK)
@@ -104,12 +61,9 @@ SailingMissionModule.HandleGetSailingMissionData = function(self, TT)
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.HandleChangeFormation = function(self, TT, layer_id, mission_id, pet_list)
-  -- function num : 0_7 , upvalues : _ENV
+function SailingMissionModule:HandleChangeFormation(TT, layer_id, mission_id, pet_list)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplySMChangeFormationReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplySMChangeFormationReq)
   request.formation_pet_list = pet_list
   request.layer_id = layer_id
   request.mission_id = mission_id
@@ -127,12 +81,9 @@ SailingMissionModule.HandleChangeFormation = function(self, TT, layer_id, missio
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.HandleResetMissionRecord = function(self, TT, layer_id, mission_id)
-  -- function num : 0_8 , upvalues : _ENV
+function SailingMissionModule:HandleResetMissionRecord(TT, layer_id, mission_id)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventResetSailingMissionRecordReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventResetSailingMissionRecordReq)
   request.layer_id = layer_id
   request.mission_id = mission_id
   local reply = self:Call(TT, request)
@@ -149,12 +100,9 @@ SailingMissionModule.HandleResetMissionRecord = function(self, TT, layer_id, mis
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.HandleReceiveRewards = function(self, TT, id_list)
-  -- function num : 0_9 , upvalues : _ENV
+function SailingMissionModule:HandleReceiveRewards(TT, id_list)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventReceiveRewardReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventReceiveRewardReq)
   request.id_list = id_list
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -164,59 +112,38 @@ SailingMissionModule.HandleReceiveRewards = function(self, TT, id_list)
   local replyEvent = reply.msg
   if replyEvent.ret == SailingMissionErrorType.E_SAILINGMISSION_ERROR_TYPE_SUCCESS then
     AsyncRes:SetSucc(true)
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.m_sailing_mission_info).received_exploration_reward = replyEvent.received_exploration_reward
+    self.m_sailing_mission_info.received_exploration_reward = replyEvent.received_exploration_reward
   else
     AsyncRes:SetResult(replyEvent.ret)
   end
   return AsyncRes, replyEvent.rewards
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.GetChallengeLayerID = function(self)
-  -- function num : 0_10
-  return (self.m_sailing_mission_info).max_layer_id
+function SailingMissionModule:GetChallengeLayerID()
+  return self.m_sailing_mission_info.max_layer_id
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.GetCurrentProgress = function(self)
-  -- function num : 0_11
-  return (self.m_sailing_mission_info).cur_exploration_progress
+function SailingMissionModule:GetCurrentProgress()
+  return self.m_sailing_mission_info.cur_exploration_progress
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.GetHistoryProgress = function(self)
-  -- function num : 0_12
-  return (self.m_sailing_mission_info).history_exploration_progress
+function SailingMissionModule:GetHistoryProgress()
+  return self.m_sailing_mission_info.history_exploration_progress
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.GetLayerInfo = function(self, layer_id)
-  -- function num : 0_13
-  return ((self.m_sailing_mission_info).infos)[layer_id]
+function SailingMissionModule:GetLayerInfo(layer_id)
+  return self.m_sailing_mission_info.infos[layer_id]
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.GetReceivedReward = function(self)
-  -- function num : 0_14
-  return (self.m_sailing_mission_info).received_exploration_reward
+function SailingMissionModule:GetReceivedReward()
+  return self.m_sailing_mission_info.received_exploration_reward
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.GetMissionTeams = function(self, layerId, missionId)
-  -- function num : 0_15
+function SailingMissionModule:GetMissionTeams(layerId, missionId)
   if not self.m_sailing_mission_info then
     return {}
   end
-  local layerInfo = ((self.m_sailing_mission_info).infos)[layerId]
+  local layerInfo = self.m_sailing_mission_info.infos[layerId]
   if not layerInfo then
     return {}
   end
@@ -230,37 +157,28 @@ SailingMissionModule.GetMissionTeams = function(self, layerId, missionId)
   return {}
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.GetTeamCache = function(self)
-  -- function num : 0_16
+function SailingMissionModule:GetTeamCache()
   if not self.m_sailing_mission_info then
     return nil
   end
-  return (self.m_sailing_mission_info).team_cache
+  return self.m_sailing_mission_info.team_cache
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.CacheFilterPetsLayerAndMissionId = function(self, layerId, missionId)
-  -- function num : 0_17
+function SailingMissionModule:CacheFilterPetsLayerAndMissionId(layerId, missionId)
   self._cache_layer_id = layerId
   self._cache_mission_id = missionId
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.GetFilterPets = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function SailingMissionModule:GetFilterPets()
   if not self.m_sailing_mission_info then
     return {}
   end
-  local infos = (self.m_sailing_mission_info).infos
+  local infos = self.m_sailing_mission_info.infos
   if not infos then
     return {}
   end
   local filterPets = {}
-  for _,layerInfo in pairs(infos) do
+  for _, layerInfo in pairs(infos) do
     local missionInfos = layerInfo.mission_infos
     if missionInfos then
       for i = 1, #missionInfos do
@@ -280,32 +198,23 @@ SailingMissionModule.GetFilterPets = function(self)
   return filterPets
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.CacheHistoryMissionCount = function(self)
-  -- function num : 0_19
-  self._cache_history_mission_count = (self.m_sailing_mission_info).history_exploration_progress
+function SailingMissionModule:CacheHistoryMissionCount()
+  self._cache_history_mission_count = self.m_sailing_mission_info.history_exploration_progress
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.GetCacheHistoryMissionCount = function(self)
-  -- function num : 0_20
+function SailingMissionModule:GetCacheHistoryMissionCount()
   return self._cache_history_mission_count
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.IsMissionComplete = function(self, layerId, missionId)
-  -- function num : 0_21
+function SailingMissionModule:IsMissionComplete(layerId, missionId)
   if not self.m_sailing_mission_info then
     return false
   end
-  local infos = (self.m_sailing_mission_info).infos
+  local infos = self.m_sailing_mission_info.infos
   if not infos then
     return false
   end
-  local layerInfo = ((self.m_sailing_mission_info).infos)[layerId]
+  local layerInfo = self.m_sailing_mission_info.infos[layerId]
   if not layerInfo then
     return false
   end
@@ -319,27 +228,20 @@ SailingMissionModule.IsMissionComplete = function(self, layerId, missionId)
   return false
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionModule.IsShowRewardRedPoint = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function SailingMissionModule:IsShowRewardRedPoint()
   local showRetPoint = false
   local progress = self:GetHistoryProgress()
   local rewardList = self:GetReceivedReward()
   local dicReward = {}
-  for _,v in pairs(rewardList) do
+  for _, v in pairs(rewardList) do
     dicReward[v] = v
   end
-  local cfgs = (Cfg.cfg_sailing_reward)({})
-  for _,v in pairs(cfgs) do
-    if v.ExplorationProgress <= progress and dicReward[v.ID] == nil then
+  local cfgs = Cfg.cfg_sailing_reward({})
+  for _, v in pairs(cfgs) do
+    if progress >= v.ExplorationProgress and dicReward[v.ID] == nil then
       showRetPoint = true
       break
     end
   end
-  do
-    return showRetPoint
-  end
+  return showRetPoint
 end
-
-

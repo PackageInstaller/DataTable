@@ -1,51 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/entrust/event/ui_n22_entrust_event_fight.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22EntrustEventFight", UIN22EntrustEventBase)
 UIN22EntrustEventFight = UIN22EntrustEventFight
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22EntrustEventFight.Refresh = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN22EntrustEventFight:Refresh()
   self:_SetRoot(true)
   self:_SetCloseBtn()
   local cfg = self:GetCfgCampaignEntrustEvent()
   self._missionid = cfg.MissionID
   self:_SetMissionInfo()
-  local pass = (self._component):IsEventPass(self._levelId, self._eventId)
+  local pass = self._component:IsEventPass(self._levelId, self._eventId)
   self:_SetPass(pass)
   self:_SetTalkIcon("n22_wt_dfqb_icon01")
-  local str1 = (StringTable.Get)("str_n22_entrust_event_stage_fight_again")
-  local str2 = (StringTable.Get)("str_n22_entrust_event_stage_fight")
+  local str1 = StringTable.Get("str_n22_entrust_event_stage_fight_again")
+  local str2 = StringTable.Get("str_n22_entrust_event_stage_fight")
   local txtConfirm = pass and str1 or str2
   self:_SetConfirmBtn(true, txtConfirm, function()
-    -- function num : 0_0_0 , upvalues : self, _ENV
     local module = self:GetModule(MissionModule)
     local ctx = module:TeamCtx()
-    ctx:Init(TeamOpenerType.Campaign, {self._missionid, (self._component):GetCampaignMissionComponentId(), (self._component):GetCampaignMissionParamKeyMap()})
+    ctx:Init(TeamOpenerType.Campaign, {
+      self._missionid,
+      self._component:GetCampaignMissionComponentId(),
+      self._component:GetCampaignMissionParamKeyMap()
+    })
     self:Lock("DoEnterTeam")
     ctx:ShowDialogUITeams()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventFight.OnEventFinish = function(self, rewards)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.info)("UIN22EntrustEventFight:OnEventFinish()")
+function UIN22EntrustEventFight:OnEventFinish(rewards)
+  Log.info("UIN22EntrustEventFight:OnEventFinish()")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventFight._SetMissionInfo = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg_campaign_mission = (Cfg.cfg_campaign_mission)[self._missionid]
+function UIN22EntrustEventFight:_SetMissionInfo()
+  local cfg_campaign_mission = Cfg.cfg_campaign_mission[self._missionid]
   if not cfg_campaign_mission then
-    (Log.error)("UIN22EntrustEventFight:_SetMissionInfo() cfg_campaign_mission[", self._missionid, "] is nil!")
-    return 
+    Log.error("UIN22EntrustEventFight:_SetMissionInfo() cfg_campaign_mission[", self._missionid, "] is nil!")
+    return
   end
   local missionType = cfg_campaign_mission.Type
   local recommendAwaken = cfg_campaign_mission.RecommendAwaken
@@ -54,5 +43,3 @@ UIN22EntrustEventFight._SetMissionInfo = function(self)
   local isChess = false
   self:_SetStage(isChess, fightLevel, cfg_campaign_mission, recommendAwaken, recommendLV)
 end
-
-

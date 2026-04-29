@@ -1,95 +1,119 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/data_sort_summon_trap_result_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 RenderSortSummonTrapPattern = {Monster2900241 = 1}
 _class("DataSortSummonTrapResultInstruction", BaseInstruction)
 DataSortSummonTrapResultInstruction = DataSortSummonTrapResultInstruction
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSortSummonTrapResultInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function DataSortSummonTrapResultInstruction:Constructor(paramList)
   self._pattern = tonumber(paramList.pattern)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSortSummonTrapResultInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function DataSortSummonTrapResultInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local cRoutine = (casterEntity:SkillRoutine()):GetResultContainer()
+  local cRoutine = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = cRoutine:GetEffectResultByArrayAll(SkillEffectType.SummonTrap)
   if not resultArray then
-    return 
+    return
   end
   local offsetPos = casterEntity:GetRenderGridPosition()
   if not offsetPos then
-    return 
+    return
   end
   if self._pattern == RenderSortSummonTrapPattern.Monster2900241 then
     self:_SortMonster2900241(casterEntity)
   end
 end
 
-local V2DirClean = function(meta)
-  -- function num : 0_2 , upvalues : _ENV
+local function V2DirClean(meta)
   local v2 = Vector2.zero
   if meta.x > 0 then
     v2.x = 1
-  else
-    if meta.x < 0 then
-      v2.x = -1
-    end
+  elseif meta.x < 0 then
+    v2.x = -1
   end
-  if meta.y > 0 then
+  if 0 < meta.y then
     v2.y = 1
-  else
-    if meta.y < 0 then
-      v2.y = -1
-    end
+  elseif 0 > meta.y then
+    v2.y = -1
   end
   return v2
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-DataSortSummonTrapResultInstruction._SortMonster2900241 = function(self, casterEntity)
-  -- function num : 0_3 , upvalues : V2DirClean, _ENV
+function DataSortSummonTrapResultInstruction:_SortMonster2900241(casterEntity)
   local world = casterEntity:GetOwnerWorld()
   local cLocation = casterEntity:Location()
   local v2meta = cLocation:GetRenderGridDirection()
   local v2dir = V2DirClean(v2meta)
   local brSvc = world:GetService("BoardRender")
   local v2GridPos = casterEntity:GetGridPosition()
-  local cRoutine = (casterEntity:SkillRoutine()):GetResultContainer()
+  local cRoutine = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = cRoutine:GetEffectResultByArrayAll(SkillEffectType.SummonTrap)
   local tGridList = {}
-  for _,result in ipairs(resultArray) do
-    (table.insert)(tGridList, result:GetPos())
+  for _, result in ipairs(resultArray) do
+    table.insert(tGridList, result:GetPos())
   end
-  local sequence = nil
+  local sequence
   if v2dir == Vector2.up then
-    sequence = {v2GridPos + (Vector2.New)(-1, 0), v2GridPos + (Vector2.New)(-1, 1), v2GridPos + (Vector2.New)(-1, 2), v2GridPos + (Vector2.New)(0, 2), v2GridPos + (Vector2.New)(1, 2), v2GridPos + (Vector2.New)(2, 2), v2GridPos + (Vector2.New)(2, 1), v2GridPos + (Vector2.New)(2, 0), v2GridPos + (Vector2.New)(2, -1), v2GridPos + (Vector2.New)(1, -1), v2GridPos + (Vector2.New)(0, -1), v2GridPos + (Vector2.New)(-1, -1)}
+    sequence = {
+      v2GridPos + Vector2.New(-1, 0),
+      v2GridPos + Vector2.New(-1, 1),
+      v2GridPos + Vector2.New(-1, 2),
+      v2GridPos + Vector2.New(0, 2),
+      v2GridPos + Vector2.New(1, 2),
+      v2GridPos + Vector2.New(2, 2),
+      v2GridPos + Vector2.New(2, 1),
+      v2GridPos + Vector2.New(2, 0),
+      v2GridPos + Vector2.New(2, -1),
+      v2GridPos + Vector2.New(1, -1),
+      v2GridPos + Vector2.New(0, -1),
+      v2GridPos + Vector2.New(-1, -1)
+    }
+  elseif v2dir == Vector2.down then
+    sequence = {
+      v2GridPos + Vector2.New(2, 1),
+      v2GridPos + Vector2.New(2, 0),
+      v2GridPos + Vector2.New(2, -1),
+      v2GridPos + Vector2.New(1, -1),
+      v2GridPos + Vector2.New(0, -1),
+      v2GridPos + Vector2.New(-1, -1),
+      v2GridPos + Vector2.New(-1, 0),
+      v2GridPos + Vector2.New(-1, 1),
+      v2GridPos + Vector2.New(-1, 2),
+      v2GridPos + Vector2.New(0, 2),
+      v2GridPos + Vector2.New(1, 2),
+      v2GridPos + Vector2.New(2, 2)
+    }
+  elseif v2dir == Vector2.left then
+    sequence = {
+      v2GridPos + Vector2.New(1, -1),
+      v2GridPos + Vector2.New(0, -1),
+      v2GridPos + Vector2.New(-1, -1),
+      v2GridPos + Vector2.New(-1, 0),
+      v2GridPos + Vector2.New(-1, 1),
+      v2GridPos + Vector2.New(-1, 2),
+      v2GridPos + Vector2.New(0, 2),
+      v2GridPos + Vector2.New(1, 2),
+      v2GridPos + Vector2.New(2, 2),
+      v2GridPos + Vector2.New(2, 1),
+      v2GridPos + Vector2.New(2, 0),
+      v2GridPos + Vector2.New(2, -1)
+    }
   else
-    if v2dir == Vector2.down then
-      sequence = {v2GridPos + (Vector2.New)(2, 1), v2GridPos + (Vector2.New)(2, 0), v2GridPos + (Vector2.New)(2, -1), v2GridPos + (Vector2.New)(1, -1), v2GridPos + (Vector2.New)(0, -1), v2GridPos + (Vector2.New)(-1, -1), v2GridPos + (Vector2.New)(-1, 0), v2GridPos + (Vector2.New)(-1, 1), v2GridPos + (Vector2.New)(-1, 2), v2GridPos + (Vector2.New)(0, 2), v2GridPos + (Vector2.New)(1, 2), v2GridPos + (Vector2.New)(2, 2)}
-    else
-      if v2dir == Vector2.left then
-        sequence = {v2GridPos + (Vector2.New)(1, -1), v2GridPos + (Vector2.New)(0, -1), v2GridPos + (Vector2.New)(-1, -1), v2GridPos + (Vector2.New)(-1, 0), v2GridPos + (Vector2.New)(-1, 1), v2GridPos + (Vector2.New)(-1, 2), v2GridPos + (Vector2.New)(0, 2), v2GridPos + (Vector2.New)(1, 2), v2GridPos + (Vector2.New)(2, 2), v2GridPos + (Vector2.New)(2, 1), v2GridPos + (Vector2.New)(2, 0), v2GridPos + (Vector2.New)(2, -1)}
-      else
-        sequence = {v2GridPos + (Vector2.New)(0, 2), v2GridPos + (Vector2.New)(1, 2), v2GridPos + (Vector2.New)(2, 2), v2GridPos + (Vector2.New)(2, 1), v2GridPos + (Vector2.New)(2, 0), v2GridPos + (Vector2.New)(2, -1), v2GridPos + (Vector2.New)(1, -1), v2GridPos + (Vector2.New)(0, -1), v2GridPos + (Vector2.New)(-1, -1), v2GridPos + (Vector2.New)(-1, 0), v2GridPos + (Vector2.New)(-1, 1), v2GridPos + (Vector2.New)(-1, 2)}
-      end
-    end
+    sequence = {
+      v2GridPos + Vector2.New(0, 2),
+      v2GridPos + Vector2.New(1, 2),
+      v2GridPos + Vector2.New(2, 2),
+      v2GridPos + Vector2.New(2, 1),
+      v2GridPos + Vector2.New(2, 0),
+      v2GridPos + Vector2.New(2, -1),
+      v2GridPos + Vector2.New(1, -1),
+      v2GridPos + Vector2.New(0, -1),
+      v2GridPos + Vector2.New(-1, -1),
+      v2GridPos + Vector2.New(-1, 0),
+      v2GridPos + Vector2.New(-1, 1),
+      v2GridPos + Vector2.New(-1, 2)
+    }
   end
-  ;
-  (table.sort)(resultArray, function(a, b)
-    -- function num : 0_3_0 , upvalues : _ENV, sequence
-    do return (table.ikey)(sequence, a:GetPos()) < (table.ikey)(sequence, b:GetPos()) end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(resultArray, function(a, b)
+    return table.ikey(sequence, a:GetPos()) < table.ikey(sequence, b:GetPos())
+  end)
 end
-
-

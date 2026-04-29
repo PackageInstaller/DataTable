@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/test_func/ui_main_lobby_testfunc_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyTestFuncBtn", UICustomWidget)
 UIMainLobbyTestFuncBtn = UIMainLobbyTestFuncBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyTestFuncBtn.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIMainLobbyTestFuncBtn:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTestFuncBtn.OnHide = function(self)
-  -- function num : 0_1
+function UIMainLobbyTestFuncBtn:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTestFuncBtn.SetData = function(self, title, params)
-  -- function num : 0_2
+function UIMainLobbyTestFuncBtn:SetData(title, params)
   local _params = params
   local callback = _params[1]
   local isToggle = _params[2]
@@ -34,44 +21,28 @@ UIMainLobbyTestFuncBtn.SetData = function(self, title, params)
   if isToggle then
     txtOrToggle = false
   end
-  ;
-  (self._txtGo):SetActive(txtOrToggle)
-  ;
-  (self._toggleGo):SetActive(not txtOrToggle)
+  self._txtGo:SetActive(txtOrToggle)
+  self._toggleGo:SetActive(not txtOrToggle)
   if isToggle then
-    (self._toggleTex):SetText(title)
+    self._toggleTex:SetText(title)
     local value = false
     if getValueCallback then
       value = getValueCallback()
     end
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._toggle).isOn = value
-    ;
-    ((self._toggle).onValueChanged):AddListener(function(value)
-    -- function num : 0_2_0 , upvalues : callback
-    if callback then
-      callback(value)
-    end
-  end
-)
+    self._toggle.isOn = value
+    self._toggle.onValueChanged:AddListener(function(value)
+      if callback then
+        callback(value)
+      end
+    end)
   else
-    do
-      ;
-      (self._txtTitle):SetText(title)
-      self._callback = callback
-    end
+    self._txtTitle:SetText(title)
   end
+  self._callback = callback
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyTestFuncBtn.BtnOnClick = function(self)
-  -- function num : 0_3
+function UIMainLobbyTestFuncBtn:BtnOnClick()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
-
-

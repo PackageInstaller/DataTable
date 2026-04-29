@@ -1,46 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/System/Injection/LuaInjectionStation.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local pcall = pcall
-local pairs = pairs
-local error = error
-local rawset = rawset
-local rawget = rawget
-local string = string
-local tolua_tag = tolua_tag
-local getmetatable = getmetatable
-local CSLuaInjectStation = nil
+local pcall = _ENV.pcall
+local pairs = _ENV.pairs
+local error = _ENV.error
+local rawset = _ENV.rawset
+local rawget = _ENV.rawget
+local string = _ENV.string
+local tolua_tag = _ENV.tolua_tag
+local getmetatable = _ENV.getmetatable
+local CSLuaInjectStation
 local bridgeInfo = require("injectionbridgeinfo")
-local Check = function(csModule)
-  -- function num : 0_0 , upvalues : getmetatable, rawget, tolua_tag, error
+
+local function Check(csModule)
   local existmt = getmetatable(csModule)
   if rawget(existmt, tolua_tag) ~= 1 then
-    error("Can\'t Inject")
+    error("Can't Inject")
   end
   return existmt
 end
 
-local CacheCSLuaInjectStation = function()
-  -- function num : 0_1 , upvalues : CSLuaInjectStation, _ENV
+local function CacheCSLuaInjectStation()
   if CSLuaInjectStation == nil then
     CSLuaInjectStation = LuaInterface.LuaInjectionStation
   end
 end
 
-local UpdateFunctionReference = function(metatable, injectInfo)
-  -- function num : 0_2 , upvalues : pairs, _ENV, rawset, rawget, pcall, error
+local function UpdateFunctionReference(metatable, injectInfo)
   local oldIndexMetamethod = metatable.__index
   local newMethodGroup = {}
-  for funcName,infoPipeline in pairs(injectInfo) do
+  for funcName, infoPipeline in pairs(injectInfo) do
     local injectFunction, injectFlag = infoPipeline()
-    if injectFlag == (LuaInterface.InjectType).Replace or injectFlag == (LuaInterface.InjectType).ReplaceWithPostInvokeBase or injectFlag == (LuaInterface.InjectType).ReplaceWithPreInvokeBase then
+    if injectFlag == LuaInterface.InjectType.Replace or injectFlag == LuaInterface.InjectType.ReplaceWithPostInvokeBase or injectFlag == LuaInterface.InjectType.ReplaceWithPreInvokeBase then
       rawset(newMethodGroup, funcName, injectFunction)
     end
   end
-  metatable.__index = function(t, k)
-    -- function num : 0_2_0 , upvalues : rawget, newMethodGroup, pcall, oldIndexMetamethod, error
+  
+  function metatable.__index(t, k)
     local injectFunc = rawget(newMethodGroup, k)
     if injectFunc ~= nil then
       return injectFunc
@@ -53,34 +46,29 @@ local UpdateFunctionReference = function(metatable, injectInfo)
       return nil
     end
   end
-
 end
 
-InjectByModule = function(csModule, injectInfo)
-  -- function num : 0_3 , upvalues : Check, _ENV, UpdateFunctionReference
+function InjectByModule(csModule, injectInfo)
   local mt = Check(csModule)
   local moduleName = mt[".name"]
   InjectByName(moduleName, injectInfo)
   UpdateFunctionReference(mt, injectInfo)
 end
 
-InjectByName = function(moduleName, injectInfo)
-  -- function num : 0_4 , upvalues : CacheCSLuaInjectStation, rawget, bridgeInfo, error, string, pairs, CSLuaInjectStation
+function InjectByName(moduleName, injectInfo)
   CacheCSLuaInjectStation()
   local moduleBridgeInfo = rawget(bridgeInfo, moduleName)
   if moduleBridgeInfo == nil then
-    error((string.format)("Module %s Can\'t Inject", moduleName))
+    error(string.format("Module %s Can't Inject", moduleName))
   end
-  for funcName,infoPipeline in pairs(injectInfo) do
+  for funcName, infoPipeline in pairs(injectInfo) do
     local injectFunction, injectFlag = infoPipeline()
     local injectIndex = rawget(moduleBridgeInfo, funcName)
     if injectIndex == nil then
-      error((string.format)("Function %s Doesn\'t Exist In Module %s", funcName, moduleName))
+      error(string.format("Function %s Doesn't Exist In Module %s", funcName, moduleName))
     end
-    ;
-    (CSLuaInjectStation.CacheInjectFunction)(injectIndex, injectFlag:ToInt(), injectFunction)
+    CSLuaInjectStation.CacheInjectFunction(injectIndex, injectFlag:ToInt(), injectFunction)
   end
 end
 
 require("luainjectionbus")
-

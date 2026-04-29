@@ -1,188 +1,127 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/level/ui_season_level_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonLevelData", Object)
 UISeasonLevelData = UISeasonLevelData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonLevelData.Constructor = function(self, group, point, lineCpt)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonLevelData:Constructor(group, point, lineCpt)
   self._groupID = group
   local levelCfg = point:GetMissionCfg()
   self._lineCpt = lineCpt
   self._missionID = levelCfg.ID
   if levelCfg.OrderID == UISeasonLevelDiff.Normal then
     self._normalLevel = levelCfg
+  elseif levelCfg.OrderID == UISeasonLevelDiff.Hard then
+    self._hardLevel = levelCfg
   else
-    if levelCfg.OrderID == UISeasonLevelDiff.Hard then
-      self._hardLevel = levelCfg
-    else
-      self._normalLevel = levelCfg
-      ;
-      (Log.fatal)("赛季玩法战斗关难度配置错误:", levelCfg.ID, levelCfg.OrderID)
-    end
+    self._normalLevel = levelCfg
+    Log.fatal("赛季玩法战斗关难度配置错误:", levelCfg.ID, levelCfg.OrderID)
   end
   self._awards = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelData.AddDiffLevel = function(self, point)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonLevelData:AddDiffLevel(point)
   local levelCfg = point:GetMissionCfg()
   if levelCfg.OrderID == UISeasonLevelDiff.Normal then
     if self._normalLevel then
-      (Log.exception)("赛季玩法战斗关难度配置错误,普通难度重复:", levelCfg.ID)
+      Log.exception("赛季玩法战斗关难度配置错误,普通难度重复:", levelCfg.ID)
     end
     self._normalLevel = levelCfg
-  else
-    if levelCfg.OrderID == UISeasonLevelDiff.Hard then
-      if self._hardLevel then
-        (Log.exception)("赛季玩法战斗关难度配置错误,高难难度重复:", levelCfg.ID)
-      end
-      self._hardLevel = levelCfg
-    else
-      ;
-      (Log.exception)("赛季玩法战斗关难度配置错误Add:", levelCfg.ID, levelCfg.OrderID)
+  elseif levelCfg.OrderID == UISeasonLevelDiff.Hard then
+    if self._hardLevel then
+      Log.exception("赛季玩法战斗关难度配置错误,高难难度重复:", levelCfg.ID)
     end
+    self._hardLevel = levelCfg
+  else
+    Log.exception("赛季玩法战斗关难度配置错误Add:", levelCfg.ID, levelCfg.OrderID)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelData.GetCurMissionID = function(self)
-  -- function num : 0_2
+function UISeasonLevelData:GetCurMissionID()
   return self._missionID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelData.GetMissionCfgByDiff = function(self, diff)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonLevelData:GetMissionCfgByDiff(diff)
   if diff == UISeasonLevelDiff.Normal then
     return self._normalLevel
+  elseif diff == UISeasonLevelDiff.Hard then
+    return self._hardLevel
   else
-    if diff == UISeasonLevelDiff.Hard then
-      return self._hardLevel
-    else
-      return self._normalLevel
-    end
+    return self._normalLevel
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelData.GetStarByDiff = function(self, diff)
-  -- function num : 0_4
-  local id = (self:GetMissionCfgByDiff(diff)).ID
-  return (self._lineCpt):GetPassStar(id)
+function UISeasonLevelData:GetStarByDiff(diff)
+  local id = self:GetMissionCfgByDiff(diff).ID
+  return self._lineCpt:GetPassStar(id)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelData.GetAwardsByDiff = function(self, diff)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonLevelData:GetAwardsByDiff(diff)
   local cfg = self:GetMissionCfgByDiff(diff)
-  if not (self._awards)[diff] then
-    if (cfg.FirstDropId and not cfg.PassFixDropId) or cfg.ThreeStarDropId then
-      do
-        local awardCfg = {FirstDropId = (cfg.FirstDropId)[1], PassFixDropId = (cfg.PassFixDropId)[1], CPassRandomAward = nil, ThreeStarDropId = (cfg.ThreeStarDropId)[1]}
-        -- DECOMPILER ERROR at PC37: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._awards)[diff] = (UICommonHelper:GetInstance()):GetDropByAwardType(AwardType.Pass, awardCfg, true)
-        return (self._awards)[diff]
-      end
-    end
+  if not self._awards[diff] then
+    local awardCfg = {
+      FirstDropId = cfg.FirstDropId and cfg.FirstDropId[1],
+      PassFixDropId = cfg.PassFixDropId and cfg.PassFixDropId[1],
+      CPassRandomAward = nil,
+      ThreeStarDropId = cfg.ThreeStarDropId and cfg.ThreeStarDropId[1]
+    }
+    self._awards[diff] = UICommonHelper:GetInstance():GetDropByAwardType(AwardType.Pass, awardCfg, true)
   end
+  return self._awards[diff]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelData.IsPassDiff = function(self, diff)
-  -- function num : 0_6
+function UISeasonLevelData:IsPassDiff(diff)
   local cfg = self:GetMissionCfgByDiff(diff)
   if not cfg then
     return true
   end
-  return (self._lineCpt):IsPassCamMissionID(cfg.ID)
+  return self._lineCpt:IsPassCamMissionID(cfg.ID)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelData.CheckUnlock = function(self)
-  -- function num : 0_7
-  self._isUnlock = self:_FitPreCondition((self._normalLevel).NeedMission)
-  if self._hardLevel and self._isUnlock then
-    self._isUnlock = self:_FitPreCondition((self._hardLevel).NeedMission)
+function UISeasonLevelData:CheckUnlock()
+  self._isUnlock = self:_FitPreCondition(self._normalLevel.NeedMission)
+  if self._hardLevel then
+    self._isUnlock = self._isUnlock and self:_FitPreCondition(self._hardLevel.NeedMission)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelData.IsUnlock = function(self)
-  -- function num : 0_8
+function UISeasonLevelData:IsUnlock()
   return self._isUnlock
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelData._FitPreCondition = function(self, cond)
-  -- function num : 0_9 , upvalues : _ENV
-  if (string.isnullorempty)(cond) then
+function UISeasonLevelData:_FitPreCondition(cond)
+  if string.isnullorempty(cond) then
     return true
   end
-  if (string.find)(cond, "|") then
-    local subConds = (string.split)(cond, "|")
-    for _,c in ipairs(subConds) do
+  if string.find(cond, "|") then
+    local subConds = string.split(cond, "|")
+    for _, c in ipairs(subConds) do
       local missionID = tonumber(c)
-      if (self._lineCpt):IsPassCamMissionID(missionID) then
+      if self._lineCpt:IsPassCamMissionID(missionID) then
         return true
       end
     end
     return false
-  else
-    do
-      if (string.find)(cond, "&") then
-        local subConds = (string.split)(cond, "&")
-        for _,c in ipairs(subConds) do
-          local missionID = tonumber(c)
-          if not (self._lineCpt):IsPassCamMissionID(missionID) then
-            return false
-          end
-        end
-        return true
-      else
-        do
-          local missionID = tonumber(cond)
-          do return (self._lineCpt):IsPassCamMissionID(missionID) end
-        end
+  elseif string.find(cond, "&") then
+    local subConds = string.split(cond, "&")
+    for _, c in ipairs(subConds) do
+      local missionID = tonumber(c)
+      if not self._lineCpt:IsPassCamMissionID(missionID) then
+        return false
       end
     end
+    return true
+  else
+    local missionID = tonumber(cond)
+    return self._lineCpt:IsPassCamMissionID(missionID)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelData.GroupID = function(self)
-  -- function num : 0_10
+function UISeasonLevelData:GroupID()
   return self._groupID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelData.SetIndex = function(self, idx)
-  -- function num : 0_11
+function UISeasonLevelData:SetIndex(idx)
   self._index = idx
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelData.Index = function(self)
-  -- function num : 0_12
+function UISeasonLevelData:Index()
   return self._index
 end
-
-

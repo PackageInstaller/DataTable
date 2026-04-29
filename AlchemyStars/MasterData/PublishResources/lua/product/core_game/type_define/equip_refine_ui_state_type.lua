@@ -1,8 +1,2 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/equip_refine_ui_state_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 EquipRefineUIStateType = {On = 1, Off = 2}
 _enum("EquipRefineUIStateType", EquipRefineUIStateType)
-

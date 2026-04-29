@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/side_enter/cls/ui_side_enter_item_messenger_game.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_campaign")
 _class("UISideEnterItem_MessengerGame", UISideEnterItem_Campaign)
 UISideEnterItem_MessengerGame = UISideEnterItem_MessengerGame
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISideEnterItem_MessengerGame._LoadCampaign = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function UISideEnterItem_MessengerGame:_LoadCampaign(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   self.N27MinigameHelper = N27MinigameHelper:New()
-  ;
-  (self.N27MinigameHelper):LoadData(TT, res)
-  self._campaign = (self.N27MinigameHelper):GetCampaign()
+  self.N27MinigameHelper:LoadData(TT, res)
+  self._campaign = self.N27MinigameHelper:GetCampaign()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_MessengerGame._CalcNew = function(self)
-  -- function num : 0_1
-  return (self.N27MinigameHelper):IsShowMiniGameNew()
+function UISideEnterItem_MessengerGame:_CalcNew()
+  return self.N27MinigameHelper:IsShowMiniGameNew()
 end
-
-

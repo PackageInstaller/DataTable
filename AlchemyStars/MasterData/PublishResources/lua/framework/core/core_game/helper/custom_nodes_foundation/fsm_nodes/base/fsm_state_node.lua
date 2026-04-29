@@ -1,35 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/helper/custom_nodes_foundation/fsm_nodes/base/fsm_state_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
--- DECOMPILER ERROR at PC2: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomNodeConfigStatic.Check_StateNode = function(cfg)
-  -- function num : 0_0
+function CustomNodeConfigStatic.Check_StateNode(cfg)
   if cfg.Type then
     return true
   end
   return false
 end
 
-;
-(CustomNodeConfigStatic.AddChecker)("StateNode", CustomNodeConfigStatic.Check_StateNode)
+CustomNodeConfigStatic.AddChecker("StateNode", CustomNodeConfigStatic.Check_StateNode)
 _class("StateNode", CustomNode)
 StateNode = StateNode
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-StateNode.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function StateNode:Constructor()
   self.mStateID = ""
   self.Transition = ArrayList:New()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StateNode.InitializeNode = function(self, cfg, context)
-  -- function num : 0_2 , upvalues : _ENV
-  ((StateNode.super).InitializeNode)(self, cfg, context)
+function StateNode:InitializeNode(cfg, context)
+  StateNode.super.InitializeNode(self, cfg, context)
   self.mStateID = cfg.Type
   if cfg.StateID then
     self.mStateID = cfg.StateID
@@ -41,62 +27,44 @@ StateNode.InitializeNode = function(self, cfg, context)
       local nodeCfg = nodeCfgList[i]
       local subbhv = logic:CreateNode(nodeCfg, context)
       subbhv:Deactivate()
-      ;
-      (self.Transition):PushBack(subbhv)
+      self.Transition:PushBack(subbhv)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-StateNode.Destroy = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function StateNode:Destroy()
   local nodes = self.Transition
   for i = 1, nodes:Size() do
-    (nodes:GetAt(i)):Destroy()
+    nodes:GetAt(i):Destroy()
   end
-  ;
-  (self.Transition):Clear()
-  ;
-  ((StateNode.super).Destroy)(self)
+  self.Transition:Clear()
+  StateNode.super.Destroy(self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-StateNode.StateID = function(self)
-  -- function num : 0_4
+function StateNode:StateID()
   return self.mStateID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-StateNode.Enter = function(self)
-  -- function num : 0_5
+function StateNode:Enter()
   self:Activate()
-  for i = 1, (self.Transition):Size() do
-    local transition = (self.Transition):GetAt(i)
+  for i = 1, self.Transition:Size() do
+    local transition = self.Transition:GetAt(i)
     transition:Activate()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-StateNode.Exit = function(self)
-  -- function num : 0_6
+function StateNode:Exit()
   self:Deactivate()
-  for i = 1, (self.Transition):Size() do
-    local transition = (self.Transition):GetAt(i)
+  for i = 1, self.Transition:Size() do
+    local transition = self.Transition:GetAt(i)
     transition:Deactivate()
     transition:Reset()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-StateNode.CheckTransitions = function(self)
-  -- function num : 0_7
-  for i = 1, (self.Transition):Size() do
-    local transition = (self.Transition):GetAt(i)
+function StateNode:CheckTransitions()
+  for i = 1, self.Transition:Size() do
+    local transition = self.Transition:GetAt(i)
     local goal_state = transition:CheckTransitions()
     if goal_state then
       return goal_state
@@ -105,26 +73,17 @@ StateNode.CheckTransitions = function(self)
   return nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-StateNode.Update = function(self, dt)
-  -- function num : 0_8
-  for i = 1, (self.Transition):Size() do
-    local transition = (self.Transition):GetAt(i)
+function StateNode:Update(dt)
+  for i = 1, self.Transition:Size() do
+    local transition = self.Transition:GetAt(i)
     transition:Update(dt)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-StateNode.CollectInterfaceInChildren = function(self, interfaceList, funcName)
-  -- function num : 0_9 , upvalues : _ENV
+function StateNode:CollectInterfaceInChildren(interfaceList, funcName)
   local nodes = self.Transition
   for i = 1, nodes:Size() do
     local node = nodes:GetAt(i)
-    ;
-    (CustomNodeStatic.TraverseCollectInterface)(interfaceList, funcName, node)
+    CustomNodeStatic.TraverseCollectInterface(interfaceList, funcName, node)
   end
 end
-
-

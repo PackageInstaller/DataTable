@@ -1,37 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/tank_tower_reset_rotation_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("TankTowerResetRotationInstruction", BaseInstruction)
 TankTowerResetRotationInstruction = TankTowerResetRotationInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-TankTowerResetRotationInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function TankTowerResetRotationInstruction:Constructor(paramList)
   self._time = tonumber(paramList.time)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TankTowerResetRotationInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function TankTowerResetRotationInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local casterPos = casterEntity:GetRenderGridPosition()
   local casterDir = casterEntity:GetRenderGridDirection()
-  local casterOffset = (casterEntity:GridLocation()):GetDamageOffset()
+  local casterOffset = casterEntity:GridLocation():GetDamageOffset()
   local lookAtPos = casterPos + casterDir + casterOffset
   local BoardServiceRender = world:GetService("BoardRender")
   local v3Forward = BoardServiceRender:GridPos2RenderPos(lookAtPos)
   local cEffectHolder = casterEntity:EffectHolder()
-  local efx = (cEffectHolder:GetEffectList(BattleConst.Tank2002901TowerEffectKey))[1]
+  local efx = cEffectHolder:GetEffectList(BattleConst.Tank2002901TowerEffectKey)[1]
   local timeInSecond = self._time * 0.001
-  local tweener = ((((efx:View()):GetGameObject()).transform):DOLookAt(v3Forward, timeInSecond)):SetEase(((DG.Tweening).Ease).InOutSine)
+  local tweener = efx:View():GetGameObject().transform:DOLookAt(v3Forward, timeInSecond):SetEase(DG.Tweening.Ease.InOutSine)
   YIELD(TT, self._time)
   if not tweener:IsComplete() then
     tweener:Complete()
   end
 end
-
-

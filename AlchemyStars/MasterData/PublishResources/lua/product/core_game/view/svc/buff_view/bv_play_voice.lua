@@ -1,42 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_play_voice.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewPlayVoice", BuffViewBase)
 BuffViewPlayVoice = BuffViewPlayVoice
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewPlayVoice.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewPlayVoice:PlayView(TT)
   local result = self._buffResult
   local entity = self._entity
   if result.audioType == SkillAudioType.Cast then
-    if ((GameGlobal.GetModule)(SkillPerfModule)):IsBeginPerf() then
-      return 
+    if GameGlobal.GetModule(SkillPerfModule):IsBeginPerf() then
+      return
     end
-    local playingID = (AudioHelperController.PlayInnerGameSfx)(result.audioID)
+    local playingID = AudioHelperController.PlayInnerGameSfx(result.audioID)
     local effectCpmt = entity:EffectHolder()
     if not effectCpmt then
       entity:AddEffectHolder()
       effectCpmt = entity:EffectHolder()
     end
     effectCpmt:AttachAudioID(result.audioID, playingID)
-  else
-    do
-      if result.audioType == SkillAudioType.Hit then
-        (Log.error)("BuffViewPlayVoice: Hit类音效与伤害结果相关，PlayVoice不能处理")
-      else
-        if result.audioType == SkillAudioType.Voice then
-          if ((GameGlobal.GetModule)(SkillPerfModule)):IsBeginPerf() then
-            return 
-          end
-          ;
-          (InnerGameHelperRender.InnerGamePlayPetVoid)(result.audioID, entity)
-        end
-      end
+  elseif result.audioType == SkillAudioType.Hit then
+    Log.error("BuffViewPlayVoice: Hit类音效与伤害结果相关，PlayVoice不能处理")
+  elseif result.audioType == SkillAudioType.Voice then
+    if GameGlobal.GetModule(SkillPerfModule):IsBeginPerf() then
+      return
     end
+    InnerGameHelperRender.InnerGamePlayPetVoid(result.audioID, entity)
   end
 end
-
-

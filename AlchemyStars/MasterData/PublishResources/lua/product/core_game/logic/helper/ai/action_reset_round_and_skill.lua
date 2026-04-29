@@ -1,40 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_reset_round_and_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionResetRoundAndSkill", AINewNode)
 ActionResetRoundAndSkill = ActionResetRoundAndSkill
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionResetRoundAndSkill.Constructor = function(self)
-  -- function num : 0_0
+function ActionResetRoundAndSkill:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionResetRoundAndSkill.OnBegin = function(self)
-  -- function num : 0_1
+function ActionResetRoundAndSkill:OnBegin()
   local nLoopLimit = self:GetLogicData(-1)
-  nLoopLimit = (nLoopLimit ~= nil and nLoopLimit > 0) or self:GetRuntimeData("SkillCount") or 1
+  if nil == nLoopLimit or nLoopLimit <= 0 then
+    nLoopLimit = self:GetRuntimeData("SkillCount") or 1
+  end
   self:SetRuntimeData("RoundCount", nLoopLimit)
   self:SetRuntimeData("NextRoundCount", 1)
-  local id = ((self.m_entityOwn):MonsterID()):GetMonsterID()
-  local cfgService = (self._world):GetService("Config")
+  local id = self.m_entityOwn:MonsterID():GetMonsterID()
+  local cfgService = self._world:GetService("Config")
   local monsterConfig = cfgService:GetMonsterConfigData()
   local crazySkillList = monsterConfig:GetMonsterSkillIDs(id)
   self:SetSkillList(crazySkillList)
-  ;
-  (self.m_logicOwn):ReSelectWorkSkill()
+  self.m_logicOwn:ReSelectWorkSkill()
   self:PrintLog("重置回合数和技能列表")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionResetRoundAndSkill.OnUpdate = function(self, dt)
-  -- function num : 0_2 , upvalues : _ENV
+function ActionResetRoundAndSkill:OnUpdate(dt)
   return AINewNodeStatus.Success
 end
-
-

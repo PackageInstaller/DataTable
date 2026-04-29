@@ -1,144 +1,84 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_simple_haute_couture/common/ui_simple_haute_couture_video_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISimpleHauteCoutureVideoController", UIController)
 UISimpleHauteCoutureVideoController = UISimpleHauteCoutureVideoController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISimpleHauteCoutureVideoController.Constructor = function(self)
-  -- function num : 0_0
+function UISimpleHauteCoutureVideoController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureVideoController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISimpleHauteCoutureVideoController:OnShow(uiParams)
   self._videoName = uiParams[1]
   self._bgm = uiParams[2]
   self:_GetComponents()
   self:_LoadVideo()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureVideoController._GetComponents = function(self)
-  -- function num : 0_2
+function UISimpleHauteCoutureVideoController:_GetComponents()
   self._pauseObj = self:GetGameObject("pause")
   self._vp = self:GetUIComponent("VideoPlayer", "VideoPlayer")
   self._rawImage = self:GetUIComponent("RawImage", "VideoPlayer")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureVideoController._LoadVideo = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local url = (ResourceManager:GetInstance()):GetAssetPath(self._videoName .. ".mp4", LoadType.VideoClip)
-  ;
-  (Log.debug)("[guide movie] move url ", url)
-  self._rt = (UnityEngine.RenderTexture):New(1420, 805, 16)
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rawImage).texture = self._rt
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._vp).targetTexture = self._rt
-  ;
-  ((self._vp).gameObject):SetActive(true)
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._vp).url = url
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._vp).targetCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UISimpleHauteCoutureVideoController")
-  ;
-  (self._vp):Play()
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._vp).loopPointReached = (self._vp).loopPointReached + self._LoopPointReached
-  ;
-  (((GameGlobal.UIStateManager)()):GetControllerCamera("UISimpleHauteCoutureVideoController")):Render()
+function UISimpleHauteCoutureVideoController:_LoadVideo()
+  local url = ResourceManager:GetInstance():GetAssetPath(self._videoName .. ".mp4", LoadType.VideoClip)
+  Log.debug("[guide movie] move url ", url)
+  self._rt = UnityEngine.RenderTexture:New(1420, 805, 16)
+  self._rawImage.texture = self._rt
+  self._vp.targetTexture = self._rt
+  self._vp.gameObject:SetActive(true)
+  self._vp.url = url
+  self._vp.targetCamera = GameGlobal.UIStateManager():GetControllerCamera("UISimpleHauteCoutureVideoController")
+  self._vp:Play()
+  self._vp.loopPointReached = self._vp.loopPointReached + self._LoopPointReached
+  GameGlobal.UIStateManager():GetControllerCamera("UISimpleHauteCoutureVideoController"):Render()
   if self._bgm then
-    self._oldBgm = (AudioHelperController.GetCurrentBgm)()
-    ;
-    (AudioHelperController.PlayBGM)(self._bgm, 0)
+    self._oldBgm = AudioHelperController.GetCurrentBgm()
+    AudioHelperController.PlayBGM(self._bgm, 0)
   end
-  -- DECOMPILER ERROR at PC74: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._vp).frame = 0
+  self._vp.frame = 0
   self._playing = true
-  ;
-  (self._pauseObj):SetActive(not self._playing)
+  self._pauseObj:SetActive(not self._playing)
   self._shareBtnGO = self:GetGameObject("ShareBtn")
-  ;
-  (self._shareBtnGO):SetActive((self:GetModule(ShareModule)):CanShare())
+  self._shareBtnGO:SetActive(self:GetModule(ShareModule):CanShare())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureVideoController.BgOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UISimpleHauteCoutureVideoController:BgOnClick(go)
   self:CloseDialog()
   if self._rt then
-    (self._rt):Release()
+    self._rt:Release()
     self._rt = nil
   end
   if self._oldBgm then
-    (AudioHelperController.PlayBGM)(self._oldBgm)
+    AudioHelperController.PlayBGM(self._oldBgm)
   end
   if not self._playing then
-    (AudioHelperController.UnpauseBGM)()
+    AudioHelperController.UnpauseBGM()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureVideoController.VideoPlayerOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UISimpleHauteCoutureVideoController:VideoPlayerOnClick(go)
   if self._playing then
     self._playing = false
   else
     self._playing = true
   end
   if self._playing then
-    (self._vp):Play()
+    self._vp:Play()
     if self._bgm then
-      (AudioHelperController.UnpauseBGM)()
+      AudioHelperController.UnpauseBGM()
     end
   else
-    ;
-    (self._vp):Pause()
+    self._vp:Pause()
     if self._bgm then
-      (AudioHelperController.PauseBGM)()
+      AudioHelperController.PauseBGM()
     end
   end
-  ;
-  (self._pauseObj):SetActive(not self._playing)
+  self._pauseObj:SetActive(not self._playing)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureVideoController.ShareBtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UISimpleHauteCoutureVideoController:ShareBtnOnClick(go)
   self:Lock("UISimpleHauteCoutureVideoControllerShare")
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
     YIELD(TT)
-    ;
-    (self:GetName())
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-    self:ShowDialog("UIShare", self:GetName, nil, nil, nil, nil, ShareContentType.Video, ShareSceneType.SkinVideo, self._videoName)
+    self:ShowDialog("UIShare", self:GetName(), nil, nil, nil, nil, ShareContentType.Video, ShareSceneType.SkinVideo, self._videoName)
     self:UnLock("UISimpleHauteCoutureVideoControllerShare")
-  end
-, self)
+  end, self)
 end
-
-

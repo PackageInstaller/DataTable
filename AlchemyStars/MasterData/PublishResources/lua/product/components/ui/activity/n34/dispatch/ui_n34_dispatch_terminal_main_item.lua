@@ -1,23 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/dispatch/ui_n34_dispatch_terminal_main_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-N34TerminalItemStatus = {NotStart = 0, Going = 1, End = 2, Unlock = 3}
+N34TerminalItemStatus = {
+  NotStart = 0,
+  Going = 1,
+  End = 2,
+  Unlock = 3
+}
 _enum("N34TerminalItemStatus", N34TerminalItemStatus)
 _class("UIN34DispatchTerminalMainItem", UICustomWidget)
 UIN34DispatchTerminalMainItem = UIN34DispatchTerminalMainItem
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN34DispatchTerminalMainItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN34DispatchTerminalMainItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchTerminalMainItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN34DispatchTerminalMainItem:InitWidget()
   self._title = self:GetUIComponent("UILocalizationText", "Title")
   self._award = self:GetUIComponent("Image", "Award")
   self._state = self:GetUIComponent("Image", "state")
@@ -27,25 +22,18 @@ UIN34DispatchTerminalMainItem.InitWidget = function(self)
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "Canvas")
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchTerminalMainItem.SetData = function(self, Info, ID, name, AwardClick, ItemSelect, lock)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN34DispatchTerminalMainItem:SetData(Info, ID, name, AwardClick, ItemSelect, lock)
   self.info = Info
   self.id = ID
   self.name = name
   self.awardClick = AwardClick
   self.itemSelect = ItemSelect
   self.lock = lock
-  ;
-  (self._title):SetText((StringTable.Get)(self.name))
+  self._title:SetText(StringTable.Get(self.name))
   self:SetStatus(self.info)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchTerminalMainItem.SetStatus = function(self, Info)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN34DispatchTerminalMainItem:SetStatus(Info)
   if not Info then
     if self.lock then
       self._status = N34TerminalItemStatus.Unlock
@@ -55,88 +43,50 @@ UIN34DispatchTerminalMainItem.SetStatus = function(self, Info)
   else
     self._status = Info.status
   end
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
   if self._status == N34TerminalItemStatus.NotStart then
-    (self._state).sprite = (self._atlas):GetSprite("n34_pqtc_task03")
-  else
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-    if self._status == N34TerminalItemStatus.Going or self._status == N34TerminalItemStatus.Unlock then
-      (self._state).sprite = (self._atlas):GetSprite("n34_pqtc_task01")
-    else
-      -- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
-
-      if self._status == N34TerminalItemStatus.End then
-        (self._state).sprite = (self._atlas):GetSprite("n34_pqtc_task02")
-      end
-    end
+    self._state.sprite = self._atlas:GetSprite("n34_pqtc_task03")
+  elseif self._status == N34TerminalItemStatus.Going or self._status == N34TerminalItemStatus.Unlock then
+    self._state.sprite = self._atlas:GetSprite("n34_pqtc_task01")
+  elseif self._status == N34TerminalItemStatus.End then
+    self._state.sprite = self._atlas:GetSprite("n34_pqtc_task02")
   end
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchTerminalMainItem.PlayAnimIn = function(self, time)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN34DispatchTerminalMainItem:PlayAnimIn(time)
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, time, self
     YIELD(TT, time * 60)
     if not self.view then
-      return 
+      return
     end
-    ;
-    (self._anim):Play("uieff_UIN34DispatchTerminalMainItem_in")
-  end
-)
+    self._anim:Play("uieff_UIN34DispatchTerminalMainItem_in")
+  end)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchTerminalMainItem.SetCanvasGroup = function(self)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._canvasGroup).alpha = 0
+function UIN34DispatchTerminalMainItem:SetCanvasGroup()
+  self._canvasGroup.alpha = 0
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchTerminalMainItem.SetSelected = function(self, bool)
-  -- function num : 0_6
-  ((self._select).gameObject):SetActive(bool)
+function UIN34DispatchTerminalMainItem:SetSelected(bool)
+  self._select.gameObject:SetActive(bool)
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchTerminalMainItem.GetDispatchID = function(self)
-  -- function num : 0_7
+function UIN34DispatchTerminalMainItem:GetDispatchID()
   return self.id
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchTerminalMainItem.GetStatus = function(self)
-  -- function num : 0_8
+function UIN34DispatchTerminalMainItem:GetStatus()
   return self._status
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchTerminalMainItem.AwardOnClick = function(self, go)
-  -- function num : 0_9
+function UIN34DispatchTerminalMainItem:AwardOnClick(go)
   if self.awardClick then
-    (self.awardClick)(self.id, (go.transform).position)
+    self.awardClick(self.id, go.transform.position)
   end
   self:SelectBtnOnClick()
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchTerminalMainItem.SelectBtnOnClick = function(self)
-  -- function num : 0_10
+function UIN34DispatchTerminalMainItem:SelectBtnOnClick()
   if self.itemSelect then
     self:itemSelect(self)
   end
 end
-
-

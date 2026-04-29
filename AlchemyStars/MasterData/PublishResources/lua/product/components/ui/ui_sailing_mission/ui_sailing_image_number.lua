@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sailing_mission/ui_sailing_image_number.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISailingImageNumber", Object)
 UISailingImageNumber = UISailingImageNumber
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISailingImageNumber.Constructor = function(self, uiController, spriteFormat)
-  -- function num : 0_0 , upvalues : _ENV
+function UISailingImageNumber:Constructor(uiController, spriteFormat)
   self._uiController = uiController
   self._atlasNumber = uiController:GetAsset("UISailing.spriteatlas", LoadType.SpriteAtlas)
   self._spriteFormat = spriteFormat
@@ -16,26 +9,18 @@ UISailingImageNumber.Constructor = function(self, uiController, spriteFormat)
   self._displayValue = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingImageNumber.AddDigitImage = function(self, inImage)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.insert)(self._imgList, inImage)
+function UISailingImageNumber:AddDigitImage(inImage)
+  table.insert(self._imgList, inImage)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingImageNumber.SetValue = function(self, inNumber)
-  -- function num : 0_2 , upvalues : _ENV
+function UISailingImageNumber:SetValue(inNumber)
   local count = #self._imgList
   for i = 1, count do
-    local bit = (math.floor)(inNumber) % 10
+    local bit = math.floor(inNumber) % 10
     inNumber = inNumber / 10
-    local spriteName = (string.format)(self._spriteFormat, bit)
-    local img = (self._imgList)[i]
-    img.sprite = (self._atlasNumber):GetSprite(spriteName)
+    local spriteName = string.format(self._spriteFormat, bit)
+    local img = self._imgList[i]
+    img.sprite = self._atlasNumber:GetSprite(spriteName)
   end
   self._displayValue = inNumber
 end
-
-

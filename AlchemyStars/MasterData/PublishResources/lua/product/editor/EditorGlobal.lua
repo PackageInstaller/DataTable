@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/EditorGlobal.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("EditorGlobal", Singleton)
 EditorGlobal = EditorGlobal
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-EditorGlobal.Constructor = function(self)
-  -- function num : 0_0
+function EditorGlobal:Constructor()
   self.StroyController = nil
   self.StroyManager = nil
   self.EnterParamData = nil
@@ -16,88 +9,62 @@ EditorGlobal.Constructor = function(self)
   self.RunStoryConfig = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-EditorGlobal.SetStroyController = function(controller)
-  -- function num : 0_1 , upvalues : _ENV
-  (EditorGlobal:GetInstance()).StroyController = controller
+function EditorGlobal.SetStroyController(controller)
+  EditorGlobal:GetInstance().StroyController = controller
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-EditorGlobal.SetStroyManager = function(manager)
-  -- function num : 0_2 , upvalues : _ENV
-  (EditorGlobal:GetInstance()).StroyManager = manager
+function EditorGlobal.SetStroyManager(manager)
+  EditorGlobal:GetInstance().StroyManager = manager
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-EditorGlobal.GetStroyController = function()
-  -- function num : 0_3 , upvalues : _ENV
-  return (EditorGlobal:GetInstance()).StroyController
+function EditorGlobal.GetStroyController()
+  return EditorGlobal:GetInstance().StroyController
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-EditorGlobal.GetStroyManager = function()
-  -- function num : 0_4 , upvalues : _ENV
-  return (EditorGlobal:GetInstance()).StroyManager
+function EditorGlobal.GetStroyManager()
+  return EditorGlobal:GetInstance().StroyManager
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-EditorGlobal.SetEnterParam = function(param)
-  -- function num : 0_5 , upvalues : _ENV
-  (EditorGlobal:GetInstance()).EnterParamData = param
+function EditorGlobal.SetEnterParam(param)
+  EditorGlobal:GetInstance().EnterParamData = param
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-EditorGlobal.GetEnterParam = function()
-  -- function num : 0_6 , upvalues : _ENV
-  return (EditorGlobal:GetInstance()).EnterParamData
+function EditorGlobal.GetEnterParam()
+  return EditorGlobal:GetInstance().EnterParamData
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-EditorGlobal.SetEditorMode = function(param)
-  -- function num : 0_7 , upvalues : _ENV
-  (EditorGlobal:GetInstance()).IsEditorRun = param
+function EditorGlobal.SetEditorMode(param)
+  EditorGlobal:GetInstance().IsEditorRun = param
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-EditorGlobal.IsEditorMode = function()
-  -- function num : 0_8 , upvalues : _ENV
-  return (EditorGlobal:GetInstance()).IsEditorRun
+function EditorGlobal.IsEditorMode()
+  return EditorGlobal:GetInstance().IsEditorRun
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-EditorGlobal.SetEditorRunStoryConfig = function(param)
-  -- function num : 0_9 , upvalues : _ENV
-  (EditorGlobal:GetInstance()).RunStoryConfig = param
+function EditorGlobal.SetEditorRunStoryConfig(param)
+  EditorGlobal:GetInstance().RunStoryConfig = param
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-EditorGlobal.GetEditorRunStoryConfig = function()
-  -- function num : 0_10 , upvalues : _ENV
-  return (EditorGlobal:GetInstance()).RunStoryConfig
+function EditorGlobal.GetEditorRunStoryConfig()
+  return EditorGlobal:GetInstance().RunStoryConfig
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-EditorGlobal.IsHomeMovieMode = function()
-  -- function num : 0_11
+function EditorGlobal.IsHomeMovieMode()
   return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-EditorGlobal.GetFurnitureList = function()
-  -- function num : 0_12
-  return {[104203] = 5273030, [104204] = 5273031, [104205] = 5273034, [105203] = 5273039, [105204] = 5273042, [105205] = 5273043, [105206] = 5273046, [106203] = 5273051, [106204] = 5273053, [106205] = 5273055, [106206] = 5211004}
+function EditorGlobal.GetFurnitureList()
+  return {
+    [104203] = 5273030,
+    [104204] = 5273031,
+    [104205] = 5273034,
+    [105203] = 5273039,
+    [105204] = 5273042,
+    [105205] = 5273043,
+    [105206] = 5273046,
+    [106203] = 5273051,
+    [106204] = 5273053,
+    [106205] = 5273055,
+    [106206] = 5211004
+  }
 end
-
-

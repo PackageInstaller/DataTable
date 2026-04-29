@@ -1,57 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_camp_center/worldboss_multi.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_lobby_center_camp_data")
 _class("WorldBossMulti", MainLobbyCenterCampData)
 WorldBossMulti = WorldBossMulti
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-WorldBossMulti.LoadData = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local worldBossModule = (GameGlobal.GetModule)(WorldBossModule)
+function WorldBossMulti:LoadData(TT)
+  local worldBossModule = GameGlobal.GetModule(WorldBossModule)
   worldBossModule:ReqWorldBossData(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossMulti.CheckOpen = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local open = ((GameGlobal.GetModule)(WorldBossModule)):AwardMultiOpen()
-  local unlock = ((GameGlobal.GetModule)(RoleModule)):CheckModuleUnlock(GameModuleID.MD_WorldBoss)
-  if open then
-    open = unlock
-  end
+function WorldBossMulti:CheckOpen()
+  local open = GameGlobal.GetModule(WorldBossModule):AwardMultiOpen()
+  local unlock = GameGlobal.GetModule(RoleModule):CheckModuleUnlock(GameModuleID.MD_WorldBoss)
+  open = open and unlock
   return open
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossMulti.CheckNew = function(self)
-  -- function num : 0_2
+function WorldBossMulti:CheckNew()
   return 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossMulti.CheckRed = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if ((GameGlobal.GetModule)(WorldBossModule)).m_world_boss_data then
+function WorldBossMulti:CheckRed()
+  if GameGlobal.GetModule(WorldBossModule).m_world_boss_data then
     local key = self:_GetLocalDBKey()
-    local red = (UIWorldBossMultiToolFunctions.GetLocalDBInt)(key, 0) <= 0
+    local red = UIWorldBossMultiToolFunctions.GetLocalDBInt(key, 0) <= 0
     return red and 1 or 0
   else
     return 0
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossMulti._GetLocalDBKey = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  return UIWorldBossMultiKey.Opened .. (((GameGlobal.GetModule)(WorldBossModule)).m_world_boss_data).boss_mission_id
+function WorldBossMulti:_GetLocalDBKey()
+  return UIWorldBossMultiKey.Opened .. GameGlobal.GetModule(WorldBossModule).m_world_boss_data.boss_mission_id
 end
-
-

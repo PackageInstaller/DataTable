@@ -1,74 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/skill_holder_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillHolderComponent", Object)
 SkillHolderComponent = SkillHolderComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillHolderComponent.Constructor = function(self)
-  -- function num : 0_0
+function SkillHolderComponent:Constructor()
   self._SkillHolder = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHolderComponent.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  for name,holderId in pairs(self._SkillHolder) do
-    local holder = ((self._entity)._world):GetEntityByID(holderId)
+function SkillHolderComponent:Dispose()
+  for name, holderId in pairs(self._SkillHolder) do
+    local holder = self._entity._world:GetEntityByID(holderId)
     if holder then
-      ((self._entity)._world):DestroyEntity(holder)
+      self._entity._world:DestroyEntity(holder)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHolderComponent.AddSkillHolder = function(self, name, entityID)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._SkillHolder)[name] = entityID
+function SkillHolderComponent:AddSkillHolder(name, entityID)
+  self._SkillHolder[name] = entityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHolderComponent.GetSkillHolder = function(self, name)
-  -- function num : 0_3
-  return (self._SkillHolder)[name]
+function SkillHolderComponent:GetSkillHolder(name)
+  return self._SkillHolder[name]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHolderComponent.RemoveSkillHolder = function(self, name)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._SkillHolder)[name] = nil
+function SkillHolderComponent:RemoveSkillHolder(name)
+  self._SkillHolder[name] = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SkillHolder = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).SkillHolder)
+function Entity:SkillHolder()
+  return self:GetComponent(self.WEComponentsEnum.SkillHolder)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasSkillHolder = function(self)
-  -- function num : 0_6
-  local index = (self.WEComponentsEnum).SkillHolder
+function Entity:HasSkillHolder()
+  local index = self.WEComponentsEnum.SkillHolder
   return self:HasComponent(index)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddSkillHolder = function(self, name, entityID)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).SkillHolder
+function Entity:AddSkillHolder(name, entityID)
+  local index = self.WEComponentsEnum.SkillHolder
   local component = self:SkillHolder()
   if not component then
     component = SkillHolderComponent:New()
@@ -77,24 +45,16 @@ Entity.AddSkillHolder = function(self, name, entityID)
   component:AddSkillHolder(name, entityID)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetSkillHolder = function(self, name)
-  -- function num : 0_8
+function Entity:GetSkillHolder(name)
   local com = self:SkillHolder()
   if com then
     return com:GetSkillHolder(name)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveSkillHolder = function(self, name)
-  -- function num : 0_9
+function Entity:RemoveSkillHolder(name)
   local com = self:SkillHolder()
   if com then
     com:RemoveSkillHolder(name)
   end
 end
-
-

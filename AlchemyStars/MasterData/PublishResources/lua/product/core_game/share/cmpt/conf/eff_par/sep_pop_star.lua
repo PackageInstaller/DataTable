@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_pop_star.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectPopStarParam", SkillEffectParamBase)
 SkillEffectPopStarParam = SkillEffectPopStarParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectPopStarParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectPopStarParam:Constructor(t)
   self._pieceTypeList = t.pieceTypeList
   self._popCount = t.popCount
   self._random = t.random or false
   self._countRandomTab = t.countRandom
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPopStarParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectPopStarParam:GetEffectType()
   return SkillEffectType.PopStar
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPopStarParam.GetPieceTypeList = function(self)
-  -- function num : 0_2
+function SkillEffectPopStarParam:GetPieceTypeList()
   return self._pieceTypeList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPopStarParam.GetPopCount = function(self)
-  -- function num : 0_3
+function SkillEffectPopStarParam:GetPopCount()
   return self._popCount
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPopStarParam.NeedRandom = function(self)
-  -- function num : 0_4
+function SkillEffectPopStarParam:NeedRandom()
   return self._random
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPopStarParam.GetCountRandomTab = function(self)
-  -- function num : 0_5
+function SkillEffectPopStarParam:GetCountRandomTab()
   return self._countRandomTab
 end
-
-

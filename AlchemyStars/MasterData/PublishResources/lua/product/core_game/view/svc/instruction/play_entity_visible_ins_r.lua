@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_entity_visible_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayEntityVisibleInstruction", BaseInstruction)
 PlayEntityVisibleInstruction = PlayEntityVisibleInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayEntityVisibleInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayEntityVisibleInstruction:Constructor(paramList)
   local param = tonumber(paramList.visible)
   if param == 1 then
     self._visible = true
@@ -20,14 +13,11 @@ PlayEntityVisibleInstruction.Constructor = function(self, paramList)
   self._trapID = tonumber(paramList.trapID) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEntityVisibleInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayEntityVisibleInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   if self._trapID and self._trapID > 0 then
-    local group = world:GetGroup((world.BW_WEMatchers).Trap)
-    for _,e in ipairs(group:GetEntities()) do
+    local group = world:GetGroup(world.BW_WEMatchers.Trap)
+    for _, e in ipairs(group:GetEntities()) do
       local trapRenderCmpt = e:TrapRender()
       if trapRenderCmpt and not trapRenderCmpt:GetHadPlayDestroy() and self._trapID == trapRenderCmpt:GetTrapID() then
         self:_OnSetEntityVisible(e)
@@ -38,38 +28,31 @@ PlayEntityVisibleInstruction.DoInstruction = function(self, TT, casterEntity, ph
       end
     end
   end
-  do
-    if self._monsterClassID and self._monsterClassID > 0 then
-      local group = world:GetGroup((world.BW_WEMatchers).EntityType)
-      for _,e in ipairs(group:GetEntities()) do
-        if (e:EntityType()).Value == EntityType.Monster and not e:HasShowDeath() and self._monsterClassID == (e:MonsterID()):GetMonsterClassID() then
-          self:_OnSetEntityVisible(e)
-        end
+  if self._monsterClassID and 0 < self._monsterClassID then
+    local group = world:GetGroup(world.BW_WEMatchers.EntityType)
+    for _, e in ipairs(group:GetEntities()) do
+      if e:EntityType().Value == EntityType.Monster and not e:HasShowDeath() and self._monsterClassID == e:MonsterID():GetMonsterClassID() then
+        self:_OnSetEntityVisible(e)
       end
-      local group = world:GetGroup((world.BW_WEMatchers).EntityType)
-      for _,e in ipairs(group:GetEntities()) do
-        if (e:EntityType()).Value == EntityType.HPSlider then
-          e:SetViewVisible(self._visible)
-        end
+    end
+    local group = world:GetGroup(world.BW_WEMatchers.EntityType)
+    for _, e in ipairs(group:GetEntities()) do
+      if e:EntityType().Value == EntityType.HPSlider then
+        e:SetViewVisible(self._visible)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEntityVisibleInstruction._OnSetEntityVisible = function(self, entity)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayEntityVisibleInstruction:_OnSetEntityVisible(entity)
   local location = entity:Location()
   if location then
     local gridWorldPos = entity:GetPosition()
     local offsetY = self._visible and 0 or 1000
-    local gridWorldNew = ((UnityEngine.Vector3).New)(gridWorldPos.x, offsetY, gridWorldPos.z)
+    local gridWorldNew = UnityEngine.Vector3.New(gridWorldPos.x, offsetY, gridWorldPos.z)
     entity:SetPosition(gridWorldNew)
     if self._visible then
       entity:SetViewVisible(self._visible)
     end
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common/helper/ui_activity_button_status.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityButtonStatus", Object)
 UIActivityButtonStatus = UIActivityButtonStatus
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityButtonStatus.Constructor = function(self, checkComponentStatus, loadData, callback, dayStr, hourStr, minusStr, lessOneMinusStr)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityButtonStatus:Constructor(checkComponentStatus, loadData, callback, dayStr, hourStr, minusStr, lessOneMinusStr)
   self._callback = callback
   self._checkComponentStatusHandler = checkComponentStatus
   self._loadDataHandler = loadData
@@ -20,106 +13,63 @@ UIActivityButtonStatus.Constructor = function(self, checkComponentStatus, loadDa
   self._time = 0
   self._timerHandler = nil
   if self._checkComponentStatusHandler == nil or self._loadDataHandler == nil or self._callback == nil then
-    return 
+    return
   end
   self:CheckButtonStatus()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityButtonStatus.Release = function(self)
-  -- function num : 0_1
+function UIActivityButtonStatus:Release()
   self:CancelEvent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityButtonStatus.CancelEvent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityButtonStatus:CancelEvent()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityButtonStatus.CheckButtonStatus = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self._buttonStatus = (self._checkComponentStatusHandler)()
+function UIActivityButtonStatus:CheckButtonStatus()
+  self._buttonStatus, self._time = self._checkComponentStatusHandler()
   self:RefreshButtonStatus()
-  -- DECOMPILER ERROR at PC7: Overwrote pending register: R2 in 'AssignReg'
-
-  -- DECOMPILER ERROR at PC8: Overwrote pending register: R2 in 'AssignReg'
-
-  -- DECOMPILER ERROR at PC12: Overwrote pending register: R2 in 'AssignReg'
-
-  -- DECOMPILER ERROR at PC13: Overwrote pending register: R2 in 'AssignReg'
-
-  -- DECOMPILER ERROR at PC16: Overwrote pending register: R2 in 'AssignReg'
-
-  if self._buttonStatus == R2_PC2 or self._buttonStatus == R2_PC2 then
+  if self._buttonStatus == ActivityComponentStatus.Open or self._buttonStatus == ActivityComponentStatus.TimeLock then
     self:StartTimer()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityButtonStatus.StartTimer = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityButtonStatus:StartTimer()
   self:CancelEvent()
-  self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_4_0 , upvalues : self, _ENV
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self._time = self._time - 1
     if self._time <= 0 then
-      ((GameGlobal.TaskManager)()):StartTask(self.LoadData, self)
+      GameGlobal.TaskManager():StartTask(self.LoadData, self)
       self:CancelEvent()
     end
     self:RefreshButtonStatus()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityButtonStatus.LoadData = function(self, TT)
-  -- function num : 0_5
-  (self._loadDataHandler)(TT)
+function UIActivityButtonStatus:LoadData(TT)
+  self._loadDataHandler(TT)
   self:CheckButtonStatus()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityButtonStatus.RefreshButtonStatus = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityButtonStatus:RefreshButtonStatus()
   if self._buttonStatus == ActivityComponentStatus.Open or self._buttonStatus == ActivityComponentStatus.TimeLock then
-    (self._callback)(self._buttonStatus, (UIActivityCustomHelper.GetTimeString)(self._time, self._dayStr, self._hourStr, self._minusStr, self._lessOneMinusStr))
-  else
-    if self._buttonStatus == ActivityComponentStatus.Close or self._buttonStatus == ActivityComponentStatus.MissionLock or self._buttonStatus == ActivityComponentStatus.ActivityEnd then
-      (self._callback)(self._buttonStatus, "")
-    end
+    self._callback(self._buttonStatus, UIActivityCustomHelper.GetTimeString(self._time, self._dayStr, self._hourStr, self._minusStr, self._lessOneMinusStr))
+  elseif self._buttonStatus == ActivityComponentStatus.Close or self._buttonStatus == ActivityComponentStatus.MissionLock or self._buttonStatus == ActivityComponentStatus.ActivityEnd then
+    self._callback(self._buttonStatus, "")
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityButtonStatus.GetButtontStatus = function(self)
-  -- function num : 0_7
+function UIActivityButtonStatus:GetButtontStatus()
   return self._buttonStatus
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityButtonStatus.GetRemainTime = function(self)
-  -- function num : 0_8
+function UIActivityButtonStatus:GetRemainTime()
   return self._time
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityButtonStatus.GetRemainTimeStr = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  return (UIActivityCustomHelper.GetTimeString)(self._time)
+function UIActivityButtonStatus:GetRemainTimeStr()
+  return UIActivityCustomHelper.GetTimeString(self._time)
 end
-
-

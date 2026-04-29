@@ -1,89 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/between_the_chapters/ui_activity_between_the_chapters_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBetweenTheChaptersAwardItem", UICustomWidget)
 UIActivityBetweenTheChaptersAwardItem = UIActivityBetweenTheChaptersAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBetweenTheChaptersAwardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityBetweenTheChaptersAwardItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersAwardItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityBetweenTheChaptersAwardItem:InitWidget()
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._iconRect = self:GetUIComponent("RectTransform", "Icon")
-  self._iconRectDefaultSize = Vector2(((self._iconRect).sizeDelta).x, ((self._iconRect).sizeDelta).y)
+  self._iconRectDefaultSize = Vector2(self._iconRect.sizeDelta.x, self._iconRect.sizeDelta.y)
   self._iconImg = self:GetUIComponent("RawImage", "Icon")
   self._countArea = self:GetUIComponent("Image", "CountArea")
   self._countText = self:GetUIComponent("UILocalizationText", "CountText")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersAwardItem.SetData = function(self, data, itemInfoCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityBetweenTheChaptersAwardItem:SetData(data, itemInfoCallback)
   if not data then
     self:Hide()
-    return 
+    return
   end
   self._itemId = data.assetid
   self._itemCount = data.count
   self._itemInfoCallback = itemInfoCallback
-  local cfg_item = (Cfg.cfg_item)[self._itemId]
+  local cfg_item = Cfg.cfg_item[self._itemId]
   if not cfg_item then
-    return 
+    return
   end
   local icon = cfg_item.Icon
-  ;
-  (self._icon):LoadImage(icon)
-  ;
-  (self._countText):SetText(self._itemCount)
+  self._icon:LoadImage(icon)
+  self._countText:SetText(self._itemCount)
   local isHead = false
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R6 in 'UnsetPending'
-
   if isHead then
-    (self._iconRect).sizeDelta = Vector2(((self._iconRect).sizeDelta).x, ((self._iconRect).sizeDelta).x * 1.2)
+    self._iconRect.sizeDelta = Vector2(self._iconRect.sizeDelta.x, self._iconRect.sizeDelta.x * 1.2)
   else
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._iconRect).sizeDelta = self._iconRectDefaultSize
+    self._iconRect.sizeDelta = self._iconRectDefaultSize
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersAwardItem._SetAlpha = function(self, alpha)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._iconImg).color = Color(((self._iconImg).color).r, ((self._iconImg).color).g, ((self._iconImg).color).b, alpha)
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._countArea).color = Color(((self._countArea).color).r, ((self._countArea).color).g, ((self._countArea).color).b, alpha)
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._countText).color = Color(((self._countText).color).r, ((self._countText).color).g, ((self._countText).color).b, alpha)
+function UIActivityBetweenTheChaptersAwardItem:_SetAlpha(alpha)
+  self._iconImg.color = Color(self._iconImg.color.r, self._iconImg.color.g, self._iconImg.color.b, alpha)
+  self._countArea.color = Color(self._countArea.color.r, self._countArea.color.g, self._countArea.color.b, alpha)
+  self._countText.color = Color(self._countText.color.r, self._countText.color.g, self._countText.color.b, alpha)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersAwardItem.IconOnClick = function(self, go)
-  -- function num : 0_4
+function UIActivityBetweenTheChaptersAwardItem:IconOnClick(go)
   if self._itemInfoCallback then
     local tr = go.transform
     local pos = tr.position
-    ;
-    (self._itemInfoCallback)(self._itemId, pos)
+    self._itemInfoCallback(self._itemId, pos)
   end
 end
-
-

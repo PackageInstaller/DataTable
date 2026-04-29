@@ -1,35 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_stage/serial_auto_fight/ui_serial_auto_fight_sweep_result_lv_exp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISerialAutoFightSweepResultLvExp", UICustomWidget)
 UISerialAutoFightSweepResultLvExp = UISerialAutoFightSweepResultLvExp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISerialAutoFightSweepResultLvExp.OnShow = function(self)
-  -- function num : 0_0
+function UISerialAutoFightSweepResultLvExp:OnShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultLvExp.OnHide = function(self)
-  -- function num : 0_1
+function UISerialAutoFightSweepResultLvExp:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultLvExp.SetStyleUI = function(self, styleName)
-  -- function num : 0_2 , upvalues : _ENV
+function UISerialAutoFightSweepResultLvExp:SetStyleUI(styleName)
   self._styleName = styleName
-  ;
-  (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "titleColor", self, "txtLv")
+  UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "titleColor", self, "txtLv")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultLvExp.SetData = function(self)
-  -- function num : 0_3
+function UISerialAutoFightSweepResultLvExp:SetData()
   local lv, exp = self:_GetRoleLvExp()
   local curValue = self:_Convert_Exp2Value(lv, exp)
   self:_SetLvExpSlider(lv, curValue)
@@ -37,13 +20,10 @@ UISerialAutoFightSweepResultLvExp.SetData = function(self)
   self:_SetAddExpText()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultLvExp.Refresh = function(self, matchRes)
-  -- function num : 0_4
+function UISerialAutoFightSweepResultLvExp:Refresh(matchRes)
   local addExp, lv, exp = self:_Calc_AddExp(matchRes)
   if addExp == nil then
-    return 
+    return
   end
   local curValue = self:_Convert_Exp2Value(lv, exp)
   self:_SetLvExpSlider(lv, curValue)
@@ -53,150 +33,99 @@ UISerialAutoFightSweepResultLvExp.Refresh = function(self, matchRes)
   self:_SetExpUpgrade(addExp, lv, targetLv, targetValue)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultLvExp._SetAddExpText = function(self, exp)
-  -- function num : 0_5 , upvalues : _ENV
+function UISerialAutoFightSweepResultLvExp:_SetAddExpText(exp)
   local isShow = exp ~= nil
-  ;
-  (self:GetGameObject("txtExpAdd")):SetActive(isShow)
+  self:GetGameObject("txtExpAdd"):SetActive(isShow)
   if isShow then
-    (UIWidgetHelper.SetLocalizationText)(self, "txtExpAdd", "+" .. exp)
+    UIWidgetHelper.SetLocalizationText(self, "txtExpAdd", "+" .. exp)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultLvExp._SetLvExpText = function(self, lv, curValue)
-  -- function num : 0_6 , upvalues : _ENV
+function UISerialAutoFightSweepResultLvExp:_SetLvExpText(lv, curValue)
   local maxValue = self:_GetExp_LvNeed(lv)
-  local str = (StringTable.Get)("str_battle_auto_fight_sweep_lv", lv)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "txtLv", str)
-  local a, b, c = (math.floor)(curValue), "/", maxValue
-  local str = (UIActivityHelper.GetColorText)("#D8D8D8", a, "#00F8FF", b, "#D8D8D8", c)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "ExpNumberText", str)
+  local str = StringTable.Get("str_battle_auto_fight_sweep_lv", lv)
+  UIWidgetHelper.SetLocalizationText(self, "txtLv", str)
+  local a, b, c = math.floor(curValue), "/", maxValue
+  local str = UIActivityHelper.GetColorText("#D8D8D8", a, "#00F8FF", b, "#D8D8D8", c)
+  UIWidgetHelper.SetLocalizationText(self, "ExpNumberText", str)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultLvExp._SetLvExpSlider = function(self, lv, curValue)
-  -- function num : 0_7 , upvalues : _ENV
+function UISerialAutoFightSweepResultLvExp:_SetLvExpSlider(lv, curValue)
   local maxValue = self:_GetExp_LvNeed(lv)
-  ;
-  (UIWidgetHelper.SetSliderValue)(self, "ExpSlider", curValue, maxValue)
+  UIWidgetHelper.SetSliderValue(self, "ExpSlider", curValue, maxValue)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultLvExp._SetExpUpgrade = function(self, addExp, curLv, targetLv, targetValue)
-  -- function num : 0_8 , upvalues : _ENV
-  local duration = (UISerialAutoFightConst.GetSweepDuration)() / 1000
+function UISerialAutoFightSweepResultLvExp:_SetExpUpgrade(addExp, curLv, targetLv, targetValue)
+  local duration = UISerialAutoFightConst.GetSweepDuration() / 1000
   self:_SetAddExpText(addExp)
   if curLv < targetLv then
     self:_DoValue_ExpSlider(curLv, self:_GetExp_LvNeed(curLv), duration / 2, function()
-    -- function num : 0_8_0 , upvalues : self, targetLv, targetValue, duration
-    self:_SetLvExpText(targetLv, 0)
-    self:_SetLvExpSlider(targetLv, 0)
-    self:_DoValue_ExpSlider(targetLv, targetValue, duration / 2, function()
-      -- function num : 0_8_0_0 , upvalues : self
-      self:_SetAddExpText()
-    end
-)
-  end
-)
+      self:_SetLvExpText(targetLv, 0)
+      self:_SetLvExpSlider(targetLv, 0)
+      self:_DoValue_ExpSlider(targetLv, targetValue, duration / 2, function()
+        self:_SetAddExpText()
+      end)
+    end)
   else
     self:_DoValue_ExpSlider(targetLv, targetValue, duration, function()
-    -- function num : 0_8_1 , upvalues : self
-    self:_SetAddExpText()
-  end
-)
+      self:_SetAddExpText()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultLvExp._DoValue_ExpSlider = function(self, lv, targetValue, duration, callback)
-  -- function num : 0_9
+function UISerialAutoFightSweepResultLvExp:_DoValue_ExpSlider(lv, targetValue, duration, callback)
   local obj = self:GetUIComponent("Slider", "ExpSlider")
-  ;
-  ((obj:DOValue(targetValue, duration, false)):OnUpdate(function()
-    -- function num : 0_9_0 , upvalues : obj, self, lv
+  obj:DOValue(targetValue, duration, false):OnUpdate(function()
     local curValue = obj.value
     self:_SetLvExpText(lv, curValue)
-  end
-)):OnComplete(function()
-    -- function num : 0_9_1 , upvalues : self, lv, targetValue, callback
+  end):OnComplete(function()
     self:_SetLvExpText(lv, targetValue)
     if callback then
       callback()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultLvExp._GetRoleLvExp = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UISerialAutoFightSweepResultLvExp:_GetRoleLvExp()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local lv = roleModule:GetLevel()
   local exp = roleModule:GetRoleExp()
   return lv, exp
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultLvExp._GetExp_LvStart = function(self, lv)
-  -- function num : 0_11 , upvalues : _ENV
-  local lvExpStart = (HelperProxy:GetInstance()):GetLevelExp(lv)
+function UISerialAutoFightSweepResultLvExp:_GetExp_LvStart(lv)
+  local lvExpStart = HelperProxy:GetInstance():GetLevelExp(lv)
   return lvExpStart
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultLvExp._GetExp_LvNeed = function(self, lv)
-  -- function num : 0_12 , upvalues : _ENV
-  local lvProp = (Cfg.cfg_role_level)[lv]
+function UISerialAutoFightSweepResultLvExp:_GetExp_LvNeed(lv)
+  local lvProp = Cfg.cfg_role_level[lv]
   local lvExpNeed = lvProp.NeedExp
   return lvExpNeed
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultLvExp._Convert_Exp2Value = function(self, lv, exp)
-  -- function num : 0_13
+function UISerialAutoFightSweepResultLvExp:_Convert_Exp2Value(lv, exp)
   local lvExpStart = self:_GetExp_LvStart(lv)
   local curValue = exp - lvExpStart
   return curValue
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultLvExp._Calc_BeforeExp = function(self, matchRes)
-  -- function num : 0_14 , upvalues : _ENV
+function UISerialAutoFightSweepResultLvExp:_Calc_BeforeExp(matchRes)
   local matchResRoleInfo = matchRes.m_matchResRolInfo
   local expBefore = matchResRoleInfo.exp_before
-  local lvBefore = (HelperProxy:GetInstance()):GetLvByExp(expBefore)
+  local lvBefore = HelperProxy:GetInstance():GetLvByExp(expBefore)
   return lvBefore, expBefore
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultLvExp._Calc_AddExp = function(self, matchRes)
-  -- function num : 0_15 , upvalues : _ENV
+function UISerialAutoFightSweepResultLvExp:_Calc_AddExp(matchRes)
   local normalRewards = matchRes.m_vecAwardNormal
-  for i,roleAsset in ipairs(normalRewards) do
+  for i, roleAsset in ipairs(normalRewards) do
     if roleAsset.assetid == RoleAssetID.RoleAssetExp then
       local lvBefore, expBefore = self:_Calc_BeforeExp(matchRes)
-      if lvBefore < (HelperProxy:GetInstance()):GetMaxLevel() then
+      if lvBefore < HelperProxy:GetInstance():GetMaxLevel() then
         local addExp = roleAsset.count
         return addExp, lvBefore, expBefore
       end
     end
   end
 end
-
-

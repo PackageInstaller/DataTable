@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/story/ui_season_story_choose_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonStoryChooseItem", UICustomWidget)
 UISeasonStoryChooseItem = UISeasonStoryChooseItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonStoryChooseItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonStoryChooseItem:OnShow(uiParams)
   self._text = self:GetUIComponent("UILocalizationText", "text")
   self._layoutRt = self:GetUIComponent("RectTransform", "layout")
   self._anim = self:GetUIComponent("Animation", "anim")
@@ -18,92 +11,52 @@ UISeasonStoryChooseItem.OnShow = function(self, uiParams)
   self:InitButtonClickAnim("Bg", "select")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryChooseItem.Active = function(self, active)
-  -- function num : 0_1
-  (self._go):SetActive(active)
+function UISeasonStoryChooseItem:Active(active)
+  self._go:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryChooseItem.SetData = function(self, idx, txt, callback, type)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonStoryChooseItem:SetData(idx, txt, callback, type)
   self._idx = idx
   self._callback = callback
-  ;
-  (self._text):SetText(txt)
+  self._text:SetText(txt)
   local showType = false
   if type then
     showType = true
   end
-  ;
-  (self._typeGo):SetActive(showType)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R6 in 'UnsetPending'
-
-  if (self._text).preferredWidth > 322 then
-    (self._layoutRt).sizeDelta = Vector2(322, 100)
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._text).resizeTextForBestFit = true
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._text).verticalOverflow = (UnityEngine.VerticalWrapMode).Truncate
+  self._typeGo:SetActive(showType)
+  if self._text.preferredWidth > 322 then
+    self._layoutRt.sizeDelta = Vector2(322, 100)
+    self._text.resizeTextForBestFit = true
+    self._text.verticalOverflow = UnityEngine.VerticalWrapMode.Truncate
   else
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._text).resizeTextForBestFit = false
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._text).verticalOverflow = (UnityEngine.VerticalWrapMode).Overflow
+    self._text.resizeTextForBestFit = false
+    self._text.verticalOverflow = UnityEngine.VerticalWrapMode.Overflow
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryChooseItem.SetNewStatus = function(self, status)
-  -- function num : 0_3
-  (self._new):SetActive(status)
+function UISeasonStoryChooseItem:SetNewStatus(status)
+  self._new:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryChooseItem.BgOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonStoryChooseItem:BgOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV
     self:Lock("uianim_UISeasonStoryChooseItem_xuanzhong")
-    ;
-    (self._anim):Play("uianim_UISeasonStoryChooseItem_xuanzhong")
+    self._anim:Play("uianim_UISeasonStoryChooseItem_xuanzhong")
     YIELD(TT, 400)
     if self._callback then
-      (self._callback)(self._idx)
+      self._callback(self._idx)
     end
     self:UnLock("uianim_UISeasonStoryChooseItem_xuanzhong")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryChooseItem.InitButtonClickAnim = function(self, btnName, clickedGoName)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonStoryChooseItem:InitButtonClickAnim(btnName, clickedGoName)
   local btnGo = self:GetGameObject(btnName)
   local clickedGo = self:GetGameObject(clickedGoName)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(btnGo), UIEvent.Press, function(go)
-    -- function num : 0_5_0 , upvalues : clickedGo
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(btnGo), UIEvent.Press, function(go)
     clickedGo:SetActive(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(btnGo), UIEvent.Release, function(go)
-    -- function num : 0_5_1 , upvalues : clickedGo
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(btnGo), UIEvent.Release, function(go)
     clickedGo:SetActive(false)
-  end
-)
+  end)
 end
-
-

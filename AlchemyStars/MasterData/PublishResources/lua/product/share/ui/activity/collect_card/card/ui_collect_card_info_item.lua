@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/collect_card/card/ui_collect_card_info_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICollectCardInfoItem", UICustomWidget)
 UICollectCardInfoItem = UICollectCardInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICollectCardInfoItem.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UICollectCardInfoItem:OnShow(uiParam)
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._gray = self:GetGameObject("Gray")
   self._nameTex = self:GetUIComponent("UILocalizationText", "NameTex")
@@ -18,45 +11,26 @@ UICollectCardInfoItem.OnShow = function(self, uiParam)
   self._selectGo = self:GetGameObject("SelectGo")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardInfoItem.SetData = function(self, cardid, callback, count)
-  -- function num : 0_1 , upvalues : _ENV
+function UICollectCardInfoItem:SetData(cardid, callback, count)
   self._cardid = cardid
   self._callback = callback
-  self._cfg = (Cfg.cfg_component_collect_card)[self._cardid]
-  local icon = (self._cfg).Icon
-  ;
-  (self._icon):LoadImage(icon)
-  ;
-  (self._gray):SetActive(count == 0)
-  ;
-  (self._number):SetText(count)
-  local cfgName = (self._cfg).Name
-  ;
-  (self._nameTex):SetText((StringTable.Get)(cfgName))
-  ;
-  (self._specialBg):SetActive((self._cfg).Type == 2)
-  ;
-  (self._normalBg):SetActive((self._cfg).Type == 1)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self._cfg = Cfg.cfg_component_collect_card[self._cardid]
+  local icon = self._cfg.Icon
+  self._icon:LoadImage(icon)
+  self._gray:SetActive(count == 0)
+  self._number:SetText(count)
+  local cfgName = self._cfg.Name
+  self._nameTex:SetText(StringTable.Get(cfgName))
+  self._specialBg:SetActive(self._cfg.Type == 2)
+  self._normalBg:SetActive(self._cfg.Type == 1)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardInfoItem.Select = function(self, selectid)
-  -- function num : 0_2
-  (self._selectGo):SetActive(selectid == self._cardid)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UICollectCardInfoItem:Select(selectid)
+  self._selectGo:SetActive(selectid == self._cardid)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardInfoItem.IconOnClick = function(self, go)
-  -- function num : 0_3
+function UICollectCardInfoItem:IconOnClick(go)
   if self._callback then
-    (self._callback)(self._cardid)
+    self._callback(self._cardid)
   end
 end
-
-

@@ -1,23 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_nearest_in_square_ring.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_NearestInSquareRing", SkillScopeCalculator_Base)
 SkillScopeCalculator_NearestInSquareRing = SkillScopeCalculator_NearestInSquareRing
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_NearestInSquareRing.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  if not (self._gridFilter)._world then
+function SkillScopeCalculator_NearestInSquareRing:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  if not self._gridFilter._world then
     return SkillScopeResult:New(SkillScopeType.NearestInSquareRing, {}, {}, {})
   end
-  local world = (self._gridFilter)._world
+  local world = self._gridFilter._world
   local nRingLength = scopeParam[1]
   local nTargetLimit = scopeParam[2]
   local buffEffectTypeForExtraRing = scopeParam[3]
-  if buffEffectTypeForExtraRing and buffEffectTypeForExtraRing > 0 then
+  if buffEffectTypeForExtraRing and 0 < buffEffectTypeForExtraRing then
     local isPreviewChain = false
     local previewEntity = world:GetPreviewEntity()
     if previewEntity then
@@ -25,46 +18,37 @@ SkillScopeCalculator_NearestInSquareRing.CalcRange = function(self, scopeType, s
       if previewChainPathCmpt and previewChainPathCmpt:IsLinkLine() then
         isPreviewChain = true
         local chainPathList = previewChainPathCmpt:GetPreviewChainPath()
-        if chainPathList and #chainPathList > 0 then
+        if chainPathList and 0 < #chainPathList then
           local utilDataSvc = world:GetService("UtilData")
           local trapCount = 0
-          for _,pos in ipairs(chainPathList) do
+          for _, pos in ipairs(chainPathList) do
             local maintainColorTrapList = utilDataSvc:FindMaintainColorTrapByPos(pos)
-            if #maintainColorTrapList > 0 then
+            if 0 < #maintainColorTrapList then
               trapCount = trapCount + 1
             end
           end
-          nRingLength = nRingLength + (trapCount)
+          nRingLength = nRingLength + trapCount
         end
       end
     end
-    do
-      if not isPreviewChain then
-        local buffSvc = world:GetService("BuffLogic")
-        local curLayerCount = buffSvc:GetBuffLayer(casterEntity, buffEffectTypeForExtraRing)
-        nRingLength = nRingLength + curLayerCount
-      end
-      do
-        local tv2RingWholeRange = (ComputeScopeRange.ComputeRange_SquareRing)(centerPos, #bodyArea, nRingLength)
-        local monsterIDArray = (self._gridFilter):SelectNearestMonsterInRangeOnPos(casterEntity, centerPos, nTargetLimit, tv2RingWholeRange)
-        local monsterPosList = {}
-        for i,id in ipairs(monsterIDArray) do
-          local entity = ((self._gridFilter)._world):GetEntityByID(R23_PC93)
-          local bodyAreaCmpt = entity:BodyArea()
-          -- DECOMPILER ERROR at PC96: Overwrote pending register: R23 in 'AssignReg'
-
-          R23_PC93 = R23_PC93(entity)
-          local pos = nil
-          local areaArray = bodyAreaCmpt:GetArea()
-          for _,area in ipairs(areaArray) do
-            (table.insert)(monsterPosList, Vector2(pos.x + area.x, pos.y + area.y))
-          end
-        end
-        local result = SkillScopeResult:New(SkillScopeType.NearestInSquareRing, centerPos, monsterPosList, monsterPosList, monsterIDArray)
-        return result
-      end
+    if not isPreviewChain then
+      local buffSvc = world:GetService("BuffLogic")
+      local curLayerCount = buffSvc:GetBuffLayer(casterEntity, buffEffectTypeForExtraRing)
+      nRingLength = nRingLength + curLayerCount
     end
   end
+  local tv2RingWholeRange = ComputeScopeRange.ComputeRange_SquareRing(centerPos, #bodyArea, nRingLength)
+  local monsterIDArray = self._gridFilter:SelectNearestMonsterInRangeOnPos(casterEntity, centerPos, nTargetLimit, tv2RingWholeRange)
+  local monsterPosList = {}
+  for i, id in ipairs(monsterIDArray) do
+    local entity = self._gridFilter._world:GetEntityByID(id)
+    local bodyAreaCmpt = entity:BodyArea()
+    local pos = entity:GetGridPosition()
+    local areaArray = bodyAreaCmpt:GetArea()
+    for _, area in ipairs(areaArray) do
+      table.insert(monsterPosList, Vector2(pos.x + area.x, pos.y + area.y))
+    end
+  end
+  local result = SkillScopeResult:New(SkillScopeType.NearestInSquareRing, centerPos, monsterPosList, monsterPosList, monsterIDArray)
+  return result
 end
-
-

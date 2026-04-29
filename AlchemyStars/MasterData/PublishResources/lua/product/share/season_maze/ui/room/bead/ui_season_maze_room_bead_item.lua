@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/room/bead/ui_season_maze_room_bead_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRoomBeadItem", UICustomWidget)
 UISeasonMazeRoomBeadItem = UISeasonMazeRoomBeadItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoomBeadItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazeRoomBeadItem:OnShow(uiParams)
   self._atlas = self:GetAsset("SeasonMaze.spriteatlas", LoadType.SpriteAtlas)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBeadItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMazeRoomBeadItem:InitWidget()
   self._RootAreaGo = self:GetGameObject("RootArea")
   self._SoldOutAreaGo = self:GetGameObject("SoldOutArea")
   self._RelicBgGo = self:GetGameObject("RelicBg")
@@ -24,7 +14,7 @@ UISeasonMazeRoomBeadItem.InitWidget = function(self)
   self._PriceAreaGo = self:GetGameObject("PriceArea")
   self._OriPriceGo = self:GetGameObject("OriPrice")
   self._SelectedAreaGo = self:GetGameObject("SelectedArea")
-  self._anim = (self:GetGameObject()):GetComponent("Animation")
+  self._anim = self:GetGameObject():GetComponent("Animation")
   self._CostIcon = self:GetUIComponent("Image", "CostIcon")
   self._OriPriceText = self:GetUIComponent("UILocalizationText", "OriPrice")
   self._CurPriceText = self:GetUIComponent("UILocalizationText", "CurPrice")
@@ -32,175 +22,115 @@ UISeasonMazeRoomBeadItem.InitWidget = function(self)
   self._type = self:GetUIComponent("Image", "Type")
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._star = {}
-  -- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._star)[1] = self:GetGameObject("Star1")
-  -- DECOMPILER ERROR at PC75: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._star)[2] = self:GetGameObject("Star2")
-  -- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._star)[3] = self:GetGameObject("Star3")
+  self._star[1] = self:GetGameObject("Star1")
+  self._star[2] = self:GetGameObject("Star2")
+  self._star[3] = self:GetGameObject("Star3")
   self._freeBg = self:GetGameObject("FreeBg")
   self._freeText = self:GetGameObject("FreeText")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBeadItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeRoomBeadItem:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
   if self._hideTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._hideTimer)
+    GameGlobal.Timer():CancelEvent(self._hideTimer)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBeadItem.SetData = function(self, index, data, callback, component)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMazeRoomBeadItem:SetData(index, data, callback, component)
   self._index = index
   self._data = data
   self._callback = callback
   self._component = component
-  self._id = (((self._data)._slotData).item).id
-  self._cfg = (Cfg.cfg_component_season_maze_autobead)[self._id]
+  self._id = self._data._slotData.item.id
+  self._cfg = Cfg.cfg_component_season_maze_autobead[self._id]
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBeadItem.RefreshUI = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local slotData = (self._data)._slotData
+function UISeasonMazeRoomBeadItem:RefreshUI()
+  local slotData = self._data._slotData
   if slotData.sellout then
-    (self._SoldOutAreaGo):SetActive(true)
+    self._SoldOutAreaGo:SetActive(true)
   else
-    ;
-    (self._SoldOutAreaGo):SetActive(false)
+    self._SoldOutAreaGo:SetActive(false)
   end
   if slotData.ori_price > 0 and slotData.ori_price ~= slotData.price then
-    (self._OriPriceGo):SetActive(true)
-    ;
-    (self._OriPriceText):SetText(tostring(slotData.ori_price))
+    self._OriPriceGo:SetActive(true)
+    self._OriPriceText:SetText(tostring(slotData.ori_price))
   else
-    ;
-    (self._OriPriceGo):SetActive(false)
+    self._OriPriceGo:SetActive(false)
   end
-  ;
-  (self._freeBg):SetActive(slotData.price <= 0)
-  ;
-  (self._freeText):SetActive(slotData.price <= 0)
-  ;
-  (self._PriceAreaGo):SetActive(slotData.price > 0)
+  self._freeBg:SetActive(0 >= slotData.price)
+  self._freeText:SetActive(0 >= slotData.price)
+  self._PriceAreaGo:SetActive(0 < slotData.price)
   local priceStr = tostring(slotData.price)
-  local curGold = (self._component):GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
+  local curGold = self._component:GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
   if curGold < slotData.price then
     priceStr = "<color=#c97d7d>" .. priceStr .. "</color>"
   end
-  ;
-  (self._CurPriceText):SetText(priceStr)
-  ;
-  (self._RelicBgGo):SetActive(true)
-  ;
-  (self._OnceItemBgGo):SetActive(false)
-  -- DECOMPILER ERROR at PC94: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._type).sprite = (self._atlas):GetSprite(self:_GetTypeSprite(self._cfg))
-  ;
-  (self._icon):LoadImage((self._cfg).Icon)
-  for key,value in ipairs(self._star) do
-    value:SetActive(key < (self._cfg).Lv)
+  self._CurPriceText:SetText(priceStr)
+  self._RelicBgGo:SetActive(true)
+  self._OnceItemBgGo:SetActive(false)
+  self._type.sprite = self._atlas:GetSprite(self:_GetTypeSprite(self._cfg))
+  self._icon:LoadImage(self._cfg.Icon)
+  for key, value in ipairs(self._star) do
+    value:SetActive(key < self._cfg.Lv)
   end
-  ;
-  (self._NameText):SetText((StringTable.Get)((self._cfg).Name))
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  self._NameText:SetText(StringTable.Get(self._cfg.Name))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBeadItem.BgAreaOnClick = function(self)
-  -- function num : 0_5
+function UISeasonMazeRoomBeadItem:BgAreaOnClick()
   if self._callback then
-    (self._callback)(self._index)
+    self._callback(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBeadItem.OnSelect = function(self, bShow)
-  -- function num : 0_6
-  (self._SelectedAreaGo):SetActive(bShow)
+function UISeasonMazeRoomBeadItem:OnSelect(bShow)
+  self._SelectedAreaGo:SetActive(bShow)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBeadItem.PlayShowInAnim = function(self, delay)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonMazeRoomBeadItem:PlayShowInAnim(delay)
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
-    ;
-    (self._RootAreaGo):SetActive(true)
+    GameGlobal.Timer():CancelEvent(self._timer)
+    self._RootAreaGo:SetActive(true)
   end
-  if delay and delay > 0 then
-    (self._RootAreaGo):SetActive(false)
-    self._timer = ((GameGlobal.Timer)()):AddEvent(delay, function()
-    -- function num : 0_7_0 , upvalues : self
-    (self._RootAreaGo):SetActive(true)
-    if self._anim then
-      (self._anim):Play("uieffanim_UISeasonMazeRoomBeadItem_in")
-    end
-  end
-)
+  if delay and 0 < delay then
+    self._RootAreaGo:SetActive(false)
+    self._timer = GameGlobal.Timer():AddEvent(delay, function()
+      self._RootAreaGo:SetActive(true)
+      if self._anim then
+        self._anim:Play("uieffanim_UISeasonMazeRoomBeadItem_in")
+      end
+    end)
   else
-    ;
-    (self._RootAreaGo):SetActive(true)
+    self._RootAreaGo:SetActive(true)
     if self._anim then
-      (self._anim):Play("uieffanim_UISeasonMazeRoomBeadItem_in")
+      self._anim:Play("uieffanim_UISeasonMazeRoomBeadItem_in")
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBeadItem.PlayShowOutAnim = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (self._RootAreaGo):SetActive(true)
+function UISeasonMazeRoomBeadItem:PlayShowOutAnim()
+  self._RootAreaGo:SetActive(true)
   if self._anim then
-    (self._anim):Play("uieffanim_UISeasonMazeRoomBeadItem_out")
+    self._anim:Play("uieffanim_UISeasonMazeRoomBeadItem_out")
     if self._hideTimer then
-      ((GameGlobal.Timer)()):CancelEvent(self._hideTimer)
-      self._hideTimer = ((GameGlobal.Timer)()):AddEvent(300, function()
-    -- function num : 0_8_0 , upvalues : self
-    (self._RootAreaGo):SetActive(false)
-  end
-)
+      GameGlobal.Timer():CancelEvent(self._hideTimer)
+      self._hideTimer = GameGlobal.Timer():AddEvent(300, function()
+        self._RootAreaGo:SetActive(false)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomBeadItem._GetTypeSprite = function(self, cfg)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonMazeRoomBeadItem:_GetTypeSprite(cfg)
   if cfg.Type == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Skill then
     return "thread_junei_zdz01"
-  else
-    if cfg.Type == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Strong then
-      return "thread_junei_zdz02"
-    else
-      if cfg.Type == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Energy then
-        return "thread_junei_zdz03"
-      end
-    end
+  elseif cfg.Type == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Strong then
+    return "thread_junei_zdz02"
+  elseif cfg.Type == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Energy then
+    return "thread_junei_zdz03"
   end
   return "cn14_sjmj_xdjmk_di12"
 end
-
-

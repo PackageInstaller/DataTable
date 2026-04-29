@@ -1,101 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/ui_season_top_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTopBtn", UICustomWidget)
 UISeasonTopBtn = UISeasonTopBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTopBtn.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonTopBtn:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTopBtn.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonTopBtn:InitWidget()
   self._home = self:GetGameObject("Home")
   self._hide = self:GetGameObject("Hide")
   self._help = self:GetGameObject("Help")
   self._video = self:GetGameObject("Video")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTopBtn.SetData = function(self, backCB, homeCB, hideCB, helpCB, videoCB)
-  -- function num : 0_2
+function UISeasonTopBtn:SetData(backCB, homeCB, hideCB, helpCB, videoCB)
   self._backCB = backCB
   self._homeCB = homeCB
   self._hideCB = hideCB
   self._helpCB = helpCB
   self._videoCB = videoCB
-  ;
-  (self._home):SetActive(self._homeCB ~= nil)
-  ;
-  (self._hide):SetActive(self._hideCB ~= nil)
-  ;
-  (self._help):SetActive(self._helpCB ~= nil)
-  ;
-  (self._video):SetActive(self._videoCB ~= nil)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  self._home:SetActive(self._homeCB ~= nil)
+  self._hide:SetActive(self._hideCB ~= nil)
+  self._help:SetActive(self._helpCB ~= nil)
+  self._video:SetActive(self._videoCB ~= nil)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTopBtn.BackOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCancel)
-  ;
-  (self._backCB)()
+function UISeasonTopBtn:BackOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCancel)
+  self._backCB()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTopBtn.HomeOnClick = function(self)
-  -- function num : 0_4
+function UISeasonTopBtn:HomeOnClick()
   if self._homeCB then
-    (self._homeCB)()
+    self._homeCB()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTopBtn.HideOnClick = function(self)
-  -- function num : 0_5
+function UISeasonTopBtn:HideOnClick()
   if self._homeCB then
-    (self._hideCB)()
+    self._hideCB()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTopBtn.HelpOnClick = function(self)
-  -- function num : 0_6
+function UISeasonTopBtn:HelpOnClick()
   if self._helpCB then
-    (self._helpCB)()
+    self._helpCB()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTopBtn.VideoOnClick = function(self)
-  -- function num : 0_7
+function UISeasonTopBtn:VideoOnClick()
   if self._videoCB then
-    (self._videoCB)()
+    self._videoCB()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTopBtn.SetBacktrackUI = function(self)
-  -- function num : 0_8
-  (self._hide):SetActive(false)
-  ;
-  (self._help):SetActive(false)
-  ;
-  (self._video):SetActive(false)
+function UISeasonTopBtn:SetBacktrackUI()
+  self._hide:SetActive(false)
+  self._help:SetActive(false)
+  self._video:SetActive(false)
 end
-
-

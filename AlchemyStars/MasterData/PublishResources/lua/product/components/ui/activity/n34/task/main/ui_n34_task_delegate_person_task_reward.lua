@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/task/main/ui_n34_task_delegate_person_task_reward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN34TaskDelegatePersonTaskReward", UICustomWidget)
 UIN34TaskDelegatePersonTaskReward = UIN34TaskDelegatePersonTaskReward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN34TaskDelegatePersonTaskReward.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN34TaskDelegatePersonTaskReward:OnShow(uiParams)
   self._countLabel = self:GetUIComponent("UILocalizationText", "Count")
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._trustIcon = self:GetGameObject("TrustIcon")
@@ -17,43 +10,28 @@ UIN34TaskDelegatePersonTaskReward.OnShow = function(self, uiParams)
   self._imageGO = self:GetGameObject("Image")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePersonTaskReward.SetData = function(self, isTrust, reward, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN34TaskDelegatePersonTaskReward:SetData(isTrust, reward, callback)
   self._callback = callback
-  ;
-  (self._countLabel):SetText(reward.count)
+  self._countLabel:SetText(reward.count)
   self._reward = reward
   if isTrust then
-    (self._trustIcon):SetActive(true)
-    ;
-    (self._icon):SetActive(false)
+    self._trustIcon:SetActive(true)
+    self._icon:SetActive(false)
   else
-    ;
-    (self._trustIcon):SetActive(false)
-    ;
-    (self._icon):SetActive(true)
-    local cfg_item = (Cfg.cfg_item)[reward.assetid]
+    self._trustIcon:SetActive(false)
+    self._icon:SetActive(true)
+    local cfg_item = Cfg.cfg_item[reward.assetid]
     if not cfg_item then
-      return 
+      return
     end
     local icon = cfg_item.Icon
-    ;
-    (self._iconLoader):LoadImage(icon)
-    ;
-    (self._imageGO):SetActive(icon ~= "n34_dc_icon06")
+    self._iconLoader:LoadImage(icon)
+    self._imageGO:SetActive(icon ~= "n34_dc_icon06")
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePersonTaskReward.IconOnClick = function(self)
-  -- function num : 0_2
+function UIN34TaskDelegatePersonTaskReward:IconOnClick()
   if self._callback then
-    (self._callback)((self._reward).assetid, ((self._go).transform).position)
+    self._callback(self._reward.assetid, self._go.transform.position)
   end
 end
-
-

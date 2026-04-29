@@ -1,43 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_target_animatior_speed_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTargetAnimatiorSpeedInstruction", BaseInstruction)
 PlayTargetAnimatiorSpeedInstruction = PlayTargetAnimatiorSpeedInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTargetAnimatiorSpeedInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTargetAnimatiorSpeedInstruction:Constructor(paramList)
   self._speed = tonumber(paramList.speed) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTargetAnimatiorSpeedInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTargetAnimatiorSpeedInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   if targetEntityID == nil or targetEntityID < 0 then
-    return 
+    return
   end
   local targetEntity = world:GetEntityByID(targetEntityID)
   local viewCmpt = targetEntity:View()
   if not viewCmpt then
-    (Log.fatal)("view cmpt has been removed")
-    return 
+    Log.fatal("view cmpt has been removed")
+    return
   end
   local entityObj = viewCmpt:GetGameObject()
-  local root = (entityObj.transform):Find("Root")
+  local root = entityObj.transform:Find("Root")
   if not root then
-    return 
+    return
   end
   local animator = root:GetComponent(typeof(UnityEngine.Animator))
   if not animator then
-    return 
+    return
   end
   animator.speed = self._speed
 end
-
-

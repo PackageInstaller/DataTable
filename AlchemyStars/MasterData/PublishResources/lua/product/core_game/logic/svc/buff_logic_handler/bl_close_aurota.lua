@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_close_aurota.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicCloseAuroraTime", BuffLogicBase)
 BuffLogicCloseAuroraTime = BuffLogicCloseAuroraTime
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicCloseAuroraTime.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicCloseAuroraTime:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicCloseAuroraTime.DoLogic = function(self)
-  -- function num : 0_1
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function BuffLogicCloseAuroraTime:DoLogic()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local com = teamEntity:BuffComponent()
   if com then
     com:SetBuffValue("CloseAuroraTime", true)
@@ -24,21 +14,14 @@ end
 
 _class("BuffLogicRevertCloseAuroraTime", BuffLogicBase)
 BuffLogicRevertCloseAuroraTime = BuffLogicRevertCloseAuroraTime
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRevertCloseAuroraTime.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRevertCloseAuroraTime:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRevertCloseAuroraTime.DoLogic = function(self)
-  -- function num : 0_3
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function BuffLogicRevertCloseAuroraTime:DoLogic()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local com = teamEntity:BuffComponent()
   if com then
     com:SetBuffValue("CloseAuroraTime", nil)
   end
 end
-
-

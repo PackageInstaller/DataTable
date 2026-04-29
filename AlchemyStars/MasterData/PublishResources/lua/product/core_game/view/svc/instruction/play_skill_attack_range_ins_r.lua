@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_skill_attack_range_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlaySkillAttackRangeInstruction", BaseInstruction)
 PlaySkillAttackRangeInstruction = PlaySkillAttackRangeInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillAttackRangeInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillAttackRangeInstruction:Constructor(paramList)
   self._showTime = 0
   if paramList.showTime then
     self._showTime = tonumber(paramList.showTime)
@@ -20,71 +13,59 @@ PlaySkillAttackRangeInstruction.Constructor = function(self, paramList)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillAttackRangeInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlaySkillAttackRangeInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local curDamageResultStageIndex = phaseContext:GetCurDamageResultStageIndex()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, curDamageResultStageIndex)
   if damageResultArray == nil then
-    return 
+    return
   end
   local gridList = {}
   if self._isEffectRange == 1 then
-    for _,result in pairs(damageResultArray) do
+    for _, result in pairs(damageResultArray) do
       local scopeResult = result:GetSkillEffectScopeResult()
       if scopeResult then
         local array = scopeResult:GetAttackRange()
-        for _,v in pairs(array) do
+        for _, v in pairs(array) do
           if not self:_IsContainPos(gridList, v) then
-            (table.insert)(gridList, v)
+            table.insert(gridList, v)
           end
         end
       end
     end
   else
-    do
-      local scopeResult = skillEffectResultContainer:GetScopeResult()
-      if scopeResult then
-        local array = scopeResult:GetAttackRange()
-        for _,v in pairs(array) do
-          if not self:_IsContainPos(gridList, v) then
-            (table.insert)(gridList, v)
-          end
+    local scopeResult = skillEffectResultContainer:GetScopeResult()
+    if scopeResult then
+      local array = scopeResult:GetAttackRange()
+      for _, v in pairs(array) do
+        if not self:_IsContainPos(gridList, v) then
+          table.insert(gridList, v)
         end
-      end
-      do
-        local playerPos = (casterEntity:GridLocation()).Position
-        if not self:_IsContainPos(gridList, playerPos) then
-          (table.insert)(gridList, playerPos)
-        end
-        local world = casterEntity:GetOwnerWorld()
-        local renderEntityService = world:GetService("RenderEntity")
-        local realCaster = casterEntity
-        if casterEntity:HasSuperEntity() and (casterEntity:EntityType()):IsSkillHolder() then
-          realCaster = casterEntity:GetSuperEntity()
-        end
-        local utilSvc = world:GetService("UtilData")
-        local pieceType = utilSvc:GetEntityElementType(realCaster)
-        local outlineEntityList = renderEntityService:CreateAreaOutlineEntity(gridList, nil, nil, pieceType)
-        YIELD(TT, self._showTime)
-        renderEntityService:DestroyAreaOutlineEntity(outlineEntityList, EntityConfigIDRender.SkillRangeOutline)
       end
     end
   end
+  local playerPos = casterEntity:GridLocation().Position
+  if not self:_IsContainPos(gridList, playerPos) then
+    table.insert(gridList, playerPos)
+  end
+  local world = casterEntity:GetOwnerWorld()
+  local renderEntityService = world:GetService("RenderEntity")
+  local realCaster = casterEntity
+  if casterEntity:HasSuperEntity() and casterEntity:EntityType():IsSkillHolder() then
+    realCaster = casterEntity:GetSuperEntity()
+  end
+  local utilSvc = world:GetService("UtilData")
+  local pieceType = utilSvc:GetEntityElementType(realCaster)
+  local outlineEntityList = renderEntityService:CreateAreaOutlineEntity(gridList, nil, nil, pieceType)
+  YIELD(TT, self._showTime)
+  renderEntityService:DestroyAreaOutlineEntity(outlineEntityList, EntityConfigIDRender.SkillRangeOutline)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillAttackRangeInstruction._IsContainPos = function(self, posArr, pos)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,p in pairs(posArr) do
+function PlaySkillAttackRangeInstruction:_IsContainPos(posArr, pos)
+  for _, p in pairs(posArr) do
     if pos.x == p.x and pos.y == p.y then
       return true
     end
   end
   return false
 end
-
-

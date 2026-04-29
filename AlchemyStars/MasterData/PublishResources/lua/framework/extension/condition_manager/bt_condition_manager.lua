@@ -1,64 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/extension/condition_manager/bt_condition_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BTConditionManager", Singleton)
 BTConditionManager = BTConditionManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BTConditionManager.Constructor = function(self)
-  -- function num : 0_0
+function BTConditionManager:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BTConditionManager.NewBehaviourTree = function(self, node)
-  -- function num : 0_1 , upvalues : _ENV
+function BTConditionManager:NewBehaviourTree(node)
   local bt = BehaviourTree:New(node)
   return bt
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BTConditionManager.BuildBTSingle = function(self, conbditionNode)
-  -- function num : 0_2
+function BTConditionManager:BuildBTSingle(conbditionNode)
   local bt = self:NewBehaviourTree(conbditionNode)
   return bt
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BTConditionManager.BuildBTAnd = function(self, conbditionNodes)
-  -- function num : 0_3 , upvalues : _ENV
+function BTConditionManager:BuildBTAnd(conbditionNodes)
   local sNode = SequenceNode:New(conbditionNodes)
   local bt = self:NewBehaviourTree(sNode)
   return bt
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BTConditionManager.BuildBTOr = function(self, conbditionNodes)
-  -- function num : 0_4 , upvalues : _ENV
+function BTConditionManager:BuildBTOr(conbditionNodes)
   local sNode = SelectorNode:New(conbditionNodes)
   local bt = self:NewBehaviourTree(sNode)
   return bt
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BTConditionManager.IsSatisfy = function(self, bt)
-  -- function num : 0_5
+function BTConditionManager:IsSatisfy(bt)
   if self:IsBTSuccess(bt) then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BTConditionManager.IsBTSuccess = function(self, bt)
-  -- function num : 0_6 , upvalues : _ENV
+function BTConditionManager:IsBTSuccess(bt)
   local root = bt.root
   root:Visit()
   local b = false
@@ -68,5 +43,3 @@ BTConditionManager.IsBTSuccess = function(self, bt)
   root:Reset()
   return b
 end
-
-

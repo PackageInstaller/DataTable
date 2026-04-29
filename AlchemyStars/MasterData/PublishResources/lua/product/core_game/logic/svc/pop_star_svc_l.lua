@@ -1,157 +1,111 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/pop_star_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 _class("PopStarServiceLogic", BaseService)
 PopStarServiceLogic = PopStarServiceLogic
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarServiceLogic.Constructor = function(self, world)
-  -- function num : 0_0
+function PopStarServiceLogic:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic.GetPopStarLogicComponent = function(self)
-  -- function num : 0_1
-  local component = ((self._world):GetBoardEntity()):PopStarLogic()
+function PopStarServiceLogic:GetPopStarLogicComponent()
+  local component = self._world:GetBoardEntity():PopStarLogic()
   return component
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic.GetPopGridNum = function(self)
-  -- function num : 0_2
+function PopStarServiceLogic:GetPopGridNum()
   local component = self:GetPopStarLogicComponent()
   if not component then
-    return 
+    return
   end
   return component:GetPopGridNum()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic.AddPopGridNum = function(self, num)
-  -- function num : 0_3
+function PopStarServiceLogic:AddPopGridNum(num)
   local component = self:GetPopStarLogicComponent()
   if not component then
-    return 
+    return
   end
   component:AddPopGridNum(num)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic.GetChallengeIndex = function(self)
-  -- function num : 0_4
+function PopStarServiceLogic:GetChallengeIndex()
   local component = self:GetPopStarLogicComponent()
   if not component then
-    return 
+    return
   end
   return component:GetChallengeIndex()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic.SetChallengeIndex = function(self, index)
-  -- function num : 0_5
+function PopStarServiceLogic:SetChallengeIndex(index)
   local component = self:GetPopStarLogicComponent()
   if not component then
-    return 
+    return
   end
   component:SetChallengeIndex(index)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic.GetTrapRandomData = function(self)
-  -- function num : 0_6
+function PopStarServiceLogic:GetTrapRandomData()
   local component = self:GetPopStarLogicComponent()
   if not component then
-    return 
+    return
   end
   return component:GetTrapRandomData()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic.SetTrapRandomData = function(self, totalWeight, trapRandomTab)
-  -- function num : 0_7
+function PopStarServiceLogic:SetTrapRandomData(totalWeight, trapRandomTab)
   local component = self:GetPopStarLogicComponent()
   if not component then
-    return 
+    return
   end
   component:SetTrapRandomData(totalWeight, trapRandomTab)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic.GetTrapRandomCount = function(self)
-  -- function num : 0_8
+function PopStarServiceLogic:GetTrapRandomCount()
   local component = self:GetPopStarLogicComponent()
   if not component then
-    return 
+    return
   end
   return component:GetTrapRandomCount()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic.AddTrapRandomCount = function(self, trapID)
-  -- function num : 0_9
+function PopStarServiceLogic:AddTrapRandomCount(trapID)
   local component = self:GetPopStarLogicComponent()
   if not component then
-    return 
+    return
   end
   component:AddTrapRandomCount(trapID)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic.AddPropID = function(self, num, propID)
-  -- function num : 0_10
+function PopStarServiceLogic:AddPropID(num, propID)
   local component = self:GetPopStarLogicComponent()
   if not component then
-    return 
+    return
   end
   component:AddPropID(num, propID)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic.GetPropIDByPopNum = function(self, num)
-  -- function num : 0_11
+function PopStarServiceLogic:GetPropIDByPopNum(num)
   local component = self:GetPopStarLogicComponent()
   if not component then
-    return 
+    return
   end
   return component:GetPropIDByPopNum(num)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic._GetChallengeScoreByIndex = function(self, index)
-  -- function num : 0_12 , upvalues : _ENV
-  local popStarCreateInfo = ((((self._world).BW_WorldInfo).clientCreateInfo).popstar_mission_info)[1]
+function PopStarServiceLogic:_GetChallengeScoreByIndex(index)
+  local popStarCreateInfo = self._world.BW_WorldInfo.clientCreateInfo.popstar_mission_info[1]
   local missionID = popStarCreateInfo.mission_id
-  local cfgList = ((Cfg.cfg_popstar_mission)[missionID]).ChallengeIndexScoreList
-  if not cfgList or #cfgList < index then
+  local cfgList = Cfg.cfg_popstar_mission[missionID].ChallengeIndexScoreList
+  if not cfgList or index > #cfgList then
     return 0
   end
   return cfgList[index]
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic._GetChallengeIndexByScore = function(self, score)
-  -- function num : 0_13 , upvalues : _ENV
-  local popStarCreateInfo = ((((self._world).BW_WorldInfo).clientCreateInfo).popstar_mission_info)[1]
+function PopStarServiceLogic:_GetChallengeIndexByScore(score)
+  local popStarCreateInfo = self._world.BW_WorldInfo.clientCreateInfo.popstar_mission_info[1]
   local missionID = popStarCreateInfo.mission_id
-  local cfgList = ((Cfg.cfg_popstar_mission)[missionID]).ChallengeIndexScoreList
-  for index,cfgScore in ipairs(cfgList) do
+  local cfgList = Cfg.cfg_popstar_mission[missionID].ChallengeIndexScoreList
+  for index, cfgScore in ipairs(cfgList) do
     if score < cfgScore then
       return index
     end
@@ -159,124 +113,95 @@ PopStarServiceLogic._GetChallengeIndexByScore = function(self, score)
   return #cfgList
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic.GetPopStarStageInfo = function(self)
-  -- function num : 0_14
+function PopStarServiceLogic:GetPopStarStageInfo()
   local index = self:GetChallengeIndex()
   local challengeScore = self:_GetChallengeScoreByIndex(index)
   local preScore = 0
-  if index > 1 then
+  if 1 < index then
     preScore = self:_GetChallengeScoreByIndex(index - 1)
   end
   return index, challengeScore, preScore
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic._CalculateChallengeState = function(self)
-  -- function num : 0_15
-  local popStarCreateInfo = ((((self._world).BW_WorldInfo).clientCreateInfo).popstar_mission_info)[1]
+function PopStarServiceLogic:_CalculateChallengeState()
+  local popStarCreateInfo = self._world.BW_WorldInfo.clientCreateInfo.popstar_mission_info[1]
   if not popStarCreateInfo.is_challenge then
     return false
   end
   local index, score = self:GetPopStarStageInfo()
   local curScore = self:GetPopGridNum()
-  do
-    if score <= curScore then
-      local nextIndex = self:_GetChallengeIndexByScore(curScore)
-      if index < nextIndex then
-        self:SetChallengeIndex(nextIndex)
-        return true
-      end
+  if score <= curScore then
+    local nextIndex = self:_GetChallengeIndexByScore(curScore)
+    if index < nextIndex then
+      self:SetChallengeIndex(nextIndex)
+      return true
     end
-    return false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic.CalculatePopStarConnectPieces = function(self, gridPos)
-  -- function num : 0_16 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PopStarServiceLogic:CalculatePopStarConnectPieces(gridPos)
+  local utilDataSvc = self._world:GetService("UtilData")
   local pieceType = utilDataSvc:GetPieceType(gridPos)
   local pieces = utilDataSvc:GetReplicaBoardPieces()
   local connMap = {}
-  for x,_ in pairs(pieces) do
+  for x, _ in pairs(pieces) do
     connMap[x] = {}
   end
   local connectPieces = {}
-  ;
-  (table.insert)(connectPieces, gridPos)
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (connMap[gridPos.x])[gridPos.y] = true
-  local searchConnectPiece = function(center, next)
-    -- function num : 0_16_0 , upvalues : _ENV, utilDataSvc, pieceType, connMap, connectPieces
-    for _,offset in ipairs(Offset4) do
+  table.insert(connectPieces, gridPos)
+  connMap[gridPos.x][gridPos.y] = true
+  
+  local function searchConnectPiece(center, next)
+    for _, offset in ipairs(Offset4) do
       local pos = Vector2(center.x + offset[1], center.y + offset[2])
       if utilDataSvc:IsValidPiecePos(pos) then
         local connectPieceType = utilDataSvc:GetPieceType(pos)
         local pieceMatch = PopStarCanMatchPieceType(pieceType, connectPieceType)
-        if not (connMap[pos.x])[pos.y] and pieceMatch then
-          (table.insert)(connectPieces, pos)
-          -- DECOMPILER ERROR at PC42: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (connMap[pos.x])[pos.y] = true
+        if not connMap[pos.x][pos.y] and pieceMatch then
+          table.insert(connectPieces, pos)
+          connMap[pos.x][pos.y] = true
           next(pos, next)
         end
       end
     end
   end
-
+  
   searchConnectPiece(gridPos, searchConnectPiece)
   return connectPieces
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic.GetPopConnectPieces = function(self)
-  -- function num : 0_17
+function PopStarServiceLogic:GetPopConnectPieces()
   local component = self:GetPopStarLogicComponent()
   if not component then
-    return 
+    return
   end
   return component:GetPopConnectPieces()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic.SetPopConnectPieces = function(self, connectPieces)
-  -- function num : 0_18
+function PopStarServiceLogic:SetPopConnectPieces(connectPieces)
   local component = self:GetPopStarLogicComponent()
   if not component then
-    return 
+    return
   end
   component:SetPopConnectPieces(connectPieces)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic.CalculatePopPieces = function(self, connectPieces)
-  -- function num : 0_19 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PopStarServiceLogic:CalculatePopPieces(connectPieces)
+  local utilDataSvc = self._world:GetService("UtilData")
   local result = DataPopStarResult:New()
   result:SetPopConnectPieces(connectPieces)
-  local affixSvc = (self._world):GetService("Affix")
+  local affixSvc = self._world:GetService("Affix")
   local refreshType, fallingDir = affixSvc:ReplacePieceRefreshType()
-  if refreshType ~= PieceRefreshType.FallingDown or not fallingDir then
-    fallingDir = Vector2(0, -1)
-  end
+  fallingDir = refreshType == PieceRefreshType.FallingDown and fallingDir or Vector2(0, -1)
   local superGridNum = 0
-  for _,pos in ipairs(connectPieces) do
+  for _, pos in ipairs(connectPieces) do
     local trapIDList = utilDataSvc:FindTrapByTypeAndPos(TrapType.PopStar_Super, pos)
-    if trapIDList and #trapIDList > 0 then
+    if trapIDList and 0 < #trapIDList then
       superGridNum = superGridNum + 1
     end
   end
-  local popNum = #connectPieces + (superGridNum)
+  local popNum = #connectPieces + superGridNum
   local oldScore = self:GetPopGridNum()
   self:AddPopGridNum(popNum)
   result:SetPopNum(popNum)
@@ -285,36 +210,38 @@ PopStarServiceLogic.CalculatePopPieces = function(self, connectPieces)
   if isIndexChange then
     result:SetIndexChange()
   end
-  local triggerSvc = (self._world):GetService("Trigger")
+  local triggerSvc = self._world:GetService("Trigger")
   triggerSvc:Notify(NTPopStarScoreChange:New())
   local destroyTrapList, posList = self:_CalculateDestroyTrapAndPiece(connectPieces)
   result:SetDelTrapList(destroyTrapList)
-  local boardLogicSvc = (self._world):GetService("BoardLogic")
+  local boardLogicSvc = self._world:GetService("BoardLogic")
   boardLogicSvc:SyncGridTilesColor()
   local delSet, newSet, moveSet = boardLogicSvc:PopStarGridByFallDir(posList, fallingDir)
   result:SetDelSet(delSet)
   result:SetMoveSet(moveSet)
   result:SetNewSet(newSet)
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local boardCmpt = boardEntity:Board()
-  for _,v in ipairs(newSet) do
-    boardLogicSvc:SetPieceTypeLogic(v.color, Vector2((v.pos).x, (v.pos).y))
+  for _, v in ipairs(newSet) do
+    boardLogicSvc:SetPieceTypeLogic(v.color, Vector2(v.pos.x, v.pos.y))
   end
-  for _,v in ipairs(moveSet) do
-    boardLogicSvc:SetPieceTypeLogic(v.color, Vector2((v.to).x, (v.to).y))
+  for _, v in ipairs(moveSet) do
+    boardLogicSvc:SetPieceTypeLogic(v.color, Vector2(v.to.x, v.to.y))
   end
-  local filter = function(e)
-    -- function num : 0_19_0
-    if e:HasTrapID() and (e:Trap()):FallWithGrid() then
-      return not e:HasDeadMark()
-    end
+  
+  local function filter(e)
+    return e:HasTrapID() and e:Trap():FallWithGrid() and not e:HasDeadMark()
   end
-
+  
   local moveTraps = {}
-  for _,v in ipairs(moveSet) do
+  for _, v in ipairs(moveSet) do
     local es = boardCmpt:GetPieceEntities(v.from, filter)
-    for i,e in ipairs(es) do
-      moveTraps[#moveTraps + 1] = {entity = e, from = v.from, to = v.to}
+    for i, e in ipairs(es) do
+      moveTraps[#moveTraps + 1] = {
+        entity = e,
+        from = v.from,
+        to = v.to
+      }
       e:SetGridPosition(v.to)
       boardLogicSvc:UpdateEntityBlockFlag(e, v.from, v.to)
     end
@@ -322,105 +249,93 @@ PopStarServiceLogic.CalculatePopPieces = function(self, connectPieces)
   result:SetMoveTrapList(moveTraps)
   local newTraps = self:_CalculateNewTraps(newSet, oldScore, newScore)
   result:SetNewTrapList(newTraps)
-  local triggerSvc = (self._world):GetService("Trigger")
+  local triggerSvc = self._world:GetService("Trigger")
   triggerSvc:Notify(NTPopStarEnd:New(popNum))
   return result
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic.Calculate3StarProgress = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
-  local battleStatCmpt = (self._world):BattleStat()
-  local threeStarConditions = configService:GetPopStar3StarCondition(((self._world).BW_WorldInfo).missionID)
-  local star3CalcService = (self._world):GetService("Star3Calc")
-  for _,conditionId in ipairs(threeStarConditions) do
+function PopStarServiceLogic:Calculate3StarProgress()
+  local configService = self._world:GetService("Config")
+  local battleStatCmpt = self._world:BattleStat()
+  local threeStarConditions = configService:GetPopStar3StarCondition(self._world.BW_WorldInfo.missionID)
+  local star3CalcService = self._world:GetService("Star3Calc")
+  for _, conditionId in ipairs(threeStarConditions) do
     local ret = star3CalcService:CalcProgress(conditionId)
     battleStatCmpt:UpdateA3StarProgress(conditionId, ret)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic.DoParseTrapRefreshData = function(self, trapRefreshID)
-  -- function num : 0_21 , upvalues : _ENV
+function PopStarServiceLogic:DoParseTrapRefreshData(trapRefreshID)
   if not trapRefreshID then
-    return 
+    return
   end
-  local cfgRefresh = (Cfg.cfg_popstar_trap_refresh)[trapRefreshID]
+  local cfgRefresh = Cfg.cfg_popstar_trap_refresh[trapRefreshID]
   if not cfgRefresh then
-    (Log.exception)("ParseTrapRefreshData error!!! trap refresh ID = ", trapRefreshID)
-    return 
+    Log.exception("ParseTrapRefreshData error!!! trap refresh ID = ", trapRefreshID)
+    return
   end
   local totalWeight = cfgRefresh.TotalWeight
-  local trapIDList = (table.cloneconf)(cfgRefresh.TrapIDList)
-  local weightList = (table.cloneconf)(cfgRefresh.WeightList)
-  local countLimitList = (table.cloneconf)(cfgRefresh.CountLimitList)
+  local trapIDList = table.cloneconf(cfgRefresh.TrapIDList)
+  local weightList = table.cloneconf(cfgRefresh.WeightList)
+  local countLimitList = table.cloneconf(cfgRefresh.CountLimitList)
   if #trapIDList ~= #weightList or #trapIDList ~= #countLimitList then
-    (Log.exception)("ParseTrapRefreshData list size is not match!!! trap refresh ID = ", trapRefreshID)
-    return 
+    Log.exception("ParseTrapRefreshData list size is not match!!! trap refresh ID = ", trapRefreshID)
+    return
   end
   local trapRandomTab = {}
-  for index,trapID in ipairs(trapIDList) do
-    local trapRandomData = {trapID = trapID, weight = weightList[index], countLimit = countLimitList[index]}
+  for index, trapID in ipairs(trapIDList) do
+    local trapRandomData = {
+      trapID = trapID,
+      weight = weightList[index],
+      countLimit = countLimitList[index]
+    }
     trapRandomTab[#trapRandomTab + 1] = trapRandomData
   end
   self:SetTrapRandomData(totalWeight, trapRandomTab)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic.DoParsePropRefreshData = function(self, refreshIDList)
-  -- function num : 0_22 , upvalues : _ENV
+function PopStarServiceLogic:DoParsePropRefreshData(refreshIDList)
   if not refreshIDList then
-    return 
+    return
   end
   local popNumList = {}
-  for _,ID in ipairs(refreshIDList) do
-    local cfgProp = (Cfg.cfg_popstar_prop_refresh)[ID]
+  for _, ID in ipairs(refreshIDList) do
+    local cfgProp = Cfg.cfg_popstar_prop_refresh[ID]
     if not cfgProp then
-      (Log.exception)("ParsePropRefreshData error!!! prop refresh ID = ", ID)
+      Log.exception("ParsePropRefreshData error!!! prop refresh ID = ", ID)
     else
       self:_DoParsePropRandomData(cfgProp, popNumList)
     end
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic._DoParsePropRandomData = function(self, cfgProp, popNumList)
-  -- function num : 0_23 , upvalues : _ENV
-  local randomSvc = (self._world):GetService("RandomLogic")
-  for _,randomInterval in ipairs(cfgProp.PopNumRandomInterval) do
+function PopStarServiceLogic:_DoParsePropRandomData(cfgProp, popNumList)
+  local randomSvc = self._world:GetService("RandomLogic")
+  for _, randomInterval in ipairs(cfgProp.PopNumRandomInterval) do
     if #randomInterval ~= 2 then
-      (Log.exception)("ParsePropRefreshData PopNumRandomInterval size error!!! prop refresh ID = ", cfgProp.ID)
+      Log.exception("ParsePropRefreshData PopNumRandomInterval size error!!! prop refresh ID = ", cfgProp.ID)
     else
       local min = randomInterval[1]
       local max = randomInterval[2]
       local curNum = min
       local randomList = {}
-      while curNum <= max do
-        if not (table.icontains)(popNumList, curNum) then
+      while max >= curNum do
+        if not table.icontains(popNumList, curNum) then
           randomList[#randomList + 1] = curNum
         end
         curNum = curNum + 1
       end
-      if #randomList > 0 then
+      if 0 < #randomList then
         local index = randomSvc:LogicRand(1, #randomList)
         local popNum = randomList[index]
-        ;
-        (table.insert)(popNumList, popNum)
+        table.insert(popNumList, popNum)
         self:AddPropID(popNum, cfgProp.TrapID)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic._CalculateNewTraps = function(self, newSet, oldScore, newScore)
-  -- function num : 0_24
+function PopStarServiceLogic:_CalculateNewTraps(newSet, oldScore, newScore)
   local newTraps = {}
   if not newSet or #newSet == 0 then
     return newTraps
@@ -430,64 +345,58 @@ PopStarServiceLogic._CalculateNewTraps = function(self, newSet, oldScore, newSco
   return newTraps
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic._CalculateNewPropTrap = function(self, newTraps, newSet, oldScore, newScore)
-  -- function num : 0_25 , upvalues : _ENV
+function PopStarServiceLogic:_CalculateNewPropTrap(newTraps, newSet, oldScore, newScore)
   local curNum = oldScore + 1
   local newPropIDList = {}
-  do
-    while curNum <= newScore do
-      local propID = self:GetPropIDByPopNum(curNum)
-      if propID then
-        newPropIDList[#newPropIDList + 1] = propID
-      end
-      curNum = curNum + 1
+  while newScore >= curNum do
+    local propID = self:GetPropIDByPopNum(curNum)
+    if propID then
+      newPropIDList[#newPropIDList + 1] = propID
     end
-    if #newPropIDList == 0 then
-      return newTraps
-    end
-    local newSetCopy = (table.cloneconf)(newSet)
-    local randomSvc = (self._world):GetService("RandomLogic")
-    local trapSvc = (self._world):GetService("TrapLogic")
-    local boardLogicSvc = (self._world):GetService("BoardLogic")
-    for _,ID in ipairs(newPropIDList) do
-      if #newSetCopy ~= 0 then
-        local index = randomSvc:LogicRand(1, #newSetCopy)
-        local posData = newSetCopy[index]
-        do
-          local trapEntity = trapSvc:CreateTrap(ID, posData.pos, Vector2(0, 1))
-          if trapEntity then
-            newTraps[#newTraps + 1] = {entity = trapEntity, from = posData.from, pos = posData.pos}
-            trapEntity:SetGridPosition(posData.pos)
-            boardLogicSvc:UpdateEntityBlockFlag(trapEntity, posData.from, posData.pos)
-          end
-          ;
-          (table.remove)(newSetCopy, index)
-          -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
-    end
+    curNum = curNum + 1
+  end
+  if #newPropIDList == 0 then
     return newTraps
   end
+  local newSetCopy = table.cloneconf(newSet)
+  local randomSvc = self._world:GetService("RandomLogic")
+  local trapSvc = self._world:GetService("TrapLogic")
+  local boardLogicSvc = self._world:GetService("BoardLogic")
+  for _, ID in ipairs(newPropIDList) do
+    if #newSetCopy == 0 then
+      break
+    end
+    local index = randomSvc:LogicRand(1, #newSetCopy)
+    local posData = newSetCopy[index]
+    local trapEntity = trapSvc:CreateTrap(ID, posData.pos, Vector2(0, 1))
+    if trapEntity then
+      newTraps[#newTraps + 1] = {
+        entity = trapEntity,
+        from = posData.from,
+        pos = posData.pos
+      }
+      trapEntity:SetGridPosition(posData.pos)
+      boardLogicSvc:UpdateEntityBlockFlag(trapEntity, posData.from, posData.pos)
+    end
+    table.remove(newSetCopy, index)
+  end
+  return newTraps
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic._CalculateNewSpecialTrap = function(self, newTraps, newSet)
-  -- function num : 0_26 , upvalues : _ENV
-  local newSetCopy = (table.cloneconf)(newSet)
-  local trapSvc = (self._world):GetService("TrapLogic")
-  local boardLogicSvc = (self._world):GetService("BoardLogic")
-  for _,posData in ipairs(newSetCopy) do
+function PopStarServiceLogic:_CalculateNewSpecialTrap(newTraps, newSet)
+  local newSetCopy = table.cloneconf(newSet)
+  local trapSvc = self._world:GetService("TrapLogic")
+  local boardLogicSvc = self._world:GetService("BoardLogic")
+  for _, posData in ipairs(newSetCopy) do
     local trapID = self:_RandomSpecialTrapID()
     if trapID then
       local trapEntity = trapSvc:CreateTrap(trapID, posData.pos, Vector2(0, 1))
       if trapEntity then
-        newTraps[#newTraps + 1] = {entity = trapEntity, from = posData.from, pos = posData.pos}
+        newTraps[#newTraps + 1] = {
+          entity = trapEntity,
+          from = posData.from,
+          pos = posData.pos
+        }
         trapEntity:SetGridPosition(posData.pos)
         boardLogicSvc:UpdateEntityBlockFlag(trapEntity, posData.from, posData.pos)
         self:AddTrapRandomCount(trapID)
@@ -497,78 +406,66 @@ PopStarServiceLogic._CalculateNewSpecialTrap = function(self, newTraps, newSet)
   return newTraps
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic._RandomSpecialTrapID = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function PopStarServiceLogic:_RandomSpecialTrapID()
   local totalWeight, randomDataTab = self:GetTrapRandomData()
   if not totalWeight or totalWeight == 0 then
-    return 
+    return
   end
-  local trapID = nil
-  local randomSvc = (self._world):GetService("RandomLogic")
+  local trapID
+  local randomSvc = self._world:GetService("RandomLogic")
   local randomIndex = randomSvc:LogicRand(1, totalWeight)
-  for _,data in ipairs(randomDataTab) do
+  for _, data in ipairs(randomDataTab) do
     randomIndex = randomIndex - data.weight
-    -- DECOMPILER ERROR at PC29: Unhandled construct in 'MakeBoolean' P1
-
-    if randomIndex <= 0 and self:GetTrapRandomCount() < data.countLimit then
-      trapID = data.trapID
+    if randomIndex <= 0 then
+      if self:GetTrapRandomCount() < data.countLimit then
+        trapID = data.trapID
+      end
+      break
     end
-    do break end
   end
-  do
-    return trapID
-  end
+  return trapID
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarServiceLogic._CalculateDestroyTrapAndPiece = function(self, connectPieces)
-  -- function num : 0_28 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PopStarServiceLogic:_CalculateDestroyTrapAndPiece(connectPieces)
+  local utilDataSvc = self._world:GetService("UtilData")
   local destroyTrapList = {}
   local posList = {}
-  for _,pos in ipairs(connectPieces) do
+  for _, pos in ipairs(connectPieces) do
     local addPiece = true
     local propTrapList = utilDataSvc:FindTrapByTypeAndPos(TrapType.PopStar_Prop, pos)
-    if #propTrapList > 0 then
-      (table.appendArray)(destroyTrapList, propTrapList)
+    if 0 < #propTrapList then
+      table.appendArray(destroyTrapList, propTrapList)
     end
     local runeTrapList = utilDataSvc:FindTrapByTypeAndPos(TrapType.PopStar_Rune, pos)
-    if #runeTrapList > 0 then
-      (table.appendArray)(destroyTrapList, runeTrapList)
+    if 0 < #runeTrapList then
+      table.appendArray(destroyTrapList, runeTrapList)
     end
     local superTrapList = utilDataSvc:FindTrapByTypeAndPos(TrapType.PopStar_Super, pos)
-    if #superTrapList > 0 then
-      (table.appendArray)(destroyTrapList, superTrapList)
+    if 0 < #superTrapList then
+      table.appendArray(destroyTrapList, superTrapList)
     end
     local lockTrapList = utilDataSvc:FindTrapByTypeAndPos(TrapType.PopStar_Lock, pos)
-    if #lockTrapList > 0 then
-      (table.appendArray)(destroyTrapList, lockTrapList)
+    if 0 < #lockTrapList then
+      table.appendArray(destroyTrapList, lockTrapList)
       addPiece = false
     end
     local maintainColorTrapList = utilDataSvc:FindMaintainColorTrapByPos(pos)
-    if #maintainColorTrapList > 0 then
-      (table.appendArray)(destroyTrapList, maintainColorTrapList)
+    if 0 < #maintainColorTrapList then
+      table.appendArray(destroyTrapList, maintainColorTrapList)
       addPiece = false
     end
     if addPiece then
       posList[#posList + 1] = Vector2(pos.x, pos.y)
     end
   end
-  if #destroyTrapList > 0 then
-    local trapServiceLogic = (self._world):GetService("TrapLogic")
-    for _,trapEntity in ipairs(destroyTrapList) do
+  if 0 < #destroyTrapList then
+    local trapServiceLogic = self._world:GetService("TrapLogic")
+    for _, trapEntity in ipairs(destroyTrapList) do
       if trapEntity then
-        (trapEntity:Attributes()):Modify("HP", 0)
+        trapEntity:Attributes():Modify("HP", 0)
         trapServiceLogic:AddTrapDeadMark(trapEntity)
       end
     end
   end
-  do
-    return destroyTrapList, posList
-  end
+  return destroyTrapList, posList
 end
-
-

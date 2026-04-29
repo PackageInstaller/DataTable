@@ -1,19 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/s_sync_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sync_svc_l")
 _class("ServerSyncLogicService", SyncLogicService)
 ServerSyncLogicService = ServerSyncLogicService
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ServerSyncLogicService.ServerSendSyncCommand = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ServerSyncLogicService:ServerSendSyncCommand()
   local cmd = BattleSyncCommand:New()
-  cmd:SetCmdSyncLog(((self._world):GetSyncLogger()):LocalLog())
-  ;
-  ((self._world):Player()):SendCommand(cmd)
+  cmd:SetCmdSyncLog(self._world:GetSyncLogger():LocalLog())
+  self._world:Player():SendCommand(cmd)
 end
-
-

@@ -1,28 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_delete_waring_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewDeleteWaringArea", BuffViewBase)
 BuffViewDeleteWaringArea = BuffViewDeleteWaringArea
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewDeleteWaringArea.PlayView = function(self, TT, notify)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewDeleteWaringArea:PlayView(TT, notify)
   local result = self._buffResult
   local skillHolderID = result:GetSkillHolderID()
-  local skillHolder = (self._world):GetEntityByID(skillHolderID)
+  local skillHolder = self._world:GetEntityByID(skillHolderID)
   if not skillHolder then
-    return 
+    return
   end
   local world = self._world
-  local group = world:GetGroup((world.BW_WEMatchers).DamageWarningAreaElement)
+  local group = world:GetGroup(world.BW_WEMatchers.DamageWarningAreaElement)
   local pubListEntity = group:GetEntities()
   local listEntity = {}
-  for _,entity in ipairs(pubListEntity) do
+  for _, entity in ipairs(pubListEntity) do
     local cmpt = entity:DamageWarningAreaElement()
     if cmpt:GetOwnerEntityID() and cmpt:GetOwnerEntityID() == skillHolder:GetID() then
-      (table.insert)(listEntity, entity)
+      table.insert(listEntity, entity)
     end
   end
   local entityPoolSvcR = world:GetService("EntityPool")
@@ -39,15 +32,15 @@ BuffViewDeleteWaringArea.PlayView = function(self, TT, notify)
   end
   local fxHoldCmpt = skillHolder:EffectHolder()
   if not fxHoldCmpt then
-    return 
+    return
   end
   local dicFxHeld = fxHoldCmpt:GetEffectIDEntityDic()
   local lstFx = dicFxHeld[self._warningTextEffectID]
   if not lstFx then
-    return 
+    return
   end
   local fxSvc = world:GetService("Effect")
-  for _,eid in pairs(lstFx) do
+  for _, eid in pairs(lstFx) do
     local e = world:GetEntityByID(eid)
     if e then
       world:DestroyEntity(e)
@@ -55,5 +48,3 @@ BuffViewDeleteWaringArea.PlayView = function(self, TT, notify)
   end
   dicFxHeld[self._warningTextEffectID] = nil
 end
-
-

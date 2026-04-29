@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn9/SouthSea/ui_cn9_single_book_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN9SingleBookItem", UICustomWidget)
 UICN9SingleBookItem = UICN9SingleBookItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN9SingleBookItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN9SingleBookItem:OnShow(uiParams)
   self:InitWidget()
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
+  self.itemModule = GameGlobal.GetModule(ItemModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN9SingleBookItem.InitWidget = function(self)
-  -- function num : 0_1
+function UICN9SingleBookItem:InitWidget()
   self.itemIcon = self:GetUIComponent("RawImageLoader", "ItemIcon")
   self.itemNameText = self:GetUIComponent("UILocalizationText", "ItemNameText")
   self.itemObj = self:GetGameObject("Item")
@@ -24,86 +14,59 @@ UICN9SingleBookItem.InitWidget = function(self)
   self.new = self:GetGameObject("new")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN9SingleBookItem.SetData = function(self, id)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_south_sea_antique)[id]
+function UICN9SingleBookItem:SetData(id)
+  local cfg = Cfg.cfg_south_sea_antique[id]
   self._name = cfg.Name
   self._Icon = cfg.Icon
   self._ItemID = cfg.ItemID
   self._Intro = cfg.Intro
   local own = self:CheckHave()
-  ;
-  (self.itemObj):SetActive(own)
-  ;
-  (self.mask):SetActive(not own)
+  self.itemObj:SetActive(own)
+  self.mask:SetActive(not own)
   self:RefreshNew()
   if own then
-    (self.itemNameText):SetText((StringTable.Get)(self._name))
+    self.itemNameText:SetText(StringTable.Get(self._name))
   else
-    ;
-    (self.itemNameText):SetText((StringTable.Get)("str_activity_intro_lock"))
+    self.itemNameText:SetText(StringTable.Get("str_activity_intro_lock"))
   end
-  ;
-  (self.itemIcon):LoadImage(self._Icon)
+  self.itemIcon:LoadImage(self._Icon)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN9SingleBookItem.BgOnClick = function(self, go)
-  -- function num : 0_3
+function UICN9SingleBookItem:BgOnClick(go)
   if not self:CheckHave() then
-    return 
+    return
   end
-  ;
-  (self.new):SetActive(false)
+  self.new:SetActive(false)
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self
-    local pstID = (self.item):GetID()
-    ;
-    (self.itemModule):SetItemUnnewOverlay(TT, pstID)
-    ;
-    (self.itemModule):SetItemUnnew(TT, pstID)
-  end
-)
+    local pstID = self.item:GetID()
+    self.itemModule:SetItemUnnewOverlay(TT, pstID)
+    self.itemModule:SetItemUnnew(TT, pstID)
+  end)
   self:ShowDialog("UIActivityCN9BookDetailPop", self._name, self._Icon, self._Intro)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN9SingleBookItem.CheckHave = function(self)
-  -- function num : 0_4
-  local count = (self.itemModule):GetItemCount(self._ItemID)
+function UICN9SingleBookItem:CheckHave()
+  local count = self.itemModule:GetItemCount(self._ItemID)
   if not count or count == 0 then
     return false
   else
-    ;
-    (self.itemObj):SetActive(true)
-    ;
-    (self.mask):SetActive(false)
+    self.itemObj:SetActive(true)
+    self.mask:SetActive(false)
     return true
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN9SingleBookItem.RefreshNew = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local items = (self.itemModule):GetItemByTempId(self._ItemID)
-  ;
-  (self.new):SetActive(false)
-  if (table.count)(items) <= 0 then
-    return 
+function UICN9SingleBookItem:RefreshNew()
+  local items = self.itemModule:GetItemByTempId(self._ItemID)
+  self.new:SetActive(false)
+  if table.count(items) <= 0 then
+    return
   end
-  for _,v in pairs(items) do
+  for _, v in pairs(items) do
     self.item = v
   end
-  if self.item and (self.item):IsNewOverlay() then
+  if self.item and self.item:IsNewOverlay() then
     self.hasRed = true
-    ;
-    (self.new):SetActive(true)
+    self.new:SetActive(true)
   end
 end
-
-

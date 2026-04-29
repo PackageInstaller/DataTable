@@ -1,25 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/intro/ui_n20_avg_intro_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20AVGIntroItem", UICustomWidget)
 UIN20AVGIntroItem = UIN20AVGIntroItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20AVGIntroItem.OnShow = function(self)
-  -- function num : 0_0
+function UIN20AVGIntroItem:OnShow()
   self.txtHead = self:GetUIComponent("UILocalizationText", "txtHead")
   self.txtBody = self:GetUIComponent("UILocalizationText", "txtBody")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGIntroItem.Flush = function(self, head, body)
-  -- function num : 0_1
-  (self.txtHead):SetText(head)
-  ;
-  (self.txtBody):SetText(body)
+function UIN20AVGIntroItem:Flush(head, body)
+  self.txtHead:SetText(head)
+  self.txtBody:SetText(body)
 end
-
-

@@ -1,11 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/n13/cfg_n13_map_pet_setting.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, PetActiveCount = 2, PetStepLimit = 3, PetSpeed = 4, PetPlanDuration = 5, PetAct1Duration = 6, PetAct2Duration = 7, PetActEatingDuration = 8, PetSpineScale = 9, PetLayer = 10}
+local key = {
+  ID = 1,
+  PetActiveCount = 2,
+  PetStepLimit = 3,
+  PetSpeed = 4,
+  PetPlanDuration = 5,
+  PetAct1Duration = 6,
+  PetAct2Duration = 7,
+  PetActEatingDuration = 8,
+  PetSpineScale = 9,
+  PetLayer = 10
+}
 local config = {
-{1, 4, 2, 10000, 5000, 4000, 4000, 4000, 25, 15}
+  {
+    1,
+    4,
+    2,
+    10000,
+    5000,
+    4000,
+    4000,
+    4000,
+    25,
+    15
+  }
 }
 return config, "ID", key
-

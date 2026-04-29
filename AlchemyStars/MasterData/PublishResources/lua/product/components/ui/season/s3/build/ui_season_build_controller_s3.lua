@@ -1,31 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/build/ui_season_build_controller_s3.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBuildControllerS3", UIController)
 UISeasonBuildControllerS3 = UISeasonBuildControllerS3
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBuildControllerS3.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
-  self._seaonModule = (GameGlobal.GetModule)(SeasonModule)
-  self._context = (self._seaonModule):GetSeasonBuildContext()
+function UISeasonBuildControllerS3:LoadDataOnEnter(TT, res)
+  self._seaonModule = GameGlobal.GetModule(SeasonModule)
+  self._context = self._seaonModule:GetSeasonBuildContext()
   if not self._context then
     self._context = UISeasonBuildContextS3:New()
-    ;
-    (self._context):Init()
-    ;
-    (self._seaonModule):SetSeasonBuildContext(self._context)
+    self._context:Init()
+    self._seaonModule:SetSeasonBuildContext(self._context)
   end
-  self._uiModule = (GameGlobal.GetUIModule)(SeasonModule)
+  self._uiModule = GameGlobal.GetUIModule(SeasonModule)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildControllerS3.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonBuildControllerS3:OnShow(uiParams)
   self._hide = false
   self._eventPoint = uiParams[1]
   self._backCb = uiParams[2]
@@ -34,52 +22,34 @@ UISeasonBuildControllerS3.OnShow = function(self, uiParams)
   self:RefreshBuildView()
   self:Lock("UISeasonBuildControllerS3:_EnterAnimation")
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self
     self:_EnterAnimation(TT)
-  end
-)
+  end)
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildControllerS3.OnHide = function(self)
-  -- function num : 0_2
+function UISeasonBuildControllerS3:OnHide()
   self._hide = true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildControllerS3._EnterAnimation = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.animation):Play("uieff_UISeasonBuildControllerS3_in")
+function UISeasonBuildControllerS3:_EnterAnimation(TT)
+  self.animation:Play("uieff_UISeasonBuildControllerS3_in")
   YIELD(TT, 1000)
   self:UnLock("UISeasonBuildControllerS3:_EnterAnimation")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildControllerS3.InitWidget = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonBuildControllerS3:InitWidget()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UISeasonTopBtn")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_4_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
     if self._backCb then
-      (self._backCb)(true)
+      self._backCb(true)
     end
-  end
-, function()
-    -- function num : 0_4_1 , upvalues : self, _ENV
-    (self._uiModule):ExitSeasonTo(UIStateType.UIMain)
-  end
-, nil, function()
-    -- function num : 0_4_2 , upvalues : self, _ENV
+  end, function()
+    self._uiModule:ExitSeasonTo(UIStateType.UIMain)
+  end, nil, function()
     self:ShowDialog("UIIntroLoader", "UISeasonS3BuildIntro", MaskType.MT_BlurMask)
-  end
-, nil)
+  end, nil)
   self.tabBtn = self:GetUIComponent("UISelectObjectPath", "tabBtn")
   self.plan = self:GetUIComponent("UISelectObjectPath", "plan")
   self.program = self:GetUIComponent("UISelectObjectPath", "program")
@@ -89,8 +59,7 @@ UISeasonBuildControllerS3.InitWidget = function(self)
   self.levelUpingEffGo = self:GetGameObject("levelUpingEff")
   local viewPool = self:GetUIComponent("UISelectObjectPath", "buildView")
   self.buildView = viewPool:SpawnObject("UISeasonBuildViewS3")
-  ;
-  (self.buildView):Init(self._context)
+  self.buildView:Init(self._context)
   local selectInfoPool = self:GetUIComponent("UISelectObjectPath", "selectInfo")
   self._tips = selectInfoPool:SpawnObject("UISelectInfo")
   self.txtUpTips = self:GetUIComponent("UILocalizationText", "txtUpTips")
@@ -98,215 +67,154 @@ UISeasonBuildControllerS3.InitWidget = function(self)
   self.switchAni = self:GetUIComponent("Animation", "switchAni")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildControllerS3.InitTabBtn = function(self, defaultIndex)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonBuildControllerS3:InitTabBtn(defaultIndex)
   local btns = {
-[1] = {index = 1, name = "str_season_s3_castle_tab_1"}
-, 
-[2] = {index = 2, name = "str_season_s3_castle_tab_2"}
-}
+    [1] = {
+      index = 1,
+      name = "str_season_s3_castle_tab_1"
+    },
+    [2] = {
+      index = 2,
+      name = "str_season_s3_castle_tab_2"
+    }
+  }
   local len = #btns
-  self.btnTabWidgets = (self.tabBtn):SpawnObjects("UISeasonBuildTabBtnS3", len)
-  for i,cfg in ipairs(btns) do
-    local subWidget = (self.btnTabWidgets)[i]
+  self.btnTabWidgets = self.tabBtn:SpawnObjects("UISeasonBuildTabBtnS3", len)
+  for i, cfg in ipairs(btns) do
+    local subWidget = self.btnTabWidgets[i]
     subWidget:SetData(cfg, function(index)
-    -- function num : 0_5_0 , upvalues : self
-    self:OnTabBtnClicked(index)
+      self:OnTabBtnClicked(index)
+    end)
   end
-)
-  end
-  do
-    self.tabIndex = defaultIndex or 1
-    self:RefreshTabBtnSelect()
-    self:RefreshContentByIndex(self.tabIndex)
-  end
+  self.tabIndex = defaultIndex or 1
+  self:RefreshTabBtnSelect()
+  self:RefreshContentByIndex(self.tabIndex)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildControllerS3.RefreshBuildView = function(self)
-  -- function num : 0_6
-  (self.buildView):Refresh()
+function UISeasonBuildControllerS3:RefreshBuildView()
+  self.buildView:Refresh()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildControllerS3.OnTabBtnClicked = function(self, index)
-  -- function num : 0_7
+function UISeasonBuildControllerS3:OnTabBtnClicked(index)
   if index == self.tabIndex then
-    return 
+    return
   end
   self.tabIndex = index
   self:RefreshTabBtnSelect()
   self:RefreshContentByIndex(self.tabIndex)
   if index == 1 then
-    (self.switchAni):Play("uieff_UISeasonBuildControllerS3_Switch02")
+    self.switchAni:Play("uieff_UISeasonBuildControllerS3_Switch02")
   else
-    ;
-    (self.switchAni):Play("uieff_UISeasonBuildControllerS3_Switch01")
+    self.switchAni:Play("uieff_UISeasonBuildControllerS3_Switch01")
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildControllerS3.RefreshTabBtnSelect = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  for i,cfg in ipairs(self.btnTabWidgets) do
-    local subWidget = (self.btnTabWidgets)[i]
+function UISeasonBuildControllerS3:RefreshTabBtnSelect()
+  for i, cfg in ipairs(self.btnTabWidgets) do
+    local subWidget = self.btnTabWidgets[i]
     subWidget:SetSelect(self.tabIndex == i)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildControllerS3.RefreshContentByIndex = function(self, index)
-  -- function num : 0_9
-  (self.planGo):SetActive(index == 2)
-  ;
-  (self.programGo):SetActive(index == 1)
+function UISeasonBuildControllerS3:RefreshContentByIndex(index)
+  self.planGo:SetActive(index == 2)
+  self.programGo:SetActive(index == 1)
   if index == 1 then
     self:RefreshProgram()
   else
     self:RefreshPlan()
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildControllerS3.RefreshProgram = function(self)
-  -- function num : 0_10
+function UISeasonBuildControllerS3:RefreshProgram()
   if not self.programWidget then
-    self.programWidget = (self.program):SpawnObject("UISeasonBuildProgramS3")
-    ;
-    (self.programWidget):InitWithRewardClickCb(function(itemId, pos)
-    -- function num : 0_10_0 , upvalues : self
-    self:ShowItemInfo(itemId, pos)
+    self.programWidget = self.program:SpawnObject("UISeasonBuildProgramS3")
+    self.programWidget:InitWithRewardClickCb(function(itemId, pos)
+      self:ShowItemInfo(itemId, pos)
+    end)
   end
-)
-  end
-  ;
-  (self.programWidget):SetData(self._context, function()
-    -- function num : 0_10_1 , upvalues : self
+  self.programWidget:SetData(self._context, function()
     self:OnBuildLevelUpBtnClick()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildControllerS3.RefreshPlan = function(self)
-  -- function num : 0_11
+function UISeasonBuildControllerS3:RefreshPlan()
   if not self.planWidget then
-    self.planWidget = (self.plan):SpawnObject("UISeasonBuildPlanS3")
-    ;
-    (self.planWidget):InitWithRewardClickCb(function(itemId, pos)
-    -- function num : 0_11_0 , upvalues : self
-    self:ShowItemInfo(itemId, pos)
+    self.planWidget = self.plan:SpawnObject("UISeasonBuildPlanS3")
+    self.planWidget:InitWithRewardClickCb(function(itemId, pos)
+      self:ShowItemInfo(itemId, pos)
+    end)
   end
-)
-  end
-  ;
-  (self.planWidget):SetData(self._context)
+  self.planWidget:SetData(self._context)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildControllerS3.OnBuildLevelUpBtnClick = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  if (self._seaonModule):GetCurSeasonID() < 1 then
+function UISeasonBuildControllerS3:OnBuildLevelUpBtnClick()
+  if self._seaonModule:GetCurSeasonID() < 1 then
     self:_SeasonEnd()
-    return 
+    return
   end
-  local level = (self._context):GetCurLevel()
-  local cfg = (self._context):GetBuildCfgByLevel(level)
-  local showCfg = (Cfg.cfg_season_castle_show)[cfg.ID]
+  local level = self._context:GetCurLevel()
+  local cfg = self._context:GetBuildCfgByLevel(level)
+  local showCfg = Cfg.cfg_season_castle_show[cfg.ID]
   if showCfg then
-    (self.txtUpTips):SetText((StringTable.Get)(showCfg.AndongTalk))
+    self.txtUpTips:SetText(StringTable.Get(showCfg.AndongTalk))
   end
   self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : self
     self:Lock("UISeasonBuildControllerS3_Up_Castle")
     self:_RequestLevelUp(TT)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildControllerS3._RequestLevelUp = function(self, TT)
-  -- function num : 0_13 , upvalues : _ENV
-  local level = (self._context):GetCurLevel()
-  local cfg = (self._context):GetBuildCfgByLevel(level)
-  local res, msg = (self._seaonModule):HandleSeasonCastleReq(TT, cfg.ID)
+function UISeasonBuildControllerS3:_RequestLevelUp(TT)
+  local level = self._context:GetCurLevel()
+  local cfg = self._context:GetBuildCfgByLevel(level)
+  local res, msg = self._seaonModule:HandleSeasonCastleReq(TT, cfg.ID)
   if not msg then
-    (Log.error)("UISeasonBuildContextS3 _RequestLevelUp error ", res.m_result)
+    Log.error("UISeasonBuildContextS3 _RequestLevelUp error ", res.m_result)
     self:UnLock("UISeasonBuildControllerS3_Up_Castle")
     if res.m_result == 3 then
       self:_SeasonEnd()
     end
-    return 
+    return
   end
   self:RefreshBuildView()
-  ;
-  (self.animation):Play("uieff_UISeasonBuildControllerS3_leveluping")
+  self.animation:Play("uieff_UISeasonBuildControllerS3_leveluping")
   YIELD(TT, 4300)
-  if self._hide or (self._seaonModule):GetCurSeasonID() < 1 then
+  if self._hide or self._seaonModule:GetCurSeasonID() < 1 then
     self:_SeasonEnd()
     self:UnLock("UISeasonBuildControllerS3_Up_Castle")
-    return 
+    return
   end
   local rewardList = {}
-  for k,v in pairs(cfg.Reward) do
+  for k, v in pairs(cfg.Reward) do
     local subReard = RoleAsset:New()
     subReard.assetid = v[1]
     subReard.count = v[2]
-    ;
-    (table.insert)(rewardList, subReard)
+    table.insert(rewardList, subReard)
   end
-  ;
-  (UISeasonHelper.ShowUIGetRewards)(rewardList)
+  UISeasonHelper.ShowUIGetRewards(rewardList)
   self:RefreshProgram()
   self:UnLock("UISeasonBuildControllerS3_Up_Castle")
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSeasonBuildLevelUp)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSeasonBuildLevelUp)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildControllerS3.OnUIGetItemCloseInQuest = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UISeasonBuildControllerS3:OnUIGetItemCloseInQuest()
   self:Lock("UISeasonBuildControllerS3_Up_UIGetItemClose")
-  ;
-  (self.levelUpEffGo):SetActive(true)
+  self.levelUpEffGo:SetActive(true)
   self:StartTask(function(TT)
-    -- function num : 0_14_0 , upvalues : _ENV, self
     YIELD(TT, 1700)
     self:UnLock("UISeasonBuildControllerS3_Up_UIGetItemClose")
     if not self._hide then
-      (self.levelUpEffGo):SetActive(false)
+      self.levelUpEffGo:SetActive(false)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildControllerS3.ShowItemInfo = function(self, itemId, pos)
-  -- function num : 0_15
-  (self._tips):SetData(itemId, pos)
+function UISeasonBuildControllerS3:ShowItemInfo(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildControllerS3._SeasonEnd = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  (self._seaonModule):CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED)
-  ;
-  ((self._seaonModule):UIModule()):ExitSeasonTo(UIStateType.UIMain)
+function UISeasonBuildControllerS3:_SeasonEnd()
+  self._seaonModule:CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED)
+  self._seaonModule:UIModule():ExitSeasonTo(UIStateType.UIMain)
 end
-
-

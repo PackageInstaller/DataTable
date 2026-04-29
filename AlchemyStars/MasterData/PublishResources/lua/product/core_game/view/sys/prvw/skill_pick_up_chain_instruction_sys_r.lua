@@ -1,30 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/skill_pick_up_chain_instruction_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPickUpChainInstructionSystem_Render", ReactiveSystem)
 SkillPickUpChainInstructionSystem_Render = SkillPickUpChainInstructionSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPickUpChainInstructionSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillPickUpChainInstructionSystem_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpChainInstructionSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local c = Collector:New({world:GetGroup((world.BW_WEMatchers).PickUpTarget)}, {"Added"})
+function SkillPickUpChainInstructionSystem_Render:GetTrigger(world)
+  local c = Collector:New({
+    world:GetGroup(world.BW_WEMatchers.PickUpTarget)
+  }, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpChainInstructionSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2 , upvalues : _ENV
-  local previewEntity = (self._world):GetPreviewEntity()
+function SkillPickUpChainInstructionSystem_Render:Filter(entity)
+  local previewEntity = self._world:GetPreviewEntity()
   if not previewEntity then
     return false
   end
@@ -41,54 +30,42 @@ SkillPickUpChainInstructionSystem_Render.Filter = function(self, entity)
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpChainInstructionSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3 , upvalues : _ENV
-  local sPreviewActiveSkill = (self._world):GetService("PreviewActiveSkill")
-  local sPreviewSkill = (self._world):GetService("PreviewActiveSkill")
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local configService = (self._world):GetService("Config")
-  local pieceService = (self._world):GetService("Piece")
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function SkillPickUpChainInstructionSystem_Render:ExecuteEntities(entities)
+  local sPreviewActiveSkill = self._world:GetService("PreviewActiveSkill")
+  local sPreviewSkill = self._world:GetService("PreviewActiveSkill")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local configService = self._world:GetService("Config")
+  local pieceService = self._world:GetService("Piece")
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   local posPickUpSafe = pickUpTargetCmpt:GetCurPickUpGridSafePos()
-  do
-    if posPickUpSafe then
-      local isValid, isGuide = ((self._world):GetService("Guide")):IsValidGuidePiecePos(posPickUpSafe.x, posPickUpSafe.y)
-      if not isValid then
-        posPickUpSafe = nil
-      else
-        if isGuide then
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.FinishGuideStep, GuideType.Piece)
-        end
-      end
+  if posPickUpSafe then
+    local isValid, isGuide = self._world:GetService("Guide"):IsValidGuidePiecePos(posPickUpSafe.x, posPickUpSafe.y)
+    if not isValid then
+      posPickUpSafe = nil
+    elseif isGuide then
+      self._world:EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.Piece)
     end
-    if posPickUpSafe then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActiveUIPreviewChainBtnOK, true)
-    else
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActiveUIPreviewChainBtnOK, false)
-      return 
-    end
-    local teamEntity = ((self._world):Player()):GetPreviewTeamEntity()
-    local casterEntity = teamEntity:GetTeamLeaderPetEntity()
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(self.PlayLeaderPreview, self, casterEntity, posPickUpSafe)
-    local petIds, skillIds = sPreviewSkill:GetChianAttackPetIds()
-    if petIds and (table.count)(petIds) > 0 then
-      local previewEntity = (self._world):GetPreviewEntity()
-      previewEntity:ReplacePreviewChainSkill(petIds, skillIds, posPickUpSafe, true)
-    end
+  end
+  if posPickUpSafe then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActiveUIPreviewChainBtnOK, true)
+  else
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActiveUIPreviewChainBtnOK, false)
+    return
+  end
+  local teamEntity = self._world:Player():GetPreviewTeamEntity()
+  local casterEntity = teamEntity:GetTeamLeaderPetEntity()
+  GameGlobal.TaskManager():CoreGameStartTask(self.PlayLeaderPreview, self, casterEntity, posPickUpSafe)
+  local petIds, skillIds = sPreviewSkill:GetChianAttackPetIds()
+  if petIds and table.count(petIds) > 0 then
+    local previewEntity = self._world:GetPreviewEntity()
+    previewEntity:ReplacePreviewChainSkill(petIds, skillIds, posPickUpSafe, true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpChainInstructionSystem_Render.PlayLeaderPreview = function(self, TT, casterEntity, posPickUpSafe)
-  -- function num : 0_4 , upvalues : _ENV
-  local sPreviewActiveSkill = (self._world):GetService("PreviewActiveSkill")
-  local sPreviewSkill = (self._world):GetService("PreviewActiveSkill")
+function SkillPickUpChainInstructionSystem_Render:PlayLeaderPreview(TT, casterEntity, posPickUpSafe)
+  local sPreviewActiveSkill = self._world:GetService("PreviewActiveSkill")
+  local sPreviewSkill = self._world:GetService("PreviewActiveSkill")
   sPreviewSkill:StopPreviewChainSkill(TT)
   local skillPreviewParamInstruction = SkillPreviewParamInstruction:New({})
   local instructionSet = skillPreviewParamInstruction:_ParseInstructionSet(BattleConst.DimensionPreviewInstructionSetId)
@@ -98,5 +75,3 @@ SkillPickUpChainInstructionSystem_Render.PlayLeaderPreview = function(self, TT, 
     sPreviewActiveSkill:DoPreviewInstruction(TT, instructionSet, casterEntity, previewContext)
   end
 end
-
-

@@ -1,34 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_change_grid_prism.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_ChangeGridPrism", Object)
 SkillEffectCalc_ChangeGridPrism = SkillEffectCalc_ChangeGridPrism
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ChangeGridPrism.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_ChangeGridPrism:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ChangeGridPrism.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_ChangeGridPrism:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillParam = skillEffectCalcParam.skillEffectParam
   local change = skillParam:GetChangeType()
   local gridEffectType = skillParam:GetGridEffectType()
   local centerPos = skillEffectCalcParam.centerPos
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
+  local boardCmpt = self._world:GetBoardEntity():Board()
   if change == "add" then
     boardCmpt:SetBoardPieceEffectType(centerPos, gridEffectType, skillEffectCalcParam.casterEntityID)
-  else
-    if change == "remove" then
-      boardCmpt:RemoveBoardPieceEffectType(centerPos)
-    end
+  elseif change == "remove" then
+    boardCmpt:RemoveBoardPieceEffectType(centerPos)
   end
   return SkillEffectResultChangeGridPrism:New()
 end
-
-

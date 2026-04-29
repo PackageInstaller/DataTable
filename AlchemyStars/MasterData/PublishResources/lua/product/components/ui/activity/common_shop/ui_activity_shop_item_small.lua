@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_shop/ui_activity_shop_item_small.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityShopItemSmall", UICustomWidget)
 UIActivityShopItemSmall = UIActivityShopItemSmall
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityShopItemSmall.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityShopItemSmall:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemSmall.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityShopItemSmall:InitWidget()
   self._infoCanvasGroup = self:GetUIComponent("CanvasGroup", "InfoArea")
   self._selledAreaGO = self:GetGameObject("SelledArea")
   self._bgAreaGO = self:GetGameObject("InfoBg")
@@ -36,40 +26,29 @@ UIActivityShopItemSmall.InitWidget = function(self)
   self._priceText = self:GetUIComponent("UILocalizationText", "PriceText")
   self._data = {}
   self._itemClickLock = "UIActivityShopSelectItemLock"
-  self.trans = (self:GetGameObject()).transform
+  self.trans = self:GetGameObject().transform
   self:AttachEvent(GameEventType.ActivityShopBuySuccess, self._ActivityShopBuySuccess)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemSmall.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityShopItemSmall:OnHide()
   self:DetachEvent(GameEventType.ActivityShopBuySuccess, self._ActivityShopBuySuccess)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemSmall.SetData = function(self)
-  -- function num : 0_3
+function UIActivityShopItemSmall:SetData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemSmall.InfoAreaOnClick = function(self, go)
-  -- function num : 0_4
+function UIActivityShopItemSmall:InfoAreaOnClick(go)
   local useNormalDlg = false
-  do
-    if not (self._data):IsUnLimit() then
-      local remainCount = (self._data):GetRemainCount()
-      if remainCount <= 0 then
-        return 
-      end
-      if remainCount == 1 then
-        useNormalDlg = true
-      end
+  if not self._data:IsUnLimit() then
+    local remainCount = self._data:GetRemainCount()
+    if remainCount <= 0 then
+      return
     end
-    self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, useNormalDlg
+    if remainCount == 1 then
+      useNormalDlg = true
+    end
+  end
+  self:StartTask(function(TT)
     self:Lock(self._itemClickLock)
     if useNormalDlg then
       self:ShowDialog("UICampaignShopConfirmNormalController", self._data, self.subTabType)
@@ -77,15 +56,10 @@ UIActivityShopItemSmall.InfoAreaOnClick = function(self, go)
       self:ShowDialog("UICampaignShopConfirmDetailController", self._data, self.subTabType)
     end
     self:UnLock(self._itemClickLock)
-  end
-)
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemSmall.InitData = function(self, data)
-  -- function num : 0_5
+function UIActivityShopItemSmall:InitData(data)
   self._data = data
   self:_fillPriceArea()
   self:_fillItemBaseArea()
@@ -93,154 +67,92 @@ UIActivityShopItemSmall.InitData = function(self, data)
   self:_FillRemainArea()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemSmall._fillPriceArea = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local currencyId = (self._data):GetSaleType()
-  ;
-  (self._moneyIcon):LoadImage((ClientCampaignShop.GetCurrencyImageName)(currencyId))
-  ;
-  (self._priceText):SetText((self._data):GetSalePrice())
+function UIActivityShopItemSmall:_fillPriceArea()
+  local currencyId = self._data:GetSaleType()
+  self._moneyIcon:LoadImage(ClientCampaignShop.GetCurrencyImageName(currencyId))
+  self._priceText:SetText(self._data:GetSalePrice())
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemSmall._fillItemBaseArea = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityShopItemSmall:_fillItemBaseArea()
   local icon = ""
-  local cfgItem = (Cfg.cfg_item)[(self._data):GetItemId()]
+  local cfgItem = Cfg.cfg_item[self._data:GetItemId()]
   if not cfgItem then
-    return 
+    return
   end
-  ;
-  (self._itemNameText):SetText((StringTable.Get)(cfgItem.Name))
-  local specialIconCfg = (Cfg.cfg_activity_shop_special_item_icon_client)[(self._data):GetItemId()]
+  self._itemNameText:SetText(StringTable.Get(cfgItem.Name))
+  local specialIconCfg = Cfg.cfg_activity_shop_special_item_icon_client[self._data:GetItemId()]
   if specialIconCfg and specialIconCfg.UseInSmallCell then
     icon = specialIconCfg.SpecialIcon
-    ;
-    (self._itemIconPet):LoadImage(icon)
-    ;
-    (self._itemIconGO):SetActive(false)
-    ;
-    (self._itemIconPetGO):SetActive(true)
+    self._itemIconPet:LoadImage(icon)
+    self._itemIconGO:SetActive(false)
+    self._itemIconPetGO:SetActive(true)
     if specialIconCfg.PosInSmallCell then
-      local b = (string.split)(specialIconCfg.PosInSmallCell, "|")
+      local b = string.split(specialIconCfg.PosInSmallCell, "|")
       local posX = tonumber(b[1])
       local posY = tonumber(b[2])
-      -- DECOMPILER ERROR at PC60: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._itemIconPetRect).anchoredPosition = Vector2(posX, posY)
+      self._itemIconPetRect.anchoredPosition = Vector2(posX, posY)
     end
-    do
-      if specialIconCfg.SizeInSmallCell then
-        local b = (string.split)(specialIconCfg.SizeInSmallCell, "|")
-        local w = tonumber(b[1])
-        local h = tonumber(b[2])
-        -- DECOMPILER ERROR at PC80: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (self._itemIconPetRect).sizeDelta = Vector2(w, h)
-      end
-      do
-        icon = cfgItem.Icon
-        ;
-        (self._itemIcon):LoadImage(icon)
-        ;
-        (self._itemIconGO):SetActive(true)
-        ;
-        (self._itemIconPetGO):SetActive(false)
-      end
+    if specialIconCfg.SizeInSmallCell then
+      local b = string.split(specialIconCfg.SizeInSmallCell, "|")
+      local w = tonumber(b[1])
+      local h = tonumber(b[2])
+      self._itemIconPetRect.sizeDelta = Vector2(w, h)
     end
+  else
+    icon = cfgItem.Icon
+    self._itemIcon:LoadImage(icon)
+    self._itemIconGO:SetActive(true)
+    self._itemIconPetGO:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemSmall._fillItemCountArea = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local count = (self._data):GetItemCount()
-  if count > 1 or not "" then
-    local text1 = (StringTable.Get)("str_shop_good_count") .. count
-  end
+function UIActivityShopItemSmall:_fillItemCountArea()
+  local count = self._data:GetItemCount()
+  local text1 = count <= 1 and "" or StringTable.Get("str_shop_good_count") .. count
   if count <= 1 then
-    (self._itemCountAreaGO):SetActive(false)
+    self._itemCountAreaGO:SetActive(false)
   else
-    ;
-    (self._itemCountAreaGO):SetActive(true)
-    local text1 = (StringTable.Get)("str_shop_good_count") .. count
-    ;
-    (self._itemCountText):SetText(text1)
+    self._itemCountAreaGO:SetActive(true)
+    local text1 = StringTable.Get("str_shop_good_count") .. count
+    self._itemCountText:SetText(text1)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemSmall._FillRemainArea = function(self)
-  -- function num : 0_9
-  local showRemain = (self._data):ShowRemain()
-  local remainCount = (self._data):GetRemainCount()
+function UIActivityShopItemSmall:_FillRemainArea()
+  local showRemain = self._data:ShowRemain()
+  local remainCount = self._data:GetRemainCount()
   if showRemain == false then
-    (self._itemRestAreaGO):SetActive(false)
+    self._itemRestAreaGO:SetActive(false)
+  elseif self._data:IsUnLimit() then
+    self._itemRestAreaGO:SetActive(false)
+  elseif remainCount <= 0 then
+    self._itemRestAreaGO:SetActive(false)
   else
-    if (self._data):IsUnLimit() then
-      (self._itemRestAreaGO):SetActive(false)
-    else
-      if remainCount <= 0 then
-        (self._itemRestAreaGO):SetActive(false)
-      else
-        ;
-        (self._itemRestAreaGO):SetActive(true)
-        ;
-        (self._itemRestText):SetText(remainCount)
-      end
-    end
+    self._itemRestAreaGO:SetActive(true)
+    self._itemRestText:SetText(remainCount)
   end
-  if (self._data):IsUnLimit() then
-    (self._selledAreaGO):SetActive(false)
-    ;
-    (self._bgAreaGO):SetActive(true)
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._infoCanvasGroup).blocksRaycasts = true
+  if self._data:IsUnLimit() then
+    self._selledAreaGO:SetActive(false)
+    self._bgAreaGO:SetActive(true)
+    self._infoCanvasGroup.blocksRaycasts = true
+  elseif remainCount <= 0 then
+    self._selledAreaGO:SetActive(true)
+    self._bgAreaGO:SetActive(false)
+    self._infoCanvasGroup.blocksRaycasts = false
   else
-    if remainCount <= 0 then
-      (self._selledAreaGO):SetActive(true)
-      ;
-      (self._bgAreaGO):SetActive(false)
-      -- DECOMPILER ERROR at PC65: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._infoCanvasGroup).blocksRaycasts = false
-    else
-      ;
-      (self._selledAreaGO):SetActive(false)
-      ;
-      (self._bgAreaGO):SetActive(true)
-      -- DECOMPILER ERROR at PC76: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._infoCanvasGroup).blocksRaycasts = true
-    end
+    self._selledAreaGO:SetActive(false)
+    self._bgAreaGO:SetActive(true)
+    self._infoCanvasGroup.blocksRaycasts = true
   end
   if self._itemRestUnLimitGo then
-    (self._itemRestUnLimitGo):SetActive((self._data):IsUnLimit())
+    self._itemRestUnLimitGo:SetActive(self._data:IsUnLimit())
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemSmall._ActivityShopBuySuccess = function(self, goodsId)
-  -- function num : 0_10
-  do
-    if self._data and (self._data):GetGoodsId() == goodsId then
-      local remainCount = (self._data):GetRemainCount()
-    end
+function UIActivityShopItemSmall:_ActivityShopBuySuccess(goodsId)
+  if self._data and self._data:GetGoodsId() == goodsId then
+    local remainCount = self._data:GetRemainCount()
     if remainCount <= 0 then
     end
   end
 end
-
-

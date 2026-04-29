@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_vote.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignVote", ICampaignComponentLocalProcessBase)
 CCampaignVote = CCampaignVote
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignVote.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignVote:Constructor()
   self._voteComponent = nil
   self._voteCompInfo = nil
   self._questComponent1 = nil
@@ -18,67 +11,46 @@ CCampaignVote.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignVote.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignVote:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_INLAND_VOTE
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignVote.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignVote:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignVote.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignVote:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetVoteComponent()
   self:_GetQuestComponent1()
   self:_GetQuestComponent2()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignVote._GetVoteComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._voteComponent = (self._campaignObj):GetComponent(ECampaignVoteComponentID.ECAMPAIGN_VOTE)
+function CCampaignVote:_GetVoteComponent()
+  self._voteComponent = self._campaignObj:GetComponent(ECampaignVoteComponentID.ECAMPAIGN_VOTE)
   if not self._voteComponent then
-    return 
+    return
   end
-  self._voteCompInfo = (self._voteComponent):GetComponentInfo()
+  self._voteCompInfo = self._voteComponent:GetComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignVote._GetQuestComponent1 = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._questComponent1 = (self._campaignObj):GetComponent(ECampaignVoteComponentID.ECAMPAIGN_QUEST1)
+function CCampaignVote:_GetQuestComponent1()
+  self._questComponent1 = self._campaignObj:GetComponent(ECampaignVoteComponentID.ECAMPAIGN_QUEST1)
   if not self._questComponent1 then
-    return 
+    return
   end
-  self._questComponentInfo1 = (self._questComponent1):ComponentInfo()
+  self._questComponentInfo1 = self._questComponent1:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignVote._GetQuestComponent2 = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._questComponent2 = (self._campaignObj):GetComponent(ECampaignVoteComponentID.ECAMPAIGN_QUEST2)
+function CCampaignVote:_GetQuestComponent2()
+  self._questComponent2 = self._campaignObj:GetComponent(ECampaignVoteComponentID.ECAMPAIGN_QUEST2)
   if not self._questComponent2 then
-    return 
+    return
   end
-  self._questComponentInfo2 = (self._questComponent2):ComponentInfo()
+  self._questComponentInfo2 = self._questComponent2:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignVote.GetComponent = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignVote:GetComponent(componentID)
   if ECampaignVoteComponentID.ECAMPAIGN_VOTE == componentID then
     return self._voteComponent
   end
@@ -91,10 +63,7 @@ CCampaignVote.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignVote.GetComponentInfo = function(self, componentID)
-  -- function num : 0_8 , upvalues : _ENV
+function CCampaignVote:GetComponentInfo(componentID)
   if ECampaignVoteComponentID.ECAMPAIGN_VOTE == componentID then
     return self._voteCompInfo
   end
@@ -106,5 +75,3 @@ CCampaignVote.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

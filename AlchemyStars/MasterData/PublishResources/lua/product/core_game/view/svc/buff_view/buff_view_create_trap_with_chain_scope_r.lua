@@ -1,48 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_create_trap_with_chain_scope_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewCreateTrapWithChainScope", BuffViewBase)
 BuffViewCreateTrapWithChainScope = BuffViewCreateTrapWithChainScope
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewCreateTrapWithChainScope.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local trapEntityIDs = (self._buffResult):GetEntityIds()
-  local trapResult = (self._buffResult):GetTrapSkillResults()
-  local trapServiceRender = (self._world):GetService("TrapRender")
-  do
-    if trapEntityIDs then
-      local t = {}
-      for _,eid in ipairs(trapEntityIDs) do
-        local e = (self._world):GetEntityByID(eid)
-        if e:HasTrapID() then
-          (table.insert)(t, e)
-        end
+function BuffViewCreateTrapWithChainScope:PlayView(TT)
+  local trapEntityIDs = self._buffResult:GetEntityIds()
+  local trapResult = self._buffResult:GetTrapSkillResults()
+  local trapServiceRender = self._world:GetService("TrapRender")
+  if trapEntityIDs then
+    local t = {}
+    for _, eid in ipairs(trapEntityIDs) do
+      local e = self._world:GetEntityByID(eid)
+      if e:HasTrapID() then
+        table.insert(t, e)
       end
-      trapServiceRender:ShowTraps(TT, t, true)
     end
-    for _,v in ipairs(trapResult) do
-      local eId = v[1]
-      local e = (self._world):GetEntityByID(eId)
-      local skillEffectResultContainer = v[2]
-      local triggerEid = v[3]
-      local triggerEntity = (self._world):GetEntityByID(triggerEid)
-      ;
-      (e:SkillRoutine()):SetResultContainer(skillEffectResultContainer)
-      ;
-      (e:TrapRender()):SetTriggerSkillResultContainer(skillEffectResultContainer)
-      trapServiceRender:PlayTrapTriggerSkill(TT, e, false, triggerEntity)
-    end
+    trapServiceRender:ShowTraps(TT, t, true)
+  end
+  for _, v in ipairs(trapResult) do
+    local eId = v[1]
+    local e = self._world:GetEntityByID(eId)
+    local skillEffectResultContainer = v[2]
+    local triggerEid = v[3]
+    local triggerEntity = self._world:GetEntityByID(triggerEid)
+    e:SkillRoutine():SetResultContainer(skillEffectResultContainer)
+    e:TrapRender():SetTriggerSkillResultContainer(skillEffectResultContainer)
+    trapServiceRender:PlayTrapTriggerSkill(TT, e, false, triggerEntity)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewCreateTrapWithChainScope.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewCreateTrapWithChainScope:IsNotifyMatch(notify)
   return true
 end
-
-

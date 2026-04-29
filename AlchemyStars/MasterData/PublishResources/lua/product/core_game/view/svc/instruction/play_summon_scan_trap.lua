@@ -1,43 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_summon_scan_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlaySummonScanTrapInstruction", BaseInstruction)
 PlaySummonScanTrapInstruction = PlaySummonScanTrapInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySummonScanTrapInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySummonScanTrapInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySummonScanTrapInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySummonScanTrapInstruction:GetCacheResource()
   local t = {}
-  do
-    if self._effectID then
-      local cfgfx = (Cfg.cfg_effect)[self._effectID]
-      if cfgfx then
-        (table.insert)(t, {cfgfx.ResPath, 1})
-      end
+  if self._effectID then
+    local cfgfx = Cfg.cfg_effect[self._effectID]
+    if cfgfx then
+      table.insert(t, {
+        cfgfx.ResPath,
+        1
+      })
     end
-    return t
   end
+  return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySummonScanTrapInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySummonScanTrapInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local resultIndex = phaseContext:GetCurResultIndexByType(SkillEffectType.SummonScanTrap)
-  local routineCmpt = (casterEntity:SkillRoutine()):GetResultContainer()
+  local routineCmpt = casterEntity:SkillRoutine():GetResultContainer()
   local tResults = routineCmpt:GetEffectResultsAsArray(SkillEffectType.SummonScanTrap)
   if not tResults then
-    return 
+    return
   end
   local result = tResults[resultIndex]
   local world = casterEntity:GetOwnerWorld()
@@ -46,54 +34,40 @@ PlaySummonScanTrapInstruction.DoInstruction = function(self, TT, casterEntity, p
   local playSkillSvc = world:GetService("PlaySkill")
   local configSvc = world:GetService("Config")
   local tDestroyEntity = {}
-  for _,info in ipairs(tDestroyTrapInfo) do
+  for _, info in ipairs(tDestroyTrapInfo) do
     local id = info.entityID
     local e = world:GetEntityByID(id)
     if e then
       if info.replacingSkillContainer then
         local container = info.replacingSkillContainer
-        ;
-        (e:SkillRoutine()):SetResultContainer(container)
+        e:SkillRoutine():SetResultContainer(container)
         local skillConfigData = configSvc:GetSkillConfigData(info.skillID, e)
         local skillPhaseArray = skillConfigData:GetSkillPhaseArray()
         playSkillSvc:_SkillRoutineTask(TT, e, skillPhaseArray, info.skillID)
       end
-      do
-        do
-          ;
-          (table.insert)(tDestroyEntity, e)
-          -- DECOMPILER ERROR at PC66: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC66: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC66: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      table.insert(tDestroyEntity, e)
     end
   end
-  if #tDestroyEntity > 0 then
-    phaseContext:AddPhaseTask((TaskManager:GetInstance()):CoreGameStartTask(rsvcTrap.PlayTrapDieSkill, rsvcTrap, tDestroyEntity))
+  if 0 < #tDestroyEntity then
+    phaseContext:AddPhaseTask(TaskManager:GetInstance():CoreGameStartTask(rsvcTrap.PlayTrapDieSkill, rsvcTrap, tDestroyEntity))
   end
   local eidNewTrap = result:GetSummonTrapEntityID()
   local eNewTrap = world:GetEntityByID(eidNewTrap)
   if not eNewTrap then
-    return 
+    return
   end
   rsvcTrap:CreateSingleTrapRender(TT, eNewTrap, true)
   local tAddBuffResults = result:GetAddBuffResults()
   if not tAddBuffResults then
-    return 
+    return
   end
   local playBuffService = world:GetService("PlayBuff")
-  for _,addBuffResult in ipairs(tAddBuffResults) do
-    for _,seq in ipairs(addBuffResult:GetAddBuffResult()) do
-      local buffViewInst = (eNewTrap:BuffView()):GetBuffViewInstance(seq)
+  for _, addBuffResult in ipairs(tAddBuffResults) do
+    for _, seq in ipairs(addBuffResult:GetAddBuffResult()) do
+      local buffViewInst = eNewTrap:BuffView():GetBuffViewInstance(seq)
       if buffViewInst then
         playBuffService:PlayAddBuff(TT, buffViewInst, eidNewTrap)
       end
     end
   end
 end
-
-

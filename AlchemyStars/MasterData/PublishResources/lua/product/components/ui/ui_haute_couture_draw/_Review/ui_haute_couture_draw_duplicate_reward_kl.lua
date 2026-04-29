@@ -1,88 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw/_Review/ui_haute_couture_draw_duplicate_reward_kl.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawDuplicateRewardKL", UIController)
 UIHauteCoutureDrawDuplicateRewardKL = UIHauteCoutureDrawDuplicateRewardKL
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawDuplicateRewardKL.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIHauteCoutureDrawDuplicateRewardKL:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDuplicateRewardKL.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHauteCoutureDrawDuplicateRewardKL:OnShow(uiParams)
   self:InitWidget()
   self._prizeCfgs = uiParams[1]
   self._replaceIdxs = uiParams[2]
   local count = #self._replaceIdxs
-  local bg, height = nil, nil
+  local bg, height
   if count == 1 then
     bg = "senior_re_di05"
     height = 457
+  elseif count == 2 then
+    bg = "senior_re_di04"
+    height = 628
+  elseif count == 3 then
+    bg = "senior_re_di03"
+    height = 799
+  elseif count == 4 then
+    bg = "senior_re_di02"
+    height = 970
   else
-    if count == 2 then
-      bg = "senior_re_di04"
-      height = 628
-    else
-      if count == 3 then
-        bg = "senior_re_di03"
-        height = 799
-      else
-        if count == 4 then
-          bg = "senior_re_di02"
-          height = 970
-        else
-          ;
-          (Log.exception)("替换的奖励数量错误，无法显示")
-        end
-      end
-    end
+    Log.exception("替换的奖励数量错误，无法显示")
   end
-  ;
-  (self.bg):LoadImage(bg)
-  local rect = (self.bg):GetComponent(typeof(UnityEngine.RectTransform))
+  self.bg:LoadImage(bg)
+  local rect = self.bg:GetComponent(typeof(UnityEngine.RectTransform))
   rect.sizeDelta = Vector2(1562, height)
-  local items = (self.items):SpawnObjects("UIHauteCoutureDuplicateItem", count)
+  local items = self.items:SpawnObjects("UIHauteCoutureDuplicateItem", count)
   for i = 1, count do
-    (items[i]):SetData((self._prizeCfgs)[(self._replaceIdxs)[i]], function(id, pos)
-    -- function num : 0_1_0 , upvalues : self
-    self:OnItemClick(id, pos)
-  end
-)
+    items[i]:SetData(self._prizeCfgs[self._replaceIdxs[i]], function(id, pos)
+      self:OnItemClick(id, pos)
+    end)
   end
   local itemInfo = self:GetUIComponent("UISelectObjectPath", "selectInfoPool")
   self._selectInfo = itemInfo:SpawnObject("UISelectInfo")
-  ;
-  (self._selectInfo):SetType(2)
+  self._selectInfo:SetType(2)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDuplicateRewardKL.InitWidget = function(self)
-  -- function num : 0_2
+function UIHauteCoutureDrawDuplicateRewardKL:InitWidget()
   self.bg = self:GetUIComponent("RawImageLoader", "bg")
   self.items = self:GetUIComponent("UISelectObjectPath", "items")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDuplicateRewardKL.CloseBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIHauteCoutureDrawDuplicateRewardKL:CloseBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDuplicateRewardKL.OnItemClick = function(self, id, pos)
-  -- function num : 0_4
+function UIHauteCoutureDrawDuplicateRewardKL:OnItemClick(id, pos)
   if self._selectInfo then
-    (self._selectInfo):SetData(id, pos)
+    self._selectInfo:SetData(id, pos)
   end
 end
-
-

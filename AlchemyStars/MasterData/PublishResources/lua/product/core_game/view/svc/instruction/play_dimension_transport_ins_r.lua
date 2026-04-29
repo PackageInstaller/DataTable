@@ -1,31 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_dimension_transport_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayDimensionTransportInstruction", BaseInstruction)
 PlayDimensionTransportInstruction = PlayDimensionTransportInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayDimensionTransportInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayDimensionTransportInstruction:Constructor(paramList)
   self._waitTime = tonumber(paramList.waitTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDimensionTransportInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayDimensionTransportInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local result = skillEffectResultContainer:GetEffectResultByPos(SkillEffectType.DimensionTransport, casterEntity:GetGridPosition())
   if not result then
-    return 
+    return
   end
   local nTargetID = result:GetTargetID()
   if nTargetID <= 0 then
-    return 
+    return
   end
   local targetEntity = world:GetEntityByID(nTargetID)
   if targetEntity:HasTeam() then
@@ -38,8 +28,5 @@ PlayDimensionTransportInstruction.DoInstruction = function(self, TT, casterEntit
   playSkillInstructionService:Teleport(TT, targetEntity, RoleShowType.TeleportShow, false, result)
   local posOld = result:GetPosOld()
   local posNew = result:GetPosNew()
-  ;
-  (world:GetService("PlayBuff")):PlayBuffView(TT, NTDimensionTransport:New(targetEntity, posOld, posNew))
+  world:GetService("PlayBuff"):PlayBuffView(TT, NTDimensionTransport:New(targetEntity, posOld, posNew))
 end
-
-

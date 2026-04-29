@@ -1,36 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n38/mission/ui_n38_hard_level_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN38HardLevelItem", UICustomWidget)
 UIN38HardLevelItem = UIN38HardLevelItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN38HardLevelItem.Constructor = function(self, uiview)
-  -- function num : 0_0
+function UIN38HardLevelItem:Constructor(uiview)
   self._view = uiview
   self:OnShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38HardLevelItem.OnShow = function(self)
-  -- function num : 0_1
-  self._normal = (self._view):GetUIComponent("Image", "normal")
-  self._pass = (self._view):GetUIComponent("Image", "pass")
-  self._close = (self._view):GetUIComponent("Image", "close")
-  self._name = (self._view):GetUIComponent("UILocalizationText", "name")
-  self._titleBg = (self._view):GetUIComponent("Image", "TitleBg")
-  self._lockimg = (self._view):GetUIComponent("Image", "lockimg")
-  self._hadimg = (self._view):GetUIComponent("Image", "hadimg")
-  self._progressValue = (self._view):GetUIComponent("UILocalizationText", "ProgressValue")
+function UIN38HardLevelItem:OnShow()
+  self._normal = self._view:GetUIComponent("Image", "normal")
+  self._pass = self._view:GetUIComponent("Image", "pass")
+  self._close = self._view:GetUIComponent("Image", "close")
+  self._name = self._view:GetUIComponent("UILocalizationText", "name")
+  self._titleBg = self._view:GetUIComponent("Image", "TitleBg")
+  self._lockimg = self._view:GetUIComponent("Image", "lockimg")
+  self._hadimg = self._view:GetUIComponent("Image", "hadimg")
+  self._progressValue = self._view:GetUIComponent("UILocalizationText", "ProgressValue")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38HardLevelItem.SetData = function(self, isBlack, index, cfg, componentInfo, atlas, data)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN38HardLevelItem:SetData(isBlack, index, cfg, componentInfo, atlas, data)
   self._isBlack = isBlack
   self._index = index
   self._cfg = cfg
@@ -40,60 +27,41 @@ UIN38HardLevelItem.SetData = function(self, isBlack, index, cfg, componentInfo, 
   if self._isBlack then
     local cupDatas = data:GetCupDatas()
     local completeCupCount = data:GetCompleteCupCount()
-    ;
-    (self._progressValue):SetText(completeCupCount .. "/" .. #cupDatas)
-    local passInfo = (self._componentInfo).infos
+    self._progressValue:SetText(completeCupCount .. "/" .. #cupDatas)
+    local passInfo = self._componentInfo.infos
     if passInfo[cfg.CampaignMissionId] then
       self._isUnlock = true
-      ;
-      ((self._pass).gameObject):SetActive(completeCupCount == #cupDatas)
-      ;
-      ((self._close).gameObject):SetActive(false)
-    elseif (self._cfg).NeedMissionId == 0 or (self._cfg).NeedMissionId > 0 and passInfo[(self._cfg).NeedMissionId] then
+      self._pass.gameObject:SetActive(completeCupCount == #cupDatas)
+      self._close.gameObject:SetActive(false)
+    elseif self._cfg.NeedMissionId == 0 or self._cfg.NeedMissionId > 0 and passInfo[self._cfg.NeedMissionId] then
       self._isUnlock = true
-      ;
-      ((self._normal).gameObject):SetActive(true)
-      ;
-      ((self._pass).gameObject):SetActive(false)
-      ;
-      ((self._close).gameObject):SetActive(false)
+      self._normal.gameObject:SetActive(true)
+      self._pass.gameObject:SetActive(false)
+      self._close.gameObject:SetActive(false)
     else
-      ((self._pass).gameObject):SetActive(false)
-      ;
-      ((self._close).gameObject):SetActive(true)
+      self._pass.gameObject:SetActive(false)
+      self._close.gameObject:SetActive(true)
     end
-    local missionCfg = (Cfg.cfg_difficulty_parent_mission)[cfg.CampaignMissionId]
-    ;
-    (self._name):SetText((StringTable.Get)(missionCfg.Name))
+    local missionCfg = Cfg.cfg_difficulty_parent_mission[cfg.CampaignMissionId]
+    self._name:SetText(StringTable.Get(missionCfg.Name))
   else
-    local passInfo = (self._componentInfo).m_pass_mission_info
+    local passInfo = self._componentInfo.m_pass_mission_info
     if passInfo[cfg.CampaignMissionId] then
-      ((self._pass).gameObject):SetActive(true)
-      ;
-      ((self._close).gameObject):SetActive(false)
+      self._pass.gameObject:SetActive(true)
+      self._close.gameObject:SetActive(false)
     elseif cfg.NeedMissionId == 0 or cfg.NeedMissionId > 0 and passInfo[cfg.NeedMissionId] then
-      ((self._normal).gameObject):SetActive(true)
-      ;
-      ((self._pass).gameObject):SetActive(false)
-      ;
-      ((self._close).gameObject):SetActive(false)
+      self._normal.gameObject:SetActive(true)
+      self._pass.gameObject:SetActive(false)
+      self._close.gameObject:SetActive(false)
     else
-      ((self._pass).gameObject):SetActive(false)
-      ;
-      ((self._close).gameObject):SetActive(true)
+      self._pass.gameObject:SetActive(false)
+      self._close.gameObject:SetActive(true)
     end
-    local missionCfg = (Cfg.cfg_campaign_mission)[cfg.CampaignMissionId]
-    ;
-    (self._name):SetText((StringTable.Get)(missionCfg.Name))
+    local missionCfg = Cfg.cfg_campaign_mission[cfg.CampaignMissionId]
+    self._name:SetText(StringTable.Get(missionCfg.Name))
   end
-  -- DECOMPILER ERROR: 11 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38HardLevelItem.IsUnlock = function(self)
-  -- function num : 0_3
+function UIN38HardLevelItem:IsUnlock()
   return self._isUnlock
 end
-
-

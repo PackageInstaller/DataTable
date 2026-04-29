@@ -1,84 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/object.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
--- DECOMPILER ERROR at PC2: Confused about usage of register: R0 in 'UnsetPending'
-
 _G.Classes = {}
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
-
 _G.Enums = {}
 monitorObjs = setmetatable({}, {__mode = "k"})
-_class = function(child, base, ...)
-  -- function num : 0_0 , upvalues : _ENV
+
+function _class(child, base, ...)
   if Classes[child] then
     error("duplicate class : " .. child)
   end
   local c = _G[child]
   assert(not c, child)
   c = {}
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
   _G[child] = c
   if base then
-    for k,v in pairs(base) do
-      if c[k] == nil and v ~= "_proto" then
+    for k, v in pairs(base) do
+      if nil == c[k] and v ~= "_proto" then
         c[k] = v
       end
     end
     setmetatable(c, base)
-  else
-    if base == nil then
-      assert(child == "Object", "base is nil: " .. child)
-      if not c then
-        (Log.sys)(child .. " ", (Log.traceback)())
-      end
-      c.__index = c
-      c._className = child
-      c.super = base
-      c.nrec = -1
-      c.New = function(self, ...)
-    -- function num : 0_0_0 , upvalues : c, _ENV
-    if c.nrec ~= -1 or not {} then
-      local instance = (table.create)(0, c.nrec)
-    end
+  elseif child ~= "Object" then
+    assert(base ~= nil, "base is nil: " .. child)
+  end
+  if not c then
+    Log.sys(child .. " ", Log.traceback())
+  end
+  c.__index = c
+  c._className = child
+  c.super = base
+  c.nrec = -1
+  
+  function c:New(...)
+    local instance = -1 == c.nrec and {} or table.create(0, c.nrec)
     setmetatable(instance, c)
     instance._className = c._className
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
     if App.Profiler then
-      monitorObjs[instance] = instance._className .. "~~\n" .. (Log.traceback)()
+      monitorObjs[instance] = instance._className .. "~~\n" .. Log.traceback()
     end
     do
-      local create = nil
-      do
-        create = function(c, ...)
-      -- function num : 0_0_0_0 , upvalues : create, instance
-      if c.super then
-        create(c.super, ...)
+      local create
+      
+      function create(c, ...)
+        if c.super then
+          create(c.super, ...)
+        end
+        if c.Constructor and (not c.super or c.super.Constructor ~= c.Constructor) then
+          c.Constructor(instance, ...)
+        end
       end
-      if c.Constructor and (not c.super or (c.super).Constructor ~= c.Constructor) then
-        (c.Constructor)(instance, ...)
-      end
+      
+      create(c, ...)
     end
-
-        create(c, ...)
-      end
-      if c.nrec == -1 then
-        c.nrec = (table.gethsize)(instance)
-      end
-      return instance
+    if -1 == c.nrec then
+      c.nrec = table.gethsize(instance)
     end
+    return instance
   end
-
-      c.GetType = function(self)
-    -- function num : 0_0_1 , upvalues : _ENV
+  
+  function c:GetType()
     return getmetatable(self)
   end
-
-      c.IsBaseOf = function(self, child)
-    -- function num : 0_0_2 , upvalues : _ENV
+  
+  function c:IsBaseOf(child)
     local base = self
     repeat
       child = getmetatable(child)
@@ -88,12 +69,11 @@ _class = function(child, base, ...)
     until child == nil
     return false
   end
-
-      c.IsChildOf = function(self, obj)
-    -- function num : 0_0_3 , upvalues : _ENV
+  
+  function c:IsChildOf(obj)
     if type(obj) ~= "string" then
-      (Log.fatal)("IsChildOf, param Error")
-      return 
+      Log.fatal("IsChildOf, param Error")
+      return
     end
     obj = _G[obj]
     local father = self
@@ -105,9 +85,8 @@ _class = function(child, base, ...)
     until father == nil
     return false
   end
-
-      c.__call = function(self, t)
-    -- function num : 0_0_4 , upvalues : _ENV
+  
+  function c:__call(t)
     local typeT = t
     repeat
       typeT = getmetatable(typeT)
@@ -117,91 +96,70 @@ _class = function(child, base, ...)
     until typeT == nil
     return nil
   end
-
-      c.IsInstanceOfType = function(self, t)
-    -- function num : 0_0_5 , upvalues : _ENV
-    do return getmetatable(t) == self end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  
+  function c:IsInstanceOfType(t)
+    return getmetatable(t) == self
   end
-
-      -- DECOMPILER ERROR at PC77: Confused about usage of register: R3 in 'UnsetPending'
-
-      Classes[child] = c
-      do
-        if LuaAppEvent and LuaAppEvent:IsBaseOf(c) then
-          local cname = "CLSID_" .. child
-          c.clsid = MessageDef[cname]
-          if c.clsid == nil or c.clsid == 0 then
-            if c == CPushEvent or c == CCallEvent or c == CCallRequestEvent or c == CCallReplyEvent or c == CSvrPushEvent or c == CCliPushEvent or c == CMatchPushEvent then
-              return 
-            end
-            ;
-            (Log.warn)("can not find " .. cname .. " in MessageDef")
-            return 
-          end
-          ;
-          (NetMessageFactory:GetInstance()):RegisterMessage(c)
-        end
-        -- DECOMPILER ERROR: 8 unprocessed JMP targets
+  
+  Classes[child] = c
+  if LuaAppEvent and LuaAppEvent:IsBaseOf(c) then
+    local cname = "CLSID_" .. child
+    c.clsid = MessageDef[cname]
+    if c.clsid == nil or c.clsid == 0 then
+      if c == CPushEvent or c == CCallEvent or c == CCallRequestEvent or c == CCallReplyEvent or c == CSvrPushEvent or c == CCliPushEvent or c == CMatchPushEvent then
+        return
       end
+      Log.warn("can not find " .. cname .. " in MessageDef")
+      return
     end
+    NetMessageFactory:GetInstance():RegisterMessage(c)
   end
 end
 
 _class("Object", nil)
 Object = Object
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
 
-Object.ToObject = function(self, obj)
-  -- function num : 0_1 , upvalues : _ENV
+function Object:ToObject(obj)
   setmetatable(obj, self)
   return obj
 end
 
-_enum = function(name, t)
-  -- function num : 0_2 , upvalues : _ENV
+function _enum(name, t)
   rawset(_G, name, t)
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
   Enums[name] = t
 end
 
-_autoEnum = function(name, array)
-  -- function num : 0_3 , upvalues : _ENV
+function _autoEnum(name, array)
   local t = {}
-  for k,v in ipairs(array) do
+  for k, v in ipairs(array) do
     t[v] = k
   end
   rawset(_G, name, t)
 end
 
-GetEnumKey = function(name, v)
-  -- function num : 0_4 , upvalues : _ENV
+function GetEnumKey(name, v)
   local nName = name .. "Rev"
   if not _G[nName] then
-    rawset(_G, nName, (table.reverse)(_G[name]))
+    rawset(_G, nName, table.reverse(_G[name]))
   end
-  return (_G[nName])[v]
+  return _G[nName][v]
 end
 
-_vvEnum = function(name, array)
-  -- function num : 0_5 , upvalues : _ENV
+function _vvEnum(name, array)
   local t = {}
-  for k,v in ipairs(array) do
+  for k, v in ipairs(array) do
     t[v] = v
   end
   rawset(_G, name, t)
 end
 
-_staticClass = function(name)
-  -- function num : 0_6 , upvalues : _ENV
+function _staticClass(name)
   local t = {}
   rawset(_G, name, t)
   return t
 end
 
-_createInstance = function(className, ...)
-  -- function num : 0_7 , upvalues : _ENV
+function _createInstance(className, ...)
   local class = _G[className]
   if class then
     return class:New(...)
@@ -209,22 +167,19 @@ _createInstance = function(className, ...)
   return nil
 end
 
-dynamic_cast = function(type, t)
-  -- function num : 0_8 , upvalues : _ENV
+function dynamic_cast(type, t)
   if getmetatable(t) == type then
     return t
   else
-    ;
-    (Log.error)("dynamic_cast failed! :")
+    Log.error("dynamic_cast failed! :")
     return nil
   end
 end
 
-IsSubClassOf = function(className, superClassName)
-  -- function num : 0_9 , upvalues : _ENV
+function IsSubClassOf(className, superClassName)
   if type(className) ~= "string" or type(superClassName) ~= "string" then
-    (Log.fatal)("IsSubClassOf, param Error")
-    return 
+    Log.fatal("IsSubClassOf, param Error")
+    return
   end
   local father = _G[className]
   repeat
@@ -236,15 +191,7 @@ IsSubClassOf = function(className, superClassName)
   return false
 end
 
-_removeClass = function(className)
-  -- function num : 0_10 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function _removeClass(className)
   _G[className] = nil
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (_G.Classes)[className] = nil
+  _G.Classes[className] = nil
 end
-
-

@@ -1,123 +1,79 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/ui_n25_main_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25MainEnter", UICustomWidget)
 UIN25MainEnter = UIN25MainEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25MainEnter.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN25MainEnter:OnShow(uiParams)
   self._new = self:GetGameObject("new")
   self._red = self:GetGameObject("red")
-  ;
-  (self._new):SetActive(false)
-  ;
-  (self._red):SetActive(false)
+  self._new:SetActive(false)
+  self._red:SetActive(false)
   self._tipspanel1 = self:GetGameObject("tipspanel1")
   self._tips1 = self:GetUIComponent("RollingText", "tips1")
   self._tipspanel2 = self:GetGameObject("tipspanel2")
   self._tips2 = self:GetUIComponent("RollingText", "tips2")
-  ;
-  (self._tipspanel1):SetActive(false)
+  self._tipspanel1:SetActive(false)
   self._activityConst = UIActivityN25Const:New()
   self:RequestCampaign()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25MainEnter.OnHide = function(self)
-  -- function num : 0_1
+function UIN25MainEnter:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25MainEnter.SetData_uiMainLobbyController = function(self, controller)
-  -- function num : 0_2
+function UIN25MainEnter:SetData_uiMainLobbyController(controller)
   self._uiMainLobbyController = controller
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25MainEnter.RequestCampaign = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._tipspanel1):SetActive(false)
-  ;
-  (self._tipspanel2):SetActive(false)
+function UIN25MainEnter:RequestCampaign()
+  self._tipspanel1:SetActive(false)
+  self._tipspanel2:SetActive(false)
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, _ENV
     local lockName = "UIN25MainEnterRequestCampaign"
     self:Lock(lockName)
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    ;
-    (self._activityConst):LoadData(TT, res)
+    self._activityConst:LoadData(TT, res)
     self:Flush()
     self:FlushNewRed()
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25MainEnter.Flush = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local bloodSuckerState = (self._activityConst):GetStateGameBloodSucker()
+function UIN25MainEnter:Flush()
+  local bloodSuckerState = self._activityConst:GetStateGameBloodSucker()
   if bloodSuckerState == UISummerOneEnterBtnState.Normal then
-    (self._tipspanel2):SetActive(true)
-    ;
-    (self._tips2):RefreshText((StringTable.Get)("str_n25_bloodSucker_open"))
-    return 
+    self._tipspanel2:SetActive(true)
+    self._tips2:RefreshText(StringTable.Get("str_n25_bloodSucker_open"))
+    return
   end
-  local hardState = (self._activityConst):GetStateHard()
+  local hardState = self._activityConst:GetStateHard()
   if hardState == UISummerOneEnterBtnState.Normal then
-    (self._tipspanel2):SetActive(true)
-    ;
-    (self._tips2):RefreshText((StringTable.Get)("str_n25_hard_level_open"))
+    self._tipspanel2:SetActive(true)
+    self._tips2:RefreshText(StringTable.Get("str_n25_hard_level_open"))
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25MainEnter.FlushNewRed = function(self)
-  -- function num : 0_5
-  (self._new):SetActive(false)
-  ;
-  (self._red):SetActive(false)
-  if (self._activityConst):IsShowEntryNew() then
-    (self._new):SetActive(true)
-    return 
+function UIN25MainEnter:FlushNewRed()
+  self._new:SetActive(false)
+  self._red:SetActive(false)
+  if self._activityConst:IsShowEntryNew() then
+    self._new:SetActive(true)
+    return
   end
-  if (self._activityConst):IsShowEntryRed() then
-    (self._red):SetActive(true)
+  if self._activityConst:IsShowEntryRed() then
+    self._red:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25MainEnter.BtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self._activityConst):IsActivityEnd() then
+function UIN25MainEnter:BtnOnClick(go)
+  if self._activityConst:IsActivityEnd() then
     self.mCampaign = self:GetModule(CampaignModule)
     local errorType = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
-    ;
-    (self.mCampaign):ShowErrorToast(errorType, true)
+    self.mCampaign:ShowErrorToast(errorType, true)
   else
-    do
-      ;
-      ((GameGlobal.TaskManager)()):StartTask(self.Enter, self)
-    end
+    GameGlobal.TaskManager():StartTask(self.Enter, self)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25MainEnter.Enter = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN25MainEnter:Enter(TT)
   self._stateType = UIStateType.UIActivityN25MainController
   self:SwitchState(self._stateType)
 end
-
-

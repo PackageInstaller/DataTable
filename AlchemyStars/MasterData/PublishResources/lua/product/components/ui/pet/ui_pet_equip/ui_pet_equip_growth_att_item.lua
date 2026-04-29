@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_growth_att_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipGrowthAttItem", UICustomWidget)
 UIPetEquipGrowthAttItem = UIPetEquipGrowthAttItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipGrowthAttItem.Constructor = function(self)
-  -- function num : 0_0
+function UIPetEquipGrowthAttItem:Constructor()
   self._hasGrowth = false
-  local frameTime = 16.666666666667
+  local frameTime = 16.666666666666668
   self.maxLvTime_start = frameTime * 0
   self.maxLvTime_end = frameTime * 44
   self.maxLvTime_Gaps = self.maxLvTime_end - self.maxLvTime_start
@@ -18,10 +11,7 @@ UIPetEquipGrowthAttItem.Constructor = function(self)
   self._animing = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipGrowthAttItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIPetEquipGrowthAttItem:OnShow(uiParams)
   self._attName = self:GetUIComponent("UILocalizationText", "attName")
   self._attFrom = self:GetUIComponent("UILocalizationText", "attFrom")
   self._attTo = self:GetUIComponent("UILocalizationText", "attTo")
@@ -30,99 +20,67 @@ UIPetEquipGrowthAttItem.OnShow = function(self, uiParams)
   self._arrowToGo = self:GetGameObject("attTo")
   self._arrowImg = self:GetUIComponent("Image", "arrow")
   self._attToAlpha = self:GetUIComponent("CanvasGroup", "attTo")
-  self._type2name = {[1] = "str_pet_equip_attack", [2] = "str_pet_equip_defence", [3] = "str_pet_equip_hp"}
+  self._type2name = {
+    [1] = "str_pet_equip_attack",
+    [2] = "str_pet_equip_defence",
+    [3] = "str_pet_equip_hp"
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipGrowthAttItem.SetData = function(self, attInfo)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPetEquipGrowthAttItem:SetData(attInfo)
   self._fromValue = attInfo.attFrom
   self._toValue = attInfo.attTo
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._icon).sprite = attInfo.sprite
-  ;
-  (self._attName):SetText((StringTable.Get)((self._type2name)[attInfo.attType]))
-  ;
-  (self._attFrom):SetText("+" .. (math.modf)(attInfo.attFrom))
-  local toStr = nil
+  self._icon.sprite = attInfo.sprite
+  self._attName:SetText(StringTable.Get(self._type2name[attInfo.attType]))
+  self._attFrom:SetText("+" .. math.modf(attInfo.attFrom))
+  local toStr
   if attInfo.attTo ~= attInfo.attFrom then
-    toStr = "<color=#28F2FF>+" .. (math.modf)(attInfo.attTo) .. "</color>"
-    ;
-    (self._arrow):SetActive(true)
-    ;
-    ((self._attTo).gameObject):SetActive(true)
-    ;
-    (self._attTo):SetText(toStr)
+    toStr = "<color=#28F2FF>+" .. math.modf(attInfo.attTo) .. "</color>"
+    self._arrow:SetActive(true)
+    self._attTo.gameObject:SetActive(true)
+    self._attTo:SetText(toStr)
     self._hasGrowth = true
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._attToAlpha).alpha = 1
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._arrowImg).color = Color(1, 1, 1)
+    self._attToAlpha.alpha = 1
+    self._arrowImg.color = Color(1, 1, 1)
   else
     self._hasGrowth = false
-    ;
-    (self._arrow):SetActive(false)
-    ;
-    ((self._attTo).gameObject):SetActive(false)
+    self._arrow:SetActive(false)
+    self._attTo.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipGrowthAttItem.UpLevelAnim = function(self)
-  -- function num : 0_3
+function UIPetEquipGrowthAttItem:UpLevelAnim()
   if self._hasGrowth then
     self:_PlayAnim()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipGrowthAttItem._PlayAnim = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._attToAlpha):DOFade(0, 0.333)
-  ;
-  ((self._arrowImg):DOColor(Color(1, 1, 1, 0), 0.333)):OnComplete(function()
-    -- function num : 0_4_0 , upvalues : self
-    (self._arrowToGo):SetActive(false)
-    ;
-    (self._arrow):SetActive(false)
+function UIPetEquipGrowthAttItem:_PlayAnim()
+  self._attToAlpha:DOFade(0, 0.333)
+  self._arrowImg:DOColor(Color(1, 1, 1, 0), 0.333):OnComplete(function()
+    self._arrowToGo:SetActive(false)
+    self._arrow:SetActive(false)
     self._animing = true
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipGrowthAttItem.Update = function(self, deltaTimeMS)
-  -- function num : 0_5 , upvalues : _ENV
+function UIPetEquipGrowthAttItem:Update(deltaTimeMS)
   if self._animing then
     self.accTime = self.accTime + deltaTimeMS
     local percent_lv = (self.accTime - self.maxLvTime_start) / self.maxLvTime_Gaps
-    if self.maxLvTime_end <= self.accTime then
+    if self.accTime >= self.maxLvTime_end then
       percent_lv = 1
       self.accTime = 0
       self._animing = false
     end
-    if percent_lv <= 1 and percent_lv >= 0 then
-      local valueRec = (((DG.Tweening).DOVirtual).EasedValue)(self._fromValue, self._toValue, percent_lv, ((DG.Tweening).Ease).OutQuad)
-      ;
-      (self._attFrom):SetText("<color=#28F2FF>+" .. (math.modf)(valueRec) .. "</color>")
+    if percent_lv <= 1 and 0 <= percent_lv then
+      local valueRec = DG.Tweening.DOVirtual.EasedValue(self._fromValue, self._toValue, percent_lv, DG.Tweening.Ease.OutQuad)
+      self._attFrom:SetText("<color=#28F2FF>+" .. math.modf(valueRec) .. "</color>")
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipGrowthAttItem.OnHide = function(self)
-  -- function num : 0_6
+function UIPetEquipGrowthAttItem:OnHide()
   self._attName = nil
   self._attFrom = nil
   self._attTo = nil
@@ -132,14 +90,10 @@ end
 
 _class("UIPetEquipGrowthAttInfo", Object)
 UIPetEquipGrowthAttInfo = UIPetEquipGrowthAttInfo
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipGrowthAttInfo.Constructor = function(self, type, from, to, sprite)
-  -- function num : 0_7
+function UIPetEquipGrowthAttInfo:Constructor(type, from, to, sprite)
   self.attType = type
   self.sprite = sprite
   self.attFrom = from
   self.attTo = to
 end
-
-

@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/sync_enum.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-SyncModeType = {NoSync = 0, Release = 1, Debug = 2, Cehua = 3}
+SyncModeType = {
+  NoSync = 0,
+  Release = 1,
+  Debug = 2,
+  Cehua = 3
+}
 _enum("SyncModeType", SyncModeType)
-

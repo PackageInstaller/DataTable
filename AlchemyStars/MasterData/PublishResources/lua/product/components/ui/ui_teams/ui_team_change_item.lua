@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_teams/ui_team_change_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITeamChangeItem", UICustomWidget)
 UITeamChangeItem = UITeamChangeItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITeamChangeItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._petModule = (GameGlobal.GetModule)(PetModule)
-  self._worldBossModule = (GameGlobal.GetModule)(WorldBossModule)
+function UITeamChangeItem:Constructor()
+  self._petModule = GameGlobal.GetModule(PetModule)
+  self._worldBossModule = GameGlobal.GetModule(WorldBossModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem.SetData = function(self, tabItem, callback, longPressCallback, scrollRect, firstIn, teamType, slot)
-  -- function num : 0_1 , upvalues : _ENV
+function UITeamChangeItem:SetData(tabItem, callback, longPressCallback, scrollRect, firstIn, teamType, slot)
   self:_GetComponents()
   self._tabItem = tabItem
   self._pstid = tabItem.pstid
@@ -37,26 +27,17 @@ UITeamChangeItem.SetData = function(self, tabItem, callback, longPressCallback, 
   self:_OnFastTeam()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem._CheckDisable = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UITeamChangeItem:_CheckDisable()
   if self._teamType == TeamOpenerType.WorldBoss then
-    self._disable = (self._worldBossModule):CheckPetInRecordTeam(self._pstid)
-  else
-    if self._teamType == TeamOpenerType.EightPets then
-      local reason, limit = UIN33EightPetsTeamsContext:TeamConditionTestPet(self._pstid, self._slot)
-      self._disable = reason ~= 0
-      self._disableDetail = {reason, limit}
-    end
+    self._disable = self._worldBossModule:CheckPetInRecordTeam(self._pstid)
+  elseif self._teamType == TeamOpenerType.EightPets then
+    local reason, limit = UIN33EightPetsTeamsContext:TeamConditionTestPet(self._pstid, self._slot)
+    self._disable = reason ~= 0
+    self._disableDetail = {reason, limit}
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem._GetComponents = function(self)
-  -- function num : 0_3
+function UITeamChangeItem:_GetComponents()
   self._info = self:GetUIComponent("UISelectObjectPath", "info")
   self._infoGo = self:GetGameObject("info")
   self._delete = self:GetGameObject("noinfo")
@@ -74,359 +55,258 @@ UITeamChangeItem._GetComponents = function(self)
   self._binderPetTex = self:GetUIComponent("RollingText", "binderPetTex")
   self._diffGo = self:GetGameObject("diffGo")
   self._fastTeam = self:GetUIComponent("UIView", "fastTeam")
-  self._ftTeamMember = (self._fastTeam):GetUIComponent("RectTransform", "teamMember")
-  self._ftRepeatPet = (self._fastTeam):GetUIComponent("RectTransform", "repeatPet")
-  self._ftImgID = (self._fastTeam):GetUIComponent("RectTransform", "imgID")
-  self._ftImgHelp = (self._fastTeam):GetUIComponent("RectTransform", "imgHelp")
-  self._ftMemberID = (self._fastTeam):GetUIComponent("UILocalizationText", "memberID")
-  self._ftRepeatPrompt = (self._fastTeam):GetUIComponent("UILocalizationText", "repeatPrompt")
+  self._ftTeamMember = self._fastTeam:GetUIComponent("RectTransform", "teamMember")
+  self._ftRepeatPet = self._fastTeam:GetUIComponent("RectTransform", "repeatPet")
+  self._ftImgID = self._fastTeam:GetUIComponent("RectTransform", "imgID")
+  self._ftImgHelp = self._fastTeam:GetUIComponent("RectTransform", "imgHelp")
+  self._ftMemberID = self._fastTeam:GetUIComponent("UILocalizationText", "memberID")
+  self._ftRepeatPrompt = self._fastTeam:GetUIComponent("UILocalizationText", "repeatPrompt")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem.CheckHelpPetState = function(self)
-  -- function num : 0_4
+function UITeamChangeItem:CheckHelpPetState()
   if self._helpPetState then
-    (self._helpPetGO):SetActive(true)
+    self._helpPetGO:SetActive(true)
     if self._helpPetState == 1 then
-      (self._yxzzGO):SetActive(true)
-      ;
-      (self._wfzzGO):SetActive(false)
-    else
-      if self._helpPetState == 0 then
-        (self._yxzzGO):SetActive(false)
-        ;
-        (self._wfzzGO):SetActive(true)
-      end
+      self._yxzzGO:SetActive(true)
+      self._wfzzGO:SetActive(false)
+    elseif self._helpPetState == 0 then
+      self._yxzzGO:SetActive(false)
+      self._wfzzGO:SetActive(true)
     end
   else
-    ;
-    (self._helpPetGO):SetActive(false)
+    self._helpPetGO:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem._OnValue = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local etlAdd = (UILongPressTriggerListener.Get)(self._bgBtn)
-  local etlAddDrag = (UICustomUIEventListener.Get)(self._bgBtn)
+function UITeamChangeItem:_OnValue()
+  local etlAdd = UILongPressTriggerListener.Get(self._bgBtn)
+  local etlAddDrag = UICustomUIEventListener.Get(self._bgBtn)
   self:AddUICustomEventListener(etlAddDrag, UIEvent.Press, function(go)
-    -- function num : 0_5_0 , upvalues : self
-    (self._bg):SetActive(true)
-  end
-)
+    self._bg:SetActive(true)
+  end)
   self:AddUICustomEventListener(etlAddDrag, UIEvent.Release, function(go)
-    -- function num : 0_5_1 , upvalues : self
-    (self._bg):SetActive(false)
-  end
-)
-  local pet = (self._petModule):GetPet(self._pstid)
+    self._bg:SetActive(false)
+  end)
+  local pet = self._petModule:GetPet(self._pstid)
   if self._teamType == TeamOpenerType.Vampire and pet == nil then
-    pet = (UIN25VampireUtil.CreatePetData)(self._pstid)
+    pet = UIN25VampireUtil.CreatePetData(self._pstid)
   end
   local oriPet = pet
-  local pet, isEnhanced = (UIPetModule.ProcessSinglePetEnhance)(oriPet)
+  local pet, isEnhanced = UIPetModule.ProcessSinglePetEnhance(oriPet)
   self:RefreshEnhanceFlagArea(isEnhanced)
   self.pet = pet
   self:_CheckNoInfoActive()
   self:CheckHelpPetState()
   if not self._helpPetState then
-    (self._infoGo):SetActive(true)
+    self._infoGo:SetActive(true)
     local hpm = self:GetModule(HelpPetModule)
     if hpm:UI_GetHelpPetKey() > 0 and self._isHelp then
       pet = hpm:UI_GetSelectConstructHelpPet()
     end
-    local heart = (self._info):SpawnObject("UIHeartItem")
+    local heart = self._info:SpawnObject("UIHeartItem")
     self.heartItem = heart
     self:SetDiffGo()
     heart:SetData(pet, nil, false, self._firstIn, self._teamType, PetSkinEffectPath.CARD_TEAM_SELECT, self._isHelp, self._spShow, self._isFastSelect)
   else
-    do
-      ;
-      (self._infoGo):SetActive(false)
-      ;
-      (self._diffGo):SetActive(false)
-      self._isDiffFilter = false
-      self:AddUICustomEventListener(etlAddDrag, UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_5_2 , upvalues : self
+    self._infoGo:SetActive(false)
+    self._diffGo:SetActive(false)
+    self._isDiffFilter = false
+  end
+  self:AddUICustomEventListener(etlAddDrag, UIEvent.BeginDrag, function(eventData)
     self._draging = true
-    ;
-    (self._scrollRect):OnBeginDrag(eventData)
-  end
-)
-      self:AddUICustomEventListener(etlAddDrag, UIEvent.Drag, function(eventData)
-    -- function num : 0_5_3 , upvalues : self
-    (self._scrollRect):OnDrag(eventData)
-  end
-)
-      self:AddUICustomEventListener(etlAddDrag, UIEvent.EndDrag, function(eventData)
-    -- function num : 0_5_4 , upvalues : self
+    self._scrollRect:OnBeginDrag(eventData)
+  end)
+  self:AddUICustomEventListener(etlAddDrag, UIEvent.Drag, function(eventData)
+    self._scrollRect:OnDrag(eventData)
+  end)
+  self:AddUICustomEventListener(etlAddDrag, UIEvent.EndDrag, function(eventData)
     self._draging = false
-    ;
-    (self._scrollRect):OnEndDrag(eventData)
-  end
-)
-      self:AddUICustomEventListener(etlAdd, UIEvent.LongPress, function(go)
-    -- function num : 0_5_5 , upvalues : self, _ENV
-    if not self._draging and self._longPressCallback and not (GuideHelper.IsUIGuideShow)() then
-      if (self._bg).activeSelf then
-        (Log.debug)("###[UITeamChangeItem] self._bg.activeSelf")
-        ;
-        (self._bg):SetActive(false)
+    self._scrollRect:OnEndDrag(eventData)
+  end)
+  self:AddUICustomEventListener(etlAdd, UIEvent.LongPress, function(go)
+    if not self._draging and self._longPressCallback and not GuideHelper.IsUIGuideShow() then
+      if self._bg.activeSelf then
+        Log.debug("###[UITeamChangeItem] self._bg.activeSelf")
+        self._bg:SetActive(false)
       end
-      local pstid = nil
+      local pstid
       if self._helpPetState or self._del then
         pstid = 0
       else
         pstid = self._pstid
       end
-      ;
-      (self._longPressCallback)(pstid)
+      self._longPressCallback(pstid)
     end
-  end
-)
-      self:GetLostLand()
-    end
-  end
+  end)
+  self:GetLostLand()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem.SetDiffGo = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UITeamChangeItem:SetDiffGo()
   local show = false
   if self._teamType == TeamOpenerType.Diff then
-    local module = (GameGlobal.GetUIModule)(DifficultyMissionModule)
+    local module = GameGlobal.GetUIModule(DifficultyMissionModule)
     local filterPets = module:GetFilterPets()
-    local pstid = (self.pet):GetPstID()
+    local pstid = self.pet:GetPstID()
     if filterPets[pstid] then
       show = true
     end
-  else
-    do
-      if self._teamType == TeamOpenerType.Sailing then
-        local sailingMissionModule = (GameGlobal.GetModule)(SailingMissionModule)
-        local filterPets = sailingMissionModule:GetFilterPets()
-        local pstid = (self.pet):GetPstID()
-        if filterPets[pstid] then
-          show = true
-        end
-      else
-        do
-          if self._teamType == TeamOpenerType.Vampire then
-            show = false
-          else
-            if self._teamType == TeamOpenerType.Camp_Diff then
-              local module = (GameGlobal.GetUIModule)(DifficultyMissionModule)
-              local filterPets = module:GetFilterPets()
-              local pstid = (self.pet):GetPstID()
-              if filterPets[pstid] then
-                show = true
-              end
-            end
-          end
-          do
-            ;
-            (self._diffGo):SetActive(show)
-            self._isDiffFilter = show
-          end
-        end
-      end
+  elseif self._teamType == TeamOpenerType.Sailing then
+    local sailingMissionModule = GameGlobal.GetModule(SailingMissionModule)
+    local filterPets = sailingMissionModule:GetFilterPets()
+    local pstid = self.pet:GetPstID()
+    if filterPets[pstid] then
+      show = true
+    end
+  elseif self._teamType == TeamOpenerType.Vampire then
+    show = false
+  elseif self._teamType == TeamOpenerType.Camp_Diff then
+    local module = GameGlobal.GetUIModule(DifficultyMissionModule)
+    local filterPets = module:GetFilterPets()
+    local pstid = self.pet:GetPstID()
+    if filterPets[pstid] then
+      show = true
     end
   end
+  self._diffGo:SetActive(show)
+  self._isDiffFilter = show
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem.RefreshBinderPet = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UITeamChangeItem:RefreshBinderPet()
   self._spShow = false
   self._spPstid = 0
-  local showTex = nil
+  local showTex
   if self.pet then
-    local thisPetID = ((self.pet):GetTemplateID())
-    -- DECOMPILER ERROR at PC9: Overwrote pending register: R3 in 'AssignReg'
-
-    local teamPets = .end
+    local thisPetID = self.pet:GetTemplateID()
+    local teamPets
     if self._isFastSelect then
-      local pstidTab = (self:RootUIOwner()):GetPstidTab()
+      local pstidTab = self:RootUIOwner():GetPstidTab()
       teamPets = {}
-      for k,v in pairs(pstidTab) do
+      for k, v in pairs(pstidTab) do
         if v.memId ~= nil then
-          (table.insert)(teamPets, v.pstid)
+          table.insert(teamPets, v.pstid)
         end
       end
+    elseif self:RootUIOwner().helpPetBranch then
     else
+      local l_module = self:GetModule(MissionModule)
+      local ctx = l_module:TeamCtx()
+      local l_teams = ctx:Teams()
+      local l_teamid = ctx:GetCurrTeamId()
+      local l_team = l_teams:Get(l_teamid)
+      teamPets = l_team.pets
     end
-    do
-      if (self:RootUIOwner()).helpPetBranch then
-        local l_module = self:GetModule(MissionModule)
-        local ctx = l_module:TeamCtx()
-        local l_teams = ctx:Teams()
-        local l_teamid = ctx:GetCurrTeamId()
-        do
-          local l_team = l_teams:Get(l_teamid)
-          teamPets = l_team.pets
-          if teamPets and (table.count)(teamPets) > 0 then
-            for key,pstid in pairs(teamPets) do
-              local isBinderPet = false
-              local _pet = (self._petModule):GetPet(pstid)
-              if _pet then
-                isBinderPet = _pet:IsBinderPet(thisPetID)
-              end
-              if isBinderPet then
-                local petName = _pet:GetPetName()
-                local tex = (StringTable.Get)("str_team_change_binder_item_tex", (StringTable.Get)(petName))
-                ;
-                (self._binderPetTex):RefreshText(tex)
-                self._spShow = true
-                self._spPstid = pstid
-                break
-              end
-            end
-          end
-          do
-            ;
-            (self._binderPet):SetActive(self._spShow)
-          end
+    if teamPets and 0 < table.count(teamPets) then
+      for key, pstid in pairs(teamPets) do
+        local isBinderPet = false
+        local _pet = self._petModule:GetPet(pstid)
+        if _pet then
+          isBinderPet = _pet:IsBinderPet(thisPetID)
+        end
+        if isBinderPet then
+          local petName = _pet:GetPetName()
+          local tex = StringTable.Get("str_team_change_binder_item_tex", StringTable.Get(petName))
+          self._binderPetTex:RefreshText(tex)
+          self._spShow = true
+          self._spPstid = pstid
+          break
         end
       end
     end
   end
+  self._binderPet:SetActive(self._spShow)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem._CheckNoInfoActive = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UITeamChangeItem:_CheckNoInfoActive()
   local active = false
-  local text = nil
+  local text
   local eightPetLimit = false
   if self._teamType == TeamOpenerType.WorldBoss then
-    if not self._del then
-      active = self._disable
-    end
+    active = self._del or self._disable
     if self._disable then
-      text = (StringTable.Get)("str_world_boss_team_pet_disable")
-    else
-      if self._del then
-        text = (StringTable.Get)("str_team_change_no_choose")
-      end
+      text = StringTable.Get("str_world_boss_team_pet_disable")
+    elseif self._del then
+      text = StringTable.Get("str_team_change_no_choose")
+    end
+  elseif self._teamType == TeamOpenerType.EightPets then
+    active = self._del
+    if self._disable then
+      eightPetLimit = true
+    elseif self._del then
+      text = StringTable.Get("str_team_change_no_choose")
     end
   else
-    if self._teamType == TeamOpenerType.EightPets then
-      active = self._del
-      if self._disable then
-        eightPetLimit = true
-      else
-        if self._del then
-          text = (StringTable.Get)("str_team_change_no_choose")
-        end
-      end
-    else
-      active = self._del
-      text = (StringTable.Get)("str_team_change_no_choose")
-    end
+    active = self._del
+    text = StringTable.Get("str_team_change_no_choose")
   end
   if active then
-    (self._noinfoText):SetText(text)
+    self._noinfoText:SetText(text)
   end
-  ;
-  (self._delete):SetActive(active)
-  ;
-  (self._eightFightDisableGO):SetActive(eightPetLimit)
+  self._delete:SetActive(active)
+  self._eightFightDisableGO:SetActive(eightPetLimit)
   if eightPetLimit then
-    self.eightPetLimit = (self._disableDetail)[2]
-    local profTxtKey = (UIPetModule.GetPetProfTxtKey)(self.pet)
-    self.eightPetProfTxt = (StringTable.Get)(profTxtKey)
-    ;
-    (self._eightFightDisableTxt):SetText((StringTable.Get)("str_discovery_ep_career_in_team", self.eightPetLimit, self.eightPetProfTxt))
+    self.eightPetLimit = self._disableDetail[2]
+    local profTxtKey = UIPetModule.GetPetProfTxtKey(self.pet)
+    self.eightPetProfTxt = StringTable.Get(profTxtKey)
+    self._eightFightDisableTxt:SetText(StringTable.Get("str_discovery_ep_career_in_team", self.eightPetLimit, self.eightPetProfTxt))
   end
-  do
-    if not active then
-      self:RefreshBinderPet()
-    else
-      ;
-      (self._binderPet):SetActive(false)
-    end
+  if not active then
+    self:RefreshBinderPet()
+  else
+    self._binderPet:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem.GetLostLand = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local fromLostLand = not self._teamType or self._teamType == TeamOpenerType.LostLand
-  ;
-  (self._lostLand):SetActive(fromLostLand)
+function UITeamChangeItem:GetLostLand()
+  local fromLostLand = self._teamType and self._teamType == TeamOpenerType.LostLand
+  self._lostLand:SetActive(fromLostLand)
   if fromLostLand then
-    local uiLostLandModule = (GameGlobal.GetUIModule)(LostAreaModule)
+    local uiLostLandModule = GameGlobal.GetUIModule(LostAreaModule)
     local recommend = uiLostLandModule:CheckPetRecommend(self._pstid)
-    ;
-    (self._recommend):SetActive(recommend)
+    self._recommend:SetActive(recommend)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem.OnHide = function(self)
-  -- function num : 0_10
+function UITeamChangeItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem.bgOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UITeamChangeItem:bgOnClick()
   if self._isDiffFilter and not self._del then
-    return 
+    return
   end
-  if self._teamType == TeamOpenerType.WorldBoss and self._disable then
-    (ToastManager.ShowToast)((StringTable.Get)("str_world_boss_team_pet_tips"))
-    return 
-  end
-  if self._teamType == TeamOpenerType.EightPets and self._disable then
-    (ToastManager.ShowToast)((StringTable.Get)("str_discovery_ep_career_in_team", self.eightPetLimit, self.eightPetProfTxt))
-    return 
+  if self._teamType == TeamOpenerType.WorldBoss then
+    if self._disable then
+      ToastManager.ShowToast(StringTable.Get("str_world_boss_team_pet_tips"))
+      return
+    end
+  elseif self._teamType == TeamOpenerType.EightPets and self._disable then
+    ToastManager.ShowToast(StringTable.Get("str_discovery_ep_career_in_team", self.eightPetLimit, self.eightPetProfTxt))
+    return
   end
   if self._callback then
-    (self._callback)(self._pstid, self._del, self._helpPetState, self._slot)
+    self._callback(self._pstid, self._del, self._helpPetState, self._slot)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem.GetHelpPetState = function(self)
-  -- function num : 0_12
+function UITeamChangeItem:GetHelpPetState()
   return self._helpPetState
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem.LostLandMissionInfo = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UITeamChangeItem:LostLandMissionInfo()
   local module = self:GetModule(MissionModule)
   local ctx = module:TeamCtx()
   local missionid = ctx.param
   self:ShowDialog("UILostLandMissionInfoController", missionid)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem.recommendBtnOnClick = function(self, go)
-  -- function num : 0_14
+function UITeamChangeItem:recommendBtnOnClick(go)
   self:LostLandMissionInfo()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem.RefreshEnhanceFlagArea = function(self, isEnhanced)
-  -- function num : 0_15
+function UITeamChangeItem:RefreshEnhanceFlagArea(isEnhanced)
   local flagGo = self:GetGameObject("EnhanceFlagArea")
   local flagSop = self:GetUIComponent("UISelectObjectPath", "EnhanceFlagArea")
   if not flagGo then
-    return 
+    return
   end
   if self._helpPetState then
     flagGo:SetActive(false)
@@ -436,105 +316,74 @@ UITeamChangeItem.RefreshEnhanceFlagArea = function(self, isEnhanced)
   flagGo:SetActive(isEnhanced)
   if isEnhanced then
     local flagWidget = flagSop:SpawnObject("UIPetEnhancedFlag")
+  else
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem._OnFastTeam = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UITeamChangeItem:_OnFastTeam()
   self._repeatHelpPetVisible = false
   if not self._isFastSelect then
-    ((self._fastTeam).gameObject):SetActive(false)
-    return 
+    self._fastTeam.gameObject:SetActive(false)
+    return
   else
-    ;
-    ((self._fastTeam).gameObject):SetActive(true)
+    self._fastTeam.gameObject:SetActive(true)
   end
   local teamMemberVisible = false
   local repeatPetVisible = false
   local memberImgIDVisible = false
   local memberImgHelpVisible = false
-  if (self._tabItem).memId ~= nil then
+  if self._tabItem.memId ~= nil then
     teamMemberVisible = true
     memberImgIDVisible = true
     memberImgHelpVisible = false
-    ;
-    (self._ftMemberID):SetText((self._tabItem).memId)
+    self._ftMemberID:SetText(self._tabItem.memId)
   end
   if self._spShow then
     repeatPetVisible = true
-    ;
-    (self._binderPet):SetActive(false)
+    self._binderPet:SetActive(false)
     local petName = ""
-    local l_pet = (self._petModule):GetPet(self._spPstid)
+    local l_pet = self._petModule:GetPet(self._spPstid)
     if l_pet then
       petName = l_pet:GetPetName()
     end
-    local prompt = (StringTable.Get)("str_discovery_sppet_prompt", (StringTable.Get)(petName))
-    ;
-    (self._ftRepeatPrompt):SetText(prompt)
+    local prompt = StringTable.Get("str_discovery_sppet_prompt", StringTable.Get(petName))
+    self._ftRepeatPrompt:SetText(prompt)
   end
-  do
-    local hpm = self:GetModule(HelpPetModule)
-    local helpPetKey = hpm:UI_GetHelpPetKey()
-    if helpPetKey > 0 then
-      local petHelper = hpm:UI_GetTeamMaxPet()
-      if self.pet ~= nil and petHelper ~= nil and (self.pet):GetTemplateID() == petHelper.m_nTemplateID then
-        repeatPetVisible = true
-        self._repeatHelpPetVisible = true
-        local prompt = (StringTable.Get)("str_discovery_hppet_prompt")
-        ;
-        (self._ftRepeatPrompt):SetText(prompt)
-      end
-      do
-        do
-          if (self._tabItem).memId == 5 then
-            memberImgIDVisible = false
-            memberImgHelpVisible = true
-          end
-          ;
-          ((self._ftTeamMember).gameObject):SetActive(teamMemberVisible)
-          ;
-          ((self._ftRepeatPet).gameObject):SetActive(repeatPetVisible)
-          ;
-          ((self._ftImgID).gameObject):SetActive(memberImgIDVisible)
-          ;
-          ((self._ftImgHelp).gameObject):SetActive(memberImgHelpVisible)
-        end
-      end
+  local hpm = self:GetModule(HelpPetModule)
+  local helpPetKey = hpm:UI_GetHelpPetKey()
+  if 0 < helpPetKey then
+    local petHelper = hpm:UI_GetTeamMaxPet()
+    if self.pet ~= nil and petHelper ~= nil and self.pet:GetTemplateID() == petHelper.m_nTemplateID then
+      repeatPetVisible = true
+      self._repeatHelpPetVisible = true
+      local prompt = StringTable.Get("str_discovery_hppet_prompt")
+      self._ftRepeatPrompt:SetText(prompt)
+    end
+    if self._tabItem.memId == 5 then
+      memberImgIDVisible = false
+      memberImgHelpVisible = true
     end
   end
+  self._ftTeamMember.gameObject:SetActive(teamMemberVisible)
+  self._ftRepeatPet.gameObject:SetActive(repeatPetVisible)
+  self._ftImgID.gameObject:SetActive(memberImgIDVisible)
+  self._ftImgHelp.gameObject:SetActive(memberImgHelpVisible)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem.GetTabItem = function(self)
-  -- function num : 0_17
+function UITeamChangeItem:GetTabItem()
   return self._tabItem
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem.IsBinderPet = function(self)
-  -- function num : 0_18
+function UITeamChangeItem:IsBinderPet()
   return self._spShow
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem.IsRepeatHelpPet = function(self)
-  -- function num : 0_19
+function UITeamChangeItem:IsRepeatHelpPet()
   return self._repeatHelpPetVisible
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeItem.FastTeamChanged = function(self)
-  -- function num : 0_20
+function UITeamChangeItem:FastTeamChanged()
   self:_CheckDisable()
   self:_CheckNoInfoActive()
   self:_OnFastTeam()
 end
-
-

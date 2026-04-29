@@ -1,62 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_show_hide_level_trap_head_hud_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewShowHideLevelTrapHeadHudInstruction", SkillPreviewBaseInstruction)
 SkillPreviewShowHideLevelTrapHeadHudInstruction = SkillPreviewShowHideLevelTrapHeadHudInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewShowHideLevelTrapHeadHudInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewShowHideLevelTrapHeadHudInstruction:Constructor(params)
   self._trapIDList = {}
   local trapList = params.trapIDList
   if trapList then
-    local strTrapIDs = (string.split)(trapList, "|")
-    for i,v in ipairs(strTrapIDs) do
-      (table.insert)(self._trapIDList, tonumber(v))
+    local strTrapIDs = string.split(trapList, "|")
+    for i, v in ipairs(strTrapIDs) do
+      table.insert(self._trapIDList, tonumber(v))
     end
   end
-  do
-    local isShow = tonumber(params.isShow)
-    self._isShow = false
-    if isShow and isShow == 1 then
-      self._isShow = true
-    end
+  local isShow = tonumber(params.isShow)
+  self._isShow = false
+  if isShow and isShow == 1 then
+    self._isShow = true
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewShowHideLevelTrapHeadHudInstruction._LoadAtlas = function(self, name, loadType)
-  -- function num : 0_1 , upvalues : _ENV
-  self.resRequest = (ResourceManager:GetInstance()):SyncLoadAsset(name, loadType)
-  return (self.resRequest).Obj
+function SkillPreviewShowHideLevelTrapHeadHudInstruction:_LoadAtlas(name, loadType)
+  self.resRequest = ResourceManager:GetInstance():SyncLoadAsset(name, loadType)
+  return self.resRequest.Obj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewShowHideLevelTrapHeadHudInstruction.GetCacheResource = function(self)
-  -- function num : 0_2
+function SkillPreviewShowHideLevelTrapHeadHudInstruction:GetCacheResource()
   local res = {}
   return res
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewShowHideLevelTrapHeadHudInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillPreviewShowHideLevelTrapHeadHudInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = casterEntity:GetOwnerWorld()
   local trapEntityList = {}
-  local trapGroup = world:GetGroup((world.BW_WEMatchers).Trap)
-  for _,e in ipairs(trapGroup:GetEntities()) do
+  local trapGroup = world:GetGroup(world.BW_WEMatchers.Trap)
+  for _, e in ipairs(trapGroup:GetEntities()) do
     local trapRenderCmpt = e:TrapRender()
-    if trapRenderCmpt and not trapRenderCmpt:GetHadPlayDestroy() and (table.icontains)(self._trapIDList, trapRenderCmpt:GetTrapID()) then
-      (table.insert)(trapEntityList, e)
+    if trapRenderCmpt and not trapRenderCmpt:GetHadPlayDestroy() and table.icontains(self._trapIDList, trapRenderCmpt:GetTrapID()) then
+      table.insert(trapEntityList, e)
     end
   end
-  for _,trapEntity in ipairs(trapEntityList) do
+  for _, trapEntity in ipairs(trapEntityList) do
     local roundRender = trapEntity:TrapRoundInfoRender()
     if roundRender then
       local round_entity_id = roundRender:GetRoundInfoEntityID()
@@ -64,7 +46,7 @@ SkillPreviewShowHideLevelTrapHeadHudInstruction.DoInstruction = function(self, T
       if round_entity then
         if self._isShow then
           local num = roundRender:GetLevelTrapNum()
-          local go = ((round_entity:View()).ViewWrapper).GameObject
+          local go = round_entity:View().ViewWrapper.GameObject
           local uiview = go:GetComponent("UIView")
           if uiview and num then
             local numText = uiview:GetUIComponent("UILocalizationText", "LevelNumText")
@@ -73,29 +55,13 @@ SkillPreviewShowHideLevelTrapHeadHudInstruction.DoInstruction = function(self, T
             end
           end
         end
-        do
-          roundRender:SetIsShow(self._isShow)
-          round_entity:SetViewVisible(self._isShow)
-          do
-            if self._isShow then
-              local renderEntityService = world:GetService("RenderEntity")
-              renderEntityService:SetHudPosition(trapEntity, round_entity, roundRender:GetOffset())
-            end
-            -- DECOMPILER ERROR at PC93: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC93: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC93: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC93: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC93: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        roundRender:SetIsShow(self._isShow)
+        round_entity:SetViewVisible(self._isShow)
+        if self._isShow then
+          local renderEntityService = world:GetService("RenderEntity")
+          renderEntityService:SetHudPosition(trapEntity, round_entity, roundRender:GetOffset())
         end
       end
     end
   end
 end
-
-

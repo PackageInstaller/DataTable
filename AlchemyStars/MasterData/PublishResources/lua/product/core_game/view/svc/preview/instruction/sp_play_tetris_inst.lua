@@ -1,56 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_tetris_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayTetrisInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayTetrisInstruction = SkillPreviewPlayTetrisInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayTetrisInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayTetrisInstruction:Constructor(params)
   local strList = params.tetrisEffectList
-  local strIDs = (string.split)(strList, "|")
+  local strIDs = string.split(strList, "|")
   self._tetrisEffectList = {}
   for i = 1, #strIDs do
     local effectID = tonumber(strIDs[i])
-    ;
-    (table.insert)(self._tetrisEffectList, effectID)
+    table.insert(self._tetrisEffectList, effectID)
   end
   self._time = params.Time
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayTetrisInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayTetrisInstruction:GetCacheResource()
   local res = {}
-  for i,effectID in pairs(self._tetrisEffectList) do
-    local skinEffRes = {((Cfg.cfg_effect)[effectID]).ResPath, 1}
-    ;
-    (table.insert)(res, skinEffRes)
+  for i, effectID in pairs(self._tetrisEffectList) do
+    local skinEffRes = {
+      Cfg.cfg_effect[effectID].ResPath,
+      1
+    }
+    table.insert(res, skinEffRes)
   end
   return res
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayTetrisInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPreviewPlayTetrisInstruction:DoInstruction(TT, casterEntity, previewContext)
   self._world = previewContext:GetWorld()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local tetrisIndex = utilDataSvc:GetFeatureTetrisIndex()
   local tetrisDir = utilDataSvc:GetFeatureTetrisDir()
-  local effectID = (self._tetrisEffectList)[tetrisIndex]
-  local effectEntity = ((self._world):GetService("Effect")):CreateWorldPositionDirectionEffect(effectID, previewContext:GetPickUpPos(), tetrisDir)
+  local effectID = self._tetrisEffectList[tetrisIndex]
+  local effectEntity = self._world:GetService("Effect"):CreateWorldPositionDirectionEffect(effectID, previewContext:GetPickUpPos(), tetrisDir)
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
   previewPickUpComponent:AddPickUpEffectEntityID(effectEntity:GetID())
-  local effectGO = (effectEntity:View()):GetGameObject()
-  local anim = (effectGO.gameObject):GetComponent("Animation")
+  local effectGO = effectEntity:View():GetGameObject()
+  local anim = effectGO.gameObject:GetComponent("Animation")
   if self._time then
     YIELD(TT, self._time)
   end
 end
-
-

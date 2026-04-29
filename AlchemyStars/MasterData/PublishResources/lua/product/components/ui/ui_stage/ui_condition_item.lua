@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_stage/ui_condition_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIConditionItem", UICustomWidget)
 UIConditionItem = UIConditionItem
 local ATLAS_NAME = "UIStage.spriteatlas"
 local BG_NAME = "map_guanqia_tiao"
--- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
 
-UIConditionItem.OnShow = function(self)
-  -- function num : 0_0
+function UIConditionItem:OnShow()
   self._imgStar = self:GetGameObject("imgStar")
   self._grayImgStar = self:GetGameObject("imgGrayStar")
   self._txt = self:GetUIComponent("RollingText", "txt")
@@ -18,32 +11,17 @@ UIConditionItem.OnShow = function(self)
   self._bgImage = self:GetUIComponent("Image", "bg")
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-UIConditionItem.Flush = function(self, v, index)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._title).text = index
-  ;
-  (self._txt):RefreshText(v.content)
-  ;
-  ((self._imgStar).gameObject):SetActive(v.satisfy)
-  ;
-  ((self._grayImgStar).gameObject):SetActive(not v.satisfy)
+function UIConditionItem:Flush(v, index)
+  self._title.text = index
+  self._txt:RefreshText(v.content)
+  self._imgStar.gameObject:SetActive(v.satisfy)
+  self._grayImgStar.gameObject:SetActive(not v.satisfy)
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-UIConditionItem.RefreshBg = function(self, atlas, index)
-  -- function num : 0_2 , upvalues : BG_NAME
+function UIConditionItem:RefreshBg(atlas, index)
   local spriteName = BG_NAME .. index
   local sprite = atlas:GetSprite(spriteName)
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R5 in 'UnsetPending'
-
   if sprite then
-    (self._bgImage).sprite = sprite
+    self._bgImage.sprite = sprite
   end
 end
-
-

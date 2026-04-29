@@ -1,27 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_drop_by_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicDropByHP", BuffLogicBase)
 BuffLogicDropByHP = BuffLogicDropByHP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDropByHP.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicDropByHP:Constructor(buffInstance, logicParam)
   self._hitEffectID = logicParam.hitEffectID
   self._dropList = logicParam.dropList
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDropByHP.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("DropByHPEffectID", self._hitEffectID)
-  ;
-  (e:BuffComponent()):SetBuffValue("DropListByHP", self._dropList)
+function BuffLogicDropByHP:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("DropByHPEffectID", self._hitEffectID)
+  e:BuffComponent():SetBuffValue("DropListByHP", self._dropList)
 end
-
-

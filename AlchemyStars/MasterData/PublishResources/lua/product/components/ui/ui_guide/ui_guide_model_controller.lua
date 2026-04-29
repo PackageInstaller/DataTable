@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_guide/ui_guide_model_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIGuideModelController", UIController)
 UIGuideModelController = UIGuideModelController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGuideModelController.Constructor = function(self)
-  -- function num : 0_0
+function UIGuideModelController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideModelController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIGuideModelController:OnShow(uiParams)
   self.fingerRect = self:GetUIComponent("RectTransform", "finger")
   self.btn = self:GetUIComponent("RectTransform", "btn")
   self.target = uiParams[1]
@@ -22,7 +12,7 @@ UIGuideModelController.OnShow = function(self, uiParams)
   self.entityType = uiParams[3]
   local onShowEnd = uiParams[4]
   if not self.entityId then
-    return 
+    return
   end
   self:ResetPos()
   if onShowEnd then
@@ -31,69 +21,39 @@ UIGuideModelController.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.UIBlackChange, self.ResetPos)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideModelController.ResetPos = function(self)
-  -- function num : 0_2
+function UIGuideModelController:ResetPos()
   local pos = self:ConvertScreentPos(self.target)
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.fingerRect).anchoredPosition = pos
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.btn).anchoredPosition = pos
+  self.fingerRect.anchoredPosition = pos
+  self.btn.anchoredPosition = pos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideModelController.ConvertScreentPos = function(self, target)
-  -- function num : 0_3 , upvalues : _ENV
-  local screenPos = (InnerGameHelperRender.WorldPos2ScreenPos)(target.position)
-  local sw = (ResolutionManager.ScreenWidth)()
-  local rw = (ResolutionManager.RealWidth)()
+function UIGuideModelController:ConvertScreentPos(target)
+  local screenPos = InnerGameHelperRender.WorldPos2ScreenPos(target.position)
+  local sw = ResolutionManager.ScreenWidth()
+  local rw = ResolutionManager.RealWidth()
   local factor = rw / sw
   local sx, sy = screenPos.x * factor, screenPos.y * factor
   screenPos = Vector2(sx, sy)
   return screenPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideModelController.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.Entity)
+function UIGuideModelController:OnHide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.Entity)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideModelController.BtnOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIGuideModelController:BtnOnClick()
   if self.entityType == GuideModelType.Monster then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideChangeGhostLayer)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideMonsterClick, self.entityId)
-  else
-    if self.entityType == GuideModelType.Trap then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideChangeGhostLayer)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UITrapSkillVisible, true, self.entityId)
-    else
-      if self.entityType == GuideModelType.ChessPet then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideChangeGhostLayer)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideChessClick, self.entityId)
-      else
-        if self.entityType == GuideModelType.ChessMonster then
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideChangeGhostLayer)
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideChessClick, self.entityId)
-        end
-      end
-    end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideChangeGhostLayer)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideMonsterClick, self.entityId)
+  elseif self.entityType == GuideModelType.Trap then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideChangeGhostLayer)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UITrapSkillVisible, true, self.entityId)
+  elseif self.entityType == GuideModelType.ChessPet then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideChangeGhostLayer)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideChessClick, self.entityId)
+  elseif self.entityType == GuideModelType.ChessMonster then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideChangeGhostLayer)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideChessClick, self.entityId)
   end
   self:CloseDialog()
 end
-
-

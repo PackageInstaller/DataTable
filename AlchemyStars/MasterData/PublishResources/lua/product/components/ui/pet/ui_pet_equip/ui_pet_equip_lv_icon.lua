@@ -1,91 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_lv_icon.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipLvIcon", UICustomWidget)
 UIPetEquipLvIcon = UIPetEquipLvIcon
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipLvIcon.SetData = function(self, pet, showLv, txtLvExtra, posLv)
-  -- function num : 0_0
+function UIPetEquipLvIcon:SetData(pet, showLv, txtLvExtra, posLv)
   if not pet then
-    return 
+    return
   end
   local unlock = pet:GetPetGrade() > 0
   self:_SetLockState(unlock)
   local state = self:_GetIconState(pet)
   self:_SetIconState(state)
   if showLv then
-    if not txtLvExtra then
-      txtLvExtra = ""
-    end
+    txtLvExtra = txtLvExtra or ""
     local lv = txtLvExtra .. pet:GetEquipLv()
     self:_SetText(state, lv, posLv)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipLvIcon._SetLockState = function(self, unlock)
-  -- function num : 0_1
-  (self:GetGameObject("_unlock")):SetActive(unlock)
-  ;
-  (self:GetGameObject("_locked")):SetActive(not unlock)
+function UIPetEquipLvIcon:_SetLockState(unlock)
+  self:GetGameObject("_unlock"):SetActive(unlock)
+  self:GetGameObject("_locked"):SetActive(not unlock)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipLvIcon._GetIconState = function(self, pet)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPetEquipLvIcon:_GetIconState(pet)
   local grade = -1
-  if (UIPetEquipHelper.HasRefine)(pet:GetTemplateID()) then
+  if UIPetEquipHelper.HasRefine(pet:GetTemplateID()) then
     grade = pet:GetEquipRefineLv()
   end
   return grade
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipLvIcon._SetIconState = function(self, state)
-  -- function num : 0_3 , upvalues : _ENV
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-[-1] = {"_icon_a", "_locked_a"}
-, 
-[0] = {"_icon_b0", "_locked_b"}
-, 
-[1] = {"_icon_b1", "_locked_b"}
-, 
-[2] = {"_icon_b2", "_locked_b"}
-, 
-[3] = {"_icon_b3", "_locked_b"}
-})
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, state)
+function UIPetEquipLvIcon:_SetIconState(state)
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    [-1] = {"_icon_a", "_locked_a"},
+    [0] = {"_icon_b0", "_locked_b"},
+    [1] = {"_icon_b1", "_locked_b"},
+    [2] = {"_icon_b2", "_locked_b"},
+    [3] = {"_icon_b3", "_locked_b"}
+  })
+  UIWidgetHelper.SetObjGroupShow(objs, state)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipLvIcon._SetText = function(self, state, lv, pos)
-  -- function num : 0_4 , upvalues : _ENV
+function UIPetEquipLvIcon:_SetText(state, lv, pos)
   local tb = {"_txtLv_a", "_txtLv_b"}
-  for i,v in ipairs(tb) do
-    (self:GetGameObject(v)):SetActive(false)
+  for i, v in ipairs(tb) do
+    self:GetGameObject(v):SetActive(false)
   end
-  do
-    if state ~= -1 or not tb[1] then
-      local widgetName = tb[2]
-    end
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, widgetName, lv)
-    ;
-    (self:GetGameObject(widgetName)):SetActive(true)
-    if pos then
-      local trans = self:GetUIComponent("RectTransform", widgetName)
-      trans.anchoredPosition = pos
-    end
+  local widgetName = state == -1 and tb[1] or tb[2]
+  UIWidgetHelper.SetLocalizationText(self, widgetName, lv)
+  self:GetGameObject(widgetName):SetActive(true)
+  if pos then
+    local trans = self:GetUIComponent("RectTransform", widgetName)
+    trans.anchoredPosition = pos
   end
 end
-
-

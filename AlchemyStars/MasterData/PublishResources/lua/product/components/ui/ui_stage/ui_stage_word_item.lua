@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_stage/ui_stage_word_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIStageWordItem", UICustomWidget)
 UIStageWordItem = UIStageWordItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIStageWordItem.OnShow = function(self)
-  -- function num : 0_0
+function UIStageWordItem:OnShow()
   self._tex = self:GetUIComponent("UILocalizationText", "tex")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageWordItem.SetData = function(self, tex)
-  -- function num : 0_1
-  (self._tex):SetText(tex)
+function UIStageWordItem:SetData(tex)
+  self._tex:SetText(tex)
 end
-
-

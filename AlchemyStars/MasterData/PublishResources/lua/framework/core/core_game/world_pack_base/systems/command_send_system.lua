@@ -1,47 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/systems/command_send_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CommandSendSystem", ReactiveSystem)
 CommandSendSystem = CommandSendSystem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CommandSendSystem.Constructor = function(self, world)
-  -- function num : 0_0
+function CommandSendSystem:Constructor(world)
   self.world = world
-  self.networkService = (world.BW_Services).Network
+  self.networkService = world.BW_Services.Network
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CommandSendSystem.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = world:GetGroup((world.BW_WEMatchers).CommandSender)
+function CommandSendSystem:GetTrigger(world)
+  local group = world:GetGroup(world.BW_WEMatchers.CommandSender)
   local c = Collector:New({group}, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CommandSendSystem.Filter = function(self, entity)
-  -- function num : 0_2
+function CommandSendSystem:Filter(entity)
   return entity:HasCommandSender()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CommandSendSystem.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function CommandSendSystem:ExecuteEntities(entities)
   local network = self.networkService
   for i = 1, #entities do
     local e = entities[i]
     local sender = e:CommandSender()
     sender:PreHandleCommand()
     network:SendCommandsMessage(sender.SendQueue)
-    ;
-    (sender.SendQueue):Clear()
+    sender.SendQueue:Clear()
   end
 end
-
-

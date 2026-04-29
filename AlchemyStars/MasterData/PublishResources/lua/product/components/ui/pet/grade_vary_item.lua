@@ -1,82 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/grade_vary_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GradeVaryItem", UICustomWidget)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-GradeVaryItem.Constructor = function(self)
-  -- function num : 0_0
+function GradeVaryItem:Constructor()
   self._consumItemInfo = nil
   self._itemIndex = nil
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-GradeVaryItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function GradeVaryItem:OnShow()
   self._stateIcon = self:GetUIComponent("Image", "stateIcon")
   self._varyName = self:GetUIComponent("UILocalizationText", "varyName")
   self._uiPetGradeDetail = self:GetAsset("UIPetGrade.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-GradeVaryItem.OnHide = function(self)
-  -- function num : 0_2
+function GradeVaryItem:OnHide()
   self:Release()
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-GradeVaryItem.Release = function(self)
-  -- function num : 0_3
+function GradeVaryItem:Release()
   self._consumItemInfo = nil
   self._stateIcon = nil
   self._varyName = nil
   self._uiPetGradeDetail = nil
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-GradeVaryItem.SetData = function(self, varyInfo)
-  -- function num : 0_4 , upvalues : _ENV
+function GradeVaryItem:SetData(varyInfo)
   local tag = varyInfo.type
   local skillName = ""
   if tag == "active" then
     skillName = "str_pet_config_skill_major"
-  else
-    if tag == "extra" then
-      skillName = "str_pet_config_skill_major"
-    else
-      if tag == "passive" then
-        skillName = "str_pet_config_common_equip_des"
-      else
-        if tag == "chain" then
-          skillName = "str_pet_config_common_chain_des"
-        else
-          if tag == "work" then
-            skillName = "str_pet_config_common_work_des"
-          end
-        end
-      end
-    end
+  elseif tag == "extra" then
+    skillName = "str_pet_config_skill_major"
+  elseif tag == "passive" then
+    skillName = "str_pet_config_common_equip_des"
+  elseif tag == "chain" then
+    skillName = "str_pet_config_common_chain_des"
+  elseif tag == "work" then
+    skillName = "str_pet_config_common_work_des"
   end
   local spriteName = ""
   if varyInfo.changeType == PetSkillChangeState.NewGain then
     spriteName = "spirit_suo1_icon"
-  else
-    if varyInfo.changeType == PetSkillChangeState.Improved then
-      spriteName = "spirit_jiantou1_icon"
-    end
+  elseif varyInfo.changeType == PetSkillChangeState.Improved then
+    spriteName = "spirit_jiantou1_icon"
   end
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._stateIcon).sprite = (self._uiPetGradeDetail):GetSprite(spriteName)
-  ;
-  (self._varyName):SetText((StringTable.Get)(skillName))
+  self._stateIcon.sprite = self._uiPetGradeDetail:GetSprite(spriteName)
+  self._varyName:SetText(StringTable.Get(skillName))
 end
-
-

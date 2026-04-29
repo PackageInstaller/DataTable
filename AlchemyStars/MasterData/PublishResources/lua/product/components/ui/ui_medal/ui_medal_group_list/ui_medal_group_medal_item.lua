@@ -1,74 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/ui_medal_group_list/ui_medal_group_medal_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalGroupMedalItem", UICustomWidget)
 UIMedalGroupMedalItem = UIMedalGroupMedalItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalGroupMedalItem.Constructor = function(self)
-  -- function num : 0_0
+function UIMedalGroupMedalItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupMedalItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIMedalGroupMedalItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupMedalItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIMedalGroupMedalItem:_GetComponents()
   self.medalIcon = self:GetUIComponent("Image", "Icon")
   self.medalIconGo = self:GetGameObject("Icon")
   self.medalRect = self:GetUIComponent("RectTransform", "Icon")
   self.root = self:GetUIComponent("RectTransform", "root")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupMedalItem.SetData = function(self, data, sprite, collect, width, editData)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMedalGroupMedalItem:SetData(data, sprite, collect, width, editData)
   self._id = data[1]
   local x = data[2]
   local y = data[3]
   local r = data[4]
-  ;
-  (self.medalIconGo):SetActive(collect)
+  self.medalIconGo:SetActive(collect)
   self._collect = collect
-  local cfg = (Cfg.cfg_item_medal)[self._id]
+  local cfg = Cfg.cfg_item_medal[self._id]
   if not cfg then
-    (Log.error)("###[UIMedalGroupMedalItem] cfg medal is nil ! id --> ", self._id)
+    Log.error("###[UIMedalGroupMedalItem] cfg medal is nil ! id --> ", self._id)
   end
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self.medalIcon).sprite = sprite
+  self.medalIcon.sprite = sprite
   local realPos = editData:GetScaledPos(width, Vector2(x, y))
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self.root).anchoredPosition = realPos
-  local qua = (Quaternion.Euler)(0, 0, r)
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self.root).rotation = qua
-  local rect = ((self.medalIcon).sprite).rect
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R13 in 'UnsetPending'
-
-  ;
-  (self.root).sizeDelta = Vector2(rect.width, rect.height) * 0.36 * editData:GetScaleTimes(width)
+  self.root.anchoredPosition = realPos
+  local qua = Quaternion.Euler(0, 0, r)
+  self.root.rotation = qua
+  local rect = self.medalIcon.sprite.rect
+  self.root.sizeDelta = Vector2(rect.width, rect.height) * 0.36 * editData:GetScaleTimes(width)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupMedalItem.RootOnClick = function(self, go)
-  -- function num : 0_4
+function UIMedalGroupMedalItem:RootOnClick(go)
   self:ShowDialog("UIMedalGroupTipsController", self._id, false, self._collect)
 end
-
-

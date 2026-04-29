@@ -1,59 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_top_tips/ui_top_tips_context.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITopTipsContext", UICustomWidget)
 UITopTipsContext = UITopTipsContext
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITopTipsContext.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UITopTipsContext:OnShow(uiParams)
   self._rect = self:GetUIComponent("RectTransform", "rect")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopTipsContext.OnHide = function(self)
-  -- function num : 0_1
+function UITopTipsContext:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopTipsContext.DiaName = function(self)
-  -- function num : 0_2
+function UITopTipsContext:DiaName()
   return "UITopTipsController"
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopTipsContext.SetData = function(self, enum, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UITopTipsContext:SetData(enum, go)
   self:Lock("UITopTips")
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rect).position = (go:GetComponent("Transform")).position
-  local anchoredPosition = (self._rect).anchoredPosition
+  self._rect.position = go:GetComponent("Transform").position
+  local anchoredPosition = self._rect.anchoredPosition
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, self, enum, anchoredPosition
     YIELD(TT, 50)
     self:ShowDialog("UITopTipsController", enum, anchoredPosition)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopTipsContext.PopupTips = function(self, enum, offsetPosition, deltaPosition)
-  -- function num : 0_4 , upvalues : _ENV
+function UITopTipsContext:PopupTips(enum, offsetPosition, deltaPosition)
   self:Lock("UITopTips")
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self, enum, offsetPosition, deltaPosition
     YIELD(TT, 50)
     self:ShowDialog(self:DiaName(), enum, offsetPosition, deltaPosition)
-  end
-, self)
+  end, self)
 end
-
-

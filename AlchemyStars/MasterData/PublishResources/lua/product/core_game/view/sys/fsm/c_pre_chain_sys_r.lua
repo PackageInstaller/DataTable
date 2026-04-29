@@ -1,41 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_pre_chain_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pre_chain_state_system")
 _class("ClientPreChainSystem_Render", PreChainStateSystem)
 ClientPreChainSystem_Render = ClientPreChainSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientPreChainSystem_Render._PlayPreChainTrapSkill = function(self, TT, trapIds)
-  -- function num : 0_0 , upvalues : _ENV
-  local renderEntityService = (self._world):GetService("RenderEntity")
+function ClientPreChainSystem_Render:_PlayPreChainTrapSkill(TT, trapIds)
+  local renderEntityService = self._world:GetService("RenderEntity")
   renderEntityService:DestroyGhost()
-  local sTrapRender = (self._world):GetService("TrapRender")
+  local sTrapRender = self._world:GetService("TrapRender")
   local taskIds = sTrapRender:PlayTrapPreChainSkill(trapIds)
-  while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIds) do
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIds) do
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientPreChainSystem_Render._DoRenderWaitTeleportFinish = function(self, TT, listTrapTrigger, teamEntity)
-  -- function num : 0_1
-  local sPlaySkillInstruction = (self._world):GetService("PlaySkillInstruction")
+function ClientPreChainSystem_Render:_DoRenderWaitTeleportFinish(TT, listTrapTrigger, teamEntity)
+  local sPlaySkillInstruction = self._world:GetService("PlaySkillInstruction")
   local listTrapTask = sPlaySkillInstruction:PlayTrapTrigger(TT, teamEntity, listTrapTrigger)
   self:_WaitTasksEnd(TT, listTrapTask)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientPreChainSystem_Render._DoRenderResetPickUp = function(self)
-  -- function num : 0_2
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function ClientPreChainSystem_Render:_DoRenderResetPickUp()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   pickUpTargetCmpt:Reset()
   renderBoardEntity:ReplacePickUpTarget()
 end
-
-

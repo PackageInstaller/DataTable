@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/season_map_eventpoint.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("season_map_eventpoint_base")
 _class("SeasonMapEventPoint", SeasonMapEventPointBase)
 SeasonMapEventPoint = SeasonMapEventPoint
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapEventPoint.Constructor = function(self, owner, cfgMission, cfgEventPoint)
-  -- function num : 0_0
+function SeasonMapEventPoint:Constructor(owner, cfgMission, cfgEventPoint)
   self._isLastMainLevelGroup = false
   self._isLastStory = false
   self._isLastMechanism = false
@@ -17,167 +10,113 @@ SeasonMapEventPoint.Constructor = function(self, owner, cfgMission, cfgEventPoin
   self:_CalcAllLast()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPoint._OnSwitchDiff = function(self)
-  -- function num : 0_1
+function SeasonMapEventPoint:_OnSwitchDiff()
   self:_CalcAllLast()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPoint._OnSwitchMapMode = function(self)
-  -- function num : 0_2
+function SeasonMapEventPoint:_OnSwitchMapMode()
   self:_CalcAllLast()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPoint.IsLastMainLevelGroup = function(self)
-  -- function num : 0_3
+function SeasonMapEventPoint:IsLastMainLevelGroup()
   return self._isLastMainLevelGroup
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPoint.IsLastStory = function(self)
-  -- function num : 0_4
+function SeasonMapEventPoint:IsLastStory()
   return self._isLastStory
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPoint.IsLastMechanism = function(self)
-  -- function num : 0_5
+function SeasonMapEventPoint:IsLastMechanism()
   return self._isLastMechanism
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPoint.IsLastBox = function(self)
-  -- function num : 0_6
+function SeasonMapEventPoint:IsLastBox()
   return self._isLastBox
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPoint._CalcAllLast = function(self)
-  -- function num : 0_7
+function SeasonMapEventPoint:_CalcAllLast()
   self:_CalcLastGroup()
   self:_CalcLastStory()
   self:_CalcLastMechanism()
   self:_CalcLastBox()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPoint._CalcLastGroup = function(self)
-  -- function num : 0_8
+function SeasonMapEventPoint:_CalcLastGroup()
   self._isLastMainLevelGroup = self:_CalcLastMain()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPoint._CalcLastStory = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function SeasonMapEventPoint:_CalcLastStory()
   self._isLastStory = self:_CalcLast(SeasonEventPointType.MainStory, SeasonExpressType.Story)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPoint._CalcLastMechanism = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function SeasonMapEventPoint:_CalcLastMechanism()
   self._isLastMechanism = self:_CalcLast(SeasonEventPointType.Mechanism, nil)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPoint._CalcLastBox = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function SeasonMapEventPoint:_CalcLastBox()
   self._isLastBox = self:_CalcLast(SeasonEventPointType.Box, SeasonExpressType.Reward)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPoint._CalcLastMain = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function SeasonMapEventPoint:_CalcLastMain()
   if self:_IsMainLink() then
-    local map = (self._componentInfo).m_stage_info
+    local map = self._componentInfo.m_stage_info
     if map[self._id] then
       return false
     else
-      local needMissionID = tonumber((self._cfgMission).NeedMission)
-      if ((needMissionID and map[needMissionID]) or not needMissionID) and self._isUnlock and self:DiffAble() and self:ModeAble() and self._curProgressExpress then
+      local needMissionID = tonumber(self._cfgMission.NeedMission)
+      if (needMissionID and map[needMissionID] or not needMissionID) and self._isUnlock and self:DiffAble() and self:ModeAble() and self._curProgressExpress then
         if self._eventPointType == SeasonEventPointType.MainLevel then
-          return (self._curProgressExpress):ContainExpress(SeasonExpressType.Level)
-        else
-          if self._eventPointType == SeasonEventPointType.MainStory then
-            if not (self._curProgressExpress):ContainExpress(SeasonExpressType.Story) then
-              do
-                do return (self._curProgressExpress):ContainExpress(SeasonExpressType.Story3D) end
-                if self._eventPointType == SeasonEventPointType.Box then
-                  return (self._curProgressExpress):ContainExpress(SeasonExpressType.Reward)
-                end
-                do return true end
-                return false
-              end
-            end
-          end
+          return self._curProgressExpress:ContainExpress(SeasonExpressType.Level)
+        elseif self._eventPointType == SeasonEventPointType.MainStory then
+          return self._curProgressExpress:ContainExpress(SeasonExpressType.Story) or self._curProgressExpress:ContainExpress(SeasonExpressType.Story3D)
+        elseif self._eventPointType == SeasonEventPointType.Box then
+          return self._curProgressExpress:ContainExpress(SeasonExpressType.Reward)
         end
+        return true
       end
     end
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPoint._IsMainLink = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  do return self._eventPointType == SeasonEventPointType.MainLevel or self._eventPointType == SeasonEventPointType.MainStory or self._eventPointType == SeasonEventPointType.Box or self._eventPointType == SeasonEventPointType.Mechanism end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SeasonMapEventPoint:_IsMainLink()
+  return self._eventPointType == SeasonEventPointType.MainLevel or self._eventPointType == SeasonEventPointType.MainStory or self._eventPointType == SeasonEventPointType.Box or self._eventPointType == SeasonEventPointType.Mechanism
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPoint._CalcLast = function(self, eventPointType, expressType)
-  -- function num : 0_14 , upvalues : _ENV
+function SeasonMapEventPoint:_CalcLast(eventPointType, expressType)
   if self._eventPointType == eventPointType then
-    local map = (self._componentInfo).m_stage_info
+    local map = self._componentInfo.m_stage_info
     if map[self._id] then
       return false
     else
-      local cfgs = (Cfg.cfg_component_season)({ComponentID = (self._component):GetComponentCfgId()})
+      local cfgs = Cfg.cfg_component_season({
+        ComponentID = self._component:GetComponentCfgId()
+      })
       if not cfgs then
         return false
       end
-      local lastID = nil
-      for _,cfg in pairs(cfgs) do
-        local missiconCfg = (Cfg.cfg_season_mission)[cfg.MissionID]
+      local lastID
+      for _, cfg in pairs(cfgs) do
+        local missiconCfg = Cfg.cfg_season_mission[cfg.MissionID]
         if missiconCfg and missiconCfg.Type == eventPointType then
           local id = missiconCfg.ID
           if not map[id] then
             if not lastID then
               lastID = id
-            else
-              if id < lastID then
-                lastID = id
-              end
+            elseif id < lastID then
+              lastID = id
             end
           end
         end
       end
       if self._isUnlock and self._id == lastID and self._curProgressExpress then
         if expressType then
-          return (self._curProgressExpress):ContainExpress(expressType)
+          return self._curProgressExpress:ContainExpress(expressType)
         else
           return true
         end
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
-
-

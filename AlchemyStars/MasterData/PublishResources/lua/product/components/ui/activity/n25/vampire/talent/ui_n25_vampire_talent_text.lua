@@ -1,54 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/vampire/talent/ui_n25_vampire_talent_text.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25VampireTalentText", UICustomWidget)
 UIN25VampireTalentText = UIN25VampireTalentText
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25VampireTalentText.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN25VampireTalentText:Constructor()
   self.mCampaign = self:GetModule(CampaignModule)
-  self.data = (self.mCampaign):GetN25Data()
+  self.data = self.mCampaign:GetN25Data()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentText.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN25VampireTalentText:OnShow(uiParams)
   self.imgTen = self:GetUIComponent("Image", "imgTen")
   self.imgOne = self:GetUIComponent("Image", "imgOne")
   self.atlas = self:GetAsset("UIN25Vampire.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentText.OnHide = function(self)
-  -- function num : 0_2
+function UIN25VampireTalentText:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentText.Flush = function(self, num, prefix)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN25VampireTalentText:Flush(num, prefix)
   local str = tostring(num)
-  local one = (string.sub)(str, -1)
-  local ten = (string.sub)(str, -2, -2)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.imgOne).sprite = (self.atlas):GetSprite(prefix .. one)
-  if (string.isnullorempty)(ten) then
-    ((self.imgTen).gameObject):SetActive(false)
+  local one = string.sub(str, -1)
+  local ten = string.sub(str, -2, -2)
+  self.imgOne.sprite = self.atlas:GetSprite(prefix .. one)
+  if string.isnullorempty(ten) then
+    self.imgTen.gameObject:SetActive(false)
   else
-    ;
-    ((self.imgTen).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.imgTen).sprite = (self.atlas):GetSprite(prefix .. ten)
+    self.imgTen.gameObject:SetActive(true)
+    self.imgTen.sprite = self.atlas:GetSprite(prefix .. ten)
   end
 end
-
-

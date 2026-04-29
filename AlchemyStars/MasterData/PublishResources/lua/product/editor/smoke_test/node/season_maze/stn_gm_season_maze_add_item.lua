@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/season_maze/stn_gm_season_maze_add_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("GM_SeasonMazeAddItem", Common_AsyncBase)
 GM_SeasonMazeAddItem = GM_SeasonMazeAddItem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GM_SeasonMazeAddItem.Constructor = function(self, _manager, itemType, itemID, itemCount)
-  -- function num : 0_0
+function GM_SeasonMazeAddItem:Constructor(_manager, itemType, itemID, itemCount)
   self._itemType = itemType
   self._itemID = itemID
   self._itemCount = itemCount
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GM_SeasonMazeAddItem.TaskFunc = function(self, TT, status)
-  -- function num : 0_1
-  local runData = (self._manager):GetMissionRunData()
+function GM_SeasonMazeAddItem:TaskFunc(TT, status)
+  local runData = self._manager:GetMissionRunData()
   local componentID = runData:GetComponentConfigID()
-  ;
-  (self._manager):AsyncGM_SeasonMazeAddItem(TT, status, componentID, self._itemType, self._itemID, self._itemCount)
+  self._manager:AsyncGM_SeasonMazeAddItem(TT, status, componentID, self._itemType, self._itemID, self._itemCount)
 end
-
-

@@ -1,24 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_double_cross.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_DoubleCross", SkillScopeCalculator_Base)
 SkillScopeCalculator_DoubleCross = SkillScopeCalculator_DoubleCross
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_DoubleCross.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_DoubleCross:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local bodyAreaArray = bodyArea
   local size = scopeParam
   local target_area_grid = {}
-  for i,p in ipairs(bodyAreaArray) do
-    (table.insert)(target_area_grid, Vector2(centerPos.x + p.x, centerPos.y + p.y))
+  for i, p in ipairs(bodyAreaArray) do
+    table.insert(target_area_grid, Vector2(centerPos.x + p.x, centerPos.y + p.y))
   end
   local cross_area = {}
   local wholeArea = {}
-  for i,p in ipairs(target_area_grid) do
+  for i, p in ipairs(target_area_grid) do
     local center_x = p.x
     local center_y = p.y
     for index = 1, size do
@@ -34,50 +27,40 @@ SkillScopeCalculator_DoubleCross.CalcRange = function(self, scopeType, scopePara
       local rightDownPos = Vector2(center_x + index, center_y - index)
       local leftUpPos = Vector2(center_x - index, center_y + index)
       local rightUpPos = Vector2(center_x + index, center_y + index)
-      ;
-      (table.insert)(wholeArea, upPos)
-      ;
-      (table.insert)(wholeArea, downPos)
-      ;
-      (table.insert)(wholeArea, leftPos)
-      ;
-      (table.insert)(wholeArea, rightPos)
-      ;
-      (table.insert)(wholeArea, leftDownPos)
-      ;
-      (table.insert)(wholeArea, rightDownPos)
-      ;
-      (table.insert)(wholeArea, leftUpPos)
-      ;
-      (table.insert)(wholeArea, rightUpPos)
-      if (self._gridFilter):IsValidPiecePos(upPos) then
-        (table.insert)(cross_area, upPos)
+      table.insert(wholeArea, upPos)
+      table.insert(wholeArea, downPos)
+      table.insert(wholeArea, leftPos)
+      table.insert(wholeArea, rightPos)
+      table.insert(wholeArea, leftDownPos)
+      table.insert(wholeArea, rightDownPos)
+      table.insert(wholeArea, leftUpPos)
+      table.insert(wholeArea, rightUpPos)
+      if self._gridFilter:IsValidPiecePos(upPos) then
+        table.insert(cross_area, upPos)
       end
-      if (self._gridFilter):IsValidPiecePos(downPos) then
-        (table.insert)(cross_area, downPos)
+      if self._gridFilter:IsValidPiecePos(downPos) then
+        table.insert(cross_area, downPos)
       end
-      if (self._gridFilter):IsValidPiecePos(leftPos) then
-        (table.insert)(cross_area, leftPos)
+      if self._gridFilter:IsValidPiecePos(leftPos) then
+        table.insert(cross_area, leftPos)
       end
-      if (self._gridFilter):IsValidPiecePos(rightPos) then
-        (table.insert)(cross_area, rightPos)
+      if self._gridFilter:IsValidPiecePos(rightPos) then
+        table.insert(cross_area, rightPos)
       end
-      if (self._gridFilter):IsValidPiecePos(leftDownPos) then
-        (table.insert)(cross_area, leftDownPos)
+      if self._gridFilter:IsValidPiecePos(leftDownPos) then
+        table.insert(cross_area, leftDownPos)
       end
-      if (self._gridFilter):IsValidPiecePos(rightDownPos) then
-        (table.insert)(cross_area, rightDownPos)
+      if self._gridFilter:IsValidPiecePos(rightDownPos) then
+        table.insert(cross_area, rightDownPos)
       end
-      if (self._gridFilter):IsValidPiecePos(leftUpPos) then
-        (table.insert)(cross_area, leftUpPos)
+      if self._gridFilter:IsValidPiecePos(leftUpPos) then
+        table.insert(cross_area, leftUpPos)
       end
-      if (self._gridFilter):IsValidPiecePos(rightUpPos) then
-        (table.insert)(cross_area, rightUpPos)
+      if self._gridFilter:IsValidPiecePos(rightUpPos) then
+        table.insert(cross_area, rightUpPos)
       end
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.DoubleCross, centerPos, cross_area, wholeArea)
   return result
 end
-
-

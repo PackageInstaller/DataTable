@@ -1,35 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_loading_enter_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiscoveryLoadingEnterHandler", LoadingHandler)
 UIDiscoveryLoadingEnterHandler = UIDiscoveryLoadingEnterHandler
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiscoveryLoadingEnterHandler.PreLoadBeforeLoadLevel = function(self, TT)
-  -- function num : 0_0
+function UIDiscoveryLoadingEnterHandler:PreLoadBeforeLoadLevel(TT)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryLoadingEnterHandler.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  (LoadingHandler.PreLoadAfterLoadLevel)(self, TT, ...)
+function UIDiscoveryLoadingEnterHandler:PreLoadAfterLoadLevel(TT, ...)
+  LoadingHandler.PreLoadAfterLoadLevel(self, TT, ...)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryLoadingEnterHandler.OnLoadingFinish = function(self, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIDiscovery)
+function UIDiscoveryLoadingEnterHandler:OnLoadingFinish(...)
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIDiscovery)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryLoadingEnterHandler.LoadingType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIDiscoveryLoadingEnterHandler:LoadingType()
   return LoadingType.BOTTOM
 end
-
-

@@ -1,69 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/entrust/event/ui_n22_entrust_event_end.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22EntrustEventEnd", UIN22EntrustEventBase)
 UIN22EntrustEventEnd = UIN22EntrustEventEnd
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22EntrustEventEnd.Refresh = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN22EntrustEventEnd:Refresh()
   self:_SetRoot(false)
-  if (self._component):GetBannerState() then
-    (self._component):SetBannerState(1)
+  if self._component:GetBannerState() then
+    self._component:SetBannerState(1)
   else
     self:CloseDialog()
-    return 
+    return
   end
   local cfg = self:GetCfgCampaignEntrustEvent()
-  local params = (cfg.Params)[1]
+  local params = cfg.Params[1]
   local bannerid = params.BannerID
   local bannerType = params.BannerType
   if bannerType == 1 then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIStoryController", bannerid, function()
-    -- function num : 0_0_0 , upvalues : self
+    GameGlobal.UIStateManager():ShowDialog("UIStoryController", bannerid, function()
+      self:OnStoryEnd()
+    end)
+  elseif bannerType == 2 then
+    GameGlobal.UIStateManager():ShowDialog("UIStoryBanner", bannerid, StoryBannerShowType.HalfPortrait, function()
+      self:OnStoryEnd()
+    end)
+  elseif bannerType == 3 then
     self:OnStoryEnd()
-  end
-)
-  else
-    if bannerType == 2 then
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIStoryBanner", bannerid, StoryBannerShowType.HalfPortrait, function()
-    -- function num : 0_0_1 , upvalues : self
-    self:OnStoryEnd()
-  end
-)
-    else
-      if bannerType == 3 then
-        self:OnStoryEnd()
-      end
-    end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventEnd.OnEventFinish = function(self, rewards)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.info)("UIN22EntrustEventEnd:OnEventFinish()")
-  local title = (StringTable.Get)("str_n22_entrust_event_get_rewards_title")
+function UIN22EntrustEventEnd:OnEventFinish(rewards)
+  Log.info("UIN22EntrustEventEnd:OnEventFinish()")
+  local title = StringTable.Get("str_n22_entrust_event_get_rewards_title")
   self:ShowDialog("UIN22EntrustRewardsController", title, rewards, function()
-    -- function num : 0_1_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventEnd.OnStoryEnd = function(self)
-  -- function num : 0_2
-  local pass = (self._component):IsEventPass(self._levelId, self._eventId)
+function UIN22EntrustEventEnd:OnStoryEnd()
+  local pass = self._component:IsEventPass(self._levelId, self._eventId)
   if pass then
     self:CloseDialog()
   else
     self:RequestEvent()
   end
 end
-
-

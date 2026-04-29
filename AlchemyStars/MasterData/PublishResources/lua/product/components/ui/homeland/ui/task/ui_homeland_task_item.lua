@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/task/ui_homeland_task_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandTaskItem", UICustomWidget)
 UIHomelandTaskItem = UIHomelandTaskItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandTaskItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandTaskItem:Constructor()
   self._atlas = self:GetAsset("UIHomelandTask.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandTaskItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandTaskItem:_GetComponents()
   self._stateLeft = self:GetUIComponent("Image", "StateLeft")
   self._stateTag = self:GetUIComponent("Image", "StateTag")
   self._title = self:GetUIComponent("UILocalizationText", "Title")
@@ -35,96 +22,66 @@ UIHomelandTaskItem._GetComponents = function(self)
   self._background = self:GetUIComponent("RawImageLoader", "Background")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskItem.SetData = function(self, quest, callBack)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandTaskItem:SetData(quest, callBack)
   self._quest = quest
   self._callBack = callBack
-  local questInfo = (self._quest):QuestInfo()
+  local questInfo = self._quest:QuestInfo()
   local leftSprite = "N17_task_kuang04"
   local tagSprite = "N17_task_icon06"
-  local titleColor = Color(0.36078431372549, 0.36078431372549, 0.36078431372549)
-  local valueStr = (string.format)("<color=#808080>(%d/%d)</color>", questInfo.cur_progress, questInfo.total_progress)
+  local titleColor = Color(0.3607843137254902, 0.3607843137254902, 0.3607843137254902)
+  local valueStr = string.format("<color=#808080>(%d/%d)</color>", questInfo.cur_progress, questInfo.total_progress)
   local background = "N17_task_di04"
-  if questInfo.status ~= QuestStatus.QUEST_Accepted or questInfo.status == QuestStatus.QUEST_Completed then
+  if questInfo.status == QuestStatus.QUEST_Accepted then
+  elseif questInfo.status == QuestStatus.QUEST_Completed then
     leftSprite = "N17_task_kuang05"
     tagSprite = "N17_task_icon07"
-    valueStr = (string.format)("<color=#808080>(</color><color=#faaa28>%s</color><color=#808080>/%s)</color>", questInfo.cur_progress, questInfo.total_progress)
-  else
-    if questInfo.status == QuestStatus.QUEST_Taken then
-      leftSprite = "N17_task_kuang06"
-      tagSprite = "N17_task_icon08"
-      titleColor = Color(0.69803921568627, 0.69803921568627, 0.69803921568627)
-      background = "N17_task_di05"
-    end
+    valueStr = string.format("<color=#808080>(</color><color=#faaa28>%s</color><color=#808080>/%s)</color>", questInfo.cur_progress, questInfo.total_progress)
+  elseif questInfo.status == QuestStatus.QUEST_Taken then
+    leftSprite = "N17_task_kuang06"
+    tagSprite = "N17_task_icon08"
+    titleColor = Color(0.6980392156862745, 0.6980392156862745, 0.6980392156862745)
+    background = "N17_task_di05"
   end
-  -- DECOMPILER ERROR at PC59: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self._stateLeft).sprite = (self._atlas):GetSprite(leftSprite)
-  -- DECOMPILER ERROR at PC65: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self._stateTag).sprite = (self._atlas):GetSprite(tagSprite)
-  ;
-  (self._titleRolling):RefreshText((StringTable.Get)(questInfo.QuestDesc))
-  -- DECOMPILER ERROR at PC74: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self._title).color = titleColor
-  ;
-  (self._value):SetText(valueStr)
-  ;
-  (self._stateText):SetActive(questInfo.status <= QuestStatus.QUEST_Accepted)
-  ;
-  (self._getRewardBtn):SetActive(questInfo.status == QuestStatus.QUEST_Completed)
-  ;
-  (self._gray):SetActive(questInfo.status == QuestStatus.QUEST_Taken)
-  ;
-  (self._background):LoadImage(background)
+  self._stateLeft.sprite = self._atlas:GetSprite(leftSprite)
+  self._stateTag.sprite = self._atlas:GetSprite(tagSprite)
+  self._titleRolling:RefreshText(StringTable.Get(questInfo.QuestDesc))
+  self._title.color = titleColor
+  self._value:SetText(valueStr)
+  self._stateText:SetActive(questInfo.status <= QuestStatus.QUEST_Accepted)
+  self._getRewardBtn:SetActive(questInfo.status == QuestStatus.QUEST_Completed)
+  self._gray:SetActive(questInfo.status == QuestStatus.QUEST_Taken)
+  self._background:LoadImage(background)
   self:_SetRewardItem(questInfo)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskItem._SetRewardItem = function(self, questinfo)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandTaskItem:_SetRewardItem(questinfo)
   local count = #questinfo.rewards
   if count <= 0 then
-    return 
+    return
   end
-  ;
-  (self._rewards):SpawnObjects("UIItemHomeland", count)
-  local items = (self._rewards):GetAllSpawnList()
+  self._rewards:SpawnObjects("UIItemHomeland", count)
+  local items = self._rewards:GetAllSpawnList()
   for i = 1, count do
-    local cfg = (Cfg.cfg_item)[((questinfo.rewards)[i]).assetid]
+    local cfg = Cfg.cfg_item[questinfo.rewards[i].assetid]
     if cfg then
-      (items[i]):Flush((questinfo.rewards)[i])
+      items[i]:Flush(questinfo.rewards[i])
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskItem.GetRewardBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  local cb = function()
-    -- function num : 0_5_0 , upvalues : self
+function UIHomelandTaskItem:GetRewardBtnOnClick(go)
+  local function cb()
     if self._callBack then
-      (self._callBack)(((self._quest):QuestInfo()).quest_id)
+      self._callBack(self._quest:QuestInfo().quest_id)
     end
   end
-
-  local questInfo = (self._quest):QuestInfo()
-  for index,reward in ipairs(questInfo.rewards) do
-    if reward.assetid == (UIHomelandShopHelper.GetCoinItemId)() then
-      (UIHomelandShopHelper.CheckCoinOverflow)(reward.count, cb)
-      return 
+  
+  local questInfo = self._quest:QuestInfo()
+  for index, reward in ipairs(questInfo.rewards) do
+    if reward.assetid == UIHomelandShopHelper.GetCoinItemId() then
+      UIHomelandShopHelper.CheckCoinOverflow(reward.count, cb)
+      return
     end
   end
   cb()
 end
-
-

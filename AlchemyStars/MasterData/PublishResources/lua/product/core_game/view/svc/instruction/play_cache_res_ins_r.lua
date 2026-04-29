@@ -1,87 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_cache_res_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCacheResInstruction", BaseInstruction)
 PlayCacheResInstruction = PlayCacheResInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCacheResInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCacheResInstruction:Constructor(paramList)
   self._cfgPetID = tonumber(paramList.petID)
   self._effectIDList = {}
   local str = paramList.effectIDs
-  local strIDs = (string.split)(str, "|")
-  for _,strID in ipairs(strIDs) do
-    (table.insert)(self._effectIDList, tonumber(strID))
+  local strIDs = string.split(str, "|")
+  for _, strID in ipairs(strIDs) do
+    table.insert(self._effectIDList, tonumber(strID))
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCacheResInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayCacheResInstruction:DoInstruction(TT, casterEntity, phaseContext)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCacheResInstruction.GetCacheResource = function(self, skillConfig, skinId)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayCacheResInstruction:GetCacheResource(skillConfig, skinId)
   local t = {}
-  do
-    if self._cfgPetID then
-      local curSkinId = 0
-      if skinId and skinId > 0 then
-        curSkinId = skinId
-      end
-      self:_CollectRes(t, self._cfgPetID, curSkinId)
+  if self._cfgPetID then
+    local curSkinId = 0
+    if skinId and 0 < skinId then
+      curSkinId = skinId
     end
-    for _,effID in ipairs(self._effectIDList) do
-      if effID and effID > 0 then
-        (table.insert)(t, {((Cfg.cfg_effect)[effID]).ResPath, 1})
-      end
-    end
-    return t
+    self:_CollectRes(t, self._cfgPetID, curSkinId)
   end
+  for _, effID in ipairs(self._effectIDList) do
+    if effID and 0 < effID then
+      table.insert(t, {
+        Cfg.cfg_effect[effID].ResPath,
+        1
+      })
+    end
+  end
+  return t
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCacheResInstruction._CollectRes = function(self, t, petTemplateId, skinId)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet_skin)[skinId]
+function PlayCacheResInstruction:_CollectRes(t, petTemplateId, skinId)
+  local cfg = Cfg.cfg_pet_skin[skinId]
   if not cfg then
-    return 
+    return
   end
-  do
-    if cfg.ActiveSkillEff then
-      local effectRes = cfg.ActiveSkillEff .. ".prefab"
-      ;
-      (table.insert)(t, {effectRes, 1})
-    end
-    local petCG = cfg.SimpleCG
-    if not petCG then
-      petCG = cfg.StaticBody
-    end
-    do
-      if petCG then
-        local petCGMat = petCG .. ".mat"
-        ;
-        (table.insert)(t, {petCGMat, 1})
-      end
-      local cfg_pet = (Cfg.cfg_pet)[petTemplateId]
-      if cfg_pet then
-        local logo = cfg_pet.Logo
-        if logo then
-          local petIconMat = logo .. ".mat"
-          ;
-          (table.insert)(t, {petIconMat, 1})
-        end
-      end
+  if cfg.ActiveSkillEff then
+    local effectRes = cfg.ActiveSkillEff .. ".prefab"
+    table.insert(t, {effectRes, 1})
+  end
+  local petCG = cfg.SimpleCG
+  petCG = petCG or cfg.StaticBody
+  if petCG then
+    local petCGMat = petCG .. ".mat"
+    table.insert(t, {petCGMat, 1})
+  end
+  local cfg_pet = Cfg.cfg_pet[petTemplateId]
+  if cfg_pet then
+    local logo = cfg_pet.Logo
+    if logo then
+      local petIconMat = logo .. ".mat"
+      table.insert(t, {petIconMat, 1})
     end
   end
 end
-
-

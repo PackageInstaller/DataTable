@@ -1,82 +1,470 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/homeland/cfg_homeland_movice_closing.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {Movie = 1, MovieID = 2, Condition = 3, Title = 4, Description = 5, DescIcon = 6, BSRefreshTime = 7, BSMoveSpeed = 8, Anim = 9, Face = 10, Effect = 11}
-local common = {"dy_end_title04", "dy_emoji_icon01", "happy", "Happy", "dy_end_title03", "stand", "Default", "dy_end_title02", "dy_emoji_icon02", "sad", "Sad", "dy_end_title01", "angry", "Angry", "dy_emoji_icon06", "dy_emoji_icon08", "dy_emoji_icon05", "dy_emoji_icon09", "dy_emoji_icon12", "dy_emoji_icon11"}
+local key = {
+  Movie = 1,
+  MovieID = 2,
+  Condition = 3,
+  Title = 4,
+  Description = 5,
+  DescIcon = 6,
+  BSRefreshTime = 7,
+  BSMoveSpeed = 8,
+  Anim = 9,
+  Face = 10,
+  Effect = 11
+}
+local common = {
+  "dy_end_title04",
+  "dy_emoji_icon01",
+  "happy",
+  "Happy",
+  "dy_end_title03",
+  "stand",
+  "Default",
+  "dy_end_title02",
+  "dy_emoji_icon02",
+  "sad",
+  "Sad",
+  "dy_end_title01",
+  "angry",
+  "Angry",
+  "dy_emoji_icon06",
+  "dy_emoji_icon08",
+  "dy_emoji_icon05",
+  "dy_emoji_icon09",
+  "dy_emoji_icon12",
+  "dy_emoji_icon11"
+}
 local config = {
-[10101] = {10101, 101, 4, common[1], "str_movie_closing_disc_10101", common[2], 1, 1.5, common[3], common[4]}
-, 
-[10102] = {10102, 101, 3, common[5], "str_movie_closing_disc_10102", "dy_emoji_icon04", 5, 1, common[6], common[7]}
-, 
-[10103] = {10103, 101, 2, common[8], "str_movie_closing_disc_10103", common[9], 10, 0.75, common[10], common[11]}
-, 
-[10104] = {10104, 101, 1, common[12], "str_movie_closing_disc_10104", "dy_emoji_icon07", 15, 0.5, common[13], common[14]}
-, 
-[10201] = {10201, 102, 4, common[1], "str_movie_closing_disc_10201", common[2], 1, 1.5, common[3], common[4]}
-, 
-[10202] = {10202, 102, 3, common[5], "str_movie_closing_disc_10202", common[15], 5, 1, common[6], common[7]}
-, 
-[10203] = {10203, 102, 2, common[8], "str_movie_closing_disc_10203", common[16], 10, 0.75, common[10], common[11]}
-, 
-[10204] = {10204, 102, 1, common[12], "str_movie_closing_disc_10204", common[17], 15, 0.5, common[13], common[14]}
-, 
-[10301] = {10301, 103, 4, common[1], "str_movie_closing_disc_10301", common[2], 1, 1.5, common[3], common[4]}
-, 
-[10302] = {10302, 103, 3, common[5], "str_movie_closing_disc_10302", "dy_emoji_icon10", 5, 1, common[6], common[7]}
-, 
-[10303] = {10303, 103, 2, common[8], "str_movie_closing_disc_10303", "dy_emoji_icon03", 10, 0.75, common[10], common[11]}
-, 
-[10304] = {10304, 103, 1, common[12], "str_movie_closing_disc_10304", common[18], 15, 0.5, common[13], common[14]}
-, 
-[10401] = {10401, 104, 4, common[1], "str_movie_closing_disc_10401", common[2], 1, 1.5, common[3], common[4]}
-, 
-[10402] = {10402, 104, 3, common[5], "str_movie_closing_disc_10402", common[19], 5, 1, common[6], common[7]}
-, 
-[10403] = {10403, 104, 2, common[8], "str_movie_closing_disc_10403", common[18], 10, 0.75, common[10], common[11]}
-, 
-[10404] = {10404, 104, 1, common[12], "str_movie_closing_disc_10404", common[17], 15, 0.5, common[13], common[14]}
-, 
-[10501] = {10501, 105, 4, common[1], "str_movie_closing_disc_10501", common[2], 1, 1.5, common[3], common[4]}
-, 
-[10502] = {10502, 105, 3, common[5], "str_movie_closing_disc_10502", common[19], 5, 1, common[6], common[7]}
-, 
-[10503] = {10503, 105, 2, common[8], "str_movie_closing_disc_10503", common[18], 10, 0.75, common[10], common[11]}
-, 
-[10504] = {10504, 105, 1, common[12], "str_movie_closing_disc_10504", common[9], 15, 0.5, common[13], common[14]}
-, 
-[10601] = {10601, 106, 4, common[1], "str_movie_closing_disc_10601", common[2], 1, 1.5, common[3], common[4]}
-, 
-[10602] = {10602, 106, 3, common[5], "str_movie_closing_disc_10602", common[15], 5, 1, common[6], common[7]}
-, 
-[10603] = {10603, 106, 2, common[8], "str_movie_closing_disc_10603", common[16], 10, 0.75, common[10], common[11]}
-, 
-[10604] = {10604, 106, 1, common[12], "str_movie_closing_disc_10604", common[9], 15, 0.5, common[13], common[14]}
-, 
-[20101] = {20101, 201, 4, common[1], "str_movie_closing_disc_20101", common[19], 1, 1.5, common[3], common[4]}
-, 
-[20102] = {20102, 201, 3, common[5], "str_movie_closing_disc_20102", common[19], 5, 1, common[6], common[7]}
-, 
-[20103] = {20103, 201, 2, common[8], "str_movie_closing_disc_20103", common[19], 10, 0.75, common[10], common[11]}
-, 
-[20104] = {20104, 201, 1, common[12], "str_movie_closing_disc_20104", common[19], 15, 0.5, common[13], common[14]}
-, 
-[20201] = {20201, 202, 4, common[1], "str_movie_closing_disc_20201", common[20], 1, 1.5, common[3], common[4]}
-, 
-[20202] = {20202, 202, 3, common[5], "str_movie_closing_disc_20202", common[20], 5, 1, common[6], common[7]}
-, 
-[20203] = {20203, 202, 2, common[8], "str_movie_closing_disc_20203", common[20], 10, 0.75, common[10], common[11]}
-, 
-[20204] = {20204, 202, 1, common[12], "str_movie_closing_disc_20204", common[20], 15, 0.5, common[13], common[14]}
-, 
-[20301] = {20301, 203, 4, common[1], "str_movie_closing_disc_20301", common[2], 1, 1.5, common[3], common[4]}
-, 
-[20302] = {20302, 203, 3, common[5], "str_movie_closing_disc_20302", common[2], 5, 1, common[6], common[7]}
-, 
-[20303] = {20303, 203, 2, common[8], "str_movie_closing_disc_20303", common[2], 10, 0.75, common[10], common[11]}
-, 
-[20304] = {20304, 203, 1, common[12], "str_movie_closing_disc_20304", common[2], 15, 0.5, common[13], common[14]}
+  [10101] = {
+    10101,
+    101,
+    4,
+    common[1],
+    "str_movie_closing_disc_10101",
+    common[2],
+    1,
+    1.5,
+    common[3],
+    common[4]
+  },
+  [10102] = {
+    10102,
+    101,
+    3,
+    common[5],
+    "str_movie_closing_disc_10102",
+    "dy_emoji_icon04",
+    5,
+    1,
+    common[6],
+    common[7]
+  },
+  [10103] = {
+    10103,
+    101,
+    2,
+    common[8],
+    "str_movie_closing_disc_10103",
+    common[9],
+    10,
+    0.75,
+    common[10],
+    common[11]
+  },
+  [10104] = {
+    10104,
+    101,
+    1,
+    common[12],
+    "str_movie_closing_disc_10104",
+    "dy_emoji_icon07",
+    15,
+    0.5,
+    common[13],
+    common[14]
+  },
+  [10201] = {
+    10201,
+    102,
+    4,
+    common[1],
+    "str_movie_closing_disc_10201",
+    common[2],
+    1,
+    1.5,
+    common[3],
+    common[4]
+  },
+  [10202] = {
+    10202,
+    102,
+    3,
+    common[5],
+    "str_movie_closing_disc_10202",
+    common[15],
+    5,
+    1,
+    common[6],
+    common[7]
+  },
+  [10203] = {
+    10203,
+    102,
+    2,
+    common[8],
+    "str_movie_closing_disc_10203",
+    common[16],
+    10,
+    0.75,
+    common[10],
+    common[11]
+  },
+  [10204] = {
+    10204,
+    102,
+    1,
+    common[12],
+    "str_movie_closing_disc_10204",
+    common[17],
+    15,
+    0.5,
+    common[13],
+    common[14]
+  },
+  [10301] = {
+    10301,
+    103,
+    4,
+    common[1],
+    "str_movie_closing_disc_10301",
+    common[2],
+    1,
+    1.5,
+    common[3],
+    common[4]
+  },
+  [10302] = {
+    10302,
+    103,
+    3,
+    common[5],
+    "str_movie_closing_disc_10302",
+    "dy_emoji_icon10",
+    5,
+    1,
+    common[6],
+    common[7]
+  },
+  [10303] = {
+    10303,
+    103,
+    2,
+    common[8],
+    "str_movie_closing_disc_10303",
+    "dy_emoji_icon03",
+    10,
+    0.75,
+    common[10],
+    common[11]
+  },
+  [10304] = {
+    10304,
+    103,
+    1,
+    common[12],
+    "str_movie_closing_disc_10304",
+    common[18],
+    15,
+    0.5,
+    common[13],
+    common[14]
+  },
+  [10401] = {
+    10401,
+    104,
+    4,
+    common[1],
+    "str_movie_closing_disc_10401",
+    common[2],
+    1,
+    1.5,
+    common[3],
+    common[4]
+  },
+  [10402] = {
+    10402,
+    104,
+    3,
+    common[5],
+    "str_movie_closing_disc_10402",
+    common[19],
+    5,
+    1,
+    common[6],
+    common[7]
+  },
+  [10403] = {
+    10403,
+    104,
+    2,
+    common[8],
+    "str_movie_closing_disc_10403",
+    common[18],
+    10,
+    0.75,
+    common[10],
+    common[11]
+  },
+  [10404] = {
+    10404,
+    104,
+    1,
+    common[12],
+    "str_movie_closing_disc_10404",
+    common[17],
+    15,
+    0.5,
+    common[13],
+    common[14]
+  },
+  [10501] = {
+    10501,
+    105,
+    4,
+    common[1],
+    "str_movie_closing_disc_10501",
+    common[2],
+    1,
+    1.5,
+    common[3],
+    common[4]
+  },
+  [10502] = {
+    10502,
+    105,
+    3,
+    common[5],
+    "str_movie_closing_disc_10502",
+    common[19],
+    5,
+    1,
+    common[6],
+    common[7]
+  },
+  [10503] = {
+    10503,
+    105,
+    2,
+    common[8],
+    "str_movie_closing_disc_10503",
+    common[18],
+    10,
+    0.75,
+    common[10],
+    common[11]
+  },
+  [10504] = {
+    10504,
+    105,
+    1,
+    common[12],
+    "str_movie_closing_disc_10504",
+    common[9],
+    15,
+    0.5,
+    common[13],
+    common[14]
+  },
+  [10601] = {
+    10601,
+    106,
+    4,
+    common[1],
+    "str_movie_closing_disc_10601",
+    common[2],
+    1,
+    1.5,
+    common[3],
+    common[4]
+  },
+  [10602] = {
+    10602,
+    106,
+    3,
+    common[5],
+    "str_movie_closing_disc_10602",
+    common[15],
+    5,
+    1,
+    common[6],
+    common[7]
+  },
+  [10603] = {
+    10603,
+    106,
+    2,
+    common[8],
+    "str_movie_closing_disc_10603",
+    common[16],
+    10,
+    0.75,
+    common[10],
+    common[11]
+  },
+  [10604] = {
+    10604,
+    106,
+    1,
+    common[12],
+    "str_movie_closing_disc_10604",
+    common[9],
+    15,
+    0.5,
+    common[13],
+    common[14]
+  },
+  [20101] = {
+    20101,
+    201,
+    4,
+    common[1],
+    "str_movie_closing_disc_20101",
+    common[19],
+    1,
+    1.5,
+    common[3],
+    common[4]
+  },
+  [20102] = {
+    20102,
+    201,
+    3,
+    common[5],
+    "str_movie_closing_disc_20102",
+    common[19],
+    5,
+    1,
+    common[6],
+    common[7]
+  },
+  [20103] = {
+    20103,
+    201,
+    2,
+    common[8],
+    "str_movie_closing_disc_20103",
+    common[19],
+    10,
+    0.75,
+    common[10],
+    common[11]
+  },
+  [20104] = {
+    20104,
+    201,
+    1,
+    common[12],
+    "str_movie_closing_disc_20104",
+    common[19],
+    15,
+    0.5,
+    common[13],
+    common[14]
+  },
+  [20201] = {
+    20201,
+    202,
+    4,
+    common[1],
+    "str_movie_closing_disc_20201",
+    common[20],
+    1,
+    1.5,
+    common[3],
+    common[4]
+  },
+  [20202] = {
+    20202,
+    202,
+    3,
+    common[5],
+    "str_movie_closing_disc_20202",
+    common[20],
+    5,
+    1,
+    common[6],
+    common[7]
+  },
+  [20203] = {
+    20203,
+    202,
+    2,
+    common[8],
+    "str_movie_closing_disc_20203",
+    common[20],
+    10,
+    0.75,
+    common[10],
+    common[11]
+  },
+  [20204] = {
+    20204,
+    202,
+    1,
+    common[12],
+    "str_movie_closing_disc_20204",
+    common[20],
+    15,
+    0.5,
+    common[13],
+    common[14]
+  },
+  [20301] = {
+    20301,
+    203,
+    4,
+    common[1],
+    "str_movie_closing_disc_20301",
+    common[2],
+    1,
+    1.5,
+    common[3],
+    common[4]
+  },
+  [20302] = {
+    20302,
+    203,
+    3,
+    common[5],
+    "str_movie_closing_disc_20302",
+    common[2],
+    5,
+    1,
+    common[6],
+    common[7]
+  },
+  [20303] = {
+    20303,
+    203,
+    2,
+    common[8],
+    "str_movie_closing_disc_20303",
+    common[2],
+    10,
+    0.75,
+    common[10],
+    common[11]
+  },
+  [20304] = {
+    20304,
+    203,
+    1,
+    common[12],
+    "str_movie_closing_disc_20304",
+    common[2],
+    15,
+    0.5,
+    common[13],
+    common[14]
+  }
 }
 return config, "Movie", key
-

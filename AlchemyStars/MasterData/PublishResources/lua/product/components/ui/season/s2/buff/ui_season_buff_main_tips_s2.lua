@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s2/buff/ui_season_buff_main_tips_s2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBuffMainTipsS2", UIController)
 UISeasonBuffMainTipsS2 = UISeasonBuffMainTipsS2
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBuffMainTipsS2.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonBuffMainTipsS2:OnShow(uiParams)
   self._offset = self:GetUIComponent("RectTransform", "offset")
   self.contentText = self:GetUIComponent("UILocalizationText", "Content")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffMainTipsS2.BgOnClick = function(self)
-  -- function num : 0_1
+function UISeasonBuffMainTipsS2:BgOnClick()
   self:CloseDialog()
 end
-
-

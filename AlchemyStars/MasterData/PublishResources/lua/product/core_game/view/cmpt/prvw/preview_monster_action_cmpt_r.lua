@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/preview_monster_action_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewMonsterActionComponent", Object)
 PreviewMonsterActionComponent = PreviewMonsterActionComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewMonsterActionComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PreviewMonsterActionComponent:Constructor()
   self._showMonsterAction = false
   self._monsterEntityID = -1
   self._touchPos = Vector2(0, 0)
@@ -16,138 +9,88 @@ PreviewMonsterActionComponent.Constructor = function(self)
   self._previewTaskID = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterActionComponent.SetMonsterEntityID = function(self, monsterEntityID)
-  -- function num : 0_1
+function PreviewMonsterActionComponent:SetMonsterEntityID(monsterEntityID)
   self._monsterEntityID = monsterEntityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterActionComponent.GetMonsterEntityID = function(self)
-  -- function num : 0_2
+function PreviewMonsterActionComponent:GetMonsterEntityID()
   return self._monsterEntityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterActionComponent.ShowMonsterAction = function(self, show)
-  -- function num : 0_3
+function PreviewMonsterActionComponent:ShowMonsterAction(show)
   self._showMonsterAction = show
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterActionComponent.IsShowMonsterAction = function(self)
-  -- function num : 0_4
+function PreviewMonsterActionComponent:IsShowMonsterAction()
   return self._showMonsterAction
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterActionComponent.SetTouchPosition = function(self, touchPosition, offset)
-  -- function num : 0_5
+function PreviewMonsterActionComponent:SetTouchPosition(touchPosition, offset)
   self._touchPos = touchPosition
   self._touchOffset = offset
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterActionComponent.GetTouchPosition = function(self)
-  -- function num : 0_6
+function PreviewMonsterActionComponent:GetTouchPosition()
   return self._touchPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterActionComponent.GetTouchPositionOffset = function(self)
-  -- function num : 0_7
+function PreviewMonsterActionComponent:GetTouchPositionOffset()
   return self._touchOffset
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterActionComponent.SetPreviewTaskID = function(self, tid)
-  -- function num : 0_8 , upvalues : _ENV
+function PreviewMonsterActionComponent:SetPreviewTaskID(tid)
   if self._previewTaskID and tid then
-    (Log.fatal)(self._className, "A preview task has already been started. ")
+    Log.fatal(self._className, "A preview task has already been started. ")
   end
   self._previewTaskID = tid
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterActionComponent.GetPreviewTaskID = function(self)
-  -- function num : 0_9
+function PreviewMonsterActionComponent:GetPreviewTaskID()
   return self._previewTaskID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterActionComponent.KillPreviewTask = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function PreviewMonsterActionComponent:KillPreviewTask()
   local tid = self:GetPreviewTaskID()
   if tid then
-    (TaskManager:GetInstance()):KillTask(tid)
+    TaskManager:GetInstance():KillTask(tid)
     self:SetPreviewTaskID(nil)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PreviewMonsterAction = function(self)
-  -- function num : 0_11
-  return self:GetComponent((self.WEComponentsEnum).PreviewMonsterAction)
+function Entity:PreviewMonsterAction()
+  return self:GetComponent(self.WEComponentsEnum.PreviewMonsterAction)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPreviewMonsterAction = function(self)
-  -- function num : 0_12
-  return self:HasComponent((self.WEComponentsEnum).PreviewMonsterAction)
+function Entity:HasPreviewMonsterAction()
+  return self:HasComponent(self.WEComponentsEnum.PreviewMonsterAction)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPreviewMonsterAction = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewMonsterAction
+function Entity:AddPreviewMonsterAction()
+  local index = self.WEComponentsEnum.PreviewMonsterAction
   local component = PreviewMonsterActionComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePreviewMonsterAction = function(self, show, monsterEntityID)
-  -- function num : 0_14 , upvalues : _ENV
-  do
-    if self:HasPreviewMonsterAction() then
-      local cmpt = self:PreviewMonsterAction()
-      cmpt:KillPreviewTask()
-    end
-    local world = self:GetOwnerWorld()
-    local renderEntityService = world:GetService("RenderEntity")
-    renderEntityService:DestroyMonsterPreviewAreaOutlineEntity()
-    do
-      if not show then
-        local previewActiveSkillSvc = world:GetService("PreviewActiveSkill")
-        ;
-        (world:GetService("MonsterShowRender")):MonsterGridAnimDown()
-      end
-      local index = (self.WEComponentsEnum).PreviewMonsterAction
-      local component = PreviewMonsterActionComponent:New()
-      component:SetMonsterEntityID(monsterEntityID)
-      component:ShowMonsterAction(show)
-      self:ReplaceComponent(index, component)
-    end
+function Entity:ReplacePreviewMonsterAction(show, monsterEntityID)
+  if self:HasPreviewMonsterAction() then
+    local cmpt = self:PreviewMonsterAction()
+    cmpt:KillPreviewTask()
   end
+  local world = self:GetOwnerWorld()
+  local renderEntityService = world:GetService("RenderEntity")
+  renderEntityService:DestroyMonsterPreviewAreaOutlineEntity()
+  if not show then
+    local previewActiveSkillSvc = world:GetService("PreviewActiveSkill")
+    world:GetService("MonsterShowRender"):MonsterGridAnimDown()
+  end
+  local index = self.WEComponentsEnum.PreviewMonsterAction
+  local component = PreviewMonsterActionComponent:New()
+  component:SetMonsterEntityID(monsterEntityID)
+  component:ShowMonsterAction(show)
+  self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePreviewMonsterAction = function(self)
-  -- function num : 0_15
+function Entity:RemovePreviewMonsterAction()
   if self:HasPreviewMonsterAction() then
     local cmpt = self:PreviewMonsterAction()
     cmpt:KillPreviewTask()
@@ -155,10 +98,7 @@ Entity.RemovePreviewMonsterAction = function(self)
     local renderEntityService = world:GetService("RenderEntity")
     renderEntityService:DestroyMonsterPreviewAreaOutlineEntity()
     local previewActiveSkillSvc = world:GetService("PreviewActiveSkill")
-    ;
-    (world:GetService("MonsterShowRender")):MonsterGridAnimDown()
-    self:RemoveComponent((self.WEComponentsEnum).PreviewMonsterAction)
+    world:GetService("MonsterShowRender"):MonsterGridAnimDown()
+    self:RemoveComponent(self.WEComponentsEnum.PreviewMonsterAction)
   end
 end
-
-

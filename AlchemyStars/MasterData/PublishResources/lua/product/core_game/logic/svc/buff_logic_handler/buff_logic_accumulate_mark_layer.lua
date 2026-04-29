@@ -1,25 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_accumulate_mark_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAccumulateMarkLayer", BuffLogicBase)
 BuffLogicAccumulateMarkLayer = BuffLogicAccumulateMarkLayer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAccumulateMarkLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAccumulateMarkLayer:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAccumulateMarkLayer.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local curMarkLayer = (self._buffInstance):AddLayerCount(1)
-  self:PrintBuffLogicLog("BuffLogicAccumulateMarkLayer entity=", (self._entity):GetID(), " layer=", curMarkLayer)
-  local buffResult = BuffResultAccumulateMarkLayer:New((notify:GetAttackerEntity()):GetID(), (notify:GetDefenderEntity()):GetID(), notify:GetAttackPos(), curMarkLayer)
+function BuffLogicAccumulateMarkLayer:DoLogic(notify)
+  local curMarkLayer = self._buffInstance:AddLayerCount(1)
+  self:PrintBuffLogicLog("BuffLogicAccumulateMarkLayer entity=", self._entity:GetID(), " layer=", curMarkLayer)
+  local buffResult = BuffResultAccumulateMarkLayer:New(notify:GetAttackerEntity():GetID(), notify:GetDefenderEntity():GetID(), notify:GetAttackPos(), curMarkLayer)
   return buffResult
 end
-
-

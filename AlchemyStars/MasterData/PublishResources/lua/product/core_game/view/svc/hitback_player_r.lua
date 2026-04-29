@@ -1,29 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/hitback_player_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_svc_r")
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillService.ProcessHit = function(self, attacker, defenter, hitBackData, hitBackSpeed)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillService:ProcessHit(attacker, defenter, hitBackData, hitBackSpeed)
   if hitBackData then
-    local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self.HitProcessTask, self, attacker, defenter, hitBackData, hitBackSpeed)
+    local taskID = GameGlobal.TaskManager():CoreGameStartTask(self.HitProcessTask, self, attacker, defenter, hitBackData, hitBackSpeed)
     return taskID
   else
-    do
-      do return  end
-    end
+    return
   end
 end
 
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillService.HitProcessTask = function(self, TT, attacker, defender, result, hitBackSpeed)
-  -- function num : 0_1 , upvalues : _ENV
-  local defenderID = (defender:GetID())
-  local defenderHPMaster, defenderEntity = nil, nil
+function PlaySkillService:HitProcessTask(TT, attacker, defender, result, hitBackSpeed)
+  local defenderID = defender:GetID()
+  local defenderHPMaster, defenderEntity
   if defender:Team() then
     defenderHPMaster = defender
     defenderEntity = defender:GetTeamLeaderPetEntity()
@@ -31,188 +19,155 @@ PlaySkillService.HitProcessTask = function(self, TT, attacker, defender, result,
     defenderHPMaster = defender
     defenderEntity = defender
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local utilDataSvc = self._world:GetService("UtilData")
+  local boardServiceRender = self._world:GetService("BoardRender")
   local pieceChangeTable = result:GetGridElementChangeTable()
   local emptyGrids = {}
   if pieceChangeTable ~= nil then
-    for pos,pieceType in pairs(pieceChangeTable) do
+    for pos, pieceType in pairs(pieceChangeTable) do
       if not utilDataSvc:IsPosExistNegtiveBlock(pos) then
         emptyGrids[#emptyGrids + 1] = boardServiceRender:CreateEmptyGridEffectEntity(pos)
       end
     end
   end
-  do
-    local startPos = boardServiceRender:GetRealEntityGridPos(defenderEntity)
-    local speed = self._hitBackSpeed
-    if hitBackSpeed then
-      speed = hitBackSpeed
-    end
-    if not defenderEntity:HasHitback() then
-      defenderEntity:AddHitback(startPos, speed, result:GetPosTarget(), result:GetHitDir())
-    end
-    while defenderEntity:HasHitback() and not (defenderEntity:Hitback()):IsHitbackEnd() do
-      YIELD(TT)
-    end
-    self:_OnEventHitback_End(TT, defenderEntity, result)
-    for i = 1, #emptyGrids do
-      (self._world):DestroyEntity(emptyGrids[i])
-    end
-    local svcPlayBuff = (self._world):GetService("PlayBuff")
-    if pieceChangeTable ~= nil then
-      for pos,pieceType in pairs(pieceChangeTable) do
-        if not utilDataSvc:IsPosExistNegtiveBlock(pos) then
-          boardServiceRender:ReCreateGridEntity(pieceType, pos, false)
-          svcPlayBuff:_SendNTGridConvertRender(TT, pos, pieceType, SkillEffectType.HitBack)
-        end
-      end
-      local isPlayer = defenderEntity:HasPet()
-      if isPlayer == true then
-        boardServiceRender:ReCreateGridEntity(result:GetColorNew(), defenderEntity:GetRenderGridPosition())
-      else
-        local piece_service = (self._world):GetService("Piece")
-        if piece_service then
-          piece_service:RefreshPieceAnim()
-        end
+  local startPos = boardServiceRender:GetRealEntityGridPos(defenderEntity)
+  local speed = self._hitBackSpeed
+  if hitBackSpeed then
+    speed = hitBackSpeed
+  end
+  if not defenderEntity:HasHitback() then
+    defenderEntity:AddHitback(startPos, speed, result:GetPosTarget(), result:GetHitDir())
+  end
+  while defenderEntity:HasHitback() and not defenderEntity:Hitback():IsHitbackEnd() do
+    YIELD(TT)
+  end
+  self:_OnEventHitback_End(TT, defenderEntity, result)
+  for i = 1, #emptyGrids do
+    self._world:DestroyEntity(emptyGrids[i])
+  end
+  local svcPlayBuff = self._world:GetService("PlayBuff")
+  if pieceChangeTable ~= nil then
+    for pos, pieceType in pairs(pieceChangeTable) do
+      if not utilDataSvc:IsPosExistNegtiveBlock(pos) then
+        boardServiceRender:ReCreateGridEntity(pieceType, pos, false)
+        svcPlayBuff:_SendNTGridConvertRender(TT, pos, pieceType, SkillEffectType.HitBack)
       end
     end
-    do
-      ;
-      ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTHitBackEnd:New(attacker, defender, result:GetStartPos(), result:GetPosTarget(), result:GetHitDir()))
+    local isPlayer = defenderEntity:HasPet()
+    if isPlayer == true then
+      boardServiceRender:ReCreateGridEntity(result:GetColorNew(), defenderEntity:GetRenderGridPosition())
+    else
+      local piece_service = self._world:GetService("Piece")
+      if piece_service then
+        piece_service:RefreshPieceAnim()
+      end
     end
   end
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, NTHitBackEnd:New(attacker, defender, result:GetStartPos(), result:GetPosTarget(), result:GetHitDir()))
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillService._OnEventHitback_End = function(self, TT, entityWork, hitbackResult)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySkillService:_OnEventHitback_End(TT, entityWork, hitbackResult)
   entityWork:RemoveHitback()
   local nEntityID = entityWork:GetID()
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local utilDataSvc = self._world:GetService("UtilData")
   local posTarget = hitbackResult:GetPosTarget()
-  local trapServiceRender = (self._world):GetService("TrapRender")
+  local trapServiceRender = self._world:GetService("TrapRender")
   if entityWork:HasBodyArea() then
-    local bodyArea = (entityWork:BodyArea()):GetArea()
-    do
-      for _,areaPos in ipairs(bodyArea) do
-        trapServiceRender:ShowHideTrapAtPos(areaPos + posTarget, false)
-      end
+    local bodyArea = entityWork:BodyArea():GetArea()
+    for _, areaPos in ipairs(bodyArea) do
+      trapServiceRender:ShowHideTrapAtPos(areaPos + posTarget, false)
     end
   else
-    do
-      trapServiceRender:ShowHideTrapAtPos(posTarget, false)
-      local pieceService = (self._world):GetService("Piece")
-      pieceService:RemovePrismAt(hitbackResult:GetGridPos())
-      local trapIds = hitbackResult:GetTriggerTrapIds()
-      local listTask = {}
-      if trapIds then
-        local hadTrapGroundId = {}
-        local listTrapTrigger = {}
-        for i,id in ipairs(trapIds) do
-          local e = (self._world):GetEntityByID(id)
-          if e then
-            local trapRender = e:TrapRender()
-            local groupID = trapRender:GetGroupID()
-            if groupID == 0 or not (table.icontains)(hadTrapGroundId, groupID) then
-              if not (table.icontains)(hadTrapGroundId, groupID) then
-                (table.insert)(hadTrapGroundId, groupID)
-              end
-              listTrapTrigger[#listTrapTrigger + 1] = e
-            end
-          end
-        end
-        local nTask = ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : trapServiceRender, listTrapTrigger, entityWork
-    trapServiceRender:PlayTrapTriggerSkillTasks(TT, listTrapTrigger, true, entityWork)
+    trapServiceRender:ShowHideTrapAtPos(posTarget, false)
   end
-)
-        ;
-        (table.insert)(listTask, nTask)
-      end
-      do
-        ;
-        (Log.debug)("[HitBack] 击退完成，nEntityID =", nEntityID, "StartPos =", (GameHelper.MakePosString)(hitbackResult:GetStartPos()), "TargetPos =", (GameHelper.MakePosString)(hitbackResult:GetPosTarget()))
-        local entityRenderService = (self._world):GetService("RenderEntity")
-        if entityWork:HasMonsterID() then
-          entityRenderService:CreateMonsterAreaOutlineEntity(entityWork)
-        end
-        self:_DoEvent_HitbackEndOneNew(TT, nEntityID, hitbackResult)
-        while not (TaskHelper:GetInstance()):IsAllTaskFinished(listTask) do
-          YIELD(TT)
-        end
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillService._DoEvent_HitbackEndOneNew = function(self, TT, entityID, hitbackResult)
-  -- function num : 0_3 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local entity = (self._world):GetEntityByID(entityID)
-  if entity:HasPetPstID() then
-    entityID = (entity:Pet()):GetOwnerTeamEntity()
-  end
+  local pieceService = self._world:GetService("Piece")
+  pieceService:RemovePrismAt(hitbackResult:GetGridPos())
+  local trapIds = hitbackResult:GetTriggerTrapIds()
   local listTask = {}
-  do
-    if hitbackResult:GetHitDir() then
-      local nTask = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._TriggerBomb, self, hitbackResult)
-      ;
-      (table.insert)(listTask, nTask)
-    end
-    self:_WaitTaskFinished(TT, listTask)
-  end
-end
-
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillService._TriggerBomb = function(self, TT, hitbackResult)
-  -- function num : 0_4 , upvalues : _ENV
-  local trapServiceRender = (self._world):GetService("TrapRender")
-  local entityWork = (self._world):GetEntityByID(hitbackResult:GetTargetID())
-  if entityWork == nil then
-    return 
-  end
-  local bombTrapEntityID = hitbackResult:GetBombTrapEntityID()
-  if bombTrapEntityID == nil then
-    return 
-  end
-  local bombTrapEntity = (self._world):GetEntityByID(bombTrapEntityID)
-  if bombTrapEntity == nil then
-    return 
-  end
-  local posTarget = hitbackResult:GetPosTarget()
-  do
-    if entityWork:HasTeam() or entityWork:HasPetPstID() or entityWork:HasMonsterID() then
-      local posDir = hitbackResult:GetHitDir()
-      if posDir then
-        posTarget = posTarget + posDir
+  if trapIds then
+    local hadTrapGroundId = {}
+    local listTrapTrigger = {}
+    for i, id in ipairs(trapIds) do
+      local e = self._world:GetEntityByID(id)
+      if e then
+        local trapRender = e:TrapRender()
+        local groupID = trapRender:GetGroupID()
+        if groupID == 0 or not table.icontains(hadTrapGroundId, groupID) then
+          if not table.icontains(hadTrapGroundId, groupID) then
+            table.insert(hadTrapGroundId, groupID)
+          end
+          listTrapTrigger[#listTrapTrigger + 1] = e
+        end
       end
     end
-    local listBomb = {bombTrapEntity}
-    trapServiceRender:PlayTrapTriggerSkillTasks(TT, listBomb, true, entityWork)
-    hitbackResult:ClearHitDir()
-    if (table.count)(listBomb) > 0 then
-      trapServiceRender:ShowHideTrapAtPos(posTarget, true)
-      trapServiceRender:DestroyTrapList(TT, listBomb)
-      local playBuffService = (self._world):GetService("PlayBuff")
-      playBuffService:PlayBuffView(TT, NTTrapAction:New(nil))
-      ;
-      (Log.debug)("[HitBack] 击退引爆炸弹, ", (GameHelper.MakePosString)(posTarget))
-    end
+    local nTask = GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      trapServiceRender:PlayTrapTriggerSkillTasks(TT, listTrapTrigger, true, entityWork)
+    end)
+    table.insert(listTask, nTask)
   end
-end
-
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillService._WaitTaskFinished = function(self, TT, listWaitTask)
-  -- function num : 0_5 , upvalues : _ENV
-  while listWaitTask and (table.count)(listWaitTask) > 0 and not (TaskHelper:GetInstance()):IsAllTaskFinished(listWaitTask) do
+  Log.debug("[HitBack] 击退完成，nEntityID =", nEntityID, "StartPos =", GameHelper.MakePosString(hitbackResult:GetStartPos()), "TargetPos =", GameHelper.MakePosString(hitbackResult:GetPosTarget()))
+  local entityRenderService = self._world:GetService("RenderEntity")
+  if entityWork:HasMonsterID() then
+    entityRenderService:CreateMonsterAreaOutlineEntity(entityWork)
+  end
+  self:_DoEvent_HitbackEndOneNew(TT, nEntityID, hitbackResult)
+  while not TaskHelper:GetInstance():IsAllTaskFinished(listTask) do
     YIELD(TT)
   end
 end
 
+function PlaySkillService:_DoEvent_HitbackEndOneNew(TT, entityID, hitbackResult)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local entity = self._world:GetEntityByID(entityID)
+  if entity:HasPetPstID() then
+    entityID = entity:Pet():GetOwnerTeamEntity()
+  end
+  local listTask = {}
+  if hitbackResult:GetHitDir() then
+    local nTask = GameGlobal.TaskManager():CoreGameStartTask(self._TriggerBomb, self, hitbackResult)
+    table.insert(listTask, nTask)
+  end
+  self:_WaitTaskFinished(TT, listTask)
+end
 
+function PlaySkillService:_TriggerBomb(TT, hitbackResult)
+  local trapServiceRender = self._world:GetService("TrapRender")
+  local entityWork = self._world:GetEntityByID(hitbackResult:GetTargetID())
+  if nil == entityWork then
+    return
+  end
+  local bombTrapEntityID = hitbackResult:GetBombTrapEntityID()
+  if nil == bombTrapEntityID then
+    return
+  end
+  local bombTrapEntity = self._world:GetEntityByID(bombTrapEntityID)
+  if nil == bombTrapEntity then
+    return
+  end
+  local posTarget = hitbackResult:GetPosTarget()
+  if entityWork:HasTeam() or entityWork:HasPetPstID() or entityWork:HasMonsterID() then
+    local posDir = hitbackResult:GetHitDir()
+    if posDir then
+      posTarget = posTarget + posDir
+    end
+  end
+  local listBomb = {bombTrapEntity}
+  trapServiceRender:PlayTrapTriggerSkillTasks(TT, listBomb, true, entityWork)
+  hitbackResult:ClearHitDir()
+  if table.count(listBomb) > 0 then
+    trapServiceRender:ShowHideTrapAtPos(posTarget, true)
+    trapServiceRender:DestroyTrapList(TT, listBomb)
+    local playBuffService = self._world:GetService("PlayBuff")
+    playBuffService:PlayBuffView(TT, NTTrapAction:New(nil))
+    Log.debug("[HitBack] 击退引爆炸弹, ", GameHelper.MakePosString(posTarget))
+  end
+end
+
+function PlaySkillService:_WaitTaskFinished(TT, listWaitTask)
+  if listWaitTask and table.count(listWaitTask) > 0 then
+    while not TaskHelper:GetInstance():IsAllTaskFinished(listWaitTask) do
+      YIELD(TT)
+    end
+  end
+end

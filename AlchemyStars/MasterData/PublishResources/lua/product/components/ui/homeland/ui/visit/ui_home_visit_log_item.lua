@@ -1,33 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/visit/ui_home_visit_log_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeVisitLogItem", UICustomWidget)
 UIHomeVisitLogItem = UIHomeVisitLogItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeVisitLogItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomeVisitLogItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitLogItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIHomeVisitLogItem:InitWidget()
   self.content = self:GetUIComponent("UILocalizationText", "content")
   self.time = self:GetUIComponent("UILocalizationText", "time")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitLogItem.SetData = function(self, data)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.content):SetText(data:Content())
-  local tb = (os.date)("*t", data:Time())
-  ;
-  (self.time):SetText(tb.year .. "." .. tb.month .. "." .. tb.day)
+function UIHomeVisitLogItem:SetData(data)
+  self.content:SetText(data:Content())
+  local tb = os.date("*t", data:Time())
+  self.time:SetText(tb.year .. "." .. tb.month .. "." .. tb.day)
 end
-
-

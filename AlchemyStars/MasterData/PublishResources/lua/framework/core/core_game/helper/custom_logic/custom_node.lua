@@ -1,40 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/helper/custom_logic/custom_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ICustomNode", Object)
 ICustomNode = ICustomNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ICustomNode.InitializeNode = function(self, staticConfig, runtimeContext)
-  -- function num : 0_0
+function ICustomNode:InitializeNode(staticConfig, runtimeContext)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ICustomNode.Activate = function(self)
-  -- function num : 0_1
+function ICustomNode:Activate()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ICustomNode.Deactivate = function(self)
-  -- function num : 0_2
+function ICustomNode:Deactivate()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ICustomNode.IsActive = function(self)
-  -- function num : 0_3
+function ICustomNode:IsActive()
 end
 
 _class("CustomNodeContext", Object)
 CustomNodeContext = CustomNodeContext
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-CustomNodeContext.Constructor = function(self, genInfo, rootNode, configMng)
-  -- function num : 0_4
+function CustomNodeContext:Constructor(genInfo, rootNode, configMng)
   self.GenInfo = genInfo
   self.Logic = rootNode
   self.ConfigMng = configMng
@@ -43,98 +25,65 @@ end
 
 _class("CustomNode", ICustomNode)
 CustomNode = CustomNode
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-CustomNode.Constructor = function(self)
-  -- function num : 0_5
+function CustomNode:Constructor()
   self.isActive = false
   self.varLibRef = nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomNode.Destroy = function(self)
-  -- function num : 0_6
+function CustomNode:Destroy()
   self:Deactivate()
   self.varLibRef = nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomNode.InitializeNode = function(self, cfg, context)
-  -- function num : 0_7
-  self.varLibRef = (context.Logic).varLibImp
+function CustomNode:InitializeNode(cfg, context)
+  self.varLibRef = context.Logic.varLibImp
   self.Config = cfg
   self.Logic = context.Logic
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomNode.Activate = function(self)
-  -- function num : 0_8
+function CustomNode:Activate()
   self.isActive = true
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomNode.Deactivate = function(self)
-  -- function num : 0_9
+function CustomNode:Deactivate()
   self.isActive = false
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomNode.IsActive = function(self)
-  -- function num : 0_10
+function CustomNode:IsActive()
   return self.isActive
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomNode.CollectInterface = function(self, interfaceList, funcName)
-  -- function num : 0_11
+function CustomNode:CollectInterface(interfaceList, funcName)
   if self[funcName] then
     interfaceList:PushBack(self)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomNode.CollectInterfaceInChildren = function(self, interfaceList, funcName)
-  -- function num : 0_12
+function CustomNode:CollectInterfaceInChildren(interfaceList, funcName)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomNode.Parse = function(self, param)
-  -- function num : 0_13 , upvalues : _ENV
+function CustomNode:Parse(param)
   if not param then
     return nil
   end
   if type(param) == "string" then
-    local i, j = (string.find)(param, "BB#")
+    local i, j = string.find(param, "BB#")
     if not j then
       return param
     else
-      local bb_key = (string.sub)(param, j + 1, -1)
-      return (self.varLibRef)[bb_key]
+      local bb_key = string.sub(param, j + 1, -1)
+      return self.varLibRef[bb_key]
     end
   else
-    do
-      do return param end
-    end
+    return param
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomNode.CloneVarLibRef = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function CustomNode:CloneVarLibRef()
   local cloned = {}
-  for k,v in pairs(self.varLibRef) do
+  for k, v in pairs(self.varLibRef) do
     cloned[k] = v
   end
   return cloned
 end
-
-

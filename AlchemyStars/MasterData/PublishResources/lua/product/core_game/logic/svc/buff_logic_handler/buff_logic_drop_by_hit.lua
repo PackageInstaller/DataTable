@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_drop_by_hit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicDropByHit", BuffLogicBase)
 BuffLogicDropByHit = BuffLogicDropByHit
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDropByHit.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicDropByHit:Constructor(buffInstance, logicParam)
   self._hitCount = logicParam.hitCount
   self._hitEffectID = logicParam.hitEffectID
   self._dropList = logicParam.dropList
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDropByHit.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("DropHitCount", self._hitCount)
-  ;
-  (e:BuffComponent()):SetBuffValue("DropByCountEffectID", self._hitEffectID)
-  ;
-  (e:BuffComponent()):SetBuffValue("DropListByHit", self._dropList)
+function BuffLogicDropByHit:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("DropHitCount", self._hitCount)
+  e:BuffComponent():SetBuffValue("DropByCountEffectID", self._hitEffectID)
+  e:BuffComponent():SetBuffValue("DropListByHit", self._dropList)
 end
-
-

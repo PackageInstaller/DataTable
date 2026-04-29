@@ -1,108 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/valentine/ui/widgets/ui_activity_valentine_get_item_a.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_item_node")
 _class("UIActivityValentineGetItemA", UICustomWidget)
 UIActivityValentineGetItemA = UIActivityValentineGetItemA
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityValentineGetItemA.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityValentineGetItemA:Constructor()
   self._longTrigger = false
   self._perSecondCout = 2
   self._perNextSecondCout = 5
   self._uiCommonAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineGetItemA.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._transform = (self:GetGameObject()).transform
+function UIActivityValentineGetItemA:OnShow(uiParams)
+  self._transform = self:GetGameObject().transform
   self._nodes = {}
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.Normal] = UIItemNormalNode:New(self:GetUIComponent("UIView", "g_normal"), self)
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.Exp] = UIItemExpNode:New(self:GetUIComponent("UIView", "g_exp"), self)
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.Res] = UIItemResNode:New(self:GetUIComponent("UIView", "g_res"), self)
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.Reduce] = UIItemReduceNode:New(self:GetUIComponent("UIView", "g_reduce"), self)
-  -- DECOMPILER ERROR at PC65: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.Love] = UIItemLoveNode:New(self:GetUIComponent("UIView", "g_love"), self)
-  -- DECOMPILER ERROR at PC77: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.Award] = UIItemAwardNode:New(self:GetUIComponent("UIView", "g_award"), self)
-  -- DECOMPILER ERROR at PC89: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.Result] = UIItemResultNode:New(self:GetUIComponent("UIView", "g_result"), self)
-  -- DECOMPILER ERROR at PC101: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.TopAward] = UIItemTopAwardNode:New(self:GetUIComponent("UIView", "g_topaward"), self)
-  -- DECOMPILER ERROR at PC113: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.Activity] = UIItemActivityNode:New(self:GetUIComponent("UIView", "g_activity"), self)
-  -- DECOMPILER ERROR at PC125: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.ReturnHelp] = UIItemReturnHelpNode:New(self:GetUIComponent("UIView", "g_returnHelp"), self)
+  self._nodes[UIItemNode.Normal] = UIItemNormalNode:New(self:GetUIComponent("UIView", "g_normal"), self)
+  self._nodes[UIItemNode.Exp] = UIItemExpNode:New(self:GetUIComponent("UIView", "g_exp"), self)
+  self._nodes[UIItemNode.Res] = UIItemResNode:New(self:GetUIComponent("UIView", "g_res"), self)
+  self._nodes[UIItemNode.Reduce] = UIItemReduceNode:New(self:GetUIComponent("UIView", "g_reduce"), self)
+  self._nodes[UIItemNode.Love] = UIItemLoveNode:New(self:GetUIComponent("UIView", "g_love"), self)
+  self._nodes[UIItemNode.Award] = UIItemAwardNode:New(self:GetUIComponent("UIView", "g_award"), self)
+  self._nodes[UIItemNode.Result] = UIItemResultNode:New(self:GetUIComponent("UIView", "g_result"), self)
+  self._nodes[UIItemNode.TopAward] = UIItemTopAwardNode:New(self:GetUIComponent("UIView", "g_topaward"), self)
+  self._nodes[UIItemNode.Activity] = UIItemActivityNode:New(self:GetUIComponent("UIView", "g_activity"), self)
+  self._nodes[UIItemNode.ReturnHelp] = UIItemReturnHelpNode:New(self:GetUIComponent("UIView", "g_returnHelp"), self)
   self._chooseGO = self:GetGameObject("choose")
   self:Select(false)
   self._btnGO = self:GetGameObject("btn")
   self._btnImage = self:GetUIComponent("Image", "btn")
-  self._anim = ((self:GetGameObject()).transform):GetComponent("Animation")
+  self._anim = self:GetGameObject().transform:GetComponent("Animation")
   self:SetBtnImage(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineGetItemA.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityValentineGetItemA:OnHide()
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
   end
   self._longTrigger = false
-  for uiItemNode,node in pairs(self._nodes) do
+  for uiItemNode, node in pairs(self._nodes) do
     node:Hide()
   end
   self._nodes = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineGetItemA.PlayAni = function(self, aniName)
-  -- function num : 0_3
+function UIActivityValentineGetItemA:PlayAni(aniName)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineGetItemA.SetForm = function(self, type, scale, dontPlayAni)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityValentineGetItemA:SetForm(type, scale, dontPlayAni)
   self._uiItemForm = type
   self._curNodes = {}
   local customer = UIItemCustomer[self._uiItemForm]
-  for uiItemNode,node in pairs(self._nodes) do
-    local i = (table.ikey)(customer, uiItemNode)
-    if i and i > 0 then
+  for uiItemNode, node in pairs(self._nodes) do
+    local i = table.ikey(customer, uiItemNode)
+    if i and 0 < i then
       node:Enable(true)
-      ;
-      (table.insert)(self._curNodes, node)
+      table.insert(self._curNodes, node)
     else
       node:Enable(false)
     end
@@ -113,106 +63,71 @@ UIActivityValentineGetItemA.SetForm = function(self, type, scale, dontPlayAni)
   self:SetScale(scale)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineGetItemA.SetData = function(self, params)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityValentineGetItemA:SetData(params)
   if not self._uiItemData then
     self._uiItemData = UIItemData:New()
   end
-  ;
-  (self._uiItemData):SetParams(params)
-  for _,node in pairs(self._curNodes) do
+  self._uiItemData:SetParams(params)
+  for _, node in pairs(self._curNodes) do
     node:Show(self._uiItemData, self._uiItemForm)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineGetItemA.ShowNodes = function(self, uiItemNode, enable)
-  -- function num : 0_6
-  if (self._nodes)[uiItemNode] then
-    ((self._nodes)[uiItemNode]):Enable(enable)
+function UIActivityValentineGetItemA:ShowNodes(uiItemNode, enable)
+  if self._nodes[uiItemNode] then
+    self._nodes[uiItemNode]:Enable(enable)
   end
 end
 
 local middleScaleCls = {UIStage = true, UIExtraMissionStageController = true}
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityValentineGetItemA.SetScale = function(self, scale)
-  -- function num : 0_7 , upvalues : _ENV
-  if not scale then
-    scale = 1
-  end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIActivityValentineGetItemA:SetScale(scale)
+  scale = scale or 1
   if self._transform then
-    (self._transform).localScale = Vector3(scale, scale, scale)
+    self._transform.localScale = Vector3(scale, scale, scale)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetItemA.Select = function(self, select, noAnim)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityValentineGetItemA:Select(select, noAnim)
   if self._chooseGO then
-    (self._chooseGO):SetActive(select)
+    self._chooseGO:SetActive(select)
     if select then
       if noAnim then
-        return 
+        return
       end
       if self._tweener then
-        (self._tweener):Kill(true)
+        self._tweener:Kill(true)
       end
-      self._tweener = (self._transform):DOPunchScale(Vector3(0.1, 0.1, 0.1), 0.2)
+      self._tweener = self._transform:DOPunchScale(Vector3(0.1, 0.1, 0.1), 0.2)
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetItemA.SetClickCallBack = function(self, callBack, param)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityValentineGetItemA:SetClickCallBack(callBack, param)
   self._clickCallBack = callBack
   self._param = param
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btnGO), UIEvent.Click, function(go)
-    -- function num : 0_9_0 , upvalues : self
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btnGO), UIEvent.Click, function(go)
     if self._longTrigger == false then
       self:BtnOnClick(go)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetItemA.BtnOnClick = function(self, go)
-  -- function num : 0_10
+function UIActivityValentineGetItemA:BtnOnClick(go)
   if self._clickCallBack then
-    (self._clickCallBack)(go)
+    self._clickCallBack(go)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetItemA.SetBtnImage = function(self, bImage)
-  -- function num : 0_11
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIActivityValentineGetItemA:SetBtnImage(bImage)
   if bImage then
-    (self._btnImage).sprite = (self._uiCommonAtlas):GetSprite("spirit_dikuang10_frame")
+    self._btnImage.sprite = self._uiCommonAtlas:GetSprite("spirit_dikuang10_frame")
   else
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._btnImage).sprite = (self._uiCommonAtlas):GetSprite("spirit_dikuang1_frame")
+    self._btnImage.sprite = self._uiCommonAtlas:GetSprite("spirit_dikuang1_frame")
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetItemA.SetLongPressCallBack = function(self, longPressCallBack, longPressUpCallBack, pressTime, update)
-  -- function num : 0_12
+function UIActivityValentineGetItemA:SetLongPressCallBack(longPressCallBack, longPressUpCallBack, pressTime, update)
   self._longPressCallBack = longPressCallBack
   self._longPressUpCallBack = longPressUpCallBack
   self._pressTimeConst = pressTime
@@ -221,84 +136,62 @@ UIActivityValentineGetItemA.SetLongPressCallBack = function(self, longPressCallB
   self:InitLongPress()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetItemA.SetReduceLongPressCallBack = function(self, sec)
-  -- function num : 0_13 , upvalues : _ENV
-  if (self._nodes)[UIItemNode.Reduce] then
-    ((self._nodes)[UIItemNode.Reduce]):SetReduceLongPressCallBack(sec)
+function UIActivityValentineGetItemA:SetReduceLongPressCallBack(sec)
+  if self._nodes[UIItemNode.Reduce] then
+    self._nodes[UIItemNode.Reduce]:SetReduceLongPressCallBack(sec)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetItemA.InitLongPress = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btnGO), UIEvent.Press, function(go)
-    -- function num : 0_14_0 , upvalues : self, _ENV
+function UIActivityValentineGetItemA:InitLongPress()
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btnGO), UIEvent.Press, function(go)
     if self._timerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+      GameGlobal.Timer():CancelEvent(self._timerEvent)
       self._timerEvent = nil
     end
     self:LongEvent()
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btnGO), UIEvent.Unhovered, function(go)
-    -- function num : 0_14_1 , upvalues : self, _ENV
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btnGO), UIEvent.Unhovered, function(go)
     if self._timerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+      GameGlobal.Timer():CancelEvent(self._timerEvent)
       self._pressTime = self._pressTimeConst
       self._longTrigger = false
       self._timerEvent = nil
     end
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btnGO), UIEvent.Release, function(go)
-    -- function num : 0_14_2 , upvalues : self, _ENV
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btnGO), UIEvent.Release, function(go)
     if self._timerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+      GameGlobal.Timer():CancelEvent(self._timerEvent)
       self._pressTime = self._pressTimeConst
       self._longTrigger = false
       if self._longPressUpCallBack then
-        (self._longPressUpCallBack)()
+        self._longPressUpCallBack()
       end
       self._timerEvent = nil
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetItemA.LongEvent = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  self._timerEvent = ((GameGlobal.Timer)()):AddEvent(self._pressTime, function()
-    -- function num : 0_15_0 , upvalues : _ENV, self
-    if (GuideHelper.IsUIGuideShow)() then
-      return 
+function UIActivityValentineGetItemA:LongEvent()
+  self._timerEvent = GameGlobal.Timer():AddEvent(self._pressTime, function()
+    if GuideHelper.IsUIGuideShow() then
+      return
     end
     self._longTrigger = true
-    do
-      if self._longPressCallBack then
-        local count = (self._longPressCallBack)()
-        if count then
-          self:Calculate(count)
-        end
-      end
-      if self._update then
-        self:LongEvent()
+    if self._longPressCallBack then
+      local count = self._longPressCallBack()
+      if count then
+        self:Calculate(count)
       end
     end
-  end
-)
+    if self._update then
+      self:LongEvent()
+    end
+  end)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetItemA.Calculate = function(self, count)
-  -- function num : 0_16 , upvalues : _ENV
-  local presse_count = ((Cfg.cfg_global).pet_up_level_presse_count).IntValue
-  local next_presse_count = ((Cfg.cfg_global).pet_up_level_next_presse_count).IntValue
+function UIActivityValentineGetItemA:Calculate(count)
+  local presse_count = Cfg.cfg_global.pet_up_level_presse_count.IntValue
+  local next_presse_count = Cfg.cfg_global.pet_up_level_next_presse_count.IntValue
   local real_presse_count = count
   if presse_count <= real_presse_count then
     self._pressTime = self._pressTimeConst / self._perSecondCout
@@ -308,20 +201,12 @@ UIActivityValentineGetItemA.Calculate = function(self, count)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetItemA.GetBtn = function(self)
-  -- function num : 0_17
+function UIActivityValentineGetItemA:GetBtn()
   return self._btnGO
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetItemA.RealBtnBgOnClick = function(self, go)
-  -- function num : 0_18
+function UIActivityValentineGetItemA:RealBtnBgOnClick(go)
   if self._clickCallBack then
-    (self._clickCallBack)(go)
+    self._clickCallBack(go)
   end
 end
-
-

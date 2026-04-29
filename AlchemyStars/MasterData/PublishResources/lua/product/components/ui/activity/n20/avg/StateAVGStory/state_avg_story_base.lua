@@ -1,138 +1,81 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/StateAVGStory/state_avg_story_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateAVGStoryBase", State)
 StateAVGStoryBase = StateAVGStoryBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateAVGStoryBase.Init = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function StateAVGStoryBase:Init()
   self.fsm = self:GetFsm()
-  self.ui = (self.fsm):GetData()
-  self.data = (self.ui).data
-  self.atlas = (self.ui):GetAsset("UIAVG.spriteatlas", LoadType.SpriteAtlas)
+  self.ui = self.fsm:GetData()
+  self.data = self.ui.data
+  self.atlas = self.ui:GetAsset("UIAVG.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBase.Destroy = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((StateAVGStoryBase.super).Destroy)(self)
+function StateAVGStoryBase:Destroy()
+  StateAVGStoryBase.super.Destroy(self)
   self.ui = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBase.NodeId = function(self, nodeId)
-  -- function num : 0_2
-  return (self.ui):NodeId(nodeId)
+function StateAVGStoryBase:NodeId(nodeId)
+  return self.ui:NodeId(nodeId)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBase.NextNodeId = function(self, nextNodeId)
-  -- function num : 0_3
-  return (self.ui):NextNodeId(nextNodeId)
+function StateAVGStoryBase:NextNodeId(nextNodeId)
+  return self.ui:NextNodeId(nextNodeId)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBase.PassSectionId = function(self, sectionSign)
-  -- function num : 0_4
-  return (self.ui):PassSectionId(sectionSign)
+function StateAVGStoryBase:PassSectionId(sectionSign)
+  return self.ui:PassSectionId(sectionSign)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBase.ClearPassSectionIds = function(self)
-  -- function num : 0_5
-  (self.ui):ClearPassSectionIds()
+function StateAVGStoryBase:ClearPassSectionIds()
+  self.ui:ClearPassSectionIds()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBase.CalcCurData = function(self)
-  -- function num : 0_6
-  return (self.ui):CalcCurData()
+function StateAVGStoryBase:CalcCurData()
+  return self.ui:CalcCurData()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBase.InitStoryManager = function(self)
-  -- function num : 0_7
-  return (self.ui):InitStoryManager()
+function StateAVGStoryBase:InitStoryManager()
+  return self.ui:InitStoryManager()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBase.ShowHideOption = function(self, isShow)
-  -- function num : 0_8
-  (self.ui):ShowHideOption(isShow)
+function StateAVGStoryBase:ShowHideOption(isShow)
+  self.ui:ShowHideOption(isShow)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBase.UpdateDriveByState = function(self, deltaTimeMS)
-  -- function num : 0_9
+function StateAVGStoryBase:UpdateDriveByState(deltaTimeMS)
   if self.ui then
-    (self.ui):UpdateDriveByState(deltaTimeMS)
+    self.ui:UpdateDriveByState(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBase.ShowHideButtonAuto = function(self, isShow)
-  -- function num : 0_10
-  ((self.ui).goAuto):SetActive(isShow)
+function StateAVGStoryBase:ShowHideButtonAuto(isShow)
+  self.ui.goAuto:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBase.ShowHideButtonReview = function(self, isShow)
-  -- function num : 0_11
-  ((self.ui).btnReview):SetActive(isShow)
+function StateAVGStoryBase:ShowHideButtonReview(isShow)
+  self.ui.btnReview:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBase.ShowHideButtonShowHideUI = function(self, isShow)
-  -- function num : 0_12
-  ((self.ui).goShowHideUI):SetActive(isShow)
+function StateAVGStoryBase:ShowHideButtonShowHideUI(isShow)
+  self.ui.goShowHideUI:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBase.ShowHideButtonNext = function(self, isShow)
-  -- function num : 0_13
-  ((self.ui).btnNext):SetActive(isShow)
+function StateAVGStoryBase:ShowHideButtonNext(isShow)
+  self.ui.btnNext:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBase.ShowHideButtonGraph = function(self, isShow)
-  -- function num : 0_14
-  ((self.ui).btnGraph):SetActive(isShow)
+function StateAVGStoryBase:ShowHideButtonGraph(isShow)
+  self.ui.btnGraph:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBase.ShowHideButtonExit = function(self, isShow)
-  -- function num : 0_15
-  ((self.ui).btnExit):SetActive(isShow)
+function StateAVGStoryBase:ShowHideButtonExit(isShow)
+  self.ui.btnExit:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBase.HandleSetCurrentLocation = function(self, TT, nodeId, callback)
-  -- function num : 0_16 , upvalues : _ENV
-  local com = (self.data):GetComponentAVG()
+function StateAVGStoryBase:HandleSetCurrentLocation(TT, nodeId, callback)
+  local com = self.data:GetComponentAVG()
   local res = AsyncRequestRes:New()
   local ret = com:HandleSetCurrentLocation(TT, res, nodeId)
-  if (N20AVGData.CheckCode)(res) and callback then
+  if N20AVGData.CheckCode(res) and callback then
     callback()
   end
 end
-
-

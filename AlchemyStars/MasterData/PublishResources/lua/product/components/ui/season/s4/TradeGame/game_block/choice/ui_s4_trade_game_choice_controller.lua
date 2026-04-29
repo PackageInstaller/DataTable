@@ -1,78 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/game_block/choice/ui_s4_trade_game_choice_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4TradeGameChoiceController", UIController)
 UIS4TradeGameChoiceController = UIS4TradeGameChoiceController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4TradeGameChoiceController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIS4TradeGameChoiceController:OnShow(uiParams)
   self._optionDataTb = uiParams[1]
   self._callback = uiParams[2]
   self:_GetComponents()
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameChoiceController._GetComponents = function(self)
-  -- function num : 0_1
+function UIS4TradeGameChoiceController:_GetComponents()
   self._info = self:GetUIComponent("UILocalizationText", "Info")
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameChoiceController._InitComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIS4TradeGameChoiceController:_InitComponents()
   local empty = true
   local info = ""
-  for i,data in pairs(self._optionDataTb) do
+  for i, data in pairs(self._optionDataTb) do
     if data.isSuccess then
       local str = "str_season_s4_trade_game_choice" .. data.valueType
-      if data.value <= 0 or not "+" .. data.value then
-        local txt = data.value
-      end
-      info = info .. (StringTable.Get)(str) .. " " .. txt
-      if i ~= (table.count)(self._optionDataTb) and ((self._optionDataTb)[i + 1]).isSuccess then
+      local txt = data.value > 0 and "+" .. data.value or data.value
+      info = info .. StringTable.Get(str) .. " " .. txt
+      if i ~= table.count(self._optionDataTb) and self._optionDataTb[i + 1].isSuccess then
         info = info .. "\n"
       end
       empty = false
     end
   end
   if empty then
-    info = (StringTable.Get)("str_season_s4_trade_game_choice_empty")
+    info = StringTable.Get("str_season_s4_trade_game_choice_empty")
   end
-  ;
-  (self._info):SetText(info)
+  self._info:SetText(info)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameChoiceController._Close = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIS4TradeGameChoiceController:_Close()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, _ENV
     self:Lock("uieff_UIS4TradeGameChoiceController_out")
-    ;
-    (self._anim):Play("uieff_UIS4TradeGameChoiceController_out")
+    self._anim:Play("uieff_UIS4TradeGameChoiceController_out")
     YIELD(TT, 334)
     self:UnLock("uieff_UIS4TradeGameChoiceController_out")
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameChoiceController.CheckBtnOnClick = function(self)
-  -- function num : 0_4
+function UIS4TradeGameChoiceController:CheckBtnOnClick()
   self:_Close()
 end
-
-

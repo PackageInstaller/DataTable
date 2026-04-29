@@ -1,41 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/luckland_trigger_mng.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LLTriggerMng", Object)
 LLTriggerMng = LLTriggerMng
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTriggerMng.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function LLTriggerMng:Constructor()
   self._triggerFactory = LuckLandTriggerFactory:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LLTriggerMng.Dispose = function(self)
-  -- function num : 0_1
+function LLTriggerMng:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLTriggerMng.CreateTrigger = function(self, buffObj, notifyCfg, triggerCfg)
-  -- function num : 0_2
-  return (self._triggerFactory):CreateTrigger(buffObj, notifyCfg, triggerCfg)
+function LLTriggerMng:CreateTrigger(buffObj, notifyCfg, triggerCfg)
+  return self._triggerFactory:CreateTrigger(buffObj, notifyCfg, triggerCfg)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLTriggerMng.Notify = function(self, notify)
-  -- function num : 0_3 , upvalues : _ENV
+function LLTriggerMng:Notify(notify)
   local entity = notify:GetNotifyEntity()
   local buffArray = entity:GetBuffArray()
-  for _,buffObj in ipairs(buffArray) do
+  for _, buffObj in ipairs(buffArray) do
     if buffObj:IsTriggerSatisfied(notify) then
       buffObj:OnTrigger(notify)
     end
   end
 end
-
-

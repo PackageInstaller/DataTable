@@ -1,26 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_set_mobility_by_teleport_dis.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionSetMobilityByTeleportDis", AINewNode)
 ActionSetMobilityByTeleportDis = ActionSetMobilityByTeleportDis
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSetMobilityByTeleportDis.OnBegin = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionSetMobilityByTeleportDis:OnBegin()
   local skillIndexX, skillIndexY = self:GetLogicData(-1), self:GetLogicData(-2)
   local configPos = Vector2(skillIndexX, skillIndexY)
   local minMobility = self:GetLogicData(-3)
-  local skillEffectSvc = (self._world):GetService("SkillEffectCalc")
-  local casterPos = (self.m_entityOwn):GetGridPosition()
-  local pos, dis = skillEffectSvc:FindSkillRangeFixed4(casterPos, {Vector2(skillIndexX, skillIndexY)})
-  local aiCmpt = (self.m_entityOwn):AI()
+  local skillEffectSvc = self._world:GetService("SkillEffectCalc")
+  local casterPos = self.m_entityOwn:GetGridPosition()
+  local pos, dis = skillEffectSvc:FindSkillRangeFixed4(casterPos, {
+    Vector2(skillIndexX, skillIndexY)
+  })
+  local aiCmpt = self.m_entityOwn:AI()
   local curM = aiCmpt:GetMobilityValid()
-  curM = (math.max)(curM - dis, minMobility)
-  self:PrintDebugLog("Entity:", (self.m_entityOwn):GetID(), "ConfigPos:", configPos, " MinMobility:", minMobility, " SourcePos:", casterPos, " TelPortPos ", pos, " Dis:", dis, " CurMobility:", curM)
+  curM = math.max(curM - dis, minMobility)
+  self:PrintDebugLog("Entity:", self.m_entityOwn:GetID(), "ConfigPos:", configPos, " MinMobility:", minMobility, " SourcePos:", casterPos, " TelPortPos ", pos, " Dis:", dis, " CurMobility:", curM)
   aiCmpt:SetMobilityTotal(curM)
 end
-
-

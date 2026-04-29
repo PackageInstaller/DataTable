@@ -1,226 +1,141 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/camera/homeland_global_camera_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandGlobalCameraController", Object)
 HomelandGlobalCameraController = HomelandGlobalCameraController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandGlobalCameraController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandGlobalCameraController:Constructor()
   self._resName = "HomelandGlobalCamControl"
   self._rotateFacor = 5
   self._minXAngle = 20
   self._maxXAngle = 90
   self._focusHeightOffset = 0
-  self._minScale = (BuildConfig.Camera).ScaleMin
-  self._maxScale = (BuildConfig.Camera).ScaleMax
+  self._minScale = BuildConfig.Camera.ScaleMin
+  self._maxScale = BuildConfig.Camera.ScaleMax
   self._xAngle = 0
   self._defaultFocusTime = 0.5
   self._lockCamera = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandGlobalCameraController.Init = function(self, homelandClient)
-  -- function num : 0_1 , upvalues : _ENV
-  self._resReq = (ResourceManager:GetInstance()):SyncLoadAsset(self._resName .. ".prefab", LoadType.GameObject)
-  self._camRootGO = (self._resReq).Obj
-  self._camRootTrans = (self._camRootGO).transform
-  self._camAxisXTrans = (self._camRootTrans):GetChild(0)
-  self._camTrans = (self._camAxisXTrans):GetChild(0)
-  self._camLocalPos = (self._camTrans).localPosition
+function HomelandGlobalCameraController:Init(homelandClient)
+  self._resReq = ResourceManager:GetInstance():SyncLoadAsset(self._resName .. ".prefab", LoadType.GameObject)
+  self._camRootGO = self._resReq.Obj
+  self._camRootTrans = self._camRootGO.transform
+  self._camAxisXTrans = self._camRootTrans:GetChild(0)
+  self._camTrans = self._camAxisXTrans:GetChild(0)
+  self._camLocalPos = self._camTrans.localPosition
   self._initCamLocalPos = self._camLocalPos
-  self._intCamLocalRotation = (self._camTrans).localRotation
-  self._xAngle = ((self._camAxisXTrans).localEulerAngles).x
-  local runtimeRootTrans = (homelandClient:SceneManager()):RuntimeRootTrans()
-  ;
-  (self._camRootTrans):SetParent(runtimeRootTrans)
-  ;
-  (self._camRootGO):SetActive(false)
-  self._cam = (self._camRootGO):GetComponentInChildren(typeof(UnityEngine.Camera), false)
-  self._focusHeightOffset = (homelandClient:BuildManager()):GetBuildHeight()
+  self._intCamLocalRotation = self._camTrans.localRotation
+  self._xAngle = self._camAxisXTrans.localEulerAngles.x
+  local runtimeRootTrans = homelandClient:SceneManager():RuntimeRootTrans()
+  self._camRootTrans:SetParent(runtimeRootTrans)
+  self._camRootGO:SetActive(false)
+  self._cam = self._camRootGO:GetComponentInChildren(typeof(UnityEngine.Camera), false)
+  self._focusHeightOffset = homelandClient:BuildManager():GetBuildHeight()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandGlobalCameraController.Dispose = function(self)
-  -- function num : 0_2
-  (self._resReq):Dispose()
+function HomelandGlobalCameraController:Dispose()
+  self._resReq:Dispose()
   self._resReq = nil
   self._camRootGO = nil
   self._camRootTrans = nil
   self._camAxisXTrans = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandGlobalCameraController.CameraCmp = function(self)
-  -- function num : 0_3
+function HomelandGlobalCameraController:CameraCmp()
   return self._cam
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandGlobalCameraController.CameraFowardRay = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local camTrans = (self._cam).transform
-  return (Ray.New)(camTrans.forward, camTrans.position)
+function HomelandGlobalCameraController:CameraFowardRay()
+  local camTrans = self._cam.transform
+  return Ray.New(camTrans.forward, camTrans.position)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandGlobalCameraController.GetFocusPos = function(self)
-  -- function num : 0_5
-  return (self._camRootTrans).position
+function HomelandGlobalCameraController:GetFocusPos()
+  return self._camRootTrans.position
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandGlobalCameraController.GetCamHeight = function(self)
-  -- function num : 0_6
-  return ((self._camTrans).position).y
+function HomelandGlobalCameraController:GetCamHeight()
+  return self._camTrans.position.y
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandGlobalCameraController.SetLockCamera = function(self, lock)
-  -- function num : 0_7
+function HomelandGlobalCameraController:SetLockCamera(lock)
   self._lockCamera = lock
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandGlobalCameraController.HandleRotate = function(self, mx, my)
-  -- function num : 0_8 , upvalues : _ENV
+function HomelandGlobalCameraController:HandleRotate(mx, my)
   if self._lockCamera then
-    return 
+    return
   end
   if mx ~= 0 then
-    (self._camRootTrans):Rotate(0, mx * self._rotateFacor, 0)
+    self._camRootTrans:Rotate(0, mx * self._rotateFacor, 0)
   end
   if my ~= 0 then
     local xAngle = self._xAngle - my * self._rotateFacor
-    if self._maxXAngle < xAngle then
+    if xAngle > self._maxXAngle then
       xAngle = self._maxXAngle
-    else
-      if xAngle < self._minXAngle then
-        xAngle = self._minXAngle
-      end
+    elseif xAngle < self._minXAngle then
+      xAngle = self._minXAngle
     end
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._camAxisXTrans).localRotation = (Quaternion.Euler)(xAngle, 0, 0)
+    self._camAxisXTrans.localRotation = Quaternion.Euler(xAngle, 0, 0)
     self._xAngle = xAngle
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandGlobalCameraController.HandleScale = function(self, scale)
-  -- function num : 0_9
+function HomelandGlobalCameraController:HandleScale(scale)
   if self._lockCamera then
-    return 
+    return
   end
-  local newZ = (self._camLocalPos).z + scale
+  local newZ = self._camLocalPos.z + scale
   if newZ < self._minScale then
     newZ = self._minScale
-  else
-    if self._maxScale < newZ then
-      newZ = self._maxScale
-    end
+  elseif newZ > self._maxScale then
+    newZ = self._maxScale
   end
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._camLocalPos).z = newZ
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._camTrans).localPosition = self._camLocalPos
+  self._camLocalPos.z = newZ
+  self._camTrans.localPosition = self._camLocalPos
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandGlobalCameraController.UpdatePos = function(self, pos, checkValid)
-  -- function num : 0_10 , upvalues : _ENV
+function HomelandGlobalCameraController:UpdatePos(pos, checkValid)
   if self._lockCamera then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._camRootTrans).position = Vector3(pos.x, self._focusHeightOffset, pos.z)
+  self._camRootTrans.position = Vector3(pos.x, self._focusHeightOffset, pos.z)
   if checkValid then
     self._camLocalPos = self._initCamLocalPos
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._camTrans).localPosition = self._camLocalPos
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._camTrans).localRotation = self._intCamLocalRotation
-    local xAngle = nil
-    if self._maxXAngle < self._xAngle or self._xAngle < self._minXAngle then
+    self._camTrans.localPosition = self._camLocalPos
+    self._camTrans.localRotation = self._intCamLocalRotation
+    local xAngle
+    if self._xAngle > self._maxXAngle or self._xAngle < self._minXAngle then
       xAngle = self._minXAngle + (self._maxXAngle - self._minXAngle) * 0.01
-      -- DECOMPILER ERROR at PC43: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._camAxisXTrans).localRotation = (Quaternion.Euler)(xAngle, 0, 0)
+      self._camAxisXTrans.localRotation = Quaternion.Euler(xAngle, 0, 0)
       self._xAngle = xAngle
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandGlobalCameraController.UpdatePosXZ = function(self, x, z)
-  -- function num : 0_11 , upvalues : _ENV
+function HomelandGlobalCameraController:UpdatePosXZ(x, z)
   if self._lockCamera then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._camRootTrans).position = Vector3(x, self._focusHeightOffset, z)
+  self._camRootTrans.position = Vector3(x, self._focusHeightOffset, z)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandGlobalCameraController.Move = function(self, movement)
-  -- function num : 0_12 , upvalues : _ENV
+function HomelandGlobalCameraController:Move(movement)
   if self._lockCamera then
-    return 
+    return
   end
-  ;
-  (self._camRootTrans):Translate(movement, (UnityEngine.Space).Self)
+  self._camRootTrans:Translate(movement, UnityEngine.Space.Self)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandGlobalCameraController.SetActive = function(self, active)
-  -- function num : 0_13
-  (self._camRootGO):SetActive(active)
+function HomelandGlobalCameraController:SetActive(active)
+  self._camRootGO:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandGlobalCameraController.Rotation = function(self)
-  -- function num : 0_14
-  return (self._camRootTrans).rotation
+function HomelandGlobalCameraController:Rotation()
+  return self._camRootTrans.rotation
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandGlobalCameraController.Focus = function(self, transform, time, callback)
-  -- function num : 0_15 , upvalues : _ENV
+function HomelandGlobalCameraController:Focus(transform, time, callback)
   local focusTime = time
-  if not focusTime then
-    focusTime = self._defaultFocusTime
-  end
+  focusTime = focusTime or self._defaultFocusTime
   local position = transform.position
   local rotation = transform.rotation
   local forward = transform.forward
@@ -228,58 +143,32 @@ HomelandGlobalCameraController.Focus = function(self, transform, time, callback)
   local rotationX = transform.eulerAngles
   rotationY.x = 0
   rotationX.y = 0
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("HomelandGlobalCameraController:Focus")
-  ;
-  (self._camTrans):DOMove(position, focusTime, false)
-  ;
-  ((self._camTrans):DORotateQuaternion(rotation, focusTime)):OnComplete(function()
-    -- function num : 0_15_0 , upvalues : self, forward, _ENV, position, rotationY, rotationX, rotation, callback
-    local planePoint = (self._camRootTrans).position
+  GameGlobal.UIStateManager():Lock("HomelandGlobalCameraController:Focus")
+  self._camTrans:DOMove(position, focusTime, false)
+  self._camTrans:DORotateQuaternion(rotation, focusTime):OnComplete(function()
+    local planePoint = self._camRootTrans.position
     local forward = forward.normalized
-    local dot = (Vector3.Dot)(forward, Vector3.up)
+    local dot = Vector3.Dot(forward, Vector3.up)
     if dot == 0 then
-      (Log.fatal)("Focus 焦点配置点不合法")
+      Log.fatal("Focus 焦点配置点不合法")
     else
-      local d = (Vector3.Dot)(planePoint - position, Vector3.up) / dot
-      -- DECOMPILER ERROR at PC28: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._camRootTrans).position = forward * d + position
-      -- DECOMPILER ERROR at PC31: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._camRootTrans).eulerAngles = rotationY
-      -- DECOMPILER ERROR at PC34: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._camAxisXTrans).localEulerAngles = rotationX
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._camTrans).position = position
-      -- DECOMPILER ERROR at PC40: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._camTrans).rotation = rotation
-      self._camLocalPos = (self._camTrans).localPosition
-      self._xAngle = ((self._camAxisXTrans).localEulerAngles).x
+      local d = Vector3.Dot(planePoint - position, Vector3.up) / dot
+      self._camRootTrans.position = forward * d + position
+      self._camRootTrans.eulerAngles = rotationY
+      self._camAxisXTrans.localEulerAngles = rotationX
+      self._camTrans.position = position
+      self._camTrans.rotation = rotation
+      self._camLocalPos = self._camTrans.localPosition
+      self._xAngle = self._camAxisXTrans.localEulerAngles.x
     end
-    do
-      ;
-      ((GameGlobal.UIStateManager)()):UnLock("HomelandGlobalCameraController:Focus")
-      if callback then
-        callback()
-      end
+    GameGlobal.UIStateManager():UnLock("HomelandGlobalCameraController:Focus")
+    if callback then
+      callback()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandGlobalCameraController.FocusDirect = function(self, transform)
-  -- function num : 0_16 , upvalues : _ENV
+function HomelandGlobalCameraController:FocusDirect(transform)
   local position = transform.position
   local rotation = transform.rotation
   local forward = transform.forward
@@ -287,64 +176,30 @@ HomelandGlobalCameraController.FocusDirect = function(self, transform)
   local rotationX = transform.eulerAngles
   rotationY.x = 0
   rotationX.y = 0
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._camTrans).position = position
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._camTrans).rotation = rotation
-  local planePoint = (self._camRootTrans).position
+  self._camTrans.position = position
+  self._camTrans.rotation = rotation
+  local planePoint = self._camRootTrans.position
   local forward = forward.normalized
-  local dot = (Vector3.Dot)(forward, Vector3.up)
+  local dot = Vector3.Dot(forward, Vector3.up)
   if dot == 0 then
-    (Log.fatal)("FocusDirect 焦点配置点不合法")
+    Log.fatal("FocusDirect 焦点配置点不合法")
   else
-    local d = (Vector3.Dot)(planePoint - position, Vector3.up) / dot
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._camRootTrans).position = forward * d + position
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._camRootTrans).eulerAngles = rotationY
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._camAxisXTrans).localEulerAngles = rotationX
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._camTrans).position = position
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._camTrans).rotation = rotation
-    self._camLocalPos = (self._camTrans).localPosition
-    self._xAngle = ((self._camAxisXTrans).localEulerAngles).x
+    local d = Vector3.Dot(planePoint - position, Vector3.up) / dot
+    self._camRootTrans.position = forward * d + position
+    self._camRootTrans.eulerAngles = rotationY
+    self._camAxisXTrans.localEulerAngles = rotationX
+    self._camTrans.position = position
+    self._camTrans.rotation = rotation
+    self._camLocalPos = self._camTrans.localPosition
+    self._xAngle = self._camAxisXTrans.localEulerAngles.x
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandGlobalCameraController.ScalePercent = function(self)
-  -- function num : 0_17
-  return (self._maxScale - (self._camLocalPos).z) / (self._maxScale - self._minScale)
+function HomelandGlobalCameraController:ScalePercent()
+  return (self._maxScale - self._camLocalPos.z) / (self._maxScale - self._minScale)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandGlobalCameraController.ForceSetRotation = function(self, mx, my)
-  -- function num : 0_18 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._camAxisXTrans).localRotation = (Quaternion.Euler)(my, 0, 0)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._camRootTrans).eulerAngles = Vector3(0, mx, 0)
+function HomelandGlobalCameraController:ForceSetRotation(mx, my)
+  self._camAxisXTrans.localRotation = Quaternion.Euler(my, 0, 0)
+  self._camRootTrans.eulerAngles = Vector3(0, mx, 0)
 end
-
-

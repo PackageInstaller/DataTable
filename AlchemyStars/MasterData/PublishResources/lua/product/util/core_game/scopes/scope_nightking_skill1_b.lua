@@ -1,22 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_nightking_skill1_b.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_NightKing_Skill1B", SkillScopeCalculator_Base)
 SkillScopeCalculator_NightKing_Skill1B = SkillScopeCalculator_NightKing_Skill1B
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_NightKing_Skill1B.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local world = (self._gridFilter)._world
+function SkillScopeCalculator_NightKing_Skill1B:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local world = self._gridFilter._world
   local utilScopeCalcSvc = world:GetService("UtilScopeCalc")
   local utilDataCalcSvc = world:GetService("UtilData")
   local dirType = utilScopeCalcSvc:GetEntityDirType(casterEntity)
   local rangList = {}
   if dirType == DirectionType.Up or dirType == DirectionType.Down then
-    local beginY, endY, step = nil, nil, nil
+    local beginY, endY, step
     if dirType == DirectionType.Up then
       beginY = 2
       endY = BattleConst.BoardMaxLen
@@ -30,38 +23,30 @@ SkillScopeCalculator_NightKing_Skill1B.CalcRange = function(self, scopeType, sco
       for x = 1, BattleConst.BoardMaxLen do
         local newPos = Vector2(x, y + casterPos.y)
         if utilDataCalcSvc:IsValidPiecePos(newPos) then
-          (table.insert)(rangList, newPos)
+          table.insert(rangList, newPos)
         end
       end
     end
-  else
-    do
-      if dirType == DirectionType.Left or dirType == DirectionType.Right then
-        local beginX, endX, step = nil, nil, nil
-        if dirType == DirectionType.Left then
-          beginX = -2
-          endX = BattleConst.BoardMaxLen * -1
-          step = -1
-        else
-          beginX = 2
-          endX = BattleConst.BoardMaxLen
-          step = 1
+  elseif dirType == DirectionType.Left or dirType == DirectionType.Right then
+    local beginX, endX, step
+    if dirType == DirectionType.Left then
+      beginX = -2
+      endX = BattleConst.BoardMaxLen * -1
+      step = -1
+    else
+      beginX = 2
+      endX = BattleConst.BoardMaxLen
+      step = 1
+    end
+    for x = beginX, endX, step do
+      for y = 1, BattleConst.BoardMaxLen do
+        local newPos = Vector2(casterPos.x + x, y)
+        if utilDataCalcSvc:IsValidPiecePos(newPos) then
+          table.insert(rangList, newPos)
         end
-        for x = beginX, endX, step do
-          for y = 1, BattleConst.BoardMaxLen do
-            local newPos = Vector2(casterPos.x + x, y)
-            if utilDataCalcSvc:IsValidPiecePos(newPos) then
-              (table.insert)(rangList, newPos)
-            end
-          end
-        end
-      end
-      do
-        local result = SkillScopeResult:New(SkillScopeType.N16NightKingSkill1B, casterPos, rangList, rangList, nil)
-        return result
       end
     end
   end
+  local result = SkillScopeResult:New(SkillScopeType.N16NightKingSkill1B, casterPos, rangList, rangList, nil)
+  return result
 end
-
-

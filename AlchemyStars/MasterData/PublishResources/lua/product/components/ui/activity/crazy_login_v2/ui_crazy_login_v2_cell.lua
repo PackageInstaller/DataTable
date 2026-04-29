@@ -1,71 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/crazy_login_v2/ui_crazy_login_v2_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICrazyLoginV2Cell", UICustomWidget)
 UICrazyLoginV2Cell = UICrazyLoginV2Cell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICrazyLoginV2Cell.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICrazyLoginV2Cell:OnShow(uiParams)
   self._dayNum = 1
   self:SetSelected(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Cell.OnHide = function(self)
-  -- function num : 0_1
+function UICrazyLoginV2Cell:OnHide()
   if self._resF then
-    (self._resF):Dispose()
+    self._resF:Dispose()
     self._resF = nil
   end
   if self._resB then
-    (self._resB):Dispose()
+    self._resB:Dispose()
     self._resB = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Cell._SetUI_ByCfg = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local value = (UICrazyLoginV2Helper.GetValue)(self._campaign, "AwardParticecleF")
-  self._resF = (UICrazyLoginV2Helper.SetEffByCfg)(self, "eff_front", value, self._resF)
-  value = (UICrazyLoginV2Helper.GetValue)(self._campaign, "AwardParticecleB")
-  self._resB = (UICrazyLoginV2Helper.SetEffByCfg)(self, "eff_back", value, self._resB)
-  value = (UICrazyLoginV2Helper.GetValue)(self._campaign, "LockImage")
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "_imgLock", value)
-  value = (UICrazyLoginV2Helper.GetValue)(self._campaign, "SpecialBg")
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "_fgSpecial", value)
-  value = (UICrazyLoginV2Helper.GetValue)(self._campaign, "SelectedBg")
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "_fgSelected", value)
+function UICrazyLoginV2Cell:_SetUI_ByCfg()
+  local value = UICrazyLoginV2Helper.GetValue(self._campaign, "AwardParticecleF")
+  self._resF = UICrazyLoginV2Helper.SetEffByCfg(self, "eff_front", value, self._resF)
+  value = UICrazyLoginV2Helper.GetValue(self._campaign, "AwardParticecleB")
+  self._resB = UICrazyLoginV2Helper.SetEffByCfg(self, "eff_back", value, self._resB)
+  value = UICrazyLoginV2Helper.GetValue(self._campaign, "LockImage")
+  UIWidgetHelper.SetRawImage(self, "_imgLock", value)
+  value = UICrazyLoginV2Helper.GetValue(self._campaign, "SpecialBg")
+  UIWidgetHelper.SetRawImage(self, "_fgSpecial", value)
+  value = UICrazyLoginV2Helper.GetValue(self._campaign, "SelectedBg")
+  UIWidgetHelper.SetRawImage(self, "_fgSelected", value)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Cell._SetStageUI_ByCfg = function(self, state)
-  -- function num : 0_3 , upvalues : _ENV
-  local value = (UICrazyLoginV2Helper.GetStateValue)(self._campaign, state, "bg")
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "_bg", value)
-  local color = (UICrazyLoginV2Helper.GetStateValue)(self._campaign, state, "day")
-  ;
-  (UICrazyLoginV2Helper.SetTextColorByCfg)(self, "_txtDay", color)
-  local widget = {"StateCanGetText", "StateGotText", "StateLockedText"}
-  color = (UICrazyLoginV2Helper.GetStateValue)(self._campaign, state, "desc")
-  ;
-  (UICrazyLoginV2Helper.SetTextColorByCfg)(self, widget[state], color)
+function UICrazyLoginV2Cell:_SetStageUI_ByCfg(state)
+  local value = UICrazyLoginV2Helper.GetStateValue(self._campaign, state, "bg")
+  UIWidgetHelper.SetRawImage(self, "_bg", value)
+  local color = UICrazyLoginV2Helper.GetStateValue(self._campaign, state, "day")
+  UICrazyLoginV2Helper.SetTextColorByCfg(self, "_txtDay", color)
+  local widget = {
+    "StateCanGetText",
+    "StateGotText",
+    "StateLockedText"
+  }
+  color = UICrazyLoginV2Helper.GetStateValue(self._campaign, state, "desc")
+  UICrazyLoginV2Helper.SetTextColorByCfg(self, widget[state], color)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Cell.SetData = function(self, campaign, idx, data, lastCell, selectCallback, getCallback, tipCallback, lastDay)
-  -- function num : 0_4 , upvalues : _ENV
+function UICrazyLoginV2Cell:SetData(campaign, idx, data, lastCell, selectCallback, getCallback, tipCallback, lastDay)
   self._campaign = campaign
   self._idx = idx
   self._data = data
@@ -73,35 +52,31 @@ UICrazyLoginV2Cell.SetData = function(self, campaign, idx, data, lastCell, selec
   self._selectCallback = selectCallback
   self._getCallback = getCallback
   self._tipCallback = tipCallback
-  self._lastFixed = (UICrazyLoginV2Helper.GetValue)(self._campaign, "LastFixed") or false
+  self._lastFixed = UICrazyLoginV2Helper.GetValue(self._campaign, "LastFixed") or false
   self:_SetUI_ByCfg()
   self:_SetItems(data.m_rewards)
   self:_SetDayText(data.m_login_days)
-  self._state = (UICrazyLoginV2Helper.SafeState)(data.m_reward_status)
+  self._state = UICrazyLoginV2Helper.SafeState(data.m_reward_status)
   self:_SetState(self._state)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Cell._SetState = function(self, state, forEffect)
-  -- function num : 0_5 , upvalues : _ENV
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"StateCanGet"}
-, 
-{"StateGot"}
-, 
-{"StateLocked"}
-})
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, state)
-  local isGot = (UICrazyLoginV2Helper.IsStateRecved)(state)
+function UICrazyLoginV2Cell:_SetState(state, forEffect)
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {
+      "StateCanGet"
+    },
+    {"StateGot"},
+    {
+      "StateLocked"
+    }
+  })
+  UIWidgetHelper.SetObjGroupShow(objs, state)
+  local isGot = UICrazyLoginV2Helper.IsStateRecved(state)
   self:_SetStageUI_ByCfg(state)
   if forEffect then
-    return 
+    return
   end
-  if isSpecial then
-    local effShow = not isGot
-  end
+  local effShow = isSpecial and not isGot
   self:_SetEffShow(effShow)
   local value = isGot and 0.5 or 1
   self:_SetAlpha(value)
@@ -109,84 +84,53 @@ UICrazyLoginV2Cell._SetState = function(self, state, forEffect)
   self:_SetSpecial(isSpecial)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Cell._SetItems = function(self, itemData)
-  -- function num : 0_6 , upvalues : _ENV
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_itemPool", "UICrazyLoginV2Item", #itemData)
-  for i,v in ipairs(objs) do
+function UICrazyLoginV2Cell:_SetItems(itemData)
+  local objs = UIWidgetHelper.SpawnObjects(self, "_itemPool", "UICrazyLoginV2Item", #itemData)
+  for i, v in ipairs(objs) do
     v:SetData(itemData[i], self._tipCallback)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Cell._SetDayText = function(self, dayNum)
-  -- function num : 0_7 , upvalues : _ENV
-  local text = (StringTable.Get)("str_temp_sign_in_day_text", dayNum)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtDay", text)
+function UICrazyLoginV2Cell:_SetDayText(dayNum)
+  local text = StringTable.Get("str_temp_sign_in_day_text", dayNum)
+  UIWidgetHelper.SetLocalizationText(self, "_txtDay", text)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Cell._SetEffShow = function(self, effShow)
-  -- function num : 0_8
-  (self:GetGameObject("eff_front")):SetActive(effShow)
-  ;
-  (self:GetGameObject("eff_back")):SetActive(effShow)
+function UICrazyLoginV2Cell:_SetEffShow(effShow)
+  self:GetGameObject("eff_front"):SetActive(effShow)
+  self:GetGameObject("eff_back"):SetActive(effShow)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Cell.SetSelected = function(self, show)
-  -- function num : 0_9
-  (self:GetGameObject("_fgSelected")):SetActive(show)
+function UICrazyLoginV2Cell:SetSelected(show)
+  self:GetGameObject("_fgSelected"):SetActive(show)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Cell._SetSpecial = function(self, show)
-  -- function num : 0_10
-  (self:GetGameObject("_fgSpecial")):SetActive(show)
+function UICrazyLoginV2Cell:_SetSpecial(show)
+  self:GetGameObject("_fgSpecial"):SetActive(show)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Cell._SetAlpha = function(self, value)
-  -- function num : 0_11
+function UICrazyLoginV2Cell:_SetAlpha(value)
   local cg = self:GetUIComponent("CanvasGroup", "AlphaArea")
   cg.alpha = value
   local cg2 = self:GetUIComponent("CanvasGroup", "StateArea")
   cg2.alpha = value
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Cell.OnAwardGot = function(self, rewards)
-  -- function num : 0_12 , upvalues : _ENV
+function UICrazyLoginV2Cell:OnAwardGot(rewards)
   self:_SetState(ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED, true)
   local animName = "uieff_UIActivityCrazyLoginContent_Cell_Get"
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", animName, 333, function()
-    -- function num : 0_12_0 , upvalues : _ENV, rewards
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
-  end
-)
+  UIWidgetHelper.PlayAnimation(self, "_anim", animName, 333, function()
+    UIActivityHelper.ShowUIGetRewards(rewards)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Cell.BgBtnOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
+function UICrazyLoginV2Cell:BgBtnOnClick(go)
   local idx = self._idx
   if self._selectCallback then
-    (self._selectCallback)(idx)
+    self._selectCallback(idx)
   end
-  local canRecv = (UICrazyLoginV2Helper.IsStateCanRecv)((self._data).m_reward_status)
+  local canRecv = UICrazyLoginV2Helper.IsStateCanRecv(self._data.m_reward_status)
   if canRecv and self._getCallback then
-    (self._getCallback)(idx)
+    self._getCallback(idx)
   end
 end
-
-

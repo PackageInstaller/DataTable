@@ -1,37 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_two_scope_collection.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_TwoScopeCollection", SkillScopeCalculator_Base)
 SkillScopeCalculator_TwoScopeCollection = SkillScopeCalculator_TwoScopeCollection
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_TwoScopeCollection.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local calc = SkillScopeCalculator:New((self._hub)._gridFilter)
+function SkillScopeCalculator_TwoScopeCollection:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local calc = SkillScopeCalculator:New(self._hub._gridFilter)
   local attackRange = {}
   local wholeRange = {}
-  for _,v in ipairs(scopeParam) do
+  for _, v in ipairs(scopeParam) do
     local _scopeType = v.scopeType
     local _scpoe_param = v.scopeParam
     local _scope_centerPosIndex = v.centerPosIndex
     local transCenterPos = centerPos
-    -- DECOMPILER ERROR at PC19: Unhandled construct in 'MakeBoolean' P1
-
-    if _scope_centerPosIndex and _scope_centerPosIndex == 0 then
-      transCenterPos = centerPos
-    else
-      transCenterPos = centerPos[_scope_centerPosIndex]
+    if _scope_centerPosIndex then
+      if _scope_centerPosIndex == 0 then
+        transCenterPos = centerPos
+      else
+        transCenterPos = centerPos[_scope_centerPosIndex]
+      end
     end
     local result = calc:ComputeScopeRange(_scopeType, _scpoe_param, transCenterPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-    ;
-    (table.Vector2Append)(attackRange, result:GetAttackRange(), attackRange)
-    ;
-    (table.Vector2Append)(wholeRange, result:GetWholeGridRange(), wholeRange)
+    table.Vector2Append(attackRange, result:GetAttackRange(), attackRange)
+    table.Vector2Append(wholeRange, result:GetWholeGridRange(), wholeRange)
   end
   return SkillScopeResult:New(SkillScopeType.TowScopeCollection, centerPos, attackRange, wholeRange)
 end
-
-

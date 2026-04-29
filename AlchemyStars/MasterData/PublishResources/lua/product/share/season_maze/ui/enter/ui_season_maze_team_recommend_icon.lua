@@ -1,68 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/enter/ui_season_maze_team_recommend_icon.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local UISeasonMazeTeamRecommendIconType = {Job = 1, Property = 2}
 _enum("UISeasonMazeTeamRecommendIconType", UISeasonMazeTeamRecommendIconType)
 _class("UISeasonMazeTeamRecommendIcon", UICustomWidget)
 UISeasonMazeTeamRecommendIcon = UISeasonMazeTeamRecommendIcon
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-UISeasonMazeTeamRecommendIcon.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMazeTeamRecommendIcon:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UISeasonMazeTeamRecommendIcon.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV, UISeasonMazeTeamRecommendIconType
+function UISeasonMazeTeamRecommendIcon:InitWidget()
   self._bgGo = self:GetGameObject("Bg")
   self._frontGo = self:GetGameObject("Front")
   self._bgImage = self:GetUIComponent("Image", "Bg")
   self._frontImage = self:GetUIComponent("Image", "Front")
   self._jobAtlas = self:GetAsset("UIHeartItem.spriteatlas", LoadType.SpriteAtlas)
   self._propertyAtlas = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
-  self._atlasDic = {[UISeasonMazeTeamRecommendIconType.Job] = self._jobAtlas, [UISeasonMazeTeamRecommendIconType.Property] = self._propertyAtlas}
-  self._prof2Img = {[PetProfType.PetProf_Color] = "spirit_prof_5", [PetProfType.PetProf_Blood] = "spirit_prof_1", [PetProfType.PetProf_Attack] = "spirit_prof_3", [PetProfType.PetProf_Function] = "spirit_prof_7"}
-  self._elementSpriteName = {[ElementType.ElementType_Blue] = "bing_color", [ElementType.ElementType_Red] = "huo_color", [ElementType.ElementType_Green] = "sen_color", [ElementType.ElementType_Yellow] = "lei_color"}
+  self._atlasDic = {
+    [UISeasonMazeTeamRecommendIconType.Job] = self._jobAtlas,
+    [UISeasonMazeTeamRecommendIconType.Property] = self._propertyAtlas
+  }
+  self._prof2Img = {
+    [PetProfType.PetProf_Color] = "spirit_prof_5",
+    [PetProfType.PetProf_Blood] = "spirit_prof_1",
+    [PetProfType.PetProf_Attack] = "spirit_prof_3",
+    [PetProfType.PetProf_Function] = "spirit_prof_7"
+  }
+  self._elementSpriteName = {
+    [ElementType.ElementType_Blue] = "bing_color",
+    [ElementType.ElementType_Red] = "huo_color",
+    [ElementType.ElementType_Green] = "sen_color",
+    [ElementType.ElementType_Yellow] = "lei_color"
+  }
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UISeasonMazeTeamRecommendIcon.SetData = function(self, type, param)
-  -- function num : 0_2 , upvalues : UISeasonMazeTeamRecommendIconType
+function UISeasonMazeTeamRecommendIcon:SetData(type, param)
   if type and param then
-    local atlas = (self._atlasDic)[type]
+    local atlas = self._atlasDic[type]
     if atlas then
       if type == UISeasonMazeTeamRecommendIconType.Job then
-        (self._bgGo):SetActive(true)
-        ;
-        (self._frontGo):SetActive(true)
-        local imageName = (self._prof2Img)[param]
-        -- DECOMPILER ERROR at PC27: Confused about usage of register: R5 in 'UnsetPending'
-
+        self._bgGo:SetActive(true)
+        self._frontGo:SetActive(true)
+        local imageName = self._prof2Img[param]
         if imageName then
-          (self._frontImage).sprite = atlas:GetSprite(imageName)
+          self._frontImage.sprite = atlas:GetSprite(imageName)
         end
-      else
-        do
-          if type == UISeasonMazeTeamRecommendIconType.Property then
-            (self._bgGo):SetActive(true)
-            ;
-            (self._frontGo):SetActive(true)
-            local imageName = (self._elementSpriteName)[param]
-            -- DECOMPILER ERROR at PC48: Confused about usage of register: R5 in 'UnsetPending'
-
-            if imageName then
-              (self._frontImage).sprite = atlas:GetSprite(imageName)
-            end
-          end
+      elseif type == UISeasonMazeTeamRecommendIconType.Property then
+        self._bgGo:SetActive(true)
+        self._frontGo:SetActive(true)
+        local imageName = self._elementSpriteName[param]
+        if imageName then
+          self._frontImage.sprite = atlas:GetSprite(imageName)
         end
       end
     end
   end
 end
-
-

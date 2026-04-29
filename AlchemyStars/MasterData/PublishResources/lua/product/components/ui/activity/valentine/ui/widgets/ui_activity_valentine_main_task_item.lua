@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/valentine/ui/widgets/ui_activity_valentine_main_task_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityValentineMainTaskItem", UICustomWidget)
 UIActivityValentineMainTaskItem = UIActivityValentineMainTaskItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityValentineMainTaskItem.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityValentineMainTaskItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainTaskItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityValentineMainTaskItem:OnShow(uiParams)
   self:_GetComponents()
   self._specialTaskID = {3570038, 3570042}
   self._atlas = self:GetAsset("Valentine.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainTaskItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIActivityValentineMainTaskItem:_GetComponents()
   self._taskNo = self:GetUIComponent("UILocalizationText", "taskNo")
   self._taskTxt = self:GetUIComponent("UILocalizationText", "taskTxt")
   self._progressTxt = self:GetUIComponent("UILocalizationText", "progress")
@@ -31,69 +18,50 @@ UIActivityValentineMainTaskItem._GetComponents = function(self)
   self._taskBtnObj = self:GetGameObject("taskBtn")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainTaskItem.SetData = function(self, cfg, index, data)
-  -- function num : 0_3
+function UIActivityValentineMainTaskItem:SetData(cfg, index, data)
   self._cfg = cfg
   self._index = index
   self._data = data
   self:InitData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainTaskItem.InitData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._taskNo):SetText(self._index)
-  local taskId = (self._cfg).ID
-  local questModule = (GameGlobal.GetModule)(QuestModule)
+function UIActivityValentineMainTaskItem:InitData()
+  self._taskNo:SetText(self._index)
+  local taskId = self._cfg.ID
+  local questModule = GameGlobal.GetModule(QuestModule)
   self._task = questModule:GetQuest(taskId)
-  local info = (self._task):QuestInfo()
-  ;
-  (self._taskTxt):SetText((StringTable.Get)((self._cfg).QuestDesc))
+  local info = self._task:QuestInfo()
+  self._taskTxt:SetText(StringTable.Get(self._cfg.QuestDesc))
   local curProcess = info.cur_progress
   local totalPorcess = info.total_progress
   local isSpecial = self:_CheckTaskIsSpecial(taskId)
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R7 in 'UnsetPending'
-
-  if ((isSpecial and 1) or QuestStatus.QUEST_Completed <= (self._task):Status()) and (not isSpecial or not 1) then
-    (self._taskTxt).color = Color(0.63529411764706, 0.63529411764706, 0.63529411764706)
-    ;
-    (self._progressTxt):SetText("(<color=#c8a145>" .. curProcess .. "</color>/" .. totalPorcess .. ")")
-    ;
-    (self._doneBtnObj):SetActive(true)
-    ;
-    (self._taskBtnObj):SetActive(false)
+  totalPorcess = isSpecial and 1 or totalPorcess
+  if self._task:Status() >= QuestStatus.QUEST_Completed then
+    curProcess = isSpecial and 1 or curProcess
+    self._taskTxt.color = Color(0.6352941176470588, 0.6352941176470588, 0.6352941176470588)
+    self._progressTxt:SetText("(<color=#c8a145>" .. curProcess .. "</color>/" .. totalPorcess .. ")")
+    self._doneBtnObj:SetActive(true)
+    self._taskBtnObj:SetActive(false)
   else
-    -- DECOMPILER ERROR at PC83: Confused about usage of register: R7 in 'UnsetPending'
-
-    if not isSpecial or not 0 then
-      (self._taskTxt).color = Color(0.50196078431373, 0.3921568627451, 0.090196078431373)
-      ;
-      (self._progressTxt):SetText("(<color=#41b9fa>" .. curProcess .. "</color>/" .. totalPorcess .. ")")
-      ;
-      (self._doneBtnObj):SetActive(false)
-      ;
-      (self._taskBtnObj):SetActive(true)
-    end
+    curProcess = isSpecial and 0 or curProcess
+    self._taskTxt.color = Color(0.5019607843137255, 0.39215686274509803, 0.09019607843137255)
+    self._progressTxt:SetText("(<color=#41b9fa>" .. curProcess .. "</color>/" .. totalPorcess .. ")")
+    self._doneBtnObj:SetActive(false)
+    self._taskBtnObj:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainTaskItem.TaskBtnOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if self._task and QuestStatus.QUEST_Completed <= (self._task):Status() then
-    return 
+function UIActivityValentineMainTaskItem:TaskBtnOnClick()
+  if self._task and self._task:Status() >= QuestStatus.QUEST_Completed then
+    return
   end
-  local isOver = (self._data):CheckTaskIsOver()
+  local isOver = self._data:CheckTaskIsOver()
   if isOver then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n27_valentine_y_offline"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_n27_valentine_y_offline"))
+    return
   end
-  local questInfo = (self._task):QuestInfo()
-  local questModule = (GameGlobal.GetModule)(QuestModule)
+  local questInfo = self._task:QuestInfo()
+  local questModule = GameGlobal.GetModule(QuestModule)
   local jumpModule = questModule.uiModule
   local jumpType = questInfo.JumpID
   local jumpParam = questInfo.JumpParam
@@ -101,16 +69,11 @@ UIActivityValentineMainTaskItem.TaskBtnOnClick = function(self)
   jumpModule:Jump()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainTaskItem._CheckTaskIsSpecial = function(self, taskID)
-  -- function num : 0_6 , upvalues : _ENV
-  for _,v in ipairs(self._specialTaskID) do
+function UIActivityValentineMainTaskItem:_CheckTaskIsSpecial(taskID)
+  for _, v in ipairs(self._specialTaskID) do
     if v == taskID then
       return true
     end
   end
   return false
 end
-
-

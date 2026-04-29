@@ -1,40 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/chain_result/skill_path_point_normal_attack_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPathPointNormalAttackData", Object)
 SkillPathPointNormalAttackData = SkillPathPointNormalAttackData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPathPointNormalAttackData.Constructor = function(self)
-  -- function num : 0_0
+function SkillPathPointNormalAttackData:Constructor()
   self._attackGridDic = {}
   self._attackGridDicAdditional = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathPointNormalAttackData.GetAttackGridDic = function(self)
-  -- function num : 0_1
+function SkillPathPointNormalAttackData:GetAttackGridDic()
   return self._attackGridDic
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathPointNormalAttackData.GetAttackGridDicAdditional = function(self)
-  -- function num : 0_2
+function SkillPathPointNormalAttackData:GetAttackGridDicAdditional()
   return self._attackGridDicAdditional
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathPointNormalAttackData.GetPetOrderGridArray = function(self, petEntity, pathPosition)
-  -- function num : 0_3
+function SkillPathPointNormalAttackData:GetPetOrderGridArray(petEntity, pathPosition)
   local orderGridArray = {}
   local buffComponent = petEntity:BuffComponent()
   local normalAttackCrossTwoCount = buffComponent:GetBuffValue("NormalAttackCrossTwoCount")
-  if normalAttackCrossTwoCount and normalAttackCrossTwoCount > 0 then
+  if normalAttackCrossTwoCount and 0 < normalAttackCrossTwoCount then
     orderGridArray = self:GetOrderGridArrayCrossTwo(pathPosition)
   else
     orderGridArray = self:GetOrderGridArray(pathPosition)
@@ -42,10 +26,7 @@ SkillPathPointNormalAttackData.GetPetOrderGridArray = function(self, petEntity, 
   return orderGridArray
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathPointNormalAttackData.GetOrderGridArray = function(self, pathPointPos)
-  -- function num : 0_4
+function SkillPathPointNormalAttackData:GetOrderGridArray(pathPointPos)
   local orderArray = {}
   self:_CheckAttackPoint(pathPointPos, 0, 1, orderArray)
   self:_CheckAttackPoint(pathPointPos, 1, 0, orderArray)
@@ -58,28 +39,22 @@ SkillPathPointNormalAttackData.GetOrderGridArray = function(self, pathPointPos)
   return orderArray
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathPointNormalAttackData._CheckAttackPoint = function(self, pathPointPos, disx, disy, orderArray)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillPathPointNormalAttackData:_CheckAttackPoint(pathPointPos, disx, disy, orderArray)
   local attackPos = Vector2(0, 0)
   attackPos.x = pathPointPos.x + disx
   attackPos.y = pathPointPos.y + disy
-  local posIndex = (Vector2.Pos2Index)(attackPos)
-  local isKey = (table.iskey)(self._attackGridDic, posIndex)
+  local posIndex = Vector2.Pos2Index(attackPos)
+  local isKey = table.iskey(self._attackGridDic, posIndex)
   if isKey == true then
     orderArray[#orderArray + 1] = attackPos
   end
-  local isKeyAdditional = (table.iskey)(self._attackGridDicAdditional, posIndex)
+  local isKeyAdditional = table.iskey(self._attackGridDicAdditional, posIndex)
   if isKeyAdditional == true then
     orderArray[#orderArray + 1] = attackPos
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathPointNormalAttackData.GetOrderGridArrayCrossTwo = function(self, pathPointPos)
-  -- function num : 0_6
+function SkillPathPointNormalAttackData:GetOrderGridArrayCrossTwo(pathPointPos)
   local orderArray = {}
   local hasAddAttack = true
   hasAddAttack = self:_CheckAttackPointHaveAttackData(pathPointPos, 0, 1, orderArray)
@@ -101,59 +76,37 @@ SkillPathPointNormalAttackData.GetOrderGridArrayCrossTwo = function(self, pathPo
   return orderArray
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathPointNormalAttackData._CheckAttackPointHaveAttackData = function(self, pathPointPos, disx, disy, orderArray)
-  -- function num : 0_7
+function SkillPathPointNormalAttackData:_CheckAttackPointHaveAttackData(pathPointPos, disx, disy, orderArray)
   local orderArrayCount1 = #orderArray
   self:_CheckAttackPoint(pathPointPos, disx, disy, orderArray)
   local orderArrayCount2 = #orderArray
-  do return orderArrayCount1 < orderArrayCount2 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return orderArrayCount1 < orderArrayCount2
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathPointNormalAttackData.GetPathPointAttackCount = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  return (table.count)(self._attackGridDic)
+function SkillPathPointNormalAttackData:GetPathPointAttackCount()
+  return table.count(self._attackGridDic)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathPointNormalAttackData.AddAttackGridData = function(self, beAttackPosition, targetEntityID, skillId, petEntityID, casterPos)
-  -- function num : 0_9 , upvalues : _ENV
+function SkillPathPointNormalAttackData:AddAttackGridData(beAttackPosition, targetEntityID, skillId, petEntityID, casterPos)
   local hasAttackGridData = self:HasAttackInfo(beAttackPosition, targetEntityID)
   if hasAttackGridData ~= true then
     local attackGridData = AttackGridData:New(targetEntityID, nil, beAttackPosition, skillId, petEntityID)
-    local posIndex = (Vector2.Pos2Index)(beAttackPosition)
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._attackGridDic)[posIndex] = attackGridData
+    local posIndex = Vector2.Pos2Index(beAttackPosition)
+    self._attackGridDic[posIndex] = attackGridData
   else
-    do
-      ;
-      (Log.fatal)("Already has attack grid data")
-    end
+    Log.fatal("Already has attack grid data")
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathPointNormalAttackData.HasAttackGridData = function(self, beAttackPosition)
-  -- function num : 0_10 , upvalues : _ENV
-  local posIndex = (Vector2.Pos2Index)(beAttackPosition)
-  return (table.iskey)(self._attackGridDic, posIndex)
+function SkillPathPointNormalAttackData:HasAttackGridData(beAttackPosition)
+  local posIndex = Vector2.Pos2Index(beAttackPosition)
+  return table.iskey(self._attackGridDic, posIndex)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathPointNormalAttackData.HasAttackInfo = function(self, beAttackPosition, targetEntityID)
-  -- function num : 0_11 , upvalues : _ENV
+function SkillPathPointNormalAttackData:HasAttackInfo(beAttackPosition, targetEntityID)
   local hasPos = self:HasAttackGridData(beAttackPosition)
   local hasTarget = false
-  for k,v in pairs(self._attackGridDic) do
+  for k, v in pairs(self._attackGridDic) do
     local attackGridData = v
     local curIDList = attackGridData:GetTargetIdList()
     if curIDList then
@@ -164,38 +117,24 @@ SkillPathPointNormalAttackData.HasAttackInfo = function(self, beAttackPosition, 
       end
     end
   end
-  do
-    if hasPos == true or hasTarget == true then
-      return true
-    end
-    return false
+  if hasPos == true or hasTarget == true then
+    return true
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathPointNormalAttackData.AddAttackGridDataOnlyCheckPos = function(self, beAttackPosition, targetEntityID, skillId, petEntityID, casterPos)
-  -- function num : 0_12 , upvalues : _ENV
+function SkillPathPointNormalAttackData:AddAttackGridDataOnlyCheckPos(beAttackPosition, targetEntityID, skillId, petEntityID, casterPos)
   local hasAttackGridData = self:HasAttackInfoOnlyCheckPos(beAttackPosition, targetEntityID)
   if hasAttackGridData ~= true then
     local attackGridData = AttackGridData:New(targetEntityID, nil, beAttackPosition, skillId, petEntityID)
-    local posIndex = (Vector2.Pos2Index)(beAttackPosition)
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._attackGridDic)[posIndex] = attackGridData
+    local posIndex = Vector2.Pos2Index(beAttackPosition)
+    self._attackGridDic[posIndex] = attackGridData
   else
-    do
-      ;
-      (Log.fatal)("Already has attack grid data")
-    end
+    Log.fatal("Already has attack grid data")
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathPointNormalAttackData.HasAttackInfoOnlyCheckPos = function(self, beAttackPosition, targetEntityID)
-  -- function num : 0_13
+function SkillPathPointNormalAttackData:HasAttackInfoOnlyCheckPos(beAttackPosition, targetEntityID)
   local hasPos = self:HasAttackGridData(beAttackPosition)
   if hasPos == true then
     return true
@@ -203,24 +142,13 @@ SkillPathPointNormalAttackData.HasAttackInfoOnlyCheckPos = function(self, beAtta
   return false
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathPointNormalAttackData.AddAttackGridDataAdditional = function(self, beAttackPosition, targetEntityID, skillId, petEntityID, casterPos)
-  -- function num : 0_14 , upvalues : _ENV
+function SkillPathPointNormalAttackData:AddAttackGridDataAdditional(beAttackPosition, targetEntityID, skillId, petEntityID, casterPos)
   local hasAttackGridData = self:HasAttackInfoOnlyCheckPos(beAttackPosition, targetEntityID)
   if hasAttackGridData == true then
     local attackGridData = AttackGridData:New(targetEntityID, nil, beAttackPosition, skillId, petEntityID)
-    local posIndex = (Vector2.Pos2Index)(beAttackPosition)
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._attackGridDicAdditional)[posIndex] = attackGridData
+    local posIndex = Vector2.Pos2Index(beAttackPosition)
+    self._attackGridDicAdditional[posIndex] = attackGridData
   else
-    do
-      ;
-      (Log.fatal)("Already has attack grid data")
-    end
+    Log.fatal("Already has attack grid data")
   end
 end
-
-

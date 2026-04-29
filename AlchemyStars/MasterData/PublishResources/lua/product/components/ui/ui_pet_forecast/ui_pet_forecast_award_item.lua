@@ -1,46 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_forecast/ui_pet_forecast_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetForecastAwardItem", UICustomWidget)
 UIPetForecastAwardItem = UIPetForecastAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetForecastAwardItem.OnShow = function(self)
-  -- function num : 0_0
+function UIPetForecastAwardItem:OnShow()
   self._trans = self:GetGameObject()
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastAwardItem.Flush = function(self, tplId, count, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPetForecastAwardItem:Flush(tplId, count, callback)
   self.tplId = tplId
-  local cfgv = (Cfg.cfg_item)[tplId]
-  ;
-  (self.icon):LoadImage(cfgv.Icon)
-  ;
-  (self.txtCount):SetText(count)
+  local cfgv = Cfg.cfg_item[tplId]
+  self.icon:LoadImage(cfgv.Icon)
+  self.txtCount:SetText(count)
   self.callback = callback
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastAwardItem.Trans = function(self)
-  -- function num : 0_2
+function UIPetForecastAwardItem:Trans()
   return self._trans
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastAwardItem.bgOnClick = function(self, go)
-  -- function num : 0_3
+function UIPetForecastAwardItem:bgOnClick(go)
   if self.callback then
-    (self.callback)()
+    self.callback()
   end
 end
-
-

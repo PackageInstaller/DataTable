@@ -1,43 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/aircraft/aircraft_room/aircraft_amusement_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("aircraft_room_base")
 _class("AircraftAmusementRoom", AircraftRoomBase)
 AircraftAmusementRoom = AircraftAmusementRoom
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftAmusementRoom.Constructor = function(self)
-  -- function num : 0_0
+function AircraftAmusementRoom:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftAmusementRoom.CanCollect = function(self)
-  -- function num : 0_1
+function AircraftAmusementRoom:CanCollect()
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftAmusementRoom.GetAmbientValue = function(self)
-  -- function num : 0_2
-  return (self._module):GetAmusementAmbient(self:GetRoomType())
+function AircraftAmusementRoom:GetAmbientValue()
+  return self._module:GetAmusementAmbient(self:GetRoomType())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftAmusementRoom.GetUpgradeInfo = function(self)
-  -- function num : 0_3
+function AircraftAmusementRoom:GetUpgradeInfo()
   return {}
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftAmusementRoom.GetDegradeInfo = function(self)
-  -- function num : 0_4
+function AircraftAmusementRoom:GetDegradeInfo()
   return {}
 end
-
-

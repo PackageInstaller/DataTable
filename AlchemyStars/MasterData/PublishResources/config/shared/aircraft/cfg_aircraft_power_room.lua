@@ -1,19 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/aircraft/cfg_aircraft_power_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, FireflyRecover = 2, AddPower = 3}
+local key = {
+  ID = 1,
+  FireflyRecover = 2,
+  AddPower = 3
+}
 local config = {
-[7102001] = {7102001, 0.0008333333, 50}
-, 
-[7102002] = {7102002, 0.0008333333, 80}
-, 
-[7102003] = {7102003, 0.0008333333, 120}
-, 
-[7102004] = {7102004, 0.0008333333, 170}
-, 
-[7102005] = {7102005, 0.0008333333, 240}
+  [7102001] = {
+    7102001,
+    8.333333E-4,
+    50
+  },
+  [7102002] = {
+    7102002,
+    8.333333E-4,
+    80
+  },
+  [7102003] = {
+    7102003,
+    8.333333E-4,
+    120
+  },
+  [7102004] = {
+    7102004,
+    8.333333E-4,
+    170
+  },
+  [7102005] = {
+    7102005,
+    8.333333E-4,
+    240
+  }
 }
 return config, "ID", key
-

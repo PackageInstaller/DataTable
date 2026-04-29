@@ -1,40 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n18/review/ui_review_progress_award_detail_item_n18.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIReviewProgressAwardDetailItem_N18", UIReviewProgressAwardDetailItem)
 UIReviewProgressAwardDetailItem_N18 = UIReviewProgressAwardDetailItem_N18
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIReviewProgressAwardDetailItem_N18._SetAwardCount = function(self, count)
-  -- function num : 0_0 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "count", count)
+function UIReviewProgressAwardDetailItem_N18:_SetAwardCount(count)
+  UIWidgetHelper.SetLocalizationText(self, "count", count)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewProgressAwardDetailItem_N18._SetProgress = function(self, num)
-  -- function num : 0_1 , upvalues : _ENV
-  local tb = {"progress1", "progress2", "progress3"}
-  for _,w in ipairs(tb) do
-    (UIWidgetHelper.SetLocalizationText)(self, w, num .. "%")
+function UIReviewProgressAwardDetailItem_N18:_SetProgress(num)
+  local tb = {
+    "progress1",
+    "progress2",
+    "progress3"
+  }
+  for _, w in ipairs(tb) do
+    UIWidgetHelper.SetLocalizationText(self, w, num .. "%")
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewProgressAwardDetailItem_N18._SetState = function(self, state)
-  -- function num : 0_2 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"pg_cantCollect", "cantCollect"}
-, 
-{"pg_canCollect", "canCollect"}
-, 
-{"pg_collected", "collected"}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+function UIReviewProgressAwardDetailItem_N18:_SetState(state)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {
+      "pg_cantCollect",
+      "cantCollect"
+    },
+    {
+      "pg_canCollect",
+      "canCollect"
+    },
+    {
+      "pg_collected",
+      "collected"
+    }
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
-
-

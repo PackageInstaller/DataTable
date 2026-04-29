@@ -1,187 +1,134 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/trigger/luckland_notify_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("luckland_notify_type")
 _class("LuckLandNotifyBase", Object)
 LuckLandNotifyBase = LuckLandNotifyBase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LuckLandNotifyBase.Constructor = function(self, entity)
-  -- function num : 0_0
+function LuckLandNotifyBase:Constructor(entity)
   self._notifyEntity = entity
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandNotifyBase.GetNotifyType = function(self)
-  -- function num : 0_1
+function LuckLandNotifyBase:GetNotifyType()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandNotifyBase.GetNotifyEntity = function(self)
-  -- function num : 0_2
+function LuckLandNotifyBase:GetNotifyEntity()
   return self._notifyEntity
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandNotifyBase.GetNotifyParams = function(self)
-  -- function num : 0_3
+function LuckLandNotifyBase:GetNotifyParams()
   return self._params
 end
 
 _class("LLNTPetEnter", LuckLandNotifyBase)
 LLNTPetEnter = LLNTPetEnter
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-LLNTPetEnter.GetNotifyType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function LLNTPetEnter:GetNotifyType()
   return LuckLandNotifyType.PetEnter
 end
 
 _class("LLNTPetTurnStart", LuckLandNotifyBase)
 LLNTPetTurnStart = LLNTPetTurnStart
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
 
-LLNTPetTurnStart.GetNotifyType = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function LLNTPetTurnStart:GetNotifyType()
   return LuckLandNotifyType.PetTurnStart
 end
 
 _class("LLNTPetTurn", LuckLandNotifyBase)
 LLNTPetTurn = LLNTPetTurn
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-LLNTPetTurn.GetNotifyType = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function LLNTPetTurn:GetNotifyType()
   return LuckLandNotifyType.PetTurn
 end
 
 _class("LLNTPetTurnEnd", LuckLandNotifyBase)
 LLNTPetTurnEnd = LLNTPetTurnEnd
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
 
-LLNTPetTurnEnd.GetNotifyType = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function LLNTPetTurnEnd:GetNotifyType()
   return LuckLandNotifyType.PetTurnEnd
 end
 
 _class("LLNTBackpackTurn", LuckLandNotifyBase)
 LLNTBackpackTurn = LLNTBackpackTurn
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
 
-LLNTBackpackTurn.GetNotifyType = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function LLNTBackpackTurn:GetNotifyType()
   return LuckLandNotifyType.BackpackTurn
 end
 
 _class("LLNTBuildingTurn", LuckLandNotifyBase)
 LLNTBuildingTurn = LLNTBuildingTurn
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
 
-LLNTBuildingTurn.GetNotifyType = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function LLNTBuildingTurn:GetNotifyType()
   return LuckLandNotifyType.BuildingTurn
 end
 
 _class("LLNTCountDown", LuckLandNotifyBase)
 LLNTCountDown = LLNTCountDown
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
 
-LLNTCountDown.GetNotifyType = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function LLNTCountDown:GetNotifyType()
   return LuckLandNotifyType.CountDown
 end
 
 _class("LLNTDefeatMonster", LuckLandNotifyBase)
 LLNTDefeatMonster = LLNTDefeatMonster
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
 
-LLNTDefeatMonster.GetNotifyType = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function LLNTDefeatMonster:GetNotifyType()
   return LuckLandNotifyType.DefeatMonster
 end
 
 _class("LLNTMonsterTurnStart", LuckLandNotifyBase)
 LLNTMonsterTurnStart = LLNTMonsterTurnStart
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
 
-LLNTMonsterTurnStart.GetNotifyType = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function LLNTMonsterTurnStart:GetNotifyType()
   return LuckLandNotifyType.MonsterTurnStart
 end
 
 _class("LLNTMonsterTurn", LuckLandNotifyBase)
 LLNTMonsterTurn = LLNTMonsterTurn
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
 
-LLNTMonsterTurn.GetNotifyType = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function LLNTMonsterTurn:GetNotifyType()
   return LuckLandNotifyType.MonsterTurn
 end
 
 _class("LLNTMonsterAttackEnd", LuckLandNotifyBase)
 LLNTMonsterAttackEnd = LLNTMonsterAttackEnd
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
 
-LLNTMonsterAttackEnd.GetNotifyType = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function LLNTMonsterAttackEnd:GetNotifyType()
   return LuckLandNotifyType.MonsterAttackEnd
 end
 
 _class("LLNTMonsterEnter", LuckLandNotifyBase)
 LLNTMonsterEnter = LLNTMonsterEnter
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
 
-LLNTMonsterEnter.GetNotifyType = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function LLNTMonsterEnter:GetNotifyType()
   return LuckLandNotifyType.MonsterEnter
 end
 
 _class("LLNTSelectPet", LuckLandNotifyBase)
 LLNTSelectPet = LLNTSelectPet
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
 
-LLNTSelectPet.GetNotifyType = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function LLNTSelectPet:GetNotifyType()
   return LuckLandNotifyType.SelectPet
 end
 
 _class("LLNTDeletePet", LuckLandNotifyBase)
 LLNTDeletePet = LLNTDeletePet
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
 
-LLNTDeletePet.Constructor = function(self, notifyEntity, delEntity, sourceEntity)
-  -- function num : 0_17
+function LLNTDeletePet:Constructor(notifyEntity, delEntity, sourceEntity)
   self._params = {delEntity, sourceEntity}
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-LLNTDeletePet.GetNotifyType = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function LLNTDeletePet:GetNotifyType()
   return LuckLandNotifyType.DeletePet
 end
 
 _class("LLNTGetPet", LuckLandNotifyBase)
 LLNTGetPet = LLNTGetPet
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
 
-LLNTGetPet.GetNotifyType = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function LLNTGetPet:GetNotifyType()
   return LuckLandNotifyType.GetPet
 end
 
 _class("LLNTBuildingUpgrade", LuckLandNotifyBase)
 LLNTBuildingUpgrade = LLNTBuildingUpgrade
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
 
-LLNTBuildingUpgrade.GetNotifyType = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function LLNTBuildingUpgrade:GetNotifyType()
   return LuckLandNotifyType.BuildingUpgrade
 end
-
-

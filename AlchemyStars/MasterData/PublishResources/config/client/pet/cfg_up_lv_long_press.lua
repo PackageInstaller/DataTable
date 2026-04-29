@@ -1,36 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/pet/cfg_up_lv_long_press.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {Grade = 1, Value = 2}
 local common = {
-{
-{1, 20}
-, 
-{2, 40}
-, 
-{3, 80}
-, 
-{5, 100}
-, 
-{7, 120}
-, 
-{9, 150}
-, 
-{12, 180}
-, 
-{16, 200}
-}
+  {
+    {1, 20},
+    {2, 40},
+    {3, 80},
+    {5, 100},
+    {7, 120},
+    {9, 150},
+    {12, 180},
+    {16, 200}
+  }
 }
 local config = {
-[0] = {0, common[1]}
-, 
-[1] = {1, common[1]}
-, 
-[2] = {2, common[1]}
-, 
-[3] = {3, common[1]}
+  [0] = {
+    0,
+    common[1]
+  },
+  [1] = {
+    1,
+    common[1]
+  },
+  [2] = {
+    2,
+    common[1]
+  },
+  [3] = {
+    3,
+    common[1]
+  }
 }
 return config, "Grade", key
-

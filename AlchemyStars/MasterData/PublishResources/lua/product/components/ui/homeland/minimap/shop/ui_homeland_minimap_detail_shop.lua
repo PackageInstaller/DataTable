@@ -1,124 +1,78 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/shop/ui_homeland_minimap_detail_shop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapDetailShop", UIHomelandMinimapDetailBase)
 UIHomelandMinimapDetailShop = UIHomelandMinimapDetailShop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapDetailShop.OnShow = function(self)
-  -- function num : 0_0
+function UIHomelandMinimapDetailShop:OnShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailShop.OnHide = function(self)
-  -- function num : 0_1
+function UIHomelandMinimapDetailShop:OnHide()
   self.imgIcon = self:GetUIComponent("RawImageLoader", "Skin")
-  ;
-  (self.imgIcon):DestoryLastImage()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailShop.OnClose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((UIHomelandMinimapDetailShop.super).OnClose)(self)
+function UIHomelandMinimapDetailShop:OnClose()
+  UIHomelandMinimapDetailShop.super.OnClose(self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailShop.OnInitDone = function(self)
-  -- function num : 0_3
+function UIHomelandMinimapDetailShop:OnInitDone()
   self:_SetSkin()
   self:_SetShop()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailShop._SetSkin = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandMinimapDetailShop:_SetSkin()
   local iconData = self:GetIconData()
   if not iconData then
-    return 
+    return
   end
-  local building = (self:GetIconData()):GetParam()
+  local building = self:GetIconData():GetParam()
   local skinID = building:SkinID()
-  local cfgSkin = (Cfg.cfg_item_architecture_skin)[skinID]
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "NameTxt", (StringTable.Get)(cfgSkin.SkinName))
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "ContentTxt", (StringTable.Get)(cfgSkin.Des))
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "Skin", cfgSkin.SkinIcon)
+  local cfgSkin = Cfg.cfg_item_architecture_skin[skinID]
+  UIWidgetHelper.SetLocalizationText(self, "NameTxt", StringTable.Get(cfgSkin.SkinName))
+  UIWidgetHelper.SetLocalizationText(self, "ContentTxt", StringTable.Get(cfgSkin.Des))
+  UIWidgetHelper.SetRawImage(self, "Skin", cfgSkin.SkinIcon)
   self._nameTxt = self:GetUIComponent("UILocalizationText", "NameTxt")
   self._titleRect = self:GetUIComponent("RectTransform", "Title")
-  do
-    if self._titleRect then
-      local titleWidth = (self._nameTxt).preferredWidth
-      if titleWidth > 350 then
-        titleWidth = 350
-      end
-      -- DECOMPILER ERROR at PC63: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._titleRect).sizeDelta = Vector2(titleWidth, ((self._titleRect).sizeDelta).y)
+  if self._titleRect then
+    local titleWidth = self._nameTxt.preferredWidth
+    if 350 < titleWidth then
+      titleWidth = 350
     end
-    local ContentTxtRect = self:GetUIComponent("RectTransform", "ContentTxt")
-    if ContentTxtRect then
-      ContentTxtRect.anchoredPosition = Vector2(0, 0)
-    end
+    self._titleRect.sizeDelta = Vector2(titleWidth, self._titleRect.sizeDelta.y)
+  end
+  local ContentTxtRect = self:GetUIComponent("RectTransform", "ContentTxt")
+  if ContentTxtRect then
+    ContentTxtRect.anchoredPosition = Vector2(0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailShop._SetShop = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetModule)(HomelandModule)
-  local shop_info = (homeLandModule.m_homeland_info).shop_info
+function UIHomelandMinimapDetailShop:_SetShop()
+  local homeLandModule = GameGlobal.GetModule(HomelandModule)
+  local shop_info = homeLandModule.m_homeland_info.shop_info
   self._infos = self:_GetListData(shop_info)
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "Shop", "UIHomelandShopTabOrderListItem", #self._infos)
-  for i,v in ipairs(objs) do
-    v:SetData(i, (self._infos)[i])
+  local objs = UIWidgetHelper.SpawnObjects(self, "Shop", "UIHomelandShopTabOrderListItem", #self._infos)
+  for i, v in ipairs(objs) do
+    v:SetData(i, self._infos[i])
   end
-  local check = (UIHomelandShopHelper.CheckOrderSubmit)()
-  ;
-  (self:GetGameObject("_txtSubmitHint")):SetActive(check)
+  local check = UIHomelandShopHelper.CheckOrderSubmit()
+  self:GetGameObject("_txtSubmitHint"):SetActive(check)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailShop._GetListData = function(self, shop_info)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandMinimapDetailShop:_GetListData(shop_info)
   local tb = {}
-  for i,v in pairs(shop_info.goods_info) do
+  for i, v in pairs(shop_info.goods_info) do
     tb[i + 1] = v
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailShop.CloseBtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapCloseDetailUI)
+function UIHomelandMinimapDetailShop:CloseBtnOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapCloseDetailUI)
   self:OnClose()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailShop.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_8
+function UIHomelandMinimapDetailShop:ConfirmBtnOnClick(go)
   self:CloseBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailShop.GetCloseAnimtionName = function(self)
-  -- function num : 0_9
+function UIHomelandMinimapDetailShop:GetCloseAnimtionName()
   return "UIHomelandMinimapDetailShop_out"
 end
-
-

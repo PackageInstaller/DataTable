@@ -1,29 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_change_skill_by_world_b_stage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_is_base")
 _class("ActionChangeSkillByWorldBossStage", ActionIsBase)
 ActionChangeSkillByWorldBossStage = ActionChangeSkillByWorldBossStage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionChangeSkillByWorldBossStage.Constructor = function(self)
-  -- function num : 0_0
+function ActionChangeSkillByWorldBossStage:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionChangeSkillByWorldBossStage.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if (AINewNode.IsEntityDead)(self.m_entityOwn) then
+function ActionChangeSkillByWorldBossStage:OnUpdate()
+  if AINewNode.IsEntityDead(self.m_entityOwn) then
     return AINewNodeStatus.Failure
   end
   local entityCaster = self.m_entityOwn
   local aiComponent = entityCaster:AI()
   local monsterIDCmpt = entityCaster:MonsterID()
-  if aiComponent == nil or not monsterIDCmpt then
-    (Log.exception)("Caster Need Ai and MonsterID")
+  if nil == aiComponent or not monsterIDCmpt then
+    Log.exception("Caster Need Ai and MonsterID")
     return AINewNodeStatus.Success
   end
   local stage = monsterIDCmpt:GetCurStage()
@@ -32,7 +22,7 @@ ActionChangeSkillByWorldBossStage.OnUpdate = function(self)
   local curStageConfig = dataConfig[stage]
   if curStageConfig then
     if curStageConfig[nSkillID] then
-      self._skillID = (curStageConfig[nSkillID])[1]
+      self._skillID = curStageConfig[nSkillID][1]
       self:PrintLog("世界Boss按阶段替换技能成功<强行修改>, TargetSkillID = ", self._skillID, "SourceSkillID:", nSkillID, "Stage:", stage)
       aiComponent:SetSelectSkillID(self._skillID)
     else
@@ -41,5 +31,3 @@ ActionChangeSkillByWorldBossStage.OnUpdate = function(self)
   end
   return AINewNodeStatus.Success
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_chain_skill_preview.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChainSkillPreview", UICustomWidget)
 UIChainSkillPreview = UIChainSkillPreview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChainSkillPreview.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChainSkillPreview:OnShow()
   self._goOffset = self:GetGameObject("offset")
   self._btnOK = self:GetUIComponent("Button", "btnOK")
   self.enableFakeInput = true
@@ -18,50 +11,29 @@ UIChainSkillPreview.OnShow = function(self)
   self:AttachEvent(GameEventType.ActiveUIPreviewChainBtnOK, self._ActiveUIPreviewChainBtnOK)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChainSkillPreview.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIChainSkillPreview:OnHide()
   self:DetachEvent(GameEventType.ShowHideUIPreviewChain, self._ShowHideUIPreviewChain)
   self:DetachEvent(GameEventType.ActiveUIPreviewChainBtnOK, self._ActiveUIPreviewChainBtnOK)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChainSkillPreview._ShowHideUIPreviewChain = function(self, isShow)
-  -- function num : 0_2
-  (self._goOffset):SetActive(isShow)
+function UIChainSkillPreview:_ShowHideUIPreviewChain(isShow)
+  self._goOffset:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChainSkillPreview._ActiveUIPreviewChainBtnOK = function(self, isOKEnabled)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._btnOK).interactable = isOKEnabled
+function UIChainSkillPreview:_ActiveUIPreviewChainBtnOK(isOKEnabled)
+  self._btnOK.interactable = isOKEnabled
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChainSkillPreview.btnCancelOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIChainSkillPreview:btnCancelOnClick(go)
   self:_ShowHideUIPreviewChain(false)
   self:_ActiveUIPreviewChainBtnOK(false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CancelChainSkillCast)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CancelChainSkillCast)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChainSkillPreview.btnOKOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._btnOK).interactable then
+function UIChainSkillPreview:btnOKOnClick(go)
+  if self._btnOK.interactable then
     self:_ShowHideUIPreviewChain(false)
     self:_ActiveUIPreviewChainBtnOK(false)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CastPickUpChainSkill)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.CastPickUpChainSkill)
   end
 end
-
-

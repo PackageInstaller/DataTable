@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/UIBlackFight/ui_black_fight_reputation_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBlackFightReputationItem", UICustomWidget)
 UIBlackFightReputationItem = UIBlackFightReputationItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBlackFightReputationItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBlackFightReputationItem:OnShow()
   self.reputation = self:GetGameObject("reputation")
   self.imgBG = self:GetGameObject("imgBG")
   self.special = self:GetGameObject("special")
@@ -25,244 +18,153 @@ UIBlackFightReputationItem.OnShow = function(self)
   self.txtSalutation = self:GetUIComponent("UILocalizationText", "txtSalutation")
   self.txtSalutationOL = self:GetUIComponent("UILocalizationText", "txtSalutationOL")
   self.txtSalutationGlow = self:GetUIComponent("UILocalizationText", "txtSalutationGlow")
-  local f = 0.53725490196078
+  local f = 0.5372549019607843
   self.gray = Color(f, f, f)
   self:FlushSelect(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputationItem.OnHide = function(self)
-  -- function num : 0_1
+function UIBlackFightReputationItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputationItem.Flush = function(self, data, selectCallback, i)
-  -- function num : 0_2
+function UIBlackFightReputationItem:Flush(data, selectCallback, i)
   self.data = data
   self.selectCallback = selectCallback
   self.i = i
-  ;
-  (self.imgBG):SetActive(i % 2 == 0)
+  self.imgBG:SetActive(i % 2 == 0)
   self:FlushReputation()
   self:FlushSalutation()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputationItem.FlushReputation = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self.data).reputation == 0 then
-    (self.reputation):SetActive(false)
-    return 
+function UIBlackFightReputationItem:FlushReputation()
+  if self.data.reputation == 0 then
+    self.reputation:SetActive(false)
+    return
   else
-    ;
-    (self.reputation):SetActive(true)
+    self.reputation:SetActive(true)
   end
-  ;
-  (self.special):SetActive((self.data).isSpecial)
-  ;
-  (self.txtReputation):SetText((self.data).reputation)
-  local len = (table.count)((self.data).awards)
-  ;
-  (self.poolAward):SpawnObjects("UIBlackFightReputationItemAward", len)
-  local uis = (self.poolAward):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
-    local award = ((self.data).awards)[i]
+  self.special:SetActive(self.data.isSpecial)
+  self.txtReputation:SetText(self.data.reputation)
+  local len = table.count(self.data.awards)
+  self.poolAward:SpawnObjects("UIBlackFightReputationItemAward", len)
+  local uis = self.poolAward:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
+    local award = self.data.awards[i]
     ui:Flush(award)
   end
   self:FlushGot()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputationItem.FlushGot = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local state = (self.data).gotState
+function UIBlackFightReputationItem:FlushGot()
+  local state = self.data.gotState
   if state == BlackFightReputationState.CanGet then
-    (self.canGet):SetActive(true)
-    ;
-    (self.got):SetActive(false)
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.txtTotal).color = Color.white
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.imgReputation).color = Color.white
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.txtReputation).color = Color.white
+    self.canGet:SetActive(true)
+    self.got:SetActive(false)
+    self.txtTotal.color = Color.white
+    self.imgReputation.color = Color.white
+    self.txtReputation.color = Color.white
     self:FlushGray(false)
+  elseif state == BlackFightReputationState.Got then
+    self.canGet:SetActive(false)
+    self.got:SetActive(true)
+    self.txtTotal.color = self.gray
+    self.imgReputation.color = self.gray
+    self.txtReputation.color = self.gray
+    self:FlushGray(true)
   else
-    if state == BlackFightReputationState.Got then
-      (self.canGet):SetActive(false)
-      ;
-      (self.got):SetActive(true)
-      -- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.txtTotal).color = self.gray
-      -- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.imgReputation).color = self.gray
-      -- DECOMPILER ERROR at PC50: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.txtReputation).color = self.gray
-      self:FlushGray(true)
-    else
-      ;
-      (self.canGet):SetActive(false)
-      ;
-      (self.got):SetActive(false)
-      -- DECOMPILER ERROR at PC66: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.txtTotal).color = Color.white
-      -- DECOMPILER ERROR at PC70: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.imgReputation).color = Color.white
-      -- DECOMPILER ERROR at PC74: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.txtReputation).color = Color.white
-      self:FlushGray(false)
-    end
+    self.canGet:SetActive(false)
+    self.got:SetActive(false)
+    self.txtTotal.color = Color.white
+    self.imgReputation.color = Color.white
+    self.txtReputation.color = Color.white
+    self:FlushGray(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputationItem.FlushGray = function(self, gray)
-  -- function num : 0_5 , upvalues : _ENV
-  local uis = (self.poolAward):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
+function UIBlackFightReputationItem:FlushGray(gray)
+  local uis = self.poolAward:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
     ui:FlushGray(gray)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputationItem.FlushSalutation = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIBlackFightReputationItem:FlushSalutation()
   local isShow = false
-  local dataN7 = ((GameGlobal.GetModule)(CampaignModule)):GetN7BlackFightData()
-  if dataN7.salutations and (table.count)(dataN7.salutations) > 0 then
-    local s = dataN7:GetSalutionByReputation((self.data).reputation)
+  local dataN7 = GameGlobal.GetModule(CampaignModule):GetN7BlackFightData()
+  if dataN7.salutations and table.count(dataN7.salutations) > 0 then
+    local s = dataN7:GetSalutionByReputation(self.data.reputation)
     if s then
       isShow = true
-      ;
-      (UIBlackFightMain.FlushTextColorOutline)(s, self.txtSalutation, self.txtSalutationOL, self.txtSalutationGlow, self.bgSa, 2)
-      ;
-      (self.txtScoreSa):SetText((StringTable.Get)("str_n7_black_fight_sep_salutation", s.reputation))
-      local cfg = (Cfg.cfg_n7_black_fight_salutation)()
+      UIBlackFightMain.FlushTextColorOutline(s, self.txtSalutation, self.txtSalutationOL, self.txtSalutationGlow, self.bgSa, 2)
+      self.txtScoreSa:SetText(StringTable.Get("str_n7_black_fight_sep_salutation", s.reputation))
+      local cfg = Cfg.cfg_n7_black_fight_salutation()
       if cfg then
-        local arr2color = function(arr)
-    -- function num : 0_6_0 , upvalues : _ENV
-    local color = Color.white
-    if arr then
-      color:Set(arr[1] / 255, arr[2] / 255, arr[3] / 255)
-    end
-    return color
-  end
-
-        for index,cfgv in pairs(cfg) do
-          -- DECOMPILER ERROR at PC59: Confused about usage of register: R11 in 'UnsetPending'
-
+        local function arr2color(arr)
+          local color = Color.white
+          
+          if arr then
+            color:Set(arr[1] / 255, arr[2] / 255, arr[3] / 255)
+          end
+          return color
+        end
+        
+        for index, cfgv in pairs(cfg) do
           if s.reputation == cfgv.Reputation then
-            (self.txtScoreSa).color = arr2color((cfgv.UI).colorUnlock)
-            return 
+            self.txtScoreSa.color = arr2color(cfgv.UI.colorUnlock)
+            return
           end
         end
       end
     end
   end
-  do
-    ;
-    (self.salutation):SetActive(isShow)
-  end
+  self.salutation:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputationItem.FlushSelect = function(self, isSelect)
-  -- function num : 0_7
-  (self.select):SetActive(isSelect)
+function UIBlackFightReputationItem:FlushSelect(isSelect)
+  self.select:SetActive(isSelect)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputationItem.bgOnClick = function(self)
-  -- function num : 0_8
+function UIBlackFightReputationItem:bgOnClick()
   if self.selectCallback then
-    (self.selectCallback)()
+    self.selectCallback()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputationItem.btnGetOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIBlackFightReputationItem:btnGetOnClick()
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : _ENV, self
-    local dataN7 = ((GameGlobal.GetModule)(CampaignModule)):GetN7BlackFightData()
+    local dataN7 = GameGlobal.GetModule(CampaignModule):GetN7BlackFightData()
     local c = dataN7:GetComponentReputation()
     local res = AsyncRequestRes:New()
-    local awards = c:HandleReceiveReward(TT, res, (self.data).reputation)
+    local awards = c:HandleReceiveReward(TT, res, self.data.reputation)
     if awards then
-      (UIBlackFightReputationItem.ShowRewards)(awards)
-      -- DECOMPILER ERROR at PC26: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self.data).gotState = BlackFightReputationState.Got
+      UIBlackFightReputationItem.ShowRewards(awards)
+      self.data.gotState = BlackFightReputationState.Got
       self:Flush(self.data, self.selectCallback, self.i)
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputationItem.ShowRewards = function(rewards, callback)
-  -- function num : 0_10 , upvalues : _ENV
+function UIBlackFightReputationItem.ShowRewards(rewards, callback)
   local petIdList = {}
-  local mPet = (GameGlobal.GetModule)(PetModule)
-  for _,reward in pairs(rewards) do
+  local mPet = GameGlobal.GetModule(PetModule)
+  for _, reward in pairs(rewards) do
     if mPet:IsPetID(reward.assetid) then
-      (table.insert)(petIdList, reward)
+      table.insert(petIdList, reward)
     end
   end
-  if (table.count)(petIdList) > 0 then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIPetObtain", petIdList, function()
-    -- function num : 0_10_0 , upvalues : _ENV, rewards, callback
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", rewards, function()
-      -- function num : 0_10_0_0 , upvalues : callback
-      if callback then
-        callback()
-      end
-    end
-)
+  if table.count(petIdList) > 0 then
+    GameGlobal.UIStateManager():ShowDialog("UIPetObtain", petIdList, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      GameGlobal.UIStateManager():ShowDialog("UIGetItemController", rewards, function()
+        if callback then
+          callback()
+        end
+      end)
+    end)
+    return
   end
-)
-    return 
-  end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", rewards, function()
-    -- function num : 0_10_1 , upvalues : callback
+  GameGlobal.UIStateManager():ShowDialog("UIGetItemController", rewards, function()
     if callback then
       callback()
     end
-  end
-)
+  end)
 end
-
-

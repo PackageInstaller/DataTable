@@ -1,35 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s1/ui_s1_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS1Helper", Object)
 UIS1Helper = UIS1Helper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS1Helper.GetQuestInfo_BySeasonFilter = function(component)
-  -- function num : 0_0 , upvalues : _ENV
+function UIS1Helper.GetQuestInfo_BySeasonFilter(component)
   if component == nil then
     return {}
   end
-  local filter = {[CampaignQuestStatus.CQS_NotStart] = false, [CampaignQuestStatus.CQS_Accepted] = true, [CampaignQuestStatus.CQS_Completed] = true, [CampaignQuestStatus.CQS_Taken] = true, [CampaignQuestStatus.CQS_Over] = false}
+  local filter = {
+    [CampaignQuestStatus.CQS_NotStart] = false,
+    [CampaignQuestStatus.CQS_Accepted] = true,
+    [CampaignQuestStatus.CQS_Completed] = true,
+    [CampaignQuestStatus.CQS_Taken] = true,
+    [CampaignQuestStatus.CQS_Over] = false
+  }
   local questList = component:GetQuestInfo_ByCampaignQuestStatus(filter)
   return questList
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1Helper.HideQuest = function(tb_in)
-  -- function num : 0_1 , upvalues : _ENV
+function UIS1Helper.HideQuest(tb_in)
   local tb_out = {}
-  local tb_remove = {[800223] = true, [800227] = true}
-  for i,v in ipairs(tb_in) do
+  local tb_remove = {
+    [800223] = true,
+    [800227] = true
+  }
+  for i, v in ipairs(tb_in) do
     local quest = v:QuestInfo()
     if not tb_remove[quest.quest_id] then
-      (table.insert)(tb_out, v)
+      table.insert(tb_out, v)
     end
   end
   return tb_out
 end
-
-

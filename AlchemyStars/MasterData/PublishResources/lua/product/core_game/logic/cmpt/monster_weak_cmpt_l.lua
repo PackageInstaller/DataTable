@@ -1,163 +1,114 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/monster_weak_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-WeakEdgeType = {WeakUp = 1, WeakDown = 2, WeakRight = 3, WeakLeft = 4, WeakUp_1 = 11, WeakDown_1 = 12, WeakRight_1 = 13, WeakLeft_1 = 14, WeakUp_2 = 21, WeakDown_2 = 22, WeakRight_2 = 23, WeakLeft_2 = 24, Max = 99}
+WeakEdgeType = {
+  WeakUp = 1,
+  WeakDown = 2,
+  WeakRight = 3,
+  WeakLeft = 4,
+  WeakUp_1 = 11,
+  WeakDown_1 = 12,
+  WeakRight_1 = 13,
+  WeakLeft_1 = 14,
+  WeakUp_2 = 21,
+  WeakDown_2 = 22,
+  WeakRight_2 = 23,
+  WeakLeft_2 = 24,
+  Max = 99
+}
 _enum("WeakEdgeType", WeakEdgeType)
 _class("MonsterWeakComponent", Object)
 MonsterWeakComponent = MonsterWeakComponent
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterWeakComponent.Constructor = function(self)
-  -- function num : 0_0
+function MonsterWeakComponent:Constructor()
   self._monsterWeakDataList = {}
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterWeakComponent.GetMonsterWeakDataByKey = function(self, key)
-  -- function num : 0_1
-  return (self._monsterWeakDataList)[key]
+function MonsterWeakComponent:GetMonsterWeakDataByKey(key)
+  return self._monsterWeakDataList[key]
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterWeakComponent.GetMonsterWeakDataByKeyAndBodyPos = function(self, key, bodyAreaPos)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,v in pairs(self._monsterWeakDataList) do
+function MonsterWeakComponent:GetMonsterWeakDataByKeyAndBodyPos(key, bodyAreaPos)
+  for _, v in pairs(self._monsterWeakDataList) do
     local monsterWeakData = v
     local bodyPosList = monsterWeakData:GetBodyPosList()
-    if (string.find)(tostring(monsterWeakData:GetKey()), tostring(key)) and (table.icontains)(bodyPosList, bodyAreaPos) then
+    if string.find(tostring(monsterWeakData:GetKey()), tostring(key)) and table.icontains(bodyPosList, bodyAreaPos) then
       return monsterWeakData
     end
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterWeakComponent.GetMonsterWeakDataList = function(self)
-  -- function num : 0_3
+function MonsterWeakComponent:GetMonsterWeakDataList()
   return self._monsterWeakDataList
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterWeakComponent.GetMonsterWeakCount = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  return (table.count)(self:GetMonsterWeakDataList())
+function MonsterWeakComponent:GetMonsterWeakCount()
+  return table.count(self:GetMonsterWeakDataList())
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterWeakComponent.SetMonsterWeakData = function(self, key, monsterWeakData)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._monsterWeakDataList)[key] = monsterWeakData
+function MonsterWeakComponent:SetMonsterWeakData(key, monsterWeakData)
+  self._monsterWeakDataList[key] = monsterWeakData
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterWeakComponent.RemoveMonsterWeakData = function(self, key)
-  -- function num : 0_6
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._monsterWeakDataList)[key] = nil
+function MonsterWeakComponent:RemoveMonsterWeakData(key)
+  self._monsterWeakDataList[key] = nil
 end
 
 _class("MonsterWeakData", Object)
 MonsterWeakData = MonsterWeakData
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterWeakData.Constructor = function(self, key, edgePosList, bodyPosList, entityID)
-  -- function num : 0_7 , upvalues : _ENV
+function MonsterWeakData:Constructor(key, edgePosList, bodyPosList, entityID)
   self._key = key
   self._edgePosList = edgePosList
   self._bodyPosList = bodyPosList
   self._length = 0
   if edgePosList then
-    self._length = (table.count)(edgePosList)
+    self._length = table.count(edgePosList)
   end
   self._active = true
   self._entityID = entityID
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterWeakData.GetKey = function(self)
-  -- function num : 0_8
+function MonsterWeakData:GetKey()
   return self._key
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterWeakData.GetEdgePosList = function(self)
-  -- function num : 0_9
+function MonsterWeakData:GetEdgePosList()
   return self._edgePosList
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterWeakData.GetBodyPosList = function(self)
-  -- function num : 0_10
+function MonsterWeakData:GetBodyPosList()
   return self._bodyPosList
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterWeakData.GetLength = function(self)
-  -- function num : 0_11
+function MonsterWeakData:GetLength()
   return self._length
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterWeakData.GetEntityID = function(self)
-  -- function num : 0_12
+function MonsterWeakData:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.MonsterWeak = function(self)
-  -- function num : 0_13
-  return self:GetComponent((self.WEComponentsEnum).MonsterWeak)
+function Entity:MonsterWeak()
+  return self:GetComponent(self.WEComponentsEnum.MonsterWeak)
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasMonsterWeak = function(self)
-  -- function num : 0_14
-  return self:HasComponent((self.WEComponentsEnum).MonsterWeak)
+function Entity:HasMonsterWeak()
+  return self:HasComponent(self.WEComponentsEnum.MonsterWeak)
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddMonsterWeak = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MonsterWeak
+function Entity:AddMonsterWeak()
+  local index = self.WEComponentsEnum.MonsterWeak
   local component = MonsterWeakComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceMonsterWeak = function(self, MonsterWeak)
-  -- function num : 0_16 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MonsterWeak
+function Entity:ReplaceMonsterWeak(MonsterWeak)
+  local index = self.WEComponentsEnum.MonsterWeak
   local component = MonsterWeakComponent:New(MonsterWeak)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveMonsterWeak = function(self)
-  -- function num : 0_17
+function Entity:RemoveMonsterWeak()
   if self:HasMonsterWeak() then
-    self:RemoveComponent((self.WEComponentsEnum).MonsterWeak)
+    self:RemoveComponent(self.WEComponentsEnum.MonsterWeak)
   end
 end
-
-

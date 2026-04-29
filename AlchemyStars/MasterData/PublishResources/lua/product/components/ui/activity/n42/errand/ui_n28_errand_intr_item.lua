@@ -1,31 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/errand/ui_n28_errand_intr_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28ErrandIntrItem", UICustomWidget)
 UIN28ErrandIntrItem = UIN28ErrandIntrItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28ErrandIntrItem.OnShow = function(self)
-  -- function num : 0_0
+function UIN28ErrandIntrItem:OnShow()
   self.SubTitle = self:GetUIComponent("UILocalizationText", "SubTitle")
   self.Des = self:GetUIComponent("UILocalizationText", "Des")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandIntrItem.OnHide = function(self)
-  -- function num : 0_1
+function UIN28ErrandIntrItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandIntrItem.Flush = function(self, head, body)
-  -- function num : 0_2
-  (self.SubTitle):SetText(head)
-  ;
-  (self.Des):SetText(body)
+function UIN28ErrandIntrItem:Flush(head, body)
+  self.SubTitle:SetText(head)
+  self.Des:SetText(body)
 end
-
-

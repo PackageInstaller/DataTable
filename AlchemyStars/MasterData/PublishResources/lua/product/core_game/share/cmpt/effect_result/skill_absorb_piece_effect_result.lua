@@ -1,52 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_absorb_piece_effect_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillAbsorbPieceEffectResult", SkillEffectResultBase)
 SkillAbsorbPieceEffectResult = SkillAbsorbPieceEffectResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillAbsorbPieceEffectResult.Constructor = function(self)
-  -- function num : 0_0
+function SkillAbsorbPieceEffectResult:Constructor()
   self._targetAbsorbPieceList = {}
   self._newPieceList = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAbsorbPieceEffectResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillAbsorbPieceEffectResult:GetEffectType()
   return SkillEffectType.AbsorbPiece
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAbsorbPieceEffectResult.GetAbsorbPieceList = function(self)
-  -- function num : 0_2
+function SkillAbsorbPieceEffectResult:GetAbsorbPieceList()
   return self._targetAbsorbPieceList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAbsorbPieceEffectResult.SetAbsorbPieceList = function(self, pieceList)
-  -- function num : 0_3
+function SkillAbsorbPieceEffectResult:SetAbsorbPieceList(pieceList)
   self._targetAbsorbPieceList = pieceList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAbsorbPieceEffectResult.SetNewPieceList = function(self, newPieceList)
-  -- function num : 0_4
+function SkillAbsorbPieceEffectResult:SetNewPieceList(newPieceList)
   self._newPieceList = newPieceList
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAbsorbPieceEffectResult.GetNewPieceList = function(self)
-  -- function num : 0_5
+function SkillAbsorbPieceEffectResult:GetNewPieceList()
   return self._newPieceList
 end
-
-

@@ -1,21 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/drawcard/cfg_drawcard_value.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {ID = 1, Value = 2}
 local config = {
-{1, 2000}
-, 
-{2, 5}
-, 
-{3, -20}
-, 
-{4, -35}
-, 
-{5, 0.1}
-, 
-{6, 0.3}
+  {1, 2000},
+  {2, 5},
+  {3, -20},
+  {4, -35},
+  {5, 0.1},
+  {6, 0.3}
 }
 return config, "ID", key
-

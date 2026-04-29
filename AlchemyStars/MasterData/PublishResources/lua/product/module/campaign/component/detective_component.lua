@@ -1,55 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/detective_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("DetectiveComponent", ICampaignComponent)
 DetectiveComponent = DetectiveComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DetectiveComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function DetectiveComponent:Constructor()
   self.m_component_info = ClientDetectiveComponentInfo:New()
   self.m_endingId = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DetectiveComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function DetectiveComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = ClientDetectiveComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DetectiveComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function DetectiveComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DetectiveComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function DetectiveComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_DETECTIVE
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DetectiveComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function DetectiveComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DetectiveComponent.HandleSubmitItem = function(self, TT, asyncRes, stage_id, clue_list, fragment_list, talk_list)
-  -- function num : 0_5 , upvalues : _ENV
+function DetectiveComponent:HandleSubmitItem(TT, asyncRes, stage_id, clue_list, fragment_list, talk_list)
   local request = DetectiveSubmitItemReq:New()
   request.stage = stage_id
   request.clue_list = clue_list
@@ -57,95 +35,66 @@ DetectiveComponent.HandleSubmitItem = function(self, TT, asyncRes, stage_id, clu
   request.talk_list = talk_list
   local response = DetectiveSubmitItemRes:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][DetectiveComponent] HandleSubmitItem ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][DetectiveComponent] HandleSubmitItem ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R10 in 'UnsetPending'
-
   if response.ret == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    (self.m_component_info).cur_info = response.cur_info
+    self.m_component_info.cur_info = response.cur_info
   end
   return response.ret
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DetectiveComponent.HandleSubmitEnding = function(self, TT, asyncRes, ending_id)
-  -- function num : 0_6 , upvalues : _ENV
+function DetectiveComponent:HandleSubmitEnding(TT, asyncRes, ending_id)
   local request = DetectiveSubmitEndingReq:New()
   request.ending_id = ending_id
   local response = DetectiveSubmitEndingRes:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   self.m_endingId = ending_id
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][DetectiveComponent] HandleSubmitEnding ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][DetectiveComponent] HandleSubmitEnding ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R7 in 'UnsetPending'
-
   if response.ret == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    (self.m_component_info).cg_list = response.cg_list
+    self.m_component_info.cg_list = response.cg_list
   end
   return response.ret
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DetectiveComponent.HandleAutoSave = function(self, TT, asyncRes)
-  -- function num : 0_7 , upvalues : _ENV
+function DetectiveComponent:HandleAutoSave(TT, asyncRes)
   local request = DetectiveAutoSaveReq:New()
   local response = DetectiveAutoSaveRes:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][DetectiveComponent] HandleAutoSave ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][DetectiveComponent] HandleAutoSave ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R6 in 'UnsetPending'
-
   if response.ret == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    (self.m_component_info).is_record = response.is_record
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.m_component_info).auto_save_record_time = response.auto_save_record_time
+    self.m_component_info.is_record = response.is_record
+    self.m_component_info.auto_save_record_time = response.auto_save_record_time
   end
   return response.ret
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DetectiveComponent.HandleStartGame = function(self, TT, asyncRes, info)
-  -- function num : 0_8 , upvalues : _ENV
+function DetectiveComponent:HandleStartGame(TT, asyncRes, info)
   local request = DetectiveReadRecordPlayReq:New()
   request.cur_info = info
   local response = DetectiveReadRecordPlayRes:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][DetectiveComponent] HandleStartGame ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][DetectiveComponent] HandleStartGame ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R7 in 'UnsetPending'
-
   if response.ret == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    (self.m_component_info).cur_info = response.cur_info
+    self.m_component_info.cur_info = response.cur_info
   end
   return response.ret
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DetectiveComponent.GetCurrentEndingId = function(self)
-  -- function num : 0_9
+function DetectiveComponent:GetCurrentEndingId()
   return self.m_endingId
 end
-
-

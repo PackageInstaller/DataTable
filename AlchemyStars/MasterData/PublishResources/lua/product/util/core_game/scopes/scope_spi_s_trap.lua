@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_spi_s_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_SPIstavanSummonTrap", SkillScopeCalculator_Base)
 SkillScopeCalculator_SPIstavanSummonTrap = SkillScopeCalculator_SPIstavanSummonTrap
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_SPIstavanSummonTrap.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
-  local blockFlag = nil
+function SkillScopeCalculator_SPIstavanSummonTrap:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
+  local blockFlag
   if scopeParam.BlockFlag then
     blockFlag = GetBlockFlagByValue(scopeParam.BlockFlag)
   else
@@ -19,47 +12,39 @@ SkillScopeCalculator_SPIstavanSummonTrap.CalcRange = function(self, scopeType, s
   local arr = self:CalFixedPos(scopeParam.pos)
   local ret = {}
   local bFind = false
-  for i,pos in ipairs(arr) do
-    local isBlockGrid = (self._gridFilter):IsPosBlock(pos + casterPos, blockFlag)
+  for i, pos in ipairs(arr) do
+    local isBlockGrid = self._gridFilter:IsPosBlock(pos + casterPos, blockFlag)
     if not isBlockGrid then
-      (table.insert)(ret, pos + casterPos)
+      table.insert(ret, pos + casterPos)
       bFind = true
       break
     end
   end
-  do
-    if not bFind then
-      local ringMaxCount = (math.max)((self._gridFilter):GetBoardMaxX(), (self._gridFilter):GetBoardMaxY())
-      for ring = 3, ringMaxCount do
-        local listTotalData = (ComputeScopeRange.ComputeRange_SquareRing)(casterPos, 1, ring)
-        for key,value in ipairs(listTotalData) do
-          local isBlockGrid = (self._gridFilter):IsPosBlock(value, blockFlag)
-          if not isBlockGrid then
-            (table.insert)(ret, value)
-            bFind = true
-            break
-          end
+  if not bFind then
+    local ringMaxCount = math.max(self._gridFilter:GetBoardMaxX(), self._gridFilter:GetBoardMaxY())
+    for ring = 3, ringMaxCount do
+      local listTotalData = ComputeScopeRange.ComputeRange_SquareRing(casterPos, 1, ring)
+      for key, value in ipairs(listTotalData) do
+        local isBlockGrid = self._gridFilter:IsPosBlock(value, blockFlag)
+        if not isBlockGrid then
+          table.insert(ret, value)
+          bFind = true
+          break
         end
       end
-    end
-    do
-      if not bFind then
-        local result = SkillScopeResult:New(SkillScopeType.SPIstavanSummonTrap, centerPos, ret, ret)
-        return result
+      if bFind then
+        break
       end
     end
   end
+  local result = SkillScopeResult:New(SkillScopeType.SPIstavanSummonTrap, centerPos, ret, ret)
+  return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_SPIstavanSummonTrap.CalFixedPos = function(self, posList)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeCalculator_SPIstavanSummonTrap:CalFixedPos(posList)
   local arr = {}
-  for _,v in ipairs(posList) do
-    (table.insert)(arr, Vector2(v[1], v[2]))
+  for _, v in ipairs(posList) do
+    table.insert(arr, Vector2(v[1], v[2]))
   end
   return arr
 end
-
-

@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/season_tool.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonTool", Singleton)
 SeasonTool = SeasonTool
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonTool.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._id_position = ((UnityEngine.Shader).PropertyToID)("_PlaneShadowPosition")
-  self._id_normal = ((UnityEngine.Shader).PropertyToID)("_PlaneShadowNormal")
+function SeasonTool:Constructor()
+  self._id_position = UnityEngine.Shader.PropertyToID("_PlaneShadowPosition")
+  self._id_normal = UnityEngine.Shader.PropertyToID("_PlaneShadowNormal")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTool.GetV4ByZoneMask = function(self, zoneMask, zoneID2Animation)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonTool:GetV4ByZoneMask(zoneMask, zoneID2Animation)
   if not zoneMask then
     return Vector4.zero
   end
-  local seasonID = ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonID()
+  local seasonID = GameGlobal.GetModule(SeasonModule):GetCurSeasonID()
   local v4 = Vector4(zoneMask & 1, zoneMask >> 1 & 1, zoneMask >> 2 & 1, zoneMask >> 3 & 1)
   if seasonID == UISeasonID.S1 then
     v4 = Vector4(zoneMask >> 2 & 1, zoneMask & 1, zoneMask >> 1 & 1, 0)
@@ -29,68 +19,50 @@ SeasonTool.GetV4ByZoneMask = function(self, zoneMask, zoneID2Animation)
     if seasonID == UISeasonID.S1 then
       if zoneID2Animation == SeasonZone.One then
         v4.y = 0
-      else
-        if zoneID2Animation == SeasonZone.Two then
-          v4.z = 0
-        else
-          if zoneID2Animation == SeasonZone.Three then
-            v4.x = 0
-          end
-        end
-      end
-    else
-      if zoneID2Animation == SeasonZone.One then
+      elseif zoneID2Animation == SeasonZone.Two then
+        v4.z = 0
+      elseif zoneID2Animation == SeasonZone.Three then
         v4.x = 0
-      else
-        if zoneID2Animation == SeasonZone.Two then
-          v4.y = 0
-        else
-          if zoneID2Animation == SeasonZone.Three then
-            v4.z = 0
-          else
-            if zoneID2Animation == SeasonZone.Four then
-              v4.w = 0
-            end
-          end
-        end
       end
+    elseif zoneID2Animation == SeasonZone.One then
+      v4.x = 0
+    elseif zoneID2Animation == SeasonZone.Two then
+      v4.y = 0
+    elseif zoneID2Animation == SeasonZone.Three then
+      v4.z = 0
+    elseif zoneID2Animation == SeasonZone.Four then
+      v4.w = 0
     end
   end
   return v4
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTool.GetZonesByZoneMask = function(self, zoneMask)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonTool:GetZonesByZoneMask(zoneMask)
   local zone = {}
   if zoneMask & 1 == 1 then
-    (table.insert)(zone, SeasonZone.One)
+    table.insert(zone, SeasonZone.One)
   end
   if zoneMask >> 1 & 1 == 1 then
-    (table.insert)(zone, SeasonZone.Two)
+    table.insert(zone, SeasonZone.Two)
   end
   if zoneMask >> 2 & 1 == 1 then
-    (table.insert)(zone, SeasonZone.Three)
+    table.insert(zone, SeasonZone.Three)
   end
   if zoneMask >> 3 & 1 == 1 then
-    (table.insert)(zone, SeasonZone.Four)
+    table.insert(zone, SeasonZone.Four)
   end
   return zone
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTool.SetMaterialProperty = function(self, shadowPlane, renderers, materialPropertyBlock)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonTool:SetMaterialProperty(shadowPlane, renderers, materialPropertyBlock)
   if shadowPlane ~= nil and materialPropertyBlock then
-    local v4_position = Vector4((shadowPlane.position).x, (shadowPlane.position).y, (shadowPlane.position).z, 0)
-    local v4_normal = Vector4(((shadowPlane.up).normalized).x, ((shadowPlane.up).normalized).y, ((shadowPlane.up).normalized).z, 0)
-    if renderers.Length > 0 then
+    local v4_position = Vector4(shadowPlane.position.x, shadowPlane.position.y, shadowPlane.position.z, 0)
+    local v4_normal = Vector4(shadowPlane.up.normalized.x, shadowPlane.up.normalized.y, shadowPlane.up.normalized.z, 0)
+    if 0 < renderers.Length then
       for i = 0, renderers.Length - 1 do
         local render = renderers[i]
-        if (render.materials).Length > 0 then
-          for j = 0, (render.materials).Length - 1 do
+        if 0 < render.materials.Length then
+          for j = 0, render.materials.Length - 1 do
             materialPropertyBlock:Clear()
             render:GetPropertyBlock(materialPropertyBlock, j)
             materialPropertyBlock:SetVector(self._id_position, v4_position)
@@ -103,10 +75,7 @@ SeasonTool.SetMaterialProperty = function(self, shadowPlane, renderers, material
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTool.DisenableMeshRender = function(self, gameObject)
-  -- function num : 0_4 , upvalues : _ENV
+function SeasonTool:DisenableMeshRender(gameObject)
   if gameObject then
     local shadowRenderers = gameObject:GetComponentsInChildren(typeof(UnityEngine.Renderer))
     if shadowRenderers.Length > 0 then
@@ -118,80 +87,61 @@ SeasonTool.DisenableMeshRender = function(self, gameObject)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTool.GetProgressByExpressType = function(self, cfg, expressType)
-  -- function num : 0_5 , upvalues : _ENV
-  local check = function(expresses)
-    -- function num : 0_5_0 , upvalues : _ENV, expressType
+function SeasonTool:GetProgressByExpressType(cfg, expressType)
+  local function check(expresses)
     if expresses then
-      for _,id in pairs(expresses) do
-        local cfgExpress = (Cfg.cfg_season_map_express)[id]
+      for _, id in pairs(expresses) do
+        local cfgExpress = Cfg.cfg_season_map_express[id]
+        
         if cfgExpress and cfgExpress.ExpressType == expressType then
           return true
         end
       end
     end
-    do
-      return false
-    end
+    return false
   end
-
-  local result = nil
+  
+  local result
   for progress = SeasonEventPointProgress.SEPP_Begin + 1, SeasonEventPointProgress.SEPP_End - 1 do
     local expressCfg = cfg["Express" .. progress]
     if check(expressCfg) then
       if not result then
         result = progress
-      else
-        if progress < result then
-          result = progress
-        end
+      elseif progress < result then
+        result = progress
       end
     end
   end
   return result
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTool.SetLocalDBFloat = function(self, key, value)
-  -- function num : 0_6 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function SeasonTool:SetLocalDBFloat(key, value)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   if campaignModule and not campaignModule:IsDisposed() then
-    local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+    local seasonModule = GameGlobal.GetModule(SeasonModule)
     if seasonModule:IsOpen() then
-      local pstid = ((GameGlobal.GetModule)(LoginModule)):GetRoleShowID()
-      ;
-      (LocalDB.SetFloat)(pstid .. seasonModule:GetCurSeasonID() .. key, value)
+      local pstid = GameGlobal.GetModule(LoginModule):GetRoleShowID()
+      LocalDB.SetFloat(pstid .. seasonModule:GetCurSeasonID() .. key, value)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTool.GetLocalDBFloat = function(self, key, defaultValue)
-  -- function num : 0_7 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function SeasonTool:GetLocalDBFloat(key, defaultValue)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   if campaignModule and not campaignModule:IsDisposed() then
-    local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+    local seasonModule = GameGlobal.GetModule(SeasonModule)
     if seasonModule:IsOpen() then
-      local pstid = ((GameGlobal.GetModule)(LoginModule)):GetRoleShowID()
-      return (LocalDB.GetFloat)(pstid .. seasonModule:GetCurSeasonID() .. key, defaultValue)
+      local pstid = GameGlobal.GetModule(LoginModule):GetRoleShowID()
+      return LocalDB.GetFloat(pstid .. seasonModule:GetCurSeasonID() .. key, defaultValue)
     end
   end
-  do
-    return defaultValue
-  end
+  return defaultValue
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTool.TryAddCover = function(self, parent, cover)
-  -- function num : 0_8 , upvalues : _ENV
+function SeasonTool:TryAddCover(parent, cover)
   if parent and cover then
-    local coverManager = (((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()):SeasonCoverManager()
-    local rawName = (string.sub)(cover.name, 1, (string.len)(cover.name) - (string.len)(coverManager:CoverFlag()))
+    local coverManager = GameGlobal.GetUIModule(SeasonModule):SeasonManager():SeasonCoverManager()
+    local rawName = string.sub(cover.name, 1, string.len(cover.name) - string.len(coverManager:CoverFlag()))
     if rawName then
       if parent.name == rawName then
         coverManager:AddCover(parent, cover)
@@ -200,21 +150,17 @@ SeasonTool.TryAddCover = function(self, parent, cover)
         if rawTransform then
           coverManager:AddCover(rawTransform, cover)
         else
-          ;
-          (Log.warn)("SeasonTool TryAddCover error.", cover.name)
+          Log.warn("SeasonTool TryAddCover error.", cover.name)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTool.TryClearCover = function(self, parent, cover)
-  -- function num : 0_9 , upvalues : _ENV
+function SeasonTool:TryClearCover(parent, cover)
   if parent and cover then
-    local coverManager = (((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()):SeasonCoverManager()
-    local rawName = (string.sub)(cover.name, 1, (string.len)(cover.name) - (string.len)(coverManager:CoverFlag()))
+    local coverManager = GameGlobal.GetUIModule(SeasonModule):SeasonManager():SeasonCoverManager()
+    local rawName = string.sub(cover.name, 1, string.len(cover.name) - string.len(coverManager:CoverFlag()))
     if rawName then
       if parent.name == rawName then
         coverManager:ClearCover(parent)
@@ -229,19 +175,13 @@ SeasonTool.TryClearCover = function(self, parent, cover)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTool.IsLastProgress = function(self, cfg, targetProgress)
-  -- function num : 0_10 , upvalues : _ENV
+function SeasonTool:IsLastProgress(cfg, targetProgress)
   local lastProgress = SeasonEventPointProgress.SEPP_Begin
   for progress = SeasonEventPointProgress.SEPP_Begin + 1, SeasonEventPointProgress.SEPP_End - 1 do
     local express = cfg["Express" .. progress]
-    if express and lastProgress <= progress then
+    if express and progress >= lastProgress then
       lastProgress = progress
     end
   end
-  do return targetProgress == lastProgress end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return targetProgress == lastProgress
 end
-
-

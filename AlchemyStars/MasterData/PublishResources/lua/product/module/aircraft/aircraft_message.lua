@@ -1,871 +1,764 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/aircraft/aircraft_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local aircraftMessageDef = {CLSID_CEventAircraftCheckClickPetTriggerStory = 1000, CLSID_CEventAircraftCheckClickPetTriggerStoryResult = 1001, CLSID_CEventPushAircraftInfo = 1002, CLSID_CEventPushAircraftSpaceInfos = 1003, CLSID_CEventAircraftLeave = 1004, CLSID_CEventAircraftUpdate = 1005, CLSID_CEventAircraftUpdateResult = 1006, CLSID_CEventPushViewNewFurniture = 1007, CLSID_CEventAircraftFurnitureInfoReq = 1008, CLSID_CEventAircraftFurnitureInfoResult = 1009, CLSID_CEventAircraftFurnitureInfoUpReq = 1010, CLSID_CEventAircraftFurnitureInfoUpResult = 1011, CLSID_CEventPushAircraftAreaFurniture = 1012, CLSID_CEventAircraftRoomOperate = 1013, CLSID_CEventAircraftRoomOperateResult = 1014, CLSID_CEventAircraftRedeemFirfly = 1015, CLSID_CEventAircraftRedeemFirflyResult = 1016, CLSID_CEventAircraftPeriodAffinity = 1017, CLSID_CEventAircraftPeriodAffinityResult = 1018, CLSID_CEventItemSmelt = 1019, CLSID_CEventItemSmeltResult = 1020, CLSID_CEventMultItemSmelt = 1021, CLSID_CEventMultItemSmeltResult = 1022, CLSID_CEventFireflyToAtom = 1023, CLSID_CEventFireflyToAtomResult = 1024, CLSID_CEventDispatchSite = 1025, CLSID_CEventDispatchSiteResult = 1026, CLSID_CEventDispatchLook = 1027, CLSID_CEventDispatchLookResult = 1028, CLSID_CEventDispatchAcceptTask = 1029, CLSID_CEventDispatchAcceptTaskResult = 1030, CLSID_CEventDispatchCancelTask = 1031, CLSID_CEventDispatchCancelTaskResult = 1032, CLSID_CEventDispatchTaskAward = 1033, CLSID_CEventDispatchTaskAwardResult = 1034, CLSID_CEventAcceptPresent = 1035, CLSID_CEventAcceptPresentResult = 1036, CLSID_CEventAcceptVisitPet = 1037, CLSID_CEventAcceptVisitPetResult = 1038, CLSID_CEventSearchEvil = 1039, CLSID_CEventSearchEvilResult = 1040, CLSID_CEventCaptureEvil = 1041, CLSID_CEventCaptureEvilResult = 1042, CLSID_CEventQuickCaptureEvil = 1043, CLSID_CEventQuickCaptureEvilResult = 1044, CLSID_CEventTraceEvil = 1045, CLSID_CEventTraceEvilResult = 1046, CLSID_CEventEvilOperate = 1047, CLSID_CEventEvilOperateResult = 1048, CLSID_CEventPurifyEvil = 1049, CLSID_CEventPurifyEvilResult = 1050, CLSID_CEventGetConfigRequest = 1051, CLSID_CEventGetConfigRequestResult = 1052, CLSID_CEventAddAircraftGetSpaceData = 1053, CLSID_CEventAddAircraftGetSpaceDataResult = 1054, CLSID_CEventPushClickPet = 1055, CLSID_CEventAircraftCleanAndBuild = 1056, CLSID_CEventAircraftCleanAndBuildResult = 1057, CLSID_CEventRequestTacticRoomData = 1058, CLSID_CEventRequestTacticRoomDataResult = 1059, CLSID_CEventCartridgeFreeProduce = 1060, CLSID_CEventCartridgeFreeProduceResult = 1061, CLSID_CEventCartridgeProSpeedUp = 1062, CLSID_CEventCartridgeProSpeedUpResult = 1063, CLSID_CEventTacticWeekReset = 1064, CLSID_CEventTacticWeekResetResult = 1065, CLSID_CEventGetTacticFormationInfo = 1066, CLSID_CEventGetTacticFormationInfoResult = 1067, CLSID_CEventChangeTacticFormationInfo = 1068, CLSID_CEventChangeTacticFormationInfoResult = 1069, CLSID_CEventTakeWeeklyAward = 1070, CLSID_CEventTakeWeeklyAwardResult = 1071, CLSID_CEventTacticPeakReward = 1072, CLSID_CEventTacticPeakRewardResult = 1073, CLSID_CEventTacticUnlockTheme = 1074, CLSID_CEventTacticUnlockThemeResult = 1075, CLSID_CEventTacticGetInformation = 1076, CLSID_CEventTacticGetInformationResult = 1077, CLSID_CEventDelCartridge = 1078, CLSID_CEventDelCartridgeResult = 1079, CLSID_CEventAIMultItemSmelt = 1080, CLSID_CEventAIMultItemSmeltResult = 1081, CLSID_CEventCollectPrism = 1082, CLSID_CEventCollectPrismResult = 1083}
-;
-(table.append)(MessageDef, aircraftMessageDef)
-local AircraftEventResult = {AircraftEventResult_INVALID = -1, AircraftEventResult_Succ = 0, INVALID_SPACE_OPERATION = 1, INVALID_ROOM_OPERATION = 2, SPACE_NOT_FOUND = 3, AIRCRAFT_ROOM_NOT_FOUND = 4, PET_NOT_FOUND = 5, AIRCRAFT_ROOM_LEVEL_MAX = 6, ASSET_NOT_ENOUGH = 7, STAR_POWER_NOT_ENOUGH = 8, SPACE_NOT_CONNECTED = 9, AIRCRAFT_ROOM_BUILDING = 10, INVALID_OPERATION = 11, LEVEL_LIMIT = 12, COUNT_LIMIT = 13, BUILD_TYPE_ERROR = 14, ROOM_LEVEL_NOT_ZERO = 15, SPACE_NOT_AVAILABLE = 16, COLLECT_ASSET_EMPTY = 17, COLLECT_ASSET_ROOM_BUSY = 18, CENTRAL_ROOM_LEVEL_LIMIT = 19, DESTROY_WILL_CREATE_ISLAND = 20, PREVLEVEL_CANNOT_CONTAIN_EVIL = 21, CANNOT_DESTROY_EVILROOM = 22, PREVLEVEL_POWER_NOT_ENOUGH = 23, CENTRALROOM_CANNOT_DEGRADE = 24, ROOM_NEED_NOT_ENOUGH = 25, COLLECT_ASSET_ERROR_PHY = 30, PET_NOT_IN_ROOM = 60, PET_COUNT_EXCEED_LIMIT = 61, PET_DO_DISPATCH = 62, PURIFY_ROOM_FULL = 80, PURIFY_ROOM_EMPTY = 81, EVIL_IS_PURIFIED = 82, PURIFY_ROOM_NO_AWARD = 83, CELL_INDEX_ERROR = 84, REFRESH_INDEX_ERROR = 85, ROOM_NOT_PURIFYROOM = 86, ROOM_NOT_EVILROOM = 87, CANNOT_TRACE_MORE_EVIL = 88, EVIL_IS_TRACING = 89, NO_EVIL_TRACING = 90, FIREFLY_NOT_ENOUGH = 98, BUILD_NO_NEED_SPEEDUP = 100, SPACE_STATE_CANNOT_CLEAN = 101, ADJACENT_SPACE_NOT_STATEFULL = 102, SAME_PET_ID_REPEAT = 103, STORY_EVENT_CLICK_PET_HAVE_STROY = 104, AIRCRAFT_SAME_BINDER = 105, AIRCRAFT_PET_ERROR_BINDER = 106, ROOM_UNKOWN_ERROR = 120, ROOM_STATE_ERROR = 121, SMELTROOM_OPERATE_NUM = 122, SMELTROOM_CFG_NOT = 123, SMELTROOM_ITEM_NOT_ENOUGH = 124, SMELTROOM_ITEM_NOT_CONDITION = 125, SMELTROOM_INPUT_ITEM_ERROR = 126, FIREFLYTOATOM_OPERATE_NUM = 130, FIREFLYTOATOM_ITEM_NOT_ENOUGH = 131, FIREFLYTOATOM_MAX_ENOUGH = 132, AIRCRAFT_FURNITURE_ITEM_NO_ENOUGH = 150, AIRCRAFT_FURNITURE_AREA_INVALID = 151, AIRCRAFT_FURNITURE_AREA_NOT_SAME = 152, AIRCRAFT_FURNITURE_ITEM_IDINVALID = 153, AIRCRAFT_PRESENT_PET_ID_INVALID = 154, AIRCRAFT_PRESENT_AMBIENT_INVALID = 155, AIRCRAFT_VISIT_PET_ID_INVALID = 156, AIRCRAFT_VISIT_AMBIENT_INVALID = 157, AIRCRAFT_PRESENT_DROP_ERROR = 158, AIRCRAFT_VISIT_DROP_ERROR = 159, AIRCRAFT_IS_ACCEPT_GIFT = 160, AIRCRAFT_DISPATCH_UNKOWN_ERROR = 200, AIRCRAFT_DISPATCH_ERROR = 201, AIRCRAFT_DISPATCH_SITE_INDEX = 202, AIRCRAFT_DISPATCH_PET_NOT = 203, AIRCRAFT_DISPATCH_PET_STATE = 204, AIRCRAFT_DISPATCH_TIME_COUNT = 205, AIRCRAFT_DISPATCH_TEAM_COUNT = 206, AIRCRAFT_DISPATCH_TASK_STATE = 207, AIRCRAFT_DISPATCH_TASK_ID = 208, AIRCRAFT_DISPATCH_TEAM_SIZE = 209, AIRCRAFT_DISPATCH_PET_REPEAT = 210, TACTIC_FREE_TIMES_NOT_ENOUGH = 231, TACTIC_CARTRIDGE_NUM_LIMIT = 232, TACTIC_SPEEDUP_FIREFLY_NUM_ERR = 233, TACTIC_PET_FIGHT_LIMIT = 234, TACTIC_WEEK_PASS_NOT_ENOUGH = 235, TACTIC_WEEK_AWARD_RECEIVED = 236, TACTIC_WEEK_PASS_NUM_ERR = 237, TACTIC_CARTRIDGE_DELETE_ERR = 238, AIRCRAFT_TACTIC_PEAKREWARD_RECEIVED = 300, AIRCRAFT_TACTIC_INVALID_PEAKLEVEL = 301, AIRCRAFT_TACTIC_UNREACH_LEVEL = 302, AIRCRAFT_TACTIC_INFO_UNLOCK_MISS_COND = 310, AIRCRAFT_TACTIC_INFO_UNLOCKED = 311, AIRCRAFT_TACTIC_INFO_INVALID_ID = 312, AIRCRAFT_TACTIC_THEME_UNLOCKABLE_FALSE = 313, AIRCRAFT_TACTIC_THEME_ASSET_LACK = 314, AIRCRAFT_TACTIC_THEME_INFO_ALREADY_GET = 315}
-;
-(_ENV._enum)("AircraftEventResult", AircraftEventResult)
-;
-(_ENV._class)("CEventAircraftCheckClickPetTriggerStory", _ENV.CCallRequestEvent)
-_ENV.CEventAircraftCheckClickPetTriggerStory = _ENV.CEventAircraftCheckClickPetTriggerStory
--- DECOMPILER ERROR at PC327: Confused about usage of register: R2 in 'UnsetPending'
+local aircraftMessageDef = {
+  CLSID_CEventAircraftCheckClickPetTriggerStory = 1000,
+  CLSID_CEventAircraftCheckClickPetTriggerStoryResult = 1001,
+  CLSID_CEventPushAircraftInfo = 1002,
+  CLSID_CEventPushAircraftSpaceInfos = 1003,
+  CLSID_CEventAircraftLeave = 1004,
+  CLSID_CEventAircraftUpdate = 1005,
+  CLSID_CEventAircraftUpdateResult = 1006,
+  CLSID_CEventPushViewNewFurniture = 1007,
+  CLSID_CEventAircraftFurnitureInfoReq = 1008,
+  CLSID_CEventAircraftFurnitureInfoResult = 1009,
+  CLSID_CEventAircraftFurnitureInfoUpReq = 1010,
+  CLSID_CEventAircraftFurnitureInfoUpResult = 1011,
+  CLSID_CEventPushAircraftAreaFurniture = 1012,
+  CLSID_CEventAircraftRoomOperate = 1013,
+  CLSID_CEventAircraftRoomOperateResult = 1014,
+  CLSID_CEventAircraftRedeemFirfly = 1015,
+  CLSID_CEventAircraftRedeemFirflyResult = 1016,
+  CLSID_CEventAircraftPeriodAffinity = 1017,
+  CLSID_CEventAircraftPeriodAffinityResult = 1018,
+  CLSID_CEventItemSmelt = 1019,
+  CLSID_CEventItemSmeltResult = 1020,
+  CLSID_CEventMultItemSmelt = 1021,
+  CLSID_CEventMultItemSmeltResult = 1022,
+  CLSID_CEventFireflyToAtom = 1023,
+  CLSID_CEventFireflyToAtomResult = 1024,
+  CLSID_CEventDispatchSite = 1025,
+  CLSID_CEventDispatchSiteResult = 1026,
+  CLSID_CEventDispatchLook = 1027,
+  CLSID_CEventDispatchLookResult = 1028,
+  CLSID_CEventDispatchAcceptTask = 1029,
+  CLSID_CEventDispatchAcceptTaskResult = 1030,
+  CLSID_CEventDispatchCancelTask = 1031,
+  CLSID_CEventDispatchCancelTaskResult = 1032,
+  CLSID_CEventDispatchTaskAward = 1033,
+  CLSID_CEventDispatchTaskAwardResult = 1034,
+  CLSID_CEventAcceptPresent = 1035,
+  CLSID_CEventAcceptPresentResult = 1036,
+  CLSID_CEventAcceptVisitPet = 1037,
+  CLSID_CEventAcceptVisitPetResult = 1038,
+  CLSID_CEventSearchEvil = 1039,
+  CLSID_CEventSearchEvilResult = 1040,
+  CLSID_CEventCaptureEvil = 1041,
+  CLSID_CEventCaptureEvilResult = 1042,
+  CLSID_CEventQuickCaptureEvil = 1043,
+  CLSID_CEventQuickCaptureEvilResult = 1044,
+  CLSID_CEventTraceEvil = 1045,
+  CLSID_CEventTraceEvilResult = 1046,
+  CLSID_CEventEvilOperate = 1047,
+  CLSID_CEventEvilOperateResult = 1048,
+  CLSID_CEventPurifyEvil = 1049,
+  CLSID_CEventPurifyEvilResult = 1050,
+  CLSID_CEventGetConfigRequest = 1051,
+  CLSID_CEventGetConfigRequestResult = 1052,
+  CLSID_CEventAddAircraftGetSpaceData = 1053,
+  CLSID_CEventAddAircraftGetSpaceDataResult = 1054,
+  CLSID_CEventPushClickPet = 1055,
+  CLSID_CEventAircraftCleanAndBuild = 1056,
+  CLSID_CEventAircraftCleanAndBuildResult = 1057,
+  CLSID_CEventRequestTacticRoomData = 1058,
+  CLSID_CEventRequestTacticRoomDataResult = 1059,
+  CLSID_CEventCartridgeFreeProduce = 1060,
+  CLSID_CEventCartridgeFreeProduceResult = 1061,
+  CLSID_CEventCartridgeProSpeedUp = 1062,
+  CLSID_CEventCartridgeProSpeedUpResult = 1063,
+  CLSID_CEventTacticWeekReset = 1064,
+  CLSID_CEventTacticWeekResetResult = 1065,
+  CLSID_CEventGetTacticFormationInfo = 1066,
+  CLSID_CEventGetTacticFormationInfoResult = 1067,
+  CLSID_CEventChangeTacticFormationInfo = 1068,
+  CLSID_CEventChangeTacticFormationInfoResult = 1069,
+  CLSID_CEventTakeWeeklyAward = 1070,
+  CLSID_CEventTakeWeeklyAwardResult = 1071,
+  CLSID_CEventTacticPeakReward = 1072,
+  CLSID_CEventTacticPeakRewardResult = 1073,
+  CLSID_CEventTacticUnlockTheme = 1074,
+  CLSID_CEventTacticUnlockThemeResult = 1075,
+  CLSID_CEventTacticGetInformation = 1076,
+  CLSID_CEventTacticGetInformationResult = 1077,
+  CLSID_CEventDelCartridge = 1078,
+  CLSID_CEventDelCartridgeResult = 1079,
+  CLSID_CEventAIMultItemSmelt = 1080,
+  CLSID_CEventAIMultItemSmeltResult = 1081,
+  CLSID_CEventCollectPrism = 1082,
+  CLSID_CEventCollectPrismResult = 1083
+}
+table.append(MessageDef, aircraftMessageDef)
+local AircraftEventResult = {
+  AircraftEventResult_INVALID = -1,
+  AircraftEventResult_Succ = 0,
+  INVALID_SPACE_OPERATION = 1,
+  INVALID_ROOM_OPERATION = 2,
+  SPACE_NOT_FOUND = 3,
+  AIRCRAFT_ROOM_NOT_FOUND = 4,
+  PET_NOT_FOUND = 5,
+  AIRCRAFT_ROOM_LEVEL_MAX = 6,
+  ASSET_NOT_ENOUGH = 7,
+  STAR_POWER_NOT_ENOUGH = 8,
+  SPACE_NOT_CONNECTED = 9,
+  AIRCRAFT_ROOM_BUILDING = 10,
+  INVALID_OPERATION = 11,
+  LEVEL_LIMIT = 12,
+  COUNT_LIMIT = 13,
+  BUILD_TYPE_ERROR = 14,
+  ROOM_LEVEL_NOT_ZERO = 15,
+  SPACE_NOT_AVAILABLE = 16,
+  COLLECT_ASSET_EMPTY = 17,
+  COLLECT_ASSET_ROOM_BUSY = 18,
+  CENTRAL_ROOM_LEVEL_LIMIT = 19,
+  DESTROY_WILL_CREATE_ISLAND = 20,
+  PREVLEVEL_CANNOT_CONTAIN_EVIL = 21,
+  CANNOT_DESTROY_EVILROOM = 22,
+  PREVLEVEL_POWER_NOT_ENOUGH = 23,
+  CENTRALROOM_CANNOT_DEGRADE = 24,
+  ROOM_NEED_NOT_ENOUGH = 25,
+  COLLECT_ASSET_ERROR_PHY = 30,
+  PET_NOT_IN_ROOM = 60,
+  PET_COUNT_EXCEED_LIMIT = 61,
+  PET_DO_DISPATCH = 62,
+  PURIFY_ROOM_FULL = 80,
+  PURIFY_ROOM_EMPTY = 81,
+  EVIL_IS_PURIFIED = 82,
+  PURIFY_ROOM_NO_AWARD = 83,
+  CELL_INDEX_ERROR = 84,
+  REFRESH_INDEX_ERROR = 85,
+  ROOM_NOT_PURIFYROOM = 86,
+  ROOM_NOT_EVILROOM = 87,
+  CANNOT_TRACE_MORE_EVIL = 88,
+  EVIL_IS_TRACING = 89,
+  NO_EVIL_TRACING = 90,
+  FIREFLY_NOT_ENOUGH = 98,
+  BUILD_NO_NEED_SPEEDUP = 100,
+  SPACE_STATE_CANNOT_CLEAN = 101,
+  ADJACENT_SPACE_NOT_STATEFULL = 102,
+  SAME_PET_ID_REPEAT = 103,
+  STORY_EVENT_CLICK_PET_HAVE_STROY = 104,
+  AIRCRAFT_SAME_BINDER = 105,
+  AIRCRAFT_PET_ERROR_BINDER = 106,
+  ROOM_UNKOWN_ERROR = 120,
+  ROOM_STATE_ERROR = 121,
+  SMELTROOM_OPERATE_NUM = 122,
+  SMELTROOM_CFG_NOT = 123,
+  SMELTROOM_ITEM_NOT_ENOUGH = 124,
+  SMELTROOM_ITEM_NOT_CONDITION = 125,
+  SMELTROOM_INPUT_ITEM_ERROR = 126,
+  FIREFLYTOATOM_OPERATE_NUM = 130,
+  FIREFLYTOATOM_ITEM_NOT_ENOUGH = 131,
+  FIREFLYTOATOM_MAX_ENOUGH = 132,
+  AIRCRAFT_FURNITURE_ITEM_NO_ENOUGH = 150,
+  AIRCRAFT_FURNITURE_AREA_INVALID = 151,
+  AIRCRAFT_FURNITURE_AREA_NOT_SAME = 152,
+  AIRCRAFT_FURNITURE_ITEM_IDINVALID = 153,
+  AIRCRAFT_PRESENT_PET_ID_INVALID = 154,
+  AIRCRAFT_PRESENT_AMBIENT_INVALID = 155,
+  AIRCRAFT_VISIT_PET_ID_INVALID = 156,
+  AIRCRAFT_VISIT_AMBIENT_INVALID = 157,
+  AIRCRAFT_PRESENT_DROP_ERROR = 158,
+  AIRCRAFT_VISIT_DROP_ERROR = 159,
+  AIRCRAFT_IS_ACCEPT_GIFT = 160,
+  AIRCRAFT_DISPATCH_UNKOWN_ERROR = 200,
+  AIRCRAFT_DISPATCH_ERROR = 201,
+  AIRCRAFT_DISPATCH_SITE_INDEX = 202,
+  AIRCRAFT_DISPATCH_PET_NOT = 203,
+  AIRCRAFT_DISPATCH_PET_STATE = 204,
+  AIRCRAFT_DISPATCH_TIME_COUNT = 205,
+  AIRCRAFT_DISPATCH_TEAM_COUNT = 206,
+  AIRCRAFT_DISPATCH_TASK_STATE = 207,
+  AIRCRAFT_DISPATCH_TASK_ID = 208,
+  AIRCRAFT_DISPATCH_TEAM_SIZE = 209,
+  AIRCRAFT_DISPATCH_PET_REPEAT = 210,
+  TACTIC_FREE_TIMES_NOT_ENOUGH = 231,
+  TACTIC_CARTRIDGE_NUM_LIMIT = 232,
+  TACTIC_SPEEDUP_FIREFLY_NUM_ERR = 233,
+  TACTIC_PET_FIGHT_LIMIT = 234,
+  TACTIC_WEEK_PASS_NOT_ENOUGH = 235,
+  TACTIC_WEEK_AWARD_RECEIVED = 236,
+  TACTIC_WEEK_PASS_NUM_ERR = 237,
+  TACTIC_CARTRIDGE_DELETE_ERR = 238,
+  AIRCRAFT_TACTIC_PEAKREWARD_RECEIVED = 300,
+  AIRCRAFT_TACTIC_INVALID_PEAKLEVEL = 301,
+  AIRCRAFT_TACTIC_UNREACH_LEVEL = 302,
+  AIRCRAFT_TACTIC_INFO_UNLOCK_MISS_COND = 310,
+  AIRCRAFT_TACTIC_INFO_UNLOCKED = 311,
+  AIRCRAFT_TACTIC_INFO_INVALID_ID = 312,
+  AIRCRAFT_TACTIC_THEME_UNLOCKABLE_FALSE = 313,
+  AIRCRAFT_TACTIC_THEME_ASSET_LACK = 314,
+  AIRCRAFT_TACTIC_THEME_INFO_ALREADY_GET = 315
+}
+_enum("AircraftEventResult", AircraftEventResult)
+_class("CEventAircraftCheckClickPetTriggerStory", CCallRequestEvent)
+CEventAircraftCheckClickPetTriggerStory = CEventAircraftCheckClickPetTriggerStory
 
-;
-(_ENV.CEventAircraftCheckClickPetTriggerStory).Constructor = function(self)
-  -- function num : 0_0
+function CEventAircraftCheckClickPetTriggerStory:Constructor()
   self.pet_pstid = 0
 end
 
--- DECOMPILER ERROR at PC337: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventAircraftCheckClickPetTriggerStory)._proto = {
-[1] = {"pet_pstid", "int64"}
+CEventAircraftCheckClickPetTriggerStory._proto = {
+  [1] = {"pet_pstid", "int64"}
 }
-;
-(_ENV._class)("CEventAircraftCheckClickPetTriggerStoryResult", _ENV.CCallReplyEvent)
-_ENV.CEventAircraftCheckClickPetTriggerStoryResult = _ENV.CEventAircraftCheckClickPetTriggerStoryResult
--- DECOMPILER ERROR at PC352: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventAircraftCheckClickPetTriggerStoryResult", CCallReplyEvent)
+CEventAircraftCheckClickPetTriggerStoryResult = CEventAircraftCheckClickPetTriggerStoryResult
 
-;
-(_ENV.CEventAircraftCheckClickPetTriggerStoryResult).Constructor = function(self)
-  -- function num : 0_1
+function CEventAircraftCheckClickPetTriggerStoryResult:Constructor()
   self.ret = 0
   self.trigger_click_story_id = 0
 end
 
--- DECOMPILER ERROR at PC367: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventAircraftCheckClickPetTriggerStoryResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"trigger_click_story_id", "int"}
+CEventAircraftCheckClickPetTriggerStoryResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "trigger_click_story_id",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventPushAircraftInfo", _ENV.CSvrPushEvent)
-_ENV.CEventPushAircraftInfo = _ENV.CEventPushAircraftInfo
--- DECOMPILER ERROR at PC382: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventPushAircraftInfo", CSvrPushEvent)
+CEventPushAircraftInfo = CEventPushAircraftInfo
 
-;
-(_ENV.CEventPushAircraftInfo).Constructor = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function CEventPushAircraftInfo:Constructor()
   self.info = aircraft_info:New()
 end
 
--- DECOMPILER ERROR at PC392: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventPushAircraftInfo)._proto = {
-[1] = {"info", "aircraft_info"}
+CEventPushAircraftInfo._proto = {
+  [1] = {
+    "info",
+    "aircraft_info"
+  }
 }
-;
-(_ENV._class)("CEventPushAircraftSpaceInfos", _ENV.CSvrPushEvent)
-_ENV.CEventPushAircraftSpaceInfos = _ENV.CEventPushAircraftSpaceInfos
--- DECOMPILER ERROR at PC407: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventPushAircraftSpaceInfos", CSvrPushEvent)
+CEventPushAircraftSpaceInfos = CEventPushAircraftSpaceInfos
 
-;
-(_ENV.CEventPushAircraftSpaceInfos).Constructor = function(self)
-  -- function num : 0_3
+function CEventPushAircraftSpaceInfos:Constructor()
   self.infos = {}
 end
 
--- DECOMPILER ERROR at PC417: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventPushAircraftSpaceInfos)._proto = {
-[1] = {"infos", "map<int,aircraft_space_info>"}
+CEventPushAircraftSpaceInfos._proto = {
+  [1] = {
+    "infos",
+    "map<int,aircraft_space_info>"
+  }
 }
-;
-(_ENV._class)("CEventAircraftLeave", _ENV.CCliPushEvent)
-_ENV.CEventAircraftLeave = _ENV.CEventAircraftLeave
--- DECOMPILER ERROR at PC432: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventAircraftLeave", CCliPushEvent)
+CEventAircraftLeave = CEventAircraftLeave
 
-;
-(_ENV.CEventAircraftLeave).Constructor = function(self)
-  -- function num : 0_4
+function CEventAircraftLeave:Constructor()
 end
 
--- DECOMPILER ERROR at PC437: Confused about usage of register: R2 in 'UnsetPending'
+CEventAircraftLeave._proto = {}
+_class("CEventAircraftUpdate", CCallRequestEvent)
+CEventAircraftUpdate = CEventAircraftUpdate
 
-;
-(_ENV.CEventAircraftLeave)._proto = {}
-;
-(_ENV._class)("CEventAircraftUpdate", _ENV.CCallRequestEvent)
-_ENV.CEventAircraftUpdate = _ENV.CEventAircraftUpdate
--- DECOMPILER ERROR at PC452: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventAircraftUpdate).Constructor = function(self)
-  -- function num : 0_5
+function CEventAircraftUpdate:Constructor()
   self.enter = 0
 end
 
--- DECOMPILER ERROR at PC462: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventAircraftUpdate)._proto = {
-[1] = {"enter", "int"}
+CEventAircraftUpdate._proto = {
+  [1] = {"enter", "int"}
 }
-;
-(_ENV._class)("CEventAircraftUpdateResult", _ENV.CCallReplyEvent)
-_ENV.CEventAircraftUpdateResult = _ENV.CEventAircraftUpdateResult
--- DECOMPILER ERROR at PC477: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventAircraftUpdateResult", CCallReplyEvent)
+CEventAircraftUpdateResult = CEventAircraftUpdateResult
 
-;
-(_ENV.CEventAircraftUpdateResult).Constructor = function(self)
-  -- function num : 0_6
+function CEventAircraftUpdateResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC487: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventAircraftUpdateResult)._proto = {
-[1] = {"ret", "int"}
+CEventAircraftUpdateResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventPushViewNewFurniture", _ENV.CCliPushEvent)
-_ENV.CEventPushViewNewFurniture = _ENV.CEventPushViewNewFurniture
--- DECOMPILER ERROR at PC502: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventPushViewNewFurniture", CCliPushEvent)
+CEventPushViewNewFurniture = CEventPushViewNewFurniture
 
-;
-(_ENV.CEventPushViewNewFurniture).Constructor = function(self)
-  -- function num : 0_7
+function CEventPushViewNewFurniture:Constructor()
   self.furniture_item_id = 0
 end
 
--- DECOMPILER ERROR at PC512: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventPushViewNewFurniture)._proto = {
-[1] = {"furniture_item_id", "int"}
+CEventPushViewNewFurniture._proto = {
+  [1] = {
+    "furniture_item_id",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventAircraftFurnitureInfoReq", _ENV.CCallRequestEvent)
-_ENV.CEventAircraftFurnitureInfoReq = _ENV.CEventAircraftFurnitureInfoReq
--- DECOMPILER ERROR at PC527: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventAircraftFurnitureInfoReq", CCallRequestEvent)
+CEventAircraftFurnitureInfoReq = CEventAircraftFurnitureInfoReq
 
-;
-(_ENV.CEventAircraftFurnitureInfoReq).Constructor = function(self)
-  -- function num : 0_8
+function CEventAircraftFurnitureInfoReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC532: Confused about usage of register: R2 in 'UnsetPending'
+CEventAircraftFurnitureInfoReq._proto = {}
+_class("CEventAircraftFurnitureInfoResult", CCallReplyEvent)
+CEventAircraftFurnitureInfoResult = CEventAircraftFurnitureInfoResult
 
-;
-(_ENV.CEventAircraftFurnitureInfoReq)._proto = {}
-;
-(_ENV._class)("CEventAircraftFurnitureInfoResult", _ENV.CCallReplyEvent)
-_ENV.CEventAircraftFurnitureInfoResult = _ENV.CEventAircraftFurnitureInfoResult
--- DECOMPILER ERROR at PC547: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventAircraftFurnitureInfoResult).Constructor = function(self)
-  -- function num : 0_9
+function CEventAircraftFurnitureInfoResult:Constructor()
   self.mobile_furniture_info = {}
 end
 
--- DECOMPILER ERROR at PC557: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventAircraftFurnitureInfoResult)._proto = {
-[1] = {"mobile_furniture_info", "list<MobileFurnitureInfo>"}
+CEventAircraftFurnitureInfoResult._proto = {
+  [1] = {
+    "mobile_furniture_info",
+    "list<MobileFurnitureInfo>"
+  }
 }
-;
-(_ENV._class)("CEventAircraftFurnitureInfoUpReq", _ENV.CCallRequestEvent)
-_ENV.CEventAircraftFurnitureInfoUpReq = _ENV.CEventAircraftFurnitureInfoUpReq
--- DECOMPILER ERROR at PC572: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventAircraftFurnitureInfoUpReq", CCallRequestEvent)
+CEventAircraftFurnitureInfoUpReq = CEventAircraftFurnitureInfoUpReq
 
-;
-(_ENV.CEventAircraftFurnitureInfoUpReq).Constructor = function(self)
-  -- function num : 0_10
+function CEventAircraftFurnitureInfoUpReq:Constructor()
   self.area_id = 0
   self.update_furniture_info = {}
 end
 
--- DECOMPILER ERROR at PC587: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventAircraftFurnitureInfoUpReq)._proto = {
-[1] = {"area_id", "int"}
-, 
-[2] = {"update_furniture_info", "list<MobileFurnitureInfo>"}
+CEventAircraftFurnitureInfoUpReq._proto = {
+  [1] = {"area_id", "int"},
+  [2] = {
+    "update_furniture_info",
+    "list<MobileFurnitureInfo>"
+  }
 }
-;
-(_ENV._class)("CEventAircraftFurnitureInfoUpResult", _ENV.CCallReplyEvent)
-_ENV.CEventAircraftFurnitureInfoUpResult = _ENV.CEventAircraftFurnitureInfoUpResult
--- DECOMPILER ERROR at PC602: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventAircraftFurnitureInfoUpResult", CCallReplyEvent)
+CEventAircraftFurnitureInfoUpResult = CEventAircraftFurnitureInfoUpResult
 
-;
-(_ENV.CEventAircraftFurnitureInfoUpResult).Constructor = function(self)
-  -- function num : 0_11
+function CEventAircraftFurnitureInfoUpResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC612: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventAircraftFurnitureInfoUpResult)._proto = {
-[1] = {"ret", "int"}
+CEventAircraftFurnitureInfoUpResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventPushAircraftAreaFurniture", _ENV.CSvrPushEvent)
-_ENV.CEventPushAircraftAreaFurniture = _ENV.CEventPushAircraftAreaFurniture
--- DECOMPILER ERROR at PC627: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventPushAircraftAreaFurniture", CSvrPushEvent)
+CEventPushAircraftAreaFurniture = CEventPushAircraftAreaFurniture
 
-;
-(_ENV.CEventPushAircraftAreaFurniture).Constructor = function(self)
-  -- function num : 0_12
+function CEventPushAircraftAreaFurniture:Constructor()
   self.area_id = 0
   self.update_furniture_info = {}
 end
 
--- DECOMPILER ERROR at PC642: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventPushAircraftAreaFurniture)._proto = {
-[1] = {"area_id", "int"}
-, 
-[2] = {"update_furniture_info", "list<MobileFurnitureInfo>"}
+CEventPushAircraftAreaFurniture._proto = {
+  [1] = {"area_id", "int"},
+  [2] = {
+    "update_furniture_info",
+    "list<MobileFurnitureInfo>"
+  }
 }
-local AircraftRoomOperation = {CleanSpace = 0, BuildRoom = 1, Upgrade = 2, Degrade = 3, ReplacePets = 4, CollectAsset = 5, BuildSpeedUp = 6, UpgradeSpeedUp = 7, PurifySpeedUp = 8, CleanSpeedUp = 9, DegradeSpeedUp = 10, CheckInOnePet = 11, OneKeyCollectAsset = 12}
-;
-(_ENV._enum)("AircraftRoomOperation", AircraftRoomOperation)
-;
-(_ENV._class)("CEventAircraftRoomOperate", _ENV.CCallRequestEvent)
-_ENV.CEventAircraftRoomOperate = _ENV.CEventAircraftRoomOperate
--- DECOMPILER ERROR at PC690: Confused about usage of register: R3 in 'UnsetPending'
+local AircraftRoomOperation = {
+  CleanSpace = 0,
+  BuildRoom = 1,
+  Upgrade = 2,
+  Degrade = 3,
+  ReplacePets = 4,
+  CollectAsset = 5,
+  BuildSpeedUp = 6,
+  UpgradeSpeedUp = 7,
+  PurifySpeedUp = 8,
+  CleanSpeedUp = 9,
+  DegradeSpeedUp = 10,
+  CheckInOnePet = 11,
+  OneKeyCollectAsset = 12
+}
+_enum("AircraftRoomOperation", AircraftRoomOperation)
+_class("CEventAircraftRoomOperate", CCallRequestEvent)
+CEventAircraftRoomOperate = CEventAircraftRoomOperate
 
-;
-(_ENV.CEventAircraftRoomOperate).Constructor = function(self)
-  -- function num : 0_13
+function CEventAircraftRoomOperate:Constructor()
   self.space_id = 0
   self.option = 0
   self.operate_params = {}
 end
 
--- DECOMPILER ERROR at PC710: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventAircraftRoomOperate)._proto = {
-[1] = {"space_id", "int"}
-, 
-[2] = {"option", "int"}
-, 
-[3] = {"operate_params", "list<int64>"}
+CEventAircraftRoomOperate._proto = {
+  [1] = {"space_id", "int"},
+  [2] = {"option", "int"},
+  [3] = {
+    "operate_params",
+    "list<int64>"
+  }
 }
-;
-(_ENV._class)("CEventAircraftRoomOperateResult", _ENV.CCallReplyEvent)
-_ENV.CEventAircraftRoomOperateResult = _ENV.CEventAircraftRoomOperateResult
--- DECOMPILER ERROR at PC725: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventAircraftRoomOperateResult", CCallReplyEvent)
+CEventAircraftRoomOperateResult = CEventAircraftRoomOperateResult
 
-;
-(_ENV.CEventAircraftRoomOperateResult).Constructor = function(self)
-  -- function num : 0_14
+function CEventAircraftRoomOperateResult:Constructor()
   self.ret = 0
   self.asset = {}
 end
 
--- DECOMPILER ERROR at PC740: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventAircraftRoomOperateResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"asset", "list<RoleAsset>"}
+CEventAircraftRoomOperateResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "asset",
+    "list<RoleAsset>"
+  }
 }
-;
-(_ENV._class)("CEventAircraftRedeemFirfly", _ENV.CCallRequestEvent)
-_ENV.CEventAircraftRedeemFirfly = _ENV.CEventAircraftRedeemFirfly
--- DECOMPILER ERROR at PC755: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventAircraftRedeemFirfly", CCallRequestEvent)
+CEventAircraftRedeemFirfly = CEventAircraftRedeemFirfly
 
-;
-(_ENV.CEventAircraftRedeemFirfly).Constructor = function(self)
-  -- function num : 0_15
+function CEventAircraftRedeemFirfly:Constructor()
   self.physic_point = 0
 end
 
--- DECOMPILER ERROR at PC765: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventAircraftRedeemFirfly)._proto = {
-[1] = {"physic_point", "int"}
+CEventAircraftRedeemFirfly._proto = {
+  [1] = {
+    "physic_point",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventAircraftRedeemFirflyResult", _ENV.CCallReplyEvent)
-_ENV.CEventAircraftRedeemFirflyResult = _ENV.CEventAircraftRedeemFirflyResult
--- DECOMPILER ERROR at PC780: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventAircraftRedeemFirflyResult", CCallReplyEvent)
+CEventAircraftRedeemFirflyResult = CEventAircraftRedeemFirflyResult
 
-;
-(_ENV.CEventAircraftRedeemFirflyResult).Constructor = function(self)
-  -- function num : 0_16
+function CEventAircraftRedeemFirflyResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC790: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventAircraftRedeemFirflyResult)._proto = {
-[1] = {"ret", "int"}
+CEventAircraftRedeemFirflyResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventAircraftPeriodAffinity", _ENV.CCallRequestEvent)
-_ENV.CEventAircraftPeriodAffinity = _ENV.CEventAircraftPeriodAffinity
--- DECOMPILER ERROR at PC805: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventAircraftPeriodAffinity", CCallRequestEvent)
+CEventAircraftPeriodAffinity = CEventAircraftPeriodAffinity
 
-;
-(_ENV.CEventAircraftPeriodAffinity).Constructor = function(self)
-  -- function num : 0_17
+function CEventAircraftPeriodAffinity:Constructor()
 end
 
--- DECOMPILER ERROR at PC810: Confused about usage of register: R3 in 'UnsetPending'
+CEventAircraftPeriodAffinity._proto = {}
+_class("CEventAircraftPeriodAffinityResult", CCallReplyEvent)
+CEventAircraftPeriodAffinityResult = CEventAircraftPeriodAffinityResult
 
-;
-(_ENV.CEventAircraftPeriodAffinity)._proto = {}
-;
-(_ENV._class)("CEventAircraftPeriodAffinityResult", _ENV.CCallReplyEvent)
-_ENV.CEventAircraftPeriodAffinityResult = _ENV.CEventAircraftPeriodAffinityResult
--- DECOMPILER ERROR at PC825: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventAircraftPeriodAffinityResult).Constructor = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function CEventAircraftPeriodAffinityResult:Constructor()
   self.ret = 0
   self.exData = CentralRoomExtData:New()
 end
 
--- DECOMPILER ERROR at PC840: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventAircraftPeriodAffinityResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"exData", "CentralRoomExtData"}
+CEventAircraftPeriodAffinityResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "exData",
+    "CentralRoomExtData"
+  }
 }
-;
-(_ENV._class)("CEventItemSmelt", _ENV.CCallRequestEvent)
-_ENV.CEventItemSmelt = _ENV.CEventItemSmelt
--- DECOMPILER ERROR at PC855: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventItemSmelt", CCallRequestEvent)
+CEventItemSmelt = CEventItemSmelt
 
-;
-(_ENV.CEventItemSmelt).Constructor = function(self)
-  -- function num : 0_19
+function CEventItemSmelt:Constructor()
   self.id = 0
   self.num = 0
   self.ids = {}
 end
 
--- DECOMPILER ERROR at PC875: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventItemSmelt)._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"num", "int"}
-, 
-[3] = {"ids", "list<int>"}
+CEventItemSmelt._proto = {
+  [1] = {"id", "int"},
+  [2] = {"num", "int"},
+  [3] = {"ids", "list<int>"}
 }
-;
-(_ENV._class)("CEventItemSmeltResult", _ENV.CCallReplyEvent)
-_ENV.CEventItemSmeltResult = _ENV.CEventItemSmeltResult
--- DECOMPILER ERROR at PC890: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventItemSmeltResult", CCallReplyEvent)
+CEventItemSmeltResult = CEventItemSmeltResult
 
-;
-(_ENV.CEventItemSmeltResult).Constructor = function(self)
-  -- function num : 0_20
+function CEventItemSmeltResult:Constructor()
   self.ret = 0
   self.id = 0
   self.num = 0
 end
 
--- DECOMPILER ERROR at PC910: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventItemSmeltResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"id", "int"}
-, 
-[3] = {"num", "int64"}
+CEventItemSmeltResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {"id", "int"},
+  [3] = {"num", "int64"}
 }
-;
-(_ENV._class)("CEventMultItemSmelt", _ENV.CCallRequestEvent)
-_ENV.CEventMultItemSmelt = _ENV.CEventMultItemSmelt
--- DECOMPILER ERROR at PC925: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventMultItemSmelt", CCallRequestEvent)
+CEventMultItemSmelt = CEventMultItemSmelt
 
-;
-(_ENV.CEventMultItemSmelt).Constructor = function(self)
-  -- function num : 0_21
+function CEventMultItemSmelt:Constructor()
   self.id_num_list = {}
 end
 
--- DECOMPILER ERROR at PC935: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventMultItemSmelt)._proto = {
-[1] = {"id_num_list", "list<RoleAsset>"}
+CEventMultItemSmelt._proto = {
+  [1] = {
+    "id_num_list",
+    "list<RoleAsset>"
+  }
 }
-;
-(_ENV._class)("CEventMultItemSmeltResult", _ENV.CCallReplyEvent)
-_ENV.CEventMultItemSmeltResult = _ENV.CEventMultItemSmeltResult
--- DECOMPILER ERROR at PC950: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventMultItemSmeltResult", CCallReplyEvent)
+CEventMultItemSmeltResult = CEventMultItemSmeltResult
 
-;
-(_ENV.CEventMultItemSmeltResult).Constructor = function(self)
-  -- function num : 0_22
+function CEventMultItemSmeltResult:Constructor()
   self.ret = 0
   self.item_list = {}
 end
 
--- DECOMPILER ERROR at PC965: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventMultItemSmeltResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"item_list", "list<RoleAsset>"}
+CEventMultItemSmeltResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "item_list",
+    "list<RoleAsset>"
+  }
 }
-;
-(_ENV._class)("CEventFireflyToAtom", _ENV.CCallRequestEvent)
-_ENV.CEventFireflyToAtom = _ENV.CEventFireflyToAtom
--- DECOMPILER ERROR at PC980: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventFireflyToAtom", CCallRequestEvent)
+CEventFireflyToAtom = CEventFireflyToAtom
 
-;
-(_ENV.CEventFireflyToAtom).Constructor = function(self)
-  -- function num : 0_23
+function CEventFireflyToAtom:Constructor()
   self.num = 0
 end
 
--- DECOMPILER ERROR at PC990: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventFireflyToAtom)._proto = {
-[1] = {"num", "int"}
+CEventFireflyToAtom._proto = {
+  [1] = {"num", "int"}
 }
-;
-(_ENV._class)("CEventFireflyToAtomResult", _ENV.CCallReplyEvent)
-_ENV.CEventFireflyToAtomResult = _ENV.CEventFireflyToAtomResult
--- DECOMPILER ERROR at PC1005: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventFireflyToAtomResult", CCallReplyEvent)
+CEventFireflyToAtomResult = CEventFireflyToAtomResult
 
-;
-(_ENV.CEventFireflyToAtomResult).Constructor = function(self)
-  -- function num : 0_24
+function CEventFireflyToAtomResult:Constructor()
   self.ret = 0
   self.num = 0
 end
 
--- DECOMPILER ERROR at PC1020: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventFireflyToAtomResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[3] = {"num", "int64"}
+CEventFireflyToAtomResult._proto = {
+  [1] = {"ret", "int"},
+  [3] = {"num", "int64"}
 }
-;
-(_ENV._class)("CEventDispatchSite", _ENV.CCallRequestEvent)
-_ENV.CEventDispatchSite = _ENV.CEventDispatchSite
--- DECOMPILER ERROR at PC1035: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventDispatchSite", CCallRequestEvent)
+CEventDispatchSite = CEventDispatchSite
 
-;
-(_ENV.CEventDispatchSite).Constructor = function(self)
-  -- function num : 0_25
+function CEventDispatchSite:Constructor()
 end
 
--- DECOMPILER ERROR at PC1040: Confused about usage of register: R3 in 'UnsetPending'
+CEventDispatchSite._proto = {}
+_class("CEventDispatchSiteResult", CCallReplyEvent)
+CEventDispatchSiteResult = CEventDispatchSiteResult
 
-;
-(_ENV.CEventDispatchSite)._proto = {}
-;
-(_ENV._class)("CEventDispatchSiteResult", _ENV.CCallReplyEvent)
-_ENV.CEventDispatchSiteResult = _ENV.CEventDispatchSiteResult
--- DECOMPILER ERROR at PC1055: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventDispatchSiteResult).Constructor = function(self)
-  -- function num : 0_26
+function CEventDispatchSiteResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC1065: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventDispatchSiteResult)._proto = {
-[1] = {"ret", "int"}
+CEventDispatchSiteResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventDispatchLook", _ENV.CCallRequestEvent)
-_ENV.CEventDispatchLook = _ENV.CEventDispatchLook
--- DECOMPILER ERROR at PC1080: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventDispatchLook", CCallRequestEvent)
+CEventDispatchLook = CEventDispatchLook
 
-;
-(_ENV.CEventDispatchLook).Constructor = function(self)
-  -- function num : 0_27
+function CEventDispatchLook:Constructor()
 end
 
--- DECOMPILER ERROR at PC1085: Confused about usage of register: R3 in 'UnsetPending'
+CEventDispatchLook._proto = {}
+_class("CEventDispatchLookResult", CCallReplyEvent)
+CEventDispatchLookResult = CEventDispatchLookResult
 
-;
-(_ENV.CEventDispatchLook)._proto = {}
-;
-(_ENV._class)("CEventDispatchLookResult", _ENV.CCallReplyEvent)
-_ENV.CEventDispatchLookResult = _ENV.CEventDispatchLookResult
--- DECOMPILER ERROR at PC1100: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventDispatchLookResult).Constructor = function(self)
-  -- function num : 0_28
+function CEventDispatchLookResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC1110: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventDispatchLookResult)._proto = {
-[1] = {"ret", "int"}
+CEventDispatchLookResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventDispatchAcceptTask", _ENV.CCallRequestEvent)
-_ENV.CEventDispatchAcceptTask = _ENV.CEventDispatchAcceptTask
--- DECOMPILER ERROR at PC1125: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventDispatchAcceptTask", CCallRequestEvent)
+CEventDispatchAcceptTask = CEventDispatchAcceptTask
 
-;
-(_ENV.CEventDispatchAcceptTask).Constructor = function(self)
-  -- function num : 0_29
+function CEventDispatchAcceptTask:Constructor()
   self.site_id = 0
   self.team_member = {}
 end
 
--- DECOMPILER ERROR at PC1140: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventDispatchAcceptTask)._proto = {
-[1] = {"site_id", "int"}
-, 
-[2] = {"team_member", "list<int64>"}
+CEventDispatchAcceptTask._proto = {
+  [1] = {"site_id", "int"},
+  [2] = {
+    "team_member",
+    "list<int64>"
+  }
 }
-;
-(_ENV._class)("CEventDispatchAcceptTaskResult", _ENV.CCallReplyEvent)
-_ENV.CEventDispatchAcceptTaskResult = _ENV.CEventDispatchAcceptTaskResult
--- DECOMPILER ERROR at PC1155: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventDispatchAcceptTaskResult", CCallReplyEvent)
+CEventDispatchAcceptTaskResult = CEventDispatchAcceptTaskResult
 
-;
-(_ENV.CEventDispatchAcceptTaskResult).Constructor = function(self)
-  -- function num : 0_30
+function CEventDispatchAcceptTaskResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC1165: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventDispatchAcceptTaskResult)._proto = {
-[1] = {"ret", "int"}
+CEventDispatchAcceptTaskResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventDispatchCancelTask", _ENV.CCallRequestEvent)
-_ENV.CEventDispatchCancelTask = _ENV.CEventDispatchCancelTask
--- DECOMPILER ERROR at PC1180: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventDispatchCancelTask", CCallRequestEvent)
+CEventDispatchCancelTask = CEventDispatchCancelTask
 
-;
-(_ENV.CEventDispatchCancelTask).Constructor = function(self)
-  -- function num : 0_31
+function CEventDispatchCancelTask:Constructor()
   self.site_id = 0
 end
 
--- DECOMPILER ERROR at PC1190: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventDispatchCancelTask)._proto = {
-[1] = {"site_id", "int"}
+CEventDispatchCancelTask._proto = {
+  [1] = {"site_id", "int"}
 }
-;
-(_ENV._class)("CEventDispatchCancelTaskResult", _ENV.CCallReplyEvent)
-_ENV.CEventDispatchCancelTaskResult = _ENV.CEventDispatchCancelTaskResult
--- DECOMPILER ERROR at PC1205: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventDispatchCancelTaskResult", CCallReplyEvent)
+CEventDispatchCancelTaskResult = CEventDispatchCancelTaskResult
 
-;
-(_ENV.CEventDispatchCancelTaskResult).Constructor = function(self)
-  -- function num : 0_32
+function CEventDispatchCancelTaskResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC1215: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventDispatchCancelTaskResult)._proto = {
-[1] = {"ret", "int"}
+CEventDispatchCancelTaskResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventDispatchTaskAward", _ENV.CCallRequestEvent)
-_ENV.CEventDispatchTaskAward = _ENV.CEventDispatchTaskAward
--- DECOMPILER ERROR at PC1230: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventDispatchTaskAward", CCallRequestEvent)
+CEventDispatchTaskAward = CEventDispatchTaskAward
 
-;
-(_ENV.CEventDispatchTaskAward).Constructor = function(self)
-  -- function num : 0_33
+function CEventDispatchTaskAward:Constructor()
   self.site_id = 0
 end
 
--- DECOMPILER ERROR at PC1240: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventDispatchTaskAward)._proto = {
-[1] = {"site_id", "int"}
+CEventDispatchTaskAward._proto = {
+  [1] = {"site_id", "int"}
 }
-;
-(_ENV._class)("CEventDispatchTaskAwardResult", _ENV.CCallReplyEvent)
-_ENV.CEventDispatchTaskAwardResult = _ENV.CEventDispatchTaskAwardResult
--- DECOMPILER ERROR at PC1255: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventDispatchTaskAwardResult", CCallReplyEvent)
+CEventDispatchTaskAwardResult = CEventDispatchTaskAwardResult
 
-;
-(_ENV.CEventDispatchTaskAwardResult).Constructor = function(self)
-  -- function num : 0_34
+function CEventDispatchTaskAwardResult:Constructor()
   self.ret = 0
   self.is_assign = false
 end
 
--- DECOMPILER ERROR at PC1270: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventDispatchTaskAwardResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"is_assign", "bool"}
+CEventDispatchTaskAwardResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {"is_assign", "bool"}
 }
-;
-(_ENV._class)("CEventAcceptPresent", _ENV.CCallRequestEvent)
-_ENV.CEventAcceptPresent = _ENV.CEventAcceptPresent
--- DECOMPILER ERROR at PC1285: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventAcceptPresent", CCallRequestEvent)
+CEventAcceptPresent = CEventAcceptPresent
 
-;
-(_ENV.CEventAcceptPresent).Constructor = function(self)
-  -- function num : 0_35
+function CEventAcceptPresent:Constructor()
   self.pet_pstid = 0
 end
 
--- DECOMPILER ERROR at PC1295: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventAcceptPresent)._proto = {
-[1] = {"pet_pstid", "int64"}
+CEventAcceptPresent._proto = {
+  [1] = {"pet_pstid", "int64"}
 }
-;
-(_ENV._class)("CEventAcceptPresentResult", _ENV.CCallReplyEvent)
-_ENV.CEventAcceptPresentResult = _ENV.CEventAcceptPresentResult
--- DECOMPILER ERROR at PC1310: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventAcceptPresentResult", CCallReplyEvent)
+CEventAcceptPresentResult = CEventAcceptPresentResult
 
-;
-(_ENV.CEventAcceptPresentResult).Constructor = function(self)
-  -- function num : 0_36
+function CEventAcceptPresentResult:Constructor()
   self.ret = 0
   self.drop_item_list = {}
 end
 
--- DECOMPILER ERROR at PC1325: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventAcceptPresentResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"drop_item_list", "list<RoleAsset>"}
+CEventAcceptPresentResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "drop_item_list",
+    "list<RoleAsset>"
+  }
 }
-;
-(_ENV._class)("CEventAcceptVisitPet", _ENV.CCallRequestEvent)
-_ENV.CEventAcceptVisitPet = _ENV.CEventAcceptVisitPet
--- DECOMPILER ERROR at PC1340: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventAcceptVisitPet", CCallRequestEvent)
+CEventAcceptVisitPet = CEventAcceptVisitPet
 
-;
-(_ENV.CEventAcceptVisitPet).Constructor = function(self)
-  -- function num : 0_37
+function CEventAcceptVisitPet:Constructor()
   self.pet_pstid = 0
 end
 
--- DECOMPILER ERROR at PC1350: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventAcceptVisitPet)._proto = {
-[1] = {"pet_pstid", "int64"}
+CEventAcceptVisitPet._proto = {
+  [1] = {"pet_pstid", "int64"}
 }
-;
-(_ENV._class)("CEventAcceptVisitPetResult", _ENV.CCallReplyEvent)
-_ENV.CEventAcceptVisitPetResult = _ENV.CEventAcceptVisitPetResult
--- DECOMPILER ERROR at PC1365: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventAcceptVisitPetResult", CCallReplyEvent)
+CEventAcceptVisitPetResult = CEventAcceptVisitPetResult
 
-;
-(_ENV.CEventAcceptVisitPetResult).Constructor = function(self)
-  -- function num : 0_38
+function CEventAcceptVisitPetResult:Constructor()
   self.ret = 0
   self.drop_item_list = {}
 end
 
--- DECOMPILER ERROR at PC1380: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventAcceptVisitPetResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"drop_item_list", "list<RoleAsset>"}
+CEventAcceptVisitPetResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "drop_item_list",
+    "list<RoleAsset>"
+  }
 }
-;
-(_ENV._class)("CEventSearchEvil", _ENV.CCallRequestEvent)
-_ENV.CEventSearchEvil = _ENV.CEventSearchEvil
--- DECOMPILER ERROR at PC1395: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventSearchEvil", CCallRequestEvent)
+CEventSearchEvil = CEventSearchEvil
 
-;
-(_ENV.CEventSearchEvil).Constructor = function(self)
-  -- function num : 0_39
+function CEventSearchEvil:Constructor()
   self.space_id = 0
 end
 
--- DECOMPILER ERROR at PC1405: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventSearchEvil)._proto = {
-[1] = {"space_id", "int"}
+CEventSearchEvil._proto = {
+  [1] = {"space_id", "int"}
 }
-;
-(_ENV._class)("CEventSearchEvilResult", _ENV.CCallReplyEvent)
-_ENV.CEventSearchEvilResult = _ENV.CEventSearchEvilResult
--- DECOMPILER ERROR at PC1420: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventSearchEvilResult", CCallReplyEvent)
+CEventSearchEvilResult = CEventSearchEvilResult
 
-;
-(_ENV.CEventSearchEvilResult).Constructor = function(self)
-  -- function num : 0_40
+function CEventSearchEvilResult:Constructor()
   self.ret = 0
   self.m_refresh_space = {}
 end
 
--- DECOMPILER ERROR at PC1430: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventSearchEvilResult)._proto = {
-[1] = {"ret", "int"}
+CEventSearchEvilResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventCaptureEvil", _ENV.CCallRequestEvent)
-_ENV.CEventCaptureEvil = _ENV.CEventCaptureEvil
--- DECOMPILER ERROR at PC1445: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventCaptureEvil", CCallRequestEvent)
+CEventCaptureEvil = CEventCaptureEvil
 
-;
-(_ENV.CEventCaptureEvil).Constructor = function(self)
-  -- function num : 0_41
+function CEventCaptureEvil:Constructor()
   self.space_id = 0
   self.evil_id = 0
 end
 
--- DECOMPILER ERROR at PC1460: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventCaptureEvil)._proto = {
-[1] = {"space_id", "int"}
-, 
-[2] = {"evil_id", "int"}
+CEventCaptureEvil._proto = {
+  [1] = {"space_id", "int"},
+  [2] = {"evil_id", "int"}
 }
-;
-(_ENV._class)("CEventCaptureEvilResult", _ENV.CCallReplyEvent)
-_ENV.CEventCaptureEvilResult = _ENV.CEventCaptureEvilResult
--- DECOMPILER ERROR at PC1475: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventCaptureEvilResult", CCallReplyEvent)
+CEventCaptureEvilResult = CEventCaptureEvilResult
 
-;
-(_ENV.CEventCaptureEvilResult).Constructor = function(self)
-  -- function num : 0_42
+function CEventCaptureEvilResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC1485: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventCaptureEvilResult)._proto = {
-[1] = {"ret", "int"}
+CEventCaptureEvilResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventQuickCaptureEvil", _ENV.CCallRequestEvent)
-_ENV.CEventQuickCaptureEvil = _ENV.CEventQuickCaptureEvil
--- DECOMPILER ERROR at PC1500: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventQuickCaptureEvil", CCallRequestEvent)
+CEventQuickCaptureEvil = CEventQuickCaptureEvil
 
-;
-(_ENV.CEventQuickCaptureEvil).Constructor = function(self)
-  -- function num : 0_43
+function CEventQuickCaptureEvil:Constructor()
   self.space_id = 0
 end
 
--- DECOMPILER ERROR at PC1510: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventQuickCaptureEvil)._proto = {
-[1] = {"space_id", "int"}
+CEventQuickCaptureEvil._proto = {
+  [1] = {"space_id", "int"}
 }
-;
-(_ENV._class)("CEventQuickCaptureEvilResult", _ENV.CCallReplyEvent)
-_ENV.CEventQuickCaptureEvilResult = _ENV.CEventQuickCaptureEvilResult
--- DECOMPILER ERROR at PC1525: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventQuickCaptureEvilResult", CCallReplyEvent)
+CEventQuickCaptureEvilResult = CEventQuickCaptureEvilResult
 
-;
-(_ENV.CEventQuickCaptureEvilResult).Constructor = function(self)
-  -- function num : 0_44
+function CEventQuickCaptureEvilResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC1535: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventQuickCaptureEvilResult)._proto = {
-[1] = {"ret", "int"}
+CEventQuickCaptureEvilResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventTraceEvil", _ENV.CCallRequestEvent)
-_ENV.CEventTraceEvil = _ENV.CEventTraceEvil
--- DECOMPILER ERROR at PC1550: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventTraceEvil", CCallRequestEvent)
+CEventTraceEvil = CEventTraceEvil
 
-;
-(_ENV.CEventTraceEvil).Constructor = function(self)
-  -- function num : 0_45
+function CEventTraceEvil:Constructor()
   self.space_id = 0
   self.refresh_index = 0
 end
 
--- DECOMPILER ERROR at PC1565: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventTraceEvil)._proto = {
-[1] = {"space_id", "int"}
-, 
-[2] = {"refresh_index", "int"}
+CEventTraceEvil._proto = {
+  [1] = {"space_id", "int"},
+  [2] = {
+    "refresh_index",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventTraceEvilResult", _ENV.CCallReplyEvent)
-_ENV.CEventTraceEvilResult = _ENV.CEventTraceEvilResult
--- DECOMPILER ERROR at PC1580: Confused about usage of register: R3 in 'UnsetPending'
+_class("CEventTraceEvilResult", CCallReplyEvent)
+CEventTraceEvilResult = CEventTraceEvilResult
 
-;
-(_ENV.CEventTraceEvilResult).Constructor = function(self)
-  -- function num : 0_46
+function CEventTraceEvilResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC1590: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CEventTraceEvilResult)._proto = {
-[1] = {"ret", "int"}
+CEventTraceEvilResult._proto = {
+  [1] = {"ret", "int"}
 }
-local EvilOperation = {Storage = 0, Release = 1, Transfer = 2}
-;
-(_ENV._enum)("EvilOperation", EvilOperation)
-;
-(_ENV._class)("CEventEvilOperate", _ENV.CCallRequestEvent)
-_ENV.CEventEvilOperate = _ENV.CEventEvilOperate
--- DECOMPILER ERROR at PC1618: Confused about usage of register: R4 in 'UnsetPending'
+local EvilOperation = {
+  Storage = 0,
+  Release = 1,
+  Transfer = 2
+}
+_enum("EvilOperation", EvilOperation)
+_class("CEventEvilOperate", CCallRequestEvent)
+CEventEvilOperate = CEventEvilOperate
 
-;
-(_ENV.CEventEvilOperate).Constructor = function(self)
-  -- function num : 0_47
+function CEventEvilOperate:Constructor()
   self.evil_space_id = 0
   self.purify_space_id = 0
   self.usage = 0
@@ -873,672 +766,464 @@ _ENV.CEventEvilOperate = _ENV.CEventEvilOperate
   self.cell_index = 0
 end
 
--- DECOMPILER ERROR at PC1648: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventEvilOperate)._proto = {
-[1] = {"evil_space_id", "int"}
-, 
-[2] = {"purify_space_id", "int"}
-, 
-[3] = {"usage", "int"}
-, 
-[4] = {"evil_id", "int"}
-, 
-[5] = {"cell_index", "int"}
+CEventEvilOperate._proto = {
+  [1] = {
+    "evil_space_id",
+    "int"
+  },
+  [2] = {
+    "purify_space_id",
+    "int"
+  },
+  [3] = {"usage", "int"},
+  [4] = {"evil_id", "int"},
+  [5] = {"cell_index", "int"}
 }
-;
-(_ENV._class)("CEventEvilOperateResult", _ENV.CCallReplyEvent)
-_ENV.CEventEvilOperateResult = _ENV.CEventEvilOperateResult
--- DECOMPILER ERROR at PC1663: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventEvilOperateResult", CCallReplyEvent)
+CEventEvilOperateResult = CEventEvilOperateResult
 
-;
-(_ENV.CEventEvilOperateResult).Constructor = function(self)
-  -- function num : 0_48
+function CEventEvilOperateResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC1673: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventEvilOperateResult)._proto = {
-[1] = {"ret", "int"}
+CEventEvilOperateResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventPurifyEvil", _ENV.CCallRequestEvent)
-_ENV.CEventPurifyEvil = _ENV.CEventPurifyEvil
--- DECOMPILER ERROR at PC1688: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventPurifyEvil", CCallRequestEvent)
+CEventPurifyEvil = CEventPurifyEvil
 
-;
-(_ENV.CEventPurifyEvil).Constructor = function(self)
-  -- function num : 0_49
+function CEventPurifyEvil:Constructor()
   self.space_id = 0
   self.evil_id = 0
 end
 
--- DECOMPILER ERROR at PC1703: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventPurifyEvil)._proto = {
-[1] = {"space_id", "int"}
-, 
-[2] = {"evil_id", "int"}
+CEventPurifyEvil._proto = {
+  [1] = {"space_id", "int"},
+  [2] = {"evil_id", "int"}
 }
-;
-(_ENV._class)("CEventPurifyEvilResult", _ENV.CCallReplyEvent)
-_ENV.CEventPurifyEvilResult = _ENV.CEventPurifyEvilResult
--- DECOMPILER ERROR at PC1718: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventPurifyEvilResult", CCallReplyEvent)
+CEventPurifyEvilResult = CEventPurifyEvilResult
 
-;
-(_ENV.CEventPurifyEvilResult).Constructor = function(self)
-  -- function num : 0_50
+function CEventPurifyEvilResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC1728: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventPurifyEvilResult)._proto = {
-[1] = {"ret", "int"}
+CEventPurifyEvilResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventGetConfigRequest", _ENV.CCallRequestEvent)
-_ENV.CEventGetConfigRequest = _ENV.CEventGetConfigRequest
--- DECOMPILER ERROR at PC1743: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventGetConfigRequest", CCallRequestEvent)
+CEventGetConfigRequest = CEventGetConfigRequest
 
-;
-(_ENV.CEventGetConfigRequest).Constructor = function(self)
-  -- function num : 0_51
+function CEventGetConfigRequest:Constructor()
 end
 
--- DECOMPILER ERROR at PC1748: Confused about usage of register: R4 in 'UnsetPending'
+CEventGetConfigRequest._proto = {}
+_class("CEventGetConfigRequestResult", CCallReplyEvent)
+CEventGetConfigRequestResult = CEventGetConfigRequestResult
 
-;
-(_ENV.CEventGetConfigRequest)._proto = {}
-;
-(_ENV._class)("CEventGetConfigRequestResult", _ENV.CCallReplyEvent)
-_ENV.CEventGetConfigRequestResult = _ENV.CEventGetConfigRequestResult
--- DECOMPILER ERROR at PC1763: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventGetConfigRequestResult).Constructor = function(self)
-  -- function num : 0_52
+function CEventGetConfigRequestResult:Constructor()
   self.aircraft_space_config = {}
   self.aircraft_room_config = {}
   self.aircraft_Central_room_config = {}
 end
 
--- DECOMPILER ERROR at PC1783: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventGetConfigRequestResult)._proto = {
-[1] = {"aircraft_space_config", "map<int,MobileCfgAircraftSpace>"}
-, 
-[2] = {"aircraft_room_config", "map<int,MobileCfgAircraftRoom>"}
-, 
-[3] = {"aircraft_Central_room_config", "map<int,MobileCfgAircraftCentralRoom>"}
+CEventGetConfigRequestResult._proto = {
+  [1] = {
+    "aircraft_space_config",
+    "map<int,MobileCfgAircraftSpace>"
+  },
+  [2] = {
+    "aircraft_room_config",
+    "map<int,MobileCfgAircraftRoom>"
+  },
+  [3] = {
+    "aircraft_Central_room_config",
+    "map<int,MobileCfgAircraftCentralRoom>"
+  }
 }
-;
-(_ENV._class)("CEventAddAircraftGetSpaceData", _ENV.CCallRequestEvent)
-_ENV.CEventAddAircraftGetSpaceData = _ENV.CEventAddAircraftGetSpaceData
--- DECOMPILER ERROR at PC1798: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventAddAircraftGetSpaceData", CCallRequestEvent)
+CEventAddAircraftGetSpaceData = CEventAddAircraftGetSpaceData
 
-;
-(_ENV.CEventAddAircraftGetSpaceData).Constructor = function(self)
-  -- function num : 0_53
+function CEventAddAircraftGetSpaceData:Constructor()
 end
 
--- DECOMPILER ERROR at PC1803: Confused about usage of register: R4 in 'UnsetPending'
+CEventAddAircraftGetSpaceData._proto = {}
+_class("CEventAddAircraftGetSpaceDataResult", CCallReplyEvent)
+CEventAddAircraftGetSpaceDataResult = CEventAddAircraftGetSpaceDataResult
 
-;
-(_ENV.CEventAddAircraftGetSpaceData)._proto = {}
-;
-(_ENV._class)("CEventAddAircraftGetSpaceDataResult", _ENV.CCallReplyEvent)
-_ENV.CEventAddAircraftGetSpaceDataResult = _ENV.CEventAddAircraftGetSpaceDataResult
--- DECOMPILER ERROR at PC1818: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventAddAircraftGetSpaceDataResult).Constructor = function(self)
-  -- function num : 0_54 , upvalues : _ENV
+function CEventAddAircraftGetSpaceDataResult:Constructor()
   self.infos = {}
   self.s_aircraft_info = aircraft_info:New()
 end
 
--- DECOMPILER ERROR at PC1833: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventAddAircraftGetSpaceDataResult)._proto = {
-[1] = {"infos", "map<int,aircraft_space_info>"}
-, 
-[2] = {"s_aircraft_info", "aircraft_info"}
+CEventAddAircraftGetSpaceDataResult._proto = {
+  [1] = {
+    "infos",
+    "map<int,aircraft_space_info>"
+  },
+  [2] = {
+    "s_aircraft_info",
+    "aircraft_info"
+  }
 }
-;
-(_ENV._class)("CEventPushClickPet", _ENV.CCliPushEvent)
-_ENV.CEventPushClickPet = _ENV.CEventPushClickPet
--- DECOMPILER ERROR at PC1848: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventPushClickPet", CCliPushEvent)
+CEventPushClickPet = CEventPushClickPet
 
-;
-(_ENV.CEventPushClickPet).Constructor = function(self)
-  -- function num : 0_55
+function CEventPushClickPet:Constructor()
   self.pet_pstid = 0
 end
 
--- DECOMPILER ERROR at PC1858: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventPushClickPet)._proto = {
-[1] = {"pet_pstid", "int64"}
+CEventPushClickPet._proto = {
+  [1] = {"pet_pstid", "int64"}
 }
-;
-(_ENV._class)("CEventAircraftCleanAndBuild", _ENV.CCallRequestEvent)
-_ENV.CEventAircraftCleanAndBuild = _ENV.CEventAircraftCleanAndBuild
--- DECOMPILER ERROR at PC1873: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventAircraftCleanAndBuild", CCallRequestEvent)
+CEventAircraftCleanAndBuild = CEventAircraftCleanAndBuild
 
-;
-(_ENV.CEventAircraftCleanAndBuild).Constructor = function(self)
-  -- function num : 0_56
+function CEventAircraftCleanAndBuild:Constructor()
   self.space_id = 0
   self.room_id = 0
 end
 
--- DECOMPILER ERROR at PC1888: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventAircraftCleanAndBuild)._proto = {
-[1] = {"space_id", "int"}
-, 
-[2] = {"room_id", "int"}
+CEventAircraftCleanAndBuild._proto = {
+  [1] = {"space_id", "int"},
+  [2] = {"room_id", "int"}
 }
-;
-(_ENV._class)("CEventAircraftCleanAndBuildResult", _ENV.CCallReplyEvent)
-_ENV.CEventAircraftCleanAndBuildResult = _ENV.CEventAircraftCleanAndBuildResult
--- DECOMPILER ERROR at PC1903: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventAircraftCleanAndBuildResult", CCallReplyEvent)
+CEventAircraftCleanAndBuildResult = CEventAircraftCleanAndBuildResult
 
-;
-(_ENV.CEventAircraftCleanAndBuildResult).Constructor = function(self)
-  -- function num : 0_57
+function CEventAircraftCleanAndBuildResult:Constructor()
   self.ret = 0
   self.asset = {}
 end
 
--- DECOMPILER ERROR at PC1918: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventAircraftCleanAndBuildResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"asset", "list<RoleAsset>"}
+CEventAircraftCleanAndBuildResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "asset",
+    "list<RoleAsset>"
+  }
 }
-;
-(_ENV._class)("CEventRequestTacticRoomData", _ENV.CCallRequestEvent)
-_ENV.CEventRequestTacticRoomData = _ENV.CEventRequestTacticRoomData
--- DECOMPILER ERROR at PC1933: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventRequestTacticRoomData", CCallRequestEvent)
+CEventRequestTacticRoomData = CEventRequestTacticRoomData
 
-;
-(_ENV.CEventRequestTacticRoomData).Constructor = function(self)
-  -- function num : 0_58
+function CEventRequestTacticRoomData:Constructor()
 end
 
--- DECOMPILER ERROR at PC1938: Confused about usage of register: R4 in 'UnsetPending'
+CEventRequestTacticRoomData._proto = {}
+_class("CEventRequestTacticRoomDataResult", CCallReplyEvent)
+CEventRequestTacticRoomDataResult = CEventRequestTacticRoomDataResult
 
-;
-(_ENV.CEventRequestTacticRoomData)._proto = {}
-;
-(_ENV._class)("CEventRequestTacticRoomDataResult", _ENV.CCallReplyEvent)
-_ENV.CEventRequestTacticRoomDataResult = _ENV.CEventRequestTacticRoomDataResult
--- DECOMPILER ERROR at PC1953: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventRequestTacticRoomDataResult).Constructor = function(self)
-  -- function num : 0_59 , upvalues : _ENV
+function CEventRequestTacticRoomDataResult:Constructor()
   self.ret = 0
   self.room_data = TacticRoomExtData:New()
 end
 
--- DECOMPILER ERROR at PC1968: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventRequestTacticRoomDataResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"room_data", "TacticRoomExtData"}
+CEventRequestTacticRoomDataResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "room_data",
+    "TacticRoomExtData"
+  }
 }
-;
-(_ENV._class)("CEventCartridgeFreeProduce", _ENV.CCallRequestEvent)
-_ENV.CEventCartridgeFreeProduce = _ENV.CEventCartridgeFreeProduce
--- DECOMPILER ERROR at PC1983: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventCartridgeFreeProduce", CCallRequestEvent)
+CEventCartridgeFreeProduce = CEventCartridgeFreeProduce
 
-;
-(_ENV.CEventCartridgeFreeProduce).Constructor = function(self)
-  -- function num : 0_60
+function CEventCartridgeFreeProduce:Constructor()
 end
 
--- DECOMPILER ERROR at PC1988: Confused about usage of register: R4 in 'UnsetPending'
+CEventCartridgeFreeProduce._proto = {}
+_class("CEventCartridgeFreeProduceResult", CCallReplyEvent)
+CEventCartridgeFreeProduceResult = CEventCartridgeFreeProduceResult
 
-;
-(_ENV.CEventCartridgeFreeProduce)._proto = {}
-;
-(_ENV._class)("CEventCartridgeFreeProduceResult", _ENV.CCallReplyEvent)
-_ENV.CEventCartridgeFreeProduceResult = _ENV.CEventCartridgeFreeProduceResult
--- DECOMPILER ERROR at PC2003: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventCartridgeFreeProduceResult).Constructor = function(self)
-  -- function num : 0_61
+function CEventCartridgeFreeProduceResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC2013: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventCartridgeFreeProduceResult)._proto = {
-[1] = {"ret", "int"}
+CEventCartridgeFreeProduceResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventCartridgeProSpeedUp", _ENV.CCallRequestEvent)
-_ENV.CEventCartridgeProSpeedUp = _ENV.CEventCartridgeProSpeedUp
--- DECOMPILER ERROR at PC2028: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventCartridgeProSpeedUp", CCallRequestEvent)
+CEventCartridgeProSpeedUp = CEventCartridgeProSpeedUp
 
-;
-(_ENV.CEventCartridgeProSpeedUp).Constructor = function(self)
-  -- function num : 0_62
+function CEventCartridgeProSpeedUp:Constructor()
   self.firefly_count = 0
 end
 
--- DECOMPILER ERROR at PC2038: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventCartridgeProSpeedUp)._proto = {
-[1] = {"firefly_count", "int64"}
+CEventCartridgeProSpeedUp._proto = {
+  [1] = {
+    "firefly_count",
+    "int64"
+  }
 }
-;
-(_ENV._class)("CEventCartridgeProSpeedUpResult", _ENV.CCallReplyEvent)
-_ENV.CEventCartridgeProSpeedUpResult = _ENV.CEventCartridgeProSpeedUpResult
--- DECOMPILER ERROR at PC2053: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventCartridgeProSpeedUpResult", CCallReplyEvent)
+CEventCartridgeProSpeedUpResult = CEventCartridgeProSpeedUpResult
 
-;
-(_ENV.CEventCartridgeProSpeedUpResult).Constructor = function(self)
-  -- function num : 0_63
+function CEventCartridgeProSpeedUpResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC2063: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventCartridgeProSpeedUpResult)._proto = {
-[1] = {"ret", "int"}
+CEventCartridgeProSpeedUpResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventTacticWeekReset", _ENV.CCallRequestEvent)
-_ENV.CEventTacticWeekReset = _ENV.CEventTacticWeekReset
--- DECOMPILER ERROR at PC2078: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventTacticWeekReset", CCallRequestEvent)
+CEventTacticWeekReset = CEventTacticWeekReset
 
-;
-(_ENV.CEventTacticWeekReset).Constructor = function(self)
-  -- function num : 0_64
+function CEventTacticWeekReset:Constructor()
 end
 
--- DECOMPILER ERROR at PC2083: Confused about usage of register: R4 in 'UnsetPending'
+CEventTacticWeekReset._proto = {}
+_class("CEventTacticWeekResetResult", CCallReplyEvent)
+CEventTacticWeekResetResult = CEventTacticWeekResetResult
 
-;
-(_ENV.CEventTacticWeekReset)._proto = {}
-;
-(_ENV._class)("CEventTacticWeekResetResult", _ENV.CCallReplyEvent)
-_ENV.CEventTacticWeekResetResult = _ENV.CEventTacticWeekResetResult
--- DECOMPILER ERROR at PC2098: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventTacticWeekResetResult).Constructor = function(self)
-  -- function num : 0_65
+function CEventTacticWeekResetResult:Constructor()
   self.ret = 0
   self.next_reset_time = 0
   self.free_pro_count = 0
   self.remain_free_count = 0
 end
 
--- DECOMPILER ERROR at PC2123: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventTacticWeekResetResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"next_reset_time", "time"}
-, 
-[3] = {"free_pro_count", "int"}
-, 
-[4] = {"remain_free_count", "int"}
+CEventTacticWeekResetResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "next_reset_time",
+    "time"
+  },
+  [3] = {
+    "free_pro_count",
+    "int"
+  },
+  [4] = {
+    "remain_free_count",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventGetTacticFormationInfo", _ENV.CCallRequestEvent)
-_ENV.CEventGetTacticFormationInfo = _ENV.CEventGetTacticFormationInfo
--- DECOMPILER ERROR at PC2138: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventGetTacticFormationInfo", CCallRequestEvent)
+CEventGetTacticFormationInfo = CEventGetTacticFormationInfo
 
-;
-(_ENV.CEventGetTacticFormationInfo).Constructor = function(self)
-  -- function num : 0_66
+function CEventGetTacticFormationInfo:Constructor()
 end
 
--- DECOMPILER ERROR at PC2143: Confused about usage of register: R4 in 'UnsetPending'
+CEventGetTacticFormationInfo._proto = {}
+_class("CEventGetTacticFormationInfoResult", CCallReplyEvent)
+CEventGetTacticFormationInfoResult = CEventGetTacticFormationInfoResult
 
-;
-(_ENV.CEventGetTacticFormationInfo)._proto = {}
-;
-(_ENV._class)("CEventGetTacticFormationInfoResult", _ENV.CCallReplyEvent)
-_ENV.CEventGetTacticFormationInfoResult = _ENV.CEventGetTacticFormationInfoResult
--- DECOMPILER ERROR at PC2158: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventGetTacticFormationInfoResult).Constructor = function(self)
-  -- function num : 0_67
+function CEventGetTacticFormationInfoResult:Constructor()
   self.tactic_formation_list = {}
 end
 
--- DECOMPILER ERROR at PC2168: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventGetTacticFormationInfoResult)._proto = {
-[1] = {"tactic_formation_list", "list<TacticFormationInfo>"}
+CEventGetTacticFormationInfoResult._proto = {
+  [1] = {
+    "tactic_formation_list",
+    "list<TacticFormationInfo>"
+  }
 }
-;
-(_ENV._class)("CEventChangeTacticFormationInfo", _ENV.CCallRequestEvent)
-_ENV.CEventChangeTacticFormationInfo = _ENV.CEventChangeTacticFormationInfo
--- DECOMPILER ERROR at PC2183: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventChangeTacticFormationInfo", CCallRequestEvent)
+CEventChangeTacticFormationInfo = CEventChangeTacticFormationInfo
 
-;
-(_ENV.CEventChangeTacticFormationInfo).Constructor = function(self)
-  -- function num : 0_68
+function CEventChangeTacticFormationInfo:Constructor()
   self.id = 0
   self.name = ""
   self.pet_list = {}
 end
 
--- DECOMPILER ERROR at PC2203: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventChangeTacticFormationInfo)._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"name", "string"}
-, 
-[3] = {"pet_list", "list<int64>"}
+CEventChangeTacticFormationInfo._proto = {
+  [1] = {"id", "int"},
+  [2] = {"name", "string"},
+  [3] = {
+    "pet_list",
+    "list<int64>"
+  }
 }
-;
-(_ENV._class)("CEventChangeTacticFormationInfoResult", _ENV.CCallReplyEvent)
-_ENV.CEventChangeTacticFormationInfoResult = _ENV.CEventChangeTacticFormationInfoResult
--- DECOMPILER ERROR at PC2218: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventChangeTacticFormationInfoResult", CCallReplyEvent)
+CEventChangeTacticFormationInfoResult = CEventChangeTacticFormationInfoResult
 
-;
-(_ENV.CEventChangeTacticFormationInfoResult).Constructor = function(self)
-  -- function num : 0_69
+function CEventChangeTacticFormationInfoResult:Constructor()
   self.ret = 0
   self.tactic_formation_list = {}
 end
 
--- DECOMPILER ERROR at PC2233: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventChangeTacticFormationInfoResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"tactic_formation_list", "list<TacticFormationInfo>"}
+CEventChangeTacticFormationInfoResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "tactic_formation_list",
+    "list<TacticFormationInfo>"
+  }
 }
-;
-(_ENV._class)("CEventTakeWeeklyAward", _ENV.CCallRequestEvent)
-_ENV.CEventTakeWeeklyAward = _ENV.CEventTakeWeeklyAward
--- DECOMPILER ERROR at PC2248: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventTakeWeeklyAward", CCallRequestEvent)
+CEventTakeWeeklyAward = CEventTakeWeeklyAward
 
-;
-(_ENV.CEventTakeWeeklyAward).Constructor = function(self)
-  -- function num : 0_70
+function CEventTakeWeeklyAward:Constructor()
   self.pass_num = 0
 end
 
--- DECOMPILER ERROR at PC2258: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventTakeWeeklyAward)._proto = {
-[1] = {"pass_num", "int"}
+CEventTakeWeeklyAward._proto = {
+  [1] = {"pass_num", "int"}
 }
-;
-(_ENV._class)("CEventTakeWeeklyAwardResult", _ENV.CCallReplyEvent)
-_ENV.CEventTakeWeeklyAwardResult = _ENV.CEventTakeWeeklyAwardResult
--- DECOMPILER ERROR at PC2273: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventTakeWeeklyAwardResult", CCallReplyEvent)
+CEventTakeWeeklyAwardResult = CEventTakeWeeklyAwardResult
 
-;
-(_ENV.CEventTakeWeeklyAwardResult).Constructor = function(self)
-  -- function num : 0_71
+function CEventTakeWeeklyAwardResult:Constructor()
   self.ret = 0
   self.award_list = {}
 end
 
--- DECOMPILER ERROR at PC2288: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventTakeWeeklyAwardResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"award_list", "list<RoleAsset>"}
+CEventTakeWeeklyAwardResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "award_list",
+    "list<RoleAsset>"
+  }
 }
-;
-(_ENV._class)("CEventTacticPeakReward", _ENV.CCallRequestEvent)
-_ENV.CEventTacticPeakReward = _ENV.CEventTacticPeakReward
--- DECOMPILER ERROR at PC2303: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventTacticPeakReward", CCallRequestEvent)
+CEventTacticPeakReward = CEventTacticPeakReward
 
-;
-(_ENV.CEventTacticPeakReward).Constructor = function(self)
-  -- function num : 0_72
+function CEventTacticPeakReward:Constructor()
   self.level = {}
 end
 
--- DECOMPILER ERROR at PC2313: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventTacticPeakReward)._proto = {
-[1] = {"level", "list<int>"}
+CEventTacticPeakReward._proto = {
+  [1] = {"level", "list<int>"}
 }
-;
-(_ENV._class)("CEventTacticPeakRewardResult", _ENV.CCallReplyEvent)
-_ENV.CEventTacticPeakRewardResult = _ENV.CEventTacticPeakRewardResult
--- DECOMPILER ERROR at PC2328: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventTacticPeakRewardResult", CCallReplyEvent)
+CEventTacticPeakRewardResult = CEventTacticPeakRewardResult
 
-;
-(_ENV.CEventTacticPeakRewardResult).Constructor = function(self)
-  -- function num : 0_73
+function CEventTacticPeakRewardResult:Constructor()
   self.ret = 0
   self.received_peak_lv_list = {}
   self.award_list = {}
 end
 
--- DECOMPILER ERROR at PC2348: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventTacticPeakRewardResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"received_peak_lv_list", "list<int>"}
-, 
-[3] = {"award_list", "list<RoleAsset>"}
+CEventTacticPeakRewardResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "received_peak_lv_list",
+    "list<int>"
+  },
+  [3] = {
+    "award_list",
+    "list<RoleAsset>"
+  }
 }
-;
-(_ENV._class)("CEventTacticUnlockTheme", _ENV.CCallRequestEvent)
-_ENV.CEventTacticUnlockTheme = _ENV.CEventTacticUnlockTheme
--- DECOMPILER ERROR at PC2363: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventTacticUnlockTheme", CCallRequestEvent)
+CEventTacticUnlockTheme = CEventTacticUnlockTheme
 
-;
-(_ENV.CEventTacticUnlockTheme).Constructor = function(self)
-  -- function num : 0_74
+function CEventTacticUnlockTheme:Constructor()
   self.themeid = 0
 end
 
--- DECOMPILER ERROR at PC2373: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventTacticUnlockTheme)._proto = {
-[1] = {"themeid", "int"}
+CEventTacticUnlockTheme._proto = {
+  [1] = {"themeid", "int"}
 }
-;
-(_ENV._class)("CEventTacticUnlockThemeResult", _ENV.CCallReplyEvent)
-_ENV.CEventTacticUnlockThemeResult = _ENV.CEventTacticUnlockThemeResult
--- DECOMPILER ERROR at PC2388: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventTacticUnlockThemeResult", CCallReplyEvent)
+CEventTacticUnlockThemeResult = CEventTacticUnlockThemeResult
 
-;
-(_ENV.CEventTacticUnlockThemeResult).Constructor = function(self)
-  -- function num : 0_75
+function CEventTacticUnlockThemeResult:Constructor()
   self.ret = 0
   self.theme_list = {}
 end
 
--- DECOMPILER ERROR at PC2403: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventTacticUnlockThemeResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"theme_list", "map<int,TacticalDBThemeData>"}
+CEventTacticUnlockThemeResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "theme_list",
+    "map<int,TacticalDBThemeData>"
+  }
 }
-;
-(_ENV._class)("CEventTacticGetInformation", _ENV.CCallRequestEvent)
-_ENV.CEventTacticGetInformation = _ENV.CEventTacticGetInformation
--- DECOMPILER ERROR at PC2418: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventTacticGetInformation", CCallRequestEvent)
+CEventTacticGetInformation = CEventTacticGetInformation
 
-;
-(_ENV.CEventTacticGetInformation).Constructor = function(self)
-  -- function num : 0_76
+function CEventTacticGetInformation:Constructor()
   self.themeid = 0
   self.infoid = 0
 end
 
--- DECOMPILER ERROR at PC2433: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventTacticGetInformation)._proto = {
-[1] = {"themeid", "int"}
-, 
-[2] = {"infoid", "int"}
+CEventTacticGetInformation._proto = {
+  [1] = {"themeid", "int"},
+  [2] = {"infoid", "int"}
 }
-;
-(_ENV._class)("CEventTacticGetInformationResult", _ENV.CCallReplyEvent)
-_ENV.CEventTacticGetInformationResult = _ENV.CEventTacticGetInformationResult
--- DECOMPILER ERROR at PC2448: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventTacticGetInformationResult", CCallReplyEvent)
+CEventTacticGetInformationResult = CEventTacticGetInformationResult
 
-;
-(_ENV.CEventTacticGetInformationResult).Constructor = function(self)
-  -- function num : 0_77
+function CEventTacticGetInformationResult:Constructor()
   self.ret = 0
   self.theme_list = {}
 end
 
--- DECOMPILER ERROR at PC2463: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventTacticGetInformationResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"theme_list", "map<int,TacticalDBThemeData>"}
+CEventTacticGetInformationResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "theme_list",
+    "map<int,TacticalDBThemeData>"
+  }
 }
-;
-(_ENV._class)("CEventDelCartridge", _ENV.CCallRequestEvent)
-_ENV.CEventDelCartridge = _ENV.CEventDelCartridge
--- DECOMPILER ERROR at PC2478: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventDelCartridge", CCallRequestEvent)
+CEventDelCartridge = CEventDelCartridge
 
-;
-(_ENV.CEventDelCartridge).Constructor = function(self)
-  -- function num : 0_78
+function CEventDelCartridge:Constructor()
   self.pstid = 0
 end
 
--- DECOMPILER ERROR at PC2488: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventDelCartridge)._proto = {
-[1] = {"pstid", "int64"}
+CEventDelCartridge._proto = {
+  [1] = {"pstid", "int64"}
 }
-;
-(_ENV._class)("CEventDelCartridgeResult", _ENV.CCallReplyEvent)
-_ENV.CEventDelCartridgeResult = _ENV.CEventDelCartridgeResult
--- DECOMPILER ERROR at PC2503: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventDelCartridgeResult", CCallReplyEvent)
+CEventDelCartridgeResult = CEventDelCartridgeResult
 
-;
-(_ENV.CEventDelCartridgeResult).Constructor = function(self)
-  -- function num : 0_79
+function CEventDelCartridgeResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC2513: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventDelCartridgeResult)._proto = {
-[1] = {"ret", "int"}
+CEventDelCartridgeResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventAIMultItemSmelt", _ENV.CCallRequestEvent)
-_ENV.CEventAIMultItemSmelt = _ENV.CEventAIMultItemSmelt
--- DECOMPILER ERROR at PC2528: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventAIMultItemSmelt", CCallRequestEvent)
+CEventAIMultItemSmelt = CEventAIMultItemSmelt
 
-;
-(_ENV.CEventAIMultItemSmelt).Constructor = function(self)
-  -- function num : 0_80
+function CEventAIMultItemSmelt:Constructor()
   self.id_num_list = {}
 end
 
--- DECOMPILER ERROR at PC2538: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventAIMultItemSmelt)._proto = {
-[1] = {"id_num_list", "list<RoleAsset>"}
+CEventAIMultItemSmelt._proto = {
+  [1] = {
+    "id_num_list",
+    "list<RoleAsset>"
+  }
 }
-;
-(_ENV._class)("CEventAIMultItemSmeltResult", _ENV.CCallReplyEvent)
-_ENV.CEventAIMultItemSmeltResult = _ENV.CEventAIMultItemSmeltResult
--- DECOMPILER ERROR at PC2553: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventAIMultItemSmeltResult", CCallReplyEvent)
+CEventAIMultItemSmeltResult = CEventAIMultItemSmeltResult
 
-;
-(_ENV.CEventAIMultItemSmeltResult).Constructor = function(self)
-  -- function num : 0_81
+function CEventAIMultItemSmeltResult:Constructor()
   self.ret = 0
   self.item_list = {}
 end
 
--- DECOMPILER ERROR at PC2568: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventAIMultItemSmeltResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"item_list", "list<RoleAsset>"}
+CEventAIMultItemSmeltResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "item_list",
+    "list<RoleAsset>"
+  }
 }
-;
-(_ENV._class)("CEventCollectPrism", _ENV.CCallRequestEvent)
-_ENV.CEventCollectPrism = _ENV.CEventCollectPrism
--- DECOMPILER ERROR at PC2583: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventCollectPrism", CCallRequestEvent)
+CEventCollectPrism = CEventCollectPrism
 
-;
-(_ENV.CEventCollectPrism).Constructor = function(self)
-  -- function num : 0_82
+function CEventCollectPrism:Constructor()
   self.prism_count = 0
 end
 
--- DECOMPILER ERROR at PC2593: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventCollectPrism)._proto = {
-[1] = {"prism_count", "int"}
+CEventCollectPrism._proto = {
+  [1] = {
+    "prism_count",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventCollectPrismResult", _ENV.CCallReplyEvent)
-_ENV.CEventCollectPrismResult = _ENV.CEventCollectPrismResult
--- DECOMPILER ERROR at PC2608: Confused about usage of register: R4 in 'UnsetPending'
+_class("CEventCollectPrismResult", CCallReplyEvent)
+CEventCollectPrismResult = CEventCollectPrismResult
 
-;
-(_ENV.CEventCollectPrismResult).Constructor = function(self)
-  -- function num : 0_83
+function CEventCollectPrismResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC2618: Confused about usage of register: R4 in 'UnsetPending'
-
-;
-(_ENV.CEventCollectPrismResult)._proto = {
-[1] = {"ret", "int"}
+CEventCollectPrismResult._proto = {
+  [1] = {"ret", "int"}
 }
-

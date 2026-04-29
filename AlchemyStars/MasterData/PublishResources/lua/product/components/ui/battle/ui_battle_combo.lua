@@ -1,44 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_combo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleCombo", UICustomWidget)
 UIBattleCombo = UIBattleCombo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleCombo.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBattleCombo:OnShow()
   self._comboGO = self:GetGameObject("Combo")
   self._comboTxt = self:GetUIComponent("UILocalizationText", "ComboNumberText")
   self:HideCombo()
   self:AttachEvent(GameEventType.DisplayCombo, self.OnDisplayCombo)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleCombo.OnDisplayCombo = function(self, comboNum)
-  -- function num : 0_1 , upvalues : _ENV
-  if comboNum > 0 then
-    (self._comboTxt):SetText(comboNum)
-    ;
-    (self._comboGO):SetActive(true)
-    ;
-    ((self._comboGO).transform):DOKill(true)
-    ;
-    ((self._comboGO).transform):DOShakePosition(0.3, Vector3(5, 20, 0), 200, 0, false, false)
+function UIBattleCombo:OnDisplayCombo(comboNum)
+  if 0 < comboNum then
+    self._comboTxt:SetText(comboNum)
+    self._comboGO:SetActive(true)
+    self._comboGO.transform:DOKill(true)
+    self._comboGO.transform:DOShakePosition(0.3, Vector3(5, 20, 0), 200, 0, false, false)
   else
     self:HideCombo()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleCombo.HideCombo = function(self)
-  -- function num : 0_2
-  (self._comboTxt):SetText("")
-  ;
-  (self._comboGO):SetActive(false)
+function UIBattleCombo:HideCombo()
+  self._comboTxt:SetText("")
+  self._comboGO:SetActive(false)
 end
-
-

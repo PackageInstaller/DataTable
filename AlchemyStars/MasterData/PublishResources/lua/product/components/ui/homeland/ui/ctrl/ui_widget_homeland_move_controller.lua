@@ -1,144 +1,103 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ctrl/ui_widget_homeland_move_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetHomelandMoveController", UICustomWidget)
 UIWidgetHomelandMoveController = UIWidgetHomelandMoveController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetHomelandMoveController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  self._uiHomelandModule = (self._homelandModule):GetUIModule()
-  self._homelandClient = (self._uiHomelandModule):GetClient()
-  self._HomelandInputControllerChar = ((self._homelandClient):InputManager()):GetControllerChar()
+function UIWidgetHomelandMoveController:OnShow(uiParams)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
+  self._uiHomelandModule = self._homelandModule:GetUIModule()
+  self._homelandClient = self._uiHomelandModule:GetClient()
+  self._HomelandInputControllerChar = self._homelandClient:InputManager():GetControllerChar()
   self._rb = self:GetGameObject("RightBottom")
-  if ((self._homelandClient):InputManager()):UseMobileController() then
+  if self._homelandClient:InputManager():UseMobileController() then
     self:InitMobileController()
-    self.resetCallback = function()
-    -- function num : 0_0_0 , upvalues : self
-    self:OnReset()
-  end
-
-    ;
-    ((self._homelandClient):InputManager()):AddResetCallback(self.resetCallback)
+    
+    function self.resetCallback()
+      self:OnReset()
+    end
+    
+    self._homelandClient:InputManager():AddResetCallback(self.resetCallback)
   else
     self:InitPCController()
   end
   self:AttachEvent(GameEventType.OnChangeUIHomelandButtonSprintShow, self.OnChangeUIHomelandButtonSprintShow)
   self:AttachEvent(GameEventType.FishMatchHideDash, self.OnFishMatchReadyHideUI)
   self:AttachEvent(GameEventType.FishMatchEnd, self.OnFishMatchEndShowUI)
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
-  local characterController = (homelandClient:CharacterManager()):MainCharacterController()
+  local characterController = homelandClient:CharacterManager():MainCharacterController()
   if characterController:IsSwimming() then
-    (self._rb):SetActive(false)
+    self._rb:SetActive(false)
   end
   local dashBtn = self:GetGameObject("DashButton")
-  local el = (UICustomUIEventListener.Get)(dashBtn)
+  local el = UICustomUIEventListener.Get(dashBtn)
   self:AddUICustomEventListener(el, UIEvent.Press, function()
-    -- function num : 0_0_1 , upvalues : self
     self:OnDashBtnDown()
-  end
-)
+  end)
   self:AddUICustomEventListener(el, UIEvent.Release, function()
-    -- function num : 0_0_2 , upvalues : self
     self:OnDashBtnUp()
-  end
-)
+  end)
   self._dashBtnHolding = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetHomelandMoveController.OnHide = function(self)
-  -- function num : 0_1
+function UIWidgetHomelandMoveController:OnHide()
   self._moveFingerID = nil
   self._rotateFingerID = nil
   self._scaleFingerID = nil
-  ;
-  ((self._homelandClient):InputManager()):RemoveResetCallback(self.resetCallback)
+  self._homelandClient:InputManager():RemoveResetCallback(self.resetCallback)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetHomelandMoveController.OnReset = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetHomelandMoveController:OnReset()
   self._moveFingerID = nil
   self._rotateFingerID = nil
   self._scaleFingerID = nil
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._TouchPointMoveTrans).anchoredPosition = Vector2.zero
+  self._TouchPointMoveTrans.anchoredPosition = Vector2.zero
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetHomelandMoveController.HideExceptCameraRotation = function(self, hide)
-  -- function num : 0_3 , upvalues : _ENV
-  if ((self._homelandClient):InputManager()):UseMobileController() then
-    (self._joystickArea):SetActive(not hide)
+function UIWidgetHomelandMoveController:HideExceptCameraRotation(hide)
+  if self._homelandClient:InputManager():UseMobileController() then
+    self._joystickArea:SetActive(not hide)
   end
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
-  local characterController = (homelandClient:CharacterManager()):MainCharacterController()
+  local characterController = homelandClient:CharacterManager():MainCharacterController()
   if characterController:IsSwimming() then
-    return 
+    return
   end
-  ;
-  (self._rb):SetActive(not hide)
+  self._rb:SetActive(not hide)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetHomelandMoveController.InitMobileController = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIWidgetHomelandMoveController:InitMobileController()
   self._joystickArea = self:GetGameObject("JoystickArea")
   self._TouchPointMoveTrans = self:GetUIComponent("RectTransform", "JoystickPoint")
-  self._uiCam = ((GameGlobal.UIStateManager)()):GetControllerCamera((self.uiOwner):GetName())
-  self._input = (GameGlobal.EngineInput)()
+  self._uiCam = GameGlobal.UIStateManager():GetControllerCamera(self.uiOwner:GetName())
+  self._input = GameGlobal.EngineInput()
   self._moveFingerID = nil
   self._rotateFingerID = nil
   self._scaleFingerID = nil
   self._rotateFingerPos = nil
   self._scaleFingerPos = nil
   self._scaleDistance = nil
-  self._joystickAreaTrans = (self._joystickArea).transform
-  self._joystickEtl = (UICustomUIEventListener.Get)(self._joystickArea)
+  self._joystickAreaTrans = self._joystickArea.transform
+  self._joystickEtl = UICustomUIEventListener.Get(self._joystickArea)
   self:AddUICustomEventListener(self._joystickEtl, UIEvent.Press, function(go)
-    -- function num : 0_4_0 , upvalues : self
     self:OnPressJoystick()
-  end
-)
+  end)
   self:AddUICustomEventListener(self._joystickEtl, UIEvent.Drag, function(pointerEventData)
-    -- function num : 0_4_1 , upvalues : self
     self:OnDragJoystick(pointerEventData)
-  end
-)
+  end)
   self:AddUICustomEventListener(self._joystickEtl, UIEvent.Release, function(go)
-    -- function num : 0_4_2 , upvalues : self
     self:OnUpJoystick()
-  end
-)
-  self._goTrans = (self:GetGameObject()).transform
-  self._slidingAreaEtl = (UICustomUIEventListener.Get)(self:GetGameObject())
+  end)
+  self._goTrans = self:GetGameObject().transform
+  self._slidingAreaEtl = UICustomUIEventListener.Get(self:GetGameObject())
   self:AddUICustomEventListener(self._slidingAreaEtl, UIEvent.Press, function(go)
-    -- function num : 0_4_3 , upvalues : self
     self:OnPressSlidingArea()
-  end
-)
+  end)
   self:AddUICustomEventListener(self._slidingAreaEtl, UIEvent.Drag, function(pointerEventData)
-    -- function num : 0_4_4 , upvalues : self
     self:OnDragSlidingArea(pointerEventData)
-  end
-)
+  end)
   self:AddUICustomEventListener(self._slidingAreaEtl, UIEvent.Release, function(go)
-    -- function num : 0_4_5 , upvalues : self
     self:OnUpSlidingArea()
-  end
-)
+  end)
   self._smallCircleRadius = 63
   self._smallCircleRadiusSQ = self._smallCircleRadius * self._smallCircleRadius
   self._bigCircleRadius = 186
@@ -147,214 +106,143 @@ UIWidgetHomelandMoveController.InitMobileController = function(self)
   self._scaleFactor = 0.005
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetHomelandMoveController.InitPCController = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIWidgetHomelandMoveController:InitPCController()
   self._joystickArea = self:GetGameObject("JoystickArea")
-  ;
-  (self._joystickArea):SetActive(false)
-  ;
-  ((self:GetGameObject()):GetComponent(typeof(EmptyImage))).enabled = false
+  self._joystickArea:SetActive(false)
+  self:GetGameObject():GetComponent(typeof(EmptyImage)).enabled = false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetHomelandMoveController.OnPressJoystick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIWidgetHomelandMoveController:OnPressJoystick()
   if self._moveFingerID ~= nil then
-    return 
+    return
   end
-  local pointerEventData = (self._joystickEtl).CurrentPointerEventData
+  local pointerEventData = self._joystickEtl.CurrentPointerEventData
   self._moveFingerID = pointerEventData.pointerId
-  local _, pos = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(self._joystickAreaTrans, pointerEventData.position, pointerEventData.pressEventCamera, nil)
+  local _, pos = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(self._joystickAreaTrans, pointerEventData.position, pointerEventData.pressEventCamera, nil)
   local sqDis = pos:SqrMagnitude()
-  if self._smallCircleRadiusSQ < sqDis then
+  if sqDis > self._smallCircleRadiusSQ then
     self._moveType = HomelandCharMoveType.Run
   else
     self._moveType = HomelandCharMoveType.Walk
   end
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R5 in 'UnsetPending'
-
-  if self._bigCircleRadiusSQ < sqDis then
-    (self._TouchPointMoveTrans).anchoredPosition = self._bigCircleRadius / (math.sqrt)(sqDis) * pos
+  if sqDis > self._bigCircleRadiusSQ then
+    self._TouchPointMoveTrans.anchoredPosition = self._bigCircleRadius / math.sqrt(sqDis) * pos
   else
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._TouchPointMoveTrans).anchoredPosition = pos
+    self._TouchPointMoveTrans.anchoredPosition = pos
   end
-  ;
-  (self._HomelandInputControllerChar):HandleMove(pos, self._moveType)
+  self._HomelandInputControllerChar:HandleMove(pos, self._moveType)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetHomelandMoveController.OnDragJoystick = function(self, pointerEventData)
-  -- function num : 0_7 , upvalues : _ENV
+function UIWidgetHomelandMoveController:OnDragJoystick(pointerEventData)
   if self._moveFingerID == pointerEventData.pointerId then
-    local _, pos = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(self._joystickAreaTrans, pointerEventData.position, pointerEventData.pressEventCamera, nil)
+    local _, pos = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(self._joystickAreaTrans, pointerEventData.position, pointerEventData.pressEventCamera, nil)
     local sqDis = pos:SqrMagnitude()
-    if self._moveType == HomelandCharMoveType.Walk and self._smallCircleRadiusSQ < sqDis then
+    if self._moveType == HomelandCharMoveType.Walk and sqDis > self._smallCircleRadiusSQ then
       self._moveType = HomelandCharMoveType.Run
-    else
-      if self._moveType == HomelandCharMoveType.Run and sqDis <= self._smallCircleRadiusSQ then
-        self._moveType = HomelandCharMoveType.Walk
-      end
+    elseif self._moveType == HomelandCharMoveType.Run and sqDis <= self._smallCircleRadiusSQ then
+      self._moveType = HomelandCharMoveType.Walk
     end
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R5 in 'UnsetPending'
-
-    if self._bigCircleRadiusSQ < sqDis then
-      (self._TouchPointMoveTrans).anchoredPosition = self._bigCircleRadius / (math.sqrt)(sqDis) * pos
+    if sqDis > self._bigCircleRadiusSQ then
+      self._TouchPointMoveTrans.anchoredPosition = self._bigCircleRadius / math.sqrt(sqDis) * pos
     else
-      -- DECOMPILER ERROR at PC51: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._TouchPointMoveTrans).anchoredPosition = pos
+      self._TouchPointMoveTrans.anchoredPosition = pos
     end
-    ;
-    (self._HomelandInputControllerChar):HandleMove(pos, self._moveType)
+    self._HomelandInputControllerChar:HandleMove(pos, self._moveType)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetHomelandMoveController.OnUpJoystick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIWidgetHomelandMoveController:OnUpJoystick()
   if self._moveFingerID == nil then
-    return 
+    return
   end
-  if not (self._joystickEtl).CurrentPointerEventData then
-    return 
+  if not self._joystickEtl.CurrentPointerEventData then
+    return
   end
-  local pointerEventData = (self._joystickEtl).CurrentPointerEventData
+  local pointerEventData = self._joystickEtl.CurrentPointerEventData
   if self._moveFingerID == pointerEventData.pointerId then
     self._moveFingerID = nil
-    ;
-    (self._HomelandInputControllerChar):HandleMove(Vector2.zero, HomelandCharMoveType.Idle)
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._TouchPointMoveTrans).anchoredPosition = Vector2.zero
+    self._HomelandInputControllerChar:HandleMove(Vector2.zero, HomelandCharMoveType.Idle)
+    self._TouchPointMoveTrans.anchoredPosition = Vector2.zero
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetHomelandMoveController.OnPressSlidingArea = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIWidgetHomelandMoveController:OnPressSlidingArea()
   if self._rotateFingerID ~= nil and self._scaleFingerID ~= nil then
-    return 
+    return
   end
-  local pointerEventData = (self._slidingAreaEtl).CurrentPointerEventData
+  local pointerEventData = self._slidingAreaEtl.CurrentPointerEventData
   local fingerId = pointerEventData.pointerId
   if self._rotateFingerID == nil and self._scaleFingerID ~= fingerId then
     self._rotateFingerID = fingerId
     self._rotateFingerPos = pointerEventData.position
-  else
-    if self._scaleFingerID == nil and self._rotateFingerID ~= fingerId then
-      self._scaleFingerID = fingerId
-      self._scaleFingerPos = pointerEventData.position
-    end
+  elseif self._scaleFingerID == nil and self._rotateFingerID ~= fingerId then
+    self._scaleFingerID = fingerId
+    self._scaleFingerPos = pointerEventData.position
   end
   if self._rotateFingerID and self._scaleFingerID then
-    self._scaleDistance = (Vector2.Distance)(self._rotateFingerPos, self._scaleFingerPos)
+    self._scaleDistance = Vector2.Distance(self._rotateFingerPos, self._scaleFingerPos)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetHomelandMoveController.OnDragSlidingArea = function(self, pointerEventData)
-  -- function num : 0_10 , upvalues : _ENV
+function UIWidgetHomelandMoveController:OnDragSlidingArea(pointerEventData)
   if self._rotateFingerID and self._scaleFingerID then
     local scaled = false
     if self._rotateFingerID == pointerEventData.pointerId then
       self._rotateFingerPos = pointerEventData.position
       scaled = true
-    else
-      if self._scaleFingerID == pointerEventData.pointerId then
-        self._scaleFingerPos = pointerEventData.position
-        scaled = true
-      end
+    elseif self._scaleFingerID == pointerEventData.pointerId then
+      self._scaleFingerPos = pointerEventData.position
+      scaled = true
     end
     if scaled then
-      local newDistance = (Vector2.Distance)(self._rotateFingerPos, self._scaleFingerPos)
-      ;
-      (self._HomelandInputControllerChar):HandleScale((newDistance - self._scaleDistance) * self._scaleFactor)
+      local newDistance = Vector2.Distance(self._rotateFingerPos, self._scaleFingerPos)
+      self._HomelandInputControllerChar:HandleScale((newDistance - self._scaleDistance) * self._scaleFactor)
       self._scaleDistance = newDistance
     end
-  else
-    do
-      if self._rotateFingerID == pointerEventData.pointerId then
-        (self._HomelandInputControllerChar):HandleRotate(pointerEventData.delta)
-      end
-    end
+  elseif self._rotateFingerID == pointerEventData.pointerId then
+    self._HomelandInputControllerChar:HandleRotate(pointerEventData.delta)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetHomelandMoveController.OnUpSlidingArea = function(self)
-  -- function num : 0_11
+function UIWidgetHomelandMoveController:OnUpSlidingArea()
   if self._rotateFingerID == nil and self._scaleFingerID == nil then
-    return 
+    return
   end
-  local pointerEventData = (self._slidingAreaEtl).CurrentPointerEventData
+  local pointerEventData = self._slidingAreaEtl.CurrentPointerEventData
   if self._rotateFingerID == pointerEventData.pointerId then
     self._rotateFingerID = nil
     self._rotateFingerPos = nil
-  else
-    if self._scaleFingerID == pointerEventData.pointerId then
-      self._scaleFingerID = nil
-      self._scaleFingerPos = nil
-    end
+  elseif self._scaleFingerID == pointerEventData.pointerId then
+    self._scaleFingerID = nil
+    self._scaleFingerPos = nil
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetHomelandMoveController.OnChangeUIHomelandButtonSprintShow = function(self, visible)
-  -- function num : 0_12
-  (self._rb):SetActive(visible)
+function UIWidgetHomelandMoveController:OnChangeUIHomelandButtonSprintShow(visible)
+  self._rb:SetActive(visible)
   if not visible then
-    (self._HomelandInputControllerChar):DashRelease()
+    self._HomelandInputControllerChar:DashRelease()
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetHomelandMoveController.OnFishMatchReadyHideUI = function(self)
-  -- function num : 0_13
-  if ((self._homelandClient):InputManager()):UseMobileController() then
-    (self._joystickArea):SetActive(false)
+function UIWidgetHomelandMoveController:OnFishMatchReadyHideUI()
+  if self._homelandClient:InputManager():UseMobileController() then
+    self._joystickArea:SetActive(false)
   end
-  ;
-  (self._rb):SetActive(false)
+  self._rb:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetHomelandMoveController.OnFishMatchEndShowUI = function(self)
-  -- function num : 0_14
-  if ((self._homelandClient):InputManager()):UseMobileController() then
-    (self._joystickArea):SetActive(true)
+function UIWidgetHomelandMoveController:OnFishMatchEndShowUI()
+  if self._homelandClient:InputManager():UseMobileController() then
+    self._joystickArea:SetActive(true)
   end
-  ;
-  (self._rb):SetActive(true)
+  self._rb:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetHomelandMoveController.OnDashBtnDown = function(self)
-  -- function num : 0_15
-  (self._HomelandInputControllerChar):DashStart()
+function UIWidgetHomelandMoveController:OnDashBtnDown()
+  self._HomelandInputControllerChar:DashStart()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetHomelandMoveController.OnDashBtnUp = function(self)
-  -- function num : 0_16
-  (self._HomelandInputControllerChar):DashRelease()
+function UIWidgetHomelandMoveController:OnDashBtnUp()
+  self._HomelandInputControllerChar:DashRelease()
 end
-
-

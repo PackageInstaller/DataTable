@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/build/ui_homeland_build_edit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBuildEdit", UICustomWidget)
 UIHomelandBuildEdit = UIHomelandBuildEdit
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBuildEdit.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.mUIHomeland = (self.mHomeland):GetUIModule()
-  self.homelandClient = (self.mUIHomeland):GetClient()
-  self.homeBuildManager = (self.homelandClient):BuildManager()
-  self.mItem = (GameGlobal.GetModule)(ItemModule)
-  self.liveableRaw = (self.mHomeland):GetAmbientValue()
+function UIHomelandBuildEdit:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.mUIHomeland = self.mHomeland:GetUIModule()
+  self.homelandClient = self.mUIHomeland:GetClient()
+  self.homeBuildManager = self.homelandClient:BuildManager()
+  self.mItem = GameGlobal.GetModule(ItemModule)
+  self.liveableRaw = self.mHomeland:GetAmbientValue()
   self.liveable = self.liveableRaw
   self.list = {}
   self.quaternionShowHide = Quaternion.identity
@@ -28,37 +21,21 @@ UIHomelandBuildEdit.Constructor = function(self)
   self._needSave = false
   self._tplIDSubTypeCache = {}
   self.filterID2SubType = {}
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.filterID2SubType)[UIHomelandBuildEdit.MainBuildingFilterID] = ArchitectureSubType.White_Tower
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.filterID2SubType)[UIHomelandBuildEdit.MuseumFilterID] = ArchitectureSubType.Museum
-  -- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.filterID2SubType)[UIHomelandBuildEdit.ShopFilterID] = ArchitectureSubType.Shop
-  -- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.filterID2SubType)[UIHomelandBuildEdit.WishingPoolFilterID] = ArchitectureSubType.Wishing_Pool
+  self.filterID2SubType[UIHomelandBuildEdit.MainBuildingFilterID] = ArchitectureSubType.White_Tower
+  self.filterID2SubType[UIHomelandBuildEdit.MuseumFilterID] = ArchitectureSubType.Museum
+  self.filterID2SubType[UIHomelandBuildEdit.ShopFilterID] = ArchitectureSubType.Shop
+  self.filterID2SubType[UIHomelandBuildEdit.WishingPoolFilterID] = ArchitectureSubType.Wishing_Pool
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandBuildEdit:OnShow()
   self.txtLivable = self:GetUIComponent("UILocalizationText", "txtLivable")
   self.tglGrid = self:GetUIComponent("Toggle", "tglGrid")
-  self.OnValueChanged = function(isOn)
-    -- function num : 0_1_0 , upvalues : self
-    (self.homeBuildManager):ShowGrid(isOn)
+  
+  function self.OnValueChanged(isOn)
+    self.homeBuildManager:ShowGrid(isOn)
   end
-
-  ;
-  ((self.tglGrid).onValueChanged):AddListener(self.OnValueChanged)
+  
+  self.tglGrid.onValueChanged:AddListener(self.OnValueChanged)
   self.arrange = self:GetGameObject("arrange")
   self.arrangeTitle = self:GetGameObject("arrangeTitle")
   self.operate = self:GetGameObject("operate")
@@ -70,22 +47,17 @@ UIHomelandBuildEdit.OnShow = function(self)
   self.moreValue = self:GetUIComponent("UILocalizationText", "moreValue")
   self.lessValue = self:GetUIComponent("UILocalizationText", "lessValue")
   self._animPlayer = EZTL_Player:New()
-  local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIHomelandBuild")
+  local camera = GameGlobal.UIStateManager():GetControllerCamera("UIHomelandBuild")
   self._sr = self:GetUIComponent("ScrollRect", "sv")
   self._svHelper = H3DScrollViewHelper:New(self, "sv", "UIHomelandBuildEditItem", function(index, ui)
-    -- function num : 0_1_1 , upvalues : camera, _ENV, self
     ui:Init(camera, BuildEditListType.BT_Default)
     ui:SetDragItem(self.goDragItem, self.poolDragItem, self.dragItem)
-    ui:Flush(((self.list)[index]):GetTemplateID())
+    ui:Flush(self.list[index]:GetTemplateID())
     return ui
-  end
-, nil, nil)
-  ;
-  (self._svHelper):SetCalcScale(false)
-  ;
-  (self._svHelper):SetEndSnappingCallback(nil)
-  ;
-  (self._svHelper):SetItemPassSnapPosCallback(nil)
+  end, nil, nil)
+  self._svHelper:SetCalcScale(false)
+  self._svHelper:SetEndSnappingCallback(nil)
+  self._svHelper:SetItemPassSnapPosCallback(nil)
   self.imgShowHideList = self:GetUIComponent("RectTransform", "imgShowHideList")
   self.listBG = self:GetGameObject("listBG")
   self.goList = self:GetGameObject("goList")
@@ -93,8 +65,7 @@ UIHomelandBuildEdit.OnShow = function(self)
   self.tabs1 = self:GetUIComponent("UISelectObjectPath", "tabs1")
   self.tabs2 = self:GetUIComponent("UISelectObjectPath", "tabs2")
   self.goDragItem = self:GetGameObject("dragItem")
-  ;
-  (self.goDragItem):SetActive(false)
+  self.goDragItem:SetActive(false)
   self.poolDragItem = self:GetUIComponent("UISelectObjectPath", "dragItem")
   self.dragItem = self:GetUIComponent("RectTransform", "dragItem")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
@@ -111,32 +82,21 @@ UIHomelandBuildEdit.OnShow = function(self)
   self:AttachEvent(GameEventType.HomelandRefreshBuildFilterNew, self.OnItemNewClear)
   self:AttachEvent(GameEventType.HomelandBuildChangeSkin, self.OnChangeSkin)
   self:AttachEvent(GameEventType.OnHomeBuildRotateOpen, self.OnOpenRotate)
-  ;
-  (self.txtLivable):SetText(self.liveable)
-  ;
-  (self.moreGo):SetActive(false)
-  ;
-  (self.lessGo):SetActive(false)
-  -- DECOMPILER ERROR at PC221: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.tglGrid).isOn = false
+  self.txtLivable:SetText(self.liveable)
+  self.moreGo:SetActive(false)
+  self.lessGo:SetActive(false)
+  self.tglGrid.isOn = false
   self:HomeBuildOnSelectBuilding()
   self:OnOpenRotate(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCancel)
-  ;
-  (self._svHelper):Dispose()
-  ;
-  ((self.tglGrid).onValueChanged):RemoveListener(self.OnValueChanged)
+function UIHomelandBuildEdit:OnHide()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCancel)
+  self._svHelper:Dispose()
+  self.tglGrid.onValueChanged:RemoveListener(self.OnValueChanged)
   self.tglGrid = nil
-  if self._animPlayer and (self._animPlayer):IsPlaying() then
-    (self._animPlayer):Stop()
+  if self._animPlayer and self._animPlayer:IsPlaying() then
+    self._animPlayer:Stop()
     self._animPlayer = nil
   end
   self:DetachEvent(GameEventType.HomeBuildOnAmbientChanged, self.HomeBuildOnAmbientChanged)
@@ -149,10 +109,7 @@ UIHomelandBuildEdit.OnHide = function(self)
   self:DetachEvent(GameEventType.HomelandBuildChangeSkin, self.OnChangeSkin)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.FlushArrange = function(self)
-  -- function num : 0_3
+function UIHomelandBuildEdit:FlushArrange()
   self:FlushTabNews()
   self:FlushTabs1()
   self:FlushTabs2()
@@ -164,174 +121,135 @@ UIHomelandBuildEdit.FlushArrange = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.OnItemNewClear = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandBuildEdit:OnItemNewClear()
   self:FlushTabNews()
-  local filters = (UIHomelandBuildEdit.GetBuildFilters)()
-  local uis = (self.tabs1):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
+  local filters = UIHomelandBuildEdit.GetBuildFilters()
+  local uis = self.tabs1:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
     local item = filters[i]
     if item then
-      ui:SetNew((self.newFilters)[item.id])
+      ui:SetNew(self.newFilters[item.id])
     end
   end
-  local filter = (UIHomelandBuildEdit.GetBuildFilterById)(self.curFilterId)
-  local uis = (self.tabs2):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
-    local item = (filter.children)[i]
+  local filter = UIHomelandBuildEdit.GetBuildFilterById(self.curFilterId)
+  local uis = self.tabs2:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
+    local item = filter.children[i]
     if item then
-      ui:SetNew((self.newFilters)[item.id])
+      ui:SetNew(self.newFilters[item.id])
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.FlushOperate = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local homeBuilding = (self.homeBuildManager):GetCurrentBuilding()
-  ;
-  (self.txtName):SetText((UIHomelandBuildEdit.GetBuildingName)(homeBuilding:GetBuildId()))
+function UIHomelandBuildEdit:FlushOperate()
+  local homeBuilding = self.homeBuildManager:GetCurrentBuilding()
+  self.txtName:SetText(UIHomelandBuildEdit.GetBuildingName(homeBuilding:GetBuildId()))
   if not homeBuilding:ShowDeleteBtn() then
-    (self.goTakeIn):SetActive(false)
+    self.goTakeIn:SetActive(false)
   else
-    local canDelete, reason, showBtn = (UIHomelandBuildEdit.CanBuildingDelete)(homeBuilding)
-    ;
-    (self.goTakeIn):SetActive(showBtn)
-    if (UIHomelandBuildEdit.CanBuildingMove)(homeBuilding:GetBuildId()) then
-      (self.goRotate):SetActive(true)
-      ;
-      (self.goConfirm):SetActive(true)
+    local canDelete, reason, showBtn = UIHomelandBuildEdit.CanBuildingDelete(homeBuilding)
+    self.goTakeIn:SetActive(showBtn)
+    if UIHomelandBuildEdit.CanBuildingMove(homeBuilding:GetBuildId()) then
+      self.goRotate:SetActive(true)
+      self.goConfirm:SetActive(true)
     else
-      ;
-      (self.goRotate):SetActive(false)
-      ;
-      (self.goConfirm):SetActive(false)
+      self.goRotate:SetActive(false)
+      self.goConfirm:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.FlushLivable = function(self, liveable)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandBuildEdit:FlushLivable(liveable)
   local tls = {}
-  if self.liveableRaw < liveable then
-    (self.moreGo):SetActive(true)
-    ;
-    (self.lessGo):SetActive(false)
+  if liveable > self.liveableRaw then
+    self.moreGo:SetActive(true)
+    self.lessGo:SetActive(false)
     local delta = liveable - self.liveableRaw
     if not self._moreValue then
       self._moreValue = 0
     end
-    do
-      do
-        if delta - self._moreValue ~= 0 then
-          local tl = EZTL_TextUpAnim:New(self.moreValue, self._moreValue, delta, 800)
-          tls[#tls + 1] = tl
-        end
-        self._lessValue = 0
-        self._moreValue = delta
-        if liveable < self.liveableRaw then
-          (self.moreGo):SetActive(false)
-          ;
-          (self.lessGo):SetActive(true)
-          local delta = self.liveableRaw - liveable
-          if not self._lessValue then
-            self._lessValue = 0
-          end
-          do
-            do
-              if delta - self._lessValue ~= 0 then
-                local tl = EZTL_TextUpAnim:New(self.lessValue, self._lessValue, delta, 800)
-                tls[#tls + 1] = tl
-              end
-              self._moreValue = 0
-              self._lessValue = delta
-              ;
-              (self.moreGo):SetActive(false)
-              ;
-              (self.lessGo):SetActive(false)
-              self._moreValue = 0
-              self._lessValue = 0
-              do
-                if self.liveable ~= liveable then
-                  local tl = EZTL_TextUpAnim:New(self.txtLivable, self.liveable, liveable, 800)
-                  tls[#tls + 1] = tl
-                end
-                self.liveable = liveable
-                if #tls > 0 then
-                  if (self._animPlayer):IsPlaying() then
-                    (self._animPlayer):Stop()
-                  end
-                  if #tls == 1 then
-                    (self._animPlayer):Play(tls[1])
-                  else
-                    ;
-                    (self._animPlayer):Play(EZTL_Parallel:New(tls, EZTL_EndTag.All, nil, ""))
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+    if delta - self._moreValue ~= 0 then
+      local tl = EZTL_TextUpAnim:New(self.moreValue, self._moreValue, delta, 800)
+      tls[#tls + 1] = tl
+    end
+    self._lessValue = 0
+    self._moreValue = delta
+  elseif liveable < self.liveableRaw then
+    self.moreGo:SetActive(false)
+    self.lessGo:SetActive(true)
+    local delta = self.liveableRaw - liveable
+    if not self._lessValue then
+      self._lessValue = 0
+    end
+    if delta - self._lessValue ~= 0 then
+      local tl = EZTL_TextUpAnim:New(self.lessValue, self._lessValue, delta, 800)
+      tls[#tls + 1] = tl
+    end
+    self._moreValue = 0
+    self._lessValue = delta
+  else
+    self.moreGo:SetActive(false)
+    self.lessGo:SetActive(false)
+    self._moreValue = 0
+    self._lessValue = 0
+  end
+  if self.liveable ~= liveable then
+    local tl = EZTL_TextUpAnim:New(self.txtLivable, self.liveable, liveable, 800)
+    tls[#tls + 1] = tl
+  end
+  self.liveable = liveable
+  if 0 < #tls then
+    if self._animPlayer:IsPlaying() then
+      self._animPlayer:Stop()
+    end
+    if #tls == 1 then
+      self._animPlayer:Play(tls[1])
+    else
+      self._animPlayer:Play(EZTL_Parallel:New(tls, EZTL_EndTag.All, nil, ""))
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.FlushTabNews = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHomelandBuildEdit:FlushTabNews()
   self.newFilters = {}
-  local listAll = (self.mItem):GetItemListBySubType(ItemSubType.ItemSubType_Architecture)
-  for _,item in ipairs(listAll) do
+  local listAll = self.mItem:GetItemListBySubType(ItemSubType.ItemSubType_Architecture)
+  for _, item in ipairs(listAll) do
     local tplId = item:GetTemplateID()
-    if (UIHomelandBuildEdit.CanBuildingMove)(tplId) and (self.homeBuildManager):GetBuildCount(tplId) > 0 and item:IsNewOverlay() then
-      local filter = (UIHomelandBuildEdit.GetBuildingFilter)(tplId)
+    if UIHomelandBuildEdit.CanBuildingMove(tplId) and self.homeBuildManager:GetBuildCount(tplId) > 0 and item:IsNewOverlay() then
+      local filter = UIHomelandBuildEdit.GetBuildingFilter(tplId)
       if not filter then
-        (Log.exception)("建筑" .. tplId .. "缺少Filter配置")
+        Log.exception("建筑" .. tplId .. "缺少Filter配置")
       end
-      for _,filterID in ipairs(filter) do
-        -- DECOMPILER ERROR at PC47: Confused about usage of register: R14 in 'UnsetPending'
-
-        (self.newFilters)[filterID] = true
+      for _, filterID in ipairs(filter) do
+        self.newFilters[filterID] = true
       end
     end
   end
   local parentFilters = {}
-  for filter,_ in pairs(self.newFilters) do
-    local cfgFilter = (Cfg.cfg_homeland_filter)({Filter = filter})
-    if cfgFilter and #cfgFilter > 0 and (cfgFilter[1]).Parent then
-      parentFilters[(cfgFilter[1]).Parent] = true
+  for filter, _ in pairs(self.newFilters) do
+    local cfgFilter = Cfg.cfg_homeland_filter({Filter = filter})
+    if cfgFilter and 0 < #cfgFilter and cfgFilter[1].Parent then
+      parentFilters[cfgFilter[1].Parent] = true
     else
-      local parentBuildingCfg = (Cfg.cfg_item_father_architecture)[filter]
+      local parentBuildingCfg = Cfg.cfg_item_father_architecture[filter]
       if parentBuildingCfg then
         parentFilters[UIHomelandBuildEdit.CompositeBuildingID] = true
       end
     end
   end
-  ;
-  (table.append)(self.newFilters, parentFilters)
+  table.append(self.newFilters, parentFilters)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.FlushTabs1 = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local filters = (UIHomelandBuildEdit.GetBuildFilters)()
-  local len = (table.count)(filters)
-  ;
-  (self.tabs1):SpawnObjects("UIHomelandBuildEditTab1", len)
-  local uis = (self.tabs1):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
+function UIHomelandBuildEdit:FlushTabs1()
+  local filters = UIHomelandBuildEdit.GetBuildFilters()
+  local len = table.count(filters)
+  self.tabs1:SpawnObjects("UIHomelandBuildEditTab1", len)
+  local uis = self.tabs1:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
     local item = filters[i]
     if item then
       ui:Flush(item.id)
-      ui:SetNew((self.newFilters)[item.id])
+      ui:SetNew(self.newFilters[item.id])
       ui:ShowHideFilter(self.curFilterId)
       if item.id == 4 then
         self._specialTag = ui
@@ -340,20 +258,16 @@ UIHomelandBuildEdit.FlushTabs1 = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.FlushTabs2 = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local filter = (UIHomelandBuildEdit.GetBuildFilterById)(self.curFilterId)
-  local len = (table.count)(filter.children)
-  ;
-  (self.tabs2):SpawnObjects("UIHomelandBuildEditTab2", len)
-  local uis = (self.tabs2):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
-    local item = (filter.children)[i]
+function UIHomelandBuildEdit:FlushTabs2()
+  local filter = UIHomelandBuildEdit.GetBuildFilterById(self.curFilterId)
+  local len = table.count(filter.children)
+  self.tabs2:SpawnObjects("UIHomelandBuildEditTab2", len)
+  local uis = self.tabs2:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
+    local item = filter.children[i]
     if item then
       ui:Flush(filter.id, item.id, self.filterID2SubType)
-      ui:SetNew((self.newFilters)[item.id])
+      ui:SetNew(self.newFilters[item.id])
       ui:HomelandBuildFilterTab2(self.curFilterId, self.curFilterChildId)
       if item.id == 403 then
         self._specialLand = ui
@@ -362,766 +276,535 @@ UIHomelandBuildEdit.FlushTabs2 = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.FlushList = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIHomelandBuildEdit:FlushList()
   if self.curFilterId == self.ChangeSkinFilterID then
-    (self.noItem):SetActive(false)
+    self.noItem:SetActive(false)
     self:FlushSkins()
-    return 
+    return
   end
-  local listAll = (self.mItem):GetItemListBySubType(ItemSubType.ItemSubType_Architecture)
+  local listAll = self.mItem:GetItemListBySubType(ItemSubType.ItemSubType_Architecture)
   self.list = {}
   local parentList = {}
-  for _,item in ipairs(listAll) do
+  for _, item in ipairs(listAll) do
     local tplId = item:GetTemplateID()
     local isParent = self:GetSubType(tplId) == ArchitectureSubType.Father_Architecture
-    if (isParent or (self.homeBuildManager):GetBuildCount(tplId) > 0) and (UIHomelandBuildEdit.CanBuildingMove)(tplId) then
-      local filter = (UIHomelandBuildEdit.GetBuildingFilter)(tplId)
-      for _,filterID in ipairs(filter) do
+    if (isParent or self.homeBuildManager:GetBuildCount(tplId) > 0) and UIHomelandBuildEdit.CanBuildingMove(tplId) then
+      local filter = UIHomelandBuildEdit.GetBuildingFilter(tplId)
+      for _, filterID in ipairs(filter) do
         if filterID == self.curFilterChildId or self.curFilterChildId == self.allFilterID then
           if isParent and self.curFilterChildId ~= self.allFilterID then
-            (table.insert)(parentList, item)
+            table.insert(parentList, item)
             break
           end
-          ;
-          (table.insert)(self.list, item)
+          table.insert(self.list, item)
           break
         end
       end
     end
   end
-  ;
-  (table.sort)(self.list, function(a, b)
-    -- function num : 0_10_0
+  table.sort(self.list, function(a, b)
     local aNew = a:IsNewOverlay()
     local bNew = b:IsNewOverlay()
     if aNew and not bNew then
       return true
-    else
-      if not aNew and bNew then
-        return false
-      end
+    elseif not aNew and bNew then
+      return false
     end
     local ta = a:GetTemplate()
     local tb = b:GetTemplate()
-    if ta.ID >= tb.ID then
-      do return ta.BagSortIndex ~= tb.BagSortIndex end
-      do return tb.BagSortIndex < ta.BagSortIndex end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    if ta.BagSortIndex == tb.BagSortIndex then
+      return ta.ID < tb.ID
     end
+    return ta.BagSortIndex > tb.BagSortIndex
+  end)
+  for _, item in ipairs(parentList) do
+    table.insert(self.list, 1, item)
   end
-)
-  for _,item in ipairs(parentList) do
-    (table.insert)(self.list, 1, item)
-  end
-  local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIHomelandBuild")
+  local camera = GameGlobal.UIStateManager():GetControllerCamera("UIHomelandBuild")
   self._firstItem = nil
-  ;
-  (self._svHelper):Dispose()
-  ;
-  (self._svHelper):SetItemName("UIHomelandBuildEditItem")
-  ;
-  (self._svHelper):SetShowFunction(function(index, ui)
-    -- function num : 0_10_1 , upvalues : camera, _ENV, self
+  self._svHelper:Dispose()
+  self._svHelper:SetItemName("UIHomelandBuildEditItem")
+  self._svHelper:SetShowFunction(function(index, ui)
     ui:Init(camera, BuildEditListType.BT_Default)
     ui:SetDragItem(self.goDragItem, self.poolDragItem, self.dragItem)
-    ui:Flush(((self.list)[index]):GetTemplateID())
+    ui:Flush(self.list[index]:GetTemplateID())
     if not self._firstItem then
       self._firstItem = ui
     end
     return ui
-  end
-)
-  local len = (table.count)(self.list)
-  ;
-  (self._svHelper):Init(len, 0, Vector2(0, 0))
-  -- DECOMPILER ERROR at PC134: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._sr).horizontalNormalizedPosition = 0
-  ;
-  (self.noItem):SetActive(len == 0)
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
+  end)
+  local len = table.count(self.list)
+  self._svHelper:Init(len, 0, Vector2(0, 0))
+  self._sr.horizontalNormalizedPosition = 0
+  self.noItem:SetActive(len == 0)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.FlushListNoMove = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHomelandBuildEdit:FlushListNoMove()
   if self.curFilterId == self.ChangeSkinFilterID then
-    (self.noItem):SetActive(false)
+    self.noItem:SetActive(false)
     self:FlushSkins()
-    return 
+    return
   end
-  local listAll = (self.mItem):GetItemListBySubType(ItemSubType.ItemSubType_Architecture)
+  local listAll = self.mItem:GetItemListBySubType(ItemSubType.ItemSubType_Architecture)
   self.list = {}
   local parentList = {}
-  for _,item in ipairs(listAll) do
+  for _, item in ipairs(listAll) do
     local tplId = item:GetTemplateID()
     local isParent = self:GetSubType(tplId) == ArchitectureSubType.Father_Architecture
-    if (isParent or (self.homeBuildManager):GetBuildCount(tplId) > 0) and (UIHomelandBuildEdit.CanBuildingMove)(tplId) then
-      local filter = (UIHomelandBuildEdit.GetBuildingFilter)(tplId)
-      for _,filterID in ipairs(filter) do
+    if (isParent or self.homeBuildManager:GetBuildCount(tplId) > 0) and UIHomelandBuildEdit.CanBuildingMove(tplId) then
+      local filter = UIHomelandBuildEdit.GetBuildingFilter(tplId)
+      for _, filterID in ipairs(filter) do
         if filterID == self.curFilterChildId or self.curFilterChildId == self.allFilterID then
           if isParent and self.curFilterChildId ~= self.allFilterID then
-            (table.insert)(parentList, item)
+            table.insert(parentList, item)
             break
           end
-          ;
-          (table.insert)(self.list, item)
+          table.insert(self.list, item)
           break
         end
       end
     end
   end
-  ;
-  (table.sort)(self.list, function(a, b)
-    -- function num : 0_11_0
+  table.sort(self.list, function(a, b)
     local aNew = a:IsNewOverlay()
     local bNew = b:IsNewOverlay()
     if aNew and not bNew then
       return true
-    else
-      if not aNew and bNew then
-        return false
-      end
+    elseif not aNew and bNew then
+      return false
     end
     local ta = a:GetTemplate()
     local tb = b:GetTemplate()
-    if ta.ID >= tb.ID then
-      do return ta.BagSortIndex ~= tb.BagSortIndex end
-      do return tb.BagSortIndex < ta.BagSortIndex end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    if ta.BagSortIndex == tb.BagSortIndex then
+      return ta.ID < tb.ID
     end
+    return ta.BagSortIndex > tb.BagSortIndex
+  end)
+  for _, item in ipairs(parentList) do
+    table.insert(self.list, 1, item)
   end
-)
-  for _,item in ipairs(parentList) do
-    (table.insert)(self.list, 1, item)
-  end
-  local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIHomelandBuild")
+  local camera = GameGlobal.UIStateManager():GetControllerCamera("UIHomelandBuild")
   self._firstItem = nil
-  ;
-  (self._svHelper):Dispose()
-  ;
-  (self._svHelper):SetItemName("UIHomelandBuildEditItem")
-  ;
-  (self._svHelper):SetShowFunction(function(index, ui)
-    -- function num : 0_11_1 , upvalues : camera, _ENV, self
+  self._svHelper:Dispose()
+  self._svHelper:SetItemName("UIHomelandBuildEditItem")
+  self._svHelper:SetShowFunction(function(index, ui)
     ui:Init(camera, BuildEditListType.BT_Default)
     ui:SetDragItem(self.goDragItem, self.poolDragItem, self.dragItem)
-    ui:Flush(((self.list)[index]):GetTemplateID())
+    ui:Flush(self.list[index]:GetTemplateID())
     if not self._firstItem then
       self._firstItem = ui
     end
     return ui
-  end
-)
-  local len = (table.count)(self.list)
-  local first = (self._svHelper):GetFirstItem()
-  ;
-  (self._svHelper):Init(len, first, Vector2(0, 0))
-  -- DECOMPILER ERROR at PC139: Confused about usage of register: R6 in 'UnsetPending'
-
+  end)
+  local len = table.count(self.list)
+  local first = self._svHelper:GetFirstItem()
+  self._svHelper:Init(len, first, Vector2(0, 0))
   if first == 1 then
-    (self._sr).horizontalNormalizedPosition = 0
+    self._sr.horizontalNormalizedPosition = 0
   end
-  ;
-  (self.noItem):SetActive(len == 0)
-  -- DECOMPILER ERROR: 9 unprocessed JMP targets
+  self.noItem:SetActive(len == 0)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.GetSubType = function(self, tplID)
-  -- function num : 0_12 , upvalues : _ENV
-  if (self._tplIDSubTypeCache)[tplID] then
-    return (self._tplIDSubTypeCache)[tplID]
+function UIHomelandBuildEdit:GetSubType(tplID)
+  if self._tplIDSubTypeCache[tplID] then
+    return self._tplIDSubTypeCache[tplID]
   end
-  local cfg = (Cfg.cfg_item_architecture)[tplID]
+  local cfg = Cfg.cfg_item_architecture[tplID]
   if not cfg then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._tplIDSubTypeCache)[tplID] = cfg.SubType
+  self._tplIDSubTypeCache[tplID] = cfg.SubType
   return cfg.SubType
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.HomeBuildOnAmbientChanged = function(self, liveable)
-  -- function num : 0_13
+function UIHomelandBuildEdit:HomeBuildOnAmbientChanged(liveable)
   self:FlushLivable(liveable)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.HomeBuildOnSelectBuilding = function(self)
-  -- function num : 0_14
-  local homeBuilding = (self.homeBuildManager):GetCurrentBuilding()
+function UIHomelandBuildEdit:HomeBuildOnSelectBuilding()
+  local homeBuilding = self.homeBuildManager:GetCurrentBuilding()
   if homeBuilding then
-    (self.arrange):SetActive(false)
-    ;
-    (self.operate):SetActive(true)
+    self.arrange:SetActive(false)
+    self.operate:SetActive(true)
     self:FlushOperate()
   else
-    ;
-    (self.arrange):SetActive(true)
-    ;
-    (self.operate):SetActive(false)
+    self.arrange:SetActive(true)
+    self.operate:SetActive(false)
     self:FlushArrange()
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.btnBackOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : _ENV
-  local Exit = function()
-    -- function num : 0_15_0 , upvalues : self
+function UIHomelandBuildEdit:btnBackOnClick(go)
+  local function Exit()
     self:StartTask(self._Exit, self)
   end
-
-  local btn1Data = {(StringTable.Get)("str_homeland_build_exit_directly"), function(param)
-    -- function num : 0_15_1 , upvalues : self, Exit
-    (self.homeBuildManager):RevertAll()
-    Exit()
-  end
-}
-  local btn2Data = {(StringTable.Get)("str_homeland_build_save_and_exit"), function(param)
-    -- function num : 0_15_2 , upvalues : self, Exit
-    self:StartTask(function(TT)
-      -- function num : 0_15_2_0 , upvalues : self, Exit
-      local key = "UIHomelandBuild_back"
-      self:Lock(key)
-      ;
-      (self.homeBuildManager):Save(TT)
-      self:UnLock(key)
+  
+  local btn1Data = {
+    StringTable.Get("str_homeland_build_exit_directly"),
+    function(param)
+      self.homeBuildManager:RevertAll()
       Exit()
     end
-, self)
-  end
-}
-  if (self.homeBuildManager):HaveUnsavedModify() then
-    self:ShowDialog("UIHomelandMessageBox", (StringTable.Get)("str_homeland_build_layout_mode"), (StringTable.Get)("str_homeland_build_save_or_not"), btn1Data, btn2Data)
+  }
+  local btn2Data = {
+    StringTable.Get("str_homeland_build_save_and_exit"),
+    function(param)
+      self:StartTask(function(TT)
+        local key = "UIHomelandBuild_back"
+        self:Lock(key)
+        self.homeBuildManager:Save(TT)
+        self:UnLock(key)
+        Exit()
+      end, self)
+    end
+  }
+  if self.homeBuildManager:HaveUnsavedModify() then
+    self:ShowDialog("UIHomelandMessageBox", StringTable.Get("str_homeland_build_layout_mode"), StringTable.Get("str_homeland_build_save_or_not"), btn1Data, btn2Data)
   else
     Exit()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit._Exit = function(self, TT)
-  -- function num : 0_16 , upvalues : _ENV
+function UIHomelandBuildEdit:_Exit(TT)
   self:Lock("HomeExitBuildMode")
   self:SwitchState(UIStateType.UIHomeland)
-  while ((GameGlobal.UIStateManager)()):CurUIStateType() ~= UIStateType.UIHomeland do
+  while GameGlobal.UIStateManager():CurUIStateType() ~= UIStateType.UIHomeland do
     YIELD(TT)
   end
-  ;
-  (self.homelandClient):FinishBuild(TT)
+  self.homelandClient:FinishBuild(TT)
   self:UnLock("HomeExitBuildMode")
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.btnShowHideOnClick = function(self, go)
-  -- function num : 0_17 , upvalues : _ENV
-  (Log.fatal)("###")
+function UIHomelandBuildEdit:btnShowHideOnClick(go)
+  Log.fatal("###")
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.imgLivableOnClick = function(self, go)
-  -- function num : 0_18 , upvalues : _ENV
-  (Log.fatal)("###")
+function UIHomelandBuildEdit:imgLivableOnClick(go)
+  Log.fatal("###")
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.imgSaveOnClick = function(self, go)
-  -- function num : 0_19
+function UIHomelandBuildEdit:imgSaveOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_19_0 , upvalues : self
     local key = "UIHomelandBuildEdit_imgSaveOnClick"
     self:Lock(key)
-    ;
-    (self.homeBuildManager):Save(TT)
-    self.liveableRaw = (self.mHomeland):GetAmbientValue()
+    self.homeBuildManager:Save(TT)
+    self.liveableRaw = self.mHomeland:GetAmbientValue()
     self.liveable = self.liveableRaw
     self:FlushLivable(self.liveable)
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.ExitChangeSkin = function(self)
-  -- function num : 0_20
-  ((self.changeSkin):GetGameObject()):SetActive(false)
-  ;
-  (self.operate):SetActive(true)
+function UIHomelandBuildEdit:ExitChangeSkin()
+  self.changeSkin:GetGameObject():SetActive(false)
+  self.operate:SetActive(true)
   self:FlushOperate()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.imgShowHideListOnClick = function(self, go)
-  -- function num : 0_21 , upvalues : _ENV
-  if (self.goList).activeInHierarchy then
-    (self.goList):SetActive(false)
-    ;
-    (self.listBG):SetActive(false)
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.imgShowHideList).anchoredPosition = Vector2(-57, 83)
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.imgShowHideList).localScale = Vector3(1, -1, 1)
+function UIHomelandBuildEdit:imgShowHideListOnClick(go)
+  if self.goList.activeInHierarchy then
+    self.goList:SetActive(false)
+    self.listBG:SetActive(false)
+    self.imgShowHideList.anchoredPosition = Vector2(-57, 83)
+    self.imgShowHideList.localScale = Vector3(1, -1, 1)
   else
-    ;
-    (self.goList):SetActive(true)
-    ;
-    (self.listBG):SetActive(true)
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.imgShowHideList).anchoredPosition = Vector2(-57, 423)
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.imgShowHideList).localScale = Vector3.one
+    self.goList:SetActive(true)
+    self.listBG:SetActive(true)
+    self.imgShowHideList.anchoredPosition = Vector2(-57, 423)
+    self.imgShowHideList.localScale = Vector3.one
   end
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.imgShowHideList).localRotation = self.quaternionShowHide
+  self.imgShowHideList.localRotation = self.quaternionShowHide
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.imgCancelOnClick = function(self, go)
-  -- function num : 0_22
-  (self.homeBuildManager):RevertCurrent()
+function UIHomelandBuildEdit:imgCancelOnClick(go)
+  self.homeBuildManager:RevertCurrent()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.imgTakeInOnClick = function(self, go)
-  -- function num : 0_23 , upvalues : _ENV
-  local homeBuilding = (self.homeBuildManager):GetCurrentBuilding()
-  local canDelete, reason = (UIHomelandBuildEdit.CanBuildingDelete)(homeBuilding)
+function UIHomelandBuildEdit:imgTakeInOnClick(go)
+  local homeBuilding = self.homeBuildManager:GetCurrentBuilding()
+  local canDelete, reason = UIHomelandBuildEdit.CanBuildingDelete(homeBuilding)
   if not self:CheckCanRemove(homeBuilding) then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_build_cant_delete_task"))
-    return 
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_build_cant_delete_task"))
+    return
   end
   if canDelete then
-    (self.homeBuildManager):Delete()
+    self.homeBuildManager:Delete()
     self:HomeBuildOnSelectBuilding()
+  elseif not string.isnullorempty(reason) then
+    ToastManager.ShowHomeToast(reason)
   else
-    if not (string.isnullorempty)(reason) then
-      (ToastManager.ShowHomeToast)(reason)
-    else
-      ;
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_build_cant_delete"))
-    end
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_build_cant_delete"))
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.imgRotateOnClick = function(self, go)
-  -- function num : 0_24 , upvalues : _ENV
-  local homeBuilding = (self.homeBuildManager):GetCurrentBuilding()
+function UIHomelandBuildEdit:imgRotateOnClick(go)
+  local homeBuilding = self.homeBuildManager:GetCurrentBuilding()
   if not homeBuilding:CanRotate() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_homeland_build_fixed_rotation"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_homeland_build_fixed_rotation"))
+    return
   end
   self:ShowDialog("UIHomelandBuildEditRotate")
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.imgConfirmOnClick = function(self, go)
-  -- function num : 0_25
-  (self.homeBuildManager):DropDown()
+function UIHomelandBuildEdit:imgConfirmOnClick(go)
+  self.homeBuildManager:DropDown()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.HomelandBuildFilterTab1 = function(self, id)
-  -- function num : 0_26 , upvalues : _ENV
+function UIHomelandBuildEdit:HomelandBuildFilterTab1(id)
   if self.curFilterId == id then
-    return 
+    return
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
   if self._needSave then
     self:ConfirmExitChangeSkinMode(function()
-    -- function num : 0_26_0 , upvalues : self, id, _ENV
-    self.curFilterId = id
-    local filter = (UIHomelandBuildEdit.GetBuildFilterById)(self.curFilterId)
-    self.curFilterChildId = ((filter.children)[1]).id
-    self:FlushTabs2()
-    self:FlushList()
-  end
-)
-    return 
+      self.curFilterId = id
+      local filter = UIHomelandBuildEdit.GetBuildFilterById(self.curFilterId)
+      self.curFilterChildId = filter.children[1].id
+      self:FlushTabs2()
+      self:FlushList()
+    end)
+    return
   end
   self.curFilterId = id
-  local filter = (UIHomelandBuildEdit.GetBuildFilterById)(self.curFilterId)
-  self.curFilterChildId = ((filter.children)[1]).id
+  local filter = UIHomelandBuildEdit.GetBuildFilterById(self.curFilterId)
+  self.curFilterChildId = filter.children[1].id
   self:FlushTabs2()
   self:FlushList()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.HomelandBuildFilterTab2 = function(self, id, childId)
-  -- function num : 0_27 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+function UIHomelandBuildEdit:HomelandBuildFilterTab2(id, childId)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
   if self._needSave then
     self:ConfirmExitChangeSkinMode(function()
-    -- function num : 0_27_0 , upvalues : self, id, childId
-    self.curFilterId = id
-    self.curFilterChildId = childId
-    self:FlushList()
-  end
-)
-    return 
+      self.curFilterId = id
+      self.curFilterChildId = childId
+      self:FlushList()
+    end)
+    return
   end
   self.curFilterId = id
   self.curFilterChildId = childId
   self:FlushList()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.HomelandShowHideDragItem = function(self, isShow)
-  -- function num : 0_28
+function UIHomelandBuildEdit:HomelandShowHideDragItem(isShow)
   self.doDragBuildingIntoScene = false
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.DragBuildingIntoScene = function(self, buildingId, pointerId, pos)
-  -- function num : 0_29 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item_architecture)[buildingId]
-  if cfg.SubType == ArchitectureSubType.Father_Architecture and (self.homeBuildManager):GetBuildCount(buildingId) <= 0 then
-    return 
+function UIHomelandBuildEdit:DragBuildingIntoScene(buildingId, pointerId, pos)
+  local cfg = Cfg.cfg_item_architecture[buildingId]
+  if cfg.SubType == ArchitectureSubType.Father_Architecture and self.homeBuildManager:GetBuildCount(buildingId) <= 0 then
+    return
   end
-  if not self.doDragBuildingIntoScene and ((self.rectList).rect).height < pos.y then
+  if not self.doDragBuildingIntoScene and pos.y > self.rectList.rect.height then
     self.doDragBuildingIntoScene = true
-    ;
-    (self.goDragItem):SetActive(false)
+    self.goDragItem:SetActive(false)
     if self._uiWidgetBuildCtrl then
-      (self._uiWidgetBuildCtrl):DragBuildingIntoScene(buildingId, pointerId)
+      self._uiWidgetBuildCtrl:DragBuildingIntoScene(buildingId, pointerId)
     end
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.SetUIWidgetHomelandBuildController = function(self, uiWidgetBuildCtrl)
-  -- function num : 0_30
+function UIHomelandBuildEdit:SetUIWidgetHomelandBuildController(uiWidgetBuildCtrl)
   self._uiWidgetBuildCtrl = uiWidgetBuildCtrl
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.FlushSkins = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  local buildCfg = (Cfg.cfg_item_architecture)({SubType = (self.filterID2SubType)[self.curFilterChildId]})
+function UIHomelandBuildEdit:FlushSkins()
+  local buildCfg = Cfg.cfg_item_architecture({
+    SubType = self.filterID2SubType[self.curFilterChildId]
+  })
   if not buildCfg or #buildCfg == 0 then
-    return 
+    return
   end
-  local buildingID = (buildCfg[1]).ID
-  local buildings = ((self.homeBuildManager):GetBuildings())
-  local curBuilding = nil
+  local buildingID = buildCfg[1].ID
+  local buildings = self.homeBuildManager:GetBuildings()
+  local curBuilding
   for i = 1, #buildings do
-    if (buildings[i]):GetBuildId() == buildingID then
+    if buildings[i]:GetBuildId() == buildingID then
       curBuilding = buildings[i]
       break
     end
   end
-  do
-    if not curBuilding then
-      return 
+  if not curBuilding then
+    return
+  end
+  self.curBuildingSkinID = curBuilding:SkinID()
+  local cfgs = Cfg.cfg_item_architecture_skin({
+    architecture_id = curBuilding:GetBuildId()
+  })
+  self.skins = {}
+  for _, cfg in ipairs(cfgs) do
+    if self.mHomeland:HasBuildSkin(cfg.ID) then
+      self.skins[#self.skins + 1] = cfg
     end
-    self.curBuildingSkinID = curBuilding:SkinID()
-    local cfgs = (Cfg.cfg_item_architecture_skin)({architecture_id = curBuilding:GetBuildId()})
-    self.skins = {}
-    for _,cfg in ipairs(cfgs) do
-      -- DECOMPILER ERROR at PC61: Confused about usage of register: R11 in 'UnsetPending'
+  end
+  table.sort(self.skins, function(a, b)
+    return a.ID < b.ID
+  end)
+  self._svHelper:Dispose()
+  self._svHelper:SetItemName("UIHomelandBuildEditItemSkin")
+  self._svHelper:SetShowFunction(function(index, ui)
+    ui:Flush(self.skins[index], self.curBuildingSkinID)
+    return ui
+  end)
+  self._svHelper:Init(#self.skins, 0, Vector2(0, 0))
+end
 
-      if (self.mHomeland):HasBuildSkin(cfg.ID) then
-        (self.skins)[#self.skins + 1] = cfg
+function UIHomelandBuildEdit:ChangeSkinCancelOnClick(go)
+  self:ConfirmExitChangeSkinMode(function()
+    self:FlushSkins()
+  end)
+end
+
+function UIHomelandBuildEdit:ConfirmExitChangeSkinMode(callback)
+  local btn1Data = {
+    StringTable.Get("str_homeland_build_change_skin_mode_exit_directly"),
+    function()
+      self:RevertSkin()
+      self:LeaveChangeSkinMode()
+      if callback then
+        callback()
       end
     end
-    ;
-    (table.sort)(self.skins, function(a, b)
-    -- function num : 0_31_0
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-    ;
-    (self._svHelper):Dispose()
-    ;
-    (self._svHelper):SetItemName("UIHomelandBuildEditItemSkin")
-    ;
-    (self._svHelper):SetShowFunction(function(index, ui)
-    -- function num : 0_31_1 , upvalues : self
-    ui:Flush((self.skins)[index], self.curBuildingSkinID)
-    return ui
-  end
-)
-    ;
-    (self._svHelper):Init(#self.skins, 0, Vector2(0, 0))
-  end
-end
-
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.ChangeSkinCancelOnClick = function(self, go)
-  -- function num : 0_32
-  self:ConfirmExitChangeSkinMode(function()
-    -- function num : 0_32_0 , upvalues : self
-    self:FlushSkins()
-  end
-)
-end
-
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.ConfirmExitChangeSkinMode = function(self, callback)
-  -- function num : 0_33 , upvalues : _ENV
-  local btn1Data = {(StringTable.Get)("str_homeland_build_change_skin_mode_exit_directly"), function()
-    -- function num : 0_33_0 , upvalues : self, callback
-    self:RevertSkin()
-    self:LeaveChangeSkinMode()
-    if callback then
-      callback()
+  }
+  local btn2Data = {
+    StringTable.Get("str_homeland_build_change_skin_mode_exit_after_save"),
+    function()
+      self:LeaveChangeSkinMode()
+      if callback then
+        callback()
+      end
     end
-  end
-}
-  local btn2Data = {(StringTable.Get)("str_homeland_build_change_skin_mode_exit_after_save"), function()
-    -- function num : 0_33_1 , upvalues : self, callback
-    self:LeaveChangeSkinMode()
-    if callback then
-      callback()
-    end
-  end
-}
-  self:ShowDialog("UIHomelandMessageBox", nil, (StringTable.Get)("str_homeland_build_change_skin_mode_exit"), btn1Data, btn2Data, true)
+  }
+  self:ShowDialog("UIHomelandMessageBox", nil, StringTable.Get("str_homeland_build_change_skin_mode_exit"), btn1Data, btn2Data, true)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.RevertSkin = function(self)
-  -- function num : 0_34
-  (self.homeBuildManager):RevertCurrentSkin()
+function UIHomelandBuildEdit:RevertSkin()
+  self.homeBuildManager:RevertCurrentSkin()
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.ChangeSkinConfirmOnClick = function(self, go)
-  -- function num : 0_35
+function UIHomelandBuildEdit:ChangeSkinConfirmOnClick(go)
   self:LeaveChangeSkinMode()
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.OnChangeSkin = function(self, skinID)
-  -- function num : 0_36
-  local curBuilding = (self.homeBuildManager):FindBuildingBySubType((self.filterID2SubType)[self.curFilterChildId])
+function UIHomelandBuildEdit:OnChangeSkin(skinID)
+  local curBuilding = self.homeBuildManager:FindBuildingBySubType(self.filterID2SubType[self.curFilterChildId])
   if not self._needSave then
     self:EnterChangeSkinMode()
-    ;
-    (self.homeBuildManager):SelectChangeSkinBuilding(curBuilding)
+    self.homeBuildManager:SelectChangeSkinBuilding(curBuilding)
   end
-  ;
-  (self.homeBuildManager):ChangeSkin(skinID)
+  self.homeBuildManager:ChangeSkin(skinID)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.EnterChangeSkinMode = function(self)
-  -- function num : 0_37
+function UIHomelandBuildEdit:EnterChangeSkinMode()
   self._needSave = true
-  ;
-  (self.homeBuildManager):StartChangeSkin()
-  ;
-  (self.changeSkin):SetActive(true)
-  ;
-  ((self.tglGrid).gameObject):SetActive(false)
-  ;
-  (self.arrangeTitle):SetActive(false)
-  ;
-  (self.saveBtn):SetActive(false)
+  self.homeBuildManager:StartChangeSkin()
+  self.changeSkin:SetActive(true)
+  self.tglGrid.gameObject:SetActive(false)
+  self.arrangeTitle:SetActive(false)
+  self.saveBtn:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.LeaveChangeSkinMode = function(self)
-  -- function num : 0_38
+function UIHomelandBuildEdit:LeaveChangeSkinMode()
   self._needSave = false
-  ;
-  (self.homeBuildManager):FinishChangeSkin()
-  ;
-  (self.changeSkin):SetActive(false)
-  ;
-  ((self.tglGrid).gameObject):SetActive(true)
-  ;
-  (self.arrangeTitle):SetActive(true)
-  ;
-  (self.saveBtn):SetActive(true)
+  self.homeBuildManager:FinishChangeSkin()
+  self.changeSkin:SetActive(false)
+  self.tglGrid.gameObject:SetActive(true)
+  self.arrangeTitle:SetActive(true)
+  self.saveBtn:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.FlushCompositeBuilding = function(self)
-  -- function num : 0_39 , upvalues : _ENV
-  local parentBuildingCfg = (Cfg.cfg_item_father_architecture)({})
-  for _,cfg in pairs(parentBuildingCfg) do
+function UIHomelandBuildEdit:FlushCompositeBuilding()
+  local parentBuildingCfg = Cfg.cfg_item_father_architecture({})
+  for _, cfg in pairs(parentBuildingCfg) do
   end
-  local buildingID = (buildCfg[1]).ID
-  local buildings = ((self.homeBuildManager):GetBuildings())
-  local curBuilding = nil
+  local buildingID = buildCfg[1].ID
+  local buildings = self.homeBuildManager:GetBuildings()
+  local curBuilding
   for i = 1, #buildings do
-    if (buildings[i]):GetBuildId() == buildingID then
+    if buildings[i]:GetBuildId() == buildingID then
       curBuilding = buildings[i]
       break
     end
   end
-  do
-    if not curBuilding then
-      return 
-    end
-    self.curBuildingSkinID = curBuilding:SkinID()
-    local cfgs = (Cfg.cfg_item_architecture_skin)({architecture_id = curBuilding:GetBuildId()})
-    self.skins = {}
-    for _,cfg in ipairs(cfgs) do
-      -- DECOMPILER ERROR at PC58: Confused about usage of register: R11 in 'UnsetPending'
-
-      if (self.mHomeland):HasBuildSkin(cfg.ID) then
-        (self.skins)[#self.skins + 1] = cfg
-      end
-    end
-    ;
-    (table.sort)(self.skins, function(a, b)
-    -- function num : 0_39_0
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  if not curBuilding then
+    return
   end
-)
-    ;
-    (self._svHelper):Dispose()
-    ;
-    (self._svHelper):SetItemName("UIHomelandBuildEditItemSkin")
-    ;
-    (self._svHelper):SetShowFunction(function(index, ui)
-    -- function num : 0_39_1 , upvalues : self
-    ui:Flush((self.skins)[index], self.curBuildingSkinID)
+  self.curBuildingSkinID = curBuilding:SkinID()
+  local cfgs = Cfg.cfg_item_architecture_skin({
+    architecture_id = curBuilding:GetBuildId()
+  })
+  self.skins = {}
+  for _, cfg in ipairs(cfgs) do
+    if self.mHomeland:HasBuildSkin(cfg.ID) then
+      self.skins[#self.skins + 1] = cfg
+    end
+  end
+  table.sort(self.skins, function(a, b)
+    return a.ID < b.ID
+  end)
+  self._svHelper:Dispose()
+  self._svHelper:SetItemName("UIHomelandBuildEditItemSkin")
+  self._svHelper:SetShowFunction(function(index, ui)
+    ui:Flush(self.skins[index], self.curBuildingSkinID)
     return ui
-  end
-)
-    ;
-    (self._svHelper):Init(#self.skins, 0, Vector2(0, 0))
-  end
+  end)
+  self._svHelper:Init(#self.skins, 0, Vector2(0, 0))
 end
 
--- DECOMPILER ERROR at PC127: Confused about usage of register: R0 in 'UnsetPending'
-
 UIHomelandBuildEdit.CompositeBuildingID = 7
--- DECOMPILER ERROR at PC129: Confused about usage of register: R0 in 'UnsetPending'
-
 UIHomelandBuildEdit.ChangeSkinFilterID = 99
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
 UIHomelandBuildEdit.MainBuildingFilterID = 9901
--- DECOMPILER ERROR at PC133: Confused about usage of register: R0 in 'UnsetPending'
-
 UIHomelandBuildEdit.MuseumFilterID = 9902
--- DECOMPILER ERROR at PC135: Confused about usage of register: R0 in 'UnsetPending'
-
 UIHomelandBuildEdit.ShopFilterID = 9903
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
 UIHomelandBuildEdit.WishingPoolFilterID = 9904
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBuildEdit.GetItemTemplate = function(tplId)
-  -- function num : 0_40 , upvalues : _ENV
-  local cfg_item = (Cfg.cfg_item)[tplId]
+function UIHomelandBuildEdit.GetItemTemplate(tplId)
+  local cfg_item = Cfg.cfg_item[tplId]
   return cfg_item
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.GetBuildingName = function(tplId)
-  -- function num : 0_41 , upvalues : _ENV
-  local tpl = (UIHomelandBuildEdit.GetItemTemplate)(tplId)
-  local name = (StringTable.Get)(tpl.Name)
+function UIHomelandBuildEdit.GetBuildingName(tplId)
+  local tpl = UIHomelandBuildEdit.GetItemTemplate(tplId)
+  local name = StringTable.Get(tpl.Name)
   return name
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.GetItemArchitectureTemplate = function(tplId)
-  -- function num : 0_42 , upvalues : _ENV
-  local cfg_item_architecture = (Cfg.cfg_item_architecture)[tplId]
+function UIHomelandBuildEdit.GetItemArchitectureTemplate(tplId)
+  local cfg_item_architecture = Cfg.cfg_item_architecture[tplId]
   if not cfg_item_architecture then
-    (Log.error)("### no data in cfg_item_architecture. ID = ", tplId)
+    Log.error("### no data in cfg_item_architecture. ID = ", tplId)
   end
   return cfg_item_architecture
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.GetBuildingLiveable = function(tplId)
-  -- function num : 0_43 , upvalues : _ENV
-  local tpl = (UIHomelandBuildEdit.GetItemArchitectureTemplate)(tplId)
+function UIHomelandBuildEdit.GetBuildingLiveable(tplId)
+  local tpl = UIHomelandBuildEdit.GetItemArchitectureTemplate(tplId)
   local livable = tpl.LivableValue
   return livable
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.GetBuildingFilter = function(tplId)
-  -- function num : 0_44 , upvalues : _ENV
-  local tpl = (UIHomelandBuildEdit.GetItemArchitectureTemplate)(tplId)
+function UIHomelandBuildEdit.GetBuildingFilter(tplId)
+  local tpl = UIHomelandBuildEdit.GetItemArchitectureTemplate(tplId)
   local n = tpl.Filter
   if n then
     return {n}
   end
-  local cfgSonArch = (Cfg.cfg_item_son_architecture)[tplId]
+  local cfgSonArch = Cfg.cfg_item_son_architecture[tplId]
   if cfgSonArch then
     return cfgSonArch.FatherArch
   end
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.CanBuildingMove = function(tplId)
-  -- function num : 0_45 , upvalues : _ENV
-  local tpl = (UIHomelandBuildEdit.GetItemArchitectureTemplate)(tplId)
+function UIHomelandBuildEdit.CanBuildingMove(tplId)
+  local tpl = UIHomelandBuildEdit.GetItemArchitectureTemplate(tplId)
   local b = tpl.CanMove
   return b
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.CanBuildingDelete = function(building)
-  -- function num : 0_46 , upvalues : _ENV
+function UIHomelandBuildEdit.CanBuildingDelete(building)
   local tplId = building:GetBuildId()
-  local tpl = (UIHomelandBuildEdit.GetItemArchitectureTemplate)(tplId)
+  local tpl = UIHomelandBuildEdit.GetItemArchitectureTemplate(tplId)
   if not tpl.CanDelete then
     return false, nil, false
   end
@@ -1129,175 +812,118 @@ UIHomelandBuildEdit.CanBuildingDelete = function(building)
     return true, nil, true
   end
   if tpl.Type == ArchitectureType.Homeland_Put_Architecture and tpl.SubType == ArchitectureSubType.Dormitory then
-    local room = ((GameGlobal.GetModule)(HomelandModule)):GetDomitoryByPstID(building:GetBuildPstId())
+    local room = GameGlobal.GetModule(HomelandModule):GetDomitoryByPstID(building:GetBuildPstId())
     for i = 1, 4 do
-      local petid = (room.petList)[i]
-      if petid and petid > 0 then
-        return false, (StringTable.Get)("str_homeland_domitory_cant_delete"), true
+      local petid = room.petList[i]
+      if petid and 0 < petid then
+        return false, StringTable.Get("str_homeland_domitory_cant_delete"), true
       end
     end
   end
-  do
-    do
-      if tpl.Type == ArchitectureType.Homeland_Put_Architecture and tpl.SubType == ArchitectureSubType.Land then
-        local land = building
-        if land:InBreeding() then
-          return false, (StringTable.Get)("str_homeland_build_error36"), true
-        end
-      end
-      return true, nil, true
+  if tpl.Type == ArchitectureType.Homeland_Put_Architecture and tpl.SubType == ArchitectureSubType.Land then
+    local land = building
+    if land:InBreeding() then
+      return false, StringTable.Get("str_homeland_build_error36"), true
     end
   end
+  return true, nil, true
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.CanChangeSkin = function(tplId)
-  -- function num : 0_47 , upvalues : _ENV
-  local tpl = (UIHomelandBuildEdit.GetItemArchitectureTemplate)(tplId)
+function UIHomelandBuildEdit.CanChangeSkin(tplId)
+  local tpl = UIHomelandBuildEdit.GetItemArchitectureTemplate(tplId)
   local b = tpl.DefaultSkin
-  if b and b > 0 then
+  if b and 0 < b then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
 UIHomelandBuildEdit.filters = {}
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBuildEdit.GetBuildFilters = function()
-  -- function num : 0_48 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-  if (table.count)(UIHomelandBuildEdit.filters) <= 0 then
+function UIHomelandBuildEdit.GetBuildFilters()
+  if table.count(UIHomelandBuildEdit.filters) <= 0 then
     UIHomelandBuildEdit.filters = {}
     local children = {}
-    local cfg_homeland_filter = (Cfg.cfg_homeland_filter)()
-    for _,cfgv in pairs(cfg_homeland_filter) do
+    local cfg_homeland_filter = Cfg.cfg_homeland_filter()
+    for _, cfgv in pairs(cfg_homeland_filter) do
       if cfgv.Type == HomelandFilterType.All or cfgv.Type == HomelandFilterType.Edit then
         local f = HomelandBuildingFilter:New()
         f.id = cfgv.Filter
-        f.name = (StringTable.Get)(cfgv.Name)
+        f.name = StringTable.Get(cfgv.Name)
         f.icon = cfgv.Icon
         if cfgv.Parent then
           if not children[cfgv.Parent] then
             children[cfgv.Parent] = {}
           end
-          ;
-          (table.insert)(children[cfgv.Parent], f)
+          table.insert(children[cfgv.Parent], f)
         else
-          ;
-          (table.insert)(UIHomelandBuildEdit.filters, f)
+          table.insert(UIHomelandBuildEdit.filters, f)
           if f.id == UIHomelandBuildEdit.CompositeBuildingID then
             children[UIHomelandBuildEdit.CompositeBuildingID] = {}
-            local cfgParents = (Cfg.cfg_item_father_architecture)()
-            for _,cfgParentV in pairs(cfgParents) do
+            local cfgParents = Cfg.cfg_item_father_architecture()
+            for _, cfgParentV in pairs(cfgParents) do
               local f = HomelandBuildingFilter:New()
               f.id = cfgParentV.ID
-              f.name = (StringTable.Get)(((Cfg.cfg_item)[f.id]).Name)
-              ;
-              (table.insert)(children[UIHomelandBuildEdit.CompositeBuildingID], f)
+              f.name = StringTable.Get(Cfg.cfg_item[f.id].Name)
+              table.insert(children[UIHomelandBuildEdit.CompositeBuildingID], f)
             end
           end
         end
       end
     end
-    for _,f in ipairs(UIHomelandBuildEdit.filters) do
-      if not children[f.id] then
-        do
-          f.children = {}
-          -- DECOMPILER ERROR at PC115: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC115: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+    for _, f in ipairs(UIHomelandBuildEdit.filters) do
+      f.children = children[f.id] or {}
     end
   end
-  do
-    return UIHomelandBuildEdit.filters
-  end
+  return UIHomelandBuildEdit.filters
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.GetBuildFilterById = function(id)
-  -- function num : 0_49 , upvalues : _ENV
-  local filters = (UIHomelandBuildEdit.GetBuildFilters)()
-  for _,filter in ipairs(filters) do
+function UIHomelandBuildEdit.GetBuildFilterById(id)
+  local filters = UIHomelandBuildEdit.GetBuildFilters()
+  for _, filter in ipairs(filters) do
     if filter.id == id then
       return filter
     end
   end
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.GetBuildFilterBy2Id = function(id, childId)
-  -- function num : 0_50 , upvalues : _ENV
-  local filter = (UIHomelandBuildEdit.GetBuildFilterById)(id)
-  for _,filter in ipairs(filter.children) do
+function UIHomelandBuildEdit.GetBuildFilterBy2Id(id, childId)
+  local filter = UIHomelandBuildEdit.GetBuildFilterById(id)
+  for _, filter in ipairs(filter.children) do
     if filter.id == childId then
       return filter
     end
   end
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.GetFirstItem = function(self)
-  -- function num : 0_51
+function UIHomelandBuildEdit:GetFirstItem()
   if self._firstItem then
-    return (self._firstItem):GetBg()
+    return self._firstItem:GetBg()
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.GetSpecialTag = function(self)
-  -- function num : 0_52
-  return (self._specialTag):GetGameObject("imgTab")
+function UIHomelandBuildEdit:GetSpecialTag()
+  return self._specialTag:GetGameObject("imgTab")
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.GetSpecialLand = function(self)
-  -- function num : 0_53
-  return (self._specialLand):GetGameObject("imgTab")
+function UIHomelandBuildEdit:GetSpecialLand()
+  return self._specialLand:GetGameObject("imgTab")
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.OnOpenRotate = function(self, isOpen)
-  -- function num : 0_54 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIHomelandBuildEdit:OnOpenRotate(isOpen)
   if isOpen then
-    (self._rotateImg).color = Color(0.96862745098039, 0.68235294117647, 0.17254901960784)
+    self._rotateImg.color = Color(0.9686274509803922, 0.6823529411764706, 0.17254901960784313)
   else
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._rotateImg).color = Color.white
+    self._rotateImg.color = Color.white
   end
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEdit.CheckCanRemove = function(self, building)
-  -- function num : 0_55
-  local task = ((self.homelandClient):GetHomelandTaskManager()):GetRuningTask()
-  if not task then
-    task = (((self.homelandClient):GetHomelandTaskManager()):GetHomelandStoryTaskManager()):GetRuningTaskItem()
+function UIHomelandBuildEdit:CheckCanRemove(building)
+  local task = self.homelandClient:GetHomelandTaskManager():GetRuningTask()
+  task = task or self.homelandClient:GetHomelandTaskManager():GetHomelandStoryTaskManager():GetRuningTaskItem()
+  if task then
+    return task:GetHoldBuilding() ~= building._cfgID
   end
-  if task:GetHoldBuilding() == building._cfgID then
-    do return not task end
-    do return true end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
+  return true
 end
-
-

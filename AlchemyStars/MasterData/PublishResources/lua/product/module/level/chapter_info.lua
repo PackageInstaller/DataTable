@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/level/chapter_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChapterInfo", Object)
 ChapterInfo = ChapterInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChapterInfo.Constructor = function(self, config)
-  -- function num : 0_0
+function ChapterInfo:Constructor(config)
   self.ID = config.ID
   self.Num = config.ChapterNum
   self.Name = config.ChapterName
@@ -17,5 +10,3 @@ ChapterInfo.Constructor = function(self, config)
   self.Position = config.Position
   self.LockLevel = config.LockLevel
 end
-
-

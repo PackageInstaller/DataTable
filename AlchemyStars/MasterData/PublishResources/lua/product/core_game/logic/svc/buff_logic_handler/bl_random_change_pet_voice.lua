@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_random_change_pet_voice.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicRandomChangePetVoice", BuffLogicBase)
 BuffLogicRandomChangePetVoice = BuffLogicRandomChangePetVoice
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRandomChangePetVoice.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicRandomChangePetVoice:Constructor(buffInstance, logicParam)
   self._prob = logicParam.prob
   self._voiceList = logicParam.voiceList
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRandomChangePetVoice.DoLogic = function(self)
-  -- function num : 0_1
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function BuffLogicRandomChangePetVoice:DoLogic()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local buffCmpt = teamEntity:BuffComponent()
   buffCmpt:SetBuffValue("RandomChangeAllPetVoiceProb", self._prob)
   buffCmpt:SetBuffValue("RandomChangeAllPetVoiceVoiceList", self._voiceList)
@@ -25,20 +15,13 @@ end
 
 _class("BuffLogicRemoveRandomChangePetVoice", BuffLogicBase)
 BuffLogicRemoveRandomChangePetVoice = BuffLogicRemoveRandomChangePetVoice
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveRandomChangePetVoice.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveRandomChangePetVoice:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveRandomChangePetVoice.DoLogic = function(self)
-  -- function num : 0_3
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function BuffLogicRemoveRandomChangePetVoice:DoLogic()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local buffCmpt = teamEntity:BuffComponent()
   buffCmpt:SetBuffValue("RandomChangeAllPetVoiceProb", nil)
   buffCmpt:SetBuffValue("RandomChangeAllPetVoiceVoiceList", nil)
 end
-
-

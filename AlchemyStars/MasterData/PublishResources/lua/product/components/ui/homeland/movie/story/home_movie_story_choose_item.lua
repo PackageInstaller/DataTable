@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/story/home_movie_story_choose_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeMovieStoryChooseItem", UICustomWidget)
 UIHomeMovieStoryChooseItem = UIHomeMovieStoryChooseItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeMovieStoryChooseItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomeMovieStoryChooseItem:OnShow(uiParams)
   self._text = self:GetUIComponent("UILocalizationText", "text")
   self._anim = self:GetUIComponent("Animation", "anim")
   self._go = self:GetGameObject()
@@ -17,85 +10,55 @@ UIHomeMovieStoryChooseItem.OnShow = function(self, uiParams)
   self._excellentFit = self:GetGameObject("excellentFit")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeMovieStoryChooseItem.Active = function(self, active)
-  -- function num : 0_1
-  (self._go):SetActive(active)
+function UIHomeMovieStoryChooseItem:Active(active)
+  self._go:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeMovieStoryChooseItem.SetData = function(self, idx, txt, fit, callback, type, leftCount, rightCount, PetFishClue)
-  -- function num : 0_2
+function UIHomeMovieStoryChooseItem:SetData(idx, txt, fit, callback, type, leftCount, rightCount, PetFishClue)
   self._idx = idx
   self._leftCount = leftCount
   self._rightCount = rightCount
   self._PetFishClue = PetFishClue
   self._fit = fit
   self._callback = callback
-  ;
-  (self._text):SetText(txt)
+  self._text:SetText(txt)
   local showType = false
   if type then
     showType = true
   end
-  ;
-  (self._badFit):SetActive(false)
-  ;
-  (self._goodFit):SetActive(false)
-  ;
-  (self._excellentFit):SetActive(false)
+  self._badFit:SetActive(false)
+  self._goodFit:SetActive(false)
+  self._excellentFit:SetActive(false)
   if self._fit == 0 then
-    (self._badFit):SetActive(true)
-  else
-    if self._fit == 1 then
-      (self._goodFit):SetActive(true)
-    else
-      if self._fit == 2 then
-        (self._excellentFit):SetActive(true)
-      end
-    end
+    self._badFit:SetActive(true)
+  elseif self._fit == 1 then
+    self._goodFit:SetActive(true)
+  elseif self._fit == 2 then
+    self._excellentFit:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeMovieStoryChooseItem.SetNewStatus = function(self, status)
-  -- function num : 0_3
-  (self._new):SetActive(status)
+function UIHomeMovieStoryChooseItem:SetNewStatus(status)
+  self._new:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeMovieStoryChooseItem.bgOnClick = function(self, go)
-  -- function num : 0_4
-  (self._anim):Play("UIHomeMovieStoryDialog_xuanzhong")
+function UIHomeMovieStoryChooseItem:bgOnClick(go)
+  self._anim:Play("UIHomeMovieStoryDialog_xuanzhong")
   if self._callback then
-    (self._callback)(self._idx, self._leftCount, self._rightCount, self._PetFishClue)
+    self._callback(self._idx, self._leftCount, self._rightCount, self._PetFishClue)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeMovieStoryChooseItem.ShowChatIcon = function(self, inShow, iconName)
-  -- function num : 0_5
+function UIHomeMovieStoryChooseItem:ShowChatIcon(inShow, iconName)
   local paddingLeft = 0
   if inShow then
-    paddingLeft = (((self._chatIconImg).rectTransform).rect).width
-    ;
-    (self._chatIcon):LoadImage(iconName)
+    paddingLeft = self._chatIconImg.rectTransform.rect.width
+    self._chatIcon:LoadImage(iconName)
   else
     paddingLeft = 0
   end
-  local padding = (self._layoutHorz).padding
+  local padding = self._layoutHorz.padding
   padding.left = paddingLeft
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._layoutHorz).padding = padding
-  ;
-  ((self._chatIconImg).gameObject):SetActive(inShow)
+  self._layoutHorz.padding = padding
+  self._chatIconImg.gameObject:SetActive(inShow)
 end
-
-

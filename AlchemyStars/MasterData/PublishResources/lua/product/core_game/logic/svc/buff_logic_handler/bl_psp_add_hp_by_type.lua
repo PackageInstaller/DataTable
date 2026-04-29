@@ -1,60 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_psp_add_hp_by_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicPSPAddHPByType", BuffLogicBase)
 BuffLogicPSPAddHPByType = BuffLogicPSPAddHPByType
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicPSPAddHPByType.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicPSPAddHPByType:Constructor(buffInstance, logicParam)
   self._mulValue = logicParam.mulValue or 0
   self._modifyType = logicParam.modifyType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicPSPAddHPByType.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local casterEntity = (self._buffInstance):Entity()
-  local context = (self._buffInstance):Context()
+function BuffLogicPSPAddHPByType:DoLogic(notify)
+  local casterEntity = self._buffInstance:Entity()
+  local context = self._buffInstance:Context()
   if context then
     casterEntity = context.casterEntity
   end
   local e = casterEntity
   if casterEntity:PetPstID() then
-    e = (casterEntity:Pet()):GetOwnerTeamEntity()
+    e = casterEntity:Pet():GetOwnerTeamEntity()
   end
-  if (e:Attributes()):GetCurrentHP() == 0 then
-    return 
+  if e:Attributes():GetCurrentHP() == 0 then
+    return
   end
-  if (e:Attributes()):GetAttribute("BuffForbidCure") then
-    return 
+  if e:Attributes():GetAttribute("BuffForbidCure") then
+    return
   end
-  local popStarProSvc = (self._world):GetService("PopStarProLogic")
+  local popStarProSvc = self._world:GetService("PopStarProLogic")
   if not popStarProSvc then
-    return 
+    return
   end
   local count = popStarProSvc:GetCountByModifyType(self._modifyType)
   if count == 0 then
-    return 
+    return
   end
   local attrCmpt = casterEntity:Attributes()
   local maxHP = attrCmpt:CalcMaxHp()
   if casterEntity:PetPstID() then
-    local pstId = (casterEntity:PetPstID()):GetPstID()
-    local petData = (self._world):GetPetData(pstId)
+    local pstId = casterEntity:PetPstID():GetPstID()
+    local petData = self._world:GetPetData(pstId)
     maxHP = petData:GetPetHealth()
   end
-  do
-    local addVal = (math.floor)(maxHP * self._mulValue * count + 0.5)
-    local svc = (self._world):GetService("CalcDamage")
-    local damageInfo = DamageInfo:New(addVal, DamageType.Recover)
-    svc:AddTargetHP(e:GetID(), damageInfo)
-    local res = BuffResultPSPAddHPByType:New(damageInfo, e:GetID())
-    return res
-  end
+  local addVal = math.floor(maxHP * self._mulValue * count + 0.5)
+  local svc = self._world:GetService("CalcDamage")
+  local damageInfo = DamageInfo:New(addVal, DamageType.Recover)
+  svc:AddTargetHP(e:GetID(), damageInfo)
+  local res = BuffResultPSPAddHPByType:New(damageInfo, e:GetID())
+  return res
 end
-
-

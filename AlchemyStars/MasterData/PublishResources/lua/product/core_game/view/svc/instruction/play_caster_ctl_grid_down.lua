@@ -1,53 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_ctl_grid_down.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterControlGridDownInstruction", BaseInstruction)
 PlayCasterControlGridDownInstruction = PlayCasterControlGridDownInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterControlGridDownInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterControlGridDownInstruction:Constructor(paramList)
   self._enable = tonumber(paramList.enable)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterControlGridDownInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterControlGridDownInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local entity = casterEntity
-  do
-    if casterEntity:HasSuperEntity() then
-      local super = casterEntity:GetSuperEntity()
-      if super then
-        entity = super
-      end
+  if casterEntity:HasSuperEntity() then
+    local super = casterEntity:GetSuperEntity()
+    if super then
+      entity = super
     end
-    if entity:MonsterID() then
-      local monsterIDCmpt = entity:MonsterID()
-      monsterIDCmpt:SetNeedGridDownEnable(self._enable == 1)
-    elseif entity:HasTrapID() then
-      local trapRender = entity:TrapRender()
-      trapRender:SetNeedGridDownEnable(self._enable == 1)
+  end
+  if entity:MonsterID() then
+    local monsterIDCmpt = entity:MonsterID()
+    monsterIDCmpt:SetNeedGridDownEnable(self._enable == 1)
+  elseif entity:HasTrapID() then
+    local trapRender = entity:TrapRender()
+    trapRender:SetNeedGridDownEnable(self._enable == 1)
+  end
+  local world = entity:GetOwnerWorld()
+  local bodyAreaCmpt = entity:BodyArea()
+  local areaArray = bodyAreaCmpt:GetArea()
+  local pieceSvc = world:GetService("Piece")
+  local monsterGridPos = entity:GetRenderGridPosition()
+  for i = 1, #areaArray do
+    local curAreaPos = areaArray[i]
+    local pos = Vector2(curAreaPos.x + monsterGridPos.x, curAreaPos.y + monsterGridPos.y)
+    if self._enable == 1 then
+      pieceSvc:SetPieceAnimDark(pos)
+    else
+      pieceSvc:SetPieceAnimNormal(pos)
     end
-    local world = entity:GetOwnerWorld()
-    local bodyAreaCmpt = entity:BodyArea()
-    local areaArray = bodyAreaCmpt:GetArea()
-    local pieceSvc = world:GetService("Piece")
-    local monsterGridPos = entity:GetRenderGridPosition()
-    for i = 1, #areaArray do
-      local curAreaPos = areaArray[i]
-      local pos = Vector2(curAreaPos.x + monsterGridPos.x, curAreaPos.y + monsterGridPos.y)
-      if self._enable == 1 then
-        pieceSvc:SetPieceAnimDark(pos)
-      else
-        pieceSvc:SetPieceAnimNormal(pos)
-      end
-    end
-    -- DECOMPILER ERROR: 6 unprocessed JMP targets
   end
 end
-
-

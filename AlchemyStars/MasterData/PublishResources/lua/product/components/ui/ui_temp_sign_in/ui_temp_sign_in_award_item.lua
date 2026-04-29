@@ -1,38 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_temp_sign_in/ui_temp_sign_in_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITempSignInAwardItem", UICustomWidget)
 UITempSignInAwardItem = UITempSignInAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITempSignInAwardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UITempSignInAwardItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInAwardItem.SetData = function(self, index, data, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UITempSignInAwardItem:SetData(index, data, callback)
   self._itemid = data.assetid
-  ;
-  (UIWidgetHelper.SetItemIcon)(self, data.assetid, "Icon")
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "CountText", data.count)
-  ;
-  (self:GetGameObject("CountArea")):SetActive(data.count ~= 0)
+  UIWidgetHelper.SetItemIcon(self, data.assetid, "Icon")
+  UIWidgetHelper.SetLocalizationText(self, "CountText", data.count)
+  self:GetGameObject("CountArea"):SetActive(data.count ~= 0)
   self._callback = callback
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInAwardItem.IconOnClick = function(self, go)
-  -- function num : 0_2
+function UITempSignInAwardItem:IconOnClick(go)
   if self._callback then
-    (self._callback)(self._itemid, (go.transform).position)
+    self._callback(self._itemid, go.transform.position)
   end
 end
-
-

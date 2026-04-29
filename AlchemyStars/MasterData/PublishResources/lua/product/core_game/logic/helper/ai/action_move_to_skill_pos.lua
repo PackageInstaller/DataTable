@@ -1,124 +1,96 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_to_skill_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_move_base")
 _class("ActionMoveToSkillPos", ActionMoveBase)
 ActionMoveToSkillPos = ActionMoveToSkillPos
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMoveToSkillPos.Constructor = function(self)
-  -- function num : 0_0
+function ActionMoveToSkillPos:Constructor()
   self.m_nextPosList = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveToSkillPos.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionMoveToSkillPos.super).Reset)(self)
+function ActionMoveToSkillPos:Reset()
+  ActionMoveToSkillPos.super.Reset(self)
   self.m_nextPosList = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveToSkillPos.InitTargetPosList = function(self, listPosTarget)
-  -- function num : 0_2 , upvalues : _ENV
+function ActionMoveToSkillPos:InitTargetPosList(listPosTarget)
   local nSkillID = self:GetLogicData(1)
   if nSkillID == nil or nSkillID <= 0 then
-    self:PrintLog("[ActionMoveToSkillPos] Can not find skill,move failed", (self.m_entityOwn):GetID())
+    self:PrintLog("[ActionMoveToSkillPos] Can not find skill,move failed", self.m_entityOwn:GetID())
     self:PrintDebugLog(" Can not find skill,move failed")
-    return 
+    return
   end
-  local posSelf = (self.m_entityOwn):GetGridPosition()
-  local aiComponent = (self.m_entityOwn):AI()
+  local posSelf = self.m_entityOwn:GetGridPosition()
+  local aiComponent = self.m_entityOwn:AI()
   local nWalkTotal = aiComponent:GetMobilityValid()
-  local selfBodyArea = ((self.m_entityOwn):BodyArea()):GetArea()
+  local selfBodyArea = self.m_entityOwn:BodyArea():GetArea()
   local cbFilter = Callback:New(1, self.IsPosAccessible, self)
-  local walkRange = (ComputeScopeRange.ComputeRange_WalkMathPos)(posSelf, #selfBodyArea, nWalkTotal, cbFilter)
+  local walkRange = ComputeScopeRange.ComputeRange_WalkMathPos(posSelf, #selfBodyArea, nWalkTotal, cbFilter)
   local surroundArea = {}
   local surroundMap = {}
-  for _,pos in ipairs(selfBodyArea) do
+  for _, pos in ipairs(selfBodyArea) do
     self:_NonRepeatableInsertVector2(surroundArea, surroundMap, pos)
-    self:_NonRepeatableInsertVector2(surroundArea, surroundMap, (Vector2.New)(pos.x * -1, pos.y))
-    self:_NonRepeatableInsertVector2(surroundArea, surroundMap, (Vector2.New)(pos.x, pos.y * -1))
+    self:_NonRepeatableInsertVector2(surroundArea, surroundMap, Vector2.New(pos.x * -1, pos.y))
+    self:_NonRepeatableInsertVector2(surroundArea, surroundMap, Vector2.New(pos.x, pos.y * -1))
     self:_NonRepeatableInsertVector2(surroundArea, surroundMap, pos * -1)
   end
   local movementVectors = {}
   local movePosIndexs = {}
-  for _,walkPos in ipairs(walkRange) do
-    (table.insert)(movementVectors, walkPos:GetPos())
-    movePosIndexs[#movePosIndexs + 1] = (Vector2.Pos2Index)(walkPos:GetPos())
+  for _, walkPos in ipairs(walkRange) do
+    table.insert(movementVectors, walkPos:GetPos())
+    movePosIndexs[#movePosIndexs + 1] = Vector2.Pos2Index(walkPos:GetPos())
   end
-  self:PrintLog("[ActionMoveToSkillPos] entityID=", (self.m_entityOwn):GetID(), " walkRange=", (table.concat)(movePosIndexs, " "))
-  self:PrintDebugLog("entityID=", (self.m_entityOwn):GetID(), " walkRange=", (table.concat)(movePosIndexs, " "))
+  self:PrintLog("[ActionMoveToSkillPos] entityID=", self.m_entityOwn:GetID(), " walkRange=", table.concat(movePosIndexs, " "))
+  self:PrintDebugLog("entityID=", self.m_entityOwn:GetID(), " walkRange=", table.concat(movePosIndexs, " "))
   local sortPosList = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByNear)
   sortPosList:AllowDuplicate()
-  local playerRange = {Vector2.zero}
+  local playerRange = {
+    Vector2.zero
+  }
   local targetPos = listPosTarget[1]
   local reverseRange = {}
-  for _,bodyGrid in ipairs(surroundArea) do
+  for _, bodyGrid in ipairs(surroundArea) do
     local centerPos = targetPos + bodyGrid
     local reverseRangeUp = self:CalculateSkillRange(nSkillID, centerPos, Vector2.up, playerRange)
     local reverseRangeDown = self:CalculateSkillRange(nSkillID, centerPos, Vector2.down, playerRange)
     local reverseRangeLeft = self:CalculateSkillRange(nSkillID, centerPos, Vector2.left, playerRange)
     local reverseRangeRight = self:CalculateSkillRange(nSkillID, centerPos, Vector2.right, playerRange)
-    ;
-    (table.appendArray)(reverseRange, reverseRangeUp)
-    ;
-    (table.appendArray)(reverseRange, reverseRangeDown)
-    ;
-    (table.appendArray)(reverseRange, reverseRangeLeft)
-    ;
-    (table.appendArray)(reverseRange, reverseRangeRight)
+    table.appendArray(reverseRange, reverseRangeUp)
+    table.appendArray(reverseRange, reverseRangeDown)
+    table.appendArray(reverseRange, reverseRangeLeft)
+    table.appendArray(reverseRange, reverseRangeRight)
   end
   local playerBeHitRange = {}
-  for i,v in ipairs(reverseRange) do
-    playerBeHitRange[#playerBeHitRange + 1] = (Vector2.Pos2Index)(v)
+  for i, v in ipairs(reverseRange) do
+    playerBeHitRange[#playerBeHitRange + 1] = Vector2.Pos2Index(v)
   end
-  self:PrintLog("[ActionMoveToSkillPos] entityID=", (self.m_entityOwn):GetID(), " playerBeHitRange=", (table.concat)(playerBeHitRange, " "))
-  self:PrintDebugLog("entityID=", (self.m_entityOwn):GetID(), " playerBeHitRange=", (table.concat)(playerBeHitRange, " "))
-  for _,vec in ipairs(movementVectors) do
+  self:PrintLog("[ActionMoveToSkillPos] entityID=", self.m_entityOwn:GetID(), " playerBeHitRange=", table.concat(playerBeHitRange, " "))
+  self:PrintDebugLog("entityID=", self.m_entityOwn:GetID(), " playerBeHitRange=", table.concat(playerBeHitRange, " "))
+  for _, vec in ipairs(movementVectors) do
     local wholeBodyIn = true
-    for __,bodyGrid in ipairs(selfBodyArea) do
+    for __, bodyGrid in ipairs(selfBodyArea) do
       local absBodyGrid = bodyGrid + vec
-      if wholeBodyIn then
-        wholeBodyIn = (table.icontains)(reverseRange, absBodyGrid)
-      end
+      wholeBodyIn = wholeBodyIn and table.icontains(reverseRange, absBodyGrid)
     end
     if wholeBodyIn then
-      (AINewNode.InsertSortedArray)(sortPosList, posSelf, vec, sortPosList:Size())
+      AINewNode.InsertSortedArray(sortPosList, posSelf, vec, sortPosList:Size())
     end
   end
   self.m_nextPosList = sortPosList
   return sortPosList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveToSkillPos.FindNewTargetPos = function(self)
-  -- function num : 0_3
-  local posDefault = ((self.m_entityOwn):AI()):GetTargetPos()
+function ActionMoveToSkillPos:FindNewTargetPos()
+  local posDefault = self.m_entityOwn:AI():GetTargetPos()
   return self:FindPosValid(self.m_nextPosList, posDefault)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveToSkillPos._NonRepeatableInsertVector2 = function(self, t, map, val)
-  -- function num : 0_4 , upvalues : _ENV
+function ActionMoveToSkillPos:_NonRepeatableInsertVector2(t, map, val)
   local x = val.x
   local y = val.y
   if not map[x] then
     map[x] = {}
   end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R6 in 'UnsetPending'
-
-  if not (map[x])[y] then
-    (map[x])[y] = true
-    ;
-    (table.insert)(t, val)
+  if not map[x][y] then
+    map[x][y] = true
+    table.insert(t, val)
   end
 end
-
-

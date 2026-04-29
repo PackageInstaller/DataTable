@@ -1,23 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n17/intro/ui_n17_intro_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN17IntroItem", UICustomWidget)
 UIN17IntroItem = UIN17IntroItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN17IntroItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN17IntroItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17IntroItem.Flush = function(self, head, body)
-  -- function num : 0_1 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "txtHead", head)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "txtBody", body)
+function UIN17IntroItem:Flush(head, body)
+  UIWidgetHelper.SetLocalizationText(self, "txtHead", head)
+  UIWidgetHelper.SetLocalizationText(self, "txtBody", body)
 end
-
-

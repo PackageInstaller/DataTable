@@ -1,361 +1,304 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/ui_s4_trade_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4TradeData", Object)
 UIS4TradeData = UIS4TradeData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4TradeData.Constructor = function(self, campaign)
-  -- function num : 0_0
+function UIS4TradeData:Constructor(campaign)
   self._campaign = campaign
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetComponentID = function(self)
-  -- function num : 0_1
+function UIS4TradeData:GetComponentID()
   local comp = self:GetBusinessComp()
   if not comp then
-    return 
+    return
   end
   return comp:GetComponentCfgId()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetBusinessComp = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local process = (self._campaign):GetLocalProcess()
+function UIS4TradeData:GetBusinessComp()
+  local process = self._campaign:GetLocalProcess()
   if process then
     return process:GetComponent(ECCampaignSeasonComponentID.BUSINESS)
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetBusinessCompInfo = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local process = (self._campaign):GetLocalProcess()
+function UIS4TradeData:GetBusinessCompInfo()
+  local process = self._campaign:GetLocalProcess()
   if process then
     return process:GetComponentInfo(ECCampaignSeasonComponentID.BUSINESS)
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetTotalProcessComp = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local process = (self._campaign):GetLocalProcess()
+function UIS4TradeData:GetTotalProcessComp()
+  local process = self._campaign:GetLocalProcess()
   if process then
     return process:GetComponent(ECCampaignSeasonComponentID.TOTAL_PROCESS)
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetTotalProcessCompInfo = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local process = (self._campaign):GetLocalProcess()
+function UIS4TradeData:GetTotalProcessCompInfo()
+  local process = self._campaign:GetLocalProcess()
   if process then
     return process:GetComponentInfo(ECCampaignSeasonComponentID.TOTAL_PROCESS)
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetRewardProcessComp = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local process = (self._campaign):GetLocalProcess()
+function UIS4TradeData:GetRewardProcessComp()
+  local process = self._campaign:GetLocalProcess()
   if process then
     return process:GetComponent(ECCampaignSeasonComponentID.REWARD_PROCESS)
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetRewardProcessCompInfo = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local process = (self._campaign):GetLocalProcess()
+function UIS4TradeData:GetRewardProcessCompInfo()
+  local process = self._campaign:GetLocalProcess()
   if process then
     return process:GetComponentInfo(ECCampaignSeasonComponentID.REWARD_PROCESS)
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetHarbourInfo = function(self, id)
-  -- function num : 0_8
+function UIS4TradeData:GetHarbourInfo(id)
   local comp = self:GetBusinessComp()
-  do
-    if comp then
-      local info = comp:GetInfo(id)
-      return info
-    end
-    return 
+  if comp then
+    local info = comp:GetInfo(id)
+    return info
   end
+  return
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetHarborEvent = function(self, id)
-  -- function num : 0_9
+function UIS4TradeData:GetHarborEvent(id)
   local comp = self:GetBusinessComp()
-  do
-    if comp then
-      local info = comp:GetHarborEvent(id)
-      return info
-    end
-    return 
+  if comp then
+    local info = comp:GetHarborEvent(id)
+    return info
   end
+  return
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetInfo = function(self, id)
-  -- function num : 0_10
+function UIS4TradeData:GetInfo(id)
   local comp = self:GetBusinessComp()
-  do
-    if comp then
-      local hinfo, sinfo = comp:GetInfo(id)
-      return hinfo, sinfo
-    end
-    return 
+  if comp then
+    local hinfo, sinfo = comp:GetInfo(id)
+    return hinfo, sinfo
   end
+  return
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.CheckHarborLock = function(self, Id)
-  -- function num : 0_11 , upvalues : _ENV
+function UIS4TradeData:CheckHarborLock(Id)
   local HarborCfg = Cfg.cfg_component_business_harbor
   local harborLv, shipLv = self:GetHarborShipLV(Id)
   if harborLv == 0 then
     return false
   end
-  local NowHarborCfg = (HarborCfg({HarborID = Id, Lv = harborLv}))[1]
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local NowHarborCfg = HarborCfg({HarborID = Id, Lv = harborLv})[1]
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local item = NowHarborCfg.LockItem
   local num = itemModule:GetItemCount(item[1])
-  if num and item[2] <= num then
+  if num and num >= item[2] then
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetShipBaseValueByID = function(self, shipID)
-  -- function num : 0_12 , upvalues : _ENV
+function UIS4TradeData:GetShipBaseValueByID(shipID)
   local comp = self:GetBusinessComp()
   local compInfo = self:GetBusinessCompInfo()
   if not comp then
-    return 
+    return
   end
-  local shipLevel = (compInfo.shipInfo)[shipID]
+  local shipLevel = compInfo.shipInfo[shipID]
   local componentId = comp:GetComponentCfgId()
-  local cfg = ((Cfg.cfg_component_business_ship)({ComponentID = componentId, ShipID = shipID, Lv = shipLevel}))[1]
+  local cfg = Cfg.cfg_component_business_ship({
+    ComponentID = componentId,
+    ShipID = shipID,
+    Lv = shipLevel
+  })[1]
   return cfg.BaseValue
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetShipMaxValueByID = function(self, shipID)
-  -- function num : 0_13 , upvalues : _ENV
+function UIS4TradeData:GetShipMaxValueByID(shipID)
   local comp = self:GetBusinessComp()
   if not comp then
-    return 
+    return
   end
   local componentId = comp:GetComponentCfgId()
-  local cfg = ((Cfg.cfg_component_business_ship)({ComponentID = componentId, ShipID = shipID}))[1]
+  local cfg = Cfg.cfg_component_business_ship({ComponentID = componentId, ShipID = shipID})[1]
   return cfg.MaxValue
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetShipLoadValueByID = function(self, harbourID)
-  -- function num : 0_14 , upvalues : _ENV
+function UIS4TradeData:GetShipLoadValueByID(harbourID)
   local comp = self:GetBusinessComp()
   if not comp then
-    return 
+    return
   end
   local componentId = comp:GetComponentCfgId()
-  local harborCfg = ((Cfg.cfg_component_business_harbor)({ComponentID = componentId, HarborID = harbourID}))[1]
-  local shipCfg = ((Cfg.cfg_component_business_ship)({ComponentID = componentId, ShipID = harbourID}))[1]
+  local harborCfg = Cfg.cfg_component_business_harbor({ComponentID = componentId, HarborID = harbourID})[1]
+  local shipCfg = Cfg.cfg_component_business_ship({ComponentID = componentId, ShipID = harbourID})[1]
   local commandValue, sailValue, fixValue, UnloadSpeed, Boatload = comp:GetNeedPro(harbourID, harborCfg.MaxLv, shipCfg.MaxLv)
   return UnloadSpeed, Boatload
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetShipNeedValueByID = function(self, shipID)
-  -- function num : 0_15
+function UIS4TradeData:GetShipNeedValueByID(shipID)
   local compInfo = self:GetBusinessCompInfo()
   local comp = self:GetBusinessComp()
   if not compInfo then
-    return 
+    return
   end
-  local shipLevel = ((compInfo.shipInfo)[shipID]).lv
+  local shipLevel = compInfo.shipInfo[shipID].lv
   local commandValue, sailValue, fixValue = comp:GetNeedPro(shipID)
-  return {commandValue, sailValue, fixValue}
+  return {
+    commandValue,
+    sailValue,
+    fixValue
+  }
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetShipCurValueByID = function(self, shipID)
-  -- function num : 0_16
+function UIS4TradeData:GetShipCurValueByID(shipID)
   local compInfo = self:GetBusinessCompInfo()
   local comp = self:GetBusinessComp()
   if not compInfo then
-    return 
+    return
   end
   local boatloadValue, commandValue, sailValue, fixValue, incomeRate, income, cdValue = comp:GetFinalPro(shipID)
-  return {commandValue, sailValue, fixValue}
+  return {
+    commandValue,
+    sailValue,
+    fixValue
+  }
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetShipProfitAndTimeByID = function(self, shipID)
-  -- function num : 0_17
+function UIS4TradeData:GetShipProfitAndTimeByID(shipID)
   local compInfo = self:GetBusinessCompInfo()
   local comp = self:GetBusinessComp()
   if not compInfo then
-    return 
+    return
   end
   local boatloadValue, commandValue, sailValue, fixValue, incomeRate, income, cdValue = comp:GetFinalPro(shipID)
-  return {boatloadValue, incomeRate, income, cdValue}
+  return {
+    boatloadValue,
+    incomeRate,
+    income,
+    cdValue
+  }
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetShipNextValueByID = function(self, shipID)
-  -- function num : 0_18 , upvalues : _ENV
+function UIS4TradeData:GetShipNextValueByID(shipID)
   local compInfo = self:GetBusinessCompInfo()
   local comp = self:GetBusinessComp()
   if not compInfo then
-    return 
+    return
   end
   local componentId = comp:GetComponentCfgId()
-  local shipLevel = ((compInfo.shipInfo)[shipID]).lv
-  local shipCfg = ((Cfg.cfg_component_business_ship)({ComponentID = componentId, ShipID = shipID}))[1]
-  if shipLevel ~= shipCfg.MaxLv or not shipCfg.MaxLv then
-    local nextShipLevel = shipLevel + 1
-  end
+  local shipLevel = compInfo.shipInfo[shipID].lv
+  local shipCfg = Cfg.cfg_component_business_ship({ComponentID = componentId, ShipID = shipID})[1]
+  local nextShipLevel = shipLevel == shipCfg.MaxLv and shipCfg.MaxLv or shipLevel + 1
   local boatloadValue, commandValue, sailValue, fixValue, incomeRate, income, cdValue = comp:GetFinalPro(shipID, nil, nil, nil, nil, nil, nextShipLevel)
-  return {commandValue, sailValue, fixValue}
+  return {
+    commandValue,
+    sailValue,
+    fixValue
+  }
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetShipNextNeedValueByID = function(self, shipID)
-  -- function num : 0_19 , upvalues : _ENV
+function UIS4TradeData:GetShipNextNeedValueByID(shipID)
   local compInfo = self:GetBusinessCompInfo()
   local comp = self:GetBusinessComp()
   if not compInfo then
-    return 
+    return
   end
   local componentId = comp:GetComponentCfgId()
-  local shipLevel = ((compInfo.shipInfo)[shipID]).lv
-  local shipCfg = ((Cfg.cfg_component_business_ship)({ComponentID = componentId, ShipID = shipID}))[1]
-  if shipLevel ~= shipCfg.MaxLv or not shipCfg.MaxLv then
-    local nextShipLevel = shipLevel + 1
-  end
+  local shipLevel = compInfo.shipInfo[shipID].lv
+  local shipCfg = Cfg.cfg_component_business_ship({ComponentID = componentId, ShipID = shipID})[1]
+  local nextShipLevel = shipLevel == shipCfg.MaxLv and shipCfg.MaxLv or shipLevel + 1
   local commandValue, sailValue, fixValue, unloadSpeed, boatloadValue = comp:GetNeedPro(shipID, nil, nextShipLevel)
-  return {commandValue, sailValue, fixValue}
+  return {
+    commandValue,
+    sailValue,
+    fixValue
+  }
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetShipOptionValue = function(self, shipID, optionValue)
-  -- function num : 0_20
+function UIS4TradeData:GetShipOptionValue(shipID, optionValue)
   local comp = self:GetBusinessComp()
   local boatloadValue, commandValue, sailValue, fixValue, incomeRate, income, cdValue = comp:GetFinalPro(shipID, optionValue[1], optionValue[2], optionValue[3], optionValue[4])
-  return {commandValue, sailValue, fixValue, boatloadValue}
+  return {
+    commandValue,
+    sailValue,
+    fixValue,
+    boatloadValue
+  }
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetCrewsByHarbourID = function(self, harbourID)
-  -- function num : 0_21 , upvalues : _ENV
+function UIS4TradeData:GetCrewsByHarbourID(harbourID)
   local crews = {}
   local compInfo = self:GetBusinessCompInfo()
   if not compInfo then
-    return 
+    return
   end
-  for id,info in pairs(compInfo.seamanInfo) do
+  for id, info in pairs(compInfo.seamanInfo) do
     if info.work_id == harbourID then
-      (table.insert)(crews, id)
+      table.insert(crews, id)
     end
   end
   return crews
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetLockHarbourIDByCrewID = function(self, crewID)
-  -- function num : 0_22 , upvalues : _ENV
+function UIS4TradeData:GetLockHarbourIDByCrewID(crewID)
   local comp = self:GetBusinessComp()
   local componentId = comp:GetComponentCfgId()
   local compInfo = self:GetBusinessCompInfo()
   if not compInfo then
-    return 
+    return
   end
   local harbourID = 1
-  local cfgs = (Cfg.cfg_component_business_harbor)({ComponentID = componentId})
-  for _,cfg in pairs(cfgs) do
-    if (table.icontains)(cfg.SeamanPool, crewID) then
+  local cfgs = Cfg.cfg_component_business_harbor({ComponentID = componentId})
+  for _, cfg in pairs(cfgs) do
+    if table.icontains(cfg.SeamanPool, crewID) then
       harbourID = cfg.ID
       break
     end
   end
-  do
-    return harbourID
-  end
+  return harbourID
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetAllBuyCrews = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIS4TradeData:GetAllBuyCrews()
   local compInfo = self:GetBusinessCompInfo()
   if not compInfo then
-    return 
+    return
   end
   local crews = {}
-  for id,info in pairs(compInfo.seamanInfo) do
-    (table.insert)(crews, id)
+  for id, info in pairs(compInfo.seamanInfo) do
+    table.insert(crews, id)
   end
   crews = self:SortCrew(crews)
   return crews
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetAllNoBuyCrews = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIS4TradeData:GetAllNoBuyCrews()
   local comp = self:GetBusinessComp()
   local componentId = comp:GetComponentCfgId()
   local compInfo = self:GetBusinessCompInfo()
   if not compInfo then
-    return 
+    return
   end
   local crews = self:GetAllBuyCrews()
   local noBuyCrews = {}
   local shipInfo = compInfo.shipInfo
-  for i,info in pairs(shipInfo) do
+  for i, info in pairs(shipInfo) do
     local harborLv, shipLv = self:GetHarborShipLV(i)
-    local ship = ((Cfg.cfg_component_business_harbor)({ComponentID = componentId, HarborID = i, Lv = harborLv}))[1]
-    for _,seamanID in pairs(ship.SeamanPool) do
-      if not (table.icontains)(noBuyCrews, seamanID) and not (table.icontains)(crews, seamanID) then
-        (table.insert)(noBuyCrews, seamanID)
+    local ship = Cfg.cfg_component_business_harbor({
+      ComponentID = componentId,
+      HarborID = i,
+      Lv = harborLv
+    })[1]
+    for _, seamanID in pairs(ship.SeamanPool) do
+      if not table.icontains(noBuyCrews, seamanID) and not table.icontains(crews, seamanID) then
+        table.insert(noBuyCrews, seamanID)
       end
     end
   end
@@ -363,144 +306,116 @@ UIS4TradeData.GetAllNoBuyCrews = function(self)
   return noBuyCrews
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetAllBuyCrewsExceptID = function(self, harbourID)
-  -- function num : 0_25 , upvalues : _ENV
+function UIS4TradeData:GetAllBuyCrewsExceptID(harbourID)
   local occupyCrews = self:GetCrewsByHarbourID(harbourID)
   local allBuyCrews = self:GetAllBuyCrews()
   local showCrews, noUsingCrews = {}, {}
-  for _,v in pairs(allBuyCrews) do
-    if not (table.icontains)(occupyCrews, v) then
+  for _, v in pairs(allBuyCrews) do
+    if not table.icontains(occupyCrews, v) then
       if self:GetCrewsUsingShipID(v) ~= 0 then
-        (table.insert)(showCrews, v)
+        table.insert(showCrews, v)
       else
-        ;
-        (table.insert)(noUsingCrews, v)
+        table.insert(noUsingCrews, v)
       end
     end
   end
   showCrews = self:SortCrew(showCrews)
   noUsingCrews = self:SortCrew(noUsingCrews)
-  for _,v in pairs(noUsingCrews) do
-    (table.insert)(showCrews, v)
+  for _, v in pairs(noUsingCrews) do
+    table.insert(showCrews, v)
   end
   return showCrews
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.SortCrew = function(self, crewIDTb)
-  -- function num : 0_26 , upvalues : _ENV
+function UIS4TradeData:SortCrew(crewIDTb)
   local resTb, cfgTb = {}, {}
-  for _,id in pairs(crewIDTb) do
-    local cfg = (Cfg.cfg_component_business_seaman)[id]
-    ;
-    (table.insert)(cfgTb, cfg)
+  for _, id in pairs(crewIDTb) do
+    local cfg = Cfg.cfg_component_business_seaman[id]
+    table.insert(cfgTb, cfg)
   end
-  ;
-  (table.sort)(cfgTb, function(a, b)
-    -- function num : 0_26_0 , upvalues : self
+  table.sort(cfgTb, function(a, b)
     local aShip = self:GetCrewsUsingShipID(a.ID)
     local bShip = self:GetCrewsUsingShipID(b.ID)
-    if aShip == bShip then
-      if b.SortID >= a.SortID then
-        do return aShip == 0 or bShip == 0 end
-        do return aShip < bShip end
-        if aShip == 0 then
-          do return aShip == 0 and bShip == 0 end
-          do return b.SortID < a.SortID end
-          -- DECOMPILER ERROR: 9 unprocessed JMP targets
-        end
+    if aShip ~= 0 and bShip ~= 0 then
+      if aShip == bShip then
+        return a.SortID > b.SortID
+      else
+        return aShip < bShip
       end
+    elseif aShip ~= 0 or bShip ~= 0 then
+      return aShip ~= 0
+    else
+      return a.SortID > b.SortID
     end
-  end
-)
-  for _,cfg in pairs(cfgTb) do
-    (table.insert)(resTb, cfg.ID)
+  end)
+  for _, cfg in pairs(cfgTb) do
+    table.insert(resTb, cfg.ID)
   end
   return resTb
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetCrewsUsingShipID = function(self, crewID)
-  -- function num : 0_27
+function UIS4TradeData:GetCrewsUsingShipID(crewID)
   local compInfo = self:GetBusinessCompInfo()
   if not compInfo then
-    return 
+    return
   end
   local crews = compInfo.seamanInfo
-  return crews[crewID] and (crews[crewID]).work_id or 0
+  return crews[crewID] and crews[crewID].work_id or 0
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.ChangeCrewWorkShip = function(self, TT, workID, crewID, isAdd)
-  -- function num : 0_28 , upvalues : _ENV
+function UIS4TradeData:ChangeCrewWorkShip(TT, workID, crewID, isAdd)
   local asyncRes = AsyncRequestRes:New()
   local comp = self:GetBusinessComp()
   local crews = self:GetCrewsByHarbourID(workID)
   if isAdd then
-    (table.insert)(crews, crewID)
+    table.insert(crews, crewID)
   else
-    ;
-    (table.removev)(crews, crewID)
+    table.removev(crews, crewID)
   end
   comp:HandleBusinessWorkSeamanReq(TT, asyncRes, workID, crews)
   return asyncRes
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.CheckShipIsFull = function(self, shipID)
-  -- function num : 0_29 , upvalues : _ENV
+function UIS4TradeData:CheckShipIsFull(shipID)
   local crews = self:GetCrewsByHarbourID(shipID)
-  do return (table.count)(crews) >= 3 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return table.count(crews) >= 3
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetNowSpeedAndLoad = function(self, Id)
-  -- function num : 0_30 , upvalues : _ENV
+function UIS4TradeData:GetNowSpeedAndLoad(Id)
   local HarborCfg = Cfg.cfg_component_business_harbor
   local harborLv, shipLv = self:GetHarborShipLV(Id)
-  local NowHarborCfg = (HarborCfg({HarborID = Id, Lv = harborLv}))[1]
+  local NowHarborCfg = HarborCfg({HarborID = Id, Lv = harborLv})[1]
   local NowSpeed = NowHarborCfg.UnloadSpeed
   local NowLoad = self:GetShipProfitAndTimeByID(Id)
   return NowSpeed, NowLoad[1]
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetLvUPHarborSpeed = function(self, Id)
-  -- function num : 0_31 , upvalues : _ENV
+function UIS4TradeData:GetLvUPHarborSpeed(Id)
   local HarborCfg = Cfg.cfg_component_business_harbor
   local harborLv, shipLv = self:GetHarborShipLV(Id)
-  local LvUPHarborCfg = (HarborCfg({HarborID = Id, Lv = harborLv + 1}))[1]
+  local LvUPHarborCfg = HarborCfg({
+    HarborID = Id,
+    Lv = harborLv + 1
+  })[1]
   local LvUPSpeed = LvUPHarborCfg.UnloadSpeed
   return LvUPSpeed
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetLvUPShipLoad = function(self, Id)
-  -- function num : 0_32 , upvalues : _ENV
+function UIS4TradeData:GetLvUPShipLoad(Id)
   local LvUPShipCfg = Cfg.cfg_component_business_ship
   local harborLv, shipLv = self:GetHarborShipLV(Id)
-  local LvUPShipCfg = (LvUPShipCfg({ShipID = Id, Lv = shipLv + 1}))[1]
+  local LvUPShipCfg = LvUPShipCfg({
+    ShipID = Id,
+    Lv = shipLv + 1
+  })[1]
   local LvUPLoad = LvUPShipCfg.Boatload
   return LvUPLoad
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetHarborShipLV = function(self, Id)
-  -- function num : 0_33 , upvalues : _ENV
+function UIS4TradeData:GetHarborShipLV(Id)
   local LvUPShipCfg = Cfg.cfg_component_business_ship
   local hinfo, sinfo = self:GetInfo(Id)
-  local harborLv, shipLv = nil, nil
+  local harborLv, shipLv
   if not hinfo then
     harborLv = 0
   else
@@ -514,11 +429,8 @@ UIS4TradeData.GetHarborShipLV = function(self, Id)
   return harborLv, shipLv
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetCoinCount = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIS4TradeData:GetCoinCount()
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local coinId = 3001018
   local talentPointId = 3001019
   local coinNum = itemModule:GetItemCount(coinId)
@@ -526,46 +438,35 @@ UIS4TradeData.GetCoinCount = function(self)
   return coinNum, talentPointNum
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetIncomeParams = function(self, harbor_id, boatloadValue, commandValue, sailValue, fixValue, harbor_lv, ship_lv)
-  -- function num : 0_35
+function UIS4TradeData:GetIncomeParams(harbor_id, boatloadValue, commandValue, sailValue, fixValue, harbor_lv, ship_lv)
   local comp = self:GetBusinessComp()
   local boatloadValue, commandValue, sailValue, fixValue, incomeRate, income, cdValue = comp:GetFinalPro(harbor_id, boatloadValue, commandValue, sailValue, fixValue, harbor_lv, ship_lv)
   return incomeRate, income, cdValue
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetHarborShipMaxLevelByID = function(self, harbourID)
-  -- function num : 0_36 , upvalues : _ENV
+function UIS4TradeData:GetHarborShipMaxLevelByID(harbourID)
   local comp = self:GetBusinessComp()
   if not comp then
-    return 
+    return
   end
   local componentId = comp:GetComponentCfgId()
-  local harborCfg = ((Cfg.cfg_component_business_harbor)({ComponentID = componentId, HarborID = harbourID}))[1]
-  local shipCfg = ((Cfg.cfg_component_business_ship)({ComponentID = componentId, ShipID = harbourID}))[1]
+  local harborCfg = Cfg.cfg_component_business_harbor({ComponentID = componentId, HarborID = harbourID})[1]
+  local shipCfg = Cfg.cfg_component_business_ship({ComponentID = componentId, ShipID = harbourID})[1]
   return harborCfg.MaxLv, shipCfg.MaxLv
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeData.GetHarborIDs = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function UIS4TradeData:GetHarborIDs()
   local comp = self:GetBusinessComp()
   if not comp then
-    return 
+    return
   end
   local componentId = comp:GetComponentCfgId()
   local harborIDs = {}
-  local harborCfg = (Cfg.cfg_component_business_harbor)({ComponentID = componentId})
-  for i,v in ipairs(harborCfg) do
-    if not (table.icontains)(harborIDs, v.HarborID) then
-      (table.insert)(harborIDs, v.HarborID)
+  local harborCfg = Cfg.cfg_component_business_harbor({ComponentID = componentId})
+  for i, v in ipairs(harborCfg) do
+    if not table.icontains(harborIDs, v.HarborID) then
+      table.insert(harborIDs, v.HarborID)
     end
   end
   return harborIDs
 end
-
-

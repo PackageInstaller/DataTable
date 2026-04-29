@@ -1,107 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n31/SecondAnniversary/ui_n31_second_anniversary_item_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN31SecondAnniversaryItemTips", UICustomWidget)
 UIN31SecondAnniversaryItemTips = UIN31SecondAnniversaryItemTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN31SecondAnniversaryItemTips.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
-  self._roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIN31SecondAnniversaryItemTips:Constructor()
+  self._itemModule = GameGlobal.GetModule(ItemModule)
+  self._roleModule = GameGlobal.GetModule(RoleModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31SecondAnniversaryItemTips.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN31SecondAnniversaryItemTips:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31SecondAnniversaryItemTips._GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN31SecondAnniversaryItemTips:_GetComponents()
   self._parentGo = self:GetGameObject("Parent")
   self._itemInfoGo = self:GetGameObject("ItemInfo")
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._count = self:GetUIComponent("UILocalizationText", "Count")
   self._content = self:GetUIComponent("UILocalizationText", "Content")
   self._uIItem = self:GetUIComponent("UISelectObjectPath", "UIItem")
-  self._uiItemWidget = (self._uIItem):SpawnObject("UIItemHomeland")
-  self.atc = (self:GetGameObject()):GetComponent(typeof(ATransitionComponent))
-  ;
-  (self._parentGo):SetActive(false)
+  self._uiItemWidget = self._uIItem:SpawnObject("UIItemHomeland")
+  self.atc = self:GetGameObject():GetComponent(typeof(ATransitionComponent))
+  self._parentGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31SecondAnniversaryItemTips.SetData = function(self, id, position)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[id]
+function UIN31SecondAnniversaryItemTips:SetData(id, position)
+  local cfg = Cfg.cfg_item[id]
   if not cfg then
-    return 
+    return
   end
-  ;
-  (self._name):SetText((StringTable.Get)(cfg.Name))
-  local count = (self._roleModule):GetAssetCount(id)
-  local str = (string.format)("<color=#d57f48>%s</color>", self:_FormatItemCount(count))
-  ;
-  (self._count):SetText((StringTable.Get)("str_item_public_owned") .. str)
-  ;
-  (self._content):SetText((StringTable.Get)(cfg.Intro))
+  self._name:SetText(StringTable.Get(cfg.Name))
+  local count = self._roleModule:GetAssetCount(id)
+  local str = string.format("<color=#d57f48>%s</color>", self:_FormatItemCount(count))
+  self._count:SetText(StringTable.Get("str_item_public_owned") .. str)
+  self._content:SetText(StringTable.Get(cfg.Intro))
   local roleAsset = {}
   roleAsset.assetid = id
-  ;
-  (self._uiItemWidget):Flush(roleAsset)
-  ;
-  (self._uiItemWidget):SetNotShowTips(true)
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  ((self._itemInfoGo).transform).position = position
-  -- DECOMPILER ERROR at PC68: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  ((self._itemInfoGo).transform).localPosition = Vector3((((self._itemInfoGo).transform).localPosition).x + 380, (((self._itemInfoGo).transform).localPosition).y + 130, 0)
-  ;
-  (self._parentGo):SetActive(true)
-  ;
-  (self.atc):PlayEnterAnimation(true)
+  self._uiItemWidget:Flush(roleAsset)
+  self._uiItemWidget:SetNotShowTips(true)
+  self._itemInfoGo.transform.position = position
+  self._itemInfoGo.transform.localPosition = Vector3(self._itemInfoGo.transform.localPosition.x + 380, self._itemInfoGo.transform.localPosition.y + 130, 0)
+  self._parentGo:SetActive(true)
+  self.atc:PlayEnterAnimation(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31SecondAnniversaryItemTips.CloseBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN31SecondAnniversaryItemTips:CloseBtnOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV
     local key = "UIN31SecondAnniversaryItemTipsClose"
     self:Lock(key)
-    ;
-    (self.atc):PlayLeaveAnimation(true)
+    self.atc:PlayLeaveAnimation(true)
     YIELD(TT, 233)
-    ;
-    (self._parentGo):SetActive(false)
+    self._parentGo:SetActive(false)
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31SecondAnniversaryItemTips.ForceHideObject = function(self)
-  -- function num : 0_5
-  (self._parentGo):SetActive(false)
+function UIN31SecondAnniversaryItemTips:ForceHideObject()
+  self._parentGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31SecondAnniversaryItemTips._FormatItemCount = function(self, itemCount)
-  -- function num : 0_6 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):FormatItemCount(itemCount)
+function UIN31SecondAnniversaryItemTips:_FormatItemCount(itemCount)
+  return HelperProxy:GetInstance():FormatItemCount(itemCount)
 end
-
-

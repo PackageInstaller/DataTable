@@ -1,38 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_convert_with_trap_record.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_ConvertWithTrapRecord", Object)
 SkillEffectCalc_ConvertWithTrapRecord = SkillEffectCalc_ConvertWithTrapRecord
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ConvertWithTrapRecord.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_ConvertWithTrapRecord:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ConvertWithTrapRecord.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+function SkillEffectCalc_ConvertWithTrapRecord:DoSkillEffectCalculator(skillEffectCalcParam)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   if not casterEntity then
-    return 
+    return
   end
   local trapCmpt = casterEntity:Trap()
   if not trapCmpt then
-    return 
+    return
   end
-  local pos = (casterEntity:GridLocation()).Position
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local pos = casterEntity:GridLocation().Position
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   if boardServiceLogic:IsPosBlock(pos, BlockFlag.ChangeElement) then
-    return 
+    return
   end
   local color = trapCmpt:GetRecordPieceType()
   local skillConvertEffectResult = SkillConvertGridElementEffectResult:New({pos}, color)
   skillConvertEffectResult:SetNotifyBuff(false)
   return skillConvertEffectResult
 end
-
-

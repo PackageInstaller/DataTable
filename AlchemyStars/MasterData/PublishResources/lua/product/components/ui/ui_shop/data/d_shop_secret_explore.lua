@@ -1,15 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/data/d_shop_secret_explore.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("d_shop_secret_store_base")
 _class("DShopSecretExplore", DShopSecretStoreBase)
 DShopSecretExplore = DShopSecretExplore
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DShopSecretExplore.Constructor = function(self)
-  -- function num : 0_0
+function DShopSecretExplore:Constructor()
 end
-
-

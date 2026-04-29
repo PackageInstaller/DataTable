@@ -1,32 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/luckland_end_score_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandEndScoreItem", UICustomWidget)
 UILuckLandEndScoreItem = UILuckLandEndScoreItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandEndScoreItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UILuckLandEndScoreItem:OnShow(uiParams)
   self:_InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEndScoreItem._InitWidget = function(self)
-  -- function num : 0_1
+function UILuckLandEndScoreItem:_InitWidget()
   self._desc = self:GetUIComponent("UILocalizationText", "Desc")
   self._num = self:GetUIComponent("UILocalizationText", "Num")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEndScoreItem.SetData = function(self, str, score)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._desc):SetText((StringTable.Get)(str))
-  ;
-  (self._num):SetText(score)
+function UILuckLandEndScoreItem:SetData(str, score)
+  self._desc:SetText(StringTable.Get(str))
+  self._num:SetText(score)
 end
-
-

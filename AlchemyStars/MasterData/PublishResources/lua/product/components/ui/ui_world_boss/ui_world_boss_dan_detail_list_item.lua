@@ -1,27 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/ui_world_boss_dan_detail_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorldBossDanDetailListItem", UICustomWidget)
 UIWorldBossDanDetailListItem = UIWorldBossDanDetailListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossDanDetailListItem.Constructor = function(self)
-  -- function num : 0_0
+function UIWorldBossDanDetailListItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailListItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIWorldBossDanDetailListItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailListItem.InitWidget = function(self)
-  -- function num : 0_2
+function UIWorldBossDanDetailListItem:InitWidget()
   self._danText = self:GetUIComponent("UILocalizationText", "DanText")
   self._danTextGo = self:GetGameObject("DanText")
   self._danText1 = self:GetUIComponent("UILocalizationText", "DanText1")
@@ -39,31 +26,19 @@ UIWorldBossDanDetailListItem.InitWidget = function(self)
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailListItem.SetIndex = function(self, itemIndex)
-  -- function num : 0_3
+function UIWorldBossDanDetailListItem:SetIndex(itemIndex)
   self._itemIndex = itemIndex
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailListItem.GetIndex = function(self)
-  -- function num : 0_4
+function UIWorldBossDanDetailListItem:GetIndex()
   return self._itemIndex
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailListItem.PlayAnimation = function(self, animName)
-  -- function num : 0_5
-  (self._animation):Play(animName)
+function UIWorldBossDanDetailListItem:PlayAnimation(animName)
+  self._animation:Play(animName)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailListItem.SetData = function(self, uiData, itemClickCallBack, spCondiTipsCallBack)
-  -- function num : 0_6
+function UIWorldBossDanDetailListItem:SetData(uiData, itemClickCallBack, spCondiTipsCallBack)
   self._bCurShowExtraText = false
   self._uiData = uiData
   self._itemClickCallBack = itemClickCallBack
@@ -71,148 +46,108 @@ UIWorldBossDanDetailListItem.SetData = function(self, uiData, itemClickCallBack,
   self:_RefreshUi()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailListItem._RefreshUi = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIWorldBossDanDetailListItem:_RefreshUi()
   self:DisposeCustomWidgets()
   self._danBadgeGen = self:GetUIComponent("UISelectObjectPath", "DanBadgeGen")
   self._danBadgeGenGo = self:GetGameObject("DanBadgeGen")
   self._spInfoImgGo = self:GetGameObject("SpInfoImg")
   self._danBadgeGenRect = self:GetUIComponent("RectTransform", "DanBadgeGen")
   self._rewardGen = self:GetUIComponent("UISelectObjectPath", "Content")
-  if (self._uiData):IsPlayerCurDanData() then
-    (self._selectFlagGo):SetActive(true)
+  if self._uiData:IsPlayerCurDanData() then
+    self._selectFlagGo:SetActive(true)
   else
-    ;
-    (self._selectFlagGo):SetActive(false)
+    self._selectFlagGo:SetActive(false)
   end
-  local nameStr = (self._uiData):GetDanName()
-  local bPlus = (self._uiData):IsPlusDan()
+  local nameStr = self._uiData:GetDanName()
+  local bPlus = self._uiData:IsPlusDan()
   if nameStr then
     if bPlus then
-      (self._danText1):SetText((StringTable.Get)(nameStr))
-      ;
-      (self._danTextGo):SetActive(false)
-      ;
-      (self._danText1Go):SetActive(true)
+      self._danText1:SetText(StringTable.Get(nameStr))
+      self._danTextGo:SetActive(false)
+      self._danText1Go:SetActive(true)
     else
-      ;
-      (self._danText):SetText((StringTable.Get)(nameStr))
-      ;
-      (self._danTextGo):SetActive(true)
-      ;
-      (self._danText1Go):SetActive(false)
+      self._danText:SetText(StringTable.Get(nameStr))
+      self._danTextGo:SetActive(true)
+      self._danText1Go:SetActive(false)
     end
   end
-  local condiStr = (self._uiData):GetDanCondition()
+  local condiStr = self._uiData:GetDanCondition()
   local bLegend = false
-  local cfgRank = (self._uiData):GetDanRankLevel()
-  if cfgRank > 0 then
+  local cfgRank = self._uiData:GetDanRankLevel()
+  if 0 < cfgRank then
     bLegend = true
   end
   if bLegend then
-    (self._normalConditionAreaGo):SetActive(false)
-    ;
-    (self._specialConditionAreaGo):SetActive(true)
-    ;
-    ((self._imgLegendInfo).gameObject):SetActive(true)
-    ;
-    (self._danExtraTextGo):SetActive(false)
-    local extraInfo = (self._uiData):GetDanExtraInfo()
+    self._normalConditionAreaGo:SetActive(false)
+    self._specialConditionAreaGo:SetActive(true)
+    self._imgLegendInfo.gameObject:SetActive(true)
+    self._danExtraTextGo:SetActive(false)
+    local extraInfo = self._uiData:GetDanExtraInfo()
     if extraInfo then
       self._spCondiExtraInfo = extraInfo
-      ;
-      (self._danExtraText):SetText(extraInfo)
-      ;
-      (self._spInfoImgGo):SetActive(true)
+      self._danExtraText:SetText(extraInfo)
+      self._spInfoImgGo:SetActive(true)
     else
-      ;
-      (self._spInfoImgGo):SetActive(false)
+      self._spInfoImgGo:SetActive(false)
     end
     if condiStr then
-      (self._specialDonditionText):SetText(condiStr)
+      self._specialDonditionText:SetText(condiStr)
     end
   else
-    do
-      ;
-      (self._normalConditionAreaGo):SetActive(true)
-      ;
-      (self._specialConditionAreaGo):SetActive(false)
-      ;
-      ((self._imgLegendInfo).gameObject):SetActive(false)
-      if condiStr then
-        (self._conditionText):SetText(condiStr)
-      end
-      local cfgRank = (self._uiData):GetDanRankLevel()
-      ;
-      (UIWorldBossHelper.InitDanBadge)(self._danBadgeGen, self._danBadgeGenGo, self._danBadgeGenRect, (self._uiData):GetDanId(), cfgRank)
-      local testShowBadge = false
-      local rewardDatas = (self._uiData):GetDanRewards()
-      if rewardDatas and #rewardDatas > 0 then
-        local totalCell = #rewardDatas
-        if testShowBadge then
-          totalCell = totalCell + 1
-        end
-        ;
-        (self._rewardGen):SpawnObjects("UIWorldBossDanRewardItem", totalCell)
-        local rewardCells = (self._rewardGen):GetAllSpawnList()
-        if rewardCells then
-          for index,value in ipairs(rewardCells) do
-            local bIsBadge = false
-            do
-              do
-                if testShowBadge and index == totalCell then
-                  local cfgRank = (self._uiData):GetDanRankLevel()
-                  if cfgRank > 0 then
-                    cfgRank = 1
-                  end
-                  value:SetData(nil, nil, (self._uiData):GetDanId(), cfgRank)
-                  bIsBadge = true
-                end
-                if not bIsBadge then
-                  value:SetData(rewardDatas[index], self._itemClickCallBack)
-                end
-                -- DECOMPILER ERROR at PC219: LeaveBlock: unexpected jumping out DO_STMT
-
-              end
-            end
+    self._normalConditionAreaGo:SetActive(true)
+    self._specialConditionAreaGo:SetActive(false)
+    self._imgLegendInfo.gameObject:SetActive(false)
+    if condiStr then
+      self._conditionText:SetText(condiStr)
+    end
+  end
+  local cfgRank = self._uiData:GetDanRankLevel()
+  UIWorldBossHelper.InitDanBadge(self._danBadgeGen, self._danBadgeGenGo, self._danBadgeGenRect, self._uiData:GetDanId(), cfgRank)
+  local testShowBadge = false
+  local rewardDatas = self._uiData:GetDanRewards()
+  if rewardDatas and 0 < #rewardDatas then
+    local totalCell = #rewardDatas
+    if testShowBadge then
+      totalCell = totalCell + 1
+    end
+    self._rewardGen:SpawnObjects("UIWorldBossDanRewardItem", totalCell)
+    local rewardCells = self._rewardGen:GetAllSpawnList()
+    if rewardCells then
+      for index, value in ipairs(rewardCells) do
+        local bIsBadge = false
+        if testShowBadge and index == totalCell then
+          local cfgRank = self._uiData:GetDanRankLevel()
+          if 0 < cfgRank then
+            cfgRank = 1
           end
+          value:SetData(nil, nil, self._uiData:GetDanId(), cfgRank)
+          bIsBadge = true
         end
-      end
-      do
-        if self._loadBadgeIcon ~= nil then
-          local danId = (self._uiData):GetDanId()
-          local rankLevel = cfgRank
-          if (UIWorldBossHelper.IsNoDan)(danId, rankLevel) then
-            ((self._loadBadgeIcon).gameObject):SetActive(false)
-          else
-            ;
-            ((self._loadBadgeIcon).gameObject):SetActive(true)
-            local badgeBase = (UIWorldBossHelper.GetDanBadgeBaseSimple)(danId, 0)
-            ;
-            (self._loadBadgeIcon):LoadImage(badgeBase)
-          end
+        if not bIsBadge then
+          value:SetData(rewardDatas[index], self._itemClickCallBack)
         end
       end
     end
   end
-end
-
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailListItem.SpInfoImgOnClick = function(self, go)
-  -- function num : 0_8
-  if self._spCondiTipsCallBack and self._spCondiExtraInfo then
-    (self._spCondiTipsCallBack)(go, self._spCondiExtraInfo)
+  if self._loadBadgeIcon ~= nil then
+    local danId = self._uiData:GetDanId()
+    local rankLevel = cfgRank
+    if UIWorldBossHelper.IsNoDan(danId, rankLevel) then
+      self._loadBadgeIcon.gameObject:SetActive(false)
+    else
+      self._loadBadgeIcon.gameObject:SetActive(true)
+      local badgeBase = UIWorldBossHelper.GetDanBadgeBaseSimple(danId, 0)
+      self._loadBadgeIcon:LoadImage(badgeBase)
+    end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailListItem.ImgLegendInfoOnClick = function(self, go)
-  -- function num : 0_9
-  self:ShowDialog("UIWorldBossLegendDan")
+function UIWorldBossDanDetailListItem:SpInfoImgOnClick(go)
+  if self._spCondiTipsCallBack and self._spCondiExtraInfo then
+    self._spCondiTipsCallBack(go, self._spCondiExtraInfo)
+  end
 end
 
-
+function UIWorldBossDanDetailListItem:ImgLegendInfoOnClick(go)
+  self:ShowDialog("UIWorldBossLegendDan")
+end

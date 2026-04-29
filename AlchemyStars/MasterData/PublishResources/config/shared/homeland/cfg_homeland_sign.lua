@@ -1,31 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/homeland/cfg_homeland_sign.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {ID = 1, Exp = 2}
 local config = {
-[0] = {0, 10}
-, 
-[300] = {300, 11}
-, 
-[600] = {600, 12}
-, 
-[1000] = {1000, 13}
-, 
-[1500] = {1500, 14}
-, 
-[2000] = {2000, 15}
-, 
-[3000] = {3000, 16}
-, 
-[4000] = {4000, 17}
-, 
-[5000] = {5000, 18}
-, 
-[7000] = {7000, 19}
-, 
-[10000] = {10000, 20}
+  [0] = {0, 10},
+  [300] = {300, 11},
+  [600] = {600, 12},
+  [1000] = {1000, 13},
+  [1500] = {1500, 14},
+  [2000] = {2000, 15},
+  [3000] = {3000, 16},
+  [4000] = {4000, 17},
+  [5000] = {5000, 18},
+  [7000] = {7000, 19},
+  [10000] = {10000, 20}
 }
 return config, "ID", key
-

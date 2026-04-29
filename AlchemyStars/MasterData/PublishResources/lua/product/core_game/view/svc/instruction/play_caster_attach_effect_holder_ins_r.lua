@@ -1,39 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_attach_effect_holder_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterAttachEffectHolderInstruction", BaseInstruction)
 PlayCasterAttachEffectHolderInstruction = PlayCasterAttachEffectHolderInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterAttachEffectHolderInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterAttachEffectHolderInstruction:Constructor(paramList)
   self._effHolderType = paramList.effHolderType
   self._effId = tonumber(paramList.effId)
   local strT = paramList.T
-  do
-    if strT then
-      local arr = (string.split)(strT, "|")
-      self._t = Vector3(tonumber(arr[1]), tonumber(arr[2]), tonumber(arr[3]))
-    end
-    local strS = paramList.S
-    do
-      if strS then
-        local arr = (string.split)(strS, "|")
-        self._s = Vector3(tonumber(arr[1]), tonumber(arr[2]), tonumber(arr[3]))
-      end
-      self._useCasterPos = paramList.useCasterPos
-      self._isShow = paramList.isShow or true
-    end
+  if strT then
+    local arr = string.split(strT, "|")
+    self._t = Vector3(tonumber(arr[1]), tonumber(arr[2]), tonumber(arr[3]))
   end
+  local strS = paramList.S
+  if strS then
+    local arr = string.split(strS, "|")
+    self._s = Vector3(tonumber(arr[1]), tonumber(arr[2]), tonumber(arr[3]))
+  end
+  self._useCasterPos = paramList.useCasterPos
+  self._isShow = paramList.isShow or true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterAttachEffectHolderInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterAttachEffectHolderInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
   local cEffectHolder = casterEntity:EffectHolder()
@@ -41,7 +27,7 @@ PlayCasterAttachEffectHolderInstruction.DoInstruction = function(self, TT, caste
     casterEntity:AddEffectHolder()
   end
   cEffectHolder = casterEntity:EffectHolder()
-  local effEntity = nil
+  local effEntity
   if not self._useCasterPos then
     effEntity = effectService:CreateEffect(self._effId, casterEntity)
   else
@@ -50,16 +36,14 @@ PlayCasterAttachEffectHolderInstruction.DoInstruction = function(self, TT, caste
   local effEntityId = effEntity:GetID()
   if self._effHolderType == "Idle" then
     cEffectHolder:AttachIdleEffect(effEntityId)
+  elseif self._effHolderType == "Permanent" then
+    cEffectHolder:AttachPermanentEffect(effEntityId)
   else
-    if self._effHolderType == "Permanent" then
-      cEffectHolder:AttachPermanentEffect(effEntityId)
-    else
-      cEffectHolder:AttachEffect(self._effHolderType, effEntityId)
-    end
+    cEffectHolder:AttachEffect(self._effHolderType, effEntityId)
   end
   YIELD(TT)
   local cView = effEntity:View()
-  local tran = (cView:GetGameObject()).transform
+  local tran = cView:GetGameObject().transform
   if self._t then
     tran.localPosition = self._t
   end
@@ -68,15 +52,13 @@ PlayCasterAttachEffectHolderInstruction.DoInstruction = function(self, TT, caste
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterAttachEffectHolderInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayCasterAttachEffectHolderInstruction:GetCacheResource()
   local t = {}
   if self._effId and self._effId > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effId]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effId].ResPath,
+      1
+    })
   end
   return t
 end
-
-

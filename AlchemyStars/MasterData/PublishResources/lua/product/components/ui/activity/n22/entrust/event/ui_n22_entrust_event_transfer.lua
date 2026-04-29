@@ -1,67 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/entrust/event/ui_n22_entrust_event_transfer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22EntrustEventTransfer", UIN22EntrustEventBase)
 UIN22EntrustEventTransfer = UIN22EntrustEventTransfer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22EntrustEventTransfer.Refresh = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN22EntrustEventTransfer:Refresh()
   self:_SetRoot(false)
   local cfg = self:GetCfgCampaignEntrustEvent()
-  local params = (cfg.Params)[1]
+  local params = cfg.Params[1]
   local desc = params.Desc
   self._targetId = cfg.TargetID
-  local pass = (self._component):IsEventPass(self._levelId, self._eventId)
+  local pass = self._component:IsEventPass(self._levelId, self._eventId)
   if pass then
     self:SetPlayer(self._targetId)
     self:CloseDialog()
-    return 
+    return
   end
   if not self._targetId then
     self:RequestEvent()
-    return 
+    return
   end
   self:_SetRoot(true)
-  self:_SetMainDesc((StringTable.Get)(desc))
-  local txtConfirm = (StringTable.Get)("str_n22_entrust_event_transfer_desc_confirm")
+  self:_SetMainDesc(StringTable.Get(desc))
+  local txtConfirm = StringTable.Get("str_n22_entrust_event_transfer_desc_confirm")
   self:_SetConfirmBtn(true, txtConfirm, function()
-    -- function num : 0_0_0 , upvalues : self
     self:RequestEvent()
-  end
-)
-  local txtExit = (StringTable.Get)("str_n22_entrust_event_exits_leave")
+  end)
+  local txtExit = StringTable.Get("str_n22_entrust_event_exits_leave")
   self:_SetExitBtn(txtExit, function()
-    -- function num : 0_0_1 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventTransfer.OnEventFinish = function(self, rewards)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.info)("UIN22EntrustEventTransfer:OnEventFinish()")
+function UIN22EntrustEventTransfer:OnEventFinish(rewards)
+  Log.info("UIN22EntrustEventTransfer:OnEventFinish()")
   if self._targetId then
     self:SetPlayer(self._targetId)
-    local targetPass = (self._component):IsEventPass(self._levelId, self._targetId)
+    local targetPass = self._component:IsEventPass(self._levelId, self._targetId)
     if not targetPass then
-      local targetType = (self._component):GetEventType(self._targetId)
+      local targetType = self._component:GetEventType(self._targetId)
       if targetType == EntrustEventType.EntrustEventType_Transfer then
         local targetCfg = self:GetCfgCampaignEntrustEvent(self._targetId)
         if not targetCfg.TargetID or targetCfg.TargetID == self._eventId then
           self:RequestEvent(self._targetId)
-          return 
+          return
         end
       end
     end
   end
-  do
-    self:CloseDialog()
-  end
+  self:CloseDialog()
 end
-
-

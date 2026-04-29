@@ -1,35 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/mission/stn_mission_check_match_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("Mission_CheckMatchResult", CTestRobot_Base)
 Mission_CheckMatchResult = Mission_CheckMatchResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Mission_CheckMatchResult.OnWorking = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function Mission_CheckMatchResult:OnWorking()
+  local runData = self.m_pManager:GetMissionRunData()
   local isVictory = runData:GetLastBattleResult()
   if isVictory then
-    (self.m_pManager):Log(self, "Victory! ")
+    self.m_pManager:Log(self, "Victory! ")
     self.m_nLogicResult = 0
   else
     local retryCount = runData:GetRetryCount()
     if retryCount < TestConst.MissionMaxRetry then
-      (self.m_pManager):Log(self, "Failed. Retrying sequence engaging. ")
+      self.m_pManager:Log(self, "Failed. Retrying sequence engaging. ")
       self.m_nLogicResult = 1
     else
-      ;
-      (self.m_pManager):Log(self, "Failed too many times. Skipped. ")
+      self.m_pManager:Log(self, "Failed too many times. Skipped. ")
       self.m_nLogicResult = 2
     end
   end
-  do
-    ;
-    ((Mission_CheckMatchResult.super).OnWorking)(self)
-  end
+  Mission_CheckMatchResult.super.OnWorking(self)
 end
-
-

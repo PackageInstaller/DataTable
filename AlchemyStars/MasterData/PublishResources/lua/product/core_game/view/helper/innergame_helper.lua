@@ -1,58 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/helper/innergame_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("InnerGameHelperRender", Singleton)
 InnerGameHelperRender = InnerGameHelperRender
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-InnerGameHelperRender.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._ElementIconAtlas = (ResourceManager:GetInstance()):SyncLoadAsset("InnerUI.spriteatlas", LoadType.SpriteAtlas)
-  self.atlasProperty = (ResourceManager:GetInstance()):SyncLoadAsset("Property.spriteatlas", LoadType.SpriteAtlas)
+function InnerGameHelperRender:Constructor()
+  self._ElementIconAtlas = ResourceManager:GetInstance():SyncLoadAsset("InnerUI.spriteatlas", LoadType.SpriteAtlas)
+  self.atlasProperty = ResourceManager:GetInstance():SyncLoadAsset("Property.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.Dispose = function(self)
-  -- function num : 0_1
+function InnerGameHelperRender:Dispose()
   if self._ElementIconAtlas then
-    (self._ElementIconAtlas):Dispose()
+    self._ElementIconAtlas:Dispose()
     self._ElementIconAtlas = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetLifeBarIconByElement = function(self, elementType)
-  -- function num : 0_2 , upvalues : _ENV
+function InnerGameHelperRender:GetLifeBarIconByElement(elementType)
   if not self.atlasProperty then
-    self.atlasProperty = (ResourceManager:GetInstance()):SyncLoadAsset("Property.spriteatlas", LoadType.SpriteAtlas)
+    self.atlasProperty = ResourceManager:GetInstance():SyncLoadAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   end
-  local iconName = (Cfg.cfg_pet_element)[elementType]
+  local iconName = Cfg.cfg_pet_element[elementType]
   if not iconName then
-    (Log.fatal)("GetConfigIconFailed ElementType:", elementType)
-    return 
+    Log.fatal("GetConfigIconFailed ElementType:", elementType)
+    return
   end
-  local sprite = ((self.atlasProperty).Obj):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(iconName.Icon .. "_battle"))
+  local sprite = self.atlasProperty.Obj:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(iconName.Icon .. "_battle"))
   return sprite
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetImageFromInnerUI = function(self, imageName)
-  -- function num : 0_3 , upvalues : _ENV
+function InnerGameHelperRender:GetImageFromInnerUI(imageName)
   if not self._ElementIconAtlas then
-    self._ElementIconAtlas = (ResourceManager:GetInstance()):SyncLoadAsset("InnerUI.spriteatlas", LoadType.SpriteAtlas)
+    self._ElementIconAtlas = ResourceManager:GetInstance():SyncLoadAsset("InnerUI.spriteatlas", LoadType.SpriteAtlas)
   end
-  return ((self._ElementIconAtlas).Obj):GetSprite(imageName)
+  return self._ElementIconAtlas.Obj:GetSprite(imageName)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetGameObject = function(self, entity)
-  -- function num : 0_4
+function InnerGameHelperRender:GetGameObject(entity)
   if entity == nil then
     return nil
   end
@@ -64,74 +45,61 @@ InnerGameHelperRender.GetGameObject = function(self, entity)
   return gameObj
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.SetHpSliderElementIcon = function(self, TT, entity, elementType)
-  -- function num : 0_5 , upvalues : _ENV
+function InnerGameHelperRender:SetHpSliderElementIcon(TT, entity, elementType)
   local gameObject = self:GetGameObject(entity)
   if not gameObject then
-    (Log.fatal)("SetHpSliderElementIcon Failed ElementType:", elementType)
+    Log.fatal("SetHpSliderElementIcon Failed ElementType:", elementType)
     return false
   end
   local uiView = gameObject:GetComponent("UIView")
   local elementIcon = uiView:GetUIComponent("Image", "imgElement")
   if elementIcon and elementType ~= 0 then
-    (elementIcon.gameObject):SetActive(true)
+    elementIcon.gameObject:SetActive(true)
     elementIcon.sprite = self:GetLifeBarIconByElement(elementType)
   else
-    ;
-    (elementIcon.gameObject):SetActive(false)
+    elementIcon.gameObject:SetActive(false)
   end
   local imgBG = uiView:GetUIComponent("Image", "imgBG")
   local eff_glow = uiView:GetGameObject("eff_glow")
-  ;
-  (imgBG.gameObject):SetActive(false)
+  imgBG.gameObject:SetActive(false)
   eff_glow:SetActive(false)
   return true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.IsUIBannerComplete = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  local uiBannerShow = ((GameGlobal.UIStateManager)()):IsShow("UIStoryBanner")
+function InnerGameHelperRender:IsUIBannerComplete(TT)
+  local uiBannerShow = GameGlobal.UIStateManager():IsShow("UIStoryBanner")
   while uiBannerShow == false do
-    uiBannerShow = ((GameGlobal.UIStateManager)()):IsShow("UIStoryBanner")
+    uiBannerShow = GameGlobal.UIStateManager():IsShow("UIStoryBanner")
     YIELD(TT)
-    if not (GameGlobal:GetInstance()):IsCoreGameRunning() then
-      return 
+    if not GameGlobal:GetInstance():IsCoreGameRunning() then
+      return
     end
   end
   while uiBannerShow == true do
-    uiBannerShow = ((GameGlobal.UIStateManager)()):IsShow("UIStoryBanner")
+    uiBannerShow = GameGlobal.UIStateManager():IsShow("UIStoryBanner")
     YIELD(TT)
-    if not (GameGlobal:GetInstance()):IsCoreGameRunning() then
-      return 
+    if not GameGlobal:GetInstance():IsCoreGameRunning() then
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.SetKeepAnimatorControllerStateOnDisable = function(self, casterEntity, bDisable)
-  -- function num : 0_7 , upvalues : _ENV
-  local gameObject = ((casterEntity:View()).ViewWrapper).GameObject
+function InnerGameHelperRender:SetKeepAnimatorControllerStateOnDisable(casterEntity, bDisable)
+  local gameObject = casterEntity:View().ViewWrapper.GameObject
   if not gameObject then
-    (Log.fatal)("[SetKeepAnimatorControllerStateOnDisable] gameObject is Nil")
-    return 
+    Log.fatal("[SetKeepAnimatorControllerStateOnDisable] gameObject is Nil")
+    return
   end
-  local rootGO = (gameObject.transform):Find("Root")
+  local rootGO = gameObject.transform:Find("Root")
   if not rootGO then
-    (Log.fatal)("[SetKeepAnimatorControllerStateOnDisable] rootGO is Nil")
-    return 
+    Log.fatal("[SetKeepAnimatorControllerStateOnDisable] rootGO is Nil")
+    return
   end
   local animator = rootGO:GetComponent("Animator")
+  animator = animator or gameObject:GetComponentInChildren(typeof(UnityEngine.Animator))
   if not animator then
-    animator = gameObject:GetComponentInChildren(typeof(UnityEngine.Animator))
-  end
-  if not animator then
-    (Log.fatal)("[SetKeepAnimatorControllerStateOnDisable] animator is Nil")
-    return 
+    Log.fatal("[SetKeepAnimatorControllerStateOnDisable] animator is Nil")
+    return
   end
   local bData = bDisable or true
   local nOldData = animator.keepAnimatorControllerStateOnDisable
@@ -139,27 +107,22 @@ InnerGameHelperRender.SetKeepAnimatorControllerStateOnDisable = function(self, c
   return nOldData
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.SetAnimatorControllerTrigger = function(self, entity, triggerTable, needUpdate)
-  -- function num : 0_8 , upvalues : _ENV
-  local gameObject = ((entity:View()).ViewWrapper).GameObject
+function InnerGameHelperRender:SetAnimatorControllerTrigger(entity, triggerTable, needUpdate)
+  local gameObject = entity:View().ViewWrapper.GameObject
   if not gameObject then
-    (Log.fatal)("[SetAnimatorControllerTrigger] gameObject is Nil")
-    return 
+    Log.fatal("[SetAnimatorControllerTrigger] gameObject is Nil")
+    return
   end
-  local rootGO = (gameObject.transform):Find("Root")
+  local rootGO = gameObject.transform:Find("Root")
   if not rootGO then
-    (Log.fatal)("[SetAnimatorControllerTrigger] rootGO is Nil")
-    return 
+    Log.fatal("[SetAnimatorControllerTrigger] rootGO is Nil")
+    return
   end
   local animator = rootGO:GetComponent("Animator")
+  animator = animator or gameObject:GetComponentInChildren(typeof(UnityEngine.Animator))
   if not animator then
-    animator = gameObject:GetComponentInChildren(typeof(UnityEngine.Animator))
-  end
-  if not animator then
-    (Log.fatal)("[SetAnimatorControllerTrigger] animator is Nil", (Log.traceback)())
-    return 
+    Log.fatal("[SetAnimatorControllerTrigger] animator is Nil", Log.traceback())
+    return
   end
   for i = 1, #triggerTable do
     animator:SetTrigger(triggerTable[i])
@@ -169,52 +132,41 @@ InnerGameHelperRender.SetAnimatorControllerTrigger = function(self, entity, trig
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.SetAnimatorControllerBool = function(self, entity, boolTable)
-  -- function num : 0_9 , upvalues : _ENV
-  local gameObject = ((entity:View()).ViewWrapper).GameObject
+function InnerGameHelperRender:SetAnimatorControllerBool(entity, boolTable)
+  local gameObject = entity:View().ViewWrapper.GameObject
   if not gameObject then
-    (Log.fatal)("[SetAnimatorControllerBool] gameObject is Nil")
-    return 
+    Log.fatal("[SetAnimatorControllerBool] gameObject is Nil")
+    return
   end
-  local rootGO = (gameObject.transform):Find("Root")
+  local rootGO = gameObject.transform:Find("Root")
   if not rootGO then
-    (Log.fatal)("[SetAnimatorControllerBool] rootGO is Nil")
-    return 
+    Log.fatal("[SetAnimatorControllerBool] rootGO is Nil")
+    return
   end
   local animator = rootGO:GetComponent("Animator")
+  animator = animator or gameObject:GetComponentInChildren(typeof(UnityEngine.Animator))
   if not animator then
-    animator = gameObject:GetComponentInChildren(typeof(UnityEngine.Animator))
+    Log.fatal("[SetAnimatorControllerBool] animator is Nil")
+    return
   end
-  if not animator then
-    (Log.fatal)("[SetAnimatorControllerBool] animator is Nil")
-    return 
-  end
-  for param,value in pairs(boolTable) do
-    animator:SetBool(R13_PC48, value)
+  for param, value in pairs(boolTable) do
+    animator:SetBool(param, value)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetMainWorld = function()
-  -- function num : 0_10 , upvalues : _ENV
+function InnerGameHelperRender.GetMainWorld()
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   return mainWorld
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetTrapCurRoundCanCastSkillCount = function(trapEntityID)
-  -- function num : 0_11 , upvalues : _ENV
-  local oneRoundLimit = (InnerGameHelperRender.GetTrapAttribute)(trapEntityID, "OneRoundLimit")
-  local castSkillRound = (InnerGameHelperRender.GetTrapAttribute)(trapEntityID, "CastSkillRound")
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.GetTrapCurRoundCanCastSkillCount(trapEntityID)
+  local oneRoundLimit = InnerGameHelperRender.GetTrapAttribute(trapEntityID, "OneRoundLimit")
+  local castSkillRound = InnerGameHelperRender.GetTrapAttribute(trapEntityID, "CastSkillRound")
+  local world = InnerGameHelperRender.GetMainWorld()
   local battleStatCmpt = world:BattleStat()
   local curRound = battleStatCmpt:GetLevelTotalRoundCount()
-  for _,round in ipairs(castSkillRound) do
+  for _, round in ipairs(castSkillRound) do
     if round == curRound then
       oneRoundLimit = oneRoundLimit - 1
     end
@@ -222,63 +174,45 @@ InnerGameHelperRender.GetTrapCurRoundCanCastSkillCount = function(trapEntityID)
   return oneRoundLimit
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetTrapAttribute = function(trapEntityID, attribute)
-  -- function num : 0_12 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.GetTrapAttribute(trapEntityID, attribute)
+  local world = InnerGameHelperRender.GetMainWorld()
   local e = world:GetEntityByID(trapEntityID)
   local attributesComponent = e:Attributes()
   return attributesComponent:GetAttribute(attribute)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetTrapCanCastSkill = function(trapEntityID)
-  -- function num : 0_13 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.GetTrapCanCastSkill(trapEntityID)
+  local world = InnerGameHelperRender.GetMainWorld()
   local trapLogic = world:GetService("TrapLogic")
   local e = world:GetEntityByID(trapEntityID)
   local ret = trapLogic:CanCastTrapSkill(e)
   return ret
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.CalcUIPos = function(trapEntityID)
-  -- function num : 0_14 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.CalcUIPos(trapEntityID)
+  local world = InnerGameHelperRender.GetMainWorld()
   local trapRender = world:GetService("TrapRender")
   local e = world:GetEntityByID(trapEntityID)
   local ret = trapRender:CalcUIPos(e)
   return ret
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetTrapActiveSkillList = function(trapEntityID)
-  -- function num : 0_15 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.GetTrapActiveSkillList(trapEntityID)
+  local world = InnerGameHelperRender.GetMainWorld()
   local trapLogic = world:GetService("TrapLogic")
   local e = world:GetEntityByID(trapEntityID)
   local ret = trapLogic:GetTrapActiveSkillList(e)
   return ret
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetTrapIsCastSkillByRound = function(trapEntityID)
-  -- function num : 0_16 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.GetTrapIsCastSkillByRound(trapEntityID)
+  local world = InnerGameHelperRender.GetMainWorld()
   local e = world:GetEntityByID(trapEntityID)
-  return (e:TrapRender()):GetTrapRender_IsCastSkillByRound()
+  return e:TrapRender():GetTrapRender_IsCastSkillByRound()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetUIBuffViewArray = function(entityID, onBlood)
-  -- function num : 0_17 , upvalues : _ENV
-  local world = (GameGlobal:GetInstance()):GetMainWorld()
+function InnerGameHelperRender.GetUIBuffViewArray(entityID, onBlood)
+  local world = GameGlobal:GetInstance():GetMainWorld()
   local entity = world:GetEntityByID(entityID)
   if not entity then
     return {}
@@ -292,233 +226,181 @@ InnerGameHelperRender.GetUIBuffViewArray = function(entityID, onBlood)
     return {}
   end
   local arr = {}
-  for _,buff in ipairs(buffViewArray) do
-    if buff and (buff:BuffConfigData()):GetBuffShowBuffIcon() then
-      (table.insert)(arr, buff)
+  for _, buff in ipairs(buffViewArray) do
+    if buff and buff:BuffConfigData():GetBuffShowBuffIcon() then
+      table.insert(arr, buff)
     end
   end
   return arr
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetBuffViewByPetPstID = function(petPstID)
-  -- function num : 0_18 , upvalues : _ENV
-  ((GameGlobal:GetInstance()):GetMainWorld())
-  local world = nil
-  local entity = nil
-  local group = world:GetGroup((world.BW_WEMatchers).PetPstID)
+function InnerGameHelperRender.GetBuffViewByPetPstID(petPstID)
+  local world = GameGlobal:GetInstance():GetMainWorld()
+  local entity
+  local group = world:GetGroup(world.BW_WEMatchers.PetPstID)
   local petEntities = group:GetEntities()
-  for i,e in ipairs(petEntities) do
+  for i, e in ipairs(petEntities) do
     local cPetPstID = e:PetPstID()
     if petPstID == cPetPstID:GetPstID() then
       entity = e
       break
     end
   end
-  do
-    if not entity then
-      return {}
-    end
-    local buffViewComponent = entity:BuffView()
-    if buffViewComponent == nil then
-      return {}
-    end
-    local buffViewArray = buffViewComponent:GetBuffViewInstanceArray()
-    return buffViewArray
-  end
-end
-
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetBuffValue = function(petPstID, key)
-  -- function num : 0_19 , upvalues : _ENV
-  local world = ((GameGlobal:GetInstance()):GetMainWorld())
-  -- DECOMPILER ERROR at PC5: Overwrote pending register: R3 in 'AssignReg'
-
-  local entity = .end
-  local group = world:GetGroup((world.BW_WEMatchers).PetPstID)
-  local petEntities = group:GetEntities()
-  for i,e in ipairs(petEntities) do
-    local cPetPstID = e:PetPstID()
-    if petPstID == cPetPstID:GetPstID() then
-      entity = e
-      break
-    end
-  end
-  do
-    if not entity then
-      return 
-    end
-    local buffViewComponent = entity:BuffView()
-    if buffViewComponent == nil then
-      return 
-    end
-    return buffViewComponent:GetBuffValue(key)
-  end
-end
-
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.IsEntityDead = function(entityID)
-  -- function num : 0_20 , upvalues : _ENV
-  local world = (GameGlobal:GetInstance()):GetMainWorld()
-  local entity = world:GetEntityByID(entityID)
-  do return entity and entity:HasDeadFlag() end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
-end
-
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetSingleBuffByBuffEffect = function(entityID, buffEffectType)
-  -- function num : 0_21 , upvalues : _ENV
-  local world = (GameGlobal:GetInstance()):GetMainWorld()
-  local entity = world:GetEntityByID(entityID)
   if not entity then
-    return 
+    return {}
   end
   local buffViewComponent = entity:BuffView()
   if buffViewComponent == nil then
-    return 
+    return {}
+  end
+  local buffViewArray = buffViewComponent:GetBuffViewInstanceArray()
+  return buffViewArray
+end
+
+function InnerGameHelperRender.GetBuffValue(petPstID, key)
+  local world = GameGlobal:GetInstance():GetMainWorld()
+  local entity
+  local group = world:GetGroup(world.BW_WEMatchers.PetPstID)
+  local petEntities = group:GetEntities()
+  for i, e in ipairs(petEntities) do
+    local cPetPstID = e:PetPstID()
+    if petPstID == cPetPstID:GetPstID() then
+      entity = e
+      break
+    end
+  end
+  if not entity then
+    return
+  end
+  local buffViewComponent = entity:BuffView()
+  if buffViewComponent == nil then
+    return
+  end
+  return buffViewComponent:GetBuffValue(key)
+end
+
+function InnerGameHelperRender.IsEntityDead(entityID)
+  local world = GameGlobal:GetInstance():GetMainWorld()
+  local entity = world:GetEntityByID(entityID)
+  return not entity or entity:HasDeadFlag()
+end
+
+function InnerGameHelperRender.GetSingleBuffByBuffEffect(entityID, buffEffectType)
+  local world = GameGlobal:GetInstance():GetMainWorld()
+  local entity = world:GetEntityByID(entityID)
+  if not entity then
+    return
+  end
+  local buffViewComponent = entity:BuffView()
+  if buffViewComponent == nil then
+    return
   end
   local buffViewInstance = buffViewComponent:GetSingleBuffByBuffEffect(buffEffectType)
   return buffViewInstance
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.RemoveBuffViewInstance = function(entityID, buffViewInstance)
-  -- function num : 0_22 , upvalues : _ENV
-  local world = (GameGlobal:GetInstance()):GetMainWorld()
+function InnerGameHelperRender.RemoveBuffViewInstance(entityID, buffViewInstance)
+  local world = GameGlobal:GetInstance():GetMainWorld()
   local entity = world:GetEntityByID(entityID)
   if not entity then
-    return 
+    return
   end
   if buffViewInstance then
     entity:RemoveBuffViewInstance(buffViewInstance)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GridPos2WorldPos = function(pos)
-  -- function num : 0_23 , upvalues : _ENV
+function InnerGameHelperRender.GridPos2WorldPos(pos)
   local basePos = Vector3(-4, 0, -3)
   local pieceHeight = 0
   local xOffset = pos.x - 1
   local zOffset = pos.y - 1
   local gridRenderPos = basePos + Vector3(xOffset, pieceHeight, zOffset)
-  local camera = (((GameGlobal:GetInstance()):GetMainWorld()):MainCamera()):Camera()
+  local camera = GameGlobal:GetInstance():GetMainWorld():MainCamera():Camera()
   local screenPos = camera:WorldToScreenPoint(gridRenderPos)
   return screenPos
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.WorldPos2ScreenPos = function(worldPos)
-  -- function num : 0_24 , upvalues : _ENV
-  local camera = (((GameGlobal:GetInstance()):GetMainWorld()):MainCamera()):Camera()
+function InnerGameHelperRender.WorldPos2ScreenPos(worldPos)
+  local camera = GameGlobal:GetInstance():GetMainWorld():MainCamera():Camera()
   local screenPos = camera:WorldToScreenPoint(worldPos)
   return screenPos
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.UICheckIsFifthPet = function(petPstID)
-  -- function num : 0_25 , upvalues : _ENV
-  local mainWorld = (GameGlobal:GetInstance()):GetMainWorld()
+function InnerGameHelperRender.UICheckIsFifthPet(petPstID)
+  local mainWorld = GameGlobal:GetInstance():GetMainWorld()
   local shareDataSvc = mainWorld:GetService("UtilData")
   return shareDataSvc:IsFifthPetInTeamOrder(petPstID)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.UICheckIsFourthPet = function(petPstID)
-  -- function num : 0_26 , upvalues : _ENV
-  local mainWorld = (GameGlobal:GetInstance()):GetMainWorld()
+function InnerGameHelperRender.UICheckIsFourthPet(petPstID)
+  local mainWorld = GameGlobal:GetInstance():GetMainWorld()
   local shareDataSvc = mainWorld:GetService("UtilData")
   return shareDataSvc:IsFourthPetInTeamOrder(petPstID)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.UICheckIsEndPet = function(petPstID)
-  -- function num : 0_27 , upvalues : _ENV
-  local mainWorld = (GameGlobal:GetInstance()):GetMainWorld()
+function InnerGameHelperRender.UICheckIsEndPet(petPstID)
+  local mainWorld = GameGlobal:GetInstance():GetMainWorld()
   local shareDataSvc = mainWorld:GetService("UtilData")
   return shareDataSvc:IsFourthOrEightPetInTeamOrder(petPstID)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.UISetUIPetAccumulateNum = function(petPstID, num)
-  -- function num : 0_28 , upvalues : _ENV
-  local mainWorld = (GameGlobal:GetInstance()):GetMainWorld()
+function InnerGameHelperRender.UISetUIPetAccumulateNum(petPstID, num)
+  local mainWorld = GameGlobal:GetInstance():GetMainWorld()
   local svc = mainWorld:GetService("AutoTest")
   if svc then
     svc:WriteBlackBoard_Test("UIPetAccNum_" .. petPstID, num)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.UISetUIPetPassiveSkillBuffLayerNum = function(petPstID, num)
-  -- function num : 0_29 , upvalues : _ENV
-  local mainWorld = (GameGlobal:GetInstance()):GetMainWorld()
+function InnerGameHelperRender.UISetUIPetPassiveSkillBuffLayerNum(petPstID, num)
+  local mainWorld = GameGlobal:GetInstance():GetMainWorld()
   local svc = mainWorld:GetService("AutoTest")
   if svc then
     svc:WriteBlackBoard_Test("UIPetBuffLayerNum_" .. petPstID, num)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.UISetHPBuffIcon = function(entityID, t)
-  -- function num : 0_30 , upvalues : _ENV
-  local mainWorld = (GameGlobal:GetInstance()):GetMainWorld()
+function InnerGameHelperRender.UISetHPBuffIcon(entityID, t)
+  local mainWorld = GameGlobal:GetInstance():GetMainWorld()
   local svc = mainWorld:GetService("AutoTest")
   if svc then
     svc:WriteBlackBoard_Test("UIHPBuff_" .. entityID, t)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.UISetHPLayerShieldCount = function(entityID, count)
-  -- function num : 0_31 , upvalues : _ENV
-  local mainWorld = (GameGlobal:GetInstance()):GetMainWorld()
+function InnerGameHelperRender.UISetHPLayerShieldCount(entityID, count)
+  local mainWorld = GameGlobal:GetInstance():GetMainWorld()
   local svc = mainWorld:GetService("AutoTest")
   if svc then
     svc:WriteBlackBoard_Test("UIHPLayerShieldCount_" .. entityID, count)
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender._FindLevelByEliteID = function()
-  -- function num : 0_32 , upvalues : _ENV
-  local eliteIDList = {100101, 100102, 100103, 100401}
-  local eliteMonsterIDList = (InnerGameHelperRender._FindEliteMonsterIDList)(eliteIDList)
-  local refreshMonsterIDList = (InnerGameHelperRender._FindRefreshMonsterIDList)(eliteMonsterIDList)
-  local refreshIDList = (InnerGameHelperRender._FindRefreshIDList)(refreshMonsterIDList)
-  local waveIDList = (InnerGameHelperRender._FindWaveIDList)(refreshIDList)
-  local levelIDList = (InnerGameHelperRender._FindLevelIDList)(waveIDList)
+function InnerGameHelperRender._FindLevelByEliteID()
+  local eliteIDList = {
+    100101,
+    100102,
+    100103,
+    100401
+  }
+  local eliteMonsterIDList = InnerGameHelperRender._FindEliteMonsterIDList(eliteIDList)
+  local refreshMonsterIDList = InnerGameHelperRender._FindRefreshMonsterIDList(eliteMonsterIDList)
+  local refreshIDList = InnerGameHelperRender._FindRefreshIDList(refreshMonsterIDList)
+  local waveIDList = InnerGameHelperRender._FindWaveIDList(refreshIDList)
+  local levelIDList = InnerGameHelperRender._FindLevelIDList(waveIDList)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender._FindEliteMonsterIDList = function(eliteIDList)
-  -- function num : 0_33 , upvalues : _ENV
+function InnerGameHelperRender._FindEliteMonsterIDList(eliteIDList)
   local eliteMonsterIDList = {}
-  local monsterList = (Cfg.cfg_monster)()
-  for _,monsterConfig in pairs(monsterList) do
+  local monsterList = Cfg.cfg_monster()
+  for _, monsterConfig in pairs(monsterList) do
     if monsterConfig.EliteID then
-      for _,eliteID in pairs(monsterConfig.EliteID) do
-        local contain = (table.icontains)(eliteIDList, eliteID)
+      for _, eliteID in pairs(monsterConfig.EliteID) do
+        local contain = table.icontains(eliteIDList, eliteID)
         if contain then
           eliteMonsterIDList[#eliteMonsterIDList + 1] = monsterConfig.ID
-          ;
-          (Log.fatal)("eliteID:", eliteID, " FindLevel_monsterID：", monsterConfig.ID)
+          Log.fatal("eliteID:", eliteID, " FindLevel_monsterID：", monsterConfig.ID)
         end
       end
     end
@@ -526,20 +408,16 @@ InnerGameHelperRender._FindEliteMonsterIDList = function(eliteIDList)
   return eliteMonsterIDList
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender._FindRefreshMonsterIDList = function(eliteMonsterIDList)
-  -- function num : 0_34 , upvalues : _ENV
+function InnerGameHelperRender._FindRefreshMonsterIDList(eliteMonsterIDList)
   local refreshMonsterIDList = {}
-  local refreshMonster = (Cfg.cfg_refresh_monster)()
-  for _,refreshMonsterConfig in pairs(refreshMonster) do
+  local refreshMonster = Cfg.cfg_refresh_monster()
+  for _, refreshMonsterConfig in pairs(refreshMonster) do
     if refreshMonsterConfig.MonsterIDList then
-      for _,monsterID in pairs(refreshMonsterConfig.MonsterIDList) do
-        local contain = (table.icontains)(eliteMonsterIDList, monsterID)
+      for _, monsterID in pairs(refreshMonsterConfig.MonsterIDList) do
+        local contain = table.icontains(eliteMonsterIDList, monsterID)
         if contain then
           refreshMonsterIDList[#refreshMonsterIDList + 1] = refreshMonsterConfig.ID
-          ;
-          (Log.fatal)("monsterID:", monsterID, " FindLevel_refreshMonsterID：", refreshMonsterConfig.ID)
+          Log.fatal("monsterID:", monsterID, " FindLevel_refreshMonsterID：", refreshMonsterConfig.ID)
         end
       end
     end
@@ -547,20 +425,16 @@ InnerGameHelperRender._FindRefreshMonsterIDList = function(eliteMonsterIDList)
   return refreshMonsterIDList
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender._FindRefreshIDList = function(refreshMonsterIDList)
-  -- function num : 0_35 , upvalues : _ENV
+function InnerGameHelperRender._FindRefreshIDList(refreshMonsterIDList)
   local refreshIDList = {}
-  local refresh = (Cfg.cfg_refresh)()
-  for _,refreshConfig in pairs(refresh) do
+  local refresh = Cfg.cfg_refresh()
+  for _, refreshConfig in pairs(refresh) do
     if refreshConfig.MonsterRefreshIDList then
-      for _,monsterRefreshID in pairs(refreshConfig.MonsterRefreshIDList) do
-        local contain = (table.icontains)(refreshMonsterIDList, monsterRefreshID)
+      for _, monsterRefreshID in pairs(refreshConfig.MonsterRefreshIDList) do
+        local contain = table.icontains(refreshMonsterIDList, monsterRefreshID)
         if contain then
           refreshIDList[#refreshIDList + 1] = refreshConfig.ID
-          ;
-          (Log.fatal)("monsterRefreshID:", monsterRefreshID, " FindLevel_refreshMonsterID：", refreshConfig.ID)
+          Log.fatal("monsterRefreshID:", monsterRefreshID, " FindLevel_refreshMonsterID：", refreshConfig.ID)
         end
       end
     end
@@ -568,26 +442,21 @@ InnerGameHelperRender._FindRefreshIDList = function(refreshMonsterIDList)
   return refreshIDList
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender._FindWaveIDList = function(refreshIDList)
-  -- function num : 0_36 , upvalues : _ENV
+function InnerGameHelperRender._FindWaveIDList(refreshIDList)
   local waveIDList = {}
-  local wave = (Cfg.cfg_monster_wave)()
-  for _,waveConfig in pairs(wave) do
-    local contain = (table.icontains)(refreshIDList, waveConfig.WaveBeginRefreshID)
+  local wave = Cfg.cfg_monster_wave()
+  for _, waveConfig in pairs(wave) do
+    local contain = table.icontains(refreshIDList, waveConfig.WaveBeginRefreshID)
     if contain then
       waveIDList[#waveIDList + 1] = waveConfig.ID
-      ;
-      (Log.fatal)("RefreshID:", waveConfig.WaveBeginRefreshID, " FindLevel_waveID：", waveConfig.ID)
+      Log.fatal("RefreshID:", waveConfig.WaveBeginRefreshID, " FindLevel_waveID：", waveConfig.ID)
     end
     if waveConfig.WaveInternalRefresh then
-      for _,refreshConfigList in pairs(waveConfig.WaveInternalRefresh) do
-        local contain = (table.icontains)(refreshIDList, refreshConfigList.refreshID)
+      for _, refreshConfigList in pairs(waveConfig.WaveInternalRefresh) do
+        local contain = table.icontains(refreshIDList, refreshConfigList.refreshID)
         if contain then
           waveIDList[#waveIDList + 1] = waveConfig.ID
-          ;
-          (Log.fatal)("refreshID:", refreshConfigList.refreshID, " FindLevel_refreshMonsterID：", waveConfig.ID)
+          Log.fatal("refreshID:", refreshConfigList.refreshID, " FindLevel_refreshMonsterID：", waveConfig.ID)
         end
       end
     end
@@ -595,36 +464,29 @@ InnerGameHelperRender._FindWaveIDList = function(refreshIDList)
   return waveIDList
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender._FindLevelIDList = function(waveIDList)
-  -- function num : 0_37 , upvalues : _ENV
+function InnerGameHelperRender._FindLevelIDList(waveIDList)
   local levelIDList = {}
   local levelDic = {}
-  local level = (Cfg.cfg_level)()
-  for _,levelConfig in pairs(level) do
+  local level = Cfg.cfg_level()
+  for _, levelConfig in pairs(level) do
     if levelConfig.MonsterWave then
-      for _,waveCfgID in pairs(levelConfig.MonsterWave) do
-        local contain = (table.icontains)(waveIDList, waveCfgID)
+      for _, waveCfgID in pairs(levelConfig.MonsterWave) do
+        local contain = table.icontains(waveIDList, waveCfgID)
         if contain then
           levelDic[levelConfig.ID] = true
         end
       end
     end
   end
-  for levelID,v in pairs(levelDic) do
+  for levelID, v in pairs(levelDic) do
     levelIDList[#levelIDList + 1] = levelID
-    ;
-    (Log.fatal)(" FindLevel_levelConfigID ", levelID)
+    Log.fatal(" FindLevel_levelConfigID ", levelID)
   end
   return levelIDList
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.IsTrapCovered = function(self, trapID, petPstId)
-  -- function num : 0_38 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender:IsTrapCovered(trapID, petPstId)
+  local world = InnerGameHelperRender.GetMainWorld()
   local trapServiceLogic = world:GetService("TrapLogic")
   if not trapServiceLogic then
     return false
@@ -633,353 +495,250 @@ InnerGameHelperRender.IsTrapCovered = function(self, trapID, petPstId)
   return isOverlap
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.IsDoneCompleteCondition = function(...)
-  -- function num : 0_39 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.IsDoneCompleteCondition(...)
+  local world = InnerGameHelperRender.GetMainWorld()
   local lsvcComplete = world:GetService("CompleteCondition")
   return lsvcComplete:IsDoneCompleteCondition(...)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.IsPetSilence = function(petPstID)
-  -- function num : 0_40 , upvalues : _ENV
-  local mainWorld = (GameGlobal:GetInstance()):GetMainWorld()
+function InnerGameHelperRender.IsPetSilence(petPstID)
+  local mainWorld = GameGlobal:GetInstance():GetMainWorld()
   local shareDataSvc = mainWorld:GetService("UtilData")
   return shareDataSvc:IsSilenceState(petPstID)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.IsPuzzleState = function()
-  -- function num : 0_41 , upvalues : _ENV
-  local mainWorld = (GameGlobal:GetInstance()):GetMainWorld()
+function InnerGameHelperRender.IsPuzzleState()
+  local mainWorld = GameGlobal:GetInstance():GetMainWorld()
   local shareDataSvc = mainWorld:GetService("UtilData")
   return shareDataSvc:IsPuzzleState()
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetEntityAttribute = function(entityID, attribute)
-  -- function num : 0_42 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.GetEntityAttribute(entityID, attribute)
+  local world = InnerGameHelperRender.GetMainWorld()
   local e = world:GetEntityByID(entityID)
   if not e then
-    return 
+    return
   end
   local attributesComponent = e:Attributes()
   return attributesComponent:GetAttribute(attribute)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.UICurrentTeamOrderRequestFinished = function()
-  -- function num : 0_43 , upvalues : _ENV
-  local renderStat = ((InnerGameHelperRender.GetMainWorld)()):RenderBattleStat()
+function InnerGameHelperRender.UICurrentTeamOrderRequestFinished()
+  local renderStat = InnerGameHelperRender.GetMainWorld():RenderBattleStat()
   renderStat:MarkCurrentTeamOrderRequestFinished()
-  local renderBattleService = ((GameGlobal:GetInstance()):GetMainWorld()):GetService("RenderBattle")
+  local renderBattleService = GameGlobal:GetInstance():GetMainWorld():GetService("RenderBattle")
   renderBattleService:TryPopNextChangeTeamOrderView()
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetLocalMatchPetByTemplateID = function(tid)
-  -- function num : 0_44 , upvalues : _ENV
-  local utilData = ((InnerGameHelperRender.GetMainWorld)()):GetService("UtilData")
+function InnerGameHelperRender.GetLocalMatchPetByTemplateID(tid)
+  local utilData = InnerGameHelperRender.GetMainWorld():GetService("UtilData")
   return utilData:GetLocalMatchPetByTemplateID(tid)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.IsTrapSummonCountLimit = function(trapEntityID)
-  -- function num : 0_45 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.IsTrapSummonCountLimit(trapEntityID)
+  local world = InnerGameHelperRender.GetMainWorld()
   local trapLogic = world:GetService("TrapLogic")
   local e = world:GetEntityByID(trapEntityID)
   local ret = trapLogic:IsSummonCountLimit(e)
   return ret
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetPopStarStageInfo = function()
-  -- function num : 0_46 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.GetPopStarStageInfo()
+  local world = InnerGameHelperRender.GetMainWorld()
   local popStarSvc = world:GetService("PopStarLogic")
   return popStarSvc:GetPopStarStageInfo()
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetPopStarCurScore = function()
-  -- function num : 0_47 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.GetPopStarCurScore()
+  local world = InnerGameHelperRender.GetMainWorld()
   local popStarSvc = world:GetService("PopStarLogic")
   return popStarSvc:GetPopGridNum()
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetPopStarStageBuffIDList = function()
-  -- function num : 0_48 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.GetPopStarStageBuffIDList()
+  local world = InnerGameHelperRender.GetMainWorld()
   local buffSvc = world:GetService("BuffLogic")
   return buffSvc:GetPopStarStageBuffIDList()
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetPopStarRankEffUIWorldPos = function()
-  -- function num : 0_49 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.GetPopStarRankEffUIWorldPos()
+  local world = InnerGameHelperRender.GetMainWorld()
   local pieceSvc = world:GetService("Piece")
   local pieceEntity = pieceSvc:FindPieceEntity(Vector2(5, 5))
-  local worldPos = (((pieceEntity:View()):GetGameObject()).transform).position
+  local worldPos = pieceEntity:View():GetGameObject().transform.position
   local popStarRSvc = world:GetService("PopStarRender")
   local ret = popStarRSvc:CalcUIWorldPos(worldPos + Vector3(0, 0.5, 0))
   return ret
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.UIGetCurGlobalUnscaledCoundDownTime = function()
-  -- function num : 0_50 , upvalues : _ENV
-  local mainWorld = (GameGlobal:GetInstance()):GetMainWorld()
-  do
-    if mainWorld then
-      local shareDataSvc = mainWorld:GetService("UtilData")
-      return shareDataSvc:GetCurGlobalUnscaledCoundDownTime()
-    end
-    return 0
+function InnerGameHelperRender.UIGetCurGlobalUnscaledCoundDownTime()
+  local mainWorld = GameGlobal:GetInstance():GetMainWorld()
+  if mainWorld then
+    local shareDataSvc = mainWorld:GetService("UtilData")
+    return shareDataSvc:GetCurGlobalUnscaledCoundDownTime()
   end
+  return 0
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetDamageStatisticsInfo = function()
-  -- function num : 0_51 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.GetDamageStatisticsInfo()
+  local world = InnerGameHelperRender.GetMainWorld()
   if not world then
-    return 
+    return
   end
   local battleDamageStatisticsServiceLogic = world:GetService("BattleDamageStatisticsLogic")
   local damageStatisticsInfo = battleDamageStatisticsServiceLogic:GetDamageStatisticsInfo()
   return damageStatisticsInfo
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetMonsterHPMaxStatistics = function()
-  -- function num : 0_52 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.GetMonsterHPMaxStatistics()
+  local world = InnerGameHelperRender.GetMainWorld()
   if not world then
-    return 
+    return
   end
   local battleDamageStatisticsServiceLogic = world:GetService("BattleDamageStatisticsLogic")
   local monsterHPMaxStatistics = battleDamageStatisticsServiceLogic:GetMonsterHPMaxStatistics()
   return monsterHPMaxStatistics
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetMonsterKilledCount = function()
-  -- function num : 0_53 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.GetMonsterKilledCount()
+  local world = InnerGameHelperRender.GetMainWorld()
   if not world then
-    return 
+    return
   end
   local battleStatCmpt = world:BattleStat()
   local monsterKilledCount = battleStatCmpt:GetMonsterKilledCount()
   return monsterKilledCount
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetMonsterKilledCountByMonsterID = function(monsterID)
-  -- function num : 0_54 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.GetMonsterKilledCountByMonsterID(monsterID)
+  local world = InnerGameHelperRender.GetMainWorld()
   if not world then
-    return 
+    return
   end
   local battleStatCmpt = world:BattleStat()
   local monsterKilledCount = battleStatCmpt:GetMonsterKilledCountByMonsterID(monsterID)
   return monsterKilledCount
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.SetGlobalOutLine = function(state)
-  -- function num : 0_55 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.SetGlobalOutLine(state)
+  local world = InnerGameHelperRender.GetMainWorld()
   if not world then
-    return 
+    return
   end
-  ;
-  (world:GetService("RenderBattle")):SetGlobalOutLine(state)
+  world:GetService("RenderBattle"):SetGlobalOutLine(state)
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.IsPetHasBeCastExtraChainFlag = function(petPstID)
-  -- function num : 0_56 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.IsPetHasBeCastExtraChainFlag(petPstID)
+  local world = InnerGameHelperRender.GetMainWorld()
   if not world then
-    return 
+    return
   end
-  return (world:GetService("UtilData")):IsHasExtraChainFlag(petPstID)
+  return world:GetService("UtilData"):IsHasExtraChainFlag(petPstID)
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.CanCastByExtraPower = function(skillConfigData)
-  -- function num : 0_57 , upvalues : _ENV
+function InnerGameHelperRender.CanCastByExtraPower(skillConfigData)
   local canCast = true
   if skillConfigData then
     local triggerExtraParam = skillConfigData:GetSkillTriggerExtraParam()
     if triggerExtraParam and triggerExtraParam[SkillTriggerTypeExtraParam.CostFeatureStepPoint] then
       local paramStepPoint = triggerExtraParam[SkillTriggerTypeExtraParam.CostFeatureStepPoint]
       if paramStepPoint then
-        local curStepPoint = (FeatureServiceHelper.GetCurStepPoint)()
+        local curStepPoint = FeatureServiceHelper.GetCurStepPoint()
+        if paramStepPoint <= curStepPoint then
+        else
+          canCast = false
+        end
       end
     end
   end
-  if paramStepPoint <= curStepPoint then
-    do
-      canCast = false
-      return canCast
-    end
-  end
+  return canCast
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetFeatureSkillCurPower = function(featureType)
-  -- function num : 0_58 , upvalues : _ENV
-  return (FeatureServiceHelper.GetFeatureSkillCurPower)(featureType)
+function InnerGameHelperRender.GetFeatureSkillCurPower(featureType)
+  return FeatureServiceHelper.GetFeatureSkillCurPower(featureType)
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetRelicCounter = function(relicID)
-  -- function num : 0_59 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.GetRelicCounter(relicID)
+  local world = InnerGameHelperRender.GetMainWorld()
   local popStarProSvc = world:GetService("PopStarProLogic")
   return popStarProSvc:GetRelicCounter(relicID)
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetLocalMatchPets = function()
-  -- function num : 0_60 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.GetLocalMatchPets()
+  local world = InnerGameHelperRender.GetMainWorld()
   if not world then
-    return 
+    return
   end
-  return (world:BattleWorldEnterData()):GetLocalMatchPets()
+  return world:BattleWorldEnterData():GetLocalMatchPets()
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetRemoteMatchPets = function()
-  -- function num : 0_61 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.GetRemoteMatchPets()
+  local world = InnerGameHelperRender.GetMainWorld()
   if not world then
-    return 
+    return
   end
-  return (world:BattleWorldEnterData()):GetRemoteMatchPets()
+  return world:BattleWorldEnterData():GetRemoteMatchPets()
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetFeatureAUActiveRelics = function()
-  -- function num : 0_62 , upvalues : _ENV
-  return (FeatureServiceHelper.GetFeatureAUActiveRelics)()
+function InnerGameHelperRender.GetFeatureAUActiveRelics()
+  return FeatureServiceHelper.GetFeatureAUActiveRelics()
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetFeatureAUOverloadEnergyInfo = function()
-  -- function num : 0_63 , upvalues : _ENV
-  return (FeatureServiceHelper.GetFeatureAUOverloadEnergyInfo)()
+function InnerGameHelperRender.GetFeatureAUOverloadEnergyInfo()
+  return FeatureServiceHelper.GetFeatureAUOverloadEnergyInfo()
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.InnerGamePlayPetVoid = function(audioID, casterEntity)
-  -- function num : 0_64 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.InnerGamePlayPetVoid(audioID, casterEntity)
+  local world = InnerGameHelperRender.GetMainWorld()
   if not world then
-    return 
+    return
   end
   if not casterEntity:HasPetPstID() then
-    return 
+    return
   end
   local buffLogicSvc = world:GetService("BuffLogic")
   local replaceVoiceID = buffLogicSvc:GetReplacePetVoiceID()
-  if not replaceVoiceID then
-    replaceVoiceID = audioID
-  end
-  ;
-  (AudioHelperController.PlayInnerGameVoiceByAudioId)(replaceVoiceID)
+  replaceVoiceID = replaceVoiceID or audioID
+  AudioHelperController.PlayInnerGameVoiceByAudioId(replaceVoiceID)
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.InnerGamePlayPetUIVoice = function(filed, petResId, notRand, bLoginVoice, voiceSkinID, click)
-  -- function num : 0_65 , upvalues : _ENV
-  local world = (InnerGameHelperRender.GetMainWorld)()
+function InnerGameHelperRender.InnerGamePlayPetUIVoice(filed, petResId, notRand, bLoginVoice, voiceSkinID, click)
+  local world = InnerGameHelperRender.GetMainWorld()
   if not world then
-    return 
+    return
   end
   local buffLogicSvc = world:GetService("BuffLogic")
   local replaceVoiceID = buffLogicSvc:GetReplacePetVoiceID()
-  local pm = (GameGlobal.GetModule)(PetAudioModule)
+  local pm = GameGlobal.GetModule(PetAudioModule)
   pm:PlayPetAudio(filed, petResId, notRand, bLoginVoice, voiceSkinID, click, replaceVoiceID)
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetCurAutoBeadPowerInfo = function()
-  -- function num : 0_66 , upvalues : _ENV
-  local mainWorld = (GameGlobal:GetInstance()):GetMainWorld()
+function InnerGameHelperRender.GetCurAutoBeadPowerInfo()
+  local mainWorld = GameGlobal:GetInstance():GetMainWorld()
   local shareDataSvc = mainWorld:GetService("UtilData")
   return shareDataSvc:GetCurAutoBeadPowerInfo()
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetAutoBeadList = function()
-  -- function num : 0_67 , upvalues : _ENV
-  local mainWorld = (GameGlobal:GetInstance()):GetMainWorld()
+function InnerGameHelperRender.GetAutoBeadList()
+  local mainWorld = GameGlobal:GetInstance():GetMainWorld()
   local shareDataSvc = mainWorld:GetService("UtilData")
   return shareDataSvc:GetAutoBeadList()
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetHPShieldType = function(entityID)
-  -- function num : 0_68 , upvalues : _ENV
-  local mainWorld = (GameGlobal:GetInstance()):GetMainWorld()
+function InnerGameHelperRender.GetHPShieldType(entityID)
+  local mainWorld = GameGlobal:GetInstance():GetMainWorld()
   if mainWorld then
     local buffSvc = mainWorld:GetService("BuffLogic")
     return buffSvc:GetEntityHPShieldType(entityID)
   end
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetFeatureTetrisInfo = function()
-  -- function num : 0_69 , upvalues : _ENV
-  return (FeatureServiceHelper.GetFeatureTetrisInfo)()
+function InnerGameHelperRender.GetFeatureTetrisInfo()
+  return FeatureServiceHelper.GetFeatureTetrisInfo()
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.GetFeatureAlchemyLevelMax = function()
-  -- function num : 0_70 , upvalues : _ENV
-  local mainWorld = (GameGlobal:GetInstance()):GetMainWorld()
+function InnerGameHelperRender.GetFeatureAlchemyLevelMax()
+  local mainWorld = GameGlobal:GetInstance():GetMainWorld()
   if mainWorld then
     local boardEntity = mainWorld:GetBoardEntity()
     local logicFeatureCmpt = boardEntity:LogicFeature()
@@ -988,13 +747,8 @@ InnerGameHelperRender.GetFeatureAlchemyLevelMax = function()
   end
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-InnerGameHelperRender.IsPet1702361ActiveSkillPreview = function()
-  -- function num : 0_71 , upvalues : _ENV
-  local mainWorld = (GameGlobal:GetInstance()):GetMainWorld()
+function InnerGameHelperRender.IsPet1702361ActiveSkillPreview()
+  local mainWorld = GameGlobal:GetInstance():GetMainWorld()
   local shareDataSvc = mainWorld:GetService("UtilData")
   return shareDataSvc:IsPet1702361ActiveSkillPreview()
 end
-
-

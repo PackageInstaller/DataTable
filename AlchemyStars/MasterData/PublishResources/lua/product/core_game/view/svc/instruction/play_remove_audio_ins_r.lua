@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_remove_audio_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayRemoveAudioInstruction", BaseInstruction)
 PlayRemoveAudioInstruction = PlayRemoveAudioInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayRemoveAudioInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayRemoveAudioInstruction:Constructor(paramList)
   self._audioID = tonumber(paramList.audioID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayRemoveAudioInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayRemoveAudioInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local effectCpmt = casterEntity:EffectHolder()
   local playingIDList = effectCpmt:GetAudioPlayingID(self._audioID)
-  for i,playingID in ipairs(playingIDList) do
-    (AudioHelperController.StopInnerGameSfx)(playingID, self._audioID)
+  for i, playingID in ipairs(playingIDList) do
+    AudioHelperController.StopInnerGameSfx(playingID, self._audioID)
   end
 end
-
-

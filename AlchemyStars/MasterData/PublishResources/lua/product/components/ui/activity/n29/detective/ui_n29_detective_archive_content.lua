@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/ui_n29_detective_archive_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN29DetectiveArchiveContent", UICustomWidget)
 UIN29DetectiveArchiveContent = UIN29DetectiveArchiveContent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN29DetectiveArchiveContent.Constructor = function(self)
-  -- function num : 0_0
+function UIN29DetectiveArchiveContent:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveArchiveContent.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN29DetectiveArchiveContent:OnShow(uiParams)
   self._uiEmpty = self:GetUIComponent("RectTransform", "uiEmpty")
   self._uiArchive = self:GetUIComponent("RectTransform", "uiArchive")
   self._txtProgress = self:GetUIComponent("UILocalizationText", "txtProgress")
@@ -23,140 +13,93 @@ UIN29DetectiveArchiveContent.OnShow = function(self, uiParams)
   self._btnLoading = self:GetUIComponent("RectTransform", "btnLoading")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveArchiveContent.OnHide = function(self)
-  -- function num : 0_2
+function UIN29DetectiveArchiveContent:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveArchiveContent.BtnLoadingOnClick = function(self, go)
-  -- function num : 0_3
-  (self:RootUIOwner()):BtnLoadingOnClick(go)
+function UIN29DetectiveArchiveContent:BtnLoadingOnClick(go)
+  self:RootUIOwner():BtnLoadingOnClick(go)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveArchiveContent.SetDetectiveLocalDb = function(self, localDb)
-  -- function num : 0_4
+function UIN29DetectiveArchiveContent:SetDetectiveLocalDb(localDb)
   self._localDb = localDb
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveArchiveContent.SetIdReasoning = function(self, idReasoning)
-  -- function num : 0_5
+function UIN29DetectiveArchiveContent:SetIdReasoning(idReasoning)
   self._idReasoning = idReasoning
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveArchiveContent.FlushBreak = function(self, breakInfo)
-  -- function num : 0_6
-  ((self._uiEmpty).gameObject):SetActive(false)
-  ;
-  ((self._uiArchive).gameObject):SetActive(true)
-  ;
-  ((self._btnLoading).gameObject):SetActive(false)
+function UIN29DetectiveArchiveContent:FlushBreak(breakInfo)
+  self._uiEmpty.gameObject:SetActive(false)
+  self._uiArchive.gameObject:SetActive(true)
+  self._btnLoading.gameObject:SetActive(false)
   self:UITime(breakInfo.cur_time)
   self:UIProgress(breakInfo.clue_list, breakInfo.fragment_list)
   self:UIPosition(self._idReasoning)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveArchiveContent.FlushArchive = function(self, archiveInfo)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN29DetectiveArchiveContent:FlushArchive(archiveInfo)
   local existRecord = archiveInfo.is_record
-  ;
-  ((self._uiEmpty).gameObject):SetActive(not existRecord)
-  ;
-  ((self._uiArchive).gameObject):SetActive(existRecord)
-  ;
-  ((self._btnLoading).gameObject):SetActive(true)
+  self._uiEmpty.gameObject:SetActive(not existRecord)
+  self._uiArchive.gameObject:SetActive(existRecord)
+  self._btnLoading.gameObject:SetActive(true)
   if existRecord then
-    local dicClue, dicFragment = (self._localDb):AllClueAndFragment()
+    local dicClue, dicFragment = self._localDb:AllClueAndFragment()
     self:UITime(archiveInfo.auto_save_record_time)
     self:UIProgress(dicClue, dicFragment)
     self:UIPosition(UIN29DetectiveLocalDb.Game_Continue_Reasoning)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveArchiveContent.UITime = function(self, timeValue)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN29DetectiveArchiveContent:UITime(timeValue)
   if timeValue == nil or timeValue <= 0 then
-    timeValue = (os.time)()
+    timeValue = os.time()
   end
   local timeTextValue = TimeToDate3(timeValue, "min")
-  ;
-  (self._txtTime):SetText(timeTextValue)
+  self._txtTime:SetText(timeTextValue)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveArchiveContent.UIProgress = function(self, clue_list, fragment_list)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN29DetectiveArchiveContent:UIProgress(clue_list, fragment_list)
   local countClue = 0
   local countFragment = 0
   if clue_list ~= nil then
-    for k,v in pairs(clue_list) do
+    for k, v in pairs(clue_list) do
       countClue = countClue + 1
     end
   end
-  do
-    if fragment_list ~= nil then
-      for k,v in pairs(fragment_list) do
-        countFragment = countFragment + 1
-      end
-    end
-    do
-      local totalClue = 1
-      local totalFragment = 1
-      local allClue, allFragment = (self._localDb):AllClueAndFragment()
-      if allClue ~= nil then
-        totalClue = 0
-        for k,v in pairs(allClue) do
-          totalClue = totalClue + 1
-        end
-      end
-      do
-        if allFragment ~= nil then
-          totalFragment = 0
-          for k,v in pairs(allFragment) do
-            totalFragment = totalFragment + 1
-          end
-        end
-        do
-          local numberProgress = (math.floor)((countClue) * 100 / (totalClue))
-          local txtPercent = (string.format)("%d%%%%", numberProgress)
-          local valueProgress = (StringTable.Get)("str_n29_detective_archive_progress", txtPercent)
-          ;
-          (self._txtProgress):SetText(valueProgress)
-        end
-      end
+  if fragment_list ~= nil then
+    for k, v in pairs(fragment_list) do
+      countFragment = countFragment + 1
     end
   end
+  local totalClue = 1
+  local totalFragment = 1
+  local allClue, allFragment = self._localDb:AllClueAndFragment()
+  if allClue ~= nil then
+    totalClue = 0
+    for k, v in pairs(allClue) do
+      totalClue = totalClue + 1
+    end
+  end
+  if allFragment ~= nil then
+    totalFragment = 0
+    for k, v in pairs(allFragment) do
+      totalFragment = totalFragment + 1
+    end
+  end
+  local numberProgress = math.floor(countClue * 100 / totalClue)
+  local txtPercent = string.format("%d%%%%", numberProgress)
+  local valueProgress = StringTable.Get("str_n29_detective_archive_progress", txtPercent)
+  self._txtProgress:SetText(valueProgress)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveArchiveContent.UIPosition = function(self, idReasoning)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN29DetectiveArchiveContent:UIPosition(idReasoning)
   local id = 0
   if idReasoning == UIN29DetectiveLocalDb.Game_Continue_Reasoning then
     id = "str_n29_detective_archive_reasoning"
+  elseif idReasoning == UIN29DetectiveLocalDb.Game_Continue_ReasoningPlot then
+    id = "str_n29_detective_archive_reasoning"
   else
-    if idReasoning == UIN29DetectiveLocalDb.Game_Continue_ReasoningPlot then
-      id = "str_n29_detective_archive_reasoning"
-    else
-      id = "str_n29_detective_archive_continue"
-    end
+    id = "str_n29_detective_archive_continue"
   end
-  ;
-  (self._txtPosition):SetText((StringTable.Get)(id))
+  self._txtPosition:SetText(StringTable.Get(id))
 end
-
-

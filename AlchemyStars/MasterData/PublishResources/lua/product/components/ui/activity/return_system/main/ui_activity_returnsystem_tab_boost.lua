@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/main/ui_activity_returnsystem_tab_boost.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReturnSystemTabBoost", UICustomWidget)
 UIActivityReturnSystemTabBoost = UIActivityReturnSystemTabBoost
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReturnSystemTabBoost.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityReturnSystemTabBoost:OnShow(uiParams)
   self.txtDropTimes = self:GetUIComponent("UILocalizationText", "txtDropTimes")
   self.btnFight = self:GetGameObject("btnFight")
   self.txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
@@ -16,113 +9,83 @@ UIActivityReturnSystemTabBoost.OnShow = function(self, uiParams)
   self.tripleDurationGo = self:GetGameObject("tripleDurationGo")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabBoost.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityReturnSystemTabBoost:OnHide()
   self:CancelTimerEventDropTimes()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabBoost.SetData = function(self, campaign, remainingTimeCallback, tipsCallback, isBoostIntro)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityReturnSystemTabBoost:SetData(campaign, remainingTimeCallback, tipsCallback, isBoostIntro)
   self._campaign = campaign
-  self._component = (UIActivityReturnSystemHelper.GetComponentByTabName)(self._campaign, "boost", 1)
+  self._component = UIActivityReturnSystemHelper.GetComponentByTabName(self._campaign, "boost", 1)
   self.remainingTimeCallback = remainingTimeCallback
   self:Flush()
   if isBoostIntro then
-    (self.btnFight):SetActive(false)
+    self.btnFight:SetActive(false)
   else
-    ;
-    (self._component):CloseTodayRedPoint()
+    self._component:CloseTodayRedPoint()
   end
   self:_RefreshTripleReward()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabBoost.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local curTimes, maxTimex = (self._component):GetBoostTimes()
+function UIActivityReturnSystemTabBoost:Flush()
+  local curTimes, maxTimex = self._component:GetBoostTimes()
   local leftTimes = maxTimex - curTimes
-  local str = (StringTable.Get)("str_return_system_extra_drop_times", leftTimes, maxTimex)
-  ;
-  (self.txtDropTimes):SetText(str)
-  local RegisterTimeEvent = function(seconds)
-    -- function num : 0_3_0 , upvalues : self, _ENV
+  local str = StringTable.Get("str_return_system_extra_drop_times", leftTimes, maxTimex)
+  self.txtDropTimes:SetText(str)
+  
+  local function RegisterTimeEvent(seconds)
     self:CancelTimerEventDropTimes()
-    self.te = ((GameGlobal.Timer)()):AddEvent(seconds * 1000, function()
-      -- function num : 0_3_0_0 , upvalues : self
+    self.te = GameGlobal.Timer():AddEvent(seconds * 1000, function()
       self:Flush()
-    end
-)
+    end)
   end
-
-  local resetTime = (self._component):GetNextTimestamp()
-  local leftSeconds = (UICommonHelper.CalcLeftSeconds)(resetTime)
+  
+  local resetTime = self._component:GetNextTimestamp()
+  local leftSeconds = UICommonHelper.CalcLeftSeconds(resetTime)
   RegisterTimeEvent(leftSeconds)
   if self.remainingTimeCallback then
-    (self.remainingTimeCallback)(resetTime)
+    self.remainingTimeCallback(resetTime)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabBoost.CancelTimerEventDropTimes = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityReturnSystemTabBoost:CancelTimerEventDropTimes()
   if self.te then
-    ((GameGlobal.Timer)()):CancelEvent(self.te)
+    GameGlobal.Timer():CancelEvent(self.te)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabBoost.btnFightOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  local curTimes, maxTimex = (self._component):GetBoostTimes()
+function UIActivityReturnSystemTabBoost:btnFightOnClick(go)
+  local curTimes, maxTimex = self._component:GetBoostTimes()
   if maxTimex <= curTimes then
-    (ToastManager.ShowToast)((StringTable.Get)("str_return_system_extra_drop_times_not_enough"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_return_system_extra_drop_times_not_enough"))
+    return
   end
-  local uiJumpModule = (GameGlobal.GetUIModule)(QuestModule)
+  local uiJumpModule = GameGlobal.GetUIModule(QuestModule)
   local jumpID = UIJumpType.UI_JumpResDungeon
-  local jumpParam = nil
+  local jumpParam
   uiJumpModule:SetJumpUIData(jumpID, jumpParam)
   uiJumpModule:Jump()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabBoost._RefreshTripleReward = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityReturnSystemTabBoost:_RefreshTripleReward()
   local bTriple = false
-  local strBegin = ((Cfg.cfg_global).ActiveBackFlowStartTime).StrValue
-  local strEnd = ((Cfg.cfg_global).ActiveBackFlowEndTime).StrValue
+  local strBegin = Cfg.cfg_global.ActiveBackFlowStartTime.StrValue
+  local strEnd = Cfg.cfg_global.ActiveBackFlowEndTime.StrValue
   if strBegin and strEnd then
-    local loginModule = (GameGlobal.GetModule)(LoginModule)
-    local srvTime = (GameGlobal.GetModule)(SvrTimeModule)
-    local curTime = (math.floor)(srvTime:GetServerTime() * 0.001)
+    local loginModule = GameGlobal.GetModule(LoginModule)
+    local srvTime = GameGlobal.GetModule(SvrTimeModule)
+    local curTime = math.floor(srvTime:GetServerTime() * 0.001)
     local beginTime = loginModule:GetTimeStampByTimeStr(strBegin, Enum_DateTimeZoneType.E_ZoneType_GMT)
     local endTime = loginModule:GetTimeStampByTimeStr(strEnd, Enum_DateTimeZoneType.E_ZoneType_GMT)
-    if beginTime <= curTime and curTime < endTime then
+    if curTime >= beginTime and curTime < endTime then
       bTriple = true
     end
   end
-  do
-    ;
-    (self.tripleDurationGo):SetActive(bTriple)
-    if bTriple then
-      (self.bg):LoadImage("huiliu_zhuli_bg1_1")
-      ;
-      (self.txtDesc):SetText((StringTable.Get)("str_return_system_desc_1"))
-    else
-      ;
-      (self.bg):LoadImage("huiliu_zhuli_bg1")
-      ;
-      (self.txtDesc):SetText((StringTable.Get)("str_return_system_desc"))
-    end
+  self.tripleDurationGo:SetActive(bTriple)
+  if bTriple then
+    self.bg:LoadImage("huiliu_zhuli_bg1_1")
+    self.txtDesc:SetText(StringTable.Get("str_return_system_desc_1"))
+  else
+    self.bg:LoadImage("huiliu_zhuli_bg1")
+    self.txtDesc:SetText(StringTable.Get("str_return_system_desc"))
   end
 end
-
-

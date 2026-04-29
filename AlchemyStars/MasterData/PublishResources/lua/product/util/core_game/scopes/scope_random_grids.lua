@@ -1,48 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_random_grids.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_RandomGrids", SkillScopeCalculator_Base)
 SkillScopeCalculator_RandomGrids = SkillScopeCalculator_RandomGrids
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_RandomGrids.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
-  local GetRandomPoints = function(rdmPoints)
-    -- function num : 0_0_0 , upvalues : self, _ENV
+function SkillScopeCalculator_RandomGrids:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
+  local function GetRandomPoints(rdmPoints)
     if not rdmPoints then
-      return 
+      return
     end
     local filtered = {}
-    local blockGrids = (self._gridFilter):GetBlockGridTrapPosList()
-    for i,v in ipairs(rdmPoints) do
+    local blockGrids = self._gridFilter:GetBlockGridTrapPosList()
+    for i, v in ipairs(rdmPoints) do
       local tbl = {}
-      for j,vj in ipairs(v) do
-        if not (table.icontains)(blockGrids, vj) and not (self._gridFilter):IsPosHaveMonsterOrPet(vj) then
-          (table.insert)(tbl, vj)
+      for j, vj in ipairs(v) do
+        if not table.icontains(blockGrids, vj) and not self._gridFilter:IsPosHaveMonsterOrPet(vj) then
+          table.insert(tbl, vj)
         end
       end
-      ;
-      (table.insert)(filtered, tbl)
+      table.insert(filtered, tbl)
     end
     local randomPeices = {}
-    for i,v in ipairs(filtered) do
-      local len = (table.count)(v)
+    for i, v in ipairs(filtered) do
+      local len = table.count(v)
       local idx = 1
-      if len > 0 then
-        idx = (self._gridFilter):_GetRandomNumber(1, len)
+      if 0 < len then
+        idx = self._gridFilter:_GetRandomNumber(1, len)
       end
-      ;
-      (table.insert)(randomPeices, v[idx])
+      table.insert(randomPeices, v[idx])
     end
     return randomPeices
   end
-
+  
   local grids = GetRandomPoints(scopeParam)
   local result = SkillScopeResult:New(SkillScopeType.RandomGrids, centerPos, grids, grids)
   return result
 end
-
-

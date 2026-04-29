@@ -1,63 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/alignment_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AlignmentComponent", Object)
 AlignmentComponent = AlignmentComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AlignmentComponent.Constructor = function(self, type)
-  -- function num : 0_0
+function AlignmentComponent:Constructor(type)
   self._alignmentType = type
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AlignmentComponent.GetAlignmentType = function(self)
-  -- function num : 0_1
+function AlignmentComponent:GetAlignmentType()
   return self._alignmentType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Alignment = function(self)
-  -- function num : 0_2
-  return self:GetComponent((self.WEComponentsEnum).Alignment)
+function Entity:Alignment()
+  return self:GetComponent(self.WEComponentsEnum.Alignment)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasAlignment = function(self)
-  -- function num : 0_3
-  return self:HasComponent((self.WEComponentsEnum).Alignment)
+function Entity:HasAlignment()
+  return self:HasComponent(self.WEComponentsEnum.Alignment)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddAlignment = function(self, alignmentType)
-  -- function num : 0_4 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Alignment
+function Entity:AddAlignment(alignmentType)
+  local index = self.WEComponentsEnum.Alignment
   local component = AlignmentComponent:New(alignmentType)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceAlignment = function(self, alignmentType)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Alignment
+function Entity:ReplaceAlignment(alignmentType)
+  local index = self.WEComponentsEnum.Alignment
   local component = AlignmentComponent:New(alignmentType)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveAlignment = function(self)
-  -- function num : 0_6
+function Entity:RemoveAlignment()
   if self:HasAlignment() then
-    self:RemoveComponent((self.WEComponentsEnum).Alignment)
+    self:RemoveComponent(self.WEComponentsEnum.Alignment)
   end
 end
-
-

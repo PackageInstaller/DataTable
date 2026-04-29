@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/feature/feature_eff_param/feature_effect_param_card.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureEffectParamCard", FeatureEffectParamBase)
 FeatureEffectParamCard = FeatureEffectParamCard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureEffectParamCard.Constructor = function(self, t)
-  -- function num : 0_0
+function FeatureEffectParamCard:Constructor(t)
   if not t then
-    return 
+    return
   end
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamCard._RefreshData = function(self, t)
-  -- function num : 0_1
+function FeatureEffectParamCard:_RefreshData(t)
   if not t then
-    return 
+    return
   end
   if t.SkillDic then
     self._skillDic = t.SkillDic
@@ -48,107 +38,64 @@ FeatureEffectParamCard._RefreshData = function(self, t)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamCard.GetFeatureType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function FeatureEffectParamCard:GetFeatureType()
   return FeatureType.Card
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamCard.CopyFrom = function(self, param)
-  -- function num : 0_3 , upvalues : _ENV
+function FeatureEffectParamCard:CopyFrom(param)
   if param then
-    for k,v in pairs(param) do
+    for k, v in pairs(param) do
       self[k] = v
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamCard.CloneSelf = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function FeatureEffectParamCard:CloneSelf()
   local param = FeatureEffectParamCard:New()
   param:CopyFrom(self)
   return param
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamCard.ReplaceByCustomCfg = function(self, t)
-  -- function num : 0_5
+function FeatureEffectParamCard:ReplaceByCustomCfg(t)
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamCard.GetCardSkillDic = function(self)
-  -- function num : 0_6
+function FeatureEffectParamCard:GetCardSkillDic()
   return self._skillDic
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamCard.GetCardMax = function(self)
-  -- function num : 0_7
+function FeatureEffectParamCard:GetCardMax()
   return self._cardMax
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamCard.GetInitCardNum = function(self)
-  -- function num : 0_8
+function FeatureEffectParamCard:GetInitCardNum()
   return self._initCardNum
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamCard.GetInitCardList = function(self)
-  -- function num : 0_9
+function FeatureEffectParamCard:GetInitCardList()
   return self._initCardList
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamCard.GetDrawCardFixedList = function(self)
-  -- function num : 0_10
+function FeatureEffectParamCard:GetDrawCardFixedList()
   return self._drawCardFixedList
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamCard.GetFixedDrawCard = function(self, times)
-  -- function num : 0_11
-  local card = nil
+function FeatureEffectParamCard:GetFixedDrawCard(times)
+  local card
   if self._drawCardFixedList then
-    card = (self._drawCardFixedList)[times]
+    card = self._drawCardFixedList[times]
   end
   return card
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamCard.GetDefaultWeightNum = function(self)
-  -- function num : 0_12
+function FeatureEffectParamCard:GetDefaultWeightNum()
   return self._defaultWeightNum or 5
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamCard.GetWeightIncreaseNum = function(self)
-  -- function num : 0_13
+function FeatureEffectParamCard:GetWeightIncreaseNum()
   return self._weightIncreaseNum or 1
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamCard.GetUiType = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  if not self._uiType then
-    return FeatureCardUiType.Default
-  end
+function FeatureEffectParamCard:GetUiType()
+  return self._uiType or FeatureCardUiType.Default
 end
-
-

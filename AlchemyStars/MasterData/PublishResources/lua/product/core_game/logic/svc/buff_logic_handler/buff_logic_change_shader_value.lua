@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_shader_value.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeShaderValue", BuffLogicBase)
 BuffLogicChangeShaderValue = BuffLogicChangeShaderValue
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeShaderValue.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeShaderValue:Constructor(buffInstance, logicParam)
   self._root = logicParam.root
   self._param = logicParam.param
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeShaderValue.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeShaderValue:DoLogic(notify)
   local buffResult = BuffResultChangeShaderValue:New(self._root, self._param, notify:GetHPPercent())
   return buffResult
 end
-
-

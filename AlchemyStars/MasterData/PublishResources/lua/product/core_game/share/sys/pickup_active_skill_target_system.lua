@@ -1,19 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/pickup_active_skill_target_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PickUpActiveSkillTargetSystem", UniqueReactiveSystem)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpActiveSkillTargetSystem.Constructor = function(self, world)
-  -- function num : 0_0
+function PickUpActiveSkillTargetSystem:Constructor(world)
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpActiveSkillTargetSystem.IsInterested = function(self, index, previousComponent, component)
-  -- function num : 0_1 , upvalues : _ENV
+function PickUpActiveSkillTargetSystem:IsInterested(index, previousComponent, component)
   if component == nil then
     return false
   end
@@ -26,20 +16,11 @@ PickUpActiveSkillTargetSystem.IsInterested = function(self, index, previousCompo
   return false
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpActiveSkillTargetSystem.ExecuteWorld = function(self, world)
-  -- function num : 0_2 , upvalues : _ENV
+function PickUpActiveSkillTargetSystem:ExecuteWorld(world)
   self._world = world
-  ;
-  (Log.notice)("### PickUpActiveSkillSystem ExecuteWorld")
+  Log.notice("### PickUpActiveSkillSystem ExecuteWorld")
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpActiveSkillTargetSystem.Filter = function(self, world)
-  -- function num : 0_3
+function PickUpActiveSkillTargetSystem:Filter(world)
   return true
 end
-
-

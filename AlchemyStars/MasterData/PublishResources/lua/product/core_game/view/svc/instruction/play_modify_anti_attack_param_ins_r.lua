@@ -1,24 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_modify_anti_attack_param_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayModifyAntiAttackParamInstruction", BaseInstruction)
 PlayModifyAntiAttackParamInstruction = PlayModifyAntiAttackParamInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayModifyAntiAttackParamInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayModifyAntiAttackParamInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayModifyAntiAttackParamInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayModifyAntiAttackParamInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateAntiActiveSkill, casterEntity:GetID())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateAntiActiveSkill, casterEntity:GetID())
 end
-
-

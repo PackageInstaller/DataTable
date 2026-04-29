@@ -1,17 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/role/1502081/cfg_skill_view_15020815.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterVisible,visible=1; PlayCasterAnimation,animName = birth; PlayCasterBindEffect,effectID=150208106; Wait,waitTime=1600; PlayCasterAnimation,animName = skill01; PlayCasterBindEffect,effectID=150208108; PlayAudio,audioID = 2680,audioType=1; Wait,waitTime=2500; "}
-}
-, 
-{2, 2, 0, 1, 1, 2000, 
-{"PlayMultiTraction; Wait,waitTime=1000; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterVisible,visible=1; PlayCasterAnimation,animName = birth; PlayCasterBindEffect,effectID=150208106; Wait,waitTime=1600; PlayCasterAnimation,animName = skill01; PlayCasterBindEffect,effectID=150208108; PlayAudio,audioID = 2680,audioType=1; Wait,waitTime=2500; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    1,
+    2000,
+    {
+      "PlayMultiTraction; Wait,waitTime=1000; "
+    }
+  }
 }
 return config, "ID", key
-

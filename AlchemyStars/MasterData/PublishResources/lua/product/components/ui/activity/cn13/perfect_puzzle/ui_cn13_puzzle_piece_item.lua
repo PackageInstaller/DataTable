@@ -1,99 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn13/perfect_puzzle/ui_cn13_puzzle_piece_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN13PuzzlePieceItem", UICustomWidget)
 UICN13PuzzlePieceItem = UICN13PuzzlePieceItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN13PuzzlePieceItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN13PuzzlePieceItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PuzzlePieceItem.InitWidget = function(self)
-  -- function num : 0_1
+function UICN13PuzzlePieceItem:InitWidget()
   self.pieceIcon = self:GetUIComponent("RawImageLoader", "PieceIcon")
   self.select = self:GetGameObject("Select")
-  ;
-  (self.select):SetActive(false)
+  self.select:SetActive(false)
   self.rootRectTf = self:GetUIComponent("RectTransform", "Root")
   self.pieceIconRectTf = self:GetUIComponent("RectTransform", "PieceIcon")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PuzzlePieceItem.SetData = function(self, index, data, cb)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN13PuzzlePieceItem:SetData(index, data, cb)
   self.pieceData = data
-  ;
-  (self.pieceIcon):LoadImage(data.resName)
+  self.pieceIcon:LoadImage(data.resName)
   self.clickCB = cb
   self.index = index
   local width = 1370
   local hight = 720
-  local verCount = (self.pieceData).verCount
-  local hoCount = (self.pieceData).hoCount
+  local verCount = self.pieceData.verCount
+  local hoCount = self.pieceData.hoCount
   self.singleWidth = width / hoCount
   self.singlehight = hight / verCount
   self.delta = 4.2
   if self.clickCB == nil then
     self.delta = 0
   end
-  local targetPosx = (self.singleWidth + self.delta) * ((self.pieceData).hoIndex - 1)
-  local targetPosy = -(self.singlehight + self.delta) * ((self.pieceData).verIndex - 1)
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self.pieceIconRectTf).sizeDelta = Vector2(self.singleWidth, self.singlehight)
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self.pieceIconRectTf).anchoredPosition = Vector2(targetPosx, targetPosy) + Vector2(self.singleWidth / 2 + 15, -self.singlehight / 2 - 10)
+  local targetPosx = (self.singleWidth + self.delta) * (self.pieceData.hoIndex - 1)
+  local targetPosy = -(self.singlehight + self.delta) * (self.pieceData.verIndex - 1)
+  self.pieceIconRectTf.sizeDelta = Vector2(self.singleWidth, self.singlehight)
+  self.pieceIconRectTf.anchoredPosition = Vector2(targetPosx, targetPosy) + Vector2(self.singleWidth / 2 + 15, -self.singlehight / 2 - 10)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PuzzlePieceItem.TransPiece = function(self, datax, datay, index)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.select):SetActive(false)
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.pieceData).hoIndex = datax
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.pieceData).verIndex = datay
-  local targetPosx = (self.singleWidth + self.delta) * ((self.pieceData).hoIndex - 1) + 15 + self.singleWidth / 2
-  local targetPosy = -(self.singlehight + self.delta) * ((self.pieceData).verIndex - 1) - 10 - self.singlehight / 2
-  ;
-  (self.pieceIconRectTf):DOAnchorPos(Vector2(targetPosx, targetPosy), 0.5, false)
+function UICN13PuzzlePieceItem:TransPiece(datax, datay, index)
+  self.select:SetActive(false)
+  self.pieceData.hoIndex = datax
+  self.pieceData.verIndex = datay
+  local targetPosx = (self.singleWidth + self.delta) * (self.pieceData.hoIndex - 1) + 15 + self.singleWidth / 2
+  local targetPosy = -(self.singlehight + self.delta) * (self.pieceData.verIndex - 1) - 10 - self.singlehight / 2
+  self.pieceIconRectTf:DOAnchorPos(Vector2(targetPosx, targetPosy), 0.5, false)
   self.index = index
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PuzzlePieceItem.PieceIconOnClick = function(self, go)
-  -- function num : 0_4
+function UICN13PuzzlePieceItem:PieceIconOnClick(go)
   if self.clickCB == nil then
-    (self.select):SetActive(false)
+    self.select:SetActive(false)
   end
   if self.clickCB then
-    (self.select):SetActive(true)
-    ;
-    (self.clickCB)(self)
+    self.select:SetActive(true)
+    self.clickCB(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PuzzlePieceItem.CancleCurPiece = function(self)
-  -- function num : 0_5
-  (self.select):SetActive(false)
+function UICN13PuzzlePieceItem:CancleCurPiece()
+  self.select:SetActive(false)
 end
-
-

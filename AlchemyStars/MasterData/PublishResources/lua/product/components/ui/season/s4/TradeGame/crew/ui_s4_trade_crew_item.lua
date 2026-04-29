@@ -1,31 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/crew/ui_s4_trade_crew_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4TradeCrewItem", UICustomWidget)
 UIS4TradeCrewItem = UIS4TradeCrewItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4TradeCrewItem.Constructor = function(self)
-  -- function num : 0_0
+function UIS4TradeCrewItem:Constructor()
   self._isShowPrice = false
   self._isUsing = false
   self._isOccupying = false
   self._canClick = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIS4TradeCrewItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIS4TradeCrewItem:_GetComponents()
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._anim = self:GetUIComponent("Animation", "anim")
   local comp1, comp2, comp3 = {}, {}, {}
@@ -35,7 +22,11 @@ UIS4TradeCrewItem._GetComponents = function(self)
   comp2.sliderComp = self:GetUIComponent("Slider", "power2Slider")
   comp3.valueComp = self:GetUIComponent("UILocalizationText", "power3Value")
   comp3.sliderComp = self:GetUIComponent("Slider", "power3Slider")
-  self._compTb = {comp1, comp2, comp3}
+  self._compTb = {
+    comp1,
+    comp2,
+    comp3
+  }
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._price = self:GetUIComponent("UILocalizationText", "price")
   self._occupyNum = self:GetUIComponent("UILocalizationText", "occupyNum")
@@ -46,229 +37,151 @@ UIS4TradeCrewItem._GetComponents = function(self)
   self._priceBGObk = self:GetGameObject("priceBg")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewItem.SetData = function(self, tradeData, crewID, shipID, isShowPrice, buyCallback)
-  -- function num : 0_3 , upvalues : _ENV
+function UIS4TradeCrewItem:SetData(tradeData, crewID, shipID, isShowPrice, buyCallback)
   self._tradeData = tradeData
   self._crewID = crewID
   self._shipID = shipID
   self._isShowPrice = isShowPrice
   self._buyCallback = buyCallback
-  self._cfg = (Cfg.cfg_component_business_seaman)[self._crewID]
-  self._usingShipID = (self._tradeData):GetCrewsUsingShipID(crewID)
+  self._cfg = Cfg.cfg_component_business_seaman[self._crewID]
+  self._usingShipID = self._tradeData:GetCrewsUsingShipID(crewID)
   self._isUsing = self._usingShipID == shipID
-  self._isOccupying = (self._usingShipID ~= 0 and not self._isUsing)
+  self._isOccupying = self._usingShipID ~= 0 and not self._isUsing
   self:_InitComponents()
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewItem.PlayInAnim = function(self, index)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._anim):Stop()
+function UIS4TradeCrewItem:PlayInAnim(index)
+  self._anim:Stop()
   self:SetAnimReady()
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, index, self
     YIELD(TT, index * 20)
-    if not (tolua.isnull)(self._anim) then
-      (self._anim):Play("uieff_UIS4TradeCrewItem_in")
+    if not tolua.isnull(self._anim) then
+      self._anim:Play("uieff_UIS4TradeCrewItem_in")
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewItem.SetAnimReady = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._bgRect).anchoredPosition = Vector2(0, -25)
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._bgGroup).alpha = 0
+function UIS4TradeCrewItem:SetAnimReady()
+  self._bgRect.anchoredPosition = Vector2(0, -25)
+  self._bgGroup.alpha = 0
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewItem._InitComponents = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIS4TradeCrewItem:_InitComponents()
   if self._isShowPrice then
-    (self._priceBGObk):SetActive(true)
-    ;
-    (self._price):SetText((((self._cfg).CostItem)[1])[2])
+    self._priceBGObk:SetActive(true)
+    self._price:SetText(self._cfg.CostItem[1][2])
   else
-    ;
-    (self._priceBGObk):SetActive(false)
+    self._priceBGObk:SetActive(false)
   end
   if self._isOccupying then
-    (self._occupyObj):SetActive(true)
-    ;
-    (self._occupyNum):SetText(self._usingShipID)
+    self._occupyObj:SetActive(true)
+    self._occupyNum:SetText(self._usingShipID)
   else
-    ;
-    (self._occupyObj):SetActive(false)
+    self._occupyObj:SetActive(false)
   end
-  ;
-  (self._usingObj):SetActive(self._isUsing)
-  ;
-  (self._name):SetText((StringTable.Get)((self._cfg).Name))
-  ;
-  (self._icon):LoadImage((self._cfg).Icon)
-  for i,comp in pairs(self._compTb) do
-    (comp.valueComp):SetText(((self._cfg).ProValue)[i])
-    -- DECOMPILER ERROR at PC66: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (comp.sliderComp).maxValue = ((self._cfg).ProValueMax)[i]
-    -- DECOMPILER ERROR at PC71: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (comp.sliderComp).value = ((self._cfg).ProValue)[i]
+  self._usingObj:SetActive(self._isUsing)
+  self._name:SetText(StringTable.Get(self._cfg.Name))
+  self._icon:LoadImage(self._cfg.Icon)
+  for i, comp in pairs(self._compTb) do
+    comp.valueComp:SetText(self._cfg.ProValue[i])
+    comp.sliderComp.maxValue = self._cfg.ProValueMax[i]
+    comp.sliderComp.value = self._cfg.ProValue[i]
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewItem.Refresh = function(self)
-  -- function num : 0_7
+function UIS4TradeCrewItem:Refresh()
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewItem.SetClick = function(self, canClick)
-  -- function num : 0_8
+function UIS4TradeCrewItem:SetClick(canClick)
   self._canClick = canClick
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewItem.BtnOnClick = function(self)
-  -- function num : 0_9
+function UIS4TradeCrewItem:BtnOnClick()
   self:_ClickAction()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewItem.PriceBgOnClick = function(self)
-  -- function num : 0_10
+function UIS4TradeCrewItem:PriceBgOnClick()
   self:_ClickAction()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewItem._ClickAction = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIS4TradeCrewItem:_ClickAction()
   if not self._canClick then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : self, _ENV
     if self._isShowPrice then
-      local costCfg = ((self._cfg).CostItem)[1]
+      local costCfg = self._cfg.CostItem[1]
       local costItemID = costCfg[1]
       local itemModule = self:GetModule(ItemModule)
       local itemNum = itemModule:GetItemCount(costItemID)
       if itemNum < costCfg[2] then
-        (ToastManager.ShowToast)((StringTable.Get)("str_season_s4_trade_crew_bug_nomoney"))
-        return 
+        ToastManager.ShowToast(StringTable.Get("str_season_s4_trade_crew_bug_nomoney"))
+        return
       end
-      local title = (StringTable.Get)("str_season_s4_trade_crew_buy_title", costCfg[2])
-      ;
-      (PopupManager.Alert)("UIS4MessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", title, function()
-      -- function num : 0_11_0_0 , upvalues : self
-      self:BuyCrewCallback()
-    end
-)
+      local title = StringTable.Get("str_season_s4_trade_crew_buy_title", costCfg[2])
+      PopupManager.Alert("UIS4MessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", title, function()
+        self:BuyCrewCallback()
+      end)
     else
-      do
-        local res = AsyncRequestRes:New()
-        if self._isUsing then
-          res = (self._tradeData):ChangeCrewWorkShip(TT, self._shipID, self._crewID, false)
-        else
-          if self._isOccupying then
-            if (self._tradeData):CheckShipIsFull(self._shipID) then
-              (ToastManager.ShowToast)((StringTable.Get)("str_season_s4_trade_full_crew"))
-              return 
-            end
-            local shipName = (StringTable.Get)("str_season_s4_trade_ship_" .. self._shipID)
-            local title = (StringTable.Get)("str_season_s4_trade_crew_used", shipName)
-            ;
-            (PopupManager.Alert)("UIS4MessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", title, function()
-      -- function num : 0_11_0_1 , upvalues : self, _ENV
-      self:StartTask(function(YY)
-        -- function num : 0_11_0_1_0 , upvalues : self, _ENV
-        local changeRes = (self._tradeData):ChangeCrewWorkShip(YY, self._shipID, self._crewID, true)
-        if changeRes:GetSucc() then
-          self._isUsing = not self._isUsing
-          self._isOccupying = false
-          self:Refresh()
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4TradeCrewChange)
-        else
-          ;
-          (Log.fatal)("船员更换工作船只失败：", changeRes:GetResult())
+      local res = AsyncRequestRes:New()
+      if self._isUsing then
+        res = self._tradeData:ChangeCrewWorkShip(TT, self._shipID, self._crewID, false)
+      elseif self._isOccupying then
+        if self._tradeData:CheckShipIsFull(self._shipID) then
+          ToastManager.ShowToast(StringTable.Get("str_season_s4_trade_full_crew"))
+          return
         end
+        local shipName = StringTable.Get("str_season_s4_trade_ship_" .. self._shipID)
+        local title = StringTable.Get("str_season_s4_trade_crew_used", shipName)
+        PopupManager.Alert("UIS4MessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", title, function()
+          self:StartTask(function(YY)
+            local changeRes = self._tradeData:ChangeCrewWorkShip(YY, self._shipID, self._crewID, true)
+            if changeRes:GetSucc() then
+              self._isUsing = not self._isUsing
+              self._isOccupying = false
+              self:Refresh()
+              GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4TradeCrewChange)
+            else
+              Log.fatal("船员更换工作船只失败：", changeRes:GetResult())
+            end
+          end)
+        end)
+        return
+      else
+        if self._tradeData:CheckShipIsFull(self._shipID) then
+          ToastManager.ShowToast(StringTable.Get("str_season_s4_trade_full_crew"))
+          return
+        end
+        res = self._tradeData:ChangeCrewWorkShip(TT, self._shipID, self._crewID, true)
       end
-)
-    end
-)
-            return 
-          else
-            do
-              if (self._tradeData):CheckShipIsFull(self._shipID) then
-                (ToastManager.ShowToast)((StringTable.Get)("str_season_s4_trade_full_crew"))
-                return 
-              end
-              res = (self._tradeData):ChangeCrewWorkShip(TT, self._shipID, self._crewID, true)
-              if res:GetSucc() then
-                self._isUsing = not self._isUsing
-                self._isOccupying = false
-                self:Refresh()
-                ;
-                ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4TradeCrewChange)
-              else
-                ;
-                (Log.fatal)("船员更换工作船只失败：", res:GetResult())
-              end
-            end
-          end
-        end
+      if res:GetSucc() then
+        self._isUsing = not self._isUsing
+        self._isOccupying = false
+        self:Refresh()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4TradeCrewChange)
+      else
+        Log.fatal("船员更换工作船只失败：", res:GetResult())
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewItem.BuyCrewCallback = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIS4TradeCrewItem:BuyCrewCallback()
   self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
-    local comp = (self._tradeData):GetBusinessComp()
-    local harbourID = (self._tradeData):GetLockHarbourIDByCrewID(self._crewID)
+    local comp = self._tradeData:GetBusinessComp()
+    local harbourID = self._tradeData:GetLockHarbourIDByCrewID(self._crewID)
     comp:HandleBusinessHireSeamanReq(TT, res, harbourID, self._crewID)
     if res:GetSucc() then
       self:ShowDialog("UIS4TradeCrewGetController", self._tradeData, self._crewID, self._shipID, function()
-      -- function num : 0_12_0_0 , upvalues : _ENV, self
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4TradeCrewBuy)
-      if self._buyCallback then
-        (self._buyCallback)()
-      end
-    end
-)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4TradeCrewBuy)
+        if self._buyCallback then
+          self._buyCallback()
+        end
+      end)
     else
-      ;
-      (Log.fatal)("船员购买失败", res:GetResult())
+      Log.fatal("船员购买失败", res:GetResult())
     end
-  end
-)
+  end)
 end
-
-

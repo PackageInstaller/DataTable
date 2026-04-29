@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_exchange_grid_color.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectExchangeGridColorParam", SkillEffectParamBase)
 SkillEffectExchangeGridColorParam = SkillEffectExchangeGridColorParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectExchangeGridColorParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectExchangeGridColorParam:Constructor(t)
   self._trapID = t.trapID
   self._summonTrapGridTypeList = t.summonTrapGridTypeList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectExchangeGridColorParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectExchangeGridColorParam:GetEffectType()
   return SkillEffectType.ExChangeGridColor
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectExchangeGridColorParam.GetTrapID = function(self)
-  -- function num : 0_2
+function SkillEffectExchangeGridColorParam:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectExchangeGridColorParam.GetSummonTrapGridTypeList = function(self)
-  -- function num : 0_3
+function SkillEffectExchangeGridColorParam:GetSummonTrapGridTypeList()
   return self._summonTrapGridTypeList
 end
-
-

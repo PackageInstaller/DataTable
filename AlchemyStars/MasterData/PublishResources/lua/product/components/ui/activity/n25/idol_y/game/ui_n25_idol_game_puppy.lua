@@ -1,173 +1,120 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/game/ui_n25_idol_game_puppy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolGamePuppy", UIController)
 UIN25IdolGamePuppy = UIN25IdolGamePuppy
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolGamePuppy._SetBg = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN25IdolGamePuppy:_SetBg()
   local url = "n25_ychtfsj_di13"
   if url then
-    (UIWidgetHelper.SetRawImage)(self, "_mainBg", url)
+    UIWidgetHelper.SetRawImage(self, "_mainBg", url)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGamePuppy._SetSpine = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._spine = (UIWidgetHelper.SetSpineLoad)(self, "_spine", "n25_g_gouzai_spine_idle")
-  ;
-  (UIWidgetHelper.SetSpineAnimation)(self._spine, 0, "idle", true)
+function UIN25IdolGamePuppy:_SetSpine()
+  self._spine = UIWidgetHelper.SetSpineLoad(self, "_spine", "n25_g_gouzai_spine_idle")
+  UIWidgetHelper.SetSpineAnimation(self._spine, 0, "idle", true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGamePuppy.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN25IdolGamePuppy:LoadDataOnEnter(TT, res, uiParams)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_N25
   self._componentId = ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL
-  self._campaign = (UIActivityHelper.LoadDataOnEnter)(TT, res, self._campaignType, {self._componentId})
-  self._component = (self._campaign):GetComponent(self._componentId)
-  self._componentInfo = (self._campaign):GetComponentInfo(self._componentId)
+  self._campaign = UIActivityHelper.LoadDataOnEnter(TT, res, self._campaignType, {
+    self._componentId
+  })
+  self._component = self._campaign:GetComponent(self._componentId)
+  self._componentInfo = self._campaign:GetComponentInfo(self._componentId)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGamePuppy.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
-  if uiParams then
-    self._eventId = uiParams[1]
-    if uiParams then
-      self._trainType = uiParams[2]
-      if uiParams then
-        self._handleCallback = uiParams[3]
-        if uiParams then
-          self._animCallback = uiParams[4]
-          if (UIActivityHelper.CheckDebugOpen)() and uiParams then
-            self._debug = uiParams[5]
-            self:_SetBg()
-            self:_SetSpine()
-            local itemInfo = (self._component):UI_Cfg_GetSuddenlyEventItemInfo(self._eventId)
-            self:_SetQuestion((itemInfo[1]).Question)
-            self:_SetItems(itemInfo)
-            ;
-            (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioTease)
-            ;
-            (UIWidgetHelper.PlayAnimation)(self, "_anim", "uieff_UIN25IdolGamePuppy_puppy_in", 2300)
-          end
-        end
-      end
-    end
+function UIN25IdolGamePuppy:OnShow(uiParams)
+  self._eventId = uiParams and uiParams[1]
+  self._trainType = uiParams and uiParams[2]
+  self._handleCallback = uiParams and uiParams[3]
+  self._animCallback = uiParams and uiParams[4]
+  if UIActivityHelper.CheckDebugOpen() then
+    self._debug = uiParams and uiParams[5]
   end
+  self:_SetBg()
+  self:_SetSpine()
+  local itemInfo = self._component:UI_Cfg_GetSuddenlyEventItemInfo(self._eventId)
+  self:_SetQuestion(itemInfo[1].Question)
+  self:_SetItems(itemInfo)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioTease)
+  UIWidgetHelper.PlayAnimation(self, "_anim", "uieff_UIN25IdolGamePuppy_puppy_in", 2300)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGamePuppy.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._spine = (UIWidgetHelper.SetSpineDestroy)(self, "_spine")
+function UIN25IdolGamePuppy:OnHide()
+  self._spine = UIWidgetHelper.SetSpineDestroy(self, "_spine")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGamePuppy._SetQuestion = function(self, txt)
-  -- function num : 0_5 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtName", (StringTable.Get)("str_n25_idol_game_puppy_question_name"))
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtQuestion", (StringTable.Get)(txt))
+function UIN25IdolGamePuppy:_SetQuestion(txt)
+  UIWidgetHelper.SetLocalizationText(self, "_txtName", StringTable.Get("str_n25_idol_game_puppy_question_name"))
+  UIWidgetHelper.SetLocalizationText(self, "_txtQuestion", StringTable.Get(txt))
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGamePuppy._SetItems = function(self, itemInfo)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN25IdolGamePuppy:_SetItems(itemInfo)
   local eventId = self._eventId
   local trainType = self._trainType
-  local widgets = {"_item1", "_item2", "_item3"}
-  for i,v in ipairs(widgets) do
-    local obj = (UIWidgetHelper.SpawnObject)(self, v, "UIN25IdolGamePuppyItem")
-    local icon = (itemInfo[i]).CondLimitHead
-    local txtMain = (itemInfo[i]).CondLimitName
-    local txtSub = not (itemInfo[i]).Enable and "str_n25_idol_game_puppy_question_cond_disable" or nil
+  local widgets = {
+    "_item1",
+    "_item2",
+    "_item3"
+  }
+  for i, v in ipairs(widgets) do
+    local obj = UIWidgetHelper.SpawnObject(self, v, "UIN25IdolGamePuppyItem")
+    local icon = itemInfo[i].CondLimitHead
+    local txtMain = itemInfo[i].CondLimitName
+    local txtSub = not itemInfo[i].Enable and "str_n25_idol_game_puppy_question_cond_disable" or nil
     obj:SetData(i, icon, txtMain, txtSub, function(idx, go)
-    -- function num : 0_6_0 , upvalues : self, itemInfo, _ENV, eventId, trainType
-    if not self._selected then
-      self._selected = idx
-      self._oldFunNum = (self._component):UI_GetFunNum()
-      if self._debug then
-        self:_OnEventComplete(idx, go, itemInfo)
-      else
-        local eventType = IdolEventType.IdolEventType_Suddenly
-        local optionType = idx
-        ;
-        (self._component):Start_HandleIdolCompleteEvent(eventType, optionType, eventId, trainType, function()
-      -- function num : 0_6_0_0 , upvalues : self, idx, go, itemInfo
-      self:_OnEventComplete(idx, go, itemInfo)
-    end
-)
+      if not self._selected then
+        self._selected = idx
+        self._oldFunNum = self._component:UI_GetFunNum()
+        if self._debug then
+          self:_OnEventComplete(idx, go, itemInfo)
+        else
+          local eventType = IdolEventType.IdolEventType_Suddenly
+          local optionType = idx
+          self._component:Start_HandleIdolCompleteEvent(eventType, optionType, eventId, trainType, function()
+            self:_OnEventComplete(idx, go, itemInfo)
+          end)
+        end
       end
-    end
-  end
-)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGamePuppy._OnEventComplete = function(self, idx, go, itemInfo)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN25IdolGamePuppy:_OnEventComplete(idx, go, itemInfo)
   if self._handleCallback then
-    (self._handleCallback)()
+    self._handleCallback()
   end
   self:_SetResult(itemInfo[idx])
-  local anim = {"uieff_UIN25IdolGamePuppy_result_in01", "uieff_UIN25IdolGamePuppy_result_in02", "uieff_UIN25IdolGamePuppy_result_in03"}
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", anim[idx], 600, function()
-    -- function num : 0_7_0 , upvalues : go
+  local anim = {
+    "uieff_UIN25IdolGamePuppy_result_in01",
+    "uieff_UIN25IdolGamePuppy_result_in02",
+    "uieff_UIN25IdolGamePuppy_result_in03"
+  }
+  UIWidgetHelper.PlayAnimation(self, "_anim", anim[idx], 600, function()
     go:PlayAnim()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGamePuppy._SetResult = function(self, info)
-  -- function num : 0_8 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtResult", (StringTable.Get)(info.CondLimitResult))
+function UIN25IdolGamePuppy:_SetResult(info)
+  UIWidgetHelper.SetLocalizationText(self, "_txtResult", StringTable.Get(info.CondLimitResult))
   local funNum = self._oldFunNum
-  local funNum2 = (self._component):UI_GetFunNum()
+  local funNum2 = self._component:UI_GetFunNum()
   self:_SetResultValue(funNum, funNum2)
   local animName = info.CondLimitSpine
-  ;
-  (UIWidgetHelper.SetSpineAnimation)(self._spine, 0, animName, true)
+  UIWidgetHelper.SetSpineAnimation(self._spine, 0, animName, true)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGamePuppy._SetResultValue = function(self, value1, value2)
-  -- function num : 0_9 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtValue1", value1)
+function UIN25IdolGamePuppy:_SetResultValue(value1, value2)
+  UIWidgetHelper.SetLocalizationText(self, "_txtValue1", value1)
   local color = {"#737373", "#fe6767"}
-  if value1 ~= value2 or not color[1] then
-    local c = color[2]
-  end
-  local text2 = (UIActivityHelper.GetColorText)(c, value2)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtValue2", text2)
+  local c = value1 == value2 and color[1] or color[2]
+  local text2 = UIActivityHelper.GetColorText(c, value2)
+  UIWidgetHelper.SetLocalizationText(self, "_txtValue2", text2)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGamePuppy.BtnOnClick = function(self, go)
-  -- function num : 0_10
+function UIN25IdolGamePuppy:BtnOnClick(go)
   if self._animCallback then
-    (self._animCallback)()
+    self._animCallback()
   end
   self:CloseDialog()
 end
-
-

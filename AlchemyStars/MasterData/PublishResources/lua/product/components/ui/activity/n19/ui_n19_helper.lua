@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n19/ui_n19_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN19Helper", Object)
 UIN19Helper = UIN19Helper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN19Helper.Constructor = function(self)
-  -- function num : 0_0
+function UIN19Helper:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19Helper.GetNewPoint = function(campaign)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN19Helper.GetNewPoint(campaign)
   local sampleNew = campaign:CheckCampaignNew()
   local componentId = ECampaignN19CommonComponentID.PANGOLIN
   local component = campaign:GetComponent(componentId)
   local minigameOp = campaign:CheckComponentOpen(componentId)
   local new = component:NewTaskRed("N19TaskComp", "red")
   local comNew = component:GetPrefsComponentNew("N19TaskComp")
-  do return sampleNew or (new ~= nil and new > 0) or not minigameOp or comNew < 1 end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return sampleNew or new ~= nil and 0 < new or minigameOp and comNew < 1
 end
-
-

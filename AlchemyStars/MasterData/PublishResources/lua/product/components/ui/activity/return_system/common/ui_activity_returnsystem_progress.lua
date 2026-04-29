@@ -1,96 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/common/ui_activity_returnsystem_progress.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReturnSystemProgress", UICustomWidget)
 UIActivityReturnSystemProgress = UIActivityReturnSystemProgress
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReturnSystemProgress.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityReturnSystemProgress:OnShow()
   self._isOpen = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemProgress.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityReturnSystemProgress:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemProgress.SetData = function(self, campaign, tipsCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityReturnSystemProgress:SetData(campaign, tipsCallback)
   self._campaign = campaign
   self._tipsCallback = tipsCallback
-  self._component = (UIActivityReturnSystemHelper.GetComponentByTabName)(self._campaign, "quest", 2)
+  self._component = UIActivityReturnSystemHelper.GetComponentByTabName(self._campaign, "quest", 2)
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemProgress._Refresh = function(self)
-  -- function num : 0_3
-  self._cur_progress = (self._component):GetCurrentProgress()
-  local progress_list = (self._component):GetProgressList()
+function UIActivityReturnSystemProgress:_Refresh()
+  self._cur_progress = self._component:GetCurrentProgress()
+  local progress_list = self._component:GetProgressList()
   self._max_progress = progress_list[#progress_list] or 0
   self:_SetProgress(self._cur_progress, self._max_progress)
   self:_SetList(progress_list)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemProgress._SetProgress = function(self, cur_progress, max_progress)
-  -- function num : 0_4 , upvalues : _ENV
-  (UIWidgetHelper.SetSliderValue)(self, "_progress", cur_progress, max_progress)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "text_ProgressCur", (math.min)(self._cur_progress, self._max_progress))
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "text_ProgressMax", "/" .. self._max_progress)
+function UIActivityReturnSystemProgress:_SetProgress(cur_progress, max_progress)
+  UIWidgetHelper.SetSliderValue(self, "_progress", cur_progress, max_progress)
+  UIWidgetHelper.SetLocalizationText(self, "text_ProgressCur", math.min(self._cur_progress, self._max_progress))
+  UIWidgetHelper.SetLocalizationText(self, "text_ProgressMax", "/" .. self._max_progress)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemProgress._SetList = function(self, progress_list)
-  -- function num : 0_5 , upvalues : _ENV
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_progressPool", "UIActivityReturnSystemProgressListItem", #progress_list)
-  for i,v in ipairs(objs) do
+function UIActivityReturnSystemProgress:_SetList(progress_list)
+  local objs = UIWidgetHelper.SpawnObjects(self, "_progressPool", "UIActivityReturnSystemProgressListItem", #progress_list)
+  for i, v in ipairs(objs) do
     v:SetData(self._campaign, self._component, progress_list[i], function(progress)
-    -- function num : 0_5_0 , upvalues : self
-    (self._component):Start_HandleReceiveReward(progress, function(res, rewards)
-      -- function num : 0_5_0_0 , upvalues : self
-      self:_OnReceiveRewards(res, rewards)
-    end
-)
-  end
-, self._tipsCallback)
+      self._component:Start_HandleReceiveReward(progress, function(res, rewards)
+        self:_OnReceiveRewards(res, rewards)
+      end)
+    end, self._tipsCallback)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemProgress._OnReceiveRewards = function(self, res, rewards)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityReturnSystemProgress:_OnReceiveRewards(res, rewards)
   if self.view == nil then
-    return 
+    return
   end
   if res:GetSucc() then
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
+    UIActivityHelper.ShowUIGetRewards(rewards)
     self:_Refresh()
   else
-    ;
-    (self._campaign):CheckErrorCode(res.m_result, function()
-    -- function num : 0_6_0 , upvalues : self
-    self:_Refresh()
-  end
-, function()
-    -- function num : 0_6_1 , upvalues : self
-    self:_Refresh()
-  end
-)
+    self._campaign:CheckErrorCode(res.m_result, function()
+      self:_Refresh()
+    end, function()
+      self:_Refresh()
+    end)
   end
 end
-
-

@@ -1,25 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_play_effect_anim.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicPlayEffectAnim", BuffLogicBase)
 BuffLogicPlayEffectAnim = BuffLogicPlayEffectAnim
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicPlayEffectAnim.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicPlayEffectAnim:Constructor(buffInstance, logicParam)
   self._objName = logicParam.objName
   self._animName = logicParam.animName
   self._waitTime = logicParam.waitTime
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicPlayEffectAnim.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicPlayEffectAnim:DoLogic()
   local buffResult = BuffResultPlayEffectAnim:New(self._objName, self._animName, self._waitTime)
   return buffResult
 end
-
-
